@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/06/20 01:36:08 bcallah Exp $
 
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 
-V =		0.63
+V =		0.64
 COMMENT =	open source clone of Theme Hospital
 PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
@@ -11,8 +11,7 @@ GH_ACCOUNT =	CorsixTH
 GH_PROJECT =	CorsixTH
 GH_TAGNAME =	v${V}
 
-# https site is a little broken.
-HOMEPAGE =	http://corsixth.com/
+HOMEPAGE =	https://corsixth.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT

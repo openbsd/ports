@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/05/25 15:49:40 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/06/20 01:36:08 bcallah Exp $
 @bin bin/corsix-th
 @man man/man6/corsix-th.6
-share/applications/
 share/applications/com.corsixth.CorsixTH.desktop
 share/corsix-th/
 share/corsix-th/Bitmap/
@@ -370,10 +369,6 @@ share/corsix-th/Lua/walls/yellow.lua
 share/corsix-th/Lua/window.lua
 share/corsix-th/Lua/world.lua
 share/doc/pkg-readmes/${PKGSTEM}
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/corsix-th.svg
 share/metainfo/
 share/metainfo/com.corsixth.CorsixTH.appdata.xml
