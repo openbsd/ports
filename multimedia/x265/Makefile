@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2020/06/09 14:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2020/06/20 10:45:09 ajacoutot Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=-DCMAKE_ASM_YASM_FLAGS_DEBUG="-g dwarf2" \
 		-DENABLE_PIC=On \
 		-DENABLE_TESTS=On
 
-.if ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=-DENABLE_ASSEMBLY=Off
 .endif
 
