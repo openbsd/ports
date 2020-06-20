@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/20 14:57:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/20 21:12:38 bcallah Exp $
 
-V = 		1.3.2
+V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/16 17:23:58 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/20 21:12:38 bcallah Exp $
 bin/HandBrake
 @bin bin/HandBrakeCLI
 @bin bin/ghb
@@ -32,6 +32,6 @@ share/locale/uk_UA/LC_MESSAGES/
 share/locale/uk_UA/LC_MESSAGES/ghb.mo
 share/locale/zh_CN/LC_MESSAGES/ghb.mo
 share/metainfo/
-share/metainfo/fr.handbrake.ghb.appdata.xml
+share/metainfo/fr.handbrake.ghb.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
