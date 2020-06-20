@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.3 2020/06/20 10:17:59 landry Exp $
+
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -159,5 +159,5 @@ SET(UNITTESTS_SRC
+ )
+ 
+ ADD_EXECUTABLE(mdal_unittests ${UNITTESTS_SRC})
+-TARGET_LINK_LIBRARIES(mdal_unittests gtest gmock ${CMAKE_THREAD_LIBS_INIT} mdal_a)
++TARGET_LINK_LIBRARIES(mdal_unittests gtest gmock ${CMAKE_THREAD_LIBS_INIT} mdal_a ${SQLite3_LIBRARY})
+ ADD_TEST(mdal_unittests ${CMAKE_CURRENT_BINARY_DIR}/mdal_unittests)

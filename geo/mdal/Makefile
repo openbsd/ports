@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/25 12:16:28 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/20 10:17:59 landry Exp $
 
 COMMENT =	mesh data abstration library
 
 GH_ACCOUNT=	lutraconsulting
 GH_PROJECT =	MDAL
-GH_TAGNAME =	0.5.0
+GH_TAGNAME =	0.6.1
 
 PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME}
 
-SHARED_LIBS =	mdal 2.0
+SHARED_LIBS =	mdal 3.0
 
 CATEGORIES =	geo devel textproc
 
@@ -30,6 +30,9 @@ LIB_DEPENDS =	math/netcdf>=4 \
 
 BUILD_DEPENDS =	devel/gtest
 
-WANTLIB += ${COMPILER_LIBCXX} c gdal hdf5 m netcdf xml2 z
+WANTLIB += ${COMPILER_LIBCXX} c gdal hdf5 m netcdf sqlite3 xml2 z
+
+post-extract:
+	rm ${WRKSRC}/cmake/FindSQLite3.cmake
 
 .include <bsd.port.mk>
