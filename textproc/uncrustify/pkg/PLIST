@@ -1,6 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/11/02 09:42:27 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/21 07:17:08 rpointel Exp $
 @bin bin/uncrustify
 @man man/man1/uncrustify.1
+share/doc/uncrustify/
+share/doc/uncrustify/examples/
+share/doc/uncrustify/examples/MS-calling_conventions.cfg
+share/doc/uncrustify/examples/amxmodx.cfg
+share/doc/uncrustify/examples/ben.cfg
+share/doc/uncrustify/examples/ben2.cfg
+share/doc/uncrustify/examples/d.cfg
+share/doc/uncrustify/examples/defaults.cfg
+share/doc/uncrustify/examples/freebsd.cfg
+share/doc/uncrustify/examples/gnu-indent.cfg
+share/doc/uncrustify/examples/klaus.cfg
+share/doc/uncrustify/examples/kr-indent.cfg
+share/doc/uncrustify/examples/linux-indent.cfg
+share/doc/uncrustify/examples/linux.cfg
+share/doc/uncrustify/examples/mono.cfg
+share/doc/uncrustify/examples/msvc.cfg
+share/doc/uncrustify/examples/objc.cfg
+share/doc/uncrustify/examples/sun.cfg
+share/doc/uncrustify/examples/xsupplicant.cfg
 share/uncrustify/
 share/uncrustify/MS-calling_conventions.cfg
 share/uncrustify/amxmodx.cfg
