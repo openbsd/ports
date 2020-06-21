@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2020/05/14 15:58:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2020/06/21 09:39:06 ajacoutot Exp $
 @bin bin/seahorse
 libexec/seahorse/
 @bin libexec/seahorse/ssh-askpass
@@ -623,6 +623,53 @@ share/help/sv/seahorse/ssh-import.page
 share/help/sv/seahorse/subkeys-add.page
 share/help/sv/seahorse/subkeys-examine.page
 share/help/sv/seahorse/subkeys-revoke.page
+share/help/uk/
+share/help/uk/seahorse/
+share/help/uk/seahorse/about-diff-private-public.page
+share/help/uk/seahorse/about-pgp.page
+share/help/uk/seahorse/about-ssh.page
+share/help/uk/seahorse/concepts.page
+share/help/uk/seahorse/glossary.page
+share/help/uk/seahorse/index.page
+share/help/uk/seahorse/introduction.page
+share/help/uk/seahorse/key-servers-add.page
+share/help/uk/seahorse/keyring-change-default.page
+share/help/uk/seahorse/keyring-create.page
+share/help/uk/seahorse/keyring-lock.page
+share/help/uk/seahorse/keyring-unlock.page
+share/help/uk/seahorse/keyring-update-password.page
+share/help/uk/seahorse/keyring.page
+share/help/uk/seahorse/legal.xml
+share/help/uk/seahorse/media/
+share/help/uk/seahorse/media/dialog-password-symbolic.svg
+share/help/uk/seahorse/media/org.gnome.seahorse.Application.svg
+share/help/uk/seahorse/misc-key-backup.page
+share/help/uk/seahorse/misc-key-fingerprint.page
+share/help/uk/seahorse/passwords-stored-create.page
+share/help/uk/seahorse/passwords-view.page
+share/help/uk/seahorse/pgp-create.page
+share/help/uk/seahorse/pgp-delete.page
+share/help/uk/seahorse/pgp-expiration-change.page
+share/help/uk/seahorse/pgp-expired.page
+share/help/uk/seahorse/pgp-export.page
+share/help/uk/seahorse/pgp-import.page
+share/help/uk/seahorse/pgp-photoid.page
+share/help/uk/seahorse/pgp-publish.page
+share/help/uk/seahorse/pgp-retrieve-remote.page
+share/help/uk/seahorse/pgp-sign.page
+share/help/uk/seahorse/pgp-subkeys.page
+share/help/uk/seahorse/pgp-sync.page
+share/help/uk/seahorse/pgp-userid-add.page
+share/help/uk/seahorse/pgp-userid-primary.page
+share/help/uk/seahorse/pgp-userid-remove.page
+share/help/uk/seahorse/pgp-userid.page
+share/help/uk/seahorse/ssh-connect-remote.page
+share/help/uk/seahorse/ssh-create.page
+share/help/uk/seahorse/ssh-export.page
+share/help/uk/seahorse/ssh-import.page
+share/help/uk/seahorse/subkeys-add.page
+share/help/uk/seahorse/subkeys-examine.page
+share/help/uk/seahorse/subkeys-revoke.page
 share/icons/hicolor/scalable/apps/org.gnome.seahorse.Application.svg
 share/icons/hicolor/symbolic/apps/org.gnome.seahorse.Application-symbolic.svg
 share/locale/ar/LC_MESSAGES/seahorse.mo
