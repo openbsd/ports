@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1 2019/05/23 20:44:24 naddy Exp $
+$OpenBSD: patch-configure,v 1.2 2020/06/21 15:57:16 gsoares Exp $
 
 Honor the result of AC_SEARCH_LIBS() and don't hardcode linking with
 libstdc++.
@@ -6,7 +6,7 @@ libstdc++.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -19858,7 +19858,7 @@ echo "$as_me: error: Required library id3lib not found
+@@ -12346,7 +12346,7 @@ else
  fi
  
  
@@ -14,4 +14,4 @@ Index: configure
 +#   LIBS="-lz -lstdc++ $LIBS"
  
  
- cat >>confdefs.h <<\_ACEOF
+ $as_echo "#define ENABLE_ID3LIB 1" >>confdefs.h
