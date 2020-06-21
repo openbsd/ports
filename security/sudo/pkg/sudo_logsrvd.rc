@@ -1,0 +1,9 @@
+#!/bin/ksh
+#
+# $OpenBSD: sudo_logsrvd.rc,v 1.1 2020/06/21 12:03:34 millert Exp $
+
+daemon="${TRUEPREFIX}/sbin/sudo_logsrvd"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

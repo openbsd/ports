@@ -1,0 +1,3 @@
+The sudo Python plugin can be used to write sudo 1.9 plugins in
+Python instead of C.  The API closely follows the C sudo plugin API
+described by sudo_plugin(5).

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/12/31 21:54:25 millert Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2020/06/21 12:03:34 millert Exp $
+@rcscript ${RCDIR}/sudo_logsrvd
 @bin bin/cvtsudoers
 @mode 04555
 @bin bin/sudo
@@ -7,10 +8,14 @@ bin/sudoedit
 @bin bin/sudoreplay
 include/sudo_plugin.h
 libexec/sudo/
+libexec/sudo/audit_json.la
+@so libexec/sudo/audit_json.so
 libexec/sudo/group_file.la
 @so libexec/sudo/group_file.so
 libexec/sudo/libsudo_util.la
 @lib libexec/sudo/libsudo_util.so.${LIBsudo_util_VERSION}
+libexec/sudo/sample_approval.la
+@so libexec/sudo/sample_approval.so
 libexec/sudo/sudo_noexec.la
 @so libexec/sudo/sudo_noexec.so
 libexec/sudo/sudoers.la
@@ -19,13 +24,19 @@ libexec/sudo/system_group.la
 @so libexec/sudo/system_group.so
 @man man/man1/cvtsudoers.1
 @man man/man5/sudo.conf.5
+@man man/man5/sudo_logsrv.proto.5
+@man man/man5/sudo_logsrvd.conf.5
 @man man/man5/sudoers.5
 @man man/man5/sudoers_timestamp.5
 @man man/man8/sudo.8
+@man man/man8/sudo_logsrvd.8
 @man man/man8/sudo_plugin.8
+@man man/man8/sudo_sendlog.8
 @man man/man8/sudoedit.8
 @man man/man8/sudoreplay.8
 @man man/man8/visudo.8
+@bin sbin/sudo_logsrvd
+@bin sbin/sudo_sendlog
 @bin sbin/visudo
 share/doc/sudo/
 share/doc/sudo/CONTRIBUTORS
@@ -38,10 +49,13 @@ share/doc/sudo/TROUBLESHOOTING
 share/doc/sudo/UPGRADE
 share/examples/sudo/
 share/examples/sudo/sudo.conf
+share/examples/sudo/sudo_logsrvd.conf
 share/examples/sudo/sudoers
 share/examples/sudo/sudoers.OpenBSD
+share/examples/sudo/syslog.conf
 @mode 0440
 @sample ${SYSCONFDIR}/sudoers
 @mode
-share/examples/sudo/syslog.conf
+@sample ${SYSCONFDIR}/sudo.conf
+@sample ${SYSCONFDIR}/sudo_logsrvd.conf
 %%gettext%%
