@@ -1,0 +1,24 @@
+$OpenBSD: patch-tests_test_ssl_py,v 1.1 2020/06/21 17:30:42 paco Exp $
+
+Fix test_ciphers_none_can_be_selected test (patch from upstream)
+Author: Jakub Roztocil <jakub@roztocil.co>
+
+https://github.com/jakubroztocil/httpie/commit/49e71d252f54871a6bc49cb1cba103d385a543b8
+
+The error happens if py3-openssl (PyOpenSSL) is installed.  True that we could
+only reproduce on OpenBSD, but may happen on other environments.
+
+Index: tests/test_ssl.py
+--- tests/test_ssl.py.orig
++++ tests/test_ssl.py
+@@ -133,4 +133,9 @@ def test_ciphers_none_can_be_selected(httpbin_secure):
+         tolerate_error_exit_status=True,
+     )
+     assert r.exit_status == ExitStatus.ERROR
+-    assert 'No cipher can be selected.' in r.stderr
++    # Linux/macOS:
++    #   http: error: SSLError: ('No cipher can be selected.',)
++    # OpenBSD:
++    #   <https://marc.info/?l=openbsd-ports&m=159251948515635&w=2>
++    #   http: error: Error: [('SSL routines', '(UNKNOWN)SSL_internal', 'no cipher match')]
++    assert 'cipher' in r.stderr

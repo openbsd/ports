@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/01/13 14:25:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/06/21 17:30:42 paco Exp $
 bin/http
 bin/https
 lib/python${MODPY_VERSION}/site-packages/httpie/
@@ -22,6 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}core.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}downloads.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}sessions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}ssl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}status.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/cli/
@@ -76,10 +77,13 @@ lib/python${MODPY_VERSION}/site-packages/httpie/plugins/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/${MODPY_PYCACHE}builtin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/plugins/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/base.py
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/builtin.py
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/manager.py
+lib/python${MODPY_VERSION}/site-packages/httpie/plugins/registry.py
 lib/python${MODPY_VERSION}/site-packages/httpie/sessions.py
+lib/python${MODPY_VERSION}/site-packages/httpie/ssl.py
 lib/python${MODPY_VERSION}/site-packages/httpie/status.py
 lib/python${MODPY_VERSION}/site-packages/httpie/utils.py
 share/doc/httpie/
