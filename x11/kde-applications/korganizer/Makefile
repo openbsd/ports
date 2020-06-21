@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/17 04:28:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/21 18:12:54 rsadowski Exp $
 
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  korganizer_core         0.0 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   0.0 # 5.13.2
@@ -35,6 +36,8 @@ MODKF5_I18N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications \
 		multimedia/phonon
+
+BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
 

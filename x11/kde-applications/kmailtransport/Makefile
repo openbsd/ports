@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 14:46:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/21 18:12:53 rsadowski Exp $
 
 COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5MailTransport             0.0 # 5.13.3
 SHARED_LIBS +=  KF5MailTransportAkonadi      0.0 # 5.13.3
@@ -21,7 +22,8 @@ MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/kf5/sonnet \
 		devel/kf5/solid \
-		devel/kf5/ktextwidgets
+		devel/kf5/ktextwidgets \
+		devel/boost
 
 RUN_DEPENDS =	devel/kf5/sonnet \
 		devel/kf5/solid \

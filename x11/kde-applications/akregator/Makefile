@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/17 04:28:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/21 18:12:53 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  akregatorinterfaces       0.0 # 5.13.2
 SHARED_LIBS +=  akregatorprivate          0.0 # 5.13.2
@@ -32,7 +33,8 @@ MODKF5_I18N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS =	x11/kde-applications/kimap \
+BUILD_DEPENDS =	devel/boost \
+		x11/kde-applications/kimap \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	x11/kde-applications/kimap \

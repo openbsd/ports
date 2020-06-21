@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/17 04:28:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/21 18:12:53 rsadowski Exp $
 
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
+REVISION =	0
 
 SHARED_LIBS +=  kmailprivate       0.0 # 5.13.2
 
@@ -38,6 +39,8 @@ MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
+
+BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	x11/kde-applications/akonadi-import-wizard \
 		x11/kde-applications/kdepim-runtime \

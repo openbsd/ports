@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 18:02:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/21 18:12:53 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-apps-libs-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5FollowupReminder         0.0 # 5.13.2
 SHARED_LIBS +=  KF5KaddressbookGrantlee     0.0 # 5.13.2
@@ -23,6 +24,8 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
+
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcodecs \
