@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 17:22:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/21 17:55:53 rsadowski Exp $
 
 COMMENT =	library for common kdepim apps
 DISTNAME =	libkdepim-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5Libkdepim               0.0 # 5.6
 SHARED_LIBS +=  KF5LibkdepimAkonadi        0.0 # 5.6
@@ -22,6 +23,8 @@ MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
+
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcmutils \
