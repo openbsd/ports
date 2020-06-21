@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2020/02/07 05:50:21 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.35 2020/06/21 18:00:33 rpointel Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -31,6 +31,7 @@ ${P5SITE}/Image/ExifTool/Charset.pm
 ${P5SITE}/Image/ExifTool/Charset/Arabic.pm
 ${P5SITE}/Image/ExifTool/Charset/Baltic.pm
 ${P5SITE}/Image/ExifTool/Charset/Cyrillic.pm
+${P5SITE}/Image/ExifTool/Charset/DOSCyrillic.pm
 ${P5SITE}/Image/ExifTool/Charset/DOSLatin1.pm
 ${P5SITE}/Image/ExifTool/Charset/DOSLatinUS.pm
 ${P5SITE}/Image/ExifTool/Charset/Greek.pm
