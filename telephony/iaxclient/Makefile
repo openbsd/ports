@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2020/04/16 08:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2020/06/21 13:58:47 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,7 +6,7 @@ COMMENT-tcl=	IAX client library, tcl bindings
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION=	28
+REVISION=	29
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -76,9 +76,9 @@ pre-configure:
 		${WRKSRC}/simpleclient/tkphone/tkiaxphone
 
 post-build:
-	cd ${WRKSRC}/contrib/tcl && ${CONFIGURE_ENV} ./configure \
-	--libdir=${MODTCL_TCLDIR} --with-tcl=${MODTCL_LIBDIR} \
-	&& ${MAKE_PROGRAM}
+	cd ${WRKSRC}/contrib/tcl && ${CONFIGURE_ENV} CC="${CC}" ./configure \
+	    --libdir=${MODTCL_TCLDIR} --with-tcl=${MODTCL_LIBDIR} \
+	    && ${MAKE_PROGRAM}
 
 post-install:
 	cd ${WRKSRC}/contrib/tcl && \
