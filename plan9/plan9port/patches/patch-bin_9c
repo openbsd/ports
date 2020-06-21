@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_9c,v 1.2 2017/05/09 22:22:36 gsoares Exp $
+$OpenBSD: patch-bin_9c,v 1.3 2020/06/21 20:37:20 gsoares Exp $
 Index: bin/9c
 --- bin/9c.orig
 +++ bin/9c
@@ -8,24 +8,15 @@ Index: bin/9c
  {
 -	cc=${CC9:-gcc}
 +	cc=${CC9:-${CC}}
- 	ngflags=" \
+ 	cflags=" \
  		-O2 \
  		-c \
-@@ -54,7 +54,7 @@ quiet()
+@@ -64,7 +64,7 @@ quiet()
  
  useclang()
  {
 -	cc=${CC9:-clang}
 +	cc=${CC9:-${CC}}
- 	ngflags=" \
+ 	cflags=" \
  		-O2 \
  		-c \
-@@ -79,6 +79,8 @@ useclang()
- 
- tag="${SYSNAME:-`uname`}-${OBJTYPE:-`uname -m`}-${CC9:-cc}"
- case "$tag" in
-+*OpenBSD*gcc*)		usegcc ;;
-+*OpenBSD*clang*)	useclang ;;
- *FreeBSD*gcc*)	usegcc ;;
- *FreeBSD*clang*)	useclang ;;
- *DragonFly*|*BSD*)	usegcc ;;

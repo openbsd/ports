@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_mkhdr,v 1.2 2015/11/28 01:37:59 gsoares Exp $
---- src/mkhdr.orig	Wed Nov 11 12:09:34 2015
-+++ src/mkhdr	Tue Nov 24 10:56:24 2015
-@@ -30,8 +30,8 @@ LD=9l
+$OpenBSD: patch-src_mkhdr,v 1.3 2020/06/21 20:37:20 gsoares Exp $
+Index: src/mkhdr
+--- src/mkhdr.orig
++++ src/mkhdr
+@@ -11,8 +11,8 @@ CC=9c
+ LD=9l
  AS=9a
  AR=9ar
- INSTALL=install
 -CFLAGS=
 -LDFLAGS=
 +CFLAGS=${CCFLAGS} -pthread

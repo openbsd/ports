@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/09/11 00:40:54 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/06/21 20:37:21 gsoares Exp $
 @unexec-delete rm -f ${PREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
@@ -9,7 +9,6 @@ plan9/INSTALL
 plan9/LICENSE
 plan9/Makefile
 plan9/README.md
-plan9/TODO
 plan9/acid/
 plan9/acid/386
 plan9/acid/68020
@@ -81,11 +80,13 @@ plan9/bin/bundle
 @bin plan9/bin/cat
 @bin plan9/bin/cb
 @bin plan9/bin/cleanname
+@bin plan9/bin/clock
 @bin plan9/bin/cmapcube
 @bin plan9/bin/cmp
 @bin plan9/bin/col
 @bin plan9/bin/colors
 @bin plan9/bin/comm
+@bin plan9/bin/compress
 @bin plan9/bin/core
 @bin plan9/bin/crop
 @bin plan9/bin/date
@@ -247,6 +248,7 @@ plan9/bin/samsave
 plan9/bin/sig
 plan9/bin/slay
 @bin plan9/bin/sleep
+plan9/bin/soelim
 @bin plan9/bin/sort
 plan9/bin/spell
 @bin plan9/bin/split
@@ -286,6 +288,7 @@ plan9/bin/troff2png
 @bin plan9/bin/tweak
 plan9/bin/u
 plan9/bin/u.rc
+@bin plan9/bin/uncompress
 @bin plan9/bin/unicode
 @bin plan9/bin/uniq
 @bin plan9/bin/units
@@ -339,22 +342,20 @@ plan9/bin/vwhois
 plan9/bin/web
 @bin plan9/bin/win
 plan9/bin/wintext
+@bin plan9/bin/winwatch
 plan9/bin/wmail
 @bin plan9/bin/xd
 @bin plan9/bin/xshove
 @bin plan9/bin/yacc
 plan9/bin/yesterday
 @bin plan9/bin/yuv
+@bin plan9/bin/zcat
 @bin plan9/bin/zerotrunc
 @bin plan9/bin/zip
 plan9/config
 plan9/configure
 plan9/dict/
 plan9/dict/README
-plan9/dict/pgw
-plan9/dict/pgwindex
-plan9/dict/roget
-plan9/dict/rogetindex
 plan9/dist/
 plan9/dist/README
 plan9/dist/addsrclinks
@@ -4154,39 +4155,38 @@ plan9/lib/gv.style
 plan9/lib/hyphen.tex
 plan9/lib/keyboard
 plan9/lib/lex.ncform
-plan9/lib/lib9.a
-plan9/lib/lib9p.a
-plan9/lib/lib9pclient.a
-plan9/lib/libString.a
-plan9/lib/libacme.a
-plan9/lib/libauth.a
-plan9/lib/libauthsrv.a
-plan9/lib/libavl.a
-plan9/lib/libbin.a
-plan9/lib/libbio.a
-plan9/lib/libcomplete.a
-plan9/lib/libdisk.a
-plan9/lib/libdiskfs.a
-plan9/lib/libdraw.a
-plan9/lib/libflate.a
-plan9/lib/libframe.a
-plan9/lib/libgeometry.a
-plan9/lib/libhtml.a
-plan9/lib/libhttpd.a
-plan9/lib/libip.a
-plan9/lib/libmach.a
-plan9/lib/libmemdraw.a
-plan9/lib/libmemlayer.a
-plan9/lib/libmp.a
-plan9/lib/libmux.a
-plan9/lib/libndb.a
-plan9/lib/libplumb.a
-plan9/lib/libregexp9.a
-plan9/lib/libsec.a
-plan9/lib/libsunrpc.a
-plan9/lib/libthread.a
-plan9/lib/libventi.a
-plan9/lib/linux-isnptl.c
+@static-lib plan9/lib/lib9.a
+@static-lib plan9/lib/lib9p.a
+@static-lib plan9/lib/lib9pclient.a
+@static-lib plan9/lib/libString.a
+@static-lib plan9/lib/libacme.a
+@static-lib plan9/lib/libauth.a
+@static-lib plan9/lib/libauthsrv.a
+@static-lib plan9/lib/libavl.a
+@static-lib plan9/lib/libbin.a
+@static-lib plan9/lib/libbio.a
+@static-lib plan9/lib/libcomplete.a
+@static-lib plan9/lib/libdisk.a
+@static-lib plan9/lib/libdiskfs.a
+@static-lib plan9/lib/libdraw.a
+@static-lib plan9/lib/libflate.a
+@static-lib plan9/lib/libframe.a
+@static-lib plan9/lib/libgeometry.a
+@static-lib plan9/lib/libhtml.a
+@static-lib plan9/lib/libhttpd.a
+@static-lib plan9/lib/libip.a
+@static-lib plan9/lib/libmach.a
+@static-lib plan9/lib/libmemdraw.a
+@static-lib plan9/lib/libmemlayer.a
+@static-lib plan9/lib/libmp.a
+@static-lib plan9/lib/libmux.a
+@static-lib plan9/lib/libndb.a
+@static-lib plan9/lib/libplumb.a
+@static-lib plan9/lib/libregexp9.a
+@static-lib plan9/lib/libsec.a
+@static-lib plan9/lib/libsunrpc.a
+@static-lib plan9/lib/libthread.a
+@static-lib plan9/lib/libventi.a
 plan9/lib/mimetype
 plan9/lib/moveplan9.files
 plan9/lib/moveplan9.sh
@@ -4298,6 +4298,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/col.1
 @man plan9/man/man1/colors.1
 @man plan9/man/man1/comm.1
+@man plan9/man/man1/compress.1
 @man plan9/man/man1/core.1
 @man plan9/man/man1/crop.1
 @man plan9/man/man1/date.1
@@ -4376,6 +4377,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/sftpcache.1
 @man plan9/man/man1/sleep.1
 @man plan9/man/man1/snarfer.1
+@man plan9/man/man1/soelim.1
 @man plan9/man/man1/sort.1
 @man plan9/man/man1/spell.1
 @man plan9/man/man1/split.1
@@ -4405,6 +4407,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/wc.1
 @man plan9/man/man1/web.1
 @man plan9/man/man1/wintext.1
+@man plan9/man/man1/winwatch.1
 @man plan9/man/man1/xd.1
 @man plan9/man/man1/yacc.1
 @man plan9/man/man1/yesterday.1
@@ -5130,20 +5133,9 @@ plan9/proto/allproto
 plan9/rcmain
 plan9/sky/
 plan9/sky/README
-plan9/sky/abell.scat
-plan9/sky/bayer.scat
-plan9/sky/con.scat
-plan9/sky/conindex.scat
 plan9/sky/constelnames
 plan9/sky/estartab
 plan9/sky/here.sample
-plan9/sky/mindex.scat
-plan9/sky/name.scat
-plan9/sky/ngc2000.scat
-plan9/sky/ngc2000type.scat
-plan9/sky/patch.scat
-plan9/sky/patchindex.scat
-plan9/sky/sao.scat
 plan9/src/
 plan9/src/cmd/
 plan9/src/cmd/9660/
@@ -5190,6 +5182,7 @@ plan9/src/cmd/9p.c
 plan9/src/cmd/9pserve.c
 plan9/src/cmd/9term/
 plan9/src/cmd/9term/9term.c
+plan9/src/cmd/9term/AIX.c
 plan9/src/cmd/9term/Darwin.c
 plan9/src/cmd/9term/DragonFly.c
 plan9/src/cmd/9term/FreeBSD.c
@@ -5379,6 +5372,7 @@ plan9/src/cmd/auth/ssh-agent.c
 plan9/src/cmd/auth/userpasswd.c
 plan9/src/cmd/auxclog.c
 plan9/src/cmd/auxstats/
+plan9/src/cmd/auxstats/AIX.c
 plan9/src/cmd/auxstats/Darwin.c
 plan9/src/cmd/auxstats/DragonFly.c
 plan9/src/cmd/auxstats/FreeBSD.c
@@ -5457,6 +5451,9 @@ plan9/src/cmd/cleanname.c
 plan9/src/cmd/cmp.c
 plan9/src/cmd/col.c
 plan9/src/cmd/comm.c
+plan9/src/cmd/compress/
+plan9/src/cmd/compress/compress.c
+plan9/src/cmd/compress/mkfile
 plan9/src/cmd/core.c
 plan9/src/cmd/date.c
 plan9/src/cmd/db/
@@ -5481,28 +5478,20 @@ plan9/src/cmd/delatex.lx
 plan9/src/cmd/deroff.c
 plan9/src/cmd/devdraw/
 plan9/src/cmd/devdraw/bigarrow.h
-plan9/src/cmd/devdraw/cocoa-screen-metal.m
-plan9/src/cmd/devdraw/cocoa-screen.h
-plan9/src/cmd/devdraw/cocoa-screen.m
-plan9/src/cmd/devdraw/cocoa-srv.c
-plan9/src/cmd/devdraw/cocoa-thread.c
-plan9/src/cmd/devdraw/cocoa-thread.h
 plan9/src/cmd/devdraw/devdraw.c
 plan9/src/cmd/devdraw/devdraw.h
 plan9/src/cmd/devdraw/drawclient.c
 plan9/src/cmd/devdraw/glendapng.h
 plan9/src/cmd/devdraw/latin1.c
-plan9/src/cmd/devdraw/macargv.c
+plan9/src/cmd/devdraw/mac-draw.c
+plan9/src/cmd/devdraw/mac-screen.m
 plan9/src/cmd/devdraw/macargv.m
 plan9/src/cmd/devdraw/mkfile
 plan9/src/cmd/devdraw/mklatinkbd.c
 plan9/src/cmd/devdraw/mkwsysrules.sh
 plan9/src/cmd/devdraw/mouseswap.c
 plan9/src/cmd/devdraw/nowsys.c
-@bin plan9/src/cmd/devdraw/o.devdraw
-plan9/src/cmd/devdraw/osx-draw.c
-plan9/src/cmd/devdraw/osx-keycodes.h
-plan9/src/cmd/devdraw/snarf.c
+plan9/src/cmd/devdraw/srv.c
 plan9/src/cmd/devdraw/winsize.c
 plan9/src/cmd/devdraw/x11-alloc.c
 plan9/src/cmd/devdraw/x11-cload.c
@@ -5510,16 +5499,13 @@ plan9/src/cmd/devdraw/x11-draw.c
 plan9/src/cmd/devdraw/x11-fill.c
 plan9/src/cmd/devdraw/x11-get.c
 plan9/src/cmd/devdraw/x11-inc.h
-plan9/src/cmd/devdraw/x11-init.c
-plan9/src/cmd/devdraw/x11-itrans.c
 plan9/src/cmd/devdraw/x11-keysym2ucs.c
 plan9/src/cmd/devdraw/x11-keysym2ucs.h
 plan9/src/cmd/devdraw/x11-load.c
 plan9/src/cmd/devdraw/x11-memdraw.h
 plan9/src/cmd/devdraw/x11-pixelbits.c
-plan9/src/cmd/devdraw/x11-srv.c
+plan9/src/cmd/devdraw/x11-screen.c
 plan9/src/cmd/devdraw/x11-unload.c
-plan9/src/cmd/devdraw/x11-wsys.c
 plan9/src/cmd/dformat
 plan9/src/cmd/dial.c
 plan9/src/cmd/dict/
@@ -5563,6 +5549,7 @@ plan9/src/cmd/disk/mkext.c
 plan9/src/cmd/disk/mkfile
 plan9/src/cmd/disk/mkfs.c
 plan9/src/cmd/draw/
+plan9/src/cmd/draw/clock.c
 plan9/src/cmd/draw/cmapcube.c
 plan9/src/cmd/draw/colors.c
 plan9/src/cmd/draw/crop.c
@@ -5619,11 +5606,10 @@ plan9/src/cmd/fmt.c
 plan9/src/cmd/fontsrv/
 plan9/src/cmd/fontsrv/a.h
 plan9/src/cmd/fontsrv/freetyperules.sh
+plan9/src/cmd/fontsrv/mac.c
 plan9/src/cmd/fontsrv/main.c
 plan9/src/cmd/fontsrv/mkfile
 plan9/src/cmd/fontsrv/nowsys.c
-plan9/src/cmd/fontsrv/osx-cocoa.c
-plan9/src/cmd/fontsrv/osx.c
 plan9/src/cmd/fontsrv/pjw.c
 plan9/src/cmd/fontsrv/showpjw.c
 plan9/src/cmd/fontsrv/x11.c
@@ -6241,6 +6227,7 @@ plan9/src/cmd/proof/proof.h
 plan9/src/cmd/proof/screen.c
 plan9/src/cmd/ramfs.c
 plan9/src/cmd/rc/
+plan9/src/cmd/rc/checkparse
 plan9/src/cmd/rc/code.c
 plan9/src/cmd/rc/exec.c
 plan9/src/cmd/rc/exec.h
@@ -6256,6 +6243,7 @@ plan9/src/cmd/rc/io.c
 plan9/src/cmd/rc/io.h
 plan9/src/cmd/rc/lex.c
 plan9/src/cmd/rc/mkfile
+plan9/src/cmd/rc/parse.c
 plan9/src/cmd/rc/pcmd.c
 plan9/src/cmd/rc/pfnc.c
 plan9/src/cmd/rc/plan9ish.c
@@ -6263,6 +6251,7 @@ plan9/src/cmd/rc/rc.h
 plan9/src/cmd/rc/simple.c
 plan9/src/cmd/rc/subr.c
 plan9/src/cmd/rc/syn.y
+plan9/src/cmd/rc/test.rc
 plan9/src/cmd/rc/trap.c
 plan9/src/cmd/rc/tree.c
 plan9/src/cmd/rc/unixcrap.c
@@ -6299,6 +6288,7 @@ plan9/src/cmd/rio/showevent/ShowEvent.man
 plan9/src/cmd/rio/showevent/part01
 plan9/src/cmd/rio/showevent/patchlevel.h
 plan9/src/cmd/rio/showevent/sample.c
+plan9/src/cmd/rio/winwatch.c
 plan9/src/cmd/rio/xevents.c
 plan9/src/cmd/rio/xshove.c
 plan9/src/cmd/rm.c
@@ -6390,10 +6380,9 @@ plan9/src/cmd/smugfs/openssl.c
 plan9/src/cmd/smugfs/tcp.c
 plan9/src/cmd/smugfs/util.c
 plan9/src/cmd/snarfer/
+plan9/src/cmd/snarfer/mac-snarfer.c
 plan9/src/cmd/snarfer/mkfile
 plan9/src/cmd/snarfer/nowsys-snarfer.c
-plan9/src/cmd/snarfer/osx-cocoa-snarfer.c
-plan9/src/cmd/snarfer/osx-snarfer.c
 plan9/src/cmd/snarfer/snarfer.c
 plan9/src/cmd/snarfer/x11-snarfer.c
 plan9/src/cmd/sort.c
@@ -6754,6 +6743,7 @@ plan9/src/cmd/vbackup/diskcat.c
 plan9/src/cmd/vbackup/diskftp.c
 plan9/src/cmd/vbackup/disknfs.c
 plan9/src/cmd/vbackup/mkfile
+plan9/src/cmd/vbackup/mount-AIX.c
 plan9/src/cmd/vbackup/mount-BSD.c
 plan9/src/cmd/vbackup/mount-Darwin.c
 plan9/src/cmd/vbackup/mount-DragonFly.c
@@ -6877,7 +6867,6 @@ plan9/src/lib9/LICENSE
 plan9/src/lib9/_exits.c
 plan9/src/lib9/_p9dialparse.c
 plan9/src/lib9/_p9dir.c
-plan9/src/lib9/_p9translate.c
 plan9/src/lib9/announce.c
 plan9/src/lib9/argv0.c
 plan9/src/lib9/atexit.c
@@ -6894,7 +6883,6 @@ plan9/src/lib9/convD2M.c
 plan9/src/lib9/convM2D.c
 plan9/src/lib9/convM2S.c
 plan9/src/lib9/convS2M.c
-plan9/src/lib9/create.c
 plan9/src/lib9/crypt.c
 plan9/src/lib9/ctime.c
 plan9/src/lib9/debugmalloc.c
@@ -6902,7 +6890,6 @@ plan9/src/lib9/dial.c
 plan9/src/lib9/dirfstat.c
 plan9/src/lib9/dirfwstat.c
 plan9/src/lib9/dirmodefmt.c
-plan9/src/lib9/dirread.c
 plan9/src/lib9/dirstat.c
 plan9/src/lib9/dirwstat.c
 plan9/src/lib9/dup.c
@@ -6964,14 +6951,9 @@ plan9/src/lib9/fmt/vsnprint.c
 plan9/src/lib9/fmtlock2.c
 plan9/src/lib9/fork.c
 plan9/src/lib9/frand.c
+plan9/src/lib9/frexp.c
 plan9/src/lib9/get9root.c
-plan9/src/lib9/getcallerpc-386.c
-plan9/src/lib9/getcallerpc-arm.c
-plan9/src/lib9/getcallerpc-arm64.c
-plan9/src/lib9/getcallerpc-mips.c
-plan9/src/lib9/getcallerpc-power.c
-plan9/src/lib9/getcallerpc-sun4u.s
-plan9/src/lib9/getcallerpc-x86_64.c
+plan9/src/lib9/getcallerpc.c
 plan9/src/lib9/getenv.c
 plan9/src/lib9/getfields.c
 plan9/src/lib9/getnetconn.c
@@ -7011,7 +6993,6 @@ plan9/src/lib9/readcons.c
 plan9/src/lib9/readn.c
 plan9/src/lib9/rfork.c
 plan9/src/lib9/searchpath.c
-plan9/src/lib9/seek.c
 plan9/src/lib9/sendfd.c
 plan9/src/lib9/sleep.c
 plan9/src/lib9/strdup.c
@@ -7359,6 +7340,7 @@ plan9/src/libhttpd/unallowed.c
 plan9/src/libhttpd/urlfmt.c
 plan9/src/libhttpd/urlunesc.c
 plan9/src/libip/
+plan9/src/libip/AIX.c
 plan9/src/libip/BSD.c
 plan9/src/libip/Darwin.c
 plan9/src/libip/DragonFly.c
@@ -7384,6 +7366,7 @@ plan9/src/libip/ptclbsum.c
 plan9/src/libip/testreadipifc.c
 plan9/src/libip/udp.c
 plan9/src/libmach/
+plan9/src/libmach/AIX.c
 plan9/src/libmach/Darwin.c
 plan9/src/libmach/DragonFly.c
 plan9/src/libmach/FreeBSD.c
@@ -7725,38 +7708,19 @@ plan9/src/libsunrpc/server.c
 plan9/src/libsunrpc/suncall.c
 plan9/src/libsunrpc/udp.c
 plan9/src/libthread/
+plan9/src/libthread/386-ucontext.c
 plan9/src/libthread/386-ucontext.h
-plan9/src/libthread/BSD.c
 plan9/src/libthread/COPYING.SPARC64-CONTEXT
 plan9/src/libthread/COPYRIGHT
-plan9/src/libthread/Darwin-386-asm.s
-plan9/src/libthread/Darwin-386.c
-plan9/src/libthread/Darwin-power-asm.s
-plan9/src/libthread/Darwin-power.c
-plan9/src/libthread/Darwin-x86_64-asm.s
-plan9/src/libthread/Darwin-x86_64-swapcontext.c
-plan9/src/libthread/FreeBSD-386-asm.s
-plan9/src/libthread/FreeBSD.c
-plan9/src/libthread/Linux-386-asm.s
 plan9/src/libthread/Linux-arm-asm.s
-plan9/src/libthread/Linux-arm-context.s
-plan9/src/libthread/Linux-arm-swapcontext.c
-plan9/src/libthread/Linux-power-asm.s
-plan9/src/libthread/Linux-sparc64-asm.s
 plan9/src/libthread/Linux-sparc64-context.S
-plan9/src/libthread/Linux-sparc64-swapcontext.c
-plan9/src/libthread/Linux.c
 plan9/src/libthread/NetBSD-386-asm.s
 plan9/src/libthread/NetBSD-power-asm.s
 plan9/src/libthread/NetBSD.c
 plan9/src/libthread/OpenBSD-386-asm.S
-plan9/src/libthread/OpenBSD-386.c
 plan9/src/libthread/OpenBSD-power-asm.S
-plan9/src/libthread/OpenBSD-power.c
 plan9/src/libthread/OpenBSD-x86_64-asm.S
-plan9/src/libthread/OpenBSD-x86_64.c
-plan9/src/libthread/OpenBSD.c
-plan9/src/libthread/README.Linux
+plan9/src/libthread/arm-ucontext.c
 plan9/src/libthread/channel.c
 plan9/src/libthread/daemonize.c
 plan9/src/libthread/exec.c
@@ -7764,10 +7728,13 @@ plan9/src/libthread/ioproc.c
 plan9/src/libthread/ioproc.h
 plan9/src/libthread/iorw.c
 plan9/src/libthread/mkfile
+plan9/src/libthread/power-ucontext.c
 plan9/src/libthread/power-ucontext.h
 plan9/src/libthread/pthread.c
 plan9/src/libthread/ref.c
-plan9/src/libthread/sparc-ucontext.h
+plan9/src/libthread/sparc64-ucontext.c
+plan9/src/libthread/stkmalloc.c
+plan9/src/libthread/stkmmap.c
 plan9/src/libthread/sysofiles.sh
 plan9/src/libthread/test/
 plan9/src/libthread/test/mkfile
@@ -7783,6 +7750,7 @@ plan9/src/libthread/test/tspawnloop.c
 plan9/src/libthread/thread.c
 plan9/src/libthread/threadimpl.h
 plan9/src/libthread/wait.c
+plan9/src/libthread/x86_64-ucontext.c
 plan9/src/libthread/x86_64-ucontext.h
 plan9/src/libventi/
 plan9/src/libventi/cache.acid
@@ -7823,6 +7791,7 @@ plan9/src/make2mk
 plan9/src/mk2make
 plan9/src/mkcommon
 plan9/src/mkdirs
+plan9/src/mkenv
 plan9/src/mkfile
 plan9/src/mkhdr
 plan9/src/mklib

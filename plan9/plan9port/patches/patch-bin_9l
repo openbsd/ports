@@ -1,15 +1,13 @@
-$OpenBSD: patch-bin_9l,v 1.1 2017/03/01 00:59:59 gsoares Exp $
---- bin/9l.orig	Wed Nov  2 20:17:40 2016
-+++ bin/9l	Tue Feb 28 17:32:32 2017
-@@ -11,6 +11,11 @@ nmflags=""
- extralibs="-lm"
+$OpenBSD: patch-bin_9l,v 1.2 2020/06/21 20:37:20 gsoares Exp $
+Index: bin/9l
+--- bin/9l.orig
++++ bin/9l
+@@ -12,7 +12,7 @@ extralibs="-lm"
  tag="${SYSNAME:-`uname`}-${OBJTYPE:-`uname -m`}"
  case "$tag" in
-+*OpenBSD*)
-+	ld=${CC9:-${CC}}
-+	userpath=true
-+	extralibs="$extralibs -lutil"
-+	;;
- *FreeBSD*)
- 	ld=${CC9:-gcc}
+ *DragonFly*|*BSD*)
+-	ld="${CC9:-gcc} $CC9FLAGS"
++	ld="${CC9:-${CC}} $CC9FLAGS"
  	userpath=true
+ 	extralibs="$extralibs -lutil"
+ 	;;
