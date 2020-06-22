@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/06/22 10:25:29 sthen Exp $
 
 COMMENT=		ruby application dependency manager
 
 DISTNAME=		bundler-1.15.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://gembundler.com/
