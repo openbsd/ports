@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portgen,v 1.2 2020/05/15 01:32:48 abieber Exp $
+# $OpenBSD: portgen,v 1.3 2020/06/22 12:51:12 espie Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -29,27 +29,34 @@ BEGIN {
 
 use lib ( "$portdir/infrastructure/lib", "$FindBin::Bin/../lib" );
 
-use OpenBSD::PortGen::Port::CPAN;
-use OpenBSD::PortGen::Port::PyPI;
-use OpenBSD::PortGen::Port::Ruby;
-use OpenBSD::PortGen::Port::Go;
-
 my ( $type, $module ) = @ARGV;
 
-die "usage: portgen type module\n" unless $type and $module;
+my $map = {
+	p5 => 'CPAN',
+	py => 'PyPi',
+	ruby => 'Ruby',
+	go => 'Go',
+};
 
-my $o;
-if ( $type eq 'p5' ) {
-	$o = OpenBSD::PortGen::Port::CPAN->new();
-} elsif ( $type eq 'py' ) {
-	$o = OpenBSD::PortGen::Port::PyPI->new();
-} elsif ( $type eq 'ruby' ) {
-	$o = OpenBSD::PortGen::Port::Ruby->new();
-} elsif ( $type eq 'go' ) {
-	$o = OpenBSD::PortGen::Port::Go->new();
-} else {
-	die "unknown module type\n";
+my $types = join('|', sort keys %$map);
+die "usage: portgen [$types] module\n" unless $type and $module;
+
+sub portgen_class
+{
+	my $type = shift;
+	if (defined $map->{$type}) {
+		my $class = "OpenBSD::PortGen::Port::$map->{$type}";
+		eval "require $class";
+		if ($@) {
+		    	die $@;
+		}
+		return $class;
+	}else {
+		die "unknown module type $type (not in [$types])\n";
+	}
 }
+
+my $o = portgen_class($type)->new;
 
 my @new_ports = $o->port($module);
 say for @new_ports;
