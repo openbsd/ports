@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/04/01 18:18:11 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/22 11:05:37 fcambus Exp $
 @bin bin/newsboat
 @bin bin/podboat
 @man man/man1/newsboat.1
@@ -35,14 +35,17 @@ share/doc/newsboat/contrib/urls-maintenance.sh
 share/doc/newsboat/examples/
 share/doc/newsboat/examples/config
 share/doc/newsboat/examples/example-bookmark-plugin.sh
+share/doc/newsboat/examples/example-exec-script.py
 share/doc/newsboat/faq.html
 share/doc/newsboat/newsboat.html
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/newsboat.svg
 share/locale/ca/LC_MESSAGES/newsboat.mo
 share/locale/de/LC_MESSAGES/newsboat.mo
 share/locale/es/LC_MESSAGES/newsboat.mo
-share/locale/es_ES/
-share/locale/es_ES/LC_MESSAGES/
-share/locale/es_ES/LC_MESSAGES/newsboat.mo
 share/locale/fr/LC_MESSAGES/newsboat.mo
 share/locale/hu/LC_MESSAGES/newsboat.mo
 share/locale/it/LC_MESSAGES/newsboat.mo
@@ -60,3 +63,4 @@ share/locale/zh/
 share/locale/zh/LC_MESSAGES/
 share/locale/zh/LC_MESSAGES/newsboat.mo
 share/locale/zh_TW/LC_MESSAGES/newsboat.mo
+@tag gtk-update-icon-cache %D/share/icons/hicolor
