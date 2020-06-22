@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2020/05/30 10:09:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2020/06/22 14:11:19 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -485,6 +485,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-beta4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0-rc1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
 share/doc/cyrus-imapd/html/imap/download/upgrade.html
 share/doc/cyrus-imapd/html/imap/installing.html
