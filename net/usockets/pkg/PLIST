@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/22 11:38:31 landry Exp $
+include/uSockets/
+include/uSockets/internal/
+include/uSockets/internal/eventing/
+include/uSockets/internal/eventing/epoll_kqueue.h
+include/uSockets/internal/eventing/gcd.h
+include/uSockets/internal/eventing/libuv.h
+include/uSockets/internal/internal.h
+include/uSockets/internal/loop_data.h
+include/uSockets/internal/networking/
+include/uSockets/internal/networking/bsd.h
+include/uSockets/libusockets.h
+@static-lib lib/libusockets.a
+@lib lib/libusockets.so.${LIBusockets_VERSION}
