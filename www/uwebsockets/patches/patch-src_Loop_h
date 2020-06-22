@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Loop_h,v 1.1.1.1 2020/06/22 11:39:24 landry Exp $
+
+uSockets lives separately from uWebSockets
+
+Index: src/Loop.h
+--- src/Loop.h.orig
++++ src/Loop.h
+@@ -21,7 +21,7 @@
+ /* The loop is lazily created per-thread and run with uWS::run() */
+ 
+ #include "LoopData.h"
+-#include <libusockets.h>
++#include <uSockets/libusockets.h>
+ 
+ namespace uWS {
+ struct Loop {
