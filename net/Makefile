@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1209 2020/06/13 16:22:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1210 2020/06/22 11:47:46 landry Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -756,6 +756,7 @@
      SUBDIR += unifi
      SUBDIR += unison
      SUBDIR += unworkable
+     SUBDIR += usockets
      SUBDIR += utox
      SUBDIR += uucp
      SUBDIR += uucpd
