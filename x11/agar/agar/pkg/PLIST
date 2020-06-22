@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/10 09:33:17 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/06/22 09:43:45 cwen Exp $
 bin/agar-au-config
 bin/agar-config
 bin/agar-core-config
@@ -406,22 +406,22 @@ include/agar/agar/vg/vg_text.h
 include/agar/agar/vg/vg_tool.h
 include/agar/agar/vg/vg_tools.h
 include/agar/agar/vg/vg_view.h
-lib/libag_au.a
+@static-lib lib/libag_au.a
 lib/libag_au.la
 @lib lib/libag_au.so.${LIBag_au_VERSION}
-lib/libag_core.a
+@static-lib lib/libag_core.a
 lib/libag_core.la
 @lib lib/libag_core.so.${LIBag_core_VERSION}
-lib/libag_dev.a
+@static-lib lib/libag_dev.a
 lib/libag_dev.la
 @lib lib/libag_dev.so.${LIBag_dev_VERSION}
-lib/libag_gui.a
+@static-lib lib/libag_gui.a
 lib/libag_gui.la
 @lib lib/libag_gui.so.${LIBag_gui_VERSION}
-lib/libag_math.a
+@static-lib lib/libag_math.a
 lib/libag_math.la
 @lib lib/libag_math.so.${LIBag_math_VERSION}
-lib/libag_vg.a
+@static-lib lib/libag_vg.a
 lib/libag_vg.la
 @lib lib/libag_vg.so.${LIBag_vg_VERSION}
 @man man/man3/AG_Anim.3

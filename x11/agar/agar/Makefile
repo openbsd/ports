@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/22 09:43:45 cwen Exp $
 
 COMMENT =		cross-platform widget toolkit
 
 PKGNAME =		agar-$V
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  ag_au                     0.0 # 5.0
 SHARED_LIBS +=  ag_core                   0.0 # 5.0
