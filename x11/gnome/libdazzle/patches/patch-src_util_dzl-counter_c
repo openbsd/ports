@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_util_dzl-counter_c,v 1.1 2020/06/22 09:00:00 cwen Exp $
+
+Don't use unsupported 64-bit __sync primitives on powerpc, from:
+https://gitlab.gnome.org/GNOME/libdazzle/-/merge_requests/44
+
+Index: src/util/dzl-counter.c
+--- src/util/dzl-counter.c.orig
++++ src/util/dzl-counter.c
+@@ -52,7 +52,11 @@ G_DEFINE_BOXED_TYPE (DzlCounterArena, dzl_counter_aren
+ #define CELLS_PER_GROUP(ncpu)                             \
+   (((sizeof (CounterInfo) * COUNTERS_PER_GROUP) +         \
+     (sizeof(DzlCounterValue) * (ncpu))) / DATA_CELL_SIZE)
++#ifdef DZL_COUNTER_REQUIRES_ATOMIC
+ #define DZL_MEMORY_BARRIER __sync_synchronize()
++#else
++#define DZL_MEMORY_BARRIER 0
++#endif
+ 
+ typedef struct
+ {

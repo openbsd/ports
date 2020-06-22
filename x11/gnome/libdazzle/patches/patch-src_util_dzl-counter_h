@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_util_dzl-counter_h,v 1.1 2020/06/22 09:00:00 cwen Exp $
+
+Don't use unsupported 64-bit __sync primitives on powerpc, from:
+https://gitlab.gnome.org/GNOME/libdazzle/-/merge_requests/44
+
+Index: src/util/dzl-counter.h
+--- src/util/dzl-counter.h.orig
++++ src/util/dzl-counter.h
+@@ -163,6 +163,9 @@ G_BEGIN_DECLS
+ # define dzl_get_current_cpu() dzl_get_current_cpu_rdtscp()
+ #elif defined(__linux__)
+ # define dzl_get_current_cpu() dzl_get_current_cpu_call()
++#elif defined(__powerpc__) && !defined(__powerpc64__)
++# define dzl_get_current_cpu() 0
++# undef DZL_COUNTER_REQUIRES_ATOMIC
+ #else
+ # define dzl_get_current_cpu() 0
+ # define DZL_COUNTER_REQUIRES_ATOMIC 1
