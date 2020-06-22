@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/01/13 19:55:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/22 04:13:03 rsadowski Exp $
 @conflict bitcoin-*
 @newgroup _litecoind:832
 @newuser _litecoind:832:832:daemon:Litecoin Account:/var/empty:/sbin/nologin
@@ -14,6 +14,7 @@
 @bin bin/bench_litecoin
 @bin bin/litecoin-cli
 @bin bin/litecoin-tx
+@bin bin/litecoin-wallet
 @bin bin/litecoind
 @bin bin/test_litecoin
 include/bitcoinconsensus.h
@@ -34,6 +35,7 @@ lib/pkgconfig/libsecp256k1.pc
 lib/pkgconfig/libunivalue.pc
 @man man/man1/litecoin-cli.1
 @man man/man1/litecoin-tx.1
+@man man/man1/litecoin-wallet.1
 @man man/man1/litecoind.1
 share/bash-completion/completions/litecoin/
 share/bash-completion/completions/litecoin/bitcoin-cli.bash-completion
