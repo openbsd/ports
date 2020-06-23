@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/03/12 19:40:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/06/23 07:34:17 jasper Exp $
 bin/gupnp-binding-tool-1.2
 include/gupnp-1.2/
 include/gupnp-1.2/libgupnp/
@@ -25,6 +25,7 @@ include/gupnp-1.2/libgupnp/gupnp.h
 lib/girepository-1.0/GUPnP-1.2.typelib
 @lib lib/libgupnp-1.2.so.${LIBgupnp-1.2_VERSION}
 lib/pkgconfig/gupnp-1.2.pc
+@man man/man1/gupnp-binding-tool-1.2.1
 share/gir-1.0/GUPnP-1.2.gir
 share/vala/vapi/gupnp-1.2.deps
 share/vala/vapi/gupnp-1.2.vapi
