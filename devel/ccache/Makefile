@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2020/04/04 20:36:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2020/06/23 20:55:24 sthen Exp $
 
 COMMENT =	compiler cache
 
-V =		3.7.9
+V =		3.7.10
 DISTNAME =	ccache-$V
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -34,6 +33,6 @@ TEST_DEPENDS =		shells/bash \
 			sysutils/coreutils
 
 pre-test:
-	ln -s ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
+	ln -fs ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
 
 .include <bsd.port.mk>
