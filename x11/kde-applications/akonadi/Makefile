@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 05:29:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/23 06:00:27 rsadowski Exp $
 
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
@@ -36,7 +36,7 @@ BUILD_DEPENDS =		devel/boost \
 
 # We build support for MySQL and PostgreSQL but SQLite
 # is our default now.
-BUILD_DEPENDS =		databases/mariadb,-server \
+BUILD_DEPENDS +=	databases/mariadb,-server \
 			databases/postgresql,-server \
 			x11/qt5/qtbase,-mysql \
 			x11/qt5/qtbase,-psql
