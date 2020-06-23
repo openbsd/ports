@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_server_ua_services_attribute_c,v 1.1 2020/06/23 14:55:15 bluhm Exp $
+
+https://github.com/open62541/open62541/commit/ba14327eac5489f95864d6208bc46516650db537
+
+Index: src/server/ua_services_attribute.c
+--- src/server/ua_services_attribute.c.orig
++++ src/server/ua_services_attribute.c
+@@ -669,6 +669,8 @@ compatibleValueRankValue(UA_Int32 valueRank, const UA_
+         return true;
+     case UA_VALUERANK_SCALAR: /* The value is a scalar */
+         return (arrayDims == 0);
++    case UA_VALUERANK_ONE_OR_MORE_DIMENSIONS:
++        return (arrayDims >= 1);
+     default:
+         break;
+     }

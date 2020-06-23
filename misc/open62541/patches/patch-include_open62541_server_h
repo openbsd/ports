@@ -1,0 +1,20 @@
+$OpenBSD: patch-include_open62541_server_h,v 1.1 2020/06/23 14:55:15 bluhm Exp $
+
+https://github.com/open62541/open62541/commit/7453262ccf8b26e622c4afa6ab5facfc42962663
+
+Index: include/open62541/server.h
+--- include/open62541/server.h.orig
++++ include/open62541/server.h
+@@ -713,7 +713,11 @@ typedef struct {
+                                          const UA_NodeId *targetParentNodeId,
+                                          const UA_NodeId *referenceTypeId,
+                                          UA_NodeId *targetNodeId);
+-    } UA_GlobalNodeLifecycle;
++} UA_GlobalNodeLifecycle;
++
++void UA_EXPORT
++UA_Server_setAdminSessionContext(UA_Server *server,
++                                 void *context);
+ 
+ typedef struct {
+     /* Can be NULL. May replace the nodeContext */

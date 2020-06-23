@@ -1,11 +1,43 @@
-$OpenBSD: patch-arch_network_tcp_c,v 1.1 2020/04/01 15:32:44 bluhm Exp $
+$OpenBSD: patch-arch_network_tcp_c,v 1.2 2020/06/23 14:55:15 bluhm Exp $
+
+https://github.com/open62541/open62541/commit/30ac5ddd892e6ce82bef4de7890f06854aca9736
 
 https://github.com/open62541/open62541/commit/f9ceec7be7940495cf2ee091bed1bb5acec74551
 
 Index: arch/network_tcp.c
 --- arch/network_tcp.c.orig
 +++ arch/network_tcp.c
-@@ -775,6 +775,7 @@ UA_ClientConnectionTCP_init(UA_ConnectionConfig config
+@@ -339,11 +339,18 @@ addServerSocket(ServerNetworkLayerTCP *layer, struct a
+ 
+ static UA_StatusCode
+ ServerNetworkLayerTCP_start(UA_ServerNetworkLayer *nl, const UA_String *customHostname) {
+-  UA_initialize_architecture_network();
++    UA_initialize_architecture_network();
+ 
+     ServerNetworkLayerTCP *layer = (ServerNetworkLayerTCP *)nl->handle;
+ 
+     /* Get addrinfo of the server and create server sockets */
++    char hostname[512];
++    if(customHostname->length) {
++        if(customHostname->length >= sizeof(hostname))
++            return UA_STATUSCODE_BADOUTOFMEMORY;
++        memcpy(hostname, customHostname->data, customHostname->length);
++        hostname[customHostname->length] = '\0';
++    }
+     char portno[6];
+     UA_snprintf(portno, 6, "%d", layer->port);
+     struct addrinfo hints, *res;
+@@ -352,7 +359,8 @@ ServerNetworkLayerTCP_start(UA_ServerNetworkLayer *nl,
+     hints.ai_socktype = SOCK_STREAM;
+     hints.ai_flags = AI_PASSIVE;
+     hints.ai_protocol = IPPROTO_TCP;
+-    if(UA_getaddrinfo(NULL, portno, &hints, &res) != 0)
++    if(UA_getaddrinfo(customHostname->length ? hostname : NULL,
++        portno, &hints, &res) != 0)
+         return UA_STATUSCODE_BADINTERNALERROR;
+ 
+     /* There might be serveral addrinfos (for different network cards,
+@@ -775,6 +783,7 @@ UA_ClientConnectionTCP_init(UA_ConnectionConfig config
  
      TCPClientConnection *tcpClientConnection = (TCPClientConnection*) UA_malloc(
                      sizeof(TCPClientConnection));

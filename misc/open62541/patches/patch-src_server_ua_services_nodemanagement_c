@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_server_ua_services_nodemanagement_c,v 1.1 2020/06/23 14:55:15 bluhm Exp $
+
+https://github.com/open62541/open62541/commit/7453262ccf8b26e622c4afa6ab5facfc42962663
+
+Index: src/server/ua_services_nodemanagement.c
+--- src/server/ua_services_nodemanagement.c.orig
++++ src/server/ua_services_nodemanagement.c
+@@ -2095,6 +2095,12 @@ UA_Server_setMethodNode_callback(UA_Server *server,
+ /* Lifecycle Management */
+ /************************/
+ 
++void UA_EXPORT
++UA_Server_setAdminSessionContext(UA_Server *server,
++                                 void *context) {
++    server->adminSession.sessionHandle = context;
++}
++
+ static UA_StatusCode
+ setNodeTypeLifecycle(UA_Server *server, UA_Session *session,
+                      UA_Node* node, UA_NodeTypeLifecycle *lifecycle) {
