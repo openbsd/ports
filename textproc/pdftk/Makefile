@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2020/04/19 15:12:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/06/23 20:55:07 sthen Exp $
 
 COMMENT=	pdf swiss army knife
 
-V=		3.0.10
+V=		3.1.3
 BC=		165
 CL3=		3.10
 DISTNAME=	pdftk-v$V
