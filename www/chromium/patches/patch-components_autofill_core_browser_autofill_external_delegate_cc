@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_autofill_core_browser_autofill_external_delegate_cc,v 1.1 2020/06/23 06:32:53 robert Exp $
+
+Index: components/autofill/core/browser/autofill_external_delegate.cc
+--- components/autofill/core/browser/autofill_external_delegate.cc.orig
++++ components/autofill/core/browser/autofill_external_delegate.cc
+@@ -118,7 +118,7 @@ void AutofillExternalDelegate::OnSuggestionsReturned(
+     // Append the "Hide Suggestions" menu item for only Autofill Address and
+     // Autocomplete popups.
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+   if (base::FeatureList::IsEnabled(
+           features::kAutofillEnableHideSuggestionsUI)) {
+     // If the user has selected a suggestion, it indicates the suggestions are
