@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 18:50:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/24 18:56:34 rsadowski Exp $
 
 COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
+REVISION =	0
 
 SHARED_LIBS +=  KF5MailCommon       0.0 # 5.13.2
 
@@ -28,7 +29,8 @@ MODULES +=	x11/kde-applications \
 		multimedia/phonon
 
 BUILD_DEPENDS =	textproc/libxslt \
-		devel/boost
+		devel/boost \
+		devel/libinotify
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \

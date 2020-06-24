@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/21 18:12:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/24 18:56:34 rsadowski Exp $
 
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Auth
@@ -22,7 +22,8 @@ MODKF5_L10N_CONFLICT = yes
 
 MODULES =	x11/kde-applications
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		devel/libinotify
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \

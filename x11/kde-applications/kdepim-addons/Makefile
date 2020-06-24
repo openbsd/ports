@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/14 04:48:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/24 18:56:34 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  adblocklibprivate                        0.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          0.0 # 5.13.2
@@ -50,7 +51,8 @@ MODULES +=	x11/kde-applications \
 		multimedia/phonon
 
 BUILD_DEPENDS =	textproc/libxslt \
-		devel/boost
+		devel/boost \
+		devel/libinotify
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \

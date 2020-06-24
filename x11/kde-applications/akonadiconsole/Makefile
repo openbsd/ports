@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 19:13:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/24 18:56:34 rsadowski Exp $
 
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  akonadiconsole       0.0 # 5.13.2
 
@@ -27,7 +28,8 @@ MODKDE5_ICON_CACHE = yes
 MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	textproc/libxslt \
-		devel/boost
+		devel/boost \
+		devel/libinotify
 
 LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/kauth \

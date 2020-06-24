@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/21 18:12:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/24 18:56:34 rsadowski Exp $
 
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  pimdataexporterprivate       0.0 # 5.13.2
 
@@ -26,9 +26,10 @@ MODKDE5_TRANSLATIONS = yes
 
 MODULES =	x11/kde-applications
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		devel/libinotify
 
-LIB_DEPENDS +=	devel/kf5/karchive \
+LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcalendarcore \

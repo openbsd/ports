@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 18:32:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/24 18:56:34 rsadowski Exp $
 
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5MessageComposer       0.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageCore           0.0 # 5.13.2
@@ -35,7 +36,8 @@ MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		devel/libinotify
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
