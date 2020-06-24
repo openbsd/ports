@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_StelLogger_cpp,v 1.3 2020/06/24 16:11:52 ajacoutot Exp $
+
+Index: src/StelLogger.cpp
+--- src/StelLogger.cpp.orig
++++ src/StelLogger.cpp
+@@ -112,7 +112,7 @@ void StelLogger::init(const QString& logFilePath)
+ 	lspci.start("lspci -v", QIODevice::ReadOnly);
+ 	lspci.waitForFinished(300);
+ 	const QString pciData(lspci.readAll());
+-	#if (QT_VERSION>=QT_VERSION_CHECK(5, 14, 0))
++	#if (QT_VERSION>=QT_VERSION_CHECK(5, 13, 0))
+ 	QStringList pciLines = pciData.split('\n', Qt::SkipEmptyParts);
+ 	#else
+ 	QStringList pciLines = pciData.split('\n', QString::SkipEmptyParts);
+@@ -237,7 +237,7 @@ void StelLogger::init(const QString& logFilePath)
+ 	dmesg.waitForStarted();
+ 	dmesg.waitForFinished();
+ 	const QString dmesgData(dmesg.readAll());
+-	#if (QT_VERSION>=QT_VERSION_CHECK(5, 14, 0))
++	#if (QT_VERSION>=QT_VERSION_CHECK(5, 13, 0))
+ 	QStringList dmesgLines = dmesgData.split('\n', QString::SkipEmptyParts);
+ 	#else
+ 	QStringList dmesgLines = dmesgData.split('\n', Qt::SkipEmptyParts);

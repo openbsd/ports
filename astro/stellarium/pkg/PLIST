@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2020/04/21 17:53:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2020/06/24 16:11:52 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/applications/stellarium.desktop
@@ -2424,6 +2424,7 @@ share/stellarium/textures/neb_ocl_xlrg.png
 share/stellarium/textures/neb_ocln.png
 share/stellarium/textures/neb_ocln_lrg.png
 share/stellarium/textures/neb_pnb.png
+share/stellarium/textures/neb_reg.png
 share/stellarium/textures/neptune.png
 share/stellarium/textures/neptune_rings.png
 share/stellarium/textures/nereid.png
@@ -3004,7 +3005,7 @@ share/stellarium/webroot/js/api/updatequeue.js
 share/stellarium/webroot/js/api/viewcontrol.js
 share/stellarium/webroot/js/api/viewoptions.js
 share/stellarium/webroot/js/globalize.js
-share/stellarium/webroot/js/jquery-3.4.1.js
+share/stellarium/webroot/js/jquery-3.5.0.js
 share/stellarium/webroot/js/jquery-ui.js
 share/stellarium/webroot/js/jquery.ui.touch-punch.js
 share/stellarium/webroot/js/main.js
