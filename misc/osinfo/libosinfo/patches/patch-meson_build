@@ -1,0 +1,16 @@
+$OpenBSD: patch-meson_build,v 1.1 2020/06/24 17:30:00 cwen Exp $
+
+Fix undefined reference errors to _Unwind_* on clang+ld.bfd archs;
+it may cause runtime issues on lld archs as well.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -219,7 +219,6 @@ libosinfo_check_cflags = [
+     '-Wframe-larger-than=4096',
+     '-Wno-overlength-strings',
+     '--param=ssp-buffer-size=4',
+-    '-fexceptions',
+     '-fasynchronous-unwind-tables',
+     '-fdiagnostics-show-option',
+     '-funit-at-a-time',
