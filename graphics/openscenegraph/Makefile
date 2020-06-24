@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2020/05/14 12:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2020/06/24 22:50:41 cwen Exp $
+
+# No consumers on macppc, saves 17 build hours in bulks
+NOT_FOR_ARCHS =		powerpc
 
 PORTROACH =		limitw:1,even
 
