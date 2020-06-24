@@ -1,2 +1,5 @@
 wireguard-go is a userland implementation of WireGuard in Go; WireGuard
 is simple yet fast modern VPN.
+
+This package is kept for testing purposes, users are encouraged to use
+the in-kernel wg(4) implementation.
