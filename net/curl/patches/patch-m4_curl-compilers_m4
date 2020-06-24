@@ -1,4 +1,4 @@
-$OpenBSD: patch-m4_curl-compilers_m4,v 1.1 2019/02/11 20:34:39 naddy Exp $
+$OpenBSD: patch-m4_curl-compilers_m4,v 1.2 2020/06/24 22:13:11 naddy Exp $
 
 The curl configure script wants to take control of the compiler
 flags for optimization and debugging.  The actual interactions are
@@ -13,7 +13,7 @@ Do not override optimization flags in CFLAGS.
 Index: m4/curl-compilers.m4
 --- m4/curl-compilers.m4.orig
 +++ m4/curl-compilers.m4
-@@ -737,8 +737,8 @@ AC_DEFUN([CURL_SET_COMPILER_DEBUG_OPTS], [
+@@ -745,8 +745,8 @@ AC_DEFUN([CURL_SET_COMPILER_DEBUG_OPTS], [
      tmp_options=""
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"
@@ -24,7 +24,7 @@ Index: m4/curl-compilers.m4
      #
      if test "$want_debug" = "yes"; then
        AC_MSG_CHECKING([if compiler accepts debug enabling options])
-@@ -791,7 +791,7 @@ AC_DEFUN([CURL_SET_COMPILER_OPTIMIZE_OPTS], [
+@@ -799,7 +799,7 @@ AC_DEFUN([CURL_SET_COMPILER_OPTIMIZE_OPTS], [
      tmp_options=""
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"

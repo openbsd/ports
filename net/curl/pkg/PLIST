@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2020/03/09 22:11:29 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.60 2020/06/24 22:13:11 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -193,6 +193,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_IOCTLFUNCTION.3
 @man man/man3/CURLOPT_IPRESOLVE.3
 @man man/man3/CURLOPT_ISSUERCERT.3
+@man man/man3/CURLOPT_ISSUERCERT_BLOB.3
 @man man/man3/CURLOPT_KEEP_SENDING_ON_ERROR.3
 @man man/man3/CURLOPT_KEYPASSWD.3
 @man man/man3/CURLOPT_KRBLEVEL.3
@@ -251,13 +252,17 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_PROXY_CAINFO.3
 @man man/man3/CURLOPT_PROXY_CAPATH.3
 @man man/man3/CURLOPT_PROXY_CRLFILE.3
+@man man/man3/CURLOPT_PROXY_ISSUERCERT.3
+@man man/man3/CURLOPT_PROXY_ISSUERCERT_BLOB.3
 @man man/man3/CURLOPT_PROXY_KEYPASSWD.3
 @man man/man3/CURLOPT_PROXY_PINNEDPUBLICKEY.3
 @man man/man3/CURLOPT_PROXY_SERVICE_NAME.3
 @man man/man3/CURLOPT_PROXY_SSLCERT.3
 @man man/man3/CURLOPT_PROXY_SSLCERTTYPE.3
+@man man/man3/CURLOPT_PROXY_SSLCERT_BLOB.3
 @man man/man3/CURLOPT_PROXY_SSLKEY.3
 @man man/man3/CURLOPT_PROXY_SSLKEYTYPE.3
+@man man/man3/CURLOPT_PROXY_SSLKEY_BLOB.3
 @man man/man3/CURLOPT_PROXY_SSLVERSION.3
 @man man/man3/CURLOPT_PROXY_SSL_CIPHER_LIST.3
 @man man/man3/CURLOPT_PROXY_SSL_OPTIONS.3
@@ -309,10 +314,12 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_SSH_PUBLIC_KEYFILE.3
 @man man/man3/CURLOPT_SSLCERT.3
 @man man/man3/CURLOPT_SSLCERTTYPE.3
+@man man/man3/CURLOPT_SSLCERT_BLOB.3
 @man man/man3/CURLOPT_SSLENGINE.3
 @man man/man3/CURLOPT_SSLENGINE_DEFAULT.3
 @man man/man3/CURLOPT_SSLKEY.3
 @man man/man3/CURLOPT_SSLKEYTYPE.3
+@man man/man3/CURLOPT_SSLKEY_BLOB.3
 @man man/man3/CURLOPT_SSLVERSION.3
 @man man/man3/CURLOPT_SSL_CIPHER_LIST.3
 @man man/man3/CURLOPT_SSL_CTX_DATA.3
