@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/06/10 22:11:49 tb Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/06/24 06:01:51 tb Exp $
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
@@ -83,6 +83,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-extended-master-secret-extension-wi
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-extended-master-secret-extension.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-extensions.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-fallback-scsv.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ffdhe-expected-params.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ffdhe-negotiation.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-fuzzed-MAC.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-fuzzed-ciphertext.${MODPY_PYC_MAGIC_TAG}pyc
@@ -221,6 +222,7 @@ share/tlsfuzzer/scripts/test-extended-master-secret-extension-with-client-cert.p
 share/tlsfuzzer/scripts/test-extended-master-secret-extension.py
 share/tlsfuzzer/scripts/test-extensions.py
 share/tlsfuzzer/scripts/test-fallback-scsv.py
+share/tlsfuzzer/scripts/test-ffdhe-expected-params.py
 share/tlsfuzzer/scripts/test-ffdhe-negotiation.py
 share/tlsfuzzer/scripts/test-fuzzed-MAC.py
 share/tlsfuzzer/scripts/test-fuzzed-ciphertext.py
