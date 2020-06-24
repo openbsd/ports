@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_icewm_adoc,v 1.1 2019/03/14 13:48:23 bcallah Exp $
+$OpenBSD: patch-doc_icewm_adoc,v 1.2 2020/06/24 20:52:49 bket Exp $
 
 Index: doc/icewm.adoc
 --- doc/icewm.adoc.orig
 +++ doc/icewm.adoc
-@@ -395,10 +395,10 @@ $ICEWM_PRIVCFG; $XDG_CONFIG_HOME/icewm; $HOME/.icewm
+@@ -396,10 +396,10 @@ $ICEWM_PRIVCFG; $XDG_CONFIG_HOME/icewm; $HOME/.icewm
  The first of these which is defined and existent is used to search
  for the user's personal customization.
  
@@ -16,7 +16,7 @@ Index: doc/icewm.adoc
  the compiled-in default directory with default files
  
  The directories are searched in the above order, so any file located
-@@ -407,8 +407,8 @@ creating the same directory hierarchy under `$HOME/.ic
+@@ -408,8 +408,8 @@ creating the same directory hierarchy under `$HOME/.ic
  
  To customize icewm yourself, you could create the `$HOME/.icewm`
  directory and copy the files that you wish to modify, like

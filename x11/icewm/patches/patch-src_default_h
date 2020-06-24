@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_default_h,v 1.18 2020/02/01 19:48:20 bket Exp $
+$OpenBSD: patch-src_default_h,v 1.19 2020/06/24 20:52:49 bket Exp $
 Index: src/default.h
 --- src/default.h.orig
 +++ src/default.h
-@@ -38,7 +38,7 @@ XIV(bool, showTaskBar,                          true)
+@@ -37,7 +37,7 @@ XIV(bool, showTaskBar,                          true)
  XIV(bool, taskBarAtTop,                         false)
  XIV(bool, taskBarKeepBelow,                     false)
  XIV(bool, taskBarShowClock,                     true)
@@ -11,7 +11,7 @@ Index: src/default.h
  XIV(bool, taskBarShowApmAuto,                   true)
  XIV(bool, taskBarShowApmTime,                   true)
  XIV(bool, taskBarShowApmGraph,                  true)
-@@ -173,10 +173,10 @@ XIV(int, netWorkAreaBehaviour,                  0)
+@@ -172,10 +172,10 @@ XIV(int, netWorkAreaBehaviour,                  0)
  
  XSV(const char *, acpiIgnoreBatteries,          0)
  XSV(const char *, mailBoxPath,                  0)
@@ -25,7 +25,7 @@ Index: src/default.h
  XSV(const char *, clockCommand,                 "xclock -name icewm -title Clock")
  XSV(const char *, clockClassHint,               "icewm.XClock")
  XSV(const char *, runDlgCommand,                0)
-@@ -205,7 +205,7 @@ XIV(bool, cpuCombine,                           true)
+@@ -204,7 +204,7 @@ XIV(bool, cpuCombine,                           true)
  XSV(const char *, netCommand,                   TERM " -name 'ss' -title 'Socket Statistics' -hold -e sh -c 'which ss > /dev/null && watch -t ss -putswl || netstat -c'")
  XSV(const char *, netClassHint,                 "ss.XTerm")
  #else

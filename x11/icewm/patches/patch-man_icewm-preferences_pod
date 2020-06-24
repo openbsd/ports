@@ -1,9 +1,9 @@
-$OpenBSD: patch-man_icewm-preferences_pod,v 1.5 2020/02/01 19:48:20 bket Exp $
+$OpenBSD: patch-man_icewm-preferences_pod,v 1.6 2020/06/24 20:52:49 bket Exp $
 
 Index: man/icewm-preferences.pod
 --- man/icewm-preferences.pod.orig
 +++ man/icewm-preferences.pod
-@@ -982,7 +982,7 @@ B<WM_CLASS> to allow B<runonce> for B<CPUStatusCommand
+@@ -1008,7 +1008,7 @@ B<WM_CLASS> to allow B<runonce> for B<CPUStatusCommand
  
  Combine all CPUs to one.
  
