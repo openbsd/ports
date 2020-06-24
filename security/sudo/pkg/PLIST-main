@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2020/06/21 12:38:52 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/06/24 15:58:21 millert Exp $
 @pkgpath security/sudo
 @rcscript ${RCDIR}/sudo_logsrvd
 @bin bin/cvtsudoers
@@ -50,13 +50,13 @@ share/doc/sudo/TROUBLESHOOTING
 share/doc/sudo/UPGRADE
 share/examples/sudo/
 share/examples/sudo/sudo.conf
+@sample ${SYSCONFDIR}/sudo.conf
 share/examples/sudo/sudo_logsrvd.conf
+@sample ${SYSCONFDIR}/sudo_logsrvd.conf
 share/examples/sudo/sudoers
 share/examples/sudo/sudoers.OpenBSD
-share/examples/sudo/syslog.conf
 @mode 0440
 @sample ${SYSCONFDIR}/sudoers
 @mode
-@sample ${SYSCONFDIR}/sudo.conf
-@sample ${SYSCONFDIR}/sudo_logsrvd.conf
+share/examples/sudo/syslog.conf
 %%gettext%%
