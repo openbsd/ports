@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/12 21:29:20 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/06/24 18:55:51 bcallah Exp $
 include/ssw-axis-model.h
 include/ssw-sheet-axis.h
 include/ssw-sheet.h
 @info info/spread-sheet-widget.info
-lib/libspread-sheet-widget.a
+@static-lib lib/libspread-sheet-widget.a
 lib/libspread-sheet-widget.la
 @lib lib/libspread-sheet-widget.so.${LIBspread-sheet-widget_VERSION}
 lib/pkgconfig/spread-sheet-widget.pc
