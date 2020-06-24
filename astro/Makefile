@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2019/05/03 16:35:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2020/06/24 19:26:46 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ansiweather
      SUBDIR += celestia
      SUBDIR += dgpsip
      SUBDIR += gcal
+     SUBDIR += gnuastro
      SUBDIR += jday
      SUBDIR += kstars
      SUBDIR += libnova
