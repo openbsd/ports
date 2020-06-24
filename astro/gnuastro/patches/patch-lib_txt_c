@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_txt_c,v 1.1.1.1 2020/06/24 19:26:25 bcallah Exp $
+
+Missing sys/select.h
+
+Index: lib/txt.c
+--- lib/txt.c.orig
++++ lib/txt.c
+@@ -22,6 +22,8 @@ along with Gnuastro. If not, see <http://www.gnu.org/l
+ **********************************************************************/
+ #include <config.h>
+ 
++#include <sys/select.h>
++
+ #include <math.h>
+ #include <ctype.h>
+ #include <stdio.h>

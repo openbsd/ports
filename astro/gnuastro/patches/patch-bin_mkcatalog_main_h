@@ -1,0 +1,15 @@
+$OpenBSD: patch-bin_mkcatalog_main_h,v 1.1.1.1 2020/06/24 19:26:25 bcallah Exp $
+
+Missing pthread.h
+
+Index: bin/mkcatalog/main.h
+--- bin/mkcatalog/main.h.orig
++++ bin/mkcatalog/main.h
+@@ -24,6 +24,7 @@ along with Gnuastro. If not, see <http://www.gnu.org/l
+ #define MAIN_H
+ 
+ /* Include necessary headers */
++#include <pthread.h>
+ #include <gsl/gsl_rng.h>
+ #include <gnuastro/data.h>
+ #include <gnuastro-internal/options.h>

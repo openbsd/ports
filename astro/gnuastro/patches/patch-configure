@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2020/06/24 19:26:25 bcallah Exp $
+
+Remove hardcoded -O3
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -19378,7 +19378,7 @@ fi
+ if test "x$enable_debug" = "xyes"; then :
+   cflags_add="-g -O0"; enable_shared=no
+ else
+-  cflags_add="-O3"
++  cflags_add=""
+ fi
+ CFLAGS="-Wall $cflags_add $CFLAGS"
+ CXXFLAGS="-Wall $cflags_add $CXXFLAGS"
+@@ -27470,7 +27470,7 @@ $as_echo_n "checking for shell to use with libtool... 
+         cprog=libtool_shell_test.c
+         $as_echo "#include <stdio.h>"[]                                 > $cprog
+         $as_echo "int main(void){printf(\"success\\n\"); return 0;}" >> $cprog
+-        ltargs="--quiet --tag=CC --mode=link $CC $cprog -O3 -o $outname"
++        ltargs="--quiet --tag=CC --mode=link $CC $cprog -o $outname"
+ 
+         # Check the shells, starting with known shells and ultimately
+         # trying with 'sh' (can be any shell).

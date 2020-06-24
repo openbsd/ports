@@ -1,0 +1,134 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/24 19:26:25 bcallah Exp $
+@bin bin/astarithmetic
+@bin bin/astbuildprog
+@bin bin/astconvertt
+@bin bin/astconvolve
+@bin bin/astcosmiccal
+@bin bin/astcrop
+@bin bin/astfits
+@bin bin/astmatch
+@bin bin/astmkcatalog
+@bin bin/astmknoise
+@bin bin/astmkprof
+@bin bin/astnoisechisel
+bin/astscript-sort-by-night
+@bin bin/astsegment
+@bin bin/aststatistics
+@bin bin/asttable
+@bin bin/astwarp
+include/gnuastro/
+include/gnuastro/arithmetic.h
+include/gnuastro/array.h
+include/gnuastro/binary.h
+include/gnuastro/blank.h
+include/gnuastro/box.h
+include/gnuastro/config.h
+include/gnuastro/convolve.h
+include/gnuastro/cosmology.h
+include/gnuastro/data.h
+include/gnuastro/dimension.h
+include/gnuastro/eps.h
+include/gnuastro/fits.h
+include/gnuastro/git.h
+include/gnuastro/interpolate.h
+include/gnuastro/jpeg.h
+include/gnuastro/label.h
+include/gnuastro/list.h
+include/gnuastro/match.h
+include/gnuastro/pdf.h
+include/gnuastro/permutation.h
+include/gnuastro/pointer.h
+include/gnuastro/polygon.h
+include/gnuastro/qsort.h
+include/gnuastro/speclines.h
+include/gnuastro/statistics.h
+include/gnuastro/table.h
+include/gnuastro/threads.h
+include/gnuastro/tiff.h
+include/gnuastro/tile.h
+include/gnuastro/txt.h
+include/gnuastro/type.h
+include/gnuastro/units.h
+include/gnuastro/wcs.h
+info/gnuastro-figures/
+info/gnuastro-figures/README
+info/gnuastro-figures/epicycles.eps
+info/gnuastro-figures/epicycles.png
+info/gnuastro-figures/epicycles.txt
+info/gnuastro-figures/flatplane.eps
+info/gnuastro-figures/flatplane.pdf
+info/gnuastro-figures/flatplane.png
+info/gnuastro-figures/flatplane.txt
+info/gnuastro-figures/iandtime.eps
+info/gnuastro-figures/iandtime.pdf
+info/gnuastro-figures/iandtime.png
+info/gnuastro-figures/iandtime.txt
+info/gnuastro-figures/samplingfreq.eps
+info/gnuastro-figures/samplingfreq.pdf
+info/gnuastro-figures/samplingfreq.png
+info/gnuastro-figures/samplingfreq.txt
+info/gnuastro-figures/sphereandplane.eps
+info/gnuastro-figures/sphereandplane.pdf
+info/gnuastro-figures/sphereandplane.png
+info/gnuastro-figures/sphereandplane.txt
+@info info/gnuastro.info
+@static-lib lib/libgnuastro.a
+lib/libgnuastro.la
+@lib lib/libgnuastro.so.${LIBgnuastro_VERSION}
+lib/pkgconfig/gnuastro.pc
+@man man/man1/astarithmetic.1
+@man man/man1/astbuildprog.1
+@man man/man1/astconvertt.1
+@man man/man1/astconvolve.1
+@man man/man1/astcosmiccal.1
+@man man/man1/astcrop.1
+@man man/man1/astfits.1
+@man man/man1/astmatch.1
+@man man/man1/astmkcatalog.1
+@man man/man1/astmknoise.1
+@man man/man1/astmkprof.1
+@man man/man1/astnoisechisel.1
+@man man/man1/astscript-sort-by-night.1
+@man man/man1/astsegment.1
+@man man/man1/aststatistics.1
+@man man/man1/asttable.1
+@man man/man1/astwarp.1
+share/doc/gnuastro/
+share/doc/gnuastro/README
+share/examples/gnuastro/
+share/examples/gnuastro/astarithmetic.conf
+@sample ${SYSCONFDIR}/astarithmetic.conf
+share/examples/gnuastro/astbuildprog.conf
+@sample ${SYSCONFDIR}/astbuildprog.conf
+share/examples/gnuastro/astconvertt.conf
+@sample ${SYSCONFDIR}/astconvertt.conf
+share/examples/gnuastro/astconvolve.conf
+@sample ${SYSCONFDIR}/astconvolve.conf
+share/examples/gnuastro/astcosmiccal.conf
+@sample ${SYSCONFDIR}/astcosmiccal.conf
+share/examples/gnuastro/astcrop.conf
+@sample ${SYSCONFDIR}/astcrop.conf
+share/examples/gnuastro/astfits.conf
+@sample ${SYSCONFDIR}/astfits.conf
+share/examples/gnuastro/astmatch.conf
+@sample ${SYSCONFDIR}/astmatch.conf
+share/examples/gnuastro/astmkcatalog.conf
+@sample ${SYSCONFDIR}/astmkcatalog.conf
+share/examples/gnuastro/astmknoise.conf
+@sample ${SYSCONFDIR}/astmknoise.conf
+share/examples/gnuastro/astmkprof-3d.conf
+@sample ${SYSCONFDIR}/astmkprof-3d.conf
+share/examples/gnuastro/astmkprof.conf
+@sample ${SYSCONFDIR}/astmkprof.conf
+share/examples/gnuastro/astnoisechisel.conf
+@sample ${SYSCONFDIR}/astnoisechisel.conf
+share/examples/gnuastro/astsegment.conf
+@sample ${SYSCONFDIR}/astsegment.conf
+share/examples/gnuastro/aststatistics.conf
+@sample ${SYSCONFDIR}/aststatistics.conf
+share/examples/gnuastro/asttable.conf
+@sample ${SYSCONFDIR}/asttable.conf
+share/examples/gnuastro/astwarp.conf
+@sample ${SYSCONFDIR}/astwarp.conf
+share/examples/gnuastro/gnuastro.conf
+@sample ${SYSCONFDIR}/gnuastro.conf

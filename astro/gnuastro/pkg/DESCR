@@ -1,0 +1,5 @@
+The GNU Astronomy Utilities (Gnuastro) is an official GNU package
+consisting of various programs and library functions for the
+manipulation and analysis of astronomical data. All the programs share
+the same basic command-line user interface for the comfort of both the
+users and developers.
