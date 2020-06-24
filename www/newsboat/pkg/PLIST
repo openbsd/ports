@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/22 11:05:37 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/06/24 17:38:34 fcambus Exp $
 @bin bin/newsboat
 @bin bin/podboat
 @man man/man1/newsboat.1
@@ -38,10 +38,6 @@ share/doc/newsboat/examples/example-bookmark-plugin.sh
 share/doc/newsboat/examples/example-exec-script.py
 share/doc/newsboat/faq.html
 share/doc/newsboat/newsboat.html
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/newsboat.svg
 share/locale/ca/LC_MESSAGES/newsboat.mo
 share/locale/de/LC_MESSAGES/newsboat.mo
