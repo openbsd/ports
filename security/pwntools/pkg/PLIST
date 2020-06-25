@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/13 09:24:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/25 07:10:31 jasper Exp $
 bin/pwn
 lib/python${MODPY_VERSION}/site-packages/CHANGELOG.md
 lib/python${MODPY_VERSION}/site-packages/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/LICENSE-pwntools.txt
 lib/python${MODPY_VERSION}/site-packages/README.md
 lib/python${MODPY_VERSION}/site-packages/TESTING.md
+lib/python${MODPY_VERSION}/site-packages/bar.txt
+lib/python${MODPY_VERSION}/site-packages/foo.txt
 lib/python${MODPY_VERSION}/site-packages/pwn/
 lib/python${MODPY_VERSION}/site-packages/pwn/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwn/${MODPY_PYCACHE}/
@@ -221,6 +223,10 @@ lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/
 lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/fmtstr/
+lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/fmtstr/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/fmtstr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/fmtstr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/relro/
 lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/relro/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/relro/${MODPY_PYCACHE}/
