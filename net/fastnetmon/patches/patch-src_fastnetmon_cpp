@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_fastnetmon_cpp,v 1.4 2020/06/25 07:28:29 jasper Exp $
+
+/usr/include/net/if_arp.h:79:18: error: field has incomplete type 'struct sockaddr' 
+
+Index: src/fastnetmon.cpp
+--- src/fastnetmon.cpp.orig
++++ src/fastnetmon.cpp
+@@ -11,6 +11,7 @@
+ #include <time.h>
+ #include <unistd.h>
+ 
++#include <sys/socket.h>
+ #include <arpa/inet.h>
+ #include <net/if_arp.h> // struct arphdr
+ #include <netinet/if_ether.h>
+@@ -20,7 +21,6 @@
+ #include <netinet/tcp.h>
+ #include <netinet/udp.h>
+ #include <sys/resource.h>
+-#include <sys/socket.h>
+ #include <sys/stat.h>
+ 
+ #include "bgp_flow_spec.h"

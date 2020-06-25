@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_fast_library_h,v 1.1 2020/06/25 07:28:29 jasper Exp $
+
+Revert https://github.com/pavel-odintsov/fastnetmon/commit/87b102d8b004322861e828edbe51bdbca77a1436
+which requires SIOCGIFINDEX (not supported on OpenBSD).
+
+Index: src/fast_library.h
+--- src/fast_library.h.orig
++++ src/fast_library.h
+@@ -131,6 +131,5 @@ std::string serialize_statistic_counters_about_attack(
+ 
+ std::string dns_lookup(std::string domain_name);
+ bool store_data_to_stats_server(unsigned short int graphite_port, std::string graphite_host, std::string buffer_as_string);
+-bool get_interface_number_by_device_name(int socket_fd, std::string interface_name, int& interface_number);
+ 
+ #endif
