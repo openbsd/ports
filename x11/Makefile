@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.659 2020/06/13 16:22:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.660 2020/06/25 15:42:02 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -56,6 +56,7 @@
      SUBDIR += e17
      SUBDIR += echinus
      SUBDIR += ede
+     SUBDIR += elementary
      SUBDIR += emelfm2
      SUBDIR += enlightenment
      SUBDIR += eterm
