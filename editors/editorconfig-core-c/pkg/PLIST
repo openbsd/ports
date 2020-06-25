@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/25 22:44:11 bcallah Exp $
+bin/editorconfig
+@bin bin/editorconfig-0.12.3
+include/editorconfig/
+include/editorconfig/editorconfig.h
+include/editorconfig/editorconfig_handle.h
+lib/cmake/
+lib/cmake/EditorConfig/
+lib/cmake/EditorConfig/EditorConfigConfig.cmake
+lib/cmake/EditorConfig/EditorConfigConfigVersion.cmake
+lib/cmake/EditorConfig/EditorConfigTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/EditorConfig/EditorConfigTargets.cmake
+@lib lib/libeditorconfig.so.${LIBeditorconfig_VERSION}
+@static-lib lib/libeditorconfig_static.a
+lib/pkgconfig/editorconfig.pc
