@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.2 2020/05/17 14:33:04 abieber Exp $
+# $OpenBSD: Go.pm,v 1.3 2020/06/25 13:57:45 abieber Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -91,89 +91,123 @@ sub get_dist_info
 	my ( $self, $module ) = @_;
 
 	my $json = $self->_go_determine_name($module);
-
-	my %mods;
-	for ( $self->_go_mod_graph($json) ) {
-		my ($direct, $ephemeral) = @{$_};
-
-		for my $d ( $direct, $ephemeral ) {
-			next unless $d->{Version};
-			$mods{ $d->{Module} }{ $d->{Version} } ||= $d;
-		}
-	}
-
-	# Filter dependencies to the one with the highest version
-	foreach my $mod ( sort keys %mods ) {
-		# Sort semver numerically then the rest alphanumeric.
-		# This is overkill for sorting, but I already wrote it
-		my @versions =
-		    map { $_->[0] }
-		    sort {
-		        $a->[1] <=> $b->[1]
-		     || $a->[2] <=> $b->[2]
-		     || $a->[3] <=> $b->[3]
-		     || $a->[4] cmp $b->[4]
-		    }
-		    map { $_->[1] =~ s/^v//; $_ }
-		    map { [ $_, split /[\.\+-]/, $_, 4 ] }
-		    keys %{ $mods{$mod} };
-
-		push @{ $json->{Dist} }, $mods{$mod}{ $versions[-1] };
-		push @{ $json->{Mods} }, map { $mods{$mod}{$_} } @versions;
-	}
-
+	my ($dist, $mods) = $self->_go_mod_info($json);
 	$json->{License} = $self->_go_lic_info($module);
+
+	$json->{Dist} = $dist if @$dist > 0;
+	$json->{Mods} = $mods if @$mods > 0;
 
 	return $json;
 }
 
-sub _go_mod_graph
+sub _run
+{
+	my ($self, $cmd, $dir) = @_;
+	my $fh;
+
+	my $pid = open($fh, "-|");
+	if (!defined $pid) {
+		 die "unable to fork";
+	}
+
+	if ($pid == 0) {
+		chdir $dir or die "Unable to chdir '$dir': $!";
+		$ENV{GOPATH} = "$dir/go";
+		$ENV{GO111MODULE} = "on";
+		# Outputs: "dep version"
+		exec ($cmd);
+		die "exec didn't work: $?";
+	}
+
+	my @output = <$fh>;
+	chomp @output;
+	close $fh or die "Unable to close pipe '$cmd': $!";
+	return @output;
+}
+
+sub _go_mod_info
 {
 	my ($self, $json) = @_;
 	my $dir = tempdir(CLEANUP => 0);
 
 	my $mod = $self->get("$json->{Module}/\@v/$json->{Version}.mod");
 	my ($module) = $mod =~ /\bmodule\s+(.*?)\s/;
-	#my ($module) = $mod =~ /\bmodule\s+(.*)\n/;
-	#$module =~ s/\s+$//;
+
 	unless ( $json->{Module} eq $module ) {
 		my $msg = "Module $json->{Module} doesn't match $module";
-		warn "$msg\n";
 		croak $msg;
 	}
 
-	{
-		open my $fh, '>', $dir . "/go.mod" or die $!;
-		print $fh $mod;
-		close $fh;
+	open my $fh, '>', $dir . "/go.mod" or die $!;
+	print $fh $mod;
+	close $fh;
+
+	# Outputs: "dep version"
+	my @raw_deps = $self->_run("go list -m all", $dir);
+	my @deps;
+	my $all_deps = {};
+	foreach my $dep (@raw_deps) {
+		next if $dep eq $json->{Module};
+		if ($dep =~ m/=>/) {
+			foreach my $d (split(/ => /, $dep)) {
+				my $smod = $self->_go_mod_normalize($d);
+				push @deps, $smod unless defined $all_deps->{$smod};
+				$all_deps->{$smod} = 1;
+			}
+		} else {
+			my $nmod = $self->_go_mod_normalize($dep);
+			push @deps, $nmod unless defined $all_deps->{$nmod};
+			$all_deps->{$nmod} = 1;
+		}
 	}
 
-	my $old_cwd = getcwd();
-	chdir $dir or die "Unable to chdir '$dir': $!";
-
+	# Outputs: "dep@version subdep@version"
+	my @raw_mods =  $self->_run("go mod graph", $dir);
 	my @mods;
-	{
-		# Outputs: "direct_dep ephemeral_dep"
-		local $ENV{GOPATH} = "$dir/go";
-		open my $fh, '-|', qw< go mod graph >
-		    or die "Unable to spawn 'go mod path': $!";
-		@mods = readline $fh;
-		close $fh
-		    or die "Error closing pipe to 'go mod path': $!";
+
+	foreach my $mod (@raw_mods) {
+		carp Dumper $mod if ($mod =~ m/markbates/);
+		foreach my $m (split(/ /, $mod)) {
+			$m =~ s/@/ /;
+			$m = $self->_go_mod_normalize($m);
+			if (! defined $all_deps->{$m}) {
+				push @mods, $m unless $m eq $json->{Module};
+				$all_deps->{$m} = 1;
+			}
+		}
 	}
 
-	chdir $old_cwd or die "Unable to chdir '$old_cwd': $!";
+	foreach my $fl ( \@deps, \@mods ) {
+		next unless @$fl > 0; # if there aren't any, don't try
+		my @s = map {
+			my @f = split(/ /, $_);
+			[$f[0], $f[1]];
+		} @$fl;
+		my ($length) = sort { $b <=> $a } map { length $_->[0] } @s;
+		my $n = ( 1 + int $length / 8 );
+		@s = map {
+			my $tabs = "\t" x ( $n - int( length($_->[0]) / 8 ) );
+			"\t$_->[0]$tabs $_->[1]"
+		} @s;
+		@$fl = @s;
+	}
 
-	chomp @mods;
 
-	# parse the graph into pairs of hashrefs
-	return map { [
-	    map {
-	        my ($m, $v) = split /@/;
-	        { Module => $m, Version => $v };
-	    } split /\s/
-	] } grep { $_ } @mods;
+	@deps = sort @deps;
+	@mods = sort @mods;
+
+	return ( \@deps, \@mods );
 }
+
+sub _go_mod_normalize
+{
+	my ( $self, $line) = @_;
+	chomp $line;
+	$line =~ s/\p{Upper}/!\L$&/g;
+	$line =~ s/\s+/ /g;
+	return $line;
+}
+
 
 sub get_ver_info
 {
@@ -236,25 +270,8 @@ sub fill_in_makefile
 		$self->set_pkgname($di->{Name} . "-" . $parts[0]);
 	}
 
-	my @dist = map { [ $_->{Module}, $_->{Version} ] }
-	    @{ $di->{Dist} || [] };
-	my @mods = map { [ $_->{Module}, $_->{Version} ] }
-	    @{ $di->{Mods} };
-
-	# Turn the deps into tab separated columns
-	foreach my $s ( \@dist, \@mods ) {
-		next unless @{$s}; # if there aren't any, don't try
-		my ($length) = sort { $b <=> $a } map { length $_->[0] } @$s;
-		my $n = ( 1 + int $length / 8 );
-		@{$s} = map {
-		    ( my $l = $_->[0] ) =~ s/\p{Upper}/!\L$&/g;
-		    my $tabs = "\t" x ( $n - int( length($l) / 8 ) );
-		    "$l$tabs $_->[1]"
-		 } @{$s};
-	}
-
-	$self->set_other( MODGO_MODULES  => \@dist ) if @dist;
-	$self->set_other( MODGO_MODFILES => \@mods ) if @mods;
+	$self->set_other( MODGO_MODULES  => "\\\n" . join(" \\\n", @{$di->{Dist}})) if $di->{Dist};
+	$self->set_other( MODGO_MODFILES => "\\\n" . join(" \\\n", @{$di->{Mods}})) if $di->{Mods};
 }
 
 sub try_building
