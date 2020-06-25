@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_fastnetmon_cpp,v 1.4 2020/06/25 07:28:29 jasper Exp $
+$OpenBSD: patch-src_fastnetmon_cpp,v 1.5 2020/06/25 07:38:16 jasper Exp $
 
-/usr/include/net/if_arp.h:79:18: error: field has incomplete type 'struct sockaddr' 
+https://github.com/pavel-odintsov/fastnetmon/pull/825
 
 Index: src/fastnetmon.cpp
 --- src/fastnetmon.cpp.orig

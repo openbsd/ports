@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_socks_mosq_c,v 1.5 2020/06/13 08:34:50 jasper Exp $
+$OpenBSD: patch-lib_socks_mosq_c,v 1.6 2020/06/25 07:38:16 jasper Exp $
 
-https://github.com/eclipse/mosquitto/pull/1722
+https://github.com/eclipse/mosquitto/commit/4ef7ea6244ee1704720d0bd696c1c95d2697ede5
 
 Index: lib/socks_mosq.c
 --- lib/socks_mosq.c.orig
