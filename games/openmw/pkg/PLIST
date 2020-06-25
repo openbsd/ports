@@ -1,23 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/11/25 10:21:25 solene Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/06/25 14:18:52 pascal Exp $
 @bin bin/bsatool
 @bin bin/esmtool
+@bin bin/niftest
 @bin bin/openmw
 @bin bin/openmw-cs
 @bin bin/openmw-essimporter
 @bin bin/openmw-iniimporter
 @bin bin/openmw-launcher
 @bin bin/openmw-wizard
-share/applications/openmw-cs.desktop
-share/applications/openmw.desktop
+share/applications/org.openmw.cs.desktop
+share/applications/org.openmw.launcher.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/openmw/
 @sample ${SYSCONFDIR}/openmw/
 share/examples/openmw/gamecontrollerdb.txt
 @sample ${SYSCONFDIR}/openmw/gamecontrollerdb.txt
-share/examples/openmw/gamecontrollerdb_204.txt
-@sample ${SYSCONFDIR}/openmw/gamecontrollerdb_204.txt
-share/examples/openmw/gamecontrollerdb_205.txt
-@sample ${SYSCONFDIR}/openmw/gamecontrollerdb_205.txt
 share/examples/openmw/openmw-cs.cfg
 @sample ${SYSCONFDIR}/openmw/openmw-cs.cfg
 share/examples/openmw/openmw.cfg
@@ -129,12 +126,24 @@ share/openmw/resources/shaders/objects_vertex.glsl
 share/openmw/resources/shaders/parallax.glsl
 share/openmw/resources/shaders/s360_fragment.glsl
 share/openmw/resources/shaders/s360_vertex.glsl
+share/openmw/resources/shaders/shadowcasting_fragment.glsl
+share/openmw/resources/shaders/shadowcasting_vertex.glsl
+share/openmw/resources/shaders/shadows_fragment.glsl
+share/openmw/resources/shaders/shadows_vertex.glsl
 share/openmw/resources/shaders/terrain_fragment.glsl
 share/openmw/resources/shaders/terrain_vertex.glsl
 share/openmw/resources/shaders/water_fragment.glsl
 share/openmw/resources/shaders/water_nm.png
 share/openmw/resources/shaders/water_vertex.glsl
 share/openmw/resources/version
+share/openmw/resources/vfs/
+share/openmw/resources/vfs/textures/
+share/openmw/resources/vfs/textures/omw_menu_scroll_center_h.dds
+share/openmw/resources/vfs/textures/omw_menu_scroll_center_v.dds
+share/openmw/resources/vfs/textures/omw_menu_scroll_down.dds
+share/openmw/resources/vfs/textures/omw_menu_scroll_left.dds
+share/openmw/resources/vfs/textures/omw_menu_scroll_right.dds
+share/openmw/resources/vfs/textures/omw_menu_scroll_up.dds
 share/pixmaps/
 share/pixmaps/openmw-cs.png
 share/pixmaps/openmw.png

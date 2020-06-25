@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2020/05/24 21:11:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2020/06/25 14:18:52 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source implementation of TES III: Morrowind
 
-V =			0.45.0
+V =			0.46.0
 GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 DISTNAME =		openmw-$V
-REVISION =		0
 
 CATEGORIES =		games
 
@@ -22,9 +21,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision GL LinearMath MyGUIEngine
 WANTLIB += OpenThreads Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets
-WANTLIB += SDL2 avcodec avformat avutil boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_system-mt c m openal osg osgDB osgFX
-WANTLIB += osgGA osgParticle osgText osgUtil osgViewer swresample
+WANTLIB += SDL2 avcodec avformat avutil boost_filesystem-mt boost_iostreams-mt
+WANTLIB += boost_program_options-mt boost_system-mt c m openal osg osgDB osgFX
+WANTLIB += osgGA osgParticle osgShadow osgText osgUtil osgViewer swresample
 WANTLIB += swscale unshield
 
 MODULES =		devel/cmake x11/qt5
