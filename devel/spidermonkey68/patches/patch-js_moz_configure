@@ -1,0 +1,31 @@
+$OpenBSD: patch-js_moz_configure,v 1.1 2020/06/25 21:13:17 cwen Exp $
+
+Remove unused LLVM and Rust build dependencies. Since the Javascript engine is
+normally part of Firefox, its build system has dependencies on the LLVM and
+Rust toolchains. This limits the number of architectures which mozjs68 can be
+built on. It turns out, however, that neither LLVM nor Rust are used when
+mozjs68 is being built and these build dependencies are therefore not
+necessary.
+
+This patch removes them and allows mozjs68 to be built on any
+architecture. 
+
+Author: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+
+From: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=959144
+
+Index: js/moz.configure
+--- js/moz.configure.orig
++++ js/moz.configure
+@@ -18,11 +18,6 @@ def building_js(build_project):
+ option(env='JS_STANDALONE', default=building_js,
+        help='Reserved for internal use')
+ 
+-include('../build/moz.configure/rust.configure',
+-        when='--enable-compile-environment')
+-include('../build/moz.configure/bindgen.configure',
+-        when='--enable-compile-environment')
+-
+ @depends('JS_STANDALONE')
+ def js_standalone(value):
+     if value:

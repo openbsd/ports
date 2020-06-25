@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/24 08:57:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/25 21:13:17 cwen Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -20,7 +20,7 @@ V =			${MOZILLA_VERSION}.9.0
 DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		mozjs-68 0.0
 
@@ -54,9 +54,7 @@ LIB_DEPENDS =		devel/nspr \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 AUTOCONF_VERSION=	2.13
-BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
-			devel/llvm \
-			lang/rust
+BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION}
 
 SEPARATE_BUILD =	Yes
 WRKDIST =		${WRKDIR}/firefox-${V}
@@ -77,9 +75,7 @@ CONFIGURE_ARGS = 	--disable-debug \
 			--with-system-zlib \
 			--with-system-icu \
 			--with-system-nspr \
-			--enable-unaligned-private-values \
-			--with-libclang-path=${LOCALBASE}/lib \
-			--with-clang-path=${LOCALBASE}/bin/clang
+			--enable-unaligned-private-values
 
 # Build failure on mips64(,el}. Related bug on Debian:
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=908486
