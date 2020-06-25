@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.6 2020/03/06 04:22:13 bket Exp $
+$OpenBSD: patch-Makefile,v 1.7 2020/06/25 10:38:05 bket Exp $
 
 Don't create symbolic links pointing to the shared lib.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -365,8 +365,6 @@ install: lib pkgconfig xxhsum  ## install libraries, C
+@@ -403,8 +403,6 @@ install: lib pkgconfig xxhsum  ## install libraries, C
  	@$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)
  	@$(INSTALL_DATA) libxxhash.a $(DESTDIR)$(LIBDIR)
  	@$(INSTALL_PROGRAM) $(LIBXXH) $(DESTDIR)$(LIBDIR)

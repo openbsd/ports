@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/06 04:22:13 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/25 10:38:05 bket Exp $
 
 COMMENT =	extremely fast non-cryptographic hash algorithm
 
 GH_ACCOUNT =	Cyan4973
 GH_PROJECT =	xxHash
-GH_TAGNAME =	v0.7.3
+GH_TAGNAME =	v0.7.4
 PKGNAME =	${DISTNAME:L}
 
-SHARED_LIBS =	xxhash 0.1	# 0.7.1
+SHARED_LIBS =	xxhash 0.2	# 0.7.4
 
 CATEGORIES =	sysutils
 
@@ -29,5 +29,9 @@ MAKE_FLAGS =	CC="${CC}" \
 FAKE_FLAGS =	PREFIX=${PREFIX}
 
 USE_GMAKE =	Yes
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+ALL_TARGET =	default
 
 .include <bsd.port.mk>
