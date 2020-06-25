@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2020/05/20 15:54:51 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2020/06/25 23:55:33 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -940,6 +940,11 @@ webapps/docs/api/org/apache/catalina/valves/package-frame.html
 webapps/docs/api/org/apache/catalina/valves/package-summary.html
 webapps/docs/api/org/apache/catalina/valves/package-tree.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.Escape.html
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.LowerCase.html
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.Unescape.html
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.UpperCase.html
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/QuotedStringTokenizer.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/Resolver.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/ResolverImpl.html
@@ -2032,7 +2037,12 @@ webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLUtil.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/Authentication.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/Cipher.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/Encryption.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/EncryptionLevel.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/KeyExchange.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/MessageDigest.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/OpenSSLCipherConfigurationParser.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/Protocol.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/package-tree.html
