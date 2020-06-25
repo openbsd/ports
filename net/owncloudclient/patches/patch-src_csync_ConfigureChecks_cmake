@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_csync_ConfigureChecks_cmake,v 1.1 2020/06/25 18:28:49 kirby Exp $
+
+Index: src/csync/ConfigureChecks.cmake
+--- src/csync/ConfigureChecks.cmake.orig
++++ src/csync/ConfigureChecks.cmake
+@@ -15,7 +15,7 @@ set(BINARYDIR ${CMAKE_CURRENT_BINARY_DIR})
+ set(SOURCEDIR ${CMAKE_CURRENT_SOURCE_DIR})
+ 
+ # HEADER FILES
+-check_include_file(argp.h HAVE_ARGP_H)
++#check_include_file(argp.h HAVE_ARGP_H)
+ 
+ # FUNCTIONS
+ if (NOT LINUX)
