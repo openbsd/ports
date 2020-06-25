@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.33 2020/06/21 20:37:20 gsoares Exp $
+# $OpenBSD: Makefile,v 1.34 2020/06/25 10:23:43 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
+BROKEN-i386 =		various "invalid operand for instruction", OpenBSD-386-asm.S
 BROKEN-powerpc =	threading issues
 
 COMMENT =		Plan 9 from user space
