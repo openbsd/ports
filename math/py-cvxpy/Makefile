@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/26 10:15:05 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/26 12:57:45 pirofti Exp $
 
 COMMENT =		modeling language for convex optimization problems
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.0.25
 DISTNAME =		cvxpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -13,7 +14,9 @@ MAINTAINER =		Paul Irofti <paul@irofti.net>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
+FLAVORS =		python3
+FLAVOR =		python3
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR} \

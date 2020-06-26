@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2020/06/26 10:47:13 pirofti Exp $
+# $OpenBSD: Makefile,v 1.183 2020/06/26 12:57:45 pirofti Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -115,13 +115,13 @@
      SUBDIR += prover9
      SUBDIR += pspp
      SUBDIR += py-Numeric
-     SUBDIR += py-PyWavelets
+     SUBDIR += py-PyWavelets,python3
      SUBDIR += py-affine
      SUBDIR += py-affine,python3
      SUBDIR += py-bottleneck,python3
      SUBDIR += py-cftime
-     SUBDIR += py-cvxopt
-     SUBDIR += py-cvxpy
+     SUBDIR += py-cvxopt,python3
+     SUBDIR += py-cvxpy,python3
      SUBDIR += py-ecos
      SUBDIR += py-ecos,python3
      SUBDIR += py-graphviz
@@ -140,8 +140,8 @@
      SUBDIR += py-pandas,python3
      SUBDIR += py-patsy
      SUBDIR += py-patsy,python3
-     SUBDIR += py-scikit-image
-     SUBDIR += py-scikit-learn
+     SUBDIR += py-scikit-image,python3
+     SUBDIR += py-scikit-learn,python3
      SUBDIR += py-scipy
      SUBDIR += py-scipy,python3
      SUBDIR += py-scs

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/26 10:01:42 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/26 12:57:45 pirofti Exp $
 
 COMMENT =		image processing routines for SciPy
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.16.2
 DISTNAME =		scikit-image-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -13,15 +14,17 @@ MAINTAINER =		Paul Irofti <paul@irofti.net>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
+FLAVORS =		python3
+FLAVOR =		python3
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
-			math/py-networkx \
-			graphics/py-Pillow \
-			graphics/py-imageio \
-			math/py-PyWavelets
+			math/py-networkx${MODPY_FLAVOR} \
+			graphics/py-Pillow${MODPY_FLAVOR} \
+			graphics/py-imageio${MODPY_FLAVOR} \
+			math/py-PyWavelets${MODPY_FLAVOR}
 
 BUILD_DEPENDS =         lang/cython${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR} \
