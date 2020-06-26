@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2020/06/26 09:59:24 pirofti Exp $
+# $OpenBSD: Makefile,v 1.181 2020/06/26 10:19:11 pirofti Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -120,6 +120,10 @@
      SUBDIR += py-affine,python3
      SUBDIR += py-bottleneck,python3
      SUBDIR += py-cftime
+     SUBDIR += py-cvxopt
+     SUBDIR += py-cvxpy
+     SUBDIR += py-ecos
+     SUBDIR += py-ecos,python3
      SUBDIR += py-graphviz
      SUBDIR += py-graphviz,python3
      SUBDIR += py-h5py,python3
@@ -138,6 +142,8 @@
      SUBDIR += py-scikit-learn
      SUBDIR += py-scipy
      SUBDIR += py-scipy,python3
+     SUBDIR += py-scs
+     SUBDIR += py-scs,python3
      SUBDIR += py-pysmt
      SUBDIR += py-pysmt,python3
      SUBDIR += py-snuggs
