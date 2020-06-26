@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_plugins_contrib_dragscroll_dragscrollcfg_h,v 1.1 2020/06/26 09:41:40 cwen Exp $
+
+Fix the build on !x86
+
+Index: src/plugins/contrib/dragscroll/dragscrollcfg.h
+--- src/plugins/contrib/dragscroll/dragscrollcfg.h.orig
++++ src/plugins/contrib/dragscroll/dragscrollcfg.h
+@@ -35,7 +35,9 @@ class cbDragScrollCfg: public cbConfigurationPanel
+         wxString GetBitmapBaseName() const;
+         void OnApply();
+         void OnCancel(){}
++#if defined(LOGGING)
+         virtual void InitDialog(){ asm("int3");} /*trap*/
++#endif
+ 
+         // pointer to owner of the configuration diaglog needed to
+         // complete the OnApply/OnCancel EndModal() logic

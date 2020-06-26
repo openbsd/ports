@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_base_tinyxml_Makefile_in,v 1.4 2018/02/06 15:28:51 sthen Exp $
+$OpenBSD: patch-src_base_tinyxml_Makefile_in,v 1.5 2020/06/26 09:41:40 cwen Exp $
 
 Fix build when tinyxml is installed.
 (tinyxml is bundled within codeblocks, so prefer the bundled includes)
@@ -6,7 +6,7 @@ Fix build when tinyxml is installed.
 Index: src/base/tinyxml/Makefile.in
 --- src/base/tinyxml/Makefile.in.orig
 +++ src/base/tinyxml/Makefile.in
-@@ -416,10 +416,10 @@ top_builddir = @top_builddir@
+@@ -423,10 +423,10 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  zlib_CFLAGS = @zlib_CFLAGS@
  zlib_LIBS = @zlib_LIBS@

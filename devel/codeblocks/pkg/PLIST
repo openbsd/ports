@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/01/02 12:44:06 jca Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/06/26 09:41:40 cwen Exp $
 @bin bin/cb_console_runner
 @bin bin/cb_share_config
 @bin bin/codeblocks
@@ -20,6 +20,7 @@ include/codeblocks/autodetectcompilers.h
 include/codeblocks/backgroundthread.h
 include/codeblocks/base64.h
 include/codeblocks/blockallocated.h
+include/codeblocks/cbart_provider.h
 include/codeblocks/cbauibook.h
 include/codeblocks/cbcolourmanager.h
 include/codeblocks/cbdebugger_interfaces.h
@@ -365,92 +366,93 @@ include/wxsmith/wxwidgets/wxwidgetsres.h
 include/wxsmith/wxwidgets/wxwidgetsresfactory.h
 lib/codeblocks/
 lib/codeblocks/plugins/
-lib/codeblocks/plugins/libAstyle.so
-lib/codeblocks/plugins/libAutoVersioning.so
-lib/codeblocks/plugins/libBrowseTracker.so
-lib/codeblocks/plugins/libCccc.so
-lib/codeblocks/plugins/libCppCheck.so
-lib/codeblocks/plugins/libCscope.so
-lib/codeblocks/plugins/libDoxyBlocks.so
-lib/codeblocks/plugins/libEditorConfig.so
-lib/codeblocks/plugins/libEditorTweaks.so
-lib/codeblocks/plugins/libFileManager.so
-lib/codeblocks/plugins/libHexEditor.so
-lib/codeblocks/plugins/libIncrementalSearch.so
-lib/codeblocks/plugins/libMouseSap.so
-lib/codeblocks/plugins/libNassiShneiderman.so
-lib/codeblocks/plugins/libProfiler.so
-lib/codeblocks/plugins/libProjectOptionsManipulator.so
-lib/codeblocks/plugins/libRegExTestbed.so
-lib/codeblocks/plugins/libReopenEditor.so
-lib/codeblocks/plugins/libSmartIndentCpp.so
-lib/codeblocks/plugins/libSmartIndentFortran.so
-lib/codeblocks/plugins/libSmartIndentHDL.so
-lib/codeblocks/plugins/libSmartIndentLua.so
-lib/codeblocks/plugins/libSmartIndentPascal.so
-lib/codeblocks/plugins/libSmartIndentPython.so
-lib/codeblocks/plugins/libSmartIndentXML.so
-lib/codeblocks/plugins/libSpellChecker.so
-lib/codeblocks/plugins/libSymTab.so
-lib/codeblocks/plugins/libThreadSearch.so
-lib/codeblocks/plugins/libToolsPlus.so
-lib/codeblocks/plugins/libValgrind.so
-lib/codeblocks/plugins/libabbreviations.so
-lib/codeblocks/plugins/libautosave.so
-lib/codeblocks/plugins/libbyogames.so
-lib/codeblocks/plugins/libcb_koders.so
-lib/codeblocks/plugins/libclasswizard.so
-lib/codeblocks/plugins/libcodecompletion.so
-lib/codeblocks/plugins/libcodesnippets.so
-lib/codeblocks/plugins/libcodestat.so
-lib/codeblocks/plugins/libcompiler.so
-lib/codeblocks/plugins/libcopystrings.so
-lib/codeblocks/plugins/libdebugger.so
-lib/codeblocks/plugins/libdefaultmimehandler.so
-lib/codeblocks/plugins/libdragscroll.so
-lib/codeblocks/plugins/libenvvars.so
-lib/codeblocks/plugins/libexporter.so
-lib/codeblocks/plugins/libheaderfixup.so
-lib/codeblocks/plugins/libhelp_plugin.so
-lib/codeblocks/plugins/libkeybinder.so
-lib/codeblocks/plugins/liblib_finder.so
-lib/codeblocks/plugins/liboccurrenceshighlighting.so
-lib/codeblocks/plugins/libopenfileslist.so
-lib/codeblocks/plugins/libprojectsimporter.so
-lib/codeblocks/plugins/libscriptedwizard.so
-lib/codeblocks/plugins/libtodo.so
-lib/codeblocks/plugins/libwxSmithAui.so
-lib/codeblocks/plugins/libwxsmith.so
-lib/codeblocks/plugins/libwxsmithcontribitems.so
+@so lib/codeblocks/plugins/libAstyle.so
+@so lib/codeblocks/plugins/libAutoVersioning.so
+@so lib/codeblocks/plugins/libBrowseTracker.so
+@so lib/codeblocks/plugins/libCccc.so
+@so lib/codeblocks/plugins/libCppCheck.so
+@so lib/codeblocks/plugins/libCscope.so
+@so lib/codeblocks/plugins/libDoxyBlocks.so
+@so lib/codeblocks/plugins/libEditorConfig.so
+@so lib/codeblocks/plugins/libEditorTweaks.so
+@so lib/codeblocks/plugins/libFileManager.so
+@so lib/codeblocks/plugins/libHexEditor.so
+@so lib/codeblocks/plugins/libIncrementalSearch.so
+@so lib/codeblocks/plugins/libMouseSap.so
+@so lib/codeblocks/plugins/libNassiShneiderman.so
+@so lib/codeblocks/plugins/libProfiler.so
+@so lib/codeblocks/plugins/libProjectOptionsManipulator.so
+@so lib/codeblocks/plugins/libRegExTestbed.so
+@so lib/codeblocks/plugins/libReopenEditor.so
+@so lib/codeblocks/plugins/libSmartIndentCpp.so
+@so lib/codeblocks/plugins/libSmartIndentFortran.so
+@so lib/codeblocks/plugins/libSmartIndentHDL.so
+@so lib/codeblocks/plugins/libSmartIndentLua.so
+@so lib/codeblocks/plugins/libSmartIndentPascal.so
+@so lib/codeblocks/plugins/libSmartIndentPython.so
+@so lib/codeblocks/plugins/libSmartIndentXML.so
+@so lib/codeblocks/plugins/libSpellChecker.so
+@so lib/codeblocks/plugins/libSymTab.so
+@so lib/codeblocks/plugins/libThreadSearch.so
+@so lib/codeblocks/plugins/libToolsPlus.so
+@so lib/codeblocks/plugins/libValgrind.so
+@so lib/codeblocks/plugins/libabbreviations.so
+@so lib/codeblocks/plugins/libautosave.so
+@so lib/codeblocks/plugins/libbyogames.so
+@so lib/codeblocks/plugins/libcb_koders.so
+@so lib/codeblocks/plugins/libclasswizard.so
+@so lib/codeblocks/plugins/libcodecompletion.so
+@so lib/codeblocks/plugins/libcodesnippets.so
+@so lib/codeblocks/plugins/libcodestat.so
+@so lib/codeblocks/plugins/libcompiler.so
+@so lib/codeblocks/plugins/libcopystrings.so
+@so lib/codeblocks/plugins/libdebugger.so
+@so lib/codeblocks/plugins/libdefaultmimehandler.so
+@so lib/codeblocks/plugins/libdragscroll.so
+@so lib/codeblocks/plugins/libenvvars.so
+@so lib/codeblocks/plugins/libexporter.so
+@so lib/codeblocks/plugins/libheaderfixup.so
+@so lib/codeblocks/plugins/libhelp_plugin.so
+@so lib/codeblocks/plugins/libkeybinder.so
+@so lib/codeblocks/plugins/liblib_finder.so
+@so lib/codeblocks/plugins/liboccurrenceshighlighting.so
+@so lib/codeblocks/plugins/libopenfileslist.so
+@so lib/codeblocks/plugins/libprojectsimporter.so
+@so lib/codeblocks/plugins/librndgen.so
+@so lib/codeblocks/plugins/libscriptedwizard.so
+@so lib/codeblocks/plugins/libtodo.so
+@so lib/codeblocks/plugins/libwxSmithAui.so
+@so lib/codeblocks/plugins/libwxsmith.so
+@so lib/codeblocks/plugins/libwxsmithcontribitems.so
 lib/codeblocks/wxContribItems/
-lib/codeblocks/wxContribItems/libwxchartctrl.a
+@static-lib lib/codeblocks/wxContribItems/libwxchartctrl.a
 lib/codeblocks/wxContribItems/libwxchartctrl.la
 @lib lib/codeblocks/wxContribItems/libwxchartctrl.so.${LIBwxchartctrl_VERSION}
-lib/codeblocks/wxContribItems/libwxcustombutton.a
+@static-lib lib/codeblocks/wxContribItems/libwxcustombutton.a
 lib/codeblocks/wxContribItems/libwxcustombutton.la
 @lib lib/codeblocks/wxContribItems/libwxcustombutton.so.${LIBwxcustombutton_VERSION}
-lib/codeblocks/wxContribItems/libwxflatnotebook.a
+@static-lib lib/codeblocks/wxContribItems/libwxflatnotebook.a
 lib/codeblocks/wxContribItems/libwxflatnotebook.la
 @lib lib/codeblocks/wxContribItems/libwxflatnotebook.so.${LIBwxflatnotebook_VERSION}
-lib/codeblocks/wxContribItems/libwximagepanel.a
+@static-lib lib/codeblocks/wxContribItems/libwximagepanel.a
 lib/codeblocks/wxContribItems/libwximagepanel.la
 @lib lib/codeblocks/wxContribItems/libwximagepanel.so.${LIBwximagepanel_VERSION}
-lib/codeblocks/wxContribItems/libwxkwic.a
+@static-lib lib/codeblocks/wxContribItems/libwxkwic.a
 lib/codeblocks/wxContribItems/libwxkwic.la
 @lib lib/codeblocks/wxContribItems/libwxkwic.so.${LIBwxkwic_VERSION}
-lib/codeblocks/wxContribItems/libwxled.a
+@static-lib lib/codeblocks/wxContribItems/libwxled.a
 lib/codeblocks/wxContribItems/libwxled.la
 @lib lib/codeblocks/wxContribItems/libwxled.so.${LIBwxled_VERSION}
-lib/codeblocks/wxContribItems/libwxmathplot.a
+@static-lib lib/codeblocks/wxContribItems/libwxmathplot.a
 lib/codeblocks/wxContribItems/libwxmathplot.la
 @lib lib/codeblocks/wxContribItems/libwxmathplot.so.${LIBwxmathplot_VERSION}
-lib/codeblocks/wxContribItems/libwxspeedbutton.a
+@static-lib lib/codeblocks/wxContribItems/libwxspeedbutton.a
 lib/codeblocks/wxContribItems/libwxspeedbutton.la
 @lib lib/codeblocks/wxContribItems/libwxspeedbutton.so.${LIBwxspeedbutton_VERSION}
-lib/libcodeblocks.a
+@static-lib lib/libcodeblocks.a
 lib/libcodeblocks.la
 @lib lib/libcodeblocks.so.${LIBcodeblocks_VERSION}
-lib/libwxsmithlib.a
+@static-lib lib/libwxsmithlib.a
 lib/libwxsmithlib.la
 @lib lib/libwxsmithlib.so.${LIBwxsmithlib_VERSION}
 lib/pkgconfig/cb_wxKWIC.pc
@@ -502,18 +504,115 @@ share/codeblocks/SmartIndentPython.zip
 share/codeblocks/SmartIndentXML.zip
 share/codeblocks/SpellChecker/
 share/codeblocks/SpellChecker.zip
+share/codeblocks/SpellChecker/16x16/
+share/codeblocks/SpellChecker/16x16/de_AT.png
+share/codeblocks/SpellChecker/16x16/de_CH.png
+share/codeblocks/SpellChecker/16x16/de_DE.png
+share/codeblocks/SpellChecker/16x16/disabled.png
+share/codeblocks/SpellChecker/16x16/en_AU.png
+share/codeblocks/SpellChecker/16x16/en_CA.png
+share/codeblocks/SpellChecker/16x16/en_GB.png
+share/codeblocks/SpellChecker/16x16/en_NZ.png
+share/codeblocks/SpellChecker/16x16/en_US.png
+share/codeblocks/SpellChecker/16x16/fr_FR.png
+share/codeblocks/SpellChecker/16x16/ru_RU.png
+share/codeblocks/SpellChecker/20x20/
+share/codeblocks/SpellChecker/20x20/de_AT.png
+share/codeblocks/SpellChecker/20x20/de_CH.png
+share/codeblocks/SpellChecker/20x20/de_DE.png
+share/codeblocks/SpellChecker/20x20/disabled.png
+share/codeblocks/SpellChecker/20x20/en_AU.png
+share/codeblocks/SpellChecker/20x20/en_CA.png
+share/codeblocks/SpellChecker/20x20/en_GB.png
+share/codeblocks/SpellChecker/20x20/en_NZ.png
+share/codeblocks/SpellChecker/20x20/en_US.png
+share/codeblocks/SpellChecker/20x20/fr_FR.png
+share/codeblocks/SpellChecker/20x20/ru_RU.png
+share/codeblocks/SpellChecker/24x24/
+share/codeblocks/SpellChecker/24x24/de_AT.png
+share/codeblocks/SpellChecker/24x24/de_CH.png
+share/codeblocks/SpellChecker/24x24/de_DE.png
+share/codeblocks/SpellChecker/24x24/disabled.png
+share/codeblocks/SpellChecker/24x24/en_AU.png
+share/codeblocks/SpellChecker/24x24/en_CA.png
+share/codeblocks/SpellChecker/24x24/en_GB.png
+share/codeblocks/SpellChecker/24x24/en_NZ.png
+share/codeblocks/SpellChecker/24x24/en_US.png
+share/codeblocks/SpellChecker/24x24/fr_FR.png
+share/codeblocks/SpellChecker/24x24/ru_RU.png
+share/codeblocks/SpellChecker/28x28/
+share/codeblocks/SpellChecker/28x28/de_AT.png
+share/codeblocks/SpellChecker/28x28/de_CH.png
+share/codeblocks/SpellChecker/28x28/de_DE.png
+share/codeblocks/SpellChecker/28x28/disabled.png
+share/codeblocks/SpellChecker/28x28/en_AU.png
+share/codeblocks/SpellChecker/28x28/en_CA.png
+share/codeblocks/SpellChecker/28x28/en_GB.png
+share/codeblocks/SpellChecker/28x28/en_NZ.png
+share/codeblocks/SpellChecker/28x28/en_US.png
+share/codeblocks/SpellChecker/28x28/fr_FR.png
+share/codeblocks/SpellChecker/28x28/ru_RU.png
+share/codeblocks/SpellChecker/32x32/
+share/codeblocks/SpellChecker/32x32/de_AT.png
+share/codeblocks/SpellChecker/32x32/de_CH.png
+share/codeblocks/SpellChecker/32x32/de_DE.png
+share/codeblocks/SpellChecker/32x32/disabled.png
+share/codeblocks/SpellChecker/32x32/en_AU.png
+share/codeblocks/SpellChecker/32x32/en_CA.png
+share/codeblocks/SpellChecker/32x32/en_GB.png
+share/codeblocks/SpellChecker/32x32/en_NZ.png
+share/codeblocks/SpellChecker/32x32/en_US.png
+share/codeblocks/SpellChecker/32x32/fr_FR.png
+share/codeblocks/SpellChecker/32x32/ru_RU.png
+share/codeblocks/SpellChecker/40x40/
+share/codeblocks/SpellChecker/40x40/de_AT.png
+share/codeblocks/SpellChecker/40x40/de_CH.png
+share/codeblocks/SpellChecker/40x40/de_DE.png
+share/codeblocks/SpellChecker/40x40/disabled.png
+share/codeblocks/SpellChecker/40x40/en_AU.png
+share/codeblocks/SpellChecker/40x40/en_CA.png
+share/codeblocks/SpellChecker/40x40/en_GB.png
+share/codeblocks/SpellChecker/40x40/en_NZ.png
+share/codeblocks/SpellChecker/40x40/en_US.png
+share/codeblocks/SpellChecker/40x40/fr_FR.png
+share/codeblocks/SpellChecker/40x40/ru_RU.png
+share/codeblocks/SpellChecker/48x48/
+share/codeblocks/SpellChecker/48x48/de_AT.png
+share/codeblocks/SpellChecker/48x48/de_CH.png
+share/codeblocks/SpellChecker/48x48/de_DE.png
+share/codeblocks/SpellChecker/48x48/disabled.png
+share/codeblocks/SpellChecker/48x48/en_AU.png
+share/codeblocks/SpellChecker/48x48/en_CA.png
+share/codeblocks/SpellChecker/48x48/en_GB.png
+share/codeblocks/SpellChecker/48x48/en_NZ.png
+share/codeblocks/SpellChecker/48x48/en_US.png
+share/codeblocks/SpellChecker/48x48/fr_FR.png
+share/codeblocks/SpellChecker/48x48/ru_RU.png
+share/codeblocks/SpellChecker/56x56/
+share/codeblocks/SpellChecker/56x56/de_AT.png
+share/codeblocks/SpellChecker/56x56/de_CH.png
+share/codeblocks/SpellChecker/56x56/de_DE.png
+share/codeblocks/SpellChecker/56x56/disabled.png
+share/codeblocks/SpellChecker/56x56/en_AU.png
+share/codeblocks/SpellChecker/56x56/en_CA.png
+share/codeblocks/SpellChecker/56x56/en_GB.png
+share/codeblocks/SpellChecker/56x56/en_NZ.png
+share/codeblocks/SpellChecker/56x56/en_US.png
+share/codeblocks/SpellChecker/56x56/fr_FR.png
+share/codeblocks/SpellChecker/56x56/ru_RU.png
+share/codeblocks/SpellChecker/64x64/
+share/codeblocks/SpellChecker/64x64/de_AT.png
+share/codeblocks/SpellChecker/64x64/de_CH.png
+share/codeblocks/SpellChecker/64x64/de_DE.png
+share/codeblocks/SpellChecker/64x64/disabled.png
+share/codeblocks/SpellChecker/64x64/en_AU.png
+share/codeblocks/SpellChecker/64x64/en_CA.png
+share/codeblocks/SpellChecker/64x64/en_GB.png
+share/codeblocks/SpellChecker/64x64/en_NZ.png
+share/codeblocks/SpellChecker/64x64/en_US.png
+share/codeblocks/SpellChecker/64x64/fr_FR.png
+share/codeblocks/SpellChecker/64x64/ru_RU.png
 share/codeblocks/SpellChecker/OnlineSpellChecking.xml
-share/codeblocks/SpellChecker/de_AT.png
-share/codeblocks/SpellChecker/de_CH.png
-share/codeblocks/SpellChecker/de_DE.png
-share/codeblocks/SpellChecker/disabled.png
-share/codeblocks/SpellChecker/en_AU.png
-share/codeblocks/SpellChecker/en_CA.png
-share/codeblocks/SpellChecker/en_GB.png
-share/codeblocks/SpellChecker/en_NZ.png
-share/codeblocks/SpellChecker/en_US.png
-share/codeblocks/SpellChecker/fr_FR.png
-share/codeblocks/SpellChecker/ru_RU.png
 share/codeblocks/SymTab.zip
 share/codeblocks/ThreadSearch.zip
 share/codeblocks/ToolsPlus.zip
@@ -622,235 +721,8 @@ share/codeblocks/icons/h64.xpm
 share/codeblocks/icons/proj64.xpm
 share/codeblocks/icons/rc64.xpm
 share/codeblocks/images/
-share/codeblocks/images/16x16/
-share/codeblocks/images/16x16/bookmark_add.png
-share/codeblocks/images/16x16/dbginfo.png
-share/codeblocks/images/16x16/dbgnext.png
-share/codeblocks/images/16x16/dbgnexti.png
-share/codeblocks/images/16x16/dbgpause.png
-share/codeblocks/images/16x16/dbgrun.png
-share/codeblocks/images/16x16/dbgrunto.png
-share/codeblocks/images/16x16/dbgstep.png
-share/codeblocks/images/16x16/dbgstepi.png
-share/codeblocks/images/16x16/dbgstepout.png
-share/codeblocks/images/16x16/dbgstop.png
-share/codeblocks/images/16x16/dbgwindow.png
-share/codeblocks/images/16x16/editcopy.png
-share/codeblocks/images/16x16/editcut.png
-share/codeblocks/images/16x16/editpaste.png
-share/codeblocks/images/16x16/exit.png
-share/codeblocks/images/16x16/fileclose.png
-share/codeblocks/images/16x16/filefind.png
-share/codeblocks/images/16x16/filefindnext.png
-share/codeblocks/images/16x16/filefindprev.png
-share/codeblocks/images/16x16/filenew.png
-share/codeblocks/images/16x16/fileopen.png
-share/codeblocks/images/16x16/fileprint.png
-share/codeblocks/images/16x16/filequickprint.png
-share/codeblocks/images/16x16/filesave.png
-share/codeblocks/images/16x16/filesaveall.png
-share/codeblocks/images/16x16/filesaveas.png
-share/codeblocks/images/16x16/findf.png
-share/codeblocks/images/16x16/folder.png
-share/codeblocks/images/16x16/folder_new.png
-share/codeblocks/images/16x16/folder_open.png
-share/codeblocks/images/16x16/folder_yel.png
-share/codeblocks/images/16x16/folder_yel_open.png
-share/codeblocks/images/16x16/goto.png
-share/codeblocks/images/16x16/history_clear.png
-share/codeblocks/images/16x16/idea.png
-share/codeblocks/images/16x16/info.png
-share/codeblocks/images/16x16/mark.png
-share/codeblocks/images/16x16/mark_clear.png
-share/codeblocks/images/16x16/mark_next.png
-share/codeblocks/images/16x16/mark_prev.png
-share/codeblocks/images/16x16/newproject.png
-share/codeblocks/images/16x16/next.png
-share/codeblocks/images/16x16/plug.png
-share/codeblocks/images/16x16/prev.png
-share/codeblocks/images/16x16/project-readonly.png
-share/codeblocks/images/16x16/project.png
-share/codeblocks/images/16x16/projectnew.png
-share/codeblocks/images/16x16/redo.png
-share/codeblocks/images/16x16/run.png
-share/codeblocks/images/16x16/searchreplace.png
-share/codeblocks/images/16x16/searchreplacef.png
-share/codeblocks/images/16x16/undo.png
-share/codeblocks/images/16x16/view_sidetree.png
-share/codeblocks/images/16x16/view_tree.png
-share/codeblocks/images/16x16/window_fullscreen.png
-share/codeblocks/images/16x16/workspace-readonly.png
-share/codeblocks/images/16x16/workspace.png
-share/codeblocks/images/DoxyBlocks/
-share/codeblocks/images/DoxyBlocks/16x16/
-share/codeblocks/images/DoxyBlocks/16x16/chm.png
-share/codeblocks/images/DoxyBlocks/16x16/comment_block.png
-share/codeblocks/images/DoxyBlocks/16x16/comment_line.png
-share/codeblocks/images/DoxyBlocks/16x16/configure.png
-share/codeblocks/images/DoxyBlocks/16x16/doxywizard.png
-share/codeblocks/images/DoxyBlocks/16x16/extract.png
-share/codeblocks/images/DoxyBlocks/16x16/html.png
-share/codeblocks/images/DoxyBlocks/chm.png
-share/codeblocks/images/DoxyBlocks/comment_block.png
-share/codeblocks/images/DoxyBlocks/comment_line.png
-share/codeblocks/images/DoxyBlocks/configure.png
-share/codeblocks/images/DoxyBlocks/doxywizard.png
-share/codeblocks/images/DoxyBlocks/extract.png
-share/codeblocks/images/DoxyBlocks/html.png
-share/codeblocks/images/ThreadSearch/
-share/codeblocks/images/ThreadSearch/16x16/
-share/codeblocks/images/ThreadSearch/16x16/findf.png
-share/codeblocks/images/ThreadSearch/16x16/findfdisabled.png
-share/codeblocks/images/ThreadSearch/16x16/folder.png
-share/codeblocks/images/ThreadSearch/16x16/folderdisabled.png
-share/codeblocks/images/ThreadSearch/16x16/folderselected.png
-share/codeblocks/images/ThreadSearch/16x16/off.png
-share/codeblocks/images/ThreadSearch/16x16/offdisabled.png
-share/codeblocks/images/ThreadSearch/16x16/on.png
-share/codeblocks/images/ThreadSearch/16x16/ondisabled.png
-share/codeblocks/images/ThreadSearch/16x16/openfiles.png
-share/codeblocks/images/ThreadSearch/16x16/openfiles1.png
-share/codeblocks/images/ThreadSearch/16x16/openfiles1disabled.png
-share/codeblocks/images/ThreadSearch/16x16/openfiles1selected.png
-share/codeblocks/images/ThreadSearch/16x16/openfilesdisabled.png
-share/codeblocks/images/ThreadSearch/16x16/openfilesselected.png
-share/codeblocks/images/ThreadSearch/16x16/options.png
-share/codeblocks/images/ThreadSearch/16x16/optionsactive.png
-share/codeblocks/images/ThreadSearch/16x16/optionsdisabled.png
-share/codeblocks/images/ThreadSearch/16x16/project.png
-share/codeblocks/images/ThreadSearch/16x16/project1.png
-share/codeblocks/images/ThreadSearch/16x16/project1disabled.png
-share/codeblocks/images/ThreadSearch/16x16/project1selected.png
-share/codeblocks/images/ThreadSearch/16x16/projectdisabled.png
-share/codeblocks/images/ThreadSearch/16x16/projectselected.png
-share/codeblocks/images/ThreadSearch/16x16/showdir.png
-share/codeblocks/images/ThreadSearch/16x16/showdirdisabled.png
-share/codeblocks/images/ThreadSearch/16x16/stop.png
-share/codeblocks/images/ThreadSearch/16x16/stopdisabled.png
-share/codeblocks/images/ThreadSearch/16x16/target.png
-share/codeblocks/images/ThreadSearch/16x16/target1.png
-share/codeblocks/images/ThreadSearch/16x16/target1disabled.png
-share/codeblocks/images/ThreadSearch/16x16/target1selected.png
-share/codeblocks/images/ThreadSearch/16x16/targetdisabled.png
-share/codeblocks/images/ThreadSearch/16x16/targetselected.png
-share/codeblocks/images/ThreadSearch/16x16/workspace.png
-share/codeblocks/images/ThreadSearch/16x16/workspacedisabled.png
-share/codeblocks/images/ThreadSearch/16x16/workspaceselected.png
-share/codeblocks/images/ThreadSearch/22x22/
-share/codeblocks/images/ThreadSearch/22x22/file.png
-share/codeblocks/images/ThreadSearch/22x22/findf.png
-share/codeblocks/images/ThreadSearch/22x22/findfdisabled.png
-share/codeblocks/images/ThreadSearch/22x22/folder.png
-share/codeblocks/images/ThreadSearch/22x22/folderdisabled.png
-share/codeblocks/images/ThreadSearch/22x22/folderselected.png
-share/codeblocks/images/ThreadSearch/22x22/lookingglass.png
-share/codeblocks/images/ThreadSearch/22x22/off.png
-share/codeblocks/images/ThreadSearch/22x22/offdisabled.png
-share/codeblocks/images/ThreadSearch/22x22/on.png
-share/codeblocks/images/ThreadSearch/22x22/ondisabled.png
-share/codeblocks/images/ThreadSearch/22x22/openfiles.png
-share/codeblocks/images/ThreadSearch/22x22/openfilesdisabled.png
-share/codeblocks/images/ThreadSearch/22x22/openfilesselected.png
-share/codeblocks/images/ThreadSearch/22x22/options.png
-share/codeblocks/images/ThreadSearch/22x22/optionsactive.png
-share/codeblocks/images/ThreadSearch/22x22/optionsdisabled.png
-share/codeblocks/images/ThreadSearch/22x22/project.png
-share/codeblocks/images/ThreadSearch/22x22/project1.png
-share/codeblocks/images/ThreadSearch/22x22/project1disabled.png
-share/codeblocks/images/ThreadSearch/22x22/project1selected.png
-share/codeblocks/images/ThreadSearch/22x22/project2.png
-share/codeblocks/images/ThreadSearch/22x22/project2d.png
-share/codeblocks/images/ThreadSearch/22x22/project2s.png
-share/codeblocks/images/ThreadSearch/22x22/projectdisabled.png
-share/codeblocks/images/ThreadSearch/22x22/projectselected.png
-share/codeblocks/images/ThreadSearch/22x22/showdir.png
-share/codeblocks/images/ThreadSearch/22x22/showdirdisabled.png
-share/codeblocks/images/ThreadSearch/22x22/stop.png
-share/codeblocks/images/ThreadSearch/22x22/stopdisabled.png
-share/codeblocks/images/ThreadSearch/22x22/target.png
-share/codeblocks/images/ThreadSearch/22x22/target1.png
-share/codeblocks/images/ThreadSearch/22x22/target1disabled.png
-share/codeblocks/images/ThreadSearch/22x22/target1selected.png
-share/codeblocks/images/ThreadSearch/22x22/targetdisabled.png
-share/codeblocks/images/ThreadSearch/22x22/targetselected.png
-share/codeblocks/images/ThreadSearch/22x22/workspace.png
-share/codeblocks/images/ThreadSearch/22x22/workspacedisabled.png
-share/codeblocks/images/ThreadSearch/22x22/workspaceselected.png
-share/codeblocks/images/ThreadSearch/folder.png
-share/codeblocks/images/ThreadSearch/folderdisabled.png
-share/codeblocks/images/ThreadSearch/folderselected.png
-share/codeblocks/images/ThreadSearch/off.png
-share/codeblocks/images/ThreadSearch/on.png
-share/codeblocks/images/ThreadSearch/openfiles.png
-share/codeblocks/images/ThreadSearch/openfilesdisabled.png
-share/codeblocks/images/ThreadSearch/openfilesselected.png
-share/codeblocks/images/ThreadSearch/project.png
-share/codeblocks/images/ThreadSearch/project1.png
-share/codeblocks/images/ThreadSearch/project1disabled.png
-share/codeblocks/images/ThreadSearch/project1selected.png
-share/codeblocks/images/ThreadSearch/projectdisabled.png
-share/codeblocks/images/ThreadSearch/projectselected.png
-share/codeblocks/images/ThreadSearch/showdir.png
-share/codeblocks/images/ThreadSearch/showdirdisabled.png
-share/codeblocks/images/ThreadSearch/target.png
-share/codeblocks/images/ThreadSearch/target1.png
-share/codeblocks/images/ThreadSearch/target1disabled.png
-share/codeblocks/images/ThreadSearch/target1selected.png
-share/codeblocks/images/ThreadSearch/targetdisabled.png
-share/codeblocks/images/ThreadSearch/targetselected.png
-share/codeblocks/images/ThreadSearch/workspace.png
-share/codeblocks/images/ThreadSearch/workspacedisabled.png
-share/codeblocks/images/ThreadSearch/workspaceselected.png
-share/codeblocks/images/ascii.png
 share/codeblocks/images/closebutton.png
 share/codeblocks/images/codeblocks.png
-share/codeblocks/images/codecompletion/
-share/codeblocks/images/codecompletion/class.png
-share/codeblocks/images/codecompletion/class_folder.png
-share/codeblocks/images/codecompletion/class_private.png
-share/codeblocks/images/codecompletion/class_protected.png
-share/codeblocks/images/codecompletion/class_public.png
-share/codeblocks/images/codecompletion/ctor_private.png
-share/codeblocks/images/codecompletion/ctor_protected.png
-share/codeblocks/images/codecompletion/ctor_public.png
-share/codeblocks/images/codecompletion/dtor_private.png
-share/codeblocks/images/codecompletion/dtor_protected.png
-share/codeblocks/images/codecompletion/dtor_public.png
-share/codeblocks/images/codecompletion/enum.png
-share/codeblocks/images/codecompletion/enum_private.png
-share/codeblocks/images/codecompletion/enum_protected.png
-share/codeblocks/images/codecompletion/enum_public.png
-share/codeblocks/images/codecompletion/enumerator.png
-share/codeblocks/images/codecompletion/enums_folder.png
-share/codeblocks/images/codecompletion/folder.png
-share/codeblocks/images/codecompletion/folder_blue.png
-share/codeblocks/images/codecompletion/folder_blue_open.png
-share/codeblocks/images/codecompletion/folder_green.png
-share/codeblocks/images/codecompletion/folder_green_open.png
-share/codeblocks/images/codecompletion/folder_open.png
-share/codeblocks/images/codecompletion/funcs_folder.png
-share/codeblocks/images/codecompletion/macro_def.png
-share/codeblocks/images/codecompletion/macro_def_folder.png
-share/codeblocks/images/codecompletion/macro_use.png
-share/codeblocks/images/codecompletion/macro_use_folder.png
-share/codeblocks/images/codecompletion/macro_use_private.png
-share/codeblocks/images/codecompletion/macro_use_protected.png
-share/codeblocks/images/codecompletion/macro_use_public.png
-share/codeblocks/images/codecompletion/method_private.png
-share/codeblocks/images/codecompletion/method_protected.png
-share/codeblocks/images/codecompletion/method_public.png
-share/codeblocks/images/codecompletion/namespace.png
-share/codeblocks/images/codecompletion/others_folder.png
-share/codeblocks/images/codecompletion/symbols_folder.png
-share/codeblocks/images/codecompletion/typedef.png
-share/codeblocks/images/codecompletion/typedef_private.png
-share/codeblocks/images/codecompletion/typedef_protected.png
-share/codeblocks/images/codecompletion/typedef_public.png
-share/codeblocks/images/codecompletion/typedefs_folder.png
-share/codeblocks/images/codecompletion/var_private.png
-share/codeblocks/images/codecompletion/var_protected.png
-share/codeblocks/images/codecompletion/var_public.png
-share/codeblocks/images/codecompletion/vars_folder.png
 share/codeblocks/images/codesnippets/
 share/codeblocks/images/codesnippets/allsnippets.png
 share/codeblocks/images/codesnippets/category.png
@@ -863,59 +735,9 @@ share/codeblocks/images/codesnippets/stop.png
 share/codeblocks/images/codesnippets/stopdisabled.png
 share/codeblocks/images/compile.png
 share/codeblocks/images/compilerun.png
-share/codeblocks/images/contents_16x16.png
-share/codeblocks/images/dbginfo.png
-share/codeblocks/images/dbgnext.png
-share/codeblocks/images/dbgnexti.png
-share/codeblocks/images/dbgpause.png
-share/codeblocks/images/dbgrun.png
-share/codeblocks/images/dbgrunto.png
-share/codeblocks/images/dbgstep.png
-share/codeblocks/images/dbgstepi.png
-share/codeblocks/images/dbgstepout.png
-share/codeblocks/images/dbgstop.png
-share/codeblocks/images/dbgwindow.png
-share/codeblocks/images/edit_16x16.png
-share/codeblocks/images/editcopy.png
-share/codeblocks/images/editcut.png
-share/codeblocks/images/editpaste.png
-share/codeblocks/images/file-missing.png
-share/codeblocks/images/file-modified.png
-share/codeblocks/images/file-readonly.png
-share/codeblocks/images/file.png
-share/codeblocks/images/filefind.png
-share/codeblocks/images/filenew.png
-share/codeblocks/images/fileopen.png
-share/codeblocks/images/fileprint.png
-share/codeblocks/images/filesave.png
-share/codeblocks/images/filesaveall.png
-share/codeblocks/images/filesaveas.png
-share/codeblocks/images/flag_16x16.png
 share/codeblocks/images/folder.png
 share/codeblocks/images/folder_new.png
-share/codeblocks/images/folder_open.png
-share/codeblocks/images/misc_16x16.png
-share/codeblocks/images/modified_file.png
-share/codeblocks/images/newproject.png
-share/codeblocks/images/project-readonly.png
-share/codeblocks/images/project.png
-share/codeblocks/images/rc-file-added.png
-share/codeblocks/images/rc-file-conflict.png
-share/codeblocks/images/rc-file-external.png
-share/codeblocks/images/rc-file-gotlock.png
-share/codeblocks/images/rc-file-lockstolen.png
-share/codeblocks/images/rc-file-mismatch.png
-share/codeblocks/images/rc-file-missing.png
-share/codeblocks/images/rc-file-modified.png
-share/codeblocks/images/rc-file-noncontrolled.png
-share/codeblocks/images/rc-file-outofdate.png
-share/codeblocks/images/rc-file-requireslock.png
-share/codeblocks/images/rc-file-uptodate.png
-share/codeblocks/images/readonly.png
 share/codeblocks/images/rebuild.png
-share/codeblocks/images/redo.png
-share/codeblocks/images/run.png
-share/codeblocks/images/searchreplace.png
 share/codeblocks/images/settings/
 share/codeblocks/images/settings/DoxyBlocks-off.png
 share/codeblocks/images/settings/DoxyBlocks.png
@@ -992,10 +814,6 @@ share/codeblocks/images/splash_1005.png
 share/codeblocks/images/splash_1211.png
 share/codeblocks/images/splash_1312.png
 share/codeblocks/images/stop.png
-share/codeblocks/images/undo.png
-share/codeblocks/images/vfolder_open.png
-share/codeblocks/images/workspace-readonly.png
-share/codeblocks/images/workspace.png
 share/codeblocks/images/wxsmith/
 share/codeblocks/images/wxsmith/Custom16.png
 share/codeblocks/images/wxsmith/Custom32.png
@@ -1019,6 +837,7 @@ share/codeblocks/images/wxsmith/selected16.png
 share/codeblocks/images/wxsmith/selected32.png
 share/codeblocks/images/wxsmith/showpreview16.png
 share/codeblocks/images/wxsmith/showpreview32.png
+share/codeblocks/images/wxsmith/tools16.png
 share/codeblocks/images/wxsmith/wxAnimationCtrl16.png
 share/codeblocks/images/wxsmith/wxAnimationCtrl32.png
 share/codeblocks/images/wxsmith/wxBitmapButton16.png
@@ -1165,6 +984,8 @@ share/codeblocks/images/wxsmith/wxSpinButton16.png
 share/codeblocks/images/wxsmith/wxSpinButton32.png
 share/codeblocks/images/wxsmith/wxSpinCtrl16.png
 share/codeblocks/images/wxsmith/wxSpinCtrl32.png
+share/codeblocks/images/wxsmith/wxSpinCtrlDouble16.png
+share/codeblocks/images/wxsmith/wxSpinCtrlDouble32.png
 share/codeblocks/images/wxsmith/wxSplitterWindow16.png
 share/codeblocks/images/wxsmith/wxSplitterWindow32.png
 share/codeblocks/images/wxsmith/wxStaticBitmap16.png
@@ -1269,10 +1090,14 @@ share/codeblocks/lexers/lexer_lua.sample
 share/codeblocks/lexers/lexer_lua.xml
 share/codeblocks/lexers/lexer_make.sample
 share/codeblocks/lexers/lexer_make.xml
+share/codeblocks/lexers/lexer_markdown.sample
+share/codeblocks/lexers/lexer_markdown.xml
 share/codeblocks/lexers/lexer_masm.sample
 share/codeblocks/lexers/lexer_masm.xml
 share/codeblocks/lexers/lexer_matlab.sample
 share/codeblocks/lexers/lexer_matlab.xml
+share/codeblocks/lexers/lexer_nim.sample
+share/codeblocks/lexers/lexer_nim.xml
 share/codeblocks/lexers/lexer_nsis.sample
 share/codeblocks/lexers/lexer_nsis.xml
 share/codeblocks/lexers/lexer_objc.sample
@@ -1281,6 +1106,7 @@ share/codeblocks/lexers/lexer_pascal.sample
 share/codeblocks/lexers/lexer_pascal.xml
 share/codeblocks/lexers/lexer_perl.sample
 share/codeblocks/lexers/lexer_perl.xml
+share/codeblocks/lexers/lexer_plain.xml
 share/codeblocks/lexers/lexer_postscript.sample
 share/codeblocks/lexers/lexer_postscript.xml
 share/codeblocks/lexers/lexer_powershell.sample
@@ -1316,6 +1142,8 @@ share/codeblocks/lexers/lexer_vhdl.sample
 share/codeblocks/lexers/lexer_vhdl.xml
 share/codeblocks/lexers/lexer_xml.sample
 share/codeblocks/lexers/lexer_xml.xml
+share/codeblocks/lexers/lexer_yaml.sample
+share/codeblocks/lexers/lexer_yaml.xml
 share/codeblocks/lib_finder/
 share/codeblocks/lib_finder.zip
 share/codeblocks/lib_finder/codeblocks_sdk.xml
@@ -1326,10 +1154,10 @@ share/codeblocks/occurrenceshighlighting.zip
 share/codeblocks/openfileslist.zip
 share/codeblocks/projectsimporter.zip
 share/codeblocks/resources.zip
+share/codeblocks/rndgen.zip
 share/codeblocks/scriptedwizard.zip
 share/codeblocks/scripts/
 share/codeblocks/scripts/edit_startup_script.script
-share/codeblocks/scripts/gdb_types.script
 share/codeblocks/scripts/make_dist.script
 share/codeblocks/scripts/plugin_find_broken_files.script
 share/codeblocks/scripts/sample_plugin.script
@@ -1579,13 +1407,13 @@ share/codeblocks/templates/wizard/fltk/wizard.script
 share/codeblocks/templates/wizard/fortran/
 share/codeblocks/templates/wizard/fortran/app/
 share/codeblocks/templates/wizard/fortran/app/files/
-share/codeblocks/templates/wizard/fortran/app/files/main.f95
+share/codeblocks/templates/wizard/fortran/app/files/main.f90
 share/codeblocks/templates/wizard/fortran/app/logo.png
 share/codeblocks/templates/wizard/fortran/app/wizard.png
 share/codeblocks/templates/wizard/fortran/app/wizard.script
 share/codeblocks/templates/wizard/fortran/dll/
 share/codeblocks/templates/wizard/fortran/dll/files/
-share/codeblocks/templates/wizard/fortran/dll/files/main.f95
+share/codeblocks/templates/wizard/fortran/dll/files/main.f90
 share/codeblocks/templates/wizard/fortran/dll/logo.png
 share/codeblocks/templates/wizard/fortran/dll/wizard.png
 share/codeblocks/templates/wizard/fortran/dll/wizard.script
@@ -1595,7 +1423,7 @@ share/codeblocks/templates/wizard/fortran/file/wizard.png
 share/codeblocks/templates/wizard/fortran/file/wizard.script
 share/codeblocks/templates/wizard/fortran/lib/
 share/codeblocks/templates/wizard/fortran/lib/files/
-share/codeblocks/templates/wizard/fortran/lib/files/main.f95
+share/codeblocks/templates/wizard/fortran/lib/files/main.f90
 share/codeblocks/templates/wizard/fortran/lib/logo.png
 share/codeblocks/templates/wizard/fortran/lib/wizard.png
 share/codeblocks/templates/wizard/fortran/lib/wizard.script
