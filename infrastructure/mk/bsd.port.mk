@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1541 2020/06/16 13:41:42 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1542 2020/06/26 11:51:16 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -682,6 +682,7 @@ _GEN_COOKIE =			${WRKDIR}/.gen_done
 _BULK_COOKIE =			${BULK_COOKIES_DIR}/${FULLPKGNAME}
 _FAKE_COOKIE =			${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
+_PKGLOCATE_COOKIE =		${WRKINST}/.pkglocate_cookie
 _UPDATE_COOKIES =
 _FUPDATE_COOKIES =
 _INSTALL_COOKIES =
@@ -715,7 +716,7 @@ _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_GEN_COOKIE} \
 	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_TEST_COOKIE} \
 	${_PACKAGE_COOKIES} ${_CACHE_PACKAGE_COOKIES} \
 	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
-	${_TS_COOKIE} \
+	${_PKGLOCATE_COOKIE} ${_TS_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 	${_DEPRUN_COOKIES} ${_DEPTEST_COOKIES} ${_UPDATE_COOKIES} \
 	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
@@ -1969,12 +1970,14 @@ _FAKE_TREE_LIST = \
 _update_plist = ${_cache_fragment}; \
 	PORTSDIR=${PORTSDIR} \
 	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
+	-D FAKE_COOKIE=${_FAKE_COOKIE} -D PKGLOCATE_COOKIE=${_PKGLOCATE_COOKIE} \
 	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
 	-i ARCH -i BASE_PKGPATH -i FULLPKGNAME -i PKGSTEM -i FULLPKGPATH \
 	-i LOCALSTATEDIR -i MACHINE_ARCH \
 	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
 	-s RCDIR -s SYSCONFDIR -s X11BASE \
-	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs
+	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${_PKGLOCATE_COOKIE} \
+	-X ${WRKINST}/.saved_libs
 	
 
 .for _d in ${_FAKE_TREE_LIST} ${_EXCLUDE_DEBUG_PLISTS}
@@ -2994,6 +2997,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${_SUDOMAKESYS} pre-fake ${FAKE_SETUP}
 .endif
 	@${_PBUILD} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
+	@${_PBUILD} rm -f ${_PKGLOCATE_COOKIE}
 .if target(pre-install)
 	@${_SUDOMAKESYS} pre-install ${FAKE_SETUP}
 .endif
