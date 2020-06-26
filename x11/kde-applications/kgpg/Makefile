@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/21 17:57:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/26 05:52:19 rsadowski Exp $
 
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiWidgets KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
@@ -25,7 +25,10 @@ MODKF5_I18N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		security/gpgme,-qt
+
+RUN_DEPENDS =	security/gpgme
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
