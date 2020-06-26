@@ -1,0 +1,7 @@
+Multiprocess is a fork of multiprocessing, and is developed as part
+of pathos: https://github.com/uqfoundation/pathos
+
+multiprocessing is a package for the Python language which supports
+the spawning of processes using the API of the standard library's
+threading module.  multiprocessing has been distributed in the
+standard library since python 2.6.
