@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2020/06/26 10:14:06 pirofti Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -68,8 +68,8 @@ else:
+         SUITESPARSE_INC_DIR = "/usr/include/suitesparse"
+     else:
+         # Default
+-        SUITESPARSE_LIB_DIR = '/usr/lib'
+-        SUITESPARSE_INC_DIR = '/usr/include'
++        SUITESPARSE_LIB_DIR = '/usr/local/lib'
++        SUITESPARSE_INC_DIR = '/usr/local/include'
+ 
+ if sys.platform.startswith("win"):
+     GSL_MACROS = [('GSL_DLL',''),('WIN32','')]

@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/26 10:14:06 pirofti Exp $
+lib/python${MODPY_VERSION}/site-packages/cvxopt/
+lib/python${MODPY_VERSION}/site-packages/cvxopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/cvxopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/cvxopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/cvxopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/cvxopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/cvxopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/cvxopt/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}coneprog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}cvxprog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}modeling.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}msk.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}printing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/${MODPY_PYCACHE}solvers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxopt/_version.py
+@so lib/python${MODPY_VERSION}/site-packages/cvxopt/amd.so
+@so lib/python${MODPY_VERSION}/site-packages/cvxopt/base.so
+@so lib/python${MODPY_VERSION}/site-packages/cvxopt/blas.so
+@so lib/python${MODPY_VERSION}/site-packages/cvxopt/cholmod.so
+lib/python${MODPY_VERSION}/site-packages/cvxopt/coneprog.py
+lib/python${MODPY_VERSION}/site-packages/cvxopt/cvxprog.py
+lib/python${MODPY_VERSION}/site-packages/cvxopt/info.py
+@so lib/python${MODPY_VERSION}/site-packages/cvxopt/lapack.so
+lib/python${MODPY_VERSION}/site-packages/cvxopt/misc.py
+@so lib/python${MODPY_VERSION}/site-packages/cvxopt/misc_solvers.so
+lib/python${MODPY_VERSION}/site-packages/cvxopt/modeling.py
+lib/python${MODPY_VERSION}/site-packages/cvxopt/msk.py
+lib/python${MODPY_VERSION}/site-packages/cvxopt/printing.py
+lib/python${MODPY_VERSION}/site-packages/cvxopt/solvers.py
+@so lib/python${MODPY_VERSION}/site-packages/cvxopt/umfpack.so
