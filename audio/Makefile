@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.431 2020/05/19 15:34:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.432 2020/06/26 09:07:26 landry Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -79,6 +79,7 @@
      SUBDIR += libgpod
      SUBDIR += libid3tag
      SUBDIR += liblastfm
+     SUBDIR += liblo
      SUBDIR += libmad
      SUBDIR += libmikmod
      SUBDIR += libmodplug
