@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1993 2020/06/26 10:08:09 pirofti Exp $
+# $OpenBSD: Makefile,v 1.1994 2020/06/26 22:28:12 abieber Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -502,6 +502,7 @@
      SUBDIR += ocaml-yojson
      SUBDIR += ode
      SUBDIR += ois
+     SUBDIR += olm
      SUBDIR += open-ath9k-htc-firmware
      SUBDIR += openmpi
      SUBDIR += openocd
