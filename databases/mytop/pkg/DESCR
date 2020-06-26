@@ -1,6 +1,0 @@
-mytop is a console-based (non-gui) tool for monitoring the threads and
-overall performance of MySQL 3.x, 4.x and 5.x servers. It runs on
-most Unix systems (including Mac OS X) which have Perl, DBI, and
-Term::ReadKey installed.  And with Term::ANSIColor installed you even
-get color. If you install Time::HiRes, you'll get good real-time
-queries/second stats.

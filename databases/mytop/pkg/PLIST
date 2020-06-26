@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/17 18:18:36 alek Exp $
-bin/mytop
-@man man/man1/mytop.1
