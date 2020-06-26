@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/26 10:15:55 pirofti Exp $
+@so lib/python${MODPY_VERSION}/site-packages/_scs_direct.so
+@so lib/python${MODPY_VERSION}/site-packages/_scs_indirect.so
+@so lib/python${MODPY_VERSION}/site-packages/_scs_python.so
+lib/python${MODPY_VERSION}/site-packages/scs/
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/scs-2.1.1.post2-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/scs/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
