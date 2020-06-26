@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST-server,v 1.31 2020/01/29 02:16:44 sthen Exp $
-@conflict mysql-server-*
-@conflict mytop-*
-@pkgpath databases/mysql,-server
-@pkgpath databases/mytop
+@comment $OpenBSD: PLIST-server,v 1.32 2020/06/26 08:46:42 sthen Exp $
+@conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/mysqld
@@ -12,18 +9,18 @@
 @bin bin/aria_pack
 @bin bin/aria_read_log
 @bin bin/innochecksum
-@bin bin/mariabackup
-bin/mariadb-backup
+bin/mariabackup
+@bin bin/mariadb-backup
 bin/mariadb-dumpslow
 bin/mariadb-fix-extensions
 bin/mariadb-install-db
 bin/mariadb-secure-installation
-bin/mariadb-tzinfo-to-sql
-bin/mariadb-upgrade
-bin/mariadb-waitpid
+@bin bin/mariadb-tzinfo-to-sql
+@bin bin/mariadb-upgrade
+@bin bin/mariadb-waitpid
 bin/mariadbd-multi
 bin/mariadbd-safe
-bin/mariadbd-safe-helper
+@bin bin/mariadbd-safe-helper
 @bin bin/mbstream
 @bin bin/my_print_defaults
 @bin bin/myisam_ftdump
@@ -33,17 +30,16 @@ bin/mariadbd-safe-helper
 bin/mysql_convert_table_format
 bin/mysql_fix_extensions
 bin/mysql_install_db
-@bin bin/mysql_plugin
+bin/mysql_plugin
 bin/mysql_secure_installation
 bin/mysql_setpermission
-@bin bin/mysql_tzinfo_to_sql
-@bin bin/mysql_upgrade
+bin/mysql_tzinfo_to_sql
+bin/mysql_upgrade
 bin/mysqld_multi
 bin/mysqld_safe
-@bin bin/mysqld_safe_helper
+bin/mysqld_safe_helper
 bin/mysqldumpslow
 bin/mysqlhotcopy
-bin/mytop
 @bin bin/perror
 @bin bin/replace
 @bin bin/resolve_stack_dump
@@ -92,17 +88,24 @@ include/mysql/server/mysql/plugin.h
 include/mysql/server/mysql/plugin_audit.h
 include/mysql/server/mysql/plugin_auth.h
 include/mysql/server/mysql/plugin_auth_common.h
+include/mysql/server/mysql/plugin_data_type.h
 include/mysql/server/mysql/plugin_encryption.h
 include/mysql/server/mysql/plugin_ftparser.h
+include/mysql/server/mysql/plugin_function.h
 include/mysql/server/mysql/plugin_password_validation.h
 include/mysql/server/mysql/psi/
 include/mysql/server/mysql/psi/mysql_file.h
 include/mysql/server/mysql/psi/mysql_idle.h
+include/mysql/server/mysql/psi/mysql_mdl.h
+include/mysql/server/mysql/psi/mysql_memory.h
+include/mysql/server/mysql/psi/mysql_ps.h
 include/mysql/server/mysql/psi/mysql_socket.h
+include/mysql/server/mysql/psi/mysql_sp.h
 include/mysql/server/mysql/psi/mysql_stage.h
 include/mysql/server/mysql/psi/mysql_statement.h
 include/mysql/server/mysql/psi/mysql_table.h
 include/mysql/server/mysql/psi/mysql_thread.h
+include/mysql/server/mysql/psi/mysql_transaction.h
 include/mysql/server/mysql/psi/psi.h
 include/mysql/server/mysql/psi/psi_abi_v0.h
 include/mysql/server/mysql/psi/psi_abi_v1.h
@@ -126,6 +129,7 @@ include/mysql/server/mysql/service_sha2.h
 include/mysql/server/mysql/service_thd_alloc.h
 include/mysql/server/mysql/service_thd_autoinc.h
 include/mysql/server/mysql/service_thd_error_context.h
+include/mysql/server/mysql/service_thd_mdl.h
 include/mysql/server/mysql/service_thd_rnd.h
 include/mysql/server/mysql/service_thd_specifics.h
 include/mysql/server/mysql/service_thd_timezone.h
@@ -142,6 +146,7 @@ include/mysql/server/mysqld_error.h
 include/mysql/server/pack.h
 include/mysql/server/private/
 include/mysql/server/private/aria_backup.h
+include/mysql/server/private/assume_aligned.h
 include/mysql/server/private/atomic/
 include/mysql/server/private/atomic/gcc_builtins.h
 include/mysql/server/private/atomic/generic-msvc.h
@@ -175,6 +180,7 @@ include/mysql/server/private/filesort_utils.h
 include/mysql/server/private/ft_global.h
 include/mysql/server/private/gcalc_slicescan.h
 include/mysql/server/private/gcalc_tools.h
+include/mysql/server/private/grant.h
 include/mysql/server/private/group_by_handler.h
 include/mysql/server/private/gstream.h
 include/mysql/server/private/ha_partition.h
@@ -185,15 +191,14 @@ include/mysql/server/private/hash.h
 include/mysql/server/private/hash_filo.h
 include/mysql/server/private/heap.h
 include/mysql/server/private/hostname.h
+include/mysql/server/private/ilist.h
 include/mysql/server/private/init.h
 include/mysql/server/private/innodb_priv.h
-include/mysql/server/private/intrusive_list.h
 include/mysql/server/private/item.h
 include/mysql/server/private/item_cmpfunc.h
 include/mysql/server/private/item_create.h
 include/mysql/server/private/item_func.h
 include/mysql/server/private/item_geofunc.h
-include/mysql/server/private/item_inetfunc.h
 include/mysql/server/private/item_jsonfunc.h
 include/mysql/server/private/item_row.h
 include/mysql/server/private/item_strfunc.h
@@ -223,6 +228,7 @@ include/mysql/server/private/multi_range_read.h
 include/mysql/server/private/my_alarm.h
 include/mysql/server/private/my_apc.h
 include/mysql/server/private/my_atomic.h
+include/mysql/server/private/my_atomic_wrapper.h
 include/mysql/server/private/my_base.h
 include/mysql/server/private/my_bit.h
 include/mysql/server/private/my_bitmap.h
@@ -242,6 +248,7 @@ include/mysql/server/private/my_nosys.h
 include/mysql/server/private/my_rdtsc.h
 include/mysql/server/private/my_rnd.h
 include/mysql/server/private/my_service_manager.h
+include/mysql/server/private/my_stack_alloc.h
 include/mysql/server/private/my_stacktrace.h
 include/mysql/server/private/my_time.h
 include/mysql/server/private/my_tree.h
@@ -265,6 +272,17 @@ include/mysql/server/private/parse_file.h
 include/mysql/server/private/partition_element.h
 include/mysql/server/private/partition_info.h
 include/mysql/server/private/password.h
+include/mysql/server/private/pfs_file_provider.h
+include/mysql/server/private/pfs_idle_provider.h
+include/mysql/server/private/pfs_memory_provider.h
+include/mysql/server/private/pfs_metadata_provider.h
+include/mysql/server/private/pfs_socket_provider.h
+include/mysql/server/private/pfs_stage_provider.h
+include/mysql/server/private/pfs_statement_provider.h
+include/mysql/server/private/pfs_table_provider.h
+include/mysql/server/private/pfs_thread_provider.h
+include/mysql/server/private/pfs_transaction_provider.h
+include/mysql/server/private/privilege.h
 include/mysql/server/private/probes_mysql.h
 include/mysql/server/private/probes_mysql_nodtrace.h
 include/mysql/server/private/procedure.h
@@ -304,6 +322,7 @@ include/mysql/server/private/sp_cache.h
 include/mysql/server/private/sp_head.h
 include/mysql/server/private/sp_pcontext.h
 include/mysql/server/private/sp_rcontext.h
+include/mysql/server/private/span.h
 include/mysql/server/private/spatial.h
 include/mysql/server/private/sql_acl.h
 include/mysql/server/private/sql_admin.h
@@ -340,10 +359,12 @@ include/mysql/server/private/sql_get_diagnostics.h
 include/mysql/server/private/sql_handler.h
 include/mysql/server/private/sql_help.h
 include/mysql/server/private/sql_hset.h
+include/mysql/server/private/sql_i_s.h
 include/mysql/server/private/sql_insert.h
 include/mysql/server/private/sql_join_cache.h
 include/mysql/server/private/sql_lex.h
 include/mysql/server/private/sql_lifo_buffer.h
+include/mysql/server/private/sql_limit.h
 include/mysql/server/private/sql_list.h
 include/mysql/server/private/sql_load.h
 include/mysql/server/private/sql_locale.h
@@ -377,9 +398,11 @@ include/mysql/server/private/sql_trigger.h
 include/mysql/server/private/sql_truncate.h
 include/mysql/server/private/sql_tvc.h
 include/mysql/server/private/sql_type.h
+include/mysql/server/private/sql_type_geom.h
 include/mysql/server/private/sql_type_int.h
 include/mysql/server/private/sql_type_json.h
 include/mysql/server/private/sql_type_real.h
+include/mysql/server/private/sql_type_string.h
 include/mysql/server/private/sql_udf.h
 include/mysql/server/private/sql_union.h
 include/mysql/server/private/sql_update.h
@@ -396,15 +419,16 @@ include/mysql/server/private/thr_alarm.h
 include/mysql/server/private/thr_lock.h
 include/mysql/server/private/thr_malloc.h
 include/mysql/server/private/thr_timer.h
+include/mysql/server/private/thread_cache.h
 include/mysql/server/private/thread_pool_priv.h
 include/mysql/server/private/threadpool.h
+include/mysql/server/private/threadpool_generic.h
 include/mysql/server/private/transaction.h
 include/mysql/server/private/tzfile.h
 include/mysql/server/private/tztime.h
 include/mysql/server/private/uniques.h
 include/mysql/server/private/unireg.h
 include/mysql/server/private/vers_string.h
-include/mysql/server/private/vers_utils.h
 include/mysql/server/private/violite.h
 include/mysql/server/private/waiting_threads.h
 include/mysql/server/private/welcome_copyright_notice.h
@@ -478,8 +502,8 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/simple_password_check.so
 @so lib/mysql/plugin/sql_errlog.so
 @so lib/mysql/plugin/wsrep_info.so
-libexec/mariadbd
-@bin libexec/mysqld
+@bin libexec/mariadbd
+libexec/mysqld
 @man man/man1/aria_chk.1
 @man man/man1/aria_dump_log.1
 @man man/man1/aria_ftdump.1
@@ -518,6 +542,11 @@ libexec/mariadbd
 @man man/man1/replace.1
 @man man/man1/resolve_stack_dump.1
 @man man/man1/resolveip.1
+@man man/man1/wsrep_sst_common.1
+@man man/man1/wsrep_sst_mariabackup.1
+@man man/man1/wsrep_sst_mysqldump.1
+@man man/man1/wsrep_sst_rsync.1
+@man man/man1/wsrep_sst_rsync_wan.1
 @man man/man8/mariadbd.8
 @man man/man8/mysqld.8
 share/doc/mysql/
@@ -599,7 +628,6 @@ share/mysql/hindi/
 share/mysql/hindi/errmsg.sys
 share/mysql/hungarian/
 share/mysql/hungarian/errmsg.sys
-share/mysql/install_spider.sql
 share/mysql/italian/
 share/mysql/italian/errmsg.sys
 share/mysql/japanese/

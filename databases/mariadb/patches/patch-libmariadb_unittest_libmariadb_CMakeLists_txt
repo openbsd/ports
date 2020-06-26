@@ -1,4 +1,4 @@
-$OpenBSD: patch-libmariadb_unittest_libmariadb_CMakeLists_txt,v 1.1 2019/05/12 21:56:55 jca Exp $
+$OpenBSD: patch-libmariadb_unittest_libmariadb_CMakeLists_txt,v 1.2 2020/06/26 08:46:42 sthen Exp $
 
 Index: libmariadb/unittest/libmariadb/CMakeLists.txt
 --- libmariadb/unittest/libmariadb/CMakeLists.txt.orig
@@ -11,7 +11,7 @@ Index: libmariadb/unittest/libmariadb/CMakeLists.txt
  
  SET(API_TESTS "conc336" "bulk1" "performance" "basic-t" "fetch" "charset" "logs" "cursor" "errors" "view" "ps" "ps_bugs" "sp" "result" "connection" "misc" "ps_new" "thread" "features-10_2" "bulk1")
  IF(WITH_DYNCOL)
-@@ -62,12 +63,12 @@ FOREACH(API_TEST ${API_TESTS})
+@@ -52,12 +53,12 @@ FOREACH(API_TEST ${API_TESTS})
    IF (NOT TARGET ${API_TEST})
      ADD_EXECUTABLE(${API_TEST} ${API_TEST}.c)
    ENDIF()

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2020/04/06 20:58:29 cwen Exp $
+# $OpenBSD: Makefile,v 1.91 2020/06/26 08:46:41 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.4.12
+VERSION=	10.5.4
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
@@ -29,8 +29,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c crypto iconv m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline
-WANTLIB-server=	${WANTLIB} bz2 lz4 lzma lzo2 pcre snappy
-WANTLIB-tests=	${WANTLIB} pcre pcreposix
+WANTLIB-server=	${WANTLIB} bz2 lz4 lzma lzo2 pcre2-8 snappy
+WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
 
 MULTI_PACKAGES=	-main -server -tests
 
@@ -46,8 +46,8 @@ BUILD_DEPENDS=	devel/bison
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			converters/libiconv
-RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.4v1,<10.5v1 \
-			databases/p5-DBD-mysql
+RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1 \
+			databases/p5-DBD-MariaDB
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/bzip2 \
 			archivers/lz4 \
@@ -55,11 +55,11 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/snappy \
 			archivers/xz \
 			converters/libiconv \
-			devel/pcre
-RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.4v1,<10.5v1
+			devel/pcre2
+RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			converters/libiconv \
-			devel/pcre
+			devel/pcre2
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
@@ -103,11 +103,14 @@ CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
 # CMake test fails on OpenBSD
 CONFIGURE_ARGS+=-DHAVE_NETINET_TCP_H=1
 
-# The Mroonga, RocksDB, and TokuDB storage engines are disabled.
+# The ColumnStore, Mroonga, RocksDB, S3, and TokuDB storage engines are disabled.
+# ColumnStore and S3 are only buildable on X86.
 # Mroonga is only buildable on little endian archs.
 # RocksDB is only buildable on little endian archs and requires POSIX timers.
-# TokuDB is only buildable on 64-bit little endian archs.
-CONFIGURE_ARGS+=-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
+# TokuDB is only buildable on 64-bit little endian archs and requires O_DIRECT.
+CONFIGURE_ARGS+=-DPLUGIN_COLUMNSTORE=NO \
+		-DPLUGIN_S3=NO \
+		-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
 		-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1 \
 		-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
 
@@ -136,6 +139,7 @@ post-install:
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient.so.${LIBmysqlclient_VERSION} && \
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
 	${INSTALL_DATA} ${FILESDIR}/my.cnf ${PREFIX}/share/examples/mysql/
+	rm -f ${PREFIX}/man/man1/myrocks_hotbackup.1
 	rm -Rf ${PREFIX}/share/mysql-test/plugin/rocksdb/
 
 do-test:

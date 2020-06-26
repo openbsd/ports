@@ -1,18 +1,18 @@
-$OpenBSD: patch-client_CMakeLists_txt,v 1.12 2019/12/30 20:26:51 sthen Exp $
+$OpenBSD: patch-client_CMakeLists_txt,v 1.13 2020/06/26 08:46:41 sthen Exp $
 
 Index: client/CMakeLists.txt
 --- client/CMakeLists.txt.orig
 +++ client/CMakeLists.txt
-@@ -71,10 +71,10 @@ MYSQL_ADD_EXECUTABLE(mysql_plugin mysql_plugin.c)
- TARGET_LINK_LIBRARIES(mysql_plugin ${CLIENT_LIB})
+@@ -71,10 +71,10 @@ MYSQL_ADD_EXECUTABLE(mariadb-plugin mysql_plugin.c)
+ TARGET_LINK_LIBRARIES(mariadb-plugin ${CLIENT_LIB})
  
- MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
--TARGET_LINK_LIBRARIES(mysqlbinlog ${CLIENT_LIB} mysys_ssl)
-+TARGET_LINK_LIBRARIES(mysqlbinlog ${CLIENT_LIB} mysys_ssl ${SSL_LIBRARIES})
+ MYSQL_ADD_EXECUTABLE(mariadb-binlog mysqlbinlog.cc)
+-TARGET_LINK_LIBRARIES(mariadb-binlog ${CLIENT_LIB} mysys_ssl)
++TARGET_LINK_LIBRARIES(mariadb-binlog ${CLIENT_LIB} mysys_ssl ${SSL_LIBRARIES})
  
- MYSQL_ADD_EXECUTABLE(mysqladmin mysqladmin.cc ../sql/password.c)
--TARGET_LINK_LIBRARIES(mysqladmin ${CLIENT_LIB} mysys_ssl)
-+TARGET_LINK_LIBRARIES(mysqladmin ${CLIENT_LIB} mysys_ssl ${SSL_LIBRARIES})
+ MYSQL_ADD_EXECUTABLE(mariadb-admin mysqladmin.cc ../sql/password.c)
+-TARGET_LINK_LIBRARIES(mariadb-admin ${CLIENT_LIB} mysys_ssl)
++TARGET_LINK_LIBRARIES(mariadb-admin ${CLIENT_LIB} mysys_ssl ${SSL_LIBRARIES})
  
- MYSQL_ADD_EXECUTABLE(mysqlslap mysqlslap.c)
+ MYSQL_ADD_EXECUTABLE(mariadb-slap mysqlslap.c)
  SET_SOURCE_FILES_PROPERTIES(mysqlslap.c PROPERTIES COMPILE_FLAGS "-DTHREADS")

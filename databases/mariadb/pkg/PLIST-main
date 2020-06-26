@@ -1,35 +1,38 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2019/12/30 20:26:51 sthen Exp $
-@conflict mysql-client-*
-@conflict mysql-server-*
-@pkgpath databases/mysql,-main
-bin/mariadb
+@comment $OpenBSD: PLIST-main,v 1.21 2020/06/26 08:46:42 sthen Exp $
+@conflict mariadb-server-<=10.4.12v1
+@conflict mytop-*
+@pkgpath databases/mytop
+@bin bin/mariadb
 bin/mariadb-access
-bin/mariadb-admin
-bin/mariadb-binlog
-bin/mariadb-check
+@bin bin/mariadb-admin
+@bin bin/mariadb-binlog
+@bin bin/mariadb-check
+bin/mariadb-config
+@bin bin/mariadb-conv
 bin/mariadb-convert-table-format
-bin/mariadb-dump
+@bin bin/mariadb-dump
 bin/mariadb-find-rows
 bin/mariadb-hotcopy
-bin/mariadb-import
-bin/mariadb-plugin
+@bin bin/mariadb-import
+@bin bin/mariadb-plugin
 bin/mariadb-setpermission
-bin/mariadb-show
-bin/mariadb-slap
+@bin bin/mariadb-show
+@bin bin/mariadb-slap
 @bin bin/mariadb_config
 bin/msql2mysql
-@bin bin/mysql
+bin/mysql
 bin/mysql_config
 bin/mysql_find_rows
-@bin bin/mysql_waitpid
+bin/mysql_waitpid
 bin/mysqlaccess
-@bin bin/mysqladmin
-@bin bin/mysqlbinlog
-@bin bin/mysqlcheck
-@bin bin/mysqldump
-@bin bin/mysqlimport
-@bin bin/mysqlshow
-@bin bin/mysqlslap
+bin/mysqladmin
+bin/mysqlbinlog
+bin/mysqlcheck
+bin/mysqldump
+bin/mysqlimport
+bin/mysqlshow
+bin/mysqlslap
+bin/mytop
 include/mysql/
 include/mysql/errmsg.h
 include/mysql/ma_list.h
@@ -64,6 +67,7 @@ lib/mysql/
 @lib lib/mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
 @static-lib lib/mysql/libmysqlservices.a
 lib/pkgconfig/libmariadb.pc
+lib/pkgconfig/mariadb.pc
 @man man/man1/galera_new_cluster.1
 @man man/man1/galera_recovery.1
 @man man/man1/mariabackup.1
@@ -71,6 +75,7 @@ lib/pkgconfig/libmariadb.pc
 @man man/man1/mariadb-admin.1
 @man man/man1/mariadb-binlog.1
 @man man/man1/mariadb-check.1
+@man man/man1/mariadb-conv.1
 @man man/man1/mariadb-convert-table-format.1
 @man man/man1/mariadb-dump.1
 @man man/man1/mariadb-embedded.1
@@ -84,6 +89,7 @@ lib/pkgconfig/libmariadb.pc
 @man man/man1/mariadb-show.1
 @man man/man1/mariadb-slap.1
 @man man/man1/mariadb.1
+@man man/man1/mariadb_config.1
 @man man/man1/mbstream.1
 @man man/man1/msql2mysql.1
 @man man/man1/my_safe_process.1
@@ -103,13 +109,6 @@ lib/pkgconfig/libmariadb.pc
 @man man/man1/mysqlimport.1
 @man man/man1/mysqlshow.1
 @man man/man1/mysqlslap.1
-@man man/man1/tokuft_logprint.1
-@man man/man1/tokuftdump.1
-@man man/man1/wsrep_sst_common.1
-@man man/man1/wsrep_sst_mariabackup.1
-@man man/man1/wsrep_sst_mysqldump.1
-@man man/man1/wsrep_sst_rsync.1
-@man man/man1/wsrep_sst_rsync_wan.1
+@man man/man1/mytop.1
 share/aclocal/
 share/aclocal/mysql.m4
-share/pkgconfig/mariadb.pc

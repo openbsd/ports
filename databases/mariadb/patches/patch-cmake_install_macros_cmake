@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmake_install_macros_cmake,v 1.14 2019/12/30 20:26:51 sthen Exp $
+$OpenBSD: patch-cmake_install_macros_cmake,v 1.15 2020/06/26 08:46:41 sthen Exp $
 
 Index: cmake/install_macros.cmake
 --- cmake/install_macros.cmake.orig
 +++ cmake/install_macros.cmake
-@@ -176,6 +176,36 @@ IF(UNIX)
+@@ -175,6 +175,36 @@ IF(UNIX)
  ENDIF()
  ENDMACRO()
  

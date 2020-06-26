@@ -1,9 +1,9 @@
-$OpenBSD: patch-libmariadb_libmariadb_ma_charset_c,v 1.1 2019/05/12 21:56:55 jca Exp $
+$OpenBSD: patch-libmariadb_libmariadb_ma_charset_c,v 1.2 2020/06/26 08:46:42 sthen Exp $
 
 Index: libmariadb/libmariadb/ma_charset.c
 --- libmariadb/libmariadb/ma_charset.c.orig
 +++ libmariadb/libmariadb/ma_charset.c
-@@ -1446,12 +1446,12 @@ size_t STDCALL mariadb_convert_string(const char *from
+@@ -1447,12 +1447,12 @@ size_t STDCALL mariadb_convert_string(const char *from
    map_charset_name(to_cs->encoding, 1, to_encoding, sizeof(to_encoding));
    map_charset_name(from_cs->encoding, 0, from_encoding, sizeof(from_encoding));
  
@@ -13,12 +13,12 @@ Index: libmariadb/libmariadb/ma_charset.c
      *errorcode= errno;
      goto error;
    }
--  if ((rc= iconv(conv, IF_WIN(,(char **))&from, from_len, &to, to_len)) == (size_t)-1)
-+  if ((rc= libiconv(conv, IF_WIN(,(char **))&from, from_len, &to, to_len)) == (size_t)-1)
+-  if ((rc= iconv(conv, IF_WIN(,IF_SOLARIS(,(char **)))&from, from_len, &to, to_len)) == (size_t)-1)
++  if ((rc= libiconv(conv, IF_WIN(,IF_SOLARIS(,(char **)))&from, from_len, &to, to_len)) == (size_t)-1)
    {
      *errorcode= errno;
      goto error;
-@@ -1459,7 +1459,7 @@ size_t STDCALL mariadb_convert_string(const char *from
+@@ -1460,7 +1460,7 @@ size_t STDCALL mariadb_convert_string(const char *from
    rc= save_len - *to_len;
  error:
    if (conv != (iconv_t)-1)
