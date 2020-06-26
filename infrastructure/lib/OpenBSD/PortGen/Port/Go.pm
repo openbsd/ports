@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.3 2020/06/25 13:57:45 abieber Exp $
+# $OpenBSD: Go.pm,v 1.4 2020/06/26 11:02:32 espie Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -115,6 +115,7 @@ sub _run
 		$ENV{GOPATH} = "$dir/go";
 		$ENV{GO111MODULE} = "on";
 		# Outputs: "dep version"
+		$DB::inhibit_exit = 0;
 		exec ($cmd);
 		die "exec didn't work: $?";
 	}
