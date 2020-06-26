@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.191 2020/06/26 13:00:07 espie Exp $
+# $OpenBSD: update-plist,v 1.192 2020/06/26 14:47:05 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -16,6 +16,10 @@
 
 use strict;
 use warnings;
+
+# XXX we could pass these as -D options, but it would mean a lot of the
+# code would get run as root before the drop privileges, so checking the
+# env for the fake identity is much safer!
 
 my $ports1;
 my ($ports_uid, $ports_gid, $fake_uid, $fake_gid);
