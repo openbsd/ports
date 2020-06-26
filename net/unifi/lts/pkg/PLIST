@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/24 14:54:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/06/26 13:15:23 sthen Exp $
 @option is-branch
 @pkgpath net/unifi/5.6
 @newgroup _unifi:732
@@ -1115,3 +1115,4 @@ share/unifi/webapps/ROOT/pages/voucher.jsp
 share/unifi/work/
 @extraunexec rm -rf %D/share/unifi/{backup,dl,data,run,work,conf}
 @extraunexec rm -rf /var/log/unifi
+@exec-update [[ -d %D/share/unifi/data/db/ace ]] && printf "\nYour Unifi database uses mongodb's deprecated MMAPV1 engine. Consider\nbacking up and recreating by restoring which will use the WiredTiger\nengine which has smaller files and checkpointing.\n\n"; true
