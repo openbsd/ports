@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2020/06/26 09:04:39 pirofti Exp $
+# $OpenBSD: Makefile,v 1.180 2020/06/26 09:59:24 pirofti Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -115,6 +115,7 @@
      SUBDIR += prover9
      SUBDIR += pspp
      SUBDIR += py-Numeric
+     SUBDIR += py-PyWavelets
      SUBDIR += py-affine
      SUBDIR += py-affine,python3
      SUBDIR += py-bottleneck,python3
