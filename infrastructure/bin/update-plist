@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.189 2020/02/20 16:33:45 espie Exp $
+# $OpenBSD: update-plist,v 1.190 2020/06/26 12:00:27 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1368,6 +1368,12 @@ sub handle_options
 	$state->{extnew} = $state->opt('E') // ".new";
 	$state->{extorig} = $state->opt('e') // ".orig";
 	$state->{logfile} = $state->opt('L');
+	for my $i (qw(FAKE_COOKIE PKGLOCATE_COOKIE)) {
+		$state->{$i} = $state->defines($i);
+		if (defined $state->{$i}) {
+			$state->{ignored}{$state->{$i}} = 1;
+		}
+	}
 	if (exists $state->{maybe_ignored} && !exists $state->{maybe_comment}) {
 		$state->usage;
 	}
@@ -1805,18 +1811,51 @@ sub locate_list
 	}
 }
 
+sub no_need_to_run
+{
+	my ($self, $state) = @_;
+	if (!defined $state->{PKGLOCATE_COOKIE}) {
+		return 0;
+	}
+	# TODO check date against FAKE_COOKIE, and contents vs conflicts
+	if (-e $state->{PKGLOCATE_COOKIE}) {
+		return 1;
+	}
+	return 0;
+}
+
+sub write_cookie
+{
+	my ($self, $state) = @_;
+	if (defined $state->{PKGLOCATE_COOKIE}) {
+		# TODO actually write conflicts
+		open(my $cookie, '>', $state->{PKGLOCATE_COOKIE});
+	}
+}
+
 sub try_pkglocate
 {
 	my $self = shift;
+	my $state = $self->{state};
 	# hardcode the location for now
 	if (-x '/usr/local/bin/pkg_locate') {
-		$self->{state}->say("Looking for unregistered conflicts")
-		    unless $self->{state}{quiet};
+		if ($self->no_need_to_run($state)) {
+			$state->say("pkglocate already ran")
+			    unless $state->{quiet};
+			return;
+		}
+		if (defined $state->{PKGLOCATE_COOKIE}) {
+			if (-e $state->{PKGLOCATE_COOKIE}) {
+			}
+		}
+		$state->say("Looking for unregistered conflicts")
+		    unless $state->{quiet};
 		for my $p (@{$self->{lists}}) {
 			$self->locate_list($p);
 		}
+		$self->write_cookie($state);
     	} else {
-		$self->{state}->say("Can't look for conflicts, pkglocatedb not installed");
+		$state->say("Can't look for conflicts, pkglocatedb not installed");
 	}
 }
 
