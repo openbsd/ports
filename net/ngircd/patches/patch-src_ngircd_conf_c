@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ngircd_conf_c,v 1.6 2019/02/13 16:09:40 tsg Exp $
+$OpenBSD: patch-src_ngircd_conf_c,v 1.7 2020/06/26 10:32:15 solene Exp $
 Index: src/ngircd/conf.c
 --- src/ngircd/conf.c.orig
 +++ src/ngircd/conf.c
@@ -11,7 +11,7 @@ Index: src/ngircd/conf.c
  	printf("  MaxListSize = %d\n", Conf_MaxListSize);
  	printf("  PingTimeout = %d\n", Conf_PingTimeout);
  	printf("  PongTimeout = %d\n", Conf_PongTimeout);
-@@ -757,7 +757,7 @@ Set_Defaults(bool InitServers)
+@@ -758,7 +758,7 @@ Set_Defaults(bool InitServers)
  	strlcat(Conf_HelpFile, HELP_FILE, sizeof(Conf_HelpFile));
  	strcpy(Conf_ServerPwd, "");
  	strlcpy(Conf_PidFile, PID_FILE, sizeof(Conf_PidFile));
@@ -20,7 +20,7 @@ Index: src/ngircd/conf.c
  
  	/* Limits */
  	Conf_ConnectRetry = 60;
-@@ -1644,7 +1644,7 @@ Handle_LIMITS(const char *File, int Line, char *Var, c
+@@ -1506,7 +1506,7 @@ Handle_LIMITS(const char *File, int Line, char *Var, c
  		return;
  	}
  	if (strcasecmp(Var, "MaxPenaltyTime") == 0) {
@@ -29,7 +29,7 @@ Index: src/ngircd/conf.c
  		if (Conf_MaxPenaltyTime < -1)
  			Conf_MaxPenaltyTime = -1;	/* "unlimited" */
  		return;
-@@ -2291,8 +2291,8 @@ Validate_Config(bool Configtest, bool Rehash)
+@@ -2122,8 +2122,8 @@ Validate_Config(bool Configtest, bool Rehash)
  
  	if (Conf_MaxPenaltyTime != -1)
  		Config_Error(LOG_WARNING,

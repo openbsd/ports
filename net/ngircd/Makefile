@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2020/02/24 10:30:16 solene Exp $
+# $OpenBSD: Makefile,v 1.20 2020/06/26 10:32:15 solene Exp $
 
 COMMENT =	lightweight irc server
 
-DISTNAME =	ngircd-25
-
-REVISION =	0
+DISTNAME =	ngircd-26
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://ngircd.barton.de/
 
-MAINTAINER =	Giannis Tsaraias <tsg@openbsd.org>
+MAINTAINER =	Michael <michi+openbsd@dataswamp.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -18,8 +16,9 @@ PERMIT_PACKAGE =	Yes
 # use pledge()
 WANTLIB =	c crypto iconv ssl z
 
-MASTER_SITES =	http://ngircd.barton.de/pub/ngircd/ \
-		http://ngircd.mirror.3rz.org/pub/ngircd/
+MASTER_SITES =	https://ngircd.barton.de/pub/ngircd/ \
+		https://ngircd.mirror.3rz.org/pub/ngircd/ \
+		https://ngircd.sourceforge.io/pub/ngircd/
 
 LIB_DEPENDS =	converters/libiconv
 TEST_DEPENDS =	lang/expect \

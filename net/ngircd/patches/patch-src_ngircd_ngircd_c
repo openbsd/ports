@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_ngircd_ngircd_c,v 1.5 2020/02/24 10:30:16 solene Exp $
+$OpenBSD: patch-src_ngircd_ngircd_c,v 1.6 2020/06/26 10:32:15 solene Exp $
 Index: src/ngircd/ngircd.c
 --- src/ngircd/ngircd.c.orig
 +++ src/ngircd/ngircd.c
-@@ -259,6 +259,16 @@ main(int argc, const char *argv[])
+@@ -261,6 +261,16 @@ main(int argc, const char *argv[])
  			exit(1);
  		}
  
@@ -16,9 +16,9 @@ Index: src/ngircd/ngircd.c
 +				err(1, "pledge");
 +		}
 +
- 		/* Initialize modules, part II: these functions are eventually
- 		 * called with already dropped privileges ... */
- 		Channel_Init();
+ 		if (!io_library_init(CONNECTION_POOL)) {
+ 			Log(LOG_ALERT,
+ 			    "Fatal: Could not initialize IO routines: %s",
 @@ -563,7 +573,7 @@ Setup_FDStreams(int fd)
  #if !defined(SINGLE_USER_OS)
  

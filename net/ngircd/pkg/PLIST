@@ -1,6 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/02/13 16:09:40 tsg Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/06/26 10:32:15 solene Exp $
 @newgroup _ngircd:703
 @newuser _ngircd:703:703:daemon:ngircd account:/var/ngircd:/sbin/nologin
+@mode 700
+@owner _ngircd
+@group _ngircd
+@sample ${SYSCONFDIR}/
+@sample /var/ngircd/
+@mode
+@owner
+@group
 @rcscript ${RCDIR}/ngircd
 @man man/man5/ngircd.conf.5
 @man man/man8/ngircd.8
@@ -15,26 +23,18 @@ share/doc/ngircd/Commands.txt
 share/doc/ngircd/Contributing.txt
 share/doc/ngircd/FAQ.txt
 share/doc/ngircd/HowToRelease.txt
-share/doc/ngircd/INSTALL
+share/doc/ngircd/INSTALL.md
 share/doc/ngircd/Modes.txt
 share/doc/ngircd/NEWS
 share/doc/ngircd/PAM.txt
 share/doc/ngircd/Platforms.txt
 share/doc/ngircd/Protocol.txt
-share/doc/ngircd/README
 share/doc/ngircd/README-AUX.txt
 share/doc/ngircd/README-BeOS.txt
 share/doc/ngircd/README-Interix.txt
+share/doc/ngircd/README.md
 share/doc/ngircd/RFC.txt
 share/doc/ngircd/SSL.txt
 share/doc/ngircd/Services.txt
 share/examples/ngircd/
 share/examples/ngircd/sample-ngircd.conf
-@mode 700
-@owner _ngircd
-@group _ngircd
-@sample ${SYSCONFDIR}/
-@mode 600
-@sample ${SYSCONFDIR}/ngircd.conf
-@mode 700
-@sample /var/ngircd/
