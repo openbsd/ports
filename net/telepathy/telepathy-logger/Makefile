@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2020/06/10 07:14:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2020/06/26 21:27:09 sthen Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -23,7 +23,8 @@ MODULES=	devel/dconf \
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gobject-introspection \
-		devel/py-twisted
+		devel/py-twisted \
+		textproc/libxslt
 LIB_DEPENDS=	databases/sqlite3 \
 		net/telepathy/telepathy-glib \
 		textproc/libxml \
