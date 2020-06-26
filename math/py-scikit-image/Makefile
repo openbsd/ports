@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/26 09:03:41 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/26 10:01:42 pirofti Exp $
 
 COMMENT =		image processing routines for SciPy
 
@@ -7,7 +7,7 @@ DISTNAME =		scikit-image-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
 
-MAINTAINER =		Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/26 08:59:05 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/26 10:01:42 pirofti Exp $
 
 COMMENT =		io for scientific data formats
 
@@ -7,7 +7,7 @@ DISTNAME =		imageio-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
 
-MAINTAINER =		Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # BSD
 PERMIT_PACKAGE =	Yes
