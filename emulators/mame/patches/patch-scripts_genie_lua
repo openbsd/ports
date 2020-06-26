@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_genie_lua,v 1.14 2020/02/03 22:00:01 fcambus Exp $
+$OpenBSD: patch-scripts_genie_lua,v 1.15 2020/06/26 19:54:47 fcambus Exp $
 
 - Set OPT_FLAGS even when OPTIMIZE is unset, to allow passing CXXFLAGS
 - Remove broken GCC version detection
@@ -6,7 +6,7 @@ $OpenBSD: patch-scripts_genie_lua,v 1.14 2020/02/03 22:00:01 fcambus Exp $
 Index: scripts/genie.lua
 --- scripts/genie.lua.orig
 +++ scripts/genie.lua
-@@ -830,17 +830,19 @@ if _OPTIONS["NOWERROR"]==nil then
+@@ -835,17 +835,19 @@ if _OPTIONS["NOWERROR"]==nil then
  	}
  end
  
@@ -31,7 +31,7 @@ Index: scripts/genie.lua
  	if _OPTIONS["LTO"]=="1" then
  		buildoptions {
  -- windows native mingw GCC 5.2 fails with -flto=x with x > 1. bug unfixed as of this commit
-@@ -1055,53 +1057,6 @@ end
+@@ -1060,68 +1062,6 @@ end
  
  
  
@@ -61,6 +61,16 @@ Index: scripts/genie.lua
 -					"-Wno-pragma-pack" -- clang 6.0 complains when the packing change lifetime is not contained within a header file.
 -				}
 -			end
+-			if ((version < 60000) or (_OPTIONS["targetos"]=="macosx" and (version <= 90000))) then
+-				buildoptions {
+-					"-Wno-missing-braces" -- std::array brace initialization not fixed until 6.0.0 (https://reviews.llvm.org/rC314838)
+-				}
+-			end
+-			if (_OPTIONS["targetos"]=="macosx" and (version < 80000)) then
+-				defines {
+-					"TARGET_OS_OSX=1",
+-				}
+-			end
 -		else
 -			if (version < 70000) then
 -				print("GCC version 7.0 or later needed")
@@ -79,6 +89,11 @@ Index: scripts/genie.lua
 -				}
 -				buildoptions_cpp {
 -					"-Wno-class-memaccess", -- many instances in ImGui and BGFX
+-				}
+-			end
+-			if (version >= 100000) then
+-				buildoptions {
+-					"-Wno-return-local-addr", -- sqlite3.c in GCC 10
 -				}
 -			end
 -		end
