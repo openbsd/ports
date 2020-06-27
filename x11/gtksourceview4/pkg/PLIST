@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/05/14 15:05:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/06/27 08:42:56 jasper Exp $
 include/gtksourceview-4/
 include/gtksourceview-4/gtksourceview/
 include/gtksourceview-4/gtksourceview/completion-providers/
@@ -216,6 +216,7 @@ share/gtksourceview-4/language-specs/xml.lang
 share/gtksourceview-4/language-specs/xslt.lang
 share/gtksourceview-4/language-specs/yacc.lang
 share/gtksourceview-4/language-specs/yaml.lang
+share/gtksourceview-4/language-specs/yara.lang
 share/gtksourceview-4/styles/
 share/gtksourceview-4/styles/classic.xml
 share/gtksourceview-4/styles/cobalt.xml
