@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.102 2020/06/12 22:09:09 cwen Exp $
+# $OpenBSD: Makefile,v 1.103 2020/06/27 09:25:31 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.36.0
-REVISION=		0
+GNOME_VERSION=		3.36.1
 
 CATEGORIES=		devel
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2020/05/14 15:17:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2020/06/27 09:25:31 ajacoutot Exp $
 @bin bin/gnome-builder
 include/gnome-builder/
 include/gnome-builder-3.36/
@@ -100,6 +100,7 @@ include/gnome-builder-3.36/libide/foundry/ide-device-manager.h
 include/gnome-builder-3.36/libide/foundry/ide-device-provider.h
 include/gnome-builder-3.36/libide/foundry/ide-device.h
 include/gnome-builder-3.36/libide/foundry/ide-fallback-build-system.h
+include/gnome-builder-3.36/libide/foundry/ide-foundry-compat.h
 include/gnome-builder-3.36/libide/foundry/ide-foundry-enums.h
 include/gnome-builder-3.36/libide/foundry/ide-foundry-types.h
 include/gnome-builder-3.36/libide/foundry/ide-local-device.h
@@ -118,6 +119,9 @@ include/gnome-builder-3.36/libide/foundry/ide-runtime.h
 include/gnome-builder-3.36/libide/foundry/ide-simple-build-system-discovery.h
 include/gnome-builder-3.36/libide/foundry/ide-simple-build-target.h
 include/gnome-builder-3.36/libide/foundry/ide-simple-toolchain.h
+include/gnome-builder-3.36/libide/foundry/ide-test-manager.h
+include/gnome-builder-3.36/libide/foundry/ide-test-provider.h
+include/gnome-builder-3.36/libide/foundry/ide-test.h
 include/gnome-builder-3.36/libide/foundry/ide-toolchain-manager.h
 include/gnome-builder-3.36/libide/foundry/ide-toolchain-provider.h
 include/gnome-builder-3.36/libide/foundry/ide-toolchain.h
@@ -366,6 +370,8 @@ lib/gnome-builder/plugins/rustup_plugin.gresource
 lib/gnome-builder/plugins/rustup_plugin.py
 lib/gnome-builder/plugins/stylelint.plugin
 lib/gnome-builder/plugins/stylelint_plugin.py
+lib/gnome-builder/plugins/vala-pack.plugin
+lib/gnome-builder/plugins/vala_pack_plugin.py
 lib/gnome-builder/plugins/waf.plugin
 lib/gnome-builder/plugins/waf_plugin.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
