@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.93 2019/11/10 21:50:23 jca Exp $
+# $OpenBSD: Makefile,v 1.94 2020/06/27 04:11:03 yasuoka Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		26.3
-REVISION=		1
+REVISION=		2
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors

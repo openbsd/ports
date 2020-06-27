@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.17 2019/09/25 22:10:51 jca Exp $
+$OpenBSD: patch-configure,v 1.18 2020/06/27 04:11:04 yasuoka Exp $
 Index: configure
 --- configure.orig
 +++ configure
@@ -13,3 +13,18 @@ Index: configure
     ;;
  esac
  
+@@ -18602,12 +18600,12 @@ case $opsys in
+ 
+     ;;
+ 
+-  gnu | openbsd | qnxnto )
++  gnu | qnxnto )
+     $as_echo "#define FIRST_PTY_LETTER 'p'" >>confdefs.h
+ 
+     ;;
+ 
+-  gnu-linux | gnu-kfreebsd | dragonfly | freebsd | netbsd | darwin | nacl )
++  openbsd | gnu-linux | gnu-kfreebsd | dragonfly | freebsd | netbsd | darwin | nacl )
+         if test "x$ac_cv_func_grantpt" = xyes; then
+ 
+ $as_echo "#define UNIX98_PTYS 1" >>confdefs.h
