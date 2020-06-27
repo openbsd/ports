@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.112 2020/06/19 10:34:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.113 2020/06/27 12:20:49 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -2060,16 +2060,19 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/upload-layer-part.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/create-capacity-provider.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/create-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/create-service.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/create-task-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-account-setting.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-capacity-provider.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-service.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-task-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/deregister-container-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/deregister-task-definition.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-capacity-providers.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-clusters.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-container-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-services.rst
@@ -2089,6 +2092,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/put-account-setting
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/put-account-setting.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/put-account-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/put-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/put-cluster-capacity-providers.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/register-task-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/run-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/start-task.rst
