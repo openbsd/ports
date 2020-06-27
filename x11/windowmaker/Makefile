@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2020/05/27 09:07:54 solene Exp $
+# $OpenBSD: Makefile,v 1.109 2020/06/27 01:13:47 kmos Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -43,6 +43,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LINGUAS='*' \
 			ac_cv_lib_exif_exif_data_new_from_file=no \
 			wm_cv_func_secure_getenv=no
+
+CFLAGS+=		-std=gnu99
 
 MULTI_PACKAGES=		-main -lang
 
