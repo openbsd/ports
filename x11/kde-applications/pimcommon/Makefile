@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/21 18:12:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/27 16:13:25 sthen Exp $
 
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
@@ -25,9 +25,8 @@ MODKF5_L10N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS =	devel/boost
-
 BUILD_DEPENDS =	textproc/libxslt \
+		devel/boost
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/karchive \
