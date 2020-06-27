@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/27 08:58:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/27 09:09:54 jasper Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -41,7 +41,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES =		lang/python
 
 MODPY_RUNDEP =		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 
 # C++11
 # sync with SHARED_LIBS consumers: x11/gnome/gjs
