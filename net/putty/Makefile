@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2019/09/30 08:45:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2020/06/27 11:56:19 sthen Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
-V=		0.73
+V=		0.74
 DISTNAME=	putty-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c pthread
 
 WANTLIB-gui+=	X11 atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB-gui+=	gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl pango-1.0
+WANTLIB-gui+=	gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl harfbuzz pango-1.0
 WANTLIB-gui+=	pangocairo-1.0 ${WANTLIB}
 
 CONFIGURE_STYLE=	autoreconf
