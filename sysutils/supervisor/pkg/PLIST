@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/03/23 13:20:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/06/27 14:33:20 jasper Exp $
 @rcscript ${RCDIR}/supervisord
 bin/echo_supervisord_conf
 bin/pidproxy
@@ -137,7 +137,10 @@ lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/example/inclu
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/include.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1054.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1224.conf
-lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1231.conf
+lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1231a.conf
+lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1231b.conf
+lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1231c.conf
+lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1298.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-565.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-638.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-663.conf
@@ -170,9 +173,6 @@ lib/python${MODPY_VERSION}/site-packages/supervisor/tests/test_web.py
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/test_xmlrpc.py
 lib/python${MODPY_VERSION}/site-packages/supervisor/ui/
 lib/python${MODPY_VERSION}/site-packages/supervisor/ui/images/
-lib/python${MODPY_VERSION}/site-packages/supervisor/ui/images/button_refresh.gif
-lib/python${MODPY_VERSION}/site-packages/supervisor/ui/images/button_restart.gif
-lib/python${MODPY_VERSION}/site-packages/supervisor/ui/images/button_stop.gif
 lib/python${MODPY_VERSION}/site-packages/supervisor/ui/images/icon.png
 lib/python${MODPY_VERSION}/site-packages/supervisor/ui/images/rule.gif
 lib/python${MODPY_VERSION}/site-packages/supervisor/ui/images/state0.gif
