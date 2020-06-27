@@ -952,7 +952,6 @@ SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = tDTLv8MsF7UijQsO3erqib707JvZ
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZWOiZmg4tTALzpwU=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v3/@v/v3.0.0-20200116222232-67a7b8c61874.mod) = n5fjklVBIkQ84n8Unusw0MFmVJTuhNX4bW037ijtuGQ=
-SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v3/@v/v3.0.0-20200116222232-67a7b8c61874.zip) = mIOxQlh3jNvlJL6+smdEO3qmIKOvGWJaD12gap28Ak8=
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v3/@v/v3.0.0.mod) = n5fjklVBIkQ84n8Unusw0MFmVJTuhNX4bW037ijtuGQ=
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v3/@v/v3.0.0.zip) = 0fZxQ7PcoVXNg78F/LvtW0CUgT2Pxd5cjOYq+3/5Atc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
@@ -1912,7 +1911,6 @@ SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = 2223
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v3/@v/v3.0.0-20200116222232-67a7b8c61874.mod) = 298
-SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v3/@v/v3.0.0-20200116222232-67a7b8c61874.zip) = 194719
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v3/@v/v3.0.0.mod) = 298
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v3/@v/v3.0.0.zip) = 215199
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
