@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2020/06/21 09:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2020/06/27 18:14:22 kmos Exp $
 
 COMMENT=		GNOME encryption interface
 
@@ -20,6 +20,11 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache vala yelp
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=		-std=gnu99
+.endif
 
 LIB_DEPENDS=		databases/openldap \
 			devel/libsoup \
