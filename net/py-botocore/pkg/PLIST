@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.136 2020/06/13 10:24:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.137 2020/06/27 12:20:10 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -436,6 +436,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/2014-10-31/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/2014-10-31/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/2014-10-31/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/2014-10-31/service-2.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/2014-10-31/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ds/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ds/2015-04-16/
@@ -639,6 +640,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/health/2016-08-04/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/health/2016-08-04/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/health/2016-08-04/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/health/2016-08-04/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/examples-1.json
