@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/06/05 15:40:09 sthen Exp $
---- Makefile.in.orig	Mon Feb  4 19:32:17 2013
-+++ Makefile.in	Tue Jun  3 10:36:28 2014
-@@ -22,7 +22,7 @@ prefix = ${DESTDIR}@prefix@
+$OpenBSD: patch-Makefile_in,v 1.2 2020/06/27 04:01:18 kmos Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -22,10 +22,10 @@ prefix = ${DESTDIR}@prefix@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
  datarootdir = @datarootdir@
@@ -9,7 +10,11 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/06/05 15:40:09 sthen Exp $
 +mandir = ${DESTDIR}@mandir@
  man1dir = $(mandir)/man1
  
- CFLAGS = @CFLAGS@ -I@srcdir@ -I@builddir@ -Werror
+-CFLAGS = @CFLAGS@ -I@srcdir@ -I@builddir@ -Werror
++CFLAGS = @CFLAGS@ -I@srcdir@ -I@builddir@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ 
 @@ -65,7 +65,7 @@ install-strip: STRIPFLAGS = -s
  install install-strip: $(PROGRAM)
  	@MKDIR_P@ $(bindir) $(man1dir)
