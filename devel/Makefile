@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1994 2020/06/26 22:28:12 abieber Exp $
+# $OpenBSD: Makefile,v 1.1995 2020/06/27 21:13:53 pirofti Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1418,7 +1418,6 @@
      SUBDIR += py-decorator,python3
      SUBDIR += py-decoratortools
      SUBDIR += py-deprecation,python3
-     SUBDIR += py-dill
      SUBDIR += py-dill,python3
      SUBDIR += py-dispatcher
      SUBDIR += py-dispatcher,python3
@@ -1551,7 +1550,6 @@
      SUBDIR += py-mox3,python3
      SUBDIR += py-mulpyplexer
      SUBDIR += py-mulpyplexer,python3
-     SUBDIR += py-multiprocess
      SUBDIR += py-multiprocess,python3
      SUBDIR += py-munch
      SUBDIR += py-munch,python3
