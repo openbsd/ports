@@ -1,0 +1,13 @@
+$OpenBSD: patch-storage_perfschema_pfs_config_h_cmake,v 1.1 2020/06/28 21:35:41 sthen Exp $
+
+Add support for OpenBSD's getthrid()
+
+Index: storage/perfschema/pfs_config.h.cmake
+--- storage/perfschema/pfs_config.h.cmake.orig
++++ storage/perfschema/pfs_config.h.cmake
+@@ -1,4 +1,5 @@
+ #cmakedefine HAVE_PTHREAD_THREADID_NP 1
+ #cmakedefine HAVE_SYS_GETTID 1
++#cmakedefine HAVE_GETTHRID 1
+ #cmakedefine HAVE_PTHREAD_GETTHREADID_NP 1
+ #cmakedefine HAVE_INTEGER_PTHREAD_SELF 1

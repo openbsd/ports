@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2020/06/26 08:46:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2020/06/28 21:35:41 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -9,6 +9,7 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
+REVISION=	0
 EPOCH=		1
 
 CATEGORIES=	databases
@@ -29,7 +30,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c crypto iconv m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline
-WANTLIB-server=	${WANTLIB} bz2 lz4 lzma lzo2 pcre2-8 snappy
+WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy
 WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
 
 MULTI_PACKAGES=	-main -server -tests
@@ -55,7 +56,8 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/snappy \
 			archivers/xz \
 			converters/libiconv \
-			devel/pcre2
+			devel/pcre2 \
+			net/curl
 RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			converters/libiconv \
@@ -103,13 +105,12 @@ CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
 # CMake test fails on OpenBSD
 CONFIGURE_ARGS+=-DHAVE_NETINET_TCP_H=1
 
-# The ColumnStore, Mroonga, RocksDB, S3, and TokuDB storage engines are disabled.
-# ColumnStore and S3 are only buildable on X86.
+# The ColumnStore, Mroonga, RocksDB, and TokuDB storage engines are disabled.
+# ColumnStore is only buildable on X86.
 # Mroonga is only buildable on little endian archs.
 # RocksDB is only buildable on little endian archs and requires POSIX timers.
 # TokuDB is only buildable on 64-bit little endian archs and requires O_DIRECT.
 CONFIGURE_ARGS+=-DPLUGIN_COLUMNSTORE=NO \
-		-DPLUGIN_S3=NO \
 		-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
 		-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1 \
 		-DWITHOUT_TOKUDB_STORAGE_ENGINE=1

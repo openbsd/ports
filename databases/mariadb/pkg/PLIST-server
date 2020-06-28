@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.32 2020/06/26 08:46:42 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.33 2020/06/28 21:35:41 sthen Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
@@ -8,6 +8,7 @@
 @bin bin/aria_ftdump
 @bin bin/aria_pack
 @bin bin/aria_read_log
+@bin bin/aria_s3_copy
 @bin bin/innochecksum
 bin/mariabackup
 @bin bin/mariadb-backup
