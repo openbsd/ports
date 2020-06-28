@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2020/06/25 22:44:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.141 2020/06/28 21:25:18 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -46,6 +46,7 @@
      SUBDIR += ne
      SUBDIR += nedit
      SUBDIR += neovim
+     SUBDIR += neovim-qt
      SUBDIR += nvi
      SUBDIR += nvi,iconv
      SUBDIR += py-neovim
