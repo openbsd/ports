@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/09 16:38:54 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/06/28 02:37:25 bcallah Exp $
 @bin bin/hyperrogue
 share/doc/hyperrogue/
 share/doc/hyperrogue/README.md
 share/hyperrogue/
 share/hyperrogue/DejaVuSans-Bold.ttf
+share/hyperrogue/honeycomb-rules-435.dat
+share/hyperrogue/honeycomb-rules-534.dat
+share/hyperrogue/honeycomb-rules-535.dat
 share/hyperrogue/hyperrogue-music.txt
 share/hyperrogue/music/
 share/hyperrogue/music/hr-savino-caribbean.ogg
@@ -21,6 +24,8 @@ share/hyperrogue/music/hr3-laboratory.ogg
 share/hyperrogue/music/hr3-mirror.ogg
 share/hyperrogue/music/hr3-motion.ogg
 share/hyperrogue/music/hr3-rlyeh.ogg
+share/hyperrogue/shyp-geodesics.dat
+share/hyperrogue/solv-geodesics.dat
 share/hyperrogue/sounds/
 share/hyperrogue/sounds/bull.ogg
 share/hyperrogue/sounds/click.ogg
@@ -100,3 +105,4 @@ share/hyperrogue/sounds/steamhiss.ogg
 share/hyperrogue/sounds/storm.ogg
 share/hyperrogue/sounds/tada.ogg
 share/hyperrogue/sounds/trapdoor.ogg
+share/hyperrogue/ssol-geodesics.dat

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2020/05/14 21:20:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2020/06/28 02:37:25 bcallah Exp $
 
-V =		11.3l
+V =		11.3o
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
 
