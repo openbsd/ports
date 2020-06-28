@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/03/16 21:44:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/06/28 20:03:51 tj Exp $
 include/vorbis/
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
 include/vorbis/vorbisfile.h
-lib/libvorbis.a
+@static-lib lib/libvorbis.a
 lib/libvorbis.la
 @lib lib/libvorbis.so.${LIBvorbis_VERSION}
-lib/libvorbisenc.a
+@static-lib lib/libvorbisenc.a
 lib/libvorbisenc.la
 @lib lib/libvorbisenc.so.${LIBvorbisenc_VERSION}
-lib/libvorbisfile.a
+@static-lib lib/libvorbisfile.a
 lib/libvorbisfile.la
 @lib lib/libvorbisfile.so.${LIBvorbisfile_VERSION}
 lib/pkgconfig/vorbis.pc
