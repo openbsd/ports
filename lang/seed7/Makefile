@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.81 2020/05/20 14:36:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.82 2020/06/28 03:34:44 bcallah Exp $
 
 COMMENT =	high-level, extensible programming language
 
-V =		20200502
+V =		20200531
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
 
@@ -15,7 +15,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Runtime libraries: LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses m
+WANTLIB += X11 c curses m
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=seed7/}
 EXTRACT_SUFX =	.tgz
@@ -33,7 +33,7 @@ CFLAGS +=	-I${X11BASE}/include
 WRKDIST =	${WRKDIR}/seed7
 WRKSRC =	${WRKDIST}/src
 
-post-patch:
+do-gen:
 	perl -pi -e "s,-O2,${CFLAGS},g" ${WRKSRC}/makefile
 	perl -pi -e "s,/usr,${TRUEPREFIX},g" ${WRKDIST}/doc/s7{,c}.1
 
