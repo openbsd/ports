@@ -1,4 +1,10 @@
-$OpenBSD: patch-src_Makefile,v 1.32 2020/06/08 07:32:47 tb Exp $
+$OpenBSD: patch-src_Makefile,v 1.33 2020/06/28 10:33:01 tb Exp $
+
+Changes in this file:
+- install redis-server and redis-sentinel into ${PREFIX}/sbin
+- don't use jemalloc and bundled lua; use lua from ports.
+- do not use -funwind-tables and -latomic on armv7
+- run tests with datasize, fds, stacksize and processes at the hard limit
 
 Index: src/Makefile
 --- src/Makefile.orig
