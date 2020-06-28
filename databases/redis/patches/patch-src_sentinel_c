@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_sentinel_c,v 1.1 2020/06/28 10:47:15 tb Exp $
+
+redis-sentinel out of bounds memory access from memcmp
+
+Index: src/sentinel.c
+--- src/sentinel.c.orig
++++ src/sentinel.c
+@@ -2217,8 +2217,8 @@ void sentinelRefreshInstanceInfo(sentinelRedisInstance
+         }
+ 
+         /* role:<role> */
+-        if (!memcmp(l,"role:master",11)) role = SRI_MASTER;
+-        else if (!memcmp(l,"role:slave",10)) role = SRI_SLAVE;
++        if (sdslen(l) >= 11 && !memcmp(l,"role:master",11)) role = SRI_MASTER;
++        else if (sdslen(l) >= 10 && !memcmp(l,"role:slave",10)) role = SRI_SLAVE;
+ 
+         if (role == SRI_SLAVE) {
+             /* master_host:<host> */
