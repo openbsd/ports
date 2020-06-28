@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2020/06/24 16:46:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.174 2020/06/28 13:55:50 ajacoutot Exp $
 
 COMMENT=		manage resources on Google Cloud Platform
 
@@ -6,6 +6,7 @@ V=			298.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -21,16 +22,18 @@ MASTER_SITES=		https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 MODULES=		lang/python
 
 MODPY_BUILDDEP=		Yes
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+MODPY_ADJ_FILES=	bin/dev_appserver.py \
+			bin/endpointscfg.py \
+			bin/bootstrapping/install.py \
+			bin/bootstrapping/gsutil.py \
+			bin/bootstrapping/bq.py
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
 RUN_DEPENDS=		devel/git
-
-pre-configure:
-# wildcard, cannot use MODPY_ADJ_FILES
-	find ${WRKSRC}/bin{,/bootstrapping}/* -type f -exec \
-		${MODPY_BIN_ADJ} '{}' \+
 
 do-install:
 	cp -Rp ${WRKSRC} ${PREFIX}
@@ -51,9 +54,11 @@ do-install:
 
 	find ${PREFIX} -type f \( -name '*.bat' -or -name '*.orig' \) \
 		-exec rm '{}' \+
-	find ${PREFIX} -type d -name python3 -exec rm -rf '{}' \+
 
-# XXX ||true: ignore old python syntax in unused examples
+# enforce python3 dependency
+	find ${PREFIX} -type d -name python2 -exec rm -rf '{}' \+
+
+# XXX ||true: ignore error due to some old python2 syntax still around (unused)
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/google-cloud-sdk/{lib,platform} || true
 
