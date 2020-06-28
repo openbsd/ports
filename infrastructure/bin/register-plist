@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.26 2020/06/13 09:14:14 espie Exp $
+# $OpenBSD: register-plist,v 1.27 2020/06/28 10:58:25 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -132,6 +132,24 @@ sub record_generic_depends
 
 sub find_mogrified
 {
+}
+
+sub save_stuff
+{
+}
+
+package OpenBSD::PackingElement::Manpage;
+sub save_stuff
+{
+	my ($self, $state) = @_;
+	return unless defined $state->{saveman};
+	my $fname = $self->fullname;
+	require File::Path;
+	require File::Copy;
+	require File::Basename;
+	my $dest = "$state->{saveman}/$fname";
+	File::Path::mkpath(File::Basename::dirname($dest));
+	File::Copy::copy("$state->{fakedir}/$fname", $dest);
 }
 
 package OpenBSD::PackingElement::DigitalSignature;
@@ -433,6 +451,12 @@ sub handle_options
 	if ($self->opt('n')) {
 		$self->{not} = 1;
 	}
+	if ($self->defines("SAVEMAN")) {
+		$self->{saveman} = $self->defines("SAVEMAN");
+	}
+	if ($self->defines("FAKEDIR")) {
+		$self->{fakedir} = $self->defines("FAKEDIR");
+	}
 }
 
 package main;
@@ -685,6 +709,9 @@ for my $pkgfile (@ARGV) {
 	$pkg->wipe_info;
 
 	$plist->forget_details;
+	if (defined $state->{fakedir}) {
+		$plist->save_stuff($state);
+	}
 	for my $dir (@dirs) {
 		next unless -d $dir;
 		my $result = $dir.'/'.$plist->pkgname;
