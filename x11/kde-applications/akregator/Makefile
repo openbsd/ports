@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/24 18:56:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/06/28 18:59:15 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  akregatorinterfaces       0.0 # 5.13.2
 SHARED_LIBS +=  akregatorprivate          0.0 # 5.13.2
@@ -34,15 +34,26 @@ MODKF5_I18N_CONFLICT = yes
 MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost \
+		devel/kf5/kitemviews \
+		devel/kf5/ktexteditor \
+		devel/kf5/solid  \
 		devel/libinotify \
+		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/kimap \
+		x11/kde-applications/mailcommon \
 		x11/qt5/qtquickcontrols
 
-RUN_DEPENDS =	x11/kde-applications/kimap \
+RUN_DEPENDS =	devel/kf5/kitemviews \
+		devel/kf5/ktexteditor \
+		devel/kf5/solid  \
+		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/kdepim-runtime \
+		x11/kde-applications/kimap \
+		x11/kde-applications/mailcommon \
 		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/kf5/kauth \
+		devel/kf5/kcmutils \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
@@ -51,6 +62,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/ki18n \
+		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
 		devel/kf5/kjobwidgets \
@@ -60,21 +72,23 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
+		devel/kf5/sonnet \
 		devel/kf5/syndication \
 		security/gpgme,-qt \
+		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-mime \
+		x11/kde-applications/grantleetheme \
+		x11/kde-applications/kmime \
 		x11/kde-applications/kmime \
 		x11/kde-applications/kontactinterface \
 		x11/kde-applications/kpimtextedit \
 		x11/kde-applications/libkdepim \
-		x11/kde-applications/mailcommon \
 		x11/kde-applications/messagelib \
 		x11/kde-applications/pimcommon \
 		x11/qt5/qtlocation \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine
-
 
 TEST_IS_INTERACTIVE =	X11
 
