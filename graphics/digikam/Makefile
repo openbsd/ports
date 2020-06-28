@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2020/06/02 14:09:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.66 2020/06/28 18:49:08 rsadowski Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
 V =		6.4.0
 DISTNAME =	digikam-${V}
 CATEGORIES =	graphics
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -18,22 +18,24 @@ SHARED_LIBS +=  digikamgui                1.0 # 5.9
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE KF5Auth KF5AuthCore KF5CalendarCore
+WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE KF5AkonadiContact KF5AkonadiCore
+WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5CalendarCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5FileMetaData KF5I18n
-WANTLIB += KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOWidgets
-WANTLIB += KF5Notifications KF5NotifyConfig KF5Sane KF5Service
-WANTLIB += KF5Solid KF5ThreadWeaver KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Magick++-6.Q16 MagickCore-6.Q16 Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sql Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml Qt5XmlPatterns SM X11 Xext avcodec avfilter
-WANTLIB += avformat avutil c exiv2 expat exslt glib-2.0 gphoto2
-WANTLIB += gphoto2_port intl jasper jpeg lcms2 lensfun lqr-1 m
-WANTLIB += marblewidget-qt5 opencv_calib3d opencv_core opencv_features2d
-WANTLIB += opencv_flann opencv_imgcodecs opencv_imgproc opencv_objdetect
-WANTLIB += png swscale tiff usb-1.0 x265 xml2 xslt z
+WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5FileMetaData
+WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOWidgets KF5Notifications KF5NotifyConfig KF5Sane
+WANTLIB += KF5Service KF5Solid KF5ThreadWeaver KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Magick++-6.Q16 MagickCore-6.Q16
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sql
+WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns SM X11
+WANTLIB += Xext avcodec avfilter avformat avutil c exiv2 expat
+WANTLIB += exslt glib-2.0 gphoto2 gphoto2_port intl jasper jpeg
+WANTLIB += lcms2 lensfun lqr-1 m marblewidget-qt5 opencv_calib3d
+WANTLIB += opencv_core opencv_features2d opencv_flann opencv_imgcodecs
+WANTLIB += opencv_imgproc opencv_objdetect png swscale tiff usb-1.0
+WANTLIB += x265 xml2 xslt z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/${V}/}
 
@@ -59,20 +61,19 @@ RUN_DEPENDS =	databases/sqlite \
 		x11/gtk+3,-guic \
 		x11/qt5/qtwebview
 
-# TODO
-# - libakonadicontact
-# - libkvkontakte
 LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcalendarcore \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
+		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kfilemetadata \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
+		devel/kf5/kitemmodels \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knotifyconfig \
 		devel/kf5/kservice \
@@ -92,6 +93,8 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		graphics/png \
 		graphics/tiff \
 		multimedia/x265 \
+		x11/kde-applications/akonadi \
+		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/libksane \
 		x11/kde-applications/marble \
 		x11/qt5/qtwebchannel \
