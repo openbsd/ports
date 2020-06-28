@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/26 10:12:53 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/28 21:29:20 sthen Exp $
 
 COMMENT =		Python interface to ECOS
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
+BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR}
 
