@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/28 21:24:26 rsadowski Exp $
+@bin bin/nvim-qt
+share/applications/nvim-qt.desktop
+share/icons/hicolor/192x192/apps/nvim-qt.png
+share/nvim-qt/
+share/nvim-qt/runtime/
+share/nvim-qt/runtime/README.md
+share/nvim-qt/runtime/doc/
+share/nvim-qt/runtime/doc/nvim_gui_shim.txt
+share/nvim-qt/runtime/doc/tags
+share/nvim-qt/runtime/plugin/
+share/nvim-qt/runtime/plugin/nvim_gui_shim.vim
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
