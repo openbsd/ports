@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/27 09:09:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2020/06/29 12:25:37 landry Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -20,6 +20,8 @@ V =			${MOZILLA_VERSION}.9.0
 DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
+# cargocult when 78 is released to ease upgrade path
+EPOCH =		1
 REVISION =		1
 
 SHARED_LIBS =		mozjs-68 0.0
