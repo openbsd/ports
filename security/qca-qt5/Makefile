@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/28 17:44:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/06/29 05:07:55 rsadowski Exp $
 # separate port for Qt5 because it's too different from Qt4 case
 COMMENT =	Qt Cryptographic Architecture
 
-V =		2.2.1
+V =		2.3.0
 DISTNAME =	qca-${V}
 PKGNAME =	qca-qt5-${V}
 CATEGORIES =	security
 
-SHARED_LIBS =	qca-qt5		0.1
+SHARED_LIBS =	qca-qt5		1.0
 
 HOMEPAGE =	https://userbase.kde.org/QCA
 
@@ -32,8 +32,7 @@ CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE} \
 			-DBUILD_PLUGINS="none" \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DQCA_SUFFIX=qt5 \
-			-Dqca_CERTSTORE=/etc/ssl/cert.pem \
-			-DQT4_BUILD=OFF
+			-Dqca_CERTSTORE=/etc/ssl/cert.pem
 
 # Enable plugins (qca checks for "yes")
 CONFIGURE_ARGS +=	-DWITH_ossl_PLUGIN=yes

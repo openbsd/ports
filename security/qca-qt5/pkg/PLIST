@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/11/01 11:20:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/29 05:07:56 rsadowski Exp $
 @bin bin/mozcerts-qt5
 @bin bin/qcatool-qt5
 include/Qca-qt5/
@@ -29,6 +29,6 @@ lib/cmake/Qca-qt5/Qca-qt5Targets.cmake
 lib/pkgconfig/qca2-qt5.pc
 lib/qca-qt5/
 lib/qca-qt5/crypto/
-lib/qca-qt5/crypto/libqca-ossl.so
+@so lib/qca-qt5/crypto/libqca-ossl.so
 lib/qt5/mkspecs/features/crypto.prf
 @man man/man1/qcatool-qt5.1
