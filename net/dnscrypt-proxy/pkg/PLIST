@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/22 14:12:47 bket Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/29 22:11:45 sthen Exp $
 @conflict dnscrypt-proxy-plugins-*
 @pkgpath net/dnscrypt-proxy,-main
 @pkgpath net/dnscrypt-proxy,-utils
@@ -16,4 +16,8 @@ share/examples/dnscrypt-proxy/example-dnscrypt-proxy.toml
 share/examples/dnscrypt-proxy/example-forwarding-rules.txt
 share/examples/dnscrypt-proxy/example-ip-blacklist.txt
 share/examples/dnscrypt-proxy/example-whitelist.txt
+@owner _dnscrypt-proxy
+@group _dnscrypt-proxy
 @sample ${LOCALSTATEDIR}/dnscrypt-proxy/
+@comment fix owner for upgrades since privsep downloaded cache files in 2.0.43
+@exec-update [[ $(stat -f '%u:%g' ${LOCALSTATEDIR}/dnscrypt-proxy/public-resolvers.md 2>/dev/null) != 688:688 ]] && chown -R _dnscrypt-proxy:_dnscrypt-proxy ${LOCALSTATEDIR}/dnscrypt-proxy || true
