@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/26 12:57:45 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/29 22:17:51 sthen Exp $
 
 COMMENT =		modeling language for convex optimization problems
 
@@ -26,7 +26,8 @@ RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			devel/py-multiprocess${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 
-BUILD_DEPENDS =         lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS =         lang/cython${MODPY_FLAVOR} \
+			${RUN_DEPENDS}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

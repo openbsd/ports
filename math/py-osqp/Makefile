@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/26 10:45:43 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/29 22:17:50 sthen Exp $
 
 COMMENT =		Python interface to OSQP
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
+BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}	\
 			math/py-scipy${MODPY_FLAVOR}	\
 			devel/py-future${MODPY_FLAVOR}
