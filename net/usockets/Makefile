@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/22 11:38:31 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2020/06/29 14:30:59 sthen Exp $
 
 COMMENT	=	eventing, networking & crypto for async applications
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	net
 
-SHARED_LIBS =	usockets 0.0
+SHARED_LIBS =	usockets 0.1
 
 GH_ACCOUNT =	uNetworking
 GH_PROJECT =	uSockets
-GH_TAGNAME =	v0.4.0
+GH_TAGNAME =	v0.4.1
 
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 
