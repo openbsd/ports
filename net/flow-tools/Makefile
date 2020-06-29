@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/06/29 13:01:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/06/29 16:07:40 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -7,6 +7,7 @@ COMMENT=	utilities for dealing with NetFlow exports
 GH_ACCOUNT=	5u623l20
 GH_PROJECT=	flow-tools
 GH_TAGNAME=	v0.68.6
+REVISION=	0
 
 CATEGORIES=	net
 
