@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.660 2020/06/25 15:42:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.661 2020/06/29 06:59:25 solene Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -274,7 +274,6 @@
      SUBDIR += sawfish
      SUBDIR += sclock
      SUBDIR += sct
-     SUBDIR += sisctrl
      SUBDIR += skippy
      SUBDIR += slim
      SUBDIR += slim-themes
