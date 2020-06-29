@@ -1,4 +1,5 @@
-$OpenBSD: patch-get_iplayer,v 1.91 2019/07/19 12:32:28 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.92 2020/06/29 13:29:40 sthen Exp $
+
 Index: get_iplayer
 --- get_iplayer.orig
 +++ get_iplayer
@@ -8,7 +9,7 @@ Index: get_iplayer
  #
  # get_iplayer - Lists and records BBC iPlayer TV and radio programmes
  #
-@@ -315,6 +315,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
+@@ -319,6 +319,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
  }
  
  # Copy a few options over to opt so that logger works
