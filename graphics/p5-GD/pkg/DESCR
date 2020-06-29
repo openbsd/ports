@@ -1,4 +1,4 @@
-GD.pm is a port of Thomas Boutell's gd graphics library.
+GD.pm is a Perl interface to Thomas Boutell's gd graphics library.
 
 GD allows you to create color drawings using a large number of
 graphics primitives, and emit the drawings as PNG files.  Other

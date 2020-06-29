@@ -1,35 +1,32 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/12 20:47:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2020/06/29 23:44:30 sthen Exp $
 
-COMMENT =		module to interface with the GD graphics library
+COMMENT =		Perl interface to the gd2 graphics library
 
-DISTNAME =		GD-2.56
+DISTNAME =		GD-2.71
 CATEGORIES =		graphics
-REVISION =		0
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c fontconfig freetype gd iconv jpeg m perl png tiff webp z
+WANTLIB += c gd perl
 
-LIB_DEPENDS =		converters/libiconv \
-			graphics/gd
+BUILD_DEPENDS =		devel/p5-ExtUtils-PkgConfig
+
+LIB_DEPENDS =		graphics/gd
 
 MODULES =		cpan
-
-CONFIGURE_STYLE =	modbuild
 
 MODCPAN_EXAMPLES =	Yes
 MODCPAN_EXAMPLES_DIST =	demos
 
-post-extract:
-	chmod o+w ${WRKSRC}/bdf_scripts/bdf2gdfont.pl
-
-post-install:
+st-install:
 	cd ${PREFIX} && rm -f \
 		bin/README \
 		bin/bdf2gdfont.PLS \
 		bin/bdftogd \
 		bin/cvtbdf.pl \
 		man/man1/bdf2gdfont.PLS.1
+
+# Tests will use p5-Test-Fork if available
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/11/12 15:43:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/06/29 23:44:30 sthen Exp $
 bin/bdf2gdfont.pl
 ${P5ARCH}/
 ${P5ARCH}/GD/
@@ -10,11 +10,27 @@ ${P5ARCH}/GD/Polyline.pm
 ${P5ARCH}/GD/Simple.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/GD/
-${P5ARCH}/auto/GD/GD.bs
-${P5ARCH}/auto/GD/GD.so
+@so ${P5ARCH}/auto/GD/GD.so
+${P5ARCH}/auto/GD/autosplit.ix
 @man man/man1/bdf2gdfont.pl.1
 @man man/man3p/GD.3p
+@man man/man3p/GD::Group.3p
 @man man/man3p/GD::Image.3p
 @man man/man3p/GD::Polygon.3p
 @man man/man3p/GD::Polyline.3p
 @man man/man3p/GD::Simple.3p
+share/examples/p5-GD/
+share/examples/p5-GD/brushes.pl
+share/examples/p5-GD/copies.pl
+share/examples/p5-GD/draw_colors.pl
+share/examples/p5-GD/fills.pl
+share/examples/p5-GD/font_list.png
+share/examples/p5-GD/fonttest
+share/examples/p5-GD/gd_example.cgi
+share/examples/p5-GD/polyline.pl
+share/examples/p5-GD/polys.pl
+share/examples/p5-GD/shapes.pl
+share/examples/p5-GD/tile.png
+share/examples/p5-GD/transform.pl
+share/examples/p5-GD/truetype_test
+share/examples/p5-GD/ttf.pl
