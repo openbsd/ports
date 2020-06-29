@@ -1,4 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.5 2020/06/18 20:44:16 rsadowski Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2020/06/29 04:54:59 rsadowski Exp $
+
+Use ${LOCALBASE} instead of hard-coded /usr/local
+Use ${MODPY_VERSION} to pick up our python-config
 
 Index: configure.ac
 --- configure.ac.orig
@@ -12,7 +15,7 @@ Index: configure.ac
      if test "$PYTHON_CONFIG_EXISTS" == "yes"; then
          AX_PYTHON_DEVEL
          AM_CONDITIONAL([BUILD_PYTHON_API], [true])
-@@ -214,10 +214,10 @@ AS_IF([test "x$PLATFORM" = xosx],
+@@ -223,10 +223,10 @@ AS_IF([test "x$PLATFORM" = xosx],
          [AC_MSG_ERROR([libreadline is required for profanity])])],
  
        [test "x$PLATFORM" = xopenbsd],
