@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.33 2020/06/28 21:35:41 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.34 2020/06/29 11:33:59 sthen Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
@@ -484,6 +484,7 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/ha_example.so
 @so lib/mysql/plugin/ha_federated.so
 @so lib/mysql/plugin/ha_federatedx.so
+@so lib/mysql/plugin/ha_s3.so
 @so lib/mysql/plugin/ha_sphinx.so
 @so lib/mysql/plugin/ha_spider.so
 @so lib/mysql/plugin/ha_test_sql_discovery.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2020/06/28 21:35:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2020/06/29 11:33:58 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -9,7 +9,7 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
-REVISION=	0
+REVISION=	1
 EPOCH=		1
 
 CATEGORIES=	databases
@@ -30,7 +30,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c crypto iconv m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline
-WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy
+WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy xml2
 WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
 
 MULTI_PACKAGES=	-main -server -tests
@@ -57,7 +57,8 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/xz \
 			converters/libiconv \
 			devel/pcre2 \
-			net/curl
+			net/curl \
+			textproc/libxml
 RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			converters/libiconv \
@@ -81,12 +82,10 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_SUPPORTFILESDIR="share/examples/mysql" \
 		-DMYSQL_UNIX_ADDR="${SOCKET_DIR}/mysql.sock" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
-		-DWITH_CURL=Off \
 		-DWITH_EXTERNAL_ZLIB=On \
 		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
 		-DCONNECT_WITH_JDBC=Off \
-		-DCONNECT_WITH_LIBXML2=Off \
 		-DCONNECT_WITH_MONGO=Off \
 		-DCONNECT_WITH_ODBC=Off \
 		-DGRN_WITH_MECAB=no \
