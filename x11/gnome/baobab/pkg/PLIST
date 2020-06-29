@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/11/01 13:09:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/06/29 13:58:52 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
@@ -376,6 +376,7 @@ share/locale/br/LC_MESSAGES/baobab.mo
 share/locale/bs/LC_MESSAGES/baobab.mo
 share/locale/ca/LC_MESSAGES/baobab.mo
 share/locale/ca@valencia/LC_MESSAGES/baobab.mo
+share/locale/ckb/LC_MESSAGES/baobab.mo
 share/locale/crh/LC_MESSAGES/baobab.mo
 share/locale/cs/LC_MESSAGES/baobab.mo
 share/locale/cy/LC_MESSAGES/baobab.mo

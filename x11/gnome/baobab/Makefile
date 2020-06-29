@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2019/11/01 13:09:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2020/06/29 13:58:52 ajacoutot Exp $
 
 COMMENT=		directory tree analyzer for GNOME
 
 GNOME_PROJECT=		baobab
-GNOME_VERSION=		3.34.0
+GNOME_VERSION=		3.34.1
 
 # GPLv2 - GFDLv1.1
 PERMIT_PACKAGE=		Yes
