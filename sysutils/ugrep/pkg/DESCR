@@ -1,0 +1,4 @@
+ugrep is an ultra fast universal grep with interactive query UI: search
+file systems, source code, text, binary files, archives
+(cpio/tar/pax/zip), compressed files (gz/Z/bz2/lzma/xz), documents,
+fuzzy search, and more.

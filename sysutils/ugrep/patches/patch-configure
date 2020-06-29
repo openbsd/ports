@@ -1,0 +1,83 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2020/06/29 05:11:49 bcallah Exp $
+
+No -march=native, please.
+Causes the AVX check to fail, but we disable that with --disable-avx
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -7641,7 +7641,7 @@ $as_echo "no" >&6; }
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether ${CXX} supports AVX intrinsics" >&5
+ $as_echo_n "checking whether ${CXX} supports AVX intrinsics... " >&6; }
+   save_CXXFLAGS=$CXXFLAGS
+-  CXXFLAGS="-march=native"
++  CXXFLAGS=""
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <immintrin.h>
+@@ -7660,7 +7660,7 @@ else
+ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+   if test "x$mavx_ok" = "xyes"; then
+-    SIMD_FLAGS="-march=native -mavx512bw -DHAVE_AVX512BW"
++    SIMD_FLAGS="-mavx512bw -DHAVE_AVX512BW"
+   else
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+@@ -7680,7 +7680,7 @@ else
+ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+     if test "x$mavx_ok" = "xyes"; then
+-      SIMD_FLAGS="-march=native -mavx -DHAVE_AVX"
++      SIMD_FLAGS="-mavx -DHAVE_AVX"
+     fi
+   fi
+   CXXFLAGS=$save_CXXFLAGS
+@@ -7708,7 +7708,7 @@ $as_echo "no" >&6; }
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether ${CXX} supports SSE2 intrinsics" >&5
+ $as_echo_n "checking whether ${CXX} supports SSE2 intrinsics... " >&6; }
+   save_CXXFLAGS=$CXXFLAGS
+-  CXXFLAGS="-march=native"
++  CXXFLAGS=""
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <emmintrin.h>
+@@ -7730,7 +7730,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $msse2_ok" >&5
+ $as_echo "$msse2_ok" >&6; }
+   if test "x$msse2_ok" = "xyes"; then
+-    SIMD_FLAGS="-march=native -msse2 -DHAVE_SSE2"
++    SIMD_FLAGS="-msse2 -DHAVE_SSE2"
+   fi
+ else
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+@@ -7755,7 +7755,7 @@ $as_echo "no" >&6; }
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether ${CXX} supports ARM NEON/AArch64 intrinsics" >&5
+ $as_echo_n "checking whether ${CXX} supports ARM NEON/AArch64 intrinsics... " >&6; }
+   save_CXXFLAGS=$CXXFLAGS
+-  CXXFLAGS="-march=native"
++  CXXFLAGS=""
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <arm_neon.h>
+@@ -7792,9 +7792,9 @@ else
+ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+     if test "x$mneon_ok" = "xyes"; then
+-      SIMD_FLAGS="-march=native -DHAVE_NEON"
++      SIMD_FLAGS="-DHAVE_NEON"
+     else
+-      CXXFLAGS="-march=native -mfpu=neon"
++      CXXFLAGS="-mfpu=neon"
+       cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <arm_neon.h>
+@@ -7813,7 +7813,7 @@ else
+ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+       if test "x$mneon_ok" = "xyes"; then
+-        SIMD_FLAGS="-march=native -mfpu=neon -DHAVE_NEON"
++        SIMD_FLAGS="-mfpu=neon -DHAVE_NEON"
+       fi
+     fi
+   fi
