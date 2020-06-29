@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_mk,v 1.11 2019/02/10 21:55:24 feinerer Exp $
+$OpenBSD: patch-config_mk,v 1.12 2020/06/29 14:36:10 mestre Exp $
 Index: config.mk
 --- config.mk.orig
 +++ config.mk
@@ -8,12 +8,12 @@ Index: config.mk
  # OpenBSD:
 -#CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
 -#LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft \
--#       `pkg-config --libs fontconfig` \
--#       `pkg-config --libs freetype2`
+-#       `$(PKG_CONFIG) --libs fontconfig` \
+-#       `$(PKG_CONFIG) --libs freetype2`
 +CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
 +LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft \
-+       `pkg-config --libs fontconfig` \
-+       `pkg-config --libs freetype2`
++       `$(PKG_CONFIG) --libs fontconfig` \
++       `$(PKG_CONFIG) --libs freetype2`
  
  # compiler and linker
  # CC = c99
