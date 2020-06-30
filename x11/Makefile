@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.661 2020/06/29 06:59:25 solene Exp $
+# $OpenBSD: Makefile,v 1.662 2020/06/30 05:28:46 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -89,7 +89,6 @@
      SUBDIR += gob2
      SUBDIR += goggles
      SUBDIR += golem
-     #SUBDIR += grantlee
      SUBDIR += grantlee-qt5
      SUBDIR += greybird
      SUBDIR += gtk+2
@@ -161,7 +160,6 @@
      SUBDIR += libfm
      SUBDIR += libgdiplus
      SUBDIR += libhandy
-     #SUBDIR += libkscreen
      SUBDIR += libqaccessibilityclient
      SUBDIR += libxdg-basedir
      SUBDIR += lsw
@@ -225,7 +223,6 @@
      SUBDIR += pidgin-libnotify
      SUBDIR += piewm
      SUBDIR += podbrowser
-     #SUBDIR += polkit-qt
      SUBDIR += polkit-qt5
      SUBDIR += polybar
      SUBDIR += pwm
