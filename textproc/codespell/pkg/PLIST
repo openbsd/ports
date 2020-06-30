@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/14 16:02:09 millert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/06/30 07:55:22 fcambus Exp $
 bin/codespell
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -18,6 +18,11 @@ lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary.txt
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_code.txt
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_en-GB_to_en-US.txt
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_informal.txt
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_names.txt
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_rare.txt
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/linux-kernel.exclude
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/__init__.py
