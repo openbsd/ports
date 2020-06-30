@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.662 2020/06/30 05:28:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.663 2020/06/30 07:03:00 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -143,7 +143,6 @@
      SUBDIR += kde
      SUBDIR += kde-applications
      SUBDIR += kde-shared-data
-     #SUBDIR += kde4
      SUBDIR += keybinder
      SUBDIR += keybinder3
      SUBDIR += keynav
