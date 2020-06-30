@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/05/22 11:31:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/06/30 00:05:49 sthen Exp $
 @bin bin/annotate
 bin/bdftogd
 @bin bin/gd2copypal
 @bin bin/gd2togif
 @bin bin/gd2topng
 @bin bin/gdcmpgif
-bin/gdlib-config
 @bin bin/gdparttopng
 @bin bin/gdtopng
 @bin bin/giftogd2
@@ -25,7 +24,7 @@ include/gdfonts.h
 include/gdfontt.h
 include/gdfx.h
 include/gdpp.h
-lib/libgd.a
+@static-lib lib/libgd.a
 lib/libgd.la
 @lib lib/libgd.so.${LIBgd_VERSION}
 lib/pkgconfig/gdlib.pc
