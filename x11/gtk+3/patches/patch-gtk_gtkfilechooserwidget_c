@@ -1,11 +1,11 @@
-$OpenBSD: patch-gtk_gtkfilechooserwidget_c,v 1.6 2020/04/27 20:00:37 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkfilechooserwidget_c,v 1.7 2020/06/30 10:20:47 ajacoutot Exp $
 
 unveil(2): check if the XDG directories exist before showing them on the sidebar
 
 Index: gtk/gtkfilechooserwidget.c
 --- gtk/gtkfilechooserwidget.c.orig
 +++ gtk/gtkfilechooserwidget.c
-@@ -8217,7 +8217,8 @@ desktop_folder_handler (GtkFileChooserWidget *impl)
+@@ -8228,7 +8228,8 @@ desktop_folder_handler (GtkFileChooserWidget *impl)
     * See http://freedesktop.org/wiki/Software/xdg-user-dirs
     */
    name = g_get_user_special_dir (G_USER_DIRECTORY_DESKTOP);
