@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2020/04/29 11:36:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2020/06/30 14:59:24 sthen Exp $
 
 COMMENT =	time-series datastore for metrics, events, and analytics
 
 V =		1.6.6
 DISTNAME =	influxdb-${V}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://influxdata.com
 # selfhosted because we bundle go deps
@@ -39,6 +39,8 @@ USE_GMAKE =	Yes
 SUBST_VARS =	VARBASE
 
 NO_TEST =	Yes
+
+MODGO_LDFLAGS +=        -X main.version=$V
 
 do-build:
 	cd ${WRKSRC} && ${MODGO_BUILD_CMD} ./...
