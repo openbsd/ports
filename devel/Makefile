@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1995 2020/06/27 21:13:53 pirofti Exp $
+# $OpenBSD: Makefile,v 1.1996 2020/06/30 05:06:28 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -37,7 +37,6 @@
      SUBDIR += autoconf-archive
      SUBDIR += autogen
      SUBDIR += automake
-     #SUBDIR += automoc
      SUBDIR += avr
      SUBDIR += avr32
      SUBDIR += avrdude
