@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2020/06/14 19:23:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.92 2020/06/30 14:58:23 naddy Exp $
 
      SUBDIR =
      #SUBDIR += akonadi
@@ -20,7 +20,7 @@
      SUBDIR += impressive
      SUBDIR += khal
      SUBDIR += khard
-     SUBDIR += kmymoney
+     #SUBDIR += kmymoney
      SUBDIR += ledger
      #SUBDIR += libalkimia
      #SUBDIR += libkfbapi
