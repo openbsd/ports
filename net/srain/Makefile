@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/25 23:56:17 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2020/06/30 16:26:29 bcallah Exp $
 
 COMMENT =	modern IRC client written in GTK
 CATEGORIES =	net
 
 GH_ACCOUNT =	SrainApp
 GH_PROJECT =	srain
-GH_TAGNAME =	1.1.0
+GH_TAGNAME =	1.1.1
 
 HOMEPAGE =	https://srain.im/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
