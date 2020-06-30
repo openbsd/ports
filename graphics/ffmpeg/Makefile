@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.201 2020/06/18 07:03:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.202 2020/06/30 07:12:27 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.3
 DISTNAME=	ffmpeg-${V}
+REVISION=	0
 EPOCH=		0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -35,7 +36,8 @@ WANTLIB+=	xcb-xfixes xml2 xvidcore z
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-BUILD_DEPENDS=	textproc/texi2html \
+BUILD_DEPENDS=	audio/ladspa \
+		textproc/texi2html \
 		multimedia/frei0r-plugins
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/nasm
@@ -102,6 +104,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-fontconfig \
 		--enable-frei0r \
 		--enable-gpl \
+		--enable-ladspa \
 		--enable-libaom \
 		--enable-libass \
 		--enable-libdav1d \
