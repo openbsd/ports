@@ -1,9 +1,0 @@
-$OpenBSD: patch-modules_plasma_examples_applets_digital-clock_CMakeLists_txt,v 1.1.1.1 2013/04/24 12:18:23 zhuk Exp $
---- modules/plasma/examples/applets/digital-clock/CMakeLists.txt.orig	Wed Jan 23 20:29:46 2013
-+++ modules/plasma/examples/applets/digital-clock/CMakeLists.txt	Wed Jan 23 20:29:51 2013
-@@ -1,4 +1,4 @@
--find_PACKAGE (RUBY REQUIRED)
-+find_PACKAGE (Ruby REQUIRED)
- 
- SET(UI_CLOCKCONFIG ${CMAKE_CURRENT_SOURCE_DIR}/digital_clock_config.ui)
- SET(UI_CALENDAR ${CMAKE_CURRENT_SOURCE_DIR}/calendar.ui)

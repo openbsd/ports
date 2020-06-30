@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-en_US,v 1.2 2013/12/08 15:02:01 espie Exp $
-@conflict kdebase-<3.5.10p29
-@conflict kdelibs->=4,<=4.10.5p6
-@conflict kde3-locale-en_US-*
-@pkgpath x11/kde/base3,-en_US
-share/locale/en_US/
-share/locale/en_US/entry.desktop

@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:24:40 zhuk Exp $
-include/kde4/libkcompactdisc/
-include/kde4/libkcompactdisc/kcompactdisc.h
-lib/cmake/libkcompactdisc/
-lib/cmake/libkcompactdisc/LibkcompactdiscConfig.cmake
-lib/cmake/libkcompactdisc/LibkcompactdiscTargets${MODKDE4_CMAKE_PREFIX}.cmake
-lib/cmake/libkcompactdisc/LibkcompactdiscTargets.cmake
-@lib ${KDE4LIB}/libkcompactdisc.so.${LIBkcompactdisc_VERSION}
-@lib lib/libkcompactdisc.so.${LIBkcompactdisc_VERSION}

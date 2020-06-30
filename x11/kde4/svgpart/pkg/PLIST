@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 19:07:09 zhuk Exp $
-lib/kde4/svgpart.so
-share/apps/svgpart/
-share/apps/svgpart/svgpart.rc
-share/kde4/services/svgpart.desktop

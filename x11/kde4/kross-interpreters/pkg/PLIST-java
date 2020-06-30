@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-java,v 1.1.1.1 2013/04/24 12:20:42 zhuk Exp $
-@conflict kross-interpreters-<4.8.0p0
-lib/kde4/kross/
-lib/kde4/kross/kross.jar
-lib/kde4/krossjava.so

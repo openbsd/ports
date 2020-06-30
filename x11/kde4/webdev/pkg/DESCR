@@ -1,5 +1,0 @@
-The kdewebdev package is supposed to contain Quanta Plus and other
-applications, which are useful for web development.
-
-As of this snapshot, only a few dependencies compile, quanta plus itself
-does not compile.

@@ -1,2 +1,0 @@
-Contains locale support files for KDE. This way KDE does not depend
-on actual locale implementation in the underlying OS.

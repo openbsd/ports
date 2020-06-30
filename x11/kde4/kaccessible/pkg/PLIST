@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:39:30 zhuk Exp $
-lib/kde4/plugins/accessiblebridge/
-lib/kde4/plugins/accessiblebridge/kaccessiblebridge.so
-@bin libexec/kaccessibleapp
-share/dbus-1/services/org.kde.kaccessible.service

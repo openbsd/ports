@@ -1,7 +1,0 @@
-This package contains run-time specific components of KDE PIM framework.
-It includes:
-  * accountwizard - steps you through account creation for many resources;
-  * Akonadi agents - calendarsearch, invitations, maildispatcher,
-    nepomukfeeder and more;
-  * Akonadi resources - birthdays, VCard contacts, CalDav, Google, ICal
-    calendars, and many more.

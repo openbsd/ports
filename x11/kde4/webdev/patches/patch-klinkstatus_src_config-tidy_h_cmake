@@ -1,6 +1,0 @@
-$OpenBSD: patch-klinkstatus_src_config-tidy_h_cmake,v 1.1 2013/04/24 20:07:20 zhuk Exp $
---- klinkstatus/src/config-tidy.h.cmake.orig	Tue Mar 26 21:34:01 2013
-+++ klinkstatus/src/config-tidy.h.cmake	Tue Mar 26 21:34:12 2013
-@@ -1 +1,2 @@
- #cmakedefine HAVE_TIDY_ULONG_VERSION 1
-+#cmakedefine01 HAVE_TIDYP

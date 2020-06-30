@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-langlist,v 1.2 2013/12/08 15:02:01 espie Exp $
-@conflict kdelibs-<3.5.10p27
-@conflict kdelibs->=4,<=4.10.5p6
-@conflict kde3-langlist-*
-@pkgpath x11/kde/libs3,-langlist
-share/locale/all_languages

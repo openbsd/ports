@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:16:12 zhuk Exp $
-@conflict kdenetwork->=4,<4.11
-lib/kde4/sambausershareplugin.so
-share/kde4/services/sambausershareplugin.desktop
