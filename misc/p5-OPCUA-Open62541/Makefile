@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2020/06/25 16:28:40 bluhm Exp $
+# $OpenBSD: Makefile,v 1.17 2020/06/30 16:25:23 bluhm Exp $
 
 COMMENT =	Perl XS wrapper for open62541 OPC UA library
 
-DISTNAME =	OPCUA-Open62541-0.018
+DISTNAME =	OPCUA-Open62541-0.019
 CPAN_AUTHOR =	BLUHM
 
 CATEGORIES =	misc
