@@ -1,4 +1,4 @@
-$OpenBSD: patch-moz_configure,v 1.2 2020/06/25 21:13:17 cwen Exp $
+$OpenBSD: patch-moz_configure,v 1.3 2020/06/30 10:21:32 ajacoutot Exp $
 
 - Fix awk detection
 - Remove unused LLVM and Rust build dependencies, from:
@@ -16,10 +16,11 @@ Index: moz.configure
  
  # Until the AWK variable is not necessary in old-configure
  @depends(awk)
-@@ -598,36 +598,6 @@ set_config('MAKENSISU_FLAGS', nsis_flags)
+@@ -597,36 +597,6 @@ def nsis_flags(host):
+ set_config('MAKENSISU_FLAGS', nsis_flags)
  
  check_prog('7Z', ('7z', '7za'), allow_missing=True, when=target_is_windows)
- 
+-
 -
 -@depends(host_c_compiler, c_compiler, bindgen_config_paths)
 -def llvm_objdump(host_c_compiler, c_compiler, bindgen_config_paths):
@@ -49,7 +50,6 @@ Index: moz.configure
 -
 -add_old_configure_assignment('LLVM_OBJDUMP', llvm_objdump)
 -
--
+ 
  # Please do not add configure checks from here on.
  
- # Fallthrough to autoconf-based configure
