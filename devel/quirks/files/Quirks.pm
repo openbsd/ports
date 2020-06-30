@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1000 2020/06/30 16:06:46 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.1001 2020/06/30 18:06:36 solene Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1753,6 +1753,7 @@ my $obsolete_reason = {
 	'wiresep' => 4,
 	'wireless' => 4,
 	'sisctrl' => 6,
+	'vteplugin' => 0,
 };
 
 # reasons for obsolete packages
