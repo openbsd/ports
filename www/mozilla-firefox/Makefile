@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.426 2020/06/04 06:06:58 landry Exp $
+# $OpenBSD: Makefile,v 1.427 2020/06/30 14:00:25 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	77.0.1
+MOZILLA_VERSION =	78.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	92.0
+SO_VERSION =	93.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3
@@ -26,6 +26,7 @@ PERMIT_PACKAGE=	Yes
 MODULES =	www/mozilla lang/python
 
 MODPY_RUNDEP =	No
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =	base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
@@ -45,8 +46,6 @@ MOZILLA_USE_BUNDLED_SQLITE = Yes
 BUILD_DEPENDS +=	lang/rust>=1.39
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
-# 61 requires both versions of python
-BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
