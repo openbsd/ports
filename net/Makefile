@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1211 2020/06/30 12:32:27 kn Exp $
+# $OpenBSD: Makefile,v 1.1212 2020/06/30 13:10:40 kn Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -778,7 +778,6 @@
      SUBDIR += wifind
      SUBDIR += wireguard-go
      SUBDIR += wireguard-tools
-     SUBDIR += wireless
      SUBDIR += wireshark
      SUBDIR += wmnetload
      SUBDIR += wol

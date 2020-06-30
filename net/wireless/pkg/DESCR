@@ -1,3 +1,0 @@
-wireless scans for and configures wireless networks on OpenBSD.  It uses
-ifconfig(8) to do most of the heavy lifting and basically just
-interprets and applies scan results.

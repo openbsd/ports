@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/15 16:05:14 danj Exp $
-@bin bin/wireless
-@man man/man8/wireless.8
