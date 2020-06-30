@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/02 09:42:07 zhuk Exp $
-@pkgpath x11/kde4/automoc
-@bin bin/automoc4
-lib/automoc4/
-lib/automoc4/Automoc4Config.cmake
-lib/automoc4/Automoc4Version.cmake
-lib/automoc4/automoc4.files.in

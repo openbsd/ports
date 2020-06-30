@@ -1,2 +1,0 @@
-Qt4-based apps building helper tool that automatically generates
-.moc files for Q_OBJECT'ed sources.
