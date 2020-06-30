@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/26 12:57:45 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2020/06/30 07:04:17 ajacoutot Exp $
 
 COMMENT =		wavelet transform module
 
@@ -20,7 +20,8 @@ FLAVOR =		python3
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 
-BUILD_DEPENDS =         lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
