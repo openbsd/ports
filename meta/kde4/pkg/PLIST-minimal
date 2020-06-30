@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-minimal,v 1.2 2018/09/04 12:46:16 espie Exp $
-share/doc/pkg-readmes/${PKGSTEM}
