@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/29 04:24:21 bket Exp $
+# $OpenBSD: Makefile,v 1.4 2020/06/30 04:27:34 bket Exp $
 
 COMMENT =		input and output plugins for Audacious
 
 DISTNAME =		audacious-plugins-${VERSION}
+REVISION =		0
 
 # BSD / GPL
 PERMIT_PACKAGE =	Yes
