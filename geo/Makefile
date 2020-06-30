@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2020/04/10 06:26:42 martin Exp $
+# $OpenBSD: Makefile,v 1.74 2020/06/30 06:08:06 landry Exp $
 
      SUBDIR =
      SUBDIR += foxtrotgps
      SUBDIR += garmindev
-     SUBDIR += gdal
      SUBDIR += gdal,python3
      SUBDIR += geoclue
      SUBDIR += geoclue2
