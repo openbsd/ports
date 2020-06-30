@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/01 16:33:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/30 23:24:53 sthen Exp $
 share/bash-completion/
 share/bash-completion/bash_completion
 share/bash-completion/completions/
@@ -555,7 +555,7 @@ share/bash-completion/completions/pyvenv
 share/bash-completion/completions/pyvenv-3.4
 share/bash-completion/completions/pyvenv-3.5
 share/bash-completion/completions/pyvenv-3.6
-share/bash-completion/completions/pyvenv-${MODPY_VERSION}
+share/bash-completion/completions/pyvenv-3.7
 share/bash-completion/completions/pyvenv-3.8
 share/bash-completion/completions/qdbus
 share/bash-completion/completions/qemu
