@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/30 07:15:15 rsadowski Exp $
 
+BROKEN =	KDE4 deleted, update is coming
 COMMENT =	common run-time components for KDE3 and KDE4
 CATEGORIES =	x11 x11/kde3
 PKGNAME =	kde-shared-data-${MODKDE4_VERSION}
