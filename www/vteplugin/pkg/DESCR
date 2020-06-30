@@ -1,9 +1,0 @@
-vteplugin implements a terminal emulator in a browser plugins. That
-means you can use command line in a terminal **inside a browser tab**.
-
-vteplugin is a npapi plugin that uses vte library to display a terminal
-emulator, it should work with any gecko/webkit-based www-browser
-supporting npapi plugins.
-
-To use it, open ${PREFIX}/share/vteplugin/vteplugin.html document
-in your web browser. This document should display a usable terminal.

@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/06/13 14:16:46 landry Exp $
-lib/mozilla/
-lib/mozilla/plugins/
-lib/mozilla/plugins/vteplugin.so
-share/vteplugin/
-share/vteplugin/vteplugin.html
