@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.85 2020/05/14 11:28:33 landry Exp $
+# $OpenBSD: Makefile,v 1.86 2020/06/30 06:02:38 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		3.1.0
+V =		3.1.1
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
 
 FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
-FULLPKGNAME-python =	py-${DISTNAME}
+FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
 
-SHARED_LIBS =	gdal 39.0 #27.0
+SHARED_LIBS =	gdal 39.1 #27.1
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -30,11 +30,7 @@ MASTER_SITES =	http://download.osgeo.org/gdal/${V}/
 
 MODULES =	perl lang/python
 FLAVORS =	python3
-FLAVOR ?=
-
-.if ${FLAVOR:Mpython3}
-FULLPKGNAME-python =	py3-${DISTNAME}
-.endif
+FLAVOR =	python3
 
 COMPILER = base-clang ports-gcc
 
@@ -133,20 +129,7 @@ CONFIGURE_ARGS =--without-cfitsio \
 post-extract:
 	ln -sf ${WRKDIR}/gdalautotest-${V} ${WRKSRC}/autotest
 
-PYBINS = epsg_tr esri2wkt gcps2vec gcps2wld gdal2xyz gdal_auth gdal_merge \
-	gdalchksum gdalident gdalimport mkgraticule
-PYBINSWITHMAN = gdal2tiles gdal_calc gdal_edit gdal_fillnodata gdal_pansharpen \
-	gdal_polygonize gdal_proximity gdal_retile gdal_sieve gdalcompare \
-	gdalmove ogrmerge pct2rgb rgb2pct
-
 post-install:
-.for b in ${PYBINSWITHMAN}
-	mv -f ${PREFIX}/bin/$b.py ${PREFIX}/bin/$b${MODPY_BIN_SUFFIX}.py
-	mv -f ${PREFIX}/man/man1/$b.1 ${PREFIX}/man/man1/$b${MODPY_BIN_SUFFIX}.1
-.endfor
-.for b in ${PYBINS}
-	mv -f ${PREFIX}/bin/$b.py ${PREFIX}/bin/$b${MODPY_BIN_SUFFIX}.py
-.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}gdal
 	cp ${WRKSRC}/swig/python/samples/*.py ${PREFIX}/share/examples/${MODPY_PY_PREFIX}gdal
 

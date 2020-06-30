@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2020/05/14 11:28:34 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2020/06/30 06:02:38 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
@@ -106,12 +106,15 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdal_merge.1
 @man man/man1/gdal_rasterize.1
 @man man/man1/gdal_translate.1
+@man man/man1/gdal_viewshed.1
 @man man/man1/gdaladdo.1
 @man man/man1/gdalbuildvrt.1
 @man man/man1/gdaldem.1
 @man man/man1/gdalinfo.1
 @man man/man1/gdallocationinfo.1
 @man man/man1/gdalmanage.1
+@man man/man1/gdalmdiminfo.1
+@man man/man1/gdalmdimtranslate.1
 @man man/man1/gdalsrsinfo.1
 @man man/man1/gdaltindex.1
 @man man/man1/gdaltransform.1

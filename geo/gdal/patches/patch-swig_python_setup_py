@@ -1,9 +1,9 @@
-$OpenBSD: patch-swig_python_setup_py,v 1.14 2020/05/14 11:28:33 landry Exp $
+$OpenBSD: patch-swig_python_setup_py,v 1.15 2020/06/30 06:02:38 landry Exp $
 
 Index: swig/python/setup.py
 --- swig/python/setup.py.orig
 +++ swig/python/setup.py
-@@ -350,7 +350,7 @@ if sys.version_info < (3,):
+@@ -351,7 +351,7 @@ if sys.version_info < (3,):
      except:
          pass
  
