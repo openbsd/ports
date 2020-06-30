@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_plugins_filter_c,v 1.1 2006/08/04 23:34:39 espie Exp $
---- src/plugins/filter.c.orig	Sat Aug  5 01:15:43 2006
-+++ src/plugins/filter.c	Sat Aug  5 01:16:38 2006
-@@ -250,10 +250,13 @@ LADSPA_Descriptor * g_psHPFDescriptor = 
+$OpenBSD: patch-src_plugins_filter_c,v 1.2 2020/06/30 07:13:48 ajacoutot Exp $
+
+Index: src/plugins/filter.c
+--- src/plugins/filter.c.orig
++++ src/plugins/filter.c
+@@ -250,10 +250,13 @@ LADSPA_Descriptor * g_psHPFDescriptor = NULL;
  
  /*****************************************************************************/
  
@@ -16,7 +18,7 @@ $OpenBSD: patch-src_plugins_filter_c,v 1.1 2006/08/04 23:34:39 espie Exp $
  
    char ** pcPortNames;
    LADSPA_PortDescriptor * piPortDescriptors;
-@@ -432,7 +435,7 @@ deleteDescriptor(LADSPA_Descriptor * psD
+@@ -432,7 +435,7 @@ deleteDescriptor(LADSPA_Descriptor * psDescriptor) {
  
  /* _fini() is called automatically when the library is unloaded. */
  void

@@ -1,30 +1,34 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/06/30 07:13:48 ajacoutot Exp $
 
-COMMENT=	linux audio developer simple plugin API
-HOMEPAGE=	http://www.ladspa.org/
-CATEGORIES=	audio devel
+COMMENT=	Linux Audio Developer's Simple Plugin API
 
 V=		1.13
-REVISION =	3
-
 DISTNAME=	ladspa_sdk_${V}
-WRKDIST=	${WRKDIR}/ladspa_sdk
 PKGNAME=	ladspa-${V}
-EXTRACT_SUFX=	.tgz
+REVISION=	4
+CATEGORIES=	audio devel
 MASTER_SITES=	${HOMEPAGE:=download/}
+EXTRACT_SUFX=	.tgz
+
+HOMEPAGE=       https://www.ladspa.org/
 
 # LGPL
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
+WRKDIST=	${WRKDIR}/ladspa_sdk
 WRKBUILD=	${WRKDIST}/src
+
 USE_GMAKE=	Yes
 MAKE_FILE=	makefile
 ALL_TARGET=	targets
 MAKE_FLAGS=	LIBRARIES=-lm OPTS="${CFLAGS}"
+
+# interactive regression test, that requires you to listen to stuff.
+NO_TEST=	Yes
 
 PROGRAMS=	analyseplugin applyplugin listplugins
 
@@ -37,9 +41,5 @@ do-install:
 	${INSTALL_DATA_DIR}	${PREFIX}/share/doc/ladspa
 	${INSTALL_DATA}	${WRKDIST}/doc/*.html ${PREFIX}/share/doc/ladspa
 	${INSTALL_DATA}	${WRKDIST}/src/ladspa.h ${PREFIX}/include
-
-# interactive regression test, that requires you to listen to stuff.
-# -> mostly useless
-NO_TEST=	Yes
 
 .include <bsd.port.mk>

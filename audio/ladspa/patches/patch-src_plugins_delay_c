@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_plugins_delay_c,v 1.1 2006/08/04 23:34:39 espie Exp $
---- src/plugins/delay.c.orig	Sat Aug  5 01:15:43 2006
-+++ src/plugins/delay.c	Sat Aug  5 01:16:12 2006
-@@ -226,10 +226,13 @@ LADSPA_Descriptor * g_psDescriptor = NUL
+$OpenBSD: patch-src_plugins_delay_c,v 1.2 2020/06/30 07:13:48 ajacoutot Exp $
+Index: src/plugins/delay.c
+--- src/plugins/delay.c.orig
++++ src/plugins/delay.c
+@@ -226,10 +226,13 @@ LADSPA_Descriptor * g_psDescriptor = NULL;
  
  /*****************************************************************************/
  

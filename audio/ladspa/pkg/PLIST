@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/05/09 21:18:29 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/06/30 07:13:49 ajacoutot Exp $
 @bin bin/analyseplugin
 @bin bin/applyplugin
 @bin bin/listplugins
 include/ladspa.h
 lib/ladspa/
-lib/ladspa/amp.so
-lib/ladspa/delay.so
-lib/ladspa/filter.so
-lib/ladspa/noise.so
-lib/ladspa/sine.so
+@so lib/ladspa/amp.so
+@so lib/ladspa/delay.so
+@so lib/ladspa/filter.so
+@so lib/ladspa/noise.so
+@so lib/ladspa/sine.so
 share/doc/ladspa/
 share/doc/ladspa/background.html
 share/doc/ladspa/changes.html
