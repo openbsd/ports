@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2020/06/18 10:31:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.127 2020/06/30 14:02:15 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -61,7 +61,6 @@
      SUBDIR += p5-Data-AMF
      SUBDIR += p5-Mac-iTunes-Library
      SUBDIR += p5-Storable-AMF
-     SUBDIR += phonon
      SUBDIR += phonon-qt5
      SUBDIR += phonon-backend
      SUBDIR += py-caption
