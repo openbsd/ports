@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_logstash_yml,v 1.7 2020/05/14 21:42:48 pvk Exp $
+$OpenBSD: patch-config_logstash_yml,v 1.8 2020/07/01 12:00:51 pvk Exp $
 
 Index: config/logstash.yml
 --- config/logstash.yml.orig
@@ -12,7 +12,7 @@ Index: config/logstash.yml
  #
  # ------------ Pipeline Settings --------------
  #
-@@ -217,7 +217,7 @@ pipeline.ordered: auto
+@@ -238,7 +238,7 @@ pipeline.ordered: auto
  #   * trace
  #
  # log.level: info
@@ -21,7 +21,7 @@ Index: config/logstash.yml
  #
  # ------------ Other Settings --------------
  #
-@@ -227,43 +227,3 @@ pipeline.ordered: auto
+@@ -248,43 +248,3 @@ pipeline.ordered: auto
  # Flag to output log lines of each pipeline in its separate log file. Each log filename contains the pipeline.name
  # Default is false
  # pipeline.separate_logs: false
