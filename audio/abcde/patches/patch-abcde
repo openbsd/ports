@@ -1,0 +1,16 @@
+$OpenBSD: patch-abcde,v 1.12 2020/07/01 01:00:43 cwen Exp $
+
+Index: abcde
+--- abcde.orig
++++ abcde
+@@ -3770,8 +3770,8 @@ post_encode ()
+ # CDDB
+ # Currently three supported options ("musicbrainz", "cddb" for freedb.org and "cdtext")
+ CDDBMETHOD=musicbrainz
+-CDDBURL="http://freedb.freedb.org/~cddb/cddb.cgi"
+-CDDBSUBMIT=freedb-submit@freedb.org
++CDDBURL="https://gnudb.gnudb.org/~cddb/cddb.cgi"
++CDDBSUBMIT=submit@gnudb.org
+ CDDBPROTO=6
+ HELLOINFO="$(whoami)@$(hostname)"
+ CDDBCOPYLOCAL="n"

@@ -1,0 +1,23 @@
+$OpenBSD: patch-abcde_conf,v 1.3 2020/07/01 01:00:43 cwen Exp $
+
+Index: abcde.conf
+--- abcde.conf.orig
++++ abcde.conf
+@@ -15,7 +15,7 @@
+ # If you wish to use a different CDDB server, edit this line.
+ # If you just wanted to use a proxy server, just set your http_proxy
+ # environment variable - wget will use it correctly.
+-#CDDBURL="http://freedb.freedb.org/~cddb/cddb.cgi"
++#CDDBURL="https://gnudb.gnudb.org/~cddb/cddb.cgi"
+ 
+ # The CDDB protocol level.
+ # Right now 5 is latin1 output and 6 is UTF8 encoding.
+@@ -27,7 +27,7 @@
+ #HELLOINFO="`whoami`@`hostname`"
+ 
+ # This controls the email address CDDB changes are submitted to.
+-#CDDBSUBMIT=freedb-submit@freedb.org
++#CDDBSUBMIT=submit@gnudb.org
+ 
+ # The following options control whether or not fetched CDDB entries
+ # are cached locally in $CDDBLOCALDIR

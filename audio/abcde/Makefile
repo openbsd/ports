@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/07/01 01:00:43 cwen Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
 DISTNAME=	abcde-2.9.3
+REVISION=	0
 EPOCH=		0
 CATEGORIES=	audio
 
