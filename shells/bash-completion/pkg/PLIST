@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/06/30 23:24:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/07/01 13:59:49 sthen Exp $
 share/bash-completion/
 share/bash-completion/bash_completion
 share/bash-completion/completions/
@@ -534,7 +534,7 @@ share/bash-completion/completions/pwgen
 share/bash-completion/completions/pxz
 share/bash-completion/completions/py.test
 share/bash-completion/completions/py.test-2
-share/bash-completion/completions/py.test${MODPY_BIN_SUFFIX}
+share/bash-completion/completions/py.test-3
 share/bash-completion/completions/pycodestyle
 share/bash-completion/completions/pydoc
 share/bash-completion/completions/pydoc3
@@ -542,12 +542,12 @@ share/bash-completion/completions/pydocstyle
 share/bash-completion/completions/pyflakes
 share/bash-completion/completions/pylint
 share/bash-completion/completions/pylint-2
-share/bash-completion/completions/pylint${MODPY_BIN_SUFFIX}
+share/bash-completion/completions/pylint-3
 share/bash-completion/completions/pypy
 share/bash-completion/completions/pypy3
 share/bash-completion/completions/pytest
 share/bash-completion/completions/pytest-2
-share/bash-completion/completions/pytest${MODPY_BIN_SUFFIX}
+share/bash-completion/completions/pytest-3
 share/bash-completion/completions/python
 share/bash-completion/completions/python2
 share/bash-completion/completions/python3
