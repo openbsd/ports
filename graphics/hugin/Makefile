@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2020/05/14 19:16:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.70 2020/07/01 17:40:26 kirby Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -31,7 +31,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Half-2_5 Iex-2_5 IlmImf-2_5
 WANTLIB += IlmThread-2_5 Imath-2_5 X11 boost_filesystem-mt boost_system-mt
-WANTLIB += c exiv2 fftw3 jpeg lcms2 m pano13 png python2.7 sqlite3
+WANTLIB += c exiv2 fftw3 jpeg lcms2 m pano13 png ${MODPY_WANTLIB} sqlite3
 WANTLIB += tiff vigraimpex wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
 WANTLIB += wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
