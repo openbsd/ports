@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.967 2020/06/30 18:05:55 solene Exp $
+# $OpenBSD: Makefile,v 1.968 2020/07/01 17:37:00 paco Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -35,6 +35,7 @@
      SUBDIR += drush
      SUBDIR += e2guardian
      SUBDIR += edbrowse
+     SUBDIR += ephemetoot
      SUBDIR += epiphany
      SUBDIR += fcgi
      SUBDIR += fcgi-cgi
