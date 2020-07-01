@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cpp_session_SessionMain_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+From FreeBSD.
+
+Index: src/cpp/session/SessionMain.cpp
+--- src/cpp/session/SessionMain.cpp.orig
++++ src/cpp/session/SessionMain.cpp
+@@ -1692,7 +1692,7 @@ int main (int argc, char * const argv[]) 
+       
+       // move to own process group
+ #ifndef _WIN32
+-      ::setpgrp();
++      ::setpgrp(0, 0);
+ #endif
+ 
+       // get main thread id (used to distinguish forks which occur

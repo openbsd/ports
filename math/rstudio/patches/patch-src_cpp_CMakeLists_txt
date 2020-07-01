@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_cpp_CMakeLists_txt,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+We can get away with our older version of Boost.
+
+Index: src/cpp/CMakeLists.txt
+--- src/cpp/CMakeLists.txt.orig
++++ src/cpp/CMakeLists.txt
+@@ -190,7 +190,7 @@ endif()
+ 
+ # default Boost versions
+ if(NOT RSTUDIO_BOOST_REQUESTED_VERSION)
+-   set(RSTUDIO_BOOST_REQUESTED_VERSION 1.69.0)
++   set(RSTUDIO_BOOST_REQUESTED_VERSION 1.66.0)
+ endif()
+ 
+ # disable system boost if we're not using it.
+@@ -225,7 +225,7 @@ if(UNIX)
+       set(Boost_USE_STATIC_LIBS ON)
+       set(BOOST_INCLUDEDIR  ${RSTUDIO_TOOLS_BOOST}/include)
+       find_package(Boost ${RSTUDIO_BOOST_REQUESTED_VERSION} EXACT REQUIRED)
+-      if(NOT Boost_VERSION LESS 106900)
++      if(NOT Boost_VERSION LESS 106600)
+          list(REMOVE_ITEM BOOST_LIBS signals)
+       endif()
+ 
+@@ -238,7 +238,7 @@ if(UNIX)
+    else()
+       add_definitions(-DRSTUDIO_BOOST_NAMESPACE=boost)
+       find_package(Boost ${RSTUDIO_BOOST_REQUESTED_VERSION} REQUIRED)
+-      if(NOT Boost_VERSION LESS 106900)
++      if(NOT Boost_VERSION LESS 106600)
+          list(REMOVE_ITEM BOOST_LIBS signals)
+       endif()
+       find_package(Boost ${RSTUDIO_BOOST_REQUESTED_VERSION} REQUIRED COMPONENTS ${BOOST_LIBS})
+@@ -272,7 +272,7 @@ endif()
+ # allow opt-in to using Boost.Signals2
+ # TODO: remove this in RStudio v1.3 and port to signals2
+ if(NOT RSTUDIO_BOOST_SIGNALS_VERSION)
+-   if (Boost_VERSION LESS 106900)
++   if (Boost_VERSION LESS 106600)
+       set(RSTUDIO_BOOST_SIGNALS_VERSION 1)
+    else()
+       set(RSTUDIO_BOOST_SIGNALS_VERSION 2)

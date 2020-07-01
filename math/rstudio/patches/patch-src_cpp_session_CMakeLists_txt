@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_cpp_session_CMakeLists_txt,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+No pandoc. Don't need it. Don't try to find it.
+
+Index: src/cpp/session/CMakeLists.txt
+--- src/cpp/session/CMakeLists.txt.orig
++++ src/cpp/session/CMakeLists.txt
+@@ -25,9 +25,9 @@ endif()
+ if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DIR}/common/mathjax-27")
+   message(FATAL_ERROR "Mathjax 2.7 not found (re-run install-dependencies script to install)")
+ endif()
+-if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc")
+-  message(FATAL_ERROR "pandoc not found (re-run install-dependencies script to install)")
+-endif()
++#if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc")
++#  message(FATAL_ERROR "pandoc not found (re-run install-dependencies script to install)")
++#endif()
+ 
+ # verify embedded packages are available
+ foreach(PKG ${RSTUDIO_EMBEDDED_PACKAGES})

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cpp_r_session_REmbeddedPosix_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+R_Slave was renamed R_NoEcho in modern versions of R.
+
+Index: src/cpp/r/session/REmbeddedPosix.cpp
+--- src/cpp/r/session/REmbeddedPosix.cpp.orig
++++ src/cpp/r/session/REmbeddedPosix.cpp
+@@ -104,7 +104,7 @@ void runEmbeddedR(const core::FilePath& /*rHome*/,    
+    structRstart rp;
+    Rstart Rp = &rp;
+    R_DefParams(Rp) ;
+-   Rp->R_Slave = FALSE ;
++   Rp->R_NoEcho = FALSE ;
+    Rp->R_Quiet = quiet ? TRUE : FALSE;
+    Rp->R_Interactive = TRUE ;
+    Rp->SaveAction = defaultSaveAction ;

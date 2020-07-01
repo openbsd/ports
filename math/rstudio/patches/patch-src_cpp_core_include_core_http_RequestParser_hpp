@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cpp_core_include_core_http_RequestParser_hpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+has_value() is only found in later Boost versions.
+
+Index: src/cpp/core/include/core/http/RequestParser.hpp
+--- src/cpp/core/include/core/http/RequestParser.hpp.orig
++++ src/cpp/core/include/core/http/RequestParser.hpp
+@@ -66,7 +66,7 @@ class RequestParser (public)
+   {
+     InputIterator originalBegin = begin;
+ 
+-    if (bufferPos_.has_value())
++    if (bufferPos_)
+     {
+        if (parsingBody_)
+        {

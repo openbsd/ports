@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+Need to build gwt.
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -18,11 +18,7 @@ cmake_minimum_required(VERSION 3.4.3)
+ # we've already got it from the 64-bit build), for development mode
+ # (since we'll want to build it incrementally using superdevmode),
+ # or when building monitor only
+-if ( (NOT RSTUDIO_SESSION_WIN32) AND
+-     (NOT RSTUDIO_DEVELOPMENT) AND
+-     (NOT RSTUDIO_CONFIG_MONITOR_ONLY) )
+-   add_subdirectory(gwt)
+-endif()
++add_subdirectory(gwt)
+ 
+ add_subdirectory(cpp)
+ 

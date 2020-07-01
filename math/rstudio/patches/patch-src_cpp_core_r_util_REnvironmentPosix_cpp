@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cpp_core_r_util_REnvironmentPosix_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+XXX: How to sync with R?
+
+Index: src/cpp/core/r_util/REnvironmentPosix.cpp
+--- src/cpp/core/r_util/REnvironmentPosix.cpp.orig
++++ src/cpp/core/r_util/REnvironmentPosix.cpp
+@@ -194,7 +194,7 @@ bool detectRLocationsUsingFramework(FilePath* pHomePat
+ // Linux specific
+ #else
+ 
+-#define kLibRFileName            "libR.so"
++#define kLibRFileName            "libR.so.37.0"
+ #define kLibraryPathEnvVariable  "LD_LIBRARY_PATH"
+ 
+ FilePath systemDefaultRScript(std::string* pErrMsg)

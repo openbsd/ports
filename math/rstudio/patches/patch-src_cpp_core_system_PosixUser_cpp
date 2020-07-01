@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cpp_core_system_PosixUser_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+Don't use peercred.
+
+Index: src/cpp/core/system/PosixUser.cpp
+--- src/cpp/core/system/PosixUser.cpp.orig
++++ src/cpp/core/system/PosixUser.cpp
+@@ -48,7 +48,7 @@ UserIdentity currentUserIdentity()
+    return userIdentity;
+ }
+ 
+-#if defined(HAVE_SO_PEERCRED)
++#if defined(HAVE_SO_PEERCRED) && !defined(__OpenBSD__)
+ 
+ Error socketPeerIdentity(int socket, UserIdentity* pIdentity)
+ {

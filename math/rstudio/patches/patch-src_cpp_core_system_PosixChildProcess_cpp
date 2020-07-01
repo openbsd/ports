@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_cpp_core_system_PosixChildProcess_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+We're macOS in this scenario.
+
+Index: src/cpp/core/system/PosixChildProcess.cpp
+--- src/cpp/core/system/PosixChildProcess.cpp.orig
++++ src/cpp/core/system/PosixChildProcess.cpp
+@@ -20,7 +20,7 @@
+ #include <signal.h>
+ #include <unistd.h>
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ #include <util.h>
+ #include <sys/ttycom.h>
+ #include <sys/ioctl.h>
+@@ -350,7 +350,7 @@ Error ChildProcess::terminate()
+    // special code path for pseudoterminal
+    if (options_.pseudoterminal)
+    {
+-#ifndef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+       // On Linux only do this if dealing with a Terminal-pane process.
+       // This is to reduce scope of this change for 1.1
+       // TODO: review post 1.1
+@@ -362,7 +362,7 @@ Error ChildProcess::terminate()
+          // require the signal)
+          pImpl_->closeAll(false, ERROR_LOCATION);
+ 
+-#ifndef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+       }
+ #endif
+ 
+@@ -945,7 +945,7 @@ AsyncChildProcess::~AsyncChildProcess()
+ 
+ Error AsyncChildProcess::terminate()
+ {
+-#ifndef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+    // On Linux only do this if dealing with a Terminal-pane process.
+    // This is to reduce scope of this change for 1.1
+    // TODO: review post 1.1
+@@ -957,7 +957,7 @@ Error AsyncChildProcess::terminate()
+          pAsyncImpl_->finishedStderr_ = true;
+          pAsyncImpl_->finishedStdout_ = true;
+       }
+-#ifndef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+    }
+ #endif
+    return ChildProcess::terminate();

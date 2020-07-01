@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_cpp_desktop_DesktopMain_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+
+Q_OS_LINUX needlessly excludes the BSDs.
+has_value() only available in later Boost versions.
+
+Index: src/cpp/desktop/DesktopMain.cpp
+--- src/cpp/desktop/DesktopMain.cpp.orig
++++ src/cpp/desktop/DesktopMain.cpp
+@@ -52,7 +52,7 @@
+ #include <Windows.h>
+ #endif
+ 
+-#ifdef Q_OS_LINUX
++#ifdef Q_OS_UNIX
+ #include <core/system/PosixSystem.hpp>
+ #endif
+ 
+@@ -372,7 +372,7 @@ QString inferDefaultRenderingEngine()
+ 
+ #endif
+ 
+-#ifdef Q_OS_LINUX
++#ifdef Q_OS_UNIX
+ 
+ QString inferDefaultRenderingEngine()
+ {
+@@ -639,7 +639,7 @@ int main(int argc, char* argv[])
+       }
+ #endif
+ 
+-#if defined(Q_OS_LINUX) 
++#if defined(Q_OS_UNIX) 
+ 
+       static char noSandbox[] = "--no-sandbox";
+ 
+@@ -1013,7 +1013,7 @@ int main(int argc, char* argv[])
+          options.cleanUpScratchTempDir();
+ 
+          boost::optional<SessionServer> pendingReconnect = sessionServers().getPendingSessionServerReconnect();
+-         if (pendingReconnect.has_value())
++         if (pendingReconnect)
+          {
+             // we need to reconnect to the specified session server
+             forceSessionServerLaunch = true;
