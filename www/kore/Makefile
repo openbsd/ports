@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/04/17 16:14:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/01 14:02:01 sthen Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
@@ -50,6 +50,9 @@ USE_GMAKE =	Yes
 MAKE_ENV +=	CC="${CC}" TASKS=1
 
 NO_TEST =	Yes
+
+post-configure:
+	${SUBST_CMD} ${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kore
