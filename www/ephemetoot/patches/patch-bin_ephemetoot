@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_ephemetoot,v 1.1.1.1 2020/07/01 17:32:48 paco Exp $
+
+Index: bin/ephemetoot
+--- bin/ephemetoot.orig
++++ bin/ephemetoot
+@@ -33,7 +33,7 @@ import os
+ import pkg_resources 
+ 
+ # local files
+-from lib import ephemetoot
++from ephemetoot import ephemetoot
+ 
+ # version number from setup.py
+ vnum = pkg_resources.require("ephemetoot")[0].version
