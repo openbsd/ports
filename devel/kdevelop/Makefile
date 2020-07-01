@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.37 2020/06/03 05:20:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2020/07/01 22:24:08 cwen Exp $
 
-# Qt5Webkit
+# Qt5WebEngine
 USE_WXNEEDED =		Yes
 
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 VERSION =	5.5.2
+REVISION=	0
 DISTNAME =	kdevelop-${VERSION}
 
 HOMEPAGE =	https://www.kdevelop.org/
@@ -44,10 +45,11 @@ WANTLIB += KF5ThreadWeaver KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Kasten4Controllers Kasten4Core Kasten4Gui Kasten4Okteta2Controllers
 WANTLIB += Kasten4Okteta2Core Kasten4Okteta2Gui Okteta3Core Okteta3Gui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Test Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml apr-1 aprutil-1
-WANTLIB += c clang komparediff2 m svn_client-1 svn_fs-1 svn_ra-1
-WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Sql Qt5Test Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5Xml apr-1 aprutil-1 c clang komparediff2
+WANTLIB += m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1
+WANTLIB += svn_wc-1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
 
@@ -103,9 +105,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		x11/kde-applications/libkomparediff2 \
 		x11/kde-applications/okteta>=0.26.1v0 \
 		x11/qt5/qttools \
-		x11/qt5/qtwebkit
-
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets=ON
+		x11/qt5/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
 
