@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/05/14 21:53:06 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/07/01 12:04:47 pvk Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/filebeat/{*,registry/filebeat/*}
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/filebeat/*
 @rcscript ${RCDIR}/filebeat
@@ -179,7 +179,7 @@ share/filebeat/module/mongodb/log/
 share/filebeat/module/mongodb/log/config/
 share/filebeat/module/mongodb/log/config/log.yml
 share/filebeat/module/mongodb/log/ingest/
-share/filebeat/module/mongodb/log/ingest/pipeline.json
+share/filebeat/module/mongodb/log/ingest/pipeline.yml
 share/filebeat/module/mongodb/log/manifest.yml
 share/filebeat/module/mongodb/module.yml
 share/filebeat/module/mysql/
@@ -187,7 +187,7 @@ share/filebeat/module/mysql/error/
 share/filebeat/module/mysql/error/config/
 share/filebeat/module/mysql/error/config/error.yml
 share/filebeat/module/mysql/error/ingest/
-share/filebeat/module/mysql/error/ingest/pipeline.json
+share/filebeat/module/mysql/error/ingest/pipeline.yml
 share/filebeat/module/mysql/error/manifest.yml
 share/filebeat/module/mysql/module.yml
 share/filebeat/module/mysql/slowlog/
@@ -201,7 +201,7 @@ share/filebeat/module/nats/log/
 share/filebeat/module/nats/log/config/
 share/filebeat/module/nats/log/config/log.yml
 share/filebeat/module/nats/log/ingest/
-share/filebeat/module/nats/log/ingest/pipeline.json
+share/filebeat/module/nats/log/ingest/pipeline.yml
 share/filebeat/module/nats/log/manifest.yml
 share/filebeat/module/nats/module.yml
 share/filebeat/module/nginx/
@@ -209,19 +209,19 @@ share/filebeat/module/nginx/access/
 share/filebeat/module/nginx/access/config/
 share/filebeat/module/nginx/access/config/nginx-access.yml
 share/filebeat/module/nginx/access/ingest/
-share/filebeat/module/nginx/access/ingest/default.json
+share/filebeat/module/nginx/access/ingest/pipeline.yml
 share/filebeat/module/nginx/access/manifest.yml
 share/filebeat/module/nginx/error/
 share/filebeat/module/nginx/error/config/
 share/filebeat/module/nginx/error/config/nginx-error.yml
 share/filebeat/module/nginx/error/ingest/
-share/filebeat/module/nginx/error/ingest/pipeline.json
+share/filebeat/module/nginx/error/ingest/pipeline.yml
 share/filebeat/module/nginx/error/manifest.yml
 share/filebeat/module/nginx/ingress_controller/
 share/filebeat/module/nginx/ingress_controller/config/
 share/filebeat/module/nginx/ingress_controller/config/ingress_controller.yml
 share/filebeat/module/nginx/ingress_controller/ingest/
-share/filebeat/module/nginx/ingress_controller/ingest/pipeline.json
+share/filebeat/module/nginx/ingress_controller/ingest/pipeline.yml
 share/filebeat/module/nginx/ingress_controller/manifest.yml
 share/filebeat/module/nginx/module.yml
 @comment share/filebeat/module/osquery/
@@ -237,7 +237,7 @@ share/filebeat/module/postgresql/log/
 share/filebeat/module/postgresql/log/config/
 share/filebeat/module/postgresql/log/config/log.yml
 share/filebeat/module/postgresql/log/ingest/
-share/filebeat/module/postgresql/log/ingest/pipeline.json
+share/filebeat/module/postgresql/log/ingest/pipeline.yml
 share/filebeat/module/postgresql/log/manifest.yml
 share/filebeat/module/postgresql/module.yml
 share/filebeat/module/redis/
@@ -245,7 +245,7 @@ share/filebeat/module/redis/log/
 share/filebeat/module/redis/log/config/
 share/filebeat/module/redis/log/config/log.yml
 share/filebeat/module/redis/log/ingest/
-share/filebeat/module/redis/log/ingest/pipeline.json
+share/filebeat/module/redis/log/ingest/pipeline.yml
 share/filebeat/module/redis/log/manifest.yml
 share/filebeat/module/redis/module.yml
 share/filebeat/module/redis/slowlog/
@@ -254,12 +254,13 @@ share/filebeat/module/redis/slowlog/config/slowlog.yml
 share/filebeat/module/redis/slowlog/ingest/
 share/filebeat/module/redis/slowlog/ingest/pipeline.json
 share/filebeat/module/redis/slowlog/manifest.yml
+@comment share/filebeat/module/santa/log/ingest/pipeline.json
 @comment share/filebeat/module/santa/
 @comment share/filebeat/module/santa/log/
 @comment share/filebeat/module/santa/log/config/
 @comment share/filebeat/module/santa/log/config/file.yml
 @comment share/filebeat/module/santa/log/ingest/
-@comment share/filebeat/module/santa/log/ingest/pipeline.json
+share/filebeat/module/santa/log/ingest/pipeline.yml
 @comment share/filebeat/module/santa/log/manifest.yml
 @comment share/filebeat/module/santa/module.yml
 share/filebeat/module/system/
@@ -267,14 +268,14 @@ share/filebeat/module/system/auth/
 share/filebeat/module/system/auth/config/
 share/filebeat/module/system/auth/config/auth.yml
 share/filebeat/module/system/auth/ingest/
-share/filebeat/module/system/auth/ingest/pipeline.json
+share/filebeat/module/system/auth/ingest/pipeline.yml
 share/filebeat/module/system/auth/manifest.yml
 share/filebeat/module/system/module.yml
 share/filebeat/module/system/syslog/
 share/filebeat/module/system/syslog/config/
 share/filebeat/module/system/syslog/config/syslog.yml
 share/filebeat/module/system/syslog/ingest/
-share/filebeat/module/system/syslog/ingest/pipeline.json
+share/filebeat/module/system/syslog/ingest/pipeline.yml
 share/filebeat/module/system/syslog/manifest.yml
 @comment share/filebeat/module/traefik/
 @comment share/filebeat/module/traefik/access/

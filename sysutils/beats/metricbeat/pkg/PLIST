@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/05/14 21:53:06 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/07/01 12:04:47 pvk Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/metricbeat/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/metricbeat/*
 @rcscript ${RCDIR}/metricbeat
@@ -36,6 +36,7 @@ share/examples/metricbeat/modules.d/kibana-xpack.yml.disabled
 share/examples/metricbeat/modules.d/kibana.yml.disabled
 share/examples/metricbeat/modules.d/kubernetes.yml.disabled
 share/examples/metricbeat/modules.d/kvm.yml.disabled
+share/examples/metricbeat/modules.d/linux.yml.disabled
 share/examples/metricbeat/modules.d/logstash-xpack.yml.disabled
 share/examples/metricbeat/modules.d/logstash.yml.disabled
 share/examples/metricbeat/modules.d/memcached.yml.disabled
@@ -102,7 +103,7 @@ share/metricbeat/module/kafka/module.yml
 share/metricbeat/module/kafka/producer/
 share/metricbeat/module/kafka/producer/manifest.yml
 share/metricbeat/module/kubernetes/
-share/metricbeat/module/kubernetes/docker-compose.yml
+share/metricbeat/module/kubernetes/kubernetes.yml
 share/metricbeat/module/kubernetes/module.yml
 share/metricbeat/module/logstash/
 share/metricbeat/module/logstash/docker-compose.yml

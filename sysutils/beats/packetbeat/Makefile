@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2020/05/14 21:53:06 pvk Exp $
+# $OpenBSD: Makefile,v 1.32 2020/07/01 12:04:47 pvk Exp $
 
 COMMENT =	lightweight shipper for real-time network analytics
 
 BEAT =		packetbeat
-VERSION =	7.7.0
+VERSION =	7.8.0
 
 GH_ACCOUNT =	elastic
 GH_PROJECT =	beats
