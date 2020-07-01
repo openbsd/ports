@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cddb_lookup_c,v 1.1 2020/07/01 21:16:02 jeremy Exp $
+
+Change default CDDB port to 8880, as that is what gnudb.org uses.
+
+Index: src/cddb_lookup.c
+--- src/cddb_lookup.c.orig
++++ src/cddb_lookup.c
+@@ -223,7 +223,7 @@ cddb_connection_setup(cddb_conn_t ** conn) {
+ 			cddb_set_server_port(*conn, 80);
+ 		} else {
+ 			cddb_http_disable(*conn);
+-			cddb_set_server_port(*conn, 888);
++			cddb_set_server_port(*conn, 8880);
+ 		}
+ 	}
+ 

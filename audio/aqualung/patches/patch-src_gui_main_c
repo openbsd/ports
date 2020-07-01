@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_gui_main_c,v 1.3 2020/07/01 21:16:02 jeremy Exp $
+
+Use the default skin by default.
+
+Switch from freedb.org to gnudb.org for the CDDB server.
+
+Index: src/gui_main.c
+--- src/gui_main.c.orig
++++ src/gui_main.c
+@@ -3565,7 +3565,7 @@ create_gui(int argc, char ** argv, int optind, int enq
+ 	if (options.title_format[0] == '\0')
+ 		sprintf(options.title_format, "%%a: %%t [%%r]");
+ 	if (options.skin[0] == '\0') {
+-		sprintf(options.skin, "%s/plain", AQUALUNG_SKINDIR);
++		sprintf(options.skin, "%s/default", AQUALUNG_SKINDIR);
+ 		options.main_pos_x = 280;
+ 		options.main_pos_y = 30;
+ 		options.main_size_x = 380;
+@@ -3583,7 +3583,7 @@ create_gui(int argc, char ** argv, int optind, int enq
+ 	}
+ 
+ 	if (options.cddb_server[0] == '\0') {
+-		sprintf(options.cddb_server, "freedb.org");
++		sprintf(options.cddb_server, "gnudb.org");
+ 	}
+ 
+ 	if (options.src_type == -1) {

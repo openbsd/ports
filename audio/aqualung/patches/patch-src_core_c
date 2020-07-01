@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_core_c,v 1.6 2019/02/03 03:58:35 bentley Exp $
+$OpenBSD: patch-src_core_c,v 1.7 2020/07/01 21:16:02 jeremy Exp $
 
 Reinit sndio if there is a audio(4) error.  Without this, aqualung is
 unusable after an audio(4) error until it is closed and reopened.
+
+Create .config directory before .config/aqualung if it does not exist.
 
 Index: src/core.c
 --- src/core.c.orig
@@ -59,3 +61,12 @@ Index: src/core.c
  	AQUALUNG_THREAD_CREATE(info->sndio_thread_id, NULL, sndio_thread, info)
  	set_thread_priority(info->sndio_thread_id, "sndio output", realtime, priority);
  
+@@ -1887,6 +1907,8 @@ load_default_cl(int * argc, char *** argv) {
+         if (chdir(options.confdir) != 0) {
+                 if (errno == ENOENT) {
+                         fprintf(stderr, "Creating directory %s\n", options.confdir);
++			/* Try creating .config before .config/aqualung */
++			mkdir(dirname(options.confdir), S_IRUSR | S_IWUSR | S_IXUSR);
+                         if (mkdir(options.confdir, S_IRUSR | S_IWUSR | S_IXUSR) < 0) {
+ 				perror("cannot create config directory: mkdir");
+ 				exit(1);
