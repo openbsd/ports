@@ -1,0 +1,23 @@
+$OpenBSD: patch-pacpl_conf,v 1.1 2020/07/01 01:28:18 cwen Exp $
+
+Hunk #1: use gnudb.org instead of the dead freedb.org
+
+Index: pacpl.conf
+--- pacpl.conf.orig
++++ pacpl.conf
+@@ -150,7 +150,7 @@ BPSIZE = 128
+ #
+ USE_CDDB = 1
+ 
+-CDDB_HOST = freedb.freedb.org
++CDDB_HOST = gnudb.gnudb.org
+ CDDB_PORT = 8880
+ 
+ # cddb or http
+@@ -185,4 +185,4 @@ KDE_OPTS = 1
+ # Use default encoder options 0/1 #
+ ###################################
+ #
+-DEFOPTS = 1
+\ No newline at end of file
++DEFOPTS = 1

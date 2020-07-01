@@ -1,6 +1,19 @@
-$OpenBSD: patch-pacpl,v 1.6 2013/04/27 11:39:47 sthen Exp $
---- pacpl.orig	Fri Mar 20 02:19:03 2009
-+++ pacpl	Sat Apr 27 12:34:15 2013
+$OpenBSD: patch-pacpl,v 1.7 2020/07/01 01:28:18 cwen Exp $
+
+Hunk #1: use gnudb.org instead of the dead freedb.org
+
+Index: pacpl
+--- pacpl.orig
++++ pacpl
+@@ -117,7 +117,7 @@ my %config = (
+                BPSIZE       => 128,
+ 
+                USE_CDDB     => 1,
+-               CDDB_HOST    => 'freedb.freedb.org',
++               CDDB_HOST    => 'gnudb.gnudb.org',
+                CDDB_PORT    => 8880,
+                CDDB_MODE    => 'cddb',
+                CDDB_INPUT   => 1,
 @@ -130,8 +130,8 @@ my %config = (
               );
  

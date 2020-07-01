@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/01 01:28:18 cwen Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		PAC (Perl Audio Converter)
 
 DISTNAME=		pacpl-4.0.5
-REVISION=		0
+REVISION=		1
 CATEGORIES=		audio converters perl5
 
 HOMEPAGE=		http://pacpl.sourceforge.net/
