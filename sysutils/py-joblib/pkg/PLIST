@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/13 08:24:07 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/01 10:07:05 sthen Exp $
+@pkgpath sysutils/py-joblib
 lib/python${MODPY_VERSION}/site-packages/joblib/
 lib/python${MODPY_VERSION}/site-packages/joblib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/joblib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,10 +9,10 @@ lib/python${MODPY_VERSION}/site-packages/joblib-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/joblib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}_dask.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}_deprecated_format_stack.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}_deprecated_my_exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}_memmapping_reducer.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}_memory_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}_multiprocessing_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}_parallel_backends.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}_store_backends.${MODPY_PYC_MAGIC_TAG}pyc
@@ -31,10 +32,10 @@ lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}numpy_pickle_uti
 lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}parallel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}pool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/joblib/_compat.py
 lib/python${MODPY_VERSION}/site-packages/joblib/_dask.py
+lib/python${MODPY_VERSION}/site-packages/joblib/_deprecated_format_stack.py
+lib/python${MODPY_VERSION}/site-packages/joblib/_deprecated_my_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/joblib/_memmapping_reducer.py
-lib/python${MODPY_VERSION}/site-packages/joblib/_memory_helpers.py
 lib/python${MODPY_VERSION}/site-packages/joblib/_multiprocessing_helpers.py
 lib/python${MODPY_VERSION}/site-packages/joblib/_parallel_backends.py
 lib/python${MODPY_VERSION}/site-packages/joblib/_store_backends.py
@@ -51,7 +52,9 @@ lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/__init__.p
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/${MODPY_PYCACHE}cloudpickle.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/${MODPY_PYCACHE}cloudpickle_fast.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/cloudpickle.py
+lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/cloudpickle_fast.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/${MODPY_PYCACHE}/
@@ -80,7 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/${MODPY_PYCACHE}process.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/${MODPY_PYCACHE}queues.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/${MODPY_PYCACHE}reduction.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/${MODPY_PYCACHE}semaphore_tracker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/${MODPY_PYCACHE}resource_tracker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/${MODPY_PYCACHE}semlock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/${MODPY_PYCACHE}spawn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/${MODPY_PYCACHE}synchronize.${MODPY_PYC_MAGIC_TAG}pyc
@@ -100,7 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/popen_lok
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/process.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/queues.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/reduction.py
-lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/semaphore_tracker.py
+lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/resource_tracker.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/semlock.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/spawn.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/synchronize.py
@@ -126,6 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_backports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_dask.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_deprecated_objects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_disk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_format_stack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_func_inspect.${MODPY_PYC_MAGIC_TAG}pyc
@@ -143,6 +147,7 @@ lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_numpy_
 lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_parallel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_store_backends.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}test_testing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/joblib/test/${MODPY_PYCACHE}testutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/test/common.py
 lib/python${MODPY_VERSION}/site-packages/joblib/test/data/
 lib/python${MODPY_VERSION}/site-packages/joblib/test/data/__init__.py
@@ -155,9 +160,6 @@ lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_compress
 lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_compressed_pickle_py33_np18.gz
 lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_compressed_pickle_py34_np19.gz
 lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_compressed_pickle_py35_np19.gz
-lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_pickle_py27_np16.pkl
-lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_pickle_py27_np16.pkl.bz2
-lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_pickle_py27_np16.pkl.gzip
 lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_pickle_py27_np17.pkl
 lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_pickle_py27_np17.pkl.bz2
 lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.10.0_pickle_py27_np17.pkl.gzip
@@ -220,6 +222,7 @@ lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.9.4.dev0_comp
 lib/python${MODPY_VERSION}/site-packages/joblib/test/data/joblib_0.9.4.dev0_compressed_cache_size_pickle_py35_np19.gz_03.npy.z
 lib/python${MODPY_VERSION}/site-packages/joblib/test/test_backports.py
 lib/python${MODPY_VERSION}/site-packages/joblib/test/test_dask.py
+lib/python${MODPY_VERSION}/site-packages/joblib/test/test_deprecated_objects.py
 lib/python${MODPY_VERSION}/site-packages/joblib/test/test_disk.py
 lib/python${MODPY_VERSION}/site-packages/joblib/test/test_format_stack.py
 lib/python${MODPY_VERSION}/site-packages/joblib/test/test_func_inspect.py
@@ -237,4 +240,5 @@ lib/python${MODPY_VERSION}/site-packages/joblib/test/test_numpy_pickle_utils.py
 lib/python${MODPY_VERSION}/site-packages/joblib/test/test_parallel.py
 lib/python${MODPY_VERSION}/site-packages/joblib/test/test_store_backends.py
 lib/python${MODPY_VERSION}/site-packages/joblib/test/test_testing.py
+lib/python${MODPY_VERSION}/site-packages/joblib/test/testutils.py
 lib/python${MODPY_VERSION}/site-packages/joblib/testing.py
