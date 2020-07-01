@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/05/15 10:41:29 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/07/01 11:06:08 jsg Exp $
 firmware/amdgpu/
 firmware/amdgpu/amdgpu-license
 firmware/amdgpu/banks_k_2_smc.bin
@@ -318,6 +318,7 @@ firmware/amdgpu/vega20_sdma.bin
 firmware/amdgpu/vega20_sdma1.bin
 firmware/amdgpu/vega20_smc.bin
 firmware/amdgpu/vega20_sos.bin
+firmware/amdgpu/vega20_ta.bin
 firmware/amdgpu/vega20_uvd.bin
 firmware/amdgpu/vega20_vce.bin
 firmware/amdgpu/vegam_ce.bin
