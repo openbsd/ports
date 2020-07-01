@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_CDDB_pm,v 1.1 2020/07/01 01:18:20 cwen Exp $
+
+freedb is dead, use gnudb.org instead
+
+Index: lib/CDDB.pm
+--- lib/CDDB.pm.orig
++++ lib/CDDB.pm
+@@ -31,15 +31,7 @@ my $cddbp_host_selector = 0;
+ 
+ my @cddbp_hosts = (
+ 	[ 'localhost'         => 8880 ],
+-	[ 'freedb.freedb.org' => 8880 ],
+-	[ 'us.freedb.org',    => 8880 ],
+-	[ 'ca.freedb.org',    => 8880 ],
+-	[ 'ca2.freedb.org',   => 8880 ],
+-	[ 'uk.freedb.org'     => 8880 ],
+-	[ 'no.freedb.org'     => 8880 ],
+-	[ 'de.freedb.org'     => 8880 ],
+-	[ 'at.freedb.org'     => 8880 ],
+-	[ 'freedb.freedb.de'  => 8880 ],
++	[ 'gnudb.gnudb.org'   => 8880 ],
+ );
+ 
+ #------------------------------------------------------------------------------
