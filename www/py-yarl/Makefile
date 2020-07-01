@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/10 16:24:46 paco Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/01 09:12:15 sthen Exp $
 
 COMMENT =		yet another URL library
 
@@ -16,7 +16,7 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 # Apache License 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += pthread python3.7m
+WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
 
