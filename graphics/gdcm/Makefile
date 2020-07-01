@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2020/06/11 19:57:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/01 16:10:23 jasper Exp $
 
 COMMENT =			cross-platform DICOM implementation
 
-DISTNAME =			gdcm-3.0.6
+DISTNAME =			gdcm-3.0.7
 
 SHARED_LIBS +=  gdcmCommon                1.0 # 2.8
 SHARED_LIBS +=  gdcmDICT                  1.0 # 2.8
