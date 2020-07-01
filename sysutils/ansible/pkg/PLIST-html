@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.16 2020/02/17 18:17:42 pvk Exp $
+@comment $OpenBSD: PLIST-html,v 1.17 2020/07/01 22:12:09 pvk Exp $
 share/doc/ansible/html/
 share/doc/ansible/html/404.html
 share/doc/ansible/html/_downloads/
@@ -3928,6 +3928,7 @@ share/doc/ansible/html/network/user_guide/platform_enos.html
 share/doc/ansible/html/network/user_guide/platform_eos.html
 share/doc/ansible/html/network/user_guide/platform_eric_eccli.html
 share/doc/ansible/html/network/user_guide/platform_exos.html
+share/doc/ansible/html/network/user_guide/platform_frr.html
 share/doc/ansible/html/network/user_guide/platform_icx.html
 share/doc/ansible/html/network/user_guide/platform_index.html
 share/doc/ansible/html/network/user_guide/platform_ios.html

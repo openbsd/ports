@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2020/03/13 11:33:46 pvk Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2020/07/01 22:12:09 pvk Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -76,8 +76,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible/compat/selectors/
 lib/python${MODPY_VERSION}/site-packages/ansible/compat/selectors/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/compat/selectors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible/compat/selectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/compat/selectors/${MODPY_PYCACHE}_selectors2.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/compat/selectors/_selectors2.py
 lib/python${MODPY_VERSION}/site-packages/ansible/config/
 lib/python${MODPY_VERSION}/site-packages/ansible/config/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/config/${MODPY_PYCACHE}/
@@ -439,10 +437,16 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}_selectors2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}importlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}ipaddress.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}paramiko.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}selectors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/_selectors2.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/importlib.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/ipaddress.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/paramiko.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/selectors.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/connection.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/crypto.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/csharp/
