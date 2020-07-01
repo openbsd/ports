@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2020/06/26 12:57:45 pirofti Exp $
+# $OpenBSD: Makefile,v 1.184 2020/07/01 18:10:35 bcallah Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -155,6 +155,7 @@
      SUBDIR += py-tables
      SUBDIR += qhull
      SUBDIR += qrupdate
+     SUBDIR += rstudio
      SUBDIR += sc
      SUBDIR += spread-sheet-widget
      SUBDIR += suitesparse
