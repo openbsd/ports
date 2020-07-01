@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2020/05/14 21:38:19 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.42 2020/07/01 11:36:59 pvk Exp $
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/elasticsearch.keystore
@@ -59,6 +59,8 @@ elasticsearch/lib/snakeyaml-1.26.jar
 elasticsearch/lib/spatial4j-0.7.jar
 elasticsearch/lib/t-digest-3.2.jar
 elasticsearch/lib/tools/
+elasticsearch/lib/tools/keystore-cli/
+elasticsearch/lib/tools/keystore-cli/keystore-cli-${V}.jar
 elasticsearch/lib/tools/plugin-cli/
 elasticsearch/lib/tools/plugin-cli/bc-fips-1.0.1.jar
 elasticsearch/lib/tools/plugin-cli/bcpg-fips-1.0.3.jar
@@ -70,6 +72,9 @@ elasticsearch/modules/aggs-matrix-stats/plugin-descriptor.properties
 elasticsearch/modules/analysis-common/
 elasticsearch/modules/analysis-common/analysis-common-${V}.jar
 elasticsearch/modules/analysis-common/plugin-descriptor.properties
+elasticsearch/modules/geo/
+elasticsearch/modules/geo/geo-${V}.jar
+elasticsearch/modules/geo/plugin-descriptor.properties
 elasticsearch/modules/ingest-common/
 elasticsearch/modules/ingest-common/elasticsearch-dissect-${V}.jar
 elasticsearch/modules/ingest-common/elasticsearch-grok-${V}.jar
@@ -91,6 +96,18 @@ elasticsearch/modules/ingest-geoip/plugin-security.policy
 elasticsearch/modules/ingest-user-agent/
 elasticsearch/modules/ingest-user-agent/ingest-user-agent-${V}.jar
 elasticsearch/modules/ingest-user-agent/plugin-descriptor.properties
+elasticsearch/modules/kibana/
+elasticsearch/modules/kibana/commons-codec-1.11.jar
+elasticsearch/modules/kibana/commons-logging-1.1.3.jar
+elasticsearch/modules/kibana/elasticsearch-rest-client-${V}.jar
+elasticsearch/modules/kibana/elasticsearch-ssl-config-${V}.jar
+elasticsearch/modules/kibana/httpasyncclient-4.1.4.jar
+elasticsearch/modules/kibana/httpclient-4.5.10.jar
+elasticsearch/modules/kibana/httpcore-4.4.12.jar
+elasticsearch/modules/kibana/httpcore-nio-4.4.12.jar
+elasticsearch/modules/kibana/kibana-${V}.jar
+elasticsearch/modules/kibana/plugin-descriptor.properties
+elasticsearch/modules/kibana/reindex-client-${V}.jar
 elasticsearch/modules/lang-expression/
 elasticsearch/modules/lang-expression/antlr4-runtime-4.5.1-1.jar
 elasticsearch/modules/lang-expression/asm-5.0.4.jar
@@ -148,13 +165,13 @@ elasticsearch/modules/tasks/
 elasticsearch/modules/tasks/plugin-descriptor.properties
 elasticsearch/modules/tasks/tasks-${V}.jar
 elasticsearch/modules/transport-netty4/
-elasticsearch/modules/transport-netty4/netty-buffer-4.1.45.Final.jar
-elasticsearch/modules/transport-netty4/netty-codec-4.1.45.Final.jar
-elasticsearch/modules/transport-netty4/netty-codec-http-4.1.45.Final.jar
-elasticsearch/modules/transport-netty4/netty-common-4.1.45.Final.jar
-elasticsearch/modules/transport-netty4/netty-handler-4.1.45.Final.jar
-elasticsearch/modules/transport-netty4/netty-resolver-4.1.45.Final.jar
-elasticsearch/modules/transport-netty4/netty-transport-4.1.45.Final.jar
+elasticsearch/modules/transport-netty4/netty-buffer-4.1.49.Final.jar
+elasticsearch/modules/transport-netty4/netty-codec-4.1.49.Final.jar
+elasticsearch/modules/transport-netty4/netty-codec-http-4.1.49.Final.jar
+elasticsearch/modules/transport-netty4/netty-common-4.1.49.Final.jar
+elasticsearch/modules/transport-netty4/netty-handler-4.1.49.Final.jar
+elasticsearch/modules/transport-netty4/netty-resolver-4.1.49.Final.jar
+elasticsearch/modules/transport-netty4/netty-transport-4.1.49.Final.jar
 elasticsearch/modules/transport-netty4/plugin-descriptor.properties
 elasticsearch/modules/transport-netty4/plugin-security.policy
 elasticsearch/modules/transport-netty4/transport-netty4-client-${V}.jar
