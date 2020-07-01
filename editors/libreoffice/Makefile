@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2020/06/09 07:14:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.230 2020/07/01 10:18:33 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -240,7 +240,7 @@ WANTLIB-main+=	lzma cairo-gobject gmodule-2.0 dconf gdk-3 gtk-3
 WANTLIB-main+=	bz2 graphite2 epoxy mariadb png boost_locale-mt
 WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
 WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
-WANTLIB-main+=	lber ldap python${MODPY_VERSION}m
+WANTLIB-main+=	lber ldap ${MODPY_WANTLIB}
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
