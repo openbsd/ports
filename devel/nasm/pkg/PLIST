@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/08/03 14:39:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/07/02 17:33:11 jasper Exp $
 @bin bin/ldrdf
 @bin bin/nasm
 @bin bin/ndisasm
@@ -27,6 +27,7 @@ share/doc/nasm/html/local.css
 share/doc/nasm/html/nasmdo10.html
 share/doc/nasm/html/nasmdo11.html
 share/doc/nasm/html/nasmdo12.html
+share/doc/nasm/html/nasmdo13.html
 share/doc/nasm/html/nasmdoc.css
 share/doc/nasm/html/nasmdoc0.html
 share/doc/nasm/html/nasmdoc1.html
