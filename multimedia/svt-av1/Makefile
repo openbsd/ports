@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/01 06:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/02 08:15:38 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -6,9 +6,8 @@ COMMENT=	scalable AV1 encoder/decoder
 
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-AV1
-GH_TAGNAME=	v0.8.3
+GH_TAGNAME=	v0.8.4
 PKGNAME=	${DISTNAME:L}
-REVISION=	0
 CATEGORIES=	multimedia
 
 SHARED_LIBS=	SvtAv1Dec	1.0 \
