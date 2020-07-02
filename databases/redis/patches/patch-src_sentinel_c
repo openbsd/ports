@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_sentinel_c,v 1.1 2020/06/28 10:47:15 tb Exp $
+$OpenBSD: patch-src_sentinel_c,v 1.2 2020/07/02 09:27:17 tb Exp $
 
 redis-sentinel out of bounds memory access from memcmp
+https://github.com/redis-io/redis/pull/7443
 
 Index: src/sentinel.c
 --- src/sentinel.c.orig
