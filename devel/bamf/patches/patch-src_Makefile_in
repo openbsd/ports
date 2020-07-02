@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
+
+Remove flags that aren't understood.
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -424,7 +424,7 @@ bamfdaemon_CFLAGS = -Wall -std=c99 -DDATADIR=\""$(data
+ 	$(SN_CFLAGS) $(WNCK_CFLAGS) $(GTOP_CFLAGS) $(COVERAGE_CFLAGS) \
+ 	$(NULL) $(am__append_2)
+ bamfdaemon_LDFLAGS = \
+-	-Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions \
++	-Xlinker -export-dynamic \
+ 	$(COVERAGE_LDFLAGS) \
+ 	$(NULL)
+ 

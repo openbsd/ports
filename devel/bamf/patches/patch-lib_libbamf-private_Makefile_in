@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_libbamf-private_Makefile_in,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
+
+Put the sed flag in the right place.
+
+Index: lib/libbamf-private/Makefile.in
+--- lib/libbamf-private/Makefile.in.orig
++++ lib/libbamf-private/Makefile.in
+@@ -736,7 +736,7 @@ bamf-gdbus-generated.c: org.ayatana.bamf.xml
+ 	--interface-prefix org.ayatana.bamf \
+ 	$<; \
+ 	# Adding '_' prefix to generated private functions \
+-	$(SED) "s/bamf_dbus/_bamf_dbus/g" -i \
++	$(SED) -i "s/bamf_dbus/_bamf_dbus/g" \
+ 	$@ $(shell basename $@ .c).h
+ 
+ .NOTPARALLEL:
+@@ -748,7 +748,7 @@ bamf-gdbus-view-generated.c: org.ayatana.bamf.view.xml
+ 	--interface-prefix org.ayatana.bamf \
+ 	$<; \
+ 	# Adding '_' prefix to generated private functions \
+-	$(SED) "s/bamf_dbus_item/_bamf_dbus_item/g" -i \
++	$(SED) -i "s/bamf_dbus_item/_bamf_dbus_item/g" \
+ 	$@ $(shell basename $@ .c).h
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

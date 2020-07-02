@@ -1,0 +1,80 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
+
+Remove -Werror.
+Intentionally break python and gtk-doc detection.
+Remove gtester2xunit test; we're not building tests.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4118,7 +4118,7 @@ fi
+     esac
+ 
+     if test "$enable_compile_warnings" = "error" ; then
+-        warning_flags="$warning_flags -Werror"
++        warning_flags="$warning_flags"
+     fi
+ 
+         for option in $warning_flags; do
+@@ -14239,7 +14239,7 @@ fi
+ 
+ 
+ 
+-  gtk_doc_requires="gtk-doc >= 1.0"
++  gtk_doc_requires="invalid-gtk-doc >= 1.0"
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtk-doc" >&5
+ $as_echo_n "checking for gtk-doc... " >&6; }
+   if test -n "$PKG_CONFIG" && \
+@@ -14265,7 +14265,7 @@ $as_echo "$as_me: WARNING:
+   fi
+ 
+             # Extract the first word of "gtkdoc-check", so it can be a program name with args.
+-set dummy gtkdoc-check; ac_word=$2
++set dummy invalid-gtkdoc-check; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_prog_GTKDOC_CHECK+:} false; then :
+@@ -14302,7 +14302,7 @@ fi
+ 
+ 
+   # Extract the first word of "gtkdoc-check", so it can be a program name with args.
+-set dummy gtkdoc-check; ac_word=$2
++set dummy invalid-gtkdoc-check; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_path_GTKDOC_CHECK_PATH+:} false; then :
+@@ -14612,7 +14612,7 @@ fi
+ ###########################
+ 
+ # Extract the first word of "python", so it can be a program name with args.
+-set dummy python; ac_word=$2
++set dummy invalid-python; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_path_PYTHON+:} false; then :
+@@ -14651,16 +14651,6 @@ $as_echo "no" >&6; }
+ fi
+ 
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtester2xunit dependencies" >&5
+-$as_echo_n "checking for gtester2xunit dependencies... " >&6; }
+-if !($PYTHON -c "import libxslt, libxml2" 2> /dev/null); then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-  as_fn_error $? "You need to install python-libxslt1 and python-libxml2" "$LINENO" 5;
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+ ###########################
+ # Headless tests
+ ###########################
+@@ -15374,7 +15364,7 @@ rm -f core conftest.err conftest.$ac_objext \
+   rm -f conf.gtktest
+ 
+ 
+-CFLAGS="$CFLAGS -Wall -Werror -Wno-error=deprecated-declarations -Wempty-body -Wformat-security -Winit-self -Warray-bounds -Wimplicit-function-declaration -lm"
++CFLAGS="$CFLAGS -Wall -Wno-error=deprecated-declarations -Wempty-body -Wformat-security -Winit-self -Warray-bounds -Wimplicit-function-declaration -lm"
+ 
+ 
+ 

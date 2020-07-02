@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
+include/libbamf3/
+include/libbamf3/libbamf/
+include/libbamf3/libbamf/bamf-application.h
+include/libbamf3/libbamf/bamf-control.h
+include/libbamf3/libbamf/bamf-matcher.h
+include/libbamf3/libbamf/bamf-tab.h
+include/libbamf3/libbamf/bamf-view.h
+include/libbamf3/libbamf/bamf-window.h
+include/libbamf3/libbamf/libbamf.h
+lib/girepository-1.0/Bamf-3.typelib
+lib/libbamf3.la
+@lib lib/libbamf3.so.${LIBbamf3_VERSION}
+lib/pkgconfig/libbamf3.pc
+libexec/bamf/
+@bin libexec/bamf/bamfdaemon
+libexec/bamf/bamfdaemon-dbus-runner
+share/dbus-1/services/org.ayatana.bamf.service
+share/gir-1.0/Bamf-3.gir
+share/vala/vapi/libbamf3.vapi

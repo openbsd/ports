@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_bamfdaemon_Makefile_in,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
+
+Remove flags that aren't understood.
+
+Index: tests/bamfdaemon/Makefile.in
+--- tests/bamfdaemon/Makefile.in.orig
++++ tests/bamfdaemon/Makefile.in
+@@ -439,7 +439,7 @@ test_bamf_LDADD =  \
+ 	$(GLIB_LIBS) $(GTK_LIBS) $(GTOP_LIBS) $(SN_LIBS) $(WNCK_LIBS) \
+ 	$(X_LIBS) $(NULL) $(am__append_1)
+ test_bamf_LDFLAGS = \
+-	-Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions \
++	-Xlinker -export-dynamic \
+ 	$(COVERAGE_LDFLAGS) \
+ 	$(NULL)
+ 
