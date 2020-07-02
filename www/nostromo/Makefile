@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2019/10/25 19:58:41 mglocker Exp $
+# $OpenBSD: Makefile,v 1.44 2020/07/02 06:44:35 mglocker Exp $
 
 COMMENT=		simple, fast and secure HTTP server
 
-DISTNAME=		nostromo-1.9.7
+DISTNAME=		nostromo-1.9.8
 CATEGORIES=		www
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
