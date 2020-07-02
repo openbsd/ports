@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/02 18:46:50 bcallah Exp $
 
 # XXX: patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
 # must be kept in sync with math/R shlib bumps.
@@ -10,6 +10,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 V =		1.3.959
 COMMENT =	Integrated Development Environment (IDE) for R
 PKGNAME =	rstudio-${V}
+REVISION =	0
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.rstudio.com/
@@ -26,7 +27,7 @@ WANTLIB += Qt5Xml Qt5XmlPatterns boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c crypto m pam ssl
-WANTLIB += util uuid z lib/inotify/inotify
+WANTLIB += util uuid z lib/R/lib/R lib/inotify/inotify
 
 # XXX: Ports does not permit GH_* and MASTER_SITES together.
 MASTER_SITES0 =	https://github.com/rstudio/rstudio/archive/
@@ -51,6 +52,7 @@ BUILD_DEPENDS =	devel/apache-ant
 
 LIB_DEPENDS =	devel/boost \
 		devel/libinotify \
+		math/R \
 		security/openpam \
 		sysutils/e2fsprogs \
 		x11/qt5/qtsensors \
@@ -66,7 +68,7 @@ CONFIGURE_ARGS =	-DBoost_INCLUDE_DIR="${LOCALBASE}/include" \
 			-DQT_QMAKE_EXECUTABLE="${LOCALBASE}/bin/qmake-qt5" \
 			-DQt5WebEngine_DIR="${LOCALBASE}/lib/qt5/cmake/Qt5WebEngine" \
 			-DQt5WebEngineWidgets_DIR="${LOCALBASE}/lib/qt5/cmake/Qt5WebEngineWidgets" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib/inotify -linotify -rpath ${LOCALBASE}/lib/inotify"
+			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib/inotify -linotify -rpath ${LOCALBASE}/lib/inotify -rpath ${LOCALBASE}/lib/R/lib"
 
 NO_TEST =	Yes
 
