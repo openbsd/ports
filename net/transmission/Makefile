@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2019/07/12 20:48:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.135 2020/07/02 03:41:06 bket Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -7,7 +7,7 @@ COMMENT-qt=	BitTorrent client with Qt interface
 NOT_FOR_ARCHS-gtk= sparc64
 NOT_FOR_ARCHS-qt= sparc64
 
-VER=		2.94
+VER=		3.00
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
@@ -15,9 +15,6 @@ PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
-REVISION-gtk=	4
-REVISION-qt=	4
-REVISION-main=	2
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -43,8 +40,8 @@ WANTLIB-common=	c crypto curl event_core event_extra m miniupnpc>=2.0 \
 WANTLIB-main=	${WANTLIB-common} nghttp2 iconv
 WANTLIB-gtk=	${WANTLIB-common} X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender \
-		atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject \
-		dbus-1 expat ffi fontconfig freetype fribidi \
+		atk-1.0 atk-bridge-2.0 cairo cairo-gobject \
+		expat ffi fontconfig freetype fribidi \
 		gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 graphite2 gthread-2.0 gtk-3 \
 		harfbuzz pango-1.0 pangoft2-1.0 \

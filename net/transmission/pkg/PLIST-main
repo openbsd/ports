@@ -1,7 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2016/03/08 16:14:16 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2020/07/02 03:41:06 bket Exp $
 @pkgpath net/transmission
 @newgroup _transmission:662
 @newuser _transmission:662:662:daemon:Transmission Account:/var/transmission:/sbin/nologin
+@rcscript ${RCDIR}/transmission_daemon
+@mode 750
+@owner _transmission
+@group _transmission
+@sample /var/transmission/
+@mode
+@owner
+@group
 @bin bin/transmission-cli
 @bin bin/transmission-create
 @bin bin/transmission-daemon
@@ -36,7 +44,9 @@ share/transmission/web/javascript/jquery/jquery.min.js
 share/transmission/web/javascript/jquery/jquery.transmenu.min.js
 share/transmission/web/javascript/jquery/jquery.ui-contextmenu.min.js
 share/transmission/web/javascript/jquery/json2.min.js
+share/transmission/web/javascript/main.js
 share/transmission/web/javascript/notifications.js
+share/transmission/web/javascript/polyfill.js
 share/transmission/web/javascript/prefs-dialog.js
 share/transmission/web/javascript/remote.js
 share/transmission/web/javascript/torrent-row.js
@@ -91,8 +101,3 @@ share/transmission/web/style/transmission/images/toolbar-start.png
 share/transmission/web/style/transmission/images/turtle.png
 share/transmission/web/style/transmission/images/wrench.png
 share/transmission/web/style/transmission/mobile.css
-@rcscript ${RCDIR}/transmission_daemon
-@mode 750
-@owner _transmission
-@group _transmission
-@sample /var/transmission/

@@ -1,4 +1,4 @@
-$OpenBSD: patch-qt_qtr_pro,v 1.8 2018/10/16 14:48:15 bcallah Exp $
+$OpenBSD: patch-qt_qtr_pro,v 1.9 2020/07/02 03:41:06 bket Exp $
 
 Ensure -lintl is linked to appease lld.
 
@@ -13,8 +13,8 @@ Index: qt/qtr.pro
 +man.path = /man/man1/
  man.files = transmission-qt.1
  
- CONFIG += qt thread debug link_pkgconfig c++11 warn_on
-@@ -34,7 +34,7 @@ LIBS += $${DHT_LIBS}
+ CONFIG += qt thread link_pkgconfig c++1z warn_on
+@@ -35,7 +35,7 @@ LIBS += $${DHT_LIBS}
  LIBS += $${LIBB64_LIBS}
  LIBS += $${LIBUPNP_LIBS}
  LIBS += $${LIBNATPMP_LIBS}
