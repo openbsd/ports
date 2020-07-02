@@ -1,9 +1,9 @@
-$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.10 2019/04/16 08:06:42 ajacoutot Exp $
+$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.11 2020/07/02 10:07:36 ajacoutot Exp $
 
 Index: agent/appconfig/constants_unix.go
 --- agent/appconfig/constants_unix.go.orig
 +++ agent/appconfig/constants_unix.go
-@@ -26,49 +26,49 @@ import (
+@@ -26,52 +26,52 @@ import (
  const (
  
  	// PackageRoot specifies the directory under which packages will be downloaded and installed
@@ -56,6 +56,9 @@ Index: agent/appconfig/constants_unix.go
 -	UpdaterArtifactsRoot = "/var/lib/amazon/ssm/update/"
 +	UpdaterArtifactsRoot = "/var/db/amazon/ssm/update/"
  
+ 	// UpdaterPidLockfile represents the location of the updater lockfile
+ 	UpdaterPidLockfile = DefaultDataStorePath + "update.lock"
+ 
  	// DefaultPluginPath represents the directory for storing plugins in SSM
 -	DefaultPluginPath = "/var/lib/amazon/ssm/plugins"
 +	DefaultPluginPath = "/var/db/amazon/ssm/plugins"
@@ -66,7 +69,7 @@ Index: agent/appconfig/constants_unix.go
  
  	// List all plugin names, unfortunately golang doesn't support const arrays of strings
  
-@@ -95,10 +95,10 @@ const (
+@@ -98,10 +98,10 @@ const (
  var PowerShellPluginCommandName string
  
  // DefaultProgramFolder is the default folder for SSM
@@ -81,7 +84,7 @@ Index: agent/appconfig/constants_unix.go
  
  // AppConfigPath is the path of the AppConfig
  var AppConfigPath = DefaultProgramFolder + AppConfigFileName
-@@ -107,9 +107,9 @@ func init() {
+@@ -110,9 +110,9 @@ func init() {
  	/*
  	   Powershell command used to be poweshell in alpha versions, now it's pwsh in prod versions
  	*/
