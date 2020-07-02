@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/05/31 05:51:57 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/07/02 21:34:09 sthen Exp $
 @conflict py-doit-*
 @pkgpath devel/py-doit
 bin/doit
@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/doit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/doit/__main__.py
-lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,6 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}dependency.${MODPY
 lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}doit_cmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}filewatch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}globals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/doit/${MODPY_PYCACHE}reporter.${MODPY_PYC_MAGIC_TAG}pyc
@@ -66,6 +67,7 @@ lib/python${MODPY_VERSION}/site-packages/doit/dependency.py
 lib/python${MODPY_VERSION}/site-packages/doit/doit_cmd.py
 lib/python${MODPY_VERSION}/site-packages/doit/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/doit/filewatch.py
+lib/python${MODPY_VERSION}/site-packages/doit/globals.py
 lib/python${MODPY_VERSION}/site-packages/doit/loader.py
 lib/python${MODPY_VERSION}/site-packages/doit/plugin.py
 lib/python${MODPY_VERSION}/site-packages/doit/reporter.py
