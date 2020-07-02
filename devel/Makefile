@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1996 2020/06/30 05:06:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1997 2020/07/02 14:37:57 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -40,6 +40,7 @@
      SUBDIR += avr
      SUBDIR += avr32
      SUBDIR += avrdude
+     SUBDIR += bamf
      SUBDIR += bashunit
      SUBDIR += bison
      SUBDIR += blame
@@ -1969,6 +1970,7 @@
      SUBDIR += xtensa-lx106-elf
      SUBDIR += yaml-cpp
      SUBDIR += yasm
+     SUBDIR += z80ex
      SUBDIR += zeal
 
 .include <bsd.port.subdir.mk>
