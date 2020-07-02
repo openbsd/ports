@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2020/06/30 13:58:13 landry Exp $
+# $OpenBSD: Makefile,v 1.238 2020/07/02 13:39:08 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -40,6 +40,7 @@ MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # gecko >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk2
+CONFIGURE_ARGS +=	--disable-gconf
 NO_TEST=	Yes
 
 CONFIGURE_STYLE =	simple
