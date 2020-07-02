@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.323 2020/06/30 13:58:13 landry Exp $
+# $OpenBSD: Makefile,v 1.324 2020/07/02 06:39:06 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -6,12 +6,11 @@ COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	68.9.0
+MOZILLA_VERSION =	68.10.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
-REVISION = 0
 
 # XXX badly formed debug in libxul ?
 DWZ = :
