@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2020/06/02 12:58:22 daniel Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/02 02:36:51 daniel Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		high assurance C compiler
 
-V =			3.7.20200601
+V =			3.7.20200701
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 #GH_TAGNAME =		v${V}
-GH_COMMIT =		08491de0566dbd8cfe7a9cd4ca129a5a05caf196
+GH_COMMIT =		bb9fa5550d6145344c4ed296ed980cb419e4cb27
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
 
