@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/07/02 14:32:39 bcallah Exp $
+
+Remove hardcoded optimizations.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -11,7 +11,7 @@ option (OPSTEP_FAST_AND_ROUGH "Fast and rough opcode s
+ 
+ #ALL_CFLAGS := -fPIC -fno-common -ansi -pedantic -Wall -pipe -O2 -I. -I./include
+ if (CMAKE_COMPILER_IS_GNUCC)
+-    set (CMAKE_C_FLAGS "-fPIC -fno-common -ansi -pedantic -Wall -pipe -O2")
++    set (CMAKE_C_FLAGS "-fPIC -fno-common -ansi -pedantic -Wall")
+ endif ()
+ 
+ include_directories(BEFORE . include)

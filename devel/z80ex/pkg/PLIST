@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/02 14:32:39 bcallah Exp $
+include/z80ex/
+include/z80ex/z80ex.h
+include/z80ex/z80ex_common.h
+include/z80ex/z80ex_dasm.h
+@static-lib lib/libz80ex.a
+@lib lib/libz80ex.so.${LIBz80ex_VERSION}
+@static-lib lib/libz80ex_dasm.a
+@lib lib/libz80ex_dasm.so.${LIBz80ex_dasm_VERSION}
