@@ -1,4 +1,10 @@
-$OpenBSD: patch-configure,v 1.18 2020/06/27 04:11:04 yasuoka Exp $
+$OpenBSD: patch-configure,v 1.19 2020/07/03 17:00:42 jca Exp $
+
+Use ld -Z conditionally.
+
+Use posix_openpt(3).
+https://debbugs.gnu.org/cgi/bugreport.cgi?bug=42059
+
 Index: configure
 --- configure.orig
 +++ configure
