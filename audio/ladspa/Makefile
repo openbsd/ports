@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2020/06/30 07:13:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 18:29:35 ajacoutot Exp $
 
 COMMENT=	Linux Audio Developer's Simple Plugin API
 
-V=		1.13
+V=		1.15
 DISTNAME=	ladspa_sdk_${V}
 PKGNAME=	ladspa-${V}
-REVISION=	4
 CATEGORIES=	audio devel
 MASTER_SITES=	${HOMEPAGE:=download/}
 EXTRACT_SUFX=	.tgz
@@ -19,13 +18,11 @@ WANTLIB=	c m ${COMPILER_LIBCXX}
 
 COMPILER=	base-clang ports-gcc base-gcc
 
-WRKDIST=	${WRKDIR}/ladspa_sdk
 WRKBUILD=	${WRKDIST}/src
 
 USE_GMAKE=	Yes
-MAKE_FILE=	makefile
+
 ALL_TARGET=	targets
-MAKE_FLAGS=	LIBRARIES=-lm OPTS="${CFLAGS}"
 
 # interactive regression test, that requires you to listen to stuff.
 NO_TEST=	Yes
