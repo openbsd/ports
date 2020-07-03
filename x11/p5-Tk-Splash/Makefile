@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:46:08 sthen Exp $
 
 COMMENT=	splash screen widget
 
 DISTNAME=	Tk-Splash-0.16
 CATEGORIES=	x11 devel
+REVISION=	0
 
 # GPL
 PERMIT_PACKAGE=	Yes

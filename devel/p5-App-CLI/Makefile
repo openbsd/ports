@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:39 sthen Exp $
 
 COMMENT=	dispatcher for command line interface programs
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	App-CLI-0.313
 EPOCH=		0
 CATEGORIES=	www devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

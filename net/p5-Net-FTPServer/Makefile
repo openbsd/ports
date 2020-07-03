@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:33 sthen Exp $
 
 COMMENT=	secure, extensible and configurable Perl FTPd
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Net-FTPServer-1.125
 CATEGORIES=	net
+REVISION=	0
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	archivers/p5-Archive-Zip \

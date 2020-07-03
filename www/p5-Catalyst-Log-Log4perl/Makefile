@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:57 sthen Exp $
 
 COMMENT=		Log::Log4perl logging for Catalyst (deprecated)
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME =		Catalyst-Log-Log4perl-1.06
 CATEGORIES=		www devel
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE=	Yes

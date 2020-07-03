@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:17 sthen Exp $
 
 COMMENT =	test for valid YAML
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Test-YAML-Valid-0.04
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =		Yes

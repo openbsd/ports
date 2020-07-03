@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:46:00 sthen Exp $
 
 COMMENT =	Class that represents an HTML form element
 
 DISTNAME =	HTML-Form-6.03
 CATEGORIES =	www
 CPAN_AUTHOR =	GAAS
+REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 

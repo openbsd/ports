@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:12 sthen Exp $
 
 COMMENT =	easily create test classes in an xUnit style
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Test-Class-0.50
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

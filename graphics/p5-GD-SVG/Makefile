@@ -1,9 +1,10 @@
-#	$OpenBSD: Makefile,v 1.14 2019/07/12 20:47:06 sthen Exp $
+#	$OpenBSD: Makefile,v 1.15 2020/07/03 21:45:23 sthen Exp $
 
 COMMENT=	allow GD perl scripts to output SVG
 
 DISTNAME=	GD-SVG-0.33
 CATEGORIES=	graphics
+REVISION=	0
 
 # perl licence
 PERMIT_PACKAGE=	Yes

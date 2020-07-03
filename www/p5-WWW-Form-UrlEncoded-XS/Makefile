@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/06 20:34:17 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:46:06 sthen Exp $
 
 COMMENT =	parser and builder for x-www-form-urlencoded in XS
 
 DISTNAME =	WWW-Form-UrlEncoded-XS-0.26
 CATEGORIES =	www
 MODULES =	cpan
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

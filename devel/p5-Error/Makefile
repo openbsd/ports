@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/10/31 00:59:28 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/03 21:44:50 sthen Exp $
 
 COMMENT =	error/exception handling in an OO-ish way
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Error-0.17028
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

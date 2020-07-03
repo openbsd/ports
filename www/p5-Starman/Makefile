@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/19 09:40:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:46:05 sthen Exp $
 
 COMMENT =		high-performance preforking PSGI/Plack web server
 
@@ -7,6 +7,7 @@ PKG_ARCH =		*
 DISTNAME =		Starman-0.4015
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

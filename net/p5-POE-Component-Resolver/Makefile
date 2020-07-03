@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT =		non-blocking getaddrinfo() resolver
 
 DISTNAME =		POE-Component-Resolver-0.921
 CATEGORIES =		net devel
+REVISION =		0
 
 MAINTAINER =		Charlene Wendling <julianaito@posteo.jp>
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:14 sthen Exp $
 
 COMMENT =		replace random number generation with non-random
 
 DISTNAME =		Test-MockRandom-1.01
+REVISION =		0
 
 CATEGORIES =		devel
 

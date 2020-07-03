@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:20 sthen Exp $
 
 COMMENT =	read/write YAML files with as little code as possible
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	YAML-Tiny-1.73
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

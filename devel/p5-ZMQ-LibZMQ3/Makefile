@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:20 sthen Exp $
 
 COMMENT =	libzmq 3.x wrapper for Perl
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	ZMQ-LibZMQ3-1.19
 CATEGORIES =	devel
 
-REVISION =	1
+REVISION =	2
 
 # Perl
 PERMIT_PACKAGE =	Yes

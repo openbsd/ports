@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:07 sthen Exp $
 
 COMMENT =		Write a demo program from a tutorial POD
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Pod-ToDemo-1.01
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 CPAN_AUTHOR =		CHROMATIC
 

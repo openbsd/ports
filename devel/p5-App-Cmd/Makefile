@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:39 sthen Exp $
 
 COMMENT =		write command line apps with less suffering
 
@@ -6,7 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		App-Cmd-0.331
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 # Perl
 PERMIT_PACKAGE =	Yes

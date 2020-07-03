@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:56 sthen Exp $
 
 COMMENT=	sensible default end action for catalyst
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Catalyst-Action-RenderView-0.16
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

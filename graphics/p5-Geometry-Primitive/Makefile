@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/17 14:46:32 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:23 sthen Exp $
 
 COMMENT =	primitive geometry entities for Perl
 
 DISTNAME =	Geometry-Primitive-0.24
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:19 sthen Exp $
 
 COMMENT=	lightweight, universal exporting/require of variables
 
@@ -7,7 +7,7 @@ PKG_ARCH=	*
 V=		0.05
 DISTNAME=	UNIVERSAL-exports-${V}
 PKGNAME=	p5-Universal-exports-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 # perl

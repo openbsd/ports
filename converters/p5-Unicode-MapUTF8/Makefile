@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:44:33 sthen Exp $
 
 COMMENT=	conversions to and from arbitrary character sets and UTF8
 
 DISTNAME=	Unicode-MapUTF8-1.11
-REVISION=	2
+REVISION=	3
 CATEGORIES=	converters
 MODULES=	cpan
 PKG_ARCH=	*

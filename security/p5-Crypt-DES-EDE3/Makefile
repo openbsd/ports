@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:40 sthen Exp $
 
 COMMENT=	Triple-DES EDE encryption/decryption
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Crypt-DES_EDE3-0.01
 PKGNAME=	p5-${DISTNAME:S/_/-/}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 
 # Artistic

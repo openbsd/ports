@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:34 sthen Exp $
 
 COMMENT=	DBIx::DataModel model class
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Catalyst-Model-DBIDM-0.04
 CATEGORIES=	databases
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

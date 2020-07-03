@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:24 sthen Exp $
 
 COMMENT =		visualize your data in SVG format
 
 DISTNAME =		SVG-Graph-0.02
 CATEGORIES =		graphics
-REVISION =		1
+REVISION =		2
 
 # Artistic License 2.0
 PERMIT_PACKAGE =	Yes

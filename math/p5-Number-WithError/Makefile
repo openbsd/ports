@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:29 sthen Exp $
 
 COMMENT =	numbers with error propagation and scientific rounding
 
 DISTNAME =	Number-WithError-1.01
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	math
 

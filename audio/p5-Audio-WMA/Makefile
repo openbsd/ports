@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:30 sthen Exp $
 
 COMMENT=	read WMA/ASF metadata
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Audio-WMA-1.3
 CATEGORIES=	audio
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

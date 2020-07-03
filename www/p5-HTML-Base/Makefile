@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:59 sthen Exp $
 
 COMMENT=	base HTML library
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	HTML-0.6
 PKGNAME=	p5-HTML-Base-0.6
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www
 
 # GPL

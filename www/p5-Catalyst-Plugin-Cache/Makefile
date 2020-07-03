@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:57 sthen Exp $
 
 COMMENT =	flexible caching support for Catalyst
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Catalyst-Plugin-Cache-0.10
 CATEGORIES =	www
-REVISION =	0
+REVISION =	1
 
 # Perl/MIT
 PERMIT_PACKAGE =		Yes

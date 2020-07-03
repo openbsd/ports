@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:46:06 sthen Exp $
 
 COMMENT =		fetch and parse the directory index from a web server
 
 DISTNAME =		WWW-IndexParser-0.91
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www
 
 # perl

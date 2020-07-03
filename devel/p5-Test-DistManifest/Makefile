@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:13 sthen Exp $
 
 COMMENT = 	author test that validates a package MANIFEST
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 
 DISTNAME =	Test-DistManifest-1.014
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

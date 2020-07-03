@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:45 sthen Exp $
 
 COMMENT=		use standard configuration files
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Config-Std-0.903
 CATEGORIES=		devel
+REVISION=		0
 
 # Perl
 PERMIT_PACKAGE=	Yes

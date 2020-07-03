@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:43 sthen Exp $
 
 COMMENT =		XS implementation of parts of Class::Load
 
 DISTNAME =		Class-Load-XS-0.10
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # artistic 2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:41 sthen Exp $
 
 COMMENT=	run-time class loading on first method call
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-Autouse-2.01
 CATEGORIES=	devel
-REVISION =	0
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:29 sthen Exp $
 
 COMMENT=	interface to the ISAAC PRNG algorithm
 
@@ -7,7 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	Math-Random-ISAAC-1.004
 CATEGORIES=	math
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION=	0
+REVISION=	1
 
 # CC0 License
 PERMIT_PACKAGE=	Yes

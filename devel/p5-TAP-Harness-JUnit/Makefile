@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:10 sthen Exp $
 
 COMMENT =	generate JUnit compatible output from TAP results
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	TAP-Harness-JUnit-0.42
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

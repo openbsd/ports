@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:18 sthen Exp $
 
 COMMENT =	parse strings that represent time durations
 
@@ -6,6 +6,7 @@ DISTNAME =	Time-Duration-Parse-0.15
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
+REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

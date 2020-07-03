@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:30 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT =	sane APIs for IP addresses and networks
 
 DISTNAME =	Net-Works-0.22
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 

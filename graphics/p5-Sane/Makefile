@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:24 sthen Exp $
 
 COMMENT=		Perl extension for the SANE Project
 
 DISTNAME=		Sane-0.05
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		graphics
 

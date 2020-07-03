@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/02/19 07:16:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:38 sthen Exp $
 
 COMMENT =		testing TCP program
 
@@ -7,6 +7,7 @@ PKG_ARCH =		*
 DISTNAME =		Test-TCP-2.22
 CATEGORIES =		net
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
+REVISION =		0
 
 RUN_DEPENDS =		devel/p5-Test-SharedFork>=0.29
 

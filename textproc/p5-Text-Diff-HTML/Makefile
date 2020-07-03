@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:50 sthen Exp $
 
 COMMENT=		XHTML format for Text::Diff::Unified
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Text-Diff-HTML-0.08
 CATEGORIES=		textproc www
+REVISION=		0
 
 # Perl
 PERMIT_PACKAGE=	Yes

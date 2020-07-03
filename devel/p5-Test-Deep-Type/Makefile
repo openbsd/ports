@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:13 sthen Exp $
 
 COMMENT =	a Test::Deep plugin for validating type constraints
 
 DISTNAME =	Test-Deep-Type-0.008
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	0
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =	Yes

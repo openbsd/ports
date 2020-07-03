@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:28 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:59 sthen Exp $
 
 COMMENT =	write your linewise code for handles; this does the rest
 
 DISTNAME =	Mixin-Linewise-0.108
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

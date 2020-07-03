@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/03 21:45:41 sthen Exp $
 
 COMMENT =	RSA encoding and decoding using OpenSSL
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 
 DISTNAME =	Crypt-OpenSSL-RSA-0.28
 CATEGORIES =	security
-REVISION =	1
+REVISION =	2
 
 # Perl
 PERMIT_PACKAGE = Yes

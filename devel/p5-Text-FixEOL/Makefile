@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:17 sthen Exp $
 
 COMMENT= 	canonical EOL/EOF
 
@@ -8,6 +8,7 @@ PKG_ARCH=	*
 DISTNAME =	Text-FixEOL-1.06
 CATEGORIES=	devel textproc
 CONFIGURE_STYLE=modbuild
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

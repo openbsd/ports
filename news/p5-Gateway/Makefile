@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/07/03 21:45:39 sthen Exp $
 
 COMMENT=	perl module to gateway between news and mail
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Gateway-0.42
-REVISION=	4
+REVISION=	5
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=News/}
 

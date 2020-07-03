@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/09/21 00:48:32 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:59 sthen Exp $
 
 COMMENT =		easy database connections for Dancer2 applications
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Dancer2-Plugin-Database-2.17
 CATEGORIES =		www
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

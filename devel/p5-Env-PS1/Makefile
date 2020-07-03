@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:50 sthen Exp $
 
 COMMENT=		env prompter for zoid shell
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Env-PS1-0.06
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 # perl

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2020/01/14 09:56:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.38 2020/07/03 21:45:28 sthen Exp $
 
 COMMENT=	high speed arbitrary-size integer math
 
 MODULES=	cpan
 DISTNAME =	Math-GMP-2.19
 CATEGORIES=	math
+REVISION =	0
 
 # LGPLv2+
 PERMIT_PACKAGE=	Yes

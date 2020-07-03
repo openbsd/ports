@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:44:34 sthen Exp $
 
 COMMENT=	model class for catalyst
 
@@ -6,7 +6,7 @@ DISTNAME=	Catalyst-Model-DBIC-Schema-0.59
 CATEGORIES=	databases
 MODULES=	cpan
 PKG_ARCH=	*
-REVISION=	0
+REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

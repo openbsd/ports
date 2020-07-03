@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:14 sthen Exp $
 
 COMMENT= 	perl extension for emulating troublesome interfaces
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME =	Test-Memory-Cycle-1.06
 CATEGORIES=	devel
+REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE=	Yes

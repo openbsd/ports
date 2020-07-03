@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:46:07 sthen Exp $
 
 COMMENT=	module to get weather information from weather.com
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Weather-Com-0.5.5
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 CPAN_AUTHOR=	SCHNUECK
 

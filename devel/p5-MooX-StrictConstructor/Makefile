@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/04 21:17:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:01 sthen Exp $
 
 COMMENT =	blow up Moo-based object constructors on unknown attributes
 
 DISTNAME =	MooX-StrictConstructor-0.010
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

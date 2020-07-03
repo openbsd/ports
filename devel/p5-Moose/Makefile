@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2020/04/25 18:36:39 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.29 2020/07/03 21:45:01 sthen Exp $
 
 COMMENT=	complete modern object system for perl 5
 
 MODULES=	cpan
 DISTNAME=	Moose-2.1204
 CATEGORIES=	devel
-REVISION=	1
+REVISION=	2
 
 # perl
 PERMIT_PACKAGE=	Yes

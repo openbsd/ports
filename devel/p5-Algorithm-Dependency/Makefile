@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/05 08:52:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:38 sthen Exp $
 
 COMMENT=	base class for implementing various dependency trees
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	Algorithm-Dependency-1.111
 CATEGORIES=	devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

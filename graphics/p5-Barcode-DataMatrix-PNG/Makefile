@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:22 sthen Exp $
 
 COMMENT =	format Data Matrix (IEC16022) barcodes as PNG
 
 DISTNAME =	Barcode-DataMatrix-PNG-0.04
+REVISION =	0
 
 CATEGORIES =	graphics
 

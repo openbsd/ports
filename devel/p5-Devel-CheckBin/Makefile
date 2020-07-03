@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:49 sthen Exp $
 
 COMMENT =		check that a command is available
 
 DISTNAME =		Devel-CheckBin-0.04
+REVISION =		0
 
 CATEGORIES =		devel
 

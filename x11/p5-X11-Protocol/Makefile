@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:08 sthen Exp $
 
 COMMENT=	provides an interface roughly equivalent to Xlib
 
 DISTNAME=	X11-Protocol-0.56
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:10 sthen Exp $
 
 COMMENT =	helper for installing code into packages
 
 DISTNAME =	Sub-Install-0.928
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

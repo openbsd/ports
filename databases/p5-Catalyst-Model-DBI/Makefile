@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:34 sthen Exp $
 
 COMMENT= 	DBI model class for Catalyst
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Catalyst-Model-DBI-0.20
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www databases
 
 # Perl

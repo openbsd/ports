@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:16 sthen Exp $
 
 COMMENT =		check Uniform Resource Identifiers
 
 DISTNAME =		Test-URI-1.082
 CATEGORIES =		devel
+REVISION =		0
 
 MODULES =		cpan
 PKG_ARCH =		*

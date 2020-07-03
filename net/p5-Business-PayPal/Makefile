@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:31 sthen Exp $
 
 COMMENT=	extension for automating PayPal transactions
 
 DISTNAME=	Business-PayPal-0.04
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 # perl

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:07 sthen Exp $
 
 COMMENT=	interface to the Audioscrobbler WebService API
 
 DISTNAME =	WebService-Audioscrobbler-0.08
 CATEGORIES=	www audio
+REVISION =	0
 
 MODULES=	cpan
 PKG_ARCH=	*

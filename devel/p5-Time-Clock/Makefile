@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:18 sthen Exp $
 
 COMMENT=		simple 24 hours clock object
 
@@ -7,6 +7,7 @@ PKG_ARCH=		*
 DISTNAME =		Time-Clock-1.03
 CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE=	Yes

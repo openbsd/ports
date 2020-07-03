@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT =	code attribute introspection
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	MooseX-MethodAttributes-0.31
 CATEGORIES =	devel
+REVISION =	0
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 

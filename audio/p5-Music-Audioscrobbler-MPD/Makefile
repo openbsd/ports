@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:30 sthen Exp $
 
 COMMENT=		module to submit songs to last.fm from MPD
 DISTNAME=		Music-Audioscrobbler-MPD-0.13
-REVISION=		2
+REVISION=		3
 CATEGORIES=		audio
 
 # perl

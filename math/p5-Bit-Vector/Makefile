@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:28 sthen Exp $
 
 COMMENT =	library of advanced math functions
 
 MODULES =	cpan
 DISTNAME =	Bit-Vector-7.4
 CATEGORIES =	math
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

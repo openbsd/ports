@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:46 sthen Exp $
 
 COMMENT=		transform LaTeX source files to POD
 
 DISTNAME=		LaTeX-Pod-0.21
 CATEGORIES=		textproc
+REVISION=		0
 
 MODULES=		cpan
 PKG_ARCH=		*

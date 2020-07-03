@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:39 sthen Exp $
 
 COMMENT= 	read and modify Apache .htpasswd files
 
 DISTNAME=	Authen-Htpasswd-0.161
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 
 # Perl

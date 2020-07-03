@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:13 sthen Exp $
 
 COMMENT=		perl test framework for file contents
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME =		Test-File-Contents-0.23
 CATEGORIES=		devel
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE=	Yes

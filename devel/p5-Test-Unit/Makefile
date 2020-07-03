@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:16 sthen Exp $
 
 COMMENT=	Perl unit testing framework
 
 DISTNAME=	Test-Unit-0.25
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # perl

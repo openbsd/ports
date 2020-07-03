@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2020/05/19 23:13:23 bluhm Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:33 sthen Exp $
 
 COMMENT =	use Cpanel::JSON::XS or JSON::XS or JSON::PP
 
 DISTNAME =	JSON-MaybeXS-1.004002
 FIX_EXTRACT_PERMISSIONS =	Yes
+REVISION =	0
 
 CATEGORIES =	converters
 

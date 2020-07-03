@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:04 sthen Exp $
 
 COMMENT=		bridge that allows POE to be driven by Event.pm
 
 DISTNAME=		POE-Loop-Event-1.305
 CATEGORIES=		devel
+REVISION=		0
 
 FIX_EXTRACT_PERMISSIONS=Yes
 

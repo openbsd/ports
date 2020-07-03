@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT =		inside-out objects with Moose
 
 DISTNAME =		MooseX-InsideOut-0.106
 CATEGORIES =		devel
+REVISION =		0
 
 MAINTAINER =		Charlene Wendling <julianaito@posteo.jp>
 

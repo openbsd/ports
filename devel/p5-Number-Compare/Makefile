@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:03 sthen Exp $
 
 COMMENT=	compare numbers
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Number-Compare-0.03
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 # perl
 PERMIT_PACKAGE=	Yes

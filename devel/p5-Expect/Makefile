@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:51 sthen Exp $
 
 COMMENT =		talk to other applications
 
@@ -7,6 +7,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Expect-${V}
 CATEGORIES =		devel
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

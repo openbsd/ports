@@ -1,9 +1,10 @@
-#	$OpenBSD: Makefile,v 1.19 2019/07/12 20:44:46 sthen Exp $
+#	$OpenBSD: Makefile,v 1.20 2020/07/03 21:44:41 sthen Exp $
 
 COMMENT=	get and set methods and simplify object initialization
 
 DISTNAME =	Class-AutoClass-1.56
 CATEGORIES=	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

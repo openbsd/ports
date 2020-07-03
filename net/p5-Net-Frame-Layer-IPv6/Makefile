@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/11 02:14:08 gsoares Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:33 sthen Exp $
 
 COMMENT=	Internet Protocol v6 layer object
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Net-Frame-Layer-IPv6-1.08
 CATEGORIES=	net
+REVISION=	0
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 

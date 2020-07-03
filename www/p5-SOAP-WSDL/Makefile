@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:46:05 sthen Exp $
 
 COMMENT=		SOAP with WSDL support
 
 DISTNAME =		SOAP-WSDL-3.003
 CATEGORIES=		www
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE=	Yes

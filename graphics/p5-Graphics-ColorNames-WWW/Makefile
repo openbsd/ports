@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/06 09:20:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:23 sthen Exp $
 
 COMMENT=	WWW color names and equivalent RGB values
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Graphics-ColorNames-WWW-1.14
 CATEGORIES=	graphics www
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

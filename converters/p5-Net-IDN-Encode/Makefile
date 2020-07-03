@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/03 21:44:33 sthen Exp $
 
 COMMENT =	Internationalizing Domain Names in Applications
 
 DISTNAME =	Net-IDN-Encode-2.500
+REVISION =	0
 
 CATEGORIES =	net converters
 

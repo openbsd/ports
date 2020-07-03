@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/10/31 01:12:53 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:46 sthen Exp $
 
 COMMENT =	inflect short English Phrases
 DISTNAME =	Lingua-EN-Inflect-Phrase-0.20
 CATEGORIES =	textproc
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

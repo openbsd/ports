@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/08 21:39:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:46:08 sthen Exp $
 
 COMMENT =	extras and helpers for X11::Protocol
 
 DISTNAME =	X11-Protocol-Other-31
+REVISION =	0
 
 CATEGORIES =	x11
 

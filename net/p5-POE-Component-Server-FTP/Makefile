@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:38 sthen Exp $
 
 COMMENT=	event-based FTP server on a virtual filesystem
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	POE-Component-Server-FTP-0.08
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 # Artistic License

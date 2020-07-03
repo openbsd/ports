@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:46:05 sthen Exp $
 
 COMMENT=	module for implementing an SCGI interface
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	SCGI-0.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 # Perl

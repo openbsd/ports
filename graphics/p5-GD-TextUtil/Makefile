@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/07/03 21:45:23 sthen Exp $
 
 COMMENT=	text utilities for use with GD drawing package
 
 VERSION=	0.86
 DISTNAME=	GDTextUtil-${VERSION}
 PKGNAME=	p5-GD-TextUtil-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}

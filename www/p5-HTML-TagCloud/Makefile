@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:46:01 sthen Exp $
 
 COMMENT=	HTML tag cloud generator
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	HTML-TagCloud-0.38
 CATEGORIES=	www
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

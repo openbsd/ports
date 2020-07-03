@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:10 sthen Exp $
 
 COMMENT = 	Perl library for manipulating frame stack
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Sub-Uplevel-0.2800
 EPOCH =		0
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl 5
 PERMIT_PACKAGE =	Yes

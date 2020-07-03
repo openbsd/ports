@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:49 sthen Exp $
 
 COMMENT=	set default flags on regular expressions
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 DISTNAME=	Regexp-DefaultFlags-0.01
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 
 # Perl

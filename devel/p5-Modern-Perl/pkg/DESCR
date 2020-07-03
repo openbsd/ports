@@ -20,4 +20,5 @@ information, http://www.modernperlbooks.com/ for further discussion of Modern
 Perl and its implications, and http://onyxneon.com/books/modern_perl/index.html
 for a freely-downloadable Modern Perl tutorial.
 
-See http://search.cpan.org/dist/Modern-Perl/lib/Modern/Perl.pm for more details.
+See https://metacpan.org/pod/distribution/Modern-Perl/lib/Modern/Perl.pm for
+more details.

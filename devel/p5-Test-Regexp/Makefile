@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:15 sthen Exp $
 
 COMMENT =	test your regular expressions
 
 DISTNAME =	Test-Regexp-2017040101
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:32 sthen Exp $
 
 COMMENT= 		currency conversion
 
@@ -6,6 +6,7 @@ DISTNAME=		Finance-Currency-Convert-XE-0.25
 CATEGORIES=		converters
 MODULES=		cpan
 PKG_ARCH=		*
+REVISION=		0
 
 # Artistic 2.0
 PERMIT_PACKAGE=	Yes

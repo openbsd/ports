@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:33 sthen Exp $
 
 COMMENT =	decode and encode NetFlow/IPFIX datagrams
 
 DISTNAME =	Net-Flow-1.003
+REVISION =	0
 
 CATEGORIES =	net
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:54 sthen Exp $
 
 COMMENT=	tidy indenting of XML documents
 
 DISTNAME=	XML-Tidy-1.20
 EXTRACT_SUFX=	.tgz
+REVISION=	0
 
 CATEGORIES=	textproc
 

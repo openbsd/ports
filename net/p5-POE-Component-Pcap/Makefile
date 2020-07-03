@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT=	POE interface to Net::Pcap
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	POE-Component-Pcap-0.04
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 # Artitistic License

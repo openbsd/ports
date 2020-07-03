@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:48 sthen Exp $
 
 COMMENT =	parse and format strp and strf time patterns
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	DateTime-Format-Strptime-1.54
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 MAINTAINER = Andrew Fresh <afresh1@openbsd.org>

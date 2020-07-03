@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:48 sthen Exp $
 
 COMMENT =		DateTime submodule for TZ
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		DateTime-TimeZone-1.64
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:37 sthen Exp $
 
 COMMENT=	object-oriented database mapper
 
@@ -8,6 +8,7 @@ PKG_ARCH=	*
 DISTNAME=	Rose-DB-Object-0.815
 CATEGORIES=	databases
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

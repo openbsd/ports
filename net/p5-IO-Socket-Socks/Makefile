@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:31 sthen Exp $
 
 COMMENT =	create SOCKS v4/v5 client or server
 
 DISTNAME =	IO-Socket-Socks-0.74
+REVISION =	0
 
 CATEGORIES =	net
 CPAN_AUTHOR =	OLEG

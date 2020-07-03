@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2020/06/29 23:44:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2020/07/03 21:45:22 sthen Exp $
 
 COMMENT =		Perl interface to the gd2 graphics library
 
 DISTNAME =		GD-2.71
 CATEGORIES =		graphics
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

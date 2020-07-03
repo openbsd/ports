@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:42 sthen Exp $
 
 COMMENT=        provide static calls that apply to a default instantiation
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-Default-1.51
-REVISION=	1
+REVISION=	2
 CATEGORIES=     devel
 
 # Perl

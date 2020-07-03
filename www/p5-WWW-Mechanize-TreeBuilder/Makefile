@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:46:06 sthen Exp $
 
 COMMENT= 	combines WWW::Mechanize and HTML::TreeBuilder
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME =	WWW-Mechanize-TreeBuilder-1.20000
 CATEGORIES=	www
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:03 sthen Exp $
 
 COMMENT =	trait loading and resolution for Moose
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	MooseX-Traits-Pluggable-0.12
 CATEGORIES =	devel
+REVISION =	0
 
 # same as perl
 PERMIT_PACKAGE =	Yes

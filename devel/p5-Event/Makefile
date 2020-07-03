@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2019/11/03 14:07:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2020/07/03 21:44:51 sthen Exp $
 
 COMMENT=	event loop processing
 
 MODULES=	cpan
 DISTNAME=	Event-1.27
-REVISION =	0
+REVISION =	1
 CATEGORIES=	devel
 
 # perl

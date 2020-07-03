@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:57 sthen Exp $
 
 COMMENT =	general-purpose iterator class.
 
 DISTNAME =	Iterator-0.03
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>

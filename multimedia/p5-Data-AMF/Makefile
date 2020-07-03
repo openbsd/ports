@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:30 sthen Exp $
 
 COMMENT =	serialize/deserialize Adobe Action Message Format data
 
 DISTNAME =	Data-AMF-0.09
 CPAN_AUTHOR =	TYPESTER
 CATEGORIES =	multimedia
-REVISION = 	0
+REVISION = 	1
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 

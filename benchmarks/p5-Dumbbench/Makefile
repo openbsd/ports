@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:31 sthen Exp $
 
 COMMENT =	more reliable benchmarking
 
 DISTNAME =	Dumbbench-0.111
+REVISION =	0
 
 CATEGORIES =	benchmarks
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/03 21:45:05 sthen Exp $
 
 COMMENT =	simple parallel processing fork manager
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Parallel-ForkManager-1.19
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

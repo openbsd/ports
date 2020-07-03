@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2020/07/03 21:46:07 sthen Exp $
 
 COMMENT=	library for WWW access in Perl
 
 DISTNAME=	libwww-perl-6.27
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

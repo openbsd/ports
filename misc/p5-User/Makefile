@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:30 sthen Exp $
 
 COMMENT=		API for locating user information
 
 DISTNAME=		User-1.9
-REVISION=		0
+REVISION=		1
 CATEGORIES=		misc
 
 # Perl

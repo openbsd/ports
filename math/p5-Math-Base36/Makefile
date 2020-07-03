@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:28 sthen Exp $
 
 COMMENT =		encoding and decoding of base36 strings
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Math-Base36-0.14
 CATEGORIES =		math
+REVISION =		0
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 

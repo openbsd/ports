@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:05 sthen Exp $
 
 COMMENT =	faster and more correct implementation of Package::Stash
 DISTNAME =	Package-Stash-XS-0.29
 CATEGORIES =	devel
+REVISION =	0
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 

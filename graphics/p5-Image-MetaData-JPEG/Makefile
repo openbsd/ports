@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2020/03/20 16:44:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:23 sthen Exp $
 
 COMMENT=	access and modify JPEG metadata
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Image-MetaData-JPEG-0.159
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics
 
 # GPLv2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:04 sthen Exp $
 
 COMMENT=	POE Inter-Kernel Communication
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	POE-Component-IKC-0.2402
 CATEGORIES=	devel
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

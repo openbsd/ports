@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/10 00:57:06 bluhm Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:55 sthen Exp $
 
 COMMENT =	compile .cgi scripts to a code reference
 
 DISTNAME =	CGI-Compile-0.23
+REVISION =	0
 
 CATEGORIES =	www
 

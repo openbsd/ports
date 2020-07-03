@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:22 sthen Exp $
 
 COMMENT =	Perl implementation of the reCAPTCHA API
 
@@ -9,6 +9,7 @@ NAME =		Captcha
 DISTNAME =	${NAME}-re${NAME}-$V
 PKGNAME =	p5-${NAME}-re${NAME:U}-$V
 CATEGORIES =	graphics security
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

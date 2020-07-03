@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/07 12:06:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:31 sthen Exp $
 
 COMMENT=	object-oriented interface to Ogg Vorbis information
 
 MODULES=	cpan
 DISTNAME =	Ogg-Vorbis-Header-0.10
 CATEGORIES=	audio
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

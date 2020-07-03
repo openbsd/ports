@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 21:15:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:46:07 sthen Exp $
 
 COMMENT =		Perl interface for the Tumblr API
 
 DISTNAME =		WWW-Tumblr-5.3
 CATEGORIES =		www
+REVISION =		0
 
 MODULES =		cpan
 PKG_ARCH =		*

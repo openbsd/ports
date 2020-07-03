@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:43 sthen Exp $
 
 COMMENT=	smart return-value object
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-ReturnValue-0.55
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # Artistic License

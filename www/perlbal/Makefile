@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:46:08 sthen Exp $
 
 COMMENT=	Perl-based reverse proxy load balancer and web server
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Perlbal-1.80
 CATEGORIES=	www
+REVISION=	0
 
 CPAN_AUTHOR=    DORMANDO
 

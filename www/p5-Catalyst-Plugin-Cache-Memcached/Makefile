@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:57 sthen Exp $
 
 COMMENT =	distributed cache for Catalyst (deprecated)
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Catalyst-Plugin-Cache-Memcached-0.8
-REVISION =	1
+REVISION =	2
 EPOCH =		0
 CATEGORIES =	www
 

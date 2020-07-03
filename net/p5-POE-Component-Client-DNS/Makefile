@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT=	DNS module for the Perl Object Environment
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	POE-Component-Client-DNS-1.054
 CATEGORIES=	net
 FIX_EXTRACT_PERMISSIONS=	Yes
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/01/30 03:45:45 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:59 sthen Exp $
 
 COMMENT =		lightweight yet powerful web application framework
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Dancer2-0.300000
 CATEGORIES =		www
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

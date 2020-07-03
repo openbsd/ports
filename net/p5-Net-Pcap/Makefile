@@ -1,10 +1,10 @@
-#   $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:39 sthen Exp $
+#   $OpenBSD: Makefile,v 1.31 2020/07/03 21:45:35 sthen Exp $
 
 COMMENT=	module for pcap access
 
 MODULES=	cpan
 DISTNAME=	Net-Pcap-0.17
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 PERMIT_PACKAGE=	Yes

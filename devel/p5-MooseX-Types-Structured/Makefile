@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:03 sthen Exp $
 
 COMMENT=		structured Type Constraints for Moose
 
 DISTNAME =		MooseX-Types-Structured-0.36
+REVISION =		0
 
 CATEGORIES=		devel
 

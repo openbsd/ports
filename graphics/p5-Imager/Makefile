@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2020/06/15 11:56:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2020/07/03 21:45:23 sthen Exp $
 
 COMMENT=	generate and manipulate images
 
 DISTNAME=	Imager-1.012
 CATEGORIES=	graphics
 MODULES=	cpan
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/10/31 06:16:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:38 sthen Exp $
 
 COMMENT =	Perl implementation of WebSocket protocol
 
 DISTNAME =	Protocol-WebSocket-0.26
 CATEGORIES =	net
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

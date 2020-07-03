@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:49 sthen Exp $
 
 COMMENT=	syntax highlight for HTML
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Syntax-Highlight-HTML-0.04
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc www
 
 # Perl licence

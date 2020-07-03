@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/03 21:44:38 sthen Exp $
 
 COMMENT=	interface to handy and fast permutation
 
 MODULES=	cpan
 DISTNAME =	Algorithm-Permute-0.16
 CATEGORIES=	devel
+REVISION =	0
 
 PERMIT_PACKAGE=	Yes
 

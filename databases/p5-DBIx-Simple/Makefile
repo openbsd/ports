@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/18 20:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:44:37 sthen Exp $
 
 COMMENT =	very complete easy-to-use OO interface to DBI
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 
 DISTNAME =	DBIx-Simple-1.37
 CATEGORIES =	databases
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

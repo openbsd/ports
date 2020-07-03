@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:17 sthen Exp $
 
 COMMENT =	a role for classes that can be thrown
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Throwable-0.200013
 CATEGORIES =	devel
 CPAN_AUTHOR =	RJBS
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

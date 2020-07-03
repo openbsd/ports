@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:21 sthen Exp $
 
 COMMENT=	optimized module loading
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	prefork-1.04
 CATEGORIES=	devel
-REVISION =	0
+REVISION =	1
 
 CPAN_AUTHOR=	ADAMK
 

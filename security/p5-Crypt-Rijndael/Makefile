@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2020/02/22 21:43:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:41 sthen Exp $
 
 COMMENT =	interface to the rijndael encryption algorithm aka AES
 
 MODULES =	cpan
 DISTNAME =	Crypt-Rijndael-1.14
 CATEGORIES =	security
+REVISION =	0
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes

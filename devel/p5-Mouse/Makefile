@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/04/03 02:54:46 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:03 sthen Exp $
 
 COMMENT =	Moose minus the antlers
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 DISTNAME =	Mouse-v2.5.10
 PKGNAME =	p5-${DISTNAME:S/-v/-/}
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

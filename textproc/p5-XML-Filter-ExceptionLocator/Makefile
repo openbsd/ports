@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:52 sthen Exp $
 
 COMMENT=	add line information to XML parse errors
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	XML-Filter-ExceptionLocator-1.01
 CATEGORIES=	textproc devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

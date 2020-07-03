@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:23 sthen Exp $
 
 COMMENT =	security image (captcha) generator
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	GD-SecurityImage-1.75
 CATEGORIES =	graphics security
+REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

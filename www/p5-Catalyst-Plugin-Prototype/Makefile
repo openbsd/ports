@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/22 18:13:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:58 sthen Exp $
 
 COMMENT=		catalyst plugin for prototype
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Catalyst-Plugin-Prototype-1.33
-REVISION =		1
+REVISION =		2
 CATEGORIES=		devel www
 
 # Perl

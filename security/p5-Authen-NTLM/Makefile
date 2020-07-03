@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:39 sthen Exp $
 
 COMMENT =	perl interface to the NTLM authentication mechanism
 
 DISTNAME =	NTLM-1.09
 PKGNAME =	p5-Authen-${DISTNAME}
 CATEGORIES =	security
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

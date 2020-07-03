@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:48 sthen Exp $
 
 COMMENT =		convert pod documentation to latex format
 
 DISTNAME =		Pod-LaTeX-0.61
+REVISION =		0
 
 CATEGORIES =		textproc
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/03 14:07:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:04 sthen Exp $
 
 COMMENT=		Erlang inspired babysitting
 
 DISTNAME=		POE-Component-Supervisor-0.09
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:46:05 sthen Exp $
 
 COMMENT =	run HTTP tests on external live servers
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Plack-Test-ExternalServer-0.02
 CATEGORIES =	www
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 # same as perl
 PERMIT_PACKAGE =	Yes

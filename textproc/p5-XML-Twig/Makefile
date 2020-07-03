@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2019/11/03 14:07:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2020/07/03 21:45:54 sthen Exp $
 
 COMMENT=	perl module for parsing huge XML documents
 
 DISTNAME=	XML-Twig-3.52
 CATEGORIES=	textproc
-REVISION=	1
+REVISION=	2
 
 # perl
 PERMIT_PACKAGE=	Yes

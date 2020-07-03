@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/10 02:06:17 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:11 sthen Exp $
 
 COMMENT =	simple toml parser
 
 DISTNAME =	TOML-Parser-0.91
 CPAN_AUTHOR =	KARUPA
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:53 sthen Exp $
 
 COMMENT=		determine file types
 
 DISTNAME=		File-MimeInfo-0.29
 CATEGORIES=		devel
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes

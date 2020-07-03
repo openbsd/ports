@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/19 19:55:16 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:28 sthen Exp $
 
 COMMENT =		numeric 1st and 2nd order differentiation
 
 DISTNAME =		Math-Derivative-1.01
 CATEGORIES =		math
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE =	Yes

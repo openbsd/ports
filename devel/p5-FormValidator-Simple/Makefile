@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:54 sthen Exp $
 
 COMMENT=        validate user input through a chain of constraints
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	FormValidator-Simple-0.29
 CATEGORIES=     devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

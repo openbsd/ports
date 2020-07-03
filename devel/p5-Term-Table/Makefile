@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/01 21:38:07 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:12 sthen Exp $
 
 COMMENT =	format a header and rows into a table
 
 DISTNAME =	Term-Table-0.015
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/07/03 21:45:54 sthen Exp $
 
 COMMENT=	perl module to perform XSLT transformations
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	XML-XSLT-0.48
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 FIX_EXTRACT_PERMISSIONS=Yes
 

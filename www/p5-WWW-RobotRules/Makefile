@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:46:07 sthen Exp $
 
 COMMENT =	database of robots.txt-derived permissions
 
 DISTNAME =	WWW-RobotRules-6.02
 CATEGORIES =	www
 CPAN_AUTHOR =	GAAS
+REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 

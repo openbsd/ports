@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:31 sthen Exp $
 
 COMMENT =	Remote Procedure Calls over a SSH link
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	GRID-Machine-0.127
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net sysutils
 
 CPAN_AUTHOR =	CASIANO

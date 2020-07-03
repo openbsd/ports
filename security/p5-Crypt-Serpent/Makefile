@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:41 sthen Exp $
 
 COMMENT= 	interface to the Serpent encryption algorithm
 
 MODULES=	cpan
 DISTNAME=	Crypt-Serpent-1.01
-REVISION=	6
+REVISION=	7
 CATEGORIES=	security
 
 # perl

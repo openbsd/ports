@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:51 sthen Exp $
 
 COMMENT= 	parse records in CSV-like formats
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Text-RecordParser-1.6.5
 CATEGORIES=	textproc devel
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

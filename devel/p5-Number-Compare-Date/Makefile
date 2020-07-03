@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:03 sthen Exp $
 
 COMMENT=	Compare Dates
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Number-Compare-Date-0.02
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 # perl

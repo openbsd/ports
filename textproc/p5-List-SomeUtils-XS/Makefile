@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/04 21:17:30 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:47 sthen Exp $
 
 COMMENT =	XS implementation for List::SomeUtils
 
 DISTNAME =	List-SomeUtils-XS-0.58
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
 

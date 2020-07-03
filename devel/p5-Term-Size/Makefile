@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:11 sthen Exp $
 
 COMMENT=		module to fetch the size of the terminal
 
 MODULES=		cpan
 DISTNAME=		Term-Size-0.209
 CATEGORIES=		devel
+REVISION=		0
 
 # Perl
 PERMIT_PACKAGE=	Yes

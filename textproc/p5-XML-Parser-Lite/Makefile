@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:53 sthen Exp $
 
 COMMENT =		lightweight regexp-based XML parser
 
 DISTNAME =		XML-Parser-Lite-0.722
 CATEGORIES =		textproc
+REVISION =		0
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

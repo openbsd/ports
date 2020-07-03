@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:24 sthen Exp $
 
 COMMENT=	search mailboxes for a particular email
 
 DISTNAME=	grepmail-5.3111
 PKGNAME=	${DISTNAME}
 CATEGORIES=	mail perl5
-REVISION=	0
+REVISION=	1
 
 # GPL
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:08 sthen Exp $
 
 COMMENT =	elasticsearch perl module
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Search-Elasticsearch-6.00
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:46 sthen Exp $
 
 COMMENT =	detect if English number is ordinal or cardinal
 DISTNAME =	Lingua-EN-Number-IsOrdinal-0.05
 CATEGORIES =	textproc
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

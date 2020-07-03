@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 21:15:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:32 sthen Exp $
 
 COMMENT =	Perl DHCP classes
 
 DISTNAME =	Net-DHCP-0.696
 CATEGORIES =	net
+REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 

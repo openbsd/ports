@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:52 sthen Exp $
 
 COMMENT =		compare two directories using callbacks
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		File-DirCompare-0.7
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 CPAN_AUTHOR =		GAVINC

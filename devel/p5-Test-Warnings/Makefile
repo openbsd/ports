@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:16 sthen Exp $
 
 COMMENT =	test for warnings and the lack of them
 
@@ -6,6 +6,7 @@ DISTNAME =	Test-Warnings-0.026
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

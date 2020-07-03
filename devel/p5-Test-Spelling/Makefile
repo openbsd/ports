@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/10/17 09:13:16 cwen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:16 sthen Exp $
 
 COMMENT=	check for spelling errors in POD files
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 DISTNAME=	Test-Spelling-0.25
+REVISION=	0
 
 CATEGORIES=	devel textproc
 

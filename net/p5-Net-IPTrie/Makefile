@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:34 sthen Exp $
 
 COMMENT =	build IPv4 and IPv6 address space hierarchies
 
 DISTNAME =	Net-IPTrie-0.7
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	net
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:10 sthen Exp $
 
 COMMENT =	format TAP::Harness output as JUnit XML
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	TAP-Formatter-JUnit-0.11
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

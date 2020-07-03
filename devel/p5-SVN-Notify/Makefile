@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/03 21:45:08 sthen Exp $
 
 COMMENT=	subversion activity notification
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	SVN-Notify-2.87
 CATEGORIES=	devel
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

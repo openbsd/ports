@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT=		roles which support overloading
 
 MODULES=		cpan
 DISTNAME=		MooseX-Role-WithOverloading-0.17
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 

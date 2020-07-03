@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/24 00:14:39 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:44:36 sthen Exp $
 
 COMMENT =	just some syntax sugar for DBIx::Class
 
 DISTNAME =	DBICx-Sugar-0.0200
+REVISION =	0
 
 CPAN_AUTHOR =	IRONCAMEL
 

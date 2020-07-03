@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:06 sthen Exp $
 
 COMMENT =		source constants from POD to avoid repetition
 
 DISTNAME =		Pod-Constant-0.1
+REVISION =		0
 
 CATEGORIES =		devel
 

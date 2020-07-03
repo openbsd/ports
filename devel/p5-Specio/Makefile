@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/16 07:09:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:09 sthen Exp $
 
 COMMENT =	type constraints and coercions for Perl
 
 DISTNAME =	Specio-0.46
 CPAN_AUTHOR =	DROLSKY
+REVISION =	0
 
 CATEGORIES =	devel
 

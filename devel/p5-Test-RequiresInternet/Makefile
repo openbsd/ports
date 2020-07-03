@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:15 sthen Exp $
 
 COMMENT =		easily test network connectivity
 
 DISTNAME =		Test-RequiresInternet-0.05
+REVISION =		0
 
 CATEGORIES =		devel
 

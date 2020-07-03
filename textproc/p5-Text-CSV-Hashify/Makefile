@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:50 sthen Exp $
 
 COMMENT =	turn a CSV file into a Perl hash
 DISTNAME =	Text-CSV-Hashify-0.10
 CATEGORIES =	textproc
+REVISION =	0
 
 MAINTAINER =	James E Keenan <jkeenan@cpan.org>
 

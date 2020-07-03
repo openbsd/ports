@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/02/20 12:19:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:14 sthen Exp $
 
 COMMENT = 	perl extension for emulating troublesome interfaces
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Test-MockObject-1.20200122
 CATEGORIES =	devel
+REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE =	Yes

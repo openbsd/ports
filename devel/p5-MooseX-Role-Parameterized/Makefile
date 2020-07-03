@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/02/18 08:36:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT =	roles with composition parameters
 
@@ -6,6 +6,7 @@ DISTNAME =	MooseX-Role-Parameterized-1.11
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:56 sthen Exp $
 
 COMMENT=	CGI::Session driver for memcached
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	CGI-Session-Driver-memcached-0.04
 CATEGORIES=	www
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

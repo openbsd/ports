@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:27 sthen Exp $
 
 COMMENT=	module to internal operations of neural networks
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	AI-Perceptron-1.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	math
 
 # Perl

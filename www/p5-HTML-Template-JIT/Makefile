@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:46:02 sthen Exp $
 
 COMMENT=	just-in-time compiler for HTML::Template
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	HTML-Template-JIT-0.05
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>

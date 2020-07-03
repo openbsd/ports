@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/06 20:32:42 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:46:03 sthen Exp $
 
 COMMENT =	HTTP MultiPart Parser
 
 DISTNAME =	HTTP-MultiPartParser-0.02
+REVISION =	0
 
 CATEGORIES =	www
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:06 sthen Exp $
 
 COMMENT=	parser for plain-text configuration files
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Parse-PlainConfig-2.06
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # GPL

@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.21 2019/07/12 20:43:43 sthen Exp $
+#	$OpenBSD: Makefile,v 1.22 2020/07/03 21:44:31 sthen Exp $
 
 COMMENT=	perl interface to the ACEDB database
 
 DISTNAME=	AcePerl-1.92
 PKGNAME=	${DISTNAME}# No p5-prefix
-REVISION=	2
+REVISION=	3
 CATEGORIES=	biology databases
 
 FLAVORS=	opt

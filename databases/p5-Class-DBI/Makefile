@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:34 sthen Exp $
 
 COMMENT=	simple database abstraction
 
@@ -7,7 +7,7 @@ PKG_ARCH=	*
 V=		3.0.16
 DISTNAME=	Class-DBI-v${V}
 PKGNAME=	p5-Class-DBI-${V}
-REVISION =	2
+REVISION =	3
 CATEGORIES=	databases
 
 # perl

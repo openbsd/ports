@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/11/08 21:39:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2020/07/03 21:46:08 sthen Exp $
 
 COMMENT-main=	Tk 8.4 bindings for Perl
 COMMENT-demo=	demonstrate the features of ptk
@@ -9,6 +9,8 @@ DISTNAME=	Tk-${VERSION}
 PKGNAME-main=	p5-Tk-${VERSION}
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
 CATEGORIES=	x11 devel
+REVISION-demo=	0
+REVISION-main=	0
 
 # GPL + custom
 PERMIT_PACKAGE=	Yes

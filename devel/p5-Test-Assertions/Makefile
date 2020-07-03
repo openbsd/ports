@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:12 sthen Exp $
 
 COMMENT =	set of building blocks for both unit and runtime testing
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Test-Assertions-1.054
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 # Perl

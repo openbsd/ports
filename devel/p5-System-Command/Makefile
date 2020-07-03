@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/10/31 14:40:33 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:10 sthen Exp $
 
 COMMENT = 	object for running system commands
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	System-Command-1.119
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

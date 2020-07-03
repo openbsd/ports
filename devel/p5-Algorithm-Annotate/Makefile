@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:38 sthen Exp $
 
 COMMENT=	represent a series of changes in annotate form
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Algorithm-Annotate-0.10
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 PERMIT_PACKAGE=	Yes

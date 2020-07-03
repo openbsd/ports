@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/15 13:48:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:31 sthen Exp $
 
 COMMENT =	Perl API for MaxMind's GeoIP2 web services and databases
 
 DISTNAME =	GeoIP2-2.006002
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:52 sthen Exp $
 
 COMMENT =	US-ASCII transliterations of Unicode text
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Text-Unidecode-1.30
 CATEGORIES =	textproc
+REVISION =	0
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 

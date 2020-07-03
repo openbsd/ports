@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/05 15:45:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:07 sthen Exp $
 
 COMMENT =		return across multiple call levels
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Return-MultiLevel-0.05
 CATEGORIES =		devel
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

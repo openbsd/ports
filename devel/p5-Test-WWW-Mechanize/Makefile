@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:16 sthen Exp $
 
 COMMENT=	test suite using WWW::Mechanize
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	Test-WWW-Mechanize-1.52
 CATEGORIES=	www devel
+REVISION=	0
 
 # Artistic 2.0
 PERMIT_PACKAGE=	Yes

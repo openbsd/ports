@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/16 19:40:35 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:44:44 sthen Exp $
 
 COMMENT =	perl extension for libconfig
 
 DISTNAME =	Conf-Libconfig-0.100
+REVISION =	0
 
 CATEGORIES =	devel
 

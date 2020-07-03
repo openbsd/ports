@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:47 sthen Exp $
 COMMENT=	handle v-strings (often used as version strings)
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Data-VString-0.000004
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # perl

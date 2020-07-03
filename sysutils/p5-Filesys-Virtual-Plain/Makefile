@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/03 14:07:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:44 sthen Exp $
 
 COMMENT=	perl module for a plain virtual filesystem
 DISTNAME=	Filesys-Virtual-Plain-0.10
-REVISION=	1
+REVISION=	2
 CATEGORIES=	sysutils
 
 # same as perl

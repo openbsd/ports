@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:54 sthen Exp $
 
 COMMENT=	SAX2 driver directly based on expat
 
 MODULES=	cpan
 DISTNAME =	XML-SAX-ExpatXS-1.33
 CATEGORIES=	textproc
-REVISION =	0
+REVISION =	1
 
 # perl
 PERMIT_PACKAGE=	Yes

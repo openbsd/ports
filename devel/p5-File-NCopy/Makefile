@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:53 sthen Exp $
 
 COMMENT=	copy files and directories with perl
 
@@ -7,7 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	File-NCopy0.32
 PKGNAME=	p5-File-NCopy-0.32
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # Artistic

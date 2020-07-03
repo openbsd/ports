@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:07 sthen Exp $
 
 COMMENT=		interface to URL shortening sites
 
 DISTNAME =		WWW-Shorten-3.093
 CATEGORIES=		www
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:39 sthen Exp $
 
 COMMENT=	CDBI Authentication for Catalyst
 
 DISTNAME=	Catalyst-Plugin-Authentication-Store-DBIC-0.11
-REVISION=	3
+REVISION=	4
 CATEGORIES=	security
 
 # Perl

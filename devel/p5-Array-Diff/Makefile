@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:39 sthen Exp $
 
 COMMENT= 	perform diffs on arrays
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME =	Array-Diff-0.09
 PKGNAME =	p5-${DISTNAME}000
 CATEGORIES=	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

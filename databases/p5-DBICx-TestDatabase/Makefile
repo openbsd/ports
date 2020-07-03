@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:36 sthen Exp $
 
 COMMENT =	create a temporary database from a DBIx::Class::Schema
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	DBICx-TestDatabase-0.05
 CATEGORIES =	databases
 CPAN_AUTHOR =	JROCKWAY
+REVISION =	0
 
 # same as perl
 PERMIT_PACKAGE =	Yes

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2020/02/21 20:08:38 bluhm Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:18 sthen Exp $
 
 COMMENT =	easy-to-use date/time formatting
 
 DISTNAME =	Time-Format-1.16
+REVISION =	0
 
 CATEGORIES =	devel
 

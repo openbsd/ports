@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:58 sthen Exp $
 
 COMMENT=	Catalyst views using Mason components
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Catalyst-View-Mason-0.19
 CATEGORIES=	www
+REVISION =	0
 
 # Artistic + GPL
 PERMIT_PACKAGE=	Yes

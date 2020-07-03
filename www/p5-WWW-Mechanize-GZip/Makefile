@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:46:06 sthen Exp $
 
 COMMENT=	tries to fetch webpages with gzip-compression
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	WWW-Mechanize-GZip-0.14
 CATEGORIES=	www
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

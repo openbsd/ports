@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/30 03:38:38 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:59 sthen Exp $
 
 COMMENT =		DBIx::Class interface for Dancer2 applications
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Dancer2-Plugin-DBIC-0.0100
 CATEGORIES =		www
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:40 sthen Exp $
 
 COMMENT=	DSA Signatures and Key Generation
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Crypt-DSA-1.17
 CATEGORIES=	security
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

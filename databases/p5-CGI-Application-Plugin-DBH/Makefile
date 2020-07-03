@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:34 sthen Exp $
 
 COMMENT =	easy DBI access
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 
 DISTNAME =	CGI-Application-Plugin-DBH-4.04
 CATEGORIES =	databases www
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =		Yes

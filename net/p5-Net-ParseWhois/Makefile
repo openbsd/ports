@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:35 sthen Exp $
 
 COMMENT=	module for getting and parsing whois entries
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Net-ParseWhois-0.7
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 CATEGORIES=	net
 

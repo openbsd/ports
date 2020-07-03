@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:35 sthen Exp $
 
 COMMENT=	determine type information for columns
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-DBI-Plugin-Type-0.02
-REVISION=	3
+REVISION=	4
 CATEGORIES=	databases
 
 # Same as Perl

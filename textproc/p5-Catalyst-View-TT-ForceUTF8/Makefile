@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:45 sthen Exp $
 
 COMMENT=	catalyst TT views with explicit UTF8 encoding (deprecated)
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Catalyst-View-TT-ForceUTF8-0.13
 CATEGORIES=	textproc devel
+REVISION=	0
 
 # Artistic + GPL
 PERMIT_PACKAGE=	Yes

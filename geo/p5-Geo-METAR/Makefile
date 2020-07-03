@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:22 sthen Exp $
 
 COMMENT=	process aviation weather reports in the METAR format
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Geo-METAR-1.15
-REVISION=	0
+REVISION=	1
 CATEGORIES=	geo
 
 # Perl

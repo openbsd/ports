@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:07 sthen Exp $
 
 COMMENT= 	interface to RSS and Atom feeds
 
@@ -8,6 +8,7 @@ PKG_ARCH=	*
 DISTNAME=	XML-Feed-0.55
 CATEGORIES=	www textproc
 CONFIGURE_STYLE=modbuild
+REVISION=	0
 
 #perl
 PERMIT_PACKAGE=	Yes

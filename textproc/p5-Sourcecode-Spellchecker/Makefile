@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:49 sthen Exp $
 
 COMMENT =	perl module for spell-checking source code
 
 DISTNAME =	Sourcecode-Spellchecker-0.03
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc devel
 

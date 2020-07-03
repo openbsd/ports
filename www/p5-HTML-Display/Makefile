@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:46:00 sthen Exp $
 
 COMMENT =		display HTML locally in a browser
 
 DISTNAME =		HTML-Display-0.40
+REVISION =		0
 
 CATEGORIES =		www
 

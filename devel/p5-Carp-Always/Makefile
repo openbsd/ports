@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/12 14:07:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:41 sthen Exp $
 
 COMMENT =		turn every die/warn into carp verbose messages
 
 DISTNAME =		Carp-Always-0.16
 CATEGORIES =		devel
+REVISION =		0
 
 MODULES =		cpan
 PKG_ARCH =		*

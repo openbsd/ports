@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:04 sthen Exp $
 
 COMMENT =		event callback interface
 
 DISTNAME =		Object-Event-1.23
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

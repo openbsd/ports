@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:24 sthen Exp $
 
 COMMENT =	RFC close address list parsing
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Email-Address-List-0.06
 CATEGORIES =	mail
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

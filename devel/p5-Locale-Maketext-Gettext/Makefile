@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/14 13:05:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:58 sthen Exp $
 
 COMMENT =	joins the gettext and maketext frameworks
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 
 DISTNAME =	Locale-Maketext-Gettext-1.30
 CATEGORIES =	converters devel
+REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE =	Yes

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:05 sthen Exp $
 
 COMMENT =	parameterizable packages
 DISTNAME =	Package-Variant-1.002002
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:25 sthen Exp $
 
 COMMENT =	perl module to deal with RFC 2047 encoded words
 
 DISTNAME =	MIME-EncWords-1.014.3
 CATEGORIES =	mail
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

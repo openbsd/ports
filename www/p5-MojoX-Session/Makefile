@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:46:04 sthen Exp $
 
 COMMENT =	session management for Mojo
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	MojoX-Session-0.33
 CATEGORIES =	www
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

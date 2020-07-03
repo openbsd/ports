@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:46:08 sthen Exp $
 
 COMMENT =		Tk extension module for Perl
 
 DISTNAME =		Tkx-1.09
 CATEGORIES =		x11 devel
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

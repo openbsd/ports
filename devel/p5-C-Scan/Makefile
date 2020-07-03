@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/03 21:44:40 sthen Exp $
 
 COMMENT=	module to scan C language files
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	C-Scan-0.74
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 PERMIT_PACKAGE=	Yes

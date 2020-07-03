@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:45 sthen Exp $
 
 COMMENT =	coroutines for perl
 
 MODULES =	cpan
 DISTNAME =	Coro-6.511
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

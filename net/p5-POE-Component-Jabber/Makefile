@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT=		POE Component for communicating over Jabber
 
 DISTNAME=		POE-Component-Jabber-3.00
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 # GPLv2

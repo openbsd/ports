@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:46:07 sthen Exp $
 
 COMMENT= 	Atom RSS protocol for perl
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME =	XML-Atom-0.42
 CATEGORIES=	www textproc
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

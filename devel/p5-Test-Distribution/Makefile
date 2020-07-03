@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:13 sthen Exp $
 
 COMMENT=	perform tests on all modules of a distribution
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 DISTNAME=	Test-Distribution-2.00
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # Perl

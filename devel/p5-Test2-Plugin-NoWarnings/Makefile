@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/06 07:09:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:17 sthen Exp $
 
 COMMENT =	fail if tests warn
 
 DISTNAME =	Test2-Plugin-NoWarnings-0.08
+REVISION =	0
 
 CATEGORIES =	devel
 

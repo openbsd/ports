@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/17 23:21:02 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:49 sthen Exp $
 
 COMMENT =	backslash escapes, quoted phrase, word elision, etc
 
 DISTNAME =	String-Escape-2010.002
+REVISION =	0
 
 CATEGORIES =	textproc
 

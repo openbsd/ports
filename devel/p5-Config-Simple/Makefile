@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:45 sthen Exp $
 
 COMMENT =	simple configuration file class
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Config-Simple-4.59
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>

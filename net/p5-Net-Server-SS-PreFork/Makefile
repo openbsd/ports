@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:36 sthen Exp $
 
 COMMENT =		hot-deployable variant of Net::Server::PreFork
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Net-Server-SS-PreFork-0.05
-REVISION =		1
+REVISION =		2
 CATEGORIES =		net
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/03 14:07:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:42 sthen Exp $
 
 COMMENT=	inheritable, overridable class data
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-Data-Inheritable-0.08
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # perl

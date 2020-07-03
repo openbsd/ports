@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:55 sthen Exp $
 
 COMMENT =	PSGI adapter for CGI
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	CGI-Emulate-PSGI-0.22
 CATEGORIES =	www
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

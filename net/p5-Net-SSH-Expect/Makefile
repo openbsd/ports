@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:36 sthen Exp $
 
 COMMENT =	ssh wrapper to execute remote interactive commands
 
 DISTNAME =	Net-SSH-Expect-1.09
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 MODULES =	cpan
 PKG_ARCH =	*

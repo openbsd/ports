@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:08 sthen Exp $
 
 COMMENT= 	deferred and lazy evaluation
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	Scalar-Defer-0.23
 CATEGORIES=	devel
+REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes

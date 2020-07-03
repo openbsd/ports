@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:57 sthen Exp $
 
 COMMENT=	safe guarding for IPC::Run
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	IPC-Run-SafeHandles-0.04
 CATEGORIES=	devel
-REVISION =	0
+REVISION =	1
 
 # perl
 PERMIT_PACKAGE=	Yes

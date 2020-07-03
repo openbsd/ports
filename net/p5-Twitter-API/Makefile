@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/17 18:48:07 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:38 sthen Exp $
 
 COMMENT =	Twitter REST API library for Perl
 DISTNAME =	Twitter-API-1.0005
 CATEGORIES =	net
 PKG_ARCH =	*
+REVISION =	0
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 

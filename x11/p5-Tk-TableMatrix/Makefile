@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 21:15:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:46:08 sthen Exp $
 
 COMMENT =	create and manipulate tables
 
 DISTNAME =	Tk-TableMatrix-1.23
-REVISION =	3
+REVISION =	4
 CATEGORIES =	x11 devel
 CPAN_AUTHOR =   CERNEY
 

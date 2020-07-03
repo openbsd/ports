@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2020/07/03 21:44:42 sthen Exp $
 
 COMMENT =	module for easy date and time manipulation
 
 DISTNAME =	Class-Date-1.1.17
+REVISION =	0
 
 CATEGORIES =	devel
 

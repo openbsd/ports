@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT=		the Illicit Love Child of Moose and POE
 
 DISTNAME=		MooseX-POE-0.215
+REVISION=		0
 
 CATEGORIES=		devel
 

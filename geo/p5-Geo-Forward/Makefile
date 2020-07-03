@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:21 sthen Exp $
 
 COMMENT=	module to calculate geographic location
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Geo-Forward-0.14
 CATEGORIES=	geo
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

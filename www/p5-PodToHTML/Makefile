@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:46:05 sthen Exp $
 
 COMMENT=	generate HTML from files containing POD documentation
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	PodToHTML-0.08
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pod/}
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:54 sthen Exp $
 
 COMMENT=	Perl extension for statvfs() and fstatvfs()
 
 MODULES=	cpan
 DISTNAME=	Filesys-Statvfs-0.82
 CATEGORIES=	devel
-REVISION=	2
+REVISION=	3
 
 # Perl
 PERMIT_PACKAGE=	Yes

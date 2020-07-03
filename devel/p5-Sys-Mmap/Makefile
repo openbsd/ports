@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:10 sthen Exp $
 
 COMMENT =	use mmap to map in a file as a Perl variable
 
 DISTNAME =	Sys-Mmap-0.19
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:13 sthen Exp $
 
 COMMENT=	automated driving and testing of terminal-based programs
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Test-Expect-0.34
 CATEGORIES=	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:27 sthen Exp $
 
 COMMENT=		interface to the Fast Artificial Neural Network library
 
 DISTNAME=		AI-FANN-0.10
-REVISION=		5
+REVISION=		6
 CATEGORIES=		math
 
 MODULES=		cpan

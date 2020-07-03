@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:48 sthen Exp $
 
 COMMENT=		localization data for perl DateTime.pm
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME =		DateTime-Locale-0.46
 CATEGORIES=		devel
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE=	Yes

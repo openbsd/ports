@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:50 sthen Exp $
 
 COMMENT =	easy-to-use self-cleaning scratch space
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Directory-Scratch-0.18
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

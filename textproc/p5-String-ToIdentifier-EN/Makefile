@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/11/03 01:45:26 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:49 sthen Exp $
 
 COMMENT =	convert strings to english program identifiers
 DISTNAME =	String-ToIdentifier-EN-0.12
 CATEGORIES =	textproc
+REVISION =	0
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 

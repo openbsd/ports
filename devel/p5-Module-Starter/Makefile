@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:01 sthen Exp $
 
 COMMENT =		simple starter kit for any module
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Module-Starter-1.54
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 CPAN_AUTHOR =		PETDANCE
 

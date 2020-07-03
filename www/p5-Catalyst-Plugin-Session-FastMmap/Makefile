@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:58 sthen Exp $
 
 COMMENT=	FastMmap sessions for Catalyst (deprecated)
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Catalyst-Plugin-Session-FastMmap-0.13
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

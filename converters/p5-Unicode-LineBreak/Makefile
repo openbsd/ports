@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:33 sthen Exp $
 
 COMMENT =	Unicode line breaking algorithm
 
 DISTNAME =	Unicode-LineBreak-2019.001
 CATEGORIES =	converters
 MODULES =	cpan
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

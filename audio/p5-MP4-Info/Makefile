@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:30 sthen Exp $
 
 COMMENT=	fetch info from MPEG-4 files
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	MP4-Info-1.13
 CATEGORIES=	audio
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

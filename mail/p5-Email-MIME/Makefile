@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/03 21:45:24 sthen Exp $
 
 COMMENT=	easy MIME message handling
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	Email-MIME-1.946
 CATEGORIES=	mail
 EPOCH=		0
+REVISION=	0
 
 # Same as Perl
 PERMIT_PACKAGE=	Yes

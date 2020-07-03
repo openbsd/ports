@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:13 sthen Exp $
 
 COMMENT =	Test::More-style wrapper around HTML::Tidy
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Test-HTML-Tidy-1.00
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 # Perl

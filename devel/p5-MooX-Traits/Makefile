@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/17 18:41:57 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:01 sthen Exp $
 
 COMMENT =	automatically apply roles at object creation time
 DISTNAME =	MooX-Traits-0.005
 CATEGORIES =	devel
 PKG_ARCH =	*
+REVISION =	0
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:41 sthen Exp $
 
 COMMENT=	debugging and tracing ultimate module
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Carp-Datum-0.1.3
-REVISION=	4
+REVISION=	5
 CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 

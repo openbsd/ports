@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:46 sthen Exp $
 
 COMMENT =	convert English text to numbers
 DISTNAME =	Lingua-EN-Words2Nums-0.18
-REVISION =	0
+REVISION =	1
 CATEGORIES =	textproc
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>

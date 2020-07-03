@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/24 00:11:57 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:14 sthen Exp $
 
 COMMENT =	precision testing for modern perl
 
 DISTNAME =	Test-Modern-0.013
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:24 sthen Exp $
 
 COMMENT= 	find and format date headers
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME =	Email-Date-1.104
 CATEGORIES=	mail
+REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

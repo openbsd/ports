@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:52 sthen Exp $
 
 COMMENT =		handle .desktop files
 
 DISTNAME =		File-DesktopEntry-0.22
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel 
 
 # perl

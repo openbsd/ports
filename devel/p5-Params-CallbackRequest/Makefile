@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:05 sthen Exp $
 
 COMMENT=	functional and object-oriented callback architecture
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Params-CallbackRequest-1.20
 CATEGORIES=	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

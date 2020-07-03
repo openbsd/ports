@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:36 sthen Exp $
 
 COMMENT =		interface to Twitter API
 
 DISTNAME =		Net-Twitter-Lite-0.12008
+REVISION =		0
 
 CATEGORIES =		net devel
 

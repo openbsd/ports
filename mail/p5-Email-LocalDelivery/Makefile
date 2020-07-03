@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:24 sthen Exp $
 
 COMMENT= 	deliver a piece of mail locally
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	Email-LocalDelivery-1.200
 CATEGORIES=	mail
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:44 sthen Exp $
 
 COMMENT =	access to more system calls than Perl normally provides
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Sys-Syscall-0.25
+REVISION =	0
 
 CATEGORIES =	sysutils
 

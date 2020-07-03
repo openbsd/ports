@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:43 sthen Exp $
 
 COMMENT=		portable implementation of 'which' in Perl
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 DISTNAME =		File-Which-1.23
+REVISION =		0
 
 CATEGORIES=		sysutils
 

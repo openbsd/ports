@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:14 sthen Exp $
 
 COMMENT=	inlining your tests next to the code being tested
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Test-Inline-2.213
 CATEGORIES=	devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

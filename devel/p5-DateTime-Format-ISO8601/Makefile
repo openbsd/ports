@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:48 sthen Exp $
 
 COMMENT= 	DateTime parser for ISO8601 date formats
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	DateTime-Format-ISO8601-0.08
 CATEGORIES=	devel
 EPOCH =		0
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

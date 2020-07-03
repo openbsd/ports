@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:44 sthen Exp $
 
 COMMENT=	limits the number of forked concurrent processes
 
 DISTNAME=	Proc-Queue-1.23
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 MODULES=	cpan
 PKG_ARCH=	*

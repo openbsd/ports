@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:49 sthen Exp $
 
 COMMENT= 	find memory cycles in objects
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 DISTNAME=	Devel-Cycle-1.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # perl

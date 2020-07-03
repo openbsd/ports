@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:18 sthen Exp $
 
 COMMENT=		module for dealing with time periods
 
@@ -6,7 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Period-1.20
 PKGNAME=		p5-Time-${DISTNAME}
-REVISION =		1
+REVISION =		2
 CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
 

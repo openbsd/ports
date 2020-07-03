@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:33 sthen Exp $
 
 COMMENT=	MARC (machine readable cataloging format)
 CATEGORIES=	converters
 
 DISTNAME =	MARC-Record-2.0.7
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

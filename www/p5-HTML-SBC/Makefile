@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:01 sthen Exp $
 
 COMMENT =	simple blog code for valid (X)HTML
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	HTML-SBC-0.15
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www
 
 # Perl

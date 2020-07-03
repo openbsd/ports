@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:30 sthen Exp $
 
 COMMENT=	get information from Excel spreadsheets
 
@@ -8,6 +8,7 @@ DISTNAME=	Spreadsheet-ParseExcel-0.65
 EPOCH=		0
 CATEGORIES=	misc
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

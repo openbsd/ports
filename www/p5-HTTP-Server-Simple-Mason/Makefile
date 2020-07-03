@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:46:03 sthen Exp $
 
 COMMENT=	abstract baseclass for a standalone mason server
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	HTTP-Server-Simple-Mason-0.14
 CATEGORIES=	www
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

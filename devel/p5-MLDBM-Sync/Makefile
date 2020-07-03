@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:59 sthen Exp $
 
 COMMENT=	safe concurrent access to MLDBM databases
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 VERSION=	0.30
 DISTNAME=	MLDBM-Sync-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 RUN_DEPENDS=	devel/p5-MLDBM \

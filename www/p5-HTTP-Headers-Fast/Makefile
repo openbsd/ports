@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:46:02 sthen Exp $
 
 COMMENT =		faster implementation of HTTP::Headers
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		HTTP-Headers-Fast-0.22
 CATEGORIES =		www
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

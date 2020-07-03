@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:38 sthen Exp $
 
 COMMENT=	Perl extension for retrieving bridge tables
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	SNMP-BridgeQuery-0.61
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel net
 
 # GPL/Artistic

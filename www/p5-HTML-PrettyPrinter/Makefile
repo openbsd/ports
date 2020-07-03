@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:46:00 sthen Exp $
 
 COMMENT=		generate nice HTML files from HTML syntax trees
 
 DISTNAME=		HTML-PrettyPrinter-0.03
 CATEGORIES=		www textproc
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes

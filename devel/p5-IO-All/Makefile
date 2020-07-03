@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/05 12:28:23 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:56 sthen Exp $
 
 COMMENT=	universal I/O to everything
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	IO-All-0.87
 CATEGORIES=	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

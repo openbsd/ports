@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:44:48 sthen Exp $
 
 COMMENT=		common time and date operations with GPS operations
 
 DISTNAME=		DateTime-Precise-1.05
 CATEGORIES=		devel
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes

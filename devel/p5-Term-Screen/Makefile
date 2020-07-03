@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/11/03 14:07:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:11 sthen Exp $
 
 COMMENT=		positioning screen based module
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Term-Screen-1.06
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 # Artistic

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:17 sthen Exp $
 
 COMMENT=	ordered hashes for Perl
 
 DISTNAME=	Tie-Hash-Indexed-0.05
-REVISION=	6
+REVISION=	7
 CATEGORIES=	devel
 MODULES=	cpan
 

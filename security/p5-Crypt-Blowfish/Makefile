@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 21:02:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/07/03 21:45:40 sthen Exp $
 
 COMMENT=	interface to the Blowfish encryption algorithm
 
 MODULES=	cpan
 DISTNAME=	Crypt-Blowfish-2.14
 CATEGORIES=	security
-REVISION=	2
+REVISION=	3
 
 # perl
 PERMIT_PACKAGE=	Yes

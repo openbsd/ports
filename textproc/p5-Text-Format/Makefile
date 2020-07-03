@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:51 sthen Exp $
 
 COMMENT=		various subroutines to format text
 
 DISTNAME=		Text-Format-0.61
 CATEGORIES=		textproc
+REVISION=		0
 
 # Perl
 PERMIT_PACKAGE=	Yes

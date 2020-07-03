@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:51 sthen Exp $
 
 COMMENT=	wrapper around the Expect module
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Expect-Simple-0.04
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # perl

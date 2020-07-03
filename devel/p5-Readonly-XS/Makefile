@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:07 sthen Exp $
 
 COMMENT= 	create readonly variables faster
 
 MODULES=	cpan
 DISTNAME=	Readonly-XS-1.05
-REVISION=	4
+REVISION=	5
 CATEGORIES=	devel
 
 # perl licence

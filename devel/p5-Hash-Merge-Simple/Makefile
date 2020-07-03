@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:44:55 sthen Exp $
 
 COMMENT =		recursively merge two or more hashes, simply
 
@@ -6,7 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Hash-Merge-Simple-0.051
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 # Perl
 PERMIT_PACKAGE =	Yes

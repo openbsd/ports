@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/15 13:48:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:32 sthen Exp $
 
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
 COMMENT =	fast XS implementation of MaxMind DB reader
 
 DISTNAME =	MaxMind-DB-Reader-XS-1.000008
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 

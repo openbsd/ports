@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:53 sthen Exp $
 
 COMMENT =	extend File::ShareDir to local libraries
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	File-Share-0.25
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER =	Wen Heping <wenheping2000@hotmail.com>
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:44 sthen Exp $
 
 COMMENT =		choose appropriate clone utility
 
 DISTNAME =		Clone-Choose-0.010
 CATEGORIES =		devel
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE =	Yes

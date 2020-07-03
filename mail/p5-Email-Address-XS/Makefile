@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/03 20:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:24 sthen Exp $
 
 COMMENT=	parse and format RFC 5322 email addresses and groups
 
 MODULES=	cpan
 DISTNAME=	Email-Address-XS-1.04
 CATEGORIES=	mail
-REVISION=	0
+REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

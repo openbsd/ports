@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/18 12:17:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:28 sthen Exp $
 
 COMMENT=	fast functions to CoNVert between number Bases
 
 DISTNAME =	Math-BaseCnv-1.14
 EXTRACT_SUFX=	.tgz
+REVISION =	0
 
 CATEGORIES=	math
 

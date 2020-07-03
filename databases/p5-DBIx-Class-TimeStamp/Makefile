@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:44:36 sthen Exp $
 
 COMMENT =	automatically set and update time based columns
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	DBIx-Class-TimeStamp-0.14
 CATEGORIES =	databases
+REVISION =	0
 
 # same as perl
 PERMIT_PACKAGE =	Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2020/02/23 08:16:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.45 2020/07/03 21:45:53 sthen Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
 DISTNAME =	XML-RSS-1.61
 CATEGORIES=	textproc
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

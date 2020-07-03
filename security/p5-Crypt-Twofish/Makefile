@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/03 21:45:41 sthen Exp $
 
 COMMENT=	module to implement the Twofish cipher
 
 MODULES=	cpan
 DISTNAME=	Crypt-Twofish-2.17
 CATEGORIES=	security
-REVISION=	2
+REVISION=	3
 
 # perl
 PERMIT_PACKAGE=	Yes

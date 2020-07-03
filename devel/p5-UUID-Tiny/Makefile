@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:19 sthen Exp $
 
 COMMENT=	tiny pure-perl UUID generation
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	UUID-Tiny-1.04
 CATEGORIES=	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

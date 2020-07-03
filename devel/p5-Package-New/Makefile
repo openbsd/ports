@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:05 sthen Exp $
 
 COMMENT=		simple base package from which to inherit
 
 DISTNAME=		Package-New-0.07
+REVISION=		0
 
 CATEGORIES=		devel
 

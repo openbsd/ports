@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/12 06:56:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:34 sthen Exp $
 
 COMMENT =	Perl extension for doing ident requests
 
 DISTNAME =	Net-Ident-1.25
 CATEGORIES =	net
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

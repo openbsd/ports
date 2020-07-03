@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:46:06 sthen Exp $
 
 COMMENT =	framework to automate HTML forms
 
 DISTNAME =	WWW-Mechanize-FormFiller-0.12
+REVISION =	0
 
 CATEGORIES =	www
 

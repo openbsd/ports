@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:22 sthen Exp $
 
 COMMENT=	parse TIGER/Line geographic data
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Geo-TigerLine-0.03
 CATEGORIES=	geo
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

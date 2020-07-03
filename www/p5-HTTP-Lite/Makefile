@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:46:02 sthen Exp $
 
 COMMENT =	pure Perl HTTP client
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	HTTP-Lite-2.1.6
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www
 
 # Perl

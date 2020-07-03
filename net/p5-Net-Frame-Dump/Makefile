@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/11 02:03:33 gsoares Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:33 sthen Exp $
 
 COMMENT=	base-class for a tcpdump-like implementation
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Net-Frame-Dump-1.17
 CATEGORIES=	net
+REVISION =	0
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 

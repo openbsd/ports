@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:55 sthen Exp $
 
 COMMENT=	parses long function arguments
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Getargs-Long-1.1012
 CATEGORIES=	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

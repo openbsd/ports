@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:46 sthen Exp $
 
 COMMENT=	handle data in a hierarchical structure
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Data-Hierarchy-0.34
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # Artistic

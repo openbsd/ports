@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:38 sthen Exp $
 
 COMMENT =	non-blocking, concurrent DNS server POE component
 
 DISTNAME =	POE-Component-Server-DNS-0.32
+REVISION =	0
 
 CATEGORIES =	net
 

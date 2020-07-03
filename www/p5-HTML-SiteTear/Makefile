@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/08 08:47:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:46:01 sthen Exp $
 
 COMMENT=	make a separate copy of a web site in local file system
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	HTML-SiteTear-1.46
 CATEGORIES=	www
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

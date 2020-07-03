@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:37 sthen Exp $
 
 COMMENT=	datetime helper functions for Rose
 
@@ -8,6 +8,7 @@ PKG_ARCH=	*
 DISTNAME =	Rose-DateTime-0.540
 CATEGORIES=	databases devel
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

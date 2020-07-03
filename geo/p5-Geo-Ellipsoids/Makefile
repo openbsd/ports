@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:21 sthen Exp $
 
 COMMENT=	perl module that provides ellipsoid values
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Geo-Ellipsoids-0.16
-REVISION=	0
+REVISION=	1
 CATEGORIES=	geo
 
 # Perl

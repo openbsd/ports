@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:31 sthen Exp $
 
 COMMENT =		event based IRC client API
 
 DISTNAME =		AnyEvent-IRC-0.97
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net devel
 

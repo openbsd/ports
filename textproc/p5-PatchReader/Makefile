@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:48 sthen Exp $
 
 COMMENT=	utilities to read and manipulate patches and CVS
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	PatchReader-0.9.6
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 
 # Dual Artistic/MPL (checked with author)

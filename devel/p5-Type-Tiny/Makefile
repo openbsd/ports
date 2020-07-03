@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/27 17:43:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:19 sthen Exp $
 
 COMMENT =		tiny, yet Moo(se)-compatible type constraint
 
 DISTNAME =		Type-Tiny-1.010001
 CATEGORIES =		devel
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE =	Yes

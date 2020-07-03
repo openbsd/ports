@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/21 08:52:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:06 sthen Exp $
 
 COMMENT =		file path utility
 
 DISTNAME =		Path-Tiny-0.112
 CATEGORIES =		devel
+REVISION =		0
 
 # Apachev2
 PERMIT_PACKAGE =	Yes

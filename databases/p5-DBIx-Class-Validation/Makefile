@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:36 sthen Exp $
 
 COMMENT=	data validation for DBIx::Class
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	DBIx-Class-Validation-0.02005
 CATEGORIES=	databases devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

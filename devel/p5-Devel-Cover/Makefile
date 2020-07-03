@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/14 12:19:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:49 sthen Exp $
 
 COMMENT =	code coverage metrics for Perl
 
 MODULES =	cpan
 DISTNAME =	Devel-Cover-1.33
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

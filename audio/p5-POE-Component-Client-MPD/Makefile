@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:44:31 sthen Exp $
 
 COMMENT=		complete MPD client library
 
 DISTNAME=		POE-Component-Client-MPD-2.001
 CATEGORIES=		audio
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/03 21:46:08 sthen Exp $
 
 BROKEN =	GDI.c:12636:17: error: no member named 'GetPixel' in 'wxColour'
 
@@ -8,7 +8,7 @@ MODULES =	cpan
 DISTNAME =	Wx-0.9932
 CATEGORIES =	x11 devel
 CPAN_AUTHOR =	MDOOTSON
-REVISION =	1
+REVISION =	2
 
 # perl
 PERMIT_PACKAGE =	Yes

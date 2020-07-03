@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT=		declarative syntax for Moose
 
 DISTNAME =		MooseX-Declare-0.43
 CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE=	Yes

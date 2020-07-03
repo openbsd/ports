@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:03 sthen Exp $
 
 COMMENT= 	record communication with an HTTP::Server::Simple
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME =	HTTP-Server-Simple-Recorder-0.03
 CATEGORIES=	www
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

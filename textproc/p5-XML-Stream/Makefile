@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:54 sthen Exp $
 
 COMMENT=		creates and XML Stream connection and parses return data
 
 DISTNAME=		XML-Stream-1.24
 CATEGORIES=		textproc
+REVISION=		0
 
 MODULES=		cpan
 PKG_ARCH=		*

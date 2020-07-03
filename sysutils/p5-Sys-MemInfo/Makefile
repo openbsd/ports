@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/03 15:20:42 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:44 sthen Exp $
 
 COMMENT =	return the total amount of free and used physical memory
 
 DISTNAME =	Sys-MemInfo-0.99
-REVISION =	0
+REVISION =	1
 CATEGORIES =	sysutils
 
 # Perl

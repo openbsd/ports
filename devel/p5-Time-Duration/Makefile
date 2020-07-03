@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:18 sthen Exp $
 
 COMMENT =	module for rounded or exact english expression of durations
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Time-Duration-1.21
 CATEGORIES =	devel
+REVISION =	0
 
 EPOCH =		0
 

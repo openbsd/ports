@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:48:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT =		manages IPv4 and IPv6 addresses and subnets
 
 DISTNAME =		NetAddr-IP-4.079
+REVISION =		0
 
 CATEGORIES =		net
 

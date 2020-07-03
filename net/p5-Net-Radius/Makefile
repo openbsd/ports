@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2020/04/08 18:25:48 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:35 sthen Exp $
 
 COMMENT=	Perl interface to Radius
 
 DISTNAME=	Net-Radius-2.103
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net devel
 

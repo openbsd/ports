@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:51 sthen Exp $
 
 COMMENT=	simple eyecandy ASCII Tables
 
 DISTNAME=	Text-SimpleTable-2.07
 CATEGORIES=	textproc
+REVISION=	0
 
 # Artistic 2.0
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:56 sthen Exp $
 
 COMMENT =	capture STDOUT and STDERR from Perl code, subprocesses or XS
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	IO-CaptureOutput-1.1104
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 

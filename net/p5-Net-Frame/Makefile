@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/09/11 02:18:52 gsoares Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:33 sthen Exp $
 
 COMMENT=	base framework for frame crafting
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Net-Frame-1.21
 CATEGORIES=	net
+REVISION =	0
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 

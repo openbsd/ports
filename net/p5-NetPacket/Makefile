@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2020/03/20 16:44:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT=	Perl module for encoding/decoding network traffic
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	NetPacket-0.04
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 # Artistic License

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT=		required attributes which fail only when trying to use them
 
 DISTNAME =		MooseX-LazyRequire-0.11
+REVISION =		0
 
 CATEGORIES=		devel
 

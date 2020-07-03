@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT =		emulate Class::Accessor::Fast behavior using Moose
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		MooseX-Emulate-Class-Accessor-Fast-0.009032
 CATEGORIES =		devel
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:12 sthen Exp $
 
 COMMENT=	basic first-pass API testing for large class trees
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	Test-ClassAPI-1.07
 CATEGORIES=	devel
+REVISION=	0
 
 FIX_EXTRACT_PERMISSIONS=	Yes
 

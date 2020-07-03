@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:58 sthen Exp $
 
 COMMENT=	map subrequests to actions in Catalyst
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Catalyst-Plugin-SubRequest-0.17
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

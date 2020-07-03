@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/10 21:21:18 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:17 sthen Exp $
 
 COMMENT =	set of tools built upon the Test2 framework
 
 DISTNAME =	Test2-Suite-0.000130
 CPAN_AUTHOR =	EXODIST
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/03 20:28:57 bluhm Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:52 sthen Exp $
 
 COMMENT =	object oriented File::Find replacement
 
@@ -6,6 +6,7 @@ COMMENT =	object oriented File::Find replacement
 PORTROACH =	skipv:0.0.1,0.0.2,0.3.0
 
 DISTNAME =	File-Find-Object-0.3.5
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/14 02:16:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:42 sthen Exp $
 
 COMMENT=	perl5 interface to GnuPG using scalars
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	GPG-0.06
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 CPAN_AUTHOR=	MILES
 

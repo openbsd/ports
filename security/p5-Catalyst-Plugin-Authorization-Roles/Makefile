@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:40 sthen Exp $
 
 COMMENT=	role based authorization for Catalyst
 
 DISTNAME=	Catalyst-Plugin-Authorization-Roles-0.09
 CATEGORIES=	security
-REVISION=	0
+REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

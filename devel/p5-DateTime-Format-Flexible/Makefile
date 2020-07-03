@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/10/31 03:28:54 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:48 sthen Exp $
 
 COMMENT =	flexibly parse strings and turn them into DateTime objects
 
 DISTNAME =	DateTime-Format-Flexible-0.32
+REVISION =	0
 
 CATEGORIES =	devel
 

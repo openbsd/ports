@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/03 21:46:00 sthen Exp $
 
 COMMENT=	HTML text formating class
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	HTML-Format-2.11
 CATEGORIES=	www devel
+REVISION=	0
 
 # GPL
 PERMIT_PACKAGE=	Yes

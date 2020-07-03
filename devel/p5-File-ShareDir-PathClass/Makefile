@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:54 sthen Exp $
 
 COMMENT =	File::ShareDir returning Path::Class objects
 
 DISTNAME =	File-ShareDir-PathClass-1.112440
+REVISION =	0
 
 CATEGORIES =	devel
 

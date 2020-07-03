@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:08 sthen Exp $
 
 COMMENT= 	run shell commands transparently
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	Shell-0.73
 PKGNAME=	p5-Shell-0.73
+REVISION=	0
 
 MAINTAINER =    Adam Wolk <awolk@openbsd.org>
 

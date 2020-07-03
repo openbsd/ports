@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT=		XMPP perl library
 
 DISTNAME=		Net-XMPP-1.05
 CATEGORIES=		net
+REVISION=		0
 
 MODULES=		cpan
 PKG_ARCH=		*

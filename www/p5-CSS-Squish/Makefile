@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:56 sthen Exp $
 
 COMMENT=	compress CSS info for transmission
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	CSS-Squish-0.10
 CATEGORIES=	www
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

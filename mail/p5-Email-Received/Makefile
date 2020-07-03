@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:25 sthen Exp $
 
 COMMENT =		parse an email Received: header
 
@@ -7,7 +7,7 @@ PKG_ARCH =		*
 
 DISTNAME =		Email-Received-1.00
 CATEGORIES =		mail
-REVISION =		0
+REVISION =		1
 
 # Perl
 PERMIT_PACKAGE =	Yes

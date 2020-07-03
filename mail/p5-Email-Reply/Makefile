@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:25 sthen Exp $
 
 COMMENT=	module to generate replies to e-mail messages.
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Email-Reply-1.204
 CATEGORIES=	mail
+REVISION =	0
 
 # Same as Perl
 PERMIT_PACKAGE=	Yes

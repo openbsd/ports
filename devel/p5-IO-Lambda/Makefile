@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2020/02/05 14:25:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:56 sthen Exp $
 
 COMMENT =	non-blocking I/O as lambda calculus
 
 DISTNAME =	IO-Lambda-1.30
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:20 sthen Exp $
 
 COMMENT =	Perl-ish Interface to libzmq
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	ZMQ-1.06
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

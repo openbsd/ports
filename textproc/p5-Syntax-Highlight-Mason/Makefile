@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:49 sthen Exp $
 
 COMMENT=	syntax highlight for Mason
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME =	Syntax-Highlight-Mason-1.23
 CATEGORIES=	textproc www
 EXTRACT_SUFX=	.tgz
+REVISION =	0
 
 # LGPL/Artistic
 PERMIT_PACKAGE=	Yes

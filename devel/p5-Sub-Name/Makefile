@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2020/01/01 21:39:58 bluhm Exp $
+# $OpenBSD: Makefile,v 1.26 2020/07/03 21:45:10 sthen Exp $
 
 COMMENT =		(re)name a sub
 
 DISTNAME =		Sub-Name-0.26
+REVISION =		0
 
 CATEGORIES =		devel
 FIX_EXTRACT_PERMISSIONS=Yes

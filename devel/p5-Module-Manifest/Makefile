@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:00 sthen Exp $
 
 COMMENT = 	parse and examine a perl distribution MANIFEST file
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 
 DISTNAME =	Module-Manifest-1.09
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

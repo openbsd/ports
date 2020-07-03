@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:06 sthen Exp $
 
 COMMENT =	PerlIO layer that adds read & write timeout to a handle
 
 DISTNAME =	PerlIO-via-Timeout-0.32
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>

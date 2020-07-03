@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/02/23 07:42:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:51 sthen Exp $
 
 COMMENT=	expand template text with embedded perl
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Text-Template-1.58
 CATEGORIES=	textproc
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:58 sthen Exp $
 
 COMMENT=	catalyst file storage backend for session data
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Catalyst-Plugin-Session-Store-File-0.18
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

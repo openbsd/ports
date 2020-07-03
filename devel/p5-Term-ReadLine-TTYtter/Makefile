@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:11 sthen Exp $
 
 COMMENT =		Readline Library Wrapper Module for Twitter
 DISTNAME =		Term-ReadLine-TTYtter-1.4
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel perl5
 FIX_EXTRACT_PERMISSIONS=Yes
 

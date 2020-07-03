@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:46 sthen Exp $
 
 COMMENT =	force number of words to singular or plural
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Lingua-EN-Inflect-Number-1.12
 CATEGORIES =	textproc
-REVISION =	0
+REVISION =	1
 
 # Same as Perl
 PERMIT_PACKAGE =	Yes

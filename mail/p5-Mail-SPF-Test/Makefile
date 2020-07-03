@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:27 sthen Exp $
 
 COMMENT =		perl SPF test-suite class
 
 DISTNAME =		Mail-SPF-Test-v1.001
 PKGNAME =		p5-${DISTNAME:S/-v/-/}
 CATEGORIES =		mail
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE =	Yes

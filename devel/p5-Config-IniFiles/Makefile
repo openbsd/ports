@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2020/03/27 17:10:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2020/07/03 21:44:45 sthen Exp $
 
 COMMENT =	module for reading .ini-style configuration files
 
 DISTNAME =	Config-IniFiles-3.000003
 CATEGORIES =	devel
+REVISION =	0
 
 MODULES =	cpan
 PKG_ARCH =	*

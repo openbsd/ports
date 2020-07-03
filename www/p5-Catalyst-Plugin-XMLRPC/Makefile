@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:58 sthen Exp $
 
 COMMENT=		dispatch XML-RPC methods with Catalyst (deprecated)
 
@@ -6,7 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Catalyst-Plugin-XMLRPC-2.01
 CATEGORIES=		www
-REVISION =		0
+REVISION =		1
 
 # same as perl
 PERMIT_PACKAGE=	Yes

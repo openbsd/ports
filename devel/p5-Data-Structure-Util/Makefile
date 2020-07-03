@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:46 sthen Exp $
 
 COMMENT =	change nature of data within a structure
 
 MODULES =	cpan
 DISTNAME =	Data-Structure-Util-0.16
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

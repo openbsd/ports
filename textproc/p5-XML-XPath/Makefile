@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/07/03 21:45:54 sthen Exp $
 
 COMMENT =	modules for parsing and evaluating XPath statements
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 DISTNAME =	XML-XPath-1.44
+REVISION =	0
 
 CATEGORIES =	textproc
 

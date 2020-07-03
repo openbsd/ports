@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:26 sthen Exp $
 
 COMMENT=	library for creating easy mail filters
 
 DISTNAME=	Mail-Audit-2.228
 CATEGORIES=	mail
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

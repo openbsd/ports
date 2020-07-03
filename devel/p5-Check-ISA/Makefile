@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:41 sthen Exp $
 
 COMMENT =	correct check for object classes in Perl
 
 DISTNAME =	Check-ISA-0.09
 CATEGORIES =	devel
 CPAN_AUTHOR =	MANWAR
-REVISION =	0
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =	Yes

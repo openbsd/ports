@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:47 sthen Exp $
 
 COMMENT =	extract probable dates from strings
 
@@ -8,6 +8,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Date-Extract-${V}
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

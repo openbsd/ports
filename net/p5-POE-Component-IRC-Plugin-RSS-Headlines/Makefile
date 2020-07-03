@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/17 14:46:34 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT =		PoCo::IRC Plugin that provides RSS Headline retrieval
 
 DISTNAME =		POE-Component-IRC-Plugin-RSS-Headlines-1.10
 CATEGORIES =		net www
-REVISION =		0
+REVISION =		1
 
 # perl
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:44:43 sthen Exp $
 
 COMMENT =		dynamic class mixing
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Class-Mix-0.006
 CATEGORIES =		devel
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE =	Yes

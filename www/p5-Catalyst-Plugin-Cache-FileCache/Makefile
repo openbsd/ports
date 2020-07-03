@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:57 sthen Exp $
 
 COMMENT =	file cache extension for Catalyst (deprecated)
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Catalyst-Plugin-Cache-FileCache-0.7
-REVISION =	2
+REVISION =	3
 CATEGORIES =	www
 
 # Perl

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:09 sthen Exp $
 
 COMMENT =	reliable subroutine attribute handlers
 
 DISTNAME =	Sub-Attribute-0.07
+REVISION =	0
 
 CATEGORIES =	devel
 

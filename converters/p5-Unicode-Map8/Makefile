@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/07/03 21:44:33 sthen Exp $
 
 COMMENT=	module to implement efficient mapping tables
 
 DISTNAME =	Unicode-Map8-0.13
 CATEGORIES=	converters
 MODULES=	cpan
-REVISION =	0
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

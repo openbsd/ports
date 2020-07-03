@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:45 sthen Exp $
 
 COMMENT=	manages templates and performs variable interpolation
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	CGI-FastTemplate-1.09
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc www
 
 # Perl

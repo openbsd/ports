@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:07:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:46:06 sthen Exp $
 
 COMMENT =	check the validity of links in an HTML or XHTML document
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	W3C-LinkChecker-4.81
 CATEGORIES =	www
+REVISION =	0
 
 RUN_DEPENDS =	www/p5-CSS-DOM \
 		www/p5-LWP-Protocol-https \

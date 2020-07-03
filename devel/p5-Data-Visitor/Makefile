@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/03 21:44:47 sthen Exp $
 
 COMMENT=	visitor-style traversal of Perl data structures
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Data-Visitor-0.30
 CATEGORIES=	devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

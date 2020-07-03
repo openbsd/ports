@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:32 sthen Exp $
 
 COMMENT=	color space conversions and named lookups
 
@@ -6,6 +6,7 @@ DISTNAME =	Convert-Color-0.11
 CATEGORIES=	converters
 MODULES=	cpan
 PKG_ARCH=	*
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

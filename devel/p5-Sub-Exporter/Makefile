@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:09 sthen Exp $
 
 COMMENT =	exporter on steroids
 
 DISTNAME =	Sub-Exporter-0.987
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
 

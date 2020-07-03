@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:41 sthen Exp $
 
 COMMENT=	implementation of the RC4 encryption algorithm
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Crypt-RC4-2.02
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 
 # Perl

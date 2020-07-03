@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/08/18 20:16:14 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:44:36 sthen Exp $
 
 COMMENT =		fast, safe DBI connection and transaction management
 
@@ -7,6 +7,7 @@ PKG_ARCH =		*
 DISTNAME =		DBIx-Connector-0.56
 CATEGORIES =		databases
 CPAN_AUTHOR =		DWHEELER
+REVISION =		0
 
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/08 09:48:04 cwen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:16 sthen Exp $
 
 COMMENT =	check to see that version's in modules are sane
 
 DISTNAME =	Test-Version-2.09
+REVISION =	0
 
 CATEGORIES =	devel
 

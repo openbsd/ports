@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:30 sthen Exp $
 
 COMMENT =	guess file type with XS (a la mod_mime_magic)
 
 MODULES =	cpan
 DISTNAME =	File-MMagic-XS-0.09008
 CATEGORIES =	misc
-REVISION =	2
+REVISION =	3
 
 # Perl
 PERMIT_PACKAGE =		Yes

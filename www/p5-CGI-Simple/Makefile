@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:50:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:56 sthen Exp $
 
 COMMENT =	drop-in object-oriented CGI.pm replacement
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	CGI-Simple-1.115
 CATEGORIES =	www
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

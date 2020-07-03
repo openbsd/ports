@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:07 sthen Exp $
 
 COMMENT=	utility functions for checking references (XS version)
 
 MODULES=	cpan
 DISTNAME=	Ref-Util-XS-0.117
 CATEGORIES=	devel
+REVISION=	0
 
 MAINTAINER=	Wen Heping <wenheping2000@hotmail.com>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:58 sthen Exp $
 
 COMMENT =	automatic trait loading and resolution
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	CatalystX-Component-Traits-0.19
 CATEGORIES =	www
+REVISION =	0
 
 # same as perl
 PERMIT_PACKAGE =	Yes

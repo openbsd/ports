@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/05/17 22:37:08 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:24 sthen Exp $
 
 COMMENT = 	determine email folder type
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 DISTNAME =	Email-FolderType-0.814
-REVISION =	0
+REVISION =	1
 CATEGORIES =	mail
 
 # perl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:43 sthen Exp $
 
 COMMENT=		concise expressive creations of Class::Meta classes
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME =		Class-Meta-Express-0.13
 CATEGORIES=		devel
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:53 sthen Exp $
 
 COMMENT=		subclass for non-blocking (incremental) parsing
 
 DISTNAME=		XML-SAX-Expat-Incremental-0.05
-REVISION=		0
+REVISION=		1
 CATEGORIES=		textproc
 
 # perl

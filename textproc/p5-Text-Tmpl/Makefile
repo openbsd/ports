@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/17 14:39:43 danj Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/03 21:45:52 sthen Exp $
 
 COMMENT=	very fast Perl templating library
 
 MODULES=	cpan
 DISTNAME=	Text-Tmpl-0.33
-REVISION=	3
+REVISION=	4
 CATEGORIES=	textproc
 
 # Artistic

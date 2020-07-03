@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:34 sthen Exp $
 
 COMMENT=	produce HTML form elements for database columns
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-DBI-AsForm-2.42
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www databases
 
 # Same as Perl

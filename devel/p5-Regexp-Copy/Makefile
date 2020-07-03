@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:07 sthen Exp $
 
 COMMENT=		copy perl Regexp objects
 
 DISTNAME=		Regexp-Copy-0.06
-REVISION=		5
+REVISION=		6
 CATEGORIES=		devel
 
 MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>

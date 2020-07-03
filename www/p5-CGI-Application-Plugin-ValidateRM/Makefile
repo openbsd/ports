@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:55 sthen Exp $
 
 COMMENT =	helps validate CGI::Application run modes
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	CGI-Application-Plugin-ValidateRM-2.5
 CATEGORIES =	www
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =		Yes

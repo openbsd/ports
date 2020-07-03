@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:35 sthen Exp $
 
 COMMENT=		alternative Perl interface to ping(1)
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Net-Ping-External-0.13
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 EXTRACT_SUFX=		.zip
 

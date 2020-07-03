@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:43 sthen Exp $
 
 COMMENT=		Perl shell
 
 DISTNAME=		psh-1.8.1
 PKGNAME=		${DISTNAME:S/p/perl/}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		shells
 
 # Perl

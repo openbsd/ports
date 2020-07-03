@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:33 sthen Exp $
 
 COMMENT =	stringprep profile for Internationalized Domain Names
 
 DISTNAME =	Net-IDN-Nameprep-1.102
 CATEGORIES =	converters net
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:01 sthen Exp $
 
 # The comment is an acrostic, or maybe bacronym of Moo
 COMMENT =	Minimalist Object Orientation (with Moose compatibility)
@@ -7,7 +7,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Moo-2.003004
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 CPAN_AUTHOR =	HAARG
 

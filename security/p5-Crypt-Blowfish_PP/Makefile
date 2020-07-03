@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:40 sthen Exp $
 
 COMMENT=		Blowfish encryption implemented pure Perl
 DISTNAME=		Crypt-Blowfish_PP-1.12
-REVISION=		0
+REVISION=		1
 CATEGORIES=		security
 
 # perl

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/27 17:31:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:06 sthen Exp $
 
 COMMENT =	critique Perl source code for best-practices
 
 DISTNAME =	Perl-Critic-1.138
+REVISION =	0
 
 CATEGORIES =	devel
 

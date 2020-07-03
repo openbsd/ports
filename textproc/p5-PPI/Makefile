@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/26 14:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:48 sthen Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		PPI-1.270
 CATEGORIES=		textproc
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes

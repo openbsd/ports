@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:06 sthen Exp $
 
 COMMENT= 	creating and updating Bugzilla bugs
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	WWW-Bugzilla-1.5
 CATEGORIES=	www
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

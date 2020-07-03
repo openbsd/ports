@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/25 22:42:28 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:44:51 sthen Exp $
 
 COMMENT =		syntactic try/catch sugar for use with Exception::Class
 
 DISTNAME =		Exception-Class-TryCatch-1.13
+REVISION =		0
 
 CATEGORIES =		devel
 

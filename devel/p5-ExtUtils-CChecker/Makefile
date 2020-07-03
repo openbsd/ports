@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:51 sthen Exp $
 
 COMMENT	= 	configure-time utilities for using C headers, etc.
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	ExtUtils-CChecker-0.10
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

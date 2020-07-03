@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:19 sthen Exp $
 
 COMMENT=	simple tree object
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Tree-Simple-1.18
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # Artistic

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/24 00:10:05 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:12 sthen Exp $
 
 COMMENT =	test a list of subroutines provided by a module
 
 DISTNAME =	Test-API-0.010
+REVISION =	0
 
 CATEGORIES =	devel
 

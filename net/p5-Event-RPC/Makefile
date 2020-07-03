@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:31 sthen Exp $
 
 COMMENT =	Event based transparent Client/Server RPC framework
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Event-RPC-1.10
 CATEGORIES =	net devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/08 08:26:23 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:48 sthen Exp $
 
 COMMENT =		create PDF tables with perl
 
 DISTNAME =		PDF-Table-0.11.0
+REVISION =		0
 
 CATEGORIES =		textproc
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:52 sthen Exp $
 
 COMMENT=		Perl module for dumping Perl objects from/to XML
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		XML-Dumper-0.81
-REVISION=		2
+REVISION=		3
 CATEGORIES=		textproc devel
 
 # Artistic

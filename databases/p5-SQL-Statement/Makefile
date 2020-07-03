@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/08/18 18:51:48 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:38 sthen Exp $
 
 COMMENT =	SQL parsing and processing engine
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	SQL-Statement-1.412
 CATEGORIES =	databases
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

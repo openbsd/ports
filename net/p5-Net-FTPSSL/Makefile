@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:33 sthen Exp $
 
 COMMENT =	FTP over SSL/TLS client class
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Net-FTPSSL-0.30
 CATEGORIES =	net 
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 

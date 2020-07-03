@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:26 sthen Exp $
 
 COMMENT=	fast and simple mbox folder reader
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Mail-Mbox-MessageParser-1.5111
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>

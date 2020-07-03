@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:16 sthen Exp $
 
 COMMENT =	Perl extension to test methods for warnings
 
 DISTNAME =	Test-Warn-0.36
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

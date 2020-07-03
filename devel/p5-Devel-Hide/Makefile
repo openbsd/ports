@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/15 11:43:22 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:49 sthen Exp $
 
 COMMENT =		forces the unavailability of specified Perl modules
 
 DISTNAME =		Devel-Hide-0.0013
 CATEGORIES =		devel
+REVISION =		0
 
 MAINTAINER =		Charlene Wendling <cwen@openbsd.org>
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2019/12/28 09:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:32 sthen Exp $
 
 COMMENT=		Perl API to the dbus inter-application messaging system
 
 MODULES=		cpan
 DISTNAME=		Net-DBus-1.2.0
 CATEGORIES=		net x11
+REVISION=		0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

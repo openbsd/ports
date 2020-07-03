@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:44 sthen Exp $
 
 COMMENT=	interface to libstatgrab system statistics library
 
 MODULES=	cpan
 DISTNAME=	Unix-Statgrab-0.109
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 
 # Artistic

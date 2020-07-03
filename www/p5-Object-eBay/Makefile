@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:46:04 sthen Exp $
 
 COMMENT=	OO interface to the eBay API
 
 DISTNAME=	Object-eBay-0.5.0
 CATEGORIES=	www
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE =	Yes

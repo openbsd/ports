@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:39 sthen Exp $
 
 COMMENT=	perl interface to the SASL auth framework
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Authen-SASL-2.16
 CATEGORIES=	security
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

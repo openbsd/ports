@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:50 sthen Exp $
 
 COMMENT=	interface to the GNU aspell library
 
 MODULES=	cpan
 DISTNAME=	Text-Aspell-0.09
-REVISION =	10
+REVISION =	11
 CATEGORIES=	devel textproc
 
 # Perl

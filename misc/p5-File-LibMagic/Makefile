@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2020/05/15 20:35:10 bluhm Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:29 sthen Exp $
 
 COMMENT =	perl wrapper for libmagic
 
 DISTNAME =	File-LibMagic-1.22
+REVISION =	0
 
 CATEGORIES =	misc
 

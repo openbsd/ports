@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:32 sthen Exp $
 
 COMMENT =	modification of UTF-7 encoding for IMAP
 
@@ -6,6 +6,7 @@ DISTNAME =	Encode-IMAPUTF7-1.05
 CATEGORIES =	converters
 MODULES =	cpan
 PKG_ARCH =	*
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

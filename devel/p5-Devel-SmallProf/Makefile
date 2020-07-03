@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:50 sthen Exp $
 
 COMMENT=		per-line Perl profiler
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Devel-SmallProf-2.02
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
 PERMIT_PACKAGE=	Yes

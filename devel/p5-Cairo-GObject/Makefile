@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/16 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:41 sthen Exp $
 
 COMMENT =	integrate Cairo into the Glib type system
 
 DISTNAME =	Cairo-GObject-1.005
+REVISION =	0
 
 CATEGORIES =	devel graphics
 

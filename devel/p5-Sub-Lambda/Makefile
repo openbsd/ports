@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:10 sthen Exp $
 
 COMMENT=	syntactic sugar for lambdas in Perl
 
 DISTNAME=	Sub-Lambda-0.02
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # perl

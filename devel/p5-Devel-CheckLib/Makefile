@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:49 sthen Exp $
 
 COMMENT =	module to check for C library availablity
 
 MODULES =	cpan
 DISTNAME =	Devel-CheckLib-1.13
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

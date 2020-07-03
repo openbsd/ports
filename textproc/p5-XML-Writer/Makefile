@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2019/11/03 14:07:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2020/07/03 21:45:54 sthen Exp $
 
 COMMENT=	perl extension for writing XML documents
 
 DISTNAME=	XML-Writer-0.625
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 
 # MIT

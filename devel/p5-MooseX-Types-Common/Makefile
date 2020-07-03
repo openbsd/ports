@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:03 sthen Exp $
 
 COMMENT=		library of commonly used type constraints
 
@@ -6,7 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		MooseX-Types-Common-0.001014
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
 # perl
 PERMIT_PACKAGE=	Yes

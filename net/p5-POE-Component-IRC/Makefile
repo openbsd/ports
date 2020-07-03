@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT=	event-driven IRC-client module
 
 DISTNAME=	POE-Component-IRC-6.90
 CATEGORIES=	net
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

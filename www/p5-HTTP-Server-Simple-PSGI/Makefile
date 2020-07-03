@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:46:03 sthen Exp $
 
 COMMENT =	PSGI handler for HTTP::Server::Simple
 
 DISTNAME =	HTTP-Server-Simple-PSGI-0.16
 CATEGORIES =	www
+REVISION =	0
 
 # Same as Perl
 PERMIT_PACKAGE =	Yes

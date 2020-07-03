@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:42 sthen Exp $
 
 COMMENT =	make NEXT suck less
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Class-C3-Adopt-NEXT-0.14
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

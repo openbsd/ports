@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2020/02/19 09:33:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.27 2020/07/03 21:45:08 sthen Exp $
 
 COMMENT=	set of objects and strings
 
 MODULES=	cpan
 DISTNAME =	Set-Object-1.40
 CATEGORIES=	devel
+REVISION =	0
 
 # Artistic License 2.0
 PERMIT_PACKAGE=	Yes

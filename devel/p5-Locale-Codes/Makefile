@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/02 11:42:00 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:44:58 sthen Exp $
 
 COMMENT =	distribution of modules to handle locale codes
 
 DISTNAME =	Locale-Codes-3.62
+REVISION =	0
 
 CATEGORIES =	devel
 

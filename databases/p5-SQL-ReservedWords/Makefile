@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:37 sthen Exp $
 
 COMMENT=	reserved words in SQL and specific databases
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	SQL-ReservedWords-0.8
 CATEGORIES=	databases
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/02/10 09:12:48 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:46:01 sthen Exp $
 
 COMMENT=	HTML cleaning module
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	HTML-Scrubber-0.19
 CATEGORIES=	www
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

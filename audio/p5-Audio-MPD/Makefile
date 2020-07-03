@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/07/03 21:44:30 sthen Exp $
 
 COMMENT=		module for communicating with MPD servers
 DISTNAME=		Audio-MPD-2.004
 CATEGORIES=		audio
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes

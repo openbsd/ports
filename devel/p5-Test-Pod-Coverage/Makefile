@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:15 sthen Exp $
 
 COMMENT= 	check for pod coverage in your distribution
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Test-Pod-Coverage-1.10
 CATEGORIES=	devel
+REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE=	Yes

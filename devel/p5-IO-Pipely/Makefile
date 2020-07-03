@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:56 sthen Exp $
 
 COMMENT =	portably create pipe() or pipe-like handles
 DISTNAME =	IO-Pipely-0.005
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER =	Charlene Wendling <julianaito@posteo.jp>
 

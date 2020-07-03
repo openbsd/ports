@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:11 sthen Exp $
 
 COMMENT=	detect encoding of the current terminal
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Term-Encoding-0.03
 CATEGORIES=	devel
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

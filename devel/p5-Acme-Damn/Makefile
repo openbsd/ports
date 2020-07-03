@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:38 sthen Exp $
 
 COMMENT=		unbless perl objects
 
 DISTNAME =		Acme-Damn-0.08
 CATEGORIES=		devel
+REVISION =		0
 
 MODULES=		cpan
 

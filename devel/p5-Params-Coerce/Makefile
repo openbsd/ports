@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:05 sthen Exp $
 
 COMMENT=	allow your classes to do coercion of parameters
 
 DISTNAME=	Params-Coerce-0.14
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

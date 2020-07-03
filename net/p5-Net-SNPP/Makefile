@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/17 14:46:34 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:36 sthen Exp $
 
 COMMENT=	Perl Simple Network Pager Protocol Client
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Net-SNPP-1.17
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net devel
 
 # perl artistic license

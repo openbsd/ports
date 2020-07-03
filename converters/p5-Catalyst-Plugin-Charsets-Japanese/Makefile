@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:31 sthen Exp $
 
 COMMENT=	jcode interface for catalyst
 
 DISTNAME=	Catalyst-Plugin-Charsets-Japanese-0.06
-REVISION=	1
+REVISION=	2
 CATEGORIES=	converters www
 MODULES=	cpan
 PKG_ARCH=	*

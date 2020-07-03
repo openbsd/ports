@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2020/02/19 22:11:27 bluhm Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:15 sthen Exp $
 
 COMMENT =	test framework to run Perl::Critic
 
 DISTNAME =	Test-Perl-Critic-1.04
+REVISION =	0
 
 CATEGORIES =	devel
 

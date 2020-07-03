@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:13 sthen Exp $
 
 COMMENT=		test file attributes
 
 DISTNAME=		Test-File-1.443
 CATEGORIES=		devel
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:42 sthen Exp $
 
 COMMENT= 	client class for the ClamAV clamd virus scanner daemon
 
 DISTNAME =	File-Scan-ClamAV-1.95
 CATEGORIES=	security
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/03 14:07:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:46:06 sthen Exp $
 
 COMMENT=		find URIs in arbitrary text
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		URI-Find-0.16
-REVISION=		2
+REVISION=		3
 CATEGORIES=		www
 
 # Artistic/GPL

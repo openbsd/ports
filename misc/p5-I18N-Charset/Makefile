@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/02/06 09:36:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.36 2020/07/03 21:45:30 sthen Exp $
 
 COMMENT=	module to map charset names registered with IANA
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	I18N-Charset-1.418
 CATEGORIES=	misc
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

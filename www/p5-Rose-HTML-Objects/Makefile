@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:46:05 sthen Exp $
 COMMENT=	HTML objects for Rose
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Rose-HTML-Objects-0.6061
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www devel databases
 FIX_EXTRACT_PERMISSIONS=Yes
 

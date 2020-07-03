@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:46:04 sthen Exp $
 
 COMMENT =	adds support for SOCKS to p5-libwww
 
 DISTNAME =	LWP-Protocol-socks-1.7
 CATEGORIES =	www
 CPAN_AUTHOR =	SCR
+REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 

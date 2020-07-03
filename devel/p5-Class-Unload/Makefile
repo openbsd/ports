@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:44 sthen Exp $
 
 COMMENT =	unload a class
 DISTNAME =	Class-Unload-0.11
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

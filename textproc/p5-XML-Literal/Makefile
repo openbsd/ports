@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:53 sthen Exp $
 
 COMMENT=	embed XML directly into perl
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	XML-Literal-0.02
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 
 # GPL/Artistic

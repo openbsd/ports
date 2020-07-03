@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/10 02:13:16 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:11 sthen Exp $
 
 COMMENT =	parser for Tom's Obvious, Minimal Language
 
 DISTNAME =	TOML-0.97
 CPAN_AUTHOR =	KARUPA
+REVISION =	0
 
 CATEGORIES =	devel
 

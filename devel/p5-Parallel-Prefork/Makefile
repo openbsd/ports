@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:05 sthen Exp $
 
 COMMENT =	simple prefork server framework
 
 DISTNAME =	Parallel-Prefork-0.18
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

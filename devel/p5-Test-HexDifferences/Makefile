@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/19 22:22:58 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:13 sthen Exp $
 
 COMMENT =	test binary as hexadecimal string
 
 DISTNAME =	Test-HexDifferences-1.001
-REVISION =	0
+REVISION =	1
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 CATEGORIES =	devel

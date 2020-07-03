@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:46:04 sthen Exp $
 
 COMMENT =		perl Web Server Gateway Interface Specification
 
@@ -8,6 +8,7 @@ DISTNAME =		PSGI-1.102
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 CPAN_AUTHOR	=	MIYAGAWA
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

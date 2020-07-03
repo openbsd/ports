@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:30 sthen Exp $
 
 COMMENT=		module providing routines to submit songs to last.fm
 
 DISTNAME=		Music-Audioscrobbler-Submit-0.05
-REVISION=		1
+REVISION=		2
 CATEGORIES=		audio
 
 # perl

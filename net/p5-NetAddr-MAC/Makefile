@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:37 sthen Exp $
 
 COMMENT =	module to handle hardware MAC addresses
 
 DISTNAME =	NetAddr-MAC-0.96
+REVISION =	0
 
 CATEGORIES =	net
 

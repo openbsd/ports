@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:09 sthen Exp $
 
 COMMENT =		only use Sub::Exporter if you need it  
 
 DISTNAME =		Sub-Exporter-Progressive-0.001013
 CATEGORIES =		devel
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE =	Yes

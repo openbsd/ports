@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:36 sthen Exp $
 
 COMMENT =	seamless DB up- and downgrades
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	DBIx-Migration-0.07
 CATEGORIES =	databases
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

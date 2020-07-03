@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:14 sthen Exp $
 
 COMMENT =	overrides perl's sleep call
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Test-MockSleep-0.02
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

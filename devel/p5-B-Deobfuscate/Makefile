@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:39 sthen Exp $
 
 COMMENT=	Perl module for use in de-obfuscating source code
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 DISTNAME=	B-Deobfuscate-0.20
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # perl

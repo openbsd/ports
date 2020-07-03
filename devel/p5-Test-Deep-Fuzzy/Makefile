@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/21 04:39:58 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:12 sthen Exp $
 
 COMMENT =	fuzzy number comparison with Test::Deep
 
 DISTNAME =	Test-Deep-Fuzzy-0.01
+REVISION =	0
 
 CATEGORIES =	devel
 

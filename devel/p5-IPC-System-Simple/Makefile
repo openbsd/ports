@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:57 sthen Exp $
 
 COMMENT =	run commands simply, with detailed diagnostics
 DISTNAME =	IPC-System-Simple-1.25
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

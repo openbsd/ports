@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/08/30 19:54:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:37 sthen Exp $
 
 COMMENT =		dbd-pg wrapper for mojolicious
 
@@ -8,6 +8,7 @@ DISTNAME =		Mojo-Pg-4.15
 CPAN_AUTHOR =		SRI
 CATEGORIES =		databases
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
+REVISION =		0
 
 # artistic 2.0
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:53 sthen Exp $
 
 COMMENT=	common rules for searching for Perl things
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME =	File-Find-Rule-Perl-1.15
 CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

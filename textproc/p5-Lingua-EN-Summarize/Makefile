@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/14 02:16:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:46 sthen Exp $
 
 COMMENT=	summarize english text
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Lingua-EN-Summarize-0.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 
 PERMIT_PACKAGE=		No licence

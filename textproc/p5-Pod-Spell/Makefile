@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:48 sthen Exp $
 
 COMMENT =	formatter for spellchecking pod
 
@@ -7,7 +7,7 @@ PKG_ARCH =	*
 
 DISTNAME =	Pod-Spell-1.20
 CATEGORIES =	textproc
-REVISION =	0
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =	Yes

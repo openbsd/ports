@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/17 16:34:11 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:21 sthen Exp $
 
 COMMENT =	keep imports out of your namespace
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	namespace-autoclean-0.29
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

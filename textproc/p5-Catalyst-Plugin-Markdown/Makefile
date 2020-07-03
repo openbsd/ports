@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:45 sthen Exp $
 
 COMMENT =	persistent Markdown processor for Catalyst
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Catalyst-Plugin-Markdown-0.01
-REVISION =	2
+REVISION =	3
 CATEGORIES =	textproc
 
 # Same as Perl

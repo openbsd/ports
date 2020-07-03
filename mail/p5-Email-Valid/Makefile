@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:25 sthen Exp $
 
 COMMENT=	check validity of Internet email addresses
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Email-Valid-1.202
 CATEGORIES=	mail
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

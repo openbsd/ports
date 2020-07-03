@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/17 18:46:50 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:46:06 sthen Exp $
 
 COMMENT =	portable OAuth 1.0 authentication
 DISTNAME =	WWW-OAuth-1.000
 CATEGORIES =	www
 PKG_ARCH =	*
+REVISION =	0
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 

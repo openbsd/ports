@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:12 sthen Exp $
 
 COMMENT= 	data driven test framework
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME=	Test-Base-0.89
 CATEGORIES=	devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

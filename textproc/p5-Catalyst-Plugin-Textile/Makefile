@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:45 sthen Exp $
 
 COMMENT=	Textile for Catalyst
 
 DISTNAME=	Catalyst-Plugin-Textile-0.01
-REVISION=	3
+REVISION=	4
 CATEGORIES=	textproc
 
 # Same as Perl

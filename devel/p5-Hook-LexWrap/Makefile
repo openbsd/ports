@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:56 sthen Exp $
 
 COMMENT=	lexically scoped subroutine wrappers
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	Hook-LexWrap-0.26
 CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT = 	logging Role with easy interface for Moose
 
@@ -6,6 +6,7 @@ DISTNAME =	MooseX-Log-Log4perl-0.47
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

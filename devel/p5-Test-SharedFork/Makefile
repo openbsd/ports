@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/17 13:49:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:15 sthen Exp $
 
 COMMENT =		fork test
 
@@ -7,6 +7,7 @@ PKG_ARCH =		*
 DISTNAME =		Test-SharedFork-0.35
 CATEGORIES =		devel
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

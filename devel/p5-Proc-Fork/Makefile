@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/10/31 01:03:06 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:07 sthen Exp $
 
 COMMENT =	simple, intuitive interface to the fork() system call
 
 DISTNAME =	Proc-Fork-0.806
+REVISION =	0
 
 CATEGORIES =	devel
 

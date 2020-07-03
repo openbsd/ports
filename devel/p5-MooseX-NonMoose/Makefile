@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:02 sthen Exp $
 
 COMMENT =	easy subclassing of non-Moose classes
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	MooseX-NonMoose-0.26
 CATEGORIES =	devel
+REVISION =	0
 
 # same as perl
 PERMIT_PACKAGE =	Yes

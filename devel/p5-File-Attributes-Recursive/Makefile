@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:52 sthen Exp $
 
 COMMENT =	inherit file attributes from parent directories
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	File-Attributes-Recursive-0.02
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 # Perl

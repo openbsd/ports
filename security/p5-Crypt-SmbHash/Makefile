@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:41 sthen Exp $
 
 COMMENT=	Perl module implementing lanman and nt md4 hash functions
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Crypt-SmbHash-0.12
-REVISION=	3
+REVISION=	4
 CATEGORIES=	security
 FIX_EXTRACT_PERMISSIONS=Yes
 

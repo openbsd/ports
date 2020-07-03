@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:50 sthen Exp $
 
 COMMENT = 	module for inspecting Perl's symbol table
 
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Devel-Symdump-2.18
 EPOCH =		0
 CATEGORIES =	devel perl5
+REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE=	Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:30 sthen Exp $
 
 COMMENT=	M4P/MP4/M4a audio/video tools
 
 DISTNAME =	Audio-M4P-0.57
 CATEGORIES=	audio
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 MODULES=	cpan
 PKG_ARCH=	*

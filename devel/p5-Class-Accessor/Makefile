@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:44:41 sthen Exp $
 
 COMMENT=	automated accessor generation
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-Accessor-0.51
 CATEGORIES=	devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

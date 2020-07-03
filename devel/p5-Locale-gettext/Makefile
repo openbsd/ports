@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/07/03 21:44:58 sthen Exp $
 
 COMMENT=	interface to gettext() internationalization function
 
@@ -7,7 +7,7 @@ DISTNAME=	gettext-1.07
 PKGNAME=	p5-Locale-${DISTNAME}
 CPAN_AUTHOR=	PVANDRY
 CATEGORIES=	converters devel
-REVISION=	2
+REVISION=	3
 
 # Perl
 PERMIT_PACKAGE=	Yes

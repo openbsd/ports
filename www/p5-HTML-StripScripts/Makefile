@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:46:01 sthen Exp $
 
 COMMENT =	strip scripting constructs out of HTML
 
 DISTNAME =	HTML-StripScripts-1.06
 CATEGORIES =	www
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

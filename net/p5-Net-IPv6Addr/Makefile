@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/09 10:24:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:34 sthen Exp $
 
 COMMENT =	check validity of IPv6 addresses
 
 DISTNAME =	Net-IPv6Addr-0.96
 CATEGORIES =	net
+REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

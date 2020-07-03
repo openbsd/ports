@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:45 sthen Exp $
 
 COMMENT =	compare perl data structures
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Data-Compare-1.25
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

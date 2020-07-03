@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 21:02:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:52 sthen Exp $
 
 COMMENT=		extension to add XPath support to XML::DOM
 
 DISTNAME=		XML-DOM-XPath-0.14
 CATEGORIES=		textproc
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes

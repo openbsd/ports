@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:03 sthen Exp $
 
 COMMENT =	name your accessors foo() and set_foo()
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	MooseX-SemiAffordanceAccessor-0.10
 CATEGORIES =	devel
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

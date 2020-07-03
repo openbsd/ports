@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 21:02:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/07/03 21:45:40 sthen Exp $
 
 COMMENT=	cryptographic cipher block chaining mode
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Crypt-CBC-2.33
 CATEGORIES=	security
+REVISION =	0
 
 RUN_DEPENDS=	security/p5-Crypt-DES \
 		security/p5-Crypt-Blowfish \

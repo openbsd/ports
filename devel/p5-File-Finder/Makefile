@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:53 sthen Exp $
 
 COMMENT=        wrapper around File::Find
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	File-Finder-0.53
-REVISION=	1
+REVISION=	2
 CATEGORIES=     devel
 
 # perl

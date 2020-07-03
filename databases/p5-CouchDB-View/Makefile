@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:35 sthen Exp $
 
 COMMENT=		handle and create CouchDB views in Perl
 
 DISTNAME=		CouchDB-View-0.003
-REVISION=		0
+REVISION=		1
 CATEGORIES=		databases
 
 MODULES=		cpan

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:05 sthen Exp $
 
 COMMENT=	perl interface to the Pango libraries
 
 DISTNAME =	Pango-1.227
 CATEGORIES=	x11 devel
 CPAN_AUTHOR=	XAOC
-REVISION =	1
+REVISION =	2
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

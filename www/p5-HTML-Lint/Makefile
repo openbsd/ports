@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:46:00 sthen Exp $
 
 COMMENT=		check for HTML errors in a string or file
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME =		HTML-Lint-2.32
 CATEGORIES=		www
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE=	Yes

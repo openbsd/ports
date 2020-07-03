@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/02/10 18:57:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:46:00 sthen Exp $
 
 COMMENT =	HTML form creation, rendering and validation framework
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	HTML-FormFu-2.07
 CATEGORIES =	www textproc
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes

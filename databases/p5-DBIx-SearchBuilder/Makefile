@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/03 21:44:37 sthen Exp $
 
 COMMENT=	encapsulate SQL queries and rows in simple perl objects
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 DISTNAME =	DBIx-SearchBuilder-1.67
+REVISION =	0
 
 CATEGORIES=	databases
 

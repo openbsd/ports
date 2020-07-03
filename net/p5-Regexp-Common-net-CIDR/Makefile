@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:38 sthen Exp $
 
 COMMENT=	provide patterns for CIDR blocks
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 
 DISTNAME =	Regexp-Common-net-CIDR-0.03
 CATEGORIES=	net textproc
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

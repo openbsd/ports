@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 21:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:53 sthen Exp $
 
 COMMENT =	parse directory listing
 
 DISTNAME =	File-Listing-6.04
 CPAN_AUTHOR =	GAAS
 CATEGORIES =	devel
+REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 

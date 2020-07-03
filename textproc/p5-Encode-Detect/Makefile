@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:45 sthen Exp $
 
 COMMENT =	Encode::Encoding subclass that detects the encoding of data
 
 MODULES =	cpan
 DISTNAME =	Encode-Detect-1.01
-REVISION =	7
+REVISION =	8
 CATEGORIES =	textproc
 
 # Perl

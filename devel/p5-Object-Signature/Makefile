@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/26 14:53:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:04 sthen Exp $
 
 COMMENT=	cryptographic signatures for objects
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 FIX_EXTRACT_PERMISSIONS= Yes
 DISTNAME=	Object-Signature-1.08
 CATEGORIES=	devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

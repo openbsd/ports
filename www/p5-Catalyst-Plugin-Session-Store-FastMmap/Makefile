@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:58 sthen Exp $
 
 COMMENT=	FastMmap storage backend for session data
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Catalyst-Plugin-Session-Store-FastMmap-0.16
 CATEGORIES=	www
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

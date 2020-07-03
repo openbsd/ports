@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:38 sthen Exp $
 
 COMMENT=	manipulate SQL sort strings
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Sort-SQL-0.08
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases devel
 
 # perl

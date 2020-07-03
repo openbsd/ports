@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:04 sthen Exp $
 
 COMMENT=		base class for creating plugin-enabled objects
 
 DISTNAME=		Object-Pluggable-1.29
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 # perl

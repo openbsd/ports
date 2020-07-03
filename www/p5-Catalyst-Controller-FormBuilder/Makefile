@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:56 sthen Exp $
 
 COMMENT=	Catalyst FormBuilder Base Controller
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Catalyst-Controller-FormBuilder-0.06
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes

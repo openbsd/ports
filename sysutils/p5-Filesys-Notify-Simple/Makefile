@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/26 20:35:30 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:44 sthen Exp $
 
 COMMENT =		simple and dumb file system watcher
 
@@ -7,6 +7,7 @@ PKG_ARCH =		*
 DISTNAME =		Filesys-Notify-Simple-0.14
 CATEGORIES =		sysutils
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
+REVISION =		0
 
 BUILD_DEPENDS =		devel/p5-Test-SharedFork
 

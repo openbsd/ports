@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/12/30 11:55:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:46:05 sthen Exp $
 
 COMMENT =		removes body for HTTP response if it's not required
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Plack-Middleware-RemoveRedundantBody-0.09
 CATEGORIES =		www
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes

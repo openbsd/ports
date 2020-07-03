@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/17 14:39:43 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:51 sthen Exp $
 
 COMMENT =	flexible text flowing and word wrapping
 
 DISTNAME =	Text-Flow-0.01
 CATEGORIES =	textproc
-REVISION =	0
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =	Yes

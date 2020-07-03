@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:37 sthen Exp $
 
 COMMENT=	perl multi-level hash/array DBM that supports transactions
 
 DISTNAME =	DBM-Deep-2.0016
+REVISION =	0
 
 CATEGORIES=	databases
 

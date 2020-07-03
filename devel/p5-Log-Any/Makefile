@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/10/16 06:57:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:58 sthen Exp $
 
 COMMENT=		bringing loggers and listeners together
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Log-Any-1.707
 CATEGORIES=		devel
+REVISION=		0
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 

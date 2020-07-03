@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/03 21:45:18 sthen Exp $
 
 COMMENT=	library for parsing and formatting dates and times
 
@@ -7,6 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	TimeDate-2.30
 PKGNAME=	p5-Time-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 # Artistic
 PERMIT_PACKAGE=	Yes

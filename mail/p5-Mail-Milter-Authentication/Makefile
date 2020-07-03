@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/25 20:59:08 giovanni Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:26 sthen Exp $
 
 COMMENT =	perl implementation of email authentication standards
 
@@ -6,7 +6,7 @@ V =		1.1.0
 DISTNAME =	Mail-Milter-Authentication-v${V}
 PKGNAME =	p5-Mail-Milter-Authentication-${V}
 CATEGORIES =	mail
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 

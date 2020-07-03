@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:43 sthen Exp $
 
 COMMENT=		make use of SSL with POE
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		POE-Component-SSLify-1.012
 CATEGORIES=		net security
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes

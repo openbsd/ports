@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/07/03 21:44:31 sthen Exp $
 
 COMMENT=		Perl extension for Ogg Vorbis streams
 
 V=			0.05
 DISTNAME=		libvorbis-perl-${V}
 PKGNAME=		p5-libvorbis-${V}
-REVISION=		5
+REVISION=		6
 CATEGORIES=		audio
 
 # GPL or Artistic

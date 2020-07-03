@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/09 23:35:57 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:17 sthen Exp $
 
 COMMENT =	explain tools for Perl's Test2 framework
 
 CPAN_AUTHOR =	PETDANCE
 DISTNAME =	Test2-Tools-Explain-0.02
+REVISION =	0
 
 CATEGORIES =	devel
 

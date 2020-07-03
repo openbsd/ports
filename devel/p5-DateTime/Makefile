@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/07/03 21:44:47 sthen Exp $
 
 COMMENT =		perl objected oriented Date Time
 
@@ -6,7 +6,7 @@ MODULES =		cpan
 DISTNAME =		DateTime-1.07
 EPOCH =			0
 CATEGORIES =		devel
-REVISION =		2
+REVISION =		3
 
 MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
 

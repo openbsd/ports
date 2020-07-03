@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:08 sthen Exp $
 
 COMMENT =	simple interface to subversion's editor interface#'
 
 DISTNAME =	SVN-Simple-0.28
 CATEGORIES =	devel
+REVISION =	0
 
 CPAN_AUTHOR =	CLKAO
 MODULES =	cpan
