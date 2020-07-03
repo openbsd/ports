@@ -1,5 +1,5 @@
 SHA256 (eliot/danosc.dawg) = W5WPswZz5U8/kQf+yFtu+8YK7D5X+nBhA0JXI4U2xEY=
-SHA256 (eliot/eliot-2.1.tar.gz) = NVZf+NGpCWY9XcMaHtpnlqqB291PbqNDhmDzm0j2rC4=
+SHA256 (eliot/eliot-2.1pl20200624.tar.gz) = 6i/luUO/1ahsG3iix2LuWbgvWRraa3Xhh27j4Tybtic=
 SHA256 (eliot/eliot-dic-cs.dawg) = XJUtv6lG4AGCZdi/y2CiLKBT8P5gxXkoE2gQCMt1Rng=
 SHA256 (eliot/eliot-dic-fr.dawg) = Xljscd4KP3zl1i3CWVQJfC3beeVH2HojjtYp+ztM5EI=
 SHA256 (eliot/lex-fise.dawg) = qbpm12Bo/an2Wq8D4g7XUJJDvfx7kcQNGfxR+JNd1Wk=
@@ -7,7 +7,7 @@ SHA256 (eliot/rak.dawg) = zb+DtIN6KGsEnT6Feo0kXyDkRmnb/66i0Z2TTNWlv/U=
 SHA256 (eliot/sowpods06.dawg) = X0b65j9pDaZ85P8wEdIU4KBQV2HmrUeOw84GC8uUmVM=
 SHA256 (eliot/twl06.dawg) = 4eoz0oBRNyZk1DW4lw2zaTpTa17YOYaW1m4J3VnGSwE=
 SIZE (eliot/danosc.dawg) = 444874
-SIZE (eliot/eliot-2.1.tar.gz) = 1182295
+SIZE (eliot/eliot-2.1pl20200624.tar.gz) = 1024453
 SIZE (eliot/eliot-dic-cs.dawg) = 471118
 SIZE (eliot/eliot-dic-fr.dawg) = 314634
 SIZE (eliot/lex-fise.dawg) = 525106

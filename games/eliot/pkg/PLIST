@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/07/03 14:27:29 rsadowski Exp $
 @bin bin/compdic
 @bin bin/eliot
 @bin bin/eliotcurses
@@ -13,8 +13,7 @@ share/eliot/lex-fise.dawg
 share/eliot/rak.dawg
 share/eliot/sowpods06.dawg
 share/eliot/twl06.dawg
-share/icons/
-share/icons/eliot.xpm
+share/icons/eliot.png
 share/locale/ca/LC_MESSAGES/eliot.mo
 share/locale/cs/LC_MESSAGES/eliot.mo
 share/locale/en/LC_MESSAGES/eliot.mo
@@ -22,6 +21,7 @@ share/locale/en@boldquot/LC_MESSAGES/eliot.mo
 share/locale/en@quot/LC_MESSAGES/eliot.mo
 share/locale/es/LC_MESSAGES/eliot.mo
 share/locale/fr/LC_MESSAGES/eliot.mo
+share/locale/gl/LC_MESSAGES/eliot.mo
 share/locale/id/LC_MESSAGES/eliot.mo
 share/locale/it/LC_MESSAGES/eliot.mo
 share/locale/sr/LC_MESSAGES/eliot.mo
