@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1998 2020/07/03 15:24:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1999 2020/07/03 17:05:22 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1381,7 +1381,6 @@
      SUBDIR += py-click-threading,python3
      SUBDIR += py-clint
      SUBDIR += py-clint,python3
-     SUBDIR += py-cloudpickle
      SUBDIR += py-cloudpickle,python3
      SUBDIR += py-codestyle
      SUBDIR += py-codestyle,python3

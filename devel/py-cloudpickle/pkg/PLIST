@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/11/14 16:16:05 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/07/03 17:05:22 sthen Exp $
+@pkgpath devel/py-cloudpickle
 lib/python${MODPY_VERSION}/site-packages/cloudpickle/
 lib/python${MODPY_VERSION}/site-packages/cloudpickle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cloudpickle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,4 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/cloudpickle/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cloudpickle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cloudpickle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cloudpickle/${MODPY_PYCACHE}cloudpickle.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cloudpickle/${MODPY_PYCACHE}cloudpickle_fast.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cloudpickle/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cloudpickle/cloudpickle.py
+lib/python${MODPY_VERSION}/site-packages/cloudpickle/cloudpickle_fast.py
+lib/python${MODPY_VERSION}/site-packages/cloudpickle/compat.py
