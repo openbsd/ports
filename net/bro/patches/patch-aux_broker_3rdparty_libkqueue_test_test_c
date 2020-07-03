@@ -1,0 +1,13 @@
+$OpenBSD: patch-aux_broker_3rdparty_libkqueue_test_test_c,v 1.1 2020/07/03 17:20:09 ajacoutot Exp $
+
+Index: aux/broker/3rdparty/libkqueue/test/test.c
+--- aux/broker/3rdparty/libkqueue/test/test.c.orig
++++ aux/broker/3rdparty/libkqueue/test/test.c
+@@ -19,7 +19,6 @@
+ #endif
+ #include <sys/types.h>
+ #include <limits.h>
+-#include <execinfo.h>
+ 
+ #include "common.h"
+ 
