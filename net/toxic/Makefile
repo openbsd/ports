@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 15:59:21 sthen Exp $
 
 COMMENT =		ncurses-based Tox client
 
@@ -44,6 +44,9 @@ RUN_DEPENDS =		devel/desktop-file-utils
 .endif
 
 NO_TEST =		Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/cfg/checks/python.mk
 
 .if ${FLAVOR:Mno_x11}
 post-install:
