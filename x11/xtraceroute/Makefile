@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2020/07/03 22:14:41 sthen Exp $
 
 COMMENT=	graphical version of traceroute
 
 DISTNAME=	xtraceroute-0.9.2
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	net x11
 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-share_xtraceroute-resolve-location_sh_in,v 1.1 2020/07/03 22:14:41 sthen Exp $
+
+Index: share/xtraceroute-resolve-location.sh.in
+--- share/xtraceroute-resolve-location.sh.in.orig
++++ share/xtraceroute-resolve-location.sh.in
+@@ -18,7 +18,7 @@ fi
+ if [ `$HOST 2>&1 | grep "Extended usage" | wc -l` = 1 ]
+ then
+ 	HOSTVER=EW
+-elif [ `$HOST 2>&1 | grep "enables TCP/IP mode" | wc -l` = 1 ]
++elif [ `$HOST 2>&1 | grep -e "usage: host" -e "enables TCP/IP mode" | wc -l` = 1 ]
+ then
+ 	HOSTVER=BIND
+ else
