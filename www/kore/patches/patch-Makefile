@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.4 2020/07/01 14:02:02 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.5 2020/07/03 21:11:13 sthen Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -31,7 +31,7 @@ Index: Makefile
  	S_SRC+=src/python.c
 -	KORE_PYTHON_LIB?=$(shell python3-config --ldflags)
 -	KORE_PYTHON_INC?=$(shell python3-config --includes)
-+	KORE_PYTHON_LIB?=$(shell ${MODPY_BIN}-config --ldflags)
++	KORE_PYTHON_LIB?=$(shell ${MODPY_BIN}-config --ldflags --embed)
 +	KORE_PYTHON_INC?=$(shell ${MODPY_BIN}-config --includes)
  	LDFLAGS+=$(KORE_PYTHON_LIB)
  	CFLAGS+=$(KORE_PYTHON_INC) -DKORE_USE_PYTHON

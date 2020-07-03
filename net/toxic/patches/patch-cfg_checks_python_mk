@@ -1,4 +1,4 @@
-$OpenBSD: patch-cfg_checks_python_mk,v 1.1 2020/07/03 15:59:21 sthen Exp $
+$OpenBSD: patch-cfg_checks_python_mk,v 1.2 2020/07/03 21:11:13 sthen Exp $
 
 Index: cfg/checks/python.mk
 --- cfg/checks/python.mk.orig
@@ -9,7 +9,7 @@ Index: cfg/checks/python.mk
  ifneq ($(CHECK_PYTHON3_LIBS), error)
 -    LDFLAGS += $(shell python3-config --ldflags)
 -    CFLAGS += $(PYTHON_CFLAGS) $(shell python3-config --includes)
-+    LDFLAGS += $(shell ${MODPY_BIN}-config --ldflags)
++    LDFLAGS += $(shell ${MODPY_BIN}-config --embed --ldflags)
 +    CFLAGS += $(PYTHON_CFLAGS) $(shell ${MODPY_BIN}-config --includes)
      OBJ += $(PYTHON_OBJ)
  else ifneq ($(MAKECMDGOALS), clean)
