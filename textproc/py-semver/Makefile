@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/12/17 14:11:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:16 sthen Exp $
 
 COMMENT =		python helper for Semantic Versioning
 
 MODPY_EGG_VERSION =	2.9.0
 DISTNAME =		semver-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

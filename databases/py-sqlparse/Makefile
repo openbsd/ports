@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:37 sthen Exp $
 
 COMMENT =		non-validating SQL parser
 
 MODPY_EGG_VERSION =	0.2.4
 DISTNAME =		sqlparse-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		databases
 

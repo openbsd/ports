@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/18 23:54:11 pamela Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:20 sthen Exp $
 
 COMMENT =		automatically mock HTTP interactions to speed testing
 
 MODPY_EGG_VERSION =	2.1.1
 DISTNAME =		vcrpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-vcrpy-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 

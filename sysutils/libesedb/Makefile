@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/17 21:15:38 rpointel Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:09 sthen Exp $
 
 COMMENT =	library and tools to access the ESE and EDB format
 
 VERSION = 	20191220
 DISTNAME =	libesedb-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
+REVISION =	0
 
 SHARED_LIBS +=  esedb                       0.0 # 1.0
 

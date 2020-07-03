@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/31 11:46:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:43 sthen Exp $
 
 COMMENT =	implemention of the crc32c algorithm in hardware
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	2.0
 
 DISTNAME =	crc32c-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

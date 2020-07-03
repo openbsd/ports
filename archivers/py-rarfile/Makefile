@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/07 21:45:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:34 sthen Exp $
 
 COMMENT =		RAR archive reader for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	3.1
 
 DISTNAME =		rarfile-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		archivers
 

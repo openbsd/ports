@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.53 2020/03/23 05:05:03 bket Exp $
+# $OpenBSD: Makefile,v 1.54 2020/07/03 21:12:39 sthen Exp $
 
-COMMENT=		enhanced interactive Python shell
+COMMENT =		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	5.8.0
-REVISION =		3
-DISTNAME=		ipython-${MODPY_EGG_VERSION}
+REVISION =		4
+DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
-CATEGORIES=		devel
+CATEGORIES =		devel
 
-HOMEPAGE=		https://ipython.org/
+HOMEPAGE =		https://ipython.org/
 
-MAINTAINER=		Edd Barrett <edd@openbsd.org>
+MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-MODULES=		lang/python
+MODULES =		lang/python
 
 RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
 			databases/py-pickleshare${MODPY_FLAVOR} \

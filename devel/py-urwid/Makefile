@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/01/07 12:09:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/07/03 21:12:51 sthen Exp $
 
 COMMENT =	console user interface library for python
 
@@ -7,6 +7,7 @@ DISTNAME =	urwid-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 EPOCH =		0
+REVISION =	0
 
 HOMEPAGE =	http://urwid.org/
 

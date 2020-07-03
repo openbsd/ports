@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/05 20:43:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:49 sthen Exp $
 
 COMMENT =	generic test automation framework for acceptance testing
 
@@ -9,6 +9,7 @@ GH_ACCOUNT =	robotframework
 GH_PROJECT =	robotframework
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

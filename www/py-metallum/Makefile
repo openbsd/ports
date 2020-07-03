@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/26 20:09:50 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:19 sthen Exp $
 
 COMMENT =		basic python API for www.metal-archives.com
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		python-metallum-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
 CATEGORIES =		www
+REVISION =		0
 
 HOMEPAGE =		https://github.com/lcharlick/python-metallum
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/14 17:25:15 semarie Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:28 sthen Exp $
 
 MODPY_EGG_VERSION =	5.0.5
 TRYTON_MODULE =		sale_supply_drop_shipment
+REVISION =		0
 
 TRYTON_DEPENDS +=	company \
 			purchase \

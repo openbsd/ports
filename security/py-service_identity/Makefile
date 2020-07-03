@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:07 sthen Exp $
 
 COMMENT =		service identity verification for pyOpenSSL/py-cryptography
 
 MODPY_EGG_VERSION =	18.1.0
 DISTNAME =		service_identity-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 # also on pypi, but no tests present
 GH_ACCOUNT =		pyca

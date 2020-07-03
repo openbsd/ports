@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/30 13:18:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:12:52 sthen Exp $
 
 COMMENT=		measures number of terminal column cells of wide-char code
 
 MODPY_EGG_VERSION=	0.1.9
 DISTNAME=		wcwidth-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

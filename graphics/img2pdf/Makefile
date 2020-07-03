@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:12:55 sthen Exp $
 
 COMMENT =		losslessly convert images to PDF
 
 MODPY_EGG_VERSION =	0.3.3
 DISTNAME =		img2pdf-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics
 

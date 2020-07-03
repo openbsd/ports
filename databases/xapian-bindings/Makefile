@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/03/04 23:31:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/03 21:12:37 sthen Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -6,6 +6,8 @@ COMMENT-ruby=	ruby bindings for Xapian
 
 V=		1.4.15
 DISTNAME=	xapian-bindings-${V}
+
+REVISION-python= 0
 
 PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}

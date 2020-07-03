@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/26 12:57:45 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:57 sthen Exp $
 
 COMMENT =		convex optimization package
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.2.3
 DISTNAME =		cvxopt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

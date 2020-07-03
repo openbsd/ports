@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/15 17:09:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:21 sthen Exp $
 
 COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
 MODPY_EGG_VERSION =	0.3.7
 DISTNAME =		tootstream-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

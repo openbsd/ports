@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/22 11:37:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:36 sthen Exp $
 
 COMMENT =	tool for netlist comparison (LVS) and format manipulation
 DISTNAME =	netgen-1.5.138
 EXTRACT_SUFX =	.tgz
+REVISION =	0
 
 CATEGORIES =	cad
 

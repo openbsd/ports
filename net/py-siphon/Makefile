@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/27 18:08:18 bket Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:02 sthen Exp $
 
 COMMENT=	download data from remote data services (such as THREDDS)
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	0.8.0
 DISTNAME=		siphon-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://unidata.github.io/siphon/
 

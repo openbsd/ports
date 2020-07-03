@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:23 sthen Exp $
 
 COMMENT =	Mah Jongg four players board game for KDE5
 DISTNAME =	kajongg-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kajongg
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:14 sthen Exp $
 
 COMMENT =		encoder, decoder, and lint/validator for JSON
 
@@ -6,7 +6,7 @@ DISTNAME =		demjson-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.2.4
 MODPY_PI =		Yes
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =	textproc devel
 

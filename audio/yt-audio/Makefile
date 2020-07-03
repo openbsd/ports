@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/06 08:48:06 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:35 sthen Exp $
 
 COMMENT =		youtube-dl wrapper to manage youtube audio
 
 MODPY_EGG_VERSION =	0.1
 DISTNAME =		yt-audio-${MODPY_EGG_VERSION}
 CATEGORIES =		audio
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

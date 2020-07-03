@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.30 2019/11/18 04:37:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.31 2020/07/03 21:12:53 sthen Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
 MODPY_EGG_VERSION=	1.6.5
-REVISION-gui=		1
-REVISION-main=		1
+REVISION-gui=		2
+REVISION-main=		2
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.pylint.org/
+HOMEPAGE=		https://www.pylint.org/
 
 # GPL
 PERMIT_PACKAGE=	Yes

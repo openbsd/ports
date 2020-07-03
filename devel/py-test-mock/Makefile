@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:12:50 sthen Exp $
 
 COMMENT =		thin-wrapper around mock package for easier use with pytest
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.6.0
 DISTNAME =		pytest-mock-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/pytest-dev/pytest-mock/
 

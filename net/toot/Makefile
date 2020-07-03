@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2020/06/17 11:56:29 kn Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:13:03 sthen Exp $
 
 COMMENT =		interact with Mastodon social networks from the command line
 
 MODPY_EGG_VERSION =	0.27.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
+
+REVISION =		0
 
 CATEGORIES =		net
 

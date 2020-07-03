@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/08 22:40:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:12 sthen Exp $
 
 COMMENT =		tarsnap wrapper which automatically expires backups
 
 MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		tarsnapper-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 

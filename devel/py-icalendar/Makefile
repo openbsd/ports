@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/12/31 23:17:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:12:45 sthen Exp $
 
 COMMENT =		parser/generator of iCalendar files
 
 MODPY_EGG_VERSION =	4.0.4
 DISTNAME =		icalendar-${MODPY_EGG_VERSION}
 PKGNAME =		py-icalendar-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

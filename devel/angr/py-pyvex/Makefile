@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/15 18:36:18 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:38 sthen Exp $
 
 COMMENT =		Python interface to libVEX and VEX IR
+REVISION =		0
 
 ANGR_PYTHON_MODULE =	pyvex
 

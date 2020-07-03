@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/19 08:23:42 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:17 sthen Exp $
 
 COMMENT=		all-in-one management software
 
 MV=			12.0
 SV=			20190517
 V=			${MV}.${SV}
-REVISION=		1
+REVISION=		2
 
 DISTNAME=		odoo_${V}
 

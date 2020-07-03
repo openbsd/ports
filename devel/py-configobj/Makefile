@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:12:42 sthen Exp $
 
 COMMENT=		config file reader and writer
 
 MODPY_EGG_VERSION =	5.0.6
 DISTNAME=		configobj-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 

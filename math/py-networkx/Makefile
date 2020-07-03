@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/14 10:13:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:57 sthen Exp $
 
 COMMENT =		module for creating and manipulating graphs and networks
 
 MODPY_EGG_VERSION =	2.3
 DISTNAME =		networkx-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		math
 

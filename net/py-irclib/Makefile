@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/04/01 07:52:38 bket Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:13:01 sthen Exp $
 
 COMMENT=	Internet Relay Chat (IRC) protocol client library for Python
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=	sixohsix
 GH_PROJECT=	python-irclib
 GH_COMMIT=	acd5aa66f431550bd142e90590b64ff6840e6648
 DISTNAME=	py-irclib-0.4.8.20110306
+REVISION=	0
 
 CATEGORIES=	net
 

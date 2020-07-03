@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/12 10:03:31 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:17 sthen Exp $
 
 COMMENT =	create spreadsheet files compatible with MS Excel 95-2003
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.3.0
 
 DISTNAME =	xlwt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	textproc devel
 

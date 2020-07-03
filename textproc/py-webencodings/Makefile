@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/26 00:32:05 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:17 sthen Exp $
 
 COMMENT =		character encoding aliases for legacy web content
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		webencodings-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
-REVISION =		1
+REVISION =		2
 
 # BSD
 PERMIT_PACKAGE =	Yes

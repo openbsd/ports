@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/03/17 22:18:14 rpointel Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:13:05 sthen Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
@@ -15,6 +15,7 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 DISTNAME =	plaso-${MODPY_EGG_VERSION}
+REVISION =	0
 
 MASTER_SITES =	https://github.com/log2timeline/plaso/releases/download/${MODPY_EGG_VERSION}/
 

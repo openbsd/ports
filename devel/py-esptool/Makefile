@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/23 17:35:04 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:44 sthen Exp $
 
 COMMENT =		esp8266 and esp32 rom bootloader communication tool
 
 MODPY_EGG_VERSION =	2.8
 DISTNAME =		esptool-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/espressif/esptool

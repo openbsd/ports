@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:07 sthen Exp $
 
 COMMENT =		PGP packet parser library for Python
 
 MODPY_EGG_VERSION =	1.5
 DISTNAME =		pgpdump-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 

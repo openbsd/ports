@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:14 sthen Exp $
 
 COMMENT =		markdown to reStructuredText converter
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.1.6
 
 DISTNAME =		m2r-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel textproc
 

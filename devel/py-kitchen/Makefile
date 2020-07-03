@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/29 22:57:08 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:46 sthen Exp $
 
 COMMENT =		kitchen contains a cornucopia of useful code
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.2.6
 
 DISTNAME =		kitchen-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

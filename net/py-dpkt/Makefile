@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:13:01 sthen Exp $
 
 COMMENT =		python network packet manipulation library
 
 MODPY_EGG_VERSION =	1.9.1
 DISTNAME =		dpkt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =     0
 
 CATEGORIES =		net
 

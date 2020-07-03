@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/01/23 21:21:08 martin Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:58 sthen Exp $
 
 COMMENT=	Python package to manage extremely large amounts of data
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	3.6.1
 DISTNAME=		tables-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.pytables.org/
 MAINTAINER=		Martin Reindl <martin@catai.org>

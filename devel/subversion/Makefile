@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2020/05/31 19:29:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.182 2020/07/03 21:12:53 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -9,6 +9,7 @@ COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.14.0
 REVISION=		0
+REVISION-python=	1
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 FULLPKGNAME-main=	subversion-${VERSION}${FLAVOR_EXT:S/-python3//}

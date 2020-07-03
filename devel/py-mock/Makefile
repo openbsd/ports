@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/12/02 22:47:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:12:46 sthen Exp $
 
 COMMENT=		python mocking and patching library for testing
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	3.0.5
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://mock.readthedocs.io/en/latest/
 

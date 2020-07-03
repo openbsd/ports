@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/04/20 20:51:51 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:54 sthen Exp $
 
 COMMENT =		solitaire card games collection
 MODPY_EGG_VERSION =	2.6.4
 DISTNAME =		PySolFC-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-${MODPY_EGG_VERSION}
 CATEGORIES =		games
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://pysolfc.sourceforge.net/
 

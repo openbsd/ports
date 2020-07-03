@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/17 21:33:50 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:10 sthen Exp $
 
 COMMENT =	library and tools to access the (split) RAW image format
 
 VERSION = 	20191221
 DISTNAME =	libsmraw-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
+REVISION =	0
 
 SHARED_LIBS +=  smraw                       0.1 # 1.0
 

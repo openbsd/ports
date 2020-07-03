@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/17 21:22:59 rpointel Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:09 sthen Exp $
 
 COMMENT =	library and tools to access NTFS
 
 VERSION = 	20200223
 DISTNAME =	libfsntfs-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
+REVISION =	0
 
 SHARED_LIBS +=  fsntfs                       0.1 # 1.0
 

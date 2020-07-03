@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/26 16:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:15 sthen Exp $
 
 COMMENT=		Python API and tools to manipulate OpenDocument files
 
 MODPY_EGG_VERSION=	1.4.1
 DISTNAME=		odfpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-odfpy-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		textproc devel
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:12:45 sthen Exp $
 
 COMMENT =	editable interval tree data structure for Python 2 and 3
 
 MODPY_EGG_VERSION =	3.0.2
 DISTNAME =	intervaltree-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2020/03/01 10:26:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2020/07/03 21:13:13 sthen Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -9,6 +9,7 @@ COMMENT-python =	Python bindings for link-grammar
 
 VERSION =		5.8.0
 DISTNAME =		link-grammar-${VERSION}
+REVISION-python =	0
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}

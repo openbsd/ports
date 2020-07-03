@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:13:08 sthen Exp $
 
 COMMENT =	information gathering suite
 
 VERSION =	3.0.6
 DISTNAME =	theharvester-${VERSION}
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2020/01/02 13:13:22 kn Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:13:12 sthen Exp $
 
 COMMENT =	minimalistic console file manager
 
 MODPY_EGG_VERSION =	1.9.3
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils misc
 

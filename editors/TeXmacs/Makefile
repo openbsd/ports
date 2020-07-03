@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2020/03/20 16:44:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/03 21:12:53 sthen Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
 DISTNAME=	TeXmacs-1.99.12-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	editors print x11
+REVISION=	0
 
 HOMEPAGE=	https://texmacs.org/
 

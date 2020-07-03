@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/17 14:18:40 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:50 sthen Exp $
 
 COMMENT =		pytest plugin to abort hanging tests
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.3.4
 
 DISTNAME =		pytest-timeout-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
+REVISION =		0
 
 CATEGORIES =		devel
 

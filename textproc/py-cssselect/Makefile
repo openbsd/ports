@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/25 21:53:58 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:13:13 sthen Exp $
 
 COMMENT =		parse CSS3 Selectors and translates them to XPath 1.0
 
 MODPY_EGG_VERSION =	1.0.0
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 GH_ACCOUNT =		scrapy
 GH_PROJECT =		cssselect

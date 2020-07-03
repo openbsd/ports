@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/08 17:14:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:12:50 sthen Exp $
 
 COMMENT =	Python Sorted Container Types
 
 MODPY_EGG_VERSION =	2.1.0
 DISTNAME =	sortedcontainers-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2020/01/22 05:53:01 kmos Exp $
+# $OpenBSD: Makefile,v 1.30 2020/07/03 21:12:43 sthen Exp $
 
 COMMENT =		country, language, currency and scripts definitions
 
 MODPY_EGG_VERSION =	19.8.18
 DISTNAME =		pycountry-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
+REVISION =		0
 
 CATEGORIES =		devel
 

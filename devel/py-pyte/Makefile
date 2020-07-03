@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/15 14:08:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:48 sthen Exp $
 
 COMMENT =	simple VTXXX-compatible terminal emulator
 
 MODPY_EGG_VERSION = 0.8.0
 DISTNAME =	pyte-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 

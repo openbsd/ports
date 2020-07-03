@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/10 07:13:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:05 sthen Exp $
 
 COMMENT =	extensible network protocol fuzzer
 
 MODPY_EGG_VERSION =	0.2.0
 DISTNAME =	boofuzz-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	security
 

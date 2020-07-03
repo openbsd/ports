@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/17 21:26:58 rpointel Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:09 sthen Exp $
 
 COMMENT =	library and tools to access the IE Cache File (index.dat)
 
 VERSION = 	20191221
 DISTNAME =	libmsiecf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
+REVISION =	0
 
 SHARED_LIBS +=  msiecf                       0.0 # 1.0
 

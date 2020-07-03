@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/30 07:04:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:56 sthen Exp $
 
 COMMENT =		wavelet transform module
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		PyWavelets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

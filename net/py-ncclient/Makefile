@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/12/21 14:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:01 sthen Exp $
 
 COMMENT =		Python library for NETCONF clients
 
 MODPY_EGG_VERSION =	0.6.6
-REVISION =		0
+REVISION =		1
 DISTNAME =		ncclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

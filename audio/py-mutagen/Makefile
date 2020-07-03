@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2020/05/21 10:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2020/07/03 21:12:35 sthen Exp $
 
 COMMENT =	Python module to handle audio metadata
 
 MODPY_EGG_VERSION = 1.43.0
-REVISION =	1
+REVISION =	2
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 PORTROACH =	skipv:release-${MODPY_EGG_VERSION}

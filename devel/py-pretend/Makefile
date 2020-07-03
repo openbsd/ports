@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:48 sthen Exp $
 
 COMMENT =		a library for stubbing in Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.0.9
 DISTNAME =		pretend-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/alex/pretend
 

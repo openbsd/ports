@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/06 20:00:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:12:59 sthen Exp $
 
 COMMENT =		C++ library implementing a BitTorrent client
 
 MODPY_EGG_VERSION =	1.2.3
 DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  	torrent-rasterbar 2.0	# 10.0.0
 

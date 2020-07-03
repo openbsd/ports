@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/05/14 17:26:45 semarie Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:33 sthen Exp $
 
 COMMENT =		tryton web client
 
 VERSION =		5.2.14
 DEPVERSION =		6
 DISTNAME =		tryton-sao-${VERSION}
+REVISION =		0
 
 EXTRACT_SUFX =		.tgz
 WRKDIST =		${WRKDIR}/package

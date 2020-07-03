@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/10 14:52:45 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:20 sthen Exp $
 
 COMMENT =		jquery-like library for python
 
@@ -6,6 +6,7 @@ COMMENT =		jquery-like library for python
 MODPY_EGG_VERSION =	1.4.1
 DISTNAME =		pyquery-${MODPY_EGG_VERSION}
 PKGNAME =		py-query-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 

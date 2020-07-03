@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/20 17:47:44 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:48 sthen Exp $
 
 COMMENT =		module for fast object serialization similar to bencode
 
 MODPY_EGG_VERSION =	1.0.6
 DISTNAME =		rencode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

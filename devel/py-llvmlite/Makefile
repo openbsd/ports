@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/03 13:15:39 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:12:46 sthen Exp $
 
 COMMENT =	lightweight LLVM-Python binding for writing JIT compilers
 
 MODPY_EGG_VERSION =	0.29.0
-REVISION =	0
+REVISION =	1
 GH_ACCOUNT =	numba
 GH_PROJECT =	llvmlite
 GH_TAGNAME =	v${MODPY_EGG_VERSION}

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2019/11/08 23:34:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:12:38 sthen Exp $
 
 COMMENT =		modular python code checker wrapping pep8 and pyflakes
 
 MODPY_EGG_VERSION =	3.7.9
 DISTNAME =		flake8-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

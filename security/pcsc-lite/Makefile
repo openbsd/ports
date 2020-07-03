@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2020/02/05 21:22:17 kn Exp $
+# $OpenBSD: Makefile,v 1.50 2020/07/03 21:13:05 sthen Exp $
 
 COMMENT=	resource manager for PC/SC
 
 V=		1.8.26
-REVISION=	0
+REVISION=	1
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
 

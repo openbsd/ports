@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/04/01 14:43:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2020/07/03 21:13:04 sthen Exp $
 
 COMMENT=		GTD organizer for GNOME
 
@@ -7,6 +7,7 @@ GH_ACCOUNT =		getting-things-gnome
 GH_COMMIT =		54b2793be236da41549360c5aeb0da5e33a7ff60
 MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		gtg-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES=		productivity
 

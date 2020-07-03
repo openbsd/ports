@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:56 sthen Exp $
 
 COMMENT =		SVG scrubber
 MODPY_EGG_VERSION =	0.35
-REVISION =		3
+REVISION =		4
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.codedread.com/scour/
 

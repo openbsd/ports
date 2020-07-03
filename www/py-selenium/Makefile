@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/12 04:43:27 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:20 sthen Exp $
 
 COMMENT =		Python bindings for Selenium WebDriver
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	3.14.1
 DISTNAME =		selenium-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		www devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		http://www.seleniumhq.org/
 

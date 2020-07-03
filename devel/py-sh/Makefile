@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:49 sthen Exp $
 
 COMMENT =		Python subprocess interface
 
 MODPY_EGG_VERSION =	1.12.14
-REVISION =		1
+REVISION =		2
 DISTNAME =		sh-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel

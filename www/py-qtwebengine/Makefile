@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/19 04:19:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:19 sthen Exp $
 
 COMMENT =	python Qt5WebEngine bindings
 
 V =		5.13.2
 DISTNAME =	PyQtWebEngine-${V}
 PKGNAME =	py-qtwebengine-${V}
+REVISION =	0
 
 CATEGORIES =	www devel
 

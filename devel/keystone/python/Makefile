@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/15 14:23:20 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:39 sthen Exp $
 
 COMMENT =	Python bindings for keystone
 
 MODPY_EGG_VERSION = ${GH_TAGNAME}
 
 PKGNAME =       py-${DISTNAME}
-REVISION =      1
+REVISION =      2
 
 MODULES =       lang/python
 USE_GMAKE =     Yes

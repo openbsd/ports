@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/18 11:53:15 pvk Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:12 sthen Exp $
 
 COMMENT =		python SDK for the VMware vSphere API
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	6.7.3
 
 DISTNAME =		pyvmomi-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 

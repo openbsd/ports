@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:12:45 sthen Exp $
 
 COMMENT =		IPython vestigial utilities
 
 MODPY_EGG_VERSION =	0.2.0
 DISTNAME =		ipython_genutils-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

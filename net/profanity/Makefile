@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2020/06/29 04:54:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/03 21:13:00 sthen Exp $
 
 COMMENT =	console based XMPP client
 DISTNAME =	profanity-0.9.4
 CATEGORIES =	net
+REVISION =	0
 
 HOMEPAGE =	https://profanity-im.github.io/
 

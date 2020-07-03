@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/20 14:48:44 mariani Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:17 sthen Exp $
 
 COMMENT =	extract data from xls and xlsx spreadsheet files
 
 MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		xlrd-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =	textproc devel
 

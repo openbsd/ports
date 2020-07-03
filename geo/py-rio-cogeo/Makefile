@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/10 07:20:01 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:12:54 sthen Exp $
 
 COMMENT =	cloud optimized GeoTiff creation plugin for rasterio
 
 MODPY_EGG_VERSION =	1.1.10
 DISTNAME =	rio-cogeo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/.dev/pre/}
+REVISION =	0
 
 CATEGORIES =	geo
 

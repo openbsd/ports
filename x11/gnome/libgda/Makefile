@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2020/06/09 21:50:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2020/07/03 21:13:22 sthen Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -20,7 +20,7 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main =		4
+REVISION-main=		5
 REVISION-ldap=		1
 REVISION-mysql=		1
 REVISION-pgsql=		1

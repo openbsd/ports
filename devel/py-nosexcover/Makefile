@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:47 sthen Exp $
 
 COMMENT =		extend nose coverage to add Cobertura-style XML reports
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.0.11
 DISTNAME =		nosexcover-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 # BSD
 PERMIT_PACKAGE =	Yes

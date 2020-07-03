@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/25 10:02:55 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:12:54 sthen Exp $
 
 COMMENT =	client library and CLI for Planet's public API
 #'
 MODPY_EGG_VERSION =	1.4.5
 DISTNAME =	planet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	geo
 

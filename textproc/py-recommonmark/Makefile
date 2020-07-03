@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/23 23:46:21 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:15 sthen Exp $
 
 COMMENT =		markdown parser for docutils
 
@@ -9,6 +9,7 @@ GH_ACCOUNT =		readthedocs
 GH_PROJECT =		recommonmark
 GH_TAGNAME =		${MODPY_EGG_VERSION}
 PKGNAME =		py-recommonmark-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc devel
 

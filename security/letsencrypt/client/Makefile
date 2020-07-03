@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2020/05/14 11:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/07/03 21:13:05 sthen Exp $
 
 COMMENT=	client for certificate authorities using ACME protocols
 
 HOMEPAGE=	https://certbot.eff.org/
 
 DISTNAME=	certbot-${MODPY_EGG_VERSION}
+REVISION=	0
 
 RUN_DEPENDS=	devel/py-configargparse${MODPY_FLAVOR} \
 		devel/py-configobj${MODPY_FLAVOR} \

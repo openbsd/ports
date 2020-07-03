@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2020/06/17 07:35:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.179 2020/07/03 21:13:04 sthen Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -8,6 +8,9 @@ COMMENT-hpaio=		HP sane(7) scanner backend
 COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
+
+REVISION-main=		0
+REVISION-gui=		0
 
 V=			3.20.6
 DISTNAME=		hplip-${V}

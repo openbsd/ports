@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/06/25 08:14:47 feinerer Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/03 21:12:45 sthen Exp $
 
 COMMENT=		HTML parser/tokeniser based for HTML5
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		html5lib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel www textproc
+REVISION=		0
 
 HOMEPAGE=		https://github.com/html5lib/html5lib-python/
 

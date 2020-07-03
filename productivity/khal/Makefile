@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:13:04 sthen Exp $
 
 COMMENT =		standards based terminal calendar
 
 MODPY_EGG_VERSION =	0.9.10
 DISTNAME =		khal-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity
 

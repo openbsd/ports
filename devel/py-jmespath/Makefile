@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:46 sthen Exp $
 
 COMMENT=		extract elements from a JSON document
 
 MODPY_EGG_VERSION=	0.9.0
 DISTNAME=		jmespath-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/11/19 20:26:56 kmos Exp $
+# $OpenBSD: Makefile,v 1.38 2020/07/03 21:12:49 sthen Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
@@ -8,6 +8,7 @@ PKGNAME=		py-${DISTNAME}
 EPOCH=			0
 CATEGORIES=		devel
 EXTRACT_SUFX=		.zip
+REVISION=		0
 
 HOMEPAGE=		https://setuptools.readthedocs.io/en/latest/
 

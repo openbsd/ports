@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2019/08/27 15:35:55 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:41 sthen Exp $
 
 COMMENT =	packaging tools for buildbot
+REVISION =	0
 
 PART =	pkg
 

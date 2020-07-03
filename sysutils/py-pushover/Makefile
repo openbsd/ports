@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/30 12:02:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:11 sthen Exp $
 
 COMMENT =	send messages via Pushover
 
@@ -7,6 +7,7 @@ EPOCH =		0
 
 DISTNAME =	python-pushover-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/python-//}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

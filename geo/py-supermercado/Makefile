@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/10 06:23:45 martin Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:54 sthen Exp $
 
 COMMENT =	mercantile additional commands
 
 MODPY_EGG_VERSION =	0.0.5
 DISTNAME =	supermercado-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	geo
 MAINTAINER =    Martin Reindl <martin@catai.org>

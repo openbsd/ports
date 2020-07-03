@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/12/01 00:56:09 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:02 sthen Exp $
 
 COMMENT =		network address representation and manipulation library
 
 MODPY_EGG_VERSION =	0.7.19
 DISTNAME =		netaddr-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

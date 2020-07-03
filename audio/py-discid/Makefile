@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/14 23:01:58 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:35 sthen Exp $
 
 COMMENT =		Python binding of libdiscid
 
 MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		discid-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		audio
 

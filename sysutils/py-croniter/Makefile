@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2020/06/23 07:35:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/03 21:13:10 sthen Exp $
 
 COMMENT =		datetime-iterator for cron-like formats
 
 MODPY_EGG_VERSION =	0.3.34
 DISTNAME =		croniter-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

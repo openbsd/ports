@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/19 12:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:41 sthen Exp $
 
 COMMENT =	bencoding and bdecoding implementation
 
 MODPY_EGG_VERSION = 2.1.0
 DISTNAME =	bencode.py-${MODPY_EGG_VERSION}
 PKGNAME =	py-bencode-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 

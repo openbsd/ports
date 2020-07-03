@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/03 21:40:13 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:20 sthen Exp $
 
 COMMENT =		transparent persistent cache for the py-requests library
 MODPY_EGG_VERSION =	0.5.2
 DISTNAME =		requests-cache-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
+REVISION =		0
 
 HOMEPAGE =		https://github.com/reclosedev/requests-cache
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>

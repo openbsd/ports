@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/13 16:54:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/03 21:13:23 sthen Exp $
 
 COMMENT	=	python Qt5 bindings
 
 V=		5.13.2
 DISTNAME=	PyQt5-${V}
 PKGNAME=	py-qt5-${V}
+REVISION=	0
 
 CATEGORIES=	x11 devel
 

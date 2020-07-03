@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/08 16:47:24 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:19 sthen Exp $
 
 COMMENT =		macaroon library for Python
 
 MODPY_EGG_VERSION =	0.13.0
 DISTNAME =		pymacaroons-${MODPY_EGG_VERSION}
 PKGNAME =		py-macaroons-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 

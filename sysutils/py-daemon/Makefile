@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/01 08:11:41 martin Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/03 21:13:10 sthen Exp $
 
 COMMENT =		library to implement a Unix daemon process
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	2.2.4
 DISTNAME =		python-daemon-${MODPY_EGG_VERSION}
 PKGNAME =		py-daemon-${MODPY_EGG_VERSION}
 CATEGORIES =		sysutils
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

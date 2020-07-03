@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/17 21:24:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:09 sthen Exp $
 
 COMMENT =	library for Windows NT data types
 
 VERSION = 	20191222
 DISTNAME =	libfwnt-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
+REVISION =	0
 
 SHARED_LIBS +=  fwnt                       0.0 # 1.0
 

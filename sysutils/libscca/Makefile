@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/17 21:30:51 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:10 sthen Exp $
 
 COMMENT =	library and tools to access the Windows Prefetch File
 
 VERSION = 	20191222
 DISTNAME =	libscca-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
+REVISION =	0
 
 SHARED_LIBS +=  scca                       0.0 # 1.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:00 sthen Exp $
 
 COMMENT-main =		secure and anonymous file-sharing over Tor
 COMMENT-gui =		graphical user interface for onionshare based on Qt
@@ -7,8 +7,8 @@ GH_ACCOUNT =		micahflee
 GH_PROJECT =		onionshare
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.0
-REVISION-main =		1
-REVISION-gui =		1
+REVISION-main =		2
+REVISION-gui =		2
 
 PKGNAME-main =		onionshare-${MODPY_EGG_VERSION}
 PKGNAME-gui =		onionshare-gui-${MODPY_EGG_VERSION}

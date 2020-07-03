@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/09 16:46:21 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:40 sthen Exp $
 
 COMMENT =		specifications for callback functions passed to an API
 
 MODPY_EGG_VERSION =	0.1.0
 DISTNAME =		backcall-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

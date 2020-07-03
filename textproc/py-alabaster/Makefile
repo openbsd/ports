@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:13 sthen Exp $
 
 COMMENT =		configurable sidebar-enabled Sphinx theme
 
 MODPY_EGG_VERSION =	0.7.10
 DISTNAME =		alabaster-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 

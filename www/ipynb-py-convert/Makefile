@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/07 23:24:57 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:17 sthen Exp $
 
 COMMENT =	convert .py files to jupyter .ipynb notebooks and vice versa
 
@@ -7,6 +7,7 @@ DISTNAME =	ipynb-py-convert-${MODPY_EGG_VERSION}
 CATEGORIES =	www devel
 HOMEPAGE =	https://github.com/kiwi0fruit/ipynb-py-convert
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
+REVISION =	0
 
 # MIT
 PERMIT_PACKAGE =	Yes

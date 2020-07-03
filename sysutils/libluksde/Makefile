@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/18 06:40:13 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:09 sthen Exp $
 
 COMMENT =	library and tools to access LUKS Disk Encryption
 
 VERSION = 	20200205
 DISTNAME =	libluksde-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
+REVISION =	0
 
 SHARED_LIBS +=  luksde                     0.1 # 1.0
 

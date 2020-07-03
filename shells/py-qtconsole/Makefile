@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/06 17:57:15 bket Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:08 sthen Exp $
 
 COMMENT =		Jupyter Qt console
 
 MODPY_EGG_VERSION =	4.3.0
-REVISION =		3
+REVISION =		4
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

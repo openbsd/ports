@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/09 12:03:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:45 sthen Exp $
 
 COMMENT =		library providing an API for accessing packages metadata
 
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		importlib_metadata-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 HOMEPAGE =		http://importlib-metadata.readthedocs.io/
 

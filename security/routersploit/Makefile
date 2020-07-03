@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/09/05 08:33:27 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:08 sthen Exp $
 
 COMMENT =	The Router Exploitation Framework
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION = 3.4.0
 GH_ACCOUNT =	threat9
 GH_PROJECT =	routersploit
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	security net
 

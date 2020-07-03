@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/19 22:27:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:10 sthen Exp $
 
 COMMENT =	python client for consul
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.1.0
 
 DISTNAME =	python-consul-${MODPY_EGG_VERSION}
 PKGNAME =	py-consul-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

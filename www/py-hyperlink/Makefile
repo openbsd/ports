@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/11 10:20:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:19 sthen Exp $
 
 COMMENT =		pure-Python implementation of immutable URLs
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	19.0.0
 
 DISTNAME =		hyperlink-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

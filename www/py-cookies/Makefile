@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/07 21:50:47 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:18 sthen Exp $
 
 COMMENT =	friendlier RFC 6265-compliant cookie parser/renderer
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	2.2.1
 
 DISTNAME =		cookies-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

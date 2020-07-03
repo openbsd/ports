@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/16 04:37:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:41 sthen Exp $
 
 COMMENT =	Python3 interface to the Bitcoin data structure and protocol
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.11.0
 
 DISTNAME =		python-bitcoinlib-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/16 20:30:05 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:58 sthen Exp $
 
 COMMENT =	minimal OPC UA client GUI
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.8.0
 
 DISTNAME =	opcua-client-${MODPY_EGG_VERSION}
 PKGNAME =	opcua-client-gui-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	misc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/14 15:37:31 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:09 sthen Exp $
 
 COMMENT =		JFFS2 filesystem extraction tool
 
@@ -7,7 +7,7 @@ GH_COMMIT =		d1aff710928f05e889b0ae23d97d1b9640eecbd0
 GH_PROJECT =		jefferson
 GH_ACCOUNT =		wittrup
 DISTNAME =		jefferson-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 

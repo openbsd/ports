@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/06/12 12:26:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/07/03 21:13:06 sthen Exp $
 
 COMMENT=	test vectors for py-cryptography
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	2.9.2
 DISTNAME=	cryptography_vectors-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security
+REVISION=	0
 
 HOMEPAGE=	https://cryptography.io/
 

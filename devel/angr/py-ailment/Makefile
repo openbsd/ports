@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:37 sthen Exp $
 
 COMMENT =		angr intermediate language
+REVISION =		0
 
 ANGR_PYTHON_MODULE =	ailment
 

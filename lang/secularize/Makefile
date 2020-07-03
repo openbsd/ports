@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:56 sthen Exp $
 
 COMMENT =	HolyC transcompiler
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.0.1.post7
 DISTNAME =	secularize-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/post//}
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	lang
 

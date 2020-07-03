@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:47 sthen Exp $
 
 COMMENT =	parse, read and write Microsoft OLE2 files
 
 MODPY_EGG_VERSION = 0.46
 DISTNAME =	olefile-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	decalage2
 GH_PROJECT =	olefile

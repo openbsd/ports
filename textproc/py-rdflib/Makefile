@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:13:15 sthen Exp $
 
 COMMENT=	library to manipulate RDF data
 
 MODPY_EGG_VERSION=	3.2.2
 DISTNAME =		rdflib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES=	textproc
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/17 21:05:17 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:02 sthen Exp $
 
 COMMENT =		monitor TCP ports for bound or unbound states
 
 MODPY_EGG_VERSION =	2.5
 DISTNAME =		portend-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 

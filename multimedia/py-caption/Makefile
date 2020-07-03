@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/15 23:00:54 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:58 sthen Exp $
 
 COMMENT=		closed caption converter
 
 MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		pycaption-${MODPY_EGG_VERSION}
 PKGNAME=		py-caption-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		multimedia
 

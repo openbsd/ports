@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/09 12:43:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:03 sthen Exp $
 
 COMMENT=	WebSocket to TCP proxy
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION= 0.9.0
 GH_ACCOUNT=	novnc
 GH_PROJECT=	websockify
 GH_TAGNAME=	v${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	net
 

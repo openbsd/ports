@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/03 21:12:34 sthen Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
 GH_TAGNAME =	1.1.2
-REVISION =	3
+REVISION =	4
 
 COMMENT =	Pandora client for GNOME
 CATEGORIES =	audio x11

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/08 12:17:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:02 sthen Exp $
 
 COMMENT =		Python module for managing PF
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.2.1
 GH_ACCOUNT =		dotpy
 GH_PROJECT =		py-pf
 GH_TAGNAME =		${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 # remove with next update; tarball was regenerated at github
 DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}

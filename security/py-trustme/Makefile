@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/27 05:20:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:07 sthen Exp $
 
 COMMENT =		quality TLS certs while you wait, for the discerning
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.5.3
 
 DISTNAME =		trustme-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		security devel
 

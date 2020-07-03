@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:48 sthen Exp $
 
 COMMENT =		run a subprocess in a pseudo terminal
 
 MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		ptyprocess-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

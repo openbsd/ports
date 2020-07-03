@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/23 18:01:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:12:39 sthen Exp $
 
 COMMENT =	KDE Gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5I18n		5.0
 

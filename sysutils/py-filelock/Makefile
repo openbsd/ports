@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/14 22:16:04 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:11 sthen Exp $
 
 COMMENT =		platform independent file lock
 
 MODPY_EGG_VERSION =	3.0.12
 DISTNAME =		filelock-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

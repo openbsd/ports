@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:13:06 sthen Exp $
 
 COMMENT=		store and access your passwords safely
 
 MODPY_EGG_VERSION=	9.3.1
 DISTNAME=		keyring-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=   		security
 

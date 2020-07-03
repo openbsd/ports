@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/10 09:32:46 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:23 sthen Exp $
 
 COMMENT =	sip extension for qt5
 
@@ -8,6 +8,7 @@ MODPY_EGG_VERSION =	4.19.19
 DISTNAME =	sip-${MODPY_EGG_VERSION}
 PKGNAME =	py-sip-qt5-${MODPY_EGG_VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://www.riverbankcomputing.com/software/sip/intro
 

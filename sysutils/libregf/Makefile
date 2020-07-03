@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/17 21:29:33 rpointel Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/03 21:13:10 sthen Exp $
 
 COMMENT =	library and tools to access the Windows NT Registry File
 
 VERSION = 	20170130
 DISTNAME =	libregf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION = 	2
+REVISION = 	3
 
 SHARED_LIBS +=  regf                       0.0 # 1.0
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/01 10:07:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:11 sthen Exp $
 
 COMMENT =	lightweight pipelining: using Python functions as pipeline
 
 MODPY_EGG_VERSION =	0.15.1
 DISTNAME =		joblib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

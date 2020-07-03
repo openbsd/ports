@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/02/19 15:35:39 paco Exp $
+# $OpenBSD: Makefile,v 1.31 2020/07/03 21:12:40 sthen Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	2.8.0
 DISTNAME=		Babel-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=    		devel
+REVISION=		0
 
 HOMEPAGE=		http://babel.pocoo.org/
 

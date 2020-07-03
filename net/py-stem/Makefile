@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:03 sthen Exp $
 
 COMMENT =		Tor controller library
 
@@ -7,7 +7,7 @@ V =			${MODPY_EGG_VERSION:S/b//}
 DISTNAME =		stem-${MODPY_EGG_VERSION}
 PKGNAME =		py-stem-${V}
 WRKDIST =		${WRKDIR}/stem-${V}
-REVISION =		0
+REVISION =		1
 
 SUBST_VARS +=		V
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:18 sthen Exp $
 
 COMMENT=		simple WSGI-framework for small web-applications
 
 MODPY_EGG_VERSION=	0.12.16
 DISTNAME=		bottle-${MODPY_EGG_VERSION}
 PKGNAME=		py-bottle-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		www
 

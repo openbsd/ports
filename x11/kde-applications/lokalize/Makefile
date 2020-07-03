@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/05 05:40:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:23 sthen Exp $
 
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/31 19:19:23 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:12:47 sthen Exp $
 
 COMMENT =		Jupyter notebook format
 
 MODPY_EGG_VERSION =	5.0.4
 DISTNAME =		nbformat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

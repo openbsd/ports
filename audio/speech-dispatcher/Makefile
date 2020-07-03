@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2020/05/17 09:34:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2020/07/03 21:12:35 sthen Exp $
 
 COMMENT=	common interface to speech synthesis
 
 V=		0.9.1
 DISTNAME=	speech-dispatcher-${V}
+REVISION=	0
 
 SHARED_LIBS +=  speechd              2.1      # .8.0
 

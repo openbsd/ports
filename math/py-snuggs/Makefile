@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/06 08:52:42 martin Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/03 21:12:58 sthen Exp $
 
 COMMENT =		snuggs are s-expressions for numpy
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.4.7
 DISTNAME =		snuggs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

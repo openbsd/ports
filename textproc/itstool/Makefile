@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2020/06/09 07:19:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/03 21:13:13 sthen Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		translate XML documents with PO files
 
 DISTNAME=		itstool-2.0.6
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc
 

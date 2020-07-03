@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:20 sthen Exp $
 
 MODPY_EGG_VERSION =	1.5.2
 COMMENT =	mock out responses from py-requests
 DISTNAME =	requests-mock-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	www
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 

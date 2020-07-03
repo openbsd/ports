@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/29 18:57:49 bket Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:47 sthen Exp $
 
 COMMENT =		py.test plugin to validate Jupyter notebooks
 
 MODPY_EGG_VERSION =	0.9.5
 DISTNAME =		nbval-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

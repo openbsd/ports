@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/23 05:05:03 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/03 21:12:45 sthen Exp $
 
 COMMENT =		IPython kernel for Jupyter
 
 MODPY_EGG_VERSION =	4.10.0
 DISTNAME =		ipykernel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 PORTROACH=		limit:^4
 

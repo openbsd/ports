@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/16 13:48:34 pamela Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:44 sthen Exp $
 
 COMMENT =		reusable state for writing clean Python tests
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	3.0.0
 
 DISTNAME =		fixtures-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

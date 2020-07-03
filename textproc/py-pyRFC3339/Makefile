@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:15 sthen Exp $
 
 COMMENT=	format dates according to RFC3339
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	1.0
 DISTNAME=	pyRFC3339-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	2
+REVISION=	3
 
 # ISC
 PERMIT_PACKAGE=	Yes

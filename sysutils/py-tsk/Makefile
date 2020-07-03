@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/17 20:42:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:13:11 sthen Exp $
 
 COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 
 MODPY_EGG_VERSION = 20200117
 DISTNAME =	pytsk3-${MODPY_EGG_VERSION}
 PKGNAME =	py-tsk-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

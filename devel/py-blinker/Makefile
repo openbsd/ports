@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/08 14:49:53 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/03 21:12:41 sthen Exp $
 
 COMMENT =	fast, simple object-to-object and broadcast signaling
 
 MODPY_EGG_VERSION = 1.4
-REVISION =	4
+REVISION =	5
 DISTNAME =	blinker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
