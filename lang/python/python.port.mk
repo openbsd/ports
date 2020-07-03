@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.120 2020/02/11 11:45:31 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.121 2020/07/03 21:10:55 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -7,7 +7,7 @@ CATEGORIES +=		lang/python
 
 # define the default versions
 MODPY_DEFAULT_VERSION_2 = 2.7
-MODPY_DEFAULT_VERSION_3 = 3.7
+MODPY_DEFAULT_VERSION_3 = 3.8
 
 # If switching to a new MODPY_DEFAULT_VERSION_3:
 # - In the old default version, @comment the non-suffixed bin/XXX files (python3,
