@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.968 2020/07/01 17:37:00 paco Exp $
+# $OpenBSD: Makefile,v 1.969 2020/07/03 12:08:10 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -79,7 +79,6 @@
      SUBDIR += kore,curl
      SUBDIR += kore,pgsql
      SUBDIR += kore,python
-     #SUBDIR += kwebkitpart
      SUBDIR += larbin
      SUBDIR += libcroco
      SUBDIR += libmicrohttpd
