@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/21 08:30:22 zhuk Exp $
-@bin bin/blitztest
-include/qimageblitz/
-include/qimageblitz/blitzcpu.h
-include/qimageblitz/qimageblitz.h
-include/qimageblitz/qimageblitz_export.h
-@lib lib/libqimageblitz.so.${LIBqimageblitz_VERSION}
-lib/pkgconfig/qimageblitz.pc
