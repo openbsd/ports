@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/08/16 15:31:23 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/03 21:11:09 sthen Exp $
 
 COMMENT =	Vulkan Utilities and Tools
 
@@ -23,7 +23,11 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+
+# XXX needs updating for 3.8
+#MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION =	3.7
+
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	graphics/glslang \
