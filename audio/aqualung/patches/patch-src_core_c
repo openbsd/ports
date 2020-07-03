@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_core_c,v 1.7 2020/07/01 21:16:02 jeremy Exp $
+$OpenBSD: patch-src_core_c,v 1.8 2020/07/03 02:28:35 jeremy Exp $
 
 Reinit sndio if there is a audio(4) error.  Without this, aqualung is
 unusable after an audio(4) error until it is closed and reopened.
@@ -8,7 +8,15 @@ Create .config directory before .config/aqualung if it does not exist.
 Index: src/core.c
 --- src/core.c.orig
 +++ src/core.c
-@@ -119,6 +119,10 @@ GSList * saved_pconns_L = NULL;
+@@ -20,6 +20,7 @@
+ 
+ #include <config.h>
+ 
++#include <libgen.h>
+ #include <stddef.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -119,6 +120,10 @@ GSList * saved_pconns_L = NULL;
  GSList * saved_pconns_R = NULL;
  #endif /* HAVE_JACK */
  
@@ -19,7 +27,7 @@ Index: src/core.c
  const size_t sample_size = sizeof(float);
  
  gint playlist_state, browser_state;
-@@ -802,8 +806,15 @@ sndio_thread(void * arg) {
+@@ -802,8 +807,15 @@ sndio_thread(void * arg) {
  
  		/* write data to audio device */
  		bytes_written = sio_write(sndio_hdl, sndio_short_buf, 2*n_avail * sizeof(short));
@@ -36,7 +44,7 @@ Index: src/core.c
  	}
   sndio_finish:
  	return 0;
-@@ -1235,7 +1246,7 @@ jack_info_shutdown(jack_status_t code, const char * re
+@@ -1235,7 +1247,7 @@ jack_info_shutdown(jack_status_t code, const char * re
   * -N : unable to start with given params
   */
  int
@@ -45,7 +53,7 @@ Index: src/core.c
  
  	struct sio_hdl * sndio_hdl;
  	struct sio_par sndio_par;
-@@ -1300,6 +1311,15 @@ sndio_init(thread_info_t * info, int verbose, gboolean
+@@ -1300,6 +1312,15 @@ sndio_init(thread_info_t * info, int verbose, gboolean
  	}
  
  	info->sndio_hdl = sndio_hdl;
@@ -61,7 +69,7 @@ Index: src/core.c
  	AQUALUNG_THREAD_CREATE(info->sndio_thread_id, NULL, sndio_thread, info)
  	set_thread_priority(info->sndio_thread_id, "sndio output", realtime, priority);
  
-@@ -1887,6 +1907,8 @@ load_default_cl(int * argc, char *** argv) {
+@@ -1887,6 +1908,8 @@ load_default_cl(int * argc, char *** argv) {
          if (chdir(options.confdir) != 0) {
                  if (errno == ENOENT) {
                          fprintf(stderr, "Creating directory %s\n", options.confdir);

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2020/07/01 21:16:02 jeremy Exp $
+# $OpenBSD: Makefile,v 1.56 2020/07/03 02:28:35 jeremy Exp $
 
 COMMENT=	advanced music player
 
 VERSION=	1.0
 DISTNAME=	aqualung-${VERSION}
-REVISION=	10
+REVISION=	11
 EPOCH=		0
 CATEGORIES=	audio
 
@@ -55,6 +55,7 @@ LIB_DEPENDS=	audio/flac \
 		${MODLUA_LIB_DEPENDS}
 
 RUN_DEPENDS=	devel/desktop-file-utils
+DEBUG_PACKAGES=${BUILD_PACKAGES}
 
 CFLAGS+=	-DPTHREAD_MIN_PRIORITY=0 -DPTHREAD_MAX_PRIORITY=31 \
 		-I${LOCALBASE}/include -I${MODLUA_INCL_DIR}
