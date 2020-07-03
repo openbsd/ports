@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1997 2020/07/02 14:37:57 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1998 2020/07/03 15:24:46 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1972,5 +1972,6 @@
      SUBDIR += yasm
      SUBDIR += z80ex
      SUBDIR += zeal
+     SUBDIR += zmac
 
 .include <bsd.port.subdir.mk>
