@@ -1,0 +1,15 @@
+$OpenBSD: patch-BinauralBeats_h,v 1.1 2020/07/03 15:16:15 bcallah Exp $
+
+./BinauralBeats.h:41:3: warning: control reaches end of non-void function [-Wreturn-type]
+
+Index: BinauralBeats.h
+--- BinauralBeats.h.orig
++++ BinauralBeats.h
+@@ -38,6 +38,7 @@ class AP{//allpass
+ 		};
+ 		REALTYPE set(REALTYPE a_){
+ 			a=a_*a_;
++			return a;
+ 		};
+ 	private:
+ 		REALTYPE in1,in2,out1,out2;
