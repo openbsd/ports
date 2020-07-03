@@ -1,8 +1,0 @@
-Application for building and simulating digital circuits easily.
-
-Provides an easy way for building circuits containing standard
-components like AND, OR, XOR and flipflops like RS and JK.  More complex
-and reusable circuits can be built from sub-circuits.
-
-By default, the simulation is running permanently while building circuits.
-Also available is a single stepping simulation to recognize peaks.
