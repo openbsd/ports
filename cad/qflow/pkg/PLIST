@@ -1,0 +1,138 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/03 13:53:00 rsadowski Exp $
+bin/qflow
+share/qflow/
+share/qflow/bin/
+@bin share/qflow/bin/DEF2Verilog
+@bin share/qflow/bin/addspacers
+@bin share/qflow/bin/blif2BSpice
+@bin share/qflow/bin/blif2Verilog
+@bin share/qflow/bin/blifFanout
+share/qflow/bin/graywolf
+share/qflow/bin/magic
+share/qflow/bin/netgen
+share/qflow/bin/qrouter
+@bin share/qflow/bin/rc2dly
+@bin share/qflow/bin/spice2delay
+share/qflow/bin/sta
+@bin share/qflow/bin/vesta
+@bin share/qflow/bin/vlog2Cel
+@bin share/qflow/bin/vlog2Def
+@bin share/qflow/bin/vlog2Spice
+@bin share/qflow/bin/vlog2Verilog
+@bin share/qflow/bin/vlogFanout
+share/qflow/bin/yosys
+share/qflow/bin/yosys-abc
+share/qflow/scripts/
+${MODPY_COMMENT}share/qflow/scripts/${MODPY_PYCACHE}/
+share/qflow/scripts/${MODPY_PYCACHE}consoletext.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/${MODPY_PYCACHE}count_lvs.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/${MODPY_PYCACHE}helpwindow.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/${MODPY_PYCACHE}pinmanager.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/${MODPY_PYCACHE}preproc.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/${MODPY_PYCACHE}qflow_manager.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/${MODPY_PYCACHE}spi2xspice.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/${MODPY_PYCACHE}textreport.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/${MODPY_PYCACHE}tksimpledialog.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/${MODPY_PYCACHE}tooltip.${MODPY_PYC_MAGIC_TAG}pyc
+share/qflow/scripts/addspacers.tcl
+share/qflow/scripts/annotate.tcl
+share/qflow/scripts/arrangepins.tcl
+share/qflow/scripts/blif2cel.tcl
+share/qflow/scripts/blifanno.tcl
+share/qflow/scripts/checkdirs.sh
+share/qflow/scripts/cleanup.sh
+share/qflow/scripts/consoletext.py
+share/qflow/scripts/count_lvs.py
+share/qflow/scripts/decongest.tcl
+share/qflow/scripts/getantennacell.tcl
+share/qflow/scripts/getfillcell.tcl
+share/qflow/scripts/getpowerground.tcl
+share/qflow/scripts/graywolf.sh
+share/qflow/scripts/helpwindow.py
+share/qflow/scripts/magic_db.sh
+share/qflow/scripts/magic_drc.sh
+share/qflow/scripts/magic_gds.sh
+share/qflow/scripts/magic_view.sh
+share/qflow/scripts/netgen_lvs.sh
+share/qflow/scripts/opensta.sh
+share/qflow/scripts/opentimer.sh
+share/qflow/scripts/pinmanager.py
+share/qflow/scripts/place2def.tcl
+share/qflow/scripts/place2lef2.tcl
+share/qflow/scripts/place2net2.tcl
+share/qflow/scripts/powerbus.tcl
+share/qflow/scripts/preproc.py
+share/qflow/scripts/qflow.sh
+share/qflow/scripts/qflow_help.txt
+share/qflow/scripts/qflow_manager.py
+share/qflow/scripts/qrouter.sh
+share/qflow/scripts/removeblocks.tcl
+share/qflow/scripts/replace.sh
+share/qflow/scripts/spi2xspice.py
+share/qflow/scripts/textreport.py
+share/qflow/scripts/tksimpledialog.py
+share/qflow/scripts/tooltip.py
+share/qflow/scripts/vesta.sh
+share/qflow/scripts/ybuffer.tcl
+share/qflow/scripts/yosys.sh
+share/qflow/scripts/ypostproc.tcl
+share/qflow/tech/
+share/qflow/tech/gscl45nm/
+share/qflow/tech/gscl45nm/gscl45nm.gds
+share/qflow/tech/gscl45nm/gscl45nm.lef
+share/qflow/tech/gscl45nm/gscl45nm.lib
+share/qflow/tech/gscl45nm/gscl45nm.magicrc
+share/qflow/tech/gscl45nm/gscl45nm.par
+share/qflow/tech/gscl45nm/gscl45nm.prm
+share/qflow/tech/gscl45nm/gscl45nm.sh
+share/qflow/tech/gscl45nm/gscl45nm.sp
+share/qflow/tech/gscl45nm/gscl45nm.tech
+share/qflow/tech/gscl45nm/gscl45nm.v
+share/qflow/tech/gscl45nm/gscl45nm_setup.tcl
+share/qflow/tech/osu018/
+share/qflow/tech/osu018/SCN6M_SUBM.10.tech
+share/qflow/tech/osu018/osu018.magicrc
+share/qflow/tech/osu018/osu018.par
+share/qflow/tech/osu018/osu018.prm
+share/qflow/tech/osu018/osu018.sh
+share/qflow/tech/osu018/osu018_setup.tcl
+share/qflow/tech/osu018/osu018_stdcells.gds2
+share/qflow/tech/osu018/osu018_stdcells.lef
+share/qflow/tech/osu018/osu018_stdcells.lib
+share/qflow/tech/osu018/osu018_stdcells.sp
+share/qflow/tech/osu018/osu018_stdcells.v
+share/qflow/tech/osu035/
+share/qflow/tech/osu035/SCN4M_SUBM.20.tech
+share/qflow/tech/osu035/osu035.magicrc
+share/qflow/tech/osu035/osu035.par
+share/qflow/tech/osu035/osu035.prm
+share/qflow/tech/osu035/osu035.sh
+share/qflow/tech/osu035/osu035_setup.tcl
+share/qflow/tech/osu035/osu035_stdcells.gds2
+share/qflow/tech/osu035/osu035_stdcells.lef
+share/qflow/tech/osu035/osu035_stdcells.lib
+share/qflow/tech/osu035/osu035_stdcells.sp
+share/qflow/tech/osu035/osu035_stdcells.v
+share/qflow/tech/osu035_redm4/
+share/qflow/tech/osu035_redm4/osu035.prm
+share/qflow/tech/osu035_redm4/osu035_redm4.magicrc
+share/qflow/tech/osu035_redm4/osu035_redm4.par
+share/qflow/tech/osu035_redm4/osu035_redm4.sh
+share/qflow/tech/osu035_redm4/osu035_redm4_setup.tcl
+share/qflow/tech/osu035_redm4/osu035_redm4_stdcells.lef
+share/qflow/tech/osu035_redm4/osu035_stdcells.gds2
+share/qflow/tech/osu035_redm4/osu035_stdcells.lib
+share/qflow/tech/osu035_redm4/osu035_stdcells.sp
+share/qflow/tech/osu035_redm4/osu035_stdcells.v
+share/qflow/tech/osu050/
+share/qflow/tech/osu050/SCN3ME_SUBM.30.tech
+share/qflow/tech/osu050/osu050.magicrc
+share/qflow/tech/osu050/osu050.par
+share/qflow/tech/osu050/osu050.prm
+share/qflow/tech/osu050/osu050.sh
+share/qflow/tech/osu050/osu050_setup.tcl
+share/qflow/tech/osu050/osu050_stdcells.lef
+share/qflow/tech/osu050/osu050_stdcells.sp
+share/qflow/tech/osu050/osu05_stdcells.gds2
+share/qflow/tech/osu050/osu05_stdcells.lib
+share/qflow/tech/osu050/osu05_stdcells.v

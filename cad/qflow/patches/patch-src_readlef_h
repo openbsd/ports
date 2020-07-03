@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_readlef_h,v 1.1.1.1 2020/07/03 13:53:00 rsadowski Exp $
+
+Index: src/readlef.h
+--- src/readlef.h.orig
++++ src/readlef.h
+@@ -27,6 +27,11 @@
+ #define DEFAULT_WIDTH 3	   /* Default metal width for routes if undefined */
+ #define DEFAULT_SPACING 4  /* Default spacing between metal if undefined  */
+ 
++#if defined(__APPLE__) || defined(__OpenBSD__)
++// Linux defines a comparison function prototype, the Mac doesn't. . .
++typedef int (*__compar_fn_t)(const void *, const void *);
++#endif
++
+ /* Structure holding the counts of regular and special nets */
+ 
+ typedef struct

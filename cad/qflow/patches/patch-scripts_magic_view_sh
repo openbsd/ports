@@ -1,0 +1,40 @@
+$OpenBSD: patch-scripts_magic_view_sh,v 1.1.1.1 2020/07/03 13:53:00 rsadowski Exp $
+
+Index: scripts/magic_view.sh
+--- scripts/magic_view.sh.orig
++++ scripts/magic_view.sh
+@@ -246,12 +246,12 @@ if ( ! $?DISPLAY ) then
+ endif
+ 
+ # Run magic and query what graphics device types are
+-# available.  Use Cairo if available, fall back on
++# available.  Use OpenGL if available, fall back on
+ # X11, or else exit with a message
+ 
+ # Support option to hardwire the graphics interface.
+ 
+-set magicxr=0
++set magicogl=0
+ set magicx11=0
+ 
+ if ( ! $?magic_display ) then
+@@ -259,7 +259,7 @@ if ( ! $?magic_display ) then
+ exit
+ EOF
+ 
+-  set magicxr=`cat .magic_displays | grep XR | wc -l`
++  set magicogl=`cat .magic_displays | grep OGL | wc -l`
+   set magicx11=`cat .magic_displays | grep X11 | wc -l`
+ 
+   rm -f .magic_displays
+@@ -289,8 +289,8 @@ endif
+ 
+ if ( $?magic_display ) then
+    ${bindir}/magic -d ${magic_display} ${dispfile}
+-else if ( ${magicxr} >= 1 ) then
+-   ${bindir}/magic -d XR ${dispfile}
++else if ( ${magicogl} >= 1 ) then
++   ${bindir}/magic -d OGL ${dispfile}
+ else if ( ${magicx11} >= 1) then
+    ${bindir}/magic -d X11 ${dispfile}
+ else

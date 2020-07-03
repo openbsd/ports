@@ -1,0 +1,23 @@
+$OpenBSD: patch-scripts_qrouter_sh,v 1.1.1.1 2020/07/03 13:53:00 rsadowski Exp $
+
+Index: scripts/qrouter.sh
+--- scripts/qrouter.sh.orig
++++ scripts/qrouter.sh
+@@ -218,7 +218,7 @@ if (${scripting} == "T") then
+    echo "qrouter ${qrouter_options} -s ${rootname}.cfg" |& tee -a ${synthlog} 
+    ${bindir}/qrouter ${qrouter_options} -s ${rootname}.cfg \
+ 		|& tee -a ${synthlog} | \
+-		grep - -e Failed\ net -e fail -e Progress -e remaining.\*00\$ \
++		ggrep - -e Failed\ net -e fail -e Progress -e remaining.\*00\$ \
+ 		-e remaining:\ \[1-9\]0\\\?\$ -e \\\*\\\*\\\*
+ else
+ 
+@@ -234,7 +234,7 @@ else
+    ${bindir}/qrouter -c ${rootname}.cfg -p ${vddnet} -g ${gndnet} \
+ 		-d "${rootname}_route.rc" ${qrouter_options} ${rootname} \
+ 		|& tee -a ${synthlog} | \
+-		grep - -e Failed\ net -e fail -e Progress -e remaining.\*00\$ \
++		ggrep - -e Failed\ net -e fail -e Progress -e remaining.\*00\$ \
+ 		-e remaining:\ \[1-9\]0\\\?\$ -e \\\*\\\*\\\*
+ endif
+ 

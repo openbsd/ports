@@ -1,0 +1,21 @@
+$OpenBSD: patch-scripts_qflow_manager_py_in,v 1.1.1.1 2020/07/03 13:53:00 rsadowski Exp $
+
+Index: scripts/qflow_manager.py.in
+--- scripts/qflow_manager.py.in.orig
++++ scripts/qflow_manager.py.in
+@@ -1368,11 +1368,11 @@ class QflowManager(ttk.Frame):
+             else:
+                 self.magicgtype = 'X11'
+             for line in magicpair[1].splitlines():
+-                if 'XR' in line:
+-                    self.magicgtype = 'XR'
++                if 'OGL' in line:
++                    self.magicgtype = 'OGL'
+                     break
+-                # elif 'OGL' in line:
+-                #     self.magicgtype = 'OGL'
++                # elif 'XR' in line:
++                #     self.magicgtype = 'XR'
+                 #     break
+ 
+         self.update_idletasks()

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_hash_c,v 1.1.1.1 2020/07/03 13:53:00 rsadowski Exp $
+
+Index: src/hash.c
+--- src/hash.c.orig
++++ src/hash.c
+@@ -19,7 +19,7 @@ the Free Software Foundation, Inc., 675 Mass Ave, Camb
+ 
+ #include <stdio.h>
+ #include <string.h>	/* For strdup() */
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ #include <stdlib.h>
+ #else
+ #include <malloc.h>
