@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/06/19 11:18:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2020/07/03 21:11:01 sthen Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -9,6 +9,8 @@ GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		openexr
 GH_TAGNAME=		v${V}
 
+REVISION-main=		0
+
 PKGNAME-main=		OpenEXR-${V}
 PKGNAME-tools=		OpenEXR-tools-${V}
 PKGNAME-doc=		OpenEXR-doc-${V}
@@ -16,7 +18,7 @@ PKGNAME-doc=		OpenEXR-doc-${V}
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # /!\ see symlinks creation in post-install (LIBHalf-2_5_VERSION is used)
-.for solib in in Half Iex IexMath IlmImf IlmImfUtil IlmThread Imath PyIex_Python3_7 PyImath_Python3_7
+.for solib in in Half Iex IexMath IlmImf IlmImfUtil IlmThread Imath PyIex_Python3_8 PyImath_Python3_8
 SHARED_LIBS +=  ${solib} 0.0 # 24.0
 SHARED_LIBS +=  ${solib}-2_5 0.0 # 24.0
 .endfor

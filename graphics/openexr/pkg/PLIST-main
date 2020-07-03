@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2020/05/14 12:35:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2020/07/03 21:11:01 sthen Exp $
 @conflict ilmbase-*
 @pkgpath graphics/openexr
 @pkgpath graphics/ilmbase
@@ -235,8 +235,8 @@ lib/cmake/PyIlmBase/PyIlmBaseConfigVersion.cmake
 @lib lib/libIlmThread.so.${LIBIlmThread_VERSION}
 @lib lib/libImath-2_5.so.${LIBImath-2_5_VERSION}
 @lib lib/libImath.so.${LIBImath_VERSION}
-@lib lib/libPyIex_Python3_7-2_5.so.${LIBPyIex_Python3_7-2_5_VERSION}
-@lib lib/libPyImath_Python3_7-2_5.so.${LIBPyImath_Python3_7-2_5_VERSION}
+@lib lib/libPyIex_Python3_8-2_5.so.${LIBPyIex_Python3_8-2_5_VERSION}
+@lib lib/libPyImath_Python3_8-2_5.so.${LIBPyImath_Python3_8-2_5_VERSION}
 lib/pkgconfig/IlmBase.pc
 lib/pkgconfig/OpenEXR.pc
 lib/pkgconfig/PyIlmBase.pc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/27 21:13:53 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/07/03 21:11:01 sthen Exp $
 @pkgpath devel/py-multiprocess
 lib/python${MODPY_VERSION}/site-packages/_multiprocess/
 lib/python${MODPY_VERSION}/site-packages/_multiprocess/__init__.py
@@ -29,7 +29,8 @@ lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}process.${
 lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}queues.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}reduction.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}resource_sharer.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}semaphore_tracker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}resource_tracker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}shared_memory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}sharedctypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}spawn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multiprocess/${MODPY_PYCACHE}synchronize.${MODPY_PYC_MAGIC_TAG}pyc
@@ -54,7 +55,8 @@ lib/python${MODPY_VERSION}/site-packages/multiprocess/process.py
 lib/python${MODPY_VERSION}/site-packages/multiprocess/queues.py
 lib/python${MODPY_VERSION}/site-packages/multiprocess/reduction.py
 lib/python${MODPY_VERSION}/site-packages/multiprocess/resource_sharer.py
-lib/python${MODPY_VERSION}/site-packages/multiprocess/semaphore_tracker.py
+lib/python${MODPY_VERSION}/site-packages/multiprocess/resource_tracker.py
+lib/python${MODPY_VERSION}/site-packages/multiprocess/shared_memory.py
 lib/python${MODPY_VERSION}/site-packages/multiprocess/sharedctypes.py
 lib/python${MODPY_VERSION}/site-packages/multiprocess/spawn.py
 lib/python${MODPY_VERSION}/site-packages/multiprocess/synchronize.py
