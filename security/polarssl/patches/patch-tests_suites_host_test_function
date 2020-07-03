@@ -1,11 +1,11 @@
-$OpenBSD: patch-tests_suites_host_test_function,v 1.4 2020/04/15 13:04:41 bket Exp $
+$OpenBSD: patch-tests_suites_host_test_function,v 1.5 2020/07/03 07:35:41 bket Exp $
 
 Can't take the address of stdout.
 
 Index: tests/suites/host_test.function
 --- tests/suites/host_test.function.orig
 +++ tests/suites/host_test.function
-@@ -400,9 +400,6 @@ int execute_tests( int argc , const char ** argv )
+@@ -401,9 +401,6 @@ int execute_tests( int argc , const char ** argv )
      /* Store for proccessed integer params. */
      int int_params[50];
      void *pointer;
@@ -15,7 +15,7 @@ Index: tests/suites/host_test.function
  
  #if defined(MBEDTLS_MEMORY_BUFFER_ALLOC_C) && \
      !defined(TEST_SUITE_MEMORY_BUFFER_ALLOC)
-@@ -537,20 +534,6 @@ int execute_tests( int argc , const char ** argv )
+@@ -548,20 +545,6 @@ int execute_tests( int argc , const char ** argv )
                  test_info.result = TEST_RESULT_SUCCESS;
                  test_info.paramfail_test_state = PARAMFAIL_TESTSTATE_IDLE;
  
@@ -34,9 +34,9 @@ Index: tests/suites/host_test.function
 -                }
 -#endif /* __unix__ || __APPLE__ __MACH__ */
  
-                 function_id = strtol( params[0], NULL, 10 );
+                 function_id = strtoul( params[0], NULL, 10 );
                  if ( (ret = check_test( function_id )) == DISPATCH_TEST_SUCCESS )
-@@ -562,13 +545,6 @@ int execute_tests( int argc , const char ** argv )
+@@ -573,13 +556,6 @@ int execute_tests( int argc , const char ** argv )
                      }
                  }
  
@@ -50,7 +50,7 @@ Index: tests/suites/host_test.function
  
              }
  
-@@ -652,10 +628,6 @@ int execute_tests( int argc , const char ** argv )
+@@ -666,10 +642,6 @@ int execute_tests( int argc , const char ** argv )
      mbedtls_memory_buffer_alloc_free();
  #endif
  
