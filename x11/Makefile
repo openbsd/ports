@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.663 2020/06/30 07:03:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.664 2020/07/03 17:28:11 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -22,6 +22,7 @@
      SUBDIR += bbpager
      SUBDIR += bclock
      SUBDIR += belt
+     SUBDIR += bemenu
      SUBDIR += bgs
      SUBDIR += blackbox
      SUBDIR += blast
