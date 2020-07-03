@@ -1,8 +1,0 @@
-$OpenBSD: patch-lib_prison_PrisonConfig_cmake_in,v 1.1.1.1 2013/03/21 08:26:19 zhuk Exp $
---- lib/prison/PrisonConfig.cmake.in.orig	Thu Oct  6 07:45:03 2011
-+++ lib/prison/PrisonConfig.cmake.in	Thu Oct  6 07:45:29 2011
-@@ -1,3 +1,3 @@
--SET(PRISON_LIBRARIES "@LIBPATH@/@LIB_OUT_NAME@" CACHE FILEPATH "Prison barcode library")
-+SET(PRISON_LIBRARIES "@LIBPATH@/@LIB_OUT_NAME@.${LIBprison_VERSION}" CACHE FILEPATH "Prison barcode library")
- SET(PRISON_INCLUDE_DIR "@INCLUDE_DIRECTORY@" CACHE PATH "Include path for prison barcode library")
- SET(PRISON_FOUND "TRUE")
