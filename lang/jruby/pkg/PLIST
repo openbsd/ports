@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2020/03/05 15:29:13 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.48 2020/07/03 21:05:26 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -382,6 +382,10 @@ jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.8/test/util/test-output.rb
 jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.8/test/util/test_backtracefilter.rb
 jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.8/test/util/test_observable.rb
 jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.8/test/util/test_procwrapper.rb
+jruby/lib/ruby/gems/1.8/gems/webrick-1.6.0/
+jruby/lib/ruby/gems/1.8/gems/webrick-1.6.0/bin/
+jruby/lib/ruby/gems/1.8/gems/webrick-1.6.0/bin/console
+jruby/lib/ruby/gems/1.8/gems/webrick-1.6.0/bin/setup
 jruby/lib/ruby/gems/1.8/gems/xmlrpc-0.3.0/
 jruby/lib/ruby/gems/1.8/gems/xmlrpc-0.3.0/.travis.yml
 jruby/lib/ruby/gems/1.8/gems/xmlrpc-0.3.0/Gemfile
@@ -418,7 +422,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/psych-3.1.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-ant-1.0.4.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.1.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/scanf-1.0.0.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/webrick-1.4.2.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/webrick-1.6.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/did_you_mean-1.2.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/minitest-5.10.3.gemspec
 jruby/lib/ruby/gems/1.8/specifications/net-telnet-0.1.1.gemspec
