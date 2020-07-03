@@ -1,0 +1,12 @@
+zmac is a Z-80 macro cross-assembler. It has all the features you'd
+expect. It assembles the specified input file (with a '.z' extension if
+there is no pre-existing extension and the file as given doesn't exist)
+and produces program output in many different formats. It also produces
+a nicely-formatted listing of the machine code and cycle counts
+alongside the source in a ".lst" file.
+
+Undocumented Z-80 instructions are supported as well as 8080 code.
+
+zmac strives to be a powerful assembler with expressions familiar to C
+programmers while providing good backward compatibility with original
+assemblers such as Edtasm, MRAS and Macro-80.
