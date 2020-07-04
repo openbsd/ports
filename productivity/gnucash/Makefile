@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.120 2020/05/14 12:19:08 ajacoutot Exp $
-
-BROKEN =		doesn't build with GLib >=2.64
+# $OpenBSD: Makefile,v 1.121 2020/07/04 13:28:15 ajacoutot Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		3.10
+GNOME_VERSION =		3.11
 EXTRACT_SUFX =		.tar.bz2
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \

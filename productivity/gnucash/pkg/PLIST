@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2020/04/03 09:39:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2020/07/04 13:28:16 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -465,19 +465,7 @@ share/doc/gnucash/Money95mfunds_fr.qif
 share/doc/gnucash/Money95stocks_fr.qif
 share/doc/gnucash/NEWS
 share/doc/gnucash/README
-share/doc/gnucash/README-ca.win32-bin.txt
-share/doc/gnucash/README-de.win32-bin.txt
-share/doc/gnucash/README-fr.win32-bin.txt
-share/doc/gnucash/README-hr.win32-bin.txt
-share/doc/gnucash/README-it.win32-bin.txt
-share/doc/gnucash/README-lv.win32-bin.txt
-share/doc/gnucash/README-nl.win32-bin.txt
-share/doc/gnucash/README-zh_CN.win32-bin.txt
-share/doc/gnucash/README-zh_TW.win32-bin.txt
 share/doc/gnucash/README.dependencies
-share/doc/gnucash/README.francais
-share/doc/gnucash/README.german
-share/doc/gnucash/README.win32-bin.txt
 share/doc/gnucash/README_invoice
 share/doc/gnucash/abc-all.qif
 share/doc/gnucash/abc.qif
@@ -486,10 +474,8 @@ share/doc/gnucash/cbb-export.qif
 share/doc/gnucash/currency_tree_xml.gnucash
 share/doc/gnucash/every.qif
 share/doc/gnucash/gtk-3.0.css
-share/doc/gnucash/guile-hackers.txt
 share/doc/gnucash/invoice.csv
 share/doc/gnucash/ms-money.qif
-share/doc/gnucash/projects.html
 share/doc/gnucash/quicktest.qif
 share/doc/gnucash/swipe.qif
 share/doc/gnucash/taxreport.gnucash
