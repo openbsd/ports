@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/06/07 15:57:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/07/04 08:23:24 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -240,12 +240,15 @@ share/doc/libvirt/html/kbase/
 share/doc/libvirt/html/kbase.html
 share/doc/libvirt/html/kbase/backing_chains.html
 share/doc/libvirt/html/kbase/domainstatecapture.html
+share/doc/libvirt/html/kbase/incrementalbackupinternals.html
+share/doc/libvirt/html/kbase/kvm-realtime.html
 share/doc/libvirt/html/kbase/launch_security_sev.html
 share/doc/libvirt/html/kbase/locking-lockd.html
 share/doc/libvirt/html/kbase/locking-sanlock.html
 share/doc/libvirt/html/kbase/locking.html
 share/doc/libvirt/html/kbase/qemu-passthrough-security.html
 share/doc/libvirt/html/kbase/rpm-deployment.html
+share/doc/libvirt/html/kbase/s390_protected_virt.html
 share/doc/libvirt/html/kbase/secureusage.html
 share/doc/libvirt/html/kbase/virtiofs.html
 share/doc/libvirt/html/libvirt-daemon-arch.png
@@ -310,18 +313,6 @@ share/doc/libvirt/html/migration.html
 share/doc/libvirt/html/mobile.css
 share/doc/libvirt/html/mstile-150x150.png
 share/doc/libvirt/html/newreposetup.html
-share/doc/libvirt/html/news-2005.html
-share/doc/libvirt/html/news-2006.html
-share/doc/libvirt/html/news-2007.html
-share/doc/libvirt/html/news-2008.html
-share/doc/libvirt/html/news-2009.html
-share/doc/libvirt/html/news-2010.html
-share/doc/libvirt/html/news-2011.html
-share/doc/libvirt/html/news-2012.html
-share/doc/libvirt/html/news-2013.html
-share/doc/libvirt/html/news-2014.html
-share/doc/libvirt/html/news-2015.html
-share/doc/libvirt/html/news-2016.html
 share/doc/libvirt/html/news.html
 share/doc/libvirt/html/node.gif
 share/doc/libvirt/html/nss.html

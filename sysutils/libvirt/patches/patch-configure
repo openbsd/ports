@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1 2020/06/07 15:57:11 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2020/07/04 08:23:24 ajacoutot Exp $
 
 ld: error: undefined symbol: _Unwind_Resume
 >>> referenced by glib-autocleanups.h:0 (/usr/local/include/glib-2.0/glib/glib-autocleanups.h:0)
@@ -7,7 +7,7 @@ ld: error: undefined symbol: _Unwind_Resume
 Index: configure
 --- configure.orig
 +++ configure
-@@ -15930,7 +15930,6 @@ fi
+@@ -15931,7 +15931,6 @@ fi
         wantwarn="$wantwarn -Wno-unused-command-line-argument"
         ;;
      esac

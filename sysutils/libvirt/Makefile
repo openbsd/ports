@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.69 2020/06/15 16:03:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2020/07/04 08:23:24 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-6.4.0
-REVISION=		0
+DISTNAME=		libvirt-6.5.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS +=  virt                 1.0      # 6004.0
-SHARED_LIBS +=  virt-qemu            1.0      # 6004.0
-SHARED_LIBS +=  virt-lxc             1.0      # 6004.0
-SHARED_LIBS +=  virt-admin           1.0      # 6004.0
+SHARED_LIBS +=  virt                 1.0      # 6005.0
+SHARED_LIBS +=  virt-qemu            1.0      # 6005.0
+SHARED_LIBS +=  virt-lxc             1.0      # 6005.0
+SHARED_LIBS +=  virt-admin           1.0      # 6005.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -36,7 +35,7 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/flake8 \
 			textproc/libxslt \
-			textproc/py-docutils${MOPY_FLAVOR}
+			textproc/py-docutils${MODPY_FLAVOR}
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/libyajl \
