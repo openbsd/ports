@@ -1,9 +1,33 @@
-$OpenBSD: patch-configure,v 1.63 2020/06/18 07:03:15 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.64 2020/07/04 10:16:25 ajacoutot Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5339,7 +5339,6 @@ case $target_os in
+@@ -267,6 +267,7 @@ External library support:
+   --enable-libspeex        enable Speex de/encoding via libspeex [no]
+   --enable-libsrt          enable Haivision SRT protocol via libsrt [no]
+   --enable-libssh          enable SFTP protocol via libssh [no]
++  --enable-libsvtav1       enable AV1 encoding via svt [no]
+   --enable-libtensorflow   enable TensorFlow as a DNN module backend
+                            for DNN based filters like sr [no]
+   --enable-libtesseract    enable Tesseract, needed for ocr filter [no]
+@@ -1803,6 +1804,7 @@ EXTERNAL_LIBRARY_LIST="
+     libspeex
+     libsrt
+     libssh
++    libsvtav1
+     libtensorflow
+     libtesseract
+     libtheora
+@@ -3240,6 +3242,7 @@ libshine_encoder_select="audio_frame_queue"
+ libspeex_decoder_deps="libspeex"
+ libspeex_encoder_deps="libspeex"
+ libspeex_encoder_select="audio_frame_queue"
++libsvt_av1_encoder_deps="libsvtav1"
+ libtheora_encoder_deps="libtheora"
+ libtwolame_encoder_deps="libtwolame"
+ libvo_amrwbenc_encoder_deps="libvo_amrwbenc"
+@@ -5339,7 +5342,6 @@ case $target_os in
          enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
@@ -11,7 +35,7 @@ Index: configure
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -5695,7 +5694,7 @@ set_default libdir
+@@ -5695,7 +5697,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
@@ -20,3 +44,11 @@ Index: configure
  
  enable_weak_pic() {
      disabled pic && return
+@@ -6369,6 +6371,7 @@ enabled libsoxr           && require libsoxr soxr.h so
+ enabled libssh            && require_pkg_config libssh libssh libssh/sftp.h sftp_init
+ enabled libspeex          && require_pkg_config libspeex speex speex/speex.h speex_decoder_init
+ enabled libsrt            && require_pkg_config libsrt "srt >= 1.3.0" srt/srt.h srt_socket
++enabled libsvtav1         && require_pkg_config libsvtav1 SvtAv1Enc EbSvtAv1Enc.h svt_av1_enc_init_handle
+ enabled libtensorflow     && require libtensorflow tensorflow/c/c_api.h TF_Version -ltensorflow
+ enabled libtesseract      && require_pkg_config libtesseract tesseract tesseract/capi.h TessBaseAPICreate
+ enabled libtheora         && require libtheora theora/theoraenc.h th_info_init -ltheoraenc -ltheoradec -logg
