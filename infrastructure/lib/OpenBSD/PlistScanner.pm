@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.16 2018/09/12 13:05:32 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.17 2020/07/04 16:53:42 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -206,7 +206,7 @@ sub rescan_dependencies
 			$todo->{$pkg} = $reason;
 		}
 		while (my ($pkgname, $reason) = each %$todo) {
-			$self->progress->say("rescanning: #1 (#2)",
+			$self->ui->say("rescanning: #1 (#2)",
 			    $pkgname, $reason);
 			my $file = "$dir/$pkgname";
 			if (-f $file) {
