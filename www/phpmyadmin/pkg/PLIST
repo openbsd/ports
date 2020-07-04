@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.70 2020/01/23 13:54:49 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.71 2020/07/04 08:35:14 giovanni Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -57,29 +57,29 @@ phpMyAdmin/doc/html/_images/spline_chart.png
 phpMyAdmin/doc/html/_images/timeline_chart.png
 phpMyAdmin/doc/html/_images/usergroups.png
 phpMyAdmin/doc/html/_sources/
-phpMyAdmin/doc/html/_sources/bookmarks.txt
-phpMyAdmin/doc/html/_sources/charts.txt
-phpMyAdmin/doc/html/_sources/config.txt
-phpMyAdmin/doc/html/_sources/copyright.txt
-phpMyAdmin/doc/html/_sources/credits.txt
-phpMyAdmin/doc/html/_sources/developers.txt
-phpMyAdmin/doc/html/_sources/faq.txt
-phpMyAdmin/doc/html/_sources/glossary.txt
-phpMyAdmin/doc/html/_sources/import_export.txt
-phpMyAdmin/doc/html/_sources/index.txt
-phpMyAdmin/doc/html/_sources/intro.txt
-phpMyAdmin/doc/html/_sources/other.txt
-phpMyAdmin/doc/html/_sources/privileges.txt
-phpMyAdmin/doc/html/_sources/relations.txt
-phpMyAdmin/doc/html/_sources/require.txt
-phpMyAdmin/doc/html/_sources/security.txt
-phpMyAdmin/doc/html/_sources/settings.txt
-phpMyAdmin/doc/html/_sources/setup.txt
-phpMyAdmin/doc/html/_sources/themes.txt
-phpMyAdmin/doc/html/_sources/transformations.txt
-phpMyAdmin/doc/html/_sources/two_factor.txt
-phpMyAdmin/doc/html/_sources/user.txt
-phpMyAdmin/doc/html/_sources/vendors.txt
+phpMyAdmin/doc/html/_sources/bookmarks.rst.txt
+phpMyAdmin/doc/html/_sources/charts.rst.txt
+phpMyAdmin/doc/html/_sources/config.rst.txt
+phpMyAdmin/doc/html/_sources/copyright.rst.txt
+phpMyAdmin/doc/html/_sources/credits.rst.txt
+phpMyAdmin/doc/html/_sources/developers.rst.txt
+phpMyAdmin/doc/html/_sources/faq.rst.txt
+phpMyAdmin/doc/html/_sources/glossary.rst.txt
+phpMyAdmin/doc/html/_sources/import_export.rst.txt
+phpMyAdmin/doc/html/_sources/index.rst.txt
+phpMyAdmin/doc/html/_sources/intro.rst.txt
+phpMyAdmin/doc/html/_sources/other.rst.txt
+phpMyAdmin/doc/html/_sources/privileges.rst.txt
+phpMyAdmin/doc/html/_sources/relations.rst.txt
+phpMyAdmin/doc/html/_sources/require.rst.txt
+phpMyAdmin/doc/html/_sources/security.rst.txt
+phpMyAdmin/doc/html/_sources/settings.rst.txt
+phpMyAdmin/doc/html/_sources/setup.rst.txt
+phpMyAdmin/doc/html/_sources/themes.rst.txt
+phpMyAdmin/doc/html/_sources/transformations.rst.txt
+phpMyAdmin/doc/html/_sources/two_factor.rst.txt
+phpMyAdmin/doc/html/_sources/user.rst.txt
+phpMyAdmin/doc/html/_sources/vendors.rst.txt
 phpMyAdmin/doc/html/_static/
 phpMyAdmin/doc/html/_static/ajax-loader.gif
 phpMyAdmin/doc/html/_static/basic.css
@@ -89,10 +89,12 @@ phpMyAdmin/doc/html/_static/comment-close.png
 phpMyAdmin/doc/html/_static/comment.png
 phpMyAdmin/doc/html/_static/default.css
 phpMyAdmin/doc/html/_static/doctools.js
+phpMyAdmin/doc/html/_static/documentation_options.js
 phpMyAdmin/doc/html/_static/down-pressed.png
 phpMyAdmin/doc/html/_static/down.png
 phpMyAdmin/doc/html/_static/file.png
 phpMyAdmin/doc/html/_static/jquery.js
+phpMyAdmin/doc/html/_static/language_data.js
 phpMyAdmin/doc/html/_static/minus.png
 phpMyAdmin/doc/html/_static/plus.png
 phpMyAdmin/doc/html/_static/pygments.css
@@ -1868,10 +1870,6 @@ phpMyAdmin/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Renderer/Text/HtmlTest.p
 phpMyAdmin/vendor/bacon/bacon-qr-code/tests/BaconQrCode/Renderer/Text/TextTest.php
 phpMyAdmin/vendor/bacon/bacon-qr-code/tests/bootstrap.php
 phpMyAdmin/vendor/bacon/bacon-qr-code/tests/phpunit.xml
-phpMyAdmin/vendor/bin/
-phpMyAdmin/vendor/bin/highlight-query
-phpMyAdmin/vendor/bin/lint-query
-phpMyAdmin/vendor/bin/tokenize-query
 phpMyAdmin/vendor/composer/
 phpMyAdmin/vendor/composer/ClassLoader.php
 phpMyAdmin/vendor/composer/LICENSE
@@ -1987,9 +1985,6 @@ phpMyAdmin/vendor/phpmyadmin/shapefile/src/ShapeFile.php
 phpMyAdmin/vendor/phpmyadmin/shapefile/src/ShapeRecord.php
 phpMyAdmin/vendor/phpmyadmin/shapefile/src/Util.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/
-phpMyAdmin/vendor/phpmyadmin/sql-parser/.github/
-phpMyAdmin/vendor/phpmyadmin/sql-parser/.github/stale.yml
-phpMyAdmin/vendor/phpmyadmin/sql-parser/.weblate
 phpMyAdmin/vendor/phpmyadmin/sql-parser/CHANGELOG.md
 phpMyAdmin/vendor/phpmyadmin/sql-parser/CODE_OF_CONDUCT.md
 phpMyAdmin/vendor/phpmyadmin/sql-parser/CONTRIBUTING.md
@@ -1999,7 +1994,6 @@ phpMyAdmin/vendor/phpmyadmin/sql-parser/bin/
 phpMyAdmin/vendor/phpmyadmin/sql-parser/bin/highlight-query
 phpMyAdmin/vendor/phpmyadmin/sql-parser/bin/lint-query
 phpMyAdmin/vendor/phpmyadmin/sql-parser/bin/tokenize-query
-phpMyAdmin/vendor/phpmyadmin/sql-parser/codecov.yml
 phpMyAdmin/vendor/phpmyadmin/sql-parser/composer.json
 phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/
 phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/af/
@@ -2252,7 +2246,6 @@ phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/zh_CN/LC_MESSAGES/sqlparser.mo
 phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/zh_TW/
 phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/zh_TW/LC_MESSAGES/
 phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/zh_TW/LC_MESSAGES/sqlparser.mo
-phpMyAdmin/vendor/phpmyadmin/sql-parser/phpcs.xml.dist
 phpMyAdmin/vendor/phpmyadmin/sql-parser/phpunit.xml.dist
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Component.php
@@ -2481,6 +2474,8 @@ phpMyAdmin/vendor/symfony/polyfill-util/TestListenerTrait.php
 phpMyAdmin/vendor/symfony/polyfill-util/composer.json
 phpMyAdmin/vendor/tecnickcom/
 phpMyAdmin/vendor/tecnickcom/tcpdf/
+phpMyAdmin/vendor/tecnickcom/tcpdf/.github/
+phpMyAdmin/vendor/tecnickcom/tcpdf/.github/FUNDING.yml
 phpMyAdmin/vendor/tecnickcom/tcpdf/CHANGELOG.TXT
 phpMyAdmin/vendor/tecnickcom/tcpdf/LICENSE.TXT
 phpMyAdmin/vendor/tecnickcom/tcpdf/README.md
