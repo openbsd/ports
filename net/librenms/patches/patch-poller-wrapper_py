@@ -1,0 +1,14 @@
+$OpenBSD: patch-poller-wrapper_py,v 1.16 2020/07/04 19:51:43 sthen Exp $
+
+Index: poller-wrapper.py
+--- poller-wrapper.py.orig
++++ poller-wrapper.py
+@@ -46,7 +46,7 @@ except ImportError as exc:
+ 
+ 
+ APP_NAME = "poller_wrapper"
+-LOG_FILE = "logs/" + APP_NAME + ".log"
++LOG_FILE = "/var/www/librenms/logs/" + APP_NAME + ".log"
+ _DEBUG = False
+ distpoll = False
+ real_duration = 0

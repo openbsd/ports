@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_php_default,v 1.9 2018/04/23 11:00:08 sthen Exp $
+$OpenBSD: patch-config_php_default,v 1.10 2020/07/04 19:51:43 sthen Exp $
 
 Index: config.php.default
 --- config.php.default.orig
 +++ config.php.default
-@@ -10,15 +10,16 @@ $config['db_name'] = 'librenms';
+@@ -4,7 +4,7 @@
  
  // This is the user LibreNMS will run as
  //Please ensure this user is created and has the correct permissions to your install
@@ -12,18 +12,16 @@ Index: config.php.default
  
  ### This should *only* be set if you want to *force* a particular hostname/port
  ### It will prevent the web interface being usable form any other hostname
- $config['base_url']        = "/";
+@@ -12,7 +12,7 @@ $config['user'] = 'librenms';
  
  ### Enable this to use rrdcached. Be sure rrd_dir is within the rrdcached dir
--### and that your web server has permission to talk to rrdcached.
+ ### and that your web server has permission to talk to rrdcached.
 -#$config['rrdcached']    = "unix:/var/run/rrdcached.sock";
-+### (if using -b in rrdcached_flags, use "-b /var/www/librenms/rrd"), and that
-+### socket permissions allow access to your web server uid/gid.
 +#$config['rrdcached']    = "unix:/var/run/rrd/rrdcached.sock";
  
  ### Default community
  $config['snmp']['community'] = array('public');
-@@ -32,8 +33,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
+@@ -26,8 +26,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
  #$config['nets'][] = "172.16.0.0/12";
  #$config['nets'][] = "192.168.0.0/16";
  

@@ -1,29 +1,26 @@
-$OpenBSD: patch-_env_example,v 1.4 2020/06/01 15:01:25 sthen Exp $
+$OpenBSD: patch-_env_example,v 1.5 2020/07/04 19:51:43 sthen Exp $
 
 Index: .env.example
 --- .env.example.orig
 +++ .env.example
-@@ -2,11 +2,17 @@
- # Remember to run "php artisan optimize" after changing this file
- #
- 
+@@ -1,8 +1,14 @@
 -APP_KEY=
 +#APP_KEY=base64:xxx  << insert this from "php artisan key:generate"
-+#APP_URL=https://librenms.example.com
  
 -#DB_HOST=
 -#DB_DATABASE=
 -#DB_USERNAME=
 -#DB_PASSWORD=
-+#NODE_ID=hostname.example.com
- 
--#APP_URL=
 +#DB_HOST=localhost
 +#DB_DATABASE=librenms
 +#DB_USERNAME=librenms
 +#DB_PASSWORD=password
 +#DB_PORT=<< optional >>
 +#DB_SOCKET=<< optional >>
+ 
+-#APP_URL=
++#NODE_ID=librenms.example.com
++#APP_URL=https://librenms.example.com
 +
 +LIBRENMS_USER=_librenms
 +LIBRENMS_GROUP=_librenms

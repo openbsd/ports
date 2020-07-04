@@ -1,0 +1,14 @@
+$OpenBSD: patch-services-wrapper_py,v 1.1 2020/07/04 19:51:43 sthen Exp $
+
+Index: services-wrapper.py
+--- services-wrapper.py.orig
++++ services-wrapper.py
+@@ -58,7 +58,7 @@ except ImportError as exc:
+ 
+ 
+ APP_NAME = "services_wrapper"
+-LOG_FILE = "logs/" + APP_NAME + ".log"
++LOG_FILE = "/var/www/librenms/logs/" + APP_NAME + ".log"
+ _DEBUG = False
+ servicedisco = False
+ real_duration = 0

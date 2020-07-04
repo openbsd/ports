@@ -1,0 +1,14 @@
+$OpenBSD: patch-discovery-wrapper_py,v 1.5 2020/07/04 19:51:43 sthen Exp $
+
+Index: discovery-wrapper.py
+--- discovery-wrapper.py.orig
++++ discovery-wrapper.py
+@@ -57,7 +57,7 @@ except ImportError as exc:
+     sys.exit(2)
+ 
+ APP_NAME = "discovery_wrapper"
+-LOG_FILE = "logs/" + APP_NAME + ".log"
++LOG_FILE = "/var/www/librenms/logs/" + APP_NAME + ".log"
+ _DEBUG = False
+ distdisco = False
+ real_duration = 0

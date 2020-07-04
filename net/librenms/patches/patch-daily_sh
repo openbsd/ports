@@ -1,9 +1,20 @@
-$OpenBSD: patch-daily_sh,v 1.28 2020/06/01 15:01:25 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.29 2020/07/04 19:51:43 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -125,7 +125,7 @@ set_notifiable_result() {
+@@ -30,8 +30,8 @@ COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper
+ LOG_DIR=$(php -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['log_dir']) ? \$config['log_dir'] : '${LIBRENMS_DIR}/logs';")
+ 
+ # get the librenms user
+-source ".env"
+-LIBRENMS_USER="${LIBRENMS_USER:-librenms}"
++source "${LIBRENMS_DIR}/.env"
++LIBRENMS_USER="${LIBRENMS_USER:-_librenms}"
+ LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
+ 
+ #######################################
+@@ -126,7 +126,7 @@ set_notifiable_result() {
  #   Exit-Code: 0 >= min ver, 1 < min ver
  #######################################
  check_dependencies() {
