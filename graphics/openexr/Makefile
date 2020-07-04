@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2020/07/04 09:41:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2020/07/04 10:49:53 sthen Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -11,6 +11,7 @@ GH_TAGNAME=		v${V}
 
 REVISION-main=		0
 REVISION-tools=		0
+REVISION-doc=		0
 
 PKGNAME-main=		OpenEXR-${V}
 PKGNAME-tools=		OpenEXR-tools-${V}
@@ -62,6 +63,7 @@ WANTLIB-tools += IlmThread-2_5 Imath-2_5 c m z
 LIB_DEPENDS-tools=	${BASE_PKGPATH}
 
 PKG_ARCH-doc=		*
+RUN_DEPENDS-doc=	# empty
 
 post-install:
 # fix links target; symlinks are required for FindIlmbase.cmake etc. to find the
