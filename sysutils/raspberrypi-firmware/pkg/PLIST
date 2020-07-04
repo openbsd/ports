@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/04/19 14:37:41 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/07/04 05:21:19 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -48,6 +48,7 @@ share/raspberrypi-firmware/boot/overlays/apds9960.dtbo
 share/raspberrypi-firmware/boot/overlays/applepi-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/at86rf233.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-addons.dtbo
+share/raspberrypi-firmware/boot/overlays/audioinjector-isolated-soundcard.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-ultra.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-wm8731-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/audiosense-pi.dtbo
@@ -79,6 +80,7 @@ share/raspberrypi-firmware/boot/overlays/gpio-no-irq.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-poweroff.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-shutdown.dtbo
 share/raspberrypi-firmware/boot/overlays/hd44780-lcd.dtbo
+share/raspberrypi-firmware/boot/overlays/hdmi-backlight-hwhack-gpio.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-amp.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dacplus.dtbo
@@ -130,6 +132,7 @@ share/raspberrypi-firmware/boot/overlays/mcp3008.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp3202.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp342x.dtbo
 share/raspberrypi-firmware/boot/overlays/media-center.dtbo
+share/raspberrypi-firmware/boot/overlays/merus-amp.dtbo
 share/raspberrypi-firmware/boot/overlays/midi-uart0.dtbo
 share/raspberrypi-firmware/boot/overlays/midi-uart1.dtbo
 share/raspberrypi-firmware/boot/overlays/miniuart-bt.dtbo
@@ -173,6 +176,7 @@ share/raspberrypi-firmware/boot/overlays/sc16is752-spi1.dtbo
 share/raspberrypi-firmware/boot/overlays/sdhost.dtbo
 share/raspberrypi-firmware/boot/overlays/sdio.dtbo
 share/raspberrypi-firmware/boot/overlays/sdtweak.dtbo
+share/raspberrypi-firmware/boot/overlays/sh1106-spi.dtbo
 share/raspberrypi-firmware/boot/overlays/smi-dev.dtbo
 share/raspberrypi-firmware/boot/overlays/smi-nand.dtbo
 share/raspberrypi-firmware/boot/overlays/smi.dtbo
@@ -195,7 +199,9 @@ share/raspberrypi-firmware/boot/overlays/spi5-1cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi5-2cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi6-1cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi6-2cs.dtbo
+share/raspberrypi-firmware/boot/overlays/ssd1306-spi.dtbo
 share/raspberrypi-firmware/boot/overlays/ssd1306.dtbo
+share/raspberrypi-firmware/boot/overlays/ssd1351-spi.dtbo
 share/raspberrypi-firmware/boot/overlays/superaudioboard.dtbo
 share/raspberrypi-firmware/boot/overlays/sx150x.dtbo
 share/raspberrypi-firmware/boot/overlays/tc358743-audio.dtbo
