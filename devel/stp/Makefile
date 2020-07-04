@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/04 09:52:16 sthen Exp $
 
 COMMENT=	decision procedure for bit-vectors and arrays
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	stp
 GH_PROJECT=	stp
 GH_TAGNAME=	stp-2.2.0
 DISTNAME=	stp-2.2.0
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  stp                       0.0 # 2.2
 
