@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/04 20:18:44 sthen Exp $
 
 COMMENT =	flashcard learning system with spaced repetition
 DISTNAME =	anki-2.1.16
 EXTRACT_SUFX =	-source.tgz
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	education
 
@@ -34,6 +34,7 @@ RUN_DEPENDS =	audio/lame \
 		textproc/py-markdown${MODPY_FLAVOR} \
 		www/py-beautifulsoup4${MODPY_FLAVOR} \
 		www/py-qtwebengine${MODPY_FLAVOR}
+		www/py-requests${MODPY_FLAVOR}
 
 do-build:
 .for i in pyuic5 pyrcc5
