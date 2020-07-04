@@ -1,7 +1,9 @@
-$OpenBSD: patch-disc-cover,v 1.3 2003/04/18 21:27:12 sturm Exp $
---- disc-cover.orig	Thu Mar 13 15:17:05 2003
-+++ disc-cover	Fri Apr 18 21:57:11 2003
-@@ -38,9 +38,9 @@
+$OpenBSD: patch-disc-cover,v 1.4 2020/07/04 09:31:29 ajacoutot Exp $
+
+Index: disc-cover
+--- disc-cover.orig
++++ disc-cover
+@@ -39,9 +39,9 @@ my $cvs_id_string = '$Id: disc-cover,v 1.6 2006/06/20 
  my ($config_homedir) = "";
  $config_homedir = "$ENV{HOME}" if (defined $ENV{HOME});
  my ($config_tmp_dir) = '/tmp';
@@ -13,3 +15,12 @@ $OpenBSD: patch-disc-cover,v 1.3 2003/04/18 21:27:12 sturm Exp $
  my ($config_cddb_cache_directory) = "$config_homedir/.cddb";
  my ($config_flaptext) = split ',', (getpwuid($<))[6];
  my ($config_version_config) = undef;
+@@ -1725,7 +1725,7 @@ sub create_cdserverrc
+ 		open CDSERVERRC, ">$config_cdserverrc" or end_program("Could not open \"$config_cdserverrc\"", "Check if you can write this file yourself.");
+ 
+ 		print CDSERVERRC "# Created by Disc-Cover $version\n";
+-		print CDSERVERRC "SERVER=cddbp://freedb.freedb.org:888/\n";
++		print CDSERVERRC "SERVER=cddbp://gnudb.gnudb.org:8880/\n";
+ 		print CDSERVERRC "ACCESS=REMOTE\n";
+ 
+ 		close CDSERVERRC;

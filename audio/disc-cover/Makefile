@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:43:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/07/04 09:31:29 ajacoutot Exp $
 
 COMMENT=	creates cover for audio cds using cddb and latex
 
@@ -6,7 +6,7 @@ DISTNAME=	disc-cover-1.5.6
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} webserver-1.0${EXTRACT_SUFX}
 DIST_SUBDIR=	disc-cover
 CATEGORIES=	audio
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.vanhemert.co.uk/disc-cover.html
 
