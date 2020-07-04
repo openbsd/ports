@@ -1,17 +1,9 @@
-$OpenBSD: patch-configure,v 1.8 2019/01/14 15:46:55 pascal Exp $
+$OpenBSD: patch-configure,v 1.9 2020/07/04 09:28:02 ajacoutot Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -4981,7 +4981,7 @@ fi
- 
- done
- 
--for ac_header in linux/soundcard.h machine/soundcard.h sys/soundcard.h sys/audioio.h sys/audio.io.h sun/audioio.h
-+for ac_header in soundcard.h linux/soundcard.h machine/soundcard.h sys/soundcard.h sys/audioio.h sys/audio.io.h sun/audioio.h
- do :
-   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
- ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
-@@ -16611,7 +16611,7 @@ return ID3Tag_Link ();
+@@ -18521,7 +18521,7 @@ return ID3Tag_Link ();
    return 0;
  }
  _ACEOF
@@ -20,7 +12,7 @@ Index: configure
    if test -z "$ac_lib"; then
      ac_res="none required"
    else
-@@ -16646,10 +16646,10 @@ $as_echo "#define HAVE_ID3V2 /**/" >>confdefs.h
+@@ -18556,10 +18556,10 @@ $as_echo "#define HAVE_ID3V2 /**/" >>confdefs.h
  
  		if test "$enable_shared_id3" = "yes"; then
  		  echo "using shared id3lib"

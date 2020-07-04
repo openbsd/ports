@@ -1,17 +1,9 @@
-$OpenBSD: patch-src_grip_c,v 1.8 2017/12/01 14:45:48 jca Exp $
+$OpenBSD: patch-src_grip_c,v 1.9 2020/07/04 09:28:02 ajacoutot Exp $
 
 Index: src/grip.c
 --- src/grip.c.orig
 +++ src/grip.c
-@@ -26,6 +26,7 @@
- #include <stdio.h>
- #include <unistd.h>
- #include <sys/param.h>
-+#include <sys/wait.h>
- #include <gdk/gdkx.h>
- #include <X11/Xlib.h>
- #include <time.h>
-@@ -773,7 +774,7 @@ static void DoLoadConfig(GripInfo *ginfo)
+@@ -637,7 +637,7 @@ static void DoLoadConfig(GripInfo *ginfo)
  
    *ginfo->version='\0';
  
@@ -20,3 +12,12 @@ Index: src/grip.c
    *ginfo->force_scsi='\0';
  
    ginfo->local_mode=FALSE;
+@@ -671,7 +671,7 @@ static void DoLoadConfig(GripInfo *ginfo)
+   ginfo->use_proxy=FALSE;
+   ginfo->use_proxy_env=FALSE;
+ 
+-  strcpy(ginfo->dbserver.name,"freedb.freedb.org");
++  strcpy(ginfo->dbserver.name,"gnudb.gnudb.org");
+   strcpy(ginfo->dbserver.cgi_prog,"~cddb/cddb.cgi");
+   ginfo->dbserver.port=80;
+   ginfo->dbserver.use_proxy=0;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/06/29 22:16:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/07/04 09:28:02 ajacoutot Exp $
 @bin bin/grip
 @man man/man1/grip.1
 share/applications/grip.desktop
@@ -69,6 +69,7 @@ share/icons/hicolor/scalable/apps/grip.svg
 share/locale/be/LC_MESSAGES/grip.mo
 share/locale/bg/LC_MESSAGES/grip.mo
 share/locale/ca/LC_MESSAGES/grip.mo
+share/locale/da/LC_MESSAGES/grip.mo
 share/locale/de/LC_MESSAGES/grip.mo
 share/locale/es/LC_MESSAGES/grip.mo
 share/locale/fi/LC_MESSAGES/grip.mo
@@ -77,6 +78,7 @@ share/locale/fur/LC_MESSAGES/grip.mo
 share/locale/hu/LC_MESSAGES/grip.mo
 share/locale/it/LC_MESSAGES/grip.mo
 share/locale/ja/LC_MESSAGES/grip.mo
+share/locale/ko/LC_MESSAGES/grip.mo
 share/locale/nb/LC_MESSAGES/grip.mo
 share/locale/nl/LC_MESSAGES/grip.mo
 share/locale/pl/LC_MESSAGES/grip.mo
@@ -91,5 +93,8 @@ share/locale/zh_TW/LC_MESSAGES/grip.mo
 share/pixmaps/
 share/pixmaps/grip.png
 share/pixmaps/griptray.png
+share/solid/
+share/solid/actions/
+share/solid/actions/grip-audiocd.desktop
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

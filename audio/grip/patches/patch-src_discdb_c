@@ -1,5 +1,7 @@
-$OpenBSD: patch-src_discdb_c,v 1.6 2017/08/29 16:43:59 landry Exp $
+$OpenBSD: patch-src_discdb_c,v 1.7 2020/07/04 09:28:02 ajacoutot Exp $
+
 overlapping snprintf
+
 Index: src/discdb.c
 --- src/discdb.c.orig
 +++ src/discdb.c
@@ -23,8 +25,8 @@ Index: src/discdb.c
    char root_dir[256],file[256],inbuf[512];
 +  char* buf;
    struct stat st;
-   
-   g_snprintf(root_dir,256,"%s/.cddb",getenv("HOME"));
+ 
+   g_snprintf(root_dir, 256, "%s/.cddb", g_get_home_dir());
 @@ -724,8 +727,11 @@ int DiscDBReadDiscData(DiscInfo *disc,DiscData *ddata,
  
    /* Both disc title and artist have been stuffed in the title field, so the
