@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2020/07/03 21:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.180 2020/07/04 10:04:57 sthen Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -11,6 +11,7 @@ COMMENT-gui=		HPLIP graphical tools
 
 REVISION-main=		0
 REVISION-gui=		0
+REVISION-hpaio=		0
 
 V=			3.20.6
 DISTNAME=		hplip-${V}
