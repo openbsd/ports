@@ -1,16 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.96 2020/05/14 15:25:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.97 2020/07/04 17:19:20 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
-@extraunexec find /var/db/gdm/.pulse -type f ! -name client.conf -exec rm -f '{}' \;
-@extraunexec rm -rf /var/db/gdm/.ICEauthority
-@extraunexec rm -rf /var/db/gdm/.aucat_cookie
-@extraunexec rm -rf /var/db/gdm/.cache
-@extraunexec rm -rf /var/db/gdm/.color
-@extraunexec rm -rf /var/db/gdm/.dbus
-@extraunexec rm -rf /var/db/gdm/.config
-@extraunexec rm -rf /var/db/gdm/.gvfs
-@extraunexec rm -rf /var/db/gdm/.local/share/{sounds,icc,gnome-shell,telepathy}
+@extraunexec rm -rf /var/db/gdm/.local/share/applications/*
+@extraunexec rm -rf /var/db/gdm/.local/share/!(applications)
+@extraunexec rm -rf /var/db/gdm/.!(local)
 @extraunexec rm -rf /var/db/gdm/*
 @extraunexec rm -rf /var/cache/gdm/*
 @extraunexec rm -rf /var/log/gdm/*
@@ -98,12 +92,6 @@ share/examples/gdm/var/db/gdm/.local/share/
 @sample /var/db/gdm/.local/share/
 share/examples/gdm/var/db/gdm/.local/share/applications/
 @sample /var/db/gdm/.local/share/applications/
-@mode 0700
-share/examples/gdm/var/db/gdm/.pulse/
-@sample /var/db/gdm/.pulse/
-@mode
-share/examples/gdm/var/db/gdm/.pulse/client.conf
-@sample /var/db/gdm/.pulse/client.conf
 @owner
 @group
 share/gdm/gdb-cmd

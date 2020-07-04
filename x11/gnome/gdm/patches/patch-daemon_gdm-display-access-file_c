@@ -1,0 +1,39 @@
+$OpenBSD: patch-daemon_gdm-display-access-file_c,v 1.1 2020/07/04 17:19:20 ajacoutot Exp $
+
+The X(7) server runs as the _x11 user, so give it read access to the
+authorization file to prevent:
+(EE) Failed to open authorization file "/var/run/gdm/auth-for-_gdm-XXXXXX/database": Permission denied
+
+Index: daemon/gdm-display-access-file.c
+--- daemon/gdm-display-access-file.c.orig
++++ daemon/gdm-display-access-file.c
+@@ -256,6 +256,7 @@ _create_xauth_file_for_user (const char  *username,
+         FILE   *fp;
+         uid_t   uid;
+         gid_t   gid;
++        gid_t   x11_gid;
+ 
+         g_assert (filename != NULL);
+ 
+@@ -339,7 +340,7 @@ _create_xauth_file_for_user (const char  *username,
+         errno = 0;
+         fd = g_open (auth_filename,
+                      O_RDWR | O_CREAT | O_EXCL | O_BINARY,
+-                     S_IRUSR | S_IWUSR);
++                     S_IRUSR | S_IWUSR | S_IRGRP);
+ 
+         if (fd < 0) {
+                 g_set_error (error,
+@@ -351,9 +352,10 @@ _create_xauth_file_for_user (const char  *username,
+                 goto out;
+         }
+ 
+-        g_debug ("GdmDisplayAccessFile: chowning %s to %u:%u", auth_filename, (guint)uid, (guint)gid);
++        x11_gid = 35;
++        g_debug ("GdmDisplayAccessFile: chowning %s to %u:%u", auth_filename, (guint)uid, (guint)x11_gid);
+         errno = 0;
+-        if (fchown (fd, uid, gid) < 0) {
++        if (fchown (fd, uid, x11_gid) < 0) {
+                 g_set_error (error,
+                              G_FILE_ERROR,
+                              g_file_error_from_errno (errno),
