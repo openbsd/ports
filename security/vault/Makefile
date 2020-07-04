@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.41 2020/05/28 09:32:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2020/07/04 10:44:36 ajacoutot Exp $
 
 COMMENT=		secure secret storage
 
-GH_TAGNAME=		v1.4.2
+GH_TAGNAME=		v1.4.3
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		vault
 
 ### Vault UI
-# unversioned DISTFILE
-DIST_SUBDIR=		vault-${GH_TAGNAME}
-MODGO_FLAGS +=		-tags=ui
+MODGO_FLAGS=		-tags=ui
 MASTER_SITES0=		https://distfiles.tristero.se/
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			vault-${GH_TAGNAME:S/v//}-bindata_assetfs.go:0
+			${DISTNAME}-bindata_assetfs.go:0
 
 CATEGORIES=		security net
 
