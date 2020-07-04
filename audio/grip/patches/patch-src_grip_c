@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_grip_c,v 1.9 2020/07/04 09:28:02 ajacoutot Exp $
+$OpenBSD: patch-src_grip_c,v 1.10 2020/07/04 09:36:51 ajacoutot Exp $
 
 Index: src/grip.c
 --- src/grip.c.orig
@@ -12,12 +12,15 @@ Index: src/grip.c
    *ginfo->force_scsi='\0';
  
    ginfo->local_mode=FALSE;
-@@ -671,7 +671,7 @@ static void DoLoadConfig(GripInfo *ginfo)
+@@ -671,9 +671,9 @@ static void DoLoadConfig(GripInfo *ginfo)
    ginfo->use_proxy=FALSE;
    ginfo->use_proxy_env=FALSE;
  
 -  strcpy(ginfo->dbserver.name,"freedb.freedb.org");
 +  strcpy(ginfo->dbserver.name,"gnudb.gnudb.org");
    strcpy(ginfo->dbserver.cgi_prog,"~cddb/cddb.cgi");
-   ginfo->dbserver.port=80;
+-  ginfo->dbserver.port=80;
++  ginfo->dbserver.port=8880;
    ginfo->dbserver.use_proxy=0;
+   ginfo->dbserver.proxy=&(ginfo->proxy_server);
+ 
