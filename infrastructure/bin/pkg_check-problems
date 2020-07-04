@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_check-problems,v 1.10 2018/09/14 11:36:07 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.11 2020/07/04 16:54:22 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -118,11 +118,6 @@ package OpenBSD::PackingElement::ExtraInfo;
 sub register
 {
 	my ($self, $o, $db, $pkgname) = @_;
-	if ($self->{cdrom} eq 'yes') {
-		$o->{cdrom_okay}{$pkgname} = 1;
-	} else {
-		$o->{cdrom_okay}{$pkgname} = 0;
-	}
 	if ($self->{ftp} eq 'yes') {
 		$o->{ftp_okay}{$pkgname} = 1;
 	} else {
@@ -481,7 +476,7 @@ sub check_licenses
 	my $r = {};
 
 	$self->progress->set_header("Compute licenses issues");
-	for my $k (qw(cdrom_okay ftp_okay)) {
+	for my $k (qw(ftp_okay)) {
 		while (my ($pkg, $v) = each %{$self->{$k}}) {
 			next if $v == 0;
 			my $d = $self->check_license($pkg, $k);
@@ -497,7 +492,7 @@ sub check_licenses
 sub show_licenses_issues
 {
 	my ($self, $result) = @_;
-	for my $k (qw(cdrom_okay ftp_okay)) {
+	for my $k (qw(ftp_okay)) {
 		for my $pkg (sort keys %{$result->{$k}}) {
 			$self->say("#1 is marked as #2 but depends on #3",
 			    $pkg, $k, $result->{$k}{$pkg});
