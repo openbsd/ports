@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/04 20:18:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/04 21:39:06 ajacoutot Exp $
 
 COMMENT =	flashcard learning system with spaced repetition
 DISTNAME =	anki-2.1.16
@@ -33,7 +33,7 @@ RUN_DEPENDS =	audio/lame \
 		sysutils/py-distro${MODPY_FLAVOR} \
 		textproc/py-markdown${MODPY_FLAVOR} \
 		www/py-beautifulsoup4${MODPY_FLAVOR} \
-		www/py-qtwebengine${MODPY_FLAVOR}
+		www/py-qtwebengine${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
 
 do-build:
