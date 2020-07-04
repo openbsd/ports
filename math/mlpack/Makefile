@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/05/07 14:24:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/04 10:02:46 sthen Exp $
 
 BROKEN-arm =	llvm out of memory
 BROKEN-powerpc = virtual memory exhausted, even with -O1
@@ -8,7 +8,7 @@ COMMENT-python = python bindings to C++ machine learning library
 
 V = 		3.2.1
 REVISION-main =		1
-REVISION-python =	1
+REVISION-python =	2
 
 # STB stuff
 # XXX remember to bump REV if they change
@@ -72,7 +72,8 @@ LIB_DEPENDS-main =	math/armadillo \
 LIB_DEPENDS-python = 	math/mlpack,-main \
 			devel/boost
 
-RUN_DEPENDS-python = 	math/py-pandas${MODPY_FLAVOR}
+RUN_DEPENDS-python = 	${MODPY_RUN_DEPENDS} \
+			math/py-pandas${MODPY_FLAVOR}
 
 # XXX set this *explicitly*, do not depend on module order
 CONFIGURE_STYLE = 	cmake
