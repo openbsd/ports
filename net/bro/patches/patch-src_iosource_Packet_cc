@@ -1,11 +1,25 @@
-$OpenBSD: patch-src_iosource_Packet_cc,v 1.5 2020/02/28 16:48:59 ajacoutot Exp $
+$OpenBSD: patch-src_iosource_Packet_cc,v 1.6 2020/07/04 19:16:27 ajacoutot Exp $
 
 error: use of undeclared identifier 'DLT_NFLOG'
+
+Prefer DLT_LOOP over DLT_NULL:
+DLT_LOOP: 4-byte header with the AF in network byte order
+DLT_NULL: 0 hlen and protocol default to AF_INET
 
 Index: src/iosource/Packet.cc
 --- src/iosource/Packet.cc.orig
 +++ src/iosource/Packet.cc
-@@ -99,6 +99,7 @@ int Packet::GetLinkHeaderSize(int link_type)
+@@ -77,6 +77,9 @@ int Packet::GetLinkHeaderSize(int link_type)
+ 	{
+ 	switch ( link_type ) {
+ 	case DLT_NULL:
++		return 0;
++
++	case DLT_LOOP:
+ 		return 4;
+ 
+ 	case DLT_EN10MB:
+@@ -99,6 +102,7 @@ int Packet::GetLinkHeaderSize(int link_type)
  	case DLT_IEEE802_11_RADIO:	// 802.11 plus RadioTap
  		return 59;
  
@@ -13,7 +27,7 @@ Index: src/iosource/Packet.cc
  	case DLT_NFLOG:
  		// Linux netlink NETLINK NFLOG socket log messages
  		// The actual header size is variable, but we return the minimum
-@@ -106,6 +107,7 @@ int Packet::GetLinkHeaderSize(int link_type)
+@@ -106,6 +110,7 @@ int Packet::GetLinkHeaderSize(int link_type)
  		// least 2 bytes each for the type and length values assoicated with
  		// the final TLV carrying the packet payload.
  		return 8;
@@ -21,7 +35,23 @@ Index: src/iosource/Packet.cc
  
  	case DLT_RAW:
  		return 0;
-@@ -410,6 +412,7 @@ void Packet::ProcessLayer2()
+@@ -129,8 +134,14 @@ void Packet::ProcessLayer2()
+ 	switch ( link_type ) {
+ 	case DLT_NULL:
+ 		{
+-		int protocol = (pdata[3] << 24) + (pdata[2] << 16) + (pdata[1] << 8) + pdata[0];
+ 		pdata += GetLinkHeaderSize(link_type);
++		l3_proto = L3_IPV4;
++		break;
++		}
++	case DLT_LOOP:
++		{
++		int protocol = (pdata[0] << 24) + (pdata[1] << 16) + (pdata[2] << 8) + pdata[3];
++		pdata += GetLinkHeaderSize(link_type);
+ 
+ 		// From the Wireshark Wiki: "AF_INET6, unfortunately, has
+ 		// different values in {NetBSD,OpenBSD,BSD/OS},
+@@ -410,6 +421,7 @@ void Packet::ProcessLayer2()
  		break;
  		}
  
@@ -29,7 +59,7 @@ Index: src/iosource/Packet.cc
  	case DLT_NFLOG:
  		{
  		// See https://www.tcpdump.org/linktypes/LINKTYPE_NFLOG.html
-@@ -488,6 +491,7 @@ void Packet::ProcessLayer2()
+@@ -488,6 +500,7 @@ void Packet::ProcessLayer2()
  
  		break;
  		}
