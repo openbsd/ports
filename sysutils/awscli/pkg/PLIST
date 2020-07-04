@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.113 2020/06/27 12:20:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.114 2020/07/04 18:40:26 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -668,6 +668,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling-plans/updat
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-load-balancer-target-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-load-balancers.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/cancel-instance-refresh.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/complete-lifecycle-action.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/create-auto-scaling-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/create-launch-configuration.rst
@@ -684,6 +685,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-ad
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-auto-scaling-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-auto-scaling-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-auto-scaling-notification-types.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-instance-refreshes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-launch-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-lifecycle-hook-types.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-lifecycle-hooks.rst
@@ -714,6 +716,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/resume-proc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/set-desired-capacity.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/set-instance-health.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/set-instance-protection.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/start-instance-refresh.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/suspend-processes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/terminate-instance-in-auto-scaling-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/update-auto-scaling-group.rst
@@ -2124,11 +2127,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/add-tags-to-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/authorize-cache-security-group-ingress.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/batch-apply-update-action.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/batch-stop-update-action.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/copy-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/create-cache-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/create-cache-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/create-cache-subnet-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/create-replication-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/create-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/decrease-replica-count.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/delete-cache-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/delete-cache-parameter-group.rst
@@ -2139,11 +2145,15 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-ca
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-cache-parameter-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-cache-parameters.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-engine-default-parameters.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-events.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-global-replication-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-replication-groups.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-reserved-cache-nodes-offerings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-reserved-cache-nodes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-service-updates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-snapshots.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/describe-update-actions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/disassociate-global-replication-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/increase-replica-count.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/list-allowed-node-type-modifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/modify-cache-cluster.rst
@@ -2512,6 +2522,20 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-group
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-logger-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-resource-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-subscription-definition.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/accept-invitation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/create-ip-set.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/disassociate-from-master-account.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/get-detector.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/get-findings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/get-ip-set.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/get-master-account.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-detectors.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-findings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-invitations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-ip-sets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-members.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/update-ip-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/health/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/health/describe-affected-entities.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/health/describe-event-details.rst
