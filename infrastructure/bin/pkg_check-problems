@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_check-problems,v 1.11 2020/07/04 16:54:22 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.12 2020/07/04 18:29:21 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -479,6 +479,7 @@ sub check_licenses
 	for my $k (qw(ftp_okay)) {
 		while (my ($pkg, $v) = each %{$self->{$k}}) {
 			next if $v == 0;
+			next if !$self->{current}{$pkg};
 			my $d = $self->check_license($pkg, $k);
 			if (defined $d) {
 				$r->{$k}{$pkg} = $d;
