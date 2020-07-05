@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2020/06/30 10:20:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.233 2020/07/05 07:33:26 kmos Exp $
 
 # XXX never versions require pango>=1.45
 # XXX add support for libcloudproviders?
@@ -114,6 +114,11 @@ LIB_DEPENDS-cups +=	graphics/colord
 WANTLIB-cups +=	colordprivate colord lcms2
 .else
 CONFIGURE_ARGS +=	--disable-colord
+.endif
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
 .endif
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
