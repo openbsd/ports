@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2018/01/22 10:57:29 landry Exp $
+$OpenBSD: patch-configure,v 1.2 2020/07/05 11:29:36 landry Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -7190,7 +7190,7 @@ $as_echo_n "checking for the pthreads library -l$flag.
+@@ -7359,7 +7359,7 @@ $as_echo_n "checking for the pthreads library -l$flag.
          # We try pthread_create on general principles.
          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */

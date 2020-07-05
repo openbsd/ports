@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_usual_tls_tls_c,v 1.2 2018/01/22 10:57:29 landry Exp $
+$OpenBSD: patch-lib_usual_tls_tls_c,v 1.3 2020/07/05 11:29:36 landry Exp $
 
 Index: lib/usual/tls/tls.c
 --- lib/usual/tls/tls.c.orig
 +++ lib/usual/tls/tls.c
-@@ -350,7 +350,7 @@ tls_info_callback(const SSL *ssl, int where, int rc)
+@@ -362,7 +362,7 @@ tls_info_callback(const SSL *ssl, int where, int rc)
  {
  	struct tls *ctx = SSL_get_app_data(ssl);
  

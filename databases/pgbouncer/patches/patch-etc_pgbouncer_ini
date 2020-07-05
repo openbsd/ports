@@ -1,22 +1,22 @@
-$OpenBSD: patch-etc_pgbouncer_ini,v 1.5 2018/01/22 10:57:29 landry Exp $
+$OpenBSD: patch-etc_pgbouncer_ini,v 1.6 2020/07/05 11:29:36 landry Exp $
 Index: etc/pgbouncer.ini
 --- etc/pgbouncer.ini.orig
 +++ etc/pgbouncer.ini
-@@ -103,7 +103,7 @@ listen_port = 6432
+@@ -112,7 +112,7 @@ listen_port = 6432
  ;;;
  
- ; any, trust, plain, crypt, md5, cert, hba, pam
+ ;; any, trust, plain, md5, cert, hba, pam
 -auth_type = trust
 +auth_type = md5
- ;auth_file = /8.0/main/global/pg_auth
  auth_file = /etc/pgbouncer/userlist.txt
  
-@@ -119,7 +119,7 @@ auth_file = /etc/pgbouncer/userlist.txt
+ ;; Path to HBA-style auth config
+@@ -127,7 +127,7 @@ auth_file = /etc/pgbouncer/userlist.txt
  ;;;
  
- ; comma-separated list of users, who are allowed to change settings
+ ;; comma-separated list of users who are allowed to change settings
 -;admin_users = user2, someadmin, otheradmin
 +admin_users = admin, pgbouncer
  
- ; comma-separated list of users who are just allowed to use SHOW command
+ ;; comma-separated list of users who are just allowed to use SHOW command
  ;stats_users = stats, root

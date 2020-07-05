@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/07/05 11:29:36 landry Exp $
 @newgroup _pgbouncer:653
 @newuser _pgbouncer:653:653:daemon:pgbouncer:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/pgbouncer/*
+@rcscript ${RCDIR}/pgbouncer
 @bin bin/pgbouncer
 @man man/man1/pgbouncer.1
 @man man/man5/pgbouncer.5
@@ -9,9 +10,8 @@
 @sample ${SYSCONFDIR}/pgbouncer/
 @owner
 share/doc/pgbouncer/
-share/doc/pgbouncer/NEWS.rst
-share/doc/pgbouncer/README.rst
-share/doc/pkg-readmes/${PKGSTEM}
+share/doc/pgbouncer/NEWS.md
+share/doc/pgbouncer/README.md
 @mode 640
 @group _pgbouncer
 share/doc/pgbouncer/pgbouncer.ini
@@ -22,6 +22,5 @@ share/doc/pgbouncer/userlist.txt
 @owner _pgbouncer
 @sample /var/log/pgbouncer/
 @owner
-@mode
 @group
-@rcscript ${RCDIR}/pgbouncer
+share/doc/pkg-readmes/${PKGSTEM}
