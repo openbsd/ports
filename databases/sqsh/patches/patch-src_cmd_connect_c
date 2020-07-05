@@ -1,9 +1,14 @@
-$OpenBSD: patch-src_cmd_connect_c,v 1.1 2016/06/28 21:11:10 sthen Exp $
+$OpenBSD: patch-src_cmd_connect_c,v 1.2 2020/07/05 10:26:52 sthen Exp $
 
-CS_TDS_80 used to be #defined to CS_TDS_71 but has now been removed.
+- CS_TDS_80 used to be #defined to CS_TDS_71 but has now been removed.
 
---- src/cmd_connect.c.orig	Tue Jun 28 22:07:55 2016
-+++ src/cmd_connect.c	Tue Jun 28 22:09:22 2016
+- Disable CS_SEC_NETWORKAUTH code. FreeTDS 1.2 introduces CS_SEC_NETWORKAUTH
+but doesn't have CS_MAX_CHAR, CS_SEC_CHANBIND, CS_SEC_CONFIDENTIALITY,
+CS_SEC_INTEGRITY, etc.
+
+Index: src/cmd_connect.c
+--- src/cmd_connect.c.orig
++++ src/cmd_connect.c
 @@ -861,7 +861,7 @@ int cmd_connect( argc, argv )
          else if (strcmp(tds_version, "7.0") == 0)
              version = CS_TDS_70;
@@ -22,3 +27,21 @@ CS_TDS_80 used to be #defined to CS_TDS_71 but has now been removed.
                      env_set( g_env, "tds_version", "8.0" );
                      break;
  #endif
+@@ -1875,7 +1875,7 @@ static CS_RETCODE SetNetAuth (conn, principal, keytab_
+     CS_CHAR       *req_options;
+ {
+ 
+-#if defined(CS_SEC_NETWORKAUTH)
++#if 0 && defined(CS_SEC_NETWORKAUTH)
+ 
+     CS_CHAR buf[CS_MAX_CHAR+1];
+     CS_INT  buflen;
+@@ -2051,7 +2051,7 @@ static CS_RETCODE ShowNetAuthCredExp (conn, cmdname)
+     CS_CONNECTION *conn;
+     CS_CHAR       *cmdname;
+ {
+-#if defined(CS_SEC_NETWORKAUTH)
++#if 0 && defined(CS_SEC_NETWORKAUTH)
+     CS_INT     CredTimeOut;
+     CS_BOOL    NETWORKAUTH;
+     char      *datetime;

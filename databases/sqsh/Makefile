@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/07/05 10:26:52 sthen Exp $
 
 COMMENT=	SQL shell for FreeTDS
 
 DISTNAME=	sqsh-2.5.16.1
-REVISION=	1
+REVISION=	2
 WRKDIST=	${WRKDIR}/sqsh-2.5
 EXTRACT_SUFX=	.tgz
 
