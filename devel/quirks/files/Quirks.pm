@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1002 2020/07/03 17:05:22 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1003 2020/07/05 14:51:06 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -437,6 +437,7 @@ my $stem_extensions = {
 	'kdenetwork-filesharing' => 'kdenetwork-filesharing-kf5',
 	'spidermonkey60' => 'spidermonkey68',
 	'py-cloudpickle' => 'py3-cloudpickle',
+	'py-podcastparser' => 'py3-podcastparser',
 };
 
 my $obsolete_reason = {
