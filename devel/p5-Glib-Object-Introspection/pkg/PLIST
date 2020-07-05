@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/11 10:22:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/05 14:45:15 sthen Exp $
 bin/perli11ndoc
 ${P5ARCH}/Glib/Object/Introspection/
 ${P5ARCH}/Glib/Object/Introspection.pm
@@ -6,5 +6,5 @@ ${P5ARCH}/Glib/Object/Introspection/Install/
 ${P5ARCH}/Glib/Object/Introspection/Install/Files.pm
 ${P5ARCH}/auto/Glib/Object/
 ${P5ARCH}/auto/Glib/Object/Introspection/
-${P5ARCH}/auto/Glib/Object/Introspection/Introspection.so
+@so ${P5ARCH}/auto/Glib/Object/Introspection/Introspection.so
 @man man/man3p/Glib::Object::Introspection.3p
