@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2020/07/03 21:12:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2020/07/05 11:01:11 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -34,7 +34,16 @@ MODULES =	devel/cmake \
 
 COMPILER =	base-clang ports-gcc
 
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+# XXX Blender uses a private Python API which has changed in Python 3.8
+# Patches aren't all in one place, updating to Blender v2.81 or newer
+# is probably the simplest option to cope with this
+# https://bugs.python.org/issue35886
+# https://developer.blender.org/D6038
+# https://developer.blender.org/rBSa7cf7b114f82625aa5d81e91e26e67cbe7a842bc
+# https://developer.blender.org/rBa7cf7b114f82625aa5d81e91e26e67cbe7a842bc
+# and probably more..
+#MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION =	3.7
 
 CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
