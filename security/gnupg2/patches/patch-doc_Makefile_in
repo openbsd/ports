@@ -1,8 +1,9 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.2 2017/08/20 11:52:38 jca Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.3 2020/07/05 10:10:38 ajacoutot Exp $
+
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -462,14 +462,6 @@ libcommontls = ../common/libcommontls.a
+@@ -474,14 +474,6 @@ libcommontls = ../common/libcommontls.a
  libcommontlsnpth = ../common/libcommontlsnpth.a
  examples = examples/README examples/scd-event examples/trustlist.txt	\
  	   examples/vsnfd.prf examples/debug.prf                        \
