@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/04/22 04:31:54 tb Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/07/05 10:05:40 espie Exp $
 @option no-default-conflict
 @option is-branch
-@conflict openssl->=1.1.0,openssl-<1.2
+@conflict openssl->=1.1.0,<1.2
 bin/c_rehash11
 @bin bin/eopenssl11
 include/eopenssl11/
