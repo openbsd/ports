@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/11/06 12:04:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/07/05 14:56:22 kn Exp $
 bin/gpo
 bin/gpodder
 bin/gpodder-migrate2tres
@@ -156,12 +156,15 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}configeditor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}progress.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}progress.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}searchtree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}searchtree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}tagcloud.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}tagcloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/addpodcast.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/common.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/configeditor.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/progress.py
+lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/searchtree.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/tagcloud.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/macosx.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/main.py
@@ -221,6 +224,7 @@ share/gpodder/extensions/${MODPY_PYCACHE}command_on_download.${MODPY_PYC_MAGIC_T
 share/gpodder/extensions/${MODPY_PYCACHE}concatenate_videos.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}enqueue_in_mediaplayer.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}episode_website_context_menu.${MODPY_PYC_MAGIC_TAG}pyc
+share/gpodder/extensions/${MODPY_PYCACHE}filter.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}gtk_statusicon.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}minimize_on_start.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}mpris-listener.${MODPY_PYC_MAGIC_TAG}pyc
@@ -245,6 +249,7 @@ share/gpodder/extensions/command_on_download.py
 share/gpodder/extensions/concatenate_videos.py
 share/gpodder/extensions/enqueue_in_mediaplayer.py
 share/gpodder/extensions/episode_website_context_menu.py
+share/gpodder/extensions/filter.py
 share/gpodder/extensions/gtk_statusicon.py
 share/gpodder/extensions/minimize_on_start.py
 share/gpodder/extensions/mpris-listener.py
