@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/25 15:41:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/05 17:20:02 bcallah Exp $
 
 COMMENT =	elementary OS Gtk+/GLib extension library
 
-SHARED_LIBS +=	granite                   0.0 # 5.4.0
+SHARED_LIBS +=	granite                   0.0 # 5.5.0
 
 GH_PROJECT =	granite
-GH_TAGNAME =	5.4.0
+GH_TAGNAME =	5.5.0
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
