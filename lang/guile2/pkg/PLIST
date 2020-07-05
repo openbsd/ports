@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/06/04 07:36:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/07/05 09:44:08 espie Exp $
+@conflict r5rs-*
 bin/guild${V}
 bin/guile-config${V}
 bin/guile-snarf${V}

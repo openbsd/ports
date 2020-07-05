@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/05 09:44:08 espie Exp $
 
 COMMENT=	revised^5 report on scheme
 
@@ -7,6 +7,7 @@ CATEGORIES=	lang books
 DISTNAME=	r5rs
 PKGNAME=	${DISTNAME}-19980421
 EXTRACT_SUFX=	.txi
+REVISION=	0
 
 EXTRACT_CASES=	*.txi) cp ${FULLDISTDIR}/$$archive ${WRKDIR};;
 WRKDIST=	${WRKDIR}
