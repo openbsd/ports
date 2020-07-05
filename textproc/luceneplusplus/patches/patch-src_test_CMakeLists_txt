@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_test_CMakeLists_txt,v 1.1.1.1 2020/07/05 07:30:16 landry Exp $
+
+use gtest from ports and disable cotire as it's deprecated and breaks
+the build with newer libc++
+
+Index: src/test/CMakeLists.txt
+--- src/test/CMakeLists.txt.orig
++++ src/test/CMakeLists.txt
+@@ -1,7 +1,5 @@
+ project(lucene++-tester)
+ 
+-add_subdirectory(gtest)
+-
+ include_directories(
+   "${gtest_SOURCE_DIR}/include"
+   "${lucene++_SOURCE_DIR}/include"
+@@ -50,5 +48,3 @@ target_link_libraries(lucene++-tester
+   gtest
+   ${lucene_boost_libs}
+ )
+-
+-cotire(lucene++-tester)

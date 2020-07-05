@@ -1,0 +1,28 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/07/05 07:30:16 landry Exp $
+
+disable cotire as it's deprecated and breaks the build with newer libc++
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -15,11 +15,6 @@ set(lucene++_VERSION
+ # include specific modules
+ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+ 
+-####################################
+-# pre-compiled headers support
+-####################################
+-include(cotire)
+-
+ # if setup using the Toolchain-llvm.cmake file, then use llvm...
+ if(ENABLE_LLVM)
+   include(Toolchain-llvm)
+@@ -85,7 +80,7 @@ include(TestCXXAcceptsFlag)
+ include(GNUInstallDirs)
+ 
+ set(LIB_DESTINATION
+-  "${CMAKE_INSTALL_FULL_LIBDIR}" CACHE STRING "Define lib output directory name"
++  "lib" CACHE STRING "Define lib output directory name"
+ )
+ 
+ if(ENABLE_CYCLIC_CHECK)

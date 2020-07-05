@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.1.1.1 2020/07/05 07:30:16 landry Exp $
+
+disable cotire as it's deprecated and breaks the build with newer libc++
+
+Index: src/core/CMakeLists.txt
+--- src/core/CMakeLists.txt.orig
++++ src/core/CMakeLists.txt
+@@ -39,7 +39,6 @@ if(WIN32)
+ endif()
+ 
+ set_target_properties(lucene++ PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "include/LuceneInc.h")
+-cotire(lucene++)
+ 
+ set_target_properties(lucene++ PROPERTIES
+   VERSION ${lucene++_VERSION}
