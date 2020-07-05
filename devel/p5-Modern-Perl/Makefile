@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/05 14:46:07 sthen Exp $
 
 COMMENT =	enable all of the features of Modern Perl with one import
 
 CPAN_AUTHOR =	CHROMATIC
-DISTNAME =	Modern-Perl-1.20200201
-REVISION =	0
+DISTNAME =	Modern-Perl-1.20200211
 
 CATEGORIES =	devel
 
