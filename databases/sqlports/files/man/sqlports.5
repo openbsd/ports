@@ -1,4 +1,4 @@
-.\"	$OpenBSD: sqlports.5,v 1.1 2020/07/05 12:23:24 espie Exp $
+.\"	$OpenBSD: sqlports.5,v 1.2 2020/07/05 12:28:13 espie Exp $
 .\"
 .\" Copyright (c) 2020 Marc Espie <espie@openbsd.org>
 .\"
@@ -31,7 +31,57 @@ for human consumption.
 Tables are as follows:
 .Bl -tag -offset indent -width keyword
 .It _Paths (ID, FULLPKGPATH, PKGPATH, CANONICAL)
+PKGPATH points to a PATHS entry corresponding to the stripped down version of 
+FULLPKGPATH, without flavors or subpackage markers, or is null if FULLPKGPATH
+is already stripped.  
+Every other FULLPKGPATH, PKGPATH, DEPENDSPATH entry
+in the database points to this table.
+The FULLPKGPATH is complete, including flavors and pseudo flavors markers. 
+For every port with MULTI_PACKAGES settings, one entry is written 
+for each SUBPACKAGE.
+CANONICAL points to the actual ID to use as an entry in other tables, for
+FULLPKGPATH which don't have their own entry.
 .It _Ports(FULLPKGPATH, ...)
+holds all the information retrieved through various variables that is not
+stored in specialized tables, e.g.,:
+.Bl -tag -width AUTOMAKE_VERSION -offset indent -compact
+.It AUTOCONF_VERSION 
+.It AUTOMAKE_VERSION 
+.It COMES_WITH
+.It COMMENT 
+.It COMPILER
+.It COMPILER_LANGS
+.It DISTFILES 
+.It DISTNAME 
+.It DIST_SUBDIR 
+.It EPOCH
+.It FIX_EXTRACT_PERMISSIONS
+.It FULLPKGNAME
+.It GH_*
+.It HOMEPAGE 
+.It IGNORE
+.It IS_INTERACTIVE 
+.It MAINTAINER
+.It NO_*
+.It PATCHFILES
+.It PERMIT_*
+.It PKGNAME 
+.It PKGSPEC
+.It PKGSTEM
+.It PKG_ARCH 
+.It PORTROACH
+.It PORTROACH_COMMENT
+.It PREFIX
+.It PSEUDO_FLAVOR
+.It REVISION
+.It SEPARATE_BUILD
+.It STATIC_PLIST
+.It SUBPACKAGE
+.It SUPDISTFILES
+.It TEST_IS_INTERACTIVE 
+.It UPDATE_PLIST_ARGS
+.It USE_*
+.El
 .It _Flavors(FULLPKGPATH, VALUE, N)
 .It _PseudoFlavors(FULLPKGPATH, VALUE, N)
 .It _Categories(FULLPKGPATH, VALUE, N)
@@ -45,6 +95,6 @@ Tables are as follows:
 .It _OnlyForArch(FULLPKGPATH, VALUE, N)
 .El
 .Sh FILES
-.Pa /usr/local/share/sqlports
+.Pa ${TRUEPREFIX}/share/sqlports
 .Sh SEE ALSO
 .Xr sqlite3 1
