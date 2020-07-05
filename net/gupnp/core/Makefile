@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2020/07/03 21:12:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2020/07/05 07:13:52 ajacoutot Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
@@ -20,6 +20,9 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS += gobject-introspection vala
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+# man page generation
+BUILD_DEPENDS +=	textproc/libxslt
 
 LIB_DEPENDS=		net/gssdp>=1.2.3
 
