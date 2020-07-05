@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.637 2020/06/12 10:04:13 landry Exp $
+# $OpenBSD: Makefile,v 1.638 2020/07/05 07:31:01 landry Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -140,6 +140,7 @@
      SUBDIR += luasoldout
      SUBDIR += luasoldout,lua52
      SUBDIR += luasoldout,lua53
+     SUBDIR += luceneplusplus
      SUBDIR += makefaq
      SUBDIR += mdbook
      SUBDIR += mdp
