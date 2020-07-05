@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.45 2020/06/28 20:03:51 tj Exp $
+# $OpenBSD: Makefile,v 1.46 2020/07/05 15:45:00 tj Exp $
 
 COMMENT=	audio compression codec library
 
-DISTNAME=	libvorbis-1.3.6
-REVISION=	0
+DISTNAME=	libvorbis-1.3.7
 CATEGORIES=    	audio
-HOMEPAGE=	https://www.xiph.org/vorbis/
-SHARED_LIBS +=  vorbis               9.0      # 4.8
-SHARED_LIBS +=  vorbisfile           6.0      # 6.7
-SHARED_LIBS +=  vorbisenc            3.1      # 2.11
+HOMEPAGE=	https://xiph.org/vorbis/
+SHARED_LIBS +=  vorbis               9.0      # 4.9
+SHARED_LIBS +=  vorbisfile           6.0      # 6.8
+SHARED_LIBS +=  vorbisenc            3.1      # 2.12
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -23,6 +22,7 @@ LIB_DEPENDS=	audio/libogg
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 SEPARATE_BUILD=	Yes
 
 post-install:
