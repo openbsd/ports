@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/10 18:40:50 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/07/05 09:50:47 semarie Exp $
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -663,6 +663,9 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}da
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data23.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data24.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data25.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data26.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data27.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data28.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data5.${MODPY_PYC_MAGIC_TAG}pyc
@@ -690,6 +693,9 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data22.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data23.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data24.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data25.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data26.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data27.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data28.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data3.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data4.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data5.py
@@ -909,6 +915,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}region_SN.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}region_SO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}region_SR.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}region_SS.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}region_ST.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}region_SV.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}region_SX.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1149,6 +1156,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_SM.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_SN.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_SO.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_SR.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_SS.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_ST.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_SV.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_SX.py
