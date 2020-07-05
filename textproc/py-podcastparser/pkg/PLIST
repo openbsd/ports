@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/07/05 14:51:05 kn Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/07/05 14:55:10 kn Exp $
+@conflict py-podcastparser-*
+@pkgpath textproc/py-podcastparser
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}podcastparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/podcastparser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
