@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.56 2020/04/04 08:36:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2020/07/05 07:42:11 ajacoutot Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
-V=		20191220
-DISTNAME=	x264-snapshot-${V}-2245
-PKGNAME=	x264-${V}
-REVISION=	0
+DISTNAME=	x264-20200705
+GH_ACCOUNT=	mirror
+GH_PROJECT=	x264
+GH_COMMIT=	cde9a93319bea766a92e306d69059c76de970190
 CATEGORIES=	multimedia
-MASTER_SITES=	https://comstyle.com/source/
-EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	x264	21.0
+SHARED_LIBS=	x264	22.0
 
 HOMEPAGE=	https://www.videolan.org/developers/x264.html
 

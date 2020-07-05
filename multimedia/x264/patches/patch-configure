@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.27 2019/12/24 15:03:18 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.28 2020/07/05 07:42:11 ajacoutot Exp $
 
 Index: configure
 --- configure.orig
@@ -9,7 +9,7 @@ Index: configure
  
  if test x"$1" = x"-h" -o x"$1" = x"--help" ; then
  cat <<EOF
-@@ -1282,10 +1282,6 @@ if [ "$pic" = "yes" ] ; then
+@@ -1283,10 +1283,6 @@ if [ "$pic" = "yes" ] ; then
      [ $SYS = SunOS -a "$ARCH" = "X86" ] && SOFLAGS="$SOFLAGS -mimpure-text"
  fi
  
@@ -20,7 +20,7 @@ Index: configure
  if [ "$strip" = "yes" ]; then
      LDFLAGS="$LDFLAGS -s"
  fi
-@@ -1294,11 +1290,11 @@ if [ "$debug" = "yes" ]; then
+@@ -1295,11 +1291,11 @@ if [ "$debug" = "yes" ]; then
      CFLAGS="-O1 -g $CFLAGS"
      RCFLAGS="$RCFLAGS -DDEBUG"
  else
@@ -34,7 +34,7 @@ Index: configure
      fi
  fi
  [ "$lto" = "auto" ] && lto="no"
-@@ -1327,10 +1323,6 @@ if cc_check '' -Wshadow ; then
+@@ -1328,10 +1324,6 @@ if cc_check '' -Wshadow ; then
      CFLAGS="-Wshadow $CFLAGS"
  fi
  
@@ -45,7 +45,7 @@ Index: configure
  if [ $compiler = GNU ] && cc_check '' -fvisibility=hidden ; then
      CFLAGS="$CFLAGS -fvisibility=hidden"
  fi
-@@ -1530,7 +1522,6 @@ if [ "$cli" = "yes" ]; then
+@@ -1531,7 +1523,6 @@ if [ "$cli" = "yes" ]; then
  fi
  
  if [ "$shared" = "yes" ]; then
@@ -53,7 +53,7 @@ Index: configure
      if [ "$SYS" = "WINDOWS" -o "$SYS" = "CYGWIN" ]; then
          echo "SONAME=libx264-$API.dll" >> config.mak
          if [ $compiler_style = MS ]; then
-@@ -1551,7 +1542,7 @@ if [ "$shared" = "yes" ]; then
+@@ -1552,7 +1543,7 @@ if [ "$shared" = "yes" ]; then
      else
          echo "SOSUFFIX=so" >> config.mak
          echo "SONAME=libx264.so.$API" >> config.mak
