@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2020/07/04 16:25:42 landry Exp $
+# $OpenBSD: Makefile,v 1.85 2020/07/05 07:04:58 landry Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -50,6 +50,7 @@ RUN_DEPENDS =		devel/gmake \
 
 TEST_TARGET =		test
 CONFIGURE_STYLE =	simple
+CONFIGURE_SCRIPT =	${MODPY_BIN} configure.py
 
 # libpath and includes aren't picked up, but I added them here as a note.
 # The patch for node.gyp is where they are actually being set.
