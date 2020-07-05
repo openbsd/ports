@@ -1,0 +1,392 @@
+$OpenBSD: patch-src_x86_mc_sse_asm,v 1.1 2020/07/05 07:36:19 ajacoutot Exp $
+
+- x86: Fix 32-bit build with PIC enabled.
+- Fix compilation with nasm 2.15.
+
+Index: src/x86/mc_sse.asm
+--- src/x86/mc_sse.asm.orig
++++ src/x86/mc_sse.asm
+@@ -1263,7 +1263,7 @@ cglobal prep_bilin, 3, 7, 0, tmp, src, stride, w, h, m
+  %if ARCH_X86_64
+     mova                 m8, [pw_8]
+  %else
+-  %define m8 [pw_8]
++  %define m8 [t1-prep_sse2+pw_8]
+  %endif
+     pxor                 m7, m7
+ %endif
+@@ -1272,13 +1272,11 @@ cglobal prep_bilin, 3, 7, 0, tmp, src, stride, w, h, m
+     pshuflw              m6, m6, q0000
+ %if cpuflag(ssse3)
+     punpcklqdq           m6, m6
+-%else
+- %if ARCH_X86_64
++%elif ARCH_X86_64
+     psrlw                m0, m8, 3
+     punpcklwd            m6, m0
+- %else
++%else
+     punpcklwd            m6, [base+pw_1]
+- %endif
+ %endif
+ %if ARCH_X86_32
+     mov                  t1, t2 ; save base reg for w4
+@@ -1396,8 +1394,8 @@ cglobal prep_bilin, 3, 7, 0, tmp, src, stride, w, h, m
+     PUSH                 r7
+  %endif
+     mov                  r7, tmpq
++    mov                  r5, srcq
+ %endif
+-    mov                  t1, srcq
+ .hv_w16_hloop:
+     movu                 m0, [srcq+strideq*0+8*0]
+     movu                 m1, [srcq+strideq*0+8*1]
+@@ -1440,14 +1438,17 @@ cglobal prep_bilin, 3, 7, 0, tmp, src, stride, w, h, m
+     sub                  hd, 2
+     jg .hv_w16_vloop
+     movzx                hd, t2w
+-    add                  t1, 16
+-    mov                srcq, t1
+ %if ARCH_X86_64
++    add                  r5, 16
+     add                  r7, 2*16
++    mov                srcq, r5
+     mov                tmpq, r7
+ %else
++    mov                srcq, srcmp
+     mov                tmpq, tmpmp
++    add                srcq, 16
+     add                tmpq, 2*16
++    mov               srcmp, srcq
+     mov               tmpmp, tmpq
+ %endif
+     sub                 t2d, 1<<16
+@@ -2624,22 +2625,20 @@ cglobal put_8tap, 1, 9, 0, dst, ds, src, ss, w, h, mx,
+ %macro PHADDW 4 ; dst, src, pw_1/tmp, load_pw_1
+  %if cpuflag(ssse3)
+     phaddw               %1, %2
+- %else
+-  %ifnidn %1, %2
++ %elifnidn %1, %2
+    %if %4 == 1
+-    mova                 %3, [pw_1]
++    mova                 %3, [base+pw_1]
+    %endif
+     pmaddwd              %1, %3
+     pmaddwd              %2, %3
+     packssdw             %1, %2
+-  %else
++ %else
+    %if %4 == 1
+-    pmaddwd              %1, [pw_1]
++    pmaddwd              %1, [base+pw_1]
+    %else
+     pmaddwd              %1, %3
+    %endif
+     packssdw             %1, %1
+-  %endif
+  %endif
+ %endmacro
+ 
+@@ -2740,7 +2739,7 @@ cglobal put_8tap, 1, 9, 0, dst, ds, src, ss, w, h, mx,
+  %endif
+ %endmacro
+ 
+-%macro PREP_8TAP_HV_LOAD 4 ; dst0, src_memloc, tmp[1-2]
++%macro PREP_8TAP_HV 4 ; dst, src_memloc, tmp[1-2]
+  %if cpuflag(ssse3)
+     movu                 %1, [%2]
+     pshufb               m2, %1, shufB
+@@ -2751,10 +2750,6 @@ cglobal put_8tap, 1, 9, 0, dst, ds, src, ss, w, h, mx,
+     PREP_8TAP_H_LOAD4    m2, %2+4, m1, %3, %4
+     PREP_8TAP_H_LOAD4    m3, %2+8, m1, %3, %4
+  %endif
+-%endmacro
+-
+-%macro PREP_8TAP_HV 4 ; dst, src_memloc, tmp[1-2]
+-    PREP_8TAP_HV_LOAD %{1:4}
+     mova                 m1, m2
+     PMADDUBSW            m1, subpelh0, %3, %4, 1 ; subpel +0 C0
+     PMADDUBSW            m3, subpelh1, %3, %4, 0 ; subpel +4 B4
+@@ -2795,11 +2790,9 @@ PREP_8TAP_FN sharp_smooth,   SHARP,   SMOOTH
+ %if ARCH_X86_32
+  %define base_reg r2
+  %define base base_reg-prep%+SUFFIX
+- %define W32_RESTORE_SSQ mov strideq, stridem
+ %else
+  %define base_reg r7
+  %define base 0
+- %define W32_RESTORE_SSQ
+ %endif
+ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx, my, stride3
+ %assign org_stack_offset stack_offset
+@@ -2835,6 +2828,10 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+ %else
+     WIN64_SPILL_XMM      16
+ %endif
++%if ARCH_X86_32
++ %define strideq r6
++    mov             strideq, stridem
++%endif
+     cmp                  wd, 4
+     je .h_w4
+     tzcnt                wd, wd
+@@ -2894,7 +2891,6 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     punpcklbw            m4, m4
+     psraw                m4, 8
+ %endif
+-    W32_RESTORE_SSQ
+ %if ARCH_X86_64
+     lea            stride3q, [strideq*3]
+ %endif
+@@ -2916,8 +2912,7 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     pshufb               m1, m5
+     pshufb               m2, m5
+     pshufb               m3, m5
+-%else
+- %if ARCH_X86_64
++%elif ARCH_X86_64
+     movd                 m0, [srcq+strideq*0+0]
+     movd                m12, [srcq+strideq*0+1]
+     movd                 m1, [srcq+strideq*1+0]
+@@ -2947,7 +2942,7 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     punpcklqdq           m1, m5  ; 1
+     punpcklqdq           m2, m13 ; 2
+     punpcklqdq           m3, m7  ; 3
+- %else
++%else
+     movd                 m0, [srcq+strideq*0+0]
+     movd                 m1, [srcq+strideq*0+1]
+     movd                 m2, [srcq+strideq*0+2]
+@@ -2978,7 +2973,6 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     lea                srcq, [srcq+strideq*2]
+     punpckldq            m7, m5
+     punpcklqdq           m3, m7 ; 3
+- %endif
+ %endif
+     PMADDUBSW            m0, m4, m5, m7, 1 ; subpel_filters + 2
+     PMADDUBSW            m1, m4, m5, m7, 0
+@@ -2994,14 +2988,7 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     sub                  hd, 4
+     jg .h_w4_loop
+     RET
+-    ;
+ .h_w8:
+-%if ARCH_X86_32
+-    mov                  r3, r2
+- %define           base_reg  r3
+-    W32_RESTORE_SSQ
+-%endif
+-.h_w8_loop:
+ %if cpuflag(ssse3)
+     PREP_8TAP_H           0, srcq+strideq*0
+     PREP_8TAP_H           1, srcq+strideq*1
+@@ -3017,51 +3004,42 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     add                tmpq, 16
+     dec                  hd
+ %endif
+-    jg .h_w8_loop
++    jg .h_w8
+     RET
+ .h_w16:
+-    mov                  r6, -16*1
++    mov                  r3, -16*1
+     jmp .h_start
+ .h_w32:
+-    mov                  r6, -16*2
++    mov                  r3, -16*2
+     jmp .h_start
+ .h_w64:
+-    mov                  r6, -16*4
++    mov                  r3, -16*4
+     jmp .h_start
+ .h_w128:
+-    mov                  r6, -16*8
++    mov                  r3, -16*8
+ .h_start:
+-%if ARCH_X86_32
+-    mov                  r3, r2
+- %define           base_reg  r3
+-%endif
+-    sub                srcq, r6
+-    mov                  r5, r6
+-    W32_RESTORE_SSQ
++    sub                srcq, r3
++    mov                  r5, r3
+ .h_loop:
+ %if cpuflag(ssse3)
+-    PREP_8TAP_H           0, srcq+r6+8*0
+-    PREP_8TAP_H           1, srcq+r6+8*1
++    PREP_8TAP_H           0, srcq+r3+8*0
++    PREP_8TAP_H           1, srcq+r3+8*1
+     mova        [tmpq+16*0], m0
+     mova        [tmpq+16*1], m1
+     add                tmpq, 32
+-    add                  r6, 16
++    add                  r3, 16
+ %else
+-    PREP_8TAP_H           0, srcq+r6
++    PREP_8TAP_H           0, srcq+r3
+     mova             [tmpq], m0
+     add                tmpq, 16
+-    add                  r6, 8
++    add                  r3, 8
+ %endif
+     jl .h_loop
+     add                srcq, strideq
+-    mov                  r6, r5
++    mov                  r3, r5
+     dec                  hd
+     jg .h_loop
+     RET
+-%if ARCH_X86_32
+- %define            base_reg r2
+-%endif
+-    ;
+ .v:
+     LEA            base_reg, prep%+SUFFIX
+ %if ARCH_X86_32
+@@ -3086,7 +3064,7 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+  %define            subpel1  [rsp+mmsize*1]
+  %define            subpel2  [rsp+mmsize*2]
+  %define            subpel3  [rsp+mmsize*3]
+-%assign regs_used 2 ; use r1 (src) as tmp for stack alignment if needed
++%assign regs_used 6 ; use r5 (mx) as tmp for stack alignment if needed
+  %if cpuflag(ssse3)
+     ALLOC_STACK   -mmsize*4
+  %else
+@@ -3105,15 +3083,9 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     movd                 m0, [myq+6]
+     PSHUFB_0X1X          m0, m2
+     mova            subpel3, m0
+- %if notcpuflag(ssse3)
+-    mov                  r6, base_reg
+-  %define base_reg r6
+- %endif
+     mov             strideq, [rstk+stack_offset+gprsize*3]
+-    lea             strideq, [strideq*3]
+-    sub [rstk+stack_offset+gprsize*2], strideq
+-    mov             strideq, [rstk+stack_offset+gprsize*3]
+-    mov                srcq, [rstk+stack_offset+gprsize*2]
++    lea                  r5, [strideq*3]
++    sub                srcq, r5
+ %else
+  %define            subpel0  m8
+  %define            subpel1  m9
+@@ -3245,10 +3217,6 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     jg .v_w4_loop0
+ %endif
+     RET
+-%if ARCH_X86_32 && notcpuflag(ssse3)
+- %define base_reg r2
+-%endif
+-    ;
+ %if ARCH_X86_64
+ .v_w8:
+     lea                 r5d, [wq - 8] ; horizontal loop
+@@ -3373,16 +3341,12 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     cmp                  hd, 6
+     cmovs               myd, mxd
+     movq                 m0, [base_reg+myq*8+subpel_filters-prep%+SUFFIX]
+-    mov                  r5, r2; use as new base
+- %define           base_reg  r5
+- %assign regs_used 2
++    mov             strideq, stridem
++ %assign regs_used 6
+     ALLOC_STACK  -mmsize*14
+  %assign regs_used 7
+-    mov             strideq, [rstk+stack_offset+gprsize*3]
+-    lea             strideq, [strideq*3 + 1]
+-    sub [rstk+stack_offset+gprsize*2], strideq
+-    mov             strideq, [rstk+stack_offset+gprsize*3]
+-    mov                srcq, [rstk+stack_offset+gprsize*2]
++    lea                  r5, [strideq*3+1]
++    sub                srcq, r5
+  %define           subpelv0  [rsp+mmsize*0]
+  %define           subpelv1  [rsp+mmsize*1]
+  %define           subpelv2  [rsp+mmsize*2]
+@@ -3445,9 +3409,9 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+ %define hv4_line_1_3 13
+ %if ARCH_X86_32
+  %if cpuflag(ssse3)
+-  %define           w8192reg  [base+pw_8192]
++  %define          w8192reg  [base+pw_8192]
+  %else
+-  %define           w8192reg  [base+pw_2]
++  %define          w8192reg  [base+pw_2]
+  %endif
+  %define             d32reg  [base+pd_32]
+ %else
+@@ -3676,7 +3640,6 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+ %define hv8_line_6 4
+     shr                 mxd, 16
+ %if ARCH_X86_32
+- %define           base_reg  r2
+  %define           subpelh0  [rsp+mmsize*5]
+  %define           subpelh1  [rsp+mmsize*6]
+  %define           subpelv0  [rsp+mmsize*7]
+@@ -3692,16 +3655,16 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     cmp                  hd, 6
+     cmovs               myd, mxd
+     movq                 m5, [base_reg+myq*8+subpel_filters-prep%+SUFFIX]
+-    ALLOC_STACK  -mmsize*13
++    mov             strideq, stridem
++ %assign regs_used 6
++    ALLOC_STACK  -mmsize*14
++ %assign regs_used 7
+  %if STACK_ALIGNMENT < mmsize
+-    mov                rstk, r2m
+-  %define               tmpm  [rsp+mmsize*13+gprsize*1]
+-  %define               srcm  [rsp+mmsize*13+gprsize*2]
+-  %define            stridem  [rsp+mmsize*13+gprsize*3]
+-    mov             stridem, rstk
++  %define              tmpm  [rsp+mmsize*13+gprsize*1]
++  %define              srcm  [rsp+mmsize*13+gprsize*2]
++  %define           stridem  [rsp+mmsize*13+gprsize*3]
++    mov             stridem, strideq
+  %endif
+-    mov                  r6, r2
+- %define base_reg r6
+     pshufd               m0, m1, q0000
+     pshufd               m1, m1, q1111
+     punpcklbw            m5, m5
+@@ -3724,12 +3687,9 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+     mova           subpelv1, m3
+     mova           subpelv2, m4
+     mova           subpelv3, m5
+-    W32_RESTORE_SSQ
+-    lea             strided, [strided*3]
+-    sub                srcd, strided
+-    sub                srcd, 3
+-    mov                srcm, srcd
+-    W32_RESTORE_SSQ
++    lea                  r5, [strideq*3+3]
++    sub                srcq, r5
++    mov                srcm, srcq
+ %else
+     ALLOC_STACK    mmsize*5, 16
+  %define           subpelh0  m10
+@@ -3765,7 +3725,7 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+  %if notcpuflag(ssse3)
+     mova                 m7, [base+pw_2]
+  %endif
+-    lea                stride3q, [strideq*3]
++    lea            stride3q, [strideq*3]
+     sub                srcq, 3
+     sub                srcq, stride3q
+     mov                  r6, srcq
+@@ -3939,11 +3899,12 @@ cglobal prep_8tap, 1, 9, 0, tmp, src, stride, w, h, mx
+ .hv_w8_outer:
+     movzx                hd, r5w
+ %if ARCH_X86_32
+-    add          dword tmpm, 8
+-    mov                tmpq, tmpm
+     mov                srcq, srcm
++    mov                tmpq, tmpm
+     add                srcq, 4
++    add                tmpq, 8
+     mov                srcm, srcq
++    mov                tmpm, tmpq
+ %else
+     add                  r8, 8
+     mov                tmpq, r8

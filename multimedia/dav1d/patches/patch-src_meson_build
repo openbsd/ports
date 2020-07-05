@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2020/07/05 07:36:19 ajacoutot Exp $
+
+meson: Workaround missing aarch64 normalisation.
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -100,7 +100,8 @@ if is_asm_enabled
+             'arm/looprestoration_init_tmpl.c',
+             'arm/mc_init_tmpl.c',
+         )
+-        if host_machine.cpu_family() == 'aarch64'
++        if (host_machine.cpu_family() == 'aarch64' or
++            host_machine.cpu() == 'arm64')
+             libdav1d_sources += files(
+                 # itx.S is used for both 8 and 16 bpc.
+                 'arm/64/itx.S',
