@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/02 21:55:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/05 09:45:42 espie Exp $
 
 # see https://github.com/i3/i3/issues/3085 / orestisfl:issue-2643
 COMMENT =	improved dynamic tiling window manager, fork with mouse drag
@@ -8,6 +8,7 @@ GH_PROJECT=	i3
 GH_COMMIT=	592bd26703c8b325cf01f3b9f6ccea85751600fb
 
 DISTNAME =	i3-mousedrag-4.17.1pre20191014
+REVISION =	0
 
 CATEGORIES =	x11
 

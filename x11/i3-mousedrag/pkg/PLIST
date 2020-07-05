@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/16 10:09:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/05 09:45:42 espie Exp $
+@conflict i3-gaps-*
 @conflict i3-*
 @bin bin/i3
 @bin bin/i3-config-wizard
