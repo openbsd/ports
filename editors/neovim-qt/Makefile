@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/28 21:24:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/05 08:40:48 ajacoutot Exp $
 
 COMMENT =	Qt5 GUI front-end for neovim
 
 GH_ACCOUNT = equalsraf
 GH_PROJECT = neovim-qt
 GH_TAGNAME = v0.2.16.1
+REVISION =	0
 
 CATEGORIES = editors
 
