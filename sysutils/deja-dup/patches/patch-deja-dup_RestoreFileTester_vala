@@ -1,0 +1,24 @@
+$OpenBSD: patch-deja-dup_RestoreFileTester_vala,v 1.1 2020/07/05 09:29:00 ajacoutot Exp $
+
+No euidaccess on OpenBSD
+
+Index: deja-dup/RestoreFileTester.vala
+--- deja-dup/RestoreFileTester.vala.orig
++++ deja-dup/RestoreFileTester.vala
+@@ -69,12 +69,12 @@ public class RestoreFileTester : Object
+         // a file in it. But testing write access is probably good enough for now.
+         exists = false;
+         string iter = path;
+-        int access = -1;
+-        while (access != 0 && Posix.errno == Posix.ENOENT) {
++        int has_access = -1;
++        while (has_access != 0 && Posix.errno == Posix.ENOENT) {
+           iter = Path.get_dirname(iter);
+-          access = Posix.euidaccess(iter, Posix.W_OK | Posix.X_OK);
++          has_access = Posix.access(iter, Posix.W_OK | Posix.X_OK);
+         }
+-        if (access != 0)
++        if (has_access != 0)
+           return false;
+       }
+     } else {
