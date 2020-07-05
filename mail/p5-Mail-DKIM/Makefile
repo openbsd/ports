@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/05 22:31:01 sthen Exp $
 
 COMMENT=	DKIM and DomainKeys message-signing implementation
 
-DISTNAME=	Mail-DKIM-0.56
+DISTNAME=	Mail-DKIM-0.58
 CATEGORIES=	mail
-REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
