@@ -1,21 +1,30 @@
-$OpenBSD: patch-setup_py,v 1.8 2019/05/01 10:20:24 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.9 2020/07/05 08:53:45 ajacoutot Exp $
 
---- setup.py.orig	Mon Dec  7 13:03:39 2015
-+++ setup.py	Tue Dec 15 21:14:11 2015
-@@ -47,15 +47,9 @@ if os.name == 'posix':
-         incdir_list = [os.path.join(LIBRSYNC_DIR, 'include')]
-         libdir_list = [os.path.join(LIBRSYNC_DIR, 'lib')]
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -83,23 +83,11 @@ def get_data_files():
  
--data_files = [('share/man/man1',
-+data_files = [('man/man1',
-                ['bin/duplicity.1',
-                 'bin/rdiffdir.1']),
--              ('share/doc/duplicity-%s' % version_string,
--               ['COPYING',
--                'README',
--                'README-REPO',
--                'README-LOG',
--                'CHANGELOG']),
-               ]
+     # static data files
+     data_files = [
+-            (u'share/man/man1',
++            (u'man/man1',
+                 [
+                 u'bin/duplicity.1',
+                 u'bin/rdiffdir.1'
+                 ]
+-            ),
+-            (u'share/doc/duplicity-%s' % Version,
+-                [
+-                u'AUTHORS',
+-                u'CHANGELOG',
+-                u'Changelog.GNU',
+-                u'COPYING',
+-                u'README',
+-                u'README-LOG',
+-                u'README-REPO',
+-                u'README-TESTING',
+-                ],
+             ),
+         ]
  
- top_dir = os.path.dirname(os.path.abspath(__file__))

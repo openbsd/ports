@@ -9,3 +9,20 @@ The duplicity package also includes the rdiffdir utility. Rdiffdir is an
 extension of librsync's rdiff to directories---it can be used to produce
 signatures and deltas of directories as well as regular files. These
 signatures and deltas are in GNU tar format.
+
+All possible dependencies aren't enforced in this package and must be installed
+according to the requirements (e.g. backup to S3):
+# azure
+# b2sdk
+# boto
+# boto3
+# dropbox==6.9.0
+# gdata
+# jottalib
+# mediafire
+# pydrive
+# pyrax
+# python-cloudfiles
+# python-swiftclient
+# requests_oauthlib
+# urllib3

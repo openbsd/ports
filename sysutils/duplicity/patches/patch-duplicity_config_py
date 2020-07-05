@@ -1,0 +1,14 @@
+$OpenBSD: patch-duplicity_config_py,v 1.1 2020/07/05 08:53:45 ajacoutot Exp $
+
+Index: duplicity/config.py
+--- duplicity/config.py.orig
++++ duplicity/config.py
+@@ -95,7 +95,7 @@ are_errors_fatal = {
+ # source directory.
+ select = None
+ 
+-gpg_binary = None
++gpg_binary = 'gpg2'
+ 
+ # Set to GPGProfile that will be used to compress/uncompress encrypted
+ # files.  Replaces encryption_keys, sign_key, and passphrase settings.

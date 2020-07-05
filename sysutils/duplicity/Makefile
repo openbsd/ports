@@ -1,53 +1,50 @@
-# $OpenBSD: Makefile,v 1.51 2019/07/12 20:49:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2020/07/05 08:53:45 ajacoutot Exp $
 
-# optional dependencies
-# py-pyrax
+COMMENT =		encrypted backup using rsync algorithm
 
-COMMENT =	encrypted backup using rsync algorithm
+MODPY_EGG_VERSION =	0.8.13
+DISTNAME =		duplicity-${MODPY_EGG_VERSION}
 
-MODPY_EGG_VERSION = 0.7.19
-DISTNAME =	duplicity-${MODPY_EGG_VERSION}
+CATEGORIES =		sysutils
 
-CATEGORIES =	sysutils
-
-HOMEPAGE =	http://www.nongnu.org/duplicity/
-
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=duplicity/}
+HOMEPAGE =		http://www.nongnu.org/duplicity/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MODULES =	lang/python
+WANTLIB += pthread rsync
+
+MASTER_SITES =		${MASTER_SITE_SAVANNAH:=duplicity/}
+
+MODULES =		lang/python
+
 MODPY_SETUPTOOLS =	Yes
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-WANTLIB +=	pthread rsync ${MODPY_WANTLIB}
+BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/py-setuptools_scm${MODPY_FLAVOR}
 
-LIB_DEPENDS +=	net/librsync \
-		${MODPY_LIB_DEPENDS}
+LIB_DEPENDS =		net/librsync
 
-RUN_DEPENDS +=	devel/py-fasteners \
-		devel/py-pexpect \
-		net/ncftp \
-		net/py-boto \
-		gnupg-<2:security/gnupg \
-		sysutils/py-lockfile
+RUN_DEPENDS =		devel/py-fasteners${MODPY_FLAVOR} \
+			devel/py-future${MODPY_FLAVOR} \
+			net/ncftp \
+			gnupg->=2:security/gnupg2 \
+			security/py-paramiko${MODPY_FLAVOR}
 
-TEST_DEPENDS =	archivers/gtar \
-		archivers/par2cmdline \
-		devel/py-mock \
-		devel/py-monotonic \
-		devel/py-pexpect \
-		sysutils/py-lockfile
+TEST_DEPENDS =		archivers/gtar \
+			archivers/par2cmdline \
+			devel/py-codestyle${MODPY_FLAVOR} \
+			devel/py-coverage${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR} \
+			devel/py-pexpect${MODPY_FLAVOR} \
+			devel/pylint${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR} \
+			devel/py-test-runner${MODPY_FLAVOR} \
+			sysutils/py-psutil${MODPY_FLAVOR} \
+			textproc/py-sphinx${MODPY_FLAVOR}
 
-MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
-
-MODPY_ADJ_FILES =	bin/duplicity bin/rdiffdir \
-			testing/manual/backendtest \
-			testing/overrides/bin/hsi \
-			testing/overrides/bin/lftp \
-			testing/overrides/bin/ncftpget \
-			testing/overrides/bin/ncftpls \
-			testing/overrides/bin/ncftpput \
-			testing/overrides/bin/tahoe
+MAKE_ENV =		LIBRSYNC_DIR=${LOCALBASE}
 
 .include <bsd.port.mk>
