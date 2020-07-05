@@ -1,0 +1,50 @@
+.\"	$OpenBSD: sqlports.5,v 1.1 2020/07/05 12:23:24 espie Exp $
+.\"
+.\" Copyright (c) 2020 Marc Espie <espie@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: July 5 2020 $
+.Dt SQLPORTS 5
+.Os
+.Sh NAME
+.Nm sqlports
+.Nd sqlite database for ports meta information
+.Sh DESCRIPTION
+.Nm
+is built as a port by parsing the output of
+.Li make dump-vars
+over the full ports tree.
+.Pp
+The database contains tables for automated tools, along with nice views
+for human consumption.
+Tables are as follows:
+.Bl -tag -offset indent -width keyword
+.It _Paths (ID, FULLPKGPATH, PKGPATH, CANONICAL)
+.It _Ports(FULLPKGPATH, ...)
+.It _Flavors(FULLPKGPATH, VALUE, N)
+.It _PseudoFlavors(FULLPKGPATH, VALUE, N)
+.It _Categories(FULLPKGPATH, VALUE, N)
+.It _Multi(FULLPKGPATH, VALUE, SUBPKGPATH, N)
+.It _Modules(FULLPKGPATH, VALUE, N)
+.It _Configure(FULLPKGPATH, VALUE, N)
+.It _ConfigureArgs(FULLPKGPATH, VALUE, N, QUOTETYPE)
+.It _MasterSites(FULLPKGPATH, N, VALUE)
+.It _Makefiles(FULLPKGPATH, VALUE, N)
+.It _NotForArch(FULLPKGPATH, VALUE, N)
+.It _OnlyForArch(FULLPKGPATH, VALUE, N)
+.El
+.Sh FILES
+.Pa /usr/local/share/sqlports
+.Sh SEE ALSO
+.Xr sqlite3 1
