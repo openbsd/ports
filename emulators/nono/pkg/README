@@ -1,0 +1,61 @@
+$OpenBSD: README,v 1.1.1.1 2020/07/06 17:42:25 gonzalo Exp $
+
++-----------------------------------------------------------------------
+| Running NetBSD on ${PKGSTEM}
++-----------------------------------------------------------------------
+
+From ${PKGSTEM}'s manual to run NetBSD you need to create a directory
+with your disk and config:
+
+$ mkdir ~/nono
+
+You can download the liveimage of NetBSD from
+http://teokurebsd.org/netbsd/liveimage/20200518-luna68k/ and place it
+on ~/nono
+
+The config file nono.cfg inside ~/nono should be like:
+
+vmtype = luna
+spc0-id6-image = hd,liveimage-luna68k-raw-20200518.img
+
+Now run nono specifying ~/nono:
+
+$ nono -c ~/nono
+
+Now inside the console you should follow these instructions:
+
+k
+[Enter]
+[Enter]
+d
+boot
+g
+x
+
+For more options you should read the manual (for now only in Japanese).
+
++-----------------------------------------------------------------------
+| Running OpenBSD on ${PKGSTEM}
++-----------------------------------------------------------------------
+
+Currently nono's luna88k emulation is under construction.
+It can start OpenBSD/luna88k bsd.rd and bsd but it will stop after
+"WARNING: clock gained ..." line.
+
+You can use it downloading the bsd or bsd.rd from one of the mirrors
+and place it on ~/nono
+
+The config file nono.cfg inside ~/nono should be like:
+
+vmtype = luna88k
+luna-dipsw1 = 11111111
+ram-size = 64MB
+spc0-id0-image = hd,luna88k.img
+
+The luna88k.img could be created with zeros or with vmctl(8), so far
+you will not use it.
+
+To turn it on:
+
+$ nono -c ~/nono -s 0.5 -A bsd.rd
+

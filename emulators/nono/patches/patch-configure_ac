@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2020/07/06 17:42:25 gonzalo Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -90,6 +90,9 @@ CXXFLAGS="${CXXFLAGS} -Wall -Werror"
+ AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
+ 	[
+ 		#include "confdefs.h"
++		#if defined(HAVE_SYS_TYPES_H)
++		#include <sys/types.h>
++		#endif
+ 		#if defined(HAVE_SYS_EVENT_H)
+ 		#include <sys/event.h>
+ 		#endif
+@@ -266,6 +269,16 @@ AC_TRY_COMPILE([#include <pthread.h>],
+ 	],
+ 	AC_MSG_RESULT([yes])
+ 		AC_DEFINE([HAVE_PTHREAD_SETNAME_NP], 3),
++	AC_MSG_RESULT([no]))
++
++	AC_MSG_CHECKING(for pthread_set_name_np(thread, name))
++	AC_TRY_COMPILE([#include <pthread.h>
++		#include <pthread_np.h>],
++	[
++		pthread_set_name_np(pthread_self(), "");
++	],
++	AC_MSG_RESULT([yes])
++		AC_DEFINE([HAVE_PTHREAD_SET_NAME_NP]),
+ 	AC_MSG_RESULT([no]))
+ 
+ # Select host network driver.
