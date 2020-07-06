@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2020/07/05 09:29:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2020/07/06 15:39:04 ajacoutot Exp $
 
 COMMENT=		simple encrypted backup tool for GNOME
 
@@ -6,6 +6,7 @@ GNOME_VERSION=		42.0
 GNOME_PROJECT=		deja-dup
 # override gnome MODULE
 EXTRACT_SUFX=		.tar.gz
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -30,10 +31,11 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS=		sysutils/duplicity \
-			x11/gnome/libsecret
+RUN_DEPENDS=		sysutils/duplicity
 
-LIB_DEPENDS=		x11/libhandy
+LIB_DEPENDS=		devel/json-glib \
+			x11/gnome/libsecret \
+			x11/libhandy
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
