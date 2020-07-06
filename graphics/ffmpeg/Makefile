@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.203 2020/07/04 10:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.204 2020/07/06 07:14:55 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.3
 DISTNAME=	ffmpeg-${V}
-REVISION=	1
-EPOCH=		0
+REVISION=	2
+EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -62,16 +62,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/xvidcore \
 		textproc/libxml
 
-.include <bsd.port.arch.mk>
-
-.if ${PROPERTIES:Mlp64}
-WANTLIB+=	SvtAv1Enc
-LIB_DEPENDS+=	multimedia/svt-av1
-EL=	-lSvtAv1Enc
-.endif
-
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib ${EL} -laom -ldav1d -lgsm -liconv -llzma -lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -laom -ldav1d -lgsm -liconv -llzma -lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
 LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
 LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lm -lz -pthread
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lxml2 -lssl -lcrypto -lm -lz
@@ -138,10 +130,6 @@ CONFIGURE_ARGS+=--enable-shared \
 		--mandir=${PREFIX}/man \
 		--objcc="/usr/bin/false" \
 		--optflags="${OPTFLAGS}"
-
-.if ${PROPERTIES:Mlp64}
-CONFIGURE_ARGS+=--enable-libsvtav1
-.endif
 
 CONFIGURE_ENV+=	TERM=${TERM} \
 		TMPDIR=${WRKBUILD}
