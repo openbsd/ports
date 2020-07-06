@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2020/07/03 21:13:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2020/07/06 16:52:27 jasper Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py
@@ -19,7 +19,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	3001
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils net devel
 
@@ -57,6 +57,9 @@ RUN_DEPENDS +=		devel/py-progressbar${MODPY_FLAVOR}
 
 # salt/modules/x509.py
 RUN_DEPENDS +=		security/py-M2Crypto${MODPY_FLAVOR}
+
+# salt/{beacons,modules}/ps.py
+RUN_DEPENDS +=		sysutils/py-psutil${MODPY_FLAVOR}
 
 # max openfiles, soft: 3072, hard: 4096; DBus system session running...
 TEST_IS_INTERACTIVE =	Yes
