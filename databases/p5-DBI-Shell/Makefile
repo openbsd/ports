@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/06 11:15:18 sthen Exp $
 
 COMMENT=	interactive command shell for the DBI
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	DBI-Shell-11.95
-REVISION=	1
+DISTNAME=	DBI-Shell-11.96
 CATEGORIES=	databases
 
 # perl
