@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/09/27 14:17:00 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/07/06 10:07:44 sthen Exp $
 bin/img2pdf
+bin/img2pdf-gui
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}img2pdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}jp2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
