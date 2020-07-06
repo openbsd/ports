@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.129 2019/12/21 14:38:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.130 2020/07/06 16:05:58 sthen Exp $
 
 COMMENT=		library for layout and rendering of text
 
 GNOME_VERSION=		1.44.7
-REVISION=		0
+REVISION=		1
 GNOME_PROJECT=		pango
 
 SHARED_LIBS += pango-1.0                 3801.0 # 0.4400.7

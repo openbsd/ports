@@ -1,0 +1,110 @@
+$OpenBSD: patch-pango_pangofc-fontmap_c,v 1.1 2020/07/06 16:05:58 sthen Exp $
+
+Backported from below commit (slightly different due to code reorganisation)
+
+From fe1ee773310bac83d8e5d3c062b13a51fb5fb4ad Mon Sep 17 00:00:00 2001
+From: Khaled Hosny <khaledhosny@eglug.org>
+Date: Thu, 25 Jun 2020 10:02:21 +0200
+Subject: [PATCH] fcfontmap: Always reject unsupported font formats
+
+Fixes https://gitlab.gnome.org/GNOME/pango/-/issues/484 and
+https://gitlab.gnome.org/GNOME/pango/-/issues/457
+---
+ pango/pangofc-fontmap.c | 52 ++++++++++++++++++++---------------------
+ 1 file changed, 26 insertions(+), 26 deletions(-)
+
+Index: pango/pangofc-fontmap.c
+--- pango/pangofc-fontmap.c.orig
++++ pango/pangofc-fontmap.c
+@@ -808,8 +808,15 @@ pango_fc_patterns_get_pattern (PangoFcPatterns *pats)
+ }
+ 
+ static gboolean
+-pango_fc_is_supported_font_format (const char *fontformat)
++pango_fc_is_supported_font_format (FcPattern* pattern)
+ {
++  FcResult res;
++  const char *fontformat;
++
++  res = FcPatternGetString (pattern, FC_FONTFORMAT, 0, (FcChar8 **)(void*)&fontformat);
++  if (res != FcResultMatch)
++    return FALSE;
++
+   /* harfbuzz supports only SFNT fonts. */
+   /* FIXME: "CFF" is used for both CFF in OpenType and bare CFF files, but
+    * HarfBuzz does not support the later and FontConfig does not seem
+@@ -831,11 +838,7 @@ filter_fontset_by_format (FcFontSet *fontset)
+ 
+   for (i = 0; i < fontset->nfont; i++)
+     {
+-      FcResult res;
+-      const char *s;
+-
+-      res = FcPatternGetString (fontset->fonts[i], FC_FONTFORMAT, 0, (FcChar8 **)(void*)&s);
+-      if (res == FcResultMatch && pango_fc_is_supported_font_format (s))
++      if (pango_fc_is_supported_font_format (fontset->fonts[i]))
+         FcFontSetAdd (result, FcPatternDuplicate (fontset->fonts[i]));
+     }
+ 
+@@ -851,34 +854,32 @@ pango_fc_patterns_get_font_pattern (PangoFcPatterns *p
+       if (!pats->match && !pats->fontset)
+ 	pats->match = FcFontMatch (pats->fontmap->priv->config, pats->pattern, &result);
+ 
+-      if (pats->match)
++      if (pats->match && pango_fc_is_supported_font_format (pats->match))
+ 	{
+ 	  *prepare = FALSE;
+ 	  return pats->match;
+ 	}
+     }
+-  else
++
++  if (!pats->fontset)
+     {
+-      if (!pats->fontset)
+-        {
+-	  FcResult result;
+-          FcFontSet *fontset;
+-          FcFontSet *filtered;
++      FcResult result;
++      FcFontSet *fontset;
++      FcFontSet *filtered;
+ 
+-	  fontset = FcFontSort (pats->fontmap->priv->config, pats->pattern, FcFalse, NULL, &result);
+-          filtered = filter_fontset_by_format (fontset);
+-          FcFontSetDestroy (fontset);
++      fontset = FcFontSort (pats->fontmap->priv->config, pats->pattern, FcFalse, NULL, &result);
++      filtered = filter_fontset_by_format (fontset);
++      FcFontSetDestroy (fontset);
+ 
+-          pats->fontset = FcFontSetSort (pats->fontmap->priv->config, &filtered, 1, pats->pattern, FcTrue, NULL, &result);
++      pats->fontset = FcFontSetSort (pats->fontmap->priv->config, &filtered, 1, pats->pattern, FcTrue, NULL, &result);
+ 
+-          FcFontSetDestroy (filtered);
++      FcFontSetDestroy (filtered);
+ 
+-	  if (pats->match)
+-	    {
+-	      FcPatternDestroy (pats->match);
+-	      pats->match = NULL;
+-	    }
+-	}
++      if (pats->match)
++        {
++          FcPatternDestroy (pats->match);
++          pats->match = NULL;
++        }
+     }
+ 
+   *prepare = TRUE;
+@@ -1404,9 +1405,7 @@ pango_fc_font_map_list_families (PangoFontMap      *fo
+           int variable;
+ 	  PangoFcFamily *temp_family;
+ 
+-	  res = FcPatternGetString (fontset->fonts[i], FC_FONTFORMAT, 0, (FcChar8 **)(void*)&s);
+-	  g_assert (res == FcResultMatch);
+-          if (!pango_fc_is_supported_font_format (s))
++          if (!pango_fc_is_supported_font_format (fontset->fonts[i]))
+             continue;
+ 
+ 	  res = FcPatternGetString (fontset->fonts[i], FC_FAMILY, 0, (FcChar8 **)(void*)&s);
