@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/06/26 13:15:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/07/06 11:32:42 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -153,9 +153,7 @@ share/unifi/lib/urlrewritefilter-4.0.4.jar
 @owner _unifi
 share/unifi/logs
 @sample /var/log/unifi/
-@owner
-share/unifi/readme.txt
-@owner _unifi
+@comment share/unifi/readme.txt
 share/unifi/run/
 @owner
 share/unifi/unifi_sh_api
