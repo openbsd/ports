@@ -1,0 +1,25 @@
+$OpenBSD: patch-salt_client_ssh_shell_py,v 1.3 2020/07/06 17:17:13 jasper Exp $
+
+ssh(1) on OpenBSD doesn't support GSSAPI
+
+Index: salt/client/ssh/shell.py
+--- salt/client/ssh/shell.py.orig
++++ salt/client/ssh/shell.py
+@@ -131,8 +131,6 @@ class Shell(object):
+             options.append("PasswordAuthentication=yes")
+         else:
+             options.append("PasswordAuthentication=no")
+-        if self.opts.get("_ssh_version", (0,)) > (4, 9):
+-            options.append("GSSAPIAuthentication=no")
+         options.append("ConnectTimeout={0}".format(self.timeout))
+         if self.opts.get("ignore_host_keys"):
+             options.append("StrictHostKeyChecking=no")
+@@ -166,8 +164,6 @@ class Shell(object):
+             "ControlMaster=auto",
+             "StrictHostKeyChecking=no",
+         ]
+-        if self.opts["_ssh_version"] > (4, 9):
+-            options.append("GSSAPIAuthentication=no")
+         options.append("ConnectTimeout={0}".format(self.timeout))
+         if self.opts.get("ignore_host_keys"):
+             options.append("StrictHostKeyChecking=no")
