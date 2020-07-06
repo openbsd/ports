@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2020/07/03 21:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2020/07/06 10:11:58 sthen Exp $
 
 COMMENT=	perl interface to the Glib libraries
 
-V =		1.326
+V =		1.3293
 DISTNAME=	Glib-${V}
 PKGNAME=	p5-Glib2-${V}
 CATEGORIES=	x11 devel
-REVISION=	0
 
 CPAN_AUTHOR=	XAOC
 

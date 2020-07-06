@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/10/08 10:05:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/07/06 10:11:58 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Glib/
 ${P5ARCH}/Glib.pm
@@ -43,6 +43,7 @@ ${P5ARCH}/Glib/Signal.pod
 ${P5ARCH}/Glib/Type.pod
 ${P5ARCH}/Glib/Utils.pod
 ${P5ARCH}/Glib/Variant.pod
+${P5ARCH}/Glib/VariantDict.pod
 ${P5ARCH}/Glib/VariantType.pod
 ${P5ARCH}/Glib/devel.pod
 ${P5ARCH}/Glib/index.pod
@@ -50,7 +51,7 @@ ${P5ARCH}/Glib/version.pod
 ${P5ARCH}/Glib/xsapi.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Glib/
-${P5ARCH}/auto/Glib/Glib.so
+@so ${P5ARCH}/auto/Glib/Glib.so
 @man man/man3p/Glib.3p
 @man man/man3p/Glib::BookmarkFile.3p
 @man man/man3p/Glib::Boxed.3p
@@ -85,6 +86,7 @@ ${P5ARCH}/auto/Glib/Glib.so
 @man man/man3p/Glib::Type.3p
 @man man/man3p/Glib::Utils.3p
 @man man/man3p/Glib::Variant.3p
+@man man/man3p/Glib::VariantDict.3p
 @man man/man3p/Glib::VariantType.3p
 @man man/man3p/Glib::devel.3p
 @man man/man3p/Glib::index.3p
