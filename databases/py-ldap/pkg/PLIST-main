@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2018/11/30 12:59:10 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2020/07/06 11:38:59 sthen Exp $
 ${MODPY_2ONLY}@pkgpath databases/py-ldap
 ${MODPY_2ONLY}@pkgpath databases/py-ldap,-main[,python2.4][,python2.5][,python2.6][,python2.7]
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldapurl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldapurl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldif.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/_ldap.so
+@so lib/python${MODPY_VERSION}/site-packages/_ldap.so
 lib/python${MODPY_VERSION}/site-packages/ldap/
 lib/python${MODPY_VERSION}/site-packages/ldap/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap/${MODPY_PYCACHE}/
@@ -95,7 +95,10 @@ lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}dds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}dds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}passwd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}passwd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/dds.py
+lib/python${MODPY_VERSION}/site-packages/ldap/extop/passwd.py
 lib/python${MODPY_VERSION}/site-packages/ldap/filter.py
 lib/python${MODPY_VERSION}/site-packages/ldap/functions.py
 lib/python${MODPY_VERSION}/site-packages/ldap/ldapobject.py
