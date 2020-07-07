@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.4 2019/09/07 16:46:01 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2020/07/07 07:08:29 ajacoutot Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -38,14 +38,7 @@ m4_define(mym4_version_micro, [5])
+@@ -38,14 +38,7 @@ m4_define(mym4_version_micro, [6])
  # processing is done by autoconf and not during the configure run.
  m4_define(mym4_version,
            [mym4_version_major.mym4_version_minor.mym4_version_micro])
