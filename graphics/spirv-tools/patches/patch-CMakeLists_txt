@@ -1,14 +1,14 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/06/22 15:24:31 thfr Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/07/07 08:08:05 thfr Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -50,6 +50,8 @@ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Android")
+@@ -53,6 +53,8 @@ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Android")
    set(SPIRV_TIMER_ENABLED ${SPIRV_ALLOW_TIMERS})
  elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD")
    add_definitions(-DSPIRV_FREEBSD)
 +elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "OpenBSD")
 +  add_definitions(-DSPIRV_OPENBSD)
+ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Fuchsia")
+   add_definitions(-DSPIRV_FUCHSIA)
  else()
-   message(FATAL_ERROR "Your platform '${CMAKE_SYSTEM_NAME}' is not supported!")
- endif()

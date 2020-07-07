@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_CMakeLists_txt,v 1.1 2020/07/07 08:08:05 thfr Exp $
+
+Index: source/CMakeLists.txt
+--- source/CMakeLists.txt.orig
++++ source/CMakeLists.txt
+@@ -347,6 +347,7 @@ spvtools_pch(SPIRV_SOURCES pch_source)
+ 
+ add_library(${SPIRV_TOOLS} ${SPIRV_SOURCES})
+ spvtools_default_compile_options(${SPIRV_TOOLS})
++target_include_directories(${SPIRV_TOOLS} BEFORE PRIVATE ${spirv-tools_SOURCE_DIR}/include)
+ target_include_directories(${SPIRV_TOOLS}
+   PUBLIC
+     $<BUILD_INTERFACE:${spirv-tools_SOURCE_DIR}/include>

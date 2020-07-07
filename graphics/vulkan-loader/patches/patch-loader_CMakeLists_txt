@@ -1,6 +1,7 @@
-$OpenBSD: patch-loader_CMakeLists_txt,v 1.3 2020/05/03 22:37:29 jsg Exp $
+$OpenBSD: patch-loader_CMakeLists_txt,v 1.4 2020/07/07 08:08:07 thfr Exp $
 
-Avoid vulkan-validation-layers vk_loader_platform.h being used.
+don't define _XOPEN_SOURCE=500, otherwise alloca from stdlib.h isn't
+visible and libvulkan won't run
 
 Index: loader/CMakeLists.txt
 --- loader/CMakeLists.txt.orig
@@ -9,17 +10,34 @@ Index: loader/CMakeLists.txt
  # limitations under the License.
  # ~~~
  
--include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${PROJECT_BINARY_DIR} ${CMAKE_BINARY_DIR})
-+include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${PROJECT_BINARY_DIR} ${CMAKE_BINARY_DIR})
+-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/generated ${CMAKE_CURRENT_BINARY_DIR})
++include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/generated ${CMAKE_CURRENT_BINARY_DIR})
  
  # Check for the existance of the secure_getenv or __secure_getenv commands
  include(CheckFunctionExists)
-@@ -247,7 +247,7 @@ else()
-                                      "1"
-                                      VERSION
-                                      "${VulkanHeaders_VERSION_MAJOR}.${VulkanHeaders_VERSION_MINOR}.${VulkanHeaders_VERSION_PATCH}")
--    target_link_libraries(vulkan -ldl -lpthread -lm)
-+    target_link_libraries(vulkan -lpthread -lm)
-     target_link_libraries(vulkan Vulkan::Headers)
+@@ -170,7 +170,6 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
+         target_link_libraries(asm_offset Vulkan::Headers)
+         add_custom_command(OUTPUT gen_defines.asm DEPENDS asm_offset COMMAND asm_offset GAS)
+         add_custom_target(loader_asm_gen_files DEPENDS gen_defines.asm)
+-        target_compile_definitions(asm_offset PRIVATE _XOPEN_SOURCE=500) # hush compiler warnings for readlink
+     else()
+         message(WARNING "Could not find working x86 GAS assembler\n${ASM_FAILURE_MSG}")
+         set(OPT_LOADER_SRCS ${OPT_LOADER_SRCS} unknown_ext_chain.c)
+@@ -264,7 +263,7 @@ else()
+             add_library(vulkan-framework SHARED ${NORMAL_LOADER_SRCS} ${OPT_LOADER_SRCS} ${FRAMEWORK_HEADERS})
+         endif()
+         add_dependencies(vulkan-framework loader_asm_gen_files)
+-        target_link_libraries(vulkan-framework -ldl -lpthread -lm "-framework CoreFoundation")
++        target_link_libraries(vulkan-framework -lpthread -lm "-framework CoreFoundation")
+         target_link_libraries(vulkan-framework Vulkan::Headers)
  
-     if(APPLE)
+         # The FRAMEWORK_VERSION needs to be "A" here so that Xcode code-signing works when a user adds their framework to an Xcode
+@@ -290,8 +289,6 @@ else()
+     endif()
+ 
+     if(NOT APPLE)
+-        target_compile_definitions(vulkan PRIVATE _XOPEN_SOURCE=500) # hush compiler warnings for readlink
+-
+         # Generate pkg-config file.
+         include(FindPkgConfig QUIET)
+         if(PKG_CONFIG_FOUND)

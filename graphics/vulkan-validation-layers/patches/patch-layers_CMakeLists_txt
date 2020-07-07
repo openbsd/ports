@@ -1,16 +1,16 @@
-$OpenBSD: patch-layers_CMakeLists_txt,v 1.1.1.1 2019/06/22 15:32:36 thfr Exp $
+$OpenBSD: patch-layers_CMakeLists_txt,v 1.2 2020/07/07 08:08:08 thfr Exp $
 
 include build dir before VulkanHeaders_INCLUDE_DIR
 
 Index: layers/CMakeLists.txt
 --- layers/CMakeLists.txt.orig
 +++ layers/CMakeLists.txt
-@@ -152,7 +152,7 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
+@@ -137,7 +137,7 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
      endmacro()
  endif()
  
--include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${VulkanHeaders_INCLUDE_DIR})
-+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${PROJECT_BINARY_DIR} ${VulkanHeaders_INCLUDE_DIR})
+-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/generated ${VulkanHeaders_INCLUDE_DIR})
++include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${PROJECT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/generated ${VulkanHeaders_INCLUDE_DIR})
  
  if(WIN32)
      # Applies to all configurations

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/22 15:19:31 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/07 08:08:04 thfr Exp $
 @bin bin/glslangValidator
 @bin bin/spirv-remap
 include/SPIRV/
@@ -9,6 +9,7 @@ include/SPIRV/GLSL.ext.NV.h
 include/SPIRV/GLSL.std.450.h
 include/SPIRV/GlslangToSpv.h
 include/SPIRV/Logger.h
+include/SPIRV/NonSemanticDebugPrintf.h
 include/SPIRV/SPVRemapper.h
 include/SPIRV/SpvBuilder.h
 include/SPIRV/SpvTools.h
@@ -30,6 +31,8 @@ include/glslang/Include/ResourceLimits.h
 include/glslang/Include/ShHandle.h
 include/glslang/Include/Types.h
 include/glslang/Include/arrays.h
+include/glslang/Include/glslang_c_interface.h
+include/glslang/Include/glslang_c_shader_types.h
 include/glslang/Include/intermediate.h
 include/glslang/Include/revision.h
 include/glslang/MachineIndependent/
@@ -54,9 +57,44 @@ include/glslang/MachineIndependent/propagateNoContraction.h
 include/glslang/MachineIndependent/reflection.h
 include/glslang/Public/
 include/glslang/Public/ShaderLang.h
-lib/libHLSL.a
-lib/libOGLCompiler.a
-lib/libOSDependent.a
-lib/libSPIRV.a
-lib/libSPVRemapper.a
-lib/libglslang.a
+include/glslang/SPIRV/
+include/glslang/SPIRV/GLSL.ext.AMD.h
+include/glslang/SPIRV/GLSL.ext.EXT.h
+include/glslang/SPIRV/GLSL.ext.KHR.h
+include/glslang/SPIRV/GLSL.ext.NV.h
+include/glslang/SPIRV/GLSL.std.450.h
+include/glslang/SPIRV/GlslangToSpv.h
+include/glslang/SPIRV/Logger.h
+include/glslang/SPIRV/NonSemanticDebugPrintf.h
+include/glslang/SPIRV/SPVRemapper.h
+include/glslang/SPIRV/SpvBuilder.h
+include/glslang/SPIRV/SpvTools.h
+include/glslang/SPIRV/bitutils.h
+include/glslang/SPIRV/disassemble.h
+include/glslang/SPIRV/doc.h
+include/glslang/SPIRV/hex_float.h
+include/glslang/SPIRV/spirv.hpp
+include/glslang/SPIRV/spvIR.h
+lib/cmake/
+lib/cmake/HLSLTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/HLSLTargets.cmake
+lib/cmake/OGLCompilerTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/OGLCompilerTargets.cmake
+lib/cmake/OSDependentTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/OSDependentTargets.cmake
+lib/cmake/SPIRVTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SPIRVTargets.cmake
+lib/cmake/SPVRemapperTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SPVRemapperTargets.cmake
+lib/cmake/glslangTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/glslangTargets.cmake
+lib/cmake/glslangValidatorTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/glslangValidatorTargets.cmake
+lib/cmake/spirv-remapTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/spirv-remapTargets.cmake
+@static-lib lib/libHLSL.a
+@static-lib lib/libOGLCompiler.a
+@static-lib lib/libOSDependent.a
+@static-lib lib/libSPIRV.a
+@static-lib lib/libSPVRemapper.a
+@static-lib lib/libglslang.a

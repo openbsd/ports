@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_CMakeLists_txt,v 1.1 2020/07/07 08:08:05 thfr Exp $
+
+prefer local include/spirv-tools over system includes from earlier version
+
+Index: tools/CMakeLists.txt
+--- tools/CMakeLists.txt.orig
++++ tools/CMakeLists.txt
+@@ -53,6 +53,7 @@ if (NOT ${SPIRV_SKIP_EXECUTABLES})
+                          cfg/bin_to_dot.h
+                          cfg/bin_to_dot.cpp
+                     LIBS ${SPIRV_TOOLS})
++  target_include_directories(spirv-cfg BEFORE PRIVATE ${spirv-tools_SOURCE_DIR}/include)
+   target_include_directories(spirv-cfg PRIVATE ${spirv-tools_SOURCE_DIR}
+                                                ${SPIRV_HEADER_INCLUDE_DIR})
+   set(SPIRV_INSTALL_TARGETS spirv-as spirv-dis spirv-val spirv-opt

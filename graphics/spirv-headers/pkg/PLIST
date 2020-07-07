@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/22 15:22:27 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/07 08:08:05 thfr Exp $
 include/spirv/
 include/spirv/1.0/
 include/spirv/1.0/GLSL.std.450.h
@@ -41,10 +41,24 @@ include/spirv/1.2/spirv.lua
 include/spirv/1.2/spirv.py
 include/spirv/spir-v.xml
 include/spirv/unified1/
+include/spirv/unified1/AMD_gcn_shader.h
+include/spirv/unified1/AMD_shader_ballot.h
+include/spirv/unified1/AMD_shader_explicit_vertex_parameter.h
+include/spirv/unified1/AMD_shader_trinary_minmax.h
+include/spirv/unified1/DebugInfo.h
 include/spirv/unified1/GLSL.std.450.h
+include/spirv/unified1/NonSemanticDebugPrintf.h
 include/spirv/unified1/OpenCL.std.h
+include/spirv/unified1/OpenCLDebugInfo100.h
+include/spirv/unified1/extinst.debuginfo.grammar.json
 include/spirv/unified1/extinst.glsl.std.450.grammar.json
+include/spirv/unified1/extinst.nonsemantic.debugprintf.grammar.json
+include/spirv/unified1/extinst.opencl.debuginfo.100.grammar.json
 include/spirv/unified1/extinst.opencl.std.100.grammar.json
+include/spirv/unified1/extinst.spv-amd-gcn-shader.grammar.json
+include/spirv/unified1/extinst.spv-amd-shader-ballot.grammar.json
+include/spirv/unified1/extinst.spv-amd-shader-explicit-vertex-parameter.grammar.json
+include/spirv/unified1/extinst.spv-amd-shader-trinary-minmax.grammar.json
 include/spirv/unified1/spirv.core.grammar.json
 include/spirv/unified1/spirv.cs
 include/spirv/unified1/spirv.h
@@ -54,3 +68,8 @@ include/spirv/unified1/spirv.json
 include/spirv/unified1/spirv.lua
 include/spirv/unified1/spirv.py
 include/spirv/unified1/spv.d
+lib/cmake/
+lib/cmake/SPIRV-Headers/
+lib/cmake/SPIRV-Headers/SPIRV-HeadersConfig.cmake
+lib/cmake/SPIRV-Headers/SPIRV-HeadersConfigVersion.cmake
+lib/cmake/SPIRV-Headers/SPIRV-HeadersTargets.cmake

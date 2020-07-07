@@ -1,0 +1,56 @@
+$OpenBSD: patch-vulkaninfo_vulkaninfo_h,v 1.1 2020/07/07 08:08:07 thfr Exp $
+
+Index: vulkaninfo/vulkaninfo.h
+--- vulkaninfo/vulkaninfo.h.orig
++++ vulkaninfo/vulkaninfo.h
+@@ -60,7 +60,11 @@
+ #include <windows.h>
+ #endif  // _WIN32
+ 
+-#if defined(__linux__) || defined(__APPLE__)
++#if defined(__unix__) && !defined(__APPLE__)
++#define USE_DLOPEN 1
++#endif
++
++#if defined(USE_DLOPEN)
+ #include <dlfcn.h>
+ #endif
+ 
+@@ -253,8 +257,11 @@ auto GetVector(const char *func_name, F &&f, Ts &&... 
+ // ----------- Instance Setup ------- //
+ struct VkDll {
+     VkResult Initialize() {
+-#if defined(__linux__)
++#if defined(__OpenBSD__)
+         library = dlopen("libvulkan.so", RTLD_NOW | RTLD_LOCAL);
++        if (!library) library = dlopen("libvulkan.so", RTLD_NOW | RTLD_LOCAL);
++#elif defined(USE_DLOPEN)
++        library = dlopen("libvulkan.so", RTLD_NOW | RTLD_LOCAL);
+         if (!library) library = dlopen("libvulkan.so.1", RTLD_NOW | RTLD_LOCAL);
+ #elif defined(_WIN32)
+         library = LoadLibrary(TEXT("vulkan-1.dll"));
+@@ -265,7 +272,7 @@ struct VkDll {
+         return VK_SUCCESS;
+     }
+     void Close() {
+-#if defined(__linux__)
++#if defined(USE_DLOPEN)
+         dlclose(library);
+ #elif defined(_WIN32)
+         FreeLibrary(library);
+@@ -427,13 +434,13 @@ struct VkDll {
+   private:
+     template <typename T>
+     void Load(T &func_dest, const char *func_name) {
+-#if defined(__linux__)
++#if defined(USE_DLOPEN)
+         func_dest = reinterpret_cast<T>(dlsym(library, func_name));
+ #elif defined(_WIN32)
+         func_dest = reinterpret_cast<T>(GetProcAddress(library, func_name));
+ #endif
+     }
+-#if defined(__linux__)
++#if defined(USE_DLOPEN)
+     void *library;
+ #elif defined(_WIN32)
+     HMODULE library;

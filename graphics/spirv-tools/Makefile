@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/21 14:33:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/07 08:08:05 thfr Exp $
 
 COMMENT =	API and commands for processing SPIR-V
 
-V =		2019.3
+V =		2020.3
 DISTNAME =	spirv-tools-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Tools
@@ -29,7 +29,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	graphics/spirv-headers
 
-CONFIGURE_ARGS =	-DSPIRV_HEADER_DIR="${LOCALBASE}"
+CONFIGURE_ARGS =	-DSPIRV-Headers_SOURCE_DIR="${LOCALBASE}"
 
 # effcee is missing to build tests
 NO_TEST =	Yes

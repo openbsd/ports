@@ -1,4 +1,4 @@
-$OpenBSD: patch-loader_trampoline_c,v 1.1.1.1 2019/06/22 15:28:42 thfr Exp $
+$OpenBSD: patch-loader_trampoline_c,v 1.2 2020/07/07 08:08:07 thfr Exp $
 
 revert commit ecb0b1e69fb2f4d3cae262e6da24c170ce62ae13 to attempt to
 fix vulkaninfo
@@ -6,7 +6,7 @@ fix vulkaninfo
 Index: loader/trampoline.c
 --- loader/trampoline.c.orig
 +++ loader/trampoline.c
-@@ -778,17 +778,61 @@ LOADER_EXPORT VKAPI_ATTR VkResult VKAPI_CALL vkEnumera
+@@ -801,17 +801,61 @@ LOADER_EXPORT VKAPI_ATTR VkResult VKAPI_CALL vkEnumera
                                                                                    VkExtensionProperties *pProperties) {
      VkResult res = VK_SUCCESS;
      struct loader_physical_device_tramp *phys_dev;

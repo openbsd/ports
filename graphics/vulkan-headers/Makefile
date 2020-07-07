@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/22 17:12:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/07 08:08:06 thfr Exp $
 
 COMMENT =	Vulkan header files
 
-V =		1.1.108.0
+V =		1.2.141.0
 PKGNAME =	vulkan-headers-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Headers
-REVISION =	0
 
 CATEGORIES =	devel graphics
 
@@ -19,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake
 
+NO_BUILD =	Yes
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

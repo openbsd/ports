@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/22 15:26:43 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/07 08:08:06 thfr Exp $
 include/vulkan/
 include/vulkan/vk_icd.h
 include/vulkan/vk_layer.h
@@ -7,6 +7,7 @@ include/vulkan/vk_sdk_platform.h
 include/vulkan/vulkan.h
 include/vulkan/vulkan.hpp
 include/vulkan/vulkan_android.h
+include/vulkan/vulkan_beta.h
 include/vulkan/vulkan_core.h
 include/vulkan/vulkan_fuchsia.h
 include/vulkan/vulkan_ggp.h
@@ -26,6 +27,8 @@ share/vulkan/registry/conventions.py
 share/vulkan/registry/generator.py
 share/vulkan/registry/genvk.py
 share/vulkan/registry/reg.py
+share/vulkan/registry/spec_tools/
+share/vulkan/registry/spec_tools/util.py
 share/vulkan/registry/validusage.json
 share/vulkan/registry/vk.xml
 share/vulkan/registry/vkconventions.py

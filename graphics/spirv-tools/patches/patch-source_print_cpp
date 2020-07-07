@@ -1,14 +1,15 @@
-$OpenBSD: patch-source_print_cpp,v 1.1.1.1 2019/06/22 15:24:31 thfr Exp $
+$OpenBSD: patch-source_print_cpp,v 1.2 2020/07/07 08:08:05 thfr Exp $
 
 Index: source/print.cpp
 --- source/print.cpp.orig
 +++ source/print.cpp
-@@ -15,7 +15,7 @@
- #include "source/print.h"
+@@ -16,7 +16,8 @@
  
  #if defined(SPIRV_ANDROID) || defined(SPIRV_LINUX) || defined(SPIRV_MAC) || \
--    defined(SPIRV_FREEBSD)
-+    defined(SPIRV_FREEBSD) || defined(SPIRV_OPENBSD)
+     defined(SPIRV_IOS) || defined(SPIRV_FREEBSD) ||                         \
+-    defined(SPIRV_EMSCRIPTEN) || defined(SPIRV_FUCHSIA)
++    defined(SPIRV_EMSCRIPTEN) || defined(SPIRV_FUCHSIA) ||                  \
++    defined(SPIRV_OPENBSD)
  namespace spvtools {
  
  clr::reset::operator const char*() { return "\x1b[0m"; }

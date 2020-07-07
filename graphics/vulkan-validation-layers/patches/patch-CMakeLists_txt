@@ -1,12 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/06/22 15:32:36 thfr Exp $
-
-bundled headers should go before system headers which may be from old
-version (VulkanHeaders_INCLUDE_DIR is picked up as /usr/local/include)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/07/07 08:08:08 thfr Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -90,6 +90,7 @@ if(UNIX AND NOT APPLE) # i.e. Linux
+@@ -95,6 +95,7 @@ if(UNIX AND NOT APPLE) # i.e. Linux
  
      if(BUILD_WSI_XCB_SUPPORT)
          find_package(XCB REQUIRED)
@@ -14,18 +11,3 @@ Index: CMakeLists.txt
      endif()
  
      if(BUILD_WSI_XLIB_SUPPORT)
-@@ -344,11 +345,11 @@ install(TARGETS VkLayer_utils DESTINATION ${CMAKE_INST
- set_target_properties(VkLayer_utils PROPERTIES LINKER_LANGUAGE CXX)
- add_dependencies(VkLayer_utils VulkanVL_generate_helper_files)
- target_include_directories(VkLayer_utils
--                           PUBLIC ${VulkanHeaders_INCLUDE_DIR}
--				  ${CMAKE_CURRENT_SOURCE_DIR}/layers
-+                           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/layers
-                                   ${CMAKE_CURRENT_BINARY_DIR}
-                                   ${CMAKE_CURRENT_BINARY_DIR}/layers
--                                  ${PROJECT_BINARY_DIR})
-+                                  ${PROJECT_BINARY_DIR}
-+				  ${VulkanHeaders_INCLUDE_DIR})
- 
- # uninstall target ---------------------------------------------------------------------------------------------------------------
- if(NOT TARGET uninstall)

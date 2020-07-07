@@ -1,4 +1,6 @@
-$OpenBSD: patch-loader_vk_loader_platform_h,v 1.1.1.1 2019/06/22 15:28:42 thfr Exp $
+$OpenBSD: patch-loader_vk_loader_platform_h,v 1.2 2020/07/07 08:08:07 thfr Exp $
+
+stub loader_platform_executable_path()
 
 Index: loader/vk_loader_platform.h
 --- loader/vk_loader_platform.h.orig
@@ -8,7 +10,18 @@ Index: loader/vk_loader_platform.h
  #include "vulkan/vk_sdk_platform.h"
  
 -#if defined(__linux__) || defined(__APPLE__)
-+#if defined(__linux__) || defined(__APPLE__) || defined(__unix__)
++#if defined(__unix__) || defined(__APPLE__)
  /* Linux-specific common code: */
  
  // Headers:
+@@ -117,6 +117,10 @@ static inline char *loader_platform_executable_path(ch
+     if (ret <= 0) return NULL;
+     buffer[ret] = '\0';
+     return buffer;
++}
++#elif defined(__OpenBSD__) // defined(__APPLE__)
++static inline char *loader_platform_executable_path(char *buffer, size_t size) {
++    return NULL;
+ }
+ #endif  // defined (__APPLE__)
+ 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-layers_vk_mem_alloc_h,v 1.1.1.1 2019/06/22 15:32:36 thfr Exp $
+$OpenBSD: patch-layers_vk_mem_alloc_h,v 1.2 2020/07/07 08:08:08 thfr Exp $
 
 Index: layers/vk_mem_alloc.h
 --- layers/vk_mem_alloc.h.orig
 +++ layers/vk_mem_alloc.h
-@@ -3179,7 +3179,7 @@ void *aligned_alloc(size_t alignment, size_t size)
+@@ -3180,7 +3180,7 @@ void *aligned_alloc(size_t alignment, size_t size)
  
      return memalign(alignment, size);
  }

@@ -1,9 +1,9 @@
-$OpenBSD: patch-icd_CMakeLists_txt,v 1.1.1.1 2019/06/22 15:30:16 thfr Exp $
+$OpenBSD: patch-icd_CMakeLists_txt,v 1.2 2020/07/07 08:08:07 thfr Exp $
 
 Index: icd/CMakeLists.txt
 --- icd/CMakeLists.txt.orig
 +++ icd/CMakeLists.txt
-@@ -38,6 +38,8 @@ elseif(APPLE)
+@@ -24,6 +24,8 @@ elseif(APPLE)
  elseif(UNIX AND NOT APPLE) # i.e. Linux
      if(BUILD_WSI_XCB_SUPPORT)
          add_definitions(-DVK_USE_PLATFORM_XCB_KHR -DVK_USE_PLATFORM_XCB_KHX)

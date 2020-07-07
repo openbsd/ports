@@ -1,9 +1,9 @@
-$OpenBSD: patch-cube_cube_cpp,v 1.1.1.1 2019/06/22 15:30:16 thfr Exp $
+$OpenBSD: patch-cube_cube_cpp,v 1.2 2020/07/07 08:08:07 thfr Exp $
 
 Index: cube/cube.cpp
 --- cube/cube.cpp.orig
 +++ cube/cube.cpp
-@@ -2975,7 +2975,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPre
+@@ -2998,7 +2998,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPre
      return (int)msg.wParam;
  }
  

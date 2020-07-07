@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/27 15:47:35 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/07 08:08:03 thfr Exp $
 
 COMMENT =	reference front-end for GLSL and ESSL
 
-GH_TAGNAME =	7.11.3214
+GH_TAGNAME =	8.13.3743
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
 

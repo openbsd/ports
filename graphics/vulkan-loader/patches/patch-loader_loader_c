@@ -1,4 +1,4 @@
-$OpenBSD: patch-loader_loader_c,v 1.1.1.1 2019/06/22 15:28:42 thfr Exp $
+$OpenBSD: patch-loader_loader_c,v 1.2 2020/07/07 08:08:07 thfr Exp $
 
 revert commit ecb0b1e69fb2f4d3cae262e6da24c170ce62ae13 to attempt to
 fix vulkaninfo
@@ -6,16 +6,16 @@ fix vulkaninfo
 Index: loader/loader.c
 --- loader/loader.c.orig
 +++ loader/loader.c
-@@ -229,7 +229,7 @@ void *loader_device_heap_realloc(const struct loader_d
+@@ -242,7 +242,7 @@ void *loader_device_heap_realloc(const struct loader_d
  }
  
  // Environment variables
 -#if defined(__linux__) || defined(__APPLE__)
 +#if defined(__linux__) || defined(__APPLE__) || defined(__unix__)
  
- static inline char *loader_getenv(const char *name, const struct loader_instance *inst) {
-     // No allocation of memory necessary for Linux, but we should at least touch
-@@ -6756,56 +6756,11 @@ VKAPI_ATTR VkResult VKAPI_CALL terminator_EnumerateDev
+ static inline bool IsHighIntegrity() {
+     return geteuid() != getuid() || getegid() != getgid();
+@@ -7236,56 +7236,11 @@ VKAPI_ATTR VkResult VKAPI_CALL terminator_EnumerateDev
      struct loader_extension_list all_exts = {0};
      struct loader_extension_list icd_exts = {0};
  

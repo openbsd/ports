@@ -1,16 +1,16 @@
-$OpenBSD: patch-Test_runtests,v 1.1.1.1 2019/06/22 15:19:31 thfr Exp $
+$OpenBSD: patch-Test_runtests,v 1.2 2020/07/07 08:08:04 thfr Exp $
 
 Index: Test/runtests
 --- Test/runtests.orig
 +++ Test/runtests
-@@ -2,8 +2,8 @@
+@@ -7,8 +7,8 @@
  
- TARGETDIR=localResults
+ TARGETDIR=${1:-localResults}
  BASEDIR=baseResults
--EXE=../build/install/bin/glslangValidator
--REMAPEXE=../build/install/bin/spirv-remap
-+EXE=${WRKBUILD}/StandAlone/glslangValidator
-+REMAPEXE=${WRKBUILD}/StandAlone/spirv-remap
+-EXE=${2:-../build/install/bin/glslangValidator}
+-REMAPEXE=${3:-../build/install/bin/spirv-remap}
++EXE=${2:-${WRKBUILD}/StandAlone/glslangValidator}
++REMAPEXE=${3:-${WRKBUILD}/StandAlone/spirv-remap}
  HASERROR=0
- mkdir -p localResults
+ mkdir -p $TARGETDIR
  
