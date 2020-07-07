@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1004 2020/07/07 13:06:07 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1005 2020/07/07 18:56:49 paco Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -439,6 +439,7 @@ my $stem_extensions = {
 	'py-cloudpickle' => 'py3-cloudpickle',
 	'py-podcastparser' => 'py3-podcastparser',
 	'py-configargparse' => 'py3-configargparse',
+    'py-aiodns' => 'py3-aiodns',
 };
 
 my $obsolete_reason = {
