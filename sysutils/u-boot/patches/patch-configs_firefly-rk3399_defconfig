@@ -1,12 +1,12 @@
-$OpenBSD: patch-configs_firefly-rk3399_defconfig,v 1.6 2020/05/15 12:53:13 jsg Exp $
+$OpenBSD: patch-configs_firefly-rk3399_defconfig,v 1.7 2020/07/07 08:26:26 jsg Exp $
 
 Index: configs/firefly-rk3399_defconfig
 --- configs/firefly-rk3399_defconfig.orig
 +++ configs/firefly-rk3399_defconfig
-@@ -42,7 +42,7 @@ CONFIG_PMIC_RK8XX=y
- CONFIG_REGULATOR_PWM=y
+@@ -46,7 +46,7 @@ CONFIG_REGULATOR_PWM=y
  CONFIG_REGULATOR_RK8XX=y
  CONFIG_PWM_ROCKCHIP=y
+ CONFIG_DM_RESET=y
 -CONFIG_BAUDRATE=1500000
 +CONFIG_BAUDRATE=115200
  CONFIG_DEBUG_UART_SHIFT=2

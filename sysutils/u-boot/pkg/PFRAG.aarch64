@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.17 2020/06/14 01:49:03 jsg Exp $
+@comment $OpenBSD: PFRAG.aarch64,v 1.18 2020/07/07 08:26:27 jsg Exp $
 @pkgpath sysutils/u-boot-pinebook
 share/u-boot/
 share/u-boot/a64-olinuxino/
@@ -77,6 +77,13 @@ share/u-boot/pine64_plus/u-boot-sunxi-with-spl.bin
 share/u-boot/pine64_plus/u-boot.bin
 share/u-boot/pine64_plus/u-boot.img
 share/u-boot/pine64_plus/u-boot.itb
+share/u-boot/pinebook-pro-rk3399/
+share/u-boot/pinebook-pro-rk3399/idbloader.img
+share/u-boot/pinebook-pro-rk3399/u-boot
+share/u-boot/pinebook-pro-rk3399/u-boot-rockchip.bin
+share/u-boot/pinebook-pro-rk3399/u-boot.bin
+share/u-boot/pinebook-pro-rk3399/u-boot.img
+share/u-boot/pinebook-pro-rk3399/u-boot.itb
 share/u-boot/pinebook/
 share/u-boot/pinebook/sunxi-spl.bin
 share/u-boot/pinebook/u-boot

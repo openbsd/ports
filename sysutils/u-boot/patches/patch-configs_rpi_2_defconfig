@@ -1,4 +1,4 @@
-$OpenBSD: patch-configs_rpi_2_defconfig,v 1.7 2019/09/28 01:40:24 jsg Exp $
+$OpenBSD: patch-configs_rpi_2_defconfig,v 1.8 2020/07/07 08:26:27 jsg Exp $
 
 rpi: Use firmware provided device tree
 
@@ -26,5 +26,5 @@ Index: configs/rpi_2_defconfig
 -CONFIG_OF_EMBED=y
 +CONFIG_OF_BOARD=y
  CONFIG_DEFAULT_DEVICE_TREE="bcm2836-rpi-2-b"
- CONFIG_ENV_FAT_INTERFACE="mmc"
  CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
+ CONFIG_SYS_RELOC_GD_ENV_ADDR=y
