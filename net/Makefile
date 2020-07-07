@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1213 2020/07/03 14:02:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1214 2020/07/07 18:41:55 paco Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -546,7 +546,6 @@
      SUBDIR += py-IOSXR,python3
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
-     SUBDIR += py-aiodns
      SUBDIR += py-aiodns,python3
      SUBDIR += py-ripe.atlas.cousteau
      SUBDIR += py-ripe.atlas.cousteau,python3
