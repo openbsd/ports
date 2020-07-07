@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2020/01/05 23:22:48 kmos Exp $
+# $OpenBSD: Makefile,v 1.27 2020/07/07 13:01:45 kn Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
-GH_TAGNAME =		20191022
+GH_TAGNAME =		20200628
 MODPY_EGG_VERSION =	${GH_TAGNAME}
 
 COMMENT =		download videos from YLE Areena
@@ -15,29 +15,24 @@ MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python \
-			lang/php
-
-TEST_ENV =		HOME=/tmp
-
-RUN_DEPENDS =		devel/py-attrs \
-			devel/py-configargparse \
-			devel/py-future \
-			net/rtmpdump \
-			security/py-cryptodome \
-			www/py-requests \
-			lang/php/${MODPHP_VERSION},-curl \
-			net/wget \
-			textproc/py-lxml \
-			converters/py-mini-amf
-TEST_DEPENDS =		devel/py-test-runner
+MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
-MODPHP_BUILDDEP =	No
 MODPY_PYTEST =		Yes
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-pre-configure:
-	@sed -i -e "s,'php','${MODPHP_BIN}',g" ${WRKSRC}/yledl/io.py
-	@sed -i -e "s,'pycryptodomex','pycryptodome',g" ${WRKSRC}/setup.py
+RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
+			devel/py-configargparse${MODPY_FLAVOR} \
+			devel/py-future${MODPY_FLAVOR} \
+			graphics/ffmpeg \
+			www/py-requests${MODPY_FLAVOR} \
+			net/wget \
+			textproc/py-lxml${MODPY_FLAVOR} \
+			converters/py-mini-amf${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
+
+TEST_IS_INTERACTIVE =	needs network access to download streams
+TEST_ENV =		HOME=/tmp
 
 .include <bsd.port.mk>
