@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/07/05 07:13:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2020/07/07 22:14:22 ajacoutot Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
@@ -17,7 +17,7 @@ MODULES=		devel/meson \
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-MODGNOME_TOOLS += gobject-introspection vala
+MODGNOME_TOOLS	=	gobject-introspection vala docbook
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
