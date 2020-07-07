@@ -346,8 +346,8 @@ SHA256 (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.mod) = dLLnZushU3eGTV
 SHA256 (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.zip) = 3gTOzBpLjVPkNXBRAmeUvLxU8uaiYM+sUIzmnV1kV6A=
 SHA256 (go_modules/github.com/prometheus/client_golang/@v/v0.9.1.mod) = qnj8mhMBrpT0RwOEbd3fJU3v7DA1bj8TALu02w6z22U=
 SHA256 (go_modules/github.com/prometheus/client_golang/@v/v0.9.3-0.20190127221311-3c4408c8b829.mod) = SZhG0Y+b+YQKl4s4z6BUvV6NIraY1tnH/6JhxvSshxo=
-SHA256 (go_modules/github.com/prometheus/client_golang/@v/v0.9.3-0.20190127221311-3c4408c8b829.zip) = JXDXK7RIneg4B/TmeIaJ8Mo83UK9ipfc0DmwmR50Thw=
 SHA256 (go_modules/github.com/prometheus/client_golang/@v/v0.9.3.mod) = wUHklmvSuIne0AInho2keUx3Qa2mALGXwvKUD8Gbr+0=
+SHA256 (go_modules/github.com/prometheus/client_golang/@v/v0.9.3.zip) = dVbwZXVPDjj2UPVfyE0hQfoKLV524mjFArXmQO+mfOg=
 SHA256 (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20180712105110-5c3871d89910.mod) = ns1IHRDj87hroHVZhqhYUgKLhvK6WXll09NnKy8vtzg=
 SHA256 (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20190115171406-56726106282f.mod) = ns1IHRDj87hroHVZhqhYUgKLhvK6WXll09NnKy8vtzg=
 SHA256 (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20190129233127-fd36f4220a90.mod) = iuJH+LHO10L7xKp+vGtsk1Fy6q+mGivlK6C9QShtsDE=
@@ -608,7 +608,7 @@ SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190106161140-3f1c8253044a.zip)
 SHA256 (go_modules/pack.ag/amqp/@v/v0.11.0.mod) = XpPm/8KAGsJIYqrWcrABlbiNpR0jv5tGsle6LqytY4s=
 SHA256 (go_modules/pack.ag/amqp/@v/v0.11.0.zip) = W2vQ23rqsGuiZbrONW1Tywbztp7gz8FvOYfrVr/u4+k=
 SHA256 (go_modules/pack.ag/amqp/@v/v0.8.0.mod) = XpPm/8KAGsJIYqrWcrABlbiNpR0jv5tGsle6LqytY4s=
-SHA256 (hugo-v0.72.0.zip) = uoVte828pyJ3ZmJq+0Eh2nDn0GzD6L/44oxPpQupZzc=
+SHA256 (hugo-v0.73.0.zip) = Poxq9ssqtH1uSTlUB2lhoyOlSwdlfagHJO0Qr7hzlqE=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.37.4.mod) = 1006
@@ -957,8 +957,8 @@ SIZE (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.mod) = 37
 SIZE (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.zip) = 12433
 SIZE (go_modules/github.com/prometheus/client_golang/@v/v0.9.1.mod) = 43
 SIZE (go_modules/github.com/prometheus/client_golang/@v/v0.9.3-0.20190127221311-3c4408c8b829.mod) = 443
-SIZE (go_modules/github.com/prometheus/client_golang/@v/v0.9.3-0.20190127221311-3c4408c8b829.zip) = 203807
 SIZE (go_modules/github.com/prometheus/client_golang/@v/v0.9.3.mod) = 379
+SIZE (go_modules/github.com/prometheus/client_golang/@v/v0.9.3.zip) = 200189
 SIZE (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20180712105110-5c3871d89910.mod) = 42
 SIZE (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20190115171406-56726106282f.mod) = 42
 SIZE (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20190129233127-fd36f4220a90.mod) = 164
@@ -1219,4 +1219,4 @@ SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190106161140-3f1c8253044a.zip) =
 SIZE (go_modules/pack.ag/amqp/@v/v0.11.0.mod) = 20
 SIZE (go_modules/pack.ag/amqp/@v/v0.11.0.zip) = 579763
 SIZE (go_modules/pack.ag/amqp/@v/v0.8.0.mod) = 20
-SIZE (hugo-v0.72.0.zip) = 5093874
+SIZE (hugo-v0.73.0.zip) = 5096073
