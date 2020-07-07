@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/15 08:49:02 kn Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/07/07 14:51:51 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/angr/
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -103,6 +103,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indir
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/${MODPY_PYCACHE}amd64_elf_got.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/${MODPY_PYCACHE}arm_elf_fast.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/${MODPY_PYCACHE}const_resolver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/${MODPY_PYCACHE}default_resolvers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/${MODPY_PYCACHE}jumptable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/${MODPY_PYCACHE}mips_elf_fast.${MODPY_PYC_MAGIC_TAG}pyc
@@ -111,6 +112,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolve
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/${MODPY_PYCACHE}x86_pe_iat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/amd64_elf_got.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/arm_elf_fast.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/const_resolver.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/default_resolvers.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/jumptable.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/mips_elf_fast.py
@@ -118,6 +120,16 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolve
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/x86_elf_pic_plt.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/indirect_jump_resolvers/x86_pe_iat.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg/segment_list.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/${MODPY_PYCACHE}cfg_slice_to_sink.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/${MODPY_PYCACHE}transitions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/cfg_slice_to_sink.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/graph.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/cfg_slice_to_sink/transitions.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/code_tagging.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/complete_calling_conventions.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/congruency_check.py
@@ -127,6 +139,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACHE}ailblock_walker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACHE}ailgraph_walker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACHE}clinic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACHE}condition_processor.${MODPY_PYC_MAGIC_TAG}pyc
@@ -141,6 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACHE}structurer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACHE}structurer_nodes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/ailblock_walker.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/ailgraph_walker.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/clinic.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/condition_processor.py
@@ -153,6 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_p
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}base_ptr_save_simplifier.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}const_derefs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}div_simplifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}eager_returns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}engine_base.${MODPY_PYC_MAGIC_TAG}pyc
@@ -161,6 +176,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_p
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}optimization_pass.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}stack_canary_simplifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/base_ptr_save_simplifier.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/const_derefs.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/div_simplifier.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/eager_returns.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/engine_base.py
@@ -191,11 +207,13 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/${MODPY_PYCACHE}call_graph.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/${MODPY_PYCACHE}cfg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/${MODPY_PYCACHE}function_graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/${MODPY_PYCACHE}loop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/${MODPY_PYCACHE}single_node_graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/call_graph.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/cfg.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/function_graph.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/graph.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/forward_analysis/visitors/loop.py
@@ -288,17 +306,21 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}call_trace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}dep_graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}engine_ail.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}engine_vex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}external_codeloc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}function_handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}rd_state.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}reaching_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}subject.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/call_trace.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/dep_graph.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/engine_ail.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/engine_vex.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/external_codeloc.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/function_handler.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/rd_state.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/reaching_definitions.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/subject.py
@@ -644,6 +666,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}labels.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}patches.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}propagations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/cfg/
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/cfg/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/cfg/${MODPY_PYCACHE}/
@@ -698,6 +721,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/key_definitions/
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/labels.py
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/patches.py
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/plugin.py
+lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/propagations.py
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/sync/
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/sync/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/sync/${MODPY_PYCACHE}/

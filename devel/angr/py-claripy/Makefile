@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/07 14:51:51 kn Exp $
 
 COMMENT =		abstraction layer for constraint solvers
-REVISION =		0
 
 ANGR_PYTHON_MODULE =	claripy
 

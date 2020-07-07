@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/07 14:51:51 kn Exp $
 
 # sync with devel/angr/Makefile.inc
 ONLY_FOR_ARCHS =	amd64
@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_EGG_VERSION =	8.20.6.8
+MODPY_EGG_VERSION =	8.20.7.6
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 REVISION =		0
