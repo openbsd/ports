@@ -1,12 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: mysqld.rc,v 1.5 2018/01/11 19:27:01 rpe Exp $
+# $OpenBSD: mysqld.rc,v 1.6 2020/07/07 12:40:45 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/mysqld_safe"
 
 . /etc/rc.d/rc.subr
 
-pexp="${TRUEPREFIX}/libexec/mysqld .*"
+pexp="${TRUEPREFIX}/libexec/mariadbd .*"
 rc_bg=YES
 rc_reload=NO
 
