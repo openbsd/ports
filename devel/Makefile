@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1999 2020/07/03 17:05:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.2000 2020/07/07 13:06:07 kn Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1386,7 +1386,6 @@
      SUBDIR += py-codestyle,python3
      SUBDIR += py-colorama
      SUBDIR += py-colorama,python3
-     SUBDIR += py-configargparse
      SUBDIR += py-configargparse,python3
      SUBDIR += py-configobj
      SUBDIR += py-configobj,python3
