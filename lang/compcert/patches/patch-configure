@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.11 2020/02/16 04:34:23 daniel Exp $
+$OpenBSD: patch-configure,v 1.12 2020/07/07 23:03:10 daniel Exp $
 
 1) Fixup path locations for OpenBSD
 2) Add configuration support for macppc and aarch64 on OpenBSD
@@ -73,7 +73,7 @@ Index: configure
      *)
          echo "Error: invalid eabi/system '$target' for architecture AArch64." 1>&2
          echo "$usage" 1>&2
-@@ -666,14 +686,14 @@ esac
+@@ -680,14 +700,14 @@ esac
  #
  # Generate Makefile.config
  #
@@ -89,8 +89,8 @@ Index: configure
 +MANDIR=$mandir
  SHAREDIR=$sharedir
  COQDEVDIR=$coqdevdir
- OCAML_OPT_COMP=$ocaml_opt_comp
-@@ -818,6 +838,7 @@ else
+ OCAML_NATIVE_COMP=$ocaml_native_comp
+@@ -833,6 +853,7 @@ else
  
  bindirexp=`echo "$bindir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
  libdirexp=`echo "$libdir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
@@ -98,7 +98,7 @@ Index: configure
  coqdevdirexp=`echo "$coqdevdir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
  
  cat <<EOF
-@@ -842,6 +863,7 @@ CompCert configuration:
+@@ -857,6 +878,7 @@ CompCert configuration:
      Library files installed in.... $libdirexp
      Standard headers provided..... $has_standard_headers
      Standard headers installed in. $libdirexp/include
