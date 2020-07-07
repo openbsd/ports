@@ -1,0 +1,99 @@
+$OpenBSD: patch-converter_ppm_hpcdtoppm_pcdovtoppm,v 1.1 2020/07/07 20:15:03 naddy Exp $
+
+Fix garbage conversion from csh arrays
+https://sourceforge.net/p/netpbm/code/3891/
+
+Index: converter/ppm/hpcdtoppm/pcdovtoppm
+--- converter/ppm/hpcdtoppm/pcdovtoppm.orig
++++ converter/ppm/hpcdtoppm/pcdovtoppm
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # pcdovtoppm - generate a single PPM file from a PCD overview file
+ #
+@@ -136,7 +136,7 @@ done
+ 
+ if [ $versionopt -eq 1 ] ; then
+     version
+-elif [ $# = 0 ] ; then
++elif [ $# -eq 0 ] ; then
+     usage
+ fi
+ 
+@@ -146,12 +146,6 @@ trap 'rm -rf $tempdir' 0
+ 
+ tmpfile=`tempfile -p pi -m 600`
+ 
+-rowfiles=()
+-imagefiles=()
+-row=1
+-col=1
+-width=$size
+-
+ # Convert the PCD overview file to many PPM images
+ if [ -f $1 ] ; then
+     hpcdtoppm -Overview $1 $tmpfile ||
+@@ -162,14 +156,20 @@ else
+     usage
+ fi
+ 
++imagefiles=
++rowfiles=
++row=1
++col=1
++width=$size
++
+ for i in "$tmpfile"* 
+ do
+     if [ -f $i ] ; then
+-        description=`pnmfile $i`
+-        if [ "${description[4]}" -le $size -a \
+-             "${description[6]}" -le $size ] ; then
++        thiswidth=$(pamfile -machine $i | cut -f 4 -d ' ')
++        thisheight=$(pamfile -machine $i | cut -f 5 -d ' ')
++        if [ "$thiswidth" -le $size -a "$thisheight" -le $size ] ; then
+             cat $i > $tmpfile
+-                else
++        else
+             if [ "$colors" = "n" ] ; then
+                 pnmscale -quiet -xysize $size $size $i > $tmpfile
+             else
+@@ -191,8 +191,8 @@ do
+     fi
+ 
+     rm -f $tmpfile
+-    description=`pnmfile $imagefile`
+-    width=$(( $width + ${description[4]} ))
++    thisWidth=$(pamfile -machine $i | cut -f 4 -d ' ')
++    width=$(( $width + $thisWidth ))
+     imagefiles="$imagefiles $imagefile"
+ 
+     if [ $col -ge $across -o $width -gt $maxwidth ] ; then
+@@ -205,7 +205,7 @@ do
+         ppmquant -quiet $colors > $rowfile
+     fi
+     rm -f $imagefiles
+-    imagefiles=()
++    imagefiles=
+     rowfiles="$rowfiles $rowfile"
+     col=1
+     row=$(( $row + 1 ))
+@@ -215,7 +215,7 @@ do
+     fi
+ done
+ 
+-if [ ${#imagefiles[*]} -gt 0 ] ; then
++if [ -n $imagefiles ] ; then
+     rowfile=${tempdir}/pi.${row}
+     rm -f $rowfile
+     if [ "$colors" = "n" ] ; then
+@@ -228,7 +228,7 @@ if [ ${#imagefiles[*]} -gt 0 ] ; then
+     rowfiles="$rowfiles $rowfile"
+ fi
+ 
+-if [ ${#rowfiles[*]} = 1 ] ; then
++if [ $(echo $rowfiles|wc -w) -eq 1 ] ; then
+     ppmtoppm $plainopt < $rowfiles
+ else
+     if [ "$colors" = "n" ] ; then

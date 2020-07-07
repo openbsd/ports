@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.90 2020/05/25 19:56:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.91 2020/07/07 20:15:03 naddy Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-10.88.01
-SHARED_LIBS=	netpbm	5.1
+DISTNAME=	netpbm-10.91.00
+SHARED_LIBS=	netpbm	5.2
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
@@ -20,6 +20,8 @@ LIB_DEPENDS=	graphics/tiff \
 		graphics/jbigkit \
 		graphics/jasper \
 		textproc/libxml
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
@@ -57,8 +59,8 @@ pre-test:
 # must run after fake
 test: fake
 
-# pnmquant.test is known to be broken (out of sync with pnmquant
-# command) and will be fixed in 10.89
+# The pamdice, pamvalidate, pamexec, pj-roundtrip tests are known to be
+# broken and will be fixed in 10.92
 
 # Get the latest release in a release series from Netpbm Subversion.
 # Requires devel/subversion.

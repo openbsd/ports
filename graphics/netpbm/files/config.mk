@@ -1,4 +1,4 @@
-# $OpenBSD: config.mk,v 1.1 2016/04/26 17:59:50 naddy Exp $
+# $OpenBSD: config.mk,v 1.2 2020/07/07 20:15:03 naddy Exp $
 # Indented variables are unchanged from the defaults in config.mk.in.
 # Commented out variables are set in MAKE_FLAGS.
 #
@@ -17,16 +17,17 @@
  LDFLAGS_FOR_BUILD = $(LDFLAGS)
  WINDRES = windres
 INSTALL = install
- STRIPFLAG = -s
+STRIPFLAG =
  SYMLINK = ln -s
  MANPAGE_FORMAT = nroff
  AR = ar
  RANLIB = ranlib
  LEX = flex
+ PKG_CONFIG = pkg-config
 #CFLAGS =
  EXE =
  LDFLAGS =
-LDSHLIB = -shared
+LDSHLIB = -shared -Wl,-soname,libnetpbm.$(NETPBMLIBSUFFIX).$(LIBnetpbm_VERSION)
  LDRELOC = NONE
 CFLAGS_SHLIB = -fPIC
  SHLIB_CLIB = -lc
@@ -79,4 +80,4 @@ INSTALL_PERM_DATA = $(NONBINMODE)
  NETPBMSHLIBPREFIX = $(firstword $(SHLIBPREFIXLIST))
  DLLVER =
  NETPBM_DOCURL = http://netpbm.sourceforge.net/doc/
- RGB_DB_PATH = $(PREFIX)/share/netpbm/rgb.txt:/usr/X11R6/share/X11/rgb.txt
+RGB_DB_PATH = $(PREFIX)/share/netpbm/rgb.txt:/usr/X11R6/share/X11/rgb.txt
