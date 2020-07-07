@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/12/03 19:46:34 solene Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/07/07 12:05:58 sthen Exp $
 abcl/
 abcl/abcl-contrib.jar
 abcl/abcl.jar
@@ -20,6 +20,9 @@ abcl/src/org/armedbear/lisp/ArithmeticError.java
 abcl/src/org/armedbear/lisp/Autoload.java
 abcl/src/org/armedbear/lisp/AutoloadGeneralizedReference.java
 abcl/src/org/armedbear/lisp/AutoloadMacro.java
+abcl/src/org/armedbear/lisp/BasicVector_ByteBuffer.java
+abcl/src/org/armedbear/lisp/BasicVector_CharBuffer.java
+abcl/src/org/armedbear/lisp/BasicVector_IntBuffer.java
 abcl/src/org/armedbear/lisp/BasicVector_UnsignedByte16.java
 abcl/src/org/armedbear/lisp/BasicVector_UnsignedByte32.java
 abcl/src/org/armedbear/lisp/BasicVector_UnsignedByte8.java
@@ -41,11 +44,13 @@ abcl/src/org/armedbear/lisp/CompiledClosure.java
 abcl/src/org/armedbear/lisp/CompiledPrimitive.java
 abcl/src/org/armedbear/lisp/Complex.java
 abcl/src/org/armedbear/lisp/ComplexArray.java
+abcl/src/org/armedbear/lisp/ComplexArray_ByteBuffer.java
 abcl/src/org/armedbear/lisp/ComplexArray_UnsignedByte32.java
 abcl/src/org/armedbear/lisp/ComplexArray_UnsignedByte8.java
 abcl/src/org/armedbear/lisp/ComplexBitVector.java
 abcl/src/org/armedbear/lisp/ComplexString.java
 abcl/src/org/armedbear/lisp/ComplexVector.java
+abcl/src/org/armedbear/lisp/ComplexVector_ByteBuffer.java
 abcl/src/org/armedbear/lisp/ComplexVector_UnsignedByte32.java
 abcl/src/org/armedbear/lisp/ComplexVector_UnsignedByte8.java
 abcl/src/org/armedbear/lisp/ConcatenatedStream.java
@@ -139,6 +144,8 @@ abcl/src/org/armedbear/lisp/RuntimeClass.java
 abcl/src/org/armedbear/lisp/SeekableStringWriter.java
 abcl/src/org/armedbear/lisp/SeriousCondition.java
 abcl/src/org/armedbear/lisp/ShellCommand.java
+abcl/src/org/armedbear/lisp/SimpleArray_ByteBuffer.java
+abcl/src/org/armedbear/lisp/SimpleArray_CharBuffer.java
 abcl/src/org/armedbear/lisp/SimpleArray_T.java
 abcl/src/org/armedbear/lisp/SimpleArray_UnsignedByte16.java
 abcl/src/org/armedbear/lisp/SimpleArray_UnsignedByte32.java

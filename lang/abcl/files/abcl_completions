@@ -2450,6 +2450,8 @@ system:dd-type
 system:debug-loop
 system:decf-complex
 system:declaration-error
+system:decode-float-double
+system:decode-float-single
 system:default-constructor-name
 system:default-ed-function
 system:default-time-zone
@@ -2885,6 +2887,7 @@ system:round-up
 system:run-hook
 system:run-program
 system:safe-length
+system:sane-integer-decode-float
 system:sanitize-class-name
 system:satisfies-the-test
 system:scale-exponent
