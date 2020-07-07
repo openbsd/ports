@@ -1,0 +1,4 @@
+Python module to interface with HP iLO. Using the same XML interface as
+HP's own management tools, here is a python library and command-line
+tool that make it a lot easier to do all the above. No manual XML
+writing, just call functions from either python or your shell(script).

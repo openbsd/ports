@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/07 06:20:46 jasper Exp $
+bin/hpilo_cli
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hpilo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hpilo_fw.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hpilo.py
+lib/python${MODPY_VERSION}/site-packages/hpilo_fw.py
+lib/python${MODPY_VERSION}/site-packages/python_hpilo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
