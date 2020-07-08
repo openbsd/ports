@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/08 22:57:41 kn Exp $
 
 COMMENT =		set of useful typemaps
 
 DISTNAME =		ExtUtils-Typemaps-Default-1.05
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
