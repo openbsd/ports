@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.87 2020/07/03 21:12:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2020/07/08 11:01:00 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		3.1.1
+V =		3.1.2
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
-
-REVISION-python = 0
 
 FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
