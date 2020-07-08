@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1214 2020/07/07 18:41:55 paco Exp $
+# $OpenBSD: Makefile,v 1.1215 2020/07/08 06:50:58 kirby Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -380,7 +380,6 @@
      SUBDIR += p5-Net-Frame-Dump
      SUBDIR += p5-Net-Frame-Layer-ICMPv6
      SUBDIR += p5-Net-Frame-Layer-IPv6
-     SUBDIR += p5-Net-GPSD
      SUBDIR += p5-Net-Google
      SUBDIR += p5-Net-HTTP
      SUBDIR += p5-Net-ICQ2000
