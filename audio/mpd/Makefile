@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.131 2020/05/15 11:40:36 bket Exp $
+# $OpenBSD: Makefile,v 1.132 2020/07/08 13:02:24 bket Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-VER =			0.21.23
+VER =			0.21.25
 DISTNAME =		mpd-${VER}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
