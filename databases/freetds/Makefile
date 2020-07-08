@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2020/07/04 19:59:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2020/07/08 02:34:10 jca Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -22,6 +22,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses ffi gmp gnutls hogweed iconv idn2 intl iodbc
 WANTLIB += iodbcinst nettle p11-kit pthread readline tasn1 unistring
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 LIB_DEPENDS=	converters/libiconv \
 		databases/iodbc,-main \
