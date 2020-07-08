@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/05/14 15:15:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/07/08 06:46:44 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/applications/org.gnome.Notes.desktop
@@ -290,6 +290,28 @@ share/help/sv/bijiben/notebooks.page
 share/help/sv/bijiben/rename.page
 share/help/sv/bijiben/search.page
 share/help/sv/bijiben/share.page
+share/help/uk/
+share/help/uk/bijiben/
+share/help/uk/bijiben/colors.page
+share/help/uk/bijiben/create.page
+share/help/uk/bijiben/cut-copy-paste.page
+share/help/uk/bijiben/delete-permanent.page
+share/help/uk/bijiben/delete-restore.page
+share/help/uk/bijiben/delete.page
+share/help/uk/bijiben/figures/
+share/help/uk/bijiben/figures/hicolor_apps_16x16_bijiben.png
+share/help/uk/bijiben/figures/hicolor_apps_48x48_bijiben.png
+share/help/uk/bijiben/figures/notes-3-34.png
+share/help/uk/bijiben/format-list.page
+share/help/uk/bijiben/format-text.page
+share/help/uk/bijiben/index.page
+share/help/uk/bijiben/introduction.page
+share/help/uk/bijiben/legal.xml
+share/help/uk/bijiben/new-window.page
+share/help/uk/bijiben/notebooks.page
+share/help/uk/bijiben/rename.page
+share/help/uk/bijiben/search.page
+share/help/uk/bijiben/share.page
 share/icons/hicolor/scalable/apps/org.gnome.Notes.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Notes-symbolic.svg
 share/locale/af/LC_MESSAGES/bijiben.mo

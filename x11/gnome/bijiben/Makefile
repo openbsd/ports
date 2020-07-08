@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2020/05/14 15:15:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2020/07/08 06:46:44 jasper Exp $
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.36.1
+GNOME_VERSION=		3.36.2
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
