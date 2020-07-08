@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/07 08:08:07 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/08 21:37:50 thfr Exp $
 
 COMMENT =	Vulkan Validation Layers
 
@@ -7,6 +7,7 @@ PKGNAME =	vulkan-validation-layers-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-ValidationLayers
+REVISION =	0
 
 CATEGORIES =	devel graphics
 
@@ -28,6 +29,7 @@ MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	graphics/glslang \
 		graphics/vulkan-headers \
+		graphics/spirv-headers \
 		graphics/spirv-tools
 
 CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="${LOCALBASE}" \
