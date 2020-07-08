@@ -1,0 +1,17 @@
+$OpenBSD: patch-IPython_core_interactiveshell_py,v 1.1 2020/07/08 13:01:23 bket Exp $
+
+IPython is broken on python-3.8, due to changes to ast.Module. Taken from
+https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1715405.html
+
+Index: IPython/core/interactiveshell.py
+--- IPython/core/interactiveshell.py.orig
++++ IPython/core/interactiveshell.py
+@@ -2813,7 +2813,7 @@ class InteractiveShell(SingletonConfigurable):
+ 
+         try:
+             for i, node in enumerate(to_run_exec):
+-                mod = ast.Module([node])
++                mod = ast.Module([node], [])
+                 code = compiler(mod, cell_name, "exec")
+                 if self.run_code(code, result):
+                     return True
