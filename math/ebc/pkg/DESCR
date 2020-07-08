@@ -1,7 +1,0 @@
-This is an implementation of the POSIX bc calculator that implements GNU
-bc extensions, as well as the period (.) extension for the BSD flavor of
-bc.
-
-This bc also includes an implementation of dc in the same binary,
-accessible via a symbolic link, which implements all *BSD and GNU
-extensions, though the ! command is omitted for security concerns.
