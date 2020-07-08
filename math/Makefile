@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2020/07/01 18:10:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.185 2020/07/08 21:01:52 bcallah Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -6,6 +6,7 @@
      SUBDIR += abs
      SUBDIR += armadillo
      SUBDIR += arpack
+     SUBDIR += bc-gh
      SUBDIR += bcal
      SUBDIR += blas
      SUBDIR += calc
@@ -16,7 +17,6 @@
      SUBDIR += coq
      SUBDIR += dieharder
      SUBDIR += double-conversion
-     SUBDIR += ebc
      SUBDIR += ecm
      SUBDIR += eigen3
      SUBDIR += ensmallen
