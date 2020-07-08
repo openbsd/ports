@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/19 14:25:47 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/08 22:18:41 edd Exp $
 @bin bin/mdbook
 share/doc/mdbook/
 share/doc/mdbook/.nojekyll
+share/doc/mdbook/404.html
 share/doc/mdbook/FontAwesome/
 share/doc/mdbook/FontAwesome/css/
 share/doc/mdbook/FontAwesome/css/font-awesome.css
@@ -33,6 +34,22 @@ share/doc/mdbook/css/variables.css
 share/doc/mdbook/editor.js
 share/doc/mdbook/elasticlunr.min.js
 share/doc/mdbook/favicon.png
+share/doc/mdbook/favicon.svg
+share/doc/mdbook/fonts/
+share/doc/mdbook/fonts/OPEN-SANS-LICENSE.txt
+share/doc/mdbook/fonts/SOURCE-CODE-PRO-LICENSE.txt
+share/doc/mdbook/fonts/fonts.css
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-300.woff2
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-300italic.woff2
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-600.woff2
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-600italic.woff2
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-700.woff2
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-700italic.woff2
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-800.woff2
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-800italic.woff2
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-italic.woff2
+share/doc/mdbook/fonts/open-sans-v17-all-charsets-regular.woff2
+share/doc/mdbook/fonts/source-code-pro-v11-all-charsets-500.woff2
 share/doc/mdbook/for_developers/
 share/doc/mdbook/for_developers/backends.html
 share/doc/mdbook/for_developers/index.html
