@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.190 2020/07/03 21:13:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.191 2020/07/08 07:31:47 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.36.3
-REVISION=		0
+GNOME_VERSION=		3.36.4
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
