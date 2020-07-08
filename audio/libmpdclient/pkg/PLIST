@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/01/02 09:36:50 bket Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/07/08 13:02:08 bket Exp $
 include/mpd/
 include/mpd/async.h
 include/mpd/audio_format.h
@@ -27,6 +27,7 @@ include/mpd/playlist.h
 include/mpd/protocol.h
 include/mpd/queue.h
 include/mpd/recv.h
+include/mpd/replay_gain.h
 include/mpd/response.h
 include/mpd/search.h
 include/mpd/send.h
