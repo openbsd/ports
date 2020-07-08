@@ -1,0 +1,17 @@
+$OpenBSD: patch-Quake_gl_rmisc_c,v 1.1 2020/07/08 21:40:43 thfr Exp $
+
+replace removed VK_DYNAMIC_STATE_RANGE_SIZE
+commit a869a22d9b51c68e57646fa20e4c40fc6db36760
+
+Index: Quake/gl_rmisc.c
+--- Quake/gl_rmisc.c.orig
++++ Quake/gl_rmisc.c
+@@ -1426,7 +1426,7 @@ void R_CreatePipelines()
+ 	VkPipelineDynamicStateCreateInfo dynamic_state_create_info;
+ 	memset(&dynamic_state_create_info, 0, sizeof(dynamic_state_create_info));
+ 	dynamic_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;
+-	VkDynamicState dynamic_states[VK_DYNAMIC_STATE_RANGE_SIZE];
++	VkDynamicState dynamic_states[3];
+ 	dynamic_state_create_info.pDynamicStates = dynamic_states;
+ 
+ 	VkPipelineShaderStageCreateInfo shader_stages[2];
