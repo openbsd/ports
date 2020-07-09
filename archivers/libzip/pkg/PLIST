@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/02/04 01:44:05 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/07/09 03:18:10 bcallah Exp $
 @bin bin/zipcmp
 @bin bin/zipmerge
 @bin bin/ziptool
 include/zip.h
 include/zipconf.h
+lib/cmake/
+lib/cmake/libzip/
+lib/cmake/libzip/libzip-config.cmake
+lib/cmake/libzip/libzip-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libzip/libzip-targets.cmake
+lib/cmake/libzip/libzip-version.cmake
 @lib lib/libzip.so.${LIBzip_VERSION}
 lib/pkgconfig/libzip.pc
 @man man/man1/zipcmp.1
@@ -14,9 +20,11 @@ lib/pkgconfig/libzip.pc
 @man man/man3/zip_add.3
 @man man/man3/zip_add_dir.3
 @man man/man3/zip_close.3
+@man man/man3/zip_compression_method_supported.3
 @man man/man3/zip_delete.3
 @man man/man3/zip_dir_add.3
 @man man/man3/zip_discard.3
+@man man/man3/zip_encryption_method_supported.3
 @man man/man3/zip_error_clear.3
 @man man/man3/zip_error_code_system.3
 @man man/man3/zip_error_code_zip.3
@@ -34,6 +42,7 @@ lib/pkgconfig/libzip.pc
 @man man/man3/zip_fclose.3
 @man man/man3/zip_fdopen.3
 @man man/man3/zip_file_add.3
+@man man/man3/zip_file_attributes_init.3
 @man man/man3/zip_file_error_clear.3
 @man man/man3/zip_file_error_get.3
 @man man/man3/zip_file_extra_field_delete.3
