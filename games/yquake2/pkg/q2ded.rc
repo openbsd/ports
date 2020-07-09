@@ -1,8 +1,9 @@
 #!/bin/ksh
 #
-# $OpenBSD: q2ded.rc,v 1.5 2018/01/11 19:27:02 rpe Exp $
+# $OpenBSD: q2ded.rc,v 1.6 2020/07/09 21:10:21 awolk Exp $
 
 daemon="${TRUEPREFIX}/share/yquake2/q2ded"
+daemon_flags="+set busywait 0 +set dedicated 1"
 daemon_user="_yquake2"
 
 . /etc/rc.d/rc.subr
@@ -10,9 +11,5 @@ daemon_user="_yquake2"
 pexp="${daemon}.*"
 rc_bg=YES
 rc_reload=NO
-
-rc_start() {
-	${rcexec} "cd ${TRUEPREFIX}/share/yquake2; ${daemon} ${daemon_flags}"
-}
 
 rc_cmd $1
