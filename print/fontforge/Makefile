@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2020/07/09 05:43:40 matthieu Exp $
 
 BROKEN-i386=		hangs at runtime. started after switch to clang
 
@@ -12,7 +12,7 @@ SHARED_LIBS=		fontforge	4.0 \
 			gioftp		2.1 \
 			gunicode	5.1 \
 			gutils		2.1
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		print
 
@@ -25,10 +25,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xft Xi Xrender c cairo expat ffi fontconfig
-WANTLIB += freetype gif glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 harfbuzz iconv intl jpeg lzma m pango-1.0
+WANTLIB += freetype fribidi gif glib-2.0 gobject-2.0 graphite2
+WANTLIB += harfbuzz iconv intl jpeg lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre pixman-1 png
-WANTLIB += pthread tiff util xcb xcb-render xcb-shm xkbfile xkbui xml2 z
+WANTLIB += pthread tiff util xcb xcb-render xcb-shm xml2 z zstd
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 
