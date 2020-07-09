@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2020/06/16 20:24:05 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2020/07/09 18:35:41 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -33,6 +33,7 @@ include/poppler/Hints.h
 include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
 include/poppler/JPEG2000Stream.h
+include/poppler/JSInfo.h
 include/poppler/Lexer.h
 include/poppler/Linearization.h
 include/poppler/Link.h
