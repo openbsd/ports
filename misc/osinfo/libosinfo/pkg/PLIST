@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/05/31 10:36:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/07/09 12:06:31 ajacoutot Exp $
 @pkgpath misc/libosinfo
 @bin bin/osinfo-detect
 @bin bin/osinfo-install-script
@@ -57,65 +57,6 @@ lib/pkgconfig/libosinfo-1.0.pc
 @man man/man1/osinfo-install-script.1
 @man man/man1/osinfo-query.1
 share/gir-1.0/Libosinfo-1.0.gir
-share/gtk-doc/html/Libosinfo/
-share/gtk-doc/html/Libosinfo/Libosinfo-OsinfoFilter.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-avatar-format.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-datamap.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-datamaplist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-db.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-deployment.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-deploymentlist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-device-driver.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-device-driverlist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-device.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-devicelink.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-devicelinkfilter.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-devicelinklist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-devicelist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-entity.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-enum-types.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-firmware.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-firmwarelist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-image.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-imagelist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-config-param.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-config-paramlist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-config.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-script.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-scriptlist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-list.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-loader.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-media.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-medialist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-os-variant.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-os-variantlist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-os.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-oslist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-platform.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-platformlist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-product.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-productfilter.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-productlist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-resources.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-resourceslist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-tree.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-treelist.html
-share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-version.html
-share/gtk-doc/html/Libosinfo/Libosinfo.devhelp2
-share/gtk-doc/html/Libosinfo/annotation-glossary.html
-share/gtk-doc/html/Libosinfo/api-index-full.html
-share/gtk-doc/html/Libosinfo/ch01.html
-share/gtk-doc/html/Libosinfo/depr-index.html
-share/gtk-doc/html/Libosinfo/home.png
-share/gtk-doc/html/Libosinfo/index.html
-share/gtk-doc/html/Libosinfo/left-insensitive.png
-share/gtk-doc/html/Libosinfo/left.png
-share/gtk-doc/html/Libosinfo/object-tree.html
-share/gtk-doc/html/Libosinfo/right-insensitive.png
-share/gtk-doc/html/Libosinfo/right.png
-share/gtk-doc/html/Libosinfo/style.css
-share/gtk-doc/html/Libosinfo/up-insensitive.png
-share/gtk-doc/html/Libosinfo/up.png
 share/locale/ca/LC_MESSAGES/libosinfo.mo
 share/locale/cs/LC_MESSAGES/libosinfo.mo
 share/locale/de/LC_MESSAGES/libosinfo.mo

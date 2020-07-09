@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2020/06/24 17:30:00 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/09 12:06:31 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
 DISTNAME=		libosinfo-${V}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += osinfo-1.0                1.5 # 0.1008.0
 
@@ -13,8 +13,7 @@ MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-BUILD_DEPENDS=		devel/gettext,-tools \
-			textproc/gtk-doc
+BUILD_DEPENDS=		devel/gettext,-tools
 
 # needed for test
 BUILD_DEPENDS +=	devel/check
@@ -28,6 +27,7 @@ RUN_DEPENDS=		misc/hwdata \
 TEST_DEPENDS=		misc/osinfo/osinfo-db
 
 CONFIGURE_ARGS=		-Dwith-pci-ids-path=${LOCALBASE}/share/hwdata/pnp.ids \
-			-Dwith-usb-ids-path=${LOCALBASE}/share/hwdata/usb.ids
+			-Dwith-usb-ids-path=${LOCALBASE}/share/hwdata/usb.ids \
+			-Denable-gtk-doc=false
 
 .include <bsd.port.mk>
