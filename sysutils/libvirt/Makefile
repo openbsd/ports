@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2020/07/04 08:23:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2020/07/09 16:49:37 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
@@ -51,6 +51,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-DAI_V4MAPPED=0" \
+			ac_cv_path_RST2MAN=rst2man${MODPY_BIN_SUFFIX} \
 			ac_cv_path_DNSMASQ=${LOCALBASE}/sbin/dnsmasq \
 			ac_cv_path_AUGPARSE=${LOCALBASE}/bin/augparse \
 			ac_cv_path_DMIDECODE=${LOCALBASE}/sbin/dmidecode \
