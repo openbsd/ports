@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2018/09/04 12:46:20 espie Exp $
+$OpenBSD: README,v 1.9 2020/07/09 13:07:19 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -15,7 +15,6 @@ createuser -U postgres --pwprompt --no-superuser --no-createdb \
 createuser -U postgres --pwprompt --no-superuser --no-createdb \
 	--no-createrole davical_app
 createdb -U postgres -E UTF8 -T template0 -O davical_dba davical
-createlang -U postgres plpgsql davical
 
 Let's fill the database using the newly created dba user:
 
