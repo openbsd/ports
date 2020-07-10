@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_WTF_wtf_PageBlock_h,v 1.1 2020/04/25 20:04:14 jca Exp $
+$OpenBSD: patch-Source_WTF_wtf_PageBlock_h,v 1.2 2020/07/10 06:14:47 ajacoutot Exp $
 
 Index: Source/WTF/wtf/PageBlock.h
 --- Source/WTF/wtf/PageBlock.h.orig
 +++ Source/WTF/wtf/PageBlock.h
 @@ -51,6 +51,8 @@ namespace WTF {
  constexpr size_t CeilingOnPageSize = 16 * KB;
- #elif OS(WINDOWS) || CPU(MIPS) || CPU(X86) || CPU(X86_64) || CPU(ARM) || CPU(ARM64)
+ #elif OS(WINDOWS) || CPU(MIPS) || CPU(MIPS64) || CPU(X86) || CPU(X86_64) || CPU(ARM) || CPU(ARM64)
  constexpr size_t CeilingOnPageSize = 4 * KB;
 +#elif CPU(SPARC64)
 +constexpr size_t CeilingOnPageSize = 8 * KB;
