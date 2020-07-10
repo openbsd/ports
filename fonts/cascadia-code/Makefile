@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/22 21:57:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/10 15:39:31 bcallah Exp $
 
-V =		2005.15
+V =		2007.01
 COMMENT =	Microsoft programming/terminal font
-DISTNAME =	CascadiaCode_${V}
+DISTNAME =	CascadiaCode-${V}
 PKGNAME =	cascadia-code-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	fonts x11

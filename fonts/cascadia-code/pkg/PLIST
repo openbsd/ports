@@ -1,11 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/22 21:57:26 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/10 15:39:31 bcallah Exp $
 share/fonts/
 @fontdir share/fonts/cascadia/
-share/fonts/cascadia/CascadiaCode.otf
+share/fonts/cascadia/CascadiaCode-Bold.otf
+share/fonts/cascadia/CascadiaCode-ExtraLight.otf
+share/fonts/cascadia/CascadiaCode-Light.otf
+share/fonts/cascadia/CascadiaCode-Regular.otf
+share/fonts/cascadia/CascadiaCode-SemiBold.otf
+share/fonts/cascadia/CascadiaCode-SemiLight.otf
 share/fonts/cascadia/CascadiaCode.ttf
-share/fonts/cascadia/CascadiaCodePL.otf
+share/fonts/cascadia/CascadiaCodePL-Bold.otf
+share/fonts/cascadia/CascadiaCodePL-ExtraLight.otf
+share/fonts/cascadia/CascadiaCodePL-Light.otf
+share/fonts/cascadia/CascadiaCodePL-Regular.otf
+share/fonts/cascadia/CascadiaCodePL-SemiBold.otf
+share/fonts/cascadia/CascadiaCodePL-SemiLight.otf
 share/fonts/cascadia/CascadiaCodePL.ttf
-share/fonts/cascadia/CascadiaMono.otf
+share/fonts/cascadia/CascadiaMono-Bold.otf
+share/fonts/cascadia/CascadiaMono-ExtraLight.otf
+share/fonts/cascadia/CascadiaMono-Light.otf
+share/fonts/cascadia/CascadiaMono-Regular.otf
+share/fonts/cascadia/CascadiaMono-SemiBold.otf
+share/fonts/cascadia/CascadiaMono-SemiLight.otf
 share/fonts/cascadia/CascadiaMono.ttf
-share/fonts/cascadia/CascadiaMonoPL.otf
+share/fonts/cascadia/CascadiaMonoPL-Bold.otf
+share/fonts/cascadia/CascadiaMonoPL-ExtraLight.otf
+share/fonts/cascadia/CascadiaMonoPL-Light.otf
+share/fonts/cascadia/CascadiaMonoPL-Regular.otf
+share/fonts/cascadia/CascadiaMonoPL-SemiBold.otf
+share/fonts/cascadia/CascadiaMonoPL-SemiLight.otf
 share/fonts/cascadia/CascadiaMonoPL.ttf
