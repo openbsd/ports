@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2020/07/03 17:27:50 bcallah Exp $
+$OpenBSD: patch-GNUmakefile,v 1.2 2020/07/10 16:22:31 bcallah Exp $
 
 Don't build wayland renderer.
 Correct shared library numbers.
@@ -29,10 +29,10 @@ Index: GNUmakefile
 +$(libs): private override full=$(addsuffix .$(LIBbemenu_VERSION), $@)
  $(libs): private override major=$(addsuffix .$(firstword $(subst ., ,$(VERSION))), $@)
  $(libs): %: VERSION .git/index
--	$(LINK.c) -shared -fPIC $(filter %.c %.a,$^) $(LDLIBS) -o $(full) -Wl,-soname=$(major)
+-	$(LINK.c) -shared -fPIC $(filter %.c %.a,$^) $(LDLIBS) -o $(full) -Wl,-soname,$(major)
 -	ln -fs $(full) $(major)
 -	ln -fs $(full) $@
-+	$(LINK.c) -shared -fPIC $(filter %.c %.a,$^) $(LDLIBS) -o $(full) -Wl,-soname=$(full)
++	$(LINK.c) -shared -fPIC $(filter %.c %.a,$^) $(LDLIBS) -o $(full) -Wl,-soname,$(full)
  
  $(pkgconfigs): %: VERSION %.in
  	sed "s/@VERSION@/$(VERSION)/;s,@PREFIX@,$(PREFIX),;s,@LIBDIR@,$(libdir)," $(addsuffix .in, $@) > $@
@@ -62,12 +62,12 @@ Index: GNUmakefile
  
  install-lib-symlinks: $(libs) | install-libs
  	cp -RP $^ $(addsuffix .$(firstword $(subst ., ,$(VERSION))), $^) "$(DESTDIR)$(PREFIX)$(libdir)"
-@@ -113,7 +110,7 @@ install-man: man/bemenu.1 man/bemenu-run.1
- 	mkdir -p "$(DESTDIR)$(PREFIX)$(mandir)"
- 	cp $^ "$(DESTDIR)$(PREFIX)$(mandir)"
+@@ -123,7 +120,7 @@ install-x11:
+ 	mkdir -p "$(DESTDIR)$(PREFIX)$(libdir)/bemenu"
+ 	-cp bemenu-renderer-x11.so "$(DESTDIR)$(PREFIX)$(libdir)/bemenu"
  
--install: install-pkgconfig install-include install-lib-symlinks install-renderers install-bins install-man
-+install: install-pkgconfig install-include install-libs install-renderers install-bins install-man
+-install-base: install-pkgconfig install-include install-lib-symlinks install-bins install-man
++install-base: install-pkgconfig install-include install-libs install-bins install-man
+ 
+ install: install-base install-renderers
  	@echo "Install OK!"
- 
- doxygen:
