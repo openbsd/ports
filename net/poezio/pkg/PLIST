@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/06 15:50:41 danj Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/07/10 03:33:06 kmos Exp $
 bin/poezio
 bin/poezio_logs
 lib/python${MODPY_VERSION}/site-packages/poezio/
@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/poezio-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/poezio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/poezio/__init__.py
 lib/python${MODPY_VERSION}/site-packages/poezio/__main__.py
-lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}args.${MODPY_PYC_MAGIC_TAG}pyc
@@ -27,11 +27,14 @@ lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}decorators.${MOD
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}fifo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}fixes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}hsluv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}keyboard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}mam.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}multiuserchat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}pep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}plugin_e2ee.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}plugin_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}poezio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}poezio_shlex.${MODPY_PYC_MAGIC_TAG}pyc
@@ -43,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}text_buffer.${MO
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}theming.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}timed_events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}user.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}xdg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/${MODPY_PYCACHE}xhtml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/args.py
@@ -55,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/poezio/connection.py
 lib/python${MODPY_VERSION}/site-packages/poezio/contact.py
 lib/python${MODPY_VERSION}/site-packages/poezio/core/
 lib/python${MODPY_VERSION}/site-packages/poezio/core/__init__.py
-lib/python${MODPY_VERSION}/site-packages/poezio/core/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poezio/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/poezio/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/core/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/core/${MODPY_PYCACHE}completions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -77,22 +81,25 @@ lib/python${MODPY_VERSION}/site-packages/poezio/default_config.cfg
 lib/python${MODPY_VERSION}/site-packages/poezio/events.py
 lib/python${MODPY_VERSION}/site-packages/poezio/fifo.py
 lib/python${MODPY_VERSION}/site-packages/poezio/fixes.py
+lib/python${MODPY_VERSION}/site-packages/poezio/hsluv.py
 lib/python${MODPY_VERSION}/site-packages/poezio/keyboard.py
 lib/python${MODPY_VERSION}/site-packages/poezio/logger.py
+lib/python${MODPY_VERSION}/site-packages/poezio/mam.py
 lib/python${MODPY_VERSION}/site-packages/poezio/multiuserchat.py
 lib/python${MODPY_VERSION}/site-packages/poezio/pep.py
 lib/python${MODPY_VERSION}/site-packages/poezio/plugin.py
+lib/python${MODPY_VERSION}/site-packages/poezio/plugin_e2ee.py
 lib/python${MODPY_VERSION}/site-packages/poezio/plugin_manager.py
 lib/python${MODPY_VERSION}/site-packages/poezio/poezio.py
 lib/python${MODPY_VERSION}/site-packages/poezio/poezio_shlex.py
 lib/python${MODPY_VERSION}/site-packages/poezio/poopt.py
-lib/python${MODPY_VERSION}/site-packages/poezio/poopt.so
+@so lib/python${MODPY_VERSION}/site-packages/poezio/poopt.so
 lib/python${MODPY_VERSION}/site-packages/poezio/roster.py
 lib/python${MODPY_VERSION}/site-packages/poezio/roster_sorting.py
 lib/python${MODPY_VERSION}/site-packages/poezio/size_manager.py
 lib/python${MODPY_VERSION}/site-packages/poezio/tabs/
 lib/python${MODPY_VERSION}/site-packages/poezio/tabs/__init__.py
-lib/python${MODPY_VERSION}/site-packages/poezio/tabs/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poezio/tabs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/poezio/tabs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/tabs/${MODPY_PYCACHE}adhoc_commands_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/tabs/${MODPY_PYCACHE}basetabs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -121,16 +128,28 @@ lib/python${MODPY_VERSION}/site-packages/poezio/tabs/xmltab.py
 lib/python${MODPY_VERSION}/site-packages/poezio/text_buffer.py
 lib/python${MODPY_VERSION}/site-packages/poezio/theming.py
 lib/python${MODPY_VERSION}/site-packages/poezio/timed_events.py
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poezio/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/${MODPY_PYCACHE}consts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/${MODPY_PYCACHE}funcs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/${MODPY_PYCACHE}render.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/consts.py
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/funcs.py
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/render.py
+lib/python${MODPY_VERSION}/site-packages/poezio/ui/types.py
 lib/python${MODPY_VERSION}/site-packages/poezio/user.py
+lib/python${MODPY_VERSION}/site-packages/poezio/version.py
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/__init__.py
-lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}base_wins.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}bookmark_forms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}confirm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}data_forms.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}funcs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}image.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}info_bar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/${MODPY_PYCACHE}info_wins.${MODPY_PYC_MAGIC_TAG}pyc
@@ -145,7 +164,6 @@ lib/python${MODPY_VERSION}/site-packages/poezio/windows/base_wins.py
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/bookmark_forms.py
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/confirm.py
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/data_forms.py
-lib/python${MODPY_VERSION}/site-packages/poezio/windows/funcs.py
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/image.py
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/info_bar.py
 lib/python${MODPY_VERSION}/site-packages/poezio/windows/info_wins.py
@@ -160,17 +178,19 @@ lib/python${MODPY_VERSION}/site-packages/poezio/xdg.py
 lib/python${MODPY_VERSION}/site-packages/poezio/xhtml.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/__init__.py
-lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}admin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}alias.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}amsg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}autocorrect.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}b64.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}bob.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}capslock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}change_title.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}close_all.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}code.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}contact.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}csi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}cyber.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}day_change.${MODPY_PYC_MAGIC_TAG}pyc
@@ -179,10 +199,12 @@ lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}disco.${
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}display_corrections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}double.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}embed.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}emoji_ascii.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}exec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}figlet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}iq_show.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}irc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}lastlog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}link.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}marquee.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}mirror.${MODPY_PYC_MAGIC_TAG}pyc
@@ -192,11 +214,13 @@ lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}pacokick
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}ping.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}pipe_cmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}pointpoint.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}qr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}quote.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}rainbow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}random_nick.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}regex_admin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}reminder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}remove_get_trackers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}reorder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}replace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/${MODPY_PYCACHE}replace_word.${MODPY_PYC_MAGIC_TAG}pyc
@@ -222,11 +246,13 @@ lib/python${MODPY_VERSION}/site-packages/poezio_plugins/admin.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/alias.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/amsg.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/autocorrect.py
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/b64.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/bob.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/capslock.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/change_title.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/close_all.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/code.py
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/contact.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/csi.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/cyber.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/day_change.py
@@ -235,10 +261,12 @@ lib/python${MODPY_VERSION}/site-packages/poezio_plugins/disco.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/display_corrections.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/double.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/embed.py
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/emoji_ascii.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/exec.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/figlet.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/iq_show.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/irc.py
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/lastlog.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/link.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/marquee.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/mirror.py
@@ -248,11 +276,13 @@ lib/python${MODPY_VERSION}/site-packages/poezio_plugins/pacokick.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/ping.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/pipe_cmd.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/pointpoint.py
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/qr.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/quote.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/rainbow.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/random_nick.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/regex_admin.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/reminder.py
+lib/python${MODPY_VERSION}/site-packages/poezio_plugins/remove_get_trackers.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/reorder.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/replace.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/replace_word.py
@@ -276,14 +306,17 @@ lib/python${MODPY_VERSION}/site-packages/poezio_plugins/vcard.py
 lib/python${MODPY_VERSION}/site-packages/poezio_plugins/white.py
 lib/python${MODPY_VERSION}/site-packages/poezio_themes/
 lib/python${MODPY_VERSION}/site-packages/poezio_themes/__init__.py
-lib/python${MODPY_VERSION}/site-packages/poezio_themes/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poezio_themes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/poezio_themes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio_themes/${MODPY_PYCACHE}clean.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_themes/${MODPY_PYCACHE}dark.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poezio_themes/${MODPY_PYCACHE}irssi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poezio_themes/clean.py
 lib/python${MODPY_VERSION}/site-packages/poezio_themes/dark.py
 lib/python${MODPY_VERSION}/site-packages/poezio_themes/irssi.py
 @man man/man1/poezio.1
 @man man/man1/poezio_logs.1
+share/applications/io.poez.Poezio.desktop
 share/doc/poezio/
 share/doc/poezio/source/
 share/doc/poezio/source/commands.rst
@@ -292,6 +325,7 @@ share/doc/poezio/source/configuration.rst
 share/doc/poezio/source/dev/
 share/doc/poezio/source/dev/common.rst
 share/doc/poezio/source/dev/contributing.rst
+share/doc/poezio/source/dev/e2ee.rst
 share/doc/poezio/source/dev/events.rst
 share/doc/poezio/source/dev/index.rst
 share/doc/poezio/source/dev/overview.rst
@@ -338,6 +372,7 @@ share/doc/poezio/source/plugins/amsg.rst
 share/doc/poezio/source/plugins/autocorrect.rst
 share/doc/poezio/source/plugins/change_title.rst
 share/doc/poezio/source/plugins/close_all.rst
+share/doc/poezio/source/plugins/contact.rst
 share/doc/poezio/source/plugins/csi.rst
 share/doc/poezio/source/plugins/cyber.rst
 share/doc/poezio/source/plugins/day_change.rst
@@ -375,6 +410,7 @@ share/doc/poezio/source/plugins/spam.rst
 share/doc/poezio/source/plugins/status.rst
 share/doc/poezio/source/plugins/tell.rst
 share/doc/poezio/source/plugins/time_marker.rst
+share/doc/poezio/source/plugins/upload.rst
 share/doc/poezio/source/plugins/uptime.rst
 share/doc/poezio/source/plugins/vcard.rst
 share/doc/poezio/source/quickstart.rst
@@ -398,7 +434,10 @@ share/doc/poezio/source/theme/static/
 share/doc/poezio/source/theme/static/poezio.png
 share/doc/poezio/source/themes.rst
 share/doc/poezio/source/usage.rst
+share/metainfo/
+share/metainfo/io.poez.Poezio.appdata.xml
 share/poezio/
 share/poezio/CHANGELOG
 share/poezio/COPYING
 share/poezio/README.rst
+@tag update-desktop-database

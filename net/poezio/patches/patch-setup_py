@@ -1,13 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.4 2018/09/06 15:50:41 danj Exp $
+$OpenBSD: patch-setup_py,v 1.5 2020/07/10 03:33:06 kmos Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -124,7 +124,7 @@ setup(name="poezio",
-       package_data={'poezio': ['default_config.cfg']},
-       scripts=['scripts/poezio_logs'],
-       entry_points={'console_scripts': ['poezio = poezio.__main__:run']},
--      data_files=([('share/man/man1/', ['data/poezio.1',
-+      data_files=([('man/man1/', ['data/poezio.1',
-                                         'data/poezio_logs.1']),
-                    ('share/poezio/', ['README.rst', 'COPYING', 'CHANGELOG'])]
-                   + find_doc('share/doc/poezio/source', 'source')
+@@ -142,7 +142,7 @@ setup(
+     scripts=['scripts/poezio_logs'],
+     entry_points={'console_scripts': ['poezio = poezio.__main__:run']},
+     data_files=([
+-            ('share/man/man1/', ['data/poezio.1', 'data/poezio_logs.1']),
++            ('man/man1/', ['data/poezio.1', 'data/poezio_logs.1']),
+             ('share/poezio/', ['README.rst', 'COPYING', 'CHANGELOG']),
+             ('share/applications/', ['data/io.poez.Poezio.desktop']),
+             ('share/metainfo/', ['data/io.poez.Poezio.appdata.xml'])
