@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/11 22:54:36 sthen Exp $
 
 COMMENT=	BCrypt library for Java
 
 DISTNAME=	jBCrypt-0.4
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.mindrot.org/projects/jBCrypt/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # ISC
 PERMIT_PACKAGE=	Yes

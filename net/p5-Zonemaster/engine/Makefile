@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/11 22:54:38 sthen Exp $
 
 PKG_ARCH =	*
 
@@ -10,9 +10,9 @@ V =		2.0.7
 DISTNAME =	Zonemaster-Engine-v$V
 PKGNAME =	p5-Zonemaster-engine-$V
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE = Yes

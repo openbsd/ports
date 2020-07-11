@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT=	filter files for IP address matches
 
 # note there's also a "grepcidr-2" fork; this port is for the original
 # version which is still developed by the original author.
 DISTNAME=	grepcidr-2.0
+REVISION=	0
 
 CATEGORIES=	textproc net
 
 HOMEPAGE=	http://www.pc-tools.net/unix/grepcidr/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
+
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2+

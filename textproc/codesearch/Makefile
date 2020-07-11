@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/07 08:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT=	fast, indexed regexp search over large file trees
 
@@ -8,6 +8,7 @@ MODGO_VERSION=	v$V
 
 DISTNAME=	codesearch-v$V
 PKGNAME=	codesearch-$V
+REVISION=	0
 
 CATEGORIES=	textproc devel
 
@@ -16,7 +17,7 @@ HOMEPAGE=	https://github.com/google/codesearch
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 MODULES=	lang/go
 

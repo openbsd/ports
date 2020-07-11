@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2019/06/03 16:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/11 22:54:39 sthen Exp $
 
 COMMENT=	manage and configure devices that support IPMI
 
 DISTNAME=	ipmitool-1.8.18
-REVISION=	1
+REVISION=	2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://ipmitool.sourceforge.net/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

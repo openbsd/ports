@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2020/06/01 13:44:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT=	full-text search engine based on Lucene
 
 V=		8.5.2
 DISTNAME=	solr-$V
 EXTRACT_SUFX=	.tgz
+REVISION=	0
 
 PKG_ARCH=	*
 
@@ -12,7 +13,7 @@ CATEGORIES=	textproc
 
 HOMEPAGE=	https://lucene.apache.org/solr/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes

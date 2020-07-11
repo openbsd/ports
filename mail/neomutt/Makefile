@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.54 2020/06/26 13:39:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2020/07/11 22:54:36 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	20200626
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/08 12:39:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/11 22:54:37 sthen Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	Nagios plugin to monitor PostgresQL
 DISTNAME=	check_postgres-2.25.0
 CATEGORIES=	net databases
+REVISION=	0
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	http://bucardo.org/wiki/Check_postgres
 MASTER_SITES=	http://bucardo.org/downloads/

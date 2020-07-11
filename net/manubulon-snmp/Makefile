@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/11 22:54:37 sthen Exp $
 
 PKG_ARCH =		*
 
@@ -8,10 +8,11 @@ GH_ACCOUNT =		dnsmichi
 GH_PROJECT =		manubulon-snmp
 GH_TAGNAME =		v2.1.0
 EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		net
 
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

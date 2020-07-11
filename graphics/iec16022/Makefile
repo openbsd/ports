@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2019/06/03 16:06:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/07/11 22:54:35 sthen Exp $
 
 COMMENT=	2D barcodes / DataMatrix creation tool
 
 V=		0.3.0
 DISTNAME=	iec16022-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  iec16022                  3.0 # unknown
 
@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 
 HOMEPAGE=	http://rdoeffinger.github.io/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

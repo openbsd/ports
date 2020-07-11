@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/11 22:54:39 sthen Exp $
 
 COMMENT=	C library to validate an Yubikey OTP against API servers
 
 YK_PROJECT=	yubico-c-client
 DISTNAME=	ykclient-2.15
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=	ykclient             0.0      # 9.0
 
 CATEGORIES=	security devel
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 WANTLIB =  c crypto curl iconv intl nghttp2 pthread ssl z
 

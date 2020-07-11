@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2020/06/18 21:36:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.177 2020/07/11 22:54:35 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,7 +8,7 @@ COMMENT-server =	open-source LDAP software (server)
 DISTNAME =		openldap-2.4.50
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-REVISION =		3
+REVISION =		4
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
@@ -26,7 +26,7 @@ CATEGORIES =	databases net
 
 HOMEPAGE =	https://www.openldap.org/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # OpenLDAP Public License
 PERMIT_PACKAGE =	Yes

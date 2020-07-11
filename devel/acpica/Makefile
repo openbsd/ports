@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.28 2020/02/17 22:38:35 daniel Exp $
+# $OpenBSD: Makefile,v 1.29 2020/07/11 22:54:35 sthen Exp $
 
 COMMENT =		reference implementation of ACPI tools
 DISTNAME =		acpica-unix-20200214
 PKGNAME =		${DISTNAME:S/-unix//}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://acpica.org/
 
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD-ish (or GPLv2 or Intel's own license: triple-licensed)
 PERMIT_PACKAGE =	Yes

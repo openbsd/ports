@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/05/18 23:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/11 22:54:36 sthen Exp $
 
 COMMENT=	JVM-based scripting language for web apps (open-source CFML)
 
@@ -8,12 +8,13 @@ PKGNAME=	${DISTNAME:S/-RC/rc0/}
 EXTRACT_SUFX=	.war
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{$V}
 # snaps: ${DISTNAME}${EXTRACT_SUFX}{$V-SNAPSHOT}
+REVISION=	0
 
 CATEGORIES=	lang www
 
 HOMEPAGE=	https://lucee.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

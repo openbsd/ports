@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/06/03 16:06:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2020/07/11 22:54:35 sthen Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -8,8 +8,7 @@ DISTNAME=		libiodbc-$V
 PKGNAME=		iodbc-$V
 PKGNAME-main=		iodbc-$V
 PKGNAME-admin=		iodbc-admin-$V
-
-REVISION =		0
+REVISION=		1
 
 CATEGORIES=		databases
 
@@ -21,7 +20,7 @@ SHARED_LIBS +=		drvproxy	3.15
 HOMEPAGE=		http://www.iodbc.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=iodbc/}
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
 
 # Dual licensed: BSD or LGPLv2
 PERMIT_PACKAGE=	yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2020/07/02 02:00:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2020/07/11 22:54:38 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -10,6 +10,7 @@ PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
 PKGNAME-text =	tshark-$V
+REVISION =	0
 
 SHARED_LIBS +=	wscodecs             1.0
 SHARED_LIBS +=	wsutil               4.0
@@ -29,7 +30,7 @@ PERMIT_PACKAGE = Yes
 cWANTLIB +=	c gcrypt glib-2.0 gmodule-2.0
 cWANTLIB +=	m pcap z
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 MULTI_PACKAGES = -text -main
 DEBUG_PACKAGES = ${BUILD_PACKAGES}

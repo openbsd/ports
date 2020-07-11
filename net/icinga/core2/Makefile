@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.102 2020/06/19 21:55:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2020/07/11 22:54:37 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.11.4
+REVISION =	0
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -35,7 +36,7 @@ SHARED_LIBS +=	socketpair                0.0 # 2.6
 
 HOMEPAGE =	https://icinga.com/products/icinga-2/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE =	Yes

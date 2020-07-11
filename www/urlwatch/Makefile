@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/03 21:13:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
 MODPY_EGG_VERSION=	2.18
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
 HOMEPAGE=	https://thp.io/2008/urlwatch/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

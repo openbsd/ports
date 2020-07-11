@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/02/08 15:11:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/11 22:54:38 sthen Exp $
 
 # built but not actually installed at present; patches are needed for the
 # build so it seems easier to keep the SHARED_LIBS infrastructure here.
@@ -11,12 +11,13 @@ GH_PROJECT=	ntopng
 GH_TAGNAME=	3.8.1
 NDPI_V=		3.0
 DISTFILES=	ntopng-${GH_TAGNAME}.tar.gz ndpi-${NDPI_V}.tar.gz:0
+REVISION=	0
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.ntop.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

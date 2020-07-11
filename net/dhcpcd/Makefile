@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2020/07/03 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2020/07/11 22:54:37 sthen Exp $
 
 COMMENT=	DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client
 
 DISTNAME=	dhcpcd-9.1.4
+REVISION=	0
 
 CATEGORIES=	net
 EXTRACT_SUFX=	.tar.xz
@@ -15,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB += c
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 MASTER_SITES=	https://roy.marples.name/downloads/dhcpcd/ \
 		ftp://roy.marples.name/pub/dhcpcd/

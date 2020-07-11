@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.60 2020/06/23 20:55:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2020/07/11 22:54:35 sthen Exp $
 
 COMMENT =	compiler cache
 
 V =		3.7.10
 DISTNAME =	ccache-$V
+REVISION =	0
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://ccache.dev/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	 Yes

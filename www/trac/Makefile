@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2020/06/18 13:22:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
@@ -7,8 +7,9 @@ PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
 PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
 CATEGORIES=	www devel
+REVISION=	0
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	https://trac.edgewall.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2020/07/04 19:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2020/07/11 22:54:37 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -7,12 +7,13 @@ GH_PROJECT =	librenms
 GH_TAGNAME =	1.65
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	net www
 
 HOMEPAGE =	https://www.librenms.org/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

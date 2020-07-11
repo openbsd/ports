@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/11 22:54:38 sthen Exp $
 
 COMMENT =	SIP swiss army knife
 
 DISTNAME =	sipsak-0.9.6-1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 
 PKGNAME =	${DISTNAME:S/-1//}
@@ -11,7 +11,7 @@ WRKDIST =	${WRKDIR}/${DISTNAME:S/-1//}
 
 HOMEPAGE =	http://sipsak.org/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 LIB_DEPENDS =	net/libcares
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2020/06/11 14:22:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.225 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -10,12 +10,13 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
+REVISION=	0
 
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.squid-cache.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

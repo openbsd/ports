@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2020/03/02 19:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/11 22:54:39 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
 V =		0.63
-REVISION =	0
+REVISION =	1
 DISTNAME =	moreutils_$V.orig
 PKGNAME =	moreutils-$V
 WRKDIST =	${WRKDIR}/moreutils-$V
@@ -13,7 +13,7 @@ CATEGORIES =	sysutils
 
 HOMEPAGE =	https://joeyh.name/code/moreutils/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE = Yes

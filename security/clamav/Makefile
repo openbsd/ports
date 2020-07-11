@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.137 2020/05/23 21:26:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.138 2020/07/11 22:54:38 sthen Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.102.3
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  freshclam            0.0      # 2.0
 
 HOMEPAGE=	https://www.clamav.net/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2/LGPL, with OpenSSL exemption
 PERMIT_PACKAGE=	Yes

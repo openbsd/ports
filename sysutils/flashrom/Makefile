@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/06/13 14:04:52 kn Exp $
+# $OpenBSD: Makefile,v 1.17 2020/07/11 22:54:39 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -8,12 +8,13 @@ V=		1.2
 DISTNAME=	flashrom-v${V}
 PKGNAME=	flashrom-${V}
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://www.flashrom.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

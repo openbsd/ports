@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2020/04/06 22:10:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2020/07/11 22:54:37 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -12,6 +12,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
 V=		3.0.21
+REVISION=	0
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -32,7 +33,7 @@ MASTER_SITES=	http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
 
 HOMEPAGE=	http://www.freeradius.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2 - LGPLv2 - OpenSSL exemption
 PERMIT_PACKAGE=	Yes

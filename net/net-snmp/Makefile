@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.113 2020/02/22 22:45:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2020/07/11 22:54:38 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.8.1.pre2
-REVISION-main=	0
+REVISION=	1
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
@@ -28,7 +28,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
 HOMEPAGE=	http://www.net-snmp.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

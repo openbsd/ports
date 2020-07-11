@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2019/06/03 16:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/11 22:54:39 sthen Exp $
 
 COMMENT=	standalone Yubikey and OATH/HOTP validation server
 DISTNAME=	yubico-yubiserve-3.1
-REVISION=	12
+REVISION=	13
 EXTRACT_SUFX=	.zip
 UNZIP=		unzip -a
 PKGNAME=	${DISTNAME:S/yubico-//}
@@ -11,7 +11,7 @@ CATEGORIES=	security www
 
 HOMEPAGE=	https://code.google.com/p/yubico-yubiserve/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

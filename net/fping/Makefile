@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.47 2019/06/03 16:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2020/07/11 22:54:37 sthen Exp $
 
 COMMENT=	quickly ping N hosts w/o flooding the network
 
 DISTNAME=	fping-4.2
+REVISION=	0
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://fping.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

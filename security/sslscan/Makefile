@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2020/01/03 11:26:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/11 22:54:39 sthen Exp $
 
 COMMENT=	SSL port scanner
 
 V=		1.11.12
+REVISION=	0
 GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
 GH_TAGNAME=	$V-rbsec
@@ -12,7 +13,7 @@ CATEGORIES=	security net
 
 HOMEPAGE=	https://github.com/rbsec/sslscan
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

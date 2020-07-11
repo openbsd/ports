@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/11 22:54:37 sthen Exp $
 
 COMMENT=	Nagios plugin to check SIP
 
 DISTNAME=	check_sip-20060929
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	http://isle.wumpus.org/src/nagios/
 MASTER_SITES=	https://spacehopper.org/mirrors/

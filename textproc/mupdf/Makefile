@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.97 2020/07/11 10:44:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.17.0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc x11
 
 HOMEPAGE =	https://mupdf.com/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # code: Affero v3 (UGH!)
 # font maps: Adobe (redist ok, see headers).

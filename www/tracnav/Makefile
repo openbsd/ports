@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/03 16:06:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT=	customizable navigation bar for trac's wiki#'
 
 MODPY_EGG_VERSION= 4.1
 DISTNAME=	TracNav-${MODPY_EGG_VERSION}
-REVISION=	3
+REVISION=	4
 EXTRACT_SUFX=	.zip
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www devel
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	http://svn.ipd.uka.de/trac/javaparty/wiki/TracNav
 

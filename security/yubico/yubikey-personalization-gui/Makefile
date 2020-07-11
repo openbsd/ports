@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2020/01/29 04:49:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/11 22:54:39 sthen Exp $
 
 COMMENT=	Qt GUI to configure YubiKeys
 
 YK_PROJECT=	yubikey-personalization-gui
 DISTNAME=	yubikey-personalization-gui-3.1.25
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
 WANTLIB += ykpers-1 yubikey

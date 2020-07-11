@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.320 2020/06/17 19:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.321 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -7,6 +7,7 @@ PJ_V=		2.9
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
+REVISION=	0
 
 .if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
@@ -18,7 +19,7 @@ CATEGORIES=	telephony
 
 HOMEPAGE=	https://www.asterisk.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # Mostly GPL v2 (only). "Specific permission is also granted to link
 # Asterisk with OpenSSL and OpenH323 and distribute the resulting binary

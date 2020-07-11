@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.40 2019/06/03 16:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2020/07/11 22:54:36 sthen Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 
 DISTNAME=	calc-2.12.7.2
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 SHARED_LIBS=	calc 0.0 \
 		custcalc 0.0
 
 CATEGORIES=	math
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	http://www.isthe.com/chongo/tech/comp/calc
 

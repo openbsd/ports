@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.117 2020/07/11 22:54:38 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -7,6 +7,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.1.10
 VERSION=	1.7.2
+REVISION=	0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
@@ -17,7 +18,7 @@ SHARED_LIBS +=	rrd                  5.3      # 10.0
 
 CATEGORIES=	net databases
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	http://oss.oetiker.ch/rrdtool/
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/

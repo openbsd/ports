@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/20 18:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/11 22:54:37 sthen Exp $
 
 COMMENT=	validating DNS resolver library
 
 DISTNAME=	unbound-1.10.1
 PKGNAME=	lib${DISTNAME}
+REVISION=	0
 
 SHARED_LIBS +=  unbound              4.1      # 9.3
 
@@ -11,7 +12,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	https://www.unbound.net/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

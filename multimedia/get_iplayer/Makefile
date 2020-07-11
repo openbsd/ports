@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.130 2020/06/29 13:29:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2020/07/11 22:54:36 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
 GH_ACCOUNT=		get-iplayer
 GH_PROJECT=		get_iplayer
 GH_TAGNAME=		v3.26
+REVISION=		0
 
 CATEGORIES=		multimedia
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
 
 COMMON_DEPENDS=		textproc/p5-XML-LibXML \
 			www/p5-HTML-Parser>=3.71 \
