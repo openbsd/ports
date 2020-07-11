@@ -1,0 +1,34 @@
+$OpenBSD: patch-doc_local_mk,v 1.1 2020/07/11 23:42:05 naddy Exp $
+
+Don't depend on the path of the bison executable.
+https://git.savannah.gnu.org/cgit/bison.git/commit/doc/local.mk?id=0782ed327401d1b59c059c89c8630d002260b4f7
+
+PARALLEL MAKE BUG
+Fix build race: Our make(1) treats $(top_srcdir)/doc/bison.help and
+doc/bison.help as distinct targets.
+
+Index: doc/local.mk
+--- doc/local.mk.orig
++++ doc/local.mk
+@@ -90,9 +90,11 @@ MAINTAINERCLEANFILES += $(top_srcdir)/doc/bison.help
+ $(top_srcdir)/doc/bison.help: src/bison$(EXEEXT)
+ 	$(AM_V_GEN)LC_ALL=C src/bison$(EXEEXT) --version >doc/bison.help.tmp
+ 	$(AM_V_at) LC_ALL=C src/bison$(EXEEXT) --help | \
++## Avoid depending on the path to Bison.
++	  sed -e 's,^Usage: .*/bison \[OPTION\],Usage: bison [OPTION],g' \
+ ## Avoid variations in the output depending on whether we are
+ ## on a glibc system.
+-	  sed '/translation bugs/d'  >>doc/bison.help.tmp
++	      -e '/translation bugs/d'  >>doc/bison.help.tmp
+ 	$(AM_V_at)$(top_srcdir)/build-aux/move-if-change doc/bison.help.tmp $@
+ endif ! CROSS_COMPILING
+ 
+@@ -112,7 +114,7 @@ remove_time_stamp = \
+ 
+ # Depend on configure to get version number changes.
+ if ! CROSS_COMPILING
+-MAN_DEPS = doc/bison.help doc/bison.x $(top_srcdir)/configure
++MAN_DEPS = $(top_srcdir)/doc/bison.help doc/bison.x $(top_srcdir)/configure
+ endif
+ 
+ $(top_srcdir)/doc/bison.1: $(MAN_DEPS)
