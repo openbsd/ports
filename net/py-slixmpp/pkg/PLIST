@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/02/07 21:31:32 danj Exp $
-@pkgpath net/${MODPY_PY_PREFIX}slixmpp
+@comment $OpenBSD: PLIST,v 1.9 2020/07/11 06:49:49 paco Exp $
+@pkgpath net/py-slixmpp
 lib/python${MODPY_VERSION}/site-packages/slixmpp/
 lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/slixmpp/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/${MODPY_PYCACHE}basexmpp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,11 +25,11 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/componentxmpp.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/features/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/features/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_bind/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_bind/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_bind/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_bind/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_bind/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_bind/${MODPY_PYCACHE}bind.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_bind/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,13 +37,13 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_bind/bind.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_bind/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/${MODPY_PYCACHE}mechanisms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/mechanisms.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/stanza/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/stanza/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/stanza/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/stanza/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/stanza/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/stanza/${MODPY_PYCACHE}abort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/stanza/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
@@ -61,7 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/sta
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_mechanisms/stanza/success.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_preapproval/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_preapproval/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_preapproval/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_preapproval/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_preapproval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_preapproval/${MODPY_PYCACHE}preapproval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_preapproval/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -69,7 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_preapproval/pr
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_preapproval/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_rosterver/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_rosterver/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_rosterver/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_rosterver/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_rosterver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_rosterver/${MODPY_PYCACHE}rosterver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_rosterver/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -77,7 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_rosterver/rost
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_rosterver/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_session/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_session/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_session/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_session/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_session/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_session/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_session/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_session/sessio
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_session/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_starttls/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_starttls/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_starttls/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_starttls/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_starttls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_starttls/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_starttls/${MODPY_PYCACHE}starttls.${MODPY_PYC_MAGIC_TAG}pyc
@@ -94,7 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/features/feature_starttls/start
 lib/python${MODPY_VERSION}/site-packages/slixmpp/jid.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/${MODPY_PYCACHE}gmail_notify.${MODPY_PYC_MAGIC_TAG}pyc
@@ -114,11 +114,11 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/base.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/gmail_notify.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/auth/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/auth/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/auth/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/auth/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/auth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/auth/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/auth/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -126,7 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/auth/auth.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/auth/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/gmail/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/gmail/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/gmail/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/gmail/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/gmail/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/gmail/${MODPY_PYCACHE}notifications.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/gmail/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -134,7 +134,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/gmail/notificati
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/gmail/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/nosave/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/nosave/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/nosave/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/nosave/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/nosave/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/nosave/${MODPY_PYCACHE}nosave.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/nosave/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -142,21 +142,37 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/nosave/nosave.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/nosave/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/settings/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/settings/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/settings/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/settings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/settings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/settings/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/settings/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/settings/settings.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/google/settings/stanza.py
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_occupantid/
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_occupantid/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_occupantid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_occupantid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_occupantid/${MODPY_PYCACHE}occupantid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_occupantid/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_occupantid/occupantid.py
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_occupantid/stanza.py
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_reactions/
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_reactions/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_reactions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_reactions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_reactions/${MODPY_PYCACHE}reactions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_reactions/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_reactions/reactions.py
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/protoxep_reactions/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/${MODPY_PYCACHE}dataforms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/dataforms.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/stanza/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/stanza/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/stanza/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/stanza/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/stanza/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/stanza/${MODPY_PYCACHE}field.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/stanza/${MODPY_PYCACHE}form.${MODPY_PYC_MAGIC_TAG}pyc
@@ -164,7 +180,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/stanza/field.p
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0004/stanza/form.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/${MODPY_PYCACHE}binding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}pyc
@@ -175,12 +191,12 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/rpc.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/stanza/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/stanza/RPC.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/stanza/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/stanza/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/stanza/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/stanza/${MODPY_PYCACHE}RPC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0009/stanza/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0012/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0012/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0012/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0012/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0012/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0012/${MODPY_PYCACHE}last_activity.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0012/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -188,7 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0012/last_activity.
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0012/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0013/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0013/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0013/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0013/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0013/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0013/${MODPY_PYCACHE}offline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0013/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -196,7 +212,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0013/offline.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0013/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0016/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0016/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0016/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0016/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0016/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0016/${MODPY_PYCACHE}privacy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0016/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -204,7 +220,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0016/privacy.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0016/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0020/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0020/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0020/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0020/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0020/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0020/${MODPY_PYCACHE}feature_negotiation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0020/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -212,7 +228,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0020/feature_negoti
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0020/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0027/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0027/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0027/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0027/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0027/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0027/${MODPY_PYCACHE}gpg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0027/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -220,14 +236,14 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0027/gpg.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0027/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/${MODPY_PYCACHE}disco.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/${MODPY_PYCACHE}static.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/disco.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/stanza/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/stanza/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/stanza/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/stanza/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/stanza/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/stanza/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/stanza/${MODPY_PYCACHE}items.${MODPY_PYC_MAGIC_TAG}pyc
@@ -236,7 +252,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/stanza/items.p
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0030/static.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0033/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0033/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0033/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0033/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0033/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0033/${MODPY_PYCACHE}addresses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0033/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -245,7 +261,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0033/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0045.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0047/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0047/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0047/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0047/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0047/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0047/${MODPY_PYCACHE}ibb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0047/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -255,7 +271,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0047/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0047/stream.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0048/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0048/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0048/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0048/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0048/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0048/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0048/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -263,7 +279,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0048/bookmarks.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0048/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0049/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0049/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0049/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0049/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0049/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0049/${MODPY_PYCACHE}private_storage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0049/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -271,7 +287,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0049/private_storag
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0049/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0050/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0050/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0050/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0050/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0050/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0050/${MODPY_PYCACHE}adhoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0050/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -279,7 +295,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0050/adhoc.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0050/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0054/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0054/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0054/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0054/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0054/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0054/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0054/${MODPY_PYCACHE}vcard_temp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -287,7 +303,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0054/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0054/vcard_temp.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0059/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0059/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0059/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0059/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0059/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0059/${MODPY_PYCACHE}rsm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0059/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -295,13 +311,13 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0059/rsm.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0059/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/${MODPY_PYCACHE}pubsub.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/pubsub.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/stanza/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/stanza/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/stanza/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/stanza/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/stanza/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/stanza/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/stanza/${MODPY_PYCACHE}pubsub.${MODPY_PYC_MAGIC_TAG}pyc
@@ -315,7 +331,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/stanza/pubsub_
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0060/stanza/pubsub_owner.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0065/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0065/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0065/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0065/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0065/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0065/${MODPY_PYCACHE}proxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0065/${MODPY_PYCACHE}socks5.${MODPY_PYC_MAGIC_TAG}pyc
@@ -325,7 +341,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0065/socks5.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0065/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0066/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0066/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0066/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0066/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0066/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0066/${MODPY_PYCACHE}oob.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0066/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -333,7 +349,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0066/oob.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0066/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0070/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0070/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0070/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0070/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0070/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0070/${MODPY_PYCACHE}confirm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0070/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -341,7 +357,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0070/confirm.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0070/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0071/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0071/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0071/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0071/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0071/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0071/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0071/${MODPY_PYCACHE}xhtml_im.${MODPY_PYC_MAGIC_TAG}pyc
@@ -349,7 +365,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0071/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0071/xhtml_im.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0077/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0077/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0077/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0077/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0077/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0077/${MODPY_PYCACHE}register.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0077/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -357,7 +373,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0077/register.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0077/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0078/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0078/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0078/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0078/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0078/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0078/${MODPY_PYCACHE}legacyauth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0078/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -365,7 +381,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0078/legacyauth.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0078/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0079/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0079/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0079/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0079/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0079/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0079/${MODPY_PYCACHE}amp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0079/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -373,7 +389,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0079/amp.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0079/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0080/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0080/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0080/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0080/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0080/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0080/${MODPY_PYCACHE}geoloc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0080/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -382,7 +398,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0080/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0082.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0084/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0084/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0084/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0084/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0084/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0084/${MODPY_PYCACHE}avatar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0084/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -390,7 +406,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0084/avatar.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0084/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0085/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0085/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0085/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0085/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0085/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0085/${MODPY_PYCACHE}chat_states.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0085/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -398,7 +414,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0085/chat_states.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0085/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0086/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0086/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0086/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0086/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0086/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0086/${MODPY_PYCACHE}legacy_error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0086/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -406,7 +422,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0086/legacy_error.p
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0086/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0091/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0091/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0091/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0091/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0091/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0091/${MODPY_PYCACHE}legacy_delay.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0091/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -414,7 +430,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0091/legacy_delay.p
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0091/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0092/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0092/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0092/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0092/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0092/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0092/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0092/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
@@ -422,7 +438,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0092/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0092/version.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0095/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0095/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0095/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0095/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0095/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0095/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0095/${MODPY_PYCACHE}stream_initiation.${MODPY_PYC_MAGIC_TAG}pyc
@@ -430,7 +446,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0095/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0095/stream_initiation.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0096/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0096/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0096/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0096/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0096/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0096/${MODPY_PYCACHE}file_transfer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0096/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -439,7 +455,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0096/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0106.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0107/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0107/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0107/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0107/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0107/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0107/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0107/${MODPY_PYCACHE}user_mood.${MODPY_PYC_MAGIC_TAG}pyc
@@ -447,7 +463,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0107/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0107/user_mood.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0108/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0108/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0108/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0108/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0108/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0108/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0108/${MODPY_PYCACHE}user_activity.${MODPY_PYC_MAGIC_TAG}pyc
@@ -455,7 +471,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0108/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0108/user_activity.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0115/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0115/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0115/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0115/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0115/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0115/${MODPY_PYCACHE}caps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0115/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -465,7 +481,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0115/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0115/static.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0118/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0118/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0118/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0118/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0118/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0118/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0118/${MODPY_PYCACHE}user_tune.${MODPY_PYC_MAGIC_TAG}pyc
@@ -473,7 +489,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0118/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0118/user_tune.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0122/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0122/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0122/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0122/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0122/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0122/${MODPY_PYCACHE}data_validation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0122/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -481,7 +497,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0122/data_validatio
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0122/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0128/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0128/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0128/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0128/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0128/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0128/${MODPY_PYCACHE}extended_disco.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0128/${MODPY_PYCACHE}static.${MODPY_PYC_MAGIC_TAG}pyc
@@ -489,7 +505,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0128/extended_disco
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0128/static.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0131/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0131/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0131/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0131/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0131/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0131/${MODPY_PYCACHE}headers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0131/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -499,7 +515,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0133.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0138.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0152/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0152/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0152/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0152/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0152/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0152/${MODPY_PYCACHE}reachability.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0152/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -507,7 +523,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0152/reachability.p
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0152/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0153/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0153/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0153/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0153/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0153/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0153/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0153/${MODPY_PYCACHE}vcard_avatar.${MODPY_PYC_MAGIC_TAG}pyc
@@ -516,7 +532,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0153/vcard_avatar.p
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0163.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0172/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0172/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0172/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0172/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0172/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0172/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0172/${MODPY_PYCACHE}user_nick.${MODPY_PYC_MAGIC_TAG}pyc
@@ -524,7 +540,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0172/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0172/user_nick.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0184/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0184/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0184/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0184/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0184/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0184/${MODPY_PYCACHE}receipt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0184/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -532,7 +548,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0184/receipt.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0184/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0186/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0186/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0186/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0186/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0186/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0186/${MODPY_PYCACHE}invisible_command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0186/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -540,7 +556,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0186/invisible_comm
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0186/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0191/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0191/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0191/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0191/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0191/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0191/${MODPY_PYCACHE}blocking.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0191/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -548,7 +564,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0191/blocking.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0191/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0196/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0196/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0196/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0196/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0196/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0196/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0196/${MODPY_PYCACHE}user_gaming.${MODPY_PYC_MAGIC_TAG}pyc
@@ -556,7 +572,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0196/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0196/user_gaming.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0198/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0198/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0198/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0198/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0198/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0198/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0198/${MODPY_PYCACHE}stream_management.${MODPY_PYC_MAGIC_TAG}pyc
@@ -564,7 +580,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0198/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0198/stream_management.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0199/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0199/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0199/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0199/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0199/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0199/${MODPY_PYCACHE}ping.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0199/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -572,7 +588,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0199/ping.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0199/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0202/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0202/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0202/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0202/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0202/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0202/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0202/${MODPY_PYCACHE}time.${MODPY_PYC_MAGIC_TAG}pyc
@@ -580,7 +596,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0202/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0202/time.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0203/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0203/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0203/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0203/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0203/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0203/${MODPY_PYCACHE}delay.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0203/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -588,7 +604,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0203/delay.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0203/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0221/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0221/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0221/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0221/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0221/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0221/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0221/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -598,7 +614,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0222.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0223.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0224/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0224/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0224/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0224/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0224/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0224/${MODPY_PYCACHE}attention.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0224/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -606,7 +622,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0224/attention.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0224/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0231/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0231/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0231/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0231/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0231/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0231/${MODPY_PYCACHE}bob.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0231/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -614,7 +630,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0231/bob.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0231/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0235/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0235/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0235/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0235/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0235/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0235/${MODPY_PYCACHE}oauth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0235/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -623,7 +639,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0235/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0242.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0249/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0249/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0249/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0249/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0249/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0249/${MODPY_PYCACHE}invite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0249/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -632,13 +648,13 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0249/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0256/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0256.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0256/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0256/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0256/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0256/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0256/${MODPY_PYCACHE}last_activity_presence.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0256/last_activity_presence.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0257/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0257/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0257/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0257/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0257/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0257/${MODPY_PYCACHE}client_cert_management.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0257/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -646,7 +662,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0257/client_cert_ma
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0257/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0258/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0258/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0258/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0258/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0258/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0258/${MODPY_PYCACHE}security_labels.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0258/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -655,7 +671,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0258/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0270.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0279/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0279/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0279/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0279/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0279/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0279/${MODPY_PYCACHE}ipcheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0279/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -663,7 +679,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0279/ipcheck.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0279/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0280/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0280/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0280/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0280/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0280/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0280/${MODPY_PYCACHE}carbons.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0280/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -671,7 +687,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0280/carbons.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0280/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0297/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0297/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0297/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0297/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0297/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0297/${MODPY_PYCACHE}forwarded.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0297/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -679,7 +695,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0297/forwarded.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0297/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0300/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0300/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0300/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0300/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0300/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0300/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0300/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -688,7 +704,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0300/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0302.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0308/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0308/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0308/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0308/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0308/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0308/${MODPY_PYCACHE}correction.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0308/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -696,7 +712,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0308/correction.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0308/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0313/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0313/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0313/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0313/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0313/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0313/${MODPY_PYCACHE}mam.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0313/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -704,7 +720,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0313/mam.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0313/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0319/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0319/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0319/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0319/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0319/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0319/${MODPY_PYCACHE}idle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0319/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -712,7 +728,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0319/idle.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0319/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/${MODPY_PYCACHE}device.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/${MODPY_PYCACHE}sensordata.${MODPY_PYC_MAGIC_TAG}pyc
@@ -721,7 +737,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/device.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/sensordata.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/stanza/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/stanza/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/stanza/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/stanza/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/stanza/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/stanza/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/stanza/${MODPY_PYCACHE}sensordata.${MODPY_PYC_MAGIC_TAG}pyc
@@ -730,7 +746,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/stanza/sensord
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0323/timerreset.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/${MODPY_PYCACHE}device.${MODPY_PYC_MAGIC_TAG}pyc
@@ -738,7 +754,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/control.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/device.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/stanza/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/stanza/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/stanza/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/stanza/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/stanza/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/stanza/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/stanza/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
@@ -746,13 +762,13 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/stanza/base.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0325/stanza/control.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/http.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/stanza/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/stanza/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/stanza/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/stanza/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/stanza/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/stanza/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/stanza/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}pyc
@@ -762,7 +778,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/stanza/request
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0332/stanza/response.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0333/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0333/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0333/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0333/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0333/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0333/${MODPY_PYCACHE}hints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0333/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -770,7 +786,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0333/hints.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0333/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/${MODPY_PYCACHE}hints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -778,7 +794,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/hints.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/${MODPY_PYCACHE}json_containers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -786,7 +802,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/json_container
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/${MODPY_PYCACHE}csi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -794,7 +810,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/csi.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0363/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0363/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0363/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0363/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0363/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0363/${MODPY_PYCACHE}http_upload.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0363/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -802,7 +818,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0363/http_upload.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0363/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0380/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0380/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0380/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0380/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0380/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0380/${MODPY_PYCACHE}eme.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0380/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -810,7 +826,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0380/eme.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0380/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0394/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0394/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0394/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0394/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0394/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0394/${MODPY_PYCACHE}markup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0394/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
@@ -818,7 +834,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0394/markup.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0394/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/roster/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/roster/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/roster/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/roster/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/roster/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/roster/${MODPY_PYCACHE}item.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/roster/${MODPY_PYCACHE}multi.${MODPY_PYC_MAGIC_TAG}pyc
@@ -828,7 +844,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/roster/multi.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/roster/single.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/stanza/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/stanza/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/stanza/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/stanza/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/stanza/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/stanza/${MODPY_PYCACHE}atom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/stanza/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
@@ -853,7 +869,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/stanza/stream_features.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/stringprep.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/test/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/test/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/test/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/test/${MODPY_PYCACHE}livesocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/test/${MODPY_PYCACHE}mocksocket.${MODPY_PYC_MAGIC_TAG}pyc
@@ -863,7 +879,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/test/mocksocket.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/test/slixtest.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/thirdparty/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/thirdparty/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/thirdparty/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/thirdparty/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/thirdparty/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/thirdparty/${MODPY_PYCACHE}gnupg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/thirdparty/${MODPY_PYCACHE}mini_dateutil.${MODPY_PYC_MAGIC_TAG}pyc
@@ -873,7 +889,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/thirdparty/mini_dateutil.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/thirdparty/orderedset.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}misc_ops.${MODPY_PYC_MAGIC_TAG}pyc
@@ -882,7 +898,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/util/cache.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/misc_ops.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/sasl/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/sasl/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/util/sasl/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/util/sasl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/sasl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/sasl/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/sasl/${MODPY_PYCACHE}mechanisms.${MODPY_PYC_MAGIC_TAG}pyc
@@ -892,7 +908,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/util/stringprep_profiles.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/version.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/${MODPY_PYCACHE}cert.${MODPY_PYC_MAGIC_TAG}pyc
@@ -904,7 +920,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/asyncio.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/cert.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/handler/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/handler/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/handler/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/handler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/handler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/handler/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/handler/${MODPY_PYCACHE}callback.${MODPY_PYC_MAGIC_TAG}pyc
@@ -922,7 +938,7 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/handler/xmlcallback.p
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/handler/xmlwaiter.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/matcher/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/matcher/__init__.py
-lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/matcher/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/matcher/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/matcher/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/matcher/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/xmlstream/matcher/${MODPY_PYCACHE}id.${MODPY_PYC_MAGIC_TAG}pyc

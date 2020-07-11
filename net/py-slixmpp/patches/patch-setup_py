@@ -1,11 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.1 2019/03/27 11:24:33 jca Exp $
+$OpenBSD: patch-setup_py,v 1.2 2020/07/11 06:49:49 paco Exp $
 
 Disable cython/libidn optional dep.
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -62,7 +62,7 @@ HAS_PYTHON_HEADERS = check_include('python3', 'Python.
+@@ -60,7 +60,7 @@ HAS_PYTHON_HEADERS = check_include('python3', 'Python.
  HAS_STRINGPREP_HEADERS = check_include('libidn', 'stringprep.h')
  
  ext_modules = None
