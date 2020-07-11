@@ -1,4 +1,4 @@
-# $OpenBSD: Utils.pm,v 1.6 2019/12/15 00:18:04 afresh1 Exp $
+# $OpenBSD: Utils.pm,v 1.7 2020/07/11 22:26:01 abieber Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -73,7 +73,7 @@ sub _module_sth
 sub module_in_ports
 {
 	my ( $module, $prefix ) = @_;
-	return unless $module and $prefix;
+	return unless $module and defined $prefix;
 
 	state $sth = _module_sth();
 	END { undef $sth }; # Bus error if destroyed during global destruction
@@ -95,6 +95,9 @@ sub module_in_ports
 	# possibly without the "-".  To catch that, we check if
 	# e.g. pytest got imported as py-test instead of py-pytest
 	( my $start = $prefix ) =~ s/-$//;
+
+	return unless $start;
+
 	if ( $module =~ /^$start-?(.*)$/ ) {
 		return module_in_ports( $1, $prefix );
 	}

@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.5 2020/06/26 23:26:04 abieber Exp $
+# $OpenBSD: Go.pm,v 1.6 2020/07/11 22:26:01 abieber Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -23,14 +23,13 @@ use strict;
 use warnings  qw(FATAL utf8);    # fatalize encoding glitches
 use open      qw(:std :encoding(UTF-8)); # undeclared streams in UTF-8
 use OpenBSD::PackageName;
-use OpenBSD::PortGen::Utils qw( fetch );
+use OpenBSD::PortGen::Utils qw( fetch module_in_ports );
 
 use parent 'OpenBSD::PortGen::Port';
 
 use Carp;
 use Cwd;
 use File::Temp qw/ tempdir /;
-use Data::Dumper;
 
 use OpenBSD::PortGen::Dependency;
 
@@ -168,7 +167,6 @@ sub _go_mod_info
 	my @mods;
 
 	foreach my $mod (@raw_mods) {
-		carp Dumper $mod if ($mod =~ m/markbates/);
 		foreach my $m (split(/ /, $mod)) {
 			$m =~ s/@/ /;
 			$m = $self->_go_mod_normalize($m);
@@ -244,7 +242,12 @@ sub name_new_port
 
 	my $name = $di->{Name};
 	$name = $self->SUPER::name_new_port($name);
-	$name = "go/$name" unless $name =~ m{/};
+
+	if ( my $p = module_in_ports( $name, 'go-' ) || module_in_ports( $name, '' ) ) {
+		$name = $p;
+	} else {
+		$name = "go/$name" unless $name =~ m{/};
+	}
 
 	return $name;
 }
