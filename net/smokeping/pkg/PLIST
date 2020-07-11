@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/08/21 12:35:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/07/11 22:37:25 sthen Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeinfo
@@ -179,6 +179,7 @@ share/examples/smokeping/tmail.dist
 htdocs/smokeping/
 @owner _smokeping
 @mode 755
+@sample /var/db/smokeping/
 htdocs/smokeping/cache/
 @mode
 @owner

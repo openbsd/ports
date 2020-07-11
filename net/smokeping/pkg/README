@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2018/09/04 12:46:18 espie Exp $
+$OpenBSD: README,v 1.9 2020/07/11 22:37:25 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -6,29 +6,28 @@ $OpenBSD: README,v 1.8 2018/09/04 12:46:18 espie Exp $
 
 Basic configuration
 ===================
-
 Smokeping is split into two main parts, the daemon (running the probes
 and updating RRD files) and the part responsible for generating website
 graphs.
 
-Edit ${SYSCONFDIR}/config (at least add some hosts to
-monitor) and enable the daemon:
+For the daemon, edit ${SYSCONFDIR}/config (at least add some hosts to
+monitor) and enable it:
 
     rcctl enable smokeping
     rcctl start smokeping
 
-The simplest method to generate graphs is as static HTML and images.
-There is no possibility to zoom into graphs interactively from the
-browser, but it is easy to configure and might be quite acceptable.
-Do this by running 'smokeping --static=/path/to/html-dir' from cron.
+For graph generation, the simplest method is generate static HTML
+and image files from a cron job. This doesn't allow zoom into graphs
+interactively from the browser, but it is easy to configure, more
+secure, and is good enough for many use cases. To do this, add a cron
+job to run this as the _smokeping user (adjust path as necessary):
 
-Alternatively it will run as a CGI/FastCGI script with a web server.
-Smokeping itself doesn't work well with a chroot jail, but the script
-can be run as a persistant process outside the jail, and communicate
-with a chroot'ed webserver via FastCGI. The included smokeping_fcgi
-rc script will start Smokeping ready to communicate over a FastCGI
-UNIX socket /var/www/run/smokeping.sock. If you wish to use this
-method, enable this:
+    smokeping --static=/var/www/htdocs/smokeping
+
+Alternatively it can run as a CGI/FastCGI script with a web server.
+A normal installation runs smokeping_fcgi as a daemon and the web
+server is told to communicate with it over a UNIX socket.
+If you wish to use this method, enable the daemon:
 
     rcctl enable smokeping_fcgi
     rcctl start smokeping_fcgi
@@ -44,24 +43,31 @@ configuration section for use with nginx:
 	include		fastcgi_params;
     }
 
+Or httpd(8):
+
+    server "example.org" {
+	listen on * port 80
+	location "/smokeping/smokeping.cgi*" {
+	    fastcgi socket "/run/smokeping.sock"
+	    root "/"
+	}
+    }
+
 Other probe types
 =================
-
-Smokeping is commonly used to perform ICMP monitoring using fping, but
-also includes probes to monitor other protocols. Some have additional
-dependencies which are not forcibly installed. Use pkg_add to install
-the relevant packages if needed.
+Smokeping is most often used to perform ICMP monitoring via fping,
+but has "Probe" modules for other protocols too. Some of these require
+additional packages to be installed:
 
  RADIUS:	   p5-Authen-Radius
  TelnetIOSPing:	   p5-Net-Telnet
- OpenSSHEOSPing:   p5-Net-OpenSSH, p5-IO-Pty
- OpenSSHJunOSPing: p5-Net-OpenSSH, p5-IO-Pty
+ OpenSSHEOSPing:   p5-Net-OpenSSH p5-IO-Pty
+ OpenSSHJunOSPing: p5-Net-OpenSSH p5-IO-Pty
  AnotherDNS:	   p5-Net-DNS
- LDAP:		   p5-ldap, p5-IO-Socket-SSL
+ LDAP:		   p5-ldap p5-IO-Socket-SSL
 
 Advanced topic: Heavy load systems
 ==================================
-
 If problems are seen with excessive load or i/o, it is possible to
 configure Smokeping to use rrdcached instead. Read through the whole
 section before starting; this is *not* needed for a typical setup.
