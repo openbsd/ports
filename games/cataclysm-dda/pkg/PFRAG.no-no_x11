@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.6 2020/04/11 06:41:47 kirby Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.7 2020/07/11 17:52:19 kirby Exp $
 @bin bin/cataclysm-tiles
 @man man/man6/cataclysm-tiles.6
 share/cataclysm-dda/gfx/
@@ -30,18 +30,18 @@ share/cataclysm-dda/gfx/HoderTileset/hodertiles_fallback.png
 share/cataclysm-dda/gfx/HoderTileset/hodertiles_oversized.png
 share/cataclysm-dda/gfx/HoderTileset/tile_config.json
 share/cataclysm-dda/gfx/HoderTileset/tileset.txt
-share/cataclysm-dda/gfx/RetroDaysTileset/
-share/cataclysm-dda/gfx/RetroDaysTileset/fallback.png
-share/cataclysm-dda/gfx/RetroDaysTileset/tile_config.json
-share/cataclysm-dda/gfx/RetroDaysTileset/tiles.png
-share/cataclysm-dda/gfx/RetroDaysTileset/tiles_20x20.png
-share/cataclysm-dda/gfx/RetroDaysTileset/tileset.txt
 share/cataclysm-dda/gfx/RetroDays+Tileset/
 share/cataclysm-dda/gfx/RetroDays+Tileset/fallback.png
 share/cataclysm-dda/gfx/RetroDays+Tileset/tile_config.json
 share/cataclysm-dda/gfx/RetroDays+Tileset/tiles.png
 share/cataclysm-dda/gfx/RetroDays+Tileset/tiles_20x20.png
 share/cataclysm-dda/gfx/RetroDays+Tileset/tileset.txt
+share/cataclysm-dda/gfx/RetroDaysTileset/
+share/cataclysm-dda/gfx/RetroDaysTileset/fallback.png
+share/cataclysm-dda/gfx/RetroDaysTileset/tile_config.json
+share/cataclysm-dda/gfx/RetroDaysTileset/tiles.png
+share/cataclysm-dda/gfx/RetroDaysTileset/tiles_20x20.png
+share/cataclysm-dda/gfx/RetroDaysTileset/tileset.txt
 share/cataclysm-dda/gfx/UltimateCataclysmDemo/
 share/cataclysm-dda/gfx/UltimateCataclysmDemo/fallback.png
 share/cataclysm-dda/gfx/UltimateCataclysmDemo/fillerhoder.png
