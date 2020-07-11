@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2020/05/15 20:23:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/11 20:19:55 naddy Exp $
 
 COMMENT=	test VT100-type terminal
 
-DISTNAME=	vttest-20200420
+DISTNAME=	vttest-20200610
 CATEGORIES=	misc
 HOMEPAGE=	https://invisible-island.net/vttest/vttest.html
 
