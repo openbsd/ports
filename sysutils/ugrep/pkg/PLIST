@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/29 05:11:49 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/11 17:08:00 bcallah Exp $
+bin/ug
 @bin bin/ugrep
+@man man/man1/ug.1
 @man man/man1/ugrep.1
 share/ugrep/
 share/ugrep/patterns/
