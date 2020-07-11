@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.64 2020/07/03 21:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2020/07/11 12:35:03 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.12.3
+V =			4.12.4
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		0
 
 SHARED_LIBS +=	Aggregation               0.0 # 0.0
 SHARED_LIBS +=	CPlusPlus                 2.0 # 0.0
