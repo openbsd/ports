@@ -1,9 +1,11 @@
-$OpenBSD: patch-lib_x86_64_fast_CMakeLists_txt,v 1.4 2019/11/10 16:50:32 bcallah Exp $
+$OpenBSD: patch-lib_x86_64_fast_CMakeLists_txt,v 1.5 2020/07/12 18:06:49 bcallah Exp $
+
+Remove hardcoded -O3.
 
 Index: lib/x86_64/fast/CMakeLists.txt
 --- lib/x86_64/fast/CMakeLists.txt.orig
 +++ lib/x86_64/fast/CMakeLists.txt
-@@ -50,5 +50,5 @@ endif()
+@@ -40,5 +40,5 @@ endif()
  include_directories(${CMAKE_CURRENT_BINARY_DIR})
  set(SRCS
    fastmath.S)

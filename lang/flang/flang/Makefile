@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.50 2019/11/10 16:50:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.51 2020/07/12 18:06:48 bcallah Exp $
 
 COMMENT =	LLVM Fortran compiler passes and runtime library
-DISTNAME =	flang-8.0.1.20191107
+DISTNAME =	flang-8.0.1.20200707
 
 SHARED_LIBS +=	flang                     2.1 # 8.0
 SHARED_LIBS +=	flangrti                  5.0 # 8.0
 SHARED_LIBS +=	ompstub                   0.0 # 8.0
 
 GH_PROJECT =	flang
-GH_COMMIT =	cbadb27675c4681c8a77eef73c1fbeafee155602
+GH_COMMIT =	9ced08b7e0be4a47f9f711be5591b06f9b1018f3
 
 WANTLIB += ${COMPILER_LIBCXX} aio_compat c execinfo m pgmath z
 
@@ -26,7 +26,8 @@ LIB_DEPENDS =	devel/libaio_compat \
 
 RUN_DEPENDS =	lang/flang/driver
 
-# Fortran support has not been integrated into Ninja yet
+# Ninja does have Fortran support, but can't generate a working
+# build.ninja for flang.
 USE_NINJA =	No
 
 CONFIGURE_ARGS =	-DCMAKE_Fortran_COMPILER="${LOCALBASE}/bin/flang" \

@@ -1,9 +1,11 @@
-$OpenBSD: patch-lib_common_dispatch_c,v 1.7 2019/08/12 15:41:55 bcallah Exp $
+$OpenBSD: patch-lib_common_dispatch_c,v 1.8 2020/07/12 18:06:49 bcallah Exp $
+
+No malloc.h
 
 Index: lib/common/dispatch.c
 --- lib/common/dispatch.c.orig
 +++ lib/common/dispatch.c
-@@ -95,11 +95,7 @@
+@@ -85,11 +85,7 @@
  
  #endif      // #ifndef _WIN64
  

@@ -1,11 +1,11 @@
-$OpenBSD: patch-runtime_flangrti_iostdinit_c,v 1.2 2018/12/26 17:37:14 bcallah Exp $
+$OpenBSD: patch-runtime_flangrti_iostdinit_c,v 1.3 2020/07/12 18:06:48 bcallah Exp $
 
 Get IO working, from FreeBSD
 
 Index: runtime/flangrti/iostdinit.c
 --- runtime/flangrti/iostdinit.c.orig
 +++ runtime/flangrti/iostdinit.c
-@@ -163,7 +163,7 @@ __io_ferror(void *p)
+@@ -153,7 +153,7 @@ __io_ferror(void *p)
  int
  __io_getfd(void *fp)
  {
@@ -14,7 +14,7 @@ Index: runtime/flangrti/iostdinit.c
  }
  
  /* is a tty? */
-@@ -273,14 +273,14 @@ extern long *_imp___timezone_dll; /* for crtdll.dll */
+@@ -263,14 +263,14 @@ extern long *_imp___timezone_dll; /* for crtdll.dll */
  #define timezone _timezone /* cygnus, timezone is usually a function */
  #endif
  

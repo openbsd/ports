@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_common_fltfenv_c,v 1.1 2019/11/24 14:37:25 bcallah Exp $
+$OpenBSD: patch-lib_common_fltfenv_c,v 1.2 2020/07/12 18:06:49 bcallah Exp $
 
 Work around glibc stuff (use standard functions for this stuff)
 
 Index: lib/common/fltfenv.c
 --- lib/common/fltfenv.c.orig
 +++ lib/common/fltfenv.c
-@@ -570,7 +570,7 @@ __fenv_feupdateenv(fenv_t *env)
+@@ -560,7 +560,7 @@ __fenv_feupdateenv(fenv_t *env)
   * __fenv_mask_fz() and __fenv_restore_fz().
   */
  
@@ -14,7 +14,7 @@ Index: lib/common/fltfenv.c
  
  /** \brief Set (flush to zero) underflow mode
   *
-@@ -580,14 +580,14 @@ __fenv_feupdateenv(fenv_t *env)
+@@ -570,14 +570,14 @@ __fenv_feupdateenv(fenv_t *env)
  int
  __fenv_fesetzerodenorm(int uflow)
  {
@@ -32,7 +32,7 @@ Index: lib/common/fltfenv.c
    return 0;
  }
  
-@@ -598,9 +598,9 @@ __fenv_fesetzerodenorm(int uflow)
+@@ -588,9 +588,9 @@ __fenv_fesetzerodenorm(int uflow)
  int
  __fenv_fegetzerodenorm(void)
  {
@@ -44,7 +44,7 @@ Index: lib/common/fltfenv.c
    return (cw & (1ULL << 24)) ? 1 : 0;
  }
  
-@@ -615,16 +615,16 @@ __fenv_fegetzerodenorm(void)
+@@ -605,16 +605,16 @@ __fenv_fegetzerodenorm(void)
  void
  __fenv_mask_fz(int mask, int *psv)
  {
@@ -64,7 +64,7 @@ Index: lib/common/fltfenv.c
  }
  
  /** \brief
-@@ -633,14 +633,14 @@ __fenv_mask_fz(int mask, int *psv)
+@@ -623,14 +623,14 @@ __fenv_mask_fz(int mask, int *psv)
  void
  __fenv_restore_fz(int sv)
  {

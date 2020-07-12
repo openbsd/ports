@@ -1,9 +1,11 @@
-$OpenBSD: patch-lib_common_log_fma3_CMakeLists_txt,v 1.5 2019/11/10 16:50:32 bcallah Exp $
+$OpenBSD: patch-lib_common_log_fma3_CMakeLists_txt,v 1.6 2020/07/12 18:06:49 bcallah Exp $
+
+Don't build with -mcpu= on aarch64.
 
 Index: lib/common/log/fma3/CMakeLists.txt
 --- lib/common/log/fma3/CMakeLists.txt.orig
 +++ lib/common/log/fma3/CMakeLists.txt
-@@ -78,6 +78,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
+@@ -68,6 +68,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
      ${LONG_SRCS})
    set_property(SOURCE ${INT_SRCS} APPEND PROPERTY COMPILE_DEFINITIONS VINT=)
    set_property(SOURCE ${LONG_SRCS} APPEND PROPERTY COMPILE_DEFINITIONS VINT=long)

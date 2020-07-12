@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_flang2_CMakeLists_txt,v 1.1 2018/06/27 00:09:26 bcallah Exp $
+$OpenBSD: patch-tools_flang2_CMakeLists_txt,v 1.2 2020/07/12 18:06:48 bcallah Exp $
 
 We should do this too.
 
 Index: tools/flang2/CMakeLists.txt
 --- tools/flang2/CMakeLists.txt.orig
 +++ tools/flang2/CMakeLists.txt
-@@ -33,8 +33,8 @@ set(FLANG2_INCLUDE_DIR    ${CMAKE_CURRENT_BINARY_DIR}/
+@@ -23,8 +23,8 @@ set(FLANG2_INCLUDE_DIR    ${CMAKE_CURRENT_BINARY_DIR}/
  
  include_directories(${FLANG2_INCLUDE_DIR})
  

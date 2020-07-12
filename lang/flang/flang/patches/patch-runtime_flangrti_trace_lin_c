@@ -1,4 +1,4 @@
-$OpenBSD: patch-runtime_flangrti_trace_lin_c,v 1.3 2019/08/27 16:02:47 bcallah Exp $
+$OpenBSD: patch-runtime_flangrti_trace_lin_c,v 1.4 2020/07/12 18:06:48 bcallah Exp $
 
 We don't have sys/ucontext.h
 No gregset_t, make them void
@@ -7,7 +7,7 @@ Remove the /proc dance they need for Linux
 Index: runtime/flangrti/trace_lin.c
 --- runtime/flangrti/trace_lin.c.orig
 +++ runtime/flangrti/trace_lin.c
-@@ -17,7 +17,9 @@
+@@ -7,7 +7,9 @@
  
  #include <stdint.h>
  #include <signal.h>
@@ -17,7 +17,7 @@ Index: runtime/flangrti/trace_lin.c
  #include <execinfo.h>
  #include <stdioInterf.h>
  #include "dumpregs.h"
-@@ -25,7 +27,7 @@
+@@ -15,7 +17,7 @@
  #include <string.h>
  #include <sys/types.h>
  #include <unistd.h>
@@ -26,7 +26,7 @@ Index: runtime/flangrti/trace_lin.c
  #include <inttypes.h>
  
  /* codes and strings for signals */
-@@ -92,7 +94,7 @@ static struct sigs sigs[] = {
+@@ -82,7 +84,7 @@ static struct sigs sigs[] = {
      {0, CODNULL, NULL} /* end of list */
  };
  
@@ -35,7 +35,7 @@ Index: runtime/flangrti/trace_lin.c
  
  extern char **__io_get_argv();
  static char ** saved_argv = NULL;
-@@ -115,6 +117,7 @@ print_back_trace_line(char * bt_str, void const * cons
+@@ -105,6 +107,7 @@ print_back_trace_line(char * bt_str, void const * cons
      saved_argv = __io_get_argv();
    }
  
@@ -43,7 +43,7 @@ Index: runtime/flangrti/trace_lin.c
    if (NULL == saved_argv) {
      /*
       * Most likely a C program where __io_set_argv() was not called on startup.
-@@ -143,6 +146,7 @@ print_back_trace_line(char * bt_str, void const * cons
+@@ -133,6 +136,7 @@ print_back_trace_line(char * bt_str, void const * cons
      fclose(f);
      saved_argv = &pexec_name;
    }
@@ -51,7 +51,7 @@ Index: runtime/flangrti/trace_lin.c
  
    sprintf(addr2line_cmd,"addr2line -e %s %p", saved_argv[0], addr);
  
-@@ -182,7 +186,7 @@ __abort_trace(int skip)
+@@ -172,7 +176,7 @@ __abort_trace(int skip)
    char **strings;
    size_t i;
  

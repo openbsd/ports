@@ -1,9 +1,11 @@
-$OpenBSD: patch-lib_common_exp_fma3_CMakeLists_txt,v 1.5 2019/11/10 16:50:32 bcallah Exp $
+$OpenBSD: patch-lib_common_exp_fma3_CMakeLists_txt,v 1.6 2020/07/12 18:06:49 bcallah Exp $
+
+Don't build with -mcpu= on aarch64.
 
 Index: lib/common/exp/fma3/CMakeLists.txt
 --- lib/common/exp/fma3/CMakeLists.txt.orig
 +++ lib/common/exp/fma3/CMakeLists.txt
-@@ -58,6 +58,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
+@@ -48,6 +48,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
      sdexp.cpp
      vdexp2.cpp
      vsexp4.cpp)

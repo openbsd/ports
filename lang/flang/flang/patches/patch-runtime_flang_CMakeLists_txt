@@ -1,13 +1,12 @@
-$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.8 2019/09/20 14:51:52 bcallah Exp $
+$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.9 2020/07/12 18:06:48 bcallah Exp $
 
 Replace -lrt with -laio_compat
 Appease lld
-Work around standalone preprocessing of F95 files with C compiler
 
 Index: runtime/flang/CMakeLists.txt
 --- runtime/flang/CMakeLists.txt.orig
 +++ runtime/flang/CMakeLists.txt
-@@ -18,7 +18,7 @@ enable_language(C ASM Fortran) # Enable assembly and F
+@@ -8,7 +8,7 @@ enable_language(C ASM Fortran) # Enable assembly and F
  
  SET(ASM_OPTIONS "-DLINUX_ELF")
  SET(CMAKE_ASM_FLAGS "${CFLAGS} ${ASM_OPTIONS}" )
@@ -16,7 +15,7 @@ Index: runtime/flang/CMakeLists.txt
  
  # We are using Fortran driver to build this library with fresh compiler
  # components, so point its binary directory to the build directory to pick up
-@@ -508,7 +508,7 @@ add_dependencies(flang_shared flang_static)
+@@ -498,7 +498,7 @@ add_dependencies(flang_shared flang_static)
  
  target_link_libraries(flang_shared ${CMAKE_BINARY_DIR}/${CMAKE_CFG_INTDIR}/lib/libflangrti.so)
  # Resolve symbols against libm and librt

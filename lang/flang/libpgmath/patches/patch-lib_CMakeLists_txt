@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.9 2019/11/10 16:50:32 bcallah Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.10 2020/07/12 18:06:49 bcallah Exp $
 
-Some ugly hacks here.
+Remove hardcoded optimizations, -mcpu=native flags.
 
 Index: lib/CMakeLists.txt
 --- lib/CMakeLists.txt.orig
 +++ lib/CMakeLists.txt
-@@ -31,13 +31,13 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -21,13 +21,13 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
        HOST_LINUX LINUX LINUX86 LINUX8664 MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8
        TARGET_LINUX TARGET_LINUX_X86 TARGET_LINUX_X8664 TARGET_X86 TARGET_X8664
        __gnu_linux__ PG_PIC)
@@ -21,7 +21,7 @@ Index: lib/CMakeLists.txt
  
      # common
      # Definitions and compiler flags for level 1 directories
-@@ -63,10 +63,10 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -53,10 +53,10 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
      set(DEFINITIONS_L1 HOST_OSX MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=4 OSX OSX86
        OSX8664 TARGET_OSX TARGET_OSX_X86 TARGET_OSX_X8664 TARGET_X86
        TARGET_X8664 __gnu_osx__ PG_PIC)
@@ -34,7 +34,7 @@ Index: lib/CMakeLists.txt
  
      # common
      # Definitions and compiler flags for level 1 directories
-@@ -130,11 +130,11 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "ppc64le"
+@@ -120,11 +120,11 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "ppc64le"
  
    set(DEFINITIONS_L1 HOST_LINUX MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8 TARGET_LINUX
      TARGET_LINUX_POWER TARGET_LLVM TARGET_LLVM_LINUXPOWER TM_I8 PG_PIC)
@@ -48,7 +48,7 @@ Index: lib/CMakeLists.txt
  
    # common
    # Definitions and compiler flags for level 1 directories
-@@ -159,12 +159,12 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
+@@ -149,12 +149,12 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
    set(DEFINITIONS_L1 HOST_LINUX MAXCPUS=8192 MAXCPUSL=128 MAXCPUSR=128
      TARGET_LINUX TARGET_LINUX_ARM TARGET_LINUX_ARM64 TARGET_LLVM
      TARGET_LLVM_LINUXAARCH64 TM_I8)
@@ -63,7 +63,7 @@ Index: lib/CMakeLists.txt
  
    # common
    # Definitions and compiler flags for level 1 directories
-@@ -189,12 +189,12 @@ else()
+@@ -179,12 +179,12 @@ else()
    set(DEFINITIONS_L1 HOST_LINUX MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8 TARGET_LINUX
      TARGET_LINUX_64 TARGET_LLVM TARGET_LLVM_64 TARGET_LLVM_LINUX64
      TARGET_LINUX_GENERIC TARGET_64 PG_PIC)

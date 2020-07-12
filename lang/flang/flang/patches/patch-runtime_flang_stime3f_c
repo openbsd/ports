@@ -1,11 +1,11 @@
-$OpenBSD: patch-runtime_flang_stime3f_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+$OpenBSD: patch-runtime_flang_stime3f_c,v 1.2 2020/07/12 18:06:48 bcallah Exp $
 
 No stime(), from FreeBSD
 
 Index: runtime/flang/stime3f.c
 --- runtime/flang/stime3f.c.orig
 +++ runtime/flang/stime3f.c
-@@ -27,13 +27,7 @@
+@@ -17,13 +17,7 @@
  
  int ENT3F(STIME, stime)(int *tp)
  {

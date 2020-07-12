@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_common_CMakeLists_txt,v 1.13 2019/11/24 14:37:25 bcallah Exp $
+$OpenBSD: patch-lib_common_CMakeLists_txt,v 1.14 2020/07/12 18:06:49 bcallah Exp $
 
-Don't compile with -mcpu=native on aarch64
+Don't build with -mcpu= on aarch64
 
 Index: lib/common/CMakeLists.txt
 --- lib/common/CMakeLists.txt.orig
 +++ lib/common/CMakeLists.txt
-@@ -142,8 +142,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "ppc64le"
+@@ -132,8 +132,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "ppc64le"
      sincosf.c)
  elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64")
    set_property(SOURCE dispatch.c APPEND_STRING PROPERTY COMPILE_FLAGS "-fno-builtin")

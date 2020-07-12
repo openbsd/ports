@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_scutil_CMakeLists_txt,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+$OpenBSD: patch-lib_scutil_CMakeLists_txt,v 1.2 2020/07/12 18:06:48 bcallah Exp $
 
 Make sure this library is called libscutil.a for linking
 
 Index: lib/scutil/CMakeLists.txt
 --- lib/scutil/CMakeLists.txt.orig
 +++ lib/scutil/CMakeLists.txt
-@@ -34,7 +34,6 @@ target_include_directories(scutil
+@@ -24,7 +24,6 @@ target_include_directories(scutil
  
  set_target_properties(scutil
    PROPERTIES

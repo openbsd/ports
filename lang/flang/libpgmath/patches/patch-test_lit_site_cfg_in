@@ -1,9 +1,11 @@
-$OpenBSD: patch-test_lit_site_cfg_in,v 1.1 2019/08/12 15:41:55 bcallah Exp $
+$OpenBSD: patch-test_lit_site_cfg_in,v 1.2 2020/07/12 18:06:49 bcallah Exp $
+
+Fix operating system detection.
 
 Index: test/lit.site.cfg.in
 --- test/lit.site.cfg.in.orig
 +++ test/lit.site.cfg.in
-@@ -26,7 +26,7 @@ config.libpgmath_runtime_dir = "@LIBPGMATH_RUNTIME_PAT
+@@ -16,7 +16,7 @@ config.libpgmath_runtime_dir = "@LIBPGMATH_RUNTIME_PAT
  config.libpgmath_runtime = "@LIBPGMATH_RTL@"
  config.has_libpgmath_runtime = "@LIBPGMATH_HAVE_LIBPGMATH_RUNTIME@"
  config.architecture = "@LIBPGMATH_SYSTEM_PROCESSOR@"

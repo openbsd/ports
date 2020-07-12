@@ -1,11 +1,11 @@
-$OpenBSD: patch-runtime_flangrti_dumpregs_h,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+$OpenBSD: patch-runtime_flangrti_dumpregs_h,v 1.2 2020/07/12 18:06:48 bcallah Exp $
 
 No gregset_t, from FreeBSD
 
 Index: runtime/flangrti/dumpregs.h
 --- runtime/flangrti/dumpregs.h.orig
 +++ runtime/flangrti/dumpregs.h
-@@ -21,6 +21,6 @@
+@@ -11,6 +11,6 @@
   *  Declare routines that access the machine registers
   */
  

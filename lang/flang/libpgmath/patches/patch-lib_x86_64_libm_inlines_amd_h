@@ -1,4 +1,6 @@
-$OpenBSD: patch-lib_x86_64_libm_inlines_amd_h,v 1.1 2019/11/10 16:50:32 bcallah Exp $
+$OpenBSD: patch-lib_x86_64_libm_inlines_amd_h,v 1.2 2020/07/12 18:06:49 bcallah Exp $
+
+Make sure we match on this block.
 
 Index: lib/x86_64/libm_inlines_amd.h
 --- lib/x86_64/libm_inlines_amd.h.orig
