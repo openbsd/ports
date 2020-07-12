@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/26 07:37:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/12 12:15:52 bket Exp $
 
 COMMENT =		graphical audio player which supports lots of formats
 
@@ -18,23 +18,11 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz iconv
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 z
 
-COMPILER =		base-clang ports-gcc
-
-BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
-LIB_DEPENDS =		x11/gtk+2
 
 MAKE_ENV =		LIBaudcore_VERSION=${LIBaudcore_VERSION} \
 			LIBaudgui_VERSION=${LIBaudgui_VERSION} \
 			LIBaudtag_VERSION=${LIBaudtag_VERSION}
-
-USE_GMAKE =		Yes
-
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-qt \
-			--enable-gtk
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
