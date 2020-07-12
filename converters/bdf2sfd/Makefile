@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/10 18:49:44 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/12 15:27:40 fcambus Exp $
 
 COMMENT =	BDF to SFD converter
 
-V =		1.1.2
+V =		1.1.3
 DISTNAME =	bdf2sfd-$V
 
 CATEGORIES =	converters
