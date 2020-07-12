@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2020/06/05 12:07:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/12 13:08:12 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules
 
 # do not sort blindly: items below are listed in the straight build order
+# tier docs: https://api.kde.org/frameworks/index.html
 
 # tier 1
 SUBDIR += ki18n
