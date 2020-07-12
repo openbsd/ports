@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/07/12 07:02:35 rsadowski Exp $
 
 - Drop Git
 - Stop searching for PdfLatex and disable docs
@@ -18,7 +18,7 @@ Index: CMakeLists.txt
  add_definitions(
      -DQT_USE_QSTRINGBUILDER
      -DQT_MESSAGELOGCONTEXT #enable function name and line number in debug output
-@@ -182,7 +178,7 @@ if(BUILD_CLIENT)
+@@ -191,7 +187,7 @@ if(BUILD_CLIENT)
          find_package(INotify)
      endif()
      find_package(Sphinx)
@@ -27,7 +27,7 @@ Index: CMakeLists.txt
      find_package(OpenSSL 1.1 REQUIRED )
  
     find_package(ZLIB REQUIRED)
-@@ -227,8 +223,8 @@ if(BUILD_CLIENT)
+@@ -238,8 +234,8 @@ if(BUILD_CLIENT)
      add_subdirectory(src)
      if(NOT BUILD_LIBRARIES_ONLY)
          add_subdirectory(man)
