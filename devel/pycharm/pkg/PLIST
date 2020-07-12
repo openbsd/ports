@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/05/16 06:11:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/07/12 07:33:24 rsadowski Exp $
 bin/pycharm
 @man man/man1/pycharm.1
 pycharm/
@@ -2639,7 +2639,7 @@ pycharm/plugins/pythonIDE/
 pycharm/plugins/pythonIDE/lib/
 pycharm/plugins/pythonIDE/lib/python-ide.jar
 pycharm/plugins/pythonIDE/lib/resources_en.jar
-pycharm/plugins/pythonIDE/lib/tips-pycharm-community-201.3.jar
+pycharm/plugins/pythonIDE/lib/tips-pycharm-community-201.6.jar
 pycharm/plugins/rest/
 pycharm/plugins/rest/lib/
 pycharm/plugins/rest/lib/resources_en.jar
