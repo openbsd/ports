@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/14 00:39:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/13 05:05:00 kirby Exp $
 
 COMMENT=	magnify, rotate, mirror the image on the X11 screen
 
-DISTNAME=	xzoom-0.3
-REVISION=	0
+DISTNAME=	xzoom-0.4
 CATEGORIES=	x11
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=libs/X/}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.linklevel.net/distfiles/
 
 # custom
 PERMIT_PACKAGE=	Yes
