@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/11 08:58:06 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/13 02:13:28 bcallah Exp $
 
-V =		13.0.02
+V =		13.0.03
 COMMENT =	free Unicode font from the GNU project
 DISTNAME =	unifont-${V}
 DISTFILES =	${DISTNAME}.ttf unifont_csur-${V}.ttf unifont_upper-${V}.ttf
 CATEGORIES =	fonts
-REVISION =	1
 
 HOMEPAGE =	https://unifoundry.com/unifont/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
