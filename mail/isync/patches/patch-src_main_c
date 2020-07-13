@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_main_c,v 1.7 2019/06/13 11:42:37 kn Exp $
+$OpenBSD: patch-src_main_c,v 1.8 2020/07/13 00:08:10 kn Exp $
 
 Use pledge.
 
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -120,6 +120,8 @@ PACKAGE " " VERSION " - mailbox synchronizer\n"
+@@ -125,6 +125,8 @@ PACKAGE " " VERSION " - mailbox synchronizer\n"
  	exit( code );
  }
  
@@ -14,7 +14,7 @@ Index: src/main.c
  static void ATTR_PRINTFLIKE(1, 2)
  debug( const char *msg, ... )
  {
-@@ -716,6 +718,36 @@ main( int argc, char **argv )
+@@ -738,6 +740,36 @@ main( int argc, char **argv )
  
  	if (load_config( config, pseudo ))
  		return 1;
