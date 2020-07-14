@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.70 2020/05/22 04:52:47 bket Exp $
+# $OpenBSD: Makefile,v 1.71 2020/07/14 19:45:40 bket Exp $
 
-COMMENT=	fast FTP and SFTP GUI client with a lot of features
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
-V=		3.48.1
+COMMENT=	fast FTP and SFTP GUI client with a lot of features
+
+V=		3.49.0
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
-EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net
 
-MASTER_SITES=	https://download.filezilla-project.org/client/
 HOMEPAGE=	https://www.filezilla-project.org/
 
 MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
@@ -32,6 +31,9 @@ WANTLIB += tasn1 tiff unistring usbhid wx_baseu-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
 WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
 WANTLIB += z zstd
+
+MASTER_SITES=	https://download.filezilla-project.org/client/
+EXTRACT_SUFX=	.tar.bz2
 
 # c++17
 COMPILER=	base-clang ports-gcc
@@ -54,6 +56,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 
+FAKE_FLAGS+=	docsdir="${PREFIX}/share/examples/filezilla/"
+
 CONFIGURE_STYLE=autoreconf
 CONFIGURE_ARGS+=--with-dbus \
 		--with-tinyxml=builtin \
@@ -63,11 +67,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GREP=/usr/bin/grep \
 		SED=/usr/bin/sed
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
 
 WRKDIST=	${WRKDIR}/filezilla-$V
-
-FAKE_FLAGS+=	docsdir="${PREFIX}/share/examples/filezilla/"
 
 .include <bsd.port.mk>
