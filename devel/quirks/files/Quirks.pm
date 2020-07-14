@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1010 2020/07/14 09:19:32 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1011 2020/07/14 18:10:33 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1891,6 +1891,7 @@ my $cve = {
 	'databases/postgresql,-main' => 'postgresql-client-<10.6',
 	'databases/postgresql,-server' => 'postgresql-server-<10.6',
 	'databases/sqlite3' => 'sqlite3-<3.25.3',
+	'devel/apache-ant' => 'apache-ant-<1.10.8',
 	'devel/git,-main' => 'git-<2.26.2',
 	'devel/git,-svn' => 'git-svn-<2.26.2',
 	'devel/git,-x11' => 'git-x11-<2.26.2',
