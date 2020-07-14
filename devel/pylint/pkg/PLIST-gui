@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.2 2016/04/27 12:05:02 shadchin Exp $
+@comment $OpenBSD: PLIST-gui,v 1.3 2020/07/14 09:19:32 kn Exp $
+@conflict pylint-gui-*
+@pkgpath devel/pylint,-gui
 bin/pylint-gui${MODPY_BIN_SUFFIX}

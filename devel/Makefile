@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2000 2020/07/07 13:06:07 kn Exp $
+# $OpenBSD: Makefile,v 1.2001 2020/07/14 09:19:32 kn Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1323,7 +1323,6 @@
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules
      SUBDIR += py-asn1-modules,python3
-     SUBDIR += py-astroid
      SUBDIR += py-astroid,python3
      SUBDIR += py-async-timeout
      SUBDIR += py-atomicwrites
@@ -1767,7 +1766,6 @@
      SUBDIR += pyflakes,python3
      SUBDIR += pygame
      SUBDIR += pygame,python3
-     SUBDIR += pylint
      SUBDIR += pylint,python3
      SUBDIR += pyrex
      SUBDIR += pyusb

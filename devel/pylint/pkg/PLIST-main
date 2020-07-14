@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2016/09/01 12:36:03 shadchin Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2020/07/14 09:19:32 kn Exp $
+@conflict pylint-*
+@pkgpath devel/pylint,-main
 bin/epylint${MODPY_BIN_SUFFIX}
 bin/pylint${MODPY_BIN_SUFFIX}
 bin/pyreverse${MODPY_BIN_SUFFIX}
