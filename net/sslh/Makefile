@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2020/02/16 19:51:44 bket Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/14 16:53:57 bket Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
-DISTNAME =	sslh-v1.20
-REVISION =	0
+DISTNAME =	sslh-v1.21
 PKGNAME =	${DISTNAME:S/-v/-/}
+
 CATEGORIES =	security net
 
 HOMEPAGE =	https://www.rutschle.net/tech/sslh/README.html
@@ -14,7 +14,7 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	c config pcre
+WANTLIB =	c config pcreposix
 
 MASTER_SITES =	https://www.rutschle.net/tech/sslh/
 
@@ -24,7 +24,7 @@ TEST_DEPENDS =	devel/p5-Conf-Libconfig \
 		net/p5-IO-Socket-INET6
 
 MAKE_FLAGS =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lconfig -lpcre" \
+		LIBS="-L${LOCALBASE}/lib -lconfig -lpcreposix" \
 		MAN=sslh.8
 
 USE_GMAKE =	Yes

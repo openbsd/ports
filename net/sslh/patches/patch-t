@@ -1,4 +1,4 @@
-$OpenBSD: patch-t,v 1.1 2020/02/16 19:51:44 bket Exp $
+$OpenBSD: patch-t,v 1.2 2020/07/14 16:53:57 bket Exp $
 
 Index: t
 --- t.orig
@@ -12,8 +12,8 @@ Index: t
  sub verbose_exec
  {
      my ($cmd) = @_;
-@@ -369,8 +367,5 @@ if ($RB_RESOLVE_ADDRESS) {
-     is($code, 4, "Exit status if can't resolve address");
+@@ -390,10 +388,7 @@ if ($RB_RESOLVE_ADDRESS) {
+     my_is($code, 4, "Exit status if can't resolve address");
  }
  
 -`lcov --directory . --capture --output-file sslh_cov.info`;
@@ -22,3 +22,5 @@ Index: t
 -`killall echosrv`;
 +`pkill -q echosrv`;
  
+ 
+ format test_results_top =
