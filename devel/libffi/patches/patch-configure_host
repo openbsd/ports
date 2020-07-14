@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_host,v 1.1 2020/07/14 15:52:54 kettenis Exp $
+
+Index: configure.host
+--- configure.host.orig
++++ configure.host
+@@ -203,7 +203,7 @@ case "${host}" in
+ 	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
+ 	HAVE_LONG_DOUBLE_VARIANT=1
+ 	;;
+-  powerpc64-*-freebsd*)
++  powerpc64-*-freebsd* | powerpc64-*-openbsd*)
+ 	TARGET=POWERPC; TARGETDIR=powerpc
+ 	;;
+   powerpc*-*-rtems*)
