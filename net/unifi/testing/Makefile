@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2020/07/06 12:48:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2020/07/14 14:15:47 sthen Exp $
 
 V=		5.14.17
 SNAPPY_V=	1.1.7.3
+SNAPPY_S=	-1
+REVISION=	0
 
 # for stable-candidate and public beta versions
 #BUILD_V=	

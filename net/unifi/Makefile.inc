@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2020/03/24 14:54:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2020/07/14 14:15:47 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -7,7 +7,7 @@ MASTER_SITES?=	http://dl.ubnt.com/unifi/${V}${BUILD_V:C/^([1-9a-f])/-\1/}/
 JAF=		1.1.1
 DISTFILES=	unifi-$V{UniFi.unix}.zip \
 		unifi_sh_api-$V{unifi_sh_api} \
-		snappy-java-${SNAPPY_V}.jar:0 \
+		snappy-java-${SNAPPY_V}${SNAPPY_S}.jar:0 \
 		UBNT-MIB:1 \
 		UBNT-UniFi-MIB:1
 EXTRACT_ONLY=	unifi-$V.zip
@@ -60,7 +60,7 @@ post-extract:
 
 do-configure:
 	@if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then echo "** Version mismatch in snappy-java"; ls -l ${WRKSRC}/lib/snappy-java*; exit 1; fi
-	cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}.jar ${WRKSRC}/lib/
+	cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}${SNAPPY_S}.jar ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}{,/backup,/data,/run,/work}
