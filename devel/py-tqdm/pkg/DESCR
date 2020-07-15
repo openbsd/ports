@@ -1,0 +1,2 @@
+Enables Python loops to show a smart progress meter by wrapping iterables with
+tqdm(iterable).
