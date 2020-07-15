@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2020/07/15 20:10:34 rsadowski Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -24,7 +24,7 @@ add_library(alkimia SHARED ${alkimia_LIB_SRCS})
+ 
+ kde_target_enable_exceptions(alkimia PUBLIC)
+ 
+-target_include_directories(alkimia PRIVATE ${MP_INCLUDE_DIR})
++target_include_directories(alkimia PRIVATE ${GMP_INCLUDE_DIR})
+ target_link_libraries(alkimia PUBLIC ${QT_USE_LIBSPREFIX}Core ${QT_USE_LIBSPREFIX}DBus ${MP_LIBRARIES})
+ generate_export_header(alkimia BASE_NAME alk)
+ 

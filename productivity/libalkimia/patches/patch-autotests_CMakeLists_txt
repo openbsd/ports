@@ -1,0 +1,14 @@
+$OpenBSD: patch-autotests_CMakeLists_txt,v 1.1 2020/07/15 20:10:34 rsadowski Exp $
+
+Index: autotests/CMakeLists.txt
+--- autotests/CMakeLists.txt.orig
++++ autotests/CMakeLists.txt
+@@ -6,6 +6,8 @@ else()
+     set(TEST_LIB Qt5::Test)
+ endif()
+ 
++include_directories(${GMP_INCLUDE_DIR})
++
+ ecm_add_tests(
+     alkvaluetest.cpp
+     alkquoteitemtest.cpp

@@ -1,0 +1,3 @@
+libalkimia in addition to a D-Bus service called Alkimia, a library with common
+classes and functionality will be provided to be linked with all finance
+applications.
