@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1011 2020/07/14 18:10:33 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1012 2020/07/15 19:10:22 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1622,7 +1622,6 @@ my $obsolete_reason = {
 	'libkvkontakte' => 3,
 	'libkfbapi' => 3,
 	'libkgapi' => 3,
-	'akonadi' => 3,
 	'attica' => 3,
 	'kwebkitpart' => 3,
 	'grantlee' => 3,
