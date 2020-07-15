@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.574 2020/07/07 06:21:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.575 2020/07/15 15:39:05 bket Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -88,6 +88,7 @@
      SUBDIR += facette
      SUBDIR += faubackup
      SUBDIR += fdupes
+     SUBDIR += fff
      SUBDIR += findlib
      SUBDIR += firmware
      SUBDIR += flashrom
