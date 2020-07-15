@@ -1,0 +1,2 @@
+fff provides a simplistic file manager with curses based interface.
+It supports opening files with xdg-open.
