@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/06/10 07:37:33 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/07/15 08:56:44 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -27,6 +27,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bibtex
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/biml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bpf
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/brainfuck
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/brightscript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bsl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/c
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ceylon
@@ -96,6 +97,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/io
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/irb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/irb_output
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/isbl
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/janet
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/java
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/javascript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/jinja
@@ -178,6 +180,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/solidity
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sparql
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sqf
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sql
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ssh
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/supercollider
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/swift
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/tap
@@ -249,6 +252,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bibtex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/biml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bpf.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/brainfuck.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/brightscript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/c.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ceylon.rb
@@ -321,6 +325,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/irb.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isbl/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isbl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isbl/builtins.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/janet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/java.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/javascript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/jinja.rb
@@ -424,6 +429,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sql.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ssh.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/supercollider.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/swift.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/tap.rb

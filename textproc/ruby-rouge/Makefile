@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2020/06/10 07:37:33 fcambus Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/15 08:56:43 fcambus Exp $
 
 COMMENT =	pure-ruby code highlighter compatible with pygments
 
-DISTNAME =	rouge-3.20.0
+DISTNAME =	rouge-3.21.0
 
 CATEGORIES =	textproc
 
