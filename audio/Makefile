@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.432 2020/06/26 09:07:26 landry Exp $
+# $OpenBSD: Makefile,v 1.433 2020/07/15 20:42:27 kn Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -39,6 +39,7 @@
      SUBDIR += faad
      SUBDIR += faudio
      SUBDIR += fdk-aac
+     SUBDIR += ffmpeg-normalize
      SUBDIR += flac
      SUBDIR += flac123
      SUBDIR += flite
