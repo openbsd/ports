@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 21:34:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/07/15 08:23:50 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -18,7 +18,7 @@ COMPILER_LANGS=	c
 FW_DRIVER=	vmm
 FW_VER=		1.11.0
 SB_VER=		20100422
-REVISION=	2
+REVISION=	3
 DISTNAME=	seabios-${FW_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 	sgabios-20100422{23d474943dcd55d0550a3d20b3d30e9040a4f15b}.tar.gz:0
@@ -38,6 +38,7 @@ NO_BUILD=	No
 MODULES=	lang/python
 CONFIGURE_STYLE= x # workaround python.port.mk
 MODPY_RUNDEP=	No
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 USE_GMAKE=	Yes
 
 .if defined(REVISION)
