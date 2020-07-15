@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2019/12/31 21:02:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/15 18:50:25 bket Exp $
 
 COMMENT=	identify or delete duplicate files
 
-V=		2.0.0
+V=		2.1.1
 DISTNAME=	fdupes-$V
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://github.com/adrianlopezroche/fdupes
-MASTER_SITES=	https://github.com/adrianlopezroche/fdupes/releases/download/$V/
+MASTER_SITES=	https://github.com/adrianlopezroche/fdupes/releases/download/v$V/
 
 # MIT
 PERMIT_PACKAGE=	Yes
