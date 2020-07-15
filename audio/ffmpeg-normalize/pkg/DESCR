@@ -1,0 +1,5 @@
+This program normalizes media files using FFmpeg to a certain loudness level
+using the EBU R128 loudness normalization procedure. It can also perform
+RMS-based normalization (where the mean is lifted or attenuated), or peak
+normalization to a certain target level. Batch processing of several input
+files is possible, including video files.
