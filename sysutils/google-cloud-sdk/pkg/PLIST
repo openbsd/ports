@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.162 2020/07/10 06:36:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.163 2020/07/16 17:21:10 ajacoutot Exp $
 @conflict gsutil-*
 bin/bq
 bin/gcloud
@@ -300,6 +300,12 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/filter_rewrite.
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/organizations.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/projects_api.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/projects_util.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/commerce_procurement/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/commerce_procurement/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/api_lib/commerce_procurement/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/commerce_procurement/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/commerce_procurement/${MODPY_PYCACHE}apis.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/commerce_procurement/apis.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/composer/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/composer/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/api_lib/composer/${MODPY_PYCACHE}/
@@ -1681,6 +1687,12 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/code/local.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/code/local_files.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/code/run_subprocess.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/code/yaml_helper.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/commerce_procurement/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/commerce_procurement/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/commerce_procurement/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/commerce_procurement/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/commerce_procurement/${MODPY_PYCACHE}resource_args.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/commerce_procurement/resource_args.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/components/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/components/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/components/${MODPY_PYCACHE}/
@@ -4233,7 +4245,18 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1/${MODPY_PYC
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1/anthosevents_v1_client.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1/anthosevents_v1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/${MODPY_PYCACHE}anthosevents_v1beta1_client.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/${MODPY_PYCACHE}anthosevents_v1beta1_messages.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/anthosevents_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/anthosevents_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/v1beta1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents_v1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/apigateway/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/apigateway/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/apigateway/${MODPY_PYCACHE}/
@@ -8133,6 +8156,38 @@ google-cloud-sdk/lib/surface/code/${MODPY_PYCACHE}export.${MODPY_PYC_MAGIC_TAG}p
 google-cloud-sdk/lib/surface/code/clean_up.py
 google-cloud-sdk/lib/surface/code/dev.py
 google-cloud-sdk/lib/surface/code/export.py
+google-cloud-sdk/lib/surface/commerce_procurement/
+google-cloud-sdk/lib/surface/commerce_procurement/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/commerce_procurement/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/commerce_procurement/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/commerce_procurement/consumer/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/accounts/
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/accounts/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/commerce_procurement/consumer/accounts/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/accounts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/accounts/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/accounts/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/accounts/describe.py
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/accounts/list.py
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/entitlements/
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/entitlements/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/commerce_procurement/consumer/entitlements/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/entitlements/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/entitlements/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/entitlements/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/entitlements/describe.py
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/entitlements/list.py
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/free_trials/
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/free_trials/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/commerce_procurement/consumer/free_trials/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/free_trials/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/free_trials/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/free_trials/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/free_trials/create.py
+google-cloud-sdk/lib/surface/commerce_procurement/consumer/free_trials/list.py
 google-cloud-sdk/lib/surface/components/
 google-cloud-sdk/lib/surface/components/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/components/${MODPY_PYCACHE}/
@@ -8795,9 +8850,13 @@ google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/${MODPY_PYCAC
 google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/create.py
 google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/delete.py
 google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/describe.py
+google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/list.py
+google-cloud-sdk/lib/surface/compute/instances/ops_agents/policies/update.py
 google-cloud-sdk/lib/surface/compute/instances/os_inventory/
 google-cloud-sdk/lib/surface/compute/instances/os_inventory/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/compute/instances/os_inventory/${MODPY_PYCACHE}/
@@ -9818,6 +9877,7 @@ google-cloud-sdk/lib/surface/container/clusters/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}create_auto.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}get_credentials.${MODPY_PYC_MAGIC_TAG}pyc
@@ -9826,6 +9886,7 @@ google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}resize.${MODPY_P
 google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/clusters/${MODPY_PYCACHE}upgrade.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/clusters/create.py
+google-cloud-sdk/lib/surface/container/clusters/create_auto.py
 google-cloud-sdk/lib/surface/container/clusters/delete.py
 google-cloud-sdk/lib/surface/container/clusters/describe.py
 google-cloud-sdk/lib/surface/container/clusters/get_credentials.py
@@ -11838,6 +11899,7 @@ google-cloud-sdk/lib/surface/meta/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/meta/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/meta/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/meta/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/meta/${MODPY_PYCACHE}generate_command.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/meta/${MODPY_PYCACHE}generate_help_docs.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/meta/${MODPY_PYCACHE}lint.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/meta/${MODPY_PYCACHE}list_commands.${MODPY_PYC_MAGIC_TAG}pyc
@@ -11927,6 +11989,7 @@ google-cloud-sdk/lib/surface/meta/flag_coverage_tree/${MODPY_PYCACHE}__init__.${
 google-cloud-sdk/lib/surface/meta/flag_coverage_tree/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/meta/flag_coverage_tree/update.py
 google-cloud-sdk/lib/surface/meta/gcloud_command_vocabulary.txt
+google-cloud-sdk/lib/surface/meta/generate_command.py
 google-cloud-sdk/lib/surface/meta/generate_help_docs.py
 google-cloud-sdk/lib/surface/meta/lint.py
 google-cloud-sdk/lib/surface/meta/list_commands.py
