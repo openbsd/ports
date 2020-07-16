@@ -1,0 +1,132 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/16 04:46:18 daniel Exp $
+@bin bin/adjacency
+@bin bin/adjacency_gmp
+@bin bin/allfaces
+@bin bin/allfaces_gmp
+@bin bin/cddexec
+@bin bin/cddexec_gmp
+@bin bin/fourier
+@bin bin/fourier_gmp
+@bin bin/lcdd
+@bin bin/lcdd_gmp
+@bin bin/projection
+@bin bin/projection_gmp
+@bin bin/redcheck
+@bin bin/redcheck_gmp
+@bin bin/scdd
+@bin bin/scdd_gmp
+@bin bin/testcdd1
+@bin bin/testcdd1_gmp
+@bin bin/testcdd2
+@bin bin/testcdd2_gmp
+@bin bin/testlp1
+@bin bin/testlp1_gmp
+@bin bin/testlp2
+@bin bin/testlp2_gmp
+@bin bin/testlp3
+@bin bin/testlp3_gmp
+@bin bin/testshoot
+@bin bin/testshoot_gmp
+include/cdd.h
+include/cdd_f.h
+include/cddmp.h
+include/cddmp_f.h
+include/cddtypes.h
+include/cddtypes_f.h
+include/setoper.h
+include/splitmix64.h
+@static-lib lib/libcdd.a
+lib/libcdd.la
+@lib lib/libcdd.so.${LIBcdd_VERSION}
+@static-lib lib/libcddgmp.a
+lib/libcddgmp.la
+@lib lib/libcddgmp.so.${LIBcddgmp_VERSION}
+share/doc/cddlib/
+share/doc/cddlib/cddlibman.dvi
+share/doc/cddlib/cddlibman.pdf
+share/doc/cddlib/cddlibman.ps
+share/doc/cddlib/examples/
+share/doc/cddlib/examples-ext/
+share/doc/cddlib/examples-ext/ccc4.ext
+share/doc/cddlib/examples-ext/ccc5.ext
+share/doc/cddlib/examples-ext/ccc6.ext
+share/doc/cddlib/examples-ext/ccp4.ext
+share/doc/cddlib/examples-ext/ccp5.ext
+share/doc/cddlib/examples-ext/ccp6.ext
+share/doc/cddlib/examples-ext/cyclic10-4.ext
+share/doc/cddlib/examples-ext/cyclic12-6.ext
+share/doc/cddlib/examples-ext/cyclic14-8.ext
+share/doc/cddlib/examples-ext/cyclic16-10.ext
+share/doc/cddlib/examples-ext/irbox20-4.ext
+share/doc/cddlib/examples-ext/irbox200-4.ext
+share/doc/cddlib/examples-ext/prodst62.ext
+share/doc/cddlib/examples-ext/reg24-5.ext
+share/doc/cddlib/examples-ext/reg600-5.ext
+share/doc/cddlib/examples-ine/
+share/doc/cddlib/examples-ine/allzero.ine
+share/doc/cddlib/examples-ine/cross10.ine
+share/doc/cddlib/examples-ine/cross12.ine
+share/doc/cddlib/examples-ine/cross6.ine
+share/doc/cddlib/examples-ine/cross8.ine
+share/doc/cddlib/examples-ine/cube10.ine
+share/doc/cddlib/examples-ine/cube12.ine
+share/doc/cddlib/examples-ine/cube6.ine
+share/doc/cddlib/examples-ine/cube8.ine
+share/doc/cddlib/examples-ine/cubocta.ine
+share/doc/cddlib/examples-ine/ex1.ine
+share/doc/cddlib/examples-ine/infeas.ine
+share/doc/cddlib/examples-ine/integralpoints.ine
+share/doc/cddlib/examples-ine/kkd18_4.ine
+share/doc/cddlib/examples-ine/kkd27_5.ine
+share/doc/cddlib/examples-ine/kkd38_6.ine
+share/doc/cddlib/examples-ine/nonfull.ine
+share/doc/cddlib/examples-ine/origin.ine
+share/doc/cddlib/examples-ine/reg24-5.ine
+share/doc/cddlib/examples-ine/sampleh1.ine
+share/doc/cddlib/examples-ine/sampleh2.ine
+share/doc/cddlib/examples-ine/sampleh3.ine
+share/doc/cddlib/examples-ine/sampleh4.ine
+share/doc/cddlib/examples-ine/sampleh5.ine
+share/doc/cddlib/examples-ine/sampleh6.ine
+share/doc/cddlib/examples-ine/sampleh7.ine
+share/doc/cddlib/examples-ine/sampleh8.ine
+share/doc/cddlib/examples-ine/samplelp.ine
+share/doc/cddlib/examples-ine/samplelp1.ine
+share/doc/cddlib/examples-ine/samplelp2.ine
+share/doc/cddlib/examples-ine/samplelp3.ine
+share/doc/cddlib/examples-ine/samplelp4.ine
+share/doc/cddlib/examples-ine3d/
+share/doc/cddlib/examples-ine3d/cube3.ine
+share/doc/cddlib/examples-ine3d/cubocta.ine
+share/doc/cddlib/examples-ine3d/dodeca.ine
+share/doc/cddlib/examples-ine3d/grcubocta.ine
+share/doc/cddlib/examples-ine3d/hexocta.ine
+share/doc/cddlib/examples-ine3d/icododeca.ine
+share/doc/cddlib/examples-ine3d/rcubocta.ine
+share/doc/cddlib/examples-ine3d/rhomtria.ine
+share/doc/cddlib/examples/project1.ine
+share/doc/cddlib/examples/project1res.ine
+share/doc/cddlib/examples/project2.ine
+share/doc/cddlib/examples/project2res.ine
+share/doc/cddlib/examples/redcheck.ext
+share/doc/cddlib/examples/sample.ine
+share/doc/cddlib/examples/sampleh1.ine
+share/doc/cddlib/examples/sampleh2.ine
+share/doc/cddlib/examples/sampleh3.ine
+share/doc/cddlib/examples/sampleh4.ine
+share/doc/cddlib/examples/sampleh5.ine
+share/doc/cddlib/examples/sampleh6.ine
+share/doc/cddlib/examples/sampleh7.ine
+share/doc/cddlib/examples/sampleh8.ine
+share/doc/cddlib/examples/samplelp.ine
+share/doc/cddlib/examples/samplelp.testlp1_gmp_output
+share/doc/cddlib/examples/samplelp.testlp1_output
+share/doc/cddlib/examples/samplelp1.ine
+share/doc/cddlib/examples/samplelp2.ine
+share/doc/cddlib/examples/samplelp3.ine
+share/doc/cddlib/examples/samplelp4.ine
+share/doc/cddlib/examples/samplelp_big.ine
+share/doc/cddlib/examples/samplelp_big_dualinfeas.ine
+share/doc/cddlib/examples/samplev1.ext
+share/doc/cddlib/examples/samplev2.ext
+share/doc/cddlib/examples/samplev3.ext

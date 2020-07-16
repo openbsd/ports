@@ -1,0 +1,5 @@
+The C-library cddlib can be used for the reverse operation (i.e. convex hull
+computation). This means that one can move back and forth between an inequality
+representation and a generator (i.e. vertex and ray) representation of a
+polyhedron with cddlib. Also, cddlib can solve a linear programming problem,
+i.e. a problem of maximizing and minimizing a linear function over P.
