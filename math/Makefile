@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.185 2020/07/08 21:01:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.186 2020/07/16 05:46:38 daniel Exp $
 
      SUBDIR =
+     SUBDIR += 4ti2
      SUBDIR += R
      SUBDIR += aamath
      SUBDIR += abs
@@ -12,6 +13,7 @@
      SUBDIR += calc
      SUBDIR += calcoo
      SUBDIR += cblas
+     SUBDIR += cddlib
      SUBDIR += cfitsio
      SUBDIR += cgal
      SUBDIR += coq
