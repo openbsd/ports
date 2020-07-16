@@ -1,0 +1,18 @@
+$OpenBSD: patch-aqbanking_pc_in,v 1.1 2020/07/16 05:01:19 rsadowski Exp $
+
+Fix an issue with pkg-config(1)
+
+Index: aqbanking.pc.in
+--- aqbanking.pc.in.orig
++++ aqbanking.pc.in
+@@ -27,8 +27,8 @@ aqbanking_libs=@aqbanking_ldflags@ @aqbanking_libs@
+ aqbanking_includes=@aqbanking_includes@
+ aqbanking_plugindir=@aqbanking_plugindir@
+ 
+-has-aqhbci=@with_aqhbci@
+-aqhbci-libraries=@aqbanking_ldflags@ @aqhbci_libs@
++has_aqhbci=@with_aqhbci@
++aqhbci_libraries=@aqbanking_ldflags@ @aqhbci_libs@
+ 
+ # Human-readable name
+ Name: AqBanking

@@ -1,13 +1,14 @@
-$OpenBSD: patch-aqbanking-config_cmake_in,v 1.1 2017/01/12 16:36:12 zhuk Exp $
-Unbreak CMake config.
---- aqbanking-config.cmake.in.orig	Wed Jan 11 09:51:02 2017
-+++ aqbanking-config.cmake.in	Wed Jan 11 09:51:54 2017
-@@ -21,7 +21,7 @@ find_package(Gwenhywfar "@GWENHYWFAR_MINIMUM_VERSION@"
- set_and_check(prefix "@prefix@")
- set_and_check(exec_prefix "@exec_prefix@")
- set_and_check(AQBANKING_INCLUDE_DIRS "@includedir@/aqbanking@AQBANKING_VERSION_MAJOR@")
--set_and_check(AQBANKING_LIBRARIES "@libdir@/libaqbanking.so")
-+set_and_check(AQBANKING_LIBRARIES "@libdir@/libaqbanking.so.${LIBaqbanking_VERSION}")
- set(AQBANKING_LIBRARIES ${AQBANKING_LIBRARIES} ${GWENHYWFAR_LIBRARIES})
+$OpenBSD: patch-aqbanking-config_cmake_in,v 1.2 2020/07/16 05:01:19 rsadowski Exp $
+
+Index: aqbanking-config.cmake.in
+--- aqbanking-config.cmake.in.orig
++++ aqbanking-config.cmake.in
+@@ -27,7 +27,7 @@ if(WIN32)
+ elseif(APPLE)
+     set_and_check(AQBANKING_LIBRARIES "@libdir@/libaqbanking.@AQBANKING_SO_EFFECTIVE@.dylib")
+ else()
+-    set_and_check(AQBANKING_LIBRARIES "@libdir@/libaqbanking.so.@AQBANKING_SO_EFFECTIVE@")
++    set_and_check(AQBANKING_LIBRARIES "@libdir@/libaqbanking.so.${LIBaqbanking_VERSION}")
+ endif()
+ set(AQBANKING_FOUND true)
  
- mark_as_advanced( AQBANKING_INCLUDE_DIRS AQBANKING_LIBRARIES )
