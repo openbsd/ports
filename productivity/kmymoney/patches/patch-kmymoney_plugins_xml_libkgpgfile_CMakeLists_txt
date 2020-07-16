@@ -1,0 +1,26 @@
+$OpenBSD: patch-kmymoney_plugins_xml_libkgpgfile_CMakeLists_txt,v 1.1 2020/07/16 05:01:23 rsadowski Exp $
+
+Fix gpgmepp build
+
+Index: kmymoney/plugins/xml/libkgpgfile/CMakeLists.txt
+--- kmymoney/plugins/xml/libkgpgfile/CMakeLists.txt.orig
++++ kmymoney/plugins/xml/libkgpgfile/CMakeLists.txt
+@@ -13,9 +13,16 @@ if(ENABLE_GPG)
+     target_compile_definitions(kgpgfile PUBLIC ${KDEWIN_DEFINITIONS})
+   endif()
+     if(Gpgmepp_FOUND)
+-    target_link_libraries(kgpgfile PUBLIC Gpgmepp)
++    target_link_libraries(kgpgfile PUBLIC gpgmepp)
++    target_include_directories(kgpgfile PUBLIC "${CMAKE_INSTALL_PREFIX}/include"
++                                               "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
++                                               "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
++
+   endif()
+   if(KF5Gpgmepp_FOUND)
+-    target_link_libraries(kgpgfile PUBLIC KF5::Gpgmepp)
++    target_link_libraries(kgpgfile PUBLIC gpgmepp)
++    target_include_directories(kgpgfile PUBLIC "${CMAKE_INSTALL_PREFIX}/include"
++                                               "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
++                                               "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
+   endif()
+ endif()

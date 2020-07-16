@@ -1,19 +1,116 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/01/15 23:12:48 rsadowski Exp $
-Unbreak configuring: there is no separate gwengui-cpp CMake config.
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2020/07/16 05:01:23 rsadowski Exp $
+
+- There is no 8.0 LibAlkimia version
+- Remove weboob support, depends on python2
+- Remove linker, compiler  flags
+- Fix gpgmepp
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -198,11 +198,11 @@ option(ENABLE_KBANKING "Enable KBanking plugin" ON)
- if(ENABLE_KBANKING)
-   find_package(GWENHYWFAR CONFIG "4.13.0")
-   find_package(gwengui-qt4 CONFIG "4.13.0")
--  find_package(gwengui-cpp CONFIG "4.13.0")
-+  #no such package find_package(gwengui-cpp CONFIG "4.13.0")
-   message(STATUS "Gwenhywfar ${GWENHYWFAR_VERSION} found at ${GWENHYWFAR_INCLUDE_DIRS} (${GWENHYWFAR_LIBRARIES})")
-   find_package(AQBANKING CONFIG "5.5.1")
-   message(STATUS "AqBanking ${AQBANKING_VERSION} found at ${AQBANKING_INCLUDE_DIRS} (${AQBANKING_LIBRARIES})")
--  if (AQBANKING_FOUND AND GWENHYWFAR_FOUND AND gwengui-qt4_FOUND AND gwengui-cpp_FOUND)
-+  if (AQBANKING_FOUND AND GWENHYWFAR_FOUND AND gwengui-qt4_FOUND)
-     set(KBANKING_FOUND ON)
-   else ()
-     if(NOT KBANKING_FOUND STREQUAL "AUTO")
+@@ -75,7 +75,7 @@ if (Gpgmepp_FOUND)
+   set(GPG_FOUND TRUE)
+ else()
+   set(GPG_FOUND FALSE)
+-  list(APPEND OPT_KF5_COMPONENTS Gpgmepp)
++  list(APPEND OPT_KF5_COMPONENTS gpgmepp)
+ endif()
+ 
+ if (PkgConfig_FOUND)
+@@ -95,7 +95,7 @@ find_package(KF5 5.2 REQUIRED
+ if(LibAlkimia5_DIR)
+   set(_LibAlkimia5_DIR ${LibAlkimia5_DIR})
+ endif()
+-find_package(LibAlkimia5 8.0)
++find_package(LibAlkimia5 7.0.1)
+ if (NOT LibAlkimia5_FOUND)
+   # restore LibAlkimia5_DIR set to NOTFOUND by first find_package call
+   if(_LibAlkimia5_DIR)
+@@ -235,7 +235,7 @@ if(ENABLE_OFXIMPORTER)
+     set(PATH_TO_LIBOFX_HEADER "${PATH_TO_LIBOFX_HEADER}/libofx/libofx.h")
+     unset(LIBOFX_HAVE_CLIENTUID)
+     unset(LIBOFX_HAVE_CLIENTUID CACHE) #not doing this will prevent updating below check
+-    check_struct_has_member("struct OfxFiLogin" clientuid ${PATH_TO_LIBOFX_HEADER} LIBOFX_HAVE_CLIENTUID LANGUAGE CXX)
++    check_struct_has_member("struct OfxFiLogin" clientuid "${LIBOFX_INCLUDE_DIR}" LIBOFX_HAVE_CLIENTUID LANGUAGE CXX)
+   endif()
+ 
+   if (LIBOFX_HAVE_CLIENTUID)
+@@ -263,23 +263,7 @@ cmake_dependent_option(ENABLE_KBANKING "Enable KBankin
+ 
+ add_feature_info(KBanking ENABLE_KBANKING "Interface for the following online banking protocols: HBCI, EBICS, OFX Direct Connect, Paypal")
+ 
+-# check for optional Weboob support
+-set(Python_ADDITIONAL_VERSIONS 2.7 2.6)
+-find_package(PythonInterp 2.6)
+-find_package(PythonLibs ${PYTHON_VERSION_STRING})
+-
+-if(PYTHONINTERP_FOUND AND PYTHONLIBS_FOUND)
+-  if(NOT PYTHON_VERSION_MAJOR VERSION_LESS 3)
+-    unset(PYTHONLIBS_FOUND)
+-    unset(PYTHONINTERP_FOUND)
+-    message(WARNING "Python 2 required, but Python 3 found.")
+-  else()
+-    include(FindPythonModule)
+-    find_python_module(weboob REQUIRED)
+-  endif()
+-endif()
+-
+-cmake_dependent_option(ENABLE_WEBOOB "Enable Weboob plugin" ON
++cmake_dependent_option(ENABLE_WEBOOB "Enable Weboob plugin" OFF
+                        "PYTHONLIBS_FOUND;PYTHONINTERP_FOUND;PY_WEBOOB;Qt5Concurrent_FOUND" OFF)
+ add_feature_info(Weboob ENABLE_WEBOOB "Online banking interface using Weboob.")
+ 
+@@ -328,38 +312,7 @@ The default value is: 'RelWithDebInfo'" FORCE)
+ include(KDECompilerSettings)
+ kde_enable_exceptions()
+ 
+-# Set linker flags
+ 
+-# There is no way to detect linker in cmake (see https://gitlab.kitware.com/cmake/cmake/issues/17596)
+-# and linkers aren't compatible with each other, so we need to assume something
+-if(CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
+-  set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-dead_strip -Wl,-undefined,error")
+-  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-dead_strip -Wl,-undefined,error -Wl,-mark_dead_strippable_dylib")
+-  set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,-dead_strip -Wl,-undefined,error")
+-
+-elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+-  set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--as-needed")
+-  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--as-needed")
+-  # TODO: remove multiple definitions of payeeIdentifierLoader::createPayeeIdentifierFromSqlDatabase
+-  set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS} -Wl,--as-needed -Wl,--allow-multiple-definition")
+-  # CI builds are crashing on FreeBSD with --no-undefined. Probably because -DECM_ENABLE_SANITIZERS='address'
+-  # more can be read on the following site https://bugs.freedesktop.org/show_bug.cgi?id=100120
+-  if(NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+-    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--no-undefined")
+-    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
+-    set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--no-undefined")
+-  endif()
+-
+-  # TODO: remove multiple definitions of payeeIdentifierLoader::hasItemEditDelegate
+-  if(CMAKE_SYSTEM_NAME MATCHES "Windows")
+-    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--allow-multiple-definition")
+-    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--allow-multiple-definition")
+-  endif()
+-
+-elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+-  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /FORCE:Multiple")
+-endif()
+-
+ # Set compiler flags
+ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wlogical-op -Wno-null-dereference -Wshadow -Wunused -Wno-misleading-indentation -Wsuggest-override -Wcast-qual -Wformat=2 -fno-common")
+@@ -376,14 +329,6 @@ endif()
+ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ 
+ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
+-  # DebugKMM, Debugfull, Profile
+-  set(CMAKE_CXX_FLAGS_DEBUGKMM
+-      "-g -O2 -fno-reorder-blocks -fno-schedule-insns -fno-inline")
+-  set(CMAKE_CXX_FLAGS_DEBUGFULL
+-      "-g3 -fno-inline")
+-  set(CMAKE_CXX_FLAGS_PROFILE
+-      "-g3 -fno-inline -ftest-coverage -fprofile-arcs")
+-
+   # preprocessor definitions in case this is a debug build
+   set(CMAKE_CXX_FLAGS_DEBUGFULL "${CMAKE_CXX_FLAGS_DEBUGFULL} -DQT_STRICT_ITERATORS -DKMM_DEBUG -DQT_FORCE_ASSERTS")
+   set(CMAKE_CXX_FLAGS_DEBUGKMM  "${CMAKE_CXX_FLAGS_DEBUGFULL} -DKMM_DEBUG -DQT_FORCE_ASSERTS")

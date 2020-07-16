@@ -1,77 +1,107 @@
-# $OpenBSD: Makefile,v 1.33 2020/06/13 16:22:53 rsadowski Exp $
-BROKEN =		KDE4 deleted, update is coming
-COMMENT =		accounting for KDE 4
-CATEGORIES =		productivity x11
-HOMEPAGE =		https://kmymoney.org/
-VERSION =		4.8.1.1
-DISTNAME =		kmymoney-${VERSION}
-REVISION =		11
+# $OpenBSD: Makefile,v 1.34 2020/07/16 05:01:23 rsadowski Exp $
 
-SHARED_LIBS += kmm_kdchart                      1.1 # 0.0
-SHARED_LIBS += kmm_mymoney                      1.1 # 0.0
-SHARED_LIBS += kmm_payeeidentifier              0.0 # 0.0
-SHARED_LIBS += kmm_plugin                       1.1 # 0.0
-SHARED_LIBS += kmm_widgets                      1.1 # 0.0
-SHARED_LIBS += payeeidentifier_iban_bic         0.0 # 4.14
-SHARED_LIBS += payeeidentifier_iban_bic_widgets 0.0 # 4.14
-SHARED_LIBS += payeeidentifier_nationalAccount  0.0 # 4.14
+
+COMMENT =		accounting for KDE 5
+
+HOMEPAGE =		https://kmymoney.org/
+
+VERSION =		5.1.0
+DISTNAME =		kmymoney-${VERSION}
+
+CATEGORIES =		productivity x11
+
+SHARED_LIBS +=  kmm_csvimportercore       0.0 # 5.1.0
+SHARED_LIBS +=  kmm_icons                 0.0 # 5.1.0
+SHARED_LIBS +=  kmm_menus                 0.0 # 5.1.0
+SHARED_LIBS +=  kmm_models                0.0 # 5.1.0
+SHARED_LIBS +=  kmm_mymoney               0.0 # 5.1.0
+SHARED_LIBS +=  kmm_payeeidentifier       0.0 # 5.1.0
+SHARED_LIBS +=  kmm_plugin                0.0 # 5.1.0
+SHARED_LIBS +=  kmm_printer               0.0 # 5.1.0
+SHARED_LIBS +=  kmm_settings              0.0 # 5.1.0
+SHARED_LIBS +=  kmm_widgets               0.0 # 5.1.0
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  c m pthread z
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
-WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui
-WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/kfile ${KDE4LIB}/kholidays
-WANTLIB += ${KDE4LIB}/khtml ${KDE4LIB}/kidletime ${KDE4LIB}/kio
-WANTLIB += ${KDE4LIB}/kjs ${KDE4LIB}/kparts ${KDE4LIB}/kprintutils
-WANTLIB += ${KDE4LIB}/kresources ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk
-WANTLIB += ${KDE4LIB}/nepomukutils
-WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
-WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kmime
-WANTLIB += ${KDE4LIB}/kpimidentities ${KDE4LIB}/kpimutils
-WANTLIB += alkimia assuan gmp gpg-error gpgme4++-pthread gpgme
-WANTLIB += ical icalss ofx osp soprano qgpgme4
-WANTLIB += aqbanking gwengui-cpp gwengui-qt4 gwenhywfar
-WANTLIB += QtDeclarative QtScript krosscore
+MASTER_SITES =		${MASTER_SITE_KDE:=stable/kmymoney/${VERSION}/src/}
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kmymoney/${VERSION}/src/}
+WANTLIB += ${COMPILER_LIBCXX} KChart KF5Activities KF5AkonadiCore
+WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5Contacts KF5CoreAddons KF5Holidays KF5I18n KF5IconThemes
+WANTLIB += KF5IdentityManagement KF5ItemModels KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIONTLM KF5KIOWidgets KF5Notifications KF5PimTextEdit
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml alkimia5 aqbanking
+WANTLIB += c gmp gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar ical
+WANTLIB += icalss m ofx osp
 
-MODULES =		devel/cmake \
-			x11/kde4 \
-			lang/python \
-			multimedia/phonon
-MODKDE4_USE =		pim
+MODULES =		devel/kf5
 
-BUILD_DEPENDS =	devel/boost \
-		devel/gettext,-tools \
-		misc/shared-mime-info
+BUILD_DEPENDS =		devel/boost \
+			devel/gettext,-tools \
+			misc/shared-mime-info
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/p5-Finance-Quote \
-		misc/shared-mime-info \
-		security/p5-Crypt-SSLeay \
-		x11/gtk+3,-guic \
-		x11/kde-applications/kcalc \
-		${MODKDE4_DEP_DIR}/kgpg
+RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/p5-Finance-Quote \
+			misc/shared-mime-info \
+			security/p5-Crypt-SSLeay \
+			textproc/p5-XML-Parser \
+			textproc/p5-XML-Writer \
+			www/p5-libwww \
+			x11/gtk+3,-guic
 
-LIB_DEPENDS =	devel/gwenhywfar>=4.13.1p3 \
-		devel/libofx>=0.9.4 \
-		productivity/aqbanking>=5.5.1p1 \
-		productivity/libalkimia,${MODKDE4_FLAVOR}>=5
+LIB_DEPENDS =		devel/gwenhywfar \
+			devel/kf5/kactivities \
+			devel/kf5/karchive \
+			devel/kf5/kauth \
+			devel/kf5/kbookmarks \
+			devel/kf5/kcmutils \
+			devel/kf5/kcodecs \
+			devel/kf5/kcompletion \
+			devel/kf5/kconfig \
+			devel/kf5/kcontacts \
+			devel/kf5/kcontacts \
+			devel/kf5/kcoreaddons \
+			devel/kf5/kdewebkit \
+			devel/kf5/kholidays \
+			devel/kf5/kholidays \
+			devel/kf5/kio \
+			devel/kf5/kitemmodels \
+			devel/kf5/kitemviews \
+			devel/kf5/kjobwidgets \
+			devel/kf5/knotifications \
+			devel/kf5/kservice \
+			devel/kf5/ktextwidgets \
+			devel/kf5/kwallet \
+			devel/kf5/kwidgetsaddons  \
+			devel/kf5/kxmlgui \
+			devel/kf5/solid \
+			devel/kf5/sonnet \
+			devel/libofx \
+			graphics/kdiagram \
+			productivity/aqbanking \
+			productivity/libalkimia \
+			security/gpgme,,-qt \
+			security/libassuan \
+			security/libgpg-error \
+			textproc/libical \
+			x11/kde-applications/akonadi \
+			x11/kde-applications/kidentitymanagement \
+			x11/kde-applications/kpimtextedit \
+			x11/kde-applications/kqtquickcharts \
+			x11/qt5/qtdeclarative \
+			x11/qt5/qtwebengine
 
-CONFIGURE_ARGS =	-DENABLE_KBANKING:Bool=Yes \
-			-DUSE_HTML_HANDBOOK:Bool=Yes \
-			-DUSE_DEVELOPER_DOC:Bool=Yes \
-			-DUSE_QT_DESIGNER:Bool=No \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
+CONFIGURE_ARGS =	-DUSE_QT_DESIGNER=OFF \
+			-DENABLE_WEBENGINE=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 TEST_IS_INTERACTIVE =	X11
-
-post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/apps/kmm_weboob/weboob.py
 
 .include <bsd.port.mk>
