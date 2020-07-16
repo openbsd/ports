@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.2 2020/07/11 17:08:00 bcallah Exp $
+$OpenBSD: patch-configure,v 1.3 2020/07/16 03:01:12 bcallah Exp $
 
 No -march=native, please.
 Causes the AVX check to fail, but we disable that with --disable-avx
@@ -6,7 +6,7 @@ Causes the AVX check to fail, but we disable that with --disable-avx
 Index: configure
 --- configure.orig
 +++ configure
-@@ -7653,7 +7653,7 @@ $as_echo "no" >&6; }
+@@ -7789,7 +7789,7 @@ $as_echo "no" >&6; }
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether ${CXX} supports AVX intrinsics" >&5
  $as_echo_n "checking whether ${CXX} supports AVX intrinsics... " >&6; }
    save_CXXFLAGS=$CXXFLAGS
@@ -15,7 +15,7 @@ Index: configure
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <immintrin.h>
-@@ -7720,7 +7720,7 @@ $as_echo "no" >&6; }
+@@ -7856,7 +7856,7 @@ $as_echo "no" >&6; }
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether ${CXX} supports SSE2 intrinsics" >&5
  $as_echo_n "checking whether ${CXX} supports SSE2 intrinsics... " >&6; }
    save_CXXFLAGS=$CXXFLAGS
@@ -24,7 +24,7 @@ Index: configure
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <emmintrin.h>
-@@ -7767,7 +7767,7 @@ $as_echo "no" >&6; }
+@@ -7903,7 +7903,7 @@ $as_echo "no" >&6; }
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether ${CXX} supports ARM NEON/AArch64 intrinsics" >&5
  $as_echo_n "checking whether ${CXX} supports ARM NEON/AArch64 intrinsics... " >&6; }
    save_CXXFLAGS=$CXXFLAGS
@@ -33,7 +33,7 @@ Index: configure
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <arm_neon.h>
-@@ -7804,9 +7804,9 @@ else
+@@ -7940,9 +7940,9 @@ else
  fi
  rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
      if test "x$mneon_ok" = "xyes"; then
@@ -45,7 +45,7 @@ Index: configure
        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <arm_neon.h>
-@@ -7825,7 +7825,7 @@ else
+@@ -7961,7 +7961,7 @@ else
  fi
  rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
        if test "x$mneon_ok" = "xyes"; then

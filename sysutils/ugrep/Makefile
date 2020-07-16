@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/11 17:08:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/16 03:01:12 bcallah Exp $
 
 COMMENT =	ultra fast universal grep
 CATEGORIES =	sysutils
 
 GH_ACCOUNT =	Genivia
 GH_PROJECT =	ugrep
-GH_TAGNAME =	v2.4.0
+GH_TAGNAME =	v2.4.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} bz2 c lzma m pcre2-8 z
+WANTLIB += ${COMPILER_LIBCXX} bz2 c lz4 lzma m pcre2-8 z
 
 # C++11
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS =	archivers/xz \
+LIB_DEPENDS =	archivers/lz4 \
+		archivers/xz \
 		devel/pcre2
 
 CONFIGURE_STYLE =	gnu
