@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.12 2020/07/07 23:03:10 daniel Exp $
+$OpenBSD: patch-configure,v 1.13 2020/07/16 23:43:32 daniel Exp $
 
 1) Fixup path locations for OpenBSD
 2) Add configuration support for macppc and aarch64 on OpenBSD
@@ -55,7 +55,25 @@ Index: configure
          ;;
      *)
          echo "Error: invalid eabi/system '$target' for architecture PowerPC." 1>&2
-@@ -448,6 +457,17 @@ if test "$arch" = "aarch64"; then
+@@ -271,6 +280,17 @@ if test "$arch" = "powerpc"; then
+         system="diab"
+         responsefile="diab"
+         ;;
++    bsd)
++        casm="${toolprefix}egcc"
++        casm_options="-c"
++        casmruntime="${toolprefix}egcc -c -Wa,-mregnames"
++        cc="${toolprefix}egcc"
++        clinker="${toolprefix}egcc"
++        cprepro="${toolprefix}egcc"
++        cprepro_options="-std=c99 -U__GNUC__ -E"
++        libmath="-lm"
++        system="bsd"
++        ;;
+     *)
+         casm="${toolprefix}egcc"
+         casm_options="-c"
+@@ -448,6 +468,17 @@ if test "$arch" = "aarch64"; then
          cprepro_options="-std=c99 -U__GNUC__ -E"
          libmath="-lm"
          system="linux";;
@@ -73,7 +91,7 @@ Index: configure
      *)
          echo "Error: invalid eabi/system '$target' for architecture AArch64." 1>&2
          echo "$usage" 1>&2
-@@ -680,14 +700,14 @@ esac
+@@ -679,14 +710,14 @@ esac
  #
  # Generate Makefile.config
  #
@@ -90,7 +108,7 @@ Index: configure
  SHAREDIR=$sharedir
  COQDEVDIR=$coqdevdir
  OCAML_NATIVE_COMP=$ocaml_native_comp
-@@ -833,6 +853,7 @@ else
+@@ -832,6 +863,7 @@ else
  
  bindirexp=`echo "$bindir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
  libdirexp=`echo "$libdir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
@@ -98,7 +116,7 @@ Index: configure
  coqdevdirexp=`echo "$coqdevdir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
  
  cat <<EOF
-@@ -857,6 +878,7 @@ CompCert configuration:
+@@ -857,6 +889,7 @@ CompCert configuration:
      Library files installed in.... $libdirexp
      Standard headers provided..... $has_standard_headers
      Standard headers installed in. $libdirexp/include
