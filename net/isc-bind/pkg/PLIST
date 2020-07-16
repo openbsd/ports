@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/06/17 20:46:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/07/16 10:07:54 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -335,7 +335,6 @@ lib/python${MODPY_VERSION}/site-packages/isc/utils.py
 @man man/man1/arpaname.1
 @man man/man1/delv.1
 @man man/man1/dig.1
-@man man/man1/dnstap-read.1
 @man man/man1/edig.1
 @man man/man1/ehost.1
 @man man/man1/enslookup.1
@@ -362,12 +361,13 @@ lib/python${MODPY_VERSION}/site-packages/isc/utils.py
 @man man/man8/filter-aaaa.8
 @man man/man8/named-checkconf.8
 @man man/man8/named-checkzone.8
+@man man/man8/named-compilezone.8
 @man man/man8/named-journalprint.8
-@man man/man8/named-nzd2nzf.8
 @man man/man8/named.8
 @man man/man8/nsec3hash.8
 @man man/man8/rndc-confgen.8
 @man man/man8/rndc.8
+@man man/man8/tsig-keygen.8
 @bin sbin/ddns-confgen
 @bin sbin/dnssec-cds
 sbin/dnssec-checkds
