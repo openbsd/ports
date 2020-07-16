@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2020/05/05 13:35:58 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2020/07/16 15:46:49 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	11.0.7
+BASE_VER=	11.0.8
 PATCH_VER=	10
-BSD_PORT_REL=	2
+BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
-REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -161,11 +160,9 @@ post-build:
 		    sh -c 'mv {} `echo {} | sed s/.debuginfo/.so/`' \; && \
 		mv jspawnhelper.so jspawnhelper && \
 		cp libjsig.so server/
-	cd ${BUILDDIR}/jdk/bin && \
+	cd ${IMAGEDIR}/bin && \
 		find . -name \*.debuginfo -exec \
-		    sh -c 'cp {} ${IMAGEDIR}/bin/`echo {} | sed s/.debuginfo//`' \;
-	cp ${BUILDDIR}/support/native/java.base/java_objs/java.debuginfo \
-		${IMAGEDIR}/bin/java
+		    sh -c 'mv {} `echo {} | sed s/.debuginfo//`' \;
 .endif
 
 do-install:
