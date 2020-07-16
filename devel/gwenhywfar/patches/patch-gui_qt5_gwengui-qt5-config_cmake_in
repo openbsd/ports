@@ -1,0 +1,14 @@
+$OpenBSD: patch-gui_qt5_gwengui-qt5-config_cmake_in,v 1.1 2020/07/16 05:01:16 rsadowski Exp $
+
+Index: gui/qt5/gwengui-qt5-config.cmake.in
+--- gui/qt5/gwengui-qt5-config.cmake.in.orig
++++ gui/qt5/gwengui-qt5-config.cmake.in
+@@ -31,7 +31,7 @@ set_and_check(${CMAKE_FIND_PACKAGE_NAME}_INCLUDE_DIRS 
+ if(WIN32)
+     set_and_check(${CMAKE_FIND_PACKAGE_NAME}_LIBRARIES "@libdir@/libgwengui-qt5.dll.a")
+ else()
+-    set_and_check(${CMAKE_FIND_PACKAGE_NAME}_LIBRARIES "@libdir@/libgwengui-qt5.so")
++    set_and_check(${CMAKE_FIND_PACKAGE_NAME}_LIBRARIES "@libdir@/libgwengui-qt5.so.${LIBgwengui-qt5_VERSION}")
+ endif()
+ 
+ set(${CMAKE_FIND_PACKAGE_NAME}_FOUND true)

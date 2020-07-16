@@ -1,13 +1,14 @@
-$OpenBSD: patch-gwenhywfar-config_cmake_in,v 1.1 2017/01/12 16:36:12 zhuk Exp $
+$OpenBSD: patch-gwenhywfar-config_cmake_in,v 1.2 2020/07/16 05:01:16 rsadowski Exp $
 Unbreak CMake config file.
---- gwenhywfar-config.cmake.in.orig	Wed Jan 11 00:39:48 2017
-+++ gwenhywfar-config.cmake.in	Wed Jan 11 00:40:29 2017
-@@ -23,7 +23,7 @@ set_and_check(prefix "@prefix@")
- set_and_check(exec_prefix "@exec_prefix@")
- set_and_check(includedir "@includedir@")
- set_and_check(GWENHYWFAR_INCLUDE_DIRS "@gwenhywfar_headerdir@")
--set_and_check(GWENHYWFAR_LIBRARIES "@libdir@/libgwenhywfar.so.@GWENHYWFAR_SO_EFFECTIVE@")
-+set_and_check(GWENHYWFAR_LIBRARIES "@libdir@/libgwenhywfar.so.${LIBgwenhywfar_VERSION}")
+Index: gwenhywfar-config.cmake.in
+--- gwenhywfar-config.cmake.in.orig
++++ gwenhywfar-config.cmake.in
+@@ -26,7 +26,7 @@ set_and_check(GWENHYWFAR_INCLUDE_DIRS "@gwenhywfar_hea
+ if(WIN32)
+     set_and_check(GWENHYWFAR_LIBRARIES "@libdir@/libgwenhywfar.dll.a")
+ else()
+-    set_and_check(GWENHYWFAR_LIBRARIES "@libdir@/libgwenhywfar.so.@GWENHYWFAR_SO_EFFECTIVE@")
++    set_and_check(GWENHYWFAR_LIBRARIES "@libdir@/libgwenhywfar.so.${LIBgwenhywfar_VERSION}")
+ endif()
  
- # find components
- 
+ set(GWENHYWFAR_FOUND TRUE)
