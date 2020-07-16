@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_ide,v 1.2 2019/09/06 22:10:18 chrisz Exp $
+$OpenBSD: patch-Makefile_ide,v 1.3 2020/07/16 02:50:08 daniel Exp $
 
 Index: Makefile.ide
 --- Makefile.ide.orig
 +++ Makefile.ide
-@@ -190,7 +190,7 @@ endif
+@@ -187,7 +187,7 @@ endif
  ifeq ($(HASCOQIDE),no)
  install-coqide-byte: install-ide-toploop-byte
  else
