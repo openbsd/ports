@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/07/13 20:09:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2020/07/16 04:36:04 rsadowski Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -21,6 +21,9 @@ MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 NO_TEST=	Yes
+
+BUILD_DEPENDS=	math/py-numpy${MODPY_FLAVOR} \
+		x11/py-qt5${MODPY_FLAVOR}
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		graphics/py-opengl${MODPY_FLAVOR} \
