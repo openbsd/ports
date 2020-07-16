@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/07/01 12:10:21 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/07/16 13:27:43 pvk Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/var/gitea:/bin/sh
 @rcscript ${RCDIR}/gitea
@@ -885,6 +885,7 @@ share/gitea/public/js/
 share/gitea/public/js/clipboard.js
 share/gitea/public/js/datetimepicker.js
 share/gitea/public/js/dropzone.js
+share/gitea/public/js/eventsource.sharedworker.js
 share/gitea/public/js/gitgraph.js
 share/gitea/public/js/highlight.js
 share/gitea/public/js/index.js
