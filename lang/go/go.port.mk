@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.33 2020/06/25 13:57:45 abieber Exp $
+# $OpenBSD: go.port.mk,v 1.34 2020/07/17 18:19:17 abieber Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -60,6 +60,7 @@ MODGO_TEST_CMD +=	-ldflags="${MODGO_LDFLAGS}"
 EXTRACT_SUFX ?=		.zip
 PKGNAME ?=		${DISTNAME:S/-v/-/}
 ALL_TARGET ?=		${MODGO_MODNAME}
+MODGO_FLAGS +=		-modcacherw
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{${MODGO_VERSION}${EXTRACT_SUFX}}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME}/@v/
@@ -72,8 +73,6 @@ DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/$
 .  endfor
 MAKE_ENV +=		GOPROXY=file://${DISTDIR}/${MODGO_DIST_SUBDIR}
 MAKE_ENV +=		GO111MODULE=on GOPATH="${MODGO_GOPATH}"
-# Workaround for https://github.com/golang/go/issues/27455
-FIX_CLEANUP_PERMISSIONS =	Yes
 .else
 # ports are not allowed to fetch from the network at build time; point
 # GOPROXY at an unreachable host so that failures are also visible to
