@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/01/28 19:25:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/07/17 17:47:30 jasper Exp $
+@pkgpath security/py-M2Crypto
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -73,7 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}m2xmlrpclib.${
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}threading.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/_m2crypto.so
+@so lib/python${MODPY_VERSION}/site-packages/M2Crypto/_m2crypto.so
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/callback.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/ftpslib.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/httpslib.py
