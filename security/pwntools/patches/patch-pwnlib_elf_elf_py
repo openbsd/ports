@@ -1,11 +1,11 @@
-$OpenBSD: patch-pwnlib_elf_elf_py,v 1.3 2020/06/13 09:24:29 jasper Exp $
+$OpenBSD: patch-pwnlib_elf_elf_py,v 1.4 2020/07/17 18:08:56 jasper Exp $
 
 - Add support for checking for retguard
 
 Index: pwnlib/elf/elf.py
 --- pwnlib/elf/elf.py.orig
 +++ pwnlib/elf/elf.py
-@@ -1671,6 +1671,15 @@ class ELF(ELFFile):
+@@ -1727,6 +1727,15 @@ class ELF(ELFFile):
      aslr=pie
  
      @property
@@ -21,7 +21,7 @@ Index: pwnlib/elf/elf.py
      def rpath(self):
          """:class:`bool`: Whether the current binary has an ``RPATH``."""
          dt_rpath = self.dynamic_by_tag('DT_RPATH')
-@@ -1729,6 +1738,10 @@ class ELF(ELFFile):
+@@ -1785,6 +1794,10 @@ class ELF(ELFFile):
                  True: green("PIE enabled"),
                  False: red("No PIE (%#x)" % self.address)
              }[self.pie],
