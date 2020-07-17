@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2020/04/19 12:43:42 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2020/07/17 08:36:04 tb Exp $
 
 COMMENT =	interactive process viewer
 
 V =		2.2.0
 DISTNAME =	htop-${V}
-REVISION =	14
+REVISION =	15
 
 CATEGORIES =	sysutils
 

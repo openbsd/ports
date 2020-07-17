@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/14 21:08:01 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/17 08:36:05 tb Exp $
 
 COMMENT=	utility to dim the screen and keyboard backlight when idle
 
@@ -6,7 +6,7 @@ VERSION =	1.6
 GH_ACCOUNT =	jcs
 GH_PROJECT =	xdimmer
 GH_TAGNAME =	v${VERSION}
-REVISION = 	0
+REVISION = 	1
 
 CATEGORIES=	x11
 
