@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2020/07/14 19:45:40 bket Exp $
+# $OpenBSD: Makefile,v 1.72 2020/07/17 15:19:26 bket Exp $
 
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.49.0
+V=		3.49.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 
