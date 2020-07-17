@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2020/05/02 08:04:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2020/07/17 07:44:03 ajacoutot Exp $
 @newgroup _smmsp:745
 @newuser _smmsp:745:_smmsp::Sendmail Message Submission Program:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/sendmail
@@ -177,6 +177,7 @@ share/sendmail/feature/bestmx_is_local.m4
 share/sendmail/feature/bitdomain.m4
 share/sendmail/feature/blacklist_recipients.m4
 share/sendmail/feature/block_bad_helo.m4
+share/sendmail/feature/blocklist_recipients.m4
 share/sendmail/feature/check_cert_altnames.m4
 share/sendmail/feature/compat_check.m4
 share/sendmail/feature/conncontrol.m4
