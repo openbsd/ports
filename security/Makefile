@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.582 2020/07/03 13:58:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.583 2020/07/17 17:48:11 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -271,7 +271,6 @@
      SUBDIR += pwntools
      SUBDIR += pwsafe
      SUBDIR += pwsafe,no_x11
-     SUBDIR += py-M2Crypto
      SUBDIR += py-M2Crypto,python3
      SUBDIR += py-PyNaCl
      SUBDIR += py-PyNaCl,python3

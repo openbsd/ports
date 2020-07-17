@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1012 2020/07/15 19:10:22 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1013 2020/07/17 17:48:12 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -445,6 +445,7 @@ my $stem_extensions = {
 	'py-astroid' => 'py3-astroid',
 	'pylint' => 'pylint3',
 	'pylint-gui' => 'pylint3-gui',
+	'py-M2Crypto' => 'py3-M2Crypto',
 };
 
 my $obsolete_reason = {
