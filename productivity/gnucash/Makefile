@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.121 2020/07/04 13:28:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2020/07/17 19:03:41 ajacoutot Exp $
+
+BROKEN =		doesn't build with new devel/gwenhywfar
 
 COMMENT =		personal and small-business financial-accounting software
 
