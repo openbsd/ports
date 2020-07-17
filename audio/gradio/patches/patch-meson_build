@@ -1,0 +1,13 @@
+$OpenBSD: patch-meson_build,v 1.1 2020/07/17 18:55:31 ajacoutot Exp $
+
+ERROR: Compiling Vala requires C. Add C to your project languages and rerun Meson.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -1,4 +1,4 @@
+-project('gradio', ['vala', 'C'], version : '7.3')
++project('gradio', ['vala', 'c'], version : '7.3')
+ 
+ i18n = import('i18n')
+ 
