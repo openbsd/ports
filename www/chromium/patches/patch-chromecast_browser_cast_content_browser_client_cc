@@ -1,9 +1,9 @@
-$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.32 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.33 2020/07/17 20:23:08 robert Exp $
 
 Index: chromecast/browser/cast_content_browser_client.cc
 --- chromecast/browser/cast_content_browser_client.cc.orig
 +++ chromecast/browser/cast_content_browser_client.cc
-@@ -88,7 +88,7 @@
+@@ -89,7 +89,7 @@
  #include "ui/display/screen.h"
  #include "ui/gl/gl_switches.h"
  
@@ -12,7 +12,7 @@ Index: chromecast/browser/cast_content_browser_client.cc
  #include "components/crash/content/browser/crash_handler_host_linux.h"
  #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
  
-@@ -125,7 +125,7 @@
+@@ -126,7 +126,7 @@
  #include "chromecast/external_mojo/broker_service/broker_service.h"
  #endif
  
@@ -21,7 +21,7 @@ Index: chromecast/browser/cast_content_browser_client.cc
  #include "chromecast/browser/webview/webview_controller.h"
  #endif  // defined(OS_LINUX) && defined(USE_OZONE)
  
-@@ -450,7 +450,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+@@ -457,7 +457,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
                                            switches::kAudioOutputChannels));
      }
    } else if (process_type == switches::kGpuProcess) {
@@ -30,7 +30,7 @@ Index: chromecast/browser/cast_content_browser_client.cc
      // Necessary for accelerated 2d canvas.  By default on Linux, Chromium
      // assumes GLES2 contexts can be lost to a power-save mode, which breaks GPU
      // canvas apps.
-@@ -820,7 +820,7 @@ CastContentBrowserClient::CreateThrottlesForNavigation
+@@ -827,7 +827,7 @@ CastContentBrowserClient::CreateThrottlesForNavigation
              handle, general_audience_browsing_service_.get()));
    }
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.59 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.60 2020/07/17 20:23:08 robert Exp $
 
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
-@@ -346,7 +346,7 @@ extern const char kHistoryMenuPromoShown[];
+@@ -345,7 +345,7 @@ extern const char kHistoryMenuPromoShown[];
  extern const char kForceGoogleSafeSearch[];
  extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
@@ -12,7 +12,7 @@ Index: chrome/common/pref_names.h
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -377,7 +377,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+@@ -376,7 +376,7 @@ extern const char kDefaultBrowserSettingEnabled[];
  #if defined(OS_MACOSX)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -21,16 +21,16 @@ Index: chrome/common/pref_names.h
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -545,7 +545,7 @@ extern const char kAppWindowPlacement[];
- extern const char kDownloadDefaultDirectory[];
- extern const char kDownloadExtensionsToOpen[];
+@@ -550,7 +550,7 @@ extern const char kDownloadExtensionsToOpen[];
+ extern const char kDownloadExtensionsToOpenByPolicy[];
+ extern const char kDownloadAllowedURLsForOpenByPolicy[];
  extern const char kDownloadDirUpgraded[];
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -758,7 +758,7 @@ extern const char kAllowCrossOriginAuthPrompt[];
+@@ -764,7 +764,7 @@ extern const char kAllowCrossOriginAuthPrompt[];
  extern const char kGloballyScopeHTTPAuthCacheEnabled[];
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  
@@ -39,7 +39,7 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
  
-@@ -991,7 +991,7 @@ extern const char kAutoplayWhitelist[];
+@@ -999,7 +999,7 @@ extern const char kAutoplayWhitelist[];
  extern const char kBlockAutoplayEnabled[];
  #endif
  

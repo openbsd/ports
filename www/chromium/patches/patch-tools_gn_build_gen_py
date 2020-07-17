@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_gn_build_gen_py,v 1.9 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-tools_gn_build_gen_py,v 1.10 2020/07/17 20:23:08 robert Exp $
 
 Index: tools/gn/build/gen.py
 --- tools/gn/build/gen.py.orig
 +++ tools/gn/build/gen.py
-@@ -183,7 +183,7 @@ def WriteGenericNinja(path, static_libraries, executab
+@@ -201,7 +201,7 @@ def WriteGenericNinja(path, static_libraries, executab
        'linux': 'build_linux.ninja.template',
        'freebsd': 'build_linux.ninja.template',
        'aix': 'build_aix.ninja.template',

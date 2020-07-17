@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_gl_representation_cc,v 1.5 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_gl_representation_cc,v 1.6 2020/07/17 20:23:08 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_gl_representation.cc
 --- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig
 +++ gpu/command_buffer/service/external_vk_image_gl_representation.cc
-@@ -188,7 +188,7 @@ GLuint ExternalVkImageGLRepresentationShared::ImportVk
+@@ -178,7 +178,7 @@ GLuint ExternalVkImageGLRepresentationShared::ImportVk
      SemaphoreHandle handle) {
    if (!handle.is_valid())
      return 0;

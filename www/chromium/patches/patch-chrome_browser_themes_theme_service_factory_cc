@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_themes_theme_service_factory_cc,v 1.5 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_browser_themes_theme_service_factory_cc,v 1.6 2020/07/17 20:23:07 robert Exp $
 
 Index: chrome/browser/themes/theme_service_factory.cc
 --- chrome/browser/themes/theme_service_factory.cc.orig
 +++ chrome/browser/themes/theme_service_factory.cc
-@@ -23,7 +23,7 @@
+@@ -22,7 +22,7 @@
  #include "chrome/browser/themes/theme_helper_win.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/themes/theme_service_factory.cc
  #include "chrome/browser/themes/theme_service_aura_linux.h"
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
-@@ -78,7 +78,7 @@ ThemeServiceFactory::~ThemeServiceFactory() {}
+@@ -77,7 +77,7 @@ ThemeServiceFactory::~ThemeServiceFactory() {}
  
  KeyedService* ThemeServiceFactory::BuildServiceInstanceFor(
      content::BrowserContext* profile) const {
@@ -21,7 +21,7 @@ Index: chrome/browser/themes/theme_service_factory.cc
    using ThemeService = ThemeServiceAuraLinux;
  #endif
  
-@@ -90,7 +90,7 @@ KeyedService* ThemeServiceFactory::BuildServiceInstanc
+@@ -89,7 +89,7 @@ KeyedService* ThemeServiceFactory::BuildServiceInstanc
  
  void ThemeServiceFactory::RegisterProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {

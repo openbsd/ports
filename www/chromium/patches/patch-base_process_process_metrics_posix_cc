@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_posix_cc,v 1.6 2019/11/05 22:30:26 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_posix_cc,v 1.7 2020/07/17 20:23:07 robert Exp $
 
 Index: base/process/process_metrics_posix.cc
 --- base/process/process_metrics_posix.cc.orig
@@ -12,7 +12,7 @@ Index: base/process/process_metrics_posix.cc
  #else
  #include <malloc.h>
  #endif
-@@ -117,7 +119,7 @@ size_t ProcessMetrics::GetMallocUsage() {
+@@ -126,7 +128,7 @@ size_t ProcessMetrics::GetMallocUsage() {
  #else
    return minfo.hblkhd + minfo.arena;
  #endif

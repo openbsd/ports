@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_allocator_allocator_gni,v 1.2 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-base_allocator_allocator_gni,v 1.3 2020/07/17 20:23:07 robert Exp $
 
 Index: base/allocator/allocator.gni
 --- base/allocator/allocator.gni.orig
@@ -14,7 +14,7 @@ Index: base/allocator/allocator.gni
    _default_allocator = "tcmalloc"
 @@ -19,7 +19,7 @@ if (is_android || is_mac || is_ios || is_asan || is_ls
  # against the debug CRT with "is_nacl=false".
- if ((is_linux || is_android || is_mac ||
+ if ((is_linux || is_android || is_mac || is_ios ||
       (is_win && !is_component_build && !is_debug)) && !is_asan && !is_hwasan &&
 -    !is_lsan && !is_tsan && !is_msan) {
 +    !is_lsan && !is_tsan && !is_msan && !is_openbsd) {

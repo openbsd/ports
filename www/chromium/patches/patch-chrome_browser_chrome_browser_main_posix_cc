@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.14 2019/04/27 12:12:05 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.15 2020/07/17 20:23:07 robert Exp $
 
 Index: chrome/browser/chrome_browser_main_posix.cc
 --- chrome/browser/chrome_browser_main_posix.cc.orig
 +++ chrome/browser/chrome_browser_main_posix.cc
-@@ -70,7 +70,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
+@@ -71,7 +71,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
      // ExitHandler takes care of deleting itself.
      new ExitHandler();
    } else {

@@ -1,13 +1,13 @@
-$OpenBSD: patch-content_common_user_agent_cc,v 1.11 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-content_common_user_agent_cc,v 1.12 2020/07/17 20:23:08 robert Exp $
 
 Append Linux x86_64 to the user agent because we have to lie ...
 
 Index: content/common/user_agent.cc
 --- content/common/user_agent.cc.orig
 +++ content/common/user_agent.cc
-@@ -160,6 +160,16 @@ std::string BuildOSCpuInfo(bool include_android_build_
- #endif
+@@ -198,6 +198,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
    );
+ #endif
  
 +#if defined(OS_OPENBSD)
 +#if defined(__x86_64__)

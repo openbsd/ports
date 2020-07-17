@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_graphics_begin_frame_provider_cc,v 1.2 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_graphics_begin_frame_provider_cc,v 1.3 2020/07/17 20:23:08 robert Exp $
 
 Index: third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
 --- third_party/blink/renderer/platform/graphics/begin_frame_provider.cc.orig
 +++ third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
-@@ -61,7 +61,11 @@ void BeginFrameProvider::CreateCompositorFrameSinkIfNe
+@@ -65,7 +65,11 @@ void BeginFrameProvider::CreateCompositorFrameSinkIfNe
  
    // Once we are using RAF, this thread is driving Display updates. Update
    // priority accordingly.

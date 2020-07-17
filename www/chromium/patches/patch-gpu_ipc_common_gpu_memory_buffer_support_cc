@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.14 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.15 2020/07/17 20:23:08 robert Exp $
 
 Index: gpu/ipc/common/gpu_memory_buffer_support.cc
 --- gpu/ipc/common/gpu_memory_buffer_support.cc.orig
 +++ gpu/ipc/common/gpu_memory_buffer_support.cc
-@@ -14,7 +14,7 @@
+@@ -15,7 +15,7 @@
  #include "gpu/ipc/common/gpu_memory_buffer_impl_io_surface.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
  #include "ui/gfx/client_native_pixmap_factory.h"
  #include "ui/gfx/linux/client_native_pixmap_factory_dmabuf.h"
  #endif
-@@ -24,7 +24,7 @@
+@@ -25,7 +25,7 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
@@ -21,7 +21,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
  #include "gpu/ipc/common/gpu_memory_buffer_impl_native_pixmap.h"
  #endif
  
-@@ -42,7 +42,7 @@ namespace gpu {
+@@ -43,7 +43,7 @@ namespace gpu {
  GpuMemoryBufferSupport::GpuMemoryBufferSupport() {
  #if defined(USE_OZONE)
    client_native_pixmap_factory_ = ui::CreateClientNativePixmapFactoryOzone();
@@ -30,7 +30,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
    client_native_pixmap_factory_.reset(
        gfx::CreateClientNativePixmapFactoryDmabuf());
  #endif
-@@ -56,7 +56,7 @@ GpuMemoryBufferSupport::GetNativeGpuMemoryBufferType()
+@@ -57,7 +57,7 @@ GpuMemoryBufferSupport::GetNativeGpuMemoryBufferType()
    return gfx::IO_SURFACE_BUFFER;
  #elif defined(OS_ANDROID)
    return gfx::ANDROID_HARDWARE_BUFFER;
@@ -39,7 +39,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
    return gfx::NATIVE_PIXMAP;
  #elif defined(OS_WIN)
    return gfx::DXGI_SHARED_HANDLE;
-@@ -181,7 +181,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
+@@ -182,7 +182,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
        return GpuMemoryBufferImplIOSurface::CreateFromHandle(
            std::move(handle), size, format, usage, std::move(callback));
  #endif

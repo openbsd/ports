@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_mojo_mojom_video_frame_mojom_traits_cc,v 1.4 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-media_mojo_mojom_video_frame_mojom_traits_cc,v 1.5 2020/07/17 20:23:08 robert Exp $
 
 Index: media/mojo/mojom/video_frame_mojom_traits.cc
 --- media/mojo/mojom/video_frame_mojom_traits.cc.orig
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
-@@ -20,7 +20,7 @@
+@@ -21,7 +21,7 @@
  #include "ui/gfx/mojom/buffer_types_mojom_traits.h"
  #include "ui/gfx/mojom/color_space_mojom_traits.h"
  
@@ -12,7 +12,7 @@ Index: media/mojo/mojom/video_frame_mojom_traits.cc
  #include "base/posix/eintr_wrapper.h"
  #endif  // defined(OS_LINUX)
  
-@@ -62,7 +62,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
+@@ -63,7 +63,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
              std::move(offsets)));
    }
  
@@ -21,7 +21,7 @@ Index: media/mojo/mojom/video_frame_mojom_traits.cc
    if (input->storage_type() == media::VideoFrame::STORAGE_DMABUFS) {
      std::vector<mojo::PlatformHandle> dmabuf_fds;
  
-@@ -165,7 +165,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -166,7 +166,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
          shared_buffer_data.TakeFrameData(),
          shared_buffer_data.frame_data_size(), std::move(offsets),
          std::move(strides), timestamp);

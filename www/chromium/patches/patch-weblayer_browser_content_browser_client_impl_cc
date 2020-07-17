@@ -1,9 +1,9 @@
-$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.5 2020/05/29 20:03:25 robert Exp $
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.6 2020/07/17 20:23:09 robert Exp $
 
 Index: weblayer/browser/content_browser_client_impl.cc
 --- weblayer/browser/content_browser_client_impl.cc.orig
 +++ weblayer/browser/content_browser_client_impl.cc
-@@ -87,7 +87,7 @@
+@@ -102,7 +102,7 @@
  #include "weblayer/browser/safe_browsing/safe_browsing_service.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -321,7 +321,7 @@ ContentBrowserClientImpl::CreateNetworkContext(
+@@ -339,7 +339,7 @@ void ContentBrowserClientImpl::ConfigureNetworkContext
  
  void ContentBrowserClientImpl::OnNetworkServiceCreated(
      network::mojom::NetworkService* network_service) {
@@ -21,7 +21,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -537,7 +537,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -608,7 +608,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  }
  #endif
  

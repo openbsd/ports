@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_test_test_file_util_linux_cc,v 1.5 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-base_test_test_file_util_linux_cc,v 1.6 2020/07/17 20:23:07 robert Exp $
 
 Index: base/test/test_file_util_linux.cc
 --- base/test/test_file_util_linux.cc.orig
 +++ base/test/test_file_util_linux.cc
-@@ -51,8 +51,10 @@ bool EvictFileFromSystemCache(const FilePath& file) {
+@@ -52,8 +52,10 @@ bool EvictFileFromSystemCache(const FilePath& file) {
      return false;
    if (fdatasync(fd.get()) != 0)
      return false;

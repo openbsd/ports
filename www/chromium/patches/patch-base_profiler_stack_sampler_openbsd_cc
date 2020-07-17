@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_profiler_stack_sampler_openbsd_cc,v 1.2 2020/05/29 20:03:22 robert Exp $
+$OpenBSD: patch-base_profiler_stack_sampler_openbsd_cc,v 1.3 2020/07/17 20:23:07 robert Exp $
 
 Index: base/profiler/stack_sampler_openbsd.cc
 --- base/profiler/stack_sampler_openbsd.cc.orig
@@ -12,13 +12,13 @@ Index: base/profiler/stack_sampler_openbsd.cc
 +
 +namespace base {
 +
-+std::unique_ptr<StackSampler> StackSampler::Create(
-+    SamplingProfilerThreadToken thread_token,
-+    ModuleCache* module_cache,
-+    StackSamplerTestDelegate* test_delegate,
-+    std::unique_ptr<Unwinder> native_unwinder) {
-+  return nullptr;
-+}
++std::unique_ptr<StackSampler> StackSampler::Create(                            
++    SamplingProfilerThreadToken thread_token,                                  
++    ModuleCache* module_cache,                                                 
++    std::unique_ptr<Unwinder> native_unwinder,                                 
++    StackSamplerTestDelegate* test_delegate) {                                 
++  return nullptr;                                                              
++}                                                                              
 +
 +// static
 +size_t StackSampler::GetStackBufferSize() {

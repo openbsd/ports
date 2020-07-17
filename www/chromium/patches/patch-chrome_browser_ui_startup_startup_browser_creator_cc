@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.35 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.36 2020/07/17 20:23:07 robert Exp $
 Index: chrome/browser/ui/startup/startup_browser_creator.cc
 --- chrome/browser/ui/startup/startup_browser_creator.cc.orig
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -82,7 +82,7 @@
+@@ -85,7 +85,7 @@
  #include "chrome/browser/ui/user_manager.h"
  #endif
  
@@ -11,7 +11,7 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
  
-@@ -291,7 +291,7 @@ bool IsSilentLaunchEnabled(const base::CommandLine& co
+@@ -300,7 +300,7 @@ bool IsSilentLaunchEnabled(const base::CommandLine& co
  // true, send a warning if guest mode is requested but not allowed by policy.
  bool IsGuestModeEnforced(const base::CommandLine& command_line,
                           bool show_warning) {

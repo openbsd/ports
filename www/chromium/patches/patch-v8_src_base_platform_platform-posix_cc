@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.24 2020/05/29 20:03:25 robert Exp $
+$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.25 2020/07/17 20:23:09 robert Exp $
 
 Index: v8/src/base/platform/platform-posix.cc
 --- v8/src/base/platform/platform-posix.cc.orig
@@ -16,8 +16,8 @@ Index: v8/src/base/platform/platform-posix.cc
  // pthread_getattr_np used below is non portable (hence the _np suffix). We
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
--#if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX)
-+#if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(V8_OS_OPENBSD)
+-#if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(_AIX)
++#if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(_AIX) && !defined(V8_OS_OPENBSD)
  
  // static
  void* Stack::GetStackStart() {

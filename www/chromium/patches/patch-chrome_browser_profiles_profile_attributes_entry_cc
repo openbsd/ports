@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_profiles_profile_attributes_entry_cc,v 1.6 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_profile_attributes_entry_cc,v 1.7 2020/07/17 20:23:07 robert Exp $
 
 Index: chrome/browser/profiles/profile_attributes_entry.cc
 --- chrome/browser/profiles/profile_attributes_entry.cc.orig
 +++ chrome/browser/profiles/profile_attributes_entry.cc
-@@ -135,7 +135,7 @@ void ProfileAttributesEntry::Initialize(ProfileInfoCac
+@@ -136,7 +136,7 @@ void ProfileAttributesEntry::Initialize(ProfileInfoCac
    if (is_force_signin_enabled_) {
      if (!IsAuthenticated())
        is_force_signin_profile_locked_ = true;

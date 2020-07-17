@@ -1,14 +1,14 @@
-$OpenBSD: patch-content_browser_webui_shared_resources_data_source_cc,v 1.10 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-content_browser_webui_shared_resources_data_source_cc,v 1.11 2020/07/17 20:23:08 robert Exp $
 
 Index: content/browser/webui/shared_resources_data_source.cc
 --- content/browser/webui/shared_resources_data_source.cc.orig
 +++ content/browser/webui/shared_resources_data_source.cc
 @@ -131,7 +131,7 @@ const std::map<int, std::string> CreateMojoResourceIdT
-          "mojo/mojo/public/mojom/base/text_direction.mojom.html"},
          {IDR_MOJO_TEXT_DIRECTION_MOJOM_LITE_JS,
           "mojo/mojo/public/mojom/base/text_direction.mojom-lite.js"},
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
          {IDR_MOJO_TIME_MOJOM_HTML,
           "mojo/mojo/public/mojom/base/time.mojom.html"},
          {IDR_MOJO_TIME_MOJOM_LITE_JS,

@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_process_process_metrics_cc,v 1.4 2019/05/10 21:55:39 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_cc,v 1.5 2020/07/17 20:23:07 robert Exp $
 
 Index: base/process/process_metrics.cc
 --- base/process/process_metrics.cc.orig
 +++ base/process/process_metrics.cc
-@@ -57,7 +57,7 @@ SystemMetrics SystemMetrics::Sample() {
+@@ -58,7 +58,7 @@ SystemMetrics SystemMetrics::Sample() {
    SystemMetrics system_metrics;
  
    system_metrics.committed_memory_ = GetSystemCommitCharge();
@@ -12,7 +12,7 @@ Index: base/process/process_metrics.cc
    GetSystemMemoryInfo(&system_metrics.memory_info_);
    GetVmStatInfo(&system_metrics.vmstat_info_);
    GetSystemDiskInfo(&system_metrics.disk_info_);
-@@ -75,7 +75,7 @@ std::unique_ptr<Value> SystemMetrics::ToValue() const 
+@@ -76,7 +76,7 @@ std::unique_ptr<Value> SystemMetrics::ToValue() const 
    std::unique_ptr<DictionaryValue> res(new DictionaryValue());
  
    res->SetIntKey("committed_memory", static_cast<int>(committed_memory_));
@@ -21,7 +21,7 @@ Index: base/process/process_metrics.cc
    std::unique_ptr<DictionaryValue> meminfo = memory_info_.ToValue();
    std::unique_ptr<DictionaryValue> vmstat = vmstat_info_.ToValue();
    meminfo->MergeDictionary(vmstat.get());
-@@ -126,7 +126,7 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
+@@ -127,7 +127,7 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
  }
  #endif
  

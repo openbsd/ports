@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_BUILD_gn,v 1.22 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_BUILD_gn,v 1.23 2020/07/17 20:23:08 robert Exp $
 
 Index: third_party/webrtc/rtc_base/BUILD.gn
 --- third_party/webrtc/rtc_base/BUILD.gn.orig
 +++ third_party/webrtc/rtc_base/BUILD.gn
-@@ -932,7 +932,7 @@ rtc_library("rtc_base") {
+@@ -934,7 +934,7 @@ rtc_library("rtc_base") {
      deps += [ "system:cocoa_threading" ]
    }
  

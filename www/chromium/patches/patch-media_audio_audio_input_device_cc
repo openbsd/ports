@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_audio_audio_input_device_cc,v 1.2 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-media_audio_audio_input_device_cc,v 1.3 2020/07/17 20:23:08 robert Exp $
 
 Index: media/audio/audio_input_device.cc
 --- media/audio/audio_input_device.cc.orig
 +++ media/audio/audio_input_device.cc
-@@ -248,7 +248,7 @@ void AudioInputDevice::OnStreamCreated(
+@@ -247,7 +247,7 @@ void AudioInputDevice::OnStreamCreated(
  // also a risk of false positives if we are suspending when starting the stream
  // here. See comments in AliveChecker and PowerObserverHelper for details and
  // todos.

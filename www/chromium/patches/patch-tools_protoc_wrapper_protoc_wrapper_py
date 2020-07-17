@@ -1,14 +1,14 @@
-$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.4 2019/09/24 14:11:07 robert Exp $
+$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.5 2020/07/17 20:23:08 robert Exp $
 
 Index: tools/protoc_wrapper/protoc_wrapper.py
 --- tools/protoc_wrapper/protoc_wrapper.py.orig
 +++ tools/protoc_wrapper/protoc_wrapper.py
-@@ -128,7 +128,7 @@ def main(argv):
+@@ -143,7 +143,7 @@ def main(argv):
  
    protoc_cmd += [os.path.join(proto_dir, name) for name in protos]
  
 -  ret = subprocess.call(protoc_cmd)
-+  ret = subprocess.call(protoc_cmd, env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release", "PATH":"${WRKDIR}/bin"})
++  ret = subprocess.call(protoc_cmd, env={"LD_LIBRARY_PATH":"/home/pobj/chromium-84.0.4147.89/chromium-84.0.4147.89/out/Release", "PATH":"/home/pobj/chromium-84.0.4147.89/bin"})
    if ret != 0:
      if ret <= -100:
        # Windows error codes such as 0xC0000005 and 0xC0000409 are much easier to

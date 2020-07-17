@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_browser_utility_process_host_cc,v 1.4 2020/07/17 20:23:08 robert Exp $
+
+Index: content/browser/utility_process_host.cc
+--- content/browser/utility_process_host.cc.orig
++++ content/browser/utility_process_host.cc
+@@ -420,7 +420,7 @@ bool UtilityProcessHost::StartProcess() {
+       network::switches::kNetLogCaptureMode,
+       network::switches::kExplicitlyAllowedPorts,
+       service_manager::switches::kNoSandbox,
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+       switches::kDisableDevShmUsage,
+ #endif
+       service_manager::switches::kEnableAudioServiceSandbox,

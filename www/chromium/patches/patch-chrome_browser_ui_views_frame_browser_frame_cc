@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.22 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.23 2020/07/17 20:23:08 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_frame.cc
 --- chrome/browser/ui/views/frame/browser_frame.cc.orig
@@ -8,7 +8,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_BSD))
  #include "ui/display/screen.h"
  #endif
  
@@ -16,7 +16,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
  
  bool IsUsingGtkTheme(Profile* profile) {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_BSD))
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
@@ -25,7 +25,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
  void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
    chrome::SaveWindowWorkspace(browser_view_->browser(), GetWorkspace());
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
-   auto workspace = display::Screen::GetScreen()->GetCurrentWorkspace();
-   BrowserList::MoveBrowsersInWorkspaceToFront(workspace.empty() ? GetWorkspace()
-                                                                 : workspace);
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_BSD))
+   // If the window was sent to a different workspace, prioritize it if
+   // it was sent to the current workspace and deprioritize it
+   // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()

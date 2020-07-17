@@ -1,12 +1,14 @@
-$OpenBSD: patch-build_toolchain_gcc_solink_wrapper_py,v 1.2 2016/12/10 15:35:25 robert Exp $
---- build/toolchain/gcc_solink_wrapper.py.orig.port	Fri Dec  2 17:57:17 2016
-+++ build/toolchain/gcc_solink_wrapper.py	Fri Dec  2 17:57:28 2016
-@@ -33,7 +33,7 @@ def CollectDynSym(args):
-   """Replaces: nm --format=posix -g -D $sofile | cut -f1-2 -d' '"""
+$OpenBSD: patch-build_toolchain_gcc_solink_wrapper_py,v 1.3 2020/07/17 20:23:07 robert Exp $
+
+Index: build/toolchain/gcc_solink_wrapper.py
+--- build/toolchain/gcc_solink_wrapper.py.orig
++++ build/toolchain/gcc_solink_wrapper.py
+@@ -34,7 +34,7 @@ def CollectDynSym(args):
    toc = ''
-   nm = subprocess.Popen(wrapper_utils.CommandToRun([
--      args.nm, '--format=posix', '-g', '-D', args.sofile]),
-+      args.nm, '-g', '-D', args.sofile]),
-                         stdout=subprocess.PIPE, bufsize=-1)
+   nm = subprocess.Popen(
+       wrapper_utils.CommandToRun(
+-          [args.nm, '--format=posix', '-g', '-D', '-p', args.sofile]),
++          [args.nm, '-g', '-D', '-p', args.sofile]),
+       stdout=subprocess.PIPE,
+       bufsize=-1)
    for line in nm.stdout:
-     toc += ' '.join(line.split(' ', 2)[:2]) + '\n'

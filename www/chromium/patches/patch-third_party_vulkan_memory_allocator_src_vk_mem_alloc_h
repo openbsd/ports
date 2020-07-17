@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_vulkan_memory_allocator_src_vk_mem_alloc_h,v 1.1 2020/07/17 20:23:08 robert Exp $
+
+Index: third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
+--- third_party/vulkan_memory_allocator/src/vk_mem_alloc.h.orig
++++ third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
+@@ -3940,7 +3940,7 @@ void *aligned_alloc(size_t alignment, size_t size)
+ 
+     return memalign(alignment, size);
+ }
+-#elif defined(__APPLE__) || defined(__ANDROID__) || (defined(__linux__) && defined(__GLIBCXX__) && !defined(_GLIBCXX_HAVE_ALIGNED_ALLOC))
++#elif defined(__APPLE__) || defined(__ANDROID__) || (defined(__linux__) && defined(__GLIBCXX__) && !defined(_GLIBCXX_HAVE_ALIGNED_ALLOC)) || defined(__OpenBSD__)
+ #include <cstdlib>
+ void *aligned_alloc(size_t alignment, size_t size)
+ {

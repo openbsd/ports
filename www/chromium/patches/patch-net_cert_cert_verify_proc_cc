@@ -1,0 +1,14 @@
+$OpenBSD: patch-net_cert_cert_verify_proc_cc,v 1.1 2020/07/17 20:23:08 robert Exp $
+
+Index: net/cert/cert_verify_proc.cc
+--- net/cert/cert_verify_proc.cc.orig
++++ net/cert/cert_verify_proc.cc
+@@ -494,7 +494,7 @@ base::Value CertVerifyParams(X509Certificate* cert,
+ 
+ }  // namespace
+ 
+-#if !(defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS))
++#if !(defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD))
+ // static
+ scoped_refptr<CertVerifyProc> CertVerifyProc::CreateSystemVerifyProc(
+     scoped_refptr<CertNetFetcher> cert_net_fetcher) {

@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_tracing_public_cpp_perfetto_perfetto_config_cc,v 1.1 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-services_tracing_public_cpp_perfetto_perfetto_config_cc,v 1.2 2020/07/17 20:23:08 robert Exp $
 
 Index: services/tracing/public/cpp/perfetto/perfetto_config.cc
 --- services/tracing/public/cpp/perfetto/perfetto_config.cc.orig
 +++ services/tracing/public/cpp/perfetto/perfetto_config.cc
-@@ -103,7 +103,7 @@ perfetto::TraceConfig GetDefaultPerfettoConfig(
+@@ -104,7 +104,7 @@ perfetto::TraceConfig GetDefaultPerfettoConfig(
  // Capture system trace events if supported and enabled. The datasources will
  // only emit events if system tracing is enabled in |chrome_config|.
    if (!privacy_filtering_enabled) {

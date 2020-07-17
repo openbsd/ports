@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_third_party_vulkan-loader_src_loader_loader_c,v 1.6 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-third_party_angle_third_party_vulkan-loader_src_loader_loader_c,v 1.7 2020/07/17 20:23:08 robert Exp $
 
 Index: third_party/angle/third_party/vulkan-loader/src/loader/loader.c
 --- third_party/angle/third_party/vulkan-loader/src/loader/loader.c.orig
 +++ third_party/angle/third_party/vulkan-loader/src/loader/loader.c
-@@ -234,7 +234,7 @@ void *loader_device_heap_realloc(const struct loader_d
+@@ -241,7 +241,7 @@ void *loader_device_heap_realloc(const struct loader_d
  }
  
  // Environment variables
@@ -12,7 +12,7 @@ Index: third_party/angle/third_party/vulkan-loader/src/loader/loader.c
  
  static inline bool IsHighIntegrity() {
      return geteuid() != getuid() || getegid() != getgid();
-@@ -249,7 +249,7 @@ static inline char *loader_getenv(const char *name, co
+@@ -256,7 +256,7 @@ static inline char *loader_getenv(const char *name, co
  
  static inline char *loader_secure_getenv(const char *name, const struct loader_instance *inst) {
      char *out;

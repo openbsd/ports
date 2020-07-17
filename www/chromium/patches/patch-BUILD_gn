@@ -1,4 +1,4 @@
-$OpenBSD: patch-BUILD_gn,v 1.34 2020/06/04 15:01:53 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.35 2020/07/17 20:23:07 robert Exp $
 
 Index: BUILD.gn
 --- BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: BUILD.gn
  }
  
  # This file defines the following two main targets:
-@@ -418,7 +418,7 @@ group("gn_all") {
+@@ -417,7 +417,7 @@ group("gn_all") {
      ]
    }
  
@@ -41,7 +41,7 @@ Index: BUILD.gn
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -579,10 +573,6 @@ group("gn_all") {
+@@ -578,10 +572,6 @@ group("gn_all") {
        "//mojo:mojo_perftests",
        "//services/service_manager/public/cpp",
        "//testing/gmock:gmock_main",
@@ -52,7 +52,7 @@ Index: BUILD.gn
      ]
  
      if (!is_android) {
-@@ -656,7 +646,7 @@ group("gn_all") {
+@@ -655,7 +645,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -61,7 +61,7 @@ Index: BUILD.gn
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -1072,7 +1062,7 @@ if (!is_ios) {
+@@ -1074,7 +1064,7 @@ if (!is_ios) {
        ]
      }
  
@@ -70,7 +70,7 @@ Index: BUILD.gn
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1081,7 +1071,7 @@ if (!is_ios) {
+@@ -1083,7 +1073,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -79,7 +79,7 @@ Index: BUILD.gn
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1274,9 +1264,6 @@ group("chromium_builder_perf") {
+@@ -1276,9 +1266,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.43 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.44 2020/07/17 20:23:08 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
 +++ content/gpu/gpu_main.cc
-@@ -84,7 +84,7 @@
- #include "ui/gfx/x/x11_switches.h"                       // nogncheck
+@@ -83,7 +83,7 @@
+ #include "ui/gfx/x/x11_types.h"                          // nogncheck
  #endif
  
 -#if defined(OS_LINUX)
@@ -12,7 +12,7 @@ Index: content/gpu/gpu_main.cc
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "content/public/common/sandbox_init.h"
  #include "services/service_manager/sandbox/linux/sandbox_linux.h"
-@@ -109,7 +109,7 @@ namespace content {
+@@ -108,7 +108,7 @@ namespace content {
  
  namespace {
  
@@ -21,7 +21,7 @@ Index: content/gpu/gpu_main.cc
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -162,7 +162,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -161,7 +161,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -30,7 +30,7 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -310,7 +310,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -304,7 +304,7 @@ int GpuMain(const MainFunctionParams& parameters) {
  
    base::PlatformThread::SetName("CrGpuMain");
  
@@ -39,7 +39,7 @@ Index: content/gpu/gpu_main.cc
    if (base::FeatureList::IsEnabled(features::kGpuUseDisplayThreadPriority)) {
      // Set thread priority before sandbox initialization.
      base::PlatformThread::SetCurrentThreadPriority(
-@@ -330,6 +330,11 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -324,6 +324,11 @@ int GpuMain(const MainFunctionParams& parameters) {
    // before it.
    InitializeSkia();
  
@@ -51,7 +51,7 @@ Index: content/gpu/gpu_main.cc
    // Gpu initialization may fail for various reasons, in which case we will need
    // to tear down this process. However, we can not do so safely until the IPC
    // channel is set up, because the detection of early return of a child process
-@@ -359,7 +364,9 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -353,7 +358,9 @@ int GpuMain(const MainFunctionParams& parameters) {
    GpuProcess gpu_process(io_thread_priority);
  #endif
  
@@ -62,7 +62,7 @@ Index: content/gpu/gpu_main.cc
    // ui::GbmDevice() takes >50ms with amdgpu, so kick off
    // GpuMemoryBufferSupportX11 creation on another thread now.
    base::PostTask(
-@@ -434,17 +441,19 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -424,17 +431,19 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -83,7 +83,7 @@ Index: content/gpu/gpu_main.cc
  
    // SandboxLinux::InitializeSandbox() must always be called
    // with only one thread.
-@@ -463,11 +472,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -453,11 +462,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
            *base::CommandLine::ForCurrentProcess()),
        base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
  

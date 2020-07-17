@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.11 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.12 2020/07/17 20:23:07 robert Exp $
 
 Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
 --- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -295,7 +295,7 @@ void ChromeBrowserMainExtraPartsProfiles::
-   if (base::FeatureList::IsEnabled(media::kUseMediaHistoryStore))
-     media_history::MediaHistoryKeyedServiceFactory::GetInstance();
+@@ -301,7 +301,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+   media_router::MediaRouterUIServiceFactory::GetInstance();
+ #endif
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
 +    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)

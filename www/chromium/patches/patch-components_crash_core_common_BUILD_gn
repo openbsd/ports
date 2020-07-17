@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.10 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.11 2020/07/17 20:23:08 robert Exp $
 
 Index: components/crash/core/common/BUILD.gn
 --- components/crash/core/common/BUILD.gn.orig
@@ -12,12 +12,12 @@ Index: components/crash/core/common/BUILD.gn
  }
  
  group("common") {
-@@ -167,7 +167,7 @@ source_set("unit_tests") {
-     sources += [ "objc_zombie_unittest.mm" ]
-   }
- 
--  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android) {
-+  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android && !is_openbsd) {
+@@ -184,7 +184,7 @@ source_set("unit_tests") {
+     sources += [ "crash_key_breakpad_ios_unittest.cc" ]
+     deps += [ "//third_party/breakpad:client" ]
+     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
+-  } else if (!is_mac && !is_win && !is_fuchsia && !is_android) {
++  } else if (!is_mac && !is_win && !is_fuchsia && !is_android && !is_openbsd) {
      include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
      sources += [ "crash_key_breakpad_unittest.cc" ]
    }

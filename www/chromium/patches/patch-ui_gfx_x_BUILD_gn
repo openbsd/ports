@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_gfx_x_BUILD_gn,v 1.1 2020/07/17 20:23:08 robert Exp $
+
+Index: ui/gfx/x/BUILD.gn
+--- ui/gfx/x/BUILD.gn.orig
++++ ui/gfx/x/BUILD.gn
+@@ -17,7 +17,7 @@ if (xcbproto_path == "") {
+   if (use_sysroot) {
+     xcbproto_path = "$sysroot/usr/share/xcb"
+   } else {
+-    xcbproto_path = "/usr/share/xcb"
++    xcbproto_path = "/usr/X11R6/share/xcb"
+   }
+ }
+ 

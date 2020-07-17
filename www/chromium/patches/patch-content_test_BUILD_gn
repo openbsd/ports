@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_test_BUILD_gn,v 1.1 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-content_test_BUILD_gn,v 1.2 2020/07/17 20:23:08 robert Exp $
 
 Index: content/test/BUILD.gn
 --- content/test/BUILD.gn.orig
 +++ content/test/BUILD.gn
-@@ -1533,7 +1533,7 @@ static_library("run_all_unittests") {
+@@ -1525,7 +1525,7 @@ static_library("run_all_unittests") {
      ":test_support",
      "//base/test:test_support",
    ]
@@ -12,7 +12,7 @@ Index: content/test/BUILD.gn
      deps += [ "//services/service_manager/embedder:set_process_title_linux" ]
    }
  }
-@@ -2332,7 +2332,7 @@ test("content_unittests") {
+@@ -2333,7 +2333,7 @@ test("content_unittests") {
      deps += [ "//ui/gfx/x" ]
    }
  

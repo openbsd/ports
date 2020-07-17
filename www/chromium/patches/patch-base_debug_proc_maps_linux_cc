@@ -1,7 +1,8 @@
-$OpenBSD: patch-base_debug_proc_maps_linux_cc,v 1.5 2017/04/28 14:21:00 robert Exp $
---- base/debug/proc_maps_linux.cc.orig.port	Thu Apr 27 22:20:52 2017
-+++ base/debug/proc_maps_linux.cc	Thu Apr 27 22:21:02 2017
-@@ -12,7 +12,7 @@
+$OpenBSD: patch-base_debug_proc_maps_linux_cc,v 1.6 2020/07/17 20:23:07 robert Exp $
+Index: base/debug/proc_maps_linux.cc
+--- base/debug/proc_maps_linux.cc.orig
++++ base/debug/proc_maps_linux.cc
+@@ -13,7 +13,7 @@
  #include "base/strings/string_split.h"
  #include "build/build_config.h"
  

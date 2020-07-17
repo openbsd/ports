@@ -1,4 +1,4 @@
-$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.24 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.25 2020/07/17 20:23:08 robert Exp $
 
 Index: chromecast/browser/cast_browser_main_parts.cc
 --- chromecast/browser/cast_browser_main_parts.cc.orig
@@ -12,7 +12,7 @@ Index: chromecast/browser/cast_browser_main_parts.cc
  #include <fontconfig/fontconfig.h>
  #include <signal.h>
  #include <sys/prctl.h>
-@@ -269,7 +269,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
+@@ -272,7 +272,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
  
  #endif  // defined(USE_AURA)
  
@@ -21,7 +21,7 @@ Index: chromecast/browser/cast_browser_main_parts.cc
  
  base::FilePath GetApplicationFontsDir() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
-@@ -314,7 +314,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -317,7 +317,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {cc::switches::kDisableThreadedAnimation, ""},
  #endif  // defined(OS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)
@@ -30,7 +30,7 @@ Index: chromecast/browser/cast_browser_main_parts.cc
  #if defined(ARCH_CPU_X86_FAMILY)
      // This is needed for now to enable the x11 Ozone platform to work with
      // current Linux/NVidia OpenGL drivers.
-@@ -465,7 +465,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
+@@ -479,7 +479,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
      views_delegate_ = std::make_unique<CastViewsDelegate>();
  #endif  // defined(USE_AURA)
  

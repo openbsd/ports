@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.50 2020/05/29 20:03:22 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.51 2020/07/17 20:23:07 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.h
 --- chrome/browser/chrome_content_browser_client.h.orig
 +++ chrome/browser/chrome_content_browser_client.h
-@@ -369,7 +369,7 @@ class ChromeContentBrowserClient : public content::Con
+@@ -377,7 +377,7 @@ class ChromeContentBrowserClient : public content::Con
    void OverridePageVisibilityState(
        content::RenderFrameHost* render_frame_host,
        content::PageVisibilityState* visibility_state) override;

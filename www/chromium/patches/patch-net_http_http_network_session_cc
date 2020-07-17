@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_http_http_network_session_cc,v 1.16 2019/08/01 08:31:59 robert Exp $
+$OpenBSD: patch-net_http_http_network_session_cc,v 1.17 2020/07/17 20:23:08 robert Exp $
 
 Index: net/http/http_network_session.cc
 --- net/http/http_network_session.cc.orig
 +++ net/http/http_network_session.cc
-@@ -20,7 +20,9 @@
+@@ -21,7 +21,9 @@
  #include "base/values.h"
  #include "net/base/features.h"
  #include "net/dns/host_resolver.h"

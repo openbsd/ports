@@ -1,18 +1,20 @@
-$OpenBSD: patch-third_party_libxml_src_dict_c,v 1.1 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-third_party_libxml_src_dict_c,v 1.2 2020/07/17 20:23:08 robert Exp $
 
 Index: third_party/libxml/src/dict.c
 --- third_party/libxml/src/dict.c.orig
 +++ third_party/libxml/src/dict.c
-@@ -38,7 +38,7 @@
+@@ -38,8 +38,8 @@
   *  list we will use the BigKey algo as soon as the hash size grows
   *  over MIN_DICT_SIZE so this actually works
   */
--#if defined(HAVE_RAND) && defined(HAVE_SRAND) && defined(HAVE_TIME)
-+#if (defined(HAVE_RAND) && defined(HAVE_SRAND) && defined(HAVE_TIME)) || defined(HAVE_ARC4RANDOM)
+-#if defined(HAVE_RAND) && defined(HAVE_SRAND) && defined(HAVE_TIME) && \
+-    !defined(FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION)
++#if (defined(HAVE_RAND) && defined(HAVE_SRAND) && defined(HAVE_TIME) && \
++    !defined(FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION)) || defined(HAVE_ARC4RANDOM)
  #define DICT_RANDOMIZATION
  #endif
  
-@@ -139,7 +139,7 @@ static xmlRMutexPtr xmlDictMutex = NULL;
+@@ -140,7 +140,7 @@ static xmlRMutexPtr xmlDictMutex = NULL;
  static int xmlDictInitialized = 0;
  
  #ifdef DICT_RANDOMIZATION
@@ -21,7 +23,7 @@ Index: third_party/libxml/src/dict.c
  /*
   * Internal data for random function, protected by xmlDictMutex
   */
-@@ -180,7 +180,7 @@ int __xmlInitializeDict(void) {
+@@ -181,7 +181,7 @@ int __xmlInitializeDict(void) {
          return(0);
      xmlRMutexLock(xmlDictMutex);
  
@@ -30,7 +32,7 @@ Index: third_party/libxml/src/dict.c
  #ifdef HAVE_RAND_R
      rand_seed = time(NULL);
      rand_r(& rand_seed);
-@@ -200,13 +200,17 @@ int __xmlRandom(void) {
+@@ -201,13 +201,17 @@ int __xmlRandom(void) {
      if (xmlDictInitialized == 0)
          __xmlInitializeDict();
  

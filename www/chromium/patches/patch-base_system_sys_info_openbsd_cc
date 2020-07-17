@@ -1,11 +1,11 @@
-$OpenBSD: patch-base_system_sys_info_openbsd_cc,v 1.5 2020/06/23 06:32:53 robert Exp $
+$OpenBSD: patch-base_system_sys_info_openbsd_cc,v 1.6 2020/07/17 20:23:07 robert Exp $
 
 Index: base/system/sys_info_openbsd.cc
 --- base/system/sys_info_openbsd.cc.orig
 +++ base/system/sys_info_openbsd.cc
 @@ -12,6 +12,7 @@
  
- #include "base/logging.h"
+ #include "base/notreached.h"
  #include "base/stl_util.h"
 +#include "base/strings/string_util.h"
  

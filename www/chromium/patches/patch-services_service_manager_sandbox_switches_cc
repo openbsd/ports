@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_service_manager_sandbox_switches_cc,v 1.1 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-services_service_manager_sandbox_switches_cc,v 1.2 2020/07/17 20:23:08 robert Exp $
 
 Index: services/service_manager/sandbox/switches.cc
 --- services/service_manager/sandbox/switches.cc.orig
 +++ services/service_manager/sandbox/switches.cc
-@@ -81,7 +81,7 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
+@@ -82,7 +82,7 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
  // Disables the sandbox for all process types that are normally sandboxed.
  const char kNoSandbox[] = "no-sandbox";
  

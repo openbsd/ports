@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_media_cdm_host_file_path_cc,v 1.3 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-chrome_common_media_cdm_host_file_path_cc,v 1.4 2020/07/17 20:23:08 robert Exp $
 
 Index: chrome/common/media/cdm_host_file_path.cc
 --- chrome/common/media/cdm_host_file_path.cc.orig
 +++ chrome/common/media/cdm_host_file_path.cc
-@@ -98,7 +98,7 @@ void AddCdmHostFilePaths(
+@@ -93,7 +93,7 @@ void AddCdmHostFilePaths(
    cdm_host_file_paths->emplace_back(chrome_framework_path,
                                      chrome_framework_sig_path);
  

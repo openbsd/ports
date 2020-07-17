@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.29 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.30 2020/07/17 20:23:07 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
 +++ chrome/browser/flag_descriptions.h
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  #include "ppapi/buildflags/buildflags.h"
  #include "printing/buildflags/buildflags.h"
  
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX)
  
-@@ -2167,7 +2167,7 @@ extern const char kZeroStateFilesDescription[];
+@@ -2303,7 +2303,7 @@ extern const char kZeroStateFilesDescription[];
  
  #endif  // #if defined(OS_CHROMEOS)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.h
  
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
-@@ -2193,7 +2193,7 @@ extern const char kReopenTabInProductHelpDescription[]
+@@ -2332,7 +2332,7 @@ extern const char kReopenTabInProductHelpDescription[]
  
  // Random platform combinations -----------------------------------------------
  
@@ -30,16 +30,16 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kWebGL2ComputeContextName[];
  extern const char kWebGL2ComputeContextDescription[];
-@@ -2208,7 +2208,7 @@ extern const char kClickToCallUIDescription[];
+@@ -2347,7 +2347,7 @@ extern const char kClickToCallUIDescription[];
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  
- extern const char kRemoteCopyReceiverName[];
- extern const char kRemoteCopyReceiverDescription[];
-@@ -2222,7 +2222,7 @@ extern const char kRemoteCopyProgressNotificationDescr
+ extern const char kEnableMediaFeedsName[];
+ extern const char kEnableMediaFeedsDescription[];
+@@ -2367,7 +2367,7 @@ extern const char kRemoteCopyProgressNotificationDescr
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS)
  

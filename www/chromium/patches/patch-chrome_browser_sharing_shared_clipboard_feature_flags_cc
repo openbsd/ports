@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_sharing_shared_clipboard_feature_flags_cc,v 1.2 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-chrome_browser_sharing_shared_clipboard_feature_flags_cc,v 1.3 2020/07/17 20:23:07 robert Exp $
 
 Index: chrome/browser/sharing/shared_clipboard/feature_flags.cc
 --- chrome/browser/sharing/shared_clipboard/feature_flags.cc.orig
@@ -10,5 +10,5 @@ Index: chrome/browser/sharing/shared_clipboard/feature_flags.cc
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  const base::Feature kRemoteCopyReceiver{"RemoteCopyReceiver",
-                                         base::FEATURE_DISABLED_BY_DEFAULT};
+                                         base::FEATURE_ENABLED_BY_DEFAULT};
  

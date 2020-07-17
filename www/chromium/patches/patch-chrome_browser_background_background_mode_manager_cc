@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_background_background_mode_manager_cc,v 1.4 2020/02/22 12:33:20 robert Exp $
+$OpenBSD: patch-chrome_browser_background_background_mode_manager_cc,v 1.5 2020/07/17 20:23:07 robert Exp $
 
 Index: chrome/browser/background/background_mode_manager.cc
 --- chrome/browser/background/background_mode_manager.cc.orig
 +++ chrome/browser/background/background_mode_manager.cc
-@@ -797,7 +797,7 @@ gfx::ImageSkia GetStatusTrayIcon() {
+@@ -849,7 +849,7 @@ gfx::ImageSkia GetStatusTrayIcon() {
      return gfx::ImageSkia();
  
    return family->CreateExact(size).AsImageSkia();

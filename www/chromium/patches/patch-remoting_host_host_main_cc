@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_host_main_cc,v 1.1 2019/11/05 22:30:28 robert Exp $
+$OpenBSD: patch-remoting_host_host_main_cc,v 1.2 2020/07/17 20:23:08 robert Exp $
 
 Index: remoting/host/host_main.cc
 --- remoting/host/host_main.cc.orig
 +++ remoting/host/host_main.cc
-@@ -49,9 +49,9 @@ int DesktopProcessMain();
+@@ -48,9 +48,9 @@ int DesktopProcessMain();
  int FileChooserMain();
  int RdpDesktopSessionMain();
  #endif  // defined(OS_WIN)
@@ -15,7 +15,7 @@ Index: remoting/host/host_main.cc
  
  namespace {
  
-@@ -146,10 +146,10 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
+@@ -143,10 +143,10 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
    } else if (process_type == kProcessTypeRdpDesktopSession) {
      main_routine = &RdpDesktopSessionMain;
  #endif  // defined(OS_WIN)

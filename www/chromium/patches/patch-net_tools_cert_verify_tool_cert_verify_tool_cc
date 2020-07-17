@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_tools_cert_verify_tool_cert_verify_tool_cc,v 1.6 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-net_tools_cert_verify_tool_cert_verify_tool_cc,v 1.7 2020/07/17 20:23:08 robert Exp $
 
 Index: net/tools/cert_verify_tool/cert_verify_tool.cc
 --- net/tools/cert_verify_tool/cert_verify_tool.cc.orig
@@ -12,7 +12,7 @@ Index: net/tools/cert_verify_tool/cert_verify_tool.cc
  #include "net/proxy_resolution/proxy_config.h"
  #include "net/proxy_resolution/proxy_config_service_fixed.h"
  #endif
-@@ -51,7 +51,7 @@ void SetUpOnNetworkThread(
+@@ -46,7 +46,7 @@ void SetUpOnNetworkThread(
      base::WaitableEvent* initialization_complete_event) {
    net::URLRequestContextBuilder url_request_context_builder;
    url_request_context_builder.set_user_agent(GetUserAgent());
@@ -21,3 +21,12 @@ Index: net/tools/cert_verify_tool/cert_verify_tool.cc
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
+@@ -192,7 +192,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
+     base::StringPiece impl_name,
+     scoped_refptr<net::CertNetFetcher> cert_net_fetcher,
+     bool use_system_roots) {
+-#if !(defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS))
++#if !(defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD))
+   if (impl_name == "platform") {
+     if (!use_system_roots) {
+       std::cerr << "WARNING: platform verifier not supported with "

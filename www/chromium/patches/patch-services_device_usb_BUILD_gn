@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_device_usb_BUILD_gn,v 1.3 2020/01/06 16:05:06 robert Exp $
+$OpenBSD: patch-services_device_usb_BUILD_gn,v 1.4 2020/07/17 20:23:08 robert Exp $
 
 Index: services/device/usb/BUILD.gn
 --- services/device/usb/BUILD.gn.orig
@@ -12,8 +12,8 @@ Index: services/device/usb/BUILD.gn
      sources += [
        "scoped_libusb_device_handle.cc",
        "scoped_libusb_device_handle.h",
-@@ -110,7 +110,7 @@ static_library("usb") {
-     ]
+@@ -112,7 +112,7 @@ static_library("usb") {
+     deps += [ "//third_party/re2" ]
    }
  
 -  if (is_android || is_chromeos || is_linux) {

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.8 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.9 2020/07/17 20:23:08 robert Exp $
 
 Index: ui/gfx/font_render_params.h
 --- ui/gfx/font_render_params.h.orig
 +++ ui/gfx/font_render_params.h
-@@ -111,14 +111,14 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
+@@ -111,7 +111,7 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
      const FontRenderParamsQuery& query,
      std::string* family_out);
  
@@ -12,11 +12,12 @@ Index: ui/gfx/font_render_params.h
  // Clears GetFontRenderParams()'s cache. Intended to be called by tests that are
  // changing Fontconfig's configuration.
  GFX_EXPORT void ClearFontRenderParamsCacheForTest();
- #endif
+@@ -121,7 +121,7 @@ GFX_EXPORT void ClearFontRenderParamsCacheForTest();
+ GFX_EXPORT float GetFontRenderParamsDeviceScaleFactor();
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID) || \
 -    defined(OS_FUCHSIA)
 +    defined(OS_FUCHSIA) || defined(OS_BSD)
- // Gets the device scale factor to query the FontRenderParams.
- GFX_EXPORT float GetFontRenderParamsDeviceScaleFactor();
- 
+ // Sets the device scale factor for FontRenderParams to decide
+ // if it should enable subpixel positioning.
+ GFX_EXPORT void SetFontRenderParamsDeviceScaleFactor(

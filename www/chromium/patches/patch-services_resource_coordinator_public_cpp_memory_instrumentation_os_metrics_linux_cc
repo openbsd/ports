@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_linux_cc,v 1.7 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_linux_cc,v 1.8 2020/07/17 20:23:08 robert Exp $
 
 Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
 --- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig
@@ -22,7 +22,7 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
  // TODO(chiniforooshan): Many of the utility functions in this anonymous
  // namespace should move to base/process/process_metrics_linux.cc to make the
  // code a lot cleaner.  However, we should do so after we made sure the metrics
-@@ -224,6 +227,7 @@ uint32_t ReadLinuxProcSmapsFile(FILE* smaps_file,
+@@ -226,6 +229,7 @@ uint32_t ReadLinuxProcSmapsFile(FILE* smaps_file,
    }
    return num_valid_regions;
  }
@@ -30,7 +30,7 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
  
  }  // namespace
  
-@@ -237,6 +241,9 @@ void OSMetrics::SetProcSmapsForTesting(FILE* f) {
+@@ -239,6 +243,9 @@ void OSMetrics::SetProcSmapsForTesting(FILE* f) {
  // static
  bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
                                   mojom::RawOSMemDump* dump) {
@@ -40,7 +40,7 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
    // TODO(chiniforooshan): There is no need to read both /statm and /status
    // files. Refactor to get everything from /status using ProcessMetric.
    auto statm_file = GetProcPidDir(pid).Append("statm");
-@@ -289,10 +296,12 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
+@@ -291,10 +298,12 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
  #endif  //  defined(OS_ANDROID)
  
    return true;
@@ -53,7 +53,7 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
    std::vector<VmRegionPtr> maps;
    uint32_t res = 0;
    if (g_proc_smaps_for_testing) {
-@@ -310,8 +319,13 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
+@@ -312,8 +321,13 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
      return std::vector<VmRegionPtr>();
  
    return maps;
@@ -67,7 +67,7 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
  // static
  OSMetrics::MappedAndResidentPagesDumpState OSMetrics::GetMappedAndResidentPages(
      const size_t start_address,
-@@ -393,5 +407,6 @@ size_t OSMetrics::GetPeakResidentSetSize(base::Process
+@@ -395,5 +409,6 @@ size_t OSMetrics::GetPeakResidentSetSize(base::Process
    }
    return 0;
  }
