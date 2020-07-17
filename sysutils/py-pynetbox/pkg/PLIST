@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/06/04 07:24:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/07/17 17:50:10 jasper Exp $
 @conflict py-pynetbox-*
 @pkgpath sysutils/py-pynetbox
 lib/python${MODPY_VERSION}/site-packages/pynetbox/
@@ -12,16 +12,18 @@ lib/python${MODPY_VERSION}/site-packages/pynetbox-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/pynetbox/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pynetbox/api.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}endpoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}query.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pynetbox/core/api.py
+lib/python${MODPY_VERSION}/site-packages/pynetbox/core/app.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/endpoint.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/query.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/response.py
@@ -177,8 +179,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tests/unit/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/tests/unit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tests/unit/${MODPY_PYCACHE}test_endpoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tests/unit/${MODPY_PYCACHE}test_query.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tests/unit/${MODPY_PYCACHE}test_request.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tests/unit/${MODPY_PYCACHE}test_response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tests/unit/test_endpoint.py
 lib/python${MODPY_VERSION}/site-packages/tests/unit/test_query.py
+lib/python${MODPY_VERSION}/site-packages/tests/unit/test_request.py
 lib/python${MODPY_VERSION}/site-packages/tests/unit/test_response.py
 lib/python${MODPY_VERSION}/site-packages/tests/util.py
