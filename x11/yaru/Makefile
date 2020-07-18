@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/05/17 17:54:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/18 09:21:17 ajacoutot Exp $
 
 COMMENT=		Ubuntu GNOME theme
 
-GH_TAGNAME=		20.10.1
+GH_TAGNAME=		20.10.2
 GH_ACCOUNT=		ubuntu
 GH_PROJECT=		yaru
 
@@ -23,9 +23,7 @@ RUN_DEPENDS=		x11/gtk+3,-guic
 
 PKG_ARCH=		*
 
-# Remove and use -Dgnome-shell-gresource=true once we have GNOME 3.36
-# see patch-gnome-shell_src_meson_build
-BUILD_DEPENDS +=	sysutils/coreutils
+CONFIGURE_ARGS=		-Dgnome-shell-gresource=true
 
 post-install:
 	rm -r ${PREFIX}/share/gnome-shell/extensions/
