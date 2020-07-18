@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/07 08:32:50 paco Exp $
+# $OpenBSD: Makefile,v 1.6 2020/07/18 11:32:27 jasper Exp $
 
 COMMENT =	command-line fuzzy finder
 
 DISTNAME =	fzf-0.21.1
+REVISION =	0
 
 CATEGORIES =	sysutils
 

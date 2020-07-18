@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2020/04/07 08:32:50 paco Exp $
+$OpenBSD: README,v 1.3 2020/07/18 11:32:27 jasper Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -55,4 +55,4 @@ ${VIMFILES}.  That is part of `runtimepath` by default
 and will be loaded automatically.
 
 It should be noted that https://github.com/junegunn/fzf.vim are not the
-same files, but is built on top of the files installed by this port.
+same files, but is built on top of the files installed by this package.
