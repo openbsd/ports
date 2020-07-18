@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.123 2020/07/18 09:05:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2020/07/18 09:23:33 ajacoutot Exp $
 
-BROKEN =		needs an update to 4.0.0 which requires boost>=1.66.0
+BROKEN =		needs an update to 4.0.0 which requires boost>=1.67.0
 
 COMMENT =		personal and small-business financial-accounting software
 
