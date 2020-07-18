@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2020/04/17 04:51:00 bket Exp $
+# $OpenBSD: Makefile,v 1.43 2020/07/18 20:27:52 bket Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-1.0.1
+DISTNAME=	ocserv-1.1.0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -34,7 +34,8 @@ LIB_DEPENDS=	archivers/lz4 \
 		security/openpam
 TEST_DEPENDS=	net/openconnect \
 		shells/bash \
-		sysutils/coreutils
+		sysutils/coreutils \
+		textproc/gsed
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--without-docker-tests \
@@ -79,6 +80,7 @@ post-install:
 # tests use socket_wrapper, which is not in ports.
 pre-test:
 	ln -fs ${LOCALBASE}/bin/gtimeout ${WRKDIR}/bin/timeout
+	ln -fs ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed
 	sed -i 's#\/bin\/true#\/usr\/bin\/true#g' ${WRKSRC}/tests/test-*
 
 post-test:

@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_common_sh,v 1.5 2020/07/18 20:27:52 bket Exp $
+
+Index: tests/common.sh
+--- tests/common.sh.orig
++++ tests/common.sh
+@@ -23,7 +23,7 @@
+ 
+ builddir=${builddir:-.}
+ 
+-OPENCONNECT=${OPENCONNECT:-$(which openconnect)}
++OPENCONNECT=${LOCALBASE}/sbin/openconnect
+ 
+ if test -z "${OPENCONNECT}" || ! test -x ${OPENCONNECT};then
+ 	echo "You need openconnect to run this test"

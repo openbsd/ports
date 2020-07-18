@@ -1,0 +1,53 @@
+$OpenBSD: patch-src_main_c,v 1.1 2020/07/18 20:27:52 bket Exp $
+
+OpenBSD does not have procfs. Taken from
+https://gitlab.com/openconnect/ocserv/-/merge_requests/184
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -1009,9 +1009,7 @@ static void listen_watcher_cb (EV_P_ ev_io *w, int rev
+ 	int cmd_fd[2];
+ 	pid_t pid;
+ 	hmac_component_st hmac_components[3];
+-	char path[_POSIX_PATH_MAX];
+ 	char worker_path[_POSIX_PATH_MAX];
+-	size_t path_length;
+ 
+ 	if (ltmp->sock_type == SOCK_TYPE_TCP || ltmp->sock_type == SOCK_TYPE_UNIX) {
+ 		/* connection on TCP port */
+@@ -1111,16 +1109,27 @@ static void listen_watcher_cb (EV_P_ ev_io *w, int rev
+ 			safe_memset((uint8_t*)s->hmac_key, 0, sizeof(s->hmac_key));
+ 
+ 			set_env_from_ws(s);
+-			path_length = readlink("/proc/self/exe", path, sizeof(path)-1);
+-			if (path_length == -1) {
+-				mslog(s, NULL, LOG_ERR, "readlink failed %s", strerror(ret));
+-				exit(1);
++#if defined(PROC_FS_SUPPORTED)
++			{
++				char path[_POSIX_PATH_MAX];
++				size_t path_length;
++				path_length = readlink("/proc/self/exe", path, sizeof(path)-1);
++				if (path_length == -1) {
++					mslog(s, NULL, LOG_ERR, "readlink failed %s", strerror(ret));
++					exit(1);
++				}
++				path[path_length] = '\0';
++				if (snprintf(worker_path, sizeof(worker_path), "%s-worker", path) >= sizeof(worker_path)) {
++					mslog(s, NULL, LOG_ERR, "snprint of path %s and ocserv-worker failed", path);
++					exit(1);
++				}
+ 			}
+-			path[path_length] = '\0';
+-			if (snprintf(worker_path, sizeof(worker_path), "%s-worker", path) >= sizeof(worker_path)) {
+-				mslog(s, NULL, LOG_ERR, "snprint of path %s and ocserv-worker failed", path);
++#else
++			if (snprintf(worker_path, sizeof(worker_path), "%s-worker", worker_argv[0]) >= sizeof(worker_path)) {
++				mslog(s, NULL, LOG_ERR, "snprint of path %s and ocserv-worker failed", worker_argv[0]);
+ 				exit(1);
+ 			}
++#endif
+ 
+ 			worker_argv[0] = worker_path;
+ 			execv(worker_path, worker_argv);

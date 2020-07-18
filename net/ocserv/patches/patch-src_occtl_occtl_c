@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_occtl_occtl_c,v 1.4 2018/01/12 22:28:51 sthen Exp $
+$OpenBSD: patch-src_occtl_occtl_c,v 1.5 2020/07/18 20:27:52 bket Exp $
 Index: src/occtl/occtl.c
 --- src/occtl/occtl.c.orig
 +++ src/occtl/occtl.c
-@@ -249,7 +249,7 @@ static int handle_help_cmd(CONN_TYPE * conn, const cha
+@@ -264,7 +264,7 @@ static int handle_help_cmd(CONN_TYPE * conn, const cha
  static int handle_reset_cmd(CONN_TYPE * conn, const char *arg, cmd_params_st *params)
  {
  	rl_reset_terminal(NULL);

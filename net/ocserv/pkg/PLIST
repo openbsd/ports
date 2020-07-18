@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/01/12 14:12:34 bket Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/07/18 20:27:53 bket Exp $
 @newgroup _ocserv:749
 @newuser _ocserv:749:_ocserv:daemon:ocserv user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/ocserv
@@ -8,6 +8,7 @@
 @man man/man8/ocpasswd.8
 @man man/man8/ocserv.8
 @bin sbin/ocserv
+@bin sbin/ocserv-worker
 share/examples/ocserv/
 share/examples/ocserv/ocserv-fw
 share/examples/ocserv/profile.xml
