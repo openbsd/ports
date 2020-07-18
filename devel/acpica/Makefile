@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/11 22:54:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/07/18 17:26:43 daniel Exp $
 
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix-20200214
+DISTNAME =		acpica-unix-20200717
 PKGNAME =		${DISTNAME:S/-unix//}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -17,6 +16,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c pthread
 
 MASTER_SITES =		https://acpica.org/sites/acpica/files/
+
+# XXX: 20200717 distfile appears to have an extra "_0"
+DISTFILES =		${DISTNAME}.tar.gz{${DISTNAME}.tar_0.gz}
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		devel/bison

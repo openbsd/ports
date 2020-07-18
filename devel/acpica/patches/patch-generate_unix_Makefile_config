@@ -1,8 +1,8 @@
-$OpenBSD: patch-generate_unix_Makefile_config,v 1.8 2020/02/17 22:38:35 daniel Exp $
+$OpenBSD: patch-generate_unix_Makefile_config,v 1.9 2020/07/18 17:26:43 daniel Exp $
 Index: generate/unix/Makefile.config
 --- generate/unix/Makefile.config.orig
 +++ generate/unix/Makefile.config
-@@ -204,7 +204,6 @@ CWARNINGFLAGS = \
+@@ -203,7 +203,6 @@ CWARNINGFLAGS = \
      -Wall\
      -Wbad-function-cast\
      -Wdeclaration-after-statement\
@@ -10,7 +10,7 @@ Index: generate/unix/Makefile.config
      -Wformat=2\
      -Wmissing-declarations\
      -Wmissing-prototypes\
-@@ -226,24 +225,7 @@ CWARNINGFLAGS += \
+@@ -225,24 +224,7 @@ CWARNINGFLAGS += \
      -Wmissing-field-initializers\
      -Wnested-externs\
      -Wold-style-definition\
