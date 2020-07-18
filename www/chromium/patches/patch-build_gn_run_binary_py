@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_gn_run_binary_py,v 1.17 2020/07/17 20:23:07 robert Exp $
+$OpenBSD: patch-build_gn_run_binary_py,v 1.18 2020/07/18 17:43:22 robert Exp $
 
 Index: build/gn_run_binary.py
 --- build/gn_run_binary.py.orig
@@ -8,7 +8,7 @@ Index: build/gn_run_binary.py
  args = [path] + sys.argv[2:]
  
 -ret = subprocess.call(args)
-+ret = subprocess.call(args, env={"CHROME_EXE_PATH":"/home/pobj/chromium-84.0.4147.89/chromium-84.0.4147.89/out/Release/chrome","LD_LIBRARY_PATH":"/home/pobj/chromium-84.0.4147.89/chromium-84.0.4147.89/out/Release"})
++ret = subprocess.call(args, env={"CHROME_EXE_PATH":"${WRKSRC}/out/Release/chrome","LD_LIBRARY_PATH":"${WRKSRC}/out/Release"})
  if ret != 0:
    if ret <= -100:
      # Windows error codes such as 0xC0000005 and 0xC0000409 are much easier to
