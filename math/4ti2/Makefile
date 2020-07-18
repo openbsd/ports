@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/16 05:42:27 daniel Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/18 18:11:03 daniel Exp $
 
 COMMENT =	solve algebraic, geometric, combinatorial problems
 
@@ -7,12 +7,13 @@ GH_ACCOUNT =	4ti2
 GH_PROJECT =	4ti2
 GH_TAGNAME =	Release_${V:S/./_/g}
 DISTNAME =	${GH_PROJECT}-${V}
+REVISION =	0
 
 CATEGORIES =	math
 
 HOMEPAGE =	https://4ti2.github.io/
 
-MAINTAINER =	Dimitri Karamazav <deserter666@danwin1210.me>
+MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
