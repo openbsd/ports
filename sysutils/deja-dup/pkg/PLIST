@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/07/05 09:29:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2020/07/18 09:20:44 ajacoutot Exp $
 @bin bin/deja-dup
 lib/deja-dup/
 @so lib/deja-dup/libdeja.so
@@ -476,6 +476,17 @@ share/help/tr/deja-dup/restore-full.page
 share/help/tr/deja-dup/restore-revert.page
 share/help/tr/deja-dup/restore-worst-case.page
 share/help/tr/deja-dup/support.page
+share/help/uk/
+share/help/uk/deja-dup/
+share/help/uk/deja-dup/contribute.page
+share/help/uk/deja-dup/credits.page
+share/help/uk/deja-dup/index.page
+share/help/uk/deja-dup/license.page
+share/help/uk/deja-dup/prefs.page
+share/help/uk/deja-dup/restore-full.page
+share/help/uk/deja-dup/restore-revert.page
+share/help/uk/deja-dup/restore-worst-case.page
+share/help/uk/deja-dup/support.page
 share/help/vi/
 share/help/vi/deja-dup/
 share/help/vi/deja-dup/contribute.page
