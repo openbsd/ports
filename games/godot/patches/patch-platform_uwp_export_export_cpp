@@ -1,0 +1,16 @@
+$OpenBSD: patch-platform_uwp_export_export_cpp,v 1.1 2020/07/19 13:02:38 thfr Exp $
+
+comparisons of integers with different signs
+
+Index: platform/uwp/export/export.cpp
+--- platform/uwp/export/export.cpp.orig
++++ platform/uwp/export/export.cpp
+@@ -554,7 +554,7 @@ Error AppxPackager::add_file(String p_file_name, const
+ 		//package->store_buffer(strm_out.ptr(), strm.total_out - total_out_before);
+ 		int start = file_buffer.size();
+ 		file_buffer.resize(file_buffer.size() + (strm.total_out - total_out_before));
+-		for (uint64_t i = 0; i < (strm.total_out - total_out_before); i++)
++		for (int64_t i = 0; i < (strm.total_out - total_out_before); i++)
+ 			file_buffer.write[start + i] = strm_out[i];
+ 
+ 		deflateEnd(&strm);

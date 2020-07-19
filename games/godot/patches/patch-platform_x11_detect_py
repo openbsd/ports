@@ -1,16 +1,29 @@
-$OpenBSD: patch-platform_x11_detect_py,v 1.1 2018/08/25 19:20:29 thfr Exp $
+$OpenBSD: patch-platform_x11_detect_py,v 1.2 2020/07/19 13:02:38 thfr Exp $
 
 remove hardcoded -O2, found by bcallah@
 
 Index: platform/x11/detect.py
 --- platform/x11/detect.py.orig
 +++ platform/x11/detect.py
-@@ -84,7 +84,7 @@ def configure(env):
-             env.Prepend(CCFLAGS=['-g2'])
+@@ -85,21 +85,12 @@ def configure(env):
+     ## Build type
  
-     elif (env["target"] == "release_debug"):
--        env.Prepend(CCFLAGS=['-O2', '-ffast-math', '-DDEBUG_ENABLED'])
-+        env.Prepend(CCFLAGS=['-ffast-math', '-DDEBUG_ENABLED'])
-         if (env["debug_symbols"] == "yes"):
-             env.Prepend(CCFLAGS=['-g1'])
-         if (env["debug_symbols"] == "full"):
+     if env["target"] == "release":
+-        if env["optimize"] == "speed":  # optimize for speed (default)
+-            env.Prepend(CCFLAGS=["-O3"])
+-        else:  # optimize for size
+-            env.Prepend(CCFLAGS=["-Os"])
+-
+         if env["debug_symbols"] == "yes":
+             env.Prepend(CCFLAGS=["-g1"])
+         if env["debug_symbols"] == "full":
+             env.Prepend(CCFLAGS=["-g2"])
+ 
+     elif env["target"] == "release_debug":
+-        if env["optimize"] == "speed":  # optimize for speed (default)
+-            env.Prepend(CCFLAGS=["-O2"])
+-        else:  # optimize for size
+-            env.Prepend(CCFLAGS=["-Os"])
+         env.Prepend(CPPDEFINES=["DEBUG_ENABLED"])
+ 
+         if env["debug_symbols"] == "yes":

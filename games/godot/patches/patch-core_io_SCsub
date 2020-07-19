@@ -1,17 +1,11 @@
-$OpenBSD: patch-core_io_SCsub,v 1.1.1.1 2018/04/27 07:32:53 bentley Exp $
-
-revert long-distance matching in zstd which is based on private functions and
-doesn't compile if archivers/zstd is installed
-this is a revert of pertinent parts of commit
-f3436a841a3b59fc3a9deb94d5fdfd1e550d0351
-based on github issue #17374
+$OpenBSD: patch-core_io_SCsub,v 1.2 2020/07/19 13:02:38 thfr Exp $
 
 Index: core/io/SCsub
 --- core/io/SCsub.orig
 +++ core/io/SCsub
-@@ -5,4 +5,4 @@ Import('env')
- env.add_source_files(env.core_sources, "*.cpp")
+@@ -3,3 +3,5 @@
+ Import("env")
  
- Export('env')
--
+ env.add_source_files(env.core_sources, "*.cpp")
++
 +env.Append(CCFLAGS="-DZSTD_STATIC_LINKING_ONLY")

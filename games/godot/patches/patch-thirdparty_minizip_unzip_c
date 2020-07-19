@@ -1,0 +1,16 @@
+$OpenBSD: patch-thirdparty_minizip_unzip_c,v 1.1 2020/07/19 13:02:38 thfr Exp $
+
+z_crc_t is defined as unsigned long on zlib 1.2.11, which is newer than
+the one we have in base.
+
+Index: thirdparty/minizip/unzip.c
+--- thirdparty/minizip/unzip.c.orig
++++ thirdparty/minizip/unzip.c
+@@ -118,6 +118,7 @@
+ #define SIZECENTRALDIRITEM (0x2e)
+ #define SIZEZIPLOCALHEADER (0x1e)
+ 
++typedef unsigned long z_crc_t;
+ 
+ const char unz_copyright[] =
+    " unzip 1.01 Copyright 1998-2004 Gilles Vollant - http://www.winimage.com/zLibDll";

@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2020/04/12 13:30:55 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/19 13:02:38 thfr Exp $
 
 COMMENT =	2D and 3D game engine
 
-V =		3.0.6
+V =		3.2.2
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
-REVISION =	3
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender c crypto enet execinfo freetype intl m mpcdec
-WANTLIB += ogg opus opusfile png ssl theora theoradec vorbis vorbisfile
-WANTLIB += webp xcb z pcre2-32 vpx zstd
+WANTLIB += Xrender c enet execinfo freetype intl m mbedtls mbedcrypto
+WANTLIB += mbedx509 mpcdec ogg opus opusfile png theora theoradec
+WANTLIB += vorbis vorbisfile webp xcb z pcre2-32 vpx zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -32,7 +31,7 @@ MODULES =		devel/scons
 MODSCONS_FLAGS =	CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" \
-			CXXFLAGS="${CXXFLAGS}" \
+			CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
 			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec" \
 			builtin_enet=no \
 			builtin_freetype=no \
@@ -44,7 +43,7 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			builtin_libvorbis=no \
 			builtin_libvpx=no \
 			builtin_libwebp=no \
-			builtin_openssl=no \
+			builtin_mbedtls=no \
 			builtin_opus=no \
 			builtin_pcre2=no \
 			builtin_zlib=no \
@@ -65,7 +64,8 @@ LIB_DEPENDS =		archivers/zstd \
 			graphics/png \
 			multimedia/libtheora \
 			multimedia/libvpx \
-			net/enet
+			net/enet \
+			security/polarssl
 
 NO_TEST =		Yes
 
