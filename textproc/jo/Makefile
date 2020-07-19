@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/11/04 09:17:19 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/19 19:18:33 fcambus Exp $
 
 COMMENT =	JSON output from a shell
 
-V =		1.3
+V =		1.4
 DISTNAME =	jo-$V
 
 CATEGORIES =	textproc
@@ -20,6 +20,8 @@ WANTLIB =	c m
 MASTER_SITES =	https://github.com/jpmens/jo/releases/download/$V/
 
 CONFIGURE_STYLE = gnu
+
+CONFIGURE_ARGS = bashcompdir=${PREFIX}/share/bash-completion/completions
 
 pre-configure:
 	# Remove hardcoded optimization (-O2) flag
