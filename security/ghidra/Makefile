@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/12 02:10:07 lteo Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/19 01:29:23 lteo Exp $
 
 # bundled jython has amd64 components for OpenBSD
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	software reverse engineering (SRE) framework
 
-VERSION = 	9.0.4
-GHIDRA_DATE =	20190516
-REVISION =	3
+VERSION = 	9.1.2
+GHIDRA_DATE =	20200212
 
 GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
@@ -98,19 +97,20 @@ pre-build:
 	${SUBST_CMD} ${WRKDIR}/repos.gradle \
 		${WRKSRC}/GPL/nativeBuildProperties.gradle \
 		${WRKSRC}/Ghidra/Framework/Help/src/main/java/help/GHelpBuilder.java
-	mkdir ${WRKDIR}/{flatRepo,gradle,home}
+	mkdir ${WRKDIR}/{gradle,home}
+	mkdir ${WRKSRC}/flatRepo
 .for dir in ${JAR_DIRS}
 	unzip -j ${DISTDIR}/ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}.zip \
-		-d ${WRKDIR}/flatRepo \
-		ghidra_${VERSION}/Ghidra/${dir:C/-.*$//}/${dir:C/^.*-//}/lib/*.jar \
-		-x ghidra_${VERSION}/Ghidra/${dir:C/-.*$//}/${dir:C/^.*-//}/lib/${dir:C/^.*-//}.jar
+		-d ${WRKSRC}/flatRepo \
+		ghidra_${VERSION}_PUBLIC/Ghidra/${dir:C/-.*$//}/${dir:C/^.*-//}/lib/*.jar \
+		-x ghidra_${VERSION}_PUBLIC/Ghidra/${dir:C/-.*$//}/${dir:C/^.*-//}/lib/${dir:C/^.*-//}.jar
 .endfor
 .for name in csframework hfsx_dmglib hfsx iharder-base64
 	cp ${WRKSRC}/GPL/DMG/data/lib/catacombae_${name}.jar \
-		${WRKDIR}/flatRepo/${name}.jar
+		${WRKSRC}/flatRepo/${name}.jar
 .endfor
 .for jar_file in ${JAR_DISTFILES:C/{.*}//}
-	cp ${DISTDIR}/${jar_file} ${WRKDIR}/flatRepo
+	cp ${DISTDIR}/${jar_file} ${WRKSRC}/flatRepo
 .endfor
 	mkdir -p ${WRKDIR}/ghidra.bin/Ghidra/Features/GhidraServer
 	cp ${DISTDIR}/yajsw-stable-${YAJSW_VER}.zip \
@@ -127,12 +127,12 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java
 	unzip -d ${PREFIX}/share/java \
-		${WRKSRC}/build/dist/ghidra_${VERSION}_PUBLIC_*_openbsd64.zip
-	mv ${PREFIX}/share/java/ghidra_${VERSION} ${PREFIX}/share/java/ghidra
-	mv ${PREFIX}/share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_PUBLIC_*_SampleTablePlugin.zip \
-		${PREFIX}/share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}_SampleTablePlugin.zip
-	mv ${PREFIX}/share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_PUBLIC_*_sample.zip \
-		${PREFIX}/share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}_sample.zip
+		${WRKSRC}/build/dist/ghidra_${VERSION}_DEV_*_openbsd64.zip
+	mv ${PREFIX}/share/java/ghidra_${VERSION}_DEV ${PREFIX}/share/java/ghidra
+.for name in GnuDisassembler SampleTablePlugin SleighDevTools sample
+	mv ${PREFIX}/share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_DEV_*_${name}.zip \
+		${PREFIX}/share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_DEV_${GHIDRA_DATE}_${name}.zip
+.endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/Ghidra/RuntimeScripts/Linux/ghidraRun \
 		${PREFIX}/share/java/ghidra/ghidraRun
 	ln -s ${TRUEPREFIX}/share/java/ghidra/ghidraRun ${PREFIX}/bin/ghidraRun

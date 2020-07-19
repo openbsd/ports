@@ -1,16 +1,23 @@
-$OpenBSD: patch-GPL_CabExtract_build_gradle,v 1.1 2019/07/23 02:09:20 lteo Exp $
+$OpenBSD: patch-GPL_CabExtract_build_gradle,v 1.2 2020/07/19 01:29:23 lteo Exp $
 
 From https://github.com/NationalSecurityAgency/ghidra/pull/490
 
 Index: GPL/CabExtract/build.gradle
 --- GPL/CabExtract/build.gradle.orig
 +++ GPL/CabExtract/build.gradle
-@@ -40,7 +40,7 @@ project.ext.cabextract = "cabextract-1.6"
-  *
+@@ -58,7 +58,7 @@ task configureCabExtract (type: Exec) {
   * The cabextract tool requires that its 'configure' script is called before make.
   *********************************************************************************/
--['linux64', 'osx64'].each { platform ->
-+['linux64', 'osx64', 'openbsd64'].each { platform ->
+ def currentPlatform = getCurrentPlatformName()
+-if (['linux64', 'osx64'].contains(currentPlatform)) {
++if (['linux64', 'osx64', 'openbsd64'].contains(currentPlatform)) {
  		
- 	def configureName = "${platform}CabExtractConfigure"
- 	def makeName = "${platform}CabExtractMake" // native Make task found automatically
+ 	def makeName = "${currentPlatform}CabExtractMake" // native Make task found automatically
+ 
+@@ -75,4 +75,4 @@ if (['linux64', 'osx64'].contains(currentPlatform)) {
+ 			delete file("build/unpack/${cabextract}")
+ 		}
+ 	}
+-}
+\ No newline at end of file
++}

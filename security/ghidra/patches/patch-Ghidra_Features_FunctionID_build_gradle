@@ -1,11 +1,11 @@
-$OpenBSD: patch-Ghidra_Features_FunctionID_build_gradle,v 1.1 2019/07/23 02:09:20 lteo Exp $
+$OpenBSD: patch-Ghidra_Features_FunctionID_build_gradle,v 1.2 2020/07/19 01:29:23 lteo Exp $
 
 From https://github.com/NationalSecurityAgency/ghidra/pull/490
 
 Index: Ghidra/Features/FunctionID/build.gradle
 --- Ghidra/Features/FunctionID/build.gradle.orig
 +++ Ghidra/Features/FunctionID/build.gradle
-@@ -93,10 +93,10 @@ task buildFidDocumentationPdf(type: Exec) {
+@@ -97,10 +97,10 @@ task buildFidDocumentationPdf(type: Exec) {
  
  	// Check the OS before executing command.
  	doFirst {
