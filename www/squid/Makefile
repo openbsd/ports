@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2020/07/11 22:54:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.226 2020/07/20 17:11:46 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -10,21 +10,24 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
-REVISION=	0
+REVISION=	1
+
+.for i in -ldap -ntlm
+# subpackages aren't flavoured, so overwrite the default name/path
+FULLPKGNAME$i ?= squid$i-$V
+FULLPKGPATH$i ?= ${PKGPATH},$i
+RUN_DEPENDS$i += squid-$V:www/squid
+.endfor
 
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.squid-cache.org/
 
-MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
-
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c m nettle pthread
-
-cWANTLIB=	${WANTLIB} ${COMPILER_LIBCXX} ffi gmp gnutls hogweed
-cWANTLIB+=	iconv idn2 intl p11-kit tasn1 unistring
+cWANTLIB=	${COMPILER_LIBCXX} c ffi gmp gnutls hogweed iconv idn2
+cWANTLIB+=	intl m nettle p11-kit pthread tasn1 unistring
 
 # repo at https://github.com/squid-cache/squid
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:R}/ \
@@ -33,7 +36,6 @@ MASTER_SITES=	${HOMEPAGE}Versions/v${V:R}/ \
 # C++11
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS+=	security/gnutls
 BUILD_DEPENDS+=	devel/cppunit
 
 SEPARATE_BUILD=	Yes
@@ -46,13 +48,14 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 		--enable-ssl-crtd
 
 EXTERNAL_ACL=	SQL_session file_userip time_quota \
-		unix_group wbinfo_group # kerberos_ldap_group (sasl/gssapi)
+		unix_group wbinfo_group
 
 WANTLIB-main +=	${cWANTLIB} crypto db expat lzma ssl xml2 z
 
-LIB_DEPENDS-main += ${LIB_DEPENDS} \
+LIB_DEPENDS-main += \
 		databases/db/v4 \
 		devel/gettext,-runtime \
+		security/gnutls \
 		security/libnettle \
 		textproc/libxml
 
@@ -61,9 +64,8 @@ LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
 
 MULTI_PACKAGES=	-main -ldap -ntlm
 PSEUDO_FLAVORS=	no_ldap no_ntlm
+FLAVORS=	krb5
 FLAVOR?=
-
-.include <bsd.port.arch.mk>
 
 CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
 		--libexecdir="${PREFIX}/libexec/squid" \
@@ -85,7 +87,6 @@ CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
 		--enable-storeio="aufs ufs diskd" \
 		--with-default-user="_squid" \
 		--with-filedescriptors=8192 \
-		--with-krb5-config=no \
 		--with-pidfile="/var/run/squid.pid" \
 		--with-pthreads \
 		--with-swapdir="${LOCALSTATEDIR}/cache"
@@ -113,16 +114,34 @@ FAKE_FLAGS=	sysconfdir=$E \
 		DEFAULT_MIME_TABLE=$E/mime.conf
 TEST_DEPENDS=	devel/cppunit
 
+.if ${FLAVOR:Mkrb5}
+MODULES=	security/heimdal
+EXTERNAL_ACL+=	kerberos_ldap_group
+LIB_DEPENDS-main+= ${MODHEIMDAL_LIB_DEPENDS} \
+		databases/openldap
+
+WANTLIB-main+=	${MODHEIMDAL_WANTLIB} \
+		heimdal/lib/heimsqlite \
+		heimdal/lib/wind \
+		crypto lber ldap sasl2 ssl util
+CONFIGURE_ARGS+= --with-heimdal-krb5
+.else
+CONFIGURE_ARGS+= --with-krb5-config=no
+.endif
+
+.include <bsd.port.arch.mk>
+
 .if ${BUILD_PACKAGES:M-ldap}
 EXTERNAL_ACL+=	LDAP_group eDirectory_userip
 .endif
-RUN_DEPENDS-ldap=   ${BASE_PKGPATH}
-LIB_DEPENDS-ldap+=  ${LIB_DEPENDS} databases/openldap
+LIB_DEPENDS-ldap=   databases/openldap \
+		    security/gnutls
 WANTLIB-ldap +=     ${cWANTLIB} crypto lber ldap sasl2 ssl
 
-RUN_DEPENDS-ntlm=   net/samba ${BASE_PKGPATH}
-LIB_DEPENDS-ntlm += security/libnettle
-WANTLIB-ntlm=       ${WANTLIB} ${COMPILER_LIBCXX}
+RUN_DEPENDS-ntlm+=   net/samba
+LIB_DEPENDS-ntlm=   security/gnutls \
+		    security/libnettle
+WANTLIB-ntlm=       ${COMPILER_LIBCXX} c m nettle pthread
 
 pre-build:
 	@cd ${WRKSRC}; \

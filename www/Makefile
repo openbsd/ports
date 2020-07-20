@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.969 2020/07/03 12:08:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.970 2020/07/20 17:11:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -584,6 +584,7 @@
      SUBDIR += spawn-fcgi
      SUBDIR += sqtop
      SUBDIR += squid
+     SUBDIR += squid,krb5
      SUBDIR += squidclamav
      SUBDIR += squidguard
      SUBDIR += squidguard,ldap

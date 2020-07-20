@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2019/02/05 23:03:16 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2020/07/20 17:11:46 sthen Exp $
 @pkgpath www/squid/snapshot,-main
 @pkgpath www/squid/stable,-main
 @newgroup _squid:515
@@ -6,6 +6,7 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/cache/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/logs/*
 @rcscript ${RCDIR}/squid
+%%krb5%%
 @bin bin/purge
 @bin bin/squidclient
 libexec/squid/
