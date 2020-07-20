@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/12/17 14:52:01 sthen Exp $
-@comment @bin bin/file
+@comment $OpenBSD: PLIST,v 1.8 2020/07/20 13:32:56 sthen Exp $
+@bin bin/efile
 include/magic.h
 @static-lib lib/libmagic.a
 lib/libmagic.la
 @lib lib/libmagic.so.${LIBmagic_VERSION}
-@comment @man man/man1/file.1
+lib/pkgconfig/libmagic.pc
+@man man/man1/efile.1
 @man man/man3/libmagic.3
 @man man/man5/magic.5
 share/misc/magic.mgc
