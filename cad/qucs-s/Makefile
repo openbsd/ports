@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/14 06:39:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/20 11:40:09 sthen Exp $
 
 COMMENT =	an universal GUI for SPICE and not-SPICE circuit simulators
 
 V =		0.0.22
 DISTNAME =	qucs-s-${V}
+REVISION =	0
 
 CATEGORIES =	cad
 HOMEPAGE =	https://ra3xdh.github.io/
