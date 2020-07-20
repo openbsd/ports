@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/11 08:58:06 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/07/20 14:14:59 bcallah Exp $
 share/fonts/
 @fontdir share/fonts/unifont/
 share/fonts/unifont/unifont.ttf
 share/fonts/unifont/unifont_csur.ttf
+share/fonts/unifont/unifont_jp.ttf
 share/fonts/unifont/unifont_upper.ttf

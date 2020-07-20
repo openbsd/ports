@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/13 02:13:28 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/20 14:14:59 bcallah Exp $
 
 V =		13.0.03
 COMMENT =	free Unicode font from the GNU project
 DISTNAME =	unifont-${V}
-DISTFILES =	${DISTNAME}.ttf unifont_csur-${V}.ttf unifont_upper-${V}.ttf
+REVISION =	0
+DISTFILES =	${DISTNAME}.ttf \
+		unifont_csur-${V}.ttf \
+		unifont_jp-${V}.ttf \
+		unifont_upper-${V}.ttf
 CATEGORIES =	fonts
 
 HOMEPAGE =	https://unifoundry.com/unifont/
@@ -26,6 +30,7 @@ FONTDIR =	${PREFIX}/share/fonts/unifont
 do-extract:
 	cp ${DISTDIR}/unifont-${V}.ttf ${WRKDIR}/unifont.ttf
 	cp ${DISTDIR}/unifont_csur-${V}.ttf ${WRKDIR}/unifont_csur.ttf
+	cp ${DISTDIR}/unifont_jp-${V}.ttf ${WRKDIR}/unifont_jp.ttf
 	cp ${DISTDIR}/unifont_upper-${V}.ttf ${WRKDIR}/unifont_upper.ttf
 
 do-install:
