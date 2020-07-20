@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2020/06/12 08:35:01 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2020/07/20 08:36:27 landry Exp $
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
-V =		3.0.0
+V =		3.0.2
 DISTNAME =	pgrouting-${V}
 MASTER_SITES =	https://github.com/pgRouting/pgrouting/releases/download/v${V}/
 
