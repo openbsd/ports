@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2020/07/17 18:19:18 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.41 2020/07/20 11:34:52 sthen Exp $
 bin/go
 bin/gofmt
 go/
@@ -4602,7 +4602,7 @@ go/src/debug/elf/testdata/compressed-32.obj
 go/src/debug/elf/testdata/compressed-64.obj
 go/src/debug/elf/testdata/gcc-386-freebsd-exec
 go/src/debug/elf/testdata/gcc-amd64-linux-exec
-go/src/debug/elf/testdata/gcc-${MACHINE_ARCH}-openbsd-debug-with-rela.obj
+go/src/debug/elf/testdata/gcc-amd64-openbsd-debug-with-rela.obj
 go/src/debug/elf/testdata/go-relocation-test-clang-arm.obj
 go/src/debug/elf/testdata/go-relocation-test-clang-x86.obj
 go/src/debug/elf/testdata/go-relocation-test-gcc424-x86-64.obj
