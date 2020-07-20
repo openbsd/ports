@@ -1,8 +1,8 @@
-$OpenBSD: patch-internal_h,v 1.2 2018/05/04 13:31:14 sthen Exp $
+$OpenBSD: patch-internal_h,v 1.3 2020/07/20 11:55:01 sthen Exp $
 Index: internal.h
 --- internal.h.orig
 +++ internal.h
-@@ -131,9 +131,6 @@ typedef unsigned short sa_family_t;
+@@ -133,9 +133,6 @@ typedef unsigned short sa_family_t;
  #include <netinet/udp.h>
  #include <netinet/icmp6.h>
  #include <netinet/tcp.h>
