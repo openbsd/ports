@@ -1,31 +1,26 @@
-$OpenBSD: patch-src_fast_library_cpp,v 1.1 2020/06/25 07:28:29 jasper Exp $
+$OpenBSD: patch-src_fast_library_cpp,v 1.2 2020/07/20 05:53:41 jasper Exp $
 
-Revert https://github.com/pavel-odintsov/fastnetmon/commit/87b102d8b004322861e828edbe51bdbca77a1436
-which requires SIOCGIFINDEX (not supported on OpenBSD).
+Use if_nametoindex(3) instead of SIOCGIFINDEX
 
 Index: src/fast_library.cpp
 --- src/fast_library.cpp.orig
 +++ src/fast_library.cpp
-@@ -1295,22 +1295,3 @@ bool convert_hex_as_string_to_uint(std::string hex, ui
+@@ -1307,10 +1307,18 @@ bool get_interface_number_by_device_name(int socket_fd
  
-     return ss.fail();
+     strncpy(ifr.ifr_name, interface_name.c_str(), sizeof(ifr.ifr_name));
+ 
++/* Attempt to use SIOCGIFINDEX if present. */
++#ifdef SIOCGIFINDEX
+     if (ioctl(socket_fd, SIOCGIFINDEX, &ifr) == -1) {
+         return false;
+     }
+ 
+     interface_number = ifr.ifr_ifindex;
++#else
++    /* Fallback to if_nametoindex(3) otherwise. */
++    interface_number = if_nametoindex(interface_name.c_str());
++    if (interface_number == 0)
++	    return false;
++#endif /* SIOCGIFINDEX */
+     return true;
  }
--
--// Get interface number by name
--bool get_interface_number_by_device_name(int socket_fd, std::string interface_name, int& interface_number) {
--    struct ifreq ifr;
--    memset(&ifr, 0, sizeof(ifr));
--
--    if (interface_name.size() > IFNAMSIZ) {
--        return false;
--    }
--
--    strncpy(ifr.ifr_name, interface_name.c_str(), sizeof(ifr.ifr_name));
--
--    if (ioctl(socket_fd, SIOCGIFINDEX, &ifr) == -1) {
--        return false;
--    }
--
--    interface_number = ifr.ifr_ifindex;
--    return true;
--}
