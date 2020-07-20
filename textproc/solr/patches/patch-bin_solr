@@ -1,18 +1,20 @@
-$OpenBSD: patch-bin_solr,v 1.10 2020/03/19 19:19:23 sthen Exp $
+$OpenBSD: patch-bin_solr,v 1.11 2020/07/20 12:30:10 sthen Exp $
 
 Index: bin/solr
 --- bin/solr.orig
 +++ bin/solr
-@@ -117,7 +117,7 @@ elif [ -n "$JAVA_HOME" ]; then
+@@ -124,8 +124,8 @@ elif [ -n "$JAVA_HOME" ]; then
      exit 1
    fi
  else
 -  JAVA=java
+-  JSTACK=jstack
 +  JAVA=$(${LOCALBASE}/bin/javaPathHelper -c solr)
++  JSTACK=$(${LOCALBASE}/bin/javaPathHelper -h solr)/bin/jstack
  fi
  
  if [ -z "$SOLR_STOP_WAIT" ]; then
-@@ -2236,13 +2236,13 @@ function start_solr() {
+@@ -2252,13 +2252,13 @@ function start_solr() {
  	echo ""
      fi
      # no lsof on cygwin though
