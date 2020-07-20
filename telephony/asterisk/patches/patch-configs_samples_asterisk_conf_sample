@@ -1,9 +1,9 @@
-$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.7 2020/03/29 15:42:27 sthen Exp $
+$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.8 2020/07/20 13:37:02 sthen Exp $
 
 Index: configs/samples/asterisk.conf.sample
 --- configs/samples/asterisk.conf.sample.orig
 +++ configs/samples/asterisk.conf.sample
-@@ -70,8 +70,8 @@ astsbindir => /usr/sbin
+@@ -71,8 +71,8 @@ astsbindir => /usr/sbin
  				; not otherwise require one.
  ;transcode_via_sln = yes	; Build transcode paths via SLINEAR, instead of
  				; directly.
@@ -14,7 +14,7 @@ Index: configs/samples/asterisk.conf.sample
  ;lightbackground = yes		; If your terminal is set for a light-colored
  				; background.
  ;forceblackbackground = yes     ; Force the background of the terminal to be
-@@ -92,7 +92,8 @@ documentation_language = en_US	; Set the language you 
+@@ -93,7 +93,8 @@ documentation_language = en_US	; Set the language you 
  				; gosub - Invoke the stdexten using a gosub as
  				;         documented in extensions.conf.sample.
  				; Default gosub.
@@ -24,7 +24,7 @@ Index: configs/samples/asterisk.conf.sample
  				; functions from external sources (AMI,
  				; etc.) These functions (such as SHELL) are
  				; considered dangerous because they can allow
-@@ -125,8 +126,8 @@ documentation_language = en_US	; Set the language you 
+@@ -126,8 +127,8 @@ documentation_language = en_US	; Set the language you 
                  ; when the Digium Phone Module for Asterisk is in use.
  
  ; Changing the following lines may compromise your security.

@@ -1,9 +1,9 @@
-$OpenBSD: patch-res_res_pjsip_pubsub_c,v 1.3 2020/02/06 16:21:42 sthen Exp $
+$OpenBSD: patch-res_res_pjsip_pubsub_c,v 1.4 2020/07/20 13:37:02 sthen Exp $
 
 Index: res/res_pjsip_pubsub.c
 --- res/res_pjsip_pubsub.c.orig
 +++ res/res_pjsip_pubsub.c
-@@ -4741,7 +4741,7 @@ static int persistence_expires_str2struct(const struct
+@@ -4744,7 +4744,7 @@ static int persistence_expires_str2struct(const struct
  static int persistence_expires_struct2str(const void *obj, const intptr_t *args, char **buf)
  {
  	const struct subscription_persistence *persistence = obj;
