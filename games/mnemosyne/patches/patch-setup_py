@@ -1,28 +1,15 @@
-$OpenBSD: patch-setup_py,v 1.6 2020/05/14 12:36:46 jca Exp $
-
-Second hunk:
-The cherrypy project moved their WSGI server to py-cheroot.
-https://bugs.launchpad.net/mnemosyne-proj/+bug/1659314
+$OpenBSD: patch-setup_py,v 1.7 2020/07/20 13:35:05 kirby Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -125,8 +125,7 @@ elif sys.platform == "darwin": # For py2app.
+@@ -79,8 +79,7 @@ if sys.platform == "darwin": # For py2app.
  else:
      base_path = os.path.join(sys.exec_prefix, "lib", "python" + sys.version[:3],
                               "site-packages","mnemosyne")
 -    data_files = [("share/applications", ["mnemosyne.desktop"]),
 -                  ("share/icons", ["pixmaps/mnemosyne.png"])]
 +    data_files = []
- # Translations.
- if sys.platform == "win32":
-     for mo in [x for x in glob.glob(os.path.join("mo", "*")) \
-@@ -155,7 +154,7 @@ setup_requires = []
  
- py2app_options = {
- "argv_emulation": True,
--"includes": "sip,numpy,cherrypy,cPickle,md5,logging,shutil,xml.sax",
-+"includes": "sip,numpy,cheroot,cPickle,md5,logging,shutil,xml.sax",
- "iconfile": "pixmaps/mnemosyne.icns",
- "qt_plugins": ["sqldrivers", "imageformats"],
- "packages": "mnemosyne, mnemosyne.pyqt_ui, mnemosyne.libmnemosyne, \
+ # Translations.
+ if sys.platform != "win32":
