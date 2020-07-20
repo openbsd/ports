@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/11 22:54:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/20 12:07:17 sthen Exp $
 
 COMMENT=	small tools to operate on patch files
 
-DISTNAME=	patchutils-0.3.4
-REVISION=	2
+DISTNAME=	patchutils-0.4.2
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	textproc devel
 
-HOMEPAGE=	http://cyberelk.net/tim/software/patchutils/
+HOMEPAGE=	https://cyberelk.net/tim/software/patchutils/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 

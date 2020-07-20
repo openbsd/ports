@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/20 17:06:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/20 12:07:18 sthen Exp $
 bin/combinediff
 bin/dehtmldiff
 bin/editdiff
@@ -6,12 +6,17 @@ bin/espdiff
 @bin bin/filterdiff
 bin/fixcvsdiff
 bin/flipdiff
+bin/gitdiff
+bin/gitdiffview
 bin/grepdiff
 @bin bin/interdiff
 bin/lsdiff
+bin/patchview
 bin/recountdiff
 @bin bin/rediff
 bin/splitdiff
+bin/svndiff
+bin/svndiffview
 bin/unwrapdiff
 @man man/man1/combinediff.1
 @man man/man1/dehtmldiff.1
@@ -23,6 +28,7 @@ bin/unwrapdiff
 @man man/man1/grepdiff.1
 @man man/man1/interdiff.1
 @man man/man1/lsdiff.1
+@man man/man1/patchview.1
 @man man/man1/recountdiff.1
 @man man/man1/rediff.1
 @man man/man1/splitdiff.1
