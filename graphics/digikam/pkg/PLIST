@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/05/15 15:54:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/07/20 04:51:38 rsadowski Exp $
 @conflict digikam-kde4-*
 @conflict kipi-plugins-<=4
 bin/cleanup_digikamdb
@@ -23,12 +23,14 @@ include/digikam/dcolor.h
 include/digikam/dcolorblend.h
 include/digikam/dcolorcomposer.h
 include/digikam/dcolorpixelaccess.h
+include/digikam/dcolorselector.h
 include/digikam/dhistoryview.h
 include/digikam/digikam_config.h
 include/digikam/digikam_core_export.h
 include/digikam/digikam_database_export.h
 include/digikam/digikam_export.h
 include/digikam/digikam_globals.h
+include/digikam/digikam_gui_export.h
 include/digikam/dimg.h
 include/digikam/dimgbuiltinfilter.h
 include/digikam/dimgloaderobserver.h
@@ -40,6 +42,7 @@ include/digikam/ditemslist.h
 include/digikam/dmessagebox.h
 include/digikam/dmetainfoiface.h
 include/digikam/dplugin.h
+include/digikam/dpluginaboutdlg.h
 include/digikam/dpluginaction.h
 include/digikam/dpluginauthor.h
 include/digikam/dpluginbqm.h
@@ -55,9 +58,9 @@ include/digikam/drawdecodersettings.h
 include/digikam/drawdecoding.h
 include/digikam/drawinfo.h
 include/digikam/dsavesettingswidget.h
-include/digikam/dshareddata.h
 include/digikam/dwizarddlg.h
 include/digikam/dwizardpage.h
+include/digikam/dynamicthread.h
 include/digikam/editortool.h
 include/digikam/filesaveconflictbox.h
 include/digikam/filteraction.h
@@ -70,6 +73,7 @@ include/digikam/graphicsdimgview.h
 include/digikam/historyimageid.h
 include/digikam/iccprofile.h
 include/digikam/icctransform.h
+include/digikam/imagedialog.h
 include/digikam/imageiface.h
 include/digikam/imageregionwidget.h
 include/digikam/imagezoomsettings.h
@@ -77,6 +81,8 @@ include/digikam/iofilesettings.h
 include/digikam/iteminfo.h
 include/digikam/iteminfolist.h
 include/digikam/loadingdescription.h
+include/digikam/loadsavethread.h
+include/digikam/managedloadsavethread.h
 include/digikam/metaengine.h
 include/digikam/metaengine_data.h
 include/digikam/photoinfocontainer.h
@@ -86,6 +92,7 @@ include/digikam/previewtoolbar.h
 include/digikam/queuesettings.h
 include/digikam/rginfo.h
 include/digikam/thumbnailinfo.h
+include/digikam/thumbnailloadthread.h
 include/digikam/wbcontainer.h
 lib/cmake/DigikamCore/
 lib/cmake/DigikamCore/DigikamCoreConfig${MODCMAKE_BUILD_SUFFIX}
@@ -99,6 +106,8 @@ lib/cmake/DigikamGui/
 lib/cmake/DigikamGui/DigikamGuiConfig${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/DigikamGui/DigikamGuiConfig.cmake
 lib/cmake/DigikamGui/DigikamGuiConfigVersion.cmake
+lib/cmake/DigikamPlugin/
+lib/cmake/DigikamPlugin/DigikamPluginConfig.cmake
 @lib lib/libdigikamcore.so.${LIBdigikamcore_VERSION}
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
 @lib lib/libdigikamgui.so.${LIBdigikamgui_VERSION}
@@ -227,9 +236,11 @@ lib/qt5/plugins/digikam/generic/
 @so lib/qt5/plugins/digikam/generic/Generic_PrintCreator_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Rajce_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_SendByMail_Plugin.so
+@so lib/qt5/plugins/digikam/generic/Generic_SlideShow_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_SmugMug_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_TimeAdjust_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Twitter_Plugin.so
+@so lib/qt5/plugins/digikam/generic/Generic_VKontakte_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Wallpaper_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_YandexFotki_Plugin.so
 lib/qt5/plugins/digikam/rawimport/
@@ -353,16 +364,9 @@ share/digikam/database/
 share/digikam/database/dbconfig.xml
 share/digikam/database/mysql-global.conf
 share/digikam/facesengine/
-share/digikam/facesengine/dlib_face_recognition_resnet_model_v1.dat
-share/digikam/facesengine/haarcascade_frontalface_alt.xml
-share/digikam/facesengine/haarcascade_frontalface_alt2.xml
-share/digikam/facesengine/haarcascade_frontalface_alt_tree.xml
-share/digikam/facesengine/haarcascade_frontalface_default.xml
-share/digikam/facesengine/haarcascade_mcs_lefteye.xml
-share/digikam/facesengine/haarcascade_mcs_mouth.xml
-share/digikam/facesengine/haarcascade_mcs_nose.xml
-share/digikam/facesengine/haarcascade_mcs_righteye.xml
-share/digikam/facesengine/haarcascade_profileface.xml
+share/digikam/facesengine/deploy.prototxt
+share/digikam/facesengine/openface_nn4.small2.v1.t7
+share/digikam/facesengine/res10_300x300_ssd_iter_140000_fp16.caffemodel
 share/digikam/facesengine/shapepredictor.dat
 share/digikam/geoiface/
 share/digikam/geoiface/backend-googlemaps-js.js
@@ -545,6 +549,46 @@ share/digikam/themes/frames/frames.desktop
 share/digikam/themes/frames/preview.png
 share/digikam/themes/frames/style.css
 share/digikam/themes/frames/template.xsl
+share/digikam/themes/html5responsive/
+share/digikam/themes/html5responsive/README
+share/digikam/themes/html5responsive/html5responsive.desktop
+share/digikam/themes/html5responsive/preview.png
+share/digikam/themes/html5responsive/resources/
+share/digikam/themes/html5responsive/resources/css/
+share/digikam/themes/html5responsive/resources/css/basic.css
+share/digikam/themes/html5responsive/resources/css/brownCard.css
+share/digikam/themes/html5responsive/resources/css/default-skin/
+share/digikam/themes/html5responsive/resources/css/default-skin/default-skin.css
+share/digikam/themes/html5responsive/resources/css/default-skin/default-skin.png
+share/digikam/themes/html5responsive/resources/css/default-skin/default-skin.svg
+share/digikam/themes/html5responsive/resources/css/default-skin/preloader.gif
+share/digikam/themes/html5responsive/resources/css/feed.css
+share/digikam/themes/html5responsive/resources/css/fundament.css
+share/digikam/themes/html5responsive/resources/css/lightbox.css
+share/digikam/themes/html5responsive/resources/css/photoswipe.css
+share/digikam/themes/html5responsive/resources/images/
+share/digikam/themes/html5responsive/resources/images/BrownCard/
+share/digikam/themes/html5responsive/resources/images/BrownCard/brownCard.png
+share/digikam/themes/html5responsive/resources/images/BrownCard/brownCardAlbum.jpg
+share/digikam/themes/html5responsive/resources/images/BrownCard/photoCorners.png
+share/digikam/themes/html5responsive/resources/images/BrownCard/roughPhotoCard.png
+share/digikam/themes/html5responsive/resources/images/Lightbox/
+share/digikam/themes/html5responsive/resources/images/Lightbox/Contact_corners.png
+share/digikam/themes/html5responsive/resources/images/Lightbox/Large_contact.png
+share/digikam/themes/html5responsive/resources/images/Lightbox/LightBox_topless.jpg
+share/digikam/themes/html5responsive/resources/images/Lightbox/Lightbox_top.jpg
+share/digikam/themes/html5responsive/resources/images/Lightbox/Monochrome-strip.jpg
+share/digikam/themes/html5responsive/resources/images/Lightbox/SafetyFilm-strip.jpg
+share/digikam/themes/html5responsive/resources/images/Lightbox/SlideFrame_landscape.png
+share/digikam/themes/html5responsive/resources/images/Lightbox/SlideFrame_portrait.png
+share/digikam/themes/html5responsive/resources/images/Lightbox/SlideFrame_square.png
+share/digikam/themes/html5responsive/resources/js/
+share/digikam/themes/html5responsive/resources/js/photoswipe-ui-default.min.js
+share/digikam/themes/html5responsive/resources/js/photoswipe.min.js
+share/digikam/themes/html5responsive/resources/xslt/
+share/digikam/themes/html5responsive/resources/xslt/convertNewlinesToHtmlBreaksTemplate.xsl
+share/digikam/themes/html5responsive/resources/xslt/xmlJsEscapeTemplate.xsl
+share/digikam/themes/html5responsive/template.xsl
 share/digikam/themes/matrix/
 share/digikam/themes/matrix/bg.png
 share/digikam/themes/matrix/matrix.desktop
@@ -793,6 +837,7 @@ share/locale/he/LC_MESSAGES/digikam.mo
 share/locale/hi/LC_MESSAGES/digikam.mo
 share/locale/hr/LC_MESSAGES/digikam.mo
 share/locale/hu/LC_MESSAGES/digikam.mo
+share/locale/id/LC_MESSAGES/digikam.mo
 share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/it/LC_MESSAGES/digikam.mo
 share/locale/ja/LC_MESSAGES/digikam.mo
