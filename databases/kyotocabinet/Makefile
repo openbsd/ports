@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/07/21 14:25:36 bket Exp $
 
 BROKEN-hppa=	undefined reference to __sync_fetch_and_add_8
 BROKEN-powerpc=	undefined reference to __sync_fetch_and_add_8
@@ -8,7 +8,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT=	straightforward implementation of DBM
 
-DISTNAME=	kyotocabinet-1.2.77
+DISTNAME=	kyotocabinet-1.2.78
 
 SHARED_LIBS +=	kyotocabinet 0.0 # 16.0
 
