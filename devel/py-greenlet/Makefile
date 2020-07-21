@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:12:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/21 13:40:13 semarie Exp $
 
 COMMENT =	lightweight in-process concurrent programming
 # see slp_platformselect.h
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 powerpc sparc64
 
-MODPY_EGG_VERSION = 0.4.15
+MODPY_EGG_VERSION = 0.4.16
 DISTNAME =	greenlet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 

@@ -1,14 +1,17 @@
-$OpenBSD: patch-slp_platformselect_h,v 1.3 2020/04/23 04:43:45 cwen Exp $
+$OpenBSD: patch-slp_platformselect_h,v 1.4 2020/07/21 13:40:13 semarie Exp $
 Give it a chance to build on ppc & mips
 Index: slp_platformselect.h
 --- slp_platformselect.h.orig
 +++ slp_platformselect.h
-@@ -14,7 +14,7 @@
+@@ -12,9 +12,9 @@
+ #include "platform/switch_amd64_unix.h" /* gcc on amd64 */
+ #elif defined(__GNUC__) && defined(__i386__)
  #include "platform/switch_x86_unix.h" /* gcc on X86 */
- #elif defined(__GNUC__) && defined(__powerpc64__) && defined(__linux__)
+-#elif defined(__GNUC__) && defined(__powerpc64__) && (defined(__linux__) || defined(__FreeBSD__))
++#elif defined(__GNUC__) && defined(__powerpc64__) && (defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__))
  #include "platform/switch_ppc64_linux.h" /* gcc on PowerPC 64-bit */
--#elif defined(__GNUC__) && defined(__PPC__) && defined(__linux__)
-+#elif defined(__GNUC__) && defined(__PPC__) && defined(__OpenBSD__)
+-#elif defined(__GNUC__) && defined(__PPC__) && (defined(__linux__) || defined(__FreeBSD__))
++#elif defined(__GNUC__) && defined(__PPC__) && (defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__))
  #include "platform/switch_ppc_linux.h" /* gcc on PowerPC */
  #elif defined(__GNUC__) && defined(__ppc__) && defined(__APPLE__)
  #include "platform/switch_ppc_macosx.h" /* Apple MacOS X on PowerPC */
