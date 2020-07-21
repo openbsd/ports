@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/21 07:41:59 jasper Exp $
 
 COMMENT =	RE platform powered by radare2
 
 GH_ACCOUNT =	radareorg
 GH_PROJECT =	cutter
 GH_TAGNAME =	v1.10.3
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -28,7 +28,7 @@ MODULES =	devel/cmake \
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	devel/radare2/main>=4.4.0
+RUN_DEPENDS =	devel/radare2/main>=4.5.0
 LIB_DEPENDS =	archivers/libzip \
 		devel/capstone/main \
 		devel/kf5/syntax-highlighting \
