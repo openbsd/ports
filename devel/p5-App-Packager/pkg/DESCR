@@ -1,0 +1,4 @@
+App::Packager provides an abstract interface to a number of common packagers,
+trying to catch as much common behaviour as possible.  The main purpose is
+to have uniform access to application specific resources.  Supported packagers
+are PAR::Packer, Cava::Packager and unpackaged.

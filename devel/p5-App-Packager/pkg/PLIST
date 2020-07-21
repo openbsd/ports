@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/21 21:31:59 millert Exp $
+${P5SITE}/App/
+${P5SITE}/App/Packager.pm
+@man man/man3p/App::Packager.3p
