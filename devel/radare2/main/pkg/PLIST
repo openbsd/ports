@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/05/19 19:48:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/07/21 07:41:51 jasper Exp $
 bin/r2
 @bin bin/r2agent
 bin/r2p
@@ -11,6 +11,7 @@ bin/r2pm
 @bin bin/ragg2
 @bin bin/rahash2
 @bin bin/rarun2
+@bin bin/rasign2
 @bin bin/rasm2
 @bin bin/rax2
 include/libr/
@@ -29,6 +30,7 @@ include/libr/r_cons.h
 include/libr/r_core.h
 include/libr/r_crypto/
 include/libr/r_crypto.h
+include/libr/r_crypto/r_aes.h
 include/libr/r_crypto/r_des.h
 include/libr/r_debug.h
 include/libr/r_diff.h
@@ -66,6 +68,7 @@ include/libr/r_util/
 include/libr/r_util.h
 include/libr/r_util/pj.h
 include/libr/r_util/r_alloc.h
+include/libr/r_util/r_annotated_code.h
 include/libr/r_util/r_ascii_table.h
 include/libr/r_util/r_asn1.h
 include/libr/r_util/r_assert.h
@@ -75,7 +78,6 @@ include/libr/r_util/r_big.h
 include/libr/r_util/r_bitmap.h
 include/libr/r_util/r_buf.h
 include/libr/r_util/r_cache.h
-include/libr/r_util/r_constr.h
 include/libr/r_util/r_ctypes.h
 include/libr/r_util/r_date.h
 include/libr/r_util/r_debruijn.h
@@ -343,8 +345,8 @@ share/radare2/${V}/fcnsign/cc-hexagon-32.sdb
 share/radare2/${V}/fcnsign/cc-m68k-32.sdb
 share/radare2/${V}/fcnsign/cc-mips-32.sdb
 share/radare2/${V}/fcnsign/cc-mips-64.sdb
-share/radare2/${V}/fcnsign/cc-powerpc-32.sdb
-share/radare2/${V}/fcnsign/cc-powerpc-64.sdb
+share/radare2/${V}/fcnsign/cc-ppc-32.sdb
+share/radare2/${V}/fcnsign/cc-ppc-64.sdb
 share/radare2/${V}/fcnsign/cc-riscv-64.sdb
 share/radare2/${V}/fcnsign/cc-sparc-32.sdb
 share/radare2/${V}/fcnsign/cc-x86-16.sdb

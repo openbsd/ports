@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2020/06/05 06:41:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/21 07:41:51 jasper Exp $
 
 COMMENT =		libre and portable reverse engineering framework
 
-V =			4.4.0
+V =			4.5.0
 SUBST_VARS +=		V
 
 GH_PROJECT =		radare2
@@ -10,15 +10,12 @@ GH_TAGNAME =		${V}
 
 # When updating, use the output from the command below to set
 # the extra distfiles so as not to invoke clone_3rd_repo.sh during build:
-# grep -E '^(TS|SHELLPARSER)_TIP' ${WRKSRC}/shlr/Makefile
-TREESITTER_COMMIT =	f049ba35
-SHELLPARSER_COMMIT =	36130421
+# grep -E '^TS_TIP' ${WRKSRC}/shlr/Makefile
+TREESITTER_COMMIT =	86a5dabb
 MASTER_SITES0 =		https://github.com/tree-sitter/tree-sitter/archive/
-MASTER_SITES1 =		https://github.com/ret2libc/radare2-shell-parser/archive/
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			treesitter-{}${TREESITTER_COMMIT}.tar.gz:0 \
-			shellparser-{}${SHELLPARSER_COMMIT}.tar.gz:1
+			treesitter-{}${TREESITTER_COMMIT}.tar.gz:0
 
 # In radare, all libs have the same version
 LIBV =			8.0	# 4.4.0
@@ -56,8 +53,6 @@ TEST_TARGET =		tests
 
 post-extract:
 	mv ${WRKDIR}/tree-sitter-${TREESITTER_COMMIT}* ${WRKSRC}/shlr/tree-sitter
-	mv ${WRKDIR}/radare2-shell-parser-${SHELLPARSER_COMMIT}* \
-		${WRKSRC}/shlr/radare2-shell-parser
 
 post-patch:
 	sed -i 's/>mips/>mipsen/' ${WRKSRC}/libr/anal/p/anal_mips_cs.c

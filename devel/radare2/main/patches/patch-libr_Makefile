@@ -1,11 +1,11 @@
-$OpenBSD: patch-libr_Makefile,v 1.8 2020/05/19 19:48:02 jasper Exp $
+$OpenBSD: patch-libr_Makefile,v 1.9 2020/07/21 07:41:51 jasper Exp $
 
 Remove library symlinks
 
 Index: libr/Makefile
 --- libr/Makefile.orig
 +++ libr/Makefile
-@@ -218,7 +218,6 @@ install: install-includes install-pkgconfig
+@@ -221,7 +221,6 @@ install: install-includes install-pkgconfig
  	  echo " ${DESTDIR}${LIBDIR}/$(call libpath-to-name-version,$(lib),${LIBVERSION})"; \
  	  rm -f "${DESTDIR}${LIBDIR}/$(call libpath-to-name-version,$(lib),${LIBVERSION})"; \
  	  ${INSTALL_LIB} "$(lib)" "${DESTDIR}${LIBDIR}/$(call libpath-to-name-version,$(lib),${LIBVERSION})"; \
