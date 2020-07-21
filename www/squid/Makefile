@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2020/07/20 17:11:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.227 2020/07/21 15:52:40 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -139,8 +139,7 @@ LIB_DEPENDS-ldap=   databases/openldap \
 WANTLIB-ldap +=     ${cWANTLIB} crypto lber ldap sasl2 ssl
 
 RUN_DEPENDS-ntlm+=   net/samba
-LIB_DEPENDS-ntlm=   security/gnutls \
-		    security/libnettle
+LIB_DEPENDS-ntlm=   security/libnettle
 WANTLIB-ntlm=       ${COMPILER_LIBCXX} c m nettle pthread
 
 pre-build:
