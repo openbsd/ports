@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.118 2020/04/26 21:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.119 2020/07/21 16:46:13 jasper Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-5.0
 PKGNAME=	bash-5.0.17
+REVISION=	0
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
@@ -28,5 +29,6 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 ALL_TARGET=	all loadables
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
+CONFIGURE_ARGS=	--without-bash-malloc
 
 .include <bsd.port.mk>
