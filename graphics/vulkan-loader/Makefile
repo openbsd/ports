@@ -1,4 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/20 11:37:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/21 12:48:55 sthen Exp $
+
+# Integrated clang assembler doesn't work with x86 - Bug #698164
+# remove if build can be updated to clang 9.0.0 (see
+# https://github.com/KhronosGroup/Vulkan-Loader/issues/252)
+BROKEN-i386 =	clang integrated asm fails, https://github.com/KhronosGroup/Vulkan-Loader/issues/252
 
 COMMENT =	Vulkan ICD loader
 
@@ -35,15 +40,6 @@ MODPY_RUNDEP =	No
 
 # Tests only build if Google Test framework is in directory external/
 NO_TEST =	Yes
-
-.include <bsd.port.arch.mk>
-
-# Integrated clang assembler doesn't work with x86 - Bug #698164
-# remove if build can be updated to clang 9.0.0 (see
-# https://github.com/KhronosGroup/Vulkan-Loader/issues/252)
-.if ${MACHINE_ARCH}==i386 && ${PROPERTIES:Mclang}
-CFLAGS +=	-fno-integrated-as
-.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
