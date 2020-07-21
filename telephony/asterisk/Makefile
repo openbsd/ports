@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.322 2020/07/20 13:37:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.323 2020/07/21 19:42:34 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -7,6 +7,7 @@ PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
+REVISION-main=	0
 
 .if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
@@ -28,6 +29,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += ${MODGCC4_CPPWANTLIB}
 # XXX somehow COMPILER_LIBCXX doesn't get set to gcc libs?
+# XXX Asterisk is not allowed to use other ports which pull in C++ libs
+# XXX otherwise there is a conflict between libstdc++ and libc++.
 WANTLIB-main += c crypto curl curses edit execinfo gsm iconv iksemel
 WANTLIB-main += jansson lzma m nghttp2 ogg portaudio pthread radcli
 WANTLIB-main += spandsp sqlite3 srtp2 ssl tiff uriparser unbound uuid
@@ -118,7 +121,7 @@ MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-download-cache=${FULLDISTDIR} \
 			--with-pjproject-bundled
-CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729"
+CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729 --disable-vpx"
 MAKE_ENV=		LOCALBASE="${LOCALBASE}"
 
 CONFIGURE_ARGS+=	--with-asound=no \
