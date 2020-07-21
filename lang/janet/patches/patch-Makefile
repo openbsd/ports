@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.15 2020/06/15 18:00:42 jturner Exp $
+$OpenBSD: patch-Makefile,v 1.16 2020/07/21 14:23:03 jturner Exp $
 
 Use a date stamp for JANET_BUILD to avoid using git.
 Fix installation.
@@ -17,12 +17,12 @@ Index: Makefile
  JANET_LIBRARY=build/libjanet.so
  JANET_STATIC_LIBRARY=build/libjanet.a
  JANET_PATH?=$(LIBDIR)/janet
--MANPATH?=$(PREFIX)/share/man/man1/
-+MANPATH?=$(PREFIX)/man/man1/
- PKG_CONFIG_PATH?=$(LIBDIR)/pkgconfig
+-JANET_MANPATH?=$(PREFIX)/share/man/man1/
++JANET_MANPATH?=$(PREFIX)/man/man1/
+ JANET_PKG_CONFIG_PATH?=$(LIBDIR)/pkgconfig
  DEBUGGER=gdb
  SONAME_SETTER=-Wl,-soname,
-@@ -259,17 +259,14 @@ install: $(JANET_TARGET) build/janet.pc build/jpm
+@@ -267,17 +267,14 @@ install: $(JANET_TARGET) build/janet.pc build/jpm
  	cp -rf $(JANET_HEADERS) '$(DESTDIR)$(INCLUDEDIR)/janet'
  	mkdir -p '$(DESTDIR)$(JANET_PATH)'
  	mkdir -p '$(DESTDIR)$(LIBDIR)'
@@ -32,11 +32,11 @@ Index: Makefile
 -	ln -sf $(SONAME) '$(DESTDIR)$(LIBDIR)/libjanet.so'
 -	ln -sf libjanet.so.$(shell $(JANET_TARGET) -e '(print janet/version)') $(DESTDIR)$(LIBDIR)/$(SONAME)
  	cp -rf build/jpm '$(DESTDIR)$(BINDIR)'
- 	mkdir -p '$(DESTDIR)$(MANPATH)'
- 	cp janet.1 '$(DESTDIR)$(MANPATH)'
- 	cp jpm.1 '$(DESTDIR)$(MANPATH)'
- 	mkdir -p '$(DESTDIR)$(PKG_CONFIG_PATH)'
- 	cp build/janet.pc '$(DESTDIR)$(PKG_CONFIG_PATH)/janet.pc'
+ 	mkdir -p '$(DESTDIR)$(JANET_MANPATH)'
+ 	cp janet.1 '$(DESTDIR)$(JANET_MANPATH)'
+ 	cp jpm.1 '$(DESTDIR)$(JANET_MANPATH)'
+ 	mkdir -p '$(DESTDIR)$(JANET_PKG_CONFIG_PATH)'
+ 	cp build/janet.pc '$(DESTDIR)$(JANET_PKG_CONFIG_PATH)/janet.pc'
 -	[ -z '$(DESTDIR)' ] && $(LDCONFIG) || true
  
  uninstall:
