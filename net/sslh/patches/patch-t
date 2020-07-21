@@ -1,19 +1,19 @@
-$OpenBSD: patch-t,v 1.2 2020/07/14 16:53:57 bket Exp $
+$OpenBSD: patch-t,v 1.3 2020/07/21 14:25:09 bket Exp $
 
 Index: t
 --- t.orig
 +++ t
-@@ -37,8 +37,6 @@ my $RB_WRONG_USERNAME =         1;
- my $RB_OPEN_PID_FILE =          1;
+@@ -38,8 +38,6 @@ my $RB_OPEN_PID_FILE =          1;
  my $RB_RESOLVE_ADDRESS =        1;
+ my $RB_CL_PARAMS =              1;
  
 -`lcov --directory . --zerocounters`;
 -
  sub verbose_exec
  {
      my ($cmd) = @_;
-@@ -390,10 +388,7 @@ if ($RB_RESOLVE_ADDRESS) {
-     my_is($code, 4, "Exit status if can't resolve address");
+@@ -440,10 +438,7 @@ if ($RB_CL_PARAMS) {
+     my_is($code, 6, "Bad command line parameters");
  }
  
 -`lcov --directory . --capture --output-file sslh_cov.info`;
