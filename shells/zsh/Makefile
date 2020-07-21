@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.92 2020/03/29 21:24:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.93 2020/07/21 16:48:06 jasper Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
 V=		5.8
+REVISION =	0
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
@@ -27,8 +28,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	--enable-zsh-mem \
-		--enable-zsh-secure-free \
+CONFIGURE_ARGS=	--disable-zsh-mem \
+		--disable-zsh-secure-free \
 		--enable-maildir-support \
 		--enable-function-subdirs \
 		--enable-multibyte \
