@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.153 2020/04/22 11:55:14 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.154 2020/07/21 15:58:41 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -18,7 +18,7 @@ EXTRACT_SUFX?=		.tar.xz
 
 CATEGORIES=		lang www
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=		https://www.php.net/
 MASTER_SITES=		https://www.php.net/distributions/
