@@ -1,0 +1,105 @@
+$OpenBSD: patch-src_acl_external_kerberos_ldap_group_support_resolv_cc,v 1.1 2020/07/21 18:40:30 sthen Exp $
+
+workaround OpenBSD's ancient arpa/nameser.h
+
+Index: src/acl/external/kerberos_ldap_group/support_resolv.cc
+--- src/acl/external/kerberos_ldap_group/support_resolv.cc.orig
++++ src/acl/external/kerberos_ldap_group/support_resolv.cc
+@@ -284,8 +284,8 @@ get_ldap_hostname_list(struct main_args *margs, struct
+ #endif
+ 
+     hp = *hlist;
+-    buffer = (u_char *) xmalloc(PACKETSZ_MULT * NS_PACKETSZ);
+-    if ((len = res_search(service, ns_c_in, ns_t_srv, (u_char *) buffer, PACKETSZ_MULT * NS_PACKETSZ)) < 0) {
++    buffer = (u_char *) xmalloc(PACKETSZ_MULT * PACKETSZ);
++    if ((len = res_search(service, C_IN, T_SRV, (u_char *) buffer, PACKETSZ_MULT * PACKETSZ)) < 0) {
+         error((char *) "%s| %s: ERROR: Error while resolving service record %s with res_search\n", LogTime(), PROGRAM, service);
+         nsError(h_errno, service);
+         if (margs->ssl) {
+@@ -293,7 +293,7 @@ get_ldap_hostname_list(struct main_args *margs, struct
+             service = (char *) xmalloc(strlen("_ldap._tcp.") + strlen(domain) + 1);
+             strcpy(service, "_ldap._tcp.");
+             strcat(service, domain);
+-            if ((len = res_search(service, ns_c_in, ns_t_srv, (u_char *) buffer, PACKETSZ_MULT * NS_PACKETSZ)) < 0) {
++            if ((len = res_search(service, C_IN, T_SRV, (u_char *) buffer, PACKETSZ_MULT * PACKETSZ)) < 0) {
+                 error((char *) "%s| %s: ERROR: Error while resolving service record %s with res_search\n", LogTime(), PROGRAM, service);
+                 nsError(h_errno, service);
+                 goto finalise;
+@@ -302,10 +302,10 @@ get_ldap_hostname_list(struct main_args *margs, struct
+             goto finalise;
+         }
+     }
+-    if (len > PACKETSZ_MULT * NS_PACKETSZ) {
++    if (len > PACKETSZ_MULT * PACKETSZ) {
+         olen = len;
+         buffer = (u_char *) xrealloc(buffer, (size_t)len);
+-        if ((len = res_search(service, ns_c_in, ns_t_srv, (u_char *) buffer, len)) < 0) {
++        if ((len = res_search(service, C_IN, T_SRV, (u_char *) buffer, len)) < 0) {
+             error((char *) "%s| %s: ERROR: Error while resolving service record %s with res_search\n", LogTime(), PROGRAM, service);
+             nsError(h_errno, service);
+             goto finalise;
+@@ -316,7 +316,7 @@ get_ldap_hostname_list(struct main_args *margs, struct
+         }
+     }
+     p = buffer;
+-    p += 6 * NS_INT16SZ;    /* Header(6*16bit) = id + flags + 4*section count */
++    p += 6 * INT16SZ;    /* Header(6*16bit) = id + flags + 4*section count */
+     if (p > buffer + len) {
+         error((char *) "%s| %s: ERROR: Message to small: %d < header size\n", LogTime(), PROGRAM, len);
+         goto finalise;
+@@ -326,7 +326,7 @@ get_ldap_hostname_list(struct main_args *margs, struct
+         goto finalise;
+     }
+     p += size;          /* Query name */
+-    p += 2 * NS_INT16SZ;    /* Query type + class (2*16bit) */
++    p += 2 * INT16SZ;    /* Query type + class (2*16bit) */
+     if (p > buffer + len) {
+         error((char *) "%s| %s: ERROR: Message to small: %d < header + query name,type,class \n", LogTime(), PROGRAM, len);
+         goto finalise;
+@@ -342,37 +342,37 @@ get_ldap_hostname_list(struct main_args *margs, struct
+             error((char *) "%s| %s: ERROR: Message to small: %d < header + query name,type,class + answer name\n", LogTime(), PROGRAM, len);
+             goto finalise;
+         }
+-        NS_GET16(type, p);  /* RR type (16bit) */
+-        p += NS_INT16SZ + NS_INT32SZ;   /* RR class + ttl (16bit+32bit) */
++        GETSHORT(type, p);  /* RR type (16bit) */
++        p += INT16SZ + INT32SZ;   /* RR class + ttl (16bit+32bit) */
+         if (p > buffer + len) {
+             error((char *) "%s| %s: ERROR: Message to small: %d < header + query name,type,class + answer name + RR type,class,ttl\n", LogTime(), PROGRAM, len);
+             goto finalise;
+         }
+-        NS_GET16(rdlength, p);  /* RR data length (16bit) */
++        GETSHORT(rdlength, p);  /* RR data length (16bit) */
+ 
+-        if (type == ns_t_srv) { /* SRV record */
++        if (type == T_SRV) { /* SRV record */
+             int priority, weight, port;
+-            char host[NS_MAXDNAME];
++            char host[MAXDNAME];
+             if (p > buffer + len) {
+                 error((char *) "%s| %s: ERROR: Message to small: %d < header + query name,type,class + answer name + RR type,class,ttl + RR data length\n", LogTime(), PROGRAM, len);
+                 goto finalise;
+             }
+-            NS_GET16(priority, p);  /* Priority (16bit) */
++            GETSHORT(priority, p);  /* Priority (16bit) */
+             if (p > buffer + len) {
+                 error((char *) "%s| %s: ERROR: Message to small: %d <  SRV RR + priority\n", LogTime(), PROGRAM, len);
+                 goto finalise;
+             }
+-            NS_GET16(weight, p);    /* Weight (16bit) */
++            GETSHORT(weight, p);    /* Weight (16bit) */
+             if (p > buffer + len) {
+                 error((char *) "%s| %s: ERROR: Message to small: %d <  SRV RR + priority + weight\n", LogTime(), PROGRAM, len);
+                 goto finalise;
+             }
+-            NS_GET16(port, p);  /* Port (16bit) */
++            GETSHORT(port, p);  /* Port (16bit) */
+             if (p > buffer + len) {
+                 error((char *) "%s| %s: ERROR: Message to small: %d <  SRV RR + priority + weight + port\n", LogTime(), PROGRAM, len);
+                 goto finalise;
+             }
+-            if ((size = dn_expand(buffer, buffer + len, p, host, NS_MAXDNAME)) < 0) {
++            if ((size = dn_expand(buffer, buffer + len, p, host, MAXDNAME)) < 0) {
+                 error((char *) "%s| %s: ERROR: Error while expanding SRV RR name with dn_expand:  %s\n", LogTime(), PROGRAM, strerror(errno));
+                 goto finalise;
+             }
