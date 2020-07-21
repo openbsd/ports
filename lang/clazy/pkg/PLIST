@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/07/04 12:07:23 jca Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/07/21 20:30:47 rsadowski Exp $
 bin/clazy
 @bin bin/clazy-standalone
-lib/libClazyPlugin.so
+@so lib/libClazyPlugin.so
 @man man/man1/clazy.1
 share/doc/clazy/
 share/doc/clazy/COPYING-LGPL2.txt
@@ -18,6 +18,7 @@ share/doc/clazy/level0/README-lambda-in-connect.md
 share/doc/clazy/level0/README-lambda-unique-connection.md
 share/doc/clazy/level0/README-lowercase-qml-type-name.md
 share/doc/clazy/level0/README-mutable-container-key.md
+share/doc/clazy/level0/README-overloaded-signal.md
 share/doc/clazy/level0/README-qcolor-from-literal.md
 share/doc/clazy/level0/README-qdatetime-utc.md
 share/doc/clazy/level0/README-qenums.md
@@ -25,10 +26,10 @@ share/doc/clazy/level0/README-qfileinfo-exists.md
 share/doc/clazy/level0/README-qgetenv.md
 share/doc/clazy/level0/README-qmap-with-pointer-key.md
 share/doc/clazy/level0/README-qstring-arg.md
+share/doc/clazy/level0/README-qstring-comparison-to-implicit-char.md
 share/doc/clazy/level0/README-qstring-insensitive-allocation.md
 share/doc/clazy/level0/README-qstring-ref.md
 share/doc/clazy/level0/README-qt-macros.md
-share/doc/clazy/level0/README-qvariant-template-instantiation.md
 share/doc/clazy/level0/README-strict-iterators.md
 share/doc/clazy/level0/README-temporary-iterator.md
 share/doc/clazy/level0/README-unused-non-trivial-variable.md
@@ -74,21 +75,28 @@ share/doc/clazy/level2/README-returning-void-expression.md
 share/doc/clazy/level2/README-rule-of-three.md
 share/doc/clazy/level2/README-static-pmf.md
 share/doc/clazy/level2/README-virtual-call-ctor.md
-share/doc/clazy/level3/
-share/doc/clazy/level3/README-assert-with-side-effects.md
-share/doc/clazy/level3/README-detaching-member.md
-share/doc/clazy/level3/README-reserve-candidates.md
-share/doc/clazy/level3/README-thread-with-slots.md
-share/doc/clazy/level3/README-unneeded-cast.md
 share/doc/clazy/manuallevel/
+share/doc/clazy/manuallevel/README-assert-with-side-effects.md
 share/doc/clazy/manuallevel/README-container-inside-loop.md
+share/doc/clazy/manuallevel/README-detaching-member.md
+share/doc/clazy/manuallevel/README-heap-allocated-small-trivial-type.md
 share/doc/clazy/manuallevel/README-ifndef-define-typo.md
 share/doc/clazy/manuallevel/README-inefficient-qlist.md
 share/doc/clazy/manuallevel/README-isempty-vs-count.md
+share/doc/clazy/manuallevel/README-jni-signatures.md
 share/doc/clazy/manuallevel/README-qhash-with-char-pointer-key.md
+share/doc/clazy/manuallevel/README-qproperty-type-mismatch.md
 share/doc/clazy/manuallevel/README-qrequiredresult-candidates.md
 share/doc/clazy/manuallevel/README-qstring-varargs.md
 share/doc/clazy/manuallevel/README-qt-keywords.md
 share/doc/clazy/manuallevel/README-qt4-qstring-from-array.md
+share/doc/clazy/manuallevel/README-qt6-qlatin1string-to-u.md
+share/doc/clazy/manuallevel/README-qvariant-template-instantiation.md
 share/doc/clazy/manuallevel/README-raw-environment-function.md
+share/doc/clazy/manuallevel/README-reserve-candidates.md
+share/doc/clazy/manuallevel/README-signal-with-return-value.md
+share/doc/clazy/manuallevel/README-thread-with-slots.md
 share/doc/clazy/manuallevel/README-tr-non-literal.md
+share/doc/clazy/manuallevel/README-unneeded-cast.md
+share/metainfo/
+share/metainfo/org.kde.clazy.metainfo.xml
