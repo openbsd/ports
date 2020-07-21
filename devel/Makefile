@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2002 2020/07/15 20:41:19 kn Exp $
+# $OpenBSD: Makefile,v 1.2003 2020/07/21 21:32:36 millert Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -525,6 +525,7 @@
      SUBDIR += p5-App-CLI
      SUBDIR += p5-App-Cmd
      SUBDIR += p5-App-Info
+     SUBDIR += p5-App-Packager
      SUBDIR += p5-AppConfig
      SUBDIR += p5-AppConfig-Std
      SUBDIR += p5-Array-Compare
