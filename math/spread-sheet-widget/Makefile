@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/24 18:55:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/22 15:33:14 bcallah Exp $
 
 COMMENT =	spread sheet widget library
-DISTNAME =	spread-sheet-widget-0.4
+DISTNAME =	spread-sheet-widget-0.5
 CATEGORIES =	math x11
 
-SHARED_LIBS +=	spread-sheet-widget       0.1 # 0.1
+SHARED_LIBS +=	spread-sheet-widget       0.2 # 0.2
 
 HOMEPAGE =	https://www.gnu.org/software/ssw/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
