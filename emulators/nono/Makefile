@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/06 17:42:25 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/22 12:02:04 gonzalo Exp $
 
-COMMENT=		luna88k emulator
+COMMENT=		LUNA-I emulator
 
-DISTNAME=		nono-0.0.4
+DISTNAME=		nono-0.1.0
 CATEGORIES=		emulators
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
@@ -19,7 +19,8 @@ WANTLIB += z
 
 MASTER_SITES=		http://www.pastel-flower.jp/~isaki/nono/archive/
 
-LIB_DEPENDS=		x11/wxWidgets
+LIB_DEPENDS=		devel/gettext,-tool \
+			x11/wxWidgets
 
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
