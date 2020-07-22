@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2020/06/09 06:39:30 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2020/07/22 06:59:17 semarie Exp $
 @conflict cargo-<0.20.0
 @pkgpath devel/cargo
 @bin bin/cargo
 @bin bin/rustc
 @bin bin/rustdoc
+@so lib/libchalk_derive-${LIBR_METADATA_chalk_derive}.so
 @so lib/librustc_driver-${LIBR_METADATA_rustc_driver}.so
 @so lib/librustc_macros-${LIBR_METADATA_rustc_macros}.so
 @so lib/libstd-${LIBR_METADATA_std}.so

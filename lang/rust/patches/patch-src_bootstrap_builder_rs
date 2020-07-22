@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_bootstrap_builder_rs,v 1.10 2020/06/09 06:39:30 semarie Exp $
+$OpenBSD: patch-src_bootstrap_builder_rs,v 1.11 2020/07/22 06:59:17 semarie Exp $
 Pass the information that we want to override metadata (on final stage)
 Index: src/bootstrap/builder.rs
 --- src/bootstrap/builder.rs.orig
 +++ src/bootstrap/builder.rs
-@@ -1155,6 +1155,27 @@ impl<'a> Builder<'a> {
+@@ -1175,6 +1175,27 @@ impl<'a> Builder<'a> {
              );
          }
  

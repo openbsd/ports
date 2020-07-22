@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_bootstrap_lib_rs,v 1.29 2020/05/16 14:13:53 semarie Exp $
+$OpenBSD: patch-src_bootstrap_lib_rs,v 1.30 2020/07/22 06:59:17 semarie Exp $
 let us compilation choice to be honored.
 https://github.com/rust-lang/rust/issues/39900
 Index: src/bootstrap/lib.rs
 --- src/bootstrap/lib.rs.orig
 +++ src/bootstrap/lib.rs
-@@ -768,7 +768,6 @@ impl Build {
+@@ -790,7 +790,6 @@ impl Build {
              .args()
              .iter()
              .map(|s| s.to_string_lossy().into_owned())

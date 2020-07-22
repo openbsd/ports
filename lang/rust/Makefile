@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2020/07/04 09:58:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2020/07/22 06:59:17 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,20 +13,17 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.44.1
-CARGO_V =		0.45.1
+V =			1.45.0
+CARGO_V =		0.46.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.4.16
+RUSTFMT_V =		1.4.15
 DISTNAME =		rustc-${V}-src
 
-REVISION-main =		0
-REVISION-gdb =		0
-
 # rustc bootstrap version
-BV-aarch64 =		1.44.0-20200605
-BV-amd64 =		1.44.0-20200602
-BV-i386 =		1.44.0-20200602
-BV-sparc64 =		1.44.0-20200602
+BV-aarch64 =		1.45.0-20200716
+BV-amd64 =		1.45.0-20200714
+BV-i386 =		1.45.0-20200715
+BV-sparc64 =		1.45.0-20200714
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -79,26 +76,27 @@ SUPDISTFILES +=		${BOOTSTRAP-$m}
 LIBRUST_WITH_HASHES =	alloc 				01 \
 			backtrace 			02 \
 			backtrace_sys 			03 \
-			cfg_if 				04 \
-			compiler_builtins 		05 \
-			core 				06 \
-			getopts 			07 \
-			hashbrown 			08 \
-			libc 				09 \
-			panic_abort 			0a \
-			panic_unwind 			0b \
-			proc_macro 			0c \
-			rustc_demangle 			0d \
-			rustc_driver 			0e \
-			rustc_macros 			0f \
-			rustc_std_workspace_alloc 	10 \
-			rustc_std_workspace_core 	11 \
-			rustc_std_workspace_std 	12 \
-			std 				13 \
-			term 				14 \
-			test 				15 \
-			unicode_width 			16 \
-			unwind				17
+			chalk_derive			04 \
+			cfg_if 				05 \
+			compiler_builtins 		06 \
+			core 				07 \
+			getopts 			08 \
+			hashbrown 			09 \
+			libc 				0a \
+			panic_abort 			0b \
+			panic_unwind 			0c \
+			proc_macro 			0d \
+			rustc_demangle 			0e \
+			rustc_driver 			0f \
+			rustc_macros 			10 \
+			rustc_std_workspace_alloc 	11 \
+			rustc_std_workspace_core 	12 \
+			rustc_std_workspace_std 	13 \
+			std 				14 \
+			term 				15 \
+			test 				16 \
+			unicode_width 			17 \
+			unwind				18
 
 # generate a stable hash mostly conforming to rust expectations
 # (it should change if anything changed)
