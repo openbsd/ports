@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2020/06/28 03:34:45 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.35 2020/07/22 02:20:17 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -234,6 +234,7 @@ lib/seed7/lib/xml_ent.s7i
 lib/seed7/lib/xmldom.s7i
 lib/seed7/lib/xz.s7i
 lib/seed7/lib/zip.s7i
+lib/seed7/lib/zstd.s7i
 @man man/man1/s7.1
 @man man/man1/s7c.1
 share/doc/seed7/
