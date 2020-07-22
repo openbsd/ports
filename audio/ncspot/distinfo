@@ -5,6 +5,7 @@ SHA256 (cargo/aes-ctr-0.3.0.tar.gz) = 0uWwRY6jvq4NHYwPOUZWT44Q+QZGz3jAa0NRBSBY0e
 SHA256 (cargo/aes-soft-0.3.3.tar.gz) = z9fnrj+aH7XAOzifxruaUUANDBMFPw3KaYyDK/2JOg0=
 SHA256 (cargo/aesni-0.6.0.tar.gz) = L3Cmtflx5HMJGrfPtf+sbN6BZmxFVnUdjVYg6tir8QA=
 SHA256 (cargo/ahash-0.3.5.tar.gz) = Lz4L8j9RiDzONy1dWJIhEjaFbkuzf7lC4esTXuDxRuM=
+SHA256 (cargo/ahash-0.4.1.tar.gz) = XOZZjApCu7JIUIn5PY3CizH/kG3bZDwBpJ/jNz0zXo4=
 SHA256 (cargo/aho-corasick-0.7.10.tar.gz) = hxZAi4vGJO1/ZdIj3bmsLQRMBUe2+ksNVU86lUBJato=
 SHA256 (cargo/alga-0.9.3.tar.gz) = T4I9A3p+xuohlwRrr9SuFQ5rw2+co0dAT0akaCP6hPI=
 SHA256 (cargo/alsa-0.2.2.tar.gz) = tKDU68iyMEHF3pvJruE7S62ESliUeXAfMaWTTP5K6zI=
@@ -67,7 +68,7 @@ SHA256 (cargo/crossbeam-utils-0.7.2.tar.gz) = w8fHOi0en8CIagi5PpjrZDRhIw1fGSXkA2
 SHA256 (cargo/crypto-mac-0.7.0.tar.gz) = RDRADfEdldVWusBo3f7dSCkV6xj+i+qJvIC25LHBeeU=
 SHA256 (cargo/ctr-0.3.2.tar.gz) = AizWkXBEkd9n0l0Ab+jsoIMJglPE1DUWwiBkecWMZzY=
 SHA256 (cargo/cursive-0.15.0.tar.gz) = ep8SMyqyvKJpee8Az++aHC4ofbA7eHqD2JKtmWH4E3Q=
-SHA256 (cargo/cursive_core-0.1.0.tar.gz) = f+IyaUyWXCEdX72BEa6JpZObexac78rE+Lb4Pd6InhA=
+SHA256 (cargo/cursive_core-0.1.1.tar.gz) = hfxbaoui8bx0OJIGi95GZDj3jWJHGX4twJS/1T/epLc=
 SHA256 (cargo/darling-0.10.2.tar.gz) = DXBuddh+NVadt4GpteJBbP8SNqR+04CDH5WTgszV+Fg=
 SHA256 (cargo/darling-0.9.0.tar.gz) = /PvLDFlhkHWXp9EUjjrwNiaPK3c4hri7PuseEoHT09Y=
 SHA256 (cargo/darling_core-0.10.2.tar.gz) = 8Mlgri2k3oipGy2SDCpyM7QAvDPLKEU6KYeCLYOSUZs=
@@ -179,13 +180,15 @@ SHA256 (cargo/ncurses-5.99.0.tar.gz) = FWmb7i836fiCjHs1srxw0ThG20U/LVB3E7dY+r5Ta
 SHA256 (cargo/net2-0.2.34.tar.gz) = K6fJGKx2cE+0Kvy7tDiR5ycx89zKO+8qGXhil7rxSvc=
 SHA256 (cargo/nix-0.9.0.tar.gz) = osWv6wGY7HvoVp1mZkS1dDRarS6VpTuvOlMto+Dz+zI=
 SHA256 (cargo/nom-5.1.1.tar.gz) = C0cSU9qXUy2kthVSJJxSHgHnNgcfccGk9+u/vwoGqtY=
-SHA256 (cargo/num-0.2.1.tar.gz) = uFNgMPn+pxJ/hBtFu2JDsnJVeH+064OViqHvnS/cDDY=
+SHA256 (cargo/num-0.3.0.tar.gz) = qz4XYZG8T6rTV+MSLEdHqgmKyIDoixaPEGOGEoc2z0o=
 SHA256 (cargo/num-bigint-0.2.6.tar.gz) = CQx/mZjuD/Zapbcj5ACfeyF3B/H7XqVRMpzE1iMfswQ=
 SHA256 (cargo/num-complex-0.2.4.tar.gz) = trGUEalxnnU6/xLlGHt01g09xEnsP03CHjmJw/VUvJU=
-SHA256 (cargo/num-integer-0.1.42.tar.gz) = P26mLp2Bp3zT7poqW5tglEeFfz01hwQzHk7znrJH/Lo=
-SHA256 (cargo/num-iter-0.1.40.tar.gz) = 37CACgKRiR3Z9P572cGThPmPf74M0POaLGuIuYaLvAA=
+SHA256 (cargo/num-complex-0.3.0.tar.gz) = sFrQW9iXcFCxcbP2tIF1/qbgVlt5gQWbSGB14QJqn7U=
+SHA256 (cargo/num-integer-0.1.43.tar.gz) = jVlFfmYtVBuheGnPUc8XfAtfDL9HbGa9yQvx7axPh1s=
+SHA256 (cargo/num-iter-0.1.41.tar.gz) = em5rfHSPmVxMKcX1rgJIU24EpXOZJ8dOwPpWSAUJS58=
 SHA256 (cargo/num-rational-0.2.4.tar.gz) = XAABNLXb9ErcXLdySG0zUpM1FkS4AVUavo91yEz6Su8=
-SHA256 (cargo/num-traits-0.2.11.tar.gz) = xivkfmHRhCuRcPD97sjrqY5g6Q5URkSaBUXlFSrNcJY=
+SHA256 (cargo/num-rational-0.3.0.tar.gz) = pbTXNg82LPtQ3egUNQHmlAsi9kS+daTMkLLYGWiQgTg=
+SHA256 (cargo/num-traits-0.2.12.tar.gz) = rCZ7zAf0juX4k1qw0k8xb7ci16EpLikT8MwZayn/1hE=
 SHA256 (cargo/num_cpus-1.13.0.tar.gz) = BUmfN1ZnHBWIX+6QNERpVv/z8kPWB3uR5XZ98WH3ZrM=
 SHA256 (cargo/numtoa-0.1.0.tar.gz) = uPi98z3xlYWQduVKsR7nihsgg4LTom7EDRQv/B7MSe8=
 SHA256 (cargo/objc-0.2.7.tar.gz) = kVsbRyvCHFNGTWyEYcnTr4Bboe+DfhysJUQo9Kdxd7E=
@@ -256,7 +259,7 @@ SHA256 (cargo/remove_dir_all-0.5.2.tar.gz) = SoP6NwKmiLk1nsy6ktFTrDP9LoRi+eDj/fF
 SHA256 (cargo/reqwest-0.10.6.tar.gz) = O4LJI4swXyb1NEPjpLyFKNZLjQvuQI7JSet79WNexoA=
 SHA256 (cargo/reqwest-0.9.24.tar.gz) = +IZDrqPBNDyASVDXv5g70gZ/WrWdttYToI4FVy8nFKs=
 SHA256 (cargo/rodio-0.9.0.tar.gz) = XQ+WGyVOZtFHp7VQx4sBMIk0yX2AejS0F/0PWgoPOi0=
-SHA256 (cargo/rspotify-0.8.0.tar.gz) = qSShZs+xMVyNnIkUjkOKEzf+tlXOBS/G3JUq+AGLrZM=
+SHA256 (cargo/rspotify-0.10.0.tar.gz) = 7v17tYtxRgazCkkPdR15JpQuKHTu9egpNNYNekpo3KQ=
 SHA256 (cargo/rust-argon2-0.7.0.tar.gz) = K8ivS9qOH/STJSO5TT3SDuMKhyMjI+2lWQP/1x0vsBc=
 SHA256 (cargo/rustc-demangle-0.1.16.tar.gz) = TGkcDmCBJuAJE+M/DM83J9X8hFc2I7jWWy3zQLUgF4M=
 SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuEsbOI=
@@ -287,7 +290,7 @@ SHA256 (cargo/slab-0.3.0.tar.gz) = F7T8rtiasI7xQ9o3vFKtvMBNSmkBT0wSCNa1HwxHvCM=
 SHA256 (cargo/slab-0.4.2.tar.gz) = wRG1vVaV5Wz/5RKYVKojCznJOjBTcv27JmjKI5Tuqfg=
 SHA256 (cargo/smallvec-0.2.1.tar.gz) = TIy81t8eEXwiEOE6tRCWNa1oqSn8u4lk3JZbdste4BM=
 SHA256 (cargo/smallvec-0.6.13.tar.gz) = 97B1jFLhWoteNpHq5sxVnwju6UBuVIpEd7pOZ3cKgrY=
-SHA256 (cargo/smallvec-1.4.0.tar.gz) = x8tWeOFhV1QoTsJk2btbTCfSAYV3/ZCsDOtXhZHtXuQ=
+SHA256 (cargo/smallvec-1.4.1.tar.gz) = N1fLnYkWGi8k4c9476DB/P9IXRjj9V4Ko0gIJN2qDz8=
 SHA256 (cargo/socket2-0.3.12.tar.gz) = AwiHk/Z33ONW88zC7bGzFK0ZGrcCpd4/r0kwT34QSRg=
 SHA256 (cargo/stable_deref_trait-1.1.1.tar.gz) = 26GifT765DUcgFEHLWGeOt4oIGNcOVjYJr/qOdWbVMg=
 SHA256 (cargo/stdweb-0.1.3.tar.gz) = 71QwyONrcT4TtIqfcJzCHgRnI/5EzjRYe3OoMCA7Uz4=
@@ -380,7 +383,7 @@ SHA256 (cargo/ws2_32-sys-0.2.1.tar.gz) = 1Zzv69DIkvot1t5YHpNzAdhVLLREic3/A1xhh8t
 SHA256 (cargo/x11-clipboard-0.3.3.tar.gz) = ib1JwGyetdmOa6ZTbPZKyffuOgCbL1OZbUBbOUT2vOo=
 SHA256 (cargo/xcb-0.8.2.tar.gz) = XpF6PyQULp/4viQU42xknUfWzCuoHxYgHN75blM+At4=
 SHA256 (cargo/xi-unicode-0.2.0.tar.gz) = c5XNudCmIZ+g6nfQjJRq35wZhMcvzUQ6zjA2Xz2q3vc=
-SHA256 (ncspot-0.1.4.tar.gz) = vMQCb1H+S+c1G25s0SSl/Us6+LaljyOgWZzl80/EQW4=
+SHA256 (ncspot-0.2.0.tar.gz) = h2VTAg5TuLv32sHd8Y9pEV1iKzAlBs5dwcO6wbWe85s=
 SIZE (cargo/addr2line-0.12.1.tar.gz) = 119746
 SIZE (cargo/adler32-1.0.4.tar.gz) = 5105
 SIZE (cargo/aes-0.3.2.tar.gz) = 84345
@@ -388,6 +391,7 @@ SIZE (cargo/aes-ctr-0.3.0.tar.gz) = 11598
 SIZE (cargo/aes-soft-0.3.3.tar.gz) = 92804
 SIZE (cargo/aesni-0.6.0.tar.gz) = 100722
 SIZE (cargo/ahash-0.3.5.tar.gz) = 28563
+SIZE (cargo/ahash-0.4.1.tar.gz) = 49322
 SIZE (cargo/aho-corasick-0.7.10.tar.gz) = 111039
 SIZE (cargo/alga-0.9.3.tar.gz) = 37838
 SIZE (cargo/alsa-0.2.2.tar.gz) = 41452
@@ -450,7 +454,7 @@ SIZE (cargo/crossbeam-utils-0.7.2.tar.gz) = 34338
 SIZE (cargo/crypto-mac-0.7.0.tar.gz) = 7636
 SIZE (cargo/ctr-0.3.2.tar.gz) = 13265
 SIZE (cargo/cursive-0.15.0.tar.gz) = 27144
-SIZE (cargo/cursive_core-0.1.0.tar.gz) = 137227
+SIZE (cargo/cursive_core-0.1.1.tar.gz) = 142226
 SIZE (cargo/darling-0.10.2.tar.gz) = 17620
 SIZE (cargo/darling-0.9.0.tar.gz) = 16582
 SIZE (cargo/darling_core-0.10.2.tar.gz) = 44339
@@ -562,13 +566,15 @@ SIZE (cargo/ncurses-5.99.0.tar.gz) = 25472
 SIZE (cargo/net2-0.2.34.tar.gz) = 20620
 SIZE (cargo/nix-0.9.0.tar.gz) = 103078
 SIZE (cargo/nom-5.1.1.tar.gz) = 130862
-SIZE (cargo/num-0.2.1.tar.gz) = 9082
+SIZE (cargo/num-0.3.0.tar.gz) = 9285
 SIZE (cargo/num-bigint-0.2.6.tar.gz) = 87275
 SIZE (cargo/num-complex-0.2.4.tar.gz) = 24679
-SIZE (cargo/num-integer-0.1.42.tar.gz) = 19463
-SIZE (cargo/num-iter-0.1.40.tar.gz) = 9659
+SIZE (cargo/num-complex-0.3.0.tar.gz) = 24394
+SIZE (cargo/num-integer-0.1.43.tar.gz) = 21966
+SIZE (cargo/num-iter-0.1.41.tar.gz) = 10198
 SIZE (cargo/num-rational-0.2.4.tar.gz) = 21694
-SIZE (cargo/num-traits-0.2.11.tar.gz) = 42000
+SIZE (cargo/num-rational-0.3.0.tar.gz) = 25959
+SIZE (cargo/num-traits-0.2.12.tar.gz) = 43807
 SIZE (cargo/num_cpus-1.13.0.tar.gz) = 14704
 SIZE (cargo/numtoa-0.1.0.tar.gz) = 8999
 SIZE (cargo/objc-0.2.7.tar.gz) = 22036
@@ -639,7 +645,7 @@ SIZE (cargo/remove_dir_all-0.5.2.tar.gz) = 8907
 SIZE (cargo/reqwest-0.10.6.tar.gz) = 118989
 SIZE (cargo/reqwest-0.9.24.tar.gz) = 106458
 SIZE (cargo/rodio-0.9.0.tar.gz) = 7132524
-SIZE (cargo/rspotify-0.8.0.tar.gz) = 2323079
+SIZE (cargo/rspotify-0.10.0.tar.gz) = 2361916
 SIZE (cargo/rust-argon2-0.7.0.tar.gz) = 27757
 SIZE (cargo/rustc-demangle-0.1.16.tar.gz) = 19137
 SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
@@ -670,7 +676,7 @@ SIZE (cargo/slab-0.3.0.tar.gz) = 4807
 SIZE (cargo/slab-0.4.2.tar.gz) = 10136
 SIZE (cargo/smallvec-0.2.1.tar.gz) = 6065
 SIZE (cargo/smallvec-0.6.13.tar.gz) = 22760
-SIZE (cargo/smallvec-1.4.0.tar.gz) = 24645
+SIZE (cargo/smallvec-1.4.1.tar.gz) = 25818
 SIZE (cargo/socket2-0.3.12.tar.gz) = 29253
 SIZE (cargo/stable_deref_trait-1.1.1.tar.gz) = 8007
 SIZE (cargo/stdweb-0.1.3.tar.gz) = 90221
@@ -763,4 +769,4 @@ SIZE (cargo/ws2_32-sys-0.2.1.tar.gz) = 4697
 SIZE (cargo/x11-clipboard-0.3.3.tar.gz) = 7357
 SIZE (cargo/xcb-0.8.2.tar.gz) = 129071
 SIZE (cargo/xi-unicode-0.2.0.tar.gz) = 88006
-SIZE (ncspot-0.1.4.tar.gz) = 170874
+SIZE (ncspot-0.2.0.tar.gz) = 174280

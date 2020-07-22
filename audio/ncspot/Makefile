@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/28 17:33:38 bket Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/22 05:04:42 bket Exp $
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -6,7 +6,7 @@ COMMENT =		ncurses Spotify client
 
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
-GH_TAGNAME =		0.1.4
+GH_TAGNAME =		v0.2.0
 
 CATEGORIES =		audio
 
@@ -34,6 +34,7 @@ MODCARGO_CRATES +=	aes-ctr	0.3.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	aes-soft	0.3.3	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	aesni	0.6.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	ahash	0.3.5	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	ahash	0.4.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	aho-corasick	0.7.10	# Unlicense/MIT
 MODCARGO_CRATES +=	alga	0.9.3	# Apache-2.0
 MODCARGO_CRATES +=	alsa	0.2.2	# Apache-2.0/MIT
@@ -96,7 +97,7 @@ MODCARGO_CRATES +=	crossbeam-utils	0.7.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	crypto-mac	0.7.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	ctr	0.3.2	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	cursive	0.15.0	# MIT
-MODCARGO_CRATES +=	cursive_core	0.1.0	# MIT
+MODCARGO_CRATES +=	cursive_core	0.1.1	# MIT
 MODCARGO_CRATES +=	darling	0.9.0	# MIT
 MODCARGO_CRATES +=	darling	0.10.2	# MIT
 MODCARGO_CRATES +=	darling_core	0.9.0	# MIT
@@ -208,13 +209,15 @@ MODCARGO_CRATES +=	ncurses	5.99.0	# MIT
 MODCARGO_CRATES +=	net2	0.2.34	# MIT/Apache-2.0
 MODCARGO_CRATES +=	nix	0.9.0	# MIT
 MODCARGO_CRATES +=	nom	5.1.1	# MIT
-MODCARGO_CRATES +=	num	0.2.1	# MIT/Apache-2.0
+MODCARGO_CRATES +=	num	0.3.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num-bigint	0.2.6	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num-complex	0.2.4	# MIT/Apache-2.0
-MODCARGO_CRATES +=	num-integer	0.1.42	# MIT/Apache-2.0
-MODCARGO_CRATES +=	num-iter	0.1.40	# MIT/Apache-2.0
+MODCARGO_CRATES +=	num-complex	0.3.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	num-integer	0.1.43	# MIT/Apache-2.0
+MODCARGO_CRATES +=	num-iter	0.1.41	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num-rational	0.2.4	# MIT/Apache-2.0
-MODCARGO_CRATES +=	num-traits	0.2.11	# MIT/Apache-2.0
+MODCARGO_CRATES +=	num-rational	0.3.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	num-traits	0.2.12	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num_cpus	1.13.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	numtoa	0.1.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	objc	0.2.7	# MIT
@@ -285,7 +288,7 @@ MODCARGO_CRATES +=	remove_dir_all	0.5.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	reqwest	0.9.24	# MIT/Apache-2.0
 MODCARGO_CRATES +=	reqwest	0.10.6	# MIT/Apache-2.0
 MODCARGO_CRATES +=	rodio	0.9.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	rspotify	0.8.0	# MIT
+MODCARGO_CRATES +=	rspotify	0.10.0	# MIT
 MODCARGO_CRATES +=	rust-argon2	0.7.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	rustc-demangle	0.1.16	# MIT/Apache-2.0
 MODCARGO_CRATES +=	rustc-hash	1.1.0	# Apache-2.0/MIT
@@ -316,7 +319,7 @@ MODCARGO_CRATES +=	slab	0.3.0	# MIT
 MODCARGO_CRATES +=	slab	0.4.2	# MIT
 MODCARGO_CRATES +=	smallvec	0.2.1	# MPL-2.0
 MODCARGO_CRATES +=	smallvec	0.6.13	# MIT/Apache-2.0
-MODCARGO_CRATES +=	smallvec	1.4.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	smallvec	1.4.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	socket2	0.3.12	# MIT/Apache-2.0
 MODCARGO_CRATES +=	stable_deref_trait	1.1.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	stdweb	0.1.3	# MIT/Apache-2.0
