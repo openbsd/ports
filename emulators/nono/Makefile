@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/22 12:02:04 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/22 14:53:59 gonzalo Exp $
 
 COMMENT=		LUNA-I emulator
 
 DISTNAME=		nono-0.1.0
+REVISION=		0
 CATEGORIES=		emulators
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
@@ -19,7 +20,7 @@ WANTLIB += z
 
 MASTER_SITES=		http://www.pastel-flower.jp/~isaki/nono/archive/
 
-LIB_DEPENDS=		devel/gettext,-tool \
+LIB_DEPENDS=		devel/gettext,-tools \
 			x11/wxWidgets
 
 NO_TEST=		Yes
