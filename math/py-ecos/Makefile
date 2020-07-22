@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/22 05:25:43 kmos Exp $
 
 COMMENT =		Python interface to ECOS
 
@@ -7,7 +7,7 @@ DISTNAME =		ecos-${MODPY_EGG_VERSION}
 V =			${MODPY_EGG_VERSION:S/post//}
 PKGNAME =		py-ecos-${V}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
