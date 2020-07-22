@@ -1,16 +1,25 @@
-$OpenBSD: patch-common_gypi,v 1.14 2020/04/04 16:42:57 abieber Exp $
+$OpenBSD: patch-common_gypi,v 1.15 2020/07/22 17:30:24 jasper Exp $
 
 Index: common.gypi
 --- common.gypi.orig
 +++ common.gypi
-@@ -498,6 +498,10 @@
+@@ -390,7 +390,7 @@
+             'cflags': [ '-m32' ],
+             'ldflags': [ '-m32' ],
+           }],
+-          [ 'target_arch=="ppc64" and OS!="aix"', {
++          [ 'target_arch=="ppc64" and OS!="aix" and OS!="openbsd"', {
+             'cflags': [ '-m64', '-mminimal-toc' ],
+             'ldflags': [ '-m64' ],
+           }],
+@@ -497,6 +497,10 @@
+         'ldflags': [
            '-Wl,--export-dynamic',
          ],
-       }],
++      }],
 +      ['OS=="openbsd"', {
 +        'cflags': [ '-I${LOCALBASE}/include' ],
 +        'libraries': [ '-L${LOCALBASE}/lib' ],
-+      }],
+       }],
        # if node is built as an executable,
        #      the openssl mechanism for keeping itself "dload"-ed to ensure proper
-       #      atexit cleanup does not apply

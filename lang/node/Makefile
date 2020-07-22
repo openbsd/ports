@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.86 2020/07/05 09:00:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2020/07/22 17:30:24 jasper Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
 # - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
 
-ONLY_FOR_ARCHS =	amd64 aarch64 i386
+ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
@@ -56,7 +56,7 @@ CONFIGURE_SCRIPT =	${MODPY_BIN} configure.py
 # The patch for node.gyp is where they are actually being set.
 CONFIGURE_ARGS =	--prefix=${PREFIX}
 
-.if "${MACHINE_ARCH}" ==	"aarch64"
+.if "${MACHINE_ARCH}" == "aarch64" || "${MACHINE_ARCH}" == "powerpc64"
 CONFIGURE_ARGS +=	--openssl-no-asm
 .endif
 
