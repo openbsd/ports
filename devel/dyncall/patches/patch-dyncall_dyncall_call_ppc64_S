@@ -1,0 +1,16 @@
+$OpenBSD: patch-dyncall_dyncall_call_ppc64_S,v 1.1 2020/07/23 12:01:19 jasper Exp $
+
+https://dyncall.org/pub/dyncall/dyncall/rev/d982a00c2177
+
+Index: dyncall/dyncall_call_ppc64.S
+--- dyncall/dyncall_call_ppc64.S.orig
++++ dyncall/dyncall_call_ppc64.S
+@@ -116,7 +116,7 @@ ENTRY_C(dcCall_ppc64)
+ 
+ 	srwi r5,r5,3            /* r5 = size in double words */
+ 
+-	cmpi cr0,r5,0           /* if stacksize != 0 .. */
++	cmpi cr0,0,r5,0         /* if stacksize != 0 .. */
+ 	beq  cr0,.copy_done
+ 
+ 	mtctr r5                /* copy loop */

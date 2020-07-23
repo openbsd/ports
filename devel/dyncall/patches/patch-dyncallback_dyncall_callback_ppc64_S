@@ -1,0 +1,19 @@
+$OpenBSD: patch-dyncallback_dyncall_callback_ppc64_S,v 1.1 2020/07/23 12:01:19 jasper Exp $
+
+https://dyncall.org/pub/dyncall/dyncall/rev/d982a00c2177
+
+Index: dyncallback/dyncall_callback_ppc64.S
+--- dyncallback/dyncall_callback_ppc64.S.orig
++++ dyncallback/dyncall_callback_ppc64.S
+@@ -147,9 +147,9 @@ Input:
+ 	bctrl
+ 
+ 	/* check result type */
+-	cmpi    cr0, r3, 0x66 /* 'f */
++	cmpi    cr0, 0, r3, 0x66 /* 'f */
+ 	beq     .f32
+-	cmpi    cr0, r3, 0x64 /* 'd */
++	cmpi    cr0, 0, r3, 0x64 /* 'd */
+ 	beq     .f64
+ .i64:
+ 	ld      r3, SP_RESULT(r1)
