@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_libpbmfont0_c,v 1.1 2020/07/23 16:53:15 jcs Exp $
+
+Fix a double-free, from upstream
+
+Index: lib/libpbmfont0.c
+--- lib/libpbmfont0.c.orig
++++ lib/libpbmfont0.c
+@@ -253,9 +253,6 @@ pbm_destroybdffont2_base(struct font2 * const font2P) 
+ 
+     free(font2P->glyph);
+ 
+-    if (font2P->selectorP)
+-        pm_selector_destroy(font2P->selectorP);
+-
+     if (font2P->oldfont)
+        pbm_freearray(font2P->oldfont, font2P->frows);
+ 
+@@ -275,7 +272,7 @@ pbm_destroybdffont2(struct font2 * const font2P) {
+ 
+     if (font2P->load_fn != FIXED_DATA) {
+         destroyGlyphData(font2P->glyph, font2P->maxglyph, font2P->selectorP);
+-                         pbm_destroybdffont2_base(font2P);
++        pbm_destroybdffont2_base(font2P);
+     }
+ }
+ 
