@@ -1,0 +1,37 @@
+$OpenBSD: patch-Portroach_SiteHandler_CPAN_pm,v 1.3 2020/07/23 14:14:25 jasper Exp $
+
+https://github.com/jasperla/portroach/commit/6c856d0fe68e17c6d8de9aa2ad730bdf45fb1778
+
+Index: Portroach/SiteHandler/CPAN.pm
+--- Portroach/SiteHandler/CPAN.pm.orig
++++ Portroach/SiteHandler/CPAN.pm
+@@ -96,14 +96,14 @@ sub GetFiles
+ 	my ($url, $port, $files) = @_;
+ 
+ 	my ($metacpan, $module, $query, $resp, $ua);
+-	$metacpan = 'http://api.metacpan.org/v0/release/_search?q=';
++	$metacpan = 'https://fastapi.metacpan.org/v1/release/';
+ 
+ 	# Strip all the digits at the end to keep the stem of the module.
+ 	if ($port->{distname} =~ /(.*?)-(\d+)/) {
+ 	    $module = $1;
+ 	}
+ 
+-	$query = $metacpan . 'distribution:' . $module . '%20AND%20status:latest&fields=name,download_url';
++	$query = $metacpan . $module;
+ 
+ 	_debug("GET $query");
+ 	$ua = LWP::UserAgent->new;
+@@ -114,10 +114,8 @@ sub GetFiles
+     	    my $json = decode_json($resp->decoded_content);
+ 	    next if $json->{timed_out};
+ 
+-	    my @hits = @{$json->{hits}->{hits}};
+-	    next unless @hits[0];
+-
+-	    push(@$files, @hits[0]->{fields}->{download_url});
++	    next unless $json->{version};
++	    push(@$files, $json->{download_url});
+ 	} else {
+ 	    _debug("GET failed: " . $resp->code);
+ 	    return 0;
