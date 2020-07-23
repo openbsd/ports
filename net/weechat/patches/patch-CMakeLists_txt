@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/01/11 07:26:00 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/07/23 04:38:21 rsadowski Exp $
 
 Disable icons and weechat.desktop to avoid GUI dependencies
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -235,7 +235,7 @@ if(DL_LIBRARY)
+@@ -231,7 +231,7 @@ if(DL_LIBRARY)
    list(APPEND EXTRA_LIBS dl)
  endif()
  
@@ -14,12 +14,3 @@ Index: CMakeLists.txt
  
  if(ENABLE_NLS)
    add_subdirectory(po)
-@@ -302,7 +302,7 @@ if(CYGWIN)
- endif()
- 
- # desktop file
--install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/weechat.desktop DESTINATION ${SHAREDIR}/applications)
-+#install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/weechat.desktop DESTINATION ${SHAREDIR}/applications)
- 
- # packages
- set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Fast, light and extensible chat client")

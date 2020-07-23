@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.4 2020/04/01 05:11:43 rsadowski Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.5 2020/07/23 04:38:21 rsadowski Exp $
 
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt
-@@ -63,7 +63,7 @@ if(ICONV_LIBRARY)
+@@ -73,7 +73,7 @@ if(ICONV_LIBRARY)
    list(APPEND EXTRA_LIBS ${ICONV_LIBRARY})
  endif()
  

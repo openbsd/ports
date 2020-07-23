@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2020/07/03 21:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2020/07/23 04:38:21 rsadowski Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,10 +6,8 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		2.8
+V=		2.9
 DISTNAME=	weechat-${V}
-
-REVISION-python= 0
 
 PKGNAME-main=	weechat-${V}
 PKGNAME-lua=	weechat-lua-${V}
@@ -51,7 +49,8 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/cpputest \
 		sysutils/flock
 
-RUN_DEPENDS=	sysutils/flock
+RUN_DEPENDS=	sysutils/flock \
+		devel/desktop-file-utils
 
 LIB_DEPENDS=	devel/gettext,-runtime \
 		net/curl \
@@ -75,16 +74,10 @@ RUN_DEPENDS-ruby=	net/weechat,-main ${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-tcl=	${MODTCL_LIB_DEPENDS}
 RUN_DEPENDS-tcl=	net/weechat,-main ${MODTCL_RUN_DEPENDS}
 
-CONFIGURE_ARGS=		-DENABLE_SPELL=ON \
-			-DENABLE_RUBY=ON \
-			-DENABLE_LUA=ON \
-			-DENABLE_TCL=ON \
-			-DENABLE_PYTHON=ON \
-			-DENABLE_TESTS=ON
 
 CONFIGURE_ARGS+=	-DENABLE_GUILE=OFF \
 			-DENABLE_PHP=OFF \
-			-DENABLE_JAVASCRIPT=OFF \
+			-DENABLE_TESTS=ON \
 			-DHAVE_BACKTRACE=OFF
 
 CONFIGURE_ARGS+=	-DCA_FILE=/etc/ssl/cert.pem \

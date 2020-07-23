@@ -1,11 +1,11 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.8 2020/01/11 07:26:00 rsadowski Exp $
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.9 2020/07/23 04:38:21 rsadowski Exp $
 Index: doc/CMakeLists.txt
 --- doc/CMakeLists.txt.orig
 +++ doc/CMakeLists.txt
 @@ -22,15 +22,15 @@ if(ENABLE_MAN OR ENABLE_DOC)
    find_package(Asciidoctor)
    if(ASCIIDOCTOR_FOUND)
-     set(ASCIIDOCTOR_ARGS -a experimental -a icons=font -a revnumber="${VERSION}" -a sectanchors -a source-highlighter=prettify)
+     set(ASCIIDOCTOR_ARGS -a experimental -a "prewrap!" -a icons=font -a revnumber="${VERSION}" -a sectanchors -a source-highlighter=prettify)
 -    add_subdirectory(cs)
 -    add_subdirectory(de)
 -    add_subdirectory(en)
@@ -15,15 +15,15 @@ Index: doc/CMakeLists.txt
 -    add_subdirectory(ja)
 -    add_subdirectory(pl)
 -    add_subdirectory(ru)
-+#    add_subdirectory(cs)
-+#    add_subdirectory(de)
-+#    add_subdirectory(en)
-+#    add_subdirectory(es)
-+#    add_subdirectory(fr)
-+#    add_subdirectory(it)
-+#    add_subdirectory(ja)
-+#    add_subdirectory(pl)
-+#    add_subdirectory(ru)
++    #add_subdirectory(cs)
++    #add_subdirectory(de)
++    #add_subdirectory(en)
++    #add_subdirectory(es)
++    #add_subdirectory(fr)
++    #add_subdirectory(it)
++    #add_subdirectory(ja)
++    #add_subdirectory(pl)
++    #add_subdirectory(ru)
    else()
      message(SEND_ERROR "Asciidoctor not found")
    endif()

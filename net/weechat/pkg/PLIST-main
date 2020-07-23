@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2020/01/11 07:26:00 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2020/07/23 04:38:21 rsadowski Exp $
 @bin bin/weechat
 bin/weechat-curses
 @bin bin/weechat-headless
@@ -21,6 +21,8 @@ lib/weechat/plugins/
 @so lib/weechat/plugins/spell.so
 @so lib/weechat/plugins/trigger.so
 @so lib/weechat/plugins/xfer.so
+share/applications/
+share/applications/weechat.desktop
 share/doc/weechat/
 share/doc/weechat/weechat_dev.en.adoc
 share/doc/weechat/weechat_faq.en.adoc
@@ -42,3 +44,4 @@ share/locale/pt/LC_MESSAGES/weechat.mo
 share/locale/pt_BR/LC_MESSAGES/weechat.mo
 share/locale/ru/LC_MESSAGES/weechat.mo
 share/locale/tr/LC_MESSAGES/weechat.mo
+@tag update-desktop-database
