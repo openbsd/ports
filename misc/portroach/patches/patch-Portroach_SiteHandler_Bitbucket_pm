@@ -1,0 +1,52 @@
+$OpenBSD: patch-Portroach_SiteHandler_Bitbucket_pm,v 1.1 2020/07/23 14:58:41 jasper Exp $
+
+https://github.com/jasperla/portroach/commit/1921d3e45a030aceb63f70f5ae79d3d80b9d9736
+
+Index: Portroach/SiteHandler/Bitbucket.pm
+--- Portroach/SiteHandler/Bitbucket.pm.orig
++++ Portroach/SiteHandler/Bitbucket.pm
+@@ -1,5 +1,5 @@
+ #------------------------------------------------------------------------------
+-# Copyright (C) 2015, Jasper Lievisse Adriaanse <jasper@openbsd.org>
++# Copyright (C) 2015,2020 Jasper Lievisse Adriaanse <jasper@openbsd.org>
+ #
+ # Permission to use, copy, modify, and distribute this software for any
+ # purpose with or without fee is hereby granted, provided that the above
+@@ -98,7 +98,7 @@ sub GetFiles
+ 	my ($url, $port, $files) = @_;
+ 
+ 	my ($api, $accountname, $repo_slug, $resp, $query, $ua);
+-	$api = 'https://bitbucket.org/api/1.0/repositories/';
++	$api = 'https://api.bitbucket.org/2.0/repositories/';
+ 
+ 	if ($url =~ /http(?:s?):\/\/bitbucket\.org\/(.*?)\/(.*?)\/(?:get|downloads)\//) {
+ 	    $accountname = $1;
+@@ -108,7 +108,7 @@ sub GetFiles
+ 	    return 0;
+ 	}
+ 
+-	$query = $api . $accountname . '/' . $repo_slug . '/tags';
++	$query = $api . $accountname . '/' . $repo_slug . '/downloads';
+ 
+ 	_debug("GET $query");
+ 	$ua = LWP::UserAgent->new;
+@@ -116,16 +116,10 @@ sub GetFiles
+ 	$resp = $ua->request(HTTP::Request->new(GET => $query));
+ 
+ 	if ($resp->is_success) {
+-	    my (%tags, $version);
++	    my $downloads = decode_json($resp->decoded_content);
+ 
+-	    %tags = %{decode_json($resp->decoded_content)};
+-
+-	    # The API doesn't allow us to search releases or downloads,
+-	    # so we can only use tags which may or may not be set upstream.
+-	    foreach my $tag (keys(%tags)) {
+-		# Ignore any tags that don't start with a digit, i.e. 'tip'.
+-		next unless ($tag =~ /^\d/);
+-		push(@$files, "${repo_slug}-${tag}.tar.gz");
++	    foreach my $dl ($downloads->{values}[0]) {
++		    push(@$files, $dl->{name});
+ 	    }
+ 	} else {
+ 	    _debug("GET failed: " . $resp->code);
