@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/02 08:43:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/07/24 14:01:00 benoit Exp $
 bin/rex
 bin/rexify
 ${P5SITE}/Rex/
@@ -412,6 +412,12 @@ ${P5SITE}/Rex/Virtualization/VBox/share_folder.pm
 ${P5SITE}/Rex/Virtualization/VBox/shutdown.pm
 ${P5SITE}/Rex/Virtualization/VBox/start.pm
 ${P5SITE}/Rex/Virtualization/VBox/status.pm
+${P5SITE}/auto/
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
+${P5SITE}/auto/share/dist/Rex/
+${P5SITE}/auto/share/dist/Rex/rex-tab-completion.bash
+${P5SITE}/auto/share/dist/Rex/rex-tab-completion.zsh
 @man man/man1/rex.1
 @man man/man1/rexify.1
 @man man/man3p/Rex.3p
@@ -466,6 +472,7 @@ ${P5SITE}/Rex/Virtualization/VBox/status.pm
 @man man/man3p/Rex::Hardware.3p
 @man man/man3p/Rex::Helper::Rexfile::ParamLookup.3p
 @man man/man3p/Rex::Helper::SSH2::Expect.3p
+@man man/man3p/Rex::Hook.3p
 @man man/man3p/Rex::Logger.3p
 @man man/man3p/Rex::Resource::Common.3p
 @man man/man3p/Rex::Resource::firewall.3p
