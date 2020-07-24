@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 09:37:40 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/24 01:25:40 afresh1 Exp $
 ${P5SITE}/DateTime/Format/
+${P5SITE}/DateTime/Format/Strptime/
 ${P5SITE}/DateTime/Format/Strptime.pm
+${P5SITE}/DateTime/Format/Strptime/Types.pm
 @man man/man3p/DateTime::Format::Strptime.3p
+@man man/man3p/DateTime::Format::Strptime::Types.3p
