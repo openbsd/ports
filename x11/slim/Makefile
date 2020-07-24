@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.54 2019/07/12 20:51:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2020/07/24 05:41:37 landry Exp $
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.6
-REVISION=	23
+REVISION=	24
 
 SHARED_LIBS=	slim	0.0 # 1.3
 
 CATEGORIES=	x11
-MAINTAINER =	Landry Breuil <landry@openbsd.org>
 HOMEPAGE=	https://github.com/iwamatsu/slim
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=slim.berlios/}
