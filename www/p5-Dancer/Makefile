@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/24 23:38:30 afresh1 Exp $
 
 COMMENT =	simple perl web app framework
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Dancer-1.3512
+DISTNAME =	Dancer-1.3513
 CATEGORIES =	www
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
