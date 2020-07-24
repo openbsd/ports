@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.664 2020/07/03 17:28:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.665 2020/07/24 17:23:37 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -364,6 +364,7 @@
      SUBDIR += xclip
      SUBDIR += xco
      SUBDIR += xcoloredit
+     SUBDIR += xcolor
      SUBDIR += xcolors
      SUBDIR += xcursor-dmz
      SUBDIR += xcursor-neutral
