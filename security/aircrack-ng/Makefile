@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2020/07/22 12:53:31 tb Exp $
+# $OpenBSD: Makefile,v 1.32 2020/07/24 13:49:28 benoit Exp $
 
 COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 DISTNAME=		aircrack-ng-1.5.2
-REVISION=		4
+REVISION=		5
 CATEGORIES=		security
 
 HOMEPAGE=		https://www.aircrack-ng.org/
-
-MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
