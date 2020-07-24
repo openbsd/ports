@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/24 17:22:50 bcallah Exp $
+@bin bin/xcolor
+@man man/man1/xcolor.1
