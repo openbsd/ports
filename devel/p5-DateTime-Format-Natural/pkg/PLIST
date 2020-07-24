@@ -1,18 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/05/20 06:40:40 pea Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/07/24 01:27:18 afresh1 Exp $
 bin/dateparse
 ${P5SITE}/DateTime/Format/
 ${P5SITE}/DateTime/Format/Natural/
 ${P5SITE}/DateTime/Format/Natural.pm
-${P5SITE}/DateTime/Format/Natural/Base.pm
+${P5SITE}/DateTime/Format/Natural/Calc.pm
 ${P5SITE}/DateTime/Format/Natural/Compat.pm
+${P5SITE}/DateTime/Format/Natural/Duration/
+${P5SITE}/DateTime/Format/Natural/Duration.pm
+${P5SITE}/DateTime/Format/Natural/Duration/Checks.pm
+${P5SITE}/DateTime/Format/Natural/Expand.pm
+${P5SITE}/DateTime/Format/Natural/Extract.pm
+${P5SITE}/DateTime/Format/Natural/Formatted.pm
 ${P5SITE}/DateTime/Format/Natural/Helpers.pm
 ${P5SITE}/DateTime/Format/Natural/Lang/
 ${P5SITE}/DateTime/Format/Natural/Lang/Base.pm
 ${P5SITE}/DateTime/Format/Natural/Lang/EN.pm
+${P5SITE}/DateTime/Format/Natural/Rewrite.pm
+${P5SITE}/DateTime/Format/Natural/Test.pm
+${P5SITE}/DateTime/Format/Natural/Utils.pm
+${P5SITE}/DateTime/Format/Natural/Wrappers.pm
 @man man/man1/dateparse.1
 @man man/man3p/DateTime::Format::Natural.3p
-@man man/man3p/DateTime::Format::Natural::Base.3p
+@man man/man3p/DateTime::Format::Natural::Calc.3p
 @man man/man3p/DateTime::Format::Natural::Compat.3p
+@man man/man3p/DateTime::Format::Natural::Duration.3p
+@man man/man3p/DateTime::Format::Natural::Expand.3p
+@man man/man3p/DateTime::Format::Natural::Extract.3p
+@man man/man3p/DateTime::Format::Natural::Formatted.3p
 @man man/man3p/DateTime::Format::Natural::Helpers.3p
 @man man/man3p/DateTime::Format::Natural::Lang::Base.3p
 @man man/man3p/DateTime::Format::Natural::Lang::EN.3p
+@man man/man3p/DateTime::Format::Natural::Rewrite.3p
+@man man/man3p/DateTime::Format::Natural::Test.3p
+@man man/man3p/DateTime::Format::Natural::Utils.3p
+@man man/man3p/DateTime::Format::Natural::Wrappers.3p
