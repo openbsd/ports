@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/24 01:24:23 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.28 2020/07/24 13:28:59 afresh1 Exp $
 
 COMMENT =		date and time object for Perl
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 DISTNAME =		DateTime-1.52
 EPOCH =			0
 CATEGORIES =		devel
+REVISION =		0
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 

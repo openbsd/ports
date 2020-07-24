@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/07/16 23:57:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/07/24 13:28:59 afresh1 Exp $
 ${P5ARCH}/DateTime/
 ${P5ARCH}/DateTime.pm
+${P5ARCH}/DateTime/Conflicts.pm
 ${P5ARCH}/DateTime/Duration.pm
 ${P5ARCH}/DateTime/Helpers.pm
 ${P5ARCH}/DateTime/Infinite.pm
 ${P5ARCH}/DateTime/LeapSecond.pm
-${P5ARCH}/DateTimePP.pm
-${P5ARCH}/DateTimePPExtra.pm
+${P5ARCH}/DateTime/PP.pm
+${P5ARCH}/DateTime/PPExtra.pm
+${P5ARCH}/DateTime/Types.pm
 ${P5ARCH}/auto/DateTime/
-${P5ARCH}/auto/DateTime/DateTime.so
+@so ${P5ARCH}/auto/DateTime/DateTime.so
 @man man/man3p/DateTime.3p
 @man man/man3p/DateTime::Duration.3p
 @man man/man3p/DateTime::Infinite.3p
 @man man/man3p/DateTime::LeapSecond.3p
+@man man/man3p/DateTime::Types.3p
