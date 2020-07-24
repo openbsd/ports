@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/24 16:40:37 millert Exp $
+${P5SITE}/String/
+${P5SITE}/String/Interpolate.pm
+@man man/man3p/String::Interpolate.3p
