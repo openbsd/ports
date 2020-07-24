@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/24 16:42:37 millert Exp $
+${P5SITE}/File/
+${P5SITE}/File/LoadLines.pm
+@man man/man3p/File::LoadLines.3p
