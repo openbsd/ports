@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/06/04 08:07:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/07/24 07:45:43 jasper Exp $
 bin/borgmatic
 bin/generate-borgmatic-config
 bin/upgrade-borgmatic-config
@@ -25,6 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}check.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}environment.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}export_tar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}extract.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}flags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
@@ -36,6 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}umount.$
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/check.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/create.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/environment.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/export_tar.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/extract.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/flags.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/info.py
