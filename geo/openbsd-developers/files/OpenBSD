@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.167 2020/06/18 09:02:31 mvs Exp $
+# $OpenBSD: OpenBSD,v 1.168 2020/07/24 11:59:48 landry Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -73,6 +73,7 @@
 44.4325		26.103889	"pirofti"	# Paul Irofti
 45.095683	-93.4982	"jim"		# Jim Razmus II
 45.2002		5.7222		"ratchov"	# Alexandre Ratchov
+45.25135	3.19975		"miod"		# Miod Vallat
 45.3333		4.3167		"syl"		# Sylvestre Gallon
 45.34		-75.79		"mortimer"	# Todd Mortimer
 45.43		12.13		"michele"	# Michele Marchetto
@@ -81,7 +82,6 @@
 45.52582	-73.57180	"danj"		# Daniel Jakots
 45.6103		-122.7455	"afresh1"	# Andrew Fresh
 45.69296	3.25642		"landry"	# Landry Breuil
-45.79259	3.11090		"miod"		# Miod Vallat
 45.79793	3.08237		"denis"		# Denis Fondras
 46.00		-112.53		"thfr"		# Thomas Frohwein
 47.21725	-1.55336	"cwen"		# Charlene Wendling
