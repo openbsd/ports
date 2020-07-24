@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2003 2020/07/21 21:32:36 millert Exp $
+# $OpenBSD: Makefile,v 1.2004 2020/07/24 16:43:41 millert Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -772,6 +772,7 @@
      SUBDIR += p5-File-FnMatch
      SUBDIR += p5-File-HomeDir
      SUBDIR += p5-File-Listing
+     SUBDIR += p5-File-LoadLines
      SUBDIR += p5-File-MimeInfo
      SUBDIR += p5-File-Modified
      SUBDIR += p5-File-NCopy
@@ -1060,6 +1061,8 @@
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Format
      SUBDIR += p5-String-Formatter
+     SUBDIR += p5-String-Interpolate
+     SUBDIR += p5-String-Interpolate-Named
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-String-Truncate
      SUBDIR += p5-Sub-Attribute
