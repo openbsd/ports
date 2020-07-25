@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/08/12 21:47:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2020/07/25 09:17:18 jasper Exp $
 
 COMMENT=	free lossless audio codec
 
@@ -31,9 +31,12 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-sse \
 		--disable-altivec \
 		--disable-doxygen-docs \
-		--disable-thorough-tests \
+		--disable-thorough-tests
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# powerpc64 doesn't support VSX yet
+CONFIGURE_ARGS += --disable-vsx
 
 post-install:
 	${SUBST_CMD} ${PREFIX}/man/man1/flac.1
