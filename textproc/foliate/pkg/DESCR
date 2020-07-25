@@ -1,0 +1,11 @@
+Foliate is a simple and modern GTK eBook viewer, built with gjs and Epub.js.
+Features:
+- View .epub, .mobi, .azw, and .azw3 files in two-page view or scrolled view
+- Customize font, line-spacing, margins, and brightness
+- Light, sepia, dark, and invert mode, or add your own custom themes
+- Reading progress slider with chapter marks
+- Bookmarks and annotations
+- Find in book
+- Quick dictionary lookup with Wiktionary and `dictd`, or translate text with Google Translate
+- Touchpad gestures use two-finger swipe to turn the page
+- Basic text-to-speech support with eSpeak NG ad Festival
