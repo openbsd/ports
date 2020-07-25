@@ -1,14 +1,23 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2020/07/15 20:10:34 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2020/07/25 10:45:40 rsadowski Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -24,7 +24,7 @@ add_library(alkimia SHARED ${alkimia_LIB_SRCS})
+@@ -121,6 +121,8 @@ target_link_libraries(alkimia
+     ${QT_BROWSER_LIB}
+ )
  
- kde_target_enable_exceptions(alkimia PUBLIC)
- 
--target_include_directories(alkimia PRIVATE ${MP_INCLUDE_DIR})
-+target_include_directories(alkimia PRIVATE ${GMP_INCLUDE_DIR})
- target_link_libraries(alkimia PUBLIC ${QT_USE_LIBSPREFIX}Core ${QT_USE_LIBSPREFIX}DBus ${MP_LIBRARIES})
- generate_export_header(alkimia BASE_NAME alk)
++include_directories(${GMP_INCLUDE_DIR})
++
+ if(NOT BUILD_QT4 AND MSVC)
+     message(WARNING "Applying fix for broken Qt WebKit package (see https://phabricator.kde.org/T10146 for details)")
+     target_link_libraries(alkimia
+@@ -160,7 +162,7 @@ if(BUILD_QT4)
+     set(FQ_LOCAL_INSTALL_PATH ${CMAKE_BINARY_DIR}/share/apps/alkimia${ALKIMIA_PATH_SUFFIX}/misc)
+ else()
+     set(KNSRC_INSTALL_DIR ${CONFIG_INSTALL_DIR})
+-    set(APPDATA_INSTALL_DIR ${SHARE_INSTALL_DIR})
++    set(APPDATA_INSTALL_DIR ${KDE_INSTALL_APPDIR})
+     set(FQ_LOCAL_INSTALL_PATH ${CMAKE_BINARY_DIR}/share/alkimia${ALKIMIA_PATH_SUFFIX}/misc)
+ endif()
  
