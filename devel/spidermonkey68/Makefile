@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/30 10:21:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/25 12:30:29 ajacoutot Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -21,7 +21,8 @@ DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
 # cargocult when 78 is released to ease upgrade path
-EPOCH =		1
+EPOCH =			1
+REVISION =		0
 
 SHARED_LIBS =		mozjs-68 0.0
 
@@ -36,7 +37,7 @@ EXTRACT_SUFX =		.tar.xz
 # MPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses icudata icui18n icuuc m nspr4 plc4 plds4 z
+WANTLIB += c curses ffi icudata icui18n icuuc m nspr4 plc4 plds4 z
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =		lang/python
@@ -50,7 +51,8 @@ COMPILER =		base-clang ports-clang
 
 USE_GMAKE =		yes
 
-LIB_DEPENDS =		devel/nspr \
+LIB_DEPENDS =		devel/libffi \
+			devel/nspr \
 			textproc/icu4c
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
@@ -77,6 +79,7 @@ CONFIGURE_ARGS = 	--disable-debug \
 			--with-system-zlib \
 			--with-system-icu \
 			--with-system-nspr \
+			--with-system-ffi \
 			--enable-unaligned-private-values
 
 # Build failure on mips64(,el}. Related bug on Debian:
