@@ -1,0 +1,25 @@
+$OpenBSD: patch-salt_renderers_gpg_py,v 1.1 2020/07/25 09:25:32 jasper Exp $
+
+Attempt to use gpg2 first, falling back to gpg.
+
+Index: salt/renderers/gpg.py
+--- salt/renderers/gpg.py.orig
++++ salt/renderers/gpg.py
+@@ -305,11 +305,12 @@ def _get_gpg_exec():
+     """
+     return the GPG executable or raise an error
+     """
+-    gpg_exec = salt.utils.path.which("gpg")
+-    if gpg_exec:
+-        return gpg_exec
+-    else:
+-        raise SaltRenderError("GPG unavailable")
++    for gpg_bin in ['gpg', 'gpg2']:
++        gpg_exec = salt.utils.path.which(gpg_bin)
++        if gpg_exec:
++            return gpg_exec
++
++    raise SaltRenderError("GPG unavailable")
+ 
+ 
+ def _get_key_dir():
