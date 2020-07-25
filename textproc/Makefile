@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.638 2020/07/05 07:31:01 landry Exp $
+# $OpenBSD: Makefile,v 1.639 2020/07/25 12:32:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -50,6 +50,7 @@
      SUBDIR += extract_url
      SUBDIR += fcbanner
      SUBDIR += filepp
+     SUBDIR += foliate
      SUBDIR += fragistics
      SUBDIR += fzy
      SUBDIR += gdiff
