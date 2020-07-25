@@ -1,6 +1,5 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2020/07/16 05:01:23 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2020/07/25 10:45:44 rsadowski Exp $
 
-- There is no 8.0 LibAlkimia version
 - Remove weboob support, depends on python2
 - Remove linker, compiler  flags
 - Fix gpgmepp
@@ -17,15 +16,6 @@ Index: CMakeLists.txt
  endif()
  
  if (PkgConfig_FOUND)
-@@ -95,7 +95,7 @@ find_package(KF5 5.2 REQUIRED
- if(LibAlkimia5_DIR)
-   set(_LibAlkimia5_DIR ${LibAlkimia5_DIR})
- endif()
--find_package(LibAlkimia5 8.0)
-+find_package(LibAlkimia5 7.0.1)
- if (NOT LibAlkimia5_FOUND)
-   # restore LibAlkimia5_DIR set to NOTFOUND by first find_package call
-   if(_LibAlkimia5_DIR)
 @@ -235,7 +235,7 @@ if(ENABLE_OFXIMPORTER)
      set(PATH_TO_LIBOFX_HEADER "${PATH_TO_LIBOFX_HEADER}/libofx/libofx.h")
      unset(LIBOFX_HAVE_CLIENTUID)
