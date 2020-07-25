@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/25 09:47:59 robert Exp $
 
 COMMENT=	Pluggable Authentication Module
 
-V=		20141014
+V=		20200510
 DISTNAME=	freebsd_pam-${V}
 PKGNAME=	openpam-${V}
 
 CATEGORIES=	security
 
-SHARED_LIBS+=	pam	5.0
+SHARED_LIBS+=	pam	6.0
 
 HOMEPAGE=	http://www.openpam.org/
 
@@ -23,8 +23,10 @@ MASTER_SITES=	http://nerd.hu/distfiles/
 
 WRKSRC=	${WRKDIST}/libpam
 
-MAKE_FLAGS += 	BSDSRCDIR=${WRKDIST} BSDOBJDIR=${WRKBUILD}
+MAKE_FLAGS += 	BSDSRCDIR=${WRKDIST} BSDOBJDIR=${WRKBUILD} \
+		OPENPAM=${WRKDIST}/openpam
 MAKE_ENV+=	PAM_MOD_DIR=${TRUEPREFIX}/lib/security
+CFLAGS+=	-DOPENPAM_MODULES_DIRECTORY="\"${TRUEPREFIX}/lib/security\""
 
 PAM_MODULES=	deny echo exec nologin permit rootok \
 		self bsdauth group
@@ -41,7 +43,7 @@ do-install:
 
 	${INSTALL} ${FILESDIR}/system ${PREFIX}/share/examples/pam
 
-.for _l in libpam.a libpam.so.5.0 libpam_p.a
+.for _l in libpam.a libpam.so.$${LIBpam_VERSION} libpam_p.a
 	${INSTALL} ${WRKSRC}/libpam/obj/${_l} ${PREFIX}/lib
 .endfor
 .for _i in openpam openpam_attr openpam_version pam_appl pam_constants pam_modules pam_types
@@ -50,7 +52,7 @@ do-install:
 	${INSTALL} ${WRKSRC}/libpam/security/pam_mod_misc.h ${PREFIX}/include/security
 
 .for _m in ${PAM_MODULES}
-	${INSTALL} ${WRKSRC}/modules/pam_${_m}/obj/libpam_${_m}.so.5.0 ${PREFIX}/lib/security/pam_${_m}.so
+	${INSTALL} ${WRKSRC}/modules/pam_${_m}/obj/libpam_${_m}.so.${LIBpam_VERSION} ${PREFIX}/lib/security/pam_${_m}.so
 	${INSTALL} ${WRKSRC}/modules/pam_${_m}/pam_${_m}.8 ${PREFIX}/man/man8
 .endfor
 

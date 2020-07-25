@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/10 08:26:55 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/25 09:47:59 robert Exp $
 include/security/
 include/security/openpam.h
 include/security/openpam_attr.h
@@ -8,19 +8,19 @@ include/security/pam_constants.h
 include/security/pam_mod_misc.h
 include/security/pam_modules.h
 include/security/pam_types.h
-lib/libpam.a
+@static-lib lib/libpam.a
 @lib lib/libpam.so.${LIBpam_VERSION}
-lib/libpam_p.a
+@static-lib lib/libpam_p.a
 lib/security/
-lib/security/pam_bsdauth.so
-lib/security/pam_deny.so
-lib/security/pam_echo.so
-lib/security/pam_exec.so
-lib/security/pam_group.so
-lib/security/pam_nologin.so
-lib/security/pam_permit.so
-lib/security/pam_rootok.so
-lib/security/pam_self.so
+@so lib/security/pam_bsdauth.so
+@so lib/security/pam_deny.so
+@so lib/security/pam_echo.so
+@so lib/security/pam_exec.so
+@so lib/security/pam_group.so
+@so lib/security/pam_nologin.so
+@so lib/security/pam_permit.so
+@so lib/security/pam_rootok.so
+@so lib/security/pam_self.so
 @man man/man8/pam_bsdauth.8
 @man man/man8/pam_deny.8
 @man man/man8/pam_echo.8
