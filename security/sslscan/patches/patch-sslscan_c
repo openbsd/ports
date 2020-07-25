@@ -1,9 +1,9 @@
-$OpenBSD: patch-sslscan_c,v 1.10 2019/03/03 15:14:49 sthen Exp $
+$OpenBSD: patch-sslscan_c,v 1.11 2020/07/25 17:27:00 sthen Exp $
 
 Index: sslscan.c
 --- sslscan.c.orig
 +++ sslscan.c
-@@ -97,9 +97,7 @@
+@@ -100,9 +100,7 @@
  #include <openssl/x509.h>
  #include <openssl/x509v3.h>
  #include <openssl/ocsp.h>
@@ -14,53 +14,3 @@ Index: sslscan.c
  #ifndef OPENSSL_NO_COMP
    #include <openssl/comp.h>
  #endif
-@@ -513,18 +511,10 @@ int tcpConnect(struct sslCheckOptions *options)
-         if (!readOrLogAndClose(socketDescriptor, buffer, BUFFERSIZE, options))
-             return 0;
- 
--#ifdef __USE_GNU
-         if (memmem(buffer, BUFFERSIZE, ok, sizeof(ok))) {
--#else
--        if (strnstr(buffer, ok, BUFFERSIZE)) {
--#endif
-             printf_verbose("STARTLS LDAP setup complete.\n");
-         }
--#ifdef __USE_GNU
-         else if (memmem(buffer, BUFFERSIZE, unsupported, sizeof(unsupported))) {
--#else
--        else if (strnstr(buffer, unsupported, BUFFERSIZE)) {
--#endif
-             printf_error("%sSTARTLS LDAP connection to %s:%d failed with '%s'.%s\n",
-                          COL_RED, options->host, options->port, unsupported, RESET);
-             return 0;
-@@ -2034,13 +2024,13 @@ int checkCertificate(struct sslCheckOptions *options, 
-                                                 printf("Altnames: ");
-                                                 if (!X509V3_EXT_print(stdoutBIO, extension, X509_FLAG_COMPAT, 0))
-                                                 {
--                                                    M_ASN1_OCTET_STRING_print(stdoutBIO, extension->value);
-+                                                    ASN1_STRING_print(stdoutBIO, extension->value);
-                                                 }
-                                                 if (options->xmlOutput)
-                                                 {
-                                                     printf_xml("   <altnames><![CDATA[");
-                                                     if (!X509V3_EXT_print(fileBIO, extension, X509_FLAG_COMPAT, 0))
--                                                        M_ASN1_OCTET_STRING_print(fileBIO, extension->value);
-+                                                        ASN1_STRING_print(fileBIO, extension->value);
-                                                 }
-                                                 printf_xml("]]></altnames>\n");
-                                                 printf("\n");
-@@ -2822,12 +2812,12 @@ int showCertificate(struct sslCheckOptions *options)
-                                             if (!X509V3_EXT_print(stdoutBIO, extension, X509_FLAG_COMPAT, 8))
-                                             {
-                                                 printf("        ");
--                                                M_ASN1_OCTET_STRING_print(stdoutBIO, extension->value);
-+                                                ASN1_STRING_print(stdoutBIO, extension->value);
-                                             }
-                                             if (options->xmlOutput)
-                                             {
-                                                 if (!X509V3_EXT_print(fileBIO, extension, X509_FLAG_COMPAT, 0))
--                                                    M_ASN1_OCTET_STRING_print(fileBIO, extension->value);
-+                                                    ASN1_STRING_print(fileBIO, extension->value);
-                                                 printf_xml("]]></extension>\n");
-                                             }
-                                             printf("\n");
