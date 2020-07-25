@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.115 2020/07/18 09:29:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.116 2020/07/25 08:11:26 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -2843,6 +2843,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/cancel-certificate-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/cancel-job-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/cancel-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/clear-default-authorizer.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/confirm-topic-rule-destination.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-certificate-from-csr.rst
@@ -2864,6 +2865,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-stream.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-thing-type.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-thing.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-topic-rule-destination.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-topic-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-account-audit-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-authorizer.rst
@@ -2889,6 +2891,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-stream.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-thing-type.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-thing.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-topic-rule-destination.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-topic-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-v2-logging-level.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/deprecate-thing-type.rst
@@ -2932,6 +2935,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-policy-version.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-registration-code.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-statistics.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-topic-rule-destination.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-topic-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-v2-logging-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-active-violations.rst
@@ -2974,6 +2978,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-thing-types.rs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-things-in-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-things-in-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-things.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-topic-rule-destinations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-topic-rules.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-v2-logging-levels.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-violation-events.rst
@@ -3014,6 +3019,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-stream.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-thing-groups-for-thing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-thing.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-topic-rule-destination.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/validate-security-profile-behaviors.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-devices/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-devices/claim-devices-by-claim-code.rst
@@ -3283,18 +3289,36 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/delete-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/delete-custom-key-store.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/describe-custom-key-stores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/describe-key.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/disable-key-rotation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/disable-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/disconnect-custom-key-store.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/enable-key-rotation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/enable-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/encrypt.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-random.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/get-key-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/get-key-rotation-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/get-parameters-for-import.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/get-public-key.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/import-key-material.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/list-aliases.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/list-grants.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/list-key-policies.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/list-keys.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/list-resource-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/list-retirable-grants.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/put-key-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/re-encrypt.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/retire-grant.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/revoke-grant.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/schedule-key-deletion.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/sign.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/update-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/update-custom-key-store.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/update-key-description.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/verify.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/lambda/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/lambda/add-layer-version-permission.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/lambda/add-permission.rst
@@ -3787,6 +3811,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-option-to-optio
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-role-to-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-source-identifier-to-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-tags-to-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/authorize-db-security-group-ingress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/backtrack-db-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-cluster-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-cluster-snapshot.rst
@@ -3839,6 +3864,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-engine-def
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-event-categories.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-event-subscriptions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-events.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-export-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-option-group-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-option-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-orderable-db-instance-options.rst
@@ -3858,9 +3884,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-parameter
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-snapshot-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-snapshot-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-snapshot.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-subnet-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-event-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/promote-read-replica.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/purchase-reserved-db-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/purchase-reserved-db-instances-offerings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/reboot-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-option-from-option-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-role-from-db-instance.rst
@@ -3871,6 +3899,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance-from-s3.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance-to-point-in-time.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/start-db-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/start-export-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/stop-db-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/stop-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/redshift/
