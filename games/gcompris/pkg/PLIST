@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2020/04/22 19:18:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/07/25 11:15:45 ajacoutot Exp $
 bin/gcompris
 @bin bin/gcompris-qt
 share/applications/org.kde.gcompris.desktop
@@ -191,12 +191,14 @@ share/gcompris-qt/translations/gcompris_fr.qm
 share/gcompris-qt/translations/gcompris_ga.qm
 share/gcompris-qt/translations/gcompris_gd.qm
 share/gcompris-qt/translations/gcompris_gl.qm
+share/gcompris-qt/translations/gcompris_he.qm
 share/gcompris-qt/translations/gcompris_hi.qm
 share/gcompris-qt/translations/gcompris_hu.qm
 share/gcompris-qt/translations/gcompris_id.qm
 share/gcompris-qt/translations/gcompris_it.qm
 share/gcompris-qt/translations/gcompris_ja.qm
 share/gcompris-qt/translations/gcompris_ko.qm
+share/gcompris-qt/translations/gcompris_lt.qm
 share/gcompris-qt/translations/gcompris_lv.qm
 share/gcompris-qt/translations/gcompris_mk.qm
 share/gcompris-qt/translations/gcompris_ml.qm
