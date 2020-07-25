@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.37 2020/03/04 23:31:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/07/25 19:48:43 sthen Exp $
 
 COMMENT=	search engine library
 
-V=		1.4.15
-# XXX remove ac_cv_func_snprintf=snprintf with next release
+V=		1.4.16
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
 # the other xapian ports should be kept in-sync:
 #   databases/xapian-bindings
 #   www/xapian-omega
 
-SHARED_LIBS +=  xapian               5.1      # 40.0
+SHARED_LIBS +=  xapian               5.1      # 40.2
 
 CATEGORIES=	databases textproc
 
@@ -33,7 +32,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -Wno-redundant-decls" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ENV+=	ac_cv_func_snprintf=snprintf
 
 .include <bsd.port.arch.mk>
 # amd64-capable CPUs all have SSE

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2019/12/28 18:00:11 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/07/25 19:48:43 sthen Exp $
 libdata/perl5/site_perl/Xapian/
 libdata/perl5/site_perl/Xapian.pm
 libdata/perl5/site_perl/Xapian/AssertionError.pm
@@ -28,7 +28,6 @@ libdata/perl5/site_perl/Xapian/MSetIterator.pm
 libdata/perl5/site_perl/Xapian/MultiValueSorter.pm
 libdata/perl5/site_perl/Xapian/NetworkError.pm
 libdata/perl5/site_perl/Xapian/NetworkTimeoutError.pm
-libdata/perl5/site_perl/Xapian/PerlStopper.pm
 libdata/perl5/site_perl/Xapian/PositionIterator.pm
 libdata/perl5/site_perl/Xapian/PostingIterator.pm
 libdata/perl5/site_perl/Xapian/Query.pm
