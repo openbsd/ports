@@ -1,0 +1,14 @@
+$OpenBSD: README,v 1.1 2020/07/25 08:43:18 ajacoutot Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+By default, the consul process runs in the "daemon" login(1) class which default
+limits on file descriptors are insufficient to run.
+To raise the open file descriptor limit for consul, add the following to the
+login.conf(5) file:
+
+consul:\
+	:openfiles=512:\
+	:tc=daemon:
