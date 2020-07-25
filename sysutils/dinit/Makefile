@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2020/01/18 16:22:27 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/25 19:06:07 edd Exp $
 
-V =		0.8.1
+V =		0.8.2
 COMMENT =	service monitoring / "init" system
 DISTNAME =	dinit-${V}
 MASTER_SITES =	https://github.com/davmac314/dinit/releases/download/v${V}/
