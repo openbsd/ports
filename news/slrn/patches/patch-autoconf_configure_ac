@@ -1,9 +1,9 @@
-$OpenBSD: patch-autoconf_configure_ac,v 1.1 2019/05/22 11:54:37 naddy Exp $
+$OpenBSD: patch-autoconf_configure_ac,v 1.2 2020/07/25 17:02:37 sthen Exp $
 
 Index: autoconf/configure.ac
 --- autoconf/configure.ac.orig
 +++ autoconf/configure.ac
-@@ -213,6 +213,7 @@ m4_include([./include/po.m4])
+@@ -216,6 +216,7 @@ m4_include([./include/po.m4])
  m4_include([./include/lib-ld.m4])
  m4_include([./include/lib-link.m4])
  m4_include([./include/lib-prefix.m4])

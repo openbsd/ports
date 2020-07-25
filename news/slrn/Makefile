@@ -1,20 +1,24 @@
-# $OpenBSD: Makefile,v 1.61 2020/02/03 20:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2020/07/25 17:02:37 sthen Exp $
 
 COMMENT=	SLang-based newsreader
 
-DISTNAME=	slrn-1.0.2
-REVISION=	3
+PKGNAME=	slrn-1.0.3
+DISTNAME=	${PKGNAME}a
+WRKDIST=	${WRKDIR}/${PKGNAME}
+
 CATEGORIES=	news
 
-HOMEPAGE=	http://slrn.sourceforge.net/
+EXTRACT_SUFX= .tar.bz2
+
+HOMEPAGE=	https://slrn.info/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto iconv intl m ssl slang
 
-MASTER_SITES=	http://jedsoft.org/releases/slrn/ \
-		http://jedsoft.org/releases/slrn/old/
+MASTER_SITES=	https://jedsoft.org/releases/slrn/ \
+		https://jedsoft.org/releases/slrn/old/
 
 MAKE_ARGS+=	LDFLAGS="${LDFLAGS}"
 
