@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/05/15 09:07:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/07/25 07:22:34 ajacoutot Exp $
 @bin bin/idn
 include/idn-free.h
 include/idn-int.h
@@ -9,7 +9,7 @@ include/stringprep.h
 include/tld.h
 info/libidn-components.png
 @info info/libidn.info
-lib/libidn.a
+@static-lib lib/libidn.a
 lib/libidn.la
 @lib lib/libidn.so.${LIBidn_VERSION}
 lib/pkgconfig/libidn.pc

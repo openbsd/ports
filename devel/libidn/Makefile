@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2020/07/25 07:22:34 ajacoutot Exp $
 
 COMMENT=		internationalized string handling
 
-DISTNAME=		libidn-1.35
-REVISION=		0
+DISTNAME=		libidn-1.36
 
-SHARED_LIBS +=  idn                  18.0     # 18.0
+SHARED_LIBS +=  idn                  18.0     # 18.1
 
 CATEGORIES=		devel
 
@@ -27,5 +26,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-csharp \
 			--disable-java \
 			--disable-valgrind-tests
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
