@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/25 10:45:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/25 22:07:44 naddy Exp $
 
 COMMENT =	KDE financial data handling library
 CATEGORIES =	productivity x11
@@ -12,7 +12,7 @@ SHARED_LIBS =  alkimia5  0.0 # 7.0.1
 
 HOMEPAGE =	https://community.kde.org/Alkimia/libalkimia
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/alkimia/$V/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/alkimia/$V/}
 EXTRACT_SUFX =	.tar.xz
 
 # LGPLv2.1+
