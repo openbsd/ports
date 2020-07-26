@@ -1,0 +1,16 @@
+$OpenBSD: patch-salt_modules_vmctl_py,v 1.1 2020/07/26 12:45:58 jasper Exp $
+
+Fix order of argument for vmctl(8)
+
+Index: salt/modules/vmctl.py
+--- salt/modules/vmctl.py.orig
++++ salt/modules/vmctl.py
+@@ -64,7 +64,7 @@ def create_disk(name, size):
+         salt '*' vmctl.create_disk /path/to/disk.img size=10G
+     """
+     ret = False
+-    cmd = "vmctl create {0} -s {1}".format(name, size)
++    cmd = "vmctl create -s {0} {1}".format(size, name)
+ 
+     result = __salt__["cmd.run_all"](cmd, output_loglevel="trace", python_shell=False)
+ 
