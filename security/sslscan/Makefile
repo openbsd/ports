@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/25 17:27:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/26 20:03:34 kmos Exp $
 
 COMMENT=	SSL/TLS scanner (identify version, ciphers, etc)
 
@@ -14,6 +14,9 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
+
+COMPILER=	base-clang ports-gcc ports-clang
+COMPILER_LANGS =	c
 
 WANTLIB += c pthread z
 
