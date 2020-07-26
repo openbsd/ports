@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_modules_vmctl_py,v 1.1 2020/07/26 12:45:58 jasper Exp $
+$OpenBSD: patch-salt_modules_vmctl_py,v 1.2 2020/07/26 13:05:24 jasper Exp $
 
 Fix order of argument for vmctl(8)
 
@@ -14,3 +14,31 @@ Index: salt/modules/vmctl.py
  
      result = __salt__["cmd.run_all"](cmd, output_loglevel="trace", python_shell=False)
  
+@@ -225,12 +225,7 @@ def start(
+ 
+     if not (name or id):
+         raise SaltInvocationError('Must provide either "name" or "id"')
+-    elif name:
+-        cmd.append(name)
+-    else:
+-        cmd.append(id)
+-        name = _id_to_name(id)
+-
++    
+     if nics > 0:
+         cmd.append("-i {0}".format(nics))
+ 
+@@ -256,6 +251,13 @@ def start(
+ 
+     if disks and len(disks) > 0:
+         cmd.extend(["-d", x] for x in disks)
++
++    if name:
++        cmd.append(name)
++    else:
++        cmd.append(id)
++        name = _id_to_name(id)
++    log.warning(f'cmd: {cmd}')
+ 
+     # Before attempting to define a new VM, make sure it doesn't already exist.
+     # Otherwise return to indicate nothing was changed.
