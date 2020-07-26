@@ -1,0 +1,22 @@
+$OpenBSD: patch-doc_xmoto_6,v 1.1 2020/07/26 08:54:47 kirby Exp $
+
+Index: doc/xmoto.6
+--- doc/xmoto.6.orig
++++ doc/xmoto.6
+@@ -265,13 +265,13 @@ Change video size (1=full, 2=50%, 4=25%).
+ .B      \-\-videoRecordingFramerate FRAMERATE
+ Change video framerate.
+ .TP
+-.B	\-\-videoRecordingStartTime NBCENTSOFSECONDS
++.B      \-\-videoRecordingStartTime NBCENTSOFSECONDS
+ Start recording video after NBCENTSOFSECONDS time elapsed.
+ .TP
+-.B	\-\-videoRecordingEndTime NBCENTSOFSECONDS
++.B      \-\-videoRecordingEndTime NBCENTSOFSECONDS
+ Stop recording video after NBCENTSOFSECONDS time elapsed.
+ .TP
+-.B	\-\-hidePlayingInformation
++.B      \-\-hidePlayingInformation
+ Don't show some information while playing/replaying ; useful to make nicer video.
+ 
+ .SH EXAMPLES

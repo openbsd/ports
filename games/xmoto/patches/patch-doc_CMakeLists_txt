@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1 2020/07/26 08:54:47 kirby Exp $
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|Darwin" AND NOT BUILD_MACOS_BUNDLE)
+-  install(FILES xmoto.6 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man6 COMPONENT doc)
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|OpenBSD|Darwin" AND NOT BUILD_MACOS_BUNDLE)
++  install(FILES xmoto.6 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man6 COMPONENT doc)
+ endif()
+ 

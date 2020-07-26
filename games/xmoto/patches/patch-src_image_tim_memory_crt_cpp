@@ -1,15 +1,16 @@
-$OpenBSD: patch-src_image_tim_memory_crt_cpp,v 1.1 2014/11/30 05:41:35 brad Exp $
+$OpenBSD: patch-src_image_tim_memory_crt_cpp,v 1.2 2020/07/26 08:54:47 kirby Exp $
 
 Replace the malloc.h header with stdlib.h.
 
---- src/image/tim_memory_crt.cpp.orig	Wed Nov 19 22:32:58 2014
-+++ src/image/tim_memory_crt.cpp	Wed Nov 19 22:33:24 2014
+Index: src/image/tim_memory_crt.cpp
+--- src/image/tim_memory_crt.cpp.orig
++++ src/image/tim_memory_crt.cpp
 @@ -23,7 +23,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
   * CRT memory driver.
   */
  
 -#if defined(__FreeBSD__) || (defined(__APPLE__) && defined(__MACH__))
 +#if defined(__FreeBSD__) || defined(__OpenBSD__) || (defined(__APPLE__) && defined(__MACH__))
-   #include <stdlib.h>
+ #include <stdlib.h>
  #else
-   #include <malloc.h>
+ #include <malloc.h>

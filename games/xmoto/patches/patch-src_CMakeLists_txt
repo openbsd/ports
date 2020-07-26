@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2020/07/26 08:54:47 kirby Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -65,12 +65,9 @@ find_package(ZLIB REQUIRED)
+ 
+ # sources
+ 
+-add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/bzip2" bzip2)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/libccd" libccd)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/chipmunk" chipmunk)
+-add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/lua" lua)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/md5sum" md5sum)
+-add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/ode" ode)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/xdgbasedir" xdgbasedir)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/glad" glad)
+ 
+@@ -427,7 +424,7 @@ target_link_libraries(xmoto PUBLIC
+   ${LIBXML2_LIBRARIES}
+     "$<$<BOOL:${STATIC_BUILD}>:${LIBLZMA_LIBRARIES}>"
+   "$<${USE_SYSTEM_Lua}:${LUA_LIBRARIES}>"
+-  $<$<NOT:${USE_SYSTEM_Lua}>:lua>
++  $<$<NOT:${USE_SYSTEM_Lua}>:lua${MODLUA_VERSION}>
+   md5sum
+   $<${USE_SYSTEM_ODE}:${ODE_LIBRARY}>
+   $<$<NOT:${USE_SYSTEM_ODE}>:ode>
