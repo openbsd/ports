@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/02/06 21:55:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/07/26 16:13:41 sthen Exp $
 ${P5SITE}/Zonemaster/
 ${P5SITE}/Zonemaster/Engine/
 ${P5SITE}/Zonemaster/Engine.pm
 ${P5SITE}/Zonemaster/Engine/ASNLookup.pm
-${P5SITE}/Zonemaster/Engine/Config.pm
 ${P5SITE}/Zonemaster/Engine/Constants.pm
 ${P5SITE}/Zonemaster/Engine/DNSName.pm
 ${P5SITE}/Zonemaster/Engine/Exception.pm
@@ -18,6 +17,7 @@ ${P5SITE}/Zonemaster/Engine/Net/
 ${P5SITE}/Zonemaster/Engine/Net/IP.pm
 ${P5SITE}/Zonemaster/Engine/Overview.pod
 ${P5SITE}/Zonemaster/Engine/Packet.pm
+${P5SITE}/Zonemaster/Engine/Profile.pm
 ${P5SITE}/Zonemaster/Engine/Recursor.pm
 ${P5SITE}/Zonemaster/Engine/Test/
 ${P5SITE}/Zonemaster/Engine/Test.pm
@@ -27,7 +27,6 @@ ${P5SITE}/Zonemaster/Engine/Test/Connectivity.pm
 ${P5SITE}/Zonemaster/Engine/Test/Consistency.pm
 ${P5SITE}/Zonemaster/Engine/Test/DNSSEC.pm
 ${P5SITE}/Zonemaster/Engine/Test/Delegation.pm
-${P5SITE}/Zonemaster/Engine/Test/Example.pm
 ${P5SITE}/Zonemaster/Engine/Test/Nameserver.pm
 ${P5SITE}/Zonemaster/Engine/Test/Syntax.pm
 ${P5SITE}/Zonemaster/Engine/Test/Zone.pm
@@ -36,11 +35,9 @@ ${P5SITE}/Zonemaster/Engine/Translator.pm
 ${P5SITE}/Zonemaster/Engine/Util.pm
 ${P5SITE}/Zonemaster/Engine/Zone.pm
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/
-${P5SITE}/auto/share/dist/Zonemaster-Engine/config.json
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/config_example_logfilter.json
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-ipv4-special-registry.csv
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-ipv6-special-registry.csv
-${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-profile.json
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/LC_MESSAGES/
@@ -54,10 +51,11 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fr/LC_MESSAGES/Zonemaster-Eng
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/Zonemaster-Engine.mo
-${P5SITE}/auto/share/dist/Zonemaster-Engine/policy.json
+${P5SITE}/auto/share/dist/Zonemaster-Engine/modules.txt
+${P5SITE}/auto/share/dist/Zonemaster-Engine/profile.json
+${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_example_logfilter.json
 @man man/man3p/Zonemaster::Engine.3p
 @man man/man3p/Zonemaster::Engine::ASNLookup.3p
-@man man/man3p/Zonemaster::Engine::Config.3p
 @man man/man3p/Zonemaster::Engine::Constants.3p
 @man man/man3p/Zonemaster::Engine::DNSName.3p
 @man man/man3p/Zonemaster::Engine::Exception.3p
@@ -69,6 +67,7 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/policy.json
 @man man/man3p/Zonemaster::Engine::Net::IP.3p
 @man man/man3p/Zonemaster::Engine::Overview.3p
 @man man/man3p/Zonemaster::Engine::Packet.3p
+@man man/man3p/Zonemaster::Engine::Profile.3p
 @man man/man3p/Zonemaster::Engine::Recursor.3p
 @man man/man3p/Zonemaster::Engine::Test.3p
 @man man/man3p/Zonemaster::Engine::Test::Address.3p
@@ -77,7 +76,6 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/policy.json
 @man man/man3p/Zonemaster::Engine::Test::Consistency.3p
 @man man/man3p/Zonemaster::Engine::Test::DNSSEC.3p
 @man man/man3p/Zonemaster::Engine::Test::Delegation.3p
-@man man/man3p/Zonemaster::Engine::Test::Example.3p
 @man man/man3p/Zonemaster::Engine::Test::Nameserver.3p
 @man man/man3p/Zonemaster::Engine::Test::Syntax.3p
 @man man/man3p/Zonemaster::Engine::Test::Zone.3p
