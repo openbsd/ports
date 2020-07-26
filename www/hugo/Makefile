@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/07 11:11:43 paco Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/26 21:13:36 paco Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.73.0
+MODGO_VERSION =	v0.74.3
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
@@ -110,9 +110,11 @@ MODGO_MODULES =	\
 	github.com/eapache/go-resiliency			 v1.1.0 \
 	github.com/eapache/go-xerial-snappy			 v0.0.0-20180814174437-776d5712da21 \
 	github.com/eapache/queue				 v1.1.0 \
+	github.com/evanw/esbuild				 v0.6.5 \
 	github.com/fortytw2/leaktest				 v1.3.0 \
 	github.com/frankban/quicktest				 v1.7.2 \
 	github.com/fsnotify/fsnotify				 v1.4.7 \
+	github.com/getkin/kin-openapi				 v0.14.0 \
 	github.com/ghodss/yaml					 v1.0.0 \
 	github.com/go-ini/ini					 v1.25.4 \
 	github.com/go-kit/kit					 v0.8.0 \
@@ -164,6 +166,7 @@ MODGO_MODULES =	\
 	github.com/kr/pretty					 v0.2.0 \
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.1.0 \
+	github.com/kylelemons/godebug				 v1.1.0 \
 	github.com/kyokomi/emoji				 v2.2.1+incompatible \
 	github.com/lib/pq					 v1.1.0 \
 	github.com/magefile/mage				 v1.9.0 \
@@ -183,7 +186,7 @@ MODGO_MODULES =	\
 	github.com/mwitkow/go-conntrack				 v0.0.0-20161129095857-cc309e4a2223 \
 	github.com/nfnt/resize					 v0.0.0-20180221191011-83c6a9932646 \
 	github.com/nicksnyder/go-i18n				 v1.10.0 \
-	github.com/niklasfasching/go-org			 v1.1.0 \
+	github.com/niklasfasching/go-org			 v1.3.0 \
 	github.com/nkovacs/streamquote				 v0.0.0-20170412213628-49af9bddb229 \
 	github.com/oklog/ulid					 v1.3.1 \
 	github.com/olekukonko/tablewriter			 v0.0.4 \
@@ -220,7 +223,7 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag					 v1.0.5 \
 	github.com/spf13/viper					 v1.6.1 \
 	github.com/stretchr/objx				 v0.1.1 \
-	github.com/stretchr/testify				 v1.3.0 \
+	github.com/stretchr/testify				 v1.5.1 \
 	github.com/subosito/gotenv				 v1.2.0 \
 	github.com/tdewolff/minify/v2				 v2.6.2 \
 	github.com/tdewolff/parse/v2				 v2.4.2 \
@@ -254,7 +257,7 @@ MODGO_MODULES =	\
 	golang.org/x/net					 v0.0.0-20191209160850-c0dbc17a3553 \
 	golang.org/x/oauth2					 v0.0.0-20190523182746-aaccbc9213b0 \
 	golang.org/x/sync					 v0.0.0-20190911185100-cd5d95a43a6e \
-	golang.org/x/sys					 v0.0.0-20200413165638-669c56c373c4 \
+	golang.org/x/sys					 v0.0.0-20200501145240-bc7a7d42d5c3 \
 	golang.org/x/text					 v0.3.2 \
 	golang.org/x/time					 v0.0.0-20190308202827-9d24e82272b4 \
 	golang.org/x/tools					 v0.0.0-20190422233926-fe54fb35175b \
@@ -270,7 +273,7 @@ MODGO_MODULES =	\
 	gopkg.in/ini.v1						 v1.51.1 \
 	gopkg.in/resty.v1					 v1.12.0 \
 	gopkg.in/tomb.v1					 v1.0.0-20141024135613-dd632973f1e7 \
-	gopkg.in/yaml.v2					 v2.2.7 \
+	gopkg.in/yaml.v2					 v2.3.0 \
 	honnef.co/go/tools					 v0.0.0-20190106161140-3f1c8253044a \
 	pack.ag/amqp						 v0.11.0
 MODGO_MODFILES =	\
@@ -337,6 +340,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/testify		 v0.0.0-20161117074351-18a02ba4a312 \
 	github.com/stretchr/testify		 v1.2.2 \
+	github.com/stretchr/testify		 v1.3.0 \
 	github.com/yuin/goldmark		 v1.1.22 \
 	go.opencensus.io			 v0.15.0 \
 	go.opencensus.io			 v0.20.1 \
@@ -391,6 +395,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20190502145724-3ef323f4f1fd \
 	golang.org/x/sys			 v0.0.0-20200116001909-b77594299b42 \
 	golang.org/x/sys			 v0.0.0-20200223170610-d5e6a3e2c0ae \
+	golang.org/x/sys			 v0.0.0-20200413165638-669c56c373c4 \
 	golang.org/x/text			 v0.3.0 \
 	golang.org/x/text			 v0.3.1-0.20180807135948-17ff2d5776d2 \
 	golang.org/x/text			 v0.3.1-0.20181227161524-e6919f6577db \
