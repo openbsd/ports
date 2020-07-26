@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2020/07/03 21:12:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2020/07/26 18:39:16 kmos Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -45,6 +45,11 @@ MODGNOME_TOOLS += gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS +=	--disable-webkit2gtk
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=		-std=gnu99
+.endif
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
