@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/02/06 21:55:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/26 15:28:10 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Zonemaster/
 ${P5ARCH}/Zonemaster/LDNS/
@@ -84,7 +84,7 @@ ${P5ARCH}/Zonemaster/LDNS/RRList.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Zonemaster/
 ${P5ARCH}/auto/Zonemaster/LDNS/
-${P5ARCH}/auto/Zonemaster/LDNS/LDNS.so
+@so ${P5ARCH}/auto/Zonemaster/LDNS/LDNS.so
 @man man/man3p/Zonemaster::LDNS.3p
 @man man/man3p/Zonemaster::LDNS::Packet.3p
 @man man/man3p/Zonemaster::LDNS::RR.3p
