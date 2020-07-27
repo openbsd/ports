@@ -1,0 +1,2 @@
+CDB_File is a module which provides a Perl interface to Dan Bernstein's
+cdb package.

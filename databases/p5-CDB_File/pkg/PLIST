@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/27 14:00:19 bluhm Exp $
+${P5ARCH}/
+${P5ARCH}/CDB_File.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/CDB_File/
+@so ${P5ARCH}/auto/CDB_File/CDB_File.so
+@comment ${P5ARCH}/bun-x.pl
+@man man/man3p/CDB_File.3p
