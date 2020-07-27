@@ -1,18 +1,18 @@
-$OpenBSD: patch-src_browserwindow_cpp,v 1.1 2020/02/25 07:04:18 gonzalo Exp $
+$OpenBSD: patch-src_browserwindow_cpp,v 1.2 2020/07/27 08:08:25 gonzalo Exp $
 
 Index: src/browserwindow.cpp
 --- src/browserwindow.cpp.orig
 +++ src/browserwindow.cpp
-@@ -70,7 +70,7 @@ BrowserWindow::BrowserWindow(const QString & config_pa
- {
- 	setWindowTitle("SMTube");
- 	setWindowIcon(QPixmap(":/icons/smtube.png"));
--	home_page = "http://www.tonvid.com/";
-+	home_page = "https://www.tonvid.com/";
+@@ -202,7 +202,7 @@ QString BrowserWindow::homePageUrl() {
+ #ifdef USE_SITES
+ 	return sites.currentSite().homeUrl();
+ #else
+-	return "http://www.tonvid.com/";
++	return "https://www.tonvid.com/";
+ #endif
+ }
  
- 	settings = new QSettings(config_path + "/smtube2.ini", QSettings::IniFormat, this);
- 
-@@ -442,7 +442,7 @@ void BrowserWindow::openYTUrl(QString title, QString e
+@@ -436,7 +436,7 @@ void BrowserWindow::openYTUrl(QString title, QString e
  	if (current_player == WebBrowser) {
  		QString u = url;
  		#if 1
@@ -21,7 +21,7 @@ Index: src/browserwindow.cpp
              "&t=" + title.toUtf8().toBase64().toPercentEncoding();
  		#endif
  		QDesktopServices::openUrl(u);
-@@ -713,7 +713,7 @@ void BrowserWindow::loadConfig() {
+@@ -691,7 +691,7 @@ void BrowserWindow::loadConfig() {
  #ifdef D_BUTTON
  	add_download_button = settings->value("add_download_button", false).toBool();
  
