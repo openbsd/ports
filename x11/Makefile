@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.665 2020/07/24 17:23:37 bcallah Exp $
+# $OpenBSD: Makefile,v 1.666 2020/07/27 09:05:45 kirby Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -219,6 +219,7 @@
      SUBDIR += pcmanfm
      SUBDIR += peksystray
      SUBDIR += pekwm
+     SUBDIR += picom
      SUBDIR += pidgin-guifications
      SUBDIR += pidgin-libnotify
      SUBDIR += piewm
