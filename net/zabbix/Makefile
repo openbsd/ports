@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2020/07/17 08:36:04 tb Exp $
+# $OpenBSD: Makefile,v 1.167 2020/07/27 07:39:09 jasper Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -11,13 +11,12 @@ FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
 PKGNAME-server =	zabbix-server-${VERSION}
 PKGNAME-proxy =		zabbix-proxy-${VERSION}
-FULLPKGPATH-proxy =	net/zabbix,-proxy
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
 REVISION-main =		0
-REVISION-proxy =	0
+REVISION-proxy =	1
 REVISION-server =	0
 REVISION-web =		0
 
@@ -125,6 +124,7 @@ CONFIGURE_ARGS +=	--without-jabber
 
 WANTLIB-proxy +=	sqlite3
 LIB_DEPENDS-proxy +=	databases/sqlite3
+FULLPKGPATH-proxy =	net/zabbix,-proxy,${FLAVOR}
 .elif ${BACKEND} == "no_server"
 CONFIGURE_ARGS +=	--disable-server \
 			--disable-proxy

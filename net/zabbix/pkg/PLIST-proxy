@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-proxy,v 1.5 2020/04/15 05:58:12 robert Exp $
+@comment $OpenBSD: PLIST-proxy,v 1.6 2020/07/27 07:39:09 jasper Exp $
+@pkgpath net/zabbix,-proxy
 @extraunexec rm -rf /var/log/zabbix/*
 @man man/man8/zabbix_proxy.8
 @bin sbin/zabbix_proxy
