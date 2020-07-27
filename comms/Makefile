@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2020/01/25 05:05:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.79 2020/07/27 16:46:11 bcallah Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -12,6 +12,7 @@
      SUBDIR += conserver,ipmi,net
      SUBDIR += conserver,net
      SUBDIR += dfu-util
+     SUBDIR += dump1090
      SUBDIR += efax
      SUBDIR += ems-flasher
      SUBDIR += fldigi
