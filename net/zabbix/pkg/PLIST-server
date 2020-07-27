@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.23 2020/04/15 05:58:12 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.24 2020/07/27 14:32:03 jasper Exp $
 @conflict zabbix-agent-<=1.8.3p5
 @extraunexec rm -rf /var/log/zabbix/*
 @man man/man8/zabbix_server.8
@@ -14,14 +14,22 @@ share/examples/zabbix/zabbix_server.conf
 @group
 share/zabbix-server/
 share/zabbix-server/schema/
-share/zabbix-server/schema/mysql/
+@comment share/zabbix-server/schema/mysql/Makefile
+@comment share/zabbix-server/schema/mysql/Makefile.am
+@comment share/zabbix-server/schema/mysql/Makefile.in
 share/zabbix-server/schema/mysql/data.sql
+share/zabbix-server/schema/mysql/double.sql
 share/zabbix-server/schema/mysql/images.sql
 share/zabbix-server/schema/mysql/schema.sql
 share/zabbix-server/schema/postgresql/
+@comment share/zabbix-server/schema/postgresql/Makefile
+@comment share/zabbix-server/schema/postgresql/Makefile.am
+@comment share/zabbix-server/schema/postgresql/Makefile.in
 share/zabbix-server/schema/postgresql/data.sql
+share/zabbix-server/schema/postgresql/double.sql
 share/zabbix-server/schema/postgresql/images.sql
 share/zabbix-server/schema/postgresql/schema.sql
+share/zabbix-server/schema/postgresql/timescaledb.sql
 @mode 0755
 @owner _zabbix
 @sample /var/log/zabbix/

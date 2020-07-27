@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_libs_zbxnix_daemon_c,v 1.13 2019/08/19 13:36:29 robert Exp $
+$OpenBSD: patch-src_libs_zbxnix_daemon_c,v 1.14 2020/07/27 14:32:03 jasper Exp $
 Index: src/libs/zbxnix/daemon.c
 --- src/libs/zbxnix/daemon.c.orig
 +++ src/libs/zbxnix/daemon.c
-@@ -301,7 +301,7 @@ int	daemon_start(int allow_root, const char *user, uns
+@@ -308,7 +308,7 @@ int	daemon_start(int allow_root, const char *user, uns
  	if (0 == allow_root && 0 == getuid())	/* running as root? */
  	{
  		if (NULL == user)

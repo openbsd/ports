@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.9 2018/10/26 06:57:21 robert Exp $
+$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.10 2020/07/27 14:32:03 jasper Exp $
 
 Index: conf/zabbix_proxy.conf
 --- conf/zabbix_proxy.conf.orig
@@ -29,7 +29,7 @@ Index: conf/zabbix_proxy.conf
  
  # Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -504,6 +505,7 @@ Timeout=4
+@@ -513,6 +514,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # ExternalScripts=${datadir}/zabbix/externalscripts
@@ -37,7 +37,7 @@ Index: conf/zabbix_proxy.conf
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -512,6 +514,7 @@ Timeout=4
+@@ -521,6 +523,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -45,7 +45,7 @@ Index: conf/zabbix_proxy.conf
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -521,6 +524,7 @@ Timeout=4
+@@ -530,6 +533,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6

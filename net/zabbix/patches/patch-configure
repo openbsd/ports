@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure,v 1.27 2020/04/14 14:47:25 robert Exp $
+$OpenBSD: patch-configure,v 1.28 2020/07/27 14:32:03 jasper Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6538,6 +6538,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -6517,6 +6517,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  
  #include <stdlib.h>
  #include <sys/queue.h>
@@ -10,34 +11,18 @@ Index: configure
  #include <sys/sensors.h>
  int
  main ()
-@@ -9540,7 +9541,7 @@ $as_echo "yes" >&6; }
- 
- 			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
- 			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
--			 JABBER_LIBS="-liksemel"
-+			 JABBER_LIBS="-liksemel -lpthread"
- 
- fi
-        else
-@@ -9550,7 +9551,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
-                if test -f $_libiksemel_with/include/iksemel.h; then
-                        JABBER_INCDIR="-I$_libiksemel_with/include"
-                        JABBER_LIBDIR="-L$_libiksemel_with/lib"
--                       JABBER_LIBS="-liksemel"
-+                       JABBER_LIBS="-liksemel -lpthread"
- 		       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
- $as_echo "yes" >&6; }
-                else
-@@ -14395,12 +14396,12 @@ LIBS="$LIBS $ICONV_LIBS"
+@@ -14240,13 +14241,13 @@ LIBS="$LIBS $ICONV_LIBS"
  RANLIB="ranlib"
  
  
 -SERVER_CONFIG_FILE="${sysconfdir}/zabbix_server.conf"
 -PROXY_CONFIG_FILE="${sysconfdir}/zabbix_proxy.conf"
 -AGENT_CONFIG_FILE="${sysconfdir}/zabbix_agentd.conf"
+-AGENT2_CONFIG_FILE="${sysconfdir}/zabbix_agent2.conf"
 +SERVER_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_server.conf"
 +PROXY_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_proxy.conf"
 +AGENT_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_agentd.conf"
++AGENT2_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_agent2.conf"
  
 -EXTERNAL_SCRIPTS_PATH="${datadir}/zabbix/externalscripts"
 -ALERT_SCRIPTS_PATH="${datadir}/zabbix/alertscripts"

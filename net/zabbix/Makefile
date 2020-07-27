@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.167 2020/07/27 07:39:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.168 2020/07/27 14:32:03 jasper Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		4.0.19
+VERSION =		5.0.2
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -14,11 +14,6 @@ PKGNAME-proxy =		zabbix-proxy-${VERSION}
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
-
-REVISION-main =		0
-REVISION-proxy =	1
-REVISION-server =	0
-REVISION-web =		0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -29,7 +24,7 @@ MAINTAINER =		Robert Nagy <robert@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
+MASTER_SITES =		https://cdn.zabbix.com/zabbix/sources/stable/${MAJV}/
 
 MODULES=		lang/php
 MODPHP_BUILDDEP =	No
@@ -41,7 +36,7 @@ FLAVORS =		mysql pgsql sqlite3
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
 WANTLIB =		c iconv kvm m execinfo lber ldap crypto ssl z \
-			curl nghttp2 pcre
+			curl nghttp2 pcre pthread
 
 LIB_DEPENDS =		converters/libiconv \
 			databases/openldap \
@@ -54,12 +49,11 @@ RUN_DEPENDS-main =
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			textproc/libxml \
 			net/net-snmp \
-			textproc/iksemel \
 			security/libssh2
 RUN_DEPENDS-server =	net/fping
 # we want the _zabbix user&group as well as README-main
 RUN_DEPENDS-server +=	net/zabbix,-main>=${VERSION}
-WANTLIB-server =	${WANTLIB} crypto ssl z netsnmp iksemel pthread \
+WANTLIB-server =	${WANTLIB} crypto ssl z netsnmp \
 			xml2 ssh2
 
 CONFIGURE_STYLE =	gnu
@@ -89,7 +83,7 @@ LIB_DEPENDS-proxy =	${LIB_DEPENDS} \
 			net/net-snmp \
 			security/libssh2 \
 			textproc/libxml
-WANTLIB-proxy =		${WANTLIB} netsnmp ssh2 xml2 pthread
+WANTLIB-proxy =		${WANTLIB} netsnmp ssh2 xml2
 RUN_DEPENDS-proxy =	# empty
 
 FLAVOR ?=		no_server
@@ -106,14 +100,14 @@ MULTI_PACKAGES +=	-proxy -server
 LIB_DEPENDS-proxy +=	databases/mariadb,-main
 LIB_DEPENDS-server +=	databases/mariadb,-main
 CONFIGURE_ARGS +=	--with-mysql
-WANTLIB-proxy +=	mysqlclient pthread
-WANTLIB-server +=	event mysqlclient
+WANTLIB-proxy +=	event mariadb pthread
+WANTLIB-server +=	event mariadb
 .elif ${BACKEND} == "pgsql"
 MULTI_PACKAGES +=	-proxy -server
 LIB_DEPENDS-proxy +=	databases/postgresql,-main
 LIB_DEPENDS-server +=	databases/postgresql,-main
 CONFIGURE_ARGS +=	--with-postgresql
-WANTLIB-proxy +=	pq
+WANTLIB-proxy +=	event pq
 WANTLIB-server +=	event pq
 .elif ${BACKEND} == "sqlite3"
 MULTI_PACKAGES +=	-proxy
@@ -122,7 +116,7 @@ CONFIGURE_ARGS +=	--with-sqlite3 \
 # The proxy does not use jabber, so just disable the check
 CONFIGURE_ARGS +=	--without-jabber
 
-WANTLIB-proxy +=	sqlite3
+WANTLIB-proxy +=	event sqlite3
 LIB_DEPENDS-proxy +=	databases/sqlite3
 FULLPKGPATH-proxy =	net/zabbix,-proxy,${FLAVOR}
 .elif ${BACKEND} == "no_server"
@@ -140,7 +134,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/zabbix
-	cd ${WRKBUILD}/frontends/php && tar -cf - . | \
+	cd ${WRKBUILD}/ui && tar -cf - . | \
 		tar -C ${DESTDIR}${PREFIX-web}/zabbix -xf -
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zabbix
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/

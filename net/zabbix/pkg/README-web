@@ -1,4 +1,4 @@
-$OpenBSD: README-web,v 1.12 2018/09/05 09:24:31 espie Exp $
+$OpenBSD: README-web,v 1.13 2020/07/27 14:32:03 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -75,7 +75,7 @@ httpd.conf(5)
 =============
 
 server "zabbix.example.com" {
-	listen on * 80
+	listen on * port 80
 	listen on * tls port 443
 	directory { index "index.php" }
 
