@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/25 22:07:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2020/07/27 16:30:20 rsadowski Exp $
 
 COMMENT =	KDE financial data handling library
 CATEGORIES =	productivity x11
@@ -6,6 +6,7 @@ CATEGORIES =	productivity x11
 V =		8.0.3
 PKGNAME =	libalkimia-$V
 DISTNAME =	alkimia-$V
+REVISION =	0
 
 SHARED_LIBS =  alkimia5  0.0 # 7.0.1
 
@@ -71,6 +72,7 @@ LIB_DEPENDS =	devel/gmp \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtwebkit
 
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+			-DBUILD_APPLETS=OFF
 
 .include <bsd.port.mk>
