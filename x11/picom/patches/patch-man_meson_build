@@ -1,0 +1,13 @@
+$OpenBSD: patch-man_meson_build,v 1.1.1.1 2020/07/27 08:52:44 kirby Exp $
+
+Index: man/meson.build
+--- man/meson.build.orig
++++ man/meson.build
+@@ -7,6 +7,6 @@ if get_option('with_docs')
+ 		                        'picom-version='+version,
+ 		                        '--format', 'manpage', '@INPUT@', '-D',
+ 		                        meson.current_build_dir()],
+-		              install: true, install_dir: 'share/man/man1/')
++		              install: true, install_dir: 'man/man1/')
+ 	endforeach
+ endif

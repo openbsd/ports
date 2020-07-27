@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_vsync_c,v 1.1.1.1 2020/07/27 08:52:44 kirby Exp $
+
+Use the correct drm(4) device node, found by Bryan Steele
+
+Index: src/vsync.c
+--- src/vsync.c.orig
++++ src/vsync.c
+@@ -54,7 +54,7 @@ static int vsync_drm_wait(session_t *ps) {
+  */
+ static bool vsync_drm_init(session_t *ps) {
+ 	// Should we always open card0?
+-	if (ps->drm_fd < 0 && (ps->drm_fd = open("/dev/dri/card0", O_RDWR)) < 0) {
++	if (ps->drm_fd < 0 && (ps->drm_fd = open("/dev/drm0", O_RDWR)) < 0) {
+ 		log_error("Failed to open device.");
+ 		return false;
+ 	}

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/27 08:52:44 kirby Exp $
+@bin bin/picom
+bin/picom-trans
+@man man/man1/picom-trans.1
+@man man/man1/picom.1
+share/applications/picom.desktop
+share/icons/hicolor/48x48/apps/picom.png
+share/icons/hicolor/scalable/apps/picom.svg
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

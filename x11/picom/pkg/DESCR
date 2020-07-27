@@ -1,0 +1,4 @@
+Picom is a lightweight, standalone compositor for X11, for use with
+window managers that do not natively provide compositing functionality.
+Features include fading, shadows, transparency/dimming for inactive
+windows, and flexible configuration.

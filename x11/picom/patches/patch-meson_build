@@ -1,0 +1,21 @@
+$OpenBSD: patch-meson_build,v 1.1.1.1 2020/07/27 08:52:44 kirby Exp $
+
+Don't install files that could conflict with x11/compton
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -70,11 +70,10 @@ subdir('src')
+ subdir('man')
+ 
+ install_data('bin/picom-trans', install_dir: get_option('bindir'))
+-install_data('compton.desktop', install_dir: 'share/applications')
+ install_data('picom.desktop', install_dir: 'share/applications')
+-install_data('media/icons/48x48/compton.png',
++install_data('media/icons/48x48/picom.png',
+              install_dir: 'share/icons/hicolor/48x48/apps')
+-install_data('media/compton.svg',
++install_data('media/picom.svg',
+              install_dir: 'share/icons/hicolor/scalable/apps')
+ 
+ meson.add_install_script('meson/install.sh')
