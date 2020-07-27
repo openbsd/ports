@@ -1,41 +1,33 @@
-# $OpenBSD: Makefile,v 1.121 2020/06/23 10:50:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2020/07/27 06:55:43 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			2.6.8
-DISTNAME=		harfbuzz-${V}
-EXTRACT_SUFX=		.tar.xz
+GH_ACCOUNT=		harfbuzz
+GH_PROJECT=		harfbuzz
+GH_TAGNAME=		2.7.0
 
-PKGNAME-main=		harfbuzz-${V}
-PKGNAME-icu=		harfbuzz-icu-${V}
+PKGNAME-main=		harfbuzz-${GH_TAGNAME}
+PKGNAME-icu=		harfbuzz-icu-${GH_TAGNAME}
 
-SHARED_LIBS +=  harfbuzz             15.3     # 20600.7
-SHARED_LIBS +=  harfbuzz-icu         1.2      # 20600.7
-SHARED_LIBS +=  harfbuzz-gobject     0.3      # 20600.7
-SHARED_LIBS +=  harfbuzz-subset      0.2      # 20600.7
+SHARED_LIBS += harfbuzz                 15.4 # 0.20700.0
+SHARED_LIBS += harfbuzz-subset           0.2 # 0.20700.0
+SHARED_LIBS += harfbuzz-icu              1.2 # 0.20700.0
+SHARED_LIBS += harfbuzz-gobject          0.3 # 0.20700.0
 
 CATEGORIES=		devel graphics textproc
-
-HOMEPAGE=		http://www.freedesktop.org/wiki/Software/HarfBuzz
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} freetype glib-2.0 graphite2 iconv intl m z
+WANTLIB-main += ${COMPILER_LIBCXX}
+WANTLIB-main += c cairo freetype glib-2.0 gobject-2.0 graphite2 m
 
-WANTLIB-main += ${WANTLIB} X11 Xext Xrender c cairo expat ffi fontconfig
-WANTLIB-main += gobject-2.0 graphite2 pcre pixman-1 png xcb xcb-render
-WANTLIB-main += xcb-shm
-
-WANTLIB-icu += ${WANTLIB} harfbuzz icudata icuuc
-
-#MASTER_SITES=		https://www.freedesktop.org/software/harfbuzz/release/
-MASTER_SITES=		https://github.com/harfbuzz/harfbuzz/releases/download/${V}/
+WANTLIB-icu += harfbuzz icuuc
 
 MULTI_PACKAGES=		-main -icu
 
@@ -46,27 +38,24 @@ USE_GMAKE=		Yes
 # C++11
 COMPILER=		base-clang ports-gcc ports-clang
 
-# XXX temporary until the move to meson(1)
-MODULES=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODPY_RUNDEP=		No
-MODPY_BUILDDEP=		No
-TEST_DEPENDS +=		${MODPY_RUN_DEPENDS}
+MODULES=		devel/meson
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
-# LIB_DEPENDS needed for estdc++ in WANTLIB on non-clang archs
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			graphics/cairo \
+LIB_DEPENDS-main=	graphics/cairo \
 			graphics/graphite2
 
-LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
+LIB_DEPENDS-icu=	devel/harfbuzz,-main=${GH_TAGNAME} \
 			textproc/icu4c
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-introspection \
-			--with-graphite2 \
-			--with-gobject
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+# needed for estdc++ in WANTLIB
+LIB_DEPENDS-main =+	${LIB_DEPENDS}
+.endif
+
+CONFIGURE_ARGS=		-Dgraphite=enabled \
+			-Ddocs=disabled
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/check-symbols.py

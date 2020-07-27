@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.36 2020/06/23 10:50:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.37 2020/07/27 06:55:43 ajacoutot Exp $
 @pkgpath devel/harfbuzz
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
@@ -45,117 +45,11 @@ lib/cmake/harfbuzz/
 lib/cmake/harfbuzz/harfbuzz-config.cmake
 lib/girepository-1.0/
 lib/girepository-1.0/HarfBuzz-0.0.typelib
-@static-lib lib/libharfbuzz-gobject.a
-lib/libharfbuzz-gobject.la
 @lib lib/libharfbuzz-gobject.so.${LIBharfbuzz-gobject_VERSION}
-@static-lib lib/libharfbuzz-subset.a
-lib/libharfbuzz-subset.la
 @lib lib/libharfbuzz-subset.so.${LIBharfbuzz-subset_VERSION}
-@static-lib lib/libharfbuzz.a
-lib/libharfbuzz.la
 @lib lib/libharfbuzz.so.${LIBharfbuzz_VERSION}
 lib/pkgconfig/harfbuzz-gobject.pc
 lib/pkgconfig/harfbuzz-subset.pc
 lib/pkgconfig/harfbuzz.pc
 share/gir-1.0/
 share/gir-1.0/HarfBuzz-0.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
-share/gtk-doc/html/harfbuzz/
-share/gtk-doc/html/harfbuzz/HarfBuzz.png
-share/gtk-doc/html/harfbuzz/HarfBuzz.svg
-share/gtk-doc/html/harfbuzz/a-clustering-example-for-levels-0-and-1.html
-share/gtk-doc/html/harfbuzz/aat-shaping.html
-share/gtk-doc/html/harfbuzz/adding-text-to-the-buffer.html
-share/gtk-doc/html/harfbuzz/annotation-glossary.html
-share/gtk-doc/html/harfbuzz/api-index-full.html
-share/gtk-doc/html/harfbuzz/buffers-language-script-and-direction.html
-share/gtk-doc/html/harfbuzz/building.html
-share/gtk-doc/html/harfbuzz/ch01s03.html
-share/gtk-doc/html/harfbuzz/ch03s02.html
-share/gtk-doc/html/harfbuzz/ch03s03.html
-share/gtk-doc/html/harfbuzz/ch12.html
-share/gtk-doc/html/harfbuzz/ch13.html
-share/gtk-doc/html/harfbuzz/ch14.html
-share/gtk-doc/html/harfbuzz/ch15.html
-share/gtk-doc/html/harfbuzz/clusters.html
-share/gtk-doc/html/harfbuzz/complex-scripts.html
-share/gtk-doc/html/harfbuzz/customizing-unicode-functions.html
-share/gtk-doc/html/harfbuzz/fonts-and-faces-custom-functions.html
-share/gtk-doc/html/harfbuzz/fonts-and-faces-native-opentype.html
-share/gtk-doc/html/harfbuzz/fonts-and-faces-variable.html
-share/gtk-doc/html/harfbuzz/fonts-and-faces.html
-share/gtk-doc/html/harfbuzz/getting-started.html
-share/gtk-doc/html/harfbuzz/graphite-shaping.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-aat-layout.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-blob.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-buffer.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-common.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-coretext.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-deprecated.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-face.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-font.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-ft.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-glib.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-gobject.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-graphite2.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-icu.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-map.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-color.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-font.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-layout.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-math.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-name.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-shape.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-var.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-set.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape-plan.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-unicode.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-uniscribe.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-version.html
-share/gtk-doc/html/harfbuzz/harfbuzz.devhelp2
-share/gtk-doc/html/harfbuzz/home.png
-share/gtk-doc/html/harfbuzz/index.html
-share/gtk-doc/html/harfbuzz/install-harfbuzz.html
-share/gtk-doc/html/harfbuzz/integration-coretext.html
-share/gtk-doc/html/harfbuzz/integration-freetype.html
-share/gtk-doc/html/harfbuzz/integration-icu.html
-share/gtk-doc/html/harfbuzz/integration-python.html
-share/gtk-doc/html/harfbuzz/integration-uniscribe.html
-share/gtk-doc/html/harfbuzz/integration.html
-share/gtk-doc/html/harfbuzz/left-insensitive.png
-share/gtk-doc/html/harfbuzz/left.png
-share/gtk-doc/html/harfbuzz/level-2.html
-share/gtk-doc/html/harfbuzz/object-model-blobs.html
-share/gtk-doc/html/harfbuzz/object-model-lifecycle.html
-share/gtk-doc/html/harfbuzz/object-model-object-types.html
-share/gtk-doc/html/harfbuzz/object-model-user-data.html
-share/gtk-doc/html/harfbuzz/object-model.html
-share/gtk-doc/html/harfbuzz/opentype-shaping-models.html
-share/gtk-doc/html/harfbuzz/pt01.html
-share/gtk-doc/html/harfbuzz/pt02.html
-share/gtk-doc/html/harfbuzz/reordering-in-levels-0-and-1.html
-share/gtk-doc/html/harfbuzz/right-insensitive.png
-share/gtk-doc/html/harfbuzz/right.png
-share/gtk-doc/html/harfbuzz/setting-buffer-properties.html
-share/gtk-doc/html/harfbuzz/shaping-and-shape-plans.html
-share/gtk-doc/html/harfbuzz/shaping-concepts.html
-share/gtk-doc/html/harfbuzz/shaping-opentype-features.html
-share/gtk-doc/html/harfbuzz/shaping-operations.html
-share/gtk-doc/html/harfbuzz/shaping-plans-and-caching.html
-share/gtk-doc/html/harfbuzz/shaping-shaper-selection.html
-share/gtk-doc/html/harfbuzz/style.css
-share/gtk-doc/html/harfbuzz/text-runs.html
-share/gtk-doc/html/harfbuzz/the-distinction-between-levels-0-and-1.html
-share/gtk-doc/html/harfbuzz/unicode-character-categories.html
-share/gtk-doc/html/harfbuzz/up-insensitive.png
-share/gtk-doc/html/harfbuzz/up.png
-share/gtk-doc/html/harfbuzz/utilities-common-types-apis.html
-share/gtk-doc/html/harfbuzz/utilities-ucdn.html
-share/gtk-doc/html/harfbuzz/utilities.html
-share/gtk-doc/html/harfbuzz/what-harfbuzz-doesnt-do.html
-share/gtk-doc/html/harfbuzz/what-is-harfbuzz.html
-share/gtk-doc/html/harfbuzz/why-do-i-need-a-shaping-engine.html
-share/gtk-doc/html/harfbuzz/why-is-it-called-harfbuzz.html
-share/gtk-doc/html/harfbuzz/working-with-harfbuzz-clusters.html

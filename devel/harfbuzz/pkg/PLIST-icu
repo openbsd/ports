@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST-icu,v 1.2 2019/11/10 17:26:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-icu,v 1.3 2020/07/27 06:55:43 ajacoutot Exp $
 @conflict harfbuzz-<0.9.18
 include/harfbuzz/hb-icu.h
-@static-lib lib/libharfbuzz-icu.a
-lib/libharfbuzz-icu.la
 @lib lib/libharfbuzz-icu.so.${LIBharfbuzz-icu_VERSION}
 lib/pkgconfig/harfbuzz-icu.pc
