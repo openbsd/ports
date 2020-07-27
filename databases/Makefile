@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.404 2020/06/30 05:03:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.405 2020/07/27 14:12:59 bluhm Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -43,6 +43,7 @@
      SUBDIR += p5-AnyEvent-CouchDB
      SUBDIR += p5-AsciiDB-TagFile
      SUBDIR += p5-BerkeleyDB
+     SUBDIR += p5-CDB_File
      SUBDIR += p5-CGI-Application-Plugin-DBH
      SUBDIR += p5-Catalyst-Controller-Rose
      SUBDIR += p5-Catalyst-Model-CDBI
