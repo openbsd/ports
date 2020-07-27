@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/27 16:45:31 bcallah Exp $
+@bin bin/dump1090
+share/dump1090/
+share/dump1090/gmap.html
+share/dump1090/tools/
+share/dump1090/tools/debug.html
