@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/04/14 05:58:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/07/27 17:18:13 landry Exp $
 @bin bin/xfwm4
 @bin bin/xfwm4-settings
 @bin bin/xfwm4-tweaks-settings
@@ -65,6 +65,7 @@ share/locale/he/LC_MESSAGES/xfwm4.mo
 share/locale/hr/LC_MESSAGES/xfwm4.mo
 share/locale/hu/LC_MESSAGES/xfwm4.mo
 share/locale/hy_AM/LC_MESSAGES/xfwm4.mo
+share/locale/hye/LC_MESSAGES/xfwm4.mo
 share/locale/id/LC_MESSAGES/xfwm4.mo
 share/locale/ie/LC_MESSAGES/xfwm4.mo
 share/locale/is/LC_MESSAGES/xfwm4.mo
