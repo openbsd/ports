@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2020/06/09 07:14:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.145 2020/07/27 14:33:15 sthen Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -15,10 +15,14 @@ COMMENT-headers_more=	nginx module for setting/adding/clearing headers
 COMMENT-perl=		nginx perl scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 COMMENT-rtmp=		nginx module for RTMP streaming
+COMMENT-securelink=	nginx HMAC secure link module
 
 VERSION=	1.18.0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
+
+REVISION-main=	0
+REVISION-xslt=	0
 
 VERSION-rtmp=	1.2.1
 
@@ -35,7 +39,7 @@ PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
-REVISION-xslt=		0
+PKGNAME-securelink=	nginx-securelink-${VERSION}
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
@@ -52,7 +56,8 @@ _GH_MODS=	\
 	kvspb		nginx-auth-ldap			83c059b73566c2ee9cbda920d91b66657cf120b7 \
 	arut		nginx-rtmp-module		v${VERSION-rtmp} \
 	simpl		ngx_devel_kit			v0.3.0 \
-	leev		ngx_http_geoip2_module		3.3
+	leev		ngx_http_geoip2_module		3.3 \
+	nginx-modules	ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50
 
 .for _a _p _c in ${_GH_MODS}
 DISTFILES+=	${_p}-{${_a}/${_p}/archive/}${_c}.tar.gz:0
@@ -68,7 +73,8 @@ PERMIT_PACKAGE=	Yes
 MULTI_PACKAGES =	-main -naxsi -perl ${MODULE_PACKAGES}
 
 MODULE_PACKAGES =	-image_filter -geoip2 -xslt -mailproxy -stream \
-			-passenger -headers_more -ldap_auth -lua -rtmp
+			-passenger -headers_more -ldap_auth -lua -rtmp \
+			-securelink
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	no_lua no_passenger
@@ -90,6 +96,7 @@ WANTLIB-lua=		${MODLUA_WANTLIB} m
 WANTLIB-headers_more=
 WANTLIB-perl=		c m perl
 WANTLIB-passenger=	m pthread ${COMPILER_LIBCXX}
+WANTLIB-securelink=	crypto
 
 LIB_DEPENDS-main=	devel/pcre
 LIB_DEPENDS-xslt=	textproc/libxml \
@@ -99,6 +106,7 @@ LIB_DEPENDS-geoip2=	net/libmaxminddb
 LIB_DEPENDS-ldap_auth=	databases/openldap
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
 LIB_DEPENDS-rtmp=
+LIB_DEPENDS-securelink=
 
 MODLUA_RUNDEP=		No
 RUN_DEPENDS=		www/nginx,-main=${VERSION}
@@ -179,7 +187,8 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--add-dynamic-module=${WRKSRC}/ngx_devel_kit \
 			--add-dynamic-module=${WRKSRC}/headers-more-nginx-module \
 			--add-dynamic-module=${WRKSRC}/nginx-auth-ldap \
-			--add-dynamic-module=${WRKSRC}/ngx_http_geoip2_module
+			--add-dynamic-module=${WRKSRC}/ngx_http_geoip2_module \
+			--add-dynamic-module=${WRKSRC}/ngx_http_hmac_secure_link_module
 
 SUBSTFILES=		conf/nginx.conf */config
 
@@ -188,7 +197,8 @@ ALL_TARGET=
 
 pre-patch:
 .for i in headers-more-nginx-module lua-nginx-module naxsi \
-	nginx-auth-ldap ngx_devel_kit ngx_http_geoip2_module
+	nginx-auth-ldap ngx_devel_kit ngx_http_geoip2_module \
+	ngx_http_hmac_secure_link_module
 	cd ${WRKSRC} && mv ../$i-* $i
 .endfor
 

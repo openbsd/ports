@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-securelink,v 1.1 2020/07/27 14:33:15 sthen Exp $
+@so ngx_http_hmac_secure_link_module.so

@@ -1,0 +1,11 @@
+This nginx module allows a server to provide direct downloads of
+resources but only where a "secure URL" is known. This is based on
+a URL token including an HMAC based on various parameters such as
+the path, remote IP address, and a timestamp/expiry (all optional).
+The token can be generated on a separate web application server
+and validated on a simpler web server using a shared secret.
+
+It is similar to the Secure Link module described in
+https://www.nginx.com/blog/securing-urls-secure-link-module-nginx-plus/
+however it can use any type of hash supported by libcrypto rather than
+being limited to MD5.
