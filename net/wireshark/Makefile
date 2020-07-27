@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2020/07/11 22:54:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2020/07/27 11:08:45 visa Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -124,6 +124,10 @@ CONFIGURE_ARGS +=	-DBUILD_wireshark=false
 
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
+.endif
+
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+CXXFLAGS +=	-mxgot
 .endif
 
 post-install:
