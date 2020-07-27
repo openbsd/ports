@@ -1,0 +1,15 @@
+$OpenBSD: patch-cpp_CMakeLists_txt,v 1.1 2020/07/27 17:31:55 kili Exp $
+
+- Remove hardcoded SOVERSION
+
+Index: cpp/CMakeLists.txt
+--- cpp/CMakeLists.txt.orig
++++ cpp/CMakeLists.txt
+@@ -25,7 +25,6 @@ set(poppler_cpp_SRCS
+ )
+ 
+ add_library(poppler-cpp ${poppler_cpp_SRCS})
+-set_target_properties(poppler-cpp PROPERTIES VERSION 0.9.0 SOVERSION 0)
+ if(MINGW AND BUILD_SHARED_LIBS)
+     get_target_property(POPPLER_CPP_SOVERSION poppler-cpp SOVERSION)
+     set_target_properties(poppler-cpp PROPERTIES SUFFIX "-${POPPLER_CPP_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")
