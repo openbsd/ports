@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/18 22:14:04 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/07/27 22:33:27 tracey Exp $
 share/arduino/hardware/
 share/arduino/hardware/espressif/
 share/arduino/hardware/espressif/esp8266/
@@ -243,6 +243,8 @@ share/arduino/hardware/espressif/esp8266/libraries/ESP8266HTTPClient/examples/Po
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266HTTPClient/examples/PostHttpClient/PostHttpClient.ino
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266HTTPClient/examples/ReuseConnection/
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266HTTPClient/examples/ReuseConnection/ReuseConnection.ino
+share/arduino/hardware/espressif/esp8266/libraries/ESP8266HTTPClient/examples/ReuseConnectionV2/
+share/arduino/hardware/espressif/esp8266/libraries/ESP8266HTTPClient/examples/ReuseConnectionV2/ReuseConnectionV2.ino
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266HTTPClient/examples/StreamHttpClient/
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266HTTPClient/examples/StreamHttpClient/StreamHttpClient.ino
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266HTTPClient/examples/StreamHttpsClient/
@@ -1137,6 +1139,11 @@ share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/FSB
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/FSBrowser/extras/index_htm.h
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/FSBrowser/extras/reduce_index.sh
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/FSBrowser/readme.md
+share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/Graph/
+share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/Graph/Graph.ino
+share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/Graph/data/
+share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/Graph/data/index.htm
+share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/Graph/readme.md
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/HelloServer/
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/HelloServer/HelloServer.ino
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/HelloServerBearSSL/
@@ -1153,6 +1160,8 @@ share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/Pat
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/PathArgServer/PathArgServer.ino
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/PostServer/
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/PostServer/PostServer.ino
+share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/ServerSentEvents/
+share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/ServerSentEvents/ServerSentEvents.ino
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/SimpleAuthentication/
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/SimpleAuthentication/SimpleAuthentication.ino
 share/arduino/hardware/espressif/esp8266/libraries/ESP8266WebServer/examples/WebUpdate/
