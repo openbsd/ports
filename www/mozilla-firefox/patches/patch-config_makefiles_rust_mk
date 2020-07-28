@@ -1,5 +1,6 @@
-$OpenBSD: patch-config_makefiles_rust_mk,v 1.2 2020/07/21 13:21:36 semarie Exp $
+$OpenBSD: patch-config_makefiles_rust_mk,v 1.3 2020/07/28 14:13:35 landry Exp $
 
+use lto=thin to reduce memory pressure when building gkrust
 https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
 https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
 

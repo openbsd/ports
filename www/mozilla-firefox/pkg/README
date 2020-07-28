@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.27 2020/04/07 14:10:48 landry Exp $
+$OpenBSD: README,v 1.28 2020/07/28 14:13:35 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -27,26 +27,27 @@ for each type of process are located in ${SYSCONFDIR}/firefox/.
 
 3rd-Party MIME Handlers
 =======================
-Due to unveil(2) limiting filesystem access, only the default MIME
-handler registered for a given type can be chosen when opening a
-downloaded file.  For example, to use the mupdf package to read
-PDFs, it must be registered as the default with XDG:
+Due to unveil(2) limiting filesystem access, special care has to be
+taken to unveil MIME handlers. For example, to use the mupdf package
+to read PDFs, it must be registered as the default with XDG:
 
 	$ xdg-mime default mupdf.desktop application/pdf
+
+And the corresponding binary must be unveiled for it to appear as an
+option in the "Open With" drop-down, ie add
+"${LOCALBASE}/bin/mupdf rx" to unveil.main.
 
 The current default for a given type can be viewed with xdg-mime's
 query command:
 
 	$ xdg-mime query default application/pdf
 
-The older mailcap-format handlers are also supported, but the path
-being executed must be explicitly added to the unveil.main file
-with "rx" permissions.  For example, a ~/.mailcap file specifying:
+The older mailcap-format handlers are also supported, for example,
+a ~/.mailcap file specifying:
 
 	application/pdf; ${LOCALBASE}/bin/xpdf %s
 
-must have "${LOCALBASE}/bin/xpdf rx" added to unveil.main for it to
-appear as an option in the "Open With" drop-down.
+should open PDFs via xpdf.
 
 Using mailto: links
 ===================

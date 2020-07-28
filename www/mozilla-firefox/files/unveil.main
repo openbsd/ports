@@ -1,4 +1,4 @@
-# $OpenBSD: unveil.main,v 1.4 2020/06/02 15:27:27 landry Exp $
+# $OpenBSD: unveil.main,v 1.5 2020/07/28 14:13:35 landry Exp $
 # for uuid generation?
 /dev/urandom r
 /dev/video rw
@@ -21,8 +21,6 @@
 # printing
 /usr/bin/lpr rx
 
-# for launching registered 3rd party applications like pdf readers
-/usr/local/bin/gio-launch-desktop rx
 /etc/mailcap r
 ~/.mailcap r
 ~/.mime.types r

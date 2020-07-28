@@ -1,0 +1,122 @@
+$OpenBSD: patch-toolkit_system_gnome_nsGIOService_cpp,v 1.5 2020/07/28 14:13:35 landry Exp $
+
+Try to fix opening downloaded files with registered external mimetype handlers
+after gio-launch-desktop removal in glib 2.64.
+
+more or less replaces g_app_info_launch_uris() (which relies on /bin/sh in
+2.64) calls by g_spawn_async() using a handler that should be previously
+unveiled.
+
+Index: toolkit/system/gnome/nsGIOService.cpp
+--- toolkit/system/gnome/nsGIOService.cpp.orig
++++ toolkit/system/gnome/nsGIOService.cpp
+@@ -243,10 +243,21 @@ nsGIOMimeApp::LaunchWithURI(nsIURI* aUri,
+   uris.data = const_cast<char*>(spec.get());
+ 
+   GError* error = nullptr;
+-  gboolean result = g_app_info_launch_uris(mApp, &uris, nullptr, &error);
++  gchar *path = g_filename_from_uri(spec.get(), NULL, NULL);
++  const gchar *bin = g_app_info_get_executable(mApp);
++  if (!bin) {
++    g_warning("no executable found for %s, maybe not unveiled ?", g_app_info_get_name(mApp));
++    return NS_ERROR_FAILURE;
++  }
++  g_message("LaunchWithURI: spawning %s %s for %s", bin, path, spec.get());
++  const gchar * const argv[] = { bin, path, NULL };
+ 
++  GSpawnFlags flags = static_cast<GSpawnFlags>(G_SPAWN_SEARCH_PATH |
++                                               G_SPAWN_DO_NOT_REAP_CHILD);
++  gboolean result = g_spawn_async( NULL, (char**) argv, NULL, flags, NULL, NULL, NULL, &error);
++
+   if (!result) {
+-    g_warning("Cannot launch application: %s", error->message);
++    g_warning("Cannot launch application %s with arg %s: %s", bin, path, error->message);
+     g_error_free(error);
+     return NS_ERROR_FAILURE;
+   }
+@@ -501,20 +512,15 @@ nsGIOService::GetAppForMimeType(const nsACString& aMim
+     return NS_ERROR_NOT_AVAILABLE;
+   }
+ 
+-#if defined(__OpenBSD__) && defined(MOZ_SANDBOX)
+-  // g_app_info_get_default_for_type will fail on OpenBSD's veiled filesystem
+-  // since we most likely don't have direct access to the binaries that are
+-  // registered as defaults for this type.  Fake it up by just executing
+-  // xdg-open via gio-launch-desktop (which we do have access to) and letting
+-  // it figure out which program to execute for this MIME type
+-  GAppInfo* app_info = g_app_info_create_from_commandline(
+-      "/usr/local/bin/xdg-open",
+-      nsPrintfCString("System default for %s", content_type).get(),
+-      G_APP_INFO_CREATE_NONE, NULL);
+-#else
+   GAppInfo* app_info = g_app_info_get_default_for_type(content_type, false);
+-#endif
+   if (app_info) {
++    char *t;
++    t = g_find_program_in_path(g_app_info_get_executable(app_info));
++    if (t != NULL) {
++      g_debug("%s is registered as handler for %s, binary available as %s", g_app_info_get_executable(app_info), content_type, t);
++    } else {
++      g_warning("%s is registered as handler for %s but not available in PATH (missing unveil ?)", g_app_info_get_executable(app_info), content_type);
++    }
+     nsGIOMimeApp* mozApp = new nsGIOMimeApp(app_info);
+     NS_ENSURE_TRUE(mozApp, NS_ERROR_OUT_OF_MEMORY);
+     NS_ADDREF(*aApp = mozApp);
+@@ -551,7 +557,24 @@ nsGIOService::ShowURI(nsIURI* aURI) {
+   nsresult rv = aURI->GetSpec(spec);
+   NS_ENSURE_SUCCESS(rv, rv);
+   GError* error = nullptr;
+-  if (!g_app_info_launch_default_for_uri(spec.get(), nullptr, &error)) {
++  gboolean result_uncertain;
++  gchar *path = g_filename_from_uri(spec.get(), NULL, NULL);
++  gchar *content_type = g_content_type_guess(path, NULL, 0, &result_uncertain);
++  if (content_type != NULL && !result_uncertain) {
++    GAppInfo* app_info = g_app_info_get_default_for_type(content_type, false);
++    const gchar *bin = g_app_info_get_executable(app_info);
++    if (!bin) {
++      g_warning("no executable found for %s, maybe not unveiled ?", g_app_info_get_name(app_info));
++      return NS_ERROR_FAILURE;
++    }
++    g_message("ShowURI: spawning %s %s for %s (content type %s)", bin, path, spec.get(), content_type);
++    const gchar * const argv[] = { bin, path, NULL };
++    GSpawnFlags flags = static_cast<GSpawnFlags>(G_SPAWN_SEARCH_PATH |
++                                                 G_SPAWN_DO_NOT_REAP_CHILD);
++    g_spawn_async( NULL, (char**) argv, NULL, flags, NULL, NULL, NULL, &error);
++  }
++  g_free(content_type);
++  if (error) {
+     g_warning("Could not launch default application for URI: %s",
+               error->message);
+     g_error_free(error);
+@@ -567,7 +590,22 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
+   nsresult rv = NS_ERROR_FAILURE;
+   GError* error = nullptr;
+ 
+-  g_app_info_launch_default_for_uri(spec, nullptr, &error);
++  gboolean result_uncertain;
++  gchar *path = g_filename_from_uri(spec, NULL, NULL);
++  gchar *content_type = g_content_type_guess(path, NULL, 0, &result_uncertain);
++  if (content_type != NULL && !result_uncertain) {
++    GAppInfo* app_info = g_app_info_get_default_for_type(content_type, false);
++    const gchar *bin = g_app_info_get_executable(app_info);
++    if (!bin) {
++      g_warning("no executable found for %s, maybe not unveiled ?", g_app_info_get_name(app_info));
++      return NS_ERROR_FAILURE;
++    }
++    g_message("ShowURIForInput: spawning %s %s for %s (content type %s)", bin, path, spec, content_type);
++    const gchar * const argv[] = { bin, path, NULL };
++    GSpawnFlags flags = static_cast<GSpawnFlags>(G_SPAWN_SEARCH_PATH |
++                                                 G_SPAWN_DO_NOT_REAP_CHILD);
++    g_spawn_async( NULL, (char**) argv, NULL, flags, NULL, NULL, NULL, &error);
++  }
+   if (error) {
+     g_warning("Cannot launch default application: %s", error->message);
+     g_error_free(error);
+@@ -576,6 +614,7 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
+   }
+   g_object_unref(file);
+   g_free(spec);
++  g_free(content_type);
+ 
+   return rv;
+ }

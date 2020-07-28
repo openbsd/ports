@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.429 2020/07/09 13:54:01 landry Exp $
+# $OpenBSD: Makefile,v 1.430 2020/07/28 14:13:35 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	78.0.2
+MOZILLA_VERSION =	79.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	93.0
+SO_VERSION =	94.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3
@@ -49,13 +49,11 @@ BUILD_DEPENDS +=	devel/llvm
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.13.1
+BUILD_DEPENDS +=	devel/cbindgen>=0.14.3
 .if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
 # 67 requires nasm for bundled libdav1d
 BUILD_DEPENDS +=	devel/nasm
 .endif
-# unveil support relies on xdg-open
-RUN_DEPENDS +=		devel/xdg-utils
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
