@@ -1,0 +1,17 @@
+$OpenBSD: patch-fs-uae-launcher,v 1.1 2020/07/28 20:03:33 edd Exp $
+
+Since we install the Python modules in a custom location, we have to update the
+PYTHONPATH so they can be found.
+
+Index: fs-uae-launcher
+--- fs-uae-launcher.orig
++++ fs-uae-launcher
+@@ -2,6 +2,8 @@
+ import os
+ import sys
+ 
++sys.path.insert(0, "${FS_PYTHONPATH}")
++
+ if sys.version_info[0] < 3 or sys.version_info[1] < 2:
+     print("You need at least Python 3.2 to run FS-UAE Launcher")
+     sys.exit(1)

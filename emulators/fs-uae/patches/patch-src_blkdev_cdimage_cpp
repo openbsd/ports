@@ -1,40 +1,64 @@
-$OpenBSD: patch-src_blkdev_cdimage_cpp,v 1.1 2013/12/02 16:32:12 naddy Exp $
+$OpenBSD: patch-src_blkdev_cdimage_cpp,v 1.2 2020/07/28 20:03:33 edd Exp $
 
-Replace ftime() by gettimeofday().
+Use gettimeofday().
 
---- src/blkdev_cdimage.cpp.orig	Tue Jun 25 21:21:17 2013
-+++ src/blkdev_cdimage.cpp	Sun Dec  1 23:41:31 2013
-@@ -13,7 +13,7 @@
+Without this, fs-uae would insert a dummy interval on account of us not having
+_ftime().
+
+https://github.com/FrodeSolheim/fs-uae/issues/233
+
+Index: src/blkdev_cdimage.cpp
+--- src/blkdev_cdimage.cpp.orig
++++ src/blkdev_cdimage.cpp
+@@ -14,12 +14,6 @@
  #include "sysconfig.h"
  #include "sysdeps.h"
  
+-#ifdef HAVE_SYS_TIMEB_H
 -#include <sys/timeb.h>
-+#include <sys/time.h>
- 
+-#else
+-
+-#endif
+-
  #include "options.h"
  #include "blkdev.h"
-@@ -375,11 +375,11 @@ static void *cdda_play_func (void *v)
+ #include "zfile.h"
+@@ -484,18 +478,13 @@ static void *cdda_play_func (void *v)
  		if (oldplay != cdu->cdda_play) {
  			struct cdtoc *t;
  			int sector, diff;
+-#ifdef HAVE_SYS_TIMEB_H
 -			struct _timeb tb1, tb2;
+-#else
+-#warning Missing timing functions
+-#endif
 +			struct timeval tb1, tb2;
  
  			idleframes = 0;
+ 			silentframes = 0;
  			foundsub = false;
+-#ifdef HAVE_SYS_TIMEB_H
 -			_ftime (&tb1);
+-#endif
 +			gettimeofday (&tb1, NULL);
++
  			cdda_pos = cdu->cdda_start;
  			oldplay = cdu->cdda_play;
  			sector = cdu->cd_last_pos = cdda_pos;
-@@ -434,8 +434,8 @@ static void *cdda_play_func (void *v)
+@@ -549,13 +538,10 @@ static void *cdda_play_func (void *v)
  			}
  			cdda_pos -= idleframes;
  
+-#ifdef HAVE_SYS_TIMEB_H
 -			_ftime (&tb2);
 -			diff = (tb2.time * (uae_s64)1000 + tb2.millitm) - (tb1.time * (uae_s64)1000 + tb1.millitm);
 +			gettimeofday (&tb2, NULL);
 +			diff = (tb2.tv_sec * (uae_s64)1000 + tb2.tv_usec / 1000) - (tb1.tv_sec * (uae_s64)1000 + tb1.tv_usec / 1000);
++
  			diff -= cdu->cdda_delay;
+-#else
+-			diff = 0;
+-#endif
  			if (idleframes >= 0 && diff < 0 && cdu->cdda_play > 0)
- 				Sleep (-diff);
+ 				sleep_millis(-diff);
+ 			setstate (cdu, AUDIO_STATUS_IN_PROGRESS);

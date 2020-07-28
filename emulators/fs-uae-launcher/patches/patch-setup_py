@@ -1,26 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.1 2015/01/15 01:28:06 daniel Exp $
+$OpenBSD: patch-setup_py,v 1.2 2020/07/28 20:03:33 edd Exp $
 
-fs-uae-launcher includes its own py-six which breaks
-things like matplotlib when both are installed.
-
-Fix taken from arch linux:
-https://aur.archlinux.org/packages/fs-uae-launcher/
-
---- setup.py.orig	Tue Jan 13 10:21:23 2015
-+++ setup.py	Tue Jan 13 10:21:44 2015
-@@ -22,7 +22,6 @@ package_map = {
-     "fsui": "../python",
-     "game_center": "../python",
-     "lhafile": "../python-lhafile",
--    "six": "../python",
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -33,7 +33,6 @@ package_map = {
+     "fstd": ".",
+     "fsui": ".",
+     "launcher": ".",
+-    "OpenGL": ".",
+     "oyoyo": ".",
+     "workspace": ".",
  }
- packages = sorted(package_map.keys())
- if sys.platform != "win32":
-@@ -139,7 +138,6 @@ if sys.platform == "win32":
-             res_dirs.append('fsgs/res')
-             res_dirs.append('fsui/res')
-             res_dirs.append('lhafile/res')
--            res_dirs.append('six/res')
- 
-             for res_dir in res_dirs:
-                 full = os.path.join(self.collect_dir, res_dir)
