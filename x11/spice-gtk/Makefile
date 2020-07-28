@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2020/06/03 09:49:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2020/07/28 07:30:10 kmos Exp $
 
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
@@ -24,6 +24,9 @@ WANTLIB += gstvideo-1.0 gtk-3 intl jpeg json-glib-1.0 lz4 m opus
 WANTLIB += pixman-1 sasl2 ssl z
 
 MASTER_SITES=		http://www.spice-space.org/download/gtk/
+
+COMPILER=		base-clang ports-gcc ports-clang
+COMPILER_LANGS =	c
 
 MODULES=		devel/meson \
 			lang/python
