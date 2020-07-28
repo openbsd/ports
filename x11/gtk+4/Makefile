@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/05/19 12:00:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2020/07/28 07:56:04 kmos Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -35,6 +35,9 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
+
+COMPILER=		base-clang ports-gcc ports-clang
+COMPILER_LANGS=		c
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
@@ -90,6 +93,11 @@ CONFIGURE_ARGS=		-Dwayland-backend=false \
 			-Dprint-backends=file,cups,lpr \
 			-Dvulkan=no \
 			-Dman-pages=true
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=		-Wno-error
+.endif
 
 # sync with devel/spidermonkey60 (ONLY_FOR_ARCHS):
 # colord -> polkit -> spidermonkey60
