@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/07/06 10:49:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/07/28 14:22:04 sthen Exp $
 @newgroup _traccar:824
 @newuser _traccar:824:_traccar:daemon:Traccar user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/traccar
@@ -170,6 +170,7 @@ share/traccar/schema/changelog-3.9.xml
 share/traccar/schema/changelog-4.0-clean.xml
 share/traccar/schema/changelog-4.0.xml
 share/traccar/schema/changelog-4.1.xml
+share/traccar/schema/changelog-4.10.xml
 share/traccar/schema/changelog-4.7.xml
 share/traccar/schema/changelog-4.9.xml
 share/traccar/schema/changelog-master.xml
@@ -432,9 +433,6 @@ share/traccar/web/apple-touch-icon.png
 share/traccar/web/beep.wav
 share/traccar/web/debug.html
 share/traccar/web/favicon.ico
-share/traccar/web/hs_err_pid15127.log
-share/traccar/web/hs_err_pid15292.log
-share/traccar/web/hs_err_pid8361.log
 share/traccar/web/icon.png
 share/traccar/web/images/
 share/traccar/web/images/animal.svg
@@ -525,18 +523,18 @@ share/traccar/web/modern/images/icon/marker.svg
 share/traccar/web/modern/index.html
 share/traccar/web/modern/logo.svg
 share/traccar/web/modern/manifest.json
-share/traccar/web/modern/precache-manifest.304ca9692b2983d9e2efa3a394ce2582.js
+share/traccar/web/modern/precache-manifest.e8bc37ccbb84d98d82ddf47c10df449d.js
 share/traccar/web/modern/service-worker.js
 share/traccar/web/modern/static/
 share/traccar/web/modern/static/css/
-share/traccar/web/modern/static/css/2.ae589d62.chunk.css
-share/traccar/web/modern/static/css/2.ae589d62.chunk.css.map
+share/traccar/web/modern/static/css/2.87ad83dc.chunk.css
+share/traccar/web/modern/static/css/2.87ad83dc.chunk.css.map
 share/traccar/web/modern/static/js/
-share/traccar/web/modern/static/js/2.c05761db.chunk.js
-share/traccar/web/modern/static/js/2.c05761db.chunk.js.LICENSE.txt
-share/traccar/web/modern/static/js/2.c05761db.chunk.js.map
-share/traccar/web/modern/static/js/main.14e6404c.chunk.js
-share/traccar/web/modern/static/js/main.14e6404c.chunk.js.map
+share/traccar/web/modern/static/js/2.0b923bed.chunk.js
+share/traccar/web/modern/static/js/2.0b923bed.chunk.js.LICENSE.txt
+share/traccar/web/modern/static/js/2.0b923bed.chunk.js.map
+share/traccar/web/modern/static/js/main.b80f0b95.chunk.js
+share/traccar/web/modern/static/js/main.b80f0b95.chunk.js.map
 share/traccar/web/modern/static/js/runtime-main.2dc76e5b.js
 share/traccar/web/modern/static/js/runtime-main.2dc76e5b.js.map
 share/traccar/web/modern/static/media/

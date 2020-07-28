@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_default_xml,v 1.3 2019/02/04 19:52:30 sthen Exp $
+$OpenBSD: patch-conf_default_xml,v 1.4 2020/07/28 14:22:04 sthen Exp $
 
 Index: conf/default.xml
 --- conf/default.xml.orig
@@ -11,9 +11,9 @@ Index: conf/default.xml
 +    <entry key='web.address'>127.0.0.1</entry>
 +    <entry key='web.path'>${LOCALBASE}/share/traccar/web</entry>
      <entry key='web.cacheControl'>max-age=3600,public</entry>
+     <entry key='web.healthCheck'>true</entry>
  
-     <entry key='geocoder.enable'>false</entry>
-@@ -20,7 +21,7 @@
+@@ -21,7 +22,7 @@
  
      <entry key='logger.enable'>true</entry>
      <entry key='logger.level'>info</entry>
@@ -22,7 +22,7 @@ Index: conf/default.xml
      <entry key='logger.rotate'>true</entry>
  
      <entry key='filter.enable'>true</entry>
-@@ -31,17 +32,16 @@
+@@ -32,17 +33,16 @@
      <entry key='processing.computedAttributes.enable'>true</entry>
      <entry key='processing.engineHours.enable'>true</entry>
  
