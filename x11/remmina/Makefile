@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2020/03/29 21:02:20 robert Exp $
+# $OpenBSD: Makefile,v 1.44 2020/07/28 07:29:50 kmos Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
@@ -26,6 +26,9 @@ WANTLIB += spice-client-glib-2.0 spice-client-gtk-3.0 ssh ssl
 WANTLIB += vncclient vte-2.91 winpr2 xkbfile sodium
 
 MODULES=		devel/cmake
+
+COMPILER=		base-clang ports-gcc ports-clang
+COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/spice-protocol
