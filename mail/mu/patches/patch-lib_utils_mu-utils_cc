@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_utils_mu-utils_cc,v 1.1 2020/07/28 13:41:55 abieber Exp $
+Bring g_vasprintf into scope
+Index: lib/utils/mu-utils.cc
+--- lib/utils/mu-utils.cc.orig
++++ lib/utils/mu-utils.cc
+@@ -17,8 +17,6 @@
+ **  02110-1301, USA.
+ */
+ 
+-
+-#define _XOPEN_SOURCE
+ #include <time.h>
+ 
+ #define GNU_SOURCE

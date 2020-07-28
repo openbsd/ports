@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/20 08:02:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/07/28 13:41:56 abieber Exp $
 @bin bin/mu
 @info info/mu4e.info
 @man man/man1/mu-add.1
@@ -8,6 +8,8 @@
 @man man/man1/mu-find.1
 @man man/man1/mu-help.1
 @man man/man1/mu-index.1
+@man man/man1/mu-info.1
+@man man/man1/mu-init.1
 @man man/man1/mu-mkdir.1
 @man man/man1/mu-remove.1
 @man man/man1/mu-script.1
@@ -15,10 +17,9 @@
 @man man/man1/mu-verify.1
 @man man/man1/mu-view.1
 @man man/man1/mu.1
-@comment mu is compiled without gtk
-@comment man/man1/mug.1
 @man man/man5/mu-bookmarks.5
 @man man/man7/mu-query.7
+%%guile%%
 share/doc/mu/
 share/doc/mu/NEWS.org
 share/doc/mu/mu4e-about.org
@@ -37,6 +38,8 @@ share/emacs/site-lisp/mu4e/mu4e-draft.el
 share/emacs/site-lisp/mu4e/mu4e-draft.elc
 share/emacs/site-lisp/mu4e/mu4e-headers.el
 share/emacs/site-lisp/mu4e/mu4e-headers.elc
+share/emacs/site-lisp/mu4e/mu4e-icalendar.el
+share/emacs/site-lisp/mu4e/mu4e-icalendar.elc
 share/emacs/site-lisp/mu4e/mu4e-lists.el
 share/emacs/site-lisp/mu4e/mu4e-lists.elc
 share/emacs/site-lisp/mu4e/mu4e-main.el
@@ -47,6 +50,8 @@ share/emacs/site-lisp/mu4e/mu4e-message.el
 share/emacs/site-lisp/mu4e/mu4e-message.elc
 share/emacs/site-lisp/mu4e/mu4e-meta.el
 share/emacs/site-lisp/mu4e/mu4e-meta.elc
+share/emacs/site-lisp/mu4e/mu4e-org.el
+share/emacs/site-lisp/mu4e/mu4e-org.elc
 share/emacs/site-lisp/mu4e/mu4e-proc.el
 share/emacs/site-lisp/mu4e/mu4e-proc.elc
 share/emacs/site-lisp/mu4e/mu4e-speedbar.el
@@ -61,5 +66,5 @@ share/emacs/site-lisp/mu4e/mu4e.el
 share/emacs/site-lisp/mu4e/mu4e.elc
 share/emacs/site-lisp/mu4e/org-mu4e.el
 share/emacs/site-lisp/mu4e/org-mu4e.elc
-share/emacs/site-lisp/mu4e/org-old-mu4e.el
-share/emacs/site-lisp/mu4e/org-old-mu4e.elc
+@comment mu is compiled without gtk
+@comment man/man1/mug.1

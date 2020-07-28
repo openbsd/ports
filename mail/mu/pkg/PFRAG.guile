@@ -1,0 +1,19 @@
+@comment $OpenBSD: PFRAG.guile,v 1.1 2020/07/28 13:41:56 abieber Exp $
+@info info/mu-guile.info
+@static-lib lib/libguile-mu.a
+lib/libguile-mu.la
+@lib lib/libguile-mu.so.${LIBguile-mu_VERSION}
+share/guile/site/2.2/mu/
+share/guile/site/2.2/mu.scm
+share/guile/site/2.2/mu/plot.scm
+share/guile/site/2.2/mu/script.scm
+share/guile/site/2.2/mu/stats.scm
+share/mu/
+share/mu/scripts/
+share/mu/scripts/find-dups.scm
+share/mu/scripts/msgs-count.scm
+share/mu/scripts/msgs-per-day.scm
+share/mu/scripts/msgs-per-hour.scm
+share/mu/scripts/msgs-per-month.scm
+share/mu/scripts/msgs-per-year-month.scm
+share/mu/scripts/msgs-per-year.scm
