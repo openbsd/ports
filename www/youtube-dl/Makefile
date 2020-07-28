@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.210 2020/07/03 21:13:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.211 2020/07/28 15:14:33 kn Exp $
 
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2020.06.16.1
+VERSION =	2020.07.28
 MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	youtube-dl-${VERSION}
 CATEGORIES =	www
-REVISION =	0
 
 HOMEPAGE =	https://ytdl-org.github.io/youtube-dl/
 
@@ -29,7 +28,8 @@ TEST_DEPENDS +=	devel/flake8 \
 TEST_ENV =	PATH=${PORTPATH}
 
 pre-test:
-	ln -sf ${LOCALBASE}/bin/nosetests-3 ${WRKDIR}/bin/nosetests
+	ln -sf ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} \
+	    ${WRKDIR}/bin/nosetests
 
 do-test:
 	${TEST_ENV} ${MAKE_PROGRAM} -C ${WRKSRC} ${TEST_TARGET}
