@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2019/02/14 10:08:53 pvk Exp $
+$OpenBSD: README,v 1.4 2020/07/28 18:50:49 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -10,7 +10,7 @@ By default gitea listens on all configured IP addresses, TCP port 3000.
 If this is not wanted behavior, either adjust your pf(4) rules or change
 HTTP_ADDR/HTTP_PORT in ${SYSCONFDIR}/gitea/app.ini.
 
-To complete inital configuration, point your browser to
+To complete the initial configuration, point your browser to
 http://gitea.example.com:3000 and press "Sign In". Usually you'll need to
 configure SSH Server Domain/Port, Gitea HTTP Listen Port/Base URL, E-Mail
 Settings and Administrator Account Settings.
