@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2020/02/24 13:31:53 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2020/07/28 14:21:48 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -13,6 +13,41 @@ firefox -ProfileManager, and click "Create Profile".
 
 If Firefox doesn't start at all, try starting it with -safe-mode
 switch, which disables extensions and themes for your session.
+
+pledge(2) and unveil(2) Support
+===============================
+Firefox on OpenBSD is secured with pledge(2) and unveil(2) to limit
+the system calls and filesystem access that each of Firefox's three
+process types (main, content, and GPU) is permitted.  By default,
+only ~/Downloads and /tmp can be written to when downloading files,
+or when viewing local files as file:// URLs.
+
+Files containing pledge promises and unveil paths and permissions
+for each type of process are located in ${SYSCONFDIR}/firefox-esr/.
+
+3rd-Party MIME Handlers
+=======================
+Due to unveil(2) limiting filesystem access, special care has to be
+taken to unveil MIME handlers. For example, to use the mupdf package
+to read PDFs, it must be registered as the default with XDG:
+
+	$ xdg-mime default mupdf.desktop application/pdf
+
+And the corresponding binary must be unveiled for it to appear as an
+option in the "Open With" drop-down, ie add
+"${LOCALBASE}/bin/mupdf rx" to unveil.main.
+
+The current default for a given type can be viewed with xdg-mime's
+query command:
+
+	$ xdg-mime query default application/pdf
+
+The older mailcap-format handlers are also supported, for example,
+a ~/.mailcap file specifying:
+
+	application/pdf; ${LOCALBASE}/bin/xpdf %s
+
+should open PDFs via xpdf.
 
 Using mailto: links
 ===================
@@ -33,22 +68,17 @@ Debugging
 If you encounter crashes, you might want to build the debug FLAVOR of
 this package, and run firefox inside egdb, so that you can gather
 debugging logs and traces (for all threads!).
+
 If this is a pledge violation, you should figure out which codepath
 in which process leads to calling a forbidden syscall, and which pledge
-is missing from the two default sets configured in
-security.sandbox.pledge.main and security.sandbox.pledge.content
-about:config keys. MOZ_LOG=SandboxPledge:5 should help.
-Bug reports without enough information will be ignored.
+is missing from the sets configured according to the section above.
+Setting MOZ_LOG=OpenBSDSandbox:5 should help.  Bug reports without
+enough information will be ignored.
 
-Note that if you're using NIS or your profile is located on a NFS share,
-you might need to add 'getpw' to security.sandbox.pledge.content in
-about:config.
-
-If using the amdgpu driver, you might need to add 'ioctl' to
-security.sandbox.pledge.content in about:config.
-
-If you're not running sndiod(8) you will need to add 'audio' to
-security.sandbox.pledge.main in about:config.
+To disable pledge and/or unveil support when troubleshooting, set the
+corresponding pledge or unveil file in
+/etc/${MOZILLA_PROJECT}/{unveil,pledge}.{main,content,gpu} to contain
+just "disable".
 
 D-BUS
 =====
@@ -80,6 +110,9 @@ It is also required to change the ownership of the video(4) device so that your
 regular user can access the webcam device.
 
 # chown youruser /dev/video0
+
+Screen sharing needs shmget() which isnt available when pledge() is active, so
+you will have to disable pledge for the main process.
 
 KerberosV support
 =================

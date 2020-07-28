@@ -1,15 +1,19 @@
-$OpenBSD: patch-config_makefiles_rust_mk,v 1.1 2020/07/21 13:21:36 semarie Exp $
+$OpenBSD: patch-config_makefiles_rust_mk,v 1.2 2020/07/28 14:21:48 landry Exp $
 
-https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
+use lto=thin to reduce memory pressure when building gkrust
+https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
 
 Index: config/makefiles/rust.mk
 --- config/makefiles/rust.mk.orig
 +++ config/makefiles/rust.mk
-@@ -48,6 +48,7 @@ ifndef DEVELOPER_OPTIONS
- ifndef MOZ_DEBUG_RUST
- # Enable link-time optimization for release builds.
- cargo_rustc_flags += -C lto
-+export CARGO_PROFILE_RELEASE_LTO=yes
+@@ -64,8 +64,8 @@ ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE))
+ # Pass -Clto for older versions of rust, and CARGO_PROFILE_RELEASE_LTO=true
+ # for newer ones that support it. Combining the latter with -Clto works, so
+ # set both everywhere.
+-cargo_rustc_flags += -Clto
+-export CARGO_PROFILE_RELEASE_LTO=true
++cargo_rustc_flags += -Clto=thin
++export CARGO_PROFILE_RELEASE_LTO=thin
  endif
  endif
- 
+ endif

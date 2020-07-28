@@ -1,0 +1,23 @@
+# $OpenBSD: pledge.main,v 1.1 2020/07/28 14:21:48 landry Exp $
+stdio
+rpath
+wpath
+cpath
+inet
+proc
+exec
+prot_exec
+flock
+ps
+sendfd
+recvfd
+dns
+vminfo
+tty
+drm
+unix
+fattr
+getpw
+mcast
+# only needed for WebRTC
+video

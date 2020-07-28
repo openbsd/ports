@@ -1,0 +1,66 @@
+# $OpenBSD: unveil.main,v 1.1 2020/07/28 14:21:48 landry Exp $
+# for uuid generation?
+/dev/urandom r
+/dev/video rw
+/dev/video0 rw
+/dev/fido rw
+
+/etc/fonts r
+/etc/machine-id r
+
+/usr/local/lib r
+/usr/local/lib/firefox-esr rx
+/usr/local/share r
+/usr/share/locale r
+/usr/share/zoneinfo r
+/var/cache/fontconfig r
+/usr/X11R6/lib r
+/usr/X11R6/share r
+/var/run r
+
+# printing
+/usr/bin/lpr rx
+
+# for launching registered 3rd party applications like pdf readers
+/etc/mailcap r
+~/.mailcap r
+~/.mime.types r
+
+~/.XCompose r
+~/.Xauthority r
+~/.Xdefaults r
+~/.fontconfig r
+~/.fonts r
+~/.fonts.conf r
+~/.fonts.conf.d r
+~/.icons r
+~/.pki rwc
+~/.sndio rwc
+~/.terminfo r
+
+~/.mozilla rwc
+~/Downloads rwc
+
+# for at least shm_open (for now)
+/tmp rwc
+
+# $XDG_CACHE_HOME, $XDG_CONFIG_HOME, and $XDG_DATA_HOME will expand to the
+# given variable if it exists in the environment, otherwise defaulting to
+# ~/.cache, ~/.config, and ~/.local/share
+$XDG_CACHE_HOME/dconf rwc
+$XDG_CACHE_HOME/thumbnails rwc
+$XDG_CACHE_HOME/mozilla/firefox rwc
+$XDG_CONFIG_HOME/dconf rw
+$XDG_CONFIG_HOME/fontconfig r
+$XDG_CONFIG_HOME/gtk-3.0 r
+$XDG_CONFIG_HOME/mimeapps.list r
+$XDG_CONFIG_HOME/mozilla rwc
+$XDG_CONFIG_HOME/user-dirs.dirs r
+$XDG_DATA_HOME/applications rwc
+$XDG_DATA_HOME/applnk r
+$XDG_DATA_HOME/fonts r
+$XDG_DATA_HOME/glib-2.0 r
+$XDG_DATA_HOME/icons r
+$XDG_DATA_HOME/mime r
+$XDG_DATA_HOME/recently-used.xbel rwc
+$XDG_DATA_HOME/themes r

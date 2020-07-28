@@ -1,0 +1,12 @@
+# $OpenBSD: unveil.gpu,v 1.1 2020/07/28 14:21:48 landry Exp $
+/dev/drm0 rw
+
+/usr/local/lib/firefox-esr r
+/usr/local/lib/gdk-pixbuf-2.0 r
+/usr/X11R6/lib r
+/usr/share/locale r
+/usr/local/share r
+
+/tmp rwc
+
+~/.Xauthority r

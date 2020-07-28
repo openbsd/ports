@@ -1,0 +1,14 @@
+# $OpenBSD: pledge.content,v 1.1 2020/07/28 14:21:48 landry Exp $
+stdio
+rpath
+wpath
+cpath
+recvfd
+sendfd
+prot_exec
+unix
+drm
+ps
+inet #dns.google does socket()
+# only needed if using NIS of the profile is located on a NFS share
+getpw
