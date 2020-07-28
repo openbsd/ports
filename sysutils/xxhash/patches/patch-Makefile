@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.7 2020/06/25 10:38:05 bket Exp $
+$OpenBSD: patch-Makefile,v 1.8 2020/07/28 04:41:18 bket Exp $
 
 Don't create symbolic links pointing to the shared lib.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -403,8 +403,6 @@ install: lib pkgconfig xxhsum  ## install libraries, C
- 	@$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)
- 	@$(INSTALL_DATA) libxxhash.a $(DESTDIR)$(LIBDIR)
- 	@$(INSTALL_PROGRAM) $(LIBXXH) $(DESTDIR)$(LIBDIR)
--	@ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT_MAJOR)
--	@ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT)
- 	@$(INSTALL) -d -m 755 $(DESTDIR)$(INCLUDEDIR)   # includes
- 	@$(INSTALL_DATA) xxhash.h $(DESTDIR)$(INCLUDEDIR)
- 	@$(INSTALL_DATA) xxh3.h $(DESTDIR)$(INCLUDEDIR)
+@@ -447,8 +447,6 @@ install: lib libxxhash.pc xxhsum  ## install libraries
+ 	$(Q)$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)
+ 	$(Q)$(INSTALL_DATA) libxxhash.a $(DESTDIR)$(LIBDIR)
+ 	$(Q)$(INSTALL_PROGRAM) $(LIBXXH) $(DESTDIR)$(LIBDIR)
+-	$(Q)ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT_MAJOR)
+-	$(Q)ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT)
+ 	$(Q)$(INSTALL) -d -m 755 $(DESTDIR)$(INCLUDEDIR)   # includes
+ 	$(Q)$(INSTALL_DATA) xxhash.h $(DESTDIR)$(INCLUDEDIR)
+ 	$(Q)$(INSTALL_DATA) xxh3.h $(DESTDIR)$(INCLUDEDIR) # for compatibility, will be removed in v0.9.0
