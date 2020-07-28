@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2020/03/14 15:15:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2020/07/28 07:30:31 kmos Exp $
 
 COMMENT=		remote desktop viewer for GNOME
 
@@ -20,6 +20,9 @@ WANTLIB += spice-client-gtk-3.0 telepathy-glib util vte-2.91 xml2
 
 MODULES=		devel/dconf \
 			x11/gnome
+
+COMPILER=		base-clang ports-gcc ports-clang
+COMPILER_LANGS=		c
 
 LIB_DEPENDS=		devel/vte3 \
 			net/avahi,,-gtk3 \
