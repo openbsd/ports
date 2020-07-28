@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.83 2019/07/09 18:15:36 landry Exp $
+# $OpenBSD: Makefile,v 1.84 2020/07/28 05:53:27 landry Exp $
 
-SUBDIR = af
-SUBDIR += ach
+SUBDIR = ach
+SUBDIR += af
 SUBDIR += an
 SUBDIR += ar
 SUBDIR += ast
 SUBDIR += az
 SUBDIR += bg
-SUBDIR += br
 SUBDIR += bn
+SUBDIR += br
 SUBDIR += bs
 SUBDIR += ca
 SUBDIR += cs
 SUBDIR += cy
 SUBDIR += da
-SUBDIR += dsb
 SUBDIR += de
+SUBDIR += dsb
 SUBDIR += el
 SUBDIR += en-GB
 SUBDIR += en-US
