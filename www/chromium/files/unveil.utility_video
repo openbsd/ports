@@ -1,0 +1,10 @@
+# $OpenBSD: unveil.utility_video,v 1.1 2020/07/29 13:53:36 robert Exp $
+
+# needed for chromium
+/etc/chromium r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+# needed for video(4)
+/dev/video rw

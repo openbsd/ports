@@ -1,7 +1,7 @@
 Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,351 @@
+@@ -0,0 +1,356 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -74,6 +74,7 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +#define _UNVEIL_UTILITY		"/etc/chromium/unveil.utility";
 +#define _UNVEIL_UTILITY_NETWORK	"/etc/chromium/unveil.utility_network";
 +#define _UNVEIL_UTILITY_AUDIO	"/etc/chromium/unveil.utility_audio";
++#define _UNVEIL_UTILITY_VIDEO	"/etc/chromium/unveil.utility_video";
 +
 +namespace service_manager {
 +
@@ -202,6 +203,8 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +      ufile = _UNVEIL_UTILITY_NETWORK;
 +    } else if (sandbox_type == service_manager::SandboxType::kAudio) {
 +      ufile = _UNVEIL_UTILITY_AUDIO;
++    } else if (sandbox_type == service_manager::SandboxType::kVideoCapture) {
++      ufile = _UNVEIL_UTILITY_VIDEO;
 +    } else {
 +      ufile = _UNVEIL_UTILITY;
 +    }
@@ -313,6 +316,8 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +      SetPledge(NULL, "/etc/chromium/pledge.utility_audio");
 +    else if (sandbox_type == service_manager::SandboxType::kNetwork)
 +      SetPledge(NULL, "/etc/chromium/pledge.utility_network");
++    else if (sandbox_type == service_manager::SandboxType::kVideoCapture)
++      SetPledge(NULL, "/etc/chromium/pledge.utility_video");
 +    else
 +      SetPledge("stdio rpath cpath wpath fattr sendfd recvfd prot_exec", NULL);
 +  } else {
