@@ -1,9 +1,9 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.19 2020/03/22 11:20:34 robert Exp $
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.20 2020/07/29 13:04:05 robert Exp $
 
 Index: provider/server/ECServer.cpp
 --- provider/server/ECServer.cpp.orig
 +++ provider/server/ECServer.cpp
-@@ -855,8 +855,8 @@ static int running_server(char *szName, const char *sz
+@@ -856,8 +856,8 @@ static int running_server(char *szName, const char *sz
  		{ "server_send_timeout",		"60", CONFIGSETTING_RELOADABLE },
  		{ "allow_local_users",			"yes", CONFIGSETTING_RELOADABLE },			// allow any user connect through the Unix socket
  		{ "local_admin_users",			"root", CONFIGSETTING_RELOADABLE },			// this local user is admin
@@ -14,7 +14,7 @@ Index: provider/server/ECServer.cpp
  		{ "pid_file",					"/var/run/kopano/server.pid" },
  		{"allocator_library", "libtcmalloc_minimal.so.4"},
  		{ "coredump_enabled",			"yes" },
-@@ -894,7 +894,7 @@ static int running_server(char *szName, const char *sz
+@@ -895,7 +895,7 @@ static int running_server(char *szName, const char *sz
  		{"attachment_s3_bucketname", ""},
  		{"attachment_s3_region", ""},
  #endif
@@ -23,7 +23,7 @@ Index: provider/server/ECServer.cpp
  		{ "attachment_compression",		"6" },
  
  		// Log options
-@@ -915,12 +915,12 @@ static int running_server(char *szName, const char *sz
+@@ -916,12 +916,12 @@ static int running_server(char *szName, const char *sz
  		// user plugin
  		{ "user_plugin",				"db" },
  		{ "user_plugin_config",			"/etc/kopano/ldap.cfg" },

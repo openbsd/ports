@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_ECThreadPool_cpp,v 1.2 2019/06/29 13:52:11 robert Exp $
+$OpenBSD: patch-common_ECThreadPool_cpp,v 1.3 2020/07/29 13:04:05 robert Exp $
 
 Index: common/ECThreadPool.cpp
 --- common/ECThreadPool.cpp.orig
 +++ common/ECThreadPool.cpp
-@@ -17,6 +17,9 @@
+@@ -18,6 +18,9 @@
  #ifdef LINUX
  #	include <sys/syscall.h>
  #endif

@@ -1,0 +1,17 @@
+$OpenBSD: patch-provider_libserver_ECDatabaseFactory_cpp,v 1.1 2020/07/29 13:04:05 robert Exp $
+
+Index: provider/libserver/ECDatabaseFactory.cpp
+--- provider/libserver/ECDatabaseFactory.cpp.orig
++++ provider/libserver/ECDatabaseFactory.cpp
+@@ -25,9 +25,11 @@ ECDatabaseFactory::ECDatabaseFactory(std::shared_ptr<E
+ 	pthread_key_create(&m_thread_key, [](void *arg) {
+ 		if (arg == nullptr)
+ 			return;
++#if !defined(__OpenBSD__)
+ 		char name[32];
+ 		pthread_getname_np(pthread_self(), name, sizeof(name));
+ 		ec_log_debug("db_conn %p was not released on T%lu (%s)", arg, kc_threadid(), name);
++#endif
+ 	});
+ }
+ 

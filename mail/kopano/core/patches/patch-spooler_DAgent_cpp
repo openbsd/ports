@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.19 2020/05/29 20:00:22 robert Exp $
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.20 2020/07/29 13:04:05 robert Exp $
 
 Index: spooler/DAgent.cpp
 --- spooler/DAgent.cpp.orig
 +++ spooler/DAgent.cpp
-@@ -63,6 +63,10 @@
+@@ -69,6 +69,10 @@
  #include <sys/mman.h>
  #include <pwd.h>
  
@@ -14,7 +14,7 @@ Index: spooler/DAgent.cpp
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -3237,8 +3241,8 @@ int main(int argc, char **argv)
+@@ -3240,8 +3244,8 @@ int main(int argc, char **argv)
  	// Default settings
  	static const configsetting_t lpDefaults[] = {
  		{"server_bind_intf", "", CONFIGSETTING_OBSOLETE},
@@ -25,7 +25,7 @@ Index: spooler/DAgent.cpp
  		{ "pid_file", "/var/run/kopano/dagent.pid" },
  		{"coredump_enabled", "systemdefault"},
  		{"lmtp_listen", "*%lo:2003"},
-@@ -3255,14 +3259,14 @@ int main(int argc, char **argv)
+@@ -3258,14 +3262,14 @@ int main(int argc, char **argv)
  		{ "spam_header_name", "X-Spam-Status" },
  		{ "spam_header_value", "Yes," },
  		{ "log_raw_message", "error", CONFIGSETTING_RELOADABLE },

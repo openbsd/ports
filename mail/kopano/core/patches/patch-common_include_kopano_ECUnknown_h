@@ -1,0 +1,22 @@
+$OpenBSD: patch-common_include_kopano_ECUnknown_h,v 1.1 2020/07/29 13:04:05 robert Exp $
+
+commit 964361fa563df86563ddaa432aba1d2b441b5f7b
+Author: Jan Engelhardt <jengelh@inai.de>
+Date:   Fri Jun 26 00:49:23 2020 +0200
+
+Index: common/include/kopano/ECUnknown.h
+--- common/include/kopano/ECUnknown.h.orig
++++ common/include/kopano/ECUnknown.h
+@@ -67,11 +67,7 @@ class KC_EXPORT ECUnknown : public virtual IUnknown { 
+ 
+ 	std::atomic<unsigned int> m_cRef{0};
+ 	const char *szClassName;
+-	/*
+-	 * In general, parents should not hold references to (grand)children
+-	 * because children hold references to parents. A manual loop breaker
+-	 * is needed otherwise.
+-	 */
++	/* This is another reference count that goes on top of m_cRef */
+ 	std::list<ECUnknown *>	lstChildren;
+ 	std::mutex mutex;
+ };

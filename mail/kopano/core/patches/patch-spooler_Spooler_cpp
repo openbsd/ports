@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.15 2020/03/08 08:17:57 robert Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.16 2020/07/29 13:04:05 robert Exp $
 
 Index: spooler/Spooler.cpp
 --- spooler/Spooler.cpp.orig
 +++ spooler/Spooler.cpp
-@@ -918,8 +918,8 @@ static int main2(int argc, char **argv)
+@@ -919,8 +919,8 @@ static int main2(int argc, char **argv)
  		{ "smtp_server","localhost", CONFIGSETTING_RELOADABLE },
  		{ "smtp_port","25", CONFIGSETTING_RELOADABLE },
  		{ "server_socket", "default:" },
@@ -14,7 +14,7 @@ Index: spooler/Spooler.cpp
  		{ "pid_file", "/var/run/kopano/spooler.pid" },
  		{"coredump_enabled", "systemdefault"},
  		{"log_method", "auto", CONFIGSETTING_NONEMPTY},
-@@ -943,13 +943,13 @@ static int main2(int argc, char **argv)
+@@ -944,13 +944,13 @@ static int main2(int argc, char **argv)
  		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
  		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
  		{"plugin_enabled", "no"},

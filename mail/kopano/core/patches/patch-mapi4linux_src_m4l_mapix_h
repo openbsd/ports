@@ -1,0 +1,34 @@
+$OpenBSD: patch-mapi4linux_src_m4l_mapix_h,v 1.1 2020/07/29 13:04:05 robert Exp $
+
+commit 964361fa563df86563ddaa432aba1d2b441b5f7b
+Author: Jan Engelhardt <jengelh@inai.de>
+Date:   Fri Jun 26 00:49:23 2020 +0200
+
+Index: mapi4linux/src/m4l.mapix.h
+--- mapi4linux/src/m4l.mapix.h.orig
++++ mapi4linux/src/m4l.mapix.h
+@@ -11,7 +11,6 @@
+ #include <mapispi.h>
+ #include <string>
+ #include <list>
+-#include <map>
+ #include <kopano/ECConfig.h>
+ #include <kopano/ECUnknown.h>
+ #include <kopano/memory.hpp>
+@@ -107,7 +106,6 @@ class M4LMAPISession KC_FINAL_OPG : public KC::ECUnkno
+ 
+ public:
+ 	M4LMAPISession(const TCHAR *profname, M4LMsgServiceAdmin *);
+-	virtual ULONG Release() override;
+ 	virtual HRESULT GetLastError(HRESULT, unsigned int flags, MAPIERROR **) override;
+ 	virtual HRESULT GetMsgStoresTable(unsigned int flags, IMAPITable **) override;
+ 	virtual HRESULT OpenMsgStore(ULONG_PTR ui_param, ULONG eid_size, const ENTRYID *, const IID *intf, ULONG flags, IMsgStore **) override;
+@@ -123,8 +121,6 @@ class M4LMAPISession KC_FINAL_OPG : public KC::ECUnkno
+ 	virtual HRESULT QueryInterface(const IID &, void **) override;
+ 
+ private:
+-	std::mutex m_storemap_mtx;
+-	std::map<GUID, KC::object_ptr<IMsgStore>> mapStores;
+ 	/* @todo need a status row per provider */
+ 	ULONG m_cValuesStatus = 0;
+ 	KC::memory_ptr<SPropValue> m_lpPropsStatus;
