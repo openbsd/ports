@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.524 2020/07/29 13:53:36 robert Exp $
+# $OpenBSD: Makefile,v 1.525 2020/07/29 14:02:14 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -13,7 +13,7 @@ DPB_PROPERTIES=		lonesome
 COMMENT=		Chromium browser
 
 V=			84.0.4147.105
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		chromium-${V}
 
@@ -266,8 +266,9 @@ do-install:
 		${PREFIX}/share/applications/chromium-browser.desktop
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/chromium
-.for f in pledge.main pledge.utility_audio pledge.utility_network unveil.gpu unveil.main \
-    unveil.plugin unveil.renderer unveil.utility unveil.utility_audio unveil.utility_network
+.for f in pledge.main pledge.utility_audio pledge.utility_network pledge.utility_video \
+    unveil.gpu unveil.main unveil.plugin unveil.renderer unveil.utility unveil.utility_audio \
+    unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
 .endfor
 
