@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/05/14 15:29:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/07/29 18:27:33 jasper Exp $
 @bin bin/quadrapassel
 @man man/man6/quadrapassel.6
 share/applications/org.gnome.Quadrapassel.desktop
@@ -238,11 +238,24 @@ share/help/sv/quadrapassel/playgame.page
 share/help/sv/quadrapassel/preferences.page
 share/help/sv/quadrapassel/score.page
 share/help/sv/quadrapassel/translate.page
-share/icons/hicolor/16x16/apps/org.gnome.Quadrapassel.png
-share/icons/hicolor/22x22/apps/org.gnome.Quadrapassel.png
-share/icons/hicolor/24x24/apps/org.gnome.Quadrapassel.png
-share/icons/hicolor/32x32/apps/org.gnome.Quadrapassel.png
-share/icons/hicolor/48x48/apps/org.gnome.Quadrapassel.png
+share/help/uk/
+share/help/uk/quadrapassel/
+share/help/uk/quadrapassel/bug-filing.page
+share/help/uk/quadrapassel/develop.page
+share/help/uk/quadrapassel/documentation.page
+share/help/uk/quadrapassel/index.page
+share/help/uk/quadrapassel/legal.xml
+share/help/uk/quadrapassel/license.page
+share/help/uk/quadrapassel/media/
+share/help/uk/quadrapassel/media/go-home.png
+share/help/uk/quadrapassel/media/go-previous.png
+share/help/uk/quadrapassel/media/previous.png
+share/help/uk/quadrapassel/media/quadrapassel.png
+share/help/uk/quadrapassel/media/quadrapassel22.png
+share/help/uk/quadrapassel/playgame.page
+share/help/uk/quadrapassel/preferences.page
+share/help/uk/quadrapassel/score.page
+share/help/uk/quadrapassel/translate.page
 share/icons/hicolor/scalable/apps/org.gnome.Quadrapassel.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Quadrapassel-symbolic.svg
 share/locale/af/LC_MESSAGES/quadrapassel.mo
