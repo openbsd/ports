@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.19 2019/05/11 20:36:47 robert Exp $
+# $OpenBSD: chrome,v 1.20 2020/07/29 14:16:42 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -54,4 +54,7 @@ export LD_LIBRARY_PATH
 [ -f ~/.config/user-dirs.dirs ] || \
 	echo 'XDG_DOWNLOAD_DIR="$HOME/Downloads"' > ~/.config/user-dirs.dirs
 
-LANG=${_l} exec "${TRUEPREFIX}/chrome/chrome" --disable-features=WebAssembly,AsmJsToWebAssembly,WebAssemblyStreaming --js-flags=--noexpose-wasm "${@}"
+[ -z ${ENABLE_WASM} ] && \
+	_NOWASM="--disable-features=WebAssembly,AsmJsToWebAssembly,WebAssemblyStreaming --js-flags=--noexpose-wasm"
+
+LANG=${_l} exec "/usr/local/chrome/chrome" ${_NOWASM} "${@}"

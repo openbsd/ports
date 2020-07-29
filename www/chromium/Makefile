@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.525 2020/07/29 14:02:14 robert Exp $
+# $OpenBSD: Makefile,v 1.526 2020/07/29 14:16:42 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -13,7 +13,7 @@ DPB_PROPERTIES=		lonesome
 COMMENT=		Chromium browser
 
 V=			84.0.4147.105
-REVISION=		1
+REVISION=		2
 
 DISTNAME=		chromium-${V}
 
