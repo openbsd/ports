@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.138 2020/06/12 15:59:39 robert Exp $
+# $OpenBSD: Makefile,v 1.139 2020/07/29 10:50:36 robert Exp $
 
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		6.8.0.123
+V=		6.10.0.104
 
 DISTNAME=	mono-${V}
 
@@ -35,6 +35,7 @@ EXTRACT_SUFX=	.tar.xz
 MODULES=	lang/mono \
 		lang/python
 
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODMONO_DEPS=	No
 
 USE_GMAKE=	Yes

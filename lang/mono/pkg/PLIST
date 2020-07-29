@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/04/06 15:11:11 robert Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/07/29 10:50:36 robert Exp $
 bin/al
 bin/al2
 bin/aprofutil
@@ -3870,39 +3870,6 @@ share/examples/mono/mconfig/
 @sample ${SYSCONFDIR}/mono/mconfig/
 share/examples/mono/mconfig/config.xml
 @sample ${SYSCONFDIR}/mono/mconfig/config.xml
-share/libgc-mono/
-share/libgc-mono/README
-share/libgc-mono/README.DGUX386
-share/libgc-mono/README.Mac
-share/libgc-mono/README.MacOSX
-share/libgc-mono/README.OS2
-share/libgc-mono/README.amiga
-share/libgc-mono/README.arm.cross
-share/libgc-mono/README.autoconf
-share/libgc-mono/README.changes
-share/libgc-mono/README.contributors
-share/libgc-mono/README.cords
-share/libgc-mono/README.darwin
-share/libgc-mono/README.dj
-share/libgc-mono/README.environment
-share/libgc-mono/README.ews4800
-share/libgc-mono/README.hp
-share/libgc-mono/README.linux
-share/libgc-mono/README.macros
-share/libgc-mono/README.rs6000
-share/libgc-mono/README.sgi
-share/libgc-mono/README.solaris2
-share/libgc-mono/README.uts
-share/libgc-mono/README.win32
-share/libgc-mono/barrett_diagram
-share/libgc-mono/debugging.html
-share/libgc-mono/gc.man
-share/libgc-mono/gcdescr.html
-share/libgc-mono/gcinterface.html
-share/libgc-mono/leak.html
-share/libgc-mono/scale.html
-share/libgc-mono/simple_example.html
-share/libgc-mono/tree.html
 share/locale/de/LC_MESSAGES/mcs.mo
 share/locale/es/LC_MESSAGES/mcs.mo
 share/locale/ja/LC_MESSAGES/mcs.mo
