@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2020/07/14 17:52:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2020/07/29 14:42:24 jasper Exp $
 
 COMMENT =		pure python IPMI protocol library
 
-MODPY_EGG_VERSION =	1.5.15
+MODPY_EGG_VERSION =	1.5.16
 DISTNAME =		pyghmi-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/${MODPY_PY_PREFIX}/}
 
