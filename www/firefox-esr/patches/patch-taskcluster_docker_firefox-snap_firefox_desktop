@@ -1,16 +1,22 @@
-$OpenBSD: patch-taskcluster_docker_firefox-snap_firefox_desktop,v 1.1 2020/07/28 14:21:48 landry Exp $
+$OpenBSD: patch-taskcluster_docker_firefox-snap_firefox_desktop,v 1.2 2020/07/30 14:30:23 landry Exp $
 
+fix exec entry to properly execute firefox-esr binary
 set full path to icon
 
 Index: taskcluster/docker/firefox-snap/firefox.desktop
 --- taskcluster/docker/firefox-snap/firefox.desktop.orig
 +++ taskcluster/docker/firefox-snap/firefox.desktop
-@@ -154,7 +154,7 @@ Exec=firefox %u
+@@ -150,11 +150,11 @@ Keywords[uk]=Internet;WWW;Browser;Web;Explorer;Інт�
+ Keywords[vi]=Internet;WWW;Browser;Web;Explorer;Trình duyệt;Trang web
+ Keywords[zh_CN]=Internet;WWW;Browser;Web;Explorer;网页;浏览;上网;火狐;Firefox;ff;互联网;网站;
+ Keywords[zh_TW]=Internet;WWW;Browser;Web;Explorer;網際網路;網路;瀏覽器;上網;網頁;火狐
+-Exec=firefox %u
++Exec=${MOZILLA_PROJECT} %u
  Terminal=false
  X-MultipleArgs=false
  Type=Application
 -Icon=/browser/chrome/icons/default/default128.png
-+Icon=${TRUEPREFIX}/lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/default128.png
++Icon=${TRUEPREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default128.png
  Categories=GNOME;GTK;Network;WebBrowser;
  MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
  StartupNotify=true
