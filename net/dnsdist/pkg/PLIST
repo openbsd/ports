@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/09 15:25:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/07/30 14:25:11 otto Exp $
 @newgroup _dnsdist:788
 @newuser _dnsdist:788:_dnsdist:daemon:dnsdist DNS load balancer:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/dnsdist
@@ -9,4 +9,6 @@ share/doc/dnsdist/README.md
 share/examples/dnsdist/
 @sample ${SYSCONFDIR}/
 share/examples/dnsdist/dnsdistconf.lua
+@mode 640
+@group _dnsdist
 @sample ${SYSCONFDIR}/dnsdist.conf
