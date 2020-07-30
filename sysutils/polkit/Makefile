@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.81 2020/06/18 07:49:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2020/07/30 07:50:42 ajacoutot Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
-DISTNAME=		polkit-0.116
-REVISION=		2
+DISTNAME=		polkit-0.117
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -28,6 +27,11 @@ COMPILER=		base-clang ports-gcc
 MODULES=		lang/python \
 			textproc/intltool
 
+MODPY_BUILDDEP=		No
+MODPY_RUNDEP=		No
+
+USE_GMAKE=		Yes
+
 BUILD_DEPENDS=		devel/gobject-introspection
 
 # man pages
@@ -43,9 +47,7 @@ RUN_DEPENDS +=		x11/dbus,-suid
 # XXX cyclic dependency: consolekit -> polkit -> consolekit
 #RUN_DEPENDS +=		sysutils/consolekit
 
-AUTOCONF_VERSION=	2.69
-
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--disable-libelogind \
@@ -58,10 +60,6 @@ CONFIGURE_ARGS=		--disable-libelogind \
 CONFIGURE_ARGS +=	--disable-test
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-MODPY_BUILDDEP=		No
-MODPY_RUNDEP=		No
-USE_GMAKE=		Yes
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/polkit
 
