@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.970 2020/07/20 17:11:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.971 2020/07/30 07:01:44 solene Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -106,7 +106,6 @@
      SUBDIR += mollify
      SUBDIR += mono-xsp
      SUBDIR += mozilla-firefox
-     SUBDIR += mozplugger
      SUBDIR += netsurf
      SUBDIR += newsboat
      SUBDIR += nextcloud
