@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-wx,v 1.1.1.1 2020/07/30 01:00:12 millert Exp $
+bin/wxchordpro
+${P5SITE}/App/Music/ChordPro/Wx/
+${P5SITE}/App/Music/ChordPro/Wx.pm
+${P5SITE}/App/Music/ChordPro/Wx/Main.pm
+${P5SITE}/App/Music/ChordPro/Wx/Main_wxg.pm
+${P5SITE}/App/Music/ChordPro/Wx/PreferencesDialog.pm
+${P5SITE}/App/Music/ChordPro/Wx/PreferencesDialog_wxg.pm
+@man man/man1/wxchordpro.1
+@man man/man3p/App::Music::ChordPro::Wx.3p

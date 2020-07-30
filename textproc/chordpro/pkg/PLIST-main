@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2020/07/30 01:00:12 millert Exp $
+bin/chordpro
+${P5SITE}/App/Music/
+${P5SITE}/App/Music/ChordPro/
+${P5SITE}/App/Music/ChordPro.pm
+${P5SITE}/App/Music/ChordPro/A2Crd.pm
+${P5SITE}/App/Music/ChordPro/Bundle.pm
+${P5SITE}/App/Music/ChordPro/Chords/
+${P5SITE}/App/Music/ChordPro/Chords.pm
+${P5SITE}/App/Music/ChordPro/Chords/Parser.pm
+${P5SITE}/App/Music/ChordPro/Config.pm
+${P5SITE}/App/Music/ChordPro/Output/
+${P5SITE}/App/Music/ChordPro/Output/ChordPro.pm
+${P5SITE}/App/Music/ChordPro/Output/Common.pm
+${P5SITE}/App/Music/ChordPro/Output/Debug.pm
+${P5SITE}/App/Music/ChordPro/Output/PDF/
+${P5SITE}/App/Music/ChordPro/Output/PDF.pm
+${P5SITE}/App/Music/ChordPro/Output/PDF/StringDiagrams.pm
+${P5SITE}/App/Music/ChordPro/Output/Text.pm
+${P5SITE}/App/Music/ChordPro/Songbook.pm
+${P5SITE}/App/Music/ChordPro/Version.pm
+${P5SITE}/App/Music/ChordPro/res/
+${P5SITE}/App/Music/ChordPro/res/config/
+${P5SITE}/App/Music/ChordPro/res/config/chordii.json
+${P5SITE}/App/Music/ChordPro/res/config/chordpro.json
+${P5SITE}/App/Music/ChordPro/res/config/guitar-ly.json
+${P5SITE}/App/Music/ChordPro/res/config/guitar.json
+${P5SITE}/App/Music/ChordPro/res/config/inline.json
+${P5SITE}/App/Music/ChordPro/res/config/mandolin-ly.json
+${P5SITE}/App/Music/ChordPro/res/config/modern1.json
+${P5SITE}/App/Music/ChordPro/res/config/modern2.json
+${P5SITE}/App/Music/ChordPro/res/config/modern3.json
+${P5SITE}/App/Music/ChordPro/res/config/nashville.json
+${P5SITE}/App/Music/ChordPro/res/config/roman.json
+${P5SITE}/App/Music/ChordPro/res/config/ukulele-ly.json
+${P5SITE}/App/Music/ChordPro/res/config/ukulele.json
+${P5SITE}/App/Music/ChordPro/res/examples/
+${P5SITE}/App/Music/ChordPro/res/examples/swinglow.cho
+${P5SITE}/App/Music/ChordPro/res/notes/
+${P5SITE}/App/Music/ChordPro/res/notes/common.json
+${P5SITE}/App/Music/ChordPro/res/notes/dutch.json
+${P5SITE}/App/Music/ChordPro/res/notes/german.json
+${P5SITE}/App/Music/ChordPro/res/notes/latin.json
+${P5SITE}/App/Music/ChordPro/res/notes/nashville.json
+${P5SITE}/App/Music/ChordPro/res/notes/roman.json
+${P5SITE}/App/Music/ChordPro/res/notes/scandinavian.json
+${P5SITE}/App/Music/ChordPro/res/notes/solfege.json
+${P5SITE}/App/Music/ChordPro/res/pod/
+${P5SITE}/App/Music/ChordPro/res/pod/A2Crd.pod
+${P5SITE}/App/Music/ChordPro/res/pod/ChordPro.pod
+${P5SITE}/App/Music/ChordPro/res/pod/Config.pod
+@man man/man1/chordpro.1
+@man man/man3p/App::Music::ChordPro.3p
+@man man/man3p/App::Music::ChordPro::A2Crd.3p
+@man man/man3p/App::Music::ChordPro::Config.3p
+@man man/man3p/App::Music::ChordPro::res::pod::A2Crd.3p
+@man man/man3p/App::Music::ChordPro::res::pod::ChordPro.3p
+@man man/man3p/App::Music::ChordPro::res::pod::Config.3p
