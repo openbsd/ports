@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.129 2020/07/28 14:21:48 landry Exp $
+# $OpenBSD: Makefile,v 1.130 2020/07/30 14:28:23 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 MOZILLA_VERSION =	78.1.0esr
 MOZILLA_BRANCH =	release
-MOZILLA_PROJECT =	firefox
+MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
+MOZILLA_DIST =		firefox
+REVISION =	0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
-PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
+PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
 SO_VERSION =	7.0
 MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozsqlite3
 
@@ -63,7 +65,7 @@ CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 
 # avoid conflict with mainline firefox
-CONFIGURE_ARGS +=	--with-app-name=firefox-esr
+CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
@@ -77,23 +79,23 @@ DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 
 post-install:
 	# install prefs
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
-		${PREFIX}/lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/all-openbsd.js
+		${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/all-openbsd.js
 	# install distribution.ini file
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-esr/distribution
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}/distribution
 	echo "[Global]\nid=OpenBSD\nversion=${OSREV}\nabout=Packaged by ${MAINTAINER}\n" > \
-		${PREFIX}/lib/${MOZILLA_PROJECT}-esr/distribution/distribution.ini
+		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_DATA} ${WRKSRC}/taskcluster/docker/firefox-snap/${MOZILLA_PROJECT}.desktop \
-		${PREFIX}/share/applications/${MOZILLA_PROJECT}-esr.desktop
+	${SUBST_DATA} ${WRKSRC}/taskcluster/docker/firefox-snap/firefox.desktop \
+		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
-	ln ${PREFIX}/lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/default{48,}.png
+	ln ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
 
 .for f in unveil.content unveil.gpu unveil.main pledge.content pledge.gpu pledge.main
-	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/
+	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
 .endfor
 
 .include <bsd.port.mk>

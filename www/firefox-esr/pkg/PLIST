@@ -1,67 +1,67 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/07/28 14:21:48 landry Exp $
-bin/${MOZILLA_PROJECT}-esr
-lib/${MOZILLA_PROJECT}-esr/
-lib/${MOZILLA_PROJECT}-esr/application.ini
-lib/${MOZILLA_PROJECT}-esr/browser/
-lib/${MOZILLA_PROJECT}-esr/browser/chrome/
-lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/
-lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/
-lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/default.png
-lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/default128.png
-lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/default16.png
-lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/default32.png
-lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/default48.png
-lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/default64.png
-lib/${MOZILLA_PROJECT}-esr/browser/defaults/
-lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}-esr/
-lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/all-openbsd.js
-lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/pledge.content
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}-esr/pledge.content
-lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/pledge.gpu
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}-esr/pledge.gpu
-lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/pledge.main
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}-esr/pledge.main
-lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/unveil.content
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}-esr/unveil.content
-lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/unveil.gpu
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}-esr/unveil.gpu
-lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/unveil.main
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}-esr/unveil.main
-lib/${MOZILLA_PROJECT}-esr/browser/features/
-lib/${MOZILLA_PROJECT}-esr/browser/features/doh-rollout@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-esr/browser/features/formautofill@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-esr/browser/features/screenshots@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-esr/browser/features/webcompat-reporter@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-esr/browser/features/webcompat@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-esr/browser/omni.ja
-lib/${MOZILLA_PROJECT}-esr/defaults/
-lib/${MOZILLA_PROJECT}-esr/defaults/pref/
-lib/${MOZILLA_PROJECT}-esr/defaults/pref/channel-prefs.js
-lib/${MOZILLA_PROJECT}-esr/dependentlibs.list
-lib/${MOZILLA_PROJECT}-esr/distribution/
-lib/${MOZILLA_PROJECT}-esr/distribution/distribution.ini
-@bin lib/${MOZILLA_PROJECT}-esr/${MOZILLA_PROJECT}-esr
-@bin lib/${MOZILLA_PROJECT}-esr/${MOZILLA_PROJECT}-esr-bin
-lib/${MOZILLA_PROJECT}-esr/fonts/
-lib/${MOZILLA_PROJECT}-esr/fonts/TwemojiMozilla.ttf
-lib/${MOZILLA_PROJECT}-esr/gmp-clearkey/
-lib/${MOZILLA_PROJECT}-esr/gmp-clearkey/0.1/
-@lib lib/${MOZILLA_PROJECT}-esr/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
-lib/${MOZILLA_PROJECT}-esr/gmp-clearkey/0.1/manifest.json
-lib/${MOZILLA_PROJECT}-esr/gtk2/
-@lib lib/${MOZILLA_PROJECT}-esr/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
-@lib lib/${MOZILLA_PROJECT}-esr/liblgpllibs.so.${LIBlgpllibs_VERSION}
-@lib lib/${MOZILLA_PROJECT}-esr/libmozavcodec.so.${LIBmozavcodec_VERSION}
-@lib lib/${MOZILLA_PROJECT}-esr/libmozavutil.so.${LIBmozavutil_VERSION}
-@lib lib/${MOZILLA_PROJECT}-esr/libmozgtk.so.${LIBmozgtk_VERSION}
-@lib lib/${MOZILLA_PROJECT}-esr/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
-@lib lib/${MOZILLA_PROJECT}-esr/libxul.so.${LIBxul_VERSION}
-lib/${MOZILLA_PROJECT}-esr/omni.ja
-@bin lib/${MOZILLA_PROJECT}-esr/pingsender
-lib/${MOZILLA_PROJECT}-esr/platform.ini
-@bin lib/${MOZILLA_PROJECT}-esr/plugin-container
-lib/${MOZILLA_PROJECT}-esr/removed-files
-share/applications/${MOZILLA_PROJECT}-esr.desktop
+@comment $OpenBSD: PLIST,v 1.14 2020/07/30 14:28:23 landry Exp $
+bin/${MOZILLA_PROJECT}
+lib/${MOZILLA_PROJECT}/
+lib/${MOZILLA_PROJECT}/application.ini
+lib/${MOZILLA_PROJECT}/browser/
+lib/${MOZILLA_PROJECT}/browser/chrome/
+lib/${MOZILLA_PROJECT}/browser/chrome/icons/
+lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/
+lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default.png
+lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default128.png
+lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default16.png
+lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default32.png
+lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default48.png
+lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default64.png
+lib/${MOZILLA_PROJECT}/browser/defaults/
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/all-openbsd.js
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.content
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.content
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.gpu
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.gpu
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.main
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.main
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.content
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.content
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.gpu
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.gpu
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.main
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.main
+lib/${MOZILLA_PROJECT}/browser/features/
+lib/${MOZILLA_PROJECT}/browser/features/doh-rollout@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}/browser/features/screenshots@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}/browser/features/webcompat-reporter@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}/browser/features/webcompat@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}/browser/omni.ja
+lib/${MOZILLA_PROJECT}/defaults/
+lib/${MOZILLA_PROJECT}/defaults/pref/
+lib/${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
+lib/${MOZILLA_PROJECT}/dependentlibs.list
+lib/${MOZILLA_PROJECT}/distribution/
+lib/${MOZILLA_PROJECT}/distribution/distribution.ini
+@bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
+@bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
+lib/${MOZILLA_PROJECT}/fonts/
+lib/${MOZILLA_PROJECT}/fonts/TwemojiMozilla.ttf
+lib/${MOZILLA_PROJECT}/gmp-clearkey/
+lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
+@lib lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
+lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/manifest.json
+lib/${MOZILLA_PROJECT}/gtk2/
+@lib lib/${MOZILLA_PROJECT}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
+@lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
+lib/${MOZILLA_PROJECT}/omni.ja
+@bin lib/${MOZILLA_PROJECT}/pingsender
+lib/${MOZILLA_PROJECT}/platform.ini
+@bin lib/${MOZILLA_PROJECT}/plugin-container
+lib/${MOZILLA_PROJECT}/removed-files
+share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 @tag update-desktop-database
