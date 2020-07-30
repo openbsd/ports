@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.640 2020/07/30 01:01:16 millert Exp $
+# $OpenBSD: Makefile,v 1.641 2020/07/30 07:57:20 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -439,7 +439,6 @@
      SUBDIR += py-pyRFC3339,python3
      SUBDIR += py-pyaml
      SUBDIR += py-pyaml,python3
-     SUBDIR += py-pygfm
      SUBDIR += py-pygfm,python3
      SUBDIR += py-pygments
      SUBDIR += py-pygments,python3

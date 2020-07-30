@@ -1,20 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/05 15:06:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/30 07:57:20 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/gfm/
 lib/python${MODPY_VERSION}/site-packages/gfm/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}autolink.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}automail.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}hidden_hilite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}semi_sane_lists.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}spaced_link.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}standalone_fenced_code.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}strikethrough.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gfm/${MODPY_PYCACHE}tasklist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gfm/autolink.py
 lib/python${MODPY_VERSION}/site-packages/gfm/automail.py
-lib/python${MODPY_VERSION}/site-packages/gfm/hidden_hilite.py
 lib/python${MODPY_VERSION}/site-packages/gfm/semi_sane_lists.py
-lib/python${MODPY_VERSION}/site-packages/gfm/spaced_link.py
+lib/python${MODPY_VERSION}/site-packages/gfm/standalone_fenced_code.py
 lib/python${MODPY_VERSION}/site-packages/gfm/strikethrough.py
 lib/python${MODPY_VERSION}/site-packages/gfm/tasklist.py
 lib/python${MODPY_VERSION}/site-packages/mdx_gfm/
