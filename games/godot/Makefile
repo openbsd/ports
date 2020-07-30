@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/19 13:02:38 thfr Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/30 14:11:37 sthen Exp $
 
+BROKEN-i386 =	core/safe_refcount.h error: misaligned atomic operation may incur significant performance penalty
 COMMENT =	2D and 3D game engine
 
 V =		3.2.2
