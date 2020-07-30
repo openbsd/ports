@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2020/07/25 07:52:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2020/07/30 08:14:53 pvk Exp $
 
 COMMENT=		secure secret storage
 
 GH_TAGNAME=		v1.5.0
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		vault
+REVISION=		0
 
 ### Vault UI
 MODGO_FLAGS=		-tags=ui

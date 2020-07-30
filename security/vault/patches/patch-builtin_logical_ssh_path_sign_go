@@ -1,0 +1,14 @@
+$OpenBSD: patch-builtin_logical_ssh_path_sign_go,v 1.3 2020/07/30 08:14:53 pvk Exp $
+
+Index: builtin/logical/ssh/path_sign.go
+--- builtin/logical/ssh/path_sign.go.orig
++++ builtin/logical/ssh/path_sign.go
+@@ -531,7 +531,7 @@ func (b *creationBundle) sign() (retCert *ssh.Certific
+ 
+ 	algo := b.Role.AlgorithmSigner
+ 	if algo == "" {
+-		algo = ssh.SigAlgoRSA
++		algo = ssh.SigAlgoRSASHA2256
+ 	}
+ 	sig, err := sshAlgorithmSigner.SignWithAlgorithm(rand.Reader, certificateBytes, algo)
+ 	if err != nil {

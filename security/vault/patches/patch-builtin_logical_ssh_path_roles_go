@@ -1,0 +1,14 @@
+$OpenBSD: patch-builtin_logical_ssh_path_roles_go,v 1.1 2020/07/30 08:14:53 pvk Exp $
+
+Index: builtin/logical/ssh/path_roles.go
+--- builtin/logical/ssh/path_roles.go.orig
++++ builtin/logical/ssh/path_roles.go
+@@ -335,7 +335,7 @@ func pathRoles(b *backend) *framework.Path {
+ 			},
+ 			"algorithm_signer": &framework.FieldSchema{
+ 				Type:    framework.TypeString,
+-				Default: ssh.SigAlgoRSA,
++				Default: ssh.SigAlgoRSASHA2256,
+ 				Description: `
+ 				When supplied, this value specifies a signing algorithm for the key.  Possible values: 
+ 				ssh-rsa, rsa-sha2-256, rsa-sha2-512.
