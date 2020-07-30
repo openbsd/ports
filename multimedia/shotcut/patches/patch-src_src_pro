@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_src_pro,v 1.1.1.1 2020/05/20 14:54:23 espie Exp $
+$OpenBSD: patch-src_src_pro,v 1.2 2020/07/30 14:40:07 espie Exp $
 
 Index: src/src.pro
 --- src/src.pro.orig
 +++ src/src.pro
-@@ -409,6 +409,6 @@ unix:!mac {
-     icons.files = $$PWD/../packaging/linux/org.shotcut.Shotcut.png
-     icons.path = $$PREFIX/share/icons/hicolor/64x64/apps
+@@ -429,6 +429,6 @@ unix:!mac {
+     icon128.files = $$PWD/../packaging/linux/icons/128x128/org.shotcut.Shotcut.png
+     icon128.path = $$PREFIX/share/icons/hicolor/128x128/apps
      man.files = $$PWD/../packaging/linux/shotcut.1
 -    man.path = $$PREFIX/share/man/man1
 +    man.path = $$PREFIX/man/man1
-     INSTALLS += metainfo desktop mime icons man
+     INSTALLS += metainfo desktop mime icon64 icon128 man
  }

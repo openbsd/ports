@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/20 14:54:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/07/30 14:40:07 espie Exp $
 @bin bin/shotcut
 @man man/man1/shotcut.1
 share/applications/org.shotcut.Shotcut.desktop
+share/icons/hicolor/128x128/apps/org.shotcut.Shotcut.png
 share/icons/hicolor/64x64/apps/org.shotcut.Shotcut.png
 share/metainfo/
 share/metainfo/org.shotcut.Shotcut.appdata.xml
@@ -90,6 +91,25 @@ share/shotcut/qml/filters/audio_reverb/ui.qml
 share/shotcut/qml/filters/audio_swapchannels/
 share/shotcut/qml/filters/audio_swapchannels/meta.qml
 share/shotcut/qml/filters/audio_swapchannels/ui.qml
+share/shotcut/qml/filters/bigsh0t_eq_mask/
+share/shotcut/qml/filters/bigsh0t_eq_mask/meta.qml
+share/shotcut/qml/filters/bigsh0t_eq_mask/ui.qml
+share/shotcut/qml/filters/bigsh0t_eq_to_rect/
+share/shotcut/qml/filters/bigsh0t_eq_to_rect/meta.qml
+share/shotcut/qml/filters/bigsh0t_eq_to_rect/ui.qml
+share/shotcut/qml/filters/bigsh0t_eq_to_rect/vui.qml
+share/shotcut/qml/filters/bigsh0t_hemi_to_eq/
+share/shotcut/qml/filters/bigsh0t_hemi_to_eq/meta.qml
+share/shotcut/qml/filters/bigsh0t_hemi_to_eq/ui.qml
+share/shotcut/qml/filters/bigsh0t_rect_to_eq/
+share/shotcut/qml/filters/bigsh0t_rect_to_eq/meta.qml
+share/shotcut/qml/filters/bigsh0t_rect_to_eq/ui.qml
+share/shotcut/qml/filters/bigsh0t_stabilize_360/
+share/shotcut/qml/filters/bigsh0t_stabilize_360/meta.qml
+share/shotcut/qml/filters/bigsh0t_stabilize_360/ui.qml
+share/shotcut/qml/filters/bigsh0t_transform_360/
+share/shotcut/qml/filters/bigsh0t_transform_360/meta.qml
+share/shotcut/qml/filters/bigsh0t_transform_360/ui.qml
 share/shotcut/qml/filters/blend_mode/
 share/shotcut/qml/filters/blend_mode/meta.qml
 share/shotcut/qml/filters/blend_mode/ui.qml
@@ -337,6 +357,9 @@ share/shotcut/qml/filters/trails/ui.qml
 share/shotcut/qml/filters/unpremultiply/
 share/shotcut/qml/filters/unpremultiply/meta.qml
 share/shotcut/qml/filters/unpremultiply/ui.qml
+share/shotcut/qml/filters/vaguedenoiser/
+share/shotcut/qml/filters/vaguedenoiser/meta.qml
+share/shotcut/qml/filters/vaguedenoiser/ui.qml
 share/shotcut/qml/filters/vertigo/
 share/shotcut/qml/filters/vertigo/meta.qml
 share/shotcut/qml/filters/vertigo/ui.qml
@@ -444,6 +467,7 @@ share/shotcut/qml/modules/Shotcut/Controls/TextFilterUi.qml
 share/shotcut/qml/modules/Shotcut/Controls/TextFilterVui.qml
 share/shotcut/qml/modules/Shotcut/Controls/TimeSpinner.qml
 share/shotcut/qml/modules/Shotcut/Controls/ToggleButton.qml
+share/shotcut/qml/modules/Shotcut/Controls/ToolBarToggle.qml
 share/shotcut/qml/modules/Shotcut/Controls/ToolTip.qml
 share/shotcut/qml/modules/Shotcut/Controls/UndoButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/VuiBase.qml
