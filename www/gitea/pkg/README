@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2020/07/28 18:50:49 jasper Exp $
+$OpenBSD: README,v 1.5 2020/07/30 07:04:55 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -23,16 +23,9 @@ On OpenBSD, initial gitea configuration has the following restrictions:
  - Server runs in "offline" mode, which means that external services such as
    Gravatar/OpenID are not used
  - New repositories have "private" checkbox checked by default
+ - Password hash algorithm changed from pbkdf2 to argon2
 
 Adjust these configuration settings according to your requirements.
-
-Running gitea with PostsgreSQL
-==============================
-If you want to use gitea with PostgreSQL as backend database, please note
-that pq library used by gitea does not support SCRAM authentication yet.
-If your PostgreSQL server uses SCRAM authentication by default, consider making
-an exception for _gitea user by forcing it to use either MD5 or peer
-authentication. Adjust pg_hba.conf accordingly.
 
 Configuring HTTP access
 =======================
@@ -52,19 +45,17 @@ Relevant configuration directives in ${SYSCONFDIR}/httpd.conf:
 		listen on $ext_addr tls port 443
 		tls certificate "/etc/ssl/gitea.example.com.pem"
 		tls key "/etc/ssl/private/gitea.example.com.key"
-		connection { max requests 500, timeout 3600 }
-		location "*" { fastcgi socket ":10787" }
+		location "*" { fastcgi socket "/run/gitea/gitea.sock" }
 	}
 
 Relevant configuration directives in ${SYSCONFDIR}/gitea/app.ini:
 
 	[server]
-	PROTOCOL               = fcgi
+	PROTOCOL               = fcgi+unix
 	DOMAIN                 = gitea.example.com
-	ROOT_URL               = https://gitea.example.com
-	HTTP_ADDR              = 127.0.0.1
-	HTTP_PORT              = 10787
-	LOCAL_ROOT_URL         = https://gitea.example.com/
+	ROOT_URL               = https://%(DOMAIN)s/
+	HTTP_ADDR              = /var/www/run/gitea/gitea.sock
+	LOCAL_ROOT_URL         = %(ROOT_URL)s
 
 Customizing gitea
 =================

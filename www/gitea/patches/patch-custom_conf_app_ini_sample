@@ -1,4 +1,4 @@
-$OpenBSD: patch-custom_conf_app_ini_sample,v 1.9 2020/07/01 12:10:21 pvk Exp $
+$OpenBSD: patch-custom_conf_app_ini_sample,v 1.10 2020/07/30 07:04:55 pvk Exp $
 
 Index: custom/conf/app.ini.sample
 --- custom/conf/app.ini.sample.orig
@@ -168,6 +168,15 @@ Index: custom/conf/app.ini.sample
 +DISABLE_REGULAR_ORG_CREATION = true
  ; Default configuration for email notifications for users (user configurable). Options: enabled, onmention, disabled
  DEFAULT_EMAIL_NOTIFICATIONS = enabled
+ 
+@@ -487,7 +487,7 @@ ONLY_ALLOW_PUSH_IF_GITEA_ENVIRONMENT_SET = true
+ ;Use "off" to disable checking.
+ PASSWORD_COMPLEXITY = lower,upper,digit,spec
+ ; Password Hash algorithm, either "pbkdf2", "argon2", "scrypt" or "bcrypt"
+-PASSWORD_HASH_ALGO = pbkdf2
++PASSWORD_HASH_ALGO = argon2
+ ; Set false to allow JavaScript to read CSRF cookie
+ CSRF_COOKIE_HTTP_ONLY = true
  
 @@ -510,7 +510,7 @@ CSRF_COOKIE_HTTP_ONLY = true
  ;  - <username>.livejournal.com
