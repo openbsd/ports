@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/07/30 08:13:33 jasper Exp $
 
 COMMENT=	image processing and analysis library
 
-DISTNAME=	leptonica-1.78.0
-REVISION=	0
+DISTNAME=	leptonica-1.80.0
 
-SHARED_LIBS +=  lept                 3.0      # 5.3
+SHARED_LIBS +=  lept                 4.0      # 5.3
 
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://www.leptonica.com/
+HOMEPAGE=	http://www.leptonica.org/
 
 # BSD-like (see leptonica-license.txt in WRKSRC)
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c gif jpeg m openjp2 png pthread tiff webp z
+WANTLIB += c gif jpeg m openjp2 png tiff webp webpmux z
 
 MASTER_SITES=	${HOMEPAGE}/source/
 
