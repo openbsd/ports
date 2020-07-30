@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/06/08 16:46:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2020/07/30 07:04:02 ajacoutot Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
@@ -30,6 +30,9 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		gobject-introspection vala
 
 COMPILER=		base-clang ports-gcc
+
+# rsvg-convert(1)
+BUILD_DEPENDS=		x11/gnome/librsvg
 
 LIB_DEPENDS=		graphics/lcms2
 
