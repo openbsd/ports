@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.430 2020/07/28 14:13:35 landry Exp $
+# $OpenBSD: Makefile,v 1.431 2020/07/30 14:24:03 landry Exp $
 
-COMMENT =	Mozilla web browser
+COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
@@ -9,6 +9,7 @@ MOZILLA_VERSION =	79.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+REVISION =	0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
@@ -43,7 +44,7 @@ MOZILLA_USE_BUNDLED_HUNSPELL = Yes
 MOZILLA_USE_BUNDLED_SQLITE = Yes
 
 # firefox >= 53 needs rust
-BUILD_DEPENDS +=	lang/rust>=1.39
+BUILD_DEPENDS +=	lang/rust>=1.43
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
 # 63 requires node because why not #1483595
@@ -68,7 +69,6 @@ MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
-SUBST_VARS +=	LOCALBASE X11BASE MOZILLA_PROJECT
 
 # XXX badly formed debug ?
 DWZ = :
@@ -81,9 +81,7 @@ show-commit:
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
-		${PREFIX}/man/man1/mozilla-firefox.1
-	cd ${PREFIX}/man/man1/ && ln -sf mozilla-firefox.1 firefox.1
-	cd ${PREFIX}/bin/ && ln -sf firefox mozilla-firefox
+		${PREFIX}/man/man1/firefox.1
 	# install prefs
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
