@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.28 2020/07/28 14:13:35 landry Exp $
+$OpenBSD: README,v 1.29 2020/07/30 14:25:08 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,10 +9,10 @@ window placement, toolbars, history, or other settings, it is
 recommended that you create a new profile and attempt to
 reproduce the problem before filing bugs.  To create a new profile,
 start Firefox with the -ProfileManager switch, e.g.
-firefox -ProfileManager, and click "Create Profile".
+${MOZILLA_PROJECT} -ProfileManager, and click "Create Profile".
 
-If Firefox doesn't start at all, try starting it with -safe-mode
-switch, which disables extensions and themes for your session.
+If Firefox doesn't start at all, try starting it with the -safe-mode
+switch, which temporarily disables extensions and themes.
 
 pledge(2) and unveil(2) Support
 ===============================
@@ -20,10 +20,11 @@ Firefox on OpenBSD is secured with pledge(2) and unveil(2) to limit
 the system calls and filesystem access that each of Firefox's three
 process types (main, content, and GPU) is permitted.  By default,
 only ~/Downloads and /tmp can be written to when downloading files,
-or when viewing local files as file:// URLs.
+or when viewing local files as file:// URLs.  You can edit the
+following files to change the pledge promises, unveil paths, and
+associated permissions:
 
-Files containing pledge promises and unveil paths and permissions
-for each type of process are located in ${SYSCONFDIR}/firefox/.
+${SYSCONFDIR}/${MOZILLA_PROJECT}/{unveil,pledge}.{main,content,gpu}
 
 3rd-Party MIME Handlers
 =======================
@@ -31,27 +32,29 @@ Due to unveil(2) limiting filesystem access, special care has to be
 taken to unveil MIME handlers. For example, to use the mupdf package
 to read PDFs, it must be registered as the default with XDG:
 
-	$ xdg-mime default mupdf.desktop application/pdf
+$ xdg-mime default mupdf.desktop application/pdf
 
 And the corresponding binary must be unveiled for it to appear as an
-option in the "Open With" drop-down, ie add
-"${LOCALBASE}/bin/mupdf rx" to unveil.main.
+option in the "Open With" drop-down for example adding the following
+line to ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.main:
+
+${LOCALBASE}/bin/mupdf rx
 
 The current default for a given type can be viewed with xdg-mime's
 query command:
 
-	$ xdg-mime query default application/pdf
+$ xdg-mime query default application/pdf
 
-The older mailcap-format handlers are also supported, for example,
-a ~/.mailcap file specifying:
+Alternatively, you can use mailcap, for example a ~/.mailcap file of:
 
-	application/pdf; ${LOCALBASE}/bin/xpdf %s
+application/pdf; ${LOCALBASE}/bin/xpdf %s
 
-should open PDFs via xpdf.
+As with the XDG approach, the application(s) will need to be included in
+${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.main.
 
 Using mailto: links
 ===================
-To enable mailto: links in Firefox to open in your mail program,
+In order for mailto: links in Firefox to open your mail program,
 you may have to set a mailto protocol handler. Type "about:config"
 in Firefox's URL text field.  Type "mailto" in the filter.  If there
 is a string called "network.protocol-handler.app.mailto", its value
@@ -69,7 +72,7 @@ If you encounter crashes, you might want to build the debug FLAVOR of
 this package, and run firefox inside egdb, so that you can gather
 debugging logs and traces (for all threads!).
 
-If this is a pledge violation, you should figure out which codepath
+If this is a pledge violation, please try to find out which codepath
 in which process leads to calling a forbidden syscall, and which pledge
 is missing from the sets configured according to the section above.
 Setting MOZ_LOG=OpenBSDSandbox:5 should help.  Bug reports without
@@ -77,7 +80,7 @@ enough information will be ignored.
 
 To disable pledge and/or unveil support when troubleshooting, set the
 corresponding pledge or unveil file in
-/etc/${MOZILLA_PROJECT}/{unveil,pledge}.{main,content,gpu} to contain
+${SYSCONFDIR}/${MOZILLA_PROJECT}/{unveil,pledge}.{main,content,gpu} to contain
 just "disable".
 
 D-BUS
@@ -87,27 +90,27 @@ needs a session bus instance running.
 If you're not running a desktop environment that takes care of it,
 refer to /usr/local/share/doc/pkg-readmes/dbus to configure your
 session startup script to start one.
-Without a session bus running, the port is faking one (see
-https://bugzilla.mozilla.org/show_bug.cgi?id=1466593), but GLIB might still try
-to spawn one which might lead to a 'proc' pledge violation in the content
-process.
+If a session bus is not running, this port fakes the existence of one
+(see https://bugzilla.mozilla.org/show_bug.cgi?id=1466593). However,
+GLIB can still try to spawn a session bus which can then lead to a 'proc'
+pledge violation in the content process.
 
 HTML5 audio/video support
 =========================
 For a full multimedia experience, such as playing MP3 audio or MPEG
-videos, install the "ffmpeg" package. It will be used at runtime if
-firefox finds it.
+videos, install the "ffmpeg" package:
 
 # pkg_add ffmpeg
 
 WebRTC support
 ==============
-For WebRTC to properly work, it is required to enable audio recording:
+For WebRTC to work properly, you need to enable audio recording:
 
 # sysctl kern.audio.record=1
 
-It is also required to change the ownership of the video(4) device so that your
-regular user can access the webcam device.
+You will also need to change the ownership and/or permissions of the
+relevant video(4) device so that your user can access the webcam
+device e.g.:
 
 # chown youruser /dev/video0
 
@@ -132,17 +135,16 @@ network.negotiate-auth.trusted-uris: .example.com
 
 Graphic Acceleration
 ====================
-By default on unices the OpenGL acceleration is disabled. One can enable it by
+By default, OpenGL acceleration is disabled.  One can enable it by
 setting MOZ_ACCELERATED=1 in the environment, or by switching the about:config
 layers.acceleration.force-enable knob to true.  Check the 'Decision log'
 section in about:support to see whether HW_COMPOSITING and OPENGL_COMPOSITING
 are enabled.
 
-Similarly, for the rust-based WebRender compositor, it is enabled by setting
+Similarly, the rust-based WebRender compositor can be enabled by setting
 MOZ_WEBRENDER=1 in the environment, or by switching the about:config
 gfx.webrender.enabled knob to true. Check it is enabled in the 'Features'
 section of about:support. For this feature, WebGL2 is necessary, so your
 hardware must support at least OpenGL 4.
 
-Check
-https://wiki.mozilla.org/Platform/GFX/Quantum_Render for more details.
+See https://wiki.mozilla.org/Platform/GFX/Quantum_Render for more details.
