@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/18 09:29:06 solene Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/30 11:40:29 solene Exp $
 
 N =		ezquake
-V =		3.2
+V =		3.2.1
 COMMENT =	modern QuakeWorld client
 
 PKGNAME =	${N}-${V}
