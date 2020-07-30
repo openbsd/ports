@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2020/07/01 11:36:59 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.43 2020/07/30 10:41:33 pvk Exp $
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/elasticsearch.keystore
@@ -35,7 +35,7 @@ elasticsearch/lib/jackson-dataformat-cbor-2.10.4.jar
 elasticsearch/lib/jackson-dataformat-smile-2.10.4.jar
 elasticsearch/lib/jackson-dataformat-yaml-2.10.4.jar
 elasticsearch/lib/java-version-checker-${V}.jar
-elasticsearch/lib/jna-4.5.1.jar
+elasticsearch/lib/jna-5.5.0.jar
 elasticsearch/lib/joda-time-2.10.4.jar
 elasticsearch/lib/jopt-simple-5.0.2.jar
 elasticsearch/lib/jts-core-1.15.0.jar
