@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/30 01:00:12 millert Exp $
+# $OpenBSD: Makefile,v 1.2 2020/07/30 01:29:36 millert Exp $
 
 COMMENT-main=	lyrics and chords formatting program
 COMMENT-wx=	graphical front-end to chordpro
@@ -29,7 +29,7 @@ RUN_DEPENDS=	devel/p5-App-Packager>=1.430 \
 		textproc/p5-PDF-API2>=2.020
 
 RUN_DEPENDS-main=	${RUN_DEPENDS}
-RUN_DEPENDS-mx=		${RUN_DEPENDS} x11/p5-Wx
+RUN_DEPENDS-wx=		${RUN_DEPENDS} x11/p5-Wx
 
 TEST_DEPENDS+=	devel/p5-String-Interpolate-Named>=0.05
 
