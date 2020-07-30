@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/11 22:54:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/30 14:19:14 sthen Exp $
 
 COMMENT=	IPsec-based VPN software (IKEv1/IKEv2) with XAUTH and EAP
 
-DISTNAME=	strongswan-5.8.4
+DISTNAME=	strongswan-5.9.0
 # don't want versions like strongswan-5.8.0dr2
 PORTROACH=	limit:.*[0-9]\.[0-9]\.[0-9]$$
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
 SHARED_LIBS +=	charon                    0.0 # 0.0
 SHARED_LIBS +=	ipsec                     0.0 # 0.0
@@ -18,8 +17,6 @@ SHARED_LIBS +=	vici                      0.0 # 0.0
 CATEGORIES=	net security
 
 HOMEPAGE=	https://www.strongswan.org/
-
-MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
