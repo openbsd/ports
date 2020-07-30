@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/05/31 09:49:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2020/07/30 07:57:31 jasper Exp $
 
 COMMENT =		HTTP web service mocking library
 
-DISTNAME =		uhttpmock-0.5.2
+DISTNAME =		uhttpmock-0.5.3
 SHARED_LIBS +=	uhttpmock-0.0        0.1      # 2.0
 
 CATEGORIES =		net devel
