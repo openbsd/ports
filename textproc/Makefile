@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.639 2020/07/25 12:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.640 2020/07/30 01:01:16 millert Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -21,6 +21,7 @@
      SUBDIR += catdoc
      SUBDIR += catfish
      SUBDIR += cdiff
+     SUBDIR += chordpro
      SUBDIR += clit
      SUBDIR += clo++
      SUBDIR += cloc
