@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/21 14:25:09 bket Exp $
+# $OpenBSD: Makefile,v 1.25 2020/07/31 04:20:35 bket Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
-DISTNAME =	sslh-v1.21b
+DISTNAME =	sslh-v1.21c
 PKGNAME =	${DISTNAME:S/-v/-/}
 
 CATEGORIES =	security net

@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.8 2020/07/14 16:53:57 bket Exp $
+$OpenBSD: patch-Makefile,v 1.9 2020/07/31 04:20:35 bket Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -96,7 +96,7 @@ echosrv: version.h $(OBJS) echosrv.o
+@@ -98,7 +98,7 @@ echosrv: version.h $(OBJS) echosrv.o
  	$(CC) $(CFLAGS) $(LDFLAGS) -o echosrv echosrv.o probe.o common.o tls.o $(LIBS)
  
  $(MAN): sslh.pod Makefile
