@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/05 09:34:50 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/31 00:21:16 abieber Exp $
 
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.15.2
+MODPY_EGG_VERSION =	1.18.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
