@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmake_WlFunctions_cmake,v 1.2 2019/06/24 10:12:06 bentley Exp $
+$OpenBSD: patch-cmake_WlFunctions_cmake,v 1.3 2020/07/31 16:09:38 kirby Exp $
 
 Index: cmake/WlFunctions.cmake
 --- cmake/WlFunctions.cmake.orig
 +++ cmake/WlFunctions.cmake
-@@ -270,5 +270,5 @@ function(wl_binary NAME)
+@@ -289,5 +289,5 @@ function(wl_binary NAME)
  
    #Quoting the CMake documentation on DESTINATION:
    #"If a relative path is given it is interpreted relative to the value of CMAKE_INSTALL_PREFIX"

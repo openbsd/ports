@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/08/21 05:47:33 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/07/31 16:09:38 kirby Exp $
 
 - Don't set -O3.
 - Don't install source docs.
@@ -7,7 +7,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2019/08/21 05:47:33 rsadowski Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -146,21 +146,9 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+@@ -184,21 +184,9 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
    set(WL_DEBUG_FLAGS "-g -DDEBUG")
    option(OPTION_ASAN "Build with AddressSanitizer" ON)
  elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -29,7 +29,7 @@ Index: CMakeLists.txt
    set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
    option(OPTION_ASAN "Build with AddressSanitizer" ON)
  else()
-@@ -210,7 +198,7 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+@@ -248,7 +236,7 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
    wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wno-unreachable-code")
    wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wno-documentation")
  
@@ -38,7 +38,7 @@ Index: CMakeLists.txt
    wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=non-pod-varargs")
  
    wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Qunused-arguments")
-@@ -261,7 +249,7 @@ endif()
+@@ -299,7 +287,7 @@ endif()
  # Turn some warnings into errors.
  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=format-security")
  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=return-type")
@@ -47,7 +47,7 @@ Index: CMakeLists.txt
  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=uninitialized")
  
  IF (WIN32)
-@@ -367,15 +355,6 @@ install(
+@@ -407,15 +395,6 @@ install(
    DESTINATION ${WL_INSTALL_BASEDIR}
    CONFIGURATIONS Debug;Release
    COMPONENT CoreLicenseFiles

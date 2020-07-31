@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2020/05/14 17:39:07 cwen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/07/31 16:09:38 kirby Exp $
 
 COMMENT=	economic and military simulation game
 
-V =		20
-DISTNAME = 	widelands-build${V}
+V =		21
+DISTNAME = 	widelands-build${V}-source
 PKGNAME=	widelands-0.${V}
 CATEGORIES=	games
-EXTRACT_SUFX=	.tar.bz2
-REVISION=	2
 
 HOMEPAGE=	https://wl.widelands.org/
 MASTER_SITES =	https://launchpad.net/widelands/build${V}/build${V}/+download/
@@ -47,5 +45,7 @@ CONFIGURE_ENV =	LDFLAGS="${LDFLAGS} -lGL -lexecinfo -lintl -liconv \
 			-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=	Yes
+
+WRKDIST=	${WRKDIR}/${DISTNAME:S/-source//}
 
 .include <bsd.port.mk>
