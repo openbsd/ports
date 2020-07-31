@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/01/31 09:59:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/07/31 12:28:18 sthen Exp $
 include/ortp/
 include/ortp/b64.h
 include/ortp/event.h
@@ -14,7 +14,7 @@ include/ortp/rtpsignaltable.h
 include/ortp/sessionset.h
 include/ortp/str_utils.h
 include/ortp/telephonyevents.h
-lib/libortp.a
+@static-lib lib/libortp.a
 lib/libortp.la
 @lib lib/libortp.so.${LIBortp_VERSION}
 lib/pkgconfig/ortp.pc

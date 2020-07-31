@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_rtcp_c,v 1.1 2020/07/31 12:28:18 sthen Exp $
+
+clang 10
+
+/usr/obj/ports/ortp-0.24.2/ortp-0.24.2/src/rtcp.c:475:25: error: implicit conversion from 'int' to 'float' changes val
+ue from 2147483647 to 2147483648 [-Werror,-Wimplicit-int-float-conversion]
+        return t * ((rand() / (RAND_MAX * 1.0f)) + 0.5f);
+                               ^~~~~~~~ ~
+/usr/include/stdlib.h:83:18: note: expanded from macro 'RAND_MAX'
+#define RAND_MAX        0x7fffffff
+                        ^~~~~~~~~~
+1 error generated.
+
+
+Index: src/rtcp.c
+--- src/rtcp.c.orig
++++ src/rtcp.c
+@@ -472,7 +472,7 @@ static void rtp_session_create_and_send_rtcp_packet(Rt
+ }
+ 
+ static float rtcp_rand(float t) {
+-	return t * ((rand() / (RAND_MAX * 1.0f)) + 0.5f);
++	return t * (((float)rand() / ((float)RAND_MAX * 1.0f)) + 0.5f);
+ }
+ 
+ /**

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/17 14:46:34 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2020/07/31 12:28:18 sthen Exp $
 
 COMMENT =		RTP (RFC3550) library
-DISTNAME =		ortp-0.24.2
-REVISION =		4
+DISTNAME =		ortp-0.25.0
 
-SHARED_LIBS +=	ortp                 2.0      # 9.0
+SHARED_LIBS +=	ortp                 2.1      # 10.0
 
 CATEGORIES =		net multimedia
 HOMEPAGE =		http://www.linphone.org/eng/documentation/dev/ortp.html
