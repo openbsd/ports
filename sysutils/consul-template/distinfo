@@ -1,4 +1,4 @@
-SHA256 (consul-template-v0.25.0.zip) = Ht/UfWOroPhs2UC5O7+6r6O932ywpgvi5LxY3vWhSzM=
+SHA256 (consul-template-v0.25.1.zip) = cyOVu7FKdK1d2Gb5EQ8QgLxZLi86MYi5hr0fV/qp2uE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = IhijTyC5cbwZUhbUGV9XUgoqy9hd5/wxrPxEAmZwTBE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.26.0.zip) = Uh+MNnOW/1K36cIgPjKnFMmVeItdFKQOK7gp6wp4eKc=
 SHA256 (go_modules/github.com/!burnt!sushi/toml/@v/v0.3.1.mod) = KAIbQYClnDmTYHqVsY4jDdC8a+pSQv/o6ou/tPT3tNc=
@@ -275,7 +275,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.2.8.zip) = wn8Zi02VgNRBjMb34Ku3Vuu0g0R
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
-SIZE (consul-template-v0.25.0.zip) = 275636
+SIZE (consul-template-v0.25.1.zip) = 276889
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.zip) = 2508208
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v0.3.1.mod) = 34
