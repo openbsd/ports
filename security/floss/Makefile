@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/07/31 05:19:31 rpointel Exp $
 
 COMMENT =	FireEye Labs Obfuscated String Solver
 
-MODPY_EGG_VERSION =	1.5.0
+MODPY_EGG_VERSION =	1.6.1
 PKGNAME =	floss-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	fireeye
@@ -20,6 +20,7 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	textproc/py-yaml \
+		devel/py-simplejson \
 		devel/py-tabulate \
 		security/py-vivisect \
 		devel/py-plugnplay \

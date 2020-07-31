@@ -1,14 +1,15 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2018/03/29 19:45:16 rpointel Exp $
+$OpenBSD: patch-setup_py,v 1.2 2020/07/31 05:19:31 rpointel Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -11,10 +11,8 @@ except ImportError:
+@@ -11,11 +11,9 @@ except ImportError:
  
  
  requirements = [
 -    "q",
      "pyyaml",
+     "simplejson",
      "tabulate",
 -    "vivisect",
      "plugnplay",
