@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/31 14:00:24 benoit Exp $
 
 COMMENT=		temporary files support for testing
 
-DISTNAME =		Test-TempDir-0.10
+DISTNAME =		Test-TempDir-0.11
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =		0
 
 CATEGORIES=		devel
 
@@ -14,8 +13,10 @@ PERMIT_PACKAGE=	Yes
 MODULES=		cpan
 PKG_ARCH=		*
 
-RUN_DEPENDS=		devel/p5-MooseX-Types-Path-Class \
-			sysutils/p5-File-NFSLock
+CONFIGURE_STYLE =	modbuild tiny
+
+RUN_DEPENDS=		devel/p5-MooseX-Types-Path-Class
+
 TEST_DEPENDS =		devel/p5-Test-Requires \
 			devel/p5-Directory-Scratch
 

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 19:20:37 jasper Exp $
-${P5SITE}/Test/
+@comment $OpenBSD: PLIST,v 1.2 2020/07/31 14:00:24 benoit Exp $
 ${P5SITE}/Test/TempDir/
 ${P5SITE}/Test/TempDir.pm
 ${P5SITE}/Test/TempDir/Factory.pm
