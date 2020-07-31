@@ -5,6 +5,3 @@ will most likely have many false positives (vulnerability is fixed with
 a revision-release, but the tool isn't able to detect the revision
 itself), yet it is still better than nothing, especially if you are
 running a distribution with little security coverage.
-
-Available flavors:
-	mysql - add support for MySQL backend

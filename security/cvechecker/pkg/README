@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2018/09/04 12:46:21 espie Exp $
+$OpenBSD: README,v 1.7 2020/07/31 13:28:05 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -10,18 +10,7 @@ Initial Configuration
 The user running cvechecker(1) must be part of the _cvechecker group:
     # usermod -G _cvechecker <username>
 
-Edit ${SYSCONFDIR}/cvechecker.conf to your particular setup, this is
-especially important when using MariaDB as a backend.
-
-Database initialization
------------------------
-When using MariaDB (cvechecker-3.2-mysql), a database and user must be
-setup. This step is not needed when using SQLite.
-    $ mysql -uroot -p<password>
-    MariaDB [(none)]> CREATE DATABASE cvechecker;
-    MariaDB [(none)]> GRANT ALL PRIVILEGES ON `cvechecker` . *
-                    -> TO 'cvechecker_rw'@'localhost' IDENTIFIED BY 'password4cvechecker_rw';
-    MariaDB [(none)]> QUIT
+Edit ${SYSCONFDIR}/cvechecker.conf to your particular setup.
 
 Then the database initialization is done by running:
     $ cvechecker -i
@@ -43,6 +32,3 @@ binaries from installed packages(7):
     $ find ${LOCALBASE}/{bin,libexec,sbin} -type f -perm -o+x > scanlist.txt
     $ cvechecker -b scanlist.txt
     $ cvechecker -r
-
-More information is available in the "CVE Checker User Guide" at:
-    http://cvechecker.sourceforge.net/docs/userguide.html
