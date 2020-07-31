@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2020/03/10 16:27:53 bket Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2020/07/31 10:00:51 solene Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
@@ -34,7 +34,7 @@ Index: Makefile.in
  am--force-recheck:
  	@:
  
-@@ -4033,7 +4027,7 @@ i3-config-parser.stamp: parser/$(dirstamp) generate-co
+@@ -4039,7 +4033,7 @@ i3-config-parser.stamp: parser/$(dirstamp) generate-co
  ################################################################################
  
  anyevent-i3.stamp: AnyEvent-I3/lib/AnyEvent/I3.pm
