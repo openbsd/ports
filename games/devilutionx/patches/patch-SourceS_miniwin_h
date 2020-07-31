@@ -1,0 +1,16 @@
+$OpenBSD: patch-SourceS_miniwin_h,v 1.4 2020/07/31 23:09:46 bcallah Exp $
+
+Whatever this was working around we don't need it to work around any more.
+
+Index: SourceS/miniwin.h
+--- SourceS/miniwin.h.orig
++++ SourceS/miniwin.h
+@@ -3,7 +3,7 @@
+ #include <ctype.h>
+ #include <math.h>
+ // work around https://reviews.llvm.org/D51265
+-#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__)
+ #include "macos_stdarg.h"
+ #else
+ #include <stdarg.h>

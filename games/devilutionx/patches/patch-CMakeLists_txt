@@ -1,10 +1,20 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/03/16 23:50:28 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2020/07/31 23:09:46 bcallah Exp $
 
+-DLTO=OFF in CONFIGURE_ARGS doesn't catch.
 Don't do git here.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -25,7 +25,7 @@ if(BINARY_RELEASE)
+   set(ASAN OFF)
+   set(UBSAN OFF)
+   set(DEBUG OFF)
+-  set(LTO ON)
++  set(LTO OFF)
+   set(DIST ON)
+   set(FASTER OFF)
+ endif()
 @@ -40,14 +40,8 @@ if(NIGHTLY_BUILD)
    set(FASTER OFF)
  endif()
