@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2020/07/27 06:55:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2020/08/01 22:41:28 naddy Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -51,7 +51,7 @@ LIB_DEPENDS-icu=	devel/harfbuzz,-main=${GH_TAGNAME} \
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 # needed for estdc++ in WANTLIB
-LIB_DEPENDS-main =+	${LIB_DEPENDS}
+LIB_DEPENDS-main +=	${LIB_DEPENDS}
 .endif
 
 CONFIGURE_ARGS=		-Dgraphite=enabled \
