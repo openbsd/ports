@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/08/01 19:08:25 bket Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
-VERSION =			2.3.9
+
+VERSION =			3.0.0
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
+
 CATEGORIES =			news
+
 HOMEPAGE =			https://sabnzbd.org/
+
 MAINTAINER =			Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2
@@ -15,25 +19,35 @@ MASTER_SITES =			https://github.com/sabnzbd/sabnzbd/releases/download/${VERSION}
 EXTRACT_SUFX =			-src.tar.gz
 
 MODULES =			lang/python
+# XXX broken, needs pyfakefs (not in ports)
+MODPY_PYTEST =			Yes
+MODPY_VERSION =			${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS =			archivers/par2cmdline \
 				archivers/unrar \
 				archivers/unzip \
-				devel/py-cheetah \
-				devel/py-notify \
-				news/py-sabyenc \
-				security/py-cryptography \
-				security/py-openssl
+				devel/py-cheetah${MODPY_FLAVOR} \
+				devel/py-configobj${MODPY_FLAVOR} \
+				net/py-portend${MODPY_FLAVOR} \
+				news/py-sabyenc${MODPY_FLAVOR} \
+				security/py-cryptography${MODPY_FLAVOR} \
+				textproc/py-chardet${MODPY_FLAVOR} \
+				textproc/py-feedparser${MODPY_FLAVOR} \
+				www/py-CherryPy${MODPY_FLAVOR}
+TEST_DEPENDS =			devel/py-flaky${MODPY_FLAVOR} \
+				devel/py-test-httpbin${MODPY_FLAVOR} \
+				www/py-requests${MODPY_FLAVOR} \
+				www/py-selenium${MODPY_FLAVOR}
 
 NO_BUILD =			Yes
-NO_TEST =			Yes
 
 do-install:
 	${INSTALL_DATA_DIR} \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd
 	cp -Rp ${WRKSRC}/* \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd
+	rm -rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd/tests
 	${SUBST_CMD} -m 555 -c ${FILESDIR}/sabnzbd ${WRKSRC}/sabnzbd/sabnzbd
 	${INSTALL_SCRIPT} ${WRKSRC}/sabnzbd/sabnzbd ${PREFIX}/bin/sabnzbd
 	chown -R ${BINOWN}:${BINGRP} \
