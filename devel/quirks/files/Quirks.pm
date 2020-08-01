@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1017 2020/07/30 07:57:20 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1018 2020/08/01 08:18:48 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -449,6 +449,7 @@ my $stem_extensions = {
 	'sslscan-openssl' => 'sslscan',
 	'py-rarfile' => 'py3-rarfile',
 	'py-pygfm' => 'py3-pygfm',
+	'py-humanize' => 'py3-humanize',
 };
 
 my $obsolete_reason = {
