@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.46 2020/07/11 22:54:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2020/08/01 11:30:37 sthen Exp $
 
 COMMENT=	library for HTTP/2
 
 V=		1.41.0
 DISTNAME=	nghttp2-$V
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	nghttp2              0.17     # 33.0
 
 CATEGORIES=	www
 
 HOMEPAGE=	https://nghttp2.org/
-
-MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

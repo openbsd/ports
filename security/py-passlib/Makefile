@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/11 22:54:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/08/01 11:30:37 sthen Exp $
 
 COMMENT=	Python module providing a password hashing framework
 
 MODPY_EGG_VERSION= 1.7.2
 DISTNAME=	passlib-${MODPY_EGG_VERSION}
 PKGNAME=	py-passlib-${MODPY_EGG_VERSION}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	security
-
-MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	https://bitbucket.org/ecollins/passlib/wiki/Home
 

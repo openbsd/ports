@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/11 22:54:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/08/01 11:30:37 sthen Exp $
 
 COMMENT=	live CLI display of interface bandwidth, using SNMP
 
 GH_ACCOUNT=	tenox7
 GH_PROJECT=	ttg
 GH_TAGNAME=	2.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.tenox.tc/out/\#ttg
-
-MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
