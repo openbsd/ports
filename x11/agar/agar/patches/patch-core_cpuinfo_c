@@ -1,0 +1,74 @@
+$OpenBSD: patch-core_cpuinfo_c,v 1.1 2020/08/01 18:47:33 jasper Exp $
+
+Extracted from https://github.com/JulNadeauCA/libagar/commit/56b3500
+
+Index: core/cpuinfo.c
+--- core/cpuinfo.c.orig
++++ core/cpuinfo.c
+@@ -27,10 +27,6 @@
+  * Obtain information about architecture extensions.
+  */
+ 
+-#include <agar/config/have_altivec.h>
+-#include <agar/config/_mk_have_signal.h>
+-#include <agar/config/_mk_have_setjmp.h>
+-
+ #include <agar/core/core.h>
+ 
+ #if defined(__APPLE__) || defined(__MACOSX__)
+@@ -44,13 +40,6 @@
+ # include <proto/exec.h>
+ #endif
+ 
+-#if !defined(__APPLE__) && !defined(__MACOSX__) && !defined(__ppc__) && \
+-     defined(HAVE_ALTIVEC) && defined(_MK_HAVE_SIGNAL) && defined(_MK_HAVE_SETJMP)
+-# include <signal.h>
+-# include <setjmp.h>
+-static jmp_buf jmpbuf;
+-#endif
+-
+ struct cpuid_regs {
+ 	Uint32 a;
+ 	Uint32 b;
+@@ -139,16 +128,6 @@ Conv32(char *d, unsigned int v)
+ 	d[3] = (v >> 24) & 0xff;
+ }
+ 
+-#if !defined(__APPLE__) && !defined(__MACOSX__) && !defined(__ppc__) && \
+-     defined(HAVE_ALTIVEC) && defined(_MK_HAVE_SIGNAL) && defined(_MK_HAVE_SETJMP)
+-/* SIGILL handler for AltiVec test */
+-static void
+-IllegalInsn(int sig)
+-{
+-    longjmp(jmpbuf, 1);
+-}
+-#endif
+-
+ /* Initialize the CPUInfo structure. */
+ void
+ AG_GetCPUInfo(AG_CPUInfo *cpu)
+@@ -281,23 +260,5 @@ AG_GetCPUInfo(AG_CPUInfo *cpu)
+     		if (rv == VECTORTYPE_ALTIVEC)
+ 			cpu->ext |= AG_EXT_ALTIVEC;
+ 	}
+-#elif defined(HAVE_ALTIVEC) && defined(_MK_HAVE_SIGNAL) && defined(_MK_HAVE_SETJMP)
+-	{
+-		volatile int hasAltiVec = 0;
+-		void (*fn)(int);
+-
+-		fn = signal(SIGILL, IllegalInsn);
+-		if (setjmp(jmpbuf) == 0) {
+-			__asm volatile (
+-				"mtspr 256, %0	\n"
+-				"vand %%v0, %%v0, %%v0\n"
+-				:
+-				: "r" (-1));
+-			hasAltiVec = 1;
+-		}
+-		signal(SIGILL, fn);
+-		if (hasAltiVec)
+-			cpu->ext |= AG_EXT_ALTIVEC;
+-	}
+-#endif /* HAVE_ALTIVEC and _MK_HAVE_SIGNAL and _MK_HAVE_SETJMP */
++#endif
+ }

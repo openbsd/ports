@@ -1,0 +1,29 @@
+$OpenBSD: patch-core_byteswap_h,v 1.1 2020/08/01 18:47:33 jasper Exp $
+
+Extracted from https://github.com/JulNadeauCA/libagar/commit/56b3500
+
+Index: core/byteswap.h
+--- core/byteswap.h.orig
++++ core/byteswap.h
+@@ -33,7 +33,9 @@ AG_Swap16(Uint16 x)
+ 		"0" (x));
+ 	return (x);
+ }
+-#elif defined(__GNUC__) && (defined(__powerpc__) || defined(__ppc__))
++#elif (defined(__GNUC__) || defined(__clang__)) && \
++      (defined(__powerpc__) || defined(__ppc__)) && \
++     (!defined(__powerpc64__) && !defined(__ppc64__))
+ static __inline__ Uint16
+ AG_Swap16(Uint16 x)
+ {
+@@ -72,7 +74,9 @@ AG_Swap32(Uint32 x)
+ 		"0" (x));
+ 	return (x);
+ }
+-#elif defined(__GNUC__) && (defined(__powerpc__) || defined(__ppc__))
++#elif (defined(__GNUC__) || defined(__clang__)) && \
++      (defined(__powerpc__) || defined(__ppc__)) && \
++     (!defined(__powerpc64__) && !defined(__ppc64__))
+ static __inline__ Uint32
+ AG_Swap32(Uint32 x)
+ {
