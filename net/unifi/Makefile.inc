@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2020/07/14 14:15:47 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2020/08/01 11:23:05 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -22,7 +22,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://wiki.ubnt.com/UniFi_FAQ
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # at least the firmware files are restricted, if not more
 PERMIT_PACKAGE=	  https://www.ui.com/eula/
