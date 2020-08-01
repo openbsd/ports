@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/06/12 12:26:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/08/01 11:47:16 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -132,8 +132,31 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/e
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pub.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pub.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/rfc8032.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/dsa-nopsw.key
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/dsa-nopsw.key-cert.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/dsa-nopsw.key.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/dsa-psw.key
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/dsa-psw.key.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ecdsa-nopsw.key
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ecdsa-nopsw.key-cert.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ecdsa-nopsw.key.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ecdsa-psw.key
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ecdsa-psw.key.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ed25519-nopsw.key
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ed25519-nopsw.key-cert.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ed25519-nopsw.key.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ed25519-psw.key
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/ed25519-psw.key.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/gen.sh
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/rsa-nopsw.key
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/rsa-nopsw.key-cert.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/rsa-nopsw.key.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/rsa-psw.key
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/rsa-psw.key.pub
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/README.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/dsa_4096.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/dsa_private_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/dsa_public_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/dsaparam.pem
@@ -2274,6 +2297,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/san_rf
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/san_rfc822_names.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/san_uri_with_port.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/san_wildcard_idna.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/sia.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/two_basic_constraints.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/unsupported_extension.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/unsupported_extension_2.pem
@@ -2294,6 +2318,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ed448/root-ed
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ed448/server-ed448-cert.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/letsencryptx3.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/ocsp-army.deps.mil-resp.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/req-ext-nonce.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/req-invalid-hash-alg.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/req-multi-sha1.der
@@ -2311,6 +2336,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/resp-una
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/rapidssl_sha256_ca_g3.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/basic_constraints.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/challenge-invalid.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/challenge-unstructured.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/challenge.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/dsa_sha1.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/dsa_sha1.pem
