@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/08/01 08:17:39 kmos Exp $
 
 COMMENT =		python number humanization utilities
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		humanize-${MODPY_EGG_VERSION}
 PKGNAME =		py-humanize-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -22,15 +21,11 @@ MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR}
 
 TEST_ENV =		PYTHONPATH=${WRKSRC}/src
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-mock
-.endif
 
 .include <bsd.port.mk>

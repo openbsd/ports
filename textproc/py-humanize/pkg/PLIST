@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/10 14:44:54 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/08/01 08:17:40 kmos Exp $
+@pkgpath textproc/py-humanize
+@conflict py-humanize-<2.5.0
 lib/python${MODPY_VERSION}/site-packages/humanize/
 lib/python${MODPY_VERSION}/site-packages/humanize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/humanize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,12 +12,10 @@ lib/python${MODPY_VERSION}/site-packages/humanize-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/humanize/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/humanize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/humanize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/humanize/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/humanize/${MODPY_PYCACHE}filesize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/humanize/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/humanize/${MODPY_PYCACHE}number.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/humanize/${MODPY_PYCACHE}time.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/humanize/compat.py
 lib/python${MODPY_VERSION}/site-packages/humanize/filesize.py
 lib/python${MODPY_VERSION}/site-packages/humanize/i18n.py
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/
@@ -23,6 +23,10 @@ lib/python${MODPY_VERSION}/site-packages/humanize/locale/de_DE/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/de_DE/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/de_DE/LC_MESSAGES/humanize.mo
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/de_DE/LC_MESSAGES/humanize.po
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/es_ES/
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/es_ES/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/es_ES/LC_MESSAGES/humanize.mo
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/es_ES/LC_MESSAGES/humanize.po
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/fa_IR/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/fa_IR/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/fa_IR/LC_MESSAGES/humanize.mo
@@ -55,10 +59,18 @@ lib/python${MODPY_VERSION}/site-packages/humanize/locale/nl_NL/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/nl_NL/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/nl_NL/LC_MESSAGES/humanize.mo
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/nl_NL/LC_MESSAGES/humanize.po
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/pl_PL/
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/pl_PL/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/pl_PL/LC_MESSAGES/humanize.mo
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/pl_PL/LC_MESSAGES/humanize.po
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/pt_BR/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/pt_BR/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/pt_BR/LC_MESSAGES/humanize.mo
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/pt_BR/LC_MESSAGES/humanize.po
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/pt_PT/
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/pt_PT/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/pt_PT/LC_MESSAGES/humanize.mo
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/pt_PT/LC_MESSAGES/humanize.po
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/ru_RU/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/ru_RU/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/ru_RU/LC_MESSAGES/humanize.mo
@@ -71,6 +83,10 @@ lib/python${MODPY_VERSION}/site-packages/humanize/locale/tr_TR/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/tr_TR/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/tr_TR/LC_MESSAGES/humanize.mo
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/tr_TR/LC_MESSAGES/humanize.po
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/uk_UA/
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/uk_UA/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/uk_UA/LC_MESSAGES/humanize.mo
+lib/python${MODPY_VERSION}/site-packages/humanize/locale/uk_UA/LC_MESSAGES/humanize.po
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/vi_VI/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/vi_VI/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/humanize/locale/vi_VI/LC_MESSAGES/humanize.mo
