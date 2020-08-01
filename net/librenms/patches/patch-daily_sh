@@ -1,15 +1,13 @@
-$OpenBSD: patch-daily_sh,v 1.29 2020/07/04 19:51:43 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.30 2020/08/01 11:16:49 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -30,8 +30,8 @@ COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper
- LOG_DIR=$(php -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['log_dir']) ? \$config['log_dir'] : '${LIBRENMS_DIR}/logs';")
+@@ -31,7 +31,7 @@ LOG_DIR=$(php -r "@include '${LIBRENMS_DIR}/config.php
  
  # get the librenms user
--source ".env"
+ source "${LIBRENMS_DIR}/.env"
 -LIBRENMS_USER="${LIBRENMS_USER:-librenms}"
-+source "${LIBRENMS_DIR}/.env"
 +LIBRENMS_USER="${LIBRENMS_USER:-_librenms}"
  LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
  
