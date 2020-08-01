@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/03/16 02:40:45 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.29 2020/08/01 23:49:30 mariani Exp $
 @pkgpath print/lyx,qt
 @pkgpath print/lyx,xforms
 @bin bin/lyx
@@ -2401,6 +2401,8 @@ share/lyx/layouts/recipebook.layout
 share/lyx/layouts/report.layout
 share/lyx/layouts/revtex.layout
 share/lyx/layouts/revtex4-1.layout
+share/lyx/layouts/revtex4-2.layout
+share/lyx/layouts/revtex4-x.inc
 share/lyx/layouts/revtex4.layout
 share/lyx/layouts/rsphrase.module
 share/lyx/layouts/sciposter.layout
