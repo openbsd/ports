@@ -1,0 +1,26 @@
+$OpenBSD: patch-examples_cairotwisted_c,v 1.1 2020/08/01 19:08:57 naddy Exp $
+
+Replace fallthrough comments with G_GNUC_FALLTHROUGH
+https://gitlab.gnome.org/GNOME/pango/-/commit/5423136a
+
+Index: examples/cairotwisted.c
+--- examples/cairotwisted.c.orig
++++ examples/cairotwisted.c
+@@ -234,7 +234,7 @@ parametrize_path (cairo_path_t *path)
+     case CAIRO_PATH_CLOSE_PATH:
+ 	/* Make it look like it's a line_to to last_move_to */
+ 	data = (&last_move_to) - 1;
+-	/* fall through */
++        G_GNUC_FALLTHROUGH;
+     case CAIRO_PATH_LINE_TO:
+ 	parametrization[i] = two_points_distance (&current_point, &data[1]);
+ 	current_point = data[1];
+@@ -361,7 +361,7 @@ point_on_path (parametrized_path_t *param,
+   case CAIRO_PATH_CLOSE_PATH:
+       /* Make it look like it's a line_to to last_move_to */
+       data = (&last_move_to) - 1;
+-      /* fall through */
++      G_GNUC_FALLTHROUGH;
+   case CAIRO_PATH_LINE_TO:
+       {
+ 	ratio = the_x / parametrization[i];

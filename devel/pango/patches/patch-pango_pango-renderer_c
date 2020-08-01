@@ -1,0 +1,17 @@
+$OpenBSD: patch-pango_pango-renderer_c,v 1.1 2020/08/01 19:08:57 naddy Exp $
+
+Replace fallthrough comments with G_GNUC_FALLTHROUGH
+https://gitlab.gnome.org/GNOME/pango/-/commit/5423136a
+
+Index: pango/pango-renderer.c
+--- pango/pango-renderer.c.orig
++++ pango/pango-renderer.c
+@@ -222,7 +222,7 @@ draw_underline (PangoRenderer *renderer,
+ 				     rect->y + 2 * rect->height,
+ 				     rect->width,
+ 				     rect->height);
+-      /* Fall through */
++      G_GNUC_FALLTHROUGH;
+     case PANGO_UNDERLINE_SINGLE:
+     case PANGO_UNDERLINE_LOW:
+       pango_renderer_draw_rectangle (renderer,

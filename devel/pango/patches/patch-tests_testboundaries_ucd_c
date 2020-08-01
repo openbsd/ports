@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_testboundaries_ucd_c,v 1.1 2020/08/01 19:08:57 naddy Exp $
+
+Replace fallthrough comments with G_GNUC_FALLTHROUGH
+https://gitlab.gnome.org/GNOME/pango/-/commit/5423136a
+
+Index: tests/testboundaries_ucd.c
+--- tests/testboundaries_ucd.c.orig
++++ tests/testboundaries_ucd.c
+@@ -104,7 +104,7 @@ parse_line (gchar *line,
+         {
+         case 0x00f7: /* DIVISION SIGN: boundary here */
+           temp_attr.bits |= bits.bits;
+-          /* fall through */
++          G_GNUC_FALLTHROUGH;
+ 
+         case 0x00d7: /* MULTIPLICATION SIGN: no boundary here */
+           break;
