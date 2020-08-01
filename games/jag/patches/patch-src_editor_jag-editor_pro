@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_editor_jag-editor_pro,v 1.1 2020/08/01 05:34:08 landry Exp $
+
+install jag-editor to correct prefix. jag-editor still works without data files.
+
+Index: src/editor/jag-editor.pro
+--- src/editor/jag-editor.pro.orig
++++ src/editor/jag-editor.pro
+@@ -22,11 +22,8 @@ QMAKE_CXXFLAGS += -g -std=gnu++14 -D_FORTIFY_SOURCE=2
+ QMAKE_LFLAGS += -lpthread -fPIE -pie -Wl,--as-needed -Wl,-z,now
+ 
+ unix: {
+-	target.path = /usr/games/
++	target.path = ${PREFIX}/bin/
+ 	INSTALLS += target
+-	datas.path = /usr/share/games/jag/editor/
+-	datas.files = images
+-	INSTALLS += datas
+ }
+ 
+ # The following define makes your compiler warn you if you use any

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gameprofile_cpp,v 1.1 2020/08/01 05:34:08 landry Exp $
+
+Index: src/gameprofile.cpp
+--- src/gameprofile.cpp.orig
++++ src/gameprofile.cpp
+@@ -88,7 +88,7 @@ GameProfile::GameProfile(QObject *parent) : QObject(pa
+   m_accel(false)
+ {
+     userPath = QDir::homePath();
+-    userPath += "/.xlabsoft/jag/";
++    userPath += "/.jag/";
+ 
+ 
+     QDir userdir(userPath);

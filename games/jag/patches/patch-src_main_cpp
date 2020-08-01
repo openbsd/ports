@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_main_cpp,v 1.1 2020/08/01 05:34:08 landry Exp $
+
+Index: src/main.cpp
+--- src/main.cpp.orig
++++ src/main.cpp
+@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
+   // on X11, we'll check if data directory exists locally first
+ #ifdef Q_OS_UNIX
+   if (!QDir(resourcePath).exists())
+-    resourcePath = "/usr/share/games/jag/data/";
++    resourcePath = "${TRUEPREFIX}/share/jag/";
+ #endif
+ 
+   if (!QDir(resourcePath).exists()) {

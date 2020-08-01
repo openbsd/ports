@@ -1,0 +1,18 @@
+$OpenBSD: patch-game_pro,v 1.1 2020/08/01 05:34:08 landry Exp $
+
+Index: game.pro
+--- game.pro.orig
++++ game.pro
+@@ -30,11 +30,8 @@ RCC_DIR += src
+ UI_DIR += src
+ 
+ unix: {
+-	target.path = /usr/games/
++	target.path = ${PREFIX}/bin/
+ 	INSTALLS += target
+-	datas.path = /usr/share/games/jag
+-	datas.files = data
+-	INSTALLS += datas
+ }
+ 
+ # The following define makes your compiler warn you if you use any

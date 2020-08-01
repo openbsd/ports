@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_displaywrapper_cpp,v 1.1 2020/08/01 05:34:08 landry Exp $
+
+Index: src/displaywrapper.cpp
+--- src/displaywrapper.cpp.orig
++++ src/displaywrapper.cpp
+@@ -305,8 +305,6 @@ void DisplayWrapper::dw_init(bool filter, int minWidth
+   //short original_rate = XRRConfigCurrentRate(conf);
+   //SizeID original_size_id = XRRConfigCurrentConfiguration(conf, &original_rotation);
+ 
+-  XCloseDisplay(dpy);
+-
+   for (int i = 0; i < num_sizes; i++)
+   {
+     int width = xrrs[i].width;
+@@ -325,6 +323,8 @@ void DisplayWrapper::dw_init(bool filter, int minWidth
+       modes.append(mode);
+     }
+   }
++
++  XCloseDisplay(dpy);
+ 
+   if (filter)
+     modeNames.removeDuplicates();

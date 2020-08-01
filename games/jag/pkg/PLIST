@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/27 23:54:51 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/01 05:34:08 landry Exp $
 @bin bin/jag
+@bin bin/jag-editor
 share/jag/
 share/jag/bonus/
 share/jag/bonus/clock.png
@@ -12,17 +13,19 @@ share/jag/bonus/timer.png
 share/jag/bonus/x.png
 share/jag/help/
 share/jag/help/index.htm
-share/jag/help/index_nl.htm
-share/jag/help/index_ru.htm
 share/jag/lang/
 share/jag/lang/jag_de.qm
 share/jag/lang/jag_de.ts
+share/jag/lang/jag_es.qm
+share/jag/lang/jag_es.ts
 share/jag/lang/jag_fr.qm
 share/jag/lang/jag_fr.ts
 share/jag/lang/jag_it.qm
 share/jag/lang/jag_it.ts
 share/jag/lang/jag_nl.qm
 share/jag/lang/jag_nl.ts
+share/jag/lang/jag_pt.qm
+share/jag/lang/jag_pt.ts
 share/jag/lang/jag_ru.qm
 share/jag/lang/jag_ru.ts
 share/jag/lang/langlist.dat
