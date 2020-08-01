@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.5 2020/07/01 07:52:58 fcambus Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2020/08/01 09:03:41 fcambus Exp $
 
-V =		2020-07
+V =		2020-08
 
 CATEGORIES =	net
 
