@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.641 2020/07/30 07:57:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.642 2020/08/01 08:19:12 kmos Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -401,7 +401,6 @@
      SUBDIR += py-enchant,python3
      SUBDIR += py-feedparser
      SUBDIR += py-feedparser,python3
-     SUBDIR += py-humanize
      SUBDIR += py-humanize,python3
      SUBDIR += py-iso8601
      SUBDIR += py-iso8601,python3
