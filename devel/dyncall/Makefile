@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/23 12:01:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/02 14:06:13 cwen Exp $
 
 COMMENT=	arch-independent interface for dynamic calls of C functions
 
 V=		1.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	dyncall-${V}
 CATEGORIES=	devel
 

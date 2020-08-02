@@ -1,11 +1,22 @@
-$OpenBSD: patch-dyncallback_dyncall_callback_ppc32_S,v 1.1 2020/07/23 12:01:19 jasper Exp $
+$OpenBSD: patch-dyncallback_dyncall_callback_ppc32_S,v 1.2 2020/08/02 14:06:13 cwen Exp $
+
+Hunk #1: 'machine ppc' is not supported by clang's integrated assembler
+          on powerpc
 
 https://dyncall.org/pub/dyncall/dyncall/rev/d982a00c2177
 
 Index: dyncallback/dyncall_callback_ppc32.S
 --- dyncallback/dyncall_callback_ppc32.S.orig
 +++ dyncallback/dyncall_callback_ppc32.S
-@@ -123,9 +123,9 @@ Input:
+@@ -25,7 +25,6 @@
+ 
+ #include "../portasm/portasm-ppc.S"
+ 
+-.machine ppc
+ .text
+ .align 2
+ 
+@@ -123,9 +122,9 @@ Input:
  	mtctr   r12
  	bctrl
  	/* check result type */
