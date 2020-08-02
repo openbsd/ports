@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.86 2020/06/06 12:29:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2020/08/02 05:44:53 ajacoutot Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper
 
-V=			5.4
+V=			5.5
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
 PKGNAME=		gnugk-${V}
-REVISION=		0
 
 CATEGORIES=		net telephony
 
@@ -68,7 +67,8 @@ CONFIGURE_ARGS +=	--disable-h46018
 CONFIGURE_ARGS +=	--disable-h46023
 
 MAKE_ENV=		VERBOSE=1
-MAKE_FLAGS=		PTLIB_LIBDIR=$$(pkg-config --variable libdir ptlib) \
+MAKE_FLAGS=		PT_LIBDIR=$$(pkg-config --variable libdir ptlib) \
+			PTLIB_LIBDIR=$$(pkg-config --variable libdir ptlib) \
 			OH323_LIBDIR=${LOCALBASE}/lib \
 			OBJDIR=.
 

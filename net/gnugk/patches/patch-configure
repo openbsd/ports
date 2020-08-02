@@ -1,10 +1,4 @@
-$OpenBSD: patch-configure,v 1.28 2020/04/20 21:37:40 ajacoutot Exp $
-
-Last chunks:
-From e303b7cde99528382d8b06dcec4e50791ca59342 Mon Sep 17 00:00:00 2001
-From: Jan Willamowius <jan@willamowius.de>
-Date: Mon, 3 Feb 2020 14:34:55 +0100
-Subject: [PATCH] fix configure switch to disable MQTT and AMQP
+$OpenBSD: patch-configure,v 1.29 2020/08/02 05:44:53 ajacoutot Exp $
 
 Index: configure
 --- configure.orig
@@ -18,21 +12,3 @@ Index: configure
  if test "${PTLIBSNMPSUPPORT:-unset}" = "unset" ; then
  	if test "x${ptlibsnmp}" != "xno" ; then
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: No PTLib SNMP support available" >&5
-@@ -5986,6 +5986,8 @@ fi
- 
- done
- 
-+else
-+   HAS_LIBMOSQUITTO=0
- fi
- 
- if test "x${HAS_LIBMOSQUITTO}" != "x0" ; then
-@@ -6026,6 +6028,8 @@ fi
- 
- done
- 
-+else
-+   HAS_LIBRABBITMQ=0
- fi
- 
- if test "x${HAS_LIBRABBITMQ}" != "x0" ; then
