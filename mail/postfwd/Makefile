@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/08/02 14:56:20 giovanni Exp $
 
 COMMENT =	Postfix policy server
 
-DISTNAME =	postfwd-2.02
+DISTNAME =	postfwd-2.03
 WRKDIST =	${WRKDIR}/postfwd
 
 CATEGORIES =	mail
