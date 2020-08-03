@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/07/04 08:23:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2020/08/03 08:50:15 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -246,6 +246,7 @@ share/doc/libvirt/html/kbase/launch_security_sev.html
 share/doc/libvirt/html/kbase/locking-lockd.html
 share/doc/libvirt/html/kbase/locking-sanlock.html
 share/doc/libvirt/html/kbase/locking.html
+share/doc/libvirt/html/kbase/migrationinternals.html
 share/doc/libvirt/html/kbase/qemu-passthrough-security.html
 share/doc/libvirt/html/kbase/rpm-deployment.html
 share/doc/libvirt/html/kbase/s390_protected_virt.html
