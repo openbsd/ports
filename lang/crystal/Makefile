@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/09/07 08:46:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2020/08/03 20:36:28 gkoehler Exp $
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
@@ -29,8 +29,9 @@ DISTFILES =	crystal-${V}{${V}}.tar.gz \
 		crystal-${V}-OpenBSD6.5.tar.gz:0 \
 		shards-${V}{v${V_SHARDS}}.tar.gz:1
 
-# Build requires llvm-config which only exists in ports-clang
+# Build requires llvm-config from ports, not from base
 COMPILER =	ports-clang
+LLVM_CONFIG =	${LOCALBASE}/bin/llvm-config
 
 BUILD_DEPENDS =	devel/llvm
 RUN_DEPENDS =	devel/llvm,-main
@@ -49,13 +50,14 @@ NO_TEST =	Yes
 do-build:
 	mkdir -p ${WRKSRC}/.build
 	# Link the compiler from the pre-built bootstrap object
-	cd ${WRKSRC} && CXX=${CXX} ${MAKE_PROGRAM} llvm_ext libcrystal
+	cd ${WRKSRC} && CXX=${CXX} LLVM_CONFIG=${LLVM_CONFIG} \
+		${MAKE_PROGRAM} llvm_ext libcrystal
 	cd ${WRKSRC} && ${CXX} -rdynamic -o ${WRKBUILD}/.build/crystal \
 		${WRKSRC}/../crystal.o \
 		${WRKSRC}/src/llvm/ext/llvm_ext.o \
 		${WRKSRC}/src/ext/sigfault.o \
 		-L${LOCALBASE}/lib \
-		`(llvm-config --libs --system-libs --ldflags 2> /dev/null)` \
+		`(${LLVM_CONFIG} --libs --system-libs --ldflags 2> /dev/null)` \
 		-lz -lpcre -lgc -lpthread -levent_core -levent_extra -lssl \
 		-lcrypto -liconv
 	# Use the compiler to re-compile the compiler
@@ -63,7 +65,8 @@ do-build:
 	cd ${WRKSRC}; \
 		ulimit -s 5120 -d 4096000 && \
 		CRYSTAL_CONFIG_PATH="lib:${TRUEPREFIX}/lib/crystal" \
-		CXX=${CXX} ${MAKE_PROGRAM} ${ALL_TARGET}
+		CXX=${CXX} LLVM_CONFIG=${LLVM_CONFIG} \
+		${MAKE_PROGRAM} ${ALL_TARGET}
 	cd ${WRKSRC}/../shards-${V_SHARDS} && \
 		${MAKE_PROGRAM} CRYSTAL=${WRKSRC}/.build/crystal \
 		CRYSTAL_PATH=${WRKSRC}/src CRFLAGS=--release
