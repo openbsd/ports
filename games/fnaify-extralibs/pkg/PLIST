@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/03 18:54:31 thfr Exp $
+@lib lib/libSDL2_image_compact.so.${LIBSDL2_image_compact_VERSION}
+@lib lib/libatomstb.so.${LIBatomstb_VERSION}
+@lib lib/libfmod_SDL.so.${LIBfmod_SDL_VERSION}
+share/doc/pkg-readmes/${PKGSTEM}

@@ -1,0 +1,14 @@
+$OpenBSD: README,v 1.1.1.1 2020/08/03 18:54:31 thfr Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Included Libraries by Game
+==========================
+
+|Game			|Library		|
+|-----------------------+-----------------------|
+|Atom Zombie Smasher	|libatomstb		|
+|Celeste		|libfmod_SDL		|
+|MidBoss		|libSDL_image_compact	|
