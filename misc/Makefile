@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2020/06/16 20:38:02 bluhm Exp $
+# $OpenBSD: Makefile,v 1.197 2020/08/03 18:51:51 thfr Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -45,6 +45,7 @@
      SUBDIR += insult
      SUBDIR += lfm
      SUBDIR += libdivecomputer
+     SUBDIR += libstubborn
      SUBDIR += lifelines
      SUBDIR += logjam
      SUBDIR += m17n
