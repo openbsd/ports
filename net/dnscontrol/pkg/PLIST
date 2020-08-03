@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/04/11 12:45:31 kn Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/08/03 06:20:18 pvk Exp $
 @bin bin/convertzone
 @bin bin/dnscontrol
 share/doc/dnscontrol/
@@ -21,10 +21,12 @@ share/doc/dnscontrol/opinions.md
 share/doc/dnscontrol/provider-list.md
 share/doc/dnscontrol/providers/
 share/doc/dnscontrol/providers/activedir.md
+share/doc/dnscontrol/providers/axfrddns.md
 share/doc/dnscontrol/providers/azuredns.md
 share/doc/dnscontrol/providers/bind.md
 share/doc/dnscontrol/providers/cloudflare.md
 share/doc/dnscontrol/providers/cloudns.md
+share/doc/dnscontrol/providers/desec.md
 share/doc/dnscontrol/providers/digitalocean.md
 share/doc/dnscontrol/providers/dnsimple.md
 share/doc/dnscontrol/providers/gandi_v5.md
@@ -34,8 +36,10 @@ share/doc/dnscontrol/providers/internetbs.md
 share/doc/dnscontrol/providers/linode.md
 share/doc/dnscontrol/providers/name.com.md
 share/doc/dnscontrol/providers/namecheap.md
+share/doc/dnscontrol/providers/netcup.md
 share/doc/dnscontrol/providers/ns1.md
 share/doc/dnscontrol/providers/ovh.md
+share/doc/dnscontrol/providers/powerdns.md
 share/doc/dnscontrol/providers/route53.md
 share/doc/dnscontrol/providers/softlayer.md
 share/doc/dnscontrol/providers/vultr.md

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/05/30 17:00:32 paco Exp $
+# $OpenBSD: Makefile,v 1.10 2020/08/03 06:20:18 pvk Exp $
 
 # XXX intersection of GO_ARCHS and LP64_ARCHS
 # providers/octodns/octoyaml/read.go:265:17: constant 4294967295 overflows int
@@ -8,7 +8,7 @@ COMMENT =		manage DNS configuration across any number of DNS hosts
 
 GH_ACCOUNT =		StackExchange
 GH_PROJECT =		dnscontrol
-GH_TAGNAME =		v3.1.1
+GH_TAGNAME =		v3.2.0
 
 CATEGORIES =		net
 
