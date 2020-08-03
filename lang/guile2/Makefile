@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2020/07/05 09:44:08 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2020/08/03 07:27:46 jasper Exp $
 
 # When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references the
 # proper guile2 includes directory
@@ -6,12 +6,11 @@
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 # '
 
-VERSION=		2.2.6
+VERSION=		2.2.7
 DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
 V=			${VERSION:R}
 SUBST_VARS=		V
-REVISION=		2
 
 CATEGORIES=		lang
 
