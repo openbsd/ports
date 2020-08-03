@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.420 2020/07/28 13:49:09 tracey Exp $
+# $OpenBSD: Makefile,v 1.421 2020/08/03 18:55:34 thfr Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -102,6 +102,7 @@
      SUBDIR += flare
      SUBDIR += flightgear
      SUBDIR += fnaify
+     SUBDIR += fnaify-extralibs
      SUBDIR += foobillard
      SUBDIR += forcedattack
      SUBDIR += fotaq
