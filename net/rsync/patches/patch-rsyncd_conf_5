@@ -1,53 +1,53 @@
-$OpenBSD: patch-rsyncd_conf_5,v 1.7 2018/02/13 19:20:06 danj Exp $
+$OpenBSD: patch-rsyncd_conf_5,v 1.8 2020/08/03 21:35:36 kn Exp $
 Index: rsyncd.conf.5
 --- rsyncd.conf.5.orig
 +++ rsyncd.conf.5
-@@ -68,12 +68,11 @@ When run via inetd you should add a line like this to 
- and a single line something like this to /etc/inetd.conf:
- .PP 
- .nf 
--  rsync   stream  tcp     nowait  root   /usr/bin/rsync rsyncd \-\-daemon
-+  rsync   stream  tcp     nowait  root   ${PREFIX}/bin/rsync rsyncd \-\-daemon
- .fi 
- 
- .PP 
--Replace \(dq\&/usr/bin/rsync\(dq\& with the path to where you have rsync installed on
+@@ -68,12 +68,11 @@ and a single line something like this to /etc/inetd.co
+ .RS 4
+ .P
+ .nf
+-rsync   stream  tcp     nowait  root   /usr/bin/rsync rsyncd --daemon
++rsync   stream  tcp     nowait  root   ${PREFIX}/rsync rsyncd --daemon
+ .fi
+ .RE
+ .P
+-Replace "/usr/bin/rsync" with the path to where you have rsync installed on
 -your system.  You will then need to send inetd a HUP signal to tell it to
 +You will then need to send inetd a HUP signal to tell it to
  reread its config file.
- .PP 
- Note that you should \fBnot\fP send the rsync daemon a HUP signal to force
-@@ -433,7 +432,7 @@ This parameter specifies the user name or user ID that
- file transfers to and from that module should take place as when the daemon
- was run as root. In combination with the \(dq\&gid\(dq\& parameter this determines what
- file permissions are available. The default when run by a super\-user is to
--switch to the system\(cq\&s \(dq\&nobody\(dq\& user.  The default for a non\-super\-user is to
-+switch to the system\(cq\&s \(dq\&_rsync\(dq\& user.  The default for a non\-super\-user is to
- not try to change the user.  See also the \(dq\&gid\(dq\& parameter.
- .IP 
- The RSYNC_USER_NAME environment variable may be used to request that rsync run
-@@ -452,7 +451,7 @@ used when accessing the module.  The first one will be
- any extra ones be set as supplemental groups.  You may also specify a \(dq\&*\(dq\& as
- the first gid in the list, which will be replaced by all the normal groups for
- the transfer\(cq\&s user (see \(dq\&uid\(dq\&).  The default when run by a super\-user is to
--switch to your OS\(cq\&s \(dq\&nobody\(dq\& (or perhaps \(dq\&nogroup\(dq\&) group with no other
-+switch to the \(dq\&_rsync\(dq\& group with no other
- supplementary groups.  The default for a non\-super\-user is to not change any
- group attributes (and indeed, your OS may not allow a non\-super\-user to try to
- change their group settings).
-@@ -632,7 +631,7 @@ require that you specify a group password if you do no
+ .P
+ Note that you should \fBnot\fP send the rsync daemon a HUP signal to force it to
+@@ -425,7 +424,7 @@ This parameter specifies the user name or user ID that
+ and from that module should take place as when the daemon was run as root.
+ In combination with the "gid" parameter this determines what file
+ permissions are available. The default when run by a super-user is to
+-switch to the system's "nobody" user.  The default for a non-super-user is
++switch to the system's "_rsync" user.  The default for a non-super-user is
+ to not try to change the user.  See also the "gid" parameter.
+ .IP
+ The RSYNC_USER_NAME environment variable may be used to request that rsync
+@@ -445,7 +444,7 @@ accessing the module.  The first one will be the defau
+ extra ones be set as supplemental groups.  You may also specify a "\fB*\fP" as
+ the first gid in the list, which will be replaced by all the normal groups
+ for the transfer's user (see "uid").  The default when run by a super-user
+-is to switch to your OS's "nobody" (or perhaps "nogroup") group with no
++is to switch to the "_rsync" group with no
+ other supplementary groups.  The default for a non-super-user is to not
+ change any group attributes (and indeed, your OS may not allow a
+ non-super-user to try to change their group settings).
+@@ -619,7 +618,7 @@ require that you specify a group password if you do no
  passwords.
- .IP 
- There is no default for the \(dq\&secrets file\(dq\& parameter, you must choose a name
--(such as \f(CW/etc/rsyncd.secrets\fP).  The file must normally not be readable
-+(such as \f(CW${SYSCONFDIR}/rsyncd.secrets\fP).  The file must normally not be readable
- by \(dq\&other\(dq\&; see \(dq\&strict modes\(dq\&.  If the file is not found or is rejected, no
- logins for a \(dq\&user auth\(dq\& module will be possible.
- .IP 
-@@ -1033,8 +1032,8 @@ A more sophisticated example would be:
- .PP 
- .nf 
- 
+ .IP
+ There is no default for the "secrets file" parameter, you must choose a
+-name (such as \fB/etc/rsyncd.secrets\fP).  The file must normally not be
++name (such as \fB${SYSCONFDIR}/rsyncd.secrets\fP).  The file must normally not be
+ readable by "other"; see "strict modes".  If the file is not found or is
+ rejected, no logins for a "user auth" module will be possible.
+ .IP "\fBstrict\ modes\fP"
+@@ -1176,8 +1175,8 @@ A more sophisticated example would be:
+ .RS 4
+ .P
+ .nf
 -uid = nobody
 -gid = nobody
 +uid = _rsync
@@ -55,27 +55,21 @@ Index: rsyncd.conf.5
  use chroot = yes
  max connections = 4
  syslog facility = local5
-@@ -1060,12 +1059,12 @@ pid file = /var/run/rsyncd.pid
+@@ -1203,7 +1202,7 @@ pid file = /var/run/rsyncd.pid
          path = /data/cvs
          comment = CVS repository (requires authentication)
          auth users = tridge, susan
 -        secrets file = /etc/rsyncd.secrets
 +        secrets file = ${SYSCONFDIR}/rsyncd.secrets
- 
- .fi 
- 
- .PP 
--The /etc/rsyncd.secrets file would look something like this:
-+The ${SYSCONFDIR}/rsyncd.secrets file would look something like this:
- .PP 
- .RS 
- \f(CWtridge:mypass\fP
-@@ -1078,7 +1077,7 @@ The /etc/rsyncd.secrets file would look something like
+ .fi
+ .RE
+ .P
+@@ -1218,7 +1217,7 @@ susan:herpass
+ .P
  .SH "FILES"
- 
- .PP 
+ .P
 -/etc/rsyncd.conf or rsyncd.conf
 +${SYSCONFDIR}/rsyncd.conf or rsyncd.conf
- .PP 
+ .P
  .SH "SEE ALSO"
- 
+ .P

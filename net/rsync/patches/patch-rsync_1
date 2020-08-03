@@ -1,13 +1,13 @@
-$OpenBSD: patch-rsync_1,v 1.6 2018/02/13 19:20:06 danj Exp $
+$OpenBSD: patch-rsync_1,v 1.7 2020/08/03 21:35:36 kn Exp $
 Index: rsync.1
 --- rsync.1.orig
 +++ rsync.1
-@@ -3990,7 +3990,7 @@ consult the remote shell\(cq\&s documentation.
+@@ -4109,7 +4109,7 @@ documentation.
  .IP "\fBUSER\fP or \fBLOGNAME\fP"
- The USER or LOGNAME environment variables
- are used to determine the default username sent to an rsync daemon.
--If neither is set, the username defaults to \(dq\&nobody\(dq\&.
-+If neither is set, the username defaults to \(dq\&_rsync\(dq\&.
+ The USER or LOGNAME environment variables are used to determine the default
+ username sent to an rsync daemon.  If neither is set, the username defaults
+-to "nobody".
++to "_rsync".
  .IP "\fBHOME\fP"
- The HOME environment variable is used to find the user\(cq\&s
- default .cvsignore file.
+ The HOME environment variable is used to find the user's default .cvsignore
+ file.
