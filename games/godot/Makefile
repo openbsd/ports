@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/30 14:11:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/08/03 18:41:08 thfr Exp $
 
 BROKEN-i386 =	core/safe_refcount.h error: misaligned atomic operation may incur significant performance penalty
 COMMENT =	2D and 3D game engine
@@ -7,6 +7,7 @@ V =		3.2.2
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
 CATEGORIES =	games
+REVISION =	0
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 

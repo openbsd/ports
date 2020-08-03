@@ -1,0 +1,17 @@
+$OpenBSD: patch-core_ustring_h,v 1.1 2020/08/03 18:41:08 thfr Exp $
+
+Implicit copy ctor have been deprecated since C++11
+https://github.com/godotengine/godot/pull/35762
+
+Index: core/ustring.h
+--- core/ustring.h.orig
++++ core/ustring.h
+@@ -68,6 +68,8 @@ class CharProxy { (public)
+ 	_FORCE_INLINE_ void operator=(const CharProxy<T> &other) const {
+ 		_cowdata.set(_index, other.operator T());
+ 	}
++
++	_FORCE_INLINE_ CharProxy(const CharProxy &) = default;
+ };
+ 
+ class CharString {
