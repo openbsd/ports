@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/05/28 08:47:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2020/08/03 08:14:56 ajacoutot Exp $
 
 COMMENT=		Brother P-touch CUPS driver
 
@@ -21,6 +21,9 @@ WANTLIB += c cups cupsimage m
 MASTER_SITES=		https://github.com/philpem/printer-driver-ptouch/releases/download/${GH_TAGNAME}/
 
 BUILD_DEPENDS=		textproc/p5-XML-LibXML
+
+# needed to build ptexplain which is not installed (hence no LDEP)
+BUILD_DEPENDS +=	graphics/png
 
 LIB_DEPENDS=		print/cups,-libs
 
