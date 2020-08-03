@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/07/18 11:39:24 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/08/03 21:30:55 pvk Exp $
 @newgroup _mattermost:804
 @newuser _mattermost:804:_mattermost:daemon:Mattermost Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/mattermost/*
@@ -79,10 +79,10 @@ share/mattermost/client/5.aa07f589b8b4b537cd5a.css
 share/mattermost/client/5.aa07f589b8b4b537cd5a.css.map
 share/mattermost/client/5.d00ef9bcee1815c2fe46.js
 share/mattermost/client/5.d00ef9bcee1815c2fe46.js.map
+share/mattermost/client/6.7d692a804af2dffb80a8.js
+share/mattermost/client/6.7d692a804af2dffb80a8.js.map
 share/mattermost/client/6.d6f0bd14e42babb13b1f.css
 share/mattermost/client/6.d6f0bd14e42babb13b1f.css.map
-share/mattermost/client/6.ffad21a2b6217a55ea16.js
-share/mattermost/client/6.ffad21a2b6217a55ea16.js.map
 share/mattermost/client/7.09da70e4594c94577f36.js
 share/mattermost/client/7.09da70e4594c94577f36.js.map
 share/mattermost/client/7.8744a5a4f21e0bf0f2e6.css
@@ -2468,10 +2468,10 @@ share/mattermost/client/images/favicon/favicon-reddot-96x96.png
 share/mattermost/client/images/img_trans.gif
 share/mattermost/client/images/logo-email.png
 share/mattermost/client/images/warning.png
-share/mattermost/client/main.93f9b87e2bcbd19c130e.css
-share/mattermost/client/main.93f9b87e2bcbd19c130e.css.map
-share/mattermost/client/main.987d7f7a22549c86714d.js
-share/mattermost/client/main.987d7f7a22549c86714d.js.map
+share/mattermost/client/main.50c113fa3caa4613e694.css
+share/mattermost/client/main.50c113fa3caa4613e694.css.map
+share/mattermost/client/main.54d1fe9662860b51376b.js
+share/mattermost/client/main.54d1fe9662860b51376b.js.map
 share/mattermost/client/manifest.json
 share/mattermost/client/root.html
 share/mattermost/fonts/
