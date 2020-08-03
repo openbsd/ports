@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/03 18:50:48 thfr Exp $
+@lib lib/libstubborn.so.${LIBstubborn_VERSION}
