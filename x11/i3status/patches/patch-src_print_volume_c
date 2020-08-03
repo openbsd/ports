@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_print_volume_c,v 1.12 2020/03/16 14:54:45 ratchov Exp $
+$OpenBSD: patch-src_print_volume_c,v 1.13 2020/08/03 12:38:15 jcs Exp $
 
 Index: src/print_volume.c
 --- src/print_volume.c.orig
@@ -17,7 +17,7 @@ Index: src/print_volume.c
  #include "i3status.h"
  #include "queue.h"
  
-@@ -145,9 +138,20 @@ void print_volume(yajl_gen json_gen, char *buffer, con
+@@ -145,9 +138,21 @@ void print_volume(yajl_gen json_gen, char *buffer, con
          /* negative result or NULL description means error, fail PulseAudio attempt */
      }
  /* If some other device was specified or PulseAudio is not detected,
@@ -26,10 +26,11 @@ Index: src/print_volume.c
  #endif
  
 +#ifdef USE_SNDIO
-+    int vol;
-+    
-+	vol = volume_sndio();
-+	if (vol != -1) {
++    int vol, mute;
++
++	if (volume_sndio(&vol, &mute) == 0) {
++        if (mute)
++            fmt = fmt_muted;
 +        outwalk = apply_volume_format(fmt, outwalk, vol & 0x7f, "sndio");
 +        goto out;
 +    }
@@ -39,7 +40,7 @@ Index: src/print_volume.c
  #ifdef __linux__
      const long MAX_LINEAR_DB_SCALE = 24;
      int err;
-@@ -248,7 +252,8 @@ void print_volume(yajl_gen json_gen, char *buffer, con
+@@ -248,7 +253,8 @@ void print_volume(yajl_gen json_gen, char *buffer, con
      snd_mixer_selem_id_free(sid);
  
  #endif
@@ -49,7 +50,7 @@ Index: src/print_volume.c
      char *mixerpath;
      char defaultmixer[] = "/dev/mixer";
      int mixfd, vol, devmask = 0;
-@@ -261,84 +266,13 @@ void print_volume(yajl_gen json_gen, char *buffer, con
+@@ -261,84 +267,13 @@ void print_volume(yajl_gen json_gen, char *buffer, con
          mixerpath = defaultmixer;
  
      if ((mixfd = open(mixerpath, O_RDWR)) < 0) {
@@ -134,7 +135,7 @@ Index: src/print_volume.c
      if (ioctl(mixfd, SOUND_MIXER_READ_DEVMASK, &devmask) == -1) {
          warn("OSS: Cannot read mixer information");
          goto out;
-@@ -353,7 +287,6 @@ void print_volume(yajl_gen json_gen, char *buffer, con
+@@ -353,7 +288,6 @@ void print_volume(yajl_gen json_gen, char *buffer, con
          pbval = 0;
      }
  
