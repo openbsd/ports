@@ -1,7 +1,8 @@
-$OpenBSD: patch-myhdl_test_core_test_Cosimulation_py,v 1.1 2015/12/20 09:34:16 jasper Exp $
---- myhdl/test/core/test_Cosimulation.py.orig	Sun Dec 20 10:31:28 2015
-+++ myhdl/test/core/test_Cosimulation.py	Sun Dec 20 10:31:38 2015
-@@ -35,7 +35,7 @@ random.seed(1)  # random, but deterministic
+$OpenBSD: patch-myhdl_test_core_test_Cosimulation_py,v 1.2 2020/08/03 06:38:00 jasper Exp $
+Index: myhdl/test/core/test_Cosimulation.py
+--- myhdl/test/core/test_Cosimulation.py.orig
++++ myhdl/test/core/test_Cosimulation.py
+@@ -40,7 +40,7 @@ random.seed(1)  # random, but deterministic
  MAXLINE = 4096
  
  
