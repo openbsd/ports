@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2020/02/06 16:17:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2020/08/04 17:50:11 naddy Exp $
 
 COMMENT=	multi-screen window manager
 
@@ -11,7 +11,8 @@ HOMEPAGE=	https://www.gnu.org/software/screen/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION=2.69
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
