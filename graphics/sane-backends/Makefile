@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.91 2020/05/17 15:30:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2020/08/04 12:59:41 stsp Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
 DISTNAME=		sane-backends-1.0.30
+REVISION=		0
 
 SHARED_LIBS +=  sane                 2.1      # unknown
 
