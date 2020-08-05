@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/05 09:10:16 martin Exp $
 
 COMMENT=	Python interface to the netCDF C library
 
-MODPY_EGG_VERSION=	1.5.3
+MODPY_EGG_VERSION=	1.5.4
 DISTNAME=		netCDF4-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
-REVISION=		0
 
 HOMEPAGE=		http://unidata.github.io/netcdf4-python/
 
@@ -36,7 +35,7 @@ RUN_DEPENDS+=		lang/cython${MODPY_FLAVOR} \
 			math/hdf5 \
 			math/netcdf \
 			math/py-numpy${MODPY_FLAVOR} \
-			math/py-cftime
+			math/py-cftime${MODPY_FLAVOR}
 
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH}
 TEST_ENV=		TMPDIR=${WRKDIR}/tmp
