@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2020/07/16 05:46:38 daniel Exp $
+# $OpenBSD: Makefile,v 1.187 2020/08/05 09:09:00 martin Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -121,7 +121,7 @@
      SUBDIR += py-affine
      SUBDIR += py-affine,python3
      SUBDIR += py-bottleneck,python3
-     SUBDIR += py-cftime
+     SUBDIR += py-cftime,python3
      SUBDIR += py-cvxopt,python3
      SUBDIR += py-cvxpy,python3
      SUBDIR += py-ecos
