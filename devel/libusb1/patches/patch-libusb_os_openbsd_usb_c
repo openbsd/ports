@@ -1,10 +1,12 @@
-$OpenBSD: patch-libusb_os_openbsd_usb_c,v 1.9 2020/08/05 11:35:16 stsp Exp $
+$OpenBSD: patch-libusb_os_openbsd_usb_c,v 1.10 2020/08/05 13:59:36 tb Exp $
 
 Export port number, fix github #314.
+https://github.com/libusb/libusb/pull/764
 
 Fix an OpenBSD backend bug where an existing open file descriptor is
 overwritten if a libusb user attempts to open the same ugen(4) device
 multiple times. This was observed with sane-backends and broke scanning.
+https://github.com/libusb/libusb/pull/763
 
 Index: libusb/os/openbsd_usb.c
 --- libusb/os/openbsd_usb.c.orig

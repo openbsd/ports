@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.33 2020/08/05 11:35:16 stsp Exp $
+# $OpenBSD: Makefile,v 1.34 2020/08/05 13:59:36 tb Exp $
 
 COMMENT =		library for USB device access from userspace
 
 VERSION =		1.0.23
 DISTNAME =		libusb-${VERSION}
 PKGNAME =		libusb1-${VERSION}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=		usb-1.0			1.2	# 2.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://www.libusb.info
+HOMEPAGE =		https://libusb.info
 
 # LGPL 2.1
 PERMIT_PACKAGE =	Yes
