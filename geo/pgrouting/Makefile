@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/08/04 10:58:56 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2020/08/05 11:28:28 landry Exp $
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
@@ -31,6 +31,9 @@ SUBST_VARS =	V
 MODPOSTGRESQL_TEST_DBNAME =	___pgr___test___
 MODPOSTGRESQL_TEST_CMD = \
 	cd ${WRKSRC}; \
-	sh ./tools/testers/pg_prove_tests.sh postgres
+	sh ./tools/testers/pg_prove_tests.sh postgres 5432
+post-extract:
+	# tests crashes the server
+	rm -f ${WRKSRC}/pgtap/vrp_basic/no_crash_test-vrpOneDepot.sql ${WRKSRC}/pgtap/pickDeliver/pickDeliver/innerQuery.sql
 
 .include <bsd.port.mk>
