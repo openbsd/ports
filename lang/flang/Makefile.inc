@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.11 2020/07/12 18:06:48 bcallah Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2020/08/05 08:04:39 bcallah Exp $
+
+BROKEN =	not yet ported to llvm-10
 
 # Also ppc64le
 ONLY_FOR_ARCHS =	amd64 arm64
