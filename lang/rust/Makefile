@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2020/08/01 08:36:38 semarie Exp $
+# $OpenBSD: Makefile,v 1.118 2020/08/05 07:14:04 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,7 +13,7 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.45.1
+V =			1.45.2
 CARGO_V =		0.46.1
 CLIPPY_V =		0.0.212
 RUSTFMT_V =		1.4.17
