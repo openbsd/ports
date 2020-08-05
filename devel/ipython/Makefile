@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2020/07/11 15:17:51 bket Exp $
+# $OpenBSD: Makefile,v 1.57 2020/08/05 02:25:55 bket Exp $
 
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	5.10.0
+MODPY_EGG_VERSION =	7.16.1
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
@@ -18,28 +18,30 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
-			devel/desktop-file-utils \
-			devel/py-decorator${MODPY_FLAVOR} \
-			devel/py-pexpect${MODPY_FLAVOR} \
-			devel/py-prompt_toolkit${MODPY_FLAVOR} \
-			devel/py-simplegeneric${MODPY_FLAVOR}>0.8 \
-			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
-			math/py-numpy${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR}<2.6
-
-# Note that if you have pdb++ installed, tests will fail.
-TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
-			devel/py-ipykernel${MODPY_FLAVOR} \
-			devel/py-nbformat${MODPY_FLAVOR}>=4.2.0 \
-			devel/py-nose${MODPY_FLAVOR} \
-			devel/py-testpath${MODPY_FLAVOR} \
-			graphics/py-matplotlib${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
-
 # Optional dependency which gets picked up if it happens to be installed, thus
 # causing race conditions under dpb. Pull it in to avoid this possibility.
-BUILD_DEPENDS +=	www/py-mako${MODPY_FLAVOR}
+BUILD_DEPENDS =		www/py-mako${MODPY_FLAVOR}
+
+RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
+			devel/desktop-file-utils \
+			devel/py-backcall${MODPY_FLAVOR} \
+			devel/py-decorator${MODPY_FLAVOR} \
+			devel/py-jedi${MODPY_FLAVOR}>=0.10 \
+			devel/py-pexpect${MODPY_FLAVOR} \
+			devel/py-prompt_toolkit${MODPY_FLAVOR}>=2.0.0v1,<3.1.0v1 \
+			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
+			textproc/py-pygments${MODPY_FLAVOR}
+
+# Note that if you have pdb++ installed OR are using PORTS_PRIVSEP, tests will
+# fail.
+TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
+			devel/py-ipykernel${MODPY_FLAVOR} \
+			devel/py-nbformat${MODPY_FLAVOR} \
+			devel/py-nose${MODPY_FLAVOR}>=0.10.1 \
+			devel/py-testpath${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR}>=1.14 \
+			textproc/py-pygments${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
@@ -60,7 +62,6 @@ pre-build:
 	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 	${SUBST_CMD} ${WRKBUILD}/examples/IPython\ Kernel/ipython.desktop
 
-# XXX Some tests fail with PORTS_PRIVSEP
 do-test:
 	env LC_CTYPE=en_US.UTF-8 PYTHONNOUSERSITE=1 \
 		${LOCALBASE}/bin/iptest

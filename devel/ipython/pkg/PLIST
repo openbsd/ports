@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/03/23 05:05:03 bket Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/08/05 02:25:55 bket Exp $
 @conflict ipython-*
 @pkgpath devel/ipython
 @comment bin/iptest2
@@ -14,6 +14,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}consoleapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}frontend.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,6 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}parallel.${MODP
 lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/${MODPY_PYCACHE}qt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/config.py
+lib/python${MODPY_VERSION}/site-packages/IPython/conftest.py
 lib/python${MODPY_VERSION}/site-packages/IPython/consoleapp.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/
 lib/python${MODPY_VERSION}/site-packages/IPython/core/__init__.py
@@ -31,6 +33,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}alias.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}async_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}autocall.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}builtin_trap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}compilerop.${MODPY_PYC_MAGIC_TAG}pyc
@@ -53,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}historyapp
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}inputsplitter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}inputtransformer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}inputtransformer2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}interactiveshell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}latex_symbols.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
@@ -69,13 +73,13 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}profiledir
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}prompts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}pylabtools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}release.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}shadowns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}shellapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}splitinput.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}ultratb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}usage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/alias.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/application.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/async_helpers.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/autocall.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/builtin_trap.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/compilerop.py
@@ -98,6 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/historyapp.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/hooks.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/inputsplitter.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/inputtransformer.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/inputtransformer2.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/interactiveshell.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/latex_symbols.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/logger.py
@@ -119,6 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}his
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}namespace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}osm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}packaging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}pylab.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/auto.py
@@ -132,6 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/history.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/logging.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/namespace.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/osm.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/packaging.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/pylab.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/script.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/oinspect.py
@@ -146,7 +153,6 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/profiledir.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/prompts.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/pylabtools.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/release.py
-lib/python${MODPY_VERSION}/site-packages/IPython/core/shadowns.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/shellapp.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/splitinput.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/
@@ -164,6 +170,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}simp
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}tclass.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_alias.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_application.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_async_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_autocall.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_compilerop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_completer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -180,6 +187,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_imports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_inputsplitter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_inputtransformer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_inputtransformer2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_inputtransformer2_line.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_interactiveshell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_iplib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_logger.${MODPY_PYC_MAGIC_TAG}pyc
@@ -210,6 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/simpleerr.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/tclass.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_alias.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_application.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_async_helpers.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_autocall.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_compilerop.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_completer.py
@@ -226,6 +236,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_hooks.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_imports.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_inputsplitter.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_inputtransformer.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_inputtransformer2.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_inputtransformer2_line.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_interactiveshell.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_iplib.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_logger.py
@@ -281,10 +293,8 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/IPython/external/decora
 lib/python${MODPY_VERSION}/site-packages/IPython/external/decorators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/external/decorators/${MODPY_PYCACHE}_decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/external/decorators/${MODPY_PYCACHE}_numpy_testing_noseclasses.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/external/decorators/${MODPY_PYCACHE}_numpy_testing_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/external/decorators/_decorators.py
 lib/python${MODPY_VERSION}/site-packages/IPython/external/decorators/_numpy_testing_noseclasses.py
-lib/python${MODPY_VERSION}/site-packages/IPython/external/decorators/_numpy_testing_utils.py
 lib/python${MODPY_VERSION}/site-packages/IPython/external/mathjax.py
 lib/python${MODPY_VERSION}/site-packages/IPython/external/qt_for_kernel.py
 lib/python${MODPY_VERSION}/site-packages/IPython/external/qt_loaders.py
@@ -431,6 +441,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}glut.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}gtk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}gtk3.${MODPY_PYC_MAGIC_TAG}pyc
@@ -439,6 +450,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}qt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}tk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}wx.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/asyncio.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/glut.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/gtk.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/gtk3.py
@@ -454,9 +466,11 @@ lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_debug_magic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_embed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_help.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_interactivshell.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/test_debug_magic.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/test_embed.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/test_help.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/test_interactivshell.py
@@ -522,16 +536,12 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}PyColorize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_get_terminal_size.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_posix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_win32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_win32_controller.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_signatures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_sysinfo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_tokenize_py2.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_tokenize_py3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}capture.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}colorable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}coloransi.${MODPY_PYC_MAGIC_TAG}pyc
@@ -556,7 +566,6 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}path.${MO
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}pickleutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}process.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}rlineimpl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}sentinel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}shimmodule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}signatures.${MODPY_PYC_MAGIC_TAG}pyc
@@ -567,24 +576,18 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}tempdir.$
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}timing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}tokenize2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}tokenutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}traitlets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}tz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}ulinecache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}warn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}wildcard.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/_get_terminal_size.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_cli.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_common.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_posix.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_win32.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_win32_controller.py
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/_signatures.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_sysinfo.py
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/_tokenize_py2.py
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/_tokenize_py3.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/capture.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/colorable.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/coloransi.py
@@ -609,7 +612,6 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/path.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/pickleutil.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/process.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/py3compat.py
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/rlineimpl.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/sentinel.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/shimmodule.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/signatures.py
@@ -658,13 +660,11 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_tokenutil.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tests/test_wildcard.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/text.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/timing.py
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/tokenize2.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tokenutil.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/traitlets.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tz.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/ulinecache.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/version.py
-lib/python${MODPY_VERSION}/site-packages/IPython/utils/warn.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/wildcard.py
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 @tag update-desktop-database

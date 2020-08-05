@@ -1,7 +1,8 @@
-$OpenBSD: patch-IPython_core_tests_test_interactiveshell_py,v 1.5 2016/12/13 14:50:45 shadchin Exp $
---- IPython/core/tests/test_interactiveshell.py.orig	Sat Aug 13 17:56:43 2016
-+++ IPython/core/tests/test_interactiveshell.py	Fri Aug 19 19:59:00 2016
-@@ -579,7 +579,7 @@ class TestSystemRaw(unittest.TestCase, ExitCodeChecks)
+$OpenBSD: patch-IPython_core_tests_test_interactiveshell_py,v 1.6 2020/08/05 02:25:55 bket Exp $
+Index: IPython/core/tests/test_interactiveshell.py
+--- IPython/core/tests/test_interactiveshell.py.orig
++++ IPython/core/tests/test_interactiveshell.py
+@@ -572,7 +572,7 @@ class TestSystemRaw(ExitCodeChecks):
      def test_1(self):
          """Test system_raw with non-ascii cmd
          """
