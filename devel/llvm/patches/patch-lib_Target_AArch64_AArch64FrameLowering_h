@@ -1,18 +1,19 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64FrameLowering_h,v 1.1 2018/08/21 06:56:09 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64FrameLowering_h,v 1.2 2020/08/05 06:49:48 jca Exp $
 
 Add retguard for arm64.
 
 Index: lib/Target/AArch64/AArch64FrameLowering.h
 --- lib/Target/AArch64/AArch64FrameLowering.h.orig
 +++ lib/Target/AArch64/AArch64FrameLowering.h
-@@ -14,15 +14,19 @@
+@@ -13,6 +13,7 @@
  #ifndef LLVM_LIB_TARGET_AARCH64_AARCH64FRAMELOWERING_H
  #define LLVM_LIB_TARGET_AARCH64_AARCH64FRAMELOWERING_H
  
 +#include "AArch64ReturnProtectorLowering.h"
+ #include "AArch64StackOffset.h"
  #include "llvm/CodeGen/TargetFrameLowering.h"
  
- namespace llvm {
+@@ -20,9 +21,12 @@ namespace llvm {
  
  class AArch64FrameLowering : public TargetFrameLowering {
  public:
@@ -20,7 +21,7 @@ Index: lib/Target/AArch64/AArch64FrameLowering.h
 +  const AArch64ReturnProtectorLowering RPL;
 +
    explicit AArch64FrameLowering()
-       : TargetFrameLowering(StackGrowsDown, 16, 0, 16,
+       : TargetFrameLowering(StackGrowsDown, Align(16), 0, Align(16),
 -                            true /*StackRealignable*/) {}
 +                            true /*StackRealignable*/), RPL() {}
  

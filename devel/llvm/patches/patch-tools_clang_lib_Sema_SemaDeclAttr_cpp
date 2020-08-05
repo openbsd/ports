@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Sema_SemaDeclAttr_cpp,v 1.10 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Sema_SemaDeclAttr_cpp,v 1.11 2020/08/05 06:49:49 jca Exp $
 
 Teach Clang about syslog format attribute
 
 Index: tools/clang/lib/Sema/SemaDeclAttr.cpp
 --- tools/clang/lib/Sema/SemaDeclAttr.cpp.orig
 +++ tools/clang/lib/Sema/SemaDeclAttr.cpp
-@@ -3290,6 +3290,7 @@ static FormatAttrKind getFormatAttrKind(StringRef Form
+@@ -3243,6 +3243,7 @@ static FormatAttrKind getFormatAttrKind(StringRef Form
        .Case("freebsd_kprintf", SupportedFormat) // FreeBSD.
        .Case("os_trace", SupportedFormat)
        .Case("os_log", SupportedFormat)

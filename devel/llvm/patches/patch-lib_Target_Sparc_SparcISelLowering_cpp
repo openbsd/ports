@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.5 2020/05/19 10:05:47 jca Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.6 2020/08/05 06:49:48 jca Exp $
 
 - Make sure that we really don't emit quad-precision unless the
   "hard-quad-float" feature is available
@@ -7,7 +7,7 @@ $OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.5 2020/05/19 10:05:47
 Index: lib/Target/Sparc/SparcISelLowering.cpp
 --- lib/Target/Sparc/SparcISelLowering.cpp.orig
 +++ lib/Target/Sparc/SparcISelLowering.cpp
-@@ -3103,6 +3103,11 @@ SparcTargetLowering::EmitInstrWithCustomInserter(Machi
+@@ -3105,6 +3105,11 @@ SparcTargetLowering::EmitInstrWithCustomInserter(Machi
    case SP::SELECT_CC_DFP_ICC:
    case SP::SELECT_CC_QFP_ICC:
      return expandSelectCC(MI, BB, SP::BCOND);
@@ -19,12 +19,3 @@ Index: lib/Target/Sparc/SparcISelLowering.cpp
    case SP::SELECT_CC_Int_FCC:
    case SP::SELECT_CC_FP_FCC:
    case SP::SELECT_CC_DFP_FCC:
-@@ -3258,6 +3263,8 @@ SparcTargetLowering::getRegForInlineAsmConstraint(cons
-     case 'r':
-       if (VT == MVT::v2i32)
-         return std::make_pair(0U, &SP::IntPairRegClass);
-+      else if (VT == MVT::i64 && Subtarget->is64Bit())
-+	return std::make_pair(0U, &SP::I64RegsRegClass);
-       else
-         return std::make_pair(0U, &SP::IntRegsRegClass);
-     case 'f':

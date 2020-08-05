@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.10 2020/05/19 10:05:47 jca Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.11 2020/08/05 06:49:48 jca Exp $
 
 Make sure that we really don't emit quad-precision unless the
 "hard-quad-float" feature is available
@@ -6,7 +6,7 @@ Make sure that we really don't emit quad-precision unless the
 Index: lib/Target/Sparc/SparcInstrInfo.td
 --- lib/Target/Sparc/SparcInstrInfo.td.orig
 +++ lib/Target/Sparc/SparcInstrInfo.td
-@@ -469,6 +469,27 @@ let Uses = [ICC], usesCustomInserter = 1 in {
+@@ -468,6 +468,27 @@ let Uses = [ICC], usesCustomInserter = 1 in {
              [(set f128:$dst, (SPselecticc f128:$T, f128:$F, imm:$Cond))]>;
  }
  
@@ -34,7 +34,7 @@ Index: lib/Target/Sparc/SparcInstrInfo.td
  let usesCustomInserter = 1, Uses = [FCC0] in {
  
    def SELECT_CC_Int_FCC
-@@ -1392,12 +1413,12 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
+@@ -1391,12 +1412,12 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
                 (ins DFPRegs:$rs2, DFPRegs:$f, CCOp:$cond),
                 "fmovd$cond %icc, $rs2, $rd",
                 [(set f64:$rd, (SPselecticc f64:$rs2, f64:$f, imm:$cond))]>;
@@ -49,7 +49,7 @@ Index: lib/Target/Sparc/SparcInstrInfo.td
    }
  
    let Uses = [FCC0], intcc = 0, opf_cc = 0b00 in {
-@@ -1411,12 +1432,12 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
+@@ -1410,12 +1431,12 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
               (ins DFPRegs:$rs2, DFPRegs:$f, CCOp:$cond),
               "fmovd$cond %fcc0, $rs2, $rd",
               [(set f64:$rd, (SPselectfcc f64:$rs2, f64:$f, imm:$cond))]>;
@@ -64,7 +64,7 @@ Index: lib/Target/Sparc/SparcInstrInfo.td
    }
  
  }
-@@ -1426,28 +1447,28 @@ let Predicates = [HasV9] in {
+@@ -1425,28 +1446,28 @@ let Predicates = [HasV9] in {
    def FMOVD : F3_3u<2, 0b110100, 0b000000010,
                     (outs DFPRegs:$rd), (ins DFPRegs:$rs2),
                     "fmovd $rs2, $rd", []>;
@@ -99,7 +99,7 @@ Index: lib/Target/Sparc/SparcInstrInfo.td
  }
  
  // Floating-point compare instruction with %fcc0-%fcc3.
-@@ -1494,11 +1515,11 @@ let Predicates = [HasV9] in {
+@@ -1493,11 +1514,11 @@ let Predicates = [HasV9] in {
        : F4_3<0b110101, 0b000010, (outs DFPRegs:$rd),
               (ins FCCRegs:$opf_cc, DFPRegs:$rs2, DFPRegs:$f, CCOp:$cond),
               "fmovd$cond $opf_cc, $rs2, $rd", []>;

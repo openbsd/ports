@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_MC_MCAsmInfoELF_cpp,v 1.3 2017/09/02 09:36:13 ajacoutot Exp $
+$OpenBSD: patch-lib_MC_MCAsmInfoELF_cpp,v 1.4 2020/08/05 06:49:48 jca Exp $
 
 Do not use ident.
 
 Index: lib/MC/MCAsmInfoELF.cpp
 --- lib/MC/MCAsmInfoELF.cpp.orig
 +++ lib/MC/MCAsmInfoELF.cpp
-@@ -28,7 +28,7 @@ MCSection *MCAsmInfoELF::getNonexecutableStackSection(
+@@ -25,7 +25,7 @@ MCSection *MCAsmInfoELF::getNonexecutableStackSection(
  }
  
  MCAsmInfoELF::MCAsmInfoELF() {

@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_X86_MCTargetDesc_X86AsmBackend_cpp,v 1.5 2019/07/07 14:04:07 jca Exp $
+$OpenBSD: patch-lib_Target_X86_MCTargetDesc_X86AsmBackend_cpp,v 1.6 2020/08/05 06:49:48 jca Exp $
 
 trapsleds
 
 Index: lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
 --- lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp.orig
 +++ lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
-@@ -319,57 +319,23 @@ void X86AsmBackend::relaxInstruction(const MCInst &Ins
+@@ -636,57 +636,23 @@ void X86AsmBackend::relaxInstruction(const MCInst &Ins
  /// bytes.
  /// \return - true on success, false on failure
  bool X86AsmBackend::writeNopData(raw_ostream &OS, uint64_t Count) const {

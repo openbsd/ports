@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Symbols_h,v 1.4 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Symbols_h,v 1.5 2020/08/05 06:49:49 jca Exp $
 
 Generate __data_start symbol that marks the start of .data when __data_start
 is referenced from code being linked.
@@ -6,13 +6,13 @@ is referenced from code being linked.
 Index: tools/lld/ELF/Symbols.h
 --- tools/lld/ELF/Symbols.h.orig
 +++ tools/lld/ELF/Symbols.h
-@@ -330,6 +330,9 @@ struct ElfSym {
+@@ -420,6 +420,9 @@ struct ElfSym {
    // __bss_start
-   static Defined *Bss;
+   static Defined *bss;
  
 +  // __data_start
-+  static Defined *Data;
++  static Defined *data;
 +
    // etext and _etext
-   static Defined *Etext1;
-   static Defined *Etext2;
+   static Defined *etext1;
+   static Defined *etext2;

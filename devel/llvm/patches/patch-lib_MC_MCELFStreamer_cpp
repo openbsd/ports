@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_MC_MCELFStreamer_cpp,v 1.5 2019/07/07 14:04:07 jca Exp $
+$OpenBSD: patch-lib_MC_MCELFStreamer_cpp,v 1.6 2020/08/05 06:49:48 jca Exp $
 
 Index: lib/MC/MCELFStreamer.cpp
 --- lib/MC/MCELFStreamer.cpp.orig
 +++ lib/MC/MCELFStreamer.cpp
-@@ -93,8 +93,11 @@ void MCELFStreamer::InitSections(bool NoExecStack) {
+@@ -92,8 +92,11 @@ void MCELFStreamer::InitSections(bool NoExecStack) {
    SwitchSection(Ctx.getObjectFileInfo()->getTextSection());
    EmitCodeAlignment(4);
  

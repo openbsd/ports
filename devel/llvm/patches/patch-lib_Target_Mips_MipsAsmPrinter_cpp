@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Mips_MipsAsmPrinter_cpp,v 1.2 2020/01/07 22:59:43 jca Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsAsmPrinter_cpp,v 1.3 2020/08/05 06:49:48 jca Exp $
 
 - Add retguard for octeon/mips64.
 - Restore previous section after setting the MIPS ABI marker. This keeps
@@ -9,7 +9,7 @@ $OpenBSD: patch-lib_Target_Mips_MipsAsmPrinter_cpp,v 1.2 2020/01/07 22:59:43 jca
 Index: lib/Target/Mips/MipsAsmPrinter.cpp
 --- lib/Target/Mips/MipsAsmPrinter.cpp.orig
 +++ lib/Target/Mips/MipsAsmPrinter.cpp
-@@ -241,6 +241,83 @@ void MipsAsmPrinter::EmitInstruction(const MachineInst
+@@ -242,6 +242,83 @@ void MipsAsmPrinter::EmitInstruction(const MachineInst
    case Mips::PATCHABLE_TAIL_CALL:
      LowerPATCHABLE_TAIL_CALL(*MI);
      return;
@@ -93,16 +93,3 @@ Index: lib/Target/Mips/MipsAsmPrinter.cpp
    }
  
    if (EmitJalrReloc &&
-@@ -795,10 +872,12 @@ void MipsAsmPrinter::EmitStartOfAsmFile(Module &M) {
-       TS.emitDirectiveOptionPic0();
-   }
- 
-+  MCSection *CS = OutStreamer->getCurrentSectionOnly();
-   // Tell the assembler which ABI we are using
-   std::string SectionName = std::string(".mdebug.") + getCurrentABIString();
-   OutStreamer->SwitchSection(
-       OutContext.getELFSection(SectionName, ELF::SHT_PROGBITS, 0));
-+  OutStreamer->SwitchSection(CS);
- 
-   // NaN: At the moment we only support:
-   // 1. .nan legacy (default)

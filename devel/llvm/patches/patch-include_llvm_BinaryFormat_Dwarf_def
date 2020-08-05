@@ -1,11 +1,11 @@
-$OpenBSD: patch-include_llvm_BinaryFormat_Dwarf_def,v 1.4 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-include_llvm_BinaryFormat_Dwarf_def,v 1.5 2020/08/05 06:49:48 jca Exp $
 
 implement -msave-args in clang/llvm, like the sun did for gcc 
 
 Index: include/llvm/BinaryFormat/Dwarf.def
 --- include/llvm/BinaryFormat/Dwarf.def.orig
 +++ include/llvm/BinaryFormat/Dwarf.def
-@@ -365,6 +365,8 @@ HANDLE_DW_AT(0x2133, GNU_addr_base, 0, GNU)
+@@ -384,6 +384,8 @@ HANDLE_DW_AT(0x2133, GNU_addr_base, 0, GNU)
  HANDLE_DW_AT(0x2134, GNU_pubnames, 0, GNU)
  HANDLE_DW_AT(0x2135, GNU_pubtypes, 0, GNU)
  HANDLE_DW_AT(0x2136, GNU_discriminator, 0, GNU)

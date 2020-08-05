@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Sema_SemaChecking_cpp,v 1.7 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Sema_SemaChecking_cpp,v 1.8 2020/08/05 06:49:49 jca Exp $
 
 - Teach Clang about syslog format attribute
 - Enable the kprintf format attribute
@@ -9,7 +9,7 @@ $OpenBSD: patch-tools_clang_lib_Sema_SemaChecking_cpp,v 1.7 2019/07/06 15:06:36 
 Index: tools/clang/lib/Sema/SemaChecking.cpp
 --- tools/clang/lib/Sema/SemaChecking.cpp.orig
 +++ tools/clang/lib/Sema/SemaChecking.cpp
-@@ -6608,7 +6608,7 @@ checkFormatStringExpr(Sema &S, const Expr *E, ArrayRef
+@@ -7220,7 +7220,7 @@ checkFormatStringExpr(Sema &S, const Expr *E, ArrayRef
  Sema::FormatStringType Sema::GetFormatStringType(const FormatAttr *Format) {
    return llvm::StringSwitch<FormatStringType>(Format->getType()->getName())
        .Case("scanf", FST_Scanf)
@@ -18,7 +18,7 @@ Index: tools/clang/lib/Sema/SemaChecking.cpp
        .Cases("NSString", "CFString", FST_NSString)
        .Case("strftime", FST_Strftime)
        .Case("strfmon", FST_Strfmon)
-@@ -6705,6 +6705,7 @@ bool Sema::CheckFormatArguments(ArrayRef<const Expr *>
+@@ -7317,6 +7317,7 @@ bool Sema::CheckFormatArguments(ArrayRef<const Expr *>
      case FST_Kprintf:
      case FST_FreeBSDKPrintf:
      case FST_Printf:
@@ -26,7 +26,7 @@ Index: tools/clang/lib/Sema/SemaChecking.cpp
        Diag(FormatLoc, diag::note_format_security_fixit)
          << FixItHint::CreateInsertion(FormatLoc, "\"%s\", ");
        break;
-@@ -7530,19 +7531,33 @@ CheckPrintfHandler::HandlePrintfSpecifier(const analyz
+@@ -8142,19 +8143,34 @@ CheckPrintfHandler::HandlePrintfSpecifier(const analyz
      // Claim the second argument.
      CoveredArgs.set(argIndex + 1);
  
@@ -52,7 +52,8 @@ Index: tools/clang/lib/Sema/SemaChecking.cpp
            getSpecifierRange(startSpecifier, specifierLen));
 +    } else {
 +      // Check the length modifier for %b
-+      if (!FS.hasValidLengthModifier(S.getASTContext().getTargetInfo()))
++      if (!FS.hasValidLengthModifier(S.getASTContext().getTargetInfo(),
++                                     S.getLangOpts()))
 +        HandleInvalidLengthModifier(FS, CS, startSpecifier, specifierLen,
 +                                    diag::warn_format_nonsensical_length);
 +      else if (!FS.hasStandardLengthModifier())
@@ -69,7 +70,7 @@ Index: tools/clang/lib/Sema/SemaChecking.cpp
      // Type check the second argument (char * for both %b and %D)
      Ex = getDataArg(argIndex + 1);
      const analyze_printf::ArgType &AT2 = ArgType::CStrTy;
-@@ -8277,8 +8292,9 @@ static void CheckFormatString(Sema &S, const FormatStr
+@@ -8935,8 +8951,9 @@ static void CheckFormatString(Sema &S, const FormatStr
    }
  
    if (Type == Sema::FST_Printf || Type == Sema::FST_NSString ||
@@ -81,7 +82,7 @@ Index: tools/clang/lib/Sema/SemaChecking.cpp
      CheckPrintfHandler H(
          S, FExpr, OrigFormatExpr, Type, firstDataArg, numDataArgs,
          (Type == Sema::FST_NSString || Type == Sema::FST_OSTrace), Str,
-@@ -8288,7 +8304,7 @@ static void CheckFormatString(Sema &S, const FormatStr
+@@ -8946,7 +8963,7 @@ static void CheckFormatString(Sema &S, const FormatStr
      if (!analyze_format_string::ParsePrintfString(H, Str, Str + StrLen,
                                                    S.getLangOpts(),
                                                    S.Context.getTargetInfo(),

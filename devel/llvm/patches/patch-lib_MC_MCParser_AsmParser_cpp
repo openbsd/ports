@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.7 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.8 2020/08/05 06:49:48 jca Exp $
 
 make clang include a FILE symbol for .(s|S) files
 
@@ -11,7 +11,7 @@ a file directive.
 Index: lib/MC/MCParser/AsmParser.cpp
 --- lib/MC/MCParser/AsmParser.cpp.orig
 +++ lib/MC/MCParser/AsmParser.cpp
-@@ -878,6 +878,10 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
+@@ -910,6 +910,10 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
      (void)InsertResult;
    }
  

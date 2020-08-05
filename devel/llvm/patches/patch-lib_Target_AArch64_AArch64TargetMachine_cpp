@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64TargetMachine_cpp,v 1.1 2020/05/19 10:05:47 jca Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64TargetMachine_cpp,v 1.2 2020/08/05 06:49:48 jca Exp $
 
 Always disable GlobalISel on aarch64, fixes a crash when building on
 aarch64 without retguard, with a stack protector and without
@@ -7,13 +7,11 @@ optimizations.
 Index: lib/Target/AArch64/AArch64TargetMachine.cpp
 --- lib/Target/AArch64/AArch64TargetMachine.cpp.orig
 +++ lib/Target/AArch64/AArch64TargetMachine.cpp
-@@ -276,7 +276,8 @@ AArch64TargetMachine::AArch64TargetMachine(const Targe
-   }
- 
-   // Enable GlobalISel at or below EnableGlobalISelAt0.
--  if (getOptLevel() <= EnableGlobalISelAtO) {
-+  if (getOptLevel() <= EnableGlobalISelAtO &&
-+      !getTargetTriple().isOSOpenBSD()) {
+@@ -302,6 +302,7 @@ AArch64TargetMachine::AArch64TargetMachine(const Targe
+   // Enable GlobalISel at or below EnableGlobalISelAt0, unless this is
+   // MachO/CodeModel::Large, which GlobalISel does not support.
+   if (getOptLevel() <= EnableGlobalISelAtO &&
++      !getTargetTriple().isOSOpenBSD() &&
+       TT.getArch() != Triple::aarch64_32 &&
+       !(getCodeModel() == CodeModel::Large && TT.isOSBinFormatMachO())) {
      setGlobalISel(true);
-     setGlobalISelAbort(GlobalISelAbortMode::Disable);
-   }

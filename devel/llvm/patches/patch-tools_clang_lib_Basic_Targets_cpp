@@ -1,20 +1,20 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.28 2020/06/15 21:34:58 gkoehler Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.29 2020/08/05 06:49:49 jca Exp $
 
 Add our OpenBSD specific defines on PowerPC64 targets.
 
 Index: tools/clang/lib/Basic/Targets.cpp
 --- tools/clang/lib/Basic/Targets.cpp.orig
 +++ tools/clang/lib/Basic/Targets.cpp
-@@ -349,6 +349,8 @@ TargetInfo *AllocateTarget(const llvm::Triple &Triple,
+@@ -342,6 +342,8 @@ TargetInfo *AllocateTarget(const llvm::Triple &Triple,
        return new FreeBSDTargetInfo<PPC64TargetInfo>(Triple, Opts);
      case llvm::Triple::NetBSD:
        return new NetBSDTargetInfo<PPC64TargetInfo>(Triple, Opts);
 +    case llvm::Triple::OpenBSD:
 +      return new OpenBSDTargetInfo<PPC64TargetInfo>(Triple, Opts);
+     case llvm::Triple::AIX:
+       return new AIXPPC64TargetInfo(Triple, Opts);
      default:
-       return new PPC64TargetInfo(Triple, Opts);
-     }
-@@ -359,6 +361,8 @@ TargetInfo *AllocateTarget(const llvm::Triple &Triple,
+@@ -354,6 +356,8 @@ TargetInfo *AllocateTarget(const llvm::Triple &Triple,
        return new LinuxTargetInfo<PPC64TargetInfo>(Triple, Opts);
      case llvm::Triple::NetBSD:
        return new NetBSDTargetInfo<PPC64TargetInfo>(Triple, Opts);

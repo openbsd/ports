@@ -1,0 +1,21 @@
+$OpenBSD: patch-tools_lld_ELF_Config_h,v 1.8 2020/08/05 06:49:49 jca Exp $
+
+- XXX no comment
+
+Index: tools/lld/ELF/Config.h
+--- tools/lld/ELF/Config.h.orig
++++ tools/lld/ELF/Config.h
+@@ -234,8 +234,13 @@ struct Configuration {
+   ELFKind ekind = ELFNoneKind;
+   uint16_t emachine = llvm::ELF::EM_NONE;
+   llvm::Optional<uint64_t> imageBase;
++  // commonPageSize and maxPageSize are influenced by nmagic or omagic
++  // so may be set to 1 if either of those options is given.
+   uint64_t commonPageSize;
+   uint64_t maxPageSize;
++  // textAlignPageSize is the target max page size for the purpose
++  // of aligning text sections, which may be unaligned if given nmagic
++  uint64_t textAlignPageSize;
+   uint64_t mipsGotSize;
+   uint64_t zStackSize;
+   unsigned ltoPartitions;

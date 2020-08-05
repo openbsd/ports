@@ -1,16 +1,16 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.7 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.8 2020/08/05 06:49:49 jca Exp $
 
 - Disable IAS for OpenBSD SPARC.
 
 Index: tools/clang/lib/Driver/ToolChains/Gnu.cpp
 --- tools/clang/lib/Driver/ToolChains/Gnu.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Gnu.cpp
-@@ -2512,7 +2512,7 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+@@ -2657,7 +2657,7 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
    case llvm::Triple::sparc:
    case llvm::Triple::sparcel:
    case llvm::Triple::sparcv9:
--    if (getTriple().isOSSolaris() || getTriple().isOSOpenBSD())
-+    if (getTriple().isOSSolaris())
+-    if (getTriple().isOSFreeBSD() || getTriple().isOSOpenBSD() ||
++    if (getTriple().isOSFreeBSD() ||
+         getTriple().isOSSolaris())
        return true;
      return false;
-   default:

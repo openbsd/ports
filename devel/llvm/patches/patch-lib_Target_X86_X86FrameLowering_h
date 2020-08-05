@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86FrameLowering_h,v 1.5 2019/02/11 05:24:16 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86FrameLowering_h,v 1.6 2020/08/05 06:49:48 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -23,7 +23,7 @@ $OpenBSD: patch-lib_Target_X86_X86FrameLowering_h,v 1.5 2019/02/11 05:24:16 jca 
 Index: lib/Target/X86/X86FrameLowering.h
 --- lib/Target/X86/X86FrameLowering.h.orig
 +++ lib/Target/X86/X86FrameLowering.h
-@@ -14,6 +14,7 @@
+@@ -13,6 +13,7 @@
  #ifndef LLVM_LIB_TARGET_X86_X86FRAMELOWERING_H
  #define LLVM_LIB_TARGET_X86_X86FRAMELOWERING_H
  
@@ -31,7 +31,7 @@ Index: lib/Target/X86/X86FrameLowering.h
  #include "llvm/CodeGen/TargetFrameLowering.h"
  
  namespace llvm {
-@@ -23,6 +24,7 @@ class MCCFIInstruction;
+@@ -22,6 +23,7 @@ class MCCFIInstruction;
  class X86InstrInfo;
  class X86Subtarget;
  class X86RegisterInfo;
@@ -39,7 +39,7 @@ Index: lib/Target/X86/X86FrameLowering.h
  
  class X86FrameLowering : public TargetFrameLowering {
  public:
-@@ -33,7 +35,10 @@ class X86FrameLowering : public TargetFrameLowering { 
+@@ -32,7 +34,10 @@ class X86FrameLowering : public TargetFrameLowering { 
    const X86Subtarget &STI;
    const X86InstrInfo &TII;
    const X86RegisterInfo *TRI;
@@ -50,7 +50,7 @@ Index: lib/Target/X86/X86FrameLowering.h
    unsigned SlotSize;
  
    /// Is64Bit implies that x86_64 instructions are available.
-@@ -67,6 +72,8 @@ class X86FrameLowering : public TargetFrameLowering { 
+@@ -66,6 +71,8 @@ class X86FrameLowering : public TargetFrameLowering { 
    /// the function.
    void emitPrologue(MachineFunction &MF, MachineBasicBlock &MBB) const override;
    void emitEpilogue(MachineFunction &MF, MachineBasicBlock &MBB) const override;

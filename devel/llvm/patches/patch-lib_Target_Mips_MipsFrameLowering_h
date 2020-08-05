@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_Mips_MipsFrameLowering_h,v 1.1 2020/01/07 22:59:43 jca Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsFrameLowering_h,v 1.2 2020/08/05 06:49:48 jca Exp $
 
 Add retguard for octeon/mips64.
 
 Index: lib/Target/Mips/MipsFrameLowering.h
 --- lib/Target/Mips/MipsFrameLowering.h.orig
 +++ lib/Target/Mips/MipsFrameLowering.h
-@@ -15,6 +15,7 @@
+@@ -14,6 +14,7 @@
  #define LLVM_LIB_TARGET_MIPS_MIPSFRAMELOWERING_H
  
  #include "Mips.h"
@@ -13,19 +13,19 @@ Index: lib/Target/Mips/MipsFrameLowering.h
  #include "llvm/CodeGen/TargetFrameLowering.h"
  
  namespace llvm {
-@@ -25,8 +26,11 @@ class MipsFrameLowering : public TargetFrameLowering {
+@@ -24,8 +25,11 @@ class MipsFrameLowering : public TargetFrameLowering {
    const MipsSubtarget &STI;
  
  public:
 +
 +  const MipsReturnProtectorLowering RPL;
 +
-   explicit MipsFrameLowering(const MipsSubtarget &sti, unsigned Alignment)
--    : TargetFrameLowering(StackGrowsDown, Alignment, 0, Alignment), STI(sti) {}
-+    : TargetFrameLowering(StackGrowsDown, Alignment, 0, Alignment), STI(sti), RPL() {}
+   explicit MipsFrameLowering(const MipsSubtarget &sti, Align Alignment)
+-      : TargetFrameLowering(StackGrowsDown, Alignment, 0, Alignment), STI(sti) {
++      : TargetFrameLowering(StackGrowsDown, Alignment, 0, Alignment), STI(sti), RPL() {
+   }
  
    static const MipsFrameLowering *create(const MipsSubtarget &ST);
- 
 @@ -39,6 +43,8 @@ class MipsFrameLowering : public TargetFrameLowering {
    bool enableShrinkWrapping(const MachineFunction &MF) const override {
      return true;

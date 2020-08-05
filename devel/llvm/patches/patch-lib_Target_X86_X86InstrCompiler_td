@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86InstrCompiler_td,v 1.3 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86InstrCompiler_td,v 1.4 2020/08/05 06:49:48 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -22,7 +22,7 @@ $OpenBSD: patch-lib_Target_X86_X86InstrCompiler_td,v 1.3 2019/07/06 15:06:36 jca
 Index: lib/Target/X86/X86InstrCompiler.td
 --- lib/Target/X86/X86InstrCompiler.td.orig
 +++ lib/Target/X86/X86InstrCompiler.td
-@@ -264,6 +264,25 @@ def MORESTACK_RET_RESTORE_R10 : I<0, Pseudo, (outs), (
+@@ -258,6 +258,25 @@ def MORESTACK_RET_RESTORE_R10 : I<0, Pseudo, (outs), (
  }
  
  //===----------------------------------------------------------------------===//

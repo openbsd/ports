@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_llvm_CodeGen_MachineFrameInfo_h,v 1.4 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-include_llvm_CodeGen_MachineFrameInfo_h,v 1.5 2020/08/05 06:49:48 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -22,7 +22,7 @@ $OpenBSD: patch-include_llvm_CodeGen_MachineFrameInfo_h,v 1.4 2019/07/06 15:06:3
 Index: include/llvm/CodeGen/MachineFrameInfo.h
 --- include/llvm/CodeGen/MachineFrameInfo.h.orig
 +++ include/llvm/CodeGen/MachineFrameInfo.h
-@@ -274,6 +274,15 @@ class MachineFrameInfo { (private)
+@@ -273,6 +273,15 @@ class MachineFrameInfo { (private)
    /// The frame index for the stack protector.
    int StackProtectorIdx = -1;
  
@@ -38,7 +38,7 @@ Index: include/llvm/CodeGen/MachineFrameInfo.h
    /// The frame index for the function context. Used for SjLj exceptions.
    int FunctionContextIdx = -1;
  
-@@ -354,6 +363,17 @@ class MachineFrameInfo { (private)
+@@ -353,6 +362,17 @@ class MachineFrameInfo { (private)
    int getStackProtectorIndex() const { return StackProtectorIdx; }
    void setStackProtectorIndex(int I) { StackProtectorIdx = I; }
    bool hasStackProtectorIndex() const { return StackProtectorIdx != -1; }

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_ReturnProtectorLowering_cpp,v 1.2 2019/07/09 13:21:37 jca Exp $
+$OpenBSD: patch-lib_CodeGen_ReturnProtectorLowering_cpp,v 1.3 2020/08/05 06:49:48 jca Exp $
 
 - Refactor retguard to make adding additional arches easier.
 - Do not store the retguard cookie in frame in leaf functions if possible.
@@ -8,7 +8,7 @@ $OpenBSD: patch-lib_CodeGen_ReturnProtectorLowering_cpp,v 1.2 2019/07/09 13:21:3
 Index: lib/CodeGen/ReturnProtectorLowering.cpp
 --- lib/CodeGen/ReturnProtectorLowering.cpp.orig
 +++ lib/CodeGen/ReturnProtectorLowering.cpp
-@@ -0,0 +1,229 @@
+@@ -0,0 +1,230 @@
 +//===- ReturnProtectorLowering.cpp - ---------------------------------------==//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -29,6 +29,7 @@ Index: lib/CodeGen/ReturnProtectorLowering.cpp
 +#include "llvm/CodeGen/MachineRegisterInfo.h"
 +#include "llvm/CodeGen/TargetFrameLowering.h"
 +#include "llvm/IR/Function.h"
++#include "llvm/IR/Module.h"
 +#include "llvm/MC/MCRegisterInfo.h"
 +#include "llvm/Target/TargetMachine.h"
 +#include "llvm/Target/TargetOptions.h"

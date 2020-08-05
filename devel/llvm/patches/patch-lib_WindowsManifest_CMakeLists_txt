@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_WindowsManifest_CMakeLists_txt,v 1.1 2019/12/25 22:31:01 jca Exp $
+$OpenBSD: patch-lib_WindowsManifest_CMakeLists_txt,v 1.2 2020/08/05 06:49:48 jca Exp $
 
 For upstream:
 bogus dep on all headers in ${Backtrace_INCLUDE_DIRS} ie /usr/local/include.
@@ -6,11 +6,13 @@ bogus dep on all headers in ${Backtrace_INCLUDE_DIRS} ie /usr/local/include.
 Index: lib/WindowsManifest/CMakeLists.txt
 --- lib/WindowsManifest/CMakeLists.txt.orig
 +++ lib/WindowsManifest/CMakeLists.txt
-@@ -10,7 +10,6 @@ add_llvm_library(LLVMWindowsManifest
+@@ -2,8 +2,7 @@ add_llvm_component_library(LLVMWindowsManifest
+   WindowsManifestMerger.cpp
  
    ADDITIONAL_HEADER_DIRS
-   ${LLVM_MAIN_INCLUDE_DIR}/llvm/WindowsManifest
--  ${Backtrace_INCLUDE_DIRS}
+-  ${LLVM_MAIN_INCLUDE_DIR}/llvm/WindowsManifest
+-  ${Backtrace_INCLUDE_DIRS})
++  ${LLVM_MAIN_INCLUDE_DIR}/llvm/WindowsManifest)
  
-   LINK_LIBS ${system_libs}
-   )
+ if(LIBXML2_LIBRARIES)
+   target_link_libraries(LLVMWindowsManifest PUBLIC ${LIBXML2_LIBRARIES})

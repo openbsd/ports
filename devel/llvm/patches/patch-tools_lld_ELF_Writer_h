@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_lld_ELF_Writer_h,v 1.3 2020/08/05 06:49:49 jca Exp $
+
+- XXX no comment
+
+Index: tools/lld/ELF/Writer.h
+--- tools/lld/ELF/Writer.h.orig
++++ tools/lld/ELF/Writer.h
+@@ -30,7 +30,7 @@ template <class ELFT> void writeResult();
+ // placed in it.
+ struct PhdrEntry {
+   PhdrEntry(unsigned type, unsigned flags)
+-      : p_align(type == llvm::ELF::PT_LOAD ? config->maxPageSize : 0),
++      : p_align(type == llvm::ELF::PT_LOAD ? config->textAlignPageSize : 0),
+         p_type(type), p_flags(flags) {}
+   void add(OutputSection *sec);
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2020/07/03 21:12:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.256 2020/08/05 06:49:48 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -11,23 +11,21 @@ COMMENT-python =	Python bindings for Clang
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
-LLVM_V =	8.0.1
+LLVM_V =	10.0.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	16
-REVISION-python = 2
-REVISION-lldb =	5
 
 CATEGORIES =	devel
 
 SHARED_LIBS =	clang		8.0 \
+		clang-cpp	0.0 \
 		lldb		1.0 \
 		LTO		5.0 \
-		OptRemarks	0.0
+		Remarks		0.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
 HOMEPAGE =	https://www.llvm.org/
@@ -40,7 +38,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
-		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
+		clang-${LLVM_V}.src${EXTRACT_SUFX} \
 		lld-${LLVM_V}.src${EXTRACT_SUFX} \
 		lldb-${LLVM_V}.src${EXTRACT_SUFX}
 
@@ -78,12 +76,11 @@ RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python =	${BUILD_PKGPATH},-main
 
 WANTLIB-lldb =		${WANTLIB} ${MODPY_WANTLIB}
-WANTLIB-lldb +=		curses edit form panel
-# XXX linked against libLLVM-x.so, should be LIB_DEPENDS
-RUN_DEPENDS-lldb =	${BUILD_PKGPATH},-main
-RUN_DEPENDS-lldb +=	${MODPY_RUN_DEPENDS} \
+WANTLIB-lldb +=		clang-cpp curses edit form panel
+RUN_DEPENDS-lldb =	${MODPY_RUN_DEPENDS} \
 			devel/py-six${MODPY_FLAVOR}
-LIB_DEPENDS-lldb =	${LIB_DEPENDS}
+LIB_DEPENDS-lldb =	${LIB_DEPENDS} \
+			${BUILD_PKGPATH},-main
 
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
@@ -93,9 +90,13 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Z3:Bool=True \
 			-DLLVM_LINK_LLVM_DYLIB:Bool=True \
 			-DLLVM_BUILD_LLVM_DYLIB:Bool=True \
+			-DEPYDOC_EXECUTABLE=EPYDOC_EXECUTABLE-NOTFOUND \
 			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Backtrace:Bool=True \
-			-DLLDB_USE_SYSTEM_SIX=ON
+			-DLLDB_USE_SYSTEM_SIX=ON \
+			-DLLDB_ENABLE_LZMA=OFF \
+			-DLLDB_ENABLE_LUA=OFF \
+			-DLLDB_ENABLE_LIBXML2=OFF
 
 # Disable some protections in the compiler to regain performance
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
@@ -127,10 +128,9 @@ CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 
 post-extract:
-	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
+	mv ${WRKDIR}/clang-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
 	mv ${WRKDIR}/lldb-${LLVM_V}.src ${WRKSRC}/tools/lldb
-	${LOCALBASE}/bin/2to3 -w ${WRKSRC}/tools/lldb/examples/python/symbolication.py
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp \

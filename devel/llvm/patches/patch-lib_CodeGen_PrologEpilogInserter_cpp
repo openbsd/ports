@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_PrologEpilogInserter_cpp,v 1.4 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-lib_CodeGen_PrologEpilogInserter_cpp,v 1.5 2020/08/05 06:49:48 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -22,7 +22,7 @@ $OpenBSD: patch-lib_CodeGen_PrologEpilogInserter_cpp,v 1.4 2019/07/06 15:06:36 j
 Index: lib/CodeGen/PrologEpilogInserter.cpp
 --- lib/CodeGen/PrologEpilogInserter.cpp.orig
 +++ lib/CodeGen/PrologEpilogInserter.cpp
-@@ -176,7 +176,11 @@ bool PEI::runOnMachineFunction(MachineFunction &MF) {
+@@ -217,7 +217,11 @@ bool PEI::runOnMachineFunction(MachineFunction &MF) {
    const Function &F = MF.getFunction();
    const TargetRegisterInfo *TRI = MF.getSubtarget().getRegisterInfo();
    const TargetFrameLowering *TFI = MF.getSubtarget().getFrameLowering();
@@ -33,8 +33,8 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
 +
    RS = TRI->requiresRegisterScavenging(MF) ? new RegScavenger() : nullptr;
    FrameIndexVirtualScavenging = TRI->requiresFrameIndexScavenging(MF);
-   FrameIndexEliminationScavenging = (RS && !FrameIndexVirtualScavenging) ||
-@@ -211,6 +215,10 @@ bool PEI::runOnMachineFunction(MachineFunction &MF) {
+   ORE = &getAnalysis<MachineOptimizationRemarkEmitterPass>().getORE();
+@@ -255,6 +259,10 @@ bool PEI::runOnMachineFunction(MachineFunction &MF) {
    if (!F.hasFnAttribute(Attribute::Naked))
      insertPrologEpilogCode(MF);
  
@@ -42,10 +42,10 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
 +  if (RPL)
 +      RPL->insertReturnProtectors(MF);
 +
-   // Replace all MO_FrameIndex operands with physical register references
-   // and actual offsets.
-   //
-@@ -301,7 +309,9 @@ void PEI::calculateCallFrameInfo(MachineFunction &MF) 
+   // Reinsert stashed debug values at the start of the entry blocks.
+   for (auto &I : EntryDbgValues)
+     I.first->insert(I.first->begin(), I.second.begin(), I.second.end());
+@@ -349,7 +357,9 @@ void PEI::calculateCallFrameInfo(MachineFunction &MF) 
  /// Compute the sets of entry and return blocks for saving and restoring
  /// callee-saved registers, and placing prolog and epilog code.
  void PEI::calculateSaveRestoreBlocks(MachineFunction &MF) {
@@ -56,7 +56,7 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
  
    // Even when we do not change any CSR, we still want to insert the
    // prologue and epilogue of the function.
-@@ -317,7 +327,18 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
+@@ -365,7 +375,18 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
      // epilogue.
      if (!RestoreBlock->succ_empty() || RestoreBlock->isReturnBlock())
        RestoreBlocks.push_back(RestoreBlock);
@@ -76,7 +76,7 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
    }
  
    // Save refs to entry and return blocks.
-@@ -328,6 +349,9 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
+@@ -376,6 +397,9 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
      if (MBB.isReturnBlock())
        RestoreBlocks.push_back(&MBB);
    }
@@ -86,7 +86,7 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
  }
  
  static void assignCalleeSavedSpillSlots(MachineFunction &F,
-@@ -349,6 +373,10 @@ static void assignCalleeSavedSpillSlots(MachineFunctio
+@@ -397,6 +421,10 @@ static void assignCalleeSavedSpillSlots(MachineFunctio
  
    const TargetFrameLowering *TFI = F.getSubtarget().getFrameLowering();
    MachineFrameInfo &MFI = F.getFrameInfo();

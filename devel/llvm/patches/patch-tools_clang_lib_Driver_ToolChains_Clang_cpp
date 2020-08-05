@@ -1,11 +1,10 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.13 2020/06/15 21:34:58 gkoehler Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.14 2020/08/05 06:49:49 jca Exp $
 
-- Optimize away the frame pointer on powerpc.
+- Switch Powerpc64 Big Endian to ELFv2 on OpenBSD.
 - Add -msvr4-struct-return for powerpc.
-- Make LLVM create strict aligned code for OpenBSD/arm64.
 - Disable -fstrict-aliasing per default on OpenBSD.
 - Enable -fwrapv by default
-- Add ret protctor options as no-ops.
+- Add ret protector options as no-ops.
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
   effect that the integrity of the return address is protected, and function
@@ -35,30 +34,17 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.13 2020/06/15 21
 Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 --- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Clang.cpp
-@@ -523,8 +523,12 @@ static bool useFramePointerForTargetByDefault(const Ar
-     // XCore never wants frame pointers, regardless of OS.
-     // WebAssembly never wants frame pointers.
-     return false;
-+  case llvm::Triple::ppc:
-+  case llvm::Triple::ppc64:
-+  case llvm::Triple::ppc64le:
-   case llvm::Triple::riscv32:
-   case llvm::Triple::riscv64:
-+    // PowerPC's frame pointer is often an extra copy of the stack pointer.
-     return !areOptimizationsEnabled(Args);
-   default:
-     break;
-@@ -542,9 +546,6 @@ static bool useFramePointerForTargetByDefault(const Ar
-     case llvm::Triple::mips64el:
-     case llvm::Triple::mips:
-     case llvm::Triple::mipsel:
--    case llvm::Triple::ppc:
--    case llvm::Triple::ppc64:
--    case llvm::Triple::ppc64le:
-     case llvm::Triple::systemz:
-     case llvm::Triple::x86:
-     case llvm::Triple::x86_64:
-@@ -3870,6 +3871,19 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -1919,7 +1919,8 @@ void Clang::AddPPCTargetArgs(const ArgList &Args,
+         break;
+       }
+ 
+-      if (T.isMusl() || (T.isOSFreeBSD() && T.getOSMajorVersion() >= 13))
++      if ((T.isOSFreeBSD() && T.getOSMajorVersion() >= 13) ||
++          T.isOSOpenBSD() || T.isMusl())
+         ABIName = "elfv2";
+       else
+         ABIName = "elfv1";
+@@ -4421,6 +4422,19 @@ void Clang::ConstructJob(Compilation &C, const JobActi
      CmdArgs.push_back(A->getValue());
    }
  
@@ -78,7 +64,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    if (Arg *A = Args.getLastArg(options::OPT_fpcc_struct_return,
                                 options::OPT_freg_struct_return)) {
      if (TC.getArch() != llvm::Triple::x86) {
-@@ -3899,9 +3913,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4465,9 +4479,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -93,7 +79,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -4527,7 +4544,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5167,7 +5184,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -103,7 +89,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -4544,9 +4562,46 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5184,9 +5202,46 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                     false))
      CmdArgs.push_back(Args.MakeArgString("-mspeculative-load-hardening"));
  
@@ -151,7 +137,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    // Translate -mstackrealign
    if (Args.hasFlag(options::OPT_mstackrealign, options::OPT_mno_stackrealign,
                     false))
-@@ -5029,6 +5084,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5674,6 +5729,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");

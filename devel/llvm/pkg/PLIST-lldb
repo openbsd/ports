@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST-lldb,v 1.5 2020/03/22 00:58:36 jca Exp $
+@comment $OpenBSD: PLIST-lldb,v 1.6 2020/08/05 06:49:49 jca Exp $
 @conflict ${MODPY_PY_PREFIX}llvm-<6.0.1p3
 @conflict llvm-<6.0.1p19
 @bin bin/lldb
 @bin bin/lldb-argdumper
-@bin bin/lldb-mi
-@bin bin/lldb-test
 @bin bin/lldb-vscode
 include/lldb/
 include/lldb/API/
@@ -33,7 +31,6 @@ include/lldb/API/SBFileSpecList.h
 include/lldb/API/SBFrame.h
 include/lldb/API/SBFunction.h
 include/lldb/API/SBHostOS.h
-include/lldb/API/SBInitializerOptions.h
 include/lldb/API/SBInstruction.h
 include/lldb/API/SBInstructionList.h
 include/lldb/API/SBLanguageRuntime.h
@@ -130,9 +127,7 @@ include/lldb/Core/ModuleSpec.h
 include/lldb/Core/Opcode.h
 include/lldb/Core/PluginInterface.h
 include/lldb/Core/PluginManager.h
-include/lldb/Core/RangeMap.h
 include/lldb/Core/RichManglingContext.h
-include/lldb/Core/STLUtils.h
 include/lldb/Core/SearchFilter.h
 include/lldb/Core/Section.h
 include/lldb/Core/SourceManager.h
@@ -142,8 +137,6 @@ include/lldb/Core/StreamFile.h
 include/lldb/Core/StructuredDataImpl.h
 include/lldb/Core/ThreadSafeDenseMap.h
 include/lldb/Core/ThreadSafeDenseSet.h
-include/lldb/Core/ThreadSafeSTLMap.h
-include/lldb/Core/ThreadSafeSTLVector.h
 include/lldb/Core/ThreadSafeValue.h
 include/lldb/Core/UniqueCStringMap.h
 include/lldb/Core/UserSettingsController.h
@@ -178,7 +171,6 @@ include/lldb/DataFormatters/TypeCategoryMap.h
 include/lldb/DataFormatters/TypeFormat.h
 include/lldb/DataFormatters/TypeSummary.h
 include/lldb/DataFormatters/TypeSynthetic.h
-include/lldb/DataFormatters/TypeValidator.h
 include/lldb/DataFormatters/ValueObjectPrinter.h
 include/lldb/DataFormatters/VectorIterator.h
 include/lldb/DataFormatters/VectorType.h
@@ -191,7 +183,6 @@ include/lldb/Expression/ExpressionSourceCode.h
 include/lldb/Expression/ExpressionTypeSystemHelper.h
 include/lldb/Expression/ExpressionVariable.h
 include/lldb/Expression/FunctionCaller.h
-include/lldb/Expression/IRDynamicChecks.h
 include/lldb/Expression/IRExecutionUnit.h
 include/lldb/Expression/IRInterpreter.h
 include/lldb/Expression/IRMemoryMap.h
@@ -235,7 +226,6 @@ include/lldb/Host/SafeMachO.h
 include/lldb/Host/Socket.h
 include/lldb/Host/SocketAddress.h
 include/lldb/Host/StringConvert.h
-include/lldb/Host/Symbols.h
 include/lldb/Host/TaskPool.h
 include/lldb/Host/Terminal.h
 include/lldb/Host/ThreadLauncher.h
@@ -346,7 +336,6 @@ include/lldb/Symbol/Block.h
 include/lldb/Symbol/ClangASTContext.h
 include/lldb/Symbol/ClangASTImporter.h
 include/lldb/Symbol/ClangExternalASTSourceCallbacks.h
-include/lldb/Symbol/ClangExternalASTSourceCommon.h
 include/lldb/Symbol/ClangUtil.h
 include/lldb/Symbol/CompactUnwindInfo.h
 include/lldb/Symbol/CompileUnit.h
@@ -378,14 +367,11 @@ include/lldb/Symbol/UnwindPlan.h
 include/lldb/Symbol/UnwindTable.h
 include/lldb/Symbol/Variable.h
 include/lldb/Symbol/VariableList.h
-include/lldb/Symbol/VerifyDecl.h
 include/lldb/Target/
 include/lldb/Target/ABI.h
-include/lldb/Target/CPPLanguageRuntime.h
 include/lldb/Target/DynamicLoader.h
 include/lldb/Target/ExecutionContext.h
 include/lldb/Target/ExecutionContextScope.h
-include/lldb/Target/FileAction.h
 include/lldb/Target/InstrumentationRuntime.h
 include/lldb/Target/InstrumentationRuntimeStopInfo.h
 include/lldb/Target/JITLoader.h
@@ -396,13 +382,10 @@ include/lldb/Target/Memory.h
 include/lldb/Target/MemoryHistory.h
 include/lldb/Target/MemoryRegionInfo.h
 include/lldb/Target/ModuleCache.h
-include/lldb/Target/ObjCLanguageRuntime.h
 include/lldb/Target/OperatingSystem.h
 include/lldb/Target/PathMappingList.h
 include/lldb/Target/Platform.h
 include/lldb/Target/Process.h
-include/lldb/Target/ProcessInfo.h
-include/lldb/Target/ProcessLaunchInfo.h
 include/lldb/Target/ProcessStructReader.h
 include/lldb/Target/Queue.h
 include/lldb/Target/QueueItem.h
@@ -452,7 +435,6 @@ include/lldb/Utility/ArchSpec.h
 include/lldb/Utility/Args.h
 include/lldb/Utility/Baton.h
 include/lldb/Utility/Broadcaster.h
-include/lldb/Utility/CleanUp.h
 include/lldb/Utility/CompletionRequest.h
 include/lldb/Utility/Connection.h
 include/lldb/Utility/ConstString.h
@@ -468,7 +450,6 @@ include/lldb/Utility/FileSpec.h
 include/lldb/Utility/Flags.h
 include/lldb/Utility/IOObject.h
 include/lldb/Utility/Iterable.h
-include/lldb/Utility/JSON.h
 include/lldb/Utility/LLDBAssert.h
 include/lldb/Utility/Listener.h
 include/lldb/Utility/Log.h
@@ -486,7 +467,6 @@ include/lldb/Utility/State.h
 include/lldb/Utility/Status.h
 include/lldb/Utility/Stream.h
 include/lldb/Utility/StreamCallback.h
-include/lldb/Utility/StreamGDBRemote.h
 include/lldb/Utility/StreamString.h
 include/lldb/Utility/StreamTee.h
 include/lldb/Utility/StringExtractor.h
@@ -516,96 +496,6 @@ include/lldb/lldb-public.h
 include/lldb/lldb-types.h
 include/lldb/lldb-versioning.h
 @lib lib/liblldb.so.${LIBlldb_VERSION}
-@static-lib lib/liblldbBase.a
-@static-lib lib/liblldbBreakpoint.a
-@static-lib lib/liblldbCommands.a
-@static-lib lib/liblldbCore.a
-@static-lib lib/liblldbDataFormatters.a
-@static-lib lib/liblldbExpression.a
-@static-lib lib/liblldbHost.a
-@static-lib lib/liblldbInitialization.a
-@static-lib lib/liblldbInterpreter.a
-@static-lib lib/liblldbPluginABIMacOSX_arm.a
-@static-lib lib/liblldbPluginABIMacOSX_arm64.a
-@static-lib lib/liblldbPluginABIMacOSX_i386.a
-@static-lib lib/liblldbPluginABISysV_arm.a
-@static-lib lib/liblldbPluginABISysV_arm64.a
-@static-lib lib/liblldbPluginABISysV_hexagon.a
-@static-lib lib/liblldbPluginABISysV_i386.a
-@static-lib lib/liblldbPluginABISysV_mips.a
-@static-lib lib/liblldbPluginABISysV_mips64.a
-@static-lib lib/liblldbPluginABISysV_ppc.a
-@static-lib lib/liblldbPluginABISysV_ppc64.a
-@static-lib lib/liblldbPluginABISysV_s390x.a
-@static-lib lib/liblldbPluginABISysV_x86_64.a
-@static-lib lib/liblldbPluginAppleObjCRuntime.a
-@static-lib lib/liblldbPluginArchitectureArm.a
-@static-lib lib/liblldbPluginArchitectureMips.a
-@static-lib lib/liblldbPluginArchitecturePPC64.a
-@static-lib lib/liblldbPluginCPlusPlusLanguage.a
-@static-lib lib/liblldbPluginCXXItaniumABI.a
-@static-lib lib/liblldbPluginClangCommon.a
-@static-lib lib/liblldbPluginDisassemblerLLVM.a
-@static-lib lib/liblldbPluginDynamicLoaderDarwinKernel.a
-@static-lib lib/liblldbPluginDynamicLoaderHexagonDYLD.a
-@static-lib lib/liblldbPluginDynamicLoaderMacOSXDYLD.a
-@static-lib lib/liblldbPluginDynamicLoaderPosixDYLD.a
-@static-lib lib/liblldbPluginDynamicLoaderStatic.a
-@static-lib lib/liblldbPluginDynamicLoaderWindowsDYLD.a
-@static-lib lib/liblldbPluginExpressionParserClang.a
-@static-lib lib/liblldbPluginInstructionARM.a
-@static-lib lib/liblldbPluginInstructionARM64.a
-@static-lib lib/liblldbPluginInstructionMIPS.a
-@static-lib lib/liblldbPluginInstructionMIPS64.a
-@static-lib lib/liblldbPluginInstructionPPC64.a
-@static-lib lib/liblldbPluginInstrumentationRuntimeASan.a
-@static-lib lib/liblldbPluginInstrumentationRuntimeMainThreadChecker.a
-@static-lib lib/liblldbPluginInstrumentationRuntimeTSan.a
-@static-lib lib/liblldbPluginInstrumentationRuntimeUBSan.a
-@static-lib lib/liblldbPluginJITLoaderGDB.a
-@static-lib lib/liblldbPluginMemoryHistoryASan.a
-@static-lib lib/liblldbPluginOSPython.a
-@static-lib lib/liblldbPluginObjCLanguage.a
-@static-lib lib/liblldbPluginObjCPlusPlusLanguage.a
-@static-lib lib/liblldbPluginObjectContainerBSDArchive.a
-@static-lib lib/liblldbPluginObjectContainerMachOArchive.a
-@static-lib lib/liblldbPluginObjectFileBreakpad.a
-@static-lib lib/liblldbPluginObjectFileELF.a
-@static-lib lib/liblldbPluginObjectFileJIT.a
-@static-lib lib/liblldbPluginObjectFileMachO.a
-@static-lib lib/liblldbPluginObjectFilePECOFF.a
-@static-lib lib/liblldbPluginPlatformAndroid.a
-@static-lib lib/liblldbPluginPlatformFreeBSD.a
-@static-lib lib/liblldbPluginPlatformGDB.a
-@static-lib lib/liblldbPluginPlatformKalimba.a
-@static-lib lib/liblldbPluginPlatformLinux.a
-@static-lib lib/liblldbPluginPlatformMacOSX.a
-@static-lib lib/liblldbPluginPlatformNetBSD.a
-@static-lib lib/liblldbPluginPlatformOpenBSD.a
-@static-lib lib/liblldbPluginPlatformPOSIX.a
-@static-lib lib/liblldbPluginPlatformWindows.a
-@static-lib lib/liblldbPluginProcessElfCore.a
-@static-lib lib/liblldbPluginProcessGDBRemote.a
-@static-lib lib/liblldbPluginProcessMachCore.a
-@static-lib lib/liblldbPluginProcessMinidump.a
-@static-lib lib/liblldbPluginProcessUtility.a
-@static-lib lib/liblldbPluginRenderScriptRuntime.a
-@static-lib lib/liblldbPluginScriptInterpreterNone.a
-@static-lib lib/liblldbPluginScriptInterpreterPython.a
-@static-lib lib/liblldbPluginStructuredDataDarwinLog.a
-@static-lib lib/liblldbPluginSymbolFileBreakpad.a
-@static-lib lib/liblldbPluginSymbolFileDWARF.a
-@static-lib lib/liblldbPluginSymbolFileNativePDB.a
-@static-lib lib/liblldbPluginSymbolFilePDB.a
-@static-lib lib/liblldbPluginSymbolFileSymtab.a
-@static-lib lib/liblldbPluginSymbolVendorELF.a
-@static-lib lib/liblldbPluginSystemRuntimeMacOSX.a
-@static-lib lib/liblldbPluginUnwindAssemblyInstEmulation.a
-@static-lib lib/liblldbPluginUnwindAssemblyX86.a
-@static-lib lib/liblldbSymbol.a
-@static-lib lib/liblldbTarget.a
-@static-lib lib/liblldbUtility.a
-@static-lib lib/liblldbUtilityHelpers.a
 lib/python${MODPY_VERSION}/site-packages/lldb/
 lib/python${MODPY_VERSION}/site-packages/lldb/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}/
@@ -636,13 +526,11 @@ lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/libcxx.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/metrics.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/synth.py
 lib/python${MODPY_VERSION}/site-packages/lldb/lldb-argdumper
-lib/python${MODPY_VERSION}/site-packages/lldb/runtime/
-lib/python${MODPY_VERSION}/site-packages/lldb/runtime/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/runtime/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/lldb/runtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}in_call_stack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}symbolication.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/utils/in_call_stack.py
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/symbolication.py

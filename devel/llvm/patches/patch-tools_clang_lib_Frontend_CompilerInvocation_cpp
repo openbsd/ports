@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Frontend_CompilerInvocation_cpp,v 1.4 2020/03/05 00:50:00 gkoehler Exp $
+$OpenBSD: patch-tools_clang_lib_Frontend_CompilerInvocation_cpp,v 1.5 2020/08/05 06:49:49 jca Exp $
 
 Add RETGUARD to clang for amd64. This security mechanism uses per-function
 random cookies to protect access to function return instructions, with the
@@ -23,7 +23,7 @@ Add -msvr4-struct-return for powerpc.
 Index: tools/clang/lib/Frontend/CompilerInvocation.cpp
 --- tools/clang/lib/Frontend/CompilerInvocation.cpp.orig
 +++ tools/clang/lib/Frontend/CompilerInvocation.cpp
-@@ -1133,6 +1133,8 @@ static bool ParseCodeGenArgs(CodeGenOptions &Opts, Arg
+@@ -1218,6 +1218,8 @@ static bool ParseCodeGenArgs(CodeGenOptions &Opts, Arg
      Opts.StackAlignment = StackAlignment;
    }
  
@@ -32,7 +32,7 @@ Index: tools/clang/lib/Frontend/CompilerInvocation.cpp
    if (Arg *A = Args.getLastArg(OPT_mstack_probe_size)) {
      StringRef Val = A->getValue();
      unsigned StackProbeSize = Opts.StackProbeSize;
-@@ -1197,11 +1199,18 @@ static bool ParseCodeGenArgs(CodeGenOptions &Opts, Arg
+@@ -1279,11 +1281,18 @@ static bool ParseCodeGenArgs(CodeGenOptions &Opts, Arg
        Diags.Report(diag::err_drv_invalid_value) << A->getAsString(Args) << Val;
    }
  

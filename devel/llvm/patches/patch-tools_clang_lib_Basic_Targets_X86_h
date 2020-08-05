@@ -1,15 +1,15 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_X86_h,v 1.4 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_X86_h,v 1.5 2020/08/05 06:49:49 jca Exp $
 
 implement -msave-args in clang/llvm, like the sun did for gcc 
 
 Index: tools/clang/lib/Basic/Targets/X86.h
 --- tools/clang/lib/Basic/Targets/X86.h.orig
 +++ tools/clang/lib/Basic/Targets/X86.h
-@@ -106,6 +106,7 @@ class LLVM_LIBRARY_VISIBILITY X86TargetInfo : public T
+@@ -123,6 +123,7 @@ class LLVM_LIBRARY_VISIBILITY X86TargetInfo : public T
    bool HasMOVDIR64B = false;
    bool HasPTWRITE = false;
    bool HasINVPCID = false;
 +  bool HasSaveArgs = false;
+   bool HasENQCMD = false;
  
  protected:
-   /// Enumeration of all of the X86 CPUs supported by Clang.

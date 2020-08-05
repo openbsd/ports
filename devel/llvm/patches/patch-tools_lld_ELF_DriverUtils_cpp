@@ -1,44 +1,45 @@
-$OpenBSD: patch-tools_lld_ELF_DriverUtils_cpp,v 1.9 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_DriverUtils_cpp,v 1.10 2020/08/05 06:49:49 jca Exp $
 
 Handle the OpenBSD-style major/minor shared library version scheme.
 
 Index: tools/lld/ELF/DriverUtils.cpp
 --- tools/lld/ELF/DriverUtils.cpp.orig
 +++ tools/lld/ELF/DriverUtils.cpp
-@@ -219,9 +219,35 @@ Optional<std::string> elf::searchLibrary(StringRef Nam
-     return findFromSearchPaths(Name.substr(1));
- 
-   for (StringRef Dir : Config->SearchPaths) {
--    if (!Config->Static)
-+    if (!Config->Static) {
-       if (Optional<std::string> S = findFile(Dir, "lib" + Name + ".so"))
-         return S;
+@@ -227,9 +227,36 @@ Optional<std::string> findFromSearchPaths(StringRef pa
+ // search paths.
+ Optional<std::string> searchLibraryBaseName(StringRef name) {
+   for (StringRef dir : config->searchPaths) {
+-    if (!config->isStatic)
++    if (!config->isStatic) {
+       if (Optional<std::string> s = findFile(dir, "lib" + name + ".so"))
+         return s;
 +
++      // Handle OpenBSD-style maj/min shlib scheme
 +      llvm::SmallString<128> Scratch;
-+      const StringRef LibName = ("lib" + Name + ".so.").toStringRef(Scratch);
++      const StringRef LibName = ("lib" + name + ".so.").toStringRef(Scratch);
 +      int MaxMaj = -1, MaxMin = -1;
 +      std::error_code EC;
-+      for (fs::directory_iterator LI(Dir, EC), LE;
-+	   LI != LE; LI = LI.increment(EC)) {
++      for (fs::directory_iterator LI(dir, EC), LE;
++          LI != LE; LI = LI.increment(EC)) {
 +        StringRef FilePath = LI->path();
-+	StringRef FileName = path::filename(FilePath);
-+	if (!(FileName.startswith(LibName)))
-+	  continue;
-+	std::pair<StringRef, StringRef> MajMin =
-+	  FileName.substr(LibName.size()).split('.');
-+	int Maj, Min;
-+	if (MajMin.first.getAsInteger(10, Maj) || Maj < 0)
-+	  continue;
-+	if (MajMin.second.getAsInteger(10, Min) || Min < 0)
-+	  continue;
-+	if (Maj > MaxMaj)
-+	  MaxMaj = Maj, MaxMin = Min;
-+	if (MaxMaj == Maj && Min > MaxMin)
-+	  MaxMin = Min;
++        StringRef FileName = path::filename(FilePath);
++        if (!(FileName.startswith(LibName)))
++          continue;
++        std::pair<StringRef, StringRef> MajMin =
++          FileName.substr(LibName.size()).split('.');
++        int Maj, Min;
++        if (MajMin.first.getAsInteger(10, Maj) || Maj < 0)
++          continue;
++        if (MajMin.second.getAsInteger(10, Min) || Min < 0)
++          continue;
++        if (Maj > MaxMaj)
++          MaxMaj = Maj, MaxMin = Min;
++        if (MaxMaj == Maj && Min > MaxMin)
++          MaxMin = Min;
 +      }
 +      if (MaxMaj >= 0)
-+	return findFile(Dir, LibName + Twine(MaxMaj) + "." + Twine(MaxMin));
++        return findFile(dir, LibName + Twine(MaxMaj) + "." + Twine(MaxMin));
 +    }
-     if (Optional<std::string> S = findFile(Dir, "lib" + Name + ".a"))
-       return S;
+     if (Optional<std::string> s = findFile(dir, "lib" + name + ".a"))
+       return s;
    }

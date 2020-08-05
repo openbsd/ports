@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCTargetMachine_cpp,v 1.1 2020/06/15 21:34:58 gkoehler Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCTargetMachine_cpp,v 1.2 2020/08/05 06:49:48 jca Exp $
 
 Switch Powerpc64 Big Endian to ELFv2 on OpenBSD.
 
 Index: lib/Target/PowerPC/PPCTargetMachine.cpp
 --- lib/Target/PowerPC/PPCTargetMachine.cpp.orig
 +++ lib/Target/PowerPC/PPCTargetMachine.cpp
-@@ -199,6 +199,8 @@ static PPCTargetMachine::PPCABI computeTargetABI(const
+@@ -215,6 +215,8 @@ static PPCTargetMachine::PPCABI computeTargetABI(const
    case Triple::ppc64le:
      return PPCTargetMachine::PPC_ABI_ELFv2;
    case Triple::ppc64:

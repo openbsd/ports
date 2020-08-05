@@ -1,11 +1,21 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_OSTargets_h,v 1.1 2020/06/15 21:34:58 gkoehler Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_OSTargets_h,v 1.2 2020/08/05 06:49:49 jca Exp $
 
-Powerpc64 should use the same _mcount profiling as powerpc 32bit.
+- XXX no comment
+- Powerpc64 should use the same _mcount profiling as powerpc 32bit.
 
 Index: tools/clang/lib/Basic/Targets/OSTargets.h
 --- tools/clang/lib/Basic/Targets/OSTargets.h.orig
 +++ tools/clang/lib/Basic/Targets/OSTargets.h
-@@ -446,6 +446,7 @@ class LLVM_LIBRARY_VISIBILITY OpenBSDTargetInfo : publ
+@@ -465,6 +465,8 @@ class LLVM_LIBRARY_VISIBILITY OpenBSDTargetInfo : publ
+ public:
+   OpenBSDTargetInfo(const llvm::Triple &Triple, const TargetOptions &Opts)
+       : OSTargetInfo<Target>(Triple, Opts) {
++    this->IntMaxType = TargetInfo::SignedLongLong;
++    this->Int64Type = TargetInfo::SignedLongLong;
+     switch (Triple.getArch()) {
+     case llvm::Triple::x86:
+     case llvm::Triple::x86_64:
+@@ -476,6 +478,7 @@ class LLVM_LIBRARY_VISIBILITY OpenBSDTargetInfo : publ
      case llvm::Triple::mips64:
      case llvm::Triple::mips64el:
      case llvm::Triple::ppc:

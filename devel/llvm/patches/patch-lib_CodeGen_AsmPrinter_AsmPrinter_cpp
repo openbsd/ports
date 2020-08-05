@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.9 2019/07/07 14:04:07 jca Exp $
+$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.10 2020/08/05 06:49:48 jca Exp $
 
 - Use int3 trap padding between functions instead of trapsleds with a leading jump.
 - Emit trap alignment between basic blocks that are unrechable via
@@ -8,7 +8,7 @@ $OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.9 2019/07/07 14:04:07 
 Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
 --- lib/CodeGen/AsmPrinter/AsmPrinter.cpp.orig
 +++ lib/CodeGen/AsmPrinter/AsmPrinter.cpp
-@@ -653,7 +653,7 @@ void AsmPrinter::EmitFunctionHeader() {
+@@ -673,7 +673,7 @@ void AsmPrinter::EmitFunctionHeader() {
  
    EmitLinkage(&F, CurrentFnSym);
    if (MAI->hasFunctionAlignment())
@@ -17,32 +17,29 @@ Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  
    if (MAI->hasDotTypeDotSizeDirective())
      OutStreamer->EmitSymbolAttribute(CurrentFnSym, MCSA_ELF_TypeFunction);
-@@ -2112,6 +2112,33 @@ void AsmPrinter::EmitAlignment(unsigned NumBits, const
+@@ -2208,6 +2208,30 @@ void AsmPrinter::EmitAlignment(Align Alignment, const 
  }
  
  //===----------------------------------------------------------------------===//
 +/// EmitTrapAlignment - Emit an alignment directive to the specified power of
 +/// two boundary, but call EmitTrapToAlignment to fill with Trap instructions
 +/// if the Target implements EmitTrapToAlignment.
-+void AsmPrinter::EmitTrapAlignment(unsigned NumBits, const GlobalObject *GV) const {
++void AsmPrinter::EmitTrapAlignment(Align Alignment, const GlobalObject *GV) const {
 +  if (GV)
-+    NumBits = getGVAlignmentLog2(GV, GV->getParent()->getDataLayout(), NumBits);
++    Alignment = getGVAlignment(GV, GV->getParent()->getDataLayout(), Alignment);
 +
-+  if (NumBits == 0) return;   // 1-byte aligned: no need to emit alignment.
++  if (Alignment == Align::None()) return;   // 1-byte aligned: no need to emit alignment.
 +
-+  assert(NumBits <
-+             static_cast<unsigned>(std::numeric_limits<unsigned>::digits) &&
-+         "undefined behavior");
-+  EmitTrapToAlignment(NumBits);
++  EmitTrapToAlignment(Alignment);
 +}
 +
 +//===----------------------------------------------------------------------===//
 +/// EmitTrapToAlignment - Emit an alignment directive to the specified power
 +/// of two boundary. This default implementation calls EmitCodeAlignment on
 +/// the OutStreamer, but can be overridden by Target implementations.
-+void AsmPrinter::EmitTrapToAlignment(unsigned NumBits) const {
-+  if (NumBits == 0) return;
-+  OutStreamer->EmitCodeAlignment(1u << NumBits);
++void AsmPrinter::EmitTrapToAlignment(Align Alignment) const {
++  if (Alignment == Align::None()) return;
++  OutStreamer->EmitCodeAlignment(Alignment.value());
 +}
 +
 +
@@ -51,22 +48,23 @@ Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  // Constant emission.
  //===----------------------------------------------------------------------===//
  
-@@ -2879,11 +2906,15 @@ void AsmPrinter::EmitBasicBlockStart(const MachineBasi
+@@ -2969,10 +2993,17 @@ void AsmPrinter::EmitBasicBlockStart(const MachineBasi
      }
    }
  
--  // Emit an alignment directive for this block, if needed.
--  if (unsigned Align = MBB.getAlignment())
--    EmitAlignment(Align);
-   MCCodePaddingContext Context;
-   setupCodePaddingContext(MBB, Context);
-+  // Emit an alignment directive for this block, if needed.
-+  if (unsigned Align = MBB.getAlignment()) {
-+    if (Context.IsBasicBlockReachableViaFallthrough)
-+      EmitAlignment(Align);
++  bool isReachableViaFallthrough =
++    std::find(MBB.pred_begin(), MBB.pred_end(), MBB.getPrevNode()) !=
++      MBB.pred_end();
+   // Emit an alignment directive for this block, if needed.
+   const Align Alignment = MBB.getAlignment();
+-  if (Alignment != Align::None())
+-    EmitAlignment(Alignment);
++  if (Alignment != Align::None()) {
++    if (isReachableViaFallthrough)
++      EmitAlignment(Alignment);
 +    else
-+      EmitTrapAlignment(Align);
++      EmitTrapAlignment(Alignment);
 +  }
-   OutStreamer->EmitCodePaddingBasicBlockStart(Context);
  
    // If the block has its address taken, emit any labels that were used to
+   // reference the block.  It is possible that there is more than one label

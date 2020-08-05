@@ -1,15 +1,15 @@
-$OpenBSD: patch-lib_Target_X86_X86AsmPrinter_h,v 1.4 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86AsmPrinter_h,v 1.5 2020/08/05 06:49:48 jca Exp $
 
 Use int3 trap padding between functions instead of trapsleds with a leading jump.
 
 Index: lib/Target/X86/X86AsmPrinter.h
 --- lib/Target/X86/X86AsmPrinter.h.orig
 +++ lib/Target/X86/X86AsmPrinter.h
-@@ -118,6 +118,8 @@ class LLVM_LIBRARY_VISIBILITY X86AsmPrinter : public A
+@@ -129,6 +129,8 @@ class LLVM_LIBRARY_VISIBILITY X86AsmPrinter : public A
  
    void EmitInstruction(const MachineInstr *MI) override;
  
-+  void EmitTrapToAlignment(unsigned NumBits) const override;
++  void EmitTrapToAlignment(Align Alignment) const override;
 +
    void EmitBasicBlockEnd(const MachineBasicBlock &MBB) override {
      AsmPrinter::EmitBasicBlockEnd(MBB);

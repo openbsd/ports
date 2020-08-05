@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.13 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.14 2020/08/05 06:49:49 jca Exp $
 
 - Enable PIE by default.
 - XXX retpoline, EM_SPARCV9, ???
@@ -6,7 +6,7 @@ $OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.13 2019/07/06 15:06:36 jca Exp $
 Index: tools/lld/ELF/Driver.cpp
 --- tools/lld/ELF/Driver.cpp.orig
 +++ tools/lld/ELF/Driver.cpp
-@@ -131,6 +131,7 @@ static std::tuple<ELFKind, uint16_t, uint8_t> parseEmu
+@@ -139,6 +139,7 @@ static std::tuple<ELFKind, uint16_t, uint8_t> parseEmu
            .Cases("elf32ltsmip", "elf32ltsmipn32", {ELF32LEKind, EM_MIPS})
            .Case("elf32lriscv", {ELF32LEKind, EM_RISCV})
            .Cases("elf32ppc", "elf32ppclinux", {ELF32BEKind, EM_PPC})
@@ -14,49 +14,96 @@ Index: tools/lld/ELF/Driver.cpp
            .Case("elf64btsmip", {ELF64BEKind, EM_MIPS})
            .Case("elf64ltsmip", {ELF64LEKind, EM_MIPS})
            .Case("elf64lriscv", {ELF64LEKind, EM_RISCV})
-@@ -352,7 +353,8 @@ static bool isKnownZFlag(StringRef S) {
-          S == "keep-text-section-prefix" || S == "lazy" || S == "muldefs" ||
-          S == "nocombreloc" || S == "nocopyreloc" || S == "nodefaultlib" ||
-          S == "nodelete" || S == "nodlopen" || S == "noexecstack" ||
--         S == "nokeep-text-section-prefix" || S == "norelro" || S == "notext" ||
-+         S == "nokeep-text-section-prefix" || S == "norelro" ||
-+         S == "noretpolineplt" || S == "notext" ||
-          S == "now" || S == "origin" || S == "relro" || S == "retpolineplt" ||
-          S == "rodynamic" || S == "text" || S == "wxneeded" ||
-          S.startswith("max-page-size=") || S.startswith("stack-size=");
-@@ -795,7 +797,8 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
-   Config->IgnoreDataAddressEquality =
-       Args.hasArg(OPT_ignore_data_address_equality);
-   Config->IgnoreFunctionAddressEquality =
--      Args.hasArg(OPT_ignore_function_address_equality);
-+      Args.hasFlag(OPT_ignore_function_address_equality,
+@@ -417,7 +418,8 @@ static bool isKnownZFlag(StringRef s) {
+          s == "nocombreloc" || s == "nocopyreloc" || s == "nodefaultlib" ||
+          s == "nodelete" || s == "nodlopen" || s == "noexecstack" ||
+          s == "nognustack" || s == "nokeep-text-section-prefix" ||
+-         s == "norelro" || s == "noseparate-code" || s == "notext" ||
++         s == "norelro" || s == "noretpolineplt" ||
++         s == "noseparate-code" || s == "notext" ||
+          s == "now" || s == "origin" || s == "pac-plt" || s == "relro" ||
+          s == "retpolineplt" || s == "rodynamic" || s == "shstk" ||
+          s == "text" || s == "undefs" || s == "wxneeded" ||
+@@ -889,7 +891,8 @@ static void readConfigs(opt::InputArgList &args) {
+   config->ignoreDataAddressEquality =
+       args.hasArg(OPT_ignore_data_address_equality);
+   config->ignoreFunctionAddressEquality =
+-      args.hasArg(OPT_ignore_function_address_equality);
++      args.hasFlag(OPT_ignore_function_address_equality,
 +      OPT_no_ignore_function_address_equality, true);
-   Config->Init = Args.getLastArgValue(OPT_init, "_init");
-   Config->LTOAAPipeline = Args.getLastArgValue(OPT_lto_aa_pipeline);
-   Config->LTODebugPassManager = Args.hasArg(OPT_lto_debug_pass_manager);
-@@ -818,7 +821,12 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
-   Config->Optimize = args::getInteger(Args, OPT_O, 1);
-   Config->OrphanHandling = getOrphanHandling(Args);
-   Config->OutputFile = Args.getLastArgValue(OPT_o);
+   config->init = args.getLastArgValue(OPT_init, "_init");
+   config->ltoAAPipeline = args.getLastArgValue(OPT_lto_aa_pipeline);
+   config->ltoCSProfileGenerate = args.hasArg(OPT_lto_cs_profile_generate);
+@@ -920,7 +923,12 @@ static void readConfigs(opt::InputArgList &args) {
+   config->orphanHandling = getOrphanHandling(args);
+   config->outputFile = args.getLastArgValue(OPT_o);
+   config->pacPlt = hasZOption(args, "pac-plt");
 +#ifdef __OpenBSD__
-+  Config->Pie = Args.hasFlag(OPT_pie, OPT_no_pie,
-+      !Args.hasArg(OPT_shared) && !Args.hasArg(OPT_relocatable));
++  config->pie = args.hasFlag(OPT_pie, OPT_no_pie,
++      !args.hasArg(OPT_shared) && !args.hasArg(OPT_relocatable));
 +#else
-   Config->Pie = Args.hasFlag(OPT_pie, OPT_no_pie, false);
+   config->pie = args.hasFlag(OPT_pie, OPT_no_pie, false);
 +#endif
-   Config->PrintIcfSections =
-       Args.hasFlag(OPT_print_icf_sections, OPT_no_print_icf_sections, false);
-   Config->PrintGcSections =
-@@ -881,7 +889,11 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
-   Config->ZNow = getZFlag(Args, "now", "lazy", false);
-   Config->ZOrigin = hasZOption(Args, "origin");
-   Config->ZRelro = getZFlag(Args, "relro", "norelro", true);
--  Config->ZRetpolineplt = hasZOption(Args, "retpolineplt");
+   config->printIcfSections =
+       args.hasFlag(OPT_print_icf_sections, OPT_no_print_icf_sections, false);
+   config->printGcSections =
+@@ -985,7 +993,11 @@ static void readConfigs(opt::InputArgList &args) {
+   config->zNow = getZFlag(args, "now", "lazy", false);
+   config->zOrigin = hasZOption(args, "origin");
+   config->zRelro = getZFlag(args, "relro", "norelro", true);
+-  config->zRetpolineplt = hasZOption(args, "retpolineplt");
 +#ifndef __OpenBSD__
-+  Config->ZRetpolineplt = getZFlag(Args, "retpolineplt", "noretpolineplt", false);
++  config->zRetpolineplt = getZFlag(args, "retpolineplt", "noretpolineplt", false);
 +#else
-+  Config->ZRetpolineplt = getZFlag(Args, "retpolineplt", "noretpolineplt", true);
++  config->zRetpolineplt = getZFlag(args, "retpolineplt", "noretpolineplt", true);
 +#endif
-   Config->ZRodynamic = hasZOption(Args, "rodynamic");
-   Config->ZStackSize = args::getZOptionValue(Args, OPT_z, "stack-size", 0);
-   Config->ZText = getZFlag(Args, "text", "notext", true);
+   config->zRodynamic = hasZOption(args, "rodynamic");
+   config->zSeparate = getZSeparate(args);
+   config->zShstk = hasZOption(args, "shstk");
+@@ -1297,7 +1309,7 @@ void LinkerDriver::inferMachineType() {
+ }
+ 
+ // Parse -z max-page-size=<value>. The default value is defined by
+-// each target.
++// each target. Is set to 1 if given nmagic or omagic.
+ static uint64_t getMaxPageSize(opt::InputArgList &args) {
+   uint64_t val = args::getZOptionValue(args, OPT_z, "max-page-size",
+                                        target->defaultMaxPageSize);
+@@ -1312,7 +1324,7 @@ static uint64_t getMaxPageSize(opt::InputArgList &args
+ }
+ 
+ // Parse -z common-page-size=<value>. The default value is defined by
+-// each target.
++// each target. Is set to 1 if given nmagic or omagic.
+ static uint64_t getCommonPageSize(opt::InputArgList &args) {
+   uint64_t val = args::getZOptionValue(args, OPT_z, "common-page-size",
+                                        target->defaultCommonPageSize);
+@@ -1329,6 +1341,16 @@ static uint64_t getCommonPageSize(opt::InputArgList &a
+   return val;
+ }
+ 
++// Parse -z max-page-size=<value>. The default value is defined by
++// each target.
++static uint64_t getRealMaxPageSize(opt::InputArgList &args) {
++  uint64_t val = args::getZOptionValue(args, OPT_z, "max-page-size",
++                                       target->defaultMaxPageSize);
++  if (!isPowerOf2_64(val))
++    error("max-page-size: value isn't a power of 2");
++  return val;
++}
++
+ // Parses -image-base option.
+ static Optional<uint64_t> getImageBase(opt::InputArgList &args) {
+   // Because we are using "Config->maxPageSize" here, this function has to be
+@@ -1935,6 +1957,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
+   // optimizations such as DATA_SEGMENT_ALIGN in linker scripts. LLD's use of it
+   // is limited to writing trap instructions on the last executable segment.
+   config->commonPageSize = getCommonPageSize(args);
++  // textAlignPageSize is the alignment page size to use when aligning PT_LOAD
++  // sections. This is the same as maxPageSize except under -omagic, where data
++  // sections are non-aligned (maxPageSize set to 1) but text sections are aligned
++  // to the target page size.
++  config->textAlignPageSize = config->omagic ? getRealMaxPageSize(args) : config->maxPageSize;
+ 
+   config->imageBase = getImageBase(args);
+ 

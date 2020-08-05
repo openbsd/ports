@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_Mips_MipsFrameLowering_cpp,v 1.1 2020/01/07 22:59:43 jca Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsFrameLowering_cpp,v 1.2 2020/08/05 06:49:48 jca Exp $
 
 Add retguard for octeon/mips64.
 
 Index: lib/Target/Mips/MipsFrameLowering.cpp
 --- lib/Target/Mips/MipsFrameLowering.cpp.orig
 +++ lib/Target/Mips/MipsFrameLowering.cpp
-@@ -15,6 +15,7 @@
+@@ -14,6 +14,7 @@
  #include "MCTargetDesc/MipsBaseInfo.h"
  #include "MipsInstrInfo.h"
  #include "MipsMachineFunction.h"
@@ -13,7 +13,7 @@ Index: lib/Target/Mips/MipsFrameLowering.cpp
  #include "MipsTargetMachine.h"
  #include "llvm/CodeGen/MachineFrameInfo.h"
  #include "llvm/CodeGen/MachineFunction.h"
-@@ -123,6 +124,10 @@ uint64_t MipsFrameLowering::estimateStackSize(const Ma
+@@ -122,6 +123,10 @@ uint64_t MipsFrameLowering::estimateStackSize(const Ma
      if (MFI.getObjectOffset(I) > 0)
        Size += MFI.getObjectSize(I);
  
@@ -24,7 +24,7 @@ Index: lib/Target/Mips/MipsFrameLowering.cpp
    // Conservatively assume all callee-saved registers will be saved.
    for (const MCPhysReg *R = TRI.getCalleeSavedRegs(&MF); *R; ++R) {
      unsigned RegSize = TRI.getSpillSize(*TRI.getMinimalPhysRegClass(*R));
-@@ -149,4 +154,8 @@ eliminateCallFramePseudoInstr(MachineFunction &MF, Mac
+@@ -148,4 +153,8 @@ eliminateCallFramePseudoInstr(MachineFunction &MF, Mac
    }
  
    return MBB.erase(I);

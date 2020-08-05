@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.8 2019/07/09 13:21:37 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.9 2020/08/05 06:49:48 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -25,7 +25,7 @@ $OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.8 2019/07/09 13:21:37 jca 
 Index: lib/Target/X86/X86MCInstLower.cpp
 --- lib/Target/X86/X86MCInstLower.cpp.orig
 +++ lib/Target/X86/X86MCInstLower.cpp
-@@ -1786,6 +1786,48 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
+@@ -2226,6 +2226,50 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
          MCInstBuilder(X86::MOV64rr).addReg(X86::R10).addReg(X86::RAX));
      return;
  
@@ -33,7 +33,9 @@ Index: lib/Target/X86/X86MCInstLower.cpp
 +    // Make a symbol for the end of the trapsled and emit a jump to it
 +    MCSymbol *RGSuccSym = OutContext.createTempSymbol();
 +    const MCExpr *RGSuccExpr = MCSymbolRefExpr::create(RGSuccSym, OutContext);
-+    EmitAndCountInstruction(MCInstBuilder(X86::JE_1).addExpr(RGSuccExpr));
++    EmitAndCountInstruction(MCInstBuilder(X86::JCC_1)
++                              .addExpr(RGSuccExpr)
++                              .addImm(X86::COND_E));
 +
 +    // Emit at least two trap instructions
 +    EmitAndCountInstruction(MCInstBuilder(X86::INT3));
@@ -74,14 +76,14 @@ Index: lib/Target/X86/X86MCInstLower.cpp
    case X86::SEH_PushReg:
    case X86::SEH_SaveReg:
    case X86::SEH_SaveXMM:
-@@ -2223,4 +2265,10 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
+@@ -2657,4 +2701,10 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
    }
  
    EmitAndCountInstruction(TmpInst);
 +}
 +
 +/// Emit Trap bytes to the specified power of two alignment
-+void X86AsmPrinter::EmitTrapToAlignment(unsigned NumBits) const {
-+  if (NumBits == 0) return;
-+  OutStreamer->EmitValueToAlignment(1u << NumBits, 0xCC, 1);
++void X86AsmPrinter::EmitTrapToAlignment(Align Alignment) const {
++  if (Alignment == Align::None()) return;
++  OutStreamer->EmitValueToAlignment(Alignment.value(), 0xCC, 1);
  }

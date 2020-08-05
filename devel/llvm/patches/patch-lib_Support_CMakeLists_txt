@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Support_CMakeLists_txt,v 1.1 2019/12/25 22:31:01 jca Exp $
+$OpenBSD: patch-lib_Support_CMakeLists_txt,v 1.2 2020/08/05 06:49:48 jca Exp $
 
 For upstream:
 bogus dep on all headers in ${Backtrace_INCLUDE_DIRS} ie /usr/local/include.
@@ -6,11 +6,11 @@ bogus dep on all headers in ${Backtrace_INCLUDE_DIRS} ie /usr/local/include.
 Index: lib/Support/CMakeLists.txt
 --- lib/Support/CMakeLists.txt.orig
 +++ lib/Support/CMakeLists.txt
-@@ -174,7 +174,6 @@ add_llvm_library(LLVMSupport
+@@ -185,7 +185,6 @@ add_llvm_component_library(LLVMSupport
    Windows
    ${LLVM_MAIN_INCLUDE_DIR}/llvm/ADT
    ${LLVM_MAIN_INCLUDE_DIR}/llvm/Support
 -  ${Backtrace_INCLUDE_DIRS}
-   LINK_LIBS ${system_libs} ${delayload_flags}
+   LINK_LIBS ${system_libs} ${delayload_flags} ${Z3_LINK_FILES}
    )
  
