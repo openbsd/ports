@@ -1,10 +1,9 @@
-#	$OpenBSD: Makefile,v 1.20 2020/07/03 21:12:39 sthen Exp $
+#	$OpenBSD: Makefile,v 1.21 2020/08/05 08:13:36 jca Exp $
 
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
-DISTNAME=	include-what-you-use-0.12.src
+DISTNAME=	include-what-you-use-0.14.src
 PKGNAME=	${DISTNAME:.src=}
-REVISION=	2
 
 HOMEPAGE=	https://include-what-you-use.org
 MASTER_SITES=	${HOMEPAGE}/downloads/
@@ -16,7 +15,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c m pthread
-LLVM_V=		8.0.1
+LLVM_V=		10.0.0
 BUILD_DEPENDS=	devel/llvm>=${LLVM_V}
 RUN_DEPENDS=	devel/llvm>=${LLVM_V}
 

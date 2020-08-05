@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/07/06 15:07:55 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/08/05 08:13:37 jca Exp $
 bin/fix_includes.py
 @bin bin/include-what-you-use
 bin/iwyu_tool.py
+@man man/man1/include-what-you-use.1
 share/doc/include-what-you-use/
 share/doc/include-what-you-use/IWYUMappings.md
 share/doc/include-what-you-use/IWYUPragmas.md
+share/doc/include-what-you-use/IWYUStyle.md
 share/doc/include-what-you-use/README.md
 share/doc/include-what-you-use/WhatIsAUse.md
 share/doc/include-what-you-use/WhyIWYU.md
@@ -22,5 +24,6 @@ share/include-what-you-use/gcc.symbols.imp
 share/include-what-you-use/iwyu.gcc.imp
 share/include-what-you-use/libcxx.imp
 share/include-what-you-use/qt4.imp
+share/include-what-you-use/qt5_11.imp
 share/include-what-you-use/qt5_4.imp
 share/include-what-you-use/stl.c.headers.imp
