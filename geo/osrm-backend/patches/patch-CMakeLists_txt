@@ -1,8 +1,17 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/07/06 06:00:02 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/08/05 08:47:23 bentley Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -325,7 +325,7 @@ if (ENABLE_SANITIZER)
+ endif()
+ 
+ # Configuring compilers
+-set(OSRM_WARNING_FLAGS "-Werror=all -Werror=extra  -Werror=uninitialized -Werror=unreachable-code -Werror=unused-variable -Werror=unreachable-code -Wno-error=cpp -Wpedantic")
++set(OSRM_WARNING_FLAGS "-Werror=extra  -Werror=uninitialized -Werror=unreachable-code -Werror=unused-variable -Werror=unreachable-code -Wno-error=cpp -Wpedantic")
+ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OSRM_WARNING_FLAGS} -Werror=strict-overflow=2 -Wno-error=unused-local-typedef -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fPIC -fcolor-diagnostics -ftemplate-depth=1024 -Wno-unused-command-line-argument")
+ elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 @@ -379,7 +379,7 @@ if("${LINKER_VERSION}" MATCHES "GNU gold" OR "${LINKER
      set(LINKER_FLAGS "${LINKER_FLAGS} -Wl,--gc-sections")
    endif()
