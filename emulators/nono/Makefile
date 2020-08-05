@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/22 14:53:59 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/05 21:07:04 cwen Exp $
+
+# Big endian support is not complete as of 0.1.0
+NOT_FOR_ARCHS=		${BE_ARCHS}
 
 COMMENT=		LUNA-I emulator
 
