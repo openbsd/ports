@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.38 2019/08/15 06:41:02 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2020/08/06 16:22:06 landry Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
-XFCE_VERSION=	0.2.7
-XFCE_GOODIE=	tumbler
+XFCE_VERSION=	0.2.9
+XFCE_PROJECT=	tumbler
 
 SHARED_LIBS+=	tumbler-1 0.0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xext Xrender avcodec avformat avutil bz2 c cairo
+WANTLIB += X11 Xext Xrender aom avcodec avformat avutil bz2 c cairo
 WANTLIB += crypto curl dav1d expat ffi ffmpegthumbnailer
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gsf-1 gthread-2.0 jpeg
@@ -19,7 +19,7 @@ WANTLIB += poppler-glib pthread ssl swscale tiff
 WANTLIB += vorbis xcb xcb-render xcb-shm xml2 z iconv intl
 WANTLIB += ${COMPILER_LIBCXX} ass avfilter avresample fribidi
 WANTLIB += gsm mp3lame opus postproc speex swresample vorbisenc
-WANTLIB += vpx x264 x265 xvidcore theoradec theoraenc
+WANTLIB += vpx x264 x265 xvidcore theoradec theoraenc zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 

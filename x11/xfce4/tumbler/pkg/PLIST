@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/07/21 09:30:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/08/06 16:22:06 landry Exp $
 include/tumbler-1/
 include/tumbler-1/tumbler/
 include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h
@@ -24,16 +24,16 @@ lib/pkgconfig/tumbler-1.pc
 lib/tumbler-1/
 lib/tumbler-1/plugins/
 lib/tumbler-1/plugins/cache/
-lib/tumbler-1/plugins/cache/tumbler-cache-plugin.so
-lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
-lib/tumbler-1/plugins/tumbler-cover-thumbnailer.so
-lib/tumbler-1/plugins/tumbler-desktop-thumbnailer.so
-lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.so
-lib/tumbler-1/plugins/tumbler-font-thumbnailer.so
-lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.so
-lib/tumbler-1/plugins/tumbler-odf-thumbnailer.so
-lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.so
-lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.so
+@so lib/tumbler-1/plugins/cache/tumbler-cache-plugin.so
+@so lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
+@so lib/tumbler-1/plugins/tumbler-cover-thumbnailer.so
+@so lib/tumbler-1/plugins/tumbler-desktop-thumbnailer.so
+@so lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.so
+@so lib/tumbler-1/plugins/tumbler-font-thumbnailer.so
+@so lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.so
+@so lib/tumbler-1/plugins/tumbler-odf-thumbnailer.so
+@so lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.so
+@so lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.so
 @bin lib/tumbler-1/tumblerd
 share/dbus-1/
 share/dbus-1/services/
@@ -119,6 +119,7 @@ share/locale/ro/LC_MESSAGES/tumbler.mo
 share/locale/ru/LC_MESSAGES/tumbler.mo
 share/locale/si/LC_MESSAGES/tumbler.mo
 share/locale/sk/LC_MESSAGES/tumbler.mo
+share/locale/sl/LC_MESSAGES/tumbler.mo
 share/locale/sq/LC_MESSAGES/tumbler.mo
 share/locale/sr/LC_MESSAGES/tumbler.mo
 share/locale/sv/LC_MESSAGES/tumbler.mo
