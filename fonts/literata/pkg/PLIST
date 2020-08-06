@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/06 09:09:15 bentley Exp $
+share/doc/literata/
+share/doc/literata/OFL.txt
+share/fonts/
+@fontdir share/fonts/literata/
+share/fonts/literata/Literata-Bold.ttf
+share/fonts/literata/Literata-BoldItalic.ttf
+share/fonts/literata/Literata-Italic.ttf
+share/fonts/literata/Literata-Medium.ttf
+share/fonts/literata/Literata-MediumItalic.ttf
+share/fonts/literata/Literata-Regular.ttf
+share/fonts/literata/Literata-Semibold.ttf
+share/fonts/literata/Literata-SemiboldItalic.ttf
