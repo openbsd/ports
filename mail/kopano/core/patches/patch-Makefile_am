@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_am,v 1.7 2020/07/29 13:04:05 robert Exp $
+$OpenBSD: patch-Makefile_am,v 1.8 2020/08/06 06:03:52 robert Exp $
 
 Index: Makefile.am
 --- Makefile.am.orig
@@ -29,12 +29,30 @@ Index: Makefile.am
  libkcutil_la_SYFLAGS = -Wl,--version-script=common/libkcutil.sym
  libkcutil_la_LDFLAGS = ${AM_LDFLAGS} -no-undefined \
  	${libkcutil_la_SYFLAGS${NO_VSYM}}
-@@ -795,7 +796,7 @@ tests_readflag_LDADD = libmapi.la libkcutil.la
+@@ -777,11 +778,11 @@ mapitime_LDADD = ${clock_LIBS} libmapi.la libkcutil.la
+ tests_ablookup_SOURCES = tests/ablookup.cpp
+ tests_ablookup_LDADD = libmapi.la libkcutil.la
+ tests_htmltext_SOURCES = tests/htmltext.cpp
+-tests_htmltext_LDADD = libkcutil.la
++tests_htmltext_LDADD = libkcutil.la $(INTL_LIBS)
+ tests_chtmltotextparsertest_SOURCES = tests/chtmltotextparsertest.cpp
+-tests_chtmltotextparsertest_LDADD = libkcutil.la
++tests_chtmltotextparsertest_LDADD = libkcutil.la $(INTL_LIBS)
+ tests_rtfhtmltest_SOURCES = tests/rtfhtmltest.cpp
+-tests_rtfhtmltest_LDADD = libkcutil.la
++tests_rtfhtmltest_LDADD = libkcutil.la $(INTL_LIBS)
+ tests_imtomapi_SOURCES = tests/imtomapi.cpp tests/tbi.hpp
+ tests_imtomapi_LDADD = libkcinetmapi.la libmapi.la libkcutil.la
+ tests_kc_335_SOURCES = tests/kc-335.cpp tests/tbi.hpp
+@@ -793,9 +794,9 @@ tests_mapialloctime_LDADD = libmapi.la ${clock_LIBS}
+ tests_readflag_SOURCES = tests/readflag.cpp tests/tbi.hpp
+ tests_readflag_LDADD = libmapi.la libkcutil.la
  tests_ustring_SOURCES = tests/ustring.cpp
- tests_ustring_LDADD = libkcutil.la ${icu_uc_LIBS}
+-tests_ustring_LDADD = libkcutil.la ${icu_uc_LIBS}
++tests_ustring_LDADD = libkcutil.la ${icu_uc_LIBS} $(INTL_LIBS)
  tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
 -tests_zcpmd5_LDADD = ${CRYPTO_LIBS} libkcutil.la
-+tests_zcpmd5_LDADD = ${CRYPTO_LIBS} ${PROG_LIBS} libkcutil.la
++tests_zcpmd5_LDADD = ${CRYPTO_LIBS} ${PROG_LIBS} libkcutil.la $(INTL_LIBS)
  
  
  #
