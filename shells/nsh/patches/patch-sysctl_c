@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysctl_c,v 1.7 2019/11/06 12:45:45 naddy Exp $
+$OpenBSD: patch-sysctl_c,v 1.8 2020/08/06 16:18:16 naddy Exp $
 
 Index: sysctl.c
 --- sysctl.c.orig
@@ -11,3 +11,14 @@ Index: sysctl.c
  { "etherip",		{ CTL_NET, PF_INET, IPPROTO_ETHERIP,ETHERIPCTL_ALLOW, MIB_STOP, 0 },	0, 1	},
  { "ipcomp",		{ CTL_NET, PF_INET, IPPROTO_IPCOMP, IPCOMPCTL_ENABLE, MIB_STOP, 0 },	0, 1	},
  { "esp",		{ CTL_NET, PF_INET, IPPROTO_ESP, ESPCTL_ENABLE, MIB_STOP, 0 },		0, 0	},
+@@ -149,10 +148,6 @@ struct ipsysctl ddbsysctls[] = {
+ 
+ struct ipsysctl pipexsysctls[] = {
+ { "enable",		{ CTL_NET, PF_PIPEX, PIPEXCTL_ENABLE, MIB_STOP, 0 },			0, 1	},
+-{ "inq-maxlen",		{ CTL_NET, PF_PIPEX, PIPEXCTL_INQ, IFQCTL_MAXLEN, MIB_STOP, 0 },
+-		IFQ_MAXLEN, 0 },
+-{ "outq-maxlen",	{ CTL_NET, PF_PIPEX, PIPEXCTL_OUTQ, IFQCTL_MAXLEN, MIB_STOP, 0 },
+-		IFQ_MAXLEN, 0 },
+ { 0, { 0, 0, 0, 0, 0, 0 }, 0, 0 }
+ };
+ 

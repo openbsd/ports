@@ -1,4 +1,4 @@
-$OpenBSD: patch-commands_c,v 1.6 2019/11/06 12:45:45 naddy Exp $
+$OpenBSD: patch-commands_c,v 1.7 2020/08/06 16:18:16 naddy Exp $
 
 Index: commands.c
 --- commands.c.orig
@@ -11,3 +11,12 @@ Index: commands.c
  	{ "etherip",	"Allow Ether-IP Encapsulation",	CMPL0 0, 0, 0, 0, ipsysctl },
  	{ "ipcomp",	"Allow IP Compression",		CMPL0 0, 0, 0, 0, ipsysctl },	
  	{ "esp",	"Allow Encapsulated Security Payload", CMPL0 0, 0, 0, 0, ipsysctl },
+@@ -305,8 +304,6 @@ Menu ddbtab[] = {
+ 
+ Menu pipextab[] = {
+ 	{ "enable",	"PIPEX enable",			CMPL0 0, 0, 0, 0, ipsysctl },
+-	{ "inq-maxlen",	"Input queue max length",	CMPL0 0, 0, 0, 1, ipsysctl },
+-	{ "outq-maxlength", "Output queue max length",	CMPL0 0, 0, 0, 1, ipsysctl },
+ 	{ "?",		"Help",				CMPL0 0, 0, 0, 0, sysctlhelp },
+ 	{ 0, 0, 0, 0, 0, 0, 0, 0 }
+ };
