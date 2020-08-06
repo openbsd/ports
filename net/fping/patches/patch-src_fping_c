@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_fping_c,v 1.8 2020/07/25 17:21:33 sthen Exp $
+$OpenBSD: patch-src_fping_c,v 1.9 2020/08/06 14:39:37 sthen Exp $
 
 Index: src/fping.c
 --- src/fping.c.orig
 +++ src/fping.c
-@@ -369,6 +369,9 @@ int main(int argc, char** argv)
-     HOST_ENTRY* cursor;
-     struct optparse optparse_state;
+@@ -419,6 +419,9 @@ int main(int argc, char** argv)
+     struct sigaction act;
+ #endif
  
 +    if (pledge("stdio inet rpath dns id", NULL) == -1)
 +        perror("pledge");
@@ -13,7 +13,7 @@ Index: src/fping.c
      /* pre-parse -h/--help, so that we also can output help information
       * without trying to open the socket, which might fail */
      prog = argv[0];
-@@ -405,6 +408,10 @@ int main(int argc, char** argv)
+@@ -455,6 +458,10 @@ int main(int argc, char** argv)
      }
  
      optparse_init(&optparse_state, argv);
@@ -24,7 +24,7 @@ Index: src/fping.c
      ident4 = ident6 = htons(getpid() & 0xFFFF);
      verbose_flag = 1;
      backoff_flag = 1;
-@@ -743,6 +750,11 @@ int main(int argc, char** argv)
+@@ -796,6 +803,11 @@ int main(int argc, char** argv)
          }
      }
  
@@ -36,7 +36,7 @@ Index: src/fping.c
      /* validate various option settings */
  
  #ifndef IPV6
-@@ -995,6 +1007,10 @@ int main(int argc, char** argv)
+@@ -1060,6 +1072,10 @@ int main(int argc, char** argv)
          exit(num_noaddress ? 2 : 1);
      }
  
@@ -47,7 +47,20 @@ Index: src/fping.c
      if (socket4 >= 0) {
          socket_set_src_addr_ipv4(socket4, &src_addr, (socktype4 == SOCK_DGRAM) ? &ident4 : NULL);
      }
-@@ -1886,7 +1902,7 @@ int decode_icmp_ipv4(
+@@ -1656,9 +1672,9 @@ void print_netdata(void)
+         printf("BEGIN fping.%s_latency\n", h->name);
+         if (h->num_recv_i) {
+             avg = h->total_time_i / h->num_recv_i;
+-            printf("SET min = %ld\n", h->min_reply_i);
+-            printf("SET avg = %ld\n", avg);
+-            printf("SET max = %ld\n", h->max_reply_i);
++            printf("SET min = %lld\n", (long long)h->min_reply_i);
++            printf("SET avg = %lld\n", (long long)avg);
++            printf("SET max = %lld\n", (long long)h->max_reply_i);
+         }
+         printf("END\n");
+ 
+@@ -2043,7 +2059,7 @@ int decode_icmp_ipv4(
      if (!using_sock_dgram4) {
          struct ip* ip = (struct ip*)reply_buf;
  

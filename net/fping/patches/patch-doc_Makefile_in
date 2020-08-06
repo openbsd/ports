@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2020/07/25 17:21:33 sthen Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2020/08/06 14:39:37 sthen Exp $
 
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -476,7 +476,7 @@ uninstall-man: uninstall-man8
+@@ -489,7 +489,7 @@ uninstall-man: uninstall-man8
  
  
  fping.8: fping.pod
