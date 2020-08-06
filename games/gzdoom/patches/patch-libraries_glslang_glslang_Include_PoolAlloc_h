@@ -1,0 +1,18 @@
+$OpenBSD: patch-libraries_glslang_glslang_Include_PoolAlloc_h,v 1.1 2020/08/06 11:11:12 edd Exp $
+
+Fix build on base Clang 10.
+
+It's the same fix as this:
+https://github.com/KhronosGroup/glslang/pull/2010/commits/24b3e8384e93f3e73b6aa14ea00a30574112f9ba
+
+Index: libraries/glslang/glslang/Include/PoolAlloc.h
+--- libraries/glslang/glslang/Include/PoolAlloc.h.orig
++++ libraries/glslang/glslang/Include/PoolAlloc.h
+@@ -304,7 +304,6 @@ class pool_allocator { (public)
+     size_type max_size() const { return static_cast<size_type>(-1) / sizeof(T); }
+     size_type max_size(int size) const { return static_cast<size_type>(-1) / size; }
+ 
+-    void setAllocator(TPoolAllocator* a) { allocator = *a; }
+     TPoolAllocator& getAllocator() const { return allocator; }
+ 
+ protected:
