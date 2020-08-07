@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.584 2020/07/25 22:10:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.585 2020/08/07 09:59:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -324,7 +324,6 @@
      SUBDIR += py-pyscard,python3
      SUBDIR += py-requests-aws4auth
      SUBDIR += py-requests-aws4auth,python3
-     SUBDIR += py-ropper
      SUBDIR += py-ropper,python3
      SUBDIR += py-rsa
      SUBDIR += py-rsa,python3

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/08/07 09:59:10 jasper Exp $
 
 COMMENT =	rop gadget finder and binary information tool
 
 MODPY_EGG_VERSION =	1.12.5
 DISTNAME =	ropper-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -25,7 +25,7 @@ RUN_DEPENDS =	devel/py-filebytes${MODPY_FLAVOR} \
 		devel/keystone/python${MODPY_FLAVOR}
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR ?=	python3
 
 # permit installing py- and py3- on same machine
 post-install:
