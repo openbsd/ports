@@ -1,11 +1,11 @@
-$OpenBSD: patch-main_CMakeLists_txt,v 1.1 2020/01/25 18:31:11 bcallah Exp $
+$OpenBSD: patch-main_CMakeLists_txt,v 1.2 2020/08/07 16:45:52 bcallah Exp $
 
 Don't link with -lrt
 
 Index: main/CMakeLists.txt
 --- main/CMakeLists.txt.orig
 +++ main/CMakeLists.txt
-@@ -242,7 +242,7 @@ else (MINGW)
+@@ -245,7 +245,7 @@ else (MINGW)
        if (APPLE)
          target_link_libraries(mscore ${OsxFrameworks})
        else (APPLE)

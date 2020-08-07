@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/05/29 18:52:50 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/08/07 16:45:52 bcallah Exp $
 @conflict mscore-*
 @bin bin/mscore
 bin/musescore
@@ -37,10 +37,6 @@ share/mscore-${MAJ_MIN}/demos/Reunion.mscz
 share/mscore-${MAJ_MIN}/demos/Unclaimed_Gift.mscx
 share/mscore-${MAJ_MIN}/instruments/
 share/mscore-${MAJ_MIN}/instruments/instruments.xml
-share/mscore-${MAJ_MIN}/manual/
-share/mscore-${MAJ_MIN}/manual/plugins/
-share/mscore-${MAJ_MIN}/manual/plugins/manual.css
-share/mscore-${MAJ_MIN}/manual/plugins/plugins3.html
 share/mscore-${MAJ_MIN}/plugins/
 share/mscore-${MAJ_MIN}/plugins/abc_import.qml
 share/mscore-${MAJ_MIN}/plugins/colornotes.qml
@@ -50,6 +46,7 @@ share/mscore-${MAJ_MIN}/plugins/helloqml/helloqml.qml
 share/mscore-${MAJ_MIN}/plugins/helloqml/translations/
 share/mscore-${MAJ_MIN}/plugins/helloqml/translations/locale_de.qm
 share/mscore-${MAJ_MIN}/plugins/helloqml/translations/locale_de.ts
+share/mscore-${MAJ_MIN}/plugins/notenames-interactive.qml
 share/mscore-${MAJ_MIN}/plugins/notenames.qml
 share/mscore-${MAJ_MIN}/plugins/panel.qml
 share/mscore-${MAJ_MIN}/plugins/random.qml
@@ -86,9 +83,10 @@ share/mscore-${MAJ_MIN}/templates/02-Choral/04-SATB_Closed_Score.mscx
 share/mscore-${MAJ_MIN}/templates/02-Choral/05-SATB_Closed_Score_+_Organ.mscx
 share/mscore-${MAJ_MIN}/templates/02-Choral/06-SATB_Closed_Score_+_Piano.mscx
 share/mscore-${MAJ_MIN}/templates/02-Choral/07-Voice_+_Piano.mscx
-share/mscore-${MAJ_MIN}/templates/02-Choral/08-Barbershop_Quartet.mscx
-share/mscore-${MAJ_MIN}/templates/02-Choral/09-Liturgical_Unmetrical.mscx
-share/mscore-${MAJ_MIN}/templates/02-Choral/10-Liturgical_Unmetrical_+_Organ.mscx
+share/mscore-${MAJ_MIN}/templates/02-Choral/08-Barbershop_Quartet_(Men).mscx
+share/mscore-${MAJ_MIN}/templates/02-Choral/09-Barbershop_Quartet_(Women).mscx
+share/mscore-${MAJ_MIN}/templates/02-Choral/10-Liturgical_Unmetrical.mscx
+share/mscore-${MAJ_MIN}/templates/02-Choral/11-Liturgical_Unmetrical_+_Organ.mscx
 share/mscore-${MAJ_MIN}/templates/03-Chamber_Music/
 share/mscore-${MAJ_MIN}/templates/03-Chamber_Music/01-String_Quartet.mscx
 share/mscore-${MAJ_MIN}/templates/03-Chamber_Music/02-Wind_Quartet.mscx
