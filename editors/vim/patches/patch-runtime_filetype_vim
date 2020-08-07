@@ -1,9 +1,9 @@
-$OpenBSD: patch-runtime_filetype_vim,v 1.23 2020/06/02 20:09:55 sthen Exp $
+$OpenBSD: patch-runtime_filetype_vim,v 1.24 2020/08/07 09:24:36 jasper Exp $
 
 Index: runtime/filetype.vim
 --- runtime/filetype.vim.orig
 +++ runtime/filetype.vim
-@@ -471,7 +471,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
+@@ -474,7 +474,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
  au BufNewFile,BufRead dictd.conf		setf dictdconf
  
  " Diff files
@@ -12,7 +12,7 @@ Index: runtime/filetype.vim
  au BufNewFile,BufRead *.patch
  	\ if getline(1) =~ '^From [0-9a-f]\{40\} Mon Sep 17 00:00:00 2001$' |
  	\   setf gitsendemail |
-@@ -951,7 +951,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
+@@ -954,7 +954,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
  au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile

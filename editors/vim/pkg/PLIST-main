@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2020/06/16 16:45:15 chrisz Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2020/08/07 09:24:36 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -915,6 +915,7 @@ share/vim/${P}/syntax/acedb.vim
 share/vim/${P}/syntax/ada.vim
 share/vim/${P}/syntax/aflex.vim
 share/vim/${P}/syntax/ahdl.vim
+share/vim/${P}/syntax/aidl.vim
 share/vim/${P}/syntax/alsaconf.vim
 share/vim/${P}/syntax/amiga.vim
 share/vim/${P}/syntax/aml.vim
