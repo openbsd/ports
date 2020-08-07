@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_libwpd_ExternalProject_libwpd_mk,v 1.4 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-external_libwpd_ExternalProject_libwpd_mk,v 1.5 2020/08/07 07:09:30 robert Exp $
 
 Index: external/libwpd/ExternalProject_libwpd.mk
 --- external/libwpd/ExternalProject_libwpd.mk.orig
 +++ external/libwpd/ExternalProject_libwpd.mk
-@@ -36,8 +36,8 @@ $(call gb_ExternalProject_get_state_target,libwpd,buil
+@@ -37,8 +37,8 @@ $(call gb_ExternalProject_get_state_target,libwpd,buil
  				--prefix=/@.__________________________________________________OOO) \
  			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
  			CXXFLAGS="$(gb_CXXFLAGS) $(if $(ENABLE_OPTIMIZED),$(gb_COMPILEROPTFLAGS),$(gb_COMPILERNOOPTFLAGS))" \

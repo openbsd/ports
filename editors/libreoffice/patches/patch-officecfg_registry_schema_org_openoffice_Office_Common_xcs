@@ -1,11 +1,11 @@
-$OpenBSD: patch-officecfg_registry_schema_org_openoffice_Office_Common_xcs,v 1.1 2020/07/05 13:15:15 robert Exp $
+$OpenBSD: patch-officecfg_registry_schema_org_openoffice_Office_Common_xcs,v 1.2 2020/08/07 07:09:30 robert Exp $
 
 disble tip-of-the-day dialog by default
 
 Index: officecfg/registry/schema/org/openoffice/Office/Common.xcs
 --- officecfg/registry/schema/org/openoffice/Office/Common.xcs.orig
 +++ officecfg/registry/schema/org/openoffice/Office/Common.xcs
-@@ -5522,7 +5522,7 @@
+@@ -5623,7 +5623,7 @@
          <info>
            <desc>Determines whether the Tip-of-the-Day dialog is shown on startup.</desc>
          </info>

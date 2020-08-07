@@ -1,4 +1,4 @@
-$OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.9 2020/02/05 19:58:10 robert Exp $
+$OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.10 2020/08/07 07:09:30 robert Exp $
 Index: solenv/gbuild/platform/com_GCC_defs.mk
 --- solenv/gbuild/platform/com_GCC_defs.mk.orig
 +++ solenv/gbuild/platform/com_GCC_defs.mk
@@ -9,12 +9,12 @@ Index: solenv/gbuild/platform/com_GCC_defs.mk
 +	-fno-stack-protector \
  	-pipe \
  	-fstack-protector-strong \
- 
-@@ -81,6 +82,7 @@ gb_CXXFLAGS_COMMON := \
+ 	$(if $(gb_COLOR),-fdiagnostics-color=always) \
+@@ -83,6 +84,7 @@ gb_CXXFLAGS_COMMON := \
  	-finput-charset=UTF-8 \
  	-fmessage-length=0 \
  	-fno-common \
 +	-fno-stack-protector \
  	-pipe \
  	-fstack-protector-strong \
- 
+ 	$(if $(gb_COLOR),-fdiagnostics-color=always) \

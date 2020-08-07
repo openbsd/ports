@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_libmspub_ExternalProject_libmspub_mk,v 1.4 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-external_libmspub_ExternalProject_libmspub_mk,v 1.5 2020/08/07 07:09:30 robert Exp $
 
 Index: external/libmspub/ExternalProject_libmspub.mk
 --- external/libmspub/ExternalProject_libmspub.mk.orig
 +++ external/libmspub/ExternalProject_libmspub.mk
-@@ -36,7 +36,7 @@ $(call gb_ExternalProject_get_state_target,libmspub,bu
+@@ -37,7 +37,7 @@ $(call gb_ExternalProject_get_state_target,libmspub,bu
  			--disable-weffc \
  			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
  			CXXFLAGS="$(gb_CXXFLAGS) $(if $(ENABLE_OPTIMIZED),$(gb_COMPILEROPTFLAGS),$(gb_COMPILERNOOPTFLAGS))" \

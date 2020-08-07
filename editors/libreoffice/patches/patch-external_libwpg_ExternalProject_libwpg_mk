@@ -1,8 +1,9 @@
-$OpenBSD: patch-external_libwpg_ExternalProject_libwpg_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
---- external/libwpg/ExternalProject_libwpg.mk.orig.port	Thu Sep 17 15:33:12 2015
-+++ external/libwpg/ExternalProject_libwpg.mk	Sun Sep 27 12:18:17 2015
-@@ -23,7 +23,7 @@ $(eval $(call gb_ExternalProject_use_externals,libwpg,
- $(call gb_ExternalProject_get_state_target,libwpg,build) :
+$OpenBSD: patch-external_libwpg_ExternalProject_libwpg_mk,v 1.3 2020/08/07 07:09:30 robert Exp $
+Index: external/libwpg/ExternalProject_libwpg.mk
+--- external/libwpg/ExternalProject_libwpg.mk.orig
++++ external/libwpg/ExternalProject_libwpg.mk
+@@ -24,7 +24,7 @@ $(call gb_ExternalProject_get_state_target,libwpg,buil
+ 	$(call gb_Trace_StartRange,libwpg,EXTERNAL)
  	$(call gb_ExternalProject_run,build,\
  		export PKG_CONFIG="" \
 -		&& MAKE=$(MAKE) ./configure \

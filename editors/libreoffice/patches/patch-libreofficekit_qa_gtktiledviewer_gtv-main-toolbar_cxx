@@ -1,0 +1,13 @@
+$OpenBSD: patch-libreofficekit_qa_gtktiledviewer_gtv-main-toolbar_cxx,v 1.1 2020/08/07 07:09:30 robert Exp $
+
+Index: libreofficekit/qa/gtktiledviewer/gtv-main-toolbar.cxx
+--- libreofficekit/qa/gtktiledviewer/gtv-main-toolbar.cxx.orig
++++ libreofficekit/qa/gtktiledviewer/gtv-main-toolbar.cxx
+@@ -19,6 +19,7 @@
+ #include <fstream>
+ #include <map>
+ #include <memory>
++#include <vector>
+ 
+ namespace {
+ 

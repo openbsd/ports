@@ -1,4 +1,4 @@
-$OpenBSD: patch-idl_source_objects_types_cxx,v 1.1 2019/02/28 22:09:41 robert Exp $
+$OpenBSD: patch-idl_source_objects_types_cxx,v 1.2 2020/08/07 07:09:30 robert Exp $
 
 Index: idl/source/objects/types.cxx
 --- idl/source/objects/types.cxx.orig
@@ -7,8 +7,8 @@ Index: idl/source/objects/types.cxx
  
      // write the implementation part
      rOutStm.WriteCharPtr( "#ifdef SFX_TYPEMAP" ) << endl;
--    rOutStm.WriteCharPtr( "#if !defined(_WIN32) && ((defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(LINUX))) || STATIC_LINKING)" ) << endl;
-+    rOutStm.WriteCharPtr( "#if !defined(_WIN32) && ((defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(LINUX) || defined(OPENBSD))) || STATIC_LINKING)" ) << endl;
+-    rOutStm.WriteCharPtr( "#if !defined(_WIN32) && (defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(LINUX)))" ) << endl;
++    rOutStm.WriteCharPtr( "#if !defined(_WIN32) && (defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(LINUX) || defined(OPENBSD)))" ) << endl;
      rOutStm.WriteCharPtr( "__attribute__((__weak__))" ) << endl;
      rOutStm.WriteCharPtr( "#endif" ) << endl;
      rOutStm.WriteOString( aTypeName ).WriteOString( aVarName )

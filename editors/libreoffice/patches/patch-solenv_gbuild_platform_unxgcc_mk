@@ -1,4 +1,4 @@
-$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.10 2020/02/05 19:58:10 robert Exp $
+$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.11 2020/08/07 07:09:30 robert Exp $
 
 Index: solenv/gbuild/platform/unxgcc.mk
 --- solenv/gbuild/platform/unxgcc.mk.orig
@@ -49,7 +49,7 @@ Index: solenv/gbuild/platform/unxgcc.mk
  			>> $(WORKDIR)/LinkTarget/$(2).exports.tmp && \
  		$(call gb_Helper_replace_if_different_and_touch,$(WORKDIR)/LinkTarget/$(2).exports.tmp, \
  			$(WORKDIR)/LinkTarget/$(2).exports,$(1))))
-@@ -191,7 +195,7 @@ gb_Library_DLLEXT := .a
+@@ -193,7 +197,7 @@ gb_Library_DLLEXT := .a
  else
  
  gb_Library_TARGETTYPEFLAGS := -shared -Wl,-z,noexecstack

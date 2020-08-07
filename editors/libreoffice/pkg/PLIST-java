@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.20 2020/02/05 19:58:10 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.21 2020/08/07 07:09:30 robert Exp $
 lib/libreoffice/program/JREProperties.class
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
@@ -43,8 +43,6 @@ lib/libreoffice/program/javavendors.xml
 lib/libreoffice/program/jvmfwk3rc
 @so lib/libreoffice/program/libhsqldb.so
 @so lib/libreoffice/program/libjava_uno.so
-@so lib/libreoffice/program/libjavaloaderlo.so
-@so lib/libreoffice/program/libjavavmlo.so
 @so lib/libreoffice/program/libjdbclo.so
 @so lib/libreoffice/program/libjpipe.so
 @so lib/libreoffice/program/libjuh.so

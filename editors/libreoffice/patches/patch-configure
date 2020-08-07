@@ -1,19 +1,20 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6003,8 +6003,11 @@ aix*)
+@@ -6066,8 +6066,12 @@ aix*)
  
  openbsd*)
      test_freetype=yes
 +    test_kf5=yes
 +    test_gtk3_kde5=yes
++    build_skia=yes
      PTHREAD_CFLAGS="-D_THREAD_SAFE"
      PTHREAD_LIBS="-pthread"
 +    SED="/usr/local/bin/gsed"
      _os=OpenBSD
      ;;
  
-@@ -19139,9 +19142,6 @@ _ACEOF
+@@ -19479,9 +19483,6 @@ _ACEOF
          rm -fr libconftest*
          { $as_echo "$as_me:${as_lineno-$LINENO}: result: $gccvisinlineshiddenok" >&5
  $as_echo "$gccvisinlineshiddenok" >&6; }
@@ -23,7 +24,7 @@ Index: configure
      fi
  
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking if $CXX_BASE has a visibility bug with class-level attributes (GCC bug 26905)" >&5
-@@ -25503,7 +25503,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
+@@ -25851,7 +25852,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
    $as_echo_n "(cached) " >&6
  else
  
@@ -32,7 +33,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -25807,7 +25807,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
+@@ -26155,7 +26156,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
    $as_echo_n "(cached) " >&6
  else
  
@@ -41,7 +42,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -26121,7 +26121,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
+@@ -26469,7 +26470,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
    $as_echo_n "(cached) " >&6
  else
  
@@ -50,7 +51,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -34068,7 +34068,7 @@ $as_echo "internal" >&6; }
+@@ -34416,7 +34417,7 @@ $as_echo "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB="${WORKDIR}/LinkTarget/StaticLibrary/hyphen.lib"
      else
@@ -59,7 +60,7 @@ Index: configure
      fi
  fi
  
-@@ -34261,7 +34261,7 @@ $as_echo "internal" >&6; }
+@@ -34612,7 +34613,7 @@ $as_echo "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/mythes.lib"
      else
@@ -68,7 +69,7 @@ Index: configure
      fi
  fi
  
-@@ -35072,7 +35072,7 @@ else
+@@ -35429,7 +35430,7 @@ else
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
  $as_echo_n "checking the flex version... " >&6; }
      _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
@@ -77,7 +78,7 @@ Index: configure
          as_fn_error $? "failed ($FLEX $_flex_version found, but need at least 2.6.0)" "$LINENO" 5
      fi
  fi
-@@ -37388,7 +37388,8 @@ $as_echo "$qt5_incdir" >&6; }
+@@ -38272,7 +38273,8 @@ $as_echo "$qt5_incdir" >&6; }
  $as_echo_n "checking for Qt5 libraries... " >&6; }
      qt5_libdir="no"
      for lib_dir in $qt5_libdirs; do
@@ -87,7 +88,7 @@ Index: configure
              qt5_libdir="$lib_dir"
              break
          fi
-@@ -37795,7 +37796,7 @@ $as_echo "$kf5_incdir" >&6; }
+@@ -38679,7 +38681,7 @@ $as_echo "$kf5_incdir" >&6; }
  $as_echo_n "checking for KF5 libraries... " >&6; }
      kf5_libdir="no"
      for kf5_check in $kf5_libdirs; do
@@ -96,7 +97,7 @@ Index: configure
              kf5_libdir="$kf5_check"
              break
          fi
-@@ -39407,7 +39408,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -40291,7 +40293,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then
@@ -105,3 +106,12 @@ Index: configure
          eval "$i --version" > /dev/null 2>&1
          ret=$?
          if test $ret -eq 0; then
+@@ -40925,7 +40927,7 @@ if test $_os = iOS -o $_os = Android; then
+ fi
+ 
+ if test -n "$enable_mergelibs" -a "$enable_mergelibs" != "no"; then
+-    if test $_os != Linux -a $_os != WINNT; then
++    if test $_os != Linux -a $_os != WINNT -a $_os != OpenBSD; then
+         add_warning "--enable-mergelibs is not tested for this platform"
+     fi
+     MERGELIBS="TRUE"

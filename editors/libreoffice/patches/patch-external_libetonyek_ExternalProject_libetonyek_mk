@@ -1,8 +1,9 @@
-$OpenBSD: patch-external_libetonyek_ExternalProject_libetonyek_mk,v 1.3 2016/03/01 21:39:58 robert Exp $
---- external/libetonyek/ExternalProject_libetonyek.mk.orig.port	Wed Jan 27 01:58:25 2016
-+++ external/libetonyek/ExternalProject_libetonyek.mk	Wed Feb 10 14:23:02 2016
-@@ -28,7 +28,7 @@ $(eval $(call gb_ExternalProject_use_externals,libeton
- $(call gb_ExternalProject_get_state_target,libetonyek,build) :
+$OpenBSD: patch-external_libetonyek_ExternalProject_libetonyek_mk,v 1.4 2020/08/07 07:09:30 robert Exp $
+Index: external/libetonyek/ExternalProject_libetonyek.mk
+--- external/libetonyek/ExternalProject_libetonyek.mk.orig
++++ external/libetonyek/ExternalProject_libetonyek.mk
+@@ -29,7 +29,7 @@ $(call gb_ExternalProject_get_state_target,libetonyek,
+ 	$(call gb_Trace_StartRange,libetonyek,EXTERNAL)
  	$(call gb_ExternalProject_run,build,\
  		export PKG_CONFIG="" \
 -		&& MAKE=$(MAKE) ./configure \

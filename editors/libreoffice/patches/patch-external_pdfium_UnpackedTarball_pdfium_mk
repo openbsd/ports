@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_pdfium_UnpackedTarball_pdfium_mk,v 1.4 2019/09/20 13:34:54 robert Exp $
+$OpenBSD: patch-external_pdfium_UnpackedTarball_pdfium_mk,v 1.5 2020/08/07 07:09:30 robert Exp $
 
 Index: external/pdfium/UnpackedTarball_pdfium.mk
 --- external/pdfium/UnpackedTarball_pdfium.mk.orig
 +++ external/pdfium/UnpackedTarball_pdfium.mk
-@@ -14,6 +14,7 @@ pdfium_patches += ubsan.patch
- pdfium_patches += build.patch.1
+@@ -14,6 +14,7 @@ pdfium_patches += build.patch.1
  # Avoids Windows 8 build dependency.
  pdfium_patches += windows7.patch.1
+ pdfium_patches += c++20-comparison.patch
 +pdfium_patches += pdfium-openbsd.patch
  
  $(eval $(call gb_UnpackedTarball_UnpackedTarball,pdfium))

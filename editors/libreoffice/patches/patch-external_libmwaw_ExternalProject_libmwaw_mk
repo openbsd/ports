@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_libmwaw_ExternalProject_libmwaw_mk,v 1.2 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-external_libmwaw_ExternalProject_libmwaw_mk,v 1.3 2020/08/07 07:09:30 robert Exp $
 
 Index: external/libmwaw/ExternalProject_libmwaw.mk
 --- external/libmwaw/ExternalProject_libmwaw.mk.orig
 +++ external/libmwaw/ExternalProject_libmwaw.mk
-@@ -35,8 +35,9 @@ $(call gb_ExternalProject_get_state_target,libmwaw,bui
+@@ -36,8 +36,9 @@ $(call gb_ExternalProject_get_state_target,libmwaw,bui
  			$(if $(ENABLE_DEBUG),--enable-debug,--disable-debug) \
  			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
  			--disable-werror \

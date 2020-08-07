@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_cppunit_ExternalProject_cppunit_mk,v 1.1 2018/02/08 09:57:36 robert Exp $
+$OpenBSD: patch-external_cppunit_ExternalProject_cppunit_mk,v 1.2 2020/08/07 07:09:30 robert Exp $
 
 Index: external/cppunit/ExternalProject_cppunit.mk
 --- external/cppunit/ExternalProject_cppunit.mk.orig
 +++ external/cppunit/ExternalProject_cppunit.mk
-@@ -48,6 +48,7 @@ $(call gb_ExternalProject_get_state_target,cppunit,bui
+@@ -50,6 +50,7 @@ $(call gb_ExternalProject_get_state_target,cppunit,bui
  			--disable-html-docs \
  			--disable-latex-docs \
  			--disable-werror \

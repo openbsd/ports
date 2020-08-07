@@ -1,0 +1,13 @@
+$OpenBSD: patch-libreofficekit_qa_gtktiledviewer_gtv-lok-dialog_cxx,v 1.1 2020/08/07 07:09:30 robert Exp $
+
+Index: libreofficekit/qa/gtktiledviewer/gtv-lok-dialog.cxx
+--- libreofficekit/qa/gtktiledviewer/gtv-lok-dialog.cxx.orig
++++ libreofficekit/qa/gtktiledviewer/gtv-lok-dialog.cxx
+@@ -11,6 +11,7 @@
+ #include <gdk/gdkkeysyms.h>
+ 
+ #include <iostream>
++#include <sstream>
+ 
+ #include <LibreOfficeKit/LibreOfficeKitGtk.h>
+ #include <LibreOfficeKit/LibreOfficeKitEnums.h>

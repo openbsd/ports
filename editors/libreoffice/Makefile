@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2020/07/05 13:15:15 robert Exp $
+# $OpenBSD: Makefile,v 1.234 2020/08/07 07:09:30 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -10,7 +10,7 @@ COMMENT-java=	optional integration of LibreOffice java features
 
 SHARED_LIBS +=  etonyek-0.1-lo            1.9 # 1.9
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
-SHARED_LIBS +=  mwaw-0.3-lo               3.15 # 3.15
+SHARED_LIBS +=  mwaw-0.3-lo               3.16 # 3.16
 SHARED_LIBS +=  odfgen-0.1-lo             1.6 # 1.6
 SHARED_LIBS +=  orcus-0.15                0.0 # 0.0
 SHARED_LIBS +=  orcus-parser-0.15         0.0 # 0.0
@@ -23,10 +23,10 @@ SHARED_LIBS +=  uno_sal                   3.0 # 3.0
 SHARED_LIBS +=  uno_salhelpergcc3         3.0 # 3.0
 SHARED_LIBS +=  wpd-0.10-lo               10.3 # 10.3
 SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
-SHARED_LIBS +=  wps-0.4-lo                4.10 # 4.10
+SHARED_LIBS +=  wps-0.4-lo                4.11 # 4.11
 
-BV=		6.4
-VERSION=	${BV}.5.2
+BV=		7.0
+VERSION=	${BV}.0.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -36,11 +36,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
-REVISION-main=	1
-
 EPOCH=		0
-
-REVISION=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -70,11 +66,6 @@ EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES += ${EDISTFILES}
 DISTFILES += 0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:0
-DISTFILES += liberation-fonts-ttf-2.00.4.tar.gz:0
-DISTFILES += liberation-narrow-fonts-ttf-1.07.6.tar.gz:0
-DISTFILES += source-serif-font-2.007R.tar.gz:0
-DISTFILES += source-serif-pro-3.000R.tar.gz:0
-DISTFILES += 884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:0
 DISTFILES += 1725634df4bb3dcb1b2c91a6175f8789-GentiumBasic_1102.zip:0
 DISTFILES += 17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0
 DISTFILES += 26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0
@@ -85,68 +76,66 @@ DISTFILES += 368f114c078f94214a308a74c7e991bc-crosextrafonts-20130214.tar.gz:0
 DISTFILES += 39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0
 DISTFILES += 3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0
 DISTFILES += 5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0
-DISTFILES += 5c781723a0d9ed6188960defba8e91cf-liberation-fonts-ttf-2.00.1.tar.gz:0
 DISTFILES += 798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0
-DISTFILES += 7a15edea7d415ac5150ea403e27401fd-open-sans-font-ttf-1.10.tar.gz:0
-DISTFILES += xmlsec1-1.2.28.tar.gz:0
-DISTFILES += lxml-4.1.1.tgz:0
+DISTFILES += 884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:0
 DISTFILES += 8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0
 DISTFILES += 907d6e99f241876695c19ff3db0b8923-source-code-pro-2.030R-ro-1.050R-it.tar.gz:0
 DISTFILES += 97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0
-DISTFILES += EmojiOneColor-SVGinOT-1.3.tar.gz:0
 DISTFILES += a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0
 DISTFILES += a8c2c5b8f09e7ede322d5c602ff6a4b6-mythes-1.2.4.tar.gz:0
 DISTFILES += ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0
-DISTFILES += alef-1.001.tar.gz:0
-DISTFILES += amiri-0.109.zip:0
 DISTFILES += ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0
 DISTFILES += beeca87be45ec87d241ddd0e1bad80c1-bsh-2.0b6-src.zip:0
-DISTFILES += c3c1a8ba7452950636e871d25020ce0d-pt-serif-font-1.0000W.tar.gz:0
 DISTFILES += c74b7223abe75949b4af367942d96c7a-crosextrafonts-carlito-20130920.tar.gz:0
-DISTFILES += commons-logging-1.2-src.tar.gz:0
-DISTFILES += cppunit-1.14.0.tar.gz:0
 DISTFILES += d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0
 DISTFILES += db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0
 DISTFILES += e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0
 DISTFILES += edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0
 DISTFILES += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0
 DISTFILES += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0
+DISTFILES += Amiri-0.111.zip:0
+DISTFILES += EmojiOneColor-SVGinOT-1.3.tar.gz:0
+DISTFILES += QR-Code-generator-1.4.0.tar.gz:0
+DISTFILES += ReemKufi-0.7.zip:0
+DISTFILES += Scheherazade-2.100.zip:0
+DISTFILES += alef-1.001.tar.gz:0
+DISTFILES += commons-logging-1.2-src.tar.gz:0
+DISTFILES += cppunit-1.15.1.tar.gz:0
+DISTFILES += culmus-0.131.tar.gz:0
+DISTFILES += dtoa-20180411.tgz:0
 DISTFILES += language-subtag-registry-2020-04-01.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
-DISTFILES += libcdr-0.1.5.tar.xz:0
-DISTFILES += libcdr-0.1.3.tar.bz2:0
+DISTFILES += libcdr-0.1.6.tar.xz:0
 DISTFILES += libcmis-0.5.2.tar.xz:0
 DISTFILES += libe-book-0.1.3.tar.xz:0
 DISTFILES += libepubgen-0.1.1.tar.xz:0
+DISTFILES += liberation-fonts-ttf-2.00.4.tar.gz:0
+DISTFILES += liberation-narrow-fonts-ttf-1.07.6.tar.gz:0
 DISTFILES += libetonyek-0.1.9.tar.xz:0
 DISTFILES += libexttextcat-3.4.5.tar.xz:0
 DISTFILES += libfreehand-0.1.2.tar.xz:0
-DISTFILES += libgltf-0.0.2.tar.bz2:1
 DISTFILES += liblangtag-0.6.2.tar.bz2:0
 DISTFILES += libmspub-0.1.4.tar.xz:0
-DISTFILES += libmwaw-0.3.15.tar.xz:0
+DISTFILES += libmwaw-0.3.16.tar.xz:0
 DISTFILES += libodfgen-0.1.6.tar.bz2:0
-DISTFILES += liborcus-0.15.3.tar.gz:0
-DISTFILES += libre-hebrew-1.0.tar.gz:0
-DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
-DISTFILES += culmus-0.131.tar.gz:0
+DISTFILES += liborcus-0.15.4.tar.bz2:0
 DISTFILES += libpagemaker-0.0.4.tar.xz:0
 DISTFILES += libqxp-0.0.2.tar.xz:0
+DISTFILES += libre-hebrew-1.0.tar.gz:0
 DISTFILES += librevenge-0.0.4.tar.bz2:0
-DISTFILES += libstaroffice-0.0.6.tar.xz:0
+DISTFILES += libstaroffice-0.0.7.tar.xz:0
 DISTFILES += libvisio-0.1.7.tar.xz:0
 DISTFILES += libwpd-0.10.3.tar.xz:0
 DISTFILES += libwpg-0.3.3.tar.xz:0
-DISTFILES += libwps-0.4.10.tar.xz:0
-DISTFILES += libwps-0.4.8.tar.xz:0
+DISTFILES += libwps-0.4.11.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
-DISTFILES += mdds-1.5.0.tar.bz2:0
-DISTFILES += pdfium-3963.tar.bz2:0
+DISTFILES += mdds-1.6.0.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
-DISTFILES += ReemKufi-0.7.zip:0
-DISTFILES += Scheherazade-2.100.zip:0
-DISTFILES += Amiri-0.111.zip:0
-DISTFILES += QR-Code-generator-1.4.0.tar.gz:0
+DISTFILES += pdfium-4137.tar.bz2:0
+DISTFILES += skia-m84-c1baf6e1c2a5454148adb516f0f833483b5a0353.tar.xz:0
+DISTFILES += source-serif-pro-3.000R.tar.gz:0
+DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
+DISTFILES += xmlsec1-1.2.30.tar.gz:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -273,7 +262,7 @@ WANTLIB-kde+=		Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES+=		java
-MODJAVA_VER=		1.8+
+MODJAVA_VER=		11
 .endif
 LIB_DEPENDS-java=	${MODGCC4_CPPLIBDEP}
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
@@ -284,6 +273,7 @@ WANTLIB-java=		c ${COMPILER_LIBCXX} m pthread
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
+ALL_TARGET=
 
 PATCHORIG=	.orig.port
 

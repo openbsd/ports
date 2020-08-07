@@ -1,14 +1,14 @@
-$OpenBSD: patch-vcl_source_app_svapp_cxx,v 1.3 2020/02/05 19:58:10 robert Exp $
+$OpenBSD: patch-vcl_source_app_svapp_cxx,v 1.4 2020/08/07 07:09:30 robert Exp $
 
 Index: vcl/source/app/svapp.cxx
 --- vcl/source/app/svapp.cxx.orig
 +++ vcl/source/app/svapp.cxx
-@@ -1155,7 +1155,7 @@ OUString Application::GetHWOSConfInfo()
-         aDetails.append( VclResId(SV_APP_DEFAULT) );
-     aDetails.append( "; " );
+@@ -1183,7 +1183,7 @@ OUString Application::GetHWOSConfInfo(const int bSelec
+ #endif
+             appendDetails("", VclResId(SV_APP_DEFAULT));
  
 -#if (defined LINUX || defined _WIN32 || defined MACOSX)
 +#if (defined LINUX || defined _WIN32 || defined MACOSX || defined OPENBSD)
-     aDetails.append( SV_APP_VCLBACKEND );
-     aDetails.append( GetToolkitName() );
-     aDetails.append( "; " );
+         appendDetails("; ", SV_APP_VCLBACKEND + GetToolkitName());
+ #endif
+     }

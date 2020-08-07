@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_libstaroffice_ExternalProject_libstaroffice_mk,v 1.2 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-external_libstaroffice_ExternalProject_libstaroffice_mk,v 1.3 2020/08/07 07:09:30 robert Exp $
 
 Index: external/libstaroffice/ExternalProject_libstaroffice.mk
 --- external/libstaroffice/ExternalProject_libstaroffice.mk.orig
 +++ external/libstaroffice/ExternalProject_libstaroffice.mk
-@@ -36,8 +36,9 @@ $(call gb_ExternalProject_get_state_target,libstaroffi
+@@ -37,8 +37,9 @@ $(call gb_ExternalProject_get_state_target,libstaroffi
  			$(if $(ENABLE_DEBUG),--enable-debug,--disable-debug) \
  			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
  			--disable-werror \
