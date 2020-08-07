@@ -1,14 +1,17 @@
-$OpenBSD: patch-UI_NativeApp_cpp,v 1.4 2019/10/19 23:23:46 bentley Exp $
+$OpenBSD: patch-UI_NativeApp_cpp,v 1.5 2020/08/07 22:54:09 bentley Exp $
 
 Index: UI/NativeApp.cpp
 --- UI/NativeApp.cpp.orig
 +++ UI/NativeApp.cpp
-@@ -449,7 +449,7 @@ void NativeInit(int argc, const char *argv[], const ch
- #if !defined(MOBILE_DEVICE) && !defined(_WIN32)
+@@ -468,10 +468,7 @@ void NativeInit(int argc, const char *argv[], const ch
+ #if !defined(MOBILE_DEVICE) && !defined(_WIN32) && !PPSSPP_PLATFORM(SWITCH)
  	VFSRegister("", new DirectoryAssetReader((File::GetExeDirectory() + "assets/").c_str()));
  	VFSRegister("", new DirectoryAssetReader((File::GetExeDirectory()).c_str()));
+-	VFSRegister("", new DirectoryAssetReader("/usr/local/share/ppsspp/assets/"));
+-	VFSRegister("", new DirectoryAssetReader("/usr/local/share/games/ppsspp/assets/"));
 -	VFSRegister("", new DirectoryAssetReader("/usr/share/ppsspp/assets/"));
+-	VFSRegister("", new DirectoryAssetReader("/usr/share/games/ppsspp/assets/"));
 +	VFSRegister("", new DirectoryAssetReader("${PREFIX}/share/ppsspp/assets/"));
  #endif
- 	VFSRegister("", new DirectoryAssetReader("assets/"));
- 	VFSRegister("", new DirectoryAssetReader(savegame_dir));
+ #if PPSSPP_PLATFORM(SWITCH)
+ 	std::string assetPath = user_data_path + "assets/";

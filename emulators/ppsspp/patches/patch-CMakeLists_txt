@@ -1,18 +1,18 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/10/19 23:23:46 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/08/07 22:54:09 bentley Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -182,6 +182,8 @@ if(USING_EGL)
+@@ -188,6 +188,8 @@ endif()
+ if(NOT LIBRETRO)
+ 	find_package(SDL2)
  endif()
- 
- find_package(SDL2)
 +include_directories(${X11BASE}/include)
 +include_directories(${LOCALBASE}/lib/libzip/include)
  include(FindThreads)
  
  if(APPLE)
-@@ -247,13 +249,13 @@ if(NOT MSVC)
+@@ -254,13 +256,13 @@ if(NOT MSVC)
  		add_definitions(-DUSE_ADDRESS_SANITIZER)
  	endif()
  
@@ -30,7 +30,7 @@ Index: CMakeLists.txt
  	set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
  	#TODO: Remove this and include the file properly everywhere it makes sense
  	# First step is too use the macros everywhere
-@@ -293,7 +295,6 @@ if(NOT MSVC)
+@@ -301,7 +303,6 @@ if(NOT MSVC)
  		if(NOT ${CMAKE_C_COMPILER_ID} STREQUAL "Intel" AND NOT ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
  			add_definitions(-Wno-psabi)
  		endif()
@@ -38,7 +38,7 @@ Index: CMakeLists.txt
  		add_definitions(-D_XOPEN_SOURCE_EXTENDED -D__BSD_VISIBLE=1)
  		add_definitions(-D_LARGEFILE64_SOURCE=1 -D_FILE_OFFSET_BITS=64)
  	elseif(ANDROID)
-@@ -595,6 +596,7 @@ endif()
+@@ -597,6 +598,7 @@ endif()
  find_package(LibZip)
  if(LIBZIP_FOUND AND USE_SYSTEM_LIBZIP)
  	add_definitions(-DSHARED_LIBZIP)

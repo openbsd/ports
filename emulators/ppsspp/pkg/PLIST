@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/15 08:12:31 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/08/07 22:54:09 bentley Exp $
 @bin bin/PPSSPPSDL
 share/ppsspp/
 share/ppsspp/assets/
@@ -47,6 +47,7 @@ share/ppsspp/assets/lang/gl_ES.ini
 share/ppsspp/assets/lang/gr_EL.ini
 share/ppsspp/assets/lang/he_IL.ini
 share/ppsspp/assets/lang/he_IL_invert.ini
+share/ppsspp/assets/lang/hr_HR.ini
 share/ppsspp/assets/lang/hu_HU.ini
 share/ppsspp/assets/lang/id_ID.ini
 share/ppsspp/assets/lang/it_IT.ini
@@ -72,6 +73,7 @@ share/ppsspp/assets/lang/vi_VN.ini
 share/ppsspp/assets/lang/zh_CN.ini
 share/ppsspp/assets/lang/zh_TW.ini
 share/ppsspp/assets/langregion.ini
+share/ppsspp/assets/ppge_atlas.meta
 share/ppsspp/assets/ppge_atlas.zim
 share/ppsspp/assets/rargray.png
 share/ppsspp/assets/shaders/
@@ -86,6 +88,7 @@ share/ppsspp/assets/shaders/aacolor.vsh
 share/ppsspp/assets/shaders/bloom.fsh
 share/ppsspp/assets/shaders/cartoon.fsh
 share/ppsspp/assets/shaders/cartoon.vsh
+share/ppsspp/assets/shaders/colorcorrection.fsh
 share/ppsspp/assets/shaders/crt.fsh
 share/ppsspp/assets/shaders/defaultshaders.ini
 share/ppsspp/assets/shaders/fxaa.fsh
@@ -101,6 +104,7 @@ share/ppsspp/assets/shaders/upscale_spline36.fsh
 share/ppsspp/assets/shaders/upscale_spline36.vsh
 share/ppsspp/assets/shaders/videoAA.fsh
 share/ppsspp/assets/shaders/vignette.fsh
+share/ppsspp/assets/ui_atlas.meta
 share/ppsspp/assets/ui_atlas.zim
 share/ppsspp/assets/ui_atlas_lowmem.zim
 share/ppsspp/assets/unknown.png
