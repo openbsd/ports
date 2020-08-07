@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_goaccess_conf,v 1.1 2019/01/20 13:36:51 sthen Exp $
+$OpenBSD: patch-config_goaccess_conf,v 1.2 2020/08/07 15:14:54 landry Exp $
 
 Index: config/goaccess.conf
 --- config/goaccess.conf.orig
@@ -20,38 +20,15 @@ Index: config/goaccess.conf
  ######################################
  # Date Format Options (required)
  ######################################
-@@ -653,31 +663,10 @@ static-file .flv
- #std-geoip false
- 
- # Specify path to GeoIP database file. i.e., GeoLiteCity.dat
--# .dat file needs to be downloaded from maxmind.com.
-+# Free GeoLite2 databases are available in the geolite2-city/country packages.
+@@ -698,7 +708,10 @@ static-file .flv
+ # Download the GeoLite2-Country.mmdb.gz
+ # gunzip GeoLite2-Country.mmdb.gz
  #
--# For IPv4 City database:
--# wget -N http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
--# gunzip GeoLiteCity.dat.gz
--#
--# For IPv6 City database:
--# wget -N http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz
--# gunzip GeoLiteCityv6.dat.gz
--#
--# For IPv6 Country database:
--# wget -N http://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz
--# gunzip GeoIPv6.dat.gz
--#
--# For GeoIP2 City database:
--# wget -N http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz
--# gunzip GeoLite2-City.mmdb.gz
--#
--# For GeoIP2 Country database:
--# wget -N http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz
--# gunzip GeoLite2-Country.mmdb.gz
--#
--# Note: `geoip-city-data` is an alias of `geoip-database`
--#
 -#geoip-database /usr/local/share/GeoIP/GeoLiteCity.dat
++
++# Free GeoLite2 databases are available in the geolite2-city/country packages.
 +#geoip-database /var/db/GeoIP/GeoLite2-City.mmdb
 +geoip-database /var/db/GeoIP/GeoLite2-Country.mmdb
  
  ######################################
- # Tokyo Cabinet Options
+ # Persistence Options
