@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:12:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/08/07 09:19:48 jasper Exp $
 
 COMMENT =		library for getting/setting process names
 
 MODPY_EGG_VERSION =	1.1.10
 DISTNAME =		setproctitle-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -27,12 +27,12 @@ WANTLIB +=		${MODPY_WANTLIB} pthread
 BUILD_DIR =		build/lib.${MODPY_VERSION}
 MODPY_DISTUTILS_BUILDARGS = --build-lib ${BUILD_DIR}
 
-TEST_DEPENDS =	devel/gmake
+USE_GMAKE =		Yes
 
 MAKE_ENV +=		PYTHON="${MODPY_BIN}" PYCONFIG="${MODPY_BIN}-config" \
 			PY2TO3="2to3-${MODPY_VERSION}"
 
 do-test:
-	cd ${WRKSRC} && gmake ${MAKE_ENV} check
+	cd ${WRKSRC} && ${MAKE_PROGRAM} ${MAKE_ENV} check
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_spt_python_h,v 1.1 2020/08/07 09:19:48 jasper Exp $
+
+DeprecationWarning: PY_SSIZE_T_CLEAN will be required for '#' formats
+https://github.com/dvarrazzo/py-setproctitle/pull/80
+
+Index: src/spt_python.h
+--- src/spt_python.h.orig
++++ src/spt_python.h
+@@ -11,6 +11,7 @@
+ #ifndef SPT_PYTHON_H
+ #define SPT_PYTHON_H
+ 
++#define PY_SSIZE_T_CLEAN
+ #include <Python.h>
+ 
+ /* Things change a lot here... */
