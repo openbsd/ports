@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2020/07/29 10:50:36 robert Exp $
+# $OpenBSD: Makefile,v 1.140 2020/08/07 09:21:02 jsg Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -60,10 +60,6 @@ AUTOCONF_VERSION=2.69
 AUTOMAKE_VERSION=1.15
 
 CONFIGURE_ENV=	ac_cv_header_execinfo_h=no
-
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ENV+=	CFLAGS="-march=i586"
-.endif
 
 CONFIGURE_ARGS=	--with-gc=included \
 		--with-tls=pthread \

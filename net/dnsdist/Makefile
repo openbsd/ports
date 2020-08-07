@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/30 14:25:11 otto Exp $
+# $OpenBSD: Makefile,v 1.19 2020/08/07 09:21:02 jsg Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
@@ -53,12 +53,6 @@ LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
 			devel/protobuf \
 			net/libfstrm \
 			www/h2o
-
-.if ${MACHINE_ARCH:Mi386}
-# needs 64-bit atomics
-CFLAGS+=		-march=i586
-CXXFLAGS+=		-march=i586
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/dnsdist

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/03/11 04:11:57 bket Exp $
+# $OpenBSD: Makefile,v 1.29 2020/08/07 09:21:01 jsg Exp $
 
 # XXX fix build with icu >=5.9.1 (remove at next update?)
 CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
@@ -62,11 +62,6 @@ CONFIGURE_ARGS +=	--without-nvtt \
 
 # XXX atlas (the level editor) requires threaded libxml
 CONFIGURE_ARGS +=	--disable-atlas
-
-.if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-march=i586
-CXXFLAGS +=		-march=i586
-.endif
 
 WRKSRC =		${WRKDIST}/build/workspaces/gcc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2020/01/29 06:52:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2020/08/07 09:21:02 jsg Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -98,10 +98,6 @@ MAKE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
 
 NO_TEST =		Yes
-
-.if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-march=i586
-.endif
 
 DO_WAF =		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} \
 				${WAF} ${MAKE_FLAGS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/06/19 16:39:00 jca Exp $
+# $OpenBSD: Makefile,v 1.51 2020/08/07 09:21:02 jsg Exp $
 
 COMMENT =		authoritative DNS server
 
@@ -47,10 +47,6 @@ CONFIGURE_ENV =		ac_cv_path_PDFLATEX="false" \
 			ac_cv_path_SPHINXBUILD="false" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
-
-.if ${MACHINE_ARCH} == "i386"
-CFLAGS += -march=i586
-.endif
 
 post-install:
 	mv ${WRKINST}/etc/knot/ ${PREFIX}/share/examples/knot/

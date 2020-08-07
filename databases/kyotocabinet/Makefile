@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/21 14:25:36 bket Exp $
+# $OpenBSD: Makefile,v 1.25 2020/08/07 09:21:01 jsg Exp $
 
 BROKEN-hppa=	undefined reference to __sync_fetch_and_add_8
 BROKEN-powerpc=	undefined reference to __sync_fetch_and_add_8
@@ -40,11 +40,6 @@ FLAVOR?=
 CONFIGURE_ARGS += --enable-opt
 .else
 CONFIGURE_ARGS += --disable-opt
-# i386 still need some optimized instructions
-# undefined reference to `__sync_bool_compare_and_swap_8' ...
-.if ${MACHINE_ARCH} == "i386"
-CXXFLAGS += -march=i586
-.endif
 .endif
 
 pre-configure:
