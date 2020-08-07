@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.971 2020/07/30 07:01:44 solene Exp $
+# $OpenBSD: Makefile,v 1.972 2020/08/07 19:35:04 kirby Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -47,7 +47,6 @@
      SUBDIR += geckodriver
      SUBDIR += gitea
      SUBDIR += goaccess
-     SUBDIR += goaccess,tokyocabinet
      SUBDIR += gumbo
      SUBDIR += h2o
      SUBDIR += h2o,mruby
