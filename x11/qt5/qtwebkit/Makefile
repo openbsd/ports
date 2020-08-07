@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/06/09 22:43:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/08/07 14:30:10 jsg Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -14,7 +14,7 @@ PKGNAME =		qtwebkit-${VERSION}
 PKGSPEC =		qtwebkit->=${VERSION}v0
 
 EPOCH=			0
-REVISION =		0
+REVISION =		1
 
 
 SHARED_LIBS +=  Qt5WebKit               3.1 # 5.9
@@ -122,12 +122,6 @@ CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 # save memory on 32bit arches
 .if !${PROPERTIES:Mlld} && ${MACHINE_ARCH} != "amd64"
 LDFLAGS +=		-Wl,--no-keep-memory
-.endif
-
-# __sync_add_and_fetch_8
-.if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-march=i686
-CXXFLAGS +=		-march=i686
 .endif
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/05/14 12:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2020/08/07 14:30:10 jsg Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -10,7 +10,7 @@ GH_PROJECT = 		oiio
 V =			1.8.6
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS +=		OpenImageIO		5.0 # 1.0
 SHARED_LIBS +=  	OpenImageIO_Util	2.0 # 1.5
@@ -56,9 +56,7 @@ CONFIGURE_ARGS +=	-DUSE_OPENCV=OFF \
 			-DSTOP_ON_WARNING=OFF
 
 CXXFLAGS +=		-pthread
-.if ${MACHINE_ARCH} == "i386"
-CXXFLAGS +=		-march=i686
-.endif
+
 WRKDIST =		${WRKDIR}/oiio-Release-$V
 
 # Fix undefined reference to __atomic_*

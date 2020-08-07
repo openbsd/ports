@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.81 2020/06/24 17:56:43 cwen Exp $
+# $OpenBSD: Makefile,v 1.82 2020/08/07 14:30:10 jsg Exp $
 
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.34.2
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -43,11 +44,6 @@ RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 # org.freedesktop.Tracker schema
 RUN_DEPENDS +=		x11/gnome/tracker-miners
-
-.if ${MACHINE_ARCH} == i386
-# undefined reference to `__sync_add_and_fetch_8'
-CFLAGS +=		-march=i686
-.endif
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

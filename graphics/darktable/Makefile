@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2020/05/14 12:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2020/08/07 14:30:10 jsg Exp $
 
 ONLY_FOR_ARCHS= i386 amd64 aarch64
 
@@ -8,7 +8,7 @@ V=		2.6.3
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	graphics x11
 
@@ -72,8 +72,8 @@ NO_TEST=	Yes
 
 .include <bsd.port.arch.mk>
 .if ${ARCH:Mi386}
-# needs 64-bit atomic ops, and all the registers it can get.
-CFLAGS += -march=i686 -fomit-frame-pointer
+# needs all the registers it can get.
+CFLAGS+=	-fomit-frame-pointer
 .endif
 # ...and there's a hard requirement of SSE3
 CFLAGS+=	-msse3

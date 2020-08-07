@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2020/07/29 07:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2020/08/07 14:30:10 jsg Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -16,6 +16,7 @@ COMMENT =		GTK+ port of the WebKit rendering engine
 V =			2.28.4
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
@@ -111,12 +112,6 @@ CXXFLAGS +=		-I${X11BASE}/include
 # save memory on 32bit arches
 .if !${PROPERTIES:Mlld} && ${MACHINE_ARCH} != "amd64"
 LDFLAGS +=		-Wl,--no-keep-memory
-.endif
-
-# __sync_add_and_fetch_8
-.if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-march=i686
-CXXFLAGS +=		-march=i686
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc"
