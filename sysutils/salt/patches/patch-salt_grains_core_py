@@ -1,15 +1,12 @@
-$OpenBSD: patch-salt_grains_core_py,v 1.4 2020/08/03 13:30:06 jasper Exp $
+$OpenBSD: patch-salt_grains_core_py,v 1.5 2020/08/07 19:31:23 jasper Exp $
 
-Unbreak minion without swap configured:
-
-  File "/usr/local/lib/python3.8/site-packages/salt/grains/core.py", line 534, in _bsd_memdata
-      grains["swap_total"] = int(swap_total) // 1024 // 1024
-      ValueError: invalid literal for int() with base 10: 'no'
+- Unbreak minion without swap configured:
+- Fix swap_total calculation on OpenBSD
 
 Index: salt/grains/core.py
 --- salt/grains/core.py.orig
 +++ salt/grains/core.py
-@@ -525,7 +525,7 @@ def _bsd_memdata(osdata):
+@@ -525,13 +525,15 @@ def _bsd_memdata(osdata):
          if osdata["kernel"] in ["OpenBSD", "NetBSD"]:
              swapctl = salt.utils.path.which("swapctl")
              swap_data = __salt__["cmd.run"]("{0} -sk".format(swapctl))
@@ -18,3 +15,12 @@ Index: salt/grains/core.py
                  swap_total = 0
              else:
                  swap_total = swap_data.split(" ")[1]
+         else:
+             swap_total = __salt__["cmd.run"]("{0} -n vm.swap_total".format(sysctl))
+-        grains["swap_total"] = int(swap_total) // 1024 // 1024
++        grains["swap_total"] = int(swap_total) // 1024
++        if grains["kernel"] != "OpenBSD":
++            grains["swap_total"] //= 1024
+     return grains
+ 
+ 
