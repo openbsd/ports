@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:12:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/08/07 06:40:46 martin Exp $
 
 COMMENT =		calculations for the position of the sun and the moon
 
-MODPY_EGG_VERSION =	1.10.1
+MODPY_EGG_VERSION =	2.2
 DISTNAME =		astral-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		astro
 
@@ -22,10 +21,12 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
-BUILD_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR}
+
+TEST_ENV +=		PYTHONPATH=${WRKSRC}/lib/
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>
