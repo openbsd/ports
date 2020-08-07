@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/04/08 20:43:05 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/07 09:59:58 jasper Exp $
 @bin bin/kstool
 include/keystone/
 include/keystone/arm.h
 include/keystone/arm64.h
+include/keystone/evm.h
 include/keystone/hexagon.h
 include/keystone/keystone.h
 include/keystone/mips.h

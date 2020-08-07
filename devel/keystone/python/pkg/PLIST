@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/04/08 20:43:05 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/07 09:59:58 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/keystone/
-lib/python${MODPY_VERSION}/site-packages/keystone-0.9-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/keystone/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}arm64_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}arm_const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}evm_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}hexagon_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}keystone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}keystone_const.${MODPY_PYC_MAGIC_TAG}pyc
@@ -16,11 +16,19 @@ lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}systemz_const.
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}x86_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keystone/arm64_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/arm_const.py
+lib/python${MODPY_VERSION}/site-packages/keystone/evm_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/hexagon_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/keystone.py
 lib/python${MODPY_VERSION}/site-packages/keystone/keystone_const.py
+@so lib/python${MODPY_VERSION}/site-packages/keystone/libkeystone.so
 lib/python${MODPY_VERSION}/site-packages/keystone/mips_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/ppc_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/sparc_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/systemz_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/x86_const.py
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
