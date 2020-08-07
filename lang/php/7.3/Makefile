@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2020/07/21 15:58:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2020/08/07 12:47:30 sthen Exp $
 
 PORTROACH=	limit:^7\.3
-PHP_VERSION=	7.3.20
+PHP_VERSION=	7.3.21
 PHP_PKGSPEC=	>=7.3,<7.4
 
 DEFAULT_PHP=	Yes
