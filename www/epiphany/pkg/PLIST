@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2020/05/14 15:03:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.52 2020/08/07 08:08:18 jasper Exp $
 @bin bin/epiphany
 lib/epiphany/
 @so lib/epiphany/libephymain.so
@@ -516,6 +516,37 @@ share/help/sv/epiphany/pref-passwords.page
 share/help/sv/epiphany/pref.page
 share/help/sv/epiphany/prob-restore-closed-page.page
 share/help/sv/epiphany/proxy.page
+share/help/uk/
+share/help/uk/epiphany/
+share/help/uk/epiphany/browse-local.page
+share/help/uk/epiphany/browse-private.page
+share/help/uk/epiphany/browse-tab.page
+share/help/uk/epiphany/browse-web.page
+share/help/uk/epiphany/browse-webapps-del.page
+share/help/uk/epiphany/browse-webapps.page
+share/help/uk/epiphany/cert.page
+share/help/uk/epiphany/cookies.xml
+share/help/uk/epiphany/data-cookies.page
+share/help/uk/epiphany/data-passwords.page
+share/help/uk/epiphany/data-personal-data.page
+share/help/uk/epiphany/history-delete.page
+share/help/uk/epiphany/history.page
+share/help/uk/epiphany/index.page
+share/help/uk/epiphany/introduction.page
+share/help/uk/epiphany/legal.xml
+share/help/uk/epiphany/media/
+share/help/uk/epiphany/media/epiphany-3-12.png
+share/help/uk/epiphany/media/private-browsing-3-12.png
+share/help/uk/epiphany/media/web-browser.png
+share/help/uk/epiphany/pref-cookies.page
+share/help/uk/epiphany/pref-css.page
+share/help/uk/epiphany/pref-downloads.page
+share/help/uk/epiphany/pref-font.page
+share/help/uk/epiphany/pref-mouse-gestures.page
+share/help/uk/epiphany/pref-passwords.page
+share/help/uk/epiphany/pref.page
+share/help/uk/epiphany/prob-restore-closed-page.page
+share/help/uk/epiphany/proxy.page
 share/icons/hicolor/scalable/apps/org.gnome.Epiphany.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Epiphany-symbolic.svg
 share/locale/af/LC_MESSAGES/epiphany.mo
@@ -534,6 +565,7 @@ share/locale/br/LC_MESSAGES/epiphany.mo
 share/locale/bs/LC_MESSAGES/epiphany.mo
 share/locale/ca/LC_MESSAGES/epiphany.mo
 share/locale/ca@valencia/LC_MESSAGES/epiphany.mo
+share/locale/ckb/LC_MESSAGES/epiphany.mo
 share/locale/cs/LC_MESSAGES/epiphany.mo
 share/locale/cy/LC_MESSAGES/epiphany.mo
 share/locale/da/LC_MESSAGES/epiphany.mo
