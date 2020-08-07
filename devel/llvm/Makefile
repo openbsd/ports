@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2020/08/07 11:42:02 jca Exp $
+# $OpenBSD: Makefile,v 1.258 2020/08/07 22:49:06 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -18,15 +18,15 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	0
-REVISION-lldb =	0
+REVISION-main =	1
+REVISION-lldb =	1
 
 CATEGORIES =	devel
 
-SHARED_LIBS =	clang		8.0 \
+SHARED_LIBS =	clang		8.1 \
 		clang-cpp	0.0 \
-		lldb		1.0 \
-		LTO		5.0 \
+		lldb		2.0 \
+		LTO		6.0 \
 		Remarks		0.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
