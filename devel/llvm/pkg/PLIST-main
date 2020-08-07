@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2020/08/05 06:49:49 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2020/08/07 11:42:02 jca Exp $
 @pkgpath devel/llvm
+@conflict lldb-<10.0.0p0
 @bin bin/bugpoint
 @bin bin/c-index-test
 bin/clang
@@ -25,7 +26,6 @@ bin/ld64.lld
 @bin bin/llc
 @bin bin/lld
 bin/lld-link
-@bin bin/lldb-instr
 @bin bin/lli
 bin/llvm-addr2line
 @bin bin/llvm-ar
@@ -786,27 +786,6 @@ include/lld/Core/Writer.h
 include/lld/ReaderWriter/
 include/lld/ReaderWriter/MachOLinkingContext.h
 include/lld/ReaderWriter/YamlContext.h
-include/lldb/API/SBFile.h
-include/lldb/API/SBReproducer.h
-include/lldb/Breakpoint/BreakpointPrecondition.h
-include/lldb/Core/IOHandlerCursesGUI.h
-include/lldb/Expression/DynamicCheckerFunctions.h
-include/lldb/Host/FileAction.h
-include/lldb/Host/LZMA.h
-include/lldb/Host/ProcessLaunchInfo.h
-include/lldb/Interpreter/OptionGroupPythonClassWithDict.h
-include/lldb/Symbol/CallFrameInfo.h
-include/lldb/Symbol/ClangASTMetadata.h
-include/lldb/Symbol/CxxModuleHandler.h
-include/lldb/Symbol/LocateSymbolFile.h
-include/lldb/Symbol/PostfixExpression.h
-include/lldb/Symbol/SourceModule.h
-include/lldb/Target/RemoteAwarePlatform.h
-include/lldb/Utility/GDBRemote.h
-include/lldb/Utility/ProcessInfo.h
-include/lldb/Utility/RangeMap.h
-include/lldb/Utility/ReproducerInstrumentation.h
-include/lldb/Utility/UserIDResolver.h
 include/llvm/
 include/llvm-c/
 include/llvm-c/Analysis.h

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-lldb,v 1.6 2020/08/05 06:49:49 jca Exp $
+@comment $OpenBSD: PLIST-lldb,v 1.7 2020/08/07 11:42:02 jca Exp $
 @conflict ${MODPY_PY_PREFIX}llvm-<6.0.1p3
-@conflict llvm-<6.0.1p19
+@conflict llvm-<10.0.0p0
 @bin bin/lldb
 @bin bin/lldb-argdumper
+@bin bin/lldb-instr
 @bin bin/lldb-vscode
 include/lldb/
 include/lldb/API/
@@ -26,6 +27,7 @@ include/lldb/API/SBError.h
 include/lldb/API/SBEvent.h
 include/lldb/API/SBExecutionContext.h
 include/lldb/API/SBExpressionOptions.h
+include/lldb/API/SBFile.h
 include/lldb/API/SBFileSpec.h
 include/lldb/API/SBFileSpecList.h
 include/lldb/API/SBFrame.h
@@ -46,6 +48,7 @@ include/lldb/API/SBProcess.h
 include/lldb/API/SBProcessInfo.h
 include/lldb/API/SBQueue.h
 include/lldb/API/SBQueueItem.h
+include/lldb/API/SBReproducer.h
 include/lldb/API/SBSection.h
 include/lldb/API/SBSourceManager.h
 include/lldb/API/SBStream.h
@@ -83,6 +86,7 @@ include/lldb/Breakpoint/BreakpointLocationCollection.h
 include/lldb/Breakpoint/BreakpointLocationList.h
 include/lldb/Breakpoint/BreakpointName.h
 include/lldb/Breakpoint/BreakpointOptions.h
+include/lldb/Breakpoint/BreakpointPrecondition.h
 include/lldb/Breakpoint/BreakpointResolver.h
 include/lldb/Breakpoint/BreakpointResolverAddress.h
 include/lldb/Breakpoint/BreakpointResolverFileLine.h
@@ -116,6 +120,7 @@ include/lldb/Core/FileSpecList.h
 include/lldb/Core/FormatEntity.h
 include/lldb/Core/Highlighter.h
 include/lldb/Core/IOHandler.h
+include/lldb/Core/IOHandlerCursesGUI.h
 include/lldb/Core/IOStreamMacros.h
 include/lldb/Core/LoadedModuleInfoList.h
 include/lldb/Core/Mangled.h
@@ -177,6 +182,7 @@ include/lldb/DataFormatters/VectorType.h
 include/lldb/Expression/
 include/lldb/Expression/DWARFExpression.h
 include/lldb/Expression/DiagnosticManager.h
+include/lldb/Expression/DynamicCheckerFunctions.h
 include/lldb/Expression/Expression.h
 include/lldb/Expression/ExpressionParser.h
 include/lldb/Expression/ExpressionSourceCode.h
@@ -197,6 +203,7 @@ include/lldb/Host/ConnectionFileDescriptor.h
 include/lldb/Host/Debug.h
 include/lldb/Host/Editline.h
 include/lldb/Host/File.h
+include/lldb/Host/FileAction.h
 include/lldb/Host/FileCache.h
 include/lldb/Host/FileSystem.h
 include/lldb/Host/Host.h
@@ -210,6 +217,7 @@ include/lldb/Host/HostNativeThreadBase.h
 include/lldb/Host/HostNativeThreadForward.h
 include/lldb/Host/HostProcess.h
 include/lldb/Host/HostThread.h
+include/lldb/Host/LZMA.h
 include/lldb/Host/LockFile.h
 include/lldb/Host/LockFileBase.h
 include/lldb/Host/MainLoop.h
@@ -219,6 +227,7 @@ include/lldb/Host/OptionParser.h
 include/lldb/Host/Pipe.h
 include/lldb/Host/PipeBase.h
 include/lldb/Host/PosixApi.h
+include/lldb/Host/ProcessLaunchInfo.h
 include/lldb/Host/ProcessLauncher.h
 include/lldb/Host/ProcessRunLock.h
 include/lldb/Host/PseudoTerminal.h
@@ -300,6 +309,7 @@ include/lldb/Interpreter/OptionGroupFile.h
 include/lldb/Interpreter/OptionGroupFormat.h
 include/lldb/Interpreter/OptionGroupOutputFile.h
 include/lldb/Interpreter/OptionGroupPlatform.h
+include/lldb/Interpreter/OptionGroupPythonClassWithDict.h
 include/lldb/Interpreter/OptionGroupString.h
 include/lldb/Interpreter/OptionGroupUInt64.h
 include/lldb/Interpreter/OptionGroupUUID.h
@@ -333,8 +343,10 @@ include/lldb/Interpreter/ScriptInterpreter.h
 include/lldb/Symbol/
 include/lldb/Symbol/ArmUnwindInfo.h
 include/lldb/Symbol/Block.h
+include/lldb/Symbol/CallFrameInfo.h
 include/lldb/Symbol/ClangASTContext.h
 include/lldb/Symbol/ClangASTImporter.h
+include/lldb/Symbol/ClangASTMetadata.h
 include/lldb/Symbol/ClangExternalASTSourceCallbacks.h
 include/lldb/Symbol/ClangUtil.h
 include/lldb/Symbol/CompactUnwindInfo.h
@@ -342,6 +354,7 @@ include/lldb/Symbol/CompileUnit.h
 include/lldb/Symbol/CompilerDecl.h
 include/lldb/Symbol/CompilerDeclContext.h
 include/lldb/Symbol/CompilerType.h
+include/lldb/Symbol/CxxModuleHandler.h
 include/lldb/Symbol/DWARFCallFrameInfo.h
 include/lldb/Symbol/DebugMacros.h
 include/lldb/Symbol/DeclVendor.h
@@ -350,8 +363,11 @@ include/lldb/Symbol/FuncUnwinders.h
 include/lldb/Symbol/Function.h
 include/lldb/Symbol/LineEntry.h
 include/lldb/Symbol/LineTable.h
+include/lldb/Symbol/LocateSymbolFile.h
 include/lldb/Symbol/ObjectContainer.h
 include/lldb/Symbol/ObjectFile.h
+include/lldb/Symbol/PostfixExpression.h
+include/lldb/Symbol/SourceModule.h
 include/lldb/Symbol/Symbol.h
 include/lldb/Symbol/SymbolContext.h
 include/lldb/Symbol/SymbolContextScope.h
@@ -393,6 +409,7 @@ include/lldb/Target/QueueList.h
 include/lldb/Target/RegisterCheckpoint.h
 include/lldb/Target/RegisterContext.h
 include/lldb/Target/RegisterNumber.h
+include/lldb/Target/RemoteAwarePlatform.h
 include/lldb/Target/SectionLoadHistory.h
 include/lldb/Target/SectionLoadList.h
 include/lldb/Target/StackFrame.h
@@ -448,6 +465,7 @@ include/lldb/Utility/Environment.h
 include/lldb/Utility/Event.h
 include/lldb/Utility/FileSpec.h
 include/lldb/Utility/Flags.h
+include/lldb/Utility/GDBRemote.h
 include/lldb/Utility/IOObject.h
 include/lldb/Utility/Iterable.h
 include/lldb/Utility/LLDBAssert.h
@@ -456,9 +474,12 @@ include/lldb/Utility/Log.h
 include/lldb/Utility/Logging.h
 include/lldb/Utility/NameMatches.h
 include/lldb/Utility/Predicate.h
+include/lldb/Utility/ProcessInfo.h
+include/lldb/Utility/RangeMap.h
 include/lldb/Utility/RegisterValue.h
 include/lldb/Utility/RegularExpression.h
 include/lldb/Utility/Reproducer.h
+include/lldb/Utility/ReproducerInstrumentation.h
 include/lldb/Utility/Scalar.h
 include/lldb/Utility/SelectHelper.h
 include/lldb/Utility/SharedCluster.h
@@ -481,6 +502,7 @@ include/lldb/Utility/TraceOptions.h
 include/lldb/Utility/UUID.h
 include/lldb/Utility/UriParser.h
 include/lldb/Utility/UserID.h
+include/lldb/Utility/UserIDResolver.h
 include/lldb/Utility/VASPrintf.h
 include/lldb/Utility/VMRange.h
 include/lldb/lldb-defines.h
