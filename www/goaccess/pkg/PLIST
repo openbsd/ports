@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/08/07 15:14:54 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/08/08 07:36:57 kirby Exp $
+@pkgpath  www/goaccess,tokyocabinet
 @bin bin/goaccess
 @man man/man1/goaccess.1
 share/examples/goaccess/
