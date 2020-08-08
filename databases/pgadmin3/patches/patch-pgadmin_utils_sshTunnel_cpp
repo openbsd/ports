@@ -1,0 +1,17 @@
+$OpenBSD: patch-pgadmin_utils_sshTunnel_cpp,v 1.1 2020/08/08 22:42:53 jca Exp $
+
+Only link with Ws2_32.lib when building on Windows.
+
+Index: pgadmin/utils/sshTunnel.cpp
+--- pgadmin/utils/sshTunnel.cpp.orig
++++ pgadmin/utils/sshTunnel.cpp
+@@ -19,7 +19,9 @@
+ #include "utils/sshTunnel.h"
+ #include "frm/frmMain.h"
+ 
++#ifdef WIN32
+ #pragma comment (lib, "Ws2_32.lib")
++#endif
+ 
+ typedef const char *(*inet_ntop_t) (int af, const void *src, char *dst, socklen_t size);
+ 
