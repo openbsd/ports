@@ -1,4 +1,5 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.2 2019/03/25 20:17:47 pascal Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.3 2020/08/08 16:48:48 sthen Exp $
+
 Index: gcc/config.gcc
 --- gcc/config.gcc.orig
 +++ gcc/config.gcc
@@ -131,7 +132,7 @@ Index: gcc/config.gcc
 +    arch_without_64bit=yes
 +    ;;
 +  i386-*-openbsd*)
-+    arch=i486
++    arch=pentium
      cpu=generic
      arch_without_sse2=yes
      arch_without_64bit=yes

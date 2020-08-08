@@ -1,4 +1,5 @@
-$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.2 2019/05/20 14:59:05 pascal Exp $
+$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.3 2020/08/08 16:48:48 sthen Exp $
+
 Index: gcc/config/i386/openbsdelf.h
 --- gcc/config/i386/openbsdelf.h.orig
 +++ gcc/config/i386/openbsdelf.h
@@ -17,7 +18,7 @@ Index: gcc/config/i386/openbsdelf.h
 -	%{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} %{!p:crt0%O%s}} \
 -	crtbegin%O%s} %{shared:crtbeginS%O%s}"
  
-+#define SUBTARGET32_DEFAULT_CPU "i486"
++#define SUBTARGET32_DEFAULT_CPU "i586"
 +#define STARTFILE_SPEC "\
 +	%{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} \
 +	%{!p:%{!static:crt0%O%s} %{static:%{nopie:crt0%O%s} \
