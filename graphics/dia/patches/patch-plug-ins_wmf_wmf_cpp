@@ -1,0 +1,27 @@
+$OpenBSD: patch-plug-ins_wmf_wmf_cpp,v 1.1 2020/08/08 22:12:00 jca Exp $
+
+Only link with gdi32 on Windows.
+
+Index: plug-ins/wmf/wmf.cpp
+--- plug-ins/wmf/wmf.cpp.orig
++++ plug-ins/wmf/wmf.cpp
+@@ -52,6 +52,9 @@ typedef W32::LOGFONTW LOGFONTW;
+ 
+ #include <pango/pangowin32.h>
+ 
++/* force linking with gdi32 */
++#pragma comment( lib, "gdi32" )
++
+ #elif HAVE_LIBEMF
+   namespace W32 {
+ #  include <emf.h>
+@@ -60,9 +63,6 @@ typedef W32::LOGFONTW LOGFONTW;
+ #  include "wmf_gdi.h"
+ #  define SAVE_EMF
+ #endif
+-
+-/* force linking with gdi32 */
+-#pragma comment( lib, "gdi32" )
+ 
+ 
+ // #define SAVE_EMF
