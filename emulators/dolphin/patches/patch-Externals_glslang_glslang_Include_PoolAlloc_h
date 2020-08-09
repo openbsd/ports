@@ -1,0 +1,15 @@
+$OpenBSD: patch-Externals_glslang_glslang_Include_PoolAlloc_h,v 1.1 2020/08/09 14:46:23 thfr Exp $
+
+fix clang 10 build (error: 'operator=' is a private member)
+
+Index: Externals/glslang/glslang/Include/PoolAlloc.h
+--- Externals/glslang/glslang/Include/PoolAlloc.h.orig
++++ Externals/glslang/glslang/Include/PoolAlloc.h
+@@ -304,7 +304,6 @@ class pool_allocator { (public)
+     size_type max_size() const { return static_cast<size_type>(-1) / sizeof(T); }
+     size_type max_size(int size) const { return static_cast<size_type>(-1) / size; }
+ 
+-    void setAllocator(TPoolAllocator* a) { allocator = *a; }
+     TPoolAllocator& getAllocator() const { return allocator; }
+ 
+ protected:
