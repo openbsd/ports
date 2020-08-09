@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/05/20 16:08:29 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/08/09 19:44:28 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 %%bc%%
@@ -1214,6 +1214,8 @@ share/racket/collects/racket/private/compiled/immediate-default_rkt.dep
 share/racket/collects/racket/private/compiled/immediate-default_rkt.zo
 share/racket/collects/racket/private/compiled/increader_rkt.dep
 share/racket/collects/racket/private/compiled/increader_rkt.zo
+share/racket/collects/racket/private/compiled/intdef-util_rkt.dep
+share/racket/collects/racket/private/compiled/intdef-util_rkt.zo
 share/racket/collects/racket/private/compiled/kernstruct_rkt.dep
 share/racket/collects/racket/private/compiled/kernstruct_rkt.zo
 share/racket/collects/racket/private/compiled/kw-file_rkt.dep
@@ -1387,6 +1389,7 @@ share/racket/collects/racket/private/generic.rkt
 share/racket/collects/racket/private/hash.rkt
 share/racket/collects/racket/private/immediate-default.rkt
 share/racket/collects/racket/private/increader.rkt
+share/racket/collects/racket/private/intdef-util.rkt
 share/racket/collects/racket/private/kernstruct.rkt
 share/racket/collects/racket/private/kw-file.rkt
 share/racket/collects/racket/private/kw-prop-key.rkt
