@@ -1,0 +1,33 @@
+$OpenBSD: patch-cmake_make_versioncpp_py,v 1.1 2020/08/09 09:37:07 kirby Exp $
+
+Patch script to provide same information as if you had run git on the
+checked out tree. This script should not be executing git since this
+is the official source tarball and it does not provide any git info.
+Index: cmake/make_versioncpp.py
+--- cmake/make_versioncpp.py.orig
++++ cmake/make_versioncpp.py
+@@ -124,20 +124,12 @@ if system() == 'Darwin':
+     generators.append(Generator('packaging/Info.plist.in', 'packaging/Info.plist'))
+ 
+ version = "0.4.10"
+-branch = ""
++branch = "release-v0.4.10"
+ build_no = INVALID_BUILD_NO
++commit = 'a3e7a51'
++timestamp = 1595927480
+ 
+-try:
+-    branch = check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], universal_newlines=True).strip()
+-    if (branch == "master") or (branch[:7] == "release"):
+-        branch = ""
+-    else:
+-        branch += " "
+-    commit = check_output(["git", "show", "--no-show-signature", "-s", "--format=%h", "--abbrev=7", "HEAD"], universal_newlines=True).strip()
+-    timestamp = float(check_output(["git", "show", "--no-show-signature", "-s", "--format=%ct", "HEAD"], universal_newlines=True).strip())
+-    build_no = ".".join([datetime.utcfromtimestamp(timestamp).strftime("%Y-%m-%d"), commit])
+-except IOError:
+-    print("WARNING: git not installed or not setup correctly")
++build_no = ".".join([datetime.utcfromtimestamp(timestamp).strftime("%Y-%m-%d"), commit])
+ 
+ for generator in generators:
+     generator.execute(version, branch, build_no, build_sys)

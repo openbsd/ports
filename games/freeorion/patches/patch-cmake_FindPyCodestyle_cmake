@@ -1,0 +1,15 @@
+$OpenBSD: patch-cmake_FindPyCodestyle_cmake,v 1.1 2020/08/09 09:37:07 kirby Exp $
+
+OpenBSD's pycodestyle executable name is pycodestyle-3
+
+Add OpenBSD py3-codestyle binary to NAMES
+Index: cmake/FindPyCodestyle.cmake
+--- cmake/FindPyCodestyle.cmake.orig
++++ cmake/FindPyCodestyle.cmake
+@@ -1,5 +1,5 @@
+ find_program(PYCODESTYLE_EXECUTABLE
+-    NAMES pycodestyle pep8 # Old name
++    NAMES pycodestyle-3
+     DOC "Python style guide checker"
+ )
+ 

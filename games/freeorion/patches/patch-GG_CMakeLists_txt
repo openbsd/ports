@@ -1,0 +1,14 @@
+$OpenBSD: patch-GG_CMakeLists_txt,v 1.1 2020/08/09 09:37:07 kirby Exp $
+
+Add X11BASE include directory
+Index: GG/CMakeLists.txt
+--- GG/CMakeLists.txt.orig
++++ GG/CMakeLists.txt
+@@ -101,6 +101,7 @@ endif()
+ include_directories(
+     ${CMAKE_CURRENT_SOURCE_DIR}
+     ${CMAKE_CURRENT_BINARY_DIR}
++    ${X11BASE}/include
+ )
+ 
+ configure_file(

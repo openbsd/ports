@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_FindBoost_cmake,v 1.1 2020/08/09 09:37:07 kirby Exp $
+
+Unset the Python minor version since OpenBSD uses library names
+like boost_python3-mt instead of boost_python38-mt
+
+Index: cmake/FindBoost.cmake
+--- cmake/FindBoost.cmake.orig
++++ cmake/FindBoost.cmake
+@@ -1778,6 +1778,7 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
+   endif()
+ 
+   unset(_Boost_FIND_LIBRARY_HINTS_FOR_COMPONENT_NAME)
++  unset(COMPONENT_PYTHON_VERSION_MINOR)
+   if (COMPONENT_PYTHON_VERSION_MINOR)
+     # Boost >= 1.67
+     list(APPEND _Boost_FIND_LIBRARY_HINTS_FOR_COMPONENT_NAME "${COMPONENT_UNVERSIONED}${COMPONENT_PYTHON_VERSION_MAJOR}${COMPONENT_PYTHON_VERSION_MINOR}")
