@@ -1,8 +1,7 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.6 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.7 2020/08/09 14:12:30 jca Exp $
 
 - Make sure that we really don't emit quad-precision unless the
   "hard-quad-float" feature is available
-- Use a 64-bit register when required
 
 Index: lib/Target/Sparc/SparcISelLowering.cpp
 --- lib/Target/Sparc/SparcISelLowering.cpp.orig
