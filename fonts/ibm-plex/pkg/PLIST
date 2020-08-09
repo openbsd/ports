@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/05/23 13:11:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/08/09 00:36:05 bentley Exp $
 share/doc/ibm-plex/
 share/doc/ibm-plex/license.txt
 share/fonts/
@@ -147,6 +147,14 @@ share/fonts/ibm-plex/IBMPlexSansHebrew-Text.otf
 share/fonts/ibm-plex/IBMPlexSansHebrew-Text.ttf
 share/fonts/ibm-plex/IBMPlexSansHebrew-Thin.otf
 share/fonts/ibm-plex/IBMPlexSansHebrew-Thin.ttf
+share/fonts/ibm-plex/IBMPlexSansKR-Bold.otf
+share/fonts/ibm-plex/IBMPlexSansKR-ExtraLight.otf
+share/fonts/ibm-plex/IBMPlexSansKR-Light.otf
+share/fonts/ibm-plex/IBMPlexSansKR-Medium.otf
+share/fonts/ibm-plex/IBMPlexSansKR-Regular.otf
+share/fonts/ibm-plex/IBMPlexSansKR-SemiBold.otf
+share/fonts/ibm-plex/IBMPlexSansKR-Text.otf
+share/fonts/ibm-plex/IBMPlexSansKR-Thin.otf
 share/fonts/ibm-plex/IBMPlexSansThai-Bold.otf
 share/fonts/ibm-plex/IBMPlexSansThai-Bold.ttf
 share/fonts/ibm-plex/IBMPlexSansThai-ExtraLight.otf
