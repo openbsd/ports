@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/12/29 23:56:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2020/08/09 19:39:15 juanfra Exp $
 
 COMMENT =		Dragon and CoCo emulator
 
-DISTNAME =		xroar-0.35.4
-REVISION =		0
+DISTNAME =		xroar-0.36.2
 
 CATEGORIES =		emulators
 
@@ -11,7 +10,7 @@ HOMEPAGE =		https://www.6809.org.uk/xroar/
 
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
-# GPLv2+
+# GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL SDL2 X11 Xcomposite Xcursor Xdamage Xext Xfixes
@@ -30,6 +29,8 @@ LIB_DEPENDS =		audio/libsndfile \
 			devel/sdl2 \
 			x11/gtk+2 \
 			x11/gtkglext
+
+USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-gtk2 \
