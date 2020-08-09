@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/22 16:47:26 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/08/09 02:51:57 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,12 +11,14 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/${MODPY_PYCACHE}forge.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/${MODPY_PYCACHE}install.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/${MODPY_PYCACHE}natives.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/account.py
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/command.py
+lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/forge.py
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/helper.py
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/install.py
 lib/python${MODPY_VERSION}/site-packages/minecraft_launcher_lib/natives.py
