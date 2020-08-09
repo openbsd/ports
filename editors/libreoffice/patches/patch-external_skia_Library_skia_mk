@@ -1,0 +1,18 @@
+$OpenBSD: patch-external_skia_Library_skia_mk,v 1.1 2020/08/09 06:33:26 robert Exp $
+
+Index: external/skia/Library_skia.mk
+--- external/skia/Library_skia.mk.orig
++++ external/skia/Library_skia.mk
+@@ -66,10 +66,10 @@ $(eval $(call gb_Library_use_externals,skia,\
+     libpng \
+ ))
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Library_add_libs,skia,\
+     -lm \
+-    -ldl \
++    $(if $(filter LINUX,$(OS)),-ldl) \
+     -lX11-xcb \
+     -lX11 \
+ ))

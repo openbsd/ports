@@ -1,0 +1,14 @@
+$OpenBSD: patch-connectivity_source_drivers_odbc_OConnection_cxx,v 1.1 2020/08/09 06:33:26 robert Exp $
+
+Index: connectivity/source/drivers/odbc/OConnection.cxx
+--- connectivity/source/drivers/odbc/OConnection.cxx.orig
++++ connectivity/source/drivers/odbc/OConnection.cxx
+@@ -103,7 +103,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
+     (void)nTimeOut; /* WaE */
+ #endif
+ 
+-#ifdef LINUX
++#if defined LINUX || defined OPENBSD
+     (void) bSilent;
+     nSQLRETURN = N3SQLDriverConnect(m_aConnectionHandle,
+                       nullptr,

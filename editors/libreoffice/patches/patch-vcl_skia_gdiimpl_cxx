@@ -1,0 +1,14 @@
+$OpenBSD: patch-vcl_skia_gdiimpl_cxx,v 1.1 2020/08/09 06:33:26 robert Exp $
+
+Index: vcl/skia/gdiimpl.cxx
+--- vcl/skia/gdiimpl.cxx.orig
++++ vcl/skia/gdiimpl.cxx
+@@ -722,7 +722,7 @@ bool SkiaSalGraphicsImpl::drawPolyPolygon(const basegf
+     }
+     addXorRegion(aPath.getBounds());
+     postDraw();
+-#if defined LINUX
++#if defined LINUX || defined OPENBSD
+     // WORKAROUND: The logo in the about dialog has drawing errors. This seems to happen
+     // only on Linux (not Windows on the same machine), with both AMDGPU and Mesa,
+     // and only when antialiasing is enabled. Flushing seems to avoid the problem.
