@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2020/05/14 15:52:55 juanfra Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2020/08/09 19:38:18 juanfra Exp $
 @pkgpath devel/mercurial
 @bin bin/chg
 bin/hg
@@ -412,7 +412,9 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}manifest.${MO
 lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}match.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}mdiff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}merge.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}mergestate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}mergeutil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}minifileset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}minirst.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/${MODPY_PYCACHE}namespaces.${MODPY_PYC_MAGIC_TAG}pyc
@@ -590,6 +592,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/helptext/internals/
 lib/python${MODPY_VERSION}/site-packages/mercurial/helptext/internals/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mercurial/helptext/internals/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mercurial/helptext/internals/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/helptext/internals/bid-merge.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/helptext/internals/bundle2.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/helptext/internals/bundles.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/helptext/internals/cbor.txt
@@ -701,7 +704,9 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/manifest.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/match.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/mdiff.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/merge.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/mergestate.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/mergeutil.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/metadata.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/minifileset.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/minirst.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/namespaces.py
