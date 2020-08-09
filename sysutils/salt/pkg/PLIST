@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2020/07/02 19:04:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.56 2020/08/09 10:33:43 jasper Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @newgroup _salt:722
 @newuser _salt:722:722:daemon:SaltStack Daemon:${LOCALSTATEDIR}/salt:/sbin/nologin
@@ -3287,6 +3287,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}powershell.$
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}preseed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}process.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}profile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}proxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}psutil_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}pushover.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}pycrypto.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3490,6 +3491,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/powershell.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/preseed.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/process.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/profile.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/proxy.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/psutil_compat.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pushover.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pycrypto.py
