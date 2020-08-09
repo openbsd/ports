@@ -1,4 +1,7 @@
-$OpenBSD: patch-salt_utils_network_py,v 1.5 2020/07/02 19:04:32 jasper Exp $
+$OpenBSD: patch-salt_utils_network_py,v 1.6 2020/08/09 11:10:07 jasper Exp $
+
+TypeError: a bytes-like object is required, not 'str'
+https://github.com/saltstack/salt/pull/58158
 
 Index: salt/utils/network.py
 --- salt/utils/network.py.orig
