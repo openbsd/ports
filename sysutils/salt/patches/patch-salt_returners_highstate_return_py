@@ -1,5 +1,7 @@
-$OpenBSD: patch-salt_returners_highstate_return_py,v 1.1 2020/07/15 10:29:16 florian Exp $
+$OpenBSD: patch-salt_returners_highstate_return_py,v 1.2 2020/08/09 10:37:46 jasper Exp $
+
 cgi.escape has been deprecated since python 3.2 and removed in 3.8.
+https://github.com/saltstack/salt/pull/57983
 
 Index: salt/returners/highstate_return.py
 --- salt/returners/highstate_return.py.orig

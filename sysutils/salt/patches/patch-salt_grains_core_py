@@ -1,7 +1,9 @@
-$OpenBSD: patch-salt_grains_core_py,v 1.6 2020/08/09 10:33:43 jasper Exp $
+$OpenBSD: patch-salt_grains_core_py,v 1.7 2020/08/09 10:37:46 jasper Exp $
 
-- Unbreak minion without swap configured:
+- Unbreak minion without swap configured
 - Fix swap_total calculation on OpenBSD
+
+https://github.com/saltstack/salt/pull/58155
 
 Index: salt/grains/core.py
 --- salt/grains/core.py.orig
