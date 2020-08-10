@@ -1,9 +1,0 @@
-$OpenBSD: patch-ex_ex_h,v 1.1 2014/12/25 19:41:07 dcoppa Exp $
---- ex/ex.h.orig	Wed Dec 24 11:09:30 2014
-+++ ex/ex.h	Wed Dec 24 11:10:43 2014
-@@ -230,4 +230,4 @@ typedef enum {
- } tagmsg_t;
- 
- #include "ex_def.h"
--#include "extern.h"
-+#include "ex_extern.h"

@@ -1,9 +1,0 @@
-$OpenBSD: patch-cl_cl_h,v 1.2 2015/05/15 08:23:20 bentley Exp $
---- cl/cl.h.orig	Fri May 15 01:59:17 2015
-+++ cl/cl.h	Fri May 15 01:59:20 2015
-@@ -80,4 +80,4 @@ typedef enum { INP_OK=0, INP_EOF, INP_ERR, INP_INTR, I
- #define	RCNO(sp, cno)	(cno)
- #define	RLNO(sp, lno)	(lno)
- 
--#include "extern.h"
-+#include "cl_extern.h"

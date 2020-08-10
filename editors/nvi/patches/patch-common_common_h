@@ -1,9 +1,0 @@
-$OpenBSD: patch-common_common_h,v 1.1 2014/12/25 19:41:07 dcoppa Exp $
---- common/common.h.orig	Wed Dec 24 11:09:08 2014
-+++ common/common.h	Wed Dec 24 11:10:21 2014
-@@ -90,4 +90,4 @@ typedef enum { SEQ_ABBREV, SEQ_COMMAND, SEQ_INPUT } se
- #include "log.h"
- #include "mem.h"
- 
--#include "extern.h"
-+#include "common_extern.h"

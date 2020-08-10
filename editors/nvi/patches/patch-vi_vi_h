@@ -1,9 +1,0 @@
-$OpenBSD: patch-vi_vi_h,v 1.1 2014/12/25 19:41:07 dcoppa Exp $
---- vi/vi.h.orig	Wed Dec 24 11:09:37 2014
-+++ vi/vi.h	Wed Dec 24 11:10:58 2014
-@@ -383,4 +383,4 @@ typedef enum {
- 	VIM_NOCOM, VIM_NOCOM_B, VIM_USAGE, VIM_WRESIZE
- } vim_t;
- 
--#include "extern.h"
-+#include "vi_extern.h"

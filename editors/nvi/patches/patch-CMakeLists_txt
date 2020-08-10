@@ -1,0 +1,24 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/08/10 18:20:21 millert Exp $
+Avoid using flags not supported by in-tree gcc.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -20,14 +20,15 @@ mark_as_advanced(CMAKE_INSTALL_PREFIX)
+ option(USE_WIDECHAR "Enable wide character support" ON)
+ option(USE_ICONV "Enable iconv support" ON)
+ 
+-add_compile_options(-fcolor-diagnostics)
+ add_compile_options($<$<CONFIG:Debug>:-Wall>)
+ add_compile_options($<$<CONFIG:Debug>:-Wno-parentheses>)
+ add_compile_options($<$<CONFIG:Debug>:-Wno-uninitialized>)
+ add_compile_options($<$<CONFIG:Debug>:-Wmissing-prototypes>)
+ add_compile_options($<$<CONFIG:Debug>:-Wsystem-headers>)
+ add_compile_options($<$<CONFIG:Release>:-Wuninitialized>)
+-add_compile_options($<$<CONFIG:Release>:-Wno-dangling-else>)
++if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
++    add_compile_options($<$<CONFIG:Release>:-Wno-dangling-else>)
++endif()
+ add_compile_options(-Wstack-protector -fstack-protector)
+ add_compile_options(-Wstrict-aliasing -fstrict-aliasing)
+ 
