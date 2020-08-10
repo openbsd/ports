@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/28 13:48:46 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/10 16:15:44 tracey Exp $
 @bin bin/freebee
 @man man/man6/freebee.6
 share/freebee/
-share/freebee/sowpods.txt
+share/freebee/enable1.txt
