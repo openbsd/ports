@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/22 11:11:19 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/10 07:44:07 bket Exp $
+@conflict py-snuggs-*
+@pkgpath math/py-snuggs
 lib/python${MODPY_VERSION}/site-packages/snuggs/
 lib/python${MODPY_VERSION}/site-packages/snuggs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/snuggs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
