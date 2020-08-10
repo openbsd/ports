@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/05/03 14:24:03 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/08/10 00:56:40 jca Exp $
 @bin bin/luajit${MODLUA_DEP_VERSION}
 include/luajit-2.0/
 include/luajit-2.0/lauxlib.h
@@ -8,12 +8,10 @@ include/luajit-2.0/luaconf.h
 include/luajit-2.0/luajit.h
 include/luajit-2.0/lualib.h
 @comment lib/libluajit-${MODLUA_VERSION}.so
-lib/libluajit-${MODLUA_VERSION}.a
+@static-lib lib/libluajit-${MODLUA_VERSION}.a
 @lib lib/libluajit-${MODLUA_VERSION}.so.${LIBluajit-${MODLUA_VERSION}_VERSION}
-lib/lua/${MODLUA_VERSION}/
 lib/pkgconfig/luajit.pc
 @man man/man1/luajit.1
-share/lua/${MODLUA_VERSION}/
 share/lua/${MODLUA_VERSION}/jit/
 share/lua/${MODLUA_VERSION}/jit/bc.lua
 share/lua/${MODLUA_VERSION}/jit/bcsave.lua

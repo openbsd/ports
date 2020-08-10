@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/08/10 00:56:40 jca Exp $
 
 # ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
 # this architecture (yet)"
@@ -11,7 +11,7 @@ SHARED_LIBS +=	luajit-${MODLUA_VERSION} 1.0 # 2.0.5
 
 COMMENT =	just-in-time compiler for Lua
 V =		2.0.5
-REVISION =	1
+REVISION =	2
 DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
 
@@ -61,7 +61,7 @@ do-test:
 .include <bsd.port.arch.mk>
 
 .if ${PROPERTIES:Mclang}
-MAKE_FLAGS += TARGET_LDFLAGS='-lc++abi -lpthread'
+MAKE_FLAGS += TARGET_LIBS='-lc++abi -lpthread'
 WANTLIB +=	c++abi pthread
 .endif
 
