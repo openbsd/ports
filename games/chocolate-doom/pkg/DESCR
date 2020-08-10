@@ -1,28 +1,7 @@
-Chocolate Doom is a portable branch of the classic doom.exe experience
-from the days of DOS. The author, Simon Howard, has worked to ensure
-Chocolate Doom, which is nothing more than a directly modified version
-of the released iD Software source code, has zero changes that affect
-gameplay, look, or feel, and also re-created a DOS-like setup program to
-configure the game much like the original setup.exe.  The project also
-maintains versions of the engine for Heretic, Hexen, and Strife.
+Chocolate Doom is an SDL-based port of the classic DOOM.EXE experience from
+the days of DOS.  The project aims to provide an experience identical to that
+of the original games on original hardware.  A game configuration program is 
+included, and emulates the classic DOS-style SETUP.EXE of the originals.
 
-Chocolate Doom provides:
-  chocolate-doom          - the Doom executable
-  chocolate-doom-setup    - the Doom setup executable
-  chocolate-heretic       - the Heretic executable
-  chocolate-heretic-setup - the Heretic setup executable
-  chocolate-hexen         - the Hexen executable
-  chocolate-hexen-setup   - the Hexen setup executable
-  chocolate-strife        - the Strife executable
-  chocolate-strife-setup  - the Strife setup executable
-  chocolate-server        - server for up to 4-player net games
-
-
-Due to the port re-implementing the original games as closely as
-possible, all original game PWADs and demos work flawlessly. Other
-original features include a PC-speaker driver, just like the DOS
-PC-speaker driver, and a working -left and -right network command
-parameter system for the 'surround display' setup that was
-obtainable with the original DOS executables over an IPX network.
-
-Check the chocolate-*(6) manpages for additional information.
+The project also maintains versions of the engine for Heretic, Hexen, and
+Strife.  All original game PWADs and demos should work flawlessly.

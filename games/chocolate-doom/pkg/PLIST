@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/08/10 14:36:39 bcallah Exp $
 @bin bin/chocolate-doom
 @bin bin/chocolate-doom-setup
 @bin bin/chocolate-heretic
@@ -76,6 +76,7 @@ share/doc/chocolate-strife/PHILOSOPHY.md
 share/doc/chocolate-strife/README.Music.md
 share/doc/chocolate-strife/README.Strife.md
 share/doc/chocolate-strife/README.md
+share/doc/pkg-readmes/${PKGSTEM}
 share/doom/
 share/icons/
 share/icons/chocolate-doom.png

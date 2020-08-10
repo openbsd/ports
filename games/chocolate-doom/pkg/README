@@ -1,0 +1,67 @@
+$OpenBSD: README,v 1.1 2020/08/10 14:36:39 bcallah Exp $
+
++------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++------------------------------------------------------------------------------
+
+Game Data
+=========
+
+To play the game you will need an original Doom, Ultimate Doom, Doom II,
+Final Doom, Heretic, Hexen, or Strife IWAD.  The games data files will
+be named as follows:
+
+  o DOOM1.WAD .................. Doom Shareware
+  o DOOM.WAD ................... Doom Registered or Ultimate Doom
+  o DOOM2.WAD .................. Doom II: Hell on Earth
+  o PLUTONIA.WAD ............... Final Doom: The Plutonia Experiment
+  o TNT.WAD .................... Final Doom: TNT Evilution
+  o HERETIC1.WAD ............... Heretic Shareware
+  o HERETIC.WAD ................ Heretic: Shadow of the Serpent Riders
+  o HEXEN.WAD .................. Hexen: Beyond Heretic
+  o STRIFE0.WAD ................ Strife Shareware
+  o STRIFE1.WAD + VOICES.WAD ... Strife: Quest for the Sigil
+
+Place one or more of the above-listed files in ${PREFIX}/share/doom/
+to play.
+
+NOTE: Chocolate-doom is case-insensitive when loading files, just as the
+original for DOS was.  This means you do not have to reference the files
+in CAPS to load via `-iwad' or `-file' parameters.
+
+
+Launching a Game
+================
+
+Depending on which game you want to play, launch with the executable
+matching the game data installed.  There are four options:
+
+  o chocolate-doom
+  o chocolate-heretic
+  o chocolate-hexen
+  o chocolate-strife
+
+Run `chocolate-<game>-setup' to generate a configuration file to your
+liking.
+
+If multiple IWADs are installed, you may specify the one you want to
+play via the `-iwad' command-line parameter:
+
+  $ chocolate-doom -iwad doom.wad
+  $ chocolate-heretic -iwad heretic1.wad
+
+Multiplayer Games
+=================
+
+See the chocolate-<game>(6) manpages for additional information.  If a
+dedicated server is desired, see the chocolate-server(6) manpage.
+
+Shareware Data
+==============
+
+The Doom Shareware IWAD is available in the `doomdata' package.  Other
+shareware is available from the Doomworld idgames archive website:
+
+  Heretic: https://www.doomworld.com/idgames/idstuff/heretic/htic_v12
+  Hexen: https://www.doomworld.com/idgames/idstuff/hexen/hexndemo
+  Strife: https://www.doomworld.com/idgames/roguestuff/strife11
