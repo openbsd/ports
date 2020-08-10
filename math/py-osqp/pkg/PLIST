@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/26 10:45:43 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/10 07:53:59 bket Exp $
+@conflict py-osqp-*
+@pkgpath math/py-osqp
 lib/python${MODPY_VERSION}/site-packages/osqp/
 lib/python${MODPY_VERSION}/site-packages/osqp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/osqp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
