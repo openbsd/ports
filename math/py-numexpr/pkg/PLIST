@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/23 17:45:20 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/10 15:30:06 bket Exp $
+@conflict py-numexpr-*
+@pkgpath math/py-numexpr
 lib/python${MODPY_VERSION}/site-packages/numexpr/
 lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}utils.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numexpr/cpuinfo.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/expressions.py
-lib/python${MODPY_VERSION}/site-packages/numexpr/interpreter.so
+@so lib/python${MODPY_VERSION}/site-packages/numexpr/interpreter.so
 lib/python${MODPY_VERSION}/site-packages/numexpr/necompiler.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/__init__.py
