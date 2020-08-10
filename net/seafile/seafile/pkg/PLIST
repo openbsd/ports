@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/22 19:57:19 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/08/10 13:36:32 kirby Exp $
 bin/seaf-cli
 @bin bin/seaf-daemon
 include/seafile/
@@ -12,10 +12,11 @@ lib/libseafile.la
 lib/pkgconfig/libseafile.pc
 lib/python${MODPY_VERSION}/site-packages/seafile/
 lib/python${MODPY_VERSION}/site-packages/seafile/__init__.py
-lib/python${MODPY_VERSION}/site-packages/seafile/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/seafile/__init__.${MODPY_PYOEXTENSION}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seafile/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/seafile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/seafile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/seafile/${MODPY_PYCACHE}rpcclient.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/seafile/${MODPY_PYCACHE}rpcclient.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seafile/rpcclient.py
-lib/python${MODPY_VERSION}/site-packages/seafile/rpcclient.pyc
-lib/python${MODPY_VERSION}/site-packages/seafile/rpcclient.${MODPY_PYOEXTENSION}
 @man man/man1/seaf-cli.1
 @man man/man1/seaf-daemon.1
