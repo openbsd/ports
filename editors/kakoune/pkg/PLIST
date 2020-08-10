@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 13:07:04 solene Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/10 06:59:14 solene Exp $
 @bin bin/kak
 @man man/man1/kak.1
 share/doc/kak/
@@ -59,9 +59,11 @@ share/kak/rc/filetype/cabal.kak
 share/kak/rc/filetype/clojure.kak
 share/kak/rc/filetype/cmake.kak
 share/kak/rc/filetype/coffee.kak
+share/kak/rc/filetype/coq.kak
 share/kak/rc/filetype/crystal.kak
 share/kak/rc/filetype/css.kak
 share/kak/rc/filetype/cucumber.kak
+share/kak/rc/filetype/cue.kak
 share/kak/rc/filetype/d.kak
 share/kak/rc/filetype/dart.kak
 share/kak/rc/filetype/dhall.kak
@@ -69,6 +71,7 @@ share/kak/rc/filetype/diff.kak
 share/kak/rc/filetype/dockerfile.kak
 share/kak/rc/filetype/elixir.kak
 share/kak/rc/filetype/elm.kak
+share/kak/rc/filetype/eruby.kak
 share/kak/rc/filetype/etc.kak
 share/kak/rc/filetype/exherbo.kak
 share/kak/rc/filetype/fish.kak
@@ -99,6 +102,8 @@ share/kak/rc/filetype/mail.kak
 share/kak/rc/filetype/makefile.kak
 share/kak/rc/filetype/markdown.kak
 share/kak/rc/filetype/mercurial.kak
+share/kak/rc/filetype/meson.kak
+share/kak/rc/filetype/mlb.kak
 share/kak/rc/filetype/moon.kak
 share/kak/rc/filetype/nim.kak
 share/kak/rc/filetype/nix.kak
@@ -119,6 +124,7 @@ share/kak/rc/filetype/scala.kak
 share/kak/rc/filetype/scheme.kak
 share/kak/rc/filetype/scss.kak
 share/kak/rc/filetype/sh.kak
+share/kak/rc/filetype/sml.kak
 share/kak/rc/filetype/sql.kak
 share/kak/rc/filetype/swift.kak
 share/kak/rc/filetype/systemd.kak
@@ -129,6 +135,7 @@ share/kak/rc/filetype/troff.kak
 share/kak/rc/filetype/tupfile.kak
 share/kak/rc/filetype/void-linux.kak
 share/kak/rc/filetype/yaml.kak
+share/kak/rc/filetype/zig.kak
 share/kak/rc/tools/
 share/kak/rc/tools/autorestore.kak
 share/kak/rc/tools/autowrap.kak
@@ -150,10 +157,12 @@ share/kak/rc/tools/rust/
 share/kak/rc/tools/rust/racer.kak
 share/kak/rc/tools/spell.kak
 share/kak/rc/windowing/
+share/kak/rc/windowing/detection.kak
 share/kak/rc/windowing/iterm.kak
 share/kak/rc/windowing/kitty.kak
 share/kak/rc/windowing/new-client.kak
 share/kak/rc/windowing/repl/
+share/kak/rc/windowing/repl/kitty.kak
 share/kak/rc/windowing/repl/tmux.kak
 share/kak/rc/windowing/repl/x11.kak
 share/kak/rc/windowing/screen.kak
