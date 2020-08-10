@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/26 10:12:53 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/10 07:57:36 bket Exp $
+@conflict py-ecos-*
+@pkgpath math/py-ecos
 @so lib/python${MODPY_VERSION}/site-packages/_ecos.so
 lib/python${MODPY_VERSION}/site-packages/ecos/
 lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

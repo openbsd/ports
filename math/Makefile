@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2020/08/10 07:53:59 bket Exp $
+# $OpenBSD: Makefile,v 1.190 2020/08/10 07:57:36 bket Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -124,7 +124,6 @@
      SUBDIR += py-cftime,python3
      SUBDIR += py-cvxopt,python3
      SUBDIR += py-cvxpy,python3
-     SUBDIR += py-ecos
      SUBDIR += py-ecos,python3
      SUBDIR += py-graphviz
      SUBDIR += py-graphviz,python3
