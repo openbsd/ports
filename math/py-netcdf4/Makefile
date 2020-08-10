@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/08/05 09:10:16 martin Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/10 21:34:45 edd Exp $
 
 COMMENT=	Python interface to the netCDF C library
 
@@ -18,8 +18,6 @@ MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 MODPY_PI=		Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-
-PORT_HOME=		${WRKDIR}
 
 WANTLIB+=		netcdf hdf5 hdf5_hl pthread ${MODPY_WANTLIB}
 
