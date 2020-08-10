@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/07/10 03:23:55 kmos Exp $
-@conflict net/py-cares-*
+@comment $OpenBSD: PLIST,v 1.5 2020/08/10 14:42:02 bket Exp $
+@conflict py-cares-*
 @pkgpath net/py-cares
 lib/python${MODPY_VERSION}/site-packages/pycares/
 lib/python${MODPY_VERSION}/site-packages/pycares-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

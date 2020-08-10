@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/05/09 17:05:42 afresh1 Exp $
-@conflict mail/p5-Email-MIME-Creator-*
-@conflict mail/p5-Email-MIME-Modifier-*
+@comment $OpenBSD: PLIST,v 1.8 2020/08/10 14:42:02 bket Exp $
+@conflict p5-Email-MIME-Creator-*
+@conflict p5-Email-MIME-Modifier-*
 @pkgpath mail/p5-Email-MIME-Creator
 @pkgpath mail/p5-Email-MIME-Modifier
 ${P5SITE}/Email/MIME.pm
