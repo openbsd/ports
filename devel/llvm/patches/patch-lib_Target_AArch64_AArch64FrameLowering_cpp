@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64FrameLowering_cpp,v 1.4 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64FrameLowering_cpp,v 1.5 2020/08/10 11:38:43 jca Exp $
 
 Add retguard for arm64.
 
@@ -13,7 +13,7 @@ Index: lib/Target/AArch64/AArch64FrameLowering.cpp
  #include "AArch64StackOffset.h"
  #include "AArch64Subtarget.h"
  #include "AArch64TargetMachine.h"
-@@ -2359,6 +2360,10 @@ void AArch64FrameLowering::determineCalleeSaves(Machin
+@@ -2365,6 +2366,10 @@ void AArch64FrameLowering::determineCalleeSaves(Machin
                                  ? RegInfo->getBaseRegister()
                                  : (unsigned)AArch64::NoRegister;
  
@@ -24,7 +24,7 @@ Index: lib/Target/AArch64/AArch64FrameLowering.cpp
    unsigned ExtraCSSpill = 0;
    // Figure out which callee-saved registers to save/restore.
    for (unsigned i = 0; CSRegs[i]; ++i) {
-@@ -2679,4 +2684,8 @@ unsigned AArch64FrameLowering::getWinEHFuncletFrameSiz
+@@ -2694,4 +2699,8 @@ unsigned AArch64FrameLowering::getWinEHFuncletFrameSiz
    // This is the amount of stack a funclet needs to allocate.
    return alignTo(CSSize + MF.getFrameInfo().getMaxCallFrameSize(),
                   getStackAlignment());

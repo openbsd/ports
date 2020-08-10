@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.13 2020/08/05 06:49:49 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.14 2020/08/10 11:38:43 jca Exp $
 
 - Merge '.openbsd.randomdata.*' sections into a single '.openbsd.randomdata'
   section when linking, as we do when using ld from binutils.
@@ -50,7 +50,7 @@ Index: tools/lld/ELF/Writer.cpp
    // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
    // be equal to the _gp symbol's value.
    if (ElfSym::mipsGp) {
-@@ -2252,6 +2261,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
+@@ -2265,6 +2274,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
          };
      }
    };

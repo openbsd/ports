@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.14 2020/08/05 06:49:49 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.15 2020/08/10 11:38:43 jca Exp $
 
 - Enable PIE by default.
 - XXX retpoline, EM_SPARCV9, ???
@@ -95,7 +95,7 @@ Index: tools/lld/ELF/Driver.cpp
  // Parses -image-base option.
  static Optional<uint64_t> getImageBase(opt::InputArgList &args) {
    // Because we are using "Config->maxPageSize" here, this function has to be
-@@ -1935,6 +1957,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
+@@ -1944,6 +1966,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
    // optimizations such as DATA_SEGMENT_ALIGN in linker scripts. LLD's use of it
    // is limited to writing trap instructions on the last executable segment.
    config->commonPageSize = getCommonPageSize(args);

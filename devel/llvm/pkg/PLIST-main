@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2020/08/07 11:42:02 jca Exp $
-@pkgpath devel/llvm
+@comment $OpenBSD: PLIST-main,v 1.20 2020/08/10 11:38:43 jca Exp $
 @conflict lldb-<10.0.0p0
+@pkgpath devel/llvm
 @bin bin/bugpoint
 @bin bin/c-index-test
 bin/clang
@@ -1192,6 +1192,9 @@ include/llvm/CodeGen/ParallelCG.h
 include/llvm/CodeGen/Passes.h
 include/llvm/CodeGen/PreISelIntrinsicLowering.h
 include/llvm/CodeGen/PseudoSourceValue.h
+include/llvm/CodeGen/RDFGraph.h
+include/llvm/CodeGen/RDFLiveness.h
+include/llvm/CodeGen/RDFRegisters.h
 include/llvm/CodeGen/ReachingDefAnalysis.h
 include/llvm/CodeGen/RegAllocPBQP.h
 include/llvm/CodeGen/RegAllocRegistry.h
@@ -2501,6 +2504,7 @@ lib/cmake/llvm/HandleLLVMOptions.cmake
 lib/cmake/llvm/HandleLLVMStdlib.cmake
 lib/cmake/llvm/LLVM-Config.cmake
 lib/cmake/llvm/LLVMConfig.cmake
+lib/cmake/llvm/LLVMConfigExtensions.cmake
 lib/cmake/llvm/LLVMConfigVersion.cmake
 lib/cmake/llvm/LLVMDistributionSupport.cmake
 lib/cmake/llvm/LLVMExports${MODCMAKE_BUILD_SUFFIX}
@@ -2559,6 +2563,7 @@ lib/cmake/llvm/VersionFromVCS.cmake
 @static-lib lib/libLLVMDemangle.a
 @static-lib lib/libLLVMDlltoolDriver.a
 @static-lib lib/libLLVMExecutionEngine.a
+@static-lib lib/libLLVMExtensions.a
 @static-lib lib/libLLVMFrontendOpenMP.a
 @static-lib lib/libLLVMFuzzMutate.a
 @static-lib lib/libLLVMGlobalISel.a

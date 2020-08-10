@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_SelectionDAG_DAGCombiner_cpp,v 1.4 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-lib_CodeGen_SelectionDAG_DAGCombiner_cpp,v 1.5 2020/08/10 11:38:43 jca Exp $
 
 When the DAG truncates an ISD::ADDE node, DAGCombiner may optimize it by making
 an adde with smaller operands. PowerPC has i1 registers, and may truncate an
@@ -9,7 +9,7 @@ select..." -- from base-clang
 Index: lib/CodeGen/SelectionDAG/DAGCombiner.cpp
 --- lib/CodeGen/SelectionDAG/DAGCombiner.cpp.orig
 +++ lib/CodeGen/SelectionDAG/DAGCombiner.cpp
-@@ -10976,6 +10976,7 @@ SDValue DAGCombiner::visitTRUNCATE(SDNode *N) {
+@@ -10983,6 +10983,7 @@ SDValue DAGCombiner::visitTRUNCATE(SDNode *N) {
    // (trunc adde(X, Y, Carry)) -> (adde trunc(X), trunc(Y), Carry)
    // (trunc addcarry(X, Y, Carry)) -> (addcarry trunc(X), trunc(Y), Carry)
    // When the adde's carry is not used.

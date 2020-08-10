@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.258 2020/08/07 22:49:06 jca Exp $
+# $OpenBSD: Makefile,v 1.259 2020/08/10 11:38:43 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -11,15 +11,13 @@ COMMENT-python =	Python bindings for Clang
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
-LLVM_V =	10.0.0
+LLVM_V =	10.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	1
-REVISION-lldb =	1
 
 CATEGORIES =	devel
 

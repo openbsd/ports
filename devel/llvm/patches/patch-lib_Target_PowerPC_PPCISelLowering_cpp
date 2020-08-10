@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCISelLowering_cpp,v 1.8 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCISelLowering_cpp,v 1.9 2020/08/10 11:38:43 jca Exp $
 
 Set max atomic size for PowerPC, so AtomicExpandPass changes some
 8-byte atomic ops into libcalls.
@@ -13,7 +13,7 @@ compiler generate code that only uses aligned load and store instructions.
 Index: lib/Target/PowerPC/PPCISelLowering.cpp
 --- lib/Target/PowerPC/PPCISelLowering.cpp.orig
 +++ lib/Target/PowerPC/PPCISelLowering.cpp
-@@ -1124,7 +1124,10 @@ PPCTargetLowering::PPCTargetLowering(const PPCTargetMa
+@@ -1142,7 +1142,10 @@ PPCTargetLowering::PPCTargetLowering(const PPCTargetMa
  
    setOperationAction(ISD::READCYCLECOUNTER, MVT::i64, isPPC64 ? Legal : Custom);
  
@@ -25,7 +25,7 @@ Index: lib/Target/PowerPC/PPCISelLowering.cpp
      setOperationAction(ISD::ATOMIC_LOAD,  MVT::i64, Expand);
      setOperationAction(ISD::ATOMIC_STORE, MVT::i64, Expand);
    }
-@@ -15266,6 +15269,14 @@ bool PPCTargetLowering::allowsMisalignedMemoryAccesses
+@@ -15295,6 +15298,14 @@ bool PPCTargetLowering::allowsMisalignedMemoryAccesses
  
    if (VT == MVT::ppcf128)
      return false;

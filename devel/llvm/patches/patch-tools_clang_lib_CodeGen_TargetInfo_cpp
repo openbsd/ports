@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_CodeGen_TargetInfo_cpp,v 1.4 2020/08/05 06:49:49 jca Exp $
+$OpenBSD: patch-tools_clang_lib_CodeGen_TargetInfo_cpp,v 1.5 2020/08/10 11:38:43 jca Exp $
 
 Add -msvr4-struct-return for powerpc.
 
@@ -110,7 +110,7 @@ Index: tools/clang/lib/CodeGen/TargetInfo.cpp
  bool
  PPC32TargetCodeGenInfo::initDwarfEHRegSizeTable(CodeGen::CodeGenFunction &CGF,
                                                  llvm::Value *Address) const {
-@@ -9852,10 +9916,14 @@ const TargetCodeGenInfo &CodeGenModule::getTargetCodeG
+@@ -9853,10 +9917,14 @@ const TargetCodeGenInfo &CodeGenModule::getTargetCodeG
      return SetCGInfo(new ARMTargetCodeGenInfo(Types, Kind));
    }
  

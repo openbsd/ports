@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_CMakeLists_txt,v 1.4 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-lib_CodeGen_CMakeLists_txt,v 1.5 2020/08/10 11:38:43 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -22,7 +22,7 @@ $OpenBSD: patch-lib_CodeGen_CMakeLists_txt,v 1.4 2020/08/05 06:49:48 jca Exp $
 Index: lib/CodeGen/CMakeLists.txt
 --- lib/CodeGen/CMakeLists.txt.orig
 +++ lib/CodeGen/CMakeLists.txt
-@@ -132,6 +132,8 @@ add_llvm_component_library(LLVMCodeGen
+@@ -135,6 +135,8 @@ add_llvm_component_library(LLVMCodeGen
    RegUsageInfoCollector.cpp
    RegUsageInfoPropagate.cpp
    ResetMachineFunctionPass.cpp

@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.21 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.22 2020/08/10 11:38:43 jca Exp $
 
 - Add ret protector options as no-ops.
 - Improve the X86FixupGadgets pass
@@ -24,7 +24,7 @@ Index: tools/clang/include/clang/Driver/Options.td
  def fstandalone_debug : Flag<["-"], "fstandalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
    HelpText<"Emit full debug info for all types used by the program">;
  def fno_standalone_debug : Flag<["-"], "fno-standalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
-@@ -2439,6 +2447,12 @@ def mlongcall: Flag<["-"], "mlongcall">,
+@@ -2447,6 +2455,12 @@ def mlongcall: Flag<["-"], "mlongcall">,
      Group<m_ppc_Features_Group>;
  def mno_longcall : Flag<["-"], "mno-longcall">,
      Group<m_ppc_Features_Group>;
@@ -37,7 +37,7 @@ Index: tools/clang/include/clang/Driver/Options.td
  
  def mvx : Flag<["-"], "mvx">, Group<m_Group>;
  def mno_vx : Flag<["-"], "mno-vx">, Group<m_Group>;
-@@ -2719,7 +2733,7 @@ def pthreads : Flag<["-"], "pthreads">;
+@@ -2727,7 +2741,7 @@ def pthreads : Flag<["-"], "pthreads">;
  def pthread : Flag<["-"], "pthread">, Flags<[CC1Option]>,
    HelpText<"Support POSIX threads in generated code">;
  def no_pthread : Flag<["-"], "no-pthread">, Flags<[CC1Option]>;
@@ -46,7 +46,7 @@ Index: tools/clang/include/clang/Driver/Options.td
  def pie : Flag<["-"], "pie">;
  def static_pie : Flag<["-"], "static-pie">;
  def read__only__relocs : Separate<["-"], "read_only_relocs">;
-@@ -3192,6 +3206,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
+@@ -3200,6 +3214,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
  def mno_shstk : Flag<["-"], "mno-shstk">, Group<m_x86_Features_Group>;
  def mretpoline_external_thunk : Flag<["-"], "mretpoline-external-thunk">, Group<m_x86_Features_Group>;
  def mno_retpoline_external_thunk : Flag<["-"], "mno-retpoline-external-thunk">, Group<m_x86_Features_Group>;

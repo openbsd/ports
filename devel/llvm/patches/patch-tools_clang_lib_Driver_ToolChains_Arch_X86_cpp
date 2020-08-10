@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_X86_cpp,v 1.2 2020/08/07 11:42:02 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_X86_cpp,v 1.3 2020/08/10 11:38:43 jca Exp $
 
 - change the default i386 target to i586 processors
 - Turn on -mretpoline by default in clang on amd64.
@@ -17,14 +17,15 @@ Index: tools/clang/lib/Driver/ToolChains/Arch/X86.cpp
      return "i586";
    default:
      // Fallback to p4.
-@@ -146,6 +146,11 @@ void x86::getX86TargetFeatures(const Driver &D, const 
-   // flags). This is a bit hacky but keeps existing usages working. We should
+@@ -147,6 +147,12 @@ void x86::getX86TargetFeatures(const Driver &D, const 
    // consider deprecating this and instead warn if the user requests external
    // retpoline thunks and *doesn't* request some form of retpolines.
+   auto SpectreOpt = clang::driver::options::ID::OPT_INVALID;
 +  if (Triple.isOSOpenBSD() && Triple.getArch() == llvm::Triple::x86_64 &&
 +      Args.hasFlag(options::OPT_mretpoline, options::OPT_mno_retpoline, true)) {
 +      Features.push_back("+retpoline-indirect-calls");
 +      Features.push_back("+retpoline-indirect-branches");
++      SpectreOpt = options::OPT_mretpoline;
 +  } else
    if (Args.hasArgNoClaim(options::OPT_mretpoline, options::OPT_mno_retpoline,
                           options::OPT_mspeculative_load_hardening,
