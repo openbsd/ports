@@ -1,0 +1,16 @@
+$OpenBSD: patch-cipher_camellia-aarch64_S,v 1.1 2020/08/11 10:50:55 naddy Exp $
+
+"do not export look-up table globally"
+https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=09c27280cc09798d15369b3a143036b7ab5ddd69
+
+Index: cipher/camellia-aarch64.S
+--- cipher/camellia-aarch64.S.orig
++++ cipher/camellia-aarch64.S
+@@ -284,7 +284,6 @@ _gcry_camellia_arm_decrypt_block:
+ .size _gcry_camellia_arm_decrypt_block,.-_gcry_camellia_arm_decrypt_block;
+ 
+ /* Encryption/Decryption tables */
+-.globl _gcry_camellia_arm_tables
+ .type  _gcry_camellia_arm_tables,@object;
+ .balign 32
+ _gcry_camellia_arm_tables:
