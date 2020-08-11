@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/06/12 22:40:41 cwen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/08/11 18:58:44 landry Exp $
 
 COMMENT =	Qt port of the Scintilla source code editor
 
@@ -6,7 +6,7 @@ COMMENT =	Qt port of the Scintilla source code editor
 VERSION =	2.11.4
 DISTNAME =	QScintilla-${VERSION}
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	editors x11
 

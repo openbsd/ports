@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_RunStyles_cpp,v 1.1 2020/06/12 22:40:41 cwen Exp $
+$OpenBSD: patch-src_RunStyles_cpp,v 1.2 2020/08/11 18:58:44 landry Exp $
 
-powerpc consumers fix for
+32-bits consumers fix for
 "undefined reference to Scintilla::RunStyles<long, char>::RunStyles()"
 
 Index: src/RunStyles.cpp
@@ -12,7 +12,7 @@ Index: src/RunStyles.cpp
  template class Scintilla::RunStyles<int, char>;
 -#if (PTRDIFF_MAX != INT_MAX) || PLAT_HAIKU
 +#if (PTRDIFF_MAX != INT_MAX) || PLAT_HAIKU || \
-+    ( defined(__OpenBSD__) && defined(__powerpc__) )
++    ( defined(__OpenBSD__) && !defined(__LP64__) )
  template class Scintilla::RunStyles<ptrdiff_t, int>;
  template class Scintilla::RunStyles<ptrdiff_t, char>;
  #endif
