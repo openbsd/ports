@@ -1,0 +1,23 @@
+$OpenBSD: patch-Screenkey_xlib_py,v 1.1.1.1 2020/08/11 21:33:22 bcallah Exp $
+
+Index: Screenkey/xlib.py
+--- Screenkey/xlib.py.orig
++++ Screenkey/xlib.py
+@@ -6,7 +6,7 @@ from __future__ import unicode_literals
+ from ctypes import *
+ 
+ ## base X11
+-libX11 = CDLL('libX11.so.6')
++libX11 = CDLL('libX11.so')
+ 
+ # types
+ Atom = c_ulong
+@@ -278,7 +278,7 @@ XkbKeycodeToKeysym.restype = KeySym
+ 
+ 
+ ## record extensions
+-libXtst = CDLL('libXtst.so.6')
++libXtst = CDLL('libXtst.so')
+ 
+ # types
+ XPointer = String

@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/11 21:33:22 bcallah Exp $
+bin/screenkey
+lib/python${MODPY_VERSION}/site-packages/Screenkey/
+lib/python${MODPY_VERSION}/site-packages/Screenkey/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}inputlistener.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}keysyms.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}labelmanager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}screenkey.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}xlib.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Screenkey/inputlistener.py
+lib/python${MODPY_VERSION}/site-packages/Screenkey/keysyms.py
+lib/python${MODPY_VERSION}/site-packages/Screenkey/labelmanager.py
+lib/python${MODPY_VERSION}/site-packages/Screenkey/screenkey.py
+lib/python${MODPY_VERSION}/site-packages/Screenkey/xlib.py
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/top_level.txt
+share/applications/screenkey.desktop
+share/doc/screenkey/
+share/doc/screenkey/NEWS.rst
+share/doc/screenkey/README.rst
+@tag update-desktop-database

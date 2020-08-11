@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_cfg,v 1.1.1.1 2020/08/11 21:33:22 bcallah Exp $
+
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -1,5 +1,5 @@
+ [build]
+-i18n = True
++i18n = False
+ 
+ [egg_info]
+ tag_build = 
