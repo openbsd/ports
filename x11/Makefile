@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.666 2020/07/27 09:05:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.667 2020/08/11 21:33:56 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -271,6 +271,7 @@
      SUBDIR += sakura
      SUBDIR += sawfish
      SUBDIR += sclock
+     SUBDIR += screenkey
      SUBDIR += sct
      SUBDIR += skippy
      SUBDIR += slim
