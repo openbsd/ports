@@ -1,0 +1,8 @@
+Purrito Bin is an ultra fast, minimalistic, encrypted command
+line paste-bin server written in C++ for handling large number
+of requests.
+
+It is very easy to integrate with any standard http server such as
+httpd(8), apache or nginx and follows the KISS principle towards
+handling pastes. It supports pledge(2) and unveil(2) in OpenBSD
+to be secure to outside script attacks.

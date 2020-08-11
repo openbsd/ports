@@ -1,0 +1,113 @@
+$OpenBSD: README,v 1.1.1.1 2020/08/11 21:43:59 bcallah Exp $
+
++-------------------------------------------------------------------------------
+| Running PurritoBin on OpenBSD
++-------------------------------------------------------------------------------
+
+Set proper daemon flags
+=======================
+
+You need to set at least the following option for PurritoBin
+  -d <domain-name>   # e.g. https://bsd.ac/
+                     # needs to include the trailing slash
+
+  rcctl set purritobin flags -d <domain-name>
+
+To look at all the possible options and descriptions
+  purrito -h
+
+
+Exposing a webserver
+====================
+
+PurritoBin saves all the pastes to a single folder.
+By default it is the folder /var/www/purritobin.
+So it is possible to just expose the folder via httpd(8)
+
+sample httpd(8) configuration
+-----------------------------
+http_port=80
+https_port=443
+ext_if=egress
+
+server "bsd.ac" {
+	alias "www.bsd.ac"
+	listen on $ext_if port $http_port
+	location "/.well-known/acme-challenge/*" {
+		root { "/acme" }
+		request strip 2
+	}
+	location "/*" {
+		block return 301 "https://$HTTP_HOST$REQUEST_URI"
+	}
+}
+
+server "bsd.ac" {
+	alias "www.bsd.ac"
+	listen on egress port $https_port
+	root "/purritobin"
+	directory index "index.html"
+}
+
+
+Encrypted pastes
+================
+
+The default clients of PurritoBin are installed to
+${PREFIX}/share/purritobin/POSIX_shell_clients.sh
+
+To enable server side support for these pastes
+make sure that paste.html file located at
+${PREFIX}/share/purritobin/paste.html
+is available for viewing, typically possible by just
+dumping the file into /var/www/purritobin
+
+
+PF bruteforce blocking
+======================
+
+PurritoBin exposes a port using -p <port> (by default: 42069) for
+clients to post their pastes.
+PurritoBin does not enforce any rate limiting for number of pastes
+at a time as this can be done much better using pf(4)
+
+sample pf.conf for rate limiting
+--------------------------------
+table <bruteforce> persist
+purritobin_port=42069
+
+set skip on lo
+
+block return	# block stateless traffic
+pass		# establish keep-state
+
+block quick from <bruteforce>
+
+# no more than one connection every 3 seconds
+pass in on egress proto tcp from any to any port $purritobin_port \
+		flags S/SA keep state \
+		(max-src-conn-rate 1/3, \
+		overload <bruteforce> flush global)
+
+# By default, do not permit remote connections to X11
+block return in on ! lo0 proto tcp to port 6000:6010
+
+# Port build user does not need network
+block return out log proto {tcp udp} user _pbuild
+
+
+Cron job for cleaning
+=====================
+
+PurritoBin leaves the cleaning upto the webmaster.
+Fortunately, due to the simple storage mechanism, you can
+do the cleaning very easily in daily.local
+
+sample daily.local for cron cleanup
+-----------------------------------
+
+find /var/www/purritobin/ -type f ! -name index.html \
+				! -name paste.html \
+				-delete
+
+This clears all pastes which were done during the day.

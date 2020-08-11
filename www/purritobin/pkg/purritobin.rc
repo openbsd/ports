@@ -1,0 +1,13 @@
+#!/bin/ksh
+#
+# $OpenBSD: purritobin.rc,v 1.1.1.1 2020/08/11 21:43:59 bcallah Exp $
+
+daemon="${PREFIX}/bin/purrito"
+daemon_user="_purritobin"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

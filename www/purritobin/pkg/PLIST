@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/11 21:43:59 bcallah Exp $
+@newgroup _purritobin:858
+@newuser _purritobin:858:858:daemon:PurritoBin Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/purritobin
+@bin bin/purrito
+share/doc/pkg-readmes/${PKGSTEM}
+@owner _purritobin
+@group _purritobin
+@sample /var/www/purritobin/
+@owner
+@group
+share/purritobin/
+share/purritobin/POSIX_shell_client.sh
+share/purritobin/paste.html
