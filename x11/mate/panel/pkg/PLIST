@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/03/21 16:14:56 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/08/11 09:50:19 robert Exp $
 @bin bin/mate-desktop-item-edit
 @bin bin/mate-panel
 @bin bin/mate-panel-test-applets
@@ -1523,6 +1523,17 @@ share/icons/hicolor/24x24/apps/mate-panel-window-list.png
 share/icons/hicolor/24x24/apps/mate-panel-window-menu.png
 share/icons/hicolor/24x24/apps/mate-panel-workspace-switcher.png
 share/icons/hicolor/24x24/apps/mate-panel.png
+share/icons/hicolor/256x256/apps/mate-panel-clock.png
+share/icons/hicolor/256x256/apps/mate-panel-drawer.png
+share/icons/hicolor/256x256/apps/mate-panel-fish.png
+share/icons/hicolor/256x256/apps/mate-panel-force-quit.png
+share/icons/hicolor/256x256/apps/mate-panel-launcher.png
+share/icons/hicolor/256x256/apps/mate-panel-notification-area.png
+share/icons/hicolor/256x256/apps/mate-panel-separator.png
+share/icons/hicolor/256x256/apps/mate-panel-window-list.png
+share/icons/hicolor/256x256/apps/mate-panel-window-menu.png
+share/icons/hicolor/256x256/apps/mate-panel-workspace-switcher.png
+share/icons/hicolor/256x256/apps/mate-panel.png
 share/icons/hicolor/32x32/apps/mate-panel-clock.png
 share/icons/hicolor/32x32/apps/mate-panel-drawer.png
 share/icons/hicolor/32x32/apps/mate-panel-fish.png
@@ -1534,7 +1545,39 @@ share/icons/hicolor/32x32/apps/mate-panel-window-list.png
 share/icons/hicolor/32x32/apps/mate-panel-window-menu.png
 share/icons/hicolor/32x32/apps/mate-panel-workspace-switcher.png
 share/icons/hicolor/32x32/apps/mate-panel.png
+share/icons/hicolor/48x48/apps/mate-panel-clock.png
+share/icons/hicolor/48x48/apps/mate-panel-drawer.png
+share/icons/hicolor/48x48/apps/mate-panel-fish.png
+share/icons/hicolor/48x48/apps/mate-panel-force-quit.png
+share/icons/hicolor/48x48/apps/mate-panel-launcher.png
+share/icons/hicolor/48x48/apps/mate-panel-notification-area.png
+share/icons/hicolor/48x48/apps/mate-panel-separator.png
+share/icons/hicolor/48x48/apps/mate-panel-window-list.png
+share/icons/hicolor/48x48/apps/mate-panel-window-menu.png
+share/icons/hicolor/48x48/apps/mate-panel-workspace-switcher.png
 share/icons/hicolor/48x48/apps/mate-panel.png
+share/icons/hicolor/64x64/apps/mate-panel-clock.png
+share/icons/hicolor/64x64/apps/mate-panel-drawer.png
+share/icons/hicolor/64x64/apps/mate-panel-fish.png
+share/icons/hicolor/64x64/apps/mate-panel-force-quit.png
+share/icons/hicolor/64x64/apps/mate-panel-launcher.png
+share/icons/hicolor/64x64/apps/mate-panel-notification-area.png
+share/icons/hicolor/64x64/apps/mate-panel-separator.png
+share/icons/hicolor/64x64/apps/mate-panel-window-list.png
+share/icons/hicolor/64x64/apps/mate-panel-window-menu.png
+share/icons/hicolor/64x64/apps/mate-panel-workspace-switcher.png
+share/icons/hicolor/64x64/apps/mate-panel.png
+share/icons/hicolor/96x96/apps/mate-panel-clock.png
+share/icons/hicolor/96x96/apps/mate-panel-drawer.png
+share/icons/hicolor/96x96/apps/mate-panel-fish.png
+share/icons/hicolor/96x96/apps/mate-panel-force-quit.png
+share/icons/hicolor/96x96/apps/mate-panel-launcher.png
+share/icons/hicolor/96x96/apps/mate-panel-notification-area.png
+share/icons/hicolor/96x96/apps/mate-panel-separator.png
+share/icons/hicolor/96x96/apps/mate-panel-window-list.png
+share/icons/hicolor/96x96/apps/mate-panel-window-menu.png
+share/icons/hicolor/96x96/apps/mate-panel-workspace-switcher.png
+share/icons/hicolor/96x96/apps/mate-panel.png
 share/icons/hicolor/scalable/apps/mate-panel-clock.svg
 share/icons/hicolor/scalable/apps/mate-panel-drawer.svg
 share/icons/hicolor/scalable/apps/mate-panel-fish.svg
@@ -1615,6 +1658,7 @@ share/locale/it/LC_MESSAGES/mate-panel.mo
 share/locale/ja/LC_MESSAGES/mate-panel.mo
 share/locale/jv/LC_MESSAGES/mate-panel.mo
 share/locale/ka/LC_MESSAGES/mate-panel.mo
+share/locale/kab/LC_MESSAGES/mate-panel.mo
 share/locale/kk/LC_MESSAGES/mate-panel.mo
 share/locale/km/LC_MESSAGES/mate-panel.mo
 share/locale/kn/LC_MESSAGES/mate-panel.mo
