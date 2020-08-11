@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.30 2020/07/17 20:23:07 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.31 2020/08/11 11:50:00 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX)
  
-@@ -2303,7 +2303,7 @@ extern const char kZeroStateFilesDescription[];
+@@ -2306,7 +2306,7 @@ extern const char kZeroStateFilesDescription[];
  
  #endif  // #if defined(OS_CHROMEOS)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.h
  
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
-@@ -2332,7 +2332,7 @@ extern const char kReopenTabInProductHelpDescription[]
+@@ -2335,7 +2335,7 @@ extern const char kReopenTabInProductHelpDescription[]
  
  // Random platform combinations -----------------------------------------------
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kWebGL2ComputeContextName[];
  extern const char kWebGL2ComputeContextDescription[];
-@@ -2347,7 +2347,7 @@ extern const char kClickToCallUIDescription[];
+@@ -2350,7 +2350,7 @@ extern const char kClickToCallUIDescription[];
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -39,7 +39,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kEnableMediaFeedsName[];
  extern const char kEnableMediaFeedsDescription[];
-@@ -2367,7 +2367,7 @@ extern const char kRemoteCopyProgressNotificationDescr
+@@ -2370,7 +2370,7 @@ extern const char kRemoteCopyProgressNotificationDescr
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS)
  

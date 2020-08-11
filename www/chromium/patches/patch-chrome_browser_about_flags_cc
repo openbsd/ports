@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.65 2020/07/17 20:23:07 robert Exp $
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.66 2020/08/11 11:50:00 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
@@ -39,7 +39,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-save-data", flag_descriptions::kEnableSaveDataName,
       flag_descriptions::kEnableSaveDataDescription, kOsCrOS | kOsLinux,
       SINGLE_VALUE_TYPE(
-@@ -3399,7 +3399,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3403,7 +3403,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(
           omnibox::kHistoryQuickProviderAllowMidwordContinuations)},
  
@@ -48,7 +48,7 @@ Index: chrome/browser/about_flags.cc
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -3670,7 +3670,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3674,7 +3674,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kClickToOpenPDFDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
@@ -57,7 +57,7 @@ Index: chrome/browser/about_flags.cc
      {"direct-manipulation-stylus",
       flag_descriptions::kDirectManipulationStylusName,
       flag_descriptions::kDirectManipulationStylusDescription,
-@@ -4362,7 +4362,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4366,7 +4366,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -66,7 +66,7 @@ Index: chrome/browser/about_flags.cc
      {"remote-copy-receiver", flag_descriptions::kRemoteCopyReceiverName,
       flag_descriptions::kRemoteCopyReceiverDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(kRemoteCopyReceiver)},
-@@ -4405,7 +4405,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4409,7 +4409,7 @@ const FeatureEntry kFeatureEntries[] = {
           send_tab_to_self::kSendTabToSelfOmniboxSendingAnimation)},
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -75,7 +75,7 @@ Index: chrome/browser/about_flags.cc
      {"sharing-peer-connection-receiver",
       flag_descriptions::kSharingPeerConnectionReceiverName,
       flag_descriptions::kSharingPeerConnectionReceiverDescription, kOsDesktop,
-@@ -4491,7 +4491,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4495,7 +4495,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -84,7 +84,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-reopen-tab-in-product-help",
       flag_descriptions::kReopenTabInProductHelpName,
       flag_descriptions::kReopenTabInProductHelpDescription, kOsDesktop,
-@@ -4937,7 +4937,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4941,7 +4941,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableSyncUSSNigoriDescription, kOsAll,
       FEATURE_VALUE_TYPE(switches::kSyncUSSNigori)},
  
