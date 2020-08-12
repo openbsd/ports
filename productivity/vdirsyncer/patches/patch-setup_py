@@ -1,0 +1,17 @@
+$OpenBSD: patch-setup_py,v 1.1 2020/08/12 19:48:29 remi Exp $
+
+Compatibility with latest click 
+https://github.com/pimutils/vdirsyncer/commit/3eb9ce5ae4320d52e6c876874511ff96a8a45f51
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -11,7 +11,7 @@ from setuptools import Command, find_packages, setup
+ 
+ requirements = [
+     # https://github.com/mitsuhiko/click/issues/200
+-    'click>=5.0,<6.0',
++    'click>=5.0',
+     'click-log>=0.3.0, <0.4.0',
+ 
+     # https://github.com/pimutils/vdirsyncer/issues/478
