@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.78 2020/03/07 11:36:52 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.79 2020/08/12 15:21:11 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -50,6 +50,7 @@ include/dovecot/auth-master-connection.h
 include/dovecot/auth-master.h
 include/dovecot/auth-penalty.h
 include/dovecot/auth-policy.h
+include/dovecot/auth-request-handler-private.h
 include/dovecot/auth-request-handler.h
 include/dovecot/auth-request-stats.h
 include/dovecot/auth-request-var-expand.h
@@ -426,6 +427,7 @@ include/dovecot/mdbox-settings.h
 include/dovecot/mdbox-storage-rebuild.h
 include/dovecot/mdbox-storage.h
 include/dovecot/mdbox-sync.h
+include/dovecot/mech-digest-md5-private.h
 include/dovecot/mech-otp-skey-common.h
 include/dovecot/mech-plain-common.h
 include/dovecot/mech-scram.h
@@ -472,6 +474,7 @@ include/dovecot/ostream-null.h
 include/dovecot/ostream-private.h
 include/dovecot/ostream-rawlog.h
 include/dovecot/ostream-unix.h
+include/dovecot/ostream-wrapper.h
 include/dovecot/ostream-zlib.h
 include/dovecot/ostream.h
 include/dovecot/passdb-blocking.h
