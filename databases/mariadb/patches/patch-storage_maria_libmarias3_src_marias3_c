@@ -1,13 +1,13 @@
-$OpenBSD: patch-storage_maria_libmarias3_src_marias3_c,v 1.1 2020/06/28 21:35:41 sthen Exp $
+$OpenBSD: patch-storage_maria_libmarias3_src_marias3_c,v 1.2 2020/08/12 14:43:54 sthen Exp $
 
 Index: storage/maria/libmarias3/src/marias3.c
 --- storage/maria/libmarias3/src/marias3.c.orig
 +++ storage/maria/libmarias3/src/marias3.c
-@@ -21,6 +21,7 @@
- #include "common.h"
+@@ -22,6 +22,7 @@
  
  #include <pthread.h>
-+#include <netinet/in.h>
  #include <arpa/inet.h>
++#include <netinet/in.h>
  
  ms3_malloc_callback ms3_cmalloc = (ms3_malloc_callback)malloc;
+ ms3_free_callback ms3_cfree = (ms3_free_callback)free;

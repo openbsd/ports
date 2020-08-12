@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.34 2020/06/29 11:33:59 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.35 2020/08/12 14:43:54 sthen Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
@@ -308,6 +308,7 @@ include/mysql/server/private/rpl_rli.h
 include/mysql/server/private/rpl_tblmap.h
 include/mysql/server/private/rpl_utility.h
 include/mysql/server/private/scheduler.h
+include/mysql/server/private/scope.h
 include/mysql/server/private/select_handler.h
 include/mysql/server/private/semisync.h
 include/mysql/server/private/semisync_master.h
@@ -383,6 +384,7 @@ include/mysql/server/private/sql_profile.h
 include/mysql/server/private/sql_reload.h
 include/mysql/server/private/sql_rename.h
 include/mysql/server/private/sql_repl.h
+include/mysql/server/private/sql_schema.h
 include/mysql/server/private/sql_select.h
 include/mysql/server/private/sql_sequence.h
 include/mysql/server/private/sql_servers.h
@@ -511,6 +513,7 @@ libexec/mysqld
 @man man/man1/aria_ftdump.1
 @man man/man1/aria_pack.1
 @man man/man1/aria_read_log.1
+@man man/man1/aria_s3_copy.1
 @man man/man1/innochecksum.1
 @man man/man1/mariadb-backup.1
 @man man/man1/mariadb-dumpslow.1

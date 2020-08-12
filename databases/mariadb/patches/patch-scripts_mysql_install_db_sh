@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.18 2020/01/29 02:16:43 sthen Exp $
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.19 2020/08/12 14:43:54 sthen Exp $
 
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
@@ -13,7 +13,7 @@ Index: scripts/mysql_install_db.sh
  silent_startup="--silent-startup"
  
  force=0
-@@ -150,6 +151,8 @@ parse_arguments()
+@@ -149,6 +150,8 @@ parse_arguments()
          # as 'user' (crucial e.g. if log-bin=/some_other_path/
          # where a chown of datadir won't help)
          user=`parse_arg "$arg"` ;;
@@ -22,7 +22,7 @@ Index: scripts/mysql_install_db.sh
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ; silent_startup="" ;;
        --rpm) in_rpm=1 ;;
-@@ -329,7 +332,6 @@ then
+@@ -328,7 +331,6 @@ then
    srcpkgdatadir="$srcdir/scripts"
    buildpkgdatadir="$builddir/scripts"
    plugindir="$builddir/plugin/auth_socket"
@@ -30,7 +30,7 @@ Index: scripts/mysql_install_db.sh
  elif test -n "$basedir"
  then
    bindir="$basedir/bin" # only used in the help text
-@@ -358,8 +360,7 @@ then
+@@ -357,8 +359,7 @@ then
      cannot_find_file fill_help_tables.sql @pkgdata_locations@
      exit 1
    fi
@@ -40,7 +40,7 @@ Index: scripts/mysql_install_db.sh
  # relative from where the script was run for a relocatable install
  elif test -n "$dirname0" -a -x "$rel_mysqld" -a ! "$rel_mysqld" -ef "@sbindir@/mysqld"
  then
-@@ -370,7 +371,6 @@ then
+@@ -369,7 +370,6 @@ then
    srcpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
    buildpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
    plugindir="$basedir/@INSTALL_PLUGINDIR@"
@@ -48,7 +48,7 @@ Index: scripts/mysql_install_db.sh
  else
    basedir="@prefix@"
    bindir="@bindir@"
-@@ -379,7 +379,6 @@ else
+@@ -378,7 +378,6 @@ else
    srcpkgdatadir="@pkgdatadir@"
    buildpkgdatadir="@pkgdatadir@"
    plugindir="@pkgplugindir@"
@@ -56,7 +56,7 @@ Index: scripts/mysql_install_db.sh
  fi
  
  # Set up paths to SQL scripts required for bootstrap
-@@ -468,11 +467,11 @@ do
+@@ -467,11 +466,11 @@ do
    fi
    if test -n "$user"
    then
@@ -71,7 +71,7 @@ Index: scripts/mysql_install_db.sh
        exit 1
      fi
    fi
-@@ -480,25 +479,6 @@ done
+@@ -479,25 +478,6 @@ done
  
  if test -n "$user"
  then
@@ -97,7 +97,7 @@ Index: scripts/mysql_install_db.sh
    args="$args --user=$user"
  fi
  
-@@ -603,10 +583,6 @@ fi
+@@ -602,10 +582,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -108,7 +108,7 @@ Index: scripts/mysql_install_db.sh
    if test "$auth_root_authentication_method" = normal
    then
      echo
-@@ -643,10 +619,7 @@ then
+@@ -642,10 +618,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"

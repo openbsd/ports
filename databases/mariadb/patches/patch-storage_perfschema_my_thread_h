@@ -1,11 +1,11 @@
-$OpenBSD: patch-storage_perfschema_my_thread_h,v 1.1 2020/06/28 21:35:41 sthen Exp $
+$OpenBSD: patch-storage_perfschema_my_thread_h,v 1.2 2020/08/12 14:43:54 sthen Exp $
 
 Add support for OpenBSD's getthrid()
 
 Index: storage/perfschema/my_thread.h
 --- storage/perfschema/my_thread.h.orig
 +++ storage/perfschema/my_thread.h
-@@ -63,6 +63,10 @@ static inline my_thread_os_id_t my_thread_os_id()
+@@ -67,6 +67,10 @@ static inline my_thread_os_id_t my_thread_os_id()
    /* FreeBSD 10.2 */
    return pthread_getthreadid_np();
  #else
@@ -16,7 +16,7 @@ Index: storage/perfschema/my_thread.h
  #ifdef HAVE_INTEGER_PTHREAD_SELF
    /* Unknown platform, fallback. */
    return pthread_self();
-@@ -70,6 +74,7 @@ static inline my_thread_os_id_t my_thread_os_id()
+@@ -74,6 +78,7 @@ static inline my_thread_os_id_t my_thread_os_id()
    /* Feature not available. */
    return 0;
  #endif /* HAVE_INTEGER_PTHREAD_SELF */
