@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/08/05 02:25:27 bket Exp $
+# $OpenBSD: Makefile,v 1.18 2020/08/12 05:10:26 bket Exp $
 
 COMMENT=		python library for building powerful interactive CLI
 
-MODPY_EGG_VERSION=	3.0.5
+MODPY_EGG_VERSION=	3.0.6
 DISTNAME=		prompt_toolkit-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			1

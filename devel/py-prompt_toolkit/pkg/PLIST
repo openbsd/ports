@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/08/05 02:25:27 bket Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/08/12 05:10:26 bket Exp $
 @conflict py-prompt_toolkit-*
 @pkgpath devel/py-prompt_toolkit
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/
@@ -280,6 +280,7 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/vt100.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/win32.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/windows10.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/patch_stdout.py
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/py.typed
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/renderer.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/search.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/selection.py
