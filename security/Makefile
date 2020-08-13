@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.585 2020/08/07 09:59:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.586 2020/08/13 03:10:37 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -167,6 +167,7 @@
      SUBDIR += p0f
      SUBDIR += p0f3
      SUBDIR += p11-kit
+     SUBDIR += p5-Alt-Crypt-RSA-BigInt
      SUBDIR += p5-Auth-Yubikey_Decrypter
      SUBDIR += p5-Authen-Htpasswd
      SUBDIR += p5-Authen-NTLM
@@ -192,6 +193,7 @@
      SUBDIR += p5-Crypt-Eksblowfish
      SUBDIR += p5-Crypt-IDEA
      SUBDIR += p5-Crypt-LE
+     SUBDIR += p5-Crypt-OpenPGP
      SUBDIR += p5-Crypt-OpenSSL-Bignum
      SUBDIR += p5-Crypt-OpenSSL-DSA
      SUBDIR += p5-Crypt-OpenSSL-EC
@@ -240,6 +242,7 @@
      SUBDIR += p5-POE-Component-SSLify
      SUBDIR += p5-Text-Password-Pronounceable
      SUBDIR += p5-Tie-EncryptedHash
+     SUBDIR += p5-Unix-OpenBSD-Random
      SUBDIR += pass-otp
      SUBDIR += passwdqc
      SUBDIR += password-gorilla
