@@ -1,0 +1,2 @@
+Pebble aims to help managing threads and processes in an easier way. It wraps
+Python's standard library threading and multiprocessing objects.
