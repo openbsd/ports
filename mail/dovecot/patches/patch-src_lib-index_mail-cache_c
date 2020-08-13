@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_lib-index_mail-cache_c,v 1.1 2020/08/13 19:07:00 sthen Exp $
+
+Index: src/lib-index/mail-cache.c
+--- src/lib-index/mail-cache.c.orig
++++ src/lib-index/mail-cache.c
+@@ -569,8 +569,13 @@ mail_cache_open_or_create_path(struct mail_index *inde
+ 
+ 	cache->event = event_create(index->event);
+ 	event_add_category(cache->event, &event_category_mail_cache);
+-	event_set_append_log_prefix(cache->event,
+-		t_strdup_printf("Cache %s: ", cache->filepath));
++	if (cache->filepath != NULL) {
++		event_set_append_log_prefix(cache->event,
++			t_strdup_printf("Cache %s: ", cache->filepath));
++	} else {
++		event_set_append_log_prefix(cache->event,
++					    "Cache (in-memory index): ");
++	}
+ 
+ 	cache->dotlock_settings.use_excl_lock =
+ 		(index->flags & MAIL_INDEX_OPEN_FLAG_DOTLOCK_USE_EXCL) != 0;
