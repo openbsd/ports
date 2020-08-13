@@ -1,12 +1,17 @@
-$OpenBSD: patch-src_3rdparty_webkit_Source_JavaScriptCore_jit_JITStubs_cpp,v 1.1 2015/05/13 14:03:07 kettenis Exp $
---- src/3rdparty/webkit/Source/JavaScriptCore/jit/JITStubs.cpp.orig	Thu Apr 10 20:37:11 2014
-+++ src/3rdparty/webkit/Source/JavaScriptCore/jit/JITStubs.cpp	Wed May 13 11:03:44 2015
+$OpenBSD: patch-src_3rdparty_webkit_Source_JavaScriptCore_jit_JITStubs_cpp,v 1.2 2020/08/13 15:00:17 jca Exp $
+
+- ld: error: relocation R_386_PC32 cannot be used against symbol cti_vm_throw; recompile with -fPIC
+                        ^ on i386
+
+Index: src/3rdparty/webkit/Source/JavaScriptCore/jit/JITStubs.cpp
+--- src/3rdparty/webkit/Source/JavaScriptCore/jit/JITStubs.cpp.orig
++++ src/3rdparty/webkit/Source/JavaScriptCore/jit/JITStubs.cpp
 @@ -79,7 +79,7 @@ namespace JSC {
  #define THUMB_FUNC_PARAM(name)
  #endif
  
 -#if (OS(LINUX) || OS(FREEBSD)) && CPU(X86_64)
-+#if (OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)) && CPU(X86_64)
++#if (OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)) && (CPU(X86) || CPU(X86_64))
  #define SYMBOL_STRING_RELOCATION(name) #name "@plt"
  #elif OS(DARWIN) || (CPU(X86_64) && COMPILER(MINGW) && !GCC_VERSION_AT_LEAST(4, 5, 0))
  #define SYMBOL_STRING_RELOCATION(name) "_" #name
