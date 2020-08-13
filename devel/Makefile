@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2005 2020/07/27 14:10:35 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2006 2020/08/13 07:36:27 bket Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1587,6 +1587,7 @@
      SUBDIR += py-pathspec,python3
      SUBDIR += py-pbr
      SUBDIR += py-pbr,python3
+     SUBDIR += py-pebble,python3
      SUBDIR += py-pexpect
      SUBDIR += py-pexpect,python3
      SUBDIR += py-pip
