@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/15 18:50:25 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2020/08/13 17:03:08 sthen Exp $
 
 COMMENT=	identify or delete duplicate files
 
-V=		2.1.1
+V=		2.1.2
 DISTNAME=	fdupes-$V
 CATEGORIES=	sysutils
 
