@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.116 2020/07/25 08:11:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.117 2020/08/13 14:47:11 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -2831,6 +2831,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-jobs-data/describe-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-jobs-data/get-pending-job-executions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-jobs-data/start-next-pending-job-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot-jobs-data/update-job-execution.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/accept-certificate-transfer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/add-thing-to-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/add-thing-to-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/associate-targets-with-job.rst
@@ -2856,6 +2857,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-mitigation-a
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-ota-update.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-policy-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-provisioning-claim.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-provisioning-template-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-provisioning-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-role-alias.rst
@@ -2912,6 +2914,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-index.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-job-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-mitigation-action.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-provisioning-template-version.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-provisioning-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-role-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-scheduled-audit.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-security-profile.rst
@@ -2984,6 +2988,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-v2-logging-lev
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-violation-events.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/register-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/register-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/register-thing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/reject-certificate-transfer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/remove-thing-from-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/remove-thing-from-thing-group.rst
@@ -3287,6 +3292,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/create-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/decrypt.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/delete-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/delete-custom-key-store.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/delete-imported-key-material.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/describe-custom-key-stores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/describe-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/disable-key-rotation.rst
@@ -3640,6 +3646,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/create-app.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/create-deployment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/create-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/create-layer.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/create-server.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/create-stack.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/create-user-profile.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/opsworks/delete-app.rst
@@ -4605,8 +4612,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-resource-dat
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-service-setting.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/describe-gateway-information.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/list-file-shares.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/list-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/list-volumes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/refresh-cache.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sts/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sts/assume-role-with-saml.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sts/assume-role-with-web-identity.rst
