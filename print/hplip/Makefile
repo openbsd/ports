@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2020/07/04 10:04:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.181 2020/08/13 13:55:25 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-gui=		0
 REVISION-hpaio=		0
 
@@ -75,11 +75,12 @@ LIB_DEPENDS-main=	print/cups,-libs \
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			devel/py-gobject3${MODPY_FLAVOR} \
-			print/py-reportlab${MODPY_FLAVOR} \
-			x11/dbus-python${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
+			print/hplip,-hpaio \
 			print/hplip,-hpcups \
-			print/hplip,-hpaio
+			print/py-reportlab${MODPY_FLAVOR} \
+			sysutils/py-distro${MODPY_FLAVOR} \
+			x11/dbus-python${MODPY_FLAVOR}
 
 # package is only useful if cups is installed
 RUN_DEPENDS-main +=	print/cups
