@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.44 2020/07/04 10:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2020/08/13 14:38:25 ajacoutot Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
 COMMENT-doc=		developer documentation for OpenEXR
 
-V=			2.5.2
+V=			2.5.3
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		openexr
 GH_TAGNAME=		v${V}
-
-REVISION-main=		0
-REVISION-tools=		0
-REVISION-doc=		0
 
 PKGNAME-main=		OpenEXR-${V}
 PKGNAME-tools=		OpenEXR-tools-${V}
