@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/13 03:02:20 afresh1 Exp $
+${P5ARCH}/
+${P5ARCH}/Math/
+${P5ARCH}/Math/Prime/
+${P5ARCH}/Math/Prime/Util/
+${P5ARCH}/Math/Prime/Util/GMP.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Math/
+${P5ARCH}/auto/Math/Prime/
+${P5ARCH}/auto/Math/Prime/Util/
+${P5ARCH}/auto/Math/Prime/Util/GMP/
+@so ${P5ARCH}/auto/Math/Prime/Util/GMP/GMP.so
+@man man/man3p/Math::Prime::Util::GMP.3p

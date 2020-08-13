@@ -1,0 +1,22 @@
+A module for number theory in Perl using GMP. This includes primality
+tests, getting primes in a range, factoring, and more.
+
+While it certainly can be used directly, the main purpose of this
+module is for Math::Prime::Util. That module will automatically
+load this one if it is installed, greatly speeding up many of its
+operations on big numbers.
+
+Inputs and outputs for big numbers are via strings, so you do not
+need to use a bigint package in your program. However if you do use
+bigints, inputs will be converted internally so there is no need
+to convert before a call. Output results are returned as either
+Perl scalars (for native-size) or strings (for bigints). Math::Prime::Util
+tries to reconvert all strings back into the callers bigint type
+if possible, which makes it more convenient for calculations.
+
+The various is_*_pseudoprime tests are more appropriately called
+is_*_probable_prime or is_*_prp. They return 1 if the input is a
+probable prime based on their test. The naming convention is
+historical and follows Pari, Math::Primality, and some other math
+packages. The modern definition of pseudoprime is a composite that
+passes the test, rather than any number.
