@@ -1,0 +1,42 @@
+$OpenBSD: patch-lib_Crypt_OpenPGP_Util_pm,v 1.1 2020/08/13 03:09:52 afresh1 Exp $
+
+We can provide better random bytes than these other modules,
+and fortunately someone gave us a way to get to arc4random_buf from perl.
+
+Index: lib/Crypt/OpenPGP/Util.pm
+--- lib/Crypt/OpenPGP/Util.pm.orig
++++ lib/Crypt/OpenPGP/Util.pm
+@@ -4,6 +4,8 @@ use strict;
+ # For some reason, FastCalc causes problems. Restrict to one of these 3 backends
+ use Math::BigInt only => 'Pari,GMP,Calc';
+ 
++use Unix::OpenBSD::Random qw( arc4random_buf );
++
+ use vars qw( @EXPORT_OK @ISA );
+ use Exporter;
+ @EXPORT_OK = qw( bitsize bin2bigint bin2mp bigint2bin mp2bin mod_exp mod_inverse
+@@ -101,6 +103,8 @@ sub _ensure_bigint {
+ 
+ sub get_random_bytes {
+ 	my $length = shift;
++	return arc4random_buf($length);
++
+ 	if (eval 'require Crypt::Random; 1;') {
+ 		return Crypt::Random::makerandom_octet( Length => $length);
+ 	}
+@@ -114,6 +118,15 @@ sub get_random_bytes {
+ 
+ sub get_random_bigint {
+ 	my $bits = shift;
++
++	my $hex = unpack "H*", arc4random_buf( int(($bits + 7) / 8) );
++	my $val = Math::BigInt->new("0x$hex");
++	# Get exactly the correct number of bits.
++	$val->brsft(8 - ($bits & 7)) if ($bits & 7);
++	# Make sure the top bit is set.
++	$val->bior(Math::BigInt->bone->blsft($bits-1));
++	return $val;
++
+ 	if (eval 'require Crypt::Random; 1;') {
+ 		my $pari = Crypt::Random::makerandom( Size => $bits, Strength => 0 );
+ 		return Math::BigInt->new($pari);

@@ -1,0 +1,75 @@
+@comment $OpenBSD: PLIST,v 1.4 2020/08/13 03:09:52 afresh1 Exp $
+bin/pgplet
+${P5SITE}/Crypt/OpenPGP/
+${P5SITE}/Crypt/OpenPGP.pm
+${P5SITE}/Crypt/OpenPGP/Armour.pm
+${P5SITE}/Crypt/OpenPGP/Buffer.pm
+${P5SITE}/Crypt/OpenPGP/CFB.pm
+${P5SITE}/Crypt/OpenPGP/Certificate.pm
+${P5SITE}/Crypt/OpenPGP/Cipher.pm
+${P5SITE}/Crypt/OpenPGP/Ciphertext.pm
+${P5SITE}/Crypt/OpenPGP/Compressed.pm
+${P5SITE}/Crypt/OpenPGP/Config.pm
+${P5SITE}/Crypt/OpenPGP/Constants.pm
+${P5SITE}/Crypt/OpenPGP/Digest.pm
+${P5SITE}/Crypt/OpenPGP/ErrorHandler.pm
+${P5SITE}/Crypt/OpenPGP/Key/
+${P5SITE}/Crypt/OpenPGP/Key.pm
+${P5SITE}/Crypt/OpenPGP/Key/Public/
+${P5SITE}/Crypt/OpenPGP/Key/Public.pm
+${P5SITE}/Crypt/OpenPGP/Key/Public/DSA.pm
+${P5SITE}/Crypt/OpenPGP/Key/Public/ElGamal.pm
+${P5SITE}/Crypt/OpenPGP/Key/Public/RSA.pm
+${P5SITE}/Crypt/OpenPGP/Key/Secret/
+${P5SITE}/Crypt/OpenPGP/Key/Secret.pm
+${P5SITE}/Crypt/OpenPGP/Key/Secret/DSA.pm
+${P5SITE}/Crypt/OpenPGP/Key/Secret/ElGamal.pm
+${P5SITE}/Crypt/OpenPGP/Key/Secret/RSA.pm
+${P5SITE}/Crypt/OpenPGP/KeyBlock.pm
+${P5SITE}/Crypt/OpenPGP/KeyRing.pm
+${P5SITE}/Crypt/OpenPGP/KeyServer.pm
+${P5SITE}/Crypt/OpenPGP/MDC.pm
+${P5SITE}/Crypt/OpenPGP/Marker.pm
+${P5SITE}/Crypt/OpenPGP/Message.pm
+${P5SITE}/Crypt/OpenPGP/OnePassSig.pm
+${P5SITE}/Crypt/OpenPGP/PacketFactory.pm
+${P5SITE}/Crypt/OpenPGP/Plaintext.pm
+${P5SITE}/Crypt/OpenPGP/S2k.pm
+${P5SITE}/Crypt/OpenPGP/SKSessionKey.pm
+${P5SITE}/Crypt/OpenPGP/SessionKey.pm
+${P5SITE}/Crypt/OpenPGP/Signature/
+${P5SITE}/Crypt/OpenPGP/Signature.pm
+${P5SITE}/Crypt/OpenPGP/Signature/SubPacket.pm
+${P5SITE}/Crypt/OpenPGP/Trust.pm
+${P5SITE}/Crypt/OpenPGP/UserID.pm
+${P5SITE}/Crypt/OpenPGP/Util.pm
+${P5SITE}/Crypt/OpenPGP/Words.pm
+@man man/man3p/Crypt::OpenPGP.3p
+@man man/man3p/Crypt::OpenPGP::Armour.3p
+@man man/man3p/Crypt::OpenPGP::Buffer.3p
+@man man/man3p/Crypt::OpenPGP::CFB.3p
+@man man/man3p/Crypt::OpenPGP::Certificate.3p
+@man man/man3p/Crypt::OpenPGP::Cipher.3p
+@man man/man3p/Crypt::OpenPGP::Ciphertext.3p
+@man man/man3p/Crypt::OpenPGP::Compressed.3p
+@man man/man3p/Crypt::OpenPGP::Constants.3p
+@man man/man3p/Crypt::OpenPGP::Digest.3p
+@man man/man3p/Crypt::OpenPGP::ErrorHandler.3p
+@man man/man3p/Crypt::OpenPGP::Key.3p
+@man man/man3p/Crypt::OpenPGP::KeyBlock.3p
+@man man/man3p/Crypt::OpenPGP::KeyRing.3p
+@man man/man3p/Crypt::OpenPGP::KeyServer.3p
+@man man/man3p/Crypt::OpenPGP::MDC.3p
+@man man/man3p/Crypt::OpenPGP::Marker.3p
+@man man/man3p/Crypt::OpenPGP::Message.3p
+@man man/man3p/Crypt::OpenPGP::OnePassSig.3p
+@man man/man3p/Crypt::OpenPGP::PacketFactory.3p
+@man man/man3p/Crypt::OpenPGP::Plaintext.3p
+@man man/man3p/Crypt::OpenPGP::S2k.3p
+@man man/man3p/Crypt::OpenPGP::SKSessionKey.3p
+@man man/man3p/Crypt::OpenPGP::SessionKey.3p
+@man man/man3p/Crypt::OpenPGP::Signature.3p
+@man man/man3p/Crypt::OpenPGP::Trust.3p
+@man man/man3p/Crypt::OpenPGP::UserID.3p
+@man man/man3p/Crypt::OpenPGP::Util.3p
+@man man/man3p/Crypt::OpenPGP::Words.3p
