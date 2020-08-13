@@ -1,0 +1,13 @@
+$OpenBSD: patch-vendor_github_com_apparentlymart_go-userdirs_userdirs_app_unix_go,v 1.1 2020/08/13 14:36:20 ajacoutot Exp $
+
+https://github.com/apparentlymart/go-userdirs/pull/1
+
+Index: vendor/github.com/apparentlymart/go-userdirs/userdirs/app_unix.go
+--- vendor/github.com/apparentlymart/go-userdirs/userdirs/app_unix.go.orig
++++ vendor/github.com/apparentlymart/go-userdirs/userdirs/app_unix.go
+@@ -1,4 +1,4 @@
+-// +build linux aix dragonfly freebsd netbsd solaris
++// +build linux aix dragonfly freebsd netbsd openbsd solaris
+ 
+ package userdirs
+ 
