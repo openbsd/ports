@@ -1,0 +1,36 @@
+A module for number theory in Perl. This includes prime sieving,
+primality tests, primality proofs, integer factoring, counts /
+bounds / approximations for primes, nth primes, and twin primes,
+random prime generation, and much more.
+
+This module is the fastest on CPAN for almost all operations it
+supports. This includes Math::Prime::XS, Math::Prime::FastSieve,
+Math::Factor::XS, Math::Prime::TiedArray, Math::Big::Factors,
+Math::Factoring, and Math::Primality (when the GMP module is
+available). For numbers in the 10-20 digit range, it is often orders
+of magnitude faster. Typically it is faster than Math::Pari for
+64-bit operations.
+
+All operations support both Perl UV's (32-bit or 64-bit) and bignums.
+If you want high performance with big numbers (larger than Perl's
+native 32-bit or 64-bit size), you should install Math::Prime::Util::GMP
+and Math::BigInt::GMP. This will be a recurring theme throughout
+this documentation -- while all bignum operations are supported in
+pure Perl, most methods will be much slower than the C+GMP alternative.
+
+The module is thread-safe and allows concurrency between Perl threads
+while still sharing a prime cache. It is not itself multi-threaded.
+See the Limitations section if you are using Win32 and threads in
+your program. Also note that Math::Pari is not thread-safe (and
+will crash as soon as it is loaded in threads), so if you use
+Math::BigInt::Pari rather than Math::BigInt::GMP or the default
+backend, things will go pear-shaped.
+
+Two scripts are also included and installed by default:
+ * primes.pl displays primes between start and end values or
+             expressions, with many options for filtering (e.g.
+             twin, safe, circular, good, lucky, etc.). Use --help
+             to see all the options.
+ * factor.pl operates similar to the GNU factor program.
+             It supports bigint and expression inputs.
+

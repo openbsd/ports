@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/13 03:03:11 afresh1 Exp $
+bin/factor.pl
+bin/primes.pl
+${P5ARCH}/Math/Prime/Util.pm
+${P5ARCH}/Math/Prime/Util/ChaCha.pm
+${P5ARCH}/Math/Prime/Util/ECAffinePoint.pm
+${P5ARCH}/Math/Prime/Util/ECProjectivePoint.pm
+${P5ARCH}/Math/Prime/Util/Entropy.pm
+${P5ARCH}/Math/Prime/Util/MemFree.pm
+${P5ARCH}/Math/Prime/Util/PP.pm
+${P5ARCH}/Math/Prime/Util/PPFE.pm
+${P5ARCH}/Math/Prime/Util/PrimalityProving.pm
+${P5ARCH}/Math/Prime/Util/PrimeArray.pm
+${P5ARCH}/Math/Prime/Util/PrimeIterator.pm
+${P5ARCH}/Math/Prime/Util/RandomPrimes.pm
+${P5ARCH}/Math/Prime/Util/ZetaBigFloat.pm
+@so ${P5ARCH}/auto/Math/Prime/Util/Util.so
+${P5ARCH}/ntheory.pm
+@man man/man3p/Math::Prime::Util.3p
+@man man/man3p/Math::Prime::Util::ChaCha.3p
+@man man/man3p/Math::Prime::Util::ECAffinePoint.3p
+@man man/man3p/Math::Prime::Util::ECProjectivePoint.3p
+@man man/man3p/Math::Prime::Util::Entropy.3p
+@man man/man3p/Math::Prime::Util::MemFree.3p
+@man man/man3p/Math::Prime::Util::PP.3p
+@man man/man3p/Math::Prime::Util::PPFE.3p
+@man man/man3p/Math::Prime::Util::PrimalityProving.3p
+@man man/man3p/Math::Prime::Util::PrimeArray.3p
+@man man/man3p/Math::Prime::Util::PrimeIterator.3p
+@man man/man3p/Math::Prime::Util::RandomPrimes.3p
+@man man/man3p/Math::Prime::Util::ZetaBigFloat.3p
+@man man/man3p/ntheory.3p
