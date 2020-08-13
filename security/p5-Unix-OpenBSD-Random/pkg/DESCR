@@ -1,0 +1,1 @@
+A wafer-thin wrapper around the arc4random(3) library function.
