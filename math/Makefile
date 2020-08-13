@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2020/08/10 15:30:06 bket Exp $
+# $OpenBSD: Makefile,v 1.192 2020/08/13 03:03:42 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -99,6 +99,8 @@
      SUBDIR += p5-Math-Int128
      SUBDIR += p5-Math-Int64
      SUBDIR += p5-Math-MatrixReal
+     SUBDIR += p5-Math-Prime-Util
+     SUBDIR += p5-Math-Prime-Util-GMP
      SUBDIR += p5-Math-Random-ISAAC
      SUBDIR += p5-Math-Round
      SUBDIR += p5-Math-Spline
