@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/05/14 11:42:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/08/13 18:22:59 sthen Exp $
 @bin bin/neomutt
 libexec/neomutt/
 @bin libexec/neomutt/pgpewrap
@@ -88,8 +88,6 @@ share/locale/cs/LC_MESSAGES/neomutt.mo
 share/locale/da/LC_MESSAGES/neomutt.mo
 share/locale/de/LC_MESSAGES/neomutt.mo
 share/locale/el/LC_MESSAGES/neomutt.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/neomutt.mo
 share/locale/eo/LC_MESSAGES/neomutt.mo
 share/locale/es/LC_MESSAGES/neomutt.mo
@@ -104,8 +102,6 @@ share/locale/id/LC_MESSAGES/neomutt.mo
 share/locale/it/LC_MESSAGES/neomutt.mo
 share/locale/ja/LC_MESSAGES/neomutt.mo
 share/locale/ko/LC_MESSAGES/neomutt.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/neomutt.mo
 share/locale/nl/LC_MESSAGES/neomutt.mo
 share/locale/pl/LC_MESSAGES/neomutt.mo

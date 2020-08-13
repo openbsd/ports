@@ -14,4 +14,5 @@ Flavors:
                      "set crypt_use_gpgme = yes" in muttrc, and run gpg-agent:
                      "export GPG_TTY=$(tty); eval $(gpg-agent --daemon)".
                      also enables autocrypt (which depends on gpgme).
+	notmuch	   - build with notmuch support (fulltext indexing and tagging)
 	sasl	   - build with SASL authentication support
