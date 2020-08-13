@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/06 15:24:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2020/08/13 21:18:45 naddy Exp $
 
 COMMENT =	simple library to make decoding of Ogg Theora videos easier
 
@@ -8,7 +8,7 @@ HG_COMMIT =	fb533bb8633e
 DISTFILES =	libtheoraplay-${HG_CHANGESET}{${HG_COMMIT}}${EXTRACT_SUFX}
 
 PKGNAME =	libtheoraplay-${HG_CHANGESET}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	multimedia
 MASTER_SITES =	https://hg.icculus.org/icculus/theoraplay/archive/
 
@@ -39,7 +39,7 @@ NO_TEST =	Yes
 
 do-build:
 	cd ${WRKSRC} && \
-	${CC} ${CFLAGS} ${LDFLAGS} -shared -I${LOCALBASE}/include \
+	${CC} ${CFLAGS} ${LDFLAGS} -fPIC -shared -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib -lpthread -logg -lvorbis -ltheoradec -o \
 		${WRKBUILD}/libtheoraplay.so.${LIBtheoraplay_VERSION} \
 		theoraplay.c
