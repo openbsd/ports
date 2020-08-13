@@ -1,0 +1,6 @@
+This is a rework of Crypt::RSA to remove Math::Pari and instead base
+all operations on Math::BigInt.
+
+This first version is intended to be a plug-in replacement for
+Crypt::RSA, with no user-visible changes. This means some issues
+will remain unresolved until future versions.

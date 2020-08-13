@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/13 03:05:17 afresh1 Exp $
+${P5SITE}/Alt/
+${P5SITE}/Alt/Crypt/
+${P5SITE}/Alt/Crypt/RSA/
+${P5SITE}/Alt/Crypt/RSA/BigInt.pm
+${P5SITE}/Crypt/RSA/
+${P5SITE}/Crypt/RSA.pm
+${P5SITE}/Crypt/RSA/DataFormat.pm
+${P5SITE}/Crypt/RSA/Debug.pm
+${P5SITE}/Crypt/RSA/ES/
+${P5SITE}/Crypt/RSA/ES/OAEP.pm
+${P5SITE}/Crypt/RSA/ES/PKCS1v15.pm
+${P5SITE}/Crypt/RSA/Errorhandler.pm
+${P5SITE}/Crypt/RSA/Key/
+${P5SITE}/Crypt/RSA/Key.pm
+${P5SITE}/Crypt/RSA/Key/Private/
+${P5SITE}/Crypt/RSA/Key/Private.pm
+${P5SITE}/Crypt/RSA/Key/Private/SSH.pm
+${P5SITE}/Crypt/RSA/Key/Public/
+${P5SITE}/Crypt/RSA/Key/Public.pm
+${P5SITE}/Crypt/RSA/Key/Public/SSH.pm
+${P5SITE}/Crypt/RSA/Primitives.pm
+${P5SITE}/Crypt/RSA/SS/
+${P5SITE}/Crypt/RSA/SS/PKCS1v15.pm
+${P5SITE}/Crypt/RSA/SS/PSS.pm
+@man man/man3p/Alt::Crypt::RSA::BigInt.3p
+@man man/man3p/Crypt::RSA.3p
+@man man/man3p/Crypt::RSA::DataFormat.3p
+@man man/man3p/Crypt::RSA::Debug.3p
+@man man/man3p/Crypt::RSA::ES::OAEP.3p
+@man man/man3p/Crypt::RSA::ES::PKCS1v15.3p
+@man man/man3p/Crypt::RSA::Errorhandler.3p
+@man man/man3p/Crypt::RSA::Key.3p
+@man man/man3p/Crypt::RSA::Key::Private.3p
+@man man/man3p/Crypt::RSA::Key::Private::SSH.3p
+@man man/man3p/Crypt::RSA::Key::Public.3p
+@man man/man3p/Crypt::RSA::Key::Public::SSH.3p
+@man man/man3p/Crypt::RSA::Primitives.3p
+@man man/man3p/Crypt::RSA::SS::PKCS1v15.3p
+@man man/man3p/Crypt::RSA::SS::PSS.3p
