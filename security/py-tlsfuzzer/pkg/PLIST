@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/24 06:01:51 tb Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/08/13 17:16:05 tb Exp $
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
@@ -172,6 +172,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-signature-algorithms.${MODPY_
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-symetric-ciphers.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-unrecognised-groups.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-version-negotiation.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-zero-content-type.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-zero-length-data.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-truncating-of-client-hello.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-truncating-of-finished.${MODPY_PYC_MAGIC_TAG}pyc
@@ -311,6 +312,7 @@ share/tlsfuzzer/scripts/test-tls13-signature-algorithms.py
 share/tlsfuzzer/scripts/test-tls13-symetric-ciphers.py
 share/tlsfuzzer/scripts/test-tls13-unrecognised-groups.py
 share/tlsfuzzer/scripts/test-tls13-version-negotiation.py
+share/tlsfuzzer/scripts/test-tls13-zero-content-type.py
 share/tlsfuzzer/scripts/test-tls13-zero-length-data.py
 share/tlsfuzzer/scripts/test-truncating-of-client-hello.py
 share/tlsfuzzer/scripts/test-truncating-of-finished.py
