@@ -1,9 +1,9 @@
-$OpenBSD: patch-emacs_Makefile_local,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+$OpenBSD: patch-emacs_Makefile_local,v 1.2 2020/08/13 18:21:19 sthen Exp $
 
 Index: emacs/Makefile.local
 --- emacs/Makefile.local.orig
 +++ emacs/Makefile.local
-@@ -128,7 +128,6 @@ endif
+@@ -126,7 +126,6 @@ endif
  ifeq ($(WITH_DESKTOP),1)
  	mkdir -p "$(DESTDIR)$(desktop_dir)"
  	desktop-file-install --mode 0644 --dir "$(DESTDIR)$(desktop_dir)" $(emacs_mua_desktop)

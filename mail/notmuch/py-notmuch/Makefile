@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/13 18:21:19 sthen Exp $
 
 COMMENT =	Python bindings for notmuch
 
@@ -6,10 +6,9 @@ PKGNAME =	py-notmuch-${V}
 
 MODULES =	lang/python
 MODPY_EGG_VERSION = ${V}
-REVISION =          0
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR  =	python3
 
 RUN_DEPENDS =	mail/notmuch/notmuch
 

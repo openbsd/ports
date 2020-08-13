@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/08/13 18:21:19 sthen Exp $
 @bin bin/notmuch
 include/notmuch.h
 @info info/notmuch-address.info
@@ -38,9 +38,10 @@ include/notmuch.h
 @man man/man5/notmuch-hooks.5
 @man man/man7/notmuch-properties.7
 @man man/man7/notmuch-search-terms.7
+share/notmuch/
+share/notmuch/bash_completion.d/
+share/notmuch/bash_completion.d/notmuch
 share/zsh/
-share/zsh/functions/
-share/zsh/functions/Completion/
-share/zsh/functions/Completion/Unix/
-share/zsh/functions/Completion/Unix/_email-notmuch
-share/zsh/functions/Completion/Unix/_notmuch
+share/zsh/site-functions/
+share/zsh/site-functions/_email-notmuch
+share/zsh/site-functions/_notmuch

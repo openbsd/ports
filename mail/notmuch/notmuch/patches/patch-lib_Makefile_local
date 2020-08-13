@@ -1,25 +1,32 @@
-$OpenBSD: patch-lib_Makefile_local,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+$OpenBSD: patch-lib_Makefile_local,v 1.2 2020/08/13 18:21:19 sthen Exp $
+
+patch out -soname argument to ld
+use OpenBSD-defined major and minor
+NB: on upgrade, check lib/notmuch.sym
 
 Index: lib/Makefile.local
 --- lib/Makefile.local.orig
 +++ lib/Makefile.local
-@@ -16,9 +16,15 @@ LIBNAME = libnotmuch.$(LIBNOTMUCH_VERSION_MAJOR).$(LIB
+@@ -16,12 +16,16 @@ LIBNAME = libnotmuch.$(LIBNOTMUCH_VERSION_MAJOR).$(LIB
  LIBRARY_LINK_FLAG = -dynamiclib -install_name $(libdir)/$(SONAME) -compatibility_version $(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR) -current_version $(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR).$(LIBNOTMUCH_VERSION_RELEASE)
  else
  LIBRARY_SUFFIX = so
 +ifeq ($(PLATFORM),OPENBSD)
-+LINKER_NAME = libnotmuch.$(LIBRARY_SUFFIX).$(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR)
++LINKER_NAME = libnotmuch.$(LIBRARY_SUFFIX).${LIBnotmuch_MAJOR}.${LIBnotmuch_MINOR}
 +SONAME = $(LINKER_NAME)
 +LIBNAME = $(SONAME)
++LIBRARY_LINK_FLAG = -shared -Wl,--version-script=$(srcdir)/$(lib)/notmuch.sym $(NO_UNDEFINED_LDFLAGS) -lc
 +else
  LINKER_NAME = libnotmuch.$(LIBRARY_SUFFIX)
  SONAME = $(LINKER_NAME).$(LIBNOTMUCH_VERSION_MAJOR)
  LIBNAME = $(SONAME).$(LIBNOTMUCH_VERSION_MINOR).$(LIBNOTMUCH_VERSION_RELEASE)
-+endif
  LIBRARY_LINK_FLAG = -shared -Wl,--version-script=$(srcdir)/$(lib)/notmuch.sym,-soname=$(SONAME) $(NO_UNDEFINED_LDFLAGS)
- ifeq ($(PLATFORM),OPENBSD)
- LIBRARY_LINK_FLAG += -lc
-@@ -69,19 +75,23 @@ $(dir)/libnotmuch.a: $(libnotmuch_modules)
+-ifeq ($(PLATFORM),OPENBSD)
+-LIBRARY_LINK_FLAG += -lc
+ endif
+ ifeq ($(LIBDIR_IN_LDCONFIG),1)
+ ifeq ($(DESTDIR),)
+@@ -69,19 +73,23 @@ $(dir)/libnotmuch.a: $(libnotmuch_modules)
  $(dir)/$(LIBNAME): $(libnotmuch_modules) util/libnotmuch_util.a parse-time-string/libparse-time-string.a
  	$(call quiet,CXX $(CXXFLAGS)) $(libnotmuch_modules) $(FINAL_LIBNOTMUCH_LDFLAGS) $(LIBRARY_LINK_FLAG) -o $@ util/libnotmuch_util.a parse-time-string/libparse-time-string.a
  

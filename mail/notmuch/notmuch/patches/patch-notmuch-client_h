@@ -1,0 +1,28 @@
+$OpenBSD: patch-notmuch-client_h,v 1.1 2020/08/13 18:21:19 sthen Exp $
+
+replace zlib macros by stdio equivalent because our zlib does not have
+"transparent" (no compression) mode so we disable compression altogether.
+NB: macros GZPRINTF and GZPUTS are only used in notmuch-dump.c
+
+Index: notmuch-client.h
+--- notmuch-client.h.orig
++++ notmuch-client.h
+@@ -493,14 +493,12 @@ int
+ status_to_exit (notmuch_status_t status);
+ 
+ notmuch_status_t
+-print_status_gzbytes (const char *loc,
+-		      gzFile file,
+-		      int bytes);
++print_status_bytes (const char *loc, int bytes);
+ 
+ /* the __location__ macro is defined in talloc.h */
+-#define ASSERT_GZBYTES(file, bytes) ((print_status_gzbytes (__location__, file, bytes)) ? exit (1) : 0)
+-#define GZPRINTF(file, fmt, ...) ASSERT_GZBYTES (file, gzprintf (file, fmt, ##__VA_ARGS__));
+-#define GZPUTS(file, str) ASSERT_GZBYTES(file, gzputs (file, str));
++#define ASSERT_GZBYTES(bytes) ((print_status_bytes (__location__, bytes)) ? exit (1) : 0)
++#define GZPRINTF(file, fmt, ...) ASSERT_GZBYTES (fprintf (file, fmt, ##__VA_ARGS__));
++#define GZPUTS(file, str) ASSERT_GZBYTES(fputs (str, file));
+ 
+ #include "command-line-arguments.h"
+ 

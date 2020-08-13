@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_Makefile_local,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+$OpenBSD: patch-doc_Makefile_local,v 1.2 2020/08/13 18:21:18 sthen Exp $
 
 Index: doc/Makefile.local
 --- doc/Makefile.local.orig
@@ -7,8 +7,8 @@ Index: doc/Makefile.local
  
  # You can set these variables from the command line.
  SPHINXOPTS    := -q
--SPHINXBUILD   = HAVE_EMACS=${HAVE_EMACS} WITH_EMACS=${WITH_EMACS} sphinx-build
-+SPHINXBUILD   = HAVE_EMACS=${HAVE_EMACS} WITH_EMACS=${WITH_EMACS} sphinx-build-3
+-SPHINXBUILD   = WITH_EMACS=${WITH_EMACS} RSTI_DIR=$(realpath emacs) sphinx-build
++SPHINXBUILD   = WITH_EMACS=${WITH_EMACS} RSTI_DIR=$(realpath emacs) sphinx-build-3
  DOCBUILDDIR      := $(dir)/_build
  
  # Internal variables.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/19 20:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/13 18:21:18 sthen Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
@@ -14,7 +14,7 @@ DEBUG_PACKAGES =	-main
 COMPILER=		base-clang ports-gcc
 
 WANTLIB-main +=		${COMPILER_LIBCXX} c glib-2.0 gmime-3.0
-WANTLIB-main +=		gobject-2.0 intl m talloc xapian z
+WANTLIB-main +=		gobject-2.0 intl m pthread talloc xapian z
 
 LIB_DEPENDS =		databases/xapian-core \
 			devel/libtalloc \
@@ -29,6 +29,7 @@ BUILD_DEPENDS =		devel/doxygen \
 			editors/emacs,gtk3 \
 			security/gnupg2 \
 			shells/bash \
+			shells/bash-completion \
 			textproc/py-sphinx${MODPY_FLAVOR}
 
 TEST_DEPENDS =		archivers/gtar \
@@ -52,7 +53,7 @@ MAKE_FLAGS =		V=1
 
 LIBnotmuch_MAJOR =	${LIBnotmuch_VERSION:R}
 LIBnotmuch_MINOR =	${LIBnotmuch_VERSION:E}
-SUBST_VARS =		LIBnotmuch_MAJOR LIBnotmuch_MINOR NOTMUCH_LIBV
+SUBST_VARS =		LIBnotmuch_MAJOR LIBnotmuch_MINOR
 
 # the --gzip option of notmuch dump is disabled so skip the relevant tests
 TEST_FLAGS =	V=1 \
@@ -68,7 +69,7 @@ post-extract:
 # Avoid conflict with C++20 <version>, also see patches
 pre-configure:
 	cd ${WRKSRC}; mv version version.txt; \
-	    ${SUBST_CMD} lib/notmuch.h
+	    ${SUBST_CMD} lib/Makefile.local
 	ln -s ${PREFIX}/bin/sphinx-build${MODPY_BIN_SUFFIX} ${WRKDIR}/bin/sphinx-build
 
 post-install:

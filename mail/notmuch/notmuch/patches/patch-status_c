@@ -1,0 +1,21 @@
+$OpenBSD: patch-status_c,v 1.1 2020/08/13 18:21:19 sthen Exp $
+
+Index: status.c
+--- status.c.orig
++++ status.c
+@@ -74,12 +74,10 @@ status_to_exit (notmuch_status_t status)
+ }
+ 
+ notmuch_status_t
+-print_status_gzbytes (const char *loc, gzFile file, int bytes)
++print_status_bytes (const char *loc, int bytes)
+ {
+-    if (bytes <= 0) {
+-	int errnum;
+-	const char *errstr = gzerror (file, &errnum);
+-	fprintf (stderr, "%s: zlib error %s (%d)\n", loc, errstr, errnum);
++    if (bytes < 0) {
++	fprintf (stderr, "%s: %s\n", loc, strerror (errno));
+ 	return NOTMUCH_STATUS_FILE_ERROR;
+     } else {
+ 	return NOTMUCH_STATUS_SUCCESS;

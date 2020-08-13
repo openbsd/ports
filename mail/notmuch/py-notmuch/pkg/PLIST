@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/13 18:21:19 sthen Exp $
+@pkgpath mail/notmuch/py-notmuch
 lib/python${MODPY_VERSION}/site-packages/notmuch/
 lib/python${MODPY_VERSION}/site-packages/notmuch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/notmuch/__init__.py

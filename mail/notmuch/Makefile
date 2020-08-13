@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/08/13 18:21:18 sthen Exp $
 
 SUBDIR =
 SUBDIR += notmuch
-SUBDIR += py-notmuch
 SUBDIR += py-notmuch,python3
 
 .include <bsd.port.subdir.mk>
