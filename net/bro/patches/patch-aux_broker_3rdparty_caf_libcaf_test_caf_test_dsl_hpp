@@ -1,0 +1,53 @@
+$OpenBSD: patch-aux_broker_3rdparty_caf_libcaf_test_caf_test_dsl_hpp,v 1.1 2020/08/13 18:15:04 ajacoutot Exp $
+
+https://github.com/actor-framework/actor-framework/commit/35819b9f257754781850310b9feff352f08ed3d6.patch
+From 35819b9f257754781850310b9feff352f08ed3d6 Mon Sep 17 00:00:00 2001
+From: Dominik Charousset <dominik.charousset@corelight.com>
+Date: Sat, 18 Apr 2020 08:57:29 +0200
+Subject: [PATCH] Fix build on Clang 10
+
+Index: aux/broker/3rdparty/caf/libcaf_test/caf/test/dsl.hpp
+--- aux/broker/3rdparty/caf/libcaf_test/caf/test/dsl.hpp.orig
++++ aux/broker/3rdparty/caf/libcaf_test/caf/test/dsl.hpp
+@@ -334,7 +334,7 @@ class expect_clause { (public)
+   }
+ 
+   expect_clause& to(const caf::scoped_actor& whom) {
+-    dest_ = whom.ptr();
++    dest_ = caf::actor_cast<caf::abstract_actor*>(whom);
+     return *this;
+   }
+ 
+@@ -410,7 +410,7 @@ class expect_clause<void> { (public)
+   }
+ 
+   expect_clause& to(const caf::scoped_actor& whom) {
+-    dest_ = whom.ptr();
++    dest_ = caf::actor_cast<caf::abstract_actor*>(whom);
+     return *this;
+   }
+ 
+@@ -450,11 +450,6 @@ class inject_clause { (public)
+     return *this;
+   }
+ 
+-  inject_clause& to(const caf::scoped_actor& whom) {
+-    dest_ = whom.ptr();
+-    return *this;
+-  }
+-
+   void with(Ts... xs) {
+     if (src_ == nullptr)
+       CAF_FAIL("missing .from() in inject() statement");
+@@ -525,11 +520,6 @@ class allow_clause { (public)
+   allow_clause& to(const Handle& whom) {
+     if (sched_.prioritize(whom))
+       dest_ = &sched_.next_job<caf::abstract_actor>();
+-    return *this;
+-  }
+-
+-  allow_clause& to(const caf::scoped_actor& whom) {
+-    dest_ = whom.ptr();
+     return *this;
+   }
+ 

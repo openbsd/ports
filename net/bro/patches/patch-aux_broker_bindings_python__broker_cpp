@@ -1,0 +1,35 @@
+$OpenBSD: patch-aux_broker_bindings_python__broker_cpp,v 1.1 2020/08/13 18:15:04 ajacoutot Exp $
+
+From c358de6dbeb19a8a4d9bf7a6f2fee75671c8eab5 Mon Sep 17 00:00:00 2001
+From: Dominik Charousset <dominik@charousset.de>
+Date: Fri, 24 Jul 2020 14:57:24 +0200
+Subject: [PATCH] Silence self-assign-overloaded warning on Clang
+
+Index: aux/broker/bindings/python/_broker.cpp
+--- aux/broker/bindings/python/_broker.cpp.orig
++++ aux/broker/bindings/python/_broker.cpp
+@@ -99,8 +99,14 @@ PYBIND11_MODULE(_broker, m) {
+ 
+   py::bind_vector<std::vector<broker::peer_info>>(m, "VectorPeerInfo");
+ 
++#ifdef __clang__
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wself-assign-overloaded"
++#endif
+   py::class_<broker::topic>(m, "Topic")
+     .def(py::init<std::string>())
++    // Without the enclosing pragmas, this line raises a nonsensical self-assign
++    // warning on Clang. See https://bugs.llvm.org/show_bug.cgi?id=43124.
+     .def(py::self /= py::self,
+          "Appends a topic component with a separator")
+     .def(py::self / py::self,
+@@ -109,6 +115,9 @@ PYBIND11_MODULE(_broker, m) {
+          "Get the underlying string representation of the topic",
+          py::return_value_policy::reference_internal)
+     .def("__repr__", [](const broker::topic& t) { return t.string(); });
++#ifdef __clang__
++#pragma clang diagnostic pop
++#endif
+ 
+   py::bind_vector<std::vector<broker::topic>>(m, "VectorTopic");
+ 
