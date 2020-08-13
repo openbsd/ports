@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2020/07/18 09:20:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2020/08/13 15:20:17 ajacoutot Exp $
 @bin bin/deja-dup
 lib/deja-dup/
 @so lib/deja-dup/libdeja.so
@@ -17,7 +17,6 @@ share/help/
 share/help/C/
 share/help/C/deja-dup/
 share/help/C/deja-dup/contribute.page
-share/help/C/deja-dup/credits.page
 share/help/C/deja-dup/index.page
 share/help/C/deja-dup/license.page
 share/help/C/deja-dup/prefs.page
@@ -28,7 +27,6 @@ share/help/C/deja-dup/support.page
 share/help/af/
 share/help/af/deja-dup/
 share/help/af/deja-dup/contribute.page
-share/help/af/deja-dup/credits.page
 share/help/af/deja-dup/index.page
 share/help/af/deja-dup/license.page
 share/help/af/deja-dup/prefs.page
@@ -39,7 +37,6 @@ share/help/af/deja-dup/support.page
 share/help/ar/
 share/help/ar/deja-dup/
 share/help/ar/deja-dup/contribute.page
-share/help/ar/deja-dup/credits.page
 share/help/ar/deja-dup/index.page
 share/help/ar/deja-dup/license.page
 share/help/ar/deja-dup/prefs.page
@@ -50,7 +47,6 @@ share/help/ar/deja-dup/support.page
 share/help/bg/
 share/help/bg/deja-dup/
 share/help/bg/deja-dup/contribute.page
-share/help/bg/deja-dup/credits.page
 share/help/bg/deja-dup/index.page
 share/help/bg/deja-dup/license.page
 share/help/bg/deja-dup/prefs.page
@@ -61,7 +57,6 @@ share/help/bg/deja-dup/support.page
 share/help/bs/
 share/help/bs/deja-dup/
 share/help/bs/deja-dup/contribute.page
-share/help/bs/deja-dup/credits.page
 share/help/bs/deja-dup/index.page
 share/help/bs/deja-dup/license.page
 share/help/bs/deja-dup/prefs.page
@@ -72,7 +67,6 @@ share/help/bs/deja-dup/support.page
 share/help/ca/
 share/help/ca/deja-dup/
 share/help/ca/deja-dup/contribute.page
-share/help/ca/deja-dup/credits.page
 share/help/ca/deja-dup/index.page
 share/help/ca/deja-dup/license.page
 share/help/ca/deja-dup/prefs.page
@@ -83,7 +77,6 @@ share/help/ca/deja-dup/support.page
 share/help/cs/
 share/help/cs/deja-dup/
 share/help/cs/deja-dup/contribute.page
-share/help/cs/deja-dup/credits.page
 share/help/cs/deja-dup/index.page
 share/help/cs/deja-dup/license.page
 share/help/cs/deja-dup/prefs.page
@@ -94,7 +87,6 @@ share/help/cs/deja-dup/support.page
 share/help/da/
 share/help/da/deja-dup/
 share/help/da/deja-dup/contribute.page
-share/help/da/deja-dup/credits.page
 share/help/da/deja-dup/index.page
 share/help/da/deja-dup/license.page
 share/help/da/deja-dup/prefs.page
@@ -105,7 +97,6 @@ share/help/da/deja-dup/support.page
 share/help/de/
 share/help/de/deja-dup/
 share/help/de/deja-dup/contribute.page
-share/help/de/deja-dup/credits.page
 share/help/de/deja-dup/index.page
 share/help/de/deja-dup/license.page
 share/help/de/deja-dup/prefs.page
@@ -116,7 +107,6 @@ share/help/de/deja-dup/support.page
 share/help/el/
 share/help/el/deja-dup/
 share/help/el/deja-dup/contribute.page
-share/help/el/deja-dup/credits.page
 share/help/el/deja-dup/index.page
 share/help/el/deja-dup/license.page
 share/help/el/deja-dup/prefs.page
@@ -127,7 +117,6 @@ share/help/el/deja-dup/support.page
 share/help/en_AU/
 share/help/en_AU/deja-dup/
 share/help/en_AU/deja-dup/contribute.page
-share/help/en_AU/deja-dup/credits.page
 share/help/en_AU/deja-dup/index.page
 share/help/en_AU/deja-dup/license.page
 share/help/en_AU/deja-dup/prefs.page
@@ -138,7 +127,6 @@ share/help/en_AU/deja-dup/support.page
 share/help/en_GB/
 share/help/en_GB/deja-dup/
 share/help/en_GB/deja-dup/contribute.page
-share/help/en_GB/deja-dup/credits.page
 share/help/en_GB/deja-dup/index.page
 share/help/en_GB/deja-dup/license.page
 share/help/en_GB/deja-dup/prefs.page
@@ -149,7 +137,6 @@ share/help/en_GB/deja-dup/support.page
 share/help/eo/
 share/help/eo/deja-dup/
 share/help/eo/deja-dup/contribute.page
-share/help/eo/deja-dup/credits.page
 share/help/eo/deja-dup/index.page
 share/help/eo/deja-dup/license.page
 share/help/eo/deja-dup/prefs.page
@@ -160,7 +147,6 @@ share/help/eo/deja-dup/support.page
 share/help/es/
 share/help/es/deja-dup/
 share/help/es/deja-dup/contribute.page
-share/help/es/deja-dup/credits.page
 share/help/es/deja-dup/index.page
 share/help/es/deja-dup/license.page
 share/help/es/deja-dup/prefs.page
@@ -171,7 +157,6 @@ share/help/es/deja-dup/support.page
 share/help/eu/
 share/help/eu/deja-dup/
 share/help/eu/deja-dup/contribute.page
-share/help/eu/deja-dup/credits.page
 share/help/eu/deja-dup/index.page
 share/help/eu/deja-dup/license.page
 share/help/eu/deja-dup/prefs.page
@@ -182,7 +167,6 @@ share/help/eu/deja-dup/support.page
 share/help/fi/
 share/help/fi/deja-dup/
 share/help/fi/deja-dup/contribute.page
-share/help/fi/deja-dup/credits.page
 share/help/fi/deja-dup/index.page
 share/help/fi/deja-dup/license.page
 share/help/fi/deja-dup/prefs.page
@@ -193,7 +177,6 @@ share/help/fi/deja-dup/support.page
 share/help/fr/
 share/help/fr/deja-dup/
 share/help/fr/deja-dup/contribute.page
-share/help/fr/deja-dup/credits.page
 share/help/fr/deja-dup/index.page
 share/help/fr/deja-dup/license.page
 share/help/fr/deja-dup/prefs.page
@@ -204,7 +187,6 @@ share/help/fr/deja-dup/support.page
 share/help/gl/
 share/help/gl/deja-dup/
 share/help/gl/deja-dup/contribute.page
-share/help/gl/deja-dup/credits.page
 share/help/gl/deja-dup/index.page
 share/help/gl/deja-dup/license.page
 share/help/gl/deja-dup/prefs.page
@@ -215,7 +197,6 @@ share/help/gl/deja-dup/support.page
 share/help/he/
 share/help/he/deja-dup/
 share/help/he/deja-dup/contribute.page
-share/help/he/deja-dup/credits.page
 share/help/he/deja-dup/index.page
 share/help/he/deja-dup/license.page
 share/help/he/deja-dup/prefs.page
@@ -226,7 +207,6 @@ share/help/he/deja-dup/support.page
 share/help/hr/
 share/help/hr/deja-dup/
 share/help/hr/deja-dup/contribute.page
-share/help/hr/deja-dup/credits.page
 share/help/hr/deja-dup/index.page
 share/help/hr/deja-dup/license.page
 share/help/hr/deja-dup/prefs.page
@@ -237,7 +217,6 @@ share/help/hr/deja-dup/support.page
 share/help/hu/
 share/help/hu/deja-dup/
 share/help/hu/deja-dup/contribute.page
-share/help/hu/deja-dup/credits.page
 share/help/hu/deja-dup/index.page
 share/help/hu/deja-dup/license.page
 share/help/hu/deja-dup/prefs.page
@@ -248,7 +227,6 @@ share/help/hu/deja-dup/support.page
 share/help/id/
 share/help/id/deja-dup/
 share/help/id/deja-dup/contribute.page
-share/help/id/deja-dup/credits.page
 share/help/id/deja-dup/index.page
 share/help/id/deja-dup/license.page
 share/help/id/deja-dup/prefs.page
@@ -259,7 +237,6 @@ share/help/id/deja-dup/support.page
 share/help/it/
 share/help/it/deja-dup/
 share/help/it/deja-dup/contribute.page
-share/help/it/deja-dup/credits.page
 share/help/it/deja-dup/index.page
 share/help/it/deja-dup/license.page
 share/help/it/deja-dup/prefs.page
@@ -270,7 +247,6 @@ share/help/it/deja-dup/support.page
 share/help/ja/
 share/help/ja/deja-dup/
 share/help/ja/deja-dup/contribute.page
-share/help/ja/deja-dup/credits.page
 share/help/ja/deja-dup/index.page
 share/help/ja/deja-dup/license.page
 share/help/ja/deja-dup/prefs.page
@@ -281,7 +257,6 @@ share/help/ja/deja-dup/support.page
 share/help/ko/
 share/help/ko/deja-dup/
 share/help/ko/deja-dup/contribute.page
-share/help/ko/deja-dup/credits.page
 share/help/ko/deja-dup/index.page
 share/help/ko/deja-dup/license.page
 share/help/ko/deja-dup/prefs.page
@@ -292,7 +267,6 @@ share/help/ko/deja-dup/support.page
 share/help/ku/
 share/help/ku/deja-dup/
 share/help/ku/deja-dup/contribute.page
-share/help/ku/deja-dup/credits.page
 share/help/ku/deja-dup/index.page
 share/help/ku/deja-dup/license.page
 share/help/ku/deja-dup/prefs.page
@@ -303,7 +277,6 @@ share/help/ku/deja-dup/support.page
 share/help/lt/
 share/help/lt/deja-dup/
 share/help/lt/deja-dup/contribute.page
-share/help/lt/deja-dup/credits.page
 share/help/lt/deja-dup/index.page
 share/help/lt/deja-dup/license.page
 share/help/lt/deja-dup/prefs.page
@@ -314,7 +287,6 @@ share/help/lt/deja-dup/support.page
 share/help/my/
 share/help/my/deja-dup/
 share/help/my/deja-dup/contribute.page
-share/help/my/deja-dup/credits.page
 share/help/my/deja-dup/index.page
 share/help/my/deja-dup/license.page
 share/help/my/deja-dup/prefs.page
@@ -325,7 +297,6 @@ share/help/my/deja-dup/support.page
 share/help/nb/
 share/help/nb/deja-dup/
 share/help/nb/deja-dup/contribute.page
-share/help/nb/deja-dup/credits.page
 share/help/nb/deja-dup/index.page
 share/help/nb/deja-dup/license.page
 share/help/nb/deja-dup/prefs.page
@@ -336,7 +307,6 @@ share/help/nb/deja-dup/support.page
 share/help/nl/
 share/help/nl/deja-dup/
 share/help/nl/deja-dup/contribute.page
-share/help/nl/deja-dup/credits.page
 share/help/nl/deja-dup/index.page
 share/help/nl/deja-dup/license.page
 share/help/nl/deja-dup/prefs.page
@@ -347,7 +317,6 @@ share/help/nl/deja-dup/support.page
 share/help/oc/
 share/help/oc/deja-dup/
 share/help/oc/deja-dup/contribute.page
-share/help/oc/deja-dup/credits.page
 share/help/oc/deja-dup/index.page
 share/help/oc/deja-dup/license.page
 share/help/oc/deja-dup/prefs.page
@@ -358,7 +327,6 @@ share/help/oc/deja-dup/support.page
 share/help/pa/
 share/help/pa/deja-dup/
 share/help/pa/deja-dup/contribute.page
-share/help/pa/deja-dup/credits.page
 share/help/pa/deja-dup/index.page
 share/help/pa/deja-dup/license.page
 share/help/pa/deja-dup/prefs.page
@@ -369,7 +337,6 @@ share/help/pa/deja-dup/support.page
 share/help/pl/
 share/help/pl/deja-dup/
 share/help/pl/deja-dup/contribute.page
-share/help/pl/deja-dup/credits.page
 share/help/pl/deja-dup/index.page
 share/help/pl/deja-dup/license.page
 share/help/pl/deja-dup/prefs.page
@@ -380,7 +347,6 @@ share/help/pl/deja-dup/support.page
 share/help/ps/
 share/help/ps/deja-dup/
 share/help/ps/deja-dup/contribute.page
-share/help/ps/deja-dup/credits.page
 share/help/ps/deja-dup/index.page
 share/help/ps/deja-dup/license.page
 share/help/ps/deja-dup/prefs.page
@@ -391,7 +357,6 @@ share/help/ps/deja-dup/support.page
 share/help/pt_BR/
 share/help/pt_BR/deja-dup/
 share/help/pt_BR/deja-dup/contribute.page
-share/help/pt_BR/deja-dup/credits.page
 share/help/pt_BR/deja-dup/index.page
 share/help/pt_BR/deja-dup/license.page
 share/help/pt_BR/deja-dup/prefs.page
@@ -402,7 +367,6 @@ share/help/pt_BR/deja-dup/support.page
 share/help/ru/
 share/help/ru/deja-dup/
 share/help/ru/deja-dup/contribute.page
-share/help/ru/deja-dup/credits.page
 share/help/ru/deja-dup/index.page
 share/help/ru/deja-dup/license.page
 share/help/ru/deja-dup/prefs.page
@@ -413,7 +377,6 @@ share/help/ru/deja-dup/support.page
 share/help/sk/
 share/help/sk/deja-dup/
 share/help/sk/deja-dup/contribute.page
-share/help/sk/deja-dup/credits.page
 share/help/sk/deja-dup/index.page
 share/help/sk/deja-dup/license.page
 share/help/sk/deja-dup/prefs.page
@@ -424,7 +387,6 @@ share/help/sk/deja-dup/support.page
 share/help/sl/
 share/help/sl/deja-dup/
 share/help/sl/deja-dup/contribute.page
-share/help/sl/deja-dup/credits.page
 share/help/sl/deja-dup/index.page
 share/help/sl/deja-dup/license.page
 share/help/sl/deja-dup/prefs.page
@@ -435,7 +397,6 @@ share/help/sl/deja-dup/support.page
 share/help/sr/
 share/help/sr/deja-dup/
 share/help/sr/deja-dup/contribute.page
-share/help/sr/deja-dup/credits.page
 share/help/sr/deja-dup/index.page
 share/help/sr/deja-dup/license.page
 share/help/sr/deja-dup/prefs.page
@@ -446,7 +407,6 @@ share/help/sr/deja-dup/support.page
 share/help/sv/
 share/help/sv/deja-dup/
 share/help/sv/deja-dup/contribute.page
-share/help/sv/deja-dup/credits.page
 share/help/sv/deja-dup/index.page
 share/help/sv/deja-dup/license.page
 share/help/sv/deja-dup/prefs.page
@@ -457,7 +417,6 @@ share/help/sv/deja-dup/support.page
 share/help/th/
 share/help/th/deja-dup/
 share/help/th/deja-dup/contribute.page
-share/help/th/deja-dup/credits.page
 share/help/th/deja-dup/index.page
 share/help/th/deja-dup/license.page
 share/help/th/deja-dup/prefs.page
@@ -468,7 +427,6 @@ share/help/th/deja-dup/support.page
 share/help/tr/
 share/help/tr/deja-dup/
 share/help/tr/deja-dup/contribute.page
-share/help/tr/deja-dup/credits.page
 share/help/tr/deja-dup/index.page
 share/help/tr/deja-dup/license.page
 share/help/tr/deja-dup/prefs.page
@@ -479,7 +437,6 @@ share/help/tr/deja-dup/support.page
 share/help/uk/
 share/help/uk/deja-dup/
 share/help/uk/deja-dup/contribute.page
-share/help/uk/deja-dup/credits.page
 share/help/uk/deja-dup/index.page
 share/help/uk/deja-dup/license.page
 share/help/uk/deja-dup/prefs.page
@@ -490,7 +447,6 @@ share/help/uk/deja-dup/support.page
 share/help/vi/
 share/help/vi/deja-dup/
 share/help/vi/deja-dup/contribute.page
-share/help/vi/deja-dup/credits.page
 share/help/vi/deja-dup/index.page
 share/help/vi/deja-dup/license.page
 share/help/vi/deja-dup/prefs.page
@@ -501,7 +457,6 @@ share/help/vi/deja-dup/support.page
 share/help/zh_CN/
 share/help/zh_CN/deja-dup/
 share/help/zh_CN/deja-dup/contribute.page
-share/help/zh_CN/deja-dup/credits.page
 share/help/zh_CN/deja-dup/index.page
 share/help/zh_CN/deja-dup/license.page
 share/help/zh_CN/deja-dup/prefs.page
@@ -512,7 +467,6 @@ share/help/zh_CN/deja-dup/support.page
 share/help/zh_TW/
 share/help/zh_TW/deja-dup/
 share/help/zh_TW/deja-dup/contribute.page
-share/help/zh_TW/deja-dup/credits.page
 share/help/zh_TW/deja-dup/index.page
 share/help/zh_TW/deja-dup/license.page
 share/help/zh_TW/deja-dup/prefs.page
