@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/05/31 10:36:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/08/13 14:01:29 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -351,6 +351,7 @@ share/osinfo/os/freebsd.org/freebsd-11.0.xml
 share/osinfo/os/freebsd.org/freebsd-11.1.xml
 share/osinfo/os/freebsd.org/freebsd-11.2.xml
 share/osinfo/os/freebsd.org/freebsd-11.3.xml
+share/osinfo/os/freebsd.org/freebsd-11.4.xml
 share/osinfo/os/freebsd.org/freebsd-12.0.xml
 share/osinfo/os/freebsd.org/freebsd-12.1.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
@@ -421,6 +422,7 @@ share/osinfo/os/mageia.org/mageia-3.xml
 share/osinfo/os/mageia.org/mageia-4.xml
 share/osinfo/os/mageia.org/mageia-5.xml
 share/osinfo/os/mageia.org/mageia-6.xml
+share/osinfo/os/mageia.org/mageia-7.xml
 share/osinfo/os/mandriva.com/
 share/osinfo/os/mandriva.com/mandrake-10.0.xml
 share/osinfo/os/mandriva.com/mandrake-10.1.xml
@@ -572,6 +574,7 @@ share/osinfo/os/opensuse.org/opensuse-13.1.xml
 share/osinfo/os/opensuse.org/opensuse-13.2.xml
 share/osinfo/os/opensuse.org/opensuse-15.0.xml
 share/osinfo/os/opensuse.org/opensuse-15.1.xml
+share/osinfo/os/opensuse.org/opensuse-15.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.3.xml
@@ -756,6 +759,7 @@ share/osinfo/os/suse.com/caasp-3.0.xml
 share/osinfo/os/suse.com/caasp-unknown.xml
 share/osinfo/os/suse.com/sle-15-unknown.xml
 share/osinfo/os/suse.com/sle-15.1.xml
+share/osinfo/os/suse.com/sle-15.2.xml
 share/osinfo/os/suse.com/sle-15.xml
 share/osinfo/os/suse.com/sle-unknown.xml
 share/osinfo/os/suse.com/sled-10.1.xml
