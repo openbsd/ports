@@ -1,4 +1,4 @@
-$OpenBSD: patch-gtk_tools_updateiconcache_c,v 1.1 2019/05/09 13:42:05 ajacoutot Exp $
+$OpenBSD: patch-gtk_tools_updateiconcache_c,v 1.2 2020/08/14 07:00:16 ajacoutot Exp $
 
 Index: gtk/tools/updateiconcache.c
 --- gtk/tools/updateiconcache.c.orig
@@ -14,4 +14,4 @@ Index: gtk/tools/updateiconcache.c
 +
    if (validate)
      {
-        gchar *file = g_build_filename (path, CACHE_NAME, NULL);
+        char *file = g_build_filename (path, CACHE_NAME, NULL);

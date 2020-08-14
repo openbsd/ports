@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2020/05/19 12:00:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2020/08/14 07:00:16 ajacoutot Exp $
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-demo
 @bin bin/gtk4-demo-application
 @bin bin/gtk4-encode-symbolic-svg
 @bin bin/gtk4-icon-browser
 @bin bin/gtk4-launch
+@bin bin/gtk4-print-editor
 @bin bin/gtk4-query-settings
 @bin bin/gtk4-widget-factory
 include/gtk-4.0/
@@ -88,55 +89,6 @@ include/gtk-4.0/gsk/gskroundedrect.h
 include/gtk-4.0/gsk/gsktransform.h
 include/gtk-4.0/gsk/gsktypes.h
 include/gtk-4.0/gtk/
-include/gtk-4.0/gtk/a11y/
-include/gtk-4.0/gtk/a11y/gtk-a11y-autocleanups.h
-include/gtk-4.0/gtk/a11y/gtkbooleancellaccessible.h
-include/gtk-4.0/gtk/a11y/gtkbuttonaccessible.h
-include/gtk-4.0/gtk/a11y/gtkcellaccessible.h
-include/gtk-4.0/gtk/a11y/gtkcellaccessibleparent.h
-include/gtk-4.0/gtk/a11y/gtkcomboboxaccessible.h
-include/gtk-4.0/gtk/a11y/gtkcompositeaccessible.h
-include/gtk-4.0/gtk/a11y/gtkcontainercellaccessible.h
-include/gtk-4.0/gtk/a11y/gtkentryaccessible.h
-include/gtk-4.0/gtk/a11y/gtkexpanderaccessible.h
-include/gtk-4.0/gtk/a11y/gtkflowboxaccessible.h
-include/gtk-4.0/gtk/a11y/gtkflowboxchildaccessible.h
-include/gtk-4.0/gtk/a11y/gtkframeaccessible.h
-include/gtk-4.0/gtk/a11y/gtkiconviewaccessible.h
-include/gtk-4.0/gtk/a11y/gtkimageaccessible.h
-include/gtk-4.0/gtk/a11y/gtkimagecellaccessible.h
-include/gtk-4.0/gtk/a11y/gtklabelaccessible.h
-include/gtk-4.0/gtk/a11y/gtklevelbaraccessible.h
-include/gtk-4.0/gtk/a11y/gtklinkbuttonaccessible.h
-include/gtk-4.0/gtk/a11y/gtklistboxaccessible.h
-include/gtk-4.0/gtk/a11y/gtklistboxrowaccessible.h
-include/gtk-4.0/gtk/a11y/gtklockbuttonaccessible.h
-include/gtk-4.0/gtk/a11y/gtkmenubuttonaccessible.h
-include/gtk-4.0/gtk/a11y/gtknotebookaccessible.h
-include/gtk-4.0/gtk/a11y/gtknotebookpageaccessible.h
-include/gtk-4.0/gtk/a11y/gtkpanedaccessible.h
-include/gtk-4.0/gtk/a11y/gtkpopoveraccessible.h
-include/gtk-4.0/gtk/a11y/gtkprogressbaraccessible.h
-include/gtk-4.0/gtk/a11y/gtkradiobuttonaccessible.h
-include/gtk-4.0/gtk/a11y/gtkrangeaccessible.h
-include/gtk-4.0/gtk/a11y/gtkrenderercellaccessible.h
-include/gtk-4.0/gtk/a11y/gtkscaleaccessible.h
-include/gtk-4.0/gtk/a11y/gtkscalebuttonaccessible.h
-include/gtk-4.0/gtk/a11y/gtkscrollbaraccessible.h
-include/gtk-4.0/gtk/a11y/gtkscrolledwindowaccessible.h
-include/gtk-4.0/gtk/a11y/gtkspinbuttonaccessible.h
-include/gtk-4.0/gtk/a11y/gtkspinneraccessible.h
-include/gtk-4.0/gtk/a11y/gtkstackaccessible.h
-include/gtk-4.0/gtk/a11y/gtkstatusbaraccessible.h
-include/gtk-4.0/gtk/a11y/gtkswitchaccessible.h
-include/gtk-4.0/gtk/a11y/gtktextaccessible.h
-include/gtk-4.0/gtk/a11y/gtktextcellaccessible.h
-include/gtk-4.0/gtk/a11y/gtktextviewaccessible.h
-include/gtk-4.0/gtk/a11y/gtktogglebuttonaccessible.h
-include/gtk-4.0/gtk/a11y/gtktoplevelaccessible.h
-include/gtk-4.0/gtk/a11y/gtktreeviewaccessible.h
-include/gtk-4.0/gtk/a11y/gtkwidgetaccessible.h
-include/gtk-4.0/gtk/a11y/gtkwindowaccessible.h
 include/gtk-4.0/gtk/css/
 include/gtk-4.0/gtk/css/gtkcss.h
 include/gtk-4.0/gtk/css/gtkcssenums.h
@@ -144,7 +96,6 @@ include/gtk-4.0/gtk/css/gtkcssenumtypes.h
 include/gtk-4.0/gtk/css/gtkcsserror.h
 include/gtk-4.0/gtk/css/gtkcsslocation.h
 include/gtk-4.0/gtk/css/gtkcsssection.h
-include/gtk-4.0/gtk/gtk-a11y.h
 include/gtk-4.0/gtk/gtk-autocleanups.h
 include/gtk-4.0/gtk/gtk.h
 include/gtk-4.0/gtk/gtkaboutdialog.h
@@ -162,12 +113,17 @@ include/gtk-4.0/gtk/gtkapplication.h
 include/gtk-4.0/gtk/gtkapplicationwindow.h
 include/gtk-4.0/gtk/gtkaspectframe.h
 include/gtk-4.0/gtk/gtkassistant.h
+include/gtk-4.0/gtk/gtkatcontext.h
 include/gtk-4.0/gtk/gtkbinlayout.h
+include/gtk-4.0/gtk/gtkbitset.h
+include/gtk-4.0/gtk/gtkbookmarklist.h
+include/gtk-4.0/gtk/gtkboolfilter.h
 include/gtk-4.0/gtk/gtkborder.h
 include/gtk-4.0/gtk/gtkbox.h
 include/gtk-4.0/gtk/gtkboxlayout.h
 include/gtk-4.0/gtk/gtkbuildable.h
 include/gtk-4.0/gtk/gtkbuilder.h
+include/gtk-4.0/gtk/gtkbuilderlistitemfactory.h
 include/gtk-4.0/gtk/gtkbuilderscope.h
 include/gtk-4.0/gtk/gtkbutton.h
 include/gtk-4.0/gtk/gtkcalendar.h
@@ -194,22 +150,29 @@ include/gtk-4.0/gtk/gtkcolorchooser.h
 include/gtk-4.0/gtk/gtkcolorchooserdialog.h
 include/gtk-4.0/gtk/gtkcolorchooserwidget.h
 include/gtk-4.0/gtk/gtkcolorutils.h
+include/gtk-4.0/gtk/gtkcolumnview.h
+include/gtk-4.0/gtk/gtkcolumnviewcolumn.h
 include/gtk-4.0/gtk/gtkcombobox.h
 include/gtk-4.0/gtk/gtkcomboboxtext.h
 include/gtk-4.0/gtk/gtkconstraint.h
 include/gtk-4.0/gtk/gtkconstraintguide.h
 include/gtk-4.0/gtk/gtkconstraintlayout.h
 include/gtk-4.0/gtk/gtkcssprovider.h
+include/gtk-4.0/gtk/gtkcustomfilter.h
 include/gtk-4.0/gtk/gtkcustomlayout.h
+include/gtk-4.0/gtk/gtkcustomsorter.h
 include/gtk-4.0/gtk/gtkdebug.h
 include/gtk-4.0/gtk/gtkdialog.h
+include/gtk-4.0/gtk/gtkdirectorylist.h
 include/gtk-4.0/gtk/gtkdragicon.h
 include/gtk-4.0/gtk/gtkdragsource.h
 include/gtk-4.0/gtk/gtkdrawingarea.h
 include/gtk-4.0/gtk/gtkdropcontrollermotion.h
+include/gtk-4.0/gtk/gtkdropdown.h
 include/gtk-4.0/gtk/gtkdroptarget.h
 include/gtk-4.0/gtk/gtkdroptargetasync.h
 include/gtk-4.0/gtk/gtkeditable.h
+include/gtk-4.0/gtk/gtkeditablelabel.h
 include/gtk-4.0/gtk/gtkemojichooser.h
 include/gtk-4.0/gtk/gtkentry.h
 include/gtk-4.0/gtk/gtkentrybuffer.h
@@ -222,12 +185,14 @@ include/gtk-4.0/gtk/gtkeventcontrollerlegacy.h
 include/gtk-4.0/gtk/gtkeventcontrollermotion.h
 include/gtk-4.0/gtk/gtkeventcontrollerscroll.h
 include/gtk-4.0/gtk/gtkexpander.h
+include/gtk-4.0/gtk/gtkexpression.h
 include/gtk-4.0/gtk/gtkfilechooser.h
 include/gtk-4.0/gtk/gtkfilechooserbutton.h
 include/gtk-4.0/gtk/gtkfilechooserdialog.h
 include/gtk-4.0/gtk/gtkfilechoosernative.h
 include/gtk-4.0/gtk/gtkfilechooserwidget.h
 include/gtk-4.0/gtk/gtkfilefilter.h
+include/gtk-4.0/gtk/gtkfilter.h
 include/gtk-4.0/gtk/gtkfilterlistmodel.h
 include/gtk-4.0/gtk/gtkfixed.h
 include/gtk-4.0/gtk/gtkfixedlayout.h
@@ -251,6 +216,7 @@ include/gtk-4.0/gtk/gtkgesturezoom.h
 include/gtk-4.0/gtk/gtkglarea.h
 include/gtk-4.0/gtk/gtkgrid.h
 include/gtk-4.0/gtk/gtkgridlayout.h
+include/gtk-4.0/gtk/gtkgridview.h
 include/gtk-4.0/gtk/gtkheaderbar.h
 include/gtk-4.0/gtk/gtkicontheme.h
 include/gtk-4.0/gtk/gtkiconview.h
@@ -265,8 +231,12 @@ include/gtk-4.0/gtk/gtklayoutchild.h
 include/gtk-4.0/gtk/gtklayoutmanager.h
 include/gtk-4.0/gtk/gtklevelbar.h
 include/gtk-4.0/gtk/gtklinkbutton.h
+include/gtk-4.0/gtk/gtklistbase.h
 include/gtk-4.0/gtk/gtklistbox.h
+include/gtk-4.0/gtk/gtklistitem.h
+include/gtk-4.0/gtk/gtklistitemfactory.h
 include/gtk-4.0/gtk/gtkliststore.h
+include/gtk-4.0/gtk/gtklistview.h
 include/gtk-4.0/gtk/gtklockbutton.h
 include/gtk-4.0/gtk/gtkmain.h
 include/gtk-4.0/gtk/gtkmaplistmodel.h
@@ -276,12 +246,17 @@ include/gtk-4.0/gtk/gtkmediastream.h
 include/gtk-4.0/gtk/gtkmenubutton.h
 include/gtk-4.0/gtk/gtkmessagedialog.h
 include/gtk-4.0/gtk/gtkmountoperation.h
+include/gtk-4.0/gtk/gtkmultifilter.h
+include/gtk-4.0/gtk/gtkmultiselection.h
+include/gtk-4.0/gtk/gtkmultisorter.h
 include/gtk-4.0/gtk/gtknative.h
 include/gtk-4.0/gtk/gtknativedialog.h
 include/gtk-4.0/gtk/gtknoselection.h
 include/gtk-4.0/gtk/gtknotebook.h
+include/gtk-4.0/gtk/gtknumericsorter.h
 include/gtk-4.0/gtk/gtkorientable.h
 include/gtk-4.0/gtk/gtkoverlay.h
+include/gtk-4.0/gtk/gtkoverlaylayout.h
 include/gtk-4.0/gtk/gtkpadcontroller.h
 include/gtk-4.0/gtk/gtkpagesetup.h
 include/gtk-4.0/gtk/gtkpaned.h
@@ -309,6 +284,7 @@ include/gtk-4.0/gtk/gtkscrollbar.h
 include/gtk-4.0/gtk/gtkscrolledwindow.h
 include/gtk-4.0/gtk/gtksearchbar.h
 include/gtk-4.0/gtk/gtksearchentry.h
+include/gtk-4.0/gtk/gtkselectionfiltermodel.h
 include/gtk-4.0/gtk/gtkselectionmodel.h
 include/gtk-4.0/gtk/gtkseparator.h
 include/gtk-4.0/gtk/gtksettings.h
@@ -323,11 +299,13 @@ include/gtk-4.0/gtk/gtkshortcutsshortcut.h
 include/gtk-4.0/gtk/gtkshortcutswindow.h
 include/gtk-4.0/gtk/gtkshortcuttrigger.h
 include/gtk-4.0/gtk/gtkshow.h
+include/gtk-4.0/gtk/gtksignallistitemfactory.h
 include/gtk-4.0/gtk/gtksingleselection.h
 include/gtk-4.0/gtk/gtksizegroup.h
 include/gtk-4.0/gtk/gtksizerequest.h
 include/gtk-4.0/gtk/gtkslicelistmodel.h
 include/gtk-4.0/gtk/gtksnapshot.h
+include/gtk-4.0/gtk/gtksorter.h
 include/gtk-4.0/gtk/gtksortlistmodel.h
 include/gtk-4.0/gtk/gtkspinbutton.h
 include/gtk-4.0/gtk/gtkspinner.h
@@ -335,9 +313,13 @@ include/gtk-4.0/gtk/gtkstack.h
 include/gtk-4.0/gtk/gtkstacksidebar.h
 include/gtk-4.0/gtk/gtkstackswitcher.h
 include/gtk-4.0/gtk/gtkstatusbar.h
+include/gtk-4.0/gtk/gtkstringfilter.h
+include/gtk-4.0/gtk/gtkstringlist.h
+include/gtk-4.0/gtk/gtkstringsorter.h
 include/gtk-4.0/gtk/gtkstylecontext.h
 include/gtk-4.0/gtk/gtkstyleprovider.h
 include/gtk-4.0/gtk/gtkswitch.h
+include/gtk-4.0/gtk/gtktestatcontext.h
 include/gtk-4.0/gtk/gtktestutils.h
 include/gtk-4.0/gtk/gtktext.h
 include/gtk-4.0/gtk/gtktextbuffer.h
@@ -350,7 +332,9 @@ include/gtk-4.0/gtk/gtktextview.h
 include/gtk-4.0/gtk/gtktogglebutton.h
 include/gtk-4.0/gtk/gtktooltip.h
 include/gtk-4.0/gtk/gtktreednd.h
+include/gtk-4.0/gtk/gtktreeexpander.h
 include/gtk-4.0/gtk/gtktreelistmodel.h
+include/gtk-4.0/gtk/gtktreelistrowsorter.h
 include/gtk-4.0/gtk/gtktreemodel.h
 include/gtk-4.0/gtk/gtktreemodelfilter.h
 include/gtk-4.0/gtk/gtktreemodelsort.h
@@ -405,6 +389,7 @@ lib/pkgconfig/gtk4.pc
 @man man/man1/gtk4-widget-factory.1
 share/applications/org.gtk.Demo4.desktop
 share/applications/org.gtk.IconBrowser4.desktop
+share/applications/org.gtk.PrintEditor4.desktop
 share/applications/org.gtk.WidgetFactory4.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/gettext/its/gtk4builder.its
@@ -424,10 +409,16 @@ share/gtk-4.0/valgrind/
 share/gtk-4.0/valgrind/gtk.supp
 share/icons/hicolor/scalable/apps/org.gtk.Demo4.svg
 share/icons/hicolor/scalable/apps/org.gtk.IconBrowser4.svg
+share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.Devel.svg
+share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.svg
 share/icons/hicolor/scalable/apps/org.gtk.WidgetFactory4.svg
+share/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.Devel.svg
+share/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.svg
 share/icons/hicolor/symbolic/apps/org.gtk.Demo4-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gtk.IconBrowser4-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gtk.PrintEditor4-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gtk.WidgetFactory4-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gtk.gtk4.NodeEditor-symbolic.svg
 share/locale/af/LC_MESSAGES/gtk40-properties.mo
 share/locale/af/LC_MESSAGES/gtk40.mo
 share/locale/am/LC_MESSAGES/gtk40-properties.mo
@@ -672,6 +663,8 @@ share/locale/zh_TW/LC_MESSAGES/gtk40-properties.mo
 share/locale/zh_TW/LC_MESSAGES/gtk40.mo
 share/metainfo/
 share/metainfo/org.gtk.Demo4.appdata.xml
+share/metainfo/org.gtk.IconBrowser4.appdata.xml
+share/metainfo/org.gtk.PrintEditor4.appdata.xml
 share/metainfo/org.gtk.WidgetFactory4.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas

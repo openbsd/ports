@@ -1,4 +1,4 @@
-$OpenBSD: patch-testsuite_reftests_gtk-reftest_c,v 1.4 2020/05/19 12:00:40 ajacoutot Exp $
+$OpenBSD: patch-testsuite_reftests_gtk-reftest_c,v 1.5 2020/08/14 07:00:16 ajacoutot Exp $
 
 Don't enforce dependency on libexecinfo.
 
@@ -14,7 +14,7 @@ Index: testsuite/reftests/gtk-reftest.c
  #include <execinfo.h>
  #endif
  #include <string.h>
-@@ -403,7 +403,7 @@ log_writer (GLogLevelFlags   log_level,
+@@ -406,7 +406,7 @@ log_writer (GLogLevelFlags   log_level,
              gsize            n_fields,
              gpointer         user_data)
  {
