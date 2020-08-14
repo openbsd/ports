@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:13:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/08/14 14:03:59 ajacoutot Exp $
 
 COMMENT=		statistical and novel interactive HTML plots for Python
 
-MODPY_EGG_VERSION=	1.4.0
+MODPY_EGG_VERSION=	2.1.1
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
-REVISION=		1
 
 CATEGORIES=		www graphics
 
@@ -19,19 +18,18 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST=		Yes
 MODPY_PYTEST_ARGS=	bokeh
+MODPY_SETUPTOOLS=	Yes
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
+			devel/py-typing-extensions${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}
 
 TEST_DEPENDS=	 	devel/ipython${MODPY_FLAVOR} \
@@ -41,7 +39,7 @@ TEST_DEPENDS=	 	devel/ipython${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR} \
 			math/py-networkx${MODPY_FLAVOR} \
 			math/py-pandas${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR} \
 			www/py-selenium${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
