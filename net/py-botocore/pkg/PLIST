@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.140 2020/08/13 14:46:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.141 2020/08/14 11:20:30 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -150,6 +150,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/braket/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/braket/2019-09-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/braket/2019-09-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/braket/2019-09-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/examples-1.json
