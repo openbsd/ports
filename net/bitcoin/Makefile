@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/06/08 20:32:55 rsadowski Exp $
+ $OpenBSD: Makefile,v 1.25 2020/08/14 11:12:12 rsadowski Exp $
 
 BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
@@ -6,7 +6,7 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v0.20.0
+GH_TAGNAME =		v0.20.1
 
 SHARED_LIBS +=  bitcoinconsensus          3.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
