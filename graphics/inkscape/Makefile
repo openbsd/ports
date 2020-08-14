@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2020/07/03 21:12:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2020/08/14 09:01:57 pamela Exp $
 
 COMMENT =	SVG vector drawing application
 
 DISTNAME =	inkscape-1.0
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	graphics
 
@@ -66,6 +66,7 @@ LIB_DEPENDS =	math/double-conversion \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-runtime \
 		fonts/liberation-fonts \
+		math/py-numpy${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR} \
 		x11/gtk+3,-guic
 
