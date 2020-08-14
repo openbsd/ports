@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2020/07/05 07:33:26 kmos Exp $
+# $OpenBSD: Makefile,v 1.234 2020/08/14 06:59:50 ajacoutot Exp $
 
 # XXX never versions require pango>=1.45
 # XXX add support for libcloudproviders?
@@ -11,7 +11,7 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.24.21
+GNOME_VERSION=		3.24.22
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
@@ -20,8 +20,8 @@ PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                2201.1   # 2404.17
-SHARED_LIBS +=  gtk-3                2201.0   # 2404.17
+SHARED_LIBS +=  gdk-3                2201.1   # 2404.18
+SHARED_LIBS +=  gtk-3                2201.0   # 2404.18
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -53,7 +53,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 # some apps needs the svg version of the icon (librsvg pulled in)
 RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
-WANTLIB-main += ${WANTLIB} c epoxy fribidi
+WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX} c epoxy fribidi
 WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-main += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-main += cairo cairo-gobject dbus-1 expat fontconfig freetype
@@ -65,7 +65,7 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cups=
 
-WANTLIB-cups += ${WANTLIB} epoxy idn2 fribidi
+WANTLIB-cups += ${WANTLIB} ${COMPILER_LIBCXX} epoxy idn2 fribidi
 WANTLIB-cups += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cups += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
@@ -80,7 +80,7 @@ LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cloudprint=
 
-WANTLIB-cloudprint += ${WANTLIB} epoxy fribidi idn2 psl unistring
+WANTLIB-cloudprint += ${WANTLIB} ${COMPILER_LIBCXX} epoxy fribidi idn2 psl unistring
 WANTLIB-cloudprint += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cloudprint += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cloudprint += cairo cairo-gobject dbus-1 expat fontconfig freetype
