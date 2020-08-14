@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/05/14 19:19:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/08/14 11:12:37 rsadowski Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -187,7 +187,6 @@ share/doc/HTML/uk/tellico/entry-editor5.png
 share/doc/HTML/uk/tellico/export-csv.png
 share/doc/HTML/uk/tellico/export-html.png
 share/doc/HTML/uk/tellico/export-options.png
-share/doc/HTML/uk/tellico/export-pdb.png
 share/doc/HTML/uk/tellico/externalexec-options.png
 share/doc/HTML/uk/tellico/faqs.docbook
 share/doc/HTML/uk/tellico/fetch-dialog.png
