@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_src_pro,v 1.4 2020/02/19 06:10:17 rsadowski Exp $
+$OpenBSD: patch-src_src_pro,v 1.5 2020/08/14 09:39:50 rsadowski Exp $
 
 Index: src/src.pro
 --- src/src.pro.orig
 +++ src/src.pro
-@@ -228,7 +228,7 @@ desktop.files	= *.desktop
+@@ -257,7 +257,7 @@ desktop.files	= *.desktop
  desktop.path	= $$INSTALL_PREFIX/share/applications
  
  icons.files	= icons/qdirstat.svg

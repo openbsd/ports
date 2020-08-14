@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/02/19 06:10:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/08/14 09:39:50 rsadowski Exp $
 @conflict kdirstat-*
 @pkgpath x11/kdirstat
 @bin bin/qdirstat
 bin/qdirstat-cache-writer
 share/applications/qdirstat.desktop
 share/doc/qdirstat/
+share/doc/qdirstat/Btrfs-Free-Size.md
 share/doc/qdirstat/Building.md
 share/doc/qdirstat/Contributing.md
 share/doc/qdirstat/Debugging-Tips.md
