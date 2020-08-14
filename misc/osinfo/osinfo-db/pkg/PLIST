@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/08/13 14:01:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/08/14 11:14:13 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -618,7 +618,11 @@ share/osinfo/os/oracle.com/ol-7.3.xml
 share/osinfo/os/oracle.com/ol-7.4.xml
 share/osinfo/os/oracle.com/ol-7.5.xml
 share/osinfo/os/oracle.com/ol-7.6.xml
+share/osinfo/os/oracle.com/ol-7.7.xml
+share/osinfo/os/oracle.com/ol-7.8.xml
 share/osinfo/os/oracle.com/ol-8.0.xml
+share/osinfo/os/oracle.com/ol-8.1.xml
+share/osinfo/os/oracle.com/ol-8.2.xml
 share/osinfo/os/oracle.com/solaris-11.xml
 share/osinfo/os/pureos.net/
 share/osinfo/os/pureos.net/pureos-8.xml
@@ -690,6 +694,7 @@ share/osinfo/os/redhat.com/rhel-8-unknown.xml
 share/osinfo/os/redhat.com/rhel-8.0.xml
 share/osinfo/os/redhat.com/rhel-8.1.xml
 share/osinfo/os/redhat.com/rhel-8.2.xml
+share/osinfo/os/redhat.com/rhel-8.3.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
