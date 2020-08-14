@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2020/08/14 07:17:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2020/08/14 07:18:46 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -24,7 +24,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE=		Yes
 
-WANTLIB-main += c c++ cairo freetype glib-2.0 gobject-2.0 graphite2 m
+WANTLIB-main += ${COMPILER_LIBCXX}
+WANTLIB-main += c cairo freetype glib-2.0 gobject-2.0 graphite2 m
 
 WANTLIB-icu += harfbuzz icuuc
 
