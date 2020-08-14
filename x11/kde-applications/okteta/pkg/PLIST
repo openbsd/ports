@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/08/14 11:49:00 rsadowski Exp $
 @pkgpath x11/kde4/okteta
 @bin bin/okteta
 bin/struct2osd
@@ -521,7 +521,6 @@ lib/cmake/OktetaKastenGui/OktetaKastenGuiTargets.cmake
 @lib lib/libOkteta3Gui.so.${LIBOkteta3Gui_VERSION}
 lib/pkgconfig/OktetaCore.pc
 lib/pkgconfig/OktetaGui.pc
-lib/qt5/plugins/designer/
 @so lib/qt5/plugins/designer/oktetawidgets.so
 lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/kf5/parts/oktetapart.so
@@ -546,14 +545,12 @@ share/doc/HTML/nl/okteta/index.docbook
 share/doc/HTML/pt/okteta/
 share/doc/HTML/pt/okteta/index.cache.bz2
 share/doc/HTML/pt/okteta/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/okteta/
 share/doc/HTML/pt_BR/okteta/index.cache.bz2
 share/doc/HTML/pt_BR/okteta/index.docbook
 share/doc/HTML/sr/okteta/
 share/doc/HTML/sr/okteta/index.cache.bz2
 share/doc/HTML/sr/okteta/index.docbook
-share/doc/HTML/sr@latin/
 share/doc/HTML/sr@latin/okteta/
 share/doc/HTML/sr@latin/okteta/index.cache.bz2
 share/doc/HTML/sr@latin/okteta/index.docbook
@@ -563,14 +560,16 @@ share/doc/HTML/sv/okteta/index.docbook
 share/doc/HTML/uk/okteta/
 share/doc/HTML/uk/okteta/index.cache.bz2
 share/doc/HTML/uk/okteta/index.docbook
+share/icons/hicolor/128x128/apps/okteta.png
 share/icons/hicolor/16x16/apps/okteta.png
+share/icons/hicolor/22x22/apps/okteta.png
 share/icons/hicolor/32x32/apps/okteta.png
 share/icons/hicolor/48x48/apps/okteta.png
+share/icons/hicolor/64x64/apps/okteta.png
 share/kf5/mkspecs/qt_OktetaCore.pri
 share/kf5/mkspecs/qt_OktetaGui.pri
 share/knsrcfiles/
 share/knsrcfiles/okteta-structures.knsrc
-share/kservices5/
 share/kservices5/oktetapart.desktop
 share/locale/ar/LC_MESSAGES/libkasten.mo
 share/locale/ar/LC_MESSAGES/liboktetacore.mo
@@ -701,6 +700,12 @@ share/locale/hu/LC_MESSAGES/liboktetagui.mo
 share/locale/hu/LC_MESSAGES/liboktetakasten.mo
 share/locale/hu/LC_MESSAGES/okteta.mo
 share/locale/hu/LC_MESSAGES/oktetapart.mo
+share/locale/ia/LC_MESSAGES/libkasten.mo
+share/locale/ia/LC_MESSAGES/liboktetacore.mo
+share/locale/ia/LC_MESSAGES/liboktetagui.mo
+share/locale/ia/LC_MESSAGES/liboktetakasten.mo
+share/locale/ia/LC_MESSAGES/okteta.mo
+share/locale/ia/LC_MESSAGES/oktetapart.mo
 share/locale/id/LC_MESSAGES/libkasten.mo
 share/locale/id/LC_MESSAGES/liboktetacore.mo
 share/locale/id/LC_MESSAGES/liboktetagui.mo
