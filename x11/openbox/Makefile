@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2019/11/18 19:57:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2020/08/14 18:12:55 matthieu Exp $
 
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1
-REVISION =	7
+REVISION =	8
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obrender	12.0	# 32.0
 SHARED_LIBS +=	obt		1.1	# 2.2
@@ -20,10 +20,11 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ICE Imlib2 SM X11 X11-xcb Xau Xcursor Xext Xfixes Xft
 WANTLIB += Xinerama Xrandr Xrender c cairo cairo-gobject expat ffi
 WANTLIB += fontconfig freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz iconv
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangoxft-1.0 pcre pixman-1 png pthread rsvg-2
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util xml2 z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${HOMEPAGE}dist/openbox/
 
@@ -39,8 +40,7 @@ LIB_DEPENDS +=	devel/gettext,-runtime \
 		x11/gnome/librsvg
 
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox" \
-		rcdir="${PREFIX}/share/examples/openbox" \
-		mkdir_p="$${SHELL} ${WRKSRC}/install-sh -d"
+		rcdir="${PREFIX}/share/examples/openbox"
 
 API_V = 	${V:R}
 SUBST_VARS =	API_V
