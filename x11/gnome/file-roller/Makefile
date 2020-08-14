@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.144 2020/05/14 15:05:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.145 2020/08/14 17:14:47 jasper Exp $
 
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
-GNOME_VERSION=	3.36.2
+GNOME_VERSION=	3.36.3
 
 CATEGORIES=	archivers
 
