@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1027 2020/08/13 18:21:19 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1028 2020/08/14 01:41:58 afresh1 Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1250,7 +1250,6 @@ my $obsolete_reason = {
 	'p5-Crypt-DH' => 13,
 	'p5-Crypt-Primes' => 13,
 	'p5-Crypt-RSA' => 13,
-	'p5-Crypt-OpenPGP' => 13,
 	'directoryassistant' => 0,
 	'x-pack' => 3,
 	'libepc' => 5,
