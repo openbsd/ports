@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/08/13 03:09:52 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.6 2020/08/14 19:42:19 naddy Exp $
 
 COMMENT =	Pure-Perl OpenPGP implementation
 DISTNAME =	Crypt-OpenPGP-1.12
+REVISION =	0
 CATEGORIES =	security
 PKG_ARCH =	*
 
