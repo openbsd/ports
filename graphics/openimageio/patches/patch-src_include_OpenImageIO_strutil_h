@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_include_OpenImageIO_strutil_h,v 1.1 2019/11/21 17:49:57 cwen Exp $
+$OpenBSD: patch-src_include_OpenImageIO_strutil_h,v 1.2 2020/08/15 20:31:04 rsadowski Exp $
 
 Add missing header for ports-gcc
 
 Index: src/include/OpenImageIO/strutil.h
 --- src/include/OpenImageIO/strutil.h.orig
 +++ src/include/OpenImageIO/strutil.h
-@@ -43,6 +43,7 @@
+@@ -42,6 +42,7 @@
+ #define OPENIMAGEIO_STRUTIL_H
  
  #include <string>
 +#include <cstdarg>
  #include <cstdio>
  #include <vector>
  #include <map>
- 

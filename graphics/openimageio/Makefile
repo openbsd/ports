@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2020/08/07 14:30:10 jsg Exp $
+# $OpenBSD: Makefile,v 1.43 2020/08/15 20:31:04 rsadowski Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -10,7 +10,7 @@ GH_PROJECT = 		oiio
 V =			1.8.6
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS +=		OpenImageIO		5.0 # 1.0
 SHARED_LIBS +=  	OpenImageIO_Util	2.0 # 1.5
@@ -28,7 +28,7 @@ WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += GL GLEW GLU Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
 WANTLIB += Imath-2_5 OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
 WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_python-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_python${MODPY_VERSION:C/\.//g}-mt
 WANTLIB += boost_system-mt boost_thread-mt bz2 c freetype gif
 WANTLIB += jpeg m openjpeg png raw_r swscale tiff webp z
 
@@ -40,7 +40,7 @@ COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		textproc/txt2man
 
-LIB_DEPENDS =		devel/boost \
+LIB_DEPENDS =		devel/boost>=1.67.0 \
 			graphics/openjpeg \
 			graphics/tiff \
 			graphics/libwebp \
