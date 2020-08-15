@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/08/13 17:16:05 tb Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/08/15 16:38:04 tb Exp $
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}analysis.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}combine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}expect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}extract.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}fuzzers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -16,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}scanner.${MOD
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}timing_runner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}tree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/analysis.py
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/combine.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/expect.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/extract.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/fuzzers.py
