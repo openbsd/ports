@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/10/05 16:20:37 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/08/15 15:39:06 kevlo Exp $
+@conflict py-webpy-*
+@pkgpath www/py-webpy-*
 lib/python${MODPY_VERSION}/site-packages/web/
 lib/python${MODPY_VERSION}/site-packages/web.py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/web.py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
