@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/08/15 20:30:51 rsadowski Exp $
 
 COMMENT =		YAML parser and emitter in C++
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=		jbeder
 GH_PROJECT=		yaml-cpp
 GH_TAGNAME=		release-$V
 DISTNAME =		yaml-cpp-$V
-REVISION =		6
+REVISION =		7
 
 SHARED_LIBS =		yaml-cpp	2.0 # 0.5
 

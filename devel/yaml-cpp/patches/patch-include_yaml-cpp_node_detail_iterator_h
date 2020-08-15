@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_yaml-cpp_node_detail_iterator_h,v 1.1 2020/08/15 20:30:51 rsadowski Exp $
+
+Index: include/yaml-cpp/node/detail/iterator.h
+--- include/yaml-cpp/node/detail/iterator.h.orig
++++ include/yaml-cpp/node/detail/iterator.h
+@@ -44,7 +44,7 @@ namespace YAML
+ 		private:
+ 			friend class boost::iterator_core_access;
+ 
+-			void increment() { this->base_reference() = boost::next(this->base()); }
++			void increment() { this->base_reference() = std::next(this->base()); }
+ 			
+ 			value_type dereference() const {
+ 				const typename base_type::value_type& v = *this->base();
