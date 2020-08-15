@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:12:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/08/15 20:31:06 rsadowski Exp $
 
 COMMENT =		C++ library implementing a BitTorrent client
 
 MODPY_EGG_VERSION =	1.2.3
 DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  	torrent-rasterbar 2.0	# 10.0.0
 
@@ -15,8 +15,8 @@ HOMEPAGE =		https://libtorrent.org/
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += boost_python3 boost_system-mt crypto m ssl
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += boost_python${MODPY_VERSION:C/\.//g} boost_system-mt crypto m ssl
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/libtorrent-${MODPY_EGG_VERSION:S/./_/g}/
 
@@ -26,7 +26,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS =		devel/libtool
 
 LIB_DEPENDS =		converters/libiconv \
-			devel/boost
+			devel/boost>=1.67.0
 
 # boost
 COMPILER =		base-clang ports-gcc
@@ -35,7 +35,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-python-binding \
 			--enable-tests \
 			--with-boost-system=boost_system-mt \
-			--with-boost-python=boost_python3 \
+			--with-boost-python=boost_python${MODPY_VERSION:C/\.//g} \
 			--with-libiconv
 CONFIGURE_ENV +=	CPPFLAGS="-Wno-deprecated-declarations \
 				  -Wno-macro-redefined \
