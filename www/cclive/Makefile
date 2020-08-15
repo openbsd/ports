@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/08/15 20:31:10 rsadowski Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -7,7 +7,7 @@ COMMENT =		media download tool
 
 DISTNAME =		cclive-0.9.3
 EXTRACT_SUFX =		.tar.xz
-REVISION = 		6
+REVISION = 		7
 
 CATEGORIES =		www
 

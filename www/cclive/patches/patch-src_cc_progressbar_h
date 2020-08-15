@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cc_progressbar_h,v 1.1 2020/08/15 20:31:10 rsadowski Exp $
+
+Unbreak with boost 1.67.0
+
+Index: src/cc/progressbar.h
+--- src/cc/progressbar.h.orig
++++ src/cc/progressbar.h
+@@ -316,7 +316,7 @@ struct progressbar : boost::noncopyable (private)
+ 
+   static inline std::string eta_from_seconds(const double s)
+   {
+-    const pt::time_duration& td = pt::seconds(s);
++    const pt::time_duration& td = pt::seconds(static_cast<long>(s));
+     return pt::to_simple_string(td);
+   }
+ 
