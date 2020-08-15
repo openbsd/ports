@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2020/08/13 14:38:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2020/08/15 20:31:01 rsadowski Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -12,6 +12,8 @@ GH_TAGNAME=		v${V}
 PKGNAME-main=		OpenEXR-${V}
 PKGNAME-tools=		OpenEXR-tools-${V}
 PKGNAME-doc=		OpenEXR-doc-${V}
+
+REVISION-main=		0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -46,12 +48,12 @@ CXXFLAGS +=		-mxgot
 CONFIGURE_ARGS=		-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
 WANTLIB-main += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB-main += boost_python3-mt intl m util z
+WANTLIB-main += boost_python${MODPY_VERSION:C/\.//g}-mt intl m util z
 
 BUILD_DEPENDS=		math/py-numpy${MODPY_FLAVOR}
 
 LIB_DEPENDS-main +=	${MODPY_LIB_DEPENDS} \
-			devel/boost
+			devel/boost>=1.67.0
 
 WANTLIB-tools += ${COMPILER_LIBCXX} Half-2_5 Iex-2_5 IexMath-2_5 IlmImf-2_5
 WANTLIB-tools += IlmThread-2_5 Imath-2_5 c m z
