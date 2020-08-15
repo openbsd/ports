@@ -1,4 +1,4 @@
-$OpenBSD: patch-libutil_src_getExecutablePath_cpp,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
+$OpenBSD: patch-libutil_src_getExecutablePath_cpp,v 1.2 2020/08/15 20:30:56 rsadowski Exp $
 
 Still don't know why everyone wants this...
 
@@ -10,7 +10,7 @@ Index: libutil/src/getExecutablePath.cpp
  std::string getExecutablePath()
  {
 +#ifdef __OpenBSD__
-+    return "${LOCALBASE}/bin/s25client";
++    return "/usr/local/bin/s25client";
 +#else
      int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1};
      std::vector<char> buf(1024, 0);

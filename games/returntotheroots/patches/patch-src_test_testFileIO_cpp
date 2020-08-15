@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_test_testFileIO_cpp,v 1.1 2020/08/15 20:30:56 rsadowski Exp $
+
+Index: src/test/testFileIO.cpp
+--- src/test/testFileIO.cpp.orig
++++ src/test/testFileIO.cpp
+@@ -49,9 +49,9 @@ struct FileOpenFixture
+         BOOST_TEST_CHECKPOINT("Creating tmp path" << tmpPath);
+         bfs::create_directories(tmpPath);
+         BOOST_TEST_CHECKPOINT("Creating files");
+-        bnw::ofstream fNormal(tmpPath / fileNormal);
+-        bnw::ofstream fUmlaut(tmpPath / fileUmlaut);
+-        bnw::ofstream fSpecial(tmpPath / fileSpecial);
++        bnw::ofstream fNormal(tmpPath.string() +"/"+ fileNormal.string());
++        bnw::ofstream fUmlaut(tmpPath.string() +"/"+ fileUmlaut.string());
++        bnw::ofstream fSpecial(tmpPath.string()+ "/"+ fileSpecial.string());
+         BOOST_TEST_CHECKPOINT("Filling files");
+         fNormal << "OK";
+         fUmlaut << "OK";
+@@ -80,7 +80,7 @@ BOOST_FIXTURE_TEST_CASE(TestListDir, FileOpenFixture)
+         // Scopes for auto-close
+         {
+             // path input
+-            bnw::ifstream sFile(filePath);
++            bnw::ifstream sFile(filePath.string());
+             BOOST_REQUIRE(sFile);
+             std::string content;
+             BOOST_REQUIRE(sFile >> content);

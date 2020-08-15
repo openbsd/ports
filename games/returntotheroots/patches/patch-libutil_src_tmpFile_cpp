@@ -1,0 +1,25 @@
+$OpenBSD: patch-libutil_src_tmpFile_cpp,v 1.1 2020/08/15 20:30:56 rsadowski Exp $
+
+Index: libutil/src/tmpFile.cpp
+--- libutil/src/tmpFile.cpp.orig
++++ libutil/src/tmpFile.cpp
+@@ -25,7 +25,9 @@
+ #include <unistd.h>
+ #endif
+ 
+-/// Creates and opens a temporary binary file with the given extension
++namespace bnw = boost::nowide;
++namespace bfs = boost::filesystem;
++
+ /// file must be a closed file stream and open() will be called on it
+ /// Returns the filename used or an empty string on error
+ std::string createTempFile(bnw::ofstream& file, const std::string& ext /* = ".tmp"*/)
+@@ -47,7 +49,7 @@ std::string createTempFile(bnw::ofstream& file, const 
+         if(bfs::exists(filePath))
+             continue;
+         // Try to open and place cursor at end if it exists (shouldn't be the case but might be...)
+-        file.open(filePath, std::ios_base::binary | std::ios_base::ate);
++        file.open(filePath.string(), std::ios_base::binary | std::ios_base::ate);
+         if(!file)
+             continue;
+         if(file.tellp() > 0)

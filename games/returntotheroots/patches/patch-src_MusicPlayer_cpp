@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_MusicPlayer_cpp,v 1.1 2020/08/15 20:30:56 rsadowski Exp $
+
+Index: src/MusicPlayer.cpp
+--- src/MusicPlayer.cpp.orig
++++ src/MusicPlayer.cpp
+@@ -108,7 +108,7 @@ bool Playlist::Load(const std::string& filename)
+     bfs::path filepath(filename);
+     if(filepath.extension() != ".pll")
+         filepath.replace_extension("pll");
+-    bnw::ifstream in(filepath);
++    bnw::ifstream in(filepath.string());
+ 
+     if(in.fail())
+         return false;
