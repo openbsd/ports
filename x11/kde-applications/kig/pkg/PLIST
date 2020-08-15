@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/05 05:40:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/08/15 20:31:13 rsadowski Exp $
 @pkgpath x11/kde4/kig
 @bin bin/kig
 bin/pykig.py
@@ -94,8 +94,6 @@ share/icons/hicolor/64x64/apps/kig.png
 share/icons/hicolor/64x64/mimetypes/application-x-kig.png
 share/icons/hicolor/scalable/apps/kig.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kig.svgz
-share/katepart5/syntax/
-share/katepart5/syntax/python-kig.xml
 share/kig/
 share/kig/builtin-macros/
 share/kig/builtin-macros/circle_by_center_and_line.kigt

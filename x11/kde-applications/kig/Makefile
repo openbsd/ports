@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/06/05 05:40:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/08/15 20:31:12 rsadowski Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${VERSION}
 CATEGORIES =	education geo
-REVISION =	1
+REVISION =	2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -11,11 +11,10 @@ WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5IconThemes KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Parts KF5Service KF5SonnetUi
 WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml Qt5XmlPatterns boost_python-mt
-WANTLIB += c m ${MODPY_WANTLIB}
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml Qt5XmlPatterns
+WANTLIB += c m
 
-MODULES +=	x11/kde-applications \
-		lang/python
+MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -24,8 +23,7 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-LIB_DEPENDS =	devel/boost \
-		devel/kf5/karchive \
+LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
@@ -46,5 +44,8 @@ LIB_DEPENDS =	devel/boost \
 		devel/kf5/sonnet \
 		x11/qt5/qtsvg \
 		x11/qt5/qtxmlpatterns
+
+# XXX unbreak boost python support
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_BoostPython=ON
 
 .include <bsd.port.mk>
