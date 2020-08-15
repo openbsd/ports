@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_config_compiler_clang_hpp,v 1.4 2018/01/31 21:54:49 rsadowski Exp $
+$OpenBSD: patch-boost_config_compiler_clang_hpp,v 1.5 2020/08/15 20:30:40 rsadowski Exp $
 
 boost does not like mixing different compilers at build and compile
 time.
@@ -34,7 +34,7 @@ Index: boost/config/compiler/clang.hpp
  #  define BOOST_HAS_INT128
  #endif
  
-@@ -316,7 +316,9 @@
+@@ -320,7 +320,9 @@
  #endif
  
  // Clang has supported the 'unused' attribute since the first release.

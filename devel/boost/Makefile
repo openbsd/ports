@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2020/06/08 18:43:24 kn Exp $
+# $OpenBSD: Makefile,v 1.98 2020/08/15 20:30:40 rsadowski Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 powerpc
 
@@ -7,18 +7,16 @@ COMMENT-md=	machine-dependent libraries for boost
 
 # XXX if updating, try to remove -D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR
 # XXX in archivers/innoextract
-VERSION=	1.66.0
+VERSION=	1.67.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
-REVISION-main=	11
-REVISION-md=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	10.0
+SO_VERSION=	11.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -37,10 +35,10 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_math_tr1l-mt boost_math_tr1l \
 		boost_prg_exec_monitor-mt boost_prg_exec_monitor \
 		boost_program_options-mt boost_program_options \
-		boost_python-mt boost_python \
-		boost_python3-mt boost_python3 \
-		boost_numpy boost_numpy-mt \
-		boost_numpy3 boost_numpy3-mt \
+		boost_numpy27-mt boost_numpy27 \
+		boost_numpy38-mt boost_numpy38 \
+		boost_python27-mt boost_python27 \
+		boost_python38-mt boost_python38 \
 		boost_random-mt boost_random \
 		boost_regex-mt boost_regex \
 		boost_serialization-mt boost_serialization \
@@ -51,7 +49,8 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_unit_test_framework-mt boost_unit_test_framework \
 		boost_wserialization-mt boost_wserialization \
 		boost_wave-mt \
-		boost_type_erasure-mt boost_type_erasure
+		boost_type_erasure-mt boost_type_erasure \
+		boost_contract boost_contract-mt
 
 # MD
 BOOST_LIBS+=	boost_context-mt \
@@ -94,6 +93,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 		textproc/icu4c
 
 LIB_DEPENDS-md=	devel/boost
+
+WANTLIB-md+=	${COMPILER_LIBCXX} m
 WANTLIB-md+=	boost_chrono-mt boost_filesystem-mt boost_system-mt
 WANTLIB-md+=	boost_system boost_thread-mt
 
@@ -139,11 +140,7 @@ PY3_BOOTSTRAP=	--with-python=${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3} \
 		--with-python-version=${MODPY_DEFAULT_VERSION_3} \
 
 PY2_INC=	${LOCALBASE}/include/python${MODPY_DEFAULT_VERSION_2}
-
-# XXX defensive; py3.7 has an 'm' suffix but this is removed in 3.8
-PY3_INC=	${LOCALBASE}/include/python${MODPY_DEFAULT_VERSION_3:S/3.7/3.7m/}
-# can revert to this after default is switched:
-#PY3_INC=	${LOCALBASE}/include/python${MODPY_DEFAULT_VERSION_3}
+PY3_INC=	${LOCALBASE}/include/python${MODPY_DEFAULT_VERSION_3}
 
 # temporary dir to stash libs when rebuilding with py2
 PY3_DIR=	${WRKDIR}/lib.py3

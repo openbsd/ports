@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_build_src_engine_execunix_c,v 1.1 2018/12/13 19:52:46 sthen Exp $
+$OpenBSD: patch-tools_build_src_engine_execunix_c,v 1.2 2020/08/15 20:30:40 rsadowski Exp $
 
 Index: tools/build/src/engine/execunix.c
 --- tools/build/src/engine/execunix.c.orig
 +++ tools/build/src/engine/execunix.c
-@@ -488,6 +488,7 @@ void exec_wait()
+@@ -503,6 +503,7 @@ void exec_wait()
              sigemptyset(&sigmask);
              sigaddset(&sigmask, SIGCHLD);
              sigprocmask(SIG_BLOCK, &sigmask, NULL);

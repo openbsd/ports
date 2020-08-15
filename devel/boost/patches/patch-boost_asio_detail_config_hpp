@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_asio_detail_config_hpp,v 1.1 2019/02/06 11:43:35 jca Exp $
+$OpenBSD: patch-boost_asio_detail_config_hpp,v 1.2 2020/08/15 20:30:40 rsadowski Exp $
 
 libc++-7 deprecates <experimental/string_view> so use <string_view> if present
 instead.
@@ -9,14 +9,14 @@ libestdc++ provides <string_view> starting with gcc-7.1.0:
 Index: boost/asio/detail/config.hpp
 --- boost/asio/detail/config.hpp.orig
 +++ boost/asio/detail/config.hpp
-@@ -773,7 +773,9 @@
- # if !defined(BOOST_ASIO_DISABLE_STD_STRING_VIEW)
+@@ -803,7 +803,9 @@
+ # if !defined(BOOST_ASIO_DISABLE_STD_EXPERIMENTAL_STRING_VIEW)
  #  if defined(__clang__)
  #   if (__cplusplus >= 201402)
 -#    if __has_include(<experimental/string_view>)
 +#    if __has_include(<string_view>)
 +#     define BOOST_ASIO_HAS_STD_STRING_VIEW 1
 +#    elif __has_include(<experimental/string_view>)
- #     define BOOST_ASIO_HAS_STD_STRING_VIEW 1
  #     define BOOST_ASIO_HAS_STD_EXPERIMENTAL_STRING_VIEW 1
  #    endif // __has_include(<experimental/string_view>)
+ #   endif // (__cplusplus >= 201402)

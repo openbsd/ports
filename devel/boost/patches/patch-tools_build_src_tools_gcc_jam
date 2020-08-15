@@ -1,17 +1,17 @@
-$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.6 2018/12/24 23:35:41 jca Exp $
+$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.7 2020/08/15 20:30:40 rsadowski Exp $
 Index: tools/build/src/tools/gcc.jam
 --- tools/build/src/tools/gcc.jam.orig
 +++ tools/build/src/tools/gcc.jam
-@@ -685,7 +685,7 @@ class gcc-pch-generator : pch-generator
+@@ -573,7 +573,7 @@ class gcc-pch-generator : pch-generator
          # Return result of base class and pch-file property as
          # usage-requirements.
          return
--            [ property-set.create <pch-file>$(pch-file) <cflags>-Winvalid-pch ]
-+            [ property-set.create <pch-file>$(pch-file) ]
-             $(pch-file)
+-            [ $(pch-file[1]).add-raw <pch-file>$(pch-file[2-]) <cflags>-Winvalid-pch ]
++            [ $(pch-file[1]).add-raw <pch-file>$(pch-file[2-]) ]
+             $(pch-file[2-])
            ;
      }
-@@ -756,7 +756,7 @@ actions compile.c.pch
+@@ -625,7 +625,7 @@ actions compile.c.pch
  
  # Declare flags and action for compilation.
  toolset.flags gcc.compile OPTIONS <optimization>off   : -O0 ;
@@ -20,33 +20,12 @@ Index: tools/build/src/tools/gcc.jam
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  
  toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
-@@ -1189,6 +1189,7 @@ rule link ( targets * : sources * : properties * )
- 
- actions link bind LIBRARIES
- {
-+    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
-     "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
- }
- 
-@@ -1199,10 +1200,10 @@ rule link.dll ( targets * : sources * : properties * )
-     quote-rpath $(targets) ;
- }
- 
--# Differs from 'link' above only by -shared.
-+# Differs from 'link' above only by -shared and -fPIC.
- actions link.dll bind LIBRARIES
- {
--    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
-+    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared -fPIC $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
- }
- 
- ###
-@@ -1354,7 +1355,7 @@ cpu-flags gcc OPTIONS : x86 : c3-2 : -march=c3-2 ;
+@@ -1140,7 +1140,7 @@ cpu-flags gcc OPTIONS : x86 : c3-2 : -march=c3-2 ;
  ##
  cpu-flags gcc OPTIONS : x86 : atom : -march=atom ;
  # Sparc
 -cpu-flags gcc OPTIONS : sparc : v7 : -mcpu=v7 : default ;
-+cpu-flags gcc OPTIONS : sparc : v7 : -mcpu=v7 ;
++cpu-flags gcc OPTIONS : sparc : v7 : -mcpu=v7 : ;
  cpu-flags gcc OPTIONS : sparc : cypress : -mcpu=cypress ;
  cpu-flags gcc OPTIONS : sparc : v8 : -mcpu=v8 ;
  cpu-flags gcc OPTIONS : sparc : supersparc : -mcpu=supersparc ;

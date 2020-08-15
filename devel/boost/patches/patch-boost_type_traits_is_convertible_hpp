@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_type_traits_is_convertible_hpp,v 1.1 2017/05/30 18:00:53 zhuk Exp $
+$OpenBSD: patch-boost_type_traits_is_convertible_hpp,v 1.2 2020/08/15 20:30:40 rsadowski Exp $
 Unbreak compilation with libc++ in non-c++11 mode.
 The v1/__config uses #define decltype(__x) __decltype(__x),
 which doesn't work for the decltype(x,y) case.
@@ -6,7 +6,7 @@ which doesn't work for the decltype(x,y) case.
 Index: boost/type_traits/is_convertible.hpp
 --- boost/type_traits/is_convertible.hpp.orig
 +++ boost/type_traits/is_convertible.hpp
-@@ -83,7 +83,7 @@ namespace detail {
+@@ -87,7 +87,7 @@ namespace detail {
        static void test_aux(To1);
  
        template<typename From1, typename To1>
