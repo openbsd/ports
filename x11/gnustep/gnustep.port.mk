@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.34 2019/10/20 08:03:00 ajacoutot Exp $
+# $OpenBSD: gnustep.port.mk,v 1.35 2020/08/16 20:35:18 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	alpha i386 amd64 macppc
@@ -17,10 +17,8 @@ MODCLANG_ARCHS =	amd64 i386
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 # Force using ld.bfd, there's a still unknown problem loading Bundles when
 # ld.lld is used
-CONFIGURE_ENV +=	LDFLAGS="-fuse-ld=bfd"
+USE_LLD =		No
 CONFIGURE_ENV +=	OPTFLAG="${CFLAGS}"
-# Another MAKE_FLAGS -fuse-ld=bfd in pdfkit, doesn't pick up MAKE_ENV
-MAKE_ENV +=		LDFLAGS="-fuse-ld=bfd"
 # Not yet GS_WITH_ARC
 #MAKE_FLAGS +=		GS_WITH_ARC=1
 MAKE_FLAGS +=		OPTFLAG="${CFLAGS}"

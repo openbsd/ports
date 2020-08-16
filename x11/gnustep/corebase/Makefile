@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/10/20 08:03:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2020/08/16 20:35:18 sebastia Exp $
 
 COMMENT =	GNUstep reimplementation of Apple's CoreFoundation#'
 
 DISTNAME =	gnustep-corebase-0.1.1
-REVISION =	11
+REVISION =	12
 CATEGORIES=	devel
 
 SHARED_LIBS =	gnustep-corebase 0.0

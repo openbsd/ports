@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/10/20 08:03:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2020/08/16 20:35:20 sebastia Exp $
 
 COMMENT =	GNUstep layer to write portable GUIs
 
 VERSION =	0.9.0
-REVISION =	12
+REVISION =	13
 DISTNAME =	Renaissance-${VERSION}
 PKGNAME =	gnustep-renaissance-${VERSION}
 

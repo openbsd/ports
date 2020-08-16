@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/10/20 08:03:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2020/08/16 20:35:20 sebastia Exp $
 
 COMMENT =	GNUstep jigsaw puzzle
 
-REVISION =	12
+REVISION =	13
 DISTNAME =	Jigsaw-0.8
 CATEGORIES =	games
 

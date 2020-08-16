@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/10/20 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2020/08/16 20:35:18 sebastia Exp $
 
 COMMENT =	GNUstep battery monitor
 ONLY_FOR_ARCHS =	${APM_ARCHS}
 
 DISTNAME =	batmon-0.8
-REVISION =	7
+REVISION =	8
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://gap.nongnu.org/batmon/
