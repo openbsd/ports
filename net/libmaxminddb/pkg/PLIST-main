@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/06/26 21:38:36 awolk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/08/16 14:48:54 fcambus Exp $
 @pkgpath net/libmaxminddb
 @extraunexec rm /var/db/GeoIP/*
 @bin bin/mmdblookup
 include/maxminddb.h
 include/maxminddb_config.h
-lib/libmaxminddb.a
+@static-lib lib/libmaxminddb.a
 lib/libmaxminddb.la
 @lib lib/libmaxminddb.so.${LIBmaxminddb_VERSION}
 lib/pkgconfig/libmaxminddb.pc
@@ -23,4 +23,5 @@ lib/pkgconfig/libmaxminddb.pc
 @man man/man3/MMDB_read_node.3
 @man man/man3/MMDB_strerror.3
 @man man/man3/MMDB_vget_value.3
+@man man/man3/defined.3
 @man man/man3/libmaxminddb.3
