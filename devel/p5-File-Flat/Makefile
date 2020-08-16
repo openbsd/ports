@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/08/16 19:02:48 afresh1 Exp $
 
 COMMENT=	implements a flat filesystem
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME=	File-Flat-1.05
+DISTNAME=	File-Flat-1.06
 CATEGORIES=	devel
-REVISION=	0
 
 FIX_EXTRACT_PERMISSIONS=	Yes
 
