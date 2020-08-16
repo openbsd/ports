@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/07/17 07:24:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/08/16 08:17:59 ajacoutot Exp $
 bin/meson
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -23,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}linkers.${MO
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mcompile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mconf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mdist.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mesondata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mesonlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mesonmain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}minit.${MODPY_PYC_MAGIC_TAG}pyc
@@ -83,8 +84,6 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/${MODPY_PYCACHE}interp
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/${MODPY_PYCACHE}traceparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/client.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/common.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/data/
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/data/preload.cmake
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/executor.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/fileapi.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/generator.py
@@ -172,10 +171,6 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/base.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/boost.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/coarrays.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/cuda.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/data/
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/data/CMakeLists.txt
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/data/CMakeListsLLVM.txt
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/data/CMakePathInfo.txt
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/dev.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/hdf5.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/misc.py
@@ -192,6 +187,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/linkers.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mcompile.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mconf.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mdist.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/mesondata.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mesonlib.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mesonmain.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/minit.py
@@ -342,6 +338,7 @@ share/meson/tools/build_website.py
 share/meson/tools/cmake2meson.py
 share/meson/tools/copy_files.py
 share/meson/tools/dircondenser.py
+share/meson/tools/gen_data.py
 share/meson/tools/regenerate_docs.py
 share/polkit-1/
 share/polkit-1/actions/

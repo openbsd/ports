@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_build_py,v 1.20 2020/07/17 07:24:40 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_build_py,v 1.21 2020/08/16 08:17:59 ajacoutot Exp $
 
 Index: mesonbuild/build.py
 --- mesonbuild/build.py.orig
@@ -13,7 +13,7 @@ Index: mesonbuild/build.py
  )
  from .compilers import (
      Compiler, all_languages, is_object, clink_langs, sort_clink, lang_suffixes,
-@@ -1896,6 +1897,21 @@ class SharedLibrary(BuildTarget):
+@@ -1897,6 +1898,21 @@ class SharedLibrary(BuildTarget):
              elif self.soversion:
                  # If unspecified, pick the soversion
                  self.darwin_versions = 2 * [self.soversion]
@@ -35,7 +35,7 @@ Index: mesonbuild/build.py
  
          # Visual Studio module-definitions file
          if 'vs_module_defs' in kwargs:
-@@ -1967,6 +1983,8 @@ class SharedLibrary(BuildTarget):
+@@ -1968,6 +1984,8 @@ class SharedLibrary(BuildTarget):
          # filename. If ltversion != soversion we create an soversion alias:
          # libfoo.so.0 -> libfoo.so.0.100.0
          # Where libfoo.so.0.100.0 is the actual library
