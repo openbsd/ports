@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/08/16 03:08:06 afresh1 Exp $
 
 COMMENT=	portable multitasking and networking framework for perl
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	POE-1.367
-REVISION=	0
+DISTNAME=	POE-1.368
 CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
