@@ -1,27 +1,26 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/03 20:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/08/16 11:36:07 bket Exp $
 
 COMMENT=	connect scripts for use with vpnc and openconnect
 
-PKGNAME=	vpnc-scripts-20140401
-DISTNAME=	a78b3ddfc56ab457104c88e94dca72d8738f4fad
-REVISION=	1
-
-DISTFILES=	${PKGNAME}{${DISTNAME}}${EXTRACT_SUFX}
+C=		e6a8fac7f7e8bf3c391787a3e0672f741603a9c9
+DISTNAME=	vpnc-scripts-${C}
+PKGNAME=	vpnc-scripts-20200317
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.infradead.org/openconnect/
+HOMEPAGE=	https://gitlab.com/openconnect/vpnc-scripts/
+
+MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://git.infradead.org/users/dwmw2/vpnc-scripts.git/snapshot/
-WRKDIST=	${WRKDIR}/vpnc-scripts-${DISTNAME:C/([0-9a-f]{7}).*/\1/}
-
-PKG_ARCH=	*
+MASTER_SITES=	https://gitlab.com/openconnect/vpnc-scripts/-/archive/${C}/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
+
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vpnc-scripts/
