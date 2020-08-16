@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/19 00:17:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/16 12:19:17 rsadowski Exp $
 
 COMMENT = 	C++ reflection library
 V =		0.9.6
 DISTNAME =	rttr-0.9.6
 SHARED_LIBS=	rttr_core		0.0	# 0.9.6
 DISTFILES = 	${DISTNAME}-src.tar.gz
+REVISION =	0
 
 MASTER_SITES = 	https://github.com/rttrorg/rttr/releases/download/v$V/
 CATEGORIES =	devel

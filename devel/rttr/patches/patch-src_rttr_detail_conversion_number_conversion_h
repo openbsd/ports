@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_rttr_detail_conversion_number_conversion_h,v 1.1 2020/08/16 12:19:17 rsadowski Exp $
+
+Unbreak with LLVM10
+
+Index: src/rttr/detail/conversion/number_conversion.h
+--- src/rttr/detail/conversion/number_conversion.h.orig
++++ src/rttr/detail/conversion/number_conversion.h
+@@ -98,9 +98,9 @@ typename std::enable_if<is_integer<F, T>::value &&
+                         bool>::type
+ convert_to(const F& from, T& to)
+ {
+-    if (from > std::numeric_limits<T>::max())
++    if (from > static_cast<F>(std::numeric_limits<T>::max()))
+         return false; // value too large
+-    else if (from < std::numeric_limits<T>::min())
++    else if (from < static_cast<F>(-std::numeric_limits<T>::max()))
+         return false; // value too small
+ 
+     to = static_cast<T>(from);
+@@ -116,7 +116,7 @@ typename std::enable_if<is_integer<F, T>::value &&
+                         bool>::type
+ convert_to(const F& from, T& to)
+ {
+-    if (from > std::numeric_limits<T>::max())
++    if (from < 0 || from > static_cast<F>(std::numeric_limits<T>::max()))
+         return false; // value too large
+ 
+     to = static_cast<T>(from);
