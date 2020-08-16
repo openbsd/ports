@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2020/06/18 21:01:45 sebastia Exp $
+# $OpenBSD: Makefile,v 1.85 2020/08/16 20:36:34 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
@@ -6,6 +6,7 @@ COMMENT-postgres=	SOPE PostgreSQL adaptor
 
 VERSION =		4.3.2
 DISTNAME =		SOPE-${VERSION}
+REVISION =		0
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
 PKGNAME-postgres =	sope-postgres-${VERSION}
