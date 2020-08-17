@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/14 17:10:20 cwen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/08/17 20:19:49 cwen Exp $
 
 COMMENT =	system information tool written in bash
 CATEGORIES =	sysutils misc
 
 GH_ACCOUNT =	dylanaraps
 GH_PROJECT =	neofetch
-GH_TAGNAME =	7.0.0
+GH_TAGNAME =	7.1.0
 
 MAINTAINER =	Charlene Wendling <cwen@openbsd.org>
 
