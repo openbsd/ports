@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.68 2020/03/15 00:51:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.69 2020/08/17 19:45:02 bcallah Exp $
 
 COMMENT=	graphics and text browser
-VER=		2.20.2
+VER=		2.21
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
