@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/17 17:04:13 bcallah Exp $
+@bin bin/hsetroot
+@bin bin/hsr-outputs
+@man man/man1/hsetroot.1

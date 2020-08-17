@@ -1,0 +1,114 @@
+.\" Original author: Hyriand <hyriand@thegraveyard.org> (2003)
+.\" Updated by Martin Hradil (2019)
+.\" License: GPL version 2
+.Dd August 13, 2020
+.Dt HSETROOT 1
+.Os
+.Sh NAME
+.Nm hsetroot
+.Nd imlib2-based wallpaper changer
+.Sh SYNOPSIS
+.Nm
+.Op Ar command1 Op Ar arg1 ...
+.Op Ar command2 Op Ar arg2 ...
+.Sh DESCRIPTION
+.Nm
+is a tool which allows you to compose wallpapers ("root pixmaps") for X.
+It has a lot of options like rendering gradients, solids and images and
+manipulate these in various ways.
+.Nm
+also supports alpha-channels.
+.Pp
+.Nm
+uses
+.Xr XSetWindowBackgroundPixmap 3
+instead of
+.Xr XSetWindowBackground 3
+for solid colors.
+This makes it a good
+.Xr xsetroot 1
+replacement when a compositor (compton, xcompmgr, ...) is in use.
+.Pp
+Colors are in the #rgb, #rrggbb, #rrggbbaa, rgb:1/2/3 formats or a X color name.
+.Sh GENERIC OPTIONS
+.Bl -tag -width Ds
+.It Fl root
+Treat multiple displays as one big screen (ignore xrandr outputs)
+.It Fl screens Ar int
+Set a screenmask to use
+.El
+.Sh GRADIENTS
+.Bl -tag -width Ds
+.It Fl add Ar color
+Add color to range using distance 1
+.It Fl addd Ar color Ar distance
+Add color to range using custom distance
+.It Fl gradient Ar angle
+Render gradient using specified angle
+.It Fl clear
+Clear the color range
+.El
+.Sh SOLID COLOR
+.Bl -tag -width Ds
+.It Fl solid Ar color
+Render a solid using the specified color
+.El
+.Sh IMAGE FILES
+.Bl -tag -width Ds
+.It Fl center Ar image
+Render an image centered on screen
+.It Fl cover Ar image
+Render an image centered on screen scaled to fill the screen fully
+.It Fl tile Ar image
+Render an image tiled
+.It Fl full Ar image
+Render an image maximum aspect
+.It Fl extend Ar image
+Render an image max aspect and fill borders
+.It Fl fill Ar image
+Render an image stretched
+.El
+.Sh IMAGE MANIPULATION
+.Bl -tag -width Ds
+.It Fl tint Ar color
+Tint the current image
+.It Fl blur Ar radius
+Blur the current image
+.It Fl sharpen Ar radius
+Sharpen the current image
+.It Fl contrast Ar amount
+Adjust contrast of current image
+.It Fl brightness Ar amount
+Adjust brightness of current image
+.It Fl gamma Ar amount
+Adjust gamma level of current image
+.It Fl flipv
+Flip the current image vertically
+.It Fl fliph
+Flip the current image horizontally
+.It Fl flipd
+Flip the current image diagonally
+.El
+.Sh MISC
+.Bl -tag -width Ds
+.It Fl alpha Ar amount
+Adjust alpha level for colors and images
+.It Fl write Ar filename
+Write current image to file
+.El
+.Sh SEE ALSO
+.Xr xcompmgr 1 ,
+.Xr xsetroot 1 ,
+.Xr XSetWindowBackgroundPixmap 3
+.Sh AUTHORS
+.Nm
+was written by
+.An Hyriand Aq Mt hyriand@thegraveyard.org
+in 2003.
+Martin Hradil updated it in 2019.
+.Pp
+This manual page was written by
+.An Stefan Hagen Aq Mt sh+ports@codevoid.de
+for the
+.Ox
+project (but may be used by others).

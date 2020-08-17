@@ -1,0 +1,28 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/08/17 17:04:13 bcallah Exp $
+
+We need -std=gnu99 for !clang archs.
+Fix install commands
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,7 +1,7 @@
+ CC?=gcc
+ PKG_CONFIG?=pkg-config
+ 
+-CFLAGS?=-g -O2 -Wall
++CFLAGS+=-std=gnu99
+ LDFLAGS?=
+ 
+ PREFIX?=/usr/local
+@@ -30,8 +30,8 @@ hsetroot: hsetroot.o
+ hsr-outputs: hsr-outputs.o
+ 
+ install: hsetroot hsr-outputs
+-	install -st $(PREFIX)/bin/ hsetroot
+-	install -st $(PREFIX)/bin/ hsr-outputs
++	install -sm 0755 -D hsetroot $(DESTDIR)$(PREFIX)/bin/
++	install -sm 0755 -D hsr-outputs $(DESTDIR)$(PREFIX)/bin/
+ 
+ clean:
+ 	rm -f *.o hsetroot hsr-outputs

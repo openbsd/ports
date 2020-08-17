@@ -1,0 +1,8 @@
+hsetroot is a tool which allows you to compose wallpapers ("root
+pixmaps") for X. It has a lot of options like rendering gradients,
+solids and images and manipulate these in various ways. hsetroot also
+supports alpha-channels.
+
+hsetroot uses XSetWindowBackgroundPixmap instead of XSetWindowBackground
+for solid colors. This makes it a good xsetroot replacement when a
+compositor (compton, xcompmgr, ...) is in use.
