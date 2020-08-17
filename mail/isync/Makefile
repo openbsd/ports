@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2020/07/13 00:08:10 kn Exp $
+# $OpenBSD: Makefile,v 1.44 2020/08/17 10:14:03 kn Exp $
 
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
@@ -27,6 +27,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db4" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
