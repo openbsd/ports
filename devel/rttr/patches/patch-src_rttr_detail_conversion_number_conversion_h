@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_rttr_detail_conversion_number_conversion_h,v 1.1 2020/08/16 12:19:17 rsadowski Exp $
+$OpenBSD: patch-src_rttr_detail_conversion_number_conversion_h,v 1.2 2020/08/17 14:41:00 rsadowski Exp $
 
 Unbreak with LLVM10
 
@@ -13,7 +13,7 @@ Index: src/rttr/detail/conversion/number_conversion.h
 +    if (from > static_cast<F>(std::numeric_limits<T>::max()))
          return false; // value too large
 -    else if (from < std::numeric_limits<T>::min())
-+    else if (from < static_cast<F>(-std::numeric_limits<T>::max()))
++    else if (from < -static_cast<F>(std::numeric_limits<T>::max()))
          return false; // value too small
  
      to = static_cast<T>(from);
@@ -22,6 +22,27 @@ Index: src/rttr/detail/conversion/number_conversion.h
  convert_to(const F& from, T& to)
  {
 -    if (from > std::numeric_limits<T>::max())
++    if (from < 0 || from > static_cast<F>(std::numeric_limits<T>::max()))
+         return false; // value too large
+ 
+     to = static_cast<T>(from);
+@@ -134,9 +134,9 @@ typename std::enable_if<std::is_floating_point<F>::val
+                         bool>::type
+ convert_to(const F& from, T& to)
+ {
+-    if (from > std::numeric_limits<T>::max())
++    if (from > static_cast<F>(std::numeric_limits<T>::max()))
+         return false; // value too large
+-    else if (from < -std::numeric_limits<T>::max())
++    else if (from < -static_cast<F>(std::numeric_limits<T>::max()))
+         return false; // value to small
+ 
+     to = static_cast<T>(from);
+@@ -151,7 +151,7 @@ typename std::enable_if<std::is_floating_point<F>::val
+                         bool>::type
+ convert_to(const F& from, T& to)
+ {
+-    if (from < 0 || from > std::numeric_limits<T>::max())
 +    if (from < 0 || from > static_cast<F>(std::numeric_limits<T>::max()))
          return false; // value too large
  
