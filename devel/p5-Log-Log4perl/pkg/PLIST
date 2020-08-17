@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/04/07 19:58:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/08/17 01:47:45 afresh1 Exp $
 bin/l4p-tmpl
 ${P5SITE}/Log/
 ${P5SITE}/Log/Log4perl/
@@ -32,6 +32,7 @@ ${P5SITE}/Log/Log4perl/Filter.pm
 ${P5SITE}/Log/Log4perl/Filter/Boolean.pm
 ${P5SITE}/Log/Log4perl/Filter/LevelMatch.pm
 ${P5SITE}/Log/Log4perl/Filter/LevelRange.pm
+${P5SITE}/Log/Log4perl/Filter/MDC.pm
 ${P5SITE}/Log/Log4perl/Filter/StringMatch.pm
 ${P5SITE}/Log/Log4perl/InternalDebug.pm
 ${P5SITE}/Log/Log4perl/JavaMap/
@@ -87,6 +88,7 @@ ${P5SITE}/Log/Log4perl/Util/TimeTracker.pm
 @man man/man3p/Log::Log4perl::Filter::Boolean.3p
 @man man/man3p/Log::Log4perl::Filter::LevelMatch.3p
 @man man/man3p/Log::Log4perl::Filter::LevelRange.3p
+@man man/man3p/Log::Log4perl::Filter::MDC.3p
 @man man/man3p/Log::Log4perl::Filter::StringMatch.3p
 @man man/man3p/Log::Log4perl::InternalDebug.3p
 @man man/man3p/Log::Log4perl::JavaMap.3p
