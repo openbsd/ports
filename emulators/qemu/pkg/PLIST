@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2020/05/15 07:26:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2020/08/17 09:58:44 sthen Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -15,6 +15,7 @@
 @bin bin/qemu-system-aarch64
 @bin bin/qemu-system-alpha
 @bin bin/qemu-system-arm
+@bin bin/qemu-system-avr
 @bin bin/qemu-system-cris
 @bin bin/qemu-system-hppa
 @bin bin/qemu-system-i386
@@ -87,15 +88,16 @@ share/doc/qemu/interop/index.html
 share/doc/qemu/interop/live-block-operations.html
 share/doc/qemu/interop/objects.inv
 share/doc/qemu/interop/pr-helper.html
+share/doc/qemu/interop/qemu-ga-ref.html
+share/doc/qemu/interop/qemu-ga-ref.txt
 share/doc/qemu/interop/qemu-ga.html
+share/doc/qemu/interop/qemu-qmp-ref.html
+share/doc/qemu/interop/qemu-qmp-ref.txt
 share/doc/qemu/interop/search.html
 share/doc/qemu/interop/searchindex.js
 share/doc/qemu/interop/vhost-user-gpu.html
 share/doc/qemu/interop/vhost-user.html
-share/doc/qemu/qemu-ga-ref.html
-share/doc/qemu/qemu-ga-ref.txt
-share/doc/qemu/qemu-qmp-ref.html
-share/doc/qemu/qemu-qmp-ref.txt
+share/doc/qemu/interop/vhost-vdpa.html
 share/doc/qemu/specs/
 share/doc/qemu/specs/.buildinfo
 share/doc/qemu/specs/_static/
@@ -119,6 +121,7 @@ share/doc/qemu/specs/_static/underscore.js
 share/doc/qemu/specs/_static/up-pressed.png
 share/doc/qemu/specs/_static/up.png
 share/doc/qemu/specs/_static/websupport.js
+share/doc/qemu/specs/acpi_hest_ghes.html
 share/doc/qemu/specs/acpi_hw_reduced_hotplug.html
 share/doc/qemu/specs/genindex.html
 share/doc/qemu/specs/index.html
@@ -152,8 +155,14 @@ share/doc/qemu/system/_static/up-pressed.png
 share/doc/qemu/system/_static/up.png
 share/doc/qemu/system/_static/websupport.js
 share/doc/qemu/system/arm/
+share/doc/qemu/system/arm/aspeed.html
+share/doc/qemu/system/arm/collie.html
 share/doc/qemu/system/arm/cpu-features.html
+share/doc/qemu/system/arm/digic.html
+share/doc/qemu/system/arm/gumstix.html
 share/doc/qemu/system/arm/integratorcp.html
+share/doc/qemu/system/arm/mps2.html
+share/doc/qemu/system/arm/musca.html
 share/doc/qemu/system/arm/musicpal.html
 share/doc/qemu/system/arm/nseries.html
 share/doc/qemu/system/arm/orangepi.html
@@ -162,6 +171,8 @@ share/doc/qemu/system/arm/realview.html
 share/doc/qemu/system/arm/stellaris.html
 share/doc/qemu/system/arm/sx1.html
 share/doc/qemu/system/arm/versatile.html
+share/doc/qemu/system/arm/vexpress.html
+share/doc/qemu/system/arm/virt.html
 share/doc/qemu/system/arm/xscale.html
 share/doc/qemu/system/build-platforms.html
 share/doc/qemu/system/deprecated.html
@@ -184,15 +195,21 @@ share/doc/qemu/system/qemu-cpu-models.html
 share/doc/qemu/system/qemu-manpage.html
 share/doc/qemu/system/quickstart.html
 share/doc/qemu/system/s390x/
+share/doc/qemu/system/s390x/3270.html
+share/doc/qemu/system/s390x/css.html
+share/doc/qemu/system/s390x/protvirt.html
 share/doc/qemu/system/s390x/vfio-ap.html
+share/doc/qemu/system/s390x/vfio-ccw.html
 share/doc/qemu/system/search.html
 share/doc/qemu/system/searchindex.js
 share/doc/qemu/system/security.html
 share/doc/qemu/system/target-arm.html
+share/doc/qemu/system/target-avr.html
 share/doc/qemu/system/target-i386.html
 share/doc/qemu/system/target-m68k.html
 share/doc/qemu/system/target-mips.html
 share/doc/qemu/system/target-ppc.html
+share/doc/qemu/system/target-rx.html
 share/doc/qemu/system/target-s390x.html
 share/doc/qemu/system/target-sparc.html
 share/doc/qemu/system/target-sparc64.html
@@ -291,6 +308,7 @@ share/locale/fr_FR/LC_MESSAGES/
 share/locale/fr_FR/LC_MESSAGES/qemu.mo
 share/locale/hu/LC_MESSAGES/qemu.mo
 share/locale/it/LC_MESSAGES/qemu.mo
+share/locale/sv/LC_MESSAGES/qemu.mo
 share/locale/tr/LC_MESSAGES/qemu.mo
 share/locale/zh_CN/LC_MESSAGES/qemu.mo
 share/qemu/

@@ -1,9 +1,9 @@
-$OpenBSD: patch-qemu-options_hx,v 1.6 2020/05/15 07:26:41 ajacoutot Exp $
+$OpenBSD: patch-qemu-options_hx,v 1.7 2020/08/17 09:58:44 sthen Exp $
 
 Index: qemu-options.hx
 --- qemu-options.hx.orig
 +++ qemu-options.hx
-@@ -589,6 +589,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
+@@ -590,6 +590,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
  #ifdef CONFIG_AUDIO_SDL
      "-audiodev sdl,id=id[,prop[=value][,...]]\n"
  #endif
@@ -13,7 +13,7 @@ Index: qemu-options.hx
  #ifdef CONFIG_SPICE
      "-audiodev spice,id=id[,prop[=value][,...]]\n"
  #endif
-@@ -746,6 +749,11 @@ SRST
+@@ -747,6 +750,11 @@ SRST
      Creates a backend using SDL. This backend is available on most
      systems, but you should use your platform's native backend if
      possible. This backend has no backend specific properties.
