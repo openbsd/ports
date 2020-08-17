@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_drv_imap_c,v 1.4 2020/07/13 00:08:10 kn Exp $
+$OpenBSD: patch-src_drv_imap_c,v 1.5 2020/08/17 10:18:21 kn Exp $
 
 Use pledge.
 
@@ -14,7 +14,7 @@ Index: src/drv_imap.c
  #ifdef HAVE_LIBSSL
  enum { SSL_None, SSL_STARTTLS, SSL_IMAPS };
  #endif
-@@ -3355,6 +3357,8 @@ imap_parse_store( conffile_t *cfg, store_conf_t **stor
+@@ -3350,6 +3352,8 @@ imap_parse_store( conffile_t *cfg, store_conf_t **stor
  		}
  		acc_opt = 1;
  	}
