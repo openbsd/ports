@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/03/09 07:23:48 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/08/17 21:04:24 sebastia Exp $
 ${GEM_BIN}/wpscan
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -91,6 +91,7 @@ ${GEM_LIB}/gems/${DISTNAME}/app/finders/users/
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/users.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/users/author_id_brute_forcing.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/users/author_posts.rb
+${GEM_LIB}/gems/${DISTNAME}/app/finders/users/author_sitemap.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/users/login_error_messages.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/users/oembed_api.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/users/rss_generator.rb
