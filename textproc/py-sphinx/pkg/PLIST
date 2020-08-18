@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/11/06 06:54:57 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/08/18 18:55:21 edd Exp $
 bin/sphinx-apidoc${MODPY_BIN_SUFFIX}
 bin/sphinx-autogen${MODPY_BIN_SUFFIX}
 bin/sphinx-build${MODPY_BIN_SUFFIX}
@@ -479,7 +479,6 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/setup_command.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/Makefile
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/fncychap.sty
-lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/iftex.sty
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/needspace.sty
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/newfloat.sty
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/python.ist
