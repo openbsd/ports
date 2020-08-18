@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/08/18 01:39:12 afresh1 Exp $
 
 COMMENT =	compile .cgi scripts to a code reference
 
-DISTNAME =	CGI-Compile-0.23
-REVISION =	0
+DISTNAME =	CGI-Compile-0.25
 
 CATEGORIES =	www
 
@@ -21,6 +20,10 @@ TEST_DEPENDS =		devel/p5-Switch \
 			sysutils/p5-Capture-Tiny \
 			www/p5-CGI \
 			www/p5-Plack
+
+# Optional dependencies to avoid skipping tests
+TEST_DEPENDS +=		devel/p5-Sub-Identify \
+			www/p5-CGI-Emulate-PSGI
 
 MAKE_ENV =		TEST_POD=Yes AUTHOR_TESTING=Yes
 
