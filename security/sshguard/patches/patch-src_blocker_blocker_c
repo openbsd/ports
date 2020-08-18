@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_blocker_blocker_c,v 1.1 2019/03/29 15:54:24 sthen Exp $
+$OpenBSD: patch-src_blocker_blocker_c,v 1.2 2020/08/18 05:06:29 rsadowski Exp $
 
 Index: src/blocker/blocker.c
 --- src/blocker/blocker.c.orig
 +++ src/blocker/blocker.c
-@@ -139,7 +139,8 @@ int main(int argc, char *argv[]) {
+@@ -117,7 +117,8 @@ int main(int argc, char *argv[]) {
  
      /* termination signals */
      signal(SIGTERM, sigfin_handler);

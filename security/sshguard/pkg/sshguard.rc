@@ -1,12 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: sshguard.rc,v 1.5 2019/03/29 15:54:24 sthen Exp $
+# $OpenBSD: sshguard.rc,v 1.6 2020/08/18 05:06:29 rsadowski Exp $
 
 daemon="${TRUEPREFIX}/sbin/sshguard"
 
 . /etc/rc.d/rc.subr
 
-pexp="${TRUEPREFIX}/libexec/sshg-blocker .*"
+pexp="/bin/sh $daemon"
 
 rc_bg=YES
 rc_reload=NO
