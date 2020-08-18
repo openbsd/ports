@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2020/08/01 19:08:25 bket Exp $
+# $OpenBSD: Makefile,v 1.24 2020/08/18 16:27:39 bket Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 
-VERSION =			3.0.0
+VERSION =			3.0.1
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 
@@ -27,14 +27,15 @@ BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS =			archivers/par2cmdline \
 				archivers/unrar \
 				archivers/unzip \
-				devel/py-cheetah${MODPY_FLAVOR} \
+				devel/py-cheetah${MODPY_FLAVOR}>=3.0.0 \
 				devel/py-configobj${MODPY_FLAVOR} \
 				net/py-portend${MODPY_FLAVOR} \
-				news/py-sabyenc${MODPY_FLAVOR} \
+				news/py-sabyenc${MODPY_FLAVOR}>=4.0.0 \
 				security/py-cryptography${MODPY_FLAVOR} \
 				textproc/py-chardet${MODPY_FLAVOR} \
 				textproc/py-feedparser${MODPY_FLAVOR} \
-				www/py-CherryPy${MODPY_FLAVOR}
+				www/py-CherryPy${MODPY_FLAVOR} \
+				www/py-cheroot${MODPY_FLAVOR}<8.4.3
 TEST_DEPENDS =			devel/py-flaky${MODPY_FLAVOR} \
 				devel/py-test-httpbin${MODPY_FLAVOR} \
 				www/py-requests${MODPY_FLAVOR} \
