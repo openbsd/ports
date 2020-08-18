@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.15 2020/05/20 13:17:35 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.16 2020/08/18 12:31:48 ajacoutot Exp $
 
 XXX base gcc
 Reordering needed to prefer long long because base-gcc doesn't recognize
@@ -8,7 +8,7 @@ and doesn't fail to compile the test case (gint64 should be long long).
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -1181,18 +1181,6 @@ endif
+@@ -1190,18 +1190,6 @@ endif
  # works.
  if long_long_size == long_size
    if cc.compiles('''#if defined(_AIX) && !defined(__GNUC__)
@@ -27,7 +27,7 @@ Index: meson.build
                        #pragma options langlvl=stdc99
                        #endif
                        #pragma GCC diagnostic error "-Wincompatible-pointer-types"
-@@ -1204,6 +1192,18 @@ if long_long_size == long_size
+@@ -1213,6 +1201,18 @@ if long_long_size == long_size
                          return 1;
                        }''', name : 'int64_t is long long')
      int64_t_typedef = 'long long'
