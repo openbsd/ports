@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2019/11/11 22:54:13 edd Exp $
+$OpenBSD: README-main,v 1.5 2020/08/18 18:40:16 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -11,17 +11,17 @@ There are a number of texmf trees in the OpenBSD packages:
 
 texmf-buildset:
   The smallest of the subsets. This is primarily for building OpenBSD
-  ports (approx 130M).
+  ports (approx 180M).
 
 texmf-minimal:
   A teTeX like tree, suitable for casual TeX users who do not need many
-  extra macros or ConTeXt (approx 270MB).
+  extra macros or ConTeXt (approx 250MB).
 
 texmf-full:
-  Extra macros (approx 890MB).
+  Extra macros (approx 1.1GB).
 
 texmf-context:
-  Macros for the conTeXt typesetter (approx 10MB).
+  Macros for the conTeXt typesetter (approx 15MB).
 
   This was separated because conTeXt maintains it's own hashes separate
   from that of libkpse. As 99% of users don't use this, these hashes are
@@ -60,6 +60,15 @@ installation by searching for the files using kpsewhich(1). Eg:
 
 Other Misc. Notes
 =================
+
+Beta-testing Binaries
+---------------------
+
+TeX Live now includes binaries suffixed with `-dev` (e.g. pdflatex-dev).  These
+are beta versions of the typesetters, included in the distribution to encourage
+testing.
+
+https://tex.stackexchange.com/questions/506646/what-is-latex-dev
 
 Tlmgr
 -----

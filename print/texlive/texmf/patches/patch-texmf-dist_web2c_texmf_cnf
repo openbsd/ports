@@ -1,4 +1,4 @@
-$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.8 2019/11/11 22:54:20 edd Exp $
+$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.9 2020/08/18 18:40:21 edd Exp $
 Index: texmf-dist/web2c/texmf.cnf
 --- texmf-dist/web2c/texmf.cnf.orig
 +++ texmf-dist/web2c/texmf.cnf
@@ -13,7 +13,7 @@ Index: texmf-dist/web2c/texmf.cnf
  % If you modify this original file, YOUR CHANGES WILL BE LOST when it is
  % updated.  Instead, put your changes -- and only your changes, not an
  % entire copy! -- in ../../texmf.cnf.  That is, if this file is
-@@ -58,8 +62,11 @@
+@@ -59,8 +63,11 @@
  % SELFAUTOPARENT (its grandparent = /usr/local/texlive/YYYY), and
  % SELFAUTOGRANDPARENT (its great-grandparent = /usr/local/texlive).
  % Sorry for the off-by-one-generation names.
@@ -26,7 +26,7 @@ Index: texmf-dist/web2c/texmf.cnf
  % The main tree of distributed packages and programs:
  TEXMFDIST = $TEXMFROOT/texmf-dist
  
-@@ -68,7 +75,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
+@@ -69,7 +76,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
  TEXMFMAIN = $TEXMFDIST
  
  % Local additions to the distribution trees.
@@ -35,8 +35,8 @@ Index: texmf-dist/web2c/texmf.cnf
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -479,7 +486,7 @@ LUAINPUTS.dvilualatex = $TEXMFDOTDIR;$TEXMF/scripts/{$
- LUAINPUTS = $TEXMFDOTDIR;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,}//
+@@ -511,7 +518,7 @@ LUAINPUTS.harflatex-dev = $TEXMFDOTDIR;$TEXMF/scripts/
+ LUAINPUTS = $TEXMFDOTDIR;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,latex,}//
  
  % Lua needs to look for binary lua libraries distributed with packages.
 -CLUAINPUTS = $TEXMFDOTDIR;$SELFAUTOLOC/lib/{$progname,$engine,}/lua//

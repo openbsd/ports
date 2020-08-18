@@ -1,0 +1,23 @@
+$OpenBSD: patch-texmf-dist_tex_latex_lstaddons_lstlinebgrd_sty,v 1.1 2020/08/18 18:40:21 edd Exp $
+
+Fix lstlinebgrd.
+
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=930850
+
+Index: texmf-dist/tex/latex/lstaddons/lstlinebgrd.sty
+--- texmf-dist/tex/latex/lstaddons/lstlinebgrd.sty.orig
++++ texmf-dist/tex/latex/lstaddons/lstlinebgrd.sty
+@@ -27,10 +27,10 @@
+ \lst@Key{numbers}{none}{%
+     \def\lst@PlaceNumber{\lst@linebgrd}%
+     \lstKV@SwitchCases{#1}%
+-    {none&\\%
+-     left&\def\lst@PlaceNumber{\llap{\normalfont
++    {none:\\%
++     left:\def\lst@PlaceNumber{\llap{\normalfont
+                 \lst@numberstyle{\thelstnumber}\kern\lst@numbersep}\lst@linebgrd}\\%
+-     right&\def\lst@PlaceNumber{\rlap{\normalfont
++     right:\def\lst@PlaceNumber{\rlap{\normalfont
+                 \kern\linewidth \kern\lst@numbersep
+                 \lst@numberstyle{\thelstnumber}}\lst@linebgrd}%
+     }{\PackageError{Listings}{Numbers #1 unknown}\@ehc}}

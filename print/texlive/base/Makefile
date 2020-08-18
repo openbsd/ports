@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2020/04/07 15:34:36 jca Exp $
+# $OpenBSD: Makefile,v 1.114 2020/08/18 18:40:14 edd Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -8,8 +8,6 @@ DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
-REVISION-main =		0
-
 MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
@@ -18,25 +16,22 @@ PKGNAME-synctex =	texlive_synctex-${V}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-SHARED_LIBS =		kpathsea	8.1 # 8.3
-SHARED_LIBS +=		ptexenc		5.2 # 4.5
-SHARED_LIBS +=		synctex		2.0 # 19.0
-SHARED_LIBS +=		texlua52	0.0 # 7.4
-SHARED_LIBS +=		texlua53        0.0 # 8.4
+SHARED_LIBS =		kpathsea	9.0 # 9.2
+SHARED_LIBS +=		ptexenc		5.3 # 4.8
+SHARED_LIBS +=		synctex		3.0 # 2.0
+SHARED_LIBS +=		texlua53        0.1 # 8.5
 
-WANTLIB-main += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
-WANTLIB-main += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
-WANTLIB-main += cups cupsimage dbus-1 expat ffi fontconfig freetype
-WANTLIB-main += gd glib-2.0 gmp gnutls graphite2 gs harfbuzz harfbuzz-icu
-WANTLIB-main += hogweed iconv icudata icui18n icuio icuuc idn2 ijs
-WANTLIB-main += intl jbig2dec jpeg lcms2 m nettle p11-kit paper
-WANTLIB-main += pixman-1 png potrace tasn1 tiff unistring webp xcb
-WANTLIB-main += xcb-render xcb-shm z zzip
-WANTLIB-main += kpathsea
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
+WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
+WANTLIB += cups dbus-1 expat ffi fontconfig freetype gd glib-2.0
+WANTLIB += gmp gnutls graphite2 gs harfbuzz hogweed iconv icudata
+WANTLIB += icui18n icuio icuuc idn2 ijs intl jbig2dec jpeg kpathsea
+WANTLIB += lcms2 lzma m nettle p11-kit paper pcre pixman-1 png tasn1
+WANTLIB += tiff unistring webp xcb xcb-render xcb-shm z zstd zzip
 
-WANTLIB-mktexlsr = c
+WANTLIB-mktexlsr += c
 
-WANTLIB-synctex = c m z
+WANTLIB-synctex += c m z
 
 RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/detex \
@@ -54,10 +49,9 @@ LIB_DEPENDS-main =	converters/libiconv \
 			graphics/cairo \
 			textproc/icu4c \
 			graphics/graphite2 \
-			devel/harfbuzz,-icu \
+			devel/harfbuzz \
 			print/libpaper \
 			archivers/zziplib \
-			graphics/potrace \
 			print/ghostscript/gnu \
 			${BASE_PKGPATH},-mktexlsr
 
@@ -130,14 +124,14 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--disable-native-texlive-build \
 			--with-banner-add="-OpenBSD_Ports" \
 			--disable-luajittex \
+			--disable-luajithbtex \
 			--disable-mfluajit \
 			--with-system-icu \
 			--with-system-cairo \
 			--with-system-harfbuzz \
 			--with-system-graphite2 \
 			--with-system-libpaper \
-			--with-system-zziplib \
-			--with-system-potrace
+			--with-system-zziplib
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 

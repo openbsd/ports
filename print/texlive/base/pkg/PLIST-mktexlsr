@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-mktexlsr,v 1.4 2019/11/11 22:54:13 edd Exp $
+@comment $OpenBSD: PLIST-mktexlsr,v 1.5 2020/08/18 18:40:16 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2019
-@conflict texlive_base-<2019
+@conflict texlive_texmf-buildset-<2020
+@conflict texlive_base-<2020
 @define-tag mktexlsr at-end %D/bin/mktexlsr >/dev/null 2>&1
 @define-tag mktexlsr-local at-end %D/bin/mktexlsr %D/share/texmf-local >/dev/null 2>&1
 @define-tag mktexlsr supersedes mktexlsr-local
@@ -59,7 +59,7 @@ include/kpathsea/types.h
 include/kpathsea/variable.h
 include/kpathsea/version.h
 include/kpathsea/win32lib.h
-lib/libkpathsea.a
+@static-lib lib/libkpathsea.a
 lib/libkpathsea.la
 @lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
 lib/pkgconfig/kpathsea.pc

@@ -1,9 +1,9 @@
-$OpenBSD: patch-texk_dvisvgm_dvisvgm-src_src_Makefile_in,v 1.1 2019/11/11 22:54:12 edd Exp $
+$OpenBSD: patch-texk_dvisvgm_dvisvgm-src_src_Makefile_in,v 1.2 2020/08/18 18:40:15 edd Exp $
 
 Index: texk/dvisvgm/dvisvgm-src/src/Makefile.in
 --- texk/dvisvgm/dvisvgm-src/src/Makefile.in.orig
 +++ texk/dvisvgm/dvisvgm-src/src/Makefile.in
-@@ -450,7 +450,7 @@ KPATHSEA_LIBS = @KPATHSEA_LIBS@
+@@ -495,7 +495,7 @@ KPATHSEA_LIBS = @KPATHSEA_LIBS@
  LD = @LD@
  LDFLAGS = @LDFLAGS@
  LIBGS_INCLUDES = @LIBGS_INCLUDES@

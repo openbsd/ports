@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/11/11 22:54:15 edd Exp $
+# $OpenBSD: Makefile,v 1.59 2020/08/18 18:40:17 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -6,17 +6,18 @@ COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
 COMMENT-buildset =	smallest texlive texmf for building ports
 
+# Please do not directly edit the PLIST files. They are auto-generated.
+#
 # If you move things out of another texmf into the buildset, don't forget to:
 #   * Update the buildset conflict markers in PLIST-buildset.
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
 
 DISTNAME =		texlive-${DIST_V}-texmf
-MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
-			http://theunixzoo.co.uk/distfiles/
+MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-${DIST_V}-tlpdb-full.tar.gz \
-			texmf-var-pregen-${V}.0${EXTRACT_SUFX}:0 \
+			texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
+			texlive-${DIST_V}-tlpdb-full.tar.gz
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -31,13 +32,15 @@ PKG_ARCH =		*
 BUILD_DEPENDS =		archivers/xz
 
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
-.include "adj.mk"
-MODULES +=		lang/ruby lang/python
-MODRUBY_REV =		1.8
+MODULES +=		lang/lua lang/ruby lang/python x11/tk perl
+MODLUA_RUNDEP =		No
+MODLUA_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
+
+.include "adj.mk"
 
 RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
@@ -52,25 +55,16 @@ RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
-MODULES +=		lang/lua lang/ruby lang/python x11/tk perl
-MODLUA_RUNDEP =		No
-MODLUA_BUILDDEP =	No
 MODRUBY_REV =		1.8
-MODRUBY_BUILDDEP =	No
-MODRUBY_RUNDEP =	No
-MODPY_BUILDDEP =	No
-MODPY_RUNDEP =		No
-
 SUBST_VARS +=		RUBY
 
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 
-# Substitute correct interpreter paths into scripts and deal with linked manuals.
-# Some interpreter paths are done automatically by MODULES.
-.include "manpage_symlinks.mk"
-pre-configure: tl-manpage-symlinks
-	@# Don't use substitution from the Python port, since we need to swap in
-	@# different versions.
+# Substitute correct interpreter paths into scripts and deal with linked
+# manuals.  Some interpreter paths are done automatically by MODULES.
+pre-configure:
+	@# Don't use substitution from the Python port, since we need to swap
+	@# in @# different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
 	    perl -pi \
 	    -e '$$. == 1 && s|^.*env python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}$$1|;' \
@@ -119,7 +113,11 @@ pre-configure: tl-manpage-symlinks
 	# This file contains a lookup table of interpreter paths
 	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
+# Note that the engine symlinks will cause warnings about dead symlinks at
+# package time. This is because the symlinks point outside of the texmf
+# packages (to texlive_base). The warnings are harmless and can be disregarded.
 .include "symlinks.mk"
+.include "man_symlinks.mk"
 do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
@@ -152,26 +150,44 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	mv ${PREFIX}/share/texmf-dist/doc/info/*.info \
 		${PREFIX}/info/
 
-	# adjust permissions
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*,info/*}
+	# A whole load of manual pages use a `.so` to "link" to another man
+	# page. This makes a warning at package time about a missing short
+	# description, and furthermore, `mandoc -Tlint` warns that `.so` is
+	# fragile and that we'd be better off using ln(1).
+	${MAN_SYMLINKS_CMD}
 
-# selfauto does not work with our legacy texmf paths, patch in paths.
+	# adjust permissions
+	chown -R ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/{share/texmf*,man/man*/*,info/*}
+
+	# texdoc needs a copy of the TLPDB in a specific path.
+	${INSTALL_DATA_DIR} ${PREFIX}/share/tlpkg/
+	${INSTALL_DATA} ${WRKDIR}/texlive.tlpdb ${PREFIX}/share/tlpkg/
+
 post-install:
+	# selfauto does not work with our legacy texmf paths, patch in paths.
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmf.cnf
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 
+# The following targets are for development only and require Python3.
+
 # Generating PLISTs is special for TeX Live.
-# This target requires Python3.
 update-plist: plist
 plist: fake
-	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} python${MODPY_DEFAULT_VERSION_3} \
+	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} \
+		python${MODPY_DEFAULT_VERSION_3} \
 		${FILESDIR}/update_plist_hints.py \
 		${WRKDIR}/texlive.tlpdb | \
-		${FILESDIR}/write_plists.py
+		python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/write_plists.py
 
-# regenerate adj.mk
+# Regenerate adj.mk.
 adj: patch
 	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/mk_adj.py \
 		${WRKSRC}/texmf-dist ${WRKSRC} > adj.mk
+
+# Regenerate man_symlinks.mk.
+man_symlinks: patch
+	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/mk_man_symlinks.py \
+		${WRKSRC}/texmf-dist/doc/man > man_symlinks.mk
 
 .include <bsd.port.mk>

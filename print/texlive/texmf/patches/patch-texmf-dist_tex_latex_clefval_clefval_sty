@@ -1,0 +1,18 @@
+$OpenBSD: patch-texmf-dist_tex_latex_clefval_clefval_sty,v 1.1 2020/08/18 18:40:21 edd Exp $
+
+clefval.sty contains invalid unicode.
+
+https://tex.stackexchange.com/questions/555258/clefval-sty-package-inputenc-error-invalid-utf-8-byte-a0
+
+Index: texmf-dist/tex/latex/clefval/clefval.sty
+--- texmf-dist/tex/latex/clefval/clefval.sty.orig
++++ texmf-dist/tex/latex/clefval/clefval.sty
+@@ -31,7 +31,7 @@
+ \newcommand*{\@setTheValue}[2]{%
+   \ifx#1\relax
+   \protect\G@refundefinedtrue
+-  \nfss@text{\reset@font\bfseries^^a0????}%
++  \nfss@text{\reset@font\bfseries~????}%
+ \@latex@warning{Value of `#2' on page \thepage\space  undefined}%
+   \else #1\null \fi}
+ \newcommand*{\TheValue}[1]{\expandafter\@setTheValue\csname
