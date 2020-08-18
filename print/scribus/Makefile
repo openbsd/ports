@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2020/03/20 16:44:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2020/08/18 18:21:32 rsadowski Exp $
 
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.5
 CATEGORIES=	print
+REVISION=	0
 
 HOMEPAGE=	https://www.scribus.net/
 

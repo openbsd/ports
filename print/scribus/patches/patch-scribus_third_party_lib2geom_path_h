@@ -1,0 +1,16 @@
+$OpenBSD: patch-scribus_third_party_lib2geom_path_h,v 1.1 2020/08/18 18:21:32 rsadowski Exp $
+
+Unbreak LLVM10 build
+
+Index: scribus/third_party/lib2geom/path.h
+--- scribus/third_party/lib2geom/path.h.orig
++++ scribus/third_party/lib2geom/path.h
+@@ -257,7 +257,7 @@ class BezierCurve : public Curve { (protected)
+     for(unsigned i = 0; i <= order; i++) {
+         x[i] = c[i][X]; y[i] = c[i][Y];
+     }
+-    inner = Bezier(x, y);
++    inner = D2<Bezier>(Bezier(x, y), Bezier(x, y));
+   }
+ };
+ 
