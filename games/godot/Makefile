@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.13 2020/08/03 18:41:08 thfr Exp $
+# $OpenBSD: Makefile,v 1.14 2020/08/18 17:39:30 cwen Exp $
 
-BROKEN-i386 =	core/safe_refcount.h error: misaligned atomic operation may incur significant performance penalty
 COMMENT =	2D and 3D game engine
 
 V =		3.2.2
@@ -50,11 +49,13 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			builtin_pcre2=no \
 			builtin_zlib=no \
 			builtin_zstd=no \
-			dev=yes \
 			platform=x11 \
 			progress=no \
 			pulseaudio=no \
-			target=release_debug
+			target=release_debug \
+			verbose=yes \
+			warnings=extra \
+			werror=no
 LIB_DEPENDS =		archivers/zstd \
 			audio/libvorbis \
 			audio/musepack \
