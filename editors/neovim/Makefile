@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2020/04/25 10:07:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2020/08/18 19:15:54 edd Exp $
 
 COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.4.3
+GH_TAGNAME =	v0.4.4
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
@@ -102,8 +102,8 @@ pre-configure:
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.
 #
-# There is currently one (minor) test failure:
-# https://github.com/neovim/neovim/issues/10420
+# If cscope is installed, one test fails:
+# https://github.com/neovim/neovim/issues/12744
 do-test:
 	cd ${WRKSRC}/src/nvim/testdir && ${SETENV} LC_CTYPE=en_US.UTF-8 \
 		${MAKE_PROGRAM} NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_nvim_CMakeLists_txt,v 1.2 2019/03/17 13:13:40 edd Exp $
+$OpenBSD: patch-src_nvim_CMakeLists_txt,v 1.3 2020/08/18 19:15:54 edd Exp $
 
 No need for libc++abi, only available on clang archs and only needed for
 luajit (we use lua instead).
@@ -6,7 +6,7 @@ luajit (we use lua instead).
 Index: src/nvim/CMakeLists.txt
 --- src/nvim/CMakeLists.txt.orig
 +++ src/nvim/CMakeLists.txt
-@@ -362,10 +362,6 @@ endforeach()
+@@ -366,10 +366,6 @@ endforeach()
  
  # Our dependencies come first.
  
