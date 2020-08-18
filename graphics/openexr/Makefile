@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2020/08/15 20:31:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.47 2020/08/18 18:19:05 rsadowski Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -62,6 +62,8 @@ LIB_DEPENDS-tools=	${BASE_PKGPATH}
 
 PKG_ARCH-doc=		*
 RUN_DEPENDS-doc=	# empty
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Python2=ON
 
 post-install:
 # fix links target; symlinks are required for FindIlmbase.cmake etc. to find the
