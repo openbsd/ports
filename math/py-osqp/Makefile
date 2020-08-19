@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/08/10 07:53:59 bket Exp $
+# $OpenBSD: Makefile,v 1.7 2020/08/19 12:25:12 ajacoutot Exp $
 
 COMMENT =		Python interface to OSQP
 
@@ -27,6 +27,6 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 .include <bsd.port.mk>

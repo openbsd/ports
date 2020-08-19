@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/08/19 12:25:13 ajacoutot Exp $
 
 COMMENT =		python SDK for the VMware vSphere API
 
@@ -27,7 +27,7 @@ RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-testtools${MODPY_FLAVOR} \

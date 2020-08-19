@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/05 14:55:10 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2020/08/19 12:25:13 ajacoutot Exp $
 
 COMMENT=	simple, fast and efficient podcast parser
 
@@ -23,7 +23,7 @@ TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
 		devel/py-coverage${MODPY_FLAVOR}
 
 FLAVORS=	python3
-FLAVOR?=	python3
+FLAVOR=		python3
 
 MAKE_FILE=	makefile
 MAKE_ENV=	PYTHON=${MODPY_BIN}

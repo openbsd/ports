@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/14 09:19:32 kn Exp $
+# $OpenBSD: Makefile,v 1.13 2020/08/19 12:25:12 ajacoutot Exp $
 
 COMMENT =		common base representation of Python source code
 
@@ -23,7 +23,7 @@ RUN_DEPENDS =		devel/py-lazy-object-proxy${MODPY_FLAVOR} \
 			devel/py-wrapt${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 do-test:
 	cd ${WRKSRC} && \

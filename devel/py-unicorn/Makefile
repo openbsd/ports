@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/08/19 12:25:12 ajacoutot Exp $
 
 BROKEN-sparc64 = multiple definition of use_vis3_instructions
 
@@ -26,7 +26,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 # see patches/patch-src_Makefile
 BUILD_DEPENDS =		lang/python/${MODPY_DEFAULT_VERSION_2}

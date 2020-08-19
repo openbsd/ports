@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:13:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/08/19 12:25:13 ajacoutot Exp $
 
 COMMENT=	Python client for Elasticsearch
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=	www/py-requests${MODPY_FLAVOR}>=2.4.0,<3.0.0 \
 MODPY_SETUPTOOLS= Yes
 
 FLAVORS=	python3
-FLAVOR?=	python3
+FLAVOR=		python3
 
 # Requires elasticsearch cluster
 NO_TEST =	Yes

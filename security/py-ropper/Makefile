@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/08/07 09:59:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2020/08/19 12:25:13 ajacoutot Exp $
 
 COMMENT =	rop gadget finder and binary information tool
 
@@ -25,7 +25,7 @@ RUN_DEPENDS =	devel/py-filebytes${MODPY_FLAVOR} \
 		devel/keystone/python${MODPY_FLAVOR}
 
 FLAVORS =	python3
-FLAVOR ?=	python3
+FLAVOR =	python3
 
 # permit installing py- and py3- on same machine
 post-install:

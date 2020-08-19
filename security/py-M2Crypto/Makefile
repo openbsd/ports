@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/17 17:47:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2020/08/19 12:25:13 ajacoutot Exp $
 
 COMMENT =		crypto and ssl toolkit for python
 
@@ -23,7 +23,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 MAKE_ENV =		SWIG_FEATURES=-I/usr/include
 

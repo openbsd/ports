@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/19 12:25:12 ajacoutot Exp $
 
 COMMENT =	finds unused code in Python programs
 
@@ -23,7 +23,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =	python3
-FLAVOR ?=	python3
+FLAVOR =	python3
 
 TEST_DEPENDS =  devel/py-test${MODPY_FLAVOR} \
                 devel/py-test-cov${MODPY_FLAVOR}

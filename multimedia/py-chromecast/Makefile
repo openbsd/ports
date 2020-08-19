@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/30 07:50:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2020/08/19 12:25:12 ajacoutot Exp $
 
 COMMENT=		Python module to talk to Google Chromecast
 
@@ -18,7 +18,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
-FLAVORS ?=		python3
+FLAVORS=		python3
 FLAVOR=			python3
 
 RUN_DEPENDS=		devel/py-protobuf${MODPY_FLAVOR} \

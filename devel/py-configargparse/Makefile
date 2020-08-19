@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/07 13:06:07 kn Exp $
+# $OpenBSD: Makefile,v 1.13 2020/08/19 12:25:12 ajacoutot Exp $
 
 COMMENT=		argparse replacement, allows options to be set via files/env
 
@@ -13,7 +13,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE=	Yes
 
 FLAVORS=		python3
-FLAVOR?=		python3
+FLAVOR=			python3
 
 MODULES=		lang/python
 MODPY_PI=		Yes

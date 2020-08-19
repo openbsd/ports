@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/17 17:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2020/08/19 12:25:13 ajacoutot Exp $
 
 COMMENT =		NetBox API client library
 
@@ -21,7 +21,7 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	lib
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \

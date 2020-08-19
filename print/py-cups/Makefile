@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/07/03 21:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2020/08/19 12:25:13 ajacoutot Exp $
 
 COMMENT=		CUPS bindings for Python
 
@@ -23,7 +23,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 
 FLAVORS=		python3
-FLAVOR?=		python3
+FLAVOR=			python3
 
 LIB_DEPENDS=		print/cups,-libs \
 			${MODPY_LIB_DEPENDS}

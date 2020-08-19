@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/10 07:44:07 bket Exp $
+# $OpenBSD: Makefile,v 1.8 2020/08/19 12:25:12 ajacoutot Exp $
 
 COMMENT =		snuggs are s-expressions for numpy
 
@@ -27,6 +27,6 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			devel/py-hypothesis${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 .include <bsd.port.mk>

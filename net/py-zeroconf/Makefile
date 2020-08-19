@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/08/19 12:25:13 ajacoutot Exp $
 
 COMMENT =		pure Python Multicast DNS Service Discovery Library
 
@@ -19,7 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-FLAVORS ?=		python3
+FLAVORS=		python3
 FLAVOR=			python3
 
 RUN_DEPENDS =		net/py-ifaddr${MODPY_FLAVOR}
