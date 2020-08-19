@@ -1,0 +1,5 @@
+This Action handles doing automatic method dispatching for REST
+requests. It takes a normal Catalyst action, and changes the dispatch
+to append an underscore and method name. First it will try dispatching
+to an action with the generated name, and failing that it will try to
+dispatch to a regular method.

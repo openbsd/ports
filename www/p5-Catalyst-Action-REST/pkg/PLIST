@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/19 14:06:51 cwen Exp $
+${P5SITE}/Catalyst/Action/
+${P5SITE}/Catalyst/Action/Deserialize/
+${P5SITE}/Catalyst/Action/Deserialize.pm
+${P5SITE}/Catalyst/Action/Deserialize/Callback.pm
+${P5SITE}/Catalyst/Action/Deserialize/JSON/
+${P5SITE}/Catalyst/Action/Deserialize/JSON.pm
+${P5SITE}/Catalyst/Action/Deserialize/JSON/XS.pm
+${P5SITE}/Catalyst/Action/Deserialize/View.pm
+${P5SITE}/Catalyst/Action/Deserialize/XML/
+${P5SITE}/Catalyst/Action/Deserialize/XML/Simple.pm
+${P5SITE}/Catalyst/Action/Deserialize/YAML.pm
+${P5SITE}/Catalyst/Action/DeserializeMultiPart.pm
+${P5SITE}/Catalyst/Action/REST/
+${P5SITE}/Catalyst/Action/REST.pm
+${P5SITE}/Catalyst/Action/REST/ForBrowsers.pm
+${P5SITE}/Catalyst/Action/Serialize/
+${P5SITE}/Catalyst/Action/Serialize.pm
+${P5SITE}/Catalyst/Action/Serialize/Callback.pm
+${P5SITE}/Catalyst/Action/Serialize/JSON/
+${P5SITE}/Catalyst/Action/Serialize/JSON.pm
+${P5SITE}/Catalyst/Action/Serialize/JSON/XS.pm
+${P5SITE}/Catalyst/Action/Serialize/JSONP.pm
+${P5SITE}/Catalyst/Action/Serialize/View.pm
+${P5SITE}/Catalyst/Action/Serialize/XML/
+${P5SITE}/Catalyst/Action/Serialize/XML/Simple.pm
+${P5SITE}/Catalyst/Action/Serialize/YAML/
+${P5SITE}/Catalyst/Action/Serialize/YAML.pm
+${P5SITE}/Catalyst/Action/Serialize/YAML/HTML.pm
+${P5SITE}/Catalyst/Action/SerializeBase.pm
+${P5SITE}/Catalyst/Controller/
+${P5SITE}/Catalyst/Controller/REST.pm
+${P5SITE}/Catalyst/Request/REST/
+${P5SITE}/Catalyst/Request/REST.pm
+${P5SITE}/Catalyst/Request/REST/ForBrowsers.pm
+${P5SITE}/Catalyst/TraitFor/
+${P5SITE}/Catalyst/TraitFor/Request/
+${P5SITE}/Catalyst/TraitFor/Request/REST/
+${P5SITE}/Catalyst/TraitFor/Request/REST.pm
+${P5SITE}/Catalyst/TraitFor/Request/REST/ForBrowsers.pm
+@man man/man3p/Catalyst::Action::Deserialize.3p
+@man man/man3p/Catalyst::Action::DeserializeMultiPart.3p
+@man man/man3p/Catalyst::Action::REST.3p
+@man man/man3p/Catalyst::Action::REST::ForBrowsers.3p
+@man man/man3p/Catalyst::Action::Serialize.3p
+@man man/man3p/Catalyst::Action::SerializeBase.3p
+@man man/man3p/Catalyst::Controller::REST.3p
+@man man/man3p/Catalyst::Request::REST.3p
+@man man/man3p/Catalyst::Request::REST::ForBrowsers.3p
+@man man/man3p/Catalyst::TraitFor::Request::REST.3p
+@man man/man3p/Catalyst::TraitFor::Request::REST::ForBrowsers.3p
