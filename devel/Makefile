@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2006 2020/08/13 07:36:27 bket Exp $
+# $OpenBSD: Makefile,v 1.2007 2020/08/19 02:18:26 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1116,6 +1116,7 @@
      SUBDIR += p5-Test-CheckManifest
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
+     SUBDIR += p5-Test-CleanNamespaces
      SUBDIR += p5-Test-Cmd
      SUBDIR += p5-Test-Command
      SUBDIR += p5-Test-Command-Simple
