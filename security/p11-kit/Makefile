@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2020/02/08 12:05:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2020/08/19 12:32:18 ajacoutot Exp $
 
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
 GH_PROJECT=		p11-kit
 GH_ACCOUNT=		p11-glue
-GH_TAGNAME=		0.23.20
+GH_TAGNAME=		0.23.21
 
 CATEGORIES=		security
 
