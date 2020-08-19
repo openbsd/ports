@@ -1,0 +1,17 @@
+$OpenBSD: patch-command_agent_host_unix_go,v 1.1 2020/08/19 13:22:27 ajacoutot Exp $
+
+Index: command/agent/host/unix.go
+--- command/agent/host/unix.go.orig
++++ command/agent/host/unix.go
+@@ -60,9 +60,9 @@ func makeDf(path string) (*df, error) {
+ }
+ 
+ func (d *df) total() uint64 {
+-	return d.s.Blocks * uint64(d.s.Bsize)
++	return d.s.F_blocks * uint64(d.s.F_bsize)
+ }
+ 
+ func (d *df) available() uint64 {
+-	return d.s.Bavail * uint64(d.s.Bsize)
++	return uint64(d.s.F_bavail) * uint64(d.s.F_bsize)
+ }
