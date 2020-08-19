@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/21 20:25:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/08/19 11:28:29 jasper Exp $
 
 BROKEN-i386 =	fails after "[*] Build gerbil tags"
+BROKEN-powerpc64=gsc spins during build
 
 # Gambit doesn't have thread-local storage support on GCC platforms
 ONLY_FOR_ARCHS = ${CLANG_ARCHS}
