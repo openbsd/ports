@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/19 02:18:11 afresh1 Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/CleanNamespaces.pm
+@man man/man3p/Test::CleanNamespaces.3p
