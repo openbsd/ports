@@ -1,0 +1,8 @@
+Writing RESTful apps is a good thing, but if you're also trying to
+support web browsers, it would be nice not to be reduced to GET
+and POST for everything.
+
+This middleware allows for POST requests that pretend to be something
+else: by adding either a header named X-HTTP-Method-Override to the
+request, or a query parameter named x-tunneled-method to the URI, the
+client can say what method it actually meant.
