@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/11 12:41:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/08/19 02:01:32 lteo Exp $
 
 COMMENT =	build automation tool
 
-DISTNAME =	gradle-6.5.1
+DISTNAME =	gradle-6.6
 EXTRACT_SUFX =	-bin.zip
 
 CATEGORIES =	java

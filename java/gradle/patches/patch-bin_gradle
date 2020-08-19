@@ -1,11 +1,11 @@
-$OpenBSD: patch-bin_gradle,v 1.1.1.1 2019/06/17 02:03:44 lteo Exp $
+$OpenBSD: patch-bin_gradle,v 1.2 2020/08/19 02:01:32 lteo Exp $
 
 Index: bin/gradle
 --- bin/gradle.orig
 +++ bin/gradle
-@@ -82,6 +82,8 @@ esac
+@@ -83,6 +83,8 @@ esac
+ CLASSPATH=$APP_HOME/lib/gradle-launcher-6.6.jar
  
- CLASSPATH=$APP_HOME/lib/gradle-launcher-5.4.1.jar
  
 +JAVA_HOME="$(javaPathHelper -h gradle)"
 +
