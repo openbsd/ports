@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-kde,v 1.4 2015/01/09 16:45:37 ajacoutot Exp $
-${KDE}/uim_panelapplet.so
-share/apps.kde3/kicker/
-share/apps.kde3/kicker/applets/
-share/apps.kde3/kicker/applets/uimapplet.desktop

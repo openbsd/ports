@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2019/05/19 14:02:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2020/08/20 16:21:16 rsadowski Exp $
 @pkgpath inputmethods/uim
 @pkgpath inputmethods/uim,-gnome
 @bin bin/uim-el-agent
@@ -22,31 +22,33 @@ include/uim/uim-scm.h
 include/uim/uim-util.h
 include/uim/uim.h
 include/uim/version.h
-lib/libuim-custom.a
+lib/gtk-2.0/
+lib/gtk-3.0/
+@static-lib lib/libuim-custom.a
 lib/libuim-custom.la
 @lib lib/libuim-custom.so.${LIBuim-custom_VERSION}
-lib/libuim-scm.a
+@static-lib lib/libuim-scm.a
 lib/libuim-scm.la
 @lib lib/libuim-scm.so.${LIBuim-scm_VERSION}
-lib/libuim.a
+@static-lib lib/libuim.a
 lib/libuim.la
 @lib lib/libuim.so.${LIBuim_VERSION}
 lib/pkgconfig/uim.pc
 lib/uim/
 lib/uim/plugin/
-lib/uim/plugin/libuim-anthy-utf8.so
-lib/uim/plugin/libuim-anthy.so
-lib/uim/plugin/libuim-custom-enabler.so
-lib/uim/plugin/libuim-editline.so
-lib/uim/plugin/libuim-fileio.so
-lib/uim/plugin/libuim-lolevel.so
-lib/uim/plugin/libuim-look.so
-lib/uim/plugin/libuim-m17nlib.so
-lib/uim/plugin/libuim-process.so
-lib/uim/plugin/libuim-skk.so
-lib/uim/plugin/libuim-socket.so
-lib/uim/plugin/libuim-sqlite3.so
-lib/uim/plugin/libuim-xkb.so
+@so lib/uim/plugin/libuim-anthy-utf8.so
+@so lib/uim/plugin/libuim-anthy.so
+@so lib/uim/plugin/libuim-custom-enabler.so
+@so lib/uim/plugin/libuim-editline.so
+@so lib/uim/plugin/libuim-fileio.so
+@so lib/uim/plugin/libuim-lolevel.so
+@so lib/uim/plugin/libuim-look.so
+@so lib/uim/plugin/libuim-m17nlib.so
+@so lib/uim/plugin/libuim-process.so
+@so lib/uim/plugin/libuim-skk.so
+@so lib/uim/plugin/libuim-socket.so
+@so lib/uim/plugin/libuim-sqlite3.so
+@so lib/uim/plugin/libuim-xkb.so
 @bin libexec/uim-helper-server
 @man man/man1/uim-xim.1
 share/applications/uim.desktop
@@ -119,8 +121,6 @@ share/uim/google-cgiapi-jp.scm
 share/uim/hangul.scm
 share/uim/hangul2.scm
 share/uim/hangul3.scm
-share/uim/helperdata/
-share/uim/helperdata/bushu.t
 share/uim/http-client.scm
 share/uim/http-server.scm
 share/uim/i18n.scm

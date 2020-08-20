@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-qt4,v 1.1 2015/01/09 16:45:37 ajacoutot Exp $
-@bin bin/uim-chardict-qt4
-@bin bin/uim-im-switcher-qt4
-@bin bin/uim-pref-qt4
-@bin bin/uim-toolbar-qt4
-lib/qt4/plugins/inputmethods/libuiminputcontextplugin.so
-@bin libexec/uim-candwin-qt4
