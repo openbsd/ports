@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.976 2020/08/19 14:09:04 cwen Exp $
+# $OpenBSD: Makefile,v 1.977 2020/08/20 07:01:02 solene Exp $
 
      SUBDIR =
-     SUBDIR += ajaxterm
      SUBDIR += analog
      SUBDIR += ap2-mod_dnssd
      SUBDIR += ap2-mod_jk

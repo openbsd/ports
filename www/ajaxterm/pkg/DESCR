@@ -1,3 +1,0 @@
-ajaxterm is a ssh frontend written for the web.
-It's highly recommended to only deploy it on secured web 
-servers, and to run it as a dedicated user.
