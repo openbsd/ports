@@ -1,17 +1,21 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/09/01 18:56:02 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2020/08/20 18:00:14 rsadowski Exp $
 
 LibXml2 is not needed to compile the gstreamer backend for Phonon
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -54,9 +54,6 @@ macro_log_feature(GLIB2_FOUND "GLib2" "GLib 2 is requi
+@@ -105,13 +105,6 @@ set_package_properties(GLIB2 PROPERTIES
  
  find_package(GObject REQUIRED)
  
 -find_package(LibXml2 REQUIRED)
--macro_log_feature(LIBXML2_FOUND "LibXml2" "LibXml2 is required to compile the gstreamer backend for Phonon" "http://xmlsoft.org/downloads.html" TRUE)
+-set_package_properties(LibXml2 PROPERTIES
+-    TYPE REQUIRED
+-    DESCRIPTION "LibXml2"
+-    PURPOSE "LibXml2 is required to compile the gstreamer backend for Phonon"
+-    URL "http://xmlsoft.org/downloads.html")
 -
  add_subdirectory(gstreamer)
  
- if(ECM_FOUND AND IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
+ if(IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")

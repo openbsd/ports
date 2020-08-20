@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2020/06/05 05:40:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	alphabet learning application for KDE
 DISTNAME =	klettres-${VERSION}
 CATEGORIES =	education
-REVISION =	2
+REVISION =	3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Svg Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Gui Qt5Network Qt5Svg Qt5Widgets Qt5Xml c m phonon4qt5
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -18,8 +18,7 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODKDE5_DESKTOP_FILE = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
@@ -34,6 +33,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		x11/qt5/qtsvg
+		x11/qt5/qtsvg \
+		multimedia/phonon
 
 .include <bsd.port.mk>

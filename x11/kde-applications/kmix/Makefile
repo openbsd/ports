@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/05 05:40:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.kmix
 
@@ -16,8 +16,7 @@ WANTLIB += KF5Plasma KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
 WANTLIB += c canberra glib-2.0 m pulse pulse-mainloop-glib
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -43,6 +42,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
-		devel/kf5/plasma-framework
+		devel/kf5/plasma-framework \
+		multimedia/phonon
 
 .include <bsd.port.mk>

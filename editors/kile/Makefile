@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2020/04/05 15:49:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.41 2020/08/20 18:00:14 rsadowski Exp $
 
 COMMENT =	user-friendly TeX/LaTeX editor for KDE
 
 CATEGORIES =	editors
 
 DISTNAME =	kile-2.9.93
+REVISION =	0
 
 HOMEPAGE =	https://kile.sourceforge.io
 
@@ -27,13 +28,13 @@ WANTLIB += Okular5Core
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kile/}
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	devel/kf5 \
-		multimedia/phonon
+MODULES =	devel/kf5
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools \
 		devel/kf5/kinit \
-		x11/kde-applications/kate
+		x11/kde-applications/kate \
+		multimedia/phonon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kdoctools \

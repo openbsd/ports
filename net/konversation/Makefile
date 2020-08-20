@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2020/03/23 18:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	IRC client for KDE
 
 V =		1.7.5
 DISTNAME =	konversation-$V
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -23,12 +23,12 @@ WANTLIB += KF5KIOWidgets KF5Notifications KF5NotifyConfig KF5Parts
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += c m phonon4qt5 qca-qt5
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/kf5 \
-			multimedia/phonon \
 			lang/python
 
 BUILD_DEPENDS +=	devel/kf5/kdoctools \
@@ -59,7 +59,8 @@ LIB_DEPENDS +=		security/qca-qt5 \
 			devel/kf5/knotifications  \
 			devel/kf5/kwindowsystem \
 			devel/kf5/kiconthemes \
-			devel/kf5/kitemviews
+			devel/kf5/kitemviews \
+			multimedia/phonon
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

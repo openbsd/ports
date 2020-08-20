@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.no-qt5-main,v 1.1 2016/05/27 02:44:00 zhuk Exp $
-lib/kde4/plugins/
-share/kde4/
-share/kde4/services/
-share/kde4/services/phononbackends/
-share/kde4/services/phononbackends/gstreamer.desktop

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	Kio slave for accessing audio CDs
 DISTNAME =	audiocd-kio-${VERSION}
 PKGNAME =	audiocd-kio-kf5-${VERSION}
 CATEGORIES =	devel audio
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  audiocdplugins            1.0 # 5.0
 
@@ -36,6 +36,7 @@ LIB_DEPENDS =	audio/cdparanoia \
 		devel/kf5/kservice \
 		devel/kf5/solid \
 		x11/kde-applications/libkcddb \
-		x11/kde-applications/libkcompactdisc
+		x11/kde-applications/libkcompactdisc \
+		multimedia/phonon
 
 .include <bsd.port.mk>

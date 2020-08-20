@@ -1,7 +1,5 @@
-Phonon is the multimedia framework for KDE4.
+Phonon is the multimedia framework for KDE.
 
 Phonon uses backend plugins to access different providers, see
 ports in multimedia/phonon-backend. At least one of the backend
 plugins should be installed.
-
-This is the Qt4-based version.

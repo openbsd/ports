@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/14 12:35:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  kioarchive                1.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            1.0 # 18.08
@@ -17,13 +17,13 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOWidgets KF5Pty KF5Service KF5Solid KF5SyntaxHighlighting
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml m
-WANTLIB += mtp phonon4qt5experimental smbclient ssh tag util
+WANTLIB += mtp phonon4qt5 phonon4qt5experimental smbclient ssh
+WANTLIB += tag util
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/gperf
 
@@ -58,7 +58,8 @@ LIB_DEPENDS =	audio/taglib \
 		graphics/openexr \
 		security/libssh \
 		net/samba \
-		x11/qt5/qtsvg
+		x11/qt5/qtsvg \
+		multimedia/phonon
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

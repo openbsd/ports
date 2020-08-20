@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/05 05:40:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	music collection manager and player for KDE
 DISTNAME =	juk-${VERSION}
 CATEGORIES =	audio
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.juk
 
@@ -15,10 +15,9 @@ WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml c m tag
+WANTLIB += Qt5Xml c m phonon4qt5 tag
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -56,7 +55,8 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
-		x11/qt5/qtsvg
+		x11/qt5/qtsvg \
+		multimedia/phonon
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

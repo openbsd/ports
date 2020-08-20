@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/24 18:56:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/20 18:00:16 rsadowski Exp $
 
 COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
@@ -20,13 +20,12 @@ WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5SonnetUi
 WANTLIB += KF5SyntaxHighlighting KF5TemplateParser KF5TextWidgets
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += gpgmepp m qgpgme
+WANTLIB += gpgmepp m phonon4qt5 qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost \
@@ -59,7 +58,8 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/kde-applications/libkdepim \
 		x11/kde-applications/mailimporter \
 		x11/kde-applications/messagelib \
-		x11/kde-applications/pimcommon
+		x11/kde-applications/pimcommon \
+		multimedia/phonon
 
 TEST_IS_INTERACTIVE =	X11
 

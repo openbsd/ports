@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2020/06/08 19:41:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.52 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
 VERSION =	5.2.0
 DISTNAME =	ktorrent-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  ktcore                    1.1 # 0.0
 
@@ -27,12 +28,11 @@ WANTLIB += KF5TextWidgets KF5Torrent KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5Script
 WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml c gcrypt gmp m tag
+WANTLIB += Qt5Widgets Qt5Xml c gcrypt gmp m phonon4qt5 tag
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktorrent/${VERSION}/}
 
-MODULES =		devel/kf5 \
-			multimedia/phonon
+MODULES =		devel/kf5
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/boost
@@ -75,7 +75,8 @@ LIB_DEPENDS =		audio/taglib \
 			x11/qt5/qtlocation \
 			x11/qt5/qtscript \
 			x11/qt5/qtwebchannel \
-			x11/qt5/qtwebengine
+			x11/qt5/qtwebengine \
+			multimedia/phonon
 
 .include <bsd.port.mk>
 

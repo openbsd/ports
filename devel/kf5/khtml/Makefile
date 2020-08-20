@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/23 18:01:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/08/20 18:00:13 rsadowski Exp $
 
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5KHtml	5.0
 
@@ -13,10 +14,8 @@ WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Service
 WANTLIB += KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5Wallet
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext gif jpeg m phonon4qt5experimental
-WANTLIB += png z
-
-MODULES =		multimedia/phonon
+WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext gif jpeg m phonon4qt5
+WANTLIB += phonon4qt5experimental png z
 
 BUILD_DEPENDS =		devel/gettext,-tools
 
@@ -38,7 +37,8 @@ LIB_DEPENDS =		devel/kf5/karchive>=${MODKF5_VERSION} \
 			graphics/giflib \
 			graphics/jpeg \
 			graphics/png \
-			x11/qt5/qtx11extras
+			x11/qt5/qtx11extras \
+			multimedia/phonon
 
 IS_PORTING_AID =	Yes
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2020/05/18 19:11:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2020/08/20 18:00:14 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.2.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
+REVISION =	0
 
 SHARED_LIBS =   RtfReader                 51.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
@@ -63,11 +64,11 @@ WANTLIB += Okular5Core Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
 WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11
 WANTLIB += Xext c fontconfig freetype gsl gslcblas iconv lcms2
-WANTLIB += m phonon4qt5experimental poppler poppler-qt5 qca-qt5
-WANTLIB += z
+WANTLIB += m phonon4qt5 phonon4qt5experimental poppler poppler-qt5
+WANTLIB += qca-qt5 z
 
-MODULES =	devel/kf5 \
-		multimedia/phonon
+MODULES =	devel/kf5
+
 # c++-14
 COMPILER =	base-clang ports-gcc
 
@@ -88,14 +89,15 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	converters/libiconv \
 		devel/gsl \
-		graphics/kdiagram \
 		devel/kf5/kactivities \
 		devel/kf5/karchive \
+		devel/kf5/kcalendarcore \
 		devel/kf5/kcmutils \
 		devel/kf5/kcodecs\
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
+		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kdelibs4support \
@@ -114,18 +116,17 @@ LIB_DEPENDS =	converters/libiconv \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
+		graphics/kdiagram \
 		graphics/lcms2 \
 		graphics/openexr \
+		multimedia/phonon \
 		print/poppler,-qt5 \
 		security/qca-qt5 \
+		textproc/libwpd \
 		x11/kde-applications/okular \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtsvg \
-		x11/qt5/qtx11extras \
-		textproc/libwpd \
-		devel/kf5/kcalendarcore \
-		devel/kf5/kcontacts \
-		x11/qt5/qtdeclarative
+		x11/qt5/qtx11extras
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.

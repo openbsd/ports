@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/24 18:56:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
@@ -42,13 +42,13 @@ WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c gpgmepp m markdown
 WANTLIB += qgpgme
 
+
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
 
 MODKF5_L10N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost \

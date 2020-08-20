@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/21 18:12:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5AlarmCalendar KF5Auth
@@ -18,7 +18,7 @@ WANTLIB += KF5Mime KF5Notifications KF5PimCommon KF5PimTextEdit
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml X11 c m
+WANTLIB += Qt5Xml X11 c m phonon4qt5
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -28,8 +28,7 @@ MODKDE5_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost
 
@@ -64,6 +63,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
+		multimedia/phonon \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/kalarmcal \

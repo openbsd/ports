@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2016/05/27 02:44:00 zhuk Exp $
-!%%qt5%%
-${BACKEND_DIR}/
-${BACKEND_DIR}/phonon_gstreamer.so

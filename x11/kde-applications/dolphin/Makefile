@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2020/06/03 05:13:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  dolphinprivate            1.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                1.0 # 5.0
@@ -17,7 +17,7 @@ WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
 WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5Parts
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m phonon4qt5
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -25,8 +25,7 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	print/poppler,-qt5 \
 		devel/kf5/kfilemetadata \
@@ -65,7 +64,8 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/solid \
-		devel/kf5/sonnet
+		devel/kf5/sonnet \
+		multimedia/phonon
 
 CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 

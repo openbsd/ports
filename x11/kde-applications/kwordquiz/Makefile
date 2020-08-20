@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/05 05:40:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	general purpose flash card program for KDE
 DISTNAME =	kwordquiz-${VERSION}
 CATEGORIES =	games
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.kde.org/applications/games/kwordquiz
 
@@ -13,7 +13,7 @@ WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5IconThemes
 WANTLIB += KF5ItemViews KF5NewStuff KF5NewStuffCore KF5Notifications
 WANTLIB += KF5NotifyConfig KF5Service KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Widgets Qt5Xml c m phonon4qt5
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -22,8 +22,7 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
@@ -44,6 +43,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
-		x11/kde-applications/libkeduvocdocument
+		x11/kde-applications/libkeduvocdocument \
+		multimedia/phonon
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1032 2020/08/20 16:40:47 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1033 2020/08/20 18:00:14 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -460,6 +460,10 @@ my $stem_extensions = {
 	'py-numexpr' => 'py3-numexpr',
 	'py-notmuch' => 'py3-notmuch',
 	'py-webpy' => 'py3-webpy',
+	'phonon-qt5' => 'phonon',
+	'phonon-qt5-gstreamer' => 'phonon-backend-gstreamer',
+	'phonon-qt5-vlc' => 'phonon-backend-vlc',
+	'phonon-gstreamer-icons' => 'phonon-backend-gstreamer',
 };
 
 my $obsolete_reason = {

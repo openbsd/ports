@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/08/20 18:00:15 rsadowski Exp $
 
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${VERSION}
 CATEGORIES =	multimedia
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
@@ -11,7 +11,7 @@ WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Service
 WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m phonon4qt5
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -20,7 +20,6 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications \
-		multimedia/phonon
 
 RUN_DEPENDS =	misc/shared-mime-info
 
@@ -43,7 +42,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui
+		devel/kf5/kxmlgui \
+		multimedia/phonon
 
 TEST_IS_INTERACTIVE =	X11
 

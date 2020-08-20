@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.no-qt5,v 1.1 2018/10/19 20:53:27 rsadowski Exp $
-share/kde4/
-share/kde4/services/
-share/kde4/services/phononbackends/
-share/kde4/services/phononbackends/vlc.desktop
