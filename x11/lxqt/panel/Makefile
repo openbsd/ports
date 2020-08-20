@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/20 16:40:47 rsadowski Exp $
 
 COMMENT =	desktop panel for LXQt
 
@@ -6,7 +6,7 @@ VERSION =	0.13.0
 
 NAME =		lxqt-panel
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Solid KF5WindowSystem Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg
@@ -20,7 +20,7 @@ LIB_DEPENDS +=		x11/lxqt/liblxqt \
 			x11/lxqt/libsysstat \
 			sysutils/libstatgrab \
 			devel/kf5/solid \
-			x11/dbusmenu-qt,qt5
+			x11/dbusmenu-qt
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 

@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/12/19 11:55:56 zhuk Exp $
-include/${PKGSTEM}/
-include/${PKGSTEM}/dbusmenu_export.h
-include/${PKGSTEM}/dbusmenu_version.h
-include/${PKGSTEM}/dbusmenuexporter.h
-include/${PKGSTEM}/dbusmenuimporter.h
-lib/cmake/${PKGSTEM}/
-lib/cmake/${PKGSTEM}/${PKGSTEM}-config-version.cmake
-lib/cmake/${PKGSTEM}/${PKGSTEM}-config.cmake
-lib/cmake/${PKGSTEM}/${PKGSTEM}-targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/${PKGSTEM}/${PKGSTEM}-targets.cmake
-@lib lib/lib${PKGSTEM}.so.${LIB${PKGSTEM}_VERSION}
-lib/pkgconfig/${PKGSTEM}.pc
+@comment $OpenBSD: PLIST,v 1.6 2020/08/20 16:40:47 rsadowski Exp $
+@conflict dbusmenu-qt-*
+@pkgpath x11/dbusmenu-qt,qt5
+include/dbusmenu-qt5/
+include/dbusmenu-qt5/dbusmenu_export.h
+include/dbusmenu-qt5/dbusmenu_version.h
+include/dbusmenu-qt5/dbusmenuexporter.h
+include/dbusmenu-qt5/dbusmenuimporter.h
+lib/cmake/
+lib/cmake/dbusmenu-qt5/
+lib/cmake/dbusmenu-qt5/dbusmenu-qt5-config-version.cmake
+lib/cmake/dbusmenu-qt5/dbusmenu-qt5-config.cmake
+lib/cmake/dbusmenu-qt5/dbusmenu-qt5-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/dbusmenu-qt5/dbusmenu-qt5-targets.cmake
+@lib lib/libdbusmenu-qt5.so.${LIBdbusmenu-qt5_VERSION}
+lib/pkgconfig/dbusmenu-qt5.pc

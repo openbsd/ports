@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/23 18:01:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/08/20 16:40:47 rsadowski Exp $
 
 COMMENT =	KDE desktop notifications framework
 DISTNAME =	knotifications-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5Notifications	5.0
 
@@ -13,7 +14,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf5/kconfig>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 		devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
-		x11/dbusmenu-qt,qt5 \
+		x11/dbusmenu-qt \
 		x11/qt5/qtx11extras
 
 PORTHOME =	${WRKDIR}
