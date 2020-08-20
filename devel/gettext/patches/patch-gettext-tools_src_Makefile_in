@@ -1,4 +1,4 @@
-$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.12 2020/05/28 19:52:35 naddy Exp $
+$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.13 2020/08/20 21:03:25 naddy Exp $
 
 Use standard shared library versioning.
 
@@ -8,7 +8,7 @@ This was also a race if MAKE_JOBS > 1.
 Index: gettext-tools/src/Makefile.in
 --- gettext-tools/src/Makefile.in.orig
 +++ gettext-tools/src/Makefile.in
-@@ -2685,7 +2685,7 @@ cldr_plurals_LDADD = libgettextsrc.la $(LDADD)
+@@ -2741,7 +2741,7 @@ cldr_plurals_LDADD = libgettextsrc.la $(LDADD)
  # Need @LTLIBINTL@ because many source files use gettext().
  # Need @LTLIBICONV@ because po-charset.c, po-lex.c, msgl-iconv.c, write-po.c
  # use iconv().
@@ -17,7 +17,7 @@ Index: gettext-tools/src/Makefile.in
  	../gnulib-lib/libgettextlib.la $(LTLIBUNISTRING) \
  	$(LT_LIBTEXTSTYLE) @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined \
  	$(am__append_3) $(am__append_5) $(am__append_7)
-@@ -4124,7 +4124,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-libLTLIB
+@@ -4200,7 +4200,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-libLTLIB
  @USE_INSTALLED_LIBTEXTSTYLE_FALSE@	  $(MAKE) install-nobase_includeHEADERS install-nobase_nodist_includeHEADERS includedir="$$here"
  
  # No need to install libgettextsrc.a, except on AIX.

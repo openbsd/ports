@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.95 2020/05/28 19:52:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.96 2020/08/20 21:03:25 naddy Exp $
 
 COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
 COMMENT-tools=		GNU gettext development and translation tools
 
-VERSION=		0.20.2
+VERSION=		0.21
 DISTNAME=		gettext-${VERSION}
 PKGNAME-runtime=	gettext-runtime-${VERSION}
 PKGNAME-textstyle=	libtextstyle-${VERSION}
 PKGNAME-tools=		gettext-tools-${VERSION}
 
-SHARED_LIBS +=  intl                 7.0      # 9.7
+SHARED_LIBS +=  intl                 7.0      # 10.0
 SHARED_LIBS +=  asprintf             1.1      # unknown
-SHARED_LIBS +=  textstyle            0.0      # 0.1
-SHARED_LIBS +=  gettextlib           9.0      # unknown
-SHARED_LIBS +=  gettextsrc           7.0      # unknown
-SHARED_LIBS +=  gettextpo            9.1      # 5.6
+SHARED_LIBS +=  textstyle            0.1      # 1.1
+SHARED_LIBS +=  gettextlib           10.0     # unknown
+SHARED_LIBS +=  gettextsrc           8.0      # unknown
+SHARED_LIBS +=  gettextpo            10.0     # 5.7
 
 SUBST_VARS=	VERSION
 
@@ -62,6 +62,12 @@ CONFIGURE_ARGS=	--disable-csharp \
 		--with-included-libxml \
 		--without-emacs \
 		--without-git
+
+# GCC on alpha has an optimization bug, which cause problems with gnulib's
+# mmalloca function. Disable alloca to work around the failing code.
+.if ${MACHINE_ARCH} == "alpha"
+CONFIGURE_ENV+=	ac_cv_func_alloca_works=no
+.endif
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build-aux \
 				${WRKSRC}/libtextstyle/build-aux

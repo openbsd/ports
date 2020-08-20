@@ -1,17 +1,17 @@
-$OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.6 2020/05/28 19:52:35 naddy Exp $
+$OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.7 2020/08/20 21:03:25 naddy Exp $
 Index: gettext-runtime/intl/l10nflist.c
 --- gettext-runtime/intl/l10nflist.c.orig
 +++ gettext-runtime/intl/l10nflist.c
-@@ -166,6 +166,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+@@ -103,6 +103,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+ #endif
    struct loaded_l10nfile **lastp;
    struct loaded_l10nfile *retval;
-   char *cp;
 +  size_t abs_filename_len;
    size_t dirlist_count;
    size_t entries;
    int cnt;
-@@ -176,7 +177,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
-     dirlist_len = 0;
+@@ -118,7 +119,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+     }
  
    /* Allocate room for the full file name.  */
 -  abs_filename = (char *) malloc (dirlist_len
@@ -19,7 +19,7 @@ Index: gettext-runtime/intl/l10nflist.c
  				  + strlen (language)
  				  + ((mask & XPG_TERRITORY) != 0
  				     ? strlen (territory) + 1 : 0)
-@@ -187,6 +188,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+@@ -129,6 +130,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
  				  + ((mask & XPG_MODIFIER) != 0
  				     ? strlen (modifier) + 1 : 0)
  				  + 1 + strlen (filename) + 1);
@@ -27,52 +27,52 @@ Index: gettext-runtime/intl/l10nflist.c
  
    if (abs_filename == NULL)
      return NULL;
-@@ -200,32 +202,33 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
-       cp += dirlist_len;
-       cp[-1] = '/';
-     }
-+  *cp = '\0';
+@@ -147,32 +149,33 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+ 	cp += dirlist_len;
+ 	cp[-1] = '/';
+       }
++    *cp = '\0';
  
--  cp = stpcpy (cp, language);
-+  strlcat (abs_filename, language, abs_filename_len);
+-    cp = stpcpy (cp, language);
++    strlcat (abs_filename, language, abs_filename_len);
  
-   if ((mask & XPG_TERRITORY) != 0)
-     {
--      *cp++ = '_';
--      cp = stpcpy (cp, territory);
-+      strlcat (abs_filename, "_", abs_filename_len);
-+      strlcat (abs_filename, territory, abs_filename_len);
-     }
-   if ((mask & XPG_CODESET) != 0)
-     {
--      *cp++ = '.';
--      cp = stpcpy (cp, codeset);
-+      strlcat (abs_filename, ".", abs_filename_len);
-+      strlcat (abs_filename, codeset, abs_filename_len);
-     }
-   if ((mask & XPG_NORM_CODESET) != 0)
-     {
--      *cp++ = '.';
--      cp = stpcpy (cp, normalized_codeset);
-+      strlcat (abs_filename, ".", abs_filename_len);
-+      strlcat (abs_filename, normalized_codeset, abs_filename_len);
-     }
-   if ((mask & XPG_MODIFIER) != 0)
-     {
--      *cp++ = '@';
--      cp = stpcpy (cp, modifier);
-+      strlcat (abs_filename, "@", abs_filename_len);
-+      strlcat (abs_filename, modifier, abs_filename_len);
-     }
+     if ((mask & XPG_TERRITORY) != 0)
+       {
+-	*cp++ = '_';
+-	cp = stpcpy (cp, territory);
++	strlcat (abs_filename, "_", abs_filename_len);
++	strlcat (abs_filename, territory, abs_filename_len);
+       }
+     if ((mask & XPG_CODESET) != 0)
+       {
+-	*cp++ = '.';
+-	cp = stpcpy (cp, codeset);
++	strlcat (abs_filename, ".", abs_filename_len);
++	strlcat (abs_filename, codeset, abs_filename_len);
+       }
+     if ((mask & XPG_NORM_CODESET) != 0)
+       {
+-	*cp++ = '.';
+-	cp = stpcpy (cp, normalized_codeset);
++	strlcat (abs_filename, ".", abs_filename_len);
++	strlcat (abs_filename, normalized_codeset, abs_filename_len);
+       }
+     if ((mask & XPG_MODIFIER) != 0)
+       {
+-	*cp++ = '@';
+-	cp = stpcpy (cp, modifier);
++	strlcat (abs_filename, "@", abs_filename_len);
++	strlcat (abs_filename, modifier, abs_filename_len);
+       }
  
--  *cp++ = '/';
--  stpcpy (cp, filename);
-+  strlcat (abs_filename, "/", abs_filename_len);
-+  strlcat (abs_filename, filename, abs_filename_len);
+-    *cp++ = '/';
+-    stpcpy (cp, filename);
++    strlcat (abs_filename, "/", abs_filename_len);
++    strlcat (abs_filename, filename, abs_filename_len);
+   }
  
-   /* Look in list of already loaded domains whether it is already
-      available.  */
-@@ -349,7 +352,7 @@ _nl_normalize_codeset (const char *codeset, size_t nam
+ #if defined _WIN32 && !defined __CYGWIN__
+@@ -367,7 +370,7 @@ _nl_normalize_codeset (const char *codeset, size_t nam
    if (retval != NULL)
      {
        if (only_digit)
