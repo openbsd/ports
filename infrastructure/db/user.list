@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.372 2020/08/13 14:02:18 bcallah Exp $
+$OpenBSD: user.list,v 1.373 2020/08/20 13:31:17 solene Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -126,7 +126,7 @@ id  user		group		port
 615 _iftop		_iftop		net/iftop
 616 _ircd-hybrid	_ircd-hybrid	net/ircd-hybrid
 617 _tinyproxy		_tinyproxy	www/tinyproxy
-618 _ajaxterm		_ajaxterm	www/ajaxterm
+#618 _ajaxterm		_ajaxterm	www/ajaxterm
 619 _ircd-ratbox	_ircd-ratbox	net/ircd-ratbox
 620 _adsuck		_adsuck		net/adsuck
 #621 _couchdb		_couchdb	databases/apache-couchdb
