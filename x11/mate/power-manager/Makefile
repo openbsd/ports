@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/03/21 16:14:56 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2020/08/20 06:39:58 robert Exp $
 
 COMMENT=		MATE power manager
 
 MATE_PROJECT=		mate-power-manager
-MATE_VERSION=		1.24.1
+MATE_VERSION=		1.24.2
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
