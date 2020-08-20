@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/11/02 17:57:36 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/08/20 12:55:13 solene Exp $
 lib/python${MODPY_VERSION}/site-packages/simplejson/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,14 +11,18 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}decoder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}encoder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}ordered_dict.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}raw_json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}scanner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}tool.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/simplejson/_speedups.so
+@so lib/python${MODPY_VERSION}/site-packages/simplejson/_speedups.so
 lib/python${MODPY_VERSION}/site-packages/simplejson/compat.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/decoder.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/encoder.py
+lib/python${MODPY_VERSION}/site-packages/simplejson/errors.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/ordered_dict.py
+lib/python${MODPY_VERSION}/site-packages/simplejson/raw_json.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/scanner.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/__init__.py
