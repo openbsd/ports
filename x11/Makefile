@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.668 2020/08/17 17:04:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.669 2020/08/20 20:10:25 naddy Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -44,7 +44,6 @@
      SUBDIR += dbus-python,python3
      SUBDIR += dbus-tcl
      SUBDIR += dbusmenu-qt
-     SUBDIR += dbusmenu-qt,qt5
      SUBDIR += dmenu
      SUBDIR += driconf
      SUBDIR += driftnet
