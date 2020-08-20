@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.43 2020/05/28 20:58:36 solene Exp $
+@comment $OpenBSD: PLIST-main,v 1.44 2020/08/20 06:50:33 solene Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -346,6 +346,9 @@ share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo
 share/locale/da/LC_MESSAGES/claws-mail.mo
 share/locale/de/LC_MESSAGES/claws-mail.mo
+share/locale/el_GR/
+share/locale/el_GR/LC_MESSAGES/
+share/locale/el_GR/LC_MESSAGES/claws-mail.mo
 share/locale/en_GB/LC_MESSAGES/claws-mail.mo
 share/locale/es/LC_MESSAGES/claws-mail.mo
 share/locale/fi/LC_MESSAGES/claws-mail.mo

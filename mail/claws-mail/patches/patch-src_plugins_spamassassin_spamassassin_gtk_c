@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_plugins_spamassassin_spamassassin_gtk_c,v 1.1 2020/08/20 06:50:33 solene Exp $
+
+Import commit 5cc88aae7217d6ea385a580a30dc79ea0c91c27f
+
+Spamassassin plugin can handle files up to 256 MB
+but the configuration GUI widget only allowed 10 MB
+maximum files.
+
+Index: src/plugins/spamassassin/spamassassin_gtk.c
+--- src/plugins/spamassassin/spamassassin_gtk.c.orig
++++ src/plugins/spamassassin/spamassassin_gtk.c
+@@ -41,7 +41,10 @@
+ #include "menu.h"
+ #include "addressbook.h"
+ #include "combobox.h"
++#include "libspamc.h"
+ 
++#define SA_MAX_SIZE_KB (SPAMC_MAX_MESSAGE_LEN / 1024)
++
+ struct SpamAssassinPage
+ {
+ 	PrefsPage page;
+@@ -375,7 +378,7 @@ static void spamassassin_create_widget_func(PrefsPage 
+ 	gtk_widget_show(max_size_label);
+ 	gtk_box_pack_start(GTK_BOX(hbox_max_size), max_size_label, FALSE, FALSE, 0);
+ 
+-	max_size_spinbtn_adj = GTK_ADJUSTMENT(gtk_adjustment_new(250, 0, 10000, 10, 10, 0));
++	max_size_spinbtn_adj = GTK_ADJUSTMENT(gtk_adjustment_new(250, 0, SA_MAX_SIZE_KB, 10, 10, 0));
+ 	max_size_spinbtn = gtk_spin_button_new(GTK_ADJUSTMENT(max_size_spinbtn_adj), 1, 0);
+ 	gtk_widget_show(max_size_spinbtn);
+ 	gtk_box_pack_start(GTK_BOX(hbox_max_size), max_size_spinbtn, FALSE, FALSE, 0);
