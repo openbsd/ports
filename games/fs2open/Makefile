@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/14 02:16:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2020/08/20 17:32:37 thfr Exp $
 
 COMMENT =	open source game engine based on FreeSpace 2
 
 V =		3.8.0
 DISTNAME =	fs2_open_${V:S/./_/g}-source-Unix
 PKGNAME =	fs2open-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	games
 
@@ -43,6 +43,9 @@ CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open \
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/fs2open.github.com
+
+pre-patch:
+	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' code/utils/boost/syncboundedqueue.h
 
 post-install:
 	${SUBST_CMD} -c -m 755 ${FILESDIR}/fs2open ${PREFIX}/bin/fs2open

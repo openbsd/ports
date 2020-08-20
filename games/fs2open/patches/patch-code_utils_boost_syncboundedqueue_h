@@ -1,0 +1,34 @@
+$OpenBSD: patch-code_utils_boost_syncboundedqueue_h,v 1.1 2020/08/20 17:32:37 thfr Exp $
+
+fix clang 10 build
+
+Index: code/utils/boost/syncboundedqueue.h
+--- code/utils/boost/syncboundedqueue.h.orig
++++ code/utils/boost/syncboundedqueue.h
+@@ -276,7 +276,7 @@ queue_op_status sync_bounded_queue<ValueType>::try_pul
+ template <typename ValueType>
+ queue_op_status sync_bounded_queue<ValueType>::nonblocking_pull_front(ValueType& elem)
+ {
+-		std::unique_lock<std::mutex> lk(mtx_, std::try_lock);
++		std::unique_lock<std::mutex> lk(mtx_, std::try_to_lock);
+ 		if (!lk.owns_lock())
+ 		{
+ 			return queue_op_status::busy;
+@@ -388,7 +388,7 @@ queue_op_status sync_bounded_queue<ValueType>::wait_pu
+ template <typename ValueType>
+ queue_op_status sync_bounded_queue<ValueType>::nonblocking_push_back(const ValueType& elem)
+ {
+-	std::unique_lock<std::mutex> lk(mtx_, std::try_lock);
++	std::unique_lock<std::mutex> lk(mtx_, std::try_to_lock);
+ 	if (!lk.owns_lock()) return queue_op_status::busy;
+ 	return try_push_back(elem, lk);
+ }
+@@ -452,7 +452,7 @@ queue_op_status sync_bounded_queue<ValueType>::wait_pu
+ template <typename ValueType>
+ queue_op_status sync_bounded_queue<ValueType>::nonblocking_push_back(ValueType&& elem)
+ {
+-		std::unique_lock<std::mutex> lk(mtx_, std::try_lock);
++		std::unique_lock<std::mutex> lk(mtx_, std::try_to_lock);
+ 		if (!lk.owns_lock())
+ 		{
+ 			return queue_op_status::busy;
