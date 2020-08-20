@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/21 16:14:55 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2020/08/20 06:40:19 robert Exp $
 
 COMMENT=		MATE keyboard configuration library
 
 MATE_PROJECT=		libmatekbd
+MATE_VERSION=		1.24.1
 
 SHARED_LIBS +=  matekbd                   6.0 # 6.0
 SHARED_LIBS +=  matekbdui                 6.0 # 6.0

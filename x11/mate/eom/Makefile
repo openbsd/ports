@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/03/21 16:14:55 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2020/08/20 06:40:19 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		image viewer for the MATE desktop
 CATEGORIES=		graphics
 
 MATE_PROJECT=		eom
+MATE_VERSION=		1.24.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

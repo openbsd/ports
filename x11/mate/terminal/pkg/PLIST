@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/21 16:14:57 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/08/20 06:40:19 robert Exp $
 @bin bin/mate-terminal
 bin/mate-terminal.wrapper
 @man man/man1/mate-terminal.1
@@ -827,6 +827,7 @@ share/locale/it/LC_MESSAGES/mate-terminal.mo
 share/locale/ja/LC_MESSAGES/mate-terminal.mo
 share/locale/jv/LC_MESSAGES/mate-terminal.mo
 share/locale/ka/LC_MESSAGES/mate-terminal.mo
+share/locale/kab/LC_MESSAGES/mate-terminal.mo
 share/locale/kk/LC_MESSAGES/mate-terminal.mo
 share/locale/kn/LC_MESSAGES/mate-terminal.mo
 share/locale/ko/LC_MESSAGES/mate-terminal.mo

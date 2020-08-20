@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/03/21 16:14:54 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/08/20 06:40:18 robert Exp $
 @bin bin/mate-about-me
 @bin bin/mate-appearance-properties
 @bin bin/mate-at-properties
@@ -1042,6 +1042,23 @@ share/help/ka/mate-control-center/config-screensaver.xml
 share/help/ka/mate-control-center/config-themes.xml
 share/help/ka/mate-control-center/index.docbook
 share/help/ka/mate-control-center/legal.xml
+share/help/kab/
+share/help/kab/mate-control-center/
+share/help/kab/mate-control-center/config-accessibility-keyboard.xml
+share/help/kab/mate-control-center/config-background.xml
+share/help/kab/mate-control-center/config-behavior.xml
+share/help/kab/mate-control-center/config-cds.xml
+share/help/kab/mate-control-center/config-default-apps.xml
+share/help/kab/mate-control-center/config-file-type.xml
+share/help/kab/mate-control-center/config-hints.xml
+share/help/kab/mate-control-center/config-html.xml
+share/help/kab/mate-control-center/config-kbd.xml
+share/help/kab/mate-control-center/config-keybindings.xml
+share/help/kab/mate-control-center/config-mouse.xml
+share/help/kab/mate-control-center/config-screensaver.xml
+share/help/kab/mate-control-center/config-themes.xml
+share/help/kab/mate-control-center/index.docbook
+share/help/kab/mate-control-center/legal.xml
 share/help/kk/
 share/help/kk/mate-control-center/
 share/help/kk/mate-control-center/config-accessibility-keyboard.xml
