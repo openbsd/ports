@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/20 12:57:58 solene Exp $
 
 COMMENT =		canonical JSON
 
-MODPY_EGG_VERSION =	1.1.4
+MODPY_EGG_VERSION =	1.3.0
 DISTNAME =		canonicaljson-${MODPY_EGG_VERSION}
 PKGNAME =		py-canonicaljson-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		textproc
 
