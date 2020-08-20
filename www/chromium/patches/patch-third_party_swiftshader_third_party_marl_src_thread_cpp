@@ -1,12 +1,12 @@
-$OpenBSD: patch-third_party_swiftshader_third_party_marl_src_thread_cpp,v 1.2 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_third_party_marl_src_thread_cpp,v 1.3 2020/08/20 19:00:12 robert Exp $
 
 Index: third_party/swiftshader/third_party/marl/src/thread.cpp
 --- third_party/swiftshader/third_party/marl/src/thread.cpp.orig
 +++ third_party/swiftshader/third_party/marl/src/thread.cpp
-@@ -211,7 +211,7 @@ void Thread::setName(const char* fmt, ...) {
- 
- #if defined(__APPLE__)
+@@ -420,7 +420,7 @@ void Thread::setName(const char* fmt, ...) {
    pthread_setname_np(name);
+ #elif defined(__FreeBSD__)
+   pthread_set_name_np(pthread_self(), name);
 -#elif !defined(__Fuchsia__)
 +#elif !defined(__Fuchsia__) && !defined(__OpenBSD__)
    pthread_setname_np(pthread_self(), name);
