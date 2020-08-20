@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/31 00:21:16 abieber Exp $
+# $OpenBSD: Makefile,v 1.12 2020/08/20 15:12:57 solene Exp $
 
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.18.0
+MODPY_EGG_VERSION =	1.19.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -20,6 +20,8 @@ MODULES =		lang/python
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
+
+MODPY_DISTUTILS_INSTALLARGS = --install-scripts ${LOCALBASE}/share/synapse
 
 RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
@@ -58,18 +60,12 @@ RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		security/py-PyNaCl${MODPY_FLAVOR} \
 		security/py-openssl${MODPY_FLAVOR}
 
-TEST_DEPENDS =	${RUN_DEPENDS}
+TEST_DEPENDS =	${RUN_DEPENDS} \
+		devel/py-mock${MODPY_FLAVOR} \
+		devel/py-twisted${MODPY_FLAVOR} \
+		www/py-jwt${MODPY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} PYTHONPATH=. ${LOCALBASE}/bin/trial-3 tests
-
-post-install:
-	@mkdir ${PREFIX}/share/synapse
-.for script in	generate_config generate_signing_key.py \
-		move_remote_media_to_new_store.py \
-		sync_room_to_group.pl hash_password \
-		register_new_matrix_user synapse_port_db synctl
-	@mv ${PREFIX}/bin/${script} ${PREFIX}/share/synapse
-.endfor
 
 .include <bsd.port.mk>
