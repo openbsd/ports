@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_tools_pdfextract_c,v 1.7 2019/07/30 13:41:14 sthen Exp $
+$OpenBSD: patch-source_tools_pdfextract_c,v 1.8 2020/08/20 09:00:16 sthen Exp $
 
 add pledge(2) to "mutool extract"
 
 Index: source/tools/pdfextract.c
 --- source/tools/pdfextract.c.orig
 +++ source/tools/pdfextract.c
-@@ -5,6 +5,8 @@
+@@ -5,8 +5,11 @@
  #include "mupdf/fitz.h"
  #include "mupdf/pdf.h"
  
@@ -13,8 +13,11 @@ Index: source/tools/pdfextract.c
 +#include <errno.h>
  #include <stdlib.h>
  #include <stdio.h>
++#include <string.h>
  
-@@ -257,6 +259,12 @@ int pdfextract_main(int argc, char **argv)
+ static pdf_document *doc = NULL;
+ static fz_context *ctx = NULL;
+@@ -257,6 +260,12 @@ int pdfextract_main(int argc, char **argv)
  		usage();
  
  	infile = argv[fz_optind++];
