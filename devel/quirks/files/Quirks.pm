@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1030 2020/08/20 07:02:29 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.1031 2020/08/20 16:24:41 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1778,6 +1778,9 @@ my $obsolete_reason = {
 	'p5-Net-GPSD' => 5,
 	'mozplugger' => 0,
 	'ajaxterm' => 3,
+	'uim-kde' => 1,
+	'uim-qt' => 1,
+	'uim-qt4' => 1,
 };
 
 # reasons for obsolete packages
