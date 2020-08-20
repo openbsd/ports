@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.132 2020/03/22 17:16:30 cwen Exp $
+# $OpenBSD: portcheck,v 1.133 2020/08/20 17:58:57 rsadowski Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1323,14 +1323,12 @@ check_wantlib() {
 
 	local kde3_module=false
 	local kde4_module=false
-	local phonon_module=false
 	local gcc4_module=false
 
 	local v
 
 	for v in $modules; do case $v in
 		gcc4)			gcc4_module=true;;
-		multimedia/phonon)	phonon_module=true;;
 		x11/kde)		kde3_module=true;;
 		x11/kde4)		kde4_module=true;;
 	esac; done
@@ -1379,10 +1377,6 @@ check_wantlib() {
 				    "actual build thoroughly, it's broken"
 			fi
 	esac; done
-
-	if $phonon_s_wantlib && ! $phonon_module; then
-		err "${portref}missing multimedia/phonon in MODULES"
-	fi
 
 	true
 }
