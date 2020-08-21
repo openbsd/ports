@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/01/10 12:46:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/08/21 20:44:15 tracey Exp $
 @bin bin/pianobar
 include/piano.h
-lib/libpiano.a
+@static-lib lib/libpiano.a
 @lib lib/libpiano.so.${LIBpiano_VERSION}
 @man man/man1/pianobar.1
 share/examples/pianobar/
