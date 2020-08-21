@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1033 2020/08/20 18:00:14 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1034 2020/08/21 13:48:05 edd Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -464,6 +464,8 @@ my $stem_extensions = {
 	'phonon-qt5-gstreamer' => 'phonon-backend-gstreamer',
 	'phonon-qt5-vlc' => 'phonon-backend-vlc',
 	'phonon-gstreamer-icons' => 'phonon-backend-gstreamer',
+	'iosevka-fonts-default' => 'iosevka',
+	'iosevka-fonts-term' => 'iosevka',
 };
 
 my $obsolete_reason = {
