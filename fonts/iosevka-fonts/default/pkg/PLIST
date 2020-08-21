@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1 2020/08/21 13:53:30 edd Exp $
+@conflict iosevka-fonts-default-*
+@conflict iosevka-fonts-term-*
+@pkgpath fonts/iosevka-fonts,-main
+@pkgpath fonts/iosevka-fonts,-term
+share/fonts/
+@fontdir share/fonts/iosevka/
+share/fonts/iosevka/iosevka-bold.ttc
+share/fonts/iosevka/iosevka-extrabold.ttc
+share/fonts/iosevka/iosevka-extralight.ttc
+share/fonts/iosevka/iosevka-heavy.ttc
+share/fonts/iosevka/iosevka-light.ttc
+share/fonts/iosevka/iosevka-medium.ttc
+share/fonts/iosevka/iosevka-regular.ttc
+share/fonts/iosevka/iosevka-semibold.ttc
+share/fonts/iosevka/iosevka-thin.ttc
