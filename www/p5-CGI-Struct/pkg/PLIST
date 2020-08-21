@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/21 11:15:31 cwen Exp $
+${P5SITE}/CGI/
+${P5SITE}/CGI/Struct.pm
+@man man/man3p/CGI::Struct.3p
