@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.978 2020/08/21 11:17:00 cwen Exp $
+# $OpenBSD: Makefile,v 1.979 2020/08/21 22:42:25 bluhm Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -322,6 +322,7 @@
      SUBDIR += p5-URI
      SUBDIR += p5-URI-Fetch
      SUBDIR += p5-URI-Find
+     SUBDIR += p5-URI-ws
      SUBDIR += p5-URL-Encode
      SUBDIR += p5-W3C-LinkChecker
      SUBDIR += p5-WWW-Bugzilla
