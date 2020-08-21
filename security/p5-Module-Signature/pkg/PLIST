@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/08/28 19:01:10 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/08/21 14:49:51 bluhm Exp $
 bin/cpansign
 ${P5SITE}/Module/
 ${P5SITE}/Module/Signature.pm
 @man man/man1/cpansign.1
 @man man/man3p/Module::Signature.3p
 share/p5-Module-Signature/
-share/p5-Module-Signature/ANDK2018.pub
+share/p5-Module-Signature/ANDK2020.pub
 share/p5-Module-Signature/AUDREYT2018.pub
 share/p5-Module-Signature/NIKLASHOLM2018.pub
-share/p5-Module-Signature/PAUSE2019.pub
+share/p5-Module-Signature/PAUSE2020.pub

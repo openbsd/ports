@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2020/07/03 21:45:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/08/21 14:49:51 bluhm Exp $
 
 COMMENT =	module signature file manipulation
 
-DISTNAME =	Module-Signature-0.83
-REVISION =	0
+DISTNAME =	Module-Signature-0.87
 
 CATEGORIES =	security
 
 MAINTAINER =	Alexander Bluhm <bluhm@openbsd.org>
 
-# CC0 creative commons
+# CC0 1.0 Universal License, Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
@@ -33,7 +32,7 @@ CONFIGURE_ENV =		GNUPGHOME=${GNUPGHOME}
 MAKE_ENV =		GNUPGHOME=${GNUPGHOME} TEST_SIGNATURE=1
 
 pre-configure:
-	mkdir -p -m 0700 ${GNUPGHOME}
+	mkdir -p -m 0700 -- ${GNUPGHOME}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/p5-Module-Signature
