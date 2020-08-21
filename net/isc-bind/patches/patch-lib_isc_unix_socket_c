@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_isc_unix_socket_c,v 1.21 2020/06/17 20:46:54 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_socket_c,v 1.22 2020/08/21 06:03:12 sthen Exp $
 
 Index: lib/isc/unix/socket.c
 --- lib/isc/unix/socket.c.orig
@@ -19,7 +19,7 @@ Index: lib/isc/unix/socket.c
  #endif /* defined(USE_CMSG) || defined(SET_RCVBUF) || defined(SET_SNDBUF) */
  
  setup_done:
-@@ -5150,6 +5152,13 @@ isc_socket_gettype(isc_socket_t *sock0) {
+@@ -5137,6 +5139,13 @@ isc_socket_gettype(isc_socket_t *sock0) {
  void
  isc_socket_ipv6only(isc_socket_t *sock0, bool yes) {
  	isc__socket_t *sock = (isc__socket_t *)sock0;
