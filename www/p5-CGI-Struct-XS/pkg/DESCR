@@ -1,0 +1,3 @@
+This module is XS implementation of CGI::Struct. It's fully compatible
+with CGI::Struct, except for error messages. CGI::Struct::XS is 3-15(5-25
+with dclone disabled) times faster than original module.
