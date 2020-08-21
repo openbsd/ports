@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/21 15:27:50 bluhm Exp $
 
 COMMENT =	pure Python OPC UA client and server library
 
-MODPY_EGG_VERSION =	0.98.11
+MODPY_EGG_VERSION =	0.98.12
 
 DISTNAME =	opcua-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	misc
 
