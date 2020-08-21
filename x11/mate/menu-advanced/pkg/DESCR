@@ -1,0 +1,7 @@
+MATE Menu is an advanced menu for MATE, forked off of MintMenu with
+some Mint specific options and package management features removed.
+
+It provides the follow features by default:
+ - filtering
+ - favorites
+ - plugins
