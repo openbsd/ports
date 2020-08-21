@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/08/20 18:00:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/21 15:48:59 naddy Exp $
 
 COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KF5MailCommon       0.0 # 5.13.2
 
