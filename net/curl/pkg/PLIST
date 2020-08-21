@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.60 2020/06/24 22:13:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.61 2020/08/21 14:18:08 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -30,6 +30,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLINFO_CONTENT_LENGTH_UPLOAD_T.3
 @man man/man3/CURLINFO_CONTENT_TYPE.3
 @man man/man3/CURLINFO_COOKIELIST.3
+@man man/man3/CURLINFO_EFFECTIVE_METHOD.3
 @man man/man3/CURLINFO_EFFECTIVE_URL.3
 @man man/man3/CURLINFO_FILETIME.3
 @man man/man3/CURLINFO_FILETIME_T.3

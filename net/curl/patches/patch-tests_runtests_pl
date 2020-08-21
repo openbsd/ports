@@ -1,0 +1,27 @@
+$OpenBSD: patch-tests_runtests_pl,v 1.1 2020/08/21 14:18:08 naddy Exp $
+
+Clear pid variables when failing to start a server as otherwise the
+parent doesn't detect the failure and believe it actually worked
+to start.
+https://github.com/curl/curl/pull/5834/commits
+
+Index: tests/runtests.pl
+--- tests/runtests.pl.orig
++++ tests/runtests.pl
+@@ -1448,7 +1448,7 @@ sub runhttp2server {
+ 
+     # don't retry if the server doesn't work
+     if ($doesntrun{$pidfile}) {
+-        return (0,0);
++        return (0, 0, 0);
+     }
+ 
+     my $pid = processexists($pidfile);
+@@ -1479,6 +1479,7 @@ sub runhttp2server {
+             logmsg "RUN: failed to start the $srvrname server\n";
+             stopserver($server, "$pid2");
+             $doesntrun{$pidfile} = 1;
++            $http2pid = $pid2 = 0;
+             next;
+         }
+         $doesntrun{$pidfile} = 0;
