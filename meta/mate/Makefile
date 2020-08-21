@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/21 16:14:53 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2020/08/21 14:45:56 robert Exp $
 
 COMMENT-main =		MATE desktop meta-package (base installation)
 COMMENT-extras =	MATE desktop meta-package (full installation)
@@ -10,6 +10,8 @@ PKGNAME =		mate-${V}
 
 PKGNAME-main =		mate-${V}
 PKGNAME-extras =	mate-extras-${V}
+
+REVISION-extras =	0
 
 MULTI_PACKAGES =	-main -extras
 
@@ -49,6 +51,7 @@ RUN_DEPENDS-extras += \
 		x11/mate/engrampa \
 		x11/mate/eom \
 		x11/mate/libmateweather \
+		x11/mate/menu-advanced \
 		x11/mate/pluma \
 		x11/mate/system-monitor \
 		x11/mate/utils
