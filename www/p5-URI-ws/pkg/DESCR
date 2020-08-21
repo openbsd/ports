@@ -1,0 +1,3 @@
+After this module is installed, the URI package provides the same
+set of methods for WebSocket URIs as it does for HTTP ones. For
+secure WebSockets, see URI::wss.

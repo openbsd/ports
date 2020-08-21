@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/21 22:38:14 bluhm Exp $
+${P5SITE}/URI/ws.pm
+${P5SITE}/URI/wss.pm
+@man man/man3p/URI::ws.3p
+@man man/man3p/URI::wss.3p
