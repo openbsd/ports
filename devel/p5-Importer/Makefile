@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/08/21 13:09:01 bluhm Exp $
 
 COMMENT =	alternative but compatible interface to modules that export
 
-DISTNAME =	Importer-0.025
-REVISION =	0
+DISTNAME =	Importer-0.026
+CPAN_AUTHOR =	EXODIST
 
 CATEGORIES =	devel
 
@@ -15,7 +15,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		cpan
 
 PKG_ARCH =		*
-
-CPAN_AUTHOR =		EXODIST
 
 .include <bsd.port.mk>
