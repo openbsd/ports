@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/08/20 18:00:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/21 17:46:37 naddy Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  adblocklibprivate                        0.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          0.0 # 5.13.2
