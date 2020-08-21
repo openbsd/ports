@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2020/07/20 11:34:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.42 2020/08/21 22:12:24 abieber Exp $
 bin/go
 bin/gofmt
 go/
@@ -454,6 +454,7 @@ go/misc/cgo/testgodefs/testdata/fieldtypedef.go
 go/misc/cgo/testgodefs/testdata/issue37479.go
 go/misc/cgo/testgodefs/testdata/issue37621.go
 go/misc/cgo/testgodefs/testdata/issue38649.go
+go/misc/cgo/testgodefs/testdata/issue39534.go
 go/misc/cgo/testgodefs/testdata/issue8478.go
 go/misc/cgo/testgodefs/testdata/main.go
 go/misc/cgo/testgodefs/testgodefs_test.go
@@ -577,6 +578,11 @@ go/misc/cgo/testshared/testdata/execgo/
 go/misc/cgo/testshared/testdata/execgo/exe.go
 go/misc/cgo/testshared/testdata/explicit/
 go/misc/cgo/testshared/testdata/explicit/explicit.go
+go/misc/cgo/testshared/testdata/gcdata/
+go/misc/cgo/testshared/testdata/gcdata/main/
+go/misc/cgo/testshared/testdata/gcdata/main/main.go
+go/misc/cgo/testshared/testdata/gcdata/p/
+go/misc/cgo/testshared/testdata/gcdata/p/p.go
 go/misc/cgo/testshared/testdata/global/
 go/misc/cgo/testshared/testdata/global/main.go
 go/misc/cgo/testshared/testdata/globallib/
@@ -599,6 +605,11 @@ go/misc/cgo/testshared/testdata/issue30768/
 go/misc/cgo/testshared/testdata/issue30768/issue30768lib/
 go/misc/cgo/testshared/testdata/issue30768/issue30768lib/lib.go
 go/misc/cgo/testshared/testdata/issue30768/x_test.go
+go/misc/cgo/testshared/testdata/issue39777/
+go/misc/cgo/testshared/testdata/issue39777/a/
+go/misc/cgo/testshared/testdata/issue39777/a/a.go
+go/misc/cgo/testshared/testdata/issue39777/b/
+go/misc/cgo/testshared/testdata/issue39777/b/b.go
 go/misc/cgo/testshared/testdata/trivial/
 go/misc/cgo/testshared/testdata/trivial/trivial.go
 go/misc/cgo/testsigfwd/
@@ -1640,6 +1651,9 @@ go/src/cmd/compile/internal/ssa/dom.go
 go/src/cmd/compile/internal/ssa/dom_test.go
 go/src/cmd/compile/internal/ssa/export_test.go
 go/src/cmd/compile/internal/ssa/flagalloc.go
+go/src/cmd/compile/internal/ssa/flags_amd64_test.s
+go/src/cmd/compile/internal/ssa/flags_arm64_test.s
+go/src/cmd/compile/internal/ssa/flags_test.go
 go/src/cmd/compile/internal/ssa/func.go
 go/src/cmd/compile/internal/ssa/func_test.go
 go/src/cmd/compile/internal/ssa/fuse.go
@@ -2468,6 +2482,7 @@ go/src/cmd/go/testdata/script/list_case_collision.txt
 go/src/cmd/go/testdata/script/list_compiled_imports.txt
 go/src/cmd/go/testdata/script/list_constraints.txt
 go/src/cmd/go/testdata/script/list_dedup_packages.txt
+go/src/cmd/go/testdata/script/list_err_stack.txt
 go/src/cmd/go/testdata/script/list_find.txt
 go/src/cmd/go/testdata/script/list_gofile_in_goroot.txt
 go/src/cmd/go/testdata/script/list_importmap.txt
@@ -2558,6 +2573,7 @@ go/src/cmd/go/testdata/script/mod_get_pseudo_prefix.txt
 go/src/cmd/go/testdata/script/mod_get_svn.txt
 go/src/cmd/go/testdata/script/mod_get_tags.txt
 go/src/cmd/go/testdata/script/mod_get_test.txt
+go/src/cmd/go/testdata/script/mod_get_too_many_redirects.txt
 go/src/cmd/go/testdata/script/mod_get_trailing_slash.txt
 go/src/cmd/go/testdata/script/mod_get_upgrade.txt
 go/src/cmd/go/testdata/script/mod_get_upgrade_pseudo.txt
@@ -3193,6 +3209,9 @@ go/src/cmd/link/testdata/testIndexMismatch/
 go/src/cmd/link/testdata/testIndexMismatch/a.go
 go/src/cmd/link/testdata/testIndexMismatch/b.go
 go/src/cmd/link/testdata/testIndexMismatch/main.go
+go/src/cmd/link/testdata/testPErsrc/
+go/src/cmd/link/testdata/testPErsrc/main.go
+go/src/cmd/link/testdata/testPErsrc/rsrc.syso
 go/src/cmd/nm/
 go/src/cmd/nm/doc.go
 go/src/cmd/nm/nm.go
@@ -4217,9 +4236,6 @@ go/src/crypto/ecdsa/testdata/
 go/src/crypto/ecdsa/testdata/SigVer.rsp.bz2
 go/src/crypto/ed25519/
 go/src/crypto/ed25519/ed25519.go
-go/src/crypto/ed25519/ed25519_noasm.go
-go/src/crypto/ed25519/ed25519_s390x.go
-go/src/crypto/ed25519/ed25519_s390x.s
 go/src/crypto/ed25519/ed25519_test.go
 go/src/crypto/ed25519/internal/
 go/src/crypto/ed25519/internal/edwards25519/
@@ -4498,11 +4514,11 @@ go/src/crypto/x509/
 go/src/crypto/x509/cert_pool.go
 go/src/crypto/x509/example_test.go
 go/src/crypto/x509/internal/
-go/src/crypto/x509/internal/macOS/
-go/src/crypto/x509/internal/macOS/corefoundation.go
-go/src/crypto/x509/internal/macOS/corefoundation.s
-go/src/crypto/x509/internal/macOS/security.go
-go/src/crypto/x509/internal/macOS/security.s
+go/src/crypto/x509/internal/macos/
+go/src/crypto/x509/internal/macos/corefoundation.go
+go/src/crypto/x509/internal/macos/corefoundation.s
+go/src/crypto/x509/internal/macos/security.go
+go/src/crypto/x509/internal/macos/security.s
 go/src/crypto/x509/name_constraints_test.go
 go/src/crypto/x509/pem_decrypt.go
 go/src/crypto/x509/pem_decrypt_test.go
@@ -4516,8 +4532,8 @@ go/src/crypto/x509/root_aix.go
 go/src/crypto/x509/root_bsd.go
 go/src/crypto/x509/root_cgo_darwin_amd64.go
 go/src/crypto/x509/root_darwin_amd64.go
-go/src/crypto/x509/root_darwin_arm64.go
-go/src/crypto/x509/root_darwin_arm64_gen.go
+go/src/crypto/x509/root_darwin_ios.go
+go/src/crypto/x509/root_darwin_ios_gen.go
 go/src/crypto/x509/root_darwin_test.go
 go/src/crypto/x509/root_js.go
 go/src/crypto/x509/root_linux.go
@@ -5075,7 +5091,7 @@ go/src/go/printer/testdata/expressions.input
 go/src/go/printer/testdata/expressions.raw
 go/src/go/printer/testdata/go2numbers.golden
 go/src/go/printer/testdata/go2numbers.input
-go/src/go/printer/testdata/go2numbers.stdfmt
+go/src/go/printer/testdata/go2numbers.norm
 go/src/go/printer/testdata/linebreaks.golden
 go/src/go/printer/testdata/linebreaks.input
 go/src/go/printer/testdata/parser.go
@@ -5254,14 +5270,21 @@ go/src/html/template/escape.go
 go/src/html/template/escape_test.go
 go/src/html/template/example_test.go
 go/src/html/template/examplefiles_test.go
+go/src/html/template/exec_test.go
 go/src/html/template/html.go
 go/src/html/template/html_test.go
 go/src/html/template/js.go
 go/src/html/template/js_test.go
 go/src/html/template/jsctx_string.go
+go/src/html/template/multi_test.go
 go/src/html/template/state_string.go
 go/src/html/template/template.go
 go/src/html/template/template_test.go
+go/src/html/template/testdata/
+go/src/html/template/testdata/file1.tmpl
+go/src/html/template/testdata/file2.tmpl
+go/src/html/template/testdata/tmpl1.tmpl
+go/src/html/template/testdata/tmpl2.tmpl
 go/src/html/template/transition.go
 go/src/html/template/transition_test.go
 go/src/html/template/url.go
@@ -6219,6 +6242,7 @@ go/src/net/iprawsock_posix.go
 go/src/net/iprawsock_test.go
 go/src/net/ipsock.go
 go/src/net/ipsock_plan9.go
+go/src/net/ipsock_plan9_test.go
 go/src/net/ipsock_posix.go
 go/src/net/ipsock_test.go
 go/src/net/listen_test.go
@@ -7170,6 +7194,7 @@ go/src/runtime/race/race_unix_test.go
 go/src/runtime/race/race_windows_amd64.syso
 go/src/runtime/race/race_windows_test.go
 go/src/runtime/race/sched_test.go
+go/src/runtime/race/syso_test.go
 go/src/runtime/race/testdata/
 go/src/runtime/race/testdata/atomic_test.go
 go/src/runtime/race/testdata/cgo_test.go
@@ -7641,7 +7666,6 @@ go/src/syscall/dirent_test.go
 go/src/syscall/dll_windows.go
 go/src/syscall/endian_big.go
 go/src/syscall/endian_little.go
-go/src/syscall/env_plan9.go
 go/src/syscall/env_unix.go
 go/src/syscall/env_windows.go
 go/src/syscall/errors_plan9.go
@@ -9902,6 +9926,7 @@ go/test/fixedbugs/issue33219.dir/c.go
 go/test/fixedbugs/issue33219.go
 go/test/fixedbugs/issue33275.go
 go/test/fixedbugs/issue33275_run.go
+go/test/fixedbugs/issue33308.go
 go/test/fixedbugs/issue33355.go
 go/test/fixedbugs/issue33386.go
 go/test/fixedbugs/issue33438.go
@@ -9976,7 +10001,11 @@ go/test/fixedbugs/issue38690.go
 go/test/fixedbugs/issue38746.go
 go/test/fixedbugs/issue38916.go
 go/test/fixedbugs/issue3925.go
+go/test/fixedbugs/issue39459.go
 go/test/fixedbugs/issue39472.go
+go/test/fixedbugs/issue39541.go
+go/test/fixedbugs/issue39651.go
+go/test/fixedbugs/issue40367.go
 go/test/fixedbugs/issue4066.go
 go/test/fixedbugs/issue4085a.go
 go/test/fixedbugs/issue4085b.go
