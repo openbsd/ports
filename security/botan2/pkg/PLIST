@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/05/18 13:17:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/08/21 23:29:18 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -208,6 +208,7 @@ include/botan-2/botan/polyn_gf2m.h
 include/botan-2/botan/pow_mod.h
 include/botan-2/botan/prf_tls.h
 include/botan-2/botan/prf_x942.h
+include/botan-2/botan/processor_rng.h
 include/botan-2/botan/psk_db.h
 include/botan-2/botan/psk_db_sql.h
 include/botan-2/botan/pssr.h
@@ -1069,6 +1070,10 @@ share/botan-2/data/x509/certstor/key03.pem
 share/botan-2/data/x509/certstor/key04.pem
 share/botan-2/data/x509/certstor/key05.pem
 share/botan-2/data/x509/certstor/key06.pem
+share/botan-2/data/x509/cve-2020-0601/
+share/botan-2/data/x509/cve-2020-0601/ca.pem
+share/botan-2/data/x509/cve-2020-0601/ee.pem
+share/botan-2/data/x509/cve-2020-0601/fake_ca.pem
 share/botan-2/data/x509/ecc/
 share/botan-2/data/x509/ecc/CSCA.CSCA.csca-germany.1.crt
 share/botan-2/data/x509/ecc/ecc_private_with_rfc5915_ext.pem
@@ -1128,6 +1133,10 @@ share/botan-2/data/x509/name_constraint/Root_IP_Name_Constraint.crt
 share/botan-2/data/x509/name_constraint/Valid_DNS_Name_Constraint.crt
 share/botan-2/data/x509/name_constraint/Valid_DN_Name_Constraint.crt
 share/botan-2/data/x509/name_constraint/Valid_IP_Name_Constraint.crt
+share/botan-2/data/x509/name_constraint_san/
+share/botan-2/data/x509/name_constraint_san/int.pem
+share/botan-2/data/x509/name_constraint_san/leaf.pem
+share/botan-2/data/x509/name_constraint_san/root.pem
 share/botan-2/data/x509/nist/
 share/botan-2/data/x509/nist/expected.txt
 share/botan-2/data/x509/nist/root.crl
@@ -1896,6 +1905,10 @@ share/botan-2/data/x509/pss_certs/99/root.crt
 share/botan-2/data/x509/pss_certs/Sources.txt
 share/botan-2/data/x509/pss_certs/expected.txt
 share/botan-2/data/x509/pss_certs/validation_times.txt
+share/botan-2/data/x509/v2-in-v1/
+share/botan-2/data/x509/v2-in-v1/int.pem
+share/botan-2/data/x509/v2-in-v1/leaf.pem
+share/botan-2/data/x509/v2-in-v1/root.pem
 share/botan-2/data/x509/x509test/
 share/botan-2/data/x509/x509test/InvalidExtendedKeyUsage.pem
 share/botan-2/data/x509/x509test/InvalidIntCAFlag.pem
