@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2020/06/12 12:32:41 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.34 2020/08/21 15:03:29 bluhm Exp $
 @conflict p5-Net-DNS-SEC-<1.01
 ${P5SITE}/Net/
 ${P5SITE}/Net/DNS/
@@ -34,6 +34,7 @@ ${P5SITE}/Net/DNS/RR/EUI64.pm
 ${P5SITE}/Net/DNS/RR/GPOS.pm
 ${P5SITE}/Net/DNS/RR/HINFO.pm
 ${P5SITE}/Net/DNS/RR/HIP.pm
+${P5SITE}/Net/DNS/RR/HTTPS.pm
 ${P5SITE}/Net/DNS/RR/IPSECKEY.pm
 ${P5SITE}/Net/DNS/RR/ISDN.pm
 ${P5SITE}/Net/DNS/RR/KEY.pm
@@ -67,6 +68,7 @@ ${P5SITE}/Net/DNS/RR/SOA.pm
 ${P5SITE}/Net/DNS/RR/SPF.pm
 ${P5SITE}/Net/DNS/RR/SRV.pm
 ${P5SITE}/Net/DNS/RR/SSHFP.pm
+${P5SITE}/Net/DNS/RR/SVCB.pm
 ${P5SITE}/Net/DNS/RR/TKEY.pm
 ${P5SITE}/Net/DNS/RR/TLSA.pm
 ${P5SITE}/Net/DNS/RR/TSIG.pm
@@ -118,6 +120,7 @@ ${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS::RR::GPOS.3p
 @man man/man3p/Net::DNS::RR::HINFO.3p
 @man man/man3p/Net::DNS::RR::HIP.3p
+@man man/man3p/Net::DNS::RR::HTTPS.3p
 @man man/man3p/Net::DNS::RR::IPSECKEY.3p
 @man man/man3p/Net::DNS::RR::ISDN.3p
 @man man/man3p/Net::DNS::RR::KEY.3p
@@ -151,6 +154,7 @@ ${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS::RR::SPF.3p
 @man man/man3p/Net::DNS::RR::SRV.3p
 @man man/man3p/Net::DNS::RR::SSHFP.3p
+@man man/man3p/Net::DNS::RR::SVCB.3p
 @man man/man3p/Net::DNS::RR::TKEY.3p
 @man man/man3p/Net::DNS::RR::TLSA.3p
 @man man/man3p/Net::DNS::RR::TSIG.3p
