@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.977 2020/08/20 07:01:02 solene Exp $
+# $OpenBSD: Makefile,v 1.978 2020/08/21 11:17:00 cwen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -142,6 +142,8 @@
      SUBDIR += p5-CGI-Session
      SUBDIR += p5-CGI-Session-Driver-memcached
      SUBDIR += p5-CGI-Simple
+     SUBDIR += p5-CGI-Struct
+     SUBDIR += p5-CGI-Struct-XS
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
      SUBDIR += p5-CSS-DOM
