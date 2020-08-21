@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_worker_net_wm_icon_h,v 1.1 2020/08/21 03:22:50 bcallah Exp $
+
+This needs to be unsigned for 32-bit.
+
+Index: src/worker_net_wm_icon.h
+--- src/worker_net_wm_icon.h.orig
++++ src/worker_net_wm_icon.h
+@@ -1,4 +1,4 @@
+-static const long worker_net_wm_icon_data[] = {
++static const unsigned long worker_net_wm_icon_data[] = {
+ 16, 16, 
+ 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 
+ 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 0xff0e5bd6, 

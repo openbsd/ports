@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_aguix_aguix_cc,v 1.1 2020/08/21 03:22:50 bcallah Exp $
+
+This needs to be unsigned for 32-bit.
+
+Index: src/aguix/aguix.cc
+--- src/aguix/aguix.cc.orig
++++ src/aguix/aguix.cc
+@@ -4373,14 +4373,14 @@ bool AGUIX::isModifierPressed( unsigned int mask )
+     return m_modifier_pressed & mask;
+ }
+ 
+-void AGUIX::setStandardIconData( const long *data,
++void AGUIX::setStandardIconData( const unsigned long *data,
+                                  size_t data_length )
+ {
+     m_net_wm_icon_data = data;
+     m_net_wm_icon_data_length = data_length;
+ }
+ 
+-bool AGUIX::getStandardIconData( const long **return_data,
++bool AGUIX::getStandardIconData( const unsigned long **return_data,
+                                  size_t *return_data_length ) const
+ {
+     if ( ! m_net_wm_icon_data ) return false;
