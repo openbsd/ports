@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2007 2020/08/19 02:18:26 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2008 2020/08/21 13:47:44 tracey Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -33,6 +33,7 @@
      SUBDIR += atk
      SUBDIR += atk2mm
      SUBDIR += atlas
+     SUBDIR += attinycore
      SUBDIR += autoconf
      SUBDIR += autoconf-archive
      SUBDIR += autogen
