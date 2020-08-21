@@ -1,12 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.6 2019/04/23 01:14:02 bluhm Exp $
+$OpenBSD: patch-setup_py,v 1.7 2020/08/21 18:38:12 bluhm Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -80,7 +80,7 @@ setup(
-         'scapy/tools',
-     ],
-     scripts=SCRIPTS,
+@@ -30,7 +30,7 @@ setup(
+     name='scapy',
+     version=__import__('scapy').VERSION,
+     packages=find_packages(),
 -    data_files=[('share/man/man1', ["doc/scapy.1"])],
 +    data_files=[('man/man1', ["doc/scapy.1"])],
      package_data={
