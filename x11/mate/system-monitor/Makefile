@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2020/03/25 15:02:51 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2020/08/22 08:22:33 robert Exp $
 
 COMMENT=		MATE system monitor
 
 MATE_PROJECT=		mate-system-monitor
-REVISION=		0
+MATE_VERSION=		1.24.1
 
 CATEGORIES=		sysutils
 
