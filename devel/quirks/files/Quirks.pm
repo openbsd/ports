@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1037 2020/08/22 09:06:36 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1038 2020/08/22 23:20:56 abieber Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1793,6 +1793,8 @@ my $obsolete_reason = {
 	'qca-gnupg' => 3,
 	'qca-ossl' => 3,
 	'keepassx' => 26,
+	'go-xlsx' => 7,
+	'go-check-v1' => 7,
 };
 
 # reasons for obsolete packages
