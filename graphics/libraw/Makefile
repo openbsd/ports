@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.44 2020/01/10 11:19:33 jca Exp $
+# $OpenBSD: Makefile,v 1.45 2020/08/22 08:21:40 rsadowski Exp $
 
 COMMENT =		library for reading RAW files
 
-DISTNAME =		LibRaw-0.19.5
+DISTNAME =		LibRaw-0.20.0
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
 CATEGORIES =		graphics
 
-SHARED_LIBS +=  raw                  4.0      # 15.0
-SHARED_LIBS +=  raw_r                4.0      # 15.0
+SHARED_LIBS +=  raw                  4.1      # 15.0
+SHARED_LIBS +=  raw_r                4.1      # 15.0
 
 HOMEPAGE =		https://www.libraw.org/
 
@@ -17,7 +16,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # LGPL v2.1 OR CDDL v1.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c jasper jpeg lcms2 m pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} c jasper jpeg lcms2 m z
 
 MASTER_SITES =		https://www.libraw.org/data/
 

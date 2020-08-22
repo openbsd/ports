@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/07/03 17:29:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/08/22 08:21:40 rsadowski Exp $
 @bin bin/4channels
 @bin bin/dcraw_emu
 @bin bin/dcraw_half
@@ -7,6 +7,7 @@
 @bin bin/multirender_test
 @bin bin/postprocessing_benchmark
 @bin bin/raw-identify
+@bin bin/rawtextdump
 @bin bin/simple_dcraw
 @bin bin/unprocessed_raw
 include/libraw/
@@ -17,10 +18,10 @@ include/libraw/libraw_datastream.h
 include/libraw/libraw_internal.h
 include/libraw/libraw_types.h
 include/libraw/libraw_version.h
-lib/libraw.a
+@static-lib lib/libraw.a
 lib/libraw.la
 @lib lib/libraw.so.${LIBraw_VERSION}
-lib/libraw_r.a
+@static-lib lib/libraw_r.a
 lib/libraw_r.la
 @lib lib/libraw_r.so.${LIBraw_r_VERSION}
 lib/pkgconfig/libraw.pc

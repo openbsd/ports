@@ -1,4 +1,4 @@
-$OpenBSD: patch-libraw_r_pc_in,v 1.1 2020/01/10 11:19:33 jca Exp $
+$OpenBSD: patch-libraw_r_pc_in,v 1.2 2020/08/22 08:21:40 rsadowski Exp $
 
 Do not hardcode -lstdc++ (symbol mismatch with libc++abi and libestdc++).
 
@@ -11,4 +11,4 @@ Index: libraw_r.pc.in
  Version: @PACKAGE_VERSION@
 -Libs: -L${libdir} -lraw_r -lstdc++@PC_OPENMP@
 +Libs: -L${libdir} -lraw_r@PC_OPENMP@
- Cflags: -I${includedir}/libraw
+ Cflags: -I${includedir}/libraw -I${includedir}
