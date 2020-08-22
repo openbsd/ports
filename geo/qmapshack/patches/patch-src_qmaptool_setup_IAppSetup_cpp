@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_qmaptool_setup_IAppSetup_cpp,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
+
+Index: src/qmaptool/setup/IAppSetup.cpp
+--- src/qmaptool/setup/IAppSetup.cpp.orig
++++ src/qmaptool/setup/IAppSetup.cpp
+@@ -56,7 +56,7 @@ IAppSetup& IAppSetup::createInstance(QObject * parent)
+     }
+ #if defined(Q_OS_MAC)
+     new CAppSetupMac(parent);
+-#elif defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(__FreeBSD_kernel__) || defined(__GNU__) || defined(Q_OS_CYGWIN)
++#elif defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(__FreeBSD_kernel__) || defined(__GNU__) || defined(Q_OS_CYGWIN) || defined(Q_OS_OPENBSD)
+     new CAppSetupLinux(parent);
+ #elif defined (Q_OS_WIN32)
+     new CAppSetupWin(parent);

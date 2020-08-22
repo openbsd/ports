@@ -1,0 +1,83 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
+@bin bin/qmapshack
+@bin bin/qmaptool
+@bin bin/qmt_map2jnx
+@bin bin/qmt_rgb2pct
+@man man/man1/qmapshack.1
+@man man/man1/qmaptool.1
+@man man/man1/qmt_map2jnx.1
+@man man/man1/qmt_rgb2pct.1
+share/applications/qmapshack.desktop
+share/applications/qmaptool.desktop
+share/doc/qmapshack/
+share/doc/qmapshack/HTML/
+share/doc/qmapshack/HTML/QMSHelp.qch
+share/doc/qmapshack/HTML/QMSHelp.qhc
+share/doc/qmapshack/HTML/QMTHelp.qch
+share/doc/qmapshack/HTML/QMTHelp.qhc
+share/icons/hicolor/128x128/apps/QMapShack.png
+share/icons/hicolor/128x128/apps/QMapTool.png
+share/icons/hicolor/16x16/apps/QMapShack.png
+share/icons/hicolor/16x16/apps/QMapTool.png
+share/icons/hicolor/192x192/apps/QMapShack.png
+share/icons/hicolor/192x192/apps/QMapTool.png
+share/icons/hicolor/22x22/apps/QMapShack.png
+share/icons/hicolor/22x22/apps/QMapTool.png
+share/icons/hicolor/24x24/apps/QMapShack.png
+share/icons/hicolor/24x24/apps/QMapTool.png
+share/icons/hicolor/256x256/apps/QMapShack.png
+share/icons/hicolor/256x256/apps/QMapTool.png
+share/icons/hicolor/32x32/apps/QMapShack.png
+share/icons/hicolor/32x32/apps/QMapTool.png
+share/icons/hicolor/36x36/apps/QMapShack.png
+share/icons/hicolor/36x36/apps/QMapTool.png
+share/icons/hicolor/40x40/
+share/icons/hicolor/40x40/apps/
+share/icons/hicolor/40x40/apps/QMapShack.png
+share/icons/hicolor/40x40/apps/QMapTool.png
+share/icons/hicolor/42x42/
+share/icons/hicolor/42x42/apps/
+share/icons/hicolor/42x42/apps/QMapShack.png
+share/icons/hicolor/42x42/apps/QMapTool.png
+share/icons/hicolor/48x48/apps/QMapShack.png
+share/icons/hicolor/48x48/apps/QMapTool.png
+share/icons/hicolor/512x512/apps/QMapShack.png
+share/icons/hicolor/512x512/apps/QMapTool.png
+share/icons/hicolor/64x64/apps/QMapShack.png
+share/icons/hicolor/64x64/apps/QMapTool.png
+share/icons/hicolor/72x72/apps/QMapShack.png
+share/icons/hicolor/72x72/apps/QMapTool.png
+share/icons/hicolor/80x80/
+share/icons/hicolor/80x80/apps/
+share/icons/hicolor/80x80/apps/QMapShack.png
+share/icons/hicolor/80x80/apps/QMapTool.png
+share/icons/hicolor/8x8/
+share/icons/hicolor/8x8/apps/
+share/icons/hicolor/8x8/apps/QMapShack.png
+share/icons/hicolor/8x8/apps/QMapTool.png
+share/icons/hicolor/96x96/apps/QMapShack.png
+share/icons/hicolor/96x96/apps/QMapTool.png
+share/pixmaps/
+share/pixmaps/QMapShack.png
+share/pixmaps/QMapTool.png
+share/qmapshack/
+share/qmapshack/translations/
+share/qmapshack/translations/qmapshack_ca.qm
+share/qmapshack/translations/qmapshack_cs.qm
+share/qmapshack/translations/qmapshack_de.qm
+share/qmapshack/translations/qmapshack_es.qm
+share/qmapshack/translations/qmapshack_fr.qm
+share/qmapshack/translations/qmapshack_it.qm
+share/qmapshack/translations/qmapshack_nl.qm
+share/qmapshack/translations/qmapshack_ru.qm
+share/qmaptool/
+share/qmaptool/translations/
+share/qmaptool/translations/qmaptool_de.qm
+share/qmaptool/translations/qmaptool_es.qm
+share/qmaptool/translations/qmaptool_it.qm
+share/qmaptool/translations/qmaptool_ru.qm
+share/qmt_rgb2pct/
+share/qmt_rgb2pct/translations/
+share/qmt_rgb2pct/translations/qmt_rgb2pct_de.qm
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

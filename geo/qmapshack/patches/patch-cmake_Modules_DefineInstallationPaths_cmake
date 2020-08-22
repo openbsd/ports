@@ -1,0 +1,25 @@
+$OpenBSD: patch-cmake_Modules_DefineInstallationPaths_cmake,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
+
+Install man pages and documentation in correct directories
+
+Index: cmake/Modules/DefineInstallationPaths.cmake
+--- cmake/Modules/DefineInstallationPaths.cmake.orig
++++ cmake/Modules/DefineInstallationPaths.cmake
+@@ -59,7 +59,7 @@ if (UNIX)
+     FORCE
+   )
+   SET(HTML_INSTALL_DIR
+-    "${DATA_INSTALL_PREFIX}/doc/HTML"
++    "${DATA_INSTALL_PREFIX}/doc/qmapshack/HTML"
+     CACHE PATH "The HTML install dir for documentation (default data/doc/html)"
+     FORCE
+   )
+@@ -97,7 +97,7 @@ if (UNIX)
+     FORCE
+   )
+   SET(MAN_INSTALL_DIR
+-    "${SHARE_INSTALL_PREFIX}/man"
++    "${EXEC_INSTALL_PREFIX}/man"
+     CACHE PATH "The ${_PROJECT_NAME} man install dir (default prefix/man)"
+     FORCE
+   )

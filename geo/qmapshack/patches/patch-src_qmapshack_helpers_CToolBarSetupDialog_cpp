@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_qmapshack_helpers_CToolBarSetupDialog_cpp,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
+
+Index: src/qmapshack/helpers/CToolBarSetupDialog.cpp
+--- src/qmapshack/helpers/CToolBarSetupDialog.cpp.orig
++++ src/qmapshack/helpers/CToolBarSetupDialog.cpp
+@@ -19,6 +19,7 @@
+ 
+ #include "helpers/CToolBarConfig.h"
+ #include "helpers/CToolBarSetupDialog.h"
++#include <QtWidgets>
+ 
+ #include <QAction>
+ 

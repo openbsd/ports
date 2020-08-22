@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_qmapshack_setup_IAppSetup_cpp,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
+
+Index: src/qmapshack/setup/IAppSetup.cpp
+--- src/qmapshack/setup/IAppSetup.cpp.orig
++++ src/qmapshack/setup/IAppSetup.cpp
+@@ -36,7 +36,7 @@ IAppSetup* IAppSetup::getPlatformInstance()
+     {
+ #if defined(Q_OS_MAC)
+         instance = new CAppSetupMac();
+-#elif defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(__FreeBSD_kernel__) || defined(__GNU__)
++#elif defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(__FreeBSD_kernel__) || defined(__GNU__) || defined (Q_OS_OPENBSD)
+         instance = new CAppSetupLinux();
+ #elif defined (Q_OS_WIN32)
+         instance = new CAppSetupWin();
