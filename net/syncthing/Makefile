@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2020/05/17 16:10:25 edd Exp $
+# $OpenBSD: Makefile,v 1.31 2020/08/22 21:27:00 edd Exp $
+
+BROKEN-aarch64 =golang.org/x/Sys/cpu panic (illegal instruction)
 
 COMMENT =	open decentralized synchronization utility
 
-V =		1.5.0
-DISTNAME =	syncthing-${V}
-DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
+# Release candidate used so as to fix critical quic-go problem.
+V =		1.9.0
+DISTNAME =	syncthing-${V}rc4
+DISTFILES =	syncthing-source-v${V}-rc.4${EXTRACT_SUFX}
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
@@ -16,7 +19,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES = https://github.com/syncthing/syncthing/releases/download/v${V}/
+MASTER_SITES = https://github.com/syncthing/syncthing/releases/download/v${V}-rc.4/
 
 WRKDIST =		${WRKDIR}/syncthing
 WRKSRC =		${WRKDIR}/go/src/github.com/syncthing/syncthing

@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_go,v 1.11 2020/01/03 17:57:35 edd Exp $
+$OpenBSD: patch-build_go,v 1.12 2020/08/22 21:27:01 edd Exp $
 Index: build.go
 --- build.go.orig
 +++ build.go
@@ -23,12 +23,12 @@ Index: build.go
  }
  
  // These are repos we need to clone to run "go generate"
-@@ -466,7 +480,7 @@ func appendParameters(args []string, tags []string, pk
+@@ -527,7 +541,7 @@ func appendParameters(args []string, tags []string, pk
  
  	if !debugBinary {
  		// Regular binaries get version tagged and skip some debug symbols
--		args = append(args, "-ldflags", ldflags(path.Base(pkg)))
-+		args = append(args, "-x", "-ldflags", ldflags(path.Base(pkg)))
+-		args = append(args, "-ldflags", ldflags(tags))
++		args = append(args, "-x", "-ldflags", ldflags(tags))
  	} else {
  		// -gcflags to disable optimizations and inlining. Skip -ldflags
  		// because `Could not launch program: decoding dwarf section info at
