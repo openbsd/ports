@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/26 10:40:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/08/22 14:34:29 jca Exp $
 
 COMMENT=	online banking interface and financial data framework
 
 DISTNAME=	aqbanking-6.2.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	aqbanking            3.0      # 39.2
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=		devel/gmp \
 			security/xmlsec
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		gnu
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-release=yes
 
