@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2020/08/22 08:40:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2020/08/22 08:41:40 rsadowski Exp $
+
+#BROKEN = Connection Error: Unable to connect to server
 
 COMMENT=	multiplatform Jabber client
 
