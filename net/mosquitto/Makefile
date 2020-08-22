@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2020/08/14 17:19:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2020/08/22 13:55:07 jasper Exp $
 
 COMMENT =		opensource MQTT broker
 
-DISTNAME =		mosquitto-1.6.11
+DISTNAME =		mosquitto-1.6.12
 
 SHARED_LIBS +=  mosquitto                 1.0 # 1.5
 SHARED_LIBS +=  mosquittopp               1.0 # 1.5
