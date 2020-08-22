@@ -1,77 +1,48 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/08/22 08:40:40 rsadowski Exp $
 
 COMMENT=	multiplatform Jabber client
 
-DISTNAME=	psi-0.15
-REVISION=	11
+DISTNAME=	psi-1.4
 CATEGORIES=	net
 
 HOMEPAGE=	https://psi-im.org/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psi/}
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psi/Psi/1.4/}
+EXTRACT_SUFX=	.tar.xz
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE QtDBus QtGui QtNetwork QtXml SM X11 Xext Xi Xinerama
-WANTLIB += Xrender Xss c enchant fontconfig freetype glib-2.0
-WANTLIB += gmodule-2.0 iconv intl m pthread qca ${COMPILER_LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras Qt5Xml
+WANTLIB += SM X11 Xext c hunspell-1.6 idn m qca-qt5 xcb z
 
-COMPILER =		base-clang ports-gcc base-gcc
+MODULES=		devel/cmake \
+			x11/qt5
 
-MODULES=		x11/qt4
+LIB_DEPENDS=		devel/libidn \
+			security/qca-qt5 \
+			textproc/hunspell \
+			x11/qt5/qtmultimedia \
+			x11/qt5/qtsvg \
+			x11/qt5/qtwebengine \
+			x11/qt5/qtx11extras
 
-USE_GMAKE=		Yes
-
-LIB_DEPENDS=		security/qca \
-			textproc/enchant
 RUN_DEPENDS=		devel/desktop-file-utils \
-			security/qca,-gnupg \
-			security/qca,-ossl \
 			x11/gtk+3,-guic
 
-CONFIGURE_STYLE=	simple
-
-CONFIGURE_ARGS+=	--prefix=${LOCALBASE} \
-			--qtdir=${MODQT4_QTDIR} \
-			--disable-growl
+CONFIGURE_ARGS=		-DUSE_CCACHE=OFF
 
 # For QSettings to write its setup
 PORTHOME=		${WRKDIST}
 
 NO_TEST=		Yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/psi ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/psi
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/psi
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/psi
-	cp -R ${WRKSRC}/iconsets ${PREFIX}/share/psi
-	cp -R ${WRKSRC}/sound ${PREFIX}/share/psi
-	cp -R ${WRKSRC}/certs ${PREFIX}/share/psi
-
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/psi.desktop ${PREFIX}/share/applications/
-
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/16x16/apps
-	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_16.png \
-		${PREFIX}/share/icons/hicolor/16x16/apps/psi.png
-
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/32x32/apps
-	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_32.png \
-		${PREFIX}/share/icons/hicolor/32x32/apps/psi.png
-
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_48.png \
-		${PREFIX}/share/icons/hicolor/48x48/apps/psi.png
-
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/64x64/apps
-	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_64.png \
-		${PREFIX}/share/icons/hicolor/64x64/apps/psi.png
-
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/128x128/apps
-	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/logo_128.png \
-		${PREFIX}/share/icons/hicolor/128x128/apps/psi.png
+post-patch:
+	# Avoid conflict with C++20 <version> by adding .txt suffix
+	mv ${WRKSRC}/version ${WRKSRC}/version.txt
+	sed -i 's,SOURCE_DIR}/version,&.txt,' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
