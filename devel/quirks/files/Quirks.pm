@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1036 2020/08/22 08:48:38 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1037 2020/08/22 09:06:36 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1792,6 +1792,7 @@ my $obsolete_reason = {
 	'qca' => 3,
 	'qca-gnupg' => 3,
 	'qca-ossl' => 3,
+	'keepassx' => 26,
 };
 
 # reasons for obsolete packages
@@ -1822,6 +1823,7 @@ my @msg = (
 	"no longer maintained upstream, became commercial over ten years ago", #23
 	"no longer maintained upstream, suggest qbirthday", #24
 	"no longer maintained upstream, suggest qmapshack", #25
+	"outdated Qt4 application, suggest keepassxc", #26
 );
 
 # ->is_base_system($handle, $state):
