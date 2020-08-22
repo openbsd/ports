@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2020/08/22 14:34:29 jca Exp $
+# $OpenBSD: Makefile,v 1.26 2020/08/22 19:02:08 rsadowski Exp $
 
 COMMENT=	online banking interface and financial data framework
 
-DISTNAME=	aqbanking-6.2.1
-REVISION=	1
+DISTNAME=	aqbanking-6.2.2
 
 SHARED_LIBS +=	aqbanking            3.0      # 39.2
 

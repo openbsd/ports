@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/07/16 05:01:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/08/22 19:02:08 rsadowski Exp $
 @bin bin/aqbanking-cli
 bin/aqbanking-config
 @bin bin/aqebics-tool
@@ -60,7 +60,6 @@ lib/aqbanking/plugins/44/providers/aqhbci.xml
 lib/aqbanking/plugins/44/providers/aqnone.xml
 lib/aqbanking/plugins/44/providers/aqofxconnect.xml
 lib/aqbanking/plugins/44/providers/aqpaypal.xml
-lib/cmake/
 lib/cmake/aqbanking-6.2/
 lib/cmake/aqbanking-6.2/aqbanking-config-version.cmake
 lib/cmake/aqbanking-6.2/aqbanking-config.cmake
@@ -68,7 +67,6 @@ lib/cmake/aqbanking-6.2/aqbanking-config.cmake
 lib/libaqbanking.la
 @lib lib/libaqbanking.so.${LIBaqbanking_VERSION}
 lib/pkgconfig/aqbanking.pc
-share/aclocal/
 share/aclocal/aqbanking.m4
 share/aqbanking/
 share/aqbanking/aqbanking/
@@ -283,7 +281,4 @@ share/doc/aqbanking/AUTHORS
 share/doc/aqbanking/COPYING
 share/doc/aqbanking/ChangeLog
 share/doc/aqbanking/README
-share/locale/
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/aqbanking.mo
