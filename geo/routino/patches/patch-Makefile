@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/08/22 06:01:08 kirby Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -24,7 +24,7 @@ include Makefile.conf
+ 
+ # Sub-directories and sub-makefiles
+ 
+-SUBDIRS=src xml doc web extras python
++SUBDIRS=src xml doc web extras
+ 
+ ########
+ 

@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/22 06:01:08 kirby Exp $
+@bin bin/filedumper
+@bin bin/filedumper-slim
+@bin bin/filedumperx
+@bin bin/planetsplitter
+@bin bin/planetsplitter-slim
+@bin bin/router
+@bin bin/router+lib
+@bin bin/router+lib-slim
+@bin bin/router-slim
+include/routino.h
+@lib lib/libroutino-slim.so.${LIBroutino-slim_VERSION}
+@lib lib/libroutino.so.${LIBroutino_VERSION}
+share/doc/routino/
+share/doc/routino/ALGORITHM.txt
+share/doc/routino/CONFIGURATION.txt
+share/doc/routino/DATA.txt
+share/doc/routino/DATALIFE.txt
+share/doc/routino/INSTALL-MS-WIN.txt
+share/doc/routino/INSTALL.txt
+share/doc/routino/LIBRARY.txt
+share/doc/routino/LIMITS.txt
+share/doc/routino/NEWS.txt
+share/doc/routino/OUTPUT.txt
+share/doc/routino/README.txt
+share/doc/routino/TAGGING.txt
+share/doc/routino/USAGE.txt
+share/doc/routino/agpl-3.0.txt
+share/doc/routino/html/
+share/doc/routino/html/algorithm.html
+share/doc/routino/html/configuration.html
+share/doc/routino/html/data.html
+share/doc/routino/html/index.html
+share/doc/routino/html/installation-ms-windows.html
+share/doc/routino/html/installation.html
+share/doc/routino/html/library.html
+share/doc/routino/html/limits.html
+share/doc/routino/html/output.html
+share/doc/routino/html/readme.html
+share/doc/routino/html/style.css
+share/doc/routino/html/tagging.html
+share/doc/routino/html/usage.html
+share/routino/
+share/routino/profiles.xml
+share/routino/tagging-drive.xml
+share/routino/tagging-ride.xml
+share/routino/tagging-walk.xml
+share/routino/tagging.xml
+share/routino/translations.xml

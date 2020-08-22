@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_conf,v 1.1.1.1 2020/08/22 06:01:08 kirby Exp $
+Index: Makefile.conf
+--- Makefile.conf.orig
++++ Makefile.conf
+@@ -45,11 +45,11 @@ endif
+ # Installation locations (edit if required)
+ 
+ ifneq ($(HOST),MINGW)
+-  prefix=/usr/local
++  prefix=${TRUEPREFIX}
+   bindir=$(prefix)/bin
+   incdir=$(prefix)/include
+   libdir=$(prefix)/lib
+-  docdir=$(prefix)/doc/routino
++  docdir=$(prefix)/share/doc/routino
+   datadir=$(prefix)/share/routino
+ else
+   prefix="c:/Program Files/Routino"
+@@ -133,8 +133,8 @@ endif
+ 
+ # Extra flags for compiling libroutino shared library (SONAME)
+ ifeq ($(HOST),UNIX)
+-  LDFLAGS_SONAME=-Wl,-soname=libroutino.so.$(SOVERSION)
+-  LDFLAGS_SLIM_SONAME=-Wl,-soname=libroutino-slim.so.$(SOVERSION)
++  LDFLAGS_SONAME=-Wl,-soname=libroutino.so.${libroutino_ltversion}
++  LDFLAGS_SLIM_SONAME=-Wl,-soname=libroutino-slim.so.${libroutino_slim_ltversion}
+ endif
+ 
+ # Put the current directory in the shared library path for the router using libroutino
