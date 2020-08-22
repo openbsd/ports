@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2008 2020/08/21 13:47:44 tracey Exp $
+# $OpenBSD: Makefile,v 1.2009 2020/08/22 23:02:54 abieber Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -174,7 +174,6 @@
      SUBDIR += gmake
      SUBDIR += gmc4cc
      SUBDIR += gmp
-     SUBDIR += go-check-v1
      SUBDIR += go-goptlib
      SUBDIR += go-sys
      SUBDIR += go-tools
