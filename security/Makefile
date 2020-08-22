@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.586 2020/08/13 03:10:37 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.587 2020/08/22 08:45:48 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -344,7 +344,6 @@
      SUBDIR += py-vivisect
      SUBDIR += py-viv_utils
      SUBDIR += py-yaswfp
-     SUBDIR += qca
      SUBDIR += qca-qt5
      SUBDIR += qtkeychain
      SUBDIR += radiusniff
