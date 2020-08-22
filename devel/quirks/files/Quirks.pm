@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1035 2020/08/22 06:44:00 kirby Exp $
+# $OpenBSD: Quirks.pm,v 1.1036 2020/08/22 08:48:38 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1789,6 +1789,9 @@ my $obsolete_reason = {
 	'uim-qt4' => 1,
 	'dbusmenu-qt' => 5,
 	'qlandkartegt' => 25,
+	'qca' => 3,
+	'qca-gnupg' => 3,
+	'qca-ossl' => 3,
 };
 
 # reasons for obsolete packages
