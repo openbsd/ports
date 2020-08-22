@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2020/08/22 19:02:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2020/08/22 20:11:53 naddy Exp $
 
 COMMENT=	online banking interface and financial data framework
 
@@ -17,7 +17,7 @@ WANTLIB += c ffi gcrypt gmp gnutls gpg-error gwenhywfar hogweed
 WANTLIB += iconv idn2 intl ltdl lzma m nettle p11-kit pthread
 WANTLIB += tasn1 unistring xml2 xmlsec1 xslt z
 
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/328/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/334/
 
 BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		devel/gmp \
