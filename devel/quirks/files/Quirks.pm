@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1034 2020/08/21 13:48:05 edd Exp $
+# $OpenBSD: Quirks.pm,v 1.1035 2020/08/22 06:44:00 kirby Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1788,6 +1788,7 @@ my $obsolete_reason = {
 	'uim-qt' => 1,
 	'uim-qt4' => 1,
 	'dbusmenu-qt' => 5,
+	'qlandkartegt' => 25,
 };
 
 # reasons for obsolete packages
@@ -1817,6 +1818,7 @@ my @msg = (
 	"the original GeoIP database is end of life; use libmaxminddb/GeoIP2", #22
 	"no longer maintained upstream, became commercial over ten years ago", #23
 	"no longer maintained upstream, suggest qbirthday", #24
+	"no longer maintained upstream, suggest qmapshack", #25
 );
 
 # ->is_base_system($handle, $state):
