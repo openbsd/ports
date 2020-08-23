@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/04/05 13:22:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/08/23 08:14:34 ajacoutot Exp $
+@conflict py-distutils-extra-*
+@pkgpath devel/py-distutils-extra
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/${MODPY_PYCACHE}/

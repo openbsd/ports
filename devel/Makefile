@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2009 2020/08/22 23:02:54 abieber Exp $
+# $OpenBSD: Makefile,v 1.2010 2020/08/23 08:14:33 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1424,7 +1424,6 @@
      SUBDIR += py-dill,python3
      SUBDIR += py-dispatcher
      SUBDIR += py-dispatcher,python3
-     SUBDIR += py-distutils-extra
      SUBDIR += py-distutils-extra,python3
      SUBDIR += py-docopt
      SUBDIR += py-docopt,python3
