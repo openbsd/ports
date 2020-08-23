@@ -1,11 +1,11 @@
-$OpenBSD: patch-lisp_vc_vc_el,v 1.4 2019/04/22 16:34:46 jca Exp $
+$OpenBSD: patch-lisp_vc_vc_el,v 1.5 2020/08/23 09:55:01 jca Exp $
 
 Drop messages that slow down VC with big repositories.
 
 Index: lisp/vc/vc.el
 --- lisp/vc/vc.el.orig
 +++ lisp/vc/vc.el
-@@ -2940,13 +2940,11 @@ to provide the `find-revision' operation instead."
+@@ -3135,13 +3135,11 @@ to provide the `find-revision' operation instead."
  (defun vc-file-tree-walk (dirname func &rest args)
    "Walk recursively through DIRNAME.
  Invoke FUNC f ARGS on each VC-managed file f underneath it."

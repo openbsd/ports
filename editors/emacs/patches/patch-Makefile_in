@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2019/04/22 16:34:46 jca Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2020/08/23 09:55:01 jca Exp $
 
 - don't compress man and info pages.
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -663,7 +663,7 @@ install-info: info
+@@ -671,7 +671,7 @@ install-info: info
  	      for f in `ls $$elt $$elt-[1-9] $$elt-[1-9][0-9] 2>/dev/null`; do \
  	       (cd "$${thisdir}"; \
  	        ${INSTALL_DATA} ${srcdir}/info/$$f "$(DESTDIR)${infodir}/$$f"); \
@@ -14,7 +14,7 @@ Index: Makefile.in
  	        rm -f "$(DESTDIR)${infodir}/$$f.gz"; \
  	        ${GZIP_PROG} -9n "$(DESTDIR)${infodir}/$$f"; \
  	      done; \
-@@ -687,7 +687,7 @@ install-man:
+@@ -695,7 +695,7 @@ install-man:
  	  dest=`echo "$${page}" | sed -e 's/\.1$$//' -e '$(TRANSFORM)'`.1; \
  	  (cd "$${thisdir}"; \
  	   ${INSTALL_DATA} ${mansrcdir}/$${page} "$(DESTDIR)${man1dir}/$${dest}"); \

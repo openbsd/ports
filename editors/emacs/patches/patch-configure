@@ -1,6 +1,4 @@
-$OpenBSD: patch-configure,v 1.19 2020/07/03 17:00:42 jca Exp $
-
-Use ld -Z conditionally.
+$OpenBSD: patch-configure,v 1.20 2020/08/23 09:55:01 jca Exp $
 
 Use posix_openpt(3).
 https://debbugs.gnu.org/cgi/bugreport.cgi?bug=42059
@@ -8,18 +6,7 @@ https://debbugs.gnu.org/cgi/bugreport.cgi?bug=42059
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9263,9 +9263,7 @@ case "$opsys" in
-    ;;
- 
-   openbsd)
--   ## Han Boetes <han@boetes.org> says this is necessary,
--   ## otherwise Emacs dumps core on elf systems.
--   LD_SWITCH_SYSTEM="-Z"
-+   LD_SWITCH_SYSTEM="${EMACS_LD_SWITCH_SYSTEM}"
-    ;;
- esac
- 
-@@ -18602,12 +18600,12 @@ case $opsys in
+@@ -19668,12 +19668,12 @@ case $opsys in
  
      ;;
  
