@@ -7,4 +7,4 @@ Usage requires setting the following in the environment:
 export XMODIFIERS=@im=uim
 
 Several toolkit-bridge packages are available:
-uim-gtk, uim-gtk3, uim-kde, uim-qt, uim-qt4
+uim-gtk, uim-gtk3
