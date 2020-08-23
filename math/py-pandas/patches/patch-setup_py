@@ -1,0 +1,17 @@
+$OpenBSD: patch-setup_py,v 1.1 2020/08/23 09:29:01 bket Exp $
+
+Fix Py38 build issue. Adapted from
+https://github.com/pandas-dev/pandas/pull/33431
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -433,7 +433,7 @@ if is_platform_windows():
+         extra_compile_args.append("/Z7")
+         extra_link_args.append("/DEBUG")
+ else:
+-    extra_compile_args = ["-Werror"]
++    extra_compile_args = ["-Werror", "-Wno-error=deprecated-declarations"]
+     extra_link_args = []
+     if debugging_symbols_requested:
+         extra_compile_args.append("-g")
