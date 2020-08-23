@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/02/09 17:55:28 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/08/23 22:00:39 abieber Exp $
 @bin bin/luakit
 lib/luakit/
-lib/luakit/luakit.so
+@so lib/luakit/luakit.so
 @man man/man1/luakit.1
 share/applications/luakit.desktop
 share/doc/luakit/
