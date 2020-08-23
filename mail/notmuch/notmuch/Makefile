@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/08/13 18:21:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/23 22:16:02 sthen Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
@@ -26,6 +26,7 @@ RUN_DEPENDS-emacs =	devel/desktop-file-utils \
 			${FULLPKGNAME-main}:${FULLPKGPATH-main}
 
 BUILD_DEPENDS =		devel/doxygen \
+			devel/py-cffi${MODPY_FLAVOR} \
 			editors/emacs,gtk3 \
 			security/gnupg2 \
 			shells/bash \
