@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/08/23 11:20:33 cwen Exp $
+
+BROKEN-powerpc =	gnushogi hangs during the build since clang-10
 
 COMMENT=	GNU version of Shogi
 
