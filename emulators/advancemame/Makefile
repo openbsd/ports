@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2020/04/15 13:31:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.18 2020/08/23 10:56:39 cwen Exp $
+
+BROKEN-powerpc =	clang-10 hangs indefinitely
 
 COMMENT =	MAME port with advanced video support for monitors and TVs
 
