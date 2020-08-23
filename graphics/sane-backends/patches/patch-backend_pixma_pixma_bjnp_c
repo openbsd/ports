@@ -1,12 +1,14 @@
-$OpenBSD: patch-backend_pixma_pixma_bjnp_c,v 1.1 2020/08/04 12:59:41 stsp Exp $
+$OpenBSD: patch-backend_pixma_pixma_bjnp_c,v 1.2 2020/08/23 15:52:11 ajacoutot Exp $
+
 Fix segfault during 'scanimage -L' if e.g. a "pflog0" interface exists.
 Address family AF_LINK is not expected by prepare_socket() and sa_size().
 Crashes during memcpy( &local_sa_copy, local_sa, sa_size(local_sa) );
 because sa_size() returns a fallback value that doesn't match the actual size.
+
 Index: backend/pixma/pixma_bjnp.c
 --- backend/pixma/pixma_bjnp.c.orig
 +++ backend/pixma/pixma_bjnp.c
-@@ -2078,6 +2078,11 @@ sanei_bjnp_find_devices (const char **conf_devices,
+@@ -2115,6 +2115,11 @@ sanei_bjnp_find_devices (const char **conf_devices,
      while ((no_sockets < BJNP_SOCK_MAX) && (interface != NULL))
        {
          if ( ! (interface -> ifa_flags & IFF_POINTOPOINT) &&

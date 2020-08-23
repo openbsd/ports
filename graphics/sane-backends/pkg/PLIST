@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/02/08 13:35:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/08/23 15:52:11 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -27,6 +27,7 @@ lib/sane/
 @so lib/sane/libsane-canon.so
 @so lib/sane/libsane-canon630u.so
 @so lib/sane/libsane-canon_dr.so
+@so lib/sane/libsane-canon_lide70.so
 @so lib/sane/libsane-cardscan.so
 @so lib/sane/libsane-coolscan.so
 @so lib/sane/libsane-coolscan2.so
@@ -115,6 +116,7 @@ lib/sane/
 @man man/man5/sane-canon.5
 @man man/man5/sane-canon630u.5
 @man man/man5/sane-canon_dr.5
+@man man/man5/sane-canon_lide70.5
 @man man/man5/sane-cardscan.5
 @man man/man5/sane-coolscan.5
 @man man/man5/sane-coolscan2.5
@@ -327,6 +329,8 @@ share/examples/sane-backends/sane.d/canon630u.conf
 @sample ${SYSCONFDIR}/sane.d/canon630u.conf
 share/examples/sane-backends/sane.d/canon_dr.conf
 @sample ${SYSCONFDIR}/sane.d/canon_dr.conf
+share/examples/sane-backends/sane.d/canon_lide70.conf
+@sample ${SYSCONFDIR}/sane.d/canon_lide70.conf
 share/examples/sane-backends/sane.d/cardscan.conf
 @sample ${SYSCONFDIR}/sane.d/cardscan.conf
 share/examples/sane-backends/sane.d/coolscan.conf
