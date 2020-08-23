@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2020/07/17 08:35:30 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2020/08/23 08:16:42 ajacoutot Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -16,8 +16,7 @@ HOMEPAGE =	https://bluesabre.org/projects/catfish/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python \
-		x11/xfce4 \
-		textproc/intltool
+		x11/xfce4
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=bin/catfish
 NO_BUILD=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/11 21:33:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/08/23 08:16:42 ajacoutot Exp $
 
 COMMENT =		display keypresses on screen
 
@@ -18,8 +18,7 @@ WANTLIB =		X11 Xtst
 
 MASTER_SITES =		https://www.thregr.org/~wavexx/software/screenkey/releases/
 
-MODULES =		lang/python \
-			textproc/intltool
+MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 

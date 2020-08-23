@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:13:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/08/23 08:16:42 ajacoutot Exp $
 
 COMMENT =	fd.o-compliant menu editor
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =	https://launchpad.net/menulibre/2.1/${MODPY_EGG_VERSION}/+download/
 
-MODULES=	lang/python textproc/intltool
+MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 PORTHOME =	${WRKDIR}
