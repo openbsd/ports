@@ -1,0 +1,18 @@
+$OpenBSD: patch-scintilla_src_RunStyles_cxx,v 1.1 2020/08/23 11:46:37 cwen Exp $
+
+i386/powerpc fix for
+"undefined reference to Scintilla::RunStyles<long, char>::RunStyles()"
+
+Index: scintilla/src/RunStyles.cxx
+--- scintilla/src/RunStyles.cxx.orig
++++ scintilla/src/RunStyles.cxx
+@@ -308,7 +308,8 @@ void RunStyles<DISTANCE, STYLE>::Check() const {
+ 
+ template class Scintilla::RunStyles<int, int>;
+ template class Scintilla::RunStyles<int, char>;
+-#if (PTRDIFF_MAX != INT_MAX) || PLAT_HAIKU
++#if (PTRDIFF_MAX != INT_MAX) || PLAT_HAIKU || \
++    ( defined(__OpenBSD__) && defined(_ILP32) )
+ template class Scintilla::RunStyles<ptrdiff_t, int>;
+ template class Scintilla::RunStyles<ptrdiff_t, char>;
+ #endif

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.63 2019/10/16 06:51:42 giovanni Exp $
+# $OpenBSD: Makefile,v 1.64 2020/08/23 11:46:37 cwen Exp $
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME =	geany-1.36
+REVISION =	0
 SHARED_LIBS +=  geany                     0.0 # 0.0
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.geany.org/
+HOMEPAGE=	https://www.geany.org/
 
 MAINTAINER=	Victor Kukshiev <andrey0bolkonsky@gmail.com>
 
