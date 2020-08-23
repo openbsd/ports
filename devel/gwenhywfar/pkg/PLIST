@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/07/16 05:01:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/08/23 08:24:04 ajacoutot Exp $
 @bin bin/gct-tool
 @bin bin/gsa
 bin/gwenhywfar-config
@@ -137,17 +137,21 @@ include/gwenhywfar5/gwenhywfar/version.h
 include/gwenhywfar5/gwenhywfar/widget_be.h
 include/gwenhywfar5/gwenhywfar/xml.h
 include/gwenhywfar5/gwenhywfar/xml2db.h
+include/gwenhywfar5/gwenhywfar/xmlcmd.h
+include/gwenhywfar5/gwenhywfar/xmlcmd_gxml.h
+include/gwenhywfar5/gwenhywfar/xmlcmd_gxml_fromdb.h
+include/gwenhywfar5/gwenhywfar/xmlcmd_gxml_todb.h
 include/gwenhywfar5/gwenhywfar/xmlctx.h
 include/gwenhywfar5/gwenhywfar/xsdnode.h
-lib/cmake/gwengui-cpp-5.3/
-lib/cmake/gwengui-cpp-5.3/gwengui-cpp-config-version.cmake
-lib/cmake/gwengui-cpp-5.3/gwengui-cpp-config.cmake
-lib/cmake/gwengui-qt5-5.3/
-lib/cmake/gwengui-qt5-5.3/gwengui-qt5-config-version.cmake
-lib/cmake/gwengui-qt5-5.3/gwengui-qt5-config.cmake
-lib/cmake/gwenhywfar-5.3/
-lib/cmake/gwenhywfar-5.3/gwenhywfar-config-version.cmake
-lib/cmake/gwenhywfar-5.3/gwenhywfar-config.cmake
+lib/cmake/gwengui-cpp-5.4/
+lib/cmake/gwengui-cpp-5.4/gwengui-cpp-config-version.cmake
+lib/cmake/gwengui-cpp-5.4/gwengui-cpp-config.cmake
+lib/cmake/gwengui-qt5-5.4/
+lib/cmake/gwengui-qt5-5.4/gwengui-qt5-config-version.cmake
+lib/cmake/gwengui-qt5-5.4/gwengui-qt5-config.cmake
+lib/cmake/gwenhywfar-5.4/
+lib/cmake/gwenhywfar-5.4/gwenhywfar-config-version.cmake
+lib/cmake/gwenhywfar-5.4/gwenhywfar-config.cmake
 lib/gwenhywfar/
 lib/gwenhywfar/plugins/
 lib/gwenhywfar/plugins/79/

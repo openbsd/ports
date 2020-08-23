@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_os_posix_inetsocket_p_h,v 1.1 2016/09/11 20:54:12 ajacoutot Exp $
+$OpenBSD: patch-src_os_posix_inetsocket_p_h,v 1.2 2020/08/23 08:24:04 ajacoutot Exp $
+
 --- src/os/posix/inetsocket_p.h.orig	Sun Sep 11 10:28:51 2016
 +++ src/os/posix/inetsocket_p.h	Sun Sep 11 10:29:11 2016
 @@ -37,6 +37,7 @@

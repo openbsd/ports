@@ -1,11 +1,11 @@
-$OpenBSD: patch-gui_cpp_gwengui-cpp-config_cmake_in,v 1.1 2020/07/16 05:01:16 rsadowski Exp $
+$OpenBSD: patch-gui_cpp_gwengui-cpp-config_cmake_in,v 1.2 2020/08/23 08:24:04 ajacoutot Exp $
 
 Index: gui/cpp/gwengui-cpp-config.cmake.in
 --- gui/cpp/gwengui-cpp-config.cmake.in.orig
 +++ gui/cpp/gwengui-cpp-config.cmake.in
-@@ -28,7 +28,7 @@ set_and_check(GWENGUI_CPP_INCLUDE_DIRS "@gwenhywfar_he
- if(WIN32)
-     set_and_check(GWENGUI_CPP_LIBRARIES "@libdir@/libgwengui-cpp.dll.a")
+@@ -30,7 +30,7 @@ if(WIN32)
+ elseif(APPLE)
+     set_and_check(GWENGUI_CPP_LIBRARIES "@libdir@/libgwengui-cpp.dylib")
  else()
 -    set_and_check(GWENGUI_CPP_LIBRARIES "@libdir@/libgwengui-cpp.so")
 +    set_and_check(GWENGUI_CPP_LIBRARIES "@libdir@/libgwengui-cpp.so.${LIBgwengui-cpp_VERSION}")

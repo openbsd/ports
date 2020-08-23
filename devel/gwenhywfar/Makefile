@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/16 05:01:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2020/08/23 08:24:04 ajacoutot Exp $
 
 COMMENT=	helper library for networking and security applications
 
-DISTNAME=	gwenhywfar-5.3.0
+DISTNAME=	gwenhywfar-5.4.0
 
-SHARED_LIBS +=  gwenhywfar                2.0 # 73.1
-SHARED_LIBS +=  gwengui-cpp               1.0 # unknown
-SHARED_LIBS +=  gwengui-gtk3              0.0 # 0.0
-SHARED_LIBS +=  gwengui-qt5               0.0 # 0.0
+SHARED_LIBS +=  gwenhywfar           2.1      # 83.0
+SHARED_LIBS +=  gwengui-cpp          1.0      # 83.0
+SHARED_LIBS +=  gwengui-gtk3         0.0      # 83.0
+SHARED_LIBS +=  gwengui-qt5          0.0      # 83.0
 
 CATEGORIES=	devel
 
@@ -29,7 +29,7 @@ WANTLIB += pangoft2-1.0 pcre pcre2-16 pixman-1 png ssl tasn1 unistring
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
 WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z zstd
 
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/319/
+MASTER_SITES=		https://www.aquamaniac.de/rdm/attachments/download/331/
 
 MODULES=		x11/qt5
 
