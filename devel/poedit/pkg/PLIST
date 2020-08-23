@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/07/05 09:30:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/08/23 06:35:02 landry Exp $
 @bin bin/poedit
 @man man/man1/poedit.1
 share/applications/net.poedit.Poedit.desktop
@@ -14,6 +14,7 @@ share/locale/an/LC_MESSAGES/poedit.mo
 share/locale/ar/LC_MESSAGES/poedit.mo
 share/locale/az/LC_MESSAGES/poedit.mo
 share/locale/be/LC_MESSAGES/poedit.mo
+share/locale/be@latin/LC_MESSAGES/poedit.mo
 share/locale/bg/LC_MESSAGES/poedit.mo
 share/locale/bs/LC_MESSAGES/poedit.mo
 share/locale/ca/LC_MESSAGES/poedit.mo
