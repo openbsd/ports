@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/08/22 20:11:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2020/08/23 08:23:47 ajacoutot Exp $
 
 COMMENT=	online banking interface and financial data framework
 
 DISTNAME=	aqbanking-6.2.2
 
-SHARED_LIBS +=	aqbanking            3.0      # 39.2
+SHARED_LIBS +=  aqbanking            3.0      # .46.2
 
 CATEGORIES=	productivity
 
@@ -27,7 +27,9 @@ LIB_DEPENDS=		devel/gmp \
 			security/xmlsec
 
 USE_GMAKE=		Yes
+# ld: error: duplicate symbol: AO_V2_MkOfxHeader
 USE_LIBTOOL=		gnu
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-release=yes
 
