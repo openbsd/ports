@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2010 2020/08/23 08:14:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2011 2020/08/23 13:28:15 cwen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -714,6 +714,7 @@
      SUBDIR += p5-Devel-Leak
      SUBDIR += p5-Devel-Leak-Object
      SUBDIR += p5-Devel-NYTProf
+     SUBDIR += p5-Devel-OverloadInfo
      SUBDIR += p5-Devel-PartialDump
      SUBDIR += p5-Devel-Refcount
      SUBDIR += p5-Devel-SawAmpersand
