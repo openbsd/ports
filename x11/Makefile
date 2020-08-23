@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.669 2020/08/20 20:10:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.670 2020/08/23 20:46:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -203,6 +203,7 @@
      SUBDIR += p5-Gtk2-Ex-Simple-List
      SUBDIR += p5-Gtk2-GladeXML
      SUBDIR += p5-Gtk2-ImageView
+     SUBDIR += p5-Gtk3
      SUBDIR += p5-Tk
      SUBDIR += p5-Tk-ProgressBar-Mac
      SUBDIR += p5-Tk-Splash
