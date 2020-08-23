@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/08/23 02:59:00 abieber Exp $
 
 COMMENT =		access any command-line tool via a WebSocket
 
-GH_ACCOUNT =		joewalnes
-GH_PROJECT =		websocketd
-GH_TAGNAME =		v0.2.12
-REVISION=		1
+MODGO_MODNAME =		github.com/joewalnes/websocketd
+MODGO_VERSION =		v0.3.1
+
+DISTNAME =		websocketd-${MODGO_VERSION}
+PKGNAME =		websocketd-0.3.1
 
 CATEGORIES =		net www
 
@@ -19,14 +20,11 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c pthread
 
 MODULES +=		lang/go
-
-BUILD_DEPENDS =		net/go-net
+MODGO_LDFLAGS +=	-X main.version=${MODGO_VERSION}
 
 NO_TEST =		Yes
-SUBST_VARS =		VERSION
 
-pre-build:
-	@${SUBST_CMD} ${WRKSRC}/version.go
+WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/release/websocketd.man			\
@@ -43,5 +41,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/websocketd/html/
 	${INSTALL_DATA} ${WRKSRC}/examples/html/count.html		\
 	    ${PREFIX}/share/examples/websocketd/html/count.html
+
+MODGO_MODULES =	\
+	github.com/gorilla/websocket	 v1.4.0
 
 .include <bsd.port.mk>
