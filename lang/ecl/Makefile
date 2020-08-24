@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2020/02/12 19:42:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2020/08/24 21:38:05 gkoehler Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
 
-BROKEN-mips64 =	ecl_min fails
-
-V =		16.1.3
+V =		20.4.24
 DISTNAME =	ecl-$V
-SHARED_LIBS +=	ecl	6.0
-REVISION =	3
+SHARED_LIBS +=	ecl	7.0
 
 HOMEPAGE =	https://common-lisp.net/project/ecl/
 MAINTAINER =	Timo Myyra <timo.myyra@bittivirhe.fi>
@@ -21,12 +18,14 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}static/files/release/
 
+COMPILER =		base-clang ports-gcc
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 TEST_TARGET =		check
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			ECLLIB_VERSION=${LIBecl_VERSION} \
-			ecldir=${LOCALBASE}/lib/ecl
+			ecldir=${LOCALBASE}/lib/ecl \
+			MAKEINFO=${PREFIX}/bin/gmakeinfo
 
 CONFIGURE_ARGS +=	--enable-boehm=system \
 			--enable-libatomic=system \
@@ -38,6 +37,8 @@ CONFIGURE_ARGS +=	--enable-boehm=system \
 CONFIGURE_ENV +=	ETAGS=/usr/bin/true
 
 WANTLIB +=	atomic_ops c ffi gc gmp m pthread
+
+BUILD_DEPENDS +=	print/texinfo
 
 LIB_DEPENDS +=	devel/gmp \
 		devel/boehm-gc,-main \

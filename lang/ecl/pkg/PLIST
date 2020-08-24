@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/12/20 20:12:29 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/08/24 21:38:06 gkoehler Exp $
 @bin bin/ecl
 bin/ecl-config
 include/ecl/
@@ -13,6 +13,7 @@ include/ecl/cs.h
 include/ecl/ecl-cmp.h
 include/ecl/ecl-inl.h
 include/ecl/ecl.h
+include/ecl/ecl_atomics.h
 include/ecl/external.h
 include/ecl/gc/
 include/ecl/gc/private/
@@ -26,26 +27,26 @@ include/ecl/legacy.h
 include/ecl/number.h
 include/ecl/object.h
 include/ecl/page.h
+include/ecl/stack-resize.h
 include/ecl/stacks.h
+info/ecl.info.gz
 lib/ecl/
 lib/ecl/COPYING
 lib/ecl/LICENSE
-lib/ecl/asdf.fas
+@bin lib/ecl/asdf.fas
 lib/ecl/cmp.asd
-lib/ecl/cmp.fas
+@bin lib/ecl/cmp.fas
 lib/ecl/deflate.asd
-lib/ecl/deflate.fas
-lib/ecl/defsystem.asd
-lib/ecl/defsystem.fas
+@bin lib/ecl/deflate.fas
 @bin lib/ecl/dpp
 lib/ecl/ecl-cdb.asd
-lib/ecl/ecl-cdb.fas
+@bin lib/ecl/ecl-cdb.fas
 lib/ecl/ecl-curl.asd
-lib/ecl/ecl-curl.fas
+@bin lib/ecl/ecl-curl.fas
 lib/ecl/ecl-help.asd
-lib/ecl/ecl-help.fas
+@bin lib/ecl/ecl-help.fas
 lib/ecl/ecl-quicklisp.asd
-lib/ecl/ecl-quicklisp.fas
+@bin lib/ecl/ecl-quicklisp.fas
 @bin lib/ecl/ecl_min
 lib/ecl/encodings/
 lib/ecl/encodings/arabic
@@ -203,37 +204,30 @@ lib/ecl/encodings/windows-cp936.bin
 lib/ecl/encodings/windows-cp949.bin
 lib/ecl/encodings/windows-cp950.bin
 lib/ecl/help.doc
-lib/ecl/libasdf.a
-lib/ecl/libcmp.a
-lib/ecl/libdeflate.a
-lib/ecl/libdefsystem.a
-lib/ecl/libecl-cdb.a
-lib/ecl/libecl-curl.a
-lib/ecl/libecl-help.a
-lib/ecl/libecl-quicklisp.a
-lib/ecl/libpackage-locks.a
-lib/ecl/libprofile.a
-lib/ecl/libql-minitar.a
-lib/ecl/librt.a
-lib/ecl/libsb-bsd-sockets.a
-lib/ecl/libserve-event.a
-lib/ecl/libsockets.a
+@static-lib lib/ecl/libasdf.a
+@static-lib lib/ecl/libcmp.a
+@static-lib lib/ecl/libdeflate.a
+@static-lib lib/ecl/libecl-cdb.a
+@static-lib lib/ecl/libecl-curl.a
+@static-lib lib/ecl/libecl-help.a
+@static-lib lib/ecl/libecl-quicklisp.a
+@static-lib lib/ecl/libpackage-locks.a
+@static-lib lib/ecl/libql-minitar.a
+@static-lib lib/ecl/libsb-bsd-sockets.a
+@static-lib lib/ecl/libserve-event.a
+@static-lib lib/ecl/libsockets.a
 lib/ecl/package-locks.asd
-lib/ecl/package-locks.fas
+@bin lib/ecl/package-locks.fas
 lib/ecl/prebuilt-asdf.asd
-lib/ecl/profile.asd
-lib/ecl/profile.fas
 lib/ecl/ql-minitar.asd
-lib/ecl/ql-minitar.fas
-lib/ecl/rt.asd
-lib/ecl/rt.fas
+@bin lib/ecl/ql-minitar.fas
 lib/ecl/sb-bsd-sockets.asd
-lib/ecl/sb-bsd-sockets.fas
+@bin lib/ecl/sb-bsd-sockets.fas
 lib/ecl/serve-event.asd
-lib/ecl/serve-event.fas
+@bin lib/ecl/serve-event.fas
 lib/ecl/sockets.asd
-lib/ecl/sockets.fas
-lib/libecl.so
+@bin lib/ecl/sockets.fas
+@so lib/libecl.so
 @lib lib/libecl.so.${LIBecl_VERSION}
 @man man/man1/ecl-config.1
 @man man/man1/ecl.1

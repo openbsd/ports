@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_configure,v 1.8 2016/12/20 20:12:29 juanfra Exp $
---- src/configure.orig	Mon Dec 19 21:30:13 2016
-+++ src/configure	Mon Dec 19 21:31:37 2016
-@@ -4971,7 +4971,7 @@ LSP_FEATURES="(cons :android ${LSP_FEATURES})"
+$OpenBSD: patch-src_configure,v 1.9 2020/08/24 21:38:06 gkoehler Exp $
+Index: src/configure
+--- src/configure.orig
++++ src/configure
+@@ -5050,7 +5050,7 @@ LSP_FEATURES="(cons :android ${LSP_FEATURES})"
                  BUNDLE_LDFLAGS="-shared ${LDFLAGS}"
                  ECL_LDRPATH="-Wl,--rpath,~A"
                  clibs="-lpthread ${clibs}"
@@ -10,7 +11,7 @@ $OpenBSD: patch-src_configure,v 1.8 2016/12/20 20:12:29 juanfra Exp $
                  SONAME_LDFLAGS="-Wl,-soname,SONAME"
                  ;;
          solaris*)
-@@ -9509,7 +9509,7 @@ if test ${enable_shared} = "yes"; then
+@@ -9682,7 +9682,7 @@ if test ${enable_shared} = "yes"; then
  
  $as_echo "#define ENABLE_DLOPEN 1" >>confdefs.h
  

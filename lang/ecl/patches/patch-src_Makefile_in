@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2016/12/20 20:12:29 juanfra Exp $
---- src/Makefile.in.orig	Mon Dec 19 21:24:59 2016
-+++ src/Makefile.in	Mon Dec 19 21:27:43 2016
-@@ -296,30 +296,15 @@ install:
+$OpenBSD: patch-src_Makefile_in,v 1.7 2020/08/24 21:38:06 gkoehler Exp $
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -212,30 +212,15 @@ install:
  	for i in `(cd ecl && find . -name '*.h')`; do echo $$i; \
  	  $(INSTALL_DATA) ecl/$$i $(DESTDIR)$(includedir)/ecl/$$i; \
  	done
@@ -18,7 +19,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2016/12/20 20:12:29 juanfra Exp $
 -	   $(INSTALL_LIBRARY) $$i $(DESTDIR)$(libdir); \
 -	  fi \
 -	done
--	if [ "x@SONAME3@" != "x" -a -f "@SONAME3@" ]; then \
+-	if [ "x@SONAME3@" != "x" -a -f "@SONAME3@" -a "@SONAME@" != "@SONAME3@" ]; then \
 -	  ( $(INSTALL_LIBRARY) @SONAME3@ $(DESTDIR)$(libdir) && \
 -	    cd $(DESTDIR)$(libdir) && $(RM) -f @SONAME2@ @SONAME1@ @SONAME@ && \
 -	    $(LN_S) @SONAME3@ @SONAME2@ && \
@@ -27,12 +28,12 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2016/12/20 20:12:29 juanfra Exp $
 -	fi
 +	${INSTALL_LIBRARY} libecl.so $(DESTDIR)$(libdir)/$(LSP_LIBRARIES)
 +	cd $(DESTDIR)$(libdir) && ln -sf $(LSP_LIBRARIES) libecl.so
- 	$(INSTALL_PROGRAM) $(DPP) $(DESTDIR)$(ecldir)
+ 	$(INSTALL_PROGRAM) c/$(DPP) $(DESTDIR)$(ecldir)
  	$(INSTALL_PROGRAM) $(ECL_MIN) $(DESTDIR)$(ecldir)
  	for i in `cat modules`; do \
  	  case $$i in \
 -	    *.fas) $(INSTALL_PROGRAM) $$i $(DESTDIR)$(ecldir);; \
-+	    *.fas) $(INSTALL_DATA) $$i $(DESTDIR)$(ecldir);; \
++	    *.fas) $(INSTALL_SCRIPT) $$i $(DESTDIR)$(ecldir);; \
  	    *) $(INSTALL_DATA) $$i $(DESTDIR)$(ecldir);; \
  	  esac \
  	done

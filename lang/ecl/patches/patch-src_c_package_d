@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_c_package_d,v 1.1 2020/08/24 21:38:06 gkoehler Exp $
+
+Work around a SIGSEGV on 64-bit big-endian platforms
+(mips64, powerpc64, sparc64), from Daniel Kochmaski,
+https://gitlab.com/embeddable-common-lisp/ecl/-/issues/604#note_388147381
+
+Index: src/c/package.d
+--- src/c/package.d.orig
++++ src/c/package.d
+@@ -327,10 +327,12 @@ ecl_find_package_nolock(cl_object name)
+     return name;
+   name = cl_string(name);
+ 
+-  p = ecl_symbol_value(@'*package*');
+-  if (ECL_PACKAGEP(p)) {
+-    p = ecl_assoc(name, p->pack.local_nicknames);
+-    if (!Null(p)) return ECL_CONS_CDR(p);
++  if (ecl_option_values[ECL_OPT_BOOTED]) {
++    p = ecl_symbol_value(@'*package*');
++    if (ECL_PACKAGEP(p)) {
++      p = ecl_assoc(name, p->pack.local_nicknames);
++      if (!Null(p)) return ECL_CONS_CDR(p);
++    }
+   }
+ 
+   l = cl_core.packages;
