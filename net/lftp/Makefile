@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.128 2020/01/18 06:48:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.129 2020/08/24 10:23:57 rsadowski Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-4.9.1
+DISTNAME=	lftp-4.9.2
 CATEGORIES=	net
 
 HOMEPAGE=	https://lftp.tech/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} c crypto curses ereadline expat
 WANTLIB += iconv idn2 intl m ssl unistring util z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
