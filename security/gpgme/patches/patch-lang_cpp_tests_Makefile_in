@@ -1,11 +1,11 @@
-$OpenBSD: patch-lang_cpp_tests_Makefile_in,v 1.1 2019/08/15 18:20:21 phessler Exp $
+$OpenBSD: patch-lang_cpp_tests_Makefile_in,v 1.2 2020/08/24 16:28:30 sthen Exp $
 
 do not hard-code libstdc++, it may not exist on all platforms
 
 Index: lang/cpp/tests/Makefile.in
 --- lang/cpp/tests/Makefile.in.orig
 +++ lang/cpp/tests/Makefile.in
-@@ -414,7 +414,7 @@ top_srcdir = @top_srcdir@
+@@ -417,7 +417,7 @@ top_srcdir = @top_srcdir@
  AM_LDFLAGS = -no-install
  LDADD = ../../cpp/src/libgpgmepp.la \
          ../../../src/libgpgme.la @GPG_ERROR_LIBS@ \

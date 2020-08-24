@@ -1,0 +1,14 @@
+$OpenBSD: patch-lang_qt_src_QGpgmeConfig_cmake_in_in,v 1.1 2020/08/24 16:28:30 sthen Exp $
+
+Index: lang/qt/src/QGpgmeConfig.cmake.in.in
+--- lang/qt/src/QGpgmeConfig.cmake.in.in.orig
++++ lang/qt/src/QGpgmeConfig.cmake.in.in
+@@ -64,7 +64,7 @@ add_library(QGpgme SHARED IMPORTED)
+ set_target_properties(QGpgme PROPERTIES
+   INTERFACE_INCLUDE_DIRECTORIES "@resolved_includedir@/qgpgme;@resolved_includedir@"
+   INTERFACE_LINK_LIBRARIES "Gpgmepp;Qt5::Core"
+-  IMPORTED_LOCATION "@resolved_libdir@/libqgpgme@libsuffix@"
++  IMPORTED_LOCATION "@resolved_libdir@/libqgpgme@libsuffix@.${LIBqgpgme_VERSION}"
+ )
+ 
+ if(CMAKE_VERSION VERSION_LESS 2.8.12)

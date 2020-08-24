@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/08/01 12:47:41 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2020/08/24 16:28:30 sthen Exp $
 @pkgpath security/gpgme
 bin/gpgme-config
 @bin bin/gpgme-json
 @bin bin/gpgme-tool
 include/gpgme.h
 @info info/gpgme.info
-lib/libgpgme.a
+@static-lib lib/libgpgme.a
 lib/libgpgme.la
 @lib lib/libgpgme.so.${LIBgpgme_VERSION}
 lib/pkgconfig/gpgme-glib.pc

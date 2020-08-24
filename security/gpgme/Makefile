@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.56 2019/08/15 18:20:21 phessler Exp $
+# $OpenBSD: Makefile,v 1.57 2020/08/24 16:28:30 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 
-VERSION =		1.13.1
+VERSION =		1.14.0
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
-REVISION =		0
 
 CATEGORIES =		security devel
 
@@ -68,6 +67,10 @@ CONFIGURE_ARGS +=	--enable-languages=''
 
 # needed for the regression tests
 USE_GMAKE =		Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lang/cpp/src/GpgmeppConfig.cmake.in.in
+	${SUBST_CMD} ${WRKSRC}/lang/qt/src/QGpgmeConfig.cmake.in.in
 
 # The tests target gpg2. Running with gpg version 1 will give:
 # `./t-support.h:160: GPGME: Invalid crypto engine'

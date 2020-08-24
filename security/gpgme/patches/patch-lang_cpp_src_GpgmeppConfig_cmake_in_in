@@ -1,0 +1,16 @@
+$OpenBSD: patch-lang_cpp_src_GpgmeppConfig_cmake_in_in,v 1.1 2020/08/24 16:28:30 sthen Exp $
+
+Index: lang/cpp/src/GpgmeppConfig.cmake.in.in
+--- lang/cpp/src/GpgmeppConfig.cmake.in.in.orig
++++ lang/cpp/src/GpgmeppConfig.cmake.in.in
+@@ -63,8 +63,8 @@ add_library(Gpgmepp SHARED IMPORTED)
+ 
+ set_target_properties(Gpgmepp PROPERTIES
+   INTERFACE_INCLUDE_DIRECTORIES "@resolved_includedir@/gpgme++;@resolved_includedir@"
+-  INTERFACE_LINK_LIBRARIES "pthread;@resolved_libdir@/libgpgme@libsuffix@;@LIBASSUAN_LIBS@"
+-  IMPORTED_LOCATION "@resolved_libdir@/libgpgmepp@libsuffix@"
++  INTERFACE_LINK_LIBRARIES "pthread;@resolved_libdir@/libgpgme@libsuffix@.${LIBgpgme_VERSION};@LIBASSUAN_LIBS@"
++  IMPORTED_LOCATION "@resolved_libdir@/libgpgmepp@libsuffix@.${LIBgpgmepp_VERSION}"
+ )
+ 
+ if(CMAKE_VERSION VERSION_LESS 2.8.12)
