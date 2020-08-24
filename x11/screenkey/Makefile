@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/08/23 15:43:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/24 06:38:39 ajacoutot Exp $
 
 COMMENT =		display keypresses on screen
 
@@ -22,7 +22,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS +=	textproc/gettext-tools \
+BUILD_DEPENDS +=	devel/gettext,-tools \
 			devel/py-distutils-extra${MODPY_FLAVOR}
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
