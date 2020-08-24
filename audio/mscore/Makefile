@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/08/07 16:45:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.56 2020/08/24 14:29:02 bcallah Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
@@ -6,6 +6,7 @@ V =		3.5
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}.0
 PKGNAME =	musescore-${V}
+REVISION =	0
 EXTRACT_SUFX =	.zip
 CATEGORIES =	audio x11
 
@@ -55,6 +56,10 @@ CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS +=	-mxgot
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+CXXFLAGS =	-Oz -pipe
 .endif
 
 NO_TEST =	Yes
