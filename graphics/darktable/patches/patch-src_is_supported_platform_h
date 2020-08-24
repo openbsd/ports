@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_is_supported_platform_h,v 1.1 2019/02/12 12:52:01 kirby Exp $
+$OpenBSD: patch-src_is_supported_platform_h,v 1.2 2020/08/24 09:47:06 sthen Exp $
 
 https://github.com/darktable-org/darktable/issues/2093
 
 Index: src/is_supported_platform.h
 --- src/is_supported_platform.h.orig
 +++ src/is_supported_platform.h
-@@ -31,7 +31,7 @@
+@@ -30,7 +30,7 @@
  #define DT_SUPPORTED_X86 0
  #endif
  

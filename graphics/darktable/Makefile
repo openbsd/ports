@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.98 2020/08/07 14:30:10 jsg Exp $
+# $OpenBSD: Makefile,v 1.99 2020/08/24 09:47:06 sthen Exp $
 
 ONLY_FOR_ARCHS= i386 amd64 aarch64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-V=		2.6.3
+V=		3.2.1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	3
 
 CATEGORIES=	graphics x11
 
-HOMEPAGE=	http://www.darktable.org/
+HOMEPAGE=	https://www.darktable.org/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
-WANTLIB += GraphicsMagick Iex-2_5 IlmImf-2_5 X11 Xrandr c cairo
-WANTLIB += colord colord-gtk colordprivate cups curl exiv2 flickcurl
+WANTLIB += GraphicsMagick Iex-2_5 IlmImf-2_5 X11 Xrandr avif c
+WANTLIB += cairo colord colord-gtk colordprivate cups curl exiv2
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gphoto2 gphoto2_port gtk-3 intl jpeg json-glib-1.0
 WANTLIB += lcms2 lensfun m openjp2 osmgpsmap-1.0 pango-1.0 pangocairo-1.0
@@ -33,11 +32,13 @@ MODULES=	devel/cmake \
 		textproc/intltool
 MODLUA_VERSION=	5.3
 
-# TLS, modern C++, upstream requires gcc-5.0+/clang-3.9+ so no ports-gcc
+# TLS, modern C++
 COMPILER =	base-clang
 
-BUILD_DEPENDS=	sysutils/coreutils
+BUILD_DEPENDS=	sysutils/coreutils \
+		graphics/p5-Image-ExifTool
 RUN_DEPENDS=	devel/desktop-file-utils \
+		graphics/p5-Image-ExifTool \
 		x11/gtk+3,-guic
 LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/json-glib \
@@ -47,12 +48,12 @@ LIB_DEPENDS=	devel/gettext,-runtime \
 		graphics/colord-gtk \
 		graphics/exiv2>=0.22 \
 		graphics/lcms2 \
+		graphics/libavif \
 		graphics/libgphoto2>=2.5.0 \
 		graphics/lensfun \
 		graphics/openexr \
 		graphics/openjp2 \
 		net/curl \
-		net/flickcurl \
 		textproc/pugixml \
 		x11/gnome/librsvg \
 		x11/gnome/libsecret \
@@ -64,7 +65,9 @@ CONFIGURE_ARGS=	-DBINARY_PACKAGE_BUILD=1 \
 		-DCUSTOM_CFLAGS=1 \
 		-DUSE_OPENMP=OFF \
 		-DTESTBUILD_OPENCL_PROGRAMS=OFF
-# OpenCL picks up LLVM at build time.
+
+# picks up LLVM at build time
+CONFIGURE_ARGS+= -DUSE_OPENCL=OFF
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -1,0 +1,19 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/08/24 09:47:06 sthen Exp $
+
+fails with _XOPEN_SOURCE set;
+
+/usr/include/c++/v1/__bsd_locale_fallbacks.h:123:17: error: use of undeclared identifier 'vasprintf'; did you mean 'vsprintf'?
+    int __res = vasprintf(__s, __format, __va);
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -493,6 +493,8 @@ set(THEME_DIRECTORY "${CMAKE_INSTALL_DATAROOTDIR}/icon
+ if(NOT WIN32)
+     if(CMAKE_SYSTEM MATCHES "SunOS.*")
+         add_definitions("-D_XOPEN_SOURCE=600")
++    elseif(CMAKE_SYSTEM MATCHES "OpenBSD.*")
++        # ...
+     else()
+         add_definitions("-D_XOPEN_SOURCE=700")
+     endif(CMAKE_SYSTEM MATCHES "SunOS.*")

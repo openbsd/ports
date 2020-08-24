@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_external_rawspeed_cmake_src-dependencies_cmake,v 1.1 2020/08/24 09:47:06 sthen Exp $
+
+doesn't really appear to require 1.2.11? used for DNG deflate compression
+
+Index: src/external/rawspeed/cmake/src-dependencies.cmake
+--- src/external/rawspeed/cmake/src-dependencies.cmake.orig
++++ src/external/rawspeed/cmake/src-dependencies.cmake
+@@ -166,7 +166,7 @@ unset(HAVE_ZLIB)
+ if (WITH_ZLIB)
+   message(STATUS "Looking for ZLIB")
+   if(NOT USE_BUNDLED_ZLIB)
+-    find_package(ZLIB 1.2.11)
++    find_package(ZLIB)
+     if(NOT ZLIB_FOUND)
+       message(SEND_ERROR "Did not find ZLIB! Either make it find ZLIB, or pass -DWITH_ZLIB=OFF to disable ZLIB, or pass -DUSE_BUNDLED_ZLIB=ON to enable in-tree ZLIB.")
+     else()
