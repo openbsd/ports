@@ -1,6 +1,8 @@
-$OpenBSD: patch-libatomic_ops_src_atomic_ops_sysdeps_gcc_sparc_h,v 1.3 2020/04/04 20:59:41 jca Exp $
+$OpenBSD: patch-libatomic_ops_src_atomic_ops_sysdeps_gcc_sparc_h,v 1.4 2020/08/24 21:31:13 gkoehler Exp $
 
 Use the same type for input and output inline asm operands.
+
+Provide AO_fetch_compare_and_swap, needed by lang/ecl 20.4.24.
 
 Index: libatomic_ops/src/atomic_ops/sysdeps/gcc/sparc.h
 --- libatomic_ops/src/atomic_ops/sysdeps/gcc/sparc.h.orig
@@ -14,3 +16,26 @@ Index: libatomic_ops/src/atomic_ops/sysdeps/gcc/sparc.h
    __asm__ __volatile__ ("membar #StoreLoad | #LoadLoad\n\t"
  #                       if defined(__arch64__)
                            "casx [%2],%0,%1\n\t"
+@@ -61,7 +61,21 @@ AO_compare_and_swap_full(volatile AO_t *addr, AO_t old
+ }
+ #define AO_HAVE_compare_and_swap_full
+ 
+-/* TODO: implement AO_fetch_compare_and_swap.   */
++AO_INLINE AO_t
++AO_fetch_compare_and_swap_full(volatile AO_t *addr, AO_t old, AO_t new_val) {
++  __asm__ __volatile__ ("membar #StoreLoad | #LoadLoad\n\t"
++#                       if defined(__arch64__)
++                          "casx [%1],%2,%0\n\t"
++#                       else
++                          "cas [%1],%2,%0\n\t" /* 32-bit version */
++#                       endif
++                        "membar #StoreLoad | #StoreStore\n\t"
++                        : "+r" (new_val)
++                        : "r" (addr), "r" (old)
++                        : "memory");
++  return new_val;
++}
++#define AO_HAVE_fetch_compare_and_swap_full
+ #endif /* !AO_NO_SPARC_V9 */
+ 
+ /* TODO: Extend this for SPARC v8 and v9 (V8 also has swap, V9 has CAS, */

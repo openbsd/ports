@@ -1,12 +1,25 @@
-$OpenBSD: patch-include_private_gcconfig_h,v 1.22 2017/04/15 14:02:46 naddy Exp $
+$OpenBSD: patch-include_private_gcconfig_h,v 1.23 2020/08/24 21:31:13 gkoehler Exp $
 
+- use mmap, not sbrk, on OpenBSD
 - All OpenBSD mips platforms are 64-bit, so correct the wordsize and alignment
 - use __data_start instead of _fdata on OpenBSD/mips64
-- add support for OpenBSD/aarch64
+- add support for OpenBSD/aarch64 and powerpc64
 
---- include/private/gcconfig.h.orig	Tue Aug  2 21:36:14 2016
-+++ include/private/gcconfig.h	Fri Apr 14 17:44:40 2017
-@@ -102,7 +102,8 @@
+Index: include/private/gcconfig.h
+--- include/private/gcconfig.h.orig
++++ include/private/gcconfig.h
+@@ -76,6 +76,10 @@
+ /* And one for OpenBSD: */
+ # if defined(__OpenBSD__)
+ #    define OPENBSD
++#    ifndef USE_MMAP
++#      define USE_MMAP
++#    endif
++#    define USE_MMAP_ANON
+ # endif
+ 
+ /* And one for FreeBSD: */
+@@ -102,7 +106,8 @@
  # endif
  # if defined(__aarch64__)
  #    define AARCH64
@@ -16,7 +29,7 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.22 2017/04/15 14:02:46 naddy Exp 
  #      define NOSYS
  #      define mach_type_known
  #    endif
-@@ -137,6 +138,10 @@
+@@ -137,6 +142,10 @@
  #    define ARM32
  #    define mach_type_known
  # endif
@@ -27,7 +40,21 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.22 2017/04/15 14:02:46 naddy Exp 
  # if defined(OPENBSD) && defined(__sh__)
  #    define SH
  #    define mach_type_known
-@@ -1712,14 +1717,15 @@
+@@ -962,7 +971,12 @@
+ #   endif
+ #   ifdef OPENBSD
+ #     define OS_TYPE "OPENBSD"
+-#     define ALIGNMENT 4
++#     if defined(__powerpc64__)
++#       define ALIGNMENT 8
++#       define CPP_WORDSZ 64
++#     else
++#       define ALIGNMENT 4
++#     endif
+ #     ifndef GC_OPENBSD_THREADS
+ #       include <sys/param.h>
+ #       include <uvm/uvm_extern.h>
+@@ -1712,14 +1726,15 @@
  #  endif
  #  ifdef OPENBSD
  #    define OS_TYPE "OPENBSD"
@@ -46,7 +73,7 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.22 2017/04/15 14:02:46 naddy Exp 
       extern int _end[];
  #    define DATAEND ((ptr_t)(&_end))
  #    define DYNAMIC_LOADING
-@@ -2165,6 +2171,19 @@
+@@ -2165,6 +2180,19 @@
        extern char etext[];
  #     define DATASTART GC_FreeBSDGetDataStart(0x1000, (ptr_t)etext)
  #     define DATASTART_USES_BSDGETDATASTART
