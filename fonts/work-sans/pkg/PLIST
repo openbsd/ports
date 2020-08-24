@@ -1,24 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/25 03:40:09 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/08/24 09:36:21 bentley Exp $
 share/doc/work-sans/
-share/doc/work-sans/LICENSE.txt
+share/doc/work-sans/OFL.txt
 share/doc/work-sans/README.md
 share/fonts/
 @fontdir share/fonts/work-sans/
-share/fonts/work-sans/WorkSans-Black.otf
 share/fonts/work-sans/WorkSans-Black.ttf
-share/fonts/work-sans/WorkSans-Bold.otf
+share/fonts/work-sans/WorkSans-BlackItalic.ttf
 share/fonts/work-sans/WorkSans-Bold.ttf
-share/fonts/work-sans/WorkSans-ExtraBold.otf
+share/fonts/work-sans/WorkSans-BoldItalic.ttf
 share/fonts/work-sans/WorkSans-ExtraBold.ttf
-share/fonts/work-sans/WorkSans-ExtraLight.otf
+share/fonts/work-sans/WorkSans-ExtraBoldItalic.ttf
 share/fonts/work-sans/WorkSans-ExtraLight.ttf
-share/fonts/work-sans/WorkSans-Light.otf
+share/fonts/work-sans/WorkSans-ExtraLightItalic.ttf
+share/fonts/work-sans/WorkSans-Italic.ttf
 share/fonts/work-sans/WorkSans-Light.ttf
-share/fonts/work-sans/WorkSans-Medium.otf
+share/fonts/work-sans/WorkSans-LightItalic.ttf
 share/fonts/work-sans/WorkSans-Medium.ttf
-share/fonts/work-sans/WorkSans-Regular.otf
+share/fonts/work-sans/WorkSans-MediumItalic.ttf
 share/fonts/work-sans/WorkSans-Regular.ttf
-share/fonts/work-sans/WorkSans-SemiBold.otf
 share/fonts/work-sans/WorkSans-SemiBold.ttf
-share/fonts/work-sans/WorkSans-Thin.otf
+share/fonts/work-sans/WorkSans-SemiBoldItalic.ttf
 share/fonts/work-sans/WorkSans-Thin.ttf
+share/fonts/work-sans/WorkSans-ThinItalic.ttf

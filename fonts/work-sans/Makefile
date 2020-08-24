@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/25 03:40:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/24 09:36:21 bentley Exp $
 
 COMMENT =	typeface based loosely on early Grotesques
 PKGNAME =	${DISTNAME:L}
@@ -6,9 +6,7 @@ CATEGORIES =	fonts
 
 GH_ACCOUNT =	weiweihuanghuang
 GH_PROJECT =	Work-Sans
-GH_TAGNAME =	v1.6
-
-REVISION =	0
+GH_TAGNAME =	v2.010
 
 HOMEPAGE =	https://weiweihuanghuang.github.io/Work-Sans/
 MAINTAINER =	George Rosamond <george@nycbug.org>
@@ -29,8 +27,7 @@ DOCDIR =	${PREFIX}/share/doc/work-sans
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/fonts/desktop/*.otf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/fonts/webfonts/ttf/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/{README.md,LICENSE.txt} ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/fonts/static/TTF/*.ttf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/{README.md,OFL.txt} ${DOCDIR}
 
 .include <bsd.port.mk>
