@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/08/24 21:41:21 gkoehler Exp $
 
 COMMENT =	text based gopher client
-DISTNAME =	clic-v1.1.4
+DISTNAME =	clic-v1.1.5
 PKGNAME =	${DISTNAME:S/-v/-/}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	net
