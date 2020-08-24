@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-gpl2,v 1.4 2020/05/18 10:33:17 espie Exp $
-@so lib/mlt/libmltlinsys.so
+@comment $OpenBSD: PLIST-gpl2,v 1.5 2020/08/24 14:09:54 rsadowski Exp $
 @so lib/mlt/libmltmotion_est.so
 @so lib/mlt/libmltnormalize.so
 @so lib/mlt/libmltplusgpl.so
@@ -8,8 +7,6 @@
 @so lib/mlt/libmltsdl2.so
 @so lib/mlt/libmltvideostab.so
 @so lib/mlt/libmltxine.so
-share/mlt/linsys/
-share/mlt/linsys/consumer_sdi.yml
 share/mlt/motion_est/
 share/mlt/motion_est/filter_autotrack_rectangle.yml
 share/mlt/motion_est/filter_motion_est.yml
@@ -23,7 +20,6 @@ share/mlt/plusgpl/consumer_cbrts.yml
 share/mlt/plusgpl/filter_burningtv.yml
 share/mlt/plusgpl/filter_lumaliftgaingamma.yml
 share/mlt/plusgpl/filter_rotoscoping.yml
-share/mlt/qt/
 share/mlt/qt/filter_audiospectrum.yml
 share/mlt/qt/filter_audiowaveform.yml
 share/mlt/qt/filter_lightshow.yml

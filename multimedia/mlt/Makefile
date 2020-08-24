@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2020/05/20 09:17:03 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2020/08/24 14:09:54 rsadowski Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
-VERSION =		6.20.0
+VERSION =		6.22.1
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
-REVISION =		0
 
 # XXX versions should be kept in sync together
 SHARED_LIBS =		mlt		3.2
@@ -15,8 +14,6 @@ SHARED_LIBS +=		mlt++		3.2
 CATEGORIES =		multimedia devel
 HOMEPAGE =		https://www.mltframework.org/
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+, LGPLv2.1+
 # Actually, qimage module could be under GPLv3+ if one more object

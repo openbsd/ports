@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2020/05/18 10:33:17 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2020/08/24 14:09:54 rsadowski Exp $
 @conflict freeze-<2.5p2
 @bin bin/melt
 include/mlt/
 include/mlt++/
 include/mlt++/Mlt.h
 include/mlt++/MltAnimation.h
+include/mlt++/MltAudio.h
 include/mlt++/MltConfig.h
 include/mlt++/MltConsumer.h
 include/mlt++/MltDeque.h
@@ -31,6 +32,7 @@ include/mlt++/MltTransition.h
 include/mlt/framework/
 include/mlt/framework/mlt.h
 include/mlt/framework/mlt_animation.h
+include/mlt/framework/mlt_audio.h
 include/mlt/framework/mlt_cache.h
 include/mlt/framework/mlt_consumer.h
 include/mlt/framework/mlt_deque.h
@@ -65,7 +67,7 @@ lib/mlt/
 @so lib/mlt/libmltcore.so
 @so lib/mlt/libmltdecklink.so
 @so lib/mlt/libmltfrei0r.so
-@so lib/mlt/libmltgtk2.so
+@so lib/mlt/libmltgdk.so
 @so lib/mlt/libmltjackrack.so
 @so lib/mlt/libmltkdenlive.so
 @so lib/mlt/libmltoldfilm.so
@@ -83,6 +85,7 @@ share/mlt/avformat/
 share/mlt/avformat/blacklist.txt
 share/mlt/avformat/consumer_avformat.yml
 share/mlt/avformat/producer_avformat.yml
+share/mlt/avformat/yuv_only.txt
 share/mlt/core/
 share/mlt/core/consumer_multi.yml
 share/mlt/core/data_fx.properties
@@ -143,11 +146,10 @@ share/mlt/frei0r/filter_cairoblend_mode.yml
 share/mlt/frei0r/not_thread_safe.txt
 share/mlt/frei0r/param_name_map.yaml
 share/mlt/frei0r/resolution_scale.yml
-share/mlt/gtk2/
-share/mlt/gtk2/consumer_gtk2_preview.yml
-share/mlt/gtk2/filter_rescale.yml
-share/mlt/gtk2/producer_pango.yml
-share/mlt/gtk2/producer_pixbuf.yml
+share/mlt/gdk/
+share/mlt/gdk/filter_rescale.yml
+share/mlt/gdk/producer_pango.yml
+share/mlt/gdk/producer_pixbuf.yml
 share/mlt/jackrack/
 share/mlt/jackrack/blacklist.txt
 share/mlt/jackrack/consumer_jack.yml
@@ -213,6 +215,8 @@ share/mlt/presets/consumer/avformat/MP3
 share/mlt/presets/consumer/avformat/MPEG-2
 share/mlt/presets/consumer/avformat/MPEG-4
 share/mlt/presets/consumer/avformat/MPEG-4-ASP
+share/mlt/presets/consumer/avformat/Slide-Deck-H264
+share/mlt/presets/consumer/avformat/Slide-Deck-HEVC
 share/mlt/presets/consumer/avformat/Sony-PSP
 share/mlt/presets/consumer/avformat/Vorbis
 share/mlt/presets/consumer/avformat/WAV

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_modules_avformat_producer_avformat_c,v 1.1 2020/05/18 10:33:17 espie Exp $
+$OpenBSD: patch-src_modules_avformat_producer_avformat_c,v 1.2 2020/08/24 14:09:54 rsadowski Exp $
 
 Index: src/modules/avformat/producer_avformat.c
 --- src/modules/avformat/producer_avformat.c.orig
 +++ src/modules/avformat/producer_avformat.c
-@@ -755,10 +755,13 @@ static int producer_open(producer_avformat self, mlt_p
+@@ -778,10 +778,13 @@ static int producer_open(producer_avformat self, mlt_p
  
  	if ( !self->is_mutex_init )
  	{
