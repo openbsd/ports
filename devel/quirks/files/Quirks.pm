@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1039 2020/08/23 08:14:50 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1040 2020/08/24 15:04:29 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1944,6 +1944,7 @@ my $cve = {
 	'lang/php/7.2,-main' => 'php->7.2,<7.2.18',
 	'lang/php/7.3,-main' => 'php->7.3,<7.3.5',
 	'lang/python/2.7,-main' => 'python->2.7,<2.7.16',
+	'lang/python/3.7,-main' => 'python->3.7,<3.7.9',
 	'lang/ruby/2.3,-main' => 'ruby-<2.3.8',
 	'lang/ruby/2.4,-main' => 'ruby->2.4,<2.4.5p2',
 	'lang/ruby/2.5,-main' => 'ruby->2.5,<2.5.5',
