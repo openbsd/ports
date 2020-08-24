@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2020/05/14 19:50:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.54 2020/08/24 06:15:04 rsadowski Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -7,7 +7,7 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	source code documentation generator tool
 
-VERSION=	1.8.18
+VERSION=	1.8.19
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
 
@@ -20,7 +20,7 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv m pthread ${COMPILER_LIBCXX} xapian z
+WANTLIB += ${COMPILER_LIBCXX} c iconv m xapian z
 
 COMPILER =	base-clang ports-gcc base-gcc
 
@@ -31,6 +31,8 @@ LIB_DEPENDS=	converters/libiconv \
 
 MODULES=	devel/cmake \
 		lang/python
+
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_RUNDEP=	No
 
