@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.7 2020/03/30 14:55:16 kmos Exp $
+@comment $OpenBSD: PLIST-tests,v 1.8 2020/08/24 15:00:29 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -2356,6 +2356,7 @@ lib/python3.7/test/randv2_32.pck
 lib/python3.7/test/randv2_64.pck
 lib/python3.7/test/randv3.pck
 lib/python3.7/test/re_tests.py
+lib/python3.7/test/recursion.tar
 lib/python3.7/test/regrtest.py
 lib/python3.7/test/relimport.py
 lib/python3.7/test/reperf.py

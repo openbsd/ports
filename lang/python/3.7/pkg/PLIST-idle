@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.10 2020/07/03 21:10:55 sthen Exp $
+@comment $OpenBSD: PLIST-idle,v 1.11 2020/08/24 15:00:29 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle-${VERSION_SPEC}
@@ -21,11 +21,11 @@ lib/python3.7/idlelib/Icons/folder.gif
 lib/python3.7/idlelib/Icons/idle.ico
 lib/python3.7/idlelib/Icons/idle_16.gif
 lib/python3.7/idlelib/Icons/idle_16.png
+lib/python3.7/idlelib/Icons/idle_256.png
 lib/python3.7/idlelib/Icons/idle_32.gif
 lib/python3.7/idlelib/Icons/idle_32.png
 lib/python3.7/idlelib/Icons/idle_48.gif
 lib/python3.7/idlelib/Icons/idle_48.png
-lib/python3.7/idlelib/Icons/idle_256.png
 lib/python3.7/idlelib/Icons/minusnode.gif
 lib/python3.7/idlelib/Icons/openfolder.gif
 lib/python3.7/idlelib/Icons/plusnode.gif
