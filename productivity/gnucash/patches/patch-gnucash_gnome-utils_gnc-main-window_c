@@ -1,0 +1,23 @@
+$OpenBSD: patch-gnucash_gnome-utils_gnc-main-window_c,v 1.1 2020/08/24 08:01:49 ajacoutot Exp $
+
+https://bugs.gnucash.org/show_bug.cgi?id=797921
+error: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Werror,-Wstring-compare]
+
+Index: gnucash/gnome-utils/gnc-main-window.c
+--- gnucash/gnome-utils/gnc-main-window.c.orig
++++ gnucash/gnome-utils/gnc-main-window.c
+@@ -1451,7 +1451,14 @@ gnc_main_window_event_handler (QofInstance *entity,  Q
+     g_return_if_fail(GNC_IS_MAIN_WINDOW(user_data));
+ 
+     /* soft failures */
++#ifdef __clang__
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wstring-compare"
++#endif
+     if (!QOF_CHECK_TYPE(entity, QOF_ID_BOOK))
++#ifdef __clang__
++#pragma clang diagnostic pop
++#endif
+         return;
+     if (event_type !=  QOF_EVENT_DESTROY)
+         return;
