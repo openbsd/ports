@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_testing-plugins_testing_networklayers_c,v 1.1 2020/08/24 21:08:02 bluhm Exp $
+
+https://github.com/open62541/open62541/commit/1654d021012b93ff669c022499fd80c47a73e72e
+
+Index: tests/testing-plugins/testing_networklayers.c
+--- tests/testing-plugins/testing_networklayers.c.orig
++++ tests/testing-plugins/testing_networklayers.c
+@@ -61,7 +61,7 @@ UA_Connection createDummyConnection(size_t sendBufferS
+     c.state = UA_CONNECTION_ESTABLISHED;
+     c.config = UA_ConnectionConfig_default;
+     c.channel = NULL;
+-    c.sockfd = 0;
++    c.sockfd = UA_INVALID_SOCKET;
+     c.handle = NULL;
+     c.incompleteChunk = UA_BYTESTRING_NULL;
+     c.getSendBuffer = dummyGetSendBuffer;
