@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2020/08/23 20:33:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.229 2020/08/24 13:39:00 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
+REVISION-main=	0
 
 .for i in -ldap -ntlm
 # subpackages aren't flavoured, so overwrite the default name/path
@@ -120,10 +121,13 @@ LIB_DEPENDS-main+= ${MODHEIMDAL_LIB_DEPENDS} \
 		databases/openldap
 
 WANTLIB-main+=	${MODHEIMDAL_WANTLIB} \
+		heimdal/lib/gssapi \
+		heimdal/lib/heimntlm \
 		heimdal/lib/heimsqlite \
 		heimdal/lib/wind \
 		crypto lber ldap sasl2 ssl util
 CONFIGURE_ARGS+= --with-heimdal-krb5
+CONFIGURE_ENV+= LIB_KRB5_LIBS="-L${LOCALBASE}/heimdal/lib -Wl,-rpath ${LOCALBASE}/heimdal/lib -lgssapi -lkrb5"
 .else
 CONFIGURE_ARGS+= --with-krb5-config=no
 .endif
