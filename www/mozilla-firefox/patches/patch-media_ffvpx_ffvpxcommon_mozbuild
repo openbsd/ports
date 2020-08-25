@@ -1,0 +1,21 @@
+$OpenBSD: patch-media_ffvpx_ffvpxcommon_mozbuild,v 1.1 2020/08/25 13:17:16 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1657321
+https://hg.mozilla.org/mozilla-central/rev/a6af82c5ceea
+fixes build with ports-clang
+
+Index: media/ffvpx/ffvpxcommon.mozbuild
+--- media/ffvpx/ffvpxcommon.mozbuild.orig
++++ media/ffvpx/ffvpxcommon.mozbuild
+@@ -52,11 +52,6 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+             '-Wno-inconsistent-dllimport',
+             '-Wno-macro-redefined', # 'WIN32_LEAN_AND_MEAN' macro redefined
+         ]
+-    if CONFIG['CC_TYPE'] == 'clang':
+-        CFLAGS += [
+-            # Workaround for https://bugs.llvm.org/show_bug.cgi?id=26828#c4 :
+-            '-ffreestanding',
+-        ]
+ else:
+     CFLAGS += [
+         '-Wno-discarded-qualifiers',
