@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2020/07/05 10:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2020/08/25 18:20:17 edd Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.2.20
+DISTNAME =	gnupg-2.2.21
 CATEGORIES = 	security
 
 # don't mix up dependencies with gnupg1
