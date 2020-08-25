@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/25 23:41:26 cwen Exp $
+@conflict bioperl-<1.7
+bin/bp_flanks
+${P5SITE}/Bio/Variation/
+${P5SITE}/Bio/Variation.pm
+${P5SITE}/Bio/Variation/AAChange.pm
+${P5SITE}/Bio/Variation/AAReverseMutate.pm
+${P5SITE}/Bio/Variation/Allele.pm
+${P5SITE}/Bio/Variation/DNAMutation.pm
+${P5SITE}/Bio/Variation/IO/
+${P5SITE}/Bio/Variation/IO.pm
+${P5SITE}/Bio/Variation/IO/flat.pm
+${P5SITE}/Bio/Variation/IO/xml.pm
+${P5SITE}/Bio/Variation/RNAChange.pm
+${P5SITE}/Bio/Variation/SNP.pm
+${P5SITE}/Bio/Variation/SeqDiff.pm
+${P5SITE}/Bio/Variation/VariantI.pm
+@man man/man1/bp_flanks.1
+@man man/man3p/Bio::Variation.3p
+@man man/man3p/Bio::Variation::AAChange.3p
+@man man/man3p/Bio::Variation::AAReverseMutate.3p
+@man man/man3p/Bio::Variation::Allele.3p
+@man man/man3p/Bio::Variation::DNAMutation.3p
+@man man/man3p/Bio::Variation::IO.3p
+@man man/man3p/Bio::Variation::IO::flat.3p
+@man man/man3p/Bio::Variation::IO::xml.3p
+@man man/man3p/Bio::Variation::RNAChange.3p
+@man man/man3p/Bio::Variation::SNP.3p
+@man man/man3p/Bio::Variation::SeqDiff.3p
+@man man/man3p/Bio::Variation::VariantI.3p

@@ -1,0 +1,5 @@
+Bio::Variation name space contains modules to store sequence variation
+information as differences between the reference sequence and changes
+sequences. Also included are classes to write out and recrete objects from
+EMBL-like flat files and XML. Lastly, there are simple classes to calculate
+values for sequence change objects.
