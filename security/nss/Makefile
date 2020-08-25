@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.127 2020/07/25 05:38:27 landry Exp $
+# $OpenBSD: Makefile,v 1.128 2020/08/25 13:43:38 landry Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.55
+VERSION=		3.56
 # from https://hg.mozilla.org/projects/nss/file/tip/automation/release/nspr-version.txt
-NSPR_VERSION=		4.27
+NSPR_VERSION=		4.28
 DISTNAME=		nss-${VERSION}
 
 SO_VERSION=		58.5
