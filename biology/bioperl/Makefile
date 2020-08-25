@@ -1,69 +1,52 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/08/25 23:56:31 cwen Exp $
 
 COMMENT=	perl tools for bioinformatics
 
-DISTNAME=	BioPerl-1.6.924
-REVISION=	1
+DISTNAME=	BioPerl-1.7.7
 PKGNAME=	${DISTNAME:L}# No p5-prefix here.
 CATEGORIES=	biology
 
 HOMEPAGE=	https://bioperl.org/
 
-# perl
+# Perl
 PERMIT_PACKAGE=	Yes
 
-CPAN_AUTHOR=	CJFIELDS
-
 MODULES=		cpan
-PKG_ARCH=		*
+
+CPAN_AUTHOR=		CJFIELDS
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIR=	${PREFIX}/share/examples/bioperl/
 
-CONFIGURE_STYLE=	modbuild
+RUN_DEPENDS=		devel/p5-Data-Stag \
+			devel/p5-Error \
+			devel/p5-Graph \
+			devel/p5-IO-String \
+			devel/p5-IO-stringy \
+			devel/p5-IPC-Run \
+			devel/p5-List-MoreUtils \
+			devel/p5-Module-Build \
+			devel/p5-Set-Scalar \
+			devel/p5-Test-Most \
+			devel/p5-Test-RequiresInternet \
+			devel/p5-YAML \
+			textproc/p5-Libxml \
+			textproc/p5-XML-DOM \
+			textproc/p5-XML-DOM-XPath \
+			textproc/p5-XML-LibXML \
+			textproc/p5-XML-SAX \
+			textproc/p5-XML-SAX-Base \
+			textproc/p5-XML-SAX-Writer \
+			textproc/p5-XML-Twig \
+			textproc/p5-XML-Writer \
+			www/p5-HTTP-Message \
+			www/p5-URI \
+			www/p5-libwww
+TEST_DEPENDS=		devel/p5-Test-Memory-Cycle \
+			devel/p5-Test-Weaken
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	biology/AcePerl \
-		databases/p5-DBD-mysql \
-		converters/p5-Convert-Binary-C \
-		devel/p5-Algorithm-Munkres \
-		devel/p5-Array-Compare \
-		devel/p5-Class-AutoClass \
-		devel/p5-Clone \
-		devel/p5-Data-Stag \
-		devel/p5-Graph \
-		devel/p5-IO-String \
-		devel/p5-IO-stringy \
-		devel/p5-Set-Scalar \
-		devel/p5-Test-Exception \
-		devel/p5-Tree-DAG_Node \
-		graphics/p5-GD \
-		graphics/p5-GD-SVG \
-		graphics/p5-SVG-Graph \
-		math/p5-GraphViz \
-		misc/p5-Spreadsheet-ParseExcel \
-		misc/p5-Spreadsheet-WriteExcel \
-		textproc/p5-XML-DOM \
-		textproc/p5-Libxml \
-		textproc/p5-XML-DOM-XPath \
-		textproc/p5-XML-Parser \
-		textproc/p5-XML-SAX-Writer \
-		textproc/p5-XML-Simple \
-		textproc/p5-XML-Twig \
-		textproc/p5-XML-Writer \
-		www/p5-CGI \
-		www/p5-HTML-Parser \
-		www/p5-SOAP-Lite \
-		www/p5-URI \
-		www/p5-libwww
-TEST_DEPENDS=	devel/p5-Test-Most \
-		www/p5-HTML-TableExtract
 
-MAKE_ENV +=	TEST_POD=Yes
+MAKE_ENV +=		TEST_POD=Yes
 
-# Optional (not ported) dependencies:
-# Postscript-TextBlock
-# Tie-Cacher
-
-CONFIGURE_ENV+= 	PERL_MM_USE_DEFAULT=Yes
+PKG_ARCH=		*
 
 .include <bsd.port.mk>
