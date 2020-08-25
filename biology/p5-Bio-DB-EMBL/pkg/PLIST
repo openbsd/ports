@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/25 23:37:52 cwen Exp $
+@conflict bioperl-<1.7
+${P5SITE}/Bio/DB/EMBL.pm
+@man man/man3p/Bio::DB::EMBL.3p
