@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_qmapshack_CAbout_cpp,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
+$OpenBSD: patch-src_qmapshack_CAbout_cpp,v 1.2 2020/08/25 18:43:54 kirby Exp $
 
 Index: src/qmapshack/CAbout.cpp
 --- src/qmapshack/CAbout.cpp.orig
 +++ src/qmapshack/CAbout.cpp
-@@ -50,7 +50,7 @@ CAbout::CAbout(QWidget *parent)
+@@ -48,7 +48,7 @@ CAbout::CAbout(QWidget *parent)
          labelRoutinoVersion->setText(tr("%1 (API V%2)").arg(Routino_Version).arg(Routino_APIVersion));
      }
  

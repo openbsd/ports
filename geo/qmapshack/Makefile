@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2020/08/25 18:43:54 kirby Exp $
 
 COMMENT =	map management tool
 
 GH_ACCOUNT =	Maproom
 GH_PROJECT =	qmapshack
-GH_TAGNAME =	V_1.14.1
+GH_TAGNAME =	V_1.15.0
 
 CATEGORIES =	geo
 
@@ -30,7 +30,8 @@ LIB_DEPENDS =		archivers/quazip \
 			x11/qt5/qttools \
 			x11/qt5/qtwebengine
 
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
+CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1 \
+			-Wno-dev
 
 NO_TEST =		Yes
 
