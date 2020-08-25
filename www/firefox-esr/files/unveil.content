@@ -1,10 +1,9 @@
-# $OpenBSD: unveil.content,v 1.1 2020/07/28 14:21:48 landry Exp $
+# $OpenBSD: unveil.content,v 1.2 2020/08/25 13:19:08 landry Exp $
 /dev/drm0 rw
 
 /etc/fonts r
 /etc/machine-id r
 /usr/local/lib r
-/usr/local/firefox r
 /usr/local/share r
 /usr/share/locale r
 /var/cache/fontconfig r
