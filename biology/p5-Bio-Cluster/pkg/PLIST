@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/25 23:43:06 cwen Exp $
+@conflict bioperl-<1.7
+${P5SITE}/Bio/
+${P5SITE}/Bio/Cluster/
+${P5SITE}/Bio/Cluster.pm
+${P5SITE}/Bio/Cluster/ClusterFactory.pm
+${P5SITE}/Bio/Cluster/FamilyI.pm
+${P5SITE}/Bio/Cluster/SequenceFamily.pm
+${P5SITE}/Bio/Cluster/UniGene.pm
+${P5SITE}/Bio/Cluster/UniGeneI.pm
+${P5SITE}/Bio/ClusterI.pm
+${P5SITE}/Bio/ClusterIO/
+${P5SITE}/Bio/ClusterIO.pm
+${P5SITE}/Bio/ClusterIO/dbsnp.pm
+${P5SITE}/Bio/ClusterIO/unigene.pm
+@man man/man3p/Bio::Cluster.3p
+@man man/man3p/Bio::Cluster::ClusterFactory.3p
+@man man/man3p/Bio::Cluster::FamilyI.3p
+@man man/man3p/Bio::Cluster::SequenceFamily.3p
+@man man/man3p/Bio::Cluster::UniGene.3p
+@man man/man3p/Bio::Cluster::UniGeneI.3p
+@man man/man3p/Bio::ClusterI.3p
+@man man/man3p/Bio::ClusterIO.3p
+@man man/man3p/Bio::ClusterIO::dbsnp.3p
+@man man/man3p/Bio::ClusterIO::unigene.3p
