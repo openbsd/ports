@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/11 20:08:25 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2020/08/25 13:28:19 visa Exp $
 
 COMMENT=	curses GDB interface
 
@@ -28,5 +28,10 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include"
 
 AUTOCONF_VERSION=	2.69
+
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+# Avoid clash between compiler's builtin macro and identifier in source code.
+CFLAGS+=		-Umips
+.endif
 
 .include <bsd.port.mk>
