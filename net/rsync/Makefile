@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2020/08/26 12:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2020/08/26 12:40:39 sthen Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =	c crypto
 
 MASTER_SITES =	https://rsync.samba.org/ftp/rsync/src/ \
-		http://ftp.funet.fi/pub/mirrors/samba.org/pub/rsync/src/
+		https://ftp.funet.fi/pub/mirrors/samba.org/pub/rsync/src/
 
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE =gnu
