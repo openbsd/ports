@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.117 2020/08/13 14:47:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.118 2020/08/26 07:04:55 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1141,7 +1141,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/get-job-de
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/get-pipeline-state.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/get-pipeline.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/list-action-types.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/list-pipeline-executions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/list-pipelines.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/list-webhooks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/poll-for-jobs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/start-pipeline-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/update-pipeline.rst
@@ -2578,7 +2580,18 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-resou
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-subscription-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/accept-invitation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/archive-findings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/create-detector.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/create-filter.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/create-ip-set.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/create-members.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/create-publishing-destination.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/create-sample-findings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/create-threat-intel-set.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/decline-invitations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/delete-detector.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/delete-filter.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/disable-organization-admin-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/disassociate-from-master-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/get-detector.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/get-findings.rst
@@ -3237,15 +3250,22 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/batch-get-channel.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/batch-get-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-channel.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-stream-key.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-playback-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-channel.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-playback-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-stream.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/import-playback-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-channels.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-playback-key-pairs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-stream-keys.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-streams.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-tags-for-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/put-metadata.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/stop-stream.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/update-channel.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kafka/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kafka/create-cluster.rst
@@ -3900,6 +3920,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/reboot-db-instance.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-option-from-option-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-role-from-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-source-identifier-from-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-cluster-from-s3.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-cluster-from-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-cluster-to-point-in-time.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance-from-db-snapshot.rst
@@ -4330,6 +4351,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/tag-resourc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/update-action-target.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/update-insight.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/update-security-hub-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/update-standards-control.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/serverlessrepo/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/serverlessrepo/put-application-policy.rst
