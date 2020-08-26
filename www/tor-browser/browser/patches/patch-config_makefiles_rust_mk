@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_makefiles_rust_mk,v 1.1 2020/07/21 13:21:36 semarie Exp $
+$OpenBSD: patch-config_makefiles_rust_mk,v 1.2 2020/08/26 07:37:39 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
 
@@ -10,6 +10,6 @@ Index: config/makefiles/rust.mk
  # Enable link-time optimization for release builds.
  cargo_rustc_flags += -C lto
 +export CARGO_PROFILE_RELEASE_LTO=yes
- endif
- endif
- 
+ # Versions of rust >= 1.45 need -Cembed-bitcode=yes for all crates when
+ # using -Clto.
+ ifeq (,$(filter 1.22.% 1.23.% 1.24.% 1.25.% 1.26.% 1.27.% 1.28.% 1.29.% 1.30.% 1.31.% 1.32.% 1.33.% 1.34.% 1.35.% 1.36.% 1.37.% 1.38.% 1.39.% 1.40.% 1.41.% 1.42.% 1.43.% 1.44.%,$(RUSTC_VERSION)))
