@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2020/02/22 10:09:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2020/08/26 06:50:14 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
@@ -47,6 +47,7 @@ lib/tracker-2.0/trackertestutils/helpers.py
 lib/tracker-2.0/trackertestutils/mainloop.py
 @bin libexec/tracker-store
 @man man/man1/tracker-daemon.1
+@man man/man1/tracker-export.1
 @man man/man1/tracker-index.1
 @man man/man1/tracker-info.1
 @man man/man1/tracker-reset.1
