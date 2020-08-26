@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/03/20 22:47:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/08/26 01:50:49 afresh1 Exp $
 @pkgpath devel/p5-Class-MOP
-bin/moose-outdated
+@comment bin/moose-outdated
 ${P5ARCH}/Class/MOP/
 ${P5ARCH}/Class/MOP.pm
 ${P5ARCH}/Class/MOP/Attribute.pm
@@ -17,7 +17,6 @@ ${P5ARCH}/Class/MOP/Method/Constructor.pm
 ${P5ARCH}/Class/MOP/Method/Generated.pm
 ${P5ARCH}/Class/MOP/Method/Inlined.pm
 ${P5ARCH}/Class/MOP/Method/Meta.pm
-${P5ARCH}/Class/MOP/Method/Overload.pm
 ${P5ARCH}/Class/MOP/Method/Wrapped.pm
 ${P5ARCH}/Class/MOP/MiniTrait.pm
 ${P5ARCH}/Class/MOP/Mixin/
@@ -25,12 +24,14 @@ ${P5ARCH}/Class/MOP/Mixin.pm
 ${P5ARCH}/Class/MOP/Mixin/AttributeCore.pm
 ${P5ARCH}/Class/MOP/Mixin/HasAttributes.pm
 ${P5ARCH}/Class/MOP/Mixin/HasMethods.pm
+${P5ARCH}/Class/MOP/Mixin/HasOverloads.pm
 ${P5ARCH}/Class/MOP/Module.pm
 ${P5ARCH}/Class/MOP/Object.pm
+${P5ARCH}/Class/MOP/Overload.pm
 ${P5ARCH}/Class/MOP/Package.pm
 ${P5ARCH}/Moose/
 ${P5ARCH}/Moose.pm
-${P5ARCH}/Moose/Conflicts.pm
+@comment ${P5ARCH}/Moose/Conflicts.pm
 ${P5ARCH}/Moose/Cookbook/
 ${P5ARCH}/Moose/Cookbook.pod
 ${P5ARCH}/Moose/Cookbook/Basics/
@@ -180,6 +181,7 @@ ${P5ARCH}/Moose/Exception/InvalidBaseTypeGivenToCreateParameterizedTypeConstrain
 ${P5ARCH}/Moose/Exception/InvalidHandleValue.pm
 ${P5ARCH}/Moose/Exception/InvalidHasProvidedInARole.pm
 ${P5ARCH}/Moose/Exception/InvalidNameForType.pm
+${P5ARCH}/Moose/Exception/InvalidOverloadOperator.pm
 ${P5ARCH}/Moose/Exception/InvalidRoleApplication.pm
 ${P5ARCH}/Moose/Exception/InvalidTypeConstraint.pm
 ${P5ARCH}/Moose/Exception/InvalidTypeGivenToCreateParameterizedTypeConstraint.pm
@@ -208,6 +210,7 @@ ${P5ARCH}/Moose/Exception/MethodNameNotFoundInInheritanceHierarchy.pm
 ${P5ARCH}/Moose/Exception/MethodNameNotGiven.pm
 ${P5ARCH}/Moose/Exception/MustDefineAMethodName.pm
 ${P5ARCH}/Moose/Exception/MustDefineAnAttributeName.pm
+${P5ARCH}/Moose/Exception/MustDefineAnOverloadOperator.pm
 ${P5ARCH}/Moose/Exception/MustHaveAtLeastOneValueToEnumerate.pm
 ${P5ARCH}/Moose/Exception/MustPassAHashOfOptions.pm
 ${P5ARCH}/Moose/Exception/MustPassAMooseMetaRoleInstanceOrSubclass.pm
@@ -240,6 +243,13 @@ ${P5ARCH}/Moose/Exception/NoImmutableTraitSpecifiedForClass.pm
 ${P5ARCH}/Moose/Exception/NoParentGivenToSubtype.pm
 ${P5ARCH}/Moose/Exception/OnlyInstancesCanBeCloned.pm
 ${P5ARCH}/Moose/Exception/OperatorIsRequired.pm
+${P5ARCH}/Moose/Exception/OverloadConflictInSummation.pm
+${P5ARCH}/Moose/Exception/OverloadRequiresAMetaClass.pm
+${P5ARCH}/Moose/Exception/OverloadRequiresAMetaMethod.pm
+${P5ARCH}/Moose/Exception/OverloadRequiresAMetaOverload.pm
+${P5ARCH}/Moose/Exception/OverloadRequiresAMethodNameOrCoderef.pm
+${P5ARCH}/Moose/Exception/OverloadRequiresAnOperator.pm
+${P5ARCH}/Moose/Exception/OverloadRequiresNamesForCoderef.pm
 ${P5ARCH}/Moose/Exception/OverrideConflictInComposition.pm
 ${P5ARCH}/Moose/Exception/OverrideConflictInSummation.pm
 ${P5ARCH}/Moose/Exception/PackageDoesNotUseMooseExporter.pm
@@ -257,6 +267,7 @@ ${P5ARCH}/Moose/Exception/Role/AttributeName.pm
 ${P5ARCH}/Moose/Exception/Role/Class.pm
 ${P5ARCH}/Moose/Exception/Role/EitherAttributeOrAttributeName.pm
 ${P5ARCH}/Moose/Exception/Role/Instance.pm
+${P5ARCH}/Moose/Exception/Role/InstanceClass.pm
 ${P5ARCH}/Moose/Exception/Role/InvalidAttributeOptions.pm
 ${P5ARCH}/Moose/Exception/Role/Method.pm
 ${P5ARCH}/Moose/Exception/Role/ParamsHash.pm
@@ -268,7 +279,6 @@ ${P5ARCH}/Moose/Exception/RoleDoesTheExcludedRole.pm
 ${P5ARCH}/Moose/Exception/RoleExclusionConflict.pm
 ${P5ARCH}/Moose/Exception/RoleNameRequired.pm
 ${P5ARCH}/Moose/Exception/RoleNameRequiredForMooseMetaRole.pm
-${P5ARCH}/Moose/Exception/RoleNamesDoNotMatch.pm
 ${P5ARCH}/Moose/Exception/RolesDoNotSupportAugment.pm
 ${P5ARCH}/Moose/Exception/RolesDoNotSupportExtends.pm
 ${P5ARCH}/Moose/Exception/RolesDoNotSupportInner.pm
@@ -279,7 +289,6 @@ ${P5ARCH}/Moose/Exception/SingleParamsToNewMustBeHashRef.pm
 ${P5ARCH}/Moose/Exception/TriggerMustBeACodeRef.pm
 ${P5ARCH}/Moose/Exception/TypeConstraintCannotBeUsedForAParameterizableType.pm
 ${P5ARCH}/Moose/Exception/TypeConstraintIsAlreadyCreated.pm
-${P5ARCH}/Moose/Exception/TypeNamesDoNotMatch.pm
 ${P5ARCH}/Moose/Exception/TypeParameterMustBeMooseMetaType.pm
 ${P5ARCH}/Moose/Exception/UnableToCanonicalizeHandles.pm
 ${P5ARCH}/Moose/Exception/UnableToCanonicalizeNonRolePackage.pm
@@ -310,6 +319,7 @@ ${P5ARCH}/Moose/Manual/FAQ.pod
 ${P5ARCH}/Moose/Manual/MOP.pod
 ${P5ARCH}/Moose/Manual/MethodModifiers.pod
 ${P5ARCH}/Moose/Manual/MooseX.pod
+${P5ARCH}/Moose/Manual/Resources.pod
 ${P5ARCH}/Moose/Manual/Roles.pod
 ${P5ARCH}/Moose/Manual/Support.pod
 ${P5ARCH}/Moose/Manual/Types.pod
@@ -472,7 +482,7 @@ ${P5ARCH}/Moose/Util/TypeConstraints/Builtins.pm
 ${P5ARCH}/Test/
 ${P5ARCH}/Test/Moose.pm
 ${P5ARCH}/auto/Moose/
-${P5ARCH}/auto/Moose/Moose.so
+@so ${P5ARCH}/auto/Moose/Moose.so
 ${P5ARCH}/metaclass.pm
 ${P5ARCH}/oose.pm
 @man man/man3p/Class::MOP.3p
@@ -487,18 +497,18 @@ ${P5ARCH}/oose.pm
 @man man/man3p/Class::MOP::Method::Generated.3p
 @man man/man3p/Class::MOP::Method::Inlined.3p
 @man man/man3p/Class::MOP::Method::Meta.3p
-@man man/man3p/Class::MOP::Method::Overload.3p
 @man man/man3p/Class::MOP::Method::Wrapped.3p
 @man man/man3p/Class::MOP::MiniTrait.3p
 @man man/man3p/Class::MOP::Mixin.3p
 @man man/man3p/Class::MOP::Mixin::AttributeCore.3p
 @man man/man3p/Class::MOP::Mixin::HasAttributes.3p
 @man man/man3p/Class::MOP::Mixin::HasMethods.3p
+@man man/man3p/Class::MOP::Mixin::HasOverloads.3p
 @man man/man3p/Class::MOP::Module.3p
 @man man/man3p/Class::MOP::Object.3p
+@man man/man3p/Class::MOP::Overload.3p
 @man man/man3p/Class::MOP::Package.3p
 @man man/man3p/Moose.3p
-@man man/man3p/Moose::Conflicts.3p
 @man man/man3p/Moose::Cookbook.3p
 @man man/man3p/Moose::Cookbook::Basics::BankAccount_MethodModifiersAndSubclassing.3p
 @man man/man3p/Moose::Cookbook::Basics::BinaryTree_AttributeFeatures.3p
@@ -547,6 +557,7 @@ ${P5ARCH}/oose.pm
 @man man/man3p/Moose::Manual::MOP.3p
 @man man/man3p/Moose::Manual::MethodModifiers.3p
 @man man/man3p/Moose::Manual::MooseX.3p
+@man man/man3p/Moose::Manual::Resources.3p
 @man man/man3p/Moose::Manual::Roles.3p
 @man man/man3p/Moose::Manual::Support.3p
 @man man/man3p/Moose::Manual::Types.3p

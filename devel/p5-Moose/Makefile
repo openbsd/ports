@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/08/26 01:50:49 afresh1 Exp $
 
 COMMENT=	complete modern object system for perl 5
 
 MODULES=	cpan
-DISTNAME=	Moose-2.1204
+DISTNAME=	Moose-2.2013
 CATEGORIES=	devel
-REVISION=	2
 
 # perl
 PERMIT_PACKAGE=	Yes
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	devel/p5-Task-Weaken
 RUN_DEPENDS=	devel/p5-Class-Load-XS \
 		devel/p5-Data-OptList \
 		devel/p5-Devel-GlobalDestruction \
+		devel/p5-Devel-OverloadInfo>=0.005 \
 		devel/p5-Devel-StackTrace \
 		devel/p5-Dist-CheckConflicts \
 		devel/p5-Eval-Closure \
@@ -35,7 +35,8 @@ RUN_DEPENDS=	devel/p5-Class-Load-XS \
 		devel/p5-Sub-Name \
 		devel/p5-Try-Tiny
 
-TEST_DEPENDS=databases/p5-DBM-Deep \
+TEST_DEPENDS=	databases/p5-DBM-Deep \
+		devel/p5-CPAN-Meta-Check \
 		devel/p5-Class-Load \
 		devel/p5-DateTime-Calendar-Mayan \
 		devel/p5-DateTime-Format-MySQL \
@@ -48,6 +49,7 @@ TEST_DEPENDS=databases/p5-DBM-Deep \
 		devel/p5-MRO-Compat \
 		devel/p5-Params-Coerce \
 		devel/p5-Sub-Name \
+		devel/p5-Test-CleanNamespaces \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fatal \
 		devel/p5-Test-Output \

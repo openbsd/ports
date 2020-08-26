@@ -1,4 +1,4 @@
-Moose is built on top of Class::MOP, which is a metaclass system 
-for Perl 5. This means that Moose not only makes building normal 
-Perl 5 objects better, but it also provides the power of metaclass 
+Moose is built on top of Class::MOP, which is a metaclass system
+for Perl 5. This means that Moose not only makes building normal
+Perl 5 objects better, but it also provides the power of metaclass
 programming.
