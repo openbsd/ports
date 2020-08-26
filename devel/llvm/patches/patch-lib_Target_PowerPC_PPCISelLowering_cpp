@@ -1,14 +1,7 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCISelLowering_cpp,v 1.9 2020/08/10 11:38:43 jca Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCISelLowering_cpp,v 1.10 2020/08/26 10:33:47 jca Exp $
 
 Set max atomic size for PowerPC, so AtomicExpandPass changes some
 8-byte atomic ops into libcalls.
-
-When generating code for OpenBSD/powerpc, avoid unaligned floating-point
-load and store instructions.  The vast majority of PowerPC CPUs that
-OpenBSD runs on don't implement those and will generate an alignment
-exceptions.  While we do emulate lfd and stfd (to work around GCC bugs),
-we don't emulate lfs and stfs.  It is way more efficient to have the
-compiler generate code that only uses aligned load and store instructions.
 
 Index: lib/Target/PowerPC/PPCISelLowering.cpp
 --- lib/Target/PowerPC/PPCISelLowering.cpp.orig
@@ -25,18 +18,3 @@ Index: lib/Target/PowerPC/PPCISelLowering.cpp
      setOperationAction(ISD::ATOMIC_LOAD,  MVT::i64, Expand);
      setOperationAction(ISD::ATOMIC_STORE, MVT::i64, Expand);
    }
-@@ -15295,6 +15298,14 @@ bool PPCTargetLowering::allowsMisalignedMemoryAccesses
- 
-   if (VT == MVT::ppcf128)
-     return false;
-+
-+  if (Subtarget.isTargetOpenBSD()) {
-+    // Traditional PowerPC does not support unaligned memory access
-+    // for floating-point and the OpenBSD kernel does not emulate
-+    // all possible floating-point load and store instructions.
-+    if (VT == MVT::f32 || VT == MVT::f64)
-+      return false;
-+  }
- 
-   if (Fast)
-     *Fast = true;
