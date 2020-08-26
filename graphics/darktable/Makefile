@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.99 2020/08/24 09:47:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2020/08/26 12:59:29 sthen Exp $
 
-ONLY_FOR_ARCHS= i386 amd64 aarch64
+ONLY_FOR_ARCHS= amd64 aarch64 powerpc64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
