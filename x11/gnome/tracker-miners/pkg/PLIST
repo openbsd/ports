@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/02/22 10:09:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/08/26 07:02:33 ajacoutot Exp $
 @conflict meta-tracker-<2.0
 lib/tracker-miners-2.0/
 lib/tracker-miners-2.0/extract-modules/
@@ -145,7 +145,6 @@ share/tracker-miners/extract-rules/15-gstreamer-guess.rule
 share/tracker-miners/extract-rules/15-playlist.rule
 share/tracker-miners/extract-rules/15-source-code.rule
 share/tracker-miners/extract-rules/90-gstreamer-audio-generic.rule
-share/tracker-miners/extract-rules/90-gstreamer-image-generic.rule
 share/tracker-miners/extract-rules/90-gstreamer-video-generic.rule
 share/tracker-miners/extract-rules/90-text-generic.rule
 share/tracker/miners/
