@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/10 16:47:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2020/08/26 03:23:40 jsg Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
 
 DISTNAME =	piglit-20190208
-REVISION =	3
+REVISION =	4
 
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit

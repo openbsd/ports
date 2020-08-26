@@ -1,0 +1,26 @@
+$OpenBSD: patch-tests_egl_egl-context-priority_c,v 1.1 2020/08/26 03:23:40 jsg Exp $
+
+s/EGL_NO_CONFIG_MESA/EGL_NO_CONFIG_KHR/
+1fe351e533a1c8b88551b06e6d76e5c2bf8228bc
+
+Index: tests/egl/egl-context-priority.c
+--- tests/egl/egl-context-priority.c.orig
++++ tests/egl/egl-context-priority.c
+@@ -68,7 +68,7 @@ static EGLContext
+ create_context(EGLDisplay dpy, EGLint *attr)
+ {
+ 	EGLContext ctx =
+-		eglCreateContext(dpy, EGL_NO_CONFIG_MESA, EGL_NO_CONTEXT, attr);
++		eglCreateContext(dpy, EGL_NO_CONFIG_KHR, EGL_NO_CONTEXT, attr);
+ 
+ 	if (ctx == EGL_NO_CONTEXT) {
+ 		fprintf(stderr, "could not create EGL context, attr 0x%x\n", attr[1]);
+@@ -115,7 +115,7 @@ piglit_init(int argc, char **argv)
+ 	attr[0] = EGL_CONTEXT_PRIORITY_LEVEL_IMG;
+ 	attr[1] = EGL_TRANSPARENT_RED_VALUE;
+ 
+-	ctx = eglCreateContext(dpy, EGL_NO_CONFIG_MESA, EGL_NO_CONTEXT, attr);
++	ctx = eglCreateContext(dpy, EGL_NO_CONFIG_KHR, EGL_NO_CONTEXT, attr);
+ 
+ 	if (ctx != EGL_NO_CONTEXT) {
+ 		fprintf(stderr, "should fail with invalid parameter\n");

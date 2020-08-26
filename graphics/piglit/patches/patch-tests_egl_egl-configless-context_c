@@ -1,0 +1,29 @@
+$OpenBSD: patch-tests_egl_egl-configless-context_c,v 1.1 2020/08/26 03:23:40 jsg Exp $
+
+s/EGL_NO_CONFIG_MESA/EGL_NO_CONFIG_KHR/
+1fe351e533a1c8b88551b06e6d76e5c2bf8228bc
+
+Index: tests/egl/egl-configless-context.c
+--- tests/egl/egl-configless-context.c.orig
++++ tests/egl/egl-configless-context.c
+@@ -37,11 +37,6 @@
+ #include "piglit-util-gl.h"
+ #include "piglit-util-egl.h"
+ 
+-#ifndef EGL_MESA_configless_context
+-#define EGL_MESA_configless_context 1
+-#define EGL_NO_CONFIG_MESA			((EGLConfig)0)
+-#endif
+-
+ struct state {
+ 	Display *dpy;
+ 	EGLDisplay egl_dpy;
+@@ -365,7 +360,7 @@ main(int argc, char **argv)
+ 	}
+ 
+ 	state.ctx = eglCreateContext(state.egl_dpy,
+-				     EGL_NO_CONFIG_MESA,
++				     EGL_NO_CONFIG_KHR,
+ 				     EGL_NO_CONTEXT,
+ 				     config_attribs);
+ 	if (state.ctx == EGL_NO_CONTEXT) {
