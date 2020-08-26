@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/26 19:29:30 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2020/08/26 19:34:01 edd Exp $
 
 COMMENT =	command-line fuzzy finder
 
 # Note: we make our own vendored distfile.
 DISTNAME =	fzf-0.22.0
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/junegunn/fzf
+
+MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
