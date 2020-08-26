@@ -1,4 +1,5 @@
-$OpenBSD: patch-rsyncd_conf_5,v 1.8 2020/08/03 21:35:36 kn Exp $
+$OpenBSD: patch-rsyncd_conf_5,v 1.9 2020/08/26 12:15:56 sthen Exp $
+
 Index: rsyncd.conf.5
 --- rsyncd.conf.5.orig
 +++ rsyncd.conf.5
@@ -17,7 +18,7 @@ Index: rsyncd.conf.5
  reread its config file.
  .P
  Note that you should \fBnot\fP send the rsync daemon a HUP signal to force it to
-@@ -425,7 +424,7 @@ This parameter specifies the user name or user ID that
+@@ -438,7 +437,7 @@ This parameter specifies the user name or user ID that
  and from that module should take place as when the daemon was run as root.
  In combination with the "gid" parameter this determines what file
  permissions are available. The default when run by a super-user is to
@@ -26,7 +27,7 @@ Index: rsyncd.conf.5
  to not try to change the user.  See also the "gid" parameter.
  .IP
  The RSYNC_USER_NAME environment variable may be used to request that rsync
-@@ -445,7 +444,7 @@ accessing the module.  The first one will be the defau
+@@ -458,7 +457,7 @@ accessing the module.  The first one will be the defau
  extra ones be set as supplemental groups.  You may also specify a "\fB*\fP" as
  the first gid in the list, which will be replaced by all the normal groups
  for the transfer's user (see "uid").  The default when run by a super-user
@@ -35,7 +36,7 @@ Index: rsyncd.conf.5
  other supplementary groups.  The default for a non-super-user is to not
  change any group attributes (and indeed, your OS may not allow a
  non-super-user to try to change their group settings).
-@@ -619,7 +618,7 @@ require that you specify a group password if you do no
+@@ -632,7 +631,7 @@ require that you specify a group password if you do no
  passwords.
  .IP
  There is no default for the "secrets file" parameter, you must choose a
@@ -44,7 +45,7 @@ Index: rsyncd.conf.5
  readable by "other"; see "strict modes".  If the file is not found or is
  rejected, no logins for a "user auth" module will be possible.
  .IP "\fBstrict\ modes\fP"
-@@ -1176,8 +1175,8 @@ A more sophisticated example would be:
+@@ -1192,8 +1191,8 @@ A more sophisticated example would be:
  .RS 4
  .P
  .nf
@@ -55,7 +56,7 @@ Index: rsyncd.conf.5
  use chroot = yes
  max connections = 4
  syslog facility = local5
-@@ -1203,7 +1202,7 @@ pid file = /var/run/rsyncd.pid
+@@ -1219,7 +1218,7 @@ pid file = /var/run/rsyncd.pid
          path = /data/cvs
          comment = CVS repository (requires authentication)
          auth users = tridge, susan
@@ -64,7 +65,7 @@ Index: rsyncd.conf.5
  .fi
  .RE
  .P
-@@ -1218,7 +1217,7 @@ susan:herpass
+@@ -1234,7 +1233,7 @@ susan:herpass
  .P
  .SH "FILES"
  .P

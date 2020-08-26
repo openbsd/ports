@@ -1,4 +1,5 @@
-$OpenBSD: patch-authenticate_c,v 1.7 2020/08/03 21:35:36 kn Exp $
+$OpenBSD: patch-authenticate_c,v 1.8 2020/08/26 12:15:56 sthen Exp $
+
 Index: authenticate.c
 --- authenticate.c.orig
 +++ authenticate.c

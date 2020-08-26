@@ -1,6 +1,8 @@
-$OpenBSD: patch-support_rrsync,v 1.2 2012/09/18 11:28:23 jasper Exp $
---- support/rrsync.orig	Fri Aug 31 11:58:47 2012
-+++ support/rrsync	Fri Aug 31 11:58:36 2012
+$OpenBSD: patch-support_rrsync,v 1.3 2020/08/26 12:15:56 sthen Exp $
+
+Index: support/rrsync
+--- support/rrsync.orig
++++ support/rrsync
 @@ -11,7 +11,7 @@ use File::Glob ':glob';
  
  # You may configure these values to your liking.  See also the section

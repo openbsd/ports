@@ -1,0 +1,16 @@
+$OpenBSD: patch-compat_c,v 1.1 2020/08/26 12:15:56 sthen Exp $
+
+https://github.com/WayneD/rsync/issues/84
+
+Index: compat.c
+--- compat.c.orig
++++ compat.c
+@@ -705,7 +705,7 @@ void setup_protocol(int f_out,int f_in)
+ 				do_negotiated_strings = 1;
+ 				compat_flags |= CF_VARINT_FLIST_FLAGS;
+ 			}
+-			if (strchr(client_info, 'V') != NULL) { /* Support a pre-release 'V' that got superseded */
++			if (!local_server && strchr(client_info, 'V') != NULL) { /* Support a pre-release 'V' that got superseded */
+ 				if (!write_batch)
+ 					compat_flags |= CF_VARINT_FLIST_FLAGS;
+ 				write_byte(f_out, compat_flags);

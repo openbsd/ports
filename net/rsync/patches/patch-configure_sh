@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure_sh,v 1.5 2020/08/03 21:35:36 kn Exp $
+$OpenBSD: patch-configure_sh,v 1.6 2020/08/26 12:15:56 sthen Exp $
+
 Index: configure.sh
 --- configure.sh.orig
 +++ configure.sh
-@@ -4901,7 +4901,7 @@ fi
+@@ -4908,7 +4908,7 @@ fi
  
  
  cat >>confdefs.h <<_ACEOF
