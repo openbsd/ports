@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.979 2020/08/21 22:42:25 bluhm Exp $
+# $OpenBSD: Makefile,v 1.980 2020/08/26 02:01:26 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -155,6 +155,7 @@
      SUBDIR += p5-Catalyst-Action-RenderView
      SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
      SUBDIR += p5-Catalyst-Component-InstancePerContext
+     SUBDIR += p5-Catalyst-Controller-ActionRole
      SUBDIR += p5-Catalyst-Controller-FormBuilder
      SUBDIR += p5-Catalyst-Controller-HTML-FormFu
      SUBDIR += p5-Catalyst-Devel
