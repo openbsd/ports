@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/26 02:01:08 afresh1 Exp $
+${P5SITE}/Catalyst/Controller/
+${P5SITE}/Catalyst/Controller/ActionRole.pm
+@man man/man3p/Catalyst::Controller::ActionRole.3p
