@@ -1,7 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.14 2014/12/06 21:26:42 kirby Exp $
---- setup.py.orig	Wed Jul 16 09:37:19 2014
-+++ setup.py	Fri Nov 28 15:55:33 2014
-@@ -368,6 +368,7 @@ class MyInstallLib (install_lib, object):
+$OpenBSD: patch-setup_py,v 1.15 2020/08/26 06:57:33 kirby Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -140,6 +140,7 @@ class MyInstallLib (install_lib, object):
              else:
                  val = getattr(cmd_obj, attr)
              if attr == 'install_data':
@@ -9,49 +10,26 @@ $OpenBSD: patch-setup_py,v 1.14 2014/12/06 21:26:42 kirby Exp $
                  cdir = os.path.join(val, "share", "linkchecker")
                  data.append('config_dir = %r' % cnormpath(cdir))
              elif attr == 'install_lib':
-@@ -654,8 +655,7 @@ myemail = "bastian.kleineidam@web.de"
- 
- data_files = [
-     ('share/linkchecker',
--        ['config/linkcheckerrc',
--        'doc/html/lccollection.qhc', 'doc/html/lcdoc.qch']),
-+        ['config/linkcheckerrc',]),
-     ('share/linkchecker/examples',
-         ['cgi-bin/lconline/leer.html.en',
-          'cgi-bin/lconline/leer.html.de',
-@@ -669,11 +669,9 @@ data_files = [
- ]
+@@ -420,11 +421,9 @@ for (src, dst) in list_message_files(AppName):
+     data_files.append((dst, [src]))
  
  if os.name == 'posix':
--    data_files.append(('share/man/man1', ['doc/en/linkchecker.1', 'doc/en/linkchecker-gui.1']))
+-    data_files.append(('share/man/man1', ['doc/en/linkchecker.1']))
 -    data_files.append(('share/man/man5', ['doc/en/linkcheckerrc.5']))
--    data_files.append(('share/man/de/man1', ['doc/de/linkchecker.1', 'doc/de/linkchecker-gui.1']))
+-    data_files.append(('share/man/de/man1', ['doc/de/linkchecker.1']))
 -    data_files.append(('share/man/de/man5', ['doc/de/linkcheckerrc.5']))
 -    data_files.append(('share/linkchecker/examples',
-+    data_files.append(('man/man1', ['doc/en/linkchecker.1', 'doc/en/linkchecker-gui.1']))
++    data_files.append(('man/man1', ['doc/en/linkchecker.1']))
 +    data_files.append(('man/man5', ['doc/en/linkcheckerrc.5']))
 +    data_files.append(('share/examples/linkchecker',
                ['config/linkchecker-completion',
                 'doc/examples/check_blacklist.sh',
                 'doc/examples/check_for_x_errors.sh',
-@@ -896,9 +894,6 @@ args = dict(
-         'py2exe': MyPy2exe,
-         'py2app': MyPy2app,
-     },
--    package_dir = {
--        'linkcheck_dns.dns': 'third_party/dnspython/dns',
--    },
-     packages = [
-         'linkcheck',
-         'linkcheck.bookmarks',
-@@ -913,10 +908,6 @@ args = dict(
-         'linkcheck.network',
-         'linkcheck.parser',
-         'linkcheck.plugins',
--        'linkcheck_dns.dns',
--        'linkcheck_dns.dns.rdtypes',
--        'linkcheck_dns.dns.rdtypes.ANY',
--        'linkcheck_dns.dns.rdtypes.IN',
+@@ -502,7 +501,6 @@ args = dict(
+     # Requirements, usable with setuptools or the new Python packaging module.
+     install_requires = [
+         'requests<2.15,>=2.2',
+-        'dnspython',
+         'pyxdg',
      ],
-     ext_modules = [
-         Extension('linkcheck.HtmlParser.htmlsax',
+     # Commented out since they are untested and not officially supported.
