@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.38 2019/12/14 16:26:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2020/08/26 06:46:53 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
 @pkgpath print/foomatic-filters
 @rcscript ${RCDIR}/cups_browsed
 bin/driverless
+bin/driverless-fax
 bin/foomatic-rip
 @bin bin/ttfread
 include/cupsfilters/
@@ -32,10 +33,12 @@ lib/pkgconfig/libcupsfilters.pc
 lib/pkgconfig/libfontembed.pc
 @bin libexec/cups/backend/beh
 libexec/cups/backend/driverless
+libexec/cups/backend/driverless-fax
 @bin libexec/cups/backend/implicitclass
 @bin libexec/cups/backend/parallel
 @bin libexec/cups/backend/serial
 @bin libexec/cups/driver/driverless
+libexec/cups/driver/driverless-fax
 @bin libexec/cups/filter/bannertopdf
 @bin libexec/cups/filter/commandtoescpx
 @bin libexec/cups/filter/commandtopclx

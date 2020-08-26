@@ -1,0 +1,20 @@
+$OpenBSD: patch-utils_driverless-fax,v 1.1 2020/08/26 06:46:53 ajacoutot Exp $
+
+Index: utils/driverless-fax
+--- utils/driverless-fax.orig
++++ utils/driverless-fax
+@@ -10,11 +10,11 @@
+ #
+ 
+ if [ $# -eq "0" ]; then
+-    DEVICE_TYPE=FAX /usr/lib/cups/backend/driverless
++    DEVICE_TYPE=FAX ${PREFIX}/libexec/cups/backend/driverless
+     elif [ $# -eq "1" ]; then
+-        DEVICE_TYPE=FAX /usr/lib/cups/driver/driverless "$1"
++        DEVICE_TYPE=FAX ${PREFIX}/libexec/cups/driver/driverless "$1"
+     elif [ $# -eq "2" ]; then
+-        DEVICE_TYPE=FAX /usr/lib/cups/driver/driverless "$1" "$2"
++        DEVICE_TYPE=FAX ${PREFIX}/libexec/cups/driver/driverless "$1" "$2"
+     else
+         echo "ERROR: Too many arguments"
+ fi
