@@ -1,7 +1,19 @@
-@comment $OpenBSD: PLIST-gdb,v 1.3 2020/04/18 06:47:10 semarie Exp $
+@comment $OpenBSD: PLIST-gdb,v 1.4 2020/08/27 17:24:57 semarie Exp $
 bin/rust-gdb
 @comment bin/rust-gdbgui
+lib/rustlib/etc/
+${MODPY_COMMENT}lib/rustlib/etc/${MODPY_PYCACHE}/
+@comment lib/rustlib/etc/${MODPY_PYCACHE}lldb_rust_formatters.${MODPY_PYC_MAGIC_TAG}pyc
+@comment lib/rustlib/etc/lldb_rust_formatters.py
 lib/rustlib/etc/${MODPY_PYCACHE}gdb_load_rust_pretty_printers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/rustlib/etc/${MODPY_PYCACHE}gdb_rust_pretty_printing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rustlib/etc/${MODPY_PYCACHE}gdb_lookup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rustlib/etc/${MODPY_PYCACHE}gdb_providers.${MODPY_PYC_MAGIC_TAG}pyc
+@comment lib/rustlib/etc/${MODPY_PYCACHE}lldb_lookup.${MODPY_PYC_MAGIC_TAG}pyc
+@comment lib/rustlib/etc/${MODPY_PYCACHE}lldb_providers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rustlib/etc/${MODPY_PYCACHE}rust_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rustlib/etc/gdb_load_rust_pretty_printers.py
-lib/rustlib/etc/gdb_rust_pretty_printing.py
+lib/rustlib/etc/gdb_lookup.py
+lib/rustlib/etc/gdb_providers.py
+@comment lib/rustlib/etc/lldb_lookup.py
+@comment lib/rustlib/etc/lldb_providers.py
+lib/rustlib/etc/rust_types.py

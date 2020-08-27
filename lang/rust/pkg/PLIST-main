@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2020/07/22 06:59:17 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2020/08/27 17:24:57 semarie Exp $
 @conflict cargo-<0.20.0
 @pkgpath devel/cargo
 @bin bin/cargo
@@ -9,13 +9,8 @@
 @so lib/librustc_macros-${LIBR_METADATA_rustc_macros}.so
 @so lib/libstd-${LIBR_METADATA_std}.so
 @so lib/libtest-${LIBR_METADATA_test}.so
+@so lib/libtracing_attributes-${LIBR_METADATA_tracing_attributes}.so
 lib/rustlib/
-lib/rustlib/etc/
-${MODPY_COMMENT}lib/rustlib/etc/${MODPY_PYCACHE}/
-lib/rustlib/etc/${MODPY_PYCACHE}debugger_pretty_printers_common.${MODPY_PYC_MAGIC_TAG}pyc
-@comment lib/rustlib/etc/${MODPY_PYCACHE}lldb_rust_formatters.${MODPY_PYC_MAGIC_TAG}pyc
-lib/rustlib/etc/debugger_pretty_printers_common.py
-@comment lib/rustlib/etc/lldb_rust_formatters.py
 lib/rustlib/${TRIPLE_ARCH}/
 lib/rustlib/${TRIPLE_ARCH}/lib/
 lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-${LIBR_METADATA_alloc}.rlib

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_tools_cargo_src_cargo_core_compiler_context_compilation_files_rs,v 1.14 2020/07/22 06:59:17 semarie Exp $
+$OpenBSD: patch-src_tools_cargo_src_cargo_core_compiler_context_compilation_files_rs,v 1.15 2020/08/27 17:24:57 semarie Exp $
 For port tree, use a custom metadata to have known-in-advance hashes.
 Use an environment variable to use alternate method.
 
 Index: src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs
 --- src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs.orig
 +++ src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs
-@@ -481,6 +481,19 @@ fn compute_metadata(
+@@ -490,6 +490,19 @@ fn compute_metadata(
      if !should_use_metadata(bcx, unit) {
          return None;
      }
@@ -24,4 +24,4 @@ Index: src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs
 +
      let mut hasher = StableHasher::new();
  
-     // This is a generic version number that can be changed to make
+     METADATA_VERSION.hash(&mut hasher);

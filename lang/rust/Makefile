@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2020/08/05 07:14:04 semarie Exp $
+# $OpenBSD: Makefile,v 1.119 2020/08/27 17:24:57 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,17 +13,17 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.45.2
-CARGO_V =		0.46.1
+V =			1.46.0
+CARGO_V =		0.47.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.4.17
+RUSTFMT_V =		1.4.18
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.45.0-20200716
-BV-amd64 =		1.45.0-20200714
-BV-i386 =		1.45.0-20200715
-BV-sparc64 =		1.45.0-20200714
+BV-aarch64 =		1.46.0-20200827
+BV-amd64 =		1.46.0-20200825
+BV-i386 =		1.46.0-20200825
+BV-sparc64 =		1.46.0-20200825
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -45,8 +45,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl m pthread ssh2 ssl z
 WANTLIB-gdb =
-WANTLIB-clippy =	c c++abi m pthread
-WANTLIB-rustfmt =	c c++abi m pthread
+WANTLIB-clippy =	${COMPILER_LIBCXX} c m pthread
+WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
 
 MASTER_SITES =		https://static.rust-lang.org/dist/ \
 			https://dev-static.rust-lang.org/dist/
@@ -95,8 +95,9 @@ LIBRUST_WITH_HASHES =	alloc 				01 \
 			std 				14 \
 			term 				15 \
 			test 				16 \
-			unicode_width 			17 \
-			unwind				18
+			tracing_attributes		17 \
+			unicode_width 			18 \
+			unwind				19
 
 # generate a stable hash mostly conforming to rust expectations
 # (it should change if anything changed)
@@ -250,9 +251,10 @@ do-install:
 .endfor
 	for lib in ${PREFIX}/lib/lib*.* ; do \
 		libname=$${lib##*/} ; \
-		test -e ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib/$${libname} && \
+		if [ -e ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib/$${libname} ] ; then \
 			ln -fs rustlib/${TRIPLE_ARCH}/lib/$${libname} \
 				${PREFIX}/lib/$${libname} ; \
+		fi ; \
 	done
 
 post-install:

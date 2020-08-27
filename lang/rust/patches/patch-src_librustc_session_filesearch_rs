@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_librustc_session_filesearch_rs,v 1.10 2020/03/21 05:23:59 semarie Exp $
+$OpenBSD: patch-src_librustc_session_filesearch_rs,v 1.11 2020/08/27 17:24:57 semarie Exp $
 fallback to LOCALBASE as default sysroot.
 Index: src/librustc_session/filesearch.rs
 --- src/librustc_session/filesearch.rs.orig
 +++ src/librustc_session/filesearch.rs
-@@ -134,7 +134,10 @@ pub fn get_or_default_sysroot() -> PathBuf {
+@@ -138,7 +138,10 @@ pub fn get_or_default_sysroot() -> PathBuf {
              }
              None => panic!("can't determine value for sysroot"),
          },

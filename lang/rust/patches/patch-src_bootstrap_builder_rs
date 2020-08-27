@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_bootstrap_builder_rs,v 1.11 2020/07/22 06:59:17 semarie Exp $
+$OpenBSD: patch-src_bootstrap_builder_rs,v 1.12 2020/08/27 17:24:57 semarie Exp $
 Pass the information that we want to override metadata (on final stage)
 Index: src/bootstrap/builder.rs
 --- src/bootstrap/builder.rs.orig
 +++ src/bootstrap/builder.rs
-@@ -1175,6 +1175,27 @@ impl<'a> Builder<'a> {
+@@ -1220,6 +1220,27 @@ impl<'a> Builder<'a> {
              );
          }
  
@@ -28,6 +28,6 @@ Index: src/bootstrap/builder.rs
 +            }
 +        }
 +
-         // If Control Flow Guard is enabled, pass the `control_flow_guard=checks` flag to rustc
+         // If Control Flow Guard is enabled, pass the `control-flow-guard` flag to rustc
          // when compiling the standard library, since this might be linked into the final outputs
          // produced by rustc. Since this mitigation is only available on Windows, only enable it
