@@ -1,0 +1,23 @@
+$OpenBSD: patch-providers_bind_soa_go,v 1.1 2020/08/27 10:06:52 pvk Exp $
+
+https://github.com/StackExchange/dnscontrol/pull/820/
+
+Index: providers/bind/soa.go
+--- providers/bind/soa.go.orig
++++ providers/bind/soa.go
+@@ -9,7 +9,6 @@ func makeSoa(origin string, defSoa *SoaInfo, existing,
+ 	// or hardcoded defaults.
+ 	soaRec := models.RecordConfig{}
+ 	soaRec.SetLabel("@", origin)
+-	soaRec.TTL = models.DefaultTTL
+ 
+ 	if defSoa == nil {
+ 		defSoa = &SoaInfo{}
+@@ -22,6 +21,7 @@ func makeSoa(origin string, defSoa *SoaInfo, existing,
+ 		desired = &models.RecordConfig{}
+ 	}
+ 
++	soaRec.TTL = firstNonZero(desired.TTL, defSoa.TTL, existing.TTL, models.DefaultTTL)
+ 	soaRec.SetTargetSOA(
+ 		firstNonNull(desired.GetTargetField(), existing.GetTargetField(), defSoa.Ns, "DEFAULT_NOT_SET."),
+ 		firstNonNull(desired.SoaMbox, existing.SoaMbox, defSoa.Mbox, "DEFAULT_NOT_SET."),
