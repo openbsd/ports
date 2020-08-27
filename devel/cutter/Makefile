@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/14 17:15:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2020/08/27 21:05:12 naddy Exp $
 
 COMMENT =	RE platform powered by radare2
 
 GH_ACCOUNT =	radareorg
 GH_PROJECT =	cutter
 GH_TAGNAME =	v1.11.1
+REVISION =	0
 
 CATEGORIES =	devel
 

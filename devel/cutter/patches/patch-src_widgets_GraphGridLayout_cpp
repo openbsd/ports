@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_widgets_GraphGridLayout_cpp,v 1.1 2020/08/27 21:05:12 naddy Exp $
+
+Index: src/widgets/GraphGridLayout.cpp
+--- src/widgets/GraphGridLayout.cpp.orig
++++ src/widgets/GraphGridLayout.cpp
+@@ -526,7 +526,7 @@ void GraphGridLayout::calculateEdgeMainColumn(GraphGri
+     // to contain blocks above sweep line and query for nearest column which isn't blocked by a block.
+ 
+     struct Event {
+-        size_t blockId;
++        ut64 blockId;
+         size_t edgeId;
+         int row;
+         enum Type {
