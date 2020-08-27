@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/03/17 15:00:11 jca Exp $
-include/qjson/
-include/qjson/parser.h
-include/qjson/parserrunnable.h
-include/qjson/qjson_export.h
-include/qjson/qobjecthelper.h
-include/qjson/serializer.h
-include/qjson/serializerrunnable.h
-lib/cmake/qjson/
-lib/cmake/qjson/QJSONConfig.cmake
-lib/cmake/qjson/QJSONConfigVersion.cmake
-lib/cmake/qjson/QJSONTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/qjson/QJSONTargets.cmake
-@lib lib/libqjson.so.${LIBqjson_VERSION}
-lib/pkgconfig/QJson.pc
+@comment $OpenBSD: PLIST,v 1.6 2020/08/27 05:19:17 rsadowski Exp $
+include/qjson-qt5/
+include/qjson-qt5/parser.h
+include/qjson-qt5/parserrunnable.h
+include/qjson-qt5/qjson_export.h
+include/qjson-qt5/qobjecthelper.h
+include/qjson-qt5/serializer.h
+include/qjson-qt5/serializerrunnable.h
+lib/cmake/
+lib/cmake/qjson-qt5/
+lib/cmake/qjson-qt5/QJSON-qt5Config.cmake
+lib/cmake/qjson-qt5/QJSON-qt5ConfigVersion.cmake
+lib/cmake/qjson-qt5/QJSON-qt5Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/qjson-qt5/QJSON-qt5Targets.cmake
+@lib lib/libqjson-qt5.so.${LIBqjson-qt5_VERSION}
+lib/pkgconfig/QJson-qt5.pc
