@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2020/08/13 03:03:42 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.193 2020/08/27 15:18:30 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -27,7 +27,6 @@
      SUBDIR += fftw3
      SUBDIR += fftw3,float
      SUBDIR += foma
-     SUBDIR += freemat
      SUBDIR += galculator
      SUBDIR += gbc
      SUBDIR += geogebra
