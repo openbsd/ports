@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/27 03:29:11 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/27 01:00:46 kevlo Exp $
 include/FcitxQt5/
 include/FcitxQt5/FcitxQtDBusAddons/
 include/FcitxQt5/FcitxQtDBusAddons/fcitxqtconnection.h
@@ -29,10 +29,10 @@ lib/cmake/FcitxQt5WidgetsAddons/FcitxQt5WidgetsAddonsTargets${MODCMAKE_BUILD_SUF
 lib/cmake/FcitxQt5WidgetsAddons/FcitxQt5WidgetsAddonsTargets.cmake
 @bin lib/fcitx/libexec/fcitx-qt5-gui-wrapper
 lib/fcitx/qt/
-lib/fcitx/qt/libfcitx-quickphrase-editor5.so
+@so lib/fcitx/qt/libfcitx-quickphrase-editor5.so
 @lib lib/libFcitxQt5DBusAddons.so.${LIBFcitxQt5DBusAddons_VERSION}
 @lib lib/libFcitxQt5WidgetsAddons.so.${LIBFcitxQt5WidgetsAddons_VERSION}
-lib/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so
+@so lib/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so
 share/locale/ca/LC_MESSAGES/fcitx-qt5.mo
 share/locale/da/LC_MESSAGES/fcitx-qt5.mo
 share/locale/de/LC_MESSAGES/fcitx-qt5.mo

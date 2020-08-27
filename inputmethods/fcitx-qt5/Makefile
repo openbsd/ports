@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/08/27 01:00:45 kevlo Exp $
 
 COMMENT =	fcitx plugin for Qt5
 
@@ -7,8 +7,7 @@ SHARED_LIBS +=	FcitxQt5WidgetsAddons	0.0 # 1.0
 
 GH_ACCOUNT =	fcitx
 GH_PROJECT =	fcitx-qt5
-GH_TAGNAME =	1.2.3
-REVISION =	0
+GH_TAGNAME =	1.2.5
 
 CATEGORIES =	inputmethods
 
