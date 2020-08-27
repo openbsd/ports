@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2020/02/29 14:09:05 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2020/08/27 00:59:48 kevlo Exp $
 @pkgpath inputmethods/fcitx
 @bin bin/createPYMB
 @bin bin/fcitx
@@ -131,6 +131,8 @@ lib/fcitx/libexec/
 lib/girepository-1.0/Fcitx-1.0.typelib
 @so lib/gtk-2.0/2.10.0/immodules/im-fcitx.so
 lib/gtk-3.0/
+lib/gtk-3.0/3.0.0/
+lib/gtk-3.0/3.0.0/immodules/
 @lib lib/libfcitx-config.so.${LIBfcitx-config_VERSION}
 @lib lib/libfcitx-core.so.${LIBfcitx-core_VERSION}
 @lib lib/libfcitx-gclient.so.${LIBfcitx-gclient_VERSION}
