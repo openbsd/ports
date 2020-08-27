@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libsync_networkjobs_h,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+$OpenBSD: patch-src_libsync_networkjobs_h,v 1.2 2020/08/27 18:19:09 rsadowski Exp $
 
 Index: src/libsync/networkjobs.h
 --- src/libsync/networkjobs.h.orig
 +++ src/libsync/networkjobs.h
-@@ -412,8 +412,6 @@ class OWNCLOUDSYNC_EXPORT DetermineAuthTypeJob : publi
+@@ -425,8 +425,6 @@ class OWNCLOUDSYNC_EXPORT DetermineAuthTypeJob : publi
          Basic, // also the catch-all fallback for backwards compatibility reasons
          OAuth,
          Shibboleth,
