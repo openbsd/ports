@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/21 16:35:44 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2020/08/27 15:16:32 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += anthy
@@ -21,7 +21,6 @@
      SUBDIR += scim-fcitx
      SUBDIR += scim-hangul
      SUBDIR += scim-pinyin
-     SUBDIR += scim-qtimm
      SUBDIR += scim-tables
      SUBDIR += tomoe
      SUBDIR += uim

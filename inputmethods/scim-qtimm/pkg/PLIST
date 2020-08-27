@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/29 02:26:32 kevlo Exp $
-@comment ${MODQT_PLUGINS}/inputmethods/libqscim.la
-${MODQT_PLUGINS}/inputmethods/libqscim.so
-share/locale/de/LC_MESSAGES/scim-qtimm.mo
-share/locale/fr/LC_MESSAGES/scim-qtimm.mo
-share/locale/it/LC_MESSAGES/scim-qtimm.mo
-share/locale/zh_CN/LC_MESSAGES/scim-qtimm.mo
