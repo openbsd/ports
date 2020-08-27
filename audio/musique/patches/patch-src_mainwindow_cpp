@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_mainwindow_cpp,v 1.4 2020/08/27 05:21:57 rsadowski Exp $
+
+https://github.com/flaviotordini/musique/pull/28
+
+Index: src/mainwindow.cpp
+--- src/mainwindow.cpp.orig
++++ src/mainwindow.cpp
+@@ -1310,8 +1310,8 @@ void MainWindow::runFinetune(const QString &filename) 
+     return;
+ #endif
+ 
+-#ifdef APP_EXTRA
+     const QString baseUrl = QLatin1String("https://") + Constants::ORG_DOMAIN;
++#ifdef APP_EXTRA
+     const QString filesUrl = baseUrl + QLatin1String("/files/");
+     QString url = filesUrl + "finetune/finetune.";
+ 
