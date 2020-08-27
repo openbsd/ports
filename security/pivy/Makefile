@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2020/08/08 11:05:26 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/27 10:27:31 jmatthew Exp $
 
-V =		0.6.1
+V =		0.7.1
 COMMENT =	tools for using PIV tokens as an SSH agent, encryption, etc.
 DISTNAME =	pivy-$V
 
