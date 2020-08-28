@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/05/14 14:54:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/08/28 11:44:43 ajacoutot Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -249,6 +249,23 @@ share/help/tr/geary/search.page
 share/help/tr/geary/shortcuts.page
 share/help/tr/geary/star.page
 share/help/tr/geary/write.page
+share/help/uk/
+share/help/uk/geary/
+share/help/uk/geary/accounts.page
+share/help/uk/geary/archive.page
+share/help/uk/geary/bugs.page
+share/help/uk/geary/contributing.page
+share/help/uk/geary/figures/
+share/help/uk/geary/figures/geary.svg
+share/help/uk/geary/index.page
+share/help/uk/geary/label.page
+share/help/uk/geary/limits.page
+share/help/uk/geary/overview.page
+share/help/uk/geary/preferences.page
+share/help/uk/geary/search.page
+share/help/uk/geary/shortcuts.page
+share/help/uk/geary/star.page
+share/help/uk/geary/write.page
 share/icons/hicolor/scalable/actions/close-symbolic.svg
 share/icons/hicolor/scalable/actions/detach-symbolic.svg
 share/icons/hicolor/scalable/actions/edit-symbolic.svg
