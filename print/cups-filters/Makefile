@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.178 2020/08/26 06:46:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.179 2020/08/28 12:41:28 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.28.0
+DISTNAME=	cups-filters-1.28.1
 
 CATEGORIES=	print
 
@@ -29,7 +29,9 @@ WANTLIB += tiff unistring z zstd
 MASTER_SITES=	https://www.openprinting.org/download/cups-filters/
 
 # cc1plus: error: unrecognized command line option "-std=c++0x"
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
+
+USE_GMAKE=	Yes
 
 .if ${MACHINE_ARCH} == "hppa"
 CFLAGS +=	-O0
@@ -90,7 +92,6 @@ pre-configure:
 		${WRKSRC}/filter/foomatic-rip/spooler.c
 	sed -i 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/filter/foomatic-rip/foomaticrip.c
-	${SUBST_CMD} ${WRKSRC}/utils/driverless-fax
 
 post-install:
 	rm -rf ${WRKINST}/rc?.d
