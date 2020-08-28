@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.142 2020/08/20 07:57:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.143 2020/08/28 12:34:15 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -99,6 +99,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/examples-1.json
@@ -1052,6 +1056,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/route53domains/2014-05-15
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53resolver/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53resolver/2018-04-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53resolver/2018-04-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/route53resolver/2018-04-01/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53resolver/2018-04-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/2006-03-01/
