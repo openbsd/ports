@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2020/08/26 12:59:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2020/08/28 09:23:01 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 aarch64 powerpc64
 
@@ -74,13 +74,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 NO_TEST=	Yes
 
 .include <bsd.port.arch.mk>
-.if ${ARCH:Mi386}
-# needs all the registers it can get.
-CFLAGS+=	-fomit-frame-pointer
-.endif
-# ...and there's a hard requirement of SSE3
+.if ${ARCH:Mamd64}
+# there's a hard requirement of SSE3
 CFLAGS+=	-msse3
 CXXFLAGS=	${CFLAGS}
+.endif
 
 post-install:
 	cd ${PREFIX}/lib && ln -s darktable/libdarktable.so
