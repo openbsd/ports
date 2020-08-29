@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2020/08/05 11:28:28 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2020/08/29 11:21:00 sthen Exp $
+
+BROKEN-i386 =	clang 10.0.1 ICE compiling get_edges_9_columns in edges_input.c
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
