@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/08/29 12:26:52 fcambus Exp $
 
 COMMENT=	view and edit files in hexadecimal or ASCII
 
 GH_ACCOUNT=	pixel
 GH_PROJECT=	hexedit
-GH_TAGNAME=	1.4.2
+GH_TAGNAME=	1.5
 
 CATEGORIES=	editors
 
