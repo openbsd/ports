@@ -1,0 +1,48 @@
+$OpenBSD: patch-setup_py,v 1.1 2020/08/29 20:26:08 martin Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -3,10 +3,11 @@
+ import codecs
+ import os.path
+ import re
++import sys
+ 
+ import setuptools
++from setuptools.command.test import test as TestCommand
+ 
+-
+ def read(*parts):
+     here = os.path.abspath(os.path.dirname(__file__))
+     with codecs.open(os.path.join(here, *parts), "r") as f:
+@@ -22,7 +23,20 @@ def find_version(*file_parts):
+         return version_match.group(1)
+     raise RuntimeError("Unable to find version string.")
+ 
++class PyTest(TestCommand):
++    def finalize_options(self):
++        TestCommand.finalize_options(self)
++ 
++        self.test_args = []
++        self.test_suite = True
+ 
++    def run_tests(self):
++        # import here, cause outside the eggs aren't loaded
++        import pytest
++
++        sys.exit(pytest.main(self.test_args))
++
++
+ with open("README.md") as f1, open("CHANGELOG.md") as f2:
+     long_description = f1.read() + "\n\n" + f2.read()
+ 
+@@ -54,6 +68,8 @@ setuptools.setup(
+     install_requires=["toml"],
+     entry_points={"console_scripts": ["vulture = vulture.core:main"]},
+     python_requires=">=3.6",
++    tests_require=["pytest", "pytest-cov"],
++    cmdclass={"test": PyTest},
+     packages=setuptools.find_packages(exclude=["tests"]),
+     package_data={"vulture": ["whitelists/*.py"]},
+ )

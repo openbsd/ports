@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/15 15:36:01 martin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/29 20:26:08 martin Exp $
 bin/vulture
 lib/python${MODPY_VERSION}/site-packages/vulture/
 lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6,20 +6,25 @@ lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/vulture/__init__.py
 lib/python${MODPY_VERSION}/site-packages/vulture/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}lines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}noqa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vulture/config.py
 lib/python${MODPY_VERSION}/site-packages/vulture/core.py
 lib/python${MODPY_VERSION}/site-packages/vulture/lines.py
 lib/python${MODPY_VERSION}/site-packages/vulture/noqa.py
 lib/python${MODPY_VERSION}/site-packages/vulture/utils.py
+lib/python${MODPY_VERSION}/site-packages/vulture/version.py
 lib/python${MODPY_VERSION}/site-packages/vulture/whitelists/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vulture/whitelists/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vulture/whitelists/${MODPY_PYCACHE}argparse_whitelist.${MODPY_PYC_MAGIC_TAG}pyc
