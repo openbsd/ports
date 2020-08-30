@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2020/07/11 12:35:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.66 2020/08/30 20:14:31 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.12.4
+V =			4.13.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -42,9 +42,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL KF5SyntaxHighlighting Qt5Concurrent
 WANTLIB += Qt5Core Qt5Designer Qt5DesignerComponents Qt5Gui Qt5Help
 WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick
-WANTLIB += Qt5QuickWidgets Qt5Script Qt5SerialPort Qt5Sql Qt5Svg
-WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml c clang m yaml-cpp
+WANTLIB += Qt5QuickWidgets Qt5SerialPort Qt5Sql Qt5Svg Qt5WebChannel
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
+WANTLIB += c clang m yaml-cpp
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
