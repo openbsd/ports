@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/01/20 12:28:31 bentley Exp $
-@pkgpath games/uqm
-@bin bin/uqm
-@man man/man6/uqm.6
-share/doc/uqm/
-share/doc/uqm/manual.txt

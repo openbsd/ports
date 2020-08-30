@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1041 2020/08/27 15:31:55 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1042 2020/08/30 10:11:03 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -467,6 +467,10 @@ my $stem_extensions = {
 	'iosevka-fonts-default' => 'iosevka',
 	'iosevka-fonts-term' => 'iosevka',
 	'py-distutils-extra' => 'py3-distutils-extra',
+	'uqm-remix1' => 'uqm-remix',
+	'uqm-remix2' => 'uqm-remix',
+	'uqm-remix3' => 'uqm-remix',
+	'uqm-remix4' => 'uqm-remix',
 };
 
 my $obsolete_reason = {
