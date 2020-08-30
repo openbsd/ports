@@ -1,0 +1,1644 @@
+.\" $OpenBSD: uqm.6,v 1.1.1.1 2020/08/30 10:04:59 bentley Exp $
+.\" (C) 1992, 1993, 2002 Toys for Bob, Inc.
+.\" The documentation may be used freely under the terms of the
+.\" Creative Commons Attribution Attribution 2.0 license,
+.\" available at http://creativecommons.org/licenses/by/2.0/
+.\"
+.\" The content may also be copied freely as part of a distribution of
+.\" The Ur-Quan Masters.
+.Dd October 28, 2014
+.Dt UQM 6
+.Os
+.Sh NAME
+.Nm uqm
+.Nd The Ur\(hyQuan Masters \(en space exploration game
+.Sh SYNOPSIS
+.Nm uqm
+.Op Fl bcCfghklMnopqsSTuwx
+.Op Fl i Ar style
+.Op Fl m Ar soundtrack
+.Op Fl r Ar resolution
+.Op Fl -addon Ar addon
+.Op Fl -cscan Ar style
+.Op Fl -font Ar font
+.Op Fl -menu Ar style
+.Op Fl -safe
+.Op Fl -scroll Ar style
+.Op Fl -shield Ar style
+.Op Fl -sound
+.Op Fl -stereosfx
+.Sh DESCRIPTION
+.Nm uqm
+is a port of the epic space game The Ur\(hyQuan Masters.
+.Pp
+The default settings for an
+.Nm uqm
+install are 3DO music, 640\(mu480 windowed mode, and pure SDL graphics drivers.
+You may pass various command line options to customize your experience.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl b , Fl -meleezoom Ar mode
+Melee zooming mode
+.Po
+.Sy pc
+or
+.Sy 3do
+.Pc ;
+.Sy step
+is an alias for
+.Sy pc
+and
+.Sy smooth
+is an alias for
+.Sy 3do .
+Default is
+.Sy 3do .
+Slower machine owners can set it to
+.Sy pc
+to get better performance in melee.
+.It Fl C Ar dir , Fl -configdir Ar dir
+Sets the directory where the game will store the config data.
+.It Fl c Ar mode , Fl -scale Ar mode
+Graphics scaling mode
+.Po
+.Cm bilinear ,
+.Cm biadapt ,
+.Cm biadv ,
+.Cm triscan ,
+.Cm hq
+or
+.Cm none
+.Pc .
+Default is
+.Cm none .
+Try these to get smoother graphics, at a performance cost.
+.It Fl f , Fl -fullscreen
+Uses full screen mode.
+The opposite of
+.Fl w .
+.It Fl g Ar val , Fl -gamma Ar val
+Sets gamma correction.
+1.0 causes no change
+(unless your graphics card is originally set to a different value).
+Higher than 1.0 makes the image brighter, lower than 1.0 makes it darker.
+.It Fl h , Fl -help
+Display a help message.
+.It Fl i Ar style , Fl -intro Ar style
+With
+.Cm 3do ,
+use the 3DO intro and ending movies (if you have them).
+With
+.Cm pc ,
+use the PC intro and ending sequences and slide shows.
+Defaults to
+.Cm 3do .
+Regardless of which option is selected, the PC sequences will be used if you do
+not have the 3DO movies.
+.It Fl k , Fl -keepaspectratio
+Keep 4:3 aspect ratio when using custom resolutions.
+.It Fl l Ar file , Fl -logfile Ar file
+Set a file to receive the diagnostic information that would otherwise go to the
+console.
+.It Fl M Ar volume , Fl -musicvol Ar volume
+Set music volume (0\(en100).
+.It Fl m Ar soundtrack , Fl -music Ar soundtrack
+Select either the 3DO remixed soundtrack with
+.Cm 3do
+or the .MOD\(hybased PC soundtrack with
+.Cm pc .
+Defaults to
+.Cm 3do
+for songs that were in fact remixed.
+.It Fl n Ar dir , Fl -contentdir Ar dir
+Set the directory where the game will seek its data.
+.It Fl o , Fl -opengl
+Use OpenGL drivers.
+This produces higher\(hyquality graphics, and may be faster as well \(en
+but it also may not work on older cards.
+It also permits use of any screen resolution.
+The opposite of
+.Fl x .
+.It Fl p , Fl -fps
+Print fps information in the status window.
+.It Fl q Ar setting , Fl -audioquality Ar setting
+Can be
+.Cm high ,
+.Cm medium ,
+or
+.Cm low .
+Specifies how nice the audio sounds.
+Slower machines should lower the audio quality.
+.It Fl r Ar resolution , Fl -res Ar resolution
+Sets the screen resolution.
+Unless
+.Fl -opengl
+is set, the only valid values are
+.Dq 640x480
+and
+.Dq 320x240 .
+.It Fl S Ar volume , Fl -sfxvol Ar volume
+Set sound effects volume (0\(en100).
+.It Fl s , Fl -scanlines
+Simulates interlaced displays.
+.It Fl T Ar volume , Fl -speechvol Ar volume
+Set speech volume (0\(en100).
+If set to 0, the game runs in
+.Sq no speech
+mode and the oscilloscope reacts to the music.
+.It Fl u , Fl -nosubtitles
+Disables subtitles.
+.It Fl w , Fl -windowed
+Displays the game in a window.
+The opposite of
+.Fl f .
+.It Fl x , Fl -nogl
+Do not use OpenGL drivers.
+This is more likely to run on systems with poor or no 3D acceleration,
+and is often faster, especially on older or less well supported cards.
+Only the 320\(mu240 and 640\(mu480 resolutions are available when not using
+OpenGL.
+The opposite of
+.Fl o .
+.It Fl -addon Ar name
+Enable the named add\(hyon in the game.
+See the
+.Sx ADD\(hyONS
+section for details.
+.It Fl -cscan Ar style
+When scanning planets, display information using text
+.Pq with Cm pc
+or pictograms
+.Pq with Cm 3do .
+Defaults to
+.Cm pc .
+.It Fl -font Ar style
+Use PC\(hystyle fonts and colors
+.Pq with Cm pc
+or 3DO\(hystyle
+.Pq with Cm 3do .
+Defaults to
+.Cm pc .
+.It Fl -menu Ar style
+In menus, display options as text
+.Pq with Cm pc
+or pictograms
+.Pq with Cm 3do .
+Defaults to
+.Cm pc .
+.It Fl -safe
+Start the game in safe mode.
+Safe mode will ignore stored user settings,
+like resolution, fullscreen mode, sound driver, etc.
+This is useful if you have somehow wrecked your configuration files and cannot
+get to the in\(hygame setup menu to change the settings.
+.It Fl -scroll Ar style
+Using the left/right arrow keys,
+scroll voiceovers and subtitles one page at a time
+.Pq with Cm pc
+or smoothly
+.Pq with Cm 3do .
+Defaults to
+.Cm pc .
+.It Fl -shield Ar style
+Use the CPU\(hyintensive, 3DO\(hystyle throbbing slave shield graphic
+.Pq with Cm 3do
+or the PC\(hystyle static slave shield graphic
+.Pq with Cm pc .
+Defaults to
+.Cm pc .
+.It Fl -sound Ar driver
+Specifies which sound driver/mixer to use.
+Can be
+.Cm openal ,
+.Cm mixsdl ,
+or
+.Cm none .
+.Cm openal
+is only available when it has been compiled in.
+It may produce higher\(hyquality sound and will probably be faster,
+but it is not very stable on Linux platforms,
+and may not work well with some sound cards.
+Use
+.Cm none
+as a last resort if you cannot get other drivers to work,
+or if you have no sound card.
+.It Fl -stereosfx
+Enables positional sound effects in melee.
+Currently works only when using openal.
+.El
+.Sh STARTING THE GAME
+Simply invoke the
+.Nm uqm
+program to run the game.
+After a splash screen, you will see the main menu, which has five options:
+.Bl -tag -width "Super Melee!"
+.It New Game
+Begins a new Full Game.
+This is a galaxy\(hyspanning space adventure full of diplomacy, exploration,
+combat, high treason, and low cunning.
+The introductory cutscenes will set the scene; the below section
+.Sx THE STORY SO FAR
+provides more extensive backstory for the curious.
+.It Load Game
+Restores a Full Game session that was saved earlier.
+.It Super Melee!
+Puts the game in Super Melee mode, where you may hone your space combat skills
+or challenge your friends to fleet battles.
+See the
+.Sx SUPER MELEE
+section below for details on this game mode.
+.It Setup
+Lets you configure many options to customize your play experience.
+Most options will take effect once you exit the setup menu;
+a few specially marked options require you to restart
+.Nm uqm .
+Setup options are preserved across sessions.
+.It Quit
+Exits the program.
+.El
+.Sh CONTROLS SUMMARY
+.Ss General Game Controls
+.Bl -tag -width "F1 or Pause" -compact
+.It Cm F1 No or Cm Pause
+Pause game
+.It Cm F10
+Exit game
+.It Cm F11
+Toggle between fullscreen and windowed mode
+.El
+.Ss Full Game Controls
+Space flight:
+.Bl -tag -width "Space or Right Shift" -compact
+.It Cm Up
+Thrust
+.It Cm Left No and Cm Right
+Steer
+.It Cm Space No or Cm Right Shift
+Main Menu
+.El
+.Pp
+Menus:
+.Bl -tag -width "Space or Right Shift or Escape" -compact
+.It Arrow keys
+Scroll through selections
+.It Cm Enter No or Cm Right Ctrl
+Make selection
+.It Cm Space No or Cm Right Shift No or Cm Escape
+Up one level
+.El
+.Pp
+Conversations:
+.Bl -tag -width "Space or Right Shift" -compact
+.It Cm Left No and Cm Right
+Rewind/Forward
+.It Cm Up No and Cm Down
+Scroll through selections
+.It Cm Enter No or Cm Right Ctrl
+Make selection
+.It Cm Space No or Cm Right Shift
+Skip, Show/Hide summary
+.El
+.Pp
+Star Map:
+.Bl -tag -width "Space or Right Shift" -compact
+.It Arrow Keys
+Move the crosshair
+.It Cm Enter No or Cm Right Ctrl
+Select destination
+.It Cm Space No or Cm Right Shift
+Main menu
+.It Keypad Cm +
+Zoom in
+.It Keypad Cm -
+Zoom out
+.It Cm /
+Begin search.
+(Type star or constellation name to find matches)
+.It Cm Tab
+Jump to next match
+.El
+.Pp
+Space Combat:
+.Bl -tag -width "Right Ctrl or Enter" -compact
+.It Cm Up
+Thrust
+.It Cm Left No and Cm Right
+Steer
+.It Cm Right Ctrl No or Cm Enter
+Fire Primary Weapon
+.It Cm Right Shift
+Fire Secondary Weapon
+.It Cm Escape
+Emergency Warp Escape
+.El
+.Pp
+Planet Exploration:
+.Bl -tag -width "Right Shift or Escape" -compact
+.It Cm Up
+Forward
+.It Cm Left No and Cm Right
+Steer
+.It Cm Right Ctrl No or Cm Enter
+Fire stun bolt
+.It Cm Right Shift No or Cm Escape
+Blast off
+.El
+.Ss Melee Controls
+Top Player:
+.Bl -tag -width "A and D" -compact
+.It Cm W
+Thrust
+.It Cm A No and Cm D
+Steer
+.It Cm V
+Fire Primary Weapon
+.It Cm B
+Fire Secondary Weapon
+.El
+.Pp
+Bottom Player:
+.Bl -tag -width "Right Ctrl or Enter" -compact
+.It Cm Up No or Cm Enter
+Thrust
+.It Cm Left No and Cm Right
+Steer
+.It Cm Right Ctrl No or Cm Enter
+Fire Primary Weapon
+.It Cm Right Shift
+Fire Secondary Weapon
+.El
+.Pp
+These controls are configurable from the Setup Menu.
+You may define up to six
+.Dq Input Templates
+and assign a template to either or both players.
+Some commonly used key configurations are pre\(hydefined,
+as well as popular variants.
+To change key bindings, select the binding you wish to change and press
+.Cm Enter .
+At the dialog box, press the key (or joystick gesture)
+that you wish to assign to this action.
+.Sh SAVED GAMES
+The saved games are kept in your personal directory for
+.Nm uqm
+data.
+This directory is automatically created the first time you start the game.
+On Unix systems this personal
+.Nm uqm
+data is stored in
+.Pa ~/.uqm .
+.Pp
+You will generally only need to know this if you intend to transfer savegames
+to another computer.
+.Sh INTERPLANETARY EXPLORATION
+When in a Solar system,
+use the thrust and steering controls to move about the system.
+Intersecting a planet will move you to the planetary system;
+flying over a planet or moon will then put you into orbit.
+From there you can talk to the inhabitants, or, if the planet is uninhabited,
+send a lander down to gather minerals, investigate energy readings,
+or capture life forms.
+.Sh PLANET LANDING
+To land on a planet, you need to achieve orbit,
+then fill a planet lander with crew and send them down.
+You will usually want to scan the planet first.
+Mineral scans will indicate easily harvestable mineral ores and other
+resources.
+Energy scans will indicate unusual installations,
+which will effectively always be worth investigating.
+Biological scans will show where life forms are on the surface.
+.Pp
+Minerals are necessary for building up and maintaining your flagship, so
+harvest them wherever you can.
+There are nine varieties, each color coded:
+.Bl -bullet
+.It
+.Em Common elements
+(carbon, nitrogen) are cyan.
+Worth 1 resource unit (RU) per unit.
+.It
+.Em Corrosives
+(chlorine, iodine) are red.
+2 RU per unit.
+.It
+.Em Base metals
+(iron, tin) are grey.
+These are common, and usually worth harvesting, but not terribly valuable.
+3 RU per unit.
+.It
+.Em Noble gases
+(argon, xenon) are blue.
+4 RU per unit.
+.It
+.Em Rare earths
+(lanthanum, ytterbium) are green.
+5 RU per unit.
+.It
+.Em Precious elements
+(gold, silver) are yellow.
+6 RU per unit.
+.It
+.Em Radioactives
+(uranium, astatine) are orange.
+8 RU per unit.
+.It
+.Em Exotics
+(antimatter, magnetic monopoles) are purple,
+and a princely 25 RU per cargo unit.
+.El
+.Pp
+Minerals may be unloaded at Earth Starbase by talking to Commander Hayes,
+which will give you RU that you may spend to upgrade your flagship.
+.Pp
+However, there are many hazards on planetary surfaces.
+Life forms are often hostile, and need to be subdued with your stunner or
+evaded.
+Earthquakes (expanding circles) can hurt your crew,
+lightning may crisp them, or lava flows and hotspots can fry them.
+Be careful,
+especially on hotter or more seismically and atmospherically active worlds.
+If your crew level starts dropping dramatically,
+flee quickly with the
+.Cm Escape
+key!
+.Pp
+Stunned life forms may be captured and analyzed by your planet landers.
+The information you gain from this may not be immediately useful,
+but it will eventually come in handy.
+.Pp
+Landing on a planet costs fuel, and the heavier the planet,
+the more fuel it requires.
+Make sure you don\(cqt spend so much fuel exploring planets that you can\(cqt
+get back to Sol!
+.Sh INTERSTELLAR TRAVEL
+When you leave a solar system, you will push up into HyperSpace.
+In HyperSpace you can travel great distances quickly,
+but you must continuously thrust to move.
+Otherwise, you will gradually slow to a stop.
+.Pp
+While you can fly about in HyperSpace just like you do in a star system,
+the Galaxy is
+.Em Large ,
+and you will usually want to use the Auto-Pilot.
+To use the Auto-Pilot, select
+.Dq Starmap
+on the menu.
+This will show you a map of the quadrant
+(the galactic Core is in the upper right corner).
+To fly to a location, move the cursor there and press
+.Cm Enter .
+Then press
+.Cm Space
+to engage the Auto-Pilot.
+.Sh DIPLOMACY
+When you encounter an alien starship, you will usually get a picture of their
+task force and a chance to choose between conversation and fighting.
+If you choose to fight, you will transition immediately to space combat
+(below).
+Otherwise, you will talk first.
+If talks go poorly, space combat will likely ensue.
+.Pp
+If the task force shows ships streaming off in all directions, you have reached
+a fortified world, and there are an unlimited number of starships facing you.
+You cannot win such a fight \(en if combat ensues, you will need to warp out.
+.Sh SPACE COMBAT
+When combat begins, you are prompted to select a ship from your task force.
+A one-on-one space combat then begins, and continues until either the enemy
+fleet is destroyed (in which case you salvage the wrecks and continue the
+game), your flagship is destroyed (ending the game), or your flagship warps
+out of combat (consuming 5 fuel units but ending the encounter).
+.Pp
+Each ship has two major stats: Crew and Combat Battery.
+Crew are effectively hit points.
+Getting hit by weapons kills crew, and if all crew are eliminated,
+the craft is destroyed.
+Firing weapons typically requires energy from the combat batteries,
+which is replaced over time.
+The precise speed of energy regeneration and cost of weapons fire varies by
+ship.
+.Pp
+Space flight is
+.Em mostly
+inertial (you\(cqll drift if you stop thrusting),
+but each ship has a maximum velocity that can only be exceeding by
+.Dq gravity whipping
+around the planet.
+Don\(cqt hit the planet unless you want to take
+.Em lots
+of damage.
+.Pp
+Each ship has a primary and secondary weapon mode,
+unique to that race\(cqs craft.
+The descriptions of those follow.
+.Ss Ship Descriptions
+.Bl -ohang
+.It Androsynth Guardian
+.Bl -inset -compact
+.It Primary weapon:
+Fires homing acid bubble clouds.
+.It Secondary weapon:
+Transforms into the
+.Sq Blazer ,
+a comet that does considerable damage by ramming its opponents.
+.El
+.It Ariloulaleelay Skiff
+.Bl -inset -compact
+.It Primary weapon:
+Auto\(hyaiming, short\(hyrange laser.
+.It Secondary weapon:
+Random teleport.
+.It Note:
+The Skiff is inertia-less, and stops instantly when thrust is removed.
+.El
+.It Chenjesu Broodhome
+.Bl -inset -compact
+.It Primary weapon:
+Crystal Shard.
+Travels until the fire button is released, then shatters.
+.It Secondary weapon:
+De\(hyenergizing Offensive Guided Interceptor.
+Launches an autonomous DOGI that rams the opponent to drain their combat
+batteries.
+.El
+.It Chmmr Avatar
+.Bl -inset -compact
+.It Primary weapon:
+Immensely powerful short-range laser.
+.It Secondary weapon:
+Tractor beam.
+.It Note:
+Has three orbiting
+.Dq ZapSats
+that attack anything that gets in range.
+.El
+.It Druuge Mauler
+.Bl -inset -compact
+.It Primary weapon:
+Long range, high\(hyrecoil cannon.
+.It Secondary weapon:
+Sets one crew on fire to gain combat energy.
+.El
+.It Earthling Cruiser
+.Bl -inset -compact
+.It Primary weapon:
+Homing nuclear missile.
+.It Secondary weapon:
+Point-defense laser.
+.El
+.It Ilwrath Avenger
+.Bl -inset -compact
+.It Primary weapon:
+Short\(hyrange flamethrower.
+.It Secondary weapon:
+Cloaking device.
+.El
+.It Kohr\(hyAh Marauder
+.Bl -inset -compact
+.It Primary weapon:
+Spinning blades that stop and home when the fire button is released.
+.It Secondary weapon:
+Fiery Ring of Inevitable and Eternal Destruction (F.R.I.E.D.), a short\(hyrange
+corona of energy that blocks shots and inflicts lots of damage.
+.El
+.It Melnorme Trader
+.Bl -inset -compact
+.It Primary weapon:
+Charged shot.
+The longer the fire button is held, the stronger the shot.
+.It Secondary weapon:
+Confusion beam that scrambles enemy controls.
+.El
+.It Mmrnmhrm X\(hyForm
+.Bl -inset -compact
+.It Primary weapon:
+Lasers (X-form) or homing missiles (Y-form).
+.It Secondary weapon:
+Switch between X-Form and Y-Form.
+.El
+.It Mycon Podship
+.Bl -inset -compact
+.It Primary weapon:
+Homing Plasmoid.
+.It Secondary weapon:
+Regenerate 4 crew.
+.El
+.It Orz Nemesis
+.Bl -inset -compact
+.It Primary weapon:
+Howitzer cannon.
+.It Secondary weapon:
+Secondary with left and right arrows rotates the primary cannon.
+Secondary with Primary launches space marines that invade the enemy ship and
+kill their crew.
+.El
+.It Pkunk Fury
+.Bl -inset -compact
+.It Primary weapon:
+Three\(hyway cannon.
+.It Secondary weapon:
+Fling insults at opponent.
+This is the only way the Pkunk can regenerate combat energy.
+.It Note:
+On occasion, a destroyed Fury will be resurrected with full fuel and power.
+.El
+.It Shofixti Scout
+.Bl -inset -compact
+.It Primary weapon:
+Energy Dart.
+.It Secondary weapon:
+Glory Device.
+When pressed three times, the ship will self\(hydestruct,
+inflicting vast damage on nearby vessels.
+.El
+.It Slylandro Probe
+.Bl -inset -compact
+.It Primary weapon:
+Lighting weapon.
+.It Secondary weapon:
+Absorb a nearby asteroid and convert to combat power.
+This is the only way the Probe can recharge.
+.It Note:
+The Probe is inertia\(hyless and always in motion.
+Pressing thrust will reverse its direction.
+.El
+.It Spathi Eluder
+.Bl -inset -compact
+.It Primary weapon:
+Simple forward cannon.
+.It Secondary weapon:
+Backward Utilized Tracking Torpedo (B.U.T.T.),
+a homing missile fired from the rear of the vessel.
+.El
+.It Supox Blade
+.Bl -inset -compact
+.It Primary weapon:
+Forward firing glob weapon.
+.It Secondary weapon:
+Secondary + left or right will cause you to drift laterally,
+while Secondary + thrust will make you fly backwards.
+This cancels your current velocity, so be careful!
+.El
+.It Syreen Penetrator
+.Bl -inset -compact
+.It Primary weapon:
+Particle Beam Stiletto.
+.It Secondary weapon:
+.Dq Syreen Call
+\(en psychic attack that induces enemy crew to jump ship,
+where you (or your opponent) may capture them to add to your complement.
+.El
+.It Thraddash Torch
+.Bl -inset -compact
+.It Primary weapon:
+Straightforward blaster cannon.
+.It Secondary weapon:
+Afterburner.
+The afterburner exhaust does more damage then the blaster,
+so use it as a weapon!
+.El
+.It Umgah Drone
+.Bl -inset -compact
+.It Primary weapon:
+Anti\(hyMatter cone.
+Does not require combat batteries to use.
+.It Secondary weapon:
+Fly backwards suddenly and at high speed.
+.It Note:
+The Drone only recharges batteries if you do not fire for a long time,
+and then the energy all returns in one lump.
+.El
+.It Ur\(hyQuan Dreadnought
+.Bl -inset -compact
+.It Primary weapon:
+Fusion Blast.
+.It Secondary weapon:
+Launches autonomous fighters to harass the enemy.
+When they run low on fuel, they will fly back to the Dreadnought.
+Catch them before they expire.
+Each fighter requires one crew to pilot it,
+so take care not to weaken the core ship.
+.El
+.It Utwig Jugger
+.Bl -inset -compact
+.It Primary weapon:
+Six\(hyshot cannon.
+Requires no combat battery energy to fire.
+.It Secondary weapon:
+Force shield.
+Absorbing hits re\(hyenergizes your batteries.
+When the batteries are exhausted,
+the shield is permanently disabled until combat ends.
+.El
+.It VUX Intruder
+.Bl -inset -compact
+.It Primary weapon:
+Gigawatt laser.
+.It Secondary weapon:
+Limpet mines that track enemy ships and slow them down dramatically if they
+hit.
+.El
+.It Yehat Terminator
+.Bl -inset -compact
+.It Primary weapon:
+Twin autocannons.
+.It Secondary weapon:
+Force shield.
+.El
+.It Zoq\(hyFot\(hyPik Stinger
+.Bl -inset -compact
+.It Primary weapon:
+Anti\(hymatter spray gun.
+.It Secondary weapon:
+.Dq Tongue attack ,
+a point\(hyblank range attack that does grievous damage.
+.El
+.El
+.Sh SUPER MELEE
+Super Melee mode is pure combat.
+It\(cqs designed to let you hone your skills for the full game,
+or to challenge your friends to fleet matches.
+Selecting
+.Dq Super Melee!
+from the main menu will bring you to the super melee main screen.
+.Pp
+This screen is dominated by the fleet design screen.
+Move the cursor over a ship slot and press
+.Cm Enter
+to change the ship assignment, or press
+.Cm Delete
+to remove the ship.
+You may select the fleet name and press
+.Cm Enter
+to edit the fleet name to something of your choice.
+The number next to the fleet name lists the fleet strength;
+this is simply the sum of the point values of all ships in the fleet.
+.Pp
+The right hand side of the screen has buttons for managing the battle.
+Each side has four buttons associated with it:
+.Cm LOAD ,
+.Cm SAVE ,
+.Cm CONTROL ,
+and
+.Cm NET .
+The
+.Cm LOAD
+and
+.Cm SAVE
+buttons let you load and save fleets.
+A variety of fleets of various strengths are pre\(hydefined,
+and you may add your own by saving fleets you design.
+.Pp
+The
+.Cm Control
+button has one of five settings.
+.Cm Human Control
+puts the fleet under the control of a human player.
+(The precise controls for that player are set in the Setup menu, but the bottom
+player\(cqs controls are always the same as the full game\(cqs controls.)
+Then there are three levels of computer control:
+.Bl -bullet
+.It
+.Cm Weak Cyborg
+is not a particularly good shot, and will only use special weapons if the ship
+absolutely requires the special weapon to function at all (Pkunk, Slylandro).
+This difficulty level only appears in the full game when fighting crippled
+ships.
+.It
+.Cm Good Cyborg
+will actually use its special weapon, but it\(cqs still not much of a threat.
+The Good cyborg provides a gentle introduction to Star Control combat if you
+are unfamiliar with the gameplay.
+However, you will soon wish to switch to...
+.It
+.Cm Awesome Cyborg .
+The AI will fully exploit each ship\(cqs abilities, and is also a tolerably
+good shot, compensating for inertia and choosing its shots.
+Enemies you meet in the full game are almost always piloted at this level.
+If a battle is giving you trouble in the full game,
+this is the setting you want.
+.El
+.Pp
+The last control option is
+.Cm Network Control ,
+which will be set if that side is controlled by a non\(hylocal opponent.
+To set up a network game, push the
+.Cm Net
+button on the side you wish to be under your opponent\(hys control.
+.Pp
+In order to connect, you must agree on a port (the default is 21837,
+which should not require any change) and set a net delay in frames.
+To compensate for network lag,
+a keypress or keyrelease will only take effect after this many frames.
+While higher values make your ship seem to respond more sluggishly,
+they give the keypress information more time to reach the remote party.
+If the game stutters, this is because it is waiting for this keypress
+information to arrive, which is an indication that the input delay is too low.
+Super Melee runs at 24 frames per second,
+each frame delayed will delay the input by about 42\ ms.
+The delay used is the maximum of the desired value for both parties.
+The default is 2.
+Values lower than 4 are typically acceptable in terms of responsiveness.
+Future versions may automatically decide on the best value to use.
+.Pp
+Once the port and delay are set, one player must select the first option
+(Wait for incoming connection), while the other enters his opponent\(hys
+hostname or IP address into the Host field and then pushes
+.Dq Connect .
+Once the connection is established, the control scheme for the remote player
+will flip to
+.Cm Network Control
+to register the connection.
+To disconnect, change it away back to one of the
+.Cm Human
+or
+.Cm Cyborg options.
+Once connected,
+you are both free to edit your fleets to provide a properly balanced battle.
+.Pp
+Once all fleets are in readiness, press the
+.Cm Battle
+button in the center right.
+(In a network game, both players must select it with no intervening fleet
+edits.
+Moving away from
+.Cm Battle
+or having your opponent change their fleet will cancel your readiness state,
+and you will need to reselect the
+.Cm Battle
+button.)
+When all players are ready, the battle begins.
+.Pp
+The ship selection screen is much as it would be in the full game, with two
+notable exceptions: a question mark in the upper right allows you to select a
+new ship randomly from those remaining,
+and a red X allows you to exit the combat entirely.
+(It is also possible to exit the melee at any time by pressing
+.Cm F10 ,
+just as one can exit anything.)
+If nobody quits,
+the combat will continue until one side has been completely destroyed.
+At this point, both fleets are shown so that one may compare initial and
+remaining fleet strengths.
+Press a key to return to the melee menu.
+.Pp
+To return to the main menu after finishing with Super Melee mode, push the
+.Cm Quit
+button in the lower right.
+.Sh THE STORY SO FAR
+.Ss \&In The Beginning
+The time is in the year 2155.
+Yet the story begins over two centuries before, in the 1930s, a time when
+surface vehicles on Earth burned fossil fuels.
+It\(cqs all hard to imagine now, of course, getting from place to place in a
+dangerous noisy machine with an engine that set fire to spurts of prehistoric
+goo.
+Makes one shudder.
+Humans had another quaint oddity in those days; it was a little box called a
+radio that transmitted a mindless mix of music and speech.
+The radio was a harmless diversion, really, until the radio towers got taller
+and the broadcasts got stronger.
+Until the transmissions began to pulse out into the vacuum of space,
+riding electromagnetic waves throughout the universe.
+It wasn\(cqt long before the broadcasts from Earth reached distant stars,
+and several alien races took notice of this new evidence of life on the
+far\(hyoff blue planet.
+One of the species listening was the Ur\(hyQuan, a life\(hyform devoid of
+conscience or character, a race genetically compelled to conquest.
+As early as 1940, the Ur\(hyQuan began to formulate sinister schemes to attack
+Earth.
+Other aliens, meanwhile, benign species that wished only peace,
+lay plans to warn Earthlings of the Ur\(hyQuan threat.
+.Ss The Scrutiny of Earth Intensifies
+From their strange worlds many light years away, both good and evil aliens
+watched with growing interest as Soviet Cosmonaut Yuri Gagarin became the first
+human to orbit the planet in 1961.
+Less than a decade later, a tremor swept through the advanced life\(hyforms
+beyond the solar system as American astronauts Armstrong and Aldrin became the
+first men to tread Earth\(cqs satellite moon.
+.Pp
+Alien scrutiny of Earth intensified.
+Meanwhile, the fratricidal conflicts that had scourged mankind since the
+species evolved continued unabated.
+The Small War of 2015 came close to obliterating civilization on Earth when
+nuclear combat broke out between several Middle Eastern countries.
+Fortunately the exchange was relatively small, limited to less than a dozen
+warheads, and a global conflagration was narrowly avoided.
+Even so, nearly a million people died.
+The terrible loss of life and the near\(hything of a planetwide Armageddon
+sobered heads of government around the world.
+The leaders of the industrialized nations and the Third World met at the United
+Nations headquarters in New York and agreed to cooperate in an immediate
+strengthening of U.N. authority.
+Within six months, the U.N. Security Council had assembled a large
+Peace\(hyKeeping Army and assumed worldwide control over all weapons of mass
+destruction.
+.Dq Mass\(hykill
+devices were gathered up from every country that possessed them.
+The weapons were then dismantled and their components stored in huge
+subterranean bunkers that came to be known as
+.Dq Peace Vaults.
+Simultaneously, the U.N. outlawed the sale of smaller arms.
+It took nearly a decade to end all armed conflict on earth.
+Yet the goal was finally achieved.
+Ten years after the U.N. summit, in 2025,
+the Earth experienced its first year without war.
+.Pp
+To ensure the total destruction of the arms trade, the United Nations
+prohibited future weapons research, including the development of nuclear fusion
+and fission technologies that might be adapted for bomb\(hymaking purposes.
+Laser applications were also closely monitored to prevent the design of
+.Dq Star Wars Ns
+\(hylike weapons.
+.Pp
+Despite these restrictions, science continued to advance across a wide spectrum
+of disciplines, especially in bio\(hytechnology.
+Brilliant Swiss Scientist Hsien Ho combined the now\(hycomplete human genome
+map with sophisticated genetic\(hyengineering techniques and perfected the
+artificial parthenogenesis \(en cloning \(en of humans at the Zurich BioTeknik
+in 2019.
+Though the clones were, to all external appearances, human, Hsien Ho modified
+their genes so that they were not capable of producing offspring.
+.Pp
+Meanwhile, a new religious order, known as Homo Deus, or
+.Dq The Godly Men,
+was founded in the aftermath of the Small War and the emotional turmoil caused
+by the destruction of the Holy Lands.
+Its charismatic founder, former car salesman Jason MacBride, built his
+worldwide following on the thesis that the Millennium was near.
+MacBride even predicted a specific date, March 11, 2046, when Heaven and Earth
+would join, and each devout person would be elevated to a divine status.
+The movement captured the imagination of millions of poor and disillusioned
+individuals worldwide.
+Within a few years,
+.Dq Brother Jason
+was one of the most powerful and influential people on the planet.
+.Pp
+For most people on Earth,
+the following two decades were a golden time of peace and prosperity.
+This was not the case for Hsien Ho\(cqs now adult clones.
+Seeing Ho\(cqs creations as a threat to his
+.Dq Godly Men,
+Jason MacBride fought to have the clones declared sub\(hyhuman.
+Calling them
+.Dq Androsynth,
+or the
+.Dq fake men,
+he used the vast resources of his human rights.
+Sadly, as the years passed,
+the Androsynth became little better than well\(hytreated slaves.
+.Pp
+Not unexpectedly, March 11, 2046 came and went without the arrival of Jason
+MacBride\(cqs promised Millennium.
+Citing a
+.Dq lack of genuinely devout people,
+MacBride withdrew from public life and faded into obscurity,
+his power and fortunes rapidly declining.
+.Pp
+By the middle of the 21st Century,
+Earthlings had begun to colonize their solar system.
+Planet orbiting factories led to lunar bases and soon there were mining and
+research outposts scattered across the Asteroid Belt.
+Yet the expansion of mankind into deep space was limited by the relatively slow
+speed at which spacecraft could travel.
+Research began in earnest to develop a ship that could warp toward distant
+stars faster than the speed of light.
+.Ss The Androsynth Rebellion
+In retrospect, the Clone Revolt of 2085 was inevitable.
+Stronger, smarter and more adaptable than normal humans,
+the Androsynth despised and deeply resented their status as slaves.
+By the late \(cq70s there were tens of thousands of Androsynth distributed
+across the planet,
+many of them doing sophisticated scientific and technological research.
+Then, in the spring of 2085, the Androsynth staged a worldwide rebellion,
+throwing off their chains with the help of a sympathetic human underground.
+.Pp
+The uprising had been exquisitely planned.
+Within 24 hours,
+the clones had captured nearly every spaceflight facility on the planet.
+Androsynth working at the centers had secretly fueled and readied over a
+thousand spacecraft to carry their people off this hated planet.
+Two days after the rebellion began, the freed clones took over all orbital and
+lunar bases, leaving not a single Androsynth on the face of the earth.
+.Dq Star Control,
+the recently established wing of the United Nations\(cq military forces,
+made several attempts to evict the clones.
+Each time the Star Control ships approached,
+the craft were burnt to ashes by colossal MASER weapons that Androsynth
+scientists had fashioned out of formerly benign energy broadcast units.
+.Pp
+After two months of futile strikes on the Androsynth strongholds with
+conventional weapons, the U.N. leadership decided to use the means of mass
+destruction stored in the Peace Vaults.
+Yet before the nuclear bombs and laser rays could be reassembled,
+Star Control scoutships watching the orbiting bases reported an amazing sight.
+Eight of the largest space stations were accelerating out of Earth orbit,
+heading towards the periphery of the solar system.
+The Androsynth had somehow modified the huge space\(hystations for flight,
+including the recently finished StarLight Hilton.
+.Pp
+Though Star Control chase ships were never able to catch the space station,
+a ten thruster ore freighter on its way home from an Asteroid Belt mining base
+with a hold full of titanium was able to make a high\(hyV interception of the
+rag\(hytag fleet.
+As the freighter pilot approached the fleeing space\(hystations,
+they suddenly began to glow with a bright energy field that spun around the
+ships with blazing speed.
+According to the pilot\(cqs recorded testimony, a
+.Dq great red hole
+over 500 meters across appeared in front of the space stations.
+As he watched in disbelief, the stations flew into the hole one by one and
+vanished in a starburst of white lights.
+When the last of the Androsynth strongholds had disappeared,
+the hole collapsed rapidly inward, imploding finally to nothingness.
+.Pp
+Over 30 years would pass before humans encountered the Androsynth again.
+.Ss Aliens Contact Earth
+In 2112, the largest and most remote space installation, Ceres Base,
+was built on the 700 kilometer\(hywide asteroid of the same name.
+Three years later, Ceres Base would be the site of mankind\(cqs first official
+contact with an alien life\(hyform \(en the crystalline Chenjesu.
+The alien vessel suddenly appeared out of nowhere, a scarlet flash of light
+announcing its presence as it took up a position 3 kilometers above the
+asteroid.
+Almost immediately, the alien ship began broadcasting this message:
+.Bd -ragged -offset indent
+\(lqPeople from Earth: We are the Chenjesu.
+We mean you no harm.
+We come in peace with an urgent message.
+Heed these words:
+there is a horde of conquering warriors advancing toward your solar system from
+deep space.
+They are called the Ur\(hyQuan.
+They know you are here.
+They will make slaves of you as they have made slaves of a thousand races
+across the galaxy.
+They will enslave both our species, Chenjesu and Human,
+unless we stop them now.
+.Pp
+\(lqWe are not alone in our struggle.
+There are others who will fight with us against the Ur\(hyQuan.
+Together \(en in an alliance with the remaining free stars \(en we may yet turn
+back the enemy, defeating the Ur\(hyQuan and its Hierarchy of Battle Thralls.
+.Pp
+\(lqWe beseech you to join us, for we desperately need your help. But we do not have much time. What is your answer?\(rq
+.Ed
+.Pp
+For over a week, the answer from Earth was stunned silence.
+.Ss The Alliance of Free Stars
+The Chenjesu representatives were patient.
+Beings of vast intellect and perception, they understood the psychological
+shock their sudden appearance had on the inhabitants of Earth, a people who,
+amazingly, had never before had contact with a species other than their own.
+The aliens remained in the solar system for several months,
+conferring with the political, military and scientific leaders of Earth.
+Meanwhile the Chenjesu\(cqs starship transported U.N. observers through
+HyperSpace to visit several worlds that had been attacked by the Ur\(hyQuan and
+their Hierarchy of Battle Thralls.
+The sad evidence of wholesale slaughter and devastation,
+and the accounts of dazed survivors, proved that the Chenjesu account was true.
+On August 1, 2116, Earth joined the Chenjesu and their other allies \(en
+the Mmrnmhrm, the Yehat, the Shofixti, and unofficially, the Syreen \(en
+to form the Alliance of Free Stars.
+.Pp
+Following formal ratification of the pact by the United Nations, Star Control
+was placed under the direct authority of the Alliance Command Council.
+.Pp
+The Chenjesu expected Earth to play a major role in the Alliance,
+both as combatants and suppliers of war material.
+Even though Earthlings were technologically primitive, their civilization had
+thousands of huge modern factories and millions of skilled workers able to
+manufacture both munitions and spacecraft.
+The tens of thousands of thermonuclear weapon components stashed away in the
+Peace Vaults were an additional bonus which surprised even the Chenjesu.
+.Pp
+On the day following Earth\(cqs formal induction into the Alliance,
+an alien race known as the Ariloulaleelay appeared,
+landing first on the Earth\(cqs moon.
+They transmitted a request to meet with Alliance representatives, and a
+delegation of human and Chenjesu diplomats journeyed to the lunar surface to
+establish contact.
+The Arilou explained that they too were threatened by the Ur\(hyQuan and had
+come to join the Alliance of Free Stars.
+Alliance headquarters was consulted, and soon afterwards the Arilous were
+welcomed into the coalition. Although the Arilou were extremely secretive \(en
+being unwilling to discuss even the locations of their homeworlds \(en
+they provided additional strength to the Alliance.
+This strength was to be tested almost immediately.
+.Ss The Course of the War
+There were many great battles between the Alliance of Free Stars and the
+Ur\(hyQuan and their Hierarchy of Battle Thralls.
+Both the Alliance and the Hierarchy built hundreds of asteroid forts all across
+the spiral arm of the Galaxy.
+Only a small fraction of these fortified positions,
+and the colonies and mining basses that surrounded them, survived the fighting.
+.Pp
+As the war spread, new alien races were drawn into the conflict until finally
+there were 14 separate species at war.
+On the Alliance side there were the Earthlings, the Chenjesu, the Yehat,
+the Mmrnmhrm, the Ariloulaleelay, the Syreen, and the Shofixti.
+Fighting with the Ur\(hyQuan were the Mycon, the Spathi, the Androsynth,
+the VUX, the Ilwrath, and the Umgah.
+.Pp
+By 2134 it was becoming clear to both sides that the Ur\(hyQuan and their
+Hierarchy of Battle Thralls were slowly but surely winning the war.
+.Ss Captain Burton\(cqs Discovery
+On March 16, 2134, Star Control Captain I. Burton, a highly respected
+28\(hyyear\(hyold female Earthling, was leading a task force of heavy cruisers
+on deep recon into what was believed to be a friendly sector near the
+Zeeman\(hyVela star cluster.
+Burton was brilliant and beautiful, with wide\(hyset deep blue eyes,
+a white even\(hytoothed smile and silky straw\(hycolored hair.
+She also had a figure that turned heads,
+even aboard a warship hurtling through deep space.
+She had just taken a navigational star fix when the ships from Earth were
+suddenly ambushed by an elite force of Androsynth Guardian combat vessels.
+The Androsynth ships had been modified for extended blazer mode,
+giving them increased speed and range.
+.Pp
+The task force was cut to shreds and only Burton\(cqs vessel, the Tobermoon,
+escaped immediate destruction.
+Knowing the Tobermoon could not outrun the Guardian ships,
+Captain Burton engaged in a desperate ploy to save the ship and crew.
+Fear crinkling the corners of her deep blue eyes, she warped her craft toward
+the heart of Zeeman\(cqs Star, a nearby supergiant sun.
+She had a desperate plan, a last ditch ploy she prayed would confuse the
+pursuer\(cqs sensors.
+The bridge crew began to panic as heat in the cabin climbed to oven\(hylike
+temperatures.
+Two enlisted men finally broke under the pressure and came for Burton,
+terror in their eyes and sweat pouring down their faces.
+But the captain had guts as well as beauty.
+She drew her sidearm and held the mutineers off,
+gaining the precious minutes she needed.
+Finally, the cabin temperature now nearing 150 degrees Fahrenheit,
+she judged they were close enough to the titanic star for her plan to work.
+As the Tobermoon\(cqs outer hull began to liquefy, Burton jettisoned the
+ship\(cqs entire stock of nuclear missiles and detonated them.
+From the perspective of the Androsynth, the vessel they were chasing had
+exploded when it flew too close to the superhot sun.
+.Pp
+As the Androsynth task force warped out of the system, a severely damaged
+Tobermoon slowly emerged from its hiding place behind Zeeman\(cqs Star.
+Burton ordered a damage report.
+As she\(cqd suspected, the craft sustained severe damage.
+Worse, the ship\(cqs engineers informed her they couldn\(cqt make repairs
+without a planetfall on a world with a breathable atmosphere.
+Like most supergiant stars,
+Zeeman did not have any Earth\(hylike planets in orbit around it.
+The Tobermoon limped through space for almost a week before Hyper\(hyRadar
+reconnaissance located a hospitable planet orbiting the dwarf star Vela.
+The planet was called Vela\ II, and it proved to have both an oxygen\(hyrich
+atmosphere and deposits of metal ore the humans could refine and use to repair
+their ship.
+.Pp
+After a successful landing, Burton ordered the engineers to begin repairs.
+She sent the rest of the crew off to explore their surroundings.
+It was only pure chance that a young ensign chose to enter a unremarkable cave
+in a nearby hillside.
+What he found within the cave was the most remarkable discovery of the century
+\(en a huge underground installation, the size of a small city,
+built in the distant past by an extinct race known only as the Precursors.
+The cave was massive,
+over 2500 meters long and averaging 50 meters from floor to ceiling.
+Off the main tunnel were countless side passages and hidden niches, almost all
+crammed with futuristic equipment and hundreds of long\(hydormant robots.
+Halfway down the main gallery, a deep crevasse sliced across the tunnel floor,
+evidence of a tremendous prehistoric earthquake that had offset the adjoining
+walls by more than ten meters.
+Over the centuries, water trickling into the cave from the planet\(cqs surface
+had carried countless minute traces of calcium carbonate that settled out as
+lime.
+As the limestone sediment built up,
+the deposits covered much of the Precursors\(cq wondrous machinery with a
+smooth coating called flowstone that was now five to ten meters thick in
+places.
+Artifacts of this powerful and technologically advanced alien species had been
+found in every quarter of known space.
+Yet this was the first time an entire Precursor base had been discovered.
+Captain Burton recognized that the wealth of advanced technology could bring
+the Alliance victory over the Ur\(hyQuan \(en but only if scientists could be
+brought to Vela\ II to study the fantastic find.
+.Pp
+Realizing that the surrounding region of space could fall under the control of
+the enemy at any time,
+Burton accelerated repairs to the Tobermoon and rocketed back to Earth at
+emergency warp speed to report her findings to her superiors at Star Control.
+Within a week, the Tobermoon was on the return leg to Vela\ II,
+crammed full of hastily assembled scientific equipment and experts on both the
+Precursor\(cqs civilization and their advanced xenotechnology.
+.Ss Expedition to Vela\ II
+The most respected but least liked Precursor expert in the expedition to
+Vela\ II was Professor Jules Farnsworth.
+The professor was well known for his formidable intellect and his extensive
+knowledge of the Precursor civilization.
+Though recognized as a great mind,
+Farnsworth was also widely disliked for his flamboyant egotism and rude
+impatience with peers who did not hang on his every word.
+The man was simply impossible to work with for anyone with a modicum of
+self\(hyrespect.
+.Pp
+It wasn\(cqt long before both his fellow scientists on the mission and Captain
+Burton rued the decision to bring Farnsworth along, for the professor did
+little but complain during the voyage from Earth to Vela\ II.
+Yet as irksome as he was, Professor Farnsworth proved his worth almost
+immediately upon his arrival at the Precursor installation.
+Within hours he located the base\(cqs deactivated central control computer.
+While the professor worked feverishly on the ancient aliens\(cq computer,
+Captain Burton received a fateful message from the Star Control High Command.
+.Pp
+As feared, the Ur\(hyQuan had smashed through the defensive lines drawn between
+the Mira and Indi constellations.
+Star Control reconnaissance ships reported that a large Hierarchy task force
+was hurtling toward the Vela star system.
+Captain Burton was ordered to evacuate all personnel from Vela\ II and return
+to Earth immediately.
+Burton\(cqs heart beat like a hammer in her chest as she read the rest of the
+message.
+Star Control was paranoid that the Precursor\(cqs advanced technology would
+fall into the hands of the hated Ur\(hyQuan.
+To prevent the Hierarchy from obtaining these ancient secrets, Burton was
+ordered to install nuclear devices throughout the Precursor installation.
+Once the Tobermoon was in orbit,
+she was to set off the weapons and destroy the entire complex.
+.Pp
+The non\(hymilitary members of the Vela\ II research team were stunned by the
+order.
+Destroy the most significant discovery of the century?
+It was unthinkable!
+Professor Farnsworth was especially distraught, for he was in the middle of
+several critical research projects that promised to unlock ancient Precursor
+technical secrets.
+In an uncharacteristic display of courage, Farnsworth offered to remain behind,
+promising to detonate the nuclear bombs if the Ur\(hyQuan found the Precursor
+caves.
+The majority of the other scientists and engineers also asked to stay on
+Vela\ II and continue their research.
+Finally, Captain Burton was persuaded that saving the treasure trove of
+advanced Precursor technology was more important than obeying a direct order
+from the High Command.
+Still, she didn\(cqt trust Farnsworth to detonate the nuclear bombs should the
+Ur\(hyQuan land.
+She decided the only logical thing to do was to remain behind herself.
+.Pp
+On August 11, 2134, Captain Burton gave over command of the Tobermoon to
+First Officer Chi, with orders to leave the star system immediately.
+He was to return to Earth at best speed and brief the High Command on the
+expedition\(cqs desperate attempt to save the Precursor installation.
+Chi promised to return with a relief party and supplies as soon as the
+Ur\(hyQuan attack was repulsed.
+After the Tobermoon had lifted off, the team quickly moved all their equipment
+deep into the cave system and obscured all signs of their presence from the
+planet\(cqs surface.
+Now, if an Ur\(hyQuan reconnaissance ship scanned the terrain,
+Vela\ II would appear uninhabited.
+The weeks turned into months as Captain Burton and her team of 200 waited for
+the return of the Tobermoon.
+.Ss Marooned
+After six months in the caves, food reserves grew critically short and
+Captain Burton imposed strict rationing.
+Professor Farnsworth found a data bank in the computer memory describing
+Vela\ II\(cqs flora and fauna.
+Burton felt her spirits soar as Farnsworth pointed out several plants and
+animals that could be harvested for food.
+The most likely sources of meat were the red\(hybrown Libixx, animals that
+looked like winged rabbits, and the six\(hylegged Ortogs, 2,000 pound beasts
+with pendulous udders that resembled a cross between a cow and a lizard.
+Both had cell structures, internal organs and flesh remarkably similar to
+mammals on Earth.
+The Precursor data also indicated that several plant species
+\(en especially the giant blue\(hyflowered Iccamullon \(en had the same
+proteins, sugars and starches as crops humans had been raising for centuries.
+Captain Burton assigned teams to hunt wild animas and harvest food planets,
+allowing them out of the caves only under cover of dark for the first year they
+were there.
+Then, gradually as the years passed, the marooned Earthlings grew confident
+they were safe from discovery by the Ur\(hyQuan on this out\(hyof\(hythe\(hyway
+little planet.
+They began to see themselves as colonists and most moved out of the caves to
+settle on the surface.
+Still, with Captain Burton prodding them, the humans remained cautious,
+building camouflaged houses and planting crops in purposefully chaotic
+patterns.
+Eventually they gave their planet a name:
+Unzervalt.
+It meant, simply,
+.Dq our world.
+.Pp
+Ten years slipped past, marked by the deaths of a dozen colonists from
+accidents or old age, and the birth of 42 children.
+Several of the scientists had now become full\(hytime farmers.
+Others fabricated old\(hyfashioned bullet\(hyfiring rifles and disappeared into
+the Unzervalt wilderness, appearing months later clad in Ortog skins and
+bursting with tales of strange landscapes and even stranger life\(hyforms.
+.Ss Farnsworth\(cqs Breakthrough
+After more than a decade of hard work, Professor Jules Farnsworth announced
+with considerable fanfare that he had finally succeeded in unlocking the secret
+of the Precursor Control Computer.
+Without Captain Burton\(cqs permission \(en indeed without even knowing what
+would happen \(en Farnsworth commanded the computer to initiate its prime
+function.
+The resulting near\(hydisaster almost got the professor put in the stockade.
+.Pp
+Suddenly, the immobile machinery within the cave roared to life.
+Huge electrical arcs shot between massive electrodes,
+incinerating a wooden storage shack.
+Robotic vehicles began tearing across the cavern floor along pre\(hyprogrammed
+paths \(en paths which led them right through several man\(hymade buildings.
+A 30\(hymeter\(hytall crane\(hylike machine detached itself from one wall and
+swiftly rolled through the cave, nearly crushing a group of panicked
+scientists.
+It was a miracle that no one was killed in the ensuing chaos as humans fled the
+caves in terror.
+.Pp
+The next day, robotic vehicles emerged from the cave,
+and cut down a nearby forest.
+They leveled the ground, covered the surface with some kind of metallic
+plastic, and then returned to their cave.
+.Pp
+Bronzed from the Vela sun, her straw\(hycolored hair pushed up under her
+commander\(cqs cap, Captain Burton led a squad of volunteers back into the
+caves on a cautious reconnaissance mission.
+Inside the main cavern, the squad came upon the robots assembling the spine of
+a huge ship \(en a
+.Em starship !
+Although the robots clearly knew the humans were there,
+turning to focus benign scanners on the volunteers several times,
+they obviously did not consider the Earthlings a threat.
+Captain Burton decided it was safe for humans to return to work in the caves,
+so long as people kept out of the robots\(cq way.
+.Pp
+Days later an abashed Farnsworth was finally coaxed back to the
+Precursor Control Computer to continue his research.
+Almost immediately, the professor discovered two significant facts.
+First, the construction process would soon transition out of the caves and
+assembly of the starship would continue on the planet\(cqs surface.
+Second, as far as Farnsworth could tell,
+the construction was going to take a long time.
+.Pp
+The
+.Dq long time
+that Farnsworth predicted turned out to be nearly a decade.
+The colonists grew accustomed to the framework of a great starship looming
+above their tiny village.
+Day after day, a hundred robots moved across the surface of the vessel,
+welding and fitting, assembling and fabricating.
+.Pp
+Then one day, without warning,
+the construction robots stopped work and returned underground.
+They assumed their original positions in the cave and shut down completely.
+The cave was exactly the way the research team had first found it \(en silent,
+motionless.
+A flustered Professor Farnsworth frantically asked the Control Computer for an
+explanation, and got an immediate answer.
+There were not enough raw materials left to finish the vessel,
+nor were there suitable substitutes anywhere on the planet.
+A week of tests by Burton and her team proved the ship was complete enough to
+blast off from the surface of Vela\ II.
+But it would have to cruise slowly through Hyperspace, lightly armed,
+and with only enough room for a skeleton crew.
+.Pp
+There was another problem.
+The controls for the vessel were not designed for humans.
+It became obvious from the interior layout of the starship that the Precursors
+were giants, and seemingly not bipedal.
+Levers were almost impossible to move,
+three people were required to actuate a single switch, and the chairs,
+beds and other furnishings were better suited for a wooly mammoth than a human.
+.Pp
+Some kind of automated control system was needed.
+After mulling over the problem for several days,
+Captain Burton decided that the only answer was to remove the
+Central Control Computer from the cave and configure it to run the ship.
+Surely Professor Farnsworth knew enough about the Precursor computer system to
+give it whatever commands were necessary to take the ship back to Earth.
+Despite vehement protests from Farnsworth,
+the Captain ordered the Precursor\(cqs computer installed in the vessel.
+After 20 years marooned on Vela\ II,
+the colonists were at last ready to return to Earth.
+.Pp
+Or were they?
+Pressed to begin programming the computer, Farnsworth broke down and admitted
+he didn\(cqt have the foggiest idea how to do it.
+It turned out he had never understood the incredibly complicated system.
+Instead, for years he had secretly employed the natural computer talents of a
+precocious young genius.
+This gifted child, now a young man, had been born on Unzervalt
+\(en the son of an officer from the Tobermoon and a Research Team engineer.
+Each night, after Farnsworth left the Control Computer console,
+the young boy had crept into the caves and tinkered with the computer.
+Within a few months, the child had established a rapport with the computer far
+beyond anything Farnsworth had accomplished.
+When the Professor discovered the boy\(cqs nocturnal activities,
+he used gifts and phony promises to win the child\(cqs confidence,
+then talked the young genius into activating the entire complex.
+.Pp
+This time, the Captain did throw the Professor into the stockade.
+.Pp
+Then Burton called this young man into her office and proposed a plan.
+She would command the starship, and he would serve as pilot,
+acting as the interface with the starship\(cqs Precursor computer.
+.Pp
+With trepidation,
+.Em you
+accepted.
+.Ss The Return to Earth
+After 3 months of intensive crew training,
+Captain Burton felt it was finally time to leave Unzervalt.
+You weren\(cqt so sure,
+weren\(cqt entirely comfortable with your new role as a starship officer.
+Burton listened as you expressed your doubts,
+then put an arm around your shoulders and reassured you.
+You\(cqd make a fine pilot.
+She\(cqd trust a ship to you any time.
+Besides, all the plans were set.
+The two of you would lead the return to Earth,
+and once there send back a rescue ship for the colonists left behind.
+If necessary, Burton vowed,
+you would fight your way through the forces of the Ur\(hyQuan Hierarchy.
+.Pp
+You, above all, will remember that trip,
+for during the journey you went through a rite of passage.
+You left Unzervalt a boy and soon found yourself forced to be a man \(en
+to lead bravely and boldly and wisely.
+Think back.
+Do you recall the exhilaration of blasting off from the tiny planet where you
+were born \(en and the sheer terror later?
+Three days out, as you approached the perimeter of that cursed Oort Cloud,
+you found the Tobermoon \(en derelict and tumbling through space.
+The deep burns along her hull were mute evidence she\(cqd seen combat.
+And lost.
+The discovery was, of course, a great shock to Captain Burton.
+Unconsciously she chewed her bottom lip, and for the first time her handsome
+face showed the awful strain of the past twenty years.
+She\(cqd been engaged to Captain Chi.
+Through the decades she\(cqd clung to the hope she\(cqd see him again, kept
+alive the dream they\(cqd shared of marriage and children and a life together.
+Now the dream was shattered.
+She knew he was gone, even though there was no body to mourn over.
+Strangely, there were no bodies at all on board.
+And most of the important ship systems were intact.
+Do you remember how Burton wondered, tears brimming in her blue eyes,
+if Officer Chi and the other crew members had been taken prisoner?
+How her words conjured up a picture in your mind of the Earthlings being
+tortured \(en their ordeal provoking mirth in the soul\(hyless Ur\(hyQuan.
+With a few days work, the engineers brought the Tobermoon back to life.
+What came next changed your life forever.
+With Captain Burton the only one aboard qualified to pilot the Earth Cruiser,
+you were put in command of the Precursor starship.
+Admit it.
+Standing on the bridge \(en
+those epaulets the grieving but bravely smiling Captain Burton pinned on
+gleaming from your shoulders \(en you felt proud, sure of yourself.
+Hey, truth be told, at that moment you thought you were invincible.
+.Pp
+Your confidence didn\(cqt last long, did it?
+With the Tobermoon leading the way, you and Burton pushed your ships out into
+HyperSpace \(en the parallel dimension where distances are fantastically
+compressed and interstellar travel feasible.
+Blazing white flashes surrounded your vessels and everything took on a crimson
+hue.
+Something up there wasn\(cqt right.
+Remember?
+Your body felt like it was in a vise and your head was spinning.
+You fought for control, forcing yourself to focus on the soft voice of
+Captain Burton radioing a command from the Tobermoon:
+.Dq Set course for Earth.
+.Pp
+A day later \(en you think it was a day, but now, looking back, you can\(cqt be
+sure \(en a sinister shadow began following you through HyperSpace.
+It moved fast, real fast.
+Within a couple of hours it had approached close enough to interact with your
+ship\(cqs hyperdrive field, pulling you both back into TrueSpace.
+At close range, the enemy ship looked like a pair of spinning red globes
+surrounded by a crackling energy field.
+Some kind of glowing rod or energy beam connected the red globes.
+The alien craft built up speed rapidly as it zeroed in on the starship you
+commanded.
+Burton saw the attack coming and signaled you to warp out of the area
+immediately. A moment later you watched on your command console monitor as the
+Tobermoon flashed away on a trajectory to intercept the alien ship.
+As you pushed up into HyperSpace, you saw a crackling bolt of energy lance out
+from the alien vessel and strike the Tobermoon.
+Burton\(cqs craft wobbled violently,
+then veered off on an erratic course in the general direction of Unzervalt.
+The Alien craft was apparently satisfied with disabling the Tobermoon,
+for the strange ship made a 180 degree turn and rocketed at warp speed toward
+deep space.
+.Pp
+Once your starship reached HyperSpace, you radioed the Tobermoon, only to learn
+that Captain Burton had been killed by the alien\(cqs unexpected attack.
+You felt sick to your stomach.
+Then you wanted to punch the bulkhead.
+You\(cqd been half in love with Burton, you knew that now.
+Life stunk!
+.Pp
+Captain Burton\(cqs death left you in full command of the mission to find Earth.
+You navigated the Precursor starship back on your original course,
+your mind swirling with all that had happened.
+A terrible doubt overtook you,
+gnawing at the edges of what had always been your strong self\(hyconfidence.
+Could you pull this off?
+You, a son of Unzervalt, born in a cave, raised on Ortog milk and Libixx meat.
+You, a man who\(cqd never set foot in a university,
+never had formal space flight training beyond the crash course from Burton?
+You\(cqd taught yourself everything, learning from reading computer programs
+and watching how engineers and scientists did things.
+The question ate at you now;
+had you been both a good teacher and a good student?
+Good enough at both to prepare you awesome task that lay ahead?
+Time would tell.
+.Pp
+And time did tell.
+Five days after the alien attack you arrived at a stellar vortex leading out of
+HyperSpace.
+Your scanner showed the vortex spiraling down to a brilliant yellow star.
+You knew at once that this was the great star that had given life to your
+ancestors, the star your Earthling progenitors called the Sun!
+You warped down out of HyperSpace and took a navigational fix.
+You were just beyond the orbit of the ninth planet of the yellow star.
+Earth was the third planet out from the Sun.
+With all thrusters on, you can reach the blue planet in two days.
+A horrible thought flits across your mind.
+Had the Ur\(hyQuan broken through the Alliance defense lines and attacked your
+ancestral home?
+Was there devastation?
+Had cities been obliterated by nuclear weapons and the survivors left
+irradiated mutants, genetic freaks roaming the ashen landscape like primal
+apes?
+You\(cqll know in 48 hours.
+.Sh ADD\(hyONS
+.Nm uqm
+has basic support for add\(hyon packages.
+Though it is not very elaborate yet, you can install some content add\(hyons.
+Add\(hyons created for UQM releases prior to v0.7 are not compatible with this
+release.
+.Pp
+Inside the directory where the content is installed, in the
+.Pa content/
+directory, there is a directory
+.Pa addons/ .
+In this directory, you can place add\(hyon packages, like
+.Sy 3domusic ,
+.Sy 3dovoice ,
+.Sy remix
+and others, or create new directories with .zip files to be used in
+addition te the standard content .zip files.
+Each add\(hyon must contain at least one .rmp file to tell the game which
+resources the add\(hyon provides.
+When you specify the command\(hy line option
+.Fl -addon Ar addon ,
+the .zip files inside the directory
+.Pa content/addons/ Ns Ar addon
+will be included in the game.
+.Fl -addon
+may be specified more than once to enable multiple add\(hyons.
+.Pp
+.Sy 3domusic ,
+.Sy 3dovoice ,
+and
+.Sy remix
+are intended to be used as add\(hyons,
+and can be turned on and off from the in\(hygame setup menu.
+.Sh BUGS
+After several years of enthusiastic testing,
+.Nm uqm
+has dramatically improved its stability, but it is still beta software,
+and bugs certainly still lurk.
+Upon finding a problem, we\(cqd like you to report it,
+but before you do, please do the following:
+.Bl -bullet
+.It
+Try to isolate what causes it:
+.Do
+Crashes with a null dereference about half the time when firing and
+taunting with a Pkunk
+.Dc
+is better than
+.Dq Melee doesn\(cqt work .
+If the game crashes, notice what error is produced;
+if the game hangs, check to see if the game\(hyexit key
+.Pq Cm F12
+works.
+.It
+Go to the
+.Lk http://bugs.uqm.stack.nl/ "bug database"
+and post a report of the problem there.
+Search the database first to see if it has been already posted; if we get many
+duplicate reports, processing them eats our time from actual development.
+If it\(cqs been reported, and you have more information, feel free to confirm
+that you\(cqve reproduced it by adding a comment to the report.
+If ten people have already confirmed it, though,
+it\(cqs probably best to treat it as duly reported.
+.It
+Whenever possible, for bugs that only occur under certain conditions,
+include a save game with your bug report that duplicates the bug.
+In the case of a crash, a stack trace can be very helpful for us too.
+If you don\(cqt know what a stack trace is, don\(cqt worry about it.
+.It
+If your issue is more like
+.Dq support request
+than bug report and you want help from other users,
+then it might be more appropriate to post it to
+.Lk http://uqm.stack.nl/forum/ "our forum" .
+.El

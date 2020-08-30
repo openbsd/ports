@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/30 10:04:59 bentley Exp $
+@conflict uqm-content-<=0.7.0p5v0
+@pkgpath games/uqm,-main
+@bin bin/uqm
+@man man/man6/uqm.6
+share/doc/pkg-readmes/${PKGSTEM}
+share/doc/uqm/
+share/doc/uqm/manual.txt
+share/uqm/content/version

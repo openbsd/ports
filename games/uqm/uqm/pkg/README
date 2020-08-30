@@ -1,0 +1,40 @@
+$OpenBSD: README,v 1.1.1.1 2020/08/30 10:04:59 bentley Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Documentation
+=============
+
+uqm has a manpage:
+
+$ man 6 uqm
+
+Read it! It describes the controls and gameplay, and provides extensive
+background to the game's story.
+
+Additional narrative is provided when you start a new game--so long as
+you don't accidentally skip it by pressing a button.
+
+Addons
+======
+
+Three packages add optional data content to the game. If no content
+packages are installed, uqm provides the "vanilla" experience: music
+from the MS-DOS version of the game, and no voices.
+
+uqm-threedomusic
+----------------
+This package provides the music from the 3DO release of the game.
+It can be turned on by enabling "3DO Remixes" in the audio options.
+
+uqm-voices
+----------
+This package provides the voices from the 3DO release of the game.
+It is configured with the "Speech Volume" setting in the audio options.
+
+uqm-remix
+---------
+This package provides the music from the Precursors fan remix project.
+It can be turned on by enabling "UQM Remixes" in the audio options.
