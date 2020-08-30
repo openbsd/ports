@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/25 22:44:11 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/08/30 18:54:07 bcallah Exp $
 bin/editorconfig
-@bin bin/editorconfig-0.12.3
+@bin bin/editorconfig-0.12.4
 include/editorconfig/
 include/editorconfig/editorconfig.h
 include/editorconfig/editorconfig_handle.h

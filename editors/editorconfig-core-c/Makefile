@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/25 22:44:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/08/30 18:54:06 bcallah Exp $
 
 COMMENT =	library for IDE consistency
 CATEGORIES =	editors x11
@@ -7,7 +7,7 @@ SHARED_LIBS +=  editorconfig              0.0 # 0.0
 
 GH_ACCOUNT =	editorconfig
 GH_PROJECT =	editorconfig-core-c
-GH_TAGNAME =	v0.12.3
+GH_TAGNAME =	v0.12.4
 
 HOMEPAGE =	https://editorconfig.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
