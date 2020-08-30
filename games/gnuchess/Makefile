@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 20:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2020/08/30 20:13:24 rsadowski Exp $
 
 COMMENT=	chess program
 
-DISTNAME=	gnuchess-6.2.5
+DISTNAME=	gnuchess-6.2.7
 DISTFILES=	${DISTNAME}.tar.gz book_1.02.pgn.gz
-REVISION=	2
 
 CATEGORIES=	games
-HOMEPAGE=	http://www.gnu.org/software/chess/
+HOMEPAGE=	https://www.gnu.org/software/chess/
 MASTER_SITES=	${MASTER_SITE_GNU:=chess/}
+
+MAINTAINER =	Martin Ziemer <horrad@horrad.de>
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

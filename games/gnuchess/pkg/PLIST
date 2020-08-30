@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/11/03 00:43:49 jca Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/08/30 20:13:24 rsadowski Exp $
 @bin bin/gnuchess
 bin/gnuchessu
 bin/gnuchessx
@@ -22,6 +22,7 @@ share/locale/eo/LC_MESSAGES/gnuchess.mo
 share/locale/es/LC_MESSAGES/gnuchess.mo
 share/locale/fr/LC_MESSAGES/gnuchess.mo
 share/locale/gl/LC_MESSAGES/gnuchess.mo
+share/locale/it/LC_MESSAGES/gnuchess.mo
 share/locale/nb/LC_MESSAGES/gnuchess.mo
 share/locale/nl/LC_MESSAGES/gnuchess.mo
 share/locale/pt_BR/LC_MESSAGES/gnuchess.mo
