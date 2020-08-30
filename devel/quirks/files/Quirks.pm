@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1042 2020/08/30 10:11:03 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.1043 2020/08/30 20:21:55 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1802,6 +1802,7 @@ my $obsolete_reason = {
 	'go-check-v1' => 7,
 	'freemat' => 6,
 	'scim-qtimm' => 6,
+	'gambatte-qt' => 6,
 };
 
 # reasons for obsolete packages
