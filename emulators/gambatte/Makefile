@@ -1,19 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2019/10/17 13:29:53 cwen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/08/30 20:18:25 rsadowski Exp $
 
-COMMENT-main =		highly accurate Game Boy Color emulator
-COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
+COMMENT =		highly accurate Game Boy Color emulator
 
 REV =			571
 V =			0.5.0.${REV}
 DISTNAME =		gambatte_src-r${REV}
-PKGNAME-main =		gambatte-$V
-PKGNAME-qt =		gambatte-qt-$V
-REVISION-main =		4
-REVISION-qt =		4
-
-MULTI_PACKAGES =	-main -qt
-
-.include <bsd.port.arch.mk>
+PKGNAME =		gambatte-$V
+REVISION =		5
 
 CATEGORIES =		emulators
 
@@ -24,26 +17,25 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-cWANTLIB =	c m pthread ${COMPILER_LIBCXX} z
-WANTLIB-main +=	${cWANTLIB} SDL
-WANTLIB-qt +=	${cWANTLIB} GL QtCore QtGui QtOpenGL X11 Xext Xrandr Xv ossaudio usbhid Xi
-WANTLIB-qt +=	ICE SM Xinerama Xrender fontconfig freetype
+WANTLIB += ${COMPILER_LIBCXX} SDL c m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gambatte/}
 
-MODULES =		devel/qmake lang/python x11/qt4
-MODQMAKE_PROJECTS =	gambatte_qt
-SEPARATE_BUILD =	No
-CONFIGURE_STYLE =	qmake specific		# avoid qmake.port.mk add do-build
+MODULES =		lang/python
 
-LIB_DEPENDS-main =	${MODGCC4_CPPLIBDEP} \
+SEPARATE_BUILD =	No
+
+LIB_DEPENDS =		${MODGCC4_CPPLIBDEP} \
 			devel/sdl
 
 TEST_DEPENDS =		graphics/png
 
 MAKE_FILE =		${FILESDIR}/Makefile
+
+CONFIGURE_STYLE =	none
+
 CONFIGURE_ARGS =	CC="${CC}" \
 			CXX="${CXX}" \
 			LINK="${CXX}" \
@@ -58,13 +50,9 @@ MAKE_FLAGS =		CC="${CC}" \
 			CXXFLAGS="${CXXFLAGS} -DHAVE_STDINT_H" \
 			PYTHON="${MODPY_BIN}"
 
-post-build:
-	${MODQMAKE_build}
-
 do-install:
-	${INSTALL_DATA} ${FILESDIR}/gambatte_sdl.6 \
-		${FILESDIR}/gambatte_qt.6 ${PREFIX}/man/man6
-	${INSTALL_PROGRAM} ${WRKDIST}/gambatte_sdl/gambatte_sdl \
-		${WRKDIST}/gambatte_qt/bin/gambatte_qt ${PREFIX}/bin
+	${INSTALL_DATA} ${FILESDIR}/gambatte_sdl.6 ${PREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKDIST}/gambatte_sdl/gambatte_sdl ${PREFIX}/bin
+
 
 .include <bsd.port.mk>

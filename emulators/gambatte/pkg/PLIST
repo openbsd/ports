@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.5 2020/08/30 20:18:25 rsadowski Exp $
+@pkgpath emulators/gambatte,-main
+@bin bin/gambatte_sdl
+@man man/man6/gambatte_sdl.6

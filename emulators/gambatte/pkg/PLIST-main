@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2015/12/22 04:20:22 bentley Exp $
-@bin bin/gambatte_sdl
-@man man/man6/gambatte_sdl.6
