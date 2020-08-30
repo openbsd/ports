@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/30 10:05:35 bentley Exp $
+@pkgpath games/uqm,-content
+share/uqm/
+share/uqm/content/
+share/uqm/content/packages/
+share/uqm/content/packages/uqm-0.7.0-content.uqm

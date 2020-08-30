@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/30 10:05:35 bentley Exp $
+@pkgpath games/uqm,-threedomusic
+share/uqm/
+share/uqm/content/
+share/uqm/content/addons/
+share/uqm/content/addons/uqm-0.7.0-3domusic.uqm
