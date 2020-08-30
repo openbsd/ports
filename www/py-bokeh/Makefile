@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2020/08/14 14:03:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2020/08/30 09:24:13 ajacoutot Exp $
 
 COMMENT=		statistical and novel interactive HTML plots for Python
 
-MODPY_EGG_VERSION=	2.1.1
+MODPY_EGG_VERSION=	2.2.0
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
 
 CATEGORIES=		www graphics
 
 HOMEPAGE=		http://bokeh.pydata.org/
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

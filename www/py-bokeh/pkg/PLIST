@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/08/14 14:03:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/08/30 09:24:13 ajacoutot Exp $
 @conflict py-bokeh-*
 @pkgpath www/py-bokeh,python3
 bin/bokeh
@@ -379,6 +379,12 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/tickers.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tiles.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tools.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/transforms.py
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/${MODPY_PYCACHE}structure.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/structure.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/${MODPY_PYCACHE}/
@@ -594,10 +600,6 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-api.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-api.legacy.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-api.legacy.min.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-api.min.js
-lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-gl.js
-lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-gl.legacy.js
-lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-gl.legacy.min.js
-lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-gl.min.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-tables.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-tables.legacy.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/bokeh-tables.legacy.min.js
@@ -657,6 +659,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/enums.j
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/geometry.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/has_props.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/hittest.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/kinds.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/layout/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/layout/alignments.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/layout/border.js
@@ -675,6 +678,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/signali
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/types.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/ui_events.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/util/
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/util/affine.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/util/array.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/util/arrayable.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/core/util/assert.js
@@ -746,6 +750,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/annot
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/annotations/title.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/annotations/toolbar_panel.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/annotations/tooltip.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/annotations/upper_lower.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/annotations/whisker.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/axes/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/axes/axis.js
@@ -831,7 +836,6 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyph
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/webgl/line.frag.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/webgl/line.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/webgl/line.vert.js
-lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/webgl/main.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/webgl/markers.frag.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/webgl/markers.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/webgl/markers.vert.js
@@ -869,10 +873,12 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappe
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/categorical_pattern_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/color_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/continuous_color_mapper.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/eqhist_color_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/index.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/linear_color_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/log_color_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/mapper.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/scanning_color_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/markers/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/markers/defs.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/markers/index.js
@@ -902,6 +908,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/scale
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/scales/categorical_scale.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/scales/continuous_scale.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/scales/index.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/scales/linear_interpolation_scale.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/scales/linear_scale.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/scales/log_scale.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/scales/scale.js
@@ -960,6 +967,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tools
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tools/actions/reset_tool.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tools/actions/save_tool.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tools/actions/undo_tool.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tools/actions/zoom_base_tool.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tools/actions/zoom_in_tool.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tools/actions/zoom_out_tool.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tools/button_tool.js
@@ -1005,6 +1013,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/trans
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/transforms/interpolator.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/transforms/jitter.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/transforms/linear_interpolator.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/transforms/range_transform.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/transforms/step_interpolator.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/transforms/transform.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/widgets/
@@ -1031,6 +1040,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/widge
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/widgets/markup.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/widgets/multichoice.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/widgets/multiselect.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/widgets/numeric_input.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/widgets/paragraph.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/widgets/password_input.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/widgets/pretext.js
@@ -1061,7 +1071,6 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/protocol/mes
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/protocol/receiver.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/safely.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/styles/
-lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/styles/annotations.css.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/styles/annotations.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/styles/buttons.css.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/styles/buttons.js
@@ -1123,6 +1132,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/enums
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/geometry.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/has_props.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/hittest.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/kinds.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/layout/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/layout/alignments.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/layout/border.d.ts
@@ -1141,6 +1151,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/signa
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/types.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/ui_events.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/util/
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/util/affine.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/util/array.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/util/arrayable.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/core/util/assert.d.ts
@@ -1212,6 +1223,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/ann
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/annotations/title.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/annotations/toolbar_panel.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/annotations/tooltip.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/annotations/upper_lower.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/annotations/whisker.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/axes/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/axes/axis.d.ts
@@ -1297,7 +1309,6 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/gly
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/webgl/line.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/webgl/line.frag.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/webgl/line.vert.d.ts
-lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/webgl/main.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/webgl/markers.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/webgl/markers.frag.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/webgl/markers.vert.d.ts
@@ -1335,10 +1346,12 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/map
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/categorical_pattern_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/color_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/continuous_color_mapper.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/eqhist_color_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/index.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/linear_color_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/log_color_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/mapper.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/scanning_color_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/markers/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/markers/defs.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/markers/index.d.ts
@@ -1368,6 +1381,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/sca
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/scales/categorical_scale.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/scales/continuous_scale.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/scales/index.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/scales/linear_interpolation_scale.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/scales/linear_scale.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/scales/log_scale.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/scales/scale.d.ts
@@ -1426,6 +1440,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/too
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tools/actions/reset_tool.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tools/actions/save_tool.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tools/actions/undo_tool.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tools/actions/zoom_base_tool.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tools/actions/zoom_in_tool.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tools/actions/zoom_out_tool.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tools/button_tool.d.ts
@@ -1471,6 +1486,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tra
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/transforms/interpolator.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/transforms/jitter.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/transforms/linear_interpolator.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/transforms/range_transform.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/transforms/step_interpolator.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/transforms/transform.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/widgets/
@@ -1497,6 +1513,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/wid
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/widgets/markup.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/widgets/multichoice.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/widgets/multiselect.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/widgets/numeric_input.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/widgets/paragraph.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/widgets/password_input.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/widgets/pretext.d.ts
@@ -1527,7 +1544,6 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/protocol/m
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/protocol/receiver.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/safely.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/styles/
-lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/styles/annotations.css.dts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/styles/annotations.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/styles/buttons.css.dts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/styles/buttons.d.ts
