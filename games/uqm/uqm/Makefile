@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/30 10:04:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2020/08/30 10:33:57 bentley Exp $
 
 COMMENT =		ur-quan masters: game of space exploration and battles
+
+EPOCH =			0
 
 DISTNAME =		uqm-$V-source
 PKGNAME =		uqm-$V
