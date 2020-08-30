@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.44 2020/07/30 08:14:53 pvk Exp $
+# $OpenBSD: Makefile,v 1.45 2020/08/30 15:27:07 ajacoutot Exp $
 
 COMMENT=		secure secret storage
 
-GH_TAGNAME=		v1.5.0
+GH_TAGNAME=		v1.5.3
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		vault
-REVISION=		0
 
 ### Vault UI
 MODGO_FLAGS=		-tags=ui
 MASTER_SITES0=		https://distfiles.tristero.se/
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			${DISTNAME}-bindata_assetfs.go:0
+			vault-1.5.0-bindata_assetfs.go:0
 
 CATEGORIES=		security net
 
@@ -32,7 +31,7 @@ MODGO_LDFLAGS +=	-X github.com/hashicorp/vault/version.GitDescribe=${GH_TAGNAME:
 MODGO_LDFLAGS +=	-X github.com/hashicorp/vault/version.VersionPrerelease="" # empty
 
 post-extract:
-	install -m644 ${FULLDISTDIR}/vault-${GH_TAGNAME:S/v//}-bindata_assetfs.go \
+	install -m644 ${FULLDISTDIR}/vault-1.5.0-bindata_assetfs.go \
 		${WRKDIST}/http/bindata_assetfs.go
 
 post-install:
