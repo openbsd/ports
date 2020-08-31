@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2020/04/05 15:44:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2020/08/31 22:20:49 naddy Exp $
 
 COMMENT =	portable C compiler
 
 PCCVER =	1.0.0
 DISTNAME =	pcc-${PCCVER}
-REVISION =	16
+REVISION =	17
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	lang
