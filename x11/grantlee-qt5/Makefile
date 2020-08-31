@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/25 18:07:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/08/31 19:06:18 rsadowski Exp $
 
 COMMENT =		template and text document library for Qt5
 
-VERSION =		5.1.0
+VERSION =		5.2.0
 PKGNAME =		grantlee-qt5-${VERSION}
 DISTNAME =		grantlee-${VERSION}
-REVISION =		3
 
-SHARED_LIBS +=  Grantlee_Templates        0.0 # 5.1
+SHARED_LIBS +=  Grantlee_Templates        1.0 # 5.1
 SHARED_LIBS +=  Grantlee_TextDocument     0.0 # 5.1
 
 CATEGORIES =		devel x11
