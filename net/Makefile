@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1217 2020/08/31 20:10:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1218 2020/08/31 22:11:50 abieber Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -116,6 +116,7 @@
      SUBDIR += gnugk
      SUBDIR += go-ipfs
      SUBDIR += go-net
+     SUBDIR += gomuks
      SUBDIR += gopher
      SUBDIR += gophernicus
      SUBDIR += gotthard
