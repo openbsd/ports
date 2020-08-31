@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/06/03 05:20:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/08/31 19:06:32 rsadowski Exp $
 @bin bin/kdev_dbus_socket_transformer
 @bin bin/kdev_format_source
 @bin bin/kdev_includepathsconverter
@@ -462,8 +462,8 @@ lib/cmake/KDevelop/KDevelopTargets.cmake
 @lib lib/libKDevPlatformUtil.so.${LIBKDevPlatformUtil_VERSION}
 @lib lib/libKDevPlatformVcs.so.${LIBKDevPlatformVcs_VERSION}
 lib/qt5/plugins/grantlee/
-lib/qt5/plugins/grantlee/5.1/
-@so lib/qt5/plugins/grantlee/5.1/kdev_filters.so
+lib/qt5/plugins/grantlee/5.2/
+@so lib/qt5/plugins/grantlee/5.2/kdev_filters.so
 lib/qt5/plugins/kdevplatform/
 lib/qt5/plugins/kdevplatform/33/
 @so lib/qt5/plugins/kdevplatform/33/kdevandroid.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/07/01 22:24:08 cwen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/08/31 19:06:32 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =		Yes
@@ -6,7 +6,7 @@ USE_WXNEEDED =		Yes
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 VERSION =	5.5.2
-REVISION=	0
+REVISION=	1
 DISTNAME =	kdevelop-${VERSION}
 
 HOMEPAGE =	https://www.kdevelop.org/
@@ -101,7 +101,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/threadweaver \
 		devel/llvm \
 		devel/subversion \
-		x11/grantlee-qt5 \
+		x11/grantlee-qt5>=5.2 \
 		x11/kde-applications/libkomparediff2 \
 		x11/kde-applications/okteta>=0.26.1v0 \
 		x11/qt5/qttools \
