@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.6 2020/08/24 06:15:04 rsadowski Exp $
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.7 2020/08/31 05:14:23 rsadowski Exp $
 
 - only manual pages
 - remove doxywizard.1, see devel/doxygen-gui
@@ -25,7 +25,7 @@ Index: doc/CMakeLists.txt
  )
  
  if (build_doc_chm)
-@@ -125,9 +121,6 @@ endforeach()
+@@ -126,9 +122,6 @@ endforeach()
  configure_file(${CMAKE_SOURCE_DIR}/doc/manual.sty         ${PROJECT_BINARY_DIR}/doc/manual.sty)
  configure_file(${CMAKE_SOURCE_DIR}/doc/doxygen_manual.tex ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex)
  configure_file(${CMAKE_SOURCE_DIR}/doc/doxygen.1          ${PROJECT_BINARY_DIR}/man/doxygen.1)
@@ -35,7 +35,7 @@ Index: doc/CMakeLists.txt
  
  # doc/language.doc (see tag Doxyfile:INPUT)
  add_custom_command(
-@@ -147,37 +140,7 @@ add_custom_command(
+@@ -148,37 +141,7 @@ add_custom_command(
  )
  set_source_files_properties(config.doc PROPERTIES GENERATED 1)
  ################################################################################
@@ -73,7 +73,7 @@ Index: doc/CMakeLists.txt
  # return status of ${HTML_HELP_COMPILER} is not correct, so we have to do a trick with an "or" statement
  # output is redirected to "nul" as we are on windows no problem
  if (build_doc_chm)
-@@ -205,22 +168,9 @@ endif ()
+@@ -206,22 +169,9 @@ endif ()
  ################################################################################
  install(FILES
          "${PROJECT_BINARY_DIR}/man/doxygen.1"
@@ -96,7 +96,7 @@ Index: doc/CMakeLists.txt
  if (build_doc_chm)
  install(CODE "if(NOT EXISTS \"${PROJECT_BINARY_DIR}/chm/doxygen_manual.chm\")
      message(FATAL_ERROR \"\nTerminating:\n    CHM documentation has not been generated, \n    create CHM documentation by using the 'docs_chm' target followed by an 'install'\n\")
-@@ -232,8 +182,3 @@ install(FILES
+@@ -233,8 +183,3 @@ install(FILES
          DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
  )
  endif ()
