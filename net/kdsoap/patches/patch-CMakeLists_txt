@@ -1,0 +1,33 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/08/31 20:00:47 rsadowski Exp $
+
+Access CMAKE_INSTALL_PREFIX after include InstallLocation
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -27,12 +27,6 @@ if(POLICY CMP0025)
+   cmake_policy(SET CMP0025 NEW)
+ endif()
+ 
+-if("${CMAKE_INSTALL_PREFIX}" STREQUAL "")
+-  set(USE_DEFAULT_INSTALL_LOCATION True)
+-else()
+-  set(USE_DEFAULT_INSTALL_LOCATION False)
+-endif()
+-
+ project(KDSoap CXX)
+ 
+ option(
+@@ -70,6 +64,12 @@ endif()
+ 
+ # setup default install locations
+ include(InstallLocation)
++
++if("${CMAKE_INSTALL_PREFIX}" STREQUAL "")
++  set(USE_DEFAULT_INSTALL_LOCATION True)
++else()
++  set(USE_DEFAULT_INSTALL_LOCATION False)
++endif()
+ 
+ # try Qt5 first, and prefer that (if found), but only if not disabled via option
+ if(NOT ${PROJECT_NAME}_ENFORCE_QT4_BUILD)
