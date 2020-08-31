@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1216 2020/07/11 06:49:49 paco Exp $
+# $OpenBSD: Makefile,v 1.1217 2020/08/31 20:10:08 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -178,6 +178,7 @@
      SUBDIR += jftpgw
      SUBDIR += jnettop
      SUBDIR += kdeconnect-kde
+     SUBDIR += kdsoap
      SUBDIR += kea
      SUBDIR += kea,mysql
      SUBDIR += kea,postgresql
