@@ -1,9 +1,9 @@
-$OpenBSD: patch-auto_def,v 1.10 2020/06/19 22:21:41 sthen Exp $
+$OpenBSD: patch-auto_def,v 1.11 2020/09/01 10:50:55 sthen Exp $
 
 Index: auto.def
 --- auto.def.orig
 +++ auto.def
-@@ -550,6 +550,7 @@ if {[get-define want-sasl]} {
+@@ -551,6 +551,7 @@ if {[get-define want-sasl]} {
      define USE_SASL
      define-feature SASL
    } else {
@@ -11,7 +11,7 @@ Index: auto.def
      foreach sasl_lib {sasl2 sasl} {
        if {[check-inc-and-lib sasl [opt-val with-sasl $prefix] \
                               sasl/sasl.h sasl_encode64 $sasl_lib]} {
-@@ -559,6 +560,7 @@ if {[get-define want-sasl]} {
+@@ -560,6 +561,7 @@ if {[get-define want-sasl]} {
          break
        }
      }
@@ -19,7 +19,7 @@ Index: auto.def
      if {![get-define USE_SASL]} {
        user-error "Unable to find SASL"
      }
-@@ -1266,13 +1268,6 @@ set bare_rep {
+@@ -1267,13 +1269,6 @@ set bare_rep {
  }
  set str_rep {
    PACKAGE_VERSION

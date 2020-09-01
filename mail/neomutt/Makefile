@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2020/08/13 18:22:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2020/09/01 10:50:55 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20200626
-REVISION=	1
+GH_TAGNAME=	20200814
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -69,6 +68,13 @@ WANTLIB+=	sasl2
 CONFIGURE_ARGS+= --notmuch
 LIB_DEPENDS+=	mail/notmuch/notmuch,-main
 WANTLIB+=	notmuch
+.endif
+
+.include <bsd.port.arch.mk>
+.if ${MACHINE_ARCH} != hppa && ${MACHINE_ARCH} != powerpc
+LIB_DEPENDS+=  databases/kyotocabinet
+WANTLIB+=      kyotocabinet
+CONFIGURE_ARGS+= --kyotocabinet
 .endif
 
 post-install:
