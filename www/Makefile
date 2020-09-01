@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.980 2020/08/26 02:01:26 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.981 2020/09/01 16:52:51 fcambus Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -74,6 +74,7 @@
      SUBDIR += kcgi
      SUBDIR += kibana
      SUBDIR += kore
+     SUBDIR += kore,acme
      SUBDIR += kore,curl
      SUBDIR += kore,pgsql
      SUBDIR += kore,python
