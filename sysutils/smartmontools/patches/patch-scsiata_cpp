@@ -1,0 +1,16 @@
+$OpenBSD $
+
+Add missing seconds to milliseconds conversion, hand picked from upstream
+9c2f3a38063c4c6837507373c4dc4c9b1e3e7e81 from 05.06.2020.
+
+--- scsiata.cpp.orig	Wed Dec  5 19:30:46 2018
++++ scsiata.cpp	Tue Sep  1 08:48:16 2020
+@@ -364,7 +364,7 @@ bool sat_device::ata_pass_through(const ata_cmd_in & i
+     io_hdr.cmnd_len = passthru_size;
+     io_hdr.sensep = sense;
+     io_hdr.max_sense_len = sizeof(sense);
+-    io_hdr.timeout = SCSI_TIMEOUT_DEFAULT;
++    io_hdr.timeout = SCSI_TIMEOUT_DEFAULT * 1000;
+ 
+     scsi_device * scsidev = get_tunnel_dev();
+     if (!scsidev->scsi_pass_through(&io_hdr)) {
