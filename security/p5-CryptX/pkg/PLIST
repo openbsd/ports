@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/09 15:03:58 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/01 11:53:52 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/AuthEnc/
@@ -100,7 +100,9 @@ ${P5ARCH}/Crypt/PK.pm
 ${P5ARCH}/Crypt/PK/DH.pm
 ${P5ARCH}/Crypt/PK/DSA.pm
 ${P5ARCH}/Crypt/PK/ECC.pm
+${P5ARCH}/Crypt/PK/Ed25519.pm
 ${P5ARCH}/Crypt/PK/RSA.pm
+${P5ARCH}/Crypt/PK/X25519.pm
 ${P5ARCH}/Crypt/PRNG/
 ${P5ARCH}/Crypt/PRNG.pm
 ${P5ARCH}/Crypt/PRNG/ChaCha20.pm
@@ -121,7 +123,7 @@ ${P5ARCH}/Math/BigInt/
 ${P5ARCH}/Math/BigInt/LTM.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/CryptX/
-${P5ARCH}/auto/CryptX/CryptX.so
+@so ${P5ARCH}/auto/CryptX/CryptX.so
 @man man/man3p/Crypt::AuthEnc.3p
 @man man/man3p/Crypt::AuthEnc::CCM.3p
 @man man/man3p/Crypt::AuthEnc::ChaCha20Poly1305.3p
@@ -214,7 +216,9 @@ ${P5ARCH}/auto/CryptX/CryptX.so
 @man man/man3p/Crypt::PK::DH.3p
 @man man/man3p/Crypt::PK::DSA.3p
 @man man/man3p/Crypt::PK::ECC.3p
+@man man/man3p/Crypt::PK::Ed25519.3p
 @man man/man3p/Crypt::PK::RSA.3p
+@man man/man3p/Crypt::PK::X25519.3p
 @man man/man3p/Crypt::PRNG.3p
 @man man/man3p/Crypt::PRNG::ChaCha20.3p
 @man man/man3p/Crypt::PRNG::Fortuna.3p
