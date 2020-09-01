@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/24 18:53:28 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/01 11:04:40 sebastia Exp $
 
 COMMENT =	gather information about processes
 
-DISTNAME =	sys-proctable-1.2.5
+DISTNAME =	sys-proctable-1.2.6
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/djberg96/sys-proctable
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
