@@ -1,4 +1,4 @@
-$OpenBSD: patch-generator_Makefile,v 1.4 2020/06/01 13:57:56 sthen Exp $
+$OpenBSD: patch-generator_Makefile,v 1.5 2020/09/01 21:51:58 sthen Exp $
 
 We're not actually fetching in the port build; but this may be needed
 during port updates to generate a tar of common mibs, so it's useful to
@@ -11,7 +11,7 @@ Index: generator/Makefile
 +++ generator/Makefile
 @@ -22,7 +22,7 @@ DOCKER_REPO       ?= prom
  
- APC_URL           := 'https://download.schneider-electric.com/files?p_File_Name=powernet431.mib'
+ APC_URL           := 'https://download.schneider-electric.com/files?p_File_Name=powernet432.mib'
  ARISTA_URL        := https://www.arista.com/assets/data/docs/MIBS
 -CISCO_URL         := 'ftp://ftp.cisco.com/pub/mibs/v2/v2.tar.gz'
 +CISCO_URL         := https://spacehopper.org/mirrors/cisco_v2.tar.gz
