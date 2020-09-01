@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/05/16 19:47:49 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/01 16:50:50 fcambus Exp $
 @bin bin/kodev
 @bin bin/kore
 include/kore/
+include/kore/acme.h
 include/kore/curl.h
 include/kore/http.h
 include/kore/jsonrpc.h
@@ -9,6 +10,7 @@ include/kore/kore.h
 include/kore/pgsql.h
 include/kore/python_api.h
 include/kore/python_methods.h
+include/kore/seccomp.h
 include/kore/tasks.h
 @man man/man1/kodev.1
 share/doc/kore/

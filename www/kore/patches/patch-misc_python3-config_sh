@@ -1,0 +1,19 @@
+$OpenBSD: patch-misc_python3-config_sh,v 1.1 2020/09/01 16:50:50 fcambus Exp $
+
+Index: misc/python3-config.sh
+--- misc/python3-config.sh.orig
++++ misc/python3-config.sh
+@@ -5,10 +5,10 @@ if [ $# -ne 1 ]; then
+ 	exit 1
+ fi
+ 
+-python3-config $1 --embed > /dev/null 2>&1
++${MODPY_BIN}-config $1 --embed > /dev/null 2>&1
+ 
+ if [ $? -eq 0 ]; then
+-	python3-config $1 --embed
++	${MODPY_BIN}-config $1 --embed
+ else
+-	python3-config $1
++	${MODPY_BIN}-config $1
+ fi
