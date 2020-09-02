@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2020/08/07 16:56:13 bket Exp $
+# $OpenBSD: Makefile,v 1.59 2020/09/02 16:23:25 bket Exp $
 
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	7.17.0
+MODPY_EGG_VERSION =	7.18.1
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
@@ -27,7 +27,7 @@ RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 			devel/py-backcall${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-jedi${MODPY_FLAVOR}>=0.10 \
-			devel/py-pexpect${MODPY_FLAVOR} \
+			devel/py-pexpect${MODPY_FLAVOR}>=4.3 \
 			devel/py-prompt_toolkit${MODPY_FLAVOR}>=2.0.0v1,<3.1.0v1 \
 			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
 			textproc/py-pygments${MODPY_FLAVOR}
