@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/02 10:34:28 bentley Exp $
+@conflict texlive_base-<2020p0
+@conflict texlive_texmf-minimal-<2020p0
+@bin bin/cfftot1
+@bin bin/mmafm
+@bin bin/mmpfb
+@bin bin/otfinfo
+@bin bin/otftotfm
+@bin bin/t1dotlessj
+@bin bin/t1lint
+@bin bin/t1rawafm
+@bin bin/t1reencode
+@bin bin/t1testpage
+@bin bin/ttftotype42
+@man man/man1/cfftot1.1
+@man man/man1/mmafm.1
+@man man/man1/mmpfb.1
+@man man/man1/otfinfo.1
+@man man/man1/otftotfm.1
+@man man/man1/t1dotlessj.1
+@man man/man1/t1lint.1
+@man man/man1/t1rawafm.1
+@man man/man1/t1reencode.1
+@man man/man1/t1testpage.1
+@man man/man1/ttftotype42.1
+share/lcdf-typetools/
+share/lcdf-typetools/7t.enc
+share/lcdf-typetools/glyphlist.txt
+share/lcdf-typetools/texglyphlist.txt
