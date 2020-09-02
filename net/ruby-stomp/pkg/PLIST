@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/12/12 07:40:35 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/09/02 19:56:24 sebastia Exp $
 ${GEM_BIN}/catstomp${GEM_BIN_SUFFIX}
 ${GEM_BIN}/stompcat${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTORS.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
@@ -44,6 +45,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/historical/topic_publisher.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/logexamp.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/putget_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/putget_rephdrs.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/showver.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/ssl/
 ${GEM_LIB}/gems/${DISTNAME}/examples/ssl/SSL.md
 ${GEM_LIB}/gems/${DISTNAME}/examples/ssl/misc/
