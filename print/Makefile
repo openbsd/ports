@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2020/05/18 15:46:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2020/09/02 10:35:05 bentley Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -33,6 +33,7 @@
     SUBDIR += ijs
     SUBDIR += l2a
     SUBDIR += latex-mk
+    SUBDIR += lcdf-typetools
     SUBDIR += libXp
     SUBDIR += libharu
     SUBDIR += libpaper
