@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/08/01 19:08:26 bket Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/02 16:22:04 bket Exp $
 @newgroup _sabnzbd:810
 @newuser _sabnzbd:810:_sabnzbd:daemon:Sabnzbd:/var/sabnzbd:/bin/sh
 @owner _sabnzbd
@@ -9,7 +9,6 @@
 @rcscript ${RCDIR}/sabnzbd
 bin/sabnzbd
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/ABOUT.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/COPYRIGHT.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/GPL2.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/GPL3.txt
@@ -301,51 +300,67 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/sabnzbd@.service
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/da/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/da/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/da/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/da/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/de/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/de/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/de/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/de/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/en/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/en/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/en/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/en/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/es/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/es/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/es/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/es/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/fi/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/fi/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/fi/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/fi/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/fr/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/fr/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/fr/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/fr/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/he/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/he/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/he/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/he/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nb/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nb/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nb/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nb/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nl/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nl/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nl/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nl/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/pl/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/pl/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/pl/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/pl/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/pt_BR/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/pt_BR/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/pt_BR/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/pt_BR/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/ro/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/ro/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/ro/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/ro/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/ru/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/ru/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/ru/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/ru/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sr/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sr/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sr/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sr/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sv/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sv/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sv/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sv/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/zh_CN/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/zh_CN/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/zh_CN/LC_MESSAGES/SABnsis.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/zh_CN/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/
