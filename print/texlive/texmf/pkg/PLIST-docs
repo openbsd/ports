@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-docs,v 1.23 2020/08/18 18:47:59 edd Exp $
+@comment $OpenBSD: PLIST-docs,v 1.24 2020/09/02 10:42:03 bentley Exp $
 @conflict teTeX_texmf-doc-*
-@conflict texlive_base-<2019
-@conflict texlive_texmf-minimal-<2019
-@conflict texlive_texmf-full-<2019
-@conflict texlive_texmf-buildset-<2019
-@conflict texlive_texmf-context-<2019
+@conflict texlive_base-<2020
+@conflict texlive_texmf-minimal-<2020
+@conflict texlive_texmf-full-<2020
+@conflict texlive_texmf-buildset-<2020
+@conflict texlive_texmf-context-<2020
 @pkgpath print/texlive/texmf-docs
 @pkgpath print/teTeX_texmf,-doc
 share/texmf-dist/

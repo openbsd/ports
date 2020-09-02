@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2020/08/18 18:40:17 edd Exp $
+# $OpenBSD: Makefile,v 1.60 2020/09/02 10:42:03 bentley Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -13,6 +13,12 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
 
 DISTNAME =		texlive-${DIST_V}-texmf
+REVISION-context =	0
+REVISION-docs =		0
+REVISION-full =		0
+REVISION-main =		0
+REVISION-buildset =	0
+
 MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
@@ -42,7 +48,7 @@ MODPY_RUNDEP =		No
 
 .include "adj.mk"
 
-RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
+RUN_DEPENDS-main +=	texlive_base->=${V}p0:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2020/08/18 18:48:01 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2020/09/02 10:42:04 bentley Exp $
 @conflict teTeX_texmf-*
-@conflict texlive_base-<2019
-@conflict texlive_texmf-docs-<2019
-@conflict texlive_texmf-full-<2019
-@conflict texlive_texmf-buildset-<2019
-@conflict texlive_texmf-context-<2019
+@conflict texlive_base-<2020p0
+@conflict texlive_texmf-docs-<2020
+@conflict texlive_texmf-full-<2020
+@conflict texlive_texmf-buildset-<2020
+@conflict texlive_texmf-context-<2020
 @pkgpath print/teTeX/texmf
 bin/
 bin/amstex
@@ -52,7 +52,6 @@ bin/xmltex
 @man man/man1/cef5conv.1
 @man man/man1/cefconv.1
 @man man/man1/cefsconv.1
-@man man/man1/cfftot1.1
 @man man/man1/cslatex.1
 @man man/man1/ctangle.1
 @man man/man1/ctie.1
@@ -125,8 +124,6 @@ bin/xmltex
 @man man/man1/mktexmf.1
 @man man/man1/mktexpk.1
 @man man/man1/mktextfm.1
-@man man/man1/mmafm.1
-@man man/man1/mmpfb.1
 @man man/man1/mpost.1
 @man man/man1/mptopdf.1
 @man man/man1/odvicopy.1
@@ -135,8 +132,6 @@ bin/xmltex
 @man man/man1/opl2ofm.1
 @man man/man1/ot2kpx.1
 @man man/man1/otangle.1
-@man man/man1/otfinfo.1
-@man man/man1/otftotfm.1
 @man man/man1/otp2ocp.1
 @man man/man1/outocp.1
 @man man/man1/ovf2ovp.1
@@ -161,11 +156,6 @@ bin/xmltex
 @man man/man1/rubibtex.1
 @man man/man1/rumakeindex.1
 @man man/man1/sjisconv.1
-@man man/man1/t1dotlessj.1
-@man man/man1/t1lint.1
-@man man/man1/t1rawafm.1
-@man man/man1/t1reencode.1
-@man man/man1/t1testpage.1
 @man man/man1/tangle.1
 @man man/man1/tex.1
 @man man/man1/texhash.1
@@ -179,7 +169,6 @@ bin/xmltex
 @man man/man1/ttf2pk.1
 @man man/man1/ttf2tfm.1
 @man man/man1/ttfdump.1
-@man man/man1/ttftotype42.1
 @man man/man1/updmap-sys.1
 @man man/man1/updmap-user.1
 @man man/man1/updmap.1

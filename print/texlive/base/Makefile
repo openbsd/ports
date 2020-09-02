@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.114 2020/08/18 18:40:14 edd Exp $
+# $OpenBSD: Makefile,v 1.115 2020/09/02 10:42:03 bentley Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 COMMENT-synctex =	synctex for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
+REVISION =		0
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
@@ -36,6 +37,7 @@ WANTLIB-synctex += c m z
 RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/detex \
 			print/dvi2tty \
+			print/lcdf-typetools \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
@@ -131,7 +133,8 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-harfbuzz \
 			--with-system-graphite2 \
 			--with-system-libpaper \
-			--with-system-zziplib
+			--with-system-zziplib \
+			--disable-lcdf-typetools
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 

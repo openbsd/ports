@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2020/08/18 18:40:16 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2020/09/02 10:42:03 bentley Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -50,7 +50,6 @@ bin/cefpdflatex
 @bin bin/cefsconv
 bin/cefslatex
 bin/cefspdflatex
-@bin bin/cfftot1
 bin/checkcites
 bin/checklistings
 @bin bin/chkdvifont
@@ -224,8 +223,6 @@ bin/mktexfmt
 bin/mktexmf
 bin/mktexpk
 bin/mktextfm
-@bin bin/mmafm
-@bin bin/mmpfb
 @bin bin/mpost
 bin/mptopdf
 @bin bin/msxlint
@@ -241,8 +238,6 @@ bin/ofm2opl
 bin/opl2ofm
 bin/ot2kpx
 @bin bin/otangle
-@bin bin/otfinfo
-@bin bin/otftotfm
 @bin bin/otp2ocp
 @bin bin/outocp
 bin/ovf2ovp
@@ -312,11 +307,6 @@ bin/splitindex
 bin/srcredact
 bin/sty2dtx
 bin/svn-multi
-@bin bin/t1dotlessj
-@bin bin/t1lint
-@bin bin/t1rawafm
-@bin bin/t1reencode
-@bin bin/t1testpage
 @bin bin/t4ht
 @bin bin/tangle
 @bin bin/teckit_compile
@@ -357,7 +347,6 @@ bin/ttf2kotexfont
 @bin bin/ttf2pk
 @bin bin/ttf2tfm
 @bin bin/ttfdump
-@bin bin/ttftotype42
 bin/typeoutfileinfo
 bin/ulqda
 @bin bin/upbibtex

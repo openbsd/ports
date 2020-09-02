@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-context,v 1.14 2020/08/18 18:40:23 edd Exp $
+@comment $OpenBSD: PLIST-context,v 1.15 2020/09/02 10:42:03 bentley Exp $
 @conflict teTeX_texmf-*
-@conflict texlive_base-<2019
-@conflict texlive_texmf-docs-<2019
-@conflict texlive_texmf-full-<2019
-@conflict texlive_texmf-buildset-<2019
-@conflict texlive_texmf-minimal-<2019
+@conflict texlive_base-<2020
+@conflict texlive_texmf-docs-<2020
+@conflict texlive_texmf-full-<2020
+@conflict texlive_texmf-buildset-<2020
+@conflict texlive_texmf-minimal-<2020
 @man man/man1/context.1
 @man man/man1/luatools.1
 @man man/man1/mtx-babel.1

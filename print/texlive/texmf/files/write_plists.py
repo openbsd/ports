@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# $OpenBSD: write_plists.py,v 1.2 2019/11/11 22:54:17 edd Exp $
+# $OpenBSD: write_plists.py,v 1.3 2020/09/02 10:42:03 bentley Exp $
 """
 Write PLISTs based on the output of update_plist_hints.py.
 
@@ -11,7 +11,7 @@ import os
 import sys
 import re
 
-YEAR = 2019
+YEAR = 2020
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 PLIST_DIR = os.path.abspath(os.path.join(THIS_DIR, "..", "pkg"))
 PLISTS = "-buildset", "-main", "-context", "-full", "-docs"
@@ -39,7 +39,7 @@ TOP_MATTER = {
     "-main": [
         "@comment $" "OpenBSD$",
         "@conflict teTeX_texmf-*",
-        "@conflict texlive_base-<%s" % YEAR,
+        "@conflict texlive_base-<%sp0" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
         "@conflict texlive_texmf-full-<%s" % YEAR,
         "@conflict texlive_texmf-buildset-<%s" % YEAR,

@@ -95,8 +95,8 @@ def build_subset_file_lists(tlpdb):
         return [PkgPartSpec(pkg, FileKind.RUN, include_deps)
                 for pkg in pkg_list]
 
-    def allspecs(pkg_list):
-        return [PkgPartSpec(pkg, kind)
+    def allspecs(pkg_list, include_deps=True):
+        return [PkgPartSpec(pkg, kind, include_deps=include_deps)
                 for pkg in pkg_list
                 for kind in FileKind.all_kinds()]
 
@@ -105,9 +105,9 @@ def build_subset_file_lists(tlpdb):
     # CONFLICTING PACKAGES
     # Whole packages that are ported elsewhere.
     conflict_pkgs = ["asymptote", "latexmk", "texworks", "t1utils",
-                     "dvi2tty", "detex", "texinfo"]
+                     "dvi2tty", "detex", "texinfo", "lcdftypetools"]
     conflict_pkg_files, conflict_symlinks = \
-        collect_files(allspecs(conflict_pkgs), db)
+        collect_files(allspecs(conflict_pkgs, include_deps=False), db)
 
     # BUILDSET
     # The smallest subset for building ports.
