@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/01 12:04:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/09/02 10:50:36 sthen Exp $
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -7,6 +7,7 @@ COMMENT =		ncurses Spotify client
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
 GH_TAGNAME =		v0.2.2
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -15,11 +16,12 @@ MAINTAINER =		Henrik Friedrichsen <henrik@diff.cc>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c c++abi crypto curses m portaudio pthread ssl
+WANTLIB +=		c c++abi crypto curses dbus-1 m portaudio pthread ssl
 
 MODULES =		devel/cargo
 BUILD_DEPENDS =		lang/rust>=1.30
-LIB_DEPENDS=		audio/portaudio-svn
+LIB_DEPENDS=		audio/portaudio-svn \
+			x11/dbus,-main
 
 SEPARATE_BUILD =	Yes
 NO_TEST =		Yes
