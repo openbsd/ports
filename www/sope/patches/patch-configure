@@ -1,13 +1,14 @@
-$OpenBSD: patch-configure,v 1.6 2016/11/02 10:14:14 giovanni Exp $
---- configure.orig	Sun Sep  4 22:40:17 2016
-+++ configure	Sun Sep  4 22:42:24 2016
+$OpenBSD: patch-configure,v 1.7 2020/09/02 19:49:58 sebastia Exp $
+Index: configure
+--- configure.orig
++++ configure
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!${TRUEPREFIX}/bin/bash
  
  #
  # Note: When adding make options to this script, ensure that the source still
-@@ -370,9 +370,9 @@ genConfigMake() {
+@@ -372,9 +372,9 @@ genConfigMake() {
      cfgwrite "FHS_INSTALL_ROOT:=$ARG_PREFIX"
      cfgwrite ""
      cfgwrite "SOPE_SYSLIBDIR=\${DESTDIR}\${FHS_INSTALL_ROOT}/\$(CGS_LIBDIR_NAME)"
