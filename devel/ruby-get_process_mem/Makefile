@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/09 07:16:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/02 21:10:23 sebastia Exp $
 
 COMMENT =	get memory usage of a process
 
-DISTNAME =	get_process_mem-0.2.5
+DISTNAME =	get_process_mem-0.2.7
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/schneems/get_process_mem
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
