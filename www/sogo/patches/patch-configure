@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.5 2016/12/05 21:48:35 sebastia Exp $
---- configure.orig	Mon Nov 28 20:52:32 2016
-+++ configure	Mon Dec  5 10:56:47 2016
-@@ -346,7 +346,7 @@ EOF
+$OpenBSD: patch-configure,v 1.6 2020/09/02 19:51:19 sebastia Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -364,7 +364,7 @@ EOF
    echo >>$tmpmake "CTOOL_NAME           := linktest"
    echo >>$tmpmake "linktest_C_FILES := dummytool.c"
    echo >>$tmpmake "ifeq (\$(findstring openbsd, \$(GNUSTEP_HOST_OS)), openbsd)"
