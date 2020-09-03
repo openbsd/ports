@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.2 2020/03/25 06:16:30 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.3 2020/09/03 20:54:01 rsadowski Exp $
 
 - Add support for building against libestdc++ from ports-gcc.
 - Make clang emit the proper path to our libcompiler_rt.a when asked to.
@@ -6,7 +6,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.2 2020/03/25 06:
 Index: tools/clang/lib/Driver/ToolChains/OpenBSD.h
 --- tools/clang/lib/Driver/ToolChains/OpenBSD.h.orig
 +++ tools/clang/lib/Driver/ToolChains/OpenBSD.h
-@@ -69,6 +69,14 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+@@ -68,17 +68,20 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
    void AddCXXStdlibLibArgs(const llvm::opt::ArgList &Args,
                             llvm::opt::ArgStringList &CmdArgs) const override;
  
@@ -16,8 +16,19 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.h
 +      llvm::opt::ArgStringList &CC1Args) const override;
 +
 +  std::string getCompilerRT(const llvm::opt::ArgList &Args, StringRef Component,
-+                            bool Shared = false) const override;
++                            FileType Type = ToolChain::FT_Static) const override;
 +
    unsigned GetDefaultStackProtectorLevel(bool KernelOrKext) const override {
      return 2;
    }
+   unsigned GetDefaultDwarfVersion() const override { return 2; }
+ 
+   SanitizerMask getSupportedSanitizers() const override;
+-
+-  void
+-  addClangTargetOptions(const llvm::opt::ArgList &DriverArgs,
+-                        llvm::opt::ArgStringList &CC1Args,
+-                        Action::OffloadKind DeviceOffloadKind) const override;
+ 
+ protected:
+   Tool *buildAssembler() const override;

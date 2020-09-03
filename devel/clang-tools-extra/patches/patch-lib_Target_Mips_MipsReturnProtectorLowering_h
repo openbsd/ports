@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Mips_MipsReturnProtectorLowering_h,v 1.1 2020/03/25 06:16:30 rsadowski Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsReturnProtectorLowering_h,v 1.2 2020/09/03 20:54:01 rsadowski Exp $
 
 Add retguard for octeon/mips64.
 

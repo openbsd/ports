@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/08/31 22:20:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2020/09/03 20:54:01 rsadowski Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -33,7 +33,7 @@ MASTER_SITES =	https://github.com/llvm/llvm-project/releases/download/llvmorg-${
 EXTRACT_SUFX =	.tar.xz
 
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
-		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
+		clang-${LLVM_V}.src${EXTRACT_SUFX} \
 		clang-tools-extra-${LLVM_V}.src${EXTRACT_SUFX}
 
 COMPILER =		base-clang ports-gcc
@@ -80,7 +80,7 @@ ALL_TARGET =	tools/clang/tools/extra/all
 FAKE_TARGET =	tools/clang/tools/extra/install
 
 post-extract:
-	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
+	mv ${WRKDIR}/clang-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/clang-tools-extra-${LLVM_V}.src ${WRKSRC}/tools/clang/tools/extra
 
 pre-configure:

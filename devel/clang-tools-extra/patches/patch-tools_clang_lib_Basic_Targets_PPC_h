@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_PPC_h,v 1.1 2020/09/03 20:54:01 rsadowski Exp $
+
+Add our OpenBSD specific defines on PowerPC64 targets.
+
+Index: tools/clang/lib/Basic/Targets/PPC.h
+--- tools/clang/lib/Basic/Targets/PPC.h.orig
++++ tools/clang/lib/Basic/Targets/PPC.h
+@@ -397,7 +397,7 @@ class LLVM_LIBRARY_VISIBILITY PPC64TargetInfo : public
+       SuitableAlign = 64;
+ 
+     if (Triple.isOSFreeBSD() || Triple.getOS() == llvm::Triple::AIX ||
+-        Triple.isMusl()) {
++        Triple.isMusl() || Triple.isOSOpenBSD()) {
+       LongDoubleWidth = LongDoubleAlign = 64;
+       LongDoubleFormat = &llvm::APFloat::IEEEdouble();
+     }
