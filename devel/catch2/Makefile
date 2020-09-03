@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/03 05:48:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2020/09/03 21:06:27 rsadowski Exp $
 
 COMMENT =	C++-native, header-only, test framework for unit-tests
 
 GH_ACCOUNT =	catchorg
 GH_PROJECT =	Catch2
-GH_TAGNAME =	v2.12.3
+GH_TAGNAME =	v2.13.0
 
 DISTNAME =	catch2-${GH_TAGNAME:S/v//}
 
