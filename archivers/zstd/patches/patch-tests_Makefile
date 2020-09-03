@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_Makefile,v 1.1 2020/09/03 17:11:10 bket Exp $
+
+Some compilers don't have -Wvla
+
+Index: tests/Makefile
+--- tests/Makefile.orig
++++ tests/Makefile
+@@ -35,7 +35,7 @@ CFLAGS     ?= -O3
+ CFLAGS     += -Wall -Wextra -Wcast-qual -Wcast-align -Wshadow                 \
+               -Wstrict-aliasing=1 -Wswitch-enum -Wdeclaration-after-statement \
+               -Wstrict-prototypes -Wundef                                     \
+-              -Wvla -Wformat=2 -Winit-self -Wfloat-equal -Wwrite-strings      \
++              -Wformat=2 -Winit-self -Wfloat-equal -Wwrite-strings      \
+               -Wredundant-decls -Wmissing-prototypes
+ CFLAGS     += $(DEBUGFLAGS) $(MOREFLAGS)
+ FLAGS       = $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)

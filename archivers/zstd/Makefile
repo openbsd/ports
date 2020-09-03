@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2020/05/29 20:39:12 bket Exp $
+# $OpenBSD: Makefile,v 1.34 2020/09/03 17:11:10 bket Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
 V =			1.4.5
+REVISION =		0
 DISTNAME =		zstd-${V}
 
 SHARED_LIBS =		zstd	3.2	# 1.4.5
@@ -24,29 +25,19 @@ LIB_DEPENDS =		archivers/lz4 \
 			archivers/xz
 BUILD_DEPENDS =		sysutils/ggrep
 
-COMPILER =		base-clang ports-gcc
-
 MAKE_ENV =		CC="${CC}" \
-			CFLAGS="${CFLAGS}" \
-			CPPFLAGS="-I${WRKSRC}/lib -I${WRKSRC}/lib/common -I${LOCALBASE}/include" \
-			CXX="${CXX}" \
-			CXXFLAGS="${CXXFLAGS}" \
+			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 MAKE_FLAGS =		SHARED_EXT_VER="so.$(LIBzstd_VERSION)" \
 			SONAME_FLAGS= \
 			V=1
 FAKE_FLAGS =		PREFIX="${PREFIX}"
 
-.if ${MACHINE_ARCH:Mhppa}
-WANTLIB +=		atomic
-LDFLAGS +=		-latomic
-.endif
-
 USE_GMAKE =		Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-ALL_TARGET =		allmost
+ALL_TARGET =		default
 TEST_TARGET =		check
 
 pre-build:
