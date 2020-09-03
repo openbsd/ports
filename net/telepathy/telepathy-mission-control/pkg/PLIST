@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/07/06 06:04:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/09/03 18:16:51 jasper Exp $
 @bin bin/mc-tool
 @bin bin/mc-wait-for-name
 include/mission-control-5.5/
@@ -14,7 +14,7 @@ include/mission-control-5.5/mission-control-plugins/mcp-signals-marshal.h
 include/mission-control-5.5/mission-control-plugins/mission-control-plugins.h
 include/mission-control-5.5/mission-control-plugins/request-policy.h
 include/mission-control-5.5/mission-control-plugins/request.h
-lib/libmission-control-plugins.a
+@static-lib lib/libmission-control-plugins.a
 lib/libmission-control-plugins.la
 @lib lib/libmission-control-plugins.so.${LIBmission-control-plugins_VERSION}
 lib/pkgconfig/mission-control-plugins.pc
