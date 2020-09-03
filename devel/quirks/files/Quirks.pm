@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1043 2020/08/30 20:21:55 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1044 2020/09/03 12:53:59 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -471,6 +471,7 @@ my $stem_extensions = {
 	'uqm-remix2' => 'uqm-remix',
 	'uqm-remix3' => 'uqm-remix',
 	'uqm-remix4' => 'uqm-remix',
+	'py-responses' => 'py3-responses',
 };
 
 my $obsolete_reason = {
