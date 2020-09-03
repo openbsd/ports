@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/01 08:17:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/03 05:09:46 kmos Exp $
 
 COMMENT =		python number humanization utilities
 
-MODPY_EGG_VERSION =	2.5.0
+MODPY_EGG_VERSION =	2.6.0
 DISTNAME =		humanize-${MODPY_EGG_VERSION}
 PKGNAME =		py-humanize-${MODPY_EGG_VERSION}
 
