@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2020/06/11 04:51:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.43 2020/09/03 20:59:18 rsadowski Exp $
 
 COMMENT=		NetBeans Java IDE
 
-V=			12.0
+V=			12.1
 DISTNAME=		netbeans-${V}-bin
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
@@ -12,7 +12,7 @@ HOMEPAGE=		https://netbeans.apache.org
 MAINTAINER=		Rafael Sadowski <rsadowski@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=netbeans/netbeans/${V}/}
 EXTRACT_SUFX=		.zip
