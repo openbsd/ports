@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2020/08/25 18:20:17 edd Exp $
+# $OpenBSD: Makefile,v 1.70 2020/09/03 21:45:29 edd Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.2.21
+DISTNAME =	gnupg-2.2.23
 CATEGORIES = 	security
 
 # don't mix up dependencies with gnupg1
@@ -12,7 +12,7 @@ MASTER_SITES =	${MASTER_SITE_GNUPG:=gnupg/}
 
 HOMEPAGE = 	https://www.gnupg.org/
 
-MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER = 	Edd Barrett <edd@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
