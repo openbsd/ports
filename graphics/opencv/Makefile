@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2020/07/05 07:17:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2020/09/04 13:09:29 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -7,15 +7,13 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processin
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.2.0
+V =			4.4.0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
-REVISION-java =		1
-REVISION-main =		4
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -27,16 +25,13 @@ DISTFILES =		opencv-{opencv/archive/}${V}${EXTRACT_SUFX}
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 6.0
+SHARED_LIBS += $i 7.0
 .endfor
 
-WANTLIB-main += ${COMPILER_LIBCXX} Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
-WANTLIB-main += Imath-2_5 atk-1.0 avcodec avformat avresample avutil
-WANTLIB-main += c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB-main += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
-WANTLIB-main += gthread-2.0 gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-main += harfbuzz png swscale tiff webp z
+WANTLIB-main += ${COMPILER_LIBCXX} IlmImf-2_5 avcodec avformat avutil
+WANTLIB-main += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0
+WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gtk-3 jpeg
+WANTLIB-main += m openjp2 png swscale tiff webp z
 
 WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs
@@ -68,15 +63,15 @@ RUN_DEPENDS-main =	math/py-numpy \
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			devel/harfbuzz \
-			multimedia/gstreamer1/plugins-base \
-			x11/gtk+3 \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/libwebp \
 			graphics/openexr \
+			graphics/openjp2 \
 			graphics/png \
-			graphics/tiff
+			graphics/tiff \
+			multimedia/gstreamer1/plugins-base \
+			x11/gtk+3
 
 LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
 

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-java,v 1.8 2020/01/18 09:04:59 rsadowski Exp $
+@comment $OpenBSD: PLIST-java,v 1.9 2020/09/04 13:09:29 rsadowski Exp $
 share/java/
 share/java/opencv4/
-@so share/java/opencv4/libopencv_java420.so
-share/java/opencv4/opencv-420.jar
+@so share/java/opencv4/libopencv_java440.so
+share/java/opencv4/opencv-440.jar
