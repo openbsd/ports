@@ -1,6 +1,16 @@
-$OpenBSD: patch-configure_d_config_os_progs,v 1.5 2020/09/04 19:46:15 sthen Exp $
+$OpenBSD: patch-configure_d_config_os_progs,v 1.6 2020/09/04 20:06:11 sthen Exp $
 
-Doesn't work on OpenBSD.
+Net-SNMP tries to use -Wl,-no-undefined to detect missing linkage at build
+time (rather than dying at runtime if referenced functions are unavailable -
+this happened with some AES-related functions in an earlier release where
+libm wasn't linked to the library correctly).
+
+When trying to link the shared libraries, this fails on OpenBSD with missing
+libc-related symbols. I think this maybe because OpenBSD doesn't record
+libc as needed in shared libraries, presumably as a result of this
+-no-undefined is tripped.
+
+Neuter the autoconf check here to avoid this problem.
 
 https://github.com/net-snmp/net-snmp/issues/178
 
