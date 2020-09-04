@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.432 2020/08/25 13:17:16 landry Exp $
+# $OpenBSD: Makefile,v 1.433 2020/09/04 15:51:22 landry Exp $
 
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	80.0
+MOZILLA_VERSION =	80.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
