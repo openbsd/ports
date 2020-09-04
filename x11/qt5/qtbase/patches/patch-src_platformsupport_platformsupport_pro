@@ -7,8 +7,8 @@ Index: src/platformsupport/platformsupport.pro
  qtConfig(freetype)|darwin|win32: \
      SUBDIRS += fontdatabases
  
--qtConfig(evdev)|qtConfig(tslib)|qtConfig(libinput)|qtConfig(integrityhid) {
-+qtConfig(evdev)|qtConfig(tslib)|qtConfig(libinput)|qtConfig(integrityhid)|qtConfig(xkbcommon) {
+-qtConfig(evdev)|qtConfig(tslib)|qtConfig(libinput)|qtConfig(integrityhid)|qtConfig(xkbcommon) {
++qtConfig(evdev)|qtConfig(tslib)|qtConfig(libinput)|qtConfig(integrityhid) {
      SUBDIRS += input
      input.depends += devicediscovery
  }
