@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/03/10 09:58:52 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/09/04 10:00:25 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -226,6 +226,7 @@ share/sqlmap/extra/shutils/pycodestyle.sh
 share/sqlmap/extra/shutils/pydiatra.sh
 share/sqlmap/extra/shutils/pyflakes.sh
 share/sqlmap/extra/shutils/pypi.sh
+share/sqlmap/extra/shutils/recloak.sh
 share/sqlmap/extra/shutils/strip.sh
 share/sqlmap/extra/vulnserver/
 share/sqlmap/extra/vulnserver/__init__.py
@@ -901,14 +902,17 @@ share/sqlmap/sqlmap.conf
 share/sqlmap/sqlmap.py
 share/sqlmap/sqlmapapi.py
 share/sqlmap/tamper/
+share/sqlmap/tamper/0eunion.py
 share/sqlmap/tamper/__init__.py
 ${MODPY_COMMENT}share/sqlmap/tamper/${MODPY_PYCACHE}/
+share/sqlmap/tamper/${MODPY_PYCACHE}0eunion.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}apostrophemask.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}apostrophenullencode.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}appendnullbyte.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}base64encode.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}between.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}bluecoat.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}chardoubleencode.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}charencode.${MODPY_PYC_MAGIC_TAG}pyc
@@ -918,7 +922,9 @@ share/sqlmap/tamper/${MODPY_PYCACHE}commalesslimit.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}commalessmid.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}commentbeforeparentheses.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}concat2concatws.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}dunion.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}equaltolike.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}equaltorlike.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}escapequotes.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}greatest.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}halfversionedmorekeywords.${MODPY_PYC_MAGIC_TAG}pyc
@@ -930,6 +936,7 @@ share/sqlmap/tamper/${MODPY_PYCACHE}informationschemacomment.${MODPY_PYC_MAGIC_T
 share/sqlmap/tamper/${MODPY_PYCACHE}least.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}lowercase.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}luanginx.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}misunion.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}modsecurityversioned.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}modsecurityzeroversioned.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}multiplespaces.${MODPY_PYC_MAGIC_TAG}pyc
@@ -940,6 +947,7 @@ share/sqlmap/tamper/${MODPY_PYCACHE}plus2concat.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}plus2fnconcat.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}randomcase.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}randomcomments.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}schemasplit.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}sp_password.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}space2comment.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}space2dash.${MODPY_PYC_MAGIC_TAG}pyc
@@ -966,6 +974,7 @@ share/sqlmap/tamper/apostrophenullencode.py
 share/sqlmap/tamper/appendnullbyte.py
 share/sqlmap/tamper/base64encode.py
 share/sqlmap/tamper/between.py
+share/sqlmap/tamper/binary.py
 share/sqlmap/tamper/bluecoat.py
 share/sqlmap/tamper/chardoubleencode.py
 share/sqlmap/tamper/charencode.py
@@ -975,7 +984,9 @@ share/sqlmap/tamper/commalesslimit.py
 share/sqlmap/tamper/commalessmid.py
 share/sqlmap/tamper/commentbeforeparentheses.py
 share/sqlmap/tamper/concat2concatws.py
+share/sqlmap/tamper/dunion.py
 share/sqlmap/tamper/equaltolike.py
+share/sqlmap/tamper/equaltorlike.py
 share/sqlmap/tamper/escapequotes.py
 share/sqlmap/tamper/greatest.py
 share/sqlmap/tamper/halfversionedmorekeywords.py
@@ -987,6 +998,7 @@ share/sqlmap/tamper/informationschemacomment.py
 share/sqlmap/tamper/least.py
 share/sqlmap/tamper/lowercase.py
 share/sqlmap/tamper/luanginx.py
+share/sqlmap/tamper/misunion.py
 share/sqlmap/tamper/modsecurityversioned.py
 share/sqlmap/tamper/modsecurityzeroversioned.py
 share/sqlmap/tamper/multiplespaces.py
@@ -997,6 +1009,7 @@ share/sqlmap/tamper/plus2concat.py
 share/sqlmap/tamper/plus2fnconcat.py
 share/sqlmap/tamper/randomcase.py
 share/sqlmap/tamper/randomcomments.py
+share/sqlmap/tamper/schemasplit.py
 share/sqlmap/tamper/sp_password.py
 share/sqlmap/tamper/space2comment.py
 share/sqlmap/tamper/space2dash.py
