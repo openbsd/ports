@@ -16,8 +16,6 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-REVISION-main =		0
-
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 
@@ -163,7 +161,6 @@ CONFIGURE_ARGS +=	-bindir ${QT_BINDIR} \
 
 # generic args
 CONFIGURE_ARGS +=	-confirm-license \
-			-no-compile-examples \
 			-opensource \
 			-rpath \
 			-shared \
@@ -211,7 +208,6 @@ CONFIGURE_ARGS +=	-accessibility \
 			-system-libpng \
 			-system-pcre \
 			-system-sqlite \
-			-system-xcb \
 			-system-zlib
 
 # database support

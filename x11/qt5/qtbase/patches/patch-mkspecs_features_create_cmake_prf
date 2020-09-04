@@ -3,7 +3,7 @@ $OpenBSD: patch-mkspecs_features_create_cmake_prf,v 1.4 2020/03/13 16:53:49 rsad
 Index: mkspecs/features/create_cmake.prf
 --- mkspecs/features/create_cmake.prf.orig
 +++ mkspecs/features/create_cmake.prf
-@@ -52,10 +52,10 @@ darwin:!qt_framework:!debug_and_release:CONFIG(debug, 
+@@ -55,10 +55,10 @@ darwin:!qt_framework:!debug_and_release:CONFIG(debug, 
      CMAKE_QT_STEM = $$replace(CMAKE_QT_STEM, _debug$, )
  }
  
@@ -18,7 +18,7 @@ Index: mkspecs/features/create_cmake.prf
  split_incpath {
      CMAKE_ADD_SOURCE_INCLUDE_DIRS = true
      CMAKE_SOURCE_INCLUDES = \
-@@ -311,10 +311,16 @@ mac {
+@@ -351,10 +351,16 @@ mac {
          CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so
          CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so
          CMAKE_LIB_SONAME = lib$${CMAKE_QT_STEM}.so
