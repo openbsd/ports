@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2020/08/10 06:59:14 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/04 03:43:29 gnezdo Exp $
 
 COMMENT =		modal code editor with a focus on interactivity
 
-V =			2020.08.04
+V =			2020.09.01
 DISTNAME =		kakoune-${V}
 
 CATEGORIES =		editors
