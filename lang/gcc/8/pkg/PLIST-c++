@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.2 2019/04/27 21:26:35 naddy Exp $
+@comment $OpenBSD: PLIST-c++,v 1.3 2020/09/04 09:55:35 sthen Exp $
 @option is-branch
 @conflict gcc-libs->=9
 @conflict g++-<9
@@ -801,11 +801,11 @@ include/c++/${V}/${CONFIG}/bits/stdtr1c++.h
 include/c++/${V}/${CONFIG}/bits/time_members.h
 include/c++/${V}/${CONFIG}/ext/
 include/c++/${V}/${CONFIG}/ext/opt_random.h
-lib/libestdc++.a
-lib/libesupc++.a
+@static-lib lib/libestdc++.a
+@static-lib lib/libesupc++.a
 lib/libesupc++.la
 lib/libstdc++.*-gdb.py
-lib/libstdc++fs.a
+@static-lib lib/libstdc++fs.a
 lib/libstdc++fs.la
 @bin libexec/gcc/${CONFIG}/${V}/cc1plus
 @man man/man1/eg++.1

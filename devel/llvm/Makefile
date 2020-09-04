@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.262 2020/08/31 22:20:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.263 2020/09/04 09:55:35 sthen Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -19,7 +19,7 @@ PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
 
-REVISION-main =	2
+REVISION-main =	3
 
 CATEGORIES =	devel
 
@@ -120,7 +120,7 @@ CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,-relax"
 TEST_TARGET =		check check-clang
 
 # XXX sync
-GCC_VER =		8.3.0
+GCC_VER =		8.4.0
 .if ${MACHINE_ARCH} == "amd64"
 GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
 .else

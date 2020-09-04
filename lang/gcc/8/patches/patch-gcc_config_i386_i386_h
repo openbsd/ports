@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_i386_i386_h,v 1.2 2019/03/25 20:17:47 pascal Exp $
+$OpenBSD: patch-gcc_config_i386_i386_h,v 1.3 2020/09/04 09:55:34 sthen Exp $
 
 Index: gcc/config/i386/i386.h
 --- gcc/config/i386/i386.h.orig
 +++ gcc/config/i386/i386.h
-@@ -2467,6 +2467,8 @@ struct GTY(()) ix86_frame
+@@ -2492,6 +2492,8 @@ struct GTY(()) ix86_frame
    HOST_WIDE_INT stack_realign_offset;
    HOST_WIDE_INT sse_reg_save_offset;
  

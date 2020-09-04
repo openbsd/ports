@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2019/04/27 21:26:35 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/09/04 09:55:35 sthen Exp $
 @option is-branch
 @conflict gcc-<9
 @pkgpath lang/gcc/4.9,-main
@@ -41,8 +41,8 @@ lib/gcc/${CONFIG}/${V}/install-tools/include/README
 lib/gcc/${CONFIG}/${V}/install-tools/include/limits.h
 lib/gcc/${CONFIG}/${V}/install-tools/macro_list
 lib/gcc/${CONFIG}/${V}/install-tools/mkheaders.conf
-lib/gcc/${CONFIG}/${V}/libgcc.a
-lib/gcc/${CONFIG}/${V}/libgcov.a
+@static-lib lib/gcc/${CONFIG}/${V}/libgcc.a
+@static-lib lib/gcc/${CONFIG}/${V}/libgcov.a
 lib/gcc/${CONFIG}/${V}/plugin/
 lib/gcc/${CONFIG}/${V}/plugin/gtype.state
 lib/gcc/${CONFIG}/${V}/plugin/include/
@@ -450,7 +450,7 @@ lib/gcc/${CONFIG}/${V}/plugin/libcc1plugin.la
 @lib lib/gcc/${CONFIG}/${V}/plugin/libcc1plugin.so.${LIBcc1plugin_VERSION}
 lib/gcc/${CONFIG}/${V}/plugin/libcp1plugin.la
 @lib lib/gcc/${CONFIG}/${V}/plugin/libcp1plugin.so.${LIBcp1plugin_VERSION}
-lib/libatomic.a
+@static-lib lib/libatomic.a
 %%aarch64%%
 %%alpha%%
 %%amd64%%

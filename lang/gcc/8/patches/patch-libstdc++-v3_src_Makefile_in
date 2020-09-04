@@ -1,8 +1,8 @@
-$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.2 2020/09/04 09:55:35 sthen Exp $
 Index: libstdc++-v3/src/Makefile.in
 --- libstdc++-v3/src/Makefile.in.orig
 +++ libstdc++-v3/src/Makefile.in
-@@ -375,13 +375,14 @@ CONFIG_CXXFLAGS = \
+@@ -376,13 +376,14 @@ CONFIG_CXXFLAGS = \
  WARN_CXXFLAGS = \
  	$(WARN_FLAGS) $(WERROR_FLAG) -fdiagnostics-show-location=once 
  
@@ -18,7 +18,7 @@ Index: libstdc++-v3/src/Makefile.in
  
  # Cross compiler support.
  @VTV_CYGMIN_TRUE@toolexeclib_LTLIBRARIES = libvtv.la libstdc++.la
-@@ -429,7 +430,7 @@ libstdc___la_DEPENDENCIES = \
+@@ -430,7 +431,7 @@ libstdc___la_DEPENDENCIES = \
  	$(top_builddir)/src/c++11/libc++11convenience.la
  
  libstdc___la_LDFLAGS = \
@@ -27,7 +27,7 @@ Index: libstdc++-v3/src/Makefile.in
  
  libstdc___la_LINK = $(CXXLINK) $(libstdc___la_LDFLAGS)
  
-@@ -606,7 +607,7 @@ clean-toolexeclibLTLIBRARIES:
+@@ -607,7 +608,7 @@ clean-toolexeclibLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done

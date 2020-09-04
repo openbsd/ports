@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ada,v 1.2 2019/04/27 21:26:35 naddy Exp $
+@comment $OpenBSD: PLIST-ada,v 1.3 2020/09/04 09:55:35 sthen Exp $
 @option is-branch
 @conflict gnat-<9
 @pkgpath lang/gcc/4.9,-ada
@@ -1703,15 +1703,15 @@ lib/gcc/${CONFIG}/${V}/adalib/i-fortra.ali
 lib/gcc/${CONFIG}/${V}/adalib/i-pacdec.ali
 lib/gcc/${CONFIG}/${V}/adalib/interfac.ali
 lib/gcc/${CONFIG}/${V}/adalib/ioexcept.ali
-lib/gcc/${CONFIG}/${V}/adalib/libgmem.a
-lib/gcc/${CONFIG}/${V}/adalib/libgnarl-8.so
-lib/gcc/${CONFIG}/${V}/adalib/libgnarl.a
-lib/gcc/${CONFIG}/${V}/adalib/libgnarl.so
-lib/gcc/${CONFIG}/${V}/adalib/libgnarl_pic.a
-lib/gcc/${CONFIG}/${V}/adalib/libgnat-8.so
-lib/gcc/${CONFIG}/${V}/adalib/libgnat.a
-lib/gcc/${CONFIG}/${V}/adalib/libgnat.so
-lib/gcc/${CONFIG}/${V}/adalib/libgnat_pic.a
+@static-lib lib/gcc/${CONFIG}/${V}/adalib/libgmem.a
+@so lib/gcc/${CONFIG}/${V}/adalib/libgnarl-8.so
+@static-lib lib/gcc/${CONFIG}/${V}/adalib/libgnarl.a
+@so lib/gcc/${CONFIG}/${V}/adalib/libgnarl.so
+@static-lib lib/gcc/${CONFIG}/${V}/adalib/libgnarl_pic.a
+@so lib/gcc/${CONFIG}/${V}/adalib/libgnat-8.so
+@static-lib lib/gcc/${CONFIG}/${V}/adalib/libgnat.a
+@so lib/gcc/${CONFIG}/${V}/adalib/libgnat.so
+@static-lib lib/gcc/${CONFIG}/${V}/adalib/libgnat_pic.a
 lib/gcc/${CONFIG}/${V}/adalib/machcode.ali
 lib/gcc/${CONFIG}/${V}/adalib/memtrack.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-addima.ali

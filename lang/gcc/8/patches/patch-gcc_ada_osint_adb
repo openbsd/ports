@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_ada_osint_adb,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+$OpenBSD: patch-gcc_ada_osint_adb,v 1.2 2020/09/04 09:55:34 sthen Exp $
 
 GNAT tools try to guess the name of the gcc binary by looking at their
 own prefix and suffix. Subsequently they're trying to compile code using
@@ -9,7 +9,7 @@ least amount of files.
 Index: gcc/ada/osint.adb
 --- gcc/ada/osint.adb.orig
 +++ gcc/ada/osint.adb
-@@ -2244,6 +2244,13 @@ package body Osint is
+@@ -2243,6 +2243,13 @@ package body Osint is
           Start_Of_Suffix := End_Of_Prefix + Prog'Length + 1;
        end if;
  

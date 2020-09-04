@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_common_config_aarch64_aarch64-common_c,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+$OpenBSD: patch-gcc_common_config_aarch64_aarch64-common_c,v 1.2 2020/09/04 09:55:34 sthen Exp $
 
 Index: gcc/common/config/aarch64/aarch64-common.c
 --- gcc/common/config/aarch64/aarch64-common.c.orig
 +++ gcc/common/config/aarch64/aarch64-common.c
-@@ -45,8 +45,6 @@
+@@ -47,8 +47,6 @@
  /* Set default optimization options.  */
  static const struct default_options aarch_option_optimization_table[] =
    {
