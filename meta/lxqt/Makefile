@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/14 15:22:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/04 15:40:43 mariani Exp $
 
 COMMENT-main =		desktop meta-package for LXQt (base installation)
 COMMENT-extras =	desktop meta-package for LXQt (full installation)
 
-V =		0.13.0
+V =		0.15.0
 PKGNAME =	lxqt-${V}
 
 PKGNAME-main =		lxqt-${V}
