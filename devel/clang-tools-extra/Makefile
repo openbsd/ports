@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/03 20:54:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/09/04 04:17:20 rsadowski Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -13,10 +13,9 @@ BROKEN-powerpc =	no consumers on powerpc, save 25 build hours in bulks
 
 COMMENT=	Clang extra tools
 
-LLVM_V =	8.0.1
+LLVM_V =	10.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
-REVISION=	4
 
 CATEGORIES =	devel
 
