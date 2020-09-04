@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2020/08/15 20:31:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2020/09/04 04:24:28 rsadowski Exp $
 
 COMMENT =		C++ library implementing a BitTorrent client
 
-MODPY_EGG_VERSION =	1.2.3
+MODPY_EGG_VERSION =	1.2.9
 DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
-REVISION =		1
 
-SHARED_LIBS +=  	torrent-rasterbar 2.0	# 10.0.0
+SHARED_LIBS +=  	torrent-rasterbar 3.0	# 10.0.0
 
 CATEGORIES =		net devel
 
@@ -15,10 +14,10 @@ HOMEPAGE =		https://libtorrent.org/
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += boost_python${MODPY_VERSION:C/\.//g} boost_system-mt crypto m ssl
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_VERSION:C/\.//g}-mt
+WANTLIB += boost_system-mt crypto iconv m ssl
 
-MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/libtorrent-${MODPY_EGG_VERSION:S/./_/g}/
+MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/libtorrent-${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
@@ -31,19 +30,22 @@ LIB_DEPENDS =		converters/libiconv \
 # boost
 COMPILER =		base-clang ports-gcc
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
+
 CONFIGURE_ARGS =	--enable-python-binding \
 			--enable-tests \
 			--with-boost-system=boost_system-mt \
-			--with-boost-python=boost_python${MODPY_VERSION:C/\.//g} \
+			--with-boost-python=boost_python${MODPY_VERSION:C/\.//g}-mt \
 			--with-libiconv
 CONFIGURE_ENV +=	CPPFLAGS="-Wno-deprecated-declarations \
 				  -Wno-macro-redefined \
 				  -pthread" \
-			PYTHON_CXXFLAGS="${PYTHON_CXXFLAGS} -std=gnu++14" \
 			PYTHON=${MODPY_DEFAULT_VERSION_3}
+# python bindings setup.py need CXX
 MAKE_ENV =		CC="${CC}" CXX="${CXX}"
-CXXFLAGS +=		-std=gnu++14
 
 .ifdef DEBUG
 CONFIGURE_ARGS +=	--enable-debug

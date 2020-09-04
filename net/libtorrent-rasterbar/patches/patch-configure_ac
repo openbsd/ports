@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.1 2020/09/04 04:24:28 rsadowski Exp $
+
+use c++14 instead of c++11. see:
+https://github.com/arvidn/libtorrent/pull/5026
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -144,7 +144,7 @@ AS_ECHO "Checking for boost libraries:"
+ 
+ AX_BOOST_BASE([1.58])
+ 
+-AX_CXX_COMPILE_STDCXX_11([noext], [mandatory])
++AX_CXX_COMPILE_STDCXX(14, [noext], [mandatory])
+ 
+ AX_BOOST_SYSTEM()
+ AS_IF([test -z "$BOOST_SYSTEM_LIB"],

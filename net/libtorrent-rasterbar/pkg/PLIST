@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/06 20:00:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/04 04:24:28 rsadowski Exp $
 include/libtorrent/
-include/libtorrent/ConvertUTF.h
 include/libtorrent/add_torrent_params.hpp
 include/libtorrent/address.hpp
 include/libtorrent/alert.hpp
@@ -36,6 +35,7 @@ include/libtorrent/aux_/has_block.hpp
 include/libtorrent/aux_/instantiate_connection.hpp
 include/libtorrent/aux_/io.hpp
 include/libtorrent/aux_/ip_notifier.hpp
+include/libtorrent/aux_/keepalive.hpp
 include/libtorrent/aux_/listen_socket_handle.hpp
 include/libtorrent/aux_/lsd.hpp
 include/libtorrent/aux_/merkle.hpp
@@ -254,3 +254,6 @@ lib/libtorrent-rasterbar.la
 lib/pkgconfig/libtorrent-rasterbar.pc
 @so lib/python${MODPY_VERSION}/site-packages/libtorrent.so
 lib/python${MODPY_VERSION}/site-packages/python_libtorrent-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+share/cmake/
+share/cmake/Modules/
+share/cmake/Modules/FindLibtorrentRasterbar.cmake
