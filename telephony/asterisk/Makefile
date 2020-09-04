@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.323 2020/07/21 19:42:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.324 2020/09/04 21:22:41 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.12.0
+VER=		16.13.0
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-REVISION-main=	0
 
 .if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
@@ -32,7 +31,7 @@ WANTLIB-main += ${MODGCC4_CPPWANTLIB}
 # XXX Asterisk is not allowed to use other ports which pull in C++ libs
 # XXX otherwise there is a conflict between libstdc++ and libc++.
 WANTLIB-main += c crypto curl curses edit execinfo gsm iconv iksemel
-WANTLIB-main += jansson lzma m nghttp2 ogg portaudio pthread radcli
+WANTLIB-main += jansson lzma m ogg portaudio pthread radcli
 WANTLIB-main += spandsp sqlite3 srtp2 ssl tiff uriparser unbound uuid
 WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
 
@@ -199,8 +198,8 @@ CONFIGURE_ARGS+=	--with-ical=no
 # http_post
 COMMENT-http_post=	HTTP POST support for Asterisk
 LIB_DEPENDS-http_post=	devel/gettext,-runtime \
-			mail/gmime
-WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-2.6 gobject-2.0 intl pthread
+			mail/gmime30
+WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-3.0 gobject-2.0 intl pthread
 .if !${BUILD_PACKAGES:M-http_post}
 CONFIGURE_ARGS+=	--with-gmime=no
 .endif
