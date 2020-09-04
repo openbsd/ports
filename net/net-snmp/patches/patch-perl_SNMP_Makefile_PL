@@ -1,9 +1,9 @@
-$OpenBSD: patch-perl_SNMP_Makefile_PL,v 1.6 2020/01/03 22:34:35 sthen Exp $
+$OpenBSD: patch-perl_SNMP_Makefile_PL,v 1.7 2020/09/04 19:46:15 sthen Exp $
 
 Index: perl/SNMP/Makefile.PL
 --- perl/SNMP/Makefile.PL.orig
 +++ perl/SNMP/Makefile.PL
-@@ -22,7 +22,7 @@ sub SnmpInitMakeParams {
+@@ -24,7 +24,7 @@ sub SnmpInitMakeParams {
      my %Params = (
  		  NAME         => 'SNMP',
  		  dist         => { SUFFIX => "gz", COMPRESS => "gzip -9f"},

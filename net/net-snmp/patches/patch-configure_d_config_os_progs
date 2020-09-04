@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure_d_config_os_progs,v 1.5 2020/09/04 19:46:15 sthen Exp $
+
+Doesn't work on OpenBSD.
+
+https://github.com/net-snmp/net-snmp/issues/178
+
+Index: configure.d/config_os_progs
+--- configure.d/config_os_progs.orig
++++ configure.d/config_os_progs
+@@ -207,21 +207,7 @@ case x$target_os in
+ esac
+ 
+ 
+-#
+-#    Whether the linker supports the flag -Wl,-no-undefined.
+-#
+-
+-if ! echo "$CFLAGS" | grep -q -- -fsanitize=; then
+-saved_LDFLAGS=$LDFLAGS
+-AC_MSG_CHECKING([whether the linker supports -Wl,-no-undefined])
+-LDFLAGS="$saved_LDFLAGS -Wl,-no-undefined"
+-AC_LINK_IFELSE([AC_LANG_PROGRAM([],[])],
+-               [AC_MSG_RESULT([yes]); dnl
+-                LD_NO_UNDEFINED=-Wl,-no-undefined],
+-               [AC_MSG_RESULT([no])])
+-LDFLAGS="$saved_LDFLAGS"
+ AC_SUBST(LD_NO_UNDEFINED)
+-fi
+ 
+ 
+ #
