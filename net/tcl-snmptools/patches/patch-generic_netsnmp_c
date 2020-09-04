@@ -1,0 +1,13 @@
+$OpenBSD: patch-generic_netsnmp_c,v 1.1 2020/09/04 19:45:57 sthen Exp $
+
+Index: generic/netsnmp.c
+--- generic/netsnmp.c.orig
++++ generic/netsnmp.c
+@@ -19,6 +19,7 @@
+     
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ 
+ #include <net-snmp/net-snmp-config.h>
+ #include <net-snmp/net-snmp-includes.h>
