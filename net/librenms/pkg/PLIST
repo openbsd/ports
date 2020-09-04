@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.70 2020/08/01 11:16:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.71 2020/09/04 21:19:59 sthen Exp $
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
@@ -53,6 +53,7 @@ librenms/LibreNMS/Alert/Transport/Jira.php
 librenms/LibreNMS/Alert/Transport/Kayako.php
 librenms/LibreNMS/Alert/Transport/Linenotify.php
 librenms/LibreNMS/Alert/Transport/Mail.php
+librenms/LibreNMS/Alert/Transport/Matrix.php
 librenms/LibreNMS/Alert/Transport/Mattermost.php
 librenms/LibreNMS/Alert/Transport/Msteams.php
 librenms/LibreNMS/Alert/Transport/Nagios.php
@@ -251,6 +252,7 @@ librenms/LibreNMS/OS/Aprisa.php
 librenms/LibreNMS/OS/ArrisDsr4410md.php
 librenms/LibreNMS/OS/ArubaInstant.php
 librenms/LibreNMS/OS/Arubaos.php
+librenms/LibreNMS/OS/AsuswrtMerlin.php
 librenms/LibreNMS/OS/AviatWtm.php
 librenms/LibreNMS/OS/Boss.php
 librenms/LibreNMS/OS/Ceraos.php
@@ -272,6 +274,7 @@ librenms/LibreNMS/OS/Exa.php
 librenms/LibreNMS/OS/Extendair.php
 librenms/LibreNMS/OS/Fortiwlc.php
 librenms/LibreNMS/OS/FsGbn.php
+librenms/LibreNMS/OS/FsNmu.php
 librenms/LibreNMS/OS/FsSwitch.php
 librenms/LibreNMS/OS/Ftos.php
 librenms/LibreNMS/OS/Generic.php
@@ -647,6 +650,7 @@ librenms/app/Http/Controllers/Table/EventlogController.php
 librenms/app/Http/Controllers/Table/FdbTablesController.php
 librenms/app/Http/Controllers/Table/GraylogController.php
 librenms/app/Http/Controllers/Table/LocationController.php
+librenms/app/Http/Controllers/Table/OutagesController.php
 librenms/app/Http/Controllers/Table/PortNacController.php
 librenms/app/Http/Controllers/Table/RoutesTablesController.php
 librenms/app/Http/Controllers/Table/SimpleTableController.php
@@ -1055,6 +1059,8 @@ librenms/database/migrations/2020_05_24_212054_poller_cluster_settings.php
 librenms/database/migrations/2020_05_30_162638_remove_mib_polling_tables.php
 librenms/database/migrations/2020_06_06_222222_create_device_outages_table.php
 librenms/database/migrations/2020_06_23_00522_alter_availability_perc_column.php
+librenms/database/migrations/2020_07_29_143221_add_device_perf_index.php
+librenms/database/migrations/2020_08_28_212054_drop_uptime_column_outages.php
 librenms/database/seeds/
 librenms/database/seeds/DatabaseSeeder.php
 librenms/database/seeds/DefaultAlertTemplateSeeder.php
@@ -1219,6 +1225,7 @@ librenms/doc/Support/CLI-Tools.md
 librenms/doc/Support/Cleanup-options.md
 librenms/doc/Support/Configuration.md
 librenms/doc/Support/Device-Notes/
+librenms/doc/Support/Device-Notes/AsuswrtMerlin.md
 librenms/doc/Support/Device-Notes/Carel-pCOweb-Devices.md
 librenms/doc/Support/Device-Notes/Openwrt.md
 librenms/doc/Support/Device-Notes/index.md
@@ -2479,6 +2486,7 @@ librenms/includes/definitions/foundryos.yaml
 librenms/includes/definitions/freebsd.yaml
 librenms/includes/definitions/fs-gbn.yaml
 librenms/includes/definitions/fs-net-pdu.yaml
+librenms/includes/definitions/fs-nmu.yaml
 librenms/includes/definitions/fs-switch.yaml
 librenms/includes/definitions/ftd.yaml
 librenms/includes/definitions/ftos.yaml
@@ -3057,6 +3065,7 @@ librenms/includes/discovery/sensors/dbm/ciscoepc.inc.php
 librenms/includes/discovery/sensors/dbm/ciscosb.inc.php
 librenms/includes/discovery/sensors/dbm/comware.inc.php
 librenms/includes/discovery/sensors/dbm/datacom.inc.php
+librenms/includes/discovery/sensors/dbm/fs-nmu.inc.php
 librenms/includes/discovery/sensors/dbm/infinera-groove.inc.php
 librenms/includes/discovery/sensors/dbm/junos.inc.php
 librenms/includes/discovery/sensors/dbm/nokia-isam.inc.php
@@ -3203,6 +3212,7 @@ librenms/includes/discovery/sensors/snr/arris-c4.inc.php
 librenms/includes/discovery/sensors/snr/ciscoepc.inc.php
 librenms/includes/discovery/sensors/snr/infinera-groove.inc.php
 librenms/includes/discovery/sensors/state/
+librenms/includes/discovery/sensors/state/airos-af-ltu.inc.php
 librenms/includes/discovery/sensors/state/aos-emu2.inc.php
 librenms/includes/discovery/sensors/state/aos6.inc.php
 librenms/includes/discovery/sensors/state/aos7.inc.php
@@ -3226,6 +3236,7 @@ librenms/includes/discovery/sensors/state/equallogic.inc.php
 librenms/includes/discovery/sensors/state/extendair.inc.php
 librenms/includes/discovery/sensors/state/f5.inc.php
 librenms/includes/discovery/sensors/state/fabos.inc.php
+librenms/includes/discovery/sensors/state/fs-nmu.inc.php
 librenms/includes/discovery/sensors/state/hirschmann.inc.php
 librenms/includes/discovery/sensors/state/hp.inc.php
 librenms/includes/discovery/sensors/state/hpblmos.inc.php
@@ -3444,6 +3455,7 @@ librenms/includes/html/common/alerts.inc.php
 librenms/includes/html/common/availability-map.inc.php
 librenms/includes/html/common/eventlog.inc.php
 librenms/includes/html/common/graylog.inc.php
+librenms/includes/html/common/outages.inc.php
 librenms/includes/html/common/stp-ports.inc.php
 librenms/includes/html/common/syslog.inc.php
 librenms/includes/html/common/worldmap.inc.php
@@ -4746,6 +4758,7 @@ librenms/includes/html/pages/iftype.inc.php
 librenms/includes/html/pages/inventory.inc.php
 librenms/includes/html/pages/map.inc.php
 librenms/includes/html/pages/notifications.inc.php
+librenms/includes/html/pages/outages.inc.php
 librenms/includes/html/pages/oxidized.inc.php
 librenms/includes/html/pages/packages.inc.php
 librenms/includes/html/pages/peering/
@@ -5104,7 +5117,6 @@ librenms/includes/polling/os/aruba-instant.inc.php
 librenms/includes/polling/os/arubaos.inc.php
 librenms/includes/polling/os/asa.inc.php
 librenms/includes/polling/os/ascom.inc.php
-librenms/includes/polling/os/asuswrt-merlin.inc.php
 librenms/includes/polling/os/asyncos.inc.php
 librenms/includes/polling/os/ats.inc.php
 librenms/includes/polling/os/audiocodes.inc.php
@@ -5351,7 +5363,6 @@ librenms/includes/polling/os/omnitron-iconverter.inc.php
 librenms/includes/polling/os/onefs.inc.php
 librenms/includes/polling/os/openbsd.inc.php
 librenms/includes/polling/os/opengear.inc.php
-librenms/includes/polling/os/openwrt.inc.php
 librenms/includes/polling/os/opnsense.inc.php
 librenms/includes/polling/os/oracle-ilom.inc.php
 librenms/includes/polling/os/orvaldi-ups.inc.php
@@ -5483,6 +5494,7 @@ librenms/includes/polling/ports.inc.php
 librenms/includes/polling/ports/cisco-if-extension.inc.php
 librenms/includes/polling/ports/f5.inc.php
 librenms/includes/polling/ports/os/
+librenms/includes/polling/ports/os/airos-af-ltu.inc.php
 librenms/includes/polling/ports/os/airos-af.inc.php
 librenms/includes/polling/ports/os/cmm.inc.php
 librenms/includes/polling/ports/os/cxr-ts.inc.php
@@ -7107,6 +7119,7 @@ librenms/mibs/emerson/EES-POWER-FERRO-MIB
 librenms/mibs/emerson/EES-POWER-MIB
 librenms/mibs/emerson/NETSURE-MIB-004-A
 librenms/mibs/endrun/
+librenms/mibs/endrun/SONOMA-MIB
 librenms/mibs/endrun/TEMPUSLXUNISON-MIB
 librenms/mibs/enlogic/
 librenms/mibs/enlogic/ENLOGIC-PDU-MIB
@@ -7435,6 +7448,8 @@ librenms/mibs/fs/NSCRTV-EPON-STP-MGM-MIB
 librenms/mibs/fs/NSCRTV-EPON-SYSTEM-MIB
 librenms/mibs/fs/NSCRTV-EPON-VLAN-MGM-MIB
 librenms/mibs/fs/NSCRTV-EPONEOC-EPON-MIB
+librenms/mibs/fs/OAP-C1-OEO
+librenms/mibs/fs/OAP-NMU
 librenms/mibs/fs/PIM-BSR-MIB
 librenms/mibs/fs/STP-MIB
 librenms/mibs/fs/SWITCH
@@ -8679,6 +8694,8 @@ librenms/mibs/nokia/ALCATEL-IND1-WCCP-MIB
 librenms/mibs/nokia/ALCATEL-IND1-WEBMGT-MIB
 librenms/mibs/nokia/ALCATEL-ISIS-MIB
 librenms/mibs/nokia/ALCATEL-STATIC-FRR-MIB
+librenms/mibs/nokia/ALU-MICROWAVE-MIB
+librenms/mibs/nokia/ALU-SAR-GLOBAL-MIB
 librenms/mibs/nokia/ASAM-ALARM-MIB
 librenms/mibs/nokia/ASAM-EQUIP-MIB
 librenms/mibs/nokia/ASAM-SYSTEM-MIB
@@ -17731,6 +17748,7 @@ librenms/vendor/symfony/polyfill-php80/README.md
 librenms/vendor/symfony/polyfill-php80/Resources/
 librenms/vendor/symfony/polyfill-php80/Resources/stubs/
 librenms/vendor/symfony/polyfill-php80/Resources/stubs/Stringable.php
+librenms/vendor/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php
 librenms/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php
 librenms/vendor/symfony/polyfill-php80/bootstrap.php
 librenms/vendor/symfony/polyfill-php80/composer.json
