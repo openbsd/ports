@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/01/21 04:55:43 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/04 20:06:58 kirby Exp $
 bin/ode-config
 include/ode/
 include/ode/collision.h
@@ -7,10 +7,12 @@ include/ode/collision_trimesh.h
 include/ode/common.h
 include/ode/compatibility.h
 include/ode/contact.h
+include/ode/cooperative.h
 include/ode/error.h
 include/ode/export-dif.h
 include/ode/mass.h
 include/ode/matrix.h
+include/ode/matrix_coop.h
 include/ode/memory.h
 include/ode/misc.h
 include/ode/objects.h
@@ -27,7 +29,7 @@ include/ode/threading.h
 include/ode/threading_impl.h
 include/ode/timer.h
 include/ode/version.h
-lib/libode.a
+@static-lib lib/libode.a
 lib/libode.la
 @lib lib/libode.so.${LIBode_VERSION}
 lib/pkgconfig/ode.pc
@@ -40,6 +42,7 @@ share/examples/ode/
 @bin share/examples/ode/demo_chain1
 @bin share/examples/ode/demo_chain2
 @bin share/examples/ode/demo_collision
+@bin share/examples/ode/demo_convex
 @bin share/examples/ode/demo_crash
 @bin share/examples/ode/demo_cyl
 @bin share/examples/ode/demo_cylvssphere

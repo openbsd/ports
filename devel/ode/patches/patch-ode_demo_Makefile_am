@@ -1,4 +1,4 @@
-$OpenBSD: patch-ode_demo_Makefile_am,v 1.2 2019/01/13 15:08:01 pascal Exp $
+$OpenBSD: patch-ode_demo_Makefile_am,v 1.3 2020/09/04 20:06:58 kirby Exp $
 Index: ode/demo/Makefile.am
 --- ode/demo/Makefile.am.orig
 +++ ode/demo/Makefile.am
@@ -10,7 +10,7 @@ Index: ode/demo/Makefile.am
  
  if X11
  AM_LDFLAGS = $(X_PRE_LIBS) $(X_LIBS) $(X_EXTRA_LIBS)
-@@ -51,7 +51,7 @@ noinst_PROGRAMS = \
+@@ -52,7 +52,7 @@ noinst_PROGRAMS = \
                  demo_tracks
  
  demo_chain1_SOURCES = demo_chain1.c

@@ -1,34 +1,35 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/09/04 20:06:58 kirby Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
-SHARED_LIBS += 	ode	3.0	# 6.0
-DISTNAME = 	ode-0.14
+SHARED_LIBS += 	ode	4.0	# 8.0
+DISTNAME = 	ode-0.16
 CATEGORIES =	devel
-REVISION =      2
 
-HOMEPAGE =	http://www.ode.org/
+HOMEPAGE =	https://www.ode.org/
 
 MAINTAINER = 	Kirill Bychkov <kirby@openbsd.org>
 
-MASTER_SITES =	https://bitbucket.org/odedevs/ode/downloads/ \
-		${MASTER_SITE_SOURCEFORGE:=opende/}
+MASTER_SITES =	https://bitbucket.org/odedevs/ode/downloads/
 
 # LGPLv2.1+ / 3-clause BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU X11 X11-xcb Xdamage Xext Xfixes Xxf86vm
 WANTLIB += c drm expat glapi m pthread ${COMPILER_LIBCXX} xcb xcb-dri2
-WANTLIB += xcb-glx
+WANTLIB += xcb-glx xcb-dri3 xcb-present xcb-sync xcb-xfixes xshmfence z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	autoreconf
+CONFIGURE_ARGS +=	--enable-double-precision
 CONFIGURE_ENV+= 	CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib" \
 			LIBS="-lm"
 AUTOCONF_VERSION = 	2.69
 AUTOMAKE_VERSION = 	1.11
+
+CXXFLAGS += 		-Wno-c++11-narrowing
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ode/
@@ -37,6 +38,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ode/textures/
 	${INSTALL_DATA} ${WRKSRC}/drawstuff/textures/* \
 		${PREFIX}/share/examples/ode/textures/
-
 
 .include <bsd.port.mk>
