@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/07/20 04:51:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/09/04 18:34:50 rsadowski Exp $
 @conflict digikam-kde4-*
 @conflict kipi-plugins-<=4
 bin/cleanup_digikamdb
@@ -136,6 +136,7 @@ lib/qt5/plugins/digikam/bqm/
 @so lib/qt5/plugins/digikam/bqm/Bqm_CurvesAdjust_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_FilmGrain_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_Flip_Plugin.so
+@so lib/qt5/plugins/digikam/bqm/Bqm_HotPixels_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_HslCorrection_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_IccConvert_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_Invert_Plugin.so
@@ -148,6 +149,7 @@ lib/qt5/plugins/digikam/bqm/
 @so lib/qt5/plugins/digikam/bqm/Bqm_Restoration_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_Rotate_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_Sharpen_Plugin.so
+@so lib/qt5/plugins/digikam/bqm/Bqm_Texture_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_TimeAdjust_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_UserScript_Plugin.so
 @so lib/qt5/plugins/digikam/bqm/Bqm_WaterMark_Plugin.so

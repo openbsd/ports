@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2020/07/20 14:55:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.69 2020/09/04 18:34:50 rsadowski Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		7.0.0
+V =		7.1.0
 DISTNAME =	digikam-${V}
 CATEGORIES =	graphics
-REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
