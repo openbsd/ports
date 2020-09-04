@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1044 2020/09/03 12:53:59 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.1045 2020/09/04 15:41:24 mariani Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1804,6 +1804,25 @@ my $obsolete_reason = {
 	'freemat' => 6,
 	'scim-qtimm' => 6,
 	'gambatte-qt' => 6,
+	'liblxqt-l10n' => 3,
+	'lxqt-about-l10n' => 3,
+	'lxqt-config-l10n' => 3,
+	'lxqt-notificationd-l10n' => 3,
+	'lxqt-openssh-askpass-l10n' => 3,
+	'lxqt-panel-l10n' => 3,
+	'lxqt-policykit-l10n' => 3,
+	'lxqt-powermanagement-l10n' => 3,
+	'lxqt-runner-l10n' => 3,
+	'lxqt-session-l10n' => 3,
+	'lxqt-sudo-l10n' => 3,
+	'lximage-l10n' => 3,
+	'compton-conf-l10n' => 3,
+	'obconf-l10n' => 3,
+	'libfm-qt-l10n' => 3,
+	'pavucontrol-qt-l10n' => 3,
+	'pcmanfm-qt-l10n' => 3,
+	'qtermwidget-l10n' => 3,
+	'qterminal-l10n' => 3,
 };
 
 # reasons for obsolete packages
