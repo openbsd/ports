@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/07 17:48:59 thfr Exp $
+# $OpenBSD: Makefile,v 1.16 2020/09/04 05:07:08 thfr Exp $
 
 COMMENT=	unpack Inno Setup installers
 
-DISTNAME=	innoextract-1.8
+DISTNAME=	innoextract-1.9
 
 CATEGORIES=	archivers
 HOMEPAGE=	https://constexpr.org/innoextract/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 # pthread req'd by lzma and boost at runtime
 # boost_system-mt req'd by boost_filesystem-mt at runtime
 WANTLIB=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
-WANTLIB+=	boost_system-mt c iconv lzma m pthread ${COMPILER_LIBCXX}
+WANTLIB+=	c iconv lzma m ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${HOMEPAGE}files/
 
