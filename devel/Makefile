@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2011 2020/08/23 13:28:15 cwen Exp $
+# $OpenBSD: Makefile,v 1.2012 2020/09/04 22:14:08 thfr Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -123,6 +123,7 @@
      SUBDIR += dissy
      SUBDIR += distcc
      SUBDIR += dlib
+     SUBDIR += dnspy
      SUBDIR += doc++
      SUBDIR += dotconf
      SUBDIR += doxygen
