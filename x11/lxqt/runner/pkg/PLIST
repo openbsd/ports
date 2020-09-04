@@ -1,7 +1,54 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:13 mariani Exp $
+@conflict lxqt-runner-l10n-*
+@pkgpath x11/lxqt/l10n,-runner
 @bin bin/lxqt-runner
+@man man/man1/lxqt-runner.1
 share/examples/lxqt-runner/
 share/examples/lxqt-runner/xdg/
 share/examples/lxqt-runner/xdg/autostart/
 share/examples/lxqt-runner/xdg/autostart/lxqt-runner.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/lxqt-runner.desktop
+share/lxqt/translations/lxqt-runner/
+share/lxqt/translations/lxqt-runner/lxqt-runner_ar.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_arn.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_ast.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_ca.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_cs.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_cy.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_da.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_de.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_el.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_eo.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_es.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_es_VE.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_eu.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_fi.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_fr.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_gl.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_he.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_hu.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_ia.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_id.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_it.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_ja.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_ko.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_lt.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_nb_NO.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_nl.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_pl.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_pt.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_pt_BR.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_ro_RO.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_ru.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_ru_RU.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_sk.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_sk_SK.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_sl.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_sr@latin.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_sr_BA.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_sr_RS.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_th_TH.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_tr.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_uk.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_zh_CN.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_zh_TW.qm

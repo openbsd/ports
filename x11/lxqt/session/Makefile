@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/04 15:40:13 mariani Exp $
 
 COMMENT =	session manager for LXQt
 
-VERSION =	0.13.0
+VERSION =	0.15.0
 
 NAME =		lxqt-session
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader
-WANTLIB += Qt5Xml SM X11 Xext c lxqt m
+WANTLIB += Qt5Xml SM X11 Xext c gio-2.0 glib-2.0 gobject-2.0 lxqt
+WANTLIB += m
 
 LIB_DEPENDS +=		x11/lxqt/liblxqt
 
@@ -20,16 +20,15 @@ BUILD_DEPENDS +=	x11/lxqt/build-tools \
 RUN_DEPENDS +=		devel/xdg-user-dirs \
 			devel/desktop-file-utils \
 			x11/xscreensaver \
-			devel/kf5/oxygen-icons \
-			x11/lxqt/l10n,-session
+			devel/kf5/oxygen-icons
 
-CONFIGURE_ARGS +=	-DWITH_LIBUDEV=No \
-			-DPULL_TRANSLATIONS:BOOL=OFF
+CONFIGURE_ARGS +=	-DWITH_LIBUDEV=No
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lxqt-config-session/autostartedit.cpp \
 		${WRKSRC}/lxqt-config-session/sessionconfigwindow.cpp \
-		${WRKSRC}/lxqt-session/src/wmselectdialog.cpp
+		${WRKSRC}/lxqt-session/src/wmselectdialog.cpp \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

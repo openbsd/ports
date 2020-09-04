@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/04 15:40:12 mariani Exp $
 
 COMMENT =	the terminal widget for QTerminal
 
-VERSION =	0.9.0
+VERSION =	0.15.0
 
 NAME =		qtermwidget
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	1
 
-SHARED_LIBS +=  qtermwidget5              0.0 # 0.9
+SHARED_LIBS +=  qtermwidget5              0.1 # 0.15.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
-RUN_DEPENDS +=		x11/lxqt/l10n,-qtermwidget
-
-CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lib/qtermwidget.cpp
 
 .include <bsd.port.mk>

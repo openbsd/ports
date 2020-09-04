@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:11 mariani Exp $
+@conflict lxqt-l10n-*
+@pkgpath x11/lxqt/l10n,-main
 @bin bin/lxqt-backlight_backend
 include/lxqt/
 include/lxqt/LXQt/
@@ -53,6 +55,49 @@ share/examples/liblxqt/xdg/lxqt/
 @sample ${SYSCONFDIR}/xdg/lxqt/
 share/examples/liblxqt/xdg/lxqt/power.conf
 @sample ${SYSCONFDIR}/xdg/lxqt/power.conf
-share/polkit-1/
-share/polkit-1/actions/
+share/examples/liblxqt/xdg/lxqt/translations/
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ar.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_arn.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ast.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_bg.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ca.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_cs.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_cy.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_da.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_de.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_el.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_en_GB.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_eo.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_es.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_es_VE.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_eu.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_fi.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_fr.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_gl.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_he.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_hu.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ia.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_id.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_it.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ja.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ko.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_lt.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_lv.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_nb_NO.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_nl.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_pl.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_pt.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_pt_BR.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ro_RO.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ru.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_sk_SK.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_sl.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_sr@latin.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_sr_RS.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_th_TH.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_tr.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_uk.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_zh_CN.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_zh_TW.qm
 share/polkit-1/actions/org.lxqt.backlight.pkexec.policy

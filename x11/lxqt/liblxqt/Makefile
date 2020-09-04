@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/23 15:25:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/04 15:40:11 mariani Exp $
 
 COMMENT =	core utility library for all LXQt components
 
-VERSION =	0.13.0
+VERSION =	0.15.1
 
 NAME =		liblxqt
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	2
 
-SHARED_LIBS +=  lxqt                      0.0 # 0.13
+SHARED_LIBS +=  lxqt                      0.1 # 0.15
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Widgets Qt5X11Extras Qt5Xml X11 Xss c m
-WANTLIB += Qt5Svg Qt5Xdg Qt5XdgIconLoader
+WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader
+WANTLIB += Qt5Xml X11 Xss c gio-2.0 glib-2.0 gobject-2.0 m
 
 LIB_DEPENDS +=		x11/qt5/qtx11extras \
 			devel/kf5/kwindowsystem \
@@ -21,9 +20,7 @@ LIB_DEPENDS +=		x11/qt5/qtx11extras \
 BUILD_DEPENDS +=	x11/lxqt/build-tools \
 			x11/polkit-qt5
 
-RUN_DEPENDS +=		x11/lxqt/l10n,-main
-
-CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
+RUN_DEPENDS +=		x11/polkit-qt5
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}/xdg

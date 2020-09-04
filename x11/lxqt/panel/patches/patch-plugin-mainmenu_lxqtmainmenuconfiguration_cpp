@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugin-mainmenu_lxqtmainmenuconfiguration_cpp,v 1.1 2020/09/04 15:40:12 mariani Exp $
+
+Index: plugin-mainmenu/lxqtmainmenuconfiguration.cpp
+--- plugin-mainmenu/lxqtmainmenuconfiguration.cpp.orig
++++ plugin-mainmenu/lxqtmainmenuconfiguration.cpp
+@@ -178,7 +178,7 @@ void LXQtMainMenuConfiguration::chooseMenuFile()
+ {
+     QFileDialog *d = new QFileDialog(this,
+                                      tr("Choose menu file"),
+-                                     QLatin1String("/etc/xdg/menus"),
++                                     QLatin1String("${SYSCONFDIR}/xdg/menus"),
+                                      tr("Menu files (*.menu)"));
+     d->setWindowModality(Qt::WindowModal);
+     d->setAttribute(Qt::WA_DeleteOnClose);

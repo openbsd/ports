@@ -1,6 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:11 mariani Exp $
+@conflict obconf-qt-l10n-*
+@pkgpath x11/lxqt/l10n,-obconf-qt
 @bin bin/obconf-qt
 share/applications/obconf-qt.desktop
 share/icons/hicolor/48x48/apps/obconf-qt.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/obconf-qt/
+share/obconf-qt/translations/
+share/obconf-qt/translations/obconf-qt_arn.qm
+share/obconf-qt/translations/obconf-qt_ast.qm
+share/obconf-qt/translations/obconf-qt_ca.qm
+share/obconf-qt/translations/obconf-qt_cs.qm
+share/obconf-qt/translations/obconf-qt_cy.qm
+share/obconf-qt/translations/obconf-qt_da.qm
+share/obconf-qt/translations/obconf-qt_de.qm
+share/obconf-qt/translations/obconf-qt_el.qm
+share/obconf-qt/translations/obconf-qt_es.qm
+share/obconf-qt/translations/obconf-qt_fr.qm
+share/obconf-qt/translations/obconf-qt_gl.qm
+share/obconf-qt/translations/obconf-qt_he.qm
+share/obconf-qt/translations/obconf-qt_hr.qm
+share/obconf-qt/translations/obconf-qt_hu.qm
+share/obconf-qt/translations/obconf-qt_id.qm
+share/obconf-qt/translations/obconf-qt_is.qm
+share/obconf-qt/translations/obconf-qt_it.qm
+share/obconf-qt/translations/obconf-qt_ja.qm
+share/obconf-qt/translations/obconf-qt_lt.qm
+share/obconf-qt/translations/obconf-qt_nb_NO.qm
+share/obconf-qt/translations/obconf-qt_nl.qm
+share/obconf-qt/translations/obconf-qt_pa.qm
+share/obconf-qt/translations/obconf-qt_pl.qm
+share/obconf-qt/translations/obconf-qt_pt.qm
+share/obconf-qt/translations/obconf-qt_pt_BR.qm
+share/obconf-qt/translations/obconf-qt_ru.qm
+share/obconf-qt/translations/obconf-qt_sk_SK.qm
+share/obconf-qt/translations/obconf-qt_sv.qm
+share/obconf-qt/translations/obconf-qt_tr.qm
+share/obconf-qt/translations/obconf-qt_uk.qm
+share/obconf-qt/translations/obconf-qt_zh_CN.qm

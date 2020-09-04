@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:12 mariani Exp $
+@conflict pcmanfm-qt-l10n-*
+@pkgpath x11/lxqt/l10n,-pcmanfm-qt
 @bin bin/pcmanfm-qt
 @man man/man1/pcmanfm-qt.1
 share/applications/pcmanfm-qt-desktop-pref.desktop
@@ -15,3 +17,40 @@ share/examples/pcmanfm-qt/xdg/pcmanfm-qt/lxqt/
 share/examples/pcmanfm-qt/xdg/pcmanfm-qt/lxqt/settings.conf
 @sample ${SYSCONFDIR}/xdg/pcmanfm-qt/lxqt/settings.conf
 @tag update-desktop-database
+share/pcmanfm-qt/
+share/pcmanfm-qt/translations/
+share/pcmanfm-qt/translations/pcmanfm-qt_ar.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_arn.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_ast.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_ca.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_cs.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_cy.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_da.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_de.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_el.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_en_GB.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_es.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_et.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_fil.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_fr.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_gl.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_he.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_hi.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_hu.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_id.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_it.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_ja.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_lt.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_nb_NO.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_nl.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_pl.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_pt.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_pt_BR.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_pt_PT.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_ru.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_sk_SK.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_sv.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_tr.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_uk.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_zh_CN.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_zh_TW.qm

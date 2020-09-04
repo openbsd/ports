@@ -1,27 +1,24 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/04 15:40:11 mariani Exp $
 
 COMMENT =	qt binding for libfm
 
-VERSION =	0.13.1
+VERSION =	0.15.1
 
 NAME =		libfm-qt
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	1
 
-SHARED_LIBS +=  fm-qt                     0.0 # 5.0
+SHARED_LIBS +=  fm-qt                     1.0 # 7.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
-WANTLIB += exif fm gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 intl
+WANTLIB += exif gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 intl
 WANTLIB += m menu-cache xcb
 
 LIB_DEPENDS +=		x11/qt5/qtx11extras \
-			x11/libfm/core
+			x11/menu-cache \
+			graphics/libexif
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
-RUN_DEPENDS +=		x11/lxqt/l10n,-libfm-qt \
-			misc/shared-mime-info
-
-CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
+RUN_DEPENDS +=		misc/shared-mime-info
 
 .include <bsd.port.mk>

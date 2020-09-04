@@ -1,4 +1,4 @@
-$OpenBSD: patch-lxqtprogramfinder_cpp,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+$OpenBSD: patch-lxqtprogramfinder_cpp,v 1.2 2020/09/04 15:40:11 mariani Exp $
 
 Index: lxqtprogramfinder.cpp
 --- lxqtprogramfinder.cpp.orig
@@ -28,13 +28,13 @@ Index: lxqtprogramfinder.cpp
 +    glob_t we;
 +    if (glob(command.toLocal8Bit().constData(), GLOB_ERR, NULL, &we) == 0)
 +        if (we.gl_pathc > 0)
-+            return QString(we.gl_pathv[0]);
++            return  QString::fromLocal8Bit(we.gl_pathv[0]);
 +    return QString();
 +    #else
      wordexp_t we;
      if (wordexp(command.toLocal8Bit().constData(), &we, WRDE_NOCMD) == 0)
          if (we.we_wordc > 0)
-             return QString(we.we_wordv[0]);
+             return QString::fromLocal8Bit(we.we_wordv[0]);
      return QString();
 +    #endif
  }

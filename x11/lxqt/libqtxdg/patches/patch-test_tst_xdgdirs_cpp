@@ -1,0 +1,48 @@
+$OpenBSD: patch-test_tst_xdgdirs_cpp,v 1.1 2020/09/04 15:40:11 mariani Exp $
+
+Index: test/tst_xdgdirs.cpp
+--- test/tst_xdgdirs.cpp.orig
++++ test/tst_xdgdirs.cpp
+@@ -131,12 +131,12 @@ void tst_xdgdirs::testDataDirs()
+     setDefaultLocations();
+     const QStringList dataDirs = XdgDirs::dataDirs();
+     QCOMPARE(dataDirs.count(), 2);
+-    QCOMPARE(dataDirs.at(0), QString::fromLatin1("/usr/local/share"));
++    QCOMPARE(dataDirs.at(0), QString::fromLatin1("${LOCALBASE}/share"));
+     QCOMPARE(dataDirs.at(1), QString::fromLatin1("/usr/share"));
+ 
+     const QStringList dataDirsWithPostfix = XdgDirs::dataDirs(postfix);
+     QCOMPARE(dataDirsWithPostfix.count(), 2);
+-    QCOMPARE(dataDirsWithPostfix.at(0), QString::fromLatin1("/usr/local/share") + postfix);
++    QCOMPARE(dataDirsWithPostfix.at(0), QString::fromLatin1("${LOCALBASE}/share") + postfix);
+     QCOMPARE(dataDirsWithPostfix.at(1), QString::fromLatin1("/usr/share") + postfix);
+ 
+     setCustomLocations();
+@@ -156,11 +156,11 @@ void tst_xdgdirs::testConfigDirs()
+ 
+     const QStringList configDirs = XdgDirs::configDirs();
+     QCOMPARE(configDirs.count(), 1);
+-    QCOMPARE(configDirs.at(0), QString::fromLatin1("/etc/xdg"));
++    QCOMPARE(configDirs.at(0), QString::fromLatin1("${SYSCONFDIR}/xdg"));
+ 
+     const QStringList configDirsWithPostfix = XdgDirs::configDirs(postfix);
+     QCOMPARE(configDirsWithPostfix.count(), 1);
+-    QCOMPARE(configDirsWithPostfix.at(0), QString::fromLatin1("/etc/xdg") + postfix);
++    QCOMPARE(configDirsWithPostfix.at(0), QString::fromLatin1("${SYSCONFDIR}/xdg") + postfix);
+ 
+     setCustomLocations();
+     const QStringList configDirsCustom = XdgDirs::configDirs();
+@@ -206,11 +206,11 @@ void tst_xdgdirs::testAutostartDirs()
+     setDefaultLocations();
+     const QStringList autostartDirs = XdgDirs::autostartDirs();
+     QCOMPARE(autostartDirs.count(), 1);
+-    QCOMPARE(autostartDirs.at(0), QString::fromLatin1("/etc/xdg/autostart"));
++    QCOMPARE(autostartDirs.at(0), QString::fromLatin1("${SYSCONFDIR}/xdg/autostart"));
+ 
+     const QStringList autostartDirsWithPostfix = XdgDirs::autostartDirs(postfix);
+     QCOMPARE(autostartDirsWithPostfix.count(), 1);
+-    QCOMPARE(autostartDirsWithPostfix.at(0), QString::fromLatin1("/etc/xdg/autostart") + postfix);
++    QCOMPARE(autostartDirsWithPostfix.at(0), QString::fromLatin1("${SYSCONFDIR}/xdg/autostart") + postfix);
+ 
+ 
+     setCustomLocations();

@@ -1,4 +1,4 @@
-$OpenBSD: patch-providers_cpp,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+$OpenBSD: patch-providers_cpp,v 1.2 2020/09/04 15:40:13 mariani Exp $
 
 Index: providers.cpp
 --- providers.cpp.orig
@@ -13,7 +13,7 @@ Index: providers.cpp
  
  #include "providers.h"
  #include "yamlparser.h"
-@@ -47,7 +50,11 @@
+@@ -48,7 +51,11 @@
  #include <LXQt/ScreenSaver>
  #include "providers.h"
  #include <LXQtGlobalKeys/Action>
@@ -25,7 +25,7 @@ Index: providers.cpp
  #include <QStandardPaths>
  
  #define MAX_HISTORY 100
-@@ -59,6 +66,24 @@
+@@ -60,6 +67,24 @@
  static QString expandCommand(const QString &command, QStringList *arguments=0)
  {
      QString program;
@@ -50,7 +50,7 @@ Index: providers.cpp
      wordexp_t words;
  
      if (wordexp(command.toLocal8Bit().data(), &words, 0) != 0)
-@@ -75,6 +100,7 @@ static QString expandCommand(const QString &command, Q
+@@ -76,6 +101,7 @@ static QString expandCommand(const QString &command, Q
      }
  
      wordfree(&words);

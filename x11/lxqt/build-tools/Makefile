@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/05 17:09:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/04 15:40:10 mariani Exp $
 
 COMMENT =	various packaging tools and scripts for LXQt applications
 
-VERSION =	0.5.0
-REVISION =	2
+VERSION =	0.7.0
 
 NAME =		lxqt-build-tools
 DISTNAME =	${NAME}-${VERSION}

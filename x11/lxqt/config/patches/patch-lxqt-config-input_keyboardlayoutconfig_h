@@ -1,0 +1,20 @@
+$OpenBSD: patch-lxqt-config-input_keyboardlayoutconfig_h,v 1.1 2020/09/04 15:40:10 mariani Exp $
+
+Index: lxqt-config-input/keyboardlayoutconfig.h
+--- lxqt-config-input/keyboardlayoutconfig.h.orig
++++ lxqt-config-input/keyboardlayoutconfig.h
+@@ -25,11 +25,11 @@
+ #ifdef Q_OS_LINUX
+ #define XKBD_BASELIST_PATH "/usr/share/X11/xkb/rules/base.lst"
+ #elif defined(Q_OS_FREEBSD)
+-#define XKBD_BASELIST_PATH "/usr/local/share/X11/xkb/rules/base.lst"
++#define XKBD_BASELIST_PATH "${LOCALBASE}/share/X11/xkb/rules/base.lst"
+ #elif defined(Q_OS_OPENBSD)
+-#define XKBD_BASELIST_PATH "/usr/X11R6/share/X11/xkb/rules/base.lst"
++#define XKBD_BASELIST_PATH "${X11BASE}/share/X11/xkb/rules/base.lst"
+ #else
+-#define XKBD_BASELIST_PATH "/usr/local/share/X11/xkb/rules/base.lst"
++#define XKBD_BASELIST_PATH "${LOCALBASE}/share/X11/xkb/rules/base.lst"
+ #endif
+ 
+ #include <QWidget>

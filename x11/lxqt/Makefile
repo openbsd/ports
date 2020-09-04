@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/04 15:40:09 mariani Exp $
 
      SUBDIR =
 # Base
      SUBDIR += libqtxdg
      SUBDIR += build-tools
      SUBDIR += libsysstat
-     SUBDIR += l10n
 # PcmanFM-qt
      SUBDIR += libfm-qt
      SUBDIR += pcmanfm-qt
@@ -20,7 +19,7 @@
      SUBDIR += policykit
      SUBDIR += powermanagement
      SUBDIR += qtplugin
-     SUBDIR += runner			#NO muparser
+     SUBDIR += runner
      SUBDIR += session
      SUBDIR += sudo
      SUBDIR += themes

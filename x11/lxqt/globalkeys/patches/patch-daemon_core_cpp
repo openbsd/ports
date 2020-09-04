@@ -1,9 +1,9 @@
-$OpenBSD: patch-daemon_core_cpp,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+$OpenBSD: patch-daemon_core_cpp,v 1.2 2020/09/04 15:40:10 mariani Exp $
 
 Index: daemon/core.cpp
 --- daemon/core.cpp.orig
 +++ daemon/core.cpp
-@@ -813,7 +813,7 @@ void Core::log(int level, const char *format, ...) con
+@@ -893,7 +893,7 @@ void Core::log(int level, const char *format, ...) con
      va_start(ap, format);
      if (mUseSyslog)
      {

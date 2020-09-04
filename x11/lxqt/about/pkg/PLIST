@@ -1,4 +1,55 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:10 mariani Exp $
+@conflict lxqt-about-l10n-*
+@pkgpath x11/lxqt/l10n,-about
 @bin bin/lxqt-about
 share/applications/lxqt-about.desktop
 @tag update-desktop-database
+share/lxqt/
+share/lxqt/translations/
+share/lxqt/translations/lxqt-about/
+share/lxqt/translations/lxqt-about/lxqt-about_ar.qm
+share/lxqt/translations/lxqt-about/lxqt-about_arn.qm
+share/lxqt/translations/lxqt-about/lxqt-about_ast.qm
+share/lxqt/translations/lxqt-about/lxqt-about_bg.qm
+share/lxqt/translations/lxqt-about/lxqt-about_ca.qm
+share/lxqt/translations/lxqt-about/lxqt-about_cs.qm
+share/lxqt/translations/lxqt-about/lxqt-about_cy.qm
+share/lxqt/translations/lxqt-about/lxqt-about_da.qm
+share/lxqt/translations/lxqt-about/lxqt-about_de.qm
+share/lxqt/translations/lxqt-about/lxqt-about_el.qm
+share/lxqt/translations/lxqt-about/lxqt-about_en_GB.qm
+share/lxqt/translations/lxqt-about/lxqt-about_eo.qm
+share/lxqt/translations/lxqt-about/lxqt-about_es.qm
+share/lxqt/translations/lxqt-about/lxqt-about_es_VE.qm
+share/lxqt/translations/lxqt-about/lxqt-about_eu.qm
+share/lxqt/translations/lxqt-about/lxqt-about_fa.qm
+share/lxqt/translations/lxqt-about/lxqt-about_fi.qm
+share/lxqt/translations/lxqt-about/lxqt-about_fr.qm
+share/lxqt/translations/lxqt-about/lxqt-about_gl.qm
+share/lxqt/translations/lxqt-about/lxqt-about_he.qm
+share/lxqt/translations/lxqt-about/lxqt-about_hu.qm
+share/lxqt/translations/lxqt-about/lxqt-about_ia.qm
+share/lxqt/translations/lxqt-about/lxqt-about_id.qm
+share/lxqt/translations/lxqt-about/lxqt-about_it.qm
+share/lxqt/translations/lxqt-about/lxqt-about_ja.qm
+share/lxqt/translations/lxqt-about/lxqt-about_ko.qm
+share/lxqt/translations/lxqt-about/lxqt-about_lt.qm
+share/lxqt/translations/lxqt-about/lxqt-about_lv.qm
+share/lxqt/translations/lxqt-about/lxqt-about_nb_NO.qm
+share/lxqt/translations/lxqt-about/lxqt-about_nl.qm
+share/lxqt/translations/lxqt-about/lxqt-about_pl.qm
+share/lxqt/translations/lxqt-about/lxqt-about_pt.qm
+share/lxqt/translations/lxqt-about/lxqt-about_pt_BR.qm
+share/lxqt/translations/lxqt-about/lxqt-about_pt_PT.qm
+share/lxqt/translations/lxqt-about/lxqt-about_ro_RO.qm
+share/lxqt/translations/lxqt-about/lxqt-about_ru.qm
+share/lxqt/translations/lxqt-about/lxqt-about_sk_SK.qm
+share/lxqt/translations/lxqt-about/lxqt-about_sl.qm
+share/lxqt/translations/lxqt-about/lxqt-about_sr@latin.qm
+share/lxqt/translations/lxqt-about/lxqt-about_sr_RS.qm
+share/lxqt/translations/lxqt-about/lxqt-about_sv.qm
+share/lxqt/translations/lxqt-about/lxqt-about_th_TH.qm
+share/lxqt/translations/lxqt-about/lxqt-about_tr.qm
+share/lxqt/translations/lxqt-about/lxqt-about_uk.qm
+share/lxqt/translations/lxqt-about/lxqt-about_zh_CN.qm
+share/lxqt/translations/lxqt-about/lxqt-about_zh_TW.qm

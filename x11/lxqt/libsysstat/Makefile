@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/04 15:40:11 mariani Exp $
 
 COMMENT =	library used to query system info and statistics
 
-VERSION =	0.4.1
+VERSION =	0.4.3
 
 NAME =		libsysstat
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	1
 
 SHARED_LIBS +=  sysstat-qt5               0.0 # 0.4
 

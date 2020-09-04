@@ -1,9 +1,9 @@
-$OpenBSD: patch-pcmanfm_tabpage_cpp,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+$OpenBSD: patch-pcmanfm_tabpage_cpp,v 1.2 2020/09/04 15:40:12 mariani Exp $
 
 Index: pcmanfm/tabpage.cpp
 --- pcmanfm/tabpage.cpp.orig
 +++ pcmanfm/tabpage.cpp
-@@ -282,7 +282,7 @@ void TabPage::onFolderError(const Fm::GErrorPtr& err, 
+@@ -458,7 +458,7 @@ void TabPage::onFolderError(const Fm::GErrorPtr& err, 
  }
  
  void TabPage::onFolderFsInfo() {
@@ -11,4 +11,4 @@ Index: pcmanfm/tabpage.cpp
 +    uint64_t free, total;
      QString& msg = statusText_[StatusTextFSInfo];
      if(folder_->getFilesystemInfo(&total, &free)) {
-         char total_str[64];
+         msg = tr("Free space: %1 (Total: %2)")

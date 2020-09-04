@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:11 mariani Exp $
+@conflict libfm-qt-l10n-*
+@pkgpath x11/lxqt/l10n,-libfm-qt
 include/libfm-qt/
 include/libfm-qt/appchoosercombobox.h
 include/libfm-qt/appchooserdialog.h
@@ -27,12 +29,17 @@ include/libfm-qt/core/filepath.h
 include/libfm-qt/core/filesysteminfojob.h
 include/libfm-qt/core/filetransferjob.h
 include/libfm-qt/core/folder.h
+include/libfm-qt/core/folderconfig.h
 include/libfm-qt/core/gioptrs.h
 include/libfm-qt/core/gobjectptr.h
 include/libfm-qt/core/iconinfo.h
 include/libfm-qt/core/iconinfo_p.h
 include/libfm-qt/core/job.h
 include/libfm-qt/core/job_p.h
+include/libfm-qt/core/legacy/
+include/libfm-qt/core/legacy/fm-app-info.h
+include/libfm-qt/core/legacy/fm-config.h
+include/libfm-qt/core/legacy/glib-compat.h
 include/libfm-qt/core/mimetype.h
 include/libfm-qt/core/templates.h
 include/libfm-qt/core/terminal.h
@@ -42,6 +49,9 @@ include/libfm-qt/core/totalsizejob.h
 include/libfm-qt/core/trashjob.h
 include/libfm-qt/core/untrashjob.h
 include/libfm-qt/core/userinfocache.h
+include/libfm-qt/core/vfs/
+include/libfm-qt/core/vfs/fm-file.h
+include/libfm-qt/core/vfs/fm-xml-file.h
 include/libfm-qt/core/volumemanager.h
 include/libfm-qt/createnewmenu.h
 include/libfm-qt/customaction_p.h
@@ -57,6 +67,7 @@ include/libfm-qt/dnddest.h
 include/libfm-qt/editbookmarksdialog.h
 include/libfm-qt/execfiledialog_p.h
 include/libfm-qt/filedialog.h
+include/libfm-qt/filedialoghelper.h
 include/libfm-qt/filelauncher.h
 include/libfm-qt/filemenu.h
 include/libfm-qt/filemenu_p.h
@@ -67,7 +78,6 @@ include/libfm-qt/filepropsdialog.h
 include/libfm-qt/filesearchdialog.h
 include/libfm-qt/fm-qt_export.h
 include/libfm-qt/fm-search.h
-include/libfm-qt/folderconfig.h
 include/libfm-qt/folderitemdelegate.h
 include/libfm-qt/foldermenu.h
 include/libfm-qt/foldermodel.h
@@ -91,9 +101,9 @@ include/libfm-qt/proxyfoldermodel.h
 include/libfm-qt/renamedialog.h
 include/libfm-qt/sidepane.h
 include/libfm-qt/tests/
+include/libfm-qt/translations/
 include/libfm-qt/utilities.h
 include/libfm-qt/utilities_p.h
-include/libfm-qt/utils.h
 include/libfm-qt/xdndworkaround.h
 @lib lib/libfm-qt.so.${LIBfm-qt_VERSION}
 lib/pkgconfig/libfm-qt.pc
@@ -102,7 +112,39 @@ share/cmake/fm-qt/fm-qt-config-version.cmake
 share/cmake/fm-qt/fm-qt-config.cmake
 share/cmake/fm-qt/fm-qt-targets${MODCMAKE_BUILD_SUFFIX}
 share/cmake/fm-qt/fm-qt-targets.cmake
+share/libfm-qt/
 share/libfm-qt/archivers.list
 share/libfm-qt/terminals.list
+share/libfm-qt/translations/
+share/libfm-qt/translations/libfm-qt_ar.qm
+share/libfm-qt/translations/libfm-qt_arn.qm
+share/libfm-qt/translations/libfm-qt_ast.qm
+share/libfm-qt/translations/libfm-qt_ca.qm
+share/libfm-qt/translations/libfm-qt_cs.qm
+share/libfm-qt/translations/libfm-qt_cy.qm
+share/libfm-qt/translations/libfm-qt_da.qm
+share/libfm-qt/translations/libfm-qt_de.qm
+share/libfm-qt/translations/libfm-qt_el.qm
+share/libfm-qt/translations/libfm-qt_en_GB.qm
+share/libfm-qt/translations/libfm-qt_es.qm
+share/libfm-qt/translations/libfm-qt_fr.qm
+share/libfm-qt/translations/libfm-qt_gl.qm
+share/libfm-qt/translations/libfm-qt_he.qm
+share/libfm-qt/translations/libfm-qt_hu.qm
+share/libfm-qt/translations/libfm-qt_id.qm
+share/libfm-qt/translations/libfm-qt_it.qm
+share/libfm-qt/translations/libfm-qt_ja.qm
+share/libfm-qt/translations/libfm-qt_lt.qm
+share/libfm-qt/translations/libfm-qt_nb_NO.qm
+share/libfm-qt/translations/libfm-qt_nl.qm
+share/libfm-qt/translations/libfm-qt_or.qm
+share/libfm-qt/translations/libfm-qt_pl.qm
+share/libfm-qt/translations/libfm-qt_pt.qm
+share/libfm-qt/translations/libfm-qt_pt_BR.qm
+share/libfm-qt/translations/libfm-qt_ru.qm
+share/libfm-qt/translations/libfm-qt_tr.qm
+share/libfm-qt/translations/libfm-qt_uk.qm
+share/libfm-qt/translations/libfm-qt_zh_CN.qm
+share/libfm-qt/translations/libfm-qt_zh_TW.qm
 share/mime/packages/libfm-qt-mimetypes.xml
 @tag update-mime-database

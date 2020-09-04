@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_test_agent_sh,v 1.1 2020/09/04 15:40:12 mariani Exp $
+
+Index: test/test_agent.sh
+--- test/test_agent.sh.orig
++++ test/test_agent.sh
+@@ -1,4 +1,4 @@
+ #!/bin/bash
+ 
+-pkexec --user root /usr/bin/pk-example-frobnicate
++pkexec --user root ${LOCALBASE}/bin/pk-example-frobnicate
+ 

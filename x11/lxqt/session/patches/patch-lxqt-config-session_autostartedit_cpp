@@ -1,14 +1,14 @@
-$OpenBSD: patch-lxqt-config-session_autostartedit_cpp,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+$OpenBSD: patch-lxqt-config-session_autostartedit_cpp,v 1.2 2020/09/04 15:40:13 mariani Exp $
 
 Index: lxqt-config-session/autostartedit.cpp
 --- lxqt-config-session/autostartedit.cpp.orig
 +++ lxqt-config-session/autostartedit.cpp
-@@ -56,7 +56,7 @@ bool AutoStartEdit::needTray()
+@@ -58,7 +58,7 @@ bool AutoStartEdit::needTray()
  
  void AutoStartEdit::browse()
  {
--    QString filePath = QFileDialog::getOpenFileName(this, tr("Select Application"), "/usr/bin/");
-+    QString filePath = QFileDialog::getOpenFileName(this, tr("Select Application"), "${LOCALBASE}/bin/");
+-    QString filePath = QFileDialog::getOpenFileName(this, tr("Select Application"), QSL("/usr/bin/"));
++    QString filePath = QFileDialog::getOpenFileName(this, tr("Select Application"), QSL("${LOCALBASE}/bin/"));
      if (!filePath.isEmpty())
          ui->commandEdit->setText(filePath);
  }

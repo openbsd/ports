@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:11 mariani Exp $
+@bin bin/qtxdg-mat
 include/qt5xdg/
 include/qt5xdg/XdgAction
 include/qt5xdg/XdgAutoStart
@@ -7,6 +8,7 @@ include/qt5xdg/XdgDirs
 include/qt5xdg/XdgIcon
 include/qt5xdg/XdgMenu
 include/qt5xdg/XdgMenuWidget
+include/qt5xdg/XdgMimeApps
 include/qt5xdg/XdgMimeType
 include/qt5xdg/XmlHelper
 include/qt5xdg/xdgaction.h
@@ -17,17 +19,18 @@ include/qt5xdg/xdgicon.h
 include/qt5xdg/xdgmacros.h
 include/qt5xdg/xdgmenu.h
 include/qt5xdg/xdgmenuwidget.h
+include/qt5xdg/xdgmimeapps.h
 include/qt5xdg/xdgmimetype.h
 include/qt5xdg/xmlhelper.h
 include/qt5xdgiconloader/
-include/qt5xdgiconloader/3.2.0/
-include/qt5xdgiconloader/3.2.0/private/
-include/qt5xdgiconloader/3.2.0/private/xdgiconloader/
-include/qt5xdgiconloader/3.2.0/private/xdgiconloader/xdgiconloader_p.h
+include/qt5xdgiconloader/3.5.0/
+include/qt5xdgiconloader/3.5.0/private/
+include/qt5xdgiconloader/3.5.0/private/xdgiconloader/
+include/qt5xdgiconloader/3.5.0/private/xdgiconloader/xdgiconloader_p.h
 include/qt5xdgiconloader/xdgiconloader_export.h
 @lib lib/libQt5Xdg.so.${LIBQt5Xdg_VERSION}
 @lib lib/libQt5XdgIconLoader.so.${LIBQt5XdgIconLoader_VERSION}
-lib/qt5/plugins/iconengines/libQt5XdgIconPlugin.so
+@so lib/qt5/plugins/iconengines/libQt5XdgIconPlugin.so
 libdata/pkgconfig/
 libdata/pkgconfig/Qt5Xdg.pc
 libdata/pkgconfig/Qt5XdgIconLoader.pc

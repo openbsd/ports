@@ -1,23 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/04 15:40:12 mariani Exp $
 
 COMMENT =	pulseaudio mixer in qt
 
-VERSION =	0.4.0
+VERSION =	0.15.0
 
 NAME =		pavucontrol-qt
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
-WANTLIB += c glib-2.0 intl m pulse-mainloop-glib pulse
+WANTLIB += c glib-2.0 intl m pulse pulse-mainloop-glib
 
 LIB_DEPENDS +=		audio/pulseaudio
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
-RUN_DEPENDS +=		x11/lxqt/l10n,-pavucontrol-qt \
-			devel/desktop-file-utils
-
-CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
+RUN_DEPENDS +=		devel/desktop-file-utils
 
 .include <bsd.port.mk>

@@ -1,7 +1,47 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:10 mariani Exp $
+@conflict compton-conf-l10n-*
+@pkgpath x11/lxqt/l10n,-compton-conf
 @bin bin/compton-conf
 share/applications/compton-conf.desktop
+share/compton-conf/
 share/compton-conf/compton.conf.example
+share/compton-conf/translations/
+share/compton-conf/translations/compton-conf_arn.qm
+share/compton-conf/translations/compton-conf_ast.qm
+share/compton-conf/translations/compton-conf_be.qm
+share/compton-conf/translations/compton-conf_ca.qm
+share/compton-conf/translations/compton-conf_cs.qm
+share/compton-conf/translations/compton-conf_cy.qm
+share/compton-conf/translations/compton-conf_da.qm
+share/compton-conf/translations/compton-conf_de.qm
+share/compton-conf/translations/compton-conf_el.qm
+share/compton-conf/translations/compton-conf_en_GB.qm
+share/compton-conf/translations/compton-conf_es.qm
+share/compton-conf/translations/compton-conf_eu.qm
+share/compton-conf/translations/compton-conf_fil.qm
+share/compton-conf/translations/compton-conf_fr.qm
+share/compton-conf/translations/compton-conf_gl.qm
+share/compton-conf/translations/compton-conf_he.qm
+share/compton-conf/translations/compton-conf_hi.qm
+share/compton-conf/translations/compton-conf_hu.qm
+share/compton-conf/translations/compton-conf_id.qm
+share/compton-conf/translations/compton-conf_it.qm
+share/compton-conf/translations/compton-conf_ja.qm
+share/compton-conf/translations/compton-conf_ko.qm
+share/compton-conf/translations/compton-conf_lt.qm
+share/compton-conf/translations/compton-conf_lv.qm
+share/compton-conf/translations/compton-conf_nb_NO.qm
+share/compton-conf/translations/compton-conf_nl.qm
+share/compton-conf/translations/compton-conf_pl.qm
+share/compton-conf/translations/compton-conf_pt.qm
+share/compton-conf/translations/compton-conf_pt_BR.qm
+share/compton-conf/translations/compton-conf_pt_PT.qm
+share/compton-conf/translations/compton-conf_ru.qm
+share/compton-conf/translations/compton-conf_sk_SK.qm
+share/compton-conf/translations/compton-conf_tr.qm
+share/compton-conf/translations/compton-conf_uk.qm
+share/compton-conf/translations/compton-conf_vi.qm
+share/compton-conf/translations/compton-conf_zh_CN.qm
 share/examples/compton-conf/
 share/examples/compton-conf/xdg/
 share/examples/compton-conf/xdg/autostart/
