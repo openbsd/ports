@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2020/09/03 21:45:29 edd Exp $
+# $OpenBSD: Makefile,v 1.71 2020/09/05 10:07:43 jca Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
 DISTNAME =	gnupg-2.2.23
+REVISION =	0
 CATEGORIES = 	security
 
 # don't mix up dependencies with gnupg1
@@ -61,5 +62,6 @@ CONFIGURE_ARGS += 	docdir=${LOCALBASE}/share/doc/gnupg2 \
 # Avoid conflict with gnupg-1.x
 post-install:
 	@mv ${PREFIX}/man/man7/gnupg.7 ${PREFIX}/man/man7/gnupg2.7
+	@mv ${PREFIX}/bin/gpgsplit ${PREFIX}/bin/gpgsplit2
 
 .include <bsd.port.mk>

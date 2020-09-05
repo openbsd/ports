@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/09/03 21:45:29 edd Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/09/05 10:07:44 jca Exp $
 @option no-default-conflict
 @option is-branch
 @conflict gnupg->=2
@@ -12,7 +12,7 @@
 @bin bin/gpgparsemail
 @bin bin/gpgscm
 @bin bin/gpgsm
-@bin bin/gpgsplit
+@bin bin/gpgsplit2
 @bin bin/gpgtar
 @bin bin/gpgv2
 @bin bin/kbxutil
