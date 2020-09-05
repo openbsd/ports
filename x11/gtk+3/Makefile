@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2020/08/14 06:59:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.235 2020/09/05 11:16:30 ajacoutot Exp $
 
 # XXX never versions require pango>=1.45
 # XXX add support for libcloudproviders?
@@ -11,7 +11,7 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.24.22
+GNOME_VERSION=		3.24.23
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
