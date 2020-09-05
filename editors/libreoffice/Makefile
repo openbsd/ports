@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2020/08/09 06:33:26 robert Exp $
+# $OpenBSD: Makefile,v 1.236 2020/09/05 05:41:37 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -26,7 +26,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.11 # 4.11
 
 BV=		7.0
-VERSION=	${BV}.0.3
+VERSION=	${BV}.1.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -37,8 +37,6 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
-
-REVISION-main=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
