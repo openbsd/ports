@@ -1,8 +1,20 @@
-$OpenBSD: patch-makefile,v 1.17 2020/07/02 10:07:36 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.18 2020/09/05 11:10:16 ajacoutot Exp $
+
+XXX go build -i fails with:
+go build os/user: copying /tmp/go-build915184770/b100/_pkg_.a: open /usr/local/go/pkg/openbsd_amd64/os/user.a: permission denied
+go build net: copying /tmp/go-build915184770/b084/_pkg_.a: open /usr/local/go/pkg/openbsd_amd64/net.a: permission denied
 
 Index: makefile
 --- makefile.orig
 +++ makefile
+@@ -1,6 +1,6 @@
+ BUILDFILE_PATH := ./build/private/bgo_exports.makefile
+ COPY := cp -p
+-GO_BUILD := CGO_ENABLED=0 go build -i
++GO_BUILD := CGO_ENABLED=0 go build
+ BRAZIL_BUILD := false
+ 
+ # Using the wildcard function to check if file exists
 @@ -44,7 +44,7 @@ checkstyle::
  coverage:: build-linux
  	$(BGO_SPACE)/Tools/src/coverage.sh github.com/aws/amazon-ssm-agent/agent/...
@@ -21,7 +33,7 @@ Index: makefile
  .PHONY: dev-build-windows
  dev-build-windows: clean quick-integtest checkstyle pre-release build-windows build-tests-windows
  .PHONY: dev-build-linux-386
-@@ -169,6 +171,21 @@ build-freebsd: checkstyle copy-src pre-build
+@@ -176,6 +178,23 @@ build-freebsd: checkstyle copy-src pre-build
  	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-session-logger -v \
  					$(BGO_SPACE)/agent/session/logging/main.go
  	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-session-worker -v \
@@ -32,6 +44,8 @@ Index: makefile
 +build-openbsd: copy-src pre-build
 +	@echo "Build for openbsd agent"
 +	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/amazon-ssm-agent -v \
++                        $(BGO_SPACE)/core/agent.go $(BGO_SPACE)/core/agent_unix.go $(BGO_SPACE)/core/agent_parser.go
++	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-agent-worker -v \
 +					$(BGO_SPACE)/agent/agent.go $(BGO_SPACE)/agent/agent_unix.go $(BGO_SPACE)/agent/agent_parser.go
 +	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-cli -v \
 +					$(BGO_SPACE)/agent/cli-main/cli-main.go

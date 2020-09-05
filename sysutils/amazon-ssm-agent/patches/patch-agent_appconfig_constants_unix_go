@@ -1,4 +1,4 @@
-$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.11 2020/07/02 10:07:36 ajacoutot Exp $
+$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.12 2020/09/05 11:10:16 ajacoutot Exp $
 
 Index: agent/appconfig/constants_unix.go
 --- agent/appconfig/constants_unix.go.orig
@@ -69,22 +69,24 @@ Index: agent/appconfig/constants_unix.go
  
  	// List all plugin names, unfortunately golang doesn't support const arrays of strings
  
-@@ -98,10 +98,10 @@ const (
+@@ -98,11 +98,11 @@ const (
  var PowerShellPluginCommandName string
  
  // DefaultProgramFolder is the default folder for SSM
 -var DefaultProgramFolder = "/etc/amazon/ssm/"
+-var DefaultSSMAgentWorker = "/usr/bin/ssm-agent-worker"
 -var DefaultDocumentWorker = "/usr/bin/ssm-document-worker"
 -var DefaultSessionWorker = "/usr/bin/ssm-session-worker"
 -var DefaultSessionLogger = "/usr/bin/ssm-session-logger"
 +var DefaultProgramFolder = "${SYSCONFDIR}/amazon/ssm/"
++var DefaultSSMAgentWorker = "${LOCALBASE}/bin/ssm-agent-worker"
 +var DefaultDocumentWorker = "${LOCALBASE}/bin/ssm-document-worker"
 +var DefaultSessionWorker = "${LOCALBASE}/bin/ssm-session-worker"
 +var DefaultSessionLogger = "${LOCALBASE}/bin/ssm-session-logger"
  
  // AppConfigPath is the path of the AppConfig
  var AppConfigPath = DefaultProgramFolder + AppConfigFileName
-@@ -110,9 +110,9 @@ func init() {
+@@ -111,9 +111,9 @@ func init() {
  	/*
  	   Powershell command used to be poweshell in alpha versions, now it's pwsh in prod versions
  	*/
