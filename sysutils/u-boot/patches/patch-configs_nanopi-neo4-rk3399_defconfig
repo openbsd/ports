@@ -1,0 +1,14 @@
+$OpenBSD: patch-configs_nanopi-neo4-rk3399_defconfig,v 1.1 2020/09/05 02:14:46 jsg Exp $
+
+Index: configs/nanopi-neo4-rk3399_defconfig
+--- configs/nanopi-neo4-rk3399_defconfig.orig
++++ configs/nanopi-neo4-rk3399_defconfig
+@@ -38,7 +38,7 @@ CONFIG_PMIC_RK8XX=y
+ CONFIG_REGULATOR_PWM=y
+ CONFIG_REGULATOR_RK8XX=y
+ CONFIG_PWM_ROCKCHIP=y
+-CONFIG_BAUDRATE=1500000
++CONFIG_BAUDRATE=115200
+ CONFIG_DEBUG_UART_SHIFT=2
+ CONFIG_SYSRESET=y
+ CONFIG_USB=y

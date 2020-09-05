@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.72 2020/07/07 08:26:26 jsg Exp $
+#	$OpenBSD: Makefile,v 1.73 2020/09/05 02:14:46 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
@@ -8,6 +8,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2020.07
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -70,6 +71,7 @@ BOARDS=\
 	firefly-rk3399 \
 	mvebu_espressobin-88f3720 \
 	mvebu_mcbin-88f8040 \
+	nanopi-neo4-rk3399 \
 	pinebook-pro-rk3399 \
 	qemu_arm64 \
 	rock64-rk3328 \

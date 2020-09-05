@@ -1,0 +1,14 @@
+$OpenBSD: patch-arch_arm_dts_rk3399-nanopi4_dtsi,v 1.1 2020/09/05 02:14:46 jsg Exp $
+
+Index: arch/arm/dts/rk3399-nanopi4.dtsi
+--- arch/arm/dts/rk3399-nanopi4.dtsi.orig
++++ arch/arm/dts/rk3399-nanopi4.dtsi
+@@ -18,7 +18,7 @@
+ 
+ / {
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	clkin_gmac: external-gmac-clock {
