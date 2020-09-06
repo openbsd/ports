@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1218 2020/08/31 22:11:50 abieber Exp $
+# $OpenBSD: Makefile,v 1.1219 2020/09/06 13:59:10 abieber Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -37,6 +37,7 @@
      SUBDIR += bitlbee-mastodon
      SUBDIR += blaeu
      SUBDIR += bnc
+     SUBDIR += bombadillo
      SUBDIR += bro
      SUBDIR += btpd
      SUBDIR += bwm-ng
