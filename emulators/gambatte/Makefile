@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/08/30 20:18:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2020/09/06 22:33:59 bentley Exp $
 
 COMMENT =		highly accurate Game Boy Color emulator
 
@@ -27,10 +27,12 @@ MODULES =		lang/python
 
 SEPARATE_BUILD =	No
 
+BUILD_DEPENDS =		graphics/png
 LIB_DEPENDS =		${MODGCC4_CPPLIBDEP} \
 			devel/sdl
 
 TEST_DEPENDS =		graphics/png
+TEST_TARGET =		check
 
 MAKE_FILE =		${FILESDIR}/Makefile
 

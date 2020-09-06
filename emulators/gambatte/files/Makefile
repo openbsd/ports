@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2015/12/22 04:20:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/06 22:33:59 bentley Exp $
 # https://github.com/sinamas/gambatte/pull/6
 .SUFFIXES: .c .cpp .o
 
@@ -99,7 +99,7 @@ TEST_GBS = \
 		test/hwtests/*/*/*.gb* \
 		test/hwtests/*/*/*/*.gb*
 
-test: $(TEST)
+check: $(TEST)
 	$(PYTHON) test/qdgbas.py \
 		test/hwtests/*.asm \
 		test/hwtests/*/*.asm \
