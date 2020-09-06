@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/08/18 17:39:30 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/09/06 10:34:19 thfr Exp $
 
 COMMENT =	2D and 3D game engine
 
@@ -6,9 +6,9 @@ V =		3.2.2
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 HOMEPAGE =	https://godotengine.org/
-MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
+MAINTAINER =	Omar Polo <op@omarpolo.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender c enet execinfo freetype intl m mbedtls mbedcrypto
-WANTLIB += mbedx509 mpcdec ogg opus opusfile png theora theoradec
+WANTLIB += mbedx509 mpcdec ogg opus opusfile png sndio theora theoradec
 WANTLIB += vorbis vorbisfile webp xcb z pcre2-32 vpx zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -83,6 +83,9 @@ CFLAGS +=      -mlongcall
 CXXFLAGS +=    -mlongcall
 LDFLAGS +=     -Wl,--relax
 .endif
+
+post-extract:
+	cp -R ${FILESDIR}/sndio ${WRKDIST}/drivers
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/drivers/unix/os_unix.cpp

@@ -1,6 +1,6 @@
-$OpenBSD: patch-platform_x11_os_x11_cpp,v 1.2 2020/07/19 13:02:38 thfr Exp $
+$OpenBSD: patch-platform_x11_os_x11_cpp,v 1.3 2020/09/06 10:34:19 thfr Exp $
 
-fix libXrandr library name
+fix libXrandr library name and load sndio
 
 Index: platform/x11/os_x11.cpp
 --- platform/x11/os_x11.cpp.orig
@@ -18,3 +18,14 @@ Index: platform/x11/os_x11.cpp
  	} else {
  		XRRQueryVersion(x11_display, &xrandr_major, &xrandr_minor);
  		if (((xrandr_major << 8) | xrandr_minor) >= 0x0105) {
+@@ -3596,6 +3596,10 @@ void OS_X11::update_real_mouse_position() {
+ }
+ 
+ OS_X11::OS_X11() {
++
++#ifdef SNDIO_ENABLED
++	AudioDriverManager::add_driver(&driver_sndio);
++#endif
+ 
+ #ifdef PULSEAUDIO_ENABLED
+ 	AudioDriverManager::add_driver(&driver_pulseaudio);
