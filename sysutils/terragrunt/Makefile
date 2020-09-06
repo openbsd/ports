@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2020/08/30 15:20:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2020/09/06 07:33:15 ajacoutot Exp $
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.23.38
+MODGO_VERSION=	v0.23.40
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 CATEGORIES=	sysutils net
@@ -69,6 +69,7 @@ MODGO_MODULES =	\
 	github.com/apparentlymart/go-cidr				 v1.0.1 \
 	github.com/apparentlymart/go-dump				 v0.0.0-20190214190832-042adf3cf4a0 \
 	github.com/apparentlymart/go-textseg				 v1.0.0 \
+	github.com/apparentlymart/go-textseg/v12			 v12.0.0 \
 	github.com/apparentlymart/go-versions				 v0.0.2-0.20180815153302-64b99f7cb171 \
 	github.com/armon/circbuf					 v0.0.0-20190214190532-5111143e8da2 \
 	github.com/armon/consul-api					 v0.0.0-20180202201655-eb2c6b5be1b6 \
@@ -198,7 +199,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-version					 v1.2.0 \
 	github.com/hashicorp/golang-lru					 v0.5.3 \
 	github.com/hashicorp/hcl					 v1.0.0 \
-	github.com/hashicorp/hcl/v2					 v2.3.0 \
+	github.com/hashicorp/hcl/v2					 v2.6.0 \
 	github.com/hashicorp/hil					 v0.0.0-20190212112733-ab17b08d6590 \
 	github.com/hashicorp/memberlist					 v0.1.0 \
 	github.com/hashicorp/serf					 v0.0.0-20160124182025-e4ec8cc423bb \
@@ -537,6 +538,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/golang-lru				 v0.5.1 \
 	github.com/hashicorp/hcl				 v0.0.0-20170504190234-a4b07c25de5f \
 	github.com/hashicorp/hcl/v2				 v2.0.0 \
+	github.com/hashicorp/hcl/v2				 v2.3.0 \
 	github.com/hashicorp/yamux				 v0.0.0-20180604194846-3520598351bb \
 	github.com/imdario/mergo				 v0.3.5 \
 	github.com/jmespath/go-jmespath				 v0.0.0-20160202185014-0b12d6b521d8 \
