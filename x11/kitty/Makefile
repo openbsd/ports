@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/07 12:19:52 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/07 12:53:00 sthen Exp $
 
 COMMENT =		fast, feature full, GPU-based terminal emulator
 
@@ -12,7 +12,7 @@ MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL X11 X11-xcb Xcursor Xinerama Xrandr c canberra dbus-1
-WANTLIB += fontconfig freetype harfbuzz intl m png pthread python3.8
+WANTLIB += fontconfig freetype harfbuzz intl m png pthread ${MODPY_WANTLIB}
 WANTLIB += util xcb xkbcommon xkbcommon-x11 z
 
 MASTER_SITES =		https://github.com/kovidgoyal/kitty/releases/download/v${MODPY_EGG_VERSION}/
