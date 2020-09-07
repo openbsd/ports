@@ -1,0 +1,14 @@
+$OpenBSD: patch-svn_svnprogressdialog_cpp,v 1.1 2020/09/07 14:52:40 rsadowski Exp $
+
+Index: svn/svnprogressdialog.cpp
+--- svn/svnprogressdialog.cpp.orig
++++ svn/svnprogressdialog.cpp
+@@ -115,7 +115,7 @@ void SvnProgressDialog::operationCompeleted()
+         const CommandResult result = SvnCommands::cleanup(m_workingDir);
+         if (!result.success) {
+             qWarning() << QString("'svn cleanup' failed for %1").arg(m_workingDir);
+-            qWarning() << result.stderr;
++            qWarning() << result.stdErr;
+         }
+         m_svnTerminated = false;
+     }

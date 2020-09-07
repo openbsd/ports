@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_server_storage_datastore_cpp,v 1.1 2020/09/07 14:52:40 rsadowski Exp $
+
+Index: src/server/storage/datastore.cpp
+--- src/server/storage/datastore.cpp.orig
++++ src/server/storage/datastore.cpp
+@@ -51,7 +51,7 @@ using namespace Akonadi;
+ using namespace Akonadi::Server;
+ 
+ bool DataStore::s_hasForeignKeyConstraints = false;
+-QMutex DataStore::sTransactionMutex = {};
++QMutex DataStore::sTransactionMutex = QMutex();
+ 
+ static QThreadStorage<DataStore *> sInstances;
+ 

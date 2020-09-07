@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_lib_localeHandling_cpp,v 1.1 2020/09/07 14:52:40 rsadowski Exp $
+
+Index: src/lib/localeHandling.cpp
+--- src/lib/localeHandling.cpp.orig
++++ src/lib/localeHandling.cpp
+@@ -20,7 +20,7 @@ auto LocaleHandling::setLocale(const QString &lcName) 
+     QList<QString> localesToTest;
+     localesToTest << lcName << lcName + ".utf-8" << lcName + ".UTF-8" << lcName + ".utf8" << lcName + ".UTF8";
+     for (const auto &locale : localesToTest) {
+-#ifdef Q_OS_FREEBSD
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+         auto *result = setlocale(LC_NUMERIC, locale.toStdString().c_str());
+ #else
+         auto *result = std::setlocale(LC_NUMERIC, locale.toStdString().c_str());
+@@ -39,7 +39,7 @@ auto LocaleHandling::setLocale(const QString &lcName) 
+ 
+ void LocaleHandling::resetLocale()
+ {
+-#ifdef Q_OS_FREEBSD
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+     setlocale(LC_NUMERIC, "C");
+ #else
+     std::setlocale(LC_NUMERIC, "C");
