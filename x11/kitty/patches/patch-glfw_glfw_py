@@ -1,0 +1,16 @@
+$OpenBSD: patch-glfw_glfw_py,v 1.1.1.1 2020/09/07 12:19:52 thfr Exp $
+
+remove librt and libdl linking
+
+Index: glfw/glfw.py
+--- glfw/glfw.py.orig
++++ glfw/glfw.py
+@@ -73,7 +73,7 @@ def init_env(env: Env, pkg_config: Callable, at_least_
+     if module in ('x11', 'wayland'):
+         ans.cflags.append('-pthread')
+         ans.ldpaths.append('-pthread')
+-        ans.ldpaths.extend('-lrt -lm -ldl'.split())
++        ans.ldpaths.append('-lm')
+         at_least_version('xkbcommon', 0, 5)
+ 
+     if module == 'x11':

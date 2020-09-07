@@ -1,0 +1,68 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2020/09/07 12:19:52 thfr Exp $
+
+remove libdl and librt linking
+disable -O3 optimization
+fix man directory
+add linking of libcanberra
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -253,7 +253,6 @@ def init_env(
+         df += ' -Og'
+         float_conversion = '-Wfloat-conversion'
+     fortify_source = '-D_FORTIFY_SOURCE=2'
+-    optimize = df if debug or sanitize else '-O3'
+     sanitize_args = get_sanitize_args(cc, ccver) if sanitize else set()
+     cppflags_ = os.environ.get(
+         'OVERRIDE_CPPFLAGS', '-D{}DEBUG'.format('' if debug else 'N'),
+@@ -267,11 +266,11 @@ def init_env(
+             ' -pedantic-errors -Werror {} {} -fwrapv {} {} -pipe {} -fvisibility=hidden {}'
+         ).format(
+             float_conversion,
+-            optimize,
++            '',
+             ' '.join(sanitize_args),
+             stack_protector,
+             missing_braces,
+-            '-march=native' if native_optimizations else '',
++            '',
+             fortify_source
+         )
+     )
+@@ -280,7 +279,7 @@ def init_env(
+     )
+     ldflags_ = os.environ.get(
+         'OVERRIDE_LDFLAGS',
+-        '-Wall ' + ' '.join(sanitize_args) + ('' if debug else ' -O3')
++        '-Wall ' + ' '.join(sanitize_args)
+     )
+     ldflags = shlex.split(ldflags_)
+     ldflags.append('-shared')
+@@ -329,6 +328,8 @@ def kitty_env() -> Env:
+     cppflags.append('-DSECONDARY_VERSION={}'.format(version[1]))
+     at_least_version('harfbuzz', 1, 5)
+     cflags.extend(pkg_config('libpng', '--cflags-only-I'))
++    cflags.extend(pkg_config('libcanberra', '--cflags-only-I'))
++    ans.ldpaths += pkg_config('libcanberra', '--libs')
+     if is_macos:
+         font_libs = ['-framework', 'CoreText', '-framework', 'CoreGraphics']
+         # Apple deprecated OpenGL in Mojave (10.14) silence the endless
+@@ -732,8 +733,6 @@ def build_launcher(args: Options, launcher_dir: str = 
+             cflags.append('-g')
+         if args.profile:
+             libs.append('-lprofiler')
+-    else:
+-        cflags.append('-O3')
+     if bundle_type.endswith('-freeze'):
+         cppflags.append('-DFOR_BUNDLE')
+         cppflags.append('-DPYVER="{}"'.format(sysconfig.get_python_version()))
+@@ -770,7 +769,7 @@ def build_launcher(args: Options, launcher_dir: str = 
+ 
+ 
+ def copy_man_pages(ddir: str) -> None:
+-    mandir = os.path.join(ddir, 'share', 'man')
++    mandir = os.path.join(ddir, 'man')
+     safe_makedirs(mandir)
+     with suppress(FileNotFoundError):
+         shutil.rmtree(os.path.join(mandir, 'man1'))

@@ -1,0 +1,44 @@
+kitty is designed for power keyboard users. To that end all its controls work
+with the keyboard (although it fully supports mouse interactions as well). Its
+configuration is a simple, human editable, single file for easy reproducibility
+(I like to store configuration in source control).
+
+The code in kitty is designed to be simple, modular and hackable. It is written
+in a mix of C (for performance sensitive parts) and Python (for easy hackability
+of the UI). It does not depend on any large and complex UI toolkit, using only
+OpenGL for rendering everything.
+
+Finally, kitty is designed from the ground up to support all modern terminal
+features, such as unicode, true color, bold/italic fonts, text formatting, etc.
+It even extends existing text formatting escape codes, to add support for
+features not available elsewhere, such as colored and styled (curly) underlines.
+One of the design goals of kitty is to be easily extensible so that new features
+can be added in the future with relatively little effort.
+
+* Offloads rendering to the GPU for lower system load and buttery smooth
+scrolling. Uses threaded rendering to minimize input latency.
+
+* Supports all modern terminal features: graphics (images), unicode, true-color,
+OpenType ligatures, mouse protocol, focus tracking, bracketed paste and several
+new terminal protocol extensions.
+
+* Supports tiling multiple terminal windows side by side in different layouts
+without needing to use an extra program like tmux.
+
+* Can be controlled from scripts or the shell prompt, even over SSH.
+
+* Has a framework for Kittens, small terminal programs that can be used to
+extend kitty's functionality. For example, they are used for Unicode input,
+Hints and Side-by-side diff.
+
+* Supports startup sessions which allow you to specify the window/tab layout,
+working directories and programs to run on startup.
+
+* Cross-platform: kitty works on Linux and macOS, but because it uses only
+OpenGL for rendering, it should be trivial to port to other Unix-like platforms.
+
+* Allows you to open the scrollback buffer in a separate window using arbitrary
+programs of your choice. This is useful for browsing the history comfortably in
+a pager or editor.
+
+* Has multiple copy/paste buffers, like vim.
