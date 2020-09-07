@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/03/23 18:01:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/09/07 14:48:48 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -174,9 +174,15 @@ include/KF5/KIOFileWidgets/kstatusbarofflineindicator.h
 include/KF5/KIOFileWidgets/kurlnavigator.h
 include/KF5/KIOGui/
 include/KF5/KIOGui/KIO/
+include/KF5/KIOGui/KIO/ApplicationLauncherJob
+include/KF5/KIOGui/KIO/CommandLauncherJob
 include/KF5/KIOGui/KIO/FavIconRequestJob
+include/KF5/KIOGui/KIO/OpenUrlJob
 include/KF5/KIOGui/kio/
+include/KF5/KIOGui/kio/applicationlauncherjob.h
+include/KF5/KIOGui/kio/commandlauncherjob.h
 include/KF5/KIOGui/kio/faviconrequestjob.h
+include/KF5/KIOGui/kio/openurljob.h
 include/KF5/KIOGui/kiogui_export.h
 include/KF5/KIOWidgets/
 include/KF5/KIOWidgets/KAbstractFileItemActionPlugin
@@ -554,6 +560,44 @@ share/doc/HTML/et/kioslave5/telnet/index.docbook
 share/doc/HTML/et/kioslave5/webdav/
 share/doc/HTML/et/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/et/kioslave5/webdav/index.docbook
+share/doc/HTML/fr/kioslave5/
+share/doc/HTML/fr/kioslave5/file/
+share/doc/HTML/fr/kioslave5/file/index.cache.bz2
+share/doc/HTML/fr/kioslave5/file/index.docbook
+share/doc/HTML/fr/kioslave5/ftp/
+share/doc/HTML/fr/kioslave5/ftp/index.cache.bz2
+share/doc/HTML/fr/kioslave5/ftp/index.docbook
+share/doc/HTML/fr/kioslave5/help/
+share/doc/HTML/fr/kioslave5/help/index.cache.bz2
+share/doc/HTML/fr/kioslave5/help/index.docbook
+share/doc/HTML/fr/kioslave5/http/
+share/doc/HTML/fr/kioslave5/http/index.cache.bz2
+share/doc/HTML/fr/kioslave5/http/index.docbook
+share/doc/HTML/fr/kioslave5/telnet/
+share/doc/HTML/fr/kioslave5/telnet/index.cache.bz2
+share/doc/HTML/fr/kioslave5/telnet/index.docbook
+share/doc/HTML/fr/kioslave5/webdav/
+share/doc/HTML/fr/kioslave5/webdav/index.cache.bz2
+share/doc/HTML/fr/kioslave5/webdav/index.docbook
+share/doc/HTML/gl/kioslave5/
+share/doc/HTML/gl/kioslave5/file/
+share/doc/HTML/gl/kioslave5/file/index.cache.bz2
+share/doc/HTML/gl/kioslave5/file/index.docbook
+share/doc/HTML/gl/kioslave5/ftp/
+share/doc/HTML/gl/kioslave5/ftp/index.cache.bz2
+share/doc/HTML/gl/kioslave5/ftp/index.docbook
+share/doc/HTML/gl/kioslave5/help/
+share/doc/HTML/gl/kioslave5/help/index.cache.bz2
+share/doc/HTML/gl/kioslave5/help/index.docbook
+share/doc/HTML/gl/kioslave5/http/
+share/doc/HTML/gl/kioslave5/http/index.cache.bz2
+share/doc/HTML/gl/kioslave5/http/index.docbook
+share/doc/HTML/gl/kioslave5/telnet/
+share/doc/HTML/gl/kioslave5/telnet/index.cache.bz2
+share/doc/HTML/gl/kioslave5/telnet/index.docbook
+share/doc/HTML/gl/kioslave5/webdav/
+share/doc/HTML/gl/kioslave5/webdav/index.cache.bz2
+share/doc/HTML/gl/kioslave5/webdav/index.docbook
 share/doc/HTML/it/kcontrol5/
 share/doc/HTML/it/kcontrol5/cache/
 share/doc/HTML/it/kcontrol5/cache/index.cache.bz2
@@ -1011,6 +1055,7 @@ share/doc/HTML/uk/kioslave5/webdav/index.docbook
 share/examples/kio/
 share/examples/kio/xdg/
 share/examples/kio/xdg/accept-languages.codes
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/accept-languages.codes
 share/examples/kio/xdg/kshorturifilterrc
 @sample ${SYSCONFDIR}/xdg/kshorturifilterrc
@@ -1045,12 +1090,12 @@ share/kservices5/searchproviders/amazon.desktop
 share/kservices5/searchproviders/amazon_mp3.desktop
 share/kservices5/searchproviders/amg.desktop
 share/kservices5/searchproviders/archpkg.desktop
+share/kservices5/searchproviders/archwiki.desktop
 share/kservices5/searchproviders/backports.desktop
 share/kservices5/searchproviders/baidu.desktop
 share/kservices5/searchproviders/beolingus.desktop
 share/kservices5/searchproviders/bing.desktop
-share/kservices5/searchproviders/bugft.desktop
-share/kservices5/searchproviders/bugno.desktop
+share/kservices5/searchproviders/bug.desktop
 share/kservices5/searchproviders/call.desktop
 share/kservices5/searchproviders/cia.desktop
 share/kservices5/searchproviders/citeseer.desktop
@@ -1061,6 +1106,7 @@ share/kservices5/searchproviders/dbug.desktop
 share/kservices5/searchproviders/de2en.desktop
 share/kservices5/searchproviders/de2fr.desktop
 share/kservices5/searchproviders/deb.desktop
+share/kservices5/searchproviders/deepl.desktop
 share/kservices5/searchproviders/dictfr.desktop
 share/kservices5/searchproviders/docbook.desktop
 share/kservices5/searchproviders/doi.desktop
@@ -1219,6 +1265,7 @@ share/kservicetypes5/uasprovider.desktop
 share/locale/af/LC_MESSAGES/kio5.mo
 share/locale/ar/LC_MESSAGES/kio5.mo
 share/locale/ast/LC_MESSAGES/kio5.mo
+share/locale/az/LC_MESSAGES/kio5.mo
 share/locale/be/LC_MESSAGES/kio5.mo
 share/locale/be@latin/LC_MESSAGES/kio5.mo
 share/locale/bg/LC_MESSAGES/kio5.mo
@@ -1302,3 +1349,4 @@ share/locale/zh_CN/LC_MESSAGES/kio5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5.mo
 share/qlogging-categories5/kio.categories
 @tag update-desktop-database
+share/qlogging-categories5/kio.renamecategories

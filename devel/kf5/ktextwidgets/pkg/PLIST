@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:10 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:48:50 rsadowski Exp $
 include/KF5/KTextWidgets/
 include/KF5/KTextWidgets/KFind
 include/KF5/KTextWidgets/KFindDialog
@@ -31,6 +31,7 @@ share/kf5/mkspecs/qt_KTextWidgets.pri
 share/locale/af/LC_MESSAGES/ktextwidgets5.mo
 share/locale/ar/LC_MESSAGES/ktextwidgets5.mo
 share/locale/as/LC_MESSAGES/ktextwidgets5.mo
+share/locale/az/LC_MESSAGES/ktextwidgets5.mo
 share/locale/be/LC_MESSAGES/ktextwidgets5.mo
 share/locale/be@latin/LC_MESSAGES/ktextwidgets5.mo
 share/locale/bg/LC_MESSAGES/ktextwidgets5.mo

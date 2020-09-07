@@ -1,6 +1,6 @@
-# $OpenBSD: kf5.port.mk,v 1.13 2020/06/05 05:28:13 rsadowski Exp $
+# $OpenBSD: kf5.port.mk,v 1.14 2020/09/07 14:48:43 rsadowski Exp $
 
-MODKF5_VERSION =	5.68.0
+MODKF5_VERSION =	5.73.0
 
 MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 

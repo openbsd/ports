@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/23 18:01:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:48:48 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
@@ -31,12 +31,14 @@ lib/qt5/qml/org/kde/kirigami.2/ActionToolBar.qml
 lib/qt5/qml/org/kde/kirigami.2/ApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/ApplicationItem.qml
 lib/qt5/qml/org/kde/kirigami.2/ApplicationWindow.qml
+lib/qt5/qml/org/kde/kirigami.2/Avatar.qml
 lib/qt5/qml/org/kde/kirigami.2/BasicListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/Card.qml
 lib/qt5/qml/org/kde/kirigami.2/CardsGridView.qml
 lib/qt5/qml/org/kde/kirigami.2/CardsLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/CardsListView.qml
 lib/qt5/qml/org/kde/kirigami.2/ContextDrawer.qml
+lib/qt5/qml/org/kde/kirigami.2/FlexColumn.qml
 lib/qt5/qml/org/kde/kirigami.2/FormLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/GlobalDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/Heading.qml
@@ -52,9 +54,12 @@ lib/qt5/qml/org/kde/kirigami.2/Page.qml
 lib/qt5/qml/org/kde/kirigami.2/PagePoolAction.qml
 lib/qt5/qml/org/kde/kirigami.2/PageRow.qml
 lib/qt5/qml/org/kde/kirigami.2/PasswordField.qml
+lib/qt5/qml/org/kde/kirigami.2/PlaceholderMessage.qml
+lib/qt5/qml/org/kde/kirigami.2/RouterWindow.qml
 lib/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml
 lib/qt5/qml/org/kde/kirigami.2/SearchField.qml
 lib/qt5/qml/org/kde/kirigami.2/Separator.qml
+lib/qt5/qml/org/kde/kirigami.2/ShadowedImage.qml
 lib/qt5/qml/org/kde/kirigami.2/SwipeListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/Theme.qml
 lib/qt5/qml/org/kde/kirigami.2/ToolBarApplicationHeader.qml
@@ -104,6 +109,13 @@ lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/ApplicationWindow.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/SwipeListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/Theme.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/Units.qml
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeHighlight.qml
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeProgress.qml
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeStack.qml
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeTab.qml
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeTabBar.qml
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/SwipeNavigator.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractCard.qml
@@ -115,6 +127,7 @@ lib/qt5/qml/org/kde/kirigami.2/templates/OverlaySheet.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/SwipeListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/
 lib/qt5/qml/org/kde/kirigami.2/templates/private/BackButton.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/private/BorderPropertiesGroup.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/ContextIcon.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/ForwardButton.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/GenericDrawerIcon.qml
@@ -131,6 +144,7 @@ share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Kirigami2.pri
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ast/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/az/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/cs/LC_MESSAGES/libkirigami2plugin_qt.qm

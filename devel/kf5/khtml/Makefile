@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2020/08/20 18:00:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/09/07 14:48:47 rsadowski Exp $
 
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5KHtml	5.0
+SHARED_LIBS =		KF5KHtml	6.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Archive KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GlobalAccel
 WANTLIB += KF5I18n KF5IconThemes KF5JS KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Service
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Service
 WANTLIB += KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5Wallet
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:51 rsadowski Exp $
 include/KF5/purpose/
 include/KF5/purpose/Purpose/
 include/KF5/purpose/Purpose/AlternativesModel
@@ -73,6 +73,21 @@ share/locale/ast/LC_MESSAGES/purpose_email.mo
 share/locale/ast/LC_MESSAGES/purpose_kdeconnectsms.mo
 share/locale/ast/LC_MESSAGES/purpose_ktp-sendfile.mo
 share/locale/ast/LC_MESSAGES/purpose_pastebin.mo
+share/locale/az/LC_MESSAGES/libpurpose_quick.mo
+share/locale/az/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/az/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/az/LC_MESSAGES/purpose_bluetooth.mo
+share/locale/az/LC_MESSAGES/purpose_email.mo
+share/locale/az/LC_MESSAGES/purpose_imgur.mo
+share/locale/az/LC_MESSAGES/purpose_kdeconnect.mo
+share/locale/az/LC_MESSAGES/purpose_kdeconnectsms.mo
+share/locale/az/LC_MESSAGES/purpose_ktp-sendfile.mo
+share/locale/az/LC_MESSAGES/purpose_nextcloud.mo
+share/locale/az/LC_MESSAGES/purpose_pastebin.mo
+share/locale/az/LC_MESSAGES/purpose_phabricator.mo
+share/locale/az/LC_MESSAGES/purpose_reviewboard.mo
+share/locale/az/LC_MESSAGES/purpose_saveas.mo
+share/locale/az/LC_MESSAGES/purpose_youtube.mo
 share/locale/bg/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ca/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ca/LC_MESSAGES/libpurpose_widgets.mo
@@ -485,6 +500,22 @@ share/locale/sk/LC_MESSAGES/purpose_phabricator.mo
 share/locale/sk/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/sk/LC_MESSAGES/purpose_saveas.mo
 share/locale/sk/LC_MESSAGES/purpose_youtube.mo
+share/locale/sl/LC_MESSAGES/libpurpose_quick.mo
+share/locale/sl/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/sl/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/sl/LC_MESSAGES/purpose_bluetooth.mo
+share/locale/sl/LC_MESSAGES/purpose_email.mo
+share/locale/sl/LC_MESSAGES/purpose_imgur.mo
+share/locale/sl/LC_MESSAGES/purpose_kdeconnect.mo
+share/locale/sl/LC_MESSAGES/purpose_kdeconnectsms.mo
+share/locale/sl/LC_MESSAGES/purpose_ktp-sendfile.mo
+share/locale/sl/LC_MESSAGES/purpose_nextcloud.mo
+share/locale/sl/LC_MESSAGES/purpose_pastebin.mo
+share/locale/sl/LC_MESSAGES/purpose_phabricator.mo
+share/locale/sl/LC_MESSAGES/purpose_reviewboard.mo
+share/locale/sl/LC_MESSAGES/purpose_saveas.mo
+share/locale/sl/LC_MESSAGES/purpose_youtube.mo
+share/locale/sq/LC_MESSAGES/purpose_youtube.mo
 share/locale/sv/LC_MESSAGES/libpurpose_quick.mo
 share/locale/sv/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/sv/LC_MESSAGES/purpose-fileitemaction.mo
@@ -577,3 +608,4 @@ share/purpose/reviewboardplugin_config.qml
 share/purpose/saveasplugin_config.qml
 share/qlogging-categories5/purpose.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/purpose.renamecategories

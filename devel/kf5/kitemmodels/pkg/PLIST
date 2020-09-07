@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:48 rsadowski Exp $
 include/KF5/
 include/KF5/KItemModels/
 include/KF5/KItemModels/KBreadcrumbSelectionModel
@@ -43,3 +43,4 @@ share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KItemModels.pri
 share/qlogging-categories5/
 share/qlogging-categories5/kitemmodels.categories
+share/qlogging-categories5/kitemmodels.renamecategories

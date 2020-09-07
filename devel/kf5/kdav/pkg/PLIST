@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1 2020/09/07 04:44:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:48:46 rsadowski Exp $
+@pkgpath x11/kde-applications/kdav
 include/KF5/
 include/KF5/KDAV/
 include/KF5/KDAV/DavCollection

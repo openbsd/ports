@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/03/23 18:01:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/09/07 14:48:49 rsadowski Exp $
 @bin bin/kpackagetool5
 include/KF5/KPackage/
 include/KF5/KPackage/KPackage/
@@ -28,6 +28,7 @@ share/kservicetypes5/kpackage-generic.desktop
 share/kservicetypes5/kpackage-genericqml.desktop
 share/kservicetypes5/kpackage-packagestructure.desktop
 share/locale/ar/LC_MESSAGES/libkpackage5.mo
+share/locale/az/LC_MESSAGES/libkpackage5.mo
 share/locale/bs/LC_MESSAGES/libkpackage5.mo
 share/locale/ca/LC_MESSAGES/libkpackage5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkpackage5.mo
@@ -77,3 +78,4 @@ share/locale/uk/LC_MESSAGES/libkpackage5.mo
 share/locale/zh_CN/LC_MESSAGES/libkpackage5.mo
 share/locale/zh_TW/LC_MESSAGES/libkpackage5.mo
 share/qlogging-categories5/kpackage.categories
+share/qlogging-categories5/kpackage.renamecategories

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:48:45 rsadowski Exp $
 include/KF5/
 include/KF5/KCodecs/
 include/KF5/KCodecs/KCharsets
@@ -23,6 +23,7 @@ share/kf5/mkspecs/qt_KCodecs.pri
 share/locale/af/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/ar/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/as/LC_MESSAGES/kcodecs5_qt.qm
+share/locale/az/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/be/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/bg/LC_MESSAGES/kcodecs5_qt.qm
@@ -137,3 +138,4 @@ share/locale/zh_HK/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kcodecs5_qt.qm
 share/qlogging-categories5/
 share/qlogging-categories5/kcodecs.categories
+share/qlogging-categories5/kcodecs.renamecategories

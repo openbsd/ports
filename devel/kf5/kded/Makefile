@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/28 13:37:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/09/07 14:48:46 rsadowski Exp $
 
 COMMENT =	central daemon of KDE workspaces
 DISTNAME =	kded-${VERSION}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5Service Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += c m
 
-BUILD_DEPENDS =	devel/kf5/kdoctools>=${MODKF5_VERSION} \
-		devel/kf5/kinit>=${MODKF5_VERSION}
+BUILD_DEPENDS =	devel/kf5/kdoctools>=${MODKF5_VERSION}
 
 RUN_DEPENDS =	devel/kf5/kdoctools>=${MODKF5_VERSION} \
 		devel/kf5/kinit>=${MODKF5_VERSION} \

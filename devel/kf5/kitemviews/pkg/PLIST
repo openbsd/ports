@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:48:48 rsadowski Exp $
 include/KF5/
 include/KF5/KItemViews/
 include/KF5/KItemViews/KCategorizedSortFilterProxyModel
@@ -35,6 +35,7 @@ share/kf5/mkspecs/qt_KItemViews.pri
 share/locale/af/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/ar/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/as/LC_MESSAGES/kitemviews5_qt.qm
+share/locale/az/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/be/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/bg/LC_MESSAGES/kitemviews5_qt.qm
@@ -147,3 +148,5 @@ share/locale/xh/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kitemviews5_qt.qm
+share/qlogging-categories5/
+share/qlogging-categories5/kitemviews.categories

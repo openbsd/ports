@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/12 13:08:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2020/09/07 14:48:43 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules
@@ -68,7 +68,6 @@ SUBDIR += kinit
 SUBDIR += kactivities-stats
 SUBDIR += kparts
 SUBDIR += kded
-SUBDIR += kxmlrpcclient
 SUBDIR += kdeclarative
 SUBDIR += kcmutils
 SUBDIR += baloo
@@ -78,8 +77,10 @@ SUBDIR += plasma-framework
 SUBDIR += krunner
 SUBDIR += qqc2-desktop-style
 SUBDIR += purpose
+SUBDIR += kdav
 
 # porting aids
+SUBDIR += kxmlrpcclient
 SUBDIR += kjs
 SUBDIR += kjsembed
 SUBDIR += khtml

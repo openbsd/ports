@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/28 13:39:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2020/09/07 14:48:50 rsadowski Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5TextEditor		6.0
+SHARED_LIBS =		KF5TextEditor		7.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5GuiAddons KF5I18n KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5Parts KF5Service KF5SonnetCore
-WANTLIB += KF5SonnetUi KF5SyntaxHighlighting KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Widgets Qt5Xml c git2 m
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Parts KF5Service
+WANTLIB += KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5Widgets Qt5Xml c git2 m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt5/qtscript \
@@ -37,6 +37,7 @@ LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		devel/kf5/kparts>=${MODKF5_VERSION} \
 		devel/kf5/ktextwidgets>=${MODKF5_VERSION} \
 		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
+		devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
 		devel/kf5/kxmlgui>=${MODKF5_VERSION} \
 		devel/kf5/sonnet>=${MODKF5_VERSION} \
 		devel/kf5/syntax-highlighting>=${MODKF5_VERSION} \

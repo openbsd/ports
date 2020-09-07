@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:44 rsadowski Exp $
 @bin bin/kactivities-cli
 include/KF5/KActivities/
 include/KF5/KActivities/KActivities/
@@ -31,3 +31,4 @@ lib/qt5/qml/org/kde/activities/
 lib/qt5/qml/org/kde/activities/qmldir
 share/kf5/mkspecs/qt_KActivities.pri
 share/qlogging-categories5/kactivities.categories
+share/qlogging-categories5/kactivities.renamecategories

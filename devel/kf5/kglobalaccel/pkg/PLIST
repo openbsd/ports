@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:47 rsadowski Exp $
 @bin bin/kglobalaccel5
 include/KF5/KGlobalAccel/
 include/KF5/KGlobalAccel/KGlobalAccel
@@ -29,6 +29,7 @@ share/kservices5/kglobalaccel5.desktop
 share/locale/af/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/ar/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/as/LC_MESSAGES/kglobalaccel5_qt.qm
+share/locale/az/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/be/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/bg/LC_MESSAGES/kglobalaccel5_qt.qm
@@ -126,3 +127,4 @@ share/locale/zh_CN/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kglobalaccel5_qt.qm
 share/qlogging-categories5/kglobalaccel.categories
+share/qlogging-categories5/kglobalaccel.renamecategories

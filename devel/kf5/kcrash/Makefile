@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/23 18:01:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/09/07 14:48:46 rsadowski Exp $
 
 COMMENT =	intercepting and handling application crashes in KDE
 DISTNAME =	kcrash-${VERSION}
 
-SHARED_LIBS =	KF5Crash	5.0
+SHARED_LIBS =	KF5Crash	6.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5CoreAddons KF5WindowSystem
 WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras SM X11 Xext

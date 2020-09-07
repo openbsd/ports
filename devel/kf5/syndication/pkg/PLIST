@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/05 11:03:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:48:52 rsadowski Exp $
+include/KF5/
 include/KF5/Syndication/
 include/KF5/Syndication/Syndication/
 include/KF5/Syndication/Syndication/AbstractParser
@@ -140,11 +141,16 @@ include/KF5/Syndication/syndication/syndication.h
 include/KF5/Syndication/syndication/syndication_export.h
 include/KF5/Syndication/syndication/tools.h
 include/KF5/syndication_version.h
+lib/cmake/
 lib/cmake/KF5Syndication/
 lib/cmake/KF5Syndication/KF5SyndicationConfig.cmake
 lib/cmake/KF5Syndication/KF5SyndicationConfigVersion.cmake
 lib/cmake/KF5Syndication/KF5SyndicationTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Syndication/KF5SyndicationTargets.cmake
 @lib lib/libKF5Syndication.so.${LIBKF5Syndication_VERSION}
+share/kf5/
+share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Syndication.pri
+share/qlogging-categories5/
 share/qlogging-categories5/syndication.categories
+share/qlogging-categories5/syndication.renamecategories

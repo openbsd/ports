@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/03/23 18:01:03 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2020/09/07 14:48:43 rsadowski Exp $
 @conflict kf5-baloo-<=5.51.0p1v0
 @conflict kde-l10n-*
 @conflict kde-i18n-*
@@ -55,6 +55,17 @@ share/locale/ar/LC_MESSAGES/kio5_timeline.mo
 share/locale/ast/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/ast/LC_MESSAGES/balooctl5.mo
 share/locale/ast/LC_MESSAGES/kio5_timeline.mo
+share/locale/az/LC_MESSAGES/baloo_file5.mo
+share/locale/az/LC_MESSAGES/baloo_file_extractor5.mo
+share/locale/az/LC_MESSAGES/balooctl5.mo
+share/locale/az/LC_MESSAGES/baloodb5.mo
+share/locale/az/LC_MESSAGES/balooengine5.mo
+share/locale/az/LC_MESSAGES/baloomonitorplugin.mo
+share/locale/az/LC_MESSAGES/baloosearch5.mo
+share/locale/az/LC_MESSAGES/balooshow5.mo
+share/locale/az/LC_MESSAGES/kio5_baloosearch.mo
+share/locale/az/LC_MESSAGES/kio5_tags.mo
+share/locale/az/LC_MESSAGES/kio5_timeline.mo
 share/locale/bg/LC_MESSAGES/baloo_file5.mo
 share/locale/bg/LC_MESSAGES/baloosearch5.mo
 share/locale/bg/LC_MESSAGES/balooshow5.mo
@@ -415,6 +426,8 @@ share/locale/sk/LC_MESSAGES/kio5_timeline.mo
 share/locale/sl/LC_MESSAGES/baloo_file5.mo
 share/locale/sl/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/sl/LC_MESSAGES/balooctl5.mo
+share/locale/sl/LC_MESSAGES/baloodb5.mo
+share/locale/sl/LC_MESSAGES/balooengine5.mo
 share/locale/sl/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/sl/LC_MESSAGES/baloosearch5.mo
 share/locale/sl/LC_MESSAGES/balooshow5.mo
@@ -522,3 +535,4 @@ share/locale/zh_TW/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_tags.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_timeline.mo
 share/qlogging-categories5/baloo.categories
+share/qlogging-categories5/baloo.renamecategories

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2020/03/23 18:01:07 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2020/09/07 14:48:47 rsadowski Exp $
 include/KF5/KFileMetaData/
 include/KF5/KFileMetaData/KFileMetaData/
 include/KF5/KFileMetaData/KFileMetaData/EmbeddedImageData
@@ -57,8 +57,10 @@ lib/qt5/plugins/kf5/kfilemetadata/
 lib/qt5/plugins/kf5/kfilemetadata/writers/
 @so lib/qt5/plugins/kf5/kfilemetadata/writers/kfilemetadata_taglibwriter.so
 share/kf5/mkspecs/qt_KFileMetaData.pri
+share/locale/az/LC_MESSAGES/kfilemetadata5.mo
 share/locale/eu/LC_MESSAGES/kfilemetadata5.mo
 share/locale/id/LC_MESSAGES/kfilemetadata5.mo
 share/locale/ml/LC_MESSAGES/kfilemetadata5.mo
 share/locale/tg/LC_MESSAGES/kfilemetadata5.mo
 share/qlogging-categories5/kfilemetadata.categories
+share/qlogging-categories5/kfilemetadata.renamecategories

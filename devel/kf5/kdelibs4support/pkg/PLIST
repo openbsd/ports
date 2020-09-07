@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/03/29 16:49:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:48:46 rsadowski Exp $
 @bin bin/kdebugdialog5
 @bin bin/kf5-config
 include/KF5/KDELibs4Support/
@@ -1111,6 +1111,7 @@ share/doc/HTML/uk/kdebugdialog5/index.docbook
 share/examples/kdelibs4support/
 share/examples/kdelibs4support/xdg/
 share/examples/kdelibs4support/xdg/colors/
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/colors/
 share/examples/kdelibs4support/xdg/colors/40.colors
 @sample ${SYSCONFDIR}/xdg/colors/40.colors
@@ -2122,6 +2123,7 @@ share/kservicetypes5/qimageio_plugin.desktop
 share/locale/af/LC_MESSAGES/kdelibs4support.mo
 share/locale/ar/LC_MESSAGES/kdelibs4support.mo
 share/locale/as/LC_MESSAGES/kdelibs4support.mo
+share/locale/az/LC_MESSAGES/kdelibs4support.mo
 share/locale/be/LC_MESSAGES/kdelibs4support.mo
 share/locale/be@latin/LC_MESSAGES/kdelibs4support.mo
 share/locale/bg/LC_MESSAGES/kdelibs4support.mo

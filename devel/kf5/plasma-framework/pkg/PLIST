@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/03/23 18:01:11 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/09/07 14:48:51 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -83,7 +83,6 @@ lib/qt5/plugins/plasma/dataengine/
 lib/qt5/plugins/plasma/scriptengines/
 @so lib/qt5/plugins/plasma/scriptengines/plasma_appletscript_declarative.so
 @so lib/qt5/plugins/plasma_containmentactions_test.so
-@so lib/qt5/plugins/plasma_engine_testengine.so
 lib/qt5/qml/QtQuick/Controls.2/
 lib/qt5/qml/QtQuick/Controls.2/Plasma/
 lib/qt5/qml/QtQuick/Controls.2/Plasma/BusyIndicator.qml
@@ -104,9 +103,11 @@ lib/qt5/qml/QtQuick/Controls.2/Plasma/ItemDelegate.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Label.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Menu.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/MenuItem.qml
+lib/qt5/qml/QtQuick/Controls.2/Plasma/Page.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/PageIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Popup.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/ProgressBar.qml
+lib/qt5/qml/QtQuick/Controls.2/Plasma/README.md
 lib/qt5/qml/QtQuick/Controls.2/Plasma/RadioButton.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/RadioDelegate.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/RadioIndicator.qml
@@ -174,6 +175,7 @@ lib/qt5/qml/QtQuick/Controls/Styles/Plasma/qmldir
 lib/qt5/qml/org/kde/kirigami.2/
 lib/qt5/qml/org/kde/kirigami.2/styles/
 lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/
+lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Icon.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Theme.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Units.qml
@@ -211,9 +213,11 @@ lib/qt5/qml/org/kde/plasma/components.3/ItemDelegate.qml
 lib/qt5/qml/org/kde/plasma/components.3/Label.qml
 lib/qt5/qml/org/kde/plasma/components.3/Menu.qml
 lib/qt5/qml/org/kde/plasma/components.3/MenuItem.qml
+lib/qt5/qml/org/kde/plasma/components.3/Page.qml
 lib/qt5/qml/org/kde/plasma/components.3/PageIndicator.qml
 lib/qt5/qml/org/kde/plasma/components.3/Popup.qml
 lib/qt5/qml/org/kde/plasma/components.3/ProgressBar.qml
+lib/qt5/qml/org/kde/plasma/components.3/README.md
 lib/qt5/qml/org/kde/plasma/components.3/RadioButton.qml
 lib/qt5/qml/org/kde/plasma/components.3/RadioDelegate.qml
 lib/qt5/qml/org/kde/plasma/components.3/RadioIndicator.qml
@@ -300,9 +304,12 @@ lib/qt5/qml/org/kde/plasma/extras/
 lib/qt5/qml/org/kde/plasma/extras/App.qml
 lib/qt5/qml/org/kde/plasma/extras/ConditionalLoader.qml
 lib/qt5/qml/org/kde/plasma/extras/DescriptiveLabel.qml
+lib/qt5/qml/org/kde/plasma/extras/ExpandableListItem.qml
 lib/qt5/qml/org/kde/plasma/extras/Heading.qml
 lib/qt5/qml/org/kde/plasma/extras/PageRow.qml
 lib/qt5/qml/org/kde/plasma/extras/Paragraph.qml
+lib/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml
+lib/qt5/qml/org/kde/plasma/extras/PlasmoidHeading.qml
 lib/qt5/qml/org/kde/plasma/extras/ScrollArea.qml
 lib/qt5/qml/org/kde/plasma/extras/Title.qml
 lib/qt5/qml/org/kde/plasma/extras/animations/
@@ -344,7 +351,6 @@ share/kservices5/plasma-containmentactions-test.desktop
 share/kservices5/plasma-dataengine-example-customDataContainers.desktop
 share/kservices5/plasma-dataengine-example-simpleEngine.desktop
 share/kservices5/plasma-dataengine-example-sourcesOnRequest.desktop
-share/kservices5/plasma-dataengine-testengine.desktop
 share/kservices5/plasma-scriptengine-applet-declarative.desktop
 share/kservices5/plasma-wallpaper-org.kde.autumn.desktop
 share/kservicetypes5/plasma-applet.desktop
@@ -359,6 +365,8 @@ share/kservicetypes5/plasma-service.desktop
 share/kservicetypes5/plasma-shell.desktop
 share/kservicetypes5/plasma-wallpaper.desktop
 share/locale/ar/LC_MESSAGES/libplasma5.mo
+share/locale/ast/LC_MESSAGES/libplasma5.mo
+share/locale/az/LC_MESSAGES/libplasma5.mo
 share/locale/bs/LC_MESSAGES/libplasma5.mo
 share/locale/ca/LC_MESSAGES/libplasma5.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasma5.mo
@@ -524,9 +532,13 @@ share/plasma/desktoptheme/air/widgets/viewitem.svgz
 share/plasma/desktoptheme/breeze-dark/
 share/plasma/desktoptheme/breeze-dark/colors
 share/plasma/desktoptheme/breeze-dark/metadata.desktop
+share/plasma/desktoptheme/breeze-dark/widgets/
+share/plasma/desktoptheme/breeze-dark/widgets/plasmoidheading.svgz
 share/plasma/desktoptheme/breeze-light/
 share/plasma/desktoptheme/breeze-light/colors
 share/plasma/desktoptheme/breeze-light/metadata.desktop
+share/plasma/desktoptheme/breeze-light/widgets/
+share/plasma/desktoptheme/breeze-light/widgets/plasmoidheading.svgz
 share/plasma/desktoptheme/default/
 share/plasma/desktoptheme/default/dialogs/
 share/plasma/desktoptheme/default/dialogs/background.svgz
@@ -635,6 +647,7 @@ share/plasma/desktoptheme/default/widgets/notes.svgz
 share/plasma/desktoptheme/default/widgets/pager.svgz
 share/plasma/desktoptheme/default/widgets/panel-background.svgz
 share/plasma/desktoptheme/default/widgets/picker.svgz
+share/plasma/desktoptheme/default/widgets/plasmoidheading.svgz
 share/plasma/desktoptheme/default/widgets/plot-background.svgz
 share/plasma/desktoptheme/default/widgets/scrollbar.svgz
 share/plasma/desktoptheme/default/widgets/scrollwidget.svgz
@@ -896,3 +909,4 @@ share/plasma/wallpapers/org.kde.autumn/contents/ui/main.qml
 share/plasma/wallpapers/org.kde.autumn/metadata.desktop
 share/plasma/wallpapers/org.kde.autumn/metadata.json
 share/qlogging-categories5/plasma-framework.categories
+share/qlogging-categories5/plasma-framework.renamecategories

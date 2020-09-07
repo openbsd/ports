@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:10 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:50 rsadowski Exp $
 @bin bin/kf5kross
 include/KF5/KrossCore/
 include/KF5/KrossCore/Kross/
@@ -64,6 +64,7 @@ share/kf5/mkspecs/qt_KrossUi.pri
 share/locale/af/LC_MESSAGES/kross5.mo
 share/locale/ar/LC_MESSAGES/kross5.mo
 share/locale/as/LC_MESSAGES/kross5.mo
+share/locale/az/LC_MESSAGES/kross5.mo
 share/locale/be/LC_MESSAGES/kross5.mo
 share/locale/be@latin/LC_MESSAGES/kross5.mo
 share/locale/bg/LC_MESSAGES/kross5.mo

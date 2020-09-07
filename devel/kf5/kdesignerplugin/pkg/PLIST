@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/03/23 18:01:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:48:46 rsadowski Exp $
 @bin bin/kgendesignerplugin
 lib/cmake/KF5DesignerPlugin/
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginConfig.cmake
@@ -10,6 +10,7 @@ lib/cmake/KF5DesignerPlugin/KF5DesignerPluginTargets.cmake
 share/locale/af/LC_MESSAGES/kdesignerplugin5_qt.qm
 share/locale/ar/LC_MESSAGES/kdesignerplugin5_qt.qm
 share/locale/as/LC_MESSAGES/kdesignerplugin5_qt.qm
+share/locale/az/LC_MESSAGES/kdesignerplugin5_qt.qm
 share/locale/be/LC_MESSAGES/kdesignerplugin5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kdesignerplugin5_qt.qm
 share/locale/bg/LC_MESSAGES/kdesignerplugin5_qt.qm

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:11 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:50 rsadowski Exp $
 include/KF5/KUnitConversion/
 include/KF5/KUnitConversion/KUnitConversion/
 include/KF5/KUnitConversion/KUnitConversion/Converter
@@ -21,6 +21,7 @@ lib/cmake/KF5UnitConversion/KF5UnitConversionTargets.cmake
 share/kf5/mkspecs/qt_KUnitConversion.pri
 share/locale/ar/LC_MESSAGES/kunitconversion5.mo
 share/locale/ast/LC_MESSAGES/kunitconversion5.mo
+share/locale/az/LC_MESSAGES/kunitconversion5.mo
 share/locale/bg/LC_MESSAGES/kunitconversion5.mo
 share/locale/bs/LC_MESSAGES/kunitconversion5.mo
 share/locale/ca/LC_MESSAGES/kunitconversion5.mo

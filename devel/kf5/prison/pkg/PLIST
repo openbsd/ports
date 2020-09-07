@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/06/14 11:54:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:48:51 rsadowski Exp $
 @conflict prison-<=5.68.0
 @pkgpath graphics/prison
 include/KF5/
@@ -25,3 +25,4 @@ share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Prison.pri
 share/qlogging-categories5/
 share/qlogging-categories5/prison.categories
+share/qlogging-categories5/prison.renamecategories

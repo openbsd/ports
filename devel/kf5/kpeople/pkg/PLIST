@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/23 18:01:10 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:48:49 rsadowski Exp $
 include/KF5/KPeople/
 include/KF5/KPeople/KPeople/
 include/KF5/KPeople/KPeople/Global
@@ -59,6 +59,7 @@ share/kservicetypes5/kpeople_data_source.desktop
 share/kservicetypes5/kpeople_plugin.desktop
 share/kservicetypes5/persondetailsplugin.desktop
 share/locale/ar/LC_MESSAGES/kpeople5.mo
+share/locale/az/LC_MESSAGES/kpeople5.mo
 share/locale/bs/LC_MESSAGES/kpeople5.mo
 share/locale/ca/LC_MESSAGES/kpeople5.mo
 share/locale/ca@valencia/LC_MESSAGES/kpeople5.mo
@@ -104,3 +105,4 @@ share/locale/uk/LC_MESSAGES/kpeople5.mo
 share/locale/zh_CN/LC_MESSAGES/kpeople5.mo
 share/locale/zh_TW/LC_MESSAGES/kpeople5.mo
 share/qlogging-categories5/kpeople.categories
+share/qlogging-categories5/kpeople.renamecategories

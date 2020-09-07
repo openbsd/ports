@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/23 18:01:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/09/07 14:48:48 rsadowski Exp $
 
 COMMENT =	speed up for applications inside KDE workspaces
 DISTNAME =	kinit-${VERSION}
 
-SHARED_LIBS =	kdeinit5_klauncher	5.0
+SHARED_LIBS =	kdeinit5_klauncher	6.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5Service KF5WidgetsAddons KF5WindowSystem
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += X11 c m xcb
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5WidgetsAddons
+WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Widgets X11 c m xcb
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/kf5/kdoctools>=${MODKF5_VERSION}

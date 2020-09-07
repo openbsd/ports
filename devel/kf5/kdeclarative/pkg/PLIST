@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/23 18:01:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:48:46 rsadowski Exp $
 @bin bin/kpackagelauncherqml
 include/KF5/KDeclarative/
 include/KF5/KDeclarative/CalendarEvents/
@@ -57,6 +57,7 @@ lib/qt5/qml/org/kde/kcm/GridView.qml
 lib/qt5/qml/org/kde/kcm/GridViewKCM.qml
 lib/qt5/qml/org/kde/kcm/ScrollView.qml
 lib/qt5/qml/org/kde/kcm/ScrollViewKCM.qml
+lib/qt5/qml/org/kde/kcm/SettingStateBinding.qml
 lib/qt5/qml/org/kde/kcm/SimpleKCM.qml
 @so lib/qt5/qml/org/kde/kcm/libkcmcontrolsplugin.so
 lib/qt5/qml/org/kde/kcm/private/
@@ -90,6 +91,7 @@ share/kf5/mkspecs/qt_QuickAddons.pri
 share/locale/af/LC_MESSAGES/kdeclarative5.mo
 share/locale/ar/LC_MESSAGES/kdeclarative5.mo
 share/locale/as/LC_MESSAGES/kdeclarative5.mo
+share/locale/az/LC_MESSAGES/kdeclarative5.mo
 share/locale/be/LC_MESSAGES/kdeclarative5.mo
 share/locale/be@latin/LC_MESSAGES/kdeclarative5.mo
 share/locale/bg/LC_MESSAGES/kdeclarative5.mo

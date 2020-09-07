@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:44 rsadowski Exp $
 include/KF5/KAuth/
 include/KF5/KAuth/KAuth
 include/KF5/KAuth/KAuthAction
@@ -41,6 +41,7 @@ share/kf5/mkspecs/qt_KAuthCore.pri
 share/locale/af/LC_MESSAGES/kauth5_qt.qm
 share/locale/ar/LC_MESSAGES/kauth5_qt.qm
 share/locale/as/LC_MESSAGES/kauth5_qt.qm
+share/locale/az/LC_MESSAGES/kauth5_qt.qm
 share/locale/be/LC_MESSAGES/kauth5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kauth5_qt.qm
 share/locale/bg/LC_MESSAGES/kauth5_qt.qm
@@ -138,3 +139,4 @@ share/locale/zh_CN/LC_MESSAGES/kauth5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kauth5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kauth5_qt.qm
 share/qlogging-categories5/kauth.categories
+share/qlogging-categories5/kauth.renamecategories

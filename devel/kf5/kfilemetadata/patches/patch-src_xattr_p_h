@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_xattr_p_h,v 1.4 2020/03/23 18:01:07 rsadowski Exp $
+$OpenBSD: patch-src_xattr_p_h,v 1.5 2020/09/07 14:48:47 rsadowski Exp $
 
 Index: src/xattr_p.h
 --- src/xattr_p.h.orig
 +++ src/xattr_p.h
-@@ -47,6 +47,8 @@
+@@ -34,6 +34,8 @@
  #include <sys/types.h>
  #include <sys/extattr.h>
  #include <errno.h>

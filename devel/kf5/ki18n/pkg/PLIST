@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/03/23 18:01:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:48:47 rsadowski Exp $
 include/KF5/
 include/KF5/KI18n/
 include/KF5/KI18n/KLocalizedContext
@@ -33,6 +33,7 @@ share/locale/af/LC_MESSAGES/ki18n5.mo
 share/locale/ar/LC_MESSAGES/ki18n5.mo
 share/locale/as/LC_MESSAGES/ki18n5.mo
 share/locale/ast/LC_MESSAGES/ki18n5.mo
+share/locale/az/LC_MESSAGES/ki18n5.mo
 share/locale/be/LC_MESSAGES/ki18n5.mo
 share/locale/be@latin/LC_MESSAGES/ki18n5.mo
 share/locale/bg/LC_MESSAGES/ki18n5.mo
@@ -201,3 +202,4 @@ share/locale/zh_HK/LC_MESSAGES/ki18n5.mo
 share/locale/zh_TW/LC_MESSAGES/ki18n5.mo
 share/qlogging-categories5/
 share/qlogging-categories5/ki18n.categories
+share/qlogging-categories5/ki18n.renamecategories

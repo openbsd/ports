@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:48 rsadowski Exp $
 @bin bin/kiconfinder5
 include/KF5/KIconThemes/
 include/KF5/KIconThemes/KIconButton
@@ -27,6 +27,7 @@ share/kf5/mkspecs/qt_KIconThemes.pri
 share/locale/af/LC_MESSAGES/kiconthemes5.mo
 share/locale/ar/LC_MESSAGES/kiconthemes5.mo
 share/locale/ast/LC_MESSAGES/kiconthemes5.mo
+share/locale/az/LC_MESSAGES/kiconthemes5.mo
 share/locale/be/LC_MESSAGES/kiconthemes5.mo
 share/locale/be@latin/LC_MESSAGES/kiconthemes5.mo
 share/locale/bg/LC_MESSAGES/kiconthemes5.mo
@@ -110,3 +111,4 @@ share/locale/xh/LC_MESSAGES/kiconthemes5.mo
 share/locale/zh_CN/LC_MESSAGES/kiconthemes5.mo
 share/locale/zh_TW/LC_MESSAGES/kiconthemes5.mo
 share/qlogging-categories5/kiconthemes.categories
+share/qlogging-categories5/kiconthemes.renamecategories

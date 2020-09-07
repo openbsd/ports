@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/05 07:22:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2020/09/07 14:48:46 rsadowski Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
-REVISION =		1
 
-SHARED_LIBS =		KF5KDELibs4Support	7.0
+SHARED_LIBS =		KF5KDELibs4Support	8.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
-WANTLIB += KF5Notifications KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Designer
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg Qt5Test Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext c m xcb
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5UnitConversion
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Designer Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Svg Qt5Test Qt5Widgets Qt5X11Extras Qt5Xml SM X11
+WANTLIB += Xext c m xcb
+
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

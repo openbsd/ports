@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:11 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:51 rsadowski Exp $
 include/KF5/KXmlGui/
 include/KF5/KXmlGui/KAboutApplicationDialog
 include/KF5/KXmlGui/KAboutPluginDialog
@@ -51,6 +51,7 @@ lib/cmake/KF5XmlGui/KF5XmlGuiTargets.cmake
 share/examples/kxmlgui/
 share/examples/kxmlgui/xdg/
 share/examples/kxmlgui/xdg/ui/
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/ui/
 share/examples/kxmlgui/xdg/ui/ui_standards.rc
 @sample ${SYSCONFDIR}/xdg/ui/ui_standards.rc
@@ -59,6 +60,7 @@ share/locale/af/LC_MESSAGES/kxmlgui5.mo
 share/locale/ar/LC_MESSAGES/kxmlgui5.mo
 share/locale/as/LC_MESSAGES/kxmlgui5.mo
 share/locale/ast/LC_MESSAGES/kxmlgui5.mo
+share/locale/az/LC_MESSAGES/kxmlgui5.mo
 share/locale/be/LC_MESSAGES/kxmlgui5.mo
 share/locale/be@latin/LC_MESSAGES/kxmlgui5.mo
 share/locale/bg/LC_MESSAGES/kxmlgui5.mo
@@ -156,3 +158,4 @@ share/locale/zh_CN/LC_MESSAGES/kxmlgui5.mo
 share/locale/zh_HK/LC_MESSAGES/kxmlgui5.mo
 share/locale/zh_TW/LC_MESSAGES/kxmlgui5.mo
 share/qlogging-categories5/kxmlgui.categories
+share/qlogging-categories5/kxmlgui.renamecategories

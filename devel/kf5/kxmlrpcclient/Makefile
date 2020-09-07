@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/23 18:01:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2020/09/07 14:48:51 rsadowski Exp $
 
 COMMENT =	KDE XML-RPC client
 DISTNAME =	kxmlrpcclient-${VERSION}
 
-SHARED_LIBS =	KF5XmlRpcClient		4.0
+SHARED_LIBS =	KF5XmlRpcClient		5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
 WANTLIB += KF5KIOCore KF5Service Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Network Qt5Xml m
 
 BUILD_DEPENDS =	devel/gettext,-tools
+
+IS_PORTING_AID =	Yes
 
 LIB_DEPENDS =	devel/kf5/kconfig>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \

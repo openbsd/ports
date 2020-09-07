@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:52 rsadowski Exp $
 @bin bin/kate-syntax-highlighter
 include/KF5/
 include/KF5/KSyntaxHighlighting/
@@ -33,6 +33,7 @@ share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KSyntaxHighlighting.pri
 share/locale/af/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/ar/LC_MESSAGES/syntaxhighlighting5_qt.qm
+share/locale/az/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/be/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/bg/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/bn/LC_MESSAGES/syntaxhighlighting5_qt.qm
@@ -129,3 +130,4 @@ share/locale/zh_CN/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/qlogging-categories5/
 share/qlogging-categories5/ksyntaxhighlighting.categories
+share/qlogging-categories5/ksyntaxhighlighting.renamecategories

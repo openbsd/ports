@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/23 18:01:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:48:47 rsadowski Exp $
 @bin bin/checkXML5
 @bin bin/meinproc5
 include/KF5/KDocTools/
@@ -1159,6 +1159,7 @@ share/kf5/kdoctools/customization/zh-TW/user.entities
 share/locale/af/LC_MESSAGES/kdoctools5.mo
 share/locale/ar/LC_MESSAGES/kdoctools5.mo
 share/locale/ast/LC_MESSAGES/kdoctools5.mo
+share/locale/az/LC_MESSAGES/kdoctools5.mo
 share/locale/be/LC_MESSAGES/kdoctools5.mo
 share/locale/bg/LC_MESSAGES/kdoctools5.mo
 share/locale/bn/LC_MESSAGES/kdoctools5.mo

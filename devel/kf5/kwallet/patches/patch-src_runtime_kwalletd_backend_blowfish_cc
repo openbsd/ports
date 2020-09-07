@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_runtime_kwalletd_backend_blowfish_cc,v 1.3 2017/06/07 17:03:39 rsadowski Exp $
+$OpenBSD: patch-src_runtime_kwalletd_backend_blowfish_cc,v 1.4 2020/09/07 14:48:50 rsadowski Exp $
 Unbreak build.
 Index: src/runtime/kwalletd/backend/blowfish.cc
 --- src/runtime/kwalletd/backend/blowfish.cc.orig
 +++ src/runtime/kwalletd/backend/blowfish.cc
-@@ -38,18 +38,18 @@
+@@ -41,18 +41,18 @@
  BlowFish::BlowFish()
  {
      _blksz = 8;
@@ -28,7 +28,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
      }
  
      uint32_t datal = 0;
-@@ -61,25 +61,25 @@ bool BlowFish::init()
+@@ -64,25 +64,25 @@ bool BlowFish::init()
      for (int i = 0; i < 18; i++) {
          data = 0;
          for (int k = 0; k < 4; ++k) {
@@ -61,7 +61,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
          }
      }
  
-@@ -87,22 +87,22 @@ bool BlowFish::init()
+@@ -90,22 +90,22 @@ bool BlowFish::init()
      //     check to see if the key is weak and return error if so
      for (int i = 0; i < 255; i++) {
          for (int j = i + 1; j < 256; j++) {
@@ -89,7 +89,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
  }
  
  int BlowFish::keyLen() const
-@@ -117,20 +117,20 @@ bool BlowFish::variableKeyLen() const
+@@ -120,20 +120,20 @@ bool BlowFish::variableKeyLen() const
  
  bool BlowFish::readyToGo() const
  {
@@ -116,7 +116,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
  
      return init();
  }
-@@ -149,7 +149,7 @@ int BlowFish::encrypt(void *block, int len)
+@@ -152,7 +152,7 @@ int BlowFish::encrypt(void *block, int len)
  {
      uint32_t *d = (uint32_t *)block;
  
@@ -125,7 +125,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
          return -1;
      }
  
-@@ -173,7 +173,7 @@ int BlowFish::decrypt(void *block, int len)
+@@ -176,7 +176,7 @@ int BlowFish::decrypt(void *block, int len)
  {
      uint32_t *d = (uint32_t *)block;
  
@@ -134,7 +134,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
          return -1;
      }
  
-@@ -206,9 +206,9 @@ uint32_t BlowFish::F(uint32_t x)
+@@ -209,9 +209,9 @@ uint32_t BlowFish::F(uint32_t x)
      x >>= 8;
      a = x & 0x000000ff;
  
@@ -147,7 +147,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
  
      return y;
  }
-@@ -218,7 +218,7 @@ void BlowFish::encipher(uint32_t *xl, uint32_t *xr)
+@@ -221,7 +221,7 @@ void BlowFish::encipher(uint32_t *xl, uint32_t *xr)
      uint32_t Xl = *xl, Xr = *xr, temp;
  
      for (int i = 0; i < 16; ++i) {
@@ -156,7 +156,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
          Xr ^= F(Xl);
          // Exchange
          temp = Xl; Xl = Xr; Xr = temp;
-@@ -227,8 +227,8 @@ void BlowFish::encipher(uint32_t *xl, uint32_t *xr)
+@@ -230,8 +230,8 @@ void BlowFish::encipher(uint32_t *xl, uint32_t *xr)
      // Exchange
      temp = Xl; Xl = Xr; Xr = temp;
  
@@ -167,7 +167,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
  
      *xl = Xl;
      *xr = Xr;
-@@ -239,7 +239,7 @@ void BlowFish::decipher(uint32_t *xl, uint32_t *xr)
+@@ -242,7 +242,7 @@ void BlowFish::decipher(uint32_t *xl, uint32_t *xr)
      uint32_t Xl = *xl, Xr = *xr, temp;
  
      for (int i = 17; i > 1; --i) {
@@ -176,7 +176,7 @@ Index: src/runtime/kwalletd/backend/blowfish.cc
          Xr ^= F(Xl);
          // Exchange
          temp = Xl; Xl = Xr; Xr = temp;
-@@ -248,8 +248,8 @@ void BlowFish::decipher(uint32_t *xl, uint32_t *xr)
+@@ -251,8 +251,8 @@ void BlowFish::decipher(uint32_t *xl, uint32_t *xr)
      // Exchange
      temp = Xl; Xl = Xr; Xr = temp;
  

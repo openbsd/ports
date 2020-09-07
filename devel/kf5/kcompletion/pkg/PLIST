@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:48:45 rsadowski Exp $
 include/KF5/KCompletion/
 include/KF5/KCompletion/KComboBox
 include/KF5/KCompletion/KCompletion
@@ -31,6 +31,7 @@ share/kf5/mkspecs/qt_KCompletion.pri
 share/locale/af/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/ar/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/as/LC_MESSAGES/kcompletion5_qt.qm
+share/locale/az/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/be/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/bg/LC_MESSAGES/kcompletion5_qt.qm
@@ -127,3 +128,4 @@ share/locale/xh/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kcompletion5_qt.qm
+share/qlogging-categories5/kcompletion.categories

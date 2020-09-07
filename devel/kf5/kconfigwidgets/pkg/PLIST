@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:45 rsadowski Exp $
 bin/preparetips5
 include/KF5/KConfigWidgets/
 include/KF5/KConfigWidgets/KCModule
@@ -49,6 +49,8 @@ share/locale/ar/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/ar/kf5_entry.desktop
 share/locale/as/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/as/kf5_entry.desktop
+share/locale/az/LC_MESSAGES/kconfigwidgets5.mo
+share/locale/az/kf5_entry.desktop
 share/locale/be/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/be/kf5_entry.desktop
 share/locale/be@latin/LC_MESSAGES/kconfigwidgets5.mo
@@ -92,7 +94,6 @@ share/locale/es/kf5_entry.desktop
 share/locale/et/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/et/kf5_entry.desktop
 share/locale/eu/LC_MESSAGES/kconfigwidgets5.mo
-share/locale/eu/kf5_entry.desktop
 share/locale/fa/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/fa/kf5_entry.desktop
 share/locale/fi/LC_MESSAGES/kconfigwidgets5.mo
@@ -242,3 +243,4 @@ share/locale/zh_HK/kf5_entry.desktop
 share/locale/zh_TW/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/zh_TW/kf5_entry.desktop
 share/qlogging-categories5/kconfigwidgets.categories
+share/qlogging-categories5/kconfigwidgets.renamecategories

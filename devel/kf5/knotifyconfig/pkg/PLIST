@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:48:49 rsadowski Exp $
 include/KF5/KNotifyConfig/
 include/KF5/KNotifyConfig/KNotifyConfigWidget
 include/KF5/KNotifyConfig/knotifyconfig_export.h
@@ -15,6 +15,7 @@ share/locale/af/LC_MESSAGES/knotifyconfig5.mo
 share/locale/ar/LC_MESSAGES/knotifyconfig5.mo
 share/locale/as/LC_MESSAGES/knotifyconfig5.mo
 share/locale/ast/LC_MESSAGES/knotifyconfig5.mo
+share/locale/az/LC_MESSAGES/knotifyconfig5.mo
 share/locale/be/LC_MESSAGES/knotifyconfig5.mo
 share/locale/be@latin/LC_MESSAGES/knotifyconfig5.mo
 share/locale/bg/LC_MESSAGES/knotifyconfig5.mo
@@ -111,3 +112,4 @@ share/locale/xh/LC_MESSAGES/knotifyconfig5.mo
 share/locale/zh_CN/LC_MESSAGES/knotifyconfig5.mo
 share/locale/zh_HK/LC_MESSAGES/knotifyconfig5.mo
 share/locale/zh_TW/LC_MESSAGES/knotifyconfig5.mo
+share/qlogging-categories5/knotifyconfig.categories

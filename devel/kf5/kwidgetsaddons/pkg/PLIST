@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:11 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:50 rsadowski Exp $
 include/KF5/
 include/KF5/KWidgetsAddons/
 include/KF5/KWidgetsAddons/KAcceleratorManager
@@ -22,6 +22,7 @@ include/KF5/KWidgetsAddons/KDualAction
 include/KF5/KWidgetsAddons/KEditListWidget
 include/KF5/KWidgetsAddons/KFontAction
 include/KF5/KWidgetsAddons/KFontChooser
+include/KF5/KWidgetsAddons/KFontChooserDialog
 include/KF5/KWidgetsAddons/KFontRequester
 include/KF5/KWidgetsAddons/KFontSizeAction
 include/KF5/KWidgetsAddons/KGradientSelector
@@ -97,6 +98,7 @@ include/KF5/KWidgetsAddons/kdualaction.h
 include/KF5/KWidgetsAddons/keditlistwidget.h
 include/KF5/KWidgetsAddons/kfontaction.h
 include/KF5/KWidgetsAddons/kfontchooser.h
+include/KF5/KWidgetsAddons/kfontchooserdialog.h
 include/KF5/KWidgetsAddons/kfontrequester.h
 include/KF5/KWidgetsAddons/kfontsizeaction.h
 include/KF5/KWidgetsAddons/kguiitem.h
@@ -165,6 +167,7 @@ share/locale/af/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/ar/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/as/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/ast/LC_MESSAGES/kwidgetsaddons5_qt.qm
+share/locale/az/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/be/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/bg/LC_MESSAGES/kwidgetsaddons5_qt.qm
@@ -277,3 +280,5 @@ share/locale/xh/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kwidgetsaddons5_qt.qm
+share/qlogging-categories5/
+share/qlogging-categories5/kwidgetsaddons.categories

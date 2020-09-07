@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/28 13:38:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/09/07 14:48:51 rsadowski Exp $
 
 COMMENT =		framework to create integrate services and actions
 DISTNAME =		purpose-${VERSION}
-REVISION =		0
 
-SHARED_LIBS +=  KF5Purpose                1.0
-SHARED_LIBS +=  KF5PurposeWidgets         1.0
-SHARED_LIBS +=  PhabricatorHelpers        1.0
-SHARED_LIBS +=  ReviewboardHelpers        1.0
+SHARED_LIBS +=  KF5Purpose                2.0
+SHARED_LIBS +=  KF5PurposeWidgets         2.0
+SHARED_LIBS +=  PhabricatorHelpers        2.0
+SHARED_LIBS +=  ReviewboardHelpers        2.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
-WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Notifications
-WANTLIB += KF5Service KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Widgets c m
+WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Notifications KF5Service KF5WidgetsAddons KF5WindowSystem
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
+WANTLIB += Qt5Widgets c m
 
 MODULES +=	lang/python
 
@@ -32,6 +32,7 @@ LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		devel/kf5/knotifications>=${MODKF5_VERSION} \
 		devel/kf5/kservice>=${MODKF5_VERSION} \
 		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
+		devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
 		x11/qt5/qtdeclarative
 
 #-- The following RUNTIME packages have not been found:

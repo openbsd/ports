@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:47 rsadowski Exp $
 include/KF5/KHtml/
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings
@@ -59,6 +59,7 @@ lib/qt5/plugins/kf5/parts/
 share/examples/khtml/
 share/examples/khtml/xdg/
 share/examples/khtml/xdg/khtmlrc
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/khtmlrc
 share/kf5/khtml/
 share/kf5/khtml/css/
@@ -79,6 +80,7 @@ share/kservices5/kmultipart.desktop
 share/locale/af/LC_MESSAGES/khtml5.mo
 share/locale/ar/LC_MESSAGES/khtml5.mo
 share/locale/as/LC_MESSAGES/khtml5.mo
+share/locale/az/LC_MESSAGES/khtml5.mo
 share/locale/be/LC_MESSAGES/khtml5.mo
 share/locale/be@latin/LC_MESSAGES/khtml5.mo
 share/locale/bg/LC_MESSAGES/khtml5.mo
@@ -176,3 +178,4 @@ share/locale/zh_CN/LC_MESSAGES/khtml5.mo
 share/locale/zh_HK/LC_MESSAGES/khtml5.mo
 share/locale/zh_TW/LC_MESSAGES/khtml5.mo
 share/qlogging-categories5/khtml.categories
+share/qlogging-categories5/khtml.renamecategories

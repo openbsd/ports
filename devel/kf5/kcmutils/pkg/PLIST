@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/30 09:13:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/09/07 14:48:45 rsadowski Exp $
 include/KF5/KCMUtils/
 include/KF5/KCMUtils/KCModuleContainer
 include/KF5/KCMUtils/KCModuleInfo
@@ -33,6 +33,7 @@ share/kservicetypes5/kcmoduleinit.desktop
 share/locale/af/LC_MESSAGES/kcmutils5.mo
 share/locale/ar/LC_MESSAGES/kcmutils5.mo
 share/locale/as/LC_MESSAGES/kcmutils5.mo
+share/locale/az/LC_MESSAGES/kcmutils5.mo
 share/locale/be/LC_MESSAGES/kcmutils5.mo
 share/locale/be@latin/LC_MESSAGES/kcmutils5.mo
 share/locale/bg/LC_MESSAGES/kcmutils5.mo
@@ -129,3 +130,4 @@ share/locale/xh/LC_MESSAGES/kcmutils5.mo
 share/locale/zh_CN/LC_MESSAGES/kcmutils5.mo
 share/locale/zh_HK/LC_MESSAGES/kcmutils5.mo
 share/locale/zh_TW/LC_MESSAGES/kcmutils5.mo
+share/qlogging-categories5/kcmutils.categories
