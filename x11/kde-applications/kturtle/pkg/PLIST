@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:26 rsadowski Exp $
 @pkgpath x11/kde4/kturtle
 @bin bin/kturtle
 share/applications/org.kde.kturtle.desktop
@@ -61,6 +61,14 @@ share/doc/HTML/fr/kturtle/mainwindow_flower_nrs.png
 share/doc/HTML/fr/kturtle/programming-reference.docbook
 share/doc/HTML/fr/kturtle/translator-guide.docbook
 share/doc/HTML/fr/kturtle/using-kturtle.docbook
+share/doc/HTML/gl/kturtle/
+share/doc/HTML/gl/kturtle/getting-started.docbook
+share/doc/HTML/gl/kturtle/glossary.docbook
+share/doc/HTML/gl/kturtle/index.cache.bz2
+share/doc/HTML/gl/kturtle/index.docbook
+share/doc/HTML/gl/kturtle/programming-reference.docbook
+share/doc/HTML/gl/kturtle/translator-guide.docbook
+share/doc/HTML/gl/kturtle/using-kturtle.docbook
 share/doc/HTML/it/kturtle/
 share/doc/HTML/it/kturtle/getting-started.docbook
 share/doc/HTML/it/kturtle/glossary.docbook
@@ -131,6 +139,8 @@ share/doc/HTML/uk/kturtle/using-kturtle.docbook
 share/examples/kturtle/
 share/examples/kturtle/xdg/
 share/examples/kturtle/xdg/kturtle.knsrc
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/kturtle.knsrc
 share/icons/hicolor/128x128/apps/kturtle.png
 share/icons/hicolor/16x16/apps/kturtle.png
 share/icons/hicolor/22x22/apps/kturtle.png

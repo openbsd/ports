@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/21 18:12:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:22 rsadowski Exp $
 
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 HOMEPAGE =	http://knotesapp.com/
 
-SHARED_LIBS +=  knotesprivate           0.0 # 5.13.2
-SHARED_LIBS +=  notesharedprivate       0.0 # 5.13.2
+SHARED_LIBS +=  knotesprivate           1.0 # 5.13.2
+SHARED_LIBS +=  notesharedprivate       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates ICE KF5AkonadiAgentBase
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiNotes KF5AkonadiSearchDebug
@@ -16,9 +15,9 @@ WANTLIB += KF5AkonadiSearchPIM KF5AkonadiWidgets KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5CalendarUtils
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5DNSSD KF5GlobalAccel KF5GrantleeTheme
-WANTLIB += KF5I18n KF5IMAP KF5IconThemes KF5ItemModels KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5DNSSD KF5GlobalAccel KF5GrantleeTheme KF5I18n KF5IMAP
+WANTLIB += KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5KontactInterface KF5Libkdepim KF5Mime
 WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5NotifyConfig
 WANTLIB += KF5Parts KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit

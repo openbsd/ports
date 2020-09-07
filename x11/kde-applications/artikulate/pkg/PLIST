@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/03 05:13:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:12 rsadowski Exp $
 @pkgpath x11/kde4/artikulate
 @bin bin/artikulate
 @bin bin/artikulate_editor
@@ -9,36 +9,14 @@ lib/qt5/plugins/artikulate/
 lib/qt5/plugins/artikulate/libsound/
 @so lib/qt5/plugins/artikulate/libsound/qtmultimediabackend.so
 share/applications/org.kde.artikulate.desktop
-share/artikulate/
-share/artikulate/images/
-share/artikulate/images/course-gray.png
-share/artikulate/images/course.png
-share/artikulate/images/new-course.png
-share/artikulate/sounds/
-share/artikulate/sounds/testsound.ogg
 share/config.kcfg/
 share/config.kcfg/artikulate.kcfg
 share/doc/HTML/ca/artikulate/
-share/doc/HTML/ca/artikulate/editor-apply.png
-share/doc/HTML/ca/artikulate/editor-cancel.png
 share/doc/HTML/ca/artikulate/first-steps-1-create-profile.png
 share/doc/HTML/ca/artikulate/first-steps-3-download-course.png
 share/doc/HTML/ca/artikulate/first-steps-4-start-training.png
-share/doc/HTML/ca/artikulate/hi32-action-artikulate-expression.png
-share/doc/HTML/ca/artikulate/hi32-action-artikulate-language.png
-share/doc/HTML/ca/artikulate/hi32-action-artikulate-media-playback-start.png
-share/doc/HTML/ca/artikulate/hi32-action-artikulate-media-playback-stop.png
-share/doc/HTML/ca/artikulate/hi32-action-artikulate-media-record-active.png
-share/doc/HTML/ca/artikulate/hi32-action-artikulate-media-record.png
-share/doc/HTML/ca/artikulate/hi32-action-artikulate-paragraph.png
-share/doc/HTML/ca/artikulate/hi32-action-artikulate-sentence.png
-share/doc/HTML/ca/artikulate/hi32-action-artikulate-word.png
 share/doc/HTML/ca/artikulate/index.cache.bz2
 share/doc/HTML/ca/artikulate/index.docbook
-share/doc/HTML/ca/artikulate/screen-training-progressbar.png
-share/doc/HTML/ca/artikulate/training-finish.png
-share/doc/HTML/ca/artikulate/training-ok.png
-share/doc/HTML/ca/artikulate/training-retry.png
 share/doc/HTML/de/artikulate/
 share/doc/HTML/de/artikulate/index.cache.bz2
 share/doc/HTML/de/artikulate/index.docbook
@@ -97,38 +75,12 @@ share/doc/HTML/uk/artikulate/index.docbook
 share/examples/artikulate/
 share/examples/artikulate/xdg/
 share/examples/artikulate/xdg/artikulate.knsrc
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/artikulate.knsrc
-share/icons/hicolor/16x16/actions/artikulate-course.png
-share/icons/hicolor/16x16/actions/artikulate-expression.png
-share/icons/hicolor/16x16/actions/artikulate-paragraph.png
-share/icons/hicolor/16x16/actions/artikulate-sentence.png
-share/icons/hicolor/16x16/actions/artikulate-word.png
 share/icons/hicolor/16x16/apps/artikulate.png
-share/icons/hicolor/32x32/actions/artikulate-course-editor.png
-share/icons/hicolor/32x32/actions/artikulate-course.png
-share/icons/hicolor/32x32/actions/artikulate-expression.png
-share/icons/hicolor/32x32/actions/artikulate-paragraph.png
-share/icons/hicolor/32x32/actions/artikulate-sentence.png
-share/icons/hicolor/32x32/actions/artikulate-word.png
 share/icons/hicolor/32x32/apps/artikulate.png
-share/icons/hicolor/48x48/actions/artikulate-course.png
-share/icons/hicolor/48x48/actions/artikulate-expression.png
-share/icons/hicolor/48x48/actions/artikulate-paragraph.png
-share/icons/hicolor/48x48/actions/artikulate-sentence.png
-share/icons/hicolor/48x48/actions/artikulate-word.png
 share/icons/hicolor/48x48/apps/artikulate.png
-share/icons/hicolor/64x64/actions/artikulate-course-editor.png
-share/icons/hicolor/64x64/actions/artikulate-expression.png
-share/icons/hicolor/64x64/actions/artikulate-paragraph.png
-share/icons/hicolor/64x64/actions/artikulate-sentence.png
-share/icons/hicolor/64x64/actions/artikulate-word.png
 share/icons/hicolor/64x64/apps/artikulate.png
-share/icons/hicolor/scalable/actions/artikulate-course-editor.svgz
-share/icons/hicolor/scalable/actions/artikulate-expression.svgz
-share/icons/hicolor/scalable/actions/artikulate-paragraph.svgz
-share/icons/hicolor/scalable/actions/artikulate-sentence.svgz
-share/icons/hicolor/scalable/actions/artikulate-word.svgz
-share/icons/hicolor/scalable/actions/language-artikulate.svg
 share/icons/hicolor/scalable/apps/artikulate.svg
 share/locale/bs/LC_MESSAGES/artikulate.mo
 share/locale/ca/LC_MESSAGES/artikulate.mo
@@ -145,6 +97,7 @@ share/locale/fi/LC_MESSAGES/artikulate.mo
 share/locale/fr/LC_MESSAGES/artikulate.mo
 share/locale/gl/LC_MESSAGES/artikulate.mo
 share/locale/hu/LC_MESSAGES/artikulate.mo
+share/locale/ia/LC_MESSAGES/artikulate.mo
 share/locale/it/LC_MESSAGES/artikulate.mo
 share/locale/ja/LC_MESSAGES/artikulate.mo
 share/locale/lt/LC_MESSAGES/artikulate.mo

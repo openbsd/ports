@@ -1,16 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/03 05:13:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:26 rsadowski Exp $
 @conflict kdebase-<4
 include/KF5/KCddb/
 include/KF5/KCddb/Categories
 include/KF5/KCddb/Cdinfo
-include/KF5/KCddb/CdinfoDialog
 include/KF5/KCddb/Client
 include/KF5/KCddb/Genres
 include/KF5/KCddb/Kcddb
 include/KF5/KCddb/KcddbConfig
 include/KF5/KCddb/categories.h
 include/KF5/KCddb/cdinfo.h
-include/KF5/KCddb/cdinfodialog.h
 include/KF5/KCddb/client.h
 include/KF5/KCddb/configbase.h
 include/KF5/KCddb/genres.h
@@ -24,7 +22,6 @@ lib/cmake/KF5Cddb/KF5CddbConfigVersion.cmake
 lib/cmake/KF5Cddb/KF5CddbTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Cddb/KF5CddbTargets.cmake
 @lib lib/libKF5Cddb.so.${LIBKF5Cddb_VERSION}
-@lib lib/libKF5CddbWidgets.so.${LIBKF5CddbWidgets_VERSION}
 @so lib/qt5/plugins/kcm_cddb.so
 share/config.kcfg/
 share/config.kcfg/libkcddb5.kcfg
@@ -32,9 +29,6 @@ share/doc/HTML/ca/kcontrol/
 share/doc/HTML/ca/kcontrol/cddbretrieval5/
 share/doc/HTML/ca/kcontrol/cddbretrieval5/index.cache.bz2
 share/doc/HTML/ca/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/ca/kcontrol/cddbretrieval5/kscd13.png
-share/doc/HTML/ca/kcontrol/cddbretrieval5/kscd14.png
-share/doc/HTML/ca/kcontrol/cddbretrieval5/kscd16.png
 share/doc/HTML/de/kcontrol/
 share/doc/HTML/de/kcontrol/cddbretrieval5/
 share/doc/HTML/de/kcontrol/cddbretrieval5/index.cache.bz2
@@ -90,6 +84,7 @@ share/kf5/mkspecs/qt_KCddb.pri
 share/kservices5/libkcddb.desktop
 share/locale/ar/LC_MESSAGES/kcmcddb.mo
 share/locale/ar/LC_MESSAGES/libkcddb.mo
+share/locale/ast/LC_MESSAGES/kcmcddb.mo
 share/locale/bg/LC_MESSAGES/kcmcddb.mo
 share/locale/bg/LC_MESSAGES/libkcddb.mo
 share/locale/bs/LC_MESSAGES/kcmcddb.mo

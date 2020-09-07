@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/03 05:13:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:49:13 rsadowski Exp $
 @conflict dolphin-plugins-<=4.14.3
 @bin bin/dolphin
 @bin bin/servicemenuinstaller
@@ -45,7 +45,6 @@ share/doc/HTML/ca/dolphin/nepomuk-search.png
 share/doc/HTML/ca/dolphin/preferences-general-behavior.png
 share/doc/HTML/ca/dolphin/preferences-navigation.png
 share/doc/HTML/ca/dolphin/preferences-services.png
-share/doc/HTML/ca/dolphin/preferences-startup.png
 share/doc/HTML/ca/dolphin/preferences-trash.png
 share/doc/HTML/ca/dolphin/preferences-viewmodes-icons.png
 share/doc/HTML/ca/dolphin/toolbar-navigation.png
@@ -95,8 +94,27 @@ share/doc/HTML/id/dolphin/
 share/doc/HTML/id/dolphin/index.cache.bz2
 share/doc/HTML/id/dolphin/index.docbook
 share/doc/HTML/it/dolphin/
+share/doc/HTML/it/dolphin/default-ui.png
+share/doc/HTML/it/dolphin/grouping-view.png
 share/doc/HTML/it/dolphin/index.cache.bz2
 share/doc/HTML/it/dolphin/index.docbook
+share/doc/HTML/it/dolphin/locationbar-breadcrumb.png
+share/doc/HTML/it/dolphin/locationbar-context-menu.png
+share/doc/HTML/it/dolphin/locationbar-editable.png
+share/doc/HTML/it/dolphin/locationbar-kioslaves-menu.png
+share/doc/HTML/it/dolphin/locationbar-places-icon.png
+share/doc/HTML/it/dolphin/nepomuk-search-more-options.png
+share/doc/HTML/it/dolphin/nepomuk-search.png
+share/doc/HTML/it/dolphin/preferences-general-behavior.png
+share/doc/HTML/it/dolphin/preferences-navigation.png
+share/doc/HTML/it/dolphin/preferences-services.png
+share/doc/HTML/it/dolphin/preferences-startup.png
+share/doc/HTML/it/dolphin/preferences-trash.png
+share/doc/HTML/it/dolphin/preferences-viewmodes-icons.png
+share/doc/HTML/it/dolphin/toolbar-navigation.png
+share/doc/HTML/it/dolphin/toolbar-view-appearance.png
+share/doc/HTML/it/dolphin/toolbar.png
+share/doc/HTML/it/dolphin/viewproperties-dialog.png
 share/doc/HTML/nl/dolphin/
 share/doc/HTML/nl/dolphin/default-ui.png
 share/doc/HTML/nl/dolphin/index.cache.bz2
@@ -171,12 +189,9 @@ share/doc/HTML/uk/dolphin/preferences-viewmodes-icons.png
 share/doc/HTML/uk/dolphin/toolbar-view-appearance.png
 share/doc/HTML/uk/dolphin/toolbar.png
 share/doc/HTML/uk/dolphin/viewproperties-dialog.png
-share/examples/dolphin-kf5/
-share/examples/dolphin-kf5/xdg/
-share/examples/dolphin-kf5/xdg/servicemenu.knsrc
-@sample ${SYSCONFDIR}/xdg/servicemenu.knsrc
 share/kglobalaccel/
 share/kglobalaccel/org.kde.dolphin.desktop
+share/knsrcfiles/servicemenu.knsrc
 share/kservices5/dolphinpart.desktop
 share/kservices5/kcmdolphingeneral.desktop
 share/kservices5/kcmdolphinnavigation.desktop
@@ -236,9 +251,11 @@ share/locale/km/LC_MESSAGES/dolphin.mo
 share/locale/ko/LC_MESSAGES/dolphin.mo
 share/locale/ko/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/lt/LC_MESSAGES/dolphin.mo
+share/locale/lt/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/lv/LC_MESSAGES/dolphin.mo
 share/locale/lv/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ml/LC_MESSAGES/dolphin.mo
+share/locale/ml/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/mr/LC_MESSAGES/dolphin.mo
 share/locale/nb/LC_MESSAGES/dolphin.mo
 share/locale/nds/LC_MESSAGES/dolphin.mo
@@ -259,6 +276,7 @@ share/locale/ru/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/sk/LC_MESSAGES/dolphin.mo
 share/locale/sk/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/sl/LC_MESSAGES/dolphin.mo
+share/locale/sl/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/sr/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin_servicemenuinstaller.mo

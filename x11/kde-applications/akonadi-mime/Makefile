@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 06:16:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:11 rsadowski Exp $
 
 COMMENT =	PIM Akonadi mime support library
 DISTNAME =	akonadi-mime-${VERSION}
 CATEGORIES =	devel productivity
 
-SHARED_LIBS +=  KF5AkonadiMime            0.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiMime            1.0 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiPrivate
 WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore

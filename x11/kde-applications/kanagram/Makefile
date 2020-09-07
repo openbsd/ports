@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/05 05:40:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:15 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	letter order game
 DISTNAME =	kanagram-${VERSION}
 CATEGORIES =	education x11
-REVISION =	1
 
 HOMEPAGE =	https://edu.kde.org/kanagram/
 

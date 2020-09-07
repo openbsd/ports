@@ -1,16 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/06/05 05:40:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:15 rsadowski Exp $
 @pkgpath x11/kde4/kapptemplate
 @bin bin/kapptemplate
 share/applications/org.kde.kapptemplate.desktop
 share/config.kcfg/
 share/config.kcfg/kapptemplate.kcfg
 share/doc/HTML/ca/kapptemplate/
-share/doc/HTML/ca/kapptemplate/first-page.png
-share/doc/HTML/ca/kapptemplate/fourth-page.png
 share/doc/HTML/ca/kapptemplate/index.cache.bz2
 share/doc/HTML/ca/kapptemplate/index.docbook
-share/doc/HTML/ca/kapptemplate/second-page.png
-share/doc/HTML/ca/kapptemplate/third-page.png
 share/doc/HTML/de/kapptemplate/
 share/doc/HTML/de/kapptemplate/index.cache.bz2
 share/doc/HTML/de/kapptemplate/index.docbook
@@ -27,6 +23,9 @@ share/doc/HTML/es/kapptemplate/index.docbook
 share/doc/HTML/et/kapptemplate/
 share/doc/HTML/et/kapptemplate/index.cache.bz2
 share/doc/HTML/et/kapptemplate/index.docbook
+share/doc/HTML/fr/kapptemplate/
+share/doc/HTML/fr/kapptemplate/index.cache.bz2
+share/doc/HTML/fr/kapptemplate/index.docbook
 share/doc/HTML/it/kapptemplate/
 share/doc/HTML/it/kapptemplate/index.cache.bz2
 share/doc/HTML/it/kapptemplate/index.docbook

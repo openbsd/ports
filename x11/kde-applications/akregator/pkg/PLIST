@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 04:04:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:11 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/akregator
@@ -13,7 +13,8 @@
 @so lib/qt5/plugins/akregator_config_plugins.so
 @so lib/qt5/plugins/akregator_mk4storage_plugin.so
 @so lib/qt5/plugins/akregatorpart.so
-@so lib/qt5/plugins/kontact_akregatorplugin.so
+lib/qt5/plugins/kontact5/
+@so lib/qt5/plugins/kontact5/kontact_akregatorplugin.so
 share/akregator/
 share/akregator/grantleetheme/
 share/akregator/grantleetheme/5.2/
@@ -33,17 +34,13 @@ share/doc/HTML/ca/akregator/advanced-tab.png
 share/doc/HTML/ca/akregator/appearance-tab.png
 share/doc/HTML/ca/akregator/archive-tab.png
 share/doc/HTML/ca/akregator/browser-tab.png
-share/doc/HTML/ca/akregator/feed.png
 share/doc/HTML/ca/akregator/general-tab.png
 share/doc/HTML/ca/akregator/index.cache.bz2
 share/doc/HTML/ca/akregator/index.docbook
 share/doc/HTML/ca/akregator/interceptor-tab.png
-share/doc/HTML/ca/akregator/konq.png
-share/doc/HTML/ca/akregator/konq2.png
 share/doc/HTML/ca/akregator/main-window.png
 share/doc/HTML/ca/akregator/main-window2.png
 share/doc/HTML/ca/akregator/main-window4.png
-share/doc/HTML/ca/akregator/rss.png
 share/doc/HTML/de/akregator/
 share/doc/HTML/de/akregator/index.cache.bz2
 share/doc/HTML/de/akregator/index.docbook
@@ -76,6 +73,9 @@ share/doc/HTML/es/akregator/index.docbook
 share/doc/HTML/et/akregator/
 share/doc/HTML/et/akregator/index.cache.bz2
 share/doc/HTML/et/akregator/index.docbook
+share/doc/HTML/fr/akregator/
+share/doc/HTML/fr/akregator/index.cache.bz2
+share/doc/HTML/fr/akregator/index.docbook
 share/doc/HTML/it/akregator/
 share/doc/HTML/it/akregator/index.cache.bz2
 share/doc/HTML/it/akregator/index.docbook
@@ -130,7 +130,6 @@ share/kservices5/akregator_config_browser.desktop
 share/kservices5/akregator_config_general.desktop
 share/kservices5/akregator_config_plugins.desktop
 share/kservices5/akregator_mk4storage_plugin.desktop
-share/kservices5/akregator_part.desktop
 share/kservices5/feed.protocol
 share/kservices5/kontact/
 share/kservices5/kontact/akregatorplugin.desktop

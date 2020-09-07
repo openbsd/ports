@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/13 17:04:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:11 rsadowski Exp $
 include/KF5/Akonadi/
 include/KF5/Akonadi/Notes/
 include/KF5/Akonadi/Notes/NoteUtils
@@ -26,6 +26,7 @@ share/locale/el/LC_MESSAGES/akonadinotes5.mo
 share/locale/en_GB/LC_MESSAGES/akonadinotes5.mo
 share/locale/es/LC_MESSAGES/akonadinotes5.mo
 share/locale/et/LC_MESSAGES/akonadinotes5.mo
+share/locale/eu/LC_MESSAGES/akonadinotes5.mo
 share/locale/fi/LC_MESSAGES/akonadinotes5.mo
 share/locale/fr/LC_MESSAGES/akonadinotes5.mo
 share/locale/ga/LC_MESSAGES/akonadinotes5.mo
@@ -43,6 +44,7 @@ share/locale/mr/LC_MESSAGES/akonadinotes5.mo
 share/locale/nb/LC_MESSAGES/akonadinotes5.mo
 share/locale/nds/LC_MESSAGES/akonadinotes5.mo
 share/locale/nl/LC_MESSAGES/akonadinotes5.mo
+share/locale/nn/LC_MESSAGES/akonadinotes5.mo
 share/locale/pl/LC_MESSAGES/akonadinotes5.mo
 share/locale/pt/LC_MESSAGES/akonadinotes5.mo
 share/locale/pt_BR/LC_MESSAGES/akonadinotes5.mo

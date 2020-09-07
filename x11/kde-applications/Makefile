@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2020/06/19 04:13:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.60 2020/09/07 14:49:10 rsadowski Exp $
 
      SUBDIR =
 
@@ -201,9 +201,7 @@
      #SUBDIR += kaccounts-integration
      #SUBDIR += kaccounts-providers
      SUBDIR += kalarmcal
-     SUBDIR += kblog
      SUBDIR += kcalutils
-     SUBDIR += kdav
      SUBDIR += kdeedu-data
      SUBDIR += kidentitymanagement
      SUBDIR += kimap
@@ -244,5 +242,9 @@
 
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta
+
+     # Gone upstream?
+     #SUBDIR += kdav
+     #SUBDIR += kblog
 
 .include <bsd.port.subdir.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/13 17:06:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:11 rsadowski Exp $
 @bin bin/akonadi_indexing_agent
 include/KF5/AkonadiSearch/
 include/KF5/AkonadiSearch/Core/
@@ -44,9 +44,9 @@ lib/cmake/KF5AkonadiSearch/KF5AkonadiSearchTargets.cmake
 @so lib/qt5/plugins/akonadi/emailsearchstore.so
 @so lib/qt5/plugins/akonadi/notesearchstore.so
 @so lib/qt5/plugins/kcm_krunner_pimcontacts.so
-@so lib/qt5/plugins/krunner_pimcontacts.so
+lib/qt5/plugins/kf5/krunner/
+@so lib/qt5/plugins/kf5/krunner/krunner_pimcontacts.so
 share/akonadi/agents/akonadiindexingagent.desktop
-share/kservices5/plasma-krunner-pimcontacts.desktop
 share/kservices5/plasma-krunner-pimcontacts_config.desktop
 share/locale/ar/LC_MESSAGES/akonadi_search.mo
 share/locale/ca/LC_MESSAGES/akonadi_search.mo

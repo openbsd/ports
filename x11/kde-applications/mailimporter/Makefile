@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/21 18:12:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:28 rsadowski Exp $
 
 COMMENT =	KDE PIM mail importer library
 DISTNAME =	mailimporter-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  KF5MailImporter              0.0 # 5.13.2
-SHARED_LIBS +=  KF5MailImporterAkonadi       0.0 # 5.13.2
+SHARED_LIBS +=  KF5MailImporter              1.0 # 5.13.2
+SHARED_LIBS +=  KF5MailImporterAkonadi       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5Archive
-WANTLIB += KF5ConfigCore KF5CoreAddons KF5I18n KF5ItemModels KF5Libkdepim
-WANTLIB += KF5Mime Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
+WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5ItemModels
+WANTLIB += KF5KIOCore KF5Mime KF5PimCommon KF5Service KF5WidgetsAddons
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 
@@ -27,7 +29,8 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kitemmodels \
 		x11/kde-applications/libkdepim \
 		x11/kde-applications/akonadi \
-		x11/kde-applications/kmime
+		x11/kde-applications/kmime \
+		x11/kde-applications/pimcommon
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/05 05:40:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:13 rsadowski Exp $
 
 COMMENT =	CVS GUI for KDE
 DISTNAME =	cervisia-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Pty KF5Service
-WANTLIB += KF5SonnetUi KF5Su KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Pty
+WANTLIB += KF5Service KF5SonnetUi KF5Su KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

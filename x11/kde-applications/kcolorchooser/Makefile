@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/05 05:40:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:16 rsadowski Exp $
 
 COMMENT =	KDE color selector
 DISTNAME =	kcolorchooser-${VERSION}
 CATEGORIES =	x11 graphics
-REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/kcolorchooser/
 

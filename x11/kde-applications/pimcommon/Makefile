@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/27 16:13:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:29 rsadowski Exp $
 
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  KF5PimCommon              0.0 # 5.13.3
-SHARED_LIBS +=  KF5PimCommonAkonadi       0.0 # 5.13.3
+SHARED_LIBS +=  KF5PimCommon              2.0 # 5.13.3
+SHARED_LIBS +=  KF5PimCommonAkonadi       2.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiWidgets KF5Archive KF5Attica KF5Auth KF5AuthCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5DBusAddons
-WANTLIB += KF5I18n KF5IMAP KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5Libkdepim KF5LibkdepimAkonadi KF5Mime
-WANTLIB += KF5NewStuff KF5NewStuffCore KF5PimTextEdit KF5Purpose
-WANTLIB += KF5PurposeWidgets KF5Service KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml m
+WANTLIB += KF5AkonadiSearchPIM KF5AkonadiWidgets KF5Archive KF5Attica
+WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5I18n KF5IMAP KF5ItemModels KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Ldap
+WANTLIB += KF5Libkdepim KF5Mime KF5NewStuff KF5NewStuffCore KF5PimTextEdit
+WANTLIB += KF5Purpose KF5PurposeWidgets KF5Service KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
+WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
 
@@ -47,10 +47,13 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kxmlgui \
 		devel/kf5/purpose \
 		x11/kde-applications/akonadi \
+		x11/kde-applications/akonadi-search \
+		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/kimap \
 		x11/kde-applications/kmime \
 		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/libkdepim
+		x11/kde-applications/libkdepim \
+		x11/kde-applications/kldap
 
 TEST_IS_INTERACTIVE =	X11
 

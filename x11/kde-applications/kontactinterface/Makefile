@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 19:44:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:23 rsadowski Exp $
 
 COMMENT =	KDE PIM kontact plugin interface library
 DISTNAME =	kontactinterface-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5KontactInterface       0.0 # 5.13.2
+SHARED_LIBS +=  KF5KontactInterface       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Parts
-WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Parts KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml m
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/13 20:45:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:27 rsadowski Exp $
 include/KF5/KManageSieve/
 include/KF5/KManageSieve/SieveJob
 include/KF5/KSieveUi/
@@ -72,9 +72,18 @@ share/doc/HTML/en/kioslave5/sieve/index.docbook
 share/doc/HTML/es/kioslave5/sieve/
 share/doc/HTML/es/kioslave5/sieve/index.cache.bz2
 share/doc/HTML/es/kioslave5/sieve/index.docbook
+share/doc/HTML/et/kioslave5/sieve/
+share/doc/HTML/et/kioslave5/sieve/index.cache.bz2
+share/doc/HTML/et/kioslave5/sieve/index.docbook
+share/doc/HTML/fr/kioslave5/sieve/
+share/doc/HTML/fr/kioslave5/sieve/index.cache.bz2
+share/doc/HTML/fr/kioslave5/sieve/index.docbook
 share/doc/HTML/it/kioslave5/sieve/
 share/doc/HTML/it/kioslave5/sieve/index.cache.bz2
 share/doc/HTML/it/kioslave5/sieve/index.docbook
+share/doc/HTML/ko/kioslave5/sieve/
+share/doc/HTML/ko/kioslave5/sieve/index.cache.bz2
+share/doc/HTML/ko/kioslave5/sieve/index.docbook
 share/doc/HTML/nl/kioslave5/sieve/
 share/doc/HTML/nl/kioslave5/sieve/index.cache.bz2
 share/doc/HTML/nl/kioslave5/sieve/index.docbook

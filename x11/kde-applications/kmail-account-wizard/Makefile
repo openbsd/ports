@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/25 03:29:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:21 rsadowski Exp $
 
 COMMENT =	KMail account wizard
 DISTNAME =	kmail-account-wizard-${VERSION}
 CATEGORIES =	net www
-REVISION =	1
 
-SHARED_LIBS +=  kmailprivate       0.0 # 5.13.2
+SHARED_LIBS +=  kmailprivate       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF5AkonadiCore KF5AkonadiMime
 WANTLIB += KF5AkonadiWidgets KF5Attica KF5Auth KF5AuthCore KF5Codecs

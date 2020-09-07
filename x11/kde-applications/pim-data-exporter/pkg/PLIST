@@ -1,13 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 03:32:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:29 rsadowski Exp $
 @bin bin/pimdataexporter
 @bin bin/pimdataexporterconsole
 @lib lib/libpimdataexporterprivate.so.${LIBpimdataexporterprivate_VERSION}
 share/applications/org.kde.pimdataexporter.desktop
 share/config.kcfg/pimdataexporterglobalconfig.kcfg
+share/doc/HTML/ca/pimsettingexporter/
+share/doc/HTML/ca/pimsettingexporter/index.cache.bz2
+share/doc/HTML/ca/pimsettingexporter/index.docbook
+share/doc/HTML/ca/pimsettingexporter/selection-dialog.png
+share/doc/HTML/de/pimsettingexporter/
+share/doc/HTML/de/pimsettingexporter/index.cache.bz2
+share/doc/HTML/de/pimsettingexporter/index.docbook
 share/doc/HTML/en/pimdataexporter/
 share/doc/HTML/en/pimdataexporter/index.cache.bz2
 share/doc/HTML/en/pimdataexporter/index.docbook
 share/doc/HTML/en/pimdataexporter/selection-dialog.png
+share/doc/HTML/es/pimsettingexporter/
+share/doc/HTML/es/pimsettingexporter/index.cache.bz2
+share/doc/HTML/es/pimsettingexporter/index.docbook
+share/doc/HTML/et/pimsettingexporter/
+share/doc/HTML/et/pimsettingexporter/index.cache.bz2
+share/doc/HTML/et/pimsettingexporter/index.docbook
+share/doc/HTML/it/pimsettingexporter/
+share/doc/HTML/it/pimsettingexporter/index.cache.bz2
+share/doc/HTML/it/pimsettingexporter/index.docbook
+share/doc/HTML/nl/pimsettingexporter/
+share/doc/HTML/nl/pimsettingexporter/index.cache.bz2
+share/doc/HTML/nl/pimsettingexporter/index.docbook
+share/doc/HTML/pt/pimsettingexporter/
+share/doc/HTML/pt/pimsettingexporter/index.cache.bz2
+share/doc/HTML/pt/pimsettingexporter/index.docbook
+share/doc/HTML/pt_BR/pimsettingexporter/
+share/doc/HTML/pt_BR/pimsettingexporter/index.cache.bz2
+share/doc/HTML/pt_BR/pimsettingexporter/index.docbook
+share/doc/HTML/sv/pimsettingexporter/
+share/doc/HTML/sv/pimsettingexporter/index.cache.bz2
+share/doc/HTML/sv/pimsettingexporter/index.docbook
+share/doc/HTML/uk/pimsettingexporter/
+share/doc/HTML/uk/pimsettingexporter/index.cache.bz2
+share/doc/HTML/uk/pimsettingexporter/index.docbook
 share/kconf_update/pimsettingexporter-15.08-kickoff.sh
 share/kconf_update/pimsettingexporter.upd
 share/locale/ar/LC_MESSAGES/pimdataexporter.mo

@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.14 2020/08/20 18:00:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/09/07 14:49:28 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
-REVISION =	5
 
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=  Okular5Core               1.0 # 9.0
+SHARED_LIBS +=  Okular5Core               2.0 # 9.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JS KF5JSApi KF5JobWidgets
-WANTLIB += KF5KExiv2 KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
-WANTLIB += KF5Parts KF5Pty KF5Purpose KF5PurposeWidgets KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5ThreadWeaver
+WANTLIB += KF5KExiv2 KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Parts KF5Pty KF5Purpose KF5PurposeWidgets
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5ThreadWeaver
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5Xml c chm djvulibre

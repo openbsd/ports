@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/05 05:40:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:16 rsadowski Exp $
 
 COMMENT =	profile data visualization tool
 DISTNAME =	kcachegrind-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	2
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kcachegrind
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5Service KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

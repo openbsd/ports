@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/20 18:00:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:26 rsadowski Exp $
 
 COMMENT =	library for interfacing with CDs
 DISTNAME =	libkcompactdisc-${VERSION}
 PKGNAME =	libkcompactdisc-kf5-${VERSION}
 CATEGORIES =	devel multimedia
-REVISION =	1
 
-SHARED_LIBS +=  KF5CompactDisc            1.0 # 5.0
+SHARED_LIBS +=  KF5CompactDisc            2.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n KF5Solid Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Widgets m phonon4qt5

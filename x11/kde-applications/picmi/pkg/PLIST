@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
 @pkgpath x11/kde4/picmi
 @bin bin/picmi
 share/applications/org.kde.picmi.desktop
@@ -69,6 +69,7 @@ share/locale/kk/LC_MESSAGES/picmi.mo
 share/locale/ko/LC_MESSAGES/picmi.mo
 share/locale/lt/LC_MESSAGES/picmi.mo
 share/locale/lv/LC_MESSAGES/picmi.mo
+share/locale/ml/LC_MESSAGES/picmi.mo
 share/locale/mr/LC_MESSAGES/picmi.mo
 share/locale/nb/LC_MESSAGES/picmi.mo
 share/locale/nds/LC_MESSAGES/picmi.mo
@@ -112,11 +113,13 @@ share/picmi/levels/default/crocodile.xpm
 share/picmi/levels/default/elephant.xpm
 share/picmi/levels/default/halloween.xpm
 share/picmi/levels/default/hourglass.xpm
+share/picmi/levels/default/house.xpm
 share/picmi/levels/default/mobile_phone.xpm
 share/picmi/levels/default/panda.xpm
 share/picmi/levels/default/phone.xpm
 share/picmi/levels/default/picmi.xpm
 share/picmi/levels/default/pirate_dog.xpm
+share/picmi/levels/default/pirate_ship.xpm
 share/picmi/levels/default/policeman.xpm
 share/picmi/levels/default/robot.xpm
 share/picmi/levels/default/santa_claus.xpm
@@ -129,3 +132,4 @@ share/picmi/themes/picmi.png
 share/picmi/themes/picmi.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories5/picmi.categories

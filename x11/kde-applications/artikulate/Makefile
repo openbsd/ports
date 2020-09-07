@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/03 05:13:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:12 rsadowski Exp $
 
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
 CATEGORIES =	education
-REVISION =	1
 
-SHARED_LIBS +=  artikulatecore            1.0 # 0.0
-SHARED_LIBS +=  artikulatelearnerprofile  1.0 # 0.0
-SHARED_LIBS +=  artikulatesound           1.0 # 0.0
+SHARED_LIBS +=  artikulatecore            2.0 # 0.0
+SHARED_LIBS +=  artikulatelearnerprofile  2.0 # 0.0
+SHARED_LIBS +=  artikulatesound           2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

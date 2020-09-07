@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/21 18:12:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:11 rsadowski Exp $
 
 COMMENT =	PIM Akonadi contacts support library
 DISTNAME =	akonadi-contacts-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  KF5AkonadiContact         0.0 # 5.13.2
 SHARED_LIBS +=  KF5ContactEditor          0.0 # 5.13.2
@@ -11,11 +10,11 @@ SHARED_LIBS +=  KF5ContactEditor          0.0 # 5.13.2
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiWidgets
 WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemModels KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5Mime KF5Prison KF5Service
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml m
+WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Mime KF5Prison KF5Service
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -35,6 +34,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kitemmodels \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/prison \
 		devel/kf5/sonnet \

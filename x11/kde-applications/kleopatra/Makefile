@@ -3,10 +3,9 @@
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
 CATEGORIES =	security x11
-REVISION =	2
 
-SHARED_LIBS +=  kleopatraclientcore     0.0 # 1.3.0
-SHARED_LIBS +=  kleopatraclientgui      0.0 # 1.3.0
+SHARED_LIBS +=  kleopatraclientcore     1.0 # 1.3.0
+SHARED_LIBS +=  kleopatraclientgui      1.0 # 1.3.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash

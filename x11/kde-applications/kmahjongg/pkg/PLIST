@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:21 rsadowski Exp $
 @pkgpath x11/kde4/kmahjongg
 @bin bin/kmahjongg
 share/applications/org.kde.kmahjongg.desktop
@@ -292,6 +292,7 @@ share/locale/km/LC_MESSAGES/kmahjongg.mo
 share/locale/ko/LC_MESSAGES/kmahjongg.mo
 share/locale/lt/LC_MESSAGES/kmahjongg.mo
 share/locale/lv/LC_MESSAGES/kmahjongg.mo
+share/locale/ml/LC_MESSAGES/kmahjongg.mo
 share/locale/mr/LC_MESSAGES/kmahjongg.mo
 share/locale/nb/LC_MESSAGES/kmahjongg.mo
 share/locale/nds/LC_MESSAGES/kmahjongg.mo

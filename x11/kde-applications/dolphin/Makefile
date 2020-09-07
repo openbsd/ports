@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.17 2020/08/20 18:00:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2020/09/07 14:49:13 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	2
 
-SHARED_LIBS +=  dolphinprivate            1.0 # 5.0
-SHARED_LIBS +=  dolphinvcs                1.0 # 5.0
+SHARED_LIBS +=  dolphinprivate            2.0 # 5.0
+SHARED_LIBS +=  dolphinvcs                2.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
-WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5Parts
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m phonon4qt5
+WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Notifications
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += c m phonon4qt5
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/14 03:29:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:29 rsadowski Exp $
 
 COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  sieveeditor       0.0 # 5.13.2
+SHARED_LIBS +=  sieveeditor       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

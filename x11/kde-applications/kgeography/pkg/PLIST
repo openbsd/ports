@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:18 rsadowski Exp $
 @pkgpath x11/kde4/kgeography
 @bin bin/kgeography
 share/applications/org.kde.kgeography.desktop
@@ -421,30 +421,7 @@ share/kgeography/flags/estonia/Vorumaa_flag.png
 share/kgeography/flags/ethiopia.png
 share/kgeography/flags/fiji.png
 share/kgeography/flags/finland.png
-share/kgeography/flags/france/
 share/kgeography/flags/france.png
-share/kgeography/flags/france/alsace.png
-share/kgeography/flags/france/aquitaine.png
-share/kgeography/flags/france/auvergne.png
-share/kgeography/flags/france/basse_normandie.png
-share/kgeography/flags/france/bourgogne.png
-share/kgeography/flags/france/bretagne.png
-share/kgeography/flags/france/centre_val_de_loire.png
-share/kgeography/flags/france/champagne-ardennes.png
-share/kgeography/flags/france/corse.png
-share/kgeography/flags/france/franche_comte.png
-share/kgeography/flags/france/haute_normandie.png
-share/kgeography/flags/france/ile_de_france.png
-share/kgeography/flags/france/languedoc_roussillon.png
-share/kgeography/flags/france/limousin.png
-share/kgeography/flags/france/lorraine.png
-share/kgeography/flags/france/midi_pyrenees.png
-share/kgeography/flags/france/nord-pas_de_calais.png
-share/kgeography/flags/france/pays_de_la_loire.png
-share/kgeography/flags/france/picardie.png
-share/kgeography/flags/france/poitou_charentes.png
-share/kgeography/flags/france/provence_alpes_cote_d_azur.png
-share/kgeography/flags/france/rhone_alpes.png
 share/kgeography/flags/french_polynesia.png
 share/kgeography/flags/gabon.png
 share/kgeography/flags/gambia.png

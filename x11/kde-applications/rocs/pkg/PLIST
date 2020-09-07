@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
 @pkgpath x11/kde4/rocs
 @bin bin/rocs
 include/rocs/
@@ -22,26 +22,8 @@ share/applications/org.kde.rocs.desktop
 share/config.kcfg/
 share/config.kcfg/rocs.kcfg
 share/doc/HTML/ca/rocs/
-share/doc/HTML/ca/rocs/apiConsole.docbook
-share/doc/HTML/ca/rocs/apiDatastructure.docbook
-share/doc/HTML/ca/rocs/apiGraphstructure.docbook
-share/doc/HTML/ca/rocs/apiLinkedListstructure.docbook
-share/doc/HTML/ca/rocs/apiRootedTreestructure.docbook
-share/doc/HTML/ca/rocs/chapterImportExport.docbook
-share/doc/HTML/ca/rocs/hi22-action-rocsalignbottom.png
-share/doc/HTML/ca/rocs/hi22-action-rocsaligncircle.png
-share/doc/HTML/ca/rocs/hi22-action-rocsalignhmiddle.png
-share/doc/HTML/ca/rocs/hi22-action-rocsalignleft.png
-share/doc/HTML/ca/rocs/hi22-action-rocsalignright.png
-share/doc/HTML/ca/rocs/hi22-action-rocsaligntop.png
-share/doc/HTML/ca/rocs/hi22-action-rocsaligntree.png
-share/doc/HTML/ca/rocs/hi22-action-rocsalignvmiddle.png
-share/doc/HTML/ca/rocs/hi22-action-rocsproperties.png
 share/doc/HTML/ca/rocs/index.cache.bz2
 share/doc/HTML/ca/rocs/index.docbook
-share/doc/HTML/ca/rocs/rocs-control-engine-debug.png
-share/doc/HTML/ca/rocs/rocs-control-engine-step.png
-share/doc/HTML/ca/rocs/scripting-api.docbook
 share/doc/HTML/de/rocs/
 share/doc/HTML/de/rocs/index.cache.bz2
 share/doc/HTML/de/rocs/index.docbook
@@ -100,25 +82,16 @@ share/doc/HTML/pt/rocs/
 share/doc/HTML/pt/rocs/index.cache.bz2
 share/doc/HTML/pt/rocs/index.docbook
 share/doc/HTML/pt_BR/rocs/
-share/doc/HTML/pt_BR/rocs/apiConsole.docbook
-share/doc/HTML/pt_BR/rocs/apiDatastructure.docbook
-share/doc/HTML/pt_BR/rocs/apiGraphstructure.docbook
-share/doc/HTML/pt_BR/rocs/apiLinkedListstructure.docbook
-share/doc/HTML/pt_BR/rocs/apiRootedTreestructure.docbook
-share/doc/HTML/pt_BR/rocs/chapterImportExport.docbook
 share/doc/HTML/pt_BR/rocs/index.cache.bz2
 share/doc/HTML/pt_BR/rocs/index.docbook
 share/doc/HTML/sv/rocs/
 share/doc/HTML/sv/rocs/index.cache.bz2
 share/doc/HTML/sv/rocs/index.docbook
 share/doc/HTML/uk/rocs/
-share/doc/HTML/uk/rocs/document-selector.png
 share/doc/HTML/uk/rocs/index.cache.bz2
 share/doc/HTML/uk/rocs/index.docbook
 share/doc/HTML/uk/rocs/rocs-interfaces.png
 share/doc/HTML/uk/rocs/rocs-screenshot.png
-share/doc/HTML/uk/rocs/rocs-toolbar-alignment.png
-share/doc/HTML/uk/rocs/rocs-toolbar-main.png
 share/icons/hicolor/128x128/apps/rocs.png
 share/icons/hicolor/16x16/apps/rocs.png
 share/icons/hicolor/22x22/apps/rocs.png
@@ -239,8 +212,6 @@ share/rocs/kernelapi/edge.xml
 share/rocs/kernelapi/node.xml
 share/rocs/plugin/
 share/rocs/plugin/apidoc/
-share/rocs/plugin/apidoc/bootstrap-apiview.css
-share/rocs/plugin/apidoc/bootstrap.css
 share/rocs/plugin/apidoc/objectApi.html
 share/rocs/plugin/apidoc/overview.html
 share/rocs/schemes/

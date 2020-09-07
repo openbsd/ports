@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/03 05:13:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/09/07 14:49:23 rsadowski Exp $
 
 COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
-SHARED_LIBS +=  KF5PimTextEdit            1.0 # 5.6
+SHARED_LIBS +=  KF5PimTextEdit            3.0 # 5.6
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_TextDocument KF5Auth KF5AuthCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5Service KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5SyntaxHighlighting KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Service KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5TextToSpeech Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -49,7 +48,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
-		x11/grantlee-qt5 \
 		x11/qt5/qtspeech
 
 TEST_IS_INTERACTIVE =	X11

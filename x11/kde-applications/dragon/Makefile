@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/20 18:00:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:13 rsadowski Exp $
 
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${VERSION}
 CATEGORIES =	multimedia
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Service
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Service
 WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m phonon4qt5

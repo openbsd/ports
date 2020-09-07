@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/14 20:35:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:49:21 rsadowski Exp $
 @conflict kdepim-*
 @bin bin/kleopatra
 @bin bin/kwatchgnupg
@@ -55,7 +55,6 @@ share/doc/HTML/pt/kleopatra/index.docbook
 share/doc/HTML/pt/kwatchgnupg/
 share/doc/HTML/pt/kwatchgnupg/index.cache.bz2
 share/doc/HTML/pt/kwatchgnupg/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kleopatra/
 share/doc/HTML/pt_BR/kleopatra/index.cache.bz2
 share/doc/HTML/pt_BR/kleopatra/index.docbook
@@ -81,7 +80,6 @@ share/icons/hicolor/256x256/apps/kleopatra.png
 share/icons/hicolor/32x32/apps/kleopatra.png
 share/icons/hicolor/48x48/apps/kleopatra.png
 share/icons/hicolor/64x64/apps/kleopatra.png
-share/kconf_update/
 share/kconf_update/kleopatra-15.08-kickoff.sh
 share/kconf_update/kleopatra.upd
 share/kleopatra/
@@ -90,7 +88,6 @@ share/kleopatra/pics/kleopatra_splashscreen.png
 share/kleopatra/pics/kleopatra_splashscreen.svgz
 share/kleopatra/pics/kleopatra_wizard.png
 share/kleopatra/pics/kleopatra_wizard.svgz
-share/kservices5/
 share/kservices5/kleopatra_config_appear.desktop
 share/kservices5/kleopatra_config_cryptooperations.desktop
 share/kservices5/kleopatra_config_dirserv.desktop

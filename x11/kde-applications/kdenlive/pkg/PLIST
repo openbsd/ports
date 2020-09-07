@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/05/20 10:03:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:17 rsadowski Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
@@ -11,12 +11,9 @@ share/config.kcfg/kdenlivesettings.kcfg
 share/doc/HTML/ca/kdenlive/
 share/doc/HTML/ca/kdenlive/index.cache.bz2
 share/doc/HTML/ca/kdenlive/index.docbook
-share/doc/HTML/ca/kdenlive/kdenlive_quickstart-overlap-clips.png
 share/doc/HTML/ca/kdenlive/kdenlive_quickstart-renderer.png
-share/doc/HTML/ca/kdenlive/kdenlive_quickstart-resize-marker.png
 share/doc/HTML/ca/kdenlive/kdenlive_quickstart-save-project.png
 share/doc/HTML/ca/kdenlive/kdenlive_quickstart-timeline-clips.png
-share/doc/HTML/ca/kdenlive/kdenlive_quickstart-timelinecursor.png
 share/doc/HTML/de/kdenlive/
 share/doc/HTML/de/kdenlive/index.cache.bz2
 share/doc/HTML/de/kdenlive/index.docbook
@@ -127,6 +124,8 @@ share/doc/Kdenlive/README.md
 share/examples/kdenlive/
 share/examples/kdenlive/xdg/
 share/examples/kdenlive/xdg/kdenlive_keyboardschemes.knsrc
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/kdenlive_keyboardschemes.knsrc
 share/examples/kdenlive/xdg/kdenlive_renderprofiles.knsrc
 @sample ${SYSCONFDIR}/xdg/kdenlive_renderprofiles.knsrc
 share/examples/kdenlive/xdg/kdenlive_titles.knsrc
@@ -246,6 +245,7 @@ share/kdenlive/effects/crop.xml
 share/kdenlive/effects/dust.xml
 share/kdenlive/effects/dynamic_loudness.xml
 share/kdenlive/effects/dynamictext.xml
+share/kdenlive/effects/equalizer.xml
 share/kdenlive/effects/fade_from_black.xml
 share/kdenlive/effects/fade_to_black.xml
 share/kdenlive/effects/fadein.xml
@@ -390,6 +390,7 @@ share/kdenlive/generators/
 share/kdenlive/generators/count.xml
 share/kdenlive/generators/frei0r_test_pat_b.xml
 share/kdenlive/generators/noise.xml
+share/kdenlive/kdenlivedefaultlayouts.rc
 share/kdenlive/kdenliveeffectscategory.rc
 share/kdenlive/kdenlivetranscodingrc
 share/kdenlive/lumas/
@@ -444,6 +445,8 @@ share/kdenlive/profiles/dci_2160p_30
 share/kdenlive/profiles/dci_2160p_50
 share/kdenlive/profiles/dci_2160p_5994
 share/kdenlive/profiles/dci_2160p_60
+share/kdenlive/shortcuts/
+share/kdenlive/shortcuts/Premiere
 share/kdenlive/timeline_athumbs.png
 share/kdenlive/timeline_avthumbs.png
 share/kdenlive/timeline_nothumbs.png

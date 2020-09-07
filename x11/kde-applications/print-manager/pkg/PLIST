@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
 @pkgpath x11/kde4/print-manager
 @bin bin/configure-printer
 @bin bin/kde-add-printer
 @bin bin/kde-print-queue
 @lib lib/libkcupslib.so.${LIBkcupslib_VERSION}
 @so lib/qt5/plugins/kcm_printer_manager.so
-@so lib/qt5/plugins/kded_printmanager.so
+@so lib/qt5/plugins/kf5/kded/printmanager.so
 lib/qt5/qml/org/kde/plasma/
 lib/qt5/qml/org/kde/plasma/printmanager/
 @so lib/qt5/qml/org/kde/plasma/printmanager/libprintmanager.so
@@ -15,11 +15,11 @@ share/applications/org.kde.PrintQueue.desktop
 share/applications/org.kde.kde-add-printer.desktop
 share/knotifications5/printmanager.notifyrc
 share/kservices5/kcm_printer_manager.desktop
-share/kservices5/kded/
-share/kservices5/kded/printmanager.desktop
 share/kservices5/plasma-applet-org.kde.plasma.printmanager.desktop
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ar/LC_MESSAGES/print-manager.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
+share/locale/ast/LC_MESSAGES/print-manager.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/bg/LC_MESSAGES/print-manager.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
@@ -123,7 +123,6 @@ share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PopupDialog.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PrinterItem.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/StatusView.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/config.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/printmanager.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/metadata.desktop

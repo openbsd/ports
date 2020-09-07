@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:13 rsadowski Exp $
 @pkgpath x11/kde4/cervisia
 @bin bin/cervisia
 @bin bin/cvsaskpass
@@ -16,19 +16,12 @@ share/dbus-1/interfaces/org.kde.cervisia5.cvsloginjob.xml
 share/dbus-1/interfaces/org.kde.cervisia5.cvsservice.xml
 share/dbus-1/interfaces/org.kde.cervisia5.repository.xml
 share/doc/HTML/ca/cervisia/
-share/doc/HTML/ca/cervisia/annotate.png
 share/doc/HTML/ca/cervisia/checkout.png
-share/doc/HTML/ca/cervisia/commit.png
-share/doc/HTML/ca/cervisia/diff.png
-share/doc/HTML/ca/cervisia/history.png
 share/doc/HTML/ca/cervisia/import.png
 share/doc/HTML/ca/cervisia/index.cache.bz2
 share/doc/HTML/ca/cervisia/index.docbook
-share/doc/HTML/ca/cervisia/logtree.png
-share/doc/HTML/ca/cervisia/mainview.png
 share/doc/HTML/ca/cervisia/popup.png
 share/doc/HTML/ca/cervisia/repositories.png
-share/doc/HTML/ca/cervisia/resolve.png
 share/doc/HTML/de/cervisia/
 share/doc/HTML/de/cervisia/index.cache.bz2
 share/doc/HTML/de/cervisia/index.docbook

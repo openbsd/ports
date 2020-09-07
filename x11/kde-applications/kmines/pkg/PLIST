@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:22 rsadowski Exp $
 @conflict kdegames-*
 @pkgpath x11/kde4/kmines
 @bin bin/kmines
@@ -131,3 +131,4 @@ share/metainfo/
 share/metainfo/org.kde.kmines.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/kmines.categories

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:14 rsadowski Exp $
 @pkgpath x11/kde4/juk
 @bin bin/juk
 share/applications/org.kde.juk.desktop
@@ -54,6 +54,12 @@ share/doc/HTML/fr/juk/index.docbook
 share/doc/HTML/it/juk/
 share/doc/HTML/it/juk/index.cache.bz2
 share/doc/HTML/it/juk/index.docbook
+share/doc/HTML/it/juk/juk-adv-search.png
+share/doc/HTML/it/juk/juk-file-renamer.png
+share/doc/HTML/it/juk/juk-main.png
+share/doc/HTML/it/juk/juk-manage-folders.png
+share/doc/HTML/it/juk/juk-tag-guesser.png
+share/doc/HTML/it/juk/toolbar.png
 share/doc/HTML/nl/juk/
 share/doc/HTML/nl/juk/index.cache.bz2
 share/doc/HTML/nl/juk/index.docbook
@@ -102,8 +108,8 @@ share/doc/HTML/uk/juk/index.docbook
 share/doc/HTML/uk/juk/juk-adv-search.png
 share/doc/HTML/uk/juk/juk-file-renamer.png
 share/doc/HTML/uk/juk/juk-main.png
-share/doc/HTML/uk/juk/juk-mainage-folders.png
-share/doc/HTML/uk/juk/juk-tag-gusser.png
+share/doc/HTML/uk/juk/juk-manage-folders.png
+share/doc/HTML/uk/juk/juk-tag-guesser.png
 share/icons/hicolor/128x128/apps/juk.png
 share/icons/hicolor/16x16/apps/juk.png
 share/icons/hicolor/32x32/apps/juk.png

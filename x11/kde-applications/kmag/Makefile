@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/06/05 05:40:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/09/07 14:49:21 rsadowski Exp $
 
 COMMENT =	KDE screen magnifier
 DISTNAME =	kmag-${VERSION}
 CATEGORIES =	x11
-REVISION =	2
 
 HOMEPAGE =	https://www.kde.org/applications/utilities/kmag/
 

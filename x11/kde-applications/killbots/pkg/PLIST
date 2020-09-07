@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:19 rsadowski Exp $
 @pkgpath x11/kde4/killbots
 @bin bin/killbots
 share/applications/org.kde.killbots.desktop
@@ -102,6 +102,7 @@ share/locale/km/LC_MESSAGES/killbots.mo
 share/locale/ko/LC_MESSAGES/killbots.mo
 share/locale/lt/LC_MESSAGES/killbots.mo
 share/locale/lv/LC_MESSAGES/killbots.mo
+share/locale/ml/LC_MESSAGES/killbots.mo
 share/locale/mr/LC_MESSAGES/killbots.mo
 share/locale/nb/LC_MESSAGES/killbots.mo
 share/locale/nds/LC_MESSAGES/killbots.mo
@@ -125,3 +126,4 @@ share/metainfo/
 share/metainfo/org.kde.killbots.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/killbots.categories

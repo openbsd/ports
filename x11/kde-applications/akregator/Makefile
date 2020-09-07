@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/28 18:59:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:11 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
-REVISION =	2
 
-SHARED_LIBS +=  akregatorinterfaces       0.0 # 5.13.2
-SHARED_LIBS +=  akregatorprivate          0.0 # 5.13.2
+SHARED_LIBS +=  akregatorinterfaces       1.0 # 5.13.2
+SHARED_LIBS +=  akregatorprivate          1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5Crash KF5GrantleeTheme KF5I18n KF5IconThemes
-WANTLIB += KF5ItemModels KF5JobWidgets KF5KCMUtils KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5KontactInterface KF5Libkdepim
-WANTLIB += KF5Libkleo KF5MessageCore KF5MessageViewer KF5Mime
-WANTLIB += KF5MimeTreeParser KF5Notifications KF5NotifyConfig
-WANTLIB += KF5Parts KF5PimCommon KF5PimTextEdit KF5Service KF5SonnetUi
-WANTLIB += KF5Syndication KF5TextWidgets KF5WebEngineViewer KF5WidgetsAddons
+WANTLIB += KF5CoreAddons KF5Crash KF5GrantleeTheme KF5I18n KF5ItemModels
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5KontactInterface KF5Libkdepim KF5Libkleo KF5MessageCore
+WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5Notifications
+WANTLIB += KF5NotifyConfig KF5Parts KF5PimCommon KF5PimTextEdit
+WANTLIB += KF5Service KF5SonnetUi KF5Syndication KF5TextWidgets
+WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5WebChannel
 WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
@@ -74,6 +73,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
 		devel/kf5/syndication \
+		devel/kf5/prison \
 		security/gpgme,-qt \
 		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \

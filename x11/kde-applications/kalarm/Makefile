@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/08/20 18:00:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:14 rsadowski Exp $
 
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5AlarmCalendar KF5Auth
@@ -11,9 +10,9 @@ WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5CalendarUtils
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GlobalAccel KF5GuiAddons KF5Holidays
-WANTLIB += KF5I18n KF5IconThemes KF5IdentityManagement KF5ItemModels
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Libkdepim KF5MailTransport KF5MailTransportAkonadi
+WANTLIB += KF5I18n KF5IdentityManagement KF5ItemModels KF5ItemViews
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5MailTransport KF5MailTransportAkonadi
 WANTLIB += KF5Mime KF5Notifications KF5PimCommon KF5PimTextEdit
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent

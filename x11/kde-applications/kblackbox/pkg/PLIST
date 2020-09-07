@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:15 rsadowski Exp $
 @pkgpath x11/kde4/kblackbox
 @bin bin/kblackbox
 share/applications/org.kde.kblackbox.desktop
@@ -15,6 +15,9 @@ share/doc/HTML/es/kblackbox/index.docbook
 share/doc/HTML/et/kblackbox/
 share/doc/HTML/et/kblackbox/index.cache.bz2
 share/doc/HTML/et/kblackbox/index.docbook
+share/doc/HTML/fr/kblackbox/
+share/doc/HTML/fr/kblackbox/index.cache.bz2
+share/doc/HTML/fr/kblackbox/index.docbook
 share/doc/HTML/it/kblackbox/
 share/doc/HTML/it/kblackbox/index.cache.bz2
 share/doc/HTML/it/kblackbox/index.docbook
@@ -78,6 +81,7 @@ share/locale/km/LC_MESSAGES/kblackbox.mo
 share/locale/ko/LC_MESSAGES/kblackbox.mo
 share/locale/lt/LC_MESSAGES/kblackbox.mo
 share/locale/lv/LC_MESSAGES/kblackbox.mo
+share/locale/ml/LC_MESSAGES/kblackbox.mo
 share/locale/mr/LC_MESSAGES/kblackbox.mo
 share/locale/nb/LC_MESSAGES/kblackbox.mo
 share/locale/nds/LC_MESSAGES/kblackbox.mo

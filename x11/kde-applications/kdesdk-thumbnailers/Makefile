@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/05 05:40:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:18 rsadowski Exp $
 
 COMMENT =	KDE thumbnail generators for development files
 DISTNAME =	kdesdk-thumbnailers-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
 HOMEPAGE =	https://kde.org/applications/development/
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5CoreAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets
-WANTLIB += KF5Service KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml gettextpo m
+WANTLIB += KF5CoreAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Service KF5WidgetsAddons KF5WindowSystem
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml gettextpo m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/13 19:20:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:12 rsadowski Exp $
 @bin bin/baloo_filemetadata_temp_extractor
 include/KF5/BalooWidgets/
 include/KF5/BalooWidgets/Baloo/
@@ -68,3 +68,4 @@ share/locale/ug/LC_MESSAGES/baloowidgets5.mo
 share/locale/uk/LC_MESSAGES/baloowidgets5.mo
 share/locale/zh_CN/LC_MESSAGES/baloowidgets5.mo
 share/locale/zh_TW/LC_MESSAGES/baloowidgets5.mo
+share/qlogging-categories5/baloo-widgets.categories

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/05 05:40:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:22 rsadowski Exp $
 
 COMMENT =	Minesweeper-like Game
 DISTNAME =	kmines-${VERSION}
 CATEGORIES =	games
-REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/games/kmines
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 04:21:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:14 rsadowski Exp $
 @bin bin/kalarm
 @bin bin/kalarmautostart
 @bin libexec/kauth/kalarm_helper
@@ -7,6 +7,9 @@ share/config.kcfg/kalarmconfig.kcfg
 share/dbus-1/interfaces/org.kde.kalarm.kalarm.xml
 share/dbus-1/system-services/org.kde.kalarm.rtcwake.service
 share/dbus-1/system.d/org.kde.kalarm.rtcwake.conf
+@sample ${SYSCONFDIR}/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kalarm.rtcwake.conf
 share/doc/HTML/ca/kalarm/
 share/doc/HTML/ca/kalarm/alarmmessage.png
 share/doc/HTML/ca/kalarm/editwindow-simple.png
@@ -15,7 +18,6 @@ share/doc/HTML/ca/kalarm/index.cache.bz2
 share/doc/HTML/ca/kalarm/index.docbook
 share/doc/HTML/ca/kalarm/mainwindow-calendars.png
 share/doc/HTML/ca/kalarm/mainwindow.png
-share/doc/HTML/ca/kalarm/spinbox.png
 share/doc/HTML/de/kalarm/
 share/doc/HTML/de/kalarm/index.cache.bz2
 share/doc/HTML/de/kalarm/index.docbook
@@ -56,6 +58,9 @@ share/examples/kalarm/
 share/examples/kalarm/xdg/
 share/examples/kalarm/xdg/autostart/
 share/examples/kalarm/xdg/autostart/kalarm.autostart.desktop
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/kalarm.autostart.desktop
 share/icons/hicolor/128x128/apps/kalarm.png
 share/icons/hicolor/16x16/apps/kalarm.png
 share/icons/hicolor/22x22/apps/kalarm.png

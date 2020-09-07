@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/20 18:00:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:12 rsadowski Exp $
 
 COMMENT =	Kio slave for accessing audio CDs
 DISTNAME =	audiocd-kio-${VERSION}
 PKGNAME =	audiocd-kio-kf5-${VERSION}
 CATEGORIES =	devel audio
-REVISION =	1
 
-SHARED_LIBS +=  audiocdplugins            1.0 # 5.0
+SHARED_LIBS +=  audiocdplugins            2.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC KF5Auth KF5AuthCore KF5Cddb
 WANTLIB += KF5Codecs KF5CompactDisc KF5ConfigCore KF5ConfigGui

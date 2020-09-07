@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:25 rsadowski Exp $
 @conflict kdegames-*
 @bin bin/ktuberling
 share/applications/org.kde.ktuberling.desktop
@@ -62,20 +62,9 @@ share/doc/HTML/sv/ktuberling/menu-help.png
 share/doc/HTML/sv/ktuberling/menu-settings.png
 share/doc/HTML/sv/ktuberling/technical-reference.docbook
 share/doc/HTML/uk/ktuberling/
-share/doc/HTML/uk/ktuberling/button-load.png
-share/doc/HTML/uk/ktuberling/button-new.png
-share/doc/HTML/uk/ktuberling/button-print.png
-share/doc/HTML/uk/ktuberling/button-redo.png
-share/doc/HTML/uk/ktuberling/button-save.png
-share/doc/HTML/uk/ktuberling/button-undo.png
 share/doc/HTML/uk/ktuberling/index.cache.bz2
 share/doc/HTML/uk/ktuberling/index.docbook
-share/doc/HTML/uk/ktuberling/menu-edit.png
-share/doc/HTML/uk/ktuberling/menu-game.png
-share/doc/HTML/uk/ktuberling/menu-help.png
-share/doc/HTML/uk/ktuberling/menu-settings.png
 share/doc/HTML/uk/ktuberling/technical-reference.docbook
-share/doc/HTML/uk/ktuberling/toolbar.png
 share/icons/hicolor/128x128/apps/ktuberling.png
 share/icons/hicolor/128x128/mimetypes/application-x-tuberling.png
 share/icons/hicolor/16x16/apps/ktuberling.png
@@ -1861,6 +1850,7 @@ share/locale/km/LC_MESSAGES/ktuberling.mo
 share/locale/ko/LC_MESSAGES/ktuberling.mo
 share/locale/lt/LC_MESSAGES/ktuberling.mo
 share/locale/lv/LC_MESSAGES/ktuberling.mo
+share/locale/ml/LC_MESSAGES/ktuberling.mo
 share/locale/mr/LC_MESSAGES/ktuberling.mo
 share/locale/nb/LC_MESSAGES/ktuberling.mo
 share/locale/nds/LC_MESSAGES/ktuberling.mo
@@ -1886,3 +1876,4 @@ share/metainfo/
 share/metainfo/org.kde.ktuberling.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/ktuberling.categories

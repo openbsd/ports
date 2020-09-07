@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:18 rsadowski Exp $
 @pkgpath x11/kde4/kdf
 @bin bin/kdf
 @bin bin/kwikdisk
@@ -56,6 +56,10 @@ share/doc/HTML/it/kcontrol/blockdevices/index.docbook
 share/doc/HTML/it/kdf/
 share/doc/HTML/it/kdf/index.cache.bz2
 share/doc/HTML/it/kdf/index.docbook
+share/doc/HTML/ko/kcontrol/
+share/doc/HTML/ko/kcontrol/blockdevices/
+share/doc/HTML/ko/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/ko/kcontrol/blockdevices/index.docbook
 share/doc/HTML/nl/kcontrol/
 share/doc/HTML/nl/kcontrol/blockdevices/
 share/doc/HTML/nl/kcontrol/blockdevices/index.cache.bz2

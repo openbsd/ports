@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:22 rsadowski Exp $
 @pkgpath x11/kde4/knetwalk
 @bin bin/knetwalk
 share/applications/org.kde.knetwalk.desktop
@@ -23,6 +23,7 @@ share/doc/HTML/fr/knetwalk/index.cache.bz2
 share/doc/HTML/fr/knetwalk/index.docbook
 share/doc/HTML/id/
 share/doc/HTML/id/knetwalk/
+share/doc/HTML/id/knetwalk/gameboard.png
 share/doc/HTML/id/knetwalk/index.cache.bz2
 share/doc/HTML/id/knetwalk/index.docbook
 share/doc/HTML/it/knetwalk/
@@ -108,6 +109,7 @@ share/locale/km/LC_MESSAGES/knetwalk.mo
 share/locale/ko/LC_MESSAGES/knetwalk.mo
 share/locale/lt/LC_MESSAGES/knetwalk.mo
 share/locale/lv/LC_MESSAGES/knetwalk.mo
+share/locale/ml/LC_MESSAGES/knetwalk.mo
 share/locale/mr/LC_MESSAGES/knetwalk.mo
 share/locale/nb/LC_MESSAGES/knetwalk.mo
 share/locale/nds/LC_MESSAGES/knetwalk.mo

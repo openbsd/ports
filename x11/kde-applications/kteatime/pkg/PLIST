@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:25 rsadowski Exp $
 @pkgpath x11/kde4/kteatime
 @bin bin/kteatime
 share/applications/org.kde.kteatime.desktop
@@ -16,6 +16,10 @@ share/doc/HTML/en/kteatime/index.docbook
 share/doc/HTML/es/kteatime/
 share/doc/HTML/es/kteatime/index.cache.bz2
 share/doc/HTML/es/kteatime/index.docbook
+share/doc/HTML/fr/kteatime/
+share/doc/HTML/fr/kteatime/config.png
+share/doc/HTML/fr/kteatime/index.cache.bz2
+share/doc/HTML/fr/kteatime/index.docbook
 share/doc/HTML/it/kteatime/
 share/doc/HTML/it/kteatime/index.cache.bz2
 share/doc/HTML/it/kteatime/index.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:18 rsadowski Exp $
 @conflict kde-baseapps-*
 @bin bin/kbookmarkmerger
 @bin bin/keditbookmarks
@@ -19,6 +19,9 @@ share/doc/HTML/en/keditbookmarks/index.docbook
 share/doc/HTML/es/keditbookmarks/
 share/doc/HTML/es/keditbookmarks/index.cache.bz2
 share/doc/HTML/es/keditbookmarks/index.docbook
+share/doc/HTML/fr/keditbookmarks/
+share/doc/HTML/fr/keditbookmarks/index.cache.bz2
+share/doc/HTML/fr/keditbookmarks/index.docbook
 share/doc/HTML/it/keditbookmarks/
 share/doc/HTML/it/keditbookmarks/index.cache.bz2
 share/doc/HTML/it/keditbookmarks/index.docbook
@@ -37,6 +40,10 @@ share/doc/HTML/sv/keditbookmarks/index.docbook
 share/doc/HTML/uk/keditbookmarks/
 share/doc/HTML/uk/keditbookmarks/index.cache.bz2
 share/doc/HTML/uk/keditbookmarks/index.docbook
+share/doc/HTML/zh_CN/
+share/doc/HTML/zh_CN/keditbookmarks/
+share/doc/HTML/zh_CN/keditbookmarks/index.cache.bz2
+share/doc/HTML/zh_CN/keditbookmarks/index.docbook
 share/kxmlgui5/
 share/kxmlgui5/keditbookmarks/
 share/kxmlgui5/keditbookmarks/keditbookmarks-genui.rc
@@ -98,3 +105,4 @@ share/locale/wa/LC_MESSAGES/keditbookmarks.mo
 share/locale/zh_CN/LC_MESSAGES/keditbookmarks.mo
 share/locale/zh_TW/LC_MESSAGES/keditbookmarks.mo
 @tag update-desktop-database
+share/qlogging-categories5/keditbookmarks.categories

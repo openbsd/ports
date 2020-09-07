@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/14 13:21:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:12 rsadowski Exp $
 
 COMMENT =	widgets for Baloo
 DISTNAME =	baloo-widgets-${VERSION}
 PKGNAME =	baloo-widgets-kf5-${VERSION}
 CATEGORIES =	devel x11
 
-SHARED_LIBS +=  KF5BalooWidgets       0.0 # 19.12.3
+SHARED_LIBS +=  KF5BalooWidgets       1.0 # 19.12.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Baloo KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5CoreAddons KF5FileMetaData KF5I18n
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service KF5WidgetsAddons
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Service
+WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
 
 MODKDE5_TRANSLATIONS = yes
 

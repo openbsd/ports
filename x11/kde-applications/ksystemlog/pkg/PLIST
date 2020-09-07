@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:25 rsadowski Exp $
 @pkgpath x11/kde4/ksystemlog
 @bin bin/ksystemlog
 share/applications/org.kde.ksystemlog.desktop
 share/doc/HTML/ca/ksystemlog/
-share/doc/HTML/ca/ksystemlog/filter-process.png
-share/doc/HTML/ca/ksystemlog/first-opening.png
 share/doc/HTML/ca/ksystemlog/index.cache.bz2
 share/doc/HTML/ca/ksystemlog/index.docbook
 share/doc/HTML/de/ksystemlog/
@@ -34,6 +32,9 @@ share/doc/HTML/fr/ksystemlog/main-screen.png
 share/doc/HTML/it/ksystemlog/
 share/doc/HTML/it/ksystemlog/index.cache.bz2
 share/doc/HTML/it/ksystemlog/index.docbook
+share/doc/HTML/ko/ksystemlog/
+share/doc/HTML/ko/ksystemlog/index.cache.bz2
+share/doc/HTML/ko/ksystemlog/index.docbook
 share/doc/HTML/nl/ksystemlog/
 share/doc/HTML/nl/ksystemlog/index.cache.bz2
 share/doc/HTML/nl/ksystemlog/index.docbook
@@ -55,6 +56,10 @@ share/doc/HTML/uk/ksystemlog/first-opening.png
 share/doc/HTML/uk/ksystemlog/index.cache.bz2
 share/doc/HTML/uk/ksystemlog/index.docbook
 share/doc/HTML/uk/ksystemlog/main-screen.png
+share/doc/HTML/zh_CN/
+share/doc/HTML/zh_CN/ksystemlog/
+share/doc/HTML/zh_CN/ksystemlog/index.cache.bz2
+share/doc/HTML/zh_CN/ksystemlog/index.docbook
 share/kxmlgui5/
 share/kxmlgui5/ksystemlog/
 share/kxmlgui5/ksystemlog/ksystemlogui.rc

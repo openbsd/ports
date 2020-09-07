@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/05 05:40:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:25 rsadowski Exp $
 
 COMMENT =	graphical timer based task execution for KDE
 DISTNAME =	ktimer-${VERSION}
 CATEGORIES =	x11 sysutils
-REVISION =	1
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.ktimer
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets
-WANTLIB += KF5Notifications KF5Service KF5WidgetsAddons Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += c m
+WANTLIB += KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Notifications KF5Service KF5WidgetsAddons
+WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

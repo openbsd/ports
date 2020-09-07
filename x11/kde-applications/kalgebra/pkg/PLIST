@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/06/03 05:13:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:49:15 rsadowski Exp $
 @pkgpath x11/kde4/kalgebra
 @bin bin/calgebra
 @bin bin/kalgebra
@@ -14,7 +14,6 @@ share/doc/HTML/ca/kalgebra/kalgebra-3dgraph-window.png
 share/doc/HTML/ca/kalgebra/kalgebra-console-window.png
 share/doc/HTML/ca/kalgebra/kalgebra-dictionary-window.png
 share/doc/HTML/ca/kalgebra/kalgebra-main-window.png
-share/doc/HTML/ca/kalgebra/view-fullscreen.png
 share/doc/HTML/de/kalgebra/
 share/doc/HTML/de/kalgebra/commands.docbook
 share/doc/HTML/de/kalgebra/index.cache.bz2
@@ -118,6 +117,7 @@ share/locale/de/LC_MESSAGES/kalgebra.mo
 share/locale/de/LC_MESSAGES/kalgebramobile.mo
 share/locale/de/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/el/LC_MESSAGES/kalgebra.mo
+share/locale/el/LC_MESSAGES/kalgebramobile.mo
 share/locale/el/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/en_GB/LC_MESSAGES/kalgebra.mo
 share/locale/en_GB/LC_MESSAGES/kalgebramobile.mo
@@ -128,6 +128,7 @@ share/locale/es/LC_MESSAGES/kalgebra.mo
 share/locale/es/LC_MESSAGES/kalgebramobile.mo
 share/locale/es/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/et/LC_MESSAGES/kalgebra.mo
+share/locale/et/LC_MESSAGES/kalgebramobile.mo
 share/locale/et/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/eu/LC_MESSAGES/kalgebra.mo
 share/locale/fi/LC_MESSAGES/kalgebra.mo
@@ -155,6 +156,7 @@ share/locale/kk/LC_MESSAGES/kalgebra.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/km/LC_MESSAGES/kalgebra.mo
 share/locale/ko/LC_MESSAGES/kalgebra.mo
+share/locale/ko/LC_MESSAGES/kalgebramobile.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/lt/LC_MESSAGES/kalgebra.mo
 share/locale/lt/LC_MESSAGES/kalgebramobile.mo
@@ -195,6 +197,7 @@ share/locale/sk/LC_MESSAGES/kalgebra.mo
 share/locale/sk/LC_MESSAGES/kalgebramobile.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/sl/LC_MESSAGES/kalgebra.mo
+share/locale/sl/LC_MESSAGES/kalgebramobile.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/sv/LC_MESSAGES/kalgebra.mo
 share/locale/sv/LC_MESSAGES/kalgebramobile.mo

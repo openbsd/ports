@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/24 18:56:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:28 rsadowski Exp $
 
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Auth

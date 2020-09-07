@@ -1,21 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:27 rsadowski Exp $
+
+BROKEN =	Depends on Qt 5.14+
 
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	3
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5KrossCore KF5KrossUi KF5Notifications
-WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml c hunspell-1.6 m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

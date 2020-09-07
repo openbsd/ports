@@ -5,7 +5,7 @@ DISTNAME =	libkdcraw-${VERSION}
 PKGNAME =	libkdcraw-kf5-${VERSION}
 CATEGORIES =	devel graphics
 
-SHARED_LIBS +=  KF5KDcraw                 1.0 # 0.0
+SHARED_LIBS +=  KF5KDcraw                 2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui m raw
 

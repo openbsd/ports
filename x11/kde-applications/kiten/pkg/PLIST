@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:20 rsadowski Exp $
 @pkgpath x11/kde4/kiten
 @bin bin/kiten
 @bin bin/kitengen
@@ -55,6 +55,9 @@ share/doc/HTML/es/kiten/index.docbook
 share/doc/HTML/et/kiten/
 share/doc/HTML/et/kiten/index.cache.bz2
 share/doc/HTML/et/kiten/index.docbook
+share/doc/HTML/fr/kiten/
+share/doc/HTML/fr/kiten/index.cache.bz2
+share/doc/HTML/fr/kiten/index.docbook
 share/doc/HTML/it/kiten/
 share/doc/HTML/it/kiten/index.cache.bz2
 share/doc/HTML/it/kiten/index.docbook

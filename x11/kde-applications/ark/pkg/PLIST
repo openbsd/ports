@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:12 rsadowski Exp $
 @pkgpath x11/kde4/ark
 @bin bin/ark
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
@@ -49,6 +49,11 @@ share/doc/HTML/gl/ark/
 share/doc/HTML/gl/ark/index.cache.bz2
 share/doc/HTML/gl/ark/index.docbook
 share/doc/HTML/it/ark/
+share/doc/HTML/it/ark/ark-comment.png
+share/doc/HTML/it/ark/ark-mainwindow.png
+share/doc/HTML/it/ark/create-archive.png
+share/doc/HTML/it/ark/create-protected-archive.png
+share/doc/HTML/it/ark/extract-dialog.png
 share/doc/HTML/it/ark/index.cache.bz2
 share/doc/HTML/it/ark/index.docbook
 share/doc/HTML/nl/ark/
@@ -146,7 +151,6 @@ share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_TW/LC_MESSAGES/ark.mo
 share/metainfo/
 share/metainfo/org.kde.ark.appdata.xml
-share/mime/packages/kerfuffle.xml
 share/qlogging-categories5/ark.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database

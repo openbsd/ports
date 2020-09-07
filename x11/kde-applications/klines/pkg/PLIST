@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:21 rsadowski Exp $
 @pkgpath x11/kde4/klines
 @bin bin/klines
 share/applications/org.kde.klines.desktop
@@ -18,6 +18,9 @@ share/doc/HTML/es/klines/index.docbook
 share/doc/HTML/et/klines/
 share/doc/HTML/et/klines/index.cache.bz2
 share/doc/HTML/et/klines/index.docbook
+share/doc/HTML/fr/klines/
+share/doc/HTML/fr/klines/index.cache.bz2
+share/doc/HTML/fr/klines/index.docbook
 share/doc/HTML/it/klines/
 share/doc/HTML/it/klines/index.cache.bz2
 share/doc/HTML/it/klines/index.docbook
@@ -92,6 +95,7 @@ share/locale/km/LC_MESSAGES/klines.mo
 share/locale/ko/LC_MESSAGES/klines.mo
 share/locale/lt/LC_MESSAGES/klines.mo
 share/locale/lv/LC_MESSAGES/klines.mo
+share/locale/ml/LC_MESSAGES/klines.mo
 share/locale/mr/LC_MESSAGES/klines.mo
 share/locale/nb/LC_MESSAGES/klines.mo
 share/locale/nds/LC_MESSAGES/klines.mo
@@ -115,3 +119,4 @@ share/locale/zh_TW/LC_MESSAGES/klines.mo
 share/metainfo/
 share/metainfo/org.kde.klines.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/klines.categories

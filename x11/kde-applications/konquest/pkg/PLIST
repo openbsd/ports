@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:23 rsadowski Exp $
 @pkgpath x11/kde4/konquest
 @bin bin/konquest
 share/applications/org.kde.konquest.desktop
@@ -94,6 +94,7 @@ share/locale/km/LC_MESSAGES/konquest.mo
 share/locale/ko/LC_MESSAGES/konquest.mo
 share/locale/lt/LC_MESSAGES/konquest.mo
 share/locale/lv/LC_MESSAGES/konquest.mo
+share/locale/ml/LC_MESSAGES/konquest.mo
 share/locale/mr/LC_MESSAGES/konquest.mo
 share/locale/nb/LC_MESSAGES/konquest.mo
 share/locale/nds/LC_MESSAGES/konquest.mo

@@ -1,17 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:23 rsadowski Exp $
 @pkgpath x11/kde4/kolourpaint
 @bin bin/kolourpaint
 @lib lib/libkolourpaint_lgpl.so.${LIBkolourpaint_lgpl_VERSION}
 share/applications/org.kde.kolourpaint.desktop
 share/doc/HTML/ca/kolourpaint/
 share/doc/HTML/ca/kolourpaint/KolourPaint.png
-share/doc/HTML/ca/kolourpaint/brush_shapes.png
-share/doc/HTML/ca/kolourpaint/color_box.png
-share/doc/HTML/ca/kolourpaint/eraser_shapes.png
-share/doc/HTML/ca/kolourpaint/fcc_std_text.png
-share/doc/HTML/ca/kolourpaint/fcc_trans_text.png
-share/doc/HTML/ca/kolourpaint/fill_color_similarity.png
-share/doc/HTML/ca/kolourpaint/fill_style.png
 share/doc/HTML/ca/kolourpaint/image_balance.png
 share/doc/HTML/ca/kolourpaint/image_emboss.png
 share/doc/HTML/ca/kolourpaint/image_flatten.png
@@ -23,36 +16,6 @@ share/doc/HTML/ca/kolourpaint/image_skew.png
 share/doc/HTML/ca/kolourpaint/image_soften_sharpen.png
 share/doc/HTML/ca/kolourpaint/index.cache.bz2
 share/doc/HTML/ca/kolourpaint/index.docbook
-share/doc/HTML/ca/kolourpaint/line_width.png
-share/doc/HTML/ca/kolourpaint/lines_30_45_deg.png
-share/doc/HTML/ca/kolourpaint/lines_30_deg.png
-share/doc/HTML/ca/kolourpaint/lines_45_deg.png
-share/doc/HTML/ca/kolourpaint/rotate_image_30.png
-share/doc/HTML/ca/kolourpaint/rotate_selection_30.png
-share/doc/HTML/ca/kolourpaint/selections_opaque_transparent.png
-share/doc/HTML/ca/kolourpaint/spraycan_patterns.png
-share/doc/HTML/ca/kolourpaint/text_zoom_grid.png
-share/doc/HTML/ca/kolourpaint/tool_brush.png
-share/doc/HTML/ca/kolourpaint/tool_color_picker.png
-share/doc/HTML/ca/kolourpaint/tool_color_washer.png
-share/doc/HTML/ca/kolourpaint/tool_curve.png
-share/doc/HTML/ca/kolourpaint/tool_ellipse.png
-share/doc/HTML/ca/kolourpaint/tool_elliptical_selection.png
-share/doc/HTML/ca/kolourpaint/tool_eraser.png
-share/doc/HTML/ca/kolourpaint/tool_flood_fill.png
-share/doc/HTML/ca/kolourpaint/tool_free_form_selection.png
-share/doc/HTML/ca/kolourpaint/tool_line.png
-share/doc/HTML/ca/kolourpaint/tool_pen.png
-share/doc/HTML/ca/kolourpaint/tool_polygon.png
-share/doc/HTML/ca/kolourpaint/tool_polyline.png
-share/doc/HTML/ca/kolourpaint/tool_polystar.png
-share/doc/HTML/ca/kolourpaint/tool_rect_selection.png
-share/doc/HTML/ca/kolourpaint/tool_rectangle.png
-share/doc/HTML/ca/kolourpaint/tool_rectangles.png
-share/doc/HTML/ca/kolourpaint/tool_rounded_rectangle.png
-share/doc/HTML/ca/kolourpaint/tool_selections.png
-share/doc/HTML/ca/kolourpaint/tool_spraycan.png
-share/doc/HTML/ca/kolourpaint/tool_text.png
 share/doc/HTML/de/kolourpaint/
 share/doc/HTML/de/kolourpaint/KolourPaint.png
 share/doc/HTML/de/kolourpaint/image_balance.png
@@ -297,6 +260,7 @@ share/doc/HTML/uk/kolourpaint/image_soften_sharpen.png
 share/doc/HTML/uk/kolourpaint/index.cache.bz2
 share/doc/HTML/uk/kolourpaint/index.docbook
 share/doc/HTML/uk/kolourpaint/screenshot_acquiring.png
+share/icons/hicolor/128x128/apps/kolourpaint.png
 share/icons/hicolor/16x16/apps/kolourpaint.png
 share/icons/hicolor/22x22/apps/kolourpaint.png
 share/icons/hicolor/32x32/apps/kolourpaint.png
@@ -405,21 +369,6 @@ share/kolourpaint/icons/hicolor/scalable/actions/tool_rectangle.svgz
 share/kolourpaint/icons/hicolor/scalable/actions/tool_rounded_rectangle.svgz
 share/kolourpaint/icons/hicolor/scalable/actions/tool_spraycan.svgz
 share/kolourpaint/icons/hicolor/scalable/actions/tool_text.svgz
-share/kolourpaint/pics/
-share/kolourpaint/pics/color_transparent_26x26.png
-share/kolourpaint/pics/colorbutton_swap_16x16.png
-share/kolourpaint/pics/image_rotate_anticlockwise.png
-share/kolourpaint/pics/image_rotate_clockwise.png
-share/kolourpaint/pics/image_skew_horizontal.png
-share/kolourpaint/pics/image_skew_vertical.png
-share/kolourpaint/pics/option_opaque.png
-share/kolourpaint/pics/option_transparent.png
-share/kolourpaint/pics/resize.png
-share/kolourpaint/pics/scale.png
-share/kolourpaint/pics/smooth_scale.png
-share/kolourpaint/pics/tool_spraycan_17x17.png
-share/kolourpaint/pics/tool_spraycan_29x29.png
-share/kolourpaint/pics/tool_spraycan_9x9.png
 share/kxmlgui5/
 share/kxmlgui5/kolourpaint/
 share/kxmlgui5/kolourpaint/kolourpaintui.rc

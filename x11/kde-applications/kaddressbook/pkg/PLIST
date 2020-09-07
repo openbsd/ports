@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 04:04:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:14 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/kaddressbook
 @lib lib/libkaddressbookprivate.so.${LIBkaddressbookprivate_VERSION}
 @so lib/qt5/plugins/kaddressbook_config_plugins.so
 @so lib/qt5/plugins/kaddressbookpart.so
-@so lib/qt5/plugins/kontact_kaddressbookplugin.so
+lib/qt5/plugins/kontact5/
+@so lib/qt5/plugins/kontact5/kontact_kaddressbookplugin.so
 share/applications/kaddressbook-importer.desktop
+share/applications/kaddressbook-view.desktop
 share/applications/org.kde.kaddressbook.desktop
 share/doc/HTML/ca/kaddressbook/
 share/doc/HTML/ca/kaddressbook/docbook-reference.docbook
@@ -109,6 +111,47 @@ share/doc/HTML/en/kaddressbook/tools-report-bug.png
 share/doc/HTML/en/kaddressbook/user-group-new.png
 share/doc/HTML/en/kaddressbook/view-calendar-birthday.png
 share/doc/HTML/en/kaddressbook/view-refresh.png
+share/doc/HTML/it/kaddressbook/
+share/doc/HTML/it/kaddressbook/addressbook00.png
+share/doc/HTML/it/kaddressbook/addressbook10.png
+share/doc/HTML/it/kaddressbook/addressbook20.png
+share/doc/HTML/it/kaddressbook/addressbook30.png
+share/doc/HTML/it/kaddressbook/addressbook31.png
+share/doc/HTML/it/kaddressbook/addressbook32.png
+share/doc/HTML/it/kaddressbook/addressbook33.png
+share/doc/HTML/it/kaddressbook/addressbook34.png
+share/doc/HTML/it/kaddressbook/addressbook35.png
+share/doc/HTML/it/kaddressbook/addressbook40.png
+share/doc/HTML/it/kaddressbook/addressbook50.png
+share/doc/HTML/it/kaddressbook/addressbook51.png
+share/doc/HTML/it/kaddressbook/addressbook52.png
+share/doc/HTML/it/kaddressbook/addressbook53.png
+share/doc/HTML/it/kaddressbook/addressbook54.png
+share/doc/HTML/it/kaddressbook/addressbook55.png
+share/doc/HTML/it/kaddressbook/addressbook60.png
+share/doc/HTML/it/kaddressbook/addressbook61.png
+share/doc/HTML/it/kaddressbook/addressbook71.png
+share/doc/HTML/it/kaddressbook/addressbook72.png
+share/doc/HTML/it/kaddressbook/addressbook73.png
+share/doc/HTML/it/kaddressbook/addressbook74.png
+share/doc/HTML/it/kaddressbook/addressbook75.png
+share/doc/HTML/it/kaddressbook/addressbook76.png
+share/doc/HTML/it/kaddressbook/addressbook77.png
+share/doc/HTML/it/kaddressbook/addressbook80.png
+share/doc/HTML/it/kaddressbook/addressbook81.png
+share/doc/HTML/it/kaddressbook/addressbook82.png
+share/doc/HTML/it/kaddressbook/addressbook83.png
+share/doc/HTML/it/kaddressbook/addressbook84.png
+share/doc/HTML/it/kaddressbook/addressbook85.png
+share/doc/HTML/it/kaddressbook/addressbook86.png
+share/doc/HTML/it/kaddressbook/addressbook87.png
+share/doc/HTML/it/kaddressbook/addressbook92.png
+share/doc/HTML/it/kaddressbook/addressbook93.png
+share/doc/HTML/it/kaddressbook/addressbook94.png
+share/doc/HTML/it/kaddressbook/addressbook95.png
+share/doc/HTML/it/kaddressbook/docbook-reference.docbook
+share/doc/HTML/it/kaddressbook/index.cache.bz2
+share/doc/HTML/it/kaddressbook/index.docbook
 share/doc/HTML/nl/kaddressbook/
 share/doc/HTML/nl/kaddressbook/docbook-reference.docbook
 share/doc/HTML/nl/kaddressbook/index.cache.bz2
@@ -208,7 +251,6 @@ share/kontact/
 share/kontact/ksettingsdialog/
 share/kontact/ksettingsdialog/kaddressbook.setdlg
 share/kservices5/kaddressbook_config_plugins.desktop
-share/kservices5/kaddressbookpart.desktop
 share/kservices5/kontact/
 share/kservices5/kontact/kaddressbookplugin.desktop
 share/locale/ar/LC_MESSAGES/kaddressbook.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/06/05 05:40:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:49:28 rsadowski Exp $
 @conflict marble-<=4.14.3
 @bin bin/marble
 @bin bin/marble-qt
@@ -340,7 +340,6 @@ share/doc/HTML/fr/marble/configure-view.png
 share/doc/HTML/fr/marble/download-region-3.png
 share/doc/HTML/fr/marble/index.cache.bz2
 share/doc/HTML/fr/marble/index.docbook
-share/doc/HTML/fr/marble/logo-1.png
 share/doc/HTML/fr/marble/mapview-1.png
 share/doc/HTML/fr/marble/measure-1.png
 share/doc/HTML/fr/marble/quick-1.png
@@ -382,7 +381,6 @@ share/doc/HTML/nl/marble/configure-plugins.png
 share/doc/HTML/nl/marble/configure-view.png
 share/doc/HTML/nl/marble/index.cache.bz2
 share/doc/HTML/nl/marble/index.docbook
-share/doc/HTML/nl/marble/logo-1.png
 share/doc/HTML/nl/marble/mapview-1.png
 share/doc/HTML/nl/marble/measure-1.png
 share/doc/HTML/nl/marble/quick-1.png
@@ -452,6 +450,7 @@ share/doc/HTML/uk/marble/search-2.png
 share/examples/marble-kf5/
 share/examples/marble-kf5/xdg/
 share/examples/marble-kf5/xdg/marble.knsrc
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/marble.knsrc
 share/icons/hicolor/128x128/apps/marble.png
 share/icons/hicolor/16x16/apps/marble.png
@@ -497,7 +496,9 @@ share/locale/cs/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/cs/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/da/LC_MESSAGES/marble.mo
 share/locale/da/LC_MESSAGES/marble_qt.qm
+share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/da/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/da/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/de/LC_MESSAGES/marble.mo
 share/locale/de/LC_MESSAGES/marble_qt.qm
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo

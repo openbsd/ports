@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:15 rsadowski Exp $
 @bin bin/kbackup
 share/applications/org.kde.kbackup.desktop
 share/doc/HTML/ca/kbackup/
@@ -40,6 +40,7 @@ share/locale/de/LC_MESSAGES/kbackup.mo
 share/locale/el/LC_MESSAGES/kbackup.mo
 share/locale/en_GB/LC_MESSAGES/kbackup.mo
 share/locale/es/LC_MESSAGES/kbackup.mo
+share/locale/et/LC_MESSAGES/kbackup.mo
 share/locale/eu/LC_MESSAGES/kbackup.mo
 share/locale/fi/LC_MESSAGES/kbackup.mo
 share/locale/fr/LC_MESSAGES/kbackup.mo
@@ -56,6 +57,7 @@ share/locale/pt/LC_MESSAGES/kbackup.mo
 share/locale/pt_BR/LC_MESSAGES/kbackup.mo
 share/locale/ru/LC_MESSAGES/kbackup.mo
 share/locale/sk/LC_MESSAGES/kbackup.mo
+share/locale/sl/LC_MESSAGES/kbackup.mo
 share/locale/sv/LC_MESSAGES/kbackup.mo
 share/locale/uk/LC_MESSAGES/kbackup.mo
 share/locale/zh_CN/LC_MESSAGES/kbackup.mo

@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/05 05:40:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${VERSION}
 CATEGORIES =	games education
-REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/education/rocs/
 
-SHARED_LIBS +=  rocsgraphtheory        1.0 # 0.0
+SHARED_LIBS +=  rocsgraphtheory        2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5Declarative
-WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOWidgets
-WANTLIB += KF5Package KF5Parts KF5Service KF5SonnetUi KF5TextEditor
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Script Qt5ScriptTools Qt5WebKit Qt5WebKitWidgets
+WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Package KF5Parts KF5Service KF5SonnetUi
+WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Script Qt5ScriptTools
 WANTLIB += Qt5Widgets Qt5Xml Qt5XmlPatterns c m
 
 MODKDE5_DESKTOP_FILE = yes

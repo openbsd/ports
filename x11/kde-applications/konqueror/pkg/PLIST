@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/13 05:04:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:23 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdebase-*
@@ -11,6 +11,7 @@ include/KF5/konq_historyprovider.h
 include/KF5/konq_popupmenu.h
 include/KF5/konq_version.h
 include/KF5/libkonq_export.h
+include/konqsidebarplugin.h
 lib/cmake/KF5Konq/
 lib/cmake/KF5Konq/KF5KonqConfig.cmake
 lib/cmake/KF5Konq/KF5KonqConfigVersion.cmake
@@ -19,6 +20,7 @@ lib/cmake/KF5Konq/KF5KonqTargets.cmake
 @lib lib/libKF5Konq.so.${LIBKF5Konq_VERSION}
 @so lib/libkdeinit5_kfmclient.so
 @so lib/libkdeinit5_konqueror.so
+@lib lib/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
 @lib lib/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
 @so lib/libkwebenginepart.so
 @so lib/qt5/plugins/akregatorkonqfeedicon.so
@@ -27,6 +29,7 @@ lib/cmake/KF5Konq/KF5KonqTargets.cmake
 @so lib/qt5/plugins/dirfilterplugin.so
 @so lib/qt5/plugins/fsviewpart.so
 @so lib/qt5/plugins/kcm_bookmarks.so
+@so lib/qt5/plugins/kcm_history.so
 @so lib/qt5/plugins/kcm_konq.so
 @so lib/qt5/plugins/kcm_konqhtml.so
 @so lib/qt5/plugins/kcm_performance.so
@@ -36,9 +39,14 @@ lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/khtmlsettingsplugin.so
 @so lib/qt5/plugins/khtmlttsplugin.so
 @so lib/qt5/plugins/kimgallery.so
-@so lib/qt5/plugins/konq_aboutpage.so
 @so lib/qt5/plugins/konq_shellcmdplugin.so
+@so lib/qt5/plugins/konq_sidebar.so
+@so lib/qt5/plugins/konqsidebar_bookmarks.so
+@so lib/qt5/plugins/konqsidebar_history.so
+@so lib/qt5/plugins/konqsidebar_places.so
+@so lib/qt5/plugins/konqsidebar_tree.so
 @so lib/qt5/plugins/searchbarplugin.so
+@so lib/qt5/plugins/uachangerplugin.so
 share/akregator/
 share/akregator/pics/
 share/akregator/pics/feed.png
@@ -79,13 +87,9 @@ share/doc/HTML/ca/kcontrol5/performance/
 share/doc/HTML/ca/kcontrol5/performance/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/performance/index.docbook
 share/doc/HTML/ca/konqueror/
-share/doc/HTML/ca/konqueror/format-font-size-less.png
-share/doc/HTML/ca/konqueror/format-font-size-more.png
-share/doc/HTML/ca/konqueror/go-jump.png
 share/doc/HTML/ca/konqueror/index.cache.bz2
 share/doc/HTML/ca/konqueror/index.docbook
 share/doc/HTML/ca/konqueror/konqorg.png
-share/doc/HTML/ca/konqueror/reset.png
 share/doc/HTML/ca/konqueror/viewproperties-dialog.png
 share/doc/HTML/da/konqueror/
 share/doc/HTML/da/konqueror/basics.docbook
@@ -308,6 +312,10 @@ share/doc/HTML/et/kcontrol5/khtml-java-js/index.docbook
 share/doc/HTML/et/kcontrol5/performance/
 share/doc/HTML/et/kcontrol5/performance/index.cache.bz2
 share/doc/HTML/et/kcontrol5/performance/index.docbook
+share/doc/HTML/fr/kcontrol5/
+share/doc/HTML/fr/kcontrol5/history/
+share/doc/HTML/fr/kcontrol5/history/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/history/index.docbook
 share/doc/HTML/fr/konqueror/
 share/doc/HTML/fr/konqueror/basics.docbook
 share/doc/HTML/fr/konqueror/bookmarks.docbook
@@ -362,6 +370,10 @@ share/doc/HTML/it/kcontrol5/performance/index.docbook
 share/doc/HTML/it/konqueror/
 share/doc/HTML/it/konqueror/index.cache.bz2
 share/doc/HTML/it/konqueror/index.docbook
+share/doc/HTML/ko/kcontrol5/
+share/doc/HTML/ko/kcontrol5/performance/
+share/doc/HTML/ko/kcontrol5/performance/index.cache.bz2
+share/doc/HTML/ko/kcontrol5/performance/index.docbook
 share/doc/HTML/nb/kcontrol5/bookmarks/
 share/doc/HTML/nb/kcontrol5/bookmarks/index.cache.bz2
 share/doc/HTML/nb/kcontrol5/bookmarks/index.docbook
@@ -668,10 +680,13 @@ share/doc/HTML/uk/konqueror/index.docbook
 share/doc/HTML/uk/konqueror/konqorg.png
 share/doc/HTML/uk/konqueror/look.png
 share/doc/HTML/uk/konqueror/parts.png
-share/doc/HTML/uk/konqueror/shortcut1.png
-share/doc/HTML/uk/konqueror/shortcut2.png
 share/doc/HTML/uk/konqueror/thumbnails.png
 share/doc/HTML/uk/konqueror/viewproperties-dialog.png
+share/doc/HTML/zh_CN/
+share/doc/HTML/zh_CN/kcontrol5/
+share/doc/HTML/zh_CN/kcontrol5/history/
+share/doc/HTML/zh_CN/kcontrol5/history/index.cache.bz2
+share/doc/HTML/zh_CN/kcontrol5/history/index.docbook
 share/dolphinpart/
 share/dolphinpart/kpartplugins/
 share/dolphinpart/kpartplugins/dirfilterplugin.desktop
@@ -684,9 +699,13 @@ share/examples/konqueror/
 share/examples/konqueror/xdg/
 share/examples/konqueror/xdg/autostart/
 share/examples/konqueror/xdg/autostart/konqy_preload.desktop
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/konqy_preload.desktop
+share/examples/konqueror/xdg/konqsidebartngrc
+@sample ${SYSCONFDIR}/xdg/konqsidebartngrc
 share/examples/konqueror/xdg/translaterc
-share/fsview/
-share/fsview/fsview_part.rc
+@sample ${SYSCONFDIR}/xdg/translaterc
 share/icons/hicolor/128x128/apps/konqueror.png
 share/icons/hicolor/128x128/apps/webengine.png
 share/icons/hicolor/16x16/actions/babelfish.png
@@ -725,6 +744,24 @@ share/khtml/kpartplugins/khtmltts.desktop
 share/khtml/kpartplugins/khtmltts.rc
 share/khtml/kpartplugins/plugin_babelfish.rc
 share/khtml/kpartplugins/plugin_translator.desktop
+share/khtml/kpartplugins/uachangerplugin.desktop
+share/khtml/kpartplugins/uachangerplugin.rc
+share/konqsidebartng/
+share/konqsidebartng/entries/
+share/konqsidebartng/entries/bookmarks.desktop
+share/konqsidebartng/entries/fonts.desktop
+share/konqsidebartng/entries/history.desktop
+share/konqsidebartng/entries/home.desktop
+share/konqsidebartng/entries/places.desktop
+share/konqsidebartng/entries/remote.desktop
+share/konqsidebartng/entries/root.desktop
+share/konqsidebartng/entries/services.desktop
+share/konqsidebartng/entries/settings.desktop
+share/konqsidebartng/plugins/
+share/konqsidebartng/plugins/konqsidebar_bookmarks.desktop
+share/konqsidebartng/plugins/konqsidebar_history.desktop
+share/konqsidebartng/plugins/konqsidebar_places.desktop
+share/konqsidebartng/plugins/konqsidebar_tree.desktop
 share/konqueror/
 share/konqueror/about/
 share/konqueror/about/intro.html
@@ -769,6 +806,7 @@ share/kservices5/akregator_konqplugin.desktop
 share/kservices5/bookmarks.desktop
 share/kservices5/filebehavior.desktop
 share/kservices5/fsview_part.desktop
+share/kservices5/kcmhistory.desktop
 share/kservices5/kcmkonqyperformance.desktop
 share/kservices5/kcmperformance.desktop
 share/kservices5/khtml_appearance.desktop
@@ -776,10 +814,9 @@ share/kservices5/khtml_behavior.desktop
 share/kservices5/khtml_filter.desktop
 share/kservices5/khtml_general.desktop
 share/kservices5/khtml_java_js.desktop
-share/kservices5/konq_aboutpage.desktop
+share/kservices5/konq_sidebartng.desktop
 share/kservices5/org.kde.konqueror.desktop
 share/kservices5/webenginepart.desktop
-share/kservicetypes5/konqaboutpage.desktop
 share/kwebkitpart/
 share/kwebkitpart/kpartplugins/
 share/kwebkitpart/kpartplugins/akregator_konqfeedicon.desktop
@@ -792,7 +829,11 @@ share/kwebkitpart/kpartplugins/khtmltts.desktop
 share/kwebkitpart/kpartplugins/khtmltts.rc
 share/kwebkitpart/kpartplugins/plugin_babelfish.rc
 share/kwebkitpart/kpartplugins/plugin_translator.desktop
+share/kwebkitpart/kpartplugins/uachangerplugin.desktop
+share/kwebkitpart/kpartplugins/uachangerplugin.rc
 share/kxmlgui5/
+share/kxmlgui5/fsview/
+share/kxmlgui5/fsview/fsview_part.rc
 share/kxmlgui5/webenginepart/
 share/kxmlgui5/webenginepart/webenginepart.rc
 share/locale/ar/LC_MESSAGES/akregator_konqplugin.mo
@@ -1854,6 +1895,7 @@ share/locale/zh_TW/LC_MESSAGES/webenginepart.mo
 share/metainfo/
 share/metainfo/org.kde.konqueror.appdata.xml
 share/qlogging-categories5/akregatorplugin.categories
+share/qlogging-categories5/fsview.categories
 share/qlogging-categories5/konqueror.categories
 share/webenginepart/
 share/webenginepart/error.html
@@ -1870,3 +1912,5 @@ share/webenginepart/kpartplugins/plugin_babelfish.rc
 share/webenginepart/kpartplugins/plugin_translator.desktop
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/webenginepart/kpartplugins/uachangerplugin.desktop
+share/webenginepart/kpartplugins/uachangerplugin.rc

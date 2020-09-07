@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/24 18:56:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:29 rsadowski Exp $
 
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
-SHARED_LIBS +=  pimdataexporterprivate       0.0 # 5.13.2
+SHARED_LIBS +=  pimdataexporterprivate       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiNotes KF5AkonadiWidgets KF5Archive
@@ -13,14 +12,14 @@ WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n
 WANTLIB += KF5IMAP KF5IdentityManagement KF5ItemModels KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
-WANTLIB += KF5Libkdepim KF5Libkleo KF5MailCommon KF5MailTransport
-WANTLIB += KF5MessageComposer KF5MessageCore KF5MessageViewer
-WANTLIB += KF5Mime KF5MimeTreeParser KF5Notifications KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5Solid
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += c gpgmepp m qgpgme
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Libkdepim KF5Libkleo KF5MailCommon
+WANTLIB += KF5MailTransport KF5MessageComposer KF5MessageCore
+WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5Notifications
+WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Service
+WANTLIB += KF5Solid KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5Xml c gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 

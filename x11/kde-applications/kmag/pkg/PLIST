@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:21 rsadowski Exp $
 @pkgpath x11/kde4/kmag
 @bin bin/kmag
 @man man/man1/kmag.1
@@ -25,6 +25,10 @@ share/doc/HTML/fr/kmag/screenshot.png
 share/doc/HTML/it/kmag/
 share/doc/HTML/it/kmag/index.cache.bz2
 share/doc/HTML/it/kmag/index.docbook
+share/doc/HTML/it/kmag/screenshot.png
+share/doc/HTML/ko/kmag/
+share/doc/HTML/ko/kmag/index.cache.bz2
+share/doc/HTML/ko/kmag/index.docbook
 share/doc/HTML/nl/kmag/
 share/doc/HTML/nl/kmag/index.cache.bz2
 share/doc/HTML/nl/kmag/index.docbook
@@ -55,6 +59,7 @@ share/kmag/icons/hicolor/16x16/actions/followmouse.png
 share/kmag/icons/hicolor/16x16/actions/hidemouse.png
 share/kmag/icons/hicolor/16x16/actions/window.png
 share/locale/ar/LC_MESSAGES/kmag.mo
+share/locale/ast/LC_MESSAGES/kmag.mo
 share/locale/bg/LC_MESSAGES/kmag.mo
 share/locale/bs/LC_MESSAGES/kmag.mo
 share/locale/ca/LC_MESSAGES/kmag.mo

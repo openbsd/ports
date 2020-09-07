@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/21 18:12:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:14 rsadowski Exp $
 
 COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  KF5IncidenceEditor    0.0 # 5.13.2
+SHARED_LIBS +=  KF5IncidenceEditor    1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth
 WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarSupport KF5CalendarUtils
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5EventViews
-WANTLIB += KF5I18n KF5IconThemes KF5IdentityManagement KF5ItemModels
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5KdepimDBusInterfaces
-WANTLIB += KF5Ldap KF5Libkdepim KF5LibkdepimAkonadi KF5MailTransport
-WANTLIB += KF5MailTransportAkonadi KF5Mime KF5PimTextEdit KF5Service
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5XmlGui KGantt Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml c m
+WANTLIB += KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
+WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Ldap KF5Libkdepim KF5MailTransport KF5MailTransportAkonadi
+WANTLIB += KF5Mime KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
+WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui KGantt Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

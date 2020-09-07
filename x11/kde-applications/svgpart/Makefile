@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/14 13:02:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:30 rsadowski Exp $
 
 COMMENT =	KPart for viewing SVGs
 DISTNAME =	svgpart-${VERSION}
 PKGNAME =	svgpart-kf5-${VERSION}
 CATEGORIES =	graphics
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Parts
-WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml m
+WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Parts KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Svg Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

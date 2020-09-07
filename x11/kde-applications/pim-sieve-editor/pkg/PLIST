@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 03:29:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:29 rsadowski Exp $
 @conflict kdepim-*
 @bin bin/sieveeditor
 @lib lib/libsieveeditor.so.${LIBsieveeditor_VERSION}
@@ -8,9 +8,6 @@ share/doc/HTML/ca/sieveeditor/
 share/doc/HTML/ca/sieveeditor/first-start.png
 share/doc/HTML/ca/sieveeditor/index.cache.bz2
 share/doc/HTML/ca/sieveeditor/index.docbook
-share/doc/HTML/ca/sieveeditor/script-edit.png
-share/doc/HTML/ca/sieveeditor/script-help.png
-share/doc/HTML/ca/sieveeditor/script-tools.png
 share/doc/HTML/de/sieveeditor/
 share/doc/HTML/de/sieveeditor/index.cache.bz2
 share/doc/HTML/de/sieveeditor/index.docbook

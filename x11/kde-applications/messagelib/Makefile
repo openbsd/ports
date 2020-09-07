@@ -1,35 +1,33 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/24 18:56:34 rsadowski Exp $
+t $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:28 rsadowski Exp $
 
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  KF5MessageComposer       0.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageCore           0.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageList           0.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageViewer         0.0 # 5.13.2
-SHARED_LIBS +=  KF5MimeTreeParser        0.0 # 5.13.2
-SHARED_LIBS +=  KF5TemplateParser        0.0 # 5.13.2
-SHARED_LIBS +=  KF5WebEngineViewer       0.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageComposer       1.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageCore           1.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageList           1.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageViewer         1.0 # 5.13.2
+SHARED_LIBS +=  KF5MimeTreeParser        1.0 # 5.13.2
+SHARED_LIBS +=  KF5TemplateParser        1.0 # 5.13.2
+SHARED_LIBS +=  KF5WebEngineViewer       1.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates Grantlee_TextDocument
-WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchPIM
-WANTLIB += KF5AkonadiWidgets KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5FollowupReminder KF5GrantleeTheme KF5Gravatar KF5I18n
-WANTLIB += KF5IMAP KF5IconThemes KF5IdentityManagement KF5ItemModels
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5KaddressbookGrantlee KF5Libkdepim
-WANTLIB += KF5LibkdepimAkonadi KF5Libkleo KF5MailTransport KF5MailTransportAkonadi
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchPIM KF5AkonadiWidgets
+WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5GrantleeTheme
+WANTLIB += KF5Gravatar KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
+WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5KaddressbookGrantlee
+WANTLIB += KF5Libkdepim KF5Libkleo KF5MailTransport KF5MailTransportAkonadi
 WANTLIB += KF5Mbox KF5Mime KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
-WANTLIB += KF5SendLater KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5SyntaxHighlighting KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5WebChannel
 WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += c gpgmepp m qca-qt5 qgpgme
+WANTLIB += gpgmepp m qca-qt5 qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -82,6 +80,11 @@ LIB_DEPENDS =	devel/kf5/karchive \
 TEST_IS_INTERACTIVE =	X11
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Inotify=On
+# XXX fix me
+#CONFIGURE_ARGS +=	-DKDEPIM_RUN_AKONADI_TEST=OFF
+CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 pre-configure:
 	find ${WRKSRC}/{messagecomposer,templateparser,mimetreeparser,messageviewer} \

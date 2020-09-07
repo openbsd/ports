@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:27 rsadowski Exp $
 
 COMMENT =	library for reading and writing vocabulary
 DISTNAME =	libkeduvocdocument-${VERSION}
 CATEGORIES =	education x11
 
-SHARED_LIBS +=  KEduVocDocument           1.0 # 5.0
+SHARED_LIBS +=  KEduVocDocument           2.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Service Qt5Concurrent Qt5Core

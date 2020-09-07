@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/03 05:13:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:29 rsadowski Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/education/step
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5IconThemes KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Plotting KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5OpenGL Qt5Widgets Qt5Xml c cln gsl gslcblas m qalculate
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets Qt5Xml c cln
+WANTLIB += gsl gslcblas m qalculate
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

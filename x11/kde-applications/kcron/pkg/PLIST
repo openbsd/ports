@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:16 rsadowski Exp $
 @so lib/qt5/plugins/kcm_cron.so
 share/doc/HTML/ca/kcontrol5/kcron/
 share/doc/HTML/ca/kcontrol5/kcron/index.cache.bz2
@@ -35,6 +35,10 @@ share/doc/HTML/fr/kcontrol5/kcron/print.png
 share/doc/HTML/it/kcontrol5/kcron/
 share/doc/HTML/it/kcontrol5/kcron/index.cache.bz2
 share/doc/HTML/it/kcontrol5/kcron/index.docbook
+share/doc/HTML/ko/kcontrol5/
+share/doc/HTML/ko/kcontrol5/kcron/
+share/doc/HTML/ko/kcontrol5/kcron/index.cache.bz2
+share/doc/HTML/ko/kcontrol5/kcron/index.docbook
 share/doc/HTML/nl/kcontrol5/kcron/
 share/doc/HTML/nl/kcontrol5/kcron/index.cache.bz2
 share/doc/HTML/nl/kcontrol5/kcron/index.docbook
@@ -70,6 +74,11 @@ share/doc/HTML/uk/kcontrol5/kcron/index.docbook
 share/doc/HTML/uk/kcontrol5/kcron/kcronstart.png
 share/doc/HTML/uk/kcontrol5/kcron/newtask.png
 share/doc/HTML/uk/kcontrol5/kcron/newvariable.png
+share/doc/HTML/zh_CN/
+share/doc/HTML/zh_CN/kcontrol5/
+share/doc/HTML/zh_CN/kcontrol5/kcron/
+share/doc/HTML/zh_CN/kcontrol5/kcron/index.cache.bz2
+share/doc/HTML/zh_CN/kcontrol5/kcron/index.docbook
 share/kservices5/kcm_cron.desktop
 share/locale/ar/LC_MESSAGES/kcron.mo
 share/locale/bg/LC_MESSAGES/kcron.mo

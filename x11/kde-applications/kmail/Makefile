@@ -1,34 +1,32 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/24 18:56:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:21 rsadowski Exp $
 
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
-REVISION =	1
 
-SHARED_LIBS +=  kmailprivate       0.0 # 5.13.2
+SHARED_LIBS +=  kmailprivate       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiAgentBase KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchDebug
 WANTLIB += KF5AkonadiSearchPIM KF5AkonadiWidgets KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5CalendarCore KF5CalendarUtils KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DBusAddons KF5FollowupReminder
-WANTLIB += KF5Gravatar KF5GuiAddons KF5I18n KF5IMAP KF5IconThemes
-WANTLIB += KF5IdentityManagement KF5ItemModels KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DBusAddons KF5Gravatar
+WANTLIB += KF5GuiAddons KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
+WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5KManageSieve KF5KSieve KF5KSieveUi KF5KontactInterface
-WANTLIB += KF5Ldap KF5Libkdepim KF5LibkdepimAkonadi KF5Libkleo
-WANTLIB += KF5MailCommon KF5MailTransport KF5MailTransportAkonadi
-WANTLIB += KF5MessageComposer KF5MessageCore KF5MessageList KF5MessageViewer
-WANTLIB += KF5Mime KF5MimeTreeParser KF5Notifications KF5NotifyConfig
-WANTLIB += KF5Parts KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
-WANTLIB += KF5SendLater KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
-WANTLIB += KF5TemplateParser KF5TextWidgets KF5Tnef KF5Wallet
-WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += c gpgmepp m qgpgme
+WANTLIB += KF5Ldap KF5Libkdepim KF5Libkleo KF5MailCommon KF5MailTransport
+WANTLIB += KF5MailTransportAkonadi KF5MessageComposer KF5MessageCore
+WANTLIB += KF5MessageList KF5MessageViewer KF5Mime KF5MimeTreeParser
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5PimCommon
+WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5Solid
+WANTLIB += KF5SonnetUi KF5SyntaxHighlighting KF5TemplateParser
+WANTLIB += KF5TextWidgets KF5Tnef KF5Wallet KF5WebEngineViewer
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5Xml c gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes

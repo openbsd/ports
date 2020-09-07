@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:13 rsadowski Exp $
 @pkgpath x11/kde4/dragon
 @bin bin/dragon
 lib/qt5/plugins/kf5/parts/
@@ -33,6 +33,8 @@ share/doc/HTML/gl/dragonplayer/index.docbook
 share/doc/HTML/it/dragonplayer/
 share/doc/HTML/it/dragonplayer/index.cache.bz2
 share/doc/HTML/it/dragonplayer/index.docbook
+share/doc/HTML/it/dragonplayer/main.png
+share/doc/HTML/it/dragonplayer/playmedia.png
 share/doc/HTML/nl/dragonplayer/
 share/doc/HTML/nl/dragonplayer/index.cache.bz2
 share/doc/HTML/nl/dragonplayer/index.docbook
@@ -68,6 +70,7 @@ share/doc/HTML/uk/dragonplayer/playmedia.png
 share/examples/dragon/
 share/examples/dragon/xdg/
 share/examples/dragon/xdg/dragonplayerrc
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/dragonplayerrc
 share/icons/hicolor/128x128/apps/dragonplayer.png
 share/icons/hicolor/16x16/apps/dragonplayer.png

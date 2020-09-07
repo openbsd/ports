@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:24 rsadowski Exp $
 @pkgpath x11/kde4/kruler
 @bin bin/kruler
 share/applications/org.kde.kruler.desktop
@@ -6,7 +6,6 @@ share/doc/HTML/ca/kruler/
 share/doc/HTML/ca/kruler/index.cache.bz2
 share/doc/HTML/ca/kruler/index.docbook
 share/doc/HTML/ca/kruler/kruler-settings.png
-share/doc/HTML/ca/kruler/kruler.png
 share/doc/HTML/de/kruler/
 share/doc/HTML/de/kruler/index.cache.bz2
 share/doc/HTML/de/kruler/index.docbook
@@ -18,6 +17,9 @@ share/doc/HTML/en/kruler/kruler.png
 share/doc/HTML/es/kruler/
 share/doc/HTML/es/kruler/index.cache.bz2
 share/doc/HTML/es/kruler/index.docbook
+share/doc/HTML/fr/kruler/
+share/doc/HTML/fr/kruler/index.cache.bz2
+share/doc/HTML/fr/kruler/index.docbook
 share/doc/HTML/id/
 share/doc/HTML/id/kruler/
 share/doc/HTML/id/kruler/index.cache.bz2
@@ -25,6 +27,7 @@ share/doc/HTML/id/kruler/index.docbook
 share/doc/HTML/it/kruler/
 share/doc/HTML/it/kruler/index.cache.bz2
 share/doc/HTML/it/kruler/index.docbook
+share/doc/HTML/it/kruler/kruler-settings.png
 share/doc/HTML/nl/kruler/
 share/doc/HTML/nl/kruler/index.cache.bz2
 share/doc/HTML/nl/kruler/index.docbook

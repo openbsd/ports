@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:25 rsadowski Exp $
 @pkgpath x11/kde4/ktimer
 @bin bin/ktimer
 share/applications/org.kde.ktimer.desktop
@@ -28,6 +28,9 @@ share/doc/HTML/es/ktimer/index.docbook
 share/doc/HTML/et/ktimer/
 share/doc/HTML/et/ktimer/index.cache.bz2
 share/doc/HTML/et/ktimer/index.docbook
+share/doc/HTML/fr/ktimer/
+share/doc/HTML/fr/ktimer/index.cache.bz2
+share/doc/HTML/fr/ktimer/index.docbook
 share/doc/HTML/it/ktimer/
 share/doc/HTML/it/ktimer/index.cache.bz2
 share/doc/HTML/it/ktimer/index.docbook

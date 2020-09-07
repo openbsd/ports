@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/08/31 19:06:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:14 rsadowski Exp $
 
 COMMENT =	grantlee theme library
 DISTNAME =	grantleetheme-${VERSION}
 CATEGORIES =	devel x11
-REVISION =	2
 
-SHARED_LIBS +=  KF5GrantleeTheme          1.0 # 5.9
+SHARED_LIBS +=  KF5GrantleeTheme          2.0 # 5.9
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

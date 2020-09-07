@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 04:57:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:22 rsadowski Exp $
 @bin bin/akonadi_notes_agent
 @bin bin/knotes
 @lib lib/libknotesprivate.so.${LIBknotesprivate_VERSION}
 @lib lib/libnotesharedprivate.so.${LIBnotesharedprivate_VERSION}
 @so lib/qt5/plugins/kcm_knote.so
 @so lib/qt5/plugins/kcm_knotessummary.so
-@so lib/qt5/plugins/kontact_knotesplugin.so
+lib/qt5/plugins/kontact5/
+@so lib/qt5/plugins/kontact5/kontact_knotesplugin.so
 share/akonadi/agents/notesagent.desktop
 share/applications/org.kde.knotes.desktop
 share/config.kcfg/knotesglobalconfig.kcfg
@@ -43,6 +44,9 @@ share/doc/HTML/et/akonadi_notes_agent/index.docbook
 share/doc/HTML/et/knotes/
 share/doc/HTML/et/knotes/index.cache.bz2
 share/doc/HTML/et/knotes/index.docbook
+share/doc/HTML/fr/akonadi_notes_agent/
+share/doc/HTML/fr/akonadi_notes_agent/index.cache.bz2
+share/doc/HTML/fr/akonadi_notes_agent/index.docbook
 share/doc/HTML/it/akonadi_notes_agent/
 share/doc/HTML/it/akonadi_notes_agent/index.cache.bz2
 share/doc/HTML/it/akonadi_notes_agent/index.docbook

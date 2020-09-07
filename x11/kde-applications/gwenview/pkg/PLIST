@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:14 rsadowski Exp $
 @pkgpath x11/kde4/gwenview
 @bin bin/gwenview
 @bin bin/gwenview_importer
 @lib lib/libgwenviewlib.so.${LIBgwenviewlib_VERSION}
-@so lib/qt5/plugins/gvpart.so
+lib/qt5/plugins/kf5/parts/
+@so lib/qt5/plugins/kf5/parts/gvpart.so
 share/applications/org.kde.gwenview.desktop
 share/doc/HTML/ca/gwenview/
 share/doc/HTML/ca/gwenview/browse_mode.png
-share/doc/HTML/ca/gwenview/fullscreen-browse.png
-share/doc/HTML/ca/gwenview/fullscreen-view.png
 share/doc/HTML/ca/gwenview/index.cache.bz2
 share/doc/HTML/ca/gwenview/index.docbook
 share/doc/HTML/ca/gwenview/modified-bar.png
@@ -39,8 +38,16 @@ share/doc/HTML/id/gwenview/
 share/doc/HTML/id/gwenview/index.cache.bz2
 share/doc/HTML/id/gwenview/index.docbook
 share/doc/HTML/it/gwenview/
+share/doc/HTML/it/gwenview/browse_mode.png
+share/doc/HTML/it/gwenview/fullscreen-browse.png
+share/doc/HTML/it/gwenview/fullscreen-view.png
+share/doc/HTML/it/gwenview/importer-picking-root-folder.png
+share/doc/HTML/it/gwenview/importer.png
 share/doc/HTML/it/gwenview/index.cache.bz2
 share/doc/HTML/it/gwenview/index.docbook
+share/doc/HTML/it/gwenview/modified-bar.png
+share/doc/HTML/it/gwenview/start-page.png
+share/doc/HTML/it/gwenview/view_mode.png
 share/doc/HTML/nl/gwenview/
 share/doc/HTML/nl/gwenview/index.cache.bz2
 share/doc/HTML/nl/gwenview/index.docbook
@@ -58,7 +65,6 @@ share/doc/HTML/sv/gwenview/index.cache.bz2
 share/doc/HTML/sv/gwenview/index.docbook
 share/doc/HTML/uk/gwenview/
 share/doc/HTML/uk/gwenview/browse_mode.png
-share/doc/HTML/uk/gwenview/fullscreen_mode.png
 share/doc/HTML/uk/gwenview/importer-picking-root-folder.png
 share/doc/HTML/uk/gwenview/importer.png
 share/doc/HTML/uk/gwenview/index.cache.bz2
@@ -146,8 +152,8 @@ share/locale/uk/LC_MESSAGES/gwenview.mo
 share/locale/wa/LC_MESSAGES/gwenview.mo
 share/locale/zh_CN/LC_MESSAGES/gwenview.mo
 share/locale/zh_TW/LC_MESSAGES/gwenview.mo
-share/metainfo/
 share/metainfo/org.kde.gwenview.appdata.xml
+share/qlogging-categories5/gwenview.categories
 share/solid/actions/gwenview_importer.desktop
 share/solid/actions/gwenview_importer_camera.desktop
 @tag update-desktop-database

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/05 05:40:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:15 rsadowski Exp $
 
 COMMENT =	KDE digital camera support
 DISTNAME =	kamera-${VERSION}
 CATEGORIES =	x11 graphics
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n

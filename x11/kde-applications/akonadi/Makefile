@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/23 06:00:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:11 rsadowski Exp $
 
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
@@ -6,19 +6,18 @@ CATEGORIES =	databases productivity
 
 HOMEPAGE =	https://kontact.kde.org/
 
-SHARED_LIBS +=  KF5AkonadiAgentBase       0.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiCore            0.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiPrivate         0.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiWidgets         0.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiXml             0.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiAgentBase       1.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiCore            1.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiPrivate         1.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiWidgets         1.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiXml             1.0 # 5.6
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5IconThemes KF5ItemModels
-WANTLIB += KF5ItemViews KF5KIOCore KF5Service KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Widgets Qt5Xml c m sqlite3
-WANTLIB += xml2
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5KIOCore
+WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
+WANTLIB += Qt5Widgets Qt5Xml c m sqlite3 xml2
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -38,6 +37,8 @@ BUILD_DEPENDS =		devel/boost \
 # is our default now.
 BUILD_DEPENDS +=	databases/mariadb,-server \
 			databases/postgresql,-server \
+			devel/kf5/kcompletion \
+			devel/kf5/kdbusaddons  \
 			x11/qt5/qtbase,-mysql \
 			x11/qt5/qtbase,-psql
 
@@ -47,12 +48,10 @@ RUN_DEPENDS =		devel/kf5/kdesignerplugin \
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/kf5/kauth \
 			devel/kf5/kcodecs \
-			devel/kf5/kcompletion \
 			devel/kf5/kconfig \
 			devel/kf5/kconfigwidgets \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kcrash \
-			devel/kf5/kdbusaddons  \
 			devel/kf5/ki18n \
 			devel/kf5/kiconthemes \
 			devel/kf5/kio \

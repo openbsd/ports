@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/13 17:18:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:20 rsadowski Exp $
 @conflict kdewebdev-<=4
 @bin bin/kimagemapeditor
 @so lib/qt5/plugins/kimagemapeditor.so
@@ -29,6 +29,9 @@ share/doc/HTML/fr/kimagemapeditor/mainwindow.png
 share/doc/HTML/it/kimagemapeditor/
 share/doc/HTML/it/kimagemapeditor/index.cache.bz2
 share/doc/HTML/it/kimagemapeditor/index.docbook
+share/doc/HTML/ko/kimagemapeditor/
+share/doc/HTML/ko/kimagemapeditor/index.cache.bz2
+share/doc/HTML/ko/kimagemapeditor/index.docbook
 share/doc/HTML/nl/kimagemapeditor/
 share/doc/HTML/nl/kimagemapeditor/index.cache.bz2
 share/doc/HTML/nl/kimagemapeditor/index.docbook

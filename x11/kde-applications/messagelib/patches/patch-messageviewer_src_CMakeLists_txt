@@ -1,9 +1,9 @@
-$OpenBSD: patch-messageviewer_src_CMakeLists_txt,v 1.1.1.1 2020/06/13 18:32:53 rsadowski Exp $
+$OpenBSD: patch-messageviewer_src_CMakeLists_txt,v 1.2 2020/09/07 14:49:28 rsadowski Exp $
 
 Index: messageviewer/src/CMakeLists.txt
 --- messageviewer/src/CMakeLists.txt.orig
 +++ messageviewer/src/CMakeLists.txt
-@@ -37,9 +37,6 @@ endif()
+@@ -34,9 +34,6 @@ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION 
  
  configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h)
  
@@ -13,7 +13,7 @@ Index: messageviewer/src/CMakeLists.txt
  if(BUILD_TESTING)
      add_subdirectory(header/autotests)
      add_subdirectory(scamdetection/autotests)
-@@ -268,6 +265,11 @@ ki18n_wrap_ui(libmessageviewer_SRCS
+@@ -300,6 +297,11 @@ ki18n_wrap_ui(libmessageviewer_SRCS
  
  
  add_library(KF5MessageViewer ${libmessageviewer_SRCS})
@@ -25,8 +25,8 @@ Index: messageviewer/src/CMakeLists.txt
  generate_export_header(KF5MessageViewer BASE_NAME messageviewer)
  add_library(KF5::MessageViewer ALIAS KF5MessageViewer)
  
-@@ -307,7 +309,7 @@ target_link_libraries(KF5MessageViewer
-     Grantlee5::TextDocument
+@@ -338,7 +340,7 @@ target_link_libraries(KF5MessageViewer
+     KF5::AkonadiContact
      Grantlee5::Templates
      Qt5::PrintSupport
 -    QGpgme

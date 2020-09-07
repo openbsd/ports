@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/03 05:13:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:19 rsadowski Exp $
 
 COMMENT =	simple game of evading killer robots
 DISTNAME =	killbots-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/killbots
 

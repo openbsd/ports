@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 03:52:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:19 rsadowski Exp $
 @pkgpath x11/kde4/kget
 @bin bin/kget
 @lib lib/libkgetcore.so.${LIBkgetcore_VERSION}
@@ -96,8 +96,24 @@ share/doc/HTML/id/kget/
 share/doc/HTML/id/kget/index.cache.bz2
 share/doc/HTML/id/kget/index.docbook
 share/doc/HTML/it/kget/
+share/doc/HTML/it/kget/file.png
+share/doc/HTML/it/kget/import_link.png
 share/doc/HTML/it/kget/index.cache.bz2
 share/doc/HTML/it/kget/index.docbook
+share/doc/HTML/it/kget/kget_Advanced.png
+share/doc/HTML/it/kget/kget_Appearance.png
+share/doc/HTML/it/kget/kget_Network.png
+share/doc/HTML/it/kget/kget_Web_Interface.png
+share/doc/HTML/it/kget/kget_drop_target.png
+share/doc/HTML/it/kget/kget_group.png
+share/doc/HTML/it/kget/kget_groups.png
+share/doc/HTML/it/kget/kget_plugins.png
+share/doc/HTML/it/kget/kget_transfer_hostory.png
+share/doc/HTML/it/kget/kget_verification.png
+share/doc/HTML/it/kget/metalink0.png
+share/doc/HTML/it/kget/metalink1.png
+share/doc/HTML/it/kget/metalink2.png
+share/doc/HTML/it/kget/metalink3.png
 share/doc/HTML/nl/kget/
 share/doc/HTML/nl/kget/index.cache.bz2
 share/doc/HTML/nl/kget/index.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/03 05:13:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:49:16 rsadowski Exp $
 @pkgpath x11/kde4/kblocks
 @bin bin/kblocks
 share/applications/org.kde.kblocks.desktop
@@ -48,6 +48,7 @@ share/doc/HTML/uk/kblocks/index.docbook
 share/examples/kblocks/
 share/examples/kblocks/xdg/
 share/examples/kblocks/xdg/kblocks.knsrc
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/kblocks.knsrc
 share/icons/hicolor/128x128/apps/kblocks.png
 share/icons/hicolor/16x16/apps/kblocks.png

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/06/03 05:13:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:49:13 rsadowski Exp $
 @pkgpath x11/kde4/cantor
 @bin bin/cantor
-@bin bin/cantor_python3server
+@bin bin/cantor_pythonserver
 @bin bin/cantor_rserver
 @bin bin/cantor_scripteditor
 include/cantor/
@@ -16,6 +16,7 @@ include/cantor/defaultvariablemodel.h
 include/cantor/epsresult.h
 include/cantor/expression.h
 include/cantor/extension.h
+include/cantor/graphicpackage.h
 include/cantor/helpresult.h
 include/cantor/htmlresult.h
 include/cantor/imageresult.h
@@ -28,13 +29,13 @@ include/cantor/session.h
 include/cantor/syntaxhelpobject.h
 include/cantor/textresult.h
 include/cantor/worksheetaccess.h
+@so lib/cantor_pythonbackend.so
 lib/cmake/Cantor/
 lib/cmake/Cantor/CantorConfig.cmake
 lib/cmake/Cantor/CantorConfigVersion.cmake
 lib/cmake/Cantor/CantorTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Cantor/CantorTargets.cmake
 @so lib/libcantor_config.so
-@so lib/libcantor_pythonbackend.so
 @lib lib/libcantorlibs.so.${LIBcantorlibs_VERSION}
 lib/qt5/plugins/cantor/
 lib/qt5/plugins/cantor/assistants/
@@ -56,12 +57,13 @@ lib/qt5/plugins/cantor/backends/
 @so lib/qt5/plugins/cantor/backends/cantor_luabackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_maximabackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_octavebackend.so
-@so lib/qt5/plugins/cantor/backends/cantor_python3backend.so
+@so lib/qt5/plugins/cantor/backends/cantor_pythonbackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_qalculatebackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_rbackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_sagebackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_scilabbackend.so
 lib/qt5/plugins/cantor/panels/
+@so lib/qt5/plugins/cantor/panels/cantor_filebrowserpanelplugin.so
 @so lib/qt5/plugins/cantor/panels/cantor_helppanelplugin.so
 @so lib/qt5/plugins/cantor/panels/cantor_variablemanagerplugin.so
 @so lib/qt5/plugins/libcantorpart.so
@@ -71,11 +73,15 @@ share/cantor/latex/
 share/cantor/latex/preview.sty
 share/cantor/maximabackend/
 share/cantor/maximabackend/cantor-initmaxima.lisp
+share/cantor/octave/
+share/cantor/octave/graphic_packages.xml
 share/cantor/octavebackend/
 share/cantor/octavebackend/cantor_eigenvectors.m
 share/cantor/octavebackend/cantor_plot2d.m
 share/cantor/octavebackend/cantor_plot3d.m
 share/cantor/octavebackend/cantor_print.m
+share/cantor/python/
+share/cantor/python/graphic_packages.xml
 share/cantor/sagebackend/
 share/cantor/sagebackend/cantor-execsage
 share/cantor/xslt/
@@ -87,7 +93,7 @@ share/config.kcfg/kalgebrabackend.kcfg
 share/config.kcfg/luabackend.kcfg
 share/config.kcfg/maximabackend.kcfg
 share/config.kcfg/octavebackend.kcfg
-share/config.kcfg/python3backend.kcfg
+share/config.kcfg/pythonbackend.kcfg
 share/config.kcfg/qalculatebackend.kcfg
 share/config.kcfg/rserver.kcfg
 share/config.kcfg/sagebackend.kcfg
@@ -99,7 +105,6 @@ share/doc/HTML/ca/cantor/import-dlg.png
 share/doc/HTML/ca/cantor/index.cache.bz2
 share/doc/HTML/ca/cantor/index.docbook
 share/doc/HTML/ca/cantor/integrate-dlg.png
-share/doc/HTML/ca/cantor/latex_formula.png
 share/doc/HTML/ca/cantor/matrix-dlg.png
 share/doc/HTML/ca/cantor/plot-dlg1.png
 share/doc/HTML/ca/cantor/plot-dlg2.png
@@ -175,6 +180,7 @@ share/doc/HTML/uk/cantor/solve-equations-dlg.png
 share/examples/cantor/
 share/examples/cantor/xdg/
 share/examples/cantor/xdg/cantor.knsrc
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/cantor.knsrc
 share/examples/cantor/xdg/cantor_kalgebra.knsrc
 @sample ${SYSCONFDIR}/xdg/cantor_kalgebra.knsrc
@@ -184,8 +190,7 @@ share/examples/cantor/xdg/cantor_maxima.knsrc
 @sample ${SYSCONFDIR}/xdg/cantor_maxima.knsrc
 share/examples/cantor/xdg/cantor_octave.knsrc
 @sample ${SYSCONFDIR}/xdg/cantor_octave.knsrc
-share/examples/cantor/xdg/cantor_python3.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_python3.knsrc
+share/examples/cantor/xdg/cantor_python.knsrc
 share/examples/cantor/xdg/cantor_qalculate.knsrc
 @sample ${SYSCONFDIR}/xdg/cantor_qalculate.knsrc
 share/examples/cantor/xdg/cantor_r.knsrc

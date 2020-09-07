@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/21 18:12:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:21 rsadowski Exp $
 
 COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
-REVISION =	0
 
-SHARED_LIBS +=  KF5MailTransport             0.0 # 5.13.3
-SHARED_LIBS +=  KF5MailTransportAkonadi      0.0 # 5.13.3
+SHARED_LIBS +=  KF5MailTransport             1.0 # 5.13.3
+SHARED_LIBS +=  KF5MailTransportAkonadi      1.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5ItemModels
-WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOWidgets
-WANTLIB += KF5Mime KF5Service KF5Wallet KF5WidgetsAddons KPimGAPICore
-WANTLIB += KPimSMTP Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml m
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Mime KF5Service KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KPimGAPICore KPimSMTP Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 

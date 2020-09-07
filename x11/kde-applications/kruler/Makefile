@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/05 05:40:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:24 rsadowski Exp $
 
 COMMENT =	screen ruler for KDE
 DISTNAME =	kruler-${VERSION}
 CATEGORIES =	graphics
-REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/kruler/
 

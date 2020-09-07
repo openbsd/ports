@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:23 rsadowski Exp $
 @bin bin/kompare
 include/kompare/
 include/kompare/kompareinterface.h
@@ -8,16 +8,8 @@ include/kompare/kompareinterface.h
 @so lib/qt5/plugins/kf5/parts/komparepart.so
 share/applications/org.kde.kompare.desktop
 share/doc/HTML/ca/kompare/
-share/doc/HTML/ca/kompare/dock.png
 share/doc/HTML/ca/kompare/index.cache.bz2
 share/doc/HTML/ca/kompare/index.docbook
-share/doc/HTML/ca/kompare/settings-diff1.png
-share/doc/HTML/ca/kompare/settings-diff2.png
-share/doc/HTML/ca/kompare/settings-diff3.png
-share/doc/HTML/ca/kompare/settings-diff4.png
-share/doc/HTML/ca/kompare/settings-view1.png
-share/doc/HTML/ca/kompare/settings-view2.png
-share/doc/HTML/ca/kompare/undock.png
 share/doc/HTML/de/kompare/
 share/doc/HTML/de/kompare/index.cache.bz2
 share/doc/HTML/de/kompare/index.docbook
@@ -41,6 +33,12 @@ share/doc/HTML/et/kompare/index.docbook
 share/doc/HTML/it/kompare/
 share/doc/HTML/it/kompare/index.cache.bz2
 share/doc/HTML/it/kompare/index.docbook
+share/doc/HTML/it/kompare/settings-diff1.png
+share/doc/HTML/it/kompare/settings-diff2.png
+share/doc/HTML/it/kompare/settings-diff3.png
+share/doc/HTML/it/kompare/settings-diff4.png
+share/doc/HTML/it/kompare/settings-view1.png
+share/doc/HTML/it/kompare/settings-view2.png
 share/doc/HTML/nl/kompare/
 share/doc/HTML/nl/kompare/index.cache.bz2
 share/doc/HTML/nl/kompare/index.docbook
@@ -133,3 +131,4 @@ share/locale/zh_TW/LC_MESSAGES/kompare.mo
 share/metainfo/
 share/metainfo/org.kde.kompare.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/kompare.categories

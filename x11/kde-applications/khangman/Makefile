@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/05 05:40:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:19 rsadowski Exp $
 
 COMMENT =	KDE hangman game
 DISTNAME =	khangman-${VERSION}
 CATEGORIES =	games education
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

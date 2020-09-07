@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:12 rsadowski Exp $
 @pkgpath x11/kde4/blinken
 @bin bin/blinken
 share/applications/org.kde.blinken.desktop
@@ -20,10 +20,7 @@ share/doc/HTML/ca/blinken/
 share/doc/HTML/ca/blinken/blinken1.png
 share/doc/HTML/ca/blinken/blinken2.png
 share/doc/HTML/ca/blinken/blinken_accesskeys.png
-share/doc/HTML/ca/blinken/blinken_helpbutton.png
-share/doc/HTML/ca/blinken/blinken_highscoresbutton.png
 share/doc/HTML/ca/blinken/blinken_nickprompt.png
-share/doc/HTML/ca/blinken/blinken_quitbutton.png
 share/doc/HTML/ca/blinken/index.cache.bz2
 share/doc/HTML/ca/blinken/index.docbook
 share/doc/HTML/de/blinken/
@@ -51,6 +48,13 @@ share/doc/HTML/es/blinken/index.docbook
 share/doc/HTML/et/blinken/
 share/doc/HTML/et/blinken/index.cache.bz2
 share/doc/HTML/et/blinken/index.docbook
+share/doc/HTML/fr/blinken/
+share/doc/HTML/fr/blinken/blinken1.png
+share/doc/HTML/fr/blinken/blinken2.png
+share/doc/HTML/fr/blinken/blinken_accesskeys.png
+share/doc/HTML/fr/blinken/blinken_nickprompt.png
+share/doc/HTML/fr/blinken/index.cache.bz2
+share/doc/HTML/fr/blinken/index.docbook
 share/doc/HTML/it/blinken/
 share/doc/HTML/it/blinken/index.cache.bz2
 share/doc/HTML/it/blinken/index.docbook
@@ -66,9 +70,7 @@ share/doc/HTML/pt_BR/blinken/blinken1.png
 share/doc/HTML/pt_BR/blinken/blinken2.png
 share/doc/HTML/pt_BR/blinken/blinken_accesskeys.png
 share/doc/HTML/pt_BR/blinken/blinken_helpbutton.png
-share/doc/HTML/pt_BR/blinken/blinken_highscoresbutton.png
 share/doc/HTML/pt_BR/blinken/blinken_nickprompt.png
-share/doc/HTML/pt_BR/blinken/blinken_quitbutton.png
 share/doc/HTML/pt_BR/blinken/index.cache.bz2
 share/doc/HTML/pt_BR/blinken/index.docbook
 share/doc/HTML/sv/blinken/

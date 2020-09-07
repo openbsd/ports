@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2020/06/09 07:14:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2020/09/07 14:49:30 rsadowski Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
 CATEGORIES =	x11 productivity
-REVISION =	2
 
 HOMEPAGE =	https://umbrello.kde.org/
 
@@ -11,12 +10,12 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GuiAddons
 WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KDELibs4Support
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
-WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextEditor
-WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets
-WANTLIB += Qt5Xml c m xml2 xslt
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Notifications KF5Parts KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextEditor KF5TextWidgets KF5UnitConversion KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg Qt5WebKit
+WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml c m xml2 xslt
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

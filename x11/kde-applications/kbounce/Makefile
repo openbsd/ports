@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/03 05:13:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:16 rsadowski Exp $
 
 COMMENT =	ball bouncing game
 DISTNAME =	kbounce-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kbounce
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KDEGames
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5Service KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5Xml
-WANTLIB += c m
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Service KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg
+WANTLIB += Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

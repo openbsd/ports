@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:22 rsadowski Exp $
 @pkgpath x11/kde4/kolf
 @bin bin/kolf
 share/applications/org.kde.kolf.desktop
@@ -17,6 +17,9 @@ share/doc/HTML/et/kolf/index.docbook
 share/doc/HTML/fr/kolf/
 share/doc/HTML/fr/kolf/index.cache.bz2
 share/doc/HTML/fr/kolf/index.docbook
+share/doc/HTML/gl/kolf/
+share/doc/HTML/gl/kolf/index.cache.bz2
+share/doc/HTML/gl/kolf/index.docbook
 share/doc/HTML/it/kolf/
 share/doc/HTML/it/kolf/index.cache.bz2
 share/doc/HTML/it/kolf/index.docbook
@@ -105,6 +108,7 @@ share/locale/km/LC_MESSAGES/kolf.mo
 share/locale/ko/LC_MESSAGES/kolf.mo
 share/locale/lt/LC_MESSAGES/kolf.mo
 share/locale/lv/LC_MESSAGES/kolf.mo
+share/locale/ml/LC_MESSAGES/kolf.mo
 share/locale/mr/LC_MESSAGES/kolf.mo
 share/locale/nb/LC_MESSAGES/kolf.mo
 share/locale/nds/LC_MESSAGES/kolf.mo

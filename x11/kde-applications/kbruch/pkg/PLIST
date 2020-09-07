@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:16 rsadowski Exp $
 @pkgpath x11/kde4/kbruch
 @bin bin/kbruch
 @man man/man1/kbruch.1
@@ -54,6 +54,21 @@ share/doc/HTML/es/kbruch/statistics.png
 share/doc/HTML/et/kbruch/
 share/doc/HTML/et/kbruch/index.cache.bz2
 share/doc/HTML/et/kbruch/index.docbook
+share/doc/HTML/fr/kbruch/
+share/doc/HTML/fr/kbruch/checked.png
+share/doc/HTML/fr/kbruch/compare.png
+share/doc/HTML/fr/kbruch/convert.png
+share/doc/HTML/fr/kbruch/factorize.png
+share/doc/HTML/fr/kbruch/gui_main.png
+share/doc/HTML/fr/kbruch/gui_mode.png
+share/doc/HTML/fr/kbruch/index.cache.bz2
+share/doc/HTML/fr/kbruch/index.docbook
+share/doc/HTML/fr/kbruch/learning.png
+share/doc/HTML/fr/kbruch/mixed.png
+share/doc/HTML/fr/kbruch/percentage.png
+share/doc/HTML/fr/kbruch/reduced.png
+share/doc/HTML/fr/kbruch/settings.png
+share/doc/HTML/fr/kbruch/statistics.png
 share/doc/HTML/it/kbruch/
 share/doc/HTML/it/kbruch/index.cache.bz2
 share/doc/HTML/it/kbruch/index.docbook

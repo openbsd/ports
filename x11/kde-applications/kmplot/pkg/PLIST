@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:22 rsadowski Exp $
 @pkgpath x11/kde4/kmplot
 @bin bin/kmplot
 @so lib/qt5/plugins/kmplotpart.so
@@ -11,18 +11,8 @@ share/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml
 share/dbus-1/interfaces/org.kde.kmplot.Parser.xml
 share/dbus-1/interfaces/org.kde.kmplot.View.xml
 share/doc/HTML/ca/kmplot/
-share/doc/HTML/ca/kmplot/commands.docbook
-share/doc/HTML/ca/kmplot/configuration.docbook
-share/doc/HTML/ca/kmplot/credits.docbook
-share/doc/HTML/ca/kmplot/dcop.docbook
-share/doc/HTML/ca/kmplot/developer.docbook
-share/doc/HTML/ca/kmplot/firststeps.docbook
 share/doc/HTML/ca/kmplot/index.cache.bz2
 share/doc/HTML/ca/kmplot/index.docbook
-share/doc/HTML/ca/kmplot/install.docbook
-share/doc/HTML/ca/kmplot/introduction.docbook
-share/doc/HTML/ca/kmplot/reference.docbook
-share/doc/HTML/ca/kmplot/using.docbook
 share/doc/HTML/de/kmplot/
 share/doc/HTML/de/kmplot/index.cache.bz2
 share/doc/HTML/de/kmplot/index.docbook

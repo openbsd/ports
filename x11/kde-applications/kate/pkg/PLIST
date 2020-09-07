@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 18:01:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:49:15 rsadowski Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/kate
 @bin bin/kate
@@ -31,45 +31,20 @@ lib/qt5/plugins/ktexteditor/
 share/applications/org.kde.kate.desktop
 share/applications/org.kde.kwrite.desktop
 share/doc/HTML/ca/kate/
-share/doc/HTML/ca/kate/arrow-down-double-22.png
-share/doc/HTML/ca/kate/arrow-up-double-22.png
 share/doc/HTML/ca/kate/backtrace-settings.png
-share/doc/HTML/ca/kate/bookmarks-22.png
 share/doc/HTML/ca/kate/build-output.png
 share/doc/HTML/ca/kate/close-except-like.png
 share/doc/HTML/ca/kate/configdialog01.png
-share/doc/HTML/ca/kate/configure-22.png
-share/doc/HTML/ca/kate/configure-shortcuts-22.png
 share/doc/HTML/ca/kate/configuring.docbook
 share/doc/HTML/ca/kate/ctags-global-setting.png
-share/doc/HTML/ca/kate/ctags-session-setting.png
 share/doc/HTML/ca/kate/development.docbook
-share/doc/HTML/ca/kate/dialog-ok-22.png
-share/doc/HTML/ca/kate/document-new-22.png
-share/doc/HTML/ca/kate/document-open-22.png
-share/doc/HTML/ca/kate/document-save-22.png
-share/doc/HTML/ca/kate/document-save-as-22.png
-share/doc/HTML/ca/kate/documentswitcher.png
-share/doc/HTML/ca/kate/edit-co${MODPY_PY_PREFIX}22.png
-share/doc/HTML/ca/kate/edit-delete-22.png
-share/doc/HTML/ca/kate/edit-select-all-22.png
-share/doc/HTML/ca/kate/format-text-superscript-22.png
 share/doc/HTML/ca/kate/fundamentals.docbook
-share/doc/HTML/ca/kate/games-config-options-22.png
-share/doc/HTML/ca/kate/gdb-call-stack.png
 share/doc/HTML/ca/kate/gdb-io.png
-share/doc/HTML/ca/kate/gdb-locals.png
 share/doc/HTML/ca/kate/gdb-output.png
 share/doc/HTML/ca/kate/gdb-settings.png
-share/doc/HTML/ca/kate/go-down-22.png
-share/doc/HTML/ca/kate/go-next-22.png
-share/doc/HTML/ca/kate/go-previous-22.png
-share/doc/HTML/ca/kate/go-up-22.png
 share/doc/HTML/ca/kate/index.cache.bz2
 share/doc/HTML/ca/kate/index.docbook
 share/doc/HTML/ca/kate/kate.png
-share/doc/HTML/ca/kate/list-add-22.png
-share/doc/HTML/ca/kate/mascot_kate.png
 share/doc/HTML/ca/kate/menus.docbook
 share/doc/HTML/ca/kate/plugins.docbook
 share/doc/HTML/ca/kate/project-completition.png
@@ -83,26 +58,14 @@ share/doc/HTML/ca/kate/snippets-panel.png
 share/doc/HTML/ca/kate/snippets-repository.png
 share/doc/HTML/ca/kate/snippets-usage.png
 share/doc/HTML/ca/kate/symbolviewer-settings.png
-share/doc/HTML/ca/kate/system-switch-user-22.png
-share/doc/HTML/ca/kate/tab-duplicate-22.png
-share/doc/HTML/ca/kate/tab-new-22.png
 share/doc/HTML/ca/kate/textfilter.png
-share/doc/HTML/ca/kate/view-refresh-22.png
-share/doc/HTML/ca/kate/view-split-left-right-22.png
 share/doc/HTML/ca/katepart/
 share/doc/HTML/ca/katepart/advanced.docbook
-share/doc/HTML/ca/katepart/arrow-down-double-22.png
-share/doc/HTML/ca/katepart/arrow-up-double-22.png
-share/doc/HTML/ca/katepart/comma-to.png
-share/doc/HTML/ca/katepart/configure-shortcuts-22.png
 share/doc/HTML/ca/katepart/configuring.docbook
 share/doc/HTML/ca/katepart/development.docbook
-share/doc/HTML/ca/katepart/edit-select-all-22.png
-share/doc/HTML/ca/katepart/format-text-superscript-22.png
 share/doc/HTML/ca/katepart/fundamentals.docbook
 share/doc/HTML/ca/katepart/index.cache.bz2
 share/doc/HTML/ca/katepart/index.docbook
-share/doc/HTML/ca/katepart/line-modification-system.png
 share/doc/HTML/ca/katepart/menus.docbook
 share/doc/HTML/ca/katepart/minimap.png
 share/doc/HTML/ca/katepart/part.docbook
@@ -241,6 +204,9 @@ share/doc/HTML/it/katepart/vi.docbook
 share/doc/HTML/it/kwrite/
 share/doc/HTML/it/kwrite/index.cache.bz2
 share/doc/HTML/it/kwrite/index.docbook
+share/doc/HTML/ko/kwrite/
+share/doc/HTML/ko/kwrite/index.cache.bz2
+share/doc/HTML/ko/kwrite/index.docbook
 share/doc/HTML/nl/kate/
 share/doc/HTML/nl/kate/configuring.docbook
 share/doc/HTML/nl/kate/development.docbook
@@ -341,7 +307,6 @@ share/doc/HTML/uk/kate/project-current-analysis.png
 share/doc/HTML/uk/kate/project-quickopen.png
 share/doc/HTML/uk/kate/project-search.png
 share/doc/HTML/uk/kate/project-view.png
-share/doc/HTML/uk/kate/rust-configuration.png
 share/doc/HTML/uk/kate/textfilter.png
 share/doc/HTML/uk/katepart/
 share/doc/HTML/uk/katepart/advanced.docbook
@@ -978,6 +943,7 @@ share/locale/ja/LC_MESSAGES/kate.mo
 share/locale/ja/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ja/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ja/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/ja/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ja/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ja/LC_MESSAGES/katefiletree.mo
 share/locale/ja/LC_MESSAGES/kategdbplugin.mo
@@ -1058,6 +1024,7 @@ share/locale/lt/LC_MESSAGES/kate.mo
 share/locale/lt/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/lt/LC_MESSAGES/katebuild-plugin.mo
 share/locale/lt/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/lt/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/lt/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/lt/LC_MESSAGES/katefiletree.mo
 share/locale/lt/LC_MESSAGES/kategdbplugin.mo
@@ -1073,6 +1040,7 @@ share/locale/lt/LC_MESSAGES/katexmlcheck.mo
 share/locale/lt/LC_MESSAGES/katexmltools.mo
 share/locale/lt/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/lt/LC_MESSAGES/kwrite.mo
+share/locale/lt/LC_MESSAGES/lspclient.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/lt/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/lv/LC_MESSAGES/kate-ctags-plugin.mo
@@ -1095,6 +1063,7 @@ share/locale/ml/LC_MESSAGES/kate.mo
 share/locale/ml/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ml/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ml/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/ml/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ml/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ml/LC_MESSAGES/katefiletree.mo
 share/locale/ml/LC_MESSAGES/kategdbplugin.mo
@@ -1110,6 +1079,7 @@ share/locale/ml/LC_MESSAGES/katexmlcheck.mo
 share/locale/ml/LC_MESSAGES/katexmltools.mo
 share/locale/ml/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ml/LC_MESSAGES/kwrite.mo
+share/locale/ml/LC_MESSAGES/lspclient.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/ml/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/mr/LC_MESSAGES/kate-ctags-plugin.mo
@@ -1391,6 +1361,7 @@ share/locale/sl/LC_MESSAGES/kate.mo
 share/locale/sl/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/sl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/sl/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/sl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/sl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/sl/LC_MESSAGES/katefiletree.mo
 share/locale/sl/LC_MESSAGES/kategdbplugin.mo
@@ -1406,6 +1377,7 @@ share/locale/sl/LC_MESSAGES/katexmlcheck.mo
 share/locale/sl/LC_MESSAGES/katexmltools.mo
 share/locale/sl/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/sl/LC_MESSAGES/kwrite.mo
+share/locale/sl/LC_MESSAGES/lspclient.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/sl/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/sr/LC_MESSAGES/kate-ctags-plugin.mo

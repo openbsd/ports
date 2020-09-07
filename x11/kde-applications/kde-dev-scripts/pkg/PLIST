@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/23 18:01:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:17 rsadowski Exp $
 @pkgpath x11/kde4/dev-scripts
 bin/adddebug
 bin/build-progress.sh
@@ -75,8 +75,6 @@ bin/zonetab2pot.py
 @man man/man1/fixincludes.1
 @man man/man1/pruneemptydirs.1
 @man man/man1/qtdoc.1
-@man man/man1/reportview.1
-@man man/man1/transxx.1
 @man man/man1/zonetab2pot.py.1
 share/uncrustify/
 share/uncrustify/uncrustify-kf5.cfg

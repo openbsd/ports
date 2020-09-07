@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:28 rsadowski Exp $
 @pkgpath x11/kde4/okular
 @bin bin/okular
 include/okular/
@@ -104,29 +104,14 @@ share/config.kcfg/okular_core.kcfg
 share/config.kcfg/pdfsettings.kcfg
 share/doc/HTML/ca/okular/
 share/doc/HTML/ca/okular/bookmark-management.png
-share/doc/HTML/ca/okular/bookmarks.png
 share/doc/HTML/ca/okular/configure-annotations.png
 share/doc/HTML/ca/okular/configure-backends.png
 share/doc/HTML/ca/okular/configure-editor.png
 share/doc/HTML/ca/okular/configure.png
-share/doc/HTML/ca/okular/enhance-lowcontrast.png
-share/doc/HTML/ca/okular/enhance-shape.png
-share/doc/HTML/ca/okular/enhance-solid.png
-share/doc/HTML/ca/okular/enhance-thinline.png
 share/doc/HTML/ca/okular/index.cache.bz2
 share/doc/HTML/ca/okular/index.docbook
 share/doc/HTML/ca/okular/mainwindow.png
 share/doc/HTML/ca/okular/presentation.png
-share/doc/HTML/ca/okular/tool-ellipse-okular.png
-share/doc/HTML/ca/okular/tool-highlighter-okular.png
-share/doc/HTML/ca/okular/tool-ink-okular.png
-share/doc/HTML/ca/okular/tool-line-okular.png
-share/doc/HTML/ca/okular/tool-note-inline-okular.png
-share/doc/HTML/ca/okular/tool-note-okular.png
-share/doc/HTML/ca/okular/tool-polygon-okular.png
-share/doc/HTML/ca/okular/tool-stamp-okular.png
-share/doc/HTML/ca/okular/tool-typewriter-okular.png
-share/doc/HTML/ca/okular/tool-underline-okular.png
 share/doc/HTML/de/okular/
 share/doc/HTML/de/okular/annotation-properties.png
 share/doc/HTML/de/okular/configure-annotations.png
@@ -157,16 +142,29 @@ share/doc/HTML/en/okular/mainwindow.png
 share/doc/HTML/en/okular/presentation.png
 share/doc/HTML/en/okular/signatures-bar.png
 share/doc/HTML/en/okular/signatures-panel.png
-share/doc/HTML/en/okular/tool-ellipse-okular.png
-share/doc/HTML/en/okular/tool-highlighter-okular.png
-share/doc/HTML/en/okular/tool-ink-okular.png
-share/doc/HTML/en/okular/tool-line-okular.png
-share/doc/HTML/en/okular/tool-note-inline-okular.png
-share/doc/HTML/en/okular/tool-note-okular.png
-share/doc/HTML/en/okular/tool-polygon-okular.png
-share/doc/HTML/en/okular/tool-stamp-okular.png
-share/doc/HTML/en/okular/tool-typewriter-okular.png
-share/doc/HTML/en/okular/tool-underline-okular.png
+share/doc/HTML/en/okular/tool-draw-arrow.png
+share/doc/HTML/en/okular/tool-draw-ellipse.png
+share/doc/HTML/en/okular/tool-draw-freehand.png
+share/doc/HTML/en/okular/tool-draw-highlight.png
+share/doc/HTML/en/okular/tool-draw-line.png
+share/doc/HTML/en/okular/tool-draw-polyline.png
+share/doc/HTML/en/okular/tool-draw-rectangle.png
+share/doc/HTML/en/okular/tool-edit-comment.png
+share/doc/HTML/en/okular/tool-edit-line-width.png
+share/doc/HTML/en/okular/tool-edit-opacity.png
+share/doc/HTML/en/okular/tool-favorite.png
+share/doc/HTML/en/okular/tool-fill-color.png
+share/doc/HTML/en/okular/tool-font-face.png
+share/doc/HTML/en/okular/tool-format-text-color.png
+share/doc/HTML/en/okular/tool-format-text-strikethrough.png
+share/doc/HTML/en/okular/tool-format-text-underline-squiggle.png
+share/doc/HTML/en/okular/tool-format-text-underline.png
+share/doc/HTML/en/okular/tool-note.png
+share/doc/HTML/en/okular/tool-pin.png
+share/doc/HTML/en/okular/tool-settings-configure.png
+share/doc/HTML/en/okular/tool-tag.png
+share/doc/HTML/en/okular/tool-tool-text.png
+share/doc/HTML/en/okular/tool-window-pin.png
 share/doc/HTML/es/okular/
 share/doc/HTML/es/okular/configure.png
 share/doc/HTML/es/okular/embedded-files-bar.png
@@ -189,8 +187,21 @@ share/doc/HTML/gl/okular/
 share/doc/HTML/gl/okular/index.cache.bz2
 share/doc/HTML/gl/okular/index.docbook
 share/doc/HTML/it/okular/
+share/doc/HTML/it/okular/annotation-properties.png
+share/doc/HTML/it/okular/annotations.png
+share/doc/HTML/it/okular/bookmark-management.png
+share/doc/HTML/it/okular/configure-annotations.png
+share/doc/HTML/it/okular/configure-backends.png
+share/doc/HTML/it/okular/configure-editor.png
+share/doc/HTML/it/okular/configure.png
+share/doc/HTML/it/okular/embedded-files-bar.png
+share/doc/HTML/it/okular/forms-bar.png
 share/doc/HTML/it/okular/index.cache.bz2
 share/doc/HTML/it/okular/index.docbook
+share/doc/HTML/it/okular/mainwindow.png
+share/doc/HTML/it/okular/presentation.png
+share/doc/HTML/it/okular/signatures-bar.png
+share/doc/HTML/it/okular/signatures-panel.png
 share/doc/HTML/ja/okular/
 share/doc/HTML/ja/okular/configure.png
 share/doc/HTML/ja/okular/embedded-files-bar.png
@@ -208,10 +219,6 @@ share/doc/HTML/pl/okular/configure-backends.png
 share/doc/HTML/pl/okular/configure-editor.png
 share/doc/HTML/pl/okular/configure.png
 share/doc/HTML/pl/okular/embedded-files-bar.png
-share/doc/HTML/pl/okular/enhance-lowcontrast.png
-share/doc/HTML/pl/okular/enhance-shape.png
-share/doc/HTML/pl/okular/enhance-solid.png
-share/doc/HTML/pl/okular/enhance-thinline.png
 share/doc/HTML/pl/okular/forms-bar.png
 share/doc/HTML/pl/okular/index.cache.bz2
 share/doc/HTML/pl/okular/index.docbook
@@ -366,6 +373,7 @@ share/locale/ca/LC_MESSAGES/okular_mobi.mo
 share/locale/ca/LC_MESSAGES/okular_ooo.mo
 share/locale/ca/LC_MESSAGES/okular_plucker.mo
 share/locale/ca/LC_MESSAGES/okular_poppler.mo
+share/locale/ca/LC_MESSAGES/okular_tiff.mo
 share/locale/ca/LC_MESSAGES/okular_txt.mo
 share/locale/ca/LC_MESSAGES/okular_xps.mo
 share/locale/ca/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -384,6 +392,7 @@ share/locale/ca@valencia/LC_MESSAGES/okular_mobi.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_ooo.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_plucker.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_poppler.mo
+share/locale/ca@valencia/LC_MESSAGES/okular_tiff.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_txt.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_xps.mo
 share/locale/ca@valencia/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -402,6 +411,7 @@ share/locale/cs/LC_MESSAGES/okular_mobi.mo
 share/locale/cs/LC_MESSAGES/okular_ooo.mo
 share/locale/cs/LC_MESSAGES/okular_plucker.mo
 share/locale/cs/LC_MESSAGES/okular_poppler.mo
+share/locale/cs/LC_MESSAGES/okular_tiff.mo
 share/locale/cs/LC_MESSAGES/okular_txt.mo
 share/locale/cs/LC_MESSAGES/okular_xps.mo
 share/locale/cs/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -415,6 +425,7 @@ share/locale/da/LC_MESSAGES/okular_fax.mo
 share/locale/da/LC_MESSAGES/okular_fictionbook.mo
 share/locale/da/LC_MESSAGES/okular_ghostview.mo
 share/locale/da/LC_MESSAGES/okular_kimgio.mo
+share/locale/da/LC_MESSAGES/okular_markdown.mo
 share/locale/da/LC_MESSAGES/okular_mobi.mo
 share/locale/da/LC_MESSAGES/okular_ooo.mo
 share/locale/da/LC_MESSAGES/okular_plucker.mo
@@ -455,6 +466,7 @@ share/locale/el/LC_MESSAGES/okular_mobi.mo
 share/locale/el/LC_MESSAGES/okular_ooo.mo
 share/locale/el/LC_MESSAGES/okular_plucker.mo
 share/locale/el/LC_MESSAGES/okular_poppler.mo
+share/locale/el/LC_MESSAGES/okular_tiff.mo
 share/locale/el/LC_MESSAGES/okular_txt.mo
 share/locale/el/LC_MESSAGES/okular_xps.mo
 share/locale/el/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -506,6 +518,7 @@ share/locale/es/LC_MESSAGES/okular_mobi.mo
 share/locale/es/LC_MESSAGES/okular_ooo.mo
 share/locale/es/LC_MESSAGES/okular_plucker.mo
 share/locale/es/LC_MESSAGES/okular_poppler.mo
+share/locale/es/LC_MESSAGES/okular_tiff.mo
 share/locale/es/LC_MESSAGES/okular_txt.mo
 share/locale/es/LC_MESSAGES/okular_xps.mo
 share/locale/es/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -542,6 +555,7 @@ share/locale/eu/LC_MESSAGES/okular_mobi.mo
 share/locale/eu/LC_MESSAGES/okular_ooo.mo
 share/locale/eu/LC_MESSAGES/okular_plucker.mo
 share/locale/eu/LC_MESSAGES/okular_poppler.mo
+share/locale/eu/LC_MESSAGES/okular_tiff.mo
 share/locale/eu/LC_MESSAGES/okular_txt.mo
 share/locale/eu/LC_MESSAGES/okular_xps.mo
 share/locale/eu/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -561,6 +575,7 @@ share/locale/fi/LC_MESSAGES/okular_mobi.mo
 share/locale/fi/LC_MESSAGES/okular_ooo.mo
 share/locale/fi/LC_MESSAGES/okular_plucker.mo
 share/locale/fi/LC_MESSAGES/okular_poppler.mo
+share/locale/fi/LC_MESSAGES/okular_tiff.mo
 share/locale/fi/LC_MESSAGES/okular_txt.mo
 share/locale/fi/LC_MESSAGES/okular_xps.mo
 share/locale/fi/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -579,6 +594,7 @@ share/locale/fr/LC_MESSAGES/okular_mobi.mo
 share/locale/fr/LC_MESSAGES/okular_ooo.mo
 share/locale/fr/LC_MESSAGES/okular_plucker.mo
 share/locale/fr/LC_MESSAGES/okular_poppler.mo
+share/locale/fr/LC_MESSAGES/okular_tiff.mo
 share/locale/fr/LC_MESSAGES/okular_txt.mo
 share/locale/fr/LC_MESSAGES/okular_xps.mo
 share/locale/fr/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -710,6 +726,7 @@ share/locale/it/LC_MESSAGES/okular_mobi.mo
 share/locale/it/LC_MESSAGES/okular_ooo.mo
 share/locale/it/LC_MESSAGES/okular_plucker.mo
 share/locale/it/LC_MESSAGES/okular_poppler.mo
+share/locale/it/LC_MESSAGES/okular_tiff.mo
 share/locale/it/LC_MESSAGES/okular_txt.mo
 share/locale/it/LC_MESSAGES/okular_xps.mo
 share/locale/it/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -897,6 +914,7 @@ share/locale/nl/LC_MESSAGES/okular_mobi.mo
 share/locale/nl/LC_MESSAGES/okular_ooo.mo
 share/locale/nl/LC_MESSAGES/okular_plucker.mo
 share/locale/nl/LC_MESSAGES/okular_poppler.mo
+share/locale/nl/LC_MESSAGES/okular_tiff.mo
 share/locale/nl/LC_MESSAGES/okular_txt.mo
 share/locale/nl/LC_MESSAGES/okular_xps.mo
 share/locale/nl/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -968,6 +986,7 @@ share/locale/pt/LC_MESSAGES/okular_mobi.mo
 share/locale/pt/LC_MESSAGES/okular_ooo.mo
 share/locale/pt/LC_MESSAGES/okular_plucker.mo
 share/locale/pt/LC_MESSAGES/okular_poppler.mo
+share/locale/pt/LC_MESSAGES/okular_tiff.mo
 share/locale/pt/LC_MESSAGES/okular_txt.mo
 share/locale/pt/LC_MESSAGES/okular_xps.mo
 share/locale/pt/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -986,6 +1005,7 @@ share/locale/pt_BR/LC_MESSAGES/okular_mobi.mo
 share/locale/pt_BR/LC_MESSAGES/okular_ooo.mo
 share/locale/pt_BR/LC_MESSAGES/okular_plucker.mo
 share/locale/pt_BR/LC_MESSAGES/okular_poppler.mo
+share/locale/pt_BR/LC_MESSAGES/okular_tiff.mo
 share/locale/pt_BR/LC_MESSAGES/okular_txt.mo
 share/locale/pt_BR/LC_MESSAGES/okular_xps.mo
 share/locale/pt_BR/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -1039,6 +1059,7 @@ share/locale/sk/LC_MESSAGES/okular_mobi.mo
 share/locale/sk/LC_MESSAGES/okular_ooo.mo
 share/locale/sk/LC_MESSAGES/okular_plucker.mo
 share/locale/sk/LC_MESSAGES/okular_poppler.mo
+share/locale/sk/LC_MESSAGES/okular_tiff.mo
 share/locale/sk/LC_MESSAGES/okular_txt.mo
 share/locale/sk/LC_MESSAGES/okular_xps.mo
 share/locale/sk/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -1092,6 +1113,7 @@ share/locale/sv/LC_MESSAGES/okular_mobi.mo
 share/locale/sv/LC_MESSAGES/okular_ooo.mo
 share/locale/sv/LC_MESSAGES/okular_plucker.mo
 share/locale/sv/LC_MESSAGES/okular_poppler.mo
+share/locale/sv/LC_MESSAGES/okular_tiff.mo
 share/locale/sv/LC_MESSAGES/okular_txt.mo
 share/locale/sv/LC_MESSAGES/okular_xps.mo
 share/locale/sv/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -1144,6 +1166,7 @@ share/locale/uk/LC_MESSAGES/okular_mobi.mo
 share/locale/uk/LC_MESSAGES/okular_ooo.mo
 share/locale/uk/LC_MESSAGES/okular_plucker.mo
 share/locale/uk/LC_MESSAGES/okular_poppler.mo
+share/locale/uk/LC_MESSAGES/okular_tiff.mo
 share/locale/uk/LC_MESSAGES/okular_txt.mo
 share/locale/uk/LC_MESSAGES/okular_xps.mo
 share/locale/uk/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -1176,6 +1199,7 @@ share/locale/zh_CN/LC_MESSAGES/okular_mobi.mo
 share/locale/zh_CN/LC_MESSAGES/okular_ooo.mo
 share/locale/zh_CN/LC_MESSAGES/okular_plucker.mo
 share/locale/zh_CN/LC_MESSAGES/okular_poppler.mo
+share/locale/zh_CN/LC_MESSAGES/okular_tiff.mo
 share/locale/zh_CN/LC_MESSAGES/okular_txt.mo
 share/locale/zh_CN/LC_MESSAGES/okular_xps.mo
 share/locale/zh_CN/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -1266,6 +1290,7 @@ share/okular/pics/tool-typewriter-okular-colorizable@2x.png
 share/okular/pics/uparrow.png
 share/okular/pics/upleftarrow.png
 share/okular/tools.xml
+share/okular/toolsQuick.xml
 share/qlogging-categories5/okular.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:22 rsadowski Exp $
 @pkgpath x11/kde4/kmix
 @bin bin/kmix
 @bin bin/kmixctrl
@@ -60,7 +60,14 @@ share/doc/HTML/it/kmix/index.cache.bz2
 share/doc/HTML/it/kmix/index.docbook
 share/doc/HTML/it/kmix/kmix-channel-playback.png
 share/doc/HTML/it/kmix/kmix-channel-record.png
+share/doc/HTML/it/kmix/kmix-configure-general.png
+share/doc/HTML/it/kmix/kmix-configure-sound-menu.png
+share/doc/HTML/it/kmix/kmix-configure-start.png
+share/doc/HTML/it/kmix/kmix-file.png
+share/doc/HTML/it/kmix/kmix-master.png
+share/doc/HTML/it/kmix/kmix-options.png
 share/doc/HTML/it/kmix/kmix-window.png
+share/doc/HTML/it/kmix/kmix.png
 share/doc/HTML/lt/kmix/
 share/doc/HTML/lt/kmix/index.cache.bz2
 share/doc/HTML/lt/kmix/index.docbook
@@ -102,7 +109,11 @@ share/examples/kmix/
 share/examples/kmix/xdg/
 share/examples/kmix/xdg/autostart/
 share/examples/kmix/xdg/autostart/kmix_autostart.desktop
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/kmix_autostart.desktop
 share/examples/kmix/xdg/autostart/restore_kmix_volumes.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/restore_kmix_volumes.desktop
 share/icons/hicolor/128x128/actions/kmix.png
 share/icons/hicolor/16x16/actions/kmix.png
 share/icons/hicolor/32x32/actions/kmix.png
@@ -110,9 +121,6 @@ share/icons/hicolor/48x48/actions/kmix.png
 share/icons/hicolor/64x64/actions/kmix.png
 share/kmix/
 share/kmix/pics/
-share/kmix/pics/kmixdocked.png
-share/kmix/pics/kmixdocked_error.png
-share/kmix/pics/kmixdocked_mute.png
 share/kmix/pics/mixer-ac97.png
 share/kmix/pics/mixer-capture.png
 share/kmix/pics/mixer-cd.png

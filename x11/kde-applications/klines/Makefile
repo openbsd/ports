@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/06/03 05:13:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/09/07 14:49:21 rsadowski Exp $
 
 COMMENT =	KDE version of Color Lines game
 DISTNAME =	klines-${VERSION}
 CATEGORIES =	games
-REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/games/klines
 

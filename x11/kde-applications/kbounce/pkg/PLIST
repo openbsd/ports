@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:16 rsadowski Exp $
 @pkgpath x11/kde4/kbounce
 @bin bin/kbounce
 share/applications/org.kde.kbounce.desktop
@@ -26,6 +26,12 @@ share/doc/HTML/es/kbounce/index.docbook
 share/doc/HTML/et/kbounce/
 share/doc/HTML/et/kbounce/index.cache.bz2
 share/doc/HTML/et/kbounce/index.docbook
+share/doc/HTML/fr/kbounce/
+share/doc/HTML/fr/kbounce/index.cache.bz2
+share/doc/HTML/fr/kbounce/index.docbook
+share/doc/HTML/fr/kbounce/jezball_corridor1.png
+share/doc/HTML/fr/kbounce/jezball_corridor2.png
+share/doc/HTML/fr/kbounce/jezball_newWall.png
 share/doc/HTML/it/kbounce/
 share/doc/HTML/it/kbounce/index.cache.bz2
 share/doc/HTML/it/kbounce/index.docbook
@@ -36,15 +42,10 @@ share/doc/HTML/pt/kbounce/
 share/doc/HTML/pt/kbounce/index.cache.bz2
 share/doc/HTML/pt/kbounce/index.docbook
 share/doc/HTML/pt_BR/kbounce/
-share/doc/HTML/pt_BR/kbounce/button-new.png
-share/doc/HTML/pt_BR/kbounce/button-pause.png
 share/doc/HTML/pt_BR/kbounce/index.cache.bz2
 share/doc/HTML/pt_BR/kbounce/index.docbook
 share/doc/HTML/pt_BR/kbounce/kbounce_corridor1.png
 share/doc/HTML/pt_BR/kbounce/kbounce_corridor2.png
-share/doc/HTML/pt_BR/kbounce/menu-game.png
-share/doc/HTML/pt_BR/kbounce/menu-settings.png
-share/doc/HTML/pt_BR/kbounce/toolbar.png
 share/doc/HTML/sv/kbounce/
 share/doc/HTML/sv/kbounce/index.cache.bz2
 share/doc/HTML/sv/kbounce/index.docbook

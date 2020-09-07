@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/21 18:12:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:14 rsadowski Exp $
 
 COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  kaddressbookprivate       0.0 # 5.13.2
+SHARED_LIBS +=  kaddressbookprivate       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiSearchDebug KF5AkonadiWidgets KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5GrantleeTheme KF5I18n KF5IMAP KF5ItemModels KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOWidgets KF5KaddressbookGrantlee
+WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KaddressbookGrantlee
 WANTLIB += KF5KaddressbookImportExport KF5KontactInterface KF5Libkdepim
 WANTLIB += KF5Mime KF5Parts KF5PimCommon KF5PimCommonAkonadi KF5Prison
 WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
+WANTLIB += c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

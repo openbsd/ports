@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/03 05:13:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:18 rsadowski Exp $
 
 COMMENT =	four-in-a-row board game
 DISTNAME =	kfourinline-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kfourinline
 

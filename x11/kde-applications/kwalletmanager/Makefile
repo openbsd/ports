@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/05 05:40:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:26 rsadowski Exp $
 
 COMMENT =	KDE password wallet manager
 DISTNAME =	kwalletmanager-${VERSION}
 CATEGORIES =	x11 security
-REVISION =	1
 
 HOMEPAGE =	https://userbase.kde.org/KDE_Wallet_Manager
 

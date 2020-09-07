@@ -1,0 +1,13 @@
+$OpenBSD: patch-smb_transfer_h,v 1.1 2020/09/07 14:49:20 rsadowski Exp $
+
+Index: smb/transfer.h
+--- smb/transfer.h.orig
++++ smb/transfer.h
+@@ -10,6 +10,7 @@
+ #include <QVarLengthArray>
+ 
+ #include <condition_variable>
++#include <array>
+ #include <mutex>
+ 
+ constexpr off_t c_minSegmentSize = 64 * 1024; // minimal size on stack

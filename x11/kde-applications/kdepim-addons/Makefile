@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.4 2020/08/21 17:46:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:17 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
-SHARED_LIBS +=  adblocklibprivate                        0.0 # 5.13.2
-SHARED_LIBS +=  coisceim_widget                          0.0 # 5.13.2
-SHARED_LIBS +=  dkimverifyconfigure                      0.0 # 5.13.2
-SHARED_LIBS +=  grammarcommon                            0.0 # 5.13.2
-SHARED_LIBS +=  kaddressbookimportexportlibprivate       0.0 # 5.13.2
-SHARED_LIBS +=  kaddressbookmergelibprivate              0.0 # 5.13.2
-SHARED_LIBS +=  kmailgrammalecte                         0.0 # 5.13.2
-SHARED_LIBS +=  kmaillanguagetool                        0.0 # 5.13.2
-SHARED_LIBS +=  kmailmarkdown                            0.0 # 5.13.2
-SHARED_LIBS +=  kmailquicktextpluginprivate              0.0 # 5.13.2
-SHARED_LIBS +=  shorturlpluginprivate                    0.0 # 5.13.2
+SHARED_LIBS +=  adblocklibprivate                        1.0 # 5.13.2
+SHARED_LIBS +=  coisceim_widget                          1.0 # 5.13.2
+SHARED_LIBS +=  dkimverifyconfigure                      1.0 # 5.13.2
+SHARED_LIBS +=  grammarcommon                            1.0 # 5.13.2
+SHARED_LIBS +=  kaddressbookimportexportlibprivate       1.0 # 5.13.2
+SHARED_LIBS +=  kaddressbookmergelibprivate              1.0 # 5.13.2
+SHARED_LIBS +=  kmailgrammalecte                         1.0 # 5.13.2
+SHARED_LIBS +=  kmaillanguagetool                        1.0 # 5.13.2
+SHARED_LIBS +=  kmailmarkdown                            1.0 # 5.13.2
+SHARED_LIBS +=  kmailquicktextpluginprivate              1.0 # 5.13.2
+SHARED_LIBS +=  shorturlpluginprivate                    1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
@@ -26,22 +25,21 @@ WANTLIB += KF5ConfigWidgets KF5ContactEditor KF5Contacts KF5CoreAddons
 WANTLIB += KF5EventViews KF5GrantleeTheme KF5Gravatar KF5I18n
 WANTLIB += KF5IMAP KF5IconThemes KF5IdentityManagement KF5IncidenceEditor
 WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5KManageSieve KF5KSieve KF5KSieveUi
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5KManageSieve KF5KSieve KF5KSieveUi
 WANTLIB += KF5KaddressbookGrantlee KF5KaddressbookImportExport
-WANTLIB += KF5KontactInterface KF5Libkdepim KF5LibkdepimAkonadi
-WANTLIB += KF5Libkleo KF5MailCommon KF5MailImporter KF5MailImporterAkonadi
-WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5MessageComposer
-WANTLIB += KF5MessageCore KF5MessageList KF5MessageViewer KF5Mime
-WANTLIB += KF5MimeTreeParser KF5Parts KF5PimCommon KF5PimCommonAkonadi
-WANTLIB += KF5PimTextEdit KF5Prison KF5Service KF5SonnetUi KF5SyntaxHighlighting
-WANTLIB += KF5TemplateParser KF5TextWidgets KF5Tnef KF5Wallet
-WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5XmlGui KPimImportWizard
+WANTLIB += KF5KontactInterface KF5Libkdepim KF5Libkleo KF5MailCommon
+WANTLIB += KF5MailImporter KF5MailImporterAkonadi KF5MailTransport
+WANTLIB += KF5MailTransportAkonadi KF5MessageComposer KF5MessageCore
+WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5Parts
+WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Prison
+WANTLIB += KF5Service KF5SonnetUi KF5SyntaxHighlighting KF5TemplateParser
+WANTLIB += KF5TextWidgets KF5Tnef KF5Wallet KF5WebEngineViewer
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPimImportWizard
 WANTLIB += KPimItinerary KPimPkPass Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c gpgmepp m markdown
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml gpgmepp m markdown
 WANTLIB += qgpgme
-
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

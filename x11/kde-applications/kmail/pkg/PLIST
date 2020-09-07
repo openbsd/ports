@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 05:08:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:21 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
@@ -9,15 +9,15 @@
 @bin bin/kmail-refresh-settings
 @bin bin/ktnef
 @lib lib/libkmailprivate.so.${LIBkmailprivate_VERSION}
-lib/qt5/plugins/akonadi/config/
 @so lib/qt5/plugins/akonadi/config/archivemailagentconfig.so
 @so lib/qt5/plugins/akonadi/config/followupreminderagentconfig.so
 @so lib/qt5/plugins/kcm_kmail.so
 @so lib/qt5/plugins/kcm_kmailsummary.so
 @so lib/qt5/plugins/kcm_kontactsummary.so
 @so lib/qt5/plugins/kmailpart.so
-@so lib/qt5/plugins/kontact_kmailplugin.so
-@so lib/qt5/plugins/kontact_summaryplugin.so
+lib/qt5/plugins/kontact5/
+@so lib/qt5/plugins/kontact5/kontact_kmailplugin.so
+@so lib/qt5/plugins/kontact5/kontact_summaryplugin.so
 share/akonadi/agents/archivemailagent.desktop
 share/akonadi/agents/followupreminder.desktop
 share/akonadi/agents/mailfilteragent.desktop
@@ -411,6 +411,8 @@ share/locale/da/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/da/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/da/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/da/LC_MESSAGES/akonadi_sendlater_agent.mo
+share/locale/da/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/da/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/da/LC_MESSAGES/kmail.mo
 share/locale/da/LC_MESSAGES/ktnef.mo
 share/locale/de/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -447,6 +449,8 @@ share/locale/et/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_sendlater_agent.mo
+share/locale/et/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/et/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/et/LC_MESSAGES/kmail.mo
 share/locale/et/LC_MESSAGES/ktnef.mo
 share/locale/eu/LC_MESSAGES/kmail.mo
@@ -534,6 +538,7 @@ share/locale/lt/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/lt/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/lt/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/lt/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/lt/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/lt/LC_MESSAGES/kmail.mo
 share/locale/lt/LC_MESSAGES/ktnef.mo
 share/locale/lv/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -614,6 +619,8 @@ share/locale/sl/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/sl/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/sl/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/sl/LC_MESSAGES/akonadi_sendlater_agent.mo
+share/locale/sl/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/sl/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/sl/LC_MESSAGES/kmail.mo
 share/locale/sl/LC_MESSAGES/ktnef.mo
 share/locale/sr/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -667,8 +674,6 @@ share/locale/zh_TW/LC_MESSAGES/ktnef.mo
 share/metainfo/org.kde.kmail2.appdata.xml
 share/qlogging-categories5/kmail.categories
 share/qlogging-categories5/kmail.renamecategories
-share/qlogging-categories5/ktnefapps.categories
-share/qlogging-categories5/ktnefapps.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/breeze-dark
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

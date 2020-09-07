@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:24 rsadowski Exp $
 include/KF5/KPIMTextEdit/
 include/KF5/KPIMTextEdit/KPIMTextEdit/
+include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractMarkupBuilder
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/EditorUtil
 include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonUnicodeTab
+include/KF5/KPIMTextEdit/KPIMTextEdit/MarkupDirector
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextEditFindBar
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextEditor
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextEditorWidget
+include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextMarkupBuilder
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextSyntaxSpellCheckingHighlighter
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposer
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposerActions
@@ -14,6 +17,7 @@ include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposerControler
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposerEmailQuoteHighlighter
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposerImages
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposerWidget
+include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextEditFindBar
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextEditor
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextEditorWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextExternalComposer
@@ -22,19 +26,23 @@ include/KF5/KPIMTextEdit/KPIMTextEdit/SlideContainer
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextEditFindBarBase
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextEditorCompleter
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextGotoLineWidget
+include/KF5/KPIMTextEdit/KPIMTextEdit/TextHTMLBuilder
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeech
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechActions
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextUtils
 include/KF5/KPIMTextEdit/kpimtextedit/
+include/KF5/KPIMTextEdit/kpimtextedit/abstractmarkupbuilder.h
 include/KF5/KPIMTextEdit/kpimtextedit/abstracttexttospeechinterface.h
 include/KF5/KPIMTextEdit/kpimtextedit/editorutil.h
 include/KF5/KPIMTextEdit/kpimtextedit/emoticonunicodetab.h
 include/KF5/KPIMTextEdit/kpimtextedit/kpimtextedit_export.h
+include/KF5/KPIMTextEdit/kpimtextedit/markupdirector.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintexteditfindbar.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintexteditor.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintexteditorwidget.h
+include/KF5/KPIMTextEdit/kpimtextedit/plaintextmarkupbuilder.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintextsyntaxspellcheckinghighlighter.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposer.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposeractions.h
@@ -42,6 +50,7 @@ include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposercontroler.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposeremailquotehighlighter.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposerimages.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposerwidget.h
+include/KF5/KPIMTextEdit/kpimtextedit/richtexteditfindbar.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtexteditor.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtexteditorwidget.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextexternalcomposer.h
@@ -50,6 +59,7 @@ include/KF5/KPIMTextEdit/kpimtextedit/slidecontainer.h
 include/KF5/KPIMTextEdit/kpimtextedit/texteditfindbarbase.h
 include/KF5/KPIMTextEdit/kpimtextedit/texteditorcompleter.h
 include/KF5/KPIMTextEdit/kpimtextedit/textgotolinewidget.h
+include/KF5/KPIMTextEdit/kpimtextedit/texthtmlbuilder.h
 include/KF5/KPIMTextEdit/kpimtextedit/texttospeech.h
 include/KF5/KPIMTextEdit/kpimtextedit/texttospeechactions.h
 include/KF5/KPIMTextEdit/kpimtextedit/texttospeechinterface.h

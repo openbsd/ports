@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/29 07:18:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2020/09/07 14:49:15 rsadowski Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	editors
-REVISION =	0
 
 HOMEPAGE =	https://kate-editor.org/
 
@@ -12,12 +11,12 @@ WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemModels
 WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Package
-WANTLIB += KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextEditor KF5TextWidgets KF5ThreadWeaver KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5Package KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
+WANTLIB += KF5ThreadWeaver KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Sql Qt5Widgets Qt5Xml c m
 
 MODULES +=	x11/kde-applications \
 		lang/python

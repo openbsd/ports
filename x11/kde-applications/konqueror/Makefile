@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 05:04:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:23 rsadowski Exp $
 
 COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
 
-SHARED_LIBS +=  KF5Konq              0.0 # 5.97.0
-SHARED_LIBS +=  konquerorprivate     0.0 # 5.97.0
+SHARED_LIBS +=  KF5Konq              1.0 # 5.97.0
+SHARED_LIBS +=  konquerorprivate     1.0 # 5.97.0
+SHARED_LIBS +=  konqsidebarplugin    1.0 # 20.08.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Archive KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
-WANTLIB += KF5JS KF5JobWidgets KF5KCMUtils KF5KDELibs4Support
-WANTLIB += KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Notifications KF5Parts KF5Pty KF5Service KF5Solid
-WANTLIB += KF5SonnetCore KF5SonnetUi KF5Su KF5TextWidgets KF5UnitConversion
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Script Qt5TextToSpeech
-WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c m z
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KDELibs4Support KF5KIOCore
+WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Notifications
+WANTLIB += KF5Parts KF5Pty KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
+WANTLIB += KF5Su KF5TextWidgets KF5UnitConversion KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5Quick Qt5Script Qt5TextToSpeech Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras Qt5Xml
+WANTLIB += SM X11 Xext c m z
 
 MODULES +=	x11/kde-applications
 

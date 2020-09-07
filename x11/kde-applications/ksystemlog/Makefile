@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/05 05:40:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:25 rsadowski Exp $
 
 COMMENT =	system log viewer
 DISTNAME =	ksystemlog-${VERSION}
 CATEGORIES =	sysutils
-REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/system/ksystemlog/
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5Service KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += c m
+WANTLIB += KF5CoreAddons KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes

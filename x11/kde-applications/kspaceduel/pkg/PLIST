@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:25 rsadowski Exp $
 @conflict kdegames-*
 @pkgpath x11/kde4/kspaceduel
 @bin bin/kspaceduel
@@ -35,7 +35,6 @@ share/doc/HTML/nl/kspaceduel/kspaceduel3.png
 share/doc/HTML/pt/kspaceduel/
 share/doc/HTML/pt/kspaceduel/index.cache.bz2
 share/doc/HTML/pt/kspaceduel/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kspaceduel/
 share/doc/HTML/pt_BR/kspaceduel/index.cache.bz2
 share/doc/HTML/pt_BR/kspaceduel/index.docbook
@@ -124,6 +123,7 @@ share/locale/km/LC_MESSAGES/kspaceduel.mo
 share/locale/ko/LC_MESSAGES/kspaceduel.mo
 share/locale/lt/LC_MESSAGES/kspaceduel.mo
 share/locale/lv/LC_MESSAGES/kspaceduel.mo
+share/locale/ml/LC_MESSAGES/kspaceduel.mo
 share/locale/mr/LC_MESSAGES/kspaceduel.mo
 share/locale/nb/LC_MESSAGES/kspaceduel.mo
 share/locale/nds/LC_MESSAGES/kspaceduel.mo

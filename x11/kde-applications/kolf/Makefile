@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/07 14:49:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/09/07 14:49:22 rsadowski Exp $
 
 COMMENT =	miniature golf
 DISTNAME =	kolf-${VERSION}
 CATEGORIES =	games
-REVISION =	2
 
 HOMEPAGE =	https://www.kde.org/applications/games/kolf
 
-SHARED_LIBS +=  kolfprivate               1.0 # 5.0
+SHARED_LIBS +=  kolfprivate               2.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

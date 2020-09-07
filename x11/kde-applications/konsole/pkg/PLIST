@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/03 05:13:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:49:23 rsadowski Exp $
 @conflict kdebase-<4
 @pkgpath x11/kde4/konsole
 @bin bin/konsole
@@ -19,6 +19,7 @@ share/doc/HTML/en/konsole/draganddrop-contextmenu.png
 share/doc/HTML/en/konsole/index.cache.bz2
 share/doc/HTML/en/konsole/index.docbook
 share/doc/HTML/it/konsole/
+share/doc/HTML/it/konsole/draganddrop-contextmenu.png
 share/doc/HTML/it/konsole/index.cache.bz2
 share/doc/HTML/it/konsole/index.docbook
 share/doc/HTML/nl/konsole/
@@ -41,6 +42,10 @@ share/doc/HTML/uk/konsole/
 share/doc/HTML/uk/konsole/draganddrop-contextmenu.png
 share/doc/HTML/uk/konsole/index.cache.bz2
 share/doc/HTML/uk/konsole/index.docbook
+share/doc/HTML/zh_CN/
+share/doc/HTML/zh_CN/konsole/
+share/doc/HTML/zh_CN/konsole/index.cache.bz2
+share/doc/HTML/zh_CN/konsole/index.docbook
 share/khotkeys/
 share/khotkeys/konsole.khotkeys
 share/knotifications5/konsole.notifyrc

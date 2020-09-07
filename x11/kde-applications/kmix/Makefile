@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2020/08/20 18:00:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:22 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
-REVISION =	3
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.kmix
 
-SHARED_LIBS +=  kmixcore                1.0 # 5.13.80
+SHARED_LIBS +=  kmixcore                2.0 # 5.13.80
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
 WANTLIB += KF5GlobalAccel KF5I18n KF5Notifications KF5Package
 WANTLIB += KF5Plasma KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
-WANTLIB += c canberra glib-2.0 m pulse pulse-mainloop-glib
+WANTLIB += c canberra m pulse pulse-mainloop-glib
 
 MODULES +=	x11/kde-applications
 
@@ -29,7 +28,6 @@ BUILD_DEPENDS =	devel/kf5/kinit
 RUN_DEPENDS =	devel/kf5/kinit
 
 LIB_DEPENDS =	audio/libcanberra \
-		devel/glib2 \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
@@ -42,7 +40,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
-		devel/kf5/plasma-framework \
-		multimedia/phonon
+		devel/kf5/plasma-framework
 
 .include <bsd.port.mk>

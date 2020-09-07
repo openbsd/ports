@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/23 18:01:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:20 rsadowski Exp $
 
 COMMENT =	job-based API for interacting with IMAP servers
 DISTNAME =	kimap-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5IMAP                   1.0 # 5.5
+SHARED_LIBS +=  KF5IMAP                   2.0 # 5.5
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Mime KF5Service Qt5Concurrent
