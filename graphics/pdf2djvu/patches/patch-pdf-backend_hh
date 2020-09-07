@@ -1,0 +1,39 @@
+$OpenBSD: patch-pdf-backend_hh,v 1.4 2020/09/07 18:48:38 kili Exp $
+
+Starting with poppler-20, POPPLER_VERSION no longer is numeric -- it's
+what POPPLER_VERSION_STRING was in earlier releases.
+
+Index: pdf-backend.hh
+--- pdf-backend.hh.orig
++++ pdf-backend.hh
+@@ -261,18 +261,7 @@ namespace pdf
+  * ====================================
+  */
+ 
+-#if POPPLER_VERSION < 5800
+-  class OwnedObject : public Object
+-  {
+-  public:
+-    ~OwnedObject()
+-    {
+-      this->free();
+-    }
+-  };
+-#else
+   typedef ::Object OwnedObject;
+-#endif
+ 
+ 
+ /* class pdf::Environment
+@@ -308,11 +297,7 @@ namespace pdf
+     const std::string get_xmp();
+     void get_doc_info(pdf::OwnedObject &info)
+     {
+-#if POPPLER_VERSION < 5800
+-      this->getDocInfo(&info);
+-#else
+       info = this->getDocInfo();
+-#endif
+     }
+     class LoadError : public std::runtime_error
+     {

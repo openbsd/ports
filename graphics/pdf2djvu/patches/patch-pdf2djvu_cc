@@ -1,0 +1,111 @@
+$OpenBSD: patch-pdf2djvu_cc,v 1.7 2020/09/07 18:48:38 kili Exp $
+
+Starting with poppler-20, POPPLER_VERSION no longer is numeric -- it's
+what POPPLER_VERSION_STRING was in earlier releases.
+
+Index: pdf2djvu.cc
+--- pdf2djvu.cc.orig
++++ pdf2djvu.cc
+@@ -76,17 +76,11 @@ class NoLinkDestination : public std::runtime_error (p
+ static int get_page_for_goto_link(pdf::link::GoTo *goto_link, pdf::Catalog *catalog)
+ {
+   std::unique_ptr<pdf::link::Destination> dest;
+-#if POPPLER_VERSION >= 6400
+   const
+-#endif
+   pdf::link::Destination *orig_dest = goto_link->getDest();
+   if (orig_dest == nullptr)
+   {
+-#if POPPLER_VERSION >= 8600
+     dest = catalog->findDest(goto_link->getNamedDest());
+-#else
+-    dest.reset(catalog->findDest(goto_link->getNamedDest()));
+-#endif
+   }
+   else
+     dest.reset(orig_dest->copy());
+@@ -341,13 +335,8 @@ class MutedRenderer: public pdf::Renderer (public)
+     return;
+   }
+ 
+-#if POPPLER_VERSION >= 8200
+   void drawImage(pdf::gfx::State *state, pdf::Object *object, pdf::Stream *stream, int width, int height,
+     pdf::gfx::ImageColorMap *color_map, bool interpolate, const int *mask_colors, bool inline_image)
+-#else
+-  void drawImage(pdf::gfx::State *state, pdf::Object *object, pdf::Stream *stream, int width, int height,
+-    pdf::gfx::ImageColorMap *color_map, bool interpolate, int *mask_colors, bool inline_image)
+-#endif
+   {
+     if (is_foreground_color_map(color_map) || config.no_render)
+     {
+@@ -389,13 +378,8 @@ class MutedRenderer: public pdf::Renderer (public)
+ 
+   bool interpretType3Chars() { return false; }
+ 
+-#if POPPLER_VERSION >= 8200
+   void drawChar(pdf::gfx::State *state, double x, double y, double dx, double dy, double origin_x, double origin_y,
+     CharCode code, int n_bytes, const Unicode *unistr, int length)
+-#else
+-  void drawChar(pdf::gfx::State *state, double x, double y, double dx, double dy, double origin_x, double origin_y,
+-    CharCode code, int n_bytes, Unicode *unistr, int length)
+-#endif
+   {
+     double pox, poy, pdx, pdy, px, py, pw, ph;
+     x -= origin_x; y -= origin_y;
+@@ -475,11 +459,7 @@ class MutedRenderer: public pdf::Renderer (public)
+     switch (link_action->getKind())
+     {
+     case actionURI:
+-#if POPPLER_VERSION >= 8600
+       uri = dynamic_cast<pdf::link::URI*>(link_action)->getURI();
+-#else
+-      uri += pdf::get_c_string(dynamic_cast<pdf::link::URI*>(link_action)->getURI());
+-#endif
+       break;
+     case actionGoTo:
+     {
+@@ -519,11 +499,9 @@ class MutedRenderer: public pdf::Renderer (public)
+       // L10N: OCG stands for “Optional Content Group” (see PDF Reference v1.7, §4.10.1)
+       debug(1) << _("Warning: Unable to convert link with a set-OCG-state action") << std::endl;
+       return;
+-#if POPPLER_VERSION >= 6400
+     case actionHide:
+       debug(1) << _("Warning: Unable to convert link with a hide action") << std::endl;
+       return;
+-#endif
+     case actionUnknown:
+     default:
+       debug(1) << _("Warning: Unknown link action") << std::endl;
+@@ -719,19 +697,11 @@ static void pdf_outline_to_djvu_outline(pdf::Object *n
+         std::unique_ptr<pdf::link::Action> link_action;
+         if (!pdf::dict_lookup(current, "Dest", &destination)->isNull())
+         {
+-#if POPPLER_VERSION >= 8600
+           link_action = pdf::link::Action::parseDest(&destination);
+-#else
+-          link_action.reset(pdf::link::Action::parseDest(&destination));
+-#endif
+         }
+         else if (!pdf::dict_lookup(current, "A", &destination)->isNull())
+         {
+-#if POPPLER_VERSION >= 8600
+           link_action = pdf::link::Action::parseAction(&destination);
+-#else
+-          link_action.reset(pdf::link::Action::parseAction(&destination));
+-#endif
+         }
+         else
+           throw NoPageForBookmark();
+@@ -763,12 +733,7 @@ static void pdf_outline_to_djvu_outline(pdf::Object *n
+     }
+ 
+     pdf::dict_lookup(current, "Next", &next);
+-#if POPPLER_VERSION < 5800
+-    current.free();
+-    current = next;
+-#else
+     current = std::move(next);
+-#endif
+   }
+ }
+ 
