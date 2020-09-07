@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/04 04:17:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/09/07 08:54:29 rsadowski Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -16,6 +16,7 @@ COMMENT=	Clang extra tools
 LLVM_V =	10.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
+REVISION=	0
 
 CATEGORIES =	devel
 
@@ -66,7 +67,7 @@ CONFIGURE_ARGS +=	-DCLANG_ENABLE_STATIC_ANALYZER=ON \
 			-DLLVM_INCLUDE_TESTS=OFF \
 			-DLLVM_INCLUDE_BENCHMARKS=OFF
 
-GCC_VER =		8.3.0
+GCC_VER =		8.4.0
 .if ${MACHINE_ARCH} == "amd64"
 GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
 .else
