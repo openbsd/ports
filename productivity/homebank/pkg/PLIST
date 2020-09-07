@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/04/15 09:02:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/09/07 16:45:26 rsadowski Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -80,7 +80,6 @@ share/homebank/help/images/dlg-filter3.png
 share/homebank/help/images/dlg-filter4.png
 share/homebank/help/images/dlg-filter5.png
 share/homebank/help/images/dlg-filter6.png
-share/homebank/help/images/dlg-payee.png
 share/homebank/help/images/dlg-payee1.png
 share/homebank/help/images/dlg-payee2.png
 share/homebank/help/images/dlg-prefs1.png
