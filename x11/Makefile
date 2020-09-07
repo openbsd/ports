@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.670 2020/08/23 20:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.671 2020/09/07 12:22:16 thfr Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -147,6 +147,7 @@
      SUBDIR += keybinder
      SUBDIR += keybinder3
      SUBDIR += keynav
+     SUBDIR += kitty
      SUBDIR += klavaro
      SUBDIR += krusader
      SUBDIR += lablgtk2
