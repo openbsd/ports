@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/04/18 10:15:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2020/09/07 09:32:18 tb Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64
 
@@ -29,6 +29,7 @@ BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}-1.tar.xz
 # list bootstraps for all arches in SUPDISTFILES
 SUPDISTFILES +=		${BOOTSTRAP-amd64}:0
 SUPDISTFILES +=		${BOOTSTRAP-aarch64}:0
+REVISION =		0
 
 CATEGORIES =		lang
 
