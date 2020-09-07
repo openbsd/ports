@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/09/07 12:14:33 thfr Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -9,6 +9,10 @@ include(FeatureSummary)
+ set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_LIB32_PATHS OFF)
+ set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS ON)
+ 
++include_directories( ${LOCALBASE}/include
++			${LOCALBASE}/include/SDL2
++			${X11BASE}/include )
++
+ # Required for stdbool.h
+ set(CMAKE_C_STANDARD 99)
+ # For nullptr in C++

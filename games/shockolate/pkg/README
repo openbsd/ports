@@ -1,0 +1,34 @@
+$OpenBSD: README,v 1.1.1.1 2020/09/07 12:14:33 thfr Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Installing Game Assets
+======================
+
+${PKGSTEM} requires the assets from the classic CD-ROM version of the game from
+1994. The Enhanced Edition content is not supported at this point.
+
+After locating the files, copy the game's DATA and SOUND directories into
+~/.local/share/shockolate/res. Here is an example based on the System Shock:
+Classic Edition from GOG.com (use innoextract from packages):
+
+$ innoextract setup_system_shock_classic_2.0.0.3.exe
+$ mkdir -p ~/.local/share/shockolate/res
+$ cp -R app/SSHOCK/{DATA,SOUND} ~/.local/share/shockolate/res/
+$ systemshock
+
+Note that the wrapper script will automatically lowercase all files and
+directories in ~/.local/share/shockolate/res.
+
+Using Soundfonts for Better Audio
+=================================
+
+${PKGSTEM} can use sound fonts via fluidsynth as alternative to the rather
+basic MIDI soundtrack. For easy setup, install the package
+audio/generaluser-gs-soundfont and select FluidSynth in the in-game menu (Esc ->
+Audio -> Audio Options).
+
+Other sound fonts can be install by dropping a .sf2 sound font file into
+~/.local/share/shockolate/res/.

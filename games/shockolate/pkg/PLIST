@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/07 12:14:33 thfr Exp $
+bin/systemshock
+share/doc/pkg-readmes/${PKGSTEM}
+share/shockolate/
+share/shockolate/shaders/
+share/shockolate/shaders/color.frag
+share/shockolate/shaders/main.vert
+share/shockolate/shaders/star.frag
+share/shockolate/shaders/texture.frag
+@bin share/shockolate/systemshock
