@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.643 2020/08/22 22:07:22 abieber Exp $
+# $OpenBSD: Makefile,v 1.644 2020/09/07 08:41:19 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -213,6 +213,7 @@
      SUBDIR += p5-Object-MultiType
      SUBDIR += p5-PDF-API2
      SUBDIR += p5-PDF-API2-Simple
+     SUBDIR += p5-PDF-API2-XS
      SUBDIR += p5-PDF-Reuse
      SUBDIR += p5-PDF-Table
      SUBDIR += p5-POE-Filter-XML
