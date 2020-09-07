@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1219 2020/09/06 13:59:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.1220 2020/09/07 16:59:04 landry Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -123,6 +123,7 @@
      SUBDIR += gotthard
      SUBDIR += gpodder
      SUBDIR += grake
+     SUBDIR += grsync
      SUBDIR += gssdp
      SUBDIR += gtk-gnutella
      SUBDIR += gupnp
