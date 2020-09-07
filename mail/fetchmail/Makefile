@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.156 2020/06/12 13:02:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.157 2020/09/07 09:40:53 tb Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.4.6
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fetchmail/}

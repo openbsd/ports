@@ -1,0 +1,14 @@
+$OpenBSD: patch-socket_c,v 1.12 2020/09/07 09:40:53 tb Exp $
+
+Index: socket.c
+--- socket.c.orig
++++ socket.c
+@@ -902,7 +902,7 @@ static const char *SSLCertGetCN(const char *mycert,
+ 	return ret;
+ }
+ 
+-#if defined(LIBRESSL_VERSION_NUMBER) || OPENSSL_VERSION_NUMBER < 0x1010000fL
++#if OPENSSL_VERSION_NUMBER < 0x1010000fL
+ /* OSSL_proto_version_logic for OpenSSL 1.0.x and LibreSSL */
+ static int OSSL10X_proto_version_logic(int sock, const char **myproto, int *avoid_ssl_versions)
+ {
