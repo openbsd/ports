@@ -1,0 +1,63 @@
+$OpenBSD: patch-nss_lib_freebl_Makefile,v 1.6 2020/09/07 14:10:07 naddy Exp $
+
+https://phabricator.services.mozilla.com/D87174
+
+Index: nss/lib/freebl/Makefile
+--- nss/lib/freebl/Makefile.orig
++++ nss/lib/freebl/Makefile
+@@ -119,12 +119,25 @@ else
+         DEFINES += -DNSS_X86
+ endif
+ endif
+-ifdef NS_USE_GCC
+ ifeq ($(CPU_ARCH),aarch64)
+-    DEFINES += -DUSE_HW_AES -DUSE_HW_SHA1 -DUSE_HW_SHA2
+-    EXTRA_SRCS += aes-armv8.c gcm-aarch64.c sha1-armv8.c sha256-armv8.c
++    ifdef CC_IS_CLANG
++        DEFINES += -DUSE_HW_AES -DUSE_HW_SHA1 -DUSE_HW_SHA2
++        EXTRA_SRCS += aes-armv8.c gcm-aarch64.c sha1-armv8.c sha256-armv8.c
++    else ifeq (1,$(CC_IS_GCC))
++        # GCC versions older than 4.9 don't support ARM AES. The check
++        # is done in two parts, first allows "major.minor" == "4.9",
++        # and then rejects any major versions prior to 5. Note that
++        # there has been no GCC 4.10, as it is renamed to GCC 5.
++        ifneq (,$(filter 4.9,$(word 1,$(GCC_VERSION)).$(word 2,$(GCC_VERSION))))
++            DEFINES += -DUSE_HW_AES -DUSE_HW_SHA1 -DUSE_HW_SHA2
++            EXTRA_SRCS += aes-armv8.c gcm-aarch64.c sha1-armv8.c sha256-armv8.c
++        endif
++        ifeq (,$(filter 0 1 2 3 4,$(word 1,$(GCC_VERSION))))
++            DEFINES += -DUSE_HW_AES -DUSE_HW_SHA1 -DUSE_HW_SHA2
++            EXTRA_SRCS += aes-armv8.c gcm-aarch64.c sha1-armv8.c sha256-armv8.c
++        endif
++    endif
+ endif
+-endif
+ ifeq ($(CPU_ARCH),arm)
+ ifndef NSS_DISABLE_ARM32_NEON
+     EXTRA_SRCS += gcm-arm32-neon.c
+@@ -133,7 +146,10 @@ endif
+         DEFINES += -DUSE_HW_AES -DUSE_HW_SHA1 -DUSE_HW_SHA2
+         EXTRA_SRCS += aes-armv8.c sha1-armv8.c sha256-armv8.c
+     else ifeq (1,$(CC_IS_GCC))
+-        # Old compiler doesn't support ARM AES.
++        # GCC versions older than 4.9 don't support ARM AES. The check
++        # is done in two parts, first allows "major.minor" == "4.9",
++        # and then rejects any major versions prior to 5. Note that
++        # there has been no GCC 4.10, as it is renamed to GCC 5.
+         ifneq (,$(filter 4.9,$(word 1,$(GCC_VERSION)).$(word 2,$(GCC_VERSION))))
+             DEFINES += -DUSE_HW_AES -DUSE_HW_SHA1 -DUSE_HW_SHA2
+             EXTRA_SRCS += aes-armv8.c sha1-armv8.c sha256-armv8.c
+@@ -728,13 +744,11 @@ $(OBJDIR)/$(PROG_PREFIX)gcm-arm32-neon$(OBJ_SUFFIX): C
+ endif
+ endif
+ 
+-ifdef NS_USE_GCC
+ ifeq ($(CPU_ARCH),aarch64)
+ $(OBJDIR)/$(PROG_PREFIX)aes-armv8$(OBJ_SUFFIX): CFLAGS += -march=armv8-a+crypto
+ $(OBJDIR)/$(PROG_PREFIX)gcm-aarch64$(OBJ_SUFFIX): CFLAGS += -march=armv8-a+crypto
+ $(OBJDIR)/$(PROG_PREFIX)sha1-armv8$(OBJ_SUFFIX): CFLAGS += -march=armv8-a+crypto
+ $(OBJDIR)/$(PROG_PREFIX)sha256-armv8$(OBJ_SUFFIX): CFLAGS += -march=armv8-a+crypto
+-endif
+ endif
+ 
+ ifeq ($(CPU_ARCH),ppc)
