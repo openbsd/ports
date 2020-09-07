@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/08/15 20:30:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/09/07 14:45:12 rsadowski Exp $
 
 COMMENT =		3D space simulator
 
 DISTNAME =		vegastrike-src-${V}
 PKGNAME =		vegastrike-${V}
-REVISION =		7
+REVISION =		8
 
 WANTLIB += GL GLU OgreMain SDL X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender atk-1.0
@@ -12,7 +12,7 @@ WANTLIB += boost_python${MODPY_VERSION:C/\.//g} boost_thread-mt c cairo expat fo
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glut gobject-2.0 gtk-x11-2.0 iconv intl jpeg m ogg openal pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 png pthread ${COMPILER_LIBCXX} util
-WANTLIB += vorbis vorbisfile z python2.7 harfbuzz
+WANTLIB += vorbis vorbisfile z ${MODPY_WANTLIB} harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 
