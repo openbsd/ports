@@ -1,0 +1,14 @@
+Grsync is a rsync GUI (Graphical User Interface). Rsync is the
+well-known and powerful command line directory and file
+synchronization tool. It can be effectively used to synchronize local
+directories and it supports remote targets as well (even though it
+doesn't support browsing the remote folder).
+
+Sample uses of grsync include, among others:
+* synchronize a music collection with removable devices
+* backup personal files to a networked drive
+* replication of a partition to another one
+* mirroring of files
+
+The "Run as superuser" feature relies on pkexec, provided by the
+policykit package.

@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2020/09/07 16:58:30 landry Exp $
+
+https://github.com/archlinux/svntogit-community/blob/packages/grsync/trunk/use-themed-icon.patch
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -425,9 +425,9 @@ Glade_DATA = $(XMLFILE)
+ mimedir = $(datadir)/mime
+ mimepackagesdir = $(mimedir)/packages
+ dist_mimepackages_DATA = grsync.xml
+-pixmapdir = $(datadir)/pixmaps
++pixmapdir = $(datadir)/icons/hicolor/128x128/apps/
+ pixmap_DATA = pixmaps/grsync.png
+-pixmapbusydir = $(datadir)/pixmaps
++pixmapbusydir = $(datadir)/icons/hicolor/128x128/apps/
+ pixmapbusy_DATA = pixmaps/grsync-busy.png
+ mimeicondir = $(datadir)/icons/hicolor/48x48/mimetypes/
+ mimeicon_DATA = pixmaps/application-x-grsync-session.png

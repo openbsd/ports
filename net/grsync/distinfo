@@ -1,0 +1,6 @@
+SHA256 (grsync-1.2.8.tar.gz) = lOpfrKZ+PfRntSgzd688sysrR2MbajLTi8ezcSCTBrE=
+SHA256 (gtk3-port.patch) = kMchryA5WQ6MqqOuMbyBmBSFk2vyRS4+FxAXcsqHBe8=
+SHA256 (use-themed-icon.patch) = SQEIqbZXUBYnhvmqIwZoc2UCR3ziYK0ZSPnQEk1fsgc=
+SIZE (grsync-1.2.8.tar.gz) = 352885
+SIZE (gtk3-port.patch) = 5682
+SIZE (use-themed-icon.patch) = 3787

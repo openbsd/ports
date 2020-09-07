@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/07 16:58:30 landry Exp $
+@bin bin/grsync
+bin/grsync-batch
+@man man/man1/grsync-batch.1
+@man man/man1/grsync.1
+share/applications/grsync.desktop
+share/grsync/
+share/grsync/grsync.glade
+share/icons/hicolor/128x128/apps/grsync-busy.png
+share/icons/hicolor/128x128/apps/grsync.png
+share/icons/hicolor/48x48/mimetypes/application-x-grsync-session.png
+share/mime/packages/grsync.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
