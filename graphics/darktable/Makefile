@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2020/08/28 09:23:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2020/09/07 08:44:24 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 aarch64 powerpc64
 
@@ -36,7 +36,8 @@ MODLUA_VERSION=	5.3
 COMPILER =	base-clang
 
 BUILD_DEPENDS=	sysutils/coreutils \
-		graphics/p5-Image-ExifTool
+		graphics/p5-Image-ExifTool \
+		textproc/libxslt
 RUN_DEPENDS=	devel/desktop-file-utils \
 		graphics/p5-Image-ExifTool \
 		x11/gtk+3,-guic
