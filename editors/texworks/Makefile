@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/02/13 22:19:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2020/09/07 14:45:49 rsadowski Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -13,7 +13,7 @@ PKGNAME-main =		texworks-${V}
 PKGNAME-lua =		texworks-lua-${V}
 PKGNAME-python =	texworks-python-${V}
 REVISION-lua =		0
-REVISION-python =	0
+REVISION-python =	1
 REVISION-main =		3
 
 EPOCH =			0
@@ -41,7 +41,7 @@ WANTLIB-lua += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} Qt5Concurrent Qt5Core
 WANTLIB-lua += Qt5DBus Qt5Gui Qt5Script Qt5ScriptTools Qt5Widgets Qt5Xml m
 
 WANTLIB-python += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB-python += Qt5Script Qt5ScriptTools Qt5Widgets Qt5Xml m python2.7
+WANTLIB-python += Qt5Script Qt5ScriptTools Qt5Widgets Qt5Xml m ${MODPY_WANTLIB}
 
 MULTI_PACKAGES =	-main -lua -python
 
