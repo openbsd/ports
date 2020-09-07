@@ -1,30 +1,24 @@
-$OpenBSD: patch-configure_d_config_os_progs,v 1.6 2020/09/04 20:06:11 sthen Exp $
+$OpenBSD: patch-configure_d_config_os_progs,v 1.7 2020/09/07 10:18:14 sthen Exp $
 
-Net-SNMP tries to use -Wl,-no-undefined to detect missing linkage at build
-time (rather than dying at runtime if referenced functions are unavailable -
-this happened with some AES-related functions in an earlier release where
-libm wasn't linked to the library correctly).
-
-When trying to link the shared libraries, this fails on OpenBSD with missing
-libc-related symbols. I think this maybe because OpenBSD doesn't record
-libc as needed in shared libraries, presumably as a result of this
--no-undefined is tripped.
-
-Neuter the autoconf check here to avoid this problem.
-
-https://github.com/net-snmp/net-snmp/issues/178
+From ee7c66cf856dcda14f6d1d1503b80c0535509bc3 Mon Sep 17 00:00:00 2001
+From: Bart Van Assche <bvanassche@acm.org>
+Date: Fri, 4 Sep 2020 13:32:54 -0700
+Subject: [PATCH] OpenBSD: Do not use the linker flag -no-undefined
 
 Index: configure.d/config_os_progs
 --- configure.d/config_os_progs.orig
 +++ configure.d/config_os_progs
-@@ -207,21 +207,7 @@ case x$target_os in
- esac
+@@ -208,20 +208,29 @@ esac
  
  
--#
+ #
 -#    Whether the linker supports the flag -Wl,-no-undefined.
--#
--
++#    Whether the linker supports the flag -Wl,-no-undefined. Do not use
++#    -Wl,-no-undefined on OpenBSD because it breaks linking of shared
++#    libraries. Use -Wl,-no-undefined on all other platforms such that
++#    undefined symbols are detected at compile time instead of at runtime.
+ #
+ 
 -if ! echo "$CFLAGS" | grep -q -- -fsanitize=; then
 -saved_LDFLAGS=$LDFLAGS
 -AC_MSG_CHECKING([whether the linker supports -Wl,-no-undefined])
@@ -34,8 +28,25 @@ Index: configure.d/config_os_progs
 -                LD_NO_UNDEFINED=-Wl,-no-undefined],
 -               [AC_MSG_RESULT([no])])
 -LDFLAGS="$saved_LDFLAGS"
- AC_SUBST(LD_NO_UNDEFINED)
+-AC_SUBST(LD_NO_UNDEFINED)
 -fi
++case x$target_os in
++  xopenbsd*)
++    ;;
++  *)
++    if ! echo "$CFLAGS" | grep -q -- -fsanitize=; then
++      saved_LDFLAGS=$LDFLAGS
++      AC_MSG_CHECKING([whether the linker supports -Wl,-no-undefined])
++      LDFLAGS="$saved_LDFLAGS -Wl,-no-undefined"
++      AC_LINK_IFELSE([AC_LANG_PROGRAM([],[])],
++		     [AC_MSG_RESULT([yes]); dnl
++		      LD_NO_UNDEFINED=-Wl,-no-undefined],
++		     [AC_MSG_RESULT([no])])
++      LDFLAGS="$saved_LDFLAGS"
++      AC_SUBST(LD_NO_UNDEFINED)
++    fi
++    ;;
++esac
  
  
  #

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2020/09/04 19:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2020/09/07 10:18:14 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
@@ -50,10 +50,7 @@ DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
 # - base OpenBSD mibs (/usr/share/snmp/mibs), SNMPD-CONF pulls in the rest
 OPENBSD_MIBS=		OPENBSD-SNMPD-CONF
 
-#CONFIGURE_STYLE=  gnu
-CONFIGURE_STYLE=  autoreconf
-AUTOMAKE_VERSION= 1.16
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE=  gnu
 CONFIGURE_ARGS=   --enable-ipv6 \
 	--enable-blumenthal-aes \
 	--enable-mfd-rewrites \
