@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/07 15:58:36 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
@@ -84,7 +84,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kpimtextedit \
 		x11/kde-applications/libkgapi \
 		x11/kde-applications/pimcommon \
-		x11/kde-applications/kdav \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtnetworkauth \
