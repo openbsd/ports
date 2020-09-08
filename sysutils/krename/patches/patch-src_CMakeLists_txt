@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2020/09/08 19:45:39 rsadowski Exp $
 
 https://gitweb.gentoo.org/repo/gentoo.git/plain/kde-misc/krename/files/krename-5.0.0-exiv2-0.27.patch
 
@@ -23,8 +23,12 @@ Index: src/CMakeLists.txt
      set(krename_SRCS ${krename_SRCS}
          exiv2plugin.cpp
      )
-@@ -131,9 +131,9 @@ if(TAGLIB_FOUND)
-         ${TAGLIB_LIBRARIES}
+@@ -128,12 +128,12 @@ target_link_libraries(krename
+ )
+ if(TAGLIB_FOUND)
+     target_link_libraries(krename
+-        ${TAGLIB_LIBRARIES}
++        tag
      )
  endif()
 -if(EXIV2_FOUND)

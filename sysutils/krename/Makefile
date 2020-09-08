@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2020/05/14 19:16:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2020/09/08 19:45:39 rsadowski Exp $
 
 COMMENT =	powerful batch file renamer
 
 VERSION =	5.0.0
 DISTNAME =	krename-${VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	sysutils x11
 
@@ -17,9 +17,10 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5I18n KF5IconThemes
 WANTLIB += KF5ItemViews KF5JSApi KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c exiv2 freetype m podofo tag
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c exiv2 freetype
+WANTLIB += m podofo tag
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krename/${VERSION}/src/}
 
