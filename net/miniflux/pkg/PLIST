@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/08 22:32:42 abieber Exp $
+@newgroup _miniflux:859
+@newuser _miniflux:859:_miniflux:daemon:Miniflux user:${VARBASE}/miniflux:/sbin/nologin
+@rcscript ${RCDIR}/miniflux
+@owner _miniflux
+@group _miniflux
+@sample ${VARBASE}/miniflux/
+@extraunexec rm -rf ${VARBASE}/miniflux/{.,}*
+@owner
+@group
+@bin bin/miniflux
+@man man/man1/miniflux.1
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/miniflux/
+share/examples/miniflux/miniflux.conf
+@mode 640
+@group _miniflux
+@sample ${SYSCONFDIR}/miniflux.conf

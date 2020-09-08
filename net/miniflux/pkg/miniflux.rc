@@ -1,0 +1,14 @@
+#!/bin/ksh
+#
+# $OpenBSD: miniflux.rc,v 1.1.1.1 2020/09/08 22:32:42 abieber Exp $
+
+daemon="${TRUEPREFIX}/bin/miniflux"
+daemon_user="_miniflux"
+daemon_flags="-c ${SYSCONFDIR}/miniflux.conf "
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

@@ -1,0 +1,41 @@
+$OpenBSD: README,v 1.1.1.1 2020/09/08 22:32:42 abieber Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Initial Setup
+=============
+
+The database server will need to have the hstore extension. This means
+installing postgresql-contrib on OpenBSD.
+
+Configure ${SYSCONFDIR}/miniflux.conf to your liking. Create a user and
+database as defined in ${SYSCONFDIR}/miniflux.conf:
+
+# su - _postgresql
+
+Create a database user for Miniflux
+
+$ createuser -U postgres -P miniflux
+
+Create a database for miniflux that belongs to our user
+
+$ createdb -U postgres -O miniflux miniflux
+
+Create the extension hstore as superuser
+
+$ psql -U postgres miniflux -c 'create extension hstore'
+CREATE EXTENSION
+
+Run the database migrations.
+
+# su -s/bin/sh - _miniflux
+$ . /etc/miniflux.conf
+$ miniflux -migrate
+
+Create the initial admin account.
+
+$ miniflux -create-admin
+
+Miniflux is now ready to be started via rcctl.

@@ -1,0 +1,9 @@
+Miniflux is a minimalist and opinionated feed reader:
+
+- Written in Go (Golang)
+- Works only with Postgresql
+- Doesn't use any ORM
+- Doesn't use any complicated framework
+- Use only modern vanilla Javascript (ES6 and Fetch API)
+- Single binary compiled statically without dependency
+- The number of features is voluntarily limited
