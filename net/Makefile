@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1220 2020/09/07 16:59:04 landry Exp $
+# $OpenBSD: Makefile,v 1.1221 2020/09/08 22:35:38 abieber Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -255,6 +255,7 @@
      SUBDIR += mfi
      SUBDIR += microblog-purple
      SUBDIR += minbif
+     SUBDIR += miniflux
      SUBDIR += mininet
      SUBDIR += minio
      SUBDIR += miniupnp
