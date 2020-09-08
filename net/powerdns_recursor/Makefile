@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/17 10:33:33 otto Exp $
+# $OpenBSD: Makefile,v 1.13 2020/09/08 08:50:52 otto Exp $
 
 COMMENT=		recursive nameserver
 
-V=			4.3.3
+V=			4.3.4
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
@@ -51,6 +51,7 @@ CONFIGURE_ARGS+=	--disable-botan \
 			--without-systemd
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+			CXXFLAGS="-Wno-deprecated-copy" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 EXAMPLE_DIR=            ${PREFIX}/share/examples/pdns/
