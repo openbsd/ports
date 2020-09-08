@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.6 2020/05/26 04:53:26 rsadowski Exp $
+$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.7 2020/09/08 15:22:39 rsadowski Exp $
 Index: src/extension/implementation/script.cpp
 --- src/extension/implementation/script.cpp.orig
 +++ src/extension/implementation/script.cpp
@@ -8,7 +8,7 @@ Index: src/extension/implementation/script.cpp
  #else
 -        { "perl",    {"perl-interpreter",    {"perl"              }}},
 -        { "python",  {"python-interpreter",  {"python3", "python" }}},
-+        { "perl",    {"perl-interpreter",    {"/usr/bin/perl"              }}},
++        { "perl",    {"perl-interpreter",    {"/usr/bin/perl"    }}},
 +        { "python",  {"python-interpreter",  {"${MODPY_BIN}"  }}},
  #endif
          { "python2", {"python2-interpreter", {"python2", "python" }}},

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/05/26 04:53:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/09/08 15:22:39 rsadowski Exp $
 @bin bin/inkscape
 @bin bin/inkview
 lib/inkscape/
@@ -6,6 +6,7 @@ lib/inkscape/
 @man man/man1/inkscape.1
 @man man/man1/inkview.1
 share/applications/org.inkscape.Inkscape.desktop
+share/bash-completion/completions/inkscape
 share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/16x16/apps/org.inkscape.Inkscape.png
 share/icons/hicolor/22x22/apps/org.inkscape.Inkscape.png
@@ -108,6 +109,7 @@ share/inkscape/extensions/${MODPY_PYCACHE}color_grayscale.${MODPY_PYC_MAGIC_TAG}
 share/inkscape/extensions/${MODPY_PYCACHE}color_lesshue.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}color_lesslight.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}color_lesssaturation.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}color_list.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}color_morehue.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}color_morelight.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}color_moresaturation.${MODPY_PYC_MAGIC_TAG}pyc
@@ -127,7 +129,6 @@ share/inkscape/extensions/${MODPY_PYCACHE}draw_from_triangle.${MODPY_PYC_MAGIC_T
 share/inkscape/extensions/${MODPY_PYCACHE}dxf12_outlines.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}dxf_input.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}dxf_outlines.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}dxf_templates.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}edge3d.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}embedimage.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}export_gimp_palette.${MODPY_PYC_MAGIC_TAG}pyc
@@ -160,18 +161,18 @@ share/inkscape/extensions/${MODPY_PYCACHE}inkscape_follow_link.${MODPY_PYC_MAGIC
 share/inkscape/extensions/${MODPY_PYCACHE}inkwebeffect.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}interp.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}interp_att_g.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_autoTexts.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_effects.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_export.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_install.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_keyBindings.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_masterSlide.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_mouseHandler.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_summary.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_transitions.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_uninstall.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_video.${MODPY_PYC_MAGIC_TAG}pyc
-share/inkscape/extensions/${MODPY_PYCACHE}jessyInk_view.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_autotexts.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_effects.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_export.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_install.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_key_bindings.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_master_slide.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_mouse_handler.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_summary.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_transitions.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_uninstall.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_video.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}jessyink_view.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}jitternodes.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}launch_webbrowser.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}layer2png.${MODPY_PYC_MAGIC_TAG}pyc
@@ -219,6 +220,7 @@ share/inkscape/extensions/${MODPY_PYCACHE}replace_font.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}restack.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}rtree.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}rubberstretch.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/${MODPY_PYCACHE}scribus_export_pdf.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}setup_typography_canvas.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}spirograph.${MODPY_PYC_MAGIC_TAG}pyc
@@ -384,6 +386,8 @@ share/inkscape/extensions/color_lesslight.inx
 share/inkscape/extensions/color_lesslight.py
 share/inkscape/extensions/color_lesssaturation.inx
 share/inkscape/extensions/color_lesssaturation.py
+share/inkscape/extensions/color_list.inx
+share/inkscape/extensions/color_list.py
 share/inkscape/extensions/color_morehue.inx
 share/inkscape/extensions/color_morehue.py
 share/inkscape/extensions/color_morelight.inx
@@ -421,11 +425,13 @@ share/inkscape/extensions/draw_from_triangle.inx
 share/inkscape/extensions/draw_from_triangle.py
 share/inkscape/extensions/dxf12_outlines.inx
 share/inkscape/extensions/dxf12_outlines.py
+share/inkscape/extensions/dxf14_footer.txt
+share/inkscape/extensions/dxf14_header.txt
+share/inkscape/extensions/dxf14_style.txt
 share/inkscape/extensions/dxf_input.inx
 share/inkscape/extensions/dxf_input.py
 share/inkscape/extensions/dxf_outlines.inx
 share/inkscape/extensions/dxf_outlines.py
-share/inkscape/extensions/dxf_templates.py
 share/inkscape/extensions/edge3d.inx
 share/inkscape/extensions/edge3d.py
 share/inkscape/extensions/embedimage.inx
@@ -554,6 +560,7 @@ share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}_groups.${MODPY_PYC_MAG
 share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}_image.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}_meta.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}_polygons.${MODPY_PYC_MAGIC_TAG}pyc
+share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}_selected.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}_svg.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}_text.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}_use.${MODPY_PYC_MAGIC_TAG}pyc
@@ -563,6 +570,7 @@ share/inkscape/extensions/inkex/elements/_groups.py
 share/inkscape/extensions/inkex/elements/_image.py
 share/inkscape/extensions/inkex/elements/_meta.py
 share/inkscape/extensions/inkex/elements/_polygons.py
+share/inkscape/extensions/inkex/elements/_selected.py
 share/inkscape/extensions/inkex/elements/_svg.py
 share/inkscape/extensions/inkex/elements/_text.py
 share/inkscape/extensions/inkex/elements/_use.py
@@ -613,33 +621,33 @@ share/inkscape/extensions/interp.py
 share/inkscape/extensions/interp_att_g.inx
 share/inkscape/extensions/interp_att_g.py
 share/inkscape/extensions/jessyInk.js
-share/inkscape/extensions/jessyInk_autoTexts.inx
-share/inkscape/extensions/jessyInk_autoTexts.py
 share/inkscape/extensions/jessyInk_core_mouseHandler_noclick.js
 share/inkscape/extensions/jessyInk_core_mouseHandler_zoomControl.js
-share/inkscape/extensions/jessyInk_effects.inx
-share/inkscape/extensions/jessyInk_effects.py
-share/inkscape/extensions/jessyInk_export.inx
-share/inkscape/extensions/jessyInk_export.py
-share/inkscape/extensions/jessyInk_install.inx
-share/inkscape/extensions/jessyInk_install.py
-share/inkscape/extensions/jessyInk_keyBindings.inx
-share/inkscape/extensions/jessyInk_keyBindings.py
-share/inkscape/extensions/jessyInk_masterSlide.inx
-share/inkscape/extensions/jessyInk_masterSlide.py
-share/inkscape/extensions/jessyInk_mouseHandler.inx
-share/inkscape/extensions/jessyInk_mouseHandler.py
-share/inkscape/extensions/jessyInk_summary.inx
-share/inkscape/extensions/jessyInk_summary.py
-share/inkscape/extensions/jessyInk_transitions.inx
-share/inkscape/extensions/jessyInk_transitions.py
-share/inkscape/extensions/jessyInk_uninstall.inx
-share/inkscape/extensions/jessyInk_uninstall.py
-share/inkscape/extensions/jessyInk_video.inx
-share/inkscape/extensions/jessyInk_video.py
-share/inkscape/extensions/jessyInk_video.svg
-share/inkscape/extensions/jessyInk_view.inx
-share/inkscape/extensions/jessyInk_view.py
+share/inkscape/extensions/jessyink_autotexts.inx
+share/inkscape/extensions/jessyink_autotexts.py
+share/inkscape/extensions/jessyink_effects.inx
+share/inkscape/extensions/jessyink_effects.py
+share/inkscape/extensions/jessyink_export.inx
+share/inkscape/extensions/jessyink_export.py
+share/inkscape/extensions/jessyink_install.inx
+share/inkscape/extensions/jessyink_install.py
+share/inkscape/extensions/jessyink_key_bindings.inx
+share/inkscape/extensions/jessyink_key_bindings.py
+share/inkscape/extensions/jessyink_master_slide.inx
+share/inkscape/extensions/jessyink_master_slide.py
+share/inkscape/extensions/jessyink_mouse_handler.inx
+share/inkscape/extensions/jessyink_mouse_handler.py
+share/inkscape/extensions/jessyink_summary.inx
+share/inkscape/extensions/jessyink_summary.py
+share/inkscape/extensions/jessyink_transitions.inx
+share/inkscape/extensions/jessyink_transitions.py
+share/inkscape/extensions/jessyink_uninstall.inx
+share/inkscape/extensions/jessyink_uninstall.py
+share/inkscape/extensions/jessyink_video.inx
+share/inkscape/extensions/jessyink_video.py
+share/inkscape/extensions/jessyink_video.svg
+share/inkscape/extensions/jessyink_view.inx
+share/inkscape/extensions/jessyink_view.py
 share/inkscape/extensions/jitternodes.inx
 share/inkscape/extensions/jitternodes.py
 share/inkscape/extensions/launch_webbrowser.py
@@ -732,6 +740,8 @@ share/inkscape/extensions/rtree.inx
 share/inkscape/extensions/rtree.py
 share/inkscape/extensions/rubberstretch.inx
 share/inkscape/extensions/rubberstretch.py
+share/inkscape/extensions/scribus_export_pdf.inx
+share/inkscape/extensions/scribus_export_pdf.py
 share/inkscape/extensions/seamless_pattern.svg
 share/inkscape/extensions/setup.cfg
 share/inkscape/extensions/setup.py
@@ -2653,6 +2663,7 @@ share/inkscape/templates/default.doi.svg
 share/inkscape/templates/default.el.svg
 share/inkscape/templates/default.eo.svg
 share/inkscape/templates/default.es.svg
+share/inkscape/templates/default.es_MX.svg
 share/inkscape/templates/default.et.svg
 share/inkscape/templates/default.eu.svg
 share/inkscape/templates/default.fi.svg
