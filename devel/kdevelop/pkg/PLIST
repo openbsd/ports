@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/08/31 19:06:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/09/08 15:23:04 rsadowski Exp $
 @bin bin/kdev_dbus_socket_transformer
 @bin bin/kdev_format_source
 @bin bin/kdev_includepathsconverter
@@ -461,75 +461,80 @@ lib/cmake/KDevelop/KDevelopTargets.cmake
 @lib lib/libKDevPlatformTests.so.${LIBKDevPlatformTests_VERSION}
 @lib lib/libKDevPlatformUtil.so.${LIBKDevPlatformUtil_VERSION}
 @lib lib/libKDevPlatformVcs.so.${LIBKDevPlatformVcs_VERSION}
+@so lib/libKDevelopSessionsWatch.so
 lib/qt5/plugins/grantlee/
 lib/qt5/plugins/grantlee/5.2/
 @so lib/qt5/plugins/grantlee/5.2/kdev_filters.so
 lib/qt5/plugins/kdevplatform/
-lib/qt5/plugins/kdevplatform/33/
-@so lib/qt5/plugins/kdevplatform/33/kdevandroid.so
-@so lib/qt5/plugins/kdevplatform/33/kdevappwizard.so
-@so lib/qt5/plugins/kdevplatform/33/kdevastyle.so
-@so lib/qt5/plugins/kdevplatform/33/kdevbazaar.so
-@so lib/qt5/plugins/kdevplatform/33/kdevclangsupport.so
-@so lib/qt5/plugins/kdevplatform/33/kdevclangtidy.so
-@so lib/qt5/plugins/kdevplatform/33/kdevclassbrowser.so
-@so lib/qt5/plugins/kdevplatform/33/kdevclazy.so
-@so lib/qt5/plugins/kdevplatform/33/kdevcmakebuilder.so
-@so lib/qt5/plugins/kdevplatform/33/kdevcmakedocumentation.so
-@so lib/qt5/plugins/kdevplatform/33/kdevcmakemanager.so
-@so lib/qt5/plugins/kdevplatform/33/kdevcodeutils.so
-@so lib/qt5/plugins/kdevplatform/33/kdevcontextbrowser.so
-@so lib/qt5/plugins/kdevplatform/33/kdevcppcheck.so
-@so lib/qt5/plugins/kdevplatform/33/kdevcustombuildsystem.so
-@so lib/qt5/plugins/kdevplatform/33/kdevcustommakemanager.so
-@so lib/qt5/plugins/kdevplatform/33/kdevcustomscript.so
-@so lib/qt5/plugins/kdevplatform/33/kdevdefinesandincludesmanager.so
-@so lib/qt5/plugins/kdevplatform/33/kdevdocker.so
-@so lib/qt5/plugins/kdevplatform/33/kdevdocumentswitcher.so
-@so lib/qt5/plugins/kdevplatform/33/kdevdocumentview.so
-@so lib/qt5/plugins/kdevplatform/33/kdevexecute.so
-@so lib/qt5/plugins/kdevplatform/33/kdevexecuteplasmoid.so
-@so lib/qt5/plugins/kdevplatform/33/kdevexecutescript.so
-@so lib/qt5/plugins/kdevplatform/33/kdevexternalscript.so
-@so lib/qt5/plugins/kdevplatform/33/kdevfilemanager.so
-@so lib/qt5/plugins/kdevplatform/33/kdevfiletemplates.so
-@so lib/qt5/plugins/kdevplatform/33/kdevflatpak.so
-@so lib/qt5/plugins/kdevplatform/33/kdevgdb.so
-@so lib/qt5/plugins/kdevplatform/33/kdevgenericmanager.so
-@so lib/qt5/plugins/kdevplatform/33/kdevghprovider.so
-@so lib/qt5/plugins/kdevplatform/33/kdevgit.so
-@so lib/qt5/plugins/kdevplatform/33/kdevgrepview.so
-@so lib/qt5/plugins/kdevplatform/33/kdevheaptrack.so
-@so lib/qt5/plugins/kdevplatform/33/kdevkonsoleview.so
-@so lib/qt5/plugins/kdevplatform/33/kdevlldb.so
-@so lib/qt5/plugins/kdevplatform/33/kdevmakebuilder.so
-@so lib/qt5/plugins/kdevplatform/33/kdevmanpage.so
-@so lib/qt5/plugins/kdevplatform/33/kdevmesonmanager.so
-@so lib/qt5/plugins/kdevplatform/33/kdevninja.so
-@so lib/qt5/plugins/kdevplatform/33/kdevokteta.so
-@so lib/qt5/plugins/kdevplatform/33/kdevopenwith.so
-@so lib/qt5/plugins/kdevplatform/33/kdevoutlineview.so
-@so lib/qt5/plugins/kdevplatform/33/kdevpatchreview.so
-@so lib/qt5/plugins/kdevplatform/33/kdevperforce.so
-@so lib/qt5/plugins/kdevplatform/33/kdevproblemreporter.so
-@so lib/qt5/plugins/kdevplatform/33/kdevprojectfilter.so
-@so lib/qt5/plugins/kdevplatform/33/kdevprojectmanagerview.so
-@so lib/qt5/plugins/kdevplatform/33/kdevqmljslanguagesupport.so
-@so lib/qt5/plugins/kdevplatform/33/kdevqthelp.so
-@so lib/qt5/plugins/kdevplatform/33/kdevquickopen.so
-@so lib/qt5/plugins/kdevplatform/33/kdevscratchpad.so
-@so lib/qt5/plugins/kdevplatform/33/kdevsourceformatter.so
-@so lib/qt5/plugins/kdevplatform/33/kdevstandardoutputview.so
-@so lib/qt5/plugins/kdevplatform/33/kdevsubversion.so
-@so lib/qt5/plugins/kdevplatform/33/kdevswitchtobuddy.so
-@so lib/qt5/plugins/kdevplatform/33/kdevtestview.so
-@so lib/qt5/plugins/kdevplatform/33/kdevvcschangesviewplugin.so
-@so lib/qt5/plugins/kdevplatform/33/kdevwelcomepage.so
-@so lib/qt5/plugins/krunner_kdevelopsessions.so
-@so lib/qt5/plugins/plasma/dataengine/plasma_engine_kdevelopsessions.so
+lib/qt5/plugins/kdevplatform/34/
+@so lib/qt5/plugins/kdevplatform/34/kdevandroid.so
+@so lib/qt5/plugins/kdevplatform/34/kdevappwizard.so
+@so lib/qt5/plugins/kdevplatform/34/kdevastyle.so
+@so lib/qt5/plugins/kdevplatform/34/kdevbazaar.so
+@so lib/qt5/plugins/kdevplatform/34/kdevclangsupport.so
+@so lib/qt5/plugins/kdevplatform/34/kdevclangtidy.so
+@so lib/qt5/plugins/kdevplatform/34/kdevclassbrowser.so
+@so lib/qt5/plugins/kdevplatform/34/kdevclazy.so
+@so lib/qt5/plugins/kdevplatform/34/kdevcmakebuilder.so
+@so lib/qt5/plugins/kdevplatform/34/kdevcmakedocumentation.so
+@so lib/qt5/plugins/kdevplatform/34/kdevcmakemanager.so
+@so lib/qt5/plugins/kdevplatform/34/kdevcodeutils.so
+@so lib/qt5/plugins/kdevplatform/34/kdevcontextbrowser.so
+@so lib/qt5/plugins/kdevplatform/34/kdevcppcheck.so
+@so lib/qt5/plugins/kdevplatform/34/kdevcustombuildsystem.so
+@so lib/qt5/plugins/kdevplatform/34/kdevcustommakemanager.so
+@so lib/qt5/plugins/kdevplatform/34/kdevcustomscript.so
+@so lib/qt5/plugins/kdevplatform/34/kdevdefinesandincludesmanager.so
+@so lib/qt5/plugins/kdevplatform/34/kdevdocker.so
+@so lib/qt5/plugins/kdevplatform/34/kdevdocumentswitcher.so
+@so lib/qt5/plugins/kdevplatform/34/kdevdocumentview.so
+@so lib/qt5/plugins/kdevplatform/34/kdevexecute.so
+@so lib/qt5/plugins/kdevplatform/34/kdevexecuteplasmoid.so
+@so lib/qt5/plugins/kdevplatform/34/kdevexecutescript.so
+@so lib/qt5/plugins/kdevplatform/34/kdevexternalscript.so
+@so lib/qt5/plugins/kdevplatform/34/kdevfilemanager.so
+@so lib/qt5/plugins/kdevplatform/34/kdevfiletemplates.so
+@so lib/qt5/plugins/kdevplatform/34/kdevflatpak.so
+@so lib/qt5/plugins/kdevplatform/34/kdevgdb.so
+@so lib/qt5/plugins/kdevplatform/34/kdevgenericmanager.so
+@so lib/qt5/plugins/kdevplatform/34/kdevghprovider.so
+@so lib/qt5/plugins/kdevplatform/34/kdevgit.so
+@so lib/qt5/plugins/kdevplatform/34/kdevgrepview.so
+@so lib/qt5/plugins/kdevplatform/34/kdevheaptrack.so
+@so lib/qt5/plugins/kdevplatform/34/kdevkonsoleview.so
+@so lib/qt5/plugins/kdevplatform/34/kdevlldb.so
+@so lib/qt5/plugins/kdevplatform/34/kdevmakebuilder.so
+@so lib/qt5/plugins/kdevplatform/34/kdevmanpage.so
+@so lib/qt5/plugins/kdevplatform/34/kdevmesonmanager.so
+@so lib/qt5/plugins/kdevplatform/34/kdevninja.so
+@so lib/qt5/plugins/kdevplatform/34/kdevokteta.so
+@so lib/qt5/plugins/kdevplatform/34/kdevopenwith.so
+@so lib/qt5/plugins/kdevplatform/34/kdevoutlineview.so
+@so lib/qt5/plugins/kdevplatform/34/kdevpatchreview.so
+@so lib/qt5/plugins/kdevplatform/34/kdevperforce.so
+@so lib/qt5/plugins/kdevplatform/34/kdevproblemreporter.so
+@so lib/qt5/plugins/kdevplatform/34/kdevprojectfilter.so
+@so lib/qt5/plugins/kdevplatform/34/kdevprojectmanagerview.so
+@so lib/qt5/plugins/kdevplatform/34/kdevqmljslanguagesupport.so
+@so lib/qt5/plugins/kdevplatform/34/kdevqthelp.so
+@so lib/qt5/plugins/kdevplatform/34/kdevquickopen.so
+@so lib/qt5/plugins/kdevplatform/34/kdevscratchpad.so
+@so lib/qt5/plugins/kdevplatform/34/kdevsourceformatter.so
+@so lib/qt5/plugins/kdevplatform/34/kdevstandardoutputview.so
+@so lib/qt5/plugins/kdevplatform/34/kdevsubversion.so
+@so lib/qt5/plugins/kdevplatform/34/kdevswitchtobuddy.so
+@so lib/qt5/plugins/kdevplatform/34/kdevtestview.so
+@so lib/qt5/plugins/kdevplatform/34/kdevvcschangesviewplugin.so
+@so lib/qt5/plugins/kdevplatform/34/kdevwelcomepage.so
+lib/qt5/plugins/kf5/krunner/
+@so lib/qt5/plugins/kf5/krunner/krunner_kdevelopsessions.so
 lib/qt5/qml/org/kde/kdevplatform/
 @so lib/qt5/qml/org/kde/kdevplatform/libkdevelopdashboarddeclarativeplugin.so
 lib/qt5/qml/org/kde/kdevplatform/qmldir
+lib/qt5/qml/org/kde/plasma/private/
+lib/qt5/qml/org/kde/plasma/private/kdevelopsessions/
+@so lib/qt5/qml/org/kde/plasma/private/kdevelopsessions/libkdevelopsessionsplugin.so
+lib/qt5/qml/org/kde/plasma/private/kdevelopsessions/qmldir
 share/applications/org.kde.kdevelop.desktop
 share/applications/org.kde.kdevelop_bzr.desktop
 share/applications/org.kde.kdevelop_git.desktop
@@ -606,6 +611,7 @@ share/icons/hicolor/16x16/apps/kdevgh.png
 share/icons/hicolor/16x16/apps/subversion.png
 share/icons/hicolor/22x22/actions/breakpoint.png
 share/icons/hicolor/256x256/apps/kdevelop.png
+share/icons/hicolor/32x32/actions/breakpoint.png
 share/icons/hicolor/32x32/apps/cmake.png
 share/icons/hicolor/32x32/apps/kdevelop.png
 share/icons/hicolor/32x32/apps/kdevgh.png
@@ -838,9 +844,7 @@ share/knotifications5/kdevelop.notifyrc
 share/knsrcfiles/kdevappwizard.knsrc
 share/knsrcfiles/kdevelop-qthelp.knsrc
 share/knsrcfiles/kdevfiletemplates.knsrc
-share/kservices5/kdevelopsessions.desktop
 share/kservices5/plasma-applet-kdevelopsessions.desktop
-share/kservices5/plasma-dataengine-kdevelopsessions.desktop
 share/kservicetypes5/kdevelopplugin.desktop
 share/locale/af/LC_MESSAGES/kdevelop.mo
 share/locale/ar/LC_MESSAGES/kdevclassbrowser.mo
@@ -1525,11 +1529,13 @@ share/locale/et/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/eu/LC_MESSAGES/kdevelop.mo
 share/locale/eu/LC_MESSAGES/kdevokteta.mo
 share/locale/fa/LC_MESSAGES/kdevelop.mo
+share/locale/fi/LC_MESSAGES/kdevandroid.mo
 share/locale/fi/LC_MESSAGES/kdevappwizard.mo
 share/locale/fi/LC_MESSAGES/kdevastyle.mo
 share/locale/fi/LC_MESSAGES/kdevbazaar.mo
 share/locale/fi/LC_MESSAGES/kdevclangtidy.mo
 share/locale/fi/LC_MESSAGES/kdevclassbrowser.mo
+share/locale/fi/LC_MESSAGES/kdevclazy.mo
 share/locale/fi/LC_MESSAGES/kdevcmake.mo
 share/locale/fi/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/fi/LC_MESSAGES/kdevcodeutils.mo
@@ -1554,9 +1560,11 @@ share/locale/fi/LC_MESSAGES/kdevgrepview.mo
 share/locale/fi/LC_MESSAGES/kdevkonsole.mo
 share/locale/fi/LC_MESSAGES/kdevmakebuilder.mo
 share/locale/fi/LC_MESSAGES/kdevmanpage.mo
+share/locale/fi/LC_MESSAGES/kdevmesonmanager.mo
 share/locale/fi/LC_MESSAGES/kdevninja.mo
 share/locale/fi/LC_MESSAGES/kdevokteta.mo
 share/locale/fi/LC_MESSAGES/kdevopenwith.mo
+share/locale/fi/LC_MESSAGES/kdevoutlineview.mo
 share/locale/fi/LC_MESSAGES/kdevpatchreview.mo
 share/locale/fi/LC_MESSAGES/kdevperforce.mo
 share/locale/fi/LC_MESSAGES/kdevplatform.mo
@@ -1694,6 +1702,7 @@ share/locale/gl/LC_MESSAGES/kdevclazy.mo
 share/locale/gl/LC_MESSAGES/kdevcmake.mo
 share/locale/gl/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/gl/LC_MESSAGES/kdevcodeutils.mo
+share/locale/gl/LC_MESSAGES/kdevcompileanalyzercommon.mo
 share/locale/gl/LC_MESSAGES/kdevcontextbrowser.mo
 share/locale/gl/LC_MESSAGES/kdevcppcheck.mo
 share/locale/gl/LC_MESSAGES/kdevcustombuildsystem.mo
@@ -2564,6 +2573,7 @@ share/locale/pt_BR/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/ro/LC_MESSAGES/kdevappwizard.mo
 share/locale/ro/LC_MESSAGES/kdevastyle.mo
+share/locale/ro/LC_MESSAGES/kdevbazaar.mo
 share/locale/ro/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/ro/LC_MESSAGES/kdevcmake.mo
 share/locale/ro/LC_MESSAGES/kdevcmakebuilder.mo
@@ -2590,6 +2600,7 @@ share/locale/ro/LC_MESSAGES/kdevqmakebuilder.mo
 share/locale/ro/LC_MESSAGES/kdevqmakemanager.mo
 share/locale/ro/LC_MESSAGES/kdevqthelp.mo
 share/locale/ro/LC_MESSAGES/kdevquickopen.mo
+share/locale/ro/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/ro/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/ro/LC_MESSAGES/kdevsubversion.mo
 share/locale/ru/LC_MESSAGES/kdevandroid.mo
@@ -3144,7 +3155,6 @@ share/plasma/plasmoids/kdevelopsessions/contents/
 share/plasma/plasmoids/kdevelopsessions/contents/ui/
 share/plasma/plasmoids/kdevelopsessions/contents/ui/kdevelopsessions.qml
 share/plasma/plasmoids/kdevelopsessions/metadata.desktop
-share/plasma/services/org.kde.plasma.dataengine.kdevelopsessions.operations
 share/qlogging-categories5/kdevelop.categories
 share/qlogging-categories5/kdevplatform.categories
 @tag update-desktop-database
