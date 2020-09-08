@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2020/06/02 16:33:09 feinerer Exp $
+# $OpenBSD: Makefile,v 1.11 2020/09/08 15:07:48 sthen Exp $
 
 COMMENT =	userland implementation of the UDF filesystem
 
 V =		0.8.11
+REVISION=	0
 DISTNAME =	UDFclient.${V}
 PKGNAME =	udfclient-${V}
 CATEGORIES =	sysutils

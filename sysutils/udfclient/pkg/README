@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:23 espie Exp $
+$OpenBSD: README,v 1.3 2020/09/08 15:07:48 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -31,16 +31,19 @@ Special files and links
 UDF on disk drives
 ------------------
 
-Disklabels are not used, except for virtual partition "a" with
-2048-byte blocksize devices.  MBRs are not used, the filesystem
-begins at LBA 0.  Partition "c" should be used if writing directly
-to a drive instead of an image file.  If the drive contains prior
-data, zero the leading sectors before use as shown in the first
-command below.
+OpenBSD disklabels are not used on storage media.  OpenBSD will create
+an in-memory virtual "a" partition when natively mounting UDF filesystems
+read-only on 2048-byte block devices or images; see Interoperability with
+mount_udf(8) below.
+
+MBRs are not used, the filesystem begins at LBA 0.  Raw partition "c"
+should be used if writing directly to a drive instead of an image file.
+If the drive contains prior data, zero the leading sectors before use as
+shown in the first command below.
 
 # dd if=/dev/zero of=/dev/rsd9c count=63
 # newfs_udf -L shared.drive /dev/rsd9c
-# ufsclient -W /dev/rsd9c
+# udfclient -W /dev/rsd9c
 
 While it is possible to direct a filesystem image to a disklabel
 partition, there would be no interoperability with other OSes.
