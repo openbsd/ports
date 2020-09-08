@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_jgmenu_run,v 1.1 2020/09/08 20:23:58 sthen Exp $
+
+Index: src/jgmenu_run
+--- src/jgmenu_run.orig
++++ src/jgmenu_run
+@@ -57,7 +57,7 @@ then
+ 	if test -e ${JGMENU_LOCKFILE}
+ 	then
+ 		send_tint2_env_vars_to_jgmenu
+-		if killall -SIGUSR1 jgmenu >/dev/null 2>&1
++		if pkill -SIGUSR1 jgmenu >/dev/null 2>&1
+ 		then
+ 			exit 0
+ 		else
