@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1 2020/09/07 04:44:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/08 18:06:02 rsadowski Exp $
 
 COMMENT =	KDE PIM DAV protocol support library
 DISTNAME =	kdav-${VERSION}
 CATEGORIES =	devel
+EPOCH =		0
 
 SHARED_LIBS +=  KF5DAV       0.0 # 5.13.2
 
