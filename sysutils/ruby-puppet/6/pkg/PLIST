@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/14 15:47:39 kn Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/08 21:57:23 kn Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -1171,6 +1171,8 @@ ${MODRUBY_SITEDIR}/puppet/util/windows/com.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/error.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/eventlog.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/file.rb
+${MODRUBY_SITEDIR}/puppet/util/windows/monkey_patches/
+${MODRUBY_SITEDIR}/puppet/util/windows/monkey_patches/dir.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/principal.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/process.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/registry.rb
