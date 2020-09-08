@@ -1,29 +1,29 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/06/14 04:12:33 remi Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2020/09/08 20:57:48 remi Exp $
 @newgroup _rsyslogd:803
 @newuser _rsyslogd:803:_rsyslogd:daemon:Rsyslog Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rsyslogd
 lib/rsyslog/
-lib/rsyslog/fmhash.so
-lib/rsyslog/fmhttp.so
-lib/rsyslog/imklog.so
-lib/rsyslog/immark.so
-lib/rsyslog/imrelp.so
-lib/rsyslog/imtcp.so
-lib/rsyslog/imudp.so
-lib/rsyslog/imuxsock.so
-lib/rsyslog/lmcry_gcry.so
-lib/rsyslog/lmnet.so
-lib/rsyslog/lmnetstrms.so
-lib/rsyslog/lmnsd_gtls.so
-lib/rsyslog/lmnsd_ptcp.so
-lib/rsyslog/lmregexp.so
-lib/rsyslog/lmtcpclt.so
-lib/rsyslog/lmtcpsrv.so
-lib/rsyslog/lmzlibw.so
-lib/rsyslog/mmexternal.so
-lib/rsyslog/ommail.so
-lib/rsyslog/omrelp.so
-lib/rsyslog/omtesting.so
+@so lib/rsyslog/fmhash.so
+@so lib/rsyslog/fmhttp.so
+@so lib/rsyslog/imklog.so
+@so lib/rsyslog/immark.so
+@so lib/rsyslog/imrelp.so
+@so lib/rsyslog/imtcp.so
+@so lib/rsyslog/imudp.so
+@so lib/rsyslog/imuxsock.so
+@so lib/rsyslog/lmcry_gcry.so
+@so lib/rsyslog/lmnet.so
+@so lib/rsyslog/lmnetstrms.so
+@so lib/rsyslog/lmnsd_gtls.so
+@so lib/rsyslog/lmnsd_ptcp.so
+@so lib/rsyslog/lmregexp.so
+@so lib/rsyslog/lmtcpclt.so
+@so lib/rsyslog/lmtcpsrv.so
+@so lib/rsyslog/lmzlibw.so
+@so lib/rsyslog/mmexternal.so
+@so lib/rsyslog/ommail.so
+@so lib/rsyslog/omrelp.so
+@so lib/rsyslog/omtesting.so
 @man man/man5/rsyslog.conf.5
 @man man/man8/rsyslogd.8
 @bin sbin/rsyslogd
