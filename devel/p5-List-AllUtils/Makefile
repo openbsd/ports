@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/13 10:49:43 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/09 11:43:55 fcambus Exp $
 
 COMMENT =	combines List::Util, List::SomeUtils and List::UtilsBy
 
-DISTNAME =	List-AllUtils-0.16
+DISTNAME =	List-AllUtils-0.18
 
 CATEGORIES =	devel
 
