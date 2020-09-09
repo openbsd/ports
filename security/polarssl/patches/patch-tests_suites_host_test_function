@@ -1,11 +1,11 @@
-$OpenBSD: patch-tests_suites_host_test_function,v 1.5 2020/07/03 07:35:41 bket Exp $
+$OpenBSD: patch-tests_suites_host_test_function,v 1.6 2020/09/09 08:01:32 bket Exp $
 
 Can't take the address of stdout.
 
 Index: tests/suites/host_test.function
 --- tests/suites/host_test.function.orig
 +++ tests/suites/host_test.function
-@@ -401,9 +401,6 @@ int execute_tests( int argc , const char ** argv )
+@@ -402,9 +402,6 @@ int execute_tests( int argc , const char ** argv )
      /* Store for proccessed integer params. */
      int int_params[50];
      void *pointer;
@@ -15,7 +15,7 @@ Index: tests/suites/host_test.function
  
  #if defined(MBEDTLS_MEMORY_BUFFER_ALLOC_C) && \
      !defined(TEST_SUITE_MEMORY_BUFFER_ALLOC)
-@@ -548,20 +545,6 @@ int execute_tests( int argc , const char ** argv )
+@@ -549,21 +546,6 @@ int execute_tests( int argc , const char ** argv )
                  test_info.result = TEST_RESULT_SUCCESS;
                  test_info.paramfail_test_state = PARAMFAIL_TESTSTATE_IDLE;
  
@@ -25,7 +25,7 @@ Index: tests/suites/host_test.function
 -                 */
 -                if( !option_verbose )
 -                {
--                    stdout_fd = redirect_output( &stdout, "/dev/null" );
+-                    stdout_fd = redirect_output( stdout, "/dev/null" );
 -                    if( stdout_fd == -1 )
 -                    {
 -                        /* Redirection has failed with no stdout so exit */
@@ -33,15 +33,17 @@ Index: tests/suites/host_test.function
 -                    }
 -                }
 -#endif /* __unix__ || __APPLE__ __MACH__ */
- 
+-
                  function_id = strtoul( params[0], NULL, 10 );
                  if ( (ret = check_test( function_id )) == DISPATCH_TEST_SUCCESS )
-@@ -573,13 +556,6 @@ int execute_tests( int argc , const char ** argv )
+                 {
+@@ -573,14 +555,6 @@ int execute_tests( int argc , const char ** argv )
+                         ret = dispatch_test( function_id, (void **)( params + 1 ) );
                      }
                  }
- 
+-
 -#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
--                if( !option_verbose && restore_output( &stdout, stdout_fd ) )
+-                if( !option_verbose && restore_output( stdout, stdout_fd ) )
 -                {
 -                        /* Redirection has failed with no stdout so exit */
 -                        exit( 1 );
@@ -50,14 +52,3 @@ Index: tests/suites/host_test.function
  
              }
  
-@@ -666,10 +642,6 @@ int execute_tests( int argc , const char ** argv )
-     mbedtls_memory_buffer_alloc_free();
- #endif
- 
--#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
--    if( stdout_fd != -1 )
--        close_output( stdout );
--#endif /* __unix__ || __APPLE__ __MACH__ */
- 
-     return( total_errors != 0 );
- }
