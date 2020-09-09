@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2020/09/08 17:46:58 tb Exp $
+# $OpenBSD: Makefile,v 1.22 2020/09/09 20:32:22 fcambus Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
-DISTNAME =	kore-4.0.0
-REVISION =	0
+DISTNAME =	kore-4.0.1
 
 CATEGORIES =	www
 
@@ -55,6 +54,8 @@ LIB_DEPENDS +=	devel/gettext,-runtime
 USE_GMAKE =	Yes
 
 MAKE_ENV +=	CC="${CC}" TASKS=1
+
+FAKE_FLAGS =	DESTDIR=
 
 NO_TEST =	Yes
 
