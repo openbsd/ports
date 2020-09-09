@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_unittest_test_threading_cpp,v 1.1 2020/09/09 11:32:12 semarie Exp $
+Disable testThreadKill test - see https://github.com/minetest/minetest/issues/6065
+
+Index: src/unittest/test_threading.cpp
+--- src/unittest/test_threading.cpp.orig
++++ src/unittest/test_threading.cpp
+@@ -40,7 +40,7 @@ static TestThreading g_test_instance;
+ void TestThreading::runTests(IGameDef *gamedef)
+ {
+ 	TEST(testStartStopWait);
+-	TEST(testThreadKill);
++	//TEST(testThreadKill);
+ 	TEST(testAtomicSemaphoreThread);
+ }
+ 

@@ -1,22 +1,19 @@
-# $OpenBSD: Makefile,v 1.31 2020/05/26 20:01:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2020/09/09 11:32:12 semarie Exp $
 
 COMMENT =		infinite-world block sandbox game
-# minetest_game is still 0.4.17
-# this is engine's bug fix release
-GAME_V =		0.4.17
-V =			${GAME_V}.1
+GAME_V =		5.3.0
+V =			${GAME_V}
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
-REVISION =		5
 
-HOMEPAGE =		http://www.minetest.net/
+HOMEPAGE =		https://www.minetest.net/
 
 # source LGPLv2.1/ datas CC BY-SA 3.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE Irrlicht SM X11 Xext
 WANTLIB += Xxf86vm bz2 c curl curses form freetype gmp iconv intl
-WANTLIB += jpeg luajit-${MODLUA_VERSION} m ogg openal png pq
+WANTLIB += jsoncpp jpeg ${MODLUA_WANTLIB} m ogg openal png pq
 WANTLIB += spatialindex sqlite3 vorbis vorbisfile z
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -31,6 +28,7 @@ MODULES =		devel/cmake \
 
 CONFIGURE_ARGS =	-DENABLE_GETTEXT=ON -DCUSTOM_MANDIR=${PREFIX}/man
 CONFIGURE_ARGS+=	-DENABLE_REDIS=FALSE -DENABLE_LEVELDB=FALSE
+CONFIGURE_ARGS+=	-DENABLE_SYSTEM_JSONCPP=TRUE -DENABLE_LUAJIT=FALSE
 CONFIGURE_ARGS+=	-DBUILD_SERVER=TRUE
 CONFIGURE_ENV +=	CXXFLAGS="-I${X11BASE}/include"
 
@@ -39,25 +37,32 @@ BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS =		audio/openal \
+LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
+			audio/openal \
+			devel/jsoncpp \
 			devel/gmp \
 			databases/sqlite3 \
 			databases/postgresql \
 			geo/spatialindex \
 			audio/libvorbis \
-			lang/luajit \
 			net/curl \
 			x11/irrlicht
 
-NO_TEST =		Yes
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_ENV +=		HOME=${WRKBUILD}/test
 
 # Use system cmake modules
-pre-configure:
+post-patch:
 	rm ${WRKSRC}/cmake/Modules/FindLua*
 
 post-install:
 	mv ${WRKDIR}/minetest_game-${GAME_V}/ \
-	${PREFIX}/share/minetest/games/minetest_game
+		${PREFIX}/share/minetest/games/minetest_game
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/minetest/games/minetest_game
+
+do-test:
+	mkdir -p ${WRKBUILD}/test
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
+		${LOCALBASE}/bin/minetest --run-unittests
 
 .include <bsd.port.mk>

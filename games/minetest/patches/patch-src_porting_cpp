@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_porting_cpp,v 1.6 2020/09/09 11:32:12 semarie Exp $
+Define environ variable on OpenBSD.
+
+https://github.com/minetest/minetest/commit/9c7340104a7ec4007e3dfe0bb4482f3c8f9878e0
+
+Index: src/porting.cpp
+--- src/porting.cpp.orig
++++ src/porting.cpp
+@@ -25,7 +25,7 @@ with this program; if not, write to the Free Software 
+ 
+ #include "porting.h"
+ 
+-#if defined(__FreeBSD__)  || defined(__NetBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__)  || defined(__NetBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
+ 	#include <sys/types.h>
+ 	#include <sys/sysctl.h>
+ 	extern char **environ;
