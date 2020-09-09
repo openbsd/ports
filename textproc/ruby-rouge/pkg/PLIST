@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/07/15 08:56:44 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/09/09 08:26:20 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -146,6 +146,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/php
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/plaintext
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/plist
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/pony
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/postscript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/powershell
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/praat
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/prolog
@@ -183,6 +184,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sql
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ssh
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/supercollider
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/swift
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/systemd
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/tap
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/tcl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/terraform
@@ -391,6 +393,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/php/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/plain_text.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/plist.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/pony.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/postscript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/powershell.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/praat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/prolog.rb
@@ -432,6 +435,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ssh.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/supercollider.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/swift.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/systemd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/tap.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/tcl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/terraform.rb
