@@ -1,62 +1,69 @@
-$OpenBSD: patch-poppler_XRef_cc,v 1.23 2020/03/21 22:42:42 kili Exp $
+$OpenBSD: patch-poppler_XRef_cc,v 1.24 2020/09/09 20:16:44 kili Exp $
 Index: poppler/XRef.cc
 --- poppler/XRef.cc.orig
 +++ poppler/XRef.cc
-@@ -1042,49 +1042,38 @@ bool XRef::isRefEncrypted(Ref r)
- }
+@@ -1044,7 +1044,7 @@ bool XRef::isRefEncrypted(Ref r)
  
- bool XRef::okToPrint(bool ignoreOwnerPW) const {
--  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permPrint);
-+  return true;
+ bool XRef::okToPrint(bool ignoreOwnerPW) const
+ {
+-    return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permPrint);
++    return true;
  }
  
  // we can print at high res if we are only doing security handler revision
- // 2 (and we are allowed to print at all), or with security handler rev
+@@ -1052,48 +1052,37 @@ bool XRef::okToPrint(bool ignoreOwnerPW) const
  // 3 and we are allowed to print, and bit 12 is set.
- bool XRef::okToPrintHighRes(bool ignoreOwnerPW) const {
--  if (encrypted) {
--    if (2 == encRevision) {
--      return (okToPrint(ignoreOwnerPW));
--    } else if (encRevision >= 3) {
--      return (okToPrint(ignoreOwnerPW) && (permFlags & permHighResPrint));
+ bool XRef::okToPrintHighRes(bool ignoreOwnerPW) const
+ {
+-    if (encrypted) {
+-        if (2 == encRevision) {
+-            return (okToPrint(ignoreOwnerPW));
+-        } else if (encRevision >= 3) {
+-            return (okToPrint(ignoreOwnerPW) && (permFlags & permHighResPrint));
+-        } else {
+-            // something weird - unknown security handler version
+-            return false;
+-        }
 -    } else {
--      // something weird - unknown security handler version
--      return false;
+-        return true;
 -    }
--  } else {
--    return true;
--  }
-+  return true;
++    return true;
  }
  
- bool XRef::okToChange(bool ignoreOwnerPW) const {
--  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permChange);
-+  return true;
+ bool XRef::okToChange(bool ignoreOwnerPW) const
+ {
+-    return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permChange);
++    return true;
  }
  
- bool XRef::okToCopy(bool ignoreOwnerPW) const {
--  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permCopy);
-+  return true;
+ bool XRef::okToCopy(bool ignoreOwnerPW) const
+ {
+-    return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permCopy);
++    return true;
  }
  
- bool XRef::okToAddNotes(bool ignoreOwnerPW) const {
--  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permNotes);
-+  return true;
+ bool XRef::okToAddNotes(bool ignoreOwnerPW) const
+ {
+-    return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permNotes);
++    return true;
  }
  
- bool XRef::okToFillForm(bool ignoreOwnerPW) const {
--  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permFillForm);
-+  return true;
+ bool XRef::okToFillForm(bool ignoreOwnerPW) const
+ {
+-    return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permFillForm);
++    return true;
  }
  
- bool XRef::okToAccessibility(bool ignoreOwnerPW) const {
--  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permAccessibility);
-+  return true;
+ bool XRef::okToAccessibility(bool ignoreOwnerPW) const
+ {
+-    return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permAccessibility);
++    return true;
  }
  
- bool XRef::okToAssemble(bool ignoreOwnerPW) const {
--  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permAssemble);
-+  return true;
+ bool XRef::okToAssemble(bool ignoreOwnerPW) const
+ {
+-    return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permAssemble);
++    return true;
  }
  
- Object XRef::getCatalog() {
+ Object XRef::getCatalog()
