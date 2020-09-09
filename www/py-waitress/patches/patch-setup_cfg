@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_cfg,v 1.1 2020/09/09 22:06:48 kmos Exp $
+
+Remove --cov option that doesn't work even if py-test-cov is installed
+
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -67,7 +67,7 @@ python_files = test_*.py
+ python_classes = Test_*
+ testpaths = 
+ 	tests
+-addopts = -W always --cov
++addopts = -W always
+ 
+ [egg_info]
+ tag_build = 
