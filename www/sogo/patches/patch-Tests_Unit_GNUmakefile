@@ -1,13 +1,15 @@
-$OpenBSD: patch-Tests_Unit_GNUmakefile,v 1.8 2020/09/02 19:51:19 sebastia Exp $
+$OpenBSD: patch-Tests_Unit_GNUmakefile,v 1.9 2020/09/09 07:53:09 sebastia Exp $
 Do not hardcode libobjc library name, ask GNUstep what to use.
 Index: Tests/Unit/GNUmakefile
 --- Tests/Unit/GNUmakefile.orig
 +++ Tests/Unit/GNUmakefile
-@@ -44,7 +44,7 @@ $(TEST_TOOL)_CPPFLAGS += \
+@@ -43,8 +43,8 @@ $(TEST_TOOL)_CPPFLAGS += \
+ 	-Wall -D_GNU_SOURCE -I../../SOPE/ -I../../SoObjects/ -I../../UI/ -I../../OpenChange
  
  ADDITIONAL_LIB_DIRS += \
- 	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -L../../SOPE/NGCards/obj -L../../SOPE/GDLContentStore/obj -lSOGo -lNGMime -lNGCards -lGDLContentStore -lNGExtensions -lSBJson -lobjc \
+-	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -L../../SOPE/NGCards/obj -L../../SOPE/GDLContentStore/obj -lSOGo -lNGMime -lNGCards -lGDLContentStore -lNGExtensions -lSBJson -lobjc \
 -	-L/usr/local/lib  -lSaxObjC -lNGStreams \
++	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -L../../SOPE/NGCards/obj -L../../SOPE/GDLContentStore/obj -lSOGo -lNGMime -lNGCards -lGDLContentStore -lNGExtensions -lSBJson \
 +	-L/usr/local/lib  `gnustep-config --objc-libs` -lSaxObjC -lNGStreams \
  	-Wl,-rpath,../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -Wl,-rpath,../../SOPE/NGCards/obj -Wl,-rpath,../../SOPE/GDLContentStore/obj
  ADDITIONAL_LDFLAGS += -Wl,--no-as-needed
