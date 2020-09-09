@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/09 07:27:57 pamela Exp $
+bin/mw
+bin/openfile
+@man man/man1/mw.1
+share/mutt-wizard/
+share/mutt-wizard/domains.csv
+share/mutt-wizard/mailcap
+share/mutt-wizard/mutt-wizard.muttrc

@@ -1,0 +1,10 @@
+A system for automatically configuring mutt and isync
+with a simple interface and safe passwords.
+Features:
+1) Automated email server's IMAP and SMTP servers and ports
+   detection,
+2) dotfiles for neomutt, isync, and msmtp appropriate
+   for all your email addresses
+3) sensible defaults and an attractive appearance for
+   the neomutt email client
+and many more
