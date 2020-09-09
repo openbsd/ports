@@ -1,0 +1,71 @@
+$OpenBSD: patch-src_pdf_pdfdocument_cpp,v 1.1 2020/09/09 20:13:27 kili Exp $
+
+Starting with poppler-20, POPPLER_VERSION no longer is numeric -- it's
+what POPPLER_VERSION_STRING was in earlier releases.
+
+Index: src/pdf/pdfdocument.cpp
+--- src/pdf/pdfdocument.cpp.orig
++++ src/pdf/pdfdocument.cpp
+@@ -52,11 +52,7 @@ void PdfPagePrivate::load()
+     const auto pageRect = m_doc->m_popplerDoc->getPage(m_pageNum + 1)->getCropBox();
+     std::unique_ptr<GooString> s(device.getText(pageRect->x1, pageRect->y1, pageRect->x2, pageRect->y2));
+ 
+-#if KPOPPLER_VERSION >= QT_VERSION_CHECK(0, 72, 0)
+     m_text = QString::fromUtf8(s->c_str());
+-#else
+-    m_text = QString::fromUtf8(s->getCString());
+-#endif
+     m_images = std::move(device.m_images);
+     for (auto it = m_images.begin(); it != m_images.end(); ++it) {
+         (*it).d->m_page = this;
+@@ -97,12 +93,8 @@ QString PdfPage::textInRect(double left, double top, d
+     const auto pageRect = d->m_doc->m_popplerDoc->getPage(d->m_pageNum + 1)->getCropBox();
+     std::unique_ptr<GooString> s(device.getText(ratio(pageRect->x1, pageRect->x2, left), ratio(pageRect->y1, pageRect->y2, top),
+                                                 ratio(pageRect->x1, pageRect->x2, right), ratio(pageRect->y1, pageRect->y2, bottom)));
+-#if KPOPPLER_VERSION >= QT_VERSION_CHECK(0, 72, 0)
+     return QString::fromUtf8(s->c_str());
+ #else
+-    return QString::fromUtf8(s->getCString());
+-#endif
+-#else
+     Q_UNUSED(left);
+     Q_UNUSED(top);
+     Q_UNUSED(right);
+@@ -221,11 +213,7 @@ QDateTime PdfDocument::creationTime() const
+     if (!dt) {
+         return {};
+     }
+-#if KPOPPLER_VERSION >= QT_VERSION_CHECK(0, 72, 0)
+     return parsePdfDateTime(dt->c_str());
+-#else
+-    return parsePdfDateTime(dt->getCString());
+-#endif
+ }
+ 
+ QDateTime PdfDocument::modificationTime() const
+@@ -234,11 +222,7 @@ QDateTime PdfDocument::modificationTime() const
+     if (!dt) {
+         return {};
+     }
+-#if KPOPPLER_VERSION >= QT_VERSION_CHECK(0, 72, 0)
+     return parsePdfDateTime(dt->c_str());
+-#else
+-    return parsePdfDateTime(dt->getCString());
+-#endif
+ }
+ 
+ QVariantList PdfDocument::pagesVariant() const
+@@ -257,13 +241,7 @@ PdfDocument* PdfDocument::fromData(const QByteArray &d
+     std::unique_ptr<PdfDocument> doc(new PdfDocument(parent));
+     doc->d->m_pdfData = data;
+     // PDFDoc takes ownership of stream
+-#if KPOPPLER_VERSION >= QT_VERSION_CHECK(0, 58, 0)
+     auto stream = new MemStream(const_cast<char*>(doc->d->m_pdfData.constData()), 0, doc->d->m_pdfData.size(), Object());
+-#else
+-    Object obj;
+-    obj.initNull();
+-    auto stream = new MemStream(const_cast<char*>(doc->d->m_pdfData.constData()), 0, doc->d->m_pdfData.size(), &obj);
+-#endif
+     std::unique_ptr<PDFDoc> popplerDoc(new PDFDoc(stream, nullptr, nullptr));
+     if (!popplerDoc->isOk()) {
+         qCWarning(Log) << "Got invalid PDF document!" << popplerDoc->getErrorCode();

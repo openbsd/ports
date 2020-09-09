@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_pdf_popplertypes_p_h,v 1.1 2020/09/09 20:13:27 kili Exp $
+
+Starting with poppler-20, POPPLER_VERSION no longer is numeric -- it's
+what POPPLER_VERSION_STRING was in earlier releases.
+
+Index: src/pdf/popplertypes_p.h
+--- src/pdf/popplertypes_p.h.orig
++++ src/pdf/popplertypes_p.h
+@@ -21,10 +21,6 @@
+ #include <config-kitinerary.h>
+ #include <qglobal.h>
+ 
+-#if KPOPPLER_VERSION >= QT_VERSION_CHECK(0, 82, 0)
+ using PopplerMaskColors = const int;
+-#else
+-using PopplerMaskColors = int;
+-#endif
+ 
+ #endif // KITINERARY_POPPLERTYPES_P_H
