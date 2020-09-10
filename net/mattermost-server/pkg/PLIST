@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/08/16 14:37:24 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/09/10 13:57:31 pvk Exp $
 @newgroup _mattermost:804
 @newuser _mattermost:804:_mattermost:daemon:Mattermost Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/mattermost/*
@@ -23,8 +23,8 @@ share/examples/mattermost/config.json
 @group
 share/mattermost/
 share/mattermost/client/
-share/mattermost/client/0.346359b067715936e36b.js
-share/mattermost/client/0.346359b067715936e36b.js.map
+share/mattermost/client/0.b1fac1af3a15a84b776b.js
+share/mattermost/client/0.b1fac1af3a15a84b776b.js.map
 share/mattermost/client/1.b51f192c465446fa271d.js
 share/mattermost/client/1.b51f192c465446fa271d.js.map
 share/mattermost/client/10.525d815307e5a9dbfcb1.js
@@ -79,14 +79,14 @@ share/mattermost/client/5.aa07f589b8b4b537cd5a.css
 share/mattermost/client/5.aa07f589b8b4b537cd5a.css.map
 share/mattermost/client/5.d8f9bc18b411c18962f3.js
 share/mattermost/client/5.d8f9bc18b411c18962f3.js.map
-share/mattermost/client/6.20a626920633525930fe.js
-share/mattermost/client/6.20a626920633525930fe.js.map
 share/mattermost/client/6.472c0729baa8d4ed8ac0.css
 share/mattermost/client/6.472c0729baa8d4ed8ac0.css.map
+share/mattermost/client/6.cee19aaaf6b0979ecdfd.js
+share/mattermost/client/6.cee19aaaf6b0979ecdfd.js.map
 share/mattermost/client/7.10cd627353a5e51f18ce.css
 share/mattermost/client/7.10cd627353a5e51f18ce.css.map
-share/mattermost/client/7.efa52dc0bccea0fccb0c.js
-share/mattermost/client/7.efa52dc0bccea0fccb0c.js.map
+share/mattermost/client/7.b68e2c5537be39382dbe.js
+share/mattermost/client/7.b68e2c5537be39382dbe.js.map
 share/mattermost/client/8.5c20da98432c624a086a.js
 share/mattermost/client/8.5c20da98432c624a086a.js.map
 share/mattermost/client/9.511d741e5b9ff1ab5dd0.js
@@ -2470,10 +2470,10 @@ share/mattermost/client/images/favicon/favicon-reddot-96x96.png
 share/mattermost/client/images/img_trans.gif
 share/mattermost/client/images/logo-email.png
 share/mattermost/client/images/warning.png
+share/mattermost/client/main.1a1b327e9045a6bb0911.js
+share/mattermost/client/main.1a1b327e9045a6bb0911.js.map
 share/mattermost/client/main.5bf83e691752447d6ea0.css
 share/mattermost/client/main.5bf83e691752447d6ea0.css.map
-share/mattermost/client/main.b1f20482eb9e1b512977.js
-share/mattermost/client/main.b1f20482eb9e1b512977.js.map
 share/mattermost/client/manifest.json
 share/mattermost/client/root.html
 share/mattermost/fonts/
