@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_ansible_config_base_yml,v 1.1 2020/09/10 13:16:32 pvk Exp $
+
+Index: lib/ansible/config/base.yml
+--- lib/ansible/config/base.yml.orig
++++ lib/ansible/config/base.yml
+@@ -1469,6 +1469,7 @@ INTERPRETER_PYTHON_FALLBACK:
+   name: Ordered list of Python interpreters to check for in discovery
+   default:
+   - /usr/bin/python
++  - python3.8
+   - python3.7
+   - python3.6
+   - python3.5
+@@ -1476,6 +1477,7 @@ INTERPRETER_PYTHON_FALLBACK:
+   - python2.6
+   - /usr/libexec/platform-python
+   - /usr/bin/python3
++  - python3
+   - python
+   # FUTURE: add inventory override once we're sure it can't be abused by a rogue target
+   version_added: "2.8"
