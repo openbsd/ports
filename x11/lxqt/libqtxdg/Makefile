@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/04 15:40:11 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/10 13:32:37 mariani Exp $
 
 COMMENT =	qt implementation of freedesktop.org xdg specs
 
 VERSION =	3.5.0
+REVISION =      0
 
 NAME =		libqtxdg
 DISTNAME =	${NAME}-${VERSION}

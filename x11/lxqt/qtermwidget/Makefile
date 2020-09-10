@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/04 15:40:12 mariani Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:38 mariani Exp $
 
 COMMENT =	the terminal widget for QTerminal
 
 VERSION =	0.15.0
+REVISION =      0
 
 NAME =		qtermwidget
 DISTNAME =	${NAME}-${VERSION}

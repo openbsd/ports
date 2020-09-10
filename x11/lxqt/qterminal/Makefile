@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/04 15:40:12 mariani Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:37 mariani Exp $
 
 COMMENT =	lightweight Qt terminal emulator based on QTermWidget
 
 VERSION =	0.15.0
+REVISION =      0
 
 NAME =		qterminal
 DISTNAME =	${NAME}-${VERSION}

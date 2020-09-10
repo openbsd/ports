@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/04 15:40:13 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/10 13:32:38 mariani Exp $
 
 COMMENT =	frontend for sudo
 
 VERSION =	0.15.0
+REVISION =      0
 
 NAME =		lxqt-sudo
 DISTNAME =	${NAME}-${VERSION}

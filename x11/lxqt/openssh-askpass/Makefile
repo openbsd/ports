@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/04 15:40:11 mariani Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:37 mariani Exp $
 
 COMMENT =	query passwords on behalf of ssh agents
 
 VERSION =	0.15.0
+REVISION =      0
 
 NAME =		lxqt-openssh-askpass
 DISTNAME =	${NAME}-${VERSION}
