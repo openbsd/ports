@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/11 22:54:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/10 09:56:15 sthen Exp $
 
 COMMENT=	high performance, multi-platform VNC client and server
 
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
 GH_TAGNAME=	v1.10.1
-REVISION=	1
+REVISION=	2
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xorg-server-1.20.7.tar.bz2:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xorg-server-1.20.8.tar.bz2:0
 
 CATEGORIES=	x11 net
 
