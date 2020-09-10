@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.981 2020/09/01 16:52:51 fcambus Exp $
+# $OpenBSD: Makefile,v 1.982 2020/09/10 20:05:24 kmos Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -489,12 +489,10 @@
      SUBDIR += py-requests-oauthlib,python3
      SUBDIR += py-requests-toolbelt
      SUBDIR += py-requests-toolbelt,python3
-     SUBDIR += py-responses
      SUBDIR += py-responses,python3
      SUBDIR += py-routes
      SUBDIR += py-selenium
      SUBDIR += py-selenium,python3
-     SUBDIR += py-sockjs-tornado
      SUBDIR += py-soupsieve
      SUBDIR += py-soupsieve,python3
      SUBDIR += py-tempita
