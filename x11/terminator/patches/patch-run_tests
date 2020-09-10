@@ -1,0 +1,14 @@
+$OpenBSD: patch-run_tests,v 1.1 2020/09/10 13:47:47 mariani Exp $
+
+Index: run_tests
+--- run_tests.orig
++++ run_tests
+@@ -4,7 +4,7 @@ for t in tests/test*; do
+     echo $t
+     file_type=$(file -b $t)
+     case ${file_type} in
+-        *[Pp]ython*) python ${t} ;;
++        *[Pp]ython*) ${MODPY_BIN} ${t} ;;
+         *Bourne*) bash ${t} ;;
+         *bash*)   bash ${t} ;;
+         *perl*)   perl ${t} ;;

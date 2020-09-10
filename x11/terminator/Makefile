@@ -1,37 +1,42 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/09/10 13:47:46 mariani Exp $
 
 COMMENT =		GTK3 terminal emulator with split-window and tabs support
 
-MODPY_EGG_VERSION =	1.91
-DISTNAME =		terminator-${MODPY_EGG_VERSION}
-REVISION =		1
+VERSION =		1.92
+DISTNAME =		terminator-${VERSION}
 
 CATEGORIES =		x11
 
-HOMEPAGE =		https://gnometerminator.blogspot.com/p/introduction.html
+HOMEPAGE =		https://gnome-terminator.org
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		https://launchpad.net/terminator/gtk3/${MODPY_EGG_VERSION}/+download/
+MASTER_SITES =		https://github.com/gnome-terminator/terminator/releases/download/v${VERSION}/
 
 MODULES =		lang/python \
 			textproc/intltool
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/gsettings-desktop-schemas \
-			devel/py-gobject3 \
-			devel/py-notify \
+			devel/libnotify \
+			devel/py-configobj${MODPY_FLAVOR} \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/vte3 \
-			sysutils/py-psutil \
-			x11/gtk+3,-guic \
+			sysutils/py-psutil${MODPY_FLAVOR} \
 			x11/gtk+3 \
+			x11/gtk+3,-guic \
 			x11/keybinder3
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_SETUP_ARGS =	--without-icon-cache
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # --single-version-externally-managed option used by MODPY doesn't exist
 MODPY_DISTUTILS_INSTALL = install --prefix=${LOCALBASE} --root=${DESTDIR}
+
+do-test:
+	${SUBST_CMD} ${WRKSRC}/run_tests
+	cd ${WRKSRC} && /bin/sh ./run_tests
 
 .include <bsd.port.mk>
