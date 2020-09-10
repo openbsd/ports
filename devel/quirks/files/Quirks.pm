@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1046 2020/09/07 17:16:00 gnezdo Exp $
+# $OpenBSD: Quirks.pm,v 1.1047 2020/09/10 20:07:32 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1824,6 +1824,7 @@ my $obsolete_reason = {
 	'qtermwidget-l10n' => 3,
 	'qterminal-l10n' => 3,
 	'gmc4cc' => 6,
+	'py-sockjs-tornado' => 5,
 };
 
 # reasons for obsolete packages
