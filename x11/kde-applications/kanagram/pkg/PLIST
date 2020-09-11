@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:01 rsadowski Exp $
 @pkgpath x11/kde4/kanagram
 @bin bin/kanagram
 share/applications/org.kde.kanagram.desktop
@@ -92,7 +92,6 @@ share/doc/HTML/uk/kanagram/vocab-settings.png
 share/examples/kanagram/
 share/examples/kanagram/xdg/
 share/examples/kanagram/xdg/kanagram.knsrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/kanagram.knsrc
 share/icons/hicolor/128x128/apps/kanagram.png
 share/icons/hicolor/16x16/apps/kanagram.png

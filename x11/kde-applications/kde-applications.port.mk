@@ -1,7 +1,7 @@
-# $OpenBSD: kde-applications.port.mk,v 1.6 2020/09/07 14:49:10 rsadowski Exp $
+# $OpenBSD: kde-applications.port.mk,v 1.7 2020/09/11 11:22:59 rsadowski Exp $
 
 MODULES :=		devel/kf5 ${MODULES}
-VERSION ?=		20.08.0
+VERSION ?=		20.08.1
 MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
 
 # Set to 'yes' if there are .desktop files under share/release-service/.

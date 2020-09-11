@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:49:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/11 11:23:09 rsadowski Exp $
 @conflict marble-<=4.14.3
 @bin bin/marble
 @bin bin/marble-qt
@@ -450,7 +450,6 @@ share/doc/HTML/uk/marble/search-2.png
 share/examples/marble-kf5/
 share/examples/marble-kf5/xdg/
 share/examples/marble-kf5/xdg/marble.knsrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/marble.knsrc
 share/icons/hicolor/128x128/apps/marble.png
 share/icons/hicolor/16x16/apps/marble.png

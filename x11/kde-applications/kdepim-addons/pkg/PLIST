@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/09/11 11:23:03 rsadowski Exp $
 @conflict kdepimlibs-<=4
 bin/kmail_antivir.sh
 bin/kmail_clamav.sh
@@ -120,7 +120,6 @@ lib/qt5/qml/org/kde/plasma/PimCalendars/qmldir
 share/examples/kdepim-addons/
 share/examples/kdepim-addons/xdg/
 share/examples/kdepim-addons/xdg/kmail.antispamrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/kmail.antispamrc
 share/examples/kdepim-addons/xdg/kmail.antivirusrc
 @sample ${SYSCONFDIR}/xdg/kmail.antivirusrc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/09/11 11:23:06 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdebase-*
@@ -35,6 +35,7 @@ lib/cmake/KF5Konq/KF5KonqTargets.cmake
 @so lib/qt5/plugins/kcm_performance.so
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/akregatorplugin.so
+lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/kf5/parts/webenginepart.so
 @so lib/qt5/plugins/khtmlsettingsplugin.so
 @so lib/qt5/plugins/khtmlttsplugin.so
@@ -699,8 +700,6 @@ share/examples/konqueror/
 share/examples/konqueror/xdg/
 share/examples/konqueror/xdg/autostart/
 share/examples/konqueror/xdg/autostart/konqy_preload.desktop
-@sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/konqy_preload.desktop
 share/examples/konqueror/xdg/konqsidebartngrc
 @sample ${SYSCONFDIR}/xdg/konqsidebartngrc

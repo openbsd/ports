@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:00 rsadowski Exp $
 @pkgpath x11/kde4/dragon
 @bin bin/dragon
 lib/qt5/plugins/kf5/parts/
@@ -70,7 +70,6 @@ share/doc/HTML/uk/dragonplayer/playmedia.png
 share/examples/dragon/
 share/examples/dragon/xdg/
 share/examples/dragon/xdg/dragonplayerrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/dragonplayerrc
 share/icons/hicolor/128x128/apps/dragonplayer.png
 share/icons/hicolor/16x16/apps/dragonplayer.png

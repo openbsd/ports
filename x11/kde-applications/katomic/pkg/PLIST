@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:02 rsadowski Exp $
 @pkgpath x11/kde4/katomic
 @bin bin/katomic
 share/applications/org.kde.katomic.desktop
@@ -46,7 +46,6 @@ share/doc/HTML/uk/katomic/mainscreen.png
 share/examples/katomic/
 share/examples/katomic/xdg/
 share/examples/katomic/xdg/katomic.knsrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/katomic.knsrc
 share/icons/hicolor/128x128/apps/katomic.png
 share/icons/hicolor/16x16/apps/katomic.png

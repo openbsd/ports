@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:10 rsadowski Exp $
 @pkgpath x11/kde4/ksnapshot
 @bin bin/spectacle
 share/applications/org.kde.spectacle.desktop
@@ -46,7 +46,6 @@ share/doc/HTML/uk/spectacle/index.docbook
 share/examples/spectacle/
 share/examples/spectacle/xdg/
 share/examples/spectacle/xdg/spectacle.categories
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/spectacle.categories
 share/icons/hicolor/16x16/apps/spectacle.png
 share/icons/hicolor/22x22/apps/spectacle.png

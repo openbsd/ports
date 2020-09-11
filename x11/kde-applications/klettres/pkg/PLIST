@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:05 rsadowski Exp $
 @pkgpath x11/kde4/klettres
 @bin bin/klettres
 share/applications/org.kde.klettres.desktop
@@ -89,7 +89,6 @@ share/doc/HTML/uk/klettres/klettres6.png
 share/examples/klettres/
 share/examples/klettres/xdg/
 share/examples/klettres/xdg/klettres.knsrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/klettres.knsrc
 share/icons/hicolor/128x128/apps/klettres.png
 share/icons/hicolor/16x16/apps/klettres.png

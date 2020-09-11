@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/09/07 14:49:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2020/09/11 11:23:01 rsadowski Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
@@ -10,7 +10,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore
 WANTLIB += KF5Baloo KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5FileMetaData
 WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KDcraw KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Kipi KF5Notifications KF5Parts KF5Purpose KF5PurposeWidgets
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus

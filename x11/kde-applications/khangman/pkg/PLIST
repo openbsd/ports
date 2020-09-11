@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:04 rsadowski Exp $
 @pkgpath x11/kde4/khangman
 @bin bin/khangman
 @man man/man6/khangman.6
@@ -104,7 +104,6 @@ share/doc/HTML/uk/khangman/settings.png
 share/examples/khangman/
 share/examples/khangman/xdg/
 share/examples/khangman/xdg/khangman.knsrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/khangman.knsrc
 share/icons/hicolor/128x128/apps/khangman.png
 share/icons/hicolor/16x16/apps/khangman.png

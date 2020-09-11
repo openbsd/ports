@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:49:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/09/11 11:23:00 rsadowski Exp $
 @pkgpath x11/kde4/cantor
 @bin bin/cantor
 @bin bin/cantor_pythonserver
@@ -180,7 +180,6 @@ share/doc/HTML/uk/cantor/solve-equations-dlg.png
 share/examples/cantor/
 share/examples/cantor/xdg/
 share/examples/cantor/xdg/cantor.knsrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/cantor.knsrc
 share/examples/cantor/xdg/cantor_kalgebra.knsrc
 @sample ${SYSCONFDIR}/xdg/cantor_kalgebra.knsrc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/09/07 14:49:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/11 11:23:08 rsadowski Exp $
 @pkgpath x11/kde4/ksudoku
 @bin bin/ksudoku
 share/applications/org.kde.ksudoku.desktop
@@ -44,7 +44,6 @@ share/doc/HTML/uk/ksudoku/index.docbook
 share/examples/ksudoku/
 share/examples/ksudoku/xdg/
 share/examples/ksudoku/xdg/ksudokurc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/ksudokurc
 share/icons/hicolor/128x128/apps/ksudoku.png
 share/icons/hicolor/16x16/apps/ksudoku.png

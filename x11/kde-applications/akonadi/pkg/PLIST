@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:11 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/09/11 11:22:59 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath productivity/akonadi
 @bin bin/akonadi2xml
@@ -362,7 +362,6 @@ share/examples/akonadi/apparmor.d/usr.bin.akonadiserver
 share/examples/akonadi/xdg/
 share/examples/akonadi/xdg/akonadi/
 share/examples/akonadi/xdg/akonadi/mysql-global-mobile.conf
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/akonadi/
 @sample ${SYSCONFDIR}/xdg/akonadi/mysql-global-mobile.conf
 share/examples/akonadi/xdg/akonadi/mysql-global.conf

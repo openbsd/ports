@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/09/11 11:23:07 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/korgac
 @bin bin/korganizer
@@ -96,8 +96,6 @@ share/examples/korganizer/
 share/examples/korganizer/xdg/
 share/examples/korganizer/xdg/autostart/
 share/examples/korganizer/xdg/autostart/org.kde.korgac.desktop
-@sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/org.kde.korgac.desktop
 share/icons/hicolor/128x128/apps/korg-journal.png
 share/icons/hicolor/128x128/apps/korg-todo.png
@@ -206,6 +204,7 @@ share/locale/da/LC_MESSAGES/korgac.mo
 share/locale/da/LC_MESSAGES/korganizer.mo
 share/locale/de/LC_MESSAGES/korgac.mo
 share/locale/de/LC_MESSAGES/korganizer.mo
+share/locale/el/LC_MESSAGES/korgac.mo
 share/locale/el/LC_MESSAGES/korganizer.mo
 share/locale/en_GB/LC_MESSAGES/korgac.mo
 share/locale/en_GB/LC_MESSAGES/korganizer.mo

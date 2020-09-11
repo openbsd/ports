@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:49:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/09/11 11:23:10 rsadowski Exp $
 @pkgpath x11/kde4/umbrello
 @bin bin/po2xmi5
 @bin bin/umbrello5
@@ -114,6 +114,7 @@ share/doc/HTML/es/umbrello/index.cache.bz2
 share/doc/HTML/es/umbrello/index.docbook
 share/doc/HTML/es/umbrello/introduction.docbook
 share/doc/HTML/es/umbrello/other_features.docbook
+share/doc/HTML/es/umbrello/settings.docbook
 share/doc/HTML/es/umbrello/uml_basics.docbook
 share/doc/HTML/es/umbrello/working_with_umbrello.docbook
 share/doc/HTML/gl/umbrello/

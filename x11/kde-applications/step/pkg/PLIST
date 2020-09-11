@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:10 rsadowski Exp $
 @pkgpath x11/kde4/step
 @bin bin/step
 share/applications/org.kde.step.desktop
@@ -72,7 +72,6 @@ share/doc/HTML/uk/step/tutorials.docbook
 share/examples/step/
 share/examples/step/xdg/
 share/examples/step/xdg/step.knsrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/step.knsrc
 share/icons/hicolor/128x128/apps/step.png
 share/icons/hicolor/16x16/apps/step.png

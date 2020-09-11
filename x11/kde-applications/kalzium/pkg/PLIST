@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:01 rsadowski Exp $
 @bin bin/kalzium
 include/libkdeedu/
 include/libkdeedu/chemicaldataobject.h
@@ -366,7 +366,6 @@ share/doc/HTML/uk/kalzium/sidebar1.png
 share/examples/kalzium/
 share/examples/kalzium/xdg/
 share/examples/kalzium/xdg/kalzium.knsrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/kalzium.knsrc
 share/icons/hicolor/128x128/apps/kalzium.png
 share/icons/hicolor/16x16/apps/kalzium.png

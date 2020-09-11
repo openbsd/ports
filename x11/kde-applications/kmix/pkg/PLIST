@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:06 rsadowski Exp $
 @pkgpath x11/kde4/kmix
 @bin bin/kmix
 @bin bin/kmixctrl
@@ -109,8 +109,6 @@ share/examples/kmix/
 share/examples/kmix/xdg/
 share/examples/kmix/xdg/autostart/
 share/examples/kmix/xdg/autostart/kmix_autostart.desktop
-@sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/kmix_autostart.desktop
 share/examples/kmix/xdg/autostart/restore_kmix_volumes.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/restore_kmix_volumes.desktop

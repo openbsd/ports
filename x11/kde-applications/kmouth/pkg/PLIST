@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:06 rsadowski Exp $
 @pkgpath x11/kde4/kmouth
 @bin bin/kmouth
 @man man/man1/kmouth.1
@@ -96,7 +96,6 @@ share/doc/HTML/uk/kmouth/index.docbook
 share/examples/kmouth/
 share/examples/kmouth/xdg/
 share/examples/kmouth/xdg/kmouthrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/kmouthrc
 share/icons/hicolor/16x16/actions/phrase.png
 share/icons/hicolor/16x16/actions/phrasebook.png

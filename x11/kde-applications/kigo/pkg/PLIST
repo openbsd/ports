@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:04 rsadowski Exp $
 @pkgpath x11/kde4/kigo
 @bin bin/kigo
 share/applications/org.kde.kigo.desktop
@@ -78,7 +78,6 @@ share/doc/HTML/uk/kigo/start-new-game.png
 share/examples/kigo/
 share/examples/kigo/xdg/
 share/examples/kigo/xdg/kigo-games.knsrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/kigo-games.knsrc
 share/examples/kigo/xdg/kigo.knsrc
 @sample ${SYSCONFDIR}/xdg/kigo.knsrc
