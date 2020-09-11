@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/11 05:58:33 kirby Exp $
 
 COMMENT =	graphical user interface library for games
 
 GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifechan
-GH_TAGNAME =	0.1.4
-REVISION =	0
+GH_TAGNAME =	0.1.5
 
-SHARED_LIBS +=  fifechan                  0.0 # 0.1
-SHARED_LIBS +=  fifechan_allegro          0.0 # 0.1
-SHARED_LIBS +=  fifechan_irrlicht         0.0 # 0.1
-SHARED_LIBS +=  fifechan_opengl           0.0 # 0.1
-SHARED_LIBS +=  fifechan_sdl              0.0 # 0.1
+SHARED_LIBS +=  fifechan                  1.0 # 0.1.5
+SHARED_LIBS +=  fifechan_allegro          1.0 # 0.1.5
+SHARED_LIBS +=  fifechan_irrlicht         1.0 # 0.1.5
+SHARED_LIBS +=  fifechan_opengl           1.0 # 0.1.5
+SHARED_LIBS +=  fifechan_sdl              1.0 # 0.1.5
 
 CATEGORIES =	games
 
@@ -29,6 +28,10 @@ MODULES =		devel/cmake
 LIB_DEPENDS =		devel/sdl2-image \
 			games/allegro \
 			x11/irrlicht
+CONFIGURE_ARGS += 	-DENABLE_ALLEGRO=ON \
+			-DBUILD_FIFECHAN_ALLEGRO_SHARED=ON \
+			-DENABLE_IRRLICHT=ON \
+			-DBUILD_FIFECHAN_IRRLICHT_SHARED=ON
 
 NO_TEST =		Yes
 
