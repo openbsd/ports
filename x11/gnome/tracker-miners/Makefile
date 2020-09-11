@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2020/08/26 07:02:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2020/09/11 07:58:20 ajacoutot Exp $
 
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		2.3.4
+GNOME_VERSION=		2.3.5
 
 SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 
@@ -51,9 +51,5 @@ CONFIGURE_ARGS +=	-Dminer_rss=false
 
 # XXX https://gitlab.gnome.org/GNOME/tracker-miners/issues/7
 CFLAGS +=		-O0
-
-post-install:                                                                   
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tracker-miners
-	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/tracker-miners
 
 .include <bsd.port.mk>

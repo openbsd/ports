@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/08/26 07:02:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/11 07:58:20 ajacoutot Exp $
 @conflict meta-tracker-<2.0
 lib/tracker-miners-2.0/
 lib/tracker-miners-2.0/extract-modules/
@@ -42,13 +42,6 @@ lib/tracker-miners-2.0/writeback-modules/
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Files.service
 share/dbus-1/services/org.freedesktop.Tracker1.Writeback.service
-share/examples/tracker-miners/
-share/examples/tracker-miners/xdg/
-share/examples/tracker-miners/xdg/autostart/
-share/examples/tracker-miners/xdg/autostart/tracker-extract.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/tracker-extract.desktop
-share/examples/tracker-miners/xdg/autostart/tracker-miner-fs.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/tracker-miner-fs.desktop
 share/glib-2.0/schemas/org.freedesktop.Tracker.Extract.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.Miner.Files.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.Writeback.gschema.xml
