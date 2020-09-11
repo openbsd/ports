@@ -1,17 +1,9 @@
-$OpenBSD: patch-openbsd_OpenBSDProcessList_c,v 1.1 2019/05/10 02:17:46 ians Exp $
+$OpenBSD: patch-openbsd_OpenBSDProcessList_c,v 1.2 2020/09/11 12:34:28 rsadowski Exp $
 
 Index: openbsd/OpenBSDProcessList.c
 --- openbsd/OpenBSDProcessList.c.orig
 +++ openbsd/OpenBSDProcessList.c
-@@ -20,6 +20,7 @@ in the source distribution for its full text.
- #include <sys/sysctl.h>
- #include <sys/types.h>
- #include <sys/user.h>
-+#include <sys/sched.h>
- #include <limits.h>
- #include <stdlib.h>
- #include <string.h>
-@@ -62,24 +63,37 @@ typedef struct OpenBSDProcessList_ {
+@@ -79,24 +79,36 @@ typedef struct OpenBSDProcessList_ {
  static long fscale;
  
  ProcessList* ProcessList_new(UsersTable* usersTable, Hashtable* pidWhiteList, uid_t userId) {
@@ -35,7 +27,6 @@ Index: openbsd/OpenBSDProcessList.c
 +   size_ncpu = sizeof(int);
 +   size_cpustats = sizeof(cpu_stats);
 +   cpu_index_c = 0;
-+
     ProcessList_init(pl, Class(OpenBSDProcess), usersTable, pidWhiteList, userId);
  
     e = sysctl(mib, 2, &pl->cpuCount, &size, NULL, 0);
@@ -47,12 +38,12 @@ Index: openbsd/OpenBSDProcessList.c
 +       ncpu = pl->cpuCount;
 +   }
 +
-    opl->cpus = xRealloc(opl->cpus, pl->cpuCount * sizeof(CPUData));
+    opl->cpus = xCalloc(pl->cpuCount + 1, sizeof(CPUData));
 +   opl->cpuIndex = xRealloc(opl->cpuIndex, pl->cpuCount * sizeof(int));
  
     size = sizeof(fscale);
     if (sysctl(fmib, 2, &fscale, &size, NULL, 0) < 0) {
-@@ -94,6 +108,19 @@ ProcessList* ProcessList_new(UsersTable* usersTable, H
+@@ -112,6 +124,19 @@ ProcessList* ProcessList_new(UsersTable* usersTable, H
     opl->kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf);
     if (opl->kd == NULL) {
        errx(1, "kvm_open: %s", errbuf);
