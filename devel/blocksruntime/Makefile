@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/11 20:56:52 sthen Exp $
 
 COMMENT=	implementation of Apple "Blocks" runtime interfaces
 
@@ -6,12 +6,11 @@ GH_ACCOUNT=	mackyle
 GH_PROJECT=	blocksruntime
 GH_COMMIT=	b5c5274daf1e0e46ecc9ad8f6f69889bce0a0a5d
 
-DISTNAME=	blocksruntime-0.20140704
-REVISION=	0
+DISTNAME=	blocksruntime-20181028
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://mackyle.github.io/blocksruntime/
+HOMEPAGE=	https://mackyle.github.io/blocksruntime/
 
 # MIT/UIUC
 PERMIT_PACKAGE=	Yes
