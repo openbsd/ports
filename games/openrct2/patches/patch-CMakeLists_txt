@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2020/05/26 15:41:41 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/09/11 21:12:48 bcallah Exp $
 
 Don't try to execute git.
 Remove -Werror.
@@ -6,7 +6,7 @@ Remove -Werror.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -85,25 +85,6 @@ execute_process(
+@@ -103,25 +103,6 @@ execute_process(
      ERROR_QUIET
  )
  
@@ -32,7 +32,7 @@ Index: CMakeLists.txt
  # Defines
  if (USE_MMAP)
      add_definitions(-DUSE_MMAP)
-@@ -234,7 +215,7 @@ else ()
+@@ -249,7 +230,7 @@ else ()
  
      # Compiler flags
      set(DEBUG_LEVEL 0 CACHE STRING "Select debug level for compilation. Use value in range 0–3.")

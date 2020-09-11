@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/05/26 15:41:41 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/11 21:12:48 bcallah Exp $
 @bin bin/openrct2
 @bin bin/openrct2-cli
 @static-lib lib/libopenrct2.a
@@ -11,7 +11,9 @@ share/doc/openrct2/
 share/doc/openrct2/changelog.txt
 share/doc/openrct2/contributors.md
 share/doc/openrct2/licence.txt
+share/doc/openrct2/openrct2.d.ts
 share/doc/openrct2/readme.txt
+share/doc/openrct2/scripting.md
 share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/openrct2.png
 share/icons/hicolor/16x16/apps/openrct2.png
@@ -55,14 +57,23 @@ share/openrct2/object/
 share/openrct2/object/official/
 share/openrct2/object/official/footpath_item/
 share/openrct2/object/official/footpath_item/rct2.dlc.litterpa.parkobj
+share/openrct2/object/official/ride/
+share/openrct2/object/official/ride/rct2.dlc.zpanda.parkobj
+share/openrct2/object/official/scenery_group/
+share/openrct2/object/official/scenery_group/rct2.dlc.scgpanda.parkobj
 share/openrct2/object/official/scenery_small/
+share/openrct2/object/official/scenery_small/official.ttrftl02.parkobj
+share/openrct2/object/official/scenery_small/official.ttrftl03.parkobj
+share/openrct2/object/official/scenery_small/official.ttrftl04.parkobj
+share/openrct2/object/official/scenery_small/official.ttrftl07.parkobj
+share/openrct2/object/official/scenery_small/official.ttrftl08.parkobj
+share/openrct2/object/official/scenery_small/official.xxbbbr01.parkobj
 share/openrct2/object/official/scenery_small/rct2.dlc.bigpanda.parkobj
 share/openrct2/object/official/scenery_small/rct2.dlc.pandagr.parkobj
 share/openrct2/object/official/station/
 share/openrct2/object/official/station/openrct2.station.noentrance.json
-share/openrct2/object/official/station/openrct2.station.noplatformnoentrance.json
-share/openrct2/object/official/terrain/
-share/openrct2/object/official/terrain/openrct2.terrain.void.parkobj
+share/openrct2/object/official/wall/
+share/openrct2/object/official/wall/official.mg-prar.parkobj
 share/openrct2/object/official/water/
 share/openrct2/object/official/water/rct2.dlc.wtrpink.json
 share/openrct2/object/rct1/
@@ -78,11 +89,6 @@ share/openrct2/object/rct1/terrain_edge/rct1.ll.edge.skyscrapera.parkobj
 share/openrct2/object/rct1/terrain_edge/rct1.ll.edge.skyscraperb.parkobj
 share/openrct2/object/rct1/terrain_edge/rct1.ll.edge.stonebrown.parkobj
 share/openrct2/object/rct1/terrain_edge/rct1.ll.edge.stonegrey.parkobj
-share/openrct2/object/rct1/terrain_surface/
-share/openrct2/object/rct1/terrain_surface/rct1.aa.surface.roofred.parkobj
-share/openrct2/object/rct1/terrain_surface/rct1.ll.surface.roofgrey.parkobj
-share/openrct2/object/rct1/terrain_surface/rct1.ll.surface.rust.parkobj
-share/openrct2/object/rct1/terrain_surface/rct1.ll.surface.wood.parkobj
 share/openrct2/object/rct2/
 share/openrct2/object/rct2/footpath/
 share/openrct2/object/rct2/footpath/rct2.pathash.json
@@ -2195,6 +2201,12 @@ share/openrct2/object/rct2ww/scenery_wall/rct2.ww.wwind03.json
 share/openrct2/object/rct2ww/scenery_wall/rct2.ww.wwind04.json
 share/openrct2/object/rct2ww/scenery_wall/rct2.ww.wwind05.json
 share/openrct2/object/rct2ww/scenery_wall/rct2.ww.wwind06.json
+share/openrct2/sequence/
+share/openrct2/sequence/openrct2.parkseq
+share/openrct2/sequence/rct1.parkseq
+share/openrct2/sequence/rct1aa.parkseq
+share/openrct2/sequence/rct1aall.parkseq
+share/openrct2/sequence/rct2.parkseq
 share/openrct2/shaders/
 share/openrct2/shaders/applypalette.frag
 share/openrct2/shaders/applypalette.vert
@@ -2204,12 +2216,6 @@ share/openrct2/shaders/drawline.frag
 share/openrct2/shaders/drawline.vert
 share/openrct2/shaders/drawrect.frag
 share/openrct2/shaders/drawrect.vert
-share/openrct2/title/
-share/openrct2/title/openrct2.parkseq
-share/openrct2/title/rct1.parkseq
-share/openrct2/title/rct1aa.parkseq
-share/openrct2/title/rct1aall.parkseq
-share/openrct2/title/rct2.parkseq
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
