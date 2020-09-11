@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_qca-ossl_qca-ossl_cpp,v 1.2 2020/06/29 05:07:56 rsadowski Exp $
+$OpenBSD: patch-plugins_qca-ossl_qca-ossl_cpp,v 1.3 2020/09/11 14:17:13 rsadowski Exp $
 
 LibreSSL 3.0.x support from Stefan Strogin <steils@gentoo.org>
 
@@ -19,7 +19,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  
  using namespace QCA;
  
-@@ -1255,6 +1261,7 @@ class opensslPbkdf2Context : public KDFContext (public
+@@ -1262,6 +1268,7 @@ class opensslPbkdf2Context : public KDFContext (public
  protected:
  };
  
@@ -27,7 +27,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  class opensslHkdfContext : public HKDFContext
  {
      Q_OBJECT
-@@ -1284,6 +1291,7 @@ class opensslHkdfContext : public HKDFContext (public)
+@@ -1291,6 +1298,7 @@ class opensslHkdfContext : public HKDFContext (public)
  		return out;
  	}
  };
@@ -35,7 +35,43 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  
  class opensslHMACContext : public MACContext
  {
-@@ -7268,7 +7276,9 @@ class opensslProvider : public Provider (public)
+@@ -4990,7 +4998,11 @@ class MyTLSContext : public TLSContext (public)
+ 		case TLS::TLS_v1:
+ 			ctx = SSL_CTX_new(TLS_client_method());
+ 			SSL_CTX_set_min_proto_version(ctx, TLS1_VERSION);
++#ifdef TLS1_3_VERSION
+ 			SSL_CTX_set_max_proto_version(ctx, TLS1_3_VERSION);
++#else
++			SSL_CTX_set_max_proto_version(ctx, TLS1_2_VERSION);
++#endif
+ 			break;
+ 		case TLS::DTLS_v1:
+ 		default:
+@@ -5011,7 +5023,11 @@ class MyTLSContext : public TLSContext (public)
+ 		QStringList cipherList;
+ 		for(int i = 0; i < sk_SSL_CIPHER_num(sk); ++i) {
+ 			const SSL_CIPHER *thisCipher = sk_SSL_CIPHER_value(sk, i);
++#ifndef LIBRESSL_VERSION_NUMBER
+ 			cipherList += QString::fromLatin1(SSL_CIPHER_standard_name(thisCipher));
++#else
++			cipherList += QString::fromLatin1(SSL_CIPHER_get_name(thisCipher));
++#endif
+ 		}
+ 		sk_SSL_CIPHER_free(sk);
+ 
+@@ -5404,7 +5420,11 @@ class MyTLSContext : public TLSContext (public)
+ 			sessInfo.version = TLS::TLS_v1;
+ 		}
+ 
++#ifndef LIBRESSL_VERSION_NUMBER
+ 		sessInfo.cipherSuite = QString::fromLatin1(SSL_CIPHER_standard_name(SSL_get_current_cipher(ssl)));
++#else
++		sessInfo.cipherSuite = QString::fromLatin1(SSL_CIPHER_get_name(SSL_get_current_cipher(ssl)));
++#endif
+ 
+ 		sessInfo.cipherMaxBits = SSL_get_cipher_bits(ssl, &(sessInfo.cipherBits));
+ 
+@@ -6751,7 +6771,9 @@ class opensslProvider : public Provider (public)
  #endif
  		list += QStringLiteral("pbkdf1(sha1)");
  		list += QStringLiteral("pbkdf2(sha1)");
@@ -45,7 +81,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  		list += QStringLiteral("pkey");
  		list += QStringLiteral("dlgroup");
  		list += QStringLiteral("rsa");
-@@ -7337,8 +7347,10 @@ class opensslProvider : public Provider (public)
+@@ -6820,8 +6842,10 @@ class opensslProvider : public Provider (public)
  #endif
  		else if ( type == QLatin1String("pbkdf2(sha1)") )
  			return new opensslPbkdf2Context( this, type );
