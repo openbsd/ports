@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.257 2020/08/26 06:50:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.258 2020/09/11 07:43:54 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		2.3.5
+GNOME_VERSION=		2.3.6
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -47,9 +47,5 @@ CONFIGURE_ARGS=		-Dnetwork_manager=disabled
 
 # needs libstemmer
 CONFIGURE_ARGS +=	-Dstemmer=disabled
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/meta-tracker
-	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/meta-tracker
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2020/08/26 06:50:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.50 2020/09/11 07:43:54 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
@@ -59,13 +59,6 @@ lib/tracker-2.0/trackertestutils/mainloop.py
 @man man/man1/tracker-tag.1
 share/bash-completion/completions/tracker
 share/dbus-1/services/org.freedesktop.Tracker1.service
-share/examples/meta-tracker/
-share/examples/meta-tracker/xdg/
-@sample ${SYSCONFDIR}/xdg/
-share/examples/meta-tracker/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/meta-tracker/xdg/autostart/tracker-store.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/tracker-store.desktop
 share/gir-1.0/Tracker-2.0.gir
 share/gir-1.0/TrackerControl-2.0.gir
 share/gir-1.0/TrackerMiner-2.0.gir
