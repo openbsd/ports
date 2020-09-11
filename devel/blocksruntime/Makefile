@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/11 20:56:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/11 20:58:12 sthen Exp $
 
 COMMENT=	implementation of Apple "Blocks" runtime interfaces
 
 GH_ACCOUNT=	mackyle
 GH_PROJECT=	blocksruntime
-GH_COMMIT=	b5c5274daf1e0e46ecc9ad8f6f69889bce0a0a5d
+GH_COMMIT=	9cc93ae2b58676c23fd02cf0c686fa15b7a3ff81
+REVISION=	0
 
 DISTNAME=	blocksruntime-20181028
 
