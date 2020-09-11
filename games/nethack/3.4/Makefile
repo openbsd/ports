@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/11 12:39:17 rsadowski Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
-REVISION =	15
+REVISION =	16
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/}
@@ -27,17 +27,12 @@ GAMEDIR =	lib/nethackdir-$V
 NHDIR =		${TRUEPREFIX}/${GAMEDIR}
 MAKE_ENV += 	NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
-FLAVORS =	no_x11 qt
+FLAVORS =	no_x11
 FLAVOR ?=
 
 .if ${FLAVOR} == "no_x11"
 NETHACKCONFIG =	${FILESDIR}/simple-config
 EXT=,no_x11
-.elif ${FLAVOR} == "qt"
-NETHACKCONFIG =	${FILESDIR}/qt-config
-EXT=,qt
-MODULES =	x11/qt3
-WANTLIB +=	SM m pthread ${COMPILER_LIBCXX}
 .else
 NETHACKCONFIG =	${FILESDIR}/x-config
 EXT=

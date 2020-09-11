@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/18 15:00:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/09/11 12:39:17 rsadowski Exp $
 @option no-default-conflict
 @option is-branch
 @conflict nethack->=${BASEV}
@@ -7,30 +7,37 @@
 @comment bin/nethack
 bin/nethack-${V}
 bin/recover-${V}
+lib/X11/app-defaults/NetHack-${V}
 @mode 0775
 @group ${GAMEGRP}
 ${GAMEDIR}/
 @mode
 ${GAMEDIR}/license
-@mode 2555
-@bin ${GAMEDIR}/nethack
-@bin ${GAMEDIR}/recover
-@mode
-${GAMEDIR}/nhdat
 @mode 0664
 @comment no checksum
 ${GAMEDIR}/logfile
+@mode 2555
+@bin ${GAMEDIR}/nethack
+@mode
+${GAMEDIR}/nhdat
+@mode 0664
 ${GAMEDIR}/perm
 @comment no checksum
 ${GAMEDIR}/record
-@mode 0664
-@comment no checksum
-${GAMEDIR}/xlogfile
+@mode 2555
+@bin ${GAMEDIR}/recover
 @mode 0774
 ${GAMEDIR}/save/
 @mode
 ${GAMEDIR}/symbols
 ${GAMEDIR}/sysconf
+@mode 0664
+@comment no checksum
+${GAMEDIR}/xlogfile
+@mode
 @man man/man6/nethack-${V}.6
 @man man/man6/recover-${V}.6
 !%%no_x11%%
+@group
+share/doc/nethack-${V}/
+share/doc/nethack-${V}/Guidebook.txt

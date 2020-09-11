@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/11 12:39:17 rsadowski Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.6.2
@@ -9,6 +9,7 @@ PKGNAME =	${DISTNAME}
 CATEGORIES =	games
 MASTER_SITES =	https://www.nethack.org/download/3.6.2/
 DISTFILES =	nethack-${V:S/.//g}-src.tgz
+REVISION =	0
 
 HOMEPAGE =	http://nethack.org/
 
@@ -17,15 +18,11 @@ WANTLIB +=	c curses
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-FLAVORS = no_x11 qt
+FLAVORS = no_x11
 FLAVOR ?=
 
 .if ${FLAVOR} == "no_x11"
 CONFIG = 	simple-config
-.elif ${FLAVOR} == "qt"
-CONFIG =		qt-config
-MODULES +=	x11/qt3
-WANTLIB += ${COMPILER_LIBCXX} SM m
 .else
 CONFIG =		x-config
 WANTLIB += X11 Xaw Xext Xmu Xt

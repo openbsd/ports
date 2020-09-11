@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/25 14:30:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/11 12:39:17 rsadowski Exp $
 @option no-default-conflict
 @option is-branch
-@pkgpath games/nethack${EXT}
 @conflict nethack-${V}
+@pkgpath games/nethack${EXT}
 @unexec rm -rf ${GAMEDIR}/save/*
 @comment bin/nethack
 @group games
 bin/nethack-${V}
-bin/recover-${V}
+@bin bin/recover-${V}
+@group
+lib/X11/app-defaults/NetHack-${V}
 @mode 0775
+@group games
 ${GAMEDIR}/
 @mode
 ${GAMEDIR}/Arc-fila.lev
@@ -117,7 +120,7 @@ ${GAMEDIR}/minetn-5.lev
 ${GAMEDIR}/minetn-6.lev
 ${GAMEDIR}/minetn-7.lev
 @mode 2555
-${GAMEDIR}/nethack
+@bin ${GAMEDIR}/nethack
 @mode
 ${GAMEDIR}/opthelp
 ${GAMEDIR}/options
