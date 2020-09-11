@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_desktoptojson_CMakeLists_txt,v 1.1 2020/09/11 14:51:07 rsadowski Exp $
+
+Index: src/desktoptojson/CMakeLists.txt
+--- src/desktoptojson/CMakeLists.txt.orig
++++ src/desktoptojson/CMakeLists.txt
+@@ -6,6 +6,8 @@ if(NOT CMAKE_TOOLCHAIN_FILE)
+     add_executable(KF5::desktoptojson ALIAS desktoptojson)
+ endif()
+ 
++set_property(TARGET desktoptojson PROPERTY CXX_STANDARD 14)
++
+ # Mark it as non-gui so we won't create an app bundle on Mac OS X
+ ecm_mark_nongui_executable(desktoptojson)
+ 
