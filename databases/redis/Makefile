@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.115 2020/09/03 04:29:27 tb Exp $
+# $OpenBSD: Makefile,v 1.116 2020/09/11 13:54:01 tb Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-6.0.7
+DISTNAME =		redis-6.0.8
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
 
