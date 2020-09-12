@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.118 2020/08/26 07:04:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.119 2020/09/12 10:17:57 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1725,6 +1725,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirror-session.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirror-target.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-peering-attachment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-prefix-list-reference.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-route-table.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-vpc-attachment.rst
@@ -1771,6 +1772,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-traffic-mirr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-traffic-mirror-target.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-transit-gateway-multicast-domain.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-transit-gateway-peering-attachment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-transit-gateway-prefix-list-reference.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-transit-gateway-route-table.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-transit-gateway-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-transit-gateway-vpc-attachment.rst
@@ -1937,6 +1939,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-reserved-instances-exchange-quote.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-attachment-propagations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-multicast-domain-associations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-prefix-list-references.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-route-table-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-route-table-propagations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-client-vpn-client-certificate-revocation-list.rst
@@ -1967,7 +1970,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-subnet-attri
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-traffic-mirror-filter-network-services.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-traffic-mirror-filter-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-traffic-mirror-session.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-transit-gateway-prefix-list-reference.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-transit-gateway-vpc-attachment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-transit-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-volume-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-volume.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-attribute.rst
@@ -1977,6 +1982,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-peering-connection-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-tenancy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpn-connection-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpn-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpn-tunnel-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpn-tunnel-options.rst
@@ -2858,6 +2864,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/cancel-job-executio
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/cancel-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/clear-default-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/confirm-topic-rule-destination.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-audit-suppression.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-certificate-from-csr.rst
@@ -2883,6 +2890,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-thing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-topic-rule-destination.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-topic-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-account-audit-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-audit-suppression.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-ca-certificate.rst
@@ -2913,6 +2921,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/deprecate-thing-typ
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-account-audit-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-audit-finding.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-audit-mitigation-actions-task.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-audit-suppression.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-audit-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-billing-group.rst
@@ -2960,6 +2969,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-attached-polic
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-audit-findings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-audit-mitigation-actions-executions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-audit-mitigation-actions-tasks.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-audit-suppressions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-audit-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-authorizers.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-billing-groups.rst
@@ -3019,6 +3029,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/test-invoke-authori
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/transfer-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-account-audit-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-audit-suppression.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-ca-certificate.rst
@@ -4121,6 +4132,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/get-hosted-zone
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/list-health-checks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/list-hosted-zones-by-name.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/list-hosted-zones.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/list-query-logging-configs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/list-resource-record-sets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53domains/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53domains/check-domain-availability.rst
