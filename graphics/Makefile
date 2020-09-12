@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.513 2020/09/09 08:00:36 bket Exp $
+# $OpenBSD: Makefile,v 1.514 2020/09/12 20:34:46 pamela Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -166,6 +166,7 @@
      SUBDIR += mscgen
      SUBDIR += mtpaint
      SUBDIR += mypaint-brushes
+     SUBDIR += mypaint-brushes2
      SUBDIR += netpbm
      SUBDIR += nomacs
      SUBDIR += ocaml-cairo
