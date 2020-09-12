@@ -32,7 +32,7 @@ Index: src/network/ssl/qsslcontext_openssl.cpp
          break;
      case QSsl::TlsV1_3OrLater:
  #ifdef TLS1_3_VERSION
-@@ -696,6 +708,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -711,6 +723,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
      }
  #endif // ocsp
  
@@ -40,7 +40,7 @@ Index: src/network/ssl/qsslcontext_openssl.cpp
      QSharedPointer<SSL_CONF_CTX> cctx(q_SSL_CONF_CTX_new(), &q_SSL_CONF_CTX_free);
      if (cctx) {
          q_SSL_CONF_CTX_set_ssl_ctx(cctx.data(), sslContext->ctx);
-@@ -742,7 +755,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -757,7 +770,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
              sslContext->errorStr = msgErrorSettingBackendConfig(QSslSocket::tr("SSL_CONF_finish() failed"));
              sslContext->errorCode = QSslError::UnspecifiedError;
          }

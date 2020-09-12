@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/network/ssl/qsslcertificate_openssl.cpp
 --- src/network/ssl/qsslcertificate_openssl.cpp.orig
 +++ src/network/ssl/qsslcertificate_openssl.cpp
-@@ -658,7 +658,7 @@ static QMultiMap<QByteArray, QString> _q_mapFromX509Na
+@@ -661,7 +661,7 @@ static QMultiMap<QByteArray, QString> _q_mapFromX509Na
          unsigned char *data = nullptr;
          int size = q_ASN1_STRING_to_UTF8(&data, q_X509_NAME_ENTRY_get_data(e));
          info.insert(name, QString::fromUtf8((char*)data, size));
