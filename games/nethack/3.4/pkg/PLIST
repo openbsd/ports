@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/11 12:39:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/12 18:39:59 rsadowski Exp $
 @option no-default-conflict
 @option is-branch
 @conflict nethack-${V}
@@ -9,7 +9,6 @@
 bin/nethack-${V}
 @bin bin/recover-${V}
 @group
-lib/X11/app-defaults/NetHack-${V}
 @mode 0775
 @group games
 ${GAMEDIR}/
