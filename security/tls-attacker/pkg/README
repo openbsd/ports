@@ -1,0 +1,23 @@
+$OpenBSD: README,v 1.1.1.1 2020/09/12 14:36:14 jasper Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Getting started
+===============
+
+${PKGSTEM} is installed into ${TLS_HOME}.
+
+To quickly get started using ${PKGSTEM}, generate a self-signed certificate:
+
+	 openssl req -newkey rsa:4096 -nodes -keyout key.pem -x509 -days 365 \
+	 	-out cert.pem
+
+And start openssl(1) in server mode to test against:
+
+	openssl s_server -key key.pem -cert cert.pem
+
+Now invoke Attacks.jar with one of the test modes, accepting all further defaults:
+
+	$(javaPathHelper -c tls-attacker) -jar ${TLS_HOME}/Attacks.jar tls_poodle -connect localhost:4433
