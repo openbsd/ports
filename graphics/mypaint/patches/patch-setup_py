@@ -1,0 +1,18 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2020/09/12 20:57:21 pamela Exp $
+
+OpenBSD does not have OpenMP available in base or ports compilers
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -29,8 +29,8 @@ from setuptools.command.install_scripts import install
+ 
+ # Some versions of clang requires different flag configurations than gcc
+ # to link correctly, so we enable configuration via environment variables.
+-OPENMP_CFLAG = os.getenv("OPENMP_CFLAG", "-fopenmp")
+-OPENMP_LDFLAG = os.getenv("OPENMP_LDFLAG", "-fopenmp")
++OPENMP_CFLAG = os.getenv("OPENMP_CFLAG", "")
++OPENMP_LDFLAG = os.getenv("OPENMP_LDFLAG", "")
+ 
+ 
+ # Libmypaint dependency
