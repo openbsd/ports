@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.588 2020/08/22 09:04:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.589 2020/09/12 14:37:23 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -403,6 +403,7 @@
      SUBDIR += tcltls
      SUBDIR += tempwatch
      SUBDIR += theharvester
+     SUBDIR += tls-attacker
      SUBDIR += towitoko
      SUBDIR += uacme
      SUBDIR += vault
