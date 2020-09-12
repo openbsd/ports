@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2018/09/04 12:46:23 espie Exp $
+$OpenBSD: README,v 1.4 2020/09/12 15:30:02 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -10,15 +10,10 @@ MCollective and ActiveMQ Integration
 Here are some quick notes about using ActiveMQ as a middleware layer for
 MCollective.
 
-Packages
---------
-All clients will need to have the "mcollective" package installed.
-The STOMP broker package is called "apache-activemq" and can be
-installed on the Puppet master.
-
 MCollective configuration
 -------------------------
 Configuration is done in:
+
     ${SYSCONFDIR}/mcollective/client.cfg
 
 The "activemq" connector should be enabled in this file. The "stomp"
@@ -30,6 +25,7 @@ ActiveMQ configuration
 Setting up ActiveMQ can be tedious so it is recommended to start with
 the single-broker example configuration from the Puppet Labs
 documentation, as a starting point for configuring:
+
     ${SYSCONFDIR}/activemq/activemq.xml
 
 More information is available in the Puppet Labs online documentation:
