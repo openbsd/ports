@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_pdf_pdfimage_cpp,v 1.1 2020/09/09 20:13:27 kili Exp $
+$OpenBSD: patch-src_pdf_pdfimage_cpp,v 1.2 2020/09/12 12:40:10 rsadowski Exp $
 
 Starting with poppler-20, POPPLER_VERSION no longer is numeric -- it's
 what POPPLER_VERSION_STRING was in earlier releases.
@@ -6,7 +6,7 @@ what POPPLER_VERSION_STRING was in earlier releases.
 Index: src/pdf/pdfimage.cpp
 --- src/pdf/pdfimage.cpp.orig
 +++ src/pdf/pdfimage.cpp
-@@ -35,54 +35,7 @@
+@@ -24,54 +24,7 @@
  using namespace KItinerary;
  
  #ifdef HAVE_POPPLER
@@ -61,7 +61,7 @@ Index: src/pdf/pdfimage.cpp
  static inline bool isColor(GfxRGB rgb)
  {
      enum { Threshold = 72 * 256 }; // GfxComp is stored as color value * 255
-@@ -151,16 +104,9 @@ QImage PdfImagePrivate::load()
+@@ -140,16 +93,9 @@ QImage PdfImagePrivate::load()
  #ifdef HAVE_POPPLER
      PopplerGlobalParams gp;
  

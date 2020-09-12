@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_pdf_popplerutils_cpp,v 1.1 2020/09/09 20:13:27 kili Exp $
+$OpenBSD: patch-src_pdf_popplerutils_cpp,v 1.2 2020/09/12 12:40:10 rsadowski Exp $
 
 Starting with poppler-20, POPPLER_VERSION no longer is numeric -- it's
 what POPPLER_VERSION_STRING was in earlier releases.
@@ -6,7 +6,7 @@ what POPPLER_VERSION_STRING was in earlier releases.
 Index: src/pdf/popplerutils.cpp
 --- src/pdf/popplerutils.cpp.orig
 +++ src/pdf/popplerutils.cpp
-@@ -86,11 +86,7 @@ QPainterPath PopplerUtils::convertPath(const GfxPath *
+@@ -75,11 +75,7 @@ QPainterPath PopplerUtils::convertPath(const GfxPath *
      qpp.setFillRule(fillRule);
  
      for (auto i = 0; i < path->getNumSubpaths(); ++i) {
