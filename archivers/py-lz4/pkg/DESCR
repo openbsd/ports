@@ -1,0 +1,5 @@
+This package provides python bindings for the LZ4 compression library.
+The bindings provided in this package cover the frame format, the
+block format, and the streaming format specifications. The frame
+format bindings are the recommended ones to use, as this guarantees
+interoperability with other implementations and language bindings.

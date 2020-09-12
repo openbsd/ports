@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/12 20:35:13 kmos Exp $
+lib/python${MODPY_VERSION}/site-packages/lz4/
+lib/python${MODPY_VERSION}/site-packages/lz4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/lz4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/lz4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/lz4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/lz4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/lz4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/lz4/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lz4/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lz4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lz4/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/lz4/_version.so
+lib/python${MODPY_VERSION}/site-packages/lz4/block/
+lib/python${MODPY_VERSION}/site-packages/lz4/block/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lz4/block/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lz4/block/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/lz4/block/_block.so
+lib/python${MODPY_VERSION}/site-packages/lz4/frame/
+lib/python${MODPY_VERSION}/site-packages/lz4/frame/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lz4/frame/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lz4/frame/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/lz4/frame/_frame.so
+lib/python${MODPY_VERSION}/site-packages/lz4/stream/
+lib/python${MODPY_VERSION}/site-packages/lz4/stream/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lz4/stream/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lz4/stream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/lz4/stream/_stream.so
+lib/python${MODPY_VERSION}/site-packages/lz4/version.py
