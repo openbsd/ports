@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/02 19:41:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2020/09/12 19:36:59 phessler Exp $
+
+BROKEN =	twitch changed their API
 
 COMMENT =	desktop Twitch.tv client
 CATEGORIES =	multimedia games x11
