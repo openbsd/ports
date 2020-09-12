@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_zabbix_agent_cpustat_c,v 1.6 2020/07/27 14:32:03 jasper Exp $
+$OpenBSD: patch-src_zabbix_agent_cpustat_c,v 1.7 2020/09/12 12:47:01 jasper Exp $
 
 Add ZBX_CPU_STATE_SPIN to monitor CP_SPIN
 
 Index: src/zabbix_agent/cpustat.c
 --- src/zabbix_agent/cpustat.c.orig
 +++ src/zabbix_agent/cpustat.c
-@@ -636,6 +636,7 @@ read_again:
+@@ -674,6 +674,7 @@ read_again:
  			counter[ZBX_CPU_STATE_NICE] = (zbx_uint64_t)all_states[CP_NICE];
  			counter[ZBX_CPU_STATE_SYSTEM] = (zbx_uint64_t)all_states[CP_SYS];
  			counter[ZBX_CPU_STATE_INTERRUPT] = (zbx_uint64_t)all_states[CP_INTR];
@@ -13,7 +13,7 @@ Index: src/zabbix_agent/cpustat.c
  			counter[ZBX_CPU_STATE_IDLE] = (zbx_uint64_t)all_states[CP_IDLE];
  		}
  		else
-@@ -656,6 +657,7 @@ read_again:
+@@ -694,6 +695,7 @@ read_again:
  			counter[ZBX_CPU_STATE_NICE] = (zbx_uint64_t)one_states[CP_NICE];
  			counter[ZBX_CPU_STATE_SYSTEM] = (zbx_uint64_t)one_states[CP_SYS];
  			counter[ZBX_CPU_STATE_INTERRUPT] = (zbx_uint64_t)one_states[CP_INTR];

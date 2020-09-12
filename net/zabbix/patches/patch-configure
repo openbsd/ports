@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.28 2020/07/27 14:32:03 jasper Exp $
+$OpenBSD: patch-configure,v 1.29 2020/09/12 12:47:01 jasper Exp $
 
 Index: configure
 --- configure.orig
@@ -11,7 +11,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main ()
-@@ -14240,13 +14241,13 @@ LIBS="$LIBS $ICONV_LIBS"
+@@ -14243,13 +14244,13 @@ LIBS="$LIBS $ICONV_LIBS"
  RANLIB="ranlib"
  
  
