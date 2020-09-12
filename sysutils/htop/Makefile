@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2020/09/11 12:34:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2020/09/12 17:25:21 ians Exp $
 
 COMMENT =	interactive process viewer
 
 GH_ACCOUNT =	htop-dev
 GH_PROJECT =	htop
-GH_TAGNAME =	3.0.0
+GH_TAGNAME =	3.0.1
 
 CATEGORIES =	sysutils
 
@@ -35,6 +35,6 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 # htop has some bugs which take hours or days to reach.
 # Keep the symbols to give a chance to the user to get an useful coredump.
 MAKE_FLAGS =	AM_CPPFLAGS="-DDEBUG"
-DEBUG =		-g 
+DEBUG =		-g
 
 .include <bsd.port.mk>
