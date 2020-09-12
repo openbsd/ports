@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2020/08/07 08:34:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2020/09/12 07:57:05 jasper Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
-V =			1.5.4
+V =			1.6.0
 DISTNAME =		rofi-${V}
-REVISION =		1
 
 CATEGORIES =		sysutils x11
 HOMEPAGE =		https://github.com/davatorium/rofi
@@ -20,7 +19,7 @@ WANTLIB += c cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
 WANTLIB += pthread rsvg-2 startup-notification-1 xcb xcb-ewmh
 WANTLIB += xcb-icccm xcb-randr xcb-render xcb-util xcb-xinerama
-WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
+WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11 jpeg
 
 BUILD_DEPENDS +=	devel/bison
 LIB_DEPENDS =		devel/startup-notification \

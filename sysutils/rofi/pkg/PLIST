@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/07/06 20:26:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/09/12 07:57:05 jasper Exp $
 @bin bin/rofi
 bin/rofi-sensible-terminal
 bin/rofi-theme-selector
@@ -12,6 +12,7 @@ lib/pkgconfig/rofi.pc
 @man man/man1/rofi-sensible-terminal.1
 @man man/man1/rofi-theme-selector.1
 @man man/man1/rofi.1
+@man man/man5/rofi-script.5
 @man man/man5/rofi-theme.5
 share/examples/rofi/
 share/examples/rofi/i3_empty_workspace.sh
