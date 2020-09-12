@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/10/23 08:18:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/12 08:16:39 jasper Exp $
+@bin bin/xkbcli
 include/xkbcommon/
 include/xkbcommon/xkbcommon-compat.h
 include/xkbcommon/xkbcommon-compose.h
@@ -6,7 +7,20 @@ include/xkbcommon/xkbcommon-keysyms.h
 include/xkbcommon/xkbcommon-names.h
 include/xkbcommon/xkbcommon-x11.h
 include/xkbcommon/xkbcommon.h
+include/xkbcommon/xkbregistry.h
 @lib lib/libxkbcommon-x11.so.${LIBxkbcommon-x11_VERSION}
 @lib lib/libxkbcommon.so.${LIBxkbcommon_VERSION}
+@lib lib/libxkbregistry.so.${LIBxkbregistry_VERSION}
 lib/pkgconfig/xkbcommon-x11.pc
 lib/pkgconfig/xkbcommon.pc
+lib/pkgconfig/xkbregistry.pc
+libexec/xkbcommon/
+@bin libexec/xkbcommon/xkbcli-compile-keymap
+@bin libexec/xkbcommon/xkbcli-how-to-type
+@bin libexec/xkbcommon/xkbcli-interactive-x11
+@bin libexec/xkbcommon/xkbcli-list
+@man man/man1/xkbcli-compile-keymap.1
+@man man/man1/xkbcli-how-to-type.1
+@man man/man1/xkbcli-interactive-x11.1
+@man man/man1/xkbcli-list.1
+@man man/man1/xkbcli.1
