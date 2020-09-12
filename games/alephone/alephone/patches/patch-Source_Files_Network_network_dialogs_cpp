@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_Files_Network_network_dialogs_cpp,v 1.1 2018/04/20 11:48:37 schwarze Exp $
+$OpenBSD: patch-Source_Files_Network_network_dialogs_cpp,v 1.2 2020/09/12 19:29:40 phessler Exp $
 
 Index: Source_Files/Network/network_dialogs.cpp
 --- Source_Files/Network/network_dialogs.cpp.orig
 +++ Source_Files/Network/network_dialogs.cpp
-@@ -2559,7 +2559,7 @@ class SdlGatherDialog : public GatherDialog (public)
+@@ -2420,7 +2420,7 @@ class SdlGatherDialog : public GatherDialog (public)
  	
  		// m_dialog.add(new w_static_text("Players on Network"));
  

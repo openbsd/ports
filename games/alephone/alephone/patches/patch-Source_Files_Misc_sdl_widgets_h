@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_Files_Misc_sdl_widgets_h,v 1.1 2018/04/20 11:48:37 schwarze Exp $
+$OpenBSD: patch-Source_Files_Misc_sdl_widgets_h,v 1.2 2020/09/12 19:29:40 phessler Exp $
 
 Index: Source_Files/Misc/sdl_widgets.h
 --- Source_Files/Misc/sdl_widgets.h.orig
 +++ Source_Files/Misc/sdl_widgets.h
-@@ -277,12 +277,12 @@ class w_button_base : public widget { (protected)
+@@ -288,12 +288,12 @@ class w_button_base : public widget { (protected)
  
  class w_button : public w_button_base {
  public:
@@ -18,7 +18,7 @@ Index: Source_Files/Misc/sdl_widgets.h
  };
  
  class w_hyperlink : public w_button_base {
-@@ -802,7 +802,7 @@ class w_string_list : public w_list<string> { (private
+@@ -854,7 +854,7 @@ class w_string_list : public w_list<string> { (private
  
  class w_select_popup : public w_select_button {
  public:
@@ -27,7 +27,7 @@ Index: Source_Files/Misc/sdl_widgets.h
  	
  	void set_labels (const vector<string>& inLabels);/* {labels = inLabels;}*/
  	void set_selection (int value);
-@@ -1079,7 +1079,7 @@ class ToggleWidget : public SDLWidgetWidget, public Bi
+@@ -1131,7 +1131,7 @@ class ToggleWidget : public SDLWidgetWidget, public Bi
  	ToggleWidget (w_toggle* toggle)
  		: SDLWidgetWidget (toggle)
  		, m_toggle (toggle)
@@ -36,7 +36,7 @@ Index: Source_Files/Misc/sdl_widgets.h
  		{ m_toggle->set_selection_changed_callback (boost::bind(&ToggleWidget::massage_callback, this, _1)); }
  
  	void set_callback (ControlHitCallback callback) { m_callback = callback; }
-@@ -1117,7 +1117,7 @@ class SelectorWidget : public SDLWidgetWidget, public 
+@@ -1169,7 +1169,7 @@ class SelectorWidget : public SDLWidgetWidget, public 
  protected:
  	SelectorWidget (widget* in_widget)
  		: SDLWidgetWidget (in_widget)
@@ -45,7 +45,7 @@ Index: Source_Files/Misc/sdl_widgets.h
  		{}
  
  	ControlHitCallback m_callback;
-@@ -1201,7 +1201,7 @@ class ButtonWidget : public SDLWidgetWidget (public)
+@@ -1253,7 +1253,7 @@ class ButtonWidget : public SDLWidgetWidget (public)
  	ButtonWidget (w_button_base* button)
  		: SDLWidgetWidget (button)
  		, m_button (button)

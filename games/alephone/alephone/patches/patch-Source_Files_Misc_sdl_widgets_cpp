@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_Files_Misc_sdl_widgets_cpp,v 1.1 2018/04/20 11:48:37 schwarze Exp $
+$OpenBSD: patch-Source_Files_Misc_sdl_widgets_cpp,v 1.2 2020/09/12 19:29:40 phessler Exp $
 
 Index: Source_Files/Misc/sdl_widgets.cpp
 --- Source_Files/Misc/sdl_widgets.cpp.orig
 +++ Source_Files/Misc/sdl_widgets.cpp
-@@ -719,7 +719,7 @@ void w_select_button::place(const SDL_Rect &r, placeme
+@@ -773,7 +773,7 @@ void w_select_button::place(const SDL_Rect &r, placeme
  
  static const char* sNoValidOptionsString = "(no valid options)"; // XXX should be moved outside compiled code e.g. to MML
  
@@ -12,7 +12,7 @@ Index: Source_Files/Misc/sdl_widgets.cpp
  {
  	num_labels = 0;
          if(labels) {
-@@ -1113,7 +1113,7 @@ void w_color_picker::draw(SDL_Surface *s) const
+@@ -1177,7 +1177,7 @@ void w_color_picker::draw(SDL_Surface *s) const
   */
  
  w_text_entry::w_text_entry(size_t max_c, const char *initial_text)
@@ -21,7 +21,7 @@ Index: Source_Files/Misc/sdl_widgets.cpp
  {
  	// Initialize buffer
  	buf = new char[max_chars + 1];
-@@ -2115,7 +2115,7 @@ void w_select_popup::gotSelected ()
+@@ -2371,7 +2371,7 @@ void w_select_popup::gotSelected ()
  static const char* const sFileChooserInvalidFileString = "(no valid selection)";
  
  w_file_chooser::w_file_chooser(const char* inDialogPrompt, Typecode inTypecode)
