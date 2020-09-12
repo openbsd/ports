@@ -1,8 +1,8 @@
 # $OpenBSD: Makefile.version,v 1.13 2020/06/09 22:43:16 sthen Exp $
 # Common source for Qt5 version
 
-QT5_VERSION =		5.15.0
-QT5_DIST_VERSION =	5.15.0
+QT5_VERSION =		5.15.1
+QT5_DIST_VERSION =	5.15.1
 
 # This one is used for building dependencies for examples and documentation,
 # which obviously should be in sync with core packages.
