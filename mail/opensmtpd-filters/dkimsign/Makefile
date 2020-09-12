@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/26 11:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/12 12:27:56 martijn Exp $
 
 COMMENT=	dkim signer integration to the OpenSMTPD daemon
 
-V=		0.2
+V=		0.3
 FILTER_NAME =	dkimsign
 DISTNAME =	filter-dkimsign-${V}
 
