@@ -1,4 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.44 2020/03/29 15:42:27 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.45 2020/09/12 19:35:37 sthen Exp $
+
+- don't force compiler flags
+- don't unconditionally set -ftrampolines, it is gcc-only.
+(Blocksruntime isn't working correctly on OpenBSD anyway so clang
+is not yet an option, but patched away here to allow for easier
+testing, and added-back in the port Makefile).
 
 Index: Makefile
 --- Makefile.orig
@@ -22,3 +28,12 @@ Index: Makefile
    endif
  endif
  
+@@ -231,7 +233,7 @@ ifeq ($(OSARCH),NetBSD)
+ endif
+ 
+ ifeq ($(OSARCH),OpenBSD)
+-  _ASTCFLAGS+=-pthread -ftrampolines
++  _ASTCFLAGS+=-pthread
+ endif
+ 
+ ifeq ($(OSARCH),linux-uclibc)

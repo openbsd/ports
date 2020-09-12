@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.324 2020/09/04 21:22:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.325 2020/09/12 19:35:37 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -46,10 +46,12 @@ DPB_PROPERTIES=	parallel
 #    echo 'int main(){return ^{return 42;}();}' | \
 #         clang -o /tmp/blockstest -fblocks -x c -L/usr/local/lib -lBlocksRuntime -
 #
-# -> undefined reference to `_NSConcreteGlobalBlock'
+# -> undefined reference to `_NSConcreteGlobalBlock' (also can be tested
+# on ld.lld arches by adding "-fuse-ld=bfd")
 #
 # - runtime fails on ld.lld arches: dlopen()ing the .so modules results in
-# undefined symbols from the BlocksRuntime lib.
+# undefined symbols (same symbols as ld.bfd detects as missing) from the
+# BlocksRuntime lib.
 #
 # So, as things stand, this requires building with gcc.
 #
@@ -179,10 +181,6 @@ CONFIGURE_ARGS+=	--with-imap=no
 
 ## multipackages:
 .include <bsd.port.arch.mk>
-
-#.if ${PROPERTIES:Mclang}
-#BUILD_DEPENDS+=		devel/blocksruntime
-#.endif
 
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
@@ -338,3 +336,9 @@ post-install:
 	@find ${WRKINST}/opt -type d -delete
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == ports-gcc
+CFLAGS+=		-ftrampolines
+.else
+BUILD_DEPENDS+=		devel/blocksruntime
+.endif
