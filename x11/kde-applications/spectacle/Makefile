@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/12 16:11:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2020/09/12 17:12:41 naddy Exp $
 
 COMMENT =	KDE screen capture and screenshot program
 VERSION =	19.04.3
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/spectacle/
 
