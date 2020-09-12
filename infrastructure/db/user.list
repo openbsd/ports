@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.374 2020/09/08 22:35:04 abieber Exp $
+$OpenBSD: user.list,v 1.375 2020/09/12 15:33:51 jasper Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -222,7 +222,7 @@ id  user		group		port
 711 _xl2tpd		_xl2tpd		net/xl2tpd
 712 			_cvechecker	security/cvechecker
 #713 _puppet-dashboard	_puppet-dashboard	www/puppet-dashboard
-714 _activemq		_activemq	net/apache-activemq
+#714 _activemq		_activemq	net/apache-activemq
 715 _postfwd		_postfwd	mail/postfwd
 716 _c-icap		_c-icap		www/c-icap/c-icap
 717 _uptimed		_uptimed	sysutils/uptimed
