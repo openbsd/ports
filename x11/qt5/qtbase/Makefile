@@ -25,7 +25,7 @@ SHARED_LIBS +=  Qt5Concurrent                3.0 # 5.9
 SHARED_LIBS +=  Qt5Core                      3.0 # 5.9
 SHARED_LIBS +=  Qt5DBus                      3.0 # 5.9
 SHARED_LIBS +=  Qt5Gui                       3.0 # 5.9
-SHARED_LIBS +=  Qt5Network                   3.0 # 5.9
+SHARED_LIBS +=  Qt5Network                   4.0 # 5.9
 SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.9
 SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.9
 SHARED_LIBS +=  Qt5Sql                       3.0 # 5.9
@@ -37,16 +37,6 @@ SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.9
 SHARED_LIBS +=  Qt5OpenGLExtensions          0.0 # 5.13
 SHARED_LIBS +=  Qt5XcbQpa                    0.0 # 5.13
 
-WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext atk-1.0
-WANTLIB-main += c cairo cairo-gobject crypto cups dbus-1 double-conversion
-WANTLIB-main += drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB-main += icudata icui18n icuio icuuc iodbc iodbcinst jpeg m
-WANTLIB-main += pango-1.0 pangocairo-1.0 pcre2-16 png sqlite3 ssl xcb
-WANTLIB-main += xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr xcb-render
-WANTLIB-main += xcb-render-util xcb-shape xcb-shm xcb-sync xcb-xfixes
-WANTLIB-main += xcb-xinerama xcb-xinput xcb-xkb xkbcommon xkbcommon-x11
-WANTLIB-main += z zstd
 
 WANTLIB-global =
 
@@ -87,7 +77,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/icu4c \
 			x11/dbus \
 			x11/gtk+3 \
-			x11/xkbcommon
+			x11/xkbcommon>=1.0.1
 
 # those come from gthread-2.0, not used by Qt itself
 WANTLIB-main +=		intl
@@ -253,13 +243,6 @@ post-extract:
 		${WRKDIST}/mkspecs/openbsd-clang/qmake.conf
 	cp ${WRKDIST}/mkspecs/openbsd-g++/qplatformdefs.h \
 		${WRKDIST}/mkspecs/openbsd-clang/
-
-pre-configure:
-	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`; \
-	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
-		-D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
-		${WRKSRC}/mkspecs/openbsd-g++/qmake.conf \
-		${WRKSRC}/mkspecs/openbsd-clang/qmake.conf
 
 # WARNING!
 # Many tests won't run if window manager has either

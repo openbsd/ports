@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/network/ssl/qsslsocket_openssl.cpp
 --- src/network/ssl/qsslsocket_openssl.cpp.orig
 +++ src/network/ssl/qsslsocket_openssl.cpp
-@@ -598,7 +598,7 @@ bool QSslSocketBackendPrivate::initSslContext()
+@@ -653,7 +653,7 @@ bool QSslSocketBackendPrivate::initSslContext()
      else if (mode == QSslSocket::SslServerMode)
          q_SSL_set_psk_server_callback(ssl, &q_ssl_psk_server_callback);
  
