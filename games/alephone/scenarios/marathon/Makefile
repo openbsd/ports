@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.13 2019/07/14 00:39:36 naddy Exp $
+#	$OpenBSD: Makefile,v 1.14 2020/09/12 19:30:08 phessler Exp $
 PKG_ARCH =	*
 
 COMMENT =	marathon one data files
-V =		20150620
+V =		20200904
 DISTNAME =	marathon-0.0.${V}
 HOMEPAGE =	https://alephone.lhowon.org/games/marathon.html
 

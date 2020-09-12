@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/02/02 10:17:44 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/12 19:30:08 phessler Exp $
 bin/marathon
 share/alephone/
 share/alephone/Marathon/
 share/alephone/Marathon/Map.scen
-share/alephone/Marathon/Marathon Preferences
 share/alephone/Marathon/Marathon.appl
 share/alephone/Marathon/Marathon_Manual.pdf
 share/alephone/Marathon/Music/
@@ -26,7 +25,9 @@ share/alephone/Marathon/Music/15.ogg
 share/alephone/Marathon/Physics.phys
 share/alephone/Marathon/Plugins/
 share/alephone/Marathon/Plugins/Default HUD/
+share/alephone/Marathon/Plugins/Default HUD/COPYING
 share/alephone/Marathon/Plugins/Default HUD/Default_HUD_M1.lua
+share/alephone/Marathon/Plugins/Default HUD/FOV.mml
 share/alephone/Marathon/Plugins/Default HUD/Plugin.xml
 share/alephone/Marathon/Plugins/Enhanced HUD/
 share/alephone/Marathon/Plugins/Enhanced HUD/720p/
@@ -81,22 +82,28 @@ share/alephone/Marathon/Plugins/Enhanced HUD/720p/w_rocket.png
 share/alephone/Marathon/Plugins/Enhanced HUD/720p/w_smg.png
 share/alephone/Marathon/Plugins/Enhanced HUD/720p/w_tozt.png
 share/alephone/Marathon/Plugins/Enhanced HUD/720p/weapons.png
+share/alephone/Marathon/Plugins/Enhanced HUD/COPYING
+share/alephone/Marathon/Plugins/Enhanced HUD/FOV.mml
 share/alephone/Marathon/Plugins/Enhanced HUD/Plugin.lua
 share/alephone/Marathon/Plugins/Enhanced HUD/Plugin.xml
+share/alephone/Marathon/Plugins/Enhanced HUD/Readme.txt
 share/alephone/Marathon/Plugins/Enhanced HUD/squarishsans/
 share/alephone/Marathon/Plugins/Enhanced HUD/squarishsans/Squarish Sans CT Regular SC.ttf
 share/alephone/Marathon/Plugins/Enhanced HUD/squarishsans/Squarish Sans CT Regular.ttf
 share/alephone/Marathon/Plugins/Enhanced HUD/squarishsans/SquarishSansCT.README
 share/alephone/Marathon/Plugins/Marathon Stats/
+share/alephone/Marathon/Plugins/Marathon Stats/COPYING
 share/alephone/Marathon/Plugins/Marathon Stats/Plugin.xml
 share/alephone/Marathon/Plugins/Marathon Stats/stats.lua
 share/alephone/Marathon/Plugins/Marathon Theme/
 share/alephone/Marathon/Plugins/Marathon Theme/Plugin.xml
+share/alephone/Marathon/Plugins/Marathon Theme/Readme.txt
 share/alephone/Marathon/Plugins/Marathon Theme/resources/
 share/alephone/Marathon/Plugins/Marathon Theme/resources/Marapfhont.README
 share/alephone/Marathon/Plugins/Marathon Theme/resources/Marapfhont.ttf
 share/alephone/Marathon/Plugins/Marathon Theme/resources/URWGothicL-Demi.ttf
 share/alephone/Marathon/Plugins/Marathon Theme/resources/URWGothicL-DemiObli.ttf
+share/alephone/Marathon/Plugins/Marathon Theme/resources/URWGothicL.README
 share/alephone/Marathon/Plugins/Marathon Theme/resources/frame_b.bmp
 share/alephone/Marathon/Plugins/Marathon Theme/resources/frame_bl.bmp
 share/alephone/Marathon/Plugins/Marathon Theme/resources/frame_br.bmp
@@ -272,7 +279,14 @@ share/alephone/Marathon/Plugins/TTEP v7/Collections/24/05.dds
 share/alephone/Marathon/Plugins/TTEP v7/Original - TXT.rtf
 share/alephone/Marathon/Plugins/TTEP v7/Plugin.xml
 share/alephone/Marathon/Plugins/TTEP v7/Textures.mml
+share/alephone/Marathon/Plugins/Updated Starscape/
+share/alephone/Marathon/Plugins/Updated Starscape/Plugin.xml
+share/alephone/Marathon/Plugins/Updated Starscape/Readme.txt
+share/alephone/Marathon/Plugins/Updated Starscape/Textures.mml
+share/alephone/Marathon/Plugins/Updated Starscape/star.dds
+share/alephone/Marathon/Readme.md
 share/alephone/Marathon/Scripts/
+share/alephone/Marathon/Scripts/Default Preferences.xml
 share/alephone/Marathon/Scripts/Marathon.mml
 share/alephone/Marathon/Shapes.shps
 share/alephone/Marathon/Sounds.sndz
