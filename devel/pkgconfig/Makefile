@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2020/09/12 12:45:52 jasper Exp $
 
 COMMENT=		tool for managing library compile/link flags
 
@@ -8,10 +8,10 @@ VERSION=		0.29.2
 DISTNAME=		pkg-config-${VERSION}
 PKGNAME=		pkgconfig-${VERSION}
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
-HOMEPAGE=		http://www.freedesktop.org/software/pkgconfig/
-MASTER_SITES=		http://pkgconfig.freedesktop.org/releases/
+HOMEPAGE=		https://www.freedesktop.org/software/pkgconfig/
+MASTER_SITES=		https://pkgconfig.freedesktop.org/releases/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
