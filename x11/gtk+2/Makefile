@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.234 2020/05/02 11:21:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.235 2020/09/12 19:44:11 phessler Exp $
+
+DPB_PROPERTIES=		parallel
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+2 CUPS print backend

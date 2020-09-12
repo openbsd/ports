@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2020/08/14 07:00:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2020/09/12 19:44:11 phessler Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
 # XXX -Dman-pages=true yet no man page is built
 # XXX add support for libcloudproviders? (-Denable-cloudproviders=true)
+
+DPB_PROPERTIES=		parallel
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+4 CUPS print backend

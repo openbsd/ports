@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.235 2020/09/05 11:16:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.236 2020/09/12 19:44:11 phessler Exp $
 
 # XXX never versions require pango>=1.45
 # XXX add support for libcloudproviders?
+
+DPB_PROPERTIES=		parallel
 
 PORTROACH=		skipv:3.90.0,3.92.1,3.93.0,3.94.0
 
