@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1221 2020/09/08 22:35:38 abieber Exp $
+# $OpenBSD: Makefile,v 1.1222 2020/09/12 15:33:31 jasper Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -8,7 +8,6 @@
      SUBDIR += amule
      SUBDIR += angst
      SUBDIR += ap-utils
-     SUBDIR += apache-activemq
      SUBDIR += argus
      SUBDIR += argus-clients
      SUBDIR += arp-scan
