@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2020/06/09 21:50:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2020/09/13 08:46:54 jasper Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @conflict libgda-ui-<5.1.1
@@ -127,7 +127,6 @@ lib/girepository-1.0/Gda-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/
 lib/libgda-${GDA_MAJOR}.la
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-${GDA_MAJOR}_VERSION}
-lib/libgda-${GDA_MAJOR}/plugins/
 lib/libgda-${GDA_MAJOR}/providers/
 @so lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.so
 @so lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.so
@@ -473,7 +472,6 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/writable_data_model.png
 share/libgda-${GDA_MAJOR}/
 share/libgda-${GDA_MAJOR}/bdb_specs_dsn.xml
 share/libgda-${GDA_MAJOR}/dtd/
-share/libgda-${GDA_MAJOR}/dtd/gdaui-layout.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-array.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-paramlist.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-server-operation.dtd
@@ -486,10 +484,7 @@ share/libgda-${GDA_MAJOR}/gda_trml2pdf/__init__.py
 share/libgda-${GDA_MAJOR}/gda_trml2pdf/color.py
 share/libgda-${GDA_MAJOR}/gda_trml2pdf/trml2pdf.py
 share/libgda-${GDA_MAJOR}/gda_trml2pdf/utils.py
-share/libgda-${GDA_MAJOR}/import_encodings.xml
 share/libgda-${GDA_MAJOR}/information_schema.xml
-share/libgda-${GDA_MAJOR}/language-specs/
-share/libgda-${GDA_MAJOR}/language-specs/gda-sql.lang
 share/libgda-${GDA_MAJOR}/php/
 share/libgda-${GDA_MAJOR}/php/README
 share/libgda-${GDA_MAJOR}/php/gda-clean.php

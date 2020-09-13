@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2020/07/03 21:13:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.140 2020/09/13 08:46:54 jasper Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -6,7 +6,6 @@ COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
 COMMENT-mysql=		MySQL backend for libgda
 COMMENT-pgsql=		PostgreSQL backend for libgda
-COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		5.2.9
@@ -18,13 +17,11 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
-PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		5
+REVISION-main=		6
 REVISION-ldap=		1
 REVISION-mysql=		1
 REVISION-pgsql=		1
-REVISION-ui=		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -36,7 +33,6 @@ CATEGORIES=		databases
 SHARED_LIBS +=  gda-5.0              2.0      # 5.1
 SHARED_LIBS +=  gda-report-5.0       1.0      # 5.1
 SHARED_LIBS +=  gda-xslt-5.0         1.0      # 5.1
-SHARED_LIBS +=  gda-ui-5.0           1.0      # 5.1
 
 HOMEPAGE=		http://www.gnome-db.org/
 
@@ -84,7 +80,7 @@ CONFIGURE_ARGS=		--enable-gdaui-gi \
 			--without-mdb \
 			--without-java \
 			--without-graphviz \
-			--with-ui \
+			--without-ui \
 			--with-ldap \
 			--with-mysql="${LOCALBASE}" \
 			--with-postgres="${LOCALBASE}"
@@ -94,35 +90,19 @@ CONFIGURE_ENV +=	VALA_API_VERSION=0.48
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
-MULTI_PACKAGES=		-main -ui -mysql -pgsql -ldap
+MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 
 ### -main
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c curses gcrypt gpg-error idn2 psl unistring
-WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 xslt
+WANTLIB-main += readline soup-2.4 crypto xslt
 WANTLIB-main += brotlicommon brotlidec
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-main=	databases/sqlite3 \
 			devel/libsoup \
 			textproc/libxslt \
-			graphics/gdk-pixbuf2 \
 			x11/gnome/libsecret
-
-### -ui
-WANTLIB-ui += ${WANTLIB}
-WANTLIB-ui += X11 Xcomposite Xcursor Xdamage Xext Xfixes graphite2
-WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo atk-bridge-2.0
-WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
-WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
-WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += xcb xcb-render xcb-shm epoxy harfbuzz fribidi gcrypt
-
-LIB_DEPENDS-ui=		graphics/goocanvas2 \
-			x11/gnome/libgda \
-			x11/gtksourceview3
-RUN_DEPENDS-ui=		${RUN_DEPENDS} \
-			devel/iso-codes
 
 ### -mysql
 WANTLIB-mysql += ${WANTLIB}
@@ -157,6 +137,6 @@ post-patch:
 	sed -i 's,bdb_libext="\$$linklibext",bdb_libext=".so.${LIBdb_VERSION}",' ${WRKSRC}/m4/bdb.m4
 
 post-install:
-	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/{plugins,providers}/*.la
+	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/providers/*.la
 
 .include <bsd.port.mk>
