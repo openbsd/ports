@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.283 2020/06/10 07:20:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.284 2020/09/13 08:48:57 jasper Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -75,7 +75,6 @@
      SUBDIR += music
      SUBDIR += mutter
      SUBDIR += nautilus
-     SUBDIR += ocrfeeder
      SUBDIR += online-accounts
      SUBDIR += online-miners
      SUBDIR += orca
