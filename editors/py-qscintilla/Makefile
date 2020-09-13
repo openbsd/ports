@@ -2,8 +2,7 @@
 
 COMMENT =		Python binding for the Scintilla source code editor
 
-VERSION =		2.11.4
-REVISION =		3
+VERSION =		2.11.5
 MODPY_EGG_VERSION =	${VERSION}
 DISTNAME =		QScintilla-${VERSION}
 PKGNAME =		py-qscintilla-${VERSION}
