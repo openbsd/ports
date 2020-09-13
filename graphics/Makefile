@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.516 2020/09/13 03:18:23 pamela Exp $
+# $OpenBSD: Makefile,v 1.517 2020/09/13 08:50:02 jasper Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -83,7 +83,6 @@
      SUBDIR += gmt
      SUBDIR += gnofract4d
      SUBDIR += gocr
-     SUBDIR += goocanvas2
      SUBDIR += gphoto2
      SUBDIR += gpicview
      SUBDIR += gprof2dot
