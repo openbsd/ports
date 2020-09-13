@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.236 2020/09/12 19:44:11 phessler Exp $
+# $OpenBSD: Makefile,v 1.237 2020/09/13 06:14:19 ajacoutot Exp $
 
-# XXX never versions require pango>=1.45
 # XXX add support for libcloudproviders?
 
 DPB_PROPERTIES=		parallel
