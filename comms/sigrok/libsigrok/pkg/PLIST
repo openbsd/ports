@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/11/07 08:01:32 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/13 13:25:30 ajacoutot Exp $
 include/libsigrok/
 include/libsigrok/libsigrok.h
 include/libsigrok/proto.h
@@ -6,10 +6,10 @@ include/libsigrok/version.h
 include/libsigrokcxx/
 include/libsigrokcxx/enums.hpp
 include/libsigrokcxx/libsigrokcxx.hpp
-lib/libsigrok.a
+@static-lib lib/libsigrok.a
 lib/libsigrok.la
 @lib lib/libsigrok.so.${LIBsigrok_VERSION}
-lib/libsigrokcxx.a
+@static-lib lib/libsigrokcxx.a
 lib/libsigrokcxx.la
 @lib lib/libsigrokcxx.so.${LIBsigrokcxx_VERSION}
 lib/pkgconfig/libsigrok.pc
@@ -25,10 +25,11 @@ lib/python${MODPY_VERSION}/site-packages/libsigrok-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/sigrok/
 lib/python${MODPY_VERSION}/site-packages/sigrok/core/
 lib/python${MODPY_VERSION}/site-packages/sigrok/core/__init__.py
-lib/python${MODPY_VERSION}/site-packages/sigrok/core/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/sigrok/core/_classes.so
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sigrok/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sigrok/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sigrok/core/${MODPY_PYCACHE}classes.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/sigrok/core/_classes.so
 lib/python${MODPY_VERSION}/site-packages/sigrok/core/classes.py
-lib/python${MODPY_VERSION}/site-packages/sigrok/core/classes.pyc
 share/icons/hicolor/48x48/mimetypes/libsigrok.png
 share/icons/hicolor/scalable/mimetypes/libsigrok.svg
 share/mime/packages/vnd.sigrok.session.xml
