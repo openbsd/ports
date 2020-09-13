@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.python3,v 1.2 2016/11/10 21:58:41 danj Exp $
-bin/keyring${MODPY_BIN_SUFFIX}

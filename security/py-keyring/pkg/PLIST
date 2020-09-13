@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/08/27 17:40:17 ajacoutot Exp $
-!%%python3%%
-%%python3%%
+@comment $OpenBSD: PLIST,v 1.5 2020/09/13 08:15:10 ajacoutot Exp $
+@conflict py-keyring-*
+@pkgpath security/py-keyring
+bin/keyring
 lib/python${MODPY_VERSION}/site-packages/keyring/
 lib/python${MODPY_VERSION}/site-packages/keyring-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/keyring-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
