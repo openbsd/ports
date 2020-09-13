@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2020/01/22 05:46:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2020/09/13 12:21:24 ajacoutot Exp $
 
 COMMENT=	library for gnome keyring integration
 
 GNOME_PROJECT=	libgnome-keyring
 GNOME_VERSION=	3.12.0
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS +=  gnome-keyring        7.0      # 2.0
 
@@ -14,8 +14,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += dbus-1 ffi gcrypt glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error pcre pthread iconv intl
 
-MODGNOME_TOOLS += gobject-introspection vala
 MODULES=	x11/gnome
+
+MODGNOME_TOOLS=	gobject-introspection vala
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=	security/libgcrypt \
 		x11/dbus \
@@ -30,7 +32,7 @@ CONFIGURE_STYLE=	gnu
 # regression tests call 'env python'
 MODULES +=		lang/python
 TEST_DEPENDS +=		${MODPY_RUN_DEPENDS} \
-			devel/py-gobject3 #test-gi.py
+			devel/py-gobject3${MODPY_FLAVOR} #test-gi.py
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP=		No
 pre-test:
