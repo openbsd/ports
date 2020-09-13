@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2020/05/01 09:09:14 tb Exp $
+# $OpenBSD: Makefile,v 1.48 2020/09/13 08:05:08 tb Exp $
 
 # XXX consider moving to https://repo.or.cz/alpine.git
 
@@ -28,7 +28,7 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
 
-REVISION=		4
+REVISION=		5
 REVISION-pico=		20
 REVISION-pilot=		20
 

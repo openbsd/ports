@@ -1,7 +1,7 @@
-$OpenBSD: patch-imap_src_osdep_unix_ssl_unix_c,v 1.1 2020/05/01 09:09:14 tb Exp $
+$OpenBSD: patch-imap_src_osdep_unix_ssl_unix_c,v 1.2 2020/09/13 08:05:08 tb Exp $
 
 * some popular mail services enforce SNI for TLSv1.3 clients, so send it
-* retry SSL_write if we're told to do so.
+* retry SSL_write on blocking socket if we're told to do so.
 
 Index: imap/src/osdep/unix/ssl_unix.c
 --- imap/src/osdep/unix/ssl_unix.c.orig
@@ -14,7 +14,7 @@ Index: imap/src/osdep/unix/ssl_unix.c
    unsigned long sl,tl;
    char *s,*t,*err,tmp[MAILTMPLEN], buf[256];
    sslcertificatequery_t scq =
-@@ -313,12 +314,22 @@ static char *ssl_start_work (SSLSTREAM *stream,char *h
+@@ -313,12 +314,21 @@ static char *ssl_start_work (SSLSTREAM *stream,char *h
  				/* create connection */
    if (!(stream->con = (SSL *) SSL_new (stream->context)))
      return "SSL connection failed";
@@ -29,28 +29,11 @@ Index: imap/src/osdep/unix/ssl_unix.c
 -  if (SSL_write (stream->con,"",0) < 0)
 +  do {
 +    ssl_err = SSL_write (stream->con,"",0);
-+  } while ((ssl_err == -1 &&
-+      SSL_get_error(stream->con, ssl_err) == SSL_ERROR_SYSCALL && errno == EINTR) ||
-+    (ssl_err < 0 &&
-+      (SSL_get_error(stream->con, ssl_err) == SSL_ERROR_WANT_READ ||
-+        SSL_get_error(stream->con, ssl_err) == SSL_ERROR_WANT_WRITE)));
++  } while (ssl_err < 0 &&
++      ((SSL_get_error(stream->con, ssl_err) == SSL_ERROR_SYSCALL && errno == EINTR) ||
++       SSL_get_error(stream->con, ssl_err) == SSL_ERROR_WANT_READ ||
++        SSL_get_error(stream->con, ssl_err) == SSL_ERROR_WANT_WRITE));
 +  if (ssl_err < 0)
      return ssl_last_error ? ssl_last_error : "SSL negotiation failed";
  				/* need to validate host names? */
    if (!(flags & NET_NOVALIDATECERT) &&
-@@ -626,7 +637,14 @@ long ssl_sout (SSLSTREAM *stream,char *string,unsigned
- 				/* until request satisfied */
-   for (i = 0; size > 0; string += i,size -= i)
- 				/* write as much as we can */
--    if ((i = SSL_write (stream->con,string,(int) min (SSLBUFLEN,size))) < 0) {
-+    do {
-+      i = SSL_write (stream->con,string,(int) min (SSLBUFLEN,size));
-+    } while ((i == -1 &&
-+        SSL_get_error(stream->con, i) == SSL_ERROR_SYSCALL && errno == EINTR) ||
-+      (i < 0 &&
-+        (SSL_get_error(stream->con, i) == SSL_ERROR_WANT_READ ||
-+          SSL_get_error(stream->con, i) == SSL_ERROR_WANT_WRITE)));
-+    if (i < 0) {
-       if (tcpdebug) {
- 	char tmp[MAILTMPLEN];
- 	sprintf (tmp,"SSL data write I/O error %d SSL error %d",
