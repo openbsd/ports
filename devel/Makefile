@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2013 2020/09/07 17:13:52 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.2014 2020/09/13 08:10:16 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1304,7 +1304,6 @@
      SUBDIR += pscan
      SUBDIR += pth
      SUBDIR += ptlib
-     SUBDIR += pudb
      SUBDIR += pudb,python3
      SUBDIR += py3c
      SUBDIR += pycdc
