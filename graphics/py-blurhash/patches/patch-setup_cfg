@@ -1,0 +1,17 @@
+$OpenBSD: patch-setup_cfg,v 1.1.1.1 2020/09/13 03:15:53 pamela Exp $
+
+Fixed pytest error by removing reference to coverage.
+
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -4,9 +4,6 @@ universal = 1
+ [aliases]
+ test = pytest
+ 
+-[tool:pytest]
+-addopts = --cov=blurhash
+-
+ [egg_info]
+ tag_build = 
+ tag_date = 0

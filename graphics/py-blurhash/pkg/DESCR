@@ -1,0 +1,6 @@
+Blurhash is an algorithm that lets you transform image data into a small
+text representation of a blurred version of the image. This is useful
+since this small textual representation can be included when sending
+objects that may have images attached around, which then can be used to
+quickly create a placeholder for images that are still loading or that
+should be hidden behind a content warning.
