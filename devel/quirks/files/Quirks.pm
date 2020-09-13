@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1053 2020/09/13 12:05:37 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1054 2020/09/13 13:04:53 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1833,6 +1833,8 @@ my $obsolete_reason = {
 	'libgda-ui' => 5,
 	'ocrfeeder' => 6,
 	'goocanvas2' => 5,
+	'py-termcolor' => 5,
+	'py3-termcolor' => 5,
 };
 
 # reasons for obsolete packages
