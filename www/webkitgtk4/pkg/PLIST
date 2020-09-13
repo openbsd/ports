@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/03/12 09:17:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/09/13 10:28:45 ajacoutot Exp $
 @bin bin/WebKitWebDriver
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -98,7 +98,9 @@ include/webkitgtk-${API}/webkit2/WebKitWebView.h
 include/webkitgtk-${API}/webkit2/WebKitWebViewBase.h
 include/webkitgtk-${API}/webkit2/WebKitWebViewSessionState.h
 include/webkitgtk-${API}/webkit2/WebKitWebsiteData.h
+include/webkitgtk-${API}/webkit2/WebKitWebsiteDataAccessPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitWebsiteDataManager.h
+include/webkitgtk-${API}/webkit2/WebKitWebsitePolicies.h
 include/webkitgtk-${API}/webkit2/WebKitWindowProperties.h
 include/webkitgtk-${API}/webkit2/webkit-web-extension.h
 include/webkitgtk-${API}/webkit2/webkit2.h
@@ -229,7 +231,6 @@ lib/webkit2gtk-${API}/injected-bundle/
 @so lib/webkit2gtk-${API}/injected-bundle/libwebkit2gtkinjectedbundle.so
 libexec/webkit2gtk-${API}/
 @bin libexec/webkit2gtk-${API}/WebKitNetworkProcess
-@bin libexec/webkit2gtk-${API}/WebKitPluginProcess
 @bin libexec/webkit2gtk-${API}/WebKitWebProcess
 @bin libexec/webkit2gtk-${API}/jsc
 share/gir-1.0/JavaScriptCore-${API}.gir

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2020/08/10 16:53:56 jca Exp $
+# $OpenBSD: Makefile,v 1.127 2020/09/13 10:28:44 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -13,17 +13,16 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.28.4
+V =			2.30.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
-REVISION =		1
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     3.2 # 18.13.3
-SHARED_LIBS +=  webkit2gtk-${API}            3.2 # 37.37.2
+SHARED_LIBS +=  javascriptcoregtk-${API}     3.3 # 18.13.3
+SHARED_LIBS +=  webkit2gtk-${API}            3.3 # 37.37.2
 
 CATEGORIES =		www
 
@@ -59,7 +58,11 @@ MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	Tools/glib/generate-inspector-gresource-manifest.py
 MODGNOME_TOOLS =	gobject-introspection
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+# XXX disable DEBUG_PACKAGES because libWebCoreGTK.a is too big (4.1G)
+# ld.lld: error: lib/libWebCoreGTK.a:
+# could not get the member for symbol WebCore::WorkerThread::runEventLoop():
+# truncated or malformed archive (terminator characters in archive member "ar" not the correct "`\n" values for the archive member header for 12__retguard_29)
+#DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 NO_TEST =		Yes
 USE_GMAKE =		Yes
@@ -89,10 +92,8 @@ LIB_DEPENDS =		archivers/woff2 \
 CONFIGURE_ENV =		WK_USE_CCACHE=NO
 CONFIGURE_ARGS =	-DPORT=GTK \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
-			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}"
-
-# old gtk+2 plugins (flash, java, ...); mostly useful on Linux
-CONFIGURE_ARGS +=	-DENABLE_PLUGIN_PROCESS_GTK2=OFF
+			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
+			-DUSE_SYSTEMD=OFF
 
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
 .if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \

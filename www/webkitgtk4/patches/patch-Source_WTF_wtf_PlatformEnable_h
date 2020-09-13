@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_WTF_wtf_PlatformEnable_h,v 1.1 2020/03/12 09:17:40 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_PlatformEnable_h,v 1.2 2020/09/13 10:28:44 ajacoutot Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=129963
 
 Index: Source/WTF/wtf/PlatformEnable.h
 --- Source/WTF/wtf/PlatformEnable.h.orig
 +++ Source/WTF/wtf/PlatformEnable.h
-@@ -625,7 +625,7 @@
+@@ -624,7 +624,7 @@
  #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT)
  
  /* Enable the DFG JIT on X86 and X86_64. */

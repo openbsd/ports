@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.4 2019/03/14 09:48:28 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.5 2020/09/13 10:28:45 ajacoutot Exp $
 
 Index: Source/WTF/wtf/RAMSize.cpp
 --- Source/WTF/wtf/RAMSize.cpp.orig
 +++ Source/WTF/wtf/RAMSize.cpp
-@@ -32,7 +32,9 @@
+@@ -31,7 +31,9 @@
  #if OS(WINDOWS)
  #include <windows.h>
  #elif defined(USE_SYSTEM_MALLOC) && USE_SYSTEM_MALLOC
@@ -14,19 +14,17 @@ Index: Source/WTF/wtf/RAMSize.cpp
  #include <sys/sysinfo.h>
  #endif // OS(LINUX)
  #else
-@@ -55,7 +57,14 @@ static size_t computeRAMSize()
-         return ramSizeGuess;
-     return status.ullTotalPhys;
- #elif defined(USE_SYSTEM_MALLOC) && USE_SYSTEM_MALLOC
--#if OS(LINUX)
-+#if OS(OPENBSD)
+@@ -58,6 +60,13 @@ static size_t computeRAMSize()
+     struct sysinfo si;
+     sysinfo(&si);
+     return si.totalram * si.mem_unit;
++#elif OS(OPENBSD)
 +    int mib[] = { CTL_HW, HW_USERMEM64 };
 +    int64_t mem;
 +    size_t len = sizeof(mem);
 +    if (sysctl(mib, 2, &mem, &len, NULL, 0) == -1)
 +        return 512 * MB; // guess
 +    return mem;
-+#elif OS(LINUX)
-     struct sysinfo si;
-     sysinfo(&si);
-     return si.totalram * si.mem_unit;
+ #else
+ #error "Missing a platform specific way of determining the available RAM"
+ #endif // OS(LINUX) || OS(FREEBSD)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.16 2019/09/24 09:17:09 robert Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.17 2020/09/13 10:28:45 ajacoutot Exp $
 
 Our ar(1) is too old and have not support for `T'.
 Put the internal library path first so that we can 
@@ -22,7 +22,7 @@ Index: Source/cmake/OptionsCommon.cmake
      endif ()
  endif ()
  
-@@ -171,3 +171,6 @@ check_type_size("__int128_t" INT128_VALUE)
+@@ -153,3 +153,6 @@ check_type_size("__int128_t" INT128_VALUE)
  if (HAVE_INT128_VALUE)
    SET_AND_EXPOSE_TO_BUILD(HAVE_INT128_T INT128_VALUE)
  endif ()
