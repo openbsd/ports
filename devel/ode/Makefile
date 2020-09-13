@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2020/09/04 20:06:58 kirby Exp $
+# $OpenBSD: Makefile,v 1.22 2020/09/13 12:11:30 kirby Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	4.0	# 8.0
 DISTNAME = 	ode-0.16
 CATEGORIES =	devel
+REVISION =      0
 
 HOMEPAGE =	https://www.ode.org/
 
