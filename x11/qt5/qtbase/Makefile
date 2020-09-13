@@ -37,6 +37,15 @@ SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.9
 SHARED_LIBS +=  Qt5OpenGLExtensions          0.0 # 5.13
 SHARED_LIBS +=  Qt5XcbQpa                    0.0 # 5.13
 
+WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext atk-1.0
+WANTLIB += c cairo cairo-gobject crypto cups dbus-1 double-conversion
+WANTLIB += drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
+WANTLIB += pcre2-16 png sqlite3 ssl xcb xcb-glx xcb-icccm xcb-image
+WANTLIB += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
+WANTLIB += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xinput
+WANTLIB += xcb-xkb xkbcommon xkbcommon-x11 z zstd
 
 WANTLIB-global =
 

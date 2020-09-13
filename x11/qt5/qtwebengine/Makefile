@@ -13,6 +13,10 @@ DPB_PROPERTIES =	lonesome
 QT5NAME =		QtWebEngine
 REVISION =		1
 
+VERSION =		5.13.2
+DISTNAME =		qtwebengine-everywhere-src-${VERSION}
+MASTER_SITES =		https://download.qt.io/official_releases/qt/5.13/${VERSION}/submodules/
+
 COMMENT =		Chromium-based web engine for Qt5
 
 CATEGORIES =		www

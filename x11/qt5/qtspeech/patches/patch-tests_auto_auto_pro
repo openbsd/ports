@@ -1,0 +1,12 @@
+$OpenBSD$
+
+Index: tests/auto/auto.pro
+--- tests/auto/auto.pro.orig
++++ tests/auto/auto.pro
+@@ -1,5 +1,4 @@
+ TEMPLATE = subdirs
+ 
+ SUBDIRS += \
+-    cmake \
+-    texttospeech
++    cmake

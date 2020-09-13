@@ -8,8 +8,9 @@ include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qserialport_p.h
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qserialportinfo_p.h
+include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qtntdll_p.h
+include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qtserialport-config_p.h
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qtudev_p.h
-include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qwinoverlappedionotifier_p.h
 include/X11/qt5/QtSerialPort/QSerialPort
 include/X11/qt5/QtSerialPort/QSerialPortInfo
 include/X11/qt5/QtSerialPort/QtSerialPort
@@ -18,6 +19,7 @@ include/X11/qt5/QtSerialPort/QtSerialPortVersion
 include/X11/qt5/QtSerialPort/qserialport.h
 include/X11/qt5/QtSerialPort/qserialportglobal.h
 include/X11/qt5/QtSerialPort/qserialportinfo.h
+include/X11/qt5/QtSerialPort/qtserialport-config.h
 include/X11/qt5/QtSerialPort/qtserialportversion.h
 @lib lib/libQt5SerialPort.so.${LIBQt5SerialPort_VERSION}
 lib/pkgconfig/Qt5SerialPort.pc

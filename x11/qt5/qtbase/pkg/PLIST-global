@@ -60,6 +60,8 @@ share/doc/qt5/global/includes-online/
 share/doc/qt5/global/includes-online/search.qdoc
 share/doc/qt5/global/includes/examples-run.qdocinc
 share/doc/qt5/global/includes/module-use.qdocinc
+share/doc/qt5/global/includes/standardpath/
+share/doc/qt5/global/includes/standardpath/functiondocs.qdocinc
 share/doc/qt5/global/macros.qdocconf
 share/doc/qt5/global/manifest-meta.qdocconf
 share/doc/qt5/global/qt-cpp-defines.qdocconf

@@ -1,0 +1,30 @@
+$OpenBSD$
+
+Index: src/plugins/tts/tts.pro
+--- src/plugins/tts/tts.pro.orig
++++ src/plugins/tts/tts.pro
+@@ -2,11 +2,13 @@ TEMPLATE = subdirs
+ 
+ QT_FOR_CONFIG += texttospeech-private
+ unix {
+-    qtConfig(speechd) {
++    CONFIG += link_pkgconfig
++    config_speechd | packagesExist(speech-dispatcher) {
+         SUBDIRS += speechdispatcher
+     }
+ }
+ 
++
+ windows:!winrt: SUBDIRS += sapi
+ winrt: SUBDIRS += winrt
+ 
+@@ -14,7 +16,7 @@ osx: SUBDIRS += osx
+ uikit: SUBDIRS += ios
+ 
+ android: SUBDIRS += android
+-
+-qtConfig(flite) {
++config_flite | config_flite_alsa {
+     qtHaveModule(multimedia): SUBDIRS += flite
+ }
++

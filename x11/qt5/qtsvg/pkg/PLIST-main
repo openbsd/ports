@@ -27,11 +27,11 @@ include/X11/qt5/QtSvg/qtsvgglobal.h
 include/X11/qt5/QtSvg/qtsvgversion.h
 @lib lib/libQt5Svg.so.${LIBQt5Svg_VERSION}
 lib/pkgconfig/Qt5Svg.pc
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake
 lib/qt5/cmake/Qt5Svg/
 lib/qt5/cmake/Qt5Svg/Qt5SvgConfig.cmake
 lib/qt5/cmake/Qt5Svg/Qt5SvgConfigVersion.cmake
-lib/qt5/cmake/Qt5Svg/Qt5Svg_QSvgIconPlugin.cmake
-lib/qt5/cmake/Qt5Svg/Qt5Svg_QSvgPlugin.cmake
 lib/qt5/examples/
 lib/qt5/libQt5Svg.la
 lib/qt5/libQt5Svg.prl

@@ -4,6 +4,7 @@ include/X11/qt5/QtTextToSpeech/${VERSION}/
 include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/
 include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/private/
 include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/private/qtexttospeech_p.h
+include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/private/qttexttospeech-config_p.h
 include/X11/qt5/QtTextToSpeech/${VERSION}/QtTextToSpeech/private/qvoice_p.h
 include/X11/qt5/QtTextToSpeech/QTextToSpeech
 include/X11/qt5/QtTextToSpeech/QTextToSpeechEngine
@@ -16,6 +17,7 @@ include/X11/qt5/QtTextToSpeech/qtexttospeech.h
 include/X11/qt5/QtTextToSpeech/qtexttospeech_global.h
 include/X11/qt5/QtTextToSpeech/qtexttospeechengine.h
 include/X11/qt5/QtTextToSpeech/qtexttospeechplugin.h
+include/X11/qt5/QtTextToSpeech/qttexttospeech-config.h
 include/X11/qt5/QtTextToSpeech/qttexttospeechversion.h
 include/X11/qt5/QtTextToSpeech/qvoice.h
 @lib lib/libQt5TextToSpeech.so.${LIBQt5TextToSpeech_VERSION}

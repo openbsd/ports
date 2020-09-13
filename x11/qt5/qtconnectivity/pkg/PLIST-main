@@ -12,6 +12,8 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/battery1_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluetoothmanagement_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluez5_helper_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluez_data_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/btdelegates_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/btraii_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/device1_bluez5_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/device_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/devicediscoverybroadcastreceiver_p.h
@@ -36,7 +38,6 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/obex_transfer_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/objectmanager_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbluetooth_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtcentralmanager_p.h
-include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtchanneldelegate_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtconnectionmonitor_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtdeviceinquiry_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/osxbtdevicepair_p.h
@@ -60,7 +61,6 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothdevicedisco
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothdeviceinfo_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothhostinfo_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothlocaldevice_p.h
-include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothserver_osx_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothserver_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothservicediscoveryagent_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothserviceinfo_p.h
@@ -69,6 +69,7 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_blue
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_bluezdbus_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_dummy_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_osx_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_win_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocket_winrt_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothsocketbase_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferreply_bluez_p.h
@@ -80,8 +81,9 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qleadvertiser_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_android_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_bluez_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_bluezdbus_p.h
-include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_osx_p.h
-include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_darwin_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_dummy_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_win_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_winrt_new_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_winrt_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontrollerbase_p.h
@@ -89,6 +91,7 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergyservicepriv
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qprivatelinearbuffer_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qtbluetooth-config_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qtbluetoothglobal_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qwinlowenergybluetooth_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/remotedevicemanager_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/serveracceptancethread_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/service_p.h
