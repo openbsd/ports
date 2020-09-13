@@ -141,6 +141,7 @@ lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QShakeSensorGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QtSensorGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_genericSensorPlugin.cmake
 lib/qt5/examples/
+lib/qt5/examples/sensors/sensor_explorer/import/main.h
 lib/qt5/libQt5Sensors.la
 lib/qt5/libQt5Sensors.prl
 @lib lib/qt5/libQt5Sensors.so.${LIBQt5Sensors_VERSION}

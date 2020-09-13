@@ -2,6 +2,7 @@
 # Common source for Qt5 version
 
 QT5_VERSION =		5.15.1
+QT5_WEBENGINE_VERSION =		5.15.2
 QT5_DIST_VERSION =	5.15.1
 
 # This one is used for building dependencies for examples and documentation,

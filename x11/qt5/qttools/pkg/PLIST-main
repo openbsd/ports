@@ -199,12 +199,15 @@ include/X11/qt5/QtHelp/
 include/X11/qt5/QtHelp/${VERSION}/
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/
+include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qfilternamedialog_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpcollectionhandler_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpdbreader_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpengine_p.h
+include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpfiltersettings_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexreader_default_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexreader_p.h
 include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qhelpsearchindexwriter_default_p.h
+include/X11/qt5/QtHelp/${VERSION}/QtHelp/private/qoptionswidget_p.h
 include/X11/qt5/QtHelp/QCompressedHelpInfo
 include/X11/qt5/QtHelp/QHelpContentItem
 include/X11/qt5/QtHelp/QHelpContentModel
@@ -213,9 +216,11 @@ include/X11/qt5/QtHelp/QHelpEngine
 include/X11/qt5/QtHelp/QHelpEngineCore
 include/X11/qt5/QtHelp/QHelpFilterData
 include/X11/qt5/QtHelp/QHelpFilterEngine
+include/X11/qt5/QtHelp/QHelpFilterSettingsWidget
 include/X11/qt5/QtHelp/QHelpGlobal
 include/X11/qt5/QtHelp/QHelpIndexModel
 include/X11/qt5/QtHelp/QHelpIndexWidget
+include/X11/qt5/QtHelp/QHelpLink
 include/X11/qt5/QtHelp/QHelpSearchEngine
 include/X11/qt5/QtHelp/QHelpSearchQuery
 include/X11/qt5/QtHelp/QHelpSearchQueryWidget
@@ -231,7 +236,9 @@ include/X11/qt5/QtHelp/qhelpengine.h
 include/X11/qt5/QtHelp/qhelpenginecore.h
 include/X11/qt5/QtHelp/qhelpfilterdata.h
 include/X11/qt5/QtHelp/qhelpfilterengine.h
+include/X11/qt5/QtHelp/qhelpfiltersettingswidget.h
 include/X11/qt5/QtHelp/qhelpindexwidget.h
+include/X11/qt5/QtHelp/qhelplink.h
 include/X11/qt5/QtHelp/qhelpsearchengine.h
 include/X11/qt5/QtHelp/qhelpsearchquerywidget.h
 include/X11/qt5/QtHelp/qhelpsearchresultwidget.h
@@ -285,6 +292,9 @@ lib/qt5/Qt5UiPlugin.la
 @bin lib/qt5/bin/qtdiag
 @bin lib/qt5/bin/qtpaths
 @bin lib/qt5/bin/qtplugininfo
+lib/qt5/cmake/Qt5AttributionsScannerTools/
+lib/qt5/cmake/Qt5AttributionsScannerTools/Qt5AttributionsScannerToolsConfig.cmake
+lib/qt5/cmake/Qt5AttributionsScannerTools/Qt5AttributionsScannerToolsConfigVersion.cmake
 lib/qt5/cmake/Qt5Designer/
 lib/qt5/cmake/Qt5Designer/Qt5DesignerConfig.cmake
 lib/qt5/cmake/Qt5Designer/Qt5DesignerConfigVersion.cmake
@@ -292,6 +302,9 @@ lib/qt5/cmake/Qt5Designer/Qt5Designer_QQuickWidgetPlugin.cmake
 lib/qt5/cmake/Qt5DesignerComponents/
 lib/qt5/cmake/Qt5DesignerComponents/Qt5DesignerComponentsConfig.cmake
 lib/qt5/cmake/Qt5DesignerComponents/Qt5DesignerComponentsConfigVersion.cmake
+lib/qt5/cmake/Qt5DocTools/
+lib/qt5/cmake/Qt5DocTools/Qt5DocToolsConfig.cmake
+lib/qt5/cmake/Qt5DocTools/Qt5DocToolsConfigVersion.cmake
 lib/qt5/cmake/Qt5Help/
 lib/qt5/cmake/Qt5Help/Qt5HelpConfig.cmake
 lib/qt5/cmake/Qt5Help/Qt5HelpConfigExtras.cmake
@@ -306,7 +319,6 @@ lib/qt5/cmake/Qt5UiPlugin/Qt5UiPluginConfigVersion.cmake
 lib/qt5/cmake/Qt5UiTools/
 lib/qt5/cmake/Qt5UiTools/Qt5UiToolsConfig.cmake
 lib/qt5/cmake/Qt5UiTools/Qt5UiToolsConfigVersion.cmake
-lib/qt5/examples/
 lib/qt5/libQt5Designer.la
 lib/qt5/libQt5Designer.prl
 @lib lib/qt5/libQt5Designer.so.${LIBQt5Designer_VERSION}
