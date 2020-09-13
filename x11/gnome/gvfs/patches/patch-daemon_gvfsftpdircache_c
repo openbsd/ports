@@ -1,0 +1,16 @@
+$OpenBSD: patch-daemon_gvfsftpdircache_c,v 1.4 2020/09/13 08:54:00 ajacoutot Exp $
+
+64-bit time_t
+
+Index: daemon/gvfsftpdircache.c
+--- daemon/gvfsftpdircache.c.orig
++++ daemon/gvfsftpdircache.c
+@@ -720,7 +720,7 @@ g_vfs_ftp_dir_cache_funcs_process (GInputStream *     
+       mtime = mktime (&result.fe_time);
+       if (mtime != -1)
+         {
+-          char *etag = g_strdup_printf ("%ld", mtime);
++          char *etag = g_strdup_printf ("%lld", mtime);
+           g_file_info_set_attribute_string (info,
+                                             G_FILE_ATTRIBUTE_ETAG_VALUE,
+                                             etag);
