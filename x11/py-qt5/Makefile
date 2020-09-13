@@ -2,10 +2,9 @@
 
 COMMENT	=	python Qt5 bindings
 
-V=		5.13.2
+V=		5.15.1
 DISTNAME=	PyQt5-${V}
 PKGNAME=	py-qt5-${V}
-REVISION=	1
 
 CATEGORIES=	x11 devel
 
@@ -28,8 +27,8 @@ FLAVORS =	python3
 FLAVOR ?=
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.19.19v0 \
-		x11/py-sip-qt5${MODPY_FLAVOR}>=4.19.19 \
+RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.19.24v0 \
+		x11/py-sip-qt5${MODPY_FLAVOR}>=4.19.24 \
 		x11/dbus-python${MODPY_FLAVOR}
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
@@ -51,7 +50,7 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 
 NO_TEST=	Yes
 
-MASTER_SITES=	https://www.riverbankcomputing.com/static/Downloads/PyQt5/${V}/
+MASTER_SITES=	https://pypi.python.org/packages/source/P/PyQt5/
 
 MODULES=	lang/python \
 		x11/qt5
@@ -83,7 +82,7 @@ CONFIGURE_ARGS=	--verbose \
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
-SUBST_VARS +=	MODPY_MAJOR_VERSION V
+SUBST_VARS +=	MODPY_MAJOR_VERSION MODPY_BIN_SUFFIX V
 
 # the distfile has pyuic for both python 2 and 3, normally both are
 # installed and they're selected at runtime. this breaks bytecode

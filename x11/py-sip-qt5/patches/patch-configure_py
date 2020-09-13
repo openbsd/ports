@@ -3,7 +3,7 @@ $OpenBSD: patch-configure_py,v 1.1.1.1 2020/03/10 09:32:46 landry Exp $
 Index: configure.py
 --- configure.py.orig
 +++ configure.py
-@@ -270,7 +270,7 @@ def create_config(module, template, macros):
+@@ -271,7 +271,7 @@ def create_config(module, template, macros):
          "sip_version":      sip_version,
          "sip_version_str":  sip_version_str,
          "platform":         build_platform,

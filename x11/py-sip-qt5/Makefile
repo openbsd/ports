@@ -4,11 +4,10 @@ COMMENT =	sip extension for qt5
 
 # XXX  keep in sync with py-sip and carefully test with py-qt5 consumers
 
-MODPY_EGG_VERSION =	4.19.19
+MODPY_EGG_VERSION =	4.19.24
 DISTNAME =	sip-${MODPY_EGG_VERSION}
 PKGNAME =	py-sip-qt5-${MODPY_EGG_VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 HOMEPAGE =	https://www.riverbankcomputing.com/software/sip/intro
 
