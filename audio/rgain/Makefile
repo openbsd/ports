@@ -1,39 +1,31 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/03 20:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/13 12:04:50 ajacoutot Exp $
 
 COMMENT=	multi-format tools and Python module for ReplayGain
 
-# rgain no longer updated by original maintainer; newer (2019/07) py3 fork
-# at https://github.com/chaudum/rgain but it seems a bit early still
+MODPY_EGG_VERSION= 1.0.0
+DISTNAME=	rgain3-${MODPY_EGG_VERSION}
 
-MODPY_EGG_VERSION= 1.3.4
-DISTNAME=	rgain-${MODPY_EGG_VERSION}
-WRKDIST=	${WRKDIR}/fk-rgain-8df1a846a12c
-REVISION=	2
+#WRKDIST=	${WRKDIR}/fk-rgain-8df1a846a12c
 
 CATEGORIES=	audio
-
-HOMEPAGE=	https://bitbucket.org/fk/rgain
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-# pypi version has no test data, and is weirdly named anyway
-MASTER_SITES=	https://bitbucket.org/fk/rgain/get/
-DISTFILES=	${DISTNAME}{${MODPY_EGG_VERSION}}.tar.bz2
+MODPY_PI=	Yes
+MODPY_PYTEST=	Yes
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS=	textproc/py-docutils
-RUN_DEPENDS=	audio/py-mutagen \
-		devel/py-gobject3 \
+BUILD_DEPENDS=	textproc/py-docutils${MODPY_FLAVOR}
+
+RUN_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR} \
 		multimedia/gstreamer1/core \
 		multimedia/gstreamer1/plugins-libav \
 		multimedia/gstreamer1/plugins-base \
 		multimedia/gstreamer1/plugins-good
-TEST_DEPENDS=	${BASE_PKGPATH} \
-		devel/py-test
 
-do-test:
-	cd ${WRKSRC}; PYTHONPATH='.' py.test -v
+TEST_DEPENDS=	${BASE_PKGPATH}
 
 .include <bsd.port.mk>
