@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_kjs_collector_cpp,v 1.2 2017/06/07 17:03:38 rsadowski Exp $
+$OpenBSD: patch-src_kjs_collector_cpp,v 1.3 2020/09/13 12:29:31 rsadowski Exp $
 Allow to build & run on OpenBSD.
 Index: src/kjs/collector.cpp
 --- src/kjs/collector.cpp.orig
@@ -8,9 +8,9 @@ Index: src/kjs/collector.cpp
      pthread_t thread = pthread_self();
      if (stackBase == nullptr || thread != stackThread) {
 +#if defined(__OpenBSD__)
-+        stack_t sinfo;
-+        pthread_stackseg_np(thread, &sinfo);
-+        stackBase = sinfo.ss_sp;
++        stack_t ss;
++        int rc = pthread_stackseg_np(thread, &ss);
++        stackBase = (void*)((size_t) ss.ss_sp - ss.ss_size);
 +#else
          pthread_attr_t sattr;
  #if HAVE_PTHREAD_NP_H || defined(__NetBSD__)
