@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_fast_library_cpp,v 1.4 2020/09/13 14:28:32 jasper Exp $
+
+Index: src/fast_library.cpp
+--- src/fast_library.cpp.orig
++++ src/fast_library.cpp
+@@ -29,6 +29,11 @@
+ #include <sys/endian.h>
+ #endif
+ 
++// For pthread_set_name_np
++#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
++#include <pthread_np.h>
++#endif
++
+ boost::regex regular_expression_cidr_pattern("^\\d+\\.\\d+\\.\\d+\\.\\d+\\/\\d+$");
+ boost::regex regular_expression_host_pattern("^\\d+\\.\\d+\\.\\d+\\.\\d+$");
+ 
+@@ -1246,12 +1251,16 @@ bool set_boost_process_name(boost::thread* thread, std
+     char new_process_name[16];
+     strcpy(new_process_name, process_name.c_str());
+ 
++#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
++    pthread_set_name_np(thread->native_handle(), new_process_name);
++#else
+     int result = pthread_setname_np(thread->native_handle(), new_process_name);
+ 
+     if (result != 0) {
+         logger << log4cpp::Priority::ERROR << "pthread_setname_np failed with code: " << result;
+         logger << log4cpp::Priority::ERROR << "Failed to set process name for " << process_name;
+     }
++#endif
+ 
+     return true;
+ }
