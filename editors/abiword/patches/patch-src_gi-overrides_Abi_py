@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gi-overrides_Abi_py,v 1.1 2020/09/13 10:10:07 ajacoutot Exp $
+
+https://src.fedoraproject.org/rpms/abiword/blob/master/f/abiword-3.0.2-explicit-python.patch
+
+Index: src/gi-overrides/Abi.py
+--- src/gi-overrides/Abi.py.orig
++++ src/gi-overrides/Abi.py
+@@ -1,4 +1,6 @@
+ import sys
++import gi
++gi.require_version('Gtk', '3.0')
+ from gi.repository import Gtk
+ from ..overrides import override
+ from ..importer import modules

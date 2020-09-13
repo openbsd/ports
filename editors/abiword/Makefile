@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.129 2019/12/31 14:27:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2020/09/13 10:10:07 ajacoutot Exp $
 
-BROKEN=		Abort trap on startup (pango related?)
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
 COMMENT=	free cross-platform WYSIWYG word processor
@@ -34,6 +33,8 @@ MASTER_SITES=	http://www.abisource.com/downloads/abiword/${VERSION}/source/
 
 MODULES=	lang/python
 
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
+
 COMPILER =	base-clang ports-gcc
 
 .if ${MACHINE_ARCH} == "hppa"
@@ -43,13 +44,13 @@ CFLAGS +=	-O0
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	devel/gobject-introspection \
-		devel/py-gobject3
+		devel/py-gobject3${MODPY_FLAVOR}
 
 # plugins/openxml.so
 BUILD_DEPENDS +=devel/boost
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-gobject3 \
+		devel/py-gobject3${MODPY_FLAVOR} \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS=	devel/fribidi \
