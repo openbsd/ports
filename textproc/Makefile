@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.644 2020/09/07 08:41:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.645 2020/09/13 13:03:26 kmos Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -469,8 +469,6 @@
      SUBDIR += py-sphinx_rtd_theme,python3
      SUBDIR += py-stemmer
      SUBDIR += py-stemmer,python3
-     SUBDIR += py-termcolor
-     SUBDIR += py-termcolor,python3
      SUBDIR += py-textfsm
      SUBDIR += py-textfsm,python3
      SUBDIR += py-toml
