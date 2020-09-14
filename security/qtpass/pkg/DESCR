@@ -1,0 +1,10 @@
+QtPass is a GUI for pass, the standard unix password manager.
+
+Password management should be simple and follow the Unix philosophy.
+With pass, each password lives inside of a gpg encrypted file whose
+filename is the title of the website or resource that requires the
+password.
+
+QtPass is a GUI client which allows easy restructuring of your
+password-store. It can also sit in the system tray, so your passwords
+are right at hand when you need them.
