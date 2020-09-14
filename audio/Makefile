@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.433 2020/07/15 20:42:27 kn Exp $
+# $OpenBSD: Makefile,v 1.434 2020/09/14 14:31:57 kmos Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -44,7 +44,6 @@
      SUBDIR += flac123
      SUBDIR += flite
      SUBDIR += fluidsynth
-     SUBDIR += fookebox
      SUBDIR += freealut
      SUBDIR += generaluser-gs-soundfont
      SUBDIR += gimmix
