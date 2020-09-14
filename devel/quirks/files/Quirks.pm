@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1055 2020/09/13 13:21:10 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1056 2020/09/14 09:58:20 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2065,6 +2065,7 @@ my $cve = {
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
 	'net/zeromq' => 'zeromq-<4.3.3',
+	'net/libssh' => 'libssh-<0.9.5',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
