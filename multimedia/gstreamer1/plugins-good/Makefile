@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/12/08 10:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2020/09/14 06:03:13 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -28,7 +28,7 @@ WANTLIB-main +=	gstvideo-1.0
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope
 .if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
-WANTLIB-main += $(LIBECXX)
+WANTLIB-main += ${COMPILER_LIBCXX}
 .endif
 
 WANTLIB-pulse += ${WANTLIB} pulse
@@ -68,16 +68,17 @@ CONFIGURE_ARGS=		-Daalib=disabled \
 			-Dosxvideo=disabled \
 			-Dqt5=disabled \
 			-Dwaveform=disabled \
-			-Dv4l2-gudev=disabled
+			-Dv4l2-gudev=disabled \
+			-Drpicamsrc=disabled
+
+# XXX
+# ../gst-plugins-good-1.18.0/gst/deinterlace/x86/yadif.asm:28: error: segment name `.rodata align=16' not recognized
+# ../gst-plugins-good-1.18.0/gst/deinterlace/x86/yadif.asm:124: ... from macro `SECTION_RODATA' defined here
+#.if ${MACHINE_ARCH} == "amd64"
+#BUILD_DEPENDS +=	devel/nasm
+#.endif
+CONFIGURE_ARGS +=	-Dasm=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-pre-configure:
-	sed -i 's,/dev/dsp,/dev/audio,g' \
-		${WRKSRC}/docs/plugins/gst-plugins-good-plugins.args \
-		${WRKSRC}/docs/plugins/html/gst-plugins-good-plugins-osssink.html \
-		${WRKSRC}/docs/plugins/html/gst-plugins-good-plugins-osssrc.html \
-		${WRKSRC}/sys/oss/gstosssink.c \
-		${WRKSRC}/sys/oss/gstosssrc.c
 
 .include <bsd.port.mk>

@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.76 2019/12/08 10:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2020/09/14 06:03:12 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
 
-SHARED_LIBS += gsttag-1.0                5.0 # 0.1602.0
-SHARED_LIBS += gstfft-1.0                5.0 # 0.1602.0
-SHARED_LIBS += gstvideo-1.0              5.0 # 0.1602.0
-SHARED_LIBS += gstaudio-1.0              5.0 # 0.1602.0
-SHARED_LIBS += gstrtp-1.0                5.0 # 0.1602.0
-SHARED_LIBS += gstsdp-1.0                5.0 # 0.1602.0
-SHARED_LIBS += gstrtsp-1.0               5.0 # 0.1602.0
-SHARED_LIBS += gstpbutils-1.0            5.0 # 0.1602.0
-SHARED_LIBS += gstriff-1.0               5.0 # 0.1602.0
-SHARED_LIBS += gstapp-1.0                5.0 # 0.1602.0
-SHARED_LIBS += gstallocators-1.0         4.0 # 0.1602.0
-SHARED_LIBS += gstgl-1.0                 4.0 # 0.1602.0
+SHARED_LIBS += gsttag-1.0                6.0 # 0.1800.0
+SHARED_LIBS += gstfft-1.0                6.0 # 0.1800.0
+SHARED_LIBS += gstvideo-1.0              6.0 # 0.1800.0
+SHARED_LIBS += gstaudio-1.0              6.0 # 0.1800.0
+SHARED_LIBS += gstrtp-1.0                6.0 # 0.1800.0
+SHARED_LIBS += gstsdp-1.0                6.0 # 0.1800.0
+SHARED_LIBS += gstrtsp-1.0               6.0 # 0.1800.0
+SHARED_LIBS += gstpbutils-1.0            6.0 # 0.1800.0
+SHARED_LIBS += gstriff-1.0               6.0 # 0.1800.0
+SHARED_LIBS += gstapp-1.0                6.0 # 0.1800.0
+SHARED_LIBS += gstallocators-1.0         5.0 # 0.1800.0
+SHARED_LIBS += gstgl-1.0                 5.0 # 0.1800.0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
@@ -56,12 +56,5 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/sndio
-	sed -i 's,/dev/cdrom1,/dev/rcd1c,g' \
-		${WRKSRC}/tests/check/libs/audiocdsrc.c
-	sed -i 's,/dev/cdrom,/dev/rcd0c,g' \
-		${WRKSRC}/docs/plugins/gst-plugins-base-plugins.args \
-		${WRKSRC}/gst-libs/gst/audio/gstaudiocdsrc.c \
-		${WRKSRC}/ext/cdparanoia/gstcdparanoiasrc.c \
-		${WRKSRC}/tests/check/libs/audiocdsrc.c
 
 .include <bsd.port.mk>

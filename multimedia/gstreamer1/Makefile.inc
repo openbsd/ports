@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.62 2019/12/08 10:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.63 2020/09/14 06:03:11 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -15,7 +15,7 @@
 
 PORTROACH=		limitw:1,even
 
-V ?=			1.16.2
+V ?=			1.18.0
 API=			1.0
 SUBST_VARS +=		API
 
@@ -41,14 +41,19 @@ COMPILER_LANGS ?=	c
 .if empty(CONFIGURE_STYLE)
 MODULES +=		devel/meson
 BUILD_DEPENDS +=	devel/gettext,-tools # -Dnls
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+# X11BASE needed (at least) to find libdrm/drm_fourcc.h in plugins-base
+CONFIGURE_ENV +=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 CONFIGURE_ARGS +=	-Dbenchmarks=disabled \
 			-Dgtk_doc=disabled \
 			-Dpackage-name="OpenBSD ${DISTNAME} package" \
 			-Dpackage-origin="https://www.openbsd.org/"
 
-# some BDEP on gtk+2|gtk+3
+# BDEP on gtk+3, gmp, gsl
 CONFIGURE_ARGS +=	-Dexamples=disabled
 CONFIGURE_ARGS +=	-Dtests=disabled
+
+# requires hotdoc
+CONFIGURE_ARGS +=	-Ddoc=disabled
+
 .endif

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.32 2019/12/08 10:16:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/09/14 06:03:12 ajacoutot Exp $
+@bin bin/gst-transcoder-${API}
 include/gstreamer-${API}/gst/audio/audio-bad-prelude.h
 include/gstreamer-${API}/gst/audio/gstnonstreamaudiodecoder.h
 include/gstreamer-${API}/gst/audio/gstplanaraudioadapter.h
@@ -9,6 +10,7 @@ include/gstreamer-${API}/gst/basecamerabinsrc/gstcamerabin-enum.h
 include/gstreamer-${API}/gst/basecamerabinsrc/gstcamerabinpreview.h
 include/gstreamer-${API}/gst/codecparsers/
 include/gstreamer-${API}/gst/codecparsers/codecparsers-prelude.h
+include/gstreamer-${API}/gst/codecparsers/gstav1parser.h
 include/gstreamer-${API}/gst/codecparsers/gsth264parser.h
 include/gstreamer-${API}/gst/codecparsers/gsth265parser.h
 include/gstreamer-${API}/gst/codecparsers/gstjpeg2000sampling.h
@@ -53,12 +55,16 @@ include/gstreamer-${API}/gst/sctp/
 include/gstreamer-${API}/gst/sctp/sctp-prelude.h
 include/gstreamer-${API}/gst/sctp/sctpreceivemeta.h
 include/gstreamer-${API}/gst/sctp/sctpsendmeta.h
+include/gstreamer-${API}/gst/transcoder/
+include/gstreamer-${API}/gst/transcoder/gsttranscoder.h
+include/gstreamer-${API}/gst/transcoder/transcoder-prelude.h
 include/gstreamer-${API}/gst/uridownloader/
 include/gstreamer-${API}/gst/uridownloader/gstfragment.h
 include/gstreamer-${API}/gst/uridownloader/gsturidownloader.h
 include/gstreamer-${API}/gst/uridownloader/gsturidownloader_debug.h
 include/gstreamer-${API}/gst/uridownloader/uridownloader-prelude.h
 include/gstreamer-${API}/gst/webrtc/
+include/gstreamer-${API}/gst/webrtc/datachannel.h
 include/gstreamer-${API}/gst/webrtc/dtlstransport.h
 include/gstreamer-${API}/gst/webrtc/icetransport.h
 include/gstreamer-${API}/gst/webrtc/rtcsessiondescription.h
@@ -68,9 +74,12 @@ include/gstreamer-${API}/gst/webrtc/rtptransceiver.h
 include/gstreamer-${API}/gst/webrtc/webrtc-enumtypes.h
 include/gstreamer-${API}/gst/webrtc/webrtc.h
 include/gstreamer-${API}/gst/webrtc/webrtc_fwd.h
+lib/girepository-${API}/GstBadAudio-${API}.typelib
+lib/girepository-${API}/GstCodecs-${API}.typelib
 lib/girepository-${API}/GstInsertBin-${API}.typelib
 lib/girepository-${API}/GstMpegts-${API}.typelib
 lib/girepository-${API}/GstPlayer-${API}.typelib
+lib/girepository-${API}/GstTranscoder-${API}.typelib
 lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstaccurip.so
 @so lib/gstreamer-${API}/libgstadpcmdec.so
@@ -91,8 +100,9 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstclosedcaption.so
 @so lib/gstreamer-${API}/libgstcoloreffects.so
 @so lib/gstreamer-${API}/libgstcolormanagement.so
-@so lib/gstreamer-${API}/libgstdashdemux.so
+@so lib/gstreamer-${API}/libgstdash.so
 @so lib/gstreamer-${API}/libgstdebugutilsbad.so
+@so lib/gstreamer-${API}/libgstdvbsubenc.so
 @so lib/gstreamer-${API}/libgstdvbsuboverlay.so
 @so lib/gstreamer-${API}/libgstdvdspu.so
 @so lib/gstreamer-${API}/libgstfaceoverlay.so
@@ -112,7 +122,6 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstivtc.so
 @so lib/gstreamer-${API}/libgstjp2kdecimator.so
 @so lib/gstreamer-${API}/libgstjpegformat.so
-@so lib/gstreamer-${API}/libgstkms.so
 @so lib/gstreamer-${API}/libgstlegacyrawparse.so
 @so lib/gstreamer-${API}/libgstmidi.so
 @so lib/gstreamer-${API}/libgstmms.so
@@ -122,13 +131,17 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstmpegtsmux.so
 @so lib/gstreamer-${API}/libgstmxf.so
 @so lib/gstreamer-${API}/libgstnetsim.so
+@so lib/gstreamer-${API}/libgstnvcodec.so
 @so lib/gstreamer-${API}/libgstopusparse.so
 @so lib/gstreamer-${API}/libgstpcapparse.so
 @so lib/gstreamer-${API}/libgstpnm.so
 @so lib/gstreamer-${API}/libgstproxy.so
 @so lib/gstreamer-${API}/libgstremovesilence.so
 @so lib/gstreamer-${API}/libgstrfbsrc.so
+@so lib/gstreamer-${API}/libgstrist.so
 @so lib/gstreamer-${API}/libgstrsvg.so
+@so lib/gstreamer-${API}/libgstrtmp2.so
+@so lib/gstreamer-${API}/libgstrtpmanagerbad.so
 @so lib/gstreamer-${API}/libgstrtponvif.so
 @so lib/gstreamer-${API}/libgstsdpelem.so
 @so lib/gstreamer-${API}/libgstsegmentclip.so
@@ -139,7 +152,9 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstsoundtouch.so
 @so lib/gstreamer-${API}/libgstspeed.so
 @so lib/gstreamer-${API}/libgstsubenc.so
+@so lib/gstreamer-${API}/libgstswitchbin.so
 @so lib/gstreamer-${API}/libgsttimecode.so
+@so lib/gstreamer-${API}/libgsttranscode.so
 @so lib/gstreamer-${API}/libgstttmlsubs.so
 @so lib/gstreamer-${API}/libgstvideofiltersbad.so
 @so lib/gstreamer-${API}/libgstvideoframe_audiolevel.so
@@ -147,31 +162,51 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstvideosignal.so
 @so lib/gstreamer-${API}/libgstvmnc.so
 @so lib/gstreamer-${API}/libgsty4mdec.so
-@so lib/gstreamer-${API}/libgstyadif.so
 @lib lib/libgstadaptivedemux-${API}.so.${LIBgstadaptivedemux-${API}_VERSION}
 @lib lib/libgstbadaudio-${API}.so.${LIBgstbadaudio-${API}_VERSION}
 @lib lib/libgstbasecamerabinsrc-${API}.so.${LIBgstbasecamerabinsrc-${API}_VERSION}
 @lib lib/libgstcodecparsers-${API}.so.${LIBgstcodecparsers-${API}_VERSION}
+@lib lib/libgstcodecs-${API}.so.${LIBgstcodecs-${API}_VERSION}
 @lib lib/libgstinsertbin-${API}.so.${LIBgstinsertbin-${API}_VERSION}
 @lib lib/libgstisoff-${API}.so.${LIBgstisoff-${API}_VERSION}
 @lib lib/libgstmpegts-${API}.so.${LIBgstmpegts-${API}_VERSION}
 @lib lib/libgstphotography-${API}.so.${LIBgstphotography-${API}_VERSION}
 @lib lib/libgstplayer-${API}.so.${LIBgstplayer-${API}_VERSION}
 @lib lib/libgstsctp-${API}.so.${LIBgstsctp-${API}_VERSION}
+@lib lib/libgsttranscoder-${API}.so.${LIBgsttranscoder-${API}_VERSION}
 @lib lib/libgsturidownloader-${API}.so.${LIBgsturidownloader-${API}_VERSION}
 @lib lib/libgstwebrtc-${API}.so.${LIBgstwebrtc-${API}_VERSION}
 lib/pkgconfig/gstreamer-bad-audio-${API}.pc
 lib/pkgconfig/gstreamer-codecparsers-${API}.pc
 lib/pkgconfig/gstreamer-insertbin-${API}.pc
 lib/pkgconfig/gstreamer-mpegts-${API}.pc
+lib/pkgconfig/gstreamer-photography-${API}.pc
 lib/pkgconfig/gstreamer-player-${API}.pc
 lib/pkgconfig/gstreamer-plugins-bad-${API}.pc
 lib/pkgconfig/gstreamer-sctp-${API}.pc
+lib/pkgconfig/gstreamer-transcoder-${API}.pc
 lib/pkgconfig/gstreamer-webrtc-${API}.pc
+share/gir-${API}/GstBadAudio-${API}.gir
+share/gir-${API}/GstCodecs-${API}.gir
 share/gir-${API}/GstInsertBin-${API}.gir
 share/gir-${API}/GstMpegts-${API}.gir
 share/gir-${API}/GstPlayer-${API}.gir
+share/gir-${API}/GstTranscoder-${API}.gir
 share/gir-${API}/GstWebRTC-${API}.gir
+share/gstreamer-${API}/encoding-profiles/
+share/gstreamer-${API}/encoding-profiles/device/
+share/gstreamer-${API}/encoding-profiles/device/dvd.gep
+share/gstreamer-${API}/encoding-profiles/file-extension/
+share/gstreamer-${API}/encoding-profiles/file-extension/avi.gep
+share/gstreamer-${API}/encoding-profiles/file-extension/flv.gep
+share/gstreamer-${API}/encoding-profiles/file-extension/mkv.gep
+share/gstreamer-${API}/encoding-profiles/file-extension/mp3.gep
+share/gstreamer-${API}/encoding-profiles/file-extension/mp4.gep
+share/gstreamer-${API}/encoding-profiles/file-extension/oga.gep
+share/gstreamer-${API}/encoding-profiles/file-extension/ogv.gep
+share/gstreamer-${API}/encoding-profiles/file-extension/webm.gep
+share/gstreamer-${API}/encoding-profiles/online-services/
+share/gstreamer-${API}/encoding-profiles/online-services/youtube.gep
 share/gstreamer-${API}/presets/
 share/gstreamer-${API}/presets/GstFreeverb.prs
 share/locale/af/LC_MESSAGES/gst-plugins-bad-${API}.mo

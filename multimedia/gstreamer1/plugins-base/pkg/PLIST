@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/12/08 10:16:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/09/14 06:03:13 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.14.0
 @bin bin/gst-device-monitor-${API}
 @bin bin/gst-discoverer-${API}
@@ -52,9 +52,11 @@ include/gstreamer-${API}/gst/fft/gstffts16.h
 include/gstreamer-${API}/gst/fft/gstffts32.h
 include/gstreamer-${API}/gst/gl/
 include/gstreamer-${API}/gst/gl/egl/
+include/gstreamer-${API}/gst/gl/egl/egl.h
 include/gstreamer-${API}/gst/gl/egl/gstegl.h
 include/gstreamer-${API}/gst/gl/egl/gsteglimage.h
 include/gstreamer-${API}/gst/gl/egl/gstgldisplay_egl.h
+include/gstreamer-${API}/gst/gl/egl/gstgldisplay_egl_device.h
 include/gstreamer-${API}/gst/gl/egl/gstglmemoryegl.h
 include/gstreamer-${API}/gst/gl/gl-enumtypes.h
 include/gstreamer-${API}/gst/gl/gl-prelude.h
@@ -81,6 +83,7 @@ include/gstreamer-${API}/gst/gl/gstgl_fwd.h
 include/gstreamer-${API}/gst/gl/gstglapi.h
 include/gstreamer-${API}/gst/gl/gstglbasefilter.h
 include/gstreamer-${API}/gst/gl/gstglbasememory.h
+include/gstreamer-${API}/gst/gl/gstglbasesrc.h
 include/gstreamer-${API}/gst/gl/gstglbuffer.h
 include/gstreamer-${API}/gst/gl/gstglbufferpool.h
 include/gstreamer-${API}/gst/gl/gstglcolorconvert.h
@@ -108,6 +111,7 @@ include/gstreamer-${API}/gst/gl/gstglviewconvert.h
 include/gstreamer-${API}/gst/gl/gstglwindow.h
 include/gstreamer-${API}/gst/gl/x11/
 include/gstreamer-${API}/gst/gl/x11/gstgldisplay_x11.h
+include/gstreamer-${API}/gst/gl/x11/x11.h
 include/gstreamer-${API}/gst/pbutils/
 include/gstreamer-${API}/gst/pbutils/codec-utils.h
 include/gstreamer-${API}/gst/pbutils/descriptions.h
@@ -189,6 +193,7 @@ include/gstreamer-${API}/gst/video/video-enumtypes.h
 include/gstreamer-${API}/gst/video/video-event.h
 include/gstreamer-${API}/gst/video/video-format.h
 include/gstreamer-${API}/gst/video/video-frame.h
+include/gstreamer-${API}/gst/video/video-hdr.h
 include/gstreamer-${API}/gst/video/video-info.h
 include/gstreamer-${API}/gst/video/video-multiview.h
 include/gstreamer-${API}/gst/video/video-overlay-composition.h
@@ -204,6 +209,8 @@ lib/girepository-${API}/GstAllocators-${API}.typelib
 lib/girepository-${API}/GstApp-${API}.typelib
 lib/girepository-${API}/GstAudio-${API}.typelib
 lib/girepository-${API}/GstGL-${API}.typelib
+lib/girepository-${API}/GstGLEGL-${API}.typelib
+lib/girepository-${API}/GstGLX11-${API}.typelib
 lib/girepository-${API}/GstPbutils-${API}.typelib
 lib/girepository-${API}/GstRtp-${API}.typelib
 lib/girepository-${API}/GstRtsp-${API}.typelib
@@ -263,6 +270,9 @@ lib/pkgconfig/gstreamer-app-${API}.pc
 lib/pkgconfig/gstreamer-audio-${API}.pc
 lib/pkgconfig/gstreamer-fft-${API}.pc
 lib/pkgconfig/gstreamer-gl-${API}.pc
+lib/pkgconfig/gstreamer-gl-egl-${API}.pc
+lib/pkgconfig/gstreamer-gl-prototypes-${API}.pc
+lib/pkgconfig/gstreamer-gl-x11-${API}.pc
 lib/pkgconfig/gstreamer-pbutils-${API}.pc
 lib/pkgconfig/gstreamer-plugins-base-${API}.pc
 lib/pkgconfig/gstreamer-riff-${API}.pc
@@ -278,6 +288,8 @@ share/gir-${API}/GstAllocators-${API}.gir
 share/gir-${API}/GstApp-${API}.gir
 share/gir-${API}/GstAudio-${API}.gir
 share/gir-${API}/GstGL-${API}.gir
+share/gir-${API}/GstGLEGL-${API}.gir
+share/gir-${API}/GstGLX11-${API}.gir
 share/gir-${API}/GstPbutils-${API}.gir
 share/gir-${API}/GstRtp-${API}.gir
 share/gir-${API}/GstRtsp-${API}.gir

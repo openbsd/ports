@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/12/08 10:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2020/09/14 06:03:13 ajacoutot Exp $
 
 COMMENT=		ugly elements for GStreamer
 
@@ -24,9 +24,5 @@ CONFIGURE_ARGS=		-Da52dec=disabled \
 			-Dsidplay=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-pre-configure:
-	sed -i 's,/dev/dvd,/dev/rcd0c,g' \
-		${WRKSRC}/ext/dvdread/dvdreadsrc.c
 
 .include <bsd.port.mk>

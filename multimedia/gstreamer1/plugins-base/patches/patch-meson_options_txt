@@ -1,9 +1,9 @@
-$OpenBSD: patch-meson_options_txt,v 1.1 2019/04/21 08:49:42 ajacoutot Exp $
+$OpenBSD: patch-meson_options_txt,v 1.2 2020/09/14 06:03:13 ajacoutot Exp $
 
 Index: meson_options.txt
 --- meson_options.txt.orig
 +++ meson_options.txt
-@@ -53,6 +53,7 @@ option('volume', type : 'feature', value : 'auto')
+@@ -54,6 +54,7 @@ option('volume', type : 'feature', value : 'auto')
  
  # Feature options for plugins with external deps
  option('alsa', type : 'feature', value : 'auto', description : 'ALSA audio source/sink plugin')
