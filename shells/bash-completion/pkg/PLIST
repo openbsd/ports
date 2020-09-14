@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/07/01 13:59:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/14 09:54:52 jasper Exp $
 share/bash-completion/
 share/bash-completion/bash_completion
 share/bash-completion/completions/
@@ -89,6 +89,7 @@ share/bash-completion/completions/avctrl
 share/bash-completion/completions/badblocks
 share/bash-completion/completions/bind
 share/bash-completion/completions/bk
+share/bash-completion/completions/bmake
 share/bash-completion/completions/brctl
 share/bash-completion/completions/bsdtar
 share/bash-completion/completions/btdownloadcurses.py
@@ -311,6 +312,7 @@ share/bash-completion/completions/installpkg
 share/bash-completion/completions/interdiff
 share/bash-completion/completions/invoke-rc.d
 share/bash-completion/completions/ip
+share/bash-completion/completions/ipcalc
 share/bash-completion/completions/iperf
 share/bash-completion/completions/iperf3
 share/bash-completion/completions/ipmitool
@@ -510,6 +512,7 @@ share/bash-completion/completions/postsuper
 share/bash-completion/completions/povray
 share/bash-completion/completions/ppc-koji
 share/bash-completion/completions/prelink
+share/bash-completion/completions/printenv
 share/bash-completion/completions/protoc
 share/bash-completion/completions/psql
 share/bash-completion/completions/puppet
@@ -534,7 +537,7 @@ share/bash-completion/completions/pwgen
 share/bash-completion/completions/pxz
 share/bash-completion/completions/py.test
 share/bash-completion/completions/py.test-2
-share/bash-completion/completions/py.test-3
+share/bash-completion/completions/py.test${MODPY_BIN_SUFFIX}
 share/bash-completion/completions/pycodestyle
 share/bash-completion/completions/pydoc
 share/bash-completion/completions/pydoc3
@@ -542,21 +545,28 @@ share/bash-completion/completions/pydocstyle
 share/bash-completion/completions/pyflakes
 share/bash-completion/completions/pylint
 share/bash-completion/completions/pylint-2
-share/bash-completion/completions/pylint-3
+share/bash-completion/completions/pylint${MODPY_BIN_SUFFIX}
 share/bash-completion/completions/pypy
 share/bash-completion/completions/pypy3
 share/bash-completion/completions/pytest
 share/bash-completion/completions/pytest-2
-share/bash-completion/completions/pytest-3
+share/bash-completion/completions/pytest${MODPY_BIN_SUFFIX}
 share/bash-completion/completions/python
 share/bash-completion/completions/python2
+share/bash-completion/completions/python2.7
 share/bash-completion/completions/python3
+share/bash-completion/completions/python3.3
+share/bash-completion/completions/python3.4
+share/bash-completion/completions/python3.5
+share/bash-completion/completions/python3.6
+share/bash-completion/completions/python3.7
+share/bash-completion/completions/python${MODPY_VERSION}
 share/bash-completion/completions/pyvenv
 share/bash-completion/completions/pyvenv-3.4
 share/bash-completion/completions/pyvenv-3.5
 share/bash-completion/completions/pyvenv-3.6
 share/bash-completion/completions/pyvenv-3.7
-share/bash-completion/completions/pyvenv-3.8
+share/bash-completion/completions/pyvenv-${MODPY_VERSION}
 share/bash-completion/completions/qdbus
 share/bash-completion/completions/qemu
 share/bash-completion/completions/qemu-kvm
@@ -603,6 +613,7 @@ share/bash-completion/completions/scp
 share/bash-completion/completions/screen
 share/bash-completion/completions/scrub
 share/bash-completion/completions/sdptool
+share/bash-completion/completions/secret-tool
 share/bash-completion/completions/setquota
 share/bash-completion/completions/sftp
 share/bash-completion/completions/sh
@@ -656,6 +667,7 @@ share/bash-completion/completions/tox
 share/bash-completion/completions/tracepath
 share/bash-completion/completions/tracepath6
 share/bash-completion/completions/tshark
+share/bash-completion/completions/tsig-keygen
 share/bash-completion/completions/tune2fs
 share/bash-completion/completions/typeset
 share/bash-completion/completions/ulimit
