@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2020/09/04 09:58:02 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.43 2020/09/14 06:34:26 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -12272,22 +12272,40 @@ nextcloud/apps/privacy/img/freedom.svg
 nextcloud/apps/privacy/img/knowledge.svg
 nextcloud/apps/privacy/js/
 nextcloud/apps/privacy/js/chunks/
+nextcloud/apps/privacy/js/chunks/0-47c5d586fda355004f68.js
+nextcloud/apps/privacy/js/chunks/0-47c5d586fda355004f68.js.map
 nextcloud/apps/privacy/js/chunks/0-779c9a1dd894d${MAJOR}ed27d.js
 nextcloud/apps/privacy/js/chunks/0-779c9a1dd894d${MAJOR}ed27d.js.map
+nextcloud/apps/privacy/js/chunks/1-47c5d586fda355004f68.js
+nextcloud/apps/privacy/js/chunks/1-47c5d586fda355004f68.js.map
 nextcloud/apps/privacy/js/chunks/1-779c9a1dd894d${MAJOR}ed27d.js
 nextcloud/apps/privacy/js/chunks/1-779c9a1dd894d${MAJOR}ed27d.js.map
+nextcloud/apps/privacy/js/chunks/2-47c5d586fda355004f68.js
+nextcloud/apps/privacy/js/chunks/2-47c5d586fda355004f68.js.map
 nextcloud/apps/privacy/js/chunks/2-779c9a1dd894d${MAJOR}ed27d.js
 nextcloud/apps/privacy/js/chunks/2-779c9a1dd894d${MAJOR}ed27d.js.map
+nextcloud/apps/privacy/js/chunks/3-47c5d586fda355004f68.js
+nextcloud/apps/privacy/js/chunks/3-47c5d586fda355004f68.js.map
 nextcloud/apps/privacy/js/chunks/3-779c9a1dd894d${MAJOR}ed27d.js
 nextcloud/apps/privacy/js/chunks/3-779c9a1dd894d${MAJOR}ed27d.js.map
+nextcloud/apps/privacy/js/chunks/5-47c5d586fda355004f68.js
+nextcloud/apps/privacy/js/chunks/5-47c5d586fda355004f68.js.map
 nextcloud/apps/privacy/js/chunks/5-779c9a1dd894d${MAJOR}ed27d.js
 nextcloud/apps/privacy/js/chunks/5-779c9a1dd894d${MAJOR}ed27d.js.map
+nextcloud/apps/privacy/js/chunks/6-47c5d586fda355004f68.js
+nextcloud/apps/privacy/js/chunks/6-47c5d586fda355004f68.js.map
 nextcloud/apps/privacy/js/chunks/6-779c9a1dd894d${MAJOR}ed27d.js
 nextcloud/apps/privacy/js/chunks/6-779c9a1dd894d${MAJOR}ed27d.js.map
+nextcloud/apps/privacy/js/chunks/7-47c5d586fda355004f68.js
+nextcloud/apps/privacy/js/chunks/7-47c5d586fda355004f68.js.map
 nextcloud/apps/privacy/js/chunks/7-779c9a1dd894d${MAJOR}ed27d.js
 nextcloud/apps/privacy/js/chunks/7-779c9a1dd894d${MAJOR}ed27d.js.map
+nextcloud/apps/privacy/js/chunks/8-47c5d586fda355004f68.js
+nextcloud/apps/privacy/js/chunks/8-47c5d586fda355004f68.js.map
 nextcloud/apps/privacy/js/chunks/8-779c9a1dd894d${MAJOR}ed27d.js
 nextcloud/apps/privacy/js/chunks/8-779c9a1dd894d${MAJOR}ed27d.js.map
+nextcloud/apps/privacy/js/chunks/9-47c5d586fda355004f68.js
+nextcloud/apps/privacy/js/chunks/9-47c5d586fda355004f68.js.map
 nextcloud/apps/privacy/js/chunks/9-779c9a1dd894d${MAJOR}ed27d.js
 nextcloud/apps/privacy/js/chunks/9-779c9a1dd894d${MAJOR}ed27d.js.map
 nextcloud/apps/privacy/js/privacy.js
@@ -17388,6 +17406,7 @@ nextcloud/lib/private/Authentication/Listeners/RemoteWipeEmailListener.php
 nextcloud/lib/private/Authentication/Listeners/RemoteWipeNotificationsListener.php
 nextcloud/lib/private/Authentication/Listeners/UserDeletedStoreCleanupListener.php
 nextcloud/lib/private/Authentication/Listeners/UserDeletedTokenCleanupListener.php
+nextcloud/lib/private/Authentication/Listeners/UserLoggedInListener.php
 nextcloud/lib/private/Authentication/Login/
 nextcloud/lib/private/Authentication/Login/ALoginCommand.php
 nextcloud/lib/private/Authentication/Login/Chain.php
