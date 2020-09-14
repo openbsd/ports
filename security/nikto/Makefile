@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/09/14 13:38:58 bluhm Exp $
 
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
 GH_ACCOUNT =	sullo
 GH_PROJECT =	nikto
 GH_TAGNAME =	2.1.6
-REVISION =	0
+REVISION =	1
 
 EPOCH = 	0
 CATEGORIES =	security www
@@ -17,7 +17,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	security/p5-Net_SSLeay
+RUN_DEPENDS =	security/p5-Net-SSLeay
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

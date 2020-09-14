@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/31 08:06:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/14 13:38:58 bluhm Exp $
 
 COMMENT =	Let's Encrypt API interfacing module and client
 
 DISTNAME =	Crypt-LE-0.36
+REVISION =	0
 CATEGORIES =	security
 
 # perl
@@ -19,7 +20,7 @@ RUN_DEPENDS =	converters/p5-Convert-ASN1 \
 		security/p5-Crypt-OpenSSL-Bignum \
 		security/p5-Crypt-OpenSSL-RSA \
 		security/p5-IO-Socket-SSL \
-		security/p5-Net_SSLeay
+		security/p5-Net-SSLeay
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 

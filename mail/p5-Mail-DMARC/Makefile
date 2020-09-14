@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/09/14 13:38:58 bluhm Exp $
 
 COMMENT=	Perl implementation of DMARC
 
 DISTNAME=	Mail-DMARC-1.20200214
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail
 
@@ -33,7 +33,7 @@ RUN_DEPENDS=	converters/p5-JSON \
 		net/p5-Net-SMTPS \
 		net/p5-Socket6>=0.23 \
 		security/p5-IO-Socket-SSL \
-		security/p5-Net_SSLeay \
+		security/p5-Net-SSLeay \
 		textproc/p5-Regexp-Common>=2013031301 \
 		textproc/p5-XML-LibXML \
 		www/p5-CGI \
