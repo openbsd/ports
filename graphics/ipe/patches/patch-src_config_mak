@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_config_mak,v 1.6 2020/01/25 12:01:09 sthen Exp $
+$OpenBSD: patch-src_config_mak,v 1.7 2020/09/14 12:51:40 sthen Exp $
 
 Index: src/config.mak
 --- src/config.mak.orig
 +++ src/config.mak
-@@ -22,7 +22,7 @@
+@@ -15,7 +15,7 @@
  #
  # The name of the Lua package (it could be "lua", "lua53", or "lua5.3")
  #

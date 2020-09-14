@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2020/01/18 21:00:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/09/14 12:51:40 sthen Exp $
 
 COMMENT =		extensible drawing editor
 
-V =			7.2.13
+V =			7.2.20
 SUBST_VARS +=		V
 DISTNAME =		ipe-${V}-src
 PKGNAME =		ipe-${V}
 
 # Upstream libraries would be installed as libxxx.so.${V}
-SHLIB_VERSION =	2.0
+SHLIB_VERSION =	3.0
 
 SHARED_LIBS +=		ipe		${SHLIB_VERSION}
 SHARED_LIBS +=		ipecairo	${SHLIB_VERSION}
@@ -23,8 +23,8 @@ MAINTAINER =		Alessandro De Laurenzis <just22@atlantide.mooo.com>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} Qt5Core Qt5Gui
-WANTLIB += Qt5Widgets c cairo freetype iconv jpeg m png pthread z
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} Qt5Core Qt5Gui Qt5Widgets
+WANTLIB += c cairo freetype gsl gslcblas iconv jpeg m png pthread z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -37,7 +37,8 @@ MODLUA_VERSION =	5.3
 MODLUA_SA =		Yes
 
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
-			${MODQT5_LIB_DEPENDS}
+			${MODQT5_LIB_DEPENDS} \
+			devel/gsl
 RUN_DEPENDS =		print/texlive/base \
 			x11/xvkbd
 
