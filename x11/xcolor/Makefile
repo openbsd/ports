@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/24 17:22:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/14 19:40:21 jasper Exp $
 
 COMMENT =	lightweight color picker
 
@@ -63,6 +63,7 @@ MODCARGO_CRATES +=	xcb	0.8.2	# MIT
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+USE_GMAKE =		Yes
 
 MODCARGO_RUSTFLAGS =	-L${X11BASE}/lib
 
