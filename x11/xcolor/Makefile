@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/14 19:40:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/14 22:22:49 kmos Exp $
+
+BROKEN-sparc64 = "error[E0412]: cannot find type c_char in this scope"
 
 COMMENT =	lightweight color picker
 
