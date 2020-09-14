@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.982 2020/09/10 20:05:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.983 2020/09/14 16:45:36 kmos Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -470,7 +470,6 @@
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
      SUBDIR += py-paste-script
-     SUBDIR += py-pylons
      SUBDIR += py-qtwebengine
      SUBDIR += py-query
      SUBDIR += py-query,python3
@@ -490,7 +489,6 @@
      SUBDIR += py-requests-toolbelt
      SUBDIR += py-requests-toolbelt,python3
      SUBDIR += py-responses,python3
-     SUBDIR += py-routes
      SUBDIR += py-selenium
      SUBDIR += py-selenium,python3
      SUBDIR += py-soupsieve
@@ -510,8 +508,6 @@
      SUBDIR += py-vcrpy,python3
      SUBDIR += py-waitress
      SUBDIR += py-waitress,python3
-     SUBDIR += py-weberror
-     SUBDIR += py-webhelpers
      SUBDIR += py-webob
      SUBDIR += py-webob,python3
      SUBDIR += py-webpy,python3
