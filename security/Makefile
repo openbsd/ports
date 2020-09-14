@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.591 2020/09/14 13:33:15 bluhm Exp $
+# $OpenBSD: Makefile,v 1.592 2020/09/14 22:47:10 abieber Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -343,6 +343,7 @@
      SUBDIR += py-yaswfp
      SUBDIR += qca-qt5
      SUBDIR += qtkeychain
+     SUBDIR += qtpass
      SUBDIR += radiusniff
      SUBDIR += rarcrack
      SUBDIR += rdp
