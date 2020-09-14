@@ -1,23 +1,26 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/09/14 07:21:07 landry Exp $
 
 COMMENT =	library for spatial indexing and querying
-DISTNAME=	spatialindex-src-1.8.5
+V =		1.9.3
+DISTNAME =	spatialindex-src-${V}
 PKGNAME =	${DISTNAME:S/-src//}
 CATEGORIES =	geo
-SHARED_LIBS =	spatialindex 2.0 \
-		spatialindex_c 0.2 #4.1
-REVISION =	1
+SHARED_LIBS =	spatialindex 3.0 \
+		spatialindex_c 1.0
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-HOMEPAGE =	http://libspatialindex.github.com/
-MASTER_SITES =	http://download.osgeo.org/libspatialindex/
+HOMEPAGE =	https://libspatialindex.org/
+MASTER_SITES =	https://github.com/libspatialindex/libspatialindex/releases/download/${V}/
 
-CONFIGURE_STYLE =	gnu
+MODULES =	devel/cmake
 
 WANTLIB =	m pthread ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
+
+# only one dumb test, builds bundled gtest ?
+#CONFIGURE_ARGS += -DSIDX_BUILD_TESTS=On
 
 .include <bsd.port.mk>
