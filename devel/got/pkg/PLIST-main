@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2020/03/23 09:16:10 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/09/14 14:36:23 stsp Exp $
 @pkgpath devel/got
 @bin bin/got
 @bin bin/tog
@@ -7,6 +7,7 @@
 @bin libexec/got-read-blob
 @bin libexec/got-read-commit
 @bin libexec/got-read-gitconfig
+@bin libexec/got-read-gotconfig
 @bin libexec/got-read-object
 @bin libexec/got-read-pack
 @bin libexec/got-read-tag
@@ -15,3 +16,4 @@
 @man man/man1/tog.1
 @man man/man5/git-repository.5
 @man man/man5/got-worktree.5
+@man man/man5/got.conf.5
