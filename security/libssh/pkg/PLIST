@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/31 18:46:01 kn Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/14 09:56:07 jasper Exp $
 include/libssh/
 include/libssh/callbacks.h
 include/libssh/legacy.h
 include/libssh/libssh.h
+include/libssh/libssh_version.h
 include/libssh/libsshpp.hpp
 include/libssh/server.h
 include/libssh/sftp.h
