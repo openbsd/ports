@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.590 2020/09/13 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.591 2020/09/14 13:33:15 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -235,7 +235,7 @@
      SUBDIR += p5-Mozilla-CA-Fake
      SUBDIR += p5-Net-SSL-ExpireDate
      SUBDIR += p5-Net-SSLGlue
-     SUBDIR += p5-Net_SSLeay
+     SUBDIR += p5-Net-SSLeay
      SUBDIR += p5-PGP-Sign
      SUBDIR += p5-PGP-Sign,pgp
      SUBDIR += p5-POE-Component-SSLify
