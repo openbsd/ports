@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1056 2020/09/14 09:58:20 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1057 2020/09/14 13:26:45 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1836,6 +1836,8 @@ my $obsolete_reason = {
 	'py-termcolor' => 5,
 	'py3-termcolor' => 5,
 	'py-carddav' => 3,
+	'py-rdflib' => 5,
+	'py3-rdflib' => 5,
 };
 
 # reasons for obsolete packages
