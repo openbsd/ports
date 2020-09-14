@@ -1,6 +1,6 @@
-$OpenBSD: patch-aqbanking_pc_in,v 1.1 2020/07/16 05:01:19 rsadowski Exp $
+$OpenBSD: patch-aqbanking_pc_in,v 1.2 2020/09/14 07:58:02 jasper Exp $
 
-Fix an issue with pkg-config(1)
+https://www.aquamaniac.de/rdm/issues/224
 
 Index: aqbanking.pc.in
 --- aqbanking.pc.in.orig
