@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/08/23 22:00:39 abieber Exp $
+# $OpenBSD: Makefile,v 1.26 2020/09/15 07:04:25 pamela Exp $
 
 BROKEN-powerpc = help2man: can't get `--help' info from ./luakit
 
@@ -7,6 +7,7 @@ COMMENT =	fast, small, webkit based browser written in lua
 GH_ACCOUNT =	luakit
 GH_TAGNAME =	2.2
 GH_PROJECT =	luakit
+REVISION =	0
 
 EPOCH =		1
 
@@ -14,7 +15,7 @@ CATEGORIES =	www
 
 MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 
-HOMEPAGE =	http://luakit.org
+HOMEPAGE =	https://luakit.github.io
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
