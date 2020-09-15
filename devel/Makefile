@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2014 2020/09/13 08:10:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.2015 2020/09/15 07:38:50 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1730,7 +1730,6 @@
      SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unicorn,python3
      SUBDIR += py-unittest2
-     SUBDIR += py-urwid
      SUBDIR += py-urwid,python3
      SUBDIR += py-uv
      SUBDIR += py-uv,python3
