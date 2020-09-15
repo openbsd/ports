@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/09/15 07:20:52 jasper Exp $
 
 COMMENT =	wrapper for gnu auto*
 
 PKG_ARCH =	*
 VERSION =	1.0
-REVISION =	3
+REVISION =	4
 DISTNAME =	metaauto-${VERSION}
 CATEGORIES =	devel
 
-PKGCONFIG_V =	0.29.1
+PKGCONFIG_V =	0.29.2
 DISTFILES =	pkg-config-${PKGCONFIG_V}.tar.gz
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
