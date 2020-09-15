@@ -1,9 +1,9 @@
-$OpenBSD: patch-database_Makefile_in,v 1.26 2019/11/20 19:00:24 sthen Exp $
+$OpenBSD: patch-database_Makefile_in,v 1.27 2020/09/15 09:08:36 sthen Exp $
 
 Index: database/Makefile.in
 --- database/Makefile.in.orig
 +++ database/Makefile.in
-@@ -672,6 +672,8 @@ uninstall-am:
+@@ -675,6 +675,8 @@ uninstall-am:
  
  
  install-data-local:

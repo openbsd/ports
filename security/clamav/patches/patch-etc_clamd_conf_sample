@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_clamd_conf_sample,v 1.9 2019/11/19 15:35:37 sthen Exp $
+$OpenBSD: patch-etc_clamd_conf_sample,v 1.10 2020/09/15 09:08:36 sthen Exp $
 
 Index: etc/clamd.conf.sample
 --- etc/clamd.conf.sample.orig
@@ -12,7 +12,7 @@ Index: etc/clamd.conf.sample
  
  # By default the log file is locked for writing - the lock protects against
  # running clamd multiple times (if want to run another clamd, please
-@@ -79,7 +79,7 @@ Example
+@@ -82,7 +82,7 @@ Example
  
  # Path to the database directory.
  # Default: hardcoded (depends on installation options)
@@ -21,7 +21,7 @@ Index: etc/clamd.conf.sample
  
  # Only load the official signatures published by the ClamAV project.
  # Default: no
-@@ -203,7 +203,7 @@ Example
+@@ -216,7 +216,7 @@ Example
  
  # Run as another user (clamd must be started by root for this option to work)
  # Default: don't drop privileges
@@ -30,7 +30,7 @@ Index: etc/clamd.conf.sample
  
  # Stop daemon when libclamav reports out of memory condition.
  #ExitOnOOM yes
-@@ -509,7 +509,7 @@ Example
+@@ -527,7 +527,7 @@ Example
  # deeply the process should be continued.
  # Note: setting this limit too high may result in severe damage to the system.
  # Default: 16

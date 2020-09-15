@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2019/11/19 15:35:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/09/15 09:08:36 sthen Exp $
 @newgroup _clamav:539
 @newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
 @extraunexec rm -fr /var/db/clamav/*
@@ -73,6 +73,7 @@ share/doc/clamav/UserManual/Introduction.html
 share/doc/clamav/UserManual/OnAccess.html
 share/doc/clamav/UserManual/Signatures/
 share/doc/clamav/UserManual/Signatures.html
+share/doc/clamav/UserManual/Signatures/AllowLists.html
 share/doc/clamav/UserManual/Signatures/AuthenticodeRules.html
 share/doc/clamav/UserManual/Signatures/BodySignatureFormat.html
 share/doc/clamav/UserManual/Signatures/BytecodeSignatures.html
@@ -87,7 +88,6 @@ share/doc/clamav/UserManual/Signatures/FunctionalityLevels.html
 share/doc/clamav/UserManual/Signatures/HashSignatures.html
 share/doc/clamav/UserManual/Signatures/LogicalSignatures.html
 share/doc/clamav/UserManual/Signatures/PhishSigs.html
-share/doc/clamav/UserManual/Signatures/Whitelists.html
 share/doc/clamav/UserManual/Signatures/YaraRules.html
 share/doc/clamav/UserManual/Usage/
 share/doc/clamav/UserManual/Usage.html
