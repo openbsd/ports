@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2020/03/25 20:03:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.25 2020/09/16 06:07:46 rsadowski Exp $
 
 COMMENT =	scientific plotting and graphing package
 MODPY_EGG_VERSION =	3.2.1
 DISTNAME =	veusz-${MODPY_EGG_VERSION}
 CATEGORIES =	math graphics
+REVISION =	0
 
 HOMEPAGE =	https://veusz.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -11,20 +12,25 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += m
 
 MASTER_SITES =	https://github.com/veusz/veusz/releases/download/${DISTNAME}/
 
 MODULES =	lang/python \
 		x11/qt5
 
-BUILD_DEPENDS =	math/py-numpy \
-		x11/py-qt5
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS =	math/py-numpy \
-		x11/py-qt5
+BUILD_DEPENDS =	devel/py-sip${MODPY_FLAVOR} \
+		math/py-numpy${MODPY_FLAVOR} \
+		x11/py-qt5${MODPY_FLAVOR}
+
+RUN_DEPENDS =	math/py-numpy${MODPY_FLAVOR} \
+		x11/py-qt5${MODPY_FLAVOR}
 TEST_DEPENDS =	${BASE_PKGPATH}
+
+MAKE_ENV =		SIP_DIR="${LOCALBASE}/share/sip/PyQt5${MODPY_BIN_SUFFIX}"
 
 do-test:
 	cd ${WRKSRC}/tests && ${MODPY_BIN} runselftest.py

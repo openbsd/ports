@@ -1,0 +1,14 @@
+$OpenBSD: patch-pyqtdistutils_py,v 1.3 2020/09/16 06:07:46 rsadowski Exp $
+
+Index: pyqtdistutils.py
+--- pyqtdistutils.py.orig
++++ pyqtdistutils.py
+@@ -307,7 +307,7 @@ class build_ext(distutils.command.build_ext.build_ext)
+                 sip_exe,
+                 '-c', self.build_temp
+             ] + SIP_FLAGS.split() + [
+-                '-I', os.path.join(sip_dir, 'PyQt5'),
++                '-I', sip_dir,
+                 '-b', sbf,
+                 source
+             ]
