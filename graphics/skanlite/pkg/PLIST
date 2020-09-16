@@ -1,6 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/27 05:07:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/09/16 10:35:16 rsadowski Exp $
 @bin bin/skanlite
 share/applications/org.kde.skanlite.desktop
+share/doc/HTML/ca/skanlite/
+share/doc/HTML/ca/skanlite/buttons-main.png
+share/doc/HTML/ca/skanlite/choose-scanner.png
+share/doc/HTML/ca/skanlite/final-button.png
+share/doc/HTML/ca/skanlite/index.cache.bz2
+share/doc/HTML/ca/skanlite/index.docbook
+share/doc/HTML/ca/skanlite/main-window.png
+share/doc/HTML/ca/skanlite/no-scanner-found.png
+share/doc/HTML/ca/skanlite/other-options.png
+share/doc/HTML/ca/skanlite/preview-button.png
+share/doc/HTML/ca/skanlite/scanning.png
+share/doc/HTML/ca/skanlite/settings.png
+share/doc/HTML/ca/skanlite/zoom-to-fit.png
 share/doc/HTML/de/skanlite/
 share/doc/HTML/de/skanlite/buttons-main.png
 share/doc/HTML/de/skanlite/final-button.png
@@ -71,7 +84,6 @@ share/doc/HTML/uk/skanlite/settings.png
 share/doc/HTML/uk/skanlite/zoom-in.png
 share/doc/HTML/uk/skanlite/zoom-to-fit.png
 share/locale/ar/LC_MESSAGES/skanlite.mo
-share/locale/ast/LC_MESSAGES/skanlite.mo
 share/locale/be/LC_MESSAGES/skanlite.mo
 share/locale/bg/LC_MESSAGES/skanlite.mo
 share/locale/bs/LC_MESSAGES/skanlite.mo
