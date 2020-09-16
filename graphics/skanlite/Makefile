@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/16 10:35:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/16 10:36:48 rsadowski Exp $
 
 COMMENT =	scanning application for KDE
 
 VERSION =	2.2.0
 DISTNAME =	skanlite-${VERSION}
+REVISION =	0
 
 CATEGORIES =	graphics
 
