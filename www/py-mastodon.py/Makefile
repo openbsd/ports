@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/16 03:17:44 pamela Exp $
 
 COMMENT =		python wrapper for the Mastodon API
 
-MODPY_EGG_VERSION =	1.4.6
+MODPY_EGG_VERSION =	1.5.1
 DISTNAME =		Mastodon.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-mastodon.py-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -21,7 +20,8 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+FLAVORS =		python3
+FLAVOR =		python3
 
 BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
 
@@ -30,6 +30,7 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-magic${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR} \
+			graphics/py-blurhash${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
 			www/py-http_ece${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}

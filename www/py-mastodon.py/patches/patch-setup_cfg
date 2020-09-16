@@ -1,0 +1,17 @@
+$OpenBSD: patch-setup_cfg,v 1.1 2020/09/16 03:17:44 pamela Exp $
+
+Prevent pytest error by removing unnecessary coverage testing.
+
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -9,9 +9,6 @@ all_files = 1
+ [aliases]
+ test = pytest
+ 
+-[tool:pytest]
+-addopts = --cov=mastodon
+-
+ [egg_info]
+ tag_build = 
+ tag_date = 0
