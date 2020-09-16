@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/27 08:52:44 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/16 08:04:43 sthen Exp $
 
 COMMENT =	lightweight compositor for X11
 
 GH_ACCOUNT =	yshui
 GH_PROJECT =	picom
-GH_TAGNAME =	v8
+GH_TAGNAME =	v8.1
 
 CATEGORIES =	x11
 
@@ -29,7 +29,8 @@ LIB_DEPENDS =		devel/libconfig \
 			devel/pcre \
 			x11/dbus
 
-CONFIGURE_ARGS	+=	-Dwith_docs=true
+CONFIGURE_ARGS	+=	-Dwith_docs=true \
+			-Dunittest=true
 CONFIGURE_ENV	+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
