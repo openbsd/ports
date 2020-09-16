@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.37 2020/03/31 04:47:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2020/09/16 07:31:24 rsadowski Exp $
 
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
-VERSION =	3.0.5
+VERSION =	20.08.1
 DISTNAME =	yakuake-${VERSION}
 EPOCH =		0
-REVISION =	5
 
 CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/system/org.kde.yakuake
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -20,7 +19,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5GlobalAccel KF5I18n KF5IconThemes KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOWidgets KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
