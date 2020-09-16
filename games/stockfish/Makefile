@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/04/06 20:24:53 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/09/16 02:59:12 bcallah Exp $
 
+V =		12
 COMMENT =	open source chess engine
-PKGNAME =	stockfish-${GH_TAGNAME:S/^sf_//}
+PKGNAME =	stockfish-${V}
 CATEGORIES =	games
-
-GH_ACCOUNT =	official-stockfish
-GH_PROJECT =	Stockfish
-GH_TAGNAME =	sf_11
 
 HOMEPAGE =	https://stockfishchess.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -16,7 +13,14 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 
-# C++11
+# XXX: Ports does not permit GH_* and MASTER_SITES together.
+MASTER_SITES0 =	https://github.com/official-stockfish/Stockfish/archive/
+MASTER_SITES1 =	https://tests.stockfishchess.org/api/nn/
+DISTFILES =	sf_${V}.tar.gz:0 \
+		nn-82215d0fd0df.nnue:1
+EXTRACT_ONLY =	sf_${V}.tar.gz
+
+# C++17
 COMPILER =	base-clang ports-gcc
 
 USE_GMAKE =	Yes
@@ -41,7 +45,11 @@ MAKE_ENV =	ARCH=general-32
 
 NO_TEST =	Yes
 
+WRKDIST =	${WRKDIR}/Stockfish-sf_${V}
 WRKSRC =	${WRKDIST}/src
+
+post-extract:
+	cp ${DISTDIR}/nn-82215d0fd0df.nnue ${WRKSRC}
 
 pre-configure:
 	sed -i 's,-O3,${CXXFLAGS},g' ${WRKSRC}/Makefile
