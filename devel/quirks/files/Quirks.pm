@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1060 2020/09/15 07:38:50 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1061 2020/09/16 07:29:10 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -477,6 +477,7 @@ my $stem_extensions = {
         'py-secretstorage' => 'py3-secretstorage',
         'rgain' => 'rgain3',
 	'py-urwid' => 'py3-urwid',
+	'py-ply' => 'py3-ply',
 };
 
 my $obsolete_reason = {

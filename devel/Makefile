@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2015 2020/09/15 07:38:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2016 2020/09/16 07:29:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1597,7 +1597,6 @@
      SUBDIR += py-pluggy,python3
      SUBDIR += py-plugnplay
      SUBDIR += py-plugnplay,python3
-     SUBDIR += py-ply
      SUBDIR += py-ply,python3
      SUBDIR += py-pretend
      SUBDIR += py-pretend,python3
