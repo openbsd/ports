@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 14:44:13 fcambus Exp $
+# $OpenBSD: Makefile,v 1.25 2020/09/17 08:19:09 fcambus Exp $
 
 COMMENT =	fast web log analyzer using probabilistic data structures
 
-V =		2.1.6
+V =		2.1.7
 DISTNAME =	logswan-$V
 
 CATEGORIES =	www
