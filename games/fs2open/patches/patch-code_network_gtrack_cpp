@@ -1,0 +1,17 @@
+$OpenBSD: patch-code_network_gtrack_cpp,v 1.1 2020/09/17 12:34:22 thfr Exp $
+
+include sys/socket.h, needed for AF_INET
+
+Index: code/network/gtrack.cpp
+--- code/network/gtrack.cpp.orig
++++ code/network/gtrack.cpp
+@@ -25,6 +25,9 @@
+ #include "network/ptrack.h"
+ #include "network/multi_fstracker.h"
+ 
++#ifdef __OpenBSD__
++#include <sys/socket.h>
++#endif
+ 
+ // check structs for size compatibility
+ SDL_COMPILE_TIME_ASSERT(game_packet_header, sizeof(game_packet_header) == 529);

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:12 espie Exp $
+$OpenBSD: README,v 1.3 2020/09/17 12:34:22 thfr Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -33,4 +33,13 @@ Mods
 In order to run mods, create a folder for each mod in
 ~/.local/share/fs2open and call fs2open like this:
 
-fs2open -mod <modfolder>
+$ fs2open -mod <modfolder>
+
+Cursor Dyssynchrony
+===================
+
+If mouse position doesn't match activity in the game (i.e. you need
+over a different screen position than the button to activate the
+button), try running the game windowed with set resolution, e.g.:
+
+$ fs2open -window -res 1600x900

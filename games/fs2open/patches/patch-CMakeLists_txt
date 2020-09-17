@@ -1,13 +1,23 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/02/16 11:39:51 kirby Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/09/17 12:34:22 thfr Exp $
 
+add include and lib directories to find system SDL2
 try to avoid get_target_property error
-remove cotire submodule dependency
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -13,6 +13,7 @@ include(cmake/util.cmake)
- set_policy(CMP0051 OLD)
+@@ -2,6 +2,9 @@
+ CMAKE_MINIMUM_REQUIRED(VERSION 3.4)
+ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+ 
++include_directories( "${LOCALBASE}/include" "${LOCALBASE}/include/SDL2" )
++link_directories( "${LOCALBASE}/lib" )
++
+ # Make sure the source and binary directory are not the sample
+ if ("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
+ 	message(FATAL_ERROR "Binary and source directory can not be the same! Choose another build directory.")
+@@ -13,6 +16,7 @@ include(cmake/util.cmake)
+ set_policy(CMP0051 NEW)
  set_policy(CMP0053 NEW)
  set_policy(CMP0054 NEW)
 +set_policy(CMP0026 OLD)	# to avoid get_target_property error

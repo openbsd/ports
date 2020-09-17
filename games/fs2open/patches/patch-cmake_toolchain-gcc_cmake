@@ -1,16 +1,19 @@
-$OpenBSD: patch-cmake_toolchain-gcc_cmake,v 1.1.1.1 2018/02/16 11:39:51 kirby Exp $
+$OpenBSD: patch-cmake_toolchain-gcc_cmake,v 1.2 2020/09/17 12:34:22 thfr Exp $
 
-remove hardcoded -O2
+remove hardcoded -O{0,2} flags
 
 Index: cmake/toolchain-gcc.cmake
 --- cmake/toolchain-gcc.cmake.orig
 +++ cmake/toolchain-gcc.cmake
-@@ -87,7 +87,7 @@ set(COMPILER_FLAGS "${COMPILER_FLAGS} -Wno-deprecated 
+@@ -94,9 +94,9 @@ if(SUPPORTS_STRINGOP_TRUNCATION)
+ 	set(COMPILER_FLAGS "${COMPILER_FLAGS} -Wno-stringop-overflow")
+ endif()
  
- set(COMPILER_FLAGS "${COMPILER_FLAGS} -Wno-unused-parameter")
+-set(COMPILER_FLAGS_RELEASE "-O2 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-array-bounds -Wno-empty-body -Wno-clobbered  -Wno-unused-parameter")
++set(COMPILER_FLAGS_RELEASE "-Wno-unused-variable -Wno-unused-but-set-variable -Wno-array-bounds -Wno-empty-body -Wno-clobbered  -Wno-unused-parameter")
  
--set(COMPILER_FLAGS_RELEASE "-O2 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-array-bounds -Wno-empty-body -Wno-clobbered")
-+set(COMPILER_FLAGS_RELEASE "-Wno-unused-variable -Wno-unused-but-set-variable -Wno-array-bounds -Wno-empty-body -Wno-clobbered")
+-set(COMPILER_FLAGS_DEBUG "-O0 -g -Wshadow")
++set(COMPILER_FLAGS_DEBUG "-g -Wshadow")
  
- set(COMPILER_FLAGS_DEBUG "-O0 -g -Wshadow")
- 
+ # Always use the base flags and add our compiler flags at the bacl
+ set(CMAKE_CXX_FLAGS "${CXX_BASE_FLAGS} ${COMPILER_FLAGS}")

@@ -1,0 +1,17 @@
+$OpenBSD: patch-code_network_multi_portfwd_cpp,v 1.1 2020/09/17 12:34:22 thfr Exp $
+
+supply AI_V4MAPPED
+
+Index: code/network/multi_portfwd.cpp
+--- code/network/multi_portfwd.cpp.orig
++++ code/network/multi_portfwd.cpp
+@@ -7,6 +7,9 @@
+  *
+ */
+ 
++/* not supplied in headers */
++#define AI_V4MAPPED                 0x00000800
++
+ #ifdef _WIN32
+ #include <winsock2.h>
+ #include <ws2tcpip.h>

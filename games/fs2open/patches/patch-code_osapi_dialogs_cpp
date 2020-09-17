@@ -1,0 +1,18 @@
+$OpenBSD: patch-code_osapi_dialogs_cpp,v 1.1 2020/09/17 12:34:22 thfr Exp $
+
+disable breaking on error with SDL_ShowMessageBox()
+this is a backport of a part of commit
+7f286b726d70904e46acac54dbc44ba3d4e8dad7
+
+Index: code/osapi/dialogs.cpp
+--- code/osapi/dialogs.cpp.orig
++++ code/osapi/dialogs.cpp
+@@ -403,7 +403,7 @@ namespace os
+ 			if (SDL_ShowMessageBox(&boxData, &buttonId) < 0)
+ 			{
+ 				// Call failed
+-				abort();
++				buttonId = 1; // No action
+ 			}
+ 
+ 			switch (buttonId)

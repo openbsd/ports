@@ -1,0 +1,17 @@
+$OpenBSD: patch-code_network_ptrack_cpp,v 1.1 2020/09/17 12:34:22 thfr Exp $
+
+include sys/socket.h needed for AF_INET
+
+Index: code/network/ptrack.cpp
+--- code/network/ptrack.cpp.orig
++++ code/network/ptrack.cpp
+@@ -25,6 +25,9 @@
+ #include "network/psnet2.h"
+ #include "network/multi_fstracker.h"
+ 
++#ifdef __OpenBSD__
++#include <sys/socket.h>
++#endif
+ 
+ // check structs for size compatibility
+ SDL_COMPILE_TIME_ASSERT(udp_packet_header, sizeof(udp_packet_header) == 497);

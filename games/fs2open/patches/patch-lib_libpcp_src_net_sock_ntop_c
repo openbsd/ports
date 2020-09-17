@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_libpcp_src_net_sock_ntop_c,v 1.1 2020/09/17 12:34:22 thfr Exp $
+
+add missing define, as found in code/windows_stub/config.h and
+lib/libpcp/src/windows/pcp_win_defines.h (identical)
+
+Index: lib/libpcp/src/net/sock_ntop.c
+--- lib/libpcp/src/net/sock_ntop.c.orig
++++ lib/libpcp/src/net/sock_ntop.c
+@@ -23,6 +23,9 @@
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
++/* Doesn't get picked up from Windows header files, therefore added here: */
++#define AI_V4MAPPED                 0x00000800
++
+ #ifdef HAVE_CONFIG_H
+ #include "config.h"
+ #else

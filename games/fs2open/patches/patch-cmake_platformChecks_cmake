@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_platformChecks_cmake,v 1.1 2018/05/29 07:32:31 kirby Exp $
+$OpenBSD: patch-cmake_platformChecks_cmake,v 1.2 2020/09/17 12:34:22 thfr Exp $
 
 Index: cmake/platformChecks.cmake
 --- cmake/platformChecks.cmake.orig
@@ -7,8 +7,8 @@ Index: cmake/platformChecks.cmake
  include(CheckCXXSymbolExists)
  include(CheckTypeSize)
  
--CHECK_INCLUDE_FILE("execinfo.h" HAVE_EXECINFO_H)
-+#CHECK_INCLUDE_FILE("execinfo.h" HAVE_EXECINFO_H)
- CHECK_INCLUDE_FILE_CXX("cxxabi.h" HAVE_CXXAPI_H)
+-CHECK_INCLUDE_FILE("execinfo.h" SCP_HAVE_EXECINFO_H)
++#CHECK_INCLUDE_FILE("execinfo.h" SCP_HAVE_EXECINFO_H)
+ CHECK_INCLUDE_FILE_CXX("cxxabi.h" SCP_HAVE_CXXAPI_H)
  
  CHECK_TYPE_SIZE("max_align_t" MAX_ALIGN_T)

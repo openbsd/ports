@@ -1,0 +1,17 @@
+$OpenBSD: patch-code_network_valid_cpp,v 1.1 2020/09/17 12:34:22 thfr Exp $
+
+include sys/socket.h
+
+Index: code/network/valid.cpp
+--- code/network/valid.cpp.orig
++++ code/network/valid.cpp
+@@ -27,6 +27,9 @@
+ #include "network/multi_fstracker.h"
+ #include "io/timer.h"
+ 
++#ifdef __OpenBSD__
++#include <sys/socket.h>
++#endif
+ 
+ // check structs for size compatibility
+ SDL_COMPILE_TIME_ASSERT(vmt_validate_mission_req_struct, sizeof(vmt_validate_mission_req_struct) == 104);

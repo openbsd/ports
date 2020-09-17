@@ -1,0 +1,16 @@
+$OpenBSD: patch-code_libs_renderdoc_renderdoc_cpp,v 1.1 2020/09/17 12:34:22 thfr Exp $
+
+we don't have RTLD_NOLOAD
+
+Index: code/libs/renderdoc/renderdoc.cpp
+--- code/libs/renderdoc/renderdoc.cpp.orig
++++ code/libs/renderdoc/renderdoc.cpp
+@@ -14,7 +14,7 @@ RENDERDOC_API_1_1_1* api = nullptr;
+ 
+ pRENDERDOC_GetAPI load_getAPI() {
+ #ifdef SCP_UNIX
+-	auto handle = dlopen("librenderdoc.so", RTLD_NOLOAD);
++	auto handle = dlopen("librenderdoc.so", RTLD_LAZY);
+ 	auto symbol = dlsym(handle, "RENDERDOC_GetAPI");
+ 
+ 	if (handle != nullptr) {
