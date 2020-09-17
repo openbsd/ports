@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/17 04:41:43 rsadowski Exp $
 
 COMMENT =	C implementation of Argon2 - password hashing function
 
 GH_ACCOUNT =	P-H-C
 GH_PROJECT =	phc-winner-argon2
-GH_TAGNAME =	20171227
+GH_TAGNAME =	20190702
 DISTNAME =	argon2-${GH_TAGNAME}
 
 SHARED_LIBS +=	argon2                   0.0 # 0.0

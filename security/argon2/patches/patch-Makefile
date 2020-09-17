@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2018/03/05 09:23:43 rsadowski Exp $
+$OpenBSD: patch-Makefile,v 1.2 2020/09/17 04:41:43 rsadowski Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -30,7 +30,7 @@ SRC_BENCH = src/bench.c
+@@ -37,7 +37,7 @@ SRC_BENCH = src/bench.c
  SRC_GENKAT = src/genkat.c
  OBJ = $(SRC:.c=.o)
  
@@ -12,12 +12,12 @@ Index: Makefile
  
  ifeq ($(NO_THREADS), 1)
  CFLAGS += -DARGON2_NO_THREADS
-@@ -65,7 +65,7 @@ ifeq ($(KERNEL_NAME), Linux)
- 	LINKED_LIB_EXT := so
+@@ -77,7 +77,7 @@ ifeq ($(KERNEL_NAME), Linux)
+ 	PC_EXTRA_LIBS ?= -lrt -ldl
  endif
- ifeq ($(KERNEL_NAME), $(filter $(KERNEL_NAME),FreeBSD NetBSD OpenBSD))
+ ifeq ($(KERNEL_NAME), $(filter $(KERNEL_NAME),DragonFly FreeBSD NetBSD OpenBSD))
 -	LIB_EXT := so
 +	LIB_EXT := so.$(ABI_VERSION)
  	LIB_CFLAGS := -shared -fPIC
+ 	PC_EXTRA_LIBS ?=
  endif
- ifeq ($(KERNEL_NAME), Darwin)
