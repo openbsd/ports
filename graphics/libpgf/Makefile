@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/09/17 04:45:56 rsadowski Exp $
 
 COMMENT =	PGF image format handling library
-V =		6.12.24
-DISTNAME =	libpgf-$V-src
-REVISION =	2
-PKGNAME =	${DISTNAME:C/-src//}
+V =		7.19.3
+DISTNAME =	libPGF-codec-and-console-src
+PKGNAME =	libpgf-${V}
 
-SHARED_LIBS =	pgf		0.0
+SHARED_LIBS =	pgf		1.0
 
 CATEGORIES =	graphics devel
+
 HOMEPAGE =	http://sourceforge.net/projects/libpgf/
-MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
@@ -19,7 +18,8 @@ WANTLIB =	m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libpgf/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libpgf/libpgf/${V}-latest/}
+EXTRACT_SUFX =		.zip
 
 CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
@@ -30,7 +30,7 @@ AUTORECONF =		sh autogen.sh
 # it's unhelpful and wants too many dependencies.
 CONFIGURE_ENV =	ac_cv_path_DOXYGEN= ac_cv_path_DOT=
 
-WRKDIST =	${WRKDIR}/libpgf
+WRKDIST =	${WRKDIR}/libPGF-codec-and-console-src/PGF/Codec
 SUBST_VARS +=	PKGNAME
 
 .include <bsd.port.mk>
