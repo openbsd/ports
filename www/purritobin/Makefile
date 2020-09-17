@@ -6,7 +6,7 @@ CATEGORIES =	www net
 
 GH_ACCOUNT =	PurritoBin
 GH_PROJECT =	PurritoBin
-GH_TAGNAME =	0.2.3
+GH_TAGNAME =	0.2.4
 
 HOMEPAGE =	https://bsd.ac/
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
@@ -15,7 +15,7 @@ MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB += ${COMPILER_LIBCXX} c m ssl usockets uv
+WANTLIB += ${COMPILER_LIBCXX} c crypto m ssl usockets
 
 # C++2a
 COMPILER =	base-clang ports-gcc
@@ -25,8 +25,6 @@ BUILD_DEPENDS =	www/uwebsockets
 LIB_DEPENDS =	net/usockets
 
 NO_TEST	=	Yes
-
-MAKE_FLAGS =	-DUSE_LIBUV
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/purritobin
