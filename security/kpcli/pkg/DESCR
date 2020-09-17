@@ -1,2 +1,5 @@
 A command line interface (interactive shell) to work with KeePass
 1.x or 2.x database files.
+
+To use the X11 clipboard features, install the p5-Clipboard and p5-Capture-Tiny
+extra packages.
