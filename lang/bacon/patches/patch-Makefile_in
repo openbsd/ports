@@ -1,4 +1,5 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2020/01/16 09:53:39 gonzalo Exp $
+$OpenBSD: patch-Makefile_in,v 1.7 2020/09/17 20:29:21 juanfra Exp $
+
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
@@ -11,14 +12,20 @@ Index: Makefile.in
  STRIP           = @STRIP@
  CC              = @CC@
  CXX             = @CXX@
-@@ -79,8 +79,8 @@ install :
- 	$(INSTALL) -m 644 icons/BaCon.png $(DESTDIR)$(DATADIR)/pixmaps
+@@ -66,11 +66,11 @@ install :
+ 	$(INSTALL) -m 644 icons/BaCon.xbm $(DESTDIR)$(DATADIR)/pixmaps
  	$(INSTALL) -m 644 icons/BaCon24.png $(DESTDIR)$(DATADIR)/pixmaps
  	$(INSTALL) -m 644 icons/BaConEyes.png $(DESTDIR)$(DATADIR)/pixmaps
--	mkdir -p $(DESTDIR)/usr/share/enscript/hl
--	$(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)/usr/share/enscript/hl
-+	mkdir -p $(DESTDIR)$(DATADIR)/enscript/hl
-+	$(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)$(DATADIR)/enscript/hl
+-	@if [ -d $(DESTDIR)/usr/share ]; then \
+-		mkdir -p $(DESTDIR)/usr/share/enscript/hl; \
+-		echo mkdir -p $(DESTDIR)/usr/share/enscript/hl; \
+-		$(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)/usr/share/enscript/hl; \
+-		echo $(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)/usr/share/enscript/hl; \
++	@if [ -d $(DESTDIR)$(DATADIR) ]; then \
++		mkdir -p $(DESTDIR)$(DATADIR)/enscript/hl; \
++		echo mkdir -p $(DESTDIR)$(DATADIR)/enscript/hl; \
++		$(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)$(DATADIR)/enscript/hl; \
++		echo $(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)$(DATADIR)/enscript/hl; \
+ 	fi;
  	mkdir -p $(DESTDIR)$(DATADIR)/BaCon
  	$(INSTALL) -m 644 syntax/lower.m4 $(DESTDIR)$(DATADIR)/BaCon
- 	$(INSTALL) -m 644 syntax/upper.m4 $(DESTDIR)$(DATADIR)/BaCon

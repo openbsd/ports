@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/10 19:58:20 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/17 20:29:21 juanfra Exp $
 @bin bin/bacon
 bin/bacon.sh
 @bin bin/bacongui-fltk
@@ -14,6 +14,7 @@ share/enscript/hl/
 share/enscript/hl/bacon.st
 share/pixmaps/
 share/pixmaps/BaCon.png
+share/pixmaps/BaCon.xbm
 share/pixmaps/BaCon24.png
 share/pixmaps/BaConEyes.png
 @tag update-desktop-database
