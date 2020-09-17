@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/16 22:16:40 kn Exp $
+# $OpenBSD: Makefile,v 1.12 2020/09/17 07:17:16 semarie Exp $
 
 COMMENT =	set of Maildir utilities
 
-DISTNAME =	mblaze-0.7
+DISTNAME =	mblaze-1.0
 CATEGORIES =	mail
 
 HOMEPAGE =	https://git.vuxu.org/mblaze/
