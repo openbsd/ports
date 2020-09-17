@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2020/09/15 07:04:25 pamela Exp $
+# $OpenBSD: Makefile,v 1.27 2020/09/17 18:20:14 semarie Exp $
 
 BROKEN-powerpc = help2man: can't get `--help' info from ./luakit
 
@@ -7,7 +7,7 @@ COMMENT =	fast, small, webkit based browser written in lua
 GH_ACCOUNT =	luakit
 GH_TAGNAME =	2.2
 GH_PROJECT =	luakit
-REVISION =	0
+REVISION =	1
 
 EPOCH =		1
 
