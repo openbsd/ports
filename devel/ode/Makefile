@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2020/09/13 12:11:30 kirby Exp $
+# $OpenBSD: Makefile,v 1.23 2020/09/17 04:58:25 kirby Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	4.0	# 8.0
-DISTNAME = 	ode-0.16
+DISTNAME = 	ode-0.16.2
 CATEGORIES =	devel
-REVISION =      0
 
 HOMEPAGE =	https://www.ode.org/
 
@@ -31,6 +30,9 @@ AUTOCONF_VERSION = 	2.69
 AUTOMAKE_VERSION = 	1.11
 
 CXXFLAGS += 		-Wno-c++11-narrowing
+
+post-extract:
+	rm ${WRKSRC}/include/ode/precision.h
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ode/
