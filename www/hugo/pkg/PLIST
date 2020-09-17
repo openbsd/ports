@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/01 21:20:22 paco Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/17 07:30:09 paco Exp $
 @bin bin/hugo
 @man man/man1/hugo-config-mounts.1
 @man man/man1/hugo-config.1
@@ -24,6 +24,8 @@
 @man man/man1/hugo-mod-get.1
 @man man/man1/hugo-mod-graph.1
 @man man/man1/hugo-mod-init.1
+@man man/man1/hugo-mod-npm-pack.1
+@man man/man1/hugo-mod-npm.1
 @man man/man1/hugo-mod-tidy.1
 @man man/man1/hugo-mod-vendor.1
 @man man/man1/hugo-mod-verify.1
