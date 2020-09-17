@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/09/17 20:48:38 juanfra Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	interpreter of the R7RS Scheme programming language
 
-DISTNAME =	chibi-scheme-0.8.0
-REVISION =	0
+DISTNAME =	chibi-scheme-0.9.1
 
-SHARED_LIBS =	chibi-scheme 2.0 # 1.0
+SHARED_LIBS =	chibi-scheme 3.0 # 1.0
 
 CATEGORIES =	lang
 

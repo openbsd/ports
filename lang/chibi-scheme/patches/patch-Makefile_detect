@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_detect,v 1.3 2020/09/17 20:48:38 juanfra Exp $
+
+Index: Makefile.detect
+--- Makefile.detect.orig
++++ Makefile.detect
+@@ -149,10 +149,10 @@ endif
+ 
+ ifeq ($(SEXP_USE_DL),0)
+ XLDFLAGS  := $(LDFLAGS) $(RLDFLAGS) $(GCLDFLAGS) -lm
+-XCFLAGS   := -Wall -DSEXP_USE_DL=0 -g -g3 -O3 $(CFLAGS)
++XCFLAGS   := -Wall -DSEXP_USE_DL=0 -g -g3 $(CFLAGS)
+ else
+ XLDFLAGS  := $(LDFLAGS) $(RLDFLAGS) $(GCLDFLAGS) $(LIBDL) -lm
+-XCFLAGS   := -Wall -g -g3 -O3 $(CFLAGS)
++XCFLAGS   := -Wall -g -g3 $(CFLAGS)
+ endif
+ 
+ ifeq ($(PLATFORM),solaris)
