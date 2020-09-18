@@ -1,9 +1,9 @@
-$OpenBSD: patch-scripts_mk_util_py,v 1.5 2020/06/28 12:19:35 jasper Exp $
+$OpenBSD: patch-scripts_mk_util_py,v 1.6 2020/09/18 07:52:58 jasper Exp $
 
 Index: scripts/mk_util.py
 --- scripts/mk_util.py.orig
 +++ scripts/mk_util.py
-@@ -2471,7 +2471,6 @@ def mk_config():
+@@ -2478,7 +2478,6 @@ def mk_config():
              EXAMP_DEBUG_FLAG = '-g'
              CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
          else:
@@ -11,7 +11,7 @@ Index: scripts/mk_util.py
              if GPROF:
                  CXXFLAGS     += '-fomit-frame-pointer'
              CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS
-@@ -2484,7 +2483,7 @@ def mk_config():
+@@ -2491,7 +2490,7 @@ def mk_config():
          elif sysname == 'Linux':
              CXXFLAGS       = '%s -D_LINUX_' % CXXFLAGS
              OS_DEFINES     = '-D_LINUX_'
@@ -20,7 +20,7 @@ Index: scripts/mk_util.py
              SLIBFLAGS      = '-shared'
              SLIBEXTRAFLAGS = '%s -Wl,-soname,libz3.so' % SLIBEXTRAFLAGS
          elif sysname == 'GNU':
-@@ -2521,9 +2520,9 @@ def mk_config():
+@@ -2528,9 +2527,9 @@ def mk_config():
              LIB_EXT        = '.lib'
          else:
              raise MKException('Unsupported platform: %s' % sysname)

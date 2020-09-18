@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/03/22 16:01:43 kn Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/09/18 07:52:58 jasper Exp $
 @conflict py3-z3-solver-*
 @bin bin/z3
 include/z3++.h
@@ -22,6 +22,7 @@ lib/cmake/z3/Z3ConfigVersion.cmake
 lib/cmake/z3/Z3Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/z3/Z3Targets.cmake
 @lib lib/libz3.so.${LIBz3_VERSION}
+lib/pkgconfig/z3.pc
 lib/python${MODPY_VERSION}/site-packages/z3/
 lib/python${MODPY_VERSION}/site-packages/z3/__init__.py
 lib/python${MODPY_VERSION}/site-packages/z3/z3.py
