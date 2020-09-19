@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/09/19 20:44:08 kmos Exp $
 
 COMMENT =		interact with Mastodon social networks from the command line
 
@@ -21,6 +21,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR}>=0.16 \
 			devel/py-wcwidth${MODPY_FLAVOR}>=0.1.7 \
@@ -32,8 +33,5 @@ TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/py-test-cov${MODPY_FLAVOR}>=2.4.0
 
 MAKE_ENV =		LC_CTYPE=C.UTF-8
-
-do-test:
-	cd ${WRKSRC} && py.test${MODPY_BIN_SUFFIX} --cov=toot tests/
 
 .include <bsd.port.mk>
