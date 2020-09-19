@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/18 18:46:57 thfr Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/19 18:15:56 thfr Exp $
 
 COMMENT =	library to move calls to Direct3D shaders to OpenGL
 
@@ -25,7 +25,8 @@ WANTLIB += m
 MODULES =	devel/cmake
 
 BUILD_DEPENDS =	devel/re2c \
-		devel/sdl2
+		devel/sdl2 \
+		graphics/vulkan-headers
 
 TEST_DEPENDS =	security/p5-Digest-SHA1
 
