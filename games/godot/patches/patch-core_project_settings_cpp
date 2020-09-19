@@ -1,4 +1,4 @@
-$OpenBSD: patch-core_project_settings_cpp,v 1.3 2020/07/19 13:02:38 thfr Exp $
+$OpenBSD: patch-core_project_settings_cpp,v 1.4 2020/09/19 06:37:23 thfr Exp $
 
 revert long-distance matching in zstd which is based on private functions and
 doesn't compile if archivers/zstd is installed
@@ -9,19 +9,26 @@ based on github issue #17374
 Index: core/project_settings.cpp
 --- core/project_settings.cpp.orig
 +++ core/project_settings.cpp
-@@ -1201,14 +1201,11 @@ ProjectSettings::ProjectSettings() {
+@@ -483,9 +483,7 @@ Error ProjectSettings::setup(const String &p_path, con
+ 		}
+ 	}
+ 	// Using GLOBAL_GET on every block for compressing can be slow, so assigning here.
+-	Compression::zstd_long_distance_matching = GLOBAL_GET("compression/formats/zstd/long_distance_matching");
+ 	Compression::zstd_level = GLOBAL_GET("compression/formats/zstd/compression_level");
+-	Compression::zstd_window_log_size = GLOBAL_GET("compression/formats/zstd/window_log_size");
+ 
+ 	Compression::zlib_level = GLOBAL_GET("compression/formats/zlib/compression_level");
+ 
+@@ -1210,12 +1208,8 @@ ProjectSettings::ProjectSettings() {
+ 	GLOBAL_DEF("debug/settings/profiler/max_functions", 16384);
  	custom_prop_info["debug/settings/profiler/max_functions"] = PropertyInfo(Variant::INT, "debug/settings/profiler/max_functions", PROPERTY_HINT_RANGE, "128,65535,1");
  
- 	//assigning here, because using GLOBAL_GET on every block for compressing can be slow
--	Compression::zstd_long_distance_matching = GLOBAL_DEF("compression/formats/zstd/long_distance_matching", false);
+-	GLOBAL_DEF("compression/formats/zstd/long_distance_matching", Compression::zstd_long_distance_matching);
 -	custom_prop_info["compression/formats/zstd/long_distance_matching"] = PropertyInfo(Variant::BOOL, "compression/formats/zstd/long_distance_matching");
- 	Compression::zstd_level = GLOBAL_DEF("compression/formats/zstd/compression_level", 3);
+ 	GLOBAL_DEF("compression/formats/zstd/compression_level", Compression::zstd_level);
  	custom_prop_info["compression/formats/zstd/compression_level"] = PropertyInfo(Variant::INT, "compression/formats/zstd/compression_level", PROPERTY_HINT_RANGE, "1,22,1");
--	Compression::zstd_window_log_size = GLOBAL_DEF("compression/formats/zstd/window_log_size", 27);
+-	GLOBAL_DEF("compression/formats/zstd/window_log_size", Compression::zstd_window_log_size);
 -	custom_prop_info["compression/formats/zstd/window_log_size"] = PropertyInfo(Variant::INT, "compression/formats/zstd/window_log_size", PROPERTY_HINT_RANGE, "10,30,1");
  
- 	Compression::zlib_level = GLOBAL_DEF("compression/formats/zlib/compression_level", Z_DEFAULT_COMPRESSION);
-+
+ 	GLOBAL_DEF("compression/formats/zlib/compression_level", Compression::zlib_level);
  	custom_prop_info["compression/formats/zlib/compression_level"] = PropertyInfo(Variant::INT, "compression/formats/zlib/compression_level", PROPERTY_HINT_RANGE, "-1,9,1");
- 
- 	Compression::gzip_level = GLOBAL_DEF("compression/formats/gzip/compression_level", Z_DEFAULT_COMPRESSION);

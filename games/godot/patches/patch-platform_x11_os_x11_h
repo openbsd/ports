@@ -1,4 +1,4 @@
-$OpenBSD: patch-platform_x11_os_x11_h,v 1.1 2020/09/06 10:34:19 thfr Exp $
+$OpenBSD: patch-platform_x11_os_x11_h,v 1.2 2020/09/19 06:37:23 thfr Exp $
 
 load sndio
 
@@ -13,7 +13,7 @@ Index: platform/x11/os_x11.h
  #include "drivers/pulseaudio/audio_driver_pulseaudio.h"
  #include "drivers/unix/os_unix.h"
  #include "joypad_linux.h"
-@@ -185,6 +186,10 @@ class OS_X11 : public OS_Unix {
+@@ -184,6 +185,10 @@ class OS_X11 : public OS_Unix {
  
  #ifdef ALSAMIDI_ENABLED
  	MIDIDriverALSAMidi driver_alsamidi;

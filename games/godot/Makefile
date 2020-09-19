@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2020/09/06 10:34:19 thfr Exp $
+# $OpenBSD: Makefile,v 1.16 2020/09/19 06:37:23 thfr Exp $
 
 COMMENT =	2D and 3D game engine
 
-V =		3.2.2
+V =		3.2.3
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
 CATEGORIES =	games
-REVISION =	1
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Omar Polo <op@omarpolo.com>
 
@@ -19,16 +18,16 @@ WANTLIB += Xrender c enet execinfo freetype intl m mbedtls mbedcrypto
 WANTLIB += mbedx509 mpcdec ogg opus opusfile png sndio theora theoradec
 WANTLIB += vorbis vorbisfile webp xcb z pcre2-32 vpx zstd
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++14
+COMPILER =	base-clang ports-gcc
 
 MASTER_SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/scons
 # Can't disable builtin_bullet until devel/bullet has been updated to 2.88
-# Building with module_mono_enabled requires msbuild (which we don't have
-# yet) and to fix the sharedlib_ext in modules/mono/config.py to '.so.1.0'
-# Disable pulseaudio which is currently not working
+# Building with module_mono_enabled requires msbuild and to fix the
+# sharedlib_ext in modules/mono/config.py to '.so.1.0'
 MODSCONS_FLAGS =	CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" \
