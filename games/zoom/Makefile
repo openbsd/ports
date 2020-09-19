@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/09/19 08:34:31 kirby Exp $
 
 COMMENT=		Z-code interpreter for X11
 
 DISTNAME=		zoom-1.1.5
 CATEGORIES=     	games
+REVISION=		0
 
-HOMEPAGE=		http://www.logicalshift.co.uk/unix/zoom/
+HOMEPAGE=		https://www.logicalshift.co.uk/unix/zoom/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext Xrender c fontconfig m png t1 z
 
-MASTER_SITES=		http://www.logicalshift.co.uk/unix/zoom/
+MASTER_SITES=		https://www.logicalshift.co.uk/unix/zoom/
 
 LIB_DEPENDS=		devel/t1lib \
 			graphics/png
