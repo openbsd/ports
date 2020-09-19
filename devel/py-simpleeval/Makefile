@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/19 20:02:56 kmos Exp $
 
 COMMENT =	simple, safe single expression evaluator library
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE=	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	test_simpleeval.py
 
 FLAVORS =	python3
 FLAVOR ?=
