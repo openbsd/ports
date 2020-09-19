@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/28 07:45:04 remi Exp $
+# $OpenBSD: Makefile,v 1.9 2020/09/19 10:12:52 remi Exp $
 
 COMMENT =		config backup and policy check for network devices
 
-V =			0.14.1
+V =			0.15.2
 DISTNAME =		netshot_${V}
 PKGNAME =		${DISTNAME:S/_/-/}
 WRKDIST =		${WRKDIR}

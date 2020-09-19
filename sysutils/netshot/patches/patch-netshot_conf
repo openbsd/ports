@@ -1,10 +1,10 @@
-$OpenBSD: patch-netshot_conf,v 1.4 2020/02/28 07:45:04 remi Exp $
+$OpenBSD: patch-netshot_conf,v 1.5 2020/09/19 10:12:52 remi Exp $
 
 Index: netshot.conf
 --- netshot.conf.orig
 +++ netshot.conf
-@@ -1,9 +1,9 @@
- # Netshot Configuration File
+@@ -2,9 +2,9 @@
+ # See https://github.com/netfishers-onl/Netshot/wiki/Config-file-(netshot.conf)-reference
  
  # Log file and level
 -netshot.log.file = /var/log/netshot/netshot.log
@@ -15,7 +15,7 @@ Index: netshot.conf
  netshot.log.audit.level = INFO
  #netshot.log.syslog1.host = 10.0.16.16
  
-@@ -19,7 +19,7 @@ netshot.db.password = netshot
+@@ -20,7 +20,7 @@ netshot.db.password = netshot
  netshot.db.encryptionpassword = netshot
  
  # REST
@@ -24,7 +24,7 @@ Index: netshot.conf
  netshot.http.ssl.keystore.pass = password
  #netshot.http.baseurl = https://localhost
  netshot.http.baseurl = https://0.0.0.0
-@@ -38,12 +38,12 @@ netshot.snapshots.auto.interval = 15
+@@ -39,12 +39,12 @@ netshot.snapshots.auto.interval = 15
  # Allow a trap received from any IP of a device to trigger an automatic snapshot
  netshot.snapshots.auto.anyip = true
  # After a snapshot, dump the last configuration to a file in this directory
