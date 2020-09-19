@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.119 2020/09/12 10:17:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.120 2020/09/19 08:24:50 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -39,6 +39,20 @@ lib/python${MODPY_VERSION}/site-packages/awscli/alias.py
 lib/python${MODPY_VERSION}/site-packages/awscli/argparser.py
 lib/python${MODPY_VERSION}/site-packages/awscli/argprocess.py
 lib/python${MODPY_VERSION}/site-packages/awscli/arguments.py
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}docevents.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}docstringparser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}restdoc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}style.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}textwriter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/docevents.py
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/docstringparser.py
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/restdoc.py
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/style.py
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/textwriter.py
 lib/python${MODPY_VERSION}/site-packages/awscli/clidocs.py
 lib/python${MODPY_VERSION}/site-packages/awscli/clidriver.py
 lib/python${MODPY_VERSION}/site-packages/awscli/commands.py

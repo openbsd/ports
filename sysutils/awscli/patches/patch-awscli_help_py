@@ -1,11 +1,11 @@
-$OpenBSD: patch-awscli_help_py,v 1.2 2020/03/23 12:09:21 ajacoutot Exp $
+$OpenBSD: patch-awscli_help_py,v 1.3 2020/09/19 08:24:50 ajacoutot Exp $
 
 https://github.com/aws/aws-cli/pull/2635
 
 Index: awscli/help.py
 --- awscli/help.py.orig
 +++ awscli/help.py
-@@ -107,9 +107,12 @@ class PosixHelpRenderer(PagingHelpRenderer):
+@@ -106,9 +106,12 @@ class PosixHelpRenderer(PagingHelpRenderer):
  
      def _convert_doc_content(self, contents):
          man_contents = publish_string(contents, writer=manpage.Writer())
