@@ -1,0 +1,5 @@
+LXterminal is a lightweight, VTE-based and desktop-independent terminal
+emulator with multiple tabs support.
+
+In order to reduce memory usage and increase the performance all instances
+of the terminal are sharing a single process.

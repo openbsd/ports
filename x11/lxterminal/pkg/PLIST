@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/19 14:29:59 kevlo Exp $
+@bin bin/lxterminal
+@man man/man1/lxterminal.1
+share/applications/lxterminal.desktop
+share/icons/hicolor/128x128/apps/lxterminal.png
+share/lxterminal/
+share/lxterminal/lxterminal-preferences.ui
+share/lxterminal/lxterminal.conf
+share/lxterminal/menu.ui
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
