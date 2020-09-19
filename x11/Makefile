@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.671 2020/09/07 12:22:16 thfr Exp $
+# $OpenBSD: Makefile,v 1.672 2020/09/19 14:31:04 kevlo Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -169,6 +169,7 @@
      SUBDIR += lxappearance
      SUBDIR += lxqt
      SUBDIR += lxrandr
+     SUBDIR += lxterminal
      SUBDIR += mate
      SUBDIR += menu-cache
      SUBDIR += menumaker
