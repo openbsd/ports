@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.144 2020/09/12 10:17:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.145 2020/09/19 08:24:19 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -1300,16 +1300,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}docevents.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}docstringparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}restdoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}style.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}textwriter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/docevents.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/docstringparser.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/restdoc.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/style.py
-lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/textwriter.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/client.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/docstring.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/example.py
