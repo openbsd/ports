@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-server,v 1.2 2018/12/24 17:03:03 pascal Exp $
-@newgroup _hedgewars:765
-@newuser _hedgewars:765:765:daemon:Hedgewars server:/nonexistent:/sbin/nologin
-@rcscript ${RCDIR}/hedgewars_server
-@bin bin/hedgewars-server
