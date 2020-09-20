@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1061 2020/09/16 07:29:10 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1062 2020/09/20 04:27:37 gnezdo Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1845,6 +1845,9 @@ my $obsolete_reason = {
 	'py-routes' => 5,
 	'py-weberror' => 5,
 	'py-webhelpers' => 5,
+	'hedgewars' => 0,
+	'lazarus' => 0,
+	'fpc' => 5,
 };
 
 # reasons for obsolete packages
