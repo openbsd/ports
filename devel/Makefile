@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2017 2020/09/20 04:27:37 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.2018 2020/09/20 16:04:52 kmos Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1309,7 +1309,7 @@
      SUBDIR += pycharm
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
-     SUBDIR += py-algorithm-munkres
+     SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-altgraph,python3
      SUBDIR += py-ana
