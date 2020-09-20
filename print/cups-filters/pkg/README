@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.11 2020/02/22 14:51:47 ajacoutot Exp $
+$OpenBSD: README,v 1.12 2020/09/20 09:32:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -15,38 +15,51 @@ pkg_scripts line can be edited as follow:
 
     pkg_scripts=[...] messagebus avahi_daemon cups_browsed [...]
 
-lpd(8) using direct printing with foomatic-rip(1)
-=================================================
+Using direct printing with foomatic-rip(1)
+==========================================
 
-The Foomatic framework supports direct printing which does not rely on
-CUPS (nor any spooler) and can thus be used with lpd(8).
+The Foomatic framework supports direct printing which does not rely on CUPS (nor
+any spooler).
 
 Complete documentation can be found at:
-    http://www.linuxfoundation.org/collaborate/workgroups/openprinting/database/nospoolerdocumentation
+    https://wiki.linuxfoundation.org/openprinting/database/nospoolerdocumentation
 
 Foomatic configuration
 ----------------------
-A specific PPD file has to be created for the printer. Refer to the
-documentation that comes with the foomatic-db-engine package to learn
-how to generate PPD files
+A specific PPD file has to be created for the printer.
+Refer to the documentation that comes with the foomatic-db-engine package to
+learn how to generate PPD files
 (cf. ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine).
 
 # mkdir -p ${SYSCONFDIR}/foomatic/direct
-# foomatic-ppdfile -p 'Samsung-ML-2850D' -d 'Postscript' > ${SYSCONFDIR}/foomatic/direct/samsung-ml2850d.ppd
+# foomatic-ppdfile -p 'Samsung-ML-2850D' -d 'Postscript' \
+	>${SYSCONFDIR}/foomatic/direct/samsung-ml2850d.ppd
 
-Alternatively, you can look under
-    ${LOCALBASE}/share/foomatic/db/source/PPD
-for existing PPD files matching your printer (in which case the PPD file
-can be copied and/or gunzip'd under ${SYSCONFDIR}/foomatic/direct).
+Alternatively, you can look under ${LOCALBASE}/share/foomatic/db/source/PPD for
+existing PPD files matching your printer (in which case the PPD file can be
+copied and/or gunzip'd under ${SYSCONFDIR}/foomatic/direct).
+
+PPD file configuration
+----------------------
+For a TCP/Socket/JetDirect printer listening on port 192.168.0.10:9100 and
+supporting raw printing (does *not* work with LPD), add the following line near
+the top of ${SYSCONFDIR}/foomatic/direct/samsung-ml2850d.ppd:
+*FoomaticRIPPostPipe: "| /usr/bin/nc -w 1 192.168.0.10 9100"
+
+More examples are available in the official documentation (see link above).
+
+You should now be able to send jobs to this printer by running:
+    $ ${PREFIX}/bin/foomatic-rip -q -P samsung-ml2850d /path/to/file.ps
 
 Input filter script
 -------------------
-Non-postscript files must be converted before being sent to
-foomatic-rip(1). Several packages can be used for that, a2ps being the
-most complete.
+Files must be converted before being sent to foomatic-rip(1).
+Depending on your printer capabilities, it can accept PS and/or PDF input.
+
+Several packages can be used for convertion, a2ps being the most complete.
 Note that a2ps(1) requires external helper tools for converting files.
-They can be configured under ${SYSCONFDIR}/a2ps{,-site}.cfg. By default,
-converting images requires the ImageMagick package.
+They can be configured under ${SYSCONFDIR}/a2ps{,-site}.cfg.
+By default, converting images requires the ImageMagick package.
 
 Here's a sample converter script:
 
@@ -54,8 +67,14 @@ Here's a sample converter script:
 #!/bin/sh
 
 ${LOCALBASE}/bin/a2ps -BRq --columns=1 -o - | \
-	${PREFIX}/bin/foomatic-rip -P samsung-ml2850d
+	${PREFIX}/bin/foomatic-rip -q -P samsung-ml2850d
 ---8<-------------------------------------------------------------------
+
+Tips: you can symlink this script to "lpr" to ease out-of-the-box printing for
+applications supporting lpr(1) printing.
+
+If your printer uses PDF printing, you can pipe a2ps to ps2pdf (from the
+ghostscript package).
 
 Additional options can be passed to foomatic-rip(1).
 e.g.
@@ -63,31 +82,3 @@ e.g.
 - to set the page size to letter: -o pagesize=letter
 
 Default options can be set by editing the PPD file.
-
-To use the above script as an input filter for lpd(8), see the next
-sections (make sure the script is executable).
-
-lpd(8): USB printer printcap(5) example
----------------------------------------
-lp|samsung|Samsung-ML-2850D:\
-	:lp=/dev/ulpt0:\
-	:if=/path/to/script.sh:\
-	:sd=/var/spool/output:\
-	:lf=/var/log/lpd-errs:\
-	:sh:
-
-lpd(8): network printer printcap(5) example
--------------------------------------------
-rp|samsung|Samsung-ML-2850D:\
-	:lp=9100@1.2.3.4:\
-	:if=/path/to/script.sh:\
-	:sd=/var/spool/output:\
-	:lf=/var/log/lpd-errs:\
-	:sh:
-(where 1.2.3.4 is the printer IP address and 9100 the printer stream port)
-
-foomatic-rip(1) does *not* speak LPD (port 515).
-If the printer does not support raw printing over port 9100, it must be
-setup locally on a print server (see above for an example using USB)
-then accessed over LPD by the clients (there is no need to setup any
-print filter on the clients since it will run on the print server).
