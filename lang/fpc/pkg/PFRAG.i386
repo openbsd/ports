@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.i386,v 1.2 2015/12/22 14:43:55 pascal Exp $
-bin/ppc386
-@bin lib/fpc/${V}/ppc386
-lib/fpc/${V}/units/${CONFIG}/rtl/mmx.o
-lib/fpc/${V}/units/${CONFIG}/rtl/mmx.ppu
-@man man/man1/ppc386.1
