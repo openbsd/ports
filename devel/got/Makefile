@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2020/09/14 14:36:23 stsp Exp $
+# $OpenBSD: Makefile,v 1.45 2020/09/21 12:25:15 stsp Exp $
 
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
 
-V =			0.39
+V =			0.40
 DISTNAME =		got-${V}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-web =		gotweb-${V}
