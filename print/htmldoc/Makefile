@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2020/06/13 15:11:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.49 2020/09/21 14:36:35 benoit Exp $
 
 COMMENT =		convert HTML pages to PDF/PS format
 
-V =			1.9.9
+V =			1.9.10
 DISTNAME =		htmldoc-${V}
 CATEGORIES =		print www
 
