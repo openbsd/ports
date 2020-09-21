@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2020/05/15 06:45:55 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.44 2020/09/21 13:48:01 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -242,6 +242,7 @@ share/highlight/langDefs/verilog.lang
 share/highlight/langDefs/vhd.lang
 share/highlight/langDefs/vimscript.lang
 share/highlight/langDefs/vue.lang
+share/highlight/langDefs/wat.lang
 share/highlight/langDefs/whiley.lang
 share/highlight/langDefs/wren.lang
 share/highlight/langDefs/xml.lang
