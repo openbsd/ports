@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.97 2020/07/04 17:19:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.98 2020/09/21 14:36:21 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -304,7 +304,7 @@ share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
 share/pixmaps/
-share/pixmaps/puflogh1000X248.gif
+share/pixmaps/gdm-puffy.png
 @mode 0755
 @sample /var/log/gdm/
 @mode 1755
