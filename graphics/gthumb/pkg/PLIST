@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/04/23 08:59:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/09/21 19:08:06 jasper Exp $
 @bin bin/gthumb
 include/gthumb/
 include/gthumb/cairo-scale.h
@@ -947,6 +947,50 @@ share/help/sv/gthumb/thumbnail-pane.page
 share/help/sv/gthumb/thumbnails.page
 share/help/sv/gthumb/viewer.page
 share/help/sv/gthumb/wallpaper.page
+share/help/uk/
+share/help/uk/gthumb/
+share/help/uk/gthumb/attributes.page
+share/help/uk/gthumb/batch-change-date.page
+share/help/uk/gthumb/batch-convert-format.page
+share/help/uk/gthumb/batch-resize.page
+share/help/uk/gthumb/batch-rotate.page
+share/help/uk/gthumb/batch-scripts.page
+share/help/uk/gthumb/bookmarks.page
+share/help/uk/gthumb/browser.page
+share/help/uk/gthumb/edit-colors.page
+share/help/uk/gthumb/edit-redeye.page
+share/help/uk/gthumb/edit-resize-crop.page
+share/help/uk/gthumb/edit-rotate.page
+share/help/uk/gthumb/edit-save-undo-redo.page
+share/help/uk/gthumb/extensions.page
+share/help/uk/gthumb/figures/
+share/help/uk/gthumb/figures/general-filter.png
+share/help/uk/gthumb/figures/import-pref-auto-folder.png
+share/help/uk/gthumb/figures/import-pref-custom-format.png
+share/help/uk/gthumb/figures/import.png
+share/help/uk/gthumb/figures/main-win.png
+share/help/uk/gthumb/figures/palette.png
+share/help/uk/gthumb/figures/specific-filter.png
+share/help/uk/gthumb/figures/thumbnail-pane.png
+share/help/uk/gthumb/file-copy-move.page
+share/help/uk/gthumb/filtering.page
+share/help/uk/gthumb/fullscreen.page
+share/help/uk/gthumb/gimp.page
+share/help/uk/gthumb/import.page
+share/help/uk/gthumb/index.page
+share/help/uk/gthumb/introduction.page
+share/help/uk/gthumb/legal.xml
+share/help/uk/gthumb/printing.page
+share/help/uk/gthumb/rename-series.page
+share/help/uk/gthumb/sharing-disc.page
+share/help/uk/gthumb/sharing-social.page
+share/help/uk/gthumb/slideshow.page
+share/help/uk/gthumb/sorting.page
+share/help/uk/gthumb/strftime.page
+share/help/uk/gthumb/thumbnail-pane.page
+share/help/uk/gthumb/thumbnails.page
+share/help/uk/gthumb/viewer.page
+share/help/uk/gthumb/wallpaper.page
 share/help/zh_CN/
 share/help/zh_CN/gthumb/
 share/help/zh_CN/gthumb/attributes.page
