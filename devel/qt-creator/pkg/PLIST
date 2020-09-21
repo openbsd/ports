@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/08/30 20:14:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/09/21 15:31:49 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
@@ -274,6 +274,7 @@ share/qtcreator/qml/qmlpuppet/commands/removesharedmemorycommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/removesharedmemorycommand.h
 share/qtcreator/qml/qmlpuppet/commands/reparentinstancescommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/reparentinstancescommand.h
+share/qtcreator/qml/qmlpuppet/commands/scenecreatedcommand.h
 share/qtcreator/qml/qmlpuppet/commands/statepreviewimagechangedcommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/statepreviewimagechangedcommand.h
 share/qtcreator/qml/qmlpuppet/commands/synchronizecommand.cpp
@@ -411,6 +412,8 @@ share/qtcreator/qml/qmlpuppet/qml2puppet/instances/anchorchangesnodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/anchorchangesnodeinstance.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/behaviornodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/behaviornodeinstance.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/capturenodeinstanceserverdispatcher.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/capturenodeinstanceserverdispatcher.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/childrenchangeeventfilter.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/childrenchangeeventfilter.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/componentnodeinstance.cpp
@@ -424,6 +427,8 @@ share/qtcreator/qml/qmlpuppet/qml2puppet/instances/layoutnodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/layoutnodeinstance.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/nodeinstanceserver.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/nodeinstanceserver.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/nodeinstanceserverdispatcher.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/nodeinstanceserverdispatcher.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/nodeinstancesignalspy.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/nodeinstancesignalspy.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/objectnodeinstance.cpp
@@ -438,8 +443,8 @@ share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qmltransitionnodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qmltransitionnodeinstance.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt3dpresentationnodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt3dpresentationnodeinstance.h
-share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5capturenodeinstanceserver.cpp
-share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5capturenodeinstanceserver.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5capturepreviewnodeinstanceserver.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5capturepreviewnodeinstanceserver.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5informationnodeinstanceserver.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5informationnodeinstanceserver.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5nodeinstanceclientproxy.cpp
