@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/09/21 17:36:42 cwen Exp $
 
 COMMENT=	Perl extension to interface GSM cellulars / modems
 
 DISTNAME =	Device-Gsm-1.61
 CATEGORIES=	comms
-REVISION =	0
+REVISION =	1
 
 MODULES=	cpan
 PKG_ARCH=	*
@@ -12,7 +12,7 @@ PKG_ARCH=	*
 # Artistic
 PERMIT_PACKAGE=	Yes
 
-RUN_DEPENDS=	comms/p5-Device-Modem
-BUILD_DEPENDS=	comms/p5-Device-Modem
+RUN_DEPENDS=	comms/p5-Device-Modem \
+		comms/p5-Device-SerialPort
 
 .include <bsd.port.mk>
