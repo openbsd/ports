@@ -1,0 +1,14 @@
+$OpenBSD: patch-api_logic_tools_MCEditTool_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
+
+Index: api/logic/tools/MCEditTool.cpp
+--- api/logic/tools/MCEditTool.cpp.orig
++++ api/logic/tools/MCEditTool.cpp
+@@ -49,6 +49,8 @@ QString MCEditTool::getProgramPath()
+ {
+ #ifdef Q_OS_OSX
+     return path();
++#elif defined(Q_OS_OPENBSD)
++    return QString();
+ #else
+     const QString mceditPath = path();
+     QDir mceditDir(mceditPath);

@@ -1,0 +1,43 @@
+$OpenBSD: patch-libraries_systeminfo_src_sys_unix_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
+
+Index: libraries/systeminfo/src/sys_unix.cpp
+--- libraries/systeminfo/src/sys_unix.cpp.orig
++++ libraries/systeminfo/src/sys_unix.cpp
+@@ -5,6 +5,11 @@
+ #include <sys/utsname.h>
+ #include <fstream>
+ 
++#ifdef Q_OS_OPENBSD
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#endif
++
+ Sys::KernelInfo Sys::getKernelInfo()
+ {
+     Sys::KernelInfo out;
+@@ -17,6 +22,7 @@ Sys::KernelInfo Sys::getKernelInfo()
+ 
+ uint64_t Sys::getSystemRam()
+ {
++#ifdef Q_OS_LINUX
+     std::string token;
+     std::ifstream file("/proc/meminfo");
+     while(file >> token)
+@@ -36,6 +42,17 @@ uint64_t Sys::getSystemRam()
+         // ignore rest of the line
+         file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     }
++#elif defined(Q_OS_OPENBSD)
++    static int physmem_mib[] = {CTL_HW, HW_PHYSMEM64};
++    uint64_t physmem;
++    size_t size = sizeof(physmem);
++
++    if (sysctl(physmem_mib, 2, &physmem, &size, NULL, 0) != -1)
++    {
++        return physmem;
++    }
++
++#endif
+     return 0; // nothing found
+ }
+ 

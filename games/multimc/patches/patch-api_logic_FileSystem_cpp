@@ -1,0 +1,14 @@
+$OpenBSD: patch-api_logic_FileSystem_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
+
+Index: api/logic/FileSystem.cpp
+--- api/logic/FileSystem.cpp.orig
++++ api/logic/FileSystem.cpp
+@@ -403,7 +403,7 @@ QString getDesktopDir()
+ bool createShortCut(QString location, QString dest, QStringList args, QString name,
+                           QString icon)
+ {
+-#if defined Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+     location = PathCombine(location, name + ".desktop");
+ 
+     QFile f(location);

@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
+@bin bin/multimc
+@so lib/libMultiMC_gui.so
+@so lib/libMultiMC_iconfix.so
+@so lib/libMultiMC_logic.so
+@so lib/libMultiMC_nbt++.so
+@so lib/libMultiMC_quazip.so
+@so lib/libMultiMC_rainbow.so
+@so lib/libMultiMC_unpack200.so
+share/multimc/
+share/multimc/jars/
+share/multimc/jars/JavaCheck.jar
+share/multimc/jars/NewLaunch.jar

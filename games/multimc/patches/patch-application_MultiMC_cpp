@@ -1,0 +1,59 @@
+$OpenBSD: patch-application_MultiMC_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
+
+Index: application/MultiMC.cpp
+--- application/MultiMC.cpp.orig
++++ application/MultiMC.cpp
+@@ -342,7 +342,7 @@ MultiMC::MultiMC(int &argc, char **argv) : QApplicatio
+     // Set up paths
+     {
+         // Root path is used for updates.
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+         QDir foo(FS::PathCombine(binPath, ".."));
+         m_rootPath = foo.absolutePath();
+ #elif defined(Q_OS_WIN32)
+@@ -727,6 +727,44 @@ MultiMC::MultiMC(int &argc, char **argv) : QApplicatio
+         m_analytics->enable();
+         qDebug() << "<> Initialized analytics with tid" << BuildConfig.ANALYTICS_ID;
+     }();
++
++#ifdef Q_OS_OPENBSD
++    {
++        QString currentJavaPath = settings()->get("JavaPath").toString();
++        QString actualPath = FS::ResolveExecutable(currentJavaPath);
++        if (actualPath.isNull())
++        {
++            qDebug() << "<> Finding Java with javaPathHelper...";
++            char buf[512];
++            FILE *fp = popen(JAVAPATHHELPER_PATH " -c multimc", "r");
++            if (fp != NULL)
++            {
++              while (fgets(buf, 512, fp) != NULL)
++              {
++                  QString javaPath = QString::fromLocal8Bit(buf);
++
++                  if (javaPath.isNull())
++                  {
++                      continue;
++                  }
++
++                  javaPath = javaPath.trimmed();
++                  javaPath = FS::ResolveExecutable(javaPath);
++
++                  if (javaPath.isNull())
++                  {
++                      continue;
++                  }
++
++                  qDebug() << "<> Found Java: " << javaPath;
++                  settings()->set("LastHostname", QHostInfo::localHostName());
++                  settings()->set("JavaPath", javaPath);
++              }
++            }
++            pclose(fp);
++        }
++    }
++#endif
+ 
+     if(createSetupWizard())
+     {

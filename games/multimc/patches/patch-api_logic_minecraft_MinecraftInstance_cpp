@@ -1,0 +1,30 @@
+$OpenBSD: patch-api_logic_minecraft_MinecraftInstance_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
+
+Index: api/logic/minecraft/MinecraftInstance.cpp
+--- api/logic/minecraft/MinecraftInstance.cpp.orig
++++ api/logic/minecraft/MinecraftInstance.cpp
+@@ -162,7 +162,11 @@ QString MinecraftInstance::binRoot() const
+ 
+ QString MinecraftInstance::getNativePath() const
+ {
++#ifdef Q_OS_OPENBSD
++    QDir natives_dir(LWJGL_DIR);
++#else
+     QDir natives_dir(FS::PathCombine(instanceRoot(), "natives/"));
++#endif
+     return natives_dir.absolutePath();
+ }
+ 
+@@ -844,10 +848,12 @@ shared_qobject_ptr<LaunchTask> MinecraftInstance::crea
+         process->appendStep(new CreateServerResourcePacksFolder(pptr));
+     }
+ 
++#ifndef Q_OS_OPENBSD
+     // extract native jars if needed
+     {
+         process->appendStep(new ExtractNatives(pptr));
+     }
++#endif
+ 
+     // reconstruct assets if needed
+     {

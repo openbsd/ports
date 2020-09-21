@@ -1,0 +1,32 @@
+$OpenBSD: patch-api_logic_java_JavaUtils_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
+
+Index: api/logic/java/JavaUtils.cpp
+--- api/logic/java/JavaUtils.cpp.orig
++++ api/logic/java/JavaUtils.cpp
+@@ -31,7 +31,7 @@ JavaUtils::JavaUtils()
+ {
+ }
+ 
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+ static QString processLD_LIBRARY_PATH(const QString & LD_LIBRARY_PATH)
+ {
+     QDir mmcBin(QCoreApplication::applicationDirPath());
+@@ -83,7 +83,7 @@ QProcessEnvironment CleanEnviroment()
+             qDebug() << "Env: ignoring" << key << value;
+             continue;
+         }
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+         // Do not pass LD_* variables to java. They were intended for MultiMC
+         if(key.startsWith("LD_"))
+         {
+@@ -112,7 +112,7 @@ QProcessEnvironment CleanEnviroment()
+         // qDebug() << "Env: " << key << value;
+         env.insert(key, value);
+     }
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+     // HACK: Workaround for QTBUG42500
+     if(!env.contains("LD_LIBRARY_PATH"))
+     {
