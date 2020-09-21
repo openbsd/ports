@@ -1,4 +1,4 @@
-$OpenBSD: patch-nspr_pr_src_linking_prlink_c,v 1.5 2019/10/23 19:28:36 landry Exp $
+$OpenBSD: patch-nspr_pr_src_linking_prlink_c,v 1.6 2020/09/21 13:50:18 landry Exp $
 If dlopen() fails, retry with everything stripped after .so
 https://bugzilla.mozilla.org/show_bug.cgi?id=650772
 Index: nspr/pr/src/linking/prlink.c
@@ -12,10 +12,10 @@ Index: nspr/pr/src/linking/prlink.c
 +#include <limits.h> /* for PATH_MAX */
 +#endif
 +
- #if defined(XP_MACOSX) && defined(USE_MACH_DYLD)
- #include <Carbon/Carbon.h>
- #include <CoreFoundation/CoreFoundation.h>
-@@ -775,6 +779,10 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
+ #ifdef XP_UNIX
+ #ifdef USE_DLFCN
+ #include <dlfcn.h>
+@@ -531,6 +535,10 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
  #else
          int dl_flags = 0;
  #endif
@@ -24,9 +24,9 @@ Index: nspr/pr/src/linking/prlink.c
 +    char *c;
 +#endif
          void *h = NULL;
- 
-         if (flags & PR_LD_LAZY) {
-@@ -799,7 +807,18 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
+ #if defined(DARWIN)
+         PRBool okToLoad = PR_FALSE;
+@@ -582,7 +590,18 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
          }
  #else
          h = dlopen(name, dl_flags);
@@ -45,7 +45,7 @@ Index: nspr/pr/src/linking/prlink.c
  #elif defined(USE_HPSHL)
          int shl_flags = 0;
          shl_t h;
-@@ -830,7 +849,11 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
+@@ -611,7 +630,11 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
              PR_DELETE(lm);
              goto unlock;
          }
