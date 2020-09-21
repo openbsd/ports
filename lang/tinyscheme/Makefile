@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/21 04:02:00 gkoehler Exp $
 
 COMMENT=	lightweight Scheme implementation with subset of R5RS
 
-DISTNAME=	tinyscheme-1.41
+DISTNAME=	tinyscheme-1.42
 CATEGORIES=	lang
 
 HOMEPAGE=	http://tinyscheme.sourceforge.net/home.html
