@@ -1,4 +1,4 @@
-#+ $OpenBSD: Makefile,v 1.46 2020/07/03 21:13:21 sthen Exp $
+#+ $OpenBSD: Makefile,v 1.47 2020/09/21 11:41:58 ajacoutot Exp $
 
 PORTROACH=		limitw:2,even
 
@@ -40,6 +40,13 @@ USE_GMAKE =		Yes
 .if ${FLAVOR:Mpython3}
 FULLPKGNAME-main =	${PKGNAME-main:S/^py-/py3-/}
 FULLPKGPATH-main =	x11/dbus-python,-main${MODPY_FLAVOR}
+TEST_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
+.else
+# dbus/gobject_service.py:
+# dbus.gobject_service is deprecated, and is not available under Python 3.
+# Porting from gobject (PyGObject 2) to gi.repository.GObject (PyGObject 3),
+# and using dbus.gi_service instead of dbus.gobject_service, is recommended.
+NO_TEST =		Yes
 .endif
 
 LIB_DEPENDS-main =	devel/glib2 \
@@ -56,7 +63,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-documentation
 
 TEST_FLAGS =		LDFLAGS="-L${LOCALBASE}/lib"
-TEST_DEPENDS =		devel/py-gobject3${MODPY_FLAVOR}
 
 pre-configure:
 	sed -i "s,/bin/bash,/bin/sh,g" \
