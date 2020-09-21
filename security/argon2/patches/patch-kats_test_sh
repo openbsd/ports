@@ -1,0 +1,14 @@
+$OpenBSD: patch-kats_test_sh,v 1.1 2020/09/21 19:00:29 naddy Exp $
+
+Index: kats/test.sh
+--- kats/test.sh.orig
++++ kats/test.sh
+@@ -9,7 +9,7 @@ do
+     printf "Force OPTTEST=1\n"
+   fi
+ 
+-  make genkat $opttest > /dev/null
++  ${MAKE:-make} genkat $opttest > /dev/null
+   if [ $? -ne 0 ]
+   then
+     exit $?
