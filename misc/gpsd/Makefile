@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/09/26 21:59:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2020/09/21 14:24:37 landry Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -9,7 +9,7 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-REVISION-php=		0
+REVISION=		0
 
 SHARED_LIBS +=		gps	20.0 # 25.0
 CATEGORIES=		misc geo
@@ -27,6 +27,7 @@ WANTLIB-main +=	c dbus-1 m curses pthread usb-1.0 ${COMPILER_LIBCXX}
 WANTLIB-php =
 
 MODULES +=		devel/scons lang/python lang/php
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPHP_BUILDDEP=	No
 MODSCONS_FLAGS +=	gpsd_user=_gpsd \
 			qt=no \
@@ -39,7 +40,7 @@ MODSCONS_FLAGS +=	gpsd_user=_gpsd \
 
 MULTI_PACKAGES =	-main -php -x11
 
-BUILD_DEPENDS=		devel/py-gobject3 \
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			textproc/xmlto \
 			textproc/libxslt \
 			textproc/docbook \
@@ -51,12 +52,12 @@ LIB_DEPENDS-main =	devel/libusb1 \
 			x11/dbus \
 			${MODGCC4_CPPLIBDEP}
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
-			devel/py-serial
+			devel/py-serial${MODPY_FLAVOR}
 
 RUN_DEPENDS-x11 =	${BASE_PKGPATH} \
-			devel/py-gobject3 \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
-			x11/py-gtk2
+			x11/gtk+3
 
 # the php display script doesn't depend on having any of gpsd around,
 # it just sits there and looks pretty.
