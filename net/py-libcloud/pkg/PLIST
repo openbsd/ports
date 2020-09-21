@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/04/16 06:25:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/09/21 16:08:49 ajacoutot Exp $
 @conflict py-libcloud-*
 @pkgpath net/py-libcloud,python3
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -77,6 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}nttcis.
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}onapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}openstack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}openstack_identity.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}osc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}ovh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}pointdns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}providers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -122,6 +123,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/common/nttcis.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/onapp.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/openstack.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/openstack_identity.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/osc.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/ovh.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/pointdns.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/providers.py
@@ -198,6 +200,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}oneandone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}opennebula.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}openstack.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}outscale.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}ovh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}packet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}profitbricks.${MODPY_PYC_MAGIC_TAG}pyc
@@ -259,6 +262,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/onapp.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/oneandone.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/opennebula.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/openstack.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/outscale.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/ovh.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/packet.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/profitbricks.py
@@ -315,6 +319,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/docker.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/data/
 lib/python${MODPY_VERSION}/site-packages/libcloud/data/pricing.json
+lib/python${MODPY_VERSION}/site-packages/libcloud/data/pricing.json.sha256
+lib/python${MODPY_VERSION}/site-packages/libcloud/data/pricing.json.sha512
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/dns/${MODPY_PYCACHE}/
