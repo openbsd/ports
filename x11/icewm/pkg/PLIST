@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/06/24 20:52:49 bket Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/09/22 12:02:32 bket Exp $
 @bin bin/icehelp
 @bin bin/icesh
 @bin bin/icesound
@@ -188,6 +188,8 @@ share/icewm/taskbar/windows.xpm
 share/icewm/taskbar/xfreeos2.xpm
 share/icewm/themes/
 share/icewm/themes/CrystalBlue/
+share/icewm/themes/CrystalBlue/buttonA.xpm
+share/icewm/themes/CrystalBlue/buttonI.xpm
 share/icewm/themes/CrystalBlue/close.xpm
 share/icewm/themes/CrystalBlue/closeA.xpm
 share/icewm/themes/CrystalBlue/closeO.xpm
@@ -272,6 +274,8 @@ share/icewm/themes/CrystalBlue/taskbar/taskbuttonbg.xpm
 share/icewm/themes/CrystalBlue/taskbar/taskbuttonminimized.xpm
 share/icewm/themes/CrystalBlue/taskbar/toolbuttonbg.xpm
 share/icewm/themes/CrystalBlue/taskbar/windows.xpm
+share/icewm/themes/CrystalBlue/taskbar/workspacebuttonactive.xpm
+share/icewm/themes/CrystalBlue/taskbar/workspacebuttonbg.xpm
 share/icewm/themes/CrystalBlue/titleAB.xpm
 share/icewm/themes/CrystalBlue/titleAJ.xpm
 share/icewm/themes/CrystalBlue/titleAM.xpm
@@ -394,8 +398,6 @@ share/icewm/themes/NanoBlue/dframeIR.xpm
 share/icewm/themes/NanoBlue/dframeIT.xpm
 share/icewm/themes/NanoBlue/dframeITL.xpm
 share/icewm/themes/NanoBlue/dframeITR.xpm
-share/icewm/themes/NanoBlue/drameAB.xpm
-share/icewm/themes/NanoBlue/drameATR.xpm
 share/icewm/themes/NanoBlue/eos.jpg
 share/icewm/themes/NanoBlue/expandA.xpm
 share/icewm/themes/NanoBlue/expandI.xpm
@@ -417,21 +419,22 @@ share/icewm/themes/NanoBlue/frameIT.xpm
 share/icewm/themes/NanoBlue/frameITL.xpm
 share/icewm/themes/NanoBlue/frameITR.xpm
 share/icewm/themes/NanoBlue/icons/
-share/icewm/themes/NanoBlue/icons/IceWM_16x16.png
-share/icewm/themes/NanoBlue/icons/IceWM_32x32.png
-share/icewm/themes/NanoBlue/icons/app_16x16.png
-share/icewm/themes/NanoBlue/icons/firefox_16x16.png
-share/icewm/themes/NanoBlue/icons/firefox_32x32.png
-share/icewm/themes/NanoBlue/icons/folder_16x16.png
-share/icewm/themes/NanoBlue/icons/folder_32x32.png
-share/icewm/themes/NanoBlue/icons/gimp_16x16.png
-share/icewm/themes/NanoBlue/icons/gimp_32x32.png
-share/icewm/themes/NanoBlue/icons/mplayer_16x16.png
-share/icewm/themes/NanoBlue/icons/mplayer_32x32.png
-share/icewm/themes/NanoBlue/icons/thunderbird_16x16.png
-share/icewm/themes/NanoBlue/icons/thunderbird_32x32.png
-share/icewm/themes/NanoBlue/icons/xterm_16x16.png
-share/icewm/themes/NanoBlue/icons/xterm_32x32.png
+share/icewm/themes/NanoBlue/icons/IceWM_16x16.xpm
+share/icewm/themes/NanoBlue/icons/IceWM_32x32.xpm
+share/icewm/themes/NanoBlue/icons/app_16x16.xpm
+share/icewm/themes/NanoBlue/icons/app_32x32.xpm
+share/icewm/themes/NanoBlue/icons/firefox_16x16.xpm
+share/icewm/themes/NanoBlue/icons/firefox_32x32.xpm
+share/icewm/themes/NanoBlue/icons/folder_16x16.xpm
+share/icewm/themes/NanoBlue/icons/folder_32x32.xpm
+share/icewm/themes/NanoBlue/icons/gimp_16x16.xpm
+share/icewm/themes/NanoBlue/icons/gimp_32x32.xpm
+share/icewm/themes/NanoBlue/icons/mplayer_16x16.xpm
+share/icewm/themes/NanoBlue/icons/mplayer_32x32.xpm
+share/icewm/themes/NanoBlue/icons/thunderbird_16x16.xpm
+share/icewm/themes/NanoBlue/icons/thunderbird_32x32.xpm
+share/icewm/themes/NanoBlue/icons/xterm_16x16.xpm
+share/icewm/themes/NanoBlue/icons/xterm_32x32.xpm
 share/icewm/themes/NanoBlue/ledclock/
 share/icewm/themes/NanoBlue/ledclock/a.xpm
 share/icewm/themes/NanoBlue/ledclock/colon.xpm
@@ -640,6 +643,7 @@ share/locale/nb/LC_MESSAGES/icewm.mo
 share/locale/nl/LC_MESSAGES/icewm.mo
 share/locale/no/LC_MESSAGES/icewm.mo
 share/locale/pl/LC_MESSAGES/icewm.mo
+share/locale/pt/LC_MESSAGES/icewm.mo
 share/locale/pt_BR/LC_MESSAGES/icewm.mo
 share/locale/ro/LC_MESSAGES/icewm.mo
 share/locale/ru/LC_MESSAGES/icewm.mo
