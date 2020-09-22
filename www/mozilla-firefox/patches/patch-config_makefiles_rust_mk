@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_makefiles_rust_mk,v 1.3 2020/07/28 14:13:35 landry Exp $
+$OpenBSD: patch-config_makefiles_rust_mk,v 1.4 2020/09/22 13:00:55 landry Exp $
 
 use lto=thin to reduce memory pressure when building gkrust
 https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
@@ -15,5 +15,5 @@ Index: config/makefiles/rust.mk
 +cargo_rustc_flags += -Clto=thin
 +export CARGO_PROFILE_RELEASE_LTO=thin
  endif
- endif
- endif
+ # Versions of rust >= 1.45 need -Cembed-bitcode=yes for all crates when
+ # using -Clto.
