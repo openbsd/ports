@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/07/01 12:04:47 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/09/22 17:59:25 pvk Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/filebeat/{*,registry/filebeat/*}
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/filebeat/*
 @rcscript ${RCDIR}/filebeat
@@ -164,7 +164,8 @@ share/filebeat/module/logstash/log/config/
 share/filebeat/module/logstash/log/config/log.yml
 share/filebeat/module/logstash/log/ingest/
 share/filebeat/module/logstash/log/ingest/pipeline-json.yml
-share/filebeat/module/logstash/log/ingest/pipeline-plain.yml
+share/filebeat/module/logstash/log/ingest/pipeline-plaintext.yml
+share/filebeat/module/logstash/log/ingest/pipeline.yml
 share/filebeat/module/logstash/log/manifest.yml
 share/filebeat/module/logstash/module.yml
 share/filebeat/module/logstash/slowlog/
@@ -172,7 +173,8 @@ share/filebeat/module/logstash/slowlog/config/
 share/filebeat/module/logstash/slowlog/config/slowlog.yml
 share/filebeat/module/logstash/slowlog/ingest/
 share/filebeat/module/logstash/slowlog/ingest/pipeline-json.yml
-share/filebeat/module/logstash/slowlog/ingest/pipeline-plain.yml
+share/filebeat/module/logstash/slowlog/ingest/pipeline-plaintext.yml
+share/filebeat/module/logstash/slowlog/ingest/pipeline.yml
 share/filebeat/module/logstash/slowlog/manifest.yml
 share/filebeat/module/mongodb/
 share/filebeat/module/mongodb/log/
@@ -283,5 +285,6 @@ share/filebeat/module/system/syslog/manifest.yml
 @comment share/filebeat/module/traefik/access/config/traefik-access.yml
 @comment share/filebeat/module/traefik/access/ingest/
 @comment share/filebeat/module/traefik/access/ingest/pipeline.json
+@comment share/filebeat/module/traefik/access/ingest/pipeline.yml
 @comment share/filebeat/module/traefik/access/manifest.yml
 @comment share/filebeat/module/traefik/module.yml

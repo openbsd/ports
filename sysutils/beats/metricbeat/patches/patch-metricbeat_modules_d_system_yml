@@ -1,6 +1,4 @@
-$OpenBSD: patch-metricbeat_modules_d_system_yml,v 1.2 2020/04/04 02:57:57 pvk Exp $
-
-Disable unsupported modules (needs support in gosigar)
+$OpenBSD: patch-metricbeat_modules_d_system_yml,v 1.3 2020/09/22 17:59:25 pvk Exp $
 
 Index: metricbeat/modules.d/system.yml
 --- metricbeat/modules.d/system.yml.orig

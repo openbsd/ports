@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/07/01 12:04:47 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/09/22 17:59:25 pvk Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/metricbeat/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/metricbeat/*
 @rcscript ${RCDIR}/metricbeat
@@ -117,6 +117,8 @@ share/metricbeat/module/munin/docker-compose.yml
 share/metricbeat/module/mysql/
 share/metricbeat/module/mysql/docker-compose.yml
 share/metricbeat/module/mysql/module.yml
+share/metricbeat/module/mysql/performance/
+share/metricbeat/module/mysql/performance/manifest.yml
 share/metricbeat/module/nats/
 share/metricbeat/module/nats/docker-compose.yml
 share/metricbeat/module/nats/module.yml
