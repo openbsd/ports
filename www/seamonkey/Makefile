@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2020/07/02 13:39:08 landry Exp $
+# $OpenBSD: Makefile,v 1.239 2020/09/22 12:58:18 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -9,7 +9,7 @@ BROKEN-amd64 =		xpcshell segfaults during fake since llvm8 update
 MOZILLA_VERSION =	2.49.5
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
-REVISION =	3
+REVISION =	4
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
