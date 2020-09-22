@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_lib_test_ForkTests_cpp,v 1.1 2020/09/22 03:20:26 pvk Exp $
+
+Remove unused variable:
+https://github.com/opendnssec/SoftHSMv2/pull/522/commits/f375912d0160f3a1847aaef1bb00b40bc0cb8d41
+
+Index: src/lib/test/ForkTests.cpp
+--- src/lib/test/ForkTests.cpp.orig
++++ src/lib/test/ForkTests.cpp
+@@ -94,7 +94,6 @@ void ForkTests::testFork()
+ void ForkTests::testResetOnFork()
+ {
+ 	CK_RV rv;
+-	CK_SLOT_INFO slotInfo;
+ 	pid_t pid;
+ 
+ 	// Just make sure that we finalize any previous failed tests

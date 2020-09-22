@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_lib_crypto_OSSLEDDSA_cpp,v 1.1 2020/09/22 03:20:26 pvk Exp $
+
+Fix advertised min and max mechanism sizes according to final PKCS#11 3.0 specification:
+https://github.com/opendnssec/SoftHSMv2/pull/522/commits/967e66a52fc28dc2f5a4951b855ae3bdf63f0129#diff-1176fa922674b142de4554690263544c
+
+Index: src/lib/crypto/OSSLEDDSA.cpp
+--- src/lib/crypto/OSSLEDDSA.cpp.orig
++++ src/lib/crypto/OSSLEDDSA.cpp
+@@ -363,13 +363,13 @@ bool OSSLEDDSA::deriveKey(SymmetricKey **ppSymmetricKe
+ unsigned long OSSLEDDSA::getMinKeySize()
+ {
+ 	// Ed25519 is supported
+-	return 32*8;
++	return 255;
+ }
+ 
+ unsigned long OSSLEDDSA::getMaxKeySize()
+ {
+ 	// Ed448 is supported
+-	return 57*8;
++	return 448;
+ }
+ 
+ bool OSSLEDDSA::reconstructKeyPair(AsymmetricKeyPair** ppKeyPair, ByteString& serialisedData)

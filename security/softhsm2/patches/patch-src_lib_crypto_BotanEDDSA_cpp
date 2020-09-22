@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_lib_crypto_BotanEDDSA_cpp,v 1.1 2020/09/22 03:20:26 pvk Exp $
+
+Fix advertised min and max mechanism sizes according to final PKCS#11 3.0 specification:
+https://github.com/opendnssec/SoftHSMv2/pull/522/commits/967e66a52fc28dc2f5a4951b855ae3bdf63f0129#diff-578e0360192ab803850af30f6d49d046
+
+Index: src/lib/crypto/BotanEDDSA.cpp
+--- src/lib/crypto/BotanEDDSA.cpp.orig
++++ src/lib/crypto/BotanEDDSA.cpp
+@@ -396,13 +396,13 @@ bool BotanEDDSA::deriveKey(SymmetricKey **ppSymmetricK
+ unsigned long BotanEDDSA::getMinKeySize()
+ {
+ 	// Only Ed25519 is supported
+-	return 32*8;
++	return 255;
+ }
+ 
+ unsigned long BotanEDDSA::getMaxKeySize()
+ {
+ 	// Only Ed25519 is supported
+-	return 32*8;
++	return 255;
+ }
+ 
+ bool BotanEDDSA::reconstructKeyPair(AsymmetricKeyPair** ppKeyPair, ByteString& serialisedData)
