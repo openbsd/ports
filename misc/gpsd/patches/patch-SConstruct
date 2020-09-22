@@ -1,4 +1,4 @@
-$OpenBSD: patch-SConstruct,v 1.1 2019/07/31 15:44:30 kirby Exp $
+$OpenBSD: patch-SConstruct,v 1.2 2020/09/22 15:16:20 landry Exp $
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
@@ -32,7 +32,33 @@ Index: SConstruct
          qt_network = config.CheckPKG(qt_net_name)
          if not qt_network:
              config.env["qt"] = False
-@@ -1685,9 +1688,7 @@ else:
+@@ -1584,25 +1587,6 @@ else:
+     }
+ 
+     if env['xgps']:
+-        # check for pycairo
+-        try:
+-            imp.find_module('cairo')
+-        except ImportError:
+-            # no pycairo, don't build xgps, xgpsspeed
+-            announce("WARNING: Python module pycairo not found.\n"
+-                     "    xgps and xgpsspeed will not be installed")
+-            env['xgps'] = False
+-
+-        # check for pygobject
+-        try:
+-            imp.find_module('gi')
+-        except ImportError:
+-            # no pycairo, don't build xgps, xgpsspeed
+-            announce("WARNING: Python module pygobject not found.\n"
+-                     "    xgps and xgpsspeed will not be installed")
+-            env['xgps'] = False
+-
+-    if env['xgps']:
+         python_progs.extend(["xgps", "xgpsspeed"])
+         python_manpages.update({
+             "man/xgps.1": "man/gps.xml",
+@@ -1685,9 +1669,7 @@ else:
              python_objects[ext].append(
                  python_env.NoCache(
                      python_env.SharedObject(
