@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2020/08/01 14:52:44 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.176 2020/09/22 22:23:05 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,12 +12,12 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		5
+REVISION =		6
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.6.4.20200103
+BIN_VER =		8.6.4.20200921
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -186,7 +186,7 @@ do-test:
 # It doesn't matter whether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20200103
+BOOTSTRAP_DATE =	20200921
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
@@ -217,9 +217,9 @@ _bootstrap_prepare:
 	echo GhcStage2HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
 	echo SplitObjs=NO >> ${WRKSRC}/mk/build.mk
 	echo GhcLibWays=v >> ${WRKSRC}/mk/build.mk
-	echo GhcRTSWays= >> ${WRKSRC}/mk/build.mk
+	echo GhcRTSWays=thr >> ${WRKSRC}/mk/build.mk
 	echo GhcWithInterpreter=NO >> ${WRKSRC}/mk/build.mk
-	echo GhcThreaded=NO >> ${WRKSRC}/mk/build.mk
+	echo GhcThreaded=YES >> ${WRKSRC}/mk/build.mk
 	echo INTEGER_LIBRARY=integer-simple >> ${WRKSRC}/mk/build.mk
 	echo SRC_CC_OPTS+=-g -O0 >> ${WRKSRC}/mk/build.mk
 	echo HADDOCK_DOCS=NO >> ${WRKSRC}/mk/build.mk
