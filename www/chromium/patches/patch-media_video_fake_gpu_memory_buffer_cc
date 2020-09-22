@@ -1,18 +1,18 @@
-$OpenBSD: patch-media_video_fake_gpu_memory_buffer_cc,v 1.1 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-media_video_fake_gpu_memory_buffer_cc,v 1.2 2020/09/22 11:47:41 robert Exp $
 
 Index: media/video/fake_gpu_memory_buffer.cc
 --- media/video/fake_gpu_memory_buffer.cc.orig
 +++ media/video/fake_gpu_memory_buffer.cc
-@@ -6,7 +6,7 @@
- 
- #include "build/build_config.h"
+@@ -10,7 +10,7 @@
+ #include "media/base/format_utils.h"
+ #include "media/base/video_frame.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #include <fcntl.h>
  #include <sys/stat.h>
  #include <sys/types.h>
-@@ -44,7 +44,7 @@ class FakeGpuMemoryBufferImpl : public gpu::GpuMemoryB
+@@ -48,7 +48,7 @@ class FakeGpuMemoryBufferImpl : public gpu::GpuMemoryB
  
  }  // namespace
  
@@ -21,16 +21,16 @@ Index: media/video/fake_gpu_memory_buffer.cc
  base::ScopedFD GetDummyFD() {
    base::ScopedFD fd(open("/dev/zero", O_RDWR));
    DCHECK(fd.is_valid());
-@@ -67,7 +67,7 @@ FakeGpuMemoryBuffer::FakeGpuMemoryBuffer(const gfx::Si
-   // Set a dummy id since this is for testing only.
-   handle_.id = gfx::GpuMemoryBufferId(0);
+@@ -73,7 +73,7 @@ FakeGpuMemoryBuffer::FakeGpuMemoryBuffer(const gfx::Si
+   static base::NoDestructor<base::AtomicSequenceNumber> buffer_id_generator;
+   handle_.id = gfx::GpuMemoryBufferId(buffer_id_generator->GetNext());
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   // Set a dummy fd since this is for testing only.
-   handle_.native_pixmap_handle.planes.push_back(
-       gfx::NativePixmapPlane(size_.width(), 0, y_plane_size, GetDummyFD()));
-@@ -135,7 +135,7 @@ gfx::GpuMemoryBufferHandle FakeGpuMemoryBuffer::CloneH
+   for (size_t i = 0; i < VideoFrame::NumPlanes(video_pixel_format_); i++) {
+     const gfx::Size plane_size_in_bytes =
+         VideoFrame::PlaneSize(video_pixel_format_, i, size_);
+@@ -129,7 +129,7 @@ gfx::GpuMemoryBufferHandle FakeGpuMemoryBuffer::CloneH
    gfx::GpuMemoryBufferHandle handle;
    handle.type = gfx::NATIVE_PIXMAP;
    handle.id = handle_.id;

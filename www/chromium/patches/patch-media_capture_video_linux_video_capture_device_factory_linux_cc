@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_cc,v 1.1 2019/06/26 17:22:41 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_cc,v 1.2 2020/09/22 11:47:41 robert Exp $
 
 Index: media/capture/video/linux/video_capture_device_factory_linux.cc
 --- media/capture/video/linux/video_capture_device_factory_linux.cc.orig
@@ -37,7 +37,7 @@ Index: media/capture/video/linux/video_capture_device_factory_linux.cc
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      const std::string interface_path =
          base::StringPrintf(kInterfacePathTemplate, file_name.c_str());
-@@ -250,7 +260,7 @@ void VideoCaptureDeviceFactoryLinux::GetSupportedForma
+@@ -249,7 +259,7 @@ void VideoCaptureDeviceFactoryLinux::GetSupportedForma
    GetSupportedFormatsForV4L2BufferType(fd.get(), supported_formats);
  }
  

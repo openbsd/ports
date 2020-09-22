@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.6 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.7 2020/09/22 11:47:42 robert Exp $
 
 Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
 --- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig
@@ -18,6 +18,6 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
-   // Provides information on the dump state of resident pages.
-   enum class MappedAndResidentPagesDumpState {
-     // Access to /proc/<pid>/pagemap can be denied for android devices running
+   // Provides information on the dump state of resident pages. These values are
+   // written to logs. New enum values can be added, but existing enums must
+   // never be renumbered or deleted and reused.

@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_capture_video_linux_fake_v4l2_impl_cc,v 1.1 2019/06/26 17:22:41 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_fake_v4l2_impl_cc,v 1.2 2020/09/22 11:47:41 robert Exp $
 
 Index: media/capture/video/linux/fake_v4l2_impl.cc
 --- media/capture/video/linux/fake_v4l2_impl.cc.orig
 +++ media/capture/video/linux/fake_v4l2_impl.cc
-@@ -364,7 +364,7 @@ int FakeV4L2Impl::close(int fd) {
+@@ -381,7 +381,7 @@ int FakeV4L2Impl::close(int fd) {
    return kSuccessReturnValue;
  }
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.6 2020/07/18 17:43:22 robert Exp $
+$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.7 2020/09/22 11:47:42 robert Exp $
 
 Index: tools/protoc_wrapper/protoc_wrapper.py
 --- tools/protoc_wrapper/protoc_wrapper.py.orig
 +++ tools/protoc_wrapper/protoc_wrapper.py
-@@ -143,7 +143,7 @@ def main(argv):
+@@ -151,7 +151,7 @@ def main(argv):
  
    protoc_cmd += [os.path.join(proto_dir, name) for name in protos]
  

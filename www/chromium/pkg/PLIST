@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.101 2020/07/29 14:02:15 robert Exp $
+@comment $OpenBSD: PLIST,v 1.102 2020/09/22 11:47:43 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -123,7 +123,6 @@ chrome/product_logo_48.png
 chrome/resources/
 chrome/resources.pak
 chrome/resources/inspector/
-chrome/resources/inspector/.htaccess
 chrome/resources/inspector/Images/
 chrome/resources/inspector/Images/accelerometer-back.svg
 chrome/resources/inspector/Images/accelerometer-bottom.png
@@ -131,10 +130,6 @@ chrome/resources/inspector/Images/accelerometer-front.svg
 chrome/resources/inspector/Images/accelerometer-left.png
 chrome/resources/inspector/Images/accelerometer-right.png
 chrome/resources/inspector/Images/accelerometer-top.png
-chrome/resources/inspector/Images/breakpoint-conditional-disabled.svg
-chrome/resources/inspector/Images/breakpoint-conditional.svg
-chrome/resources/inspector/Images/breakpoint-disabled.svg
-chrome/resources/inspector/Images/breakpoint.svg
 chrome/resources/inspector/Images/checkboxCheckmark.svg
 chrome/resources/inspector/Images/checker.png
 chrome/resources/inspector/Images/chevrons.svg
@@ -151,8 +146,6 @@ chrome/resources/inspector/Images/ic_info_black_18dp.svg
 chrome/resources/inspector/Images/ic_warning_black_18dp.svg
 chrome/resources/inspector/Images/largeIcons.svg
 chrome/resources/inspector/Images/lighthouse_logo.svg
-chrome/resources/inspector/Images/logpoint-disabled.svg
-chrome/resources/inspector/Images/logpoint.svg
 chrome/resources/inspector/Images/mediumIcons.svg
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
@@ -613,6 +606,10 @@ chrome/resources/inspector/web_audio/
 chrome/resources/inspector/web_audio/web_audio-legacy.js
 chrome/resources/inspector/web_audio/web_audio.js
 chrome/resources/inspector/web_audio/web_audio_module.js
+chrome/resources/inspector/webauthn/
+chrome/resources/inspector/webauthn/webauthn-legacy.js
+chrome/resources/inspector/webauthn/webauthn.js
+chrome/resources/inspector/webauthn/webauthn_module.js
 chrome/resources/inspector/worker_app.html
 chrome/resources/inspector/worker_app.js
 chrome/resources/inspector/worker_main/
@@ -627,6 +624,14 @@ chrome/resources/inspector/workspace_diff/
 chrome/resources/inspector/workspace_diff/workspace_diff-legacy.js
 chrome/resources/inspector/workspace_diff/workspace_diff.js
 chrome/resources/inspector/workspace_diff/workspace_diff_module.js
+chrome/resources/inspector_overlay/
+chrome/resources/inspector_overlay/common.css
+chrome/resources/inspector_overlay/inspector_overlay_resources.grd
+chrome/resources/inspector_overlay/tool_distances.js
+chrome/resources/inspector_overlay/tool_highlight.js
+chrome/resources/inspector_overlay/tool_paused.js
+chrome/resources/inspector_overlay/tool_screenshot.js
+chrome/resources/inspector_overlay/tool_viewport_size.js
 chrome/snapshot_blob.bin
 %%swiftshader%%
 chrome/v8_context_snapshot.bin

@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_prefs_pref_service_incognito_allowlist_cc,v 1.1 2020/09/22 11:47:40 robert Exp $
+
+Index: chrome/browser/prefs/pref_service_incognito_allowlist.cc
+--- chrome/browser/prefs/pref_service_incognito_allowlist.cc.orig
++++ chrome/browser/prefs/pref_service_incognito_allowlist.cc
+@@ -135,7 +135,7 @@ const char* const kPersistentPrefNames[] = {
+     prefs::kShowFullscreenToolbar,
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+     // Toggleing custom frames affects all open windows in the profile, hence
+     // should be written to the regular profile when changed in incognito mode.
+     prefs::kUseCustomChromeFrame,

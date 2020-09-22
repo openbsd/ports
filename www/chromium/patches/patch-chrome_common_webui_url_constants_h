@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.19 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.20 2020/09/22 11:47:40 robert Exp $
 
 Index: chrome/common/webui_url_constants.h
 --- chrome/common/webui_url_constants.h.orig
 +++ chrome/common/webui_url_constants.h
-@@ -282,7 +282,7 @@ bool IsSystemWebUIHost(base::StringPiece host);
+@@ -277,7 +277,7 @@ bool IsSystemWebUIHost(base::StringPiece host);
  
  #endif  // defined(OS_CHROMEOS)
  
@@ -12,7 +12,7 @@ Index: chrome/common/webui_url_constants.h
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
  extern const char kChromeUIHatsHost[];
-@@ -295,17 +295,17 @@ extern const char kChromeUIProfilePickerHost[];
+@@ -294,17 +294,17 @@ extern const char kChromeUINearbyShareURL[];
  extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  

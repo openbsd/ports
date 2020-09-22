@@ -1,0 +1,18 @@
+$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_gl_glx_FunctionsGLX_cpp,v 1.1 2020/09/22 11:47:42 robert Exp $
+
+Index: third_party/angle/src/libANGLE/renderer/gl/glx/FunctionsGLX.cpp
+--- third_party/angle/src/libANGLE/renderer/gl/glx/FunctionsGLX.cpp.orig
++++ third_party/angle/src/libANGLE/renderer/gl/glx/FunctionsGLX.cpp
+@@ -144,10 +144,10 @@ bool FunctionsGLX::initialize(Display *xDisplay, int s
+     // which a GLXWindow was ever created.
+     if (!sLibHandle)
+     {
+-        sLibHandle = dlopen("libGL.so.1", RTLD_NOW);
++        sLibHandle = dlopen("libGL.so", RTLD_NOW);
+         if (!sLibHandle)
+         {
+-            *errorString = std::string("Could not dlopen libGL.so.1: ") + dlerror();
++            *errorString = std::string("Could not dlopen libGL.so: ") + dlerror();
+             return false;
+         }
+     }

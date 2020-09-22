@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.12 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.13 2020/09/22 11:47:42 robert Exp $
 
 Index: net/base/address_tracker_linux.cc
 --- net/base/address_tracker_linux.cc.orig
 +++ net/base/address_tracker_linux.cc
-@@ -22,125 +22,10 @@
+@@ -27,125 +27,10 @@
  namespace net {
  namespace internal {
  
@@ -131,10 +131,18 @@ Index: net/base/address_tracker_linux.cc
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -177,90 +62,8 @@ AddressTrackerLinux::AddressTrackerLinux(
+@@ -182,98 +67,8 @@ AddressTrackerLinux::AddressTrackerLinux(
  AddressTrackerLinux::~AddressTrackerLinux() = default;
  
  void AddressTrackerLinux::Init() {
+-#if defined(OS_ANDROID)
+-  // RTM_GETLINK stopped working in Android 11 (see
+-  // https://developer.android.com/preview/privacy/mac-address),
+-  // so AddressTrackerLinux should not be used in later versions
+-  // of Android.  Chromium code doesn't need it past Android P.
+-  DCHECK_LT(base::android::BuildInfo::GetInstance()->sdk_int(),
+-            base::android::SDK_VERSION_P);
+-#endif
 -  netlink_fd_.reset(socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE));
 -  if (!netlink_fd_.is_valid()) {
 -    PLOG(ERROR) << "Could not create NETLINK socket";
@@ -224,7 +232,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  void AddressTrackerLinux::AbortAndForceOnline() {
-@@ -272,25 +75,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
+@@ -285,25 +80,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
    connection_type_initialized_cv_.Broadcast();
  }
  
@@ -250,7 +258,7 @@ Index: net/base/address_tracker_linux.cc
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
    // http://crbug.com/125097
-@@ -348,118 +132,7 @@ void AddressTrackerLinux::HandleMessage(const char* bu
+@@ -361,118 +137,7 @@ void AddressTrackerLinux::HandleMessage(const char* bu
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
@@ -370,7 +378,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking() {
-@@ -487,31 +160,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
+@@ -500,31 +165,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {

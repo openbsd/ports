@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.20 2020/02/22 12:33:20 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.21 2020/09/22 11:47:39 robert Exp $
 
 Index: base/process/process_metrics_openbsd.cc
 --- base/process/process_metrics_openbsd.cc.orig
 +++ base/process/process_metrics_openbsd.cc
-@@ -4,11 +4,25 @@
+@@ -4,11 +4,26 @@
  
  #include "base/process/process_metrics.h"
  
@@ -16,6 +16,7 @@ Index: base/process/process_metrics_openbsd.cc
 +#include "base/strings/string_util.h"
 +#include "base/system/sys_info.h"
 +#include "base/threading/thread_restrictions.h"
++#include "base/notreached.h"
 +
  #include <stddef.h>
  #include <stdint.h>
@@ -29,7 +30,7 @@ Index: base/process/process_metrics_openbsd.cc
  #include "base/memory/ptr_util.h"
  #include "base/process/process_metrics_iocounters.h"
  #include "base/stl_util.h"
-@@ -25,48 +39,13 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+@@ -25,40 +40,6 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
    return false;
  }
  
@@ -70,6 +71,7 @@ Index: base/process/process_metrics_openbsd.cc
  TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
    NOTREACHED();
    return TimeDelta();
+@@ -70,8 +51,7 @@ bool ProcessMetrics::GetCumulativeCPUUsagePerThread(CP
  }
  
  ProcessMetrics::ProcessMetrics(ProcessHandle process)
@@ -79,7 +81,7 @@ Index: base/process/process_metrics_openbsd.cc
  
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
-@@ -85,6 +64,120 @@ size_t GetSystemCommitCharge() {
+@@ -90,6 +70,120 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);

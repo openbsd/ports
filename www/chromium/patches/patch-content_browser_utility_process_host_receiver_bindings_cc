@@ -1,18 +1,18 @@
-$OpenBSD: patch-content_browser_utility_process_host_receiver_bindings_cc,v 1.1 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-content_browser_utility_process_host_receiver_bindings_cc,v 1.2 2020/09/22 11:47:41 robert Exp $
 
 Index: content/browser/utility_process_host_receiver_bindings.cc
 --- content/browser/utility_process_host_receiver_bindings.cc.orig
 +++ content/browser/utility_process_host_receiver_bindings.cc
-@@ -8,7 +8,7 @@
- 
- #include "build/build_config.h"
+@@ -10,7 +10,7 @@
+ #include "content/public/browser/content_browser_client.h"
+ #include "content/public/common/content_client.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
  #include "content/browser/font_service.h"  // nogncheck
  #endif
-@@ -17,7 +17,7 @@ namespace content {
+@@ -19,7 +19,7 @@ namespace content {
  
  void UtilityProcessHost::BindHostReceiver(
      mojo::GenericPendingReceiver receiver) {

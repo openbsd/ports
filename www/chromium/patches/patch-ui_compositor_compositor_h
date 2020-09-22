@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_compositor_compositor_h,v 1.5 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_h,v 1.6 2020/09/22 11:47:42 robert Exp $
 
 Index: ui/compositor/compositor.h
 --- ui/compositor/compositor.h.orig
 +++ ui/compositor/compositor.h
-@@ -363,7 +363,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
+@@ -370,7 +370,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
    void StopThroughtputTracker(TrackerId tracker_id) override;
    void CancelThroughtputTracker(TrackerId tracker_id) override;
  

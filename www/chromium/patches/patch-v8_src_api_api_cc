@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_src_api_api_cc,v 1.9 2020/07/17 20:23:09 robert Exp $
+$OpenBSD: patch-v8_src_api_api_cc,v 1.10 2020/09/22 11:47:43 robert Exp $
 
 Index: v8/src/api/api.cc
 --- v8/src/api/api.cc.orig
 +++ v8/src/api/api.cc
-@@ -112,7 +112,7 @@
+@@ -113,7 +113,7 @@
  #include "src/wasm/wasm-result.h"
  #include "src/wasm/wasm-serialization.h"
  
@@ -12,7 +12,7 @@ Index: v8/src/api/api.cc
  #include <signal.h>
  #include "include/v8-wasm-trap-handler-posix.h"
  #include "src/trap-handler/handler-inside-posix.h"
-@@ -5640,7 +5640,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -5674,7 +5674,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

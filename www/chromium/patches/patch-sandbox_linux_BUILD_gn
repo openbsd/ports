@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.14 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.15 2020/09/22 11:47:42 robert Exp $
 
 Index: sandbox/linux/BUILD.gn
 --- sandbox/linux/BUILD.gn.orig
@@ -19,8 +19,8 @@ Index: sandbox/linux/BUILD.gn
  }
  
  if (is_nacl_nonsfi) {
-@@ -250,7 +250,7 @@ component("seccomp_bpf") {
-     "//base/third_party/dynamic_annotations",
+@@ -251,7 +251,7 @@ component("seccomp_bpf") {
+     "//sandbox:sandbox_buildflags",
    ]
  
 -  if (is_nacl_nonsfi) {
@@ -28,7 +28,7 @@ Index: sandbox/linux/BUILD.gn
      cflags = [ "-fgnu-inline-asm" ]
      sources -= [
        "bpf_dsl/bpf_dsl_forward.h",
-@@ -323,30 +323,8 @@ component("sandbox_services") {
+@@ -324,30 +324,8 @@ component("sandbox_services") {
      "services/proc_util.h",
      "services/resource_limits.cc",
      "services/resource_limits.h",
@@ -59,7 +59,7 @@ Index: sandbox/linux/BUILD.gn
    ]
  
    defines = [ "SANDBOX_IMPLEMENTATION" ]
-@@ -396,6 +374,10 @@ component("sandbox_services") {
+@@ -397,6 +375,10 @@ component("sandbox_services") {
        "syscall_broker/broker_process.h",
        "syscall_broker/broker_simple_message.cc",
        "syscall_broker/broker_simple_message.h",

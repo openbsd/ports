@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.5 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.6 2020/09/22 11:47:41 robert Exp $
 
 Index: components/feature_engagement/public/feature_constants.cc
 --- components/feature_engagement/public/feature_constants.cc.orig
@@ -9,15 +9,6 @@ Index: components/feature_engagement/public/feature_constants.cc
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
+ const base::Feature kIPHDesktopTabGroupsNewGroupFeature{
+     "IPH_DesktopTabGroupsNewGroup", base::FEATURE_DISABLED_BY_DEFAULT};
  const base::Feature kIPHFocusModeFeature{"IPH_FocusMode",
-                                          base::FEATURE_DISABLED_BY_DEFAULT};
- const base::Feature kIPHGlobalMediaControlsFeature{
-@@ -34,7 +34,7 @@ const base::Feature kIPHNewTabFeature{"IPH_NewTab",
-                                       base::FEATURE_DISABLED_BY_DEFAULT};
- #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- #if defined(OS_ANDROID)
- const base::Feature kIPHDataSaverDetailFeature{

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.528 2020/08/20 19:00:12 robert Exp $
+# $OpenBSD: Makefile,v 1.529 2020/09/22 11:47:39 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			84.0.4147.135
+V=			85.0.4183.121
 
 DISTNAME=		chromium-${V}
 
@@ -46,7 +46,7 @@ MODPY_SETUPTOOLS=	Yes
 PATCHORIG=	.orig.port
 
 # uses pledge()
-WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
+WANTLIB += X11 Xext Xfixes Xrender c cups dbus-1 event
 WANTLIB += execinfo Xft
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
 WANTLIB += m
@@ -78,7 +78,6 @@ RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
-		x11/gnome/libgnome-keyring \
 		x11/gtk+3,-guic \
 		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
@@ -88,7 +87,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
-		x11/gnome/libgnome-keyring \
 		devel/ninja \
 		x11/gtk+3 \
 		x11/py-xcbgen \
@@ -127,7 +125,7 @@ GN_ARGS=	enable_nacl=false \
 		is_debug=false \
 		is_cfi=false \
 		optimize_webui=false \
-		closure_compile=false \
+		enable_js_type_check=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		use_kerberos=false \
@@ -137,6 +135,7 @@ GN_ARGS=	enable_nacl=false \
 		use_bundled_fontconfig=false \
 		use_system_harfbuzz=true \
 		use_system_freetype=false \
+		use_gnome_keyring=false \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \

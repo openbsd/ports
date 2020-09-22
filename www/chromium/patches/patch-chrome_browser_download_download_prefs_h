@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.13 2020/07/17 20:23:07 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.14 2020/09/22 11:47:40 robert Exp $
 Index: chrome/browser/download/download_prefs.h
 --- chrome/browser/download/download_prefs.h.orig
 +++ chrome/browser/download/download_prefs.h
-@@ -110,7 +110,7 @@ class DownloadPrefs {
+@@ -114,7 +114,7 @@ class DownloadPrefs {
    // Disables auto-open based on file extension.
    void DisableAutoOpenByUserBasedOnExtension(const base::FilePath& file_name);
  
@@ -11,7 +11,7 @@ Index: chrome/browser/download/download_prefs.h
    // Store the user preference to disk. If |should_open| is true, also disable
    // the built-in PDF plugin. If |should_open| is false, enable the PDF plugin.
    void SetShouldOpenPdfInSystemReader(bool should_open);
-@@ -167,7 +167,7 @@ class DownloadPrefs {
+@@ -172,7 +172,7 @@ class DownloadPrefs {
  
    std::unique_ptr<policy::URLBlacklist> auto_open_allowed_by_urls_;
  

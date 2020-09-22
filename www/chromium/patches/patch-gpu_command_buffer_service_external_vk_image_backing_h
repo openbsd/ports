@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_h,v 1.5 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_h,v 1.6 2020/09/22 11:47:41 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_backing.h
 --- gpu/command_buffer/service/external_vk_image_backing.h.orig
 +++ gpu/command_buffer/service/external_vk_image_backing.h
-@@ -151,7 +151,7 @@ class ExternalVkImageBacking final : public ClearTrack
+@@ -154,7 +154,7 @@ class ExternalVkImageBacking final : public ClearTrack
  
   private:
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_driver_utils_h,v 1.6 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_driver_utils_h,v 1.7 2020/09/22 11:47:42 robert Exp $
 
 Index: third_party/angle/src/libANGLE/renderer/driver_utils.h
 --- third_party/angle/src/libANGLE/renderer/driver_utils.h.orig
 +++ third_party/angle/src/libANGLE/renderer/driver_utils.h
-@@ -133,7 +133,7 @@ inline bool IsWindows()
+@@ -139,7 +139,7 @@ inline bool IsWindows()
  
  inline bool IsLinux()
  {

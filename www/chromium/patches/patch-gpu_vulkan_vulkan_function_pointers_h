@@ -1,27 +1,27 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.9 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.10 2020/09/22 11:47:41 robert Exp $
 
 Index: gpu/vulkan/vulkan_function_pointers.h
 --- gpu/vulkan/vulkan_function_pointers.h.orig
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -235,7 +235,7 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
-       vkGetAndroidHardwareBufferPropertiesANDROIDFn;
+@@ -234,7 +234,7 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
+       vkGetAndroidHardwareBufferPropertiesANDROID;
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
-   VulkanFunction<PFN_vkGetSemaphoreFdKHR> vkGetSemaphoreFdKHRFn;
-   VulkanFunction<PFN_vkImportSemaphoreFdKHR> vkImportSemaphoreFdKHRFn;
+   VulkanFunction<PFN_vkGetSemaphoreFdKHR> vkGetSemaphoreFdKHR;
+   VulkanFunction<PFN_vkImportSemaphoreFdKHR> vkImportSemaphoreFdKHR;
  #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
-@@ -247,7 +247,7 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
-       vkImportSemaphoreWin32HandleKHRFn;
+@@ -245,7 +245,7 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
+       vkImportSemaphoreWin32HandleKHR;
  #endif  // defined(OS_WIN)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
-   VulkanFunction<PFN_vkGetMemoryFdKHR> vkGetMemoryFdKHRFn;
-   VulkanFunction<PFN_vkGetMemoryFdPropertiesKHR> vkGetMemoryFdPropertiesKHRFn;
+   VulkanFunction<PFN_vkGetMemoryFdKHR> vkGetMemoryFdKHR;
+   VulkanFunction<PFN_vkGetMemoryFdPropertiesKHR> vkGetMemoryFdPropertiesKHR;
  #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
-@@ -950,7 +950,7 @@ ALWAYS_INLINE VkResult vkGetAndroidHardwareBufferPrope
+@@ -953,7 +953,7 @@ ALWAYS_INLINE VkResult vkGetAndroidHardwareBufferPrope
  }
  #endif  // defined(OS_ANDROID)
  
@@ -30,7 +30,7 @@ Index: gpu/vulkan/vulkan_function_pointers.h
  ALWAYS_INLINE VkResult
  vkGetSemaphoreFdKHR(VkDevice device,
                      const VkSemaphoreGetFdInfoKHR* pGetFdInfo,
-@@ -983,7 +983,7 @@ vkImportSemaphoreWin32HandleKHR(VkDevice device,
+@@ -986,7 +986,7 @@ vkImportSemaphoreWin32HandleKHR(VkDevice device,
  }
  #endif  // defined(OS_WIN)
  
@@ -39,8 +39,8 @@ Index: gpu/vulkan/vulkan_function_pointers.h
  ALWAYS_INLINE VkResult vkGetMemoryFdKHR(VkDevice device,
                                          const VkMemoryGetFdInfoKHR* pGetFdInfo,
                                          int* pFd) {
-@@ -1079,4 +1079,4 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
-                                                                pPresentInfo);
+@@ -1081,4 +1081,4 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
+                                                              pPresentInfo);
  }
  
 -#endif  // GPU_VULKAN_VULKAN_FUNCTION_POINTERS_H_

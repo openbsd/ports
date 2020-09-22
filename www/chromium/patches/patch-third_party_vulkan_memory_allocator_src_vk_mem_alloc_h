@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_vulkan_memory_allocator_src_vk_mem_alloc_h,v 1.1 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-third_party_vulkan_memory_allocator_src_vk_mem_alloc_h,v 1.2 2020/09/22 11:47:42 robert Exp $
 
 Index: third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 --- third_party/vulkan_memory_allocator/src/vk_mem_alloc.h.orig
 +++ third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
-@@ -3940,7 +3940,7 @@ void *aligned_alloc(size_t alignment, size_t size)
+@@ -3946,7 +3946,7 @@ void *aligned_alloc(size_t alignment, size_t size)
  
      return memalign(alignment, size);
  }
