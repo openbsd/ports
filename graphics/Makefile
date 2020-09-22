@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.517 2020/09/13 08:50:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.518 2020/09/22 22:08:40 tracey Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -23,6 +23,7 @@
      SUBDIR += cairomm
      SUBDIR += cal3d
      SUBDIR += cfdg
+     SUBDIR += chafa
      SUBDIR += clutter
      SUBDIR += colord
      SUBDIR += colord-gtk
