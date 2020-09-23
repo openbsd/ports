@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1.1.1 2020/09/23 13:14:16 edd Exp $
+
+Index: tools/Makefile.in
+--- tools/Makefile.in.orig
++++ tools/Makefile.in
+@@ -303,7 +303,7 @@ indicator_loader_SOURCES = \
+ 	indicator-loader.c
+ 
+ indicator_loader_CFLAGS = \
+-	-Wall -Werror \
++	-Wall  \
+ 	$(LIBINDICATOR_CFLAGS) -I$(top_srcdir) \
+ 	-DBUILD_DIR="\"$(builddir)\""
+ 
