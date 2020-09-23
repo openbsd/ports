@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/09/23 11:12:48 rpointel Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
-MODPY_EGG_VERSION =	20200121
+MODPY_EGG_VERSION =	20200717
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
@@ -15,7 +15,6 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 DISTNAME =	plaso-${MODPY_EGG_VERSION}
-REVISION =	0
 
 MASTER_SITES =	https://github.com/log2timeline/plaso/releases/download/${MODPY_EGG_VERSION}/
 
@@ -23,7 +22,9 @@ MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS = Yes
 
-RUN_DEPENDS +=	devel/py-bencode${MODPY_FLAVOR} \
+RUN_DEPENDS +=	archivers/py-lz4 \
+		databases/py-redis${MODPY_FLAVOR} \
+		devel/py-bencode${MODPY_FLAVOR} \
 		devel/py-biplist${MODPY_FLAVOR} \
 		devel/py-cffi${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
@@ -72,10 +73,12 @@ RUN_DEPENDS +=	devel/py-bencode${MODPY_FLAVOR} \
 		www/py-urllib3${MODPY_FLAVOR}
 		
 
-TEST_DEPENDS +=	devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS +=	devel/py-test${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR}
 
 pre-test:
 	touch ${WRKSRC}/utils/__init__.py
+	sed -i "s/python3-yara >= 3.4.0/python3-yara >= 3.11.0/" ${WRKSRC}/setup.cfg
 do-test:
 	cd ${WRKSRC} && LC_CTYPE='en_US.UTF-8' ${MODPY_BIN} ./run_tests.py
 
