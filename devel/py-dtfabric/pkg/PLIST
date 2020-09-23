@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/07 05:54:13 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/09/23 11:08:30 rpointel Exp $
+@conflict py-dtfabric-*
+@pkgpath devel/py-dtfabric
 bin/validate-definitions${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/dtfabric/
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -7,23 +9,21 @@ lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dtfabric/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}data_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}py2to3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}reader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/data_types.py
 lib/python${MODPY_VERSION}/site-packages/dtfabric/definitions.py
 lib/python${MODPY_VERSION}/site-packages/dtfabric/errors.py
-lib/python${MODPY_VERSION}/site-packages/dtfabric/py2to3.py
 lib/python${MODPY_VERSION}/site-packages/dtfabric/reader.py
 lib/python${MODPY_VERSION}/site-packages/dtfabric/registry.py
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}byte_operations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}data_maps.${MODPY_PYC_MAGIC_TAG}pyc
