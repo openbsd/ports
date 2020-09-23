@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/08/01 11:47:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/09/23 16:35:47 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -645,6 +645,10 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/cert-none-k
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/cert-rc2-key-3des.p12
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/no-cert-key-aes256cbc.p12
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/no-password.p12
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/amazon-roots.p7b
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/enveloped.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/isrg.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/poly1305/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/poly1305/rfc7539.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/twofactor/
