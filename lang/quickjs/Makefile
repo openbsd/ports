@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/06 20:24:53 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/23 15:37:32 bcallah Exp $
 
 COMMENT =	small, embeddable JavaScript engine in C
 
-V =		2019.10.27
-REVISION =	0
+V =		2020.09.06
 DISTNAME =	quickjs-${V:S/./-/g}
 PKGNAME =	quickjs-${V}
 
@@ -15,7 +14,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m
+WANTLIB += c m pthread
 
 MASTER_SITES =	https://bellard.org/quickjs/
 EXTRACT_SUFX =	.tar.xz

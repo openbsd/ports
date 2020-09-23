@@ -1,4 +1,4 @@
-$OpenBSD: patch-qjsc_c,v 1.1.1.1 2019/12/21 14:24:03 bcallah Exp $
+$OpenBSD: patch-qjsc_c,v 1.2 2020/09/23 15:37:32 bcallah Exp $
 
 Remove -ldl
 
@@ -10,6 +10,6 @@ Index: qjsc.c
      *arg++ = libjsname;
      *arg++ = "-lm";
 -    *arg++ = "-ldl";
+     *arg++ = "-lpthread";
      *arg = NULL;
      
-     if (verbose) {

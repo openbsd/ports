@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/21 14:24:03 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/09/23 15:37:32 bcallah Exp $
 @bin bin/qjs
-@bin bin/qjsbn
-@bin bin/qjsbnc
 @bin bin/qjsc
 bin/qjscalc
 include/quickjs/
@@ -9,4 +7,3 @@ include/quickjs/quickjs-libc.h
 include/quickjs/quickjs.h
 lib/quickjs/
 @static-lib lib/quickjs/libquickjs.a
-@static-lib lib/quickjs/libquickjs.bn.a

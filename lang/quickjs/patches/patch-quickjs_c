@@ -1,9 +1,9 @@
-$OpenBSD: patch-quickjs_c,v 1.1.1.1 2019/12/21 14:24:03 bcallah Exp $
+$OpenBSD: patch-quickjs_c,v 1.2 2020/09/23 15:37:32 bcallah Exp $
 
 Index: quickjs.c
 --- quickjs.c.orig
 +++ quickjs.c
-@@ -1349,7 +1349,7 @@ static inline size_t js_def_malloc_usable_size(void *p
+@@ -1667,7 +1667,7 @@ static inline size_t js_def_malloc_usable_size(void *p
      return malloc_usable_size(ptr);
  #else
      /* change this to `return 0;` if compilation fails */
@@ -12,7 +12,7 @@ Index: quickjs.c
  #endif
  }
  
-@@ -1423,7 +1423,7 @@ static const JSMallocFunctions def_malloc_funcs = {
+@@ -1741,7 +1741,7 @@ static const JSMallocFunctions def_malloc_funcs = {
      (size_t (*)(const void *))malloc_usable_size,
  #else
      /* change this to `NULL,` if compilation fails */
