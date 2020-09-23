@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.673 2020/09/23 13:15:26 edd Exp $
+# $OpenBSD: Makefile,v 1.674 2020/09/23 13:20:13 edd Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -162,6 +162,7 @@
      SUBDIR += libgdiplus
      SUBDIR += libhandy
      SUBDIR += libindicator
+     SUBDIR += libappindicator
      SUBDIR += libqaccessibilityclient
      SUBDIR += libxdg-basedir
      SUBDIR += lsw
