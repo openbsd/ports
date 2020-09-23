@@ -1,4 +1,12 @@
-$OpenBSD: patch-internal_h,v 1.4 2020/09/23 20:13:51 sthen Exp $
+$OpenBSD: patch-internal_h,v 1.5 2020/09/23 20:20:32 sthen Exp $
+
+On OpenBSD tcp_var.h also requires tcp_timer.h.
+
+/usr/include/netinet/tcp_var.h:72:25: error: use of undeclared identifier 'TCPT_NTIMERS'
+        struct timeout t_timer[TCPT_NTIMERS];   /* tcp timers */
+
+Nothing from tcp_var is used here at the moment anyway so don't pull it in.
+
 Index: internal.h
 --- internal.h.orig
 +++ internal.h
