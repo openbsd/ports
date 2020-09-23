@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_privs_c,v 1.1 2020/09/23 22:26:02 jca Exp $
+
+lib: fix usage of getgrouplist() in *BSD
+https://github.com/FRRouting/frr/pull/312
+
+Index: lib/privs.c
+--- lib/privs.c.orig
++++ lib/privs.c
+@@ -718,7 +718,7 @@ zprivs_init(struct zebra_privs_t *zprivs)
+   if (zprivs->user)
+     {
+       ngroups = sizeof(groups);
+-      if ( (ngroups = getgrouplist (zprivs->user, zprivs_state.zgid, groups, &ngroups )) < 0 )
++      if ( (getgrouplist (zprivs->user, zprivs_state.zgid, groups, &ngroups )) < 0 )
+         {
+           /* cant use log.h here as it depends on vty */
+           fprintf (stderr, "privs_init: could not getgrouplist for user %s\n",

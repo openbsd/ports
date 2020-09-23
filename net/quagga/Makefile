@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/12 20:48:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2020/09/23 22:26:02 jca Exp $
 
 COMMENT=	multi-threaded routing daemon
 
-DISTNAME=	quagga-1.2.3
-REVISION=	0
+DISTNAME=	quagga-1.2.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 
@@ -46,7 +45,7 @@ FLAVOR?=
 
 .if ${FLAVOR:Msnmp}
 LIB_DEPENDS+=	net/net-snmp
-WANTLIB += crypto kvm netsnmp netsnmpagent netsnmpmibs perl util
+WANTLIB += crypto kvm netsnmp netsnmpagent netsnmpmibs perl
 CONFIGURE_ARGS+= --enable-snmp=agentx
 .endif
 
