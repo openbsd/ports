@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:13:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/09/23 11:17:56 rpointel Exp $
 
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
-MODPY_EGG_VERSION = 20200211
+MODPY_EGG_VERSION = 20200625
 DISTNAME =	dfvfs-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -43,6 +42,8 @@ RUN_DEPENDS +=	devel/py-construct${MODPY_FLAVOR} \
 		sysutils/libvmdk \
 		sysutils/libvshadow \
 		sysutils/libvslvm
+
+TEST_DEPENDS +=	devel/py-mock${MODPY_FLAVOR}
 
 do-test:
 	touch ${WRKSRC}/utils/__init__.py

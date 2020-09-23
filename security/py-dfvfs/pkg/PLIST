@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/03/17 21:48:23 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/23 11:17:56 rpointel Exp $
 @pkgpath security/py-dfvfs
 lib/python${MODPY_VERSION}/site-packages/dfvfs/
 lib/python${MODPY_VERSION}/site-packages/dfvfs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -35,6 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}tsk_part
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}vhdi_analyzer_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}vmdk_analyzer_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}vshadow_analyzer_helper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}xz_analyzer_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}zip_analyzer_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/analyzer.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/analyzer_helper.py
@@ -57,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/tsk_partition_analyzer_h
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/vhdi_analyzer_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/vmdk_analyzer_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/vshadow_analyzer_helper.py
+lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/xz_analyzer_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/zip_analyzer_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/compression/
 lib/python${MODPY_VERSION}/site-packages/dfvfs/compression/__init__.py
@@ -217,7 +219,6 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}glob2regex.${
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}gzipfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}luksde.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}lvm.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}py2to3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}raw.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}sqlite_database.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}tsk_image.${MODPY_PYC_MAGIC_TAG}pyc
@@ -238,7 +239,6 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/gzipfile.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/gzipfile.yaml
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/luksde.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/lvm.py
-lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/py2to3.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/raw.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/sqlite_database.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/tsk_image.py
@@ -504,16 +504,6 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/volume/lvm_volume_system.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/volume/tsk_volume_system.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/volume/volume_system.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/volume/vshadow_volume_system.py
-lib/python${MODPY_VERSION}/site-packages/examples/
-lib/python${MODPY_VERSION}/site-packages/examples/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}list_file_entries.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}recursive_hasher.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}source_analyzer.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/examples/list_file_entries.py
-lib/python${MODPY_VERSION}/site-packages/examples/recursive_hasher.py
-lib/python${MODPY_VERSION}/site-packages/examples/source_analyzer.py
 share/doc/dfvfs/
 share/doc/dfvfs/ACKNOWLEDGEMENTS
 share/doc/dfvfs/AUTHORS
