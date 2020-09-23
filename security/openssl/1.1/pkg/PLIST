@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/07/05 10:05:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/09/23 15:24:03 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict openssl->=1.1.0,<1.2
@@ -1082,6 +1082,7 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/EC_KEY_check_key.3
 @man lib/eopenssl11/man/man3/EC_KEY_clear_flags.3
 @man lib/eopenssl11/man/man3/EC_KEY_copy.3
+@man lib/eopenssl11/man/man3/EC_KEY_decoded_from_explicit_params.3
 @man lib/eopenssl11/man/man3/EC_KEY_dup.3
 @man lib/eopenssl11/man/man3/EC_KEY_free.3
 @man lib/eopenssl11/man/man3/EC_KEY_generate_key.3
@@ -3237,6 +3238,7 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/X509V3_add1_i2d.3
 @man lib/eopenssl11/man/man3/X509V3_get_d2i.3
 @man lib/eopenssl11/man/man3/X509_ALGOR_cmp.3
+@man lib/eopenssl11/man/man3/X509_ALGOR_copy.3
 @man lib/eopenssl11/man/man3/X509_ALGOR_dup.3
 @man lib/eopenssl11/man/man3/X509_ALGOR_free.3
 @man lib/eopenssl11/man/man3/X509_ALGOR_get0.3
@@ -3395,6 +3397,8 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/X509_REQ_get_subject_name.3
 @man lib/eopenssl11/man/man3/X509_REQ_get_version.3
 @man lib/eopenssl11/man/man3/X509_REQ_new.3
+@man lib/eopenssl11/man/man3/X509_REQ_set0_signature.3
+@man lib/eopenssl11/man/man3/X509_REQ_set1_signature_algo.3
 @man lib/eopenssl11/man/man3/X509_REQ_set_pubkey.3
 @man lib/eopenssl11/man/man3/X509_REQ_set_subject_name.3
 @man lib/eopenssl11/man/man3/X509_REQ_set_version.3
