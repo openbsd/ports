@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/09/23 11:14:52 rpointel Exp $
 
 COMMENT =	library and tools to access NTFS
 
-VERSION = 	20200223
+VERSION = 	20200805
 DISTNAME =	libfsntfs-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	0
 
 SHARED_LIBS +=  fsntfs                       0.1 # 1.0
 
@@ -21,7 +20,7 @@ MAINTAINER = 	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =  ${MODPY_WANTLIB}
-WANTLIB += bfio c fwnt iconv intl m pthread util
+WANTLIB += bfio c fuse fwnt iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python3
