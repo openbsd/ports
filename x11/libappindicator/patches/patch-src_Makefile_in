@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2020/09/23 13:19:30 edd Exp $
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -471,7 +471,7 @@ libappindicator_la_LDFLAGS = \
+ libappindicator_la_CFLAGS = \
+ 	$(LIBRARY_CFLAGS) \
+ 	$(COVERAGE_CFLAGS) \
+-	-Wall -Werror \
++	-Wall  \
+ 	-DG_LOG_DOMAIN=\"libappindicator\"
+ 
+ libappindicator_la_LIBADD = \

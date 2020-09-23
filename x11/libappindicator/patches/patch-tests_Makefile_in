@@ -1,0 +1,77 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1.1.1 2020/09/23 13:19:30 edd Exp $
+
+Index: tests/Makefile.in
+--- tests/Makefile.in.orig
++++ tests/Makefile.in
+@@ -409,7 +409,7 @@ test_libappindicator_SOURCES = \
+ test_libappindicator_CFLAGS = \
+ 	$(TESTDEPS_CFLAGS) $(LIBRARY_CFLAGS) \
+ 	-DSRCDIR="\"$(srcdir)\"" \
+-	-Wall -Werror \
++	-Wall  \
+ 	-I$(top_srcdir)/src
+ 
+ test_libappindicator_LDADD = \
+@@ -425,7 +425,7 @@ test_libappindicator_dbus_client_SOURCES = \
+ 
+ test_libappindicator_dbus_client_CFLAGS = \
+ 	$(TESTDEPS_CFLAGS) $(LIBRARY_CFLAGS) \
+-	-Wall -Werror \
++	-Wall  \
+ 	-I$(top_srcdir)/src
+ 
+ test_libappindicator_dbus_client_LDADD = \
+@@ -441,7 +441,7 @@ test_libappindicator_dbus_server_SOURCES = \
+ 
+ test_libappindicator_dbus_server_CFLAGS = \
+ 	$(TESTDEPS_CFLAGS) $(LIBRARY_CFLAGS) \
+-	-Wall -Werror \
++	-Wall  \
+ 	-I$(top_srcdir)/src
+ 
+ test_libappindicator_dbus_server_LDADD = \
+@@ -457,7 +457,7 @@ test_libappindicator_status_client_SOURCES = \
+ 
+ test_libappindicator_status_client_CFLAGS = \
+ 	$(TESTDEPS_CFLAGS) $(LIBRARY_CFLAGS) \
+-	-Wall -Werror \
++	-Wall  \
+ 	-I$(top_srcdir)/src
+ 
+ test_libappindicator_status_client_LDADD = \
+@@ -473,7 +473,7 @@ test_libappindicator_status_server_SOURCES = \
+ 
+ test_libappindicator_status_server_CFLAGS = \
+ 	$(TESTDEPS_CFLAGS) $(LIBRARY_CFLAGS) \
+-	-Wall -Werror \
++	-Wall  \
+ 	-I$(top_srcdir)/src
+ 
+ test_libappindicator_status_server_LDADD = \
+@@ -488,7 +488,7 @@ test_libappindicator_fallback_watcher_SOURCES = \
+ 
+ test_libappindicator_fallback_watcher_CFLAGS = \
+ 	$(TESTDEPS_CFLAGS) $(LIBRARY_CFLAGS) \
+-	-Wall -Werror \
++	-Wall  \
+ 	-I$(top_srcdir)/src
+ 
+ test_libappindicator_fallback_watcher_LDADD = \
+@@ -500,7 +500,7 @@ test_libappindicator_fallback_item_SOURCES = \
+ 
+ test_libappindicator_fallback_item_CFLAGS = \
+ 	$(TESTDEPS_CFLAGS) $(LIBRARY_CFLAGS) \
+-	-Wall -Werror \
++	-Wall  \
+ 	-I$(top_srcdir)/src
+ 
+ test_libappindicator_fallback_item_LDADD = \
+@@ -522,7 +522,7 @@ test_simple_app_SOURCES = \
+ 
+ test_simple_app_CFLAGS = \
+ 	$(TESTDEPS_CFLAGS) $(LIBRARY_CFLAGS) \
+-	-Wall -Werror \
++	-Wall  \
+ 	-I$(top_srcdir)/src
+ 
+ test_simple_app_LDADD = \
