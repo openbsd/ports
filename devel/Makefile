@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2018 2020/09/20 16:04:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.2019 2020/09/23 11:06:47 rpointel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1427,7 +1427,6 @@
      SUBDIR += py-docopt
      SUBDIR += py-docopt,python3
      SUBDIR += py-doit
-     SUBDIR += py-dtfabric
      SUBDIR += py-dtfabric,python3
      SUBDIR += py-dulwich,python3
      SUBDIR += py-easyprocess
