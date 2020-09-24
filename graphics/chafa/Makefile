@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/22 22:08:23 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/24 20:05:22 danj Exp $
 
 COMMENT =		character art facsimile generator
 DISTNAME =		chafa-1.4.1
@@ -11,7 +11,7 @@ HOMEPAGE =		https://hpjansson.org/chafa/
 
 MAINTAINER =		Florian Viehweger <openbsd@out-of-creativity.de>
 
-# GPLv3+
+# LGPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += 		ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
