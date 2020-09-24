@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.39 2020/02/06 00:36:12 jeremy Exp $
+@comment $OpenBSD: PLIST-server,v 1.40 2020/09/24 13:11:46 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -284,6 +284,7 @@ include/postgresql/server/commands/view.h
 include/postgresql/server/common/
 include/postgresql/server/common/base64.h
 include/postgresql/server/common/config_info.h
+include/postgresql/server/common/connect.h
 include/postgresql/server/common/controldata_utils.h
 include/postgresql/server/common/fe_memutils.h
 include/postgresql/server/common/file_perm.h
