@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2020/04/13 02:53:05 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2020/09/24 07:31:51 bentley Exp $
 @bin bin/mgba
 include/mgba/
 include/mgba-util/
@@ -73,6 +73,7 @@ include/mgba/core/timing.h
 include/mgba/core/version.h
 include/mgba/debugger/
 include/mgba/debugger/debugger.h
+include/mgba/dllexports.h
 include/mgba/feature/
 include/mgba/feature/commandline.h
 include/mgba/feature/thread-proxy.h

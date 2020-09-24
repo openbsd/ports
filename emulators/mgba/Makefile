@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2020/08/05 09:26:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.42 2020/09/24 07:31:51 bentley Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
 
-V =			0.8.1
+V =			0.8.3
 GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
 GH_TAGNAME =		$V
@@ -24,9 +24,6 @@ CATEGORIES =		emulators
 HOMEPAGE =		https://mgba.io/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
-
-REVISION-main =		0
-REVISION-qt =		0
 
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
