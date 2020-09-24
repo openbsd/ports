@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_net_proxy_resolution_proxy_resolution_service_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/net/proxy_resolution/proxy_resolution_service.cc
 --- src/3rdparty/chromium/net/proxy_resolution/proxy_resolution_service.cc.orig
 +++ src/3rdparty/chromium/net/proxy_resolution/proxy_resolution_service.cc
-@@ -48,7 +48,7 @@
+@@ -49,7 +49,7 @@
  #elif defined(OS_MACOSX)
  #include "net/proxy_resolution/proxy_config_service_mac.h"
  #include "net/proxy_resolution/proxy_resolver_mac.h"
@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/net/proxy_resolution/proxy_resolution_service.cc
  #include "net/proxy_resolution/proxy_config_service_linux.h"
  #elif defined(OS_ANDROID)
  #include "net/proxy_resolution/proxy_config_service_android.h"
-@@ -62,7 +62,7 @@ namespace net {
+@@ -63,7 +63,7 @@ namespace net {
  namespace {
  
  #if defined(OS_WIN) || defined(OS_IOS) || defined(OS_MACOSX) || \
@@ -21,7 +21,7 @@ Index: src/3rdparty/chromium/net/proxy_resolution/proxy_resolution_service.cc
  constexpr net::NetworkTrafficAnnotationTag kSystemProxyConfigTrafficAnnotation =
      net::DefineNetworkTrafficAnnotation("proxy_config_system", R"(
        semantics {
-@@ -1578,7 +1578,7 @@ ProxyResolutionService::CreateSystemProxyConfigService
+@@ -1557,7 +1557,7 @@ ProxyResolutionService::CreateSystemProxyConfigService
               << "profile_io_data.cc::CreateProxyConfigService and this should "
               << "be used only for examples.";
    return std::make_unique<UnsetProxyConfigService>();

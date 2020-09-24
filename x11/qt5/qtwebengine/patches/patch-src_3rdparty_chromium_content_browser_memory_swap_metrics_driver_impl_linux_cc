@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_browser_memory_swap_metrics_driver_impl_linux_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/content/browser/memory/swap_metrics_driver_impl_linux.cc
 --- src/3rdparty/chromium/content/browser/memory/swap_metrics_driver_impl_linux.cc.orig

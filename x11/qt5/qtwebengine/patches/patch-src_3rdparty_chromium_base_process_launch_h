@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_process_launch_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/base/process/launch.h
 --- src/3rdparty/chromium/base/process/launch.h.orig
 +++ src/3rdparty/chromium/base/process/launch.h
-@@ -175,7 +175,7 @@ struct BASE_EXPORT LaunchOptions {
-   FileHandleMappingVector fds_to_remap;
- #endif  // defined(OS_WIN)
+@@ -180,7 +180,7 @@ struct BASE_EXPORT LaunchOptions {
+   bool clear_environment = false;
+ #endif  // OS_WIN || OS_POSIX || OS_FUCHSIA
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

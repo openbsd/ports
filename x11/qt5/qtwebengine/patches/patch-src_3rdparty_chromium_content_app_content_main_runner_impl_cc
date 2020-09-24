@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_app_content_main_runner_impl_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/content/app/content_main_runner_impl.cc
 --- src/3rdparty/chromium/content/app/content_main_runner_impl.cc.orig
 +++ src/3rdparty/chromium/content/app/content_main_runner_impl.cc
-@@ -93,17 +93,17 @@
+@@ -101,17 +101,17 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -24,8 +24,8 @@ Index: src/3rdparty/chromium/content/app/content_main_runner_impl.cc
  #include "base/native_library.h"
  #include "base/rand_util.h"
  #include "services/service_manager/zygote/common/common_sandbox_support_linux.h"
-@@ -158,6 +158,13 @@
- #include "services/service_manager/zygote/host/zygote_host_impl_linux.h"
+@@ -170,6 +170,13 @@
+ #include "content/browser/android/browser_startup_controller.h"
  #endif
  
 +#if defined(OS_BSD)
@@ -35,19 +35,19 @@ Index: src/3rdparty/chromium/content/app/content_main_runner_impl.cc
 +#include "services/service_manager/sandbox/linux/sandbox_linux.h"
 +#endif
 +
- #if defined(OS_ANDROID)
- #include "content/browser/android/browser_startup_controller.h"
- #endif
-@@ -314,7 +321,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+ namespace content {
+ extern int GpuMain(const content::MainFunctionParams&);
+ #if BUILDFLAG(ENABLE_PLUGINS)
+@@ -303,7 +310,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
  
 -#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
++#if defined(OS_LINUX) || OS_BSD
  
  #if BUILDFLAG(ENABLE_PLUGINS)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -353,7 +360,7 @@ void PreloadLibraryCdms() {
+@@ -342,7 +349,7 @@ void PreloadLibraryCdms() {
  }
  #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
  
@@ -56,7 +56,7 @@ Index: src/3rdparty/chromium/content/app/content_main_runner_impl.cc
  void PreSandboxInit() {
  #if defined(ARCH_CPU_ARM_FAMILY)
    // On ARM, BoringSSL requires access to /proc/cpuinfo to determine processor
-@@ -361,9 +368,12 @@ void PreSandboxInit() {
+@@ -350,9 +357,12 @@ void PreSandboxInit() {
    CRYPTO_library_init();
  #endif
  
@@ -69,19 +69,31 @@ Index: src/3rdparty/chromium/content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -377,6 +387,11 @@ void PreSandboxInit() {
+@@ -366,6 +376,11 @@ void PreSandboxInit() {
    InitializeWebRtcModule();
  #endif
  
 +#if defined(OS_BSD)
-+  // "cache" the amount of physical memory before pledge(2)
++   // "cache" the amount of physical memory before pledge(2)
 +  base::SysInfo::AmountOfPhysicalMemoryMB();
 +#endif
 +
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -644,7 +659,7 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -400,9 +415,9 @@ void PreSandboxInit() {
+         SkFontMgr_New_Android(&custom));
+   }
+ }
+-#endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
++#endif  // BUILDFLAG(USE_ZYGOTE_HANDLE) defined(OS_BSD)
+ 
+-#endif  // OS_LINUX
++#endif  // OS_LINUX || OS_BSD
+ 
+ }  // namespace
+ 
+@@ -625,7 +640,7 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
                     base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  

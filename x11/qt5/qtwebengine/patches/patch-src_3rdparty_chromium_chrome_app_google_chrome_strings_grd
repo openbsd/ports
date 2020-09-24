@@ -1,18 +1,27 @@
-$OpenBSD: patch-src_3rdparty_chromium_chrome_app_google_chrome_strings_grd,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/chrome/app/google_chrome_strings.grd
 --- src/3rdparty/chromium/chrome/app/google_chrome_strings.grd.orig
 +++ src/3rdparty/chromium/chrome/app/google_chrome_strings.grd
-@@ -820,7 +820,7 @@ Signing in anyway will merge Chrome information like b
+@@ -635,7 +635,7 @@ Google Chrome is unable to recover your settings.
+       </if>
+ 
+       <!-- about:browser-switch strings -->
+-      <if expr="is_win or is_macosx or (is_linux and not is_chromeos)">
++      <if expr="is_win or is_macosx or (is_posix and not is_chromeos)">
+         <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
+           Your system administrator has configured Google Chrome to open an alternative browser to access <ph name="TARGET_URL_HOSTNAME">$1<ex>example.com</ex></ph>.
+         </message>
+@@ -739,7 +739,7 @@ Google Chrome is unable to recover your settings.
        </message>
  
        <!-- ProcessSingleton -->
 -      <if expr="is_linux or is_macosx">
-+      <if expr="is_posix or is_macosx or is_posix">
++      <if expr="is_posix or is_macosx">
          <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
            The profile appears to be in use by another Google Chrome process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>).  Chrome has locked the profile so that it doesn't get corrupted.  If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chrome.
          </message>
-@@ -1075,7 +1075,7 @@ Please check your email at <ph name="ACCOUNT_EMAIL">$2
+@@ -979,7 +979,7 @@ Google Chrome is unable to recover your settings.
        </message>
  
        <!-- Plugin Placeholders -->

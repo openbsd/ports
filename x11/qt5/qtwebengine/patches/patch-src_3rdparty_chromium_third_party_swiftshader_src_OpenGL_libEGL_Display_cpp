@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_swiftshader_src_OpenGL_libEGL_Display_cpp,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
 --- src/3rdparty/chromium/third_party/swiftshader/src/OpenGL/libEGL/Display.cpp.orig
 +++ src/3rdparty/chromium/third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
-@@ -686,7 +686,7 @@ bool Display::isValidWindow(EGLNativeWindowType window
+@@ -690,7 +690,7 @@ bool Display::isValidWindow(EGLNativeWindowType window
  			return status != 0;
  		}
  		return false;
@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/third_party/swiftshader/src/OpenGL/libEGL/Display.c
  		return false;  // Non X11 linux is headless only
  	#elif defined(__APPLE__)
  		return sw::OSX::IsValidWindow(window);
-@@ -862,7 +862,7 @@ sw::Format Display::getDisplayFormat() const
+@@ -868,7 +868,7 @@ sw::Format Display::getDisplayFormat() const
  		{
  			return sw::FORMAT_X8R8G8B8;
  		}

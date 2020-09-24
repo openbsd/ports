@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_chrome_browser_ui_webui_about_ui_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc
 --- src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc.orig
 +++ src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc
-@@ -552,7 +552,7 @@ std::string ChromeURLs() {
+@@ -561,7 +561,7 @@ std::string ChromeURLs() {
    return html;
  }
  
@@ -12,9 +12,9 @@ Index: src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -607,7 +607,7 @@ void AboutUIHTMLSource::StartDataRequest(
-                      .GetRawDataResource(idr)
-                      .as_string();
+@@ -617,7 +617,7 @@ void AboutUIHTMLSource::StartDataRequest(
+       response =
+           ui::ResourceBundle::GetSharedInstance().LoadDataResourceString(idr);
      }
 -#if defined(OS_LINUX) || defined(OS_OPENBSD)
 +#if defined(OS_LINUX) || defined(OS_BSD)

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_browser_browser_main_loop_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/content/browser/browser_main_loop.cc
 --- src/3rdparty/chromium/content/browser/browser_main_loop.cc.orig
 +++ src/3rdparty/chromium/content/browser/browser_main_loop.cc
-@@ -255,6 +255,13 @@
+@@ -253,6 +253,13 @@
  #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
  #endif
  
@@ -17,7 +17,7 @@ Index: src/3rdparty/chromium/content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -590,6 +597,11 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -608,6 +615,11 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
