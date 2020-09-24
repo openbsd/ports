@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/04 07:50:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/24 08:03:13 bentley Exp $
 
 COMMENT-main =		accurate Nintendo Game Boy emulator
 COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
@@ -6,7 +6,7 @@ COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
 PKGNAME-main =		sameboy-$V
 PKGNAME-libretro =	libretro-sameboy-$V
 
-V =		0.13.1
+V =		0.13.6
 GH_ACCOUNT =	LIJI32
 GH_PROJECT =	SameBoy
 GH_TAGNAME =	v$V
@@ -31,7 +31,11 @@ WANTLIB-libretro += m
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/rgbds
-LIB_DEPENDS-main =	devel/sdl2
+
+# dlopens libgtk-3.so for file chooser
+WANTLIB-main += gtk-3
+LIB_DEPENDS-main =	devel/sdl2 \
+			x11/gtk+3
 
 MAKE_FLAGS =		CC="${CC}" \
 			DATA_DIR=${PREFIX}/share/sameboy/
