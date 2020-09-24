@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/15 03:54:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2020/09/24 07:48:28 bentley Exp $
 
 COMMENT =	HTML5 validator
 
-V =		20.3.16
+V =		20.6.30
 DISTNAME =	vnu.jar_$V
 PKGNAME =	vnu-$V
 
