@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_components_crash_content_browser_BUILD_gn,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/components/crash/content/browser/BUILD.gn
 --- src/3rdparty/chromium/components/crash/content/browser/BUILD.gn.orig

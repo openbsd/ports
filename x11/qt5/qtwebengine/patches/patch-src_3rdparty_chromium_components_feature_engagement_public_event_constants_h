@@ -1,14 +1,34 @@
-$OpenBSD: patch-src_3rdparty_chromium_components_feature_engagement_public_event_constants_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/components/feature_engagement/public/event_constants.h
 --- src/3rdparty/chromium/components/feature_engagement/public/event_constants.h.orig
 +++ src/3rdparty/chromium/components/feature_engagement/public/event_constants.h
-@@ -49,7 +49,7 @@ extern const char kReopenTabConditionsMet[];
- extern const char kTabReopened[];
- #endif  // BUILDFLAG(ENABLE_DESKTOP_IN_PRODUCT_HELP)
+@@ -14,16 +14,16 @@ namespace events {
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS) || defined(OS_BSD)
- // This event is included in the deferred onboarding events for the New Tab
- // described above, but it is also used on iOS, so it must be compiled
- // separately.
+ // Desktop and IOS.
+ #if defined(OS_IOS) || defined(OS_WIN) || defined(OS_MACOSX) || \
+-    defined(OS_LINUX) || defined(OS_CHROMEOS)
++    defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ // The user has explicitly opened a new tab via an entry point from inside of
+ // Chrome.
+ extern const char kNewTabOpened[];
+ #endif  // defined(OS_IOS) || defined(OS_WIN) || defined(OS_MACOSX) ||
+-        // defined(OS_LINUX) || defined(OS_CHROMEOS)
++        // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ 
+ // Desktop
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ // All conditions for reopen closed tab IPH were met. Since this IPH needs to
+ // track user events (opening/closing tabs, focusing the omnibox, etc) on the
+ // second level, it must be done manually.
+@@ -81,7 +81,7 @@ extern const char kIncognitoWindowSessionTimeMet[];
+ #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
+ 
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
+-        // defined(OS_CHROMEOS)
++        // defined(OS_CHROMEOS) || defined(OS_BSD)
+ 
+ #if defined(OS_IOS)
+ // The user has opened Chrome (cold start or from background).

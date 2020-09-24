@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_3rdparty_chromium_build_config_features_gni,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/build/config/features.gni
 --- src/3rdparty/chromium/build/config/features.gni.orig
 +++ src/3rdparty/chromium/build/config/features.gni
-@@ -41,7 +41,7 @@ declare_args() {
-   }
+@@ -26,7 +26,7 @@ declare_args() {
+   proprietary_codecs = is_chrome_branded || is_chromecast
  
    # libudev usage. This currently only affects the content layer.
 -  use_udev = is_linux && !is_chromecast

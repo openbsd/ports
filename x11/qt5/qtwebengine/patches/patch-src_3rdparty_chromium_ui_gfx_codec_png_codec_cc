@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_gfx_codec_png_codec_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/ui/gfx/codec/png_codec.cc
 --- src/3rdparty/chromium/ui/gfx/codec/png_codec.cc.orig

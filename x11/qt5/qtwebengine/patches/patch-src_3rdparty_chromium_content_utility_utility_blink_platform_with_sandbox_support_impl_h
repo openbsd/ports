@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_utility_utility_blink_platform_with_sandbox_support_impl_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox_support_impl.h
 --- src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig
@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -39,10 +39,10 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
+@@ -33,10 +33,10 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
    blink::WebSandboxSupport* GetSandboxSupport() override;
  
   private:

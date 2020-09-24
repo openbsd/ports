@@ -13,11 +13,11 @@ gn_args +=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
-		fieldtrial_testing_like_official_build=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
+		fieldtrial_testing_like_official_build=true
+#                extra_cppflags=\"-idirafter ${LOCALBASE}\/include -idirafter ${X11BASE}\/include\"
 
-gn_args +=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
-
+#gn_args +=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
+#
 gn_args +=	ffmpeg_branding=\"Chrome\" \
 		proprietary_codecs=true
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_views_views_delegate_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/ui/views/views_delegate.cc
 --- src/3rdparty/chromium/ui/views/views_delegate.cc.orig
@@ -7,8 +7,8 @@ Index: src/3rdparty/chromium/ui/views/views_delegate.cc
  bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow window) const {
    return false;
  }
--#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+-#elif defined(OS_LINUX) && BUILDFLAG(ENABLE_DESKTOP_AURA)
++#elif (defined(OS_LINUX) || defined(OS_BSD)) && BUILDFLAG(ENABLE_DESKTOP_AURA)
  gfx::ImageSkia* ViewsDelegate::GetDefaultWindowIcon() const {
    return nullptr;
  }

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_process_process_metrics_openbsd_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/base/process/process_metrics_openbsd.cc
 --- src/3rdparty/chromium/base/process/process_metrics_openbsd.cc.orig
 +++ src/3rdparty/chromium/base/process/process_metrics_openbsd.cc
-@@ -4,10 +4,21 @@
+@@ -4,11 +4,25 @@
  
  #include "base/process/process_metrics.h"
  
@@ -19,13 +19,17 @@ Index: src/3rdparty/chromium/base/process/process_metrics_openbsd.cc
 +
  #include <stddef.h>
  #include <stdint.h>
++#include <fcntl.h>
  #include <sys/param.h>
  #include <sys/sysctl.h>
 +#include <sys/vmmeter.h>
  
++#include <kvm.h>
++
  #include "base/memory/ptr_util.h"
  #include "base/process/process_metrics_iocounters.h"
-@@ -25,48 +36,13 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+ #include "base/stl_util.h"
+@@ -25,48 +39,13 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
    return false;
  }
  
@@ -75,64 +79,35 @@ Index: src/3rdparty/chromium/base/process/process_metrics_openbsd.cc
  
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
-@@ -85,6 +61,149 @@ size_t GetSystemCommitCharge() {
+@@ -85,6 +64,120 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
 +}
 +
 +int ProcessMetrics::GetOpenFdCount() const {
-+  struct kinfo_proc *info;
-+  size_t length;
++  struct kinfo_file *files;
++  kvm_t *kd = NULL;
 +  int total_count = 0;
++  char errbuf[_POSIX2_LINE_MAX];
 +
-+  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
-+                sizeof(struct kinfo_proc), 0 };
-+
-+  if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) < 0)
-+    return -1;
-+
-+  info = (struct kinfo_proc *)malloc(length);
-+
-+  mib[5] = (length / sizeof(struct kinfo_proc));
-+
-+  if (sysctl(mib, base::size(mib), info, &length, NULL, 0) < 0) {
-+    total_count = -1;
++  if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf)) == NULL)
 +    goto out;
++  
++  if ((files = kvm_getfiles(kd, KERN_FILE_BYPID, process_,  
++        sizeof(struct kinfo_file), &total_count)) == NULL) {
++	  total_count = 0;
++	  goto out;
 +  }
-+  //total_count = info->p_fd->fd_openfd;
-+  total_count = info->p_fd;
++
++  kvm_close(kd);
 +
 +out:
-+  free(info);
 +  return total_count;
 +}
 +
 +int ProcessMetrics::GetOpenFdSoftLimit() const {
-+  struct kinfo_proc *info;
-+  size_t length;
-+  int total_count = 0;
-+
-+  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
-+                sizeof(struct kinfo_proc), 0 };
-+
-+  if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) < 0)
-+    return -1;
-+
-+  info = (struct kinfo_proc *)malloc(length);
-+
-+  mib[5] = (length / sizeof(struct kinfo_proc));
-+
-+  if (sysctl(mib, base::size(mib), info, &length, NULL, 0) < 0) {
-+    total_count = -1;
-+    goto out;
-+  }
-+  //total_count = info->p_fd->fd_openfd;
-+  total_count = info->p_limit;
-+
-+out:
-+  free(info);
-+  return total_count;
++  return GetMaxFds();
 +}
 +
 +uint64_t ProcessMetrics::GetVmSwapBytes() const {
@@ -161,7 +136,7 @@ Index: src/3rdparty/chromium/base/process/process_metrics_openbsd.cc
 +}
 +
 +bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo) {
-+  NOTIMPLEMENTED();
++  NOTIMPLEMENTED_LOG_ONCE();
 +  return false;
 +}
 +

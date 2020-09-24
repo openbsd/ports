@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_components_content_settings_core_browser_website_settings_registry_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/components/content_settings/core/browser/website_settings_registry.cc
 --- src/3rdparty/chromium/components/content_settings/core/browser/website_settings_registry.cc.orig

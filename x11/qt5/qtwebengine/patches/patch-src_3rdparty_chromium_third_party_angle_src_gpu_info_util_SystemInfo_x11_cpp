@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_angle_src_gpu_info_util_SystemInfo_x11_cpp,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp
 --- src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig

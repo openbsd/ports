@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_media_base_vector_math_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/media/base/vector_math.cc
 --- src/3rdparty/chromium/media/base/vector_math.cc.orig

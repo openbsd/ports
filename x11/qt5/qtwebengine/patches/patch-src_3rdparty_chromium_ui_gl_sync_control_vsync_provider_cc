@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_gl_sync_control_vsync_provider_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/ui/gl/sync_control_vsync_provider.cc
 --- src/3rdparty/chromium/ui/gl/sync_control_vsync_provider.cc.orig
@@ -30,7 +30,7 @@ Index: src/3rdparty/chromium/ui/gl/sync_control_vsync_provider.cc
    // The actual clock used for the system time returned by glXGetSyncValuesOML
    // is unspecified. In practice, the clock used is likely to be either
    // CLOCK_REALTIME or CLOCK_MONOTONIC, so we compare the returned time to the
-@@ -161,7 +161,7 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
+@@ -160,7 +160,7 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
  }
  
  bool SyncControlVSyncProvider::SupportGetVSyncParametersIfAvailable() const {

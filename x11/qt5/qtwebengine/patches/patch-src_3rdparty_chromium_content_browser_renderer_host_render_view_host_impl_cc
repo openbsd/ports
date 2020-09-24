@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_browser_renderer_host_render_view_host_impl_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/content/browser/renderer_host/render_view_host_impl.cc
 --- src/3rdparty/chromium/content/browser/renderer_host/render_view_host_impl.cc.orig
 +++ src/3rdparty/chromium/content/browser/renderer_host/render_view_host_impl.cc
-@@ -161,7 +161,7 @@ void GetPlatformSpecificPrefs(RendererPreferences* pre
+@@ -209,7 +209,7 @@ void RenderViewHostImpl::GetPlatformSpecificPrefs(
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CYVSCROLL);
    prefs->arrow_bitmap_width_horizontal_scroll_bar_in_dips =
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CXHSCROLL);

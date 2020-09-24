@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_renderer_core_editing_editing_behavior_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/third_party/blink/renderer/core/editing/editing_behavior.cc
 --- src/3rdparty/chromium/third_party/blink/renderer/core/editing/editing_behavior.cc.orig

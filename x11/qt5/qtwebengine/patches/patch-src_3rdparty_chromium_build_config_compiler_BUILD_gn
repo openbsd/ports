@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_build_config_compiler_BUILD_gn,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
 --- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig
 +++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
-@@ -56,7 +56,7 @@ declare_args() {
+@@ -60,7 +60,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -12,24 +12,26 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -393,7 +393,7 @@ config("compiler") {
+@@ -314,7 +314,7 @@ config("compiler") {
  
-   # Linux/Android/Fuchsia common flags setup.
-   # ---------------------------------
--  if (is_linux || is_android || is_fuchsia) {
-+  if (is_openbsd || is_linux || is_android || is_fuchsia) {
-     asmflags += [ "-fPIC" ]
-     cflags += [ "-fPIC" ]
-     ldflags += [ "-fPIC" ]
-@@ -405,18 +405,14 @@ config("compiler") {
+     # Linker warnings.
+     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
+-        !is_mac && !is_ios && current_os != "aix") {
++        !is_mac && !is_ios && current_os != "aix" && current_os != "openbsd") {
+       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+       ldflags += [ "-Wl,--fatal-warnings" ]
+     }
+@@ -411,6 +411,7 @@ config("compiler") {
      }
  
      ldflags += [
 +      "-Wl,-z,wxneeded",
        "-Wl,-z,noexecstack",
-       "-Wl,-z,now",
        "-Wl,-z,relro",
      ]
+@@ -419,13 +420,8 @@ config("compiler") {
+       ldflags += [ "-Wl,-z,now" ]
+     }
  
 -    # Compiler instrumentation can introduce dependencies in DSOs to symbols in
 -    # the executable they are loaded into, so they are unresolved at link-time.
@@ -43,25 +45,56 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      }
    }
  
-@@ -814,7 +810,7 @@ config("compiler_cpu_abi") {
+@@ -778,7 +774,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
 -      if (is_clang && !is_android && !is_nacl) {
-+      if (is_clang && !is_android && !is_nacl  && !is_openbsd) {
++      if (is_clang && !is_android && !is_nacl && !is_openbsd) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -828,7 +824,7 @@ config("compiler_cpu_abi") {
+@@ -792,7 +788,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
 -      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
-+      if (is_clang && !is_android && !is_nacl && !is_fuchsia  && !is_openbsd) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_openbsd) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1730,7 +1726,7 @@ config("thin_archive") {
+@@ -1143,7 +1139,7 @@ config("compiler_deterministic") {
+       "-Xclang",
+       ".",
+     ]
+-    if (!is_win) {
++    if (!is_win && !is_openbsd) {
+       # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
+       asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
+     }
+@@ -1557,21 +1553,6 @@ config("default_warnings") {
+           # Ignore warnings about MSVC optimization pragmas.
+           # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
+           "-Wno-ignored-pragma-optimize",
+-
+-          # TODO(https://crbug.com/989932): Evaluate and possibly enable.
+-          "-Wno-implicit-int-float-conversion",
+-
+-          # TODO(https://crbug.com/999886): Clean up, enable.
+-          "-Wno-final-dtor-non-final-class",
+-
+-          # TODO(https://crbug.com/1016947) Clean up, enable.
+-          "-Wno-bitwise-conditional-parentheses",
+-
+-          # TODO(https://crbug.com/1016945) Clean up, enable.
+-          "-Wno-builtin-assume-aligned-alignment",
+-
+-          # TODO(https://crbug.com/1028110): Evaluate and possible enable.
+-          "-Wno-deprecated-copy",
+         ]
+ 
+         if (is_fuchsia) {
+@@ -1798,7 +1779,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -70,12 +103,42 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2322,7 +2318,7 @@ config("symbols") {
-       # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
-       # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
-       if (!is_nacl || is_clang) {
--        cflags += [ "-g2" ]
-+        cflags += [ "${DEBUGFLAG}" ]
-       }
+@@ -2270,29 +2251,6 @@ config("afdo_optimize_size") {
+ # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
+ # config to allow AFDO to be disabled per-target.
+ config("afdo") {
+-  if (is_clang) {
+-    cflags = []
+-    if (clang_emit_debug_info_for_profiling) {
+-      # Add the following flags to generate debug info for profiling.
+-      cflags += [ "-gline-tables-only" ]
+-      if (!is_nacl) {
+-        cflags += [ "-fdebug-info-for-profiling" ]
+-      }
+-    }
+-    if (_clang_sample_profile != "") {
+-      rebased_clang_sample_profile =
+-          rebase_path(_clang_sample_profile, root_build_dir)
+-      cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
+-      inputs = [
+-        _clang_sample_profile,
+-      ]
+-    }
+-  } else if (auto_profile_path != "" && is_a_target_toolchain) {
+-    cflags = [ "-fauto-profile=${auto_profile_path}" ]
+-    inputs = [
+-      auto_profile_path,
+-    ]
+-  }
+ }
+ 
+ # Symbols ----------------------------------------------------------------------
+@@ -2396,7 +2354,7 @@ config("symbols") {
+     # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
+     # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
+     if (!is_nacl || is_clang) {
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
      }
+ 
      if (use_debug_fission && !is_nacl && !is_android) {

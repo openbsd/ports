@@ -1,13 +1,40 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_browser_renderer_host_render_process_host_impl_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/content/browser/renderer_host/render_process_host_impl.cc
 --- src/3rdparty/chromium/content/browser/renderer_host/render_process_host_impl.cc.orig
 +++ src/3rdparty/chromium/content/browser/renderer_host/render_process_host_impl.cc
-@@ -3135,6 +3135,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
-     switches::kEnableMediaSuspend,
-     switches::kEnableLCDText,
-     switches::kEnableLogging,
+@@ -241,7 +241,7 @@
+ #include "content/browser/gpu/gpu_data_manager_impl.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include <sys/resource.h>
+ #include <sys/time.h>
+ 
+@@ -1175,7 +1175,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
+ // to indicate failure and std::numeric_limits<size_t>::max() to indicate
+ // unlimited.
+ size_t GetPlatformProcessLimit() {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   struct rlimit limit;
+   if (getrlimit(RLIMIT_NPROC, &limit) != 0)
+     return kUnknownPlatformProcessLimit;
+@@ -1186,7 +1186,7 @@ size_t GetPlatformProcessLimit() {
+ #else
+   // TODO(https://crbug.com/104689): Implement on other platforms.
+   return kUnknownPlatformProcessLimit;
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+ }
+ #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
+ 
+@@ -3124,6 +3124,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+     switches::kDisableThreadedScrolling,
+     switches::kDisableTouchAdjustment,
+     switches::kDisableTouchDragDrop,
 +    switches::kDisableUnveil,
-     switches::kEnableNetworkInformationDownlinkMax,
-     switches::kEnableOopRasterization,
-     switches::kEnablePassthroughRasterDecoder,
+     switches::kDisableV8IdleTasks,
+     switches::kDisableWebGLImageChromium,
+     switches::kDomAutomationController,

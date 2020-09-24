@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_skia_src_ports_SkOSFile_stdio_cpp,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/third_party/skia/src/ports/SkOSFile_stdio.cpp
 --- src/3rdparty/chromium/third_party/skia/src/ports/SkOSFile_stdio.cpp.orig
 +++ src/3rdparty/chromium/third_party/skia/src/ports/SkOSFile_stdio.cpp
-@@ -129,7 +129,7 @@ void sk_fflush(FILE* f) {
+@@ -132,7 +132,7 @@ void sk_fflush(FILE* f) {
  
  void sk_fsync(FILE* f) {
  #if !defined(_WIN32) && !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__) \

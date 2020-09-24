@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_components_os_crypt_os_crypt_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/components/os_crypt/os_crypt.h
 --- src/3rdparty/chromium/components/os_crypt/os_crypt.h.orig
@@ -28,7 +28,7 @@ Index: src/3rdparty/chromium/components/os_crypt/os_crypt.h
    // On Linux returns true iff the real secret key (not hardcoded one) is
    // available. On MacOS returns true if Keychain is available (for mock
    // Keychain it returns true if not using locked Keychain, false if using
-@@ -112,7 +112,7 @@ class OSCrypt {
+@@ -131,7 +131,7 @@ class OSCrypt {
    DISALLOW_IMPLICIT_CONSTRUCTORS(OSCrypt);
  };
  

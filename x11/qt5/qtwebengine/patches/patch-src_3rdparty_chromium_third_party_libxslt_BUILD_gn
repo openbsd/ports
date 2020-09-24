@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_libxslt_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/third_party/libxslt/BUILD.gn
 --- src/3rdparty/chromium/third_party/libxslt/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/libxslt/BUILD.gn
-@@ -1,121 +1,13 @@
+@@ -1,124 +1,13 @@
 -# Copyright 2014 The Chromium Authors. All rights reserved.
 +# Copyright 2016 The Chromium Authors. All rights reserved.
  # Use of this source code is governed by a BSD-style license that can be
@@ -82,7 +82,6 @@ Index: src/3rdparty/chromium/third_party/libxslt/BUILD.gn
 -    "src/libxslt/xsltlocale.h",
 -    "src/libxslt/xsltutils.c",
 -    "src/libxslt/xsltutils.h",
--    "src/libxslt/xsltwin32config.h.in",
 -    "win32/config.h",
 -  ]
 -
@@ -114,6 +113,8 @@ Index: src/3rdparty/chromium/third_party/libxslt/BUILD.gn
 -  deps = [
 -    "//third_party/libxml",
 -  ]
+-
+-  visibility = [ ":libxslt" ]
 -}
 -
 -if (use_system_libxslt) {
@@ -123,10 +124,12 @@ Index: src/3rdparty/chromium/third_party/libxslt/BUILD.gn
 -  }
 -  source_set("libxslt") {
 -    public_configs = [ ":system_libxslt" ]
+-    visibility = [ "//third_party/blink/renderer/*" ]
 -  }
 -} else {
 -  group("libxslt") {
 -    public_deps = [ ":bundled_libxslt" ]
+-    visibility = [ "//third_party/blink/renderer/*" ]
 -  }
 +source_set("libxslt") {
 +  public_configs = [ ":system_libxslt" ]

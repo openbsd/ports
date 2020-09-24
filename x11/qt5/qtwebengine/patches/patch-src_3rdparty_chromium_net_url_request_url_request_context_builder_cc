@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_net_url_request_url_request_context_builder_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/net/url_request/url_request_context_builder.cc
 --- src/3rdparty/chromium/net/url_request/url_request_context_builder.cc.orig
 +++ src/3rdparty/chromium/net/url_request/url_request_context_builder.cc
-@@ -520,7 +520,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
+@@ -508,7 +508,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
    }
  
    if (!proxy_resolution_service_) {

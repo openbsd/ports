@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/ui/gfx/linux/client_native_pixmap_dmabuf.cc
 --- src/3rdparty/chromium/ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig
@@ -13,9 +13,9 @@ Index: src/3rdparty/chromium/ui/gfx/linux/client_native_pixmap_dmabuf.cc
  #include <stddef.h>
  #include <sys/ioctl.h>
  #include <sys/mman.h>
-@@ -18,11 +20,7 @@
- #include "base/trace_event/trace_event.h"
- #include "build/build_config.h"
+@@ -25,11 +27,7 @@
+ #include "ui/gfx/buffer_format_util.h"
+ #include "ui/gfx/switches.h"
  
 -#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 11, 0)
 -#include <linux/dma-buf.h>

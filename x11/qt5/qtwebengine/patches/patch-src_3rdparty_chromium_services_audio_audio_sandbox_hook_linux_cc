@@ -1,19 +1,19 @@
-$OpenBSD: patch-src_3rdparty_chromium_services_audio_audio_sandbox_hook_linux_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc
 --- src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc.orig
 +++ src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc
-@@ -102,6 +102,9 @@ std::vector<BrokerFilePermission> GetAudioFilePermissi
+@@ -157,6 +157,9 @@ std::vector<BrokerFilePermission> GetAudioFilePermissi
  }
  
  void LoadAudioLibraries() {
 +#if defined(OS_BSD)
 +  NOTIMPLEMENTED();
 +#else
-   const std::string kLibraries[]{"libasound.so.2", "libpulse.so.0",
-                                  "libnss_files.so.2"};
-   for (const auto& library_name : kLibraries) {
-@@ -111,6 +114,7 @@ void LoadAudioLibraries() {
+   const std::string libraries[]{"libasound.so.2", "libpulse.so.0",
+                                 "libnss_files.so.2"};
+   for (const auto& library_name : libraries) {
+@@ -166,6 +169,7 @@ void LoadAudioLibraries() {
                     << " with error: " << dlerror();
      }
    }

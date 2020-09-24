@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_media_capture_video_linux_video_capture_device_linux_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linux.cc
 --- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linux.cc.orig
@@ -10,12 +10,12 @@ Index: src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linu
 -#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,2,0)
 +//#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,2,0)
        // If we have no idea of the frequency, at least try and set it to AUTO.
--      return V4L2_CID_POWER_LINE_FREQUENCY_AUTO;
+       return V4L2_CID_POWER_LINE_FREQUENCY_AUTO;
 -#else
-+//      return V4L2_CID_POWER_LINE_FREQUENCY_AUTO;
-+//#else
-       return V4L2_CID_POWER_LINE_FREQUENCY_60HZ;
+-      return V4L2_CID_POWER_LINE_FREQUENCY_60HZ;
 -#endif
++//#else
++//      return V4L2_CID_POWER_LINE_FREQUENCY_60HZ;
 +//#endif
    }
  }

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_sandbox_linux_services_libc_interceptor_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/sandbox/linux/services/libc_interceptor.cc
 --- src/3rdparty/chromium/sandbox/linux/services/libc_interceptor.cc.orig
@@ -13,7 +13,7 @@ Index: src/3rdparty/chromium/sandbox/linux/services/libc_interceptor.cc
  #include <sys/socket.h>
  #include <sys/types.h>
  #include <time.h>
-@@ -94,7 +96,7 @@ bool ReadTimeStruct(base::PickleIterator* iter,
+@@ -93,7 +95,7 @@ bool ReadTimeStruct(base::PickleIterator* iter,
    } else {
      base::AutoLock lock(g_timezones_lock.Get());
      auto ret_pair = g_timezones.Get().insert(timezone);

@@ -11,11 +11,11 @@ DPB_PROPERTIES =	lonesome
 
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
-REVISION =		1
+#REVISION =		1
 
-VERSION =		5.13.2
-DISTNAME =		qtwebengine-everywhere-src-${VERSION}
-MASTER_SITES =		https://download.qt.io/official_releases/qt/5.13/${VERSION}/submodules/
+#VERSION =		5.13.2
+#DISTNAME =		qtwebengine-everywhere-src-${VERSION}
+#MASTER_SITES =		https://download.qt.io/official_releases/qt/5.13/${VERSION}/submodules/
 
 COMMENT =		Chromium-based web engine for Qt5
 
@@ -28,38 +28,29 @@ SHARED_LIBS +=  Qt5WebEngineWidgets       0.0 # 5.13
 # BSD-like, patents
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Designer Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5WebChannel Qt5Widgets Qt5Xml X11 X11-xcb Xcomposite
-WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xrender Xss Xtst avcodec
-WANTLIB += avformat avutil c cups dbus-1 event execinfo expat
-WANTLIB += fontconfig freetype glib-2.0 graphite2 harfbuzz iconv
-WANTLIB += icudata icui18n icuuc intl jpeg kvm lcms2 lzma m nspr4
-WANTLIB += nss3 nssutil3 opus pcre plc4 plds4 png smime3 snappy
-WANTLIB += sndio swresample util vpx webp webpdemux webpmux xcb
-WANTLIB += xml2 xslt z
 
 MODULES =	lang/python \
 		devel/qmake
 
 MODPY_RUNDEP =	No
 
-RUN_DEPENDS =	devel/xdg-utils \
-		devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/xdg-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
-		x11/gtk+3,-guic \
-		x11/gtk+3,-cups
+		x11/gnome/libgnome-keyring \
+		x11/gtk+3,-cups \
+		x11/gtk+3,-guic
 
 BUILD_DEPENDS =	archivers/bzip2 \
-		devel/protobuf \
-		devel/gperf \
 		devel/bison \
+		devel/gperf \
+		devel/ninja \
+		devel/protobuf \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
-		devel/ninja \
-		x11/gtk+3
+		x11/gnome/libgnome-keyring
 
 LIB_DEPENDS =	archivers/snappy \
 		devel/harfbuzz \
@@ -72,6 +63,7 @@ LIB_DEPENDS =	archivers/snappy \
 		security/nss \
 		textproc/libxml \
 		textproc/libxslt \
+		x11/gtk+3 \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qttools \
@@ -85,7 +77,15 @@ GN_SYSTEM_LIBS =	libevent \
 
 DEBUGFLAG =		-g0
 
-MAKE_ENV =		V=1
+CONFIGURE_ENV =		NINJAFLAGS="-j${MAKE_JOBS}" \
+			NINJA_PATH="${LOCALBASE}/bin/ninja" \
+			PATH=${WRKSRC}/bin:${LOCALBASE}/bin:${PATH}
+
+MAKE_ENV +=		CC="${CC}" CXX="${CXX}" \
+			C_INCLUDE_PATH="${LOCALBASE}/include:${X11BASE}/include" \
+			CPLUS_INCLUDE_PATH="${LOCALBASE}/include:${X11BASE}/include" \
+			LIBRARY_PATH="${LOCALBASE}/lib:${X11BASE}/lib" \
+			${CONFIGURE_ENV}
 
 .if ${MACHINE_ARCH} == "aarch64"
 PKG_ARGS+=		-Dswiftshader=0
@@ -93,7 +93,7 @@ PKG_ARGS+=		-Dswiftshader=0
 PKG_ARGS+=		-Dswiftshader=1
 .endif
 
-PATCHORIG=		.orig.port
+#PATCHORIG=		.orig.port
 
 # XXX dwz doesn't work with chromium yet
 DWZ = :
@@ -114,7 +114,9 @@ pre-configure:
 .endfor
 	@mkdir -p ${CHROMESRC}/media/audio/sndio ${CHROMESRC}/media/audio/openbsd
 	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/core/config/
+	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/buildtools/config/
 	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${CHROMESRC}/media/audio/sndio
+	@cp ${FILESDIR}/hid_{service,connection}_fido.{cc,h} ${CHROMESRC}/services/device/hid
 	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${CHROMESRC}/media/audio/openbsd
 	# Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers
 	@cd ${WRKSRC} && /usr/local/lib/qt5/bin/syncqt.pl -version ${QT5_VERSION}

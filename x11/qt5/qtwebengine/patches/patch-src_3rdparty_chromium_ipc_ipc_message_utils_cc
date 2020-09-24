@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_ipc_ipc_message_utils_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD$
 
 Index: src/3rdparty/chromium/ipc/ipc_message_utils.cc
 --- src/3rdparty/chromium/ipc/ipc_message_utils.cc.orig
 +++ src/3rdparty/chromium/ipc/ipc_message_utils.cc
-@@ -348,7 +348,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
+@@ -355,7 +355,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
    l->append(base::NumberToString(p));
  }
  
