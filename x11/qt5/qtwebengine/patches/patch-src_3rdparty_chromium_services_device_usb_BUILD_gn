@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/services/device/usb/BUILD.gn
+--- src/3rdparty/chromium/services/device/usb/BUILD.gn.orig
++++ src/3rdparty/chromium/services/device/usb/BUILD.gn
+@@ -77,7 +77,7 @@ static_library("usb") {
+     deps += [ ":jni_headers" ]
+   }
+ 
+-  if (is_win || is_mac) {
++  if (is_win || is_mac || is_openbsd) {
+     sources += [
+       "scoped_libusb_device_handle.cc",
+       "scoped_libusb_device_handle.h",
+@@ -110,7 +110,7 @@ static_library("usb") {
+     ]
+   }
+ 
+-  if (is_android || is_chromeos || is_linux) {
++  if (is_android || is_chromeos || is_linux && !is_openbsd) {
+     sources += [
+       "usb_device_handle_usbfs.cc",
+       "usb_device_handle_usbfs.h",

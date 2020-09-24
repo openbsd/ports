@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/gpu/vulkan/generate_bindings.py
+--- src/3rdparty/chromium/gpu/vulkan/generate_bindings.py.orig
++++ src/3rdparty/chromium/gpu/vulkan/generate_bindings.py
+@@ -164,7 +164,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+     ]
+   },
+   {
+-    'ifdef': 'defined(OS_LINUX) || defined(OS_ANDROID)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_BSD) || defined(OS_ANDROID)',
+     'extension': 'VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME',
+     'functions': [
+       'vkGetSemaphoreFdKHR',
+@@ -172,7 +172,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+     ]
+   },
+   {
+-    'ifdef': 'defined(OS_LINUX)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_BSD)',
+     'extension': 'VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME',
+     'functions': [
+       'vkGetMemoryFdKHR',

@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/weblayer/browser/content_browser_client_impl.h
+--- src/3rdparty/chromium/weblayer/browser/content_browser_client_impl.h.orig
++++ src/3rdparty/chromium/weblayer/browser/content_browser_client_impl.h
+@@ -80,7 +80,7 @@ class ContentBrowserClientImpl : public content::Conte
+       base::OnceCallback<void(base::Optional<storage::QuotaSettings>)> callback)
+       override;
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   void GetAdditionalMappedFilesForChildProcess(
+       const base::CommandLine& command_line,
+       int child_process_id,
