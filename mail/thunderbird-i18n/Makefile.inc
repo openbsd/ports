@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.111 2020/08/26 18:00:24 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.112 2020/09/24 15:47:41 landry Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 PKG_ARCH =	*
 
-FV =		68.12.0
+FV =		78.3.0
 V =		${FV:C/b.$//}
 NAME =		thunderbird-i18n
 
@@ -18,8 +18,8 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-i686/xpi/ \
-		http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-i686/xpi/
+MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-x86_64/xpi/ \
+		http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-x86_64/xpi/
 
 LANGUAGES =	ar ast be bg br ca cs cy da de dsb el en-GB en-US es-AR es-ES et eu \
 		fi fr fy-NL ga-IE gd gl he hr hsb hu hy-AM id is it ja ko lt nb-NO nl nn-NO \

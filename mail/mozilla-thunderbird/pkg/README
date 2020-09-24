@@ -1,0 +1,44 @@
+$OpenBSD: README,v 1.1 2020/09/24 15:47:41 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+If you encounter strange problems or Thunderbird doesn't start at
+all, try the -safe-mode switch.
+
+Links
+=====
+To make Thunderbird open links using Firefox, shut down Thunderbird
+and add these lines to ~/.thunderbird/<something>.default/prefs.js:
+
+user_pref("network.protocol-handler.app.http", "${LOCALBASE}/bin/firefox");
+user_pref("network.protocol-handler.app.https", "${LOCALBASE}/bin/firefox");
+
+Chat with OTR
+=============
+
+If you plan to use OTR within the chat feature of thunderbird, make sure libotr
+package is installed.
+# pkg_add libotr
+
+Send/receive encrypted/signed mail
+==================================
+
+Thunderbird 78 provides OpenPGP email encryption via RNP, which was previously
+optionally available via the Enigmail extension and GnuPG. All basic OpenPGP
+features (encrypt/decrypt/sign) are available out of the box. Support for
+smartcards is incomplete, only decryption works at this time, signing is not
+yet implemented. To use the experimental smartcard support, which is
+implemented as a fallback to GnuPG for secret key operations, install the gpgme
+package.
+
+https://support.mozilla.org/en-US/kb/openpgp-thunderbird-howto-and-faq is the
+reference documentation for this feature.
+
+Debugging
+=========
+If you encounter crashes, you might want to install the debug part of
+this package, and run thunderbird inside gdb, so that you can gather
+debugging logs and traces for all threads.
+Bug reports without that information will be ignored.

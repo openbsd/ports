@@ -1,34 +1,27 @@
-# $OpenBSD: Makefile,v 1.327 2020/09/22 12:58:18 landry Exp $
+# $OpenBSD: Makefile,v 1.328 2020/09/24 15:47:40 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
-COMMENT-main =		Mozilla e-mail, rss and usenet client
-COMMENT-lightning =	Mozilla Thunderbird calendar extension
+COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	68.12.0
+MOZILLA_VERSION =	78.3.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
-REVISION =	0
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # XXX badly formed debug in libxul ?
 DWZ = :
-DEBUG_PACKAGES =	-main
 
-MULTI_PACKAGES =	-main -lightning
-PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-${MOZILLA_VERSION}
-EPOCH-lightning =	0
+HOMEPAGE =	https://www.thunderbird.net/
 
-HOMEPAGE =	http://www.mozilla.org/thunderbird/
-
-SO_VERSION =	34.0
+SO_VERSION =	35.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 lgpllibs mozgtk mozsqlite3 prldap60 xul
+MOZILLA_LIBS = ldap60 ldif60 lgpllibs mozgtk mozsqlite3 prldap60 rnp xul
 
 CATEGORIES=	mail news
 
@@ -37,6 +30,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =	base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
@@ -57,8 +51,6 @@ MOZILLA_USE_BUNDLED_HUNSPELL = Yes
 BUILD_DEPENDS +=	lang/rust
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
-# 61 requires both versions of python
-BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
@@ -76,28 +68,28 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 # pledge strings to be defined, and no multiprocess anyway..
 CONFIGURE_ARGS +=	--disable-sandbox
+CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
+# #1664111
+CONFIGURE_ARGS +=	--with-system-ffi
+# #1634963
+CONFIGURE_ARGS +=	--with-system-botan \
+			--with-system-jsonc \
+			--with-system-bz2=${LOCALBASE}
 # --enable-debug does too much, this defaults to -g (which is 3 times larger than using -ggdb1)
+CONFIGURE_ARGS +=	--disable-debug-symbols
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 
-# SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it, e.g.
-# mailnews/build/nsMailModule.cpp pulls in mailnews/extensions/fts3/src/nsFts3Tokenizer.h
-# and .../fts3/src/fts3_tokenizer.h which fails to find sqlite3.h.
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
+LIB_DEPENDS +=	security/botan2 \
+		devel/json-c
 
-RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
-WANTLIB-lightning =
-WANTLIB-main += ${WANTLIB} X11-xcb Xcursor Xi intl xcb xcb-shm
+WANTLIB += X11-xcb Xcursor Xi botan-2 bz2 harfbuzz intl json-c xcb xcb-shm
 
-# build lightning xpi
+# build lightning
 CONFIGURE_ARGS +=	--enable-calendar
 
 ALL_TARGET =	default
-
-post-patch:
-	sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/third_party/rust/bindgen/.cargo-checksum.json
 
 post-install:
 	# install prefs

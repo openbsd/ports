@@ -1,0 +1,14 @@
+Mozilla Thunderbird is a messaging client including support for email
+(POP3 and IMAP), RSS feeds, chat (IRC, XMPP and others), and newsgroups
+(NNTP).
+
+It has features supporting user privacy and safety (remote image
+blocking, protection against some forms of phishing, "learning" spam
+filter), and offers easy organization of emails with tagging and virtual
+folders.
+
+It also has calendar/groupware features that can handle events,
+event invitations and tasks in multiple calendars. It supports local
+calendars, CalDAV and plain .ics files on CardDAV and WebDAV.
+
+More features can be added by installing extensions.
