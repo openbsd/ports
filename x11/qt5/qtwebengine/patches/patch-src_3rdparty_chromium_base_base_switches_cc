@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/base/base_switches.cc
+--- src/3rdparty/chromium/base/base_switches.cc.orig
++++ src/3rdparty/chromium/base/base_switches.cc
+@@ -138,7 +138,7 @@ const char kEnableCrashReporterForTesting[] =
+ const char kEnableReachedCodeProfiler[] = "enable-reached-code-profiler";
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // Controls whether or not retired instruction counts are surfaced for threads
+ // in trace events on Linux.
+ //

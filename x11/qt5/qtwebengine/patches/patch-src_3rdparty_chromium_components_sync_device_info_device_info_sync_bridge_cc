@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/components/sync_device_info/device_info_sync_bridge.cc
+--- src/3rdparty/chromium/components/sync_device_info/device_info_sync_bridge.cc.orig
++++ src/3rdparty/chromium/components/sync_device_info/device_info_sync_bridge.cc
+@@ -445,6 +445,10 @@ void DeviceInfoSyncBridge::OnStoreCreated(
+     return;
+   }
+ 
++#if defined(OS_BSD)
++  return;
++#endif
++
+   store_ = std::move(store);
+ 
+   base::SysInfo::GetHardwareInfo(

@@ -1,0 +1,68 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/gpu/command_buffer/service/external_vk_image_backing.cc
+--- src/3rdparty/chromium/gpu/command_buffer/service/external_vk_image_backing.cc.orig
++++ src/3rdparty/chromium/gpu/command_buffer/service/external_vk_image_backing.cc
+@@ -26,7 +26,7 @@
+ #include "ui/gl/buildflags.h"
+ #include "ui/gl/gl_context.h"
+ 
+-#if defined(OS_LINUX) && BUILDFLAG(USE_DAWN)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && BUILDFLAG(USE_DAWN)
+ #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
+ #endif
+ 
+@@ -34,7 +34,7 @@
+ #include "gpu/vulkan/fuchsia/vulkan_fuchsia_ext.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #define GL_HANDLE_TYPE_OPAQUE_FD_EXT 0x9586
+ #endif
+ 
+@@ -537,7 +537,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
+ ExternalVkImageBacking::ProduceDawn(SharedImageManager* manager,
+                                     MemoryTypeTracker* tracker,
+                                     WGPUDevice wgpuDevice) {
+-#if defined(OS_LINUX) && BUILDFLAG(USE_DAWN)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && BUILDFLAG(USE_DAWN)
+   if (!wgpu_format_) {
+     DLOG(ERROR) << "Format not supported for Dawn";
+     return nullptr;
+@@ -567,7 +567,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
+ }
+ 
+ GLuint ExternalVkImageBacking::ProduceGLTextureInternal() {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   GrVkImageInfo image_info;
+   bool result = backend_texture_.getVkImageInfo(&image_info);
+   DCHECK(result);
+@@ -631,7 +631,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
+     return nullptr;
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (!texture_) {
+     GLuint texture_service_id = ProduceGLTextureInternal();
+     if (!texture_service_id)
+@@ -677,7 +677,7 @@ ExternalVkImageBacking::ProduceGLTexturePassthrough(
+     return nullptr;
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (!texture_passthrough_) {
+     GLuint texture_service_id = ProduceGLTextureInternal();
+     if (!texture_service_id)
+@@ -715,7 +715,7 @@ ExternalVkImageBacking::ProduceSkia(
+                                                              tracker);
+ }
+ 
+-#ifdef OS_LINUX
++#if defined(OS_LINUX) || defined(OS_BSD)
+ int ExternalVkImageBacking::GetMemoryFd(const GrVkImageInfo& image_info) {
+   VkMemoryGetFdInfoKHR get_fd_info;
+   get_fd_info.sType = VK_STRUCTURE_TYPE_MEMORY_GET_FD_INFO_KHR;

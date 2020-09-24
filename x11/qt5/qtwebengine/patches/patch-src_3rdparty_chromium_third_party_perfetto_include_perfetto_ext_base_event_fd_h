@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/third_party/perfetto/include/perfetto/ext/base/event_fd.h
+--- src/3rdparty/chromium/third_party/perfetto/include/perfetto/ext/base/event_fd.h.orig
++++ src/3rdparty/chromium/third_party/perfetto/include/perfetto/ext/base/event_fd.h
+@@ -20,7 +20,7 @@
+ #include "perfetto/base/build_config.h"
+ #include "perfetto/ext/base/scoped_file.h"
+ 
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)) || \
+     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
+ #define PERFETTO_USE_EVENTFD() 1
+ #else
