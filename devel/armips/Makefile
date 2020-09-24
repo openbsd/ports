@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/28 06:45:23 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2020/09/24 07:43:39 bentley Exp $
 
 COMMENT =	assembler for various ARM and MIPS platforms
 
 GH_ACCOUNT =	Kingcom
 GH_PROJECT =	armips
-GH_TAGNAME =	v0.10.0
+GH_TAGNAME =	v0.11.0
 
 CATEGORIES =	devel
 
