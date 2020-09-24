@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/17 20:48:38 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/09/24 21:42:16 juanfra Exp $
 bin/chibi-doc
 bin/chibi-ffi
 @bin bin/chibi-scheme
@@ -66,7 +66,6 @@ share/chibi/.chibi.meta
 share/chibi/.scheme.meta
 share/chibi/.srfi.meta
 share/chibi/chibi/
-share/chibi/chibi.img
 share/chibi/chibi/app-test.sld
 share/chibi/chibi/app.scm
 share/chibi/chibi/app.sld
@@ -292,7 +291,6 @@ share/chibi/chibi/zlib.scm
 share/chibi/chibi/zlib.sld
 share/chibi/init-7.scm
 share/chibi/meta-7.scm
-share/chibi/red.img
 share/chibi/scheme/
 share/chibi/scheme/base.sld
 share/chibi/scheme/bitwise.sld
@@ -354,7 +352,6 @@ share/chibi/scheme/time/tai-to-utc-offset.sld
 share/chibi/scheme/time/tai.sld
 share/chibi/scheme/vector.sld
 share/chibi/scheme/write.sld
-share/chibi/snow.img
 share/chibi/srfi/
 share/chibi/srfi/1/
 share/chibi/srfi/1.sld

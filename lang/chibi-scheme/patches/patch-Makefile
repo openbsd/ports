@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.4 2020/09/17 20:48:38 juanfra Exp $
+$OpenBSD: patch-Makefile,v 1.5 2020/09/24 21:42:16 juanfra Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
@@ -11,7 +11,7 @@ Index: Makefile
  	-if test -f libchibi-scheme.a; then $(INSTALL) -m0644 libchibi-scheme.a $(DESTDIR)$(SOLIBDIR)/; fi
  	$(MKDIR) $(DESTDIR)$(PKGCONFDIR)
  	$(INSTALL) -m0644 chibi-scheme.pc $(DESTDIR)$(PKGCONFDIR)
-@@ -387,14 +385,13 @@ install-base: all
+@@ -387,7 +385,6 @@ install-base: all
  	$(INSTALL) -m0644 doc/chibi-scheme.1 $(DESTDIR)$(MANDIR)/
  	$(INSTALL) -m0644 doc/chibi-ffi.1 $(DESTDIR)$(MANDIR)/
  	$(INSTALL) -m0644 doc/chibi-doc.1 $(DESTDIR)$(MANDIR)/
@@ -19,13 +19,3 @@ Index: Makefile
  
  install: install-base
  ifneq "$(IMAGE_FILES)" ""
- 	echo "Generating images"
--	-cd / && LD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(LD_LIBRARY_PATH)" DYLD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(DYLD_LIBRARY_PATH)" CHIBI_MODULE_PATH="$(DESTDIR)$(MODDIR):$(DESTDIR)$(BINMODDIR)" $(DESTDIR)$(BINDIR)/chibi-scheme$(EXE) -d $(DESTDIR)$(MODDIR)/chibi.img
--	-cd / && LD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(LD_LIBRARY_PATH)" DYLD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(DYLD_LIBRARY_PATH)" CHIBI_MODULE_PATH="$(DESTDIR)$(MODDIR):$(DESTDIR)$(BINMODDIR)" $(DESTDIR)$(BINDIR)/chibi-scheme$(EXE) -xscheme.red -d $(DESTDIR)$(MODDIR)/red.img
--	-cd / && LD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(LD_LIBRARY_PATH)" DYLD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(DYLD_LIBRARY_PATH)" CHIBI_MODULE_PATH="$(DESTDIR)$(MODDIR):$(DESTDIR)$(BINMODDIR)" $(DESTDIR)$(BINDIR)/chibi-scheme$(EXE) -mchibi.snow.commands -mchibi.snow.interface -mchibi.snow.package -mchibi.snow.utils -d $(DESTDIR)$(MODDIR)/snow.img
-+	LD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(LD_LIBRARY_PATH)" DYLD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(DYLD_LIBRARY_PATH)" CHIBI_MODULE_PATH="$(DESTDIR)$(MODDIR):$(DESTDIR)$(BINMODDIR)" $(DESTDIR)$(BINDIR)/chibi-scheme$(EXE) -d $(DESTDIR)$(MODDIR)/chibi.img
-+	LD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(LD_LIBRARY_PATH)" DYLD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(DYLD_LIBRARY_PATH)" CHIBI_MODULE_PATH="$(DESTDIR)$(MODDIR):$(DESTDIR)$(BINMODDIR)" $(DESTDIR)$(BINDIR)/chibi-scheme$(EXE) -xscheme.red -d $(DESTDIR)$(MODDIR)/red.img
-+	cd / && LD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(LD_LIBRARY_PATH)" DYLD_LIBRARY_PATH="$(DESTDIR)$(SOLIBDIR):$(DYLD_LIBRARY_PATH)" CHIBI_MODULE_PATH="$(DESTDIR)$(MODDIR):$(DESTDIR)$(BINMODDIR)" $(DESTDIR)$(BINDIR)/chibi-scheme$(EXE) -mchibi.snow.commands -mchibi.snow.interface -mchibi.snow.package -mchibi.snow.utils -d $(DESTDIR)$(MODDIR)/snow.img
- endif
- 
- uninstall:
