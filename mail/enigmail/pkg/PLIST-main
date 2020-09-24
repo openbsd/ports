@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2018/06/15 12:09:22 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2020/09/24 15:52:09 landry Exp $
 @conflict enigmail-<1.6v0
 @pkgpath mail/mozilla-thunderbird,-enigmail
-lib/mozilla/
-lib/mozilla/extensions/
-lib/mozilla/extensions/{3550f703-e582-4d05-9a08-453d09bdfdc6}/
-lib/mozilla/extensions/{3550f703-e582-4d05-9a08-453d09bdfdc6}/{847b3a00-7ab1-11d4-8f02-006008948af5}.xpi
+lib/thunderbird/
+lib/thunderbird/distribution/
+lib/thunderbird/distribution/extensions/
+lib/thunderbird/distribution/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}.xpi
