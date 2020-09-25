@@ -1,30 +1,30 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/14 06:42:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/25 19:00:10 sthen Exp $
 
 COMMENT =	Parallax Static Timing Analyzer
 
-# use version number from git log
-DISTNAME =	opensta-2.0.18.20200308
+GH_ACCOUNT =	The-OpenROAD-Project
+GH_PROJECT =	OpenSTA
+GH_TAGNAME =	v2.2.0
+PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	cad
 
-GH_ACCOUNT =	abk-openroad
-GH_PROJECT =	OpenSTA
-GH_COMMIT =	d615f62fe412b0f12166e6d5559eacec43713e02
+HOMEPAGE =	https://theopenroadproject.org/
 
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # GPLv3
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB =	${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m z cudd
 
 # C++11
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/tcl
 
-MODTCL_VERSION =	8.6
+MODTCL_VERSION = 8.6
 
 LIB_DEPENDS =	${MODTCL_LIB_DEPENDS} \
 		devel/cudd
