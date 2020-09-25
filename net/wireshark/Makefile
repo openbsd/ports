@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.109 2020/08/13 14:17:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2020/09/25 20:54:19 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
-V =		3.2.6
+V =		3.2.7
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -32,7 +32,14 @@ cWANTLIB +=	m pcap z
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 MULTI_PACKAGES = -text -main
-DEBUG_PACKAGES = ${BUILD_PACKAGES}
+
+#DEBUG_PACKAGES = ${BUILD_PACKAGES}
+# XXX Disabled for now:
+#
+# ld: error: ui/qt/CMakeFiles/qtui.dir/widgets/drag_drop_toolbar.cpp.o: unknown file type
+# ld: error: ui/qt/CMakeFiles/qtui.dir/utils/frame_information.cpp.o: section header table goes past the end of the file: e_shoff = 0x5eb20
+# c++: error: linker command failed with exit code 1 (use -v to see invocation)
+
 PSEUDO_FLAVORS = no_x11
 
 .if ${MACHINE_ARCH} == "arm"
