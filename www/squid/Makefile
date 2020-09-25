@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2020/08/24 13:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.230 2020/09/25 21:10:30 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -146,11 +146,9 @@ LIB_DEPENDS-ntlm=   security/libnettle
 WANTLIB-ntlm=       ${COMPILER_LIBCXX} c m nettle pthread
 
 pre-build:
-	@cd ${WRKSRC}; \
-	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
-	    helpers/external_acl/wbinfo_group/ext_wbinfo_group_acl.pl.in \
-	    helpers/*/*/config.test \
-	    src/squid.8.in
+	@cd ${WRKSRC}/src; sed -i 's,/usr/local,${LOCALBASE},g' \
+	    acl/external/wbinfo_group/ext_wbinfo_group_acl.pl.in \
+	    squid.8.in
 
 post-install:
 	rm -rf ${WRKINST}/var/squid
