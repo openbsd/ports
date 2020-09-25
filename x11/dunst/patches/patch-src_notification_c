@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_notification_c,v 1.3 2020/09/25 13:53:53 feinerer Exp $
+
+Index: src/notification.c
+--- src/notification.c.orig
++++ src/notification.c
+@@ -58,7 +58,7 @@ void notification_print(const struct notification *n)
+         printf("\ticon_id: '%s'\n", n->icon_id);
+         printf("\tdesktop_entry: '%s'\n", n->desktop_entry ? n->desktop_entry : "");
+         printf("\tcategory: %s\n", n->category);
+-        printf("\ttimeout: %ld\n", n->timeout/1000);
++        printf("\ttimeout: %lld\n", (long long)n->timeout/1000);
+         printf("\turgency: %s\n", notification_urgency_to_string(n->urgency));
+         printf("\ttransient: %d\n", n->transient);
+         printf("\tformatted: '%s'\n", n->msg);
+@@ -574,14 +574,14 @@ void notification_update_text_to_render(struct notific
+                 char *new_buf;
+                 if (hours > 0) {
+                         new_buf =
+-                            g_strdup_printf("%s (%ldh %ldm %lds old)", buf, hours,
+-                                            minutes, seconds);
++                            g_strdup_printf("%s (%lldh %lldm %llds old)", buf, (long long)hours,
++                                            (long long)minutes, (long long)seconds);
+                 } else if (minutes > 0) {
+                         new_buf =
+-                            g_strdup_printf("%s (%ldm %lds old)", buf, minutes,
+-                                            seconds);
++                            g_strdup_printf("%s (%lldm %llds old)", buf, (long long)minutes,
++                                            (long long)seconds);
+                 } else {
+-                        new_buf = g_strdup_printf("%s (%lds old)", buf, seconds);
++                        new_buf = g_strdup_printf("%s (%llds old)", buf, (long long)seconds);
+                 }
+ 
+                 g_free(buf);
