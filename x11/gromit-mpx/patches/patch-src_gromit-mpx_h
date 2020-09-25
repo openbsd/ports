@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_gromit-mpx_h,v 1.1.1.1 2020/09/25 20:32:29 edd Exp $
+
+Remove libappindicator support.
+
+Index: src/gromit-mpx.h
+--- src/gromit-mpx.h.orig
++++ src/gromit-mpx.h
+@@ -27,7 +27,6 @@
+ #include <glib.h>
+ #include <gdk/gdk.h>
+ #include <gtk/gtk.h>
+-#include <libappindicator/app-indicator.h>
+ 
+ 
+ #define GROMIT_MOUSE_EVENTS ( GDK_BUTTON_MOTION_MASK | \
+@@ -98,7 +97,6 @@ typedef struct
+ typedef struct
+ {
+   GtkWidget   *win;
+-  AppIndicator *trayicon;
+ 
+   GdkCursor   *paint_cursor;
+   GdkCursor   *erase_cursor;

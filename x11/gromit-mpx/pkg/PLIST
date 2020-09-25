@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/25 20:32:29 edd Exp $
+@bin bin/gromit-mpx
+@man man/man1/gromit-mpx.1
+share/applications/gromit-mpx.desktop
+share/doc/gromit-mpx/
+share/doc/gromit-mpx/AUTHORS
+share/doc/gromit-mpx/NEWS.md
+share/doc/gromit-mpx/README.md
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/gromit-mpx/
+@sample ${SYSCONFDIR}/gromit-mpx/
+share/examples/gromit-mpx/gromit-mpx.cfg
+@sample ${SYSCONFDIR}/gromit-mpx/gromit-mpx.cfg
+share/icons/hicolor/scalable/apps/gromit-mpx.svg
+share/pixmaps/
+share/pixmaps/gromit-mpx.png
+share/pixmaps/gromit-mpx.xpm
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

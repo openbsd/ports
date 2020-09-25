@@ -1,0 +1,43 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+System tray icon
+================
+
+The OpenBSD package of ${PKGSTEM} currently does not include support for the
+system tray icon. However, it can be controlled entirely through the command
+line.
+
+For example, `gromit-mpx -t` toggles gromit-mpx on/off and `gromit-mpx -c`
+clears previous scribbles. See the gromit-mpx(1) manual for further options.
+
+Interference with desktop environments
+======================================
+
+Some desktop environments (e.g. XFCE) will interfere with ${PKGSTEM}'s ability
+to grab its hot keys (F8 and F9 by default). In these cases it may be easiest
+to set the hotkeys to an obscure key (e.g. "Pause") and configure keyboard
+shortcuts for the desktop environment that invoke gromit-mpx.
+
+In your gromit-mpx.cfg:
+
+```
+HOTKEY = "Pause";
+UNDOKEY = "Pause";
+```
+
+Then configure key bindings that call `gromit-mpx(1)` in your desktop
+environment.
+
+Using a compositor
+==================
+
+You should probably use a compositor with ${PKGSTEM}.
+
+"When there is no compositing manager such as Compiz or xcompmgr running,
+Gromit-MPX falls back to a legacy drawing mode. This may drastically slow down
+your X-Server, especially when you draw very thin lines. It makes heavy use of
+the shape extension, which is quite expensive if you paint a complex pattern on
+screen. Especially terminal-programs tend to scroll incredibly slow if
+something is painted over their window."

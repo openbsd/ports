@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_gromit-mpx_c,v 1.1.1.1 2020/09/25 20:32:29 edd Exp $
+
+Remove libappindicator support.
+
+Index: src/gromit-mpx.c
+--- src/gromit-mpx.c.orig
++++ src/gromit-mpx.c
+@@ -887,17 +887,6 @@ void setup_main_app (GromitData *data, gboolean activa
+   if (activate)
+     acquire_grab (data, NULL); /* grab all */
+ 
+-  /* 
+-     TRAY ICON
+-  */
+-  data->trayicon = app_indicator_new (PACKAGE_NAME,
+-				      PACKAGE_NAME,
+-				      APP_INDICATOR_CATEGORY_APPLICATION_STATUS);
+-
+-  app_indicator_set_status (data->trayicon, APP_INDICATOR_STATUS_ACTIVE);
+-
+-
+-
+   /* create the menu */
+   GtkWidget *menu = gtk_menu_new ();
+ 
+@@ -997,9 +986,6 @@ void setup_main_app (GromitData *data, gboolean activa
+   gtk_widget_show (intro_item);
+   gtk_widget_show (about_item);
+   gtk_widget_show (quit_item);
+-
+-
+-  app_indicator_set_menu (data->trayicon, GTK_MENU(menu));
+ 
+   if(data->show_intro_on_startup)
+       on_intro(NULL, data);
