@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.435 2020/09/17 13:42:40 thfr Exp $
+# $OpenBSD: Makefile,v 1.436 2020/09/25 21:02:23 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -35,7 +35,6 @@
      SUBDIR += dumb
      SUBDIR += easytag
      SUBDIR += espeak
-     SUBDIR += exaile
      SUBDIR += faad
      SUBDIR += faudio
      SUBDIR += fdk-aac
