@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/19 18:15:56 thfr Exp $
+# $OpenBSD: Makefile,v 1.7 2020/09/25 10:09:18 thfr Exp $
 
 COMMENT =	library to move calls to Direct3D shaders to OpenGL
 
@@ -35,6 +35,7 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 			-DFLIP_VIEWPORT=1 \
 			-DPROFILE_METAL=OFF
 
+CFLAGS +=	-I${LOCALBASE}/include
 WRKDIST =	${WRKDIR}/mojoshader-${HG_COMMIT}
 
 SUBST_VARS +=	HG_CHANGESET HG_COMMIT
