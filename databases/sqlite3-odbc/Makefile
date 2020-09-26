@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/09/26 14:35:24 naddy Exp $
 
 COMMENT =		ODBC driver for SQLite3
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		${HOMEPAGE}
 WANTLIB =		iodbcinst m pthread sqlite3 z
 LIB_DEPENDS =		databases/iodbc databases/sqlite3
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.63
+CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--with-libxml2=no
 NO_TEST =		Yes
 

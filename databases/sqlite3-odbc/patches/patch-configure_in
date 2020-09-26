@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure_in,v 1.1 2020/09/26 14:35:24 naddy Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -9,6 +9,7 @@ AC_SUBST(CC)
+ AC_SUBST(CFLAGS)
+ VER_INFO=`cat VERSION`
+ 
++if false; then	# skip sqlite2
+ ##########
+ # Find SQLite header file and library
+ #
+@@ -98,6 +99,7 @@ else
+    DRVINST_TARGETS="$DRVINST_TARGETS drvinst-2"
+    DRVUNINST_TARGETS="$DRVUNINST_TARGETS drvuninst-2"
+ fi
++fi	# sqlite2
+ 
+ ##########
+ # Find SQLite3 header file and library
+@@ -264,7 +266,7 @@ fi
+ #########
+ # Add extensions to build
+ #
+-if test "$SQLITE3_LOADEXTENSION" = "1" ; then
++if false ; then
+    EXT_BLOBTOXY=libsqlite3_mod_blobtoxy.la
+    EXT_IMPEXP=libsqlite3_mod_impexp.la
+    EXT_CSVTABLE=libsqlite3_mod_csvtable.la
