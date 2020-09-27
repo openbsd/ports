@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/25 13:53:53 feinerer Exp $
+# $OpenBSD: Makefile,v 1.11 2020/09/27 18:37:40 ajacoutot Exp $
 
 COMMENT =	customizable and lightweight notification-daemon
 
@@ -20,6 +20,8 @@ WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz intl m notify
 WANTLIB += pango-1.0 pangocairo-1.0 pthread
 
 USE_GMAKE =	Yes
+
+BUILD_DEPENDS =	x11/dbus
 
 LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/glib2 \
