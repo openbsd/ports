@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/09/27 21:19:40 kmos Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
@@ -24,7 +24,8 @@ CONFIGURE_ARGS=		--sysconfdir=${SYSCONFDIR}/sarg \
 			--enable-sargphp=${VARBASE}/www/htdocs/sarg-php \
 			--enable-fontdir=${SYSCONFDIR}/sarg/fonts \
 			--enable-imagedir=${SYSCONFDIR}/sarg/images
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+CONFIGURE_ENV=		ac_cv_header_execinfo_h=no \
+			CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -liconv -lintl"
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
