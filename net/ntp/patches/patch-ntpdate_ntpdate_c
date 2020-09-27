@@ -1,0 +1,18 @@
+$OpenBSD: patch-ntpdate_ntpdate_c,v 1.4 2020/09/27 14:51:56 matthieu Exp $
+
+Normalize adjtime() argument.
+
+Index: ntpdate/ntpdate.c
+--- ntpdate/ntpdate.c.orig
++++ ntpdate/ntpdate.c
+@@ -2041,6 +2041,10 @@ l_adj_systime(
+ 		adjtv.tv_usec = -adjtv.tv_usec;
+ 	}
+ 
++	while (adjtv.tv_usec < 0) {
++		adjtv.tv_usec += 1000000;
++		adjtv.tv_sec -= 1;
++	}
+ 	if (adjtv.tv_usec != 0 && !debug) {
+ 		if (adjtime(&adjtv, &oadjtv) < 0) {
+ 			msyslog(LOG_ERR, "Can't adjust the time of day: %m");
