@@ -1,0 +1,31 @@
+$OpenBSD: patch-texmf-dist_scripts_pdfjam_pdfjam,v 1.1 2020/09/27 18:45:13 edd Exp $
+
+Index: texmf-dist/scripts/pdfjam/pdfjam
+--- texmf-dist/scripts/pdfjam/pdfjam.orig
++++ texmf-dist/scripts/pdfjam/pdfjam
+@@ -386,24 +386,7 @@ suffix='pdfjam'            ##  Default filename suffix
+ ##                           not specified in a --batch call.
+ ##
+ preamble=''                ##  Default LaTeX preamble string.
+-##
+-##  Guess default paper size from locale if possible, otherwise A4
+-##
+-if command -v locale >/dev/null ; then
+-    paperheight=$(locale -k LC_PAPER | sed -e '1!d' -e 's/.*=//') ;
+-    case $paperheight in
+-	297)
+-	    paper='a4paper' ;
+-	    ;;
+-	279)
+-	    paper='letterpaper' ;
+-	    ;;
+-	*)
+-	    paper='a4paper' ;
+-	    ;;
+-    esac
+-else paper='a4paper' ;  ## fallback paper size is ISO A4
+-fi
++paper='a4paper'
+ ##
+ ##  END OF SETTINGS MADE DIRECTLY WITHIN THE SCRIPT
+ ##

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2020/09/02 10:42:03 bentley Exp $
+# $OpenBSD: Makefile,v 1.61 2020/09/27 18:45:13 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -15,7 +15,7 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 DISTNAME =		texlive-${DIST_V}-texmf
 REVISION-context =	0
 REVISION-docs =		0
-REVISION-full =		0
+REVISION-full =		1
 REVISION-main =		0
 REVISION-buildset =	0
 
