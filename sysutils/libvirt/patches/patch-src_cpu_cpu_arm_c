@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_cpu_cpu_arm_c,v 1.1 2020/09/27 14:39:36 naddy Exp $
+
+No support for getauxval(), elf_aux_info(), or <sys/auxv.h>.
+
+Index: src/cpu/cpu_arm.c
+--- src/cpu/cpu_arm.c.orig
++++ src/cpu/cpu_arm.c
+@@ -21,7 +21,7 @@
+  */
+ 
+ #include <config.h>
+-#if defined(__aarch64__)
++#if defined(__aarch64__) && (defined(HAVE_GETAUXVAL) || defined(HAVE_ELF_AUX_INFO))
+ # if defined(HAVE_ASM_HWCAP_H)
+ #  include <asm/hwcap.h>
+ # endif
+@@ -521,12 +521,13 @@ virCPUarmCpuDataFromRegs(virCPUarmData *data)
+     size_t i;
+ 
+ # if defined(HAVE_GETAUXVAL)
+-    if (!(getauxval(AT_HWCAP) & HWCAP_CPUID)) {
++    if (!(getauxval(AT_HWCAP) & HWCAP_CPUID))
++# endif
++    {
+         virReportError(VIR_ERR_INTERNAL_ERROR, "%s",
+                        _("CPUID registers unavailable"));
+             return -1;
+     }
+-# endif
+ 
+     /* read the cpuid data from MIDR_EL1 register */
+     asm("mrs %0, MIDR_EL1" : "=r" (cpuid));
+@@ -542,7 +543,7 @@ virCPUarmCpuDataFromRegs(virCPUarmData *data)
+ # elif defined(HAVE_ELF_AUX_INFO)
+     elf_aux_info(AT_HWCAP, &hwcaps, sizeof(u_long));
+ # else
+-#  error No routines to retrieve a value from the auxiliary vector
++    hwcaps = 0;
+ # endif
+     VIR_DEBUG("CPU flags read from register:  0x%016lx", hwcaps);
+ 
