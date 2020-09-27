@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2020/08/21 22:12:24 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.43 2020/09/27 16:48:56 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -2722,6 +2722,8 @@ go/src/cmd/go/testdata/script/test_generated_main.txt
 go/src/cmd/go/testdata/script/test_go111module_cache.txt
 go/src/cmd/go/testdata/script/test_import_error_stack.txt
 go/src/cmd/go/testdata/script/test_json.txt
+go/src/cmd/go/testdata/script/test_json_exit.txt
+go/src/cmd/go/testdata/script/test_json_interleaved.txt
 go/src/cmd/go/testdata/script/test_json_panic_exit.txt
 go/src/cmd/go/testdata/script/test_main.txt
 go/src/cmd/go/testdata/script/test_main_archive.txt
@@ -2762,6 +2764,7 @@ go/src/cmd/go/testdata/script/test_vendor.txt
 go/src/cmd/go/testdata/script/test_vet.txt
 go/src/cmd/go/testdata/script/test_write_profiles_on_timeout.txt
 go/src/cmd/go/testdata/script/test_xtestonly_works.txt
+go/src/cmd/go/testdata/script/testing_issue40908.txt
 go/src/cmd/go/testdata/script/vendor_complex.txt
 go/src/cmd/go/testdata/script/vendor_gopath_issue11409.txt
 go/src/cmd/go/testdata/script/vendor_import.txt
@@ -10007,8 +10010,10 @@ go/test/fixedbugs/issue39541.go
 go/test/fixedbugs/issue39651.go
 go/test/fixedbugs/issue40367.go
 go/test/fixedbugs/issue4066.go
+go/test/fixedbugs/issue40746.go
 go/test/fixedbugs/issue4085a.go
 go/test/fixedbugs/issue4085b.go
+go/test/fixedbugs/issue40917.go
 go/test/fixedbugs/issue4097.go
 go/test/fixedbugs/issue4099.go
 go/test/fixedbugs/issue4162.go
