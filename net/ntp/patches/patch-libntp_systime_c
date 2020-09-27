@@ -1,0 +1,18 @@
+$OpenBSD: patch-libntp_systime_c,v 1.1 2020/09/27 14:48:17 matthieu Exp $
+
+Normalize adjtime() argument.
+
+Index: libntp/systime.c
+--- libntp/systime.c.orig
++++ libntp/systime.c
+@@ -346,6 +346,10 @@ adj_systime(
+ 		adjtv.tv_usec = -adjtv.tv_usec;
+ 		sys_residual = -sys_residual;
+ 	}
++	while (adjtv.tv_usec < 0) {
++		adjtv.tv_usec += 1000000;
++		adjtv.tv_sec -= 1;
++	}
+ 	if (adjtv.tv_sec != 0 || adjtv.tv_usec != 0) {
+ 		if (adjtime(&adjtv, &oadjtv) < 0) {
+ 			msyslog(LOG_ERR, "adj_systime: %m");

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2020/03/20 16:44:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.81 2020/09/27 14:48:17 matthieu Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -7,7 +7,7 @@ COMMENT=	Network Time Protocol reference implementation
 # 'pl' for local use.
 
 VERSION=	4.2.8p10
-REVISION=	5
+REVISION=	6
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
