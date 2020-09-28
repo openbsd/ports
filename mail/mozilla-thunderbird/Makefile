@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.328 2020/09/24 15:47:40 landry Exp $
+# $OpenBSD: Makefile,v 1.329 2020/09/28 11:16:13 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	78.3.0
+MOZILLA_VERSION =	78.3.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -82,9 +82,10 @@ DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 
 LIB_DEPENDS +=	security/botan2 \
+		devel/libffi \
 		devel/json-c
 
-WANTLIB += X11-xcb Xcursor Xi botan-2 bz2 harfbuzz intl json-c xcb xcb-shm
+WANTLIB += X11-xcb Xcursor Xi botan-2 bz2 ffi harfbuzz intl json-c xcb xcb-shm
 
 # build lightning
 CONFIGURE_ARGS +=	--enable-calendar
