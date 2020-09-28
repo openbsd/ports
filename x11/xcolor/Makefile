@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/14 22:22:49 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/28 11:49:57 rpointel Exp $
 
 BROKEN-sparc64 = "error[E0412]: cannot find type c_char in this scope"
 
@@ -7,6 +7,8 @@ COMMENT =	lightweight color picker
 GH_ACCOUNT =	Soft
 GH_PROJECT =	xcolor
 GH_TAGNAME =	0.4.0
+
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -19,7 +21,11 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c c++abi m pthread xcb xcb-shape
 
-MODULES =		devel/cargo
+MODULES =		devel/cargo \
+			lang/python
+
+MODPY_RUNDEP =		No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
