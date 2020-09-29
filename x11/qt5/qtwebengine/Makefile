@@ -11,11 +11,6 @@ DPB_PROPERTIES =	lonesome
 
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
-#REVISION =		1
-
-#VERSION =		5.13.2
-#DISTNAME =		qtwebengine-everywhere-src-${VERSION}
-#MASTER_SITES =		https://download.qt.io/official_releases/qt/5.13/${VERSION}/submodules/
 
 COMMENT =		Chromium-based web engine for Qt5
 
@@ -27,10 +22,10 @@ SHARED_LIBS +=  Qt5WebEngineWidgets       0.0 # 5.13
 SHARED_LIBS +=  Qt5Pdf                    0.0 # 5.15
 SHARED_LIBS +=  Qt5PdfWidgets             0.0 # 5.15
 
-
 # BSD-like, patents
 PERMIT_PACKAGE =	Yes
 
+## XXX WANTLIB
 
 MODULES =	lang/python \
 		devel/qmake
