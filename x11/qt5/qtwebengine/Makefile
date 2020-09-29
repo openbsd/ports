@@ -24,6 +24,9 @@ CATEGORIES =		www
 SHARED_LIBS +=  Qt5WebEngine              0.0 # 5.13
 SHARED_LIBS +=  Qt5WebEngineCore          0.0 # 5.13
 SHARED_LIBS +=  Qt5WebEngineWidgets       0.0 # 5.13
+SHARED_LIBS +=  Qt5Pdf                    0.0 # 5.15
+SHARED_LIBS +=  Qt5PdfWidgets             0.0 # 5.15
+
 
 # BSD-like, patents
 PERMIT_PACKAGE =	Yes

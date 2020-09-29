@@ -1,0 +1,16 @@
+$OpenBSD$
+
+XXX FIXME
+
+Index: src/process/main.cpp
+--- src/process/main.cpp.orig
++++ src/process/main.cpp
+@@ -127,6 +127,7 @@ int main(int argc, const char **argv)
+ 
+     QCoreApplication qtApplication(argc, argv_.get());
+ 
+-    return QtWebEngineCore::processMain(argc, argv);
++    //return QtWebEngineCore::processMain(argc, argv);
++    return qtApplication.exec();
+ }
+ 

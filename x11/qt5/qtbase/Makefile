@@ -253,14 +253,6 @@ post-extract:
 	cp ${WRKDIST}/mkspecs/openbsd-g++/qplatformdefs.h \
 		${WRKDIST}/mkspecs/openbsd-clang/
 
-# WARNING!
-# Many tests won't run if window manager has either
-# "focus follows pointer", or "click to activate" policy.
-do-test:
-	${MODQMAKE_configure}
-	${MODQMAKE_build}
-	${MODQMAKE_test}
-
 post-install:
 	# often-used includes directory
 	! test -d ${PREFIX}/lib/qt5 || \
