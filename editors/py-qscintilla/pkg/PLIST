@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2020/02/19 17:35:36 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/10/02 21:40:25 sthen Exp $
 @conflict ${MODPY_PY_PREFIX}qscintilla-${QTVER}-*
+@conflict py-qscintilla-common-*
+@conflict py-qscintilla-*
+@pkgpath editors/py-qscintilla,-common
+@pkgpath editors/py-qscintilla,-main
+@pkgpath editors/py-qscintilla,-main,python3
 @pkgpath editors/py-qscintilla,${QTVER}
 @pkgpath editors/py-qscintilla
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/Qsci.pyi
@@ -8,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/QScintilla-${MODPY_EGG_VERSION}.dist-in
 lib/python${MODPY_VERSION}/site-packages/QScintilla-${MODPY_EGG_VERSION}.dist-info/INSTALLER
 lib/python${MODPY_VERSION}/site-packages/QScintilla-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/QScintilla-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/${QTVER}/qsci/api/python/QScintilla2.api
 ${SIPDIR}/Qsci/
 ${SIPDIR}/Qsci/qsciabstractapis.sip
 ${SIPDIR}/Qsci/qsciapis.sip
