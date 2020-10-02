@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_if_h,v 1.3 2020/10/02 19:29:32 kn Exp $
+
+22.09.2020 e675d4dde0 "BSD: Detect initial link state in ifa_data"
+fixes dhcpcd on pppoe(4), remove with next release.
+
+Index: src/if.h
+--- src/if.h.orig
++++ src/if.h
+@@ -160,6 +160,7 @@ int if_domtu(const struct interface *, short int);
+ #define if_getmtu(ifp) if_domtu((ifp), 0)
+ #define if_setmtu(ifp, mtu) if_domtu((ifp), (mtu))
+ int if_carrier(struct interface *);
++int if_carrier_ifadata(struct interface *, void *);
+ int if_pollinit(struct interface *ifp);
+ 
+ #ifdef ALIAS_ADDR
