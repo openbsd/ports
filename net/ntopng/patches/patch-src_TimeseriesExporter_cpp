@@ -1,23 +1,14 @@
-$OpenBSD: patch-src_TimeseriesExporter_cpp,v 1.1 2019/01/07 18:37:22 sthen Exp $
+$OpenBSD: patch-src_TimeseriesExporter_cpp,v 1.2 2020/10/02 18:47:15 sthen Exp $
 
 Index: src/TimeseriesExporter.cpp
 --- src/TimeseriesExporter.cpp.orig
 +++ src/TimeseriesExporter.cpp
-@@ -64,7 +64,7 @@ void TimeseriesExporter::createDump() {
-   cursize = 0;
+@@ -162,7 +162,7 @@ int TimeseriesExporter::line_protocol_write_line(lua_S
+   if(n < 0 || n >= dst_line_len - cur_line_len) goto line_protocol_write_line_err; else cur_line_len += n;
  
-   /* Use the flushTime as the fname */
--  snprintf(fname, sizeof(fname), "%s%u_%lu", fbase, num_exports, flushTime);
-+  snprintf(fname, sizeof(fname), "%s%u_%llu", fbase, num_exports, (long long)flushTime);
+   /* timestamp (in seconds, not nanoseconds) and a \n */
+-  n = snprintf(dst_line + cur_line_len, dst_line_len - cur_line_len, " %lu\n", tstamp);
++  n = snprintf(dst_line + cur_line_len, dst_line_len - cur_line_len, " %llu\n", (long long)tstamp);
+   if(n < 0 || n >= dst_line_len - cur_line_len) goto line_protocol_write_line_err; else cur_line_len += n;
  
- #ifdef WIN32
-   fd = open(fname, O_RDWR | O_CREAT | O_EXCL, _S_IREAD | _S_IWRITE);
-@@ -124,7 +124,7 @@ void TimeseriesExporter::flush() {
-     close(fd);
-     fd = -1;
-     char buf[32];
--    snprintf(buf, sizeof(buf), "%d|%lu|%u", iface->get_id(), flushTime, num_exports);
-+    snprintf(buf, sizeof(buf), "%d|%llu|%u", iface->get_id(), (long long)flushTime, num_exports);
-     cursize = 0;
-     num_exports++;
- 
+   return cur_line_len;

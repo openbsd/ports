@@ -1,19 +1,19 @@
-$OpenBSD: patch-configure_seed,v 1.4 2019/01/07 18:37:22 sthen Exp $
+$OpenBSD: patch-configure_seed,v 1.5 2020/10/02 18:47:14 sthen Exp $
 
 Index: configure.seed
 --- configure.seed.orig
 +++ configure.seed
-@@ -285,10 +285,10 @@ fi
+@@ -343,10 +343,10 @@ fi
  
  DATE=`date +"%Y-%m-%d"`
  
 -if test -d "/usr/include/hiredis"; then
 +if pkg-config --exists hiredis; then
-  AC_DEFINE_UNQUOTED(HAVE_HIREDIS, 1, [Local hiredis package present])
-- HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
-- HIREDIS_LIB="`pkg-config --libs hiredis` -lhiredis"
-+ HIREDIS_INC="`pkg-config --cflags hiredis`"
-+ HIREDIS_LIB="`pkg-config --libs hiredis`"
+   AC_DEFINE_UNQUOTED(HAVE_HIREDIS, 1, [Local hiredis package present])
+-  HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
+-  HIREDIS_LIB="`pkg-config --libs hiredis` -lhiredis"
++  HIREDIS_INC="`pkg-config --cflags hiredis`"
++  HIREDIS_LIB="`pkg-config --libs hiredis`"
  else
-  HIREDIS_INC="-I ${PWD}/third-party/hiredis"
+   HIREDIS_INC="-I ${PWD}/third-party/hiredis"
  fi

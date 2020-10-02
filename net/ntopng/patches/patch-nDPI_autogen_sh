@@ -1,0 +1,10 @@
+$OpenBSD: patch-nDPI_autogen_sh,v 1.3 2020/10/02 18:47:14 sthen Exp $
+
+Index: nDPI/autogen.sh
+--- nDPI/autogen.sh.orig
++++ nDPI/autogen.sh
+@@ -45,4 +45,3 @@ cat configure | sed "s/#define PACKAGE/#define NDPI_PA
+ cat configure.tmp > configure
+ 
+ chmod +x configure
+-./configure "$*"

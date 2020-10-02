@@ -1,4 +1,4 @@
-$OpenBSD: patch-nDPI_Makefile_am,v 1.1 2020/02/08 15:11:19 sthen Exp $
+$OpenBSD: patch-nDPI_Makefile_am,v 1.2 2020/10/02 18:47:14 sthen Exp $
 
 not compatible with openbsd's nonstandard bpf_timeval - not installed in
 the ntopng port anyway
@@ -11,5 +11,5 @@ Index: nDPI/Makefile.am
 -SUBDIRS = src/lib example tests
 +SUBDIRS = src/lib tests
  
- pkgconfigdir = $(libdir)/pkgconfig
- pkgconfig_DATA = libndpi.pc
+ if BUILD_FUZZTARGETS
+ SUBDIRS += fuzz

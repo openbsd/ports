@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_HTTPserver_cpp,v 1.5 2020/02/08 15:11:19 sthen Exp $
+$OpenBSD: patch-src_HTTPserver_cpp,v 1.6 2020/10/02 18:47:15 sthen Exp $
 
 Index: src/HTTPserver.cpp
 --- src/HTTPserver.cpp.orig
 +++ src/HTTPserver.cpp
-@@ -1017,8 +1017,8 @@ bool HTTPserver::check_ssl_cert(char *ssl_cert_path, s
+@@ -1087,8 +1087,8 @@ bool HTTPserver::check_ssl_cert(char *ssl_cert_path, s
    int stat_rc;
    ssl_cert_path[0] = '\0';
  

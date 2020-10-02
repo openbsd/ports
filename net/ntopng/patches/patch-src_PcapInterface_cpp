@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_PcapInterface_cpp,v 1.1 2020/10/02 18:47:15 sthen Exp $
+
+cope with openbsd nonstandard bpf_timeval
+
+Index: src/PcapInterface.cpp
+--- src/PcapInterface.cpp.orig
++++ src/PcapInterface.cpp
+@@ -270,9 +270,13 @@ static void* packetPollLoop(void* ptr) {
+ 
+ 	  if(firstPktTS.tv_sec == 0) {
+             startTS = now;
+-            firstPktTS = hdr->ts;
++            firstPktTS.tv_sec = hdr->ts.tv_sec;
++            firstPktTS.tv_usec = hdr->ts.tv_usec;
+           } else {
+-            u_int32_t packetTimeDelta = Utils::msTimevalDiff(&hdr->ts, &firstPktTS);
++            timeval tmpt;
++            tmpt.tv_sec = hdr->ts.tv_sec;
++            tmpt.tv_usec = hdr->ts.tv_usec;
++            u_int32_t packetTimeDelta = Utils::msTimevalDiff(&tmpt, &firstPktTS);
+             u_int32_t fromStartTimeDelta = Utils::msTimevalDiff(&now, &startTS);
+ 
+             if (packetTimeDelta > fromStartTimeDelta) {
+@@ -287,7 +291,8 @@ static void* packetPollLoop(void* ptr) {
+ 	    }
+ 	  }
+ 
+-	  hdr->ts = now;
++	  hdr->ts.tv_sec = now.tv_sec;
++	  hdr->ts.tv_usec = now.tv_usec;
+ 	}
+ 	  
+ 	if((pkt != NULL) && (hdr->caplen > 0)) {

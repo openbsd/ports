@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Ntop_cpp,v 1.1 2020/10/02 18:47:15 sthen Exp $
+
+64-bit time_t
+
+Index: src/Ntop.cpp
+--- src/Ntop.cpp.orig
++++ src/Ntop.cpp
+@@ -2660,7 +2660,7 @@ void Ntop::resetStats() {
+   char buf[32];
+   last_stats_reset = time(NULL);
+ 
+-  snprintf(buf, sizeof(buf), "%ld", last_stats_reset);
++  snprintf(buf, sizeof(buf), "%lld", (long long)last_stats_reset);
+ 
+   /* Saving this is essential to reset inactive hosts across ntopng restarts */
+   getRedis()->set(LAST_RESET_TIME, buf);
