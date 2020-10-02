@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/02 22:04:17 espie Exp $
+lib/gimp/${GIMPV}/plug-ins/plugin-heal-selection.py
+lib/gimp/${GIMPV}/plug-ins/plugin-heal-transparency.py
+lib/gimp/${GIMPV}/plug-ins/plugin-map-style.py
+lib/gimp/${GIMPV}/plug-ins/plugin-render-texture.py
+lib/gimp/${GIMPV}/plug-ins/plugin-resynth-enlarge.py
+lib/gimp/${GIMPV}/plug-ins/plugin-resynth-fill-pattern.py
+lib/gimp/${GIMPV}/plug-ins/plugin-resynth-sharpen.py
+lib/gimp/${GIMPV}/plug-ins/plugin-uncrop.py
+@bin lib/gimp/${GIMPV}/plug-ins/resynthesizer
+@bin lib/gimp/${GIMPV}/plug-ins/resynthesizer_gui
+share/resynthesizer/
+share/resynthesizer/help/
+share/resynthesizer/help/en/
+share/resynthesizer/help/en/gimp-help.xml
+share/resynthesizer/help/en/index.html
+share/resynthesizer/help/images/
+share/resynthesizer/help/images/wilber.png

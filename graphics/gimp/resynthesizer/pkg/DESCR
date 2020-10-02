@@ -1,0 +1,12 @@
+resynthesizer is a gimp plug-in that can recreate content:
+
+- enlarging textures
+
+- creating tilable images
+
+- removing parts of an image and replacing it with neighboring parts
+
+- adding texture from an image to another image
+
+warning: the plugin is somewhat slow, give it some time to see the progress
+bar move.
