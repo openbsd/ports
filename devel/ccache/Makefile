@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2020/08/01 11:30:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2020/10/02 18:45:00 sthen Exp $
 
 COMMENT =	compiler cache
 
-V =		3.7.11
+V =		3.7.12
 DISTNAME =	ccache-$V
-REVISION =	0
 
 CATEGORIES =	devel
 
