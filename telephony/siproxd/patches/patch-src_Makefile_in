@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2016/04/21 19:44:17 naddy Exp $
---- src/Makefile.in.orig	Sat Apr 16 15:52:31 2016
-+++ src/Makefile.in	Sun Apr 17 22:26:42 2016
-@@ -771,7 +771,7 @@ uninstall-am: uninstall-info-am uninstall-pkglibLTLIBR
+$OpenBSD: patch-src_Makefile_in,v 1.5 2020/10/02 19:22:09 naddy Exp $
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -1080,7 +1080,7 @@ uninstall-am: uninstall-pkglibLTLIBRARIES uninstall-sb
  # count BUILDs - each time increment by one and define the
  # C macro BUILDNO. bind it to a file everybody includes (log.h)
  #

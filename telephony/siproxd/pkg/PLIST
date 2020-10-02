@@ -1,20 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/21 19:44:17 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/10/02 19:22:09 naddy Exp $
 @newgroup _siproxd:574
 @newuser _siproxd:574:574:daemon:SIP proxy:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/siproxd
 lib/siproxd/
-lib/siproxd/plugin_codecfilter.so
-lib/siproxd/plugin_defaulttarget.so
-lib/siproxd/plugin_demo.so
-lib/siproxd/plugin_fix_DTAG.so
-lib/siproxd/plugin_fix_bogus_via.so
-lib/siproxd/plugin_fix_fbox_anoncall.so
-lib/siproxd/plugin_logcall.so
-lib/siproxd/plugin_prefix.so
-lib/siproxd/plugin_regex.so
-lib/siproxd/plugin_shortdial.so
-lib/siproxd/plugin_siptrunk.so
-lib/siproxd/plugin_stripheader.so
-lib/siproxd/plugin_stun.so
+@so lib/siproxd/plugin_blacklist.so
+@so lib/siproxd/plugin_codecfilter.so
+@so lib/siproxd/plugin_defaulttarget.so
+@so lib/siproxd/plugin_demo.so
+@so lib/siproxd/plugin_fix_DTAG.so
+@so lib/siproxd/plugin_fix_bogus_via.so
+@so lib/siproxd/plugin_fix_fbox_anoncall.so
+@so lib/siproxd/plugin_logcall.so
+@so lib/siproxd/plugin_prefix.so
+@so lib/siproxd/plugin_regex.so
+@so lib/siproxd/plugin_shortdial.so
+@so lib/siproxd/plugin_siptrunk.so
+@so lib/siproxd/plugin_stats.so
+@so lib/siproxd/plugin_stripheader.so
+@so lib/siproxd/plugin_stun.so
 @bin sbin/siproxd
 share/doc/siproxd/
 share/doc/siproxd/FAQ
@@ -28,7 +31,3 @@ share/examples/siproxd/siproxd_passwd.cfg
 @owner root
 @group _siproxd
 @sample /var/siproxd/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/siproxd

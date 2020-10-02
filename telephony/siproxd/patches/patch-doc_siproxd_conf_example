@@ -1,6 +1,7 @@
-$OpenBSD: patch-doc_siproxd_conf_example,v 1.5 2016/04/21 19:44:17 naddy Exp $
---- doc/siproxd.conf.example.orig	Fri Mar 25 19:44:51 2016
-+++ doc/siproxd.conf.example	Sun Apr 17 22:28:24 2016
+$OpenBSD: patch-doc_siproxd_conf_example,v 1.6 2020/10/02 19:22:09 naddy Exp $
+Index: doc/siproxd.conf.example
+--- doc/siproxd.conf.example.orig
++++ doc/siproxd.conf.example
 @@ -9,6 +9,9 @@
  ######################################################################
  # The interface names of INBOUND and OUTBOUND interface.
@@ -51,7 +52,7 @@ $OpenBSD: patch-doc_siproxd_conf_example,v 1.5 2016/04/21 19:44:17 naddy Exp $
  
  ######################################################################
  # global switch to control the RTP proxy behaviour
-@@ -322,23 +325,23 @@ debug_port = 0
+@@ -326,25 +329,25 @@ outbound_domain_port = 5060
  # The plugins are loaded in the order they appear here. Also
  # the processing order is given by the load order.
  #
@@ -74,6 +75,8 @@ $OpenBSD: patch-doc_siproxd_conf_example,v 1.5 2016/04/21 19:44:17 naddy Exp $
 -#load_plugin=plugin_codecfilter.la
 -#load_plugin=plugin_siptrunk.la
 -#load_plugin=plugin_fix_fbox_anoncall.la
+-#load_plugin=plugin_stats.la
+-#load_plugin=plugin_blacklist.la
 +# List of plugins to load.
 +#load_plugin=plugin_demo.so
 +#load_plugin=plugin_shortdial.so
@@ -88,6 +91,8 @@ $OpenBSD: patch-doc_siproxd_conf_example,v 1.5 2016/04/21 19:44:17 naddy Exp $
 +#load_plugin=plugin_codecfilter.so
 +#load_plugin=plugin_siptrunk.so
 +#load_plugin=plugin_fix_fbox_anoncall.so
++#load_plugin=plugin_stats.so
++#load_plugin=plugin_blacklist.so
  
  
  ######################################################################
