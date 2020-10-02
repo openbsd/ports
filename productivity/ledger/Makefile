@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/12/22 16:05:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.29 2020/10/02 19:14:58 solene Exp $
 
 COMMENT =		command line double-entry accounting ledger
 
-GH_TAGNAME =		v3.1.3
+GH_TAGNAME =		v3.2.1
 GH_ACCOUNT =		ledger
 GH_PROJECT =		ledger
 
@@ -23,6 +23,7 @@ WANTLIB += c gmp icuuc m mpfr pthread ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake \
 			lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/utfcpp
@@ -57,7 +58,5 @@ post-install:
 .for d in LICENSE.md doc/GLOSSARY.md
 	${INSTALL_DATA} ${WRKSRC}/$d ${PREFIX}/share/doc/ledger/
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ledger
-	cd ${WRKSRC}/contrib && umask 022 && pax -rw . ${PREFIX}/share/examples/ledger
 
 .include <bsd.port.mk>
