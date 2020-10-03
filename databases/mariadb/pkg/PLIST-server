@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.35 2020/08/12 14:43:54 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.36 2020/10/03 13:12:35 sthen Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
@@ -18,7 +18,6 @@ bin/mariadb-install-db
 bin/mariadb-secure-installation
 @bin bin/mariadb-tzinfo-to-sql
 @bin bin/mariadb-upgrade
-@bin bin/mariadb-waitpid
 bin/mariadbd-multi
 bin/mariadbd-safe
 @bin bin/mariadbd-safe-helper
@@ -522,7 +521,6 @@ libexec/mysqld
 @man man/man1/mariadb-secure-installation.1
 @man man/man1/mariadb-tzinfo-to-sql.1
 @man man/man1/mariadb-upgrade.1
-@man man/man1/mariadb-waitpid.1
 @man man/man1/mariadbd-multi.1
 @man man/man1/mariadbd-safe-helper.1
 @man man/man1/mariadbd-safe.1
