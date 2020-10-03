@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.576 2020/08/11 14:54:41 landry Exp $
+# $OpenBSD: Makefile,v 1.577 2020/10/03 20:39:17 solene Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -67,6 +67,7 @@
      SUBDIR += diskrescue
      SUBDIR += dmassage
      SUBDIR += dmidecode
+     SUBDIR += docker-cli
      SUBDIR += dosfstools
      SUBDIR += downtimed
      SUBDIR += dsh
