@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/10/03 13:30:11 kn Exp $
 
 COMMENT =	Tcl/Tk-based manual browser
 
 DISTNAME =	tkman-2.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	misc 
 HOMEPAGE =	http://www.sourceforge.net/projects/tkman
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -15,8 +15,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tkman/}
 MODULES =	x11/tk
 
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS} \
-		textproc/rman \
-		textproc/glimpse
+		textproc/rman
 
 NO_TEST =	Yes
 
