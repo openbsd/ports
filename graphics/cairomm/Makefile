@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2020/10/03 13:13:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2020/10/03 13:20:27 ajacoutot Exp $
 
-PORTROACH=		limitw:1,even
+PORTROACH=		limitw:1.14,even
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=		m88k
