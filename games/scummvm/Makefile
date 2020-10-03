@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.85 2020/02/13 00:33:00 jsg Exp $
+# $OpenBSD: Makefile,v 1.86 2020/10/03 10:42:49 jsg Exp $
 
 COMMENT=	graphical adventure game interpreter
-V=		2.1.1
+V=		2.2.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	https://www.scummvm.org/frs/scummvm/${V}/
@@ -13,8 +13,9 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png ogg sndio
-WANTLIB += ${COMPILER_LIBCXX} theoradec vorbis vorbisfile z
+WANTLIB += FLAC SDL2 a52 c faad fluidsynth freetype fribidi iconv jpeg
+WANTLIB += m mad mpeg2 png ogg sndio ${COMPILER_LIBCXX} theoradec vorbis
+WANTLIB += vorbisfile z
 
 # GCC 4.2.1 miscompiles this on at least ppc, so play safe and
 # just use a newer compiler everywhere.
@@ -22,11 +23,15 @@ COMPILER=	base-clang ports-gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS=	audio/libmad \
+LIB_DEPENDS=	audio/fluidsynth \
+		audio/liba52 \
+		audio/libmad \
 		audio/libvorbis \
 		audio/flac \
 		audio/faad>=2.7 \
+		devel/fribidi \
 		devel/sdl2 \
+		graphics/libmpeg2 \
 		graphics/png \
 		graphics/jpeg \
 		multimedia/libtheora
@@ -36,14 +41,17 @@ CXXFLAGS+=	-mxgot
 .endif
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS+= --disable-alsa \
+CONFIGURE_ARGS+=--disable-alsa \
+		--disable-cloud \
 		--disable-debug \
-		--disable-fluidsynth \
-		--disable-seq-midi \
-		--disable-mpeg2 \
-		--disable-sdlnet \
+		--disable-discord \
+		--disable-gtk \
 		--disable-libcurl \
 		--disable-nasm \
+		--disable-sdlnet \
+		--disable-seq-midi \
+		--disable-system-dialogs \
+		--disable-tts \
 		--enable-sndio \
 		--mandir="${LOCALBASE}/man"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
