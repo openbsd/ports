@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2020/04/25 08:55:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2020/10/03 13:02:59 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.22.11
+GNOME_VERSION =		3.22.12
 
 MASTER_SITES =		https://gitlab.gnome.org/GNOME/aisleriot/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX =		.tar.gz
