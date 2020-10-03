@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/10/03 14:37:38 jasper Exp $
 
 COMMENT=	l2tp client/server
 
 GH_ACCOUNT=	xelerance
 GH_PROJECT=	xl2tpd
-GH_TAGNAME=	v1.3.14
+GH_TAGNAME=	v1.3.15
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.xelerance.com/services/software/xl2tpd/
+HOMEPAGE=	https://github.com/xelerance/xl2tpd
+
+MAINTAINER=	Alexander Naumov <alexander_naumov@opensuse.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

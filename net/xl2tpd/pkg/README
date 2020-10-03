@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2018/09/04 12:46:19 espie Exp $
+$OpenBSD: README,v 1.9 2020/10/03 14:37:38 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -26,7 +26,7 @@ Control mechanisms
 ==================
 When xl2tpd is started, it does not automatically connect. Instead it is
 controlled by writing simple commands to a fifo (you may be familiar with
-this style from isakmpd), e.g.: 
+this style from isakmpd), e.g.:
 
   echo '[command] [config_name]' > /var/run/xl2tpd/l2tp-control
 
@@ -100,8 +100,10 @@ And confirm that the tunnel does actually come up:
 
 # ipsecctl -sa
 FLOWS:
-flow esp in proto udp from $server port l2tp to $me peer $server srcid $myhostname dstid $server/32 type use
-flow esp out proto udp from $me to $server port l2tp peer $server srcid $myhostname dstid $server/32 type require
+flow esp in proto udp from $server port l2tp to $me peer $server \
+srcid $myhostname dstid $server/32 type use
+flow esp out proto udp from $me to $server port l2tp peer $server \
+srcid $myhostname dstid $server/32 type require
 
 SAD:
 esp transport from $me to $server spi 0x1037c0f2 auth hmac-sha1 enc aes
