@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/13 12:24:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2020/10/03 15:39:58 ajacoutot Exp $
 
 COMMENT=	multi-format tools and Python module for ReplayGain
 
 MODPY_EGG_VERSION= 1.0.0
 DISTNAME=	rgain3-${MODPY_EGG_VERSION}
 EPOCH=		0
+REVISION=	0
 
 #WRKDIST=	${WRKDIR}/fk-rgain-8df1a846a12c
 

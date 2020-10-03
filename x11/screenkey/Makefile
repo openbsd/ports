@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/08/24 06:38:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/03 15:40:01 ajacoutot Exp $
 
 COMMENT =		display keypresses on screen
 
 DISTNAME =		screenkey-1.2
+REVISION =		0
 
 CATEGORIES =		x11
 

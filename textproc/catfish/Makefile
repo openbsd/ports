@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/08/24 06:38:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2020/10/03 15:39:59 ajacoutot Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -6,7 +6,7 @@ XFCE_GOODIE =	catfish
 XFCE_VERSION =	1.4.13
 MODPY_EGG_VERSION =	${XFCE_VERSION}
 CATEGORIES =	textproc
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

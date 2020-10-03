@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:13:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/10/03 15:40:01 ajacoutot Exp $
 
 COMMENT=		customize advanced GNOME 3 options
 
 GNOME_PROJECT=		gnome-tweaks
 GNOME_VERSION=		3.34.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils
 

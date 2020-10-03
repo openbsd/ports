@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/10/03 15:39:58 ajacoutot Exp $
 
 COMMENT =	interactive viewer for Graphviz dot graphs
 
 MODPY_EGG_VERSION = 1.1
 DISTNAME =	xdot-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 

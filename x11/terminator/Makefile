@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2020/09/10 13:47:46 mariani Exp $
+# $OpenBSD: Makefile,v 1.23 2020/10/03 15:40:01 ajacoutot Exp $
 
 COMMENT =		GTK3 terminal emulator with split-window and tabs support
 
 VERSION =		1.92
 DISTNAME =		terminator-${VERSION}
+REVISION =		0
 
 CATEGORIES =		x11
 

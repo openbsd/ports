@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/21 14:42:15 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/03 15:40:01 ajacoutot Exp $
 
 COMMENT=		advanced menu for MATE
 
@@ -6,6 +6,7 @@ GH_COMMIT=		61a995e25948015a4f6d86e12cf6141a3b729ce7
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		mate-menu
 DISTNAME=		mate-menu-advanced-20.04.1
+REVISION=		0
 
 CATEGORIES=		x11
 
