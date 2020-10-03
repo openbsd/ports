@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/01 17:32:48 paco Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/03 08:37:39 paco Exp $
 bin/ephemetoot
 lib/python${MODPY_VERSION}/site-packages/ephemetoot/
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ephemetoot/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ephemetoot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ephemetoot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ephemetoot/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ephemetoot/${MODPY_PYCACHE}ephemetoot.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ephemetoot/${MODPY_PYCACHE}plist.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ephemetoot/console.py
 lib/python${MODPY_VERSION}/site-packages/ephemetoot/ephemetoot.py
+lib/python${MODPY_VERSION}/site-packages/ephemetoot/plist.py

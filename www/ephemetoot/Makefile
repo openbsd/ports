@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/17 07:22:25 paco Exp $
+# $OpenBSD: Makefile,v 1.6 2020/10/03 08:37:39 paco Exp $
 
 COMMENT =		tool for deleting old Mastodon toots
 
-MODPY_EGG_VERSION =	2.6
-GH_ACCOUNT =		hughrun
-GH_PROJECT =		ephemetoot
-GH_TAGNAME =		v${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_EGG_VERSION =	3.1.0
+DISTNAME =		ephemetoot-${MODPY_EGG_VERSION}
 
 CATEGORIES =		www
 
@@ -16,6 +13,8 @@ MAINTAINER =		Paco Esteban <paco@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
@@ -24,8 +23,5 @@ RUN_DEPENDS =		textproc/py-pyaml${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
 NO_TEST =		Yes
-
-post-extract:
-	mv ${WRKSRC}/lib ${WRKSRC}/ephemetoot
 
 .include <bsd.port.mk>
