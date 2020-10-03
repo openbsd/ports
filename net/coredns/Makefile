@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/27 13:05:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/03 14:00:53 ajacoutot Exp $
+
+# XXX cannot update because of:
+# https://github.com/DataDog/dd-trace-go/pull/755
 
 COMMENT=	fast and flexible DNS server/forwarder
 
