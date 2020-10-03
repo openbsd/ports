@@ -5,8 +5,10 @@ USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 BROKEN-i386 = 		long hangs; uses too much RAM to build
 
+DPB_PROPERTIES=		parallel parallel2
 .if ${MACHINE_ARCH} == "i386"
-DPB_PROPERTIES =	lonesome
+# override parallel
+DPB_PROPERTIES=		lonesome
 .endif
 
 # Many parts are copied from www/chromium port, so keep in sync
