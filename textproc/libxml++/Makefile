@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2020/01/16 20:25:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2020/10/03 10:30:20 ajacoutot Exp $
 
 PORTROACH=		limit:^2
 
 COMMENT=		C++ wrapper for the libxml XML parser library
 
-GNOME_VERSION=		2.40.1
+GNOME_VERSION=		2.42.0
 GNOME_PROJECT=		libxml++
-REVISION=		2
 
-SHARED_LIBS +=  xml++-2.6            2.0      # 2.7
+SHARED_LIBS += xml++-2.6                 2.1 # 2.0.7
 
 CATEGORIES=		textproc
 
@@ -20,11 +19,10 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 iconv intl
-WANTLIB += lzma m pcre pthread sigc-2.0 xml2 z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} glibmm-2.4 xml2
 
-MODULES=		x11/gnome
+MODULES=		devel/meson \
+			x11/gnome
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -33,7 +31,5 @@ COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/glib2mm \
 			textproc/libxml
-
-CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
