@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/03 20:38:46 solene Exp $
+@bin bin/docker

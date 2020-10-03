@@ -1,0 +1,3 @@
+The Docker command-line tool allows you to control Docker hosts. You
+can use it to build docker images, start docker containers, execute
+commands inside containers, see running containers, and view logs.
