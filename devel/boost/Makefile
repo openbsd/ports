@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2020/08/17 14:01:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.100 2020/10/03 13:17:04 sthen Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 powerpc
 
@@ -15,7 +15,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
-REVISION-main=	0
+REVISION-main=	1
 
 SO_VERSION=	11.0
 BOOST_LIBS=	boost_atomic-mt \
