@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.518 2020/09/22 22:08:40 tracey Exp $
+# $OpenBSD: Makefile,v 1.519 2020/10/03 13:27:51 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -21,6 +21,7 @@
      SUBDIR += cadubi
      SUBDIR += cairo
      SUBDIR += cairomm
+     SUBDIR += cairomm16
      SUBDIR += cal3d
      SUBDIR += cfdg
      SUBDIR += chafa
