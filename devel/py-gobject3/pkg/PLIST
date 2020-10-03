@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2020/05/14 14:53:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/10/03 10:02:23 ajacoutot Exp $
 @conflict py-gtk2-2.8.6*
 @conflict py-gobject-<2.28.6p2v0
-%%python3%%
-!%%python3%%
+@conflict py-gobject3-*
+@conflict py-gobject3-common-*
+@pkgpath devel/py-gobject3
+@pkgpath devel/py-gobject3,-common
+include/pygobject-3.0/
+include/pygobject-3.0/pygobject.h
+lib/pkgconfig/pygobject-3.0.pc
 lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
