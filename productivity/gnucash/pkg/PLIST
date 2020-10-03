@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2020/08/24 08:01:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.51 2020/10/03 14:01:17 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -25,7 +25,6 @@ include/gnucash/TransLog.h
 include/gnucash/Transaction.h
 include/gnucash/account-quickfill.h
 include/gnucash/assistant-xml-encoding.h
-include/gnucash/assoccell.h
 include/gnucash/basiccell.h
 include/gnucash/business-options.h
 include/gnucash/cap-gains.h
@@ -36,9 +35,9 @@ include/gnucash/checkboxcell.h
 include/gnucash/combocell.h
 include/gnucash/datecell.h
 include/gnucash/dialog-account.h
-include/gnucash/dialog-assoc-utils.h
 include/gnucash/dialog-book-close.h
 include/gnucash/dialog-commodity.h
+include/gnucash/dialog-doclink-utils.h
 include/gnucash/dialog-dup-trans.h
 include/gnucash/dialog-file-access.h
 include/gnucash/dialog-object-references.h
@@ -50,6 +49,7 @@ include/gnucash/dialog-search.h
 include/gnucash/dialog-totd.h
 include/gnucash/dialog-transfer.h
 include/gnucash/dialog-utils.h
+include/gnucash/doclinkcell.h
 include/gnucash/engine-helpers.h
 include/gnucash/file-utils.h
 include/gnucash/formulacell.h
@@ -465,53 +465,6 @@ lib/guile/2.2/site-ccache/gnucash/reports/standard/trial-balance.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/view-column.go
 lib/guile/2.2/site-ccache/gnucash/string.go
 lib/guile/2.2/site-ccache/gnucash/utilities.go
-lib/guile/2.2/site-ccache/tests/
-lib/guile/2.2/site-ccache/tests/srfi64-extras.go
-lib/guile/2.2/site-ccache/tests/test-account-summary.go
-lib/guile/2.2/site-ccache/tests/test-average-balance.go
-lib/guile/2.2/site-ccache/tests/test-balsheet-pnl.go
-lib/guile/2.2/site-ccache/tests/test-budget.go
-lib/guile/2.2/site-ccache/tests/test-business-core.go
-lib/guile/2.2/site-ccache/tests/test-c-interface.go
-lib/guile/2.2/site-ccache/tests/test-cash-flow.go
-lib/guile/2.2/site-ccache/tests/test-cashflow-barchart.go
-lib/guile/2.2/site-ccache/tests/test-charts.go
-lib/guile/2.2/site-ccache/tests/test-commodity-utils.go
-lib/guile/2.2/site-ccache/tests/test-core-utils.go
-lib/guile/2.2/site-ccache/tests/test-create-account.go
-lib/guile/2.2/site-ccache/tests/test-date-utilities.go
-lib/guile/2.2/site-ccache/tests/test-engine-extras.go
-lib/guile/2.2/site-ccache/tests/test-equity-statement.go
-lib/guile/2.2/site-ccache/tests/test-html-chart.go
-lib/guile/2.2/site-ccache/tests/test-html-fonts.go
-lib/guile/2.2/site-ccache/tests/test-html-utilities-srfi64.go
-lib/guile/2.2/site-ccache/tests/test-income-gst.go
-lib/guile/2.2/site-ccache/tests/test-invoice.go
-lib/guile/2.2/site-ccache/tests/test-load-app-utils-module.go
-lib/guile/2.2/site-ccache/tests/test-load-gnome-utils-module.go
-lib/guile/2.2/site-ccache/tests/test-load-report-module.go
-lib/guile/2.2/site-ccache/tests/test-module-deprecation.go
-lib/guile/2.2/site-ccache/tests/test-new-owner-report.go
-lib/guile/2.2/site-ccache/tests/test-options.go
-lib/guile/2.2/site-ccache/tests/test-owner-report.go
-lib/guile/2.2/site-ccache/tests/test-portfolios.go
-lib/guile/2.2/site-ccache/tests/test-qif-imp.go
-lib/guile/2.2/site-ccache/tests/test-qif-merge-groups.go
-lib/guile/2.2/site-ccache/tests/test-qif-parse.go
-lib/guile/2.2/site-ccache/tests/test-register.go
-lib/guile/2.2/site-ccache/tests/test-report-extras.go
-lib/guile/2.2/site-ccache/tests/test-report-html.go
-lib/guile/2.2/site-ccache/tests/test-report-utilities.go
-lib/guile/2.2/site-ccache/tests/test-report.go
-lib/guile/2.2/site-ccache/tests/test-scm-utilities.go
-lib/guile/2.2/site-ccache/tests/test-standard-category-report.go
-lib/guile/2.2/site-ccache/tests/test-standard-net-barchart.go
-lib/guile/2.2/site-ccache/tests/test-standard-net-linechart.go
-lib/guile/2.2/site-ccache/tests/test-stress-options.go
-lib/guile/2.2/site-ccache/tests/test-test-extras.go
-lib/guile/2.2/site-ccache/tests/test-transaction.go
-lib/guile/2.2/site-ccache/tests/test-trial-balance.go
-lib/guile/2.2/site-ccache/tests/unittest-support.go
 @so lib/libgnc-app-utils.so
 @lib lib/libgnc-backend-sql.so.${LIBgnc-backend-sql_VERSION}
 @lib lib/libgnc-backend-xml-utils.so.${LIBgnc-backend-xml-utils_VERSION}
@@ -1272,7 +1225,6 @@ share/gnucash/gtkbuilder/dialog-ab-pref.glade
 share/gnucash/gtkbuilder/dialog-ab.glade
 share/gnucash/gtkbuilder/dialog-account-picker.glade
 share/gnucash/gtkbuilder/dialog-account.glade
-share/gnucash/gtkbuilder/dialog-assoc.glade
 share/gnucash/gtkbuilder/dialog-bi-import-gui.glade
 share/gnucash/gtkbuilder/dialog-billterms.glade
 share/gnucash/gtkbuilder/dialog-book-close.glade
@@ -1283,6 +1235,7 @@ share/gnucash/gtkbuilder/dialog-custom-report.glade
 share/gnucash/gtkbuilder/dialog-customer-import-gui.glade
 share/gnucash/gtkbuilder/dialog-customer.glade
 share/gnucash/gtkbuilder/dialog-date-close.glade
+share/gnucash/gtkbuilder/dialog-doclink.glade
 share/gnucash/gtkbuilder/dialog-employee.glade
 share/gnucash/gtkbuilder/dialog-file-access.glade
 share/gnucash/gtkbuilder/dialog-fincalc.glade
@@ -1655,53 +1608,6 @@ share/guile/site/2.2/gnucash/reports/templates/receipt.eguile.scm
 share/guile/site/2.2/gnucash/reports/templates/taxinvoice.eguile.scm
 share/guile/site/2.2/gnucash/string.scm
 share/guile/site/2.2/gnucash/utilities.scm
-share/guile/site/2.2/tests/
-share/guile/site/2.2/tests/srfi64-extras.scm
-share/guile/site/2.2/tests/test-account-summary.scm
-share/guile/site/2.2/tests/test-average-balance.scm
-share/guile/site/2.2/tests/test-balsheet-pnl.scm
-share/guile/site/2.2/tests/test-budget.scm
-share/guile/site/2.2/tests/test-business-core.scm
-share/guile/site/2.2/tests/test-c-interface.scm
-share/guile/site/2.2/tests/test-cash-flow.scm
-share/guile/site/2.2/tests/test-cashflow-barchart.scm
-share/guile/site/2.2/tests/test-charts.scm
-share/guile/site/2.2/tests/test-commodity-utils.scm
-share/guile/site/2.2/tests/test-core-utils.scm
-share/guile/site/2.2/tests/test-create-account.scm
-share/guile/site/2.2/tests/test-date-utilities.scm
-share/guile/site/2.2/tests/test-engine-extras.scm
-share/guile/site/2.2/tests/test-equity-statement.scm
-share/guile/site/2.2/tests/test-html-chart.scm
-share/guile/site/2.2/tests/test-html-fonts.scm
-share/guile/site/2.2/tests/test-html-utilities-srfi64.scm
-share/guile/site/2.2/tests/test-income-gst.scm
-share/guile/site/2.2/tests/test-invoice.scm
-share/guile/site/2.2/tests/test-load-app-utils-module.scm
-share/guile/site/2.2/tests/test-load-gnome-utils-module.scm
-share/guile/site/2.2/tests/test-load-report-module.scm
-share/guile/site/2.2/tests/test-module-deprecation.scm
-share/guile/site/2.2/tests/test-new-owner-report.scm
-share/guile/site/2.2/tests/test-options.scm
-share/guile/site/2.2/tests/test-owner-report.scm
-share/guile/site/2.2/tests/test-portfolios.scm
-share/guile/site/2.2/tests/test-qif-imp.scm
-share/guile/site/2.2/tests/test-qif-merge-groups.scm
-share/guile/site/2.2/tests/test-qif-parse.scm
-share/guile/site/2.2/tests/test-register.scm
-share/guile/site/2.2/tests/test-report-extras.scm
-share/guile/site/2.2/tests/test-report-html.scm
-share/guile/site/2.2/tests/test-report-utilities.scm
-share/guile/site/2.2/tests/test-report.scm
-share/guile/site/2.2/tests/test-scm-utilities.scm
-share/guile/site/2.2/tests/test-standard-category-report.scm
-share/guile/site/2.2/tests/test-standard-net-barchart.scm
-share/guile/site/2.2/tests/test-standard-net-linechart.scm
-share/guile/site/2.2/tests/test-stress-options.scm
-share/guile/site/2.2/tests/test-test-extras.scm
-share/guile/site/2.2/tests/test-transaction.scm
-share/guile/site/2.2/tests/test-trial-balance.scm
-share/guile/site/2.2/tests/unittest-support.scm
 share/icons/hicolor/128x128/apps/gnucash-icon.png
 share/icons/hicolor/16x16/apps/gnucash-icon.png
 share/icons/hicolor/22x22/apps/gnucash-icon.png
@@ -1732,6 +1638,7 @@ share/locale/es/LC_MESSAGES/gnucash.mo
 share/locale/es_NI/
 share/locale/es_NI/LC_MESSAGES/
 share/locale/es_NI/LC_MESSAGES/gnucash.mo
+share/locale/et/LC_MESSAGES/gnucash.mo
 share/locale/eu/LC_MESSAGES/gnucash.mo
 share/locale/fa/LC_MESSAGES/gnucash.mo
 share/locale/fi/LC_MESSAGES/gnucash.mo
@@ -1741,6 +1648,7 @@ share/locale/he/LC_MESSAGES/gnucash.mo
 share/locale/hi/LC_MESSAGES/gnucash.mo
 share/locale/hr/LC_MESSAGES/gnucash.mo
 share/locale/hu/LC_MESSAGES/gnucash.mo
+share/locale/id/LC_MESSAGES/gnucash.mo
 share/locale/it/LC_MESSAGES/gnucash.mo
 share/locale/ja/LC_MESSAGES/gnucash.mo
 share/locale/kn/LC_MESSAGES/gnucash.mo
