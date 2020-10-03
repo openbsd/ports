@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/11 08:29:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/10/03 13:40:45 ajacoutot Exp $
 share/glib-2.0/schemas/99_Yaru.gschema.override
 share/gnome-shell/
 share/gnome-shell/modes/
@@ -582,6 +582,7 @@ share/icons/Yaru/16x16/mimetypes/text-x-tex.png
 share/icons/Yaru/16x16/mimetypes/text-x-twig.png
 share/icons/Yaru/16x16/mimetypes/text-x-typescript.png
 share/icons/Yaru/16x16/mimetypes/text-x-vala.png
+share/icons/Yaru/16x16/mimetypes/text-x.gcode.png
 share/icons/Yaru/16x16/mimetypes/text-xml.png
 share/icons/Yaru/16x16/mimetypes/text.png
 share/icons/Yaru/16x16/mimetypes/unknown.png
@@ -1198,6 +1199,7 @@ share/icons/Yaru/16x16@2x/mimetypes/text-x-tex.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-twig.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-typescript.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-vala.png
+share/icons/Yaru/16x16@2x/mimetypes/text-x.gcode.png
 share/icons/Yaru/16x16@2x/mimetypes/text-xml.png
 share/icons/Yaru/16x16@2x/mimetypes/text.png
 share/icons/Yaru/16x16@2x/mimetypes/unknown.png
@@ -1840,6 +1842,7 @@ share/icons/Yaru/24x24/mimetypes/text-x-tex.png
 share/icons/Yaru/24x24/mimetypes/text-x-twig.png
 share/icons/Yaru/24x24/mimetypes/text-x-typescript.png
 share/icons/Yaru/24x24/mimetypes/text-x-vala.png
+share/icons/Yaru/24x24/mimetypes/text-x.gcode.png
 share/icons/Yaru/24x24/mimetypes/text-xml.png
 share/icons/Yaru/24x24/mimetypes/text.png
 share/icons/Yaru/24x24/mimetypes/unknown.png
@@ -2456,6 +2459,7 @@ share/icons/Yaru/24x24@2x/mimetypes/text-x-tex.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-twig.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-typescript.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-vala.png
+share/icons/Yaru/24x24@2x/mimetypes/text-x.gcode.png
 share/icons/Yaru/24x24@2x/mimetypes/text-xml.png
 share/icons/Yaru/24x24@2x/mimetypes/text.png
 share/icons/Yaru/24x24@2x/mimetypes/unknown.png
@@ -3072,6 +3076,7 @@ share/icons/Yaru/256x256/mimetypes/text-x-tex.png
 share/icons/Yaru/256x256/mimetypes/text-x-twig.png
 share/icons/Yaru/256x256/mimetypes/text-x-typescript.png
 share/icons/Yaru/256x256/mimetypes/text-x-vala.png
+share/icons/Yaru/256x256/mimetypes/text-x.gcode.png
 share/icons/Yaru/256x256/mimetypes/text-xml.png
 share/icons/Yaru/256x256/mimetypes/text.png
 share/icons/Yaru/256x256/mimetypes/unknown.png
@@ -3688,6 +3693,7 @@ share/icons/Yaru/256x256@2x/mimetypes/text-x-tex.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-twig.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-typescript.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-vala.png
+share/icons/Yaru/256x256@2x/mimetypes/text-x.gcode.png
 share/icons/Yaru/256x256@2x/mimetypes/text-xml.png
 share/icons/Yaru/256x256@2x/mimetypes/text.png
 share/icons/Yaru/256x256@2x/mimetypes/unknown.png
@@ -4307,6 +4313,7 @@ share/icons/Yaru/32x32/mimetypes/text-x-tex.png
 share/icons/Yaru/32x32/mimetypes/text-x-twig.png
 share/icons/Yaru/32x32/mimetypes/text-x-typescript.png
 share/icons/Yaru/32x32/mimetypes/text-x-vala.png
+share/icons/Yaru/32x32/mimetypes/text-x.gcode.png
 share/icons/Yaru/32x32/mimetypes/text-xml.png
 share/icons/Yaru/32x32/mimetypes/text.png
 share/icons/Yaru/32x32/mimetypes/unknown.png
@@ -4923,6 +4930,7 @@ share/icons/Yaru/32x32@2x/mimetypes/text-x-tex.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-twig.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-typescript.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-vala.png
+share/icons/Yaru/32x32@2x/mimetypes/text-x.gcode.png
 share/icons/Yaru/32x32@2x/mimetypes/text-xml.png
 share/icons/Yaru/32x32@2x/mimetypes/text.png
 share/icons/Yaru/32x32@2x/mimetypes/unknown.png
@@ -5572,6 +5580,7 @@ share/icons/Yaru/48x48/mimetypes/text-x-tex.png
 share/icons/Yaru/48x48/mimetypes/text-x-twig.png
 share/icons/Yaru/48x48/mimetypes/text-x-typescript.png
 share/icons/Yaru/48x48/mimetypes/text-x-vala.png
+share/icons/Yaru/48x48/mimetypes/text-x.gcode.png
 share/icons/Yaru/48x48/mimetypes/text-xml.png
 share/icons/Yaru/48x48/mimetypes/text.png
 share/icons/Yaru/48x48/mimetypes/unknown.png
@@ -6188,6 +6197,7 @@ share/icons/Yaru/48x48@2x/mimetypes/text-x-tex.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-twig.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-typescript.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-vala.png
+share/icons/Yaru/48x48@2x/mimetypes/text-x.gcode.png
 share/icons/Yaru/48x48@2x/mimetypes/text-xml.png
 share/icons/Yaru/48x48@2x/mimetypes/text.png
 share/icons/Yaru/48x48@2x/mimetypes/unknown.png
@@ -6652,6 +6662,7 @@ share/icons/Yaru/scalable/actions/process-stop-symbolic.svg
 share/icons/Yaru/scalable/actions/scan-type-adf-symbolic.svg
 share/icons/Yaru/scalable/actions/scan-type-batch-symbolic.svg
 share/icons/Yaru/scalable/actions/search-symbolic.svg
+share/icons/Yaru/scalable/actions/selection-symbolic.svg
 share/icons/Yaru/scalable/actions/send-to-symbolic.svg
 share/icons/Yaru/scalable/actions/star-new-symbolic.svg
 share/icons/Yaru/scalable/actions/stopwatch-symbolic.svg
@@ -6685,6 +6696,7 @@ share/icons/Yaru/scalable/actions/window-maximize-symbolic.svg
 share/icons/Yaru/scalable/actions/window-minimize-symbolic.svg
 share/icons/Yaru/scalable/actions/window-new-symbolic.svg
 share/icons/Yaru/scalable/actions/window-restore-symbolic.svg
+share/icons/Yaru/scalable/actions/window-symbolic.svg
 share/icons/Yaru/scalable/actions/zoom-fit-best-symbolic.svg
 share/icons/Yaru/scalable/actions/zoom-in-symbolic.svg
 share/icons/Yaru/scalable/actions/zoom-original-symbolic.svg
@@ -6922,6 +6934,7 @@ share/icons/Yaru/scalable/devices/camera-photo-symbolic.svg
 share/icons/Yaru/scalable/devices/camera-video-symbolic.svg
 share/icons/Yaru/scalable/devices/computer-apple-ipad-symbolic.svg
 share/icons/Yaru/scalable/devices/computer-symbolic.svg
+share/icons/Yaru/scalable/devices/display-symbolic.svg
 share/icons/Yaru/scalable/devices/drive-cdrom-symbolic.svg
 share/icons/Yaru/scalable/devices/drive-harddisk-ieee1394-symbolic.svg
 share/icons/Yaru/scalable/devices/drive-harddisk-solidstate-symbolic.svg
