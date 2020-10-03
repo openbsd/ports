@@ -776,7 +776,7 @@ SHA256 (go_modules/pack.ag/amqp/@v/v0.11.0.zip) = W2vQ23rqsGuiZbrONW1Tywbztp7gz8
 SHA256 (go_modules/pack.ag/amqp/@v/v0.8.0.mod) = XpPm/8KAGsJIYqrWcrABlbiNpR0jv5tGsle6LqytY4s=
 SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = AyRzu+VUpUpEX6hVu7K/piNNeG9h8ZJt6WtaqF6R8T0=
 SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = s+cGqiePp/iA0y+hzEDvgoLR/H1uADVlee0NuI87AEc=
-SHA256 (hugo-v0.75.0.zip) = DYOppuU/wvANg79KRqWMAnWew5iiNdA0wsOfMsDGMAc=
+SHA256 (hugo-v0.75.1.zip) = C5eKfJZ+Ei+fiYI0RzTZJJFLa95fyXT6RoYN+v16dLw=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.37.4.mod) = 1006
@@ -1555,4 +1555,4 @@ SIZE (go_modules/pack.ag/amqp/@v/v0.11.0.zip) = 579763
 SIZE (go_modules/pack.ag/amqp/@v/v0.8.0.mod) = 20
 SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = 36
 SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = 450232
-SIZE (hugo-v0.75.0.zip) = 5136115
+SIZE (hugo-v0.75.1.zip) = 5129710
