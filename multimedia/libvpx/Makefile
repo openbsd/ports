@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2020/06/25 07:52:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2020/10/03 13:19:36 sthen Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
-VER=		1.8.2
+VER=		1.9.0
 CATEGORIES=	multimedia
-REVISION=	0
 EPOCH=		0
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libvpx

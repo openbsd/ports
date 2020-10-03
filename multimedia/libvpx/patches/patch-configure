@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.20 2019/12/24 15:08:09 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.21 2020/10/03 13:19:37 sthen Exp $
 
 Index: configure
 --- configure.orig
@@ -13,7 +13,7 @@ Index: configure
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
-@@ -168,7 +170,7 @@ for t in ${all_targets}; do
+@@ -169,7 +171,7 @@ for t in ${all_targets}; do
      [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
  done
  
@@ -22,7 +22,7 @@ Index: configure
    die "diff missing: Try installing diffutils via your package manager."
  fi
  
-@@ -183,19 +185,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
+@@ -184,19 +186,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
    fi
  fi
  
@@ -42,7 +42,7 @@ Index: configure
  # disable codecs when their source directory does not exist
  [ -d "${source_path}/vp8" ] || disable_codec vp8
  [ -d "${source_path}/vp9" ] || disable_codec vp9
-@@ -530,7 +519,7 @@ process_detect() {
+@@ -531,7 +520,7 @@ process_detect() {
          # here rather than at option parse time because the target auto-detect
          # magic happens after the command line has been parsed.
          case "${tgt_os}" in
