@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_core_install_py,v 1.31 2020/06/17 07:35:05 ajacoutot Exp $
+$OpenBSD: patch-installer_core_install_py,v 1.32 2020/10/03 13:39:31 ajacoutot Exp $
 
 Index: installer/core_install.py
 --- installer/core_install.py.orig
@@ -12,7 +12,7 @@ Index: installer/core_install.py
  
  
  # end
-@@ -243,7 +243,7 @@ class CoreInstall(object):
+@@ -244,7 +244,7 @@ class CoreInstall(object):
          self.endian = utils.LITTLE_ENDIAN
          self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
          self.distro_version_supported = False
@@ -21,7 +21,7 @@ Index: installer/core_install.py
          self.hplip_present = False
          self.have_dependencies = {}
          self.native_cups = True
-@@ -364,7 +364,7 @@ class CoreInstall(object):
+@@ -366,7 +366,7 @@ class CoreInstall(object):
              'cups-devel':       (True,  ['base', 'prnt'], CUPS_DEV_STR, self.check_cups_devel, DEPENDENCY_COMPILE_TIME, '-', 'cups-config --version', GENERALDEP),
              'cups-image':       (True,  ['base', 'prnt'], CUPS_IMG_STR, self.check_cups_image, DEPENDENCY_COMPILE_TIME, '-', 'cups-config --version', GENERALDEP),
              'gcc':             (True,  ['base', 'prnt'], GCC_STR, self.check_gcc, DEPENDENCY_COMPILE_TIME, '-', 'gcc --version', COMPILEDEP),
@@ -30,7 +30,7 @@ Index: installer/core_install.py
              'libpthread':      (True,  ['base', 'prnt'], THREAD_STR, self.check_libpthread, DEPENDENCY_RUN_AND_COMPILE_TIME, '-', 'FUNC#get_libpthread_version', GENERALDEP),
              'gs':               (True,  ['base', 'prnt'], GS_STR, self.check_gs, DEPENDENCY_RUN_TIME, '7.05', 'gs --version', EXTERNALDEP),
              'libusb':           (True,  ['base'], USB_STR, self.check_libusb, DEPENDENCY_RUN_AND_COMPILE_TIME, '-', 'FUNC#get_libusb_version', GENERALDEP),
-@@ -402,7 +402,7 @@ class CoreInstall(object):
+@@ -405,7 +405,7 @@ class CoreInstall(object):
          }
  
          python2_dep = {
@@ -39,7 +39,7 @@ Index: installer/core_install.py
              #'setuptools':      (False, ['scan'], SETUPTOOLS_STR, self.check_setuptools, DEPENDENCY_RUN_TIME, '-', None, GENERALDEP),
              #'pip':          (True, ['scan'], PIP_STR, self.check_pip, DEPENDENCY_RUN_TIME, '-', None, GENERALDEP),
              #'pypdf2':          (True, ['scan'], PYPDF2_STR, self.check_pypdf2, DEPENDENCY_RUN_TIME, '-', None, GENERALDEP),
-@@ -418,7 +418,7 @@ class CoreInstall(object):
+@@ -421,7 +421,7 @@ class CoreInstall(object):
              'pyqt5':            (True,  ['gui_qt5'], QT5_STR, self.check_pyqt5, DEPENDENCY_RUN_TIME, '5.0', 'FUNC#get_pyQt5_version', GENERALDEP),
              'python-dbus':      (True,  ['fax'], PYDBUS_STR, self.check_python_dbus, DEPENDENCY_RUN_TIME, '0.80.0', 'FUNC#get_python_dbus_ver', GENERALDEP),
              'python-xml':     (True,  ['base'], PYXML_STR, self.check_python_xml, DEPENDENCY_RUN_TIME, '-', 'FUNC#get_python_xml_version', GENERALDEP),
@@ -48,7 +48,7 @@ Index: installer/core_install.py
              'pil':              (False, ['scan'], PIL_STR, self.check_pil, DEPENDENCY_RUN_TIME, '-', 'FUNC#get_pil_version', GENERALDEP),
              #'imutils':          (True, ['scan'], IMUTILS_STR, self.check_imutils, DEPENDENCY_RUN_TIME, '-', None, GENERALDEP),
              # Optional fax packages
-@@ -952,7 +952,7 @@ class CoreInstall(object):
+@@ -955,7 +955,7 @@ class CoreInstall(object):
          return check_tool('gcc --version', 0) and check_tool('g++ --version', 0)
  
      def check_make(self):
@@ -57,7 +57,7 @@ Index: installer/core_install.py
  
      def check_libusb(self):
          Is_libusb01_enabled = self.get_distro_ver_data('libusb01', False)
-@@ -960,14 +960,14 @@ class CoreInstall(object):
+@@ -963,14 +963,14 @@ class CoreInstall(object):
              if not check_lib('libusb'):
                  return False
              if self.distro_name != "rhel":
@@ -74,7 +74,7 @@ Index: installer/core_install.py
              else:
                  return True
  
-@@ -981,10 +981,10 @@ class CoreInstall(object):
+@@ -984,10 +984,10 @@ class CoreInstall(object):
          return check_lib("libjpeg") and check_file("jpeglib.h")
  
      def check_libcrypto(self):
@@ -87,7 +87,7 @@ Index: installer/core_install.py
  
      def check_libnetsnmp(self):
          return check_lib("libnetsnmp") and check_file("net-snmp-config.h")
-@@ -1024,7 +1024,7 @@ class CoreInstall(object):
+@@ -1027,7 +1027,7 @@ class CoreInstall(object):
          return check_lib('libsane')
  
      def check_sane_devel(self):
@@ -96,7 +96,7 @@ Index: installer/core_install.py
  
      def check_xsane(self):
          if os.getenv('DISPLAY'):
-@@ -1099,7 +1099,7 @@ class CoreInstall(object):
+@@ -1102,7 +1102,7 @@ class CoreInstall(object):
              return False
  
      def check_python_devel(self):
@@ -105,7 +105,7 @@ Index: installer/core_install.py
          Found = False
          for p in dir_list:
              if check_file('Python.h', dir=p):
-@@ -1151,13 +1151,8 @@ class CoreInstall(object):
+@@ -1154,13 +1154,8 @@ class CoreInstall(object):
              return False
  
      def check_dbus(self):
@@ -121,7 +121,7 @@ Index: installer/core_install.py
  
      def check_cups_devel(self):
          return check_file('cups.h') and bool(utils.which('lpr'))
-@@ -1172,11 +1167,11 @@ class CoreInstall(object):
+@@ -1175,11 +1170,11 @@ class CoreInstall(object):
              return True
  
      def check_cups_image(self):
@@ -135,16 +135,16 @@ Index: installer/core_install.py
  
      def check_libtool(self):
          log.debug("Checking for libtool...")
-@@ -1243,7 +1238,7 @@ class CoreInstall(object):
+@@ -1246,7 +1241,7 @@ class CoreInstall(object):
      def check_cupsddk(self):
          log.debug("Checking for cups-ddk...")
          # TODO: Compute these paths some way or another...
 -        return check_file('media.defs', "/usr/share/cups/ppdc/")
 +        return check_file('media.defs', "${LOCALBASE}/share/cups/ppdc/")
  
-     def check_policykit(self):
-         log.debug("Checking for PolicyKit...")
-@@ -1293,7 +1288,7 @@ class CoreInstall(object):
+     def check_libavahi_dev(self):
+         log.debug("Checking for libavahi-dev")
+@@ -1301,7 +1296,7 @@ class CoreInstall(object):
  
      def check_hpaio(self):
          found = False
@@ -153,7 +153,7 @@ Index: installer/core_install.py
              log.debug("'Checking for hpaio' in '%s'..." % path)
              try:
                  f = open(path, 'r')
-@@ -1322,13 +1317,13 @@ class CoreInstall(object):
+@@ -1330,13 +1325,13 @@ class CoreInstall(object):
          if pat.match(home_dir) is not None:
              usrlib_dir = pat.match(home_dir).group(1) + "lib/"
              if os.path.exists(usrlib_dir + 'sane/libsane-hpaio.so.1'):
@@ -171,7 +171,7 @@ Index: installer/core_install.py
                      log.debug("cmd=%s" % cmd)
                      utils.run(cmd, self.passwordObj)
                  else:
-@@ -1341,20 +1336,20 @@ class CoreInstall(object):
+@@ -1349,20 +1344,20 @@ class CoreInstall(object):
                      f.close()
  
                  if not found:
@@ -197,7 +197,7 @@ Index: installer/core_install.py
                      cmd = self.passwordObj.getAuthCmd() % cmd
                      log.debug("cmd=%s" % cmd)
                      utils.run(cmd, self.passwordObj)
-@@ -1820,11 +1815,14 @@ class CoreInstall(object):
+@@ -1828,11 +1823,14 @@ class CoreInstall(object):
          return num_opt_missing
  
      def check_wget(self):
@@ -216,7 +216,7 @@ Index: installer/core_install.py
  
      def check_avahi_utils(self):
          if utils.which("avahi-browse"):
-@@ -1931,7 +1929,7 @@ class CoreInstall(object):
+@@ -1958,7 +1956,7 @@ class CoreInstall(object):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False, distro_ver):
              cmds.append(self.passwordObj.getAuthCmd() %
