@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/03 13:27:21 ajacoutot Exp $
+include/cairomm-1.16/
+include/cairomm-1.16/cairomm/
+include/cairomm-1.16/cairomm/cairomm.h
+include/cairomm-1.16/cairomm/context.h
+include/cairomm-1.16/cairomm/device.h
+include/cairomm-1.16/cairomm/enums.h
+include/cairomm-1.16/cairomm/exception.h
+include/cairomm-1.16/cairomm/fontface.h
+include/cairomm-1.16/cairomm/fontoptions.h
+include/cairomm-1.16/cairomm/matrix.h
+include/cairomm-1.16/cairomm/path.h
+include/cairomm-1.16/cairomm/pattern.h
+include/cairomm-1.16/cairomm/quartz_font.h
+include/cairomm-1.16/cairomm/quartz_surface.h
+include/cairomm-1.16/cairomm/refptr.h
+include/cairomm-1.16/cairomm/region.h
+include/cairomm-1.16/cairomm/scaledfont.h
+include/cairomm-1.16/cairomm/script.h
+include/cairomm-1.16/cairomm/script_surface.h
+include/cairomm-1.16/cairomm/surface.h
+include/cairomm-1.16/cairomm/types.h
+include/cairomm-1.16/cairomm/win32_font.h
+include/cairomm-1.16/cairomm/win32_surface.h
+include/cairomm-1.16/cairomm/xlib_surface.h
+lib/cairomm-1.16/
+lib/cairomm-1.16/include/
+lib/cairomm-1.16/include/cairommconfig.h
+@lib lib/libcairomm-1.16.so.${LIBcairomm-1.16_VERSION}
+lib/pkgconfig/cairomm-1.16.pc
+lib/pkgconfig/cairomm-ft-1.16.pc
+lib/pkgconfig/cairomm-pdf-1.16.pc
+lib/pkgconfig/cairomm-png-1.16.pc
+lib/pkgconfig/cairomm-ps-1.16.pc
+lib/pkgconfig/cairomm-svg-1.16.pc
+lib/pkgconfig/cairomm-xlib-1.16.pc
+lib/pkgconfig/cairomm-xlib-xrender-1.16.pc
