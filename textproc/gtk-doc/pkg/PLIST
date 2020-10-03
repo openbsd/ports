@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2019/05/10 13:27:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/10/03 10:54:27 ajacoutot Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
@@ -40,6 +40,7 @@ share/gtk-doc/python/gtkdoc/__init__.py
 share/gtk-doc/python/gtkdoc/check.py
 share/gtk-doc/python/gtkdoc/common.py
 share/gtk-doc/python/gtkdoc/config.py
+share/gtk-doc/python/gtkdoc/config_data.py
 share/gtk-doc/python/gtkdoc/fixxref.py
 share/gtk-doc/python/gtkdoc/highlight.py
 share/gtk-doc/python/gtkdoc/md_to_db.py
