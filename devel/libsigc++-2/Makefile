@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2020/03/26 08:30:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2020/10/03 10:16:19 ajacoutot Exp $
 
 PORTROACH=		limit:^2
 
 COMMENT=		callback framework for C++
 
-GNOME_VERSION=		2.10.3
+GNOME_VERSION=		2.10.4
 GNOME_PROJECT=		libsigc++
 
 CATEGORIES=		devel
@@ -21,17 +21,13 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} m
+WANTLIB += ${COMPILER_LIBCXX}
 
-MODULES=		x11/gnome
+MODULES=		devel/meson \
+			x11/gnome
 
 # c++11
 COMPILER =		base-clang ports-gcc
-
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		M4='m4 -g' \
-			ac_cv_path_DOT= \
-			ac_cv_path_DOXYGEN=
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
