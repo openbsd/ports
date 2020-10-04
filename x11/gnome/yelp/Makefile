@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.138 2020/05/14 16:09:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2020/10/04 10:03:07 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
-GNOME_VERSION=		3.36.0
+GNOME_VERSION=		3.36.1
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 
@@ -25,7 +25,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png psl secret-1 soup-2.4
 WANTLIB += sqlite3 tasn1 unistring webkit2gtk-4.0 webp webpdemux
 WANTLIB += woff2common woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
-WANTLIB += xml2 xshmfence xslt z
+WANTLIB += xml2 xshmfence xslt z gstallocators-1.0
 
 COMPILER=		base-clang ports-gcc base-gcc
 
