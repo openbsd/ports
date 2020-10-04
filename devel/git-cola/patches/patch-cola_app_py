@@ -1,11 +1,11 @@
-$OpenBSD: patch-cola_app_py,v 1.7 2020/05/25 13:38:05 bket Exp $
+$OpenBSD: patch-cola_app_py,v 1.8 2020/10/04 14:34:48 bket Exp $
 
 Use ssh-askpass implementation from xenocara.
 
 Index: cola/app.py
 --- cola/app.py.orig
 +++ cola/app.py
-@@ -101,7 +101,7 @@ def setup_environment():
+@@ -102,7 +102,7 @@ def setup_environment():
      elif sys.platform == 'darwin':
          askpass = resources.share('bin', 'ssh-askpass-darwin')
      else:
