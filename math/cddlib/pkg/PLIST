@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/16 04:46:18 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/04 07:27:37 martin Exp $
 @bin bin/adjacency
 @bin bin/adjacency_gmp
 @bin bin/allfaces
@@ -27,24 +27,23 @@
 @bin bin/testlp3_gmp
 @bin bin/testshoot
 @bin bin/testshoot_gmp
-include/cdd.h
-include/cdd_f.h
-include/cddmp.h
-include/cddmp_f.h
-include/cddtypes.h
-include/cddtypes_f.h
-include/setoper.h
-include/splitmix64.h
+include/cddlib/
+include/cddlib/cdd.h
+include/cddlib/cdd_f.h
+include/cddlib/cddmp.h
+include/cddlib/cddmp_f.h
+include/cddlib/cddtypes.h
+include/cddlib/cddtypes_f.h
+include/cddlib/setoper.h
+include/cddlib/splitmix64.h
 @static-lib lib/libcdd.a
 lib/libcdd.la
 @lib lib/libcdd.so.${LIBcdd_VERSION}
 @static-lib lib/libcddgmp.a
 lib/libcddgmp.la
 @lib lib/libcddgmp.so.${LIBcddgmp_VERSION}
+lib/pkgconfig/cddlib.pc
 share/doc/cddlib/
-share/doc/cddlib/cddlibman.dvi
-share/doc/cddlib/cddlibman.pdf
-share/doc/cddlib/cddlibman.ps
 share/doc/cddlib/examples/
 share/doc/cddlib/examples-ext/
 share/doc/cddlib/examples-ext/ccc4.ext
