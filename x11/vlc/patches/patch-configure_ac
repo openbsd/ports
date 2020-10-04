@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.38 2020/05/15 06:32:34 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.39 2020/10/04 18:35:45 sthen Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -13,7 +13,7 @@ Index: configure.ac
      ;;
    netbsd*)
      SYS=netbsd
-@@ -1095,22 +1094,6 @@ AC_ARG_ENABLE(optimizations,
+@@ -1122,22 +1121,6 @@ AC_ARG_ENABLE(optimizations,
  
  dnl Check for various optimization flags
  AS_IF([test "${enable_optimizations}" != "no"], [
