@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/08/31 06:09:23 rsadowski Exp $ #
+# $OpenBSD: Makefile,v 1.10 2020/10/04 15:48:32 rsadowski Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.0.1
+V =		3.0.2
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -35,7 +35,8 @@ BUILD_DEPENDS =		devel/gettext,-tools
 BUILD_DEPENDS +=	devel/cmocka
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+			x11/gtk+3,-guic \
+			x11/qt5/qtgraphicaleffects
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
