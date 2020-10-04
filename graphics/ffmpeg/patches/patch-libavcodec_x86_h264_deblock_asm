@@ -1,0 +1,16 @@
+$OpenBSD: patch-libavcodec_x86_h264_deblock_asm,v 1.1 2020/10/04 18:33:40 sthen Exp $
+
+x86/h264_deblock: fix warning about trailing empty parameter.
+
+Index: libavcodec/x86/h264_deblock.asm
+--- libavcodec/x86/h264_deblock.asm.orig
++++ libavcodec/x86/h264_deblock.asm
+@@ -1185,7 +1185,7 @@ cglobal deblock_h_chroma_8, 5, 7, 8, 0-16, pix_, strid
+     STORE_8_ROWS PASS8ROWS(pix_q - 2, r5 - 2, stride_q, r6)
+ RET
+ 
+-cglobal deblock_h_chroma422_8, 5, 7, 8, 0-16, pix_, stride_, alpha_, beta_, tc0_,
++cglobal deblock_h_chroma422_8, 5, 7, 8, 0-16, pix_, stride_, alpha_, beta_, tc0_
+     CHROMA_H_START_XMM r5, r6
+     LOAD_8_ROWS PASS8ROWS(pix_q - 2, r5 - 2, stride_q, r6)
+     TRANSPOSE_8x4B_XMM
