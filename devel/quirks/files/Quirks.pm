@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1067 2020/10/03 10:02:44 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1068 2020/10/04 06:11:19 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1852,6 +1852,7 @@ my $obsolete_reason = {
 	'lazarus' => 0,
 	'fpc' => 5,
 	'exaile' => 13,
+	'instead-launcher' => 3,
 };
 
 # reasons for obsolete packages
