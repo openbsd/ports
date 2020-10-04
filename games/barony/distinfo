@@ -1,2 +1,4 @@
-SHA256 (Barony-3.2.3.tar.gz) = M0tAqqGtVXFQaBWqYBpw1B5L1EqnBqp52MIeChIlwm8=
-SIZE (Barony-3.2.3.tar.gz) = 53508615
+SHA256 (Barony-3.3.7.tar.gz) = oLiULiaeja/MQhcykryxvUrNHC3TXVtIOgpgWe8ne7M=
+SHA256 (rapidjson-v1.1.0.tar.gz) = v3ztKXBKHmlvvM8qK06gaOd3T6N/bX3UA50Hh/i+2Y4=
+SIZE (Barony-3.3.7.tar.gz) = 53830405
+SIZE (rapidjson-v1.1.0.tar.gz) = 1019402

@@ -1,0 +1,19 @@
+$OpenBSD: patch-cmake_Modules_FindThreads_cmake,v 1.1 2020/10/04 11:38:59 solene Exp $
+
+OpenBSD threads lib is pthread
+
+Index: cmake/Modules/FindThreads.cmake
+--- cmake/Modules/FindThreads.cmake.orig
++++ cmake/Modules/FindThreads.cmake
+@@ -26,9 +26,9 @@ ELSE(CMAKE_HAVE_SPROC_H)
+     SET(CMAKE_HAVE_THREADS_LIBRARY)
+     IF(NOT THREADS_HAVE_PTHREAD_ARG)
+       # Do we have -lpthreads
+-      CHECK_LIBRARY_EXISTS(pthreads pthread_create "" CMAKE_HAVE_PTHREADS_CREATE)
++      CHECK_LIBRARY_EXISTS(pthread pthread_create "" CMAKE_HAVE_PTHREADS_CREATE)
+       IF(CMAKE_HAVE_PTHREADS_CREATE)
+-        SET(CMAKE_THREAD_LIBS_INIT "-lpthreads")
++        SET(CMAKE_THREAD_LIBS_INIT "-lpthread")
+         SET(CMAKE_HAVE_THREADS_LIBRARY 1)
+       ENDIF(CMAKE_HAVE_PTHREADS_CREATE)
+       # Ok, how about -lpthread

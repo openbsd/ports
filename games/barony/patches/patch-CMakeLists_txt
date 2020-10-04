@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/10/01 12:00:12 solene Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2020/10/04 11:38:59 solene Exp $
 
 Remove hardcoded -O3
 Rename binary to barony-bin because we are invoking the
@@ -7,109 +7,107 @@ game via a wrapper script, which is named barony.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -58,14 +58,14 @@ if( NOT WIN32 )
-   if(PANDORA)
-   set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin")
-   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall ")
--  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin -fsingle-precision-constant")
--  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin -fsingle-precision-constant")
-+  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}  -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin -fsingle-precision-constant")
-+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}  -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin -fsingle-precision-constant")
+@@ -14,7 +14,7 @@ endif()
+ if (DEFINED ENV{OPTIMIZATION_LEVEL})
+ 	set (OPTIMIZATION_LEVEL $ENV{OPTIMIZATION_LEVEL})
+ else()
+-	set (OPTIMIZATION_LEVEL "-O3")
++	set (OPTIMIZATION_LEVEL "")
+ endif()
+ 
+ if (DEFINED ENV{EOS_ENABLED})
+@@ -363,7 +363,7 @@ if (APPLE)
+   #set_source_files_properties(${GAME_SOURCES} PROPERTIES COMPILE_FLAGS "-stdlib=libc++")
+ else()
+   if (GAME_ENABLED)
+-    add_executable(barony ${GAME_SOURCES})
++    add_executable(barony-bin ${GAME_SOURCES})
+   endif (GAME_ENABLED)
+ endif(APPLE)
+ 
+@@ -385,15 +385,15 @@ if (GAME_ENABLED)
+   else(WIN32)
+     if( ("${CMAKE_SIZEOF_VOID_P}" EQUAL "8") AND (NOT APPLE) )
+       # 64 bit
+-      target_link_libraries(barony -L/usr/lib64 -lstdc++)
++      target_link_libraries(barony-bin -L/usr/lib64 -lstdc++)
+     endif()
+-    target_link_libraries(barony ${SDL2_LIBRARIES} ${SDL2_LIBRARY} ${SDL2IMAGE_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2TTF_LIBRARY})
++    target_link_libraries(barony-bin ${SDL2_LIBRARIES} ${SDL2_LIBRARY} ${SDL2IMAGE_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2TTF_LIBRARY})
+     if (STEAMWORKS_ENABLED)
+-      target_link_libraries(barony ${STEAMWORKS_LIBRARY})
++      target_link_libraries(barony-bin ${STEAMWORKS_LIBRARY})
+       #target_link_libraries(barony ${STEAMWORKS_CWRAPPER_LIBRARIES} -lstdc++)
+ 	endif()
+     if (EOS_ENABLED)
+-      target_link_libraries(barony ${EOS_LIBRARIES})
++      target_link_libraries(barony-bin ${EOS_LIBRARIES})
+     endif()
+     if (APPLE)
+       target_link_libraries(barony ${GLUT_LIBRARIES} ${PROJECT_SOURCE_DIR}/libpng16.16.dylib) #Wait...what? if(APPLE) in if(WIN32)? What was I thinking back then, haha.
+@@ -403,23 +403,23 @@ if (GAME_ENABLED)
+       find_path(EXECINFO_INC NAMES execinfo.h)
+       find_library(EXECINFO_LIB NAMES execinfo)
+       include_directories(${EXECINFO_INC})
+-      target_link_libraries(barony ${EXECINFO_LIB})
++      target_link_libraries(barony-bin ${EXECINFO_LIB})
+     endif()
+   endif()
+-  target_link_libraries(barony ${OPENGL_LIBRARIES})
+-  target_link_libraries(barony ${THREADS_LIBRARIES})
+-  target_link_libraries(barony -lm)
++  target_link_libraries(barony-bin ${OPENGL_LIBRARIES})
++  target_link_libraries(barony-bin ${THREADS_LIBRARIES})
++  target_link_libraries(barony-bin -lm)
+   if (NOT CMAKE_SYSTEM_NAME MATCHES "Haiku")
+-	  target_link_libraries(barony -lc)
++	  target_link_libraries(barony-bin -lc)
    else()
-   set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -pg -ffast-math -funroll-loops -fstrict-aliasing")
-   #set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -pg -fsanitize=address -fno-omit-frame-pointer -fsanitize=undefined -fno-sanitize-recover -Wreturn-type -Werror=return-type")
-   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -pg")
--  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -ffast-math -funroll-loops -fstrict-aliasing")
--  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
-+  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}  -ffast-math -funroll-loops -fstrict-aliasing")
-+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} ")
+ 	  target_link_libraries(barony -lroot)
+   endif()
+   if( NOT WIN32 AND NOT APPLE)
+     #Remember, Windows and Mac aren't using find_package for FMOD and PNG.
+-    target_link_libraries(barony ${PNG_LIBRARY})
+-    target_link_libraries(barony ${PHYSFS_LIBRARY})
++    target_link_libraries(barony-bin ${PNG_LIBRARY})
++    target_link_libraries(barony-bin ${PHYSFS_LIBRARY})
+     if (FMOD_FOUND)
+-      target_link_libraries(barony ${FMOD_LIBRARY})
++      target_link_libraries(barony-bin ${FMOD_LIBRARY})
+     endif()
    endif()
    if (APPLE)
-     set (Apple 1)
-@@ -255,7 +255,7 @@ message("${CMAKE_CXX_FLAGS_DEBUG}")
- message("Release flags: ")
- message("${CMAKE_C_FLAGS_RELEASE}")
- message("${CMAKE_CXX_FLAGS_RELEASE}")
--#-O3 -DNDEBUG -Wall -pg -ffast-math -funroll-loops -fstrict-aliasing
-+# -DNDEBUG -Wall -pg -ffast-math -funroll-loops -fstrict-aliasing
- message("***************************")
+@@ -436,14 +436,14 @@ if (GAME_ENABLED)
+       target_link_libraries(barony -lfmodex) #Finally manually link fmod for mac.
+     endif()
+   endif(APPLE)
+-  target_link_libraries(barony ${EXTRA_LIBS}) #Apple needs this for OpenGL to work.
++  target_link_libraries(barony-bin ${EXTRA_LIBS}) #Apple needs this for OpenGL to work.
  
- 
-@@ -292,7 +292,7 @@ SET_SOURCE_FILES_PROPERTIES(${MACOSX_BUNDLE_ICON_FILE}
- set_source_files_properties(${GAME_SOURCES} PROPERTIES COMPILE_FLAGS "-x objective-c++")
- #set_source_files_properties(${GAME_SOURCES} PROPERTIES COMPILE_FLAGS "-stdlib=libc++")
- else()
--add_executable(barony ${GAME_SOURCES})
-+add_executable(barony-bin ${GAME_SOURCES})
- endif()
- 
- if(WIN32)
-@@ -309,9 +309,9 @@ if(WIN32)
- else()
-   if("${CMAKE_SIZEOF_VOID_P}" EQUAL "8")
-     # 64 bit
--    target_link_libraries(barony -L/usr/lib64 -lstdc++)
-+    target_link_libraries(barony-bin -L/usr/lib64 -lstdc++)
+   if (OPENAL)
+-    target_link_libraries(barony ${OPENAL_LIBRARY})
++    target_link_libraries(barony-bin ${OPENAL_LIBRARY})
+     if(TREMOR_ENABLED)
+-      target_link_libraries(barony ${TREMOR_LIBRARY})
++      target_link_libraries(barony-bin ${TREMOR_LIBRARY})
+     else()
+-      target_link_libraries(barony ${VORBISFILE_LIBRARY} ${OGG_LIBRARY})
++      target_link_libraries(barony-bin ${VORBISFILE_LIBRARY} ${OGG_LIBRARY})
+     endif()
    endif()
--  target_link_libraries(barony ${SDL2_LIBRARIES} ${SDL2_LIBRARY} ${SDL2IMAGE_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2TTF_LIBRARY})
-+  target_link_libraries(barony-bin ${SDL2_LIBRARIES} ${SDL2_LIBRARY} ${SDL2IMAGE_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2TTF_LIBRARY})
-   if (STEAMWORKS_ENABLED)
-     target_link_libraries(barony ${STEAMWORKS_LIBRARY})
-     #target_link_libraries(barony ${STEAMWORKS_CWRAPPER_LIBRARIES} -lstdc++)
-@@ -324,16 +324,16 @@ else()
-     find_path(EXECINFO_INC NAMES execinfo.h)
-     find_library(EXECINFO_LIB NAMES execinfo)
-     include_directories(${EXECINFO_INC})
--    target_link_libraries(barony ${EXECINFO_LIB})
-+    target_link_libraries(barony-bin ${EXECINFO_LIB})
-   endif()
- endif()
--target_link_libraries(barony ${OPENGL_LIBRARIES})
--target_link_libraries(barony ${THREADS_LIBRARIES})
--target_link_libraries(barony -lm -lc)
-+target_link_libraries(barony-bin ${OPENGL_LIBRARIES})
-+target_link_libraries(barony-bin ${THREADS_LIBRARIES})
-+target_link_libraries(barony-bin -lm -lc)
- if( NOT WIN32 AND NOT APPLE)
-   #Remember, Windows and Mac aren't using find_package for FMOD and PNG.
--  target_link_libraries(barony ${PNG_LIBRARY})
--  target_link_libraries(barony ${PHYSFS_LIBRARY})
-+  target_link_libraries(barony-bin ${PNG_LIBRARY})
-+  target_link_libraries(barony-bin ${PHYSFS_LIBRARY})
-   if (FMOD_FOUND)
-     target_link_libraries(barony ${FMOD_LIBRARY})
-   endif()
-@@ -352,14 +352,14 @@ if(APPLE)
-     target_link_libraries(barony -lfmodex) #Finally manually link fmod for mac.
-   endif()
- endif()
--target_link_libraries(barony ${EXTRA_LIBS}) #Apple needs this for OpenGL to work.
-+target_link_libraries(barony-bin ${EXTRA_LIBS}) #Apple needs this for OpenGL to work.
- 
- if (OPENAL)
--  target_link_libraries(barony ${OPENAL_LIBRARY})
-+  target_link_libraries(barony-bin ${OPENAL_LIBRARY})
-   if(TREMOR_ENABLED)
--    target_link_libraries(barony ${TREMOR_LIBRARY})
-+    target_link_libraries(barony-bin ${TREMOR_LIBRARY})
-   else()
--    target_link_libraries(barony ${VORBISFILE_LIBRARY} ${OGG_LIBRARY})
-+    target_link_libraries(barony-bin ${VORBISFILE_LIBRARY} ${OGG_LIBRARY})
-   endif()
- endif()
- 
-@@ -372,7 +372,7 @@ if (NOT APPLE AND UNIX)
-   endif()
+ endif(GAME_ENABLED)
+@@ -458,7 +458,7 @@ if (NOT APPLE AND UNIX)
    message(STATUS "Base data directory ${BASE_DATA_DIR}")
  
--  install(TARGETS barony
-+  install(TARGETS barony-bin
- 	 RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    COMPONENT Runtime
-   )
-@@ -457,7 +457,7 @@ if (NOT APPLE AND UNIX)
-     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT Runtime
-   )
+   if (GAME_ENABLED)
+-    install(TARGETS barony
++    install(TARGETS barony-bin
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     COMPONENT Runtime
+     )
+@@ -561,7 +561,7 @@ if (NOT APPLE AND UNIX)
+     )
+   endif()
  
 -  install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lang DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/barony)
 +  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lang DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/barony)

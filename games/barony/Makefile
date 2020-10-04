@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/18 21:37:44 solene Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/04 11:38:58 solene Exp $
 
-V =		3.2.3
+V =		3.3.7
 COMMENT =	3D, first person roguelike
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11
@@ -14,6 +14,11 @@ MAINTAINER =	David Carlier <devnexen@gmail.com>
 
 # GPLv3 only
 PERMIT_PACKAGE =	Yes
+
+RAPIDJSON_V =		1.1.0
+MASTER_SITES0 =		https://github.com/Tencent/rapidjson/archive/
+DISTFILES +=		Barony-${V}.tar.gz \
+			rapidjson-{}v${RAPIDJSON_V}.tar.gz:0
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 SDL2_image SDL2_net
 WANTLIB += SDL2_ttf c execinfo m ogg openal png vorbisfile physfs
@@ -33,6 +38,7 @@ LIB_DEPENDS =	audio/libvorbis \
 		devel/sdl2-ttf \
 		graphics/png
 
+CONFIGURE_ENV =		RAPID_JSONROOT="${WRKDIR}/rapidjson-${RAPIDJSON_V}/"
 CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DOPENAL_ENABLED=ON \
