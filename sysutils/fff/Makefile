@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/15 15:36:32 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/04 14:34:19 bket Exp $
 
 COMMENT =	simple and fast file manager
 
 GH_ACCOUNT =	dylanaraps
 GH_PROJECT =	fff
-GH_TAGNAME =	2.1
+GH_TAGNAME =	2.2
 
 CATEGORIES =	sysutils
 

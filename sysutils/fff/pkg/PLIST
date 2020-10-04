@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/15 15:36:32 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/04 14:34:19 bket Exp $
 bin/fff
 @man man/man1/fff.1
+share/doc/fff/
+share/doc/fff/README.md
