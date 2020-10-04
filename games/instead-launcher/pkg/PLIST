@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:47 espie Exp $
-@bin bin/instead-launcher
-share/applications/instead-launcher.desktop
-@tag update-desktop-database
