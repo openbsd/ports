@@ -1,12 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.13 2020/07/18 20:27:52 bket Exp $
-
-OpenBSD does not have procfs. Taken from
-https://gitlab.com/openconnect/ocserv/-/merge_requests/184
+$OpenBSD: patch-configure_ac,v 1.14 2020/10/04 14:36:12 bket Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -211,7 +211,7 @@ if test "$test_for_geoip" = yes && test "$have_maxmind
+@@ -222,7 +222,7 @@ if test "$test_for_geoip" = yes && test "$have_maxmind
  fi
  
  have_readline=no
@@ -15,12 +12,3 @@ Index: configure.ac
  #include <stdio.h>
  #include <readline/readline.h>], [rl_replace_line(0,0);])
    if test x$ac_cv_libreadline = xyes; then
-@@ -641,6 +641,8 @@ fi
- 
- AM_CONDITIONAL(ENABLE_OIDC_AUTH,  test "x$enable_oidc_auth" = xyes)
- AM_CONDITIONAL(ENABLE_OIDC_AUTH_TESTS, test "x$enable_oidc_auth" = xyes)
-+
-+AC_CHECK_FILE(/proc/self/exe, AC_DEFINE([PROC_FS_SUPPORTED],[1], [procfs supported]), [])
- 
- uid=$(id -u)
- gid=$(id -g)
