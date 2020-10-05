@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/03/15 19:04:25 solene Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/10/05 22:09:35 solene Exp $
 @newgroup _prosody:638
 @newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/prosody
@@ -153,6 +153,7 @@ lib/prosody/util/caps.lua
 lib/prosody/util/dataforms.lua
 lib/prosody/util/datamanager.lua
 lib/prosody/util/datetime.lua
+lib/prosody/util/dbuffer.lua
 lib/prosody/util/debug.lua
 lib/prosody/util/dependencies.lua
 @so lib/prosody/util/encodings.so
@@ -160,6 +161,7 @@ lib/prosody/util/envload.lua
 lib/prosody/util/events.lua
 lib/prosody/util/filters.lua
 lib/prosody/util/format.lua
+lib/prosody/util/gc.lua
 @so lib/prosody/util/hashes.so
 lib/prosody/util/helpers.lua
 lib/prosody/util/hex.lua
