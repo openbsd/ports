@@ -1,0 +1,75 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/10/05 16:05:26 thfr Exp $
+
+set correct library version
+disable bundled mojoshader in favor of the one from ports
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -3,6 +3,9 @@
+ cmake_minimum_required(VERSION 2.8.12)
+ project(FNA3D C)
+ 
++include_directories("${LOCALBASE}/include"
++			"${X11BASE}/include")
++
+ # Options
+ option(BUILD_SHARED_LIBS "Build shared library" ON)
+ 
+@@ -10,7 +13,7 @@ option(BUILD_SHARED_LIBS "Build shared library" ON)
+ SET(LIB_MAJOR_VERSION "0")
+ SET(LIB_MINOR_VERSION "20")
+ SET(LIB_REVISION "09")
+-SET(LIB_VERSION "${LIB_MAJOR_VERSION}.${LIB_MINOR_VERSION}.${LIB_REVISION}")
++SET(LIB_VERSION "${LIBFNA3D_VERSION}")
+ 
+ # Build Type
+ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+@@ -94,28 +97,11 @@ add_library(FNA3D
+ 	src/FNA3D_Image.c
+ 	src/FNA3D_PipelineCache.c
+ )
+-add_library(mojoshader STATIC
+-	MojoShader/mojoshader.c
+-	MojoShader/mojoshader_effects.c
+-	MojoShader/mojoshader_common.c
+-	MojoShader/mojoshader_d3d11.c
+-	MojoShader/mojoshader_opengl.c
+-	MojoShader/mojoshader_metal.c
+-	MojoShader/mojoshader_vulkan.c
+-	MojoShader/profiles/mojoshader_profile_common.c
+-	MojoShader/profiles/mojoshader_profile_glsl.c
+-	MojoShader/profiles/mojoshader_profile_hlsl.c
+-	MojoShader/profiles/mojoshader_profile_metal.c
+-	MojoShader/profiles/mojoshader_profile_spirv.c
+-)
+ 
+ # Build flags
+ if(NOT MSVC)
+ 	set_property(TARGET FNA3D PROPERTY COMPILE_FLAGS "-std=gnu99 -Wall -Wno-strict-aliasing -pedantic")
+ endif()
+-if(BUILD_SHARED_LIBS)
+-	set_property(TARGET mojoshader PROPERTY POSITION_INDEPENDENT_CODE ON)
+-endif()
+ 
+ # FNA3D folders as includes, for other targets to consume
+ target_include_directories(FNA3D PUBLIC
+@@ -123,10 +109,6 @@ target_include_directories(FNA3D PUBLIC
+ 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+ 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Vulkan-Headers/include>
+ )
+-target_include_directories(mojoshader PUBLIC
+-	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/MojoShader>
+-	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Vulkan-Headers/include>
+-)
+ 
+ # MinGW builds should statically link libgcc
+ if(MINGW)
+@@ -162,7 +144,6 @@ else()
+ 	else()
+ 		message(STATUS "no TARGET SDL2::SDL2, or SDL2, using variables")
+ 		target_include_directories(FNA3D PUBLIC "$<BUILD_INTERFACE:${SDL2_INCLUDE_DIRS}>")
+-		target_include_directories(mojoshader PUBLIC "$<BUILD_INTERFACE:${SDL2_INCLUDE_DIRS}>")
+ 		target_link_libraries(FNA3D PUBLIC ${SDL2_LIBRARIES})
+ 	endif()
+ endif()

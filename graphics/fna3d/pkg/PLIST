@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/05 16:05:26 thfr Exp $
+include/FNA3D.h
+include/FNA3D_Image.h
+@lib lib/libFNA3D.so.${LIBFNA3D_VERSION}
