@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-gdbm,v 1.1.1.1 2020/10/05 20:48:12 kmos Exp $
+@option no-default-conflict
+@option is-branch
+@conflict python-gdbm-${VERSION_SPEC}
+@so lib/python3.9/lib-dynload/_gdbm.so
