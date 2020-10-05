@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.427 2020/10/04 06:07:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.428 2020/10/05 21:08:19 edd Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -204,6 +204,7 @@
      SUBDIR += nsnake
      SUBDIR += nudoku
      SUBDIR += numptyphysics
+     SUBDIR += odamex
      SUBDIR += oilwar
      SUBDIR += omega
      SUBDIR += oolite
