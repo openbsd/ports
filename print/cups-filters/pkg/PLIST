@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2020/08/26 06:46:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2020/10/05 08:54:28 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -49,7 +49,6 @@ libexec/cups/filter/gstopxl
 @bin libexec/cups/filter/imagetopdf
 libexec/cups/filter/imagetops
 @bin libexec/cups/filter/imagetoraster
-@bin libexec/cups/filter/mupdftoraster
 @bin libexec/cups/filter/pdftopdf
 @bin libexec/cups/filter/pdftops
 @bin libexec/cups/filter/pdftoraster
@@ -95,7 +94,6 @@ share/cups/data/topsecret.pdf
 share/cups/data/unclassified.pdf
 share/cups/drv/cupsfilters.drv
 share/cups/mime/cupsfilters-ghostscript.convs
-share/cups/mime/cupsfilters-mupdf.convs
 share/cups/mime/cupsfilters-poppler.convs
 share/cups/mime/cupsfilters.convs
 share/cups/mime/cupsfilters.types

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2020/10/03 11:35:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.183 2020/10/05 08:54:28 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
@@ -6,6 +6,7 @@ BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 COMMENT=	OpenPrinting CUPS filters
 
 DISTNAME=	cups-filters-1.28.3
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -37,13 +38,11 @@ USE_GMAKE=	Yes
 CFLAGS +=	-O0
 .endif
 
-# gs cups driver, pdftocairo, mutool
+# default is: --with-pdftops=hybrid (pdftops+gs)
 BUILD_DEPENDS=	print/ghostscript/gnu \
-		print/poppler,-utils \
-		textproc/mupdf
+		print/poppler,-utils
 RUN_DEPENDS=	print/ghostscript/gnu \
-		print/poppler,-utils \
-		textproc/mupdf
+		print/poppler,-utils
 
 LIB_DEPENDS=	print/cups,-libs \
 		print/poppler \
@@ -67,10 +66,9 @@ CONFIGURE_ARGS=	--with-gs-path=${LOCALBASE}/bin/gs \
 		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
 		--with-shell=/bin/ksh \
 		--without-php \
-		--disable-braille
-
-# http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7554
-CONFIGURE_ENV +=ac_cv_prog_CUPS_PDFTOPS=${LOCALBASE}/bin/pdftops
+		--with-pdftops-path=${LOCALBASE}/bin/pdftops \
+		--disable-braille \
+		--disable-mutool
 
 FLAVORS=	ldap
 FLAVOR?=
