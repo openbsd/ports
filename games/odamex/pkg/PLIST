@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/05 21:07:37 edd Exp $
+@bin bin/odalaunch
+@bin bin/odamast
+@bin bin/odamex
+@bin bin/odasrv
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/odamex/
+share/examples/odamex/coop-doom.cfg
+share/examples/odamex/coop-masterlevels.cfg
+share/examples/odamex/coop-modern.cfg
+share/examples/odamex/coop-zdoom.cfg
+share/examples/odamex/ctf-doom.cfg
+share/examples/odamex/ctf-pub.cfg
+share/examples/odamex/ctf-wdl.cfg
+share/examples/odamex/dm-doom.cfg
+share/examples/odamex/dm-modern.cfg
+share/examples/odamex/dm-zdoom.cfg
+share/examples/odamex/duel-altdeath.cfg
+share/examples/odamex/duel-ddl.cfg
+share/examples/odamex/duel-doom.cfg
+share/examples/odamex/duel-zddl.cfg
+share/examples/odamex/duel-zdoom.cfg
+share/examples/odamex/tdm-doom.cfg
+share/examples/odamex/tdm-modern.cfg
+share/examples/odamex/tdm-zdoom.cfg
+share/odamex/
+@comment share/odamex/LICENSE
+@comment share/odamex/README
+share/odamex/odamex.wad

@@ -1,0 +1,14 @@
+$OpenBSD: patch-client_CMakeLists_txt,v 1.1.1.1 2020/10/05 21:07:37 edd Exp $
+
+Index: client/CMakeLists.txt
+--- client/CMakeLists.txt.orig
++++ client/CMakeLists.txt
+@@ -234,7 +234,7 @@ if(SDL_VERSION)
+   endif()
+ 
+   if(UNIX AND NOT APPLE)
+-    target_link_libraries(odamex rt)
++    target_link_libraries(odamex execinfo)
+     if(X11_FOUND)
+       target_link_libraries(odamex X11)
+     endif()

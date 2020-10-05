@@ -1,0 +1,56 @@
+$OpenBSD: patch-server_CMakeLists_txt,v 1.1.1.1 2020/10/05 21:07:37 edd Exp $
+
+Don't use the bundled miniupnpc.
+
+Index: server/CMakeLists.txt
+--- server/CMakeLists.txt.orig
++++ server/CMakeLists.txt
+@@ -33,12 +33,6 @@ set(JSONCPP_DIR ../libraries/jsoncpp)
+ file(GLOB JSONCPP_HEADERS ${JSONCPP_DIR}/json/*.h)
+ set(JSONCPP_SOURCE ${JSONCPP_DIR}/jsoncpp.cpp)
+ 
+-# MiniUPnPc
+-if (USE_MINIUPNP)
+-  set(MINIUPNPC_DIR ../libraries/libminiupnpc)
+-  set(MINIUPNPC_STATIC_LIBRARIES upnpc-static)
+-endif()
+-
+ # git describe
+ set_source_files_properties(${COMMON_DIR}/version.cpp PROPERTIES COMPILE_FLAGS -DGIT_DESCRIBE=\\"${GIT_DESCRIBE}\\")
+ 
+@@ -59,7 +53,7 @@ include_directories(${JSONCPP_DIR} ${COMMON_DIR} ${SER
+ 
+ # Include miniupnpc if we want it
+ if (USE_MINIUPNP)
+-  include_directories(${MINIUPNPC_DIR})
++  include_directories(${LOCALBASE}/include/miniupnpc)
+ endif()
+ 
+ # Set up FHS installation path
+@@ -67,6 +61,8 @@ if(NOT APPLE AND NOT WIN32)
+   add_definitions(-DINSTALL_PREFIX="${CMAKE_INSTALL_PREFIX}")
+ endif()
+ 
++link_directories(${LOCALBASE}/lib)
++
+ add_executable(odasrv
+   ${JSONCPP_SOURCE} ${JSONCPP_HEADERS}
+   ${COMMON_SOURCES} ${COMMON_HEADERS}
+@@ -74,7 +70,7 @@ add_executable(odasrv
+   ${SERVER_WIN32_HEADERS} ${SERVER_WIN32_RESOURCES})
+ 
+ if (USE_MINIUPNP)
+-  target_link_libraries(odasrv ${MINIUPNPC_STATIC_LIBRARIES})
++  target_link_libraries(odasrv miniupnpc)
+ endif()
+ 
+ if(WIN32)
+@@ -87,7 +83,7 @@ elseif(UNIX)
+ endif()
+ 
+ if(UNIX AND NOT APPLE)
+-  target_link_libraries(odasrv rt)
++  target_link_libraries(odasrv execinfo)
+ endif()
+ 
+ if(APPLE)

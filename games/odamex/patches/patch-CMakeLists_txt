@@ -1,0 +1,34 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/10/05 21:07:37 edd Exp $
+
+INSTALL_PREFIX needs to be set to find executables and wads.
+
+Don't use the bundled miniupnpc.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -10,6 +10,7 @@ set(CMAKE_INSTALL_BINDIR "bin")
+ set(CMAKE_INSTALL_DATADIR "share")
+ include(GNUInstallDirs OPTIONAL)
+ 
++add_definitions(-DINSTALL_PREFIX="${PREFIX}")
+ add_definitions(-DINSTALL_BINDIR="${CMAKE_INSTALL_BINDIR}")
+ add_definitions(-DINSTALL_DATADIR="${CMAKE_INSTALL_DATADIR}")
+ 
+@@ -149,16 +150,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/module
+ # git describe
+ include(GetGitRevisionDescription)
+ git_describe(GIT_DESCRIBE --tags --always)
+-
+-# MiniUPnPc
+-if (USE_MINIUPNP)
+-  set(UPNPC_BUILD_STATIC ON CACHE INTERNAL "" FORCE)
+-  set(UPNPC_BUILD_SHARED OFF CACHE INTERNAL "" FORCE)
+-  set(UPNPC_BUILD_TESTS OFF CACHE INTERNAL "" FORCE)
+-  set(UPNPC_INSTALL OFF CACHE INTERNAL "" FORCE)
+-  mark_as_advanced(FORCE UPNPC_INSTALL)
+-  add_subdirectory(libraries/libminiupnpc)
+-endif()
+ 
+ # Subdirectories for Odamex projects
+ if(BUILD_CLIENT)

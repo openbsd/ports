@@ -1,0 +1,15 @@
+$OpenBSD: patch-odalpapi_net_io_cpp,v 1.1.1.1 2020/10/05 21:07:37 edd Exp $
+
+AI_ALL isn't defined on OpenBSD.
+
+Index: odalpapi/net_io.cpp
+--- odalpapi/net_io.cpp.orig
++++ odalpapi/net_io.cpp
+@@ -182,7 +182,6 @@ void BufferedSocket::SetRemoteAddress(const string& Ad
+ 	addrinfo* result = NULL;
+ 
+ 	memset(&hints, 0, sizeof(struct addrinfo));
+-	hints.ai_flags = AI_ALL;
+ 	hints.ai_family = PF_INET;
+ 
+ 	if((getaddrinfo(Address.c_str(), NULL, &hints, &result)) != 0)
