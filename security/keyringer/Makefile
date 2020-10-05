@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/10/08 12:26:01 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2020/10/05 19:46:18 jca Exp $
 
 COMMENT =	manage and share secrets using GnuPG and Git
 
 DISTNAME =	keyringer-0.5.4
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -18,7 +18,7 @@ MASTER_SITES =		https://keyringer.pw/releases/
 EXTRACT_SUFX =		.tar.bz2
 
 RUN_DEPENDS =		devel/git \
-			security/gnupg2 \
+			security/gnupg>=2.2.23p1 \
 			shells/bash \
 			converters/base64
 

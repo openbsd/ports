@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_platform_openbsd_sh,v 1.1 2017/03/07 08:53:17 bentley Exp $
---- src/platform/openbsd.sh.orig	Tue Feb 28 14:02:06 2017
-+++ src/platform/openbsd.sh	Tue Feb 28 14:02:18 2017
-@@ -2,39 +2,5 @@
+$OpenBSD: patch-src_platform_openbsd_sh,v 1.2 2020/10/05 19:46:18 jca Exp $
+Index: src/platform/openbsd.sh
+--- src/platform/openbsd.sh.orig
++++ src/platform/openbsd.sh
+@@ -2,40 +2,6 @@
  # Copyright (C) 2015 David Dahlberg <david.dahlberg@fkie.fraunhofer.de>. All Rights Reserved.
  # This file is licensed under the GPLv2+. Please see COPYING for more information.
  
@@ -41,3 +42,4 @@ $OpenBSD: patch-src_platform_openbsd_sh,v 1.1 2017/03/07 08:53:17 bentley Exp $
 -
  GETOPT="gnugetopt"
  SHRED="rm -P -f"
+ BASE64="openssl base64"

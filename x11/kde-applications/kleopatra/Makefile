@@ -2,6 +2,7 @@
 
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
+REVISION =	0
 CATEGORIES =	security x11
 
 SHARED_LIBS +=  kleopatraclientcore     1.0 # 1.3.0
@@ -24,7 +25,7 @@ MODKDE5_DOCS = yes
 
 MODULES +=	x11/kde-applications
 
-RUN_DEPENDS =	security/gnupg2
+RUN_DEPENDS =	security/gnupg>=2.2.23p1
 BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	devel/kf5/kauth \

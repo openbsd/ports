@@ -1,9 +1,9 @@
-$OpenBSD: patch-test_test-lib-OPENBSD_sh,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+$OpenBSD: patch-test_test-lib-OPENBSD_sh,v 1.2 2020/10/05 19:46:17 jca Exp $
 
 Index: test/test-lib-OPENBSD.sh
 --- test/test-lib-OPENBSD.sh.orig
 +++ test/test-lib-OPENBSD.sh
-@@ -4,6 +4,10 @@ if command -v gdate >/dev/null
+@@ -4,6 +4,9 @@ if command -v gdate >/dev/null
         date () { gdate "$@"; }
         base64 () { gbase64 "$@"; }
         wc () { gwc "$@"; }
@@ -13,5 +13,4 @@ Index: test/test-lib-OPENBSD.sh
         sha256sum () { gsha256sum "$@"; }
     fi
 +gdb () { egdb "$@"; }
-+gpg () { gpg2 "$@"; }
 +tar () { gtar "$@"; }

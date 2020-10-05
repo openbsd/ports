@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2020/08/09 10:33:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.156 2020/10/05 19:46:18 jca Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py
@@ -18,6 +18,7 @@
 COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	3001.1
+REVISION =		0
 DISTNAME =		salt-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils net devel

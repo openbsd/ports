@@ -1,7 +1,6 @@
-GnuPG is a complete and free replacement for PGP. Because it does
-not use IDEA or RSA it can be used without any restrictions. GnuPG
-is nearly in compliance with RFC2440 (OpenPGP).
-
-Flavors:
-	card - build with OpenPGP card support
-	ldap - build with LDAP keyserver support
+The GNU Privacy Guard (GnuPG) is GNU's tool for secure communication
+and data storage.  It can be used to encrypt data, create digital
+signatures, help authenticating using Secure Shell and to provide a
+framework for public key cryptography.  It includes an advanced key
+management facility and is compliant with the OpenPGP and S/MIME
+standards.

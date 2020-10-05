@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2020/05/14 14:58:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2020/10/05 19:46:18 jca Exp $
 
 COMMENT=		library for bits of crypto UI and parsing
 
 GNOME_PROJECT=		gcr
 GNOME_VERSION=		3.36.0
+REVISION=		0
 
 SHARED_LIBS += gck-1                     2.1 # 0.0.0
 SHARED_LIBS += gcr-base-3                3.1 # 1.0.0
@@ -30,8 +31,8 @@ LIB_DEPENDS=		x11/gtk+3 \
 			security/libgcrypt \
 			security/p11-kit
 
-BUILD_DEPENDS=		gnupg->=2:security/gnupg2
-RUN_DEPENDS=		gnupg->=2:security/gnupg2
+BUILD_DEPENDS=		security/gnupg>=2.2.23p1
+RUN_DEPENDS=		security/gnupg>=2.2.23p1
 
 CONFIGURE_ARGS=		-Dgtk_doc=false
 

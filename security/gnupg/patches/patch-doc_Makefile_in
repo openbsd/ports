@@ -1,12 +1,20 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.10 2015/03/01 12:12:54 jca Exp $
---- doc/Makefile.in.orig	Fri Feb 27 09:37:51 2015
-+++ doc/Makefile.in	Fri Feb 27 22:39:17 2015
-@@ -422,7 +422,7 @@ gnupg1_TEXINFOS = gnupg1.texi
+$OpenBSD: patch-doc_Makefile_in,v 1.11 2020/10/05 19:46:17 jca Exp $
+
+Index: doc/Makefile.in
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -476,14 +476,6 @@ libcommontls = ../common/libcommontls.a
+ libcommontlsnpth = ../common/libcommontlsnpth.a
+ examples = examples/README examples/scd-event examples/trustlist.txt	\
+ 	   examples/vsnfd.prf examples/debug.prf                        \
+-	   examples/systemd-user/README 				\
+-	   examples/systemd-user/dirmngr.service 			\
+-	   examples/systemd-user/dirmngr.socket				\
+-	   examples/systemd-user/gpg-agent.service 			\
+-	   examples/systemd-user/gpg-agent.socket 			\
+-	   examples/systemd-user/gpg-agent-ssh.socket 			\
+-	   examples/systemd-user/gpg-agent-browser.socket		\
+-	   examples/systemd-user/gpg-agent-extra.socket 		\
+ 	   examples/gpgconf.conf examples/pwpattern.list
  
- # Need this to avoid building of dvis with automake 1.4
- DVIS = 
--pkgdata_DATA = FAQ
-+#pkgdata_DATA = FAQ
- 
- # we can't add gpg.texi gpgv.texi here because automake does not like them to
- # be built files.
+ helpfiles = help.txt help.be.txt help.ca.txt help.cs.txt		\

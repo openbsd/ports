@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/10/05 19:46:18 jca Exp $
 
 COMMENT =	simple password store
 
 DISTNAME =	password-store-1.7.3
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -20,7 +21,7 @@ RUN_DEPENDS =	converters/base64 \
 		devel/git \
 		graphics/libqrencode \
 		misc/gnugetopt \
-		security/gnupg2 \
+		security/gnupg>=2.2.23p1 \
 		shells/bash \
 		sysutils/colortree \
 		x11/xclip

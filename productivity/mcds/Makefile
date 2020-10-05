@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/31 18:58:43 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/05 19:46:17 jca Exp $
 
 COMMENT =		tty-based CardDav search tool
 
 V =			1.6
 DISTNAME =		mcds-${V}
 CATEGORIES =		productivity
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Timothy Brown <tbrown@freeshell.org>
 
@@ -17,14 +17,14 @@ WANTLIB =		assuan c curl gpg-error gpgme iconv intl xml2
 
 MASTER_SITES =		https://github.com/t-brown/mcds/releases/download/v${V}/
 
-BUILD_DEPENDS =		security/gnupg2
+BUILD_DEPENDS =		security/gnupg>=2.2.23p1
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			net/curl \
 			textproc/libxml \
 			security/gpgme
 
-RUN_DEPENDS =		security/gnupg2
+RUN_DEPENDS =		security/gnupg>=2.2.23p1
 
 CONFIGURE_STYLE =	gnu
 

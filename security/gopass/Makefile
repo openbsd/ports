@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2020/08/01 14:43:32 abieber Exp $
+# $OpenBSD: Makefile,v 1.17 2020/10/05 19:46:17 jca Exp $
 
 COMMENT =	pass compatible password manager written in go
 
 MODGO_MODNAME =	github.com/gopasspw/gopass
 MODGO_VERSION =	v1.9.2
+REVISION =	0
 DISTNAME =	gopass-${MODGO_VERSION}
 
 CATEGORIES =	security
@@ -21,7 +22,7 @@ MODGO_TYPE =	bin
 MODGO_LDFLAGS =	-X "main.version=${MODGO_VERSION}"
 
 RUN_DEPENDS =	devel/git \
-		security/gnupg2
+		security/gnupg>=2.2.23p1
 
 # for tests; some still fail
 PORTHOME =	${WRKDIR}

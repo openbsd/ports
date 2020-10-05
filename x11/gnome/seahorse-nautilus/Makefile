@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/07 11:20:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2020/10/05 19:46:18 jca Exp $
 
 COMMENT=		GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=		seahorse-nautilus
 GNOME_VERSION=		3.10.1
-REVISION=		12
+REVISION=		13
 
 CATEGORIES=		security
 
@@ -32,10 +32,8 @@ LIB_DEPENDS=		x11/gnome/gcr \
 
 CONFIGURE_STYLE=	gnu
 
-# security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
-BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
-RUN_DEPENDS +=		gnupg->=2:security/gnupg2
-CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
+BUILD_DEPENDS +=	security/gnupg>=2.2.23p1
+RUN_DEPENDS +=		security/gnupg>=2.2.23p1
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}

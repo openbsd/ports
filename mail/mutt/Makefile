@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.140 2020/08/31 16:52:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2020/10/05 19:46:17 jca Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.14.7
 EPOCH=		3
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -97,7 +98,5 @@ post-install:
 	mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
 	cd ${PREFIX}/share/examples/mutt; \
 	    chmod +x *.sh *.pl mutt_xtitle markdown2html
-	sed -i -e 's,gpg ,${LOCALBASE}/bin/gpg2 ,' \
-	    ${PREFIX}/share/examples/mutt/gpg.rc
 
 .include <bsd.port.mk>

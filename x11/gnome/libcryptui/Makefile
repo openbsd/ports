@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/07 11:20:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2020/10/05 19:46:18 jca Exp $
 
 COMMENT=	interface components for OpenPGP
 
 GNOME_PROJECT=	libcryptui
 GNOME_VERSION=	3.12.2
-REVISION=	9
+REVISION=	10
 
 SHARED_LIBS +=  cryptui              2.0      # 0.0
 
@@ -35,9 +35,7 @@ LIB_DEPENDS=	x11/dbus-glib \
 
 CONFIGURE_STYLE=gnu
 
-# security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
-BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
-RUN_DEPENDS +=		gnupg->=2:security/gnupg2
-CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
+BUILD_DEPENDS +=	security/gnupg>=2.2.23p1
+RUN_DEPENDS +=		security/gnupg>=2.2.23p1
 
 .include <bsd.port.mk>

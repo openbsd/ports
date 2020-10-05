@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.122 2020/06/27 18:14:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.123 2020/10/05 19:46:18 jca Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.36.2
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -35,9 +36,8 @@ LIB_DEPENDS=		databases/openldap \
 			x11/gnome/libsecret \
 			x11/libhandy
 
-# security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
-BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
-RUN_DEPENDS +=		gnupg->=2:security/gnupg2
+BUILD_DEPENDS +=	security/gnupg>=2.2.23p1
+RUN_DEPENDS +=		security/gnupg>=2.2.23p1
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

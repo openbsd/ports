@@ -1,62 +1,126 @@
-@comment $OpenBSD: PLIST,v 1.31 2016/06/29 16:14:44 espie Exp $
-@option no-default-conflict
-@option is-branch
-@conflict gnupg-<2
+@comment $OpenBSD: PLIST,v 1.32 2020/10/05 19:46:17 jca Exp $
+@conflict gnupg-<2.2.23p1
 @pkgpath ${BASE_PKGPATH},idea
+@pkgpath security/gnupg2
+@bin bin/dirmngr
+@bin bin/dirmngr-client
 @bin bin/gpg
-bin/gpg-zip
+@bin bin/gpg-agent
+@bin bin/gpg-connect-agent
+@bin bin/gpg-wks-server
+bin/gpg2
+@bin bin/gpgconf
+@bin bin/gpgparsemail
+@bin bin/gpgscm
+@bin bin/gpgsm
 @bin bin/gpgsplit
+@bin bin/gpgtar
 @bin bin/gpgv
-@info info/gnupg1.info
-libexec/gnupg/
-@bin libexec/gnupg/gpgkeys_curl
-@bin libexec/gnupg/gpgkeys_finger
-@bin libexec/gnupg/gpgkeys_hkp
-@man man/man1/gpg-zip.1
+bin/gpgv2
+@bin bin/kbxutil
+@bin bin/watchgnupg
+@info info/gnupg.info
+@bin libexec/gpg-check-pattern
+@bin libexec/gpg-preset-passphrase
+@bin libexec/gpg-protect-tool
+@bin libexec/gpg-wks-client
+@bin libexec/scdaemon
+@man man/man1/dirmngr-client.1
+@man man/man1/gpg-agent.1
+@man man/man1/gpg-connect-agent.1
+@man man/man1/gpg-preset-passphrase.1
+@man man/man1/gpg-wks-client.1
+@man man/man1/gpg-wks-server.1
 @man man/man1/gpg.1
+@man man/man1/gpgconf.1
+@man man/man1/gpgparsemail.1
+@man man/man1/gpgsm.1
+@man man/man1/gpgtar.1
 @man man/man1/gpgv.1
+@man man/man1/scdaemon.1
+@man man/man1/symcryptrun.1
+@man man/man1/watchgnupg.1
+@man man/man7/gnupg.7
+@man man/man8/addgnupghome.8
+@man man/man8/applygnupgdefaults.8
+@man man/man8/dirmngr.8
+sbin/addgnupghome
+sbin/applygnupgdefaults
 share/doc/gnupg/
-share/doc/gnupg/AUTHORS
-share/doc/gnupg/BUGS
-share/doc/gnupg/COPYING
+share/doc/gnupg/DCO
 share/doc/gnupg/DETAILS
 share/doc/gnupg/FAQ
 share/doc/gnupg/HACKING
+share/doc/gnupg/KEYSERVER
 share/doc/gnupg/OpenPGP
 share/doc/gnupg/README
-share/doc/gnupg/THANKS
-share/doc/gnupg/TODO
+share/doc/gnupg/TRANSLATE
+share/doc/gnupg/examples/
+share/doc/gnupg/examples/README
+share/doc/gnupg/examples/debug.prf
+share/doc/gnupg/examples/gpgconf.conf
+share/doc/gnupg/examples/pwpattern.list
+share/doc/gnupg/examples/scd-event
+share/doc/gnupg/examples/trustlist.txt
+share/doc/gnupg/examples/vsnfd.prf
+share/doc/pkg-readmes/${PKGSTEM}
 share/gnupg/
-share/gnupg/options.skel
-share/locale/be/LC_MESSAGES/gnupg.mo
-share/locale/ca/LC_MESSAGES/gnupg.mo
-share/locale/cs/LC_MESSAGES/gnupg.mo
-share/locale/da/LC_MESSAGES/gnupg.mo
-share/locale/de/LC_MESSAGES/gnupg.mo
-share/locale/el/LC_MESSAGES/gnupg.mo
-share/locale/en@boldquot/LC_MESSAGES/gnupg.mo
-share/locale/en@quot/LC_MESSAGES/gnupg.mo
-share/locale/eo/LC_MESSAGES/gnupg.mo
-share/locale/es/LC_MESSAGES/gnupg.mo
-share/locale/et/LC_MESSAGES/gnupg.mo
-share/locale/fi/LC_MESSAGES/gnupg.mo
-share/locale/fr/LC_MESSAGES/gnupg.mo
-share/locale/gl/LC_MESSAGES/gnupg.mo
-share/locale/hu/LC_MESSAGES/gnupg.mo
-share/locale/id/LC_MESSAGES/gnupg.mo
-share/locale/it/LC_MESSAGES/gnupg.mo
-share/locale/ja/LC_MESSAGES/gnupg.mo
-share/locale/nb/LC_MESSAGES/gnupg.mo
-share/locale/nl/LC_MESSAGES/gnupg.mo
-share/locale/pl/LC_MESSAGES/gnupg.mo
-share/locale/pt/LC_MESSAGES/gnupg.mo
-share/locale/pt_BR/LC_MESSAGES/gnupg.mo
-share/locale/ro/LC_MESSAGES/gnupg.mo
-share/locale/ru/LC_MESSAGES/gnupg.mo
-share/locale/sk/LC_MESSAGES/gnupg.mo
-share/locale/sv/LC_MESSAGES/gnupg.mo
-share/locale/tr/LC_MESSAGES/gnupg.mo
-share/locale/uk/LC_MESSAGES/gnupg.mo
-share/locale/zh_CN/LC_MESSAGES/gnupg.mo
-share/locale/zh_TW/LC_MESSAGES/gnupg.mo
+share/gnupg/distsigkey.gpg
+share/gnupg/help.be.txt
+share/gnupg/help.ca.txt
+share/gnupg/help.cs.txt
+share/gnupg/help.da.txt
+share/gnupg/help.de.txt
+share/gnupg/help.el.txt
+share/gnupg/help.eo.txt
+share/gnupg/help.es.txt
+share/gnupg/help.et.txt
+share/gnupg/help.fi.txt
+share/gnupg/help.fr.txt
+share/gnupg/help.gl.txt
+share/gnupg/help.hu.txt
+share/gnupg/help.id.txt
+share/gnupg/help.it.txt
+share/gnupg/help.ja.txt
+share/gnupg/help.nb.txt
+share/gnupg/help.pl.txt
+share/gnupg/help.pt.txt
+share/gnupg/help.pt_BR.txt
+share/gnupg/help.ro.txt
+share/gnupg/help.ru.txt
+share/gnupg/help.sk.txt
+share/gnupg/help.sv.txt
+share/gnupg/help.tr.txt
+share/gnupg/help.txt
+share/gnupg/help.zh_CN.txt
+share/gnupg/help.zh_TW.txt
+share/gnupg/sks-keyservers.netCA.pem
+share/locale/ca/LC_MESSAGES/gnupg2.mo
+share/locale/cs/LC_MESSAGES/gnupg2.mo
+share/locale/da/LC_MESSAGES/gnupg2.mo
+share/locale/de/LC_MESSAGES/gnupg2.mo
+share/locale/el/LC_MESSAGES/gnupg2.mo
+share/locale/en@boldquot/LC_MESSAGES/gnupg2.mo
+share/locale/en@quot/LC_MESSAGES/gnupg2.mo
+share/locale/eo/LC_MESSAGES/gnupg2.mo
+share/locale/es/LC_MESSAGES/gnupg2.mo
+share/locale/et/LC_MESSAGES/gnupg2.mo
+share/locale/fi/LC_MESSAGES/gnupg2.mo
+share/locale/fr/LC_MESSAGES/gnupg2.mo
+share/locale/gl/LC_MESSAGES/gnupg2.mo
+share/locale/hu/LC_MESSAGES/gnupg2.mo
+share/locale/id/LC_MESSAGES/gnupg2.mo
+share/locale/it/LC_MESSAGES/gnupg2.mo
+share/locale/ja/LC_MESSAGES/gnupg2.mo
+share/locale/nb/LC_MESSAGES/gnupg2.mo
+share/locale/pl/LC_MESSAGES/gnupg2.mo
+share/locale/pt/LC_MESSAGES/gnupg2.mo
+share/locale/ro/LC_MESSAGES/gnupg2.mo
+share/locale/ru/LC_MESSAGES/gnupg2.mo
+share/locale/sk/LC_MESSAGES/gnupg2.mo
+share/locale/sv/LC_MESSAGES/gnupg2.mo
+share/locale/tr/LC_MESSAGES/gnupg2.mo
+share/locale/uk/LC_MESSAGES/gnupg2.mo
+share/locale/zh_CN/LC_MESSAGES/gnupg2.mo
+share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
 %%ldap%%

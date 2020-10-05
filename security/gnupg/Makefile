@@ -1,73 +1,62 @@
-# $OpenBSD: Makefile,v 1.117 2020/07/05 09:40:19 jca Exp $
+# $OpenBSD: Makefile,v 1.118 2020/10/05 19:46:17 jca Exp $
 
-COMMENT=	GNU privacy guard - a free PGP replacement
+COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME=	gnupg-1.4.23
-REVISION=	4
-CATEGORIES=	security
+DISTNAME =	gnupg-2.2.23
+REVISION =	1
+CATEGORIES = 	security
 
-# restrict, not compatible with gnupg-2.
-PKGSPEC =	gnupg-<2
+MASTER_SITES =	${MASTER_SITE_GNUPG:=gnupg/}
 
-MASTER_SITES=	${MASTER_SITE_GNUPG:=gnupg/}
+HOMEPAGE = 	https://www.gnupg.org/
 
-HOMEPAGE=	https://www.gnupg.org/
+MAINTAINER = 	Edd Barrett <edd@openbsd.org>
 
-# GPLv3
-PERMIT_PACKAGE=	Yes
+# GPLv3+
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += bz2 c crypto curses curl iconv intl nghttp2 readline ssl z
+WANTLIB += assuan bz2 c gcrypt gnutls gpg-error iconv intl ksba
+WANTLIB += npth pthread readline sqlite3 usb-1.0 z
 
-LIB_DEPENDS=	archivers/bzip2 \
-		devel/gettext,-runtime \
-		net/curl
+EXTRACT_SUFX = 		.tar.bz2
 
-CONFIGURE_STYLE= gnu
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
-CONFIGURE_ARGS+= --disable-gnupg-iconv
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv" \
-		LIBICONV="-L${LOCALBASE}/lib -liconv"
+FLAVORS = 		ldap
+FLAVOR ?=
 
-FLAVORS=	card ldap
-FLAVOR?=
-
-.if ${FLAVOR:Mcard}
-LIB_DEPENDS+=		devel/libusb-compat
-WANTLIB +=		usb
-.else
-CONFIGURE_ARGS+=	--disable-card-support --without-libusb
-.endif
+LIB_DEPENDS =		archivers/bzip2 \
+			databases/sqlite3 \
+			devel/gettext,-runtime \
+			devel/libusb1 \
+			devel/npth>=1.5 \
+			security/gnutls \
+			security/libassuan>=2.4.3 \
+			security/libgcrypt \
+			security/libksba>=1.3.4
 
 .if ${FLAVOR:Mldap}
-CONFIGURE_ARGS+=	--enable-ldap
-LIB_DEPENDS+=		databases/openldap
-WANTLIB +=		ldap>=8
+CONFIGURE_ARGS +=	--enable-ldap
+WANTLIB +=		lber ldap
+LIB_DEPENDS +=		databases/openldap
 .else
-CONFIGURE_ARGS+=	--disable-ldap
+CONFIGURE_ARGS +=	--disable-ldap
 .endif
 
+RUN_DEPENDS = 		security/pinentry
 
-GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
-		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING
+TEST_DEPENDS = 	${FULLPKGNAME}:${BUILD_PKGPATH}
+PORTHOME=${WRKDIR}
 
-.include <bsd.port.arch.mk>
-.if (${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "mips64" || \
-     ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "powerpc") \
-     && ${PROPERTIES:Mclang}
-CFLAGS += -fheinous-gnu-extensions
-.endif
+USE_GMAKE = 		Yes
 
-.if ${MACHINE_ARCH} == "hppa"
-pre-configure:
-	# mpi/hppa1.1/udiv-qrnnd.S is not PIE-safe
-	mv ${WRKSRC}/mpi/hppa/udiv-qrnnd.S ${WRKSRC}/mpi/hppa1.1/
-.endif
+CONFIGURE_STYLE = 	gnu
+CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS += 	--enable-gpgtar \
+			--enable-wks-tools
 
+# compat symlinks, remove for OpenBSD 7.0?
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnupg
-	cd ${WRKSRC}; ${INSTALL_DATA} ${GNUPGDOCFILES} \
-		${PREFIX}/share/doc/gnupg
+	ln -sf gpg ${PREFIX}/bin/gpg2
+	ln -sf gpgv ${PREFIX}/bin/gpgv2
 
 .include <bsd.port.mk>

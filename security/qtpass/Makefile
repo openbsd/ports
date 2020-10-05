@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/14 22:46:38 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/05 19:46:18 jca Exp $
 
 COMMENT=	multi-platform GUI for password-store
 
 GH_ACCOUNT=	IJHack
 GH_PROJECT=	QtPass
 GH_TAGNAME=	v1.3.2
+REVISION=	0
 PKGNAME=	${DISTNAME:L}
 
 CATEGORIES=	security x11
@@ -23,7 +24,7 @@ MODULES=	devel/qmake \
 		x11/qt5
 
 RUN_DEPENDS=	devel/git \
-		security/gnupg2 \
+		security/gnupg>=2.2.23p1 \
 		security/password-store \
 		security/pwgen
 

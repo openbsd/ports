@@ -1,7 +1,6 @@
-$OpenBSD: patch-lib_keyringer_functions,v 1.5 2019/10/08 12:26:01 jca Exp $
+$OpenBSD: patch-lib_keyringer_functions,v 1.6 2020/10/05 19:46:18 jca Exp $
 
 - no mount -l/tmpfs in OpenBSD
-- use gpg2, upstream seems to rely on gpg being gpg2
 - use date(1) -r instead of GNU date(1) --date=
 
 Index: lib/keyringer/functions
@@ -16,54 +15,7 @@ Index: lib/keyringer/functions
  }
  
  # Setup a temporary file
-@@ -314,9 +314,9 @@ function keyringer_set_env {
-   fi
- 
-   if [ ! -z "$KEYID" ]; then
--    GPG="gpg --quiet --no-encrypt-to -u $KEYID"
-+    GPG="gpg2 --quiet --no-encrypt-to -u $KEYID"
-   else
--    GPG="gpg --quiet --no-encrypt-to"
-+    GPG="gpg2 --quiet --no-encrypt-to"
-   fi
- 
-   # Check keyring config version
-@@ -601,7 +601,7 @@ function keyringer_recv_keys {
-   local recipient="$1"
- 
-   echo "Trying to receive missing key $recipient..."
--  gpg --batch --recv-keys "$recipient"
-+  gpg2 --batch --recv-keys "$recipient"
- }
- 
- # Refresh keys from keyserver
-@@ -611,7 +611,7 @@ function keyringer_refresh_keys {
-   local recipient="$1"
- 
-   echo "Trying to refresh key $recipient..."
--  gpg --batch --recv-keys "$recipient"
-+  gpg2 --batch --recv-keys "$recipient"
- }
- 
- # Check recipient size
-@@ -698,7 +698,7 @@ function keyringer_check_recipients {
- function keyringer_check_recipient_key {
-   local recipient="$1"
- 
--  gpg --list-key "$recipient" &> /dev/null
-+  gpg2 --list-key "$recipient" &> /dev/null
-   if [ "$?" != "0" ]; then
-     if [ "$BASENAME" == "check" ]; then
-       refresh="no"
-@@ -727,14 +727,14 @@ function keyringer_check_expiration {
-   seconds="`date +%s`"
- 
-   # Check the main key
--  expiry="`gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^pub | head -n1 | cut -d : -f 7`"
-+  expiry="`gpg2 --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^pub | head -n1 | cut -d : -f 7`"
- 
-   # TODO: Time to expire can be configured via repository options.
-   ahead="$((86400 * 30 + $seconds))"
+@@ -734,7 +734,7 @@ function keyringer_check_expiration {
  
    # Check if key is expired
    if [ ! -z "$expiry" ] && [[ "$seconds" -gt "$expiry" ]]; then
@@ -72,7 +24,7 @@ Index: lib/keyringer/functions
  
      if [ "$KEYRINGER_MODE" == "write" ] || [ "$KEYRINGER_MODE" == "readwrite" ]; then
        echo ", aborting."
-@@ -749,12 +749,12 @@ function keyringer_check_expiration {
+@@ -749,7 +749,7 @@ function keyringer_check_expiration {
    # TODO: Users can be alerted by mail if configured by user preferences.
    # TODO: Outgoing emails can be encrypted.
    if [ "$BASENAME" == "check" ] && [ ! -z "$expiry" ] && [[ "$ahead" -gt "$expiry" ]]; then
@@ -81,12 +33,6 @@ Index: lib/keyringer/functions
    fi
  
    # Check the subkeys
-   local subkey=""
--  for subkey in $(gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^sub); do
-+  for subkey in $(gpg2 --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^sub); do
-     local expiry=$(cut -d : -f 7 <<< "$subkey")
- 
-     if [[ -z "$expiry" ]]; then
 @@ -765,7 +765,7 @@ function keyringer_check_expiration {
        not_expired="1"
  
@@ -96,12 +42,3 @@ Index: lib/keyringer/functions
        fi
      fi
    done
-@@ -851,7 +851,7 @@ function keyringer_create_new_recipients {
-       recipient="`grep -e "^default-key" ~/.gnupg/gpg.conf | cut -d ' ' -f 2`"
- 
-       if [ ! -z "$recipient" ]; then
--        key="`gpg --fingerprint --with-colons $recipient 2> /dev/null`"
-+        key="`gpg2 --fingerprint --with-colons $recipient 2> /dev/null`"
- 
-         if [ "$?" == "0" ]; then
-           fpr="`echo "$key" | grep -e '^fpr:' | head -1 | cut -d : -f 10`"

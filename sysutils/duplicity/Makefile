@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2020/07/05 08:53:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2020/10/05 19:46:18 jca Exp $
 
 COMMENT =		encrypted backup using rsync algorithm
 
 MODPY_EGG_VERSION =	0.8.13
+REVISION =		0
 DISTNAME =		duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -29,7 +30,7 @@ LIB_DEPENDS =		net/librsync
 RUN_DEPENDS =		devel/py-fasteners${MODPY_FLAVOR} \
 			devel/py-future${MODPY_FLAVOR} \
 			net/ncftp \
-			gnupg->=2:security/gnupg2 \
+			security/gnupg>=2.2.23p1 \
 			security/py-paramiko${MODPY_FLAVOR}
 
 TEST_DEPENDS =		archivers/gtar \

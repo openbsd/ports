@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2020/08/24 16:28:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2020/10/05 19:46:18 jca Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 
 VERSION =		1.14.0
+REVISION =		0
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
@@ -38,12 +39,8 @@ NOT_FOR_ARCHS-qt =	alpha mips64 sh
 
 CONFIGURE_STYLE =	gnu
 
-# Requires gpgsm (gnupg 2.x) during build, but can run with any gnupg.
-BUILD_DEPENDS =		gnupg->=2:security/gnupg2
-
-# gnupg-* is normally the default anyway, but gnupg1 overrides PKGSPEC
-# so we must be explicit here.
-RUN_DEPENDS =		gnupg-*:security/gnupg
+BUILD_DEPENDS =		security/gnupg>=2.2.23p1
+RUN_DEPENDS =		security/gnupg>=2.2.23p1
 LIB_DEPENDS-main =	${LIB_DEPENDS:N*qt*} \
 			devel/gettext,-runtime \
 			security/libgpg-error>=1.4 \
@@ -71,12 +68,5 @@ USE_GMAKE =		Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lang/cpp/src/GpgmeppConfig.cmake.in.in
 	${SUBST_CMD} ${WRKSRC}/lang/qt/src/QGpgmeConfig.cmake.in.in
-
-# The tests target gpg2. Running with gpg version 1 will give:
-# `./t-support.h:160: GPGME: Invalid crypto engine'
-# https://dev.gnupg.org/T3512
-TEST_DEPENDS +=		security/gnupg2
-pre-build:
-	ln -sf ${LOCALBASE}/bin/gpg2 ${WRKDIR}/bin/gpg
 
 .include <bsd.port.mk>

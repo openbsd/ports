@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/08/23 22:16:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/05 19:46:17 jca Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
 
 PKGNAME-main =		notmuch-${V}
+REVISION-main =		0
 PKGNAME-emacs =		notmuch-emacs-${V}
 
 SHARED_LIBS +=		notmuch	0.0
@@ -28,7 +29,7 @@ RUN_DEPENDS-emacs =	devel/desktop-file-utils \
 BUILD_DEPENDS =		devel/doxygen \
 			devel/py-cffi${MODPY_FLAVOR} \
 			editors/emacs,gtk3 \
-			security/gnupg2 \
+			security/gnupg>=2.2.23p1 \
 			shells/bash \
 			shells/bash-completion \
 			textproc/py-sphinx${MODPY_FLAVOR}

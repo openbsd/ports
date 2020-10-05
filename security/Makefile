@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.592 2020/09/14 22:47:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.593 2020/10/05 19:46:17 jca Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -64,8 +64,6 @@
      SUBDIR += fwknop
      SUBDIR += ghidra
      SUBDIR += gnupg
-     SUBDIR += gnupg,card,ldap
-     SUBDIR += gnupg2
      SUBDIR += gnutls
      SUBDIR += go-crypto
      SUBDIR += go-siphash
