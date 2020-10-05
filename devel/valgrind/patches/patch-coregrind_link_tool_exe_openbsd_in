@@ -1,16 +1,40 @@
 --- coregrind/link_tool_exe_openbsd.in.orig	Fri Sep 27 10:40:06 2019
-+++ coregrind/link_tool_exe_openbsd.in	Fri Sep 27 10:45:59 2019
-@@ -77,7 +77,12 @@
- my $origbase = 0x400000;
- system(sprintf "sed -e 's|%x|%x|g' < $ldscript > $temp", $origbase, $notebase);
++++ coregrind/link_tool_exe_openbsd.in	Fri Sep 25 00:50:44 2020
+@@ -63,22 +63,13 @@
+ # The cc invokation to do the final link
+ my $cc = $ARGV[1];
  
--my $cmd = sprintf "$cc -static -nopie -Wl,-Ttext=0x%x -Wl,-T,$temp", $textbase;
+-# and the 'restargs' are argv[2 ..]
 +# XXX The '-s' option was not specified when executing the install command.
 +# Instead '--strip-all' is now executed at link time.
 +# strip command rewrite offset and align in ELF file. Therefor, when valgrind
 +# launch memcheck-amd64-openbsd, an Abort trap occurs in the execvp() system
 +# call.
-+my $cmd = sprintf "$cc -static -nopie -Wl,--strip-all -Wl,-Ttext=0x%x -Wl,-T,$temp", $textbase;
++my $cmd = sprintf "$cc -static -nopie -Wl,--strip-all -Wl,-Ttext=0x%x", "$ala + 0x1000";
  
+-# so, build up the complete command here:
+-# 'cc' -static -Ttext='ala' 'restargs'
+-
+-my $textbase = eval("$ala + 0x1000");
+-my $notebase = eval("$ala");
+-
+-my $ldscript = "/usr/libdata/ldscripts/elf_x86_64_obsd.x";
+-my $temp = `mktemp /tmp/XXXXXX`;
+-chomp($temp);
+-my $origbase = 0x400000;
+-system(sprintf "sed -e 's|%x|%x|g' < $ldscript > $temp", $origbase, $notebase);
+-
+-my $cmd = sprintf "$cc -static -nopie -Wl,-Ttext=0x%x -Wl,-T,$temp", $textbase;
+-
  # Add the rest of the parameters
  foreach my $n (2 .. $#ARGV) {
+    $cmd = "$cmd $ARGV[$n]";
+@@ -89,8 +80,6 @@
+ 
+ # Execute the command:
+ my $r = system("$cmd");
+-
+-unlink $temp;
+ 
+ if ($r == 0) {
+     exit 0;
