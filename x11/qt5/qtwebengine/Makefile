@@ -27,7 +27,18 @@ SHARED_LIBS +=  Qt5PdfWidgets             0.0 # 5.15
 # BSD-like, patents
 PERMIT_PACKAGE =	Yes
 
-## XXX WANTLIB
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Designer Qt5Gui Qt5Network
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5WebChannel Qt5Widgets Qt5Xml X11 X11-xcb Xcomposite
+WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xrandr Xrender Xss Xtst
+WANTLIB += avcodec avformat avutil c cbor crypto cups dbus-1 event
+WANTLIB += execinfo expat fido2 fontconfig freetype glib-2.0 graphite2
+WANTLIB += harfbuzz iconv intl jpeg kvm lcms2 lzma m nspr4 nss3
+WANTLIB += nssutil3 opus pcre plc4 plds4 png smime3 snappy sndio
+WANTLIB += swresample usbhid util vpx webp webpdemux webpmux xcb
+WANTLIB += xkbcommon xml2 xslt z
+
+PATCHORIG=	.orig.port
 
 MODULES =	lang/python \
 		devel/qmake
@@ -63,7 +74,7 @@ LIB_DEPENDS =	archivers/snappy \
 		security/nss \
 		textproc/libxml \
 		textproc/libxslt \
-		x11/gtk+3 \
+		x11/xkbcommon \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qttools \
