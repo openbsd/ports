@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/10/05 19:20:22 jeremy Exp $
 
 COMMENT=	Ruby documentation tool
 
@@ -15,8 +15,8 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 RUN_DEPENDS=	textproc/ruby-redcarpet,${MODRUBY_FLAVOR}
-TEST_DEPENDS=	textproc/ruby-redcarpet,${MODRUBY_FLAVOR} \
-		www/ruby-rack,${MODRUBY_FLAVOR}
+#TEST_DEPENDS=	textproc/ruby-redcarpet,${MODRUBY_FLAVOR} \
+#		www/ruby-rack,${MODRUBY_FLAVOR}
 
 #MODRUBY_TEST=rspec2
 
