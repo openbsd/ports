@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/02 22:04:17 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/05 12:14:23 espie Exp $
 
 COMMENT = 	gimp plugin for image reparation
 
@@ -29,7 +29,8 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 MASTER_SITES = ${MASTER_SITES_GITHUB}
 
 BUILD_DEPENDS =	graphics/gimp/stable \
-		devel/gettext,-tools
+		devel/gettext,-tools \
+		textproc/intltool
 RUN_DEPENDS =	graphics/gimp/stable
 # there is no actual test and it errors out
 NO_TEST =	Yes
