@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2020/01/02 21:19:57 jeremy Exp $
+$OpenBSD: patch-configure,v 1.2 2020/10/05 17:13:13 jeremy Exp $
 
 Set correct shared library name.
 
@@ -8,7 +8,7 @@ so ports don't have to be bumped when OpenBSD version changes.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -28712,7 +28712,7 @@ fi
+@@ -28719,7 +28719,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
  
@@ -17,7 +17,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -30273,7 +30273,7 @@ _ACEOF
+@@ -30280,7 +30280,7 @@ _ACEOF
  
  else
  

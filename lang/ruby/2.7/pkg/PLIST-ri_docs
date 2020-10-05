@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.2 2020/04/03 01:47:41 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.3 2020/10/05 17:13:13 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -7135,6 +7135,7 @@ share/ri/${REV}/system/Gem/Specification/rdoc_options%3d-i.ri
 share/ri/${REV}/system/Gem/Specification/rdoc_options-i.ri
 share/ri/${REV}/system/Gem/Specification/relative_loaded_from-i.ri
 share/ri/${REV}/system/Gem/Specification/remote-i.ri
+share/ri/${REV}/system/Gem/Specification/removed_method_calls-i.ri
 share/ri/${REV}/system/Gem/Specification/require_path%3d-i.ri
 share/ri/${REV}/system/Gem/Specification/require_path-i.ri
 share/ri/${REV}/system/Gem/Specification/require_paths%3d-i.ri
@@ -7152,7 +7153,6 @@ share/ri/${REV}/system/Gem/Specification/rg_full_gem_path-i.ri
 share/ri/${REV}/system/Gem/Specification/rg_loaded_from-i.ri
 share/ri/${REV}/system/Gem/Specification/ri_dir-i.ri
 share/ri/${REV}/system/Gem/Specification/ruby_code-i.ri
-share/ri/${REV}/system/Gem/Specification/rubyforge_project-i.ri
 share/ri/${REV}/system/Gem/Specification/rubygems_version-i.ri
 share/ri/${REV}/system/Gem/Specification/runtime_dependencies-i.ri
 share/ri/${REV}/system/Gem/Specification/same_attributes%3f-i.ri
@@ -7348,6 +7348,7 @@ share/ri/${REV}/system/Gem/TestCase/vendordir-i.ri
 share/ri/${REV}/system/Gem/TestCase/wait_for_child_process_to_exit-i.ri
 share/ri/${REV}/system/Gem/TestCase/win_platform%3f-c.ri
 share/ri/${REV}/system/Gem/TestCase/win_platform%3f-i.ri
+share/ri/${REV}/system/Gem/TestCase/with_clean_path_to_ruby-i.ri
 share/ri/${REV}/system/Gem/TestCase/write_file-i.ri
 share/ri/${REV}/system/Gem/Text/
 share/ri/${REV}/system/Gem/Text/cdesc-Text.ri
@@ -7535,6 +7536,7 @@ share/ri/${REV}/system/Gem/ruby_version-c.ri
 share/ri/${REV}/system/Gem/rubygems_version-c.ri
 share/ri/${REV}/system/Gem/searcher%3d-c.ri
 share/ri/${REV}/system/Gem/source_date_epoch-c.ri
+share/ri/${REV}/system/Gem/source_date_epoch_string-c.ri
 share/ri/${REV}/system/Gem/sources%3d-c.ri
 share/ri/${REV}/system/Gem/sources-c.ri
 share/ri/${REV}/system/Gem/spec_cache_dir-c.ri
@@ -7979,6 +7981,8 @@ share/ri/${REV}/system/IRB/Context/main-i.ri
 share/ri/${REV}/system/IRB/Context/new-c.ri
 share/ri/${REV}/system/IRB/Context/newline_before_multiline_output%3f-i.ri
 share/ri/${REV}/system/IRB/Context/newline_before_multiline_output-i.ri
+share/ri/${REV}/system/IRB/Context/omit_on_assignment%3f-i.ri
+share/ri/${REV}/system/IRB/Context/omit_on_assignment-i.ri
 share/ri/${REV}/system/IRB/Context/pop_workspace-i.ri
 share/ri/${REV}/system/IRB/Context/prompt_c-i.ri
 share/ri/${REV}/system/IRB/Context/prompt_i-i.ri
@@ -8032,6 +8036,8 @@ share/ri/${REV}/system/IRB/ExtendCommand/Fork/
 share/ri/${REV}/system/IRB/ExtendCommand/Fork/cdesc-Fork.ri
 share/ri/${REV}/system/IRB/ExtendCommand/Help/
 share/ri/${REV}/system/IRB/ExtendCommand/Help/cdesc-Help.ri
+share/ri/${REV}/system/IRB/ExtendCommand/Info/
+share/ri/${REV}/system/IRB/ExtendCommand/Info/cdesc-Info.ri
 share/ri/${REV}/system/IRB/ExtendCommand/IrbCommand/
 share/ri/${REV}/system/IRB/ExtendCommand/IrbCommand/cdesc-IrbCommand.ri
 share/ri/${REV}/system/IRB/ExtendCommand/Jobs/
@@ -8069,6 +8075,7 @@ share/ri/${REV}/system/IRB/FileInputMethod/encoding-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/eof%3f-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/file_name-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/gets-i.ri
+share/ri/${REV}/system/IRB/FileInputMethod/inspect-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/new-c.ri
 share/ri/${REV}/system/IRB/Frame/
 share/ri/${REV}/system/IRB/Frame/FrameOverflow/
@@ -8096,9 +8103,11 @@ share/ri/${REV}/system/IRB/InputMethod/
 share/ri/${REV}/system/IRB/InputMethod/cdesc-InputMethod.ri
 share/ri/${REV}/system/IRB/InputMethod/file_name-i.ri
 share/ri/${REV}/system/IRB/InputMethod/gets-i.ri
+share/ri/${REV}/system/IRB/InputMethod/inspect-i.ri
 share/ri/${REV}/system/IRB/InputMethod/new-c.ri
 share/ri/${REV}/system/IRB/InputMethod/prompt-i.ri
 share/ri/${REV}/system/IRB/InputMethod/readable_after_eof%3f-i.ri
+share/ri/${REV}/system/IRB/InputMethod/winsize-i.ri
 share/ri/${REV}/system/IRB/Inspector/
 share/ri/${REV}/system/IRB/Inspector/cdesc-Inspector.ri
 share/ri/${REV}/system/IRB/Inspector/def_inspector-c.ri
@@ -8238,6 +8247,8 @@ share/ri/${REV}/system/IRB/ReadlineInputMethod/cdesc-ReadlineInputMethod.ri
 share/ri/${REV}/system/IRB/ReadlineInputMethod/encoding-i.ri
 share/ri/${REV}/system/IRB/ReadlineInputMethod/eof%3f-i.ri
 share/ri/${REV}/system/IRB/ReadlineInputMethod/gets-i.ri
+share/ri/${REV}/system/IRB/ReadlineInputMethod/initialize_readline-c.ri
+share/ri/${REV}/system/IRB/ReadlineInputMethod/inspect-i.ri
 share/ri/${REV}/system/IRB/ReadlineInputMethod/line-i.ri
 share/ri/${REV}/system/IRB/ReadlineInputMethod/new-c.ri
 share/ri/${REV}/system/IRB/ReadlineInputMethod/readable_after_eof%3f-i.ri
@@ -8249,6 +8260,7 @@ share/ri/${REV}/system/IRB/ReidlineInputMethod/dynamic_prompt-i.ri
 share/ri/${REV}/system/IRB/ReidlineInputMethod/encoding-i.ri
 share/ri/${REV}/system/IRB/ReidlineInputMethod/eof%3f-i.ri
 share/ri/${REV}/system/IRB/ReidlineInputMethod/gets-i.ri
+share/ri/${REV}/system/IRB/ReidlineInputMethod/inspect-i.ri
 share/ri/${REV}/system/IRB/ReidlineInputMethod/line-i.ri
 share/ri/${REV}/system/IRB/ReidlineInputMethod/new-c.ri
 share/ri/${REV}/system/IRB/ReidlineInputMethod/readable_after_eof%3f-i.ri
@@ -8262,6 +8274,7 @@ share/ri/${REV}/system/IRB/StdioInputMethod/cdesc-StdioInputMethod.ri
 share/ri/${REV}/system/IRB/StdioInputMethod/encoding-i.ri
 share/ri/${REV}/system/IRB/StdioInputMethod/eof%3f-i.ri
 share/ri/${REV}/system/IRB/StdioInputMethod/gets-i.ri
+share/ri/${REV}/system/IRB/StdioInputMethod/inspect-i.ri
 share/ri/${REV}/system/IRB/StdioInputMethod/line-i.ri
 share/ri/${REV}/system/IRB/StdioInputMethod/new-c.ri
 share/ri/${REV}/system/IRB/StdioInputMethod/readable_after_eof%3f-i.ri
