@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/07/01 11:06:08 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/10/05 08:11:45 jsg Exp $
 firmware/amdgpu/
 firmware/amdgpu/amdgpu-license
 firmware/amdgpu/banks_k_2_smc.bin
@@ -97,6 +97,21 @@ firmware/amdgpu/navi10_smc.bin
 firmware/amdgpu/navi10_sos.bin
 firmware/amdgpu/navi10_ta.bin
 firmware/amdgpu/navi10_vcn.bin
+firmware/amdgpu/navi12_asd.bin
+firmware/amdgpu/navi12_ce.bin
+firmware/amdgpu/navi12_dmcu.bin
+firmware/amdgpu/navi12_gpu_info.bin
+firmware/amdgpu/navi12_me.bin
+firmware/amdgpu/navi12_mec.bin
+firmware/amdgpu/navi12_mec2.bin
+firmware/amdgpu/navi12_pfp.bin
+firmware/amdgpu/navi12_rlc.bin
+firmware/amdgpu/navi12_sdma.bin
+firmware/amdgpu/navi12_sdma1.bin
+firmware/amdgpu/navi12_smc.bin
+firmware/amdgpu/navi12_sos.bin
+firmware/amdgpu/navi12_ta.bin
+firmware/amdgpu/navi12_vcn.bin
 firmware/amdgpu/navi14_asd.bin
 firmware/amdgpu/navi14_ce.bin
 firmware/amdgpu/navi14_ce_wks.bin
@@ -123,6 +138,7 @@ firmware/amdgpu/oland_me.bin
 firmware/amdgpu/oland_pfp.bin
 firmware/amdgpu/oland_rlc.bin
 firmware/amdgpu/oland_smc.bin
+firmware/amdgpu/oland_uvd.bin
 firmware/amdgpu/picasso_asd.bin
 firmware/amdgpu/picasso_ce.bin
 firmware/amdgpu/picasso_gpu_info.bin
@@ -142,6 +158,7 @@ firmware/amdgpu/pitcairn_me.bin
 firmware/amdgpu/pitcairn_pfp.bin
 firmware/amdgpu/pitcairn_rlc.bin
 firmware/amdgpu/pitcairn_smc.bin
+firmware/amdgpu/pitcairn_uvd.bin
 firmware/amdgpu/polaris10_ce.bin
 firmware/amdgpu/polaris10_ce_2.bin
 firmware/amdgpu/polaris10_k2_smc.bin
@@ -254,6 +271,7 @@ firmware/amdgpu/tahiti_me.bin
 firmware/amdgpu/tahiti_pfp.bin
 firmware/amdgpu/tahiti_rlc.bin
 firmware/amdgpu/tahiti_smc.bin
+firmware/amdgpu/tahiti_uvd.bin
 firmware/amdgpu/tonga_ce.bin
 firmware/amdgpu/tonga_k_smc.bin
 firmware/amdgpu/tonga_mc.bin
@@ -339,3 +357,4 @@ firmware/amdgpu/verde_me.bin
 firmware/amdgpu/verde_pfp.bin
 firmware/amdgpu/verde_rlc.bin
 firmware/amdgpu/verde_smc.bin
+firmware/amdgpu/verde_uvd.bin
