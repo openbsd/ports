@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.121 2020/07/03 21:10:55 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.122 2020/10/05 20:51:18 kmos Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -50,7 +50,8 @@ MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
 .else
 .  if ${MODPY_VERSION} != "2.7" && \
       ${MODPY_VERSION} != "3.7" && \
-      ${MODPY_VERSION} != "3.8"
+      ${MODPY_VERSION} != "3.8" && \
+      ${MODPY_VERSION} != "3.9"
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
 .  endif
 .endif
@@ -71,7 +72,7 @@ MODPY_PYOEXTENSION =	pyo
 .  if ${MODPY_VERSION} == "3.7"
 MODPY_LIB_SUFFIX =	m
 .  else
-# 3.8 (and presumably later) discards the m suffix on the library
+# 3.8 (and later) discard the m suffix on the library
 MODPY_LIB_SUFFIX =
 .  endif
 # replace py- prefix by py3-
