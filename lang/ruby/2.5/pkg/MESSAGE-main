@@ -1,9 +1,0 @@
-If you want to use this package as your default system ruby, as root
-create symbolic links like so (overwriting any previous default):
- ln -sf ${PREFIX}/bin/ruby25 ${PREFIX}/bin/ruby
- ln -sf ${PREFIX}/bin/erb25 ${PREFIX}/bin/erb
- ln -sf ${PREFIX}/bin/irb25 ${PREFIX}/bin/irb
- ln -sf ${PREFIX}/bin/rdoc25 ${PREFIX}/bin/rdoc
- ln -sf ${PREFIX}/bin/ri25 ${PREFIX}/bin/ri
- ln -sf ${PREFIX}/bin/rake25 ${PREFIX}/bin/rake
- ln -sf ${PREFIX}/bin/gem25 ${PREFIX}/bin/gem
