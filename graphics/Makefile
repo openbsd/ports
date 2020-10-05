@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.519 2020/10/03 13:27:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.520 2020/10/05 16:06:50 thfr Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -58,6 +58,7 @@
      SUBDIR += ffmpeg
      SUBDIR += ffmpegthumbnailer
      SUBDIR += flameshot
+     SUBDIR += fna3d
      SUBDIR += fotowall
      SUBDIR += freeglut
      SUBDIR += freeimage
