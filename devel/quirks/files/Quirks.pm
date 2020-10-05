@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1068 2020/10/04 06:11:19 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1069 2020/10/05 16:49:28 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1935,7 +1935,7 @@ sub filter_obsolete
 	for my $pkgname (@in) {
 		my $stem = OpenBSD::PackageName::splitstem($pkgname);
 		my $reason = $obsolete_reason->{$stem};
-		$reason = 3 if (!defined $reason && $pkgname =~ m/^(ruby(19|2[0-4])-|ruby-[^0-9])/);
+		$reason = 3 if (!defined $reason && $pkgname =~ m/^(ruby(19|2[0-5])-|ruby-[^0-9])/);
 		$reason = 21 if (!defined $reason && $pkgname =~ m/^drupal/);
 		if (defined $reason) {
 			$state->say("Obsolete package: #1 (#2)", $pkgname, 
