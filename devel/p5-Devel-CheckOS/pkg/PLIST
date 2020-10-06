@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/26 08:36:39 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/06 08:27:54 bluhm Exp $
 bin/use-devel-assertos
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/AssertOS/
@@ -31,6 +31,7 @@ ${P5SITE}/Devel/AssertOS/Linux/v2_6.pm
 ${P5SITE}/Devel/AssertOS/MPEiX.pm
 ${P5SITE}/Devel/AssertOS/MSDOS.pm
 ${P5SITE}/Devel/AssertOS/MSWin32.pm
+${P5SITE}/Devel/AssertOS/MSYS.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/
 ${P5SITE}/Devel/AssertOS/MacOSX.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v10_0.pm
@@ -38,6 +39,9 @@ ${P5SITE}/Devel/AssertOS/MacOSX/v10_1.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v10_10.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v10_11.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v10_12.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_13.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_14.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_15.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v10_2.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v10_3.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v10_4.pm
@@ -112,12 +116,16 @@ ${P5SITE}/Devel/CheckOS/Families.pod
 @man man/man3p/Devel::AssertOS::MPEiX.3p
 @man man/man3p/Devel::AssertOS::MSDOS.3p
 @man man/man3p/Devel::AssertOS::MSWin32.3p
+@man man/man3p/Devel::AssertOS::MSYS.3p
 @man man/man3p/Devel::AssertOS::MacOSX.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v10_0.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v10_1.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v10_10.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v10_11.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v10_12.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_13.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_14.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_15.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v10_2.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v10_3.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v10_4.3p
