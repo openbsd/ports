@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_core_configure_json,v 1.1 2020/05/16 07:03:01 rsadowski Exp $
+$OpenBSD: patch-src_core_configure_json,v 1.2 2020/10/06 16:51:19 landry Exp $
 
 enable autoDetect
 
@@ -13,7 +13,15 @@ Index: src/core/configure.json
              "type": "compile"
          },
          "webengine-sanitizer": {
-@@ -489,7 +488,6 @@
+@@ -390,6 +389,7 @@
+         "webengine-system-minizip" : {
+             "label": "minizip",
+             "condition": "config.unix && libs.webengine-minizip",
++            "autoDetect": false,
+             "output": [ "privateFeature" ]
+         },
+         "webengine-system-zlib" : {
+@@ -489,7 +489,6 @@
          },
          "webengine-system-snappy" : {
              "label": "snappy",
@@ -21,7 +29,7 @@ Index: src/core/configure.json
              "output": [ "privateFeature" ]
          },
          "webengine-winversion" : {
-@@ -534,7 +532,7 @@
+@@ -534,7 +533,7 @@
              "label": "Proprietary Codecs",
              "purpose": "Enables the use of proprietary codecs such as h.264/h.265 and MP3.",
              "section": "WebEngine",
@@ -30,7 +38,7 @@ Index: src/core/configure.json
              "output": [ "privateFeature" ]
          },
          "webengine-kerberos": {
-@@ -554,7 +552,7 @@
+@@ -554,7 +553,7 @@
              "label": "Native Spellchecker",
              "purpose": "Use the system's native spellchecking engine.",
              "section": "WebEngine",
@@ -39,7 +47,7 @@ Index: src/core/configure.json
              "condition": "config.macos && features.webengine-spellchecker",
              "output": [ "publicFeature" ]
          },
-@@ -592,20 +590,19 @@
+@@ -592,20 +591,19 @@
          },
          "webengine-system-ffmpeg": {
              "label": "ffmpeg",
@@ -63,7 +71,7 @@ Index: src/core/configure.json
              "output": [ "privateFeature" ]
          },
          "webengine-system-ninja": {
-@@ -626,9 +623,7 @@
+@@ -626,9 +624,7 @@
          },
          "webengine-system-libxml2": {
              "label": "libxml2 and libxslt",
@@ -74,7 +82,7 @@ Index: src/core/configure.json
              "output": [ "privateFeature" ]
          },
          "webengine-system-lcms2" : {
-@@ -696,7 +691,7 @@
+@@ -696,7 +692,7 @@
          "webengine-full-debug-info": {
              "label": "Full debug information",
              "purpose": "Enables debug information for Blink and V8.",
