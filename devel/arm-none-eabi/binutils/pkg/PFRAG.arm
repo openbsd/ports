@@ -1,14 +1,26 @@
-@comment $OpenBSD: PFRAG.arm,v 1.1 2016/12/06 17:24:02 patrick Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.2 2020/10/06 05:53:05 jsg Exp $
 @pkgpath devel/arm-none-eabi/binutils,
 ${CONFIG}/lib/
 ${CONFIG}/lib/ldscripts/
 ${CONFIG}/lib/ldscripts/armelf.x
 ${CONFIG}/lib/ldscripts/armelf.xbn
 ${CONFIG}/lib/ldscripts/armelf.xc
+${CONFIG}/lib/ldscripts/armelf.xce
+${CONFIG}/lib/ldscripts/armelf.xd
+${CONFIG}/lib/ldscripts/armelf.xdc
+${CONFIG}/lib/ldscripts/armelf.xdce
+${CONFIG}/lib/ldscripts/armelf.xde
+${CONFIG}/lib/ldscripts/armelf.xdw
+${CONFIG}/lib/ldscripts/armelf.xdwe
+${CONFIG}/lib/ldscripts/armelf.xe
 ${CONFIG}/lib/ldscripts/armelf.xn
 ${CONFIG}/lib/ldscripts/armelf.xr
 ${CONFIG}/lib/ldscripts/armelf.xs
 ${CONFIG}/lib/ldscripts/armelf.xsc
+${CONFIG}/lib/ldscripts/armelf.xsce
+${CONFIG}/lib/ldscripts/armelf.xse
 ${CONFIG}/lib/ldscripts/armelf.xsw
+${CONFIG}/lib/ldscripts/armelf.xswe
 ${CONFIG}/lib/ldscripts/armelf.xu
 ${CONFIG}/lib/ldscripts/armelf.xw
+${CONFIG}/lib/ldscripts/armelf.xwe
