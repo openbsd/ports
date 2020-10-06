@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.204 2020/09/18 12:29:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.205 2020/10/06 16:21:00 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		8.2.1704
+V=		8.2.1805
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.40 2020/09/18 12:29:48 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.41 2020/10/06 16:21:00 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -170,6 +170,7 @@ share/vim/${P}/compiler/rubyunit.vim
 share/vim/${P}/compiler/rustc.vim
 share/vim/${P}/compiler/sass.vim
 share/vim/${P}/compiler/se.vim
+share/vim/${P}/compiler/shellcheck.vim
 share/vim/${P}/compiler/splint.vim
 share/vim/${P}/compiler/stack.vim
 share/vim/${P}/compiler/standard.vim
@@ -785,15 +786,6 @@ share/vim/${P}/keymap/vietnamese-viqr_utf-8.vim
 share/vim/${P}/keymap/vietnamese-vni_utf-8.vim
 share/vim/${P}/lang/
 share/vim/${P}/lang/README.txt
-share/vim/${P}/lang/menu_tr.cp1254.vim
-share/vim/${P}/lang/menu_tr.iso_8859-9.vim
-share/vim/${P}/lang/menu_tr.utf-8.vim
-share/vim/${P}/lang/menu_tr_tr.cp1254.vim
-share/vim/${P}/lang/menu_tr_tr.iso_8859-9.vim
-share/vim/${P}/lang/menu_tr_tr.utf-8.vim
-share/vim/${P}/lang/tr/
-share/vim/${P}/lang/tr/LC_MESSAGES/
-share/vim/${P}/lang/tr/LC_MESSAGES/vim.mo
 share/vim/${P}/macros/
 share/vim/${P}/macros/README.txt
 share/vim/${P}/macros/editexisting.vim
@@ -1577,7 +1569,6 @@ share/vim/${P}/tools/xcmdsrv_client.c
 share/vim/${P}/tutor/
 share/vim/${P}/tutor/README.txt
 share/vim/${P}/tutor/tutor
-share/vim/${P}/tutor/tutor.ko
 share/vim/${P}/tutor/tutor.utf-8
 share/vim/${P}/tutor/tutor.vim
 share/vim/${P}/vimrc_example.vim
