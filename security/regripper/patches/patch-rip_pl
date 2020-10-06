@@ -1,31 +1,26 @@
-$OpenBSD: patch-rip_pl,v 1.1.1.1 2015/10/28 09:55:17 rpointel Exp $
---- rip.pl.orig	Mon Sep 14 14:39:32 2015
-+++ rip.pl	Wed Oct 21 21:12:44 2015
+$OpenBSD: patch-rip_pl,v 1.2 2020/10/06 20:27:45 rpointel Exp $
+Index: rip.pl
+--- rip.pl.orig
++++ rip.pl
 @@ -1,4 +1,4 @@
 -#! c:\perl\bin\perl.exe
 +#! /usr/bin/perl
  #-------------------------------------------------------------------------
  # Rip - RegRipper, CLI version
  # Use this utility to run a plugins file or a single plugin against a Reg
-@@ -60,7 +60,7 @@ $str =~ s/($path[scalar(@path) - 1])//;
- #push(@INC,$str);
- 
+@@ -65,7 +65,7 @@ $str =~ s/($path[scalar(@path) - 1])//;
+ # code updated 20190318
+ my $plugindir;
+ ($^O eq "MSWin32") ? ($plugindir = $str."plugins/")
+-                   : ($plugindir = File::Spec->catfile("plugins"));
++                   : ($plugindir = File::Spec->catfile("${TRUEPREFIX}/share/regripper/plugins"));
  #my $plugindir = $str."plugins/";
--my $plugindir = File::Spec->catfile("plugins");
-+my $plugindir = File::Spec->catfile("${TRUEPREFIX}/share/regripper/plugins/");
+ #my $plugindir = File::Spec->catfile("plugins");
  #print "Plugins Dir = ".$plugindir."\n";
- # End code update
- my $VERSION = "2\.8_20130801";
-@@ -201,9 +201,9 @@ Parse Windows Registry files, using either a single mo
-   -u username........User name (TLN support)
-   -h.................Help (print this information)
-   
--Ex: C:\\>rip -r c:\\case\\system -f system
--    C:\\>rip -r c:\\case\\ntuser.dat -p userassist
--    C:\\>rip -l -c
-+Ex: \$ rip.pl -r system -f system
-+    \$ rip.pl -r ntuser.dat -p userassist
-+    \$ rip.pl -l -c
- 
- All output goes to STDOUT; use redirection (ie, > or >>) to output to a file\.
-   
+@@ -557,4 +557,4 @@ sub getDateFromEpoch {
+ 	my ($sec,$min,$hour,$mday,$mon,$year) = gmtime($epoch);
+ 	my $fmt = sprintf("%04d-%02d-%02d %02d:%02d:%02d",(1900 + $year),($mon + 1),$mday,$hour,$min,$sec);
+ 	return $fmt;
+-}
+\ No newline at end of file
++}
