@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/24 19:48:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/06 16:52:25 landry Exp $
 
 COMMENT =	open asset import library
 CATEGORIES =	multimedia
@@ -20,6 +20,8 @@ WANTLIB += ${COMPILER_LIBCXX} c m z
 # C++11
 COMPILER =	base-clang ports-gcc
 
+# make sure we dont pickup minizip from ports as its not the same
+CONFIGURE_ARGS+=-DASSIMP_BUILD_MINIZIP:bool=true
 MODULES =	devel/cmake
 
 BUILD_DEPENDS =	devel/boost
