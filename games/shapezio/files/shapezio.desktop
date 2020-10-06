@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Shapez.io
+Exec=${TRUEPREFIX}/bin/electron ${TRUEPREFIX}/share/shapez.io/index.html
+Icon=shapezio.png
+Terminal=false
+Type=Application
+Categories=Application;Game;
+StartupNotify=true
+
