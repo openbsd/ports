@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/06 11:25:46 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2020/10/06 07:51:14 landry Exp $
 
 COMMENT =	library to extract data from OSM files
 PROJECT =	readosm
-DISTNAME =	${PROJECT}-1.1.0
+DISTNAME =	${PROJECT}-1.1.0a
+PKGNAME =	${PROJECT}-1.1.0pl0
 SHARED_LIBS =	readosm 0.0 #1.0
 
 WANTLIB += expat z
