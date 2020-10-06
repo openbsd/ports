@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.428 2020/10/05 21:08:19 edd Exp $
+# $OpenBSD: Makefile,v 1.429 2020/10/06 13:40:56 solene Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -261,6 +261,7 @@
      SUBDIR += sdlpop
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
+     SUBDIR += shapezio
      SUBDIR += shockolate
      SUBDIR += singularity
      SUBDIR += ski
