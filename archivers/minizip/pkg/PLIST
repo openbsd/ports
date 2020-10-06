@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/06 16:48:54 landry Exp $
+@bin bin/minigzip
+@bin bin/minizip
+include/minizip/
+include/minizip/mz.h
+include/minizip/mz_compat.h
+include/minizip/mz_crypt.h
+include/minizip/mz_os.h
+include/minizip/mz_strm.h
+include/minizip/mz_strm_buf.h
+include/minizip/mz_strm_bzip.h
+include/minizip/mz_strm_mem.h
+include/minizip/mz_strm_os.h
+include/minizip/mz_strm_pkcrypt.h
+include/minizip/mz_strm_split.h
+include/minizip/mz_strm_wzaes.h
+include/minizip/mz_strm_zlib.h
+include/minizip/mz_zip.h
+include/minizip/mz_zip_rw.h
+include/minizip/unzip.h
+include/minizip/zip.h
+lib/cmake/
+lib/cmake/minizip/
+lib/cmake/minizip/minizip${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/minizip/minizip.cmake
+lib/cmake/minizip/minizipConfig.cmake
+lib/cmake/minizip/minizipConfigVersion.cmake
+@lib lib/libminizip.so.${LIBminizip_VERSION}
+lib/pkgconfig/minizip.pc
