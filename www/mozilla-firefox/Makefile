@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.436 2020/10/03 14:40:04 landry Exp $
+# $OpenBSD: Makefile,v 1.437 2020/10/06 15:43:29 tb Exp $
 
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -95,7 +95,7 @@ post-install:
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
-	ln ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
+	ln -f ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
 
 .for f in unveil.content unveil.gpu unveil.main pledge.content pledge.gpu pledge.main
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
