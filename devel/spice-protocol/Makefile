@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2020/05/28 08:54:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2020/10/06 08:26:16 ajacoutot Exp $
+
+PKG_ARCH=	*
 
 COMMENT=	SPICE protocol headers
 
-DISTNAME=	spice-protocol-0.14.2
+DISTNAME=	spice-protocol-0.14.3
 
 CATEGORIES=	devel net
 
