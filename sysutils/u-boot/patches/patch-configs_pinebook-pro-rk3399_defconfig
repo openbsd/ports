@@ -1,12 +1,12 @@
-$OpenBSD: patch-configs_pinebook-pro-rk3399_defconfig,v 1.1 2020/07/07 08:26:26 jsg Exp $
+$OpenBSD: patch-configs_pinebook-pro-rk3399_defconfig,v 1.2 2020/10/06 05:59:08 jsg Exp $
 
 Index: configs/pinebook-pro-rk3399_defconfig
 --- configs/pinebook-pro-rk3399_defconfig.orig
 +++ configs/pinebook-pro-rk3399_defconfig
-@@ -57,7 +57,7 @@ CONFIG_REGULATOR_RK8XX=y
- CONFIG_PWM_ROCKCHIP=y
- CONFIG_RAM_RK3399_LPDDR4=y
+@@ -64,7 +64,7 @@ CONFIG_RAM_RK3399_LPDDR4=y
  CONFIG_DM_RESET=y
+ CONFIG_DM_RNG=y
+ CONFIG_RNG_ROCKCHIP=y
 -CONFIG_BAUDRATE=1500000
 +CONFIG_BAUDRATE=115200
  CONFIG_DEBUG_UART_SHIFT=2

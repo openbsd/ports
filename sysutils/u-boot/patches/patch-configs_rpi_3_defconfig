@@ -1,4 +1,4 @@
-$OpenBSD: patch-configs_rpi_3_defconfig,v 1.8 2020/07/07 08:26:27 jsg Exp $
+$OpenBSD: patch-configs_rpi_3_defconfig,v 1.9 2020/10/06 05:59:08 jsg Exp $
 
 rpi: Use firmware provided device tree
 
@@ -25,6 +25,6 @@ Index: configs/rpi_3_defconfig
  CONFIG_CMD_FS_UUID=y
 -CONFIG_OF_EMBED=y
 +CONFIG_OF_BOARD=y
- CONFIG_DEFAULT_DEVICE_TREE="bcm2837-rpi-3-b"
  CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
  CONFIG_SYS_RELOC_GD_ENV_ADDR=y
+ CONFIG_ENV_VARS_UBOOT_RUNTIME_CONFIG=y

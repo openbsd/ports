@@ -1,14 +1,14 @@
-$OpenBSD: patch-configs_rock64-rk3328_defconfig,v 1.4 2020/07/07 08:26:26 jsg Exp $
+$OpenBSD: patch-configs_rock64-rk3328_defconfig,v 1.5 2020/10/06 05:59:08 jsg Exp $
 
 Index: configs/rock64-rk3328_defconfig
 --- configs/rock64-rk3328_defconfig.orig
 +++ configs/rock64-rk3328_defconfig
-@@ -77,7 +77,7 @@ CONFIG_RAM=y
+@@ -79,7 +79,7 @@ CONFIG_RAM=y
  CONFIG_SPL_RAM=y
  CONFIG_TPL_RAM=y
  CONFIG_DM_RESET=y
 -CONFIG_BAUDRATE=1500000
 +CONFIG_BAUDRATE=115200
  CONFIG_DEBUG_UART_SHIFT=2
+ CONFIG_ROCKCHIP_SPI=y
  CONFIG_SYSRESET=y
- # CONFIG_TPL_SYSRESET is not set
