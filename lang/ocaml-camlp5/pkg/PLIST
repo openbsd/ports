@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/18 22:45:52 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/10/07 12:35:21 daniel Exp $
 %%native%%
 bin/camlp5
 bin/camlp5o
@@ -102,6 +102,7 @@ lib/ocaml/camlp5/stdpp.mli
 lib/ocaml/camlp5/token.cmi
 lib/ocaml/camlp5/token.mli
 lib/ocaml/camlp5/versdep.cmi
+lib/ocaml/topfind.camlp5
 @man man/man1/camlp5.1
 @man man/man1/camlp5o.1
 @man man/man1/camlp5o.opt.1
