@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2018/07/11 15:10:47 chrisz Exp $
+$OpenBSD: patch-src_Makefile,v 1.2 2020/10/07 12:34:24 daniel Exp $
 
 Allow building bytecode-only on native archs.
 
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -37,13 +37,17 @@ COBJS=bng.$(O) nat_stubs.$(O)
+@@ -33,13 +33,17 @@ COBJS=bng.$(O) nat_stubs.$(O)
  
  all:: libnums.$(A) nums.cma
  
@@ -23,13 +23,13 @@ Index: src/Makefile
  
  libnums.$(A): $(COBJS)
  	$(OCAMLMKLIB) -oc nums $(COBJS)
-@@ -75,11 +79,15 @@ nat_stubs.$(O): bng.h nat.h
+@@ -71,11 +75,15 @@ nat_stubs.$(O): bng.h nat.h
  # is installed via findlib
  
  TOINSTALL=nums.cma libnums.$(A) $(CMIS) $(CMIS:.cmi=.mli) $(CMIS:.cmi=.cmti)
 +ifeq "$(NATIVE)" "true"
  ifneq "$(ARCH)" "none"
- TOINSTALL+=nums.cmxa nums.$(A) $(CMIS:.cmi=.cmx)
+ TOINSTALL+=nums.cmxa nums.$(A) $(CMXS)
  endif
 +endif
 +ifeq "$(NATIVE)" "true"

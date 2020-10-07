@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/09 17:34:14 chrisz Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/07 12:34:24 daniel Exp $
 
 COMMENT =	library for arithmetic on big integers and rationals
 CATEGORIES =	math
 
-V =		1.1
-REVISION =	2
+V =		1.3
+
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	num
-#GH_TAGNAME =	v${V}
-# This commit includes a necessary fix for installing via findlib.
-# XXX: Switch back to GH_TAGNAME on next update
-GH_COMMIT =	7dd5e935aaa2b902585b3b2d0e55ad9b2442fff0
+GH_TAGNAME =	v${V}
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
 HOMEPAGE =	https://github.com/ocaml/num/
