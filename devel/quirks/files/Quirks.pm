@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1070 2020/10/07 02:00:07 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1071 2020/10/07 07:26:50 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1855,6 +1855,8 @@ my $obsolete_reason = {
 	'fpc' => 5,
 	'exaile' => 13,
 	'instead-launcher' => 3,
+# 6.9
+	'py-notify' => 3,
 };
 
 # reasons for obsolete packages
