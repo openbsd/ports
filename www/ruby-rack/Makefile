@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2019/12/24 00:22:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.27 2020/10/07 20:01:32 jeremy Exp $
 
 COMMENT=		modular Ruby webserver interface
 
-DISTNAME=		rack-2.0.8
+DISTNAME=		rack-2.2.3
 CATEGORIES=		www
 
 HOMEPAGE=		http://rack.github.io/
@@ -15,8 +15,5 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
-
-MODRUBY_TEST=		testrb
-MODRUBY_TEST_TARGET=	test/spec_*.rb
 
 .include <bsd.port.mk>
