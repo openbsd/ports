@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2020/04/07 17:42:46 otto Exp $
+# $OpenBSD: Makefile,v 1.77 2020/10/07 21:20:45 sthen Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP database access module for PowerDNS
 
-V=			4.3.0
+V=			4.3.1
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -23,6 +23,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
 
 MULTI_PACKAGES=		-main -mysql -pgsql -ldap
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # GPLv2 only, OpenSSL exemption
 PERMIT_PACKAGE=	Yes
