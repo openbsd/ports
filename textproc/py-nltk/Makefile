@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:13:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/10/07 02:00:07 daniel Exp $
 
 COMMENT=		Natural Language ToolKit
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	3.2.4
 DISTNAME=		nltk-${MODPY_EGG_VERSION}
 PKGNAME=		py-nltk-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
-REVISION=		2
+REVISION=		3
 
 EPOCH =			0
 
@@ -28,7 +28,7 @@ TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR} \
 			devel/py-parsing${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 # Need NLTK data for some tests (run python -m nltk.downloader)
 do-test:

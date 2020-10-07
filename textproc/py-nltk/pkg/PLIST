@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/05/23 17:52:39 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/10/07 02:00:07 daniel Exp $
+@conflict py-nltk-*
+@pkgpath textproc/py-nltk
 lib/python${MODPY_VERSION}/site-packages/nltk/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
