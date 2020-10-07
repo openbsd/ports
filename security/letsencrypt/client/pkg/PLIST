@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2020/05/14 11:48:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2020/10/07 13:32:49 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/* /var/lib/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -39,6 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}log.$
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}renewal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}reporter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}snap_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}storage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}updater.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/account.py
@@ -101,6 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/standalone.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/webroot.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/renewal.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/reporter.py
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/snap_config.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/storage.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/updater.py
 lib/python${MODPY_VERSION}/site-packages/certbot/achallenges.py
@@ -167,6 +169,9 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_2048.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_512.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_512_bad.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_fullchain_2048.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_intermediate_1.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_intermediate_2.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert_leaf.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cli.ini
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-6sans_512.conf
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-6sans_512.pem
