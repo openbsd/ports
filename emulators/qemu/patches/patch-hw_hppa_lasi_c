@@ -1,0 +1,33 @@
+$OpenBSD: patch-hw_hppa_lasi_c,v 1.1 2020/10/07 19:55:57 cwen Exp $
+
+From upstream commit b899fe41:
+
+OpenBSD initializes the LASI IMR value with 0xffffffff to disable all LASI
+interrupts. This triggered an assert() and stopped the emulation.  By replacing
+the check with a warning in the guest log we now allow OpenBSD to boot again.
+
+Index: hw/hppa/lasi.c
+--- hw/hppa/lasi.c.orig
++++ hw/hppa/lasi.c
+@@ -11,6 +11,7 @@
+ 
+ #include "qemu/osdep.h"
+ #include "qemu/units.h"
++#include "qemu/log.h"
+ #include "qapi/error.h"
+ #include "cpu.h"
+ #include "trace.h"
+@@ -172,8 +173,11 @@ static MemTxResult lasi_chip_write_with_attrs(void *op
+         /* read-only.  */
+         break;
+     case LASI_IMR:
+-        s->imr = val;  /* 0x20 ?? */
+-        assert((val & LASI_IRQ_BITS) == val);
++        s->imr = val;
++        if (((val & LASI_IRQ_BITS) != val) && (val != 0xffffffff))
++            qemu_log_mask(LOG_GUEST_ERROR,
++                "LASI: tried to set invalid %lx IMR value.\n",
++                (unsigned long) val);
+         break;
+     case LASI_IPR:
+         /* Any write to IPR clears the register. */
