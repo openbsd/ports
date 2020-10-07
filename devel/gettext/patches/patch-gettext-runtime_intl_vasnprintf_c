@@ -1,0 +1,20 @@
+$OpenBSD: patch-gettext-runtime_intl_vasnprintf_c,v 1.1 2020/10/07 21:14:35 jca Exp $
+
+Don't use printf %n.
+
+Index: gettext-runtime/intl/vasnprintf.c
+--- gettext-runtime/intl/vasnprintf.c.orig
++++ gettext-runtime/intl/vasnprintf.c
+@@ -5116,11 +5116,7 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
+ #endif
+                   *fbp = dp->conversion;
+ #if USE_SNPRINTF
+-# if ! (((__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 3))        \
+-         && !defined __UCLIBC__)                                            \
+-        || (defined __APPLE__ && defined __MACH__)                          \
+-        || defined __ANDROID__                                              \
+-        || (defined _WIN32 && ! defined __CYGWIN__))
++# if 0
+                 fbp[1] = '%';
+                 fbp[2] = 'n';
+                 fbp[3] = '\0';
