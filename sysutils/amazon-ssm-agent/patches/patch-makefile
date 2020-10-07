@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.18 2020/09/05 11:10:16 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.19 2020/10/07 11:29:56 ajacoutot Exp $
 
 XXX go build -i fails with:
 go build os/user: copying /tmp/go-build915184770/b100/_pkg_.a: open /usr/local/go/pkg/openbsd_amd64/os/user.a: permission denied
@@ -7,24 +7,16 @@ go build net: copying /tmp/go-build915184770/b084/_pkg_.a: open /usr/local/go/pk
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -1,6 +1,6 @@
- BUILDFILE_PATH := ./build/private/bgo_exports.makefile
- COPY := cp -p
--GO_BUILD := CGO_ENABLED=0 go build -i
-+GO_BUILD := CGO_ENABLED=0 go build
- BRAZIL_BUILD := false
- 
- # Using the wildcard function to check if file exists
-@@ -44,7 +44,7 @@ checkstyle::
- coverage:: build-linux
- 	$(BGO_SPACE)/Tools/src/coverage.sh github.com/aws/amazon-ssm-agent/agent/...
+@@ -47,7 +47,7 @@ coverage:: build-linux
+ 	  github.com/aws/amazon-ssm-agent/agent/... \
+ 	  github.com/aws/amazon-ssm-agent/core/...
  
 -build:: build-linux build-freebsd build-windows build-linux-386 build-windows-386 build-arm build-arm64 build-darwin
 +build:: build-linux build-freebsd build-openbsd build-windows build-linux-386 build-windows-386 build-arm build-arm64 build-darwin
  
  prepack:: cpy-plugins copy-win-dep prepack-linux prepack-linux-arm64 prepack-linux-386 prepack-windows prepack-windows-386
  
-@@ -63,6 +63,8 @@ build-tests: build-tests-linux build-tests-windows
+@@ -70,6 +70,8 @@ build-tests: build-tests-linux build-tests-windows
  dev-build-linux: clean quick-integtest checkstyle pre-release build-linux build-tests-linux
  .PHONY: dev-build-freebsd
  dev-build-freebsd: clean quick-integtest checkstyle pre-release build-freebsd
@@ -33,27 +25,27 @@ Index: makefile
  .PHONY: dev-build-windows
  dev-build-windows: clean quick-integtest checkstyle pre-release build-windows build-tests-windows
  .PHONY: dev-build-linux-386
-@@ -176,6 +178,23 @@ build-freebsd: checkstyle copy-src pre-build
- 	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-session-logger -v \
+@@ -183,6 +185,23 @@ build-freebsd: checkstyle copy-src pre-build
+ 	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-session-logger -v \
  					$(BGO_SPACE)/agent/session/logging/main.go
- 	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-session-worker -v \
+ 	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-session-worker -v \
 +					$(BGO_SPACE)/agent/framework/processor/executer/outofproc/sessionworker/main.go
 +
 +# no checkstyle because: "Error: Found files not formatted by goimports"
 +.PHONY: build-openbsd
 +build-openbsd: copy-src pre-build
 +	@echo "Build for openbsd agent"
-+	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/amazon-ssm-agent -v \
-+                        $(BGO_SPACE)/core/agent.go $(BGO_SPACE)/core/agent_unix.go $(BGO_SPACE)/core/agent_parser.go
-+	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-agent-worker -v \
++	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -o $(BGO_SPACE)/bin/openbsd_amd64/amazon-ssm-agent -v \
++			$(BGO_SPACE)/core/agent.go $(BGO_SPACE)/core/agent_unix.go $(BGO_SPACE)/core/agent_parser.go
++	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-agent-worker -v \
 +					$(BGO_SPACE)/agent/agent.go $(BGO_SPACE)/agent/agent_unix.go $(BGO_SPACE)/agent/agent_parser.go
-+	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-cli -v \
++	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-cli -v \
 +					$(BGO_SPACE)/agent/cli-main/cli-main.go
-+	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-document-worker -v \
++	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-document-worker -v \
 +					$(BGO_SPACE)/agent/framework/processor/executer/outofproc/worker/main.go
-+	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-session-logger -v \
++	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-session-logger -v \
 +					$(BGO_SPACE)/agent/session/logging/main.go
-+	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-session-worker -v \
++	GOOS=openbsd GOARCH=amd64 $(GO_BUILD) -o $(BGO_SPACE)/bin/openbsd_amd64/ssm-session-worker -v \
  					$(BGO_SPACE)/agent/framework/processor/executer/outofproc/sessionworker/main.go
  
  .PHONY: build-darwin

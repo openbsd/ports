@@ -1,4 +1,4 @@
-$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.12 2020/09/05 11:10:16 ajacoutot Exp $
+$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.13 2020/10/07 11:29:56 ajacoutot Exp $
 
 Index: agent/appconfig/constants_unix.go
 --- agent/appconfig/constants_unix.go.orig
@@ -69,7 +69,7 @@ Index: agent/appconfig/constants_unix.go
  
  	// List all plugin names, unfortunately golang doesn't support const arrays of strings
  
-@@ -98,11 +98,11 @@ const (
+@@ -101,11 +101,11 @@ const (
  var PowerShellPluginCommandName string
  
  // DefaultProgramFolder is the default folder for SSM
@@ -86,7 +86,7 @@ Index: agent/appconfig/constants_unix.go
  
  // AppConfigPath is the path of the AppConfig
  var AppConfigPath = DefaultProgramFolder + AppConfigFileName
-@@ -111,9 +111,9 @@ func init() {
+@@ -114,9 +114,9 @@ func init() {
  	/*
  	   Powershell command used to be poweshell in alpha versions, now it's pwsh in prod versions
  	*/
