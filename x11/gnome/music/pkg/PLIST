@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/05/14 15:51:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2020/10/07 07:05:28 ajacoutot Exp $
 bin/gnome-music
 lib/org.gnome.Music/
 lib/org.gnome.Music/girepository-1.0/
@@ -126,7 +126,6 @@ share/help/cs/gnome-music/playlist-remove-songs.page
 share/help/cs/gnome-music/playlist-repeat.page
 share/help/cs/gnome-music/playlist-shuffle.page
 share/help/cs/gnome-music/search.page
-share/help/da/
 share/help/da/gnome-music/
 share/help/da/gnome-music/figures/
 share/help/da/gnome-music/figures/gnome-music-3.32.png
@@ -393,7 +392,6 @@ share/help/sv/gnome-music/playlist-remove-songs.page
 share/help/sv/gnome-music/playlist-repeat.page
 share/help/sv/gnome-music/playlist-shuffle.page
 share/help/sv/gnome-music/search.page
-share/help/uk/
 share/help/uk/gnome-music/
 share/help/uk/gnome-music/figures/
 share/help/uk/gnome-music/figures/gnome-music-3.32.png
