@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/02/21 23:36:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2020/10/07 20:28:59 naddy Exp $
 
 COMMENT-main=	library for arbitrary precision arithmetic
 COMMENT-cxx=	C++ library for arbitrary precision arithmetic
@@ -38,6 +38,9 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE=gnu
 # Don't try to optimize for the local CPU submodel
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-unknown-openbsd${OSrev}
+
+# Our vsnprintf works properly; skip test that uses %n.
+CONFIGURE_ENV+=	gmp_cv_func_vsnprintf=yes
 
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-cxx}
