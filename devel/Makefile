@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2019 2020/09/23 11:06:47 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2020 2020/10/07 07:25:26 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1563,7 +1563,6 @@
      SUBDIR += py-nose-warnings-filters,python3
      SUBDIR += py-nosexcover
      SUBDIR += py-nosexcover,python3
-     SUBDIR += py-notify
      SUBDIR += py-objgraph
      SUBDIR += py-objgraph,python3
      SUBDIR += py-olefile
