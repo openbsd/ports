@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/03 13:27:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/07 06:13:32 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -25,6 +25,9 @@ WANTLIB += ${COMPILER_LIBCXX} cairo sigc-3.0
 MASTER_SITES=		http://cairographics.org/releases/
 
 MODULES=		devel/meson
+
+# needed for tests
+BUILD_DEPENDS +=	devel/boost
 
 LIB_DEPENDS=		graphics/cairo \
 			devel/libsigc++30
