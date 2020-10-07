@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.172 2020/10/03 12:25:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.173 2020/10/07 08:48:39 ajacoutot Exp $
 @conflict gsutil-*
 bin/bq
 bin/gcloud
@@ -1423,11 +1423,15 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/${MODPY_PYCACHE}app_deploy_migration_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/${MODPY_PYCACHE}locations.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/${MODPY_PYCACHE}queues.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/${MODPY_PYCACHE}task_queues_convertors.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/${MODPY_PYCACHE}tasks.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/app_deploy_migration_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/locations.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/queues.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/task_queues_convertors.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/tasks/tasks.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/trace/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/trace/__init__.py
@@ -3379,6 +3383,7 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODP
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODPY_PYCACHE}create_utils.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODPY_PYCACHE}filter_rewrite.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODPY_PYCACHE}flags.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODPY_PYCACHE}iam.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3394,6 +3399,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODPY_PYCACHE}text_u
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/${MODPY_PYCACHE}update_utils.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/create_utils.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/exceptions.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/filter_rewrite.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/hooks.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/privateca/iam.py
@@ -3509,6 +3515,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}messages_uti
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}name_generator.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}pretty_print.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}resource_args.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}resource_change_validators.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}resource_name_conversion.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}revision_printer.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}serverless_operations.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3526,6 +3533,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/messages_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/name_generator.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/pretty_print.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_args.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_change_validators.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_name_conversion.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/revision_printer.py
@@ -3727,11 +3735,13 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/${MODPY_PYCACHE}copy_task_factory.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/${MODPY_PYCACHE}copy_task_iterator.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/${MODPY_PYCACHE}daisy_chain_copy_task.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/${MODPY_PYCACHE}file_download_task.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/${MODPY_PYCACHE}file_upload_task.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/${MODPY_PYCACHE}intra_cloud_copy_task.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/copy_task_factory.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/copy_task_iterator.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/daisy_chain_copy_task.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/file_download_task.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/file_upload_task.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/tasks/cp/intra_cloud_copy_task.py
@@ -7102,7 +7112,16 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1/${MODPY_PYCACHE}
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1/spanner_v1_client.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1/spanner_v1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1alpha/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1alpha/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1alpha/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1alpha/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1alpha/${MODPY_PYCACHE}spanner_v1alpha_client.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1alpha/${MODPY_PYCACHE}spanner_v1alpha_messages.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1alpha/spanner_v1alpha_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner/v1alpha/spanner_v1alpha_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner_v1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/spanner_v1alpha.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/speech/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/speech/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/speech/${MODPY_PYCACHE}/
@@ -7912,9 +7931,11 @@ google-cloud-sdk/lib/surface/ai/hp_tuning_jobs/${MODPY_PYCACHE}__init__.${MODPY_
 google-cloud-sdk/lib/surface/ai/hp_tuning_jobs/${MODPY_PYCACHE}cancel.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/ai/hp_tuning_jobs/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/ai/hp_tuning_jobs/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/ai/hp_tuning_jobs/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/ai/hp_tuning_jobs/cancel.py
 google-cloud-sdk/lib/surface/ai/hp_tuning_jobs/create.py
 google-cloud-sdk/lib/surface/ai/hp_tuning_jobs/describe.py
+google-cloud-sdk/lib/surface/ai/hp_tuning_jobs/list.py
 google-cloud-sdk/lib/surface/ai/models/
 google-cloud-sdk/lib/surface/ai/models/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/ai/models/${MODPY_PYCACHE}/
@@ -8422,6 +8443,7 @@ google-cloud-sdk/lib/surface/artifacts/repositories/get_iam_policy.yaml
 google-cloud-sdk/lib/surface/artifacts/repositories/list.py
 google-cloud-sdk/lib/surface/artifacts/repositories/remove_iam_policy_binding.yaml
 google-cloud-sdk/lib/surface/artifacts/repositories/set_iam_policy.yaml
+google-cloud-sdk/lib/surface/artifacts/repositories/update.yaml
 google-cloud-sdk/lib/surface/artifacts/tags/
 google-cloud-sdk/lib/surface/artifacts/tags/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/artifacts/tags/${MODPY_PYCACHE}/
@@ -12581,6 +12603,13 @@ google-cloud-sdk/lib/surface/kuberun/
 google-cloud-sdk/lib/surface/kuberun/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/kuberun/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/kuberun/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/${MODPY_PYCACHE}render.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/applications/
+google-cloud-sdk/lib/surface/kuberun/applications/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/kuberun/applications/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/kuberun/applications/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/applications/${MODPY_PYCACHE}init.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/applications/init.py
 google-cloud-sdk/lib/surface/kuberun/clusters/
 google-cloud-sdk/lib/surface/kuberun/clusters/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/kuberun/clusters/${MODPY_PYCACHE}/
@@ -12597,7 +12626,11 @@ google-cloud-sdk/lib/surface/kuberun/clusters/revisions/
 google-cloud-sdk/lib/surface/kuberun/clusters/revisions/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/kuberun/clusters/revisions/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/kuberun/clusters/revisions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/clusters/revisions/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/clusters/revisions/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/kuberun/clusters/revisions/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/clusters/revisions/delete.py
+google-cloud-sdk/lib/surface/kuberun/clusters/revisions/describe.py
 google-cloud-sdk/lib/surface/kuberun/clusters/revisions/list.py
 google-cloud-sdk/lib/surface/kuberun/clusters/services/
 google-cloud-sdk/lib/surface/kuberun/clusters/services/__init__.py
@@ -12615,12 +12648,23 @@ google-cloud-sdk/lib/surface/kuberun/clusters/services/describe.py
 google-cloud-sdk/lib/surface/kuberun/clusters/services/list.py
 google-cloud-sdk/lib/surface/kuberun/clusters/services/update.py
 google-cloud-sdk/lib/surface/kuberun/clusters/services/update_traffic.py
+google-cloud-sdk/lib/surface/kuberun/components/
+google-cloud-sdk/lib/surface/kuberun/components/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/kuberun/components/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/kuberun/components/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/components/${MODPY_PYCACHE}add.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/components/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/components/add.py
+google-cloud-sdk/lib/surface/kuberun/components/list.py
 google-cloud-sdk/lib/surface/kuberun/devkits/
 google-cloud-sdk/lib/surface/kuberun/devkits/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/kuberun/devkits/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/kuberun/devkits/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/devkits/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/kuberun/devkits/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/devkits/describe.py
 google-cloud-sdk/lib/surface/kuberun/devkits/list.py
+google-cloud-sdk/lib/surface/kuberun/render.py
 google-cloud-sdk/lib/surface/labelmanager/
 google-cloud-sdk/lib/surface/labelmanager/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/labelmanager/${MODPY_PYCACHE}/
@@ -13580,6 +13624,7 @@ google-cloud-sdk/lib/surface/redis/instances/delete.yaml
 google-cloud-sdk/lib/surface/redis/instances/describe.yaml
 google-cloud-sdk/lib/surface/redis/instances/export.yaml
 google-cloud-sdk/lib/surface/redis/instances/failover.yaml
+google-cloud-sdk/lib/surface/redis/instances/get_auth_string.yaml
 google-cloud-sdk/lib/surface/redis/instances/import.yaml
 google-cloud-sdk/lib/surface/redis/instances/list.yaml
 google-cloud-sdk/lib/surface/redis/instances/update.yaml
