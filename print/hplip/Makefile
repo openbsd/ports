@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2020/10/03 13:39:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.183 2020/10/07 07:24:13 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -12,6 +12,8 @@ COMMENT-gui=		HPLIP graphical tools
 V=			3.20.9
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
+
+REVISION-main=		0
 
 # https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/master/f/
@@ -137,8 +139,7 @@ RUN_DEPENDS-gui=	x11/py-qt5${MODPY_FLAVOR} \
 			print/hplip,-main \
 			devel/xdg-utils \
 			devel/desktop-file-utils \
-			sysutils/usbutils \
-			devel/py-notify
+			sysutils/usbutils
 
 # hp-toolbox, Actions, Scan
 RUN_DEPENDS-gui +=	graphics/xsane
