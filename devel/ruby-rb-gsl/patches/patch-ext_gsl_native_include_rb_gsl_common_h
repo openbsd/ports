@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_gsl_native_include_rb_gsl_common_h,v 1.1 2020/10/07 00:03:21 jeremy Exp $
+
+Index: ext/gsl_native/include/rb_gsl_common.h
+--- ext/gsl_native/include/rb_gsl_common.h.orig
++++ ext/gsl_native/include/rb_gsl_common.h
+@@ -294,6 +294,9 @@ EXTERN ID rb_gsl_id_beg, rb_gsl_id_end, rb_gsl_id_excl
+ #ifndef RBGSL_SET_CLASS
+ #ifdef RB_OBJ_WRITE
+-#define RBGSL_SET_CLASS0(obj0, cls) RB_OBJ_WRITE(obj0, &(RBASIC_CLASS(obj0)), cls)
++#define RBGSL_SET_CLASS0(obj0, cls) do { \
++    VALUE _obj_klass = RBASIC_CLASS(obj0); \
++    RB_OBJ_WRITE(obj0, &_obj_klass, cls); \
++} while (0)
+ #else
+ #define RBGSL_SET_CLASS0(obj0, cls) RBASIC(obj0)->klass = cls
+ #endif

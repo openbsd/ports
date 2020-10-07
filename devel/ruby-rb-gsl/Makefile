@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/10/07 00:03:21 jeremy Exp $
 
 COMMENT =	Ruby interface to GSL
 
 DISTNAME =	gsl-2.1.0.3
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 # GPLv2
@@ -24,5 +24,8 @@ MODRUBY_TEST =	ruby
 MODRUBY_TEST_TARGET =	-I lib -I test \
 	-e 'ARGV.each{|f| require f}' \
 	`find ./test -name '*_test.rb'`
+
+pre-configure:
+	sed -i 's/^EXTERN /extern /' ${WRKSRC}/ext/gsl_native/{include/*.h,*.c,*.h}
 
 .include <bsd.port.mk>
