@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2020/08/01 11:30:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/10/07 13:32:27 sthen Exp $
 
 COMMENT=	Python module providing a password hashing framework
 
-MODPY_EGG_VERSION= 1.7.2
+MODPY_EGG_VERSION= 1.7.3
 DISTNAME=	passlib-${MODPY_EGG_VERSION}
 PKGNAME=	py-passlib-${MODPY_EGG_VERSION}
-REVISION=	3
 
 CATEGORIES=	security
 
@@ -20,8 +19,10 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
 MODPY_PYTEST_ARGS=	passlib
 
+PATCHORIG=	.orig.port
+
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 RUN_DEPENDS=	security/py-bcrypt${MODPY_FLAVOR} \
 		security/py-scrypt${MODPY_FLAVOR}

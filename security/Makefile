@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.593 2020/10/05 19:46:17 jca Exp $
+# $OpenBSD: Makefile,v 1.594 2020/10/07 13:32:27 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -309,7 +309,6 @@
      SUBDIR += py-oauthlib,python3
      SUBDIR += py-paramiko
      SUBDIR += py-paramiko,python3
-     SUBDIR += py-passlib
      SUBDIR += py-passlib,python3
      SUBDIR += py-pbkdf2
      SUBDIR += py-pbkdf2,python3
