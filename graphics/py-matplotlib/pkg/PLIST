@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/05/03 06:59:58 ajacoutot Exp $
-!%%python3%%
+@comment $OpenBSD: PLIST,v 1.18 2020/10/08 12:03:49 daniel Exp $
+@conflict py-matplotlib-*
+@pkgpath graphics/py-matplotlib
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pylab.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/
 lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
@@ -83,15 +84,15 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/_cm.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_cm_listed.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_color_data.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_constrained_layout.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/_contour.so
-lib/python${MODPY_VERSION}/site-packages/matplotlib/_image.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_contour.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_image.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_layoutbox.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_mathtext_data.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/_path.so
-lib/python${MODPY_VERSION}/site-packages/matplotlib/_png.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_path.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_png.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_pylab_helpers.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/_qhull.so
-lib/python${MODPY_VERSION}/site-packages/matplotlib/_tri.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_qhull.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_tri.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_version.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/afm.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/animation.py
@@ -118,13 +119,9 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}_ba
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}_gtk3_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_agg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_cairo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_gdk.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_gtk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_gtk3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_gtk3agg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_gtk3cairo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_gtkagg.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_gtkcairo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_macosx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_mixed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}backend_nbagg.${MODPY_PYC_MAGIC_TAG}pyc
@@ -150,19 +147,15 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}qt_
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}tkagg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}windowing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}wx_compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_backend_agg.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_backend_agg.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_backend_tk.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_gtk3_compat.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_tkagg.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_tkagg.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_cairo.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_gdk.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_gtk.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_gtk3.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_gtk3agg.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_gtk3cairo.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_gtkagg.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_gtkcairo.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_macosx.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_mixed.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_nbagg.py
@@ -228,6 +221,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/web_backend/jquery-
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/jquery-ui.theme.min.css
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/package.json
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/web_backend/jquery/js/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/web_backend/jquery/js/jquery-1.11.3.js
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/web_backend/jquery/js/jquery-1.11.3.min.js
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/web_backend/js/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/web_backend/js/mpl.js
@@ -244,9 +238,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/${MODPY_PYCACHE}_backports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/${MODPY_PYCACHE}deprecation.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/_backports.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/deprecation.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cm.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/collections.py
@@ -266,7 +258,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/dviread.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/figure.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/font_manager.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/fontconfig_pattern.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/ft2font.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/ft2font.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/gridspec.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/hatch.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/image.py
@@ -356,6 +348,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSer
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Italic.ttf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerifDisplay.ttf
+lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/LICENSE_DEJAVU
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/LICENSE_STIX
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneral.ttf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBol.ttf
@@ -381,6 +374,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/cmr10.ttf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/cmss10.ttf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/cmsy10.ttf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf
+lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/fonts/ttf/local.conf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/back.gif
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/back.pdf
@@ -405,6 +399,12 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/hand.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/hand.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/hand.svg
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/hand_large.gif
+lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/help.pdf
+lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/help.png
+lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/help.ppm
+lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/help.svg
+lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/help_large.png
+lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/help_large.ppm
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/home.gif
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/home.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/home.png
@@ -438,7 +438,6 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/zoom_to_rect
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/zoom_to_rect.svg
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/zoom_to_rect_large.gif
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/images/zoom_to_rect_large.png
-lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/lineprops.glade
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/matplotlibrc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/sample_data/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/mpl-data/sample_data/Minduka_Present_Blue_Pack.png
@@ -512,10 +511,8 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}mathmpl.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}only_directives.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}plot_directive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/mathmpl.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/only_directives.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/plot_directive.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/tests/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/tests/__init__.py
@@ -557,23 +554,6 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}deco
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}determinism.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}disable_internet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}noseclasses.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/decorators.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/exceptions.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/${MODPY_PYCACHE}knownfailure.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/${MODPY_PYCACHE}performgc.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/knownfailure.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/performgc.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/compare.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/conftest.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/decorators.py
@@ -598,7 +578,6 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/${MODPY_PYCACHE}UnitDblConverter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/${MODPY_PYCACHE}UnitDblFormatter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/noseclasses.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}/
@@ -611,12 +590,15 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_a
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_artist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_axes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_bases.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_cairo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_nbagg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_pdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_pgf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_ps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_qt4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_qt5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_svg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backend_tools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_backends_interactive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_basic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_bbox_tight.${MODPY_PYC_MAGIC_TAG}pyc
@@ -640,6 +622,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_l
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_lines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_marker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_mathtext.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_matplotlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_mlab.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_offsetbox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_patches.${MODPY_PYC_MAGIC_TAG}pyc
@@ -698,6 +681,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_a
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_arrow_patches/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_arrow_patches/arrow_styles.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_arrow_patches/boxarrow_test_image.png
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_arrow_patches/connection_styles.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_arrow_patches/fancyarrow_dash.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_arrow_patches/fancyarrow_dpi_cor_100dpi.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_arrow_patches/fancyarrow_dpi_cor_200dpi.png
@@ -942,6 +926,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_a
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/phase_spectrum_noise.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/pie_ccw_true.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/pie_center_radius.png
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/pie_default.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/pie_frame_grid.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/pie_linewidth_0.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/pie_linewidth_2.png
@@ -1003,9 +988,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_a
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/shaped_data.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/shaped_data.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/shaped_data.svg
-lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/single_date.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/single_date.png
-lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/single_date.svg
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/single_point.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/single_point.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/single_point.svg
@@ -1043,6 +1026,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_a
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/test_eventplot_defaults.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/test_eventplot_problem_kwargs.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/test_loglog_nonpos.png
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/titletwiny.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/transparent_markers.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/transparent_markers.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_axes/transparent_markers.svg
@@ -1204,11 +1188,14 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_c
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_constrainedlayout/constrained_layout6.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_constrainedlayout/constrained_layout8.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_constrainedlayout/constrained_layout9.png
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_constrainedlayout/test_colorbar_location.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/contour_addlines.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/contour_corner_mask_False.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/contour_corner_mask_True.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/contour_datetime_axis.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/contour_labels_size_color.png
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/contour_log_extension.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/contour_manual_colors_and_levels.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/contour_manual_labels.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_contour/contour_manual_labels.png
@@ -2932,9 +2919,8 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_p
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_path/nan_path.svg
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_path/path_clipping.svg
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_path/semi_log_with_zero.png
-lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_path/xkcd.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_path/xkcd.png
-lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_path/xkcd.svg
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_path/xkcd_marker.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_patheffects/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_patheffects/collection.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_patheffects/collection.png
@@ -3056,6 +3042,8 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_t
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_text/text_alignment.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_text/text_alignment.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_text/text_alignment.svg
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_text/text_as_path_opacity.svg
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_text/text_as_text_opacity.svg
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_text/text_bboxclip.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_text/text_bboxclip.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_text/text_bboxclip.svg
@@ -3119,6 +3107,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_u
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_usetex/test_usetex.pdf
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_usetex/test_usetex.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_widgets/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_widgets/check_bunch_of_radio_buttons.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/baseline_images/test_widgets/check_radio_buttons.png
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/cmr10.pfb
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/conftest.py
@@ -3130,12 +3119,15 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_arrow_patches.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_artist.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_axes.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_bases.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_cairo.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_nbagg.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_pdf.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_pgf.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_ps.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_qt4.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_qt5.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_svg.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_tools.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backends_interactive.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_basic.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_bbox_tight.py
@@ -3159,6 +3151,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_legend.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_lines.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_marker.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_mathtext.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_matplotlib.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_mlab.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_offsetbox.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_patches.py
@@ -3219,7 +3212,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/tripcolor.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/triplot.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/trirefine.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/tritools.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/ttconv.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/ttconv.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/type1font.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/units.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/widgets.py
@@ -3341,9 +3334,13 @@ lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid/imagegrid_cbar_mode.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/anchored_direction_arrows.png
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/anchored_direction_arrows_many_args.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/divider_append_axes.pdf
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/divider_append_axes.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/divider_append_axes.svg
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/fill_facecolor.png
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/image_grid.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/inset_axes.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/inset_locator.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axes_grid1/inverted_zoomed_axes.png
@@ -3355,6 +3352,7 @@ lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axisartist_axis_artist/axis_artist_ticklabels.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axisartist_axis_artist/axis_artist_ticks.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axisartist_axislines/
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axisartist_axislines/ParasiteAxesAuxTrans_meshplot.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axisartist_axislines/Subplot.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axisartist_axislines/SubplotZero.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_axisartist_clip_path/
@@ -3417,6 +3415,7 @@ lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_mplot3d/surface3d.pdf
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_mplot3d/surface3d.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_mplot3d/surface3d.svg
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_mplot3d/surface3d_shaded.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_mplot3d/text3d.pdf
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_mplot3d/text3d.png
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/tests/baseline_images/test_mplot3d/text3d.svg
@@ -3465,35 +3464,9 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/animation/random_walk.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/animation/simple_anim.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/animation/strip_chart.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/animation/unchained.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/README.txt
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/agg_oo_sgskip.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/filled_step.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/font_family_rc_sgskip.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/font_file.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/histogram_path.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/image_zcoord.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/joinstyle.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/legend.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/line_with_text.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/logos2.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/mathtext_asarray.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/patch_collection.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/power_norm.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/quad_bezier.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/radar_chart.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/sankey_basics.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/sankey_links.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/sankey_rankine.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/scatter_piecharts.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/skewt.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/span_regions.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/two_scales.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/unicode_minus.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/watermark_image.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/api/watermark_text.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/axes_grid1/
 share/examples/${MODPY_PY_PREFIX}matplotlib/axes_grid1/README.txt
+share/examples/${MODPY_PY_PREFIX}matplotlib/axes_grid1/demo_anchored_direction_arrows.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/axes_grid1/demo_axes_divider.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/axes_grid1/demo_axes_grid.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/axes_grid1/demo_axes_grid2.py
@@ -3551,6 +3524,7 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/color/color_cycler.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/color/color_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/color/colorbar_basics.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/color/colormap_reference.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/color/custom_cmap.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/color/named_colors.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/event_handling/
 share/examples/${MODPY_PY_PREFIX}matplotlib/event_handling/README.txt
@@ -3594,7 +3568,6 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/contour_l
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/contourf_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/contourf_hatching.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/contourf_log.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/custom_cmap.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/demo_bboximage.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/figimage_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/image_annotated_heatmap.py
@@ -3603,6 +3576,7 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/image_dem
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/image_masked.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/image_nonuniform.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/image_transparency_blend.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/image_zcoord.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/interpolation_methods.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/irregulardatagrid.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/layer_images.py
@@ -3624,6 +3598,7 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/trigradie
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/triinterp_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/tripcolor_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/triplot_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/images_contours_and_fields/watermark_image.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/README.txt
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/arctest.py
@@ -3641,14 +3616,17 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/eventplot_dem
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/fill.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/fill_between_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/fill_betweenx_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/filled_step.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/gradient_bar.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/interp_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/joinstyle.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/line_demo_dash_control.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/line_styles_reference.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/linestyles.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/marker_fillstyle_reference.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/marker_reference.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/markevery_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/markevery_prop_cycle.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/masked_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/multicolored_line.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/nan_test.py
@@ -3657,14 +3635,17 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/scatter_custo
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/scatter_demo2.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/scatter_hist.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/scatter_masked.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/scatter_piecharts.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/scatter_star_poly.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/scatter_symbol.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/scatter_with_legend.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/simple_plot.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/span_regions.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/spectrum_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/stackplot_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/stem_plot.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/step_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/timeline.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/vline_hline_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/lines_bars_and_markers/xcorr_acorr_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/
@@ -3684,10 +3665,12 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/misc/fill_spiral.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/findobj_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/font_indexing.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/ftface_props.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/misc/histogram_path.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/hyperlinks_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/image_thumbnail_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/keyword_plotting.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/load_converter.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/misc/logos2.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/multipage_pdf.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/multiprocess_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/patheffect_demo.py
@@ -3701,7 +3684,6 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/misc/svg_filter_pie.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/table_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/tight_bbox_test.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/transoffset.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/misc/webapp_demo_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/misc/zorder_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/2dcollections3d.py
@@ -3722,7 +3704,7 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/offset.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/pathpatch3d.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/polys3d.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/quiver3d.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/rotate_axes3d.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/rotate_axes3d_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/scatter3d.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/subplot3d.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/surface3d.py
@@ -3739,7 +3721,7 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/voxels_numpy_logo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/voxels_rgb.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/voxels_torus.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/wire3d.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/wire3d_animation.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/wire3d_animation_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/mplot3d/wire3d_zero_stride.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/pie_and_polar_charts/
 share/examples/${MODPY_PY_PREFIX}matplotlib/pie_and_polar_charts/README.txt
@@ -3759,7 +3741,6 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/pyplots/annotation_basic.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/pyplots/annotation_polar.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/pyplots/auto_subplots_adjust.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/pyplots/boxplot_demo_pyplot.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/pyplots/compound_path_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/pyplots/dollar_ticks.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/pyplots/fig_axes_customize_simple.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/pyplots/fig_axes_labels_simple.py
@@ -3796,10 +3777,12 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/scales/custom_scale.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/scales/log_bar.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/scales/log_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/scales/log_test.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/scales/power_norm.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/scales/scales.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/scales/symlog_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/README.txt
+share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/arrow_guide.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/artist_reference.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/collections.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/compound_path.py
@@ -3811,7 +3794,9 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/fancybox_demo
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/hatch_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/line_collection.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/marker_path.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/patch_collection.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/path_patch.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/quad_bezier.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/shapes_and_collections/scatter.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/showcase/
 share/examples/${MODPY_PY_PREFIX}matplotlib/showcase/README.txt
@@ -3829,6 +3814,11 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/hinton_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/leftventricle_bulleye.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/mri_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/mri_with_eeg.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/radar_chart.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/sankey_basics.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/sankey_links.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/sankey_rankine.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/skewt.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/system_monitor.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/specialty_plots/topographic_hillshading.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/statistics/
@@ -3871,12 +3861,17 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/axes_zoom_
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/axhspan_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/axis_equal_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/broken_axis.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/colorbar_placement.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/custom_figure_class.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/demo_constrained_layout.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/demo_tight_layout.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/fahrenheit_celsius_scales.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/figure_title.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/ganged_plots.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/geo_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/gridspec_and_subplots.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/gridspec_multicolumn.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/gridspec_nested.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/invert_axes.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/multiple_figs_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/shared_axis_demo.py
@@ -3885,6 +3880,8 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/subplot_de
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/subplot_toolbar.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/subplots_adjust.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/subplots_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/two_scales.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/subplots_axes_and_figures/zoom_inset_axes.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/tests/
 share/examples/${MODPY_PY_PREFIX}matplotlib/tests/backend_driver_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/
@@ -3894,10 +3891,10 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/annotati
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/arrow_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/arrow_simple_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/autowrap.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/custom_date_formatter.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/custom_legends.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/dashpointlabel.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/date.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/date_index_formatter.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/demo_annotation_box.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/demo_text_path.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/demo_text_rotation_mode.py
@@ -3906,10 +3903,15 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/engineer
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/fancyarrow_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/fancytextbox_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/figlegend_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/font_family_rc_sgskip.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/font_file.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/font_table_ttf_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/fonts_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/fonts_demo_kw.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/legend.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/legend_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/line_with_text.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/mathtext_asarray.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/mathtext_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/mathtext_examples.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/multiline.py
@@ -3921,9 +3923,11 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/text_fon
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/text_rotation.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/text_rotation_relative_to_line.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/titles_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/unicode_minus.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/usetex_baseline_test.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/usetex_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/usetex_fonteffects.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/text_labels_and_annotations/watermark_text.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/ticks_and_spines/
 share/examples/${MODPY_PY_PREFIX}matplotlib/ticks_and_spines/README.txt
 share/examples/${MODPY_PY_PREFIX}matplotlib/ticks_and_spines/auto_ticks.py
@@ -3961,12 +3965,10 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/units/units_scatter.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/README.txt
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/README.wx
-share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_gtk2_sgskip.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/canvasagg.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_gtk3_panzoom_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_gtk3_sgskip.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_gtk_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_qt_sgskip.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_tk_canvas_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_tk_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_wx2_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_wx3_sgskip.py
@@ -3975,13 +3977,9 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_in_wx5_sgs
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/embedding_webagg_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/fourier_demo_wx_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/gtk_spreadsheet_sgskip.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/histogram_demo_canvasagg_sgskip.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/lineprops_dialog_gtk_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/mathtext_wx_sgskip.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/mpl_with_glade.glade
-share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/mpl_with_glade_316.glade
-share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/mpl_with_glade_316_sgskip.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/mpl_with_glade_sgskip.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/mpl_with_glade3.glade
+share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/mpl_with_glade3_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/pylab_with_gtk_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/svg_histogram_sgskip.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/user_interfaces/svg_tooltip_sgskip.py
@@ -4013,14 +4011,12 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/connectionstyle_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/custom_boxstyle01.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/custom_boxstyle02.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/demo_gridspec01.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/demo_gridspec02.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/demo_gridspec03.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/demo_gridspec04.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/demo_gridspec05.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/demo_gridspec06.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/pgf_fonts_sgskip.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/pgf_fonts.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/pgf_preamble_sgskip.py
-share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/pgf_texsystem_sgskip.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/pgf_texsystem.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/simple_annotate01.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/simple_legend01.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/userdemo/simple_legend02.py

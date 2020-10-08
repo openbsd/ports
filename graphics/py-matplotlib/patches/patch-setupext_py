@@ -1,12 +1,12 @@
-$OpenBSD: patch-setupext_py,v 1.18 2019/05/01 11:38:52 bket Exp $
+$OpenBSD: patch-setupext_py,v 1.19 2020/10/08 12:03:49 daniel Exp $
 Index: setupext.py
 --- setupext.py.orig
 +++ setupext.py
-@@ -1487,6 +1487,7 @@ class BackendTkAgg(OptionalBackendPackage):
+@@ -1455,6 +1455,7 @@ class BackendTkAgg(OptionalBackendPackage):
              ]
  
          ext = make_extension('matplotlib.backends._tkagg', sources)
 +        ext.include_dirs.extend(['${X11BASE}/include'])
          self.add_flags(ext)
+         Numpy().add_flags(ext)
          LibAgg().add_flags(ext, add_sources=False)
-         return ext
