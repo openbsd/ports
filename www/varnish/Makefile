@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.53 2020/03/24 16:22:15 kn Exp $
+# $OpenBSD: Makefile,v 1.54 2020/10/08 12:34:23 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-6.4.0
+DISTNAME =		varnish-6.5.1
 
 CATEGORIES =		www
 
-SHARED_LIBS =		varnishapi      2.1     # 2.4
+SHARED_LIBS =		varnishapi      3.0     # 2.5
 
 HOMEPAGE =		https://www.varnish-cache.org/
 
@@ -37,7 +37,7 @@ USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
+AUTOMAKE_VERSION =	1.16
 AUTORECONF =		./autogen.sh
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
@@ -50,6 +50,11 @@ TEST_TARGET =		check
 .ifdef DEBUG
 CONFIGURE_ARGS +=	--enable-debugging-symbols
 .endif
+
+# XXX ${WRKSRC}/doc/sphinx/Makefile.{am,in}
+pre-build:
+	echo 'readlink -f "$$@"' >| ${WRKDIR}/bin/realpath
+	chmod +x ${WRKDIR}/bin/realpath
 
 post-install:
 	${SUBST_PROGRAM} ${FILESDIR}/varnishreload ${PREFIX}/bin/varnishreload
