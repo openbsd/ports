@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/13 20:32:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2020/10/08 11:59:33 daniel Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
 V=		1.7.0
 DISTNAME=	tsung-$V
+REVISION=	0
 
 CATEGORIES=	benchmarks net
 
@@ -17,9 +18,10 @@ MASTER_SITES=		http://tsung.erlang-projects.org/dist/
 MODULES=		lang/erlang \
 			lang/python
 MODERL_VERSION=		19
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP= 	No
 
-RUN_DEPENDS=		graphics/py-matplotlib \
+RUN_DEPENDS=		graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/gnuplot \
 			shells/bash
 
