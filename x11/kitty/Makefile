@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/07 12:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/10/08 00:12:29 cwen Exp $
+
+# Requires OpenGL>=3.3
+ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =		fast, feature full, GPU-based terminal emulator
 
