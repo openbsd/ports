@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2020/10/07 07:24:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.184 2020/10/08 06:47:45 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -14,6 +14,7 @@ DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
 REVISION-main=		0
+REVISION-gui=		0
 
 # https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/master/f/
