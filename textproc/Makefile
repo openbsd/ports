@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.648 2020/10/07 02:00:07 daniel Exp $
+# $OpenBSD: Makefile,v 1.649 2020/10/08 19:54:31 kn Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -55,7 +55,6 @@
      SUBDIR += fragistics
      SUBDIR += fzy
      SUBDIR += gdiff
-     SUBDIR += glimpse
      SUBDIR += go-text
      SUBDIR += gpresent
      SUBDIR += grepcidr
