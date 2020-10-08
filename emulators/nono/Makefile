@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/07 07:29:04 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.6 2020/10/08 12:19:59 gonzalo Exp $
 
 # Big endian support is not complete as of 0.1.0
 NOT_FOR_ARCHS=		${BE_ARCHS}
@@ -6,6 +6,7 @@ NOT_FOR_ARCHS=		${BE_ARCHS}
 COMMENT=		LUNA-I emulator
 
 DISTNAME=		nono-0.1.1
+REVISION=		0
 CATEGORIES=		emulators
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
@@ -23,7 +24,7 @@ WANTLIB += z
 MASTER_SITES=		http://www.pastel-flower.jp/~isaki/nono/archive/
 
 BUILD_DEPENDS=		devel/gettext,-tools
-RUN_DEPENDS=		x11/wxWidgets
+LIB_DEPENDS=		x11/wxWidgets
 
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
