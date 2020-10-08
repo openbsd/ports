@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/26 10:15:55 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/08 20:34:52 daniel Exp $
+@conflict py-scs-*
+@pkgpath math/py-scs
 @so lib/python${MODPY_VERSION}/site-packages/_scs_direct.so
 @so lib/python${MODPY_VERSION}/site-packages/_scs_indirect.so
 @so lib/python${MODPY_VERSION}/site-packages/_scs_python.so

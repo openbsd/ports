@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2020/08/27 15:18:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.194 2020/10/08 20:34:52 daniel Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -138,13 +138,11 @@
      SUBDIR += py-numpy,python3
      SUBDIR += py-osqp,python3
      SUBDIR += py-pandas,python3
-     SUBDIR += py-patsy
      SUBDIR += py-patsy,python3
      SUBDIR += py-scikit-image,python3
      SUBDIR += py-scikit-learn,python3
      SUBDIR += py-scipy
      SUBDIR += py-scipy,python3
-     SUBDIR += py-scs
      SUBDIR += py-scs,python3
      SUBDIR += py-pysmt
      SUBDIR += py-pysmt,python3
