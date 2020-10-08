@@ -1,0 +1,52 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/10/08 20:17:19 sthen Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -268,27 +268,27 @@ else(WIN32)
+ endif(WIN32)
+ 
+ 
+-INSTALL(FILES docs/INSTALL DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES docs/README.JPN DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES docs/README.CMAKE DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES docs/README.TESTING DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES docs/README.TXT DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
++INSTALL(FILES docs/INSTALL DESTINATION share/doc/gd)
++INSTALL(FILES docs/README.JPN DESTINATION share/doc/gd)
++INSTALL(FILES docs/README.CMAKE DESTINATION share/doc/gd)
++INSTALL(FILES docs/README.TESTING DESTINATION share/doc/gd)
++INSTALL(FILES docs/README.TXT DESTINATION share/doc/gd)
+ 
+ 
+-INSTALL(FILES examples/arc.c DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/copyrotated.c DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/crop.c DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/flip.c DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/gif.c DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/nnquant.c DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/noIcon.pic DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/noIcon.sgi DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/noIcon.tga DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/noIconAlpha.tga DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/test_crop_threshold.png DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/tgaread.c DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/tiffread.c DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
+-INSTALL(FILES examples/windows.c DESTINATION share/doc/gd-${GDLIB_MAJOR}.${GDLIB_MINOR})
++INSTALL(FILES examples/arc.c DESTINATION share/doc/gd)
++INSTALL(FILES examples/copyrotated.c DESTINATION share/doc/gd)
++INSTALL(FILES examples/crop.c DESTINATION share/doc/gd)
++INSTALL(FILES examples/flip.c DESTINATION share/doc/gd)
++INSTALL(FILES examples/gif.c DESTINATION share/doc/gd)
++INSTALL(FILES examples/nnquant.c DESTINATION share/doc/gd)
++INSTALL(FILES examples/noIcon.pic DESTINATION share/doc/gd)
++INSTALL(FILES examples/noIcon.sgi DESTINATION share/doc/gd)
++INSTALL(FILES examples/noIcon.tga DESTINATION share/doc/gd)
++INSTALL(FILES examples/noIconAlpha.tga DESTINATION share/doc/gd)
++INSTALL(FILES examples/test_crop_threshold.png DESTINATION share/doc/gd)
++INSTALL(FILES examples/tgaread.c DESTINATION share/doc/gd)
++INSTALL(FILES examples/tiffread.c DESTINATION share/doc/gd)
++INSTALL(FILES examples/windows.c DESTINATION share/doc/gd)
+ 
+ 
+ set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/COPYING")
