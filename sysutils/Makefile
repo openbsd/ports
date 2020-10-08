@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.577 2020/10/03 20:39:17 solene Exp $
+# $OpenBSD: Makefile,v 1.578 2020/10/08 23:12:03 kn Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -251,7 +251,6 @@
      SUBDIR += pstree
      SUBDIR += pv
      SUBDIR += py-analyzemft
-     SUBDIR += py-augeas
      SUBDIR += py-augeas,python3
      SUBDIR += py-consul,python3
      SUBDIR += py-croniter
