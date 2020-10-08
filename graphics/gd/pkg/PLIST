@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/06/30 00:05:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/10/08 20:16:56 sthen Exp $
 @bin bin/annotate
 bin/bdftogd
 @bin bin/gd2copypal
@@ -25,6 +25,25 @@ include/gdfontt.h
 include/gdfx.h
 include/gdpp.h
 @static-lib lib/libgd.a
-lib/libgd.la
 @lib lib/libgd.so.${LIBgd_VERSION}
 lib/pkgconfig/gdlib.pc
+share/doc/gd/
+share/doc/gd/INSTALL
+share/doc/gd/README.CMAKE
+share/doc/gd/README.JPN
+share/doc/gd/README.TESTING
+share/doc/gd/README.TXT
+share/doc/gd/arc.c
+share/doc/gd/copyrotated.c
+share/doc/gd/crop.c
+share/doc/gd/flip.c
+share/doc/gd/gif.c
+share/doc/gd/nnquant.c
+share/doc/gd/noIcon.pic
+share/doc/gd/noIcon.sgi
+share/doc/gd/noIcon.tga
+share/doc/gd/noIconAlpha.tga
+share/doc/gd/test_crop_threshold.png
+share/doc/gd/tgaread.c
+share/doc/gd/tiffread.c
+share/doc/gd/windows.c
