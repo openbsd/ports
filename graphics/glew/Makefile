@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/10/08 20:18:25 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
 
 COMMENT=	GL Extension Wrangler library
 
-DISTNAME=	glew-2.0.0
-REVISION=	0
+DISTNAME=	glew-2.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=glew/}
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS=	GLEW	8.0
+SHARED_LIBS=	GLEW	9.0
 
 HOMEPAGE=	http://glew.sourceforge.net/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/12/30 13:57:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/10/08 20:18:25 sthen Exp $
 @bin bin/glewinfo
 @bin bin/visualinfo
 include/GL/
@@ -6,7 +6,7 @@ include/GL/eglew.h
 include/GL/glew.h
 include/GL/glxew.h
 include/GL/wglew.h
-lib/libGLEW.a
+@static-lib lib/libGLEW.a
 @lib lib/libGLEW.so.${LIBGLEW_VERSION}
 lib/pkgconfig/glew.pc
 share/doc/glew/
