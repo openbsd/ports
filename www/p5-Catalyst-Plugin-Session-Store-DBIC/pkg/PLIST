@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 02:40:44 afresh1 Exp $
+${P5SITE}/Catalyst/Plugin/Session/Store/DBIC/
+${P5SITE}/Catalyst/Plugin/Session/Store/DBIC.pm
+${P5SITE}/Catalyst/Plugin/Session/Store/DBIC/Delegate.pm
+@man man/man3p/Catalyst::Plugin::Session::Store::DBIC.3p
+@man man/man3p/Catalyst::Plugin::Session::Store::DBIC::Delegate.3p
