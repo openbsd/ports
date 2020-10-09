@@ -11,10 +11,10 @@ DPB_PROPERTIES=		parallel parallel2
 DPB_PROPERTIES=		lonesome
 .endif
 
+COMMENT =		Chromium-based web engine for Qt5
+
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
-
-COMMENT =		Chromium-based web engine for Qt5
 
 CATEGORIES =		www
 
@@ -109,7 +109,7 @@ PKG_ARGS+=		-Dswiftshader=1
 # XXX dwz doesn't work with chromium yet
 DWZ = :
 
-SUBST_VARS +=	WRKSRC WRKDIR DEBUGFLAG
+SUBST_VARS +=	WRKSRC WRKDIR DEBUGFLAG WRKBUILD
 
 MODQMAKE_RECURSIVE =	No
 
