@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/09/07 19:38:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/10/09 13:53:36 sthen Exp $
 @bin bin/minitube
-share/appdata/
-share/appdata/minitube.appdata.xml
 share/applications/minitube.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/minitube.png
@@ -13,6 +11,8 @@ share/icons/hicolor/48x48/apps/minitube.png
 share/icons/hicolor/512x512/apps/minitube.png
 share/icons/hicolor/64x64/apps/minitube.png
 share/icons/hicolor/scalable/apps/minitube.svg
+share/metainfo/
+share/metainfo/org.tordini.flavio.minitube.metainfo.xml
 share/minitube/
 share/minitube/locale/
 share/minitube/locale/ar.qm
