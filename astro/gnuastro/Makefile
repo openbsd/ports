@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/24 19:26:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/09 02:36:44 bcallah Exp $
 
 COMMENT =	GNU Astronomy Utilities
-DISTNAME =	gnuastro-0.12
+DISTNAME =	gnuastro-0.13
 CATEGORIES =	astro
 
-SHARED_LIBS +=	gnuastro                  0.0 # 10.0
+SHARED_LIBS +=	gnuastro                  1.0 # 11.0
+
+HOMEPAGE =	https://www.gnu.org/software/gnuastro/
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
