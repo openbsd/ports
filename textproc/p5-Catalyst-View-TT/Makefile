@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/10/09 03:38:31 afresh1 Exp $
 
 COMMENT=	Template Toolkit views for Catalyst
 
-DISTNAME=	Catalyst-View-TT-0.37
+DISTNAME=	Catalyst-View-TT-0.45
 CATEGORIES=	textproc
-REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes
@@ -18,7 +17,7 @@ RUN_DEPENDS=	devel/p5-Data-Dump \
 		devel/p5-Path-Class \
 		textproc/p5-Template-Timer \
 		www/p5-Catalyst-Runtime
-TEST_DEPENDS=textproc/p5-Template-Provider-Encoding
+TEST_DEPENDS=	textproc/p5-Template-Provider-Encoding
 
 MAKE_ENV=	TEST_POD=Yes
 
