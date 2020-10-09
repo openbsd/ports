@@ -1,0 +1,5 @@
+The Devel::StackTrace module contains two classes, Devel::StackTrace
+and Devel::StackTrace::Frame. These objects encapsulate the information
+that can retrieved via Perl's caller function, as well as providing
+a simple interface to this data.
+
