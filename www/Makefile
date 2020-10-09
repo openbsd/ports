@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.983 2020/09/14 16:45:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.984 2020/10/09 02:41:40 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -154,6 +154,7 @@
      SUBDIR += p5-CSS-Tiny
      SUBDIR += p5-Catalyst-Action-REST
      SUBDIR += p5-Catalyst-Action-RenderView
+     SUBDIR += p5-Catalyst-ActionRole-ACL
      SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
      SUBDIR += p5-Catalyst-Component-InstancePerContext
      SUBDIR += p5-Catalyst-Controller-ActionRole
@@ -163,6 +164,8 @@
      SUBDIR += p5-Catalyst-Engine-Apache
      SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
      SUBDIR += p5-Catalyst-Log-Log4perl
+     SUBDIR += p5-Catalyst-Model-Adaptor
+     SUBDIR += p5-Catalyst-Plugin-Cache
      SUBDIR += p5-Catalyst-Plugin-Cache
      SUBDIR += p5-Catalyst-Plugin-Cache-FileCache
      SUBDIR += p5-Catalyst-Plugin-Cache-Memcached
@@ -182,6 +185,8 @@
      SUBDIR += p5-Catalyst-Plugin-Session-PerUser
      SUBDIR += p5-Catalyst-Plugin-Session-State-Cookie
      SUBDIR += p5-Catalyst-Plugin-Session-State-URI
+     SUBDIR += p5-Catalyst-Plugin-Session-Store-DBIC
+     SUBDIR += p5-Catalyst-Plugin-Session-Store-Delegate
      SUBDIR += p5-Catalyst-Plugin-Session-Store-FastMmap
      SUBDIR += p5-Catalyst-Plugin-Session-Store-File
      SUBDIR += p5-Catalyst-Plugin-Singleton
@@ -191,6 +196,10 @@
      SUBDIR += p5-Catalyst-Runtime
      SUBDIR += p5-Catalyst-View-Mason
      SUBDIR += p5-CatalystX-Component-Traits
+     SUBDIR += p5-CatalystX-InjectComponent
+     SUBDIR += p5-CatalystX-LeakChecker
+     SUBDIR += p5-CatalystX-Profile
+     SUBDIR += p5-CatalystX-REPL
      SUBDIR += p5-Config-ApacheFormat
      SUBDIR += p5-Cookie-Baker
      SUBDIR += p5-Dancer
@@ -208,6 +217,7 @@
      SUBDIR += p5-FCGI-ProcManager
      SUBDIR += p5-Feed-Find
      SUBDIR += p5-Gravatar-URL
+     SUBDIR += p5-HTML-FormFu-MultiForm
      SUBDIR += p5-Hijk
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-CGIChecker
