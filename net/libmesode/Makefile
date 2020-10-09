@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2019/10/17 20:25:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/09 19:42:08 rsadowski Exp $
 
 COMMENT =	fork of libstrophe for use with profanity XMPP client
 
 GH_ACCOUNT =	boothj5
 GH_PROJECT =	libmesode
-GH_TAGNAME =	0.9.3
+GH_TAGNAME =	0.10.0
 
 CATEGORIES =	net devel
 
-SHARED_LIBS +=  mesode                    0.0 # 0.0
+SHARED_LIBS +=  mesode                    1.0 # 0.0
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
