@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 02:39:25 afresh1 Exp $
+${P5SITE}/Catalyst/Helper/
+${P5SITE}/Catalyst/Helper/Model/
+${P5SITE}/Catalyst/Helper/Model/Adaptor.pm
+${P5SITE}/Catalyst/Helper/Model/Factory/
+${P5SITE}/Catalyst/Helper/Model/Factory.pm
+${P5SITE}/Catalyst/Helper/Model/Factory/PerRequest.pm
+${P5SITE}/Catalyst/Model/
+${P5SITE}/Catalyst/Model/Adaptor/
+${P5SITE}/Catalyst/Model/Adaptor.pm
+${P5SITE}/Catalyst/Model/Adaptor/Base.pm
+${P5SITE}/Catalyst/Model/Factory/
+${P5SITE}/Catalyst/Model/Factory.pm
+${P5SITE}/Catalyst/Model/Factory/PerRequest.pm
+@man man/man3p/Catalyst::Helper::Model::Adaptor.3p
+@man man/man3p/Catalyst::Helper::Model::Factory.3p
+@man man/man3p/Catalyst::Helper::Model::Factory::PerRequest.3p
+@man man/man3p/Catalyst::Model::Adaptor.3p
+@man man/man3p/Catalyst::Model::Adaptor::Base.3p
+@man man/man3p/Catalyst::Model::Factory.3p
+@man man/man3p/Catalyst::Model::Factory::PerRequest.3p
