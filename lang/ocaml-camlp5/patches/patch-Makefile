@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1 2020/10/09 21:21:48 daniel Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -57,7 +57,7 @@ install:
+ 	for i in $(DIRS) compile; do \
+ 	  (cd $$i; $(MAKE) install DESTDIR=$(DESTDIR); cd ..); \
+ 	done
+-	cp etc/topfind.camlp5 `ocamlc -where`/. || true
++	cp etc/topfind.camlp5 $(DESTDIR)/`ocamlc -where`/. || true
+ 
+ uninstall:
+ 	@if test -z "$(LIBDIR)"; then \
