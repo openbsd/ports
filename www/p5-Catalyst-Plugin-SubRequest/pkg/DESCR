@@ -1,3 +1,2 @@
-Map subrequests to actions in Catalyst. 
-Uses the catalyst dispatcher, so it will work 
-like an external url call.
+Map subrequests to actions in Catalyst.  Uses the catalyst dispatcher,
+so it will work like an external url call.
