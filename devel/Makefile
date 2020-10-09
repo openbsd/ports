@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2020 2020/10/07 07:25:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2021 2020/10/09 02:02:36 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -562,6 +562,8 @@
      SUBDIR += p5-Carp-Assert-More
      SUBDIR += p5-Carp-Clan
      SUBDIR += p5-Carp-Datum
+     SUBDIR += p5-Carp-REPL
+     SUBDIR += p5-Catalyst-Manual
      SUBDIR += p5-Catalyst-Manual
      SUBDIR += p5-Catalyst-Plugin-C3
      SUBDIR += p5-Catalyst-Plugin-StackTrace
@@ -712,9 +714,11 @@
      SUBDIR += p5-Devel-Hide
      SUBDIR += p5-Devel-Leak
      SUBDIR += p5-Devel-Leak-Object
+     SUBDIR += p5-Devel-LexAlias
      SUBDIR += p5-Devel-NYTProf
      SUBDIR += p5-Devel-OverloadInfo
      SUBDIR += p5-Devel-PartialDump
+     SUBDIR += p5-Devel-REPL
      SUBDIR += p5-Devel-Refcount
      SUBDIR += p5-Devel-SawAmpersand
      SUBDIR += p5-Devel-Size
@@ -722,6 +726,7 @@
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-StackTrace-AsHTML
+     SUBDIR += p5-Devel-StackTrace-WithLexicals
      SUBDIR += p5-Devel-Symdump
      SUBDIR += p5-Devel-Trace
      SUBDIR += p5-Devel-TraceUse
@@ -857,6 +862,7 @@
      SUBDIR += p5-Iterator
      SUBDIR += p5-Iterator-Util
      SUBDIR += p5-Lchown
+     SUBDIR += p5-Lexical-Persistence
      SUBDIR += p5-List-AllUtils
      SUBDIR += p5-List-Compare
      SUBDIR += p5-List-Cycle
@@ -939,8 +945,10 @@
      SUBDIR += p5-MooseX-MethodAttributes
      SUBDIR += p5-MooseX-MultiInitArg
      SUBDIR += p5-MooseX-NonMoose
+     SUBDIR += p5-MooseX-Object-Pluggable
      SUBDIR += p5-MooseX-POE
      SUBDIR += p5-MooseX-Params-Validate
+     SUBDIR += p5-MooseX-RelatedClassRoles
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
