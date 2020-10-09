@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/10/09 03:36:31 afresh1 Exp $
 
 COMMENT=	model class for catalyst
 
-DISTNAME=	Catalyst-Model-DBIC-Schema-0.59
+DISTNAME=	Catalyst-Model-DBIC-Schema-0.65
 CATEGORIES=	databases
 MODULES=	cpan
 PKG_ARCH=	*
-REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes
@@ -22,6 +21,7 @@ RUN_DEPENDS=	devel/p5-Carp-Clan \
 		devel/p5-Hash-Merge \
 		devel/p5-List-MoreUtils \
 		devel/p5-Moose \
+		devel/p5-MooseX-Types-LoadableClass \
 		devel/p5-MooseX-MarkAsMethods \
 		devel/p5-MooseX-NonMoose \
 		devel/p5-MooseX-Types \
