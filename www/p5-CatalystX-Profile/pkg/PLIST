@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 02:34:06 afresh1 Exp $
+${P5SITE}/CatalystX/
+${P5SITE}/CatalystX/Profile/
+${P5SITE}/CatalystX/Profile.pm
+${P5SITE}/CatalystX/Profile/Controller/
+${P5SITE}/CatalystX/Profile/Controller/ControlProfiling.pm
+@man man/man3p/CatalystX::Profile.3p
+@man man/man3p/CatalystX::Profile::Controller::ControlProfiling.3p

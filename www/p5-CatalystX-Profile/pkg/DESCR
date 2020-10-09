@@ -1,0 +1,4 @@
+CatalystX::Profile adds support for profiling your Catalyst application,
+without profiling all the crap that happens during setup. This noise can
+make finding the real profiling stuff trickier, so profiling is disabled
+while this happens.
