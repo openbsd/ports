@@ -1,61 +1,67 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/10/09 03:28:28 afresh1 Exp $
 
-COMMENT=	MVC Web Application Framework
+COMMENT=	elegant MVC Web Application Framework
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Catalyst-Runtime-5.90006
-REVISION=	2
+DISTNAME=	Catalyst-Runtime-5.90126
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
 
-# Artistic + GPL
+# Perl
 PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	devel/p5-Task-Weaken
 
-RUN_DEPENDS=	devel/p5-namespace-autoclean \
-		devel/p5-namespace-clean \
-		devel/p5-B-Hooks-EndOfScope>=0.08 \
+RUN_DEPENDS=	converters/p5-JSON-MaybeXS>=1.0 \
 		devel/p5-Class-C3-Adopt-NEXT>=0.07 \
-		devel/p5-Class-Load \
+		devel/p5-Class-Load>=0.12 \
 		devel/p5-Data-Dump \
 		devel/p5-Data-OptList \
-		devel/p5-List-MoreUtils \
+		devel/p5-Hash-MultiValue \
 		devel/p5-MRO-Compat \
-		devel/p5-Module-Pluggable \
-		devel/p5-Moose>=2.1204 \
+		devel/p5-Module-Pluggable>=4.7 \
+		devel/p5-Moose>=1.03 \
 		devel/p5-MooseX-Emulate-Class-Accessor-Fast>=0.00903 \
-		devel/p5-MooseX-Getopt>=0.30 \
-		devel/p5-MooseX-MethodAttributes>=0.25 \
+		devel/p5-MooseX-Getopt>=0.48 \
+		devel/p5-MooseX-MethodAttributes>=0.24 \
 		devel/p5-MooseX-Role-WithOverloading>=0.09 \
-		devel/p5-MooseX-Types \
-		devel/p5-MooseX-Types-Common \
-		devel/p5-MooseX-Types-LoadableClass \
 		devel/p5-Path-Class>=0.09 \
-		www/p5-Plack \
-		www/p5-Plack-Middleware-ReverseProxy \
-		www/p5-Plack-Test-ExternalServer \
+		devel/p5-Safe-Isa \
+		devel/p5-Stream-Buffered \
 		devel/p5-Sub-Exporter \
-		devel/p5-Tree-Simple \
+		devel/p5-Task-Weaken \
+		devel/p5-Tree-Simple>=1.15 \
 		devel/p5-Tree-Simple-VisitorFactory \
-		devel/p5-Try-Tiny \
-		textproc/p5-String-RewritePrefix \
-		textproc/p5-Text-SimpleTable \
-		www/p5-CGI-Simple \
+		devel/p5-Try-Tiny>=0.17 \
+		devel/p5-namespace-clean>=0.23 \
+		textproc/p5-PerlIO-utf8_strict \
+		textproc/p5-String-RewritePrefix>=0.004 \
+		textproc/p5-Text-SimpleTable>=0.03 \
+		www/p5-CGI-Struct \
+		www/p5-CGI-Simple>=1.109 \
 		www/p5-HTML-Parser \
-		www/p5-HTTP-Body \
-		www/p5-URI \
-		www/p5-HTTP-Request-AsCGI>=1.0 \
-		www/p5-libwww>=5.805
+		www/p5-HTTP-Body>=1.22 \
+		www/p5-HTTP-Message>=5.814 \
+		www/p5-Plack>=0.9991 \
+		www/p5-Plack-Middleware-FixMissingBodyInRedirect>=0.09 \
+		www/p5-Plack-Middleware-MethodOverride>=0.12 \
+		www/p5-Plack-Middleware-RemoveRedundantBody>=0.03 \
+		www/p5-Plack-Middleware-ReverseProxy>=0.04 \
+		www/p5-Plack-Test-ExternalServer \
+		www/p5-URI>=1.65 \
+		www/p5-URI-ws>=0.03 \
+		www/p5-libwww>=5.837
 
-TEST_DEPENDS=devel/p5-Class-Data-Inheritable \
-		devel/p5-MooseX-Daemonize \
-		devel/p5-Test-Exception \
-		devel/p5-YAML \
-		www/fcgi \
-		www/p5-Starman
+TEST_DEPENDS=	devel/p5-Term-Size-Any \
+		devel/p5-Test-Fatal \
+		devel/p5-Test-WWW-Mechanize-Catalyst \
+		devel/p5-Type-Tiny \
+		www/p5-Catalyst-Action-REST \
+		www/p5-Catalyst-Plugin-ConfigLoader \
+		www/p5-CatalystX-LeakChecker>=0.05
+
 
 MAKE_ENV=	TEST_POD=Yes
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/04/08 21:49:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/10/09 03:28:28 afresh1 Exp $
 @conflict p5-Catalyst-Manual-<5.701003
 bin/catalyst.pl
 ${P5SITE}/Catalyst/
@@ -6,12 +6,18 @@ ${P5SITE}/Catalyst.pm
 ${P5SITE}/Catalyst/Action.pm
 ${P5SITE}/Catalyst/ActionChain.pm
 ${P5SITE}/Catalyst/ActionContainer.pm
+${P5SITE}/Catalyst/ActionRole/
+${P5SITE}/Catalyst/ActionRole/ConsumesContent.pm
+${P5SITE}/Catalyst/ActionRole/HTTPMethods.pm
+${P5SITE}/Catalyst/ActionRole/QueryMatching.pm
+${P5SITE}/Catalyst/ActionRole/Scheme.pm
 ${P5SITE}/Catalyst/Base.pm
 ${P5SITE}/Catalyst/ClassData.pm
 ${P5SITE}/Catalyst/Component/
 ${P5SITE}/Catalyst/Component.pm
 ${P5SITE}/Catalyst/Component/ApplicationAttribute.pm
 ${P5SITE}/Catalyst/Component/ContextClosure.pm
+${P5SITE}/Catalyst/Contributing.pod
 ${P5SITE}/Catalyst/Controller.pm
 ${P5SITE}/Catalyst/Delta.pod
 ${P5SITE}/Catalyst/DispatchType/
@@ -20,7 +26,6 @@ ${P5SITE}/Catalyst/DispatchType/Chained.pm
 ${P5SITE}/Catalyst/DispatchType/Default.pm
 ${P5SITE}/Catalyst/DispatchType/Index.pm
 ${P5SITE}/Catalyst/DispatchType/Path.pm
-${P5SITE}/Catalyst/DispatchType/Regex.pm
 ${P5SITE}/Catalyst/Dispatcher.pm
 ${P5SITE}/Catalyst/Engine/
 ${P5SITE}/Catalyst/Engine.pm
@@ -33,12 +38,21 @@ ${P5SITE}/Catalyst/Exception/Detach.pm
 ${P5SITE}/Catalyst/Exception/Go.pm
 ${P5SITE}/Catalyst/Exception/Interface.pm
 ${P5SITE}/Catalyst/Log.pm
+${P5SITE}/Catalyst/Middleware/
+${P5SITE}/Catalyst/Middleware/Stash.pm
 ${P5SITE}/Catalyst/Model.pm
 ${P5SITE}/Catalyst/PSGI.pod
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/Unicode/
+${P5SITE}/Catalyst/Plugin/Unicode/Encoding.pm
 ${P5SITE}/Catalyst/Request/
 ${P5SITE}/Catalyst/Request.pm
+${P5SITE}/Catalyst/Request/PartData.pm
 ${P5SITE}/Catalyst/Request/Upload.pm
+${P5SITE}/Catalyst/Response/
 ${P5SITE}/Catalyst/Response.pm
+${P5SITE}/Catalyst/Response/Writer.pm
+${P5SITE}/Catalyst/RouteMatching.pod
 ${P5SITE}/Catalyst/Runtime.pm
 ${P5SITE}/Catalyst/Script/
 ${P5SITE}/Catalyst/Script/CGI.pm
@@ -50,6 +64,7 @@ ${P5SITE}/Catalyst/ScriptRole.pm
 ${P5SITE}/Catalyst/ScriptRunner.pm
 ${P5SITE}/Catalyst/Stats.pm
 ${P5SITE}/Catalyst/Test.pm
+${P5SITE}/Catalyst/UTF8.pod
 ${P5SITE}/Catalyst/Upgrading.pod
 ${P5SITE}/Catalyst/Utils.pm
 ${P5SITE}/Catalyst/View.pm
@@ -58,11 +73,16 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Action.3p
 @man man/man3p/Catalyst::ActionChain.3p
 @man man/man3p/Catalyst::ActionContainer.3p
+@man man/man3p/Catalyst::ActionRole::ConsumesContent.3p
+@man man/man3p/Catalyst::ActionRole::HTTPMethods.3p
+@man man/man3p/Catalyst::ActionRole::QueryMatching.3p
+@man man/man3p/Catalyst::ActionRole::Scheme.3p
 @man man/man3p/Catalyst::Base.3p
 @man man/man3p/Catalyst::ClassData.3p
 @man man/man3p/Catalyst::Component.3p
 @man man/man3p/Catalyst::Component::ApplicationAttribute.3p
 @man man/man3p/Catalyst::Component::ContextClosure.3p
+@man man/man3p/Catalyst::Contributing.3p
 @man man/man3p/Catalyst::Controller.3p
 @man man/man3p/Catalyst::Delta.3p
 @man man/man3p/Catalyst::DispatchType.3p
@@ -70,9 +90,9 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::DispatchType::Default.3p
 @man man/man3p/Catalyst::DispatchType::Index.3p
 @man man/man3p/Catalyst::DispatchType::Path.3p
-@man man/man3p/Catalyst::DispatchType::Regex.3p
 @man man/man3p/Catalyst::Dispatcher.3p
 @man man/man3p/Catalyst::Engine.3p
+@man man/man3p/Catalyst::Engine::HTTP.3p
 @man man/man3p/Catalyst::EngineLoader.3p
 @man man/man3p/Catalyst::Exception.3p
 @man man/man3p/Catalyst::Exception::Basic.3p
@@ -80,11 +100,16 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Exception::Go.3p
 @man man/man3p/Catalyst::Exception::Interface.3p
 @man man/man3p/Catalyst::Log.3p
+@man man/man3p/Catalyst::Middleware::Stash.3p
 @man man/man3p/Catalyst::Model.3p
 @man man/man3p/Catalyst::PSGI.3p
+@man man/man3p/Catalyst::Plugin::Unicode::Encoding.3p
 @man man/man3p/Catalyst::Request.3p
+@man man/man3p/Catalyst::Request::PartData.3p
 @man man/man3p/Catalyst::Request::Upload.3p
 @man man/man3p/Catalyst::Response.3p
+@man man/man3p/Catalyst::Response::Writer.3p
+@man man/man3p/Catalyst::RouteMatching.3p
 @man man/man3p/Catalyst::Runtime.3p
 @man man/man3p/Catalyst::Script::CGI.3p
 @man man/man3p/Catalyst::Script::Create.3p
@@ -95,6 +120,7 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::ScriptRunner.3p
 @man man/man3p/Catalyst::Stats.3p
 @man man/man3p/Catalyst::Test.3p
+@man man/man3p/Catalyst::UTF8.3p
 @man man/man3p/Catalyst::Upgrading.3p
 @man man/man3p/Catalyst::Utils.3p
 @man man/man3p/Catalyst::View.3p
