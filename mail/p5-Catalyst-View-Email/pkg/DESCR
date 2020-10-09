@@ -1,0 +1,2 @@
+This module sends out emails from a stash key specified in the
+configuration settings.

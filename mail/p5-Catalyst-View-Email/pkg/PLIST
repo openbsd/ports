@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 02:43:28 afresh1 Exp $
+${P5SITE}/Catalyst/Helper/
+${P5SITE}/Catalyst/Helper/View/
+${P5SITE}/Catalyst/Helper/View/Email/
+${P5SITE}/Catalyst/Helper/View/Email.pm
+${P5SITE}/Catalyst/Helper/View/Email/Template.pm
+${P5SITE}/Catalyst/View/
+${P5SITE}/Catalyst/View/Email/
+${P5SITE}/Catalyst/View/Email.pm
+${P5SITE}/Catalyst/View/Email/Template.pm
+@man man/man3p/Catalyst::Helper::View::Email.3p
+@man man/man3p/Catalyst::Helper::View::Email::Template.3p
+@man man/man3p/Catalyst::View::Email.3p
+@man man/man3p/Catalyst::View::Email::Template.3p
