@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/28 14:54:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/10/09 13:30:54 sthen Exp $
 @group daemon
 lib/
 lib/php/
@@ -18,6 +18,7 @@ pear/lib/Net/DNS2/Cache/Shm.php
 pear/lib/Net/DNS2/Exception.php
 pear/lib/Net/DNS2/Header.php
 pear/lib/Net/DNS2/Lookups.php
+pear/lib/Net/DNS2/Notifier.php
 pear/lib/Net/DNS2/Packet/
 pear/lib/Net/DNS2/Packet.php
 pear/lib/Net/DNS2/Packet/Request.php
@@ -29,6 +30,7 @@ pear/lib/Net/DNS2/RR.php
 pear/lib/Net/DNS2/RR/A.php
 pear/lib/Net/DNS2/RR/AAAA.php
 pear/lib/Net/DNS2/RR/AFSDB.php
+pear/lib/Net/DNS2/RR/AMTRELAY.php
 pear/lib/Net/DNS2/RR/ANY.php
 pear/lib/Net/DNS2/RR/APL.php
 pear/lib/Net/DNS2/RR/ATMA.php
@@ -90,14 +92,11 @@ pear/lib/Net/DNS2/RR/URI.php
 pear/lib/Net/DNS2/RR/WKS.php
 pear/lib/Net/DNS2/RR/X25.php
 pear/lib/Net/DNS2/Resolver.php
-pear/lib/Net/DNS2/Socket/
 pear/lib/Net/DNS2/Socket.php
-pear/lib/Net/DNS2/Socket/Sockets.php
-pear/lib/Net/DNS2/Socket/Streams.php
 pear/lib/Net/DNS2/Updater.php
 pear/tests/Net_DNS2/
 pear/tests/Net_DNS2/tests/
-pear/tests/Net_DNS2/tests/AllTests.php
-pear/tests/Net_DNS2/tests/Net_DNS2_DNSSECTest.php
-pear/tests/Net_DNS2/tests/Net_DNS2_ParserTest.php
-pear/tests/Net_DNS2/tests/Net_DNS2_ResolverTest.php
+pear/tests/Net_DNS2/tests/Tests_Net_DNS2_AllTests.php
+pear/tests/Net_DNS2/tests/Tests_Net_DNS2_DNSSECTest.php
+pear/tests/Net_DNS2/tests/Tests_Net_DNS2_ParserTest.php
+pear/tests/Net_DNS2/tests/Tests_Net_DNS2_ResolverTest.php
