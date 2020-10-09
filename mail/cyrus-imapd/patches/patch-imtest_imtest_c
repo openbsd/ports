@@ -1,11 +1,11 @@
-$OpenBSD: patch-imtest_imtest_c,v 1.4 2020/05/14 12:26:39 ajacoutot Exp $
+$OpenBSD: patch-imtest_imtest_c,v 1.5 2020/10/09 08:47:57 ajacoutot Exp $
 
 64 bit time_t
 
 Index: imtest/imtest.c
 --- imtest/imtest.c.orig
 +++ imtest/imtest.c
-@@ -1973,7 +1973,7 @@ static void send_recv_test(void)
+@@ -1980,7 +1980,7 @@ static void send_recv_test(void)
  
      end=time(NULL);
  
