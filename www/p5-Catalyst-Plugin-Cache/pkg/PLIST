@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 10:33:41 simon Exp $
-${P5SITE}/Catalyst/Plugin/
+@comment $OpenBSD: PLIST,v 1.2 2020/10/09 03:40:14 afresh1 Exp $
 ${P5SITE}/Catalyst/Plugin/Cache/
 ${P5SITE}/Catalyst/Plugin/Cache.pm
 ${P5SITE}/Catalyst/Plugin/Cache/Backend/
