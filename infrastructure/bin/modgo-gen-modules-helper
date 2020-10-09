@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+
+# $OpenBSD: modgo-gen-modules-helper,v 1.1 2020/10/09 13:23:51 paco Exp $
+#
+# Copyright (c) 2020 Paco Esteban <paco@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use 5.012;
+use warnings;
+
+my ($portdir);
+
+use FindBin;
+
+BEGIN {
+	$portdir = $ENV{PORTSDIR} || '/usr/ports';
+}
+
+use lib ( "$portdir/infrastructure/lib", "$FindBin::Bin/../lib" );
+
+use OpenBSD::PortGen::Port::Go;
+
+my ( $module ) = @ARGV;
+
+my $port = OpenBSD::PortGen::Port::Go->new;
+my $portinfo = $port->get_dist_info($module);
+
+$port->set_other( MODGO_MODULES  => "\\\n" . join(" \\\n", @{$portinfo->{Dist}})) if $portinfo->{Dist};
+$port->set_other( MODGO_MODFILES => "\\\n" . join(" \\\n", @{$portinfo->{Mods}})) if $portinfo->{Mods};
+
+say "MODGO_VERSION =\t$portinfo->{Version}\n";
+say "MODGO_MODULES =\t$port->{'MODGO_MODULES'}\n";
+say "MODGO_MODFILES =\t$port->{'MODGO_MODFILES'}\n";

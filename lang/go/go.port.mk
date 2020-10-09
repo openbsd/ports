@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.34 2020/07/17 18:19:17 abieber Exp $
+# $OpenBSD: go.port.mk,v 1.35 2020/10/09 13:23:51 paco Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -161,3 +161,12 @@ do-test:
 	${MODGO_TEST_TARGET}
 .  endif
 .endif
+
+# modgo-gen-modules will output MODGO_MODULES and MODGO_MODFILES
+modgo-gen-modules:
+.    if empty(ALL_TARGET)
+	@${ECHO_MSG} "No ALL_TARGET set"
+	@exit 1
+.    else
+	@${_PERLSCRIPT}/modgo-gen-modules-helper ${ALL_TARGET}
+.    endif
