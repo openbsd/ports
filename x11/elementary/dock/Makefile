@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/02 14:43:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/09 02:33:40 bcallah Exp $
 
 # XXX: Make CPU and battery docklets work...
 # 0.11.89 appears as the version number during configure
 COMMENT =	dock from elementary OS
 DISTNAME =	dock-0.11.89
 PKGNAME =	${DISTNAME:S/^/elementary-/}
+REVISION =	0
 
 SHARED_LIBS +=	plank                     0.0 # 1.0.0
 
@@ -23,6 +24,7 @@ MODULES =	devel/dconf
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gobject-introspection \
+		devel/help2man \
 		lang/vala
 
 LIB_DEPENDS =	devel/bamf \
