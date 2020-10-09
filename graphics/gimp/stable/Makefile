@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.136 2020/09/10 10:21:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.137 2020/10/09 22:17:15 jca Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.20
+REVISION =	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -44,8 +45,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 # C++14
 COMPILER=	base-clang ports-gcc
 
-MODULES=	textproc/intltool \
-		lang/python
+MODULES=	textproc/intltool
 
 COMMON_DEPENDS=	archivers/lzip/lzlib \
 		devel/appstream-glib \
@@ -54,8 +54,7 @@ COMMON_DEPENDS=	archivers/lzip/lzlib \
 		graphics/jasper \
 		graphics/mypaint-brushes \
 		net/glib2-networking \
-		print/poppler-data \
-		x11/py-gtk2
+		print/poppler-data
 
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
@@ -97,13 +96,10 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+= \
 		--disable-check-update \
+		--disable-python \
 		--enable-gimp-console \
 		--with-pdbgen \
 		--without-alsa \
 		--without-webkit
-
-post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/gimp/2.0/plug-ins
 
 .include <bsd.port.mk>
