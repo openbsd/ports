@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/10/09 03:59:57 afresh1 Exp $
 
 COMMENT=	Catalyst authentication framework
 
-DISTNAME=	Catalyst-Plugin-Authentication-0.10018
+DISTNAME=	Catalyst-Plugin-Authentication-0.10023
 CATEGORIES=	security
-REVISION=	1
 
 # Perl
 PERMIT_PACKAGE=	Yes
@@ -14,10 +13,16 @@ PKG_ARCH=	*
 
 RUN_DEPENDS=	devel/p5-Class-Inspector \
 		devel/p5-MRO-Compat \
+		devel/p5-Moose \
+		devel/p5-MooseX-Emulate-Class-Accessor-Fast \
+		devel/p5-Try-Tiny \
+		devel/p5-namespace-autoclean \
+		textproc/p5-String-RewritePrefix \
 		www/p5-Catalyst-Runtime \
 		www/p5-Catalyst-Plugin-Session
-TEST_DEPENDS=devel/p5-Moose \
+TEST_DEPENDS=	devel/p5-Test-EOL \
 		devel/p5-Test-Exception \
+		devel/p5-Test-NoTabs \
 		devel/p5-Test-WWW-Mechanize-Catalyst \
 		security/p5-Digest-SHA1 \
 		www/p5-Catalyst-Plugin-Session-State-Cookie

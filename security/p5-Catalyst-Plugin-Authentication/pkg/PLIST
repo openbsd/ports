@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/04/08 22:02:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/10/09 03:59:57 afresh1 Exp $
 ${P5SITE}/Catalyst/Authentication/
 ${P5SITE}/Catalyst/Authentication/Credential/
+${P5SITE}/Catalyst/Authentication/Credential/NoPassword.pm
 ${P5SITE}/Catalyst/Authentication/Credential/Password.pm
 ${P5SITE}/Catalyst/Authentication/Credential/Remote.pm
 ${P5SITE}/Catalyst/Authentication/Realm/
@@ -24,6 +25,7 @@ ${P5SITE}/Catalyst/Plugin/Authentication/Store/Minimal.pm
 ${P5SITE}/Catalyst/Plugin/Authentication/User/
 ${P5SITE}/Catalyst/Plugin/Authentication/User.pm
 ${P5SITE}/Catalyst/Plugin/Authentication/User/Hash.pm
+@man man/man3p/Catalyst::Authentication::Credential::NoPassword.3p
 @man man/man3p/Catalyst::Authentication::Credential::Password.3p
 @man man/man3p/Catalyst::Authentication::Credential::Remote.3p
 @man man/man3p/Catalyst::Authentication::Realm.3p
