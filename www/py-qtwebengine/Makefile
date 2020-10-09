@@ -2,16 +2,14 @@
 
 COMMENT =	python Qt5WebEngine bindings
 
-V =		5.13.2
-DISTNAME =	PyQtWebEngine-${V}
-PKGNAME =	py-qtwebengine-${V}
-REVISION =	0
+MODPY_EGG_VERSION =	5.15.1
+DISTNAME =	PyQtWebEngine-${MODPY_EGG_VERSION}
+PKGNAME =	py-qtwebengine-${MODPY_EGG_VERSION}
+
 
 CATEGORIES =	www devel
 
 HOMEPAGE =	https://www.riverbankcomputing.com/software/pyqtwebengine/intro
-
-MASTER_SITES =	https://www.riverbankcomputing.com/static/Downloads/PyQtWebEngine/${V}/
 
 # GPLv3 with exceptions for use with certain named open-source licenses
 PERMIT_PACKAGE =	Yes
@@ -25,6 +23,8 @@ MODULES =	lang/python \
 
 FLAVORS =	python3
 FLAVOR =	python3
+
+MODPY_PI =	Yes
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qtwebengine
