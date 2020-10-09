@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 02:30:35 afresh1 Exp $
+${P5SITE}/Catalyst/Action/
+${P5SITE}/Catalyst/Action/Role/
+${P5SITE}/Catalyst/Action/Role/ACL.pm
+${P5SITE}/Catalyst/ActionRole/ACL.pm
+@man man/man3p/Catalyst::Action::Role::ACL.3p
+@man man/man3p/Catalyst::ActionRole::ACL.3p
