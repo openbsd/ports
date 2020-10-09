@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 01:50:20 afresh1 Exp $
+${P5ARCH}/Devel/LexAlias.pm
+${P5ARCH}/auto/Devel/LexAlias/
+@so ${P5ARCH}/auto/Devel/LexAlias/LexAlias.so
+@man man/man3p/Devel::LexAlias.3p
