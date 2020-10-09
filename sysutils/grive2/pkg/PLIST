@@ -1,3 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/30 11:56:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/09 19:40:13 rsadowski Exp $
 @bin bin/grive
+lib/grive/
+lib/grive/grive-sync.sh
+lib/systemd/
+lib/systemd/user/
+lib/systemd/user/grive-changes@.service
+lib/systemd/user/grive-timer@.service
+lib/systemd/user/grive-timer@.timer
 @man man/man1/grive.1

@@ -1,34 +1,29 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/10/09 19:40:13 rsadowski Exp $
 
 COMMENT =	third-party client for Google Drive
 
-VERSION =	0.5.0
-DISTNAME =	grive2-${VERSION}
-REVISION =	2
+GH_ACCOUNT =	vitalif
+GH_PROJECT =	grive2
+GH_COMMIT =	548ea362f319cd1f7fcbad0344fde8449fa14255
+
+DISTNAME =	grive2-0.5.1
 
 CATEGORIES =	sysutils
 
-MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
-
-HOMEPAGE = 	http://yourcmc.ru/wiki/Grive2
-
-GH_ACCOUNT =	vitalif
-GH_PROJECT =	grive2
-GH_COMMIT =	ae06eccb38b2fe250c9ddeac3e3973f80b8a0aa9
+HOMEPAGE =	http://yourcmc.ru/wiki/Grive2
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_unit_test_framework-mt c curl
-WANTLIB += expat gcrypt gpg-error iberty m pthread yajl z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} boost_filesystem-mt boost_program_options-mt
+WANTLIB += boost_regex-mt boost_system-mt c curl gcrypt gpg-error
+WANTLIB += iberty m yajl
 
 MODULES =	devel/cmake
 
 COMPILER =	base-clang ports-gcc
 
 CXXFLAGS +=	-I${LOCALBASE}/include
-
 
 LIB_DEPENDS =	devel/boost \
 		devel/libyajl \

@@ -1,0 +1,20 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/10/09 19:40:13 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -1,5 +1,7 @@
+ cmake_minimum_required(VERSION 2.8)
+ 
++project(grive2)
++
+ include(GNUInstallDirs)
+ 
+ # Grive version. remember to update it for every new release!
+@@ -12,4 +14,4 @@ add_definitions( -D_FILE_OFFSET_BITS=64 -std=c++0x )
+ add_subdirectory( systemd )
+ add_subdirectory( libgrive )
+ add_subdirectory( grive )
+-	
+\ No newline at end of file
++	
