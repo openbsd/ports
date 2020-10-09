@@ -52,6 +52,15 @@ Index: src/3rdparty/chromium/BUILD.gn
      ]
  
      if (!is_android) {
+@@ -713,7 +703,7 @@ group("gn_all") {
+     deps += [ "//third_party/sqlite:sqlite_shell" ]
+   }
+ 
+-  if (is_linux && !is_chromeos && !is_chromecast) {
++  if ((is_linux || is_openbsd) && !is_chromeos && !is_chromecast) {
+     # TODO(GYP): Figure out if any of these should be in gn_all
+     # and figure out how cross-platform they are
+     deps += [
 @@ -931,7 +921,6 @@ if (is_chromeos) {
        "//ppapi/examples/video_decode",
        "//sandbox/linux:chrome_sandbox",
