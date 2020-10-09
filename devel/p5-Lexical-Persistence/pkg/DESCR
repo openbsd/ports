@@ -1,0 +1,3 @@
+Lexical::Persistence does a few things, all related. Note that all the
+behaviors listed here are the defaults. Subclasses can override nearly
+every aspect of Lexical::Persistence's behavior.
