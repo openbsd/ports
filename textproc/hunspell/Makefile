@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/10/09 19:11:32 rsadowski Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
-
 GH_ACCOUNT =	hunspell
 GH_PROJECT =	hunspell
-GH_TAGNAME =	v1.6.2
-REVISION =	0
+GH_TAGNAME =	v1.7.0
 
-SHARED_LIBS =	hunspell-1.6 	0.0 #	.0.0
+SHARED_LIBS =	hunspell-1.7	0.0 # 0.0
 
 CATEGORIES =	textproc
 
-HOMEPAGE =	http://hunspell.github.io/
+HOMEPAGE =	https://hunspell.github.io/
 
 # GPL/LGPL/MPL
 PERMIT_PACKAGE =	Yes

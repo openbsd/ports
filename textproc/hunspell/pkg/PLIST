@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/04/12 18:09:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/10/09 19:11:32 rsadowski Exp $
 bin/affixcompress
 @bin bin/analyze
 @bin bin/chmorph
@@ -13,15 +13,13 @@ bin/wordforms
 bin/wordlist2hunspell
 include/hunspell/
 include/hunspell/atypes.hxx
-include/hunspell/csutil.hxx
-include/hunspell/htypes.hxx
 include/hunspell/hunspell.h
 include/hunspell/hunspell.hxx
 include/hunspell/hunvisapi.h
 include/hunspell/w_char.hxx
-lib/libhunspell-1.6.a
-lib/libhunspell-1.6.la
-@lib lib/libhunspell-1.6.so.${LIBhunspell-1.6_VERSION}
+@static-lib lib/libhunspell-1.7.a
+lib/libhunspell-1.7.la
+@lib lib/libhunspell-1.7.so.${LIBhunspell-1.7_VERSION}
 lib/pkgconfig/hunspell.pc
 man/hu/
 man/hu/man1/

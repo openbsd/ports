@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_tools_hunspell_cxx,v 1.4 2017/04/12 18:09:01 landry Exp $
---- src/tools/hunspell.cxx.orig	Sat Mar 25 22:20:45 2017
-+++ src/tools/hunspell.cxx	Sat Apr  8 19:17:14 2017
+$OpenBSD: patch-src_tools_hunspell_cxx,v 1.5 2020/10/09 19:11:32 rsadowski Exp $
+Index: src/tools/hunspell.cxx
+--- src/tools/hunspell.cxx.orig
++++ src/tools/hunspell.cxx
 @@ -116,28 +116,14 @@
- #include "odfparser.hxx"
+ #include "../parsers/odfparser.hxx"
  
  #define LIBDIR                \
 -  "/usr/share/hunspell:"      \
