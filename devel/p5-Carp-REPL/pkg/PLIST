@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 02:01:34 afresh1 Exp $
+${P5SITE}/Carp/
+${P5SITE}/Carp/REPL.pm
+${P5SITE}/Devel/REPL/Plugin/Carp/
+${P5SITE}/Devel/REPL/Plugin/Carp/REPL.pm
+@man man/man3p/Carp::REPL.3p
+@man man/man3p/Devel::REPL::Plugin::Carp::REPL.3p
