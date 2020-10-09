@@ -1,4 +1,4 @@
-$OpenBSD: patch-gdb_configure_tgt,v 1.1 2018/07/10 11:03:46 kettenis Exp $
+$OpenBSD: patch-gdb_configure_tgt,v 1.2 2020/10/09 19:22:42 kettenis Exp $
 Index: gdb/configure.tgt
 --- gdb/configure.tgt.orig
 +++ gdb/configure.tgt
@@ -16,3 +16,16 @@ Index: gdb/configure.tgt
  alpha*-*-linux*)
  	# Target: Little-endian Alpha running Linux
  	gdb_target_obs="alpha-tdep.o alpha-mdebug-tdep.o alpha-linux-tdep.o \
+@@ -428,6 +435,12 @@ powerpc-*-openbsd*)
+ 	# Target: OpenBSD/powerpc
+ 	gdb_target_obs="rs6000-tdep.o ppc-sysv-tdep.o ppcobsd-tdep.o \
+ 			solib-svr4.o \
++			ravenscar-thread.o ppc-ravenscar-thread.o"
++	;;
++powerpc64-*-openbsd*)
++	# Target: OpenBSD/powerpc64
++	gdb_target_obs="rs6000-tdep.o ppc-sysv-tdep.o ppc64-tdep.o \
++			ppc64obsd-tdep.o obsd-tdep.o solib-svr4.o \
+ 			ravenscar-thread.o ppc-ravenscar-thread.o"
+ 	;;
+ powerpc-*-aix* | rs6000-*-* | powerpc64-*-aix*)

@@ -1,0 +1,7 @@
+$OpenBSD: patch-gdb_ppc64obsd-nat_c,v 1.1 2020/10/09 19:22:42 kettenis Exp $
+
+Index: gdb/ppc64obsd-nat.c
+--- gdb/ppc64obsd-nat.c.orig
++++ gdb/ppc64obsd-nat.c
+@@ -0,0 +1 @@
++/* Empty */

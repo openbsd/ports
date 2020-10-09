@@ -1,6 +1,7 @@
-$OpenBSD: patch-gdb_configure_host,v 1.1 2018/07/10 11:03:46 kettenis Exp $
---- gdb/configure.host.orig	Sat Jan 21 05:48:42 2017
-+++ gdb/configure.host	Tue Mar  7 23:52:43 2017
+$OpenBSD: patch-gdb_configure_host,v 1.2 2020/10/09 19:22:42 kettenis Exp $
+Index: gdb/configure.host
+--- gdb/configure.host.orig
++++ gdb/configure.host
 @@ -82,6 +82,7 @@ case "${host}" in
  *-*-darwin*)		gdb_host=darwin ;;
  
@@ -9,3 +10,11 @@ $OpenBSD: patch-gdb_configure_host,v 1.1 2018/07/10 11:03:46 kettenis Exp $
  
  alpha*-*-linux*)	gdb_host=alpha-linux ;;
  alpha*-*-freebsd* | alpha*-*-kfreebsd*-gnu)
+@@ -137,6 +138,7 @@ powerpc*-*-freebsd*)	gdb_host=fbsd ;;
+ powerpc-*-netbsd* | powerpc-*-knetbsd*-gnu)
+ 			gdb_host=nbsd ;;
+ powerpc-*-openbsd*)	gdb_host=obsd ;;
++powerpc64-*-openbsd*)	gdb_host=obsd64 ;;
+ 
+ powerpc64*-*-linux*)	gdb_host=ppc64-linux
+                         # Support 'pseudo-native' debugging on the Cell BE
