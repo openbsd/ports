@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2020/06/26 09:41:39 cwen Exp $
+# $OpenBSD: Makefile,v 1.57 2020/10/09 19:12:00 rsadowski Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
@@ -7,6 +7,7 @@ V=		20.03
 DISTNAME=	codeblocks-${V}
 PKGNAME=	codeblocks-${V}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 WRKDIST=	${WRKDIR}/codeblocks-${V}
 
@@ -37,7 +38,7 @@ WANTLIB += atk-1.0 atk-bridge-2.0 boost_system bz2 c cairo
 WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gamin-1 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += harfbuzz hunspell-1.6 iconv intl jpeg m mspack notify
+WANTLIB += harfbuzz hunspell-1.7 iconv intl jpeg m mspack notify
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png samplerate sndio tiff usbhid wx_baseu-3.0 wx_baseu_net-3.0
 WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0

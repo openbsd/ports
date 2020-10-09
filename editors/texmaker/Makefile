@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/12 20:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2020/10/09 19:12:01 rsadowski Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-5.0.2
 CATEGORIES=		editors
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://www.xm1math.net/texmaker/
 
@@ -15,7 +15,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Script Qt5Widgets Qt5Xml c hunspell-1.6 m
+WANTLIB += Qt5Script Qt5Widgets Qt5Xml c hunspell-1.7 m
 
 # c++-11 for required for poppler
 COMPILER=		base-clang ports-gcc

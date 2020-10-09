@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2020/05/20 14:31:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.33 2020/10/09 19:12:00 rsadowski Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
 DISTNAME =	focuswriter-1.7.6
 CATEGORIES =	editors
 EXTRACT_SUFX =	-src.tar.bz2
+REVISION =	0
 
 HOMEPAGE =	https://gottcode.org/focuswriter/
 
@@ -23,7 +24,7 @@ LIB_DEPENDS +=	textproc/hunspell \
 
 WANTLIB +=	${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Gui
 WANTLIB +=	Qt5Multimedia Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB +=	c hunspell-1.6 m z
+WANTLIB +=	c hunspell-1.7 m z
 
 NO_TEST =	Yes
 

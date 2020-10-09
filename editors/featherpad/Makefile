@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2020/08/23 19:38:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.18 2020/10/09 19:12:00 rsadowski Exp $
 
 COMMENT =	lightweight Qt5 plain-text editor
 PKGNAME =	featherpad-${GH_TAGNAME:S/^V//}
 CATEGORIES =	editors x11
+REVISION =	0
 
 GH_ACCOUNT =	tsujan
 GH_PROJECT =	FeatherPad
@@ -14,7 +15,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras SM X11 Xext c hunspell-1.6
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras SM X11 Xext c hunspell-1.7
 WANTLIB += m
 
 MODULES =	devel/cmake \

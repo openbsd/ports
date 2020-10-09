@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2020/09/15 04:03:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2020/10/09 19:12:01 rsadowski Exp $
 
 BROKEN = Connection Error: Unable to connect to server
 
@@ -6,6 +6,7 @@ COMMENT=	multiplatform Jabber client
 
 DISTNAME=	psi-1.4
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	https://psi-im.org/
 
@@ -19,7 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5Quick Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += SM X11 Xext c hunspell-1.6 idn m qca-qt5 xcb z
+WANTLIB += SM X11 Xext c hunspell-1.7 idn m qca-qt5 xcb z
 
 MODULES=		devel/cmake \
 			x11/qt5

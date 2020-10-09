@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.133 2020/09/22 12:57:55 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.134 2020/10/09 19:12:01 rsadowski Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -84,8 +84,8 @@ CONFIGURE_ARGS +=	--with-system-icu
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_HUNSPELL)
-MODMOZ_LIB_DEPENDS +=	textproc/hunspell>=1.6
-MODMOZ_WANTLIB +=	hunspell-1.6
+MODMOZ_LIB_DEPENDS +=	textproc/hunspell>=1.7
+MODMOZ_WANTLIB +=	hunspell-1.7
 CONFIGURE_ARGS +=	--with-system-hunspell
 .endif
 

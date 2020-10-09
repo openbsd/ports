@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2020/07/03 21:13:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2020/10/09 19:12:01 rsadowski Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -9,11 +9,13 @@ COMMENT-python =	Python bindings for link-grammar
 
 VERSION =		5.8.0
 DISTNAME =		link-grammar-${VERSION}
-REVISION-python =	0
+REVISION-python =	1
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
+REVISION-java =		0
+REVISION-main =		0
 
 SHARED_LIBS +=  link-grammar         8.0      # 12.0
 SHARED_LIBS +=  link-grammar-java    6.0      # 12.0
@@ -25,7 +27,7 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += hunspell-1.6 m minisat pcre2-8 sqlite3 z ${COMPILER_LIBCXX}
+WANTLIB += hunspell-1.7 m minisat pcre2-8 sqlite3 z ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${WANTLIB} c perl pthread
 

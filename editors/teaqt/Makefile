@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/02/22 00:54:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/10/09 19:12:01 rsadowski Exp $
 
 COMMENT =	powerful and simple Qt editor
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =	psemiletov
 GH_PROJECT =	tea-qt
 GH_TAGNAME =	50.0.4
 PKGNAME =	teaqt-${GH_TAGNAME}
+REVISION =	0
 
 CATEGORIES =	editors x11
 
@@ -15,7 +16,7 @@ HOMEPAGE =	http://semiletov.org/tea/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets
-WANTLIB += aspell c djvulibre hunspell-1.6 m poppler-qt5 z
+WANTLIB += aspell c djvulibre hunspell-1.7 m poppler-qt5 z
 
 MODULES =	devel/cmake \
 		x11/qt5

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2020/09/11 07:21:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2020/10/09 19:12:01 rsadowski Exp $
 
 COMMENT=		generic spell checking library
 
 V=			2.2.11
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
+REVISION=		0
 
 SHARED_LIBS +=  enchant-2            0.1      # 4.11
 
@@ -17,7 +18,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} aspell c glib-2.0 gmodule-2.0 hunspell-1.6
+WANTLIB += ${COMPILER_LIBCXX} aspell c glib-2.0 gmodule-2.0 hunspell-1.7
 WANTLIB += iconv intl m pcre
 
 MASTER_SITES =		https://github.com/AbiWord/enchant/releases/download/v${V}/
