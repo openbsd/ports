@@ -1,0 +1,4 @@
+This is an interactive shell for Perl, commonly known as a REPL -
+Read, Evaluate, Print, Loop. The shell provides for rapid development
+or testing of code without the need to create a temporary source code
+file.

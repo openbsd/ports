@@ -1,0 +1,80 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 02:00:31 afresh1 Exp $
+bin/re.pl
+${P5SITE}/Devel/REPL/
+${P5SITE}/Devel/REPL.pm
+${P5SITE}/Devel/REPL/Error.pm
+${P5SITE}/Devel/REPL/Meta/
+${P5SITE}/Devel/REPL/Meta/Plugin.pm
+${P5SITE}/Devel/REPL/Overview.pod
+${P5SITE}/Devel/REPL/Plugin/
+${P5SITE}/Devel/REPL/Plugin.pm
+${P5SITE}/Devel/REPL/Plugin/B/
+${P5SITE}/Devel/REPL/Plugin/B/Concise.pm
+${P5SITE}/Devel/REPL/Plugin/Colors.pm
+${P5SITE}/Devel/REPL/Plugin/Commands.pm
+${P5SITE}/Devel/REPL/Plugin/Completion.pm
+${P5SITE}/Devel/REPL/Plugin/CompletionDriver/
+${P5SITE}/Devel/REPL/Plugin/CompletionDriver/Globals.pm
+${P5SITE}/Devel/REPL/Plugin/CompletionDriver/INC.pm
+${P5SITE}/Devel/REPL/Plugin/CompletionDriver/Keywords.pm
+${P5SITE}/Devel/REPL/Plugin/CompletionDriver/LexEnv.pm
+${P5SITE}/Devel/REPL/Plugin/CompletionDriver/Methods.pm
+${P5SITE}/Devel/REPL/Plugin/CompletionDriver/Turtles.pm
+${P5SITE}/Devel/REPL/Plugin/DDC.pm
+${P5SITE}/Devel/REPL/Plugin/DDS.pm
+${P5SITE}/Devel/REPL/Plugin/DumpHistory.pm
+${P5SITE}/Devel/REPL/Plugin/FancyPrompt.pm
+${P5SITE}/Devel/REPL/Plugin/FindVariable.pm
+${P5SITE}/Devel/REPL/Plugin/History.pm
+${P5SITE}/Devel/REPL/Plugin/Interrupt.pm
+${P5SITE}/Devel/REPL/Plugin/LexEnv.pm
+${P5SITE}/Devel/REPL/Plugin/MultiLine/
+${P5SITE}/Devel/REPL/Plugin/MultiLine/PPI.pm
+${P5SITE}/Devel/REPL/Plugin/Nopaste.pm
+${P5SITE}/Devel/REPL/Plugin/OutputCache.pm
+${P5SITE}/Devel/REPL/Plugin/PPI.pm
+${P5SITE}/Devel/REPL/Plugin/Packages.pm
+${P5SITE}/Devel/REPL/Plugin/Peek.pm
+${P5SITE}/Devel/REPL/Plugin/ReadLineHistory.pm
+${P5SITE}/Devel/REPL/Plugin/Refresh.pm
+${P5SITE}/Devel/REPL/Plugin/ShowClass.pm
+${P5SITE}/Devel/REPL/Plugin/Timing.pm
+${P5SITE}/Devel/REPL/Plugin/Turtles.pm
+${P5SITE}/Devel/REPL/Profile/
+${P5SITE}/Devel/REPL/Profile.pm
+${P5SITE}/Devel/REPL/Profile/Default.pm
+${P5SITE}/Devel/REPL/Profile/Minimal.pm
+${P5SITE}/Devel/REPL/Profile/Standard.pm
+${P5SITE}/Devel/REPL/Script.pm
+@man man/man3p/Devel::REPL.3p
+@man man/man3p/Devel::REPL::Overview.3p
+@man man/man3p/Devel::REPL::Plugin::B::Concise.3p
+@man man/man3p/Devel::REPL::Plugin::Colors.3p
+@man man/man3p/Devel::REPL::Plugin::Commands.3p
+@man man/man3p/Devel::REPL::Plugin::Completion.3p
+@man man/man3p/Devel::REPL::Plugin::CompletionDriver::Globals.3p
+@man man/man3p/Devel::REPL::Plugin::CompletionDriver::INC.3p
+@man man/man3p/Devel::REPL::Plugin::CompletionDriver::Keywords.3p
+@man man/man3p/Devel::REPL::Plugin::CompletionDriver::LexEnv.3p
+@man man/man3p/Devel::REPL::Plugin::CompletionDriver::Methods.3p
+@man man/man3p/Devel::REPL::Plugin::CompletionDriver::Turtles.3p
+@man man/man3p/Devel::REPL::Plugin::DDC.3p
+@man man/man3p/Devel::REPL::Plugin::DDS.3p
+@man man/man3p/Devel::REPL::Plugin::DumpHistory.3p
+@man man/man3p/Devel::REPL::Plugin::FancyPrompt.3p
+@man man/man3p/Devel::REPL::Plugin::FindVariable.3p
+@man man/man3p/Devel::REPL::Plugin::History.3p
+@man man/man3p/Devel::REPL::Plugin::Interrupt.3p
+@man man/man3p/Devel::REPL::Plugin::LexEnv.3p
+@man man/man3p/Devel::REPL::Plugin::MultiLine::PPI.3p
+@man man/man3p/Devel::REPL::Plugin::Nopaste.3p
+@man man/man3p/Devel::REPL::Plugin::OutputCache.3p
+@man man/man3p/Devel::REPL::Plugin::PPI.3p
+@man man/man3p/Devel::REPL::Plugin::Packages.3p
+@man man/man3p/Devel::REPL::Plugin::Peek.3p
+@man man/man3p/Devel::REPL::Plugin::ReadLineHistory.3p
+@man man/man3p/Devel::REPL::Plugin::Refresh.3p
+@man man/man3p/Devel::REPL::Plugin::ShowClass.3p
+@man man/man3p/Devel::REPL::Plugin::Timing.3p
+@man man/man3p/Devel::REPL::Plugin::Turtles.3p
+@man man/man3p/Devel::REPL::Profile.3p
