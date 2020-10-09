@@ -179,6 +179,9 @@ CONFIGURE_ARGS +=	-no-ccache \
 			-no-pch \
 			-no-use-gold-linker
 
+# https://www.qt.io/blog/qt-is-relocatable (QTBUG-87220)
+CONFIGURE_ARGS +=	-no-feature-relocatable
+
 # Don't run tests inside main build.
 # XXX It looks like affecting other Qt modules as well.
 CONFIGURE_ARGS +=	-nomake tests
