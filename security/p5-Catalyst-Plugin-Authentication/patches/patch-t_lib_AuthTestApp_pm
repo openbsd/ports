@@ -1,0 +1,14 @@
+$OpenBSD: patch-t_lib_AuthTestApp_pm,v 1.1 2020/10/09 04:01:08 afresh1 Exp $
+
+Index: t/lib/AuthTestApp.pm
+--- t/lib/AuthTestApp.pm.orig
++++ t/lib/AuthTestApp.pm
+@@ -16,7 +16,7 @@ our $users = {
+         password => "s3cr3t",
+     },
+     bar => {
+-        crypted_password => crypt("s3cr3t", "x8"),
++        crypted_password => crypt("s3cr3t", '$2b$09$' . ( 'x' x 22 )),
+     },
+     gorch => {
+         hashed_password => md5("s3cr3t"),
