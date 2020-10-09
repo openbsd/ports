@@ -1,14 +1,14 @@
-$OpenBSD: patch-setup_py,v 1.4 2018/11/27 18:03:37 landry Exp $
+$OpenBSD: patch-setup_py,v 1.5 2020/10/09 16:25:21 landry Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -324,7 +324,7 @@ if os.path.exists("MANIFEST.in"):
-         if (force_cython or not os.path.exists(c_file)
-                 or os.path.getmtime(pyx_file) > os.path.getmtime(c_file)):
-             log.info("Updating C extension with Cython.")
--            subprocess.check_call(["cython", "shapely/speedups/_speedups.pyx"])
-+            subprocess.check_call(["cython${MODPY_BIN_SUFFIX}", "shapely/speedups/_speedups.pyx"])
-     except (subprocess.CalledProcessError, OSError):
-         log.warn("Could not (re)create C extension with Cython.")
-         if force_cython:
+@@ -365,7 +365,7 @@ except ImportError:
+ try:
+     if force_cython:
+         log.info("Updating C extension with Cython.")
+-        subprocess.check_call(["cython", "shapely/speedups/_speedups.pyx"])
++        subprocess.check_call(["cython${MODPY_BIN_SUFFIX}", "shapely/speedups/_speedups.pyx"])
+ except (subprocess.CalledProcessError, OSError):
+     log.warning("Could not (re)create C extension with Cython.")
+     if force_cython:
