@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/10/09 04:04:49 afresh1 Exp $
 
 COMMENT =	storage class for Catalyst Authentication using DBIx::Class
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Catalyst-Authentication-Store-DBIx-Class-0.1502
+DISTNAME =	Catalyst-Authentication-Store-DBIx-Class-0.1506
 CATEGORIES =	security
-REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =	Yes
@@ -18,9 +17,10 @@ RUN_DEPENDS =	databases/p5-DBIx-Class \
 		devel/p5-Try-Tiny \
 		security/p5-Catalyst-Plugin-Authentication>=0.10008 \
 		www/p5-Catalyst-Runtime
-TEST_DEPENDS =	devel/p5-Test-WWW-Mechanize-Catalyst \
-			security/p5-Catalyst-Plugin-Authorization-Roles \
-			www/p5-Catalyst-Plugin-Session-State-Cookie
+TEST_DEPENDS =	databases/p5-DBD-SQLite \
+		devel/p5-Test-WWW-Mechanize-Catalyst \
+		security/p5-Catalyst-Plugin-Authorization-Roles \
+		www/p5-Catalyst-Plugin-Session-State-Cookie
 
 MAKE_ENV =	TEST_POD=Yes
 
