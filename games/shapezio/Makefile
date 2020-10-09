@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/06 13:39:05 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/09 16:18:16 solene Exp $
 
-V =		1.1.18pl202009192141
+V =		1.2.0pl202010091808
 COMMENT =	factorio inspired base building game
 DISTNAME =	shapezio-${V}
 CATEGORIES =	games
@@ -17,7 +17,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/electron \
 		x11/gtk+3,-guic
 
-WRKDIST =	${WRKDIR}/shapez.io
+WRKDIST =	${WRKDIR}/shapezio
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
