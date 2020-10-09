@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/10/09 17:23:51 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2020/10/09 21:14:28 naddy Exp $
 
 GH_ACCOUNT =		pgRouting
 GH_PROJECT =		osm2pgrouting
@@ -16,7 +16,7 @@ WANTLIB += 		boost_program_options-mt c expat m pq pqxx ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-NO_TESTS =		Yes
+NO_TEST =		Yes
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/boost \
 			databases/libpqxx
