@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2020/03/14 17:58:47 ajacoutot Exp $
+$OpenBSD: README,v 1.13 2020/10/09 18:37:29 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -15,7 +15,7 @@ configured under:
 
 And the configuration and policies must be installed and deployed by running:
     zeekctl deploy
-This command will run zeekctlctl(8) with the check, install, and restart
+This command will run zeekctl(8) with the check, install, and restart
 arguments.
 
 It's also recommended to enable housekeeping tasks by adding the following
