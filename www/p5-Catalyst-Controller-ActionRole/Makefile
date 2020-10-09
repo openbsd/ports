@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/26 02:01:08 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1.1.2 2020/10/09 02:28:46 afresh1 Exp $
 
 COMMENT =	apply roles to action instances
 
@@ -18,7 +18,6 @@ RUN_DEPENDS =		devel/p5-Class-Load \
 			textproc/p5-String-RewritePrefix>=0.004 \
 			www/p5-Catalyst-Runtime>=5.80025
 TEST_DEPENDS =		www/p5-Catalyst-Action-REST>=0.74 \
-			devel/p5-namespace-clean
 
 CONFIGURE_STYLE =	modbuild tiny
 
