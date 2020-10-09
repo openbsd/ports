@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2020/07/01 22:12:09 pvk Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2020/10/09 07:18:47 pvk Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -12172,7 +12172,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}ansible_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}changes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}classification.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
@@ -12185,12 +12184,14 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}delegation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}docker_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}executor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}import_analysis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}init.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}manage_ci.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}payload.${MODPY_PYC_MAGIC_TAG}pyc
@@ -12204,7 +12205,16 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/${MODPY_PYCACHE}venv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ansible_util.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cache.py
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/changes.py
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/${MODPY_PYCACHE}azp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/${MODPY_PYCACHE}local.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/${MODPY_PYCACHE}shippable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/azp.py
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/local.py
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/ci/shippable.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/classification.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cli.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/cloud/
@@ -12253,6 +12263,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/data.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/delegation.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/diff.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/docker_util.py
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/encoding.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/env.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/executor.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/git.py
@@ -12263,6 +12274,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/integration/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/integration/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/integration/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/integration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/io.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/manage_ci.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/metadata.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/payload.py
