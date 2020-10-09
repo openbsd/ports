@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/28 19:29:09 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/09 17:23:51 landry Exp $
 @bin bin/osm2pgrouting
 share/osm2pgrouting/
 share/osm2pgrouting/COPYING
 share/osm2pgrouting/Readme.md
 share/osm2pgrouting/mapconfig.xml
+share/osm2pgrouting/mapconfig_for_bicycles.xml
 share/osm2pgrouting/mapconfig_for_cars.xml
+share/osm2pgrouting/mapconfig_for_pedestrian.xml
