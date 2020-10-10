@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.984 2020/10/09 02:41:40 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.985 2020/10/10 01:51:26 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -155,6 +155,7 @@
      SUBDIR += p5-Catalyst-Action-REST
      SUBDIR += p5-Catalyst-Action-RenderView
      SUBDIR += p5-Catalyst-ActionRole-ACL
+     SUBDIR += p5-Catalyst-Authentication-Credential-HTTP
      SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
      SUBDIR += p5-Catalyst-Component-InstancePerContext
      SUBDIR += p5-Catalyst-Controller-ActionRole
@@ -200,6 +201,7 @@
      SUBDIR += p5-CatalystX-LeakChecker
      SUBDIR += p5-CatalystX-Profile
      SUBDIR += p5-CatalystX-REPL
+     SUBDIR += p5-CatalystX-SimpleLogin
      SUBDIR += p5-Config-ApacheFormat
      SUBDIR += p5-Cookie-Baker
      SUBDIR += p5-Dancer
@@ -218,6 +220,7 @@
      SUBDIR += p5-Feed-Find
      SUBDIR += p5-Gravatar-URL
      SUBDIR += p5-HTML-FormFu-MultiForm
+     SUBDIR += p5-HTML-FormHandler
      SUBDIR += p5-Hijk
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-CGIChecker
