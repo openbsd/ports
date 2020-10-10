@@ -38,8 +38,6 @@ WANTLIB += nssutil3 opus pcre plc4 plds4 png smime3 snappy sndio
 WANTLIB += swresample usbhid util vpx webp webpdemux webpmux xcb
 WANTLIB += xkbcommon xml2 xslt z
 
-PATCHORIG=	.orig.port
-
 MODULES =	lang/python \
 		devel/qmake
 
@@ -104,7 +102,7 @@ PKG_ARGS+=		-Dswiftshader=0
 PKG_ARGS+=		-Dswiftshader=1
 .endif
 
-#PATCHORIG=		.orig.port
+PATCHORIG=		.orig.port
 
 # XXX dwz doesn't work with chromium yet
 DWZ = :
