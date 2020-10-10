@@ -22,7 +22,7 @@ gn_args +=	ffmpeg_branding=\"Chrome\" \
 		proprietary_codecs=true
 
 gn_args +=	is_official_build=true \
-		is_component_build=ture
+		is_component_build=true
 
 
 gn_args +=   enable_basic_printing=true \
