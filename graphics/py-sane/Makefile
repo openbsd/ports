@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/10/10 18:45:00 daniel Exp $
 
 COMMENT=		Python SANE module
 
@@ -7,7 +7,7 @@ DISTNAME=		Sane-${MODPY_EGG_VERSION}
 DISTFILES=		${DISTNAME}{v${MODPY_EGG_VERSION}}.tar.gz
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		graphics
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://python-pillow.github.io/
 
@@ -20,7 +20,7 @@ WANTLIB += pthread sane ${MODPY_WANTLIB}
 MASTER_SITES=          https://github.com/python-pillow/Sane/archive/
 
 FLAVORS=		python3
-FLAVOR?=
+FLAVOR =		python3
 
 MODULES=		lang/python
 SUBST_VARS=		MODPY_SITEPKG

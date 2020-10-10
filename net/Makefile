@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1222 2020/09/12 15:33:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.1223 2020/10/10 18:45:00 daniel Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -635,7 +635,6 @@
      SUBDIR += py-websocket-client,python3
      SUBDIR += py-xmpppy
      SUBDIR += py-zeroconf,python3
-     SUBDIR += py-zmq
      SUBDIR += py-zmq,python3
      SUBDIR += py-zsi
      SUBDIR += qbittorrent

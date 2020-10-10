@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.522 2020/10/08 12:03:49 daniel Exp $
+# $OpenBSD: Makefile,v 1.523 2020/10/10 18:45:00 daniel Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -258,7 +258,6 @@
      SUBDIR += py-pyx
      SUBDIR += py-qrcode
      SUBDIR += py-qrcode,python3
-     SUBDIR += py-sane
      SUBDIR += py-sane,python3
      SUBDIR += py-seaborn,python3
      SUBDIR += pycha

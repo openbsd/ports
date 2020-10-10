@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/02/23 18:09:47 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/10/10 18:45:00 daniel Exp $
+@conflict py-zmq-*
+@pkgpath net/py-zmq
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zmq/
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.py

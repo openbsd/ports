@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/10/10 18:45:00 daniel Exp $
 
 COMMENT =	powerful declarative parser/builder for binary data
 
@@ -7,7 +7,7 @@ EPOCH =		0
 MODPY_EGG_VERSION = 2.5.3
 DISTNAME =	construct-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -23,7 +23,7 @@ MODPY_PYTEST =		Yes
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 TEST_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2022 2020/10/10 01:41:26 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2023 2020/10/10 18:45:00 daniel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1405,7 +1405,6 @@
      SUBDIR += py-configparser
      SUBDIR += py-constantly
      SUBDIR += py-constantly,python3
-     SUBDIR += py-construct
      SUBDIR += py-construct,python3
      SUBDIR += py-contextlib2
      SUBDIR += py-contextlib2,python3
