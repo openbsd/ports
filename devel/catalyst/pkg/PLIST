@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 14:28:43 espie Exp $
-${P5SITE}/Task/
+@comment $OpenBSD: PLIST,v 1.2 2020/10/10 01:53:15 afresh1 Exp $
 ${P5SITE}/Task/Catalyst.pm
 @man man/man3p/Task::Catalyst.3p
