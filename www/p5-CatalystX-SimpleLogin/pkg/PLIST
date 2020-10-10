@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/10 01:49:24 afresh1 Exp $
+${P5SITE}/Catalyst/ActionRole/NeedsLogin.pm
+${P5SITE}/CatalystX/SimpleLogin/
+${P5SITE}/CatalystX/SimpleLogin.pm
+${P5SITE}/CatalystX/SimpleLogin/Controller/
+${P5SITE}/CatalystX/SimpleLogin/Controller/Login.pm
+${P5SITE}/CatalystX/SimpleLogin/Form/
+${P5SITE}/CatalystX/SimpleLogin/Form/Login.pm
+${P5SITE}/CatalystX/SimpleLogin/Form/LoginOpenID.pm
+${P5SITE}/CatalystX/SimpleLogin/Manual.pod
+${P5SITE}/CatalystX/SimpleLogin/TraitFor/
+${P5SITE}/CatalystX/SimpleLogin/TraitFor/Controller/
+${P5SITE}/CatalystX/SimpleLogin/TraitFor/Controller/Login/
+${P5SITE}/CatalystX/SimpleLogin/TraitFor/Controller/Login/Logout.pm
+${P5SITE}/CatalystX/SimpleLogin/TraitFor/Controller/Login/OpenID.pm
+${P5SITE}/CatalystX/SimpleLogin/TraitFor/Controller/Login/RenderAsTTTemplate.pm
+${P5SITE}/CatalystX/SimpleLogin/TraitFor/Controller/Login/WithRedirect.pm
+@man man/man3p/Catalyst::ActionRole::NeedsLogin.3p
+@man man/man3p/CatalystX::SimpleLogin.3p
+@man man/man3p/CatalystX::SimpleLogin::Controller::Login.3p
+@man man/man3p/CatalystX::SimpleLogin::Form::Login.3p
+@man man/man3p/CatalystX::SimpleLogin::Form::LoginOpenID.3p
+@man man/man3p/CatalystX::SimpleLogin::Manual.3p
+@man man/man3p/CatalystX::SimpleLogin::TraitFor::Controller::Login::Logout.3p
+@man man/man3p/CatalystX::SimpleLogin::TraitFor::Controller::Login::OpenID.3p
+@man man/man3p/CatalystX::SimpleLogin::TraitFor::Controller::Login::RenderAsTTTemplate.3p
+@man man/man3p/CatalystX::SimpleLogin::TraitFor::Controller::Login::WithRedirect.3p
