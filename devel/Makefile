@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2021 2020/10/09 02:02:36 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2022 2020/10/10 01:41:26 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -641,6 +641,7 @@
      SUBDIR += p5-Curses-Widgets
      SUBDIR += p5-Data-Alias
      SUBDIR += p5-Data-Buffer
+     SUBDIR += p5-Data-Clone
      SUBDIR += p5-Data-Compare
      SUBDIR += p5-Data-Dump
      SUBDIR += p5-Data-Dump-Streamer
