@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/01/22 11:55:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/10/10 17:13:49 ajacoutot Exp $
 @bin bin/secret-tool
 include/libsecret-1/
 include/libsecret-1/libsecret/
@@ -34,6 +34,9 @@ share/locale/bg/LC_MESSAGES/libsecret.mo
 share/locale/bs/LC_MESSAGES/libsecret.mo
 share/locale/ca/LC_MESSAGES/libsecret.mo
 share/locale/ca@valencia/LC_MESSAGES/libsecret.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/libsecret.mo
 share/locale/cs/LC_MESSAGES/libsecret.mo
 share/locale/da/LC_MESSAGES/libsecret.mo
 share/locale/de/LC_MESSAGES/libsecret.mo
