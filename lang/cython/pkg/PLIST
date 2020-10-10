@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/06/01 17:01:07 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/10/10 18:31:55 daniel Exp $
 bin/cygdb${MODPY_BIN_SUFFIX}
 bin/cython${MODPY_BIN_SUFFIX}
 bin/cythonize${MODPY_BIN_SUFFIX}
@@ -88,6 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestGrammar.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestMemView.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestParseTreeTransforms.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestSignatureMatching.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestStringEncoding.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestTreeFragment.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestTreePath.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestTypes.py
@@ -102,6 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}T
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestMemView.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestParseTreeTransforms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestSignatureMatching.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestStringEncoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestTreeFragment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestTreePath.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestTypes.${MODPY_PYC_MAGIC_TAG}pyc
