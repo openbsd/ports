@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/10/09 19:04:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/10/10 19:49:14 sthen Exp $
 
 COMMENT=	validating DNS resolver library
 
@@ -25,6 +25,7 @@ CONFIGURE_STYLE= gnu
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # in sync with src/usr.sbin/unbound, apart from --enable-allsymbols
+# (enabled in src) and --with-pthreads (enabled here)
 CONFIGURE_ARGS+= \
 		--enable-shared \
 		--enable-static \
