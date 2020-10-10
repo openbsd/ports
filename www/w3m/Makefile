@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2019/07/12 20:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2020/10/10 10:05:54 sthen Exp $
 
 COMMENT=	pager/text-based web browser
 
-DISTNAME=	w3m-0.5.3
-REVISION=	8
+V=		0.5.3
+P=		38
+DISTNAME=	w3m-$V
+PKGNAME=	w3m-$Vpl$P
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
@@ -16,11 +18,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 MASTER_SITES0=	${MASTER_SITE_DEBIAN:=main/w/w3m/}
 
 DISTFILES=	${DISTNAME}.tar.gz \
-		w3m_0.5.3-37.debian.tar.xz:0
+		w3m_$V-$P.debian.tar.xz:0
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
-LIB_DEPENDS=	devel/boehm-gc devel/gettext,-runtime
+LIB_DEPENDS=	devel/boehm-gc \
+		devel/gettext,-runtime
 
 FLAVORS=	image
 FLAVOR?=
@@ -31,6 +34,7 @@ CONFIGURE_ARGS=	--disable-xface \
 		--with-gc=${LOCALBASE}
 
 NO_TEST=	Yes
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .if ${FLAVOR:Mimage}
 LIB_DEPENDS+=	graphics/imlib2
