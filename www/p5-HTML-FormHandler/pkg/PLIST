@@ -1,0 +1,365 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/10 01:47:57 afresh1 Exp $
+${P5SITE}/HTML/FormHandler/
+${P5SITE}/HTML/FormHandler.pm
+${P5SITE}/HTML/FormHandler/Base.pm
+${P5SITE}/HTML/FormHandler/Blocks.pm
+${P5SITE}/HTML/FormHandler/BuildFields.pm
+${P5SITE}/HTML/FormHandler/BuildPages.pm
+${P5SITE}/HTML/FormHandler/Field/
+${P5SITE}/HTML/FormHandler/Field.pm
+${P5SITE}/HTML/FormHandler/Field/AddElement.pm
+${P5SITE}/HTML/FormHandler/Field/BoolSelect.pm
+${P5SITE}/HTML/FormHandler/Field/Boolean.pm
+${P5SITE}/HTML/FormHandler/Field/Button.pm
+${P5SITE}/HTML/FormHandler/Field/Captcha.pm
+${P5SITE}/HTML/FormHandler/Field/Checkbox.pm
+${P5SITE}/HTML/FormHandler/Field/Compound.pm
+${P5SITE}/HTML/FormHandler/Field/Date.pm
+${P5SITE}/HTML/FormHandler/Field/DateMDY.pm
+${P5SITE}/HTML/FormHandler/Field/DateTime.pm
+${P5SITE}/HTML/FormHandler/Field/Display.pm
+${P5SITE}/HTML/FormHandler/Field/Duration.pm
+${P5SITE}/HTML/FormHandler/Field/Email.pm
+${P5SITE}/HTML/FormHandler/Field/File.pm
+${P5SITE}/HTML/FormHandler/Field/Float.pm
+${P5SITE}/HTML/FormHandler/Field/Hidden.pm
+${P5SITE}/HTML/FormHandler/Field/Hour.pm
+${P5SITE}/HTML/FormHandler/Field/IntRange.pm
+${P5SITE}/HTML/FormHandler/Field/Integer.pm
+${P5SITE}/HTML/FormHandler/Field/Minute.pm
+${P5SITE}/HTML/FormHandler/Field/Money.pm
+${P5SITE}/HTML/FormHandler/Field/Month.pm
+${P5SITE}/HTML/FormHandler/Field/MonthDay.pm
+${P5SITE}/HTML/FormHandler/Field/MonthName.pm
+${P5SITE}/HTML/FormHandler/Field/Multiple.pm
+${P5SITE}/HTML/FormHandler/Field/Nested.pm
+${P5SITE}/HTML/FormHandler/Field/NoValue.pm
+${P5SITE}/HTML/FormHandler/Field/NonEditable.pm
+${P5SITE}/HTML/FormHandler/Field/Password.pm
+${P5SITE}/HTML/FormHandler/Field/PasswordConf.pm
+${P5SITE}/HTML/FormHandler/Field/PosInteger.pm
+${P5SITE}/HTML/FormHandler/Field/PrimaryKey.pm
+${P5SITE}/HTML/FormHandler/Field/Repeatable/
+${P5SITE}/HTML/FormHandler/Field/Repeatable.pm
+${P5SITE}/HTML/FormHandler/Field/Repeatable/Instance.pm
+${P5SITE}/HTML/FormHandler/Field/Reset.pm
+${P5SITE}/HTML/FormHandler/Field/Result.pm
+${P5SITE}/HTML/FormHandler/Field/RmElement.pm
+${P5SITE}/HTML/FormHandler/Field/Second.pm
+${P5SITE}/HTML/FormHandler/Field/Select.pm
+${P5SITE}/HTML/FormHandler/Field/SelectCSV.pm
+${P5SITE}/HTML/FormHandler/Field/Submit.pm
+${P5SITE}/HTML/FormHandler/Field/Text.pm
+${P5SITE}/HTML/FormHandler/Field/TextArea.pm
+${P5SITE}/HTML/FormHandler/Field/TextCSV.pm
+${P5SITE}/HTML/FormHandler/Field/Upload.pm
+${P5SITE}/HTML/FormHandler/Field/Weekday.pm
+${P5SITE}/HTML/FormHandler/Field/Year.pm
+${P5SITE}/HTML/FormHandler/Fields.pm
+${P5SITE}/HTML/FormHandler/Foo.pm
+${P5SITE}/HTML/FormHandler/I18N/
+${P5SITE}/HTML/FormHandler/I18N.pm
+${P5SITE}/HTML/FormHandler/I18N/ar_kw.pm
+${P5SITE}/HTML/FormHandler/I18N/bg_bg.pm
+${P5SITE}/HTML/FormHandler/I18N/cs_cz.pm
+${P5SITE}/HTML/FormHandler/I18N/de_de.pm
+${P5SITE}/HTML/FormHandler/I18N/en_us.pm
+${P5SITE}/HTML/FormHandler/I18N/hu_hu.pm
+${P5SITE}/HTML/FormHandler/I18N/it_it.pm
+${P5SITE}/HTML/FormHandler/I18N/ja_jp.pm
+${P5SITE}/HTML/FormHandler/I18N/pt_br.pm
+${P5SITE}/HTML/FormHandler/I18N/ru_ru.pm
+${P5SITE}/HTML/FormHandler/I18N/sv_se.pm
+${P5SITE}/HTML/FormHandler/I18N/tr_tr.pm
+${P5SITE}/HTML/FormHandler/I18N/ua_ua.pm
+${P5SITE}/HTML/FormHandler/InitResult.pm
+${P5SITE}/HTML/FormHandler/Manual/
+${P5SITE}/HTML/FormHandler/Manual.pod
+${P5SITE}/HTML/FormHandler/Manual/Catalyst.pod
+${P5SITE}/HTML/FormHandler/Manual/Cookbook.pod
+${P5SITE}/HTML/FormHandler/Manual/Database.pod
+${P5SITE}/HTML/FormHandler/Manual/Defaults.pod
+${P5SITE}/HTML/FormHandler/Manual/Errors.pod
+${P5SITE}/HTML/FormHandler/Manual/Fields.pod
+${P5SITE}/HTML/FormHandler/Manual/FromDFV.pod
+${P5SITE}/HTML/FormHandler/Manual/FromFF.pod
+${P5SITE}/HTML/FormHandler/Manual/InflationDeflation.pod
+${P5SITE}/HTML/FormHandler/Manual/Intro.pod
+${P5SITE}/HTML/FormHandler/Manual/Reference.pod
+${P5SITE}/HTML/FormHandler/Manual/Rendering.pod
+${P5SITE}/HTML/FormHandler/Manual/RenderingCookbook.pod
+${P5SITE}/HTML/FormHandler/Manual/Templates.pod
+${P5SITE}/HTML/FormHandler/Manual/Testing.pod
+${P5SITE}/HTML/FormHandler/Manual/Tutorial.pod
+${P5SITE}/HTML/FormHandler/Manual/Validation.pod
+${P5SITE}/HTML/FormHandler/Merge.pm
+${P5SITE}/HTML/FormHandler/Meta/
+${P5SITE}/HTML/FormHandler/Meta/Role.pm
+${P5SITE}/HTML/FormHandler/Model/
+${P5SITE}/HTML/FormHandler/Model.pm
+${P5SITE}/HTML/FormHandler/Model/CDBI.pm
+${P5SITE}/HTML/FormHandler/Model/Object.pm
+${P5SITE}/HTML/FormHandler/Moose/
+${P5SITE}/HTML/FormHandler/Moose.pm
+${P5SITE}/HTML/FormHandler/Moose/Role.pm
+${P5SITE}/HTML/FormHandler/Page/
+${P5SITE}/HTML/FormHandler/Page.pm
+${P5SITE}/HTML/FormHandler/Page/Simple.pm
+${P5SITE}/HTML/FormHandler/Pages.pm
+${P5SITE}/HTML/FormHandler/Params.pm
+${P5SITE}/HTML/FormHandler/Render/
+${P5SITE}/HTML/FormHandler/Render/RepeatableJs.pm
+${P5SITE}/HTML/FormHandler/Render/Simple.pm
+${P5SITE}/HTML/FormHandler/Render/Table.pm
+${P5SITE}/HTML/FormHandler/Render/Util.pm
+${P5SITE}/HTML/FormHandler/Render/WithTT.pm
+${P5SITE}/HTML/FormHandler/Result/
+${P5SITE}/HTML/FormHandler/Result.pm
+${P5SITE}/HTML/FormHandler/Result/Role.pm
+${P5SITE}/HTML/FormHandler/Test.pm
+${P5SITE}/HTML/FormHandler/TraitFor/
+${P5SITE}/HTML/FormHandler/TraitFor/Captcha.pm
+${P5SITE}/HTML/FormHandler/TraitFor/I18N.pm
+${P5SITE}/HTML/FormHandler/TraitFor/Types.pm
+${P5SITE}/HTML/FormHandler/Traits.pm
+${P5SITE}/HTML/FormHandler/Types.pm
+${P5SITE}/HTML/FormHandler/Validate.pm
+${P5SITE}/HTML/FormHandler/Widget/
+${P5SITE}/HTML/FormHandler/Widget/ApplyRole.pm
+${P5SITE}/HTML/FormHandler/Widget/Block/
+${P5SITE}/HTML/FormHandler/Widget/Block.pm
+${P5SITE}/HTML/FormHandler/Widget/Block/Bootstrap.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/
+${P5SITE}/HTML/FormHandler/Widget/Field/Button.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/ButtonTag.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Captcha.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Checkbox.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/CheckboxGroup.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Compound.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Hidden.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/HorizCheckboxGroup.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/NoRender.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Password.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/RadioGroup.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Repeatable.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Reset.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Role/
+${P5SITE}/HTML/FormHandler/Widget/Field/Role/HTMLAttributes.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Role/SelectedOption.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Select.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Span.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Submit.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Text.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Textarea.pm
+${P5SITE}/HTML/FormHandler/Widget/Field/Upload.pm
+${P5SITE}/HTML/FormHandler/Widget/Form/
+${P5SITE}/HTML/FormHandler/Widget/Form/Role/
+${P5SITE}/HTML/FormHandler/Widget/Form/Role/HTMLAttributes.pm
+${P5SITE}/HTML/FormHandler/Widget/Form/Simple.pm
+${P5SITE}/HTML/FormHandler/Widget/Form/Table.pm
+${P5SITE}/HTML/FormHandler/Widget/Theme/
+${P5SITE}/HTML/FormHandler/Widget/Theme/Bootstrap.pm
+${P5SITE}/HTML/FormHandler/Widget/Theme/Bootstrap3.pm
+${P5SITE}/HTML/FormHandler/Widget/Theme/BootstrapFormMessages.pm
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/Base.pm
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/Bootstrap.pm
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/Bootstrap3.pm
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/Fieldset.pm
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/None.pm
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/Simple.pm
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/SimpleInline.pm
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/Table.pm
+${P5SITE}/HTML/FormHandler/Widget/Wrapper/TableInline.pm
+${P5SITE}/HTML/FormHandler/Wizard.pm
+${P5SITE}/auto/share/dist/HTML-FormHandler/
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/button.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/checkbox.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/checkbox_group.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/compound.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/hidden.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/password.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/radio_group.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/repeatable.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/reset.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/select.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/submit.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/text.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/textarea.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/field/upload.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/foo/
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/foo/checkbox_tag.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/foo/end_form.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/foo/field.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/foo/form.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/foo/input.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/foo/input_tag.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/foo/label.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/foo/start_form.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/form/
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/form/form.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/form/form22.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/form/form_end.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/form/form_in_one.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/form/form_start.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/wrapper/
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/wrapper/fieldset.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/wrapper/label.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/wrapper/none.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/wrapper/simple.tt
+${P5SITE}/auto/share/dist/HTML-FormHandler/templates/wrapper/wrap_label.tt
+@man man/man3p/HTML::FormHandler.3p
+@man man/man3p/HTML::FormHandler::Base.3p
+@man man/man3p/HTML::FormHandler::Blocks.3p
+@man man/man3p/HTML::FormHandler::BuildFields.3p
+@man man/man3p/HTML::FormHandler::BuildPages.3p
+@man man/man3p/HTML::FormHandler::Field.3p
+@man man/man3p/HTML::FormHandler::Field::AddElement.3p
+@man man/man3p/HTML::FormHandler::Field::BoolSelect.3p
+@man man/man3p/HTML::FormHandler::Field::Boolean.3p
+@man man/man3p/HTML::FormHandler::Field::Button.3p
+@man man/man3p/HTML::FormHandler::Field::Captcha.3p
+@man man/man3p/HTML::FormHandler::Field::Checkbox.3p
+@man man/man3p/HTML::FormHandler::Field::Compound.3p
+@man man/man3p/HTML::FormHandler::Field::Date.3p
+@man man/man3p/HTML::FormHandler::Field::DateMDY.3p
+@man man/man3p/HTML::FormHandler::Field::DateTime.3p
+@man man/man3p/HTML::FormHandler::Field::Display.3p
+@man man/man3p/HTML::FormHandler::Field::Duration.3p
+@man man/man3p/HTML::FormHandler::Field::Email.3p
+@man man/man3p/HTML::FormHandler::Field::File.3p
+@man man/man3p/HTML::FormHandler::Field::Float.3p
+@man man/man3p/HTML::FormHandler::Field::Hidden.3p
+@man man/man3p/HTML::FormHandler::Field::Hour.3p
+@man man/man3p/HTML::FormHandler::Field::IntRange.3p
+@man man/man3p/HTML::FormHandler::Field::Integer.3p
+@man man/man3p/HTML::FormHandler::Field::Minute.3p
+@man man/man3p/HTML::FormHandler::Field::Money.3p
+@man man/man3p/HTML::FormHandler::Field::Month.3p
+@man man/man3p/HTML::FormHandler::Field::MonthDay.3p
+@man man/man3p/HTML::FormHandler::Field::MonthName.3p
+@man man/man3p/HTML::FormHandler::Field::Multiple.3p
+@man man/man3p/HTML::FormHandler::Field::Nested.3p
+@man man/man3p/HTML::FormHandler::Field::NoValue.3p
+@man man/man3p/HTML::FormHandler::Field::NonEditable.3p
+@man man/man3p/HTML::FormHandler::Field::Password.3p
+@man man/man3p/HTML::FormHandler::Field::PasswordConf.3p
+@man man/man3p/HTML::FormHandler::Field::PosInteger.3p
+@man man/man3p/HTML::FormHandler::Field::PrimaryKey.3p
+@man man/man3p/HTML::FormHandler::Field::Repeatable.3p
+@man man/man3p/HTML::FormHandler::Field::Repeatable::Instance.3p
+@man man/man3p/HTML::FormHandler::Field::Reset.3p
+@man man/man3p/HTML::FormHandler::Field::Result.3p
+@man man/man3p/HTML::FormHandler::Field::RmElement.3p
+@man man/man3p/HTML::FormHandler::Field::Second.3p
+@man man/man3p/HTML::FormHandler::Field::Select.3p
+@man man/man3p/HTML::FormHandler::Field::SelectCSV.3p
+@man man/man3p/HTML::FormHandler::Field::Submit.3p
+@man man/man3p/HTML::FormHandler::Field::Text.3p
+@man man/man3p/HTML::FormHandler::Field::TextArea.3p
+@man man/man3p/HTML::FormHandler::Field::TextCSV.3p
+@man man/man3p/HTML::FormHandler::Field::Upload.3p
+@man man/man3p/HTML::FormHandler::Field::Weekday.3p
+@man man/man3p/HTML::FormHandler::Field::Year.3p
+@man man/man3p/HTML::FormHandler::Fields.3p
+@man man/man3p/HTML::FormHandler::Foo.3p
+@man man/man3p/HTML::FormHandler::I18N.3p
+@man man/man3p/HTML::FormHandler::I18N::ar_kw.3p
+@man man/man3p/HTML::FormHandler::I18N::bg_bg.3p
+@man man/man3p/HTML::FormHandler::I18N::cs_cz.3p
+@man man/man3p/HTML::FormHandler::I18N::de_de.3p
+@man man/man3p/HTML::FormHandler::I18N::en_us.3p
+@man man/man3p/HTML::FormHandler::I18N::hu_hu.3p
+@man man/man3p/HTML::FormHandler::I18N::it_it.3p
+@man man/man3p/HTML::FormHandler::I18N::ja_jp.3p
+@man man/man3p/HTML::FormHandler::I18N::pt_br.3p
+@man man/man3p/HTML::FormHandler::I18N::ru_ru.3p
+@man man/man3p/HTML::FormHandler::I18N::sv_se.3p
+@man man/man3p/HTML::FormHandler::I18N::tr_tr.3p
+@man man/man3p/HTML::FormHandler::I18N::ua_ua.3p
+@man man/man3p/HTML::FormHandler::InitResult.3p
+@man man/man3p/HTML::FormHandler::Manual.3p
+@man man/man3p/HTML::FormHandler::Manual::Catalyst.3p
+@man man/man3p/HTML::FormHandler::Manual::Cookbook.3p
+@man man/man3p/HTML::FormHandler::Manual::Database.3p
+@man man/man3p/HTML::FormHandler::Manual::Defaults.3p
+@man man/man3p/HTML::FormHandler::Manual::Errors.3p
+@man man/man3p/HTML::FormHandler::Manual::Fields.3p
+@man man/man3p/HTML::FormHandler::Manual::FromDFV.3p
+@man man/man3p/HTML::FormHandler::Manual::FromFF.3p
+@man man/man3p/HTML::FormHandler::Manual::InflationDeflation.3p
+@man man/man3p/HTML::FormHandler::Manual::Intro.3p
+@man man/man3p/HTML::FormHandler::Manual::Reference.3p
+@man man/man3p/HTML::FormHandler::Manual::Rendering.3p
+@man man/man3p/HTML::FormHandler::Manual::RenderingCookbook.3p
+@man man/man3p/HTML::FormHandler::Manual::Templates.3p
+@man man/man3p/HTML::FormHandler::Manual::Testing.3p
+@man man/man3p/HTML::FormHandler::Manual::Tutorial.3p
+@man man/man3p/HTML::FormHandler::Manual::Validation.3p
+@man man/man3p/HTML::FormHandler::Merge.3p
+@man man/man3p/HTML::FormHandler::Meta::Role.3p
+@man man/man3p/HTML::FormHandler::Model.3p
+@man man/man3p/HTML::FormHandler::Model::CDBI.3p
+@man man/man3p/HTML::FormHandler::Model::Object.3p
+@man man/man3p/HTML::FormHandler::Moose.3p
+@man man/man3p/HTML::FormHandler::Moose::Role.3p
+@man man/man3p/HTML::FormHandler::Page.3p
+@man man/man3p/HTML::FormHandler::Page::Simple.3p
+@man man/man3p/HTML::FormHandler::Pages.3p
+@man man/man3p/HTML::FormHandler::Params.3p
+@man man/man3p/HTML::FormHandler::Render::RepeatableJs.3p
+@man man/man3p/HTML::FormHandler::Render::Simple.3p
+@man man/man3p/HTML::FormHandler::Render::Table.3p
+@man man/man3p/HTML::FormHandler::Render::Util.3p
+@man man/man3p/HTML::FormHandler::Render::WithTT.3p
+@man man/man3p/HTML::FormHandler::Result.3p
+@man man/man3p/HTML::FormHandler::Result::Role.3p
+@man man/man3p/HTML::FormHandler::Test.3p
+@man man/man3p/HTML::FormHandler::TraitFor::Captcha.3p
+@man man/man3p/HTML::FormHandler::TraitFor::I18N.3p
+@man man/man3p/HTML::FormHandler::TraitFor::Types.3p
+@man man/man3p/HTML::FormHandler::Traits.3p
+@man man/man3p/HTML::FormHandler::Types.3p
+@man man/man3p/HTML::FormHandler::Validate.3p
+@man man/man3p/HTML::FormHandler::Widget::ApplyRole.3p
+@man man/man3p/HTML::FormHandler::Widget::Block.3p
+@man man/man3p/HTML::FormHandler::Widget::Block::Bootstrap.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Button.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::ButtonTag.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Captcha.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Checkbox.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::CheckboxGroup.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Compound.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Hidden.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::HorizCheckboxGroup.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::NoRender.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Password.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::RadioGroup.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Repeatable.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Reset.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Role::HTMLAttributes.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Role::SelectedOption.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Select.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Span.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Submit.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Text.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Textarea.3p
+@man man/man3p/HTML::FormHandler::Widget::Field::Upload.3p
+@man man/man3p/HTML::FormHandler::Widget::Form::Role::HTMLAttributes.3p
+@man man/man3p/HTML::FormHandler::Widget::Form::Simple.3p
+@man man/man3p/HTML::FormHandler::Widget::Form::Table.3p
+@man man/man3p/HTML::FormHandler::Widget::Theme::Bootstrap.3p
+@man man/man3p/HTML::FormHandler::Widget::Theme::Bootstrap3.3p
+@man man/man3p/HTML::FormHandler::Widget::Theme::BootstrapFormMessages.3p
+@man man/man3p/HTML::FormHandler::Widget::Wrapper::Base.3p
+@man man/man3p/HTML::FormHandler::Widget::Wrapper::Bootstrap.3p
+@man man/man3p/HTML::FormHandler::Widget::Wrapper::Bootstrap3.3p
+@man man/man3p/HTML::FormHandler::Widget::Wrapper::Fieldset.3p
+@man man/man3p/HTML::FormHandler::Widget::Wrapper::None.3p
+@man man/man3p/HTML::FormHandler::Widget::Wrapper::Simple.3p
+@man man/man3p/HTML::FormHandler::Widget::Wrapper::SimpleInline.3p
+@man man/man3p/HTML::FormHandler::Widget::Wrapper::Table.3p
+@man man/man3p/HTML::FormHandler::Widget::Wrapper::TableInline.3p
+@man man/man3p/HTML::FormHandler::Wizard.3p
