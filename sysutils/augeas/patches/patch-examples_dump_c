@@ -1,11 +1,11 @@
-$OpenBSD: patch-examples_dump_c,v 1.1 2018/11/01 08:39:04 ajacoutot Exp $
+$OpenBSD: patch-examples_dump_c,v 1.2 2020/10/10 08:01:31 kn Exp $
 
 64bit time_t
 
 Index: examples/dump.c
 --- examples/dump.c.orig
 +++ examples/dump.c
-@@ -121,7 +121,7 @@ static void print_time_taken(const struct timeval *sta
+@@ -119,7 +119,7 @@ static void print_time_taken(const struct timeval *sta
                               const struct timeval *stop) {
      time_t elapsed = (stop->tv_sec - start->tv_sec)*1000
                     + (stop->tv_usec - start->tv_usec)/1000;

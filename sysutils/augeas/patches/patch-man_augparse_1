@@ -1,7 +1,8 @@
-$OpenBSD: patch-man_augparse_1,v 1.4 2016/11/27 12:28:16 jasper Exp $
---- man/augparse.1.orig	Sun Oct  2 22:18:19 2016
-+++ man/augparse.1	Sun Nov 27 12:40:16 2016
-@@ -149,7 +149,7 @@ Execute an Augeas module, most commonly to evaluate th
+$OpenBSD: patch-man_augparse_1,v 1.5 2020/10/10 08:01:31 kn Exp $
+Index: man/augparse.1
+--- man/augparse.1.orig
++++ man/augparse.1
+@@ -153,7 +153,7 @@ Execute an Augeas module, most commonly to evaluate th
  Add \s-1DIR\s0 to the module loadpath. Can be given multiple times. The
  directories set here are searched before any directories specified in the
  \&\s-1AUGEAS_LENS_LIB\s0 environment variable, and before the default directory

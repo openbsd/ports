@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_augtool_c,v 1.1 2018/02/05 16:29:47 jasper Exp $
+$OpenBSD: patch-src_augtool_c,v 1.2 2020/10/10 08:01:31 kn Exp $
 
 augtool.c:450:30: warning: format specifies type 'long' but the argument has type 'time_t' (aka 'long long') [-Wformat
 
 Index: src/augtool.c
 --- src/augtool.c.orig
 +++ src/augtool.c
-@@ -447,7 +447,7 @@ static void print_time_taken(const struct timeval *sta
+@@ -454,7 +454,7 @@ static void print_time_taken(const struct timeval *sta
                               const struct timeval *stop) {
      time_t elapsed = (stop->tv_sec - start->tv_sec)*1000
                     + (stop->tv_usec - start->tv_usec)/1000;

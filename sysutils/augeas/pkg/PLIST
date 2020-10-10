@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/02/05 16:29:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/10/10 08:01:31 kn Exp $
 @bin bin/augmatch
 @bin bin/augparse
 @bin bin/augtool
@@ -6,10 +6,10 @@
 include/augeas.h
 include/fa.h
 @comment lib/charset.alias
-lib/libaugeas.a
+@static-lib lib/libaugeas.a
 lib/libaugeas.la
 @lib lib/libaugeas.so.${LIBaugeas_VERSION}
-lib/libfa.a
+@static-lib lib/libfa.a
 lib/libfa.la
 @lib lib/libfa.so.${LIBfa_VERSION}
 lib/pkgconfig/augeas.pc
@@ -24,6 +24,7 @@ share/augeas/lenses/dist/activemq_conf.aug
 share/augeas/lenses/dist/activemq_xml.aug
 share/augeas/lenses/dist/afs_cellalias.aug
 share/augeas/lenses/dist/aliases.aug
+share/augeas/lenses/dist/anaconda.aug
 share/augeas/lenses/dist/anacron.aug
 share/augeas/lenses/dist/approx.aug
 share/augeas/lenses/dist/apt_update_manager.aug
@@ -60,6 +61,7 @@ share/augeas/lenses/dist/cyrus_imapd.aug
 share/augeas/lenses/dist/darkice.aug
 share/augeas/lenses/dist/debctrl.aug
 share/augeas/lenses/dist/desktop.aug
+share/augeas/lenses/dist/devfsrules.aug
 share/augeas/lenses/dist/device_map.aug
 share/augeas/lenses/dist/dhclient.aug
 share/augeas/lenses/dist/dhcpd.aug
@@ -189,6 +191,7 @@ share/augeas/lenses/dist/rx.aug
 share/augeas/lenses/dist/samba.aug
 share/augeas/lenses/dist/schroot.aug
 share/augeas/lenses/dist/securetty.aug
+share/augeas/lenses/dist/semanage.aug
 share/augeas/lenses/dist/sep.aug
 share/augeas/lenses/dist/services.aug
 share/augeas/lenses/dist/shadow.aug
@@ -209,6 +212,7 @@ share/augeas/lenses/dist/ssh.aug
 share/augeas/lenses/dist/sshd.aug
 share/augeas/lenses/dist/sssd.aug
 share/augeas/lenses/dist/star.aug
+share/augeas/lenses/dist/strongswan.aug
 share/augeas/lenses/dist/stunnel.aug
 share/augeas/lenses/dist/subversion.aug
 share/augeas/lenses/dist/sudoers.aug
@@ -224,6 +228,7 @@ share/augeas/lenses/dist/tests/test_activemq_conf.aug
 share/augeas/lenses/dist/tests/test_activemq_xml.aug
 share/augeas/lenses/dist/tests/test_afs_cellalias.aug
 share/augeas/lenses/dist/tests/test_aliases.aug
+share/augeas/lenses/dist/tests/test_anaconda.aug
 share/augeas/lenses/dist/tests/test_anacron.aug
 share/augeas/lenses/dist/tests/test_approx.aug
 share/augeas/lenses/dist/tests/test_apt_update_manager.aug
@@ -260,6 +265,7 @@ share/augeas/lenses/dist/tests/test_cyrus_imapd.aug
 share/augeas/lenses/dist/tests/test_darkice.aug
 share/augeas/lenses/dist/tests/test_debctrl.aug
 share/augeas/lenses/dist/tests/test_desktop.aug
+share/augeas/lenses/dist/tests/test_devfsrules.aug
 share/augeas/lenses/dist/tests/test_device_map.aug
 share/augeas/lenses/dist/tests/test_dhclient.aug
 share/augeas/lenses/dist/tests/test_dhcpd.aug
@@ -390,6 +396,7 @@ share/augeas/lenses/dist/tests/test_rx.aug
 share/augeas/lenses/dist/tests/test_samba.aug
 share/augeas/lenses/dist/tests/test_schroot.aug
 share/augeas/lenses/dist/tests/test_securetty.aug
+share/augeas/lenses/dist/tests/test_semanage.aug
 share/augeas/lenses/dist/tests/test_services.aug
 share/augeas/lenses/dist/tests/test_shadow.aug
 share/augeas/lenses/dist/tests/test_shells.aug
@@ -409,6 +416,7 @@ share/augeas/lenses/dist/tests/test_ssh.aug
 share/augeas/lenses/dist/tests/test_sshd.aug
 share/augeas/lenses/dist/tests/test_sssd.aug
 share/augeas/lenses/dist/tests/test_star.aug
+share/augeas/lenses/dist/tests/test_strongswan.aug
 share/augeas/lenses/dist/tests/test_stunnel.aug
 share/augeas/lenses/dist/tests/test_subversion.aug
 share/augeas/lenses/dist/tests/test_sudoers.aug
@@ -420,6 +428,7 @@ share/augeas/lenses/dist/tests/test_systemd.aug
 share/augeas/lenses/dist/tests/test_termcap.aug
 share/augeas/lenses/dist/tests/test_thttpd.aug
 share/augeas/lenses/dist/tests/test_tmpfiles.aug
+share/augeas/lenses/dist/tests/test_toml.aug
 share/augeas/lenses/dist/tests/test_trapperkeeper.aug
 share/augeas/lenses/dist/tests/test_tuned.aug
 share/augeas/lenses/dist/tests/test_up2date.aug
@@ -440,6 +449,7 @@ share/augeas/lenses/dist/tests/test_yaml.aug
 share/augeas/lenses/dist/tests/test_yum.aug
 share/augeas/lenses/dist/thttpd.aug
 share/augeas/lenses/dist/tmpfiles.aug
+share/augeas/lenses/dist/toml.aug
 share/augeas/lenses/dist/trapperkeeper.aug
 share/augeas/lenses/dist/tuned.aug
 share/augeas/lenses/dist/up2date.aug
