@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1079 2020/10/11 06:04:03 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1080 2020/10/11 08:05:25 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1868,6 +1868,9 @@ my $obsolete_reason = {
 	'py-notify' => 3,
 	'glimpse' => 3,
 	'py-metlog' => 3,
+	'pdfmod' => 3,
+	'hyena' => 5,
+	'mono-taglib' => 5,
 };
 
 # reasons for obsolete packages
