@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2024 2020/10/11 06:04:03 daniel Exp $
+# $OpenBSD: Makefile,v 1.2025 2020/10/11 08:03:15 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -270,7 +270,6 @@
      SUBDIR += hs-void
      SUBDIR += http-parser
      SUBDIR += hub
-     SUBDIR += hyena
      SUBDIR += id-utils
      SUBDIR += imake
      SUBDIR += imake-cf

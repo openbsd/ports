@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.436 2020/09/25 21:02:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.437 2020/10/11 08:03:15 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -110,7 +110,6 @@
      SUBDIR += milkytracker
      SUBDIR += mkplaylist
      SUBDIR += moc
-     SUBDIR += mono-taglib
      SUBDIR += morseplayer
      SUBDIR += mp3applygain
      SUBDIR += mp3blaster
