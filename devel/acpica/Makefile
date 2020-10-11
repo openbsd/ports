@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2020/08/05 02:18:54 daniel Exp $
+# $OpenBSD: Makefile,v 1.33 2020/10/11 21:10:15 daniel Exp $
 
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix-20200717
+DISTNAME =		acpica-unix-20200925
 PKGNAME =		${DISTNAME:S/-unix//}
-REVISION =		0
 
 CATEGORIES =		devel
 
