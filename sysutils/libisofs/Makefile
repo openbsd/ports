@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/10/11 17:55:17 landry Exp $
 
 COMMENT =	library to create and edit an ISO-9660 filesystem
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	iconv pthread z
 LIB_DEPENDS =		converters/libiconv
-USE_LIBTOOL =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/10/11 17:55:17 landry Exp $
 
 SHARED_LIBS +=  courier-unicode		1.0 # 2.0
 
@@ -22,7 +22,6 @@ WANTLIB +=		iconv m ${COMPILER_LIBCXX}
 LIB_DEPENDS =		converters/libiconv
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
