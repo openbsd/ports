@@ -1,0 +1,5 @@
+virtualpg is a dynamic extension for the SQLite DBMS.
+it implements the VirtualPostgres driver, allowing to
+directly exchange data between SQLite and PostgreSQL;
+if SpatiaLite is available even PostGIS geometries
+can be exchanged from one Spatial DBMS to the other.

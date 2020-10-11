@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2020/10/11 16:20:47 landry Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -380,7 +380,7 @@ mod_virtualpg_la_SOURCES = virtualpg.c
+ mod_virtualpg_la_CPPFLAGS = @CFLAGS@ @CPPFLAGS@ @PG_CFLAGS@ \
+ 	-DLOADABLE_EXTENSION
+ mod_virtualpg_la_LIBTOOLFLAGS = --tag=disable-static
+-@MINGW_FALSE@mod_virtualpg_la_LDFLAGS = -module -version-info 1:1:1 \
++@MINGW_FALSE@mod_virtualpg_la_LDFLAGS = -module -avoid-version \
+ @MINGW_FALSE@	@PG_LDFLAGS@ @PG_LIB@ $(am__empty)
+ @MINGW_TRUE@mod_virtualpg_la_LDFLAGS = -module -avoid-version \
+ @MINGW_TRUE@	-no-undefined @PG_LDFLAGS@ @PG_LIB@
