@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2020/08/22 06:18:34 kirby Exp $
+# $OpenBSD: Makefile,v 1.76 2020/10/11 16:11:47 landry Exp $
 
      SUBDIR =
      SUBDIR += foxtrotgps
@@ -19,6 +19,7 @@
      SUBDIR += libchamplain
      SUBDIR += libosmium
      SUBDIR += libpostal
+     SUBDIR += librttopo
      SUBDIR += mapcache
      SUBDIR += mapproxy
      SUBDIR += mapserver
