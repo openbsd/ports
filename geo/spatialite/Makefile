@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/02 09:26:12 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2020/10/11 16:39:30 landry Exp $
 
      SUBDIR =
      SUBDIR += freexl
-     SUBDIR += gis
      SUBDIR += gui
-     SUBDIR += libgaiagraphics
-     SUBDIR += librasterlite
      SUBDIR += librasterlite2
-     SUBDIR += librewms
      SUBDIR += libspatialite
      SUBDIR += readosm
      SUBDIR += tools
+     SUBDIR += virtualpg
 
 .include <bsd.port.subdir.mk>
