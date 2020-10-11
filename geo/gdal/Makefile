@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2020/09/07 16:32:11 landry Exp $
+# $OpenBSD: Makefile,v 1.90 2020/10/11 16:42:30 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -15,6 +15,7 @@ FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
+REVISION =	0
 
 SHARED_LIBS =	gdal 39.1 #27.1
 CATEGORIES =	geo devel
@@ -61,7 +62,7 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 WANTLIB-main =		c charset crypto curl expat freexl geos geos_c geotiff \
 			gif hdf5 hdf5_hl iconv jasper jpeg json-c lzma m \
 			netcdf nghttp2 openjp2 pcre png pq proj pthread qhull \
-			spatialite sqlite3 ssl tiff xml2 webp z zstd \
+			minizip rttopo spatialite sqlite3 ssl tiff xml2 webp z zstd \
 			${COMPILER_LIBCXX}
 
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
@@ -74,8 +75,8 @@ RUN_DEPENDS-perl =
 LIB_DEPENDS-perl =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-perl =		perl gdal # uses perl ABI
 WANTLIB-perl += c crypto curl expat freexl geos_c geotiff gif hdf5 iconv
-WANTLIB-perl += jasper jpeg json-c m netcdf nghttp2 openjp2 pcre png
-WANTLIB-perl += pq proj pthread qhull spatialite sqlite3 ssl tiff xml2 webp z zstd
+WANTLIB-perl += jasper jpeg json-c m netcdf openjp2 pcre png
+WANTLIB-perl += pq proj pthread qhull spatialite sqlite3 tiff xml2 webp z zstd
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} math/py-numpy${MODPY_FLAVOR} devel/swig
 
