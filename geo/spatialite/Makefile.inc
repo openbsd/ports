@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/07/13 10:59:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2020/10/11 16:34:56 landry Exp $
 
 CATEGORIES ?=	geo
 
@@ -10,10 +10,8 @@ MASTER_SITES ?=	https://www.gaia-gis.it/gaia-sins/
 
 CONFIGURE_STYLE ?=	gnu
 
-# libpng header needed by gaiagraphics & librasterlite
 # lt_cv_dlopen_libs= needed by libspatialite
-# https://www.gaia-gis.it/fossil/libspatialite/info/6eabdf0e6d3520a7 for proj 6.0.0
-CONFIGURE_ENV ?=	CPPFLAGS="-I${LOCALBASE}/include -DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1" \
+CONFIGURE_ENV ?=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" lt_cv_dlopen_libs=
 
 LIBTOOL_FLAGS ?=	--tag=disable-static
