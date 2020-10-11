@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1081 2020/10/11 14:32:36 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1082 2020/10/11 16:40:04 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1871,6 +1871,10 @@ my $obsolete_reason = {
 	'pdfmod' => 3,
 	'hyena' => 5,
 	'mono-taglib' => 5,
+	'spatialite_gis' => 3,
+	'librewms' => 3,
+	'libgaiagraphics' => 3,
+	'librasterlite' => 3,
 };
 
 # reasons for obsolete packages
