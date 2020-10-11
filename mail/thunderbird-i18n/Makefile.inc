@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.114 2020/10/07 12:56:10 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.115 2020/10/11 17:35:33 landry Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -8,6 +8,7 @@ PKG_ARCH =	*
 FV =		78.3.2
 V =		${FV:C/b.$//}
 NAME =		thunderbird-i18n
+REVISION =	0
 
 CATEGORIES =	mail
 
@@ -51,5 +52,5 @@ MESSAGE=	${PKGDIR}/MESSAGE
 SUBST_VARS =	V L
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/thunderbird-$V/extensions
-	${INSTALL_DATA} ${FULLDISTDIR}/$L.xpi ${PREFIX}/lib/thunderbird-$V/extensions/langpack-$L@thunderbird.mozilla.org.xpi
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/thunderbird/distribution/extensions
+	${INSTALL_DATA} ${FULLDISTDIR}/$L.xpi ${PREFIX}/lib/thunderbird/distribution/extensions/langpack-$L@thunderbird.mozilla.org.xpi
