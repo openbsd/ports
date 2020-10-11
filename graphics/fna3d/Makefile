@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/05 16:05:26 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/11 00:34:30 kmos Exp $
 
 # versions are in sync with FNA versions
 V =		20.09
@@ -19,6 +19,10 @@ WANTLIB +=	SDL2 mojoshader
 
 MASTER_SITES =	https://github.com/FNA-XNA/FNA/releases/download/${V}/
 EXTRACT_SUFX =	.zip
+
+# base-gcc does not have thread-local storage
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = 	c
 
 MODULES =	devel/cmake
 
