@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2020/05/14 15:41:28 juanfra Exp $
+# $OpenBSD: Makefile,v 1.31 2020/10/11 17:40:55 juanfra Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
-DISTNAME =		wavpack-5.3.0
+VERSION =		5.3.0
+DISTNAME =		wavpack-${VERSION}
 CATEGORIES =		audio
 
 HOMEPAGE =		http://www.wavpack.com/
@@ -16,8 +17,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto iconv m
 
-MASTER_SITES =		${HOMEPAGE}
-EXTRACT_SUFX =		.tar.bz2
+MASTER_SITES =		https://github.com/dbry/wavpack/releases/download/${VERSION}/
+EXTRACT_SUFX =		.tar.xz
 
 LIB_DEPENDS =		converters/libiconv
 
