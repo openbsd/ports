@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/01/02 14:53:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/10/11 16:25:26 landry Exp $
 @bin bin/cct
 @bin bin/cs2cs
 @bin bin/geod
@@ -7,8 +7,8 @@ bin/invgeod
 bin/invproj
 @bin bin/proj
 @bin bin/projinfo
+@bin bin/projsync
 include/geodesic.h
-include/org_proj4_PJ.h
 include/proj/
 include/proj.h
 include/proj/common.hpp
@@ -34,8 +34,8 @@ lib/pkgconfig/proj.pc
 @man man/man1/gie.1
 @man man/man1/proj.1
 @man man/man1/projinfo.1
-@man man/man3/geodesic.3
-@man man/man3/pj_init.3
+@man man/man1/projsync.1
+share/doc/pkg-readmes/${PKGSTEM}
 share/proj/
 share/proj/BETA2007.gsb
 share/proj/CH
@@ -50,6 +50,7 @@ share/proj/WI
 share/proj/WO
 share/proj/alaska
 share/proj/conus
+share/proj/deformation_model.schema.json
 share/proj/egm96_15.gtx
 share/proj/hawaii
 share/proj/nad.lst
@@ -61,6 +62,7 @@ share/proj/null
 share/proj/nzgd2kgrid0005.gsb
 share/proj/other.extra
 share/proj/proj.db
+share/proj/proj.ini
 share/proj/projjson.schema.json
 share/proj/prvi
 share/proj/stgeorge

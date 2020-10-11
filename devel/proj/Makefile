@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2020/05/14 11:23:17 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2020/10/11 16:25:26 landry Exp $
 
 COMMENT=	cartographic projection utilities
 
-PORTROACH +=	limit:6.*
-DISTNAME=	proj-6.3.2
+DISTNAME=	proj-7.1.1
 CATEGORIES=	devel geo
-SHARED_LIBS=	proj 13.0 # 18.0
+SHARED_LIBS=	proj 14.0 # 20.1
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		proj-datumgrid-1.8${EXTRACT_SUFX}
+# 500Mb		proj-data-1.0${EXTRACT_SUFX}
 
 HOMEPAGE=	http://proj4.org
 
@@ -22,9 +22,12 @@ MASTER_SITES=		http://download.osgeo.org/proj/
 # c++11
 COMPILER=		base-clang ports-gcc
 CONFIGURE_STYLE=	gnu
-LIB_DEPENDS =		databases/sqlite3
+LIB_DEPENDS =		databases/sqlite3 \
+			net/curl \
+			graphics/tiff
 BUILD_DEPENDS =		devel/gtest
 WANTLIB=		c m pthread ${COMPILER_LIBCXX} sqlite3 z
+WANTLIB+=		crypto curl jpeg lzma nghttp2 ssl tiff zstd
 CONFIGURE_ENV=		LDFLAGS='-pthread' \
 			GTEST_CFLAGS=-I${LOCALBASE}/include \
 			GTEST_LIBS="-L${LOCALBASE}/lib -lgtest"
