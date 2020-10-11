@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/11 17:56:15 landry Exp $
 
 COMMENT-main =		create ISO-9660 filesystem and burn CD/DVD/BD media
 COMMENT-xorriso =	ISO 9660 Rock Ridge Filesystem Manipulator
@@ -34,7 +34,6 @@ LIB_DEPENDS-xorriso =	${BASE_PKGPATH},-main
 WANTLIB-xorriso =	${WANTLIB-main} c isoburn
 RUN_DEPENDS-tcltk =	${MODTCL_RUN_DEPENDS}
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-pkg-check-modules
 

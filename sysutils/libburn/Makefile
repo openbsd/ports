@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/10/11 17:56:15 landry Exp $
 
 COMMENT =	library for reading, mastering and writing optical discs
 
@@ -16,6 +16,5 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =	c pthread
 
 CONFIGURE_STYLE =	gnu
-USE_LIBTOOL =	Yes
 
 .include <bsd.port.mk>
