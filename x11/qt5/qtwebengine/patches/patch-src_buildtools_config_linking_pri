@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: src/buildtools/config/linking.pri
+--- src/buildtools/config/linking.pri.orig
++++ src/buildtools/config/linking.pri
+@@ -34,7 +34,7 @@ if(macos|ios) {
+     }
+ }
+ 
+-linux {
++unix {
+     !static {
+         QMAKE_LFLAGS += @$${RSP_OBJECT_FILE}
+         QMAKE_LFLAGS += -Wl,--start-group @$${RSP_ARCHIVE_FILE} -Wl,--end-group
+@@ -60,7 +60,7 @@ LIBS_PRIVATE += $$NINJA_LIB_DIRS $$NINJA_LIBS
+ 
+ unix:qtConfig(webengine-noexecstack): \
+     QMAKE_LFLAGS += -Wl,-z,noexecstack
+-linux {
++unix {
+     # add chromium flags
+     for(flag, NINJA_LFLAGS) {
+         # filter out some flags

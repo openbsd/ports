@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/device/bluetooth/BUILD.gn
+--- src/3rdparty/chromium/device/bluetooth/BUILD.gn.orig
++++ src/3rdparty/chromium/device/bluetooth/BUILD.gn
+@@ -277,7 +277,7 @@ component("bluetooth") {
+     ]
+   }
+ 
+-  if (is_chromeos || is_linux) {
++  if (is_chromeos || (is_linux && !is_openbsd)) {
+     if (use_dbus && is_chromeos) {
+       # This crap uses ChromeOS specific system API
+       sources += [
