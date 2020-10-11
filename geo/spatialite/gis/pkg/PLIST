@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:52 espie Exp $
-@bin bin/spatialite_gis
-share/applications/spatialite-gis.desktop
-share/pixmaps/
-share/pixmaps/spatialite-gis.png
-@tag update-desktop-database

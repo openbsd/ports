@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:15 ajacoutot Exp $
-include/gaiagraphics.h
-lib/libgaiagraphics.la
-@lib lib/libgaiagraphics.so.${LIBgaiagraphics_VERSION}
-lib/pkgconfig/gaiagraphics.pc
