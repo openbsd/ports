@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/09/24 10:01:32 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/10/11 08:44:10 benoit Exp $
 @bin bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
@@ -52,8 +52,10 @@ share/doc/stella/graphics/options_gameinfo_cartridge.png
 share/doc/stella/graphics/options_gameinfo_console.png
 share/doc/stella/graphics/options_gameinfo_controller.png
 share/doc/stella/graphics/options_gameinfo_emulation.png
+share/doc/stella/graphics/options_gameinfo_quadtari.png
 share/doc/stella/graphics/options_misc.png
 share/doc/stella/graphics/options_misc_classic.png
+share/doc/stella/graphics/options_misc_dark.png
 share/doc/stella/graphics/options_misc_light.png
 share/doc/stella/graphics/options_ui.png
 share/doc/stella/graphics/options_video.png
