@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/05/14 11:24:21 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2020/10/11 16:26:51 landry Exp $
 
 COMMENT=	GIS TIFF interchange library
 
@@ -6,6 +6,7 @@ DISTNAME=	libgeotiff-1.6.0
 CATEGORIES=	devel geo
 SHARED_LIBS=	geotiff 3.1 # 6.0
 WRKSRC=	${WRKDIR}/${DISTNAME:S/rc1//}
+REVISION=	0
 
 HOMEPAGE=	http://trac.osgeo.org/geotiff/
 
@@ -26,6 +27,7 @@ CONFIGURE_ARGS=		--with-jpeg=${LOCALBASE} \
 			--with-libz
 
 WANTLIB=		c jpeg lzma m z proj tiff pthread sqlite3 zstd
+WANTLIB +=		crypto curl nghttp2 ssl
 
 LIB_DEPENDS=		devel/proj>=6 \
 			graphics/tiff
