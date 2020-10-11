@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/07/14 18:08:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/10/11 14:32:36 daniel Exp $
 @conflict jakarta-ant-*
 ant/
 ant/bin/
@@ -293,6 +293,7 @@ share/doc/java/ant/api/org/apache/tools/ant/ProjectHelper.OnMissingExtensionPoin
 share/doc/java/ant/api/org/apache/tools/ant/ProjectHelper.html
 share/doc/java/ant/api/org/apache/tools/ant/ProjectHelperRepository.html
 share/doc/java/ant/api/org/apache/tools/ant/PropertyHelper.Delegate.html
+share/doc/java/ant/api/org/apache/tools/ant/PropertyHelper.PropertyEnumerator.html
 share/doc/java/ant/api/org/apache/tools/ant/PropertyHelper.PropertyEvaluator.html
 share/doc/java/ant/api/org/apache/tools/ant/PropertyHelper.PropertySetter.html
 share/doc/java/ant/api/org/apache/tools/ant/PropertyHelper.html
