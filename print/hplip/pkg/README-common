@@ -1,4 +1,4 @@
-$OpenBSD: README-common,v 1.9 2018/09/04 12:46:20 espie Exp $
+$OpenBSD: README-common,v 1.10 2020/10/11 15:45:31 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -59,12 +59,18 @@ CUPS). For more information, see:
 Scanning
 ========
 
+See generic scanning documentation in:
+    ${LOCALBASE}/share/doc/pkg-readmes/sane-backends
+
 Installing a scanner automatically using the HP tools
 -----------------------------------------------------
 (req. hplip+hpaio)
 
-First, install the printing part of you all-in-one printer using the HP
-tools as documented above.
+First, install the printing part of your all-in-one printer using the HP
+tools under cups(1) as documented above (it must used an hpcups driver).
+
+The dbus-daemon(1) must be running:
+    # rcctl enable messagebus && rcctl start messagebus
 
 Once configured in CUPS with an hp:// URI, then it should work out of
 the box using hp-scan and/or sane(7)-compatible applications.

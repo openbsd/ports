@@ -1,10 +1,12 @@
-$OpenBSD: README,v 1.17 2019/12/14 13:02:28 ajacoutot Exp $
+$OpenBSD: README,v 1.18 2020/10/11 15:45:31 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 First read ${TRUEPREFIX}/share/doc/sane-backends/PROBLEMS.
+
+HP scanners need the hplip and hpaio packages installed.
 
 USB
 ===

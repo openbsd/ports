@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2020/10/08 06:47:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.185 2020/10/11 15:45:31 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -14,6 +14,7 @@ DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
 REVISION-main=		0
+REVISION-common=	0
 REVISION-gui=		0
 
 # https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
