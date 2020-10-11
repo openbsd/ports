@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/09/18 09:47:54 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/10/11 16:30:30 landry Exp $
 include/spatialite/
 include/spatialite.h
 include/spatialite/control_points.h
 include/spatialite/debug.h
+include/spatialite/gaia_network.h
+include/spatialite/gaia_topology.h
 include/spatialite/gaiaaux.h
 include/spatialite/gaiaexif.h
 include/spatialite/gaiageo.h
 include/spatialite/gaiamatrix.h
+include/spatialite/geojson.h
 include/spatialite/geopackage.h
 include/spatialite/gg_advanced.h
 include/spatialite/gg_const.h
@@ -15,13 +18,15 @@ include/spatialite/gg_dxf.h
 include/spatialite/gg_dynamic.h
 include/spatialite/gg_formats.h
 include/spatialite/gg_mbr.h
+include/spatialite/gg_sequence.h
 include/spatialite/gg_structs.h
 include/spatialite/gg_wfs.h
 include/spatialite/gg_xml.h
 include/spatialite/spatialite.h
 include/spatialite/sqlite.h
+include/spatialite/stored_procedures.h
 lib/libspatialite.la
 @lib lib/libspatialite.so.${LIBspatialite_VERSION}
 @comment lib/mod_spatialite.la
-lib/mod_spatialite.so
+@so lib/mod_spatialite.so
 lib/pkgconfig/spatialite.pc
