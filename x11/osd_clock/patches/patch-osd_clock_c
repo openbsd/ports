@@ -1,6 +1,22 @@
-$OpenBSD: patch-osd_clock_c,v 1.1.1.1 2004/12/01 06:46:35 jolan Exp $
---- osd_clock.c.orig	Sat Apr  7 17:50:01 2001
-+++ osd_clock.c	Wed Dec  1 00:34:21 2004
+$OpenBSD: patch-osd_clock_c,v 1.2 2020/10/12 10:18:56 cwen Exp $
+
+Hunk #1:
+On arm and ppc char is unsigned by default. It is not enough to hold
+the return value of getopt_long(3), that returns -1 once all arguments
+have been exhausted, use the proper int type instead.
+
+Index: osd_clock.c
+--- osd_clock.c.orig
++++ osd_clock.c
+@@ -43,7 +43,7 @@ static struct option long_options[] = {
+ 
+ int main (int argc, char *argv[])
+ {
+-  char c;
++  int c;
+   
+   static const char *format;
+   time_t *t = NULL;
 @@ -109,7 +109,15 @@ int main (int argc, char *argv[])
      }
    }

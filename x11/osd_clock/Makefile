@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/01/26 11:14:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2020/10/12 10:18:56 cwen Exp $
 
 COMMENT=	xosd based clock
 DISTNAME=	osd_clock-0.5
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 MASTER_SITES=	https://distfiles.sigtrap.nl/
