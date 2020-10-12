@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.116 2020/09/19 15:02:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.117 2020/10/12 15:13:48 naddy Exp $
 
 COMMENT=	simple editor, inspired by Pico
 
-DISTNAME=	nano-5.2
+DISTNAME=	nano-5.3
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
 
@@ -31,7 +31,8 @@ pre-configure:
 	@ln -s /usr/bin/false ${WRKDIR}/bin/groff
 
 post-install:
-	sed -i -e 's:/etc:${SYSCONFDIR}:g;' ${PREFIX}/man/man5/nanorc.5
+	sed -i -e 's:/etc:${SYSCONFDIR}:g' -e 's:/usr:${TRUEPREFIX}:g' \
+	    ${PREFIX}/man/man1/nano.1 ${PREFIX}/man/man5/nanorc.5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nano
 	${INSTALL_DATA} ${WRKBUILD}/doc/sample.nanorc \
 	    ${PREFIX}/share/examples/nano
