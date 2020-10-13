@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/10/13 15:10:39 cwen Exp $
 
 COMMENT=	dynamically change some settings of an xterm
 
 DISTNAME=	xtermset-0.5.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c 
+WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clts/}
 
