@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.43 2020/05/20 15:54:51 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.44 2020/10/13 10:26:21 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -2101,6 +2101,7 @@ webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/LimitedInputStream.
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/Streams.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/MimeUtility.html
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/RFC2231Utility.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-tree.html
@@ -2125,6 +2126,7 @@ webapps/docs/api/org/apache/tomcat/util/http/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/
 webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptEncoding.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/EntityTag.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Host.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
@@ -2492,16 +2494,6 @@ webapps/docs/elapi/resources/titlebar_end.gif
 webapps/docs/elapi/serialized-form.html
 webapps/docs/elapi/stylesheet.css
 webapps/docs/extras.html
-webapps/docs/funcspecs/
-webapps/docs/funcspecs/fs-admin-apps.html
-webapps/docs/funcspecs/fs-admin-objects.html
-webapps/docs/funcspecs/fs-admin-opers.html
-webapps/docs/funcspecs/fs-default.html
-webapps/docs/funcspecs/fs-jdbc-realm.html
-webapps/docs/funcspecs/fs-jndi-realm.html
-webapps/docs/funcspecs/fs-memory-realm.html
-webapps/docs/funcspecs/index.html
-webapps/docs/funcspecs/mbean-names.html
 webapps/docs/host-manager-howto.html
 webapps/docs/html-host-manager-howto.html
 webapps/docs/html-manager-howto.html
