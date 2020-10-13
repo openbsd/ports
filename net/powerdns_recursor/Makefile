@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2020/09/08 08:50:52 otto Exp $
+# $OpenBSD: Makefile,v 1.14 2020/10/13 12:13:29 otto Exp $
 
 COMMENT=		recursive nameserver
 
-V=			4.3.4
+V=			4.3.5
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
