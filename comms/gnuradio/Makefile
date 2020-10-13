@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/10/13 09:04:51 bentley Exp $
 
 COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
-DISTNAME =	gnuradio-3.7.13.4
-REVISION =	2
+V =		3.8.2.0
+DISTNAME =	gnuradio-$V
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7
@@ -33,47 +33,58 @@ CATEGORIES =	comms
 
 HOMEPAGE =	https://www.gnuradio.org/
 
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
-
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += QtCore QtGui SDL boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c fftw3f fftw3f_threads
-WANTLIB += gsl gslcblas gsm iconv jack log4cpp m orc-0.4 portaudio qwt
-WANTLIB += usb-1.0 zmq
+WANTLIB += Qt5Core Qt5Gui Qt5Widgets SDL boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_program_options-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c fftw3f
+WANTLIB += fftw3f_threads gmp gmpxx gsl gslcblas gsm iconv jack
+WANTLIB += log4cpp m orc-0.4 portaudio qwt-qt5 zmq
 
-MASTER_SITES =	https://www.gnuradio.org/releases/gnuradio/
+MASTER_SITES =	https://github.com/gnuradio/gnuradio/releases/download/v$V/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake \
-		lang/python
+		lang/python \
+		x11/qt5
+
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/cppunit \
-		devel/py-six \
+		devel/py-click${MODPY_FLAVOR} \
+		devel/py-click-plugins${MODPY_FLAVOR} \
+		devel/py-gobject3${MODPY_FLAVOR} \
+		devel/py-six${MODPY_FLAVOR} \
 		devel/swig \
 		devel/xdg-utils \
+		math/py-numpy${MODPY_FLAVOR} \
 		net/cppzmq \
+		textproc/py-yaml${MODPY_FLAVOR} \
 		textproc/xmlto \
-		www/py-mako
+		www/py-mako${MODPY_FLAVOR} \
+		x11/py-qt5${MODPY_FLAVOR}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/py-cheetah \
-		math/py-numpy \
+		devel/py-cheetah${MODPY_FLAVOR} \
+		graphics/py-matplotlib${MODPY_FLAVOR} \
+		math/py-networkx${MODPY_FLAVOR} \
+		math/py-numpy${MODPY_FLAVOR} \
+		math/py-scipy${MODPY_FLAVOR} \
 		misc/shared-mime-info \
-		textproc/py-lxml \
-		x11/py-gtk2 \
-		x11/py-qt4 \
-		x11/py-wxPython
+		textproc/py-lxml${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR} \
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	audio/jack \
 		audio/gsm \
 		audio/portaudio-svn \
 		devel/boost \
+		devel/boost,-md \
+		devel/gmp,-cxx \
 		devel/gsl \
 		devel/libusb1 \
 		devel/log4cpp \
@@ -81,10 +92,9 @@ LIB_DEPENDS =	audio/jack \
 		devel/sdl \
 		math/fftw3,float \
 		net/zeromq \
-		x11/qwt
+		x11/qwt,qt5
 
 CONFIGURE_ARGS =-DENABLE_DOXYGEN=OFF \
-		-DENABLE_GR_COMEDI=OFF \
 		-DENABLE_GR_UHD=OFF \
 		-DGR_PKG_DOC_DIR="${PREFIX}/share/doc/gnuradio" \
 		-DGR_PKG_CONF_DIR="${PREFIX}/share/examples/gnuradio/conf.d" \
@@ -99,8 +109,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,mime}
 	mv ${PREFIX}/share/gnuradio/examples/* ${PREFIX}/share/examples/gnuradio
 	rmdir ${PREFIX}/share/gnuradio/examples
-	cd ${PREFIX}/share/gnuradio/grc/freedesktop/ && \
-	    mv gnuradio-grc.desktop ${PREFIX}/share/applications && \
-	    mv gnuradio-grc.xml ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
