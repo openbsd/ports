@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.6 2020/07/14 15:13:37 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.7 2020/10/13 10:26:35 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -194,6 +194,10 @@ webapps/docs/api/org/apache/catalina/authenticator/jaspic/
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/AuthConfigFactoryImpl.html
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/CallbackHandlerImpl.html
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/MessageInfoImpl.html
+webapps/docs/api/org/apache/catalina/authenticator/jaspic/PersistentProviderRegistrations.Property.html
+webapps/docs/api/org/apache/catalina/authenticator/jaspic/PersistentProviderRegistrations.Provider.html
+webapps/docs/api/org/apache/catalina/authenticator/jaspic/PersistentProviderRegistrations.Providers.html
+webapps/docs/api/org/apache/catalina/authenticator/jaspic/PersistentProviderRegistrations.html
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/SimpleAuthConfigProvider.html
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/SimpleServerAuthConfig.html
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/SimpleServerAuthContext.html
@@ -235,6 +239,7 @@ webapps/docs/api/org/apache/catalina/core/ApplicationPushBuilder.html
 webapps/docs/api/org/apache/catalina/core/ApplicationServletRegistration.html
 webapps/docs/api/org/apache/catalina/core/ApplicationSessionCookieConfig.html
 webapps/docs/api/org/apache/catalina/core/AprLifecycleListener.html
+webapps/docs/api/org/apache/catalina/core/AprStatus.html
 webapps/docs/api/org/apache/catalina/core/AsyncContextImpl.html
 webapps/docs/api/org/apache/catalina/core/AsyncListenerWrapper.html
 webapps/docs/api/org/apache/catalina/core/Constants.html
@@ -465,6 +470,7 @@ webapps/docs/api/org/apache/catalina/realm/JAASCallbackHandler.html
 webapps/docs/api/org/apache/catalina/realm/JAASMemoryLoginModule.html
 webapps/docs/api/org/apache/catalina/realm/JAASRealm.html
 webapps/docs/api/org/apache/catalina/realm/JDBCRealm.html
+webapps/docs/api/org/apache/catalina/realm/JNDIRealm.JNDIConnection.html
 webapps/docs/api/org/apache/catalina/realm/JNDIRealm.User.html
 webapps/docs/api/org/apache/catalina/realm/JNDIRealm.html
 webapps/docs/api/org/apache/catalina/realm/LockOutRealm.LockRecord.html
@@ -989,6 +995,7 @@ webapps/docs/api/org/apache/catalina/webresources/EmptyResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/ExtractingRoot.html
 webapps/docs/api/org/apache/catalina/webresources/FileResource.html
 webapps/docs/api/org/apache/catalina/webresources/FileResourceSet.html
+webapps/docs/api/org/apache/catalina/webresources/JarContents.html
 webapps/docs/api/org/apache/catalina/webresources/JarResource.html
 webapps/docs/api/org/apache/catalina/webresources/JarResourceRoot.html
 webapps/docs/api/org/apache/catalina/webresources/JarResourceSet.html
@@ -1023,6 +1030,7 @@ webapps/docs/api/org/apache/coyote/CloseNowException.html
 webapps/docs/api/org/apache/coyote/CompressionConfig.html
 webapps/docs/api/org/apache/coyote/Constants.html
 webapps/docs/api/org/apache/coyote/ContainerThreadMarker.html
+webapps/docs/api/org/apache/coyote/ContinueResponseTiming.html
 webapps/docs/api/org/apache/coyote/ErrorState.html
 webapps/docs/api/org/apache/coyote/InputBuffer.html
 webapps/docs/api/org/apache/coyote/OutputBuffer.html
@@ -1786,6 +1794,7 @@ webapps/docs/api/org/apache/tomcat/util/digester/ArrayStack.html
 webapps/docs/api/org/apache/tomcat/util/digester/CallMethodRule.html
 webapps/docs/api/org/apache/tomcat/util/digester/CallParamRule.html
 webapps/docs/api/org/apache/tomcat/util/digester/Digester.EnvironmentPropertySource.html
+webapps/docs/api/org/apache/tomcat/util/digester/Digester.GeneratedCodeLoader.html
 webapps/docs/api/org/apache/tomcat/util/digester/Digester.html
 webapps/docs/api/org/apache/tomcat/util/digester/DocumentProperties.Charset.html
 webapps/docs/api/org/apache/tomcat/util/digester/DocumentProperties.html
@@ -1887,6 +1896,7 @@ webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/LimitedInputStream.
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/Streams.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/MimeUtility.html
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/RFC2231Utility.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-tree.html
@@ -1902,6 +1912,7 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptLanguage.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Authorization.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/ContentRange.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Cookie.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/EntityTag.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Host.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
@@ -2101,6 +2112,11 @@ webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/xreflection/
+webapps/docs/api/org/apache/tomcat/util/xreflection/ObjectReflectionPropertyInspector.html
+webapps/docs/api/org/apache/tomcat/util/xreflection/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/xreflection/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/xreflection/package-tree.html
 webapps/docs/api/org/apache/tomcat/websocket/
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelGroupUtil.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapper.html
@@ -2324,16 +2340,6 @@ webapps/docs/elapi/package-list
 webapps/docs/elapi/script.js
 webapps/docs/elapi/serialized-form.html
 webapps/docs/elapi/stylesheet.css
-webapps/docs/funcspecs/
-webapps/docs/funcspecs/fs-admin-apps.html
-webapps/docs/funcspecs/fs-admin-objects.html
-webapps/docs/funcspecs/fs-admin-opers.html
-webapps/docs/funcspecs/fs-default.html
-webapps/docs/funcspecs/fs-jdbc-realm.html
-webapps/docs/funcspecs/fs-jndi-realm.html
-webapps/docs/funcspecs/fs-memory-realm.html
-webapps/docs/funcspecs/index.html
-webapps/docs/funcspecs/mbean-names.html
 webapps/docs/graal.html
 webapps/docs/host-manager-howto.html
 webapps/docs/html-host-manager-howto.html
