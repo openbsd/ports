@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/gn/build/gen.py
+--- src/3rdparty/gn/build/gen.py.orig
++++ src/3rdparty/gn/build/gen.py
+@@ -188,7 +188,7 @@ def WriteGenericNinja(path, static_libraries, executab
+       'linux': 'build_linux.ninja.template',
+       'freebsd': 'build_linux.ninja.template',
+       'aix': 'build_aix.ninja.template',
+-      'openbsd': 'build_openbsd.ninja.template',
++      'openbsd': 'build_linux.ninja.template',
+   }[platform.platform()])
+ 
+   with open(template_filename) as f:
