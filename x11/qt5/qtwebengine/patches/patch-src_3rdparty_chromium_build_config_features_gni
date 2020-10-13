@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/build/config/features.gni
 --- src/3rdparty/chromium/build/config/features.gni.orig
 +++ src/3rdparty/chromium/build/config/features.gni
-@@ -26,7 +26,7 @@ declare_args() {
+@@ -26,13 +26,13 @@ declare_args() {
    proprietary_codecs = is_chrome_branded || is_chromecast
  
    # libudev usage. This currently only affects the content layer.
@@ -12,3 +12,10 @@ Index: src/3rdparty/chromium/build/config/features.gni
  
    use_dbus = is_linux && !is_chromecast
  
+   use_gio = is_linux && !is_chromeos && !is_chromecast
+ 
+-  use_qt = false
++  use_qt = true
+ }
+ #
+ # =============================================
