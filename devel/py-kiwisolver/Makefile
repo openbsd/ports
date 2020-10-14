@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/10/11 19:37:30 daniel Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/14 18:45:22 kmos Exp $
 
 COMMENT =		fast implementation of the Cassowary constraint solver
 
@@ -11,6 +11,9 @@ CATEGORIES =		devel
 
 # BSD
 PERMIT_PACKAGE =	Yes
+
+# C++11
+COMPILER =		base-clang ports-gcc ports-clang
 
 WANTLIB =	${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
 
