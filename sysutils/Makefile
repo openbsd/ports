@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.579 2020/10/10 18:30:42 daniel Exp $
+# $OpenBSD: Makefile,v 1.580 2020/10/14 11:15:31 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -197,8 +197,6 @@
      SUBDIR += multitime
      SUBDIR += ncal
      SUBDIR += ncdu
-     SUBDIR += ndesk-dbus
-     SUBDIR += ndesk-dbus-glib
      SUBDIR += neofetch
      SUBDIR += netshot
      SUBDIR += nnn

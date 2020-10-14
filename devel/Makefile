@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2027 2020/10/12 21:34:41 daniel Exp $
+# $OpenBSD: Makefile,v 1.2028 2020/10/14 11:15:31 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -111,8 +111,6 @@
      SUBDIR += cvsutils
      SUBDIR += cvsweb
      SUBDIR += darcs
-     SUBDIR += dbus-sharp
-     SUBDIR += dbus-sharp-glib
      SUBDIR += dconf
      SUBDIR += ddd
      SUBDIR += dejagnu
@@ -470,8 +468,6 @@
      SUBDIR += mm
      SUBDIR += mm-common
      SUBDIR += mono-addins
-     SUBDIR += mono-gdata
-     SUBDIR += mono-notify
      SUBDIR += monotone
      SUBDIR += mowgli
      SUBDIR += mpfr

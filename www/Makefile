@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.985 2020/10/10 01:51:26 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.986 2020/10/14 11:15:31 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -103,7 +103,6 @@
      SUBDIR += minitube
      SUBDIR += moinmoin
      SUBDIR += mollify
-     SUBDIR += mono-xsp
      SUBDIR += mozilla-firefox
      SUBDIR += netsurf
      SUBDIR += newsboat
