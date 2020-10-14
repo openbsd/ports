@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2020/09/09 20:16:44 kili Exp $
+# $OpenBSD: Makefile,v 1.162 2020/10/14 20:51:02 sthen Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
@@ -42,7 +42,9 @@ cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z
 
 MODULES=	devel/cmake
 
+.if ${BUILD_PACKAGES:M-qt5}
 MODULES+=	x11/qt5
+.endif
 
 # devel/boost only as build+run dependency, poppler uses
 # header-only classes (from boost/containers/small_vector.hpp)
