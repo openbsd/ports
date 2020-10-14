@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1083 2020/10/12 22:04:32 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1084 2020/10/14 11:17:10 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1876,6 +1876,13 @@ my $obsolete_reason = {
 	'librewms' => 3,
 	'libgaiagraphics' => 3,
 	'librasterlite' => 3,
+	'dbus-sharp' => 5,
+	'dbus-sharp-glib' => 5,
+	'mono-gdata' => 5,
+	'mono-notify' => 5,
+	'ndesk-dbus' => 5,
+	'ndesk-dbus-glib' => 5,
+	'mono-xsp' => 5,
 };
 
 # reasons for obsolete packages
