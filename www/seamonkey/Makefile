@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.240 2020/10/10 06:34:22 landry Exp $
+# $OpenBSD: Makefile,v 1.241 2020/10/15 06:53:09 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386
-BROKEN-amd64 =		xpcshell segfaults during fake since llvm8 update
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.49.5
+MOZILLA_VERSION =	2.53.4
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
-REVISION =	5
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.4.5
+PKGNAME-lightning =	lightning-seamonkey-5.8.4
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
@@ -39,15 +37,25 @@ MODCLANG_ARCHS =	amd64 i386
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # gecko >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
-CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk2
+# firefox >= 53 needs rust
+BUILD_DEPENDS +=	lang/rust>=1.43
+# stylo build needs LLVM
+BUILD_DEPENDS +=	devel/llvm
 CONFIGURE_ARGS +=	--disable-gconf
 NO_TEST=	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 
+# lld blows when linking libxul
+.if ${MACHINE_ARCH:Mi386}
+CONFIGURE_ARGS +=	--enable-linker=bfd
+USE_LLD=No
+.endif
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm
+WANTLIB += Xcursor Xi harfbuzz
+
 WANTLIB-lightning=
 
 # build lightning xpi
@@ -59,19 +67,16 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
 
-	cp ${WRKBUILD}/dist/xpi-stage/gdata-provider*xpi \
-		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}.xpi
-
 	# install prefs
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
-		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
+		${PREFIX}/lib/${MOZILLA_PROJECT}/defaults/pref/all-openbsd.js
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
 	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
 	# install icon for desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/${MOZILLA_PROJECT}.png \
+	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}/chrome/icons/default/default.png \
 		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
 
 .include <bsd.port.mk>

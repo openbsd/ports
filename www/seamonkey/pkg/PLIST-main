@@ -1,117 +1,109 @@
-@comment $OpenBSD: PLIST-main,v 1.42 2019/10/25 11:49:15 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.43 2020/10/15 06:53:09 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/application.ini
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/blocklist.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome.manifest
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/JSConsoleWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/JSConsoleWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/JSConsoleWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/abcardWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/abcardWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/abcardWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/ablistWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/ablistWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/ablistWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/addressbookWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/addressbookWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/addressbookWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/bookmarkproperties.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/bookmarkproperties16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/bookmarkproperties48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/downloadManager.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/downloadManager16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/downloadManager48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/editorWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/editorWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/editorWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/findBookmarkWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/findBookmarkWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/findBookmarkWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/findHistoryWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/findHistoryWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/findHistoryWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/history-window.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/history-window16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/history-window48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/main-window.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/main-window16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/main-window48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/messengerWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/messengerWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/messengerWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/msgcomposeWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/msgcomposeWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/msgcomposeWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/places.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/places16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/places48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/${MOZILLA_PROJECT}.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/components.manifest
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/libsuite.so.${LIBsuite_VERSION}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/messenger/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/messenger/mailViews.dat
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/channel-prefs.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/chrome/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/chrome/userChrome-example.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/chrome/userContent-example.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/mimeTypes.rdf
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/profile/panels.rdf
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dependentlibs.list
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.aff
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/inspector@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/modern@themes.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/Bogofilter.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/DSPAM.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/POPFile.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/SpamAssassin.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/SpamPal.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/movemail.rdf
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/rss.rdf
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libldap60.so.${LIBldap60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libldif60.so.${LIBldif60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/liblgpllibs.so.${LIBlgpllibs_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozavcodec.so.${LIBmozavcodec_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozavutil.so.${LIBmozavutil_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozgtk.so.${LIBmozgtk_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libprldap60.so.${LIBprldap60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/license.txt
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/omni.ja
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/platform.ini
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/plugin-container
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/removed-files
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/run-mozilla.sh
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}-bin
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/duckduckgo.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/google.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/wikipedia.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/yahoo.xml
+lib/${MOZILLA_PROJECT}/
+lib/${MOZILLA_PROJECT}/application.ini
+lib/${MOZILLA_PROJECT}/blocklist.xml
+lib/${MOZILLA_PROJECT}/chrome/
+lib/${MOZILLA_PROJECT}/chrome.manifest
+lib/${MOZILLA_PROJECT}/chrome/icons/
+lib/${MOZILLA_PROJECT}/chrome/icons/default/
+lib/${MOZILLA_PROJECT}/chrome/icons/default/JSConsoleWindow.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/JSConsoleWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/JSConsoleWindow48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/abcardWindow.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/abcardWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/abcardWindow48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/ablistWindow.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/ablistWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/ablistWindow48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/addressbookWindow.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/addressbookWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/addressbookWindow48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/bookmarkproperties.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/bookmarkproperties16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/bookmarkproperties48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default128.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default64.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/downloadManager.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/downloadManager16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/downloadManager48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/editorWindow.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/editorWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/editorWindow48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/findBookmarkWindow.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/findBookmarkWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/findBookmarkWindow48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/findHistoryWindow.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/findHistoryWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/findHistoryWindow48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/history-window.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/history-window16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/history-window48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/main-window.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/main-window16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/main-window48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/messengerWindow.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/messengerWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/messengerWindow48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/places.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/places16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/places48.png
+lib/${MOZILLA_PROJECT}/defaults/
+lib/${MOZILLA_PROJECT}/defaults/messenger/
+lib/${MOZILLA_PROJECT}/defaults/messenger/mailViews.dat
+lib/${MOZILLA_PROJECT}/defaults/pref/
+lib/${MOZILLA_PROJECT}/defaults/pref/all-openbsd.js
+lib/${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
+lib/${MOZILLA_PROJECT}/defaults/profile/
+lib/${MOZILLA_PROJECT}/defaults/profile/chrome/
+lib/${MOZILLA_PROJECT}/defaults/profile/chrome/userChrome-example.css
+lib/${MOZILLA_PROJECT}/defaults/profile/chrome/userContent-example.css
+lib/${MOZILLA_PROJECT}/defaults/profile/mimeTypes.rdf
+lib/${MOZILLA_PROJECT}/defaults/profile/panels.rdf
+lib/${MOZILLA_PROJECT}/dependentlibs.list
+lib/${MOZILLA_PROJECT}/dictionaries/
+lib/${MOZILLA_PROJECT}/dictionaries/en-US.aff
+lib/${MOZILLA_PROJECT}/dictionaries/en-US.dic
+lib/${MOZILLA_PROJECT}/distribution/
+lib/${MOZILLA_PROJECT}/distribution/extensions/
+lib/${MOZILLA_PROJECT}/extensions/
+lib/${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+lib/${MOZILLA_PROJECT}/gtk2/
+@lib lib/${MOZILLA_PROJECT}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
+lib/${MOZILLA_PROJECT}/isp/
+lib/${MOZILLA_PROJECT}/isp/Bogofilter.sfd
+lib/${MOZILLA_PROJECT}/isp/DSPAM.sfd
+lib/${MOZILLA_PROJECT}/isp/POPFile.sfd
+lib/${MOZILLA_PROJECT}/isp/SpamAssassin.sfd
+lib/${MOZILLA_PROJECT}/isp/SpamPal.sfd
+lib/${MOZILLA_PROJECT}/isp/movemail.rdf
+lib/${MOZILLA_PROJECT}/isp/rss.rdf
+@lib lib/${MOZILLA_PROJECT}/libldap60.so.${LIBldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libldif60.so.${LIBldif60_VERSION}
+@lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libprldap60.so.${LIBprldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
+lib/${MOZILLA_PROJECT}/license.txt
+lib/${MOZILLA_PROJECT}/omni.ja
+@bin lib/${MOZILLA_PROJECT}/pingsender
+lib/${MOZILLA_PROJECT}/platform.ini
+@bin lib/${MOZILLA_PROJECT}/plugin-container
+lib/${MOZILLA_PROJECT}/removed-files
+lib/${MOZILLA_PROJECT}/run-mozilla.sh
+@bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
+@bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
 @man man/man1/${MOZILLA_PROJECT}.1
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${PKGSTEM}

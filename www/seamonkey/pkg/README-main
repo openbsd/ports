@@ -1,28 +1,8 @@
-$OpenBSD: README-main,v 1.7 2018/09/04 12:46:27 espie Exp $
+$OpenBSD: README-main,v 1.8 2020/10/15 06:53:09 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
-
-To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
-
-Plugins
-=======
-Seamonkey looks for plugins in ~/.mozilla/plugins and
-${LOCALBASE}/lib/mozilla/plugins.
-If the environment variable MOZ_PLUGIN_PATH is specified, this
-location will be overridden.
-
-Internationalization
-====================
-There are packages containing internationalizations for all supported
-languages. To use Seamonkey in your language, install one of the 
-seamonkey-i18n-* packages and start Seamonkey. If you are not asked for 
-confirmation of activation of the language pack, go to 
-Tools->Add-ons manager->Languages and click 'activate' on your language 
-pack. Then go to
-Edit->Preferences->Appearance and select your favorite Language/Content 
-in the 'User Interface Language' pull down menu. Restart Seamonkey.
 
 Debugging
 =========
@@ -33,8 +13,7 @@ Bug reports without that information will be ignored.
 
 Html5 audio/video support
 =========================
-Due to dependencies reasons, you have to manually install some
-GStreamer packages for a full multimedia experience (ie play MP3 audio
-and MPEG videos). They will be used at runtime if Seamonkey finds them.
+For a full multimedia experience, such as playing MP3 audio or MPEG
+videos, install the "ffmpeg" package:
 
-# pkg_add gstreamer1-plugins-good gstreamer1-plugins-libav
+# pkg_add ffmpeg
