@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/08/08 10:20:29 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2020/10/15 06:53:46 landry Exp $
 
 SUBDIR = cs
 SUBDIR += de
@@ -10,10 +10,11 @@ SUBDIR += fr
 SUBDIR += hu
 SUBDIR += it
 SUBDIR += ja
-SUBDIR += lt
+SUBDIR += nb-NO
 SUBDIR += nl
 SUBDIR += pl
 SUBDIR += pt-PT
+SUBDIR += pt-BR
 SUBDIR += ru
 SUBDIR += sk
 SUBDIR += sv-SE
