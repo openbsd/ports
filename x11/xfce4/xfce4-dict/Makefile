@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2019/10/07 09:35:46 landry Exp $
+# $OpenBSD: Makefile,v 1.49 2020/10/15 06:44:22 landry Exp $
 
 COMMENT=	Xfce4 dictionary application
 
-XFCE_VERSION=	0.8.3
+XFCE_VERSION=	0.8.4
 XFCE_GOODIE=	xfce4-dict
 
 # GPLv2
@@ -23,6 +23,6 @@ WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-util xcb-render xcb-shm
 WANTLIB += xfce4panel-2.0 xfce4util z harfbuzz graphite2 xfce4ui-2
-WANTLIB += atk-bridge-2.0 atspi cairo-gobject dbus-1 epoxy gdk-3 gtk-3
+WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
