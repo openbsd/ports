@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2020/09/25 20:54:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2020/10/15 06:56:56 landry Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -115,6 +115,7 @@ MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ENV +=	WIRESHARK_VERSION_EXTRA=" from OpenBSD packages"
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
+			-DENABLE_MINIZIP=false \
 			-DCOMPILER_CAN_HANDLE_SSE4_2=false
 
 .include <bsd.port.arch.mk>
