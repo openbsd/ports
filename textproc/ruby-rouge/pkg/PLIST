@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/09/09 08:26:20 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/10/15 10:41:23 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -61,6 +61,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/eex
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/eiffel
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/elixir
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/elm
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/email
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/epp
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/erlang
@@ -97,6 +98,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/io
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/irb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/irb_output
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/isbl
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/j
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/janet
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/java
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/javascript
@@ -217,6 +219,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_inline.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_legacy.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_line_highlighter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_line_table.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_linewise.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_pygments.rb
@@ -288,6 +291,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/eex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/eiffel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/elixir.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/elm.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/email.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/epp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/erb.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/erlang.rb
@@ -327,6 +331,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/irb.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isbl/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isbl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isbl/builtins.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/j.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/janet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/java.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/javascript.rb
