@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/07/16 23:57:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/10/15 07:13:43 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Math/
 ${P5ARCH}/Math/FFT.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Math/
 ${P5ARCH}/auto/Math/FFT/
-${P5ARCH}/auto/Math/FFT/FFT.so
+@so ${P5ARCH}/auto/Math/FFT/FFT.so
 @man man/man3p/Math::FFT.3p
