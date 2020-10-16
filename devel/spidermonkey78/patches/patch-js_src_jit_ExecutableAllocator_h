@@ -1,0 +1,16 @@
+$OpenBSD: patch-js_src_jit_ExecutableAllocator_h,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
+
+Index: js/src/jit/ExecutableAllocator.h
+--- js/src/jit/ExecutableAllocator.h.orig
++++ js/src/jit/ExecutableAllocator.h
+@@ -41,6 +41,10 @@
+ #include "js/TypeDecls.h"
+ #include "js/Vector.h"
+ 
++#if defined(__OpenBSD__) && defined(__mips64__)
++#include <mips64/sysarch.h>
++#endif
++
+ namespace JS {
+ struct CodeSizes;
+ }  // namespace JS
