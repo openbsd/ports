@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/12 11:23:10 martin Exp $
+# $OpenBSD: Makefile,v 1.4 2020/10/16 12:52:36 martin Exp $
 
 COMMENT =	mercantile additional commands
 
-MODPY_EGG_VERSION =	0.1.1
+MODPY_EGG_VERSION =	0.2.0
 DISTNAME =	supermercado-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
