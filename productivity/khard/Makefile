@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/16 16:19:02 sthen Exp $
 
 COMMENT =		console CardDAV client
 
-MODPY_EGG_VERSION =	0.15.1
+MODPY_EGG_VERSION =	0.17.0
 DISTNAME =		khard-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		productivity
 
 HOMEPAGE =		https://github.com/scheibler/khard
-MAINTAINER =		Paco Esteban <paco@onna.be>
+MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -41,7 +40,8 @@ post-build:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/khard
-	${INSTALL_DATA} ${WRKSRC}/misc/khard/khard.conf.example \
+	cd ${WRKSRC}/doc/source/examples; \
+	${INSTALL_DATA} template.yaml khard.conf.example \
 		${PREFIX}/share/examples/khard
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh/{_khard,_email-khard} \

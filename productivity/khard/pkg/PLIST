@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/01/17 13:52:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/10/16 16:19:02 sthen Exp $
 bin/khard
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/khard/
 lib/python${MODPY_VERSION}/site-packages/khard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/khard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -20,9 +18,11 @@ lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}address_book.${MO
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}carddav_object.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}formatter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}khard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}object_type.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}query.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/actions.py
 lib/python${MODPY_VERSION}/site-packages/khard/address_book.py
@@ -32,14 +32,17 @@ lib/python${MODPY_VERSION}/site-packages/khard/config.py
 lib/python${MODPY_VERSION}/site-packages/khard/data/
 lib/python${MODPY_VERSION}/site-packages/khard/data/config.spec
 lib/python${MODPY_VERSION}/site-packages/khard/data/template.yaml
+lib/python${MODPY_VERSION}/site-packages/khard/formatter.py
 lib/python${MODPY_VERSION}/site-packages/khard/helpers.py
 lib/python${MODPY_VERSION}/site-packages/khard/khard.py
 lib/python${MODPY_VERSION}/site-packages/khard/object_type.py
+lib/python${MODPY_VERSION}/site-packages/khard/query.py
 lib/python${MODPY_VERSION}/site-packages/khard/version.py
 @man man/man1/khard.1
 @man man/man5/khard.conf.5
 share/examples/khard/
 share/examples/khard/khard.conf.example
+share/examples/khard/template.yaml
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_email-khard
