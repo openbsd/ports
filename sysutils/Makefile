@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.580 2020/10/14 11:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.581 2020/10/16 14:00:34 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -74,6 +74,7 @@
      SUBDIR += dtb
      SUBDIR += dtpstree
      SUBDIR += duplicity
+     SUBDIR += duf
      SUBDIR += dvd+rw-tools
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
