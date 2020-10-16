@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2019/06/27 07:21:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2020/10/16 07:16:18 benoit Exp $
 
 COMMENT =	bozotic HTTP server
 
-DISTNAME =	bozohttpd-20190228
+DISTNAME =	bozohttpd-20201014
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.eterna.com.au/bozohttpd/
-
-MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
