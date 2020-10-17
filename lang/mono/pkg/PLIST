@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2020/07/29 10:50:36 robert Exp $
+@comment $OpenBSD: PLIST,v 1.39 2020/10/17 08:41:02 robert Exp $
 bin/al
 bin/al2
 bin/aprofutil
@@ -3030,9 +3030,9 @@ lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll
 lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.pdb
 lib/mono/gac/Mono.Cecil/
-lib/mono/gac/Mono.Cecil/0.11.0.0__0738eb9f132ed756/
-lib/mono/gac/Mono.Cecil/0.11.0.0__0738eb9f132ed756/Mono.Cecil.dll
-lib/mono/gac/Mono.Cecil/0.11.0.0__0738eb9f132ed756/Mono.Cecil.pdb
+lib/mono/gac/Mono.Cecil/0.11.1.0__0738eb9f132ed756/
+lib/mono/gac/Mono.Cecil/0.11.1.0__0738eb9f132ed756/Mono.Cecil.dll
+lib/mono/gac/Mono.Cecil/0.11.1.0__0738eb9f132ed756/Mono.Cecil.pdb
 lib/mono/gac/Mono.Cecil/0.9.5.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Cecil/0.9.5.0__0738eb9f132ed756/Mono.Cecil.dll
 lib/mono/gac/Mono.Cecil/0.9.5.0__0738eb9f132ed756/Mono.Cecil.pdb
