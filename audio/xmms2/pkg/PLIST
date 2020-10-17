@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/18 19:36:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/10/17 21:40:32 daniel Exp $
 bin/nyxmms2
 @bin bin/xmms2
 @bin bin/xmms2-et
@@ -97,43 +97,43 @@ lib/python${MODPY_VERSION}/site-packages/xmmsclient/glib.py
 lib/python${MODPY_VERSION}/site-packages/xmmsclient/propdict.py
 lib/python${MODPY_VERSION}/site-packages/xmmsclient/qt3.py
 lib/python${MODPY_VERSION}/site-packages/xmmsclient/sync.py
-lib/python${MODPY_VERSION}/site-packages/xmmsclient/xmmsapi.so
-lib/python${MODPY_VERSION}/site-packages/xmmsclient/xmmsvalue.so
+@so lib/python${MODPY_VERSION}/site-packages/xmmsclient/xmmsapi.so
+@so lib/python${MODPY_VERSION}/site-packages/xmmsclient/xmmsvalue.so
 lib/xmms2/
-lib/xmms2/libxmms_ao.so
-lib/xmms2/libxmms_apefile.so
-lib/xmms2/libxmms_asf.so
-lib/xmms2/libxmms_asx.so
-lib/xmms2/libxmms_avcodec.so
-lib/xmms2/libxmms_cue.so
-lib/xmms2/libxmms_curl.so
-lib/xmms2/libxmms_daap.so
-lib/xmms2/libxmms_diskwrite.so
-lib/xmms2/libxmms_equalizer.so
-lib/xmms2/libxmms_file.so
-lib/xmms2/libxmms_flac.so
-lib/xmms2/libxmms_flv.so
-lib/xmms2/libxmms_gvfs.so
-lib/xmms2/libxmms_html.so
-lib/xmms2/libxmms_icymetaint.so
-lib/xmms2/libxmms_id3v2.so
-lib/xmms2/libxmms_jack.so
-lib/xmms2/libxmms_karaoke.so
-lib/xmms2/libxmms_m3u.so
-lib/xmms2/libxmms_mp4.so
-lib/xmms2/libxmms_mpg123.so
-lib/xmms2/libxmms_normalize.so
-lib/xmms2/libxmms_null.so
-lib/xmms2/libxmms_nulstripper.so
-lib/xmms2/libxmms_pls.so
-lib/xmms2/libxmms_replaygain.so
-lib/xmms2/libxmms_rss.so
-lib/xmms2/libxmms_sndfile.so
-lib/xmms2/libxmms_tta.so
-lib/xmms2/libxmms_vorbis.so
-lib/xmms2/libxmms_wave.so
-lib/xmms2/libxmms_xml.so
-lib/xmms2/libxmms_xspf.so
+@so lib/xmms2/libxmms_ao.so
+@so lib/xmms2/libxmms_apefile.so
+@so lib/xmms2/libxmms_asf.so
+@so lib/xmms2/libxmms_asx.so
+@so lib/xmms2/libxmms_avcodec.so
+@so lib/xmms2/libxmms_cue.so
+@so lib/xmms2/libxmms_curl.so
+@so lib/xmms2/libxmms_daap.so
+@so lib/xmms2/libxmms_diskwrite.so
+@so lib/xmms2/libxmms_equalizer.so
+@so lib/xmms2/libxmms_file.so
+@so lib/xmms2/libxmms_flac.so
+@so lib/xmms2/libxmms_flv.so
+@so lib/xmms2/libxmms_gvfs.so
+@so lib/xmms2/libxmms_html.so
+@so lib/xmms2/libxmms_icymetaint.so
+@so lib/xmms2/libxmms_id3v2.so
+@so lib/xmms2/libxmms_jack.so
+@so lib/xmms2/libxmms_karaoke.so
+@so lib/xmms2/libxmms_m3u.so
+@so lib/xmms2/libxmms_mp4.so
+@so lib/xmms2/libxmms_mpg123.so
+@so lib/xmms2/libxmms_normalize.so
+@so lib/xmms2/libxmms_null.so
+@so lib/xmms2/libxmms_nulstripper.so
+@so lib/xmms2/libxmms_pls.so
+@so lib/xmms2/libxmms_replaygain.so
+@so lib/xmms2/libxmms_rss.so
+@so lib/xmms2/libxmms_sndfile.so
+@so lib/xmms2/libxmms_tta.so
+@so lib/xmms2/libxmms_vorbis.so
+@so lib/xmms2/libxmms_wave.so
+@so lib/xmms2/libxmms_xml.so
+@so lib/xmms2/libxmms_xspf.so
 ${P5ARCH}/
 ${P5ARCH}/Audio/
 ${P5ARCH}/Audio/XMMSClient/
@@ -148,7 +148,7 @@ ${P5ARCH}/Audio/XMMSClient/Sync.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Audio/
 ${P5ARCH}/auto/Audio/XMMSClient/
-${P5ARCH}/auto/Audio/XMMSClient/XMMSClient.so
+@so ${P5ARCH}/auto/Audio/XMMSClient/XMMSClient.so
 @man man/man1/xmms2-et.1
 @man man/man1/xmms2-launcher.1
 @man man/man1/xmms2-mdns-avahi.1

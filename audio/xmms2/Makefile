@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2020/02/24 09:32:38 jca Exp $
+# $OpenBSD: Makefile,v 1.54 2020/10/17 21:40:31 daniel Exp $
 
 COMMENT =		audio player daemon with library management
 
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		13
+REVISION =		14
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -36,8 +36,7 @@ MODULES =		lang/python \
 
 NO_TEST =		Yes
 
-BUILD_DEPENDS =		devel/pyrex \
-			devel/boost
+BUILD_DEPENDS =		devel/boost
 
 LIB_DEPENDS =		devel/glib2 \
 			databases/sqlite3 \
