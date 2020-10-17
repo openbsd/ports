@@ -1,0 +1,16 @@
+$OpenBSD: patch-monorail_monorail_py,v 1.1 2020/10/17 18:20:34 daniel Exp $
+
+Fix for https://github.com/dewitters/MysticMine/issues/16
+
+Index: monorail/monorail.py
+--- monorail/monorail.py.orig
++++ monorail/monorail.py
+@@ -41,6 +41,8 @@ DEFAULT_LANGUAGES += ['en_US']
+ lc, encoding = locale.getdefaultlocale()
+ if lc:
+     languages = [lc]
++else:
++    languages = []
+ 
+ languages += DEFAULT_LANGUAGES
+ mo_location = LOCALE_DIR

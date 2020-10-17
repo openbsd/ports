@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/02 11:33:07 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/17 18:20:35 daniel Exp $
 bin/MysticMine
 lib/python${MODPY_VERSION}/site-packages/MysticMine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/monorail/
 lib/python${MODPY_VERSION}/site-packages/monorail/__init__.py
 lib/python${MODPY_VERSION}/site-packages/monorail/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/monorail/ai.so
+@so lib/python${MODPY_VERSION}/site-packages/monorail/ai.so
 lib/python${MODPY_VERSION}/site-packages/monorail/control.py
 lib/python${MODPY_VERSION}/site-packages/monorail/control.pyc
 lib/python${MODPY_VERSION}/site-packages/monorail/controlview.py
