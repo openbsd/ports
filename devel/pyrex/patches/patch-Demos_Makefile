@@ -1,7 +1,8 @@
-$OpenBSD: patch-Demos_Makefile,v 1.1.1.1 2006/11/16 01:09:38 alek Exp $
---- Demos/Makefile.orig	Sun Nov 12 22:04:13 2006
-+++ Demos/Makefile	Sun Nov 12 22:04:14 2006
-@@ -1,10 +1,10 @@
+$OpenBSD: patch-Demos_Makefile,v 1.2 2020/10/17 17:13:18 daniel Exp $
+Index: Demos/Makefile
+--- Demos/Makefile.orig
++++ Demos/Makefile
+@@ -1,10 +1,9 @@
  all:
 -	python Setup.py build_ext --inplace
 +	${PYTHON} Setup.py build_ext --inplace
@@ -11,7 +12,6 @@ $OpenBSD: patch-Demos_Makefile,v 1.1.1.1 2006/11/16 01:09:38 alek Exp $
 -	python run_numeric_demo.py
 -	python run_spam.py
 +	${PYTHON} run_primes.py 20
-+	${PYTHON} run_numeric_demo.py
 +	${PYTHON} run_spam.py
  	cd callback; $(MAKE) test
  

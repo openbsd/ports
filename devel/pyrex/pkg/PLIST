@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/05 17:18:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/10/17 17:13:19 daniel Exp $
 @conflict Pyrex-*
 bin/pyrexc
 lib/python${MODPY_VERSION}/site-packages/Pyrex/
@@ -145,10 +145,10 @@ share/examples/pyrex/embed/Makefile.unix
 share/examples/pyrex/embed/README
 share/examples/pyrex/embed/embedded.pyx
 share/examples/pyrex/embed/main.c
-share/examples/pyrex/numeric_demo.pyx
+@comment share/examples/pyrex/numeric_demo.pyx
 share/examples/pyrex/primes.pyx
 share/examples/pyrex/pyprimes.py
-share/examples/pyrex/run_numeric_demo.py
+@comment share/examples/pyrex/run_numeric_demo.py
 share/examples/pyrex/run_primes.py
 share/examples/pyrex/run_spam.py
 share/examples/pyrex/spam.pyx

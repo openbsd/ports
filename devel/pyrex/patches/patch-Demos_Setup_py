@@ -1,0 +1,13 @@
+$OpenBSD: patch-Demos_Setup_py,v 1.1 2020/10/17 17:13:18 daniel Exp $
+
+Index: Demos/Setup.py
+--- Demos/Setup.py.orig
++++ Demos/Setup.py
+@@ -8,7 +8,6 @@ setup(
+   ext_modules=[ 
+     Extension("primes",       ["primes.pyx"]),
+     Extension("spam",         ["spam.pyx"]),
+-    Extension("numeric_demo", ["numeric_demo.pyx"]),
+     ],
+   cmdclass = {'build_ext': build_ext}
+ )

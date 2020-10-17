@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2020/01/26 11:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2020/10/17 17:13:18 daniel Exp $
 
 COMMENT=	Python-alike language for writing Python extension modules
 
 MODPY_EGG_VERSION=	0.9.9
 DISTNAME=	Pyrex-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
@@ -17,8 +17,6 @@ MASTER_SITES=	https://distfiles.sigtrap.nl/ \
 		${HOMEPAGE}
 
 MODULES=	lang/python
-
-TEST_DEPENDS=math/py-Numeric
 
 pre-build:
 	@perl -pi -e "s,/usr/bin/env python,${MODPY_BIN}," \
