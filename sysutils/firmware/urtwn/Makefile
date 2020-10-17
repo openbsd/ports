@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/18 08:22:34 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.8 2020/10/17 16:48:43 kn Exp $
 
 FW_DRIVER=	urtwn
 # date of the newest files in rtlwifi dir
@@ -8,6 +8,7 @@ REVISION=	0
 # date of the newest files in linux-firmware checkout
 DISTNAME=	linux-firmware-20180913
 EXTRACT_SUFX=	.tar.xz
+EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,rtlwifi}
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
