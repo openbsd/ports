@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/02/25 11:52:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/10/17 08:25:12 ajacoutot Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/
@@ -30,6 +30,7 @@ lib/libgphoto2/${VERSION}/
 @so lib/libgphoto2/${VERSION}/digigr8.so
 @so lib/libgphoto2/${VERSION}/dimagev.so
 @so lib/libgphoto2/${VERSION}/directory.so
+@so lib/libgphoto2/${VERSION}/docupen.so
 @so lib/libgphoto2/${VERSION}/jl2005a.so
 @so lib/libgphoto2/${VERSION}/jl2005c.so
 @so lib/libgphoto2/${VERSION}/kodak_dc240.so
@@ -53,8 +54,6 @@ lib/libgphoto2_port/${GPHOTO2_PORT_API}/
 @so lib/libgphoto2_port/${GPHOTO2_PORT_API}/disk.so
 @so lib/libgphoto2_port/${GPHOTO2_PORT_API}/ptpip.so
 @so lib/libgphoto2_port/${GPHOTO2_PORT_API}/usb.so
-@so lib/libgphoto2_port/${GPHOTO2_PORT_API}/usbdiskdirect.so
-@so lib/libgphoto2_port/${GPHOTO2_PORT_API}/usbscsi.so
 lib/pkgconfig/libgphoto2.pc
 lib/pkgconfig/libgphoto2_port.pc
 @man man/man3/libgphoto2.3
