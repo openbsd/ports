@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/10/17 12:49:54 ajacoutot Exp $
 
 COMMENT=		closed caption converter
 
 MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		pycaption-${MODPY_EGG_VERSION}
 PKGNAME=		py-caption-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		multimedia
 
@@ -16,8 +16,10 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST=		Yes
+
+FLAVORS=		python3
+FLAVOR=			python3
 
 RUN_DEPENDS=		devel/py-future${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
