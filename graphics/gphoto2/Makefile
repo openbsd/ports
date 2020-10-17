@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2019/06/15 09:14:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2020/10/17 08:25:30 ajacoutot Exp $
 
 COMMENT=		digital camera command-line interface
 
-VERSION=		2.5.23
+VERSION=		2.5.26
 DISTNAME=		gphoto2-${VERSION}
 PKGNAME=		gphoto-${VERSION}
 
@@ -34,5 +34,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 # checking how to link with libintl... /usr/local/lib/libintl.a ...
 # (we want -lintl)
 MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
