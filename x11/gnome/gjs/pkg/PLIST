@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/05/14 14:55:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/10/17 12:57:23 jasper Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
@@ -23,6 +23,7 @@ share/examples/gjs/dbus-client.js
 share/examples/gjs/dbus-service.js
 share/examples/gjs/gettext.js
 share/examples/gjs/gio-cat.js
+share/examples/gjs/glistmodel.js
 share/examples/gjs/gtk-application.js
 share/examples/gjs/gtk.js
 share/examples/gjs/http-client.js

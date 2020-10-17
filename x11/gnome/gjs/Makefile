@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.89 2020/07/14 12:43:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2020/10/17 12:57:23 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.64.4
+GNOME_VERSION=		1.66.1
 
-SHARED_LIBS += gjs                       5.0 # 0.0.0
+SHARED_LIBS += gjs                       6.0 # 0.0.0
 
 CATEGORIES=		devel
 
@@ -18,21 +18,21 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 c cairo cairo-gobject ffi gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gobject-2.0 intl m mozjs-68 readline
+WANTLIB += glib-2.0 gobject-2.0 intl m mozjs-78 readline
 
 MODULES=		devel/meson \
 			x11/gnome
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# sync with devel/spidermonkey68 and SHARED_LIBS consumer(s): x11/gnome/shell
+# sync with devel/spidermonkey78 and SHARED_LIBS consumer(s): x11/gnome/shell
 COMPILER=		base-clang ports-clang
 
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No
 
 LIB_DEPENDS=		devel/gobject-introspection \
-			devel/spidermonkey68
+			devel/spidermonkey78
 
 # --with-dbus-tests
 BUILD_DEPENDS +=	x11/dbus

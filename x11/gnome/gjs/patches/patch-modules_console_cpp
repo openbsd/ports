@@ -1,13 +1,14 @@
-$OpenBSD: patch-modules_console_cpp,v 1.1 2020/05/14 14:55:56 jasper Exp $
+$OpenBSD: patch-modules_console_cpp,v 1.2 2020/10/17 12:57:23 jasper Exp $
 
 Index: modules/console.cpp
 --- modules/console.cpp.orig
 +++ modules/console.cpp
-@@ -44,6 +44,7 @@
- #include <string.h>  // for strchr
+@@ -42,6 +42,8 @@
  
  #ifdef HAVE_READLINE_READLINE_H
-+#include <wchar.h>
- #include <readline/readline.h>
- #include <readline/history.h>
- #endif
+ #    include <stdio.h>  // include before readline/readline.h
++#    include <string.h>
++#    include <wchar.h>
+ 
+ #    include <readline/history.h>
+ #    include <readline/readline.h>

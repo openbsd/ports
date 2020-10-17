@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.2 2020/06/01 06:37:04 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.3 2020/10/17 12:57:23 jasper Exp $
 
 In file included from /usr/include/readline/readline.h:38:
 In file included from /usr/include/readline/keymaps.h:36:
@@ -16,7 +16,7 @@ XXX last chunk: should default to the value of b_lundef.
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -140,6 +140,7 @@ readline = cxx.find_library('readline', required: get_
+@@ -155,6 +155,7 @@ readline = cxx.find_library('readline', required: get_
  # On some systems we need to link readline to a termcap compatible library
  readline_code = '''
  #include <cstdio>
@@ -24,7 +24,7 @@ Index: meson.build
  #include <readline/readline.h>
  int main(void) {
      readline("foo");
-@@ -283,9 +284,13 @@ header_conf.set('HAVE_DTRACE', get_option('dtrace'),
+@@ -298,9 +299,13 @@ header_conf.set('HAVE_DTRACE', get_option('dtrace'),
      description: 'Using dtrace probes')
  header_conf.set('HAVE_PRINTF_ALTERNATIVE_INT', have_printf_alternative_int,
      description: 'printf() accepts "%Id" for alternative integer output')
@@ -39,7 +39,7 @@ Index: meson.build
              required: readline.found()))
  endif
  header_conf.set('HAVE_SYS_SYSCALL_H', cxx.check_header('sys/syscall.h'))
-@@ -462,13 +467,6 @@ if build_profiler
+@@ -479,13 +484,6 @@ if build_profiler
  endif
  
  link_args = []
