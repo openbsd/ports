@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.82 2020/07/30 07:50:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2020/10/17 08:42:39 ajacoutot Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
-DISTNAME=		polkit-0.117
+DISTNAME=		polkit-0.118
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -16,8 +16,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c expat gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += intl mozjs-68
+WANTLIB += ${COMPILER_LIBCXX} c expat gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 intl mozjs-78
 
 MASTER_SITES=		https://www.freedesktop.org/software/polkit/releases/
 
@@ -38,7 +38,7 @@ BUILD_DEPENDS=		devel/gobject-introspection
 BUILD_DEPENDS+=		textproc/docbook-xsl
 
 LIB_DEPENDS=		devel/glib2 \
-			devel/spidermonkey68
+			devel/spidermonkey78
 
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=		x11/dbus,-suid
