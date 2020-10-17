@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2020/07/03 21:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/10/17 17:06:17 daniel Exp $
 
 COMMENT=	set of Python modules designed for writing games
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.9.3
 DISTNAME=	pygame-${MODPY_EGG_VERSION}
 PKGNAME =	py-game-${MODPY_EGG_VERSION}
 CATEGORIES=	devel games
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE=	https://www.pygame.org/
 
@@ -17,15 +17,12 @@ WANTLIB += SDL SDL_image SDL_mixer SDL_ttf X11 jpeg png pthread
 WANTLIB += freetype z ${MODPY_WANTLIB}
 
 MODULES=	lang/python
-#MODPY_PI =	Yes
-# 1.9.3 was pulled out of the main pypi
-MASTER_SITES =	https://files.pythonhosted.org/packages/61/06/3c25051549c252cc6fde01c8aeae90b96831370884504fe428a623316def/
+MODPY_PI =	Yes
+
 MODPY_SETUPTOOLS =	Yes
 SUBST_VARS +=	MODPY_LIB_SUFFIX
 FLAVORS =		python3
 FLAVOR ?=
-
-BUILD_DEPENDS+=	math/py-Numeric
 
 LIB_DEPENDS=	devel/sdl-ttf \
 		devel/sdl-image \
