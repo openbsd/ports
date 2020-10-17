@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.121 2020/10/03 12:40:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.122 2020/10/17 08:41:30 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1095,6 +1095,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/evaluate-pul
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-approval-rule-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-blob.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-branch.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-comment-reactions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-comment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-comments-for-compared-commit.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-comments-for-pull-request.rst
@@ -1127,6 +1128,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/override-pul
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/post-comment-for-compared-commit.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/post-comment-for-pull-request.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/post-comment-reply.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/put-comment-reaction.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/put-file.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/put-repository-triggers.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/tag-resource.rst
@@ -1176,6 +1178,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/codestar-notifications/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codestar-notifications/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codestar-notifications/unsubscribe.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codestar-notifications/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codestar-notifications/update-notification-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codestar/associate-team-member.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codestar/create-project.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codestar/create-user-profile.rst
