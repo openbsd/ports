@@ -1,0 +1,24 @@
+$OpenBSD: patch-Core_Toolbox_cpp,v 1.1 2020/10/18 18:30:33 jasper Exp $
+
+Fix issue #114
+
+f49a6d934fd51dd57a8e91db45e36f77371b4042
+
+Index: Core/Toolbox.cpp
+--- Core/Toolbox.cpp.orig
++++ Core/Toolbox.cpp
+@@ -41,8 +41,13 @@
+ #include <boost/algorithm/string/replace.hpp>
+ #include <boost/lexical_cast.hpp>
+ #include <boost/locale.hpp>
+-#include <boost/uuid/sha1.hpp>
+  
++#if BOOST_VERSION >= 106600
++#  include <boost/uuid/detail/sha1.hpp>
++#else
++#  include <boost/uuid/sha1.hpp>
++#endif
++
+ #include <string>
+ #include <stdint.h>
+ #include <string.h>
