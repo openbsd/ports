@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/25 12:31:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/18 08:36:24 ajacoutot Exp $
 
 COMMENT=		simple and modern GTK eBook viewer
 
 GH_ACCOUNT=		johnfactotum
 GH_PROJECT=		foliate
-GH_TAGNAME=		2.4.2
+GH_TAGNAME=		2.5.0
 
 CATEGORIES=		textproc graphics
 

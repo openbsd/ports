@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/25 12:31:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/18 08:36:24 ajacoutot Exp $
 bin/com.github.johnfactotum.Foliate
 bin/foliate
 share/applications/com.github.johnfactotum.Foliate.desktop
@@ -64,6 +64,7 @@ share/locale/de_DE/
 share/locale/de_DE/LC_MESSAGES/
 share/locale/de_DE/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/es/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/eu/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/fr_FR/
 share/locale/fr_FR/LC_MESSAGES/
 share/locale/fr_FR/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
@@ -74,7 +75,9 @@ share/locale/ie/
 share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/it/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/nb/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/nl/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/nn/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/pt_BR/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/ru_RU/
 share/locale/ru_RU/LC_MESSAGES/
