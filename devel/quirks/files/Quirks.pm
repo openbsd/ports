@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1087 2020/10/18 18:15:45 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1088 2020/10/18 18:40:32 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2007,6 +2007,7 @@ sub tweak_search
 # list of
 #   cat/path => badspec
 my $cve = {
+	'archivers/brotli' => 'brotli-<1.0.9',
 	'archivers/cabextract' => 'cabextract-<1.8',
 	'archivers/libmspack' => 'libmspack-<0.8alpha',
 	'archivers/p5-Archive-Zip' => 'p5-Archive-Zip-<1.64',
