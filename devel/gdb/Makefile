@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2020/07/03 21:12:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2020/10/18 18:49:10 kettenis Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.12.1
-REVISION=	12
+REVISION=	13
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 

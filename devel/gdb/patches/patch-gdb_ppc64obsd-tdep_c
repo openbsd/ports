@@ -1,9 +1,9 @@
-$OpenBSD: patch-gdb_ppc64obsd-tdep_c,v 1.1 2020/10/09 19:22:42 kettenis Exp $
+$OpenBSD: patch-gdb_ppc64obsd-tdep_c,v 1.2 2020/10/18 18:49:10 kettenis Exp $
 
 Index: gdb/ppc64obsd-tdep.c
 --- gdb/ppc64obsd-tdep.c.orig
 +++ gdb/ppc64obsd-tdep.c
-@@ -0,0 +1,414 @@
+@@ -0,0 +1,415 @@
 +/* Target-dependent code for OpenBSD/powerpc64.
 +
 +   Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
@@ -414,7 +414,8 @@ Index: gdb/ppc64obsd-tdep.c
 +  if (ppc64obsd_fpreg_offsets.fpscr_offset == 0)
 +    {
 +      /* Floating-point registers.  */
-+      ppc64obsd_reg_offsets.f0_offset = -1;
-+      ppc64obsd_reg_offsets.fpscr_offset = -1;
++      ppc64obsd_fpreg_offsets.f0_offset = -1;
++      ppc64obsd_fpreg_offsets.fpscr_offset = -1;
++      ppc64obsd_fpreg_offsets.fpscr_size = 8;
 +    }
 +}
