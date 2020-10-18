@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2020/09/02 10:35:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.135 2020/10/18 09:55:08 semarie Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -59,7 +59,6 @@
     SUBDIR += ptouch-driver
     SUBDIR += py-cups,python3
     SUBDIR += py-poppler
-    SUBDIR += py-relatorio
     SUBDIR += py-relatorio,python3
     SUBDIR += py-reportlab
     SUBDIR += py-reportlab,python3

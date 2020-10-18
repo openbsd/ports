@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1085 2020/10/17 12:59:19 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1086 2020/10/18 09:55:08 semarie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -494,6 +494,7 @@ my $stem_extensions = {
 	'py-kiwisolver' => 'py3-kiwisolver',
 	'py-scipy' => 'py3-scipy',
 	'spidermonkey68' => 'spidermonkey78',
+	'py-relatorio' => 'py3-relatorio',
 };
 
 my $obsolete_reason = {
