@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/12/01 03:27:50 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2020/10/18 11:41:33 ajacoutot Exp $
 
 COMMENT = 		Python charting module
 
-MODPY_EGG_VERSION =	0.7.0
+MODPY_EGG_VERSION =	0.8.1
 DISTNAME = 		pycha-${MODPY_EGG_VERSION}
 CATEGORIES = 		graphics
-
-HOMEPAGE = 		http://www.lorenzogil.com/projects/pycha/
 
 # LGPL
 PERMIT_PACKAGE =	Yes
@@ -14,11 +12,20 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI = 		Yes
 
 MODULES = 		lang/python
-MODPY_SETUPTOOLS = 	Yes
+
+MODPY_PYPI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests/*.py
+MODPY_SETUPTOOLS = 	Yes
 
-RUN_DEPENDS = 		graphics/py-cairo
+FLAVORS =		python3
+FLAVOR =		python3
+
+RUN_DEPENDS = 		devel/py-cairocffi${MODPY_FLAVOR} \
+			graphics/py-cairo${MODPY_FLAVOR}
+
+pre-build:
+	cd ${WRKBUILD} && 2to3 --no-diffs -w chavier pycha tests
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pycha
