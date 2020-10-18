@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.47 2020/06/19 09:19:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.48 2020/10/18 08:16:38 ajacoutot Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -245,6 +245,7 @@ lib/vlc/plugins/demux/
 @so lib/vlc/plugins/demux/libavi_plugin.so
 @so lib/vlc/plugins/demux/libcaf_plugin.so
 @so lib/vlc/plugins/demux/libdemux_cdg_plugin.so
+@so lib/vlc/plugins/demux/libdemux_chromecast_plugin.so
 @so lib/vlc/plugins/demux/libdemux_stl_plugin.so
 @so lib/vlc/plugins/demux/libdemuxdump_plugin.so
 @so lib/vlc/plugins/demux/libdiracsys_plugin.so
@@ -336,6 +337,7 @@ lib/vlc/plugins/packetizer/
 @comment no checksum
 lib/vlc/plugins/plugins.dat
 lib/vlc/plugins/services_discovery/
+@so lib/vlc/plugins/services_discovery/libavahi_plugin.so
 @so lib/vlc/plugins/services_discovery/libmediadirs_plugin.so
 @so lib/vlc/plugins/services_discovery/libpodcast_plugin.so
 @so lib/vlc/plugins/services_discovery/libsap_plugin.so
@@ -364,6 +366,7 @@ lib/vlc/plugins/stream_filter/
 lib/vlc/plugins/stream_out/
 @so lib/vlc/plugins/stream_out/libstream_out_autodel_plugin.so
 @so lib/vlc/plugins/stream_out/libstream_out_bridge_plugin.so
+@so lib/vlc/plugins/stream_out/libstream_out_chromecast_plugin.so
 @so lib/vlc/plugins/stream_out/libstream_out_cycle_plugin.so
 @so lib/vlc/plugins/stream_out/libstream_out_delay_plugin.so
 @so lib/vlc/plugins/stream_out/libstream_out_description_plugin.so
