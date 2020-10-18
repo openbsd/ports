@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1086 2020/10/18 09:55:08 semarie Exp $
+# $OpenBSD: Quirks.pm,v 1.1087 2020/10/18 18:15:45 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1885,6 +1885,7 @@ my $obsolete_reason = {
 	'ndesk-dbus' => 5,
 	'ndesk-dbus-glib' => 5,
 	'mono-xsp' => 5,
+	'wireguard-go' => 4,
 };
 
 # reasons for obsolete packages
