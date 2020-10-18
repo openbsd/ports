@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/08 22:57:41 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/18 08:40:57 benoit Exp $
 
 COMMENT =		guess C++ compiler and flags
 
-DISTNAME =		ExtUtils-CppGuess-0.20
-REVISION =		1
+DISTNAME =		ExtUtils-CppGuess-0.21
 
 CATEGORIES =		devel
 
