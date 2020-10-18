@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/18 18:03:48 ajacoutot Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -7,8 +7,7 @@ USE_WXNEEDED =		Yes
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on sparc64 & mips64 (SIGBUS in jsutil.h:33)
-# but let's keep them to build more packages;
-# sync with net/wireshark, x11/gtk+3 and x11/gtk+4
+# but let's keep them to build more packages
 ONLY_FOR_ARCHS =	aarch64 alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
 
 COMMENT =		C/C++ Mozilla's JavaScript engine implementation #'
