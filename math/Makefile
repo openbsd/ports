@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2020/10/12 22:04:32 daniel Exp $
+# $OpenBSD: Makefile,v 1.196 2020/10/18 20:41:25 daniel Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -117,7 +117,6 @@
      SUBDIR += plplot
      SUBDIR += prover9
      SUBDIR += pspp
-     SUBDIR += py-Numeric
      SUBDIR += py-PyWavelets,python3
      SUBDIR += py-affine
      SUBDIR += py-affine,python3
