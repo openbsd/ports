@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.156 2020/08/21 14:18:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.157 2020/10/18 11:53:40 naddy Exp $
 
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-7.72.0
-SHARED_LIBS=	curl                 26.6     # 10.0
+DISTNAME=	curl-7.73.0
+SHARED_LIBS=	curl                 26.7     # 11.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.haxx.se/
 
@@ -40,6 +40,9 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # Note:
 # use ulimit -p 256 for test
+
+# Skip python dependency; it is only required for three rudimentary
+# DICT/SMB/TELNET tests.
 
 # runsshserver: sshserver.pl --user=$USER
 TEST_ENV=	USER=$$USER
