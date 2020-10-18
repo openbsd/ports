@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2020/10/03 12:36:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2020/10/18 08:30:45 ajacoutot Exp $
 
 COMMENT=		Python module to talk to Google Chromecast
 
-MODPY_EGG_VERSION=	7.5.0
+MODPY_EGG_VERSION=	7.5.1
 DISTNAME=		PyChromecast-${MODPY_EGG_VERSION}
 PKGNAME=		py-chromecast-${MODPY_EGG_VERSION}
 
