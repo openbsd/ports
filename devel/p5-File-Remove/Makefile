@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/10/18 09:00:33 benoit Exp $
 
 COMMENT=	remove files and directories with perl
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME=	File-Remove-1.58
+DISTNAME =	File-Remove-1.59
 CATEGORIES=	devel
-REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes
