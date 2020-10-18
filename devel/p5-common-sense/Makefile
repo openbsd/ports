@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/10/18 08:30:18 benoit Exp $
 
 COMMENT =	perl common defaults with lower memory usage
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	common-sense-3.74
+DISTNAME =	common-sense-3.75
 CATEGORIES =	devel
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
