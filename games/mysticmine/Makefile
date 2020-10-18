@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/10/17 18:20:34 daniel Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/18 11:03:11 ajacoutot Exp $
 
 COMMENT =	one-button treasure collecting game
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
-BUILD_DEPNDS =		lang/cython
+BUILD_DEPENDS =		lang/cython
 RUN_DEPENDS =		devel/pygame
 
 NO_TEST =		Yes
