@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/01/22 10:21:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/10/19 10:10:59 gonzalo Exp $
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
@@ -28,6 +28,7 @@ include/htp/htp_version.h
 include/htp/lzma/
 include/htp/lzma/7zTypes.h
 include/htp/lzma/LzmaDec.h
+include/suricata-plugin.h
 @static-lib lib/libhtp.a
 lib/libhtp.la
 @lib lib/libhtp.so.${LIBhtp_VERSION}
@@ -74,8 +75,12 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}extract
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}loghandler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}maps.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}matchers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}net.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}notes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}osinfo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}parsers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}revision.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}rule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}sources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
@@ -88,7 +93,6 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/${MODPY_PYCACHE}checkversions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/${MODPY_PYCACHE}disablesource.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/${MODPY_PYCACHE}enablesource.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/${MODPY_PYCACHE}listenabledsources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/${MODPY_PYCACHE}listsources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/${MODPY_PYCACHE}removesource.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/${MODPY_PYCACHE}updatesources.${MODPY_PYC_MAGIC_TAG}pyc
@@ -96,7 +100,6 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/addsource.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/checkversions.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/disablesource.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/enablesource.py
-lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/listenabledsources.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/listsources.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/removesource.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/updatesources.py
@@ -137,8 +140,12 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/extract.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/loghandler.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/main.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/maps.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/matchers.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/net.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/notes.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/osinfo.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/parsers.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/revision.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/rule.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/sources.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/util.py
