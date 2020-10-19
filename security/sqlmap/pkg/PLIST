@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/09/04 10:00:25 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/10/19 12:31:24 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -948,6 +948,7 @@ share/sqlmap/tamper/${MODPY_PYCACHE}plus2fnconcat.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}randomcase.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}randomcomments.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}schemasplit.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}sleep2getlock.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}sp_password.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}space2comment.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}space2dash.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1010,6 +1011,7 @@ share/sqlmap/tamper/plus2fnconcat.py
 share/sqlmap/tamper/randomcase.py
 share/sqlmap/tamper/randomcomments.py
 share/sqlmap/tamper/schemasplit.py
+share/sqlmap/tamper/sleep2getlock.py
 share/sqlmap/tamper/sp_password.py
 share/sqlmap/tamper/space2comment.py
 share/sqlmap/tamper/space2dash.py
