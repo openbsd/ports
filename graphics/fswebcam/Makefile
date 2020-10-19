@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/10/19 16:59:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/10/19 17:07:26 sthen Exp $
 
 COMMENT=		fswebcam is a small and simple webcam app
 
-DISTNAME=		fswebcam-20140113
-REVISION=		3
+DISTNAME=		fswebcam-20200725
 
 CATEGORIES=		graphics
 
