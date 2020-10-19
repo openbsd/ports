@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/10/19 13:01:10 sthen Exp $
 
 COMMENT =		standards based terminal calendar
 
-MODPY_EGG_VERSION =	0.9.10
+MODPY_EGG_VERSION =	0.10.2
 DISTNAME =		khal-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		productivity
 
@@ -27,6 +26,7 @@ BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
+			devel/py-click-log${MODPY_FLAVOR} \
 			devel/py-configobj${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-icalendar${MODPY_FLAVOR} \
