@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/09/12 19:44:11 phessler Exp $
+# $OpenBSD: Makefile,v 1.29 2020/10/19 09:10:17 cwen Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -100,13 +100,8 @@ CONFIGURE_ARGS=		-Dwayland-backend=false \
 CFLAGS +=		-Wno-error
 .endif
 
-# sync with devel/spidermonkey60 (ONLY_FOR_ARCHS):
-# colord -> polkit -> spidermonkey60
-.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "alpha" || \
-    ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
-    ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "mips64el" || \
-    ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "powerpc" || \
-    ${MACHINE_ARCH} == "sparc64"
+# colord -> polkit -> spidermonkey>=78 -> rust
+.if ${PROPERTIES:Mrust}
 LIB_DEPENDS-cups +=	graphics/colord
 WANTLIB-cups +=	colord
 .else
