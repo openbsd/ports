@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.97 2020/06/03 09:28:54 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.98 2020/10/19 19:51:01 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -141,7 +141,6 @@ libexec/git/git-rebase--preserve-merges
 @bin libexec/git/git-remote-ftps
 @bin libexec/git/git-remote-http
 @bin libexec/git/git-remote-https
-@bin libexec/git/git-remote-testsvn
 @bin libexec/git/git-repack
 @bin libexec/git/git-replace
 libexec/git/git-request-pull
@@ -192,7 +191,6 @@ libexec/git/git-web--browse
 libexec/git/mergetools/
 libexec/git/mergetools/araxis
 libexec/git/mergetools/bc
-libexec/git/mergetools/bc3
 libexec/git/mergetools/codecompare
 libexec/git/mergetools/deltawalker
 libexec/git/mergetools/diffmerge
@@ -202,19 +200,16 @@ libexec/git/mergetools/emerge
 libexec/git/mergetools/examdiff
 libexec/git/mergetools/guiffy
 libexec/git/mergetools/gvimdiff
-libexec/git/mergetools/gvimdiff2
-libexec/git/mergetools/gvimdiff3
 libexec/git/mergetools/kdiff3
 libexec/git/mergetools/kompare
 libexec/git/mergetools/meld
+libexec/git/mergetools/nvimdiff
 libexec/git/mergetools/opendiff
 libexec/git/mergetools/p4merge
 libexec/git/mergetools/smerge
 libexec/git/mergetools/tkdiff
 libexec/git/mergetools/tortoisemerge
 libexec/git/mergetools/vimdiff
-libexec/git/mergetools/vimdiff2
-libexec/git/mergetools/vimdiff3
 libexec/git/mergetools/winmerge
 libexec/git/mergetools/xxdiff
 @man man/man1/git-add.1
@@ -289,6 +284,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-ls-tree.1
 @man man/man1/git-mailinfo.1
 @man man/man1/git-mailsplit.1
+@man man/man1/git-maintenance.1
 @man man/man1/git-merge-base.1
 @man man/man1/git-merge-file.1
 @man man/man1/git-merge-index.1
