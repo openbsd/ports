@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2020/10/19 16:50:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/10/19 16:57:57 sthen Exp $
 
 COMMENT=		fswebcam is a small and simple webcam app
 
 DISTNAME=		fswebcam-20140113
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -19,9 +19,8 @@ WANTLIB=		c gd
 LIB_DEPENDS=		graphics/gd
 
 CONFIGURE_STYLE=	gnu
-#CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--disable-v4l1
-CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=		Yes
