@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2020/09/13 06:14:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.238 2020/10/19 09:02:15 cwen Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -104,22 +104,17 @@ TEST_IS_INTERACTIVE=	x11
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-libcanberra
 
-# sync with devel/spidermonkey60 (ONLY_FOR_ARCHS):
-# colord -> polkit -> spidermonkey60
-.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "alpha" || \
-    ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
-    ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "mips64el" || \
-    ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "powerpc" || \
-    ${MACHINE_ARCH} == "sparc64"
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
+# colord -> polkit -> spidermonkey>=78 -> rust
+.if ${PROPERTIES:Mrust}
 LIB_DEPENDS-cups +=	graphics/colord
 WANTLIB-cups +=	colordprivate colord lcms2
 .else
 CONFIGURE_ARGS +=	--disable-colord
-.endif
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
 .endif
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
