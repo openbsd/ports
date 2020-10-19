@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 13:23:33 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/10/19 06:34:58 landry Exp $
 @bin bin/pdal
 bin/pdal-config
 include/pdal/
@@ -10,10 +10,8 @@ include/pdal/DimDetail.hpp
 include/pdal/DimType.hpp
 include/pdal/DimUtil.hpp
 include/pdal/Dimension.hpp
-include/pdal/EigenUtils.hpp
 include/pdal/Filter.hpp
 include/pdal/FlexWriter.hpp
-include/pdal/GDALUtils.hpp
 include/pdal/Geometry.hpp
 include/pdal/JsonFwd.hpp
 include/pdal/KDIndex.hpp
@@ -77,11 +75,11 @@ include/pdal/filters/DividerFilter.hpp
 include/pdal/filters/ELMFilter.hpp
 include/pdal/filters/EigenvaluesFilter.hpp
 include/pdal/filters/EstimateRankFilter.hpp
+include/pdal/filters/FaceRasterFilter.hpp
 include/pdal/filters/FarthestPointSamplingFilter.hpp
 include/pdal/filters/FerryFilter.hpp
 include/pdal/filters/GreedyProjection.hpp
 include/pdal/filters/GroupByFilter.hpp
-include/pdal/filters/HAGFilter.hpp
 include/pdal/filters/HagDelaunayFilter.hpp
 include/pdal/filters/HagDemFilter.hpp
 include/pdal/filters/HagNnFilter.hpp
@@ -91,6 +89,8 @@ include/pdal/filters/IQRFilter.hpp
 include/pdal/filters/InfoFilter.hpp
 include/pdal/filters/IterativeClosestPoint.hpp
 include/pdal/filters/LOFFilter.hpp
+include/pdal/filters/LiTreeFilter.hpp
+include/pdal/filters/LloydKMeansFilter.hpp
 include/pdal/filters/LocateFilter.hpp
 include/pdal/filters/MADFilter.hpp
 include/pdal/filters/MergeFilter.hpp
@@ -100,6 +100,7 @@ include/pdal/filters/MortonOrderFilter.hpp
 include/pdal/filters/NNDistanceFilter.hpp
 include/pdal/filters/NeighborClassifierFilter.hpp
 include/pdal/filters/NormalFilter.hpp
+include/pdal/filters/OptimalNeighborhoodFilter.hpp
 include/pdal/filters/OutlierFilter.hpp
 include/pdal/filters/OverlayFilter.hpp
 include/pdal/filters/PMFFilter.hpp
@@ -132,6 +133,18 @@ include/pdal/filters/private/Point.hpp
 include/pdal/filters/private/Segmentation.hpp
 include/pdal/filters/private/csf/
 include/pdal/filters/private/delaunator.hpp
+include/pdal/filters/private/expr/
+include/pdal/filters/private/expr/AssignParser.hpp
+include/pdal/filters/private/expr/AssignStatement.hpp
+include/pdal/filters/private/expr/BaseParser.hpp
+include/pdal/filters/private/expr/ConditionalExpression.hpp
+include/pdal/filters/private/expr/ConditionalParser.hpp
+include/pdal/filters/private/expr/Expression.hpp
+include/pdal/filters/private/expr/IdentExpression.hpp
+include/pdal/filters/private/expr/Lexer.hpp
+include/pdal/filters/private/expr/MathExpression.hpp
+include/pdal/filters/private/expr/MathParser.hpp
+include/pdal/filters/private/expr/Token.hpp
 include/pdal/filters/private/hexer/
 include/pdal/filters/private/hexer/HexGrid.hpp
 include/pdal/filters/private/hexer/HexInfo.hpp
@@ -180,6 +193,7 @@ include/pdal/io/LasWriter.hpp
 include/pdal/io/MemoryViewReader.hpp
 include/pdal/io/NullWriter.hpp
 include/pdal/io/OGRWriter.hpp
+include/pdal/io/ObjReader.hpp
 include/pdal/io/OptechCommon.hpp
 include/pdal/io/OptechReader.hpp
 include/pdal/io/OptechRotationMatrix.hpp
@@ -190,6 +204,7 @@ include/pdal/io/PlyReader.hpp
 include/pdal/io/PlyWriter.hpp
 include/pdal/io/PtsReader.hpp
 include/pdal/io/QfitReader.hpp
+include/pdal/io/RasterWriter.hpp
 include/pdal/io/SbetCommon.hpp
 include/pdal/io/SbetReader.hpp
 include/pdal/io/SbetWriter.hpp
@@ -199,8 +214,18 @@ include/pdal/io/TextReader.hpp
 include/pdal/io/TextWriter.hpp
 include/pdal/io/point_types.hpp
 include/pdal/io/private/
-include/pdal/io/private/EptSupport.hpp
 include/pdal/io/private/GDALGrid.hpp
+include/pdal/io/private/ept/
+include/pdal/io/private/ept/Addon.hpp
+include/pdal/io/private/ept/Connector.hpp
+include/pdal/io/private/ept/EptArtifact.hpp
+include/pdal/io/private/ept/EptInfo.hpp
+include/pdal/io/private/ept/EptSupport.hpp
+include/pdal/io/private/ept/FixedPointLayout.hpp
+include/pdal/io/private/ept/Key.hpp
+include/pdal/io/private/ept/Overlap.hpp
+include/pdal/io/private/ept/TileContents.hpp
+include/pdal/io/private/ept/VectorPointTable.hpp
 include/pdal/kernels/
 include/pdal/kernels/DeltaKernel.hpp
 include/pdal/kernels/DensityKernel.hpp
@@ -227,8 +252,17 @@ include/pdal/pdal_test_main.hpp
 include/pdal/pdal_types.hpp
 include/pdal/private/
 include/pdal/private/DynamicLibrary.hpp
+include/pdal/private/KDImpl.hpp
+include/pdal/private/MathUtils.hpp
+include/pdal/private/Raster.hpp
 include/pdal/private/SrsTransform.hpp
 include/pdal/private/StageRunner.hpp
+include/pdal/private/gdal/
+include/pdal/private/gdal/ErrorHandler.hpp
+include/pdal/private/gdal/GDALError.hpp
+include/pdal/private/gdal/GDALUtils.hpp
+include/pdal/private/gdal/Raster.hpp
+include/pdal/private/gdal/SpatialRef.hpp
 include/pdal/util/
 include/pdal/util/Algorithm.hpp
 include/pdal/util/Backtrace.hpp
@@ -242,6 +276,7 @@ include/pdal/util/Inserter.hpp
 include/pdal/util/NullOStream.hpp
 include/pdal/util/OStream.hpp
 include/pdal/util/ProgramArgs.hpp
+include/pdal/util/ThreadPool.hpp
 include/pdal/util/Utils.hpp
 include/pdal/util/Uuid.hpp
 include/pdal/util/pdal_util_export.hpp
