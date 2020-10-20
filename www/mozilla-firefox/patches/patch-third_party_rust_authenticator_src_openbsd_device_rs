@@ -1,0 +1,15 @@
+$OpenBSD: patch-third_party_rust_authenticator_src_openbsd_device_rs,v 1.1 2020/10/20 15:00:27 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1666701
+
+Index: third_party/rust/authenticator/src/openbsd/device.rs
+--- third_party/rust/authenticator/src/openbsd/device.rs.orig
++++ third_party/rust/authenticator/src/openbsd/device.rs
+@@ -5,6 +5,7 @@
+ extern crate libc;
+ 
+ use std::ffi::OsString;
++use std::io;
+ use std::io::{Read, Result, Write};
+ use std::mem;
+ 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-dom_ipc_ContentChild_cpp,v 1.13 2020/09/22 13:00:55 landry Exp $
+$OpenBSD: patch-dom_ipc_ContentChild_cpp,v 1.14 2020/10/20 15:00:27 landry Exp $
 
 Do not unveil an already visible pledge file since that interferes with
 other unveils.
@@ -7,7 +7,7 @@ cf https://bugzilla.mozilla.org/show_bug.cgi?id=1623086
 Index: dom/ipc/ContentChild.cpp
 --- dom/ipc/ContentChild.cpp.orig
 +++ dom/ipc/ContentChild.cpp
-@@ -4546,8 +4546,18 @@ OpenBSDUnveilPaths(const nsACString& uPath, const nsAC
+@@ -4578,8 +4578,18 @@ OpenBSDUnveilPaths(const nsACString& uPath, const nsAC
    if (disabled) {
      warnx("%s: disabled", PromiseFlatCString(uPath).get());
    } else {

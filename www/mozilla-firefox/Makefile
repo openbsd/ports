@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.438 2020/10/13 06:59:01 landry Exp $
+# $OpenBSD: Makefile,v 1.439 2020/10/20 15:00:26 landry Exp $
 
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	81.0.2
+MOZILLA_VERSION =	82.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	96.0
+SO_VERSION =	97.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3
@@ -54,6 +54,8 @@ BUILD_DEPENDS +=	devel/cbindgen>=0.14.3
 # 67 requires nasm for bundled libdav1d
 BUILD_DEPENDS +=	devel/nasm
 .endif
+#1670807
+BUILD_DEPENDS +=	devel/m4
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
@@ -64,6 +66,7 @@ NO_TEST =	Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
+CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
