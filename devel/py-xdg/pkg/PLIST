@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/04/07 09:06:36 zhuk Exp $
-lib/python${MODPY_VERSION}/site-packages/pyxdg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.6 2020/10/20 16:19:29 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/pyxdg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pyxdg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pyxdg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pyxdg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyxdg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/xdg/
 lib/python${MODPY_VERSION}/site-packages/xdg/BaseDirectory.py
 lib/python${MODPY_VERSION}/site-packages/xdg/Config.py
