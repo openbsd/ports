@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2020/09/02 16:23:00 bket Exp $
+# $OpenBSD: Makefile,v 1.20 2020/10/20 05:16:08 bket Exp $
 
 COMMENT=		python library for building powerful interactive CLI
 
-MODPY_EGG_VERSION=	3.0.7
+MODPY_EGG_VERSION=	3.0.8
 DISTNAME=		prompt_toolkit-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			1
@@ -22,8 +22,7 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
 PORTHOME=		${WRKDIR}
 
-RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
-			devel/py-wcwidth${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-wcwidth${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 
 FLAVORS=		python3
