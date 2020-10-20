@@ -1,0 +1,22 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/10/20 16:45:54 landry Exp $
+
+Make sure we don't try to use system minizip, as its not exactly the same as
+the bundled version in 3rdparty/minizip
+
+src/Exporters/ExportEPUB.cpp:146:85: error: use of undeclared identifier 'Z_NO_COMPRESSION'
+    if (zipOpenNewFileInZip64(zfile, "mimetype", &fileInfo, NULL, 0, NULL, 0, NULL, Z_NO_COMPRESSION, 0, 0) != ZIP_OK) {
+                                                                                    ^
+src/Exporters/ExportEPUB.cpp:173:134: error: use of undeclared identifier 'Z_DEFAULT_STRATEGY'
+        if (zipOpenNewFileInZip4_64(zfile, relpath.toUtf8().constData(), &fileInfo, NULL, 0, NULL, 0, NULL, Z_DEFLATED, 8, 0, 15, 8, Z_DEFAULT_STRATEGY, NULL, 0, 0x0b00, 1<<11, 0) != ZIP_OK) {
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -78,7 +78,6 @@ if (USE_SYSTEM_LIBS)
+     MESSAGE(STATUS "Trying to use System Libraries...")
+     find_package( ZLIB )
+     find_package( PkgConfig )
+-    find_package( MiniZip )
+     pkg_check_modules( HUNSPELL hunspell )
+     if ( NOT APPLE )
+         pkg_check_modules( PCRE libpcre16 )
