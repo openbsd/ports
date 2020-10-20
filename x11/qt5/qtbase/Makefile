@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/03/16 11:26:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2020/10/20 16:30:27 cwen Exp $
 
 DISTNAME =		qtbase-everywhere-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -113,11 +113,8 @@ LIB_DEPENDS-tds =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/freetds
 
-# Nothing in qtbase links to pulseaudio, but configure checks
-# are recorded.
 # The atspi is checked at configure time and used via D-Bus.
-BUILD_DEPENDS =		audio/pulseaudio \
-			geo/geoclue \
+BUILD_DEPENDS =		geo/geoclue \
 			x11/gnome/at-spi2-core
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
