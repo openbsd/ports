@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_json,v 1.8 2020/08/16 14:37:24 pvk Exp $
+$OpenBSD: patch-config_config_json,v 1.9 2020/10/20 22:49:03 pvk Exp $
 
 Index: config/config.json
 --- config/config.json.orig
@@ -12,7 +12,16 @@ Index: config/config.json
      "Forward80To443": false,
      "TrustedProxyIPHeader": [],
      "ReadTimeout": 300,
-@@ -148,13 +148,13 @@
+@@ -92,7 +92,7 @@
+     "EnableLatex": false,
+     "EnableAPIChannelDeletion": false,
+     "EnableLocalMode": false,
+-    "LocalModeSocketLocation": "/var/tmp/mattermost_local.socket"
++    "LocalModeSocketLocation": "${LOCALSTATEDIR}/mattermost/mattermost_local.socket"
+   },
+   "TeamSettings": {
+     "SiteName": "Mattermost",
+@@ -150,13 +150,13 @@
      "DisableDatabaseSearch": false
    },
    "LogSettings": {
@@ -28,8 +37,8 @@ Index: config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "EnableSentry": true,
-@@ -177,13 +177,13 @@
-     "FileMaxQueueSize": 1000
+@@ -173,13 +173,13 @@
+     "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
 -    "EnableConsole": true,
@@ -39,12 +48,12 @@ Index: config/config.json
      "EnableFile": true,
      "FileLevel": "INFO",
      "FileJson": true,
--    "FileLocation": ""
-+    "FileLocation": "${LOCALSTATEDIR}/log/mattermost"
+-    "FileLocation": "",
++    "FileLocation": "${LOCALSTATEDIR}/log/mattermost",
+     "AdvancedLoggingConfig": ""
    },
    "PasswordSettings": {
-     "MinimumLength": 10,
-@@ -198,7 +198,7 @@
+@@ -195,7 +195,7 @@
      "EnableMobileDownload": true,
      "MaxFileSize": 52428800,
      "DriverName": "local",
@@ -53,7 +62,7 @@ Index: config/config.json
      "EnablePublicLink": false,
      "PublicLinkSalt": "",
      "InitialFont": "nunito-bold.ttf",
-@@ -227,11 +227,11 @@
+@@ -224,11 +224,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -68,7 +77,7 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -267,7 +267,7 @@
+@@ -264,7 +264,7 @@
      "SupportEmail": "feedback@mattermost.com",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -77,7 +86,7 @@ Index: config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -347,7 +347,7 @@
+@@ -351,7 +351,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -86,7 +95,7 @@ Index: config/config.json
      "EnableDaily": false
    },
    "LocalizationSettings": {
-@@ -488,8 +488,8 @@
+@@ -495,8 +495,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadUrl": false,
      "EnableHealthCheck": true,
@@ -97,7 +106,7 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.nps": {
-@@ -519,4 +519,4 @@
+@@ -526,4 +526,4 @@
      "RemoteImageProxyURL": "",
      "RemoteImageProxyOptions": ""
    }
