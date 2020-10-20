@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.325 2020/09/12 19:35:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.326 2020/10/20 13:48:04 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.13.0
+VER=		16.14.0
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
@@ -30,7 +30,7 @@ WANTLIB-main += ${MODGCC4_CPPWANTLIB}
 # XXX somehow COMPILER_LIBCXX doesn't get set to gcc libs?
 # XXX Asterisk is not allowed to use other ports which pull in C++ libs
 # XXX otherwise there is a conflict between libstdc++ and libc++.
-WANTLIB-main += c crypto curl curses edit execinfo gsm iconv iksemel
+WANTLIB-main += c crypto curl curses edit gsm iconv iksemel
 WANTLIB-main += jansson lzma m ogg portaudio pthread radcli
 WANTLIB-main += spandsp sqlite3 srtp2 ssl tiff uriparser unbound uuid
 WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
@@ -72,7 +72,6 @@ LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			audio/portaudio-svn \
 			converters/libiconv \
 			databases/sqlite3 \
-			devel/libexecinfo \
 			devel/jansson \
 			graphics/tiff \
 			net/curl \
@@ -132,6 +131,7 @@ CONFIGURE_ARGS+=	--with-asound=no \
 			--with-codec2=no \
 			--with-cpg=no \
 			--with-dahdi=no \
+			--with-execinfo=no \
 			--with-avcodec=no \
 			--with-gtk2=no \
 			--with-h323=no \
