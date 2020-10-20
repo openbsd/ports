@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/09/02 16:22:04 bket Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/10/20 05:14:53 bket Exp $
 @newgroup _sabnzbd:810
 @newuser _sabnzbd:810:_sabnzbd:daemon:Sabnzbd:/var/sabnzbd:/bin/sh
 @owner _sabnzbd
@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/${MODPY_PYCACHE}SABnzbd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-cs.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-da.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-de.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-en.tmpl
@@ -37,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-ru.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-sr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-sv.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-zh_CN.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-cs.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-da.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-de.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-en.tmpl
@@ -53,6 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-ru.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-sr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-sv.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-zh_CN.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-cs.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-da.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-de.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-en.tmpl
@@ -298,6 +301,10 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-systrayicon.tx
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/sabnzbd@.service
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/cs/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/cs/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/cs/LC_MESSAGES/SABnsis.mo
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/cs/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/da/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/da/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/da/LC_MESSAGES/SABnsis.mo
@@ -365,6 +372,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/zh_CN/LC_MESSAGES/SABnzb
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/SABemail.pot
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/cs.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/da.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/de.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/en.po
@@ -383,6 +391,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/sv.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/SABnzbd.pot
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/cs.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/da.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/de.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/en.po
@@ -401,6 +410,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/sv.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/SABnsis.pot
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/cs.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/da.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/de.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/en.po
@@ -432,6 +442,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}constan
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}decoder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}deobfuscate_filenames.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}directunpacker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}dirscanner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}downloader.${MODPY_PYC_MAGIC_TAG}pyc
@@ -473,6 +484,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/constants.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/database.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/decoder.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/decorators.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/deobfuscate_filenames.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/directunpacker.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/dirscanner.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/downloader.py
