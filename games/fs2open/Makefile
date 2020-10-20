@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/17 12:34:22 thfr Exp $
+# $OpenBSD: Makefile,v 1.10 2020/10/20 17:13:10 cwen Exp $
+
+# Requires OpenGL>=3.2, could run on powerpc64 once there is drm support
+ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =	open source game engine based on FreeSpace 2
 
 V =		19.0.0
 DISTNAME =	fs2_open_${V:S/./_/g}-source-Unix
 PKGNAME =	fs2open-${V}
+REVISION =	0
 
 CATEGORIES =	games
 
