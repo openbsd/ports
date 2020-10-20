@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/26 20:03:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.26 2020/10/20 18:43:49 sthen Exp $
 
 COMMENT=	SSL/TLS scanner (identify version, ciphers, etc)
 
 GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
-GH_TAGNAME=	2.0.0
+GH_TAGNAME=	2.0.4
 
 CATEGORIES=	security net
 
