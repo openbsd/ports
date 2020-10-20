@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/10/20 09:37:18 sthen Exp $
 
 COMMENT =		detects when files bit-rot
 
-MODPY_EGG_VERSION =	0.9.2
+MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		bitrot-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
 NO_TEST =		Yes
