@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_vasnprintf_c,v 1.1 2020/10/21 21:21:59 jca Exp $
+
+Don't use printf %n.
+
+Index: lib/vasnprintf.c
+--- lib/vasnprintf.c.orig
++++ lib/vasnprintf.c
+@@ -4871,10 +4871,7 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
+ #endif
+                   *fbp = dp->conversion;
+ #if USE_SNPRINTF
+-# if ! (((__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 3))        \
+-         && !defined __UCLIBC__)                                            \
+-        || (defined __APPLE__ && defined __MACH__)                          \
+-        || (defined _WIN32 && ! defined __CYGWIN__))
++# if 0
+                 fbp[1] = '%';
+                 fbp[2] = 'n';
+                 fbp[3] = '\0';
