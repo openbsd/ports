@@ -1,4 +1,4 @@
-$OpenBSD: patch-nDPI_src_lib_Makefile_in,v 1.3 2020/10/02 18:47:14 sthen Exp $
+$OpenBSD: patch-nDPI_src_lib_Makefile_in,v 1.4 2020/10/21 00:24:41 sthen Exp $
 
 Index: nDPI/src/lib/Makefile.in
 --- nDPI/src/lib/Makefile.in.orig
@@ -12,27 +12,27 @@ Index: nDPI/src/lib/Makefile.in
  NDPI_LIBS            = $(NDPI_LIB_STATIC) $(NDPI_LIB_SHARED)
  
  ifneq ($(OS),Windows_NT)
-@@ -34,7 +34,7 @@ ifeq ($(OS),Darwin)
- CC=clang
- SONAME_FLAG=
+@@ -39,7 +39,7 @@ ifneq ($(BUILD_MINGW),)
+ NDPI_LIB_SHARED_BASE = libndpi
+ NDPI_LIB_SHARED      = $(NDPI_LIB_SHARED_BASE)-@NDPI_VERSION_SHORT@.dll
  else
 -SONAME_FLAG=-Wl,-soname,$(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR)
 +SONAME_FLAG=-Wl,-soname,$(NDPI_LIB_SHARED_BASE).$(LIBndpi_VERSION)
  endif
+ endif
  
- all: $(NDPI_LIBS)
-@@ -47,8 +47,8 @@ $(NDPI_LIB_STATIC): $(OBJECTS)
+@@ -53,8 +53,8 @@ $(NDPI_LIB_STATIC): $(OBJECTS)
  
  $(NDPI_LIB_SHARED): $(OBJECTS)
- 	$(CC) -shared -fPIC $(SONAME_FLAG) -o $@ $(OBJECTS) $(LDFLAGS) @ADDITIONAL_LIBS@
+ 	$(CC) -shared -fPIC $(SONAME_FLAG) -o $@ $(OBJECTS) $(LDFLAGS)
 -	ln -fs $(NDPI_LIB_SHARED) $(NDPI_LIB_SHARED_BASE)
 -	ln -fs $(NDPI_LIB_SHARED) $(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR)
 +	#ln -fs $(NDPI_LIB_SHARED) $(NDPI_LIB_SHARED_BASE)
 +	#ln -fs $(NDPI_LIB_SHARED) $(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR)
  
  %.o: %.c $(HEADERS) Makefile
- 	$(CC) $(CFLAGS) -c $< -o $@ $(LDFLAGS)
-@@ -65,7 +65,7 @@ cppcheck:
+ 	$(CC) $(CFLAGS) -c $< -o $@
+@@ -77,7 +77,7 @@ cppcheck:
  install: $(NDPI_LIBS)
  	mkdir -p $(DESTDIR)$(libdir)
  	cp $(NDPI_LIBS) $(DESTDIR)$(libdir)/

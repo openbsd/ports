@@ -1,9 +1,9 @@
-$OpenBSD: patch-nDPI_src_lib_ndpi_community_id_c,v 1.1 2020/10/02 18:47:14 sthen Exp $
+$OpenBSD: patch-nDPI_src_lib_ndpi_community_id_c,v 1.2 2020/10/21 00:24:41 sthen Exp $
 
 Index: nDPI/src/lib/ndpi_community_id.c
 --- nDPI/src/lib/ndpi_community_id.c.orig
 +++ nDPI/src/lib/ndpi_community_id.c
-@@ -67,6 +67,10 @@
+@@ -68,6 +68,10 @@
  #define NDPI_ICMP6_WRUREQUEST		139
  #define NDPI_ICMP6_WRUREPLY		140
  
