@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/10/21 21:11:59 jca Exp $
 
 COMMENT=	GNU versions of the rcs utilities
 
 DISTNAME=	rcs-5.9.4
 PKGNAME=	g${DISTNAME}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	devel
 
