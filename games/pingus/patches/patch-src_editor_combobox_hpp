@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_editor_combobox_hpp,v 1.1 2020/10/21 00:05:36 sthen Exp $
+
+Switched to boost::signals2
+
+Index: src/editor/combobox.hpp
+--- src/editor/combobox.hpp.orig
++++ src/editor/combobox.hpp
+@@ -18,7 +18,7 @@
+ #ifndef HEADER_PINGUS_EDITOR_COMBOBOX_HPP
+ #define HEADER_PINGUS_EDITOR_COMBOBOX_HPP
+ 
+-#include <boost/signal.hpp>
++#include <boost/signals2.hpp>
+ 
+ #include "engine/display/sprite.hpp"
+ #include "engine/gui/rect_component.hpp"
+@@ -88,7 +88,7 @@ class Combobox : public GUI::RectComponent (public)
+   
+   void update_layout() {}
+   
+-  boost::signal<void (const ComboItem&)> on_select;
++  boost::signals2::signal<void (const ComboItem&)> on_select;
+ 
+ private:
+   Combobox();

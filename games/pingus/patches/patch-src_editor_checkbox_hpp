@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_editor_checkbox_hpp,v 1.1 2020/10/21 00:05:36 sthen Exp $
+
+Switched to boost::signals2
+
+Index: src/editor/checkbox.hpp
+--- src/editor/checkbox.hpp.orig
++++ src/editor/checkbox.hpp
+@@ -17,7 +17,7 @@
+ #ifndef HEADER_PINGUS_EDITOR_CHECKBOX_HPP
+ #define HEADER_PINGUS_EDITOR_CHECKBOX_HPP
+ 
+-#include <boost/signal.hpp>
++#include <boost/signals2.hpp>
+ 
+ #include "engine/gui/rect_component.hpp"
+ 
+@@ -40,7 +40,7 @@ class Checkbox : public GUI::RectComponent (public)
+   bool is_checked() const { return checked; }
+   void on_primary_button_press(int x, int y);
+ 
+-  boost::signal<void (bool)> on_change;
++  boost::signals2::signal<void (bool)> on_change;
+  
+ private:
+   Checkbox (const Checkbox&);

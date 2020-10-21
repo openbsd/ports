@@ -1,4 +1,7 @@
-$OpenBSD: patch-SConscript,v 1.2 2018/10/22 21:18:50 naddy Exp $
+$OpenBSD: patch-SConscript,v 1.3 2020/10/21 00:05:36 sthen Exp $
+
+Switched to boost::signals2
+
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
@@ -10,7 +13,7 @@ Index: SConscript
          self.opts.Add('LINKFLAGS',  'Linker Compiler flags', [])
  
          self.opts.Add(BoolVariable('with_opengl',        'Build with OpenGL support', True))
-@@ -182,7 +181,7 @@ class Project:
+@@ -182,14 +181,13 @@ class Project:
          else:
              self.reports += "  * XInput support: yes\n"
              self.conf.env.Append(CPPDEFINES = [('HAVE_XINPUT', 1)])
@@ -19,3 +22,12 @@ Index: SConscript
              self.conf.env.Append(optional_sources = ['src/engine/input/xinput/xinput_driver.cpp',
                                                       'src/engine/input/xinput/xinput_device.cpp'])
              
+     def configure_boost(self):
+-        if not self.conf.CheckLibWithHeader('boost_signals', 'boost/signals.hpp', 'c++'):
+-            if not self.conf.CheckLibWithHeader('boost_signals-mt', 'boost/signals.hpp', 'c++'):
+-                self.fatal_error += "  * library 'boost_signals' not found\n"
++        if not self.conf.CheckHeader('boost/signals2.hpp', '<>', 'c++'):
++            self.fatal_error += "  * library 'boost_signals2' not found\n"
+ 
+     def configure_png(self):
+         if self.conf.CheckMyProgram('pkg-config'):

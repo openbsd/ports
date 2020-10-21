@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_editor_message_box_hpp,v 1.1 2020/10/21 00:05:36 sthen Exp $
+
+Switched to boost::signals2
+
+Index: src/editor/message_box.hpp
+--- src/editor/message_box.hpp.orig
++++ src/editor/message_box.hpp
+@@ -45,7 +45,7 @@ class MessageBox : public GUI::GroupComponent (public)
+   void on_cancel_button();
+ 
+ public:
+-  boost::signal<void()> on_ok;
++  boost::signals2::signal<void()> on_ok;
+ 
+ private:
+   MessageBox(const MessageBox&);

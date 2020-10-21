@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_editor_file_list_hpp,v 1.1 2020/10/21 00:05:36 sthen Exp $
+
+Switched to boost::signals2
+
+Index: src/editor/file_list.hpp
+--- src/editor/file_list.hpp.orig
++++ src/editor/file_list.hpp
+@@ -17,7 +17,7 @@
+ #ifndef HEADER_PINGUS_EDITOR_FILE_LIST_HPP
+ #define HEADER_PINGUS_EDITOR_FILE_LIST_HPP
+ 
+-#include <boost/signal.hpp>
++#include <boost/signals2.hpp>
+ 
+ #include "engine/display/sprite.hpp"
+ #include "engine/gui/rect_component.hpp"
+@@ -61,7 +61,7 @@ class FileList : public GUI::RectComponent (public)
+   bool has_more_next_pages();
+   bool has_more_prev_pages();
+ 
+-  boost::signal<void (const System::DirectoryEntry&)> on_click;
++  boost::signals2::signal<void (const System::DirectoryEntry&)> on_click;
+ 
+ private:
+   int items_per_page();

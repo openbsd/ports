@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_pingus_components_slider_box_hpp,v 1.1 2020/10/21 00:05:36 sthen Exp $
+
+Switched to boost::signals2
+
+Index: src/pingus/components/slider_box.hpp
+--- src/pingus/components/slider_box.hpp.orig
++++ src/pingus/components/slider_box.hpp
+@@ -17,7 +17,7 @@
+ #ifndef HEADER_PINGUS_PINGUS_COMPONENTS_SLIDER_BOX_HPP
+ #define HEADER_PINGUS_PINGUS_COMPONENTS_SLIDER_BOX_HPP
+ 
+-#include <boost/signal.hpp>
++#include <boost/signals2.hpp>
+ 
+ #include "engine/gui/rect_component.hpp"
+ 
+@@ -39,7 +39,7 @@ class SliderBox : public GUI::RectComponent (public)
+ 
+   void set_value(int v);
+ 
+-  boost::signal<void (int)> on_change;
++  boost::signals2::signal<void (int)> on_change;
+ 
+ private:
+   SliderBox (const SliderBox&);

@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_pingus_screens_option_menu_hpp,v 1.1 2020/10/21 00:05:36 sthen Exp $
+
+Switched to boost::signals2
+
+Index: src/pingus/screens/option_menu.hpp
+--- src/pingus/screens/option_menu.hpp.orig
++++ src/pingus/screens/option_menu.hpp
+@@ -17,7 +17,7 @@
+ #ifndef HEADER_PINGUS_PINGUS_SCREENS_OPTION_MENU_HPP
+ #define HEADER_PINGUS_PINGUS_SCREENS_OPTION_MENU_HPP
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <map>
+ #include <vector>
+ 
+@@ -66,7 +66,7 @@ class OptionMenu : public GUIScreen (private)
+   //Label* defaults_label;
+   //CheckBox* defaults_box;
+ 
+-  typedef std::vector<boost::signals::connection> Connections;
++  typedef std::vector<boost::signals2::connection> Connections;
+   Connections connections;
+ 
+   tinygettext::Language m_language;

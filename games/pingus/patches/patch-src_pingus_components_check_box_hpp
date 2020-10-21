@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_pingus_components_check_box_hpp,v 1.1 2020/10/21 00:05:36 sthen Exp $
+
+Switched to boost::signals2
+
+Index: src/pingus/components/check_box.hpp
+--- src/pingus/components/check_box.hpp.orig
++++ src/pingus/components/check_box.hpp
+@@ -17,7 +17,7 @@
+ #ifndef HEADER_PINGUS_PINGUS_COMPONENTS_CHECK_BOX_HPP
+ #define HEADER_PINGUS_PINGUS_COMPONENTS_CHECK_BOX_HPP
+ 
+-#include <boost/signal.hpp>
++#include <boost/signals2.hpp>
+ 
+ #include "engine/display/sprite.hpp"
+ #include "engine/gui/rect_component.hpp"
+@@ -39,7 +39,7 @@ class CheckBox : public GUI::RectComponent (public)
+ 
+   void set_state(bool v, bool send_signal);
+ 
+-  boost::signal<void (bool)> on_change;
++  boost::signals2::signal<void (bool)> on_change;
+ 
+ private:
+   CheckBox (const CheckBox&);

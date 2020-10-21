@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_editor_object_selector_cpp,v 1.1 2020/10/21 00:05:36 sthen Exp $
+
+Switched to boost::signals2
+
+Index: src/editor/object_selector.cpp
+--- src/editor/object_selector.cpp.orig
++++ src/editor/object_selector.cpp
+@@ -16,7 +16,7 @@
+ 
+ #include "editor/object_selector.hpp"
+ 
+-#include <boost/signal.hpp>
++#include <boost/signals2.hpp>
+ 
+ #include "editor/generic_level_obj.hpp"
+ #include "editor/gui_style.hpp"
+@@ -47,7 +47,7 @@ class ObjectSelectorButton : public GUI::RectComponent
+   std::string tooltip;
+   
+ public:
+-  boost::signal<void()> on_click;
++  boost::signals2::signal<void()> on_click;
+ 
+ public:
+   ObjectSelectorButton(ObjectSelectorList* object_list_,

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/10/21 00:05:36 sthen Exp $
 
 COMMENT=	free Lemmings-like game
 
 DISTNAME=	pingus-0.7.6
-REVISION=	5
+REVISION=	6
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -15,16 +15,16 @@ MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pingus/}
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL SDL X11 Xi c iconv m png pthread z
-WANTLIB += SDL_mixer>=3 SDL_image>=2 boost_signals ${COMPILER_LIBCXX}
+WANTLIB += SDL_mixer>=3 SDL_image>=2 ${COMPILER_LIBCXX}
 
 MODULES=	devel/scons
 
 COMPILER =	base-clang ports-gcc
 
+BUILD_DEPENDS=	devel/boost
 LIB_DEPENDS=	converters/libiconv \
 		devel/sdl-mixer \
-		devel/sdl-image \
-		devel/boost
+		devel/sdl-image
 
 NO_TEST=	Yes
 
