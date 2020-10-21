@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/10/19 09:10:17 cwen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/10/21 15:57:00 cwen Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -14,6 +14,8 @@ COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
 GNOME_VERSION=		3.99.0
+
+REVISION-cups=		0
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
