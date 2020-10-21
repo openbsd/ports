@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2020/03/20 16:44:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.116 2020/10/21 13:25:03 kn Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -136,10 +136,10 @@ FT_BRIDGE=	0
 
 NO_TEST=	Yes
 
-# Avoid surprises in update-patches.
+PATCHORIG=	.pat.orig
+
 # Use the old-style (non-autoconf) build.
 post-extract:
-	find ${WRKDIST} -name '*.orig' -type f -delete
 	ln -s base/unix-gcc.mak ${WRKDIST}/Makefile
 	cd ${WRKSRC} && mkdir junk && \
 		mv expat freetype ijs jpeg lcms lcms2 libpng jbig2dec \
