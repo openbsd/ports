@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1224 2020/10/18 18:15:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.1225 2020/10/22 13:53:33 abieber Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -62,6 +62,7 @@
      SUBDIR += ddclient
      SUBDIR += deluge
      SUBDIR += deluge-ltconfig
+     SUBDIR += dendrite
      SUBDIR += dhcdrop
      SUBDIR += dhcpcd
      SUBDIR += dhcpdump
