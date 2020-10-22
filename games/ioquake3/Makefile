@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.26 2020/06/01 16:07:05 cwen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/10/22 11:32:53 abieber Exp $
 
 BROKEN-i386=	need to free up a register
 ONLY_FOR_ARCHS= amd64 i386 macppc
 
 COMMENT=	clone of the original Quake III Arena
 
-DISTNAME=	ioquake3-2019.04.08
-REVISION=	0
+DISTNAME=	ioquake3-2020.09.29
 
 GH_ACCOUNT=	ioquake
 GH_PROJECT=	ioq3
-GH_COMMIT=	95b9cab4d644fa3bf757cfff821cc4f7d76e38b0
+GH_COMMIT=	e7a7a2b6b677c030be5cca8cc9cc58e81b2e04de
 
 CATEGORIES=	games
 
