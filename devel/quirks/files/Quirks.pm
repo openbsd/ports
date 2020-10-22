@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1090 2020/10/18 20:41:25 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1091 2020/10/22 08:30:39 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -434,7 +434,6 @@ my $stem_extensions = {
 	'kdegraphics-thumbnailers' => 'kdegraphics-thumbnailers-kf5',
 	'svgpart' => 'svgpart-kf5',
 	'kdenetwork-filesharing' => 'kdenetwork-filesharing-kf5',
-	'spidermonkey60' => 'spidermonkey68',
 	'py-cloudpickle' => 'py3-cloudpickle',
 	'py-podcastparser' => 'py3-podcastparser',
 	'py-configargparse' => 'py3-configargparse',
@@ -493,6 +492,7 @@ my $stem_extensions = {
 	'py-zmq' => 'py3-zmq',
 	'py-kiwisolver' => 'py3-kiwisolver',
 	'py-scipy' => 'py3-scipy',
+	'spidermonkey' => 'spidermonkey78',
 	'spidermonkey68' => 'spidermonkey78',
 	'py-relatorio' => 'py3-relatorio',
 };

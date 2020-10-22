@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
-@conflict spidermonkey-<=68.11.0v1
+@comment $OpenBSD: PLIST,v 1.2 2020/10/22 08:30:39 ajacoutot Exp $
+@conflict spidermonkey-*
+@conflict spidermonkey68-*
+@pkgpath devel/spidermonkey60
 @pkgpath devel/spidermonkey68
 include/mozjs-${MOZILLA_VERSION}/
 include/mozjs-${MOZILLA_VERSION}/BaseProfiler.h
