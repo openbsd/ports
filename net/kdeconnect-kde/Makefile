@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/02 12:48:47 feinerer Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/22 05:15:38 feinerer Exp $
 
 COMMENT =	KDE app that allows your devices to communicate
 
-V =		1.4
+V =		1.4.1
 DISTNAME =	kdeconnect-kde-${V}
-REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		1.0 # 1.4
 SHARED_LIBS +=	kdeconnectinterfaces	1.0 # 1.4
