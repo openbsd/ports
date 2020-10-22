@@ -1,2 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/22 23:46:04 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/22 12:13:39 abieber Exp $
 @bin bin/gopass
+@bin bin/gopass-git-credentials
+@bin bin/gopass-hibp
+@bin bin/gopass-jsonapi
+@bin bin/gopass-summon-provider
