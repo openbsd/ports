@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/07/14 19:45:12 bket Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/10/22 12:10:03 bket Exp $
 include/libfilezilla/
 include/libfilezilla/apply.hpp
 include/libfilezilla/buffer.hpp
@@ -12,7 +12,9 @@ include/libfilezilla/format.hpp
 include/libfilezilla/glue/
 include/libfilezilla/glue/unix.hpp
 include/libfilezilla/glue/wx.hpp
+include/libfilezilla/glue/wxinvoker.hpp
 include/libfilezilla/hash.hpp
+include/libfilezilla/invoker.hpp
 include/libfilezilla/iputils.hpp
 include/libfilezilla/libfilezilla.hpp
 include/libfilezilla/local_filesys.hpp
