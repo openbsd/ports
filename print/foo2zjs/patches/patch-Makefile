@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.31 2019/09/29 13:41:11 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.32 2020/10/22 08:23:40 ajacoutot Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -53,7 +53,7 @@ Index: Makefile
  #CFLAGS +=	-g
  
  #
-@@ -441,12 +436,6 @@ all-test:
+@@ -447,16 +442,6 @@ all-test:
  	    echo "      ***"; \
  	    exit 1; \
  	fi
@@ -61,12 +61,16 @@ Index: Makefile
 -	    echo "      ***"; \
 -	    echo "      *** Error: must install GNU dc with the -e option!"; \
 -	    echo "      ***"; \
+-	    echo "      *** Install dc/bc package"; \
+-	    echo "      ***"; \
+-	    echo "      *** sudo dnf install bc OR sudo apt-get install dc"; \
+-	    echo "      ***"; \
 -	    exit 1; \
 -	fi
  ifeq ($(UNAME),Darwin)
  	@if ! type gsed >/dev/null 2>&1; then \
  	    echo "      ***"; \
-@@ -625,7 +614,7 @@ zjsdecode: zjsdecode.o $(LIBJBG)
+@@ -635,7 +620,7 @@ zjsdecode: zjsdecode.o $(LIBJBG)
  	$(CC) $(CFLAGS) zjsdecode.o $(LIBJBG) -o $@
  
  command2foo2lava-pjl: command2foo2lava-pjl.o
@@ -75,7 +79,7 @@ Index: Makefile
  
  command2foo2lava-pjl.o: command2foo2lava-pjl.c
  	$(CC) $(CFLAGS) -I/usr/local/include -c command2foo2lava-pjl.c
-@@ -633,9 +622,8 @@ command2foo2lava-pjl.o: command2foo2lava-pjl.c
+@@ -643,9 +628,8 @@ command2foo2lava-pjl.o: command2foo2lava-pjl.c
  #
  # Installation rules
  #
@@ -86,7 +90,7 @@ Index: Makefile
  	    install-man install-doc install-aa
  	#
  	# If you use CUPS, then restart the spooler:
-@@ -694,11 +682,6 @@ install-prog:
+@@ -706,11 +690,6 @@ install-prog:
  	$(INSTALL) -d $(SHAREZJS)/
  	$(INSTALL) -c -m 644 gamma.ps $(SHAREZJS)/
  	$(INSTALL) -c -m 644 gamma-lookup.ps $(SHAREZJS)/
@@ -98,7 +102,7 @@ Index: Makefile
  
  install-foo:
  	#
-@@ -717,24 +700,14 @@ install-foo:
+@@ -729,24 +708,14 @@ install-foo:
  	#
  	# Install current database files
  	#
@@ -125,7 +129,7 @@ Index: Makefile
  	#
  	# Clear foomatic cache and rebuild database if needed
  	#
-@@ -878,7 +851,7 @@ install-extra:
+@@ -890,7 +859,7 @@ install-extra:
  	done
  
  MODEL=$(PREFIX)/share/cups/model
@@ -134,7 +138,7 @@ Index: Makefile
  MACMODEL=/Library/Printers/PPDs/Contents/Resources
  PPD=$(PREFIX)/share/ppd
  VARPPD=/var/lp/ppd
-@@ -886,44 +859,8 @@ install-ppd:
+@@ -898,44 +867,8 @@ install-ppd:
  	#
  	# Install PPD files for CUPS
  	#
@@ -181,7 +185,7 @@ Index: Makefile
  	    rm -f $(LOCALMODEL)/KonicaMinolta*; \
  	    cd PPD; \
  	    for ppd in *.ppd; do \
-@@ -1618,11 +1555,8 @@ install-doc: doc
+@@ -1631,11 +1564,8 @@ install-doc: doc
  	#
  	$(INSTALL) -d -m 755 $(DOCDIR)
  	$(INSTALL) -c -m 644 manual.pdf $(DOCDIR)
