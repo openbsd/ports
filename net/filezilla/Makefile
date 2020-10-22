@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.73 2020/08/28 14:14:21 bket Exp $
+# $OpenBSD: Makefile,v 1.74 2020/10/22 12:11:05 bket Exp $
 
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.50.0
+V=		3.51.0
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
+
+SHARED_LIBS=	fzclient_private 0.0	# 3.51.0
 
 CATEGORIES=	net
 
@@ -41,7 +43,7 @@ COMPILER=	base-clang ports-gcc
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \
 		devel/libidn \
-		net/libfilezilla>=0.22.0 \
+		net/libfilezilla>=0.25.0 \
 		security/gnutls \
 		textproc/pugixml \
 		x11/dbus \
@@ -53,15 +55,15 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils \
 		x11/gtk+3,-guic
 
+MAKE_FLAGS=	LIBfzclient_private_VERSION=${LIBfzclient_private_VERSION}
+FAKE_FLAGS=	docsdir="${PREFIX}/share/examples/filezilla/"
+
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 
-FAKE_FLAGS+=	docsdir="${PREFIX}/share/examples/filezilla/"
-
 CONFIGURE_STYLE=autoreconf
-CONFIGURE_ARGS+=--with-dbus \
-		--with-tinyxml=builtin \
-		--disable-manualupdatecheck
+CONFIGURE_ARGS=	--disable-manualupdatecheck \
+		--with-dbus \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GREP=/usr/bin/grep \
@@ -71,5 +73,8 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
 WRKDIST=	${WRKDIR}/filezilla-$V
+
+post-install:
+	rm -f ${PREFIX}/lib/libfzclient-private.so
 
 .include <bsd.port.mk>

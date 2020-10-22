@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_interface_file_utils_cpp,v 1.4 2020/05/14 19:34:20 bket Exp $
+$OpenBSD: patch-src_interface_file_utils_cpp,v 1.5 2020/10/22 12:11:05 bket Exp $
 Index: src/interface/file_utils.cpp
 --- src/interface/file_utils.cpp.orig
 +++ src/interface/file_utils.cpp
@@ -13,7 +13,7 @@ Index: src/interface/file_utils.cpp
  #endif
  
  #include "Options.h"
-@@ -548,12 +548,12 @@ wxString ShellUnescape(wxString const& path)
+@@ -550,12 +550,12 @@ wxString ShellUnescape(wxString const& path)
  
  	const wxWX2MBbuf buf = path.mb_str();
  	if (buf && *buf) {
