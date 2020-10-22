@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/08/08 16:41:13 bket Exp $
+# $OpenBSD: Makefile,v 1.18 2020/10/22 08:24:17 bket Exp $
 
 COMMENT =	rsync for cloud storage
 
-V =		1.52.3
+V =		1.53.1
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
 
@@ -18,15 +18,21 @@ PERMIT_PACKAGE = Yes
 WANTLIB += c pthread
 
 MASTER_SITES =  https://downloads.rclone.org/v${V}/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}-vendor${EXTRACT_SUFX}
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
 
 ALL_TARGET =	github.com/rclone/rclone
 
+post-extract:
+	mv ${WRKDIR}/vendor ${WRKDIST}
+
 post-build:
 .for s in bash zsh
-	cd ${MODGO_WORKSPACE}/bin && ./rclone genautocomplete $s rclone.$s
+	cd ${MODGO_WORKSPACE}/bin && \
+		HOME=${WRKSRC} ./rclone genautocomplete $s rclone.$s
 .endfor
 
 do-install:
