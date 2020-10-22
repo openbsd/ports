@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/22 13:51:39 abieber Exp $
+@newgroup _dendrite:860
+@newuser _dendrite:860:860:daemon:Matrix.org Daemon:/var/dendrite:/sbin/nologin
+@rcscript ${RCDIR}/dendrite
+@bin bin/client-api-proxy
+@bin bin/create-account
+@bin bin/create-room-events
+@bin bin/dendrite-demo-libp2p
+@bin bin/dendrite-demo-yggdrasil
+@bin bin/dendrite-monolith-server
+@bin bin/dendrite-polylith-multi
+@bin bin/dendritejs
+@bin bin/federation-api-proxy
+@bin bin/furl
+@bin bin/generate-config
+@bin bin/generate-keys
+@bin bin/goose
+@bin bin/kafka-producer
+@bin bin/mediaapi-integration-tests
+@bin bin/roomserver-integration-tests
+@bin bin/syncserver-integration-tests
+share/dendrite/
+share/dendrite/dendrite.yaml
+@mode 640
+@group _dendrite
+@sample ${SYSCONFDIR}/dendrite.yaml
+@mode 750
+@owner _dendrite
+@sample /var/dendrite/
