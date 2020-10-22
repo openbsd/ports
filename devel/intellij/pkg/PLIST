@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2020/08/15 20:45:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.45 2020/10/22 20:45:06 sthen Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -90,7 +90,12 @@ intellij/lib/ant/lib/ant.jar
 intellij/lib/ant/lib/ant.pom
 intellij/lib/ant/lib/libraries.properties
 intellij/lib/ant/src.zip
+intellij/lib/asm-7.1.jar
 intellij/lib/asm-all-8.0.1.jar
+intellij/lib/asm-analysis-7.1.jar
+intellij/lib/asm-commons-7.1.jar
+intellij/lib/asm-tree-7.1.jar
+intellij/lib/asm-util-7.1.jar
 intellij/lib/automaton-1.12-1.jar
 intellij/lib/baksmali-2.2.4.jar
 intellij/lib/batik-anim-1.12.0-8.jar
@@ -134,7 +139,7 @@ intellij/lib/commons-net-3.6.jar
 intellij/lib/configuration-store-impl.jar
 intellij/lib/coverage-common.jar
 intellij/lib/credential-store.jar
-intellij/lib/dbus-java-3.0.2.jar
+intellij/lib/dbus-java-3.2.1.jar
 intellij/lib/delight-rhino-sandbox-0.0.11.jar
 intellij/lib/dexlib2-2.2.4.jar
 intellij/lib/dom-impl.jar
@@ -182,24 +187,34 @@ intellij/lib/jackson-databind-2.10.3.jar
 intellij/lib/jackson-module-kotlin-2.10.3.jar
 intellij/lib/java-compatibility-1.0.1.jar
 intellij/lib/java-string-similarity-1.2.1.jar
-intellij/lib/java-utils-1.0.5.jar
+intellij/lib/java-utils-1.0.6.jar
 intellij/lib/javac2.jar
 intellij/lib/javax.activation-1.2.0.jar
 intellij/lib/javax.annotation-api-1.3.2.jar
 intellij/lib/jaxb-api-2.3.1.jar
 intellij/lib/jaxb-runtime-2.3.1.jar
 intellij/lib/jaxen-1.2.0.jar
-intellij/lib/jb-jdi-2.1.jar
-intellij/lib/jcef-77.1.18-g8e8d602-chromium-77.0.3865.120.jar
+intellij/lib/jb-jdi-2.2.2.jar
+intellij/lib/jcef-81.2.24-gc0b313d-chromium-81.0.4044.113.jar
 intellij/lib/jcip-annotations-1.0.jar
 intellij/lib/jcodings-1.0.48.jar
 intellij/lib/jdkAnnotations.jar
 intellij/lib/jdom.jar
 intellij/lib/jediterm-pty-2.29.jar
 intellij/lib/jetCheck-0.2.2.jar
+intellij/lib/jffi-1.2.19-native.jar
+intellij/lib/jffi-1.2.19.jar
 intellij/lib/jing-20030619.jar
 intellij/lib/jna-platform.jar
 intellij/lib/jna.jar
+intellij/lib/jnaerator-runtime-0.12.jar
+intellij/lib/jnr-a64asm-1.0.0.jar
+intellij/lib/jnr-constants-0.9.12.jar
+intellij/lib/jnr-enxio-0.21.jar
+intellij/lib/jnr-ffi-2.1.10.jar
+intellij/lib/jnr-posix-3.0.50.jar
+intellij/lib/jnr-unixsocket-0.23.jar
+intellij/lib/jnr-x86asm-1.0.2.jar
 intellij/lib/joni-2.1.32.jar
 intellij/lib/jps-model.jar
 intellij/lib/jsch-0.1.55.jar
@@ -208,6 +223,7 @@ intellij/lib/json.jar
 intellij/lib/jsoup-1.12.1.jar
 intellij/lib/jsp-base-openapi.jar
 intellij/lib/jsr305.jar
+intellij/lib/jstun-0.7.5.20200723.jar
 intellij/lib/junit-4.12.jar
 intellij/lib/junit.jar
 intellij/lib/kotlin-gradle-plugin-model-1.3.70.jar
@@ -293,6 +309,7 @@ intellij/lib/pty4j-native/linux/x86_64/
 intellij/lib/pty4j-native/linux/x86_64/libpty.so
 intellij/lib/purejavacomm-0.0.11.1.jar
 intellij/lib/qdox-2.0-M10.jar
+intellij/lib/quiche-jna-stubs-15.jar
 intellij/lib/rd-core-0.202.100.jar
 intellij/lib/rd-framework-0.202.100.jar
 intellij/lib/rd-swing-0.202.100.jar
