@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.29 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.30 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_view.cc
 --- chrome/browser/ui/views/frame/browser_view.cc.orig
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -1766,7 +1766,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
+@@ -1829,7 +1829,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
    const bool should_use_native_frame = frame_->ShouldUseNativeFrame();
  
    bool must_regenerate_frame;

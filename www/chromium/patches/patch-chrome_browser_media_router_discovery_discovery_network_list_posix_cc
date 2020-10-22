@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_media_router_discovery_discovery_network_list_posix_cc,v 1.3 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_media_router_discovery_discovery_network_list_posix_cc,v 1.4 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
 --- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig
@@ -22,8 +22,8 @@ Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
  #include "chrome/browser/media/router/discovery/discovery_network_list_wifi.h"
  #include "net/base/net_errors.h"
  
--#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_BSD)
+-#if !defined(OS_MAC)
++#if !defined(OS_MAC) && !defined(OS_BSD)
  #include <netpacket/packet.h>
  #else
  #include <net/if_dl.h>
@@ -31,8 +31,8 @@ Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
  namespace media_router {
  namespace {
  
--#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_BSD)
+-#if !defined(OS_MAC)
++#if !defined(OS_MAC) && !defined(OS_BSD)
  using sll = struct sockaddr_ll;
  #define SOCKET_ARP_TYPE(s) ((s)->sll_hatype)
  #define SOCKET_ADDRESS_LEN(s) ((s)->sll_halen)

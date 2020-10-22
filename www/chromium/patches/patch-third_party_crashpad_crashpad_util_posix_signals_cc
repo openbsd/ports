@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_signals_cc,v 1.4 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_signals_cc,v 1.5 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/posix/signals.cc
 --- third_party/crashpad/crashpad/util/posix/signals.cc.orig
@@ -15,7 +15,7 @@ Index: third_party/crashpad/crashpad/util/posix/signals.cc
 @@ -86,7 +86,7 @@ constexpr int kTerminateSignals[] = {
      SIGXCPU,
      SIGXFSZ,
- #endif  // defined(OS_MACOSX)
+ #endif  // defined(OS_APPLE)
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
      SIGIO,

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_cc,v 1.10 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_cc,v 1.11 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_cache.cc
 --- third_party/blink/renderer/platform/fonts/font_cache.cc.orig
@@ -16,8 +16,8 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.cc
  FontPlatformData* FontCache::SystemFontPlatformData(
      const FontDescription& font_description) {
    const AtomicString& family = FontCache::SystemFontFamily();
--#if defined(OS_LINUX) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    if (family.IsEmpty() || family == font_family_names::kSystemUi)
      return nullptr;
  #else

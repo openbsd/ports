@@ -1,14 +1,14 @@
-$OpenBSD: patch-components_invalidation_impl_invalidation_switches_cc,v 1.1 2020/09/22 11:47:41 robert Exp $
+$OpenBSD: patch-components_invalidation_impl_invalidation_switches_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: components/invalidation/impl/invalidation_switches.cc
 --- components/invalidation/impl/invalidation_switches.cc.orig
 +++ components/invalidation/impl/invalidation_switches.cc
-@@ -37,7 +37,7 @@ const base::Feature kTiclInvalidationsStartInvalidator
+@@ -29,7 +29,7 @@ const base::Feature kFCMInvalidationsForSyncDontCheckV
  const base::Feature kSyncInstanceIDTokenTTL {
    "SyncInstanceIDTokenTTL",
- #if defined(OS_WIN) || (defined(OS_MACOSX) && !defined(OS_IOS)) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS) || defined(OS_IOS)
++    defined(OS_CHROMEOS) || defined(OS_IOS) || defined(OS_BSD)
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT

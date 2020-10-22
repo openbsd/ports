@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_description_cc,v 1.5 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_description_cc,v 1.6 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_description.cc
 --- third_party/blink/renderer/platform/fonts/font_description.cc.orig
 +++ third_party/blink/renderer/platform/fonts/font_description.cc
-@@ -38,7 +38,7 @@
+@@ -39,7 +39,7 @@
  #include "third_party/blink/renderer/platform/wtf/text/string_hash.h"
  #include "third_party/blink/renderer/platform/wtf/text/string_hasher.h"
  

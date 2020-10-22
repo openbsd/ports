@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.34 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.35 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/sync/chrome_sync_client.cc
 --- chrome/browser/sync/chrome_sync_client.cc.orig
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -449,7 +449,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -451,7 +451,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
  
  // Chrome prefers OS provided spell checkers where they exist. So only sync the
  // custom dictionary on platforms that typically don't provide one.
--#if defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_BSD)
    // Dictionary sync is enabled by default.
    if (!disabled_types.Has(syncer::DICTIONARY) &&
        GetPrefService()->GetBoolean(spellcheck::prefs::kSpellCheckEnable)) {

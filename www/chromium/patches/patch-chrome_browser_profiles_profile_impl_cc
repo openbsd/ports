@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_profiles_profile_impl_cc,v 1.13 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_profile_impl_cc,v 1.14 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/profiles/profile_impl.cc
 --- chrome/browser/profiles/profile_impl.cc.orig
@@ -7,7 +7,7 @@ Index: chrome/browser/profiles/profile_impl.cc
  #include "services/preferences/public/mojom/preferences.mojom.h"
  #include "services/preferences/public/mojom/tracked_preference_validation_delegate.mojom.h"
  #include "services/service_manager/public/cpp/service.h"
-+#include "services/service_manager/sandbox/switches.h"
++#include "sandbox/policy/switches.h"
  #include "ui/base/l10n/l10n_util.h"
  
  #if defined(OS_CHROMEOS)

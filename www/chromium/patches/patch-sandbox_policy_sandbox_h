@@ -1,0 +1,25 @@
+$OpenBSD: patch-sandbox_policy_sandbox_h,v 1.1 2020/10/22 13:52:54 robert Exp $
+
+Index: sandbox/policy/sandbox.h
+--- sandbox/policy/sandbox.h.orig
++++ sandbox/policy/sandbox.h
+@@ -13,6 +13,10 @@
+ #include "sandbox/policy/linux/sandbox_linux.h"
+ #endif
+ 
++#if defined(OS_BSD)
++#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#endif
++
+ #if defined(OS_MAC)
+ #include "base/callback.h"
+ #endif  // defined(OS_MAC)
+@@ -34,7 +38,7 @@ namespace policy {
+ 
+ class SANDBOX_POLICY_EXPORT Sandbox {
+  public:
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   static bool Initialize(SandboxType sandbox_type,
+                          SandboxLinux::PreSandboxHook hook,
+                          const SandboxLinux::Options& options);

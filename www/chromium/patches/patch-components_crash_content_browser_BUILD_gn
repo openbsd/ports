@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.8 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.9 2020/10/22 13:52:54 robert Exp $
 
 Index: components/crash/content/browser/BUILD.gn
 --- components/crash/content/browser/BUILD.gn.orig
@@ -7,8 +7,8 @@ Index: components/crash/content/browser/BUILD.gn
      "//content/public/common",
    ]
  
--  if (is_linux || is_android) {
-+  if ((is_linux && !is_openbsd) || is_android) {
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux && !is_openbsd) || is_chromeos || is_android) {
      set_sources_assignment_filter([])
  
      # Want this file on both Linux and Android.

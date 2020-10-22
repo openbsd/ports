@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.18 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.19 2020/10/22 13:52:53 robert Exp $
 
 Index: base/threading/platform_thread_linux.cc
 --- base/threading/platform_thread_linux.cc.orig
 +++ base/threading/platform_thread_linux.cc
-@@ -18,7 +18,9 @@
+@@ -24,7 +24,9 @@
  
  #if !defined(OS_NACL) && !defined(OS_AIX)
  #include <pthread.h>
@@ -13,16 +13,16 @@ Index: base/threading/platform_thread_linux.cc
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -27,7 +29,7 @@
+@@ -99,7 +101,7 @@ int sched_setattr(pid_t pid,
+ }
+ #endif  // OS_CHROMEOS
  
- namespace base {
- namespace {
 -#if !defined(OS_NACL)
 +#if !defined(OS_NACL) && !defined(OS_BSD)
  const FilePath::CharType kCgroupDirectory[] =
      FILE_PATH_LITERAL("/sys/fs/cgroup");
  
-@@ -99,7 +101,7 @@ const ThreadPriorityToNiceValuePair kThreadPriorityToN
+@@ -264,7 +266,7 @@ const ThreadPriorityToNiceValuePair kThreadPriorityToN
  
  Optional<bool> CanIncreaseCurrentThreadPriorityForPlatform(
      ThreadPriority priority) {
@@ -31,16 +31,25 @@ Index: base/threading/platform_thread_linux.cc
    // A non-zero soft-limit on RLIMIT_RTPRIO is required to be allowed to invoke
    // pthread_setschedparam in SetCurrentThreadPriorityForPlatform().
    struct rlimit rlim;
-@@ -112,7 +114,7 @@ Optional<bool> CanIncreaseCurrentThreadPriorityForPlat
+@@ -277,7 +279,7 @@ Optional<bool> CanIncreaseCurrentThreadPriorityForPlat
  }
  
  bool SetCurrentThreadPriorityForPlatform(ThreadPriority priority) {
 -#if !defined(OS_NACL)
 +#if !defined(OS_NACL) && !defined(OS_BSD)
+   // For legacy schedtune interface
    SetThreadCgroupsForThreadPriority(PlatformThread::CurrentId(), priority);
-   return priority == ThreadPriority::REALTIME_AUDIO &&
-          pthread_setschedparam(pthread_self(), SCHED_RR, &kRealTimePrio) == 0;
-@@ -141,7 +143,7 @@ Optional<ThreadPriority> GetCurrentThreadPriorityForPl
+ 
+@@ -295,7 +297,7 @@ bool SetCurrentThreadPriorityForPlatform(ThreadPriorit
+ }
+ 
+ Optional<ThreadPriority> GetCurrentThreadPriorityForPlatform() {
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+   int maybe_sched_rr = 0;
+   struct sched_param maybe_realtime_prio = {0};
+   if (pthread_getschedparam(pthread_self(), &maybe_sched_rr,
+@@ -314,7 +316,7 @@ Optional<ThreadPriority> GetCurrentThreadPriorityForPl
  void PlatformThread::SetName(const std::string& name) {
    ThreadIdNameManager::GetInstance()->SetName(name);
  
@@ -49,13 +58,14 @@ Index: base/threading/platform_thread_linux.cc
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall
-@@ -170,7 +172,9 @@ void PlatformThread::SetThreadPriority(PlatformThreadI
+@@ -344,8 +346,10 @@ void PlatformThread::SetThreadPriority(ProcessId proce
    // priority.
-   CHECK_NE(thread_id, getpid());
+   CHECK_NE(thread_id, process_id);
  
 +#if !defined(OS_BSD)
+   // For legacy schedtune interface
    SetThreadCgroupsForThreadPriority(thread_id, priority);
 +#endif
  
-   const int nice_setting = internal::ThreadPriorityToNiceValue(priority);
-   if (setpriority(PRIO_PROCESS, thread_id, nice_setting)) {
+ #if defined(OS_CHROMEOS)
+   // For upstream uclamp interface. We try both legacy (schedtune, as done

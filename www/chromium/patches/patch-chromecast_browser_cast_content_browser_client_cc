@@ -1,41 +1,32 @@
-$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.34 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.35 2020/10/22 13:52:54 robert Exp $
 
 Index: chromecast/browser/cast_content_browser_client.cc
 --- chromecast/browser/cast_content_browser_client.cc.orig
 +++ chromecast/browser/cast_content_browser_client.cc
-@@ -92,7 +92,7 @@
- #include "ui/display/screen.h"
- #include "ui/gl/gl_switches.h"
- 
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) 
- #include "components/crash/content/browser/crash_handler_host_linux.h"
- #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
- 
-@@ -130,7 +130,7 @@
+@@ -131,7 +131,7 @@
  #include "chromecast/external_mojo/broker_service/broker_service.h"
  #endif
  
--#if defined(OS_LINUX) && defined(USE_OZONE)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
+-#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_OZONE)
++#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(USE_OZONE)
  #include "chromecast/browser/webview/webview_controller.h"
- #endif  // defined(OS_LINUX) && defined(USE_OZONE)
+ #endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_OZONE)
  
-@@ -475,7 +475,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+@@ -473,7 +473,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
                                            switches::kAudioOutputChannels));
      }
    } else if (process_type == switches::kGpuProcess) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
      // Necessary for accelerated 2d canvas.  By default on Linux, Chromium
      // assumes GLES2 contexts can be lost to a power-save mode, which breaks GPU
      // canvas apps.
-@@ -849,7 +849,7 @@ CastContentBrowserClient::CreateThrottlesForNavigation
+@@ -855,7 +855,7 @@ CastContentBrowserClient::CreateThrottlesForNavigation
              handle, general_audience_browsing_service_.get()));
    }
  
--#if defined(OS_LINUX) && defined(USE_OZONE)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
+-#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_OZONE)
++#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(USE_OZONE)
    auto webview_throttle = WebviewController::MaybeGetNavigationThrottle(handle);
    if (webview_throttle) {
      throttles.push_back(std::move(webview_throttle));

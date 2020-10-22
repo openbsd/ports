@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_common_sandbox_init_linux_cc,v 1.1 2018/04/26 19:41:38 robert Exp $
+$OpenBSD: patch-content_common_sandbox_init_linux_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: content/common/sandbox_init_linux.cc
 --- content/common/sandbox_init_linux.cc.orig
@@ -8,7 +8,7 @@ Index: content/common/sandbox_init_linux.cc
  bool InitializeSandbox(std::unique_ptr<sandbox::bpf_dsl::Policy> policy,
                         base::ScopedFD proc_fd) {
 +#if !defined(OS_BSD)
-   return service_manager::SandboxSeccompBPF::StartSandboxWithExternalPolicy(
+   return sandbox::policy::SandboxSeccompBPF::StartSandboxWithExternalPolicy(
        std::move(policy), std::move(proc_fd));
 +#else
 +  return false;
@@ -18,5 +18,5 @@ Index: content/common/sandbox_init_linux.cc
 -#if !defined(OS_NACL_NONSFI)
 +#if !defined(OS_NACL_NONSFI) && !defined(OS_BSD)
  std::unique_ptr<sandbox::bpf_dsl::Policy> GetBPFSandboxBaselinePolicy() {
-   return service_manager::SandboxSeccompBPF::GetBaselinePolicy();
+   return sandbox::policy::SandboxSeccompBPF::GetBaselinePolicy();
  }

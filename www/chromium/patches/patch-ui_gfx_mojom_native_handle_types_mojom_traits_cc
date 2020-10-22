@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_mojom_native_handle_types_mojom_traits_cc,v 1.1 2020/05/29 20:03:25 robert Exp $
+$OpenBSD: patch-ui_gfx_mojom_native_handle_types_mojom_traits_cc,v 1.2 2020/10/22 13:52:55 robert Exp $
 
 Index: ui/gfx/mojom/native_handle_types_mojom_traits.cc
 --- ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig
@@ -7,13 +7,13 @@ Index: ui/gfx/mojom/native_handle_types_mojom_traits.cc
  
  namespace mojo {
  
--#if defined(OS_LINUX) || defined(USE_OZONE)
-+#if (defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD))
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE) || defined(OS_BSD)
  mojo::PlatformHandle StructTraits<
      gfx::mojom::NativePixmapPlaneDataView,
      gfx::NativePixmapPlane>::buffer_handle(gfx::NativePixmapPlane& plane) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    return mojo::PlatformHandle(std::move(plane.fd));
  #elif defined(OS_FUCHSIA)
    return mojo::PlatformHandle(std::move(plane.vmo));
@@ -21,8 +21,8 @@ Index: ui/gfx/mojom/native_handle_types_mojom_traits.cc
    out->size = data.size();
  
    mojo::PlatformHandle handle = data.TakeBufferHandle();
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (!handle.is_fd())
      return false;
    out->fd = handle.TakeFD();
@@ -30,8 +30,8 @@ Index: ui/gfx/mojom/native_handle_types_mojom_traits.cc
      gfx::mojom::NativePixmapHandleDataView,
      gfx::NativePixmapHandle>::Read(gfx::mojom::NativePixmapHandleDataView data,
                                     gfx::NativePixmapHandle* out) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    out->modifier = data.modifier();
  #endif
  

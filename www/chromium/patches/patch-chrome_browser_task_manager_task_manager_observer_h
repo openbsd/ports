@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_task_manager_task_manager_observer_h,v 1.5 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_task_manager_observer_h,v 1.6 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/task_manager/task_manager_observer.h
 --- chrome/browser/task_manager/task_manager_observer.h.orig
@@ -7,8 +7,8 @@ Index: chrome/browser/task_manager/task_manager_observer.h
    // or backgrounded.
    REFRESH_TYPE_PRIORITY = 1 << 13,
  
--#if defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD)
    // For observers interested in getting the number of open file descriptors of
    // processes.
    REFRESH_TYPE_FD_COUNT = 1 << 14,

@@ -1,4 +1,5 @@
-$OpenBSD: patch-build_config_features_gni,v 1.13 2019/11/05 22:30:26 robert Exp $
+$OpenBSD: patch-build_config_features_gni,v 1.14 2020/10/22 13:52:53 robert Exp $
+
 Index: build/config/features.gni
 --- build/config/features.gni.orig
 +++ build/config/features.gni
@@ -6,8 +7,8 @@ Index: build/config/features.gni
    proprietary_codecs = is_chrome_branded || is_chromecast
  
    # libudev usage. This currently only affects the content layer.
--  use_udev = is_linux && !is_chromecast
-+  use_udev = is_linux && !is_chromecast && !is_openbsd
+-  use_udev = (is_linux || is_chromeos) && !is_chromecast
++  use_udev = (is_linux || is_chromeos) && !is_chromecast && !is_openbsd
  
-   use_dbus = is_linux && !is_chromecast
+   use_dbus = (is_linux || is_chromeos) && !is_chromecast
  

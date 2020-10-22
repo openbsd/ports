@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_renderer_pepper_pepper_flash_font_file_host_cc,v 1.1 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-chrome_renderer_pepper_pepper_flash_font_file_host_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: chrome/renderer/pepper/pepper_flash_font_file_host.cc
 --- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/renderer/pepper/pepper_flash_font_file_host.cc
  #include "ppapi/proxy/ppapi_messages.h"
  #include "ppapi/proxy/serialized_structs.h"
  
--#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_OPENBSD)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "components/services/font/public/cpp/font_loader.h"
  #include "content/public/common/common_sandbox_support_linux.h"
  #elif defined(OS_WIN)
@@ -16,8 +16,8 @@ Index: chrome/renderer/pepper/pepper_flash_font_file_host.cc
      const ppapi::proxy::SerializedFontDescription& description,
      PP_PrivateFontCharset charset)
      : ResourceHost(host->GetPpapiHost(), instance, resource) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // The global SkFontConfigInterface is configured and initialized with a
    // SkFontconfigInterface compatible font_service::FontLoader in
    // RendererBlinkPlatformImpl (called from RenderThreadImpl::Init) at startup
@@ -25,8 +25,8 @@ Index: chrome/renderer/pepper/pepper_flash_font_file_host.cc
                                            void* buffer,
                                            size_t* length) {
    bool result = false;
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (font_file_.IsValid()) {
      result = content::GetFontTable(font_file_.GetPlatformFile(), table,
                                     0 /* offset */,

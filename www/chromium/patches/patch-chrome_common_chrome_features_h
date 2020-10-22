@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.25 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.26 2020/10/22 13:52:54 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -63,7 +63,7 @@ extern const base::Feature kAppServiceAdaptiveIcon;
+@@ -75,7 +75,7 @@ extern const base::Feature kAppShimRemoteCocoa;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
--#if defined(OS_WIN) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
- #endif  // defined(OS_WIN) || defined(OS_LINUX)
+ #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)

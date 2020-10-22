@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.25 2020/05/29 20:03:22 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.26 2020/10/22 13:52:53 robert Exp $
 Index: build/toolchain/gcc_toolchain.gni
 --- build/toolchain/gcc_toolchain.gni.orig
 +++ build/toolchain/gcc_toolchain.gni
-@@ -36,6 +36,11 @@ if (is_linux && target_os == "android") {
+@@ -36,6 +36,11 @@ if ((is_linux || is_chromeos) && target_os == "android
    enable_resource_whitelist_generation = false
  }
  

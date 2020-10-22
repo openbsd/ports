@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_pdfium_core_fxcrt_cfx_datetime_cpp,v 1.1 2020/10/22 13:52:55 robert Exp $
+
+Index: third_party/pdfium/core/fxcrt/cfx_datetime.cpp
+--- third_party/pdfium/core/fxcrt/cfx_datetime.cpp.orig
++++ third_party/pdfium/core/fxcrt/cfx_datetime.cpp
+@@ -10,7 +10,7 @@
+ #include "core/fxcrt/fx_system.h"
+ 
+ #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_APPLE) || defined(OS_ASMJS)
++    defined(OS_APPLE) || defined(OS_ASMJS) || defined(OS_BSD)
+ #include <sys/time.h>
+ #include <time.h>
+ #endif

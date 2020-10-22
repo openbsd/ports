@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_net_system_network_context_manager_cc,v 1.16 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_net_system_network_context_manager_cc,v 1.17 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/net/system_network_context_manager.cc
 --- chrome/browser/net/system_network_context_manager.cc.orig
@@ -8,7 +8,7 @@ Index: chrome/browser/net/system_network_context_manager.cc
  #endif  // defined(OS_CHROMEOS)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  #include "chrome/common/chrome_paths_internal.h"
  #include "chrome/grit/chromium_strings.h"
  #include "ui/base/l10n/l10n_util.h"
@@ -16,35 +16,35 @@ Index: chrome/browser/net/system_network_context_manager.cc
    auth_dynamic_params->enable_negotiate_port =
        local_state->GetBoolean(prefs::kEnableAuthNegotiatePort);
  
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
    auth_dynamic_params->delegate_by_kdc_policy =
        local_state->GetBoolean(prefs::kAuthNegotiateDelegateByKdcPolicy);
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
-@@ -355,7 +355,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+ #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
+@@ -356,7 +356,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kEnableAuthNegotiatePort,
                               auth_pref_callback);
  
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
    pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
                               auth_pref_callback);
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
-@@ -405,7 +405,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
-   registry->RegisterStringPref(prefs::kAuthServerWhitelist, std::string());
-   registry->RegisterStringPref(prefs::kAuthNegotiateDelegateWhitelist,
+ #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
+@@ -406,7 +406,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+   registry->RegisterStringPref(prefs::kAuthServerAllowlist, std::string());
+   registry->RegisterStringPref(prefs::kAuthNegotiateDelegateAllowlist,
                                 std::string());
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
-@@ -491,7 +491,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+ #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
+@@ -492,7 +492,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
    // NetworkContext is created, but before anything has the chance to use it.
    stub_resolver_config_reader_.UpdateNetworkService(true /* record_metrics */);
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    const base::CommandLine& command_line =
        *base::CommandLine::ForCurrentProcess();
  

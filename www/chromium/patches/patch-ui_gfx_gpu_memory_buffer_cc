@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_gpu_memory_buffer_cc,v 1.7 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-ui_gfx_gpu_memory_buffer_cc,v 1.8 2020/10/22 13:52:55 robert Exp $
 
 Index: ui/gfx/gpu_memory_buffer.cc
 --- ui/gfx/gpu_memory_buffer.cc.orig
@@ -7,8 +7,8 @@ Index: ui/gfx/gpu_memory_buffer.cc
    handle.region = region.Duplicate();
    handle.offset = offset;
    handle.stride = stride;
--#if defined(OS_LINUX) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    handle.native_pixmap_handle = CloneHandleForIPC(native_pixmap_handle);
- #elif defined(OS_MACOSX) && !defined(OS_IOS)
+ #elif defined(OS_MAC)
    NOTIMPLEMENTED();

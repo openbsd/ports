@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_service_cloud_print_print_system_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-chrome_service_cloud_print_print_system_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: chrome/service/cloud_print/print_system.cc
 --- chrome/service/cloud_print/print_system.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/service/cloud_print/print_system.cc
    return base::GenerateGUID();
  }
  
--#if defined(OS_LINUX) && !defined(USE_CUPS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(USE_CUPS)
+-#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(USE_CUPS)
++#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && !defined(USE_CUPS)
  scoped_refptr<PrintSystem> PrintSystem::CreateInstance(
      const base::DictionaryValue*) {
    return nullptr;

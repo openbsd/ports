@@ -1,18 +1,14 @@
-$OpenBSD: patch-ui_base_ui_base_features_h,v 1.12 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_h,v 1.13 2020/10/22 13:52:55 robert Exp $
 
 Index: ui/base/ui_base_features.h
 --- ui/base/ui_base_features.h.orig
 +++ ui/base/ui_base_features.h
-@@ -60,10 +60,10 @@ COMPONENT_EXPORT(UI_BASE_FEATURES) extern const base::
- COMPONENT_EXPORT(UI_BASE_FEATURES) bool IsUsingWMPointerForTouch();
+@@ -61,7 +61,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES) bool IsUsingWMPoint
  #endif  // defined(OS_WIN)
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  extern const base::Feature kDirectManipulationStylus;
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- 
- // Used to enable forced colors mode for web content.
- COMPONENT_EXPORT(UI_BASE_FEATURES) extern const base::Feature kForcedColors;
+ #endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||

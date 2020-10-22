@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_editing_editing_behavior_cc,v 1.2 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_editing_editing_behavior_cc,v 1.3 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/blink/renderer/core/editing/editing_behavior.cc
 --- third_party/blink/renderer/core/editing/editing_behavior.cc.orig
@@ -7,8 +7,8 @@ Index: third_party/blink/renderer/core/editing/editing_behavior.cc
    // unexpected behaviour
    if (ch < ' ')
      return false;
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // According to XKB map no keyboard combinations with ctrl key are mapped to
    // printable characters, however we need the filter as the DomKey/text could
    // contain printable characters.

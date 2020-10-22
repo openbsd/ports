@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_content_settings_core_browser_website_settings_registry_cc,v 1.6 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-components_content_settings_core_browser_website_settings_registry_cc,v 1.7 2020/10/22 13:52:54 robert Exp $
 Index: components/content_settings/core/browser/website_settings_registry.cc
 --- components/content_settings/core/browser/website_settings_registry.cc.orig
 +++ components/content_settings/core/browser/website_settings_registry.cc
@@ -10,4 +10,4 @@ Index: components/content_settings/core/browser/website_settings_registry.cc
 +#elif (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
    if (!(platform & PLATFORM_LINUX))
      return nullptr;
- #elif defined(OS_MACOSX) && !defined(OS_IOS)
+ #elif defined(OS_MAC)

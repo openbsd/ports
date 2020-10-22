@@ -1,27 +1,27 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.42 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.43 2020/10/22 13:52:54 robert Exp $
 
 Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 --- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
-@@ -48,7 +48,7 @@
+@@ -49,7 +49,7 @@
  #include "ui/views/window/vector_icons/vector_icons.h"
  #include "ui/views/window/window_shape.h"
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "ui/views/controls/menu/menu_runner.h"
  #endif
  
-@@ -349,7 +349,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
+@@ -346,7 +346,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
    } else if (sender == close_button_) {
      frame()->CloseWithReason(views::Widget::ClosedReason::kCloseButtonClicked);
    } else if (sender == window_icon_) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
      // TODO(pbos): Figure out / document why this is Linux only. This needs a
      // comment.
      views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
-@@ -478,7 +478,7 @@ bool OpaqueBrowserFrameView::EverHasVisibleBackgroundT
+@@ -475,7 +475,7 @@ bool OpaqueBrowserFrameView::EverHasVisibleBackgroundT
  
  OpaqueBrowserFrameView::FrameButtonStyle
  OpaqueBrowserFrameView::GetFrameButtonStyle() const {

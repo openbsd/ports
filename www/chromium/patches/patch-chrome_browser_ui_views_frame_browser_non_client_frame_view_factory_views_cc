@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_non_client_frame_view_factory_views_cc,v 1.4 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_non_client_frame_view_factory_views_cc,v 1.5 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
 --- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig
@@ -13,7 +13,7 @@ Index: chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views
  #include "chrome/browser/ui/views/frame/desktop_linux_browser_frame_view_layout.h"
  #include "ui/views/linux_ui/linux_ui.h"
 @@ -27,7 +27,7 @@ namespace {
- OpaqueBrowserFrameView* CreateOpaqueBrowserFrameView(
+ std::unique_ptr<OpaqueBrowserFrameView> CreateOpaqueBrowserFrameView(
      BrowserFrame* frame,
      BrowserView* browser_view) {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

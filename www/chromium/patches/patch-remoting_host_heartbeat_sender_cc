@@ -1,0 +1,14 @@
+$OpenBSD: patch-remoting_host_heartbeat_sender_cc,v 1.1 2020/10/22 13:52:54 robert Exp $
+
+Index: remoting/host/heartbeat_sender.cc
+--- remoting/host/heartbeat_sender.cc.orig
++++ remoting/host/heartbeat_sender.cc
+@@ -394,7 +394,7 @@ HeartbeatSender::CreateHeartbeatRequest() {
+   heartbeat->set_is_initial_heartbeat(!initial_heartbeat_sent_);
+   // Only set the hostname if the user's email is @google.com and they are using
+   // a Linux OS.
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   if (is_googler_) {
+     heartbeat->set_hostname(net::GetHostName());
+   }

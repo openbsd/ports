@@ -1,32 +1,32 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_metrics_cc,v 1.3 2019/08/01 08:32:00 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_metrics_cc,v 1.4 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_metrics.cc
 --- third_party/blink/renderer/platform/fonts/font_metrics.cc.orig
 +++ third_party/blink/renderer/platform/fonts/font_metrics.cc
-@@ -38,7 +38,7 @@
- 
+@@ -39,7 +39,7 @@
  namespace blink {
  
--#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
  // This is the largest VDMX table which we'll try to load and parse.
  static const size_t kMaxVDMXTableSize = 1024 * 1024;  // 1 MB
  #endif
-@@ -60,7 +60,7 @@ void FontMetrics::AscentDescentWithHacks(
-   int vdmx_ascent = 0, vdmx_descent = 0;
+@@ -69,7 +69,7 @@ void FontMetrics::AscentDescentWithHacks(
    bool is_vdmx_valid = false;
  
--#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
    // Manually digging up VDMX metrics is only applicable when bytecode hinting
    // using FreeType.  With DirectWrite or CoreText, no bytecode hinting is ever
    // done.  This code should be pushed into FreeType (hinted font metrics).
-@@ -106,7 +106,7 @@ void FontMetrics::AscentDescentWithHacks(
-       visual_overflow_inflation_for_ascent = 1;
+@@ -117,7 +117,7 @@ void FontMetrics::AscentDescentWithHacks(
      if (descent < metrics.fDescent) {
        visual_overflow_inflation_for_descent = 1;
--#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
        // When subpixel positioning is enabled, if the descent is rounded down,
        // the descent part of the glyph may be truncated when displayed in a
        // 'overflow: hidden' container.  To avoid that, borrow 1 unit from the

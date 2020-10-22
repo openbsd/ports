@@ -1,39 +1,9 @@
-$OpenBSD: patch-third_party_nasm_config_config-linux_h,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-third_party_nasm_config_config-linux_h,v 1.2 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/nasm/config/config-linux.h
 --- third_party/nasm/config/config-linux.h.orig
 +++ third_party/nasm/config/config-linux.h
-@@ -14,7 +14,7 @@
- /* #undef CFLAG_FFUNCTION_SECTIONS */
- 
- /* Define to 1 if compiled with the `-fgnu89-inline' compiler flag */
--/* #undef CFLAG_FGNU89_INLINE */
-+#define CFLAG_FGNU89_INLINE 1
- 
- /* Define to 1 if compiled with the `-flto' compiler flag */
- /* #undef CFLAG_FLTO */
-@@ -89,17 +89,17 @@
- 
- /* Define to 1 if compiled with the `-Werror=strict-prototypes' compiler flag
-    */
--#define CFLAG_WERROR_STRICT_PROTOTYPES 1
-+/* #undef CFLAG_WERROR_STRICT_PROTOTYPES */
- 
- /* Define to 1 if compiled with the `-Werror=trigraphs' compiler flag */
- #define CFLAG_WERROR_TRIGRAPHS 1
- 
- /* Define to 1 if compiled with the `-Werror=unknown-warning-option' compiler
-    flag */
--#define CFLAG_WERROR_UNKNOWN_WARNING_OPTION 1
-+/* #undef CFLAG_WERROR_UNKNOWN_WARNING_OPTION */
- 
- /* Define to 1 if compiled with the `-Werror=vla' compiler flag */
--#define CFLAG_WERROR_VLA 1
-+/* #undef CFLAG_WERROR_VLA */
- 
- /* Define to 1 if compiled with the `-Wlong-long' compiler flag */
- #define CFLAG_WLONG_LONG 1
-@@ -117,7 +117,7 @@
+@@ -139,7 +139,7 @@
  #define HAVE_ACCESS 1
  
  /* Define to 1 if you have the `canonicalize_file_name' function. */
@@ -42,30 +12,21 @@ Index: third_party/nasm/config/config-linux.h
  
  /* Define to 1 if you have the `cpu_to_le16' intrinsic function. */
  /* #undef HAVE_CPU_TO_LE16 */
-@@ -183,10 +183,10 @@
+@@ -160,7 +160,7 @@
  
- /* Define to 1 if your compiler supports __attribute__((alloc_size)) on
-    functions */
--#define HAVE_FUNC_ATTRIBUTE_ALLOC_SIZE 1
-+/* #undef HAVE_FUNC_ATTRIBUTE_ALLOC_SIZE */
+ /* Define to 1 if you have the declaration of `strlcpy', and to 0 if you
+    don't. */
+-#define HAVE_DECL_STRLCPY 0
++#define HAVE_DECL_STRLCPY 1
  
- /* Define to 1 if your compiler supports __attribute__((cold)) on functions */
--#define HAVE_FUNC_ATTRIBUTE_COLD 1
-+/* #undef HAVE_FUNC_ATTRIBUTE_COLD */
+ /* Define to 1 if you have the declaration of `strncasecmp', and to 0 if you
+    don't. */
+@@ -327,16 +327,16 @@
+ #define HAVE_ISASCII 1
  
- /* Define to 1 if your compiler supports __attribute__((const)) on functions
-    */
-@@ -213,7 +213,7 @@
- 
- /* Define to 1 if your compiler supports __attribute__((returns_nonnull)) on
-    functions */
--#define HAVE_FUNC_ATTRIBUTE_RETURNS_NONNULL 1
-+/* #undef HAVE_FUNC_ATTRIBUTE_RETURNS_NONNULL */
- 
- /* Define to 1 if your compiler supports __attribute__((sentinel)) on
-    functions */
-@@ -247,7 +247,7 @@
- /* #undef HAVE_IO_H */
+ /* Define to 1 if you have the `iscntrl' function. */
+-/* #undef HAVE_ISCNTRL */
++#define HAVE_ISCNTRL 1
  
  /* Define to 1 if you have the <machine/endian.h> header file. */
 -/* #undef HAVE_MACHINE_ENDIAN_H */
@@ -73,25 +34,23 @@ Index: third_party/nasm/config/config-linux.h
  
  /* Define to 1 if you have the <memory.h> header file. */
  #define HAVE_MEMORY_H 1
-@@ -271,7 +271,7 @@
- #define HAVE_STDBOOL_H 1
+ 
+ /* Define to 1 if you have the `mempcpy' function. */
+-#define HAVE_MEMPCPY 1
++/* #undef HAVE_MEMPCPY */
+ 
+ /* Define to 1 if you have a working `mmap' system call. */
+ #define HAVE_MMAP 1
+@@ -357,7 +357,7 @@
+ #define HAVE_STDARG_H 1
+ 
+ /* Define to 1 if stdbool.h conforms to C99. */
+-/* #undef HAVE_STDBOOL_H */
++#define HAVE_STDBOOL_H 1
  
  /* Define to 1 if your compiler supports C99 extern inline */
--#define HAVE_STDC_INLINE 1
-+/* #undef HAVE_STDC_INLINE */
- 
- /* Define to 1 if you have the <stdint.h> header file. */
- #define HAVE_STDINT_H 1
-@@ -280,7 +280,7 @@
- #define HAVE_STDLIB_H 1
- 
- /* Define to 1 if you have the <stdnoreturn.h> header file. */
--#define HAVE_STDNORETURN_H 1
-+/* #undef HAVE_STDNORETURN_H */
- 
- /* Define to 1 if you have the `strcasecmp' function. */
- #define HAVE_STRCASECMP 1
-@@ -295,7 +295,7 @@
+ #define HAVE_STDC_INLINE 1
+@@ -384,7 +384,7 @@
  #define HAVE_STRING_H 1
  
  /* Define to 1 if you have the `strlcpy' function. */
@@ -100,7 +59,7 @@ Index: third_party/nasm/config/config-linux.h
  
  /* Define to 1 if you have the `strncasecmp' function. */
  #define HAVE_STRNCASECMP 1
-@@ -322,7 +322,7 @@
+@@ -411,7 +411,7 @@
  #define HAVE_SYSCONF 1
  
  /* Define to 1 if you have the <sys/endian.h> header file. */
@@ -109,8 +68,8 @@ Index: third_party/nasm/config/config-linux.h
  
  /* Define to 1 if you have the <sys/mman.h> header file. */
  #define HAVE_SYS_MMAN_H 1
-@@ -397,22 +397,22 @@
- /* #undef HAVE__VSNPRINTF */
+@@ -486,13 +486,13 @@
+ /* #undef HAVE__STATI64 */
  
  /* Define to 1 if you have the `__bswap_16' intrinsic function. */
 -#define HAVE___BSWAP_16 1
@@ -125,16 +84,22 @@ Index: third_party/nasm/config/config-linux.h
 +/* #undef HAVE___BSWAP_64 */
  
  /* Define to 1 if you have the `__builtin_bswap16' intrinsic function. */
--#define HAVE___BUILTIN_BSWAP16 1
-+/* #undef HAVE___BUILTIN_BSWAP16 */
+ #define HAVE___BUILTIN_BSWAP16 1
+@@ -620,7 +620,7 @@
+ /* Define to the equivalent of the C99 'restrict' keyword, or to
+    nothing if this is not supported.  Do not define if restrict is
+    supported directly.  */
+-#define restrict __restrict
++#define restrict __restrict__
+ /* Work around a bug in Sun C++: it does not support _Restrict or
+    __restrict__, even though the corresponding Sun C compiler ends up with
+    "#define restrict _Restrict" or "#define restrict __restrict__" in the
+@@ -637,7 +637,7 @@
+ /* Define if your snprintf function is not named snprintf. */
+ /* #undef snprintf */
  
- /* Define to 1 if you have the `__builtin_bswap32' intrinsic function. */
--#define HAVE___BUILTIN_BSWAP32 1
-+/* #undef HAVE___BUILTIN_BSWAP32 */
+-/* Define if your typeof operator is not named typeof. */
++/* Define if your typeof operator is not named `typeof'. */
+ #define typeof __typeof
  
- /* Define to 1 if you have the `__builtin_bswap64' intrinsic function. */
--#define HAVE___BUILTIN_BSWAP64 1
-+/* #undef HAVE___BUILTIN_BSWAP64 */
- 
- /* Define to 1 if you have the `__builtin_clz' intrinsic function. */
- #define HAVE___BUILTIN_CLZ 1
+ /* Define to the type of an unsigned integer type wide enough to hold a

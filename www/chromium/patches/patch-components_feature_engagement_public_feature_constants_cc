@@ -1,12 +1,12 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.6 2020/09/22 11:47:41 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.7 2020/10/22 13:52:54 robert Exp $
 
 Index: components/feature_engagement/public/feature_constants.cc
 --- components/feature_engagement/public/feature_constants.cc.orig
 +++ components/feature_engagement/public/feature_constants.cc
-@@ -15,7 +15,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
+@@ -13,7 +13,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
                                       base::FEATURE_DISABLED_BY_DEFAULT};
  
- #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  const base::Feature kIPHDesktopTabGroupsNewGroupFeature{

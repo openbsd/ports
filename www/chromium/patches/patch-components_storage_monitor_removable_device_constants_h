@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_storage_monitor_removable_device_constants_h,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-components_storage_monitor_removable_device_constants_h,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: components/storage_monitor/removable_device_constants.h
 --- components/storage_monitor/removable_device_constants.h.orig
@@ -7,8 +7,8 @@ Index: components/storage_monitor/removable_device_constants.h
  extern const char kFSUniqueIdPrefix[];
  extern const char kVendorModelSerialPrefix[];
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  extern const char kVendorModelVolumeStoragePrefix[];
  #endif
  

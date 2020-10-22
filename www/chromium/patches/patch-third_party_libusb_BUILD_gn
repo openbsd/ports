@@ -1,4 +1,5 @@
-$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.6 2020/01/06 16:05:06 robert Exp $
+$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.7 2020/10/22 13:52:55 robert Exp $
+
 Index: third_party/libusb/BUILD.gn
 --- third_party/libusb/BUILD.gn.orig
 +++ third_party/libusb/BUILD.gn
@@ -15,8 +16,8 @@ Index: third_party/libusb/BUILD.gn
      ]
    }
  
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
@@ -41,8 +42,8 @@ Index: third_party/libusb/BUILD.gn
      deps += [ "//build/linux/libudev" ]
    }
  
--  if (is_linux && !use_udev) {
-+  if (is_linux && !use_udev && !is_openbsd) {
+-  if ((is_linux || is_chromeos) && !use_udev) {
++  if ((is_linux || is_chromeos) && !use_udev && !is_openbsd) {
      sources += [ "src/libusb/os/linux_netlink.c" ]
      defines += [ "HAVE_LINUX_NETLINK_H" ]
    }

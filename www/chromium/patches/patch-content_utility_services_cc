@@ -1,0 +1,23 @@
+$OpenBSD: patch-content_utility_services_cc,v 1.1 2020/10/22 13:52:54 robert Exp $
+
+Index: content/utility/services.cc
+--- content/utility/services.cc.orig
++++ content/utility/services.cc
+@@ -56,7 +56,7 @@ extern sandbox::TargetServices* g_utility_target_servi
+ #endif  // defined(OS_WIN)
+ #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "sandbox/linux/services/libc_interceptor.h"
+ #include "sandbox/policy/sandbox_type.h"
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
+@@ -156,7 +156,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+       << "task_policy_set TASK_QOS_POLICY";
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   auto* command_line = base::CommandLine::ForCurrentProcess();
+   if (sandbox::policy::SandboxTypeFromCommandLine(*command_line) ==
+       sandbox::policy::SandboxType::kNoSandbox) {

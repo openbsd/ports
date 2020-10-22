@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_media_cdm_host_file_path_cc,v 1.5 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_common_media_cdm_host_file_path_cc,v 1.6 2020/10/22 13:52:54 robert Exp $
 
 Index: chrome/common/media/cdm_host_file_path.cc
 --- chrome/common/media/cdm_host_file_path.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/common/media/cdm_host_file_path.cc
    cdm_host_file_paths->emplace_back(chrome_framework_path,
                                      chrome_framework_sig_path);
  
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
    base::FilePath chrome_exe_dir;
    if (!base::PathService::Get(base::DIR_EXE, &chrome_exe_dir))

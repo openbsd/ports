@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_native_pixmap_handle_cc,v 1.7 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-ui_gfx_native_pixmap_handle_cc,v 1.8 2020/10/22 13:52:55 robert Exp $
 
 Index: ui/gfx/native_pixmap_handle.cc
 --- ui/gfx/native_pixmap_handle.cc.orig
@@ -7,8 +7,8 @@ Index: ui/gfx/native_pixmap_handle.cc
  #include "base/logging.h"
  #include "build/build_config.h"
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include <drm_fourcc.h>
  #include "base/posix/eintr_wrapper.h"
  #endif
@@ -22,8 +22,8 @@ Index: ui/gfx/native_pixmap_handle.cc
 +
  namespace gfx {
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  static_assert(NativePixmapHandle::kNoModifier == DRM_FORMAT_MOD_INVALID,
                "gfx::NativePixmapHandle::kNoModifier should be an alias for"
                "DRM_FORMAT_MOD_INVALID");
@@ -31,8 +31,8 @@ Index: ui/gfx/native_pixmap_handle.cc
  NativePixmapPlane::NativePixmapPlane(int stride,
                                       int offset,
                                       uint64_t size
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
                                       ,
                                       base::ScopedFD fd
  #elif defined(OS_FUCHSIA)
@@ -40,8 +40,8 @@ Index: ui/gfx/native_pixmap_handle.cc
      : stride(stride),
        offset(offset),
        size(size)
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
        ,
        fd(std::move(fd))
  #elif defined(OS_FUCHSIA)
@@ -49,8 +49,8 @@ Index: ui/gfx/native_pixmap_handle.cc
  NativePixmapHandle CloneHandleForIPC(const NativePixmapHandle& handle) {
    NativePixmapHandle clone;
    for (auto& plane : handle.planes) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
      DCHECK(plane.fd.is_valid());
      base::ScopedFD fd_dup(HANDLE_EINTR(dup(plane.fd.get())));
      if (!fd_dup.is_valid()) {
@@ -58,8 +58,8 @@ Index: ui/gfx/native_pixmap_handle.cc
  #endif
    }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    clone.modifier = handle.modifier;
  #endif
  

@@ -1,14 +1,14 @@
-$OpenBSD: patch-third_party_blink_renderer_core_inspector_inspector_memory_agent_cc,v 1.4 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_inspector_inspector_memory_agent_cc,v 1.5 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/blink/renderer/core/inspector/inspector_memory_agent.cc
 --- third_party/blink/renderer/core/inspector/inspector_memory_agent.cc.orig
 +++ third_party/blink/renderer/core/inspector/inspector_memory_agent.cc
-@@ -185,7 +185,7 @@ InspectorMemoryAgent::GetSamplingProfileById(uint32_t 
+@@ -186,7 +186,7 @@ InspectorMemoryAgent::GetSamplingProfileById(uint32_t 
  
  Vector<String> InspectorMemoryAgent::Symbolize(
      const WebVector<void*>& addresses) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // TODO(alph): Move symbolization to the client.
    Vector<void*> addresses_to_symbolize;
    for (size_t i = 0; i < addresses.size(); i++) {

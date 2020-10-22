@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.11 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.12 2020/10/22 13:52:55 robert Exp $
 
 Index: ui/gl/sync_control_vsync_provider.cc
 --- ui/gl/sync_control_vsync_provider.cc.orig
@@ -7,8 +7,8 @@ Index: ui/gl/sync_control_vsync_provider.cc
  #include "base/trace_event/trace_event.h"
  #include "build/build_config.h"
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  // These constants define a reasonable range for a calculated refresh interval.
  // Calculating refreshes out of this range will be considered a fatal error.
  const int64_t kMinVsyncIntervalUs = base::Time::kMicrosecondsPerSecond / 400;
@@ -16,8 +16,8 @@ Index: ui/gl/sync_control_vsync_provider.cc
  namespace gl {
  
  SyncControlVSyncProvider::SyncControlVSyncProvider() : gfx::VSyncProvider() {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // On platforms where we can't get an accurate reading on the refresh
    // rate we fall back to the assumption that we're displaying 60 frames
    // per second.
@@ -25,8 +25,8 @@ Index: ui/gl/sync_control_vsync_provider.cc
      base::TimeTicks* timebase_out,
      base::TimeDelta* interval_out) {
    TRACE_EVENT0("gpu", "SyncControlVSyncProvider::GetVSyncParameters");
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // The actual clock used for the system time returned by glXGetSyncValuesOML
    // is unspecified. In practice, the clock used is likely to be either
    // CLOCK_REALTIME or CLOCK_MONOTONIC, so we compare the returned time to the
@@ -34,8 +34,8 @@ Index: ui/gl/sync_control_vsync_provider.cc
  }
  
  bool SyncControlVSyncProvider::SupportGetVSyncParametersIfAvailable() const {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    return true;
  #else
    return false;

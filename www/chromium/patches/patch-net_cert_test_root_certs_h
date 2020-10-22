@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_cert_test_root_certs_h,v 1.1 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-net_cert_test_root_certs_h,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: net/cert/test_root_certs.h
 --- net/cert/test_root_certs.h.orig
@@ -13,7 +13,7 @@ Index: net/cert/test_root_certs.h
  #endif
  
 @@ -93,12 +93,12 @@ class NET_EXPORT TestRootCerts {
- #elif defined(OS_MACOSX)
+ #elif defined(OS_APPLE)
    base::ScopedCFTypeRef<CFMutableArrayRef> temporary_roots_;
    TrustStoreInMemory test_trust_store_;
 -#elif defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS)

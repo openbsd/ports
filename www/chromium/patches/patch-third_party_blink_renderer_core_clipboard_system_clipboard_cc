@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_blink_renderer_core_clipboard_system_clipboard_cc,v 1.1 2020/10/22 13:52:55 robert Exp $
+
+Index: third_party/blink/renderer/core/clipboard/system_clipboard.cc
+--- third_party/blink/renderer/core/clipboard/system_clipboard.cc.orig
++++ third_party/blink/renderer/core/clipboard/system_clipboard.cc
+@@ -41,7 +41,7 @@ SystemClipboard::SystemClipboard(LocalFrame* frame)
+   frame->GetBrowserInterfaceBroker().GetInterface(
+       clipboard_.BindNewPipeAndPassReceiver(
+           frame->GetTaskRunner(TaskType::kUserInteraction)));
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   is_selection_buffer_available_ =
+       frame->GetSettings()->GetSelectionClipboardBufferAvailable();
+ #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)

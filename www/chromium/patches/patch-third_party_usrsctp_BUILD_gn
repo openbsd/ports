@@ -1,4 +1,5 @@
-$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.4 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.5 2020/10/22 13:52:55 robert Exp $
+
 Index: third_party/usrsctp/BUILD.gn
 --- third_party/usrsctp/BUILD.gn.orig
 +++ third_party/usrsctp/BUILD.gn
@@ -6,8 +7,8 @@ Index: third_party/usrsctp/BUILD.gn
      "-UINET6",
    ]
  
--  if (is_linux || is_android) {
-+  if ((is_linux && !is_openbsd) || is_android) {
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux || is_chromeos || is_android) && !is_openbsd) {
      defines += [
        "__Userspace_os_Linux",
 +      "_GNU_SOURCE",
@@ -17,4 +18,4 @@ Index: third_party/usrsctp/BUILD.gn
 +      "__Userspace_os_OpenBSD",
        "_GNU_SOURCE",
      ]
-   } else if (is_mac || is_ios) {
+   } else if (is_apple) {

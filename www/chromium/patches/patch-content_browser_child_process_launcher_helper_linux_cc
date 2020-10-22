@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.14 2020/09/22 11:47:41 robert Exp $
+$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.15 2020/10/22 13:52:54 robert Exp $
 
 Index: content/browser/child_process_launcher_helper_linux.cc
 --- content/browser/child_process_launcher_helper_linux.cc.orig
@@ -10,7 +10,7 @@ Index: content/browser/child_process_launcher_helper_linux.cc
 +#if !defined(OS_BSD)
  #include "content/public/common/zygote/zygote_handle.h"
 +#endif
- #include "services/service_manager/sandbox/linux/sandbox_linux.h"
+ #include "sandbox/policy/linux/sandbox_linux.h"
  
  namespace content {
 @@ -68,6 +70,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr

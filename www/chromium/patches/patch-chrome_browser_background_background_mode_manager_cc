@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_background_background_mode_manager_cc,v 1.5 2020/07/17 20:23:07 robert Exp $
+$OpenBSD: patch-chrome_browser_background_background_mode_manager_cc,v 1.6 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/background/background_mode_manager.cc
 --- chrome/browser/background/background_mode_manager.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/browser/background/background_mode_manager.cc
      return gfx::ImageSkia();
  
    return family->CreateExact(size).AsImageSkia();
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    return *ui::ResourceBundle::GetSharedInstance().GetImageSkiaNamed(
        IDR_PRODUCT_LOGO_128);
- #elif defined(OS_MACOSX)
+ #elif defined(OS_MAC)

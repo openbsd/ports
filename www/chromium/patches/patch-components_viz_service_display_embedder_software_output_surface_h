@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_viz_service_display_embedder_software_output_surface_h,v 1.1 2020/06/23 06:32:53 robert Exp $
+$OpenBSD: patch-components_viz_service_display_embedder_software_output_surface_h,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: components/viz/service/display_embedder/software_output_surface.h
 --- components/viz/service/display_embedder/software_output_surface.h.orig
 +++ components/viz/service/display_embedder/software_output_surface.h
-@@ -49,7 +49,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -48,7 +48,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
        UpdateVSyncParametersCallback callback) override;
    void SetDisplayTransformHint(gfx::OverlayTransform transform) override {}
    gfx::OverlayTransform GetDisplayTransform() override;
@@ -12,7 +12,7 @@ Index: components/viz/service/display_embedder/software_output_surface.h
    void SetNeedsSwapSizeNotifications(
        bool needs_swap_size_notifications) override;
  #endif
-@@ -72,7 +72,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -71,7 +71,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
    std::queue<std::vector<ui::LatencyInfo>> stored_latency_info_;
    ui::LatencyTracker latency_tracker_;
  

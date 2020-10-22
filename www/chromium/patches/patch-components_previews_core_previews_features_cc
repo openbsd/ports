@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_previews_core_previews_features_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-components_previews_core_previews_features_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: components/previews/core/previews_features.cc
 --- components/previews/core/previews_features.cc.orig
@@ -7,8 +7,8 @@ Index: components/previews/core/previews_features.cc
  // are enabled are controlled by other features.
  const base::Feature kPreviews {
    "Previews",
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
        // Previews allowed for Android (but also allow on Linux for dev/debug).
        base::FEATURE_ENABLED_BY_DEFAULT
- #else   // !defined(OS_ANDROID) || defined(OS_LINUX)
+ #else   // !defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)

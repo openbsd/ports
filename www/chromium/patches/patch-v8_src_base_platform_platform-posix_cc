@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.26 2020/09/22 11:47:43 robert Exp $
+$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.27 2020/10/22 13:52:55 robert Exp $
 
 Index: v8/src/base/platform/platform-posix.cc
 --- v8/src/base/platform/platform-posix.cc.orig
 +++ v8/src/base/platform/platform-posix.cc
-@@ -433,7 +433,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
+@@ -457,7 +457,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
  
  // static
  bool OS::HasLazyCommits() {
@@ -12,7 +12,7 @@ Index: v8/src/base/platform/platform-posix.cc
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -971,7 +971,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -995,7 +995,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(_AIX) && \

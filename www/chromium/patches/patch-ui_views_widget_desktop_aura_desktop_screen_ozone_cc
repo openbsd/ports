@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_screen_ozone_cc,v 1.1 2020/09/22 11:47:43 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_screen_ozone_cc,v 1.2 2020/10/22 13:52:55 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_screen_ozone.cc
 --- ui/views/widget/desktop_aura/desktop_screen_ozone.cc.orig
@@ -7,8 +7,8 @@ Index: ui/views/widget/desktop_aura/desktop_screen_ozone.cc
  // To avoid multiple definitions when use_x11 && use_ozone is true, disable this
  // factory method for OS_LINUX as Linux has a factory method that decides what
  // screen to use based on IsUsingOzonePlatform feature flag.
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
+-#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
  display::Screen* CreateDesktopScreen() {
    return new DesktopScreenOzone();
  }

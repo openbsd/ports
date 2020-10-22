@@ -1,14 +1,14 @@
-$OpenBSD: patch-headless_lib_browser_headless_browser_main_parts_h,v 1.1 2020/09/22 11:47:41 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_browser_main_parts_h,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: headless/lib/browser/headless_browser_main_parts.h
 --- headless/lib/browser/headless_browser_main_parts.h.orig
 +++ headless/lib/browser/headless_browser_main_parts.h
 @@ -32,7 +32,7 @@ class HeadlessBrowserMainParts : public content::Brows
- #if defined(OS_MACOSX)
+ #if defined(OS_MAC)
    void PreMainMessageLoopStart() override;
  #endif
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    void PostMainMessageLoopStart() override;
  #endif
    void QuitMainMessageLoop();

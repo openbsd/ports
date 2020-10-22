@@ -1,4 +1,5 @@
-$OpenBSD: patch-chrome_browser_custom_handlers_protocol_handler_registry_cc,v 1.15 2020/07/17 20:23:07 robert Exp $
+$OpenBSD: patch-chrome_browser_custom_handlers_protocol_handler_registry_cc,v 1.16 2020/10/22 13:52:53 robert Exp $
+
 Index: chrome/browser/custom_handlers/protocol_handler_registry.cc
 --- chrome/browser/custom_handlers/protocol_handler_registry.cc.orig
 +++ chrome/browser/custom_handlers/protocol_handler_registry.cc
@@ -6,8 +7,8 @@ Index: chrome/browser/custom_handlers/protocol_handler_registry.cc
  // If true default protocol handlers will be removed if the OS level
  // registration for a protocol is no longer Chrome.
  bool ShouldRemoveHandlersNotInOS() {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // We don't do this on Linux as the OS registration there is not reliable,
    // and Chrome OS doesn't have any notion of OS registration.
    // TODO(benwells): When Linux support is more reliable remove this

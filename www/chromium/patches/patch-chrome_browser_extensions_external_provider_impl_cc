@@ -1,23 +1,23 @@
-$OpenBSD: patch-chrome_browser_extensions_external_provider_impl_cc,v 1.19 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_external_provider_impl_cc,v 1.20 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/extensions/external_provider_impl.cc
 --- chrome/browser/extensions/external_provider_impl.cc.orig
 +++ chrome/browser/extensions/external_provider_impl.cc
-@@ -760,7 +760,7 @@ void ExternalProviderImpl::CreateExternalProviders(
+@@ -775,7 +775,7 @@ void ExternalProviderImpl::CreateExternalProviders(
    }
  #endif
    if (!profile->GetPrefs()->GetBoolean(pref_names::kBlockExternalExtensions)) {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
      provider_list->push_back(std::make_unique<ExternalProviderImpl>(
          service,
          base::MakeRefCounted<ExternalPrefLoader>(
-@@ -787,7 +787,7 @@ void ExternalProviderImpl::CreateExternalProviders(
+@@ -802,7 +802,7 @@ void ExternalProviderImpl::CreateExternalProviders(
            bundled_extension_creation_flags));
  
        // Define a per-user source of external extensions.
--#if defined(OS_MACOSX) || (defined(OS_LINUX) && BUILDFLAG(CHROMIUM_BRANDING))
-+#if defined(OS_MACOSX) || ((defined(OS_BSD) || defined(OS_LINUX)) && BUILDFLAG(CHROMIUM_BRANDING))
+-#if defined(OS_MAC) || ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && \
++#if defined(OS_MAC) || ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && \
+                         BUILDFLAG(CHROMIUM_BRANDING))
        provider_list->push_back(std::make_unique<ExternalProviderImpl>(
            service,
-           base::MakeRefCounted<ExternalPrefLoader>(

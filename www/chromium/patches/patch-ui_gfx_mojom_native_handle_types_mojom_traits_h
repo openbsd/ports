@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_mojom_native_handle_types_mojom_traits_h,v 1.1 2020/05/29 20:03:25 robert Exp $
+$OpenBSD: patch-ui_gfx_mojom_native_handle_types_mojom_traits_h,v 1.2 2020/10/22 13:52:55 robert Exp $
 
 Index: ui/gfx/mojom/native_handle_types_mojom_traits.h
 --- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig
@@ -7,15 +7,15 @@ Index: ui/gfx/mojom/native_handle_types_mojom_traits.h
  #include "mojo/public/cpp/system/platform_handle.h"
  #include "ui/gfx/mojom/native_handle_types.mojom-shared.h"
  
--#if defined(OS_LINUX) || defined(USE_OZONE)
-+#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE) || defined(OS_BSD)
  #include "ui/gfx/native_pixmap_handle.h"
  #endif
  
  namespace mojo {
  
--#if defined(OS_LINUX) || defined(USE_OZONE)
-+#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE) || defined(OS_BSD)
  template <>
  struct COMPONENT_EXPORT(GFX_NATIVE_HANDLE_TYPES_SHARED_MOJOM_TRAITS)
      StructTraits<gfx::mojom::NativePixmapPlaneDataView,
@@ -23,8 +23,8 @@ Index: ui/gfx/mojom/native_handle_types_mojom_traits.h
      return pixmap_handle.planes;
    }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    static uint64_t modifier(const gfx::NativePixmapHandle& pixmap_handle) {
      return pixmap_handle.modifier;
    }

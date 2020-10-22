@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.10 2020/09/22 11:47:39 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.11 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/app/chrome_main.cc
 --- chrome/app/chrome_main.cc.orig
 +++ chrome/app/chrome_main.cc
 @@ -109,7 +109,7 @@ int ChromeMain(int argc, const char** argv) {
-   MainThreadStackSamplingProfiler scoped_sampling_profiler;
  
    // Chrome-specific process modes.
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
    if (command_line->HasSwitch(switches::kHeadless)) {
      return headless::HeadlessShellMain(params);
    }

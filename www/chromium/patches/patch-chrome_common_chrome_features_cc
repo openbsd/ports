@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.26 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.27 2020/10/22 13:52:54 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -70,7 +70,7 @@ const base::Feature kAsyncDns {
+@@ -83,7 +83,7 @@ const base::Feature kAsyncDns {
  #endif
  };
  
--#if defined(OS_WIN) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.

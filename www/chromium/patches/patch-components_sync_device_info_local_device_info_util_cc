@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_sync_device_info_local_device_info_util_cc,v 1.3 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-components_sync_device_info_local_device_info_util_cc,v 1.4 2020/10/22 13:52:54 robert Exp $
 
 Index: components/sync_device_info/local_device_info_util.cc
 --- components/sync_device_info/local_device_info_util.cc.orig
 +++ components/sync_device_info/local_device_info_util.cc
-@@ -19,7 +19,7 @@ std::string GetPersonalizableDeviceNameInternal();
+@@ -52,7 +52,7 @@ std::string GetPersonalizableDeviceNameInternal();
  sync_pb::SyncEnums::DeviceType GetLocalDeviceType() {
  #if defined(OS_CHROMEOS)
    return sync_pb::SyncEnums_DeviceType_TYPE_CROS;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_events_keycodes_dom_keycode_converter_cc,v 1.6 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-ui_events_keycodes_dom_keycode_converter_cc,v 1.7 2020/10/22 13:52:55 robert Exp $
 
 Index: ui/events/keycodes/dom/keycode_converter.cc
 --- ui/events/keycodes/dom/keycode_converter.cc.orig
@@ -7,8 +7,8 @@ Index: ui/events/keycodes/dom/keycode_converter.cc
  #if defined(OS_WIN)
  #define DOM_CODE(usb, evdev, xkb, win, mac, code, id) \
    { usb, win, code }
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #define DOM_CODE(usb, evdev, xkb, win, mac, code, id) \
    { usb, xkb, code }
- #elif defined(OS_MACOSX)
+ #elif defined(OS_APPLE)

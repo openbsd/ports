@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.15 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.16 2020/10/22 13:52:54 robert Exp $
 
 Index: sandbox/linux/BUILD.gn
 --- sandbox/linux/BUILD.gn.orig
@@ -7,19 +7,19 @@ Index: sandbox/linux/BUILD.gn
  }
  
  declare_args() {
--  compile_suid_client = is_linux
-+  compile_suid_client = is_linux && !is_openbsd
+-  compile_suid_client = is_linux || is_chromeos
++  compile_suid_client = (is_linux || is_chromeos) && !is_openbsd
  
--  compile_credentials = is_linux
-+  compile_credentials = is_linux && !is_openbsd
+-  compile_credentials = is_linux || is_chromeos
++  compile_credentials = (is_linux || is_chromeos) && !is_openbsd
  
    # On Android, use plain GTest.
--  use_base_test_suite = is_linux
-+  use_base_test_suite = is_linux && !is_openbsd
+-  use_base_test_suite = is_linux || is_chromeos
++  use_base_test_suite = (is_linux || is_chromeos) && !is_openbsd
  }
  
  if (is_nacl_nonsfi) {
-@@ -251,7 +251,7 @@ component("seccomp_bpf") {
+@@ -254,7 +254,7 @@ component("seccomp_bpf") {
      "//sandbox:sandbox_buildflags",
    ]
  
@@ -28,7 +28,7 @@ Index: sandbox/linux/BUILD.gn
      cflags = [ "-fgnu-inline-asm" ]
      sources -= [
        "bpf_dsl/bpf_dsl_forward.h",
-@@ -324,30 +324,8 @@ component("sandbox_services") {
+@@ -327,30 +327,8 @@ component("sandbox_services") {
      "services/proc_util.h",
      "services/resource_limits.cc",
      "services/resource_limits.h",
@@ -59,7 +59,7 @@ Index: sandbox/linux/BUILD.gn
    ]
  
    defines = [ "SANDBOX_IMPLEMENTATION" ]
-@@ -397,6 +375,10 @@ component("sandbox_services") {
+@@ -400,6 +378,10 @@ component("sandbox_services") {
        "syscall_broker/broker_process.h",
        "syscall_broker/broker_simple_message.cc",
        "syscall_broker/broker_simple_message.h",

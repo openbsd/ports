@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_layout_layout_view_cc,v 1.9 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_layout_layout_view_cc,v 1.10 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/blink/renderer/core/layout/layout_view.cc
 --- third_party/blink/renderer/core/layout/layout_view.cc.orig
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/core/layout/layout_view.cc
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -330,7 +330,7 @@ void LayoutView::UpdateLayout() {
+@@ -336,7 +336,7 @@ void LayoutView::UpdateLayout() {
    DCHECK(!layout_state_);
    LayoutState root_layout_state(*this);
  

@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_devtools_devtools_eye_dropper_cc,v 1.12 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-chrome_browser_devtools_devtools_eye_dropper_cc,v 1.13 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/devtools/devtools_eye_dropper.cc
 --- chrome/browser/devtools/devtools_eye_dropper.cc.orig
 +++ chrome/browser/devtools/devtools_eye_dropper.cc
-@@ -164,7 +164,7 @@ void DevToolsEyeDropper::UpdateCursor() {
+@@ -163,7 +163,7 @@ void DevToolsEyeDropper::UpdateCursor() {
  // magnified projection only with centered hotspot.
  // Mac Retina requires cursor to be > 120px in order to render smoothly.
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    const float kCursorSize = 63;
    const float kDiameter = 63;
    const float kHotspotOffset = 32;

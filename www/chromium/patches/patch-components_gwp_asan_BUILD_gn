@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_gwp_asan_BUILD_gn,v 1.1 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-components_gwp_asan_BUILD_gn,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: components/gwp_asan/BUILD.gn
 --- components/gwp_asan/BUILD.gn.orig
@@ -7,8 +7,8 @@ Index: components/gwp_asan/BUILD.gn
      "//components/gwp_asan/common:unit_tests",
      "//testing/gtest",
    ]
--  if (is_win || is_mac || is_linux || is_android) {
-+  if ((is_win || is_mac || is_linux || is_android) && !is_openbsd) {
+-  if (is_win || is_mac || is_linux || is_chromeos || is_android) {
++  if ((is_win || is_mac || is_linux || is_chromeos || is_android) && !is_openbsd) {
      deps += [
        "//components/gwp_asan/client:unit_tests",
        "//components/gwp_asan/crash_handler:unit_tests",

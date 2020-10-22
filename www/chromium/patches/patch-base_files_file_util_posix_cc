@@ -1,15 +1,17 @@
-$OpenBSD: patch-base_files_file_util_posix_cc,v 1.9 2020/09/22 11:47:39 robert Exp $
+$OpenBSD: patch-base_files_file_util_posix_cc,v 1.10 2020/10/22 13:52:53 robert Exp $
 
 Index: base/files/file_util_posix.cc
 --- base/files/file_util_posix.cc.orig
 +++ base/files/file_util_posix.cc
-@@ -709,32 +709,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
+@@ -716,32 +716,36 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
                                  File::Error* error) {
    ScopedBlockingCall scoped_blocking_call(
        FROM_HERE, BlockingType::MAY_BLOCK);  // For call to mkdir().
 +  const FilePath kFileSystemRoot("/");
    std::vector<FilePath> subpaths;
  
++  NOTIMPLEMENTED();
++
    // Collect a list of all parent directories.
    FilePath last_path = full_path;
 -  subpaths.push_back(full_path);
@@ -30,7 +32,7 @@ Index: base/files/file_util_posix.cc
 -    if (mkdir(i->value().c_str(), 0700) == 0)
 -      continue;
 -    // Mkdir failed, but it might have failed with EEXIST, or some other error
--    // due to the the directory appearing out of thin air. This can occur if
+-    // due to the directory appearing out of thin air. This can occur if
 -    // two processes are trying to create the same file system tree at the same
 -    // time. Check to see if it exists and make sure it is a directory.
 -    int saved_errno = errno;

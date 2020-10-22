@@ -1,0 +1,23 @@
+$OpenBSD: patch-tools_perf_chrome_telemetry_build_BUILD_gn,v 1.5 2020/10/22 13:52:55 robert Exp $
+
+Index: tools/perf/chrome_telemetry_build/BUILD.gn
+--- tools/perf/chrome_telemetry_build/BUILD.gn.orig
++++ tools/perf/chrome_telemetry_build/BUILD.gn
+@@ -43,7 +43,7 @@ group("telemetry_chrome_test") {
+     data_deps += [ "//chrome:reorder_imports" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
+     data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
+ 
+     # CrOS currently has issues with the locally compiled version of
+@@ -112,7 +112,7 @@ group("telemetry_chrome_test_without_chrome") {
+   ]
+ 
+   # Cr-Fuchsia doesn't support breakpad.
+-  if (!is_win && !is_fuchsia) {
++  if (!is_win && !is_fuchsia && !is_openbsd) {
+     data_deps += [
+       # This is defined for Windows, but is unused by Telemetry on
+       # Windows, and including it can have issues when cross-compiling

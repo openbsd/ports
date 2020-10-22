@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_storage_monitor_removable_device_constants_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-components_storage_monitor_removable_device_constants_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: components/storage_monitor/removable_device_constants.cc
 --- components/storage_monitor/removable_device_constants.cc.orig
@@ -7,8 +7,8 @@ Index: components/storage_monitor/removable_device_constants.cc
  const char kFSUniqueIdPrefix[] = "UUID:";
  const char kVendorModelSerialPrefix[] = "VendorModelSerial:";
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  const char kVendorModelVolumeStoragePrefix[] = "VendorModelVolumeStorage:";
  #endif
  

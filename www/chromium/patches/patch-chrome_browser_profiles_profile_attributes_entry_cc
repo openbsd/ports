@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_profiles_profile_attributes_entry_cc,v 1.8 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_profile_attributes_entry_cc,v 1.9 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/profiles/profile_attributes_entry.cc
 --- chrome/browser/profiles/profile_attributes_entry.cc.orig
 +++ chrome/browser/profiles/profile_attributes_entry.cc
-@@ -137,7 +137,7 @@ void ProfileAttributesEntry::Initialize(ProfileInfoCac
-   if (is_force_signin_enabled_) {
+@@ -167,7 +167,7 @@ void ProfileAttributesEntry::Initialize(ProfileInfoCac
      if (!IsAuthenticated())
        is_force_signin_profile_locked_ = true;
--#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+ #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
    } else if (IsSigninRequired()) {
      // Profiles that require signin in the absence of an enterprise policy are
      // left-overs from legacy supervised users. Just unlock them, so users can

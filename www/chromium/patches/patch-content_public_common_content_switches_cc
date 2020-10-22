@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.48 2020/09/22 11:47:41 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.49 2020/10/22 13:52:54 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -367,6 +367,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
+@@ -370,6 +370,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
@@ -11,7 +11,16 @@ Index: content/public/common/content_switches.cc
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -975,7 +977,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
+@@ -923,7 +925,7 @@ const char kWebXrRuntimeWMR[] = "windows-mixed-reality
+ const char kDisableAcceleratedVideoDecode[] =
+     "disable-accelerated-video-decode";
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
+ // Enables hardware acceleration of video decoding on linux. (defaults to off)
+ const char kEnableAcceleratedVideoDecode[] = "enable-accelerated-video-decode";
+ #endif
+@@ -987,7 +989,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
  // Enable indication that browser is controlled by automation.
  const char kEnableAutomation[] = "enable-automation";
  

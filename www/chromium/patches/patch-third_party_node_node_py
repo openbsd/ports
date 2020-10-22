@@ -1,7 +1,8 @@
-$OpenBSD: patch-third_party_node_node_py,v 1.1 2017/04/28 14:21:00 robert Exp $
---- third_party/node/node.py.orig.port	Thu Apr 27 20:18:34 2017
-+++ third_party/node/node.py	Thu Apr 27 20:19:19 2017
-@@ -13,6 +13,7 @@ def GetBinaryPath():
+$OpenBSD: patch-third_party_node_node_py,v 1.2 2020/10/22 13:52:55 robert Exp $
+Index: third_party/node/node.py
+--- third_party/node/node.py.orig
++++ third_party/node/node.py
+@@ -14,6 +14,7 @@ def GetBinaryPath():
    return os_path.join(os_path.dirname(__file__), *{
      'Darwin': ('mac', 'node-darwin-x64', 'bin', 'node'),
      'Linux': ('linux', 'node-linux-x64', 'bin', 'node'),

@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_safe_browsing_core_realtime_url_lookup_service_base_cc,v 1.1 2020/10/22 13:52:54 robert Exp $
+
+Index: components/safe_browsing/core/realtime/url_lookup_service_base.cc
+--- components/safe_browsing/core/realtime/url_lookup_service_base.cc.orig
++++ components/safe_browsing/core/realtime/url_lookup_service_base.cc
+@@ -100,7 +100,7 @@ RTLookupRequest::OSType GetRTLookupRequestOSType() {
+   return RTLookupRequest::OS_TYPE_FUCHSIA;
+ #elif defined(OS_IOS)
+   return RTLookupRequest::OS_TYPE_IOS;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   return RTLookupRequest::OS_TYPE_LINUX;
+ #elif defined(OS_MAC)
+   return RTLookupRequest::OS_TYPE_MAC;

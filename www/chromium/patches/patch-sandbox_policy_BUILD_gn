@@ -1,22 +1,22 @@
-$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.10 2020/05/29 20:03:24 robert Exp $
+$OpenBSD: patch-sandbox_policy_BUILD_gn,v 1.1 2020/10/22 13:52:54 robert Exp $
 
-Index: services/service_manager/sandbox/BUILD.gn
---- services/service_manager/sandbox/BUILD.gn.orig
-+++ services/service_manager/sandbox/BUILD.gn
-@@ -26,7 +26,7 @@ component("sandbox") {
+Index: sandbox/policy/BUILD.gn
+--- sandbox/policy/BUILD.gn.orig
++++ sandbox/policy/BUILD.gn
+@@ -27,7 +27,7 @@ component("policy") {
      "//base",
      "//sandbox:common",
    ]
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -74,6 +74,16 @@ component("sandbox") {
-       "//sandbox/linux:seccomp_bpf",
+@@ -76,6 +76,18 @@ component("policy") {
        "//sandbox/linux:suid_sandbox_client",
      ]
-+  }
+   }
++
 +  if (is_openbsd) {
 +    sources += [
 +      "openbsd/sandbox_openbsd.cc",
@@ -26,6 +26,8 @@ Index: services/service_manager/sandbox/BUILD.gn
 +      "//sandbox:sandbox_buildflags",
 +    ]
 +    libs = [ "util" ]
-   }
++  }
++
    if (is_chromeos) {
      sources += [
+       "linux/bpf_ime_policy_linux.cc",

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_public_common_privacy_budget_identifiable_token_h,v 1.1 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-third_party_blink_public_common_privacy_budget_identifiable_token_h,v 1.2 2020/10/22 13:52:55 robert Exp $
 
 XXX
 
@@ -7,7 +7,7 @@ Until libcxx gets updated in base.
 Index: third_party/blink/public/common/privacy_budget/identifiable_token.h
 --- third_party/blink/public/common/privacy_budget/identifiable_token.h.orig
 +++ third_party/blink/public/common/privacy_budget/identifiable_token.h
-@@ -115,7 +115,7 @@ class IdentifiableToken {
+@@ -118,7 +118,7 @@ class IdentifiableToken {
  
    // Enums. Punt to the underlying type.
    template <typename T,

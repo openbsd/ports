@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_web_apps_pwa_confirmation_bubble_view_cc,v 1.1 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_web_apps_pwa_confirmation_bubble_view_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
 
 Index: chrome/browser/ui/views/web_apps/pwa_confirmation_bubble_view.cc
 --- chrome/browser/ui/views/web_apps/pwa_confirmation_bubble_view.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/browser/ui/views/web_apps/pwa_confirmation_bubble_view.cc
  
  namespace {
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
  constexpr char kDeviceTypeForCheckbox[] = "computer";
  #else
  constexpr char kDeviceTypeForCheckbox[] = "other";

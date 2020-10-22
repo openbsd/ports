@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_platform_window_platform_window_init_properties_h,v 1.2 2020/02/22 12:33:22 robert Exp $
+$OpenBSD: patch-ui_platform_window_platform_window_init_properties_h,v 1.3 2020/10/22 13:52:55 robert Exp $
 
 Index: ui/platform_window/platform_window_init_properties.h
 --- ui/platform_window/platform_window_init_properties.h.orig
@@ -7,8 +7,8 @@ Index: ui/platform_window/platform_window_init_properties.h
  
  class WorkspaceExtensionDelegate;
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  class X11ExtensionDelegate;
  #endif
  
@@ -16,8 +16,8 @@ Index: ui/platform_window/platform_window_init_properties.h
  
    WorkspaceExtensionDelegate* workspace_extension_delegate = nullptr;
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    bool prefer_dark_theme = false;
    gfx::ImageSkia* icon = nullptr;
    base::Optional<int> background_color;

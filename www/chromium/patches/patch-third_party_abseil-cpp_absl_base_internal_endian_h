@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_abseil-cpp_absl_base_internal_endian_h,v 1.1 2020/10/22 13:52:55 robert Exp $
+
+Index: third_party/abseil-cpp/absl/base/internal/endian.h
+--- third_party/abseil-cpp/absl/base/internal/endian.h.orig
++++ third_party/abseil-cpp/absl/base/internal/endian.h
+@@ -19,7 +19,7 @@
+ // The following guarantees declaration of the byte swap functions
+ #ifdef _MSC_VER
+ #include <stdlib.h>  // NOLINT(build/include)
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/endian.h>
+ #elif defined(__GLIBC__)
+ #include <byteswap.h>  // IWYU pragma: export

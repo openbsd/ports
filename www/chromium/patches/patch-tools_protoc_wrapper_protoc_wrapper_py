@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.7 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.8 2020/10/22 13:52:55 robert Exp $
 
 Index: tools/protoc_wrapper/protoc_wrapper.py
 --- tools/protoc_wrapper/protoc_wrapper.py.orig
 +++ tools/protoc_wrapper/protoc_wrapper.py
-@@ -151,7 +151,7 @@ def main(argv):
- 
-   protoc_cmd += [os.path.join(proto_dir, name) for name in protos]
+@@ -156,7 +156,7 @@ def main(argv):
+   if options.descriptor_set_out:
+     protoc_cmd += ["--descriptor_set_out", options.descriptor_set_out]
  
 -  ret = subprocess.call(protoc_cmd)
 +  ret = subprocess.call(protoc_cmd, env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release", "PATH":"${WRKDIR}/bin"})

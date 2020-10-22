@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.13 2020/04/10 18:51:31 robert Exp $
+$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.14 2020/10/22 13:52:54 robert Exp $
 
 Index: device/gamepad/gamepad_provider.cc
 --- device/gamepad/gamepad_provider.cc.orig
@@ -7,8 +7,8 @@ Index: device/gamepad/gamepad_provider.cc
  
    if (!polling_thread_)
      polling_thread_.reset(new base::Thread("Gamepad polling thread"));
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // On Linux, the data fetcher needs to watch file descriptors, so the message
    // loop needs to be a libevent loop.
    const base::MessagePumpType kMessageLoopType = base::MessagePumpType::IO;

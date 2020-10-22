@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.13 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.14 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
 --- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -310,7 +310,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -301,7 +301,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+ #if !defined(OS_ANDROID)
    media_router::MediaRouterUIServiceFactory::GetInstance();
  #endif
- #if defined(OS_WIN) || defined(OS_MACOSX) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
  #endif
-   ModelTypeStoreServiceFactory::GetInstance();

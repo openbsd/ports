@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_controller_memory_usage_monitor_posix_cc,v 1.1 2020/04/10 18:51:32 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_controller_memory_usage_monitor_posix_cc,v 1.2 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/blink/renderer/controller/memory_usage_monitor_posix.cc
 --- third_party/blink/renderer/controller/memory_usage_monitor_posix.cc.orig
@@ -17,8 +17,8 @@ Index: third_party/blink/renderer/controller/memory_usage_monitor_posix.cc
 +#endif
  }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  // static
  void MemoryUsageMonitorPosix::Bind(
      mojo::PendingReceiver<mojom::blink::MemoryUsageMonitorLinux> receiver) {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.45 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.46 2020/10/22 13:52:53 robert Exp $
 
 Index: chrome/browser/memory_details.cc
 --- chrome/browser/memory_details.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/browser/memory_details.cc
  #include "services/resource_coordinator/public/cpp/memory_instrumentation/memory_instrumentation.h"
  #include "ui/base/l10n/l10n_util.h"
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+-#if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_ANDROID) && !defined(OS_BSD)
  #include "content/public/browser/zygote_host/zygote_host_linux.h"
  #endif
  
@@ -16,8 +16,8 @@ Index: chrome/browser/memory_details.cc
        process.titles.push_back(title);
      }
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+-#if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_ANDROID) && !defined(OS_BSD)
      if (content::ZygoteHost::GetInstance()->IsZygotePid(process.pid)) {
        process.process_type = content::PROCESS_TYPE_ZYGOTE;
      }

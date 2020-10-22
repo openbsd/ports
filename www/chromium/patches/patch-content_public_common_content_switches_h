@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.46 2020/09/22 11:47:41 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.47 2020/10/22 13:52:54 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -113,6 +113,7 @@ CONTENT_EXPORT extern const char kEnableFtp[];
+@@ -114,6 +114,7 @@ CONTENT_EXPORT extern const char kEnableFtp[];
  CONTENT_EXPORT extern const char kEnableGpuMemoryBufferVideoFrames[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
@@ -10,7 +10,16 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableNewCanvas2DAPI[];
  CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
-@@ -267,7 +268,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
+@@ -253,7 +254,7 @@ CONTENT_EXPORT extern const char kWebXrRuntimeOpenVr[]
+ CONTENT_EXPORT extern const char kWebXrRuntimeOpenXr[];
+ CONTENT_EXPORT extern const char kWebXrRuntimeWMR[];
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
+ CONTENT_EXPORT extern const char kEnableAcceleratedVideoDecode[];
+ #endif
+ CONTENT_EXPORT extern const char kDisableAcceleratedVideoDecode[];
+@@ -274,7 +275,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
  CONTENT_EXPORT extern const char kRendererWaitForJavaDebugger[];
  #endif
  

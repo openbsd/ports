@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.14 2020/09/22 11:47:39 robert Exp $
+$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.15 2020/10/22 13:52:53 robert Exp $
 
 Index: base/trace_event/process_memory_dump.cc
 --- base/trace_event/process_memory_dump.cc.orig
@@ -7,8 +7,8 @@ Index: base/trace_event/process_memory_dump.cc
  #if defined(OS_WIN)
    std::unique_ptr<PSAPI_WORKING_SET_EX_INFORMATION[]> vec(
        new PSAPI_WORKING_SET_EX_INFORMATION[max_vec_size]);
--#elif defined(OS_MACOSX)
-+#elif defined(OS_MACOSX) || defined(OS_BSD)
+-#elif defined(OS_APPLE)
++#elif defined(OS_APPLE) || defined(OS_BSD)
    std::unique_ptr<char[]> vec(new char[max_vec_size]);
  #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
    std::unique_ptr<unsigned char[]> vec(new unsigned char[max_vec_size]);

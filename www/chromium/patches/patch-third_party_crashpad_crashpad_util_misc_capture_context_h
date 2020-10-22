@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_capture_context_h,v 1.4 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_capture_context_h,v 1.5 2020/10/22 13:52:55 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/misc/capture_context.h
 --- third_party/crashpad/crashpad/util/misc/capture_context.h.orig
@@ -10,5 +10,5 @@ Index: third_party/crashpad/crashpad/util/misc/capture_context.h
 -#elif defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
 +#elif defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
  using NativeCPUContext = ucontext_t;
- #endif  // OS_MACOSX
+ #endif  // OS_APPLE
  

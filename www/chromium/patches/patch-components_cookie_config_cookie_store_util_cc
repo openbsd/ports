@@ -1,4 +1,5 @@
-$OpenBSD: patch-components_cookie_config_cookie_store_util_cc,v 1.3 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-components_cookie_config_cookie_store_util_cc,v 1.4 2020/10/22 13:52:54 robert Exp $
+
 Index: components/cookie_config/cookie_store_util.cc
 --- components/cookie_config/cookie_store_util.cc.orig
 +++ components/cookie_config/cookie_store_util.cc
@@ -6,21 +7,8 @@ Index: components/cookie_config/cookie_store_util.cc
  
  namespace cookie_config {
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD)
  namespace {
  
  // Use the operating system's mechanisms to encrypt cookies before writing
-@@ -63,10 +63,10 @@ base::LazyInstance<CookieOSCryptoDelegate>::Destructor
- net::CookieCryptoDelegate* GetCookieCryptoDelegate() {
-   return g_cookie_crypto_delegate.Pointer();
- }
--#else   // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#else   // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- net::CookieCryptoDelegate* GetCookieCryptoDelegate() {
-   return NULL;
- }
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- 
- }  // namespace cookie_config
