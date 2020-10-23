@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/09/27 13:46:29 solene Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/10/23 16:49:48 solene Exp $
 @newgroup _synapse:849
 @newuser _synapse:849:849:daemon:Matrix.org Daemon:/var/synapse:/sbin/nologin
 @rcscript ${RCDIR}/synapse
@@ -537,6 +537,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/add_threepid.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/add_threepid.txt
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/add_threepid_failure.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/add_threepid_success.html
+lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/auth_success.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/invalid_token.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/mail-Element.css
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/mail-Vector.css
@@ -550,20 +551,22 @@ lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/notif_mail.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/notif_mail.txt
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/password_reset.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/password_reset.txt
+lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/password_reset_confirmation.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/password_reset_failure.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/password_reset_success.html
+lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/recaptcha.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/registration.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/registration.txt
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/registration_failure.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/registration_success.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/room.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/room.txt
-lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/saml_error.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/sso_account_deactivated.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/sso_auth_confirm.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/sso_auth_success.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/sso_error.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/sso_redirect_confirm.html
+lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/terms.html
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}/
@@ -576,6 +579,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MO
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}devices.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}event_reports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}groups.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}purge_room_servlet.${MODPY_PYC_MAGIC_TAG}pyc
@@ -584,6 +588,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}serv
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}users.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/_base.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/devices.py
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/event_reports.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/groups.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/media.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/purge_room_servlet.py
@@ -745,6 +750,16 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/saml2/${MODPY_PYCACHE}meta
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/saml2/${MODPY_PYCACHE}response_resource.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/saml2/metadata_resource.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/saml2/response_resource.py
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}password_reset.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/password_reset.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/well_known.py
 lib/python${MODPY_VERSION}/site-packages/synapse/secrets.py
 lib/python${MODPY_VERSION}/site-packages/synapse/server.py
@@ -1163,16 +1178,25 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/d
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/03persist_ui_auth.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/05cache_instance.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/06dlols_unique_idx.py
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/07add_method_to_thumbnail_constraint.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/07add_method_to_thumbnail_constraint.sql.sqlite
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/07persist_ui_auth_ips.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/08_media_safe_from_quarantine.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/08_media_safe_from_quarantine.sql.sqlite
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/09shadow_ban.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/10_pushrules_enabled_delete_obsolete.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/10drop_local_rejections_stream.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/10federation_pos_instance_name.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/11user_id_seq.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/12room_stats.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/13remove_presence_allow_inbound.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/14events_instance_name.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/14events_instance_name.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/15_catchup_destination_rooms.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/15unread_count.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/16populate_stats_process_rooms_fix.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/17_catchup_last_successful.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/18stream_positions.sql
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/${MODPY_PYCACHE}06dlols_unique_idx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/58/${MODPY_PYCACHE}11user_id_seq.${MODPY_PYC_MAGIC_TAG}pyc
