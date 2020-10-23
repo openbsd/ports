@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/10/23 12:58:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2020/10/23 17:50:34 jasper Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
@@ -70,7 +70,7 @@ pre-configure:
 
 # Remove auto-generated file (present iff git was installed)
 pre-install:
-	rm ${WRKSRC}/suricata-update/suricata/update/revision.py
+	rm -f ${WRKSRC}/suricata-update/suricata/update/revision.py
 	
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata/rules
