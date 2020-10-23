@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2020/05/25 05:12:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.45 2020/10/23 13:44:30 rsadowski Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -25,7 +25,6 @@
 @man man/man7/cmake-toolchains.7
 @man man/man7/cmake-variables.7
 @man man/man7/cpack-generators.7
-share/aclocal/
 share/aclocal/cmake.m4
 share/cmake/
 share/cmake/Help/
@@ -207,6 +206,8 @@ share/cmake/Help/envvar/FC.rst
 share/cmake/Help/envvar/FFLAGS.rst
 share/cmake/Help/envvar/LDFLAGS.rst
 share/cmake/Help/envvar/MACOSX_DEPLOYMENT_TARGET.rst
+share/cmake/Help/envvar/OBJC.rst
+share/cmake/Help/envvar/OBJCXX.rst
 share/cmake/Help/envvar/PackageName_ROOT.rst
 share/cmake/Help/envvar/RC.rst
 share/cmake/Help/envvar/RCFLAGS.rst
@@ -2992,6 +2993,8 @@ share/doc/cmake/html/_sources/envvar/FC.txt
 share/doc/cmake/html/_sources/envvar/FFLAGS.txt
 share/doc/cmake/html/_sources/envvar/LDFLAGS.txt
 share/doc/cmake/html/_sources/envvar/MACOSX_DEPLOYMENT_TARGET.txt
+share/doc/cmake/html/_sources/envvar/OBJC.txt
+share/doc/cmake/html/_sources/envvar/OBJCXX.txt
 share/doc/cmake/html/_sources/envvar/PackageName_ROOT.txt
 share/doc/cmake/html/_sources/envvar/RC.txt
 share/doc/cmake/html/_sources/envvar/RCFLAGS.txt
@@ -4715,6 +4718,8 @@ share/doc/cmake/html/envvar/FC.html
 share/doc/cmake/html/envvar/FFLAGS.html
 share/doc/cmake/html/envvar/LDFLAGS.html
 share/doc/cmake/html/envvar/MACOSX_DEPLOYMENT_TARGET.html
+share/doc/cmake/html/envvar/OBJC.html
+share/doc/cmake/html/envvar/OBJCXX.html
 share/doc/cmake/html/envvar/PackageName_ROOT.html
 share/doc/cmake/html/envvar/RC.html
 share/doc/cmake/html/envvar/RCFLAGS.html
