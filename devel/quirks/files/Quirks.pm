@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1091 2020/10/22 08:30:39 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1092 2020/10/23 15:48:21 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1886,6 +1886,9 @@ my $obsolete_reason = {
 	'ndesk-dbus-glib' => 5,
 	'mono-xsp' => 5,
 	'py-Numeric' => 3,
+	'k3dsurf' => 3,
+	'spacehulk' => 3,
+	'taxipilot' => 3,
 };
 
 # reasons for obsolete packages
