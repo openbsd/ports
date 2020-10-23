@@ -124,11 +124,11 @@ SHA256 (go_modules/maunium.net/go/maulogger/v2/@v/v2.1.1.mod) = jKC0VZQZ4pKpdNon
 SHA256 (go_modules/maunium.net/go/maulogger/v2/@v/v2.1.1.zip) = 32sQxruz+MWn37qxY8KA82BiQ3AWgfaWdOyxtfp5+yU=
 SHA256 (go_modules/maunium.net/go/mautrix/@v/v0.7.6.mod) = hdRYyAf9gKyPbNpRdAeqoKLiVgBFUcG2qKFHleGuJ8k=
 SHA256 (go_modules/maunium.net/go/mautrix/@v/v0.7.6.zip) = ff3u5wtjxb6DvL4YKLSDmfzmZI+j9psf1F+897bSAc0=
-SHA256 (go_modules/maunium.net/go/mauview/@v/v0.1.1.mod) = 49iccOMSSzHZ092HoBnaYQtEi4PwWr9Y0cbaNVVeEXA=
-SHA256 (go_modules/maunium.net/go/mauview/@v/v0.1.1.zip) = Za/jFcYvdcMYdimqB0aKRPhi9yyitOCwAmQafEvnmZo=
+SHA256 (go_modules/maunium.net/go/mauview/@v/v0.1.2.mod) = 49iccOMSSzHZ092HoBnaYQtEi4PwWr9Y0cbaNVVeEXA=
+SHA256 (go_modules/maunium.net/go/mauview/@v/v0.1.2.zip) = 6UwDKiGhpQ3JK3DTIQUiGnANX0RsOVV+S3LML6v2zfo=
 SHA256 (go_modules/maunium.net/go/tcell/@v/v0.2.0.mod) = YbMLysuuS/XgFwzvVC8ePrZ02Fmnnz8pdV7f0/BIkh4=
 SHA256 (go_modules/maunium.net/go/tcell/@v/v0.2.0.zip) = //nIhjo5B+pjAVxCVmxqYxqs2Xf4tTi03NO0rnXPrKI=
-SHA256 (gomuks-v0.2.0.zip) = yu1P5Bz1rH4Sl2Q+EEY+IO6MyGW1+mlATyPK35RCZjE=
+SHA256 (gomuks-v0.2.1.zip) = BcIe0uBP8vpDPQxtSxeaJ+9YPF2finn2eQCBTwLp9t4=
 SIZE (go_modules/github.com/!puerkito!bio/goquery/@v/v1.5.1.mod) = 153
 SIZE (go_modules/github.com/!puerkito!bio/goquery/@v/v1.5.1.zip) = 128011
 SIZE (go_modules/github.com/alecthomas/assert/@v/v0.0.0-20170929043011-405dbfeb8e38.mod) = 36
@@ -255,8 +255,8 @@ SIZE (go_modules/maunium.net/go/maulogger/v2/@v/v2.1.1.mod) = 44
 SIZE (go_modules/maunium.net/go/maulogger/v2/@v/v2.1.1.zip) = 17865
 SIZE (go_modules/maunium.net/go/mautrix/@v/v0.7.6.mod) = 497
 SIZE (go_modules/maunium.net/go/mautrix/@v/v0.7.6.zip) = 172998
-SIZE (go_modules/maunium.net/go/mauview/@v/v0.1.1.mod) = 259
-SIZE (go_modules/maunium.net/go/mauview/@v/v0.1.1.zip) = 54406
+SIZE (go_modules/maunium.net/go/mauview/@v/v0.1.2.mod) = 259
+SIZE (go_modules/maunium.net/go/mauview/@v/v0.1.2.zip) = 54695
 SIZE (go_modules/maunium.net/go/tcell/@v/v0.2.0.mod) = 281
 SIZE (go_modules/maunium.net/go/tcell/@v/v0.2.0.zip) = 193656
-SIZE (gomuks-v0.2.0.zip) = 333071
+SIZE (gomuks-v0.2.1.zip) = 333666

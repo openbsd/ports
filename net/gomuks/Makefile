@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/22 04:06:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2020/10/23 13:38:33 abieber Exp $
 
 COMMENT =	terminal Matrix client written in Go
 
 MODGO_MODNAME =	maunium.net/go/gomuks
-MODGO_VERSION =	v0.2.0
+MODGO_VERSION =	v0.2.1
 
 DISTNAME =	gomuks-${MODGO_VERSION}
 
@@ -79,7 +79,7 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v3				 v3.0.0-20200313102051-9f266ea9e77c \
 	maunium.net/go/maulogger/v2			 v2.1.1 \
 	maunium.net/go/mautrix				 v0.7.6 \
-	maunium.net/go/mauview				 v0.1.1 \
+	maunium.net/go/mauview				 v0.1.2 \
 	maunium.net/go/tcell				 v0.2.0
 
 MODGO_MODFILES =	\
