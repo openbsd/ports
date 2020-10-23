@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/06 11:15:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/10/23 02:20:34 afresh1 Exp $
 
 COMMENT=	interactive command shell for the DBI
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	DBI-Shell-11.96
+DISTNAME=	DBI-Shell-11.97
 CATEGORIES=	databases
 
 # perl
 PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	databases/p5-DBI \
+		devel/p5-File-HomeDir \
+		devel/p5-IO-Interactive \
 		devel/p5-IO-Tee \
+		textproc/p5-Text-CSV_XS \
 		textproc/p5-Text-Reform
 
 .include <bsd.port.mk>
