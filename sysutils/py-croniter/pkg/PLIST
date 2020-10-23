@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/04/25 17:39:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/10/23 18:22:21 jasper Exp $
+@pkgpath sysutils/py-croniter
 lib/python${MODPY_VERSION}/site-packages/croniter/
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
