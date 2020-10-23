@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/09/19 04:03:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/10/23 19:21:47 rsadowski Exp $
 bin/qutebrowser
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -229,6 +229,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}conf
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}configinit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}configtypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}configutils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}qtargs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}stylesheet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}websettings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/config.py
@@ -242,6 +243,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/configfiles.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/configinit.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/configtypes.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/configutils.py
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/qtargs.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/stylesheet.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/websettings.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/extensions/
@@ -327,6 +329,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}prompt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}tabbedbrowser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}tabwidget.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}windowundo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/mainwindow.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/messageview.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/prompt.py
@@ -356,6 +359,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/statusbar/textba
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/statusbar/url.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/tabbedbrowser.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/tabwidget.py
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/windowundo.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}/
