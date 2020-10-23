@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2029 2020/10/17 12:58:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2030 2020/10/23 02:11:00 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -831,6 +831,7 @@
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-CaptureOutput
      SUBDIR += p5-IO-Digest
+     SUBDIR += p5-IO-Interactive
      SUBDIR += p5-IO-KQueue
      SUBDIR += p5-IO-Lambda
      SUBDIR += p5-IO-LockedFile
