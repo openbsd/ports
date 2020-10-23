@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/07/07 17:33:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/10/23 13:44:33 rsadowski Exp $
 @bin bin/keepassxc
 @bin bin/keepassxc-cli
 %%browser%%
@@ -35,6 +35,7 @@ share/keepassxc/translations/keepassx_cs.qm
 share/keepassxc/translations/keepassx_da.qm
 share/keepassxc/translations/keepassx_de.qm
 share/keepassxc/translations/keepassx_en.qm
+share/keepassxc/translations/keepassx_en_GB.qm
 share/keepassxc/translations/keepassx_en_US.qm
 share/keepassxc/translations/keepassx_es.qm
 share/keepassxc/translations/keepassx_et.qm
@@ -49,7 +50,6 @@ share/keepassxc/translations/keepassx_lt.qm
 share/keepassxc/translations/keepassx_nb.qm
 share/keepassxc/translations/keepassx_nl_NL.qm
 share/keepassxc/translations/keepassx_pl.qm
-share/keepassxc/translations/keepassx_pt.qm
 share/keepassxc/translations/keepassx_pt_BR.qm
 share/keepassxc/translations/keepassx_pt_PT.qm
 share/keepassxc/translations/keepassx_ro.qm
