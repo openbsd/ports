@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/10/19 10:10:59 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/10/23 12:58:42 jasper Exp $
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
@@ -80,7 +80,6 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}net.${M
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}notes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}osinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}parsers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}revision.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}rule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}sources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
@@ -145,7 +144,6 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/net.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/notes.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/osinfo.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/parsers.py
-lib/python${MODPY_VERSION}/site-packages/suricata/update/revision.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/rule.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/sources.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/util.py

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2020/10/19 10:10:59 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.34 2020/10/23 12:58:42 jasper Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
 SURICATA_V =	6.0.0
 SUPDATE_V =	1.2.0
+REVISION =	0
 
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
@@ -67,6 +68,10 @@ pre-configure:
 		${WRKSRC}/doc/userguide/Makefile.in \
 		${WRKSRC}/suricata-update/doc/Makefile
 
+# Remove auto-generated file (present iff git was installed)
+pre-install:
+	rm ${WRKSRC}/suricata-update/suricata/update/revision.py
+	
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata/rules
 	${INSTALL_DATA} ${WRKSRC}/*.config ${PREFIX}/share/examples/suricata
