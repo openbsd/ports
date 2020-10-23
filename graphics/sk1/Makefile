@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/18 15:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2020/10/23 09:59:57 ajacoutot Exp $
+
+BROKEN =		move to python3 or gobject-introspection bindings
+# RUN_DEPENDS +=	graphics/py-cairo
 
 COMMENT =	multiplatform vector graphics editor
 
 VERSION =	2.0rc3
 DISTNAME =	sk1-${VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	graphics
 
@@ -32,7 +35,6 @@ LIB_DEPENDS +=		devel/pango \
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			graphics/py-Pillow \
-			graphics/py-cairo \
 			print/py-reportlab \
 			x11/py-wxPython \
 			x11/wxWidgets
