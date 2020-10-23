@@ -1,11 +1,11 @@
-$OpenBSD: patch-toolkit_moz_configure,v 1.1 2020/04/13 16:25:42 sthen Exp $
+$OpenBSD: patch-toolkit_moz_configure,v 1.2 2020/10/23 07:04:09 landry Exp $
 
 Required to make font fingerprinting defenses work.
 
 Index: toolkit/moz.configure
 --- toolkit/moz.configure.orig
 +++ toolkit/moz.configure
-@@ -1318,7 +1318,7 @@ set_config('MOZ_BITS_DOWNLOAD',
+@@ -1352,7 +1352,7 @@ set_config('MOZ_BITS_DOWNLOAD',
  
  @depends(target)
  def bundled_fonts_default(target):

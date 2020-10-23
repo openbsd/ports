@@ -1,0 +1,12 @@
+# $OpenBSD: pledge.gpu,v 1.1 2020/10/23 07:04:09 landry Exp $
+stdio
+rpath
+wpath
+cpath
+ps
+sendfd
+recvfd
+drm
+dns
+unix
+prot_exec

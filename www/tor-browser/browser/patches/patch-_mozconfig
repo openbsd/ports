@@ -1,4 +1,4 @@
-$OpenBSD: patch-_mozconfig,v 1.6 2020/06/13 06:26:01 landry Exp $
+$OpenBSD: patch-_mozconfig,v 1.7 2020/10/23 07:04:09 landry Exp $
 
 Disable the updater and related stuff.  Does nothing under OpenBSD
 
@@ -8,23 +8,9 @@ means we can not pass --disable-eme to configure so comment that out.
 Index: .mozconfig
 --- .mozconfig.orig
 +++ .mozconfig
-@@ -19,10 +19,10 @@ ac_add_options --enable-official-branding
- # Let's support GTK3 for ESR60
- ac_add_options --enable-default-toolkit=cairo-gtk3
- 
--ac_add_options --disable-tor-launcher
-+#ac_add_options --disable-tor-launcher
- ac_add_options --disable-tor-browser-update
--ac_add_options --enable-signmar
--ac_add_options --enable-verify-mar
-+#ac_add_options --enable-signmar
-+#ac_add_options --enable-verify-mar
- 
- ac_add_options --disable-strip
- ac_add_options --disable-install-strip
-@@ -31,10 +31,13 @@ ac_add_options --disable-debug
- ac_add_options --disable-crashreporter
+@@ -27,13 +27,15 @@ ac_add_options --disable-crashreporter
  ac_add_options --disable-webrtc
+ ac_add_options --disable-parental-controls
  # Let's make sure no preference is enabling either Adobe's or Google's CDM.
 -ac_add_options --disable-eme
 +#ac_add_options --disable-eme
@@ -33,8 +19,12 @@ Index: .mozconfig
  # Disable telemetry
  ac_add_options MOZ_TELEMETRY_REPORTING=
  
+-ac_add_options --disable-tor-launcher
 -ac_add_options --with-tor-browser-version=dev-build
 +# avoid 1.1GB libxul
 +ac_add_options --disable-debug-symbols
 +
 +#ac_add_options --with-tor-browser-version=dev-build
+ ac_add_options --disable-tor-browser-update
+-ac_add_options --enable-verify-mar
++#ac_add_options --enable-verify-mar

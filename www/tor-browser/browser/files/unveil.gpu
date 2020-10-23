@@ -1,0 +1,12 @@
+# $OpenBSD: unveil.gpu,v 1.1 2020/10/23 07:04:09 landry Exp $
+/dev/drm0 rw
+
+/usr/local/lib/tor-browser r
+/usr/local/lib/gdk-pixbuf-2.0 r
+/usr/X11R6/lib r
+/usr/share/locale r
+/usr/local/share r
+
+/tmp rwc
+
+~/.Xauthority r

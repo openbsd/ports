@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/04/13 16:25:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/10/23 07:04:09 landry Exp $
 @conflict tor-launcher-*
 @conflict torbutton-*
 @pkgpath www/tor-browser/tor-launcher
@@ -7,9 +7,7 @@ bin/${BROWSER_NAME}
 lib/${BROWSER_NAME}/
 lib/${BROWSER_NAME}/application.ini
 lib/${BROWSER_NAME}/browser/
-lib/${BROWSER_NAME}/browser/blocklist.xml
 lib/${BROWSER_NAME}/browser/chrome/
-lib/${BROWSER_NAME}/browser/chrome.manifest
 lib/${BROWSER_NAME}/browser/chrome/icons/
 lib/${BROWSER_NAME}/browser/chrome/icons/default/
 lib/${BROWSER_NAME}/browser/chrome/icons/default/default.png
@@ -20,7 +18,20 @@ lib/${BROWSER_NAME}/browser/chrome/icons/default/default48.png
 lib/${BROWSER_NAME}/browser/chrome/icons/default/default64.png
 lib/${BROWSER_NAME}/browser/defaults/
 lib/${BROWSER_NAME}/browser/defaults/preferences/
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/
 lib/${BROWSER_NAME}/browser/defaults/preferences/all-openbsd.js
+lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.content
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.content
+lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.gpu
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.gpu
+lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.main
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.main
+lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.content
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.content
+lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.gpu
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.gpu
+lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.main
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.main
 lib/${BROWSER_NAME}/browser/defaults/profile/
 lib/${BROWSER_NAME}/browser/defaults/profile/bookmarks.html
 lib/${BROWSER_NAME}/browser/features/
@@ -75,16 +86,16 @@ lib/${BROWSER_NAME}/browser/fonts/Tinos-Italic.ttf
 lib/${BROWSER_NAME}/browser/fonts/Tinos-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/TwemojiMozilla.ttf
 lib/${BROWSER_NAME}/browser/omni.ja
-lib/${BROWSER_NAME}/chrome.manifest
 lib/${BROWSER_NAME}/defaults/
 lib/${BROWSER_NAME}/defaults/pref/
 lib/${BROWSER_NAME}/defaults/pref/channel-prefs.js
 lib/${BROWSER_NAME}/dependentlibs.list
 lib/${BROWSER_NAME}/distribution/
 lib/${BROWSER_NAME}/distribution/distribution.ini
+lib/${BROWSER_NAME}/fonts/
+lib/${BROWSER_NAME}/fonts/TwemojiMozilla.ttf
 lib/${BROWSER_NAME}/gtk2/
 @lib lib/${BROWSER_NAME}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
-lib/${BROWSER_NAME}/libfreebl3.chk
 @lib lib/${BROWSER_NAME}/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib lib/${BROWSER_NAME}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${BROWSER_NAME}/libmozavcodec.so.${LIBmozavcodec_VERSION}
@@ -94,13 +105,10 @@ lib/${BROWSER_NAME}/libfreebl3.chk
 @lib lib/${BROWSER_NAME}/libnspr4.so.${LIBnspr4_VERSION}
 @lib lib/${BROWSER_NAME}/libnss3.so.${LIBnss3_VERSION}
 @lib lib/${BROWSER_NAME}/libnssckbi.so.${LIBnssckbi_VERSION}
-lib/${BROWSER_NAME}/libnssdbm3.chk
-@lib lib/${BROWSER_NAME}/libnssdbm3.so.${LIBnssdbm3_VERSION}
 @lib lib/${BROWSER_NAME}/libnssutil3.so.${LIBnssutil3_VERSION}
 @lib lib/${BROWSER_NAME}/libplc4.so.${LIBplc4_VERSION}
 @lib lib/${BROWSER_NAME}/libplds4.so.${LIBplds4_VERSION}
 @lib lib/${BROWSER_NAME}/libsmime3.so.${LIBsmime3_VERSION}
-lib/${BROWSER_NAME}/libsoftokn3.chk
 @lib lib/${BROWSER_NAME}/libsoftokn3.so.${LIBsoftokn3_VERSION}
 @lib lib/${BROWSER_NAME}/libssl3.so.${LIBssl3_VERSION}
 @lib lib/${BROWSER_NAME}/libxul.so.${LIBxul_VERSION}
@@ -112,8 +120,6 @@ lib/${BROWSER_NAME}/removed-files
 @bin lib/${BROWSER_NAME}/${BROWSER_NAME}-bin
 lib/${BROWSER_NAME}/${BROWSER_NAME}.cfg
 share/applications/${BROWSER_NAME}.desktop
-share/pixmaps/
 @tag update-desktop-database
-share/pixmaps/${BROWSER_NAME}.png
 share/tor-browser/
 share/tor-browser/torrc-defaults

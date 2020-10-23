@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.29 2020/08/26 07:37:38 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2020/10/23 07:04:09 landry Exp $
 
 MAINTAINER ?=		Caspar Schutijser <caspar@schutijser.com>
 HOMEPAGE ?=		https://www.torproject.org
 PERMIT_PACKAGE ?=	Yes
 CATEGORIES =		www
 BROWSER_NAME =		tor-browser
-TB_VERSION =		9.5.4
+TB_VERSION =		10.0.2
 TB_PREFIX =		tb
 
 SUBST_VARS +=		BROWSER_NAME TB_VERSION
@@ -13,13 +13,13 @@ SUBST_VARS +=		BROWSER_NAME TB_VERSION
 ADDON_NAME ?=
 .if !empty(ADDON_NAME)
 # Everything in this .if (most of the file) is for add-ons like
-# torbutton, tor-launcher, ... tor-browser does its own thing.
+# noscript, ... tor-browser does its own thing.
 .  if !defined(GUID)
 ERRORS += "GUID missing: please set a GUID for ${ADDON_NAME}"
 .  endif
 
 # This should be set to Yes if the distfile for the addon is the .xpi
-# file itself (noscript, https-everywhere)
+# file itself (noscript)
 DISTFILE_IS_XPI ?= 	No
 
 TB_NAME ?=		${ADDON_NAME}-${V}
@@ -36,7 +36,7 @@ BUILD_DEPENDS +=	archivers/zip archivers/unzip
 RUN_DEPENDS +=		www/tor-browser/browser
 
 EXTDIR_ROOT ?=		lib/${BROWSER_NAME}
-REAL_EXTDIR ?=		${PREFIX}/${EXTDIR_ROOT}/browser/extensions
+REAL_EXTDIR ?=		${PREFIX}/${EXTDIR_ROOT}/distribution/extensions
 
 SUBST_VARS +=		EXTDIR_ROOT GUID
 
