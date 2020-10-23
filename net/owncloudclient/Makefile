@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.46 2020/06/25 18:28:49 kirby Exp $
+# $OpenBSD: Makefile,v 1.47 2020/10/23 12:42:34 kirby Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		owncloudclient-2.6.3.14058
+REVISION =		0
 
 SHARED_LIBS +=		owncloudsync	5.0
 SHARED_LIBS +=		owncloud_csync	0.0
 
 CATEGORIES =		net
 
-HOMEPAGE =		https://owncloud.org/download/#owncloud-desktop-client
+HOMEPAGE =		https://owncloud.com/desktop-app/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
