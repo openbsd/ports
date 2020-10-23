@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.429 2020/10/06 13:40:56 solene Exp $
+# $OpenBSD: Makefile,v 1.430 2020/10/23 15:43:09 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -272,7 +272,6 @@
      SUBDIR += slash-em,no_x11
      SUBDIR += snipe2d
      SUBDIR += solarus
-     SUBDIR += spacehulk
      SUBDIR += spaceinvaders
      SUBDIR += spacetrader
      SUBDIR += spacezero
