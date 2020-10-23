@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/10/23 16:20:20 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/10/23 16:22:33 landry Exp $
 @bin bin/minigzip
 @bin bin/minizip
 include/minizip/
@@ -22,9 +22,9 @@ include/minizip/unzip.h
 include/minizip/zip.h
 lib/cmake/
 lib/cmake/minizip/
+lib/cmake/minizip/minizip-config-version.cmake
+lib/cmake/minizip/minizip-config.cmake
 lib/cmake/minizip/minizip${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/minizip/minizip.cmake
-lib/cmake/minizip/minizipConfig.cmake
-lib/cmake/minizip/minizipConfigVersion.cmake
 @lib lib/libminizip.so.${LIBminizip_VERSION}
 lib/pkgconfig/minizip.pc

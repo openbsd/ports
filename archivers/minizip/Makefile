@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/23 16:20:20 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2020/10/23 16:22:32 landry Exp $
 
 COMMENT =	zip manipulation library
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =	nmoinvaz
 GH_PROJECT =	minizip
 GH_TAGNAME =	2.10.1
 
-SHARED_LIBS +=	minizip 0.0 #2.5
+SHARED_LIBS +=	minizip 0.1 #2.5
 CATEGORIES =	archivers
 
 # zlib
