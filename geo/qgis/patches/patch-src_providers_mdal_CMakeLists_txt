@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_providers_mdal_CMakeLists_txt,v 1.4 2020/02/25 12:16:52 landry Exp $
+$OpenBSD: patch-src_providers_mdal_CMakeLists_txt,v 1.5 2020/10/24 16:58:48 landry Exp $
 
 Index: src/providers/mdal/CMakeLists.txt
 --- src/providers/mdal/CMakeLists.txt.orig
 +++ src/providers/mdal/CMakeLists.txt
-@@ -12,7 +12,6 @@ ENDIF ()
- 
- SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/external/mdal/cmake ${CMAKE_MODULE_PATH})
+@@ -16,7 +16,6 @@ IF(MSVC)
+   FIND_PACKAGE(Threads)
+ ENDIF(MSVC)
  FIND_PACKAGE(HDF5)
 -FIND_PACKAGE(NetCDF)
  FIND_PACKAGE(LibXml2)
