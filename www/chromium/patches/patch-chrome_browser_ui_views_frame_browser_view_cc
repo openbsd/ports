@@ -1,8 +1,17 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.30 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.31 2020/10/24 10:06:56 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_view.cc
 --- chrome/browser/ui/views/frame/browser_view.cc.orig
 +++ chrome/browser/ui/views/frame/browser_view.cc
+@@ -1478,7 +1478,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
+ void BrowserView::TabDraggingStatusChanged(bool is_dragging) {
+   // TODO(crbug.com/1110266): Remove explicit OS_CHROMEOS check once OS_LINUX
+   // CrOS cleanup is done.
+-#if !defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if (!defined(OS_LINUX) && !defined(OS_BSD)) || defined(OS_CHROMEOS)
+   contents_web_view_->SetFastResize(is_dragging);
+   if (!is_dragging) {
+     // When tab dragging is ended, we need to make sure the web contents get
 @@ -1829,7 +1829,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
    const bool should_use_native_frame = frame_->ShouldUseNativeFrame();
  
