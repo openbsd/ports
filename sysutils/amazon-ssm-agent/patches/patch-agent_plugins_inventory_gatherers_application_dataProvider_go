@@ -1,0 +1,15 @@
+$OpenBSD: patch-agent_plugins_inventory_gatherers_application_dataProvider_go,v 1.3 2020/10/24 09:19:59 ajacoutot Exp $
+
+imported and not used: "github.com/aws/amazon-ssm-agent/agent/plugins/configurepackage/localpackages"
+
+Index: agent/plugins/inventory/gatherers/application/dataProvider.go
+--- agent/plugins/inventory/gatherers/application/dataProvider.go.orig
++++ agent/plugins/inventory/gatherers/application/dataProvider.go
+@@ -7,7 +7,6 @@ import (
+ 	"fmt"
+ 
+ 	"github.com/aws/amazon-ssm-agent/agent/context"
+-	"github.com/aws/amazon-ssm-agent/agent/plugins/configurepackage/localpackages"
+ 	"github.com/aws/amazon-ssm-agent/agent/plugins/inventory/model"
+ )
+ 
