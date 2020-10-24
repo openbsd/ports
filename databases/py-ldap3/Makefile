@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/10/22 20:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/24 11:17:45 sthen Exp $
 
 COMMENT =	RFC4510 conforming LDAP V3 pure Python client library
 
 MODPY_EGG_VERSION =	2.8.1
 DISTNAME =	ldap3-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	databases
 
