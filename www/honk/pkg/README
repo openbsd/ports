@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2019/07/25 02:18:25 lteo Exp $
+$OpenBSD: README,v 1.3 2020/10/24 15:37:33 abieber Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -14,17 +14,17 @@ acme-client(1)
 
 # acme-client.conf(5)
 domain honk.example.com {
-  domain key "/etc/ssl/private/honk.example.com.key"
-  domain full chain certificate "/etc/ssl/honk.example.com.fullchain.pem"
+  domain key "${SYSCONFDIR}/ssl/private/honk.example.com.key"
+  domain full chain certificate "${SYSCONFDIR}/ssl/honk.example.com.fullchain.pem"
   sign with letsencrypt
 }
 
 Icon and favicon
 ----------------
 
-honk# mkdir /var/www/htdocs/honk
-honk# ftp -o /var/www/htdocs/honk/icon.png https://honk.tedunangst.com/icon.png
-honk# ftp -o /var/www/htdocs/honk/favicon.ico \
+honk# mkdir ${VARBASE}/www/htdocs/honk
+honk# ftp -o ${VARBASE}/www/htdocs/honk/icon.png https://honk.tedunangst.com/icon.png
+honk# ftp -o ${VARBASE}/www/htdocs/honk/favicon.ico \
   https://honk.tedunangst.com/favicon.ico
 
 httpd(8)
@@ -53,11 +53,9 @@ relayd(8)
 ---------
 
 # relayd.conf(5)
-ext_addr="203.0.113.1"
-ext_addr6="2001:0db8::1"
 honk_port="31337"
-table <honk> { 127.0.0.1 }
-table <honk6> { ::1 }
+table <honk> { lo0 }
+table <localhost> { lo0 }
 
 http protocol https {
   match request header append "X-Forwarded-For" value "$REMOTE_ADDR"
@@ -65,33 +63,25 @@ http protocol https {
     value "$SERVER_ADDR:$SERVER_PORT"
   match request header set "Connection" value "close"
 
-  match request path "/*icon.*" forward to <honk>
+  match request header "Host" value "honk.*" forward to <honk>
+  match request path "/*icon.*" forward to <localhost>
 
   tcp { sack, backlog 128 }
+  tls keypair honk
 }
 
-relay wwwtls {
-  listen on $ext_addr port https tls
+relay https {
+  listen on egress port https tls
   protocol https
 
+  forward to <localhost> port http check http "/icon.png" code 200
   forward to <honk> port $honk_port check tcp
-  forward to <honk> port http check http "/icon.png" code 200
 }
 
-relay wwwtls6 {
-  listen on $ext_addr6 port https tls
-  protocol https
-
-  forward to <honk6> port $honk_port check tcp
-  forward to <honk> port http check http "/icon.png" code 200
-}
-
-honk# cd /etc/ssl
-honk# ln -s honk.example.com.fullchain.pem 203.0.113.1.crt
-honk# ln -s honk.example.com.fullchain.pem 2001:0db8::1.crt
-honk# cd /etc/ssl/private
-honk# ln -s honk.example.com.key 203.0.113.1.key
-honk# ln -s honk.example.com.key 2001:0db8::1.key
+honk# cd ${SYSCONFDIR}/ssl
+honk# ln -s honk.example.com.fullchain.pem honk.crt
+honk# cd ${SYSCONFDIR}/ssl/private
+honk# ln -s honk.example.com.key honk.key
 
 honk# rcctl enable relayd
 honk# rcctl start relayd
@@ -102,18 +92,18 @@ pf(4)
 # pf.conf(5)
 anchor "relayd/*"
 
-honk# pfctl -f /etc/pf.conf
+honk# pfctl -f ${SYSCONFDIR}/pf.conf
 
 Usage
 =====
 
-Please see /usr/local/share/doc/honk
+Please see ${LOCALBASE}/share/doc/honk
 
 honk# doas -su _honk
-honk$ umask 077; cd /var/honk && honk init
+honk$ umask 077; cd ${VARBASE}/honk && honk init
 listenaddr: localhost:31337
 servername: honk.example.com
-honk$ touch /var/honk/savedinbox.json
+honk$ touch ${VARBASE}/honk/savedinbox.json
 honk$ exit
 
 honk# rcctl enable honk

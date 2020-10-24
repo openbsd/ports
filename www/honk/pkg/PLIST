@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/01/21 08:02:56 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/10/24 15:37:33 abieber Exp $
 @newgroup _honk:833
 @newuser _honk:833:_honk:daemon:Honk User:${VARBASE}/honk:/sbin/nologin
 @rcscript ${RCDIR}/honk
+@bin bin/gettoken
 @bin bin/honk
+@bin bin/saytheday
+@bin bin/sprayandpray
+@bin bin/youvegothonks
 @man man/man1/hfcs.1
 @man man/man1/honk.1
 @man man/man1/intro.1
@@ -11,41 +15,48 @@
 @man man/man5/honk.5
 @man man/man7/activitypub.7
 @man man/man8/honk.8
-share/doc/honk/
-share/doc/honk/README
-share/doc/honk/activitypub.7
-share/doc/honk/activitypub.7.html
-share/doc/honk/changelog.txt
-share/doc/honk/hfcs.1
-share/doc/honk/hfcs.1.html
-share/doc/honk/honk.1
-share/doc/honk/honk.1.html
-share/doc/honk/honk.3
-share/doc/honk/honk.3.html
-share/doc/honk/honk.5
-share/doc/honk/honk.5.html
-share/doc/honk/honk.8
-share/doc/honk/honk.8.html
-share/doc/honk/intro.1
-share/doc/honk/intro.1.html
-share/doc/honk/mandoc.css
-share/doc/honk/ping.txt
-share/doc/honk/screenshot-afterpost.jpg
-share/doc/honk/screenshot-compose.png
-share/doc/honk/screenshot-honk.png
-share/doc/honk/vim.3
-share/doc/honk/vim.3.html
-share/doc/pkg-readmes/${PKGSTEM}
 @mode 750
 @owner _honk
 @group _honk
 @sample ${VARBASE}/honk/
+@sample ${VARBASE}/honk/docs/
 @sample ${VARBASE}/honk/emus/
 @sample ${VARBASE}/honk/memes/
 @sample ${VARBASE}/honk/views/
 @mode
 @owner
 @group
+share/doc/honk/
+share/doc/honk/README
+share/doc/honk/activitypub.7.html
+@sample ${VARBASE}/honk/docs/activitypub.7.html
+share/doc/honk/changelog.txt
+share/doc/honk/hfcs.1.html
+@sample ${VARBASE}/honk/docs/hfcs.1.html
+share/doc/honk/honk.1.html
+@sample ${VARBASE}/honk/docs/honk.1.html
+share/doc/honk/honk.3.html
+@sample ${VARBASE}/honk/docs/honk.3.html
+share/doc/honk/honk.5.html
+@sample ${VARBASE}/honk/docs/honk.5.html
+share/doc/honk/honk.8.html
+@sample ${VARBASE}/honk/docs/honk.8.html
+share/doc/honk/intro.1.html
+@sample ${VARBASE}/honk/docs/intro.1.html
+share/doc/honk/mandoc.css
+@sample ${VARBASE}/honk/docs/mandoc.css
+share/doc/honk/ping.txt
+share/doc/honk/screenshot-afterpost.jpg
+@sample ${VARBASE}/honk/docs/screenshot-afterpost.jpg
+share/doc/honk/screenshot-compose.png
+@sample ${VARBASE}/honk/docs/screenshot-compose.png
+share/doc/honk/screenshot-honk.png
+@sample ${VARBASE}/honk/docs/screenshot-honk.png
+share/doc/honk/toys/
+share/doc/honk/toys/README
+share/doc/honk/vim.3.html
+@sample ${VARBASE}/honk/docs/vim.3.html
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/honk/
 share/examples/honk/schema.sql
 @sample ${VARBASE}/honk/schema.sql
@@ -54,6 +65,8 @@ share/examples/honk/views/about.html
 @sample ${VARBASE}/honk/views/about.html
 share/examples/honk/views/account.html
 @sample ${VARBASE}/honk/views/account.html
+share/examples/honk/views/chatter.html
+@sample ${VARBASE}/honk/views/chatter.html
 share/examples/honk/views/combos.html
 @sample ${VARBASE}/honk/views/combos.html
 share/examples/honk/views/funzone.html

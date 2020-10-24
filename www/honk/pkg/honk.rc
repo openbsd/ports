@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: honk.rc,v 1.2 2020/04/29 07:17:33 ajacoutot Exp $
+# $OpenBSD: honk.rc,v 1.3 2020/10/24 15:37:33 abieber Exp $
 
 daemon="${TRUEPREFIX}/bin/honk"
 daemon_user="_honk"
@@ -13,6 +13,12 @@ rc_reload=NO
 rc_start() {
 	${rcexec} "cd ${VARBASE}/honk && ${daemon} ${daemon_flags} 2>&1 |
 		logger -p daemon.info -t honk"
+}
+
+rc_stop() {
+	pkill -T "${daemon_rtable}" -xf "${pexp}"
+	pkill -T "${daemon_rtable}" -xf "${daemon} -datadir . backend"
+	pkill -T "${daemon_rtable}" -xf "logger -p daemon.info -t honk"
 }
 
 rc_cmd $1
