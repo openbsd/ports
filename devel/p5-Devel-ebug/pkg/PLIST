@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/24 08:25:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/10/24 01:59:06 afresh1 Exp $
 bin/ebug
 bin/ebug_backend_perl
 bin/ebug_client
@@ -31,7 +31,29 @@ ${P5SITE}/Devel/ebug/Plugin/Pad.pm
 ${P5SITE}/Devel/ebug/Plugin/Run.pm
 ${P5SITE}/Devel/ebug/Plugin/StackTrace.pm
 @man man/man1/ebug.1
+@man man/man1/ebug_backend_perl.1
 @man man/man1/ebug_client.1
 @man man/man1/ebug_server.1
 @man man/man3p/Devel::ebug.3p
+@man man/man3p/Devel::ebug::Backend.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::ActionPoints.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::Basic.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::Codelines.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::Commands.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::Eval.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::Filenames.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::Output.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::Pad.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::Ping.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::Run.3p
+@man man/man3p/Devel::ebug::Backend::Plugin::StackTrace.3p
 @man man/man3p/Devel::ebug::Console.3p
+@man man/man3p/Devel::ebug::Plugin::ActionPoints.3p
+@man man/man3p/Devel::ebug::Plugin::Basic.3p
+@man man/man3p/Devel::ebug::Plugin::Codelines.3p
+@man man/man3p/Devel::ebug::Plugin::Eval.3p
+@man man/man3p/Devel::ebug::Plugin::Filenames.3p
+@man man/man3p/Devel::ebug::Plugin::Output.3p
+@man man/man3p/Devel::ebug::Plugin::Pad.3p
+@man man/man3p/Devel::ebug::Plugin::Run.3p
+@man man/man3p/Devel::ebug::Plugin::StackTrace.3p
