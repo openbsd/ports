@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile,v 1.8 2020/10/24 18:27:51 danj Exp $
+
+- BUILD: makefile: Fix building with closefrom() support enabled (5018aaca)
+- BUILD: makefile: Update feature flags for OpenBSD (90c9d78)
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -42,6 +42,7 @@
+ #   USE_FUTEX            : enable use of futex on kernel 2.6. Automatic.
+ #   USE_ACCEPT4          : enable use of accept4() on linux. Automatic.
+ #   USE_MY_ACCEPT4       : use own implementation of accept4() if glibc < 2.10.
++#   USE_CLOSEFROM        : enable use of closefrom() on *bsd, solaris. Automatic.
+ #   USE_PRCTL            : enable use of prctl(). Automatic.
+ #   USE_ZLIB             : enable zlib library support.
+ #   USE_SLZ              : enable slz library instead of zlib (pick at most one).
+@@ -287,7 +288,7 @@ use_opts = USE_EPOLL USE_KQUEUE USE_MY_EPOLL USE_MY_SP
+            USE_STATIC_PCRE USE_STATIC_PCRE2 USE_TPROXY USE_LINUX_TPROXY       \
+            USE_LINUX_SPLICE USE_LIBCRYPT USE_CRYPT_H USE_VSYSCALL             \
+            USE_GETADDRINFO USE_OPENSSL USE_LUA USE_FUTEX USE_ACCEPT4          \
+-           USE_MY_ACCEPT4 USE_ZLIB USE_SLZ USE_CPU_AFFINITY USE_TFO USE_NS    \
++           USE_CLOSEFROM USE_MY_ACCEPT4 USE_ZLIB USE_SLZ USE_CPU_AFFINITY USE_TFO USE_NS    \
+            USE_DL USE_RT USE_DEVICEATLAS USE_51DEGREES USE_WURFL USE_SYSTEMD  \
+            USE_OBSOLETE_LINKER USE_PRCTL USE_THREAD_DUMP USE_EVPORTS
+ 
+@@ -361,10 +362,11 @@ ifeq ($(TARGET),osx)
+   EXPORT_SYMBOL  = -export_dynamic
+ endif
+ 
+-# OpenBSD 5.7 and above
++# OpenBSD 6.3 and above
+ ifeq ($(TARGET),openbsd)
+   set_target_defaults = $(call default_opts, \
+-    USE_POLL USE_TPROXY USE_THREAD USE_KQUEUE USE_ACCEPT4)
++    USE_POLL USE_TPROXY USE_THREAD USE_KQUEUE USE_ACCEPT4 USE_CLOSEFROM   \
++    USE_GETADDRINFO)
+ endif
+ 
+ # NetBSD
