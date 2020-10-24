@@ -1,0 +1,28 @@
+$OpenBSD: patch-vendor_github_com_shirou_gopsutil_process_process_openbsd_go,v 1.1 2020/10/24 13:37:33 ajacoutot Exp $
+
+https://github.com/shirou/gopsutil/pull/979
+
+Index: vendor/github.com/shirou/gopsutil/process/process_openbsd.go
+--- vendor/github.com/shirou/gopsutil/process/process_openbsd.go.orig
++++ vendor/github.com/shirou/gopsutil/process/process_openbsd.go
+@@ -221,13 +221,19 @@ func (p *Process) GidsWithContext(ctx context.Context)
+ 
+ 	return gids, nil
+ }
++
+ func (p *Process) GroupsWithContext(ctx context.Context) ([]int32, error) {
+ 	k, err := p.getKProc()
+ 	if err != nil {
+ 		return nil, err
+ 	}
+ 
+-	return k.Groups, nil
++	groups := make([]int32, k.Ngroups)
++	for i := int16(0); i < k.Ngroups; i++ {
++		groups[i] = int32(k.Groups[i])
++	}
++
++	return groups, nil
+ }
+ func (p *Process) Terminal() (string, error) {
+ 	return p.TerminalWithContext(context.Background())
