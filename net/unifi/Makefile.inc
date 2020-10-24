@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.16 2020/08/01 11:23:05 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2020/10/24 09:40:36 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
-MASTER_SITES?=	http://dl.ubnt.com/unifi/${V}${BUILD_V:C/^([1-9a-f])/-\1/}/
+_BV=		${BUILD_V:C/^http[^-]*-([1-9a-f]{10}).*/-\1/}
+MASTER_SITES?=	http://dl.ubnt.com/unifi/${V}${_BV}/
 
 JAF=		1.1.1
 DISTFILES=	unifi-$V{UniFi.unix}.zip \
