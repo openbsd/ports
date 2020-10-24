@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.649 2020/10/08 19:54:31 kn Exp $
+# $OpenBSD: Makefile,v 1.650 2020/10/24 10:53:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -414,7 +414,7 @@
      SUBDIR += py-m2r,python3
      SUBDIR += py-mistune
      SUBDIR += py-mistune,python3
-     SUBDIR += py-natsort
+     SUBDIR += py-natsort,python3
      SUBDIR += py-nltk,python3
      SUBDIR += py-numpydoc,python3
      SUBDIR += py-odfpy

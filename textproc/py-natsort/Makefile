@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:13:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/10/24 10:53:17 ajacoutot Exp $
 
 COMMENT =		simple yet flexible natural sorting
 
 MODPY_EGG_VERSION =	7.0.1
 DISTNAME =		natsort-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc devel
 
@@ -19,7 +19,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
+FLAVORS =		python3
+FLAVOR =		python3
 
 # could also make use of 'fastnumbers'
 RUN_DEPENDS =		textproc/py-ICU${MODPY_FLAVOR}
@@ -27,8 +29,5 @@ RUN_DEPENDS =		textproc/py-ICU${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-pathlib${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR}
-
-post-install:
-	mv ${PREFIX}/bin/natsort{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>

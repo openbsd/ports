@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/01/30 13:08:26 jasper Exp $
-bin/natsort${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.10 2020/10/24 10:53:17 ajacoutot Exp $
+@pkgpath textproc/py-natsort
+bin/natsort
 lib/python${MODPY_VERSION}/site-packages/natsort/
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
