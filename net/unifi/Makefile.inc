@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2020/10/24 09:40:36 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2020/10/24 10:52:54 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -8,15 +8,17 @@ MASTER_SITES?=	http://dl.ubnt.com/unifi/${V}${_BV}/
 JAF=		1.1.1
 DISTFILES=	unifi-$V{UniFi.unix}.zip \
 		unifi_sh_api-$V{unifi_sh_api} \
-		snappy-java-${SNAPPY_V}${SNAPPY_S}.jar:0 \
 		UBNT-MIB:1 \
 		UBNT-UniFi-MIB:1
+.if defined(SNAPPY_V)
+DISTFILES+=	snappy-java-${SNAPPY_V}${SNAPPY_S}.jar:0
+.endif
 EXTRACT_ONLY=	unifi-$V.zip
 PKGNAME=	unifi-$V
 
 # newer unifi uses newer snappy-java, but upstream stopped distributing
 # openbsd .so's. use a locally built one to replace.
-MASTER_SITES0=	https://spacehopper.org/mirrors/
+MASTER_SITES0?=	https://spacehopper.org/mirrors/
 MASTER_SITES1=	http://dl.ubnt-ut.com/snmp/
 
 CATEGORIES=	net
@@ -59,9 +61,11 @@ pre-extract:
 post-extract:
 	@cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
 
+.if defined(SNAPPY_V)
 do-configure:
-	@if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then echo "** Version mismatch in snappy-java"; ls -l ${WRKSRC}/lib/snappy-java*; exit 1; fi
+	@if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then echo "** Version mismatch in snappy-java"; ls -l ${WRKSRC}/lib/snappy-java*; fi
 	cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}${SNAPPY_S}.jar ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar
+.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}{,/backup,/data,/run,/work}
