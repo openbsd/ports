@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2020/06/01 20:37:14 jung Exp $
+# $OpenBSD: Makefile,v 1.28 2020/10/24 20:01:23 jung Exp $
 
 COMMENT=		dynamic menu for X11
 
-V=			4.9
+V=			5.0
 DISTNAME=		dmenu-${V}
-REVISION=		1
 
 CATEGORIES=		x11
 
