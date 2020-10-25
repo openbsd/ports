@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.67 2020/10/09 18:37:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2020/10/25 09:16:09 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
-V=			3.1.5
+V=			3.2.2
 DISTNAME=		zeek-${V}
-REVISION=		0
 
-SHARED_LIBS +=	binpac                    0.0 # 0.54
-SHARED_LIBS +=  broccoli                  7.0 # 5.1
-SHARED_LIBS +=  broker                    1.0 # XXX see patch-aux_broker_CMakeLists_txt
-SHARED_LIBS +=  caf_core                  1.0 # 0.54
-SHARED_LIBS +=  caf_io                    1.0 # 0.54
-SHARED_LIBS +=  caf_openssl               1.0 # 0.54
+SHARED_LIBS +=	binpac                    1.0 # 0.54
+SHARED_LIBS +=  broccoli                  8.0 # 5.1
+SHARED_LIBS +=  broker                    2.0 # XXX see patch-aux_broker_CMakeLists_txt
+SHARED_LIBS +=  caf_core                  2.0 # 0.54
+SHARED_LIBS +=  caf_io                    2.0 # 0.54
+SHARED_LIBS +=  caf_openssl               2.0 # 0.54
 
 CATEGORIES=		net security
 
@@ -32,10 +31,11 @@ MODULES=		lang/python
 # c++11
 COMPILER =		base-clang ports-gcc
 
-MODPY_ADJ_FILES=	aux/btest/btest \
-			aux/zeekctl/bin/stats-to-csv \
-			aux/zeekctl/bin/zeekctl.in \
-			aux/zeekctl/aux/trace-summary/trace-summary
+MODPY_ADJ_FILES=	auxil/btest/btest \
+			auxil/zeekctl/bin/stats-to-csv \
+			auxil/zeekctl/bin/zeekctl.in \
+			auxil/zeekctl/auxil/trace-summary/trace-summary
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/bison \
 			devel/cmake \
@@ -84,9 +84,9 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--binary-package
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/aux/broker/CMakeLists.txt \
-		${WRKSRC}/aux/binpac/lib/CMakeLists.txt \
-		${WRKSRC}/aux/broker/3rdparty/caf/libcaf_{core,io,openssl}/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/auxil/broker/CMakeLists.txt \
+		${WRKSRC}/auxil/binpac/lib/CMakeLists.txt \
+		${WRKSRC}/auxil/broker/caf/libcaf_{core,io,openssl}/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples

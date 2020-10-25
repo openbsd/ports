@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/03/14 17:58:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/10/25 09:16:09 ajacoutot Exp $
 @conflict bro-*
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/zeek
 @rcscript ${RCDIR}/zeek
@@ -9,11 +9,14 @@ bin/bro
 bin/bro-config
 bin/bro-cut
 bin/broctl
+@bin bin/broker-benchmark
+@bin bin/broker-cluster-benchmark
 @bin bin/capstats
 @bin bin/paraglob-test
 @bin bin/rst
 bin/trace-summary
 @bin bin/zeek
+@bin bin/zeek-archiver
 bin/zeek-config
 @bin bin/zeek-cut
 bin/zeek-wrapper
@@ -27,6 +30,8 @@ include/binpac/binpac_exception.h
 include/binpac/binpac_regex.h
 include/broker/
 include/broker/address.hh
+include/broker/alm/
+include/broker/alm/stream_transport.hh
 include/broker/api_flags.hh
 include/broker/atoms.hh
 include/broker/backend.hh
@@ -46,7 +51,7 @@ include/broker/detail/appliers.hh
 include/broker/detail/assert.hh
 include/broker/detail/blob.hh
 include/broker/detail/clone_actor.hh
-include/broker/detail/core_policy.hh
+include/broker/detail/core_recorder.hh
 include/broker/detail/core_scatterer.hh
 include/broker/detail/data_generator.hh
 include/broker/detail/die.hh
@@ -55,7 +60,9 @@ include/broker/detail/flare.hh
 include/broker/detail/flare_actor.hh
 include/broker/detail/generator_file_reader.hh
 include/broker/detail/generator_file_writer.hh
+include/broker/detail/has_network_info.hh
 include/broker/detail/hash.hh
+include/broker/detail/lift.hh
 include/broker/detail/make_backend.hh
 include/broker/detail/master_actor.hh
 include/broker/detail/master_resolver.hh
@@ -66,12 +73,14 @@ include/broker/detail/network_cache.hh
 include/broker/detail/operators.hh
 include/broker/detail/prefix_matcher.hh
 include/broker/detail/radix_tree.hh
+include/broker/detail/retry_state.hh
 include/broker/detail/rocksdb_backend.hh
 include/broker/detail/scoped_flare_actor.hh
 include/broker/detail/shared_publisher_queue.hh
 include/broker/detail/shared_queue.hh
 include/broker/detail/shared_subscriber_queue.hh
 include/broker/detail/sqlite_backend.hh
+include/broker/detail/store_actor.hh
 include/broker/detail/subscription.hh
 include/broker/detail/type_traits.hh
 include/broker/endpoint.hh
@@ -86,6 +95,11 @@ include/broker/internal_command.hh
 include/broker/logger.hh
 include/broker/mailbox.hh
 include/broker/message.hh
+include/broker/mixin/
+include/broker/mixin/connector.hh
+include/broker/mixin/data_store_manager.hh
+include/broker/mixin/notifier.hh
+include/broker/mixin/recorder.hh
 include/broker/network_info.hh
 include/broker/none.hh
 include/broker/optional.hh
@@ -95,10 +109,12 @@ include/broker/peer_info.hh
 include/broker/peer_status.hh
 include/broker/port.hh
 include/broker/publisher.hh
+include/broker/publisher_id.hh
 include/broker/snapshot.hh
 include/broker/status.hh
 include/broker/status_subscriber.hh
 include/broker/store.hh
+include/broker/store_event.hh
 include/broker/subnet.hh
 include/broker/subscriber.hh
 include/broker/subscriber_base.hh
@@ -204,7 +220,6 @@ include/caf/detail/consumer.hpp
 include/caf/detail/decorated_tuple.hpp
 include/caf/detail/default_invoke_result_visitor.hpp
 include/caf/detail/delegate_serialize.hpp
-include/caf/detail/dispatch_parse_cli.hpp
 include/caf/detail/disposer.hpp
 include/caf/detail/double_ended_queue.hpp
 include/caf/detail/dynamic_message_data.hpp
@@ -222,6 +237,7 @@ include/caf/detail/ini_consumer.hpp
 include/caf/detail/init_fun_factory.hpp
 include/caf/detail/int_list.hpp
 include/caf/detail/invoke_result_visitor.hpp
+include/caf/detail/is_complete.hpp
 include/caf/detail/is_one_of.hpp
 include/caf/detail/is_primitive_config_value.hpp
 include/caf/detail/limited_vector.hpp
@@ -332,6 +348,7 @@ include/caf/illegal_message_element.hpp
 include/caf/inbound_path.hpp
 include/caf/index_mapping.hpp
 include/caf/infer_handle.hpp
+include/caf/init_global_meta_objects.hpp
 include/caf/input_range.hpp
 include/caf/interface_mismatch.hpp
 include/caf/intrusive/
@@ -430,6 +447,7 @@ include/caf/ipv6_address.hpp
 include/caf/ipv6_endpoint.hpp
 include/caf/ipv6_subnet.hpp
 include/caf/is_actor_handle.hpp
+include/caf/is_error_code_enum.hpp
 include/caf/is_message_sink.hpp
 include/caf/is_timeout_or_catch_all.hpp
 include/caf/is_typed_actor.hpp
@@ -580,6 +598,7 @@ include/caf/timestamp.hpp
 include/caf/to_string.hpp
 include/caf/type_erased_tuple.hpp
 include/caf/type_erased_value.hpp
+include/caf/type_id.hpp
 include/caf/type_nr.hpp
 include/caf/typed_actor.hpp
 include/caf/typed_actor_pointer.hpp
@@ -650,6 +669,7 @@ include/zeek/3rdparty/sqlite3.h
 include/zeek/Anon.h
 include/zeek/Attr.h
 include/zeek/Base64.h
+include/zeek/BifReturnVal.h
 include/zeek/BroList.h
 include/zeek/BroString.h
 include/zeek/Brofiler.h
@@ -728,6 +748,8 @@ include/zeek/UID.h
 include/zeek/Val.h
 include/zeek/Var.h
 include/zeek/WeirdState.h
+include/zeek/ZeekArgs.h
+include/zeek/ZeekString.h
 include/zeek/analyzer/
 include/zeek/analyzer/Analyzer.h
 include/zeek/analyzer/Component.h
@@ -923,10 +945,14 @@ include/zeek/analyzer/protocol/radius/radius-protocol.pac
 include/zeek/analyzer/protocol/radius/radius.pac
 include/zeek/analyzer/protocol/rdp/
 include/zeek/analyzer/protocol/rdp/RDP.h
+include/zeek/analyzer/protocol/rdp/RDPEUDP.h
 include/zeek/analyzer/protocol/rdp/events.bif.h
 include/zeek/analyzer/protocol/rdp/rdp-analyzer.pac
 include/zeek/analyzer/protocol/rdp/rdp-protocol.pac
 include/zeek/analyzer/protocol/rdp/rdp.pac
+include/zeek/analyzer/protocol/rdp/rdpeudp-analyzer.pac
+include/zeek/analyzer/protocol/rdp/rdpeudp-protocol.pac
+include/zeek/analyzer/protocol/rdp/rdpeudp.pac
 include/zeek/analyzer/protocol/rdp/types.bif.h
 include/zeek/analyzer/protocol/rfb/
 include/zeek/analyzer/protocol/rfb/RFB.h
@@ -1127,7 +1153,6 @@ include/zeek/broker/store.bif.h
 include/zeek/bsd-getopt-long.h
 include/zeek/const.bif.func_h
 include/zeek/const.bif.netvar_h
-include/zeek/cq.h
 include/zeek/digest.h
 include/zeek/event.bif.func_h
 include/zeek/event.bif.netvar_h
@@ -1180,6 +1205,9 @@ include/zeek/file_analysis/analyzer/x509/types.bif.h
 include/zeek/file_analysis/analyzer/x509/x509-extension.pac
 include/zeek/file_analysis/analyzer/x509/x509-signed_certificate_timestamp.pac
 include/zeek/file_analysis/file_analysis.bif.h
+include/zeek/fuzzers/
+include/zeek/fuzzers/FuzzBuffer.h
+include/zeek/fuzzers/fuzzer-setup.h
 include/zeek/input/
 include/zeek/input.h
 include/zeek/input/Component.h
@@ -1263,7 +1291,6 @@ include/zeek/probabilistic/top-k.bif.h
 include/zeek/reporter.bif.func_h
 include/zeek/reporter.bif.netvar_h
 include/zeek/setsignal.h
-include/zeek/siphash24.h
 include/zeek/stats.bif.func_h
 include/zeek/stats.bif.netvar_h
 include/zeek/strings.bif.func_h
@@ -1287,6 +1314,7 @@ include/zeek/types.bif.netvar_h
 include/zeek/util.h
 include/zeek/zeek-affinity.h
 include/zeek/zeek-config.h
+include/zeek/zeek-setup.h
 include/zeek/zeek.bif.func_h
 include/zeek/zeek.bif.netvar_h
 include/zeek/zeekygen/
@@ -1312,84 +1340,89 @@ lib/zeek/plugins/
 lib/zeekctl/
 lib/zeekctl/BroControl/
 lib/zeekctl/BroControl/__init__.py
-lib/zeekctl/BroControl/__init__.pyc
+${MODPY_COMMENT}lib/zeekctl/BroControl/${MODPY_PYCACHE}/
+lib/zeekctl/BroControl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/BroControl/${MODPY_PYCACHE}cmdresult.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/BroControl/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/BroControl/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeekctl/BroControl/cmdresult.py
-lib/zeekctl/BroControl/cmdresult.pyc
 lib/zeekctl/BroControl/config.py
-lib/zeekctl/BroControl/config.pyc
 lib/zeekctl/BroControl/plugin.py
-lib/zeekctl/BroControl/plugin.pyc
 lib/zeekctl/SubnetTree.py
-lib/zeekctl/SubnetTree.pyc
 lib/zeekctl/ZeekControl/
 lib/zeekctl/ZeekControl/__init__.py
-lib/zeekctl/ZeekControl/__init__.pyc
+${MODPY_COMMENT}lib/zeekctl/ZeekControl/${MODPY_PYCACHE}/
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}cmdresult.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}cron.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}doc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}execute.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}install.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}lock.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}node.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}pluginreg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}printdoc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}py3zeek.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}ssh_runner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}state.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}utilcurses.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}zeekcmd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/ZeekControl/${MODPY_PYCACHE}zeekctl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeekctl/ZeekControl/cmdresult.py
-lib/zeekctl/ZeekControl/cmdresult.pyc
 lib/zeekctl/ZeekControl/config.py
-lib/zeekctl/ZeekControl/config.pyc
 lib/zeekctl/ZeekControl/control.py
-lib/zeekctl/ZeekControl/control.pyc
 lib/zeekctl/ZeekControl/cron.py
-lib/zeekctl/ZeekControl/cron.pyc
 lib/zeekctl/ZeekControl/doc.py
-lib/zeekctl/ZeekControl/doc.pyc
 lib/zeekctl/ZeekControl/events.py
-lib/zeekctl/ZeekControl/events.pyc
 lib/zeekctl/ZeekControl/exceptions.py
-lib/zeekctl/ZeekControl/exceptions.pyc
 lib/zeekctl/ZeekControl/execute.py
-lib/zeekctl/ZeekControl/execute.pyc
 lib/zeekctl/ZeekControl/install.py
-lib/zeekctl/ZeekControl/install.pyc
 lib/zeekctl/ZeekControl/lock.py
-lib/zeekctl/ZeekControl/lock.pyc
 lib/zeekctl/ZeekControl/node.py
-lib/zeekctl/ZeekControl/node.pyc
 lib/zeekctl/ZeekControl/options.py
-lib/zeekctl/ZeekControl/options.pyc
 lib/zeekctl/ZeekControl/plugin.py
-lib/zeekctl/ZeekControl/plugin.pyc
 lib/zeekctl/ZeekControl/pluginreg.py
-lib/zeekctl/ZeekControl/pluginreg.pyc
 lib/zeekctl/ZeekControl/printdoc.py
-lib/zeekctl/ZeekControl/printdoc.pyc
 lib/zeekctl/ZeekControl/py3zeek.py
-lib/zeekctl/ZeekControl/py3zeek.pyc
 lib/zeekctl/ZeekControl/ssh_runner.py
-lib/zeekctl/ZeekControl/ssh_runner.pyc
 lib/zeekctl/ZeekControl/state.py
-lib/zeekctl/ZeekControl/state.pyc
 lib/zeekctl/ZeekControl/util.py
-lib/zeekctl/ZeekControl/util.pyc
 lib/zeekctl/ZeekControl/utilcurses.py
-lib/zeekctl/ZeekControl/utilcurses.pyc
 lib/zeekctl/ZeekControl/version.py
-lib/zeekctl/ZeekControl/version.pyc
 lib/zeekctl/ZeekControl/zeekcmd.py
-lib/zeekctl/ZeekControl/zeekcmd.pyc
 lib/zeekctl/ZeekControl/zeekctl.py
-lib/zeekctl/ZeekControl/zeekctl.pyc
 @so lib/zeekctl/_SubnetTree.so
+${MODPY_COMMENT}lib/zeekctl/${MODPY_PYCACHE}/
+lib/zeekctl/${MODPY_PYCACHE}SubnetTree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeekctl/broker/
 lib/zeekctl/broker/__init__.py
-lib/zeekctl/broker/__init__.pyc
+${MODPY_COMMENT}lib/zeekctl/broker/${MODPY_PYCACHE}/
+lib/zeekctl/broker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/broker/${MODPY_PYCACHE}bro.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/broker/${MODPY_PYCACHE}zeek.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/zeekctl/broker/_broker.so
 lib/zeekctl/broker/bro.py
-lib/zeekctl/broker/bro.pyc
 lib/zeekctl/broker/zeek.py
-lib/zeekctl/broker/zeek.pyc
 lib/zeekctl/plugins/
 lib/zeekctl/plugins/TestPlugin.py
-lib/zeekctl/plugins/TestPlugin.pyc
+${MODPY_COMMENT}lib/zeekctl/plugins/${MODPY_PYCACHE}/
+lib/zeekctl/plugins/${MODPY_PYCACHE}TestPlugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/plugins/${MODPY_PYCACHE}lb_custom.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/plugins/${MODPY_PYCACHE}lb_myricom.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/plugins/${MODPY_PYCACHE}lb_pf_ring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeekctl/plugins/${MODPY_PYCACHE}ps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeekctl/plugins/lb_custom.py
-lib/zeekctl/plugins/lb_custom.pyc
 lib/zeekctl/plugins/lb_myricom.py
-lib/zeekctl/plugins/lb_myricom.pyc
 lib/zeekctl/plugins/lb_pf_ring.py
-lib/zeekctl/plugins/lb_pf_ring.pyc
 lib/zeekctl/plugins/ps.py
-lib/zeekctl/plugins/ps.pyc
 @man man/man1/trace-summary.1
 @man man/man1/zeek-cut.1
 @man man/man8/zeek.8
@@ -1581,6 +1614,7 @@ share/zeek/base/frameworks/broker/main.zeek
 share/zeek/base/frameworks/broker/store.zeek
 share/zeek/base/frameworks/cluster/
 share/zeek/base/frameworks/cluster/__load__.zeek
+share/zeek/base/frameworks/cluster/broker-stores.zeek
 share/zeek/base/frameworks/cluster/main.zeek
 share/zeek/base/frameworks/cluster/nodes/
 share/zeek/base/frameworks/cluster/nodes/logger.zeek
@@ -1606,11 +1640,14 @@ share/zeek/base/frameworks/files/magic/
 share/zeek/base/frameworks/files/magic/__load__.zeek
 share/zeek/base/frameworks/files/magic/archive.sig
 share/zeek/base/frameworks/files/magic/audio.sig
+share/zeek/base/frameworks/files/magic/executable.sig
 share/zeek/base/frameworks/files/magic/font.sig
 share/zeek/base/frameworks/files/magic/general.sig
 share/zeek/base/frameworks/files/magic/image.sig
+share/zeek/base/frameworks/files/magic/java.sig
 share/zeek/base/frameworks/files/magic/libmagic.sig
-share/zeek/base/frameworks/files/magic/msoffice.sig
+share/zeek/base/frameworks/files/magic/office.sig
+share/zeek/base/frameworks/files/magic/programming.sig
 share/zeek/base/frameworks/files/magic/video.sig
 share/zeek/base/frameworks/files/main.zeek
 share/zeek/base/frameworks/input/
@@ -1871,6 +1908,7 @@ share/zeek/base/protocols/xmpp/main.zeek
 share/zeek/base/utils/
 share/zeek/base/utils/active-http.zeek
 share/zeek/base/utils/addrs.zeek
+share/zeek/base/utils/backtrace.zeek
 share/zeek/base/utils/conn-ids.zeek
 share/zeek/base/utils/dir.zeek
 share/zeek/base/utils/directions-and-hosts.zeek
@@ -1895,6 +1933,7 @@ share/zeek/cmake/BinPAC.cmake
 share/zeek/cmake/BroPlugin.cmake
 share/zeek/cmake/COPYING
 share/zeek/cmake/ChangeMacInstallNames.cmake
+share/zeek/cmake/CheckCompilerArch.cmake
 share/zeek/cmake/CheckCompilers.cmake
 share/zeek/cmake/CheckFunctions.cmake
 share/zeek/cmake/CheckHeaders.cmake
@@ -1906,7 +1945,6 @@ share/zeek/cmake/ConfigurePackaging.cmake
 share/zeek/cmake/FindBIND.cmake
 share/zeek/cmake/FindBISON.cmake
 share/zeek/cmake/FindBinPAC.cmake
-share/zeek/cmake/FindBroccoli.cmake
 share/zeek/cmake/FindBroker.cmake
 share/zeek/cmake/FindCAF.cmake
 share/zeek/cmake/FindCapstats.cmake
@@ -1918,9 +1956,7 @@ share/zeek/cmake/FindKqueue.cmake
 share/zeek/cmake/FindLibKrb5.cmake
 share/zeek/cmake/FindLibMMDB.cmake
 share/zeek/cmake/FindPCAP.cmake
-share/zeek/cmake/FindPyBroccoli.cmake
 share/zeek/cmake/FindPythonDev.cmake
-share/zeek/cmake/FindReadline.cmake
 share/zeek/cmake/FindRequiredPackage.cmake
 share/zeek/cmake/FindRocksDB.cmake
 share/zeek/cmake/FindSubnetTree.cmake
@@ -1939,7 +1975,6 @@ share/zeek/cmake/OpenSSLTests.cmake
 share/zeek/cmake/PCAPTests.cmake
 share/zeek/cmake/ProhibitInSourceBuild.cmake
 share/zeek/cmake/README
-share/zeek/cmake/RequireCXX11.cmake
 share/zeek/cmake/RequireCXX17.cmake
 share/zeek/cmake/SetDefaultCompileFlags.cmake
 share/zeek/cmake/SetupRPATH.cmake
@@ -1970,7 +2005,7 @@ share/zeek/policy/frameworks/dpd/detect-protocols.zeek
 share/zeek/policy/frameworks/dpd/packet-segment-logging.zeek
 share/zeek/policy/frameworks/files/
 share/zeek/policy/frameworks/files/detect-MHR.zeek
-share/zeek/policy/frameworks/files/entro${MODPY_PY_PREFIX}test-all-files.zeek
+share/zeek/policy/frameworks/files/entropy-test-all-files.zeek
 share/zeek/policy/frameworks/files/extract-all-files.zeek
 share/zeek/policy/frameworks/files/hash-all-files.zeek
 share/zeek/policy/frameworks/intel/
@@ -2046,6 +2081,7 @@ share/zeek/policy/protocols/dhcp/sub-opts.zeek
 share/zeek/policy/protocols/dns/
 share/zeek/policy/protocols/dns/auth-addl.zeek
 share/zeek/policy/protocols/dns/detect-external-names.zeek
+share/zeek/policy/protocols/dns/log-original-query-case.zeek
 share/zeek/policy/protocols/ftp/
 share/zeek/policy/protocols/ftp/detect-bruteforcing.zeek
 share/zeek/policy/protocols/ftp/detect.zeek

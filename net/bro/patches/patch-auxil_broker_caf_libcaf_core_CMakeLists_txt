@@ -1,0 +1,16 @@
+$OpenBSD: patch-auxil_broker_caf_libcaf_core_CMakeLists_txt,v 1.1 2020/10/25 09:16:09 ajacoutot Exp $
+
+Index: auxil/broker/caf/libcaf_core/CMakeLists.txt
+--- auxil/broker/caf/libcaf_core/CMakeLists.txt.orig
++++ auxil/broker/caf/libcaf_core/CMakeLists.txt
+@@ -184,8 +184,8 @@ if (NOT CAF_BUILD_STATIC_ONLY)
+   )
+   set_target_properties(libcaf_core_shared
+     PROPERTIES
+-    SOVERSION ${CAF_VERSION}
+-    VERSION ${CAF_LIB_VERSION}
++    SOVERSION ${LIBcaf_core_VERSION}
++    VERSION ${LIBcaf_core_VERSION}
+     OUTPUT_NAME caf_core
+   )
+   install(TARGETS libcaf_core_shared

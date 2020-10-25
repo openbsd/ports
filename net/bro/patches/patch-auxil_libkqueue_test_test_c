@@ -1,0 +1,13 @@
+$OpenBSD: patch-auxil_libkqueue_test_test_c,v 1.1 2020/10/25 09:16:09 ajacoutot Exp $
+
+Index: auxil/libkqueue/test/test.c
+--- auxil/libkqueue/test/test.c.orig
++++ auxil/libkqueue/test/test.c
+@@ -19,7 +19,6 @@
+ #endif
+ #include <sys/types.h>
+ #include <limits.h>
+-#include <execinfo.h>
+ 
+ #include "common.h"
+ 
