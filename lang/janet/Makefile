@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/09/22 19:03:51 jturner Exp $
-
-BROKEN-sparc64 = compile error in boot.janet
-BROKEN-mips64 =	compile error in system_test.c
+# $OpenBSD: Makefile,v 1.28 2020/10/25 23:52:46 jturner Exp $
 
 COMMENT =	functional and imperative programming language
 CATEGORIES =	lang
@@ -9,6 +6,7 @@ CATEGORIES =	lang
 GH_ACCOUNT =	janet-lang
 GH_PROJECT =	janet
 GH_TAGNAME =	v1.12.2
+REVISION =	0
 
 SHARED_LIBS +=	janet		4.0 # 1.12
 
