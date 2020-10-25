@@ -1,13 +1,16 @@
-$OpenBSD: patch-Tests_run_tests_py,v 1.4 2015/07/18 22:24:48 jasper Exp $
---- Tests/run_tests.py.orig	Sat Dec 17 11:34:46 2005
-+++ Tests/run_tests.py	Sat Jul 18 15:18:10 2015
-@@ -196,11 +196,8 @@ def main(argv):
+$OpenBSD: patch-Tests_run_tests_py,v 1.5 2020/10/25 18:12:58 martin Exp $
+Index: Tests/run_tests.py
+--- Tests/run_tests.py.orig
++++ Tests/run_tests.py
+@@ -150,13 +150,10 @@ def main(argv):
      # A. Because Martel may not be in ../build/lib.*
      test_path = sys.path[0] or "."
      source_path = os.path.abspath("%s/.." % test_path)
 -    sys.path.insert(1, source_path)
-     build_path = os.path.abspath("%s/../build/lib.%s-%s" % (
-         test_path, distutils.util.get_platform(), sys.version[:3]))
+     build_path = os.path.abspath(
+         "%s/../build/lib.%s-%s"
+         % (test_path, distutils.util.get_platform(), sys.version[:3])
+     )
 -    if os.access(build_path, os.F_OK):
 -        sys.path.insert(1, build_path)
  

@@ -1,29 +1,35 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/10/25 18:12:58 martin Exp $
 
-COMMENT=		Python tools for computational molecular biology
+COMMENT =		Python tools for computational molecular biology
 
-MODPY_EGG_VERSION=	1.66
-DISTNAME=		biopython-${MODPY_EGG_VERSION}
-CATEGORIES=		biology
-REVISION=		2
+MODPY_EGG_VERSION =	1.78
+DISTNAME =		biopython-${MODPY_EGG_VERSION}
+CATEGORIES =		biology
+PKGNAME =		py-${DISTNAME}
 
-HOMEPAGE=		http://www.biopython.org/
+HOMEPAGE =		http://www.biopython.org/
 
-# BSD-like 
-PERMIT_PACKAGE=	Yes
+MAINTAINER =		Martin Reindl <martin@catai.org>
 
-MASTER_SITES=	${HOMEPAGE}DIST/
+# BSD-like
+PERMIT_PACKAGE =	Yes
 
-MODULES=	lang/python
+MODULES =	lang/python
 
-WANTLIB+=	${MODPY_WANTLIB} pthread
+MODPY_PI =              Yes
+MODPY_SETUPTOOLS =      Yes
 
-BUILD_DEPENDS=	devel/swig \
-		math/py-numpy
-RUN_DEPENDS=	math/py-numpy \
-		print/py-reportlab
+FLAVORS =		python3
+FLAVOR =		python3
 
-CFLAGS+=	-fPIC
+WANTLIB +=	pthread
+
+BUILD_DEPENDS =	devel/swig \
+		math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS =	math/py-numpy${MODPY_FLAVOR} \
+		print/py-reportlab${MODPY_FLAVOR}
+
+CFLAGS +=	-fPIC
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-biopython/
