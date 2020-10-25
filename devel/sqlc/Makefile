@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2020/10/22 02:58:22 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/25 20:48:40 sthen Exp $
+
+# github.com/kyleconroy/sqlc/internal/engine/sqlite/parser fails on LP32
+ONLY_FOR_ARCHS =	aarch64 amd64
 
 COMMENT =	create type safe go from SQL
 
