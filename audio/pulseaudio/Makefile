@@ -1,22 +1,18 @@
-# $OpenBSD: Makefile,v 1.107 2020/04/22 09:51:25 ratchov Exp $
+# $OpenBSD: Makefile,v 1.108 2020/10/26 08:26:00 ajacoutot Exp $
 
-# XXX
-# sndio: what to do with (channel) map
-# sndio: check sample format
-# sndio: support for recording
-
-PORTROACH=		skipv:13.99.1
+# XXX sndio: what to do with (channel) map
+# XXX sndio: check sample format
+# XXX sndio: support for recording
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		13.0
-REVISION=		0
+VERSION=		13.99.2
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  pulse                7.0      # .21.1
-SHARED_LIBS +=  pulse-simple         1.1      # .1.1
-SHARED_LIBS +=  pulse-mainloop-glib  1.1      # .0.5
+SHARED_LIBS +=  pulse                7.1      # .22.0
+SHARED_LIBS +=  pulse-simple         1.2      # .1.1
+SHARED_LIBS +=  pulse-mainloop-glib  1.2      # .0.6
 
 CATEGORIES=		audio
 
@@ -109,24 +105,36 @@ CONFIGURE_ARGS+=	--disable-neon-opt
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${TRUEPREFIX}/lib/pulseaudio:${TRUEPREFIX}/lib/pulse-${VERSION}/modules" \
+				-Wl,-rpath,${TRUEPREFIX}/lib/pulseaudio:${TRUEPREFIX}/lib/pulse-${VERSION:R}/modules" \
 			ac_cv_prog_M4=m4
 
 FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse" \
 			sysconfdir="${PREFIX}/share/examples/pulseaudio"
+
+### XXX remove for >=13.99.2
+MASTER_SITES0=		https://cgit.freedesktop.org/pulseaudio/pulseaudio/patch/?id=
+PATCH_DIST_STRIP=	-p1
+PATCHFILES=		99b2d882823c76bc5129135b19618c99fb55e1b9:0 \
+			05f567086b72f05f0995f5ea4e282a3ce8d0bb15:0 \
+			44c531762400b561304d35e64f1997e9e06ec1fb:0 \
+			40bb058a31bcdb9a1e44586a560aaf90aecafc74:0 \
+			ef6ceb83a2d90d1e96b744f9414a651f5320e63c:0
+CONFIGURE_ARGS +=	--disable-gstreamer
+### XXX >=13.99.2
 
 ### SNDIO ###
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 post-extract:
 	cp ${FILESDIR}/module-sndio*.{c,h} ${WRKSRC}/src/modules/
+### END SNDIO ###
 
 pre-configure:
 	sed -i 's,/bin/bash,/usr/bin/env bash,' \
 		${WRKSRC}/shell-completion/bash/pulseaudio
 
 post-install:
-	rm ${PREFIX}/lib/pulse-${VERSION}/modules/*.a
+	rm ${PREFIX}/lib/pulse-${VERSION:R}/modules/*.a
 # we don't install padsp
 	cd ${PREFIX} && rm man/man1/padsp.1
 
