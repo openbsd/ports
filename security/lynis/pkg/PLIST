@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/06/19 08:24:01 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/10/26 12:09:55 gonzalo Exp $
 @group wheel
 bin/lynis
 @man man/man8/lynis.8
@@ -24,6 +24,7 @@ share/lynis/db/languages/br
 share/lynis/db/languages/cn
 share/lynis/db/languages/da
 share/lynis/db/languages/de
+share/lynis/db/languages/de-AT
 share/lynis/db/languages/en
 share/lynis/db/languages/en-GB
 share/lynis/db/languages/en-US
