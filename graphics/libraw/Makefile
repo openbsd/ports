@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2020/08/22 08:21:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.46 2020/10/26 18:15:37 rsadowski Exp $
 
 COMMENT =		library for reading RAW files
 
-DISTNAME =		LibRaw-0.20.0
+DISTNAME =		LibRaw-0.20.2
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
 
@@ -26,7 +26,12 @@ LIB_DEPENDS =		graphics/jasper \
 			graphics/lcms2
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+
+CONFIGURE_STYLE =	autoreconf
+
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
