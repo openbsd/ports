@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/07/25 10:45:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2020/10/26 15:36:08 rsadowski Exp $
 
 
 COMMENT =		accounting for KDE 5
@@ -7,7 +7,7 @@ HOMEPAGE =		https://kmymoney.org/
 
 VERSION =		5.1.0
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity x11
 
@@ -35,9 +35,9 @@ WANTLIB += KF5IdentityManagement KF5ItemModels KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIONTLM KF5KIOWidgets KF5Notifications KF5PimTextEdit
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
-WANTLIB += KF5WebKit KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebKit Qt5WebKitWidgets
+WANTLIB += KF5WebKit KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebKit Qt5WebKitWidgets
 WANTLIB += Qt5Widgets Qt5Xml alkimia5 aqbanking c gmp gpgmepp
 WANTLIB += gwengui-cpp gwengui-qt5 gwenhywfar ical icalss m ofx
 WANTLIB += osp
