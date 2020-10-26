@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2020/09/04 18:34:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.70 2020/10/26 12:59:24 rsadowski Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
 V =		7.1.0
 DISTNAME =	digikam-${V}
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -22,8 +23,8 @@ WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5CalendarCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5FileMetaData
 WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5Notifications KF5NotifyConfig KF5Sane
-WANTLIB += KF5Service KF5Solid KF5ThreadWeaver KF5WidgetsAddons
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5NotifyConfig
+WANTLIB += KF5Sane KF5Service KF5Solid KF5ThreadWeaver KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Magick++-6.Q16 MagickCore-6.Q16
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sql
