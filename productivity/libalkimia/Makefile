@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/27 16:30:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2020/10/26 15:36:53 rsadowski Exp $
 
 COMMENT =	KDE financial data handling library
 CATEGORIES =	productivity x11
 
-V =		8.0.3
+V =		8.0.4
 PKGNAME =	libalkimia-$V
 DISTNAME =	alkimia-$V
-REVISION =	0
 
-SHARED_LIBS =  alkimia5  0.0 # 7.0.1
-
+SHARED_LIBS =  alkimia5  1.0 # 8.0.4
 
 HOMEPAGE =	https://community.kde.org/Alkimia/libalkimia
 
@@ -23,9 +21,9 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GuiAddons
 WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KDELibs4Support
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5Notifications KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5UnitConversion
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5Parts
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5UnitConversion
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c gmp

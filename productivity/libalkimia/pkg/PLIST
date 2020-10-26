@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/07/27 16:30:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/10/26 15:36:53 rsadowski Exp $
 @bin bin/onlinequoteseditor5
 include/alkimia/
 include/alkimia/Qt5/
 include/alkimia/Qt5/alkimia/
 include/alkimia/Qt5/alkimia/alk_export.h
 include/alkimia/Qt5/alkimia/alkcompany.h
-include/alkimia/Qt5/alkimia/alkfinancequoteprocess.h
 include/alkimia/Qt5/alkimia/alkonlinequote.h
 include/alkimia/Qt5/alkimia/alkonlinequotesource.h
 include/alkimia/Qt5/alkimia/alkonlinequotesprofile.h
@@ -24,9 +23,6 @@ lib/pkgconfig/libalkimia5.pc
 lib/qt5/qml/org/kde/alkimia/
 @so lib/qt5/qml/org/kde/alkimia/libqmlalkimia.so
 lib/qt5/qml/org/kde/alkimia/qmldir
-share/applications/alkimia5/
-share/applications/alkimia5/misc/
-share/applications/alkimia5/misc/financequote.pl
 share/applications/org.kde.onlinequoteseditor5.desktop
 share/examples/libalkimia/
 share/examples/libalkimia/xdg/
@@ -56,6 +52,10 @@ share/locale/de/LC_MESSAGES/alkimia.mo
 share/locale/de/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/de/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
+share/locale/el/LC_MESSAGES/alkimia.mo
+share/locale/el/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/el/LC_MESSAGES/plasma_applet_onlinequote.mo
+share/locale/el/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/en_GB/LC_MESSAGES/alkimia.mo
 share/locale/en_GB/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_onlinequote.mo
@@ -64,6 +64,10 @@ share/locale/es/LC_MESSAGES/alkimia.mo
 share/locale/es/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/es/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
+share/locale/et/LC_MESSAGES/alkimia.mo
+share/locale/et/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/et/LC_MESSAGES/plasma_applet_onlinequote.mo
+share/locale/et/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/fi/LC_MESSAGES/alkimia.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/fr/LC_MESSAGES/alkimia.mo
@@ -74,6 +78,10 @@ share/locale/gl/LC_MESSAGES/alkimia.mo
 share/locale/gl/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
+share/locale/ia/LC_MESSAGES/alkimia.mo
+share/locale/ia/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/ia/LC_MESSAGES/plasma_applet_onlinequote.mo
+share/locale/ia/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/it/LC_MESSAGES/alkimia.mo
 share/locale/it/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/it/LC_MESSAGES/plasma_applet_onlinequote.mo
@@ -102,6 +110,9 @@ share/locale/pt_BR/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/ru/LC_MESSAGES/alkimia.mo
+share/locale/ru/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_onlinequote.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/sk/LC_MESSAGES/alkimia.mo
 share/locale/sk/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_onlinequote.mo
