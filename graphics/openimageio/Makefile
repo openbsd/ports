@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2020/08/15 20:31:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2020/10/26 18:37:59 jca Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -10,7 +10,7 @@ GH_PROJECT = 		oiio
 V =			1.8.6
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
-REVISION =		9
+REVISION =		10
 
 SHARED_LIBS +=		OpenImageIO		5.0 # 1.0
 SHARED_LIBS +=  	OpenImageIO_Util	2.0 # 1.5
@@ -52,6 +52,7 @@ LIB_DEPENDS =		devel/boost>=1.67.0 \
 			graphics/libraw
 
 CONFIGURE_ARGS +=	-DUSE_OPENCV=OFF \
+			-DUSE_DICOM=OFF \
 			-DCMAKE_INSTALL_MANDIR="man/man1" \
 			-DSTOP_ON_WARNING=OFF
 
