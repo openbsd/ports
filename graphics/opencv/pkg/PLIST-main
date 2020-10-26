@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2020/05/25 05:13:53 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2020/10/26 12:55:52 rsadowski Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
 @bin bin/opencv_version
@@ -78,6 +78,7 @@ include/opencv4/opencv2/core/hal/intrin_cpp.hpp
 include/opencv4/opencv2/core/hal/intrin_forward.hpp
 include/opencv4/opencv2/core/hal/intrin_msa.hpp
 include/opencv4/opencv2/core/hal/intrin_neon.hpp
+include/opencv4/opencv2/core/hal/intrin_rvv.hpp
 include/opencv4/opencv2/core/hal/intrin_sse.hpp
 include/opencv4/opencv2/core/hal/intrin_sse_em.hpp
 include/opencv4/opencv2/core/hal/intrin_vsx.hpp

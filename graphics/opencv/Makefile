@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2020/09/04 13:09:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.63 2020/10/26 12:55:51 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
@@ -7,7 +7,7 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processin
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.4.0
+V =			4.5.0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
@@ -25,7 +25,7 @@ DISTFILES =		opencv-{opencv/archive/}${V}${EXTRACT_SUFX}
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 7.0
+SHARED_LIBS += $i 8.0
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} IlmImf-2_5 avcodec avformat avutil
@@ -136,7 +136,6 @@ post-patch:
 		${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
 
 post-install:
-	${CONFIG_ADJ_CMD} ${PREFIX}/share/OpenCV/OpenCVConfig.cmake
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
 
 do-test:
