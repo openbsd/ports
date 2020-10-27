@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/21 10:26:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/27 20:47:43 jasper Exp $
 
 COMMENT =		improved screen locker
 
 GH_ACCOUNT =		i3
 GH_PROJECT =		i3lock
-GH_TAGNAME =		2.12
+GH_TAGNAME =		2.13
 
 CATEGORIES =		x11
 

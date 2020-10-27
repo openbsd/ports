@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.1 2018/10/21 12:07:30 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2020/10/27 20:47:43 jasper Exp $
 
 GNU libiconv provides libiconv_open() which is mapped to iconv_open()
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -86,7 +86,7 @@ case "$host" in
+@@ -87,7 +87,7 @@ case "$host" in
  	;;
  esac
  
