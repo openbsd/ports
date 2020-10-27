@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2020/10/23 09:59:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/27 08:57:17 ajacoutot Exp $
 
 BROKEN =		move to python3 or gobject-introspection bindings
+# BUILD_DEPENDS +=	graphics/py-cairo
 # RUN_DEPENDS +=	graphics/py-cairo
 
 COMMENT =	multiplatform vector graphics editor
@@ -24,8 +25,6 @@ MODPY_SETUP =	setup-sk1.py
 WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 cairo fribidi glib-2.0
 WANTLIB += gobject-2.0 intl lcms2 pango-1.0 pangocairo-1.0 pthread
 WANTLIB += ${MODPY_WANTLIB}
-
-BUILD_DEPENDS +=	graphics/py-cairo
 
 LIB_DEPENDS +=		devel/pango \
 			graphics/ImageMagick \
