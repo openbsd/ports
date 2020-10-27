@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.582 2020/10/23 18:22:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.583 2020/10/27 21:50:10 daniel Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -280,6 +280,7 @@
      SUBDIR += py-schedule
      SUBDIR += py-statgrab
      SUBDIR += py-statgrab,python3
+     SUBDIR += py-threadpoolctl,python3
      SUBDIR += py-tsk,python3
      SUBDIR += py-vmomi,python3
      SUBDIR += radiusreport
