@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/12/08 10:16:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/10/28 15:42:15 ajacoutot Exp $
+@pkgpath multimedia/gstreamer1/py-gstreamer
 @so lib/gstreamer-${API}/libgstpython.so
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gst.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstPbutils.py
