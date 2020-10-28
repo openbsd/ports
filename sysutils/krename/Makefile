@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2020/09/08 19:45:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2020/10/28 11:45:32 rsadowski Exp $
 
 COMMENT =	powerful batch file renamer
 
-VERSION =	5.0.0
+VERSION =	5.0.1
 DISTNAME =	krename-${VERSION}
-REVISION =	4
 
 CATEGORIES =	sysutils x11
 
