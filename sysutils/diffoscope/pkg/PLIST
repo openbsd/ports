@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/09/12 14:01:22 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/10/28 23:17:36 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -45,6 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}deb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}debian.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}debian_fallback.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}decompile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}device.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}dex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}pyc
@@ -114,6 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/cpio.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/deb.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/debian.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/debian_fallback.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/decompile.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/device.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/dex.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/directory.py
