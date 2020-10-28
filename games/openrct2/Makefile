@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2020/09/11 21:12:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2020/10/28 14:16:22 bcallah Exp $
 
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.3.0
+V =		0.3.1
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTNAME =	openrct2-${V}
 CATEGORIES =	games x11
@@ -15,7 +15,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 c crypto curl duktape fontconfig
-WANTLIB += freetype icuuc jansson m png speexdsp ssl z zip
+WANTLIB += freetype icuuc m png speexdsp ssl z zip
 
 # Upstream does not make proper source releases.
 # See: https://github.com/OpenRCT2/OpenRCT2/issues/5887
@@ -28,7 +28,6 @@ MODULES =	devel/cmake
 
 LIB_DEPENDS =	archivers/libzip \
 		audio/speexdsp \
-		devel/jansson \
 		devel/sdl2 \
 		graphics/png \
 		lang/duktape \
@@ -43,18 +42,22 @@ CONFIGURE_ARGS =	-DDOWNLOAD_OBJECTS=OFF \
 			-DDOWNLOAD_REPLAYS=OFF \
 			-DDOWNLOAD_TITLE_SEQUENCES=OFF \
 			-DOPENRCT2_BRANCH=master \
-			-DOPENRCT2_COMMIT_SHA1_SHORT="135cc10"
+			-DOPENRCT2_COMMIT_SHA1_SHORT="d01dcea"
 
 # Downloads things. See: https://github.com/OpenRCT2/OpenRCT2/issues/5710
 NO_TEST =	Yes
 
-# Upstream changed the location to read title sequences from.
-# https://github.com/rdbaris/OpenRCT2/commit/2a00293d88bb38e65040cde888842d9bf1e236ab
+# Work around some upstream lack of inclusion of needed includes
 post-extract:
-	mv ${WRKSRC}/data/title ${WRKSRC}/data/sequence
+	mkdir -p ${WRKSRC}/nlohmann
+	mv ${WRKSRC}/json.hpp ${WRKSRC}/nlohmann
 
 pre-configure:
 	sed -i 's,/usr/local,${TRUEPREFIX},g' \
 		${WRKSRC}/src/openrct2/platform/Platform.Linux.cpp
+
+# Upstream misnamed this
+post-install:
+	mv ${PREFIX}/share/openrct2/objects ${PREFIX}/share/openrct2/object
 
 .include <bsd.port.mk>

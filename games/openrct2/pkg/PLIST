@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/09/11 21:12:48 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/10/28 14:16:22 bcallah Exp $
 @bin bin/openrct2
 @bin bin/openrct2-cli
 @static-lib lib/libopenrct2.a
@@ -72,6 +72,9 @@ share/openrct2/object/official/scenery_small/rct2.dlc.bigpanda.parkobj
 share/openrct2/object/official/scenery_small/rct2.dlc.pandagr.parkobj
 share/openrct2/object/official/station/
 share/openrct2/object/official/station/openrct2.station.noentrance.json
+share/openrct2/object/official/station/openrct2.station.noplatformnoentrance.json
+share/openrct2/object/official/terrain/
+share/openrct2/object/official/terrain/openrct2.terrain.void.parkobj
 share/openrct2/object/official/wall/
 share/openrct2/object/official/wall/official.mg-prar.parkobj
 share/openrct2/object/official/water/
@@ -89,6 +92,11 @@ share/openrct2/object/rct1/terrain_edge/rct1.ll.edge.skyscrapera.parkobj
 share/openrct2/object/rct1/terrain_edge/rct1.ll.edge.skyscraperb.parkobj
 share/openrct2/object/rct1/terrain_edge/rct1.ll.edge.stonebrown.parkobj
 share/openrct2/object/rct1/terrain_edge/rct1.ll.edge.stonegrey.parkobj
+share/openrct2/object/rct1/terrain_surface/
+share/openrct2/object/rct1/terrain_surface/rct1.aa.surface.roofred.parkobj
+share/openrct2/object/rct1/terrain_surface/rct1.ll.surface.roofgrey.parkobj
+share/openrct2/object/rct1/terrain_surface/rct1.ll.surface.rust.parkobj
+share/openrct2/object/rct1/terrain_surface/rct1.ll.surface.wood.parkobj
 share/openrct2/object/rct2/
 share/openrct2/object/rct2/footpath/
 share/openrct2/object/rct2/footpath/rct2.pathash.json
@@ -128,6 +136,39 @@ share/openrct2/object/rct2/footpath_item/rct2.littermn.json
 share/openrct2/object/rct2/footpath_item/rct2.littersp.json
 share/openrct2/object/rct2/footpath_item/rct2.litterww.json
 share/openrct2/object/rct2/footpath_item/rct2.qtv1.json
+share/openrct2/object/rct2/music/
+share/openrct2/object/rct2/music/rct2.music.candy.json
+share/openrct2/object/rct2/music/rct2.music.custom1.json
+share/openrct2/object/rct2/music/rct2.music.custom2.json
+share/openrct2/object/rct2/music/rct2.music.dodgems.json
+share/openrct2/object/rct2/music/rct2.music.egyptian.json
+share/openrct2/object/rct2/music/rct2.music.fairground.json
+share/openrct2/object/rct2/music/rct2.music.fantasy.json
+share/openrct2/object/rct2/music/rct2.music.gentle.json
+share/openrct2/object/rct2/music/rct2.music.horror.json
+share/openrct2/object/rct2/music/rct2.music.ice.json
+share/openrct2/object/rct2/music/rct2.music.jungle.json
+share/openrct2/object/rct2/music/rct2.music.jurassic.json
+share/openrct2/object/rct2/music/rct2.music.martian.json
+share/openrct2/object/rct2/music/rct2.music.mechanical.json
+share/openrct2/object/rct2/music/rct2.music.medieval.json
+share/openrct2/object/rct2/music/rct2.music.modern.json
+share/openrct2/object/rct2/music/rct2.music.organ.json
+share/openrct2/object/rct2/music/rct2.music.oriental.json
+share/openrct2/object/rct2/music/rct2.music.pirate.json
+share/openrct2/object/rct2/music/rct2.music.ragtime.json
+share/openrct2/object/rct2/music/rct2.music.rock1.json
+share/openrct2/object/rct2/music/rct2.music.rock2.json
+share/openrct2/object/rct2/music/rct2.music.rock3.json
+share/openrct2/object/rct2/music/rct2.music.roman.json
+share/openrct2/object/rct2/music/rct2.music.snow.json
+share/openrct2/object/rct2/music/rct2.music.space.json
+share/openrct2/object/rct2/music/rct2.music.summer.json
+share/openrct2/object/rct2/music/rct2.music.techno.json
+share/openrct2/object/rct2/music/rct2.music.toyland.json
+share/openrct2/object/rct2/music/rct2.music.urban.json
+share/openrct2/object/rct2/music/rct2.music.water.json
+share/openrct2/object/rct2/music/rct2.music.wildwest.json
 share/openrct2/object/rct2/park_entrance/
 share/openrct2/object/rct2/park_entrance/rct2.pkemm.json
 share/openrct2/object/rct2/park_entrance/rct2.pkent1.json
