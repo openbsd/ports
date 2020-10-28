@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/10/28 04:04:04 daniel Exp $
 
 COMMENT =	set of python modules for machine learning and data mining
 
-MODPY_EGG_VERSION =	0.20.3
+MODPY_EGG_VERSION =	0.23.2
 DISTNAME =		scikit-learn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		math
 
@@ -15,6 +14,8 @@ MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # BSD-3
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += ${COMPILER_LIBCXX} m
 
 MODULES =		lang/python
 
@@ -26,13 +27,14 @@ MODPY_SETUPTOOLS = 	Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
+BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR} \
+			math/py-scipy${MODPY_FLAVOR}
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR} \
-			sysutils/py-joblib${MODPY_FLAVOR}
-TEST_DEPENDS =		lang/cython${MODPY_FLAVOR}
-
-MAKE_ENV +=		SKLEARN_NO_OPENMP=1
+			sysutils/py-joblib${MODPY_FLAVOR} \
+			sysutils/py-threadpoolctl${MODPY_FLAVOR}
+TEST_DEPENDS =		math/py-pandas${MODPY_FLAVOR}
 
 pre-test:
 	cp -r ${WRKSRC}/sklearn/datasets/{data,descr} \
