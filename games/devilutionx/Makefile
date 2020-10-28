@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/31 23:09:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2020/10/28 16:16:17 bcallah Exp $
 
 COMMENT =	open source engine recreation for Diablo 1 game
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
-GH_TAGNAME =	1.0.1
+GH_TAGNAME =	1.1.0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -27,12 +26,9 @@ LIB_DEPENDS =	devel/sdl2-mixer \
 		devel/sdl2-ttf
 
 CONFIGURE_ARGS =	-DBINARY_RELEASE=ON \
-			-DDEBUG=OFF
-
-# Upstream CMake creates build lines that neither ninja,
-# samurai, nor base make understand.
-USE_GMAKE =	Yes
-USE_NINJA =	No
+			-DDEBUG=OFF \
+			-DDISABLE_LTO=ON \
+			-DVERSION_NUM="${GH_TAGNAME}"
 
 NO_TEST =	Yes
 
