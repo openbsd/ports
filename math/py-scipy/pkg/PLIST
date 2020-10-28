@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/10/12 22:04:32 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/10/28 01:24:38 daniel Exp $
 @conflict py-scipy-*
 @pkgpath math/py-scipy
 lib/python${MODPY_VERSION}/site-packages/scipy/
@@ -270,6 +270,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/${MODPY_PYCACHE}iv
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/${MODPY_PYCACHE}lsoda.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/${MODPY_PYCACHE}radau.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/${MODPY_PYCACHE}rk.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/base.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/bdf.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/common.py
@@ -278,6 +279,13 @@ lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/ivp.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/lsoda.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/radau.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/rk.py
+lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/setup.py
+lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/tests/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/tests/${MODPY_PYCACHE}test_ivp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/tests/${MODPY_PYCACHE}test_rk.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/tests/test_ivp.py
+lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/tests/test_rk.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ode.py
 @so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_odepack.so
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_quad_vec.py

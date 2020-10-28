@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2020/10/12 22:04:32 daniel Exp $
+# $OpenBSD: Makefile,v 1.48 2020/10/28 01:24:38 daniel Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	1.5.2
+MODPY_EGG_VERSION=	1.5.3
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
