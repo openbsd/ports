@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/31 20:00:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/28 15:04:05 rsadowski Exp $
 
 COMMENT =	Qt-based client-side and server-side SOAP component
 
-DISTNAME =	kdsoap-1.9.0
+DISTNAME =	kdsoap-1.9.1
 
 SHARED_LIBS +=	kdsoap		0.0
 SHARED_LIBS +=	kdsoap-server	0.0
