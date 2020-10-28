@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/10/28 12:13:06 sthen Exp $
 
 COMMENT=		fixed size round-robin style database
 
 MODPY_EGG_VERSION=	1.0.2
+REVISION=		0
 
 DISTNAME=		whisper-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
@@ -15,7 +16,7 @@ MODULES=		lang/python
 
 MODPY_PI =		Yes
 
-RUN_DEPENDS=		net/rrdtool,-python
+RUN_DEPENDS=		net/py-rrdtool${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
