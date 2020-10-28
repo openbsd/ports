@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2019/12/11 16:08:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/10/28 11:59:54 sthen Exp $
 
 COMMENT =		PHP support for LZF de/compression
 
-DISTNAME =		LZF-1.6.7
+DISTNAME =		LZF-1.6.8
 CATEGORIES =		archivers
-REVISION =		0
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>
 
 # PHP
