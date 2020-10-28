@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1225 2020/10/22 13:53:33 abieber Exp $
+# $OpenBSD: Makefile,v 1.1226 2020/10/28 11:57:11 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -10,8 +10,8 @@
      SUBDIR += ap-utils
      SUBDIR += argus
      SUBDIR += argus-clients
-     SUBDIR += arp-scan
      SUBDIR += arouteserver
+     SUBDIR += arp-scan
      SUBDIR += arpcatch
      SUBDIR += arpd
      SUBDIR += arping
@@ -551,11 +551,6 @@
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
      SUBDIR += py-aiodns,python3
-     SUBDIR += py-ripe.atlas.cousteau
-     SUBDIR += py-ripe.atlas.cousteau,python3
-     SUBDIR += py-ripe.atlas.sagan
-     SUBDIR += py-ripe.atlas.sagan,python3
-     SUBDIR += py-ripe.atlas.tools
      SUBDIR += py-boto
      SUBDIR += py-boto,python3
      SUBDIR += py-boto3,python3
@@ -614,6 +609,12 @@
      SUBDIR += py-pf,python3
      SUBDIR += py-portend
      SUBDIR += py-portend,python3
+     SUBDIR += py-ripe.atlas.cousteau
+     SUBDIR += py-ripe.atlas.cousteau,python3
+     SUBDIR += py-ripe.atlas.sagan
+     SUBDIR += py-ripe.atlas.sagan,python3
+     SUBDIR += py-ripe.atlas.tools
+     SUBDIR += py-rrdtool,python3
      SUBDIR += py-s3transfer,python3
      SUBDIR += py-simplesoap
      SUBDIR += py-simplesoap,python3
