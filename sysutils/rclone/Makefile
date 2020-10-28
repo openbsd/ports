@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2020/10/22 08:24:17 bket Exp $
+# $OpenBSD: Makefile,v 1.19 2020/10/28 06:28:37 bket Exp $
 
 COMMENT =	rsync for cloud storage
 
-V =		1.53.1
+V =		1.53.2
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
 
