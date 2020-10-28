@@ -1,0 +1,38 @@
+$OpenBSD: patch-volk_CMakeLists_txt,v 1.1 2020/10/28 20:52:47 sthen Exp $
+
+Even though doxygen is disabled for this build, find_package(Doxygen) fails
+if doxygen was present when cmake first checks for it, but it is then removed
+before it reaches this part of configure. (install doxygen, make configure,
+while that's running after the first mention of doxygen "pkg_delete doxygen"
+and let the configure continue; it breaks later with
+
+CMake Warning at /usr/local/share/cmake/Modules/FindDoxygen.cmake:447 (message):
+  Unable to determine doxygen version: No such file or directory
+Call Stack (most recent call first):
+  /usr/local/share/cmake/Modules/FindDoxygen.cmake:610 (_Doxygen_find_doxygen)
+  volk/CMakeLists.txt:131 (find_package)
+
+Instead use the results of the previous test here.
+
+Index: volk/CMakeLists.txt
+--- volk/CMakeLists.txt.orig
++++ volk/CMakeLists.txt
+@@ -128,8 +128,7 @@ endif(ENABLE_ORC)
+ ########################################################################
+ # Setup doxygen
+ ########################################################################
+-find_package(Doxygen)
+-if(DOXYGEN_FOUND)
++if(ENABLE_DOXYGEN)
+     configure_file(
+         ${CMAKE_SOURCE_DIR}/Doxyfile.in
+         ${CMAKE_BINARY_DIR}/Doxyfile
+@@ -140,7 +139,7 @@ if(DOXYGEN_FOUND)
+         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+         COMMENT "Generating documentation with Doxygen" VERBATIM
+     )
+-endif(DOXYGEN_FOUND)
++endif(ENABLE_DOXYGEN)
+ 
+ ########################################################################
+ # Setup the package config file
