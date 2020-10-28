@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/28 11:55:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/28 12:12:46 sthen Exp $
 
 COMMENT =	Python bindings for rrdtool
 
 MODPY_EGG_VERSION =	0.1.15
+REVISION =	0
 
 DISTNAME =	rrdtool-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -24,6 +25,6 @@ MODPY_SETUPTOOLS =	Yes
 NO_TEST =		Yes
 
 FLAVORS =	python3
-FLAVOR ?=	python3
+FLAVOR ?=
 
 .include <bsd.port.mk>

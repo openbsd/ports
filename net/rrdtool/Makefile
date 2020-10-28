@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.117 2020/07/11 22:54:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2020/10/28 12:12:46 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
-COMMENT-python= python interface to librrd
 COMMENT-ruby=	ruby interface to librrd
 
-MODPY_EGG_VERSION= 0.1.10
 VERSION=	1.7.2
 REVISION=	0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
-PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-rrd-${VERSION}
 
 SHARED_LIBS +=	rrd                  5.3      # 10.0
@@ -29,10 +26,10 @@ PERMIT_PACKAGE=	 Yes
 
 USE_GMAKE=	Yes
 
-PSEUDO_FLAVORS=	no_ruby no_python
-MULTI_PACKAGES= -main -python -ruby -update
+PSEUDO_FLAVORS=	no_ruby
+MULTI_PACKAGES= -main -ruby -update
 
-MODULES=	lang/python lang/ruby
+MODULES=	lang/ruby
 
 CONFIGURE_STYLE= gnu
 CPPFLAGS+=	-I${X11BASE}/include/ \
@@ -41,6 +38,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 CONFIGURE_ARGS+= --disable-libdbi \
 		--disable-lua \
+		--disable-python \
 		--disable-tcl \
 		--enable-perl-site-install
 
@@ -55,15 +53,6 @@ MODRUBY_BUILDDEP= No
 MODRUBY_RUNDEP=   No
 .endif
 
-.if ${BUILD_PACKAGES:M-python}
-CONFIGURE_ARGS+= --enable-python
-MODPY_SETUPTOOLS= Yes
-.else
-CONFIGURE_ARGS+= --disable-python
-MODPY_BUILDDEP= No
-MODPY_RUNDEP=   No
-.endif
-
 # needs checking before enabling mmap; is it safe without UBC?
 CONFIGURE_ARGS+= --disable-mmap
 
@@ -76,7 +65,6 @@ CONFIGURE_ENV+=	NROFF="/usr/bin/true" \
 
 cWANTLIB=	pthread
 WANTLIB-update=	${cWANTLIB} c glib-2.0 iconv intl m
-WANTLIB-python=	${cWANTLIB} ${MODPY_WANTLIB} rrd
 WANTLIB-ruby=	${cWANTLIB} ${MODRUBY_WANTLIB} c gmp m rrd
 # depends on Perl ABI
 WANTLIB-main=	${cWANTLIB} perl
@@ -96,15 +84,10 @@ RUN_DEPENDS-main=	rrdupdate-${VERSION}:net/rrdtool,-update
 LIB_DEPENDS-update=	devel/glib2
 RUN_DEPENDS-update=
 
-LIB_DEPENDS-python=	rrdtool-${VERSION}:net/rrdtool
-RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
-
 LIB_DEPENDS-ruby=	rrdtool-${VERSION}:net/rrdtool \
 			${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 
-# Overriden by python.port.mk
-TEST_TARGET=		check
 TEST_DEPENDS=		shells/bash \
 			sysutils/coreutils
 
