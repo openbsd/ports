@@ -1,0 +1,5 @@
+These Python bindings to rrdtool are based on the code of the original
+Python 2 bindings module for rrdtool by Hye-Shik Chang which are shipped
+with the RRDtool distribution. This project is maintained separately to
+provide a more pythonic way to install those bindings via PyPI and
+include support for Python 3.
