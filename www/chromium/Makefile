@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.531 2020/10/24 10:06:56 robert Exp $
+# $OpenBSD: Makefile,v 1.532 2020/10/29 21:06:52 sthen Exp $
+
+BROKEN-i386=	runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
+#  2254 sh       NAMI  "/usr/local/chrome/chrome"
+#  2254 sh       RET   execve -1 errno 12 Cannot allocate memory
 
 .include <bsd.port.arch.mk>
 
