@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.2 2020/06/11 13:59:03 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2020/10/29 23:25:16 sthen Exp $
 
 hunk 1: disable cpu opt; runtime crashes in at least the optimized
 avx2 b64decode and sse4.2 addslashes
@@ -19,7 +19,7 @@ Index: configure.ac
  dnl Check for structure members.
  AC_CHECK_MEMBERS([struct tm.tm_gmtoff],,,[#include <time.h>])
  AC_CHECK_MEMBERS([struct stat.st_blksize, struct stat.st_rdev])
-@@ -1087,16 +1081,16 @@ case $php_sapi_module in
+@@ -1088,16 +1082,16 @@ case $php_sapi_module in
      enable_static=no
      case $with_pic in
        yes)
@@ -39,7 +39,7 @@ Index: configure.ac
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
        enable_shared=no
      fi
-@@ -1282,7 +1276,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1283,7 +1277,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
