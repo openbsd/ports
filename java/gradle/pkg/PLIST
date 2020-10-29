@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/08/19 02:01:32 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/10/29 02:22:24 lteo Exp $
 bin/gradle
 share/java/
 share/java/gradle/
@@ -23,6 +23,14 @@ share/java/gradle/lib/commons-io-2.6.jar
 share/java/gradle/lib/commons-lang-2.6.jar
 share/java/gradle/lib/failureaccess-1.0.1.jar
 share/java/gradle/lib/fastutil-8.3.0-min.jar
+share/java/gradle/lib/file-events-0.22-milestone-8.jar
+share/java/gradle/lib/file-events-linux-aarch64-0.22-milestone-8.jar
+share/java/gradle/lib/file-events-linux-amd64-0.22-milestone-8.jar
+share/java/gradle/lib/file-events-osx-amd64-0.22-milestone-8.jar
+share/java/gradle/lib/file-events-windows-amd64-0.22-milestone-8.jar
+share/java/gradle/lib/file-events-windows-amd64-min-0.22-milestone-8.jar
+share/java/gradle/lib/file-events-windows-i386-0.22-milestone-8.jar
+share/java/gradle/lib/file-events-windows-i386-min-0.22-milestone-8.jar
 share/java/gradle/lib/gradle-api-metadata${GRADLE_JAR}
 share/java/gradle/lib/gradle-base-annotations${GRADLE_JAR}
 share/java/gradle/lib/gradle-base-services${GRADLE_JAR}
@@ -32,6 +40,7 @@ share/java/gradle/lib/gradle-build-cache${GRADLE_JAR}
 share/java/gradle/lib/gradle-build-cache-base${GRADLE_JAR}
 share/java/gradle/lib/gradle-build-cache-packaging${GRADLE_JAR}
 share/java/gradle/lib/gradle-build-events${GRADLE_JAR}
+share/java/gradle/lib/gradle-build-operations${GRADLE_JAR}
 share/java/gradle/lib/gradle-build-option${GRADLE_JAR}
 share/java/gradle/lib/gradle-cli${GRADLE_JAR}
 share/java/gradle/lib/gradle-core${GRADLE_JAR}
@@ -85,19 +94,19 @@ share/java/gradle/lib/kotlinx-metadata-jvm-0.1.0.jar
 share/java/gradle/lib/kryo-2.24.0.jar
 share/java/gradle/lib/log4j-over-slf4j-1.7.28.jar
 share/java/gradle/lib/minlog-1.2.jar
-share/java/gradle/lib/native-platform-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-freebsd-amd64-libcpp-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-linux-aarch64-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-linux-aarch64-ncurses5-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-linux-aarch64-ncurses6-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-linux-amd64-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-linux-amd64-ncurses5-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-linux-amd64-ncurses6-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-osx-amd64-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-windows-amd64-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-windows-amd64-min-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-windows-i386-0.22-milestone-4.jar
-share/java/gradle/lib/native-platform-windows-i386-min-0.22-milestone-4.jar
+share/java/gradle/lib/native-platform-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-freebsd-amd64-libcpp-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-linux-aarch64-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-linux-aarch64-ncurses5-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-linux-aarch64-ncurses6-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-linux-amd64-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-linux-amd64-ncurses5-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-linux-amd64-ncurses6-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-osx-amd64-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-windows-amd64-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-windows-amd64-min-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-windows-i386-0.22-milestone-8.jar
+share/java/gradle/lib/native-platform-windows-i386-min-0.22-milestone-8.jar
 share/java/gradle/lib/objenesis-2.6.jar
 share/java/gradle/lib/plugins/
 share/java/gradle/lib/plugins/aether-api-1.13.1.jar
@@ -127,6 +136,7 @@ share/java/gradle/lib/plugins/gradle-build-init${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-build-profile${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-code-quality${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-composite-builds${GRADLE_JAR}
+share/java/gradle/lib/plugins/gradle-configuration-cache${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-dependency-management${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-diagnostics${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-ear${GRADLE_JAR}
@@ -134,7 +144,6 @@ share/java/gradle/lib/plugins/gradle-enterprise${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-ide${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-ide-native${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-ide-play${GRADLE_JAR}
-share/java/gradle/lib/plugins/gradle-instant-execution${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-ivy${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-jacoco${GRADLE_JAR}
 share/java/gradle/lib/plugins/gradle-java-compiler-plugin${GRADLE_JAR}
