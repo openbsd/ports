@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/02/26 23:20:43 solene Exp $
+# $OpenBSD: Makefile,v 1.23 2020/10/29 20:28:41 solene Exp $
 
 # tome4 ships embedded copy of luajit wich is known to
 # work on the arches listed below.
@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS = i386 amd64
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
 
-V =		1.6.7
+V =		1.7.0
 PKGNAME-main =	tome4-${V}
 PKGNAME-data =	tome4-data-${V}
 CATEGORIES =	games x11

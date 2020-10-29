@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2020/02/26 23:20:43 solene Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2020/10/29 20:28:41 solene Exp $
 @bin bin/tome4
 share/doc/pkg-readmes/${PKGSTEM}
 share/tome4/_realtime/
@@ -115,6 +115,7 @@ share/tome4/game/thirdparty/algorithms/sorting/shellsort.lua
 share/tome4/game/thirdparty/algorithms/tries/
 share/tome4/game/thirdparty/algorithms/tries/rwaytries.lua
 share/tome4/game/thirdparty/algorithms/unionfind.lua
+share/tome4/game/thirdparty/binpack.lua
 share/tome4/game/thirdparty/cef3/
 share/tome4/game/thirdparty/cef3/cef.pak
 share/tome4/game/thirdparty/cef3/locales/
