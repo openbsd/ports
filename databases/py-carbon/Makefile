@@ -1,26 +1,29 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/10/29 13:46:28 martin Exp $
 
 COMMENT=		backend data caching and persistence daemon for Graphite
 
-MODPY_EGG_VERSION=	1.0.1
+MODPY_EGG_VERSION=	1.1.7
 
 DISTNAME=		carbon-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		databases
-REVISION=		0
 
 # Apache
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-MODPY_PI =		Yes
+MODPY_PI=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		databases/py-whisper \
-			devel/py-twisted
+RUN_DEPENDS=		databases/py-whisper${MODPY_FLAVOR} \
+			devel/py-twisted${MODPY_FLAVOR}
+
+FLAVORS=		python3
+FLAVOR=			python3
 
 BIN_FILES=		carbon-aggregator.py carbon-cache.py carbon-client.py \
-			carbon-relay.py validate-storage-schemas.py
+			carbon-relay.py validate-storage-schemas.py \
+			carbon-aggregator-cache.py
 
 .for b in ${BIN_FILES}
 MODPY_ADJ_FILES+=	bin/$b

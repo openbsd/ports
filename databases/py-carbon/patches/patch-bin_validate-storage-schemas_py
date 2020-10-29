@@ -1,12 +1,13 @@
-$OpenBSD: patch-bin_validate-storage-schemas_py,v 1.1.1.1 2012/10/11 18:00:30 jasper Exp $
---- bin/validate-storage-schemas.py.orig	Thu Oct 11 19:15:55 2012
-+++ bin/validate-storage-schemas.py	Thu Oct 11 19:16:45 2012
-@@ -22,7 +22,7 @@ if len(sys.argv) == 2:
+$OpenBSD: patch-bin_validate-storage-schemas_py,v 1.2 2020/10/29 13:46:28 martin Exp $
+Index: bin/validate-storage-schemas.py
+--- bin/validate-storage-schemas.py.orig
++++ bin/validate-storage-schemas.py
+@@ -26,7 +26,7 @@ if len(sys.argv) == 2:
    SCHEMAS_FILE = sys.argv[1]
-   print "Loading storage-schemas configuration from: '%s'" % SCHEMAS_FILE
+   print("Loading storage-schemas configuration from: '%s'" % SCHEMAS_FILE)
  else:
 -  SCHEMAS_FILE = realpath(join(dirname(__file__), '..', 'conf', 'storage-schemas.conf'))
 +  SCHEMAS_FILE = '${SYSCONFDIR}/graphite/storage-schemas.conf'
-   print "Loading storage-schemas configuration from default location at: '%s'" % SCHEMAS_FILE
+   print("Loading storage-schemas configuration from default location at: '%s'" % SCHEMAS_FILE)
  
  config_parser = ConfigParser()
