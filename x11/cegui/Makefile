@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/10/29 17:23:21 pascal Exp $
 
 COMMENT =		widgets library for graphics engines
 
@@ -59,6 +59,7 @@ CONFIGURE_ARGS +=	-DCEGUI_BUILD_PYTHON_MODULES=OFF \
 			-DCEGUI_BUILD_IMAGECODEC_PVR=OFF \
 			-DCEGUI_USE_FRIBIDI=OFF \
 			-DCEGUI_BUILD_LUA_MODULE=OFF \
+			-DCEGUI_HAS_MINIZIP_RESOURCE_PROVIDER=OFF \
 			-DFREETYPE_H_PATH_ft2build=${X11BASE}/include/freetype2 \
 			-DFREETYPE_H_PATH_ftconfig=${X11BASE}/include/freetype2/config
 
