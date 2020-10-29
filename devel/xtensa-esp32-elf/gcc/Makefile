@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/11 14:24:57 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/29 14:10:51 tracey Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
-V =		8.2.0
-VERSION =	8.2.0.2019.2
+V =		8.4.0
+VERSION =	8.4.0.2020.3
 PKGNAME =	${CONFIG}-gcc-${VERSION}
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	gcc
-GH_TAGNAME =	esp-2019r2
+GH_TAGNAME =	esp-2020r3
 
 SUBST_VARS +=	V
 
 WANTLIB =	${COMPILER_LIBCXX} c gmp m mpc mpfr z
-
-COMPILER =	base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/${CONFIG}/binutils \

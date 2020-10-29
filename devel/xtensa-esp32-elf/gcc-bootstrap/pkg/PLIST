@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/29 14:10:52 tracey Exp $
 @comment @info info/cpp.info
 @comment @info info/cppinternals.info
 @comment @info info/gcc.info
@@ -143,6 +143,7 @@ xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/i
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/newlib-stdint.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/elf.h
+xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/xtensa-opts.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/xtensa-protos.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/xtensa.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/configargs.h

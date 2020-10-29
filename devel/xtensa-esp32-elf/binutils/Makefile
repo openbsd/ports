@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/11 14:24:57 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2020/10/29 14:10:51 tracey Exp $
 
 COMMENT =	binutils for ${CONFIG} cross-development
-VERSION =	2.33.1.2019.2
+VERSION =	2.33.1.2020.3
 PKGNAME =	${CONFIG}-binutils-${VERSION}
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	binutils-gdb
-GH_TAGNAME =	esp-2019r2-binutils
+GH_TAGNAME =	esp-2020r3-binutils
 
 WANTLIB =	c z
 

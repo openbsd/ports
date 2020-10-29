@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/29 14:10:51 tracey Exp $
 @bin bin/xtensa-esp32-elf-c++
 @bin bin/xtensa-esp32-elf-cpp
 @bin bin/xtensa-esp32-elf-g++
@@ -134,6 +134,7 @@ lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/initfini-array.h
 lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/newlib-stdint.h
 lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/
 lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/elf.h
+lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/xtensa-opts.h
 lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/xtensa-protos.h
 lib/gcc/xtensa-esp32-elf/${V}/plugin/include/config/xtensa/xtensa.h
 lib/gcc/xtensa-esp32-elf/${V}/plugin/include/configargs.h

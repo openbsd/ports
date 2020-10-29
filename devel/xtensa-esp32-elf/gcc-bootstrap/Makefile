@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/30 19:24:41 tracey Exp $
+# $OpenBSD: Makefile,v 1.4 2020/10/29 14:10:52 tracey Exp $
 
 COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 
-V =		8.2.0
-VERSION =	8.2.0.2019.2
+V =		8.4.0
+VERSION =	8.4.0.2020.3
 PKGNAME =	${CONFIG}-gcc-bootstrap-${VERSION}
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	gcc
-GH_TAGNAME =	esp-2019r2
+GH_TAGNAME =	esp-2020r3
 
 SUBST_VARS +=	V
 
 WANTLIB =	${COMPILER_LIBCXX} c gmp m mpc mpfr
-
-COMPILER =	base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/${CONFIG}/binutils
@@ -24,6 +22,7 @@ LIB_DEPENDS =		devel/gmp \
 			devel/libmpc
 
 YACC =		bison
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CONFIGURE_ARGS +=	--exec-prefix=${LOCALBASE}/${CONFIG}/bootstrap \
 			--with-local-prefix=${LOCALBASE}/${CONFIG} \

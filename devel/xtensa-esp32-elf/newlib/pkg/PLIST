@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/10/29 14:10:52 tracey Exp $
+xtensa-esp32-elf/
 xtensa-esp32-elf/include/
 xtensa-esp32-elf/include/_ansi.h
 xtensa-esp32-elf/include/_newlib_version.h
@@ -148,6 +149,7 @@ xtensa-esp32-elf/lib/esp32-psram/default.specs
 @static-lib xtensa-esp32-elf/lib/esp32-psram/libgloss.a
 @static-lib xtensa-esp32-elf/lib/esp32-psram/libm.a
 @static-lib xtensa-esp32-elf/lib/esp32-psram/libnosys.a
+xtensa-esp32-elf/lib/esp32-psram/nano.specs
 xtensa-esp32-elf/lib/esp32-psram/no-rtti/
 xtensa-esp32-elf/lib/esp32-psram/no-rtti/crt0.o
 xtensa-esp32-elf/lib/esp32-psram/no-rtti/default.specs
@@ -156,6 +158,7 @@ xtensa-esp32-elf/lib/esp32-psram/no-rtti/default.specs
 @static-lib xtensa-esp32-elf/lib/esp32-psram/no-rtti/libgloss.a
 @static-lib xtensa-esp32-elf/lib/esp32-psram/no-rtti/libm.a
 @static-lib xtensa-esp32-elf/lib/esp32-psram/no-rtti/libnosys.a
+xtensa-esp32-elf/lib/esp32-psram/no-rtti/nano.specs
 xtensa-esp32-elf/lib/esp32-psram/no-rtti/nosys.specs
 xtensa-esp32-elf/lib/esp32-psram/nosys.specs
 @static-lib xtensa-esp32-elf/lib/libc.a
@@ -163,6 +166,7 @@ xtensa-esp32-elf/lib/esp32-psram/nosys.specs
 @static-lib xtensa-esp32-elf/lib/libgloss.a
 @static-lib xtensa-esp32-elf/lib/libm.a
 @static-lib xtensa-esp32-elf/lib/libnosys.a
+xtensa-esp32-elf/lib/nano.specs
 xtensa-esp32-elf/lib/no-rtti/
 xtensa-esp32-elf/lib/no-rtti/crt0.o
 xtensa-esp32-elf/lib/no-rtti/default.specs
@@ -171,5 +175,6 @@ xtensa-esp32-elf/lib/no-rtti/default.specs
 @static-lib xtensa-esp32-elf/lib/no-rtti/libgloss.a
 @static-lib xtensa-esp32-elf/lib/no-rtti/libm.a
 @static-lib xtensa-esp32-elf/lib/no-rtti/libnosys.a
+xtensa-esp32-elf/lib/no-rtti/nano.specs
 xtensa-esp32-elf/lib/no-rtti/nosys.specs
 xtensa-esp32-elf/lib/nosys.specs
