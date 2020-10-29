@@ -1,4 +1,4 @@
-$OpenBSD: patch-redis_conf,v 1.23 2020/09/03 04:29:27 tb Exp $
+$OpenBSD: patch-redis_conf,v 1.24 2020/10/29 05:14:03 tb Exp $
 
 Redis TLSv1.3 support is conditional on TLS1_3_VERSION being public.
 This is not currently the case and the ciphersuites config is a no-op.
@@ -13,7 +13,7 @@ Main changes in this file:
 Index: redis.conf
 --- redis.conf.orig
 +++ redis.conf
-@@ -106,8 +106,8 @@ tcp-backlog 511
+@@ -105,8 +105,8 @@ tcp-backlog 511
  # incoming connections. There is no default, so Redis will not listen
  # on a unix socket when not specified.
  #
@@ -24,7 +24,7 @@ Index: redis.conf
  
  # Close the connection after a client is idle for N seconds (0 to disable)
  timeout 0
-@@ -154,6 +154,7 @@ tcp-keepalive 300
+@@ -153,6 +153,7 @@ tcp-keepalive 300
  # of these, and will not implicitly use the system wide configuration.
  #
  # tls-ca-cert-file ca.crt
@@ -32,7 +32,7 @@ Index: redis.conf
  # tls-ca-cert-dir /etc/ssl/certs
  
  # By default, clients (including replica servers) on a TLS port are required
-@@ -184,14 +185,14 @@ tcp-keepalive 300
+@@ -183,14 +184,14 @@ tcp-keepalive 300
  #
  # tls-protocols "TLSv1.2 TLSv1.3"
  
@@ -49,7 +49,7 @@ Index: redis.conf
  # information about the syntax of this string, and specifically for TLSv1.3
  # ciphersuites.
  #
-@@ -221,8 +222,9 @@ tcp-keepalive 300
+@@ -220,8 +221,9 @@ tcp-keepalive 300
  ################################# GENERAL #####################################
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
@@ -108,7 +108,7 @@ Index: redis.conf
  
  ################################# REPLICATION #################################
  
-@@ -786,7 +789,7 @@ acllog-max-len 128
+@@ -787,7 +790,7 @@ acllog-max-len 128
  # AUTH <password> as usually, or more explicitly with AUTH default <password>
  # if they follow the new protocol: both will work.
  #
@@ -117,7 +117,7 @@ Index: redis.conf
  
  # Command renaming (DEPRECATED).
  #
-@@ -830,6 +833,7 @@ acllog-max-len 128
+@@ -831,6 +834,7 @@ acllog-max-len 128
  # limit accordingly in case of very large clusters.
  #
  # maxclients 10000

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile,v 1.35 2020/09/11 13:54:01 tb Exp $
+$OpenBSD: patch-src_Makefile,v 1.36 2020/10/29 05:14:03 tb Exp $
 
 Changes in this file:
 - install redis-server and redis-sentinel into ${PREFIX}/sbin
@@ -44,7 +44,7 @@ Index: src/Makefile
  endif
  endif
  
-@@ -149,7 +150,7 @@ endif
+@@ -166,7 +167,7 @@ endif
  endif
  endif
  # Include paths to dependencies
@@ -53,16 +53,16 @@ Index: src/Makefile
  
  # Determine systemd support and/or build preference (defaulting to auto-detection)
  BUILD_WITH_SYSTEMD=no
-@@ -236,6 +237,8 @@ REDIS_BENCHMARK_OBJ=ae.o anet.o redis-benchmark.o adli
- REDIS_CHECK_RDB_NAME=redis-check-rdb
- REDIS_CHECK_AOF_NAME=redis-check-aof
+@@ -253,6 +254,8 @@ REDIS_BENCHMARK_OBJ=ae.o anet.o redis-benchmark.o adli
+ REDIS_CHECK_RDB_NAME=redis-check-rdb$(PROG_SUFFIX)
+ REDIS_CHECK_AOF_NAME=redis-check-aof$(PROG_SUFFIX)
  
 +REDIS_SERVER_OBJ+=fpconv.o strbuf.o lua_bit.o lua_cjson.o lua_cmsgpack.o lua_struct.o
 +
  all: $(REDIS_SERVER_NAME) $(REDIS_SENTINEL_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME) $(REDIS_CHECK_RDB_NAME) $(REDIS_CHECK_AOF_NAME)
  	@echo ""
  	@echo "Hint: It's a good idea to run 'make test' ;)"
-@@ -282,7 +285,7 @@ endif
+@@ -299,7 +302,7 @@ endif
  
  # redis-server
  $(REDIS_SERVER_NAME): $(REDIS_SERVER_OBJ)
@@ -71,7 +71,7 @@ Index: src/Makefile
  
  # redis-sentinel
  $(REDIS_SENTINEL_NAME): $(REDIS_SERVER_NAME)
-@@ -329,7 +332,7 @@ distclean: clean
+@@ -346,7 +349,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME)
@@ -80,7 +80,7 @@ Index: src/Makefile
  
  test-sentinel: $(REDIS_SENTINEL_NAME)
  	@(cd ..; ./runtest-sentinel)
-@@ -373,13 +376,14 @@ src/help.h:
+@@ -390,13 +393,14 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all
