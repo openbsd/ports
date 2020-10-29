@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.2 2019/04/08 23:24:11 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2020/10/29 15:53:14 sthen Exp $
 
 #1: disable avx/sse/ssse, runtime crashes in optimized b64decode
 
@@ -39,7 +39,7 @@ Index: configure.ac
  dnl Check for members of the stat structure
  AC_CHECK_MEMBERS([struct stat.st_blksize, struct stat.st_rdev])
  dnl AC_STRUCT_ST_BLOCKS will screw QNX because fileblocks.o does not exist
-@@ -1117,16 +1091,16 @@ case $php_sapi_module in
+@@ -1118,16 +1092,16 @@ case $php_sapi_module in
      enable_static=no
      case $with_pic in
        yes)
@@ -59,7 +59,7 @@ Index: configure.ac
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
        enable_shared=no
      fi
-@@ -1310,7 +1284,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1311,7 +1285,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
