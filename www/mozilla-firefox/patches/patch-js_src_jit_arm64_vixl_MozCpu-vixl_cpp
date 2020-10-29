@@ -1,5 +1,6 @@
-$OpenBSD: patch-js_src_jit_arm64_vixl_MozCpu-vixl_cpp,v 1.1 2020/10/27 17:24:51 landry Exp $
+$OpenBSD: patch-js_src_jit_arm64_vixl_MozCpu-vixl_cpp,v 1.2 2020/10/29 18:36:08 landry Exp $
 
+https://hg.mozilla.org/releases/mozilla-beta/rev/5a66ff69e044
 https://bugzilla.mozilla.org/show_bug.cgi?id=1672619
 Fix build on arm64
 
