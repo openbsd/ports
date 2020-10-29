@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2020/03/14 13:22:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2020/10/29 14:18:46 ajacoutot Exp $
 @pkgpath textproc/icu4c
 @bin bin/derb
 @bin bin/genbrk
@@ -166,6 +166,7 @@ include/unicode/unorm.h
 include/unicode/unorm2.h
 include/unicode/unum.h
 include/unicode/unumberformatter.h
+include/unicode/unumberrangeformatter.h
 include/unicode/unumsys.h
 include/unicode/uobject.h
 include/unicode/upluralrules.h
