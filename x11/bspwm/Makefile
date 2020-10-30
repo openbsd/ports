@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2020/10/28 20:43:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2020/10/30 18:21:16 jasper Exp $
 
 COMMENT =		binary space partitioning window manager
 
 GH_PROJECT =		bspwm
 GH_ACCOUNT =		baskerville
 GH_TAGNAME =		0.9.10
+REVISION =		0
+
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 CATEGORIES =		x11
 
