@@ -6,7 +6,8 @@ for the Broadcom-based first generation of 802.11ac access points (UAP-AC,
 UAP-ACv2, UAP-AC-Outdoor) and the Atheros-based but limited-memory
 Picostation M2.
 
-For other devices (including the older Atheros-based 802.11n access points)
-the stable branch is recommended instead.
+THIS BRANCH STOPPED RECEIVING SECURITY UPDATES IN NOVEMBER 2018 AND
+SHOULD NOT BE USED UNLESS NECESSARY.
 
-This branch will receive security updates until November 2018.
+For other devices (including the older Atheros-based 802.11n access
+points), use the stable branch instead.
