@@ -1,10 +1,21 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/05 17:13:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2020/10/30 22:07:20 jeremy Exp $
 
 VERSION =		2.7.2
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby27	0.0
 NEXTVER =		2.8
 PKGSPEC-main ?=         ruby->=2.7.0,<${NEXTVER}
+
+REVISION-main =		0
+
+MASTER_SITES0 =		https://github.com/jeremyevans/ruby/commit/
+# First patch: Fix copy coroutine to avoid crash on fiber usage (affects at
+#              least sparc64)
+# Second patch: Backport fix for regression in 2.7.2 to avoid crash in
+#               ffi_closure_free
+PATCHFILES =		ruby-2.7-copy-coro-fix{7008ca3838d33bd2d594251fc8c7f4ce52dde72d}.diff:0 \
+			ruby-2.7-ffi-closure-fix{040cfc89b9a110cd0fb2abdcd35e8215b4a71f60}.diff:0
+PATCH_DIST_STRIP =	-p1
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches

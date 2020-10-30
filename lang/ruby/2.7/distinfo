@@ -1,2 +1,6 @@
+SHA256 (ruby-2.7-copy-coro-fix.diff) = aZxV06Be48hCTvOY/vqWQJlPRepB/l+2K0GZIfMS9Sg=
+SHA256 (ruby-2.7-ffi-closure-fix.diff) = sFczOlxQZTGSDkXpvB0chFg81V4gWJYQavTgt3tCq5s=
 SHA256 (ruby-2.7.2.tar.gz) = blcG0NTuTh4viD2512hYa00GVn3r6jU8eW7EXoMhw9Q=
+SIZE (ruby-2.7-copy-coro-fix.diff) = 2498
+SIZE (ruby-2.7-ffi-closure-fix.diff) = 410
 SIZE (ruby-2.7.2.tar.gz) = 16836767
