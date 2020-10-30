@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/17 18:08:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2020/10/30 19:38:27 jasper Exp $
 
 COMMENT =	Pwntools CTF framework and exploit development library
 
-MODPY_EGG_VERSION =	4.2.1
+MODPY_EGG_VERSION =	4.2.2
 DISTNAME =	pwntools-${MODPY_EGG_VERSION}
 
 CATEGORIES =	security
@@ -42,5 +42,6 @@ post-extract:
 # ???
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/requirements.txt
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/robots.txt
 
 .include <bsd.port.mk>
