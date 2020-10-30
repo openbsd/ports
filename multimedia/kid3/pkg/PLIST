@@ -1,0 +1,124 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/30 20:40:53 zhuk Exp $
+@bin bin/kid3
+@bin bin/kid3-cli
+@bin bin/kid3-qt
+lib/kid3/
+@so lib/kid3/libkid3-core.so
+@so lib/kid3/libkid3-gui.so
+lib/kid3/plugins/
+lib/kid3/plugins/imports/
+lib/kid3/plugins/imports/Kid3/
+lib/kid3/plugins/imports/Kid3/Kid3Script.qml
+@so lib/kid3/plugins/imports/Kid3/libkid3qml.so
+lib/kid3/plugins/imports/Kid3/plugins.qmltypes
+lib/kid3/plugins/imports/Kid3/qmldir
+@so lib/kid3/plugins/libacoustidimport.so
+@so lib/kid3/plugins/libamazonimport.so
+@so lib/kid3/plugins/libdiscogsimport.so
+@so lib/kid3/plugins/libfreedbimport.so
+@so lib/kid3/plugins/libid3libmetadata.so
+@so lib/kid3/plugins/libmusicbrainzimport.so
+@so lib/kid3/plugins/liboggflacmetadata.so
+@so lib/kid3/plugins/libqmlcommand.so
+@so lib/kid3/plugins/libtaglibmetadata.so
+share/applications/org.kde.kid3-qt.desktop
+share/applications/org.kde.kid3.desktop
+share/dbus-1/interfaces/org.kde.Kid3.xml
+share/doc/HTML/ca/kid3/
+share/doc/HTML/ca/kid3/index.cache.bz2
+share/doc/HTML/ca/kid3/index.docbook
+share/doc/HTML/de/kid3/
+share/doc/HTML/de/kid3/index.cache.bz2
+share/doc/HTML/de/kid3/index.docbook
+share/doc/HTML/en/kid3/
+share/doc/HTML/en/kid3/index.cache.bz2
+share/doc/HTML/en/kid3/index.docbook
+share/doc/HTML/it/kid3/
+share/doc/HTML/it/kid3/index.cache.bz2
+share/doc/HTML/it/kid3/index.docbook
+share/doc/HTML/nl/kid3/
+share/doc/HTML/nl/kid3/index.cache.bz2
+share/doc/HTML/nl/kid3/index.docbook
+share/doc/HTML/pt/kid3/
+share/doc/HTML/pt/kid3/index.cache.bz2
+share/doc/HTML/pt/kid3/index.docbook
+share/doc/HTML/sv/kid3/
+share/doc/HTML/sv/kid3/index.cache.bz2
+share/doc/HTML/sv/kid3/index.docbook
+share/doc/HTML/uk/kid3/
+share/doc/HTML/uk/kid3/index.cache.bz2
+share/doc/HTML/uk/kid3/index.docbook
+share/doc/kid3-qt/
+share/doc/kid3-qt/kid3_ca.html
+share/doc/kid3-qt/kid3_de.html
+share/doc/kid3-qt/kid3_en.html
+share/doc/kid3-qt/kid3_it.html
+share/doc/kid3-qt/kid3_nl.html
+share/doc/kid3-qt/kid3_pt.html
+share/doc/kid3-qt/kid3_sv.html
+share/doc/kid3-qt/kid3_uk.html
+share/icons/hicolor/128x128/apps/kid3-qt.png
+share/icons/hicolor/128x128/apps/kid3.png
+share/icons/hicolor/16x16/apps/kid3-qt.png
+share/icons/hicolor/16x16/apps/kid3.png
+share/icons/hicolor/32x32/apps/kid3-qt.png
+share/icons/hicolor/32x32/apps/kid3.png
+share/icons/hicolor/48x48/apps/kid3-qt.png
+share/icons/hicolor/48x48/apps/kid3.png
+share/icons/hicolor/64x64/apps/kid3-qt.png
+share/icons/hicolor/64x64/apps/kid3.png
+share/icons/hicolor/scalable/apps/kid3-qt.svg
+share/icons/hicolor/scalable/apps/kid3.svgz
+share/kid3/
+share/kid3/qml/
+share/kid3/qml/script/
+share/kid3/qml/script/EmbedAlbumArt.qml
+share/kid3/qml/script/EmbedLyrics.qml
+share/kid3/qml/script/ExportCsv.qml
+share/kid3/qml/script/ExportHtmlPlayer.qml
+share/kid3/qml/script/ExportPlaylist.qml
+share/kid3/qml/script/ExtractAlbumArt.qml
+share/kid3/qml/script/ImportCsv.qml
+share/kid3/qml/script/QmlConsole.qml
+share/kid3/qml/script/ReplayGain2SoundCheck.qml
+share/kid3/qml/script/ResizeAlbumArt.qml
+share/kid3/qml/script/ShowTextEncodingV1.qml
+share/kid3/qml/script/Tag1ToAscii.qml
+share/kid3/qml/script/TitleCase.qml
+share/kid3/translations/
+share/kid3/translations/kid3_ca.qm
+share/kid3/translations/kid3_ca@valencia.qm
+share/kid3/translations/kid3_cs.qm
+share/kid3/translations/kid3_da.qm
+share/kid3/translations/kid3_de.qm
+share/kid3/translations/kid3_el.qm
+share/kid3/translations/kid3_en.qm
+share/kid3/translations/kid3_en_GB.qm
+share/kid3/translations/kid3_es.qm
+share/kid3/translations/kid3_et.qm
+share/kid3/translations/kid3_fi.qm
+share/kid3/translations/kid3_fr.qm
+share/kid3/translations/kid3_it.qm
+share/kid3/translations/kid3_ko.qm
+share/kid3/translations/kid3_nl.qm
+share/kid3/translations/kid3_pl.qm
+share/kid3/translations/kid3_pt.qm
+share/kid3/translations/kid3_pt_BR.qm
+share/kid3/translations/kid3_ru.qm
+share/kid3/translations/kid3_sr.qm
+share/kid3/translations/kid3_sr@ijekavian.qm
+share/kid3/translations/kid3_sr@ijekavianlatin.qm
+share/kid3/translations/kid3_sr@latin.qm
+share/kid3/translations/kid3_sv.qm
+share/kid3/translations/kid3_tr.qm
+share/kid3/translations/kid3_uk.qm
+share/kid3/translations/kid3_zh_CN.qm
+share/kid3/translations/kid3_zh_TW.qm
+share/kxmlgui5/
+share/kxmlgui5/kid3/
+share/kxmlgui5/kid3/kid3ui.rc
+share/metainfo/
+share/metainfo/org.kde.kid3-qt.appdata.xml
+share/metainfo/org.kde.kid3.appdata.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

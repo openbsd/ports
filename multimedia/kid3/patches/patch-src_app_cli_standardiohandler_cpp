@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_app_cli_standardiohandler_cpp,v 1.1.1.1 2020/10/30 20:40:53 zhuk Exp $
+Unbreak build: do not prefix macros with "::".
+
+Index: src/app/cli/standardiohandler.cpp
+--- src/app/cli/standardiohandler.cpp.orig
++++ src/app/cli/standardiohandler.cpp
+@@ -55,7 +55,7 @@ StandardIOHandler::StandardIOHandler(const char* promp
+   DWORD mode;
+   m_consoleMode = GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode);
+ #else
+-  m_consoleMode = ::isatty(::fileno(stdout));
++  m_consoleMode = isatty(fileno(stdout));
+ #endif
+ }
+ 
