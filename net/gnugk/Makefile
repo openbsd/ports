@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.87 2020/08/02 05:44:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2020/10/30 13:11:30 ajacoutot Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper
 
-V=			5.5
+V=			5.6
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
@@ -21,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL c crypto curl expat h323 kvm
 WANTLIB += lber ldap ldap_r lua5.2 m maxminddb netsnmp netsnmpagent
-WANTLIB += netsnmpmibs nghttp2 pt rabbitmq sasl2 ssh ssl z
+WANTLIB += netsnmpmibs pt rabbitmq sasl2 ssh ssl z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
