@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2020/08/11 12:03:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2020/10/30 19:18:12 jasper Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
 GNOME_PROJECT=		gupnp
 GNOME_VERSION=		1.2.4
+REVISION =		0
 
 SHARED_LIBS +=  gupnp-1.2	0.0
 
@@ -25,9 +26,6 @@ BUILD_DEPENDS +=	textproc/libxslt
 
 LIB_DEPENDS=		net/gssdp>=1.2.3
 
-# Makefile.inc overrides
-CONFIGURE_ENV =
-CONFIGURE_STYLE =	meson
 CONFIGURE_ARGS=		-Dcontext-manager=unix
 
 .include <bsd.port.mk>

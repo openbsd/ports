@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/07/13 10:59:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2020/10/30 19:18:12 jasper Exp $
 
 CATEGORIES ?=		net devel
 
-HOMEPAGE ?=		http://gupnp.org/
+HOMEPAGE ?=		https://wiki.gnome.org/Projects/GUPnP
 
 MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -10,7 +10,3 @@ MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE?=	Yes
 
 EXTRACT_SUFX?=		.tar.xz
-
-CONFIGURE_STYLE?=	gnu
-CONFIGURE_ENV?=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"

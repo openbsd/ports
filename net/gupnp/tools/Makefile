@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2019/11/13 19:21:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2020/10/30 19:18:12 jasper Exp $
 
 COMMENT=		collection of developer-oriented UPnP tools
 
 GNOME_PROJECT=		gupnp-tools
 GNOME_VERSION=		0.10.0
-REVISION=		0
+REVISION=		1
 
 MODULES=		devel/meson \
 			x11/gnome
@@ -20,9 +20,5 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 LIB_DEPENDS=		net/gupnp/av \
 			net/gupnp/core>=1.1.2 \
 			x11/gtksourceview4
-
-# Makefile.inc overrides
-CONFIGURE_ENV=
-CONFIGURE_STYLE=	meson
 
 .include <bsd.port.mk>
