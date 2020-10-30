@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2019/08/21 21:39:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2020/10/30 16:21:12 naddy Exp $
 
 COMMENT=	block-sorting file compressor, unencumbered
 
 DISTNAME=	bzip2-1.0.8
+REVISION=	0
 
 CATEGORIES=	archivers
 
@@ -18,9 +19,11 @@ WANTLIB += c
 
 MASTER_SITES=	https://sourceware.org/pub/bzip2/
 
-BZ2_CFLAGS=	-Wall -Winline -fomit-frame-pointer -fno-strength-reduce
+BZ2_CFLAGS=	-Wall -Winline -fomit-frame-pointer
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}" \
 		LIBbz2_VERSION=${LIBbz2_VERSION} PREFIX=${TRUEPREFIX}
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 TEST_FLAGS=	LD_LIBRARY_PATH="${WRKBUILD}" LIBbz2_VERSION=${LIBbz2_VERSION}
 TEST_TARGET=	test
