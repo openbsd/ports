@@ -1,0 +1,16 @@
+$OpenBSD: patch-Plugin_Cache_CacheManager_h,v 1.1 2020/10/30 19:25:57 jasper Exp $
+
+Fix build with newer Boost.
+
+Index: Plugin/Cache/CacheManager.h
+--- Plugin/Cache/CacheManager.h.orig
++++ Plugin/Cache/CacheManager.h
+@@ -26,6 +26,8 @@
+ 
+ #include <orthanc/OrthancCPlugin.h>
+ 
++#include <boost/shared_ptr.hpp>
++
+ namespace OrthancPlugins
+ {
+   enum CacheProperty

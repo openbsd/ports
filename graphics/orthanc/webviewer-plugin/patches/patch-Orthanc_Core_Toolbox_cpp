@@ -1,0 +1,23 @@
+$OpenBSD: patch-Orthanc_Core_Toolbox_cpp,v 1.1 2020/10/30 19:25:57 jasper Exp $
+
+Fix issue #114
+
+f49a6d934fd51dd57a8e91db45e36f77371b4042
+
+Index: Orthanc/Core/Toolbox.cpp
+--- Orthanc/Core/Toolbox.cpp.orig
++++ Orthanc/Core/Toolbox.cpp
+@@ -40,7 +40,12 @@
+ #include <boost/algorithm/string/replace.hpp>
+ #include <boost/lexical_cast.hpp>
+ #include <boost/locale.hpp>
+-#include <boost/uuid/sha1.hpp>
++
++#if BOOST_VERSION >= 106600
++#  include <boost/uuid/detail/sha1.hpp>
++#else
++#  include <boost/uuid/sha1.hpp>
++#endif
+ 
+ #include <string>
+ #include <stdint.h>
