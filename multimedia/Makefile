@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2020/10/17 22:25:31 kn Exp $
+# $OpenBSD: Makefile,v 1.130 2020/10/30 20:42:00 zhuk Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -21,6 +21,7 @@
      SUBDIR += handbrake
      SUBDIR += hdhomerun
      SUBDIR += imagination
+     SUBDIR += kid3
      SUBDIR += kguitar
      SUBDIR += libaacs
      SUBDIR += libass
