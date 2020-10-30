@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2030 2020/10/23 02:11:00 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2031 2020/10/30 20:12:34 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1438,7 +1438,6 @@
      SUBDIR += py-easyprocess,python3
      SUBDIR += py-editdist
      SUBDIR += py-efilter
-     SUBDIR += py-elftools
      SUBDIR += py-elftools,python3
      SUBDIR += py-entrypoints
      SUBDIR += py-entrypoints,python3
