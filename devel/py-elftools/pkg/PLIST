@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/12/23 17:18:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/10/30 20:12:10 jasper Exp $
+@conflict py-elftools-*
+@pkgpath devel/py-elftools
 bin/readelf.py${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/elftools/
 lib/python${MODPY_VERSION}/site-packages/elftools/__init__.py
@@ -76,6 +78,18 @@ lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/locationlists.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/namelut.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/ranges.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/structs.py
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}decoder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}ehabiinfo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}structs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/constants.py
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/decoder.py
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/ehabiinfo.py
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/structs.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}/
@@ -112,6 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}-py${MOD
 share/examples/${MODPY_PY_PREFIX}elftools/
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_decode_address.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_die_tree.py
+share/examples/${MODPY_PY_PREFIX}elftools/dwarf_lineprogram_filenames.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_location_info.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_pubnames_types.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_range_lists.py

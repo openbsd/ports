@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:12:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/10/30 20:12:09 jasper Exp $
 
 COMMENT =		ELF and DWARF parser library for Python
 
-MODPY_EGG_VERSION =	0.26
+MODPY_EGG_VERSION =	0.27
 DISTNAME =		pyelftools-${MODPY_EGG_VERSION}
 PKGNAME =		py-elftools-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://github.com/eliben/pyelftools
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -15,7 +14,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR ?=		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
