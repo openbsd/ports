@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_layoutex_Makefile_in,v 1.6 2020/10/29 14:18:46 ajacoutot Exp $
+$OpenBSD: patch-source_layoutex_Makefile_in,v 1.7 2020/10/30 07:02:01 ajacoutot Exp $
 
 Don't strip static libraries.
 
 Index: source/layoutex/Makefile.in
 --- source/layoutex/Makefile.in.orig
 +++ source/layoutex/Makefile.in
-@@ -108,7 +108,7 @@ endif
+@@ -111,7 +111,7 @@ endif
  install-library: all-local
  	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
  ifneq ($(ENABLE_STATIC),)
