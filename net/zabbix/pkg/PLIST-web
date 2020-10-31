@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.39 2020/07/27 14:32:03 jasper Exp $
+@comment $OpenBSD: PLIST-web,v 1.40 2020/10/31 10:07:36 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 @sample conf/modules.sample/
@@ -600,6 +600,9 @@ zabbix/include/classes/html/CRedirectButton.php
 zabbix/include/classes/html/CRow.php
 zabbix/include/classes/html/CRowHeader.php
 zabbix/include/classes/html/CScriptTag.php
+zabbix/include/classes/html/CSelect.php
+zabbix/include/classes/html/CSelectOption.php
+zabbix/include/classes/html/CSelectOptionGroup.php
 zabbix/include/classes/html/CSeverity.php
 zabbix/include/classes/html/CSeverityCheckBoxList.php
 zabbix/include/classes/html/CSimpleButton.php
@@ -609,6 +612,7 @@ zabbix/include/classes/html/CSubmitButton.php
 zabbix/include/classes/html/CSup.php
 zabbix/include/classes/html/CTabView.php
 zabbix/include/classes/html/CTable.php
+zabbix/include/classes/html/CTableColumn.php
 zabbix/include/classes/html/CTableInfo.php
 zabbix/include/classes/html/CTag.php
 zabbix/include/classes/html/CTextArea.php
@@ -1089,6 +1093,7 @@ zabbix/js/class.sidebar.js
 zabbix/js/class.template.js
 zabbix/js/colorpicker.js
 zabbix/js/common.js
+zabbix/js/component.z-select.js
 zabbix/js/csvggraphwidget.js
 zabbix/js/dashboard.grid.js
 zabbix/js/flickerfreescreen.js
@@ -1106,6 +1111,7 @@ zabbix/js/pages/
 zabbix/js/pages/items.js
 zabbix/js/pages/popup.condition.common.js
 zabbix/js/pages/popup.operation.common.js
+zabbix/js/pages/setup.js
 zabbix/js/servercheck.js
 zabbix/js/textareaflexible.js
 zabbix/js/vector/
