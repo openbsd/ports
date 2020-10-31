@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2020/08/17 23:43:34 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.37 2020/10/31 21:30:39 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -270,6 +270,7 @@ share/examples/seed7/cat.sd7
 share/examples/seed7/cellauto.sd7
 share/examples/seed7/celsius.sd7
 share/examples/seed7/chk_all.sd7
+share/examples/seed7/chkarr.sd7
 share/examples/seed7/chkbig.sd7
 share/examples/seed7/chkbin.sd7
 share/examples/seed7/chkbitdata.sd7
@@ -283,6 +284,7 @@ share/examples/seed7/chkfil.sd7
 share/examples/seed7/chkflt.sd7
 share/examples/seed7/chkhent.sd7
 share/examples/seed7/chkhsh.sd7
+share/examples/seed7/chkidx.sd7
 share/examples/seed7/chkint.sd7
 share/examples/seed7/chkovf.sd7
 share/examples/seed7/chkprc.sd7
