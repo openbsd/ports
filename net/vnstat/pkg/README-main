@@ -1,22 +1,22 @@
-$OpenBSD: README-main,v 1.3 2018/09/04 12:46:19 espie Exp $
+$OpenBSD: README-main,v 1.4 2020/10/31 08:55:41 rsadowski Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-1) Launch vnstat --iflist to see all the available interfaces.
+1) Edit ${SYSCONFDIR}/vnstat.conf if necessary.
 
-2) For each interface that you want to monitor, launch this command:
-    # su -m _vnstat -c "vnstat -i interface -u"
-This will create the database for the specified interface.
+2) Start the vnstatd daemon:
+    # rcctl start vnstatd
 
-3) Edit ${SYSCONFDIR}/vnstat.conf if necessary.
+3) Run "vnstat --iflist" to see all the available interfaces.
 
-4) Finally launch the vnstatd daemon:
-    # ${RCDIR}/vnstatd start
+4) For each interface that you want to monitor, launch this command:
+    # su -m  _vnstat -c  "vnstat --add -i INTERFACE"
+This will create the database for the specified interface. Otherwise you can
+also adjust "Interface" in ${SYSCONFDIR}/vnstat.conf.
 
 5) Create graphics with the command vnstati (you have to install vnstati)
-
 
 Random hints:
     * You can enable debug in ${SYSCONFDIR}/vnstat.conf and check
