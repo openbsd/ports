@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/08 18:05:38 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2020/10/31 10:50:16 robert Exp $
 
 COMMENT =	minimalistic password manager written in shell
 
 GH_ACCOUNT =    rnagy
 GH_PROJECT =    opm
-GH_TAGNAME =    1.1
+GH_TAGNAME =    1.2
 
 CATEGORIES =	security
 
