@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2020/10/21 22:49:11 kmos Exp $
+# $OpenBSD: Makefile,v 1.72 2020/10/31 12:09:04 sthen Exp $
 
 COMMENT=		digital camera library
 
@@ -46,12 +46,12 @@ CONFIGURE_ARGS=		--enable-static \
 # XXX libusb1 is broken
 CONFIGURE_ARGS +=	--with-libusb-1.0=no
 
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=		-std=gnu99
 .endif
-
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # /usr/local/lib/libiconv.a(localcharset.o)(.text+0x0): In function `locale_charset':
 # multiple definition of `locale_charset'

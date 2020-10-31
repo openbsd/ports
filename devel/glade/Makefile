@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2020/10/03 15:39:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2020/10/31 12:09:04 sthen Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -46,12 +46,12 @@ MODGNOME_TOOLS += gobject-introspection yelp
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS +=	--disable-webkit2gtk
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=		-std=gnu99
 .endif
-
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
 	rm ${PREFIX}/lib/glade/modules/*.{a,la}

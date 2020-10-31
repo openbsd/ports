@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2020/08/28 11:44:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2020/10/31 12:09:04 sthen Exp $
 
 COMMENT=		email application built around conversations
 
@@ -31,6 +31,8 @@ CONFIGURE_ARGS=		-Dlibunwind_optional=true \
 			-Diso_639_xml=${LOCALBASE}/share/xml/iso-codes/iso_639.xml \
 			-Diso_3166_xml=${LOCALBASE}/share/xml/iso-codes/iso_3166.xml
 
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=		-std=gnu99
@@ -50,7 +52,5 @@ LIB_DEPENDS=		converters/libytnef \
 			textproc/gspell \
 			x11/gnome/online-accounts \
 			x11/libhandy
-
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

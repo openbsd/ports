@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/14 15:00:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2020/10/31 12:09:04 sthen Exp $
 
 COMMENT =		library to help in developing UIs for mobile devices
 
@@ -33,14 +33,14 @@ CONFIGURE_ARGS +=	-Dglade_catalog=disabled \
 			-Dexamples=false
 CONFIGURE_ENV =		LDFLAGS=${LDFLAGS}
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}
 LDFLAGS =		-L${X11BASE}/lib
 .endif
 
 TEST_IS_INTERACTIVE =	X11
-
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/meson.build

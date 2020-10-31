@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2020/10/05 19:46:18 jca Exp $
+# $OpenBSD: Makefile,v 1.124 2020/10/31 12:09:04 sthen Exp $
 
 COMMENT=		GNOME encryption interface
 
@@ -22,6 +22,8 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache vala yelp
 
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=		-std=gnu99
@@ -38,7 +40,5 @@ LIB_DEPENDS=		databases/openldap \
 
 BUILD_DEPENDS +=	security/gnupg>=2.2.23p1
 RUN_DEPENDS +=		security/gnupg>=2.2.23p1
-
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
