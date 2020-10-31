@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gimplensfun_cpp,v 1.1.1.1 2020/10/31 10:40:05 espie Exp $
+
+Index: src/gimplensfun.cpp
+--- src/gimplensfun.cpp.orig
++++ src/gimplensfun.cpp
+@@ -33,6 +33,7 @@
+ 
+ #include <exiv2/image.hpp>
+ #include <exiv2/exif.hpp>
++#include <exiv2/error.hpp>
+ 
+ #define VERSIONSTR "0.2.4"
+ 
