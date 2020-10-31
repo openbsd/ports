@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2020/10/26 08:26:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2020/10/31 09:28:32 ajacoutot Exp $
 
 # XXX sndio: what to do with (channel) map
 # XXX sndio: check sample format
@@ -6,7 +6,7 @@
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		13.99.2
+VERSION=		13.99.3
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
@@ -51,6 +51,7 @@ BUILD_DEPENDS +=	textproc/p5-XML-Parser
 BUILD_DEPENDS +=	devel/check
 TEST_FLAGS=		HOME=${WRKDIST}
 
+# speex is a requirement for echo canceller (needs at least one)
 LIB_DEPENDS=		audio/libsndfile \
 			audio/speexdsp \
 			databases/tdb \
@@ -85,6 +86,7 @@ CONFIGURE_ARGS=		--disable-atomic-arm-linux-helpers \
 			--disable-gtk3 \
 			--disable-jack \
 			--disable-hal-compat \
+			--disable-gstreamer \
 			--disable-systemd-daemon \
 			--disable-systemd-login \
 			--disable-systemd-journal \
@@ -110,17 +112,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse" \
 			sysconfdir="${PREFIX}/share/examples/pulseaudio"
-
-### XXX remove for >=13.99.2
-MASTER_SITES0=		https://cgit.freedesktop.org/pulseaudio/pulseaudio/patch/?id=
-PATCH_DIST_STRIP=	-p1
-PATCHFILES=		99b2d882823c76bc5129135b19618c99fb55e1b9:0 \
-			05f567086b72f05f0995f5ea4e282a3ce8d0bb15:0 \
-			44c531762400b561304d35e64f1997e9e06ec1fb:0 \
-			40bb058a31bcdb9a1e44586a560aaf90aecafc74:0 \
-			ef6ceb83a2d90d1e96b744f9414a651f5320e63c:0
-CONFIGURE_ARGS +=	--disable-gstreamer
-### XXX >=13.99.2
 
 ### SNDIO ###
 AUTOCONF_VERSION=	2.69
