@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/11/01 09:34:30 benoit Exp $
 
 COMMENT= 	declarative object constructor
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Object-Declare-0.24
+DISTNAME =	Object-Declare-0.25
 CATEGORIES=	www devel
-REVISION =	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
