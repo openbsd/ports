@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2020/05/14 16:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2020/11/01 08:27:32 ajacoutot Exp $
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
-GNOME_VERSION=	3.34.0
-REVISION=	0
+GNOME_VERSION=	3.38.0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -27,5 +26,9 @@ BUILD_DEPENDS=	www/webkitgtk4 \
 RUN_DEPENDS=	www/webkitgtk4 \
 		x11/gnome/gjs \
 		x11/gtksourceview4
+
+CONFIGURE_ARGS=	-Dwayland=disabled
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

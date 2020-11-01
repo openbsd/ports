@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/11/01 19:40:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/11/01 08:27:33 ajacoutot Exp $
 bin/sushi
 lib/sushi/
 lib/sushi/girepository-1.0/
 lib/sushi/girepository-1.0/Sushi-1.0.typelib
-lib/sushi/libsushi-1.0.so
+@so lib/sushi/libsushi-1.0.so
 libexec/org.gnome.NautilusPreviewer
 share/dbus-1/services/org.gnome.NautilusPreviewer.service
 share/locale/af/LC_MESSAGES/sushi.mo
@@ -17,6 +17,7 @@ share/locale/bn_IN/LC_MESSAGES/sushi.mo
 share/locale/bs/LC_MESSAGES/sushi.mo
 share/locale/ca/LC_MESSAGES/sushi.mo
 share/locale/ca@valencia/LC_MESSAGES/sushi.mo
+share/locale/ckb/LC_MESSAGES/sushi.mo
 share/locale/cs/LC_MESSAGES/sushi.mo
 share/locale/da/LC_MESSAGES/sushi.mo
 share/locale/de/LC_MESSAGES/sushi.mo
@@ -49,6 +50,7 @@ share/locale/lv/LC_MESSAGES/sushi.mo
 share/locale/mjw/LC_MESSAGES/sushi.mo
 share/locale/ml/LC_MESSAGES/sushi.mo
 share/locale/mr/LC_MESSAGES/sushi.mo
+share/locale/ms/LC_MESSAGES/sushi.mo
 share/locale/nb/LC_MESSAGES/sushi.mo
 share/locale/ne/LC_MESSAGES/sushi.mo
 share/locale/nl/LC_MESSAGES/sushi.mo
