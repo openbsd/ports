@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.126 2020/05/14 14:52:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2020/11/01 08:24:42 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.70.0
+GNOME_VERSION =		2.72.0
 
-SHARED_LIBS += soup-2.4                  10.5 # 1.9.0
-SHARED_LIBS += soup-gnome-2.4            8.1  # 1.9.0
+SHARED_LIBS += soup-2.4                  10.6 # 1.11.0
+SHARED_LIBS += soup-gnome-2.4            8.1 # 1.11.0
 
 API_VERSION =		2.4
 SUBST_VARS =		API_VERSION
@@ -40,6 +40,7 @@ LIB_DEPENDS =		archivers/brotli \
 
 CONFIGURE_ARGS =	-Dgssapi=disabled \
 			-Dntlm=disabled \
+			-Dsysprof=disabled \
 			-Dtests=false \
 			-Dtls_check=false
 
