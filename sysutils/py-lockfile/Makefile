@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:13:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/11/01 13:28:14 jasper Exp $
 
 COMMENT=		platform-independent file locking for Python
 
 MODPY_EGG_VERSION=	0.12.2
 DISTNAME=		lockfile-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		sysutils
 
@@ -24,7 +24,7 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
 
 FLAVORS=		python3
-FLAVOR ?=
+FLAVOR ?=		python3
 
 TEST_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}
 
