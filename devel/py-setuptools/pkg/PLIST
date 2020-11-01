@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/11/19 20:26:56 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/11/01 01:00:58 kmos Exp $
 @conflict ${MODPY_PY_PREFIX}distribute-*
 @pkgpath devel/py-distribute${MODPY_FLAVOR}
 @comment bin/easy_install
@@ -66,16 +66,16 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}config.${MOD
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}dep_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}depends.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}dist.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}extension.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}glibc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}glob.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}installer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}launch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}lib2to3_ex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}monkey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}msvc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}namespaces.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}package_index.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}pep425tags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}py27compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}py31compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}py33compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -108,6 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/${MODPY_PYCACHE}markers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/${MODPY_PYCACHE}requirements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/${MODPY_PYCACHE}specifiers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/${MODPY_PYCACHE}tags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/_compat.py
@@ -115,6 +116,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/_structure
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/markers.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/requirements.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/specifiers.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/tags.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/utils.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/packaging/version.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/pyparsing.py
@@ -177,20 +179,20 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/config.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/dep_util.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/depends.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/dist.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/errors.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/extension.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/extern/
 lib/python${MODPY_VERSION}/site-packages/setuptools/extern/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/extern/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/extern/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools/glibc.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/glob.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/installer.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/launch.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/lib2to3_ex.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/monkey.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/msvc.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/namespaces.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/package_index.py
-lib/python${MODPY_VERSION}/site-packages/setuptools/pep425tags.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/py27compat.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/py31compat.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/py33compat.py
