@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2020/02/10 10:20:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/01 17:47:59 landry Exp $
 
+BROKEN =	radio-browser.info API changed
 COMMENT =	internet radio browser and player
 GH_TAGNAME =	v7.3
 GH_ACCOUNT =	haecker-felix
