@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/10/27 08:57:17 ajacoutot Exp $
-
-BROKEN =		move to python3 or gobject-introspection bindings
-# BUILD_DEPENDS +=	graphics/py-cairo
-# RUN_DEPENDS +=	graphics/py-cairo
+# $OpenBSD: Makefile,v 1.8 2020/11/01 21:07:06 jca Exp $
 
 COMMENT =	multiplatform vector graphics editor
 
 VERSION =	2.0rc3
 DISTNAME =	sk1-${VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	graphics
 
@@ -22,9 +18,11 @@ MASTER_SITES =	https://downloads.sk1project.net/sk1/${VERSION}/
 MODULES =	lang/python
 MODPY_SETUP =	setup-sk1.py
 
-WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 cairo fribidi glib-2.0
-WANTLIB += gobject-2.0 intl lcms2 pango-1.0 pangocairo-1.0 pthread
+WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 cairo glib-2.0 gobject-2.0
+WANTLIB += harfbuzz intl lcms2 pango-1.0 pangocairo-1.0 pthread
 WANTLIB += ${MODPY_WANTLIB}
+
+BUILD_DEPENDS +=	graphics/py2-cairo
 
 LIB_DEPENDS +=		devel/pango \
 			graphics/ImageMagick \
@@ -34,6 +32,7 @@ LIB_DEPENDS +=		devel/pango \
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			graphics/py-Pillow \
+			graphics/py2-cairo \
 			print/py-reportlab \
 			x11/py-wxPython \
 			x11/wxWidgets
