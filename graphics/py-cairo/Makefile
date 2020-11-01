@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2020/07/03 21:12:55 sthen Exp $
-
-# XXX version 1.19.0 and up do not support python2 anymore
+# $OpenBSD: Makefile,v 1.57 2020/11/01 20:38:45 jca Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=		m88k
@@ -12,7 +10,7 @@ GH_ACCOUNT=		pygobject
 GH_PROJECT=		pycairo
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-cairo-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -30,7 +28,7 @@ MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
-FLAVOR ?=
+FLAVOR=			python3
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			graphics/cairo

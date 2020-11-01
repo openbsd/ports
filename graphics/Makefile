@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.527 2020/10/31 23:44:34 jca Exp $
+# $OpenBSD: Makefile,v 1.528 2020/11/01 20:38:44 jca Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -240,7 +240,6 @@
      SUBDIR += py-blurhash
      SUBDIR += py-Pillow
      SUBDIR += py-Pillow,python3
-     SUBDIR += py-cairo
      SUBDIR += py-cairo,python3
      SUBDIR += py-cycler
      SUBDIR += py-cycler,python3
@@ -260,6 +259,7 @@
      SUBDIR += py-sane,python3
      SUBDIR += py-seaborn,python3
      SUBDIR += pycha,python3
+     SUBDIR += py2-cairo
      SUBDIR += qiv
      SUBDIR += quesoglc
      SUBDIR += quirc
