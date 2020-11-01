@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_definitions_h,v 1.1 2020/11/01 08:17:23 ajacoutot Exp $
+
+Unbreak with icu4c >=68.1
+
+Index: src/definitions.h
+--- src/definitions.h.orig
++++ src/definitions.h
+@@ -42,14 +42,7 @@
+ #endif
+ 
+ /*==== Misc definitions ====*/
+-/* Define a bool type if not already defined (C++ and C99 do)*/
+-#if !(defined(__cplusplus) || (defined(__STDC_VERSION__) && __STDC_VERSION__ >= 19990601L))
+-/*@-incondefs@*/
+-typedef enum {false, true} bool;
+-/*@+incondefs@*/
+-#elif defined(__STDC_VERSION__) && __STDC_VERSION__ >= 19990601L
+ #include <stdbool.h>
+-#endif
+ 
+ /*==== Configuration definitions ====*/
+ #ifndef NO_STRDUP
