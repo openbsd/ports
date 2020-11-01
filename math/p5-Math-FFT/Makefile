@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2020/10/15 07:13:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2020/11/01 10:30:50 benoit Exp $
 
 COMMENT=	calculate Fast Fourier Transforms in perl
 
 MODULES=	cpan
-DISTNAME=	Math-FFT-1.35
+DISTNAME=	Math-FFT-1.36
 CATEGORIES=	math
 
 # Perl
