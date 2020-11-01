@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/01 09:42:39 benoit Exp $
 
 COMMENT=		simple base package from which to inherit
 
-DISTNAME=		Package-New-0.07
-REVISION=		0
+DISTNAME =		Package-New-0.09
 
 CATEGORIES=		devel
 
@@ -12,5 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*
+
+RUN_DEPENDS =		devel/p5-Devel-Hide
 
 .include <bsd.port.mk>
