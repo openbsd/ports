@@ -1,4 +1,4 @@
-$OpenBSD: patch-gio_gunixmount_c,v 1.19 2019/11/01 19:33:14 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmount_c,v 1.20 2020/11/01 08:21:04 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653555
 
@@ -16,7 +16,7 @@ Index: gio/gunixmount.c
  #include <glib.h>
  #include "gsubprocess.h"
  #include "gioenums.h"
-@@ -330,12 +334,35 @@ g_unix_mount_unmount (GMount             *mount,
+@@ -332,12 +336,35 @@ g_unix_mount_unmount (GMount             *mount,
                        gpointer             user_data)
  {
    GUnixMount *unix_mount = G_UNIX_MOUNT (mount);
@@ -50,9 +50,9 @@ Index: gio/gunixmount.c
      argv[1] = unix_mount->device_path;
 +#endif
  
-   eject_unmount_do (mount, cancellable, callback, user_data, argv);
+   eject_unmount_do (mount, cancellable, callback, user_data, argv, "[gio] unmount mount");
  }
-@@ -356,12 +383,29 @@ g_unix_mount_eject (GMount             *mount,
+@@ -358,12 +385,29 @@ g_unix_mount_eject (GMount             *mount,
                      gpointer             user_data)
  {
    GUnixMount *unix_mount = G_UNIX_MOUNT (mount);
@@ -80,5 +80,5 @@ Index: gio/gunixmount.c
      argv[1] = unix_mount->device_path;
 +#endif
  
-   eject_unmount_do (mount, cancellable, callback, user_data, argv);
+   eject_unmount_do (mount, cancellable, callback, user_data, argv, "[gio] eject mount");
  }

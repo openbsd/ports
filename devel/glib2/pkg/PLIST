@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.88 2020/10/03 10:11:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.89 2020/11/01 08:21:04 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -269,7 +269,7 @@ include/glib-2.0/glib/gtrashstack.h
 include/glib-2.0/glib/gtree.h
 include/glib-2.0/glib/gtypes.h
 include/glib-2.0/glib/gunicode.h
-include/glib-2.0/glib/gurifuncs.h
+include/glib-2.0/glib/guri.h
 include/glib-2.0/glib/gutils.h
 include/glib-2.0/glib/guuid.h
 include/glib-2.0/glib/gvariant.h
@@ -351,8 +351,8 @@ share/gdb/auto-load/
 share/gdb/auto-load/usr/
 share/gdb/auto-load/${PREFIX}/
 share/gdb/auto-load/${PREFIX}/lib/
-share/gdb/auto-load/${PREFIX}/lib/libglib-2.0.so.0.6400.6-gdb.py
-share/gdb/auto-load/${PREFIX}/lib/libgobject-2.0.so.0.6400.6-gdb.py
+share/gdb/auto-load/${PREFIX}/lib/libglib-2.0.so.0.6600.2-gdb.py
+share/gdb/auto-load/${PREFIX}/lib/libgobject-2.0.so.0.6600.2-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
