@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/01 15:01:37 jasper Exp $
+@bin bin/elf2hex
+@bin bin/spike
+@bin bin/spike-dasm
+@bin bin/spike-log-parser
+@bin bin/termios-xspike
+@bin bin/xspike
+include/fesvr/
+include/fesvr/context.h
+include/fesvr/device.h
+include/fesvr/dtm.h
+include/fesvr/elf.h
+include/fesvr/elfloader.h
+include/fesvr/htif.h
+include/fesvr/htif_hexwriter.h
+include/fesvr/htif_pthread.h
+include/fesvr/memif.h
+include/fesvr/option_parser.h
+include/fesvr/rfb.h
+include/fesvr/syscall.h
+include/fesvr/term.h
+include/fesvr/tsi.h
+include/riscv/
+include/riscv/mmio_plugin.h
+@so lib/libcustomext.so
+@so lib/libsoftfloat.so
+lib/pkgconfig/riscv-disasm.pc
+lib/pkgconfig/riscv-fesvr.pc
