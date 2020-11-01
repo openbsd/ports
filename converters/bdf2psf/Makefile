@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/24 05:29:55 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/01 11:55:59 fcambus Exp $
 
 COMMENT =	convert a BDF font to PSF format for the Linux console
 
-V =		1.197
+V =		1.198
 DISTNAME =	console-setup_${V}
 PKGNAME =	bdf2psf-${V}
 EXTRACT_SUFX =	.tar.xz
