@@ -1,10 +1,11 @@
-$OpenBSD: patch-mscript_py,v 1.2 2015/05/09 09:00:43 jasper Exp $
+$OpenBSD: patch-mscript_py,v 1.3 2020/11/01 13:24:10 jasper Exp $
 
 -T not supported on OpenBSD
 
---- mscript.py.orig	Mon Mar 30 17:55:47 2015
-+++ mscript.py	Sat May  9 10:56:29 2015
-@@ -640,8 +640,7 @@ elif ctx.mode == "install" or ctx.mode == "uninstall":
+Index: mscript.py
+--- mscript.py.orig
++++ mscript.py
+@@ -615,8 +615,7 @@ elif ctx.mode == "install" or ctx.mode == "uninstall":
      if ctx.env['HAVE_GETTEXT']:
          for l in linguas:
              ctx.install_data("po/%s.mo" % l,

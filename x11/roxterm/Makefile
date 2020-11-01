@@ -1,43 +1,45 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/12 20:51:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2020/11/01 13:24:10 jasper Exp $
 
 COMMENT=		terminal emulator for X
 
-DISTNAME=		roxterm-2.9.7
-REVISION=		5
+DISTNAME=		roxterm-3.3.2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
-EXTRACT_SUFX=		.tar.bz2
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
-WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m curses
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread vte xcb xcb-render xcb-shm
-WANTLIB += z fribidi
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 epoxy expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
+WANTLIB += graphite2 gtk-3 harfbuzz hogweed iconv icudata icuuc
+WANTLIB += idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png tasn1 unistring
+WANTLIB += vte-2.91 xcb xcb-render xcb-shm z
+
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
+EXTRACT_SUFX=		.tar.xz
 
 MODULES=		lang/python
 
-LIB_DEPENDS=		devel/gettext,-runtime \
-			devel/vte \
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
+LIB_DEPENDS=		devel/vte3 \
 			x11/dbus-glib
 
-BUILD_DEPENDS=		devel/gettext,-tools \
-			sysutils/py-lockfile \
+BUILD_DEPENDS=		graphics/ImageMagick \
+			sysutils/py-lockfile${MODPY_FLAVOR} \
 			textproc/docbook-xsl \
 			textproc/xmlto
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-# XXX: Not ported to vte-2.91 yet, so keep using gtk2/vte-0.28
-CONFIGURE_ARGS+=	--disable-gtk3 \
+# XXX: translations require unported po4a-gettextize
+CONFIGURE_ARGS +=	--disable-translations \
 			--destdir="${DESTDIR}" \
 			--mandir="${PREFIX}/man" \
 			CC="${CC}" \

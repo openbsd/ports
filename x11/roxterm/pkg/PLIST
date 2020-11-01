@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/29 22:16:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/11/01 13:24:10 jasper Exp $
 @bin bin/roxterm
 @bin bin/roxterm-config
 @man man/man1/roxterm-config.1
@@ -24,17 +24,6 @@ share/doc/roxterm/lib/roxterm_ie.css
 share/doc/roxterm/lib/roxterm_logo.png
 share/doc/roxterm/lib/sprites.png
 share/icons/hicolor/scalable/apps/roxterm.svg
-share/locale/es/LC_MESSAGES/roxterm.mo/
-share/locale/es/LC_MESSAGES/roxterm.mo/es.mo
-share/locale/fr/LC_MESSAGES/roxterm.mo/
-share/locale/fr/LC_MESSAGES/roxterm.mo/fr.mo
-share/locale/pt/LC_MESSAGES/roxterm.mo
-share/locale/pt_BR/LC_MESSAGES/roxterm.mo/
-share/locale/pt_BR/LC_MESSAGES/roxterm.mo/pt_BR.mo
-share/locale/ru/LC_MESSAGES/roxterm.mo/
-share/locale/ru/LC_MESSAGES/roxterm.mo/ru.mo
-share/locale/uk/LC_MESSAGES/roxterm.mo/
-share/locale/uk/LC_MESSAGES/roxterm.mo/uk.mo
 share/roxterm/
 share/roxterm/Config/
 share/roxterm/Config/Colours/
