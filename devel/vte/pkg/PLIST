@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2015/10/18 17:14:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/11/01 12:43:46 jasper Exp $
 @conflict vte-ptyhelper-*
-@pkgpath devel/vte
+@pkgpath devel/vte,-main
+@pkgpath devel/vte,-python
 @pkgpath devel/vte,-main,gtk2
 @pkgpath devel/vte,-pty-helper
 @pkgpath devel/vte,-pty-helper,gtk2
@@ -16,7 +17,7 @@ include/vte-0.0/vte/vtepty.h
 include/vte-0.0/vte/vtetypebuiltins.h
 include/vte-0.0/vte/vteversion.h
 lib/girepository-1.0/Vte-0.0.typelib
-lib/libvte.a
+@static-lib lib/libvte.a
 lib/libvte.la
 @lib lib/libvte.so.${LIBvte_VERSION}
 lib/pkgconfig/vte.pc
@@ -96,8 +97,6 @@ share/locale/ka/LC_MESSAGES/vte-0.0.mo
 share/locale/kn/LC_MESSAGES/vte-0.0.mo
 share/locale/ko/LC_MESSAGES/vte-0.0.mo
 share/locale/ku/LC_MESSAGES/vte-0.0.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/vte-0.0.mo
 share/locale/li/LC_MESSAGES/vte-0.0.mo
 share/locale/lt/LC_MESSAGES/vte-0.0.mo
@@ -142,9 +141,6 @@ share/locale/xh/LC_MESSAGES/vte-0.0.mo
 share/locale/zh_CN/LC_MESSAGES/vte-0.0.mo
 share/locale/zh_HK/LC_MESSAGES/vte-0.0.mo
 share/locale/zh_TW/LC_MESSAGES/vte-0.0.mo
-share/pygtk/
-share/pygtk/2.0/
-share/pygtk/2.0/defs/
 share/vte/
 share/vte/termcap-0.0/
 share/vte/termcap-0.0/xterm
