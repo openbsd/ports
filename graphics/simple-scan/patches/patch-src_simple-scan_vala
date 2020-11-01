@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_simple-scan_vala,v 1.10 2020/04/29 05:13:46 ajacoutot Exp $
+$OpenBSD: patch-src_simple-scan_vala,v 1.11 2020/11/01 08:28:01 ajacoutot Exp $
 
 No gusb on OpenBSD.
 
@@ -13,7 +13,7 @@ Index: src/simple-scan.vala
      private AppWindow app;
      private Scanner scanner;
      private Book book;
-@@ -66,17 +65,6 @@ public class SimpleScan : Gtk.Application
+@@ -67,17 +66,6 @@ public class SimpleScan : Gtk.Application
          scanner.scan_failed.connect (scanner_failed_cb);
          scanner.scanning_changed.connect (scanner_scanning_changed_cb);
  
@@ -31,7 +31,7 @@ Index: src/simple-scan.vala
          if (default_device != null)
          {
              List<ScanDevice> device_list = null;
-@@ -99,7 +87,6 @@ public class SimpleScan : Gtk.Application
+@@ -100,7 +88,6 @@ public class SimpleScan : Gtk.Application
          base.shutdown ();
          book = null;
          app = null;
@@ -39,7 +39,7 @@ Index: src/simple-scan.vala
          scanner.free ();
      }
  
-@@ -1265,33 +1252,7 @@ public class SimpleScan : Gtk.Application
+@@ -1543,36 +1530,7 @@ public class SimpleScan : Gtk.Application
  
      public string? suggest_driver ()
      {
@@ -51,9 +51,12 @@ Index: src/simple-scan.vala
 -        add_devices (driver_map, brscan2_devices, "brscan2");
 -        add_devices (driver_map, brscan3_devices, "brscan3");
 -        add_devices (driver_map, brscan4_devices, "brscan4");
+-        add_devices (driver_map, pixma_devices, "pixma");
 -        add_devices (driver_map, samsung_devices, "samsung");
+-        add_devices (driver_map, smfp_devices, "smfp");
 -        add_devices (driver_map, hpaio_devices, "hpaio");
 -        add_devices (driver_map, epkowa_devices, "epkowa");
+-        add_devices (driver_map, lexmark_nscan_devices, "lexmark_nscan");
 -        var devices = usb_context.get_devices ();
 -        for (var i = 0; i < devices.length; i++)
 -        {
