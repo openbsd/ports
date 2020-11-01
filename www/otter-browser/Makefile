@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2020/10/09 19:11:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2020/11/01 23:05:14 cwen Exp $
 
 COMMENT =	browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 DISTNAME =	otter-browser-1.0.01
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www
 
@@ -17,10 +17,11 @@ EXTRACT_SUFX =	.tar.bz2
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5Svg Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5XmlPatterns c hunspell-1.7
-WANTLIB += m
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5Positioning
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Svg Qt5WebChannel
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5XmlPatterns
+WANTLIB += c hunspell-1.7 m
 
 MODULES =	devel/cmake x11/qt5
 
@@ -30,12 +31,11 @@ LIB_DEPENDS =	textproc/hunspell \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtsvg \
-		x11/qt5/qtwebkit>=5.212.0 \
+		x11/qt5/qtwebengine \
 		x11/qt5/qtxmlpatterns
 
-# Otter is the only browser really working on macppc.
-CONFIGURE_ARGS +=	-DENABLE_QTWEBENGINE=OFF \
-			-DENABLE_QTWEBKIT=ON
+CONFIGURE_ARGS +=	-DENABLE_QTWEBENGINE=ON \
+			-DENABLE_QTWEBKIT=OFF
 
 NO_TEST =	Yes
 
