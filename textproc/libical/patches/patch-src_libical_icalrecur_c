@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_libical_icalrecur_c,v 1.7 2020/11/01 08:19:28 ajacoutot Exp $
+
+Fix build with icu-68.1:
+https://github.com/libical/libical/pull/448
+
+Index: src/libical/icalrecur.c
+--- src/libical/icalrecur.c.orig
++++ src/libical/icalrecur.c
+@@ -1018,7 +1018,7 @@ icalarray *icalrecurrencetype_rscale_supported_calenda
+ 
+     calendars = icalarray_new(sizeof(const char **), 20);
+ 
+-    en = ucal_getKeywordValuesForLocale("calendar", NULL, FALSE, &status);
++    en = ucal_getKeywordValuesForLocale("calendar", NULL, false, &status);
+     while ((cal = uenum_next(en, NULL, &status))) {
+         cal = icalmemory_tmp_copy(cal);
+         icalarray_append(calendars, &cal);
+@@ -1411,7 +1411,7 @@ static int initialize_rscale(icalrecur_iterator *impl)
+         }
+ 
+         /* Check if specified calendar is supported */
+-        en = ucal_getKeywordValuesForLocale("calendar", NULL, FALSE, &status);
++        en = ucal_getKeywordValuesForLocale("calendar", NULL, false, &status);
+         while ((cal = uenum_next(en, NULL, &status))) {
+             if (!strcmp(cal, rule.rscale)) {
+                 is_hebrew = !strcmp(rule.rscale, "hebrew");
