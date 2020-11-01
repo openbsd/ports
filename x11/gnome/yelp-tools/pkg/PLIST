@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/22 13:29:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/01 08:22:10 ajacoutot Exp $
 bin/yelp-build
 bin/yelp-check
 bin/yelp-new
 share/aclocal/yelp.m4
 share/yelp-tools/
 share/yelp-tools/templates/
+share/yelp-tools/templates/concept.duck
+share/yelp-tools/templates/concept.page
+share/yelp-tools/templates/guide.duck
+share/yelp-tools/templates/guide.page
+share/yelp-tools/templates/reference.duck
+share/yelp-tools/templates/reference.page
+share/yelp-tools/templates/task.duck
 share/yelp-tools/templates/task.page
 share/yelp-tools/xslt/
 share/yelp-tools/xslt/comments.xsl
