@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2020/10/09 22:17:15 jca Exp $
+@comment $OpenBSD: PLIST,v 1.49 2020/11/01 20:40:45 jca Exp $
 bin/gimp
 @bin bin/gimp-2.10
 bin/gimp-console
@@ -252,8 +252,10 @@ lib/gimp/
 lib/gimp/2.0/
 lib/gimp/2.0/environ/
 lib/gimp/2.0/environ/default.env
+lib/gimp/2.0/environ/pygimp.env
 lib/gimp/2.0/interpreters/
 lib/gimp/2.0/interpreters/default.interp
+lib/gimp/2.0/interpreters/pygimp.interp
 lib/gimp/2.0/modules/
 @static-lib lib/gimp/2.0/modules/libcolor-selector-cmyk.a
 lib/gimp/2.0/modules/libcolor-selector-cmyk.la
@@ -308,6 +310,9 @@ lib/gimp/2.0/plug-ins/colorify/
 @bin lib/gimp/2.0/plug-ins/colorify/colorify
 lib/gimp/2.0/plug-ins/colormap-remap/
 @bin lib/gimp/2.0/plug-ins/colormap-remap/colormap-remap
+lib/gimp/2.0/plug-ins/colorxhtml/
+lib/gimp/2.0/plug-ins/colorxhtml/colorxhtml.py
+lib/gimp/2.0/plug-ins/colorxhtml/colorxhtml.pyc
 lib/gimp/2.0/plug-ins/compose/
 @bin lib/gimp/2.0/plug-ins/compose/compose
 lib/gimp/2.0/plug-ins/contrast-retinex/
@@ -380,6 +385,9 @@ lib/gimp/2.0/plug-ins/file-jpeg/
 @bin lib/gimp/2.0/plug-ins/file-jpeg/file-jpeg
 lib/gimp/2.0/plug-ins/file-mng/
 @bin lib/gimp/2.0/plug-ins/file-mng/file-mng
+lib/gimp/2.0/plug-ins/file-openraster/
+lib/gimp/2.0/plug-ins/file-openraster/file-openraster.py
+lib/gimp/2.0/plug-ins/file-openraster/file-openraster.pyc
 lib/gimp/2.0/plug-ins/file-pat/
 @bin lib/gimp/2.0/plug-ins/file-pat/file-pat
 lib/gimp/2.0/plug-ins/file-pcx/
@@ -434,6 +442,9 @@ lib/gimp/2.0/plug-ins/filter-pack/
 @bin lib/gimp/2.0/plug-ins/filter-pack/filter-pack
 lib/gimp/2.0/plug-ins/flame/
 @bin lib/gimp/2.0/plug-ins/flame/flame
+lib/gimp/2.0/plug-ins/foggify/
+lib/gimp/2.0/plug-ins/foggify/foggify.py
+lib/gimp/2.0/plug-ins/foggify/foggify.pyc
 lib/gimp/2.0/plug-ins/fractal-explorer/
 @bin lib/gimp/2.0/plug-ins/fractal-explorer/fractal-explorer
 lib/gimp/2.0/plug-ins/fractal-trace/
@@ -448,12 +459,18 @@ lib/gimp/2.0/plug-ins/gradient-flare/
 @bin lib/gimp/2.0/plug-ins/gradient-flare/gradient-flare
 lib/gimp/2.0/plug-ins/gradient-map/
 @bin lib/gimp/2.0/plug-ins/gradient-map/gradient-map
+lib/gimp/2.0/plug-ins/gradients-save-as-css/
+lib/gimp/2.0/plug-ins/gradients-save-as-css/gradients-save-as-css.py
+lib/gimp/2.0/plug-ins/gradients-save-as-css/gradients-save-as-css.pyc
 lib/gimp/2.0/plug-ins/grid/
 @bin lib/gimp/2.0/plug-ins/grid/grid
 lib/gimp/2.0/plug-ins/guillotine/
 @bin lib/gimp/2.0/plug-ins/guillotine/guillotine
 lib/gimp/2.0/plug-ins/help/
 @bin lib/gimp/2.0/plug-ins/help/help
+lib/gimp/2.0/plug-ins/histogram-export/
+lib/gimp/2.0/plug-ins/histogram-export/histogram-export.py
+lib/gimp/2.0/plug-ins/histogram-export/histogram-export.pyc
 lib/gimp/2.0/plug-ins/hot/
 @bin lib/gimp/2.0/plug-ins/hot/hot
 lib/gimp/2.0/plug-ins/ifs-compose/
@@ -478,6 +495,15 @@ lib/gimp/2.0/plug-ins/nl-filter/
 @bin lib/gimp/2.0/plug-ins/nl-filter/nl-filter
 lib/gimp/2.0/plug-ins/pagecurl/
 @bin lib/gimp/2.0/plug-ins/pagecurl/pagecurl
+lib/gimp/2.0/plug-ins/palette-offset/
+lib/gimp/2.0/plug-ins/palette-offset/palette-offset.py
+lib/gimp/2.0/plug-ins/palette-offset/palette-offset.pyc
+lib/gimp/2.0/plug-ins/palette-sort/
+lib/gimp/2.0/plug-ins/palette-sort/palette-sort.py
+lib/gimp/2.0/plug-ins/palette-sort/palette-sort.pyc
+lib/gimp/2.0/plug-ins/palette-to-gradient/
+lib/gimp/2.0/plug-ins/palette-to-gradient/palette-to-gradient.py
+lib/gimp/2.0/plug-ins/palette-to-gradient/palette-to-gradient.pyc
 lib/gimp/2.0/plug-ins/photocopy/
 @bin lib/gimp/2.0/plug-ins/photocopy/photocopy
 lib/gimp/2.0/plug-ins/plugin-browser/
@@ -486,6 +512,17 @@ lib/gimp/2.0/plug-ins/print/
 @bin lib/gimp/2.0/plug-ins/print/print
 lib/gimp/2.0/plug-ins/procedure-browser/
 @bin lib/gimp/2.0/plug-ins/procedure-browser/procedure-browser
+lib/gimp/2.0/plug-ins/${MODPY_PY_PREFIX}slice/
+lib/gimp/2.0/plug-ins/${MODPY_PY_PREFIX}slice/${MODPY_PY_PREFIX}slice.py
+lib/gimp/2.0/plug-ins/${MODPY_PY_PREFIX}slice/${MODPY_PY_PREFIX}slice.pyc
+lib/gimp/2.0/plug-ins/python-console/
+lib/gimp/2.0/plug-ins/python-console/pyconsole.py
+lib/gimp/2.0/plug-ins/python-console/pyconsole.pyc
+lib/gimp/2.0/plug-ins/python-console/python-console.py
+lib/gimp/2.0/plug-ins/python-console/python-console.pyc
+lib/gimp/2.0/plug-ins/python-eval/
+lib/gimp/2.0/plug-ins/python-eval/python-eval.py
+lib/gimp/2.0/plug-ins/python-eval/python-eval.pyc
 lib/gimp/2.0/plug-ins/qbist/
 @bin lib/gimp/2.0/plug-ins/qbist/qbist
 lib/gimp/2.0/plug-ins/sample-colorize/
@@ -506,6 +543,9 @@ lib/gimp/2.0/plug-ins/sparkle/
 @bin lib/gimp/2.0/plug-ins/sparkle/sparkle
 lib/gimp/2.0/plug-ins/sphere-designer/
 @bin lib/gimp/2.0/plug-ins/sphere-designer/sphere-designer
+lib/gimp/2.0/plug-ins/spyro_plus/
+lib/gimp/2.0/plug-ins/spyro_plus/spyro_plus.py
+lib/gimp/2.0/plug-ins/spyro_plus/spyro_plus.pyc
 lib/gimp/2.0/plug-ins/tile/
 lib/gimp/2.0/plug-ins/tile-small/
 @bin lib/gimp/2.0/plug-ins/tile-small/tile-small
@@ -520,6 +560,38 @@ lib/gimp/2.0/plug-ins/wavelet-decompose/
 @bin lib/gimp/2.0/plug-ins/wavelet-decompose/wavelet-decompose
 lib/gimp/2.0/plug-ins/web-browser/
 @bin lib/gimp/2.0/plug-ins/web-browser/web-browser
+lib/gimp/2.0/python/
+lib/gimp/2.0/python/_gimpenums.a
+lib/gimp/2.0/python/_gimpenums.la
+@so lib/gimp/2.0/python/_gimpenums.so
+lib/gimp/2.0/python/_gimpui.a
+lib/gimp/2.0/python/_gimpui.la
+@so lib/gimp/2.0/python/_gimpui.so
+lib/gimp/2.0/python/gimp.a
+lib/gimp/2.0/python/gimp.la
+@so lib/gimp/2.0/python/gimp.so
+lib/gimp/2.0/python/gimpcolor.a
+lib/gimp/2.0/python/gimpcolor.la
+@so lib/gimp/2.0/python/gimpcolor.so
+lib/gimp/2.0/python/gimpenums.py
+lib/gimp/2.0/python/gimpenums.pyc
+lib/gimp/2.0/python/gimpenums.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/gimpfu.py
+lib/gimp/2.0/python/gimpfu.pyc
+lib/gimp/2.0/python/gimpfu.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/gimpplugin.py
+lib/gimp/2.0/python/gimpplugin.pyc
+lib/gimp/2.0/python/gimpplugin.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/gimpshelf.py
+lib/gimp/2.0/python/gimpshelf.pyc
+lib/gimp/2.0/python/gimpshelf.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/gimpthumb.a
+lib/gimp/2.0/python/gimpthumb.la
+@so lib/gimp/2.0/python/gimpthumb.so
+lib/gimp/2.0/python/gimpui.py
+lib/gimp/2.0/python/gimpui.pyc
+lib/gimp/2.0/python/gimpui.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/pygimp-logo.png
 @static-lib lib/libgimp-2.0.a
 lib/libgimp-2.0.la
 @lib lib/libgimp-2.0.so.${LIBgimp-2.0_VERSION}
@@ -4223,7 +4295,7 @@ share/gimp/2.0/scripts/chrome-it.scm
 share/gimp/2.0/scripts/circuit.scm
 share/gimp/2.0/scripts/clothify.scm
 share/gimp/2.0/scripts/coffee.scm
-share/gimp/2.0/scripts/copy-visible.scm
+share/gimp/2.0/scripts/co${MODPY_PY_PREFIX}visible.scm
 share/gimp/2.0/scripts/difference-clouds.scm
 share/gimp/2.0/scripts/distress-selection.scm
 share/gimp/2.0/scripts/drop-shadow.scm
