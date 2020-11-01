@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_calibre_utils_matcher_c,v 1.1 2020/11/01 08:19:49 ajacoutot Exp $
+
+Fix build with icu4c >= 68.1
+
+Index: src/calibre/utils/matcher.c
+--- src/calibre/utils/matcher.c.orig
++++ src/calibre/utils/matcher.c
+@@ -15,7 +15,6 @@
+ #define inline
+ #endif
+ 
+-typedef unsigned char bool;
+ #define TRUE 1
+ #define FALSE 0
+ #define MAX(x, y) ((x > y) ? x : y)
