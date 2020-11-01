@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2020/05/14 14:56:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2020/11/01 08:26:21 ajacoutot Exp $
 
 COMMENT=		gettext(1) files editor for GNOME
 
 GNOME_PROJECT=		gtranslator
-GNOME_VERSION=		3.36.0
+GNOME_VERSION=		3.38.0
 
 CATEGORIES=		textproc devel
 
