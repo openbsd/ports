@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_third_party_websocketpp_websocketpp_transport_asio_connection_hpp,v 1.1 2020/11/01 01:10:35 daniel Exp $
+
+Fix for newer boost; from archlinux
+
+Index: src/third_party/websocketpp/websocketpp/transport/asio/connection.hpp
+--- src/third_party/websocketpp/websocketpp/transport/asio/connection.hpp.orig
++++ src/third_party/websocketpp/websocketpp/transport/asio/connection.hpp
+@@ -311,9 +311,10 @@ class connection : public config::socket_type::socket_
+      * needed.
+      */
+     timer_ptr set_timer(long duration, timer_handler callback) {
+-        timer_ptr new_timer = lib::make_shared<lib::asio::steady_timer>(
+-            lib::ref(*m_io_service),
+-            lib::asio::milliseconds(duration)
++        timer_ptr new_timer(
++            new lib::asio::steady_timer(
++                *m_io_service,
++                lib::asio::milliseconds(duration))
+         );
+ 
+         if (config::enable_multithreading) {
+@@ -461,8 +462,7 @@ class connection : public config::socket_type::socket_
+         m_io_service = io_service;
+ 
+         if (config::enable_multithreading) {
+-            m_strand = lib::make_shared<lib::asio::io_service::strand>(
+-                lib::ref(*io_service));
++            m_strand.reset(new lib::asio::io_service::strand(*io_service));
+         }
+ 
+         lib::error_code ec = socket_con_type::init_asio(io_service, m_strand,

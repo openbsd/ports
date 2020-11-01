@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_third_party_websocketpp_websocketpp_transport_asio_security_tls_hpp,v 1.1 2020/11/01 01:10:35 daniel Exp $
+
+Fix for newer boost; from archlinux
+
+Index: src/third_party/websocketpp/websocketpp/transport/asio/security/tls.hpp
+--- src/third_party/websocketpp/websocketpp/transport/asio/security/tls.hpp.orig
++++ src/third_party/websocketpp/websocketpp/transport/asio/security/tls.hpp
+@@ -193,8 +193,7 @@ class connection : public lib::enable_shared_from_this
+         if (!m_context) {
+             return socket::make_error_code(socket::error::invalid_tls_context);
+         }
+-        m_socket = lib::make_shared<socket_type>(
+-            _WEBSOCKETPP_REF(*service),lib::ref(*m_context));
++        m_socket.reset(new socket_type(*service, *m_context));
+ 
+         m_io_service = service;
+         m_strand = strand;

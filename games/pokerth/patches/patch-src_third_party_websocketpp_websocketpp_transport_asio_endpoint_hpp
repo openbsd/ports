@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_third_party_websocketpp_websocketpp_transport_asio_endpoint_hpp,v 1.1 2020/11/01 01:10:35 daniel Exp $
+
+Fix for newer boost; from archlinux
+
+Index: src/third_party/websocketpp/websocketpp/transport/asio/endpoint.hpp
+--- src/third_party/websocketpp/websocketpp/transport/asio/endpoint.hpp.orig
++++ src/third_party/websocketpp/websocketpp/transport/asio/endpoint.hpp
+@@ -191,8 +191,7 @@ class endpoint : public config::socket_type { (public)
+ 
+         m_io_service = ptr;
+         m_external_io_service = true;
+-        m_acceptor = lib::make_shared<lib::asio::ip::tcp::acceptor>(
+-            lib::ref(*m_io_service));
++        m_acceptor.reset(new lib::asio::ip::tcp::acceptor(*m_io_service));
+ 
+         m_state = READY;
+         ec = lib::error_code();
+@@ -660,9 +659,7 @@ class endpoint : public config::socket_type { (public)
+      * @since 0.3.0
+      */
+     void start_perpetual() {
+-        m_work = lib::make_shared<lib::asio::io_service::work>(
+-            lib::ref(*m_io_service)
+-        );
++        m_work.reset(new lib::asio::io_service::work(*m_io_service));
+     }
+ 
+     /// Clears the endpoint's perpetual flag, allowing it to exit when empty
+@@ -826,8 +823,7 @@ class endpoint : public config::socket_type { (public)
+ 
+         // Create a resolver
+         if (!m_resolver) {
+-            m_resolver = lib::make_shared<lib::asio::ip::tcp::resolver>(
+-                lib::ref(*m_io_service));
++            m_resolver.reset(new lib::asio::ip::tcp::resolver(*m_io_service));
+         }
+ 
+         tcon->set_uri(u);
