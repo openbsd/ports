@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/08/16 08:17:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/11/01 08:14:08 ajacoutot Exp $
 bin/meson
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,6 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}_pathlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}arglist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}coredata.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mtest.${MODP
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}munstable_coredata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}optinterpreter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}rewriter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/_pathlib.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/arglist.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/ast/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/ast/__init__.py
@@ -81,6 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/${MODPY_PYCACHE}execut
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/${MODPY_PYCACHE}fileapi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/${MODPY_PYCACHE}generator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/${MODPY_PYCACHE}interpreter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/${MODPY_PYCACHE}toolchain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/${MODPY_PYCACHE}traceparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/client.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/common.py
@@ -88,6 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/executor.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/fileapi.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/generator.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/interpreter.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/toolchain.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/cmake/traceparser.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/__init__.py
@@ -125,6 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/${MODPY_PYCACHE}ccrx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/${MODPY_PYCACHE}clang.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/${MODPY_PYCACHE}clike.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/${MODPY_PYCACHE}compcert.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/${MODPY_PYCACHE}elbrus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/${MODPY_PYCACHE}emscripten.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/${MODPY_PYCACHE}gnu.${MODPY_PYC_MAGIC_TAG}pyc
@@ -138,6 +143,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/c2000.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/ccrx.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/clang.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/clike.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/compcert.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/elbrus.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/emscripten.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/mixins/gnu.py
@@ -204,6 +210,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}fs.$
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}gnome.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}hotdoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}keyval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}modtest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}pkgconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}pyc
@@ -214,8 +221,8 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}qt5.
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}rpm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}sourceset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}unstable_cuda.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}unstable_external_project.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}unstable_icestorm.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}unstable_keyval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}unstable_simd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/cmake.py
@@ -224,6 +231,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/fs.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/gnome.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/hotdoc.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/i18n.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/keyval.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/modtest.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/pkgconfig.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/python.py
@@ -234,8 +242,8 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/qt5.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/rpm.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/sourceset.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/unstable_cuda.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/unstable_external_project.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/unstable_icestorm.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/unstable_keyval.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/unstable_simd.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/windows.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mparser.py
@@ -258,6 +266,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}cove
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}delwithsuffix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}depfixer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}dirchanger.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}externalproject.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}gettext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}gtkdochelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}hotdochelper.${MODPY_PYC_MAGIC_TAG}pyc
@@ -279,6 +288,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/coverage.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/delwithsuffix.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/depfixer.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/dirchanger.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/externalproject.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/gettext.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/gtkdochelper.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/hotdochelper.py
