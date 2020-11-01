@@ -1,0 +1,26 @@
+$OpenBSD: patch-source_common_unicode_umachine_h,v 1.1 2020/11/01 08:15:53 ajacoutot Exp $
+
+XXX unbreak (at least!) the following ports (wait until upstream copes):
+devel/libvmime
+editors/libreoffice
+games/0ad/base
+games/openra
+lang/php/7.2
+lang/php/7.3
+lang/php/7.4
+www/webkitgtk4
+x11/gnustep/base
+x11/qt5/qtwebengine
+x11/qt5/qtwebkit
+
+Index: source/common/unicode/umachine.h
+--- source/common/unicode/umachine.h.orig
++++ source/common/unicode/umachine.h
+@@ -280,6 +280,7 @@ typedef int8_t UBool;
+  *
+  * @internal ICU 68
+  */
++#define U_DEFINE_FALSE_AND_TRUE 1
+ #ifdef U_DEFINE_FALSE_AND_TRUE
+     // Use the predefined value.
+ #elif defined(U_COMBINED_IMPLEMENTATION) || \
