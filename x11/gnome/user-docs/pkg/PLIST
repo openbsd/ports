@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2020/05/14 16:08:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2020/11/01 08:25:26 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -107,7 +107,7 @@ share/help/C/gnome-help/figures/battery-low-symbolic.svg
 share/help/C/gnome-help/figures/battery-missing-symbolic.svg
 share/help/C/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/C/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/C/gnome-help/figures/bluetooth-menu.png
+share/help/C/gnome-help/figures/bluetooth-symbolic.svg
 share/help/C/gnome-help/figures/color-average.png
 share/help/C/gnome-help/figures/color-camera.png
 share/help/C/gnome-help/figures/color-display.png
@@ -127,7 +127,7 @@ share/help/C/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/C/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/C/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/C/gnome-help/figures/gesture-tap.png
-share/help/C/gnome-help/figures/gnome.png
+share/help/C/gnome-help/figures/gnome.svg
 share/help/C/gnome-help/figures/go-down-symbolic.svg
 share/help/C/gnome-help/figures/input-keyboard-symbolic.png
 share/help/C/gnome-help/figures/input-methods-switcher.png
@@ -199,7 +199,6 @@ share/help/C/gnome-help/figures/shell-top-bar.png
 share/help/C/gnome-help/figures/shell-window-list-classic.png
 share/help/C/gnome-help/figures/shell-workspaces.png
 share/help/C/gnome-help/figures/system-run-symbolic.svg
-share/help/C/gnome-help/figures/universal-access-menu.png
 share/help/C/gnome-help/figures/view-more-symbolic.svg
 share/help/C/gnome-help/figures/yelp-icon-big.svg
 share/help/C/gnome-help/files-autorun.page
@@ -280,7 +279,6 @@ share/help/C/gnome-help/net-firewall-on-off.page
 share/help/C/gnome-help/net-firewall-ports.page
 share/help/C/gnome-help/net-fixed-ip-address.page
 share/help/C/gnome-help/net-general.page
-share/help/C/gnome-help/net-install-flash.page
 share/help/C/gnome-help/net-macaddress.page
 share/help/C/gnome-help/net-manual.page
 share/help/C/gnome-help/net-mobile.page
@@ -578,7 +576,7 @@ share/help/as/gnome-help/figures/battery-low-symbolic.svg
 share/help/as/gnome-help/figures/battery-missing-symbolic.svg
 share/help/as/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/as/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/as/gnome-help/figures/bluetooth-menu.png
+share/help/as/gnome-help/figures/bluetooth-symbolic.svg
 share/help/as/gnome-help/figures/color-average.png
 share/help/as/gnome-help/figures/color-camera.png
 share/help/as/gnome-help/figures/color-display.png
@@ -598,7 +596,7 @@ share/help/as/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/as/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/as/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/as/gnome-help/figures/gesture-tap.png
-share/help/as/gnome-help/figures/gnome.png
+share/help/as/gnome-help/figures/gnome.svg
 share/help/as/gnome-help/figures/go-down-symbolic.svg
 share/help/as/gnome-help/figures/input-keyboard-symbolic.png
 share/help/as/gnome-help/figures/input-methods-switcher.png
@@ -670,7 +668,6 @@ share/help/as/gnome-help/figures/shell-top-bar.png
 share/help/as/gnome-help/figures/shell-window-list-classic.png
 share/help/as/gnome-help/figures/shell-workspaces.png
 share/help/as/gnome-help/figures/system-run-symbolic.svg
-share/help/as/gnome-help/figures/universal-access-menu.png
 share/help/as/gnome-help/figures/view-more-symbolic.svg
 share/help/as/gnome-help/figures/yelp-icon-big.svg
 share/help/as/gnome-help/files-autorun.page
@@ -751,7 +748,6 @@ share/help/as/gnome-help/net-firewall-on-off.page
 share/help/as/gnome-help/net-firewall-ports.page
 share/help/as/gnome-help/net-fixed-ip-address.page
 share/help/as/gnome-help/net-general.page
-share/help/as/gnome-help/net-install-flash.page
 share/help/as/gnome-help/net-macaddress.page
 share/help/as/gnome-help/net-manual.page
 share/help/as/gnome-help/net-mobile.page
@@ -991,7 +987,7 @@ share/help/ca/gnome-help/figures/battery-low-symbolic.svg
 share/help/ca/gnome-help/figures/battery-missing-symbolic.svg
 share/help/ca/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/ca/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/ca/gnome-help/figures/bluetooth-menu.png
+share/help/ca/gnome-help/figures/bluetooth-symbolic.svg
 share/help/ca/gnome-help/figures/color-average.png
 share/help/ca/gnome-help/figures/color-camera.png
 share/help/ca/gnome-help/figures/color-display.png
@@ -1011,7 +1007,7 @@ share/help/ca/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/ca/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/ca/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/ca/gnome-help/figures/gesture-tap.png
-share/help/ca/gnome-help/figures/gnome.png
+share/help/ca/gnome-help/figures/gnome.svg
 share/help/ca/gnome-help/figures/go-down-symbolic.svg
 share/help/ca/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ca/gnome-help/figures/input-methods-switcher.png
@@ -1083,7 +1079,6 @@ share/help/ca/gnome-help/figures/shell-top-bar.png
 share/help/ca/gnome-help/figures/shell-window-list-classic.png
 share/help/ca/gnome-help/figures/shell-workspaces.png
 share/help/ca/gnome-help/figures/system-run-symbolic.svg
-share/help/ca/gnome-help/figures/universal-access-menu.png
 share/help/ca/gnome-help/figures/view-more-symbolic.svg
 share/help/ca/gnome-help/figures/yelp-icon-big.svg
 share/help/ca/gnome-help/files-autorun.page
@@ -1164,7 +1159,6 @@ share/help/ca/gnome-help/net-firewall-on-off.page
 share/help/ca/gnome-help/net-firewall-ports.page
 share/help/ca/gnome-help/net-fixed-ip-address.page
 share/help/ca/gnome-help/net-general.page
-share/help/ca/gnome-help/net-install-flash.page
 share/help/ca/gnome-help/net-macaddress.page
 share/help/ca/gnome-help/net-manual.page
 share/help/ca/gnome-help/net-mobile.page
@@ -1462,7 +1456,7 @@ share/help/cs/gnome-help/figures/battery-low-symbolic.svg
 share/help/cs/gnome-help/figures/battery-missing-symbolic.svg
 share/help/cs/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/cs/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/cs/gnome-help/figures/bluetooth-menu.png
+share/help/cs/gnome-help/figures/bluetooth-symbolic.svg
 share/help/cs/gnome-help/figures/color-average.png
 share/help/cs/gnome-help/figures/color-camera.png
 share/help/cs/gnome-help/figures/color-display.png
@@ -1482,7 +1476,7 @@ share/help/cs/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/cs/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/cs/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/cs/gnome-help/figures/gesture-tap.png
-share/help/cs/gnome-help/figures/gnome.png
+share/help/cs/gnome-help/figures/gnome.svg
 share/help/cs/gnome-help/figures/go-down-symbolic.svg
 share/help/cs/gnome-help/figures/input-keyboard-symbolic.png
 share/help/cs/gnome-help/figures/input-methods-switcher.png
@@ -1554,7 +1548,6 @@ share/help/cs/gnome-help/figures/shell-top-bar.png
 share/help/cs/gnome-help/figures/shell-window-list-classic.png
 share/help/cs/gnome-help/figures/shell-workspaces.png
 share/help/cs/gnome-help/figures/system-run-symbolic.svg
-share/help/cs/gnome-help/figures/universal-access-menu.png
 share/help/cs/gnome-help/figures/view-more-symbolic.svg
 share/help/cs/gnome-help/figures/yelp-icon-big.svg
 share/help/cs/gnome-help/files-autorun.page
@@ -1635,7 +1628,6 @@ share/help/cs/gnome-help/net-firewall-on-off.page
 share/help/cs/gnome-help/net-firewall-ports.page
 share/help/cs/gnome-help/net-fixed-ip-address.page
 share/help/cs/gnome-help/net-general.page
-share/help/cs/gnome-help/net-install-flash.page
 share/help/cs/gnome-help/net-macaddress.page
 share/help/cs/gnome-help/net-manual.page
 share/help/cs/gnome-help/net-mobile.page
@@ -1933,7 +1925,7 @@ share/help/da/gnome-help/figures/battery-low-symbolic.svg
 share/help/da/gnome-help/figures/battery-missing-symbolic.svg
 share/help/da/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/da/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/da/gnome-help/figures/bluetooth-menu.png
+share/help/da/gnome-help/figures/bluetooth-symbolic.svg
 share/help/da/gnome-help/figures/color-average.png
 share/help/da/gnome-help/figures/color-camera.png
 share/help/da/gnome-help/figures/color-display.png
@@ -1953,7 +1945,7 @@ share/help/da/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/da/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/da/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/da/gnome-help/figures/gesture-tap.png
-share/help/da/gnome-help/figures/gnome.png
+share/help/da/gnome-help/figures/gnome.svg
 share/help/da/gnome-help/figures/go-down-symbolic.svg
 share/help/da/gnome-help/figures/input-keyboard-symbolic.png
 share/help/da/gnome-help/figures/input-methods-switcher.png
@@ -2025,7 +2017,6 @@ share/help/da/gnome-help/figures/shell-top-bar.png
 share/help/da/gnome-help/figures/shell-window-list-classic.png
 share/help/da/gnome-help/figures/shell-workspaces.png
 share/help/da/gnome-help/figures/system-run-symbolic.svg
-share/help/da/gnome-help/figures/universal-access-menu.png
 share/help/da/gnome-help/figures/view-more-symbolic.svg
 share/help/da/gnome-help/figures/yelp-icon-big.svg
 share/help/da/gnome-help/files-autorun.page
@@ -2106,7 +2097,6 @@ share/help/da/gnome-help/net-firewall-on-off.page
 share/help/da/gnome-help/net-firewall-ports.page
 share/help/da/gnome-help/net-fixed-ip-address.page
 share/help/da/gnome-help/net-general.page
-share/help/da/gnome-help/net-install-flash.page
 share/help/da/gnome-help/net-macaddress.page
 share/help/da/gnome-help/net-manual.page
 share/help/da/gnome-help/net-mobile.page
@@ -2346,7 +2336,7 @@ share/help/de/gnome-help/figures/battery-low-symbolic.svg
 share/help/de/gnome-help/figures/battery-missing-symbolic.svg
 share/help/de/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/de/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/de/gnome-help/figures/bluetooth-menu.png
+share/help/de/gnome-help/figures/bluetooth-symbolic.svg
 share/help/de/gnome-help/figures/color-average.png
 share/help/de/gnome-help/figures/color-camera.png
 share/help/de/gnome-help/figures/color-display.png
@@ -2366,7 +2356,7 @@ share/help/de/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/de/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/de/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/de/gnome-help/figures/gesture-tap.png
-share/help/de/gnome-help/figures/gnome.png
+share/help/de/gnome-help/figures/gnome.svg
 share/help/de/gnome-help/figures/go-down-symbolic.svg
 share/help/de/gnome-help/figures/input-keyboard-symbolic.png
 share/help/de/gnome-help/figures/input-methods-switcher.png
@@ -2438,7 +2428,6 @@ share/help/de/gnome-help/figures/shell-top-bar.png
 share/help/de/gnome-help/figures/shell-window-list-classic.png
 share/help/de/gnome-help/figures/shell-workspaces.png
 share/help/de/gnome-help/figures/system-run-symbolic.svg
-share/help/de/gnome-help/figures/universal-access-menu.png
 share/help/de/gnome-help/figures/view-more-symbolic.svg
 share/help/de/gnome-help/figures/yelp-icon-big.svg
 share/help/de/gnome-help/files-autorun.page
@@ -2519,7 +2508,6 @@ share/help/de/gnome-help/net-firewall-on-off.page
 share/help/de/gnome-help/net-firewall-ports.page
 share/help/de/gnome-help/net-fixed-ip-address.page
 share/help/de/gnome-help/net-general.page
-share/help/de/gnome-help/net-install-flash.page
 share/help/de/gnome-help/net-macaddress.page
 share/help/de/gnome-help/net-manual.page
 share/help/de/gnome-help/net-mobile.page
@@ -2817,7 +2805,7 @@ share/help/el/gnome-help/figures/battery-low-symbolic.svg
 share/help/el/gnome-help/figures/battery-missing-symbolic.svg
 share/help/el/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/el/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/el/gnome-help/figures/bluetooth-menu.png
+share/help/el/gnome-help/figures/bluetooth-symbolic.svg
 share/help/el/gnome-help/figures/color-average.png
 share/help/el/gnome-help/figures/color-camera.png
 share/help/el/gnome-help/figures/color-display.png
@@ -2837,7 +2825,7 @@ share/help/el/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/el/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/el/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/el/gnome-help/figures/gesture-tap.png
-share/help/el/gnome-help/figures/gnome.png
+share/help/el/gnome-help/figures/gnome.svg
 share/help/el/gnome-help/figures/go-down-symbolic.svg
 share/help/el/gnome-help/figures/input-keyboard-symbolic.png
 share/help/el/gnome-help/figures/input-methods-switcher.png
@@ -2909,7 +2897,6 @@ share/help/el/gnome-help/figures/shell-top-bar.png
 share/help/el/gnome-help/figures/shell-window-list-classic.png
 share/help/el/gnome-help/figures/shell-workspaces.png
 share/help/el/gnome-help/figures/system-run-symbolic.svg
-share/help/el/gnome-help/figures/universal-access-menu.png
 share/help/el/gnome-help/figures/view-more-symbolic.svg
 share/help/el/gnome-help/figures/yelp-icon-big.svg
 share/help/el/gnome-help/files-autorun.page
@@ -2990,7 +2977,6 @@ share/help/el/gnome-help/net-firewall-on-off.page
 share/help/el/gnome-help/net-firewall-ports.page
 share/help/el/gnome-help/net-fixed-ip-address.page
 share/help/el/gnome-help/net-general.page
-share/help/el/gnome-help/net-install-flash.page
 share/help/el/gnome-help/net-macaddress.page
 share/help/el/gnome-help/net-manual.page
 share/help/el/gnome-help/net-mobile.page
@@ -3230,7 +3216,7 @@ share/help/es/gnome-help/figures/battery-low-symbolic.svg
 share/help/es/gnome-help/figures/battery-missing-symbolic.svg
 share/help/es/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/es/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/es/gnome-help/figures/bluetooth-menu.png
+share/help/es/gnome-help/figures/bluetooth-symbolic.svg
 share/help/es/gnome-help/figures/color-average.png
 share/help/es/gnome-help/figures/color-camera.png
 share/help/es/gnome-help/figures/color-display.png
@@ -3250,7 +3236,7 @@ share/help/es/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/es/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/es/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/es/gnome-help/figures/gesture-tap.png
-share/help/es/gnome-help/figures/gnome.png
+share/help/es/gnome-help/figures/gnome.svg
 share/help/es/gnome-help/figures/go-down-symbolic.svg
 share/help/es/gnome-help/figures/input-keyboard-symbolic.png
 share/help/es/gnome-help/figures/input-methods-switcher.png
@@ -3322,7 +3308,6 @@ share/help/es/gnome-help/figures/shell-top-bar.png
 share/help/es/gnome-help/figures/shell-window-list-classic.png
 share/help/es/gnome-help/figures/shell-workspaces.png
 share/help/es/gnome-help/figures/system-run-symbolic.svg
-share/help/es/gnome-help/figures/universal-access-menu.png
 share/help/es/gnome-help/figures/view-more-symbolic.svg
 share/help/es/gnome-help/figures/yelp-icon-big.svg
 share/help/es/gnome-help/files-autorun.page
@@ -3403,7 +3388,6 @@ share/help/es/gnome-help/net-firewall-on-off.page
 share/help/es/gnome-help/net-firewall-ports.page
 share/help/es/gnome-help/net-fixed-ip-address.page
 share/help/es/gnome-help/net-general.page
-share/help/es/gnome-help/net-install-flash.page
 share/help/es/gnome-help/net-macaddress.page
 share/help/es/gnome-help/net-manual.page
 share/help/es/gnome-help/net-mobile.page
@@ -3701,7 +3685,7 @@ share/help/fa/gnome-help/figures/battery-low-symbolic.svg
 share/help/fa/gnome-help/figures/battery-missing-symbolic.svg
 share/help/fa/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/fa/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/fa/gnome-help/figures/bluetooth-menu.png
+share/help/fa/gnome-help/figures/bluetooth-symbolic.svg
 share/help/fa/gnome-help/figures/color-average.png
 share/help/fa/gnome-help/figures/color-camera.png
 share/help/fa/gnome-help/figures/color-display.png
@@ -3721,7 +3705,7 @@ share/help/fa/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/fa/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/fa/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/fa/gnome-help/figures/gesture-tap.png
-share/help/fa/gnome-help/figures/gnome.png
+share/help/fa/gnome-help/figures/gnome.svg
 share/help/fa/gnome-help/figures/go-down-symbolic.svg
 share/help/fa/gnome-help/figures/input-keyboard-symbolic.png
 share/help/fa/gnome-help/figures/input-methods-switcher.png
@@ -3793,7 +3777,6 @@ share/help/fa/gnome-help/figures/shell-top-bar.png
 share/help/fa/gnome-help/figures/shell-window-list-classic.png
 share/help/fa/gnome-help/figures/shell-workspaces.png
 share/help/fa/gnome-help/figures/system-run-symbolic.svg
-share/help/fa/gnome-help/figures/universal-access-menu.png
 share/help/fa/gnome-help/figures/view-more-symbolic.svg
 share/help/fa/gnome-help/figures/yelp-icon-big.svg
 share/help/fa/gnome-help/files-autorun.page
@@ -3874,7 +3857,6 @@ share/help/fa/gnome-help/net-firewall-on-off.page
 share/help/fa/gnome-help/net-firewall-ports.page
 share/help/fa/gnome-help/net-fixed-ip-address.page
 share/help/fa/gnome-help/net-general.page
-share/help/fa/gnome-help/net-install-flash.page
 share/help/fa/gnome-help/net-macaddress.page
 share/help/fa/gnome-help/net-manual.page
 share/help/fa/gnome-help/net-mobile.page
@@ -4114,7 +4096,7 @@ share/help/fi/gnome-help/figures/battery-low-symbolic.svg
 share/help/fi/gnome-help/figures/battery-missing-symbolic.svg
 share/help/fi/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/fi/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/fi/gnome-help/figures/bluetooth-menu.png
+share/help/fi/gnome-help/figures/bluetooth-symbolic.svg
 share/help/fi/gnome-help/figures/color-average.png
 share/help/fi/gnome-help/figures/color-camera.png
 share/help/fi/gnome-help/figures/color-display.png
@@ -4134,7 +4116,7 @@ share/help/fi/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/fi/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/fi/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/fi/gnome-help/figures/gesture-tap.png
-share/help/fi/gnome-help/figures/gnome.png
+share/help/fi/gnome-help/figures/gnome.svg
 share/help/fi/gnome-help/figures/go-down-symbolic.svg
 share/help/fi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/fi/gnome-help/figures/input-methods-switcher.png
@@ -4206,7 +4188,6 @@ share/help/fi/gnome-help/figures/shell-top-bar.png
 share/help/fi/gnome-help/figures/shell-window-list-classic.png
 share/help/fi/gnome-help/figures/shell-workspaces.png
 share/help/fi/gnome-help/figures/system-run-symbolic.svg
-share/help/fi/gnome-help/figures/universal-access-menu.png
 share/help/fi/gnome-help/figures/view-more-symbolic.svg
 share/help/fi/gnome-help/figures/yelp-icon-big.svg
 share/help/fi/gnome-help/files-autorun.page
@@ -4287,7 +4268,6 @@ share/help/fi/gnome-help/net-firewall-on-off.page
 share/help/fi/gnome-help/net-firewall-ports.page
 share/help/fi/gnome-help/net-fixed-ip-address.page
 share/help/fi/gnome-help/net-general.page
-share/help/fi/gnome-help/net-install-flash.page
 share/help/fi/gnome-help/net-macaddress.page
 share/help/fi/gnome-help/net-manual.page
 share/help/fi/gnome-help/net-mobile.page
@@ -4527,7 +4507,7 @@ share/help/fr/gnome-help/figures/battery-low-symbolic.svg
 share/help/fr/gnome-help/figures/battery-missing-symbolic.svg
 share/help/fr/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/fr/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/fr/gnome-help/figures/bluetooth-menu.png
+share/help/fr/gnome-help/figures/bluetooth-symbolic.svg
 share/help/fr/gnome-help/figures/color-average.png
 share/help/fr/gnome-help/figures/color-camera.png
 share/help/fr/gnome-help/figures/color-display.png
@@ -4547,7 +4527,7 @@ share/help/fr/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/fr/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/fr/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/fr/gnome-help/figures/gesture-tap.png
-share/help/fr/gnome-help/figures/gnome.png
+share/help/fr/gnome-help/figures/gnome.svg
 share/help/fr/gnome-help/figures/go-down-symbolic.svg
 share/help/fr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/fr/gnome-help/figures/input-methods-switcher.png
@@ -4619,7 +4599,6 @@ share/help/fr/gnome-help/figures/shell-top-bar.png
 share/help/fr/gnome-help/figures/shell-window-list-classic.png
 share/help/fr/gnome-help/figures/shell-workspaces.png
 share/help/fr/gnome-help/figures/system-run-symbolic.svg
-share/help/fr/gnome-help/figures/universal-access-menu.png
 share/help/fr/gnome-help/figures/view-more-symbolic.svg
 share/help/fr/gnome-help/figures/yelp-icon-big.svg
 share/help/fr/gnome-help/files-autorun.page
@@ -4700,7 +4679,6 @@ share/help/fr/gnome-help/net-firewall-on-off.page
 share/help/fr/gnome-help/net-firewall-ports.page
 share/help/fr/gnome-help/net-fixed-ip-address.page
 share/help/fr/gnome-help/net-general.page
-share/help/fr/gnome-help/net-install-flash.page
 share/help/fr/gnome-help/net-macaddress.page
 share/help/fr/gnome-help/net-manual.page
 share/help/fr/gnome-help/net-mobile.page
@@ -4940,7 +4918,7 @@ share/help/gl/gnome-help/figures/battery-low-symbolic.svg
 share/help/gl/gnome-help/figures/battery-missing-symbolic.svg
 share/help/gl/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/gl/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/gl/gnome-help/figures/bluetooth-menu.png
+share/help/gl/gnome-help/figures/bluetooth-symbolic.svg
 share/help/gl/gnome-help/figures/color-average.png
 share/help/gl/gnome-help/figures/color-camera.png
 share/help/gl/gnome-help/figures/color-display.png
@@ -4960,7 +4938,7 @@ share/help/gl/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/gl/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/gl/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/gl/gnome-help/figures/gesture-tap.png
-share/help/gl/gnome-help/figures/gnome.png
+share/help/gl/gnome-help/figures/gnome.svg
 share/help/gl/gnome-help/figures/go-down-symbolic.svg
 share/help/gl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/gl/gnome-help/figures/input-methods-switcher.png
@@ -5032,7 +5010,6 @@ share/help/gl/gnome-help/figures/shell-top-bar.png
 share/help/gl/gnome-help/figures/shell-window-list-classic.png
 share/help/gl/gnome-help/figures/shell-workspaces.png
 share/help/gl/gnome-help/figures/system-run-symbolic.svg
-share/help/gl/gnome-help/figures/universal-access-menu.png
 share/help/gl/gnome-help/figures/view-more-symbolic.svg
 share/help/gl/gnome-help/figures/yelp-icon-big.svg
 share/help/gl/gnome-help/files-autorun.page
@@ -5113,7 +5090,6 @@ share/help/gl/gnome-help/net-firewall-on-off.page
 share/help/gl/gnome-help/net-firewall-ports.page
 share/help/gl/gnome-help/net-fixed-ip-address.page
 share/help/gl/gnome-help/net-general.page
-share/help/gl/gnome-help/net-install-flash.page
 share/help/gl/gnome-help/net-macaddress.page
 share/help/gl/gnome-help/net-manual.page
 share/help/gl/gnome-help/net-mobile.page
@@ -5411,7 +5387,7 @@ share/help/gu/gnome-help/figures/battery-low-symbolic.svg
 share/help/gu/gnome-help/figures/battery-missing-symbolic.svg
 share/help/gu/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/gu/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/gu/gnome-help/figures/bluetooth-menu.png
+share/help/gu/gnome-help/figures/bluetooth-symbolic.svg
 share/help/gu/gnome-help/figures/color-average.png
 share/help/gu/gnome-help/figures/color-camera.png
 share/help/gu/gnome-help/figures/color-display.png
@@ -5431,7 +5407,7 @@ share/help/gu/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/gu/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/gu/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/gu/gnome-help/figures/gesture-tap.png
-share/help/gu/gnome-help/figures/gnome.png
+share/help/gu/gnome-help/figures/gnome.svg
 share/help/gu/gnome-help/figures/go-down-symbolic.svg
 share/help/gu/gnome-help/figures/input-keyboard-symbolic.png
 share/help/gu/gnome-help/figures/input-methods-switcher.png
@@ -5503,7 +5479,6 @@ share/help/gu/gnome-help/figures/shell-top-bar.png
 share/help/gu/gnome-help/figures/shell-window-list-classic.png
 share/help/gu/gnome-help/figures/shell-workspaces.png
 share/help/gu/gnome-help/figures/system-run-symbolic.svg
-share/help/gu/gnome-help/figures/universal-access-menu.png
 share/help/gu/gnome-help/figures/view-more-symbolic.svg
 share/help/gu/gnome-help/figures/yelp-icon-big.svg
 share/help/gu/gnome-help/files-autorun.page
@@ -5584,7 +5559,6 @@ share/help/gu/gnome-help/net-firewall-on-off.page
 share/help/gu/gnome-help/net-firewall-ports.page
 share/help/gu/gnome-help/net-fixed-ip-address.page
 share/help/gu/gnome-help/net-general.page
-share/help/gu/gnome-help/net-install-flash.page
 share/help/gu/gnome-help/net-macaddress.page
 share/help/gu/gnome-help/net-manual.page
 share/help/gu/gnome-help/net-mobile.page
@@ -5824,7 +5798,7 @@ share/help/he/gnome-help/figures/battery-low-symbolic.svg
 share/help/he/gnome-help/figures/battery-missing-symbolic.svg
 share/help/he/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/he/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/he/gnome-help/figures/bluetooth-menu.png
+share/help/he/gnome-help/figures/bluetooth-symbolic.svg
 share/help/he/gnome-help/figures/color-average.png
 share/help/he/gnome-help/figures/color-camera.png
 share/help/he/gnome-help/figures/color-display.png
@@ -5844,7 +5818,7 @@ share/help/he/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/he/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/he/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/he/gnome-help/figures/gesture-tap.png
-share/help/he/gnome-help/figures/gnome.png
+share/help/he/gnome-help/figures/gnome.svg
 share/help/he/gnome-help/figures/go-down-symbolic.svg
 share/help/he/gnome-help/figures/input-keyboard-symbolic.png
 share/help/he/gnome-help/figures/input-methods-switcher.png
@@ -5916,7 +5890,6 @@ share/help/he/gnome-help/figures/shell-top-bar.png
 share/help/he/gnome-help/figures/shell-window-list-classic.png
 share/help/he/gnome-help/figures/shell-workspaces.png
 share/help/he/gnome-help/figures/system-run-symbolic.svg
-share/help/he/gnome-help/figures/universal-access-menu.png
 share/help/he/gnome-help/figures/view-more-symbolic.svg
 share/help/he/gnome-help/figures/yelp-icon-big.svg
 share/help/he/gnome-help/files-autorun.page
@@ -5997,7 +5970,6 @@ share/help/he/gnome-help/net-firewall-on-off.page
 share/help/he/gnome-help/net-firewall-ports.page
 share/help/he/gnome-help/net-fixed-ip-address.page
 share/help/he/gnome-help/net-general.page
-share/help/he/gnome-help/net-install-flash.page
 share/help/he/gnome-help/net-macaddress.page
 share/help/he/gnome-help/net-manual.page
 share/help/he/gnome-help/net-mobile.page
@@ -6237,7 +6209,7 @@ share/help/hi/gnome-help/figures/battery-low-symbolic.svg
 share/help/hi/gnome-help/figures/battery-missing-symbolic.svg
 share/help/hi/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/hi/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/hi/gnome-help/figures/bluetooth-menu.png
+share/help/hi/gnome-help/figures/bluetooth-symbolic.svg
 share/help/hi/gnome-help/figures/color-average.png
 share/help/hi/gnome-help/figures/color-camera.png
 share/help/hi/gnome-help/figures/color-display.png
@@ -6257,7 +6229,7 @@ share/help/hi/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/hi/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/hi/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/hi/gnome-help/figures/gesture-tap.png
-share/help/hi/gnome-help/figures/gnome.png
+share/help/hi/gnome-help/figures/gnome.svg
 share/help/hi/gnome-help/figures/go-down-symbolic.svg
 share/help/hi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hi/gnome-help/figures/input-methods-switcher.png
@@ -6329,7 +6301,6 @@ share/help/hi/gnome-help/figures/shell-top-bar.png
 share/help/hi/gnome-help/figures/shell-window-list-classic.png
 share/help/hi/gnome-help/figures/shell-workspaces.png
 share/help/hi/gnome-help/figures/system-run-symbolic.svg
-share/help/hi/gnome-help/figures/universal-access-menu.png
 share/help/hi/gnome-help/figures/view-more-symbolic.svg
 share/help/hi/gnome-help/figures/yelp-icon-big.svg
 share/help/hi/gnome-help/files-autorun.page
@@ -6410,7 +6381,6 @@ share/help/hi/gnome-help/net-firewall-on-off.page
 share/help/hi/gnome-help/net-firewall-ports.page
 share/help/hi/gnome-help/net-fixed-ip-address.page
 share/help/hi/gnome-help/net-general.page
-share/help/hi/gnome-help/net-install-flash.page
 share/help/hi/gnome-help/net-macaddress.page
 share/help/hi/gnome-help/net-manual.page
 share/help/hi/gnome-help/net-mobile.page
@@ -6650,7 +6620,7 @@ share/help/hr/gnome-help/figures/battery-low-symbolic.svg
 share/help/hr/gnome-help/figures/battery-missing-symbolic.svg
 share/help/hr/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/hr/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/hr/gnome-help/figures/bluetooth-menu.png
+share/help/hr/gnome-help/figures/bluetooth-symbolic.svg
 share/help/hr/gnome-help/figures/color-average.png
 share/help/hr/gnome-help/figures/color-camera.png
 share/help/hr/gnome-help/figures/color-display.png
@@ -6670,7 +6640,7 @@ share/help/hr/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/hr/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/hr/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/hr/gnome-help/figures/gesture-tap.png
-share/help/hr/gnome-help/figures/gnome.png
+share/help/hr/gnome-help/figures/gnome.svg
 share/help/hr/gnome-help/figures/go-down-symbolic.svg
 share/help/hr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hr/gnome-help/figures/input-methods-switcher.png
@@ -6742,7 +6712,6 @@ share/help/hr/gnome-help/figures/shell-top-bar.png
 share/help/hr/gnome-help/figures/shell-window-list-classic.png
 share/help/hr/gnome-help/figures/shell-workspaces.png
 share/help/hr/gnome-help/figures/system-run-symbolic.svg
-share/help/hr/gnome-help/figures/universal-access-menu.png
 share/help/hr/gnome-help/figures/view-more-symbolic.svg
 share/help/hr/gnome-help/figures/yelp-icon-big.svg
 share/help/hr/gnome-help/files-autorun.page
@@ -6823,7 +6792,6 @@ share/help/hr/gnome-help/net-firewall-on-off.page
 share/help/hr/gnome-help/net-firewall-ports.page
 share/help/hr/gnome-help/net-fixed-ip-address.page
 share/help/hr/gnome-help/net-general.page
-share/help/hr/gnome-help/net-install-flash.page
 share/help/hr/gnome-help/net-macaddress.page
 share/help/hr/gnome-help/net-manual.page
 share/help/hr/gnome-help/net-mobile.page
@@ -7063,7 +7031,7 @@ share/help/hu/gnome-help/figures/battery-low-symbolic.svg
 share/help/hu/gnome-help/figures/battery-missing-symbolic.svg
 share/help/hu/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/hu/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/hu/gnome-help/figures/bluetooth-menu.png
+share/help/hu/gnome-help/figures/bluetooth-symbolic.svg
 share/help/hu/gnome-help/figures/color-average.png
 share/help/hu/gnome-help/figures/color-camera.png
 share/help/hu/gnome-help/figures/color-display.png
@@ -7083,7 +7051,7 @@ share/help/hu/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/hu/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/hu/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/hu/gnome-help/figures/gesture-tap.png
-share/help/hu/gnome-help/figures/gnome.png
+share/help/hu/gnome-help/figures/gnome.svg
 share/help/hu/gnome-help/figures/go-down-symbolic.svg
 share/help/hu/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hu/gnome-help/figures/input-methods-switcher.png
@@ -7155,7 +7123,6 @@ share/help/hu/gnome-help/figures/shell-top-bar.png
 share/help/hu/gnome-help/figures/shell-window-list-classic.png
 share/help/hu/gnome-help/figures/shell-workspaces.png
 share/help/hu/gnome-help/figures/system-run-symbolic.svg
-share/help/hu/gnome-help/figures/universal-access-menu.png
 share/help/hu/gnome-help/figures/view-more-symbolic.svg
 share/help/hu/gnome-help/figures/yelp-icon-big.svg
 share/help/hu/gnome-help/files-autorun.page
@@ -7236,7 +7203,6 @@ share/help/hu/gnome-help/net-firewall-on-off.page
 share/help/hu/gnome-help/net-firewall-ports.page
 share/help/hu/gnome-help/net-fixed-ip-address.page
 share/help/hu/gnome-help/net-general.page
-share/help/hu/gnome-help/net-install-flash.page
 share/help/hu/gnome-help/net-macaddress.page
 share/help/hu/gnome-help/net-manual.page
 share/help/hu/gnome-help/net-mobile.page
@@ -7534,7 +7500,7 @@ share/help/id/gnome-help/figures/battery-low-symbolic.svg
 share/help/id/gnome-help/figures/battery-missing-symbolic.svg
 share/help/id/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/id/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/id/gnome-help/figures/bluetooth-menu.png
+share/help/id/gnome-help/figures/bluetooth-symbolic.svg
 share/help/id/gnome-help/figures/color-average.png
 share/help/id/gnome-help/figures/color-camera.png
 share/help/id/gnome-help/figures/color-display.png
@@ -7554,7 +7520,7 @@ share/help/id/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/id/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/id/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/id/gnome-help/figures/gesture-tap.png
-share/help/id/gnome-help/figures/gnome.png
+share/help/id/gnome-help/figures/gnome.svg
 share/help/id/gnome-help/figures/go-down-symbolic.svg
 share/help/id/gnome-help/figures/input-keyboard-symbolic.png
 share/help/id/gnome-help/figures/input-methods-switcher.png
@@ -7626,7 +7592,6 @@ share/help/id/gnome-help/figures/shell-top-bar.png
 share/help/id/gnome-help/figures/shell-window-list-classic.png
 share/help/id/gnome-help/figures/shell-workspaces.png
 share/help/id/gnome-help/figures/system-run-symbolic.svg
-share/help/id/gnome-help/figures/universal-access-menu.png
 share/help/id/gnome-help/figures/view-more-symbolic.svg
 share/help/id/gnome-help/figures/yelp-icon-big.svg
 share/help/id/gnome-help/files-autorun.page
@@ -7707,7 +7672,6 @@ share/help/id/gnome-help/net-firewall-on-off.page
 share/help/id/gnome-help/net-firewall-ports.page
 share/help/id/gnome-help/net-fixed-ip-address.page
 share/help/id/gnome-help/net-general.page
-share/help/id/gnome-help/net-install-flash.page
 share/help/id/gnome-help/net-macaddress.page
 share/help/id/gnome-help/net-manual.page
 share/help/id/gnome-help/net-mobile.page
@@ -7947,7 +7911,7 @@ share/help/it/gnome-help/figures/battery-low-symbolic.svg
 share/help/it/gnome-help/figures/battery-missing-symbolic.svg
 share/help/it/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/it/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/it/gnome-help/figures/bluetooth-menu.png
+share/help/it/gnome-help/figures/bluetooth-symbolic.svg
 share/help/it/gnome-help/figures/color-average.png
 share/help/it/gnome-help/figures/color-camera.png
 share/help/it/gnome-help/figures/color-display.png
@@ -7967,7 +7931,7 @@ share/help/it/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/it/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/it/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/it/gnome-help/figures/gesture-tap.png
-share/help/it/gnome-help/figures/gnome.png
+share/help/it/gnome-help/figures/gnome.svg
 share/help/it/gnome-help/figures/go-down-symbolic.svg
 share/help/it/gnome-help/figures/input-keyboard-symbolic.png
 share/help/it/gnome-help/figures/input-methods-switcher.png
@@ -8039,7 +8003,6 @@ share/help/it/gnome-help/figures/shell-top-bar.png
 share/help/it/gnome-help/figures/shell-window-list-classic.png
 share/help/it/gnome-help/figures/shell-workspaces.png
 share/help/it/gnome-help/figures/system-run-symbolic.svg
-share/help/it/gnome-help/figures/universal-access-menu.png
 share/help/it/gnome-help/figures/view-more-symbolic.svg
 share/help/it/gnome-help/figures/yelp-icon-big.svg
 share/help/it/gnome-help/files-autorun.page
@@ -8120,7 +8083,6 @@ share/help/it/gnome-help/net-firewall-on-off.page
 share/help/it/gnome-help/net-firewall-ports.page
 share/help/it/gnome-help/net-fixed-ip-address.page
 share/help/it/gnome-help/net-general.page
-share/help/it/gnome-help/net-install-flash.page
 share/help/it/gnome-help/net-macaddress.page
 share/help/it/gnome-help/net-manual.page
 share/help/it/gnome-help/net-mobile.page
@@ -8360,7 +8322,7 @@ share/help/ja/gnome-help/figures/battery-low-symbolic.svg
 share/help/ja/gnome-help/figures/battery-missing-symbolic.svg
 share/help/ja/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/ja/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/ja/gnome-help/figures/bluetooth-menu.png
+share/help/ja/gnome-help/figures/bluetooth-symbolic.svg
 share/help/ja/gnome-help/figures/color-average.png
 share/help/ja/gnome-help/figures/color-camera.png
 share/help/ja/gnome-help/figures/color-display.png
@@ -8380,7 +8342,7 @@ share/help/ja/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/ja/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/ja/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/ja/gnome-help/figures/gesture-tap.png
-share/help/ja/gnome-help/figures/gnome.png
+share/help/ja/gnome-help/figures/gnome.svg
 share/help/ja/gnome-help/figures/go-down-symbolic.svg
 share/help/ja/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ja/gnome-help/figures/input-methods-switcher.png
@@ -8452,7 +8414,6 @@ share/help/ja/gnome-help/figures/shell-top-bar.png
 share/help/ja/gnome-help/figures/shell-window-list-classic.png
 share/help/ja/gnome-help/figures/shell-workspaces.png
 share/help/ja/gnome-help/figures/system-run-symbolic.svg
-share/help/ja/gnome-help/figures/universal-access-menu.png
 share/help/ja/gnome-help/figures/view-more-symbolic.svg
 share/help/ja/gnome-help/figures/yelp-icon-big.svg
 share/help/ja/gnome-help/files-autorun.page
@@ -8533,7 +8494,6 @@ share/help/ja/gnome-help/net-firewall-on-off.page
 share/help/ja/gnome-help/net-firewall-ports.page
 share/help/ja/gnome-help/net-fixed-ip-address.page
 share/help/ja/gnome-help/net-general.page
-share/help/ja/gnome-help/net-install-flash.page
 share/help/ja/gnome-help/net-macaddress.page
 share/help/ja/gnome-help/net-manual.page
 share/help/ja/gnome-help/net-mobile.page
@@ -8773,7 +8733,7 @@ share/help/kn/gnome-help/figures/battery-low-symbolic.svg
 share/help/kn/gnome-help/figures/battery-missing-symbolic.svg
 share/help/kn/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/kn/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/kn/gnome-help/figures/bluetooth-menu.png
+share/help/kn/gnome-help/figures/bluetooth-symbolic.svg
 share/help/kn/gnome-help/figures/color-average.png
 share/help/kn/gnome-help/figures/color-camera.png
 share/help/kn/gnome-help/figures/color-display.png
@@ -8793,7 +8753,7 @@ share/help/kn/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/kn/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/kn/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/kn/gnome-help/figures/gesture-tap.png
-share/help/kn/gnome-help/figures/gnome.png
+share/help/kn/gnome-help/figures/gnome.svg
 share/help/kn/gnome-help/figures/go-down-symbolic.svg
 share/help/kn/gnome-help/figures/input-keyboard-symbolic.png
 share/help/kn/gnome-help/figures/input-methods-switcher.png
@@ -8865,7 +8825,6 @@ share/help/kn/gnome-help/figures/shell-top-bar.png
 share/help/kn/gnome-help/figures/shell-window-list-classic.png
 share/help/kn/gnome-help/figures/shell-workspaces.png
 share/help/kn/gnome-help/figures/system-run-symbolic.svg
-share/help/kn/gnome-help/figures/universal-access-menu.png
 share/help/kn/gnome-help/figures/view-more-symbolic.svg
 share/help/kn/gnome-help/figures/yelp-icon-big.svg
 share/help/kn/gnome-help/files-autorun.page
@@ -8946,7 +8905,6 @@ share/help/kn/gnome-help/net-firewall-on-off.page
 share/help/kn/gnome-help/net-firewall-ports.page
 share/help/kn/gnome-help/net-fixed-ip-address.page
 share/help/kn/gnome-help/net-general.page
-share/help/kn/gnome-help/net-install-flash.page
 share/help/kn/gnome-help/net-macaddress.page
 share/help/kn/gnome-help/net-manual.page
 share/help/kn/gnome-help/net-mobile.page
@@ -9245,7 +9203,7 @@ share/help/lt/gnome-help/figures/battery-low-symbolic.svg
 share/help/lt/gnome-help/figures/battery-missing-symbolic.svg
 share/help/lt/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/lt/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/lt/gnome-help/figures/bluetooth-menu.png
+share/help/lt/gnome-help/figures/bluetooth-symbolic.svg
 share/help/lt/gnome-help/figures/color-average.png
 share/help/lt/gnome-help/figures/color-camera.png
 share/help/lt/gnome-help/figures/color-display.png
@@ -9265,7 +9223,7 @@ share/help/lt/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/lt/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/lt/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/lt/gnome-help/figures/gesture-tap.png
-share/help/lt/gnome-help/figures/gnome.png
+share/help/lt/gnome-help/figures/gnome.svg
 share/help/lt/gnome-help/figures/go-down-symbolic.svg
 share/help/lt/gnome-help/figures/input-keyboard-symbolic.png
 share/help/lt/gnome-help/figures/input-methods-switcher.png
@@ -9337,7 +9295,6 @@ share/help/lt/gnome-help/figures/shell-top-bar.png
 share/help/lt/gnome-help/figures/shell-window-list-classic.png
 share/help/lt/gnome-help/figures/shell-workspaces.png
 share/help/lt/gnome-help/figures/system-run-symbolic.svg
-share/help/lt/gnome-help/figures/universal-access-menu.png
 share/help/lt/gnome-help/figures/view-more-symbolic.svg
 share/help/lt/gnome-help/figures/yelp-icon-big.svg
 share/help/lt/gnome-help/files-autorun.page
@@ -9418,7 +9375,6 @@ share/help/lt/gnome-help/net-firewall-on-off.page
 share/help/lt/gnome-help/net-firewall-ports.page
 share/help/lt/gnome-help/net-fixed-ip-address.page
 share/help/lt/gnome-help/net-general.page
-share/help/lt/gnome-help/net-install-flash.page
 share/help/lt/gnome-help/net-macaddress.page
 share/help/lt/gnome-help/net-manual.page
 share/help/lt/gnome-help/net-mobile.page
@@ -9658,7 +9614,7 @@ share/help/lv/gnome-help/figures/battery-low-symbolic.svg
 share/help/lv/gnome-help/figures/battery-missing-symbolic.svg
 share/help/lv/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/lv/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/lv/gnome-help/figures/bluetooth-menu.png
+share/help/lv/gnome-help/figures/bluetooth-symbolic.svg
 share/help/lv/gnome-help/figures/color-average.png
 share/help/lv/gnome-help/figures/color-camera.png
 share/help/lv/gnome-help/figures/color-display.png
@@ -9678,7 +9634,7 @@ share/help/lv/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/lv/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/lv/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/lv/gnome-help/figures/gesture-tap.png
-share/help/lv/gnome-help/figures/gnome.png
+share/help/lv/gnome-help/figures/gnome.svg
 share/help/lv/gnome-help/figures/go-down-symbolic.svg
 share/help/lv/gnome-help/figures/input-keyboard-symbolic.png
 share/help/lv/gnome-help/figures/input-methods-switcher.png
@@ -9750,7 +9706,6 @@ share/help/lv/gnome-help/figures/shell-top-bar.png
 share/help/lv/gnome-help/figures/shell-window-list-classic.png
 share/help/lv/gnome-help/figures/shell-workspaces.png
 share/help/lv/gnome-help/figures/system-run-symbolic.svg
-share/help/lv/gnome-help/figures/universal-access-menu.png
 share/help/lv/gnome-help/figures/view-more-symbolic.svg
 share/help/lv/gnome-help/figures/yelp-icon-big.svg
 share/help/lv/gnome-help/files-autorun.page
@@ -9831,7 +9786,6 @@ share/help/lv/gnome-help/net-firewall-on-off.page
 share/help/lv/gnome-help/net-firewall-ports.page
 share/help/lv/gnome-help/net-fixed-ip-address.page
 share/help/lv/gnome-help/net-general.page
-share/help/lv/gnome-help/net-install-flash.page
 share/help/lv/gnome-help/net-macaddress.page
 share/help/lv/gnome-help/net-manual.page
 share/help/lv/gnome-help/net-mobile.page
@@ -10071,7 +10025,7 @@ share/help/mr/gnome-help/figures/battery-low-symbolic.svg
 share/help/mr/gnome-help/figures/battery-missing-symbolic.svg
 share/help/mr/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/mr/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/mr/gnome-help/figures/bluetooth-menu.png
+share/help/mr/gnome-help/figures/bluetooth-symbolic.svg
 share/help/mr/gnome-help/figures/color-average.png
 share/help/mr/gnome-help/figures/color-camera.png
 share/help/mr/gnome-help/figures/color-display.png
@@ -10091,7 +10045,7 @@ share/help/mr/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/mr/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/mr/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/mr/gnome-help/figures/gesture-tap.png
-share/help/mr/gnome-help/figures/gnome.png
+share/help/mr/gnome-help/figures/gnome.svg
 share/help/mr/gnome-help/figures/go-down-symbolic.svg
 share/help/mr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/mr/gnome-help/figures/input-methods-switcher.png
@@ -10163,7 +10117,6 @@ share/help/mr/gnome-help/figures/shell-top-bar.png
 share/help/mr/gnome-help/figures/shell-window-list-classic.png
 share/help/mr/gnome-help/figures/shell-workspaces.png
 share/help/mr/gnome-help/figures/system-run-symbolic.svg
-share/help/mr/gnome-help/figures/universal-access-menu.png
 share/help/mr/gnome-help/figures/view-more-symbolic.svg
 share/help/mr/gnome-help/figures/yelp-icon-big.svg
 share/help/mr/gnome-help/files-autorun.page
@@ -10244,7 +10197,6 @@ share/help/mr/gnome-help/net-firewall-on-off.page
 share/help/mr/gnome-help/net-firewall-ports.page
 share/help/mr/gnome-help/net-fixed-ip-address.page
 share/help/mr/gnome-help/net-general.page
-share/help/mr/gnome-help/net-install-flash.page
 share/help/mr/gnome-help/net-macaddress.page
 share/help/mr/gnome-help/net-manual.page
 share/help/mr/gnome-help/net-mobile.page
@@ -10484,7 +10436,7 @@ share/help/nl/gnome-help/figures/battery-low-symbolic.svg
 share/help/nl/gnome-help/figures/battery-missing-symbolic.svg
 share/help/nl/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/nl/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/nl/gnome-help/figures/bluetooth-menu.png
+share/help/nl/gnome-help/figures/bluetooth-symbolic.svg
 share/help/nl/gnome-help/figures/color-average.png
 share/help/nl/gnome-help/figures/color-camera.png
 share/help/nl/gnome-help/figures/color-display.png
@@ -10504,7 +10456,7 @@ share/help/nl/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/nl/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/nl/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/nl/gnome-help/figures/gesture-tap.png
-share/help/nl/gnome-help/figures/gnome.png
+share/help/nl/gnome-help/figures/gnome.svg
 share/help/nl/gnome-help/figures/go-down-symbolic.svg
 share/help/nl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/nl/gnome-help/figures/input-methods-switcher.png
@@ -10576,7 +10528,6 @@ share/help/nl/gnome-help/figures/shell-top-bar.png
 share/help/nl/gnome-help/figures/shell-window-list-classic.png
 share/help/nl/gnome-help/figures/shell-workspaces.png
 share/help/nl/gnome-help/figures/system-run-symbolic.svg
-share/help/nl/gnome-help/figures/universal-access-menu.png
 share/help/nl/gnome-help/figures/view-more-symbolic.svg
 share/help/nl/gnome-help/figures/yelp-icon-big.svg
 share/help/nl/gnome-help/files-autorun.page
@@ -10657,7 +10608,6 @@ share/help/nl/gnome-help/net-firewall-on-off.page
 share/help/nl/gnome-help/net-firewall-ports.page
 share/help/nl/gnome-help/net-fixed-ip-address.page
 share/help/nl/gnome-help/net-general.page
-share/help/nl/gnome-help/net-install-flash.page
 share/help/nl/gnome-help/net-macaddress.page
 share/help/nl/gnome-help/net-manual.page
 share/help/nl/gnome-help/net-mobile.page
@@ -10897,7 +10847,7 @@ share/help/pa/gnome-help/figures/battery-low-symbolic.svg
 share/help/pa/gnome-help/figures/battery-missing-symbolic.svg
 share/help/pa/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/pa/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/pa/gnome-help/figures/bluetooth-menu.png
+share/help/pa/gnome-help/figures/bluetooth-symbolic.svg
 share/help/pa/gnome-help/figures/color-average.png
 share/help/pa/gnome-help/figures/color-camera.png
 share/help/pa/gnome-help/figures/color-display.png
@@ -10917,7 +10867,7 @@ share/help/pa/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/pa/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/pa/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/pa/gnome-help/figures/gesture-tap.png
-share/help/pa/gnome-help/figures/gnome.png
+share/help/pa/gnome-help/figures/gnome.svg
 share/help/pa/gnome-help/figures/go-down-symbolic.svg
 share/help/pa/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pa/gnome-help/figures/input-methods-switcher.png
@@ -10989,7 +10939,6 @@ share/help/pa/gnome-help/figures/shell-top-bar.png
 share/help/pa/gnome-help/figures/shell-window-list-classic.png
 share/help/pa/gnome-help/figures/shell-workspaces.png
 share/help/pa/gnome-help/figures/system-run-symbolic.svg
-share/help/pa/gnome-help/figures/universal-access-menu.png
 share/help/pa/gnome-help/figures/view-more-symbolic.svg
 share/help/pa/gnome-help/figures/yelp-icon-big.svg
 share/help/pa/gnome-help/files-autorun.page
@@ -11070,7 +11019,6 @@ share/help/pa/gnome-help/net-firewall-on-off.page
 share/help/pa/gnome-help/net-firewall-ports.page
 share/help/pa/gnome-help/net-fixed-ip-address.page
 share/help/pa/gnome-help/net-general.page
-share/help/pa/gnome-help/net-install-flash.page
 share/help/pa/gnome-help/net-macaddress.page
 share/help/pa/gnome-help/net-manual.page
 share/help/pa/gnome-help/net-mobile.page
@@ -11310,7 +11258,7 @@ share/help/pl/gnome-help/figures/battery-low-symbolic.svg
 share/help/pl/gnome-help/figures/battery-missing-symbolic.svg
 share/help/pl/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/pl/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/pl/gnome-help/figures/bluetooth-menu.png
+share/help/pl/gnome-help/figures/bluetooth-symbolic.svg
 share/help/pl/gnome-help/figures/color-average.png
 share/help/pl/gnome-help/figures/color-camera.png
 share/help/pl/gnome-help/figures/color-display.png
@@ -11330,7 +11278,7 @@ share/help/pl/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/pl/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/pl/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/pl/gnome-help/figures/gesture-tap.png
-share/help/pl/gnome-help/figures/gnome.png
+share/help/pl/gnome-help/figures/gnome.svg
 share/help/pl/gnome-help/figures/go-down-symbolic.svg
 share/help/pl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pl/gnome-help/figures/input-methods-switcher.png
@@ -11402,7 +11350,6 @@ share/help/pl/gnome-help/figures/shell-top-bar.png
 share/help/pl/gnome-help/figures/shell-window-list-classic.png
 share/help/pl/gnome-help/figures/shell-workspaces.png
 share/help/pl/gnome-help/figures/system-run-symbolic.svg
-share/help/pl/gnome-help/figures/universal-access-menu.png
 share/help/pl/gnome-help/figures/view-more-symbolic.svg
 share/help/pl/gnome-help/figures/yelp-icon-big.svg
 share/help/pl/gnome-help/files-autorun.page
@@ -11483,7 +11430,6 @@ share/help/pl/gnome-help/net-firewall-on-off.page
 share/help/pl/gnome-help/net-firewall-ports.page
 share/help/pl/gnome-help/net-fixed-ip-address.page
 share/help/pl/gnome-help/net-general.page
-share/help/pl/gnome-help/net-install-flash.page
 share/help/pl/gnome-help/net-macaddress.page
 share/help/pl/gnome-help/net-manual.page
 share/help/pl/gnome-help/net-mobile.page
@@ -11723,7 +11669,7 @@ share/help/pt/gnome-help/figures/battery-low-symbolic.svg
 share/help/pt/gnome-help/figures/battery-missing-symbolic.svg
 share/help/pt/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/pt/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/pt/gnome-help/figures/bluetooth-menu.png
+share/help/pt/gnome-help/figures/bluetooth-symbolic.svg
 share/help/pt/gnome-help/figures/color-average.png
 share/help/pt/gnome-help/figures/color-camera.png
 share/help/pt/gnome-help/figures/color-display.png
@@ -11743,7 +11689,7 @@ share/help/pt/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/pt/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/pt/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/pt/gnome-help/figures/gesture-tap.png
-share/help/pt/gnome-help/figures/gnome.png
+share/help/pt/gnome-help/figures/gnome.svg
 share/help/pt/gnome-help/figures/go-down-symbolic.svg
 share/help/pt/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pt/gnome-help/figures/input-methods-switcher.png
@@ -11815,7 +11761,6 @@ share/help/pt/gnome-help/figures/shell-top-bar.png
 share/help/pt/gnome-help/figures/shell-window-list-classic.png
 share/help/pt/gnome-help/figures/shell-workspaces.png
 share/help/pt/gnome-help/figures/system-run-symbolic.svg
-share/help/pt/gnome-help/figures/universal-access-menu.png
 share/help/pt/gnome-help/figures/view-more-symbolic.svg
 share/help/pt/gnome-help/figures/yelp-icon-big.svg
 share/help/pt/gnome-help/files-autorun.page
@@ -11896,7 +11841,6 @@ share/help/pt/gnome-help/net-firewall-on-off.page
 share/help/pt/gnome-help/net-firewall-ports.page
 share/help/pt/gnome-help/net-fixed-ip-address.page
 share/help/pt/gnome-help/net-general.page
-share/help/pt/gnome-help/net-install-flash.page
 share/help/pt/gnome-help/net-macaddress.page
 share/help/pt/gnome-help/net-manual.page
 share/help/pt/gnome-help/net-mobile.page
@@ -12136,7 +12080,7 @@ share/help/pt_BR/gnome-help/figures/battery-low-symbolic.svg
 share/help/pt_BR/gnome-help/figures/battery-missing-symbolic.svg
 share/help/pt_BR/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/pt_BR/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/pt_BR/gnome-help/figures/bluetooth-menu.png
+share/help/pt_BR/gnome-help/figures/bluetooth-symbolic.svg
 share/help/pt_BR/gnome-help/figures/color-average.png
 share/help/pt_BR/gnome-help/figures/color-camera.png
 share/help/pt_BR/gnome-help/figures/color-display.png
@@ -12156,7 +12100,7 @@ share/help/pt_BR/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/pt_BR/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/pt_BR/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/pt_BR/gnome-help/figures/gesture-tap.png
-share/help/pt_BR/gnome-help/figures/gnome.png
+share/help/pt_BR/gnome-help/figures/gnome.svg
 share/help/pt_BR/gnome-help/figures/go-down-symbolic.svg
 share/help/pt_BR/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pt_BR/gnome-help/figures/input-methods-switcher.png
@@ -12228,7 +12172,6 @@ share/help/pt_BR/gnome-help/figures/shell-top-bar.png
 share/help/pt_BR/gnome-help/figures/shell-window-list-classic.png
 share/help/pt_BR/gnome-help/figures/shell-workspaces.png
 share/help/pt_BR/gnome-help/figures/system-run-symbolic.svg
-share/help/pt_BR/gnome-help/figures/universal-access-menu.png
 share/help/pt_BR/gnome-help/figures/view-more-symbolic.svg
 share/help/pt_BR/gnome-help/figures/yelp-icon-big.svg
 share/help/pt_BR/gnome-help/files-autorun.page
@@ -12309,7 +12252,6 @@ share/help/pt_BR/gnome-help/net-firewall-on-off.page
 share/help/pt_BR/gnome-help/net-firewall-ports.page
 share/help/pt_BR/gnome-help/net-fixed-ip-address.page
 share/help/pt_BR/gnome-help/net-general.page
-share/help/pt_BR/gnome-help/net-install-flash.page
 share/help/pt_BR/gnome-help/net-macaddress.page
 share/help/pt_BR/gnome-help/net-manual.page
 share/help/pt_BR/gnome-help/net-mobile.page
@@ -12607,7 +12549,7 @@ share/help/ro/gnome-help/figures/battery-low-symbolic.svg
 share/help/ro/gnome-help/figures/battery-missing-symbolic.svg
 share/help/ro/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/ro/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/ro/gnome-help/figures/bluetooth-menu.png
+share/help/ro/gnome-help/figures/bluetooth-symbolic.svg
 share/help/ro/gnome-help/figures/color-average.png
 share/help/ro/gnome-help/figures/color-camera.png
 share/help/ro/gnome-help/figures/color-display.png
@@ -12627,7 +12569,7 @@ share/help/ro/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/ro/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/ro/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/ro/gnome-help/figures/gesture-tap.png
-share/help/ro/gnome-help/figures/gnome.png
+share/help/ro/gnome-help/figures/gnome.svg
 share/help/ro/gnome-help/figures/go-down-symbolic.svg
 share/help/ro/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ro/gnome-help/figures/input-methods-switcher.png
@@ -12699,7 +12641,6 @@ share/help/ro/gnome-help/figures/shell-top-bar.png
 share/help/ro/gnome-help/figures/shell-window-list-classic.png
 share/help/ro/gnome-help/figures/shell-workspaces.png
 share/help/ro/gnome-help/figures/system-run-symbolic.svg
-share/help/ro/gnome-help/figures/universal-access-menu.png
 share/help/ro/gnome-help/figures/view-more-symbolic.svg
 share/help/ro/gnome-help/figures/yelp-icon-big.svg
 share/help/ro/gnome-help/files-autorun.page
@@ -12780,7 +12721,6 @@ share/help/ro/gnome-help/net-firewall-on-off.page
 share/help/ro/gnome-help/net-firewall-ports.page
 share/help/ro/gnome-help/net-fixed-ip-address.page
 share/help/ro/gnome-help/net-general.page
-share/help/ro/gnome-help/net-install-flash.page
 share/help/ro/gnome-help/net-macaddress.page
 share/help/ro/gnome-help/net-manual.page
 share/help/ro/gnome-help/net-mobile.page
@@ -13020,7 +12960,7 @@ share/help/ru/gnome-help/figures/battery-low-symbolic.svg
 share/help/ru/gnome-help/figures/battery-missing-symbolic.svg
 share/help/ru/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/ru/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/ru/gnome-help/figures/bluetooth-menu.png
+share/help/ru/gnome-help/figures/bluetooth-symbolic.svg
 share/help/ru/gnome-help/figures/color-average.png
 share/help/ru/gnome-help/figures/color-camera.png
 share/help/ru/gnome-help/figures/color-display.png
@@ -13040,7 +12980,7 @@ share/help/ru/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/ru/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/ru/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/ru/gnome-help/figures/gesture-tap.png
-share/help/ru/gnome-help/figures/gnome.png
+share/help/ru/gnome-help/figures/gnome.svg
 share/help/ru/gnome-help/figures/go-down-symbolic.svg
 share/help/ru/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ru/gnome-help/figures/input-methods-switcher.png
@@ -13112,7 +13052,6 @@ share/help/ru/gnome-help/figures/shell-top-bar.png
 share/help/ru/gnome-help/figures/shell-window-list-classic.png
 share/help/ru/gnome-help/figures/shell-workspaces.png
 share/help/ru/gnome-help/figures/system-run-symbolic.svg
-share/help/ru/gnome-help/figures/universal-access-menu.png
 share/help/ru/gnome-help/figures/view-more-symbolic.svg
 share/help/ru/gnome-help/figures/yelp-icon-big.svg
 share/help/ru/gnome-help/files-autorun.page
@@ -13193,7 +13132,6 @@ share/help/ru/gnome-help/net-firewall-on-off.page
 share/help/ru/gnome-help/net-firewall-ports.page
 share/help/ru/gnome-help/net-fixed-ip-address.page
 share/help/ru/gnome-help/net-general.page
-share/help/ru/gnome-help/net-install-flash.page
 share/help/ru/gnome-help/net-macaddress.page
 share/help/ru/gnome-help/net-manual.page
 share/help/ru/gnome-help/net-mobile.page
@@ -13433,7 +13371,7 @@ share/help/sl/gnome-help/figures/battery-low-symbolic.svg
 share/help/sl/gnome-help/figures/battery-missing-symbolic.svg
 share/help/sl/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/sl/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/sl/gnome-help/figures/bluetooth-menu.png
+share/help/sl/gnome-help/figures/bluetooth-symbolic.svg
 share/help/sl/gnome-help/figures/color-average.png
 share/help/sl/gnome-help/figures/color-camera.png
 share/help/sl/gnome-help/figures/color-display.png
@@ -13453,7 +13391,7 @@ share/help/sl/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/sl/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/sl/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/sl/gnome-help/figures/gesture-tap.png
-share/help/sl/gnome-help/figures/gnome.png
+share/help/sl/gnome-help/figures/gnome.svg
 share/help/sl/gnome-help/figures/go-down-symbolic.svg
 share/help/sl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sl/gnome-help/figures/input-methods-switcher.png
@@ -13525,7 +13463,6 @@ share/help/sl/gnome-help/figures/shell-top-bar.png
 share/help/sl/gnome-help/figures/shell-window-list-classic.png
 share/help/sl/gnome-help/figures/shell-workspaces.png
 share/help/sl/gnome-help/figures/system-run-symbolic.svg
-share/help/sl/gnome-help/figures/universal-access-menu.png
 share/help/sl/gnome-help/figures/view-more-symbolic.svg
 share/help/sl/gnome-help/figures/yelp-icon-big.svg
 share/help/sl/gnome-help/files-autorun.page
@@ -13606,7 +13543,6 @@ share/help/sl/gnome-help/net-firewall-on-off.page
 share/help/sl/gnome-help/net-firewall-ports.page
 share/help/sl/gnome-help/net-fixed-ip-address.page
 share/help/sl/gnome-help/net-general.page
-share/help/sl/gnome-help/net-install-flash.page
 share/help/sl/gnome-help/net-macaddress.page
 share/help/sl/gnome-help/net-manual.page
 share/help/sl/gnome-help/net-mobile.page
@@ -13846,7 +13782,7 @@ share/help/sr/gnome-help/figures/battery-low-symbolic.svg
 share/help/sr/gnome-help/figures/battery-missing-symbolic.svg
 share/help/sr/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/sr/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/sr/gnome-help/figures/bluetooth-menu.png
+share/help/sr/gnome-help/figures/bluetooth-symbolic.svg
 share/help/sr/gnome-help/figures/color-average.png
 share/help/sr/gnome-help/figures/color-camera.png
 share/help/sr/gnome-help/figures/color-display.png
@@ -13866,7 +13802,7 @@ share/help/sr/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/sr/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/sr/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/sr/gnome-help/figures/gesture-tap.png
-share/help/sr/gnome-help/figures/gnome.png
+share/help/sr/gnome-help/figures/gnome.svg
 share/help/sr/gnome-help/figures/go-down-symbolic.svg
 share/help/sr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sr/gnome-help/figures/input-methods-switcher.png
@@ -13938,7 +13874,6 @@ share/help/sr/gnome-help/figures/shell-top-bar.png
 share/help/sr/gnome-help/figures/shell-window-list-classic.png
 share/help/sr/gnome-help/figures/shell-workspaces.png
 share/help/sr/gnome-help/figures/system-run-symbolic.svg
-share/help/sr/gnome-help/figures/universal-access-menu.png
 share/help/sr/gnome-help/figures/view-more-symbolic.svg
 share/help/sr/gnome-help/figures/yelp-icon-big.svg
 share/help/sr/gnome-help/files-autorun.page
@@ -14019,7 +13954,6 @@ share/help/sr/gnome-help/net-firewall-on-off.page
 share/help/sr/gnome-help/net-firewall-ports.page
 share/help/sr/gnome-help/net-fixed-ip-address.page
 share/help/sr/gnome-help/net-general.page
-share/help/sr/gnome-help/net-install-flash.page
 share/help/sr/gnome-help/net-macaddress.page
 share/help/sr/gnome-help/net-manual.page
 share/help/sr/gnome-help/net-mobile.page
@@ -14259,7 +14193,7 @@ share/help/sr@latin/gnome-help/figures/battery-low-symbolic.svg
 share/help/sr@latin/gnome-help/figures/battery-missing-symbolic.svg
 share/help/sr@latin/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/sr@latin/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/sr@latin/gnome-help/figures/bluetooth-menu.png
+share/help/sr@latin/gnome-help/figures/bluetooth-symbolic.svg
 share/help/sr@latin/gnome-help/figures/color-average.png
 share/help/sr@latin/gnome-help/figures/color-camera.png
 share/help/sr@latin/gnome-help/figures/color-display.png
@@ -14279,7 +14213,7 @@ share/help/sr@latin/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/sr@latin/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/sr@latin/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/sr@latin/gnome-help/figures/gesture-tap.png
-share/help/sr@latin/gnome-help/figures/gnome.png
+share/help/sr@latin/gnome-help/figures/gnome.svg
 share/help/sr@latin/gnome-help/figures/go-down-symbolic.svg
 share/help/sr@latin/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sr@latin/gnome-help/figures/input-methods-switcher.png
@@ -14351,7 +14285,6 @@ share/help/sr@latin/gnome-help/figures/shell-top-bar.png
 share/help/sr@latin/gnome-help/figures/shell-window-list-classic.png
 share/help/sr@latin/gnome-help/figures/shell-workspaces.png
 share/help/sr@latin/gnome-help/figures/system-run-symbolic.svg
-share/help/sr@latin/gnome-help/figures/universal-access-menu.png
 share/help/sr@latin/gnome-help/figures/view-more-symbolic.svg
 share/help/sr@latin/gnome-help/figures/yelp-icon-big.svg
 share/help/sr@latin/gnome-help/files-autorun.page
@@ -14432,7 +14365,6 @@ share/help/sr@latin/gnome-help/net-firewall-on-off.page
 share/help/sr@latin/gnome-help/net-firewall-ports.page
 share/help/sr@latin/gnome-help/net-fixed-ip-address.page
 share/help/sr@latin/gnome-help/net-general.page
-share/help/sr@latin/gnome-help/net-install-flash.page
 share/help/sr@latin/gnome-help/net-macaddress.page
 share/help/sr@latin/gnome-help/net-manual.page
 share/help/sr@latin/gnome-help/net-mobile.page
@@ -14672,7 +14604,7 @@ share/help/sv/gnome-help/figures/battery-low-symbolic.svg
 share/help/sv/gnome-help/figures/battery-missing-symbolic.svg
 share/help/sv/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/sv/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/sv/gnome-help/figures/bluetooth-menu.png
+share/help/sv/gnome-help/figures/bluetooth-symbolic.svg
 share/help/sv/gnome-help/figures/color-average.png
 share/help/sv/gnome-help/figures/color-camera.png
 share/help/sv/gnome-help/figures/color-display.png
@@ -14692,7 +14624,7 @@ share/help/sv/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/sv/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/sv/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/sv/gnome-help/figures/gesture-tap.png
-share/help/sv/gnome-help/figures/gnome.png
+share/help/sv/gnome-help/figures/gnome.svg
 share/help/sv/gnome-help/figures/go-down-symbolic.svg
 share/help/sv/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sv/gnome-help/figures/input-methods-switcher.png
@@ -14764,7 +14696,6 @@ share/help/sv/gnome-help/figures/shell-top-bar.png
 share/help/sv/gnome-help/figures/shell-window-list-classic.png
 share/help/sv/gnome-help/figures/shell-workspaces.png
 share/help/sv/gnome-help/figures/system-run-symbolic.svg
-share/help/sv/gnome-help/figures/universal-access-menu.png
 share/help/sv/gnome-help/figures/view-more-symbolic.svg
 share/help/sv/gnome-help/figures/yelp-icon-big.svg
 share/help/sv/gnome-help/files-autorun.page
@@ -14845,7 +14776,6 @@ share/help/sv/gnome-help/net-firewall-on-off.page
 share/help/sv/gnome-help/net-firewall-ports.page
 share/help/sv/gnome-help/net-fixed-ip-address.page
 share/help/sv/gnome-help/net-general.page
-share/help/sv/gnome-help/net-install-flash.page
 share/help/sv/gnome-help/net-macaddress.page
 share/help/sv/gnome-help/net-manual.page
 share/help/sv/gnome-help/net-mobile.page
@@ -15143,7 +15073,7 @@ share/help/ta/gnome-help/figures/battery-low-symbolic.svg
 share/help/ta/gnome-help/figures/battery-missing-symbolic.svg
 share/help/ta/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/ta/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/ta/gnome-help/figures/bluetooth-menu.png
+share/help/ta/gnome-help/figures/bluetooth-symbolic.svg
 share/help/ta/gnome-help/figures/color-average.png
 share/help/ta/gnome-help/figures/color-camera.png
 share/help/ta/gnome-help/figures/color-display.png
@@ -15163,7 +15093,7 @@ share/help/ta/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/ta/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/ta/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/ta/gnome-help/figures/gesture-tap.png
-share/help/ta/gnome-help/figures/gnome.png
+share/help/ta/gnome-help/figures/gnome.svg
 share/help/ta/gnome-help/figures/go-down-symbolic.svg
 share/help/ta/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ta/gnome-help/figures/input-methods-switcher.png
@@ -15235,7 +15165,6 @@ share/help/ta/gnome-help/figures/shell-top-bar.png
 share/help/ta/gnome-help/figures/shell-window-list-classic.png
 share/help/ta/gnome-help/figures/shell-workspaces.png
 share/help/ta/gnome-help/figures/system-run-symbolic.svg
-share/help/ta/gnome-help/figures/universal-access-menu.png
 share/help/ta/gnome-help/figures/view-more-symbolic.svg
 share/help/ta/gnome-help/figures/yelp-icon-big.svg
 share/help/ta/gnome-help/files-autorun.page
@@ -15316,7 +15245,6 @@ share/help/ta/gnome-help/net-firewall-on-off.page
 share/help/ta/gnome-help/net-firewall-ports.page
 share/help/ta/gnome-help/net-fixed-ip-address.page
 share/help/ta/gnome-help/net-general.page
-share/help/ta/gnome-help/net-install-flash.page
 share/help/ta/gnome-help/net-macaddress.page
 share/help/ta/gnome-help/net-manual.page
 share/help/ta/gnome-help/net-mobile.page
@@ -15556,7 +15484,7 @@ share/help/te/gnome-help/figures/battery-low-symbolic.svg
 share/help/te/gnome-help/figures/battery-missing-symbolic.svg
 share/help/te/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/te/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/te/gnome-help/figures/bluetooth-menu.png
+share/help/te/gnome-help/figures/bluetooth-symbolic.svg
 share/help/te/gnome-help/figures/color-average.png
 share/help/te/gnome-help/figures/color-camera.png
 share/help/te/gnome-help/figures/color-display.png
@@ -15576,7 +15504,7 @@ share/help/te/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/te/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/te/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/te/gnome-help/figures/gesture-tap.png
-share/help/te/gnome-help/figures/gnome.png
+share/help/te/gnome-help/figures/gnome.svg
 share/help/te/gnome-help/figures/go-down-symbolic.svg
 share/help/te/gnome-help/figures/input-keyboard-symbolic.png
 share/help/te/gnome-help/figures/input-methods-switcher.png
@@ -15648,7 +15576,6 @@ share/help/te/gnome-help/figures/shell-top-bar.png
 share/help/te/gnome-help/figures/shell-window-list-classic.png
 share/help/te/gnome-help/figures/shell-workspaces.png
 share/help/te/gnome-help/figures/system-run-symbolic.svg
-share/help/te/gnome-help/figures/universal-access-menu.png
 share/help/te/gnome-help/figures/view-more-symbolic.svg
 share/help/te/gnome-help/figures/yelp-icon-big.svg
 share/help/te/gnome-help/files-autorun.page
@@ -15729,7 +15656,6 @@ share/help/te/gnome-help/net-firewall-on-off.page
 share/help/te/gnome-help/net-firewall-ports.page
 share/help/te/gnome-help/net-fixed-ip-address.page
 share/help/te/gnome-help/net-general.page
-share/help/te/gnome-help/net-install-flash.page
 share/help/te/gnome-help/net-macaddress.page
 share/help/te/gnome-help/net-manual.page
 share/help/te/gnome-help/net-mobile.page
@@ -15969,7 +15895,7 @@ share/help/vi/gnome-help/figures/battery-low-symbolic.svg
 share/help/vi/gnome-help/figures/battery-missing-symbolic.svg
 share/help/vi/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/vi/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/vi/gnome-help/figures/bluetooth-menu.png
+share/help/vi/gnome-help/figures/bluetooth-symbolic.svg
 share/help/vi/gnome-help/figures/color-average.png
 share/help/vi/gnome-help/figures/color-camera.png
 share/help/vi/gnome-help/figures/color-display.png
@@ -15989,7 +15915,7 @@ share/help/vi/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/vi/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/vi/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/vi/gnome-help/figures/gesture-tap.png
-share/help/vi/gnome-help/figures/gnome.png
+share/help/vi/gnome-help/figures/gnome.svg
 share/help/vi/gnome-help/figures/go-down-symbolic.svg
 share/help/vi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/vi/gnome-help/figures/input-methods-switcher.png
@@ -16061,7 +15987,6 @@ share/help/vi/gnome-help/figures/shell-top-bar.png
 share/help/vi/gnome-help/figures/shell-window-list-classic.png
 share/help/vi/gnome-help/figures/shell-workspaces.png
 share/help/vi/gnome-help/figures/system-run-symbolic.svg
-share/help/vi/gnome-help/figures/universal-access-menu.png
 share/help/vi/gnome-help/figures/view-more-symbolic.svg
 share/help/vi/gnome-help/figures/yelp-icon-big.svg
 share/help/vi/gnome-help/files-autorun.page
@@ -16142,7 +16067,6 @@ share/help/vi/gnome-help/net-firewall-on-off.page
 share/help/vi/gnome-help/net-firewall-ports.page
 share/help/vi/gnome-help/net-fixed-ip-address.page
 share/help/vi/gnome-help/net-general.page
-share/help/vi/gnome-help/net-install-flash.page
 share/help/vi/gnome-help/net-macaddress.page
 share/help/vi/gnome-help/net-manual.page
 share/help/vi/gnome-help/net-mobile.page
@@ -16382,7 +16306,7 @@ share/help/zh_CN/gnome-help/figures/battery-low-symbolic.svg
 share/help/zh_CN/gnome-help/figures/battery-missing-symbolic.svg
 share/help/zh_CN/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/zh_CN/gnome-help/figures/bluetooth-disabled-symbolic.svg
-share/help/zh_CN/gnome-help/figures/bluetooth-menu.png
+share/help/zh_CN/gnome-help/figures/bluetooth-symbolic.svg
 share/help/zh_CN/gnome-help/figures/color-average.png
 share/help/zh_CN/gnome-help/figures/color-camera.png
 share/help/zh_CN/gnome-help/figures/color-display.png
@@ -16402,7 +16326,7 @@ share/help/zh_CN/gnome-help/figures/gesture-rotate-anticlockwise-symbolic.svg
 share/help/zh_CN/gnome-help/figures/gesture-rotate-clockwise-symbolic.svg
 share/help/zh_CN/gnome-help/figures/gesture-stretch-symbolic.svg
 share/help/zh_CN/gnome-help/figures/gesture-tap.png
-share/help/zh_CN/gnome-help/figures/gnome.png
+share/help/zh_CN/gnome-help/figures/gnome.svg
 share/help/zh_CN/gnome-help/figures/go-down-symbolic.svg
 share/help/zh_CN/gnome-help/figures/input-keyboard-symbolic.png
 share/help/zh_CN/gnome-help/figures/input-methods-switcher.png
@@ -16474,7 +16398,6 @@ share/help/zh_CN/gnome-help/figures/shell-top-bar.png
 share/help/zh_CN/gnome-help/figures/shell-window-list-classic.png
 share/help/zh_CN/gnome-help/figures/shell-workspaces.png
 share/help/zh_CN/gnome-help/figures/system-run-symbolic.svg
-share/help/zh_CN/gnome-help/figures/universal-access-menu.png
 share/help/zh_CN/gnome-help/figures/view-more-symbolic.svg
 share/help/zh_CN/gnome-help/figures/yelp-icon-big.svg
 share/help/zh_CN/gnome-help/files-autorun.page
@@ -16555,7 +16478,6 @@ share/help/zh_CN/gnome-help/net-firewall-on-off.page
 share/help/zh_CN/gnome-help/net-firewall-ports.page
 share/help/zh_CN/gnome-help/net-fixed-ip-address.page
 share/help/zh_CN/gnome-help/net-general.page
-share/help/zh_CN/gnome-help/net-install-flash.page
 share/help/zh_CN/gnome-help/net-macaddress.page
 share/help/zh_CN/gnome-help/net-manual.page
 share/help/zh_CN/gnome-help/net-mobile.page
