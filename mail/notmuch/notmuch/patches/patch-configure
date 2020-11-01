@@ -1,9 +1,13 @@
-$OpenBSD: patch-configure,v 1.4 2020/10/05 19:46:17 jca Exp $
+$OpenBSD: patch-configure,v 1.5 2020/11/01 09:48:48 bket Exp $
+
+The realpath command (e.g. from GNU coreutils) is not so common outside Linux
+systems. Taken from
+https://git.notmuchmail.org/git?p=notmuch;a=commit;h=b042a59cdf8be7ad215268eee32d4cc114d312bb
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -721,9 +721,9 @@ if ! pkg-config --exists zlib; then
+@@ -702,9 +702,9 @@ if ! pkg-config --exists zlib; then
    rm -f compat/gen_zlib_pc
  fi
  
@@ -15,3 +19,12 @@ Index: configure
      printf "Yes.\n"
      have_zlib=1
      zlib_cflags=$(pkg-config --cflags zlib)
+@@ -1536,7 +1536,7 @@ EOF
+     if [ $WITH_PYTHON_DOCS = "1" ]; then
+         echo "tags.add('WITH_PYTHON')"
+     fi
+-    printf "rsti_dir = '%s'\n" $(realpath emacs)
++    printf "rsti_dir = '%s'\n" "$(cd emacs && pwd -P)"
+ } > sphinx.config
+ 
+ # Finally, after everything configured, inform the user how to continue.

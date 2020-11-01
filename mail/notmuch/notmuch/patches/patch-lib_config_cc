@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_config_cc,v 1.1 2020/11/01 09:48:48 bket Exp $
+
+Don't set destructor until iterator is initialized. Taken from
+https://git.notmuchmail.org/git?p=notmuch;a=commit;h=582e919e2769bd99064b997b05e1601ffcfe9a98
+
+Index: lib/config.cc
+--- lib/config.cc.orig
++++ lib/config.cc
+@@ -113,7 +113,6 @@ notmuch_database_get_config_list (notmuch_database_t *
+ 	goto DONE;
+     }
+ 
+-    talloc_set_destructor (list, _notmuch_config_list_destroy);
+     list->notmuch = notmuch;
+     list->current_key = NULL;
+     list->current_val = NULL;
+@@ -122,6 +121,7 @@ notmuch_database_get_config_list (notmuch_database_t *
+ 
+ 	new(&(list->iterator)) Xapian::TermIterator (notmuch->xapian_db->metadata_keys_begin
+ 							 (CONFIG_PREFIX + (prefix ? prefix : "")));
++	talloc_set_destructor (list, _notmuch_config_list_destroy);
+ 
+     } catch (const Xapian::Error &error) {
+ 	_notmuch_database_log (notmuch, "A Xapian exception occurred getting metadata iterator: %s.\n",

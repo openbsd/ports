@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_Makefile_local,v 1.1 2020/11/01 09:48:48 bket Exp $
+
+Fix relative path linking issue
+
+Index: test/Makefile.local
+--- test/Makefile.local.orig
++++ test/Makefile.local
+@@ -32,7 +32,7 @@ $(dir)/random-corpus: $(random_corpus_deps)
+ $(dir)/smtp-dummy: $(smtp_dummy_modules)
+ 	$(call quiet,CC) $^ -o $@ $(LDFLAGS)
+ 
+-$(dir)/symbol-test: $(dir)/symbol-test.o lib/$(LINKER_NAME)
++$(dir)/symbol-test: $(dir)/symbol-test.o
+ 	$(call quiet,CXX) $^ -o $@ $(LDFLAGS) -Llib -lnotmuch $(XAPIAN_LDFLAGS)
+ 
+ $(dir)/parse-time: $(dir)/parse-time.o parse-time-string/parse-time-string.o

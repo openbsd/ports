@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_global,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+$OpenBSD: patch-Makefile_global,v 1.2 2020/11/01 09:48:48 bket Exp $
 
 Index: Makefile.global
 --- Makefile.global.orig
 +++ Makefile.global
-@@ -16,7 +16,7 @@ else
+@@ -17,7 +17,7 @@ else
  DATE:=$(shell date +%F)
  endif
  
