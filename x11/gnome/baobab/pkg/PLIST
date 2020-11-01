@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/06/29 13:58:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2020/11/01 08:28:25 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
@@ -342,6 +342,22 @@ share/help/sv/baobab/scan-file-system.page
 share/help/sv/baobab/scan-folder.page
 share/help/sv/baobab/scan-home.page
 share/help/sv/baobab/scan-remote.page
+share/help/uk/
+share/help/uk/baobab/
+share/help/uk/baobab/index.page
+share/help/uk/baobab/introduction.page
+share/help/uk/baobab/legal.xml
+share/help/uk/baobab/media/
+share/help/uk/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/uk/baobab/pref-view-chart.page
+share/help/uk/baobab/problem-permissions.page
+share/help/uk/baobab/problem-slow-scan.page
+share/help/uk/baobab/question-open-folder.page
+share/help/uk/baobab/question-trash.page
+share/help/uk/baobab/scan-file-system.page
+share/help/uk/baobab/scan-folder.page
+share/help/uk/baobab/scan-home.page
+share/help/uk/baobab/scan-remote.page
 share/help/zh_CN/
 share/help/zh_CN/baobab/
 share/help/zh_CN/baobab/index.page
@@ -358,6 +374,7 @@ share/help/zh_CN/baobab/scan-file-system.page
 share/help/zh_CN/baobab/scan-folder.page
 share/help/zh_CN/baobab/scan-home.page
 share/help/zh_CN/baobab/scan-remote.page
+share/icons/hicolor/scalable/apps/org.gnome.baobab.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.baobab.svg
 share/icons/hicolor/symbolic/apps/org.gnome.baobab-symbolic.svg
 share/locale/af/LC_MESSAGES/baobab.mo
