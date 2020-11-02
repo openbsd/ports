@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_app_app_cc,v 1.5 2020/05/14 15:01:23 jasper Exp $
+$OpenBSD: patch-src_app_app_cc,v 1.6 2020/11/02 16:00:57 jasper Exp $
 
 Fix build on !clang:
 app.cc:309:39: error: cannot convert 'const GdkRGBA {aka const _GdkRGBA} to 'gdouble {aka double}' in initialization
@@ -8,12 +8,12 @@ cf https://blog.quasardb.net/cpp-braced-initialization/
 Index: src/app/app.cc
 --- src/app/app.cc.orig
 +++ src/app/app.cc
-@@ -313,7 +313,7 @@ class Options { (public)
-                 else
-                         alpha = get_alpha();
+@@ -454,7 +454,7 @@ class Options { (public)
  
+         GdkRGBA get_color_bg() const
+         {
 -                GdkRGBA color{bg_color};
 +                GdkRGBA color = bg_color;
-                 color.alpha = alpha;
+                 color.alpha = get_alpha_bg();
                  return color;
          }
