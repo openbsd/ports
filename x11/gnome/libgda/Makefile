@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2020/09/13 08:46:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.141 2020/11/02 16:03:41 jasper Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -18,7 +18,7 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 
-REVISION-main=		6
+REVISION-main=		7
 REVISION-ldap=		1
 REVISION-mysql=		1
 REVISION-pgsql=		1
@@ -86,7 +86,7 @@ CONFIGURE_ARGS=		--enable-gdaui-gi \
 			--with-postgres="${LOCALBASE}"
 
 # XXX sync with API_V in lang/vala
-CONFIGURE_ENV +=	VALA_API_VERSION=0.48
+CONFIGURE_ENV +=	VALA_API_VERSION=0.50
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
