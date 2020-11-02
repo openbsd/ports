@@ -1,29 +1,30 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2020/11/02 21:57:19 jca Exp $
 
 COMMENT =		desktop wiki
 
-MODPY_EGG_VERSION =	0.69
+MODPY_EGG_VERSION =	0.73.3
 DISTNAME =		zim-${MODPY_EGG_VERSION}
 
 CATEGORIES =		productivity
 
-HOMEPAGE =		http://zim-wiki.org/
+HOMEPAGE =		https://zim-wiki.org/
 
 MAINTAINER =		Sebastian Benoit <benno@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://zim-wiki.org/downloads/
+MASTER_SITES =		https://zim-wiki.org/downloads/
 
 NO_TEST =		Yes
 
 MODULES =       	lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-COMMON_DEPENDS =	x11/py-gtk2 \
-			devel/py-gobject \
-			devel/py-xdg \
-			devel/xdg-utils
+COMMON_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-xdg${MODPY_FLAVOR} \
+			devel/xdg-utils \
+			x11/gtk+3
 
 BUILD_DEPENDS = 	${COMMON_DEPENDS}
 

@@ -1,8 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.5 2018/12/11 14:48:40 sthen Exp $
+$OpenBSD: patch-setup_py,v 1.6 2020/11/02 21:57:19 jca Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -83,7 +83,7 @@ def include_file(file):
+@@ -72,7 +72,7 @@ def include_file(file):
  def collect_data_files():
  	# Search for data files to be installed in share/
  	data_files = [
@@ -11,25 +11,3 @@ Index: setup.py
  		('share/applications', ['xdg/zim.desktop']),
  		('share/mime/packages', ['xdg/zim.xml']),
  		('share/pixmaps', ['xdg/hicolor/48x48/apps/zim.png']),
-@@ -113,6 +113,12 @@ def collect_data_files():
- 			files = [os.path.join(dir, f) for f in files]
- 			data_files.append((target, files))
- 
-+        for dir, dirs, files in os.walk('man'):
-+                if files:
-+                        target = os.path.join('man', dir[4:])
-+                        files = [os.path.join(dir, f) for f in files]
-+                        data_files.append((target, files))
-+
- 	if build_target == 'maemo':
- 		# Remove default .desktop files and replace with our set
- 		prefix = os.path.join('share', 'zim', 'applications')
-@@ -291,7 +297,7 @@ class zim_install_class(install_class):
- 
- 	def initialize_options(self):
- 		install_class.initialize_options(self)
--		self.skip_xdg_cmd = 0
-+		self.skip_xdg_cmd = 1
- 
- 	def run(self):
- 		install_class.run(self)
