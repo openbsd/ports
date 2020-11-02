@@ -1,0 +1,27 @@
+$OpenBSD: patch-client_game_c,v 1.1 2020/11/02 16:16:55 benoit Exp $
+
+Prevent random pauses ingame without external actions.
+
+https://bugs.debian.org/916606
+
+Index: client/game.c
+--- client/game.c.orig
++++ client/game.c
+@@ -1150,6 +1150,17 @@ void client_game_run( void )
+ 		/* check wether an event occured */
+ 		button_clicked = key_pressed = 0;
+ 		if ( SDL_PollEvent( &event ) ) {
++			// Special code for broken SDL with Xorg 1.20.1, where pairs of inputfocus gain and loss events are generated
++			// when locking the mouse in windowed mode.
++			if (event.type == SDL_ACTIVEEVENT && event.active.state == SDL_APPINPUTFOCUS && event.active.gain == 0) {
++				SDL_Event test; //Check if the next event would undo this one.
++				if (SDL_PeepEvents(&test,1,SDL_PEEKEVENT,SDL_ACTIVEEVENTMASK) == 1 && test.active.state == SDL_APPINPUTFOCUS && test.active.gain == 1) {
++					// Skip both events.
++					SDL_PeepEvents(&test,1,SDL_GETEVENT,SDL_ACTIVEEVENTMASK);
++					continue;
++				}
++			}
++			
+ 			if ( client_state == CS_PAUSE && game->game_type == GT_NETWORK )
+ 				gui_dispatch_event( &event, ms );
+ 			else
