@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/29 10:49:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/11/02 17:27:44 rsadowski Exp $
 
 COMMENT =	declarative cross-platform build tool
-V =		1.15.0
+V =		1.17.0
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
 
-SHARED_LIBS =	qbscore			6.0
+SHARED_LIBS =	qbscore			7.0
 SHARED_LIBS +=	qbsqtprofilesetup	4.0
 
 CATEGORIES =	devel
+
 HOMEPAGE =	https://doc.qt.io/qbs/
-MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPLv3 or GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -23,6 +23,7 @@ MASTER_SITES =		https://download.qt.io/official_releases/qbs/${V}/
 MODULES =		devel/qmake x11/qt5
 
 MODQMAKE_PROJECTS =	qbs.pro
+
 MODQMAKE_ARGS =		CONFIG+=qbs_enable_unit_tests=1 \
 			CONFIG+=qbs_enable_project_file_updates
 
