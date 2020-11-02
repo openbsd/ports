@@ -1,0 +1,3 @@
+pikepdf is a Python library for reading and writing PDF files.
+It is based on QPDF (https://github.com/qpdf/qpdf), a powerful PDF
+manipulation and repair library.
