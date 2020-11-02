@@ -1,7 +1,8 @@
-$OpenBSD: patch-sample_sample-config-files_tls-home_conf,v 1.1 2013/04/20 16:22:55 sthen Exp $
---- sample/sample-config-files/tls-home.conf.orig	Mon Sep 10 17:01:08 2012
-+++ sample/sample-config-files/tls-home.conf	Thu Mar  7 14:02:35 2013
-@@ -48,10 +48,10 @@ key home.key
+$OpenBSD: patch-sample_sample-config-files_tls-home_conf,v 1.2 2020/11/02 22:49:17 jca Exp $
+Index: sample/sample-config-files/tls-home.conf
+--- sample/sample-config-files/tls-home.conf.orig
++++ sample/sample-config-files/tls-home.conf
+@@ -48,10 +48,10 @@ cipher AES-256-GCM
  ; port 1194
  
  # Downgrade UID and GID to

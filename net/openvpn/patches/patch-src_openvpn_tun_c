@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.17 2019/02/21 23:41:12 jca Exp $
+$OpenBSD: patch-src_openvpn_tun_c,v 1.18 2020/11/02 22:49:17 jca Exp $
 
 - no need for link0 any more, we have separate tap interfaces
 - fix memory leak (gc is unused)
@@ -6,44 +6,33 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.17 2019/02/21 23:41:12 jca Exp $
 Index: src/openvpn/tun.c
 --- src/openvpn/tun.c.orig
 +++ src/openvpn/tun.c
-@@ -1202,7 +1202,7 @@ do_ifconfig(struct tuntap *tt,
-         if (tun)
-         {
-             argv_printf(&argv,
--                        "%s %s %s %s mtu %d netmask 255.255.255.255 up -link0",
-+                        "%s %s %s %s mtu %d netmask 255.255.255.255 up",
-                         IFCONFIG_PATH,
-                         actual,
-                         ifconfig_local,
-@@ -1214,7 +1214,7 @@ do_ifconfig(struct tuntap *tt,
-         {
-             remote_end = create_arbitrary_remote( tt );
-             argv_printf(&argv,
--                        "%s %s %s %s mtu %d netmask %s up -link0",
-+                        "%s %s %s %s mtu %d netmask %s up",
-                         IFCONFIG_PATH,
-                         actual,
-                         ifconfig_local,
-@@ -1225,8 +1225,13 @@ do_ifconfig(struct tuntap *tt,
-         }
-         else
-         {
-+           /*
-+            * OpenBSD has distinct tun and tap devices
-+            * so we don't need the "link0" extra parameter to specify we want to do
-+            * tunneling at the ethernet level
-+            */
-             argv_printf(&argv,
--                        "%s %s %s netmask %s mtu %d broadcast %s link0",
-+                        "%s %s %s netmask %s mtu %d broadcast %s",
-                         IFCONFIG_PATH,
-                         actual,
-                         ifconfig_local,
-@@ -2615,7 +2620,6 @@ close_tun(struct tuntap *tt)
-     }
-     else if (tt)
+@@ -1346,21 +1346,26 @@ do_ifconfig_ipv4(struct tuntap *tt, const char *ifname
+     if (tun)
      {
--        struct gc_arena gc = gc_new();
-         struct argv argv = argv_new();
- 
-         /* setup command, close tun dev (clears tt->actual_name!), run command
+         argv_printf(&argv,
+-                    "%s %s %s %s mtu %d netmask 255.255.255.255 up -link0",
++                    "%s %s %s %s mtu %d netmask 255.255.255.255 up",
+                     IFCONFIG_PATH, ifname, ifconfig_local,
+                     ifconfig_remote_netmask, tun_mtu);
+     }
+     else if (tt->type == DEV_TYPE_TUN && tt->topology == TOP_SUBNET)
+     {
+         remote_end = create_arbitrary_remote( tt );
+-        argv_printf(&argv, "%s %s %s %s mtu %d netmask %s up -link0",
++        argv_printf(&argv, "%s %s %s %s mtu %d netmask %s up",
+                     IFCONFIG_PATH, ifname, ifconfig_local,
+                     print_in_addr_t(remote_end, 0, &gc), tun_mtu,
+                     ifconfig_remote_netmask);
+     }
+     else
+     {
+-        argv_printf(&argv, "%s %s %s netmask %s mtu %d link0",
++        /*
++         * OpenBSD has distinct tun and tap devices
++         * so we don't need the "link0" extra parameter to specify we want to do
++         * tunneling at the ethernet level
++         */
++        argv_printf(&argv, "%s %s %s netmask %s mtu %d",
+                     IFCONFIG_PATH, ifname, ifconfig_local,
+                     ifconfig_remote_netmask, tun_mtu);
+     }

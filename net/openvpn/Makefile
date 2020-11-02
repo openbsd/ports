@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.101 2020/05/17 08:53:27 jca Exp $
+# $OpenBSD: Makefile,v 1.102 2020/11/02 22:49:17 jca Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
-DISTNAME=	openvpn-2.4.9
-REVISION=	0
+DISTNAME=	openvpn-2.5.0
 
 CATEGORIES=	net security
 
@@ -18,14 +17,17 @@ WANTLIB += c lz4 lzo2
 
 MASTER_SITES=	https://swupdate.openvpn.org/community/releases/
 
+BUILD_DEPENDS=	textproc/py-docutils,python3
 LIB_DEPENDS=	archivers/lzo2 \
 		archivers/lz4
+TEST_DEPENDS=	devel/cmocka
 
-SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
+		RST2HTML="${LOCALBASE}/bin/rst2html-3" \
+		RST2MAN="${LOCALBASE}/bin/rst2man-3"
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
