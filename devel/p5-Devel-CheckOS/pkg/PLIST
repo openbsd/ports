@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/10/06 08:27:54 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/11/02 14:55:06 bluhm Exp $
 bin/use-devel-assertos
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/AssertOS/
@@ -27,6 +27,10 @@ ${P5SITE}/Devel/AssertOS/Irix.pm
 ${P5SITE}/Devel/AssertOS/Linux/
 ${P5SITE}/Devel/AssertOS/Linux.pm
 ${P5SITE}/Devel/AssertOS/Linux/Debian.pm
+${P5SITE}/Devel/AssertOS/Linux/Raspbian.pm
+${P5SITE}/Devel/AssertOS/Linux/RealDebian.pm
+${P5SITE}/Devel/AssertOS/Linux/Ubuntu.pm
+${P5SITE}/Devel/AssertOS/Linux/UnknownDebianLike.pm
 ${P5SITE}/Devel/AssertOS/Linux/v2_6.pm
 ${P5SITE}/Devel/AssertOS/MPEiX.pm
 ${P5SITE}/Devel/AssertOS/MSDOS.pm
@@ -112,6 +116,10 @@ ${P5SITE}/Devel/CheckOS/Families.pod
 @man man/man3p/Devel::AssertOS::Irix.3p
 @man man/man3p/Devel::AssertOS::Linux.3p
 @man man/man3p/Devel::AssertOS::Linux::Debian.3p
+@man man/man3p/Devel::AssertOS::Linux::Raspbian.3p
+@man man/man3p/Devel::AssertOS::Linux::RealDebian.3p
+@man man/man3p/Devel::AssertOS::Linux::Ubuntu.3p
+@man man/man3p/Devel::AssertOS::Linux::UnknownDebianLike.3p
 @man man/man3p/Devel::AssertOS::Linux::v2_6.3p
 @man man/man3p/Devel::AssertOS::MPEiX.3p
 @man man/man3p/Devel::AssertOS::MSDOS.3p
