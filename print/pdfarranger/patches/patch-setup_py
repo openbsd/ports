@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2020/11/02 19:52:43 jca Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -27,7 +27,7 @@ from DistUtilsExtra.command import (
+ data_files = [
+     ('share/applications', ['data/com.github.jeromerobert.pdfarranger.desktop']),
+     ('share/pdfarranger', ['data/pdfarranger.ui', 'data/menu.ui']),
+-    ('share/man/man1', ['doc/pdfarranger.1']),
++    ('man/man1', ['doc/pdfarranger.1']),
+     ('share/metainfo', ['data/com.github.jeromerobert.pdfarranger.metainfo.xml']),
+ ]
+ 
