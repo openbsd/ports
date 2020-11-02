@@ -1,0 +1,16 @@
+$OpenBSD: patch-xmpp-vala_src_module_xep_0030_service_discovery_module_vala,v 1.1 2020/11/02 09:10:42 jasper Exp $
+
+https://github.com/dino/dino/commit/8a2edbe661b77dfd66fb038c45690017129db96b
+
+Index: xmpp-vala/src/module/xep/0030_service_discovery/module.vala
+--- xmpp-vala/src/module/xep/0030_service_discovery/module.vala.orig
++++ xmpp-vala/src/module/xep/0030_service_discovery/module.vala
+@@ -2,7 +2,7 @@ using Gee;
+ 
+ namespace Xmpp.Xep.ServiceDiscovery {
+ 
+-private const string NS_URI = "http://jabber.org/protocol/disco";
++public const string NS_URI = "http://jabber.org/protocol/disco";
+ public const string NS_URI_INFO = NS_URI + "#info";
+ public const string NS_URI_ITEMS = NS_URI + "#items";
+ 
