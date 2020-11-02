@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2020/11/02 15:59:54 jasper Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
-GNOME_VERSION=		1.4.4
+GNOME_VERSION=		1.6.0
 
-SHARED_LIBS +=  json-glib-1.0        6.0
+SHARED_LIBS +=  json-glib-1.0        6.1 # 0.600.0
 
 CATEGORIES=		devel
 
@@ -23,6 +23,8 @@ MODULES=		devel/meson \
 LIB_DEPENDS=		devel/glib2
 
 MODGNOME_TOOLS += 	docbook gobject-introspection
+
+CONFIGURE_ARGS =	-Dgtk_doc=disabled
 
 # Remove installed tests which only make sense in a CI environment
 post-install:
