@@ -1,0 +1,35 @@
+$OpenBSD: patch-parseconfig_c,v 1.1 2020/11/02 16:10:23 jasper Exp $
+
+https://git.kraxel.org/cgit/amtterm/commit/?id=ea1717899294af93f7342069b15fc197b525ad29
+
+Index: parseconfig.c
+--- parseconfig.c.orig
++++ parseconfig.c
+@@ -558,17 +558,24 @@ cfg_write_file(char *dname, char *filename)
+ 
+     if (-1 == unlink(bfile) && ENOENT != errno) {
+ 	fprintf(stderr,"unlink(%s): %s\n",bfile,strerror(errno));
+-	return -1;
++	goto err;
+     }
+     if (-1 == rename(filename,bfile) && ENOENT != errno) {
+ 	fprintf(stderr,"rename(%s,%s): %s\n",filename,bfile,strerror(errno));
+-	return -1;
++	goto err;
+     }
+     if (-1 == rename(tfile,filename)) {
+ 	fprintf(stderr,"rename(%s,%s): %s\n",tfile,filename,strerror(errno));
+-	return -1;
++	goto err;
+     }
++    free(bfile);
++    free(tfile);
+     return 0;
++
++err:
++    free(bfile);
++    free(tfile);
++    return -1;
+ }
+ 
+ /* ------------------------------------------------------------------------ */
