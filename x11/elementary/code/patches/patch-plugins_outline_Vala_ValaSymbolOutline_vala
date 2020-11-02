@@ -1,0 +1,20 @@
+$OpenBSD: patch-plugins_outline_Vala_ValaSymbolOutline_vala,v 1.1 2020/11/02 08:12:07 jasper Exp $
+
+Fix build with Vala 0.50
+
+Index: plugins/outline/Vala/ValaSymbolOutline.vala
+--- plugins/outline/Vala/ValaSymbolOutline.vala.orig
++++ plugins/outline/Vala/ValaSymbolOutline.vala
+@@ -61,7 +61,11 @@ public class Code.Plugins.ValaSymbolOutline : Object, 
+ 
+     public void parse_symbols () {
+         var context = new Vala.CodeContext ();
+-        context.profile = Vala.Profile.GOBJECT;
++#if VALA_0_50
++         context.set_target_profile (Vala.Profile.GOBJECT, false);
++#else
++         context.profile = Vala.Profile.GOBJECT;
++#endif
+         context.add_source_filename (doc.file.get_path ());
+         context.report = new Report ();
+         if (cancellable != null)
