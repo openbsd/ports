@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:40 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/02 00:18:09 daniel Exp $
 
 COMMENT =		command-line frontend for sigrok logic analyzer
-REVISION =		1
+REVISION =		2
 
 SIGROK_PROJECT =	pulseview
 SIGROK_VERSION =	0.4.1
