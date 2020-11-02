@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2031 2020/10/30 20:12:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.2032 2020/11/02 16:13:28 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1960,7 +1960,6 @@
      SUBDIR += vim-taglist
      SUBDIR += vtags
      SUBDIR += vtcl
-     SUBDIR += vte
      SUBDIR += vte3
      SUBDIR += woboq_codebrowser
      SUBDIR += xa

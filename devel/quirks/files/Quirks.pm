@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1100 2020/11/01 13:28:14 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1101 2020/11/02 16:13:28 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1897,7 +1897,8 @@ my $obsolete_reason = {
 	'spacehulk' => 3,
 	'taxipilot' => 3,
 	'pympd' => 3,
-	'py-vte' => 3,
+	'py-vte' => 5,
+	'vte' => 5,
 };
 
 # reasons for obsolete packages
