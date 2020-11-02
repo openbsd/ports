@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.81 2020/06/23 08:16:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.82 2020/11/02 08:20:31 jasper Exp $
+
+BROKEN =		needs update to 3.38 (vala + libhandy)
 
 COMMENT=		contacts manager for GNOME
 
