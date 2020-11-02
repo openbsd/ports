@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/01 20:35:26 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/02 07:41:50 ajacoutot Exp $
 
-# XXX version 1.19.0 and up do not support python2 anymore
+# XXX version 1.19.0 and up do not support python2 anymore;
+# python3 support lives in graphics/py-cairo
+PORTROACH=		limit:^1\.18
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=		m88k
