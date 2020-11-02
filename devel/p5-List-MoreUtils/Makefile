@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/11/02 19:12:41 bluhm Exp $
 
 COMMENT =	provide the stuff missing in List::Util
 
-DISTNAME =	List-MoreUtils-0.428
-REVISION =	0
+DISTNAME =	List-MoreUtils-0.430
 
 CATEGORIES =	devel
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-Exporter-Tiny>=0.038 \
-			devel/p5-List-MoreUtils-XS>=0.426
+			devel/p5-List-MoreUtils-XS>=0.430
 TEST_DEPENDS =		devel/p5-Test-LeakTrace
 
 PKG_ARCH =		*

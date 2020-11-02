@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2017/10/18 15:18:36 bluhm Exp $
+$OpenBSD: patch-Makefile_PL,v 1.2 2020/11/02 19:12:41 bluhm Exp $
 
 Index: Makefile.PL
 --- Makefile.PL.orig
@@ -29,7 +29,7 @@ Index: Makefile.PL
  {
      unless (grep { $_ eq "." } @INC)
 @@ -76,8 +61,6 @@ my %RUN_DEPS = (
-     ($loadable_xs ? ('List::MoreUtils::XS' => '0.426') : ())
+     ($loadable_xs ? ('List::MoreUtils::XS' => '0.430') : ())
  );
  my %BUNDLE_CONFIGURE_DEPS = (
 -    'inc::latest'      => '0.500',
@@ -37,7 +37,7 @@ Index: Makefile.PL
  );
  my %CONFIGURE_DEPS = (
      'ExtUtils::MakeMaker' => 0,
-@@ -125,7 +108,6 @@ WriteMakefile1(
+@@ -127,7 +110,6 @@ WriteMakefile1(
              },
              configure => {
                  requires   => {%CONFIGURE_DEPS},

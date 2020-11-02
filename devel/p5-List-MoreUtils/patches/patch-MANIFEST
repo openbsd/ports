@@ -1,9 +1,9 @@
-$OpenBSD: patch-MANIFEST,v 1.1 2017/10/18 15:18:36 bluhm Exp $
+$OpenBSD: patch-MANIFEST,v 1.2 2020/11/02 19:12:41 bluhm Exp $
 
 Index: MANIFEST
 --- MANIFEST.orig
 +++ MANIFEST
-@@ -1,11 +1,6 @@
+@@ -2,11 +2,6 @@
  ARTISTIC-1.0
  Changes
  GPL-1
