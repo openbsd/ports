@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/11/02 15:24:49 bluhm Exp $
 
 COMMENT =	YAML and JSON for perl, optimized C
 
-DISTNAME =	YAML-Syck-1.32
-REVISION =	0
+DISTNAME =	YAML-Syck-1.34
 
 CATEGORIES =	devel
 

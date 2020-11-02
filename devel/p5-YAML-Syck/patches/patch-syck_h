@@ -1,39 +1,11 @@
-$OpenBSD: patch-syck_h,v 1.2 2019/02/14 12:26:57 bluhm Exp $
+$OpenBSD: patch-syck_h,v 1.3 2020/11/02 15:24:49 bluhm Exp $
 
-Perl 5.28.1 no longer defines I_STDLIB and I_STRING in its config.h.
 Zeroing allocated space avoids a perl segfault with malloc_flags J.
 
 Index: syck.h
 --- syck.h.orig
 +++ syck.h
-@@ -1,10 +1,4 @@
- #include "config.h"
--#ifdef I_STDLIB
--#define HAVE_STDLIB_H
--#endif
--#ifdef I_STRING
--#define HAVE_STRING_H
--#endif
- 
- /*
-  * syck.h
-@@ -24,15 +18,8 @@
- #define SYCK_VERSION    "0.61"
- #define YAML_DOMAIN     "yaml.org,2002"
- 
--#ifdef HAVE_STDLIB_H
- # include <stdlib.h>
--#endif
--
--#ifdef HAVE_STRING_H
- # include <string.h>
--#else
--# include <strings.h>
--#endif
- 
- #ifdef HAVE_INTRINSICS_H
- # include <intrinsics.h>
-@@ -76,7 +63,7 @@ extern "C" {
+@@ -64,7 +64,7 @@ extern "C" {
  
  #define ALLOC_CT 8
  #define SYCK_BUFFERSIZE 4096
