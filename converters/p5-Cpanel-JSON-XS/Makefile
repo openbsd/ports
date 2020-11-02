@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2020/10/06 08:11:59 bluhm Exp $
+# $OpenBSD: Makefile,v 1.33 2020/11/02 15:04:41 bluhm Exp $
 
 COMMENT =	cPanel fork of JSON::XS, fast and correct serializing
 
-DISTNAME =	Cpanel-JSON-XS-4.24
+DISTNAME =	Cpanel-JSON-XS-4.25
+CPAN_AUTHOR =	RURBAN
 
 CATEGORIES =	converters
 
@@ -12,8 +13,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
-
-CPAN_AUTHOR =		RURBAN
 
 MODULES =		cpan
 TEST_DEPENDS =		converters/p5-JSON \
