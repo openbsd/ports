@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/02 14:46:27 bluhm Exp $
 
 COMMENT =	convert POD to Markdown
 
-DISTNAME =	Pod-Markdown-3.200
-REVISION =	0
+DISTNAME =	Pod-Markdown-3.300
 
 CATEGORIES =	textproc
 
