@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gradio-searchbar_vala,v 1.1 2020/11/02 18:44:36 landry Exp $
+
+Index: src/gradio-searchbar.vala
+--- src/gradio-searchbar.vala.orig
++++ src/gradio-searchbar.vala
+@@ -224,7 +224,7 @@ namespace Gradio{
+ 			filter_table.insert("reverse", (!App.settings.sort_ascending).to_string());
+ 			filter_table.insert("limit", App.settings.max_search_results.to_string());
+ 
+-			station_provider.get_stations.begin(RadioBrowser.radio_station_search, filter_table);
++			station_provider.get_stations.begin(Util.get_random_server() + RadioBrowser.radio_station_search, filter_table);
+ 
+ 			delayed_changed_id = 0;
+ 			return false;

@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_gradio-settings_vala,v 1.1 2020/11/02 18:44:36 landry Exp $
+
+Index: src/gradio-settings.vala
+--- src/gradio-settings.vala.orig
++++ src/gradio-settings.vala
+@@ -29,7 +29,7 @@ namespace Gradio{
+ 		private bool _resume_playback_on_startup;
+ 		private bool _hide_broken_stations;
+ 		private bool _show_technical_information;
+-		private int _previous_station;
++		private string _previous_station;
+ 		private double _volume_position;
+ 		private int _window_height;
+ 		private int _window_width;
+@@ -50,7 +50,7 @@ namespace Gradio{
+ 			_resume_playback_on_startup = settings.get_boolean("resume-playback-on-startup");
+ 			_hide_broken_stations = settings.get_boolean("hide-broken-stations");
+ 			_show_technical_information = settings.get_boolean("show-technical-information");
+-			_previous_station = settings.get_int("previous-station");
++			_previous_station = settings.get_string("previous-station");
+ 			_volume_position = settings.get_double("volume-position");
+ 			_window_height = settings.get_int("window-height");
+ 			_window_width = settings.get_int("window-width");
+@@ -154,13 +154,13 @@ namespace Gradio{
+ 			}
+ 		}
+ 
+-		public int previous_station{
++		public string previous_station{
+ 			get{
+ 				return _previous_station;
+ 			}
+ 			set{
+ 				_previous_station = value;
+-				settings.set_int ("previous-station", value);
++				settings.set_string ("previous-station", value);
+ 			}
+ 		}
+ 

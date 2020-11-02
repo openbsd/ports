@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_page_gradio-search-page_vala,v 1.1 2020/11/02 18:44:36 landry Exp $
+
+Index: src/page/gradio-search-page.vala
+--- src/page/gradio-search-page.vala.orig
++++ src/page/gradio-search-page.vala
+@@ -77,9 +77,9 @@ namespace Gradio{
+ 			StationProvider recently_clicked_provider = new StationProvider(ref recently_clicked_model);
+ 			StationProvider most_clicks_provider = new StationProvider(ref most_clicks_model);
+ 
+-			most_votes_provider.get_stations.begin(RadioBrowser.most_votes(14), filter_table);
+-			recently_clicked_provider.get_stations.begin(RadioBrowser.recently_clicked(14), filter_table);
+-			most_clicks_provider.get_stations.begin(RadioBrowser.most_clicks(14), filter_table);
++			most_votes_provider.get_stations.begin(Util.get_random_server() + RadioBrowser.most_votes(14), filter_table);
++			recently_clicked_provider.get_stations.begin(Util.get_random_server() + RadioBrowser.recently_clicked(14), filter_table);
++			most_clicks_provider.get_stations.begin(Util.get_random_server() + RadioBrowser.most_clicks(14), filter_table);
+ 
+ 			most_votes_mainbox.set_model(most_votes_model);
+ 			recently_clicked_mainbox.set_model(recently_clicked_model);

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2020/11/01 17:47:59 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2020/11/02 18:44:36 landry Exp $
 
-BROKEN =	radio-browser.info API changed
 COMMENT =	internet radio browser and player
 GH_TAGNAME =	v7.3
 GH_ACCOUNT =	haecker-felix
 GH_PROJECT =	Gradio
 DISTNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/^v//}
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	audio www
 

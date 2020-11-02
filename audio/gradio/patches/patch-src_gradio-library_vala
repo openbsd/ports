@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_gradio-library_vala,v 1.1 2020/11/02 18:44:36 landry Exp $
+
+Index: src/gradio-library.vala
+--- src/gradio-library.vala.orig
++++ src/gradio-library.vala
+@@ -105,7 +105,7 @@ namespace Gradio{
+ 			message("Initialize database...");
+ 
+ 			string query = """
+-				CREATE TABLE "library" ('station_id' INTEGER, 'collection_id' INTEGER);
++				CREATE TABLE "library" ('station_id' TEXT, 'collection_id' INTEGER);
+ 				CREATE TABLE "collections" ('collection_id' INTEGER, 'collection_name' TEXT)
+ 				""";
+ 
+@@ -303,7 +303,7 @@ namespace Gradio{
+ 				case Sqlite.ROW:
+ 					string station_id = stmt.column_text(0);
+ 
+-					RadioStation station = yield Util.get_station_by_id(int.parse(station_id));
++					RadioStation station = yield Util.get_station_by_id(station_id);
+ 					if (station != null) {
+ 						progress_dialog.text = "Exporting \"" + station.title + "\" ...";
+ 						string address = yield station.get_stream_address();
+@@ -359,7 +359,7 @@ namespace Gradio{
+ 					string line;
+ 
+ 					while ((line = dis.read_line (null)) != null) {
+-						RadioStation station = yield Util.get_station_by_id(int.parse(line));
++						RadioStation station = yield Util.get_station_by_id(line);
+ 
+ 						if(station != null){
+ 							add_radio_station(station);
+@@ -438,7 +438,7 @@ namespace Gradio{
+ 				case Sqlite.DONE:
+ 					break;
+ 				case Sqlite.ROW:
+-					RadioStation station = yield Util.get_station_by_id(int.parse(stmt.column_text(0)));
++					RadioStation station = yield Util.get_station_by_id(stmt.column_text(0));
+ 					result.add_item(station);
+ 					break;
+ 				default:

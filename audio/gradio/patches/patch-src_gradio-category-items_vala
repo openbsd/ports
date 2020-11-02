@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_gradio-category-items_vala,v 1.1 2020/11/02 18:44:36 landry Exp $
+
+Index: src/gradio-category-items.vala
+--- src/gradio-category-items.vala.orig
++++ src/gradio-category-items.vala
+@@ -39,7 +39,7 @@ namespace Gradio{
+ 
+ 			try{
+ 				// Languages
+-				data = yield Util.get_string_from_uri(RadioBrowser.radio_station_languages);
++				data = yield Util.get_string_from_uri(Util.get_random_server() + RadioBrowser.radio_station_languages);
+ 				parser.load_from_data (data);
+ 				root = parser.get_root ();
+ 				items = root.get_array ();
+@@ -53,7 +53,7 @@ namespace Gradio{
+ 				}
+ 
+ 				// Countries
+-				data = yield Util.get_string_from_uri(RadioBrowser.radio_station_countries);
++				data = yield Util.get_string_from_uri(Util.get_random_server() + RadioBrowser.radio_station_countries);
+ 				parser.load_from_data (data);
+ 				root = parser.get_root ();
+ 				items = root.get_array ();
+@@ -67,7 +67,7 @@ namespace Gradio{
+ 				}
+ 
+ 				// States
+-				data = yield Util.get_string_from_uri(RadioBrowser.radio_station_states);
++				data = yield Util.get_string_from_uri(Util.get_random_server() + RadioBrowser.radio_station_states);
+ 				parser.load_from_data (data);
+ 				root = parser.get_root ();
+ 				items = root.get_array ();
+@@ -81,7 +81,7 @@ namespace Gradio{
+ 				}
+ 
+ 				// Tags
+-				data = yield Util.get_string_from_uri(RadioBrowser.radio_station_tags);
++				data = yield Util.get_string_from_uri(Util.get_random_server() + RadioBrowser.radio_station_tags);
+ 				parser.load_from_data (data);
+ 				root = parser.get_root ();
+ 				items = root.get_array ();

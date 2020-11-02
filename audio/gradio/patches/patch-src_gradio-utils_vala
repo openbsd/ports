@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_gradio-utils_vala,v 1.1 2020/11/02 18:44:36 landry Exp $
+
+Index: src/gradio-utils.vala
+--- src/gradio-utils.vala.orig
++++ src/gradio-utils.vala
+@@ -40,7 +40,7 @@ namespace Gradio{
+ 		}
+ 
+ 		public static bool check_database_connection(){
+-			var host = "www.radio-browser.info";
++			var host = "all.api.radio-browser.info";
+ 
+ 			try {
+ 				Resolver resolver = Resolver.get_default ();
+@@ -53,6 +53,23 @@ namespace Gradio{
+ 			}
+ 		}
+ 
++		public static string get_random_server(){
++			var host = "radio-browser.info";
++			try {
++				Resolver resolver = Resolver.get_default ();
++				List<SrvTarget> targets = resolver.lookup_service ("api", "tcp", host, null);
++				var tgt = targets.nth_data(0);
++				if (tgt.get_port() == 443) {
++					return "https://" + tgt.get_hostname();
++				} else {
++					return "http://" + tgt.get_hostname();
++				}
++			} catch (Error e) {
++				critical (e.message);
++				return "fr1.api.radio-browser.info";
++			}
++		}
++
+ 		public static void add_stylesheet () {
+ 			var provider = new CssProvider ();
+ 
+@@ -73,11 +90,11 @@ namespace Gradio{
+ 			return false;
+ 		}
+ 
+-		public static async RadioStation get_station_by_id(int id){
++		public static async RadioStation get_station_by_id(string id){
+ 			Json.Parser parser = new Json.Parser ();
+ 			RadioStation new_station = null;
+ 
+-			string data = yield Util.get_string_from_uri(RadioBrowser.radio_stations_by_id + id.to_string());
++			string data = yield Util.get_string_from_uri(Util.get_random_server() + RadioBrowser.radio_stations_by_id + id);
+ 
+ 			if(data != ""){
+ 				try{

@@ -1,0 +1,69 @@
+$OpenBSD: patch-src_gradio-radio-station_vala,v 1.1 2020/11/02 18:44:36 landry Exp $
+
+Index: src/gradio-radio-station.vala
+--- src/gradio-radio-station.vala.orig
++++ src/gradio-radio-station.vala
+@@ -210,21 +210,17 @@ namespace Gradio{
+ 			_title = radio_station_data.get_string_member("name");
+ 			_homepage = radio_station_data.get_string_member("homepage");
+ 			_language = radio_station_data.get_string_member("language");
+-			_id = radio_station_data.get_string_member("id");
++			_id = radio_station_data.get_string_member("stationuuid");
+ 			_icon_address = radio_station_data.get_string_member("favicon");
+-			_country = radio_station_data.get_string_member("country");
++			_country = radio_station_data.get_string_member("countrycode");
+ 			_tags = radio_station_data.get_string_member("tags");
+ 			_state = radio_station_data.get_string_member("state");
+-			_votes = radio_station_data.get_string_member("votes");
++			_votes = radio_station_data.get_int_member("votes").to_string();
+ 			_codec = radio_station_data.get_string_member("codec");
+-			_bitrate = radio_station_data.get_string_member("bitrate");
+-			_clickcount = radio_station_data.get_string_member("clickcount");
++			_bitrate = radio_station_data.get_int_member("bitrate").to_string();
++			_clickcount = radio_station_data.get_int_member("clickcount").to_string();
+ 			_clicktimestamp = radio_station_data.get_string_member("clicktimestamp");
+-
+-			if(radio_station_data.get_string_member("lastcheckok") == "1")
+-				_is_broken = false;
+-			else
+-				_is_broken = true;
++			_is_broken = ! radio_station_data.get_boolean_member("lastcheckok");
+ 		}
+ 
+ 		// Returns the playable url for the station
+@@ -234,7 +230,7 @@ namespace Gradio{
+ 
+ 			string data = "";
+ 
+-			Util.get_string_from_uri.begin(RadioBrowser.radio_station_stream_url + _id, (obj, res) => {
++			Util.get_string_from_uri.begin(Util.get_random_server() + RadioBrowser.radio_station_stream_url + _id, (obj, res) => {
+ 				string result = Util.get_string_from_uri.end(res);
+ 
+ 				if(result != null)
+@@ -251,7 +247,7 @@ namespace Gradio{
+ 				var root = parser.get_root ();
+ 				if(root != null){
+ 					var radio_station_data = root.get_object ();
+-					if(radio_station_data.get_string_member("ok") ==  "true"){
++					if(radio_station_data.get_boolean_member("ok")){
+ 						url = radio_station_data.get_string_member("url");
+ 					}
+ 				}
+@@ -268,7 +264,7 @@ namespace Gradio{
+ 			Json.Parser parser = new Json.Parser ();
+ 			bool vote = false;
+ 
+-			Util.get_string_from_uri.begin(RadioBrowser.radio_station_vote + id, (obj, res) => {
++			Util.get_string_from_uri.begin(Util.get_random_server() + RadioBrowser.radio_station_vote + id, (obj, res) => {
+ 				string data = Util.get_string_from_uri.end(res);
+ 
+ 				try{
+@@ -277,7 +273,7 @@ namespace Gradio{
+ 
+ 					if(root != null){
+ 						var radio_station_data = root.get_object ();
+-						if(radio_station_data.get_string_member("ok") ==  "true"){
++						if(radio_station_data.get_boolean_member("ok")){
+ 							int v = int.parse(votes);
+ 							v++;
+ 							_votes=v.to_string();

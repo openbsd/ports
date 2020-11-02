@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gradio-app_vala,v 1.1 2020/11/02 18:44:36 landry Exp $
+
+Index: src/gradio-app.vala
+--- src/gradio-app.vala.orig
++++ src/gradio-app.vala
+@@ -43,7 +43,7 @@ namespace Gradio {
+ 				ensure_window ();
+ 				window.present_with_time (timestamp);
+ 
+-				Util.get_station_by_id.begin(int.parse(station_id), (obj,res) => {
++				Util.get_station_by_id.begin(station_id, (obj,res) => {
+ 					RadioStation station = Util.get_station_by_id.end(res);
+ 					player.station = station;
+ 				});
