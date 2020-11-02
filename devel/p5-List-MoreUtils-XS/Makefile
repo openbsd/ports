@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/02 17:15:16 bluhm Exp $
 
 COMMENT =	provide compiled List::MoreUtils functions
 
-DISTNAME =	List-MoreUtils-XS-0.428
-REVISION =	0
+DISTNAME =	List-MoreUtils-XS-0.430
 
 CATEGORIES =	devel
 
