@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/06/19 18:39:01 martin Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/11/02 19:46:45 martin Exp $
 baikal/
 baikal/CHANGELOG.md
 baikal/Core/
@@ -27,9 +27,7 @@ baikal/Core/Frameworks/Baikal/Model/Calendar/Event.php
 baikal/Core/Frameworks/Baikal/Model/Config/
 baikal/Core/Frameworks/Baikal/Model/Config.php
 baikal/Core/Frameworks/Baikal/Model/Config/Database.php
-baikal/Core/Frameworks/Baikal/Model/Config/Distrib.php
 baikal/Core/Frameworks/Baikal/Model/Config/Standard.php
-baikal/Core/Frameworks/Baikal/Model/Config/System.php
 baikal/Core/Frameworks/Baikal/Model/Principal.php
 baikal/Core/Frameworks/Baikal/Model/User.php
 baikal/Core/Frameworks/Baikal/Resources/
@@ -65,8 +63,8 @@ baikal/Core/Frameworks/BaikalAdmin/Controller/Navigation/Topbar.php
 baikal/Core/Frameworks/BaikalAdmin/Controller/Navigation/Topbar/Anonymous.php
 baikal/Core/Frameworks/BaikalAdmin/Controller/Navigation/Topbar/Install.php
 baikal/Core/Frameworks/BaikalAdmin/Controller/Settings/
+baikal/Core/Frameworks/BaikalAdmin/Controller/Settings/Database.php
 baikal/Core/Frameworks/BaikalAdmin/Controller/Settings/Standard.php
-baikal/Core/Frameworks/BaikalAdmin/Controller/Settings/System.php
 baikal/Core/Frameworks/BaikalAdmin/Controller/User/
 baikal/Core/Frameworks/BaikalAdmin/Controller/User/AddressBooks.php
 baikal/Core/Frameworks/BaikalAdmin/Controller/User/Calendars.php
@@ -105,8 +103,8 @@ baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/Page/baikal-text-20.png
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/Page/index.html
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/Page/style.css
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/Settings/
+baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/Settings/Database.html
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/Settings/Standard.html
-baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/Settings/System.html
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/User/
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/User/AddressBooks.html
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/User/Calendars.html
@@ -116,8 +114,8 @@ baikal/Core/Frameworks/BaikalAdmin/Route/
 baikal/Core/Frameworks/BaikalAdmin/Route/Dashboard.php
 baikal/Core/Frameworks/BaikalAdmin/Route/Logout.php
 baikal/Core/Frameworks/BaikalAdmin/Route/Settings/
+baikal/Core/Frameworks/BaikalAdmin/Route/Settings/Database.php
 baikal/Core/Frameworks/BaikalAdmin/Route/Settings/Standard.php
-baikal/Core/Frameworks/BaikalAdmin/Route/Settings/System.php
 baikal/Core/Frameworks/BaikalAdmin/Route/User/
 baikal/Core/Frameworks/BaikalAdmin/Route/User/AddressBooks.php
 baikal/Core/Frameworks/BaikalAdmin/Route/User/Calendars.php
@@ -135,8 +133,8 @@ baikal/Core/Frameworks/BaikalAdmin/View/Navigation/Topbar.php
 baikal/Core/Frameworks/BaikalAdmin/View/Navigation/Topbar/Anonymous.php
 baikal/Core/Frameworks/BaikalAdmin/View/Navigation/Topbar/Install.php
 baikal/Core/Frameworks/BaikalAdmin/View/Settings/
+baikal/Core/Frameworks/BaikalAdmin/View/Settings/Database.php
 baikal/Core/Frameworks/BaikalAdmin/View/Settings/Standard.php
-baikal/Core/Frameworks/BaikalAdmin/View/Settings/System.php
 baikal/Core/Frameworks/BaikalAdmin/View/User/
 baikal/Core/Frameworks/BaikalAdmin/View/User/AddressBooks.php
 baikal/Core/Frameworks/BaikalAdmin/View/User/Calendars.php
@@ -274,8 +272,8 @@ baikal/Core/Resources/Web/BaikalAdmin/Templates/Page/baikal-text-20.png
 baikal/Core/Resources/Web/BaikalAdmin/Templates/Page/index.html
 baikal/Core/Resources/Web/BaikalAdmin/Templates/Page/style.css
 baikal/Core/Resources/Web/BaikalAdmin/Templates/Settings/
+baikal/Core/Resources/Web/BaikalAdmin/Templates/Settings/Database.html
 baikal/Core/Resources/Web/BaikalAdmin/Templates/Settings/Standard.html
-baikal/Core/Resources/Web/BaikalAdmin/Templates/Settings/System.html
 baikal/Core/Resources/Web/BaikalAdmin/Templates/User/
 baikal/Core/Resources/Web/BaikalAdmin/Templates/User/AddressBooks.html
 baikal/Core/Resources/Web/BaikalAdmin/Templates/User/Calendars.html
@@ -301,7 +299,6 @@ baikal/README.md
 baikal/Specific/
 baikal/Specific/db/
 baikal/Specific/db/.empty
-@owner www
 baikal/config/
 baikal/config/.empty
 baikal/html/
@@ -356,8 +353,8 @@ baikal/html/res/core/BaikalAdmin/Templates/Page/baikal-text-20.png
 baikal/html/res/core/BaikalAdmin/Templates/Page/index.html
 baikal/html/res/core/BaikalAdmin/Templates/Page/style.css
 baikal/html/res/core/BaikalAdmin/Templates/Settings/
+baikal/html/res/core/BaikalAdmin/Templates/Settings/Database.html
 baikal/html/res/core/BaikalAdmin/Templates/Settings/Standard.html
-baikal/html/res/core/BaikalAdmin/Templates/Settings/System.html
 baikal/html/res/core/BaikalAdmin/Templates/User/
 baikal/html/res/core/BaikalAdmin/Templates/User/AddressBooks.html
 baikal/html/res/core/BaikalAdmin/Templates/User/Calendars.html
@@ -387,6 +384,7 @@ baikal/vendor/bin/sabredav
 baikal/vendor/bin/vobject
 baikal/vendor/composer/
 baikal/vendor/composer/ClassLoader.php
+baikal/vendor/composer/InstalledVersions.php
 baikal/vendor/composer/LICENSE
 baikal/vendor/composer/autoload_classmap.php
 baikal/vendor/composer/autoload_files.php
@@ -395,6 +393,8 @@ baikal/vendor/composer/autoload_psr4.php
 baikal/vendor/composer/autoload_real.php
 baikal/vendor/composer/autoload_static.php
 baikal/vendor/composer/installed.json
+baikal/vendor/composer/installed.php
+baikal/vendor/composer/platform_check.php
 baikal/vendor/psr/
 baikal/vendor/psr/log/
 baikal/vendor/psr/log/LICENSE
@@ -1120,8 +1120,6 @@ baikal/vendor/sabre/http/tests/HTTP/ResponseTest.php
 baikal/vendor/sabre/http/tests/HTTP/SapiTest.php
 baikal/vendor/sabre/http/tests/HTTP/URLUtilTest.php
 baikal/vendor/sabre/http/tests/bootstrap.php
-baikal/vendor/sabre/http/tests/phpcs/
-baikal/vendor/sabre/http/tests/phpcs/ruleset.xml
 baikal/vendor/sabre/http/tests/phpunit.xml
 baikal/vendor/sabre/http/tests/www/
 baikal/vendor/sabre/http/tests/www/bar.php

@@ -1,11 +1,11 @@
-$OpenBSD: patch-Core_Frameworks_Baikal_Model_Config_Standard_php,v 1.1 2020/06/19 18:39:01 martin Exp $
+$OpenBSD: patch-Core_Frameworks_Baikal_Model_Config_Standard_php,v 1.2 2020/11/02 19:46:44 martin Exp $
 
 Index: Core/Frameworks/Baikal/Model/Config/Standard.php
---- Core/Frameworks/Baikal/Model/Config/Standard.php
+--- Core/Frameworks/Baikal/Model/Config/Standard.php.orig
 +++ Core/Frameworks/Baikal/Model/Config/Standard.php
-@@ -66,7 +66,7 @@ class Standard extends \Baikal\Model\Config {
-         "dav_auth_type"      => "Digest",
-         "admin_passwordhash" => "",
+@@ -41,7 +41,7 @@ class Standard extends \Baikal\Model\Config {
+         // While not editable as will change admin & any existing user passwords,
+         // could be set to different value when migrating from legacy config
          "auth_realm"         => "BaikalDAV",
 -        "base_uri"           => ""
 +        "base_uri"           => "/baikal/"
