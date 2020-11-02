@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.31 2020/01/21 10:51:50 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.32 2020/11/02 09:23:53 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -37,7 +37,7 @@ MODXFCE_RUN_DEPENDS+=  x11/gtk+3,-guic
 HOMEPAGE?=	https://goodies.xfce.org/projects/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin
 
 MASTER_SITES?=	https://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/${XFCE_BRANCH}/
-MASTER_SITES_GIT?=	https://git.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/snapshot/
+MASTER_SITES_GIT?=	https://gitlab.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/-/archive/${XFCE_COMMIT}/
 DISTNAME?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
 DISTNAME_GIT?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_COMMIT}
 PKGNAME?=	xfce4-${XFCE_PLUGIN}-${XFCE_VERSION}
@@ -48,8 +48,9 @@ MODXFCE_PURGE_LA?=	lib/xfce4/panel/plugins lib/xfce4/panel-plugins
 .elif defined(XFCE_GOODIE)
 HOMEPAGE?=	https://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MASTER_SITES?=	https://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
-MASTER_SITES_GIT?=	https://git.xfce.org/apps/${XFCE_GOODIE:L}/snapshot/
+MASTER_SITES_GIT?=	https://gitlab.xfce.org/apps/${XFCE_GOODIE:L}/-/archive/${XFCE_COMMIT}/
 DISTNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
 DISTNAME_GIT?=	${XFCE_GOODIE}-${XFCE_COMMIT}
 PKGNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
@@ -70,7 +71,7 @@ HOMEPAGE?=	https://www.xfce.org/projects/${XFCE_PROJECT}
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MASTER_SITES?=	https://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
-MASTER_SITES_GIT?=	https://git.xfce.org/xfce/${XFCE_PROJECT:L}/snapshot/
+MASTER_SITES_GIT?=	https://gitlab.xfce.org/xfce/${XFCE_PROJECT:L}/-/archive/${XFCE_COMMIT}/
 DISTNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
 DISTNAME_GIT?=	${XFCE_PROJECT}-${XFCE_COMMIT}
 PKGNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
@@ -80,7 +81,6 @@ PORTROACH+=	limitw:1,even
 .if defined(XFCE_COMMIT)
 DISTNAME =	${DISTNAME_GIT}
 MASTER_SITES =	${MASTER_SITES_GIT}
-EXTRACT_SUFX =	.tar.gz
 CONFIGURE_ARGS +=	--enable-maintainer-mode --enable-debug
 AUTOMAKE_VERSION =	1.14
 AUTOCONF_VERSION =	2.69
