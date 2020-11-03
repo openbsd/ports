@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_common_param_traits_macros_h,v 1.15 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_public_common_common_param_traits_macros_h,v 1.16 2020/11/03 13:21:54 robert Exp $
 
 Index: content/public/common/common_param_traits_macros.h
 --- content/public/common/common_param_traits_macros.h.orig
@@ -10,5 +10,5 @@ Index: content/public/common/common_param_traits_macros.h
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    IPC_STRUCT_TRAITS_MEMBER(system_font_family_name)
+   IPC_STRUCT_TRAITS_MEMBER(selection_clipboard_buffer_available)
  #endif
- #if defined(OS_WIN)
