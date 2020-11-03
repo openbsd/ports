@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/03 20:52:45 rsadowski Exp $
 
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
 CATEGORIES =	archivers
+REVISION =	0
 
 SHARED_LIBS +=  kerfuffle                 3.0 # 17.08
 
@@ -50,7 +51,6 @@ LIB_DEPENDS =	archivers/libarchive \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
 		devel/kf5/kitemviews \
