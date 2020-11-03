@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/03 20:13:08 rsadowski Exp $
 
 COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  sieveeditor       1.0 # 5.13.2
 
@@ -15,6 +16,7 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Widgets Qt5Xml c m
 
 MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
