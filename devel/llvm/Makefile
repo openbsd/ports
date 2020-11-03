@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2020/09/04 09:55:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.264 2020/11/03 21:36:30 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -109,10 +109,7 @@ CXXFLAGS +=	-fno-ret-protector
 CXXFLAGS +=	-mno-retpoline
 .endif
 
-.if ${MACHINE_ARCH} == "arm"
-CFLAGS +=		-mlong-calls
-CXXFLAGS +=		-mlong-calls
-.elif ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-Wl,-relax"
 CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,-relax"
 .endif
