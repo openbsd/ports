@@ -1,4 +1,4 @@
-# $OpenBSD:
+# $OpenBSD: Makefile,v 1.13 2020/11/03 20:06:44 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
