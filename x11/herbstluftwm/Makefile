@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/03 19:46:04 bket Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/03 19:57:02 bket Exp $
 
 COMMENT =		manual tiling window manager
 DISTNAME =		herbstluftwm-0.9.0
+REVISION =		0
 CATEGORIES =		x11
 
 HOMEPAGE =		https://herbstluftwm.org/
