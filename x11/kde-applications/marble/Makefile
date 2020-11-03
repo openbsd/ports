@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/09/07 14:49:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/11/03 16:12:41 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
@@ -29,8 +29,6 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
 		devel/protobuf \

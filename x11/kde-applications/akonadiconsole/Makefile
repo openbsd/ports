@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:31 rsadowski Exp $
 
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
@@ -23,8 +23,6 @@ WANTLIB += Qt5Xml c gpgmepp m qgpgme xapian
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost \

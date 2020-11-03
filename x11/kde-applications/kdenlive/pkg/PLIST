@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/11/03 16:12:35 rsadowski Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
@@ -121,16 +121,6 @@ share/doc/Kdenlive/
 share/doc/Kdenlive/AUTHORS
 share/doc/Kdenlive/COPYING
 share/doc/Kdenlive/README.md
-share/examples/kdenlive/
-share/examples/kdenlive/xdg/
-share/examples/kdenlive/xdg/kdenlive_keyboardschemes.knsrc
-@sample ${SYSCONFDIR}/xdg/kdenlive_keyboardschemes.knsrc
-share/examples/kdenlive/xdg/kdenlive_renderprofiles.knsrc
-@sample ${SYSCONFDIR}/xdg/kdenlive_renderprofiles.knsrc
-share/examples/kdenlive/xdg/kdenlive_titles.knsrc
-@sample ${SYSCONFDIR}/xdg/kdenlive_titles.knsrc
-share/examples/kdenlive/xdg/kdenlive_wipes.knsrc
-@sample ${SYSCONFDIR}/xdg/kdenlive_wipes.knsrc
 share/icons/hicolor/128x128/actions/kdenlive-select-all.png
 share/icons/hicolor/128x128/apps/kdenlive.png
 share/icons/hicolor/128x128/mimetypes/application-x-kdenlivetitle.png
@@ -346,6 +336,7 @@ share/kdenlive/effects/obscure.xml
 share/kdenlive/effects/oldfilm.xml
 share/kdenlive/effects/pan_zoom.xml
 share/kdenlive/effects/qtblend.xml
+share/kdenlive/effects/qtcrop.xml
 share/kdenlive/effects/region.xml
 share/kdenlive/effects/rotation.xml
 share/kdenlive/effects/rotation_keyframable.xml
@@ -467,6 +458,11 @@ share/kdenlive/transitions/region.xml
 share/kdenlive/transitions/slide.xml
 share/kdenlive/transitions/wipe.xml
 share/knotifications5/kdenlive.notifyrc
+share/knsrcfiles/
+share/knsrcfiles/kdenlive_keyboardschemes.knsrc
+share/knsrcfiles/kdenlive_renderprofiles.knsrc
+share/knsrcfiles/kdenlive_titles.knsrc
+share/knsrcfiles/kdenlive_wipes.knsrc
 share/kservices5/mltpreview.desktop
 share/kxmlgui5/
 share/kxmlgui5/kdenlive/

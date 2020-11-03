@@ -21,8 +21,6 @@ WANTLIB += Qt5Network Qt5Qml Qt5Quick Qt5QuickControls2 Qt5QuickWidgets
 WANTLIB += Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
 WANTLIB += c m mlt mlt++ rttr_core
 
-MODULES +=	x11/kde-applications
-
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

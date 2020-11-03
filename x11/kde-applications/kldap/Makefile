@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/03 16:12:36 rsadowski Exp $
 
 COMMENT =	LDAP access API for KDE
 DISTNAME =	kldap-${VERSION}
@@ -15,8 +15,6 @@ WANTLIB += lber ldap m sasl2
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS +=	databases/openldap \
 		devel/kf5/kcompletion \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:34 rsadowski Exp $
 
 COMMENT =	library for the handling of calendar data.
 DISTNAME =	kcalutils-${VERSION}
@@ -12,8 +12,6 @@ WANTLIB += KF5I18n KF5IconThemes KF5IdentityManagement KF5PimTextEdit
 WANTLIB += KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS +=	devel/kf5/kcodecs \
 		devel/kf5/kcalendarcore \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/09/07 14:49:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/11/03 16:12:42 rsadowski Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
@@ -24,8 +24,7 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications \
-		lang/python
+MODULES +=	lang/python
 
 RUN_DEPENDS =	math/graphviz
 

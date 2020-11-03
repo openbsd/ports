@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:39 rsadowski Exp $
 
 COMMENT =	sudoku game
 DISTNAME =	ksudoku-${VERSION}
@@ -20,8 +20,6 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
 		devel/kf5/kiconthemes

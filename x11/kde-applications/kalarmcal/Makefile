@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:33 rsadowski Exp $
 
 COMMENT =	KAlarm client library
 DISTNAME =	kalarmcal-${VERSION}
@@ -12,8 +12,6 @@ WANTLIB += KF5I18n KF5IdentityManagement KF5ItemModels KF5PimTextEdit
 WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost
 

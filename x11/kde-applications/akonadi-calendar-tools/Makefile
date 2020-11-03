@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:31 rsadowski Exp $
 
 COMMENT =	PIM Akonadi calendar tools
 DISTNAME =	akonadi-calendar-tools-${VERSION}
@@ -17,8 +17,6 @@ MODKDE5_DESKTOP_FILE = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:37 rsadowski Exp $
 
 COMMENT =	KMail account wizard
 DISTNAME =	kmail-account-wizard-${VERSION}
@@ -19,8 +19,6 @@ WANTLIB += Qt5Script Qt5Widgets Qt5Xml c gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost \
 		devel/kf5/knotifyconfig \

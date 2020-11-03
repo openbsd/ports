@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:41 rsadowski Exp $
 
 COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
@@ -18,8 +18,6 @@ MODKDE5_TRANSLATIONS = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
-
-MODULES =	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \

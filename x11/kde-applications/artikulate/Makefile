@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:31 rsadowski Exp $
 
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
@@ -15,8 +15,7 @@ WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Qml Qt5Quick Qt5Sql
 WANTLIB += Qt5Widgets Qt5Xml Qt5XmlPatterns c m
 
-MODULES +=	x11/kde-applications \
-		lang/python
+MODULES +=	lang/python
 
 MODPY_RUNDEP =	No
 

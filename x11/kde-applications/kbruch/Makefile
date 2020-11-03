@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/07 14:49:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:34 rsadowski Exp $
 
 COMMENT =	KDE calculating fractions practicing app
 DISTNAME =	kbruch-${VERSION}
@@ -17,8 +17,6 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODKDE5_DESKTOP_FILE = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/07 14:49:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/03 16:12:36 rsadowski Exp $
 
 COMMENT =	KDE help center
 DISTNAME =	khelpcenter-${VERSION}
@@ -18,8 +18,6 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/kf5/kinit
 RUN_DEPENDS =	devel/kf5/kinit

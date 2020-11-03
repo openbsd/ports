@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/09/07 14:49:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2020/11/03 16:12:32 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
@@ -22,8 +22,7 @@ WANTLIB += qalculate spectre ${MODPY_WANTLIB}
 
 MODULES +=	fortran \
 		lang/lua \
-		lang/python \
-		x11/kde-applications
+		lang/python
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 

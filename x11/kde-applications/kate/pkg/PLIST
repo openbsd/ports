@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:49:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:33 rsadowski Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/kate
 @bin bin/kate
@@ -1301,7 +1301,9 @@ share/locale/ro/LC_MESSAGES/katesnippetsplugin.mo
 share/locale/ro/LC_MESSAGES/katesql.mo
 share/locale/ro/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ro/LC_MESSAGES/katetextfilter.mo
+share/locale/ro/LC_MESSAGES/katexmlcheck.mo
 share/locale/ro/LC_MESSAGES/katexmltools.mo
+share/locale/ro/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ro/LC_MESSAGES/kwrite.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/ro/LC_MESSAGES/tabswitcherplugin.mo

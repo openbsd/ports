@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/23 18:01:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:39 rsadowski Exp $
 
 COMMENT =	Tron-like game
 DISTNAME =	ksnakeduel-${VERSION}
@@ -17,8 +17,6 @@ MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 RUN_DEPENDS =	x11/qt5/qtquickcontrols

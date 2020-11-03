@@ -1,4 +1,4 @@
-t $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:28 rsadowski Exp $
+t $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:41 rsadowski Exp $
 
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
@@ -31,8 +31,6 @@ WANTLIB += gpgmepp m qca-qt5 qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost \
 		devel/libinotify

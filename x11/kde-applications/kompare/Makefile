@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:38 rsadowski Exp $
 
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${VERSION}
@@ -21,8 +21,6 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODKDE5_DESKTOP_FILE = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/kconfig \

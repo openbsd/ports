@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2020/09/23 06:12:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/11/03 16:12:32 rsadowski Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
-REVISION =	0
 
 SHARED_LIBS +=  gwenviewlib               55.0 # 4.97
 
@@ -18,8 +17,6 @@ WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Svg
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c cfitsio exiv2
 WANTLIB += jpeg lcms2 m phonon4qt5 png tiff z
-
-MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

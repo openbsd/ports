@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:40 rsadowski Exp $
 
 COMMENT =	general purpose flash card program for KDE
 DISTNAME =	kwordquiz-${VERSION}
@@ -20,8 +20,6 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \

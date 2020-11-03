@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/03 16:12:34 rsadowski Exp $
 @pkgpath x11/kde4/dev-utils
 @bin bin/kpartloader
 @bin bin/kuiviewer
@@ -84,6 +84,7 @@ share/locale/pt/LC_MESSAGES/kpartloader.mo
 share/locale/pt/LC_MESSAGES/kuiviewer.mo
 share/locale/pt_BR/LC_MESSAGES/kpartloader.mo
 share/locale/pt_BR/LC_MESSAGES/kuiviewer.mo
+share/locale/ro/LC_MESSAGES/kpartloader.mo
 share/locale/ro/LC_MESSAGES/kuiviewer.mo
 share/locale/ru/LC_MESSAGES/kpartloader.mo
 share/locale/ru/LC_MESSAGES/kuiviewer.mo

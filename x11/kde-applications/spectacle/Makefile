@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/09/12 17:12:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2020/11/03 16:12:42 rsadowski Exp $
 
 COMMENT =	KDE screen capture and screenshot program
 VERSION =	19.04.3
@@ -25,8 +25,6 @@ MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 RUN_DEPENDS =	x11/qt5/qtquickcontrols

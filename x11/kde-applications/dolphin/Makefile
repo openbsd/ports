@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/09/07 14:49:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2020/11/03 16:12:32 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
@@ -24,8 +24,6 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	print/poppler,-qt5 \
 		devel/kf5/kfilemetadata \

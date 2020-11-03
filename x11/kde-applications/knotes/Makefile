@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:37 rsadowski Exp $
 
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
@@ -33,8 +33,6 @@ MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost
 

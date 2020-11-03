@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:38 rsadowski Exp $
 
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
@@ -23,8 +23,6 @@ MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost
 

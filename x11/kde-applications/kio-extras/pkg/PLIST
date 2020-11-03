@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/03 16:12:36 rsadowski Exp $
 include/KF5/kio_archivebase.h
 include/KF5/libkioarchive_export.h
 lib/cmake/KioArchive/
@@ -802,6 +802,7 @@ share/locale/el/LC_MESSAGES/kio5_fish.mo
 share/locale/el/LC_MESSAGES/kio5_info.mo
 share/locale/el/LC_MESSAGES/kio5_man.mo
 share/locale/el/LC_MESSAGES/kio5_mtp.mo
+share/locale/el/LC_MESSAGES/kio5_network.mo
 share/locale/el/LC_MESSAGES/kio5_nfs.mo
 share/locale/el/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/el/LC_MESSAGES/kio5_sftp.mo

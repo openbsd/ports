@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/07 14:49:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:31 rsadowski Exp $
 
 COMMENT =	memory enhancement game
 DISTNAME =	blinken-${VERSION}
@@ -11,8 +11,6 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Svg Qt5Widgets
 WANTLIB += Qt5Xml c m phonon4qt5 phonon4qt5experimental
-
-MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

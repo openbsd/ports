@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:40 rsadowski Exp $
 
 COMMENT =	KDE-based library for accessing various Google services
 DISTNAME =	libkgapi-${VERSION}
@@ -22,8 +22,6 @@ WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

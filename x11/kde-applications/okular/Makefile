@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2020/09/22 11:27:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2020/11/03 16:12:41 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
-REVISION =	0
 
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=  Okular5Core               2.0 # 9.0
+SHARED_LIBS +=  Okular5Core               2.1 # 9.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -28,8 +27,6 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS = net/libvncserver \
 		print/libspectre

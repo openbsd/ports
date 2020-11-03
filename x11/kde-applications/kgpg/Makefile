@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:36 rsadowski Exp $
 
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
@@ -21,8 +21,6 @@ MODKDE5_ICON_CACHE = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost \
 		security/gpgme,-qt

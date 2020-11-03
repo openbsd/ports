@@ -15,8 +15,6 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications
-
 BUILD_DEPENDS =	devel/kf5/kinit
 RUN_DEPENDS =	devel/kf5/kinit
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/09/11 11:23:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/11/03 16:12:38 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdebase-*
@@ -313,7 +313,6 @@ share/doc/HTML/et/kcontrol5/khtml-java-js/index.docbook
 share/doc/HTML/et/kcontrol5/performance/
 share/doc/HTML/et/kcontrol5/performance/index.cache.bz2
 share/doc/HTML/et/kcontrol5/performance/index.docbook
-share/doc/HTML/fr/kcontrol5/
 share/doc/HTML/fr/kcontrol5/history/
 share/doc/HTML/fr/kcontrol5/history/index.cache.bz2
 share/doc/HTML/fr/kcontrol5/history/index.docbook

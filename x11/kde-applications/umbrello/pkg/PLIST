@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/09/11 11:23:10 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/11/03 16:12:42 rsadowski Exp $
 @pkgpath x11/kde4/umbrello
 @bin bin/po2xmi5
 @bin bin/umbrello5
@@ -338,6 +338,7 @@ share/locale/pt_BR/LC_MESSAGES/umbrello.mo
 share/locale/pt_BR/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/pt_BR/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/ro/LC_MESSAGES/umbrello.mo
+share/locale/ro/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/ro/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/ru/LC_MESSAGES/umbrello.mo
 share/locale/ru/LC_MESSAGES/umbrello_kdevphp.mo

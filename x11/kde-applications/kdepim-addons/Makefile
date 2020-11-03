@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:35 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
@@ -45,8 +45,6 @@ MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
 
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost \

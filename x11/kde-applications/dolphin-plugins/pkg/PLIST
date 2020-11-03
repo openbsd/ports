@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:32 rsadowski Exp $
 @so lib/qt5/plugins/fileviewbazaarplugin.so
 @so lib/qt5/plugins/fileviewdropboxplugin.so
 @so lib/qt5/plugins/fileviewgitplugin.so
@@ -41,6 +41,7 @@ share/locale/de/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/de/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/de/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/de/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/de/LC_MESSAGES/mountisoaction.mo
 share/locale/el/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/el/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/el/LC_MESSAGES/fileviewhgplugin.mo
@@ -152,6 +153,7 @@ share/locale/pt_BR/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/pt_BR/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/pt_BR/LC_MESSAGES/mountisoaction.mo
 share/locale/ro/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/ro/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/ro/LC_MESSAGES/mountisoaction.mo
 share/locale/ru/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/ru/LC_MESSAGES/fileviewgitplugin.mo

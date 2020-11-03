@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:32 rsadowski Exp $
 @pkgpath x11/kde4/dragon
 @bin bin/dragon
 lib/qt5/plugins/kf5/parts/
@@ -30,6 +30,10 @@ share/doc/HTML/fr/dragonplayer/index.docbook
 share/doc/HTML/gl/dragonplayer/
 share/doc/HTML/gl/dragonplayer/index.cache.bz2
 share/doc/HTML/gl/dragonplayer/index.docbook
+share/doc/HTML/id/
+share/doc/HTML/id/dragonplayer/
+share/doc/HTML/id/dragonplayer/index.cache.bz2
+share/doc/HTML/id/dragonplayer/index.docbook
 share/doc/HTML/it/dragonplayer/
 share/doc/HTML/it/dragonplayer/index.cache.bz2
 share/doc/HTML/it/dragonplayer/index.docbook

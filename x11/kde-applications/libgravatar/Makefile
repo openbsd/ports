@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:40 rsadowski Exp $
 
 COMMENT =	libraries provides gravatar support
 DISTNAME =	libgravatar-${VERSION}
@@ -13,8 +13,6 @@ WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

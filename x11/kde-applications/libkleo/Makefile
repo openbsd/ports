@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/03 16:12:40 rsadowski Exp $
 
 COMMENT =	certificate manager for KDE
 DISTNAME =	libkleo-${VERSION}
@@ -14,8 +14,6 @@ WANTLIB += m qgpgme
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:37 rsadowski Exp $
 
 COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
@@ -16,8 +16,6 @@ WANTLIB += KPimGAPICore KPimSMTP Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/kf5/sonnet \
 		devel/kf5/solid \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:41 rsadowski Exp $
 
 COMMENT =	KDE software for music education
 DISTNAME =	minuet-${VERSION}
@@ -16,8 +16,6 @@ MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 RUN_DEPENDS =	x11/qt5/qtquickcontrols

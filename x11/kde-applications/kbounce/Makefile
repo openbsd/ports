@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:33 rsadowski Exp $
 
 COMMENT =	ball bouncing game
 DISTNAME =	kbounce-${VERSION}
@@ -19,8 +19,6 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 RUN_DEPENDS =	x11/qt5/qtquickcontrols

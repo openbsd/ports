@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:40 rsadowski Exp $
 
 COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${VERSION}
@@ -15,8 +15,6 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/ktextwidgets \

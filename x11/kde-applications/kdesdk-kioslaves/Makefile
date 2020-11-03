@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:35 rsadowski Exp $
 
 COMMENT =	development-related KIO modules
 DISTNAME =	kdesdk-kioslaves-${VERSION}
@@ -13,8 +13,7 @@ WANTLIB += Qt5Network m
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications \
-		perl
+MODULES +=	perl
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \

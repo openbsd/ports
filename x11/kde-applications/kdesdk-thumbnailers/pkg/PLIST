@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/03 16:12:35 rsadowski Exp $
 @pkgpath x11/kde4/sdk-thumbnailers
 @so lib/qt5/plugins/pothumbnail.so
 share/config.kcfg/
@@ -34,6 +34,7 @@ share/locale/pa/LC_MESSAGES/pothumbnail.mo
 share/locale/pl/LC_MESSAGES/pothumbnail.mo
 share/locale/pt/LC_MESSAGES/pothumbnail.mo
 share/locale/pt_BR/LC_MESSAGES/pothumbnail.mo
+share/locale/ro/LC_MESSAGES/pothumbnail.mo
 share/locale/ru/LC_MESSAGES/pothumbnail.mo
 share/locale/sk/LC_MESSAGES/pothumbnail.mo
 share/locale/sl/LC_MESSAGES/pothumbnail.mo

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2018/11/08 06:59:26 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2020/11/03 16:12:40 rsadowski Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -19,6 +19,10 @@ if (HAVE_ALSA)
+@@ -21,6 +21,10 @@ if (HAVE_ALSA)
      include_directories(${ALSA_INCLUDE_DIRS})
  endif ()
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/03 16:12:37 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
@@ -14,8 +14,6 @@ WANTLIB += KF5GlobalAccel KF5I18n KF5Notifications KF5Package
 WANTLIB += KF5Plasma KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
 WANTLIB += c canberra m pulse pulse-mainloop-glib
-
-MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

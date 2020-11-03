@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:36 rsadowski Exp $
 
 COMMENT =	KDE itinerary data model and itinerary extraction library
 DISTNAME =	kitinerary-${VERSION}
@@ -11,8 +11,6 @@ WANTLIB += KF5I18n KF5Mime KPimPkPass Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Qml c crypto m poppler xml2 z
 
 MODKDE5_TRANSLATIONS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	graphics/zxing \
 		textproc/libxml

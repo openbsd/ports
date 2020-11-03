@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:39 rsadowski Exp $
 
 COMMENT =	graphical timer based task execution for KDE
 DISTNAME =	ktimer-${VERSION}
@@ -19,8 +19,6 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/kf5/kitemviews \
 		devel/kf5/kxmlgui \

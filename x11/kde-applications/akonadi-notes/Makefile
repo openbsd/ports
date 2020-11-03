@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:31 rsadowski Exp $
 
 COMMENT =	PIM Akonadi notes support library
 DISTNAME =	akonadi-notes-${VERSION}
@@ -9,8 +9,6 @@ SHARED_LIBS +=  KF5AkonadiNotes       1.0 # 5.13.2
 WANTLIB += ${COMPILER_LIBCXX} KF5I18n KF5Mime Qt5Core Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/kf5/kcodecs
 

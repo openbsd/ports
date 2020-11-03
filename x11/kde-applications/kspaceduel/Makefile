@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/07 14:49:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:39 rsadowski Exp $
 
 COMMENT =	2D space arcade game for KDE
 DISTNAME =	kspaceduel-${VERSION}
@@ -19,8 +19,6 @@ WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5KDEGames KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5Xml c
 WANTLIB += m
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS +=x11/qt5/qtquickcontrols
 RUN_DEPENDS +=	x11/qt5/qtquickcontrols

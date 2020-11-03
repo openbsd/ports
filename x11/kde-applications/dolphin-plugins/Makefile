@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:32 rsadowski Exp $
 
 COMMENT =	Dolphin plugins
 DISTNAME =	dolphin-plugins-${VERSION}
@@ -16,8 +16,6 @@ WANTLIB += Qt5Widgets Qt5Xml dolphinvcs m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:35 rsadowski Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
@@ -27,8 +27,6 @@ MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS +=	databases/sqlite3 \
 			devel/boost \

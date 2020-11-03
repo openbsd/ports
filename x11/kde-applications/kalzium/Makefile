@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/09/07 14:49:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/11/03 16:12:33 rsadowski Exp $
 
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
@@ -23,8 +23,7 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications \
-		lang/python \
+MODULES +=	lang/python \
 		lang/ocaml
 
 MODPY_RUNDEP=	No

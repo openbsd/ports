@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:38 rsadowski Exp $
 
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
@@ -15,8 +15,6 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml
 WANTLIB += X11 Xdamage Xext Xtst c m vncserver xcb xcb-damage
 WANTLIB += xcb-image xcb-render xcb-shape xcb-shm xcb-xfixes
-
-MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/07 14:49:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:40 rsadowski Exp $
 
 COMMENT =	library to compare files and strings
 DISTNAME =	libkomparediff2-${VERSION}
@@ -15,8 +15,6 @@ WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

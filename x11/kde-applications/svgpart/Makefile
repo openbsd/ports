@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:42 rsadowski Exp $
 
 COMMENT =	KPart for viewing SVGs
 DISTNAME =	svgpart-${VERSION}
@@ -14,8 +14,6 @@ WANTLIB += Qt5Gui Qt5Network Qt5Svg Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

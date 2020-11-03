@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/03 16:12:34 rsadowski Exp $
 
 COMMENT =	KDE Filesharing via Samba
 DISTNAME =	kdenetwork-filesharing-${VERSION}
@@ -13,8 +13,6 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets m
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 RUN_DEPENDS =	net/samba
 

@@ -20,8 +20,6 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications
-
 BUILD_DEPENDS =	devel/kf5/kio \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kconfigwidgets \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:39 rsadowski Exp $
 
 COMMENT =	KDE PIM TNEF library
 DISTNAME =	ktnef-${VERSION}
@@ -11,8 +11,6 @@ WANTLIB += KF5ConfigCore KF5ConfigGui KF5Contacts KF5CoreAddons
 WANTLIB += KF5I18n Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/kcalendarcore \
 		devel/kf5/kconfig \

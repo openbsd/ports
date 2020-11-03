@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/07 14:49:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/03 16:12:36 rsadowski Exp $
 
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
@@ -22,8 +22,6 @@ WANTLIB += util
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/gperf
 

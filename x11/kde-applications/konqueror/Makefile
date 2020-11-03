@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/07 14:49:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:38 rsadowski Exp $
 
 COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
@@ -21,8 +21,6 @@ WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5Quick Qt5Script Qt5TextToSpeech Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras Qt5Xml
 WANTLIB += SM X11 Xext c m z
-
-MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

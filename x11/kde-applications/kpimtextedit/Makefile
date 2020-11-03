@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/07 14:49:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/03 16:12:38 rsadowski Exp $
 
 COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
@@ -17,7 +17,6 @@ WANTLIB += Qt5Xml m
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/kf5/ktextwidgets \
 		devel/kf5/kdesignerplugin \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/11/03 16:12:38 rsadowski Exp $
 @pkgpath x11/kde4/kollision
 @bin bin/kollision
 share/applications/org.kde.kollision.desktop
@@ -99,6 +99,7 @@ share/locale/ga/LC_MESSAGES/kollision.mo
 share/locale/gl/LC_MESSAGES/kollision.mo
 share/locale/hr/LC_MESSAGES/kollision.mo
 share/locale/hu/LC_MESSAGES/kollision.mo
+share/locale/id/LC_MESSAGES/kollision.mo
 share/locale/is/LC_MESSAGES/kollision.mo
 share/locale/it/LC_MESSAGES/kollision.mo
 share/locale/ja/LC_MESSAGES/kollision.mo

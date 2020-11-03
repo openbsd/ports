@@ -14,8 +14,6 @@ WANTLIB += Qt5Qml Qt5Quick Qt5Svg Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 
-MODULES +=	x11/kde-applications
-
 BUILD_DEPENDS =	math/eigen3 \
 		x11/qt5/qtquickcontrols
 

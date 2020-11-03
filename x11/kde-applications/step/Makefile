@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/03 16:12:42 rsadowski Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
@@ -19,8 +19,6 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 ODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	math/eigen3
 

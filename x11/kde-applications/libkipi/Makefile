@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/07 14:49:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:40 rsadowski Exp $
 
 COMMENT =	interface to use kipi-plugins from a KDE application
 DISTNAME =	libkipi-${VERSION}
@@ -12,8 +12,6 @@ WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += Qt5Xml m
 
 MODKDE5_ICON_CACHE = yes
-
-MODULES +=	x11/kde-applications
 
 # XXX "KF5KExiv2", but CMake did not find one
 LIB_DEPENDS =		devel/kf5/kconfig \

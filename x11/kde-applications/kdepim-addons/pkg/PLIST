@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/09/11 11:23:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/11/03 16:12:35 rsadowski Exp $
 @conflict kdepimlibs-<=4
 bin/kmail_antivir.sh
 bin/kmail_clamav.sh
@@ -754,9 +754,12 @@ share/locale/pt_BR/LC_MESSAGES/pimeventsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/ro/LC_MESSAGES/cryptopageplugin.mo
+share/locale/ro/LC_MESSAGES/customtoolsplugin.mo
+share/locale/ro/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ro/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ro/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ro/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ro/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/ro/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ro/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ru/LC_MESSAGES/cryptopageplugin.mo

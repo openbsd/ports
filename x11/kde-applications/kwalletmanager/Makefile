@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:39 rsadowski Exp $
 
 COMMENT =	KDE password wallet manager
 DISTNAME =	kwalletmanager-${VERSION}
@@ -20,8 +20,6 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODKDE5_ICON_CACHE = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/kf5/ktextwidgets
 

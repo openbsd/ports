@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:36 rsadowski Exp $
 
 COMMENT =	job-based API for interacting with IMAP servers
 DISTNAME =	kimap-${VERSION}
@@ -11,8 +11,6 @@ WANTLIB += KF5I18n KF5KIOCore KF5Mime KF5Service Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Network m sasl2
 
 MODKDE5_TRANSLATIONS = yes
-
-MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/kconfig \
