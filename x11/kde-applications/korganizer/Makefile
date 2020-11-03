@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:51:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/03 19:58:04 rsadowski Exp $
 
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  korganizer_core         1.0 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.0 # 5.13.2
@@ -27,6 +28,7 @@ WANTLIB += c m phonon4qt5
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
 MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
