@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/03 16:51:33 rsadowski Exp $
 
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
@@ -26,7 +26,6 @@ WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5X11Extras
 WANTLIB += Qt5Xml SM X11 Xext c m
 
-MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes

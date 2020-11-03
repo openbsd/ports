@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/03 16:51:33 rsadowski Exp $
 
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
@@ -28,7 +28,6 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5Xml c gpgmepp m qgpgme
 
-MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
