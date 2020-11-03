@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.2 2020/06/14 04:39:36 rsadowski Exp 
+# $OpenBSD: Makefile,v 1.12 2020/11/03 20:00:23 rsadowski Exp $
 
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
@@ -18,9 +18,10 @@ WANTLIB += Qt5Xml assuan c gpg-error gpgmepp m qgpgme
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
+
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
 
 RUN_DEPENDS =	security/gnupg>=2.2.23p1
 BUILD_DEPENDS =	devel/boost
@@ -47,7 +48,5 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		security/libgpg-error \
 		x11/kde-applications/kmime \
 		x11/kde-applications/libkleo
-
-
 
 .include <bsd.port.mk>
