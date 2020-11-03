@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/11/03 16:12:08 rsadowski Exp $
 include/KF5/KXmlGui/
 include/KF5/KXmlGui/KAboutApplicationDialog
 include/KF5/KXmlGui/KAboutPluginDialog
@@ -51,7 +51,6 @@ lib/cmake/KF5XmlGui/KF5XmlGuiTargets.cmake
 share/examples/kxmlgui/
 share/examples/kxmlgui/xdg/
 share/examples/kxmlgui/xdg/ui/
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/ui/
 share/examples/kxmlgui/xdg/ui/ui_standards.rc
 @sample ${SYSCONFDIR}/xdg/ui/ui_standards.rc

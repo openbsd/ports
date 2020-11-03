@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/09/07 14:48:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/11/03 16:12:04 rsadowski Exp $
 include/KF5/KCMUtils/
 include/KF5/KCMUtils/KCModuleContainer
+include/KF5/KCMUtils/KCModuleData
 include/KF5/KCMUtils/KCModuleInfo
 include/KF5/KCMUtils/KCModuleLoader
 include/KF5/KCMUtils/KCModuleProxy
 include/KF5/KCMUtils/KCMultiDialog
 include/KF5/KCMUtils/KPluginSelector
 include/KF5/KCMUtils/kcmodulecontainer.h
+include/KF5/KCMUtils/kcmoduledata.h
 include/KF5/KCMUtils/kcmoduleinfo.h
 include/KF5/KCMUtils/kcmoduleloader.h
 include/KF5/KCMUtils/kcmoduleproxy.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/09/07 14:48:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2020/11/03 16:12:07 rsadowski Exp $
 
 COMMENT =	KDE configuration dialog for desktop notifications
 DISTNAME =	knotifyconfig-${VERSION}
@@ -6,9 +6,10 @@ DISTNAME =	knotifyconfig-${VERSION}
 SHARED_LIBS =	KF5NotifyConfig		6.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
-WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service
-WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets m phonon4qt5
+WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets canberra
+WANTLIB += m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kconfigwidgets>=${MODKF5_VERSION} \

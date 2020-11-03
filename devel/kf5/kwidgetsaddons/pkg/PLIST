@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:08 rsadowski Exp $
 include/KF5/
 include/KF5/KWidgetsAddons/
 include/KF5/KWidgetsAddons/KAcceleratorManager
@@ -56,6 +56,7 @@ include/KF5/KWidgetsAddons/KPixmapSequenceWidget
 include/KF5/KWidgetsAddons/KPopupFrame
 include/KF5/KWidgetsAddons/KRatingPainter
 include/KF5/KWidgetsAddons/KRatingWidget
+include/KF5/KWidgetsAddons/KRecentFilesMenu
 include/KF5/KWidgetsAddons/KRuler
 include/KF5/KWidgetsAddons/KSelectAction
 include/KF5/KWidgetsAddons/KSelector
@@ -127,6 +128,7 @@ include/KF5/KWidgetsAddons/kpixmapsequencewidget.h
 include/KF5/KWidgetsAddons/kpopupframe.h
 include/KF5/KWidgetsAddons/kratingpainter.h
 include/KF5/KWidgetsAddons/kratingwidget.h
+include/KF5/KWidgetsAddons/krecentfilesmenu.h
 include/KF5/KWidgetsAddons/kruler.h
 include/KF5/KWidgetsAddons/kselectaction.h
 include/KF5/KWidgetsAddons/kselector.h

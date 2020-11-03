@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:08 rsadowski Exp $
 include/KF5/purpose/
 include/KF5/purpose/Purpose/
 include/KF5/purpose/Purpose/AlternativesModel
@@ -107,6 +107,7 @@ share/locale/ca/LC_MESSAGES/purpose_youtube.mo
 share/locale/ca@valencia/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ca@valencia/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/ca@valencia/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose_email.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose_imgur.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose_kdeconnect.mo

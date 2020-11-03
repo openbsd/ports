@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/09/07 14:48:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/11/03 16:12:06 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -560,7 +560,35 @@ share/doc/HTML/et/kioslave5/telnet/index.docbook
 share/doc/HTML/et/kioslave5/webdav/
 share/doc/HTML/et/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/et/kioslave5/webdav/index.docbook
+share/doc/HTML/fr/kcontrol5/
+share/doc/HTML/fr/kcontrol5/cache/
+share/doc/HTML/fr/kcontrol5/cache/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/cache/index.docbook
+share/doc/HTML/fr/kcontrol5/cookies/
+share/doc/HTML/fr/kcontrol5/cookies/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/cookies/index.docbook
+share/doc/HTML/fr/kcontrol5/netpref/
+share/doc/HTML/fr/kcontrol5/netpref/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/netpref/index.docbook
+share/doc/HTML/fr/kcontrol5/proxy/
+share/doc/HTML/fr/kcontrol5/proxy/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/proxy/index.docbook
+share/doc/HTML/fr/kcontrol5/smb/
+share/doc/HTML/fr/kcontrol5/smb/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/smb/index.docbook
+share/doc/HTML/fr/kcontrol5/trash/
+share/doc/HTML/fr/kcontrol5/trash/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/trash/index.docbook
+share/doc/HTML/fr/kcontrol5/useragent/
+share/doc/HTML/fr/kcontrol5/useragent/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/useragent/index.docbook
+share/doc/HTML/fr/kcontrol5/webshortcuts/
+share/doc/HTML/fr/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/webshortcuts/index.docbook
 share/doc/HTML/fr/kioslave5/
+share/doc/HTML/fr/kioslave5/data/
+share/doc/HTML/fr/kioslave5/data/index.cache.bz2
+share/doc/HTML/fr/kioslave5/data/index.docbook
 share/doc/HTML/fr/kioslave5/file/
 share/doc/HTML/fr/kioslave5/file/index.cache.bz2
 share/doc/HTML/fr/kioslave5/file/index.docbook
@@ -568,6 +596,9 @@ share/doc/HTML/fr/kioslave5/ftp/
 share/doc/HTML/fr/kioslave5/ftp/index.cache.bz2
 share/doc/HTML/fr/kioslave5/ftp/index.docbook
 share/doc/HTML/fr/kioslave5/help/
+share/doc/HTML/fr/kioslave5/help/documentationnotfound/
+share/doc/HTML/fr/kioslave5/help/documentationnotfound/index.cache.bz2
+share/doc/HTML/fr/kioslave5/help/documentationnotfound/index.docbook
 share/doc/HTML/fr/kioslave5/help/index.cache.bz2
 share/doc/HTML/fr/kioslave5/help/index.docbook
 share/doc/HTML/fr/kioslave5/http/
@@ -1055,7 +1086,6 @@ share/doc/HTML/uk/kioslave5/webdav/index.docbook
 share/examples/kio/
 share/examples/kio/xdg/
 share/examples/kio/xdg/accept-languages.codes
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/accept-languages.codes
 share/examples/kio/xdg/kshorturifilterrc
 @sample ${SYSCONFDIR}/xdg/kshorturifilterrc

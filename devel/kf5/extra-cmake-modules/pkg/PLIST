@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/09/07 14:48:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/11/03 16:12:04 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -28,12 +28,14 @@ share/ECM/find-modules/FindPulseAudio.cmake
 share/ECM/find-modules/FindPythonModuleGeneration.cmake
 share/ECM/find-modules/FindQHelpGenerator.cmake
 share/ECM/find-modules/FindQtWaylandScanner.cmake
+share/ECM/find-modules/FindReuseTool.cmake
 share/ECM/find-modules/FindSasl2.cmake
 share/ECM/find-modules/FindSeccomp.cmake
 share/ECM/find-modules/FindSharedMimeInfo.cmake
 share/ECM/find-modules/FindTaglib.cmake
 share/ECM/find-modules/FindUDev.cmake
 share/ECM/find-modules/FindWayland.cmake
+share/ECM/find-modules/FindWaylandProtocols.cmake
 share/ECM/find-modules/FindWaylandScanner.cmake
 share/ECM/find-modules/FindX11_XCB.cmake
 share/ECM/find-modules/FindXCB.cmake
@@ -59,10 +61,12 @@ share/ECM/kde-modules/appstreamtest.cmake
 share/ECM/kde-modules/clang-format.cmake
 share/ECM/kde-modules/prefix.sh.cmake
 share/ECM/modules/
+share/ECM/modules/CheckAtomic.cmake
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddQch.cmake
 share/ECM/modules/ECMAddQtDesignerPlugin.cmake
 share/ECM/modules/ECMAddTests.cmake
+share/ECM/modules/ECMCheckOutboundLicense.cmake
 share/ECM/modules/ECMConfiguredInstall.cmake
 share/ECM/modules/ECMCoverageOption.cmake
 share/ECM/modules/ECMCreateQmFromPoFiles.cmake
@@ -96,6 +100,7 @@ share/ECM/modules/ECMUninstallTarget.cmake
 share/ECM/modules/ECMUseFindModules.cmake
 share/ECM/modules/ECMVersionHeader.h.in
 share/ECM/modules/ECMWinResolveSymlinks.cmake
+share/ECM/modules/check-outbound-license.py
 share/ECM/modules/ecm_uninstall.cmake.in
 share/ECM/test-modules/
 share/ECM/test-modules/test_execute_and_compare.cmake
@@ -132,6 +137,7 @@ share/doc/ECM/html/_sources/find-module/FindSharedMimeInfo.txt
 share/doc/ECM/html/_sources/find-module/FindTaglib.txt
 share/doc/ECM/html/_sources/find-module/FindUDev.txt
 share/doc/ECM/html/_sources/find-module/FindWayland.txt
+share/doc/ECM/html/_sources/find-module/FindWaylandProtocols.txt
 share/doc/ECM/html/_sources/find-module/FindWaylandScanner.txt
 share/doc/ECM/html/_sources/find-module/FindX11_XCB.txt
 share/doc/ECM/html/_sources/find-module/FindXCB.txt
@@ -155,6 +161,7 @@ share/doc/ECM/html/_sources/module/ECMAddAppIcon.txt
 share/doc/ECM/html/_sources/module/ECMAddQch.txt
 share/doc/ECM/html/_sources/module/ECMAddQtDesignerPlugin.txt
 share/doc/ECM/html/_sources/module/ECMAddTests.txt
+share/doc/ECM/html/_sources/module/ECMCheckOutboundLicense.txt
 share/doc/ECM/html/_sources/module/ECMConfiguredInstall.txt
 share/doc/ECM/html/_sources/module/ECMCoverageOption.txt
 share/doc/ECM/html/_sources/module/ECMCreateQmFromPoFiles.txt
@@ -227,6 +234,7 @@ share/doc/ECM/html/find-module/FindSharedMimeInfo.html
 share/doc/ECM/html/find-module/FindTaglib.html
 share/doc/ECM/html/find-module/FindUDev.html
 share/doc/ECM/html/find-module/FindWayland.html
+share/doc/ECM/html/find-module/FindWaylandProtocols.html
 share/doc/ECM/html/find-module/FindWaylandScanner.html
 share/doc/ECM/html/find-module/FindX11_XCB.html
 share/doc/ECM/html/find-module/FindXCB.html
@@ -251,6 +259,7 @@ share/doc/ECM/html/module/ECMAddAppIcon.html
 share/doc/ECM/html/module/ECMAddQch.html
 share/doc/ECM/html/module/ECMAddQtDesignerPlugin.html
 share/doc/ECM/html/module/ECMAddTests.html
+share/doc/ECM/html/module/ECMCheckOutboundLicense.html
 share/doc/ECM/html/module/ECMConfiguredInstall.html
 share/doc/ECM/html/module/ECMCoverageOption.html
 share/doc/ECM/html/module/ECMCreateQmFromPoFiles.html

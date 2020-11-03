@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:48:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/11/03 16:12:06 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
@@ -71,7 +71,6 @@ lib/qt5/qml/org/kde/kirigami.2/private/
 lib/qt5/qml/org/kde/kirigami.2/private/ActionButton.qml
 lib/qt5/qml/org/kde/kirigami.2/private/ActionIconGroup.qml
 lib/qt5/qml/org/kde/kirigami.2/private/ActionMenuItem.qml
-lib/qt5/qml/org/kde/kirigami.2/private/ActionToolBarLayoutDetails.qml
 lib/qt5/qml/org/kde/kirigami.2/private/ActionsMenu.qml
 lib/qt5/qml/org/kde/kirigami.2/private/BannerImage.qml
 lib/qt5/qml/org/kde/kirigami.2/private/CardsGridViewPrivate.qml
@@ -124,6 +123,7 @@ lib/qt5/qml/org/kde/kirigami.2/templates/ApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/OverlayDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/OverlaySheet.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/SingletonHeaderSizeGroup.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/SwipeListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/
 lib/qt5/qml/org/kde/kirigami.2/templates/private/BackButton.qml
@@ -171,6 +171,7 @@ share/locale/nn/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pt/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pt_BR/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/ro/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ru/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sk/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sl/LC_MESSAGES/libkirigami2plugin_qt.qm

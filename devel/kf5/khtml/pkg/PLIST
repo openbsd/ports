@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:47 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:06 rsadowski Exp $
 include/KF5/KHtml/
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings
@@ -59,7 +59,6 @@ lib/qt5/plugins/kf5/parts/
 share/examples/khtml/
 share/examples/khtml/xdg/
 share/examples/khtml/xdg/khtmlrc
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/khtmlrc
 share/kf5/khtml/
 share/kf5/khtml/css/

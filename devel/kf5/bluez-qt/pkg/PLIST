@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:03 rsadowski Exp $
 include/KF5/
 include/KF5/BluezQt/
 include/KF5/BluezQt/BluezQt/
@@ -31,6 +31,7 @@ include/KF5/BluezQt/BluezQt/ObexTransfer
 include/KF5/BluezQt/BluezQt/PendingCall
 include/KF5/BluezQt/BluezQt/Profile
 include/KF5/BluezQt/BluezQt/Request
+include/KF5/BluezQt/BluezQt/Rfkill
 include/KF5/BluezQt/BluezQt/Services
 include/KF5/BluezQt/BluezQt/Types
 include/KF5/BluezQt/bluezqt/
@@ -64,6 +65,7 @@ include/KF5/BluezQt/bluezqt/obextransfer.h
 include/KF5/BluezQt/bluezqt/pendingcall.h
 include/KF5/BluezQt/bluezqt/profile.h
 include/KF5/BluezQt/bluezqt/request.h
+include/KF5/BluezQt/bluezqt/rfkill.h
 include/KF5/BluezQt/bluezqt/services.h
 include/KF5/BluezQt/bluezqt/types.h
 include/KF5/bluezqt_version.h

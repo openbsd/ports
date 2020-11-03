@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/11/03 16:12:08 rsadowski Exp $
 include/KF5/
 include/KF5/KWindowSystem/
 include/KF5/KWindowSystem/KKeyServer
@@ -44,9 +44,9 @@ lib/cmake/KF5WindowSystem/KF5WindowSystemTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5WindowSystem/KF5WindowSystemTargets.cmake
 @lib lib/libKF5WindowSystem.so.${LIBKF5WindowSystem_VERSION}
 lib/qt5/plugins/kf5/
-lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/
-@so lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemWaylandPlugin.so
-@so lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemX11Plugin.so
+lib/qt5/plugins/kf5/kwindowsystem/
+@so lib/qt5/plugins/kf5/kwindowsystem/KF5WindowSystemWaylandPlugin.so
+@so lib/qt5/plugins/kf5/kwindowsystem/KF5WindowSystemX11Plugin.so
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KWindowSystem.pri

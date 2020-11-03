@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:48:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/11/03 16:12:08 rsadowski Exp $
 include/KF5/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/AbstractAnnotationItemDelegate
@@ -75,8 +75,6 @@ lib/qt5/plugins/kf5/parts/
 @bin libexec/kauth/kauth_ktexteditor_helper
 share/dbus-1/system-services/org.kde.ktexteditor.katetextbuffer.service
 share/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
-@sample ${SYSCONFDIR}/dbus-1/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
 share/katepart5/
 share/katepart5/script/

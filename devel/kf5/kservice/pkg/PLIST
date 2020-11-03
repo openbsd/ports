@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:48:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/11/03 16:12:07 rsadowski Exp $
 @bin bin/kbuildsycoca5
 include/KF5/KService/
 include/KF5/KService/KApplicationTrader
@@ -47,7 +47,6 @@ lib/cmake/KF5Service/KF5ServiceTargets.cmake
 share/examples/kservice/
 share/examples/kservice/xdg/
 share/examples/kservice/xdg/menus/
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/menus/
 share/examples/kservice/xdg/menus/kf5-applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/kf5-applications.menu

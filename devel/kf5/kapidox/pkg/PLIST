@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:48:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/11/03 16:12:04 rsadowski Exp $
 bin/depdiagram-generate
 bin/depdiagram-generate-all
 bin/depdiagram-prepare
 bin/kapidox_generate
 lib/python${MODPY_VERSION}/site-packages/kapidox/
-lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kapidox/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -27,12 +32,22 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/jquery/
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/jquery/jquery-3.1.0.min.js
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/ako.webmanifest
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/ako.webmanifest.license
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/css/
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/css/bg.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/default_product.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/frameworks.css
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/api-kde-org@1x.png
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/api-kde-org@1x.png.license
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/api-kde-org@2x.png
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/api-kde-org@2x.png.license
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/api-kde-org@3x.png
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/api-kde-org@3x.png.license
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/api-kde-org@4x.png
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/api-kde-org@4x.png.license
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/bad.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/ok.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/warning.png
@@ -42,6 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/search.js
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/subgroup.js
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/kde-white.svg
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/kde.css
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/worker.js
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/base.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/footer.html
