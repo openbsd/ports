@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:51:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/03 19:56:33 rsadowski Exp $
 
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 HOMEPAGE =	http://knotesapp.com/
 
@@ -28,6 +29,7 @@ WANTLIB += Qt5Xml SM X11 Xext c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
 MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
