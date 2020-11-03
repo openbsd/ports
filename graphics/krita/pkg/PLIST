@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/06/19 19:49:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/11/03 16:13:26 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
+@bin bin/krita_version
 lib/kritaplugins/
 @so lib/kritaplugins/krita_colorspaces_extensions.so
 @so lib/kritaplugins/krita_flaketools.so
@@ -12,7 +13,6 @@ lib/kritaplugins/
 @so lib/kritaplugins/krita_shape_text.so
 @so lib/kritaplugins/krita_tool_svgtext.so
 @so lib/kritaplugins/kritaanimationdocker.so
-@so lib/kritaplugins/kritaanimationrenderer.so
 @so lib/kritaplugins/kritaarrangedocker.so
 @so lib/kritaplugins/kritaartisticcolorselector.so
 @so lib/kritaplugins/kritaasccdl.so
@@ -81,6 +81,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritalutdocker.so
 @so lib/kritaplugins/kritametadataeditor.so
 @so lib/kritaplugins/kritamodifyselection.so
+@so lib/kritaplugins/kritamultigridpatterngenerator.so
 @so lib/kritaplugins/kritanoisefilter.so
 @so lib/kritaplugins/kritanormalize.so
 @so lib/kritaplugins/kritaoffsetimage.so
@@ -113,6 +114,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritarotateimage.so
 @so lib/kritaplugins/kritaroundcornersfilter.so
 @so lib/kritaplugins/kritaroundmarkerpaintop.so
+@so lib/kritaplugins/kritascreentonegenerator.so
 @so lib/kritaplugins/kritaselectiontools.so
 @so lib/kritaplugins/kritaseparatechannels.so
 @so lib/kritaplugins/kritashearimage.so
@@ -239,6 +241,7 @@ share/color-schemes/KritaNeutral.colors
 share/color/icc/
 share/color/icc/krita/
 share/color/icc/krita/ACEScg-elle-V4-g10.icc
+share/color/icc/krita/ClayRGB-elle-V2-g22.icc
 share/color/icc/krita/ClayRGB-elle-V4-srgbtrc.icc
 share/color/icc/krita/Gray-D50-elle-V2-g10.icc
 share/color/icc/krita/Gray-D50-elle-V2-g18.icc
@@ -255,8 +258,10 @@ share/color/icc/krita/Gray-D50-elle-V4-srgbtrc.icc
 share/color/icc/krita/ITUR_2100_PQ_FULL.ICC
 share/color/icc/krita/Lab-D50-Identity-elle-V2.icc
 share/color/icc/krita/Lab-D50-Identity-elle-V4.icc
+share/color/icc/krita/LargeRGB-elle-V2-g22.icc
 share/color/icc/krita/README
 share/color/icc/krita/Rec2020-elle-V4-g10.icc
+share/color/icc/krita/WideRGB-elle-V2-g22.icc
 share/color/icc/krita/XYZ-D50-Identity-elle-V4.icc
 share/color/icc/krita/cmyk.icm
 share/color/icc/krita/krita25_lcms-builtin-sRGB_g100-truegamma.icc
@@ -291,7 +296,6 @@ share/icons/hicolor/64x64/mimetypes/application-x-krita.png
 share/icons/hicolor/scalable/apps/krita.svgz
 share/krita/
 share/krita/actions/
-share/krita/actions/ConnectionTool.action
 share/krita/actions/InteractionTool.action
 share/krita/actions/KarbonCalligraphyTool.action
 share/krita/actions/KisAssistantTool.action
@@ -320,6 +324,7 @@ share/krita/brushes/triangle.svg
 share/krita/bundles/
 share/krita/bundles/Krita_3_Default_Resources.bundle
 share/krita/bundles/Krita_4_Default_Resources.bundle
+share/krita/bundles/Krita_Artists_SeExpr_examples.bundle
 share/krita/bundles/README
 share/krita/defaultpresets/
 share/krita/defaultpresets/colorsmudge.kpp
@@ -973,6 +978,7 @@ share/kritaplugins/shearimage.xmlgui
 share/kritaplugins/waveletdecompose.xmlgui
 share/locale/af/LC_MESSAGES/krita.mo
 share/locale/ar/LC_MESSAGES/krita.mo
+share/locale/ast/LC_MESSAGES/krita.mo
 share/locale/be/LC_MESSAGES/krita.mo
 share/locale/bg/LC_MESSAGES/krita.mo
 share/locale/br/LC_MESSAGES/krita.mo

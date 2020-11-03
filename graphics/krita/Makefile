@@ -1,38 +1,38 @@
-# $OpenBSD: Makefile,v 1.42 2020/06/19 19:49:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.43 2020/11/03 16:13:26 rsadowski Exp $
 
 BROKEN-powerpc =	colors are off and as such it is not useable
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	4.3.0
+VERSION =	4.4.0
 DISTNAME =	krita-${VERSION}
 
-SHARED_LIBS +=  kritabasicflakes          2.0 # 16.0
+SHARED_LIBS +=  kritabasicflakes          3.0 # 16.0
 SHARED_LIBS +=  kritacolord               1.0 # 16.0
-SHARED_LIBS +=  kritaflake                4.0 # 16.0
+SHARED_LIBS +=  kritaflake                5.0 # 16.0
 SHARED_LIBS +=  kritaodf                  2.0 # 16.0
-SHARED_LIBS +=  kritapigment              4.0 # 16.0
+SHARED_LIBS +=  kritapigment              5.0 # 16.0
 SHARED_LIBS +=  kritaplugin               1.0 # 16.0
 SHARED_LIBS +=  kritastore                2.0 # 16.0
 SHARED_LIBS +=  kritatext                 1.0 # 16.0
 SHARED_LIBS +=  kritatextlayout           1.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.0 # 16.0
-SHARED_LIBS +=  kritawidgets              3.0 # 16.0
+SHARED_LIBS +=  kritawidgets              4.0 # 16.0
 SHARED_LIBS +=  kritawidgetutils          4.0 # 16.0
 SHARED_LIBS +=  kritacommand              2.0 # 16.0
 SHARED_LIBS +=  kritaimpex                1.0 # 16.0
-SHARED_LIBS +=  kritalibkis               3.0 # 16.0
-SHARED_LIBS +=  kritalibkra               3.0 # 16.0
+SHARED_LIBS +=  kritalibkis               3.1 # 16.0
+SHARED_LIBS +=  kritalibkra               4.0 # 16.0
 SHARED_LIBS +=  kritaqml                  2.0 # 16.0
 SHARED_LIBS +=  kritametadata             0.0 # 18.0
 # XXX Version numbers from editors/calligra 2.x port
-SHARED_LIBS +=  kritapsd                  2.0 # 14.0
+SHARED_LIBS +=  kritapsd                  3.0 # 14.0
 SHARED_LIBS +=  kritacolor                2.0 # 14.0
-SHARED_LIBS +=  kritaglobal               4.1 # 14.0
-SHARED_LIBS +=  kritaimage                55.0 # 0.0
-SHARED_LIBS +=  kritalibbrush             53.0 # 0.0
-SHARED_LIBS +=  kritalibpaintop           54.0 # 0.0
-SHARED_LIBS +=  kritaui                   58.0 # 0.0
+SHARED_LIBS +=  kritaglobal               4.2 # 14.0
+SHARED_LIBS +=  kritaimage                56.0 # 0.0
+SHARED_LIBS +=  kritalibbrush             54.0 # 0.0
+SHARED_LIBS +=  kritalibpaintop           55.0 # 0.0
+SHARED_LIBS +=  kritaui                   59.0 # 0.0
 
 CATEGORIES =	graphics
 DPB_PROPERTIES =	parallel
@@ -107,7 +107,8 @@ BUILD_DEPENDS +=	devel/gettext,-tools \
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SIP=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_HEIF=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Vc=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5=ON
+			-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_SeExpr2=ON
 
 TEST_IS_INTERACTIVE =	X11
 
