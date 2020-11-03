@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/20 22:47:41 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/11/03 23:19:14 jca Exp $
 @bin bin/zbarimg
 include/zbar/
 include/zbar.h
@@ -12,27 +12,27 @@ include/zbar/Symbol.h
 include/zbar/Video.h
 include/zbar/Window.h
 include/zbar/zbargtk.h
-lib/libzbar.a
+lib/girepository-1.0/ZBar-1.0.typelib
+@static-lib lib/libzbar.a
 lib/libzbar.la
 @lib lib/libzbar.so.${LIBzbar_VERSION}
-lib/libzbargtk.a
+@static-lib lib/libzbargtk.a
 lib/libzbargtk.la
 @lib lib/libzbargtk.so.${LIBzbargtk_VERSION}
 lib/pkgconfig/zbar-gtk.pc
 lib/pkgconfig/zbar.pc
-lib/python${MODPY_VERSION}/site-packages/zbar.a
-lib/python${MODPY_VERSION}/site-packages/zbar.la
-lib/python${MODPY_VERSION}/site-packages/zbar.so
-lib/python${MODPY_VERSION}/site-packages/zbarpygtk.a
-lib/python${MODPY_VERSION}/site-packages/zbarpygtk.la
-lib/python${MODPY_VERSION}/site-packages/zbarpygtk.so
+@comment lib/python${MODPY_VERSION}/site-packages/zbar.a
+@comment lib/python${MODPY_VERSION}/site-packages/zbar.la
+@so lib/python${MODPY_VERSION}/site-packages/zbar.so
 @man man/man1/zbarimg.1
 share/doc/zbar/
+share/doc/zbar/ABOUT-NLS
 share/doc/zbar/COPYING
-share/doc/zbar/HACKING
-share/doc/zbar/INSTALL
-share/doc/zbar/LICENSE
-share/doc/zbar/NEWS
-share/doc/zbar/README
-share/doc/zbar/TODO
-@comment share/zbar/
+share/doc/zbar/HACKING.md
+share/doc/zbar/INSTALL.md
+share/doc/zbar/LICENSE.md
+share/doc/zbar/NEWS.md
+share/doc/zbar/README.md
+share/doc/zbar/TODO.md
+share/gir-1.0/ZBar-1.0.gir
+share/locale/pt_BR/LC_MESSAGES/zbar.mo
