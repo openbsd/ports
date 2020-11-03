@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1101 2020/11/02 16:13:28 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1102 2020/11/03 13:52:13 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -502,6 +502,7 @@ my $stem_extensions = {
 	'py-carbon' => 'py3-carbon',
 	'py-elftools' => 'py3-elftools',
 	'py-lockfile' => 'py3-lockfile',
+	'py-toml' => 'py3-toml',
 };
 
 my $obsolete_reason = {

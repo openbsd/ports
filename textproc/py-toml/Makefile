@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/03 13:52:13 jasper Exp $
 
 COMMENT =		Python library for "Tom's Obvious Minimal Language" #'
 
-MODPY_EGG_VERSION =	0.10.0
+MODPY_EGG_VERSION =	0.10.2
 DISTNAME =		toml-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
-REVISION =		1
-
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -16,9 +14,9 @@ MODULES=		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR ?=		python3
 
 .include <bsd.port.mk>
