@@ -1,4 +1,4 @@
-t $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/03 20:05:16 rsadowski Exp $
 
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
