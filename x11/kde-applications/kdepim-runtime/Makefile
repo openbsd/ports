@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/03 20:15:56 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 PKGNAME =	kdepim-runtime-kf5-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  akonadi-filestore           1.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  1.0 # 5.13.2
@@ -32,6 +33,8 @@ WANTLIB += Qt5Widgets Qt5Xml c m qca-qt5 sasl2
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
