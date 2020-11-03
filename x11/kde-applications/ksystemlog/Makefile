@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/03 19:41:36 rsadowski Exp $
 
 COMMENT =	system log viewer
 DISTNAME =	ksystemlog-${VERSION}
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/system/ksystemlog/
 
@@ -28,8 +29,6 @@ LIB_DEPENDS +=	devel/kf5/karchive \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kiconthemes\
 		devel/kf5/kio \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
