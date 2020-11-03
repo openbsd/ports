@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:51:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/03 19:57:27 rsadowski Exp $
 
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  kontactprivate       0.0 # 5.13.2
 
@@ -19,6 +20,7 @@ WANTLIB += c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
 MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
