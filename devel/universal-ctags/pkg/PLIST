@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/03 16:18:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/11/03 18:56:10 rsadowski Exp $
 @bin bin/uctags
 @bin bin/ureadtags
 @man man/man1/uctags.1
+@man man/man1/ureadtags.1
 @man man/man5/utags.5
+@man man/man7/uctags-client-tools.7
 @man man/man7/uctags-incompatibilities.7
+@man man/man7/uctags-lang-python.7
+@man man/man7/uctags-lang-verilog.7
 @man man/man7/uctags-optlib.7

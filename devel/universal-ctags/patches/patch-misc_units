@@ -1,4 +1,4 @@
-$OpenBSD: patch-misc_units,v 1.1 2019/11/03 16:18:01 rsadowski Exp $
+$OpenBSD: patch-misc_units,v 1.2 2020/11/03 18:56:10 rsadowski Exp $
 
 - fix syntax error: `"$file"' missing expression operator
 - disable git in tests
@@ -6,7 +6,7 @@ $OpenBSD: patch-misc_units,v 1.1 2019/11/03 16:18:01 rsadowski Exp $
 Index: misc/units
 --- misc/units.orig
 +++ misc/units
-@@ -769,15 +769,9 @@ failure_in_globing ()
+@@ -770,15 +770,9 @@ failure_in_globing ()
      local file=$1
      local pat='~$|\*'
      # use [[ if it is available in the shell implementation.
@@ -22,7 +22,7 @@ Index: misc/units
      return 1
  }
  
-@@ -2004,7 +1998,7 @@ failed_git_marker ()
+@@ -2005,7 +1999,7 @@ failed_git_marker ()
      local f=$1
      local l
  
