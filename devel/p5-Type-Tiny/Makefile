@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/03 03:03:51 afresh1 Exp $
 
 COMMENT =		tiny, yet Moo(se)-compatible type constraint
 
-DISTNAME =		Type-Tiny-1.010001
+DISTNAME =		Type-Tiny-1.010006
 CATEGORIES =		devel
-REVISION =		0
 
 # perl
 PERMIT_PACKAGE =	Yes
@@ -23,5 +22,12 @@ TEST_DEPENDS =		devel/p5-Class-InsideOut \
 			devel/p5-Test-LeakTrace \
 			devel/p5-Test-Memory-Cycle \
 			devel/p5-Test-Warnings
+
+# Additional depends to avoid skipping tests
+TEST_DEPENDS +=		devel/p5-Devel-Hide \
+			devel/p5-IO-String \
+			devel/p5-Moo \
+			devel/p5-MooseX-Getopt \
+			devel/p5-MooseX-Types-Common
 
 .include <bsd.port.mk>
