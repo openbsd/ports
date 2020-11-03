@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/08/20 18:00:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2020/11/03 17:38:35 rsadowski Exp $
 
 COMMENT =	GStreamer-based Phonon backend
 
 VERSION =	4.10.0
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/}
 EXTRACT_SUFX = .tar.xz

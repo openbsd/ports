@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2020/08/20 18:00:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2020/11/03 17:38:35 rsadowski Exp $
 
 COMMENT =	VLC-based Phonon backend
 VERSION =	0.11.1
 DISTNAME =	phonon-backend-vlc-${VERSION}
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-vlc/${VERSION}/}
 EXTRACT_SUFX = .tar.xz
