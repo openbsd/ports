@@ -1,8 +1,5 @@
-# $OpenBSD: Makefile,v 1.8 2020/06/09 17:34:14 chrisz Exp $
- 
-GH_TAGNAME=	v2.51.2
-REVISION=	5
+# $OpenBSD: Makefile,v 1.9 2020/11/03 19:45:30 bket Exp $
 
-WRKDIST=	${WRKDIR}/${PKGNAME}/src
+GH_TAGNAME=	v2.51.3
 
 .include <bsd.port.mk>

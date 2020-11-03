@@ -1,9 +1,9 @@
-$OpenBSD: patch-uicommon_ml,v 1.1 2018/04/26 21:34:23 bket Exp $
+$OpenBSD: patch-uicommon_ml,v 1.2 2020/11/03 19:45:30 bket Exp $
 
 Index: uicommon.ml
 --- uicommon.ml.orig
 +++ uicommon.ml
-@@ -494,7 +494,7 @@ let promptForRoots getFirstRoot getSecondRoot =
+@@ -506,7 +506,7 @@ let promptForRoots getFirstRoot getSecondRoot =
  (* ---- *)
  
  let makeTempDir pattern =
