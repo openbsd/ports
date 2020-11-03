@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/06/27 08:42:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/11/03 11:09:20 jasper Exp $
 include/gtksourceview-4/
 include/gtksourceview-4/gtksourceview/
 include/gtksourceview-4/gtksourceview/completion-providers/
@@ -90,6 +90,9 @@ share/gtksourceview-4/language-specs/dpatch.lang
 share/gtksourceview-4/language-specs/dtd.lang
 share/gtksourceview-4/language-specs/dtl.lang
 share/gtksourceview-4/language-specs/eiffel.lang
+share/gtksourceview-4/language-specs/erb-html.lang
+share/gtksourceview-4/language-specs/erb-js.lang
+share/gtksourceview-4/language-specs/erb.lang
 share/gtksourceview-4/language-specs/erlang.lang
 share/gtksourceview-4/language-specs/fcl.lang
 share/gtksourceview-4/language-specs/fish.lang
@@ -202,7 +205,6 @@ share/gtksourceview-4/language-specs/typescript-js-functions-classes.lang
 share/gtksourceview-4/language-specs/typescript-js-literals.lang
 share/gtksourceview-4/language-specs/typescript-js-modules.lang
 share/gtksourceview-4/language-specs/typescript-js-statements.lang
-share/gtksourceview-4/language-specs/typescript-js-values.lang
 share/gtksourceview-4/language-specs/typescript-jsx.lang
 share/gtksourceview-4/language-specs/typescript-type-expressions.lang
 share/gtksourceview-4/language-specs/typescript-type-generics.lang
