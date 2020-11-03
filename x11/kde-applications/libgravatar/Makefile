@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/03 19:42:41 rsadowski Exp $
 
 COMMENT =	libraries provides gravatar support
 DISTNAME =	libgravatar-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5Gravatar      1.0 # 5.13.3
 
