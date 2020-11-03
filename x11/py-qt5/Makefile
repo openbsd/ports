@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/03 21:13:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/11/03 17:36:00 rsadowski Exp $
 
 COMMENT	=	python Qt5 bindings
 
 V=		5.13.2
 DISTNAME=	PyQt5-${V}
 PKGNAME=	py-qt5-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	https://www.riverbankcomputing.com/software/pyqt/intro
-MAINTAINER=	KDE porting team <openbsd-kde@googlegroups.com>
 
 # GPLv3 with exceptions for use with certain named open-source licenses
 PERMIT_PACKAGE=	Yes
