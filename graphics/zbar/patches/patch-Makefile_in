@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2020/11/03 23:18:10 jca Exp $
+
+Missing dep on gettext/libintl
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -884,7 +884,7 @@ SUBDIRS = zbar $(am__append_3) $(am__append_21) $(am__
+ @HAVE_MAGICK_TRUE@	$(am__append_7)
+ @HAVE_MAGICK_TRUE@zbarimg_zbarimg_CPPFLAGS = $(MAGICK_CFLAGS) $(AM_CPPFLAGS)
+ @HAVE_MAGICK_TRUE@zbarimg_zbarimg_LDADD = zbar/libzbar.la \
+-@HAVE_MAGICK_TRUE@	$(MAGICK_LIBS) $(am__append_8)
++@HAVE_MAGICK_TRUE@	$(MAGICK_LIBS) $(LTLIBINTL) $(am__append_8)
+ @HAVE_VIDEO_TRUE@zbarcam_zbarcam_SOURCES = zbarcam/zbarcam.c \
+ @HAVE_VIDEO_TRUE@	$(am__append_16)
+ @HAVE_VIDEO_TRUE@zbarcam_zbarcam_LDADD = zbar/libzbar.la \

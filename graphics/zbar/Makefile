@@ -1,43 +1,51 @@
-#	$OpenBSD: Makefile,v 1.28 2019/07/12 20:47:12 sthen Exp $
+#	$OpenBSD: Makefile,v 1.29 2020/11/03 23:18:10 jca Exp $
 
 COMMENT=	ZBar barcode reader
-DISTNAME=	zbar-0.10
-REVISION=	19
 
-SHARED_LIBS=	zbar	0.0 \
-		zbargtk	0.0
+GH_ACCOUNT=	mchehab
+GH_PROJECT=	zbar
+GH_TAGNAME=	0.23.1
+
+SHARED_LIBS=	zbar	0.1 \
+		zbargtk	0.1
 
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zbar/}
-EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://zbar.sourceforge.net/
+HOMEPAGE=	https://github.com/mchehab/zbar
+
+MASTER_SITES=	https://linuxtv.org/downloads/zbar/
+EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # LGPL 2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xcomposite
-WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xv
-WANTLIB += atk-1.0 bz2 c cairo djvulibre expat ffi fftw3 fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB += harfbuzz iconv intl jbig jpeg lcms2 lzma m openjp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread tiff
-WANTLIB += webp xcb xcb-render xcb-shm xml2 z
+WANTLIB += ${COMPILER_LIBCXX} ICE MagickCore-6.Q16 MagickWand-6.Q16
+WANTLIB += SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xt Xv atk-1.0 atk-bridge-2.0 bz2 c cairo
+WANTLIB += cairo-gobject djvulibre epoxy expat ffi fftw3
+WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz
+WANTLIB += iconv intl jasper jbig jpeg lcms2 lzma m openjp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png raw_r
+WANTLIB += tiff webp webpdemux webpmux xcb xcb-render xcb-shm
+WANTLIB += xml2 z zstd
 
 MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=	graphics/ImageMagick \
-		devel/libffi \
-		x11/gtk+2
+		x11/gtk+3
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	x11/py-gtk2
+BUILD_DEPENDS=	devel/gobject-introspection
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-video --without-qt
+CONFIGURE_ARGS+=	--with-gtk=gtk3 \
+			--with-python=python3 \
+			--disable-video \
+			--without-qt \
+			--without-dbus
 USE_GMAKE=		Yes
 
 .include <bsd.port.mk>
