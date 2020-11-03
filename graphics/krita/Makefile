@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2020/11/03 16:13:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2020/11/03 20:18:47 rsadowski Exp $
 
 BROKEN-powerpc =	colors are off and as such it is not useable
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	4.4.0
+VERSION =	4.4.1
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          3.0 # 16.0
