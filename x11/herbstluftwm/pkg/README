@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1 2020/11/03 19:46:04 bket Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Migrating to 0.9.0
+==================
+
+The tag_renamed hook has changed. The hook now emits two parameters. The first
+parameter contains the old name of the tag and the second parameter is the new
+name of the tag.
