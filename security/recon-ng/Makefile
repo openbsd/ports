@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/03 13:53:25 jasper Exp $
 
 COMMENT =		web reconnaissance framework
 
-VERSION =		4.9.3
-DISTNAME =		recon-ng-${VERSION}
+GH_ACCOUNT =		lanmaster53
+GH_PROJECT =		recon-ng
+GH_TAGNAME =		v4.9.3
+REVISION =		0
 
-HOMEPAGE =		https://bitbucket.org/LaNMaSteR53/recon-ng
+HOMEPAGE =		https://github.com/lanmaster53/recon-ng
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -13,10 +15,6 @@ CATEGORIES =		security
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
-
-MASTER_SITES =		https://bitbucket.org/LaNMaSteR53/recon-ng/get/
-DISTFILES =		${DISTNAME}{v${VERSION}}${EXTRACT_SUFX}
-WRKDIST =		${WRKDIR}/LaNMaSteR53-recon-ng-c83599e52159
 
 RUN_DEPENDS =		devel/py-jsonrpclib${MODPY_FLAVOR} \
 			devel/py-olefile${MODPY_FLAVOR} \
