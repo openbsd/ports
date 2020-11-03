@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.3 2020/11/03 21:42:32 danj Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -49,7 +49,7 @@ requires = [
+ 
+ ]
+ test_requirements = [
+-    'pytest-httpbin==0.0.7',
++    'pytest-httpbin',
+     'pytest-cov',
+     'pytest-mock',
+     'pytest-xdist',
