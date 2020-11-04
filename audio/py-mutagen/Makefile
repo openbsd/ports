@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2020/07/03 21:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2020/11/04 14:55:20 sthen Exp $
 
 COMMENT =	Python module to handle audio metadata
 
@@ -24,7 +24,7 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
 MODPY_ADJ_FILES = docs/id3_frames_gen.py
 MODPY_PYTEST =	Yes
-SUBST_VARS =	MODPY_FLAVOR MODPY_3ONLY
+SUBST_VARS =	MODPY_FLAVOR
 
 TEST_DEPENDS =	audio/faad \
 		audio/flac \
@@ -33,10 +33,8 @@ TEST_DEPENDS =	audio/faad \
 		multimedia/oggz
 
 .if ${FLAVOR:Mpython3}
-MODPY_3ONLY =
 TEST_DEPENDS +=	audio/py-eyed3
 .else
-MODPY_3ONLY = "@comment "
 TEST_DEPENDS +=	audio/py-vorbis
 
 post-install:
