@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2020/11/03 16:12:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/11/04 06:09:42 rsadowski Exp $
 
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
 CATEGORIES =	education math
+REVISION =	1
 
 HOMEPAGE =	https://edu.kde.org/kalzium/
 
@@ -29,32 +30,30 @@ MODULES +=	lang/python \
 MODPY_RUNDEP=	No
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-
 BUILD_DEPENDS =	devel/kf5/karchive \
+		devel/kf5/kbookmarks \
+		devel/kf5/kparts \
+		devel/kf5/solid \
 		math/eigen3
 
-RUN_DEPENDS =	devel/kf5/karchive
+RUN_DEPENDS =	devel/kf5/karchive \
+		devel/kf5/kbookmarks \
+		devel/kf5/kparts \
+		devel/kf5/solid
 
 LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdelibs4support \
-		devel/kf5/khtml \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
-		devel/kf5/kjs \
-		devel/kf5/kparts \
 		devel/kf5/kplotting \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kunitconversion \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/solid \
 		devel/kf5/sonnet \
 		misc/openbabel \
 		x11/qt5/qtscript \
