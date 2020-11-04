@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/04 08:19:29 landry Exp $
 
 COMMENT=	XKCD comic viewer
 
 DISTNAME=	XKCD_viewer-0.1
 PKGNAME=	${DISTNAME:L:S/_/-/}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.autistici.org/fox/files/XKCD_viewer/
@@ -20,6 +20,7 @@ CONFIGURE_STYLE=perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	x11/p5-Gtk2>=1.247 \
+		www/p5-LWP-Protocol-https \
 		www/p5-libwww
 
 .include <bsd.port.mk>
