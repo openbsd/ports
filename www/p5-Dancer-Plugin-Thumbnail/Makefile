@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/04 10:25:22 benoit Exp $
 
 COMMENT =	thumbnail plugin for p5-Dancer
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Dancer-Plugin-Thumbnail-0.14
+DISTNAME =	Dancer-Plugin-Thumbnail-0.16
 CATEGORIES =	www
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
