@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/03 13:53:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/04 14:26:52 sthen Exp $
 
 COMMENT =		web reconnaissance framework
 
@@ -6,6 +6,10 @@ GH_ACCOUNT =		lanmaster53
 GH_PROJECT =		recon-ng
 GH_TAGNAME =		v4.9.3
 REVISION =		0
+
+# remove at next update
+DISTNAME =		recon-ng-4.9.3-1
+PKGNAME =		recon-ng-4.9.3
 
 HOMEPAGE =		https://github.com/lanmaster53/recon-ng
 
