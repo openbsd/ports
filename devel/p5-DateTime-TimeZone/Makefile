@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/24 01:22:36 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2020/11/04 04:18:48 afresh1 Exp $
 
 COMMENT =		DateTime submodule for TZ
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		DateTime-TimeZone-2.39
+DISTNAME =		DateTime-TimeZone-2.43
 CATEGORIES =		devel
 
 MAINTAINER =		Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -27,4 +27,4 @@ TEST_DEPENDS +=	devel/p5-DateTime \
 		devel/p5-Test-Output \
 		devel/p5-Test-Taint
 
-.include <bsd.port.mk>	
+.include <bsd.port.mk>
