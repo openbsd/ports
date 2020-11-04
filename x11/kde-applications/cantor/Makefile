@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/03 16:12:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2020/11/04 06:02:09 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
+REVISION =	0
 
 SHARED_LIBS +=  cantorlibs                53.0 # 17.08
 
@@ -52,7 +53,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		math/libqalculate \
 		print/libspectre \
 		print/poppler,-qt5 \
-		textproc/discount \
 		x11/kde-applications/analitza \
 		x11/qt5/qtsvg \
 		x11/qt5/qtxmlpatterns
