@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2020/06/30 06:02:38 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2020/11/04 09:19:47 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
 @bin bin/gdal_contour
+@bin bin/gdal_create
 @bin bin/gdal_grid
 @bin bin/gdal_rasterize
 @bin bin/gdal_translate
@@ -16,7 +17,6 @@ bin/gdal-config
 @bin bin/gdalmanage
 @bin bin/gdalmdiminfo
 @bin bin/gdalmdimtranslate
-@bin bin/gdalserver
 @bin bin/gdalsrsinfo
 @bin bin/gdaltindex
 @bin bin/gdaltransform
@@ -102,6 +102,7 @@ lib/libgdal.la
 lib/pkgconfig/gdal.pc
 @man man/man1/gdal-config.1
 @man man/man1/gdal_contour.1
+@man man/man1/gdal_create.1
 @man man/man1/gdal_grid.1
 @man man/man1/gdal_merge.1
 @man man/man1/gdal_rasterize.1
@@ -201,6 +202,11 @@ share/gdal/s57objectclasses.csv
 share/gdal/seed_2d.dgn
 share/gdal/seed_3d.dgn
 share/gdal/stateplane.csv
+share/gdal/template_tiles.mapml
+share/gdal/tms_LINZAntarticaMapTileGrid.json
+share/gdal/tms_MapML_APSTILE.json
+share/gdal/tms_MapML_CBMTILE.json
+share/gdal/tms_NZTM2000.json
 share/gdal/trailer.dxf
 share/gdal/vdv452.xml
 share/gdal/vdv452.xsd
