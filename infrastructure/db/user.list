@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.376 2020/10/22 13:52:57 abieber Exp $
+$OpenBSD: user.list,v 1.377 2020/11/04 19:15:30 solene Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -369,3 +369,4 @@ id  user		group		port
 858 _purritobin		_purritobin	www/purritobin
 859 _miniflux		_miniflux	net/miniflux
 860 _dendrite		_dendrite	net/dendrite
+861 _i2p		_i2p		net/i2p
