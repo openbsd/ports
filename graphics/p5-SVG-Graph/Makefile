@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/11/04 02:31:15 afresh1 Exp $
 
 COMMENT =		visualize your data in SVG format
 
-DISTNAME =		SVG-Graph-0.02
+DISTNAME =		SVG-Graph-0.04
+CPAN_AUTHOR =		CJFIELDS
 CATEGORIES =		graphics
-REVISION =		2
 
 # Artistic License 2.0
 PERMIT_PACKAGE =	Yes
@@ -17,6 +17,8 @@ RUN_DEPENDS =		devel/p5-Tree-DAG_Node \
 			math/p5-Math-Derivative \
 			math/p5-Math-Spline \
 			math/p5-Statistics-Descriptive \
+
+CONFIGURE_STYLE =	modbuild
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/23 10:05:08 jasper Exp $
-${P5SITE}/SVG/Frame.pm
+@comment $OpenBSD: PLIST,v 1.3 2020/11/04 02:31:15 afresh1 Exp $
 ${P5SITE}/SVG/Graph/
 ${P5SITE}/SVG/Graph.pm
 ${P5SITE}/SVG/Graph/Data/
@@ -22,7 +21,6 @@ ${P5SITE}/SVG/Graph/Glyph/pictogram.pm
 ${P5SITE}/SVG/Graph/Glyph/scatter.pm
 ${P5SITE}/SVG/Graph/Glyph/tree.pm
 ${P5SITE}/SVG/Graph/Glyph/wedge.pm
-@man man/man3p/SVG::Frame.3p
 @man man/man3p/SVG::Graph.3p
 @man man/man3p/SVG::Graph::Data.3p
 @man man/man3p/SVG::Graph::Data::Datum.3p
