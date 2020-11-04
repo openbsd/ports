@@ -1,0 +1,41 @@
+$OpenBSD: patch-build_xml,v 1.3 2020/11/04 20:45:00 solene Exp $
+
+define OpenBSD property
+
+--- build.xml.orig	Fri Jul 31 18:06:35 2020
++++ build.xml	Fri Jul 31 18:10:16 2020
+@@ -83,6 +83,9 @@
+         <condition property="dist.os" value="os400">
+             <equals arg1="${os.name}" arg2="OS/400"/>
+         </condition>
++        <condition property="dist.os" value="openbsd">
++            <equals arg1="${os.name}" arg2="OpenBSD"/>
++        </condition>
+         <property name="dist.os" value="${os.name}"/>
+         
+         <!-- Resolve an architecture to use in release names. -->
+@@ -386,6 +389,7 @@
+         <condition property="make.name" value="gmake">
+             <or>
+                 <isset property="is.freebsd"/>
++                <isset property="is.openbsd"/>
+                 <isset property="is.solaris"/>
+             </or>
+         </condition>
+@@ -403,6 +407,7 @@
+             <or>
+                 <isset property="is.linux"/>
+                 <isset property="is.freebsd"/>
++                <isset property="is.openbsd"/>
+                 <isset property="is.solaris"/>
+             </or>
+         </condition>
+@@ -1823,6 +1828,8 @@ wrapper.filter.action.999=NONE]]></replacevalue>
+         <release-delta-extract-platform osname="linux"   osarch="armel"     bits="32" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
+         <release-delta-extract-platform osname="linux"   osarch="armhf"     bits="32" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
+         <release-delta-extract-platform osname="linux"   osarch="armhf"     bits="64" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
++        <release-delta-extract-platform osname="openbsd"   osarch="x86"     bits="32" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
++        <release-delta-extract-platform osname="openbsd"   osarch="x86"     bits="64" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
+     </target>
+     <target name="release-delta" depends="pre-release:check, release-delta:init, release-delta:extract-platforms">
+         <property name="deltareleasefile" value="wrapper-delta-pack-${version}"/>

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_c_logger_c,v 1.3 2020/11/04 20:45:00 solene Exp $
+
+add OpenBSD logging support
+
+--- src/c/logger.c.orig	Fri Jul 31 18:11:51 2020
++++ src/c/logger.c	Fri Jul 31 18:12:14 2020
+@@ -73,7 +73,7 @@ typedef long intptr_t;
+   #include <sys/errno.h>
+   #include <sys/fcntl.h>
+  #elif defined(AIX) || defined(HPUX) || defined(MACOSX)
+- #elif defined(FREEBSD)
++ #elif defined(FREEBSD) || defined(OPENBSD)
+   #include <sys/param.h>
+   #include <errno.h>
+  #else /* LINUX */
