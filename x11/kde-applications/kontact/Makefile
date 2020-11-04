@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 19:57:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/04 12:09:18 rsadowski Exp $
 
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  kontactprivate       0.0 # 5.13.2
 
@@ -25,9 +25,11 @@ MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		devel/kf5/kitemmodels
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime \
+		devel/kf5/kitemmodels
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcmutils \
@@ -40,7 +42,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
-		devel/kf5/kitemmodels \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
@@ -49,9 +50,9 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
-		x11/kde-applications/akonadi \
+		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kdepim-apps-libs \
+		x11/kde-applications/kpimtextedit  \
 		x11/kde-applications/kontactinterface \
 		x11/kde-applications/libkdepim \
 		x11/qt5/qtdeclarative \
