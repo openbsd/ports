@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/04 06:08:45 rsadowski Exp $
 
 COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
+REVISION =	0
 
 SHARED_LIBS +=  KF5Konq              1.0 # 5.97.0
 SHARED_LIBS +=  konquerorprivate     1.0 # 5.97.0
@@ -44,13 +45,11 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kdelibs4support \
 		devel/kf5/kdesu \
 		devel/kf5/kguiaddons \
-		devel/kf5/khtml \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
-		devel/kf5/kjs \
 		devel/kf5/knotifications \
 		devel/kf5/kparts \
 		devel/kf5/kpty \
