@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/04 10:20:17 benoit Exp $
 
 COMMENT =	PSGI compliant HTTP Entity Parser
 
-DISTNAME =	HTTP-Entity-Parser-0.22
-REVISION =	0
+DISTNAME =	HTTP-Entity-Parser-0.24
 
 CATEGORIES =	www
 
