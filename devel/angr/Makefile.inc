@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.8 2020/07/07 14:51:51 kn Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2020/11/04 20:58:16 kn Exp $
 
 # vex is amd64-only; sync with security/angrop
 ONLY_FOR_ARCHS =	amd64
 
-MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Klemens Nanni <kn@openbsd.org>
+MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 CATEGORIES =		devel security
 

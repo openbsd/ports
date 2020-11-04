@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/07 14:51:51 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/04 20:58:16 kn Exp $
 
 # sync with devel/angr/Makefile.inc
 ONLY_FOR_ARCHS =	amd64
@@ -11,8 +11,7 @@ CATEGORIES =		security
 
 HOMEPAGE =		https://github.com/salls/angrop
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-			Klemens Nanni <kn@openbsd.org>
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # license field not set, consider bugging module's author
 PERMIT_PACKAGE =	Yes
@@ -22,7 +21,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_EGG_VERSION =	8.20.7.6
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-REVISION =		0
+REVISION =		1
 
 RUN_DEPENDS =		devel/angr/py-angr>=${MODPY_EGG_VERSION} \
 			devel/py-progressbar${MODPY_FLAVOR}

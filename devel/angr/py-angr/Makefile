@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/07 14:51:51 kn Exp $
+# $OpenBSD: Makefile,v 1.13 2020/11/04 20:58:16 kn Exp $
 
 COMMENT =	multi-architecture binary analysis toolkit
+REVISION =	0
 
 ANGR_PYTHON_MODULE =	angr
 

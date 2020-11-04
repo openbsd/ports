@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/08 20:55:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/04 20:58:16 kn Exp $
 
 COMMENT =		efficient SMT solver library (angr fork)
 
 ANGR_PYTHON_MODULE =	z3-solver
 MODPY_EGG_VERSION =	4.8.8.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES +=		math
 
