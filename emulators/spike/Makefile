@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/01 15:01:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/04 14:40:03 sthen Exp $
+
+# uses huge amounts of memory compiling disasm.cc on i386, the available
+# address space is not large enough
+NOT_FOR_ARCHS =	i386
 
 COMMENT =	RISC-V ISA simulator
 
