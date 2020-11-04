@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/03 16:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/04 12:20:16 rsadowski Exp $
 
 BROKEN =	Depends on Qt 5.14+
 
@@ -47,10 +47,12 @@ LIB_DEPENDS =	devel/kf5/kauth \
 MODPY_ADJ_FILES =	scripts/xliffmerge.py
 
 post-install:
-	find ${PREFIX}/share/lokalize/scripts/odf -type f -name \*.py -exec ${MODPY_BIN_ADJ} {} +
+	find ${PREFIX}/share/lokalize/scripts/odf \
+		-type f -name \*.py -exec ${MODPY_BIN_ADJ} {} +
 	2to3 -w -n ${PREFIX}/share/lokalize/scripts/odf
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/apps/lokalize/scripts/ \
-		${PREFIX}/share/lokalize/scripts/odf/
+		${PREFIX}/share/lokalize/scripts/odf/ \
+		${PREFIX}/share/lokalize/scripts/
 
 .include <bsd.port.mk>
