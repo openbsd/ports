@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 20:02:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/04 06:18:31 rsadowski Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/education/step
 
@@ -34,12 +34,10 @@ LIB_DEPENDS =	devel/gsl \
 		devel/kf5/kcrash \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
-		devel/kf5/khtml \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
-		devel/kf5/kjs \
 		devel/kf5/knewstuff \
 		devel/kf5/kplotting \
 		devel/kf5/kservice \
