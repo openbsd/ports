@@ -1,0 +1,19 @@
+#!/bin/ksh
+#
+# $OpenBSD: i2p.rc,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
+
+daemon="${TRUEPREFIX}/bin/i2prouter"
+daemon_flags="start"
+daemon_user="_i2p"
+
+. /etc/rc.d/rc.subr
+
+rc_check() {
+	${rcexec} "${daemon} status"
+}
+
+rc_stop() {
+	${rcexec} "${daemon} graceful"
+}
+
+rc_cmd $1

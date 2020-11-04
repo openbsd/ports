@@ -1,0 +1,52 @@
+$OpenBSD: patch-installer_resources_wrapper_config,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
+
+path to java binary
+add proper classpaths for i2p and wrapper
+add library path for wrapper
+set runtime dirs
+
+--- installer/resources/wrapper.config.orig	Mon May 25 18:07:54 2020
++++ installer/resources/wrapper.config	Sat Aug  1 15:07:01 2020
+@@ -27,7 +27,7 @@
+ #
+ #********************************************************************
+ # Java Application
+-wrapper.java.command=java
++wrapper.java.command=${JAVA_HOME}/bin/java
+ #  Specify a specific java binary:
+ #set.JAVA_HOME=/java/path
+ #wrapper.java.command=%JAVA_HOME%/bin/java
+@@ -60,13 +60,13 @@ wrapper.java.mainclass=org.tanukisoftware.wrapper.Wrap
+ # classes, or all the classes of i2p.jar, are in a different directory).
+ # Be sure there are no other duplicate classes.
+ #
+-wrapper.java.classpath.1=$INSTALL_PATH/lib/*.jar
++wrapper.java.classpath.1=${LOCALBASE}/share/i2p/lib/*.jar
+ #  uncomment this to use the system classpath as well (e.g. to get tools.jar)
+-# wrapper.java.classpath.2=%CLASSPATH%
++wrapper.java.classpath.2=${LOCALBASE}/share/java/classes/*.jar
+ 
+ # Java Library Path (location of Wrapper.DLL or libwrapper.so)
+-wrapper.java.library.path.1=$INSTALL_PATH
+-wrapper.java.library.path.2=$INSTALL_PATH/lib
++wrapper.java.library.path.1=${LOCALBASE}/lib/tanukuwrapper
++wrapper.java.library.path.2=${LOCALBASE}/share/i2p/lib
+ 
+ # Java Bits.  On applicable platforms, tells the JVM to run in 32 or 64-bit mode.
+ wrapper.java.additional.auto_bits=FALSE
+@@ -74,8 +74,14 @@ wrapper.java.additional.auto_bits=FALSE
+ # Java Additional Parameters
+ # Numbers must be consecutive (except for stripquotes)
+ wrapper.java.additional.1=-DloggerFilenameOverride=logs/log-router-@.txt
+-wrapper.java.additional.2=-Di2p.dir.base="$INSTALL_PATH"
++wrapper.java.additional.2=-Di2p.dir.base="${LOCALBASE}/share/i2p"
+ wrapper.java.additional.2.stripquotes=TRUE
++wrapper.java.additional.3=-Di2p.dir.app="${DB_DIR}"
++wrapper.java.additional.3.stripquotes=TRUE
++wrapper.java.additional.4=-Di2p.dir.config="${DB_DIR}"
++wrapper.java.additional.4.stripquotes=TRUE
++wrapper.java.additional.5=-Di2p.dir.router="${DB_DIR}"
++wrapper.java.additional.5.stripquotes=TRUE
+ 
+ # Prevent the JVM from exporting stats (and thereby causing hundreds of
+ # ms long pauses during GC)

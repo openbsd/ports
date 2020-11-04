@@ -1,0 +1,42 @@
+$OpenBSD: patch-core_c_jbigi_build_sh,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
+
+use only local gmp
+change default lib to dynamic
+avoid tests
+
+--- core/c/jbigi/build.sh.orig	Mon Aug 24 21:45:06 2020
++++ core/c/jbigi/build.sh	Sun Oct  4 08:02:36 2020
+@@ -21,7 +21,6 @@ rm -rf bin/local
+ mkdir -p lib bin/local
+ 
+ # Import gmp version variables and download gmp.
+-. ./download_gmp.sh
+ 
+ 
+ # If JAVA_HOME isn't set, try to figure it out on our own
+@@ -38,7 +37,7 @@ set -e
+ cd bin/local
+ 
+ echo "Building..."
+-if [ "$1" != "dynamic" ]; then
++if [ "$1" = "static" ]; then
+     case `uname -sr` in
+         Darwin*)
+             # --with-pic is required for static linking
+@@ -50,7 +49,6 @@ if [ "$1" != "dynamic" ]; then
+     make
+     sh ../../build_jbigi.sh static
+ else
+-    shift
+     sh ../../build_jbigi.sh dynamic
+ fi
+ 
+@@ -58,7 +56,7 @@ cp *jbigi???* ../../lib/
+ echo 'Library copied to lib/'
+ cd ../..
+ 
+-if [ "$1" != "notest" ]; then
++if [ "$1" = "test" ]; then
+     if [ -z "$I2P" ]; then
+         if [ -r $HOME/i2p/lib/i2p.jar ]; then
+             I2P="$HOME/i2p"
