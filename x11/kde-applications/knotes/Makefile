@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 19:56:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/04 16:33:24 rsadowski Exp $
 
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://knotesapp.com/
 
@@ -51,7 +51,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
 		devel/kf5/kdnssd \
 		devel/kf5/kglobalaccel \
 		devel/kf5/ki18n \
