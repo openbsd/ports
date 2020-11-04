@@ -1,0 +1,12 @@
+direnv is an extension for POSIX shells that adds the ability to modify
+the environment based on the current working directory.
+
+Before each prompt, direnv checks for the existence of .envrc in the
+current and parent directories. If the file exists, and is authorized,
+it is loaded into a bash sub-shell and all exported variables are then
+captured by direnv and made available to the current shell.
+
+This allows for project specific environment variables to be defined
+without cluttering .profile.
+
+Supports common shells such as bash, zsh, fish, tcsh, elvish.
