@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/04 07:10:52 rsadowski Exp $
 
 COMMENT =	KDE raster image editor
 DISTNAME =	kolourpaint-${VERSION}
 CATEGORIES =	graphics
+REVISION =	0
 
 SHARED_LIBS +=  kolourpaint_lgpl           2.0 # 0.0
 
@@ -29,14 +30,10 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
-		devel/kf5/kdelibs4support \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
-		devel/kf5/knotifications \
-		devel/kf5/kparts \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kunitconversion \
 		devel/kf5/kwindowsystem \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
