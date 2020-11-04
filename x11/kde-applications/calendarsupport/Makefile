@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/04 06:01:01 rsadowski Exp $
 
 COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5CalendarSupport       1.0 # 5.13.2
 
@@ -38,11 +39,9 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
-		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-calendar \
 		x11/kde-applications/akonadi-notes \
-		x11/kde-applications/kdepim-apps-libs \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kmime  \
 		x11/kde-applications/kpimtextedit \
