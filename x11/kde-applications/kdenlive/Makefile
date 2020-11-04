@@ -6,6 +6,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -68,6 +69,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/rttr \
 		multimedia/mlt,-main \
 		x11/qt5/qtdeclarative \
+		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtsvg \
 		x11/qt5/qtwebkit
