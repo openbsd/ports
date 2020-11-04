@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/04 13:41:47 benoit Exp $
 
 COMMENT =	EC using OpenSSL
 
 MODULES =	cpan
 
-DISTNAME =	Crypt-OpenSSL-EC-1.31
+DISTNAME =	Crypt-OpenSSL-EC-1.32
 CATEGORIES =	security
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE = Yes
