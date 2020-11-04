@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1226 2020/10/28 11:57:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.1227 2020/11/04 19:15:15 solene Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -135,6 +135,7 @@
      SUBDIR += hs-HTTP
      SUBDIR += hs-hostname
      SUBDIR += httptunnel
+     SUBDIR += i2p
      SUBDIR += i2pd
      SUBDIR += icbd
      SUBDIR += icbirc
