@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/04 12:17:55 rsadowski Exp $
 
 COMMENT =	sieve script library
 DISTNAME =	libksieve-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5KManageSieve   1.0 # 5.13.2
 SHARED_LIBS +=  KF5KSieve         1.0 # 5.13.2
@@ -42,7 +43,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kwallet\
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/sonnet \
-		devel/kf5/prison \
 		devel/kf5/syntax-highlighting \
 		security/cyrus-sasl2 \
 		x11/kde-applications/kidentitymanagement \
