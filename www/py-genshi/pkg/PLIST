@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/05/13 09:00:22 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/04 15:01:28 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/genshi/
 lib/python${MODPY_VERSION}/site-packages/genshi/__init__.py
+${MODPY_2ONLY}@so lib/python${MODPY_VERSION}/site-packages/genshi/_speedups.so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/genshi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -48,8 +49,6 @@ lib/python${MODPY_VERSION}/site-packages/genshi/template/
 lib/python${MODPY_VERSION}/site-packages/genshi/template/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}_ast24.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}ast24.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}astutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}directives.${MODPY_PYC_MAGIC_TAG}pyc
@@ -59,8 +58,6 @@ lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}loader.
 lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}markup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/template/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/genshi/template/_ast24.py
-lib/python${MODPY_VERSION}/site-packages/genshi/template/ast24.py
 lib/python${MODPY_VERSION}/site-packages/genshi/template/astutil.py
 lib/python${MODPY_VERSION}/site-packages/genshi/template/base.py
 lib/python${MODPY_VERSION}/site-packages/genshi/template/directives.py
@@ -109,12 +106,14 @@ lib/python${MODPY_VERSION}/site-packages/genshi/tests/${MODPY_PYCACHE}core.${MOD
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/${MODPY_PYCACHE}input.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/${MODPY_PYCACHE}output.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/${MODPY_PYCACHE}path.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/genshi/tests/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/builder.py
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/core.py
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/input.py
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/output.py
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/path.py
+lib/python${MODPY_VERSION}/site-packages/genshi/tests/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/util.py
 lib/python${MODPY_VERSION}/site-packages/genshi/util.py
 share/doc/${MODPY_PY_PREFIX}genshi/
