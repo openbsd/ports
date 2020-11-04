@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/04 06:29:46 rsadowski Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${VERSION}
@@ -54,7 +54,8 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/sonnet \
 		x11/grantlee-qt5 \
 		x11/qt5/qtdeclarative \
-		x11/qt5/qtwebkit \
+		x11/qt5/qtwebengine \
+		x11/qt5/qtwebchannel \
 		x11/qt5/qtscript \
 		x11/qt5/qtxmlpatterns
 
