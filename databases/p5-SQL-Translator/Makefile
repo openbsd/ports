@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/04 02:16:55 afresh1 Exp $
 
 COMMENT =	SQL DDL transformations and more
 
-DISTNAME =	SQL-Translator-0.11021
+DISTNAME =	SQL-Translator-1.62
 CATEGORIES =	databases
 MODULES =	cpan databases/postgresql
 PKG_ARCH =	*
@@ -15,6 +15,8 @@ HOMEPAGE =	http://sqlfairy.sourceforge.net/
 PERMIT_PACKAGE =	Yes
 
 CONFIGURE_ARGS =	--skipdeps
+
+BUILD_DEPENDS +=	devel/p5-File-ShareDir-Install
 
 RUN_DEPENDS =	databases/p5-DBI>=1.54 \
 		devel/p5-Carp-Clan>=0 \
@@ -32,13 +34,15 @@ TEST_DEPENDS =	converters/p5-JSON>=2.0 \
 		textproc/p5-XML-Writer>=0.500
 
 # Optional depends to avoid skipping tests
-TEST_DEPENDS += graphics/p5-GD \
+TEST_DEPENDS += converters/p5-JSON-MaybeXS \
+		graphics/p5-GD \
 		misc/p5-Spreadsheet-ParseExcel \
 		textproc/p5-Template \
 		textproc/p5-Text-RecordParser \
 		textproc/p5-XML-LibXML \
 		databases/p5-DBD-Pg \
-		databases/p5-DBD-SQLite
+		databases/p5-DBD-SQLite \
+		www/p5-CGI
 
 MODPOSTGRESQL_TEST_DBNAME =	sql-translator-test
 MAKE_ENV +=	DBICTEST_PG_DSN='dbi:Pg:dbname=${MODPOSTGRESQL_TEST_DBNAME}' \
