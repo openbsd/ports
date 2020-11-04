@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/03 19:58:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/04 15:47:06 rsadowski Exp $
 
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  korganizer_core         1.0 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.0 # 5.13.2
@@ -78,7 +78,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/kde-applications/eventviews \
 		x11/kde-applications/incidenceeditor \
 		x11/kde-applications/kcalutils \
-		x11/kde-applications/kdepim-apps-libs \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kimap \
 		x11/kde-applications/kldap \
