@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/04 12:53:59 rsadowski Exp $
 
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5PimCommon              2.0 # 5.13.3
 SHARED_LIBS +=  KF5PimCommonAkonadi       2.0 # 5.13.3
@@ -34,7 +35,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
-		devel/kf5/kdbusaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
