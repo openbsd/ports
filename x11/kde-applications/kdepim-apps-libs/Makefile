@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/04 06:07:33 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-apps-libs-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5FollowupReminder         1.0 # 5.13.2
 SHARED_LIBS +=  KF5KaddressbookGrantlee     1.0 # 5.13.2
@@ -16,15 +17,18 @@ WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5Libkleo KF5PimCommon
 WANTLIB += KF5Service KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml gpgmepp m qgpgme
 
-
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		devel/kf5/kcompletion \
+		devel/kf5/kjobwidgets
+
+RUN_DEPENDS =	devel/kf5/kcompletion \
+		devel/kf5/kjobwidgets
 
 LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcontacts \
@@ -32,7 +36,6 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
-		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		security/gpgme,-qt \
