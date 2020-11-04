@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/24 13:28:59 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.29 2020/11/04 04:14:27 afresh1 Exp $
 
 COMMENT =		date and time object for Perl
 
@@ -6,7 +6,7 @@ MODULES =		cpan
 DISTNAME =		DateTime-1.52
 EPOCH =			0
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
@@ -20,6 +20,11 @@ BUILD_DEPENDS =	devel/p5-Dist-CheckConflicts>=0.02
 TEST_DEPENDS =	devel/p5-CPAN-Meta-Check>=0.011 \
 		devel/p5-Test-Fatal \
 		devel/p5-Test-Warnings>=0.005
+
+# Additional depends to avoid failing tests
+TEST_DEPENDS +=	devel/p5-Test-Fatal \
+		devel/p5-DateTime-Locale \
+		devel/p5-CPAN-Meta-Check
 
 RUN_DEPENDS =	devel/p5-DateTime-Locale>=1.06 \
 		devel/p5-DateTime-TimeZone>=2.02 \
