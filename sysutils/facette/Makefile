@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2020/10/22 01:56:22 abieber Exp $
+# $OpenBSD: Makefile,v 1.16 2020/11/04 14:28:22 sthen Exp $
+
+BROKEN =	fetches from internet during build
 
 COMMENT =	time series data visualization and graphing software
 
