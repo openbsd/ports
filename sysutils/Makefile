@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.584 2020/11/01 13:28:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.585 2020/11/04 15:15:34 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -63,6 +63,7 @@
      SUBDIR += dfc
      SUBDIR += diffoscope
      SUBDIR += dinit
+     SUBDIR += direnv
      SUBDIR += direvent
      SUBDIR += diskrescue
      SUBDIR += dmassage
