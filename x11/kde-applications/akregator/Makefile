@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/04 05:54:52 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  akregatorinterfaces       1.0 # 5.13.2
 SHARED_LIBS +=  akregatorprivate          1.0 # 5.13.2
@@ -59,7 +60,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
 		devel/kf5/kjobwidgets \
@@ -71,7 +71,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
 		devel/kf5/syndication \
-		devel/kf5/prison \
 		security/gpgme,-qt \
 		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \
