@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1102 2020/11/03 13:52:13 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1103 2020/11/04 20:21:47 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -503,6 +503,8 @@ my $stem_extensions = {
 	'py-elftools' => 'py3-elftools',
 	'py-lockfile' => 'py3-lockfile',
 	'py-toml' => 'py3-toml',
+	'py-textfsm' => 'py3-textfsm',
+	'py-unicodecsv' => 'py3-unicodecsv',
 };
 
 my $obsolete_reason = {

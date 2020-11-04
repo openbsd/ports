@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/17 12:03:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/11/04 20:21:47 jasper Exp $
+@conflict py-textfsm-*
+@pkgpath textproc/py-textfsm
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}clitable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}copyable_regex_object.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}pyc

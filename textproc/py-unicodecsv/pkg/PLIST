@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/30 20:13:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/11/04 20:21:47 jasper Exp $
+@conflict unicodecsv-*
+@pkgpath textproc/py-unicodecsv
 lib/python${MODPY_VERSION}/site-packages/unicodecsv/
 lib/python${MODPY_VERSION}/site-packages/unicodecsv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/unicodecsv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
