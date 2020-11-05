@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.167 2020/10/03 15:40:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.168 2020/11/05 13:37:05 ajacoutot Exp $
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		3.34.1
-REVISION=		1
+GNOME_VERSION=		3.38.0
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
@@ -58,6 +57,8 @@ MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
 MODGNOME_TOOLS += yelp
 
 CONFIGURE_ARGS=		-Denable-easy-codec-installation=no
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}

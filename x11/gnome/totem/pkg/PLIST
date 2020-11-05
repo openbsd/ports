@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2019/11/01 22:10:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2020/11/05 13:37:05 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -17,23 +17,23 @@ lib/totem/
 lib/totem/plugins/
 lib/totem/plugins/apple-trailers/
 lib/totem/plugins/apple-trailers/apple-trailers.plugin
-lib/totem/plugins/apple-trailers/libapple-trailers.so
+@so lib/totem/plugins/apple-trailers/libapple-trailers.so
 lib/totem/plugins/autoload-subtitles/
 lib/totem/plugins/autoload-subtitles/autoload-subtitles.plugin
-lib/totem/plugins/autoload-subtitles/libautoload-subtitles.so
+@so lib/totem/plugins/autoload-subtitles/libautoload-subtitles.so
 lib/totem/plugins/dbus/
 ${MODPY_COMMENT}lib/totem/plugins/dbus/${MODPY_PYCACHE}/
 lib/totem/plugins/dbus/${MODPY_PYCACHE}dbusservice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/dbus/dbusservice.plugin
 lib/totem/plugins/dbus/dbusservice.py
 lib/totem/plugins/im-status/
-lib/totem/plugins/im-status/libtotem-im-status.so
+@so lib/totem/plugins/im-status/libtotem-im-status.so
 lib/totem/plugins/im-status/totem-im-status.plugin
 lib/totem/plugins/media-player-keys/
-lib/totem/plugins/media-player-keys/libmedia-player-keys.so
+@so lib/totem/plugins/media-player-keys/libmedia-player-keys.so
 lib/totem/plugins/media-player-keys/media-player-keys.plugin
 lib/totem/plugins/open-directory/
-lib/totem/plugins/open-directory/libopen-directory.so
+@so lib/totem/plugins/open-directory/libopen-directory.so
 lib/totem/plugins/open-directory/open-directory.plugin
 lib/totem/plugins/opensubtitles/
 ${MODPY_COMMENT}lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}/
@@ -44,7 +44,7 @@ lib/totem/plugins/opensubtitles/opensubtitles.plugin
 lib/totem/plugins/opensubtitles/opensubtitles.py
 lib/totem/plugins/opensubtitles/opensubtitles.ui
 lib/totem/plugins/properties/
-lib/totem/plugins/properties/libmovie-properties.so
+@so lib/totem/plugins/properties/libmovie-properties.so
 lib/totem/plugins/properties/movie-properties.plugin
 lib/totem/plugins/pythonconsole/
 ${MODPY_COMMENT}lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}/
@@ -54,30 +54,30 @@ lib/totem/plugins/pythonconsole/console.py
 lib/totem/plugins/pythonconsole/pythonconsole.plugin
 lib/totem/plugins/pythonconsole/pythonconsole.py
 lib/totem/plugins/recent/
-lib/totem/plugins/recent/librecent.so
+@so lib/totem/plugins/recent/librecent.so
 lib/totem/plugins/recent/recent.plugin
 lib/totem/plugins/rotation/
-lib/totem/plugins/rotation/librotation.so
+@so lib/totem/plugins/rotation/librotation.so
 lib/totem/plugins/rotation/rotation.plugin
 lib/totem/plugins/save-file/
-lib/totem/plugins/save-file/libsave-file.so
+@so lib/totem/plugins/save-file/libsave-file.so
 lib/totem/plugins/save-file/save-file.plugin
 lib/totem/plugins/screensaver/
-lib/totem/plugins/screensaver/libscreensaver.so
+@so lib/totem/plugins/screensaver/libscreensaver.so
 lib/totem/plugins/screensaver/screensaver.plugin
 lib/totem/plugins/screenshot/
 lib/totem/plugins/screenshot/gallery.ui
-lib/totem/plugins/screenshot/libscreenshot.so
+@so lib/totem/plugins/screenshot/libscreenshot.so
 lib/totem/plugins/screenshot/screenshot.plugin
 lib/totem/plugins/skipto/
-lib/totem/plugins/skipto/libskipto.so
+@so lib/totem/plugins/skipto/libskipto.so
 lib/totem/plugins/skipto/skipto.plugin
 lib/totem/plugins/skipto/skipto.ui
 lib/totem/plugins/variable-rate/
-lib/totem/plugins/variable-rate/libvariable-rate.so
+@so lib/totem/plugins/variable-rate/libvariable-rate.so
 lib/totem/plugins/variable-rate/variable-rate.plugin
 lib/totem/plugins/vimeo/
-lib/totem/plugins/vimeo/libvimeo.so
+@so lib/totem/plugins/vimeo/libvimeo.so
 lib/totem/plugins/vimeo/vimeo.plugin
 @bin libexec/totem-gallery-thumbnailer
 @man man/man1/totem-video-thumbnailer.1
@@ -193,7 +193,6 @@ share/help/cs/totem/troubleshooting-DVD.page
 share/help/cs/totem/troubleshooting-debug.page
 share/help/cs/totem/troubleshooting-subtitles.page
 share/help/cs/totem/view-zoom.page
-share/help/da/
 share/help/da/totem/
 share/help/da/totem/adjust-speed.page
 share/help/da/totem/channels.page
