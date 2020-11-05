@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.205 2020/10/04 18:33:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.206 2020/11/05 19:42:28 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.3.1
 DISTNAME=	ffmpeg-${V}
+REVISION=	0
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -129,6 +130,10 @@ CONFIGURE_ARGS+=--enable-shared \
 		--mandir=${PREFIX}/man \
 		--objcc="/usr/bin/false" \
 		--optflags="${OPTFLAGS}"
+
+.if ${MACHINE_ARCH} == "arm"
+CONFIGURE_ARGS+=--disable-asm
+.endif
 
 CONFIGURE_ENV+=	TERM=${TERM} \
 		TMPDIR=${WRKBUILD}
