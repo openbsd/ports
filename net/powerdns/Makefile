@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2020/10/07 21:20:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2020/11/05 20:33:19 sthen Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
@@ -14,7 +14,7 @@ PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
 #REVISION-main=		1
-#REVISION-mysql=		1
+REVISION-mysql=		0
 #REVISION-pgsql=		1
 #REVISION-ldap=		1
 
@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=	--without-mysql
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
 			databases/mariadb
 RUN_DEPENDS-mysql=	net/powerdns
-WANTLIB-mysql+=		${WANTLIB} iconv mariadb z
+WANTLIB-mysql+=		${WANTLIB} mariadb z
 
 # PostgreSQL
 .if ${BUILD_PACKAGES:M-pgsql}
