@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/08 21:57:23 kn Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/11/05 20:27:59 kn Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -309,6 +309,7 @@ ${MODRUBY_SITEDIR}/puppet/http/service.rb
 ${MODRUBY_SITEDIR}/puppet/http/service/ca.rb
 ${MODRUBY_SITEDIR}/puppet/http/service/compiler.rb
 ${MODRUBY_SITEDIR}/puppet/http/service/file_server.rb
+${MODRUBY_SITEDIR}/puppet/http/service/puppetserver.rb
 ${MODRUBY_SITEDIR}/puppet/http/service/report.rb
 ${MODRUBY_SITEDIR}/puppet/http/session.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/
@@ -852,6 +853,7 @@ ${MODRUBY_SITEDIR}/puppet/provider/package/openbsd.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/opkg.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/pacman.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/pip.rb
+${MODRUBY_SITEDIR}/puppet/provider/package/pip2.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/pip3.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/pkg.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/pkgdmg.rb
@@ -862,6 +864,7 @@ ${MODRUBY_SITEDIR}/puppet/provider/package/portage.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/ports.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/portupgrade.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/puppet_gem.rb
+${MODRUBY_SITEDIR}/puppet/provider/package/puppetserver_gem.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/rpm.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/rug.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/sun.rb

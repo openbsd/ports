@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_util_run_mode_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
+$OpenBSD: patch-lib_puppet_util_run_mode_rb,v 1.2 2020/11/05 20:27:59 kn Exp $
 
 Update the default directory locations
 
@@ -6,7 +6,7 @@ Update the default directory locations
 Index: lib/puppet/util/run_mode.rb
 --- lib/puppet/util/run_mode.rb.orig
 +++ lib/puppet/util/run_mode.rb
-@@ -59,15 +59,15 @@ module Puppet
+@@ -63,15 +63,15 @@ module Puppet
  
      class UnixRunMode < RunMode
        def conf_dir
