@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/09/04 05:07:08 thfr Exp $
+# $OpenBSD: Makefile,v 1.17 2020/11/05 11:23:30 sthen Exp $
 
 COMMENT=	unpack Inno Setup installers
 
 DISTNAME=	innoextract-1.9
-
+REVISION=	0
 CATEGORIES=	archivers
 HOMEPAGE=	https://constexpr.org/innoextract/
 MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
@@ -23,7 +23,7 @@ COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	archivers/xz \
 		converters/libiconv \
-		devel/boost>=1.53.0p6
+		devel/boost>=1.70.0
 
 RUN_DEPENDS=	archivers/unrar
 
@@ -31,7 +31,7 @@ MODULES=	devel/cmake
 
 SEPARATE_BUILD=	Yes
 
-CXXFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR -Wno-system-headers
+CXXFLAGS+=	-Wno-system-headers
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DCMAKE_INSTALL_MANDIR="man" \
 		-DDOXYGEN_EXECUTABLE="false"
