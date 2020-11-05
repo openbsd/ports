@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/11/05 21:47:17 benoit Exp $
 
 COMMENT =		basic descriptive statistical functions
 
-DISTNAME =		Statistics-Descriptive-3.0702
+DISTNAME =		Statistics-Descriptive-3.0800
 CATEGORIES =		math
-REVISION =		0
 
 # perl
 PERMIT_PACKAGE =	Yes
