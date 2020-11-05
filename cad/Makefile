@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2020/07/03 13:55:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.43 2020/11/05 20:38:02 tracey Exp $
 
      SUBDIR =
      SUBDIR += abc
@@ -19,6 +19,7 @@
      SUBDIR += openscad
      SUBDIR += opensta
      SUBDIR += pcb
+     SUBDIR += pcb2gcode
      SUBDIR += qcad
      SUBDIR += qelectrotech
      SUBDIR += qflow
