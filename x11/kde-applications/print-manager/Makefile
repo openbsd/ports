@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/05 20:41:25 rsadowski Exp $
 
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
 CATEGORIES =	sysutils print
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.print-manager
 
@@ -43,6 +44,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
+		x11/qt5/qtdeclarative \
 		print/cups,-libs
 
 .include <bsd.port.mk>

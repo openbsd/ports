@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/05 20:41:25 rsadowski Exp $
 
 COMMENT =	common code and data for many KDE games
 DISTNAME =	libkdegames-${VERSION}
 PKGNAME =	libkdegames-kf5-${VERSION}
 CATEGORIES =	devel games
+REVISION =	0
 
 SHARED_LIBS +=  KF5KDEGames               2.0 # 7.0
 SHARED_LIBS +=  KF5KDEGamesPrivate        2.0 # 1.0
@@ -45,6 +46,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kdeclarative \
 		devel/kf5/kguiaddons \
 		devel/kf5/kxmlgui \
+		x11/qt5/qtdeclarative \
 		audio/openal \
 		audio/libsndfile
 
