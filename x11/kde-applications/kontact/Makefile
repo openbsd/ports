@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/04 12:09:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/05 20:31:31 rsadowski Exp $
 
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  kontactprivate       0.0 # 5.13.2
 
@@ -55,6 +55,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kpimtextedit  \
 		x11/kde-applications/kontactinterface \
 		x11/kde-applications/libkdepim \
+		x11/kde-applications/pimcommon \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtwebchannel \
