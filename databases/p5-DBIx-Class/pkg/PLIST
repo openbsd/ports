@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/17 09:20:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/11/05 02:58:03 afresh1 Exp $
 @comment bin/dbicadmin
 ${P5SITE}/DBIx/Class.pm
 ${P5SITE}/DBIx/Class.pod
@@ -126,14 +126,13 @@ ${P5SITE}/DBIx/Class/SQLAHacks/OracleJoins.pm
 ${P5SITE}/DBIx/Class/SQLAHacks/SQLite.pm
 ${P5SITE}/DBIx/Class/SQLMaker/
 ${P5SITE}/DBIx/Class/SQLMaker.pm
-${P5SITE}/DBIx/Class/SQLMaker.pod
 ${P5SITE}/DBIx/Class/SQLMaker/ACCESS.pm
+${P5SITE}/DBIx/Class/SQLMaker/ClassicExtensions.pm
 ${P5SITE}/DBIx/Class/SQLMaker/LimitDialects.pm
 ${P5SITE}/DBIx/Class/SQLMaker/MSSQL.pm
 ${P5SITE}/DBIx/Class/SQLMaker/MySQL.pm
 ${P5SITE}/DBIx/Class/SQLMaker/Oracle.pm
 ${P5SITE}/DBIx/Class/SQLMaker/OracleJoins.pm
-${P5SITE}/DBIx/Class/SQLMaker/OracleJoins.pod
 ${P5SITE}/DBIx/Class/SQLMaker/SQLite.pm
 ${P5SITE}/DBIx/Class/Schema/
 ${P5SITE}/DBIx/Class/Schema.pm
@@ -206,6 +205,7 @@ ${P5SITE}/DBIx/Class/Storage/DBI/Sybase/Microsoft_SQL_Server/NoBindVars.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/UniqueIdentifier.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/mysql.pm
 ${P5SITE}/DBIx/Class/Storage/DBIHacks.pm
+${P5SITE}/DBIx/Class/Storage/Debug/PrettyTrace.pm
 ${P5SITE}/DBIx/Class/Storage/Statistics.pm
 ${P5SITE}/DBIx/Class/Storage/TxnScopeGuard.pm
 ${P5SITE}/DBIx/Class/UTF8Columns.pm
@@ -268,6 +268,7 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man3p/DBIx::Class::Relationship::Base.3p
 @man man/man3p/DBIx::Class::ResultClass::HashRefInflator.3p
 @man man/man3p/DBIx::Class::ResultSet.3p
+@man man/man3p/DBIx::Class::ResultSet::Pager.3p
 @man man/man3p/DBIx::Class::ResultSetColumn.3p
 @man man/man3p/DBIx::Class::ResultSetManager.3p
 @man man/man3p/DBIx::Class::ResultSource.3p
@@ -277,6 +278,7 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man3p/DBIx::Class::ResultSourceProxy::Table.3p
 @man man/man3p/DBIx::Class::Row.3p
 @man man/man3p/DBIx::Class::SQLMaker.3p
+@man man/man3p/DBIx::Class::SQLMaker::ClassicExtensions.3p
 @man man/man3p/DBIx::Class::SQLMaker::LimitDialects.3p
 @man man/man3p/DBIx::Class::SQLMaker::OracleJoins.3p
 @man man/man3p/DBIx::Class::Schema.3p
@@ -332,6 +334,7 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man3p/DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server::NoBindVars.3p
 @man man/man3p/DBIx::Class::Storage::DBI::UniqueIdentifier.3p
 @man man/man3p/DBIx::Class::Storage::DBI::mysql.3p
+@man man/man3p/DBIx::Class::Storage::Debug::PrettyTrace.3p
 @man man/man3p/DBIx::Class::Storage::Statistics.3p
 @man man/man3p/DBIx::Class::Storage::TxnScopeGuard.3p
 @man man/man3p/DBIx::Class::UTF8Columns.3p
