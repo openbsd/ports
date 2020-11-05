@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2020/11/03 17:00:08 solene Exp $
+# $OpenBSD: Makefile,v 1.214 2020/11/05 11:15:24 sthen Exp $
 
 COMMENT =	CLI program to download videos from YouTube and other sites
 
@@ -20,19 +20,10 @@ MASTER_SITES =	https://youtube-dl.org/downloads/latest/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-TEST_DEPENDS +=	devel/flake8 \
-		devel/py-nose${MODPY_FLAVOR}
-
-TEST_ENV =	PATH=${PORTPATH}
-
-pre-test:
-	ln -sf ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} \
-	    ${WRKDIR}/bin/nosetests
-
-do-test:
-	${TEST_ENV} ${MAKE_PROGRAM} -C ${WRKSRC} ${TEST_TARGET}
+TEST_DEPENDS +=	devel/flake8
 
 WRKDIST =	${WRKDIR}/youtube-dl
 
