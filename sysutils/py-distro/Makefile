@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/05 14:50:26 jasper Exp $
 
 COMMENT=	provide information about the OS platform
 
-MODPY_EGG_VERSION=	1.4.0
+MODPY_EGG_VERSION=	1.5.0
 DISTNAME=	distro-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	sysutils
 
