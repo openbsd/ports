@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2020/05/14 14:57:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.57 2020/11/05 10:32:25 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
@@ -250,6 +250,8 @@ share/locale/lv/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/mai/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/mg/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/mi/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
 share/locale/mjw/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/mk/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ml/LC_MESSAGES/gnome-desktop-3.0.mo
