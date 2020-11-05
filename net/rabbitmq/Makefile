@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2019/12/11 14:28:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.35 2020/11/05 08:28:57 sebastia Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
 V =		3.6.15
-REVISION =	1
+REVISION =	2
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
@@ -21,7 +21,6 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =	lang/erlang \
 		lang/python
 MODERL_VERSION = 19
-MODPY_RUNDEP =	No
 
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = none
