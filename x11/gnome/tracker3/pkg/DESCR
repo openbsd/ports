@@ -1,0 +1,6 @@
+Tracker is an efficient search engine and triplestore for desktop, embedded and
+mobile.
+
+This package contains the triplestore database, provided as the
+`libtracker-sparql` library and implemented using SQLite. It also provides the
+database ontologies and the commandline user interface (`tracker`).
