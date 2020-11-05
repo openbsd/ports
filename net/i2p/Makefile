@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/05 15:23:23 ajacoutot Exp $
 
 COMMENT=	i2p routing protocol
 
@@ -6,6 +6,7 @@ V=		0.9.47
 DISTNAME=	i2psource_${V}
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	i2p-${V}
+REVISION=	0
 
 CATEGORIES=	net
 

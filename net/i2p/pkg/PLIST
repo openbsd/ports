@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
-@newgroup _i2p:860
-@newuser _i2p:860:860:daemon:i2p account:${DB_DIR}:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2020/11/05 15:23:23 ajacoutot Exp $
+@newgroup _i2p:861
+@newuser _i2p:861:861:daemon:i2p account:${DB_DIR}:/sbin/nologin
 @rcscript ${RCDIR}/i2p
 bin/eepget
 bin/i2prouter
