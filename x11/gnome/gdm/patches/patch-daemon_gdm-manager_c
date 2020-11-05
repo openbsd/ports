@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.24 2020/05/14 15:25:54 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.25 2020/11/05 08:26:13 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
@@ -660,7 +660,7 @@ Index: daemon/gdm-manager.c
  
                  if (error != NULL) {
                          g_debug ("GdmManager: Error while retrieving remoteness for session: %s",
-@@ -609,7 +1019,7 @@ switch_to_compatible_user_session (GdmManager *manager
+@@ -610,7 +1020,7 @@ switch_to_compatible_user_session (GdmManager *manager
          if (existing_session != NULL) {
                  ssid_to_activate = gdm_session_get_session_id (existing_session);
                  if (seat_id != NULL) {
@@ -669,7 +669,7 @@ Index: daemon/gdm-manager.c
                          if (! res) {
                                  g_debug ("GdmManager: unable to activate session: %s", ssid_to_activate);
                                  goto out;
-@@ -711,29 +1121,6 @@ out:
+@@ -712,29 +1122,6 @@ out:
          return recorded;
  }
  
@@ -699,7 +699,7 @@ Index: daemon/gdm-manager.c
  static gboolean
  gdm_manager_handle_register_display (GdmDBusManager        *manager,
                                       GDBusMethodInvocation *invocation,
-@@ -773,7 +1160,7 @@ gdm_manager_handle_register_display (GdmDBusManager   
+@@ -774,7 +1161,7 @@ gdm_manager_handle_register_display (GdmDBusManager   
                  }
          }
  
@@ -708,7 +708,7 @@ Index: daemon/gdm-manager.c
  
          if (session != NULL) {
                  GPid pid;
-@@ -980,7 +1367,8 @@ on_reauthentication_client_rejected (GdmSession       
+@@ -981,7 +1368,8 @@ on_reauthentication_client_rejected (GdmSession       
                   * same audit session, ignore it since it doesn't "own" the
                   * reauthentication session
                   */
@@ -718,7 +718,7 @@ Index: daemon/gdm-manager.c
                                                              NULL);
                  session_id = g_object_get_data (G_OBJECT (session), "caller-session-id");
  
-@@ -1199,16 +1587,19 @@ static gboolean
+@@ -1200,16 +1588,19 @@ static gboolean
  display_is_on_seat0 (GdmDisplay *display)
  {
          gboolean is_on_seat0 = TRUE;
@@ -745,7 +745,7 @@ Index: daemon/gdm-manager.c
          return is_on_seat0;
  }
  
-@@ -2031,11 +2422,57 @@ on_user_session_died (GdmSession *session,
+@@ -2032,11 +2423,57 @@ on_user_session_died (GdmSession *session,
  }
  
  static char *
@@ -805,7 +805,7 @@ Index: daemon/gdm-manager.c
  }
  
  static void
-@@ -2044,25 +2481,6 @@ on_session_reauthenticated (GdmSession *session,
+@@ -2045,25 +2482,6 @@ on_session_reauthenticated (GdmSession *session,
                              GdmManager *manager)
  {
          gboolean fail_if_already_switched = FALSE;

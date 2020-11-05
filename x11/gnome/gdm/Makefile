@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.285 2020/09/21 14:36:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.286 2020/11/05 08:26:12 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.36.3
-REVISION=		0
+GNOME_VERSION=		3.36.4
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} gdm-puffy.png:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
