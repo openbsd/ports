@@ -1,8 +1,9 @@
-$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.7 2020/08/15 20:30:40 rsadowski Exp $
+$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.8 2020/11/05 11:23:03 sthen Exp $
+
 Index: tools/build/src/tools/gcc.jam
 --- tools/build/src/tools/gcc.jam.orig
 +++ tools/build/src/tools/gcc.jam
-@@ -573,7 +573,7 @@ class gcc-pch-generator : pch-generator
+@@ -651,7 +651,7 @@ class gcc-pch-generator : pch-generator
          # Return result of base class and pch-file property as
          # usage-requirements.
          return
@@ -11,7 +12,7 @@ Index: tools/build/src/tools/gcc.jam
              $(pch-file[2-])
            ;
      }
-@@ -625,7 +625,7 @@ actions compile.c.pch
+@@ -703,7 +703,7 @@ actions compile.c.pch
  
  # Declare flags and action for compilation.
  toolset.flags gcc.compile OPTIONS <optimization>off   : -O0 ;
@@ -20,7 +21,7 @@ Index: tools/build/src/tools/gcc.jam
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  
  toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
-@@ -1140,7 +1140,7 @@ cpu-flags gcc OPTIONS : x86 : c3-2 : -march=c3-2 ;
+@@ -1233,7 +1233,7 @@ cpu-flags gcc OPTIONS : x86 : c3-2 : -march=c3-2 ;
  ##
  cpu-flags gcc OPTIONS : x86 : atom : -march=atom ;
  # Sparc

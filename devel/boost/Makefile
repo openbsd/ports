@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.100 2020/10/03 13:17:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2020/11/05 11:23:03 sthen Exp $
 
-ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 powerpc
+ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-# XXX if updating, try to remove -D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR
-# XXX in archivers/innoextract
-VERSION=	1.67.0
+VERSION=	1.70.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
+MASTER_SITES=	https://dl.bintray.com/boostorg/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
-REVISION-main=	1
 
-SO_VERSION=	11.0
+SO_VERSION=	12.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -43,13 +40,12 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_random-mt boost_random \
 		boost_regex-mt boost_regex \
 		boost_serialization-mt boost_serialization \
-		boost_signals-mt boost_signals \
 		boost_system-mt boost_system \
 		boost_thread-mt \
 		boost_timer-mt boost_timer \
 		boost_unit_test_framework-mt boost_unit_test_framework \
 		boost_wserialization-mt boost_wserialization \
-		boost_wave-mt \
+		boost_wave-mt boost_wave \
 		boost_type_erasure-mt boost_type_erasure \
 		boost_contract boost_contract-mt
 
@@ -95,9 +91,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 LIB_DEPENDS-md=	devel/boost
 
-WANTLIB-md+=	${COMPILER_LIBCXX} m
-WANTLIB-md+=	boost_chrono-mt boost_filesystem-mt boost_system-mt
-WANTLIB-md+=	boost_system boost_thread-mt
+WANTLIB-md+=	${COMPILER_LIBCXX} m boost_chrono-mt boost_filesystem-mt
+WANTLIB-md+=	boost_thread-mt
 
 .include <bsd.port.arch.mk>
 
@@ -115,7 +110,7 @@ BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 		-q \
 		-d+2 \
 		-j${MAKE_JOBS} \
-		--layout=tagged \
+		--layout=tagged-1.66 \
 		pch=off \
 		cflags='${CFLAGS} -pthread' \
 		cxxflags='${CXXFLAGS} -pthread' \

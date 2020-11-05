@@ -1,0 +1,16 @@
+$OpenBSD: patch-libs_context_src_asm_ontop_mips64_n64_elf_gas_S,v 1.1 2020/11/05 11:23:03 sthen Exp $
+
+The right align for mips64/n64 is 3 instead of 2.
+
+Index: libs/context/src/asm/ontop_mips64_n64_elf_gas.S
+--- libs/context/src/asm/ontop_mips64_n64_elf_gas.S.orig
++++ libs/context/src/asm/ontop_mips64_n64_elf_gas.S
+@@ -48,7 +48,7 @@
+ .file "ontop_mips64_n64_elf_gas.S"
+ .text
+ .globl ontop_fcontext
+-.align 2
++.align 3
+ .type ontop_fcontext,@function
+ .ent ontop_fcontext
+ ontop_fcontext:

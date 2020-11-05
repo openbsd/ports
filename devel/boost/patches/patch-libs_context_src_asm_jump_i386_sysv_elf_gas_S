@@ -1,4 +1,4 @@
-$OpenBSD: patch-libs_context_src_asm_jump_i386_sysv_elf_gas_S,v 1.1 2018/12/13 19:52:46 sthen Exp $
+$OpenBSD: patch-libs_context_src_asm_jump_i386_sysv_elf_gas_S,v 1.2 2020/11/05 11:23:03 sthen Exp $
 
 Index: libs/context/src/asm/jump_i386_sysv_elf_gas.S
 --- libs/context/src/asm/jump_i386_sysv_elf_gas.S.orig
@@ -21,7 +21,7 @@ Index: libs/context/src/asm/jump_i386_sysv_elf_gas.S
   *  ----------------------------------------------------------------------------------  *
   *                                                                                      *
   ****************************************************************************************/
-@@ -45,20 +45,17 @@ jump_fcontext:
+@@ -46,20 +46,17 @@ jump_fcontext:
      movl  %esp, %ecx
  
      /* first arg of jump_fcontext() == fcontext to jump to */
@@ -46,7 +46,7 @@ Index: libs/context/src/asm/jump_i386_sysv_elf_gas.S
  
      movl  0x18(%esp), %ecx  /* restore EIP */
  
-@@ -72,7 +69,7 @@ jump_fcontext:
+@@ -73,7 +70,7 @@ jump_fcontext:
      movl  0x10(%esp), %ebx  /* restore EBX */
      movl  0x14(%esp), %ebp  /* restore EBP */
  

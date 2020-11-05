@@ -1,4 +1,4 @@
-$OpenBSD: patch-libs_context_src_asm_make_ppc32_sysv_elf_gas_S,v 1.1 2019/09/19 07:38:14 otto Exp $
+$OpenBSD: patch-libs_context_src_asm_make_ppc32_sysv_elf_gas_S,v 1.2 2020/11/05 11:23:03 sthen Exp $
 
 Stack should have alignment 16 after jump_fcontext drops 244 bytes.
 
@@ -8,7 +8,7 @@ small struct like transfer_t.
 Index: libs/context/src/asm/make_ppc32_sysv_elf_gas.S
 --- libs/context/src/asm/make_ppc32_sysv_elf_gas.S.orig
 +++ libs/context/src/asm/make_ppc32_sysv_elf_gas.S
-@@ -85,12 +85,19 @@ make_fcontext:
+@@ -86,12 +86,19 @@ make_fcontext:
      # shift address in R3 to lower 16 byte boundary
      clrrwi  %r3, %r3, 4
  
@@ -31,7 +31,7 @@ Index: libs/context/src/asm/make_ppc32_sysv_elf_gas.S
  
      # set back-chain to zero
      li   %r0, 0
-@@ -99,10 +106,12 @@ make_fcontext:
+@@ -100,10 +107,12 @@ make_fcontext:
      mffs  %f0  # load FPSCR
      stfd  %f0, 144(%r3)  # save FPSCR
  
@@ -44,7 +44,7 @@ Index: libs/context/src/asm/make_ppc32_sysv_elf_gas.S
  
      # load LR
      mflr  %r0
-@@ -111,6 +120,11 @@ make_fcontext:
+@@ -112,6 +121,11 @@ make_fcontext:
  1:
      # load LR into R4
      mflr  %r4
@@ -56,7 +56,7 @@ Index: libs/context/src/asm/make_ppc32_sysv_elf_gas.S
      # compute abs address of label finish
      addi  %r4, %r4, finish - 1b
      # restore LR
-@@ -123,6 +137,19 @@ make_fcontext:
+@@ -124,6 +138,19 @@ make_fcontext:
      mtlr  %r6
  
      blr  # return pointer to context-data

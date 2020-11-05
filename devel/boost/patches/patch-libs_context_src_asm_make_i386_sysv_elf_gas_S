@@ -1,4 +1,4 @@
-$OpenBSD: patch-libs_context_src_asm_make_i386_sysv_elf_gas_S,v 1.1 2018/12/13 19:52:46 sthen Exp $
+$OpenBSD: patch-libs_context_src_asm_make_i386_sysv_elf_gas_S,v 1.2 2020/11/05 11:23:03 sthen Exp $
 
 Index: libs/context/src/asm/make_i386_sysv_elf_gas.S
 --- libs/context/src/asm/make_i386_sysv_elf_gas.S.orig
@@ -21,7 +21,7 @@ Index: libs/context/src/asm/make_i386_sysv_elf_gas.S
   *  ----------------------------------------------------------------------------------  *
   *                                                                                      *
   ****************************************************************************************/
-@@ -40,7 +40,7 @@ make_fcontext:
+@@ -41,7 +41,7 @@ make_fcontext:
      andl  $-16, %eax
  
      /* reserve space for context-data on context-stack */
@@ -30,7 +30,7 @@ Index: libs/context/src/asm/make_i386_sysv_elf_gas.S
  
      /* third arg of make_fcontext() == address of context-function */
      /* stored in EBX */
-@@ -52,11 +52,6 @@ make_fcontext:
+@@ -53,11 +53,6 @@ make_fcontext:
      /* save x87 control-word */
      fnstcw  0x4(%eax)
  
@@ -42,7 +42,7 @@ Index: libs/context/src/asm/make_i386_sysv_elf_gas.S
      /* compute abs address of label trampoline */
      call  1f
      /* address of trampoline 1 */
-@@ -81,8 +76,8 @@ make_fcontext:
+@@ -82,8 +77,8 @@ make_fcontext:
  
  trampoline:
      /* move transport_t for entering context-function */

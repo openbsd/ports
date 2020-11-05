@@ -1,4 +1,4 @@
-$OpenBSD: patch-libs_context_src_asm_jump_ppc32_sysv_elf_gas_S,v 1.1 2019/09/19 07:38:14 otto Exp $
+$OpenBSD: patch-libs_context_src_asm_jump_ppc32_sysv_elf_gas_S,v 1.2 2020/11/05 11:23:03 sthen Exp $
 
 ELF systems other than Linux use a different convention to return a
 small struct like transfer_t.
@@ -6,7 +6,7 @@ small struct like transfer_t.
 Index: libs/context/src/asm/jump_ppc32_sysv_elf_gas.S
 --- libs/context/src/asm/jump_ppc32_sysv_elf_gas.S.orig
 +++ libs/context/src/asm/jump_ppc32_sysv_elf_gas.S
-@@ -78,6 +78,9 @@
+@@ -79,6 +79,9 @@
  .align 2
  .type jump_fcontext,@function
  jump_fcontext:
@@ -16,7 +16,7 @@ Index: libs/context/src/asm/jump_ppc32_sysv_elf_gas.S
      # reserve space on stack
      subi  %r1, %r1, 244
  
-@@ -121,7 +124,9 @@ jump_fcontext:
+@@ -122,7 +125,9 @@ jump_fcontext:
      stw  %r29, 216(%r1)  # save R29
      stw  %r30, 220(%r1)  # save R30
      stw  %r31, 224(%r1)  # save R31
@@ -26,7 +26,7 @@ Index: libs/context/src/asm/jump_ppc32_sysv_elf_gas.S
  
      # save CR
      mfcr  %r0
-@@ -135,8 +140,12 @@ jump_fcontext:
+@@ -136,8 +141,12 @@ jump_fcontext:
      # store RSP (pointing to context-data) in R6
      mr  %r6, %r1
  
@@ -40,7 +40,7 @@ Index: libs/context/src/asm/jump_ppc32_sysv_elf_gas.S
  
      lfd  %f14, 0(%r1)  # restore F14
      lfd  %f15, 8(%r1)  # restore F15
-@@ -178,7 +187,9 @@ jump_fcontext:
+@@ -179,7 +188,9 @@ jump_fcontext:
      lwz  %r29, 216(%r1)  # restore R29
      lwz  %r30, 220(%r1)  # restore R30
      lwz  %r31, 224(%r1)  # restore R31
@@ -50,7 +50,7 @@ Index: libs/context/src/asm/jump_ppc32_sysv_elf_gas.S
  
      # restore CR
      lwz   %r0, 232(%r1)
-@@ -195,8 +206,13 @@ jump_fcontext:
+@@ -196,8 +207,13 @@ jump_fcontext:
      addi  %r1, %r1, 244
  
      # return transfer_t 

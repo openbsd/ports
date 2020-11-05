@@ -1,5 +1,6 @@
-$OpenBSD: patch-boost_log_detail_event_hpp,v 1.1 2017/06/02 02:21:06 espie Exp $
-choosing the event model requires _POSIX defines that live in unistd,
+$OpenBSD: patch-boost_log_detail_event_hpp,v 1.2 2020/11/05 11:23:03 sthen Exp $
+
+Choosing the event model requires _POSIX defines that live in unistd.h,
 so make sure this is always included to keep things consistent.
 
 Index: boost/log/detail/event.hpp

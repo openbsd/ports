@@ -1,0 +1,31 @@
+$OpenBSD: patch-boost_asio_detail_impl_socket_ops_ipp,v 1.1 2020/11/05 11:23:03 sthen Exp $
+
+Use MSG_NOSIGNAL with sendmsg().
+
+Index: boost/asio/detail/impl/socket_ops.ipp
+--- boost/asio/detail/impl/socket_ops.ipp.orig
++++ boost/asio/detail/impl/socket_ops.ipp
+@@ -1178,9 +1178,9 @@ signed_size_type send(socket_type s, const buf* bufs, 
+   msghdr msg = msghdr();
+   msg.msg_iov = const_cast<buf*>(bufs);
+   msg.msg_iovlen = static_cast<int>(count);
+-#if defined(__linux__)
++#if defined(MSG_NOSIGNAL)
+   flags |= MSG_NOSIGNAL;
+-#endif // defined(__linux__)
++#endif // defined(MSG_NOSIGNAL
+   signed_size_type result = error_wrapper(::sendmsg(s, &msg, flags), ec);
+   if (result >= 0)
+     ec = boost::system::error_code();
+@@ -1307,9 +1307,9 @@ signed_size_type sendto(socket_type s, const buf* bufs
+   msg.msg_namelen = static_cast<int>(addrlen);
+   msg.msg_iov = const_cast<buf*>(bufs);
+   msg.msg_iovlen = static_cast<int>(count);
+-#if defined(__linux__)
++#if defined(MSG_NOSIGNAL)
+   flags |= MSG_NOSIGNAL;
+-#endif // defined(__linux__)
++#endif // defined(MSG_NOSIGNAL)
+   signed_size_type result = error_wrapper(::sendmsg(s, &msg, flags), ec);
+   if (result >= 0)
+     ec = boost::system::error_code();

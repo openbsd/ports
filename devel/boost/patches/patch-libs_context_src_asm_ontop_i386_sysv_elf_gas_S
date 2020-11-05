@@ -1,4 +1,4 @@
-$OpenBSD: patch-libs_context_src_asm_ontop_i386_sysv_elf_gas_S,v 1.1 2018/12/13 19:52:46 sthen Exp $
+$OpenBSD: patch-libs_context_src_asm_ontop_i386_sysv_elf_gas_S,v 1.2 2020/11/05 11:23:03 sthen Exp $
 
 Index: libs/context/src/asm/ontop_i386_sysv_elf_gas.S
 --- libs/context/src/asm/ontop_i386_sysv_elf_gas.S.orig
@@ -21,7 +21,7 @@ Index: libs/context/src/asm/ontop_i386_sysv_elf_gas.S
   *  ----------------------------------------------------------------------------------  *
   *                                                                                      *
   ****************************************************************************************/
-@@ -45,29 +45,26 @@ ontop_fcontext:
+@@ -46,29 +46,26 @@ ontop_fcontext:
      movl  %esp, %ecx
  
      /* first arg of ontop_fcontext() == fcontext to jump to */
