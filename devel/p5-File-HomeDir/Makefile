@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/11/05 10:12:02 benoit Exp $
 
 COMMENT=		retrieve home directory location
 
 MODULES=		cpan
 PKG_ARCH=		*
 
-DISTNAME=		File-HomeDir-1.004
-REVISION=		0
+DISTNAME =		File-HomeDir-1.006
 
 CATEGORIES=		devel
 
