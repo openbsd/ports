@@ -1,11 +1,11 @@
-$OpenBSD: patch-ui_base_ui_base_features_h,v 1.5 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_h,v 1.6 2020/11/05 15:49:53 robert Exp $
 
 Index: ui/base/ui_base_features.h
 --- ui/base/ui_base_features.h.orig
 +++ ui/base/ui_base_features.h
-@@ -61,10 +61,10 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
- extern const base::Feature kEnableAutomaticUiAdjustmentsForTouch;
- #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
+@@ -60,10 +60,10 @@ COMPONENT_EXPORT(UI_BASE_FEATURES) extern const base::
+ COMPONENT_EXPORT(UI_BASE_FEATURES) bool IsUsingWMPointerForTouch();
+ #endif  // defined(OS_WIN)
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
@@ -14,5 +14,5 @@ Index: ui/base/ui_base_features.h
 -#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
- // Used to enable the new controls UI.
- COMPONENT_EXPORT(UI_BASE_FEATURES)
+ // Used to enable forced colors mode for web content.
+ COMPONENT_EXPORT(UI_BASE_FEATURES) extern const base::Feature kForcedColors;

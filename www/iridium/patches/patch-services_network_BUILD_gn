@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_BUILD_gn,v 1.6 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-services_network_BUILD_gn,v 1.7 2020/11/05 15:49:52 robert Exp $
 
 Index: services/network/BUILD.gn
 --- services/network/BUILD.gn.orig
 +++ services/network/BUILD.gn
-@@ -260,7 +260,6 @@ jumbo_component("network_service") {
+@@ -259,7 +259,6 @@ jumbo_component("network_service") {
  
    if (is_linux) {
      deps += [

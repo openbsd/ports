@@ -27,6 +27,7 @@ extern "C" {
 #include "base/location.h"
 #include "base/logging.h"
 #include "base/posix/eintr_wrapper.h"
+#include "base/task/thread_pool.h"
 #include "base/single_thread_task_runner.h"
 #include "base/stl_util.h"
 #include "base/strings/pattern.h"
@@ -49,8 +50,8 @@ struct ConnectParams {
                 HidService::ConnectCallback callback)
       : device_info(std::move(device_info)), callback(std::move(callback)),
         task_runner(base::ThreadTaskRunnerHandle::Get()),
-        blocking_task_runner(
-            base::CreateSequencedTaskRunner(HidService::kBlockingTaskTraits)) {}
+        blocking_task_runner(base::ThreadPool::CreateSequencedTaskRunner(
+            HidService::kBlockingTaskTraits)) {}
   ~ConnectParams() {}
 
   scoped_refptr<HidDeviceInfo> device_info;
@@ -281,7 +282,7 @@ private:
 HidServiceFido::HidServiceFido()
     : task_runner_(base::ThreadTaskRunnerHandle::Get()),
       blocking_task_runner_(
-          base::CreateSequencedTaskRunner(kBlockingTaskTraits)),
+          base::ThreadPool::CreateSequencedTaskRunner(kBlockingTaskTraits)),
       weak_factory_(this), helper_(std::make_unique<BlockingTaskHelper>(
                                weak_factory_.GetWeakPtr())) {
   blocking_task_runner_->PostTask(

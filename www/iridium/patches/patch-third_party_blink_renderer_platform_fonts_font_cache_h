@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.5 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.6 2020/11/05 15:49:52 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_cache.h
 --- third_party/blink/renderer/platform/fonts/font_cache.h.orig
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
  #include "ui/gfx/font_fallback_linux.h"
  #endif
  
-@@ -166,7 +166,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -174,7 +174,7 @@ class PLATFORM_EXPORT FontCache {
    sk_sp<SkFontMgr> FontManager() { return font_manager_; }
    static void SetFontManager(sk_sp<SkFontMgr>);
  
@@ -21,7 +21,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -241,7 +241,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -249,7 +249,7 @@ class PLATFORM_EXPORT FontCache {
        const FontDescription&);
  #endif  // defined(OS_ANDROID)
  
@@ -30,7 +30,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -317,7 +317,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -334,7 +334,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     std::string& name);
  
@@ -39,7 +39,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -356,7 +356,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -379,7 +379,7 @@ class PLATFORM_EXPORT FontCache {
    std::unique_ptr<FallbackFamilyStyleCache> fallback_params_cache_;
  #endif  // defined(OS_WIN)
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_capture_context_h,v 1.5 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_capture_context_h,v 1.6 2020/11/05 15:49:53 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/misc/capture_context.h
 --- third_party/crashpad/crashpad/util/misc/capture_context.h.orig
 +++ third_party/crashpad/crashpad/util/misc/capture_context.h
-@@ -35,7 +35,7 @@ using NativeCPUContext = x86_thread_state;
+@@ -37,7 +37,7 @@ using NativeCPUContext = arm_unified_thread_state;
  #endif
  #elif defined(OS_WIN)
  using NativeCPUContext = CONTEXT;

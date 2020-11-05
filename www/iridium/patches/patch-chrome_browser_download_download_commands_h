@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.12 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.13 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/download/download_commands.h
 --- chrome/browser/download/download_commands.h.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_audio_BUILD_gn,v 1.13 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-media_audio_BUILD_gn,v 1.14 2020/11/05 15:49:52 robert Exp $
 
 Index: media/audio/BUILD.gn
 --- media/audio/BUILD.gn.orig

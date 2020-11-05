@@ -1,27 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.10 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.11 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -3651,7 +3651,7 @@ const char kZeroStateFilesDescription[] =
- 
- #endif  // defined(OS_CHROMEOS)
- 
--#if defined(OS_CHROMEOS) || defined(OS_LINUX)
-+#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
- 
- #if BUILDFLAG(USE_TCMALLOC)
- const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
-@@ -3660,7 +3660,7 @@ const char kDynamicTcmallocDescription[] =
-     "utilization.";
- #endif  // BUILDFLAG(USE_TCMALLOC)
- 
--#endif  // #if defined(OS_CHROMEOS) || defined(OS_LINUX)
-+#endif  // #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
- 
- // All views-based platforms --------------------------------------------------
- 
-@@ -3685,13 +3685,13 @@ const char kReopenTabInProductHelpDescription[] =
+@@ -4108,7 +4108,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
@@ -30,38 +12,30 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kWebGL2ComputeContextName[] = "WebGL 2.0 Compute";
  const char kWebGL2ComputeContextDescription[] =
-     "Enable the use of WebGL 2.0 Compute API.";
- 
--#endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- #if BUILDFLAG(ENABLE_CLICK_TO_CALL)
- 
-@@ -3709,7 +3709,7 @@ const char kClickToCallDetectionV2Description[] =
- #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
+@@ -4117,7 +4117,7 @@ const char kWebGL2ComputeContextDescription[] =
+ #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  
- const char kRemoteCopyReceiverName[] =
-     "Enables the remote copy feature to receive messages";
-@@ -3718,15 +3718,15 @@ const char kRemoteCopyReceiverDescription[] =
-     "the clipboard and showing a notification to the user.";
- 
+ const char kEnableMediaFeedsName[] = "Enables Media Feeds";
+ const char kEnableMediaFeedsDescription[] =
+@@ -4151,7 +4151,7 @@ const char kRemoteCopyProgressNotificationDescription[
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
+         // defined(OS_CHROMEOS)
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
  const char kDirectManipulationStylusName[] = "Direct Manipulation Stylus";
  const char kDirectManipulationStylusDescription[] =
-     "If enabled, Chrome will scroll web pages on stylus drag.";
+@@ -4168,7 +4168,7 @@ const char kWebContentsOcclusionDescription[] =
  
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
  
- #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
- 
+-#if defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+ #if BUILDFLAG(USE_TCMALLOC)
+ const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
+ const char kDynamicTcmallocDescription[] =

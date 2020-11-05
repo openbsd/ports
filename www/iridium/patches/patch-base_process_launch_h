@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_launch_h,v 1.14 2020/04/02 15:11:56 robert Exp $
+$OpenBSD: patch-base_process_launch_h,v 1.15 2020/11/05 15:49:49 robert Exp $
 Index: base/process/launch.h
 --- base/process/launch.h.orig
 +++ base/process/launch.h

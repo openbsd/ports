@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_host_attributes_cc,v 1.4 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-remoting_host_host_attributes_cc,v 1.5 2020/11/05 15:49:52 robert Exp $
 
 Index: remoting/host/host_attributes.cc
 --- remoting/host/host_attributes.cc.orig
 +++ remoting/host/host_attributes.cc
-@@ -124,7 +124,7 @@ std::string GetHostAttributes() {
+@@ -120,7 +120,7 @@ std::string GetHostAttributes() {
        media::InitializeMediaFoundation()) {
      result.push_back("HWEncoder");
    }

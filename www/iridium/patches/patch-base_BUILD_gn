@@ -1,9 +1,18 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.15 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.16 2020/11/05 15:49:49 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -912,7 +912,7 @@ jumbo_component("base") {
+@@ -60,7 +60,7 @@ declare_args() {
+   # replacement base::Location::Current(). On by default in non-official builds
+   # for testing purposes.
+   # TODO(https://crbug.com/974061): remove this eventually.
+-  from_here_uses_location_builtins = !is_official_build
++  from_here_uses_location_builtins = !is_official_build && !is_bsd
+ 
+   # Unsafe developer build. Has developer-friendly features that may weaken or
+   # disable security measures like sandboxing or ASLR.
+@@ -887,7 +887,7 @@ jumbo_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -12,7 +21,7 @@ Index: base/BUILD.gn
        sources += [
          "profiler/stack_copier_signal.cc",
          "profiler/stack_copier_signal.h",
-@@ -921,6 +921,12 @@ jumbo_component("base") {
+@@ -896,6 +896,12 @@ jumbo_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -25,7 +34,7 @@ Index: base/BUILD.gn
    }
  
    if (is_win) {
-@@ -1305,11 +1311,16 @@ jumbo_component("base") {
+@@ -1287,11 +1293,16 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -43,16 +52,16 @@ Index: base/BUILD.gn
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1331,7 +1342,7 @@ jumbo_component("base") {
+@@ -1313,7 +1324,7 @@ jumbo_component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
 -    } else if (is_linux && use_allocator == "none") {
 +    } else if ((is_linux && !is_openbsd) && use_allocator == "none") {
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
-     } else if (is_android && use_allocator == "none") {
-       sources += [
-@@ -1930,6 +1941,29 @@ jumbo_component("base") {
+     } else if ((is_linux || is_android) && use_allocator == "partition") {
+       # Cannot use the same dispatching for host-side binaries.
+@@ -1925,6 +1936,29 @@ jumbo_component("base") {
      }
    }
  
@@ -82,12 +91,12 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      sources -= [
-@@ -2373,6 +2407,8 @@ if (is_win || is_mac) {
-       sources = [ "profiler/test_support_library.cc" ]
-     }
+@@ -2486,6 +2520,8 @@ if (is_win) {
+       "//base/win:base_win_buildflags",
+     ]
    }
 +
 +  libs = [ "execinfo" ]
  }
  
- source_set("base_stack_sampling_profiler_test_util") {
+ if ((is_win && (current_cpu == "x64" || current_cpu == "arm64")) || is_mac ||

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_ppapi_plugin_process_host_receiver_bindings_cc,v 1.1 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-content_browser_ppapi_plugin_process_host_receiver_bindings_cc,v 1.2 2020/11/05 15:49:51 robert Exp $
 
 Index: content/browser/ppapi_plugin_process_host_receiver_bindings.cc
 --- content/browser/ppapi_plugin_process_host_receiver_bindings.cc.orig

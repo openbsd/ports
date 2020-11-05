@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_web_applications_extensions_bookmark_app_finalizer_utils_cc,v 1.2 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_web_applications_extensions_bookmark_app_finalizer_utils_cc,v 1.3 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/web_applications/extensions/bookmark_app_finalizer_utils.cc
 --- chrome/browser/web_applications/extensions/bookmark_app_finalizer_utils.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_constants_h,v 1.4 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_h,v 1.5 2020/11/05 15:49:51 robert Exp $
 
 Index: components/feature_engagement/public/feature_constants.h
 --- components/feature_engagement/public/feature_constants.h.orig
@@ -9,15 +9,6 @@ Index: components/feature_engagement/public/feature_constants.h
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
+ extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusModeFeature;
  extern const base::Feature kIPHGlobalMediaControlsFeature;
- extern const base::Feature kIPHReopenTabFeature;
-@@ -30,7 +30,7 @@ extern const base::Feature kIPHIncognitoWindowFeature;
- extern const base::Feature kIPHNewTabFeature;
- #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IPH)
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- // All the features declared for Android below that are also used in Java,
- // should also be declared in:

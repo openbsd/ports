@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_events_keycodes_dom_keycode_converter_cc,v 1.12 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-ui_events_keycodes_dom_keycode_converter_cc,v 1.13 2020/11/05 15:49:53 robert Exp $
 
 Index: ui/events/keycodes/dom/keycode_converter.cc
 --- ui/events/keycodes/dom/keycode_converter.cc.orig

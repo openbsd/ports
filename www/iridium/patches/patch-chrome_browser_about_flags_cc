@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.23 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.24 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
 +++ chrome/browser/about_flags.cc
-@@ -170,7 +170,7 @@
+@@ -184,7 +184,7 @@
  #include "ui/gl/gl_switches.h"
  #include "ui/native_theme/native_theme_features.h"
  
@@ -12,7 +12,7 @@ Index: chrome/browser/about_flags.cc
  #include "base/allocator/buildflags.h"
  #endif
  
-@@ -834,7 +834,7 @@ const FeatureEntry::Choice kMemlogSamplingRateChoices[
+@@ -840,7 +840,7 @@ const FeatureEntry::Choice kMemlogSamplingRateChoices[
       heap_profiling::kMemlogSamplingRate5MB},
  };
  
@@ -21,16 +21,7 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
      {"DocumentUseServerScore", "true"},
      {"DocumentUseClientScore", "false"},
-@@ -995,7 +995,7 @@ const FeatureEntry::FeatureVariation kOmniboxMaxURLMat
-      nullptr}};
- 
- #if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
- const FeatureEntry::FeatureParam kTranslateBubbleUITab[] = {
-     {language::kTranslateUIBubbleKey, language::kTranslateUIBubbleTabValue}};
- 
-@@ -2031,7 +2031,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2495,7 +2495,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kCloudPrintXpsDescription, kOsWin,
       SINGLE_VALUE_TYPE(switches::kEnableCloudPrintXps)},
  #endif  // OS_WIN
@@ -39,34 +30,16 @@ Index: chrome/browser/about_flags.cc
      {"enable-webgl2-compute-context",
       flag_descriptions::kWebGL2ComputeContextName,
       flag_descriptions::kWebGL2ComputeContextDescription,
-@@ -2075,7 +2075,7 @@ const FeatureEntry kFeatureEntries[] = {
- #endif  // OS_ANDROID
- 
- #if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
-     {"translate-ui-bubble-options", flag_descriptions::kTranslateBubbleUIName,
-      flag_descriptions::kTranslateBubbleUIDescription, kOsDesktop,
-      FEATURE_WITH_PARAMS_VALUE_TYPE(language::kUseButtonTranslateBubbleUi,
-@@ -2159,7 +2159,7 @@ const FeatureEntry kFeatureEntries[] = {
-      flag_descriptions::kTerminalSystemAppSplitsDescription, kOsCrOS,
-      FEATURE_VALUE_TYPE(features::kTerminalSystemAppSplits)},
- #endif  // OS_CHROMEOS
--#if defined(OS_CHROMEOS) || defined(OS_LINUX)
-+#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
- #if BUILDFLAG(USE_TCMALLOC)
-     {"dynamic-tcmalloc-tuning", flag_descriptions::kDynamicTcmallocName,
-      flag_descriptions::kDynamicTcmallocDescription, kOsCrOS | kOsLinux,
-@@ -2239,7 +2239,7 @@ const FeatureEntry kFeatureEntries[] = {
-      flag_descriptions::kEnableLitePageServerPreviewsDescription, kOsAndroid,
-      FEATURE_VALUE_TYPE(previews::features::kLitePageServerPreviews)},
+@@ -2689,7 +2689,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kEnableOfflinePreviewsDescription, kOsAndroid,
+      FEATURE_VALUE_TYPE(previews::features::kOfflinePreviews)},
  #endif  // OS_ANDROID
 -#if defined(OS_CHROMEOS) || defined(OS_LINUX)
 +#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
      {"enable-save-data", flag_descriptions::kEnableSaveDataName,
-      flag_descriptions::kEnableSaveDataDescription, kOsCrOS,
+      flag_descriptions::kEnableSaveDataDescription, kOsCrOS | kOsLinux,
       SINGLE_VALUE_TYPE(
-@@ -2907,7 +2907,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3437,7 +3437,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(
           omnibox::kHistoryQuickProviderAllowMidwordContinuations)},
  
@@ -75,7 +48,7 @@ Index: chrome/browser/about_flags.cc
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -3182,7 +3182,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3731,7 +3731,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kClickToOpenPDFDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
@@ -84,7 +57,7 @@ Index: chrome/browser/about_flags.cc
      {"direct-manipulation-stylus",
       flag_descriptions::kDirectManipulationStylusName,
       flag_descriptions::kDirectManipulationStylusDescription,
-@@ -3851,7 +3851,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4424,7 +4424,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -93,8 +66,8 @@ Index: chrome/browser/about_flags.cc
      {"remote-copy-receiver", flag_descriptions::kRemoteCopyReceiverName,
       flag_descriptions::kRemoteCopyReceiverDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(kRemoteCopyReceiver)},
-@@ -3900,7 +3900,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(kSharingUseDeviceInfo)},
+@@ -4467,7 +4467,7 @@ const FeatureEntry kFeatureEntries[] = {
+          send_tab_to_self::kSendTabToSelfOmniboxSendingAnimation)},
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
@@ -102,7 +75,7 @@ Index: chrome/browser/about_flags.cc
      {"sharing-peer-connection-receiver",
       flag_descriptions::kSharingPeerConnectionReceiverName,
       flag_descriptions::kSharingPeerConnectionReceiverDescription, kOsDesktop,
-@@ -3986,7 +3986,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4553,7 +4553,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -111,9 +84,9 @@ Index: chrome/browser/about_flags.cc
      {"enable-reopen-tab-in-product-help",
       flag_descriptions::kReopenTabInProductHelpName,
       flag_descriptions::kReopenTabInProductHelpDescription, kOsDesktop,
-@@ -4436,7 +4436,7 @@ const FeatureEntry kFeatureEntries[] = {
-      flag_descriptions::kEnableSyncUSSNigoriDescription, kOsAll,
-      FEATURE_VALUE_TYPE(switches::kSyncUSSNigori)},
+@@ -5020,7 +5020,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kEnableSyncTrustedVaultDescription, kOsAll,
+      FEATURE_VALUE_TYPE(switches::kSyncSupportTrustedVaultPassphrase)},
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)

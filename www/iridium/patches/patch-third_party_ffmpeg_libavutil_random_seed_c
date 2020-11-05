@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_libavutil_random_seed_c,v 1.4 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_libavutil_random_seed_c,v 1.5 2020/11/05 15:49:53 robert Exp $
 
 Index: third_party/ffmpeg/libavutil/random_seed.c
 --- third_party/ffmpeg/libavutil/random_seed.c.orig

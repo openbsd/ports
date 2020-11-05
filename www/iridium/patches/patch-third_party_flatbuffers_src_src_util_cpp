@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_flatbuffers_src_src_util_cpp,v 1.1 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-third_party_flatbuffers_src_src_util_cpp,v 1.2 2020/11/05 15:49:53 robert Exp $
 
 Index: third_party/flatbuffers/src/src/util.cpp
 --- third_party/flatbuffers/src/src/util.cpp.orig

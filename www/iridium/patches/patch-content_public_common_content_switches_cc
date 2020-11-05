@@ -1,18 +1,19 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.26 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.27 2020/11/05 15:49:51 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -377,6 +377,9 @@ const char kEnableLowResTiling[] = "enable-low-res-til
+@@ -367,6 +367,10 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
 +const char kDisableUnveil[]                 = "disable-unveil";
++
 +const char kTrk[]                           = "trk";
 +
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -997,7 +1000,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
+@@ -975,7 +979,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
  // Enable indication that browser is controlled by automation.
  const char kEnableAutomation[] = "enable-automation";
  

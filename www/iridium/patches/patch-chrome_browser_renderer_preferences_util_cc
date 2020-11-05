@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.18 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.19 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/renderer_preferences_util.cc
 --- chrome/browser/renderer_preferences_util.cc.orig

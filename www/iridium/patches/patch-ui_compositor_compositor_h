@@ -1,11 +1,11 @@
-$OpenBSD: patch-ui_compositor_compositor_h,v 1.2 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_h,v 1.3 2020/11/05 15:49:53 robert Exp $
 
 Index: ui/compositor/compositor.h
 --- ui/compositor/compositor.h.orig
 +++ ui/compositor/compositor.h
-@@ -380,7 +380,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
-   void OnFirstSurfaceActivation(const viz::SurfaceInfo& surface_info) override;
-   void OnFrameTokenChanged(uint32_t frame_token) override;
+@@ -370,7 +370,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
+   void StopThroughtputTracker(TrackerId tracker_id) override;
+   void CancelThroughtputTracker(TrackerId tracker_id) override;
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)

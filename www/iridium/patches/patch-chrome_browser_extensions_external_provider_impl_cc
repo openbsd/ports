@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_external_provider_impl_cc,v 1.13 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_external_provider_impl_cc,v 1.14 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/extensions/external_provider_impl.cc
 --- chrome/browser/extensions/external_provider_impl.cc.orig

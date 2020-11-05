@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_crash_upload_list_crash_upload_list_crashpad_cc,v 1.1 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_crash_upload_list_crash_upload_list_crashpad_cc,v 1.2 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/crash_upload_list/crash_upload_list_crashpad.cc
 --- chrome/browser/crash_upload_list/crash_upload_list_crashpad.cc.orig

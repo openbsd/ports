@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.9 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.10 2020/11/05 15:49:53 robert Exp $
 
 Index: tools/variations/fieldtrial_to_struct.py
 --- tools/variations/fieldtrial_to_struct.py.orig

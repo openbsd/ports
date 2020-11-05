@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.8 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.9 2020/11/05 15:49:53 robert Exp $
 Index: third_party/usrsctp/BUILD.gn
 --- third_party/usrsctp/BUILD.gn.orig
 +++ third_party/usrsctp/BUILD.gn
-@@ -116,9 +116,14 @@ static_library("usrsctp") {
+@@ -121,9 +121,14 @@ static_library("usrsctp") {
      "-UINET6",
    ]
  

@@ -1,12 +1,12 @@
-$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.3 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.4 2020/11/05 15:49:54 robert Exp $
 
 Index: weblayer/browser/content_browser_client_impl.h
 --- weblayer/browser/content_browser_client_impl.h.orig
 +++ weblayer/browser/content_browser_client_impl.h
-@@ -85,7 +85,7 @@ class ContentBrowserClientImpl : public content::Conte
-       service_manager::BinderMapWithContext<content::RenderFrameHost*>* map)
+@@ -111,7 +111,7 @@ class ContentBrowserClientImpl : public content::Conte
+   void RenderProcessWillLaunch(content::RenderProcessHost* host) override;
+   scoped_refptr<content::QuotaPermissionContext> CreateQuotaPermissionContext()
        override;
- 
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    void GetAdditionalMappedFilesForChildProcess(

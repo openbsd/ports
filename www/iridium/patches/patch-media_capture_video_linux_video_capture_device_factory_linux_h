@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_h,v 1.2 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_h,v 1.3 2020/11/05 15:49:52 robert Exp $
 
 Index: media/capture/video/linux/video_capture_device_factory_linux.h
 --- media/capture/video/linux/video_capture_device_factory_linux.h.orig
@@ -10,5 +10,5 @@ Index: media/capture/video/linux/video_capture_device_factory_linux.h
 -  int DoIoctl(int fd, int request, void* argp);
 +  int DoIoctl(int fd, unsigned int request, void* argp);
  
+   bool IsPanTiltZoomSupported(int fd);
    bool HasUsableFormats(int fd, uint32_t capabilities);
-   std::vector<float> GetFrameRateList(int fd,

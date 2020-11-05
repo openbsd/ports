@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_gn_run_binary_py,v 1.8 2020/04/03 12:25:01 robert Exp $
+$OpenBSD: patch-build_gn_run_binary_py,v 1.9 2020/11/05 15:49:49 robert Exp $
 
 Index: build/gn_run_binary.py
 --- build/gn_run_binary.py.orig

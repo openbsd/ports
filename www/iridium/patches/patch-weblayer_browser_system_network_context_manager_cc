@@ -1,12 +1,12 @@
-$OpenBSD: patch-weblayer_browser_system_network_context_manager_cc,v 1.1 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-weblayer_browser_system_network_context_manager_cc,v 1.2 2020/11/05 15:49:54 robert Exp $
 
 Index: weblayer/browser/system_network_context_manager.cc
 --- weblayer/browser/system_network_context_manager.cc.orig
 +++ weblayer/browser/system_network_context_manager.cc
-@@ -102,7 +102,7 @@ SystemNetworkContextManager::CreateSystemNetworkContex
- 
-   network_context_params->context_name = std::string("system");
-   network_context_params->primary_network_context = true;
+@@ -64,7 +64,7 @@ void SystemNetworkContextManager::ConfigureDefaultNetw
+     network::mojom::NetworkContextParams* network_context_params,
+     const std::string& user_agent) {
+   network_context_params->user_agent = user_agent;
 -#if defined(OS_LINUX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
    // We're not configuring the cookie encryption on these platforms yet.

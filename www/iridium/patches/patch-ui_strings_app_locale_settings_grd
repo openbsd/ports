@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_strings_app_locale_settings_grd,v 1.6 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-ui_strings_app_locale_settings_grd,v 1.7 2020/11/05 15:49:54 robert Exp $
 
 Index: ui/strings/app_locale_settings.grd
 --- ui/strings/app_locale_settings.grd.orig
 +++ ui/strings/app_locale_settings.grd
-@@ -216,7 +216,7 @@
+@@ -217,7 +217,7 @@
            75%
          </message>
        </if>

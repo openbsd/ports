@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_host_details_cc,v 1.6 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-remoting_host_host_details_cc,v 1.7 2020/11/05 15:49:52 robert Exp $
 
 Index: remoting/host/host_details.cc
 --- remoting/host/host_details.cc.orig

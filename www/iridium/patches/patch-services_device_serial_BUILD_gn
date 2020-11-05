@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_device_serial_BUILD_gn,v 1.4 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-services_device_serial_BUILD_gn,v 1.5 2020/11/05 15:49:52 robert Exp $
 
 Index: services/device/serial/BUILD.gn
 --- services/device/serial/BUILD.gn.orig

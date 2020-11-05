@@ -1,14 +1,14 @@
-$OpenBSD: patch-content_utility_BUILD_gn,v 1.1 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-content_utility_BUILD_gn,v 1.2 2020/11/05 15:49:51 robert Exp $
 
 Index: content/utility/BUILD.gn
 --- content/utility/BUILD.gn.orig
 +++ content/utility/BUILD.gn
-@@ -78,7 +78,7 @@ jumbo_source_set("utility") {
+@@ -85,7 +85,7 @@ jumbo_source_set("utility") {
      deps += [ "//services/proxy_resolver:lib" ]
    }
  
 -  if (is_linux) {
 +  if (is_linux && !is_openbsd) {
-     deps += [ "//content/utility/soda:soda_sandbox_hook" ]
+     deps += [ "//content/utility/speech:speech_recognition_sandbox_hook" ]
    }
- }
+ 

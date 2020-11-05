@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_font_util_cc,v 1.1 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-ui_gfx_font_util_cc,v 1.2 2020/11/05 15:49:53 robert Exp $
 
 Index: ui/gfx/font_util.cc
 --- ui/gfx/font_util.cc.orig

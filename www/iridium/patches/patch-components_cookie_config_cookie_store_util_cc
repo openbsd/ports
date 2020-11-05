@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_cookie_config_cookie_store_util_cc,v 1.9 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-components_cookie_config_cookie_store_util_cc,v 1.10 2020/11/05 15:49:51 robert Exp $
 Index: components/cookie_config/cookie_store_util.cc
 --- components/cookie_config/cookie_store_util.cc.orig
 +++ components/cookie_config/cookie_store_util.cc

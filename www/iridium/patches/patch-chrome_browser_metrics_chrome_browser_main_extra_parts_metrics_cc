@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.12 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.13 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -45,8 +45,10 @@
+@@ -48,8 +48,10 @@
  #include <cpu-features.h>
  #endif  // defined(OS_ANDROID) && defined(__arm__)
  
@@ -15,7 +15,7 @@ Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -246,7 +248,9 @@ void RecordStartupMetrics() {
+@@ -203,7 +205,9 @@ void RecordStartupMetrics() {
    UMA_HISTOGRAM_BOOLEAN("Windows.ApplockerRunning", IsApplockerRunning());
  #endif  // defined(OS_WIN)
  

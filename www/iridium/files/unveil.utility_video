@@ -1,0 +1,10 @@
+# $OpenBSD: unveil.utility_video,v 1.1 2020/11/05 15:49:49 robert Exp $
+
+# needed for iridium
+/etc/iridium r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+# needed for video(4)
+/dev/video rw

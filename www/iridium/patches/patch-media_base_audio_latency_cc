@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_base_audio_latency_cc,v 1.7 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-media_base_audio_latency_cc,v 1.8 2020/11/05 15:49:52 robert Exp $
 
 Index: media/base/audio_latency.cc
 --- media/base/audio_latency.cc.orig
 +++ media/base/audio_latency.cc
-@@ -106,7 +106,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
+@@ -113,7 +113,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
      return frames_per_buffer;
    }
  

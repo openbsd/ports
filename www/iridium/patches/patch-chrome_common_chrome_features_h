@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.10 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.11 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -68,7 +68,7 @@ extern const base::Feature kAppServiceShelf;
+@@ -63,7 +63,7 @@ extern const base::Feature kAppServiceAdaptiveIcon;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  

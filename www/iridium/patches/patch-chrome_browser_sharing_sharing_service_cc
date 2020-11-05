@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_sharing_sharing_service_cc,v 1.1 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_browser_sharing_sharing_service_cc,v 1.2 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/sharing/sharing_service.cc
 --- chrome/browser/sharing/sharing_service.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_controller_memory_usage_monitor_posix_h,v 1.1 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_controller_memory_usage_monitor_posix_h,v 1.2 2020/11/05 15:49:52 robert Exp $
 
 Index: third_party/blink/renderer/controller/memory_usage_monitor_posix.h
 --- third_party/blink/renderer/controller/memory_usage_monitor_posix.h.orig

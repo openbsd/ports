@@ -1,7 +1,4 @@
-# $OpenBSD: unveil.utility_network,v 1.1 2019/11/10 13:37:49 robert Exp $
-
-# needed for iridium
-/etc/chromium r
+# $OpenBSD: unveil.utility_network,v 1.2 2020/11/05 15:49:49 robert Exp $
 
 # needed for iridium
 /etc/iridium r

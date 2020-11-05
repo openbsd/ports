@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_atomicops_h,v 1.9 2020/04/02 15:11:56 robert Exp $
+$OpenBSD: patch-base_atomicops_h,v 1.10 2020/11/05 15:49:49 robert Exp $
 Index: base/atomicops.h
 --- base/atomicops.h.orig
 +++ base/atomicops.h

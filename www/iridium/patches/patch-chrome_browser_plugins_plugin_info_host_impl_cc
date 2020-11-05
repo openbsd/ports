@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_plugins_plugin_info_host_impl_cc,v 1.2 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_plugins_plugin_info_host_impl_cc,v 1.3 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/plugins/plugin_info_host_impl.cc
 --- chrome/browser/plugins/plugin_info_host_impl.cc.orig

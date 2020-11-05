@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_memory_discardable_memory_cc,v 1.1 2020/04/02 15:11:56 robert Exp $
+$OpenBSD: patch-base_memory_discardable_memory_cc,v 1.2 2020/11/05 15:49:49 robert Exp $
 
 Index: base/memory/discardable_memory.cc
 --- base/memory/discardable_memory.cc.orig

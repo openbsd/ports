@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.8 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.9 2020/11/05 15:49:49 robert Exp $
 Index: build/toolchain/openbsd/BUILD.gn
 --- build/toolchain/openbsd/BUILD.gn.orig
 +++ build/toolchain/openbsd/BUILD.gn

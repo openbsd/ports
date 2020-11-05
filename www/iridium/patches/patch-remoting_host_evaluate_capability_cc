@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_evaluate_capability_cc,v 1.4 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-remoting_host_evaluate_capability_cc,v 1.5 2020/11/05 15:49:52 robert Exp $
 
 Index: remoting/host/evaluate_capability.cc
 --- remoting/host/evaluate_capability.cc.orig
 +++ remoting/host/evaluate_capability.cc
-@@ -50,7 +50,7 @@ base::FilePath BuildHostBinaryPath() {
+@@ -51,7 +51,7 @@ base::FilePath BuildHostBinaryPath() {
    }
  #endif
  

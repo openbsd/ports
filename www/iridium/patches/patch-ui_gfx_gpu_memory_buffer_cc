@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_gpu_memory_buffer_cc,v 1.4 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-ui_gfx_gpu_memory_buffer_cc,v 1.5 2020/11/05 15:49:53 robert Exp $
 
 Index: ui/gfx/gpu_memory_buffer.cc
 --- ui/gfx/gpu_memory_buffer.cc.orig
 +++ ui/gfx/gpu_memory_buffer.cc
-@@ -28,7 +28,7 @@ GpuMemoryBufferHandle GpuMemoryBufferHandle::Clone() c
+@@ -34,7 +34,7 @@ GpuMemoryBufferHandle GpuMemoryBufferHandle::Clone() c
    handle.region = region.Duplicate();
    handle.offset = offset;
    handle.stride = stride;

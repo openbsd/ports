@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.6 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.7 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -359,7 +359,7 @@
+@@ -384,7 +384,7 @@
  #include "components/os_crypt/os_crypt.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -1021,7 +1021,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1099,7 +1099,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
    safe_browsing::PostCleanupSettingsResetter::RegisterProfilePrefs(registry);
  #endif
  

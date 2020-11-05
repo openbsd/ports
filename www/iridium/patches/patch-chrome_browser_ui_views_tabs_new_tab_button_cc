@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.9 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.10 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/ui/views/tabs/new_tab_button.cc
 --- chrome/browser/ui/views/tabs/new_tab_button.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.19 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.20 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/memory_details.cc
 --- chrome/browser/memory_details.cc.orig
@@ -9,15 +9,15 @@ Index: chrome/browser/memory_details.cc
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
- #include "services/service_manager/zygote/zygote_host_linux.h"
+ #include "content/public/browser/zygote_host/zygote_host_linux.h"
  #endif
  
-@@ -336,7 +336,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+@@ -339,7 +339,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
        process.titles.push_back(title);
      }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
-     if (service_manager::ZygoteHost::GetInstance()->IsZygotePid(process.pid)) {
+     if (content::ZygoteHost::GetInstance()->IsZygotePid(process.pid)) {
        process.process_type = content::PROCESS_TYPE_ZYGOTE;
      }

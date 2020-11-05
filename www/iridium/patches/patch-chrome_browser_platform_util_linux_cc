@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_platform_util_linux_cc,v 1.10 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_platform_util_linux_cc,v 1.11 2020/11/05 15:49:50 robert Exp $
 Index: chrome/browser/platform_util_linux.cc
 --- chrome/browser/platform_util_linux.cc.orig
 +++ chrome/browser/platform_util_linux.cc

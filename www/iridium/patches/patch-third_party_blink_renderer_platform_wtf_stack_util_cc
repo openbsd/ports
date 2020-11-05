@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_wtf_stack_util_cc,v 1.4 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_wtf_stack_util_cc,v 1.5 2020/11/05 15:49:53 robert Exp $
 
 Index: third_party/blink/renderer/platform/wtf/stack_util.cc
 --- third_party/blink/renderer/platform/wtf/stack_util.cc.orig
 +++ third_party/blink/renderer/platform/wtf/stack_util.cc
-@@ -17,6 +17,11 @@
+@@ -18,6 +18,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
  

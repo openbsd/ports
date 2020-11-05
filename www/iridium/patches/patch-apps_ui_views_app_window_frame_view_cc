@@ -1,4 +1,4 @@
-$OpenBSD: patch-apps_ui_views_app_window_frame_view_cc,v 1.10 2020/04/02 15:11:56 robert Exp $
+$OpenBSD: patch-apps_ui_views_app_window_frame_view_cc,v 1.11 2020/11/05 15:49:49 robert Exp $
 Index: apps/ui/views/app_window_frame_view.cc
 --- apps/ui/views/app_window_frame_view.cc.orig
 +++ apps/ui/views/app_window_frame_view.cc

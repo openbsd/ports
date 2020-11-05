@@ -1,4 +1,4 @@
-$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_h,v 1.8 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_h,v 1.9 2020/11/05 15:49:52 robert Exp $
 
 Index: headless/lib/browser/headless_content_browser_client.h
 --- headless/lib/browser/headless_content_browser_client.h.orig

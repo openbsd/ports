@@ -1,11 +1,14 @@
-$OpenBSD: patch-v8_tools_run_py,v 1.10 2020/04/03 12:25:01 robert Exp $
+$OpenBSD: patch-v8_tools_run_py,v 1.11 2020/11/05 15:49:54 robert Exp $
 
 Index: v8/tools/run.py
 --- v8/tools/run.py.orig
 +++ v8/tools/run.py
-@@ -9,4 +9,4 @@ scripts."""
+@@ -11,7 +11,7 @@ from __future__ import print_function
  import subprocess
  import sys
  
--sys.exit(subprocess.call(sys.argv[1:]))
+-result = subprocess.call(sys.argv[1:])
 +sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release"}))
+ if result != 0:
+   # Windows error codes such as 0xC0000005 and 0xC0000409 are much easier
+   # to recognize and differentiate in hex.

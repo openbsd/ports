@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.9 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.10 2020/11/05 15:49:51 robert Exp $
 
 Index: device/gamepad/gamepad_provider.cc
 --- device/gamepad/gamepad_provider.cc.orig

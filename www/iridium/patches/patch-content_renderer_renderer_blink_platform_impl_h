@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.10 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.11 2020/11/05 15:49:51 robert Exp $
 
 Index: content/renderer/renderer_blink_platform_impl.h
 --- content/renderer/renderer_blink_platform_impl.h.orig
@@ -13,15 +13,15 @@ Index: content/renderer/renderer_blink_platform_impl.h
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
 @@ -218,7 +218,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
- 
-   scoped_refptr<base::SingleThreadTaskRunner> io_runner_;
+   // Return the mojo interface for making CodeCache calls.
+   blink::mojom::CodeCacheHost& GetCodeCacheHost();
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -242,7 +242,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -239,7 +239,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mojo::PendingRemote<blink::mojom::CodeCacheHost> code_cache_host_remote_;
    mojo::SharedRemote<blink::mojom::CodeCacheHost> code_cache_host_;
  

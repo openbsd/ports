@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_gl_fence_cc,v 1.4 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-ui_gl_gl_fence_cc,v 1.5 2020/11/05 15:49:54 robert Exp $
 
 Index: ui/gl/gl_fence.cc
 --- ui/gl/gl_fence.cc.orig

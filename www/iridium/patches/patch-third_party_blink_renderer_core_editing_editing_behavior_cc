@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_editing_editing_behavior_cc,v 1.5 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_editing_editing_behavior_cc,v 1.6 2020/11/05 15:49:52 robert Exp $
 
 Index: third_party/blink/renderer/core/editing/editing_behavior.cc
 --- third_party/blink/renderer/core/editing/editing_behavior.cc.orig

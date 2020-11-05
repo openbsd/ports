@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2020/06/09 07:14:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.104 2020/11/05 15:49:49 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,8 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Iridium browser
 
-V=			2020.04.81
-REVISION=		2
+V=			2020.11.85
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -28,6 +27,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 EXTRACT_SUFX=		.tar.xz
 
 FLAVORS=		component
+PSEUDO_FLAVORS=		debug
 FLAVOR?=
 
 # BSD-like
@@ -40,12 +40,13 @@ MODULES=	lang/python
 
 COMPILER =	base-clang ports-clang ports-gcc
 
-MODPY_RUNDEP=	No
+MODPY_RUNDEP=		No
+MODPY_SETUPTOOLS=	Yes
 
 PATCHORIG=	.orig.port
 
 # uses pledge()
-WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
+WANTLIB += X11 Xext Xfixes Xrender c cups dbus-1 event
 WANTLIB += execinfo Xft
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
 WANTLIB += m
@@ -77,7 +78,6 @@ RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
-		x11/gnome/libgnome-keyring \
 		x11/gtk+3,-guic \
 		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
@@ -87,9 +87,9 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
-		x11/gnome/libgnome-keyring \
 		devel/ninja \
 		x11/gtk+3 \
+		x11/py-xcbgen \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
 		devel/libexecinfo \
@@ -121,10 +121,11 @@ GN_SYSTEM_LIBS=	libevent \
 		libxslt
 
 GN_ARGS=	enable_nacl=false \
+		is_official_build=true \
 		is_debug=false \
 		is_cfi=false \
 		optimize_webui=false \
-		closure_compile=false \
+		enable_js_type_check=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		use_kerberos=false \
@@ -134,6 +135,7 @@ GN_ARGS=	enable_nacl=false \
 		use_bundled_fontconfig=false \
 		use_system_harfbuzz=true \
 		use_system_freetype=false \
+		use_gnome_keyring=false \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -165,15 +167,17 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 # XXX dwz doesn't work with iridium yet
 DWZ = :
 
-.if ${FLAVOR:Mcomponent}
+.if ${FLAVOR:Mdebug}
 DEBUGFLAG=	-g2
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-GN_ARGS+=	is_official_build=true \
-		is_component_build=true
 .else
 DEBUGFLAG=	-g0
-GN_ARGS+=	is_official_build=true \
-		is_component_build=false
+.endif
+
+.if ${FLAVOR:Mcomponent}
+GN_ARGS+=      is_component_build=true
+.else
+GN_ARGS+=      is_component_build=false
 .endif
 
 pre-configure:
@@ -259,8 +263,9 @@ do-install:
 		${PREFIX}/share/applications/iridium-browser.desktop
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/iridium
-.for f in pledge.main pledge.utility_audio pledge.utility_network unveil.gpu unveil.main \
-    unveil.plugin unveil.renderer unveil.utility unveil.utility_audio unveil.utility_network
+.for f in pledge.main pledge.utility_audio pledge.utility_network pledge.utility_video \
+    unveil.gpu unveil.main unveil.plugin unveil.renderer unveil.utility unveil.utility_audio \
+    unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/iridium
 .endfor
 

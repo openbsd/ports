@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_api_settings_private_prefs_util_cc,v 1.11 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_settings_private_prefs_util_cc,v 1.12 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/extensions/api/settings_private/prefs_util.cc
 --- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
-@@ -160,7 +160,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetWhitelist
+@@ -163,7 +163,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetWhitelist
    (*s_whitelist)[bookmarks::prefs::kShowBookmarkBar] =
        settings_api::PrefType::PREF_TYPE_BOOLEAN;
  
@@ -12,7 +12,7 @@ Index: chrome/browser/extensions/api/settings_private/prefs_util.cc
    (*s_whitelist)[::prefs::kUseCustomChromeFrame] =
        settings_api::PrefType::PREF_TYPE_BOOLEAN;
  #endif
-@@ -170,7 +170,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetWhitelist
+@@ -173,7 +173,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetWhitelist
    // Appearance settings.
    (*s_whitelist)[::prefs::kCurrentThemeID] =
        settings_api::PrefType::PREF_TYPE_STRING;

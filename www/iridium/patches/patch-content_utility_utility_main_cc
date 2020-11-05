@@ -1,21 +1,21 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.14 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.15 2020/11/05 15:49:51 robert Exp $
 
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -21,8 +21,10 @@
- #include "content/utility/utility_thread_impl.h"
+@@ -24,8 +24,10 @@
  #include "services/service_manager/sandbox/sandbox.h"
+ #include "services/tracing/public/cpp/trace_startup.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
 +#if !defined(OS_BSD)
- #include "content/utility/soda/soda_sandbox_hook_linux.h"
+ #include "content/utility/speech/speech_recognition_sandbox_hook_linux.h"
 +#endif
  #include "services/audio/audio_sandbox_hook_linux.h"
  #include "services/network/network_sandbox_hook_linux.h"
  #include "services/service_manager/sandbox/linux/sandbox_linux.h"
-@@ -36,6 +38,10 @@
+@@ -40,6 +42,10 @@
  #include "base/message_loop/message_pump_mac.h"
  #endif
  
@@ -26,12 +26,12 @@ Index: content/utility/utility_main.cc
  #if defined(OS_WIN)
  #include "base/rand_util.h"
  #include "sandbox/win/src/sandbox.h"
-@@ -72,12 +78,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -82,12 +88,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
 -#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD) 
++#if defined(OS_LINUX) || defined(OS_BSD)
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
@@ -41,7 +41,7 @@ Index: content/utility/utility_main.cc
    if (parameters.zygote_child ||
        sandbox_type == service_manager::SandboxType::kNetwork ||
  #if defined(OS_CHROMEOS)
-@@ -101,6 +108,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -115,6 +122,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          service_manager::SandboxLinux::Options());
    }

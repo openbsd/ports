@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_minidump_minidump_misc_info_writer_cc,v 1.1 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_minidump_minidump_misc_info_writer_cc,v 1.2 2020/11/05 15:49:53 robert Exp $
 
 Index: third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
 --- third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc.orig

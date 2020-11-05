@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.8 2020/04/02 15:11:59 robert Exp $
+$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.9 2020/11/05 15:49:53 robert Exp $
 Index: third_party/libusb/BUILD.gn
 --- third_party/libusb/BUILD.gn.orig
 +++ third_party/libusb/BUILD.gn

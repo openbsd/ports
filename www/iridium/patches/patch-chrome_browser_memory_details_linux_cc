@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_memory_details_linux_cc,v 1.1 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_memory_details_linux_cc,v 1.2 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/memory_details_linux.cc
 --- chrome/browser/memory_details_linux.cc.orig
@@ -11,7 +11,7 @@ Index: chrome/browser/memory_details_linux.cc
  #include "base/files/file_util.h"
  #include "base/process/process_iterator.h"
  #include "base/process/process_metrics.h"
-@@ -27,6 +28,7 @@
+@@ -26,6 +27,7 @@
  #include "content/public/browser/browser_task_traits.h"
  #include "content/public/browser/browser_thread.h"
  #include "content/public/common/process_type.h"
@@ -19,7 +19,7 @@ Index: chrome/browser/memory_details_linux.cc
  #include "ui/base/l10n/l10n_util.h"
  
  using base::ProcessEntry;
-@@ -72,9 +74,18 @@ ProcessData GetProcessDataMemoryInformation(
+@@ -69,9 +71,18 @@ ProcessData GetProcessDataMemoryInformation(
  
      std::unique_ptr<base::ProcessMetrics> metrics(
          base::ProcessMetrics::CreateProcessMetrics(pid));

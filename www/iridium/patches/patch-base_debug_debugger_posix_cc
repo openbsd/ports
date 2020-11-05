@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.14 2020/04/02 15:11:56 robert Exp $
+$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.15 2020/11/05 15:49:49 robert Exp $
 
 Index: base/debug/debugger_posix.cc
 --- base/debug/debugger_posix.cc.orig
 +++ base/debug/debugger_posix.cc
-@@ -35,6 +35,10 @@
+@@ -38,6 +38,10 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -14,7 +14,7 @@ Index: base/debug/debugger_posix.cc
  #if defined(OS_FREEBSD)
  #include <sys/user.h>
  #endif
-@@ -98,32 +102,47 @@ bool BeingDebugged() {
+@@ -106,32 +110,47 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.

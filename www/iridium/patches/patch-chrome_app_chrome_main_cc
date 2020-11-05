@@ -1,33 +1,19 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.16 2020/04/12 10:52:45 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.17 2020/11/05 15:49:49 robert Exp $
 
 Index: chrome/app/chrome_main.cc
 --- chrome/app/chrome_main.cc.orig
 +++ chrome/app/chrome_main.cc
-@@ -17,7 +17,7 @@
- #include "content/public/common/content_switches.h"
- #include "headless/public/headless_shell.h"
- #include "ui/gfx/switches.h"
--#if !defined(CHROME_MULTIPLE_DLL_CHILD)
-+#if !defined(COMPONENT_BUILD)
- #	include "net/url_request/url_request.h"
- #	include "iridium/trknotify.h"
- #endif
-@@ -49,9 +49,13 @@ int ChromeMain(int argc, const char** argv);
- }
- #endif
- 
--#if !defined(CHROME_MULTIPLE_DLL_CHILD)
-+#if !defined(COMPONENT_BUILD)
+@@ -56,6 +56,9 @@ int ChromeMain(int argc, const char** argv);
+ #if !defined(CHROME_MULTIPLE_DLL_CHILD)
  static void trace_url_request(const std::string &caller, const GURL &url)
  {
-+        base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-+        if (!command_line->HasSwitch(switches::kTrk))
-+                return;
-+
++	 base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++	if (!command_line->HasSwitch(switches::kTrk))
++		return;
  	iridium::log_url_request(caller, url);
  	if (url.scheme() != url::kTraceScheme)
  		/* Do not show infobar for non-trk URLs */
-@@ -118,13 +122,13 @@ int ChromeMain(int argc, const char** argv) {
+@@ -126,7 +129,7 @@ int ChromeMain(int argc, const char** argv) {
    MainThreadStackSamplingProfiler scoped_sampling_profiler;
  
    // Chrome-specific process modes.
@@ -36,10 +22,3 @@ Index: chrome/app/chrome_main.cc
    if (command_line->HasSwitch(switches::kHeadless)) {
      return headless::HeadlessShellMain(params);
    }
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
- 
--#if !defined(CHROME_MULTIPLE_DLL_CHILD)
-+#if !defined(COMPONENT_BUILD)
-   net::trace_urlreq_cb = &trace_url_request;
- #endif
- 

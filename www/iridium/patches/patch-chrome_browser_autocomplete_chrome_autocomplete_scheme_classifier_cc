@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_autocomplete_chrome_autocomplete_scheme_classifier_cc,v 1.4 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-chrome_browser_autocomplete_chrome_autocomplete_scheme_classifier_cc,v 1.5 2020/11/05 15:49:50 robert Exp $
 
 Index: chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc
 --- chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc.orig
 +++ chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc
-@@ -60,7 +60,7 @@ ChromeAutocompleteSchemeClassifier::GetInputTypeForSch
+@@ -87,7 +87,7 @@ ChromeAutocompleteSchemeClassifier::GetInputTypeForSch
        return metrics::OmniboxInputType::QUERY;
  
      case ExternalProtocolHandler::UNKNOWN: {

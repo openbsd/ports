@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_common_features_feature_cc,v 1.4 2020/04/02 15:11:58 robert Exp $
+$OpenBSD: patch-extensions_common_features_feature_cc,v 1.5 2020/11/05 15:49:51 robert Exp $
 
 Index: extensions/common/features/feature.cc
 --- extensions/common/features/feature.cc.orig

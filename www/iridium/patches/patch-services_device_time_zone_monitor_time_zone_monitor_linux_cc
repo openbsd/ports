@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_device_time_zone_monitor_time_zone_monitor_linux_cc,v 1.8 2020/04/12 10:52:46 robert Exp $
+$OpenBSD: patch-services_device_time_zone_monitor_time_zone_monitor_linux_cc,v 1.9 2020/11/05 15:49:52 robert Exp $
 
 Index: services/device/time_zone_monitor/time_zone_monitor_linux.cc
 --- services/device/time_zone_monitor/time_zone_monitor_linux.cc.orig

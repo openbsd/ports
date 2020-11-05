@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.5 2020/04/02 15:11:57 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.6 2020/11/05 15:49:51 robert Exp $
 
 Index: components/feature_engagement/public/event_constants.cc
 --- components/feature_engagement/public/event_constants.cc.orig
@@ -11,21 +11,11 @@ Index: components/feature_engagement/public/event_constants.cc
 +    defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  const char kNewTabOpened[] = "new_tab_opened";
  #endif  // defined(OS_IOS) || defined(OS_WIN) || defined(OS_MACOSX) ||
--        // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+        // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+         // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
- const char kReopenTabConditionsMet[] = "reopen_tab_conditions_met";
- const char kTabReopened[] = "tab_reopened";
+ const char kSixthTabOpened[] = "sixth_tab_opened";
+ const char kTabGroupCreated[] = "tab_group_created";
  
-@@ -43,7 +43,7 @@ const char kIncognitoWindowSessionTimeMet[] =
-     "incognito_window_session_time_met";
- #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_CHROMEOS)
-+        // defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- #if defined(OS_IOS)
- const char kChromeOpened[] = "chrome_opened";
