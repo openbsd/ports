@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gdb,v 1.4 2020/08/27 17:24:57 semarie Exp $
+@comment $OpenBSD: PLIST-gdb,v 1.5 2020/11/05 09:21:35 semarie Exp $
 bin/rust-gdb
 @comment bin/rust-gdbgui
 lib/rustlib/etc/
@@ -14,6 +14,7 @@ lib/rustlib/etc/${MODPY_PYCACHE}rust_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rustlib/etc/gdb_load_rust_pretty_printers.py
 lib/rustlib/etc/gdb_lookup.py
 lib/rustlib/etc/gdb_providers.py
+@comment lib/rustlib/etc/lldb_commands
 @comment lib/rustlib/etc/lldb_lookup.py
 @comment lib/rustlib/etc/lldb_providers.py
 lib/rustlib/etc/rust_types.py

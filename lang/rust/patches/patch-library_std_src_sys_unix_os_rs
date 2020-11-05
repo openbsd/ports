@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libstd_sys_unix_os_rs,v 1.15 2020/03/21 05:23:59 semarie Exp $
+$OpenBSD: patch-library_std_src_sys_unix_os_rs,v 1.1 2020/11/05 09:21:34 semarie Exp $
 argv0 isn't suitable as current_exe() in all cases.
-Index: src/libstd/sys/unix/os.rs
---- src/libstd/sys/unix/os.rs.orig
-+++ src/libstd/sys/unix/os.rs
-@@ -314,13 +314,13 @@ pub fn current_exe() -> io::Result<PathBuf> {
+Index: library/std/src/sys/unix/os.rs
+--- library/std/src/sys/unix/os.rs.orig
++++ library/std/src/sys/unix/os.rs
+@@ -315,13 +315,13 @@ pub fn current_exe() -> io::Result<PathBuf> {
          cvt(libc::sysctl(mib, 4, argv.as_mut_ptr() as *mut _, &mut argv_len, ptr::null_mut(), 0))?;
          argv.set_len(argv_len as usize);
          if argv[0].is_null() {
@@ -15,7 +15,7 @@ Index: src/libstd/sys/unix/os.rs
              crate::fs::canonicalize(OsStr::from_bytes(argv0))
          } else {
 -            Ok(PathBuf::from(OsStr::from_bytes(argv0)))
-+            Err(io::Error::new(io::ErrorKind::Other, "no current exe available (short)"))
++	    Err(io::Error::new(io::ErrorKind::Other, "no current exe available (short)"))
          }
      }
  }
