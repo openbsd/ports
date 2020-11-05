@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/05 08:42:07 benoit Exp $
 
 COMMENT =	Recursively copy Perl datatypes
 
-DISTNAME =	Clone-PP-1.07
-REVISION =	0
+DISTNAME =	Clone-PP-1.08
 
 CATEGORIES =	devel
 
