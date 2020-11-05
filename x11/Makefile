@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.676 2020/09/25 20:34:10 edd Exp $
+# $OpenBSD: Makefile,v 1.677 2020/11/05 11:14:24 sthen Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -16,6 +16,7 @@
      SUBDIR += asfiles
      SUBDIR += astime
      SUBDIR += autocutsel
+     SUBDIR += autorandr
      SUBDIR += awesome
      SUBDIR += bbdate
      SUBDIR += bbkeys
