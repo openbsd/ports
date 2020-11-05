@@ -1,0 +1,7 @@
+autorandr allows for automatic xrandr configuration based on the current
+hardware configuration. Users are able to define different hardware profiles,
+which autorandr will manage. Calling autorandr will then configure xrandr
+automatically.
+
+This is especially handy for laptop users who dock/undock their laptop
+to external displays.
