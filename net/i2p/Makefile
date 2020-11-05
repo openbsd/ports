@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/11/05 15:23:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/05 19:54:50 sthen Exp $
 
 COMMENT=	i2p routing protocol
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	gmp
 
-MASTER_SITES=	https://download.i2p2.de/releases/0.9.47/
+MASTER_SITES=	https://download.i2p2.de/releases/$V/
 
 MODULES=	java
 MODJAVA_VER=	1.8
