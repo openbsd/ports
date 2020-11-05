@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2020/09/13 08:48:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.285 2020/11/05 13:39:31 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -99,7 +99,9 @@
      SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += tracker
+     SUBDIR += tracker3
      SUBDIR += tracker-miners
+     SUBDIR += tracker3-miners
      SUBDIR += tweaks
      SUBDIR += usage
      SUBDIR += user-docs
