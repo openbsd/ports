@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/11/05 08:22:31 benoit Exp $
 
 COMMENT=		XS speed-up for Class-C3
 
 MODULES=		cpan
-DISTNAME =		Class-C3-XS-0.14
+DISTNAME =		Class-C3-XS-0.15
 CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =		0
 
 CPAN_AUTHOR =		ETHER
 
