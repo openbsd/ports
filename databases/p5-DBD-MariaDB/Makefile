@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/14 13:38:58 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/05 15:06:54 sthen Exp $
 
 COMMENT =	MariaDB and MySQL driver for the Perl5 Database Interface
 
 DISTNAME =	DBD-MariaDB-1.21
-REVISION =	2
+REVISION =	3
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
@@ -12,7 +12,7 @@ CATEGORIES =	databases
 # Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c crypto iconv m mariadb perl ssl z
+WANTLIB =		c mariadb perl
 
 MODULES =		cpan databases/mariadb
 BUILD_DEPENDS =		databases/p5-DBI>=1.608 \
