@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_grains_core_py,v 1.7 2020/08/09 10:37:46 jasper Exp $
+$OpenBSD: patch-salt_grains_core_py,v 1.8 2020/11/05 14:56:04 jasper Exp $
 
 - Unbreak minion without swap configured
 - Fix swap_total calculation on OpenBSD
@@ -8,17 +8,17 @@ https://github.com/saltstack/salt/pull/58155
 Index: salt/grains/core.py
 --- salt/grains/core.py.orig
 +++ salt/grains/core.py
-@@ -535,13 +535,15 @@ def _bsd_memdata(osdata):
+@@ -532,13 +532,15 @@ def _bsd_memdata(osdata):
          if osdata["kernel"] in ["OpenBSD", "NetBSD"]:
              swapctl = salt.utils.path.which("swapctl")
-             swap_data = __salt__["cmd.run"]("{0} -sk".format(swapctl))
+             swap_data = __salt__["cmd.run"]("{} -sk".format(swapctl))
 -            if swap_data == "no swap devices configured":
 +            if re.match(r"(swapctl: )?no swap devices configured", swap_data):
                  swap_total = 0
              else:
                  swap_total = swap_data.split(" ")[1]
          else:
-             swap_total = __salt__["cmd.run"]("{0} -n vm.swap_total".format(sysctl))
+             swap_total = __salt__["cmd.run"]("{} -n vm.swap_total".format(sysctl))
 -        grains["swap_total"] = int(swap_total) // 1024 // 1024
 +        grains["swap_total"] = int(swap_total) // 1024
 +        if osdata["kernel"] != "OpenBSD":

@@ -1,8 +1,0 @@
-$OpenBSD: patch-requirements_crypto_txt,v 1.2 2020/07/02 19:04:32 jasper Exp $
-
-Index: requirements/crypto.txt
---- requirements/crypto.txt.orig
-+++ requirements/crypto.txt
-@@ -1 +1 @@
--pycryptodomex>=3.9.7
-+pycryptodomex>=3.9.7; sys.platform == 'win32'

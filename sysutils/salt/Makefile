@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2020/10/05 19:46:18 jca Exp $
+# $OpenBSD: Makefile,v 1.157 2020/11/05 14:56:04 jasper Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py
@@ -17,8 +17,7 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_EGG_VERSION =	3001.1
-REVISION =		0
+MODPY_EGG_VERSION =	3002
 DISTNAME =		salt-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils net devel
@@ -46,7 +45,7 @@ RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR}>=0.6.2v0 \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
- 			sysutils/py-distro${MODPY_FLAVOR}
+ 			sysutils/py-distro${MODPY_FLAVOR}>=1.5.0
 
 # requirements/zeromq.txt
 RUN_DEPENDS +=		net/py-zmq${MODPY_FLAVOR} \
