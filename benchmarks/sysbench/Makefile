@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/17 14:49:20 danj Exp $
+# $OpenBSD: Makefile,v 1.26 2020/11/05 19:47:34 sthen Exp $
 
 COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
-REVISION =	14
+REVISION =	15
 CATEGORIES =	benchmarks
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sysbench/}
 
@@ -29,7 +29,7 @@ FLAVOR ?=
 .if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS +=	--with-mysql
 LIB_DEPENDS +=		databases/mariadb
-WANTLIB +=		crypto ssl ${COMPILER_LIBCXX} z mariadb iconv
+WANTLIB +=		crypto mariadb ssl z
 .else
 CONFIGURE_ARGS +=	--with-mysql=no
 .endif
