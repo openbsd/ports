@@ -1,0 +1,16 @@
+$OpenBSD: patch-meson_build,v 1.1.1.1 2020/11/05 13:38:59 ajacoutot Exp $
+
+XXX fix and push upstream
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -106,7 +106,7 @@ if get_option('man')
+   xsltproc = find_program('xsltproc')
+ endif
+ 
+-sha256sum = find_program('sha256sum')
++sha256sum = find_program('gsha256sum')
+ 
+ add_project_arguments('-Wformat', '-Wformat-security', language: 'c')
+ 

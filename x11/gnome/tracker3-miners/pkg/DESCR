@@ -1,0 +1,5 @@
+Tracker is an efficient search engine and triplestore for desktop, embedded and
+mobile.
+
+This package contains the indexer daemon (`tracker-miner-fs`) and tools to
+extract metadata from many different filetypes.

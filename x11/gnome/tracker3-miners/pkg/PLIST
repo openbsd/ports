@@ -1,0 +1,166 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/05 13:38:59 ajacoutot Exp $
+lib/tracker-miners-3.0/
+lib/tracker-miners-3.0/extract-modules/
+@so lib/tracker-miners-3.0/extract-modules/libextract-abw.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-bmp.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-desktop.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-dummy.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-dvi.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-epub.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-gif.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-gstreamer.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-html.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-icon.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-iso.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-jpeg.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-mp3.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-msoffice-xml.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-msoffice.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-oasis.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-pdf.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-playlist.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-png.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-ps.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-raw.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-text.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-tiff.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-xps.so
+@so lib/tracker-miners-3.0/libtracker-extract.so
+@so lib/tracker-miners-3.0/libtracker-miner-3.0.so
+lib/tracker-miners-3.0/writeback-modules/
+@so lib/tracker-miners-3.0/writeback-modules/libwriteback-gstreamer.so
+@so lib/tracker-miners-3.0/writeback-modules/libwriteback-xmp.so
+@bin libexec/tracker-extract-3
+@bin libexec/tracker-miner-fs-3
+@bin libexec/tracker-miner-fs-control-3
+@bin libexec/tracker-writeback-3
+@bin libexec/tracker3/daemon
+@bin libexec/tracker3/extract
+@bin libexec/tracker3/index
+@bin libexec/tracker3/info
+@bin libexec/tracker3/reset
+@bin libexec/tracker3/search
+@bin libexec/tracker3/status
+@bin libexec/tracker3/tag
+@man man/man1/tracker-miner-fs-3.1
+@man man/man1/tracker-writeback-3.1
+@man man/man1/tracker3-daemon.1
+@man man/man1/tracker3-extract.1
+@man man/man1/tracker3-index.1
+@man man/man1/tracker3-info.1
+@man man/man1/tracker3-reset.1
+@man man/man1/tracker3-search.1
+@man man/man1/tracker3-status.1
+@man man/man1/tracker3-tag.1
+share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.Files.Index.xml
+share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.xml
+share/dbus-1/services/org.freedesktop.Tracker3.Miner.Extract.service
+share/dbus-1/services/org.freedesktop.Tracker3.Miner.Files.Control.service
+share/dbus-1/services/org.freedesktop.Tracker3.Miner.Files.service
+share/dbus-1/services/org.freedesktop.Tracker3.Writeback.service
+share/examples/tracker3-miners/
+share/examples/tracker3-miners/xdg/
+share/examples/tracker3-miners/xdg/autostart/
+share/examples/tracker3-miners/xdg/autostart/tracker-miner-fs-3.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/tracker-miner-fs-3.desktop
+share/glib-2.0/schemas/org.freedesktop.Tracker3.Extract.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker3.FTS.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker3.Miner.Files.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.TrackerMiners3.enums.xml
+share/locale/ar/LC_MESSAGES/tracker3-miners.mo
+share/locale/as/LC_MESSAGES/tracker3-miners.mo
+share/locale/be/LC_MESSAGES/tracker3-miners.mo
+share/locale/be@latin/LC_MESSAGES/tracker3-miners.mo
+share/locale/bg/LC_MESSAGES/tracker3-miners.mo
+share/locale/bs/LC_MESSAGES/tracker3-miners.mo
+share/locale/ca/LC_MESSAGES/tracker3-miners.mo
+share/locale/ca@valencia/LC_MESSAGES/tracker3-miners.mo
+share/locale/cs/LC_MESSAGES/tracker3-miners.mo
+share/locale/da/LC_MESSAGES/tracker3-miners.mo
+share/locale/de/LC_MESSAGES/tracker3-miners.mo
+share/locale/dz/LC_MESSAGES/tracker3-miners.mo
+share/locale/el/LC_MESSAGES/tracker3-miners.mo
+share/locale/en_GB/LC_MESSAGES/tracker3-miners.mo
+share/locale/eo/LC_MESSAGES/tracker3-miners.mo
+share/locale/es/LC_MESSAGES/tracker3-miners.mo
+share/locale/et/LC_MESSAGES/tracker3-miners.mo
+share/locale/eu/LC_MESSAGES/tracker3-miners.mo
+share/locale/fi/LC_MESSAGES/tracker3-miners.mo
+share/locale/fr/LC_MESSAGES/tracker3-miners.mo
+share/locale/fur/LC_MESSAGES/tracker3-miners.mo
+share/locale/gl/LC_MESSAGES/tracker3-miners.mo
+share/locale/he/LC_MESSAGES/tracker3-miners.mo
+share/locale/hr/LC_MESSAGES/tracker3-miners.mo
+share/locale/hu/LC_MESSAGES/tracker3-miners.mo
+share/locale/id/LC_MESSAGES/tracker3-miners.mo
+share/locale/it/LC_MESSAGES/tracker3-miners.mo
+share/locale/ja/LC_MESSAGES/tracker3-miners.mo
+share/locale/kk/LC_MESSAGES/tracker3-miners.mo
+share/locale/ko/LC_MESSAGES/tracker3-miners.mo
+share/locale/lt/LC_MESSAGES/tracker3-miners.mo
+share/locale/lv/LC_MESSAGES/tracker3-miners.mo
+share/locale/mk/LC_MESSAGES/tracker3-miners.mo
+share/locale/ml/LC_MESSAGES/tracker3-miners.mo
+share/locale/ms/LC_MESSAGES/tracker3-miners.mo
+share/locale/nb/LC_MESSAGES/tracker3-miners.mo
+share/locale/nds/LC_MESSAGES/tracker3-miners.mo
+share/locale/ne/LC_MESSAGES/tracker3-miners.mo
+share/locale/nl/LC_MESSAGES/tracker3-miners.mo
+share/locale/oc/LC_MESSAGES/tracker3-miners.mo
+share/locale/pa/LC_MESSAGES/tracker3-miners.mo
+share/locale/pl/LC_MESSAGES/tracker3-miners.mo
+share/locale/pt/LC_MESSAGES/tracker3-miners.mo
+share/locale/pt_BR/LC_MESSAGES/tracker3-miners.mo
+share/locale/ro/LC_MESSAGES/tracker3-miners.mo
+share/locale/ru/LC_MESSAGES/tracker3-miners.mo
+share/locale/sk/LC_MESSAGES/tracker3-miners.mo
+share/locale/sl/LC_MESSAGES/tracker3-miners.mo
+share/locale/sr/LC_MESSAGES/tracker3-miners.mo
+share/locale/sr@latin/LC_MESSAGES/tracker3-miners.mo
+share/locale/sv/LC_MESSAGES/tracker3-miners.mo
+share/locale/te/LC_MESSAGES/tracker3-miners.mo
+share/locale/tg/LC_MESSAGES/tracker3-miners.mo
+share/locale/th/LC_MESSAGES/tracker3-miners.mo
+share/locale/tr/LC_MESSAGES/tracker3-miners.mo
+share/locale/uk/LC_MESSAGES/tracker3-miners.mo
+share/locale/vi/LC_MESSAGES/tracker3-miners.mo
+share/locale/zh_CN/LC_MESSAGES/tracker3-miners.mo
+share/locale/zh_HK/LC_MESSAGES/tracker3-miners.mo
+share/locale/zh_TW/LC_MESSAGES/tracker3-miners.mo
+share/tracker3-miners/
+share/tracker3-miners/domain-ontologies/
+share/tracker3-miners/domain-ontologies/default.rule
+share/tracker3-miners/extract-rules/
+share/tracker3-miners/extract-rules/10-abw.rule
+share/tracker3-miners/extract-rules/10-bmp.rule
+share/tracker3-miners/extract-rules/10-comics.rule
+share/tracker3-miners/extract-rules/10-desktop.rule
+share/tracker3-miners/extract-rules/10-dvi.rule
+share/tracker3-miners/extract-rules/10-ebooks.rule
+share/tracker3-miners/extract-rules/10-epub.rule
+share/tracker3-miners/extract-rules/10-gif.rule
+share/tracker3-miners/extract-rules/10-html.rule
+share/tracker3-miners/extract-rules/10-ico.rule
+share/tracker3-miners/extract-rules/10-jpeg.rule
+share/tracker3-miners/extract-rules/10-mp3.rule
+share/tracker3-miners/extract-rules/10-msoffice.rule
+share/tracker3-miners/extract-rules/10-oasis.rule
+share/tracker3-miners/extract-rules/10-pdf.rule
+share/tracker3-miners/extract-rules/10-png.rule
+share/tracker3-miners/extract-rules/10-ps.rule
+share/tracker3-miners/extract-rules/10-raw.rule
+share/tracker3-miners/extract-rules/10-svg.rule
+share/tracker3-miners/extract-rules/10-tiff.rule
+share/tracker3-miners/extract-rules/10-xps.rule
+share/tracker3-miners/extract-rules/11-iso.rule
+share/tracker3-miners/extract-rules/11-msoffice-xml.rule
+share/tracker3-miners/extract-rules/15-executable.rule
+share/tracker3-miners/extract-rules/15-games.rule
+share/tracker3-miners/extract-rules/15-gstreamer-guess.rule
+share/tracker3-miners/extract-rules/15-playlist.rule
+share/tracker3-miners/extract-rules/15-text.rule
+share/tracker3-miners/extract-rules/90-gstreamer-audio-generic.rule
+share/tracker3-miners/extract-rules/90-gstreamer-video-generic.rule
+share/tracker3-miners/miners/
+share/tracker3-miners/miners/org.freedesktop.Tracker3.Miner.Files.service
+@tag glib-compile-schemas
