@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/10/19 06:34:58 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2020/11/05 16:43:29 jasper Exp $
 
 COMMENT =	translator library for point cloud formats
 
@@ -35,6 +35,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_ARGS =	\
 	-DLASZIP_INCLUDE_DIR=${LOCALBASE}/include \
-	-DPDAL_PLUGIN_INSTALL_PATH=${LOCALBASE}/share/pdal/plugins
+	-DPDAL_PLUGIN_INSTALL_PATH=${LOCALBASE}/share/pdal/plugins \
+	-DWITH_TESTS=FALSE
 
 .include <bsd.port.mk>
