@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/04 20:45:00 solene Exp $
+# $OpenBSD: Makefile,v 1.17 2020/11/05 19:46:19 sthen Exp $
+
+BROKEN-i386=	various relocation R_386_PC32 cannot be used against symbol XX
 
 COMMENT=	Tanuki Java Service Wrapper
 
