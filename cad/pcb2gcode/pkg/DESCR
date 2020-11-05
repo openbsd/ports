@@ -1,0 +1,4 @@
+pcb2gcode is a command-line software for the isolation, routing and drilling of
+PCBs. It takes Gerber files as input and it outputs gcode files, suitable for
+the milling of PCBs. It also includes an Autoleveller, useful for the automatic
+dynamic calibration of the milling depth.

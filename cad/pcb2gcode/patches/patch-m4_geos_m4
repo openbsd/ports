@@ -1,0 +1,17 @@
+$OpenBSD: patch-m4_geos_m4,v 1.1.1.1 2020/11/05 20:37:31 tracey Exp $
+
+# --libs creates -lgeos-${VERSION}, which we don't build. --static-cclibs does
+# the right thing here.
+
+Index: m4/geos.m4
+--- m4/geos.m4.orig
++++ m4/geos.m4
+@@ -76,7 +76,7 @@ AC_DEFUN([GEOS_INIT],[
+         if $GEOS_CONFIG --libs >/dev/null 2>&1; then
+           AC_MSG_RESULT(yes)
+           HAVE_GEOS="yes"
+-          GEOS_LIBS="`$GEOS_CONFIG --libs`"
++          GEOS_LIBS="`$GEOS_CONFIG --static-cclibs`"
+           GEOS_C_LIBS="`$GEOS_CONFIG --ldflags` -lgeos_c"
+           GEOS_CFLAGS="`$GEOS_CONFIG --cflags`"
+           GEOS_VERSION="`$GEOS_CONFIG --version`"
