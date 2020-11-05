@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2020/10/08 11:40:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2020/11/05 11:57:59 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.5.6
+VERSION=	10.5.7
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
@@ -26,7 +26,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} c crypto iconv m pthread ssl z
+WANTLIB=	${COMPILER_LIBCXX} c crypto m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline
 WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy xml2
 WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
@@ -43,8 +43,7 @@ SUBST_VARS=	SOCKET_DIR
 MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			converters/libiconv
+LIB_DEPENDS-main=	${LIB_DEPENDS}
 RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1 \
 			databases/p5-DBD-MariaDB
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
@@ -53,13 +52,11 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/lzo2 \
 			archivers/snappy \
 			archivers/xz \
-			converters/libiconv \
 			devel/pcre2 \
 			net/curl \
 			textproc/libxml
 RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
-			converters/libiconv \
 			devel/pcre2
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \

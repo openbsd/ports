@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.36 2020/10/03 13:12:35 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.37 2020/11/05 11:57:59 sthen Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
@@ -504,6 +504,7 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/sha256_password.so
 @so lib/mysql/plugin/simple_password_check.so
 @so lib/mysql/plugin/sql_errlog.so
+@so lib/mysql/plugin/type_mysql_json.so
 @so lib/mysql/plugin/wsrep_info.so
 @bin libexec/mariadbd
 libexec/mysqld

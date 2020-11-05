@@ -1,19 +1,9 @@
-$OpenBSD: patch-libmariadb_libmariadb_CMakeLists_txt,v 1.7 2020/08/11 13:00:31 sthen Exp $
-
-Remove LIBICONV_PLUG to fix the build with iconv on OpenBSD.
+$OpenBSD: patch-libmariadb_libmariadb_CMakeLists_txt,v 1.8 2020/11/05 11:57:59 sthen Exp $
 
 Index: libmariadb/libmariadb/CMakeLists.txt
 --- libmariadb/libmariadb/CMakeLists.txt.orig
 +++ libmariadb/libmariadb/CMakeLists.txt
-@@ -311,7 +311,6 @@ ELSE()
-   IF(ICONV_INCLUDE_DIR)
-      INCLUDE_DIRECTORIES(BEFORE ${ICONV_INCLUDE_DIR}) 
-   ENDIF()
--  ADD_DEFINITIONS(-DLIBICONV_PLUG)
- ENDIF()
- 
- IF(ZLIB_FOUND AND WITH_EXTERNAL_ZLIB)
-@@ -394,6 +393,8 @@ ENDIF()
+@@ -397,6 +397,8 @@ ENDIF()
  ADD_LIBRARY(mariadbclient STATIC  ${MARIADB_OBJECTS} ${EMPTY_FILE})
  TARGET_LINK_LIBRARIES(mariadbclient ${SYSTEM_LIBS})
  
@@ -22,15 +12,17 @@ Index: libmariadb/libmariadb/CMakeLists.txt
  IF(UNIX)
    ADD_LIBRARY(libmariadb SHARED ${libmariadb_RC} ${MARIADB_OBJECTS} ${EMPTY_FILE})
    SET_TARGET_PROPERTIES(libmariadb PROPERTIES COMPILE_FLAGS "${CMAKE_SHARED_LIBRARY_C_FLAGS}")
-@@ -434,17 +435,9 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
+@@ -437,19 +439,9 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
  # of the config program. To make sure these programs can
  # use mariadb client library we provide libmysql symlinks
  
 -IF(WITH_MYSQLCOMPAT)
 -  create_symlink(libmysqlclient${CMAKE_SHARED_LIBRARY_SUFFIX} libmariadb ${INSTALL_LIBDIR})
 -  create_symlink(libmysqlclient_r${CMAKE_SHARED_LIBRARY_SUFFIX} libmariadb ${INSTALL_LIBDIR})
--  create_symlink(libmysqlclient${CMAKE_STATIC_LIBRARY_SUFFIX} mariadbclient ${INSTALL_LIBDIR})
--  create_symlink(libmysqlclient_r${CMAKE_STATIC_LIBRARY_SUFFIX} mariadbclient ${INSTALL_LIBDIR})
+-  IF(NOT CMAKE_SYSTEM_NAME MATCHES AIX)
+-    create_symlink(libmysqlclient${CMAKE_STATIC_LIBRARY_SUFFIX} mariadbclient ${INSTALL_LIBDIR})
+-    create_symlink(libmysqlclient_r${CMAKE_STATIC_LIBRARY_SUFFIX} mariadbclient ${INSTALL_LIBDIR})
+-  ENDIF()
 -ENDIF()
 -
 -

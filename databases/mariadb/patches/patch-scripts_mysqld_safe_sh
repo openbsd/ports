@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.18 2020/06/26 08:46:42 sthen Exp $
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.19 2020/11/05 11:57:59 sthen Exp $
 
 Index: scripts/mysqld_safe.sh
 --- scripts/mysqld_safe.sh.orig
@@ -13,7 +13,7 @@ Index: scripts/mysqld_safe.sh
  pid_file=
  err_log=
  err_log_base=
-@@ -737,8 +738,8 @@ then
+@@ -721,8 +722,8 @@ then
      log_error "Fatal error Can't create database directory '$mysql_unix_port'"
      exit 1
    fi
