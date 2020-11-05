@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2020/06/04 15:39:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/11/05 20:13:01 sthen Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
 VERSION=	1.7.8
+REVISION=	0
 
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}
@@ -50,7 +51,7 @@ RMFILES=	share/kea/scripts/cql
 
 .if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS+= --with-dhcp-mysql=${LOCALBASE}/bin/mysql_config
-WANTLIB+=	 iconv mariadb ssl z
+WANTLIB+=	 mariadb ssl z
 LIB_DEPENDS+=	 databases/mariadb
 .else
 RMFILES+=	share/doc/kea/examples/kea[46]/*mysql* \
