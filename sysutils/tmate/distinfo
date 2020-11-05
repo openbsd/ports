@@ -1,2 +1,6 @@
 SHA256 (tmate-2.4.0.tar.gz) = YrYesSqzlAEshh9rSLoLwErIdlq8oTvd5aTZEFyxYTg=
+SHA256 (tmate-bad-fingerprint.patch) = cdXuCBvF/ZyNmMl2Hjlifc5tPYY3cbhkE/3jK7qaaww=
+SHA256 (tmate-include-errno.patch) = OJ/d0IlufWPXXjGuHVo7yKoxAVHsDUv6I/Xu0s/6E38=
 SIZE (tmate-2.4.0.tar.gz) = 614179
+SIZE (tmate-bad-fingerprint.patch) = 1314
+SIZE (tmate-include-errno.patch) = 1007

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/04/02 16:09:26 kn Exp $
+# $OpenBSD: Makefile,v 1.15 2020/11/05 22:32:30 kn Exp $
 
 COMMENT =	instant terminal sharing based on tmux
 
@@ -6,7 +6,12 @@ GH_ACCOUNT =	tmate-io
 GH_PROJECT =	tmate
 GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
-REVISION =	2
+REVISION =	3
+
+MASTER_SITES0 =	https://github.com/tmate-io/tmate/commit/
+PATCHFILES =	tmate-bad-fingerprint{cbec43f56dfb48c2fb6e00faa2cb85443d4b7d8f}.patch:0 \
+		tmate-include-errno{339e6c43575244f72831654e5dda41c037febde7}.patch:0 \
+PATCH_DIST_STRIP =	-p1
 
 HOMEPAGE =	https://tmate.io
 
