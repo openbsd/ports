@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/11/04 14:40:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/05 08:35:16 jasper Exp $
 
 # uses huge amounts of memory compiling disasm.cc on i386, the available
 # address space is not large enough
@@ -9,6 +9,7 @@ COMMENT =	RISC-V ISA simulator
 GH_COMMIT =	ec6ded4f2f21cb7aef4a0b31b82b91ef91d22c36
 GH_ACCOUNT =	riscv
 GH_PROJECT =	riscv-isa-sim
+REVISION =	0
 
 DISTNAME =	spike-1.0.0
 

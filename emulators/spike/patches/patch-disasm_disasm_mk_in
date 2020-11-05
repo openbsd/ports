@@ -1,0 +1,13 @@
+$OpenBSD: patch-disasm_disasm_mk_in,v 1.1 2020/11/05 08:35:16 jasper Exp $
+
+force -O1 to reduce memory presssure when building disasm.cc
+
+Index: disasm/disasm.mk.in
+--- disasm/disasm.mk.in.orig
++++ disasm/disasm.mk.in
+@@ -1,4 +1,4 @@
+-disasm_CFLAGS = -fPIC
++disasm_CFLAGS = -fPIC -O1
+ 
+ disasm_srcs = \
+   disasm.cc \
