@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/11/05 10:26:14 benoit Exp $
 
 COMMENT=	locate install data per-module
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME=	File-ShareDir-1.116
-REVISION=	0
+DISTNAME =	File-ShareDir-1.118
 
 CATEGORIES=	devel
 
