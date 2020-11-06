@@ -1,4 +1,0 @@
-Python bindings for Keybinder.
-
-Keybinder is a library for registering global keyboard shortcuts.
-It works with GTK-based applications using the X Window System.
