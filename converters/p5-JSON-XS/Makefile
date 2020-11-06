@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:44:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/11/06 07:58:46 benoit Exp $
 
 COMMENT =	JSON serialising/deserialising, done correctly and fast
 
-DISTNAME =	JSON-XS-4.02
+DISTNAME =	JSON-XS-4.03
 EPOCH =		1
 CATEGORIES =	converters
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
