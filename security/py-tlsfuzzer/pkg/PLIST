@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/08/15 16:38:04 tb Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/11/06 09:31:31 tb Exp $
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
@@ -32,10 +32,12 @@ lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}_ordered_dict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}lists.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}ordered_dict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}statics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/_ordered_dict.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/lists.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/log.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/ordered_dict.py
