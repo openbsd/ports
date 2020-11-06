@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/02/10 18:01:30 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/11/06 20:05:24 jasper Exp $
 gerbil/
 gerbil/CHANGELOG.md
 gerbil/LICENSE-APACHE-2.0.txt
 gerbil/LICENSE-LGPL.txt
 gerbil/README.md
 gerbil/bin/
+gerbil/bin/.keep
 gerbil/bin/gxc
 gerbil/bin/gxi
 gerbil/bin/gxi-build-script
@@ -15,7 +16,16 @@ gerbil/bin/gxi-script
 gerbil/doc/
 gerbil/doc/.vuepress/
 gerbil/doc/.vuepress/config.js
-gerbil/doc/.vuepress/style.styl
+gerbil/doc/.vuepress/public/
+gerbil/doc/.vuepress/public/img/
+gerbil/doc/.vuepress/public/img/gerbil-detailed-consio_OPT.svg
+gerbil/doc/.vuepress/public/img/gerbil-detailed_INK.svg
+gerbil/doc/.vuepress/public/img/gerbil-detailed_OPT.svg
+gerbil/doc/.vuepress/public/img/gerbil-flat-colored-consio_OPT.svg
+gerbil/doc/.vuepress/public/img/gerbil-flat-colored_INK.svg
+gerbil/doc/.vuepress/public/img/gerbil-flat-colored_OPT.svg
+gerbil/doc/.vuepress/styles/
+gerbil/doc/.vuepress/styles/index.styl
 gerbil/doc/build.sh
 gerbil/doc/guide/
 gerbil/doc/guide/README.md
@@ -32,6 +42,7 @@ gerbil/doc/guide/profiler.md
 gerbil/doc/guide/r7rs.md
 gerbil/doc/guide/shell.md
 gerbil/doc/guide/srfi.md
+gerbil/doc/package-lock.json
 gerbil/doc/package.json
 gerbil/doc/readme.md
 gerbil/doc/reference/
@@ -70,6 +81,7 @@ gerbil/doc/reference/sort.md
 gerbil/doc/reference/srfi.md
 gerbil/doc/reference/stdlib.md
 gerbil/doc/reference/stxparam.md
+gerbil/doc/reference/stxutil.md
 gerbil/doc/reference/sugar.md
 gerbil/doc/reference/test.md
 gerbil/doc/reference/text.md
@@ -82,6 +94,7 @@ gerbil/doc/tutorials/kvstore.md
 gerbil/doc/tutorials/languages.md
 gerbil/doc/tutorials/proxy.md
 gerbil/lib/
+gerbil/lib/.keep
 gerbil/lib/gerbil/
 gerbil/lib/gerbil/compiler/
 gerbil/lib/gerbil/compiler.ssi
@@ -113,6 +126,10 @@ gerbil/lib/gerbil/compiler/optimize-call.ssi
 gerbil/lib/gerbil/compiler/optimize-call.ssxi.ss
 @bin gerbil/lib/gerbil/compiler/optimize-call__0.o1
 @bin gerbil/lib/gerbil/compiler/optimize-call__rt.o1
+gerbil/lib/gerbil/compiler/optimize-spec.ssi
+gerbil/lib/gerbil/compiler/optimize-spec.ssxi.ss
+@bin gerbil/lib/gerbil/compiler/optimize-spec__0.o1
+@bin gerbil/lib/gerbil/compiler/optimize-spec__rt.o1
 gerbil/lib/gerbil/compiler/optimize-top.ssi
 gerbil/lib/gerbil/compiler/optimize-top.ssxi.ss
 @bin gerbil/lib/gerbil/compiler/optimize-top__0.o1
@@ -266,6 +283,11 @@ gerbil/lib/gerbil/gambit/threads.ssxi.ss
 @bin gerbil/lib/gerbil/gambit/threads__0.o1
 @bin gerbil/lib/gerbil/gambit/threads__rt.o1
 @bin gerbil/lib/gerbil/gambit__rt.o1
+@bin gerbil/lib/gerbil/polydactyl$_gambit__rt.o1
+gerbil/lib/gerbil/polydactyl.ssi
+gerbil/lib/gerbil/polydactyl.ssxi.ss
+@bin gerbil/lib/gerbil/polydactyl__1.o1
+@bin gerbil/lib/gerbil/polydactyl__rt.o1
 gerbil/lib/gerbil/tools/
 gerbil/lib/gerbil/tools/gxpkg.ssi
 gerbil/lib/gerbil/tools/gxpkg.ssxi.ss
@@ -295,162 +317,317 @@ gerbil/lib/scheme/
 gerbil/lib/scheme/base-etc.ssi
 gerbil/lib/scheme/base-etc.ssxi.ss
 @bin gerbil/lib/scheme/base-etc__0.o1
+gerbil/lib/scheme/base-etc__0.scm
 @bin gerbil/lib/scheme/base-etc__1.o1
+gerbil/lib/scheme/base-etc__1.scm
 @bin gerbil/lib/scheme/base-etc__rt.o1
+gerbil/lib/scheme/base-etc__rt.scm
 gerbil/lib/scheme/base-impl.ssi
 gerbil/lib/scheme/base-impl.ssxi.ss
 @bin gerbil/lib/scheme/base-impl__0.o1
+gerbil/lib/scheme/base-impl__0.scm
 @bin gerbil/lib/scheme/base-impl__1.o1
+gerbil/lib/scheme/base-impl__1.scm
 @bin gerbil/lib/scheme/base-impl__rt.o1
+gerbil/lib/scheme/base-impl__rt.scm
 gerbil/lib/scheme/base-ports.ssi
 gerbil/lib/scheme/base-ports.ssxi.ss
 @bin gerbil/lib/scheme/base-ports__0.o1
+gerbil/lib/scheme/base-ports__0.scm
 @bin gerbil/lib/scheme/base-ports__rt.o1
+gerbil/lib/scheme/base-ports__rt.scm
 gerbil/lib/scheme/base-vectors.ssi
 gerbil/lib/scheme/base-vectors.ssxi.ss
 @bin gerbil/lib/scheme/base-vectors__1.o1
+gerbil/lib/scheme/base-vectors__1.scm
 @bin gerbil/lib/scheme/base-vectors__rt.o1
+gerbil/lib/scheme/base-vectors__rt.scm
 gerbil/lib/scheme/base.ssi
 gerbil/lib/scheme/base.ssxi.ss
 @bin gerbil/lib/scheme/base__rt.o1
+gerbil/lib/scheme/base__rt.scm
+gerbil/lib/scheme/bitwise.ssi
+gerbil/lib/scheme/bitwise.ssxi.ss
+@bin gerbil/lib/scheme/bitwise__rt.o1
+gerbil/lib/scheme/bitwise__rt.scm
 gerbil/lib/scheme/box.ssi
 gerbil/lib/scheme/box.ssxi.ss
 @bin gerbil/lib/scheme/box__rt.o1
+gerbil/lib/scheme/box__rt.scm
+gerbil/lib/scheme/bytevector.ssi
+gerbil/lib/scheme/bytevector.ssxi.ss
+@bin gerbil/lib/scheme/bytevector__0.o1
+gerbil/lib/scheme/bytevector__0.scm
+@bin gerbil/lib/scheme/bytevector__rt.o1
+gerbil/lib/scheme/bytevector__rt.scm
 gerbil/lib/scheme/case-lambda.ssi
 gerbil/lib/scheme/case-lambda.ssxi.ss
 @bin gerbil/lib/scheme/case-lambda__rt.o1
+gerbil/lib/scheme/case-lambda__rt.scm
 gerbil/lib/scheme/char-impl.ssi
 gerbil/lib/scheme/char-impl.ssxi.ss
 @bin gerbil/lib/scheme/char-impl__0.o1
+gerbil/lib/scheme/char-impl__0.scm
 @bin gerbil/lib/scheme/char-impl__1.o1
+gerbil/lib/scheme/char-impl__1.scm
 @bin gerbil/lib/scheme/char-impl__rt.o1
+gerbil/lib/scheme/char-impl__rt.scm
 gerbil/lib/scheme/char.ssi
 gerbil/lib/scheme/char.ssxi.ss
 @bin gerbil/lib/scheme/char__rt.o1
+gerbil/lib/scheme/char__rt.scm
 gerbil/lib/scheme/charset.ssi
 gerbil/lib/scheme/charset.ssxi.ss
 @bin gerbil/lib/scheme/charset__rt.o1
+gerbil/lib/scheme/charset__rt.scm
 gerbil/lib/scheme/comparator.ssi
 gerbil/lib/scheme/comparator.ssxi.ss
 @bin gerbil/lib/scheme/comparator__rt.o1
+gerbil/lib/scheme/comparator__rt.scm
 gerbil/lib/scheme/complex.ssi
 gerbil/lib/scheme/complex.ssxi.ss
 @bin gerbil/lib/scheme/complex__rt.o1
+gerbil/lib/scheme/complex__rt.scm
 gerbil/lib/scheme/cxr.ssi
 gerbil/lib/scheme/cxr.ssxi.ss
 @bin gerbil/lib/scheme/cxr__rt.o1
+gerbil/lib/scheme/cxr__rt.scm
+gerbil/lib/scheme/division.ssi
+gerbil/lib/scheme/division.ssxi.ss
+@bin gerbil/lib/scheme/division__rt.o1
+gerbil/lib/scheme/division__rt.scm
 gerbil/lib/scheme/ephemeron.ssi
 gerbil/lib/scheme/ephemeron.ssxi.ss
 @bin gerbil/lib/scheme/ephemeron__rt.o1
+gerbil/lib/scheme/ephemeron__rt.scm
 gerbil/lib/scheme/eval-impl.ssi
 gerbil/lib/scheme/eval-impl.ssxi.ss
 @bin gerbil/lib/scheme/eval-impl__0.o1
+gerbil/lib/scheme/eval-impl__0.scm
 @bin gerbil/lib/scheme/eval-impl__rt.o1
+gerbil/lib/scheme/eval-impl__rt.scm
 gerbil/lib/scheme/eval.ssi
 gerbil/lib/scheme/eval.ssxi.ss
 @bin gerbil/lib/scheme/eval__rt.o1
+gerbil/lib/scheme/eval__rt.scm
 gerbil/lib/scheme/file.ssi
 gerbil/lib/scheme/file.ssxi.ss
 @bin gerbil/lib/scheme/file__rt.o1
+gerbil/lib/scheme/file__rt.scm
+gerbil/lib/scheme/fixnum.ssi
+gerbil/lib/scheme/fixnum.ssxi.ss
+@bin gerbil/lib/scheme/fixnum__rt.o1
+gerbil/lib/scheme/fixnum__rt.scm
+gerbil/lib/scheme/flonum.ssi
+gerbil/lib/scheme/flonum.ssxi.ss
+@bin gerbil/lib/scheme/flonum__rt.o1
+gerbil/lib/scheme/flonum__rt.scm
 gerbil/lib/scheme/generator.ssi
 gerbil/lib/scheme/generator.ssxi.ss
 @bin gerbil/lib/scheme/generator__rt.o1
+gerbil/lib/scheme/generator__rt.scm
 gerbil/lib/scheme/hash-table.ssi
 gerbil/lib/scheme/hash-table.ssxi.ss
 @bin gerbil/lib/scheme/hash-table__rt.o1
+gerbil/lib/scheme/hash-table__rt.scm
 gerbil/lib/scheme/ideque.ssi
 gerbil/lib/scheme/ideque.ssxi.ss
 @bin gerbil/lib/scheme/ideque__rt.o1
+gerbil/lib/scheme/ideque__rt.scm
 gerbil/lib/scheme/ilist.ssi
 gerbil/lib/scheme/ilist.ssxi.ss
 @bin gerbil/lib/scheme/ilist__rt.o1
+gerbil/lib/scheme/ilist__rt.scm
 gerbil/lib/scheme/inexact-impl.ssi
 gerbil/lib/scheme/inexact-impl.ssxi.ss
 @bin gerbil/lib/scheme/inexact-impl__rt.o1
+gerbil/lib/scheme/inexact-impl__rt.scm
 gerbil/lib/scheme/inexact.ssi
 gerbil/lib/scheme/inexact.ssxi.ss
 @bin gerbil/lib/scheme/inexact__rt.o1
+gerbil/lib/scheme/inexact__rt.scm
 gerbil/lib/scheme/lazy-impl.ssi
 gerbil/lib/scheme/lazy-impl.ssxi.ss
 @bin gerbil/lib/scheme/lazy-impl__0.o1
+gerbil/lib/scheme/lazy-impl__0.scm
 @bin gerbil/lib/scheme/lazy-impl__rt.o1
+gerbil/lib/scheme/lazy-impl__rt.scm
 gerbil/lib/scheme/lazy.ssi
 gerbil/lib/scheme/lazy.ssxi.ss
 @bin gerbil/lib/scheme/lazy__rt.o1
+gerbil/lib/scheme/lazy__rt.scm
 gerbil/lib/scheme/list-queue.ssi
 gerbil/lib/scheme/list-queue.ssxi.ss
 @bin gerbil/lib/scheme/list-queue__rt.o1
+gerbil/lib/scheme/list-queue__rt.scm
 gerbil/lib/scheme/list.ssi
 gerbil/lib/scheme/list.ssxi.ss
 @bin gerbil/lib/scheme/list__rt.o1
+gerbil/lib/scheme/list__rt.scm
 gerbil/lib/scheme/load-impl.ssi
 gerbil/lib/scheme/load-impl.ssxi.ss
 @bin gerbil/lib/scheme/load-impl__0.o1
+gerbil/lib/scheme/load-impl__0.scm
 @bin gerbil/lib/scheme/load-impl__rt.o1
+gerbil/lib/scheme/load-impl__rt.scm
 gerbil/lib/scheme/load.ssi
 gerbil/lib/scheme/load.ssxi.ss
 @bin gerbil/lib/scheme/load__rt.o1
+gerbil/lib/scheme/load__rt.scm
 gerbil/lib/scheme/lseq.ssi
 gerbil/lib/scheme/lseq.ssxi.ss
 @bin gerbil/lib/scheme/lseq__rt.o1
+gerbil/lib/scheme/lseq__rt.scm
+gerbil/lib/scheme/mapping/
+gerbil/lib/scheme/mapping.ssi
+gerbil/lib/scheme/mapping.ssxi.ss
+gerbil/lib/scheme/mapping/hash.ssi
+gerbil/lib/scheme/mapping/hash.ssxi.ss
+@bin gerbil/lib/scheme/mapping/hash__rt.o1
+gerbil/lib/scheme/mapping/hash__rt.scm
+@bin gerbil/lib/scheme/mapping__rt.o1
+gerbil/lib/scheme/mapping__rt.scm
 gerbil/lib/scheme/process-context-impl.ssi
 gerbil/lib/scheme/process-context-impl.ssxi.ss
 @bin gerbil/lib/scheme/process-context-impl__0.o1
+gerbil/lib/scheme/process-context-impl__0.scm
 @bin gerbil/lib/scheme/process-context-impl__rt.o1
+gerbil/lib/scheme/process-context-impl__rt.scm
 gerbil/lib/scheme/process-context.ssi
 gerbil/lib/scheme/process-context.ssxi.ss
 @bin gerbil/lib/scheme/process-context__rt.o1
+gerbil/lib/scheme/process-context__rt.scm
 gerbil/lib/scheme/r5rs-null.ssi
 gerbil/lib/scheme/r5rs-null.ssxi.ss
 @bin gerbil/lib/scheme/r5rs-null__rt.o1
+gerbil/lib/scheme/r5rs-null__rt.scm
 gerbil/lib/scheme/r5rs.ssi
 gerbil/lib/scheme/r5rs.ssxi.ss
 @bin gerbil/lib/scheme/r5rs__rt.o1
+gerbil/lib/scheme/r5rs__rt.scm
 gerbil/lib/scheme/r7rs.ssi
 gerbil/lib/scheme/r7rs.ssxi.ss
 @bin gerbil/lib/scheme/r7rs__1.o1
+gerbil/lib/scheme/r7rs__1.scm
 @bin gerbil/lib/scheme/r7rs__rt.o1
+gerbil/lib/scheme/r7rs__rt.scm
 gerbil/lib/scheme/read.ssi
 gerbil/lib/scheme/read.ssxi.ss
 @bin gerbil/lib/scheme/read__rt.o1
+gerbil/lib/scheme/read__rt.scm
+gerbil/lib/scheme/regex.ssi
+gerbil/lib/scheme/regex.ssxi.ss
+@bin gerbil/lib/scheme/regex__rt.o1
+gerbil/lib/scheme/regex__rt.scm
 gerbil/lib/scheme/repl-impl.ssi
 gerbil/lib/scheme/repl-impl.ssxi.ss
 @bin gerbil/lib/scheme/repl-impl__0.o1
+gerbil/lib/scheme/repl-impl__0.scm
 @bin gerbil/lib/scheme/repl-impl__rt.o1
+gerbil/lib/scheme/repl-impl__rt.scm
 gerbil/lib/scheme/repl.ssi
 gerbil/lib/scheme/repl.ssxi.ss
 @bin gerbil/lib/scheme/repl__rt.o1
+gerbil/lib/scheme/repl__rt.scm
 gerbil/lib/scheme/rlist.ssi
 gerbil/lib/scheme/rlist.ssxi.ss
 @bin gerbil/lib/scheme/rlist__rt.o1
+gerbil/lib/scheme/rlist__rt.scm
 gerbil/lib/scheme/set.ssi
 gerbil/lib/scheme/set.ssxi.ss
 @bin gerbil/lib/scheme/set__rt.o1
+gerbil/lib/scheme/set__rt.scm
+gerbil/lib/scheme/show.ssi
+gerbil/lib/scheme/show.ssxi.ss
+@bin gerbil/lib/scheme/show__rt.o1
+gerbil/lib/scheme/show__rt.scm
 gerbil/lib/scheme/sort.ssi
 gerbil/lib/scheme/sort.ssxi.ss
 @bin gerbil/lib/scheme/sort__rt.o1
+gerbil/lib/scheme/sort__rt.scm
 gerbil/lib/scheme/stream.ssi
 gerbil/lib/scheme/stream.ssxi.ss
 @bin gerbil/lib/scheme/stream__rt.o1
+gerbil/lib/scheme/stream__rt.scm
 gerbil/lib/scheme/stubs.ssi
 gerbil/lib/scheme/stubs.ssxi.ss
 @bin gerbil/lib/scheme/stubs__1.o1
+gerbil/lib/scheme/stubs__1.scm
 @bin gerbil/lib/scheme/stubs__rt.o1
+gerbil/lib/scheme/stubs__rt.scm
 gerbil/lib/scheme/text.ssi
 gerbil/lib/scheme/text.ssxi.ss
 @bin gerbil/lib/scheme/text__rt.o1
+gerbil/lib/scheme/text__rt.scm
 gerbil/lib/scheme/time.ssi
 gerbil/lib/scheme/time.ssxi.ss
 @bin gerbil/lib/scheme/time__rt.o1
+gerbil/lib/scheme/time__rt.scm
+gerbil/lib/scheme/vector/
 gerbil/lib/scheme/vector.ssi
 gerbil/lib/scheme/vector.ssxi.ss
+gerbil/lib/scheme/vector/base.ssi
+gerbil/lib/scheme/vector/base.ssxi.ss
+@bin gerbil/lib/scheme/vector/base__rt.o1
+gerbil/lib/scheme/vector/base__rt.scm
+gerbil/lib/scheme/vector/c128.ssi
+gerbil/lib/scheme/vector/c128.ssxi.ss
+@bin gerbil/lib/scheme/vector/c128__rt.o1
+gerbil/lib/scheme/vector/c128__rt.scm
+gerbil/lib/scheme/vector/c64.ssi
+gerbil/lib/scheme/vector/c64.ssxi.ss
+@bin gerbil/lib/scheme/vector/c64__rt.o1
+gerbil/lib/scheme/vector/c64__rt.scm
+gerbil/lib/scheme/vector/f32.ssi
+gerbil/lib/scheme/vector/f32.ssxi.ss
+@bin gerbil/lib/scheme/vector/f32__rt.o1
+gerbil/lib/scheme/vector/f32__rt.scm
+gerbil/lib/scheme/vector/f64.ssi
+gerbil/lib/scheme/vector/f64.ssxi.ss
+@bin gerbil/lib/scheme/vector/f64__rt.o1
+gerbil/lib/scheme/vector/f64__rt.scm
+gerbil/lib/scheme/vector/s16.ssi
+gerbil/lib/scheme/vector/s16.ssxi.ss
+@bin gerbil/lib/scheme/vector/s16__rt.o1
+gerbil/lib/scheme/vector/s16__rt.scm
+gerbil/lib/scheme/vector/s32.ssi
+gerbil/lib/scheme/vector/s32.ssxi.ss
+@bin gerbil/lib/scheme/vector/s32__rt.o1
+gerbil/lib/scheme/vector/s32__rt.scm
+gerbil/lib/scheme/vector/s64.ssi
+gerbil/lib/scheme/vector/s64.ssxi.ss
+@bin gerbil/lib/scheme/vector/s64__rt.o1
+gerbil/lib/scheme/vector/s64__rt.scm
+gerbil/lib/scheme/vector/s8.ssi
+gerbil/lib/scheme/vector/s8.ssxi.ss
+@bin gerbil/lib/scheme/vector/s8__rt.o1
+gerbil/lib/scheme/vector/s8__rt.scm
+gerbil/lib/scheme/vector/u16.ssi
+gerbil/lib/scheme/vector/u16.ssxi.ss
+@bin gerbil/lib/scheme/vector/u16__rt.o1
+gerbil/lib/scheme/vector/u16__rt.scm
+gerbil/lib/scheme/vector/u32.ssi
+gerbil/lib/scheme/vector/u32.ssxi.ss
+@bin gerbil/lib/scheme/vector/u32__rt.o1
+gerbil/lib/scheme/vector/u32__rt.scm
+gerbil/lib/scheme/vector/u64.ssi
+gerbil/lib/scheme/vector/u64.ssxi.ss
+@bin gerbil/lib/scheme/vector/u64__rt.o1
+gerbil/lib/scheme/vector/u64__rt.scm
+gerbil/lib/scheme/vector/u8.ssi
+gerbil/lib/scheme/vector/u8.ssxi.ss
+@bin gerbil/lib/scheme/vector/u8__rt.o1
+gerbil/lib/scheme/vector/u8__rt.scm
 @bin gerbil/lib/scheme/vector__rt.o1
+gerbil/lib/scheme/vector__rt.scm
 gerbil/lib/scheme/write-impl.ssi
 gerbil/lib/scheme/write-impl.ssxi.ss
 @bin gerbil/lib/scheme/write-impl__rt.o1
+gerbil/lib/scheme/write-impl__rt.scm
 gerbil/lib/scheme/write.ssi
 gerbil/lib/scheme/write.ssxi.ss
 @bin gerbil/lib/scheme/write__rt.o1
+gerbil/lib/scheme/write__rt.scm
 gerbil/lib/static/
 gerbil/lib/static/gerbil__core$_MOP_$_MOP_1_.scm
 gerbil/lib/static/gerbil__core$_MOP_$_MOP_2_.scm
@@ -489,6 +666,8 @@ gerbil/lib/static/gerbil__gambit__random.scm
 gerbil/lib/static/gerbil__gambit__readtables.scm
 gerbil/lib/static/gerbil__gambit__system.scm
 gerbil/lib/static/gerbil__gambit__threads.scm
+gerbil/lib/static/gerbil__polydactyl$_gambit.scm
+gerbil/lib/static/gerbil__polydactyl.scm
 gerbil/lib/static/gerbil__tools__gxpkg.scm
 gerbil/lib/static/gerbil__tools__gxprof.scm
 gerbil/lib/static/gerbil__tools__gxtags.scm
@@ -504,7 +683,9 @@ gerbil/lib/static/scheme__base-impl.scm
 gerbil/lib/static/scheme__base-ports.scm
 gerbil/lib/static/scheme__base-vectors.scm
 gerbil/lib/static/scheme__base.scm
+gerbil/lib/static/scheme__bitwise.scm
 gerbil/lib/static/scheme__box.scm
+gerbil/lib/static/scheme__bytevector.scm
 gerbil/lib/static/scheme__case-lambda.scm
 gerbil/lib/static/scheme__char-impl.scm
 gerbil/lib/static/scheme__char.scm
@@ -512,10 +693,13 @@ gerbil/lib/static/scheme__charset.scm
 gerbil/lib/static/scheme__comparator.scm
 gerbil/lib/static/scheme__complex.scm
 gerbil/lib/static/scheme__cxr.scm
+gerbil/lib/static/scheme__division.scm
 gerbil/lib/static/scheme__ephemeron.scm
 gerbil/lib/static/scheme__eval-impl.scm
 gerbil/lib/static/scheme__eval.scm
 gerbil/lib/static/scheme__file.scm
+gerbil/lib/static/scheme__fixnum.scm
+gerbil/lib/static/scheme__flonum.scm
 gerbil/lib/static/scheme__generator.scm
 gerbil/lib/static/scheme__hash-table.scm
 gerbil/lib/static/scheme__ideque.scm
@@ -529,22 +713,39 @@ gerbil/lib/static/scheme__list.scm
 gerbil/lib/static/scheme__load-impl.scm
 gerbil/lib/static/scheme__load.scm
 gerbil/lib/static/scheme__lseq.scm
+gerbil/lib/static/scheme__mapping.scm
+gerbil/lib/static/scheme__mapping__hash.scm
 gerbil/lib/static/scheme__process-context-impl.scm
 gerbil/lib/static/scheme__process-context.scm
 gerbil/lib/static/scheme__r5rs-null.scm
 gerbil/lib/static/scheme__r5rs.scm
 gerbil/lib/static/scheme__r7rs.scm
 gerbil/lib/static/scheme__read.scm
+gerbil/lib/static/scheme__regex.scm
 gerbil/lib/static/scheme__repl-impl.scm
 gerbil/lib/static/scheme__repl.scm
 gerbil/lib/static/scheme__rlist.scm
 gerbil/lib/static/scheme__set.scm
+gerbil/lib/static/scheme__show.scm
 gerbil/lib/static/scheme__sort.scm
 gerbil/lib/static/scheme__stream.scm
 gerbil/lib/static/scheme__stubs.scm
 gerbil/lib/static/scheme__text.scm
 gerbil/lib/static/scheme__time.scm
 gerbil/lib/static/scheme__vector.scm
+gerbil/lib/static/scheme__vector__base.scm
+gerbil/lib/static/scheme__vector__c128.scm
+gerbil/lib/static/scheme__vector__c64.scm
+gerbil/lib/static/scheme__vector__f32.scm
+gerbil/lib/static/scheme__vector__f64.scm
+gerbil/lib/static/scheme__vector__s16.scm
+gerbil/lib/static/scheme__vector__s32.scm
+gerbil/lib/static/scheme__vector__s64.scm
+gerbil/lib/static/scheme__vector__s8.scm
+gerbil/lib/static/scheme__vector__u16.scm
+gerbil/lib/static/scheme__vector__u32.scm
+gerbil/lib/static/scheme__vector__u64.scm
+gerbil/lib/static/scheme__vector__u8.scm
 gerbil/lib/static/scheme__write-impl.scm
 gerbil/lib/static/scheme__write.scm
 gerbil/lib/static/std__actor.scm
@@ -582,6 +783,7 @@ gerbil/lib/static/std__debug__memleak.scm
 gerbil/lib/static/std__debug__threads.scm
 gerbil/lib/static/std__error.scm
 gerbil/lib/static/std__event.scm
+gerbil/lib/static/std__foreign-test.scm
 gerbil/lib/static/std__foreign.scm
 gerbil/lib/static/std__format.scm
 gerbil/lib/static/std__generic.scm
@@ -595,12 +797,17 @@ gerbil/lib/static/std__lazy.scm
 gerbil/lib/static/std__logger.scm
 gerbil/lib/static/std__make.scm
 gerbil/lib/static/std__misc__barrier.scm
+gerbil/lib/static/std__misc__bytes.scm
 gerbil/lib/static/std__misc__channel.scm
 gerbil/lib/static/std__misc__completion.scm
+gerbil/lib/static/std__misc__concurrent-plan.scm
 gerbil/lib/static/std__misc__deque.scm
 gerbil/lib/static/std__misc__func.scm
+gerbil/lib/static/std__misc__hash.scm
 gerbil/lib/static/std__misc__list.scm
 gerbil/lib/static/std__misc__lru.scm
+gerbil/lib/static/std__misc__number.scm
+gerbil/lib/static/std__misc__path.scm
 gerbil/lib/static/std__misc__ports.scm
 gerbil/lib/static/std__misc__pqueue.scm
 gerbil/lib/static/std__misc__process.scm
@@ -611,6 +818,7 @@ gerbil/lib/static/std__misc__rtd.scm
 gerbil/lib/static/std__misc__shared.scm
 gerbil/lib/static/std__misc__shuffle.scm
 gerbil/lib/static/std__misc__string.scm
+gerbil/lib/static/std__misc__symbol.scm
 gerbil/lib/static/std__misc__sync.scm
 gerbil/lib/static/std__misc__text.scm
 gerbil/lib/static/std__misc__threads.scm
@@ -619,6 +827,7 @@ gerbil/lib/static/std__misc__uuid.scm
 gerbil/lib/static/std__net__address.scm
 gerbil/lib/static/std__net__bio.scm
 gerbil/lib/static/std__net__bio__buffer.scm
+gerbil/lib/static/std__net__bio__file.scm
 gerbil/lib/static/std__net__bio__input.scm
 gerbil/lib/static/std__net__bio__output.scm
 gerbil/lib/static/std__net__httpd.scm
@@ -646,6 +855,7 @@ gerbil/lib/static/std__os__error.scm
 gerbil/lib/static/std__os__fcntl.scm
 gerbil/lib/static/std__os__fd.scm
 gerbil/lib/static/std__os__fdio.scm
+gerbil/lib/static/std__os__flock.scm
 gerbil/lib/static/std__os__kqueue.scm
 gerbil/lib/static/std__os__pid.scm
 gerbil/lib/static/std__os__pipe.scm
@@ -672,6 +882,7 @@ gerbil/lib/static/std__sort.scm
 gerbil/lib/static/std__srfi__1.scm
 gerbil/lib/static/std__srfi__101.scm
 gerbil/lib/static/std__srfi__113.scm
+gerbil/lib/static/std__srfi__115.scm
 gerbil/lib/static/std__srfi__116.scm
 gerbil/lib/static/std__srfi__117.scm
 gerbil/lib/static/std__srfi__121-iter.scm
@@ -682,11 +893,48 @@ gerbil/lib/static/std__srfi__127-iter.scm
 gerbil/lib/static/std__srfi__127.scm
 gerbil/lib/static/std__srfi__128.scm
 gerbil/lib/static/std__srfi__13.scm
+gerbil/lib/static/std__srfi__130.scm
 gerbil/lib/static/std__srfi__132.scm
 gerbil/lib/static/std__srfi__133.scm
 gerbil/lib/static/std__srfi__134.scm
 gerbil/lib/static/std__srfi__135.scm
 gerbil/lib/static/std__srfi__14.scm
+gerbil/lib/static/std__srfi__141.scm
+gerbil/lib/static/std__srfi__143.scm
+gerbil/lib/static/std__srfi__144.scm
+gerbil/lib/static/std__srfi__145.scm
+gerbil/lib/static/std__srfi__146.scm
+gerbil/lib/static/std__srfi__146__hamt-map.scm
+gerbil/lib/static/std__srfi__146__hamt-misc.scm
+gerbil/lib/static/std__srfi__146__hamt.scm
+gerbil/lib/static/std__srfi__146__hash.scm
+gerbil/lib/static/std__srfi__146__vector-edit.scm
+gerbil/lib/static/std__srfi__151.scm
+gerbil/lib/static/std__srfi__158-iter.scm
+gerbil/lib/static/std__srfi__158.scm
+gerbil/lib/static/std__srfi__159.scm
+gerbil/lib/static/std__srfi__159__base.scm
+gerbil/lib/static/std__srfi__159__color.scm
+gerbil/lib/static/std__srfi__159__columnar.scm
+gerbil/lib/static/std__srfi__159__environment.scm
+gerbil/lib/static/std__srfi__159__show.scm
+gerbil/lib/static/std__srfi__159__string.scm
+gerbil/lib/static/std__srfi__159__unicode.scm
+gerbil/lib/static/std__srfi__160__base.scm
+gerbil/lib/static/std__srfi__160__c128.scm
+gerbil/lib/static/std__srfi__160__c64.scm
+gerbil/lib/static/std__srfi__160__cvector.scm
+gerbil/lib/static/std__srfi__160__f32.scm
+gerbil/lib/static/std__srfi__160__f64.scm
+gerbil/lib/static/std__srfi__160__macros.scm
+gerbil/lib/static/std__srfi__160__s16.scm
+gerbil/lib/static/std__srfi__160__s32.scm
+gerbil/lib/static/std__srfi__160__s64.scm
+gerbil/lib/static/std__srfi__160__s8.scm
+gerbil/lib/static/std__srfi__160__u16.scm
+gerbil/lib/static/std__srfi__160__u32.scm
+gerbil/lib/static/std__srfi__160__u64.scm
+gerbil/lib/static/std__srfi__160__u8.scm
 gerbil/lib/static/std__srfi__19.scm
 gerbil/lib/static/std__srfi__41-iter.scm
 gerbil/lib/static/std__srfi__41.scm
@@ -712,6 +960,7 @@ gerbil/lib/static/std__srfi__srfi-135__macros.scm
 gerbil/lib/static/std__srfi__srfi-135__text.scm
 gerbil/lib/static/std__srfi__srfi-support.scm
 gerbil/lib/static/std__stxparam.scm
+gerbil/lib/static/std__stxutil.scm
 gerbil/lib/static/std__sugar.scm
 gerbil/lib/static/std__test.scm
 gerbil/lib/static/std__text___zlib.scm
@@ -720,6 +969,8 @@ gerbil/lib/static/std__text__base64.scm
 gerbil/lib/static/std__text__csv.scm
 gerbil/lib/static/std__text__hex.scm
 gerbil/lib/static/std__text__json.scm
+gerbil/lib/static/std__text__utf16.scm
+gerbil/lib/static/std__text__utf32.scm
 gerbil/lib/static/std__text__utf8.scm
 gerbil/lib/static/std__text__zlib.scm
 gerbil/lib/static/std__web__fastcgi.scm
@@ -739,109 +990,167 @@ gerbil/lib/std/actor.ssxi.ss
 gerbil/lib/std/actor/message.ssi
 gerbil/lib/std/actor/message.ssxi.ss
 @bin gerbil/lib/std/actor/message__0.o1
+gerbil/lib/std/actor/message__0.scm
 @bin gerbil/lib/std/actor/message__1.o1
+gerbil/lib/std/actor/message__1.scm
 @bin gerbil/lib/std/actor/message__rt.o1
+gerbil/lib/std/actor/message__rt.scm
 gerbil/lib/std/actor/proto.ssi
 gerbil/lib/std/actor/proto.ssxi.ss
 @bin gerbil/lib/std/actor/proto__0.o1
+gerbil/lib/std/actor/proto__0.scm
 @bin gerbil/lib/std/actor/proto__1.o1
+gerbil/lib/std/actor/proto__1.scm
 @bin gerbil/lib/std/actor/proto__2.o1
+gerbil/lib/std/actor/proto__2.scm
 @bin gerbil/lib/std/actor/proto__rt.o1
+gerbil/lib/std/actor/proto__rt.scm
 gerbil/lib/std/actor/rpc/
 gerbil/lib/std/actor/rpc.ssi
 gerbil/lib/std/actor/rpc.ssxi.ss
 gerbil/lib/std/actor/rpc/base.ssi
 gerbil/lib/std/actor/rpc/base.ssxi.ss
 @bin gerbil/lib/std/actor/rpc/base__0.o1
+gerbil/lib/std/actor/rpc/base__0.scm
 @bin gerbil/lib/std/actor/rpc/base__1.o1
+gerbil/lib/std/actor/rpc/base__1.scm
 @bin gerbil/lib/std/actor/rpc/base__rt.o1
+gerbil/lib/std/actor/rpc/base__rt.scm
 gerbil/lib/std/actor/rpc/connection.ssi
 gerbil/lib/std/actor/rpc/connection.ssxi.ss
 @bin gerbil/lib/std/actor/rpc/connection__0.o1
+gerbil/lib/std/actor/rpc/connection__0.scm
 @bin gerbil/lib/std/actor/rpc/connection__1.o1
+gerbil/lib/std/actor/rpc/connection__1.scm
 @bin gerbil/lib/std/actor/rpc/connection__rt.o1
+gerbil/lib/std/actor/rpc/connection__rt.scm
 gerbil/lib/std/actor/rpc/proto/
 gerbil/lib/std/actor/rpc/proto/cipher.ssi
 gerbil/lib/std/actor/rpc/proto/cipher.ssxi.ss
 @bin gerbil/lib/std/actor/rpc/proto/cipher__0.o1
+gerbil/lib/std/actor/rpc/proto/cipher__0.scm
 @bin gerbil/lib/std/actor/rpc/proto/cipher__rt.o1
+gerbil/lib/std/actor/rpc/proto/cipher__rt.scm
 gerbil/lib/std/actor/rpc/proto/cookie.ssi
 gerbil/lib/std/actor/rpc/proto/cookie.ssxi.ss
 @bin gerbil/lib/std/actor/rpc/proto/cookie__0.o1
+gerbil/lib/std/actor/rpc/proto/cookie__0.scm
 @bin gerbil/lib/std/actor/rpc/proto/cookie__rt.o1
+gerbil/lib/std/actor/rpc/proto/cookie__rt.scm
 gerbil/lib/std/actor/rpc/proto/message.ssi
 gerbil/lib/std/actor/rpc/proto/message.ssxi.ss
 @bin gerbil/lib/std/actor/rpc/proto/message__0.o1
+gerbil/lib/std/actor/rpc/proto/message__0.scm
 @bin gerbil/lib/std/actor/rpc/proto/message__rt.o1
+gerbil/lib/std/actor/rpc/proto/message__rt.scm
 gerbil/lib/std/actor/rpc/proto/null.ssi
 gerbil/lib/std/actor/rpc/proto/null.ssxi.ss
 @bin gerbil/lib/std/actor/rpc/proto/null__0.o1
+gerbil/lib/std/actor/rpc/proto/null__0.scm
 @bin gerbil/lib/std/actor/rpc/proto/null__rt.o1
+gerbil/lib/std/actor/rpc/proto/null__rt.scm
 gerbil/lib/std/actor/rpc/server.ssi
 gerbil/lib/std/actor/rpc/server.ssxi.ss
 @bin gerbil/lib/std/actor/rpc/server__0.o1
+gerbil/lib/std/actor/rpc/server__0.scm
 @bin gerbil/lib/std/actor/rpc/server__rt.o1
+gerbil/lib/std/actor/rpc/server__rt.scm
 @bin gerbil/lib/std/actor/rpc__rt.o1
+gerbil/lib/std/actor/rpc__rt.scm
 gerbil/lib/std/actor/xdr.ssi
 gerbil/lib/std/actor/xdr.ssxi.ss
 @bin gerbil/lib/std/actor/xdr__0.o1
+gerbil/lib/std/actor/xdr__0.scm
 @bin gerbil/lib/std/actor/xdr__1.o1
+gerbil/lib/std/actor/xdr__1.scm
 @bin gerbil/lib/std/actor/xdr__rt.o1
+gerbil/lib/std/actor/xdr__rt.scm
 @bin gerbil/lib/std/actor__rt.o1
+gerbil/lib/std/actor__rt.scm
 gerbil/lib/std/amb.ssi
 gerbil/lib/std/amb.ssxi.ss
 @bin gerbil/lib/std/amb__0.o1
+gerbil/lib/std/amb__0.scm
 @bin gerbil/lib/std/amb__1.o1
+gerbil/lib/std/amb__1.scm
 @bin gerbil/lib/std/amb__rt.o1
+gerbil/lib/std/amb__rt.scm
 gerbil/lib/std/build-config.ssi
 gerbil/lib/std/build-config.ssxi.ss
 @bin gerbil/lib/std/build-config__0.o1
+gerbil/lib/std/build-config__0.scm
 @bin gerbil/lib/std/build-config__1.o1
+gerbil/lib/std/build-config__1.scm
 @bin gerbil/lib/std/build-config__rt.o1
+gerbil/lib/std/build-config__rt.scm
 gerbil/lib/std/build-script.ssi
 gerbil/lib/std/build-script.ssxi.ss
+@bin gerbil/lib/std/build-script__0.o1
+gerbil/lib/std/build-script__0.scm
 @bin gerbil/lib/std/build-script__1.o1
+gerbil/lib/std/build-script__1.scm
 @bin gerbil/lib/std/build-script__rt.o1
+gerbil/lib/std/build-script__rt.scm
 gerbil/lib/std/coroutine.ssi
 gerbil/lib/std/coroutine.ssxi.ss
 @bin gerbil/lib/std/coroutine__0.o1
+gerbil/lib/std/coroutine__0.scm
 @bin gerbil/lib/std/coroutine__1.o1
+gerbil/lib/std/coroutine__1.scm
 @bin gerbil/lib/std/coroutine__rt.o1
+gerbil/lib/std/coroutine__rt.scm
 gerbil/lib/std/crypto/
 gerbil/lib/std/crypto.ssi
 gerbil/lib/std/crypto.ssxi.ss
 gerbil/lib/std/crypto/bn.ssi
 gerbil/lib/std/crypto/bn.ssxi.ss
 @bin gerbil/lib/std/crypto/bn__0.o1
+gerbil/lib/std/crypto/bn__0.scm
 @bin gerbil/lib/std/crypto/bn__rt.o1
+gerbil/lib/std/crypto/bn__rt.scm
 gerbil/lib/std/crypto/cipher.ssi
 gerbil/lib/std/crypto/cipher.ssxi.ss
 @bin gerbil/lib/std/crypto/cipher__0.o1
+gerbil/lib/std/crypto/cipher__0.scm
 @bin gerbil/lib/std/crypto/cipher__1.o1
+gerbil/lib/std/crypto/cipher__1.scm
 @bin gerbil/lib/std/crypto/cipher__rt.o1
+gerbil/lib/std/crypto/cipher__rt.scm
 gerbil/lib/std/crypto/dh.ssi
 gerbil/lib/std/crypto/dh.ssxi.ss
 @bin gerbil/lib/std/crypto/dh__0.o1
+gerbil/lib/std/crypto/dh__0.scm
 @bin gerbil/lib/std/crypto/dh__rt.o1
+gerbil/lib/std/crypto/dh__rt.scm
 gerbil/lib/std/crypto/digest.ssi
 gerbil/lib/std/crypto/digest.ssxi.ss
 @bin gerbil/lib/std/crypto/digest__0.o1
+gerbil/lib/std/crypto/digest__0.scm
 @bin gerbil/lib/std/crypto/digest__1.o1
+gerbil/lib/std/crypto/digest__1.scm
 @bin gerbil/lib/std/crypto/digest__rt.o1
+gerbil/lib/std/crypto/digest__rt.scm
 gerbil/lib/std/crypto/etc.ssi
 gerbil/lib/std/crypto/etc.ssxi.ss
 @bin gerbil/lib/std/crypto/etc__0.o1
+gerbil/lib/std/crypto/etc__0.scm
 @bin gerbil/lib/std/crypto/etc__1.o1
+gerbil/lib/std/crypto/etc__1.scm
 @bin gerbil/lib/std/crypto/etc__rt.o1
+gerbil/lib/std/crypto/etc__rt.scm
 gerbil/lib/std/crypto/hmac.ssi
 gerbil/lib/std/crypto/hmac.ssxi.ss
 @bin gerbil/lib/std/crypto/hmac__0.o1
+gerbil/lib/std/crypto/hmac__0.scm
 @bin gerbil/lib/std/crypto/hmac__1.o1
+gerbil/lib/std/crypto/hmac__1.scm
 @bin gerbil/lib/std/crypto/hmac__rt.o1
+gerbil/lib/std/crypto/hmac__rt.scm
 @bin gerbil/lib/std/crypto/libcrypto.o1
 gerbil/lib/std/crypto/libcrypto.ssi
 @bin gerbil/lib/std/crypto/libcrypto__rt.o1
 @bin gerbil/lib/std/crypto__rt.o1
+gerbil/lib/std/crypto__rt.scm
 gerbil/lib/std/db/
 @bin gerbil/lib/std/db/_sqlite.o1
 gerbil/lib/std/db/_sqlite.ssi
@@ -849,327 +1158,564 @@ gerbil/lib/std/db/_sqlite.ssi
 gerbil/lib/std/db/conpool.ssi
 gerbil/lib/std/db/conpool.ssxi.ss
 @bin gerbil/lib/std/db/conpool__0.o1
+gerbil/lib/std/db/conpool__0.scm
 @bin gerbil/lib/std/db/conpool__1.o1
+gerbil/lib/std/db/conpool__1.scm
 @bin gerbil/lib/std/db/conpool__rt.o1
+gerbil/lib/std/db/conpool__rt.scm
 gerbil/lib/std/db/dbi.ssi
 gerbil/lib/std/db/dbi.ssxi.ss
 @bin gerbil/lib/std/db/dbi__0.o1
+gerbil/lib/std/db/dbi__0.scm
 @bin gerbil/lib/std/db/dbi__1.o1
+gerbil/lib/std/db/dbi__1.scm
 @bin gerbil/lib/std/db/dbi__rt.o1
+gerbil/lib/std/db/dbi__rt.scm
 gerbil/lib/std/db/postgresql-driver.ssi
 gerbil/lib/std/db/postgresql-driver.ssxi.ss
 @bin gerbil/lib/std/db/postgresql-driver__0.o1
+gerbil/lib/std/db/postgresql-driver__0.scm
 @bin gerbil/lib/std/db/postgresql-driver__1.o1
+gerbil/lib/std/db/postgresql-driver__1.scm
 @bin gerbil/lib/std/db/postgresql-driver__rt.o1
+gerbil/lib/std/db/postgresql-driver__rt.scm
 gerbil/lib/std/db/postgresql.ssi
 gerbil/lib/std/db/postgresql.ssxi.ss
 @bin gerbil/lib/std/db/postgresql__0.o1
+gerbil/lib/std/db/postgresql__0.scm
 @bin gerbil/lib/std/db/postgresql__1.o1
+gerbil/lib/std/db/postgresql__1.scm
 @bin gerbil/lib/std/db/postgresql__rt.o1
+gerbil/lib/std/db/postgresql__rt.scm
 gerbil/lib/std/db/sqlite.ssi
 gerbil/lib/std/db/sqlite.ssxi.ss
 @bin gerbil/lib/std/db/sqlite__0.o1
+gerbil/lib/std/db/sqlite__0.scm
 @bin gerbil/lib/std/db/sqlite__1.o1
+gerbil/lib/std/db/sqlite__1.scm
 @bin gerbil/lib/std/db/sqlite__rt.o1
+gerbil/lib/std/db/sqlite__rt.scm
 gerbil/lib/std/debug/
 gerbil/lib/std/debug/heap.ssi
 gerbil/lib/std/debug/heap.ssxi.ss
 @bin gerbil/lib/std/debug/heap__0.o1
+gerbil/lib/std/debug/heap__0.scm
 @bin gerbil/lib/std/debug/heap__1.o1
+gerbil/lib/std/debug/heap__1.scm
 @bin gerbil/lib/std/debug/heap__rt.o1
+gerbil/lib/std/debug/heap__rt.scm
 gerbil/lib/std/debug/memleak.ssi
 gerbil/lib/std/debug/memleak.ssxi.ss
 @bin gerbil/lib/std/debug/memleak__0.o1
+gerbil/lib/std/debug/memleak__0.scm
 @bin gerbil/lib/std/debug/memleak__rt.o1
+gerbil/lib/std/debug/memleak__rt.scm
 gerbil/lib/std/debug/threads.ssi
 gerbil/lib/std/debug/threads.ssxi.ss
 @bin gerbil/lib/std/debug/threads__0.o1
+gerbil/lib/std/debug/threads__0.scm
 @bin gerbil/lib/std/debug/threads__rt.o1
+gerbil/lib/std/debug/threads__rt.scm
 gerbil/lib/std/error.ssi
 gerbil/lib/std/error.ssxi.ss
 @bin gerbil/lib/std/error__0.o1
+gerbil/lib/std/error__0.scm
 @bin gerbil/lib/std/error__1.o1
+gerbil/lib/std/error__1.scm
 @bin gerbil/lib/std/error__rt.o1
+gerbil/lib/std/error__rt.scm
 gerbil/lib/std/event.ssi
 gerbil/lib/std/event.ssxi.ss
 @bin gerbil/lib/std/event__0.o1
+gerbil/lib/std/event__0.scm
 @bin gerbil/lib/std/event__1.o1
+gerbil/lib/std/event__1.scm
 @bin gerbil/lib/std/event__rt.o1
+gerbil/lib/std/event__rt.scm
+gerbil/lib/std/foreign-test.ssi
+gerbil/lib/std/foreign-test.ssxi.ss
+@bin gerbil/lib/std/foreign-test__0.o1
+gerbil/lib/std/foreign-test__0.scm
+@bin gerbil/lib/std/foreign-test__rt.o1
+gerbil/lib/std/foreign-test__rt.scm
 gerbil/lib/std/foreign.ssi
 gerbil/lib/std/foreign.ssxi.ss
 @bin gerbil/lib/std/foreign__1.o1
+gerbil/lib/std/foreign__1.scm
 @bin gerbil/lib/std/foreign__rt.o1
+gerbil/lib/std/foreign__rt.scm
 gerbil/lib/std/format.ssi
 gerbil/lib/std/format.ssxi.ss
 @bin gerbil/lib/std/format__0.o1
+gerbil/lib/std/format__0.scm
 @bin gerbil/lib/std/format__1.o1
+gerbil/lib/std/format__1.scm
 @bin gerbil/lib/std/format__rt.o1
+gerbil/lib/std/format__rt.scm
 gerbil/lib/std/generic/
 gerbil/lib/std/generic.ssi
 gerbil/lib/std/generic.ssxi.ss
 gerbil/lib/std/generic/builtin.ssi
 gerbil/lib/std/generic/builtin.ssxi.ss
 @bin gerbil/lib/std/generic/builtin__0.o1
+gerbil/lib/std/generic/builtin__0.scm
 @bin gerbil/lib/std/generic/builtin__1.o1
+gerbil/lib/std/generic/builtin__1.scm
 @bin gerbil/lib/std/generic/builtin__rt.o1
+gerbil/lib/std/generic/builtin__rt.scm
 gerbil/lib/std/generic/dispatch.ssi
 gerbil/lib/std/generic/dispatch.ssxi.ss
 @bin gerbil/lib/std/generic/dispatch__0.o1
+gerbil/lib/std/generic/dispatch__0.scm
 @bin gerbil/lib/std/generic/dispatch__1.o1
+gerbil/lib/std/generic/dispatch__1.scm
 @bin gerbil/lib/std/generic/dispatch__rt.o1
+gerbil/lib/std/generic/dispatch__rt.scm
 gerbil/lib/std/generic/macros.ssi
 gerbil/lib/std/generic/macros.ssxi.ss
 @bin gerbil/lib/std/generic/macros__1.o1
+gerbil/lib/std/generic/macros__1.scm
 @bin gerbil/lib/std/generic/macros__2.o1
+gerbil/lib/std/generic/macros__2.scm
 @bin gerbil/lib/std/generic/macros__rt.o1
+gerbil/lib/std/generic/macros__rt.scm
 @bin gerbil/lib/std/generic__rt.o1
+gerbil/lib/std/generic__rt.scm
 gerbil/lib/std/getopt.ssi
 gerbil/lib/std/getopt.ssxi.ss
 @bin gerbil/lib/std/getopt__0.o1
+gerbil/lib/std/getopt__0.scm
 @bin gerbil/lib/std/getopt__1.o1
+gerbil/lib/std/getopt__1.scm
 @bin gerbil/lib/std/getopt__rt.o1
+gerbil/lib/std/getopt__rt.scm
 gerbil/lib/std/interactive.ssi
 gerbil/lib/std/interactive.ssxi.ss
 @bin gerbil/lib/std/interactive__0.o1
+gerbil/lib/std/interactive__0.scm
 @bin gerbil/lib/std/interactive__1.o1
+gerbil/lib/std/interactive__1.scm
 @bin gerbil/lib/std/interactive__rt.o1
+gerbil/lib/std/interactive__rt.scm
 gerbil/lib/std/iter.ssi
 gerbil/lib/std/iter.ssxi.ss
 @bin gerbil/lib/std/iter__0.o1
+gerbil/lib/std/iter__0.scm
 @bin gerbil/lib/std/iter__1.o1
+gerbil/lib/std/iter__1.scm
 @bin gerbil/lib/std/iter__rt.o1
+gerbil/lib/std/iter__rt.scm
 gerbil/lib/std/lazy.ssi
 gerbil/lib/std/lazy.ssxi.ss
 @bin gerbil/lib/std/lazy__0.o1
+gerbil/lib/std/lazy__0.scm
 @bin gerbil/lib/std/lazy__1.o1
+gerbil/lib/std/lazy__1.scm
 @bin gerbil/lib/std/lazy__rt.o1
+gerbil/lib/std/lazy__rt.scm
 gerbil/lib/std/logger.ssi
 gerbil/lib/std/logger.ssxi.ss
 @bin gerbil/lib/std/logger__0.o1
+gerbil/lib/std/logger__0.scm
 @bin gerbil/lib/std/logger__1.o1
+gerbil/lib/std/logger__1.scm
 @bin gerbil/lib/std/logger__rt.o1
+gerbil/lib/std/logger__rt.scm
 gerbil/lib/std/make.ssi
 gerbil/lib/std/make.ssxi.ss
 @bin gerbil/lib/std/make__0.o1
+gerbil/lib/std/make__0.scm
+@bin gerbil/lib/std/make__1.o1
+gerbil/lib/std/make__1.scm
 @bin gerbil/lib/std/make__rt.o1
+gerbil/lib/std/make__rt.scm
 gerbil/lib/std/misc/
 gerbil/lib/std/misc/barrier.ssi
 gerbil/lib/std/misc/barrier.ssxi.ss
 @bin gerbil/lib/std/misc/barrier__0.o1
+gerbil/lib/std/misc/barrier__0.scm
 @bin gerbil/lib/std/misc/barrier__1.o1
+gerbil/lib/std/misc/barrier__1.scm
 @bin gerbil/lib/std/misc/barrier__rt.o1
+gerbil/lib/std/misc/barrier__rt.scm
+gerbil/lib/std/misc/bytes.ssi
+gerbil/lib/std/misc/bytes.ssxi.ss
+@bin gerbil/lib/std/misc/bytes__0.o1
+gerbil/lib/std/misc/bytes__0.scm
+@bin gerbil/lib/std/misc/bytes__1.o1
+gerbil/lib/std/misc/bytes__1.scm
+@bin gerbil/lib/std/misc/bytes__rt.o1
+gerbil/lib/std/misc/bytes__rt.scm
 gerbil/lib/std/misc/channel.ssi
 gerbil/lib/std/misc/channel.ssxi.ss
 @bin gerbil/lib/std/misc/channel__0.o1
+gerbil/lib/std/misc/channel__0.scm
 @bin gerbil/lib/std/misc/channel__1.o1
+gerbil/lib/std/misc/channel__1.scm
 @bin gerbil/lib/std/misc/channel__rt.o1
+gerbil/lib/std/misc/channel__rt.scm
 gerbil/lib/std/misc/completion.ssi
 gerbil/lib/std/misc/completion.ssxi.ss
 @bin gerbil/lib/std/misc/completion__0.o1
+gerbil/lib/std/misc/completion__0.scm
 @bin gerbil/lib/std/misc/completion__1.o1
+gerbil/lib/std/misc/completion__1.scm
 @bin gerbil/lib/std/misc/completion__rt.o1
+gerbil/lib/std/misc/completion__rt.scm
+gerbil/lib/std/misc/concurrent-plan.ssi
+gerbil/lib/std/misc/concurrent-plan.ssxi.ss
+@bin gerbil/lib/std/misc/concurrent-plan__0.o1
+gerbil/lib/std/misc/concurrent-plan__0.scm
+@bin gerbil/lib/std/misc/concurrent-plan__rt.o1
+gerbil/lib/std/misc/concurrent-plan__rt.scm
 gerbil/lib/std/misc/deque.ssi
 gerbil/lib/std/misc/deque.ssxi.ss
 @bin gerbil/lib/std/misc/deque__0.o1
+gerbil/lib/std/misc/deque__0.scm
 @bin gerbil/lib/std/misc/deque__1.o1
+gerbil/lib/std/misc/deque__1.scm
 @bin gerbil/lib/std/misc/deque__rt.o1
+gerbil/lib/std/misc/deque__rt.scm
 gerbil/lib/std/misc/func.ssi
 gerbil/lib/std/misc/func.ssxi.ss
 @bin gerbil/lib/std/misc/func__0.o1
+gerbil/lib/std/misc/func__0.scm
+@bin gerbil/lib/std/misc/func__1.o1
+gerbil/lib/std/misc/func__1.scm
 @bin gerbil/lib/std/misc/func__rt.o1
+gerbil/lib/std/misc/func__rt.scm
+gerbil/lib/std/misc/hash.ssi
+gerbil/lib/std/misc/hash.ssxi.ss
+@bin gerbil/lib/std/misc/hash__0.o1
+gerbil/lib/std/misc/hash__0.scm
+@bin gerbil/lib/std/misc/hash__rt.o1
+gerbil/lib/std/misc/hash__rt.scm
 gerbil/lib/std/misc/list.ssi
 gerbil/lib/std/misc/list.ssxi.ss
 @bin gerbil/lib/std/misc/list__0.o1
+gerbil/lib/std/misc/list__0.scm
 @bin gerbil/lib/std/misc/list__1.o1
+gerbil/lib/std/misc/list__1.scm
 @bin gerbil/lib/std/misc/list__rt.o1
+gerbil/lib/std/misc/list__rt.scm
 gerbil/lib/std/misc/lru.ssi
 gerbil/lib/std/misc/lru.ssxi.ss
 @bin gerbil/lib/std/misc/lru__0.o1
+gerbil/lib/std/misc/lru__0.scm
 @bin gerbil/lib/std/misc/lru__1.o1
+gerbil/lib/std/misc/lru__1.scm
 @bin gerbil/lib/std/misc/lru__rt.o1
+gerbil/lib/std/misc/lru__rt.scm
+gerbil/lib/std/misc/number.ssi
+gerbil/lib/std/misc/number.ssxi.ss
+@bin gerbil/lib/std/misc/number__0.o1
+gerbil/lib/std/misc/number__0.scm
+@bin gerbil/lib/std/misc/number__1.o1
+gerbil/lib/std/misc/number__1.scm
+@bin gerbil/lib/std/misc/number__rt.o1
+gerbil/lib/std/misc/number__rt.scm
+gerbil/lib/std/misc/path.ssi
+gerbil/lib/std/misc/path.ssxi.ss
+@bin gerbil/lib/std/misc/path__0.o1
+gerbil/lib/std/misc/path__0.scm
+@bin gerbil/lib/std/misc/path__rt.o1
+gerbil/lib/std/misc/path__rt.scm
 gerbil/lib/std/misc/ports.ssi
 gerbil/lib/std/misc/ports.ssxi.ss
 @bin gerbil/lib/std/misc/ports__0.o1
+gerbil/lib/std/misc/ports__0.scm
 @bin gerbil/lib/std/misc/ports__rt.o1
+gerbil/lib/std/misc/ports__rt.scm
 gerbil/lib/std/misc/pqueue.ssi
 gerbil/lib/std/misc/pqueue.ssxi.ss
 @bin gerbil/lib/std/misc/pqueue__0.o1
+gerbil/lib/std/misc/pqueue__0.scm
 @bin gerbil/lib/std/misc/pqueue__1.o1
+gerbil/lib/std/misc/pqueue__1.scm
 @bin gerbil/lib/std/misc/pqueue__rt.o1
+gerbil/lib/std/misc/pqueue__rt.scm
 gerbil/lib/std/misc/process.ssi
 gerbil/lib/std/misc/process.ssxi.ss
 @bin gerbil/lib/std/misc/process__0.o1
+gerbil/lib/std/misc/process__0.scm
 @bin gerbil/lib/std/misc/process__rt.o1
+gerbil/lib/std/misc/process__rt.scm
 gerbil/lib/std/misc/queue.ssi
 gerbil/lib/std/misc/queue.ssxi.ss
 @bin gerbil/lib/std/misc/queue__0.o1
+gerbil/lib/std/misc/queue__0.scm
 @bin gerbil/lib/std/misc/queue__1.o1
+gerbil/lib/std/misc/queue__1.scm
 @bin gerbil/lib/std/misc/queue__rt.o1
+gerbil/lib/std/misc/queue__rt.scm
 gerbil/lib/std/misc/rbtree.ssi
 gerbil/lib/std/misc/rbtree.ssxi.ss
 @bin gerbil/lib/std/misc/rbtree__0.o1
+gerbil/lib/std/misc/rbtree__0.scm
 @bin gerbil/lib/std/misc/rbtree__1.o1
+gerbil/lib/std/misc/rbtree__1.scm
 @bin gerbil/lib/std/misc/rbtree__rt.o1
+gerbil/lib/std/misc/rbtree__rt.scm
 gerbil/lib/std/misc/repr.ssi
 gerbil/lib/std/misc/repr.ssxi.ss
 @bin gerbil/lib/std/misc/repr__0.o1
+gerbil/lib/std/misc/repr__0.scm
 @bin gerbil/lib/std/misc/repr__1.o1
+gerbil/lib/std/misc/repr__1.scm
 @bin gerbil/lib/std/misc/repr__rt.o1
+gerbil/lib/std/misc/repr__rt.scm
 gerbil/lib/std/misc/rtd.ssi
 gerbil/lib/std/misc/rtd.ssxi.ss
 @bin gerbil/lib/std/misc/rtd__0.o1
+gerbil/lib/std/misc/rtd__0.scm
 @bin gerbil/lib/std/misc/rtd__1.o1
+gerbil/lib/std/misc/rtd__1.scm
 @bin gerbil/lib/std/misc/rtd__rt.o1
+gerbil/lib/std/misc/rtd__rt.scm
 gerbil/lib/std/misc/shared.ssi
 gerbil/lib/std/misc/shared.ssxi.ss
 @bin gerbil/lib/std/misc/shared__0.o1
+gerbil/lib/std/misc/shared__0.scm
 @bin gerbil/lib/std/misc/shared__rt.o1
+gerbil/lib/std/misc/shared__rt.scm
 gerbil/lib/std/misc/shuffle.ssi
 gerbil/lib/std/misc/shuffle.ssxi.ss
 @bin gerbil/lib/std/misc/shuffle__0.o1
+gerbil/lib/std/misc/shuffle__0.scm
 @bin gerbil/lib/std/misc/shuffle__rt.o1
+gerbil/lib/std/misc/shuffle__rt.scm
 gerbil/lib/std/misc/string.ssi
 gerbil/lib/std/misc/string.ssxi.ss
 @bin gerbil/lib/std/misc/string__0.o1
+gerbil/lib/std/misc/string__0.scm
 @bin gerbil/lib/std/misc/string__rt.o1
+gerbil/lib/std/misc/string__rt.scm
+gerbil/lib/std/misc/symbol.ssi
+gerbil/lib/std/misc/symbol.ssxi.ss
+@bin gerbil/lib/std/misc/symbol__0.o1
+gerbil/lib/std/misc/symbol__0.scm
+@bin gerbil/lib/std/misc/symbol__rt.o1
+gerbil/lib/std/misc/symbol__rt.scm
 gerbil/lib/std/misc/sync.ssi
 gerbil/lib/std/misc/sync.ssxi.ss
 @bin gerbil/lib/std/misc/sync__0.o1
+gerbil/lib/std/misc/sync__0.scm
 @bin gerbil/lib/std/misc/sync__1.o1
+gerbil/lib/std/misc/sync__1.scm
 @bin gerbil/lib/std/misc/sync__rt.o1
+gerbil/lib/std/misc/sync__rt.scm
 gerbil/lib/std/misc/text.ssi
 gerbil/lib/std/misc/text.ssxi.ss
 @bin gerbil/lib/std/misc/text__1.o1
+gerbil/lib/std/misc/text__1.scm
 @bin gerbil/lib/std/misc/text__rt.o1
+gerbil/lib/std/misc/text__rt.scm
 gerbil/lib/std/misc/threads.ssi
 gerbil/lib/std/misc/threads.ssxi.ss
 @bin gerbil/lib/std/misc/threads__0.o1
+gerbil/lib/std/misc/threads__0.scm
 @bin gerbil/lib/std/misc/threads__1.o1
+gerbil/lib/std/misc/threads__1.scm
 @bin gerbil/lib/std/misc/threads__rt.o1
+gerbil/lib/std/misc/threads__rt.scm
 gerbil/lib/std/misc/timeout.ssi
 gerbil/lib/std/misc/timeout.ssxi.ss
 @bin gerbil/lib/std/misc/timeout__0.o1
+gerbil/lib/std/misc/timeout__0.scm
 @bin gerbil/lib/std/misc/timeout__rt.o1
+gerbil/lib/std/misc/timeout__rt.scm
 gerbil/lib/std/misc/uuid.ssi
 gerbil/lib/std/misc/uuid.ssxi.ss
 @bin gerbil/lib/std/misc/uuid__0.o1
+gerbil/lib/std/misc/uuid__0.scm
 @bin gerbil/lib/std/misc/uuid__1.o1
+gerbil/lib/std/misc/uuid__1.scm
 @bin gerbil/lib/std/misc/uuid__rt.o1
+gerbil/lib/std/misc/uuid__rt.scm
 gerbil/lib/std/net/
 gerbil/lib/std/net/address.ssi
 gerbil/lib/std/net/address.ssxi.ss
 @bin gerbil/lib/std/net/address__0.o1
+gerbil/lib/std/net/address__0.scm
 @bin gerbil/lib/std/net/address__rt.o1
+gerbil/lib/std/net/address__rt.scm
 gerbil/lib/std/net/bio/
 gerbil/lib/std/net/bio.ssi
 gerbil/lib/std/net/bio.ssxi.ss
 gerbil/lib/std/net/bio/buffer.ssi
 gerbil/lib/std/net/bio/buffer.ssxi.ss
 @bin gerbil/lib/std/net/bio/buffer__0.o1
+gerbil/lib/std/net/bio/buffer__0.scm
 @bin gerbil/lib/std/net/bio/buffer__1.o1
+gerbil/lib/std/net/bio/buffer__1.scm
 @bin gerbil/lib/std/net/bio/buffer__rt.o1
+gerbil/lib/std/net/bio/buffer__rt.scm
+gerbil/lib/std/net/bio/file.ssi
+gerbil/lib/std/net/bio/file.ssxi.ss
+@bin gerbil/lib/std/net/bio/file__0.o1
+gerbil/lib/std/net/bio/file__0.scm
+@bin gerbil/lib/std/net/bio/file__1.o1
+gerbil/lib/std/net/bio/file__1.scm
+@bin gerbil/lib/std/net/bio/file__rt.o1
+gerbil/lib/std/net/bio/file__rt.scm
 gerbil/lib/std/net/bio/input.ssi
 gerbil/lib/std/net/bio/input.ssxi.ss
 @bin gerbil/lib/std/net/bio/input__0.o1
+gerbil/lib/std/net/bio/input__0.scm
 @bin gerbil/lib/std/net/bio/input__1.o1
+gerbil/lib/std/net/bio/input__1.scm
 @bin gerbil/lib/std/net/bio/input__rt.o1
+gerbil/lib/std/net/bio/input__rt.scm
 gerbil/lib/std/net/bio/output.ssi
 gerbil/lib/std/net/bio/output.ssxi.ss
 @bin gerbil/lib/std/net/bio/output__0.o1
+gerbil/lib/std/net/bio/output__0.scm
 @bin gerbil/lib/std/net/bio/output__1.o1
+gerbil/lib/std/net/bio/output__1.scm
 @bin gerbil/lib/std/net/bio/output__rt.o1
+gerbil/lib/std/net/bio/output__rt.scm
 @bin gerbil/lib/std/net/bio__rt.o1
+gerbil/lib/std/net/bio__rt.scm
 gerbil/lib/std/net/httpd/
 gerbil/lib/std/net/httpd.ssi
 gerbil/lib/std/net/httpd.ssxi.ss
 gerbil/lib/std/net/httpd/file.ssi
 gerbil/lib/std/net/httpd/file.ssxi.ss
 @bin gerbil/lib/std/net/httpd/file__0.o1
+gerbil/lib/std/net/httpd/file__0.scm
 @bin gerbil/lib/std/net/httpd/file__rt.o1
+gerbil/lib/std/net/httpd/file__rt.scm
 gerbil/lib/std/net/httpd/handler.ssi
 gerbil/lib/std/net/httpd/handler.ssxi.ss
 @bin gerbil/lib/std/net/httpd/handler__0.o1
+gerbil/lib/std/net/httpd/handler__0.scm
 @bin gerbil/lib/std/net/httpd/handler__1.o1
+gerbil/lib/std/net/httpd/handler__1.scm
 @bin gerbil/lib/std/net/httpd/handler__rt.o1
+gerbil/lib/std/net/httpd/handler__rt.scm
 gerbil/lib/std/net/httpd/mux.ssi
 gerbil/lib/std/net/httpd/mux.ssxi.ss
 @bin gerbil/lib/std/net/httpd/mux__0.o1
+gerbil/lib/std/net/httpd/mux__0.scm
 @bin gerbil/lib/std/net/httpd/mux__1.o1
+gerbil/lib/std/net/httpd/mux__1.scm
 @bin gerbil/lib/std/net/httpd/mux__rt.o1
+gerbil/lib/std/net/httpd/mux__rt.scm
 gerbil/lib/std/net/httpd/server.ssi
 gerbil/lib/std/net/httpd/server.ssxi.ss
 @bin gerbil/lib/std/net/httpd/server__0.o1
+gerbil/lib/std/net/httpd/server__0.scm
 @bin gerbil/lib/std/net/httpd/server__1.o1
+gerbil/lib/std/net/httpd/server__1.scm
 @bin gerbil/lib/std/net/httpd/server__rt.o1
+gerbil/lib/std/net/httpd/server__rt.scm
 @bin gerbil/lib/std/net/httpd__rt.o1
+gerbil/lib/std/net/httpd__rt.scm
 gerbil/lib/std/net/repl.ssi
 gerbil/lib/std/net/repl.ssxi.ss
 @bin gerbil/lib/std/net/repl__0.o1
+gerbil/lib/std/net/repl__0.scm
 @bin gerbil/lib/std/net/repl__1.o1
+gerbil/lib/std/net/repl__1.scm
 @bin gerbil/lib/std/net/repl__rt.o1
+gerbil/lib/std/net/repl__rt.scm
 gerbil/lib/std/net/request.ssi
 gerbil/lib/std/net/request.ssxi.ss
 @bin gerbil/lib/std/net/request__0.o1
+gerbil/lib/std/net/request__0.scm
 @bin gerbil/lib/std/net/request__1.o1
+gerbil/lib/std/net/request__1.scm
 @bin gerbil/lib/std/net/request__rt.o1
+gerbil/lib/std/net/request__rt.scm
 gerbil/lib/std/net/sasl.ssi
 gerbil/lib/std/net/sasl.ssxi.ss
 @bin gerbil/lib/std/net/sasl__0.o1
+gerbil/lib/std/net/sasl__0.scm
 @bin gerbil/lib/std/net/sasl__1.o1
+gerbil/lib/std/net/sasl__1.scm
 @bin gerbil/lib/std/net/sasl__rt.o1
+gerbil/lib/std/net/sasl__rt.scm
 gerbil/lib/std/net/socket/
 gerbil/lib/std/net/socket.ssi
 gerbil/lib/std/net/socket.ssxi.ss
 gerbil/lib/std/net/socket/api.ssi
 gerbil/lib/std/net/socket/api.ssxi.ss
 @bin gerbil/lib/std/net/socket/api__0.o1
+gerbil/lib/std/net/socket/api__0.scm
 @bin gerbil/lib/std/net/socket/api__1.o1
+gerbil/lib/std/net/socket/api__1.scm
 @bin gerbil/lib/std/net/socket/api__rt.o1
+gerbil/lib/std/net/socket/api__rt.scm
 gerbil/lib/std/net/socket/base.ssi
 gerbil/lib/std/net/socket/base.ssxi.ss
 @bin gerbil/lib/std/net/socket/base__0.o1
+gerbil/lib/std/net/socket/base__0.scm
 @bin gerbil/lib/std/net/socket/base__1.o1
+gerbil/lib/std/net/socket/base__1.scm
 @bin gerbil/lib/std/net/socket/base__rt.o1
+gerbil/lib/std/net/socket/base__rt.scm
 gerbil/lib/std/net/socket/basic-server.ssi
 gerbil/lib/std/net/socket/basic-server.ssxi.ss
 @bin gerbil/lib/std/net/socket/basic-server__0.o1
+gerbil/lib/std/net/socket/basic-server__0.scm
 @bin gerbil/lib/std/net/socket/basic-server__rt.o1
+gerbil/lib/std/net/socket/basic-server__rt.scm
 gerbil/lib/std/net/socket/basic-socket.ssi
 gerbil/lib/std/net/socket/basic-socket.ssxi.ss
 @bin gerbil/lib/std/net/socket/basic-socket__0.o1
+gerbil/lib/std/net/socket/basic-socket__0.scm
 @bin gerbil/lib/std/net/socket/basic-socket__rt.o1
+gerbil/lib/std/net/socket/basic-socket__rt.scm
 gerbil/lib/std/net/socket/buffer.ssi
 gerbil/lib/std/net/socket/buffer.ssxi.ss
 @bin gerbil/lib/std/net/socket/buffer__0.o1
+gerbil/lib/std/net/socket/buffer__0.scm
 @bin gerbil/lib/std/net/socket/buffer__1.o1
+gerbil/lib/std/net/socket/buffer__1.scm
 @bin gerbil/lib/std/net/socket/buffer__rt.o1
+gerbil/lib/std/net/socket/buffer__rt.scm
 gerbil/lib/std/net/socket/kqueue-server.ssi
 gerbil/lib/std/net/socket/kqueue-server.ssxi.ss
 @bin gerbil/lib/std/net/socket/kqueue-server__0.o1
+gerbil/lib/std/net/socket/kqueue-server__0.scm
 @bin gerbil/lib/std/net/socket/kqueue-server__rt.o1
+gerbil/lib/std/net/socket/kqueue-server__rt.scm
 gerbil/lib/std/net/socket/server.ssi
 gerbil/lib/std/net/socket/server.ssxi.ss
 @bin gerbil/lib/std/net/socket/server__0.o1
+gerbil/lib/std/net/socket/server__0.scm
 @bin gerbil/lib/std/net/socket/server__rt.o1
+gerbil/lib/std/net/socket/server__rt.scm
 @bin gerbil/lib/std/net/socket__rt.o1
+gerbil/lib/std/net/socket__rt.scm
 gerbil/lib/std/net/socks.ssi
 gerbil/lib/std/net/socks.ssxi.ss
 @bin gerbil/lib/std/net/socks__0.o1
+gerbil/lib/std/net/socks__0.scm
 @bin gerbil/lib/std/net/socks__rt.o1
+gerbil/lib/std/net/socks__rt.scm
 gerbil/lib/std/net/uri.ssi
 gerbil/lib/std/net/uri.ssxi.ss
 @bin gerbil/lib/std/net/uri__0.o1
+gerbil/lib/std/net/uri__0.scm
 @bin gerbil/lib/std/net/uri__rt.o1
+gerbil/lib/std/net/uri__rt.scm
 gerbil/lib/std/net/wamp.ssi
 gerbil/lib/std/net/wamp.ssxi.ss
 @bin gerbil/lib/std/net/wamp__0.o1
+gerbil/lib/std/net/wamp__0.scm
 @bin gerbil/lib/std/net/wamp__1.o1
+gerbil/lib/std/net/wamp__1.scm
 @bin gerbil/lib/std/net/wamp__rt.o1
+gerbil/lib/std/net/wamp__rt.scm
 gerbil/lib/std/net/websocket.ssi
 gerbil/lib/std/net/websocket.ssxi.ss
 @bin gerbil/lib/std/net/websocket__0.o1
+gerbil/lib/std/net/websocket__0.scm
 @bin gerbil/lib/std/net/websocket__1.o1
+gerbil/lib/std/net/websocket__1.scm
 @bin gerbil/lib/std/net/websocket__rt.o1
+gerbil/lib/std/net/websocket__rt.scm
 gerbil/lib/std/os/
 @bin gerbil/lib/std/os/_socket.o1
 gerbil/lib/std/os/_socket.ssi
@@ -1177,303 +1723,722 @@ gerbil/lib/std/os/_socket.ssi
 gerbil/lib/std/os/error.ssi
 gerbil/lib/std/os/error.ssxi.ss
 @bin gerbil/lib/std/os/error__0.o1
+gerbil/lib/std/os/error__0.scm
 @bin gerbil/lib/std/os/error__1.o1
+gerbil/lib/std/os/error__1.scm
 @bin gerbil/lib/std/os/error__rt.o1
+gerbil/lib/std/os/error__rt.scm
 gerbil/lib/std/os/fcntl.ssi
 gerbil/lib/std/os/fcntl.ssxi.ss
 @bin gerbil/lib/std/os/fcntl__0.o1
+gerbil/lib/std/os/fcntl__0.scm
 @bin gerbil/lib/std/os/fcntl__rt.o1
+gerbil/lib/std/os/fcntl__rt.scm
 gerbil/lib/std/os/fd.ssi
 gerbil/lib/std/os/fd.ssxi.ss
 @bin gerbil/lib/std/os/fd__0.o1
+gerbil/lib/std/os/fd__0.scm
 @bin gerbil/lib/std/os/fd__rt.o1
+gerbil/lib/std/os/fd__rt.scm
 gerbil/lib/std/os/fdio.ssi
 gerbil/lib/std/os/fdio.ssxi.ss
 @bin gerbil/lib/std/os/fdio__0.o1
+gerbil/lib/std/os/fdio__0.scm
 @bin gerbil/lib/std/os/fdio__rt.o1
+gerbil/lib/std/os/fdio__rt.scm
+gerbil/lib/std/os/flock.ssi
+gerbil/lib/std/os/flock.ssxi.ss
+@bin gerbil/lib/std/os/flock__0.o1
+gerbil/lib/std/os/flock__0.scm
+@bin gerbil/lib/std/os/flock__rt.o1
+gerbil/lib/std/os/flock__rt.scm
 gerbil/lib/std/os/kqueue.ssi
 gerbil/lib/std/os/kqueue.ssxi.ss
 @bin gerbil/lib/std/os/kqueue__0.o1
+gerbil/lib/std/os/kqueue__0.scm
 @bin gerbil/lib/std/os/kqueue__rt.o1
+gerbil/lib/std/os/kqueue__rt.scm
 gerbil/lib/std/os/pid.ssi
 gerbil/lib/std/os/pid.ssxi.ss
 @bin gerbil/lib/std/os/pid__0.o1
+gerbil/lib/std/os/pid__0.scm
 @bin gerbil/lib/std/os/pid__rt.o1
+gerbil/lib/std/os/pid__rt.scm
 gerbil/lib/std/os/pipe.ssi
 gerbil/lib/std/os/pipe.ssxi.ss
 @bin gerbil/lib/std/os/pipe__0.o1
+gerbil/lib/std/os/pipe__0.scm
 @bin gerbil/lib/std/os/pipe__rt.o1
+gerbil/lib/std/os/pipe__rt.scm
 gerbil/lib/std/os/signal-handler.ssi
 gerbil/lib/std/os/signal-handler.ssxi.ss
 @bin gerbil/lib/std/os/signal-handler__0.o1
+gerbil/lib/std/os/signal-handler__0.scm
 @bin gerbil/lib/std/os/signal-handler__1.o1
+gerbil/lib/std/os/signal-handler__1.scm
 @bin gerbil/lib/std/os/signal-handler__rt.o1
+gerbil/lib/std/os/signal-handler__rt.scm
 gerbil/lib/std/os/signal.ssi
 gerbil/lib/std/os/signal.ssxi.ss
 @bin gerbil/lib/std/os/signal__0.o1
+gerbil/lib/std/os/signal__0.scm
 @bin gerbil/lib/std/os/signal__rt.o1
+gerbil/lib/std/os/signal__rt.scm
 gerbil/lib/std/os/socket.ssi
 gerbil/lib/std/os/socket.ssxi.ss
 @bin gerbil/lib/std/os/socket__0.o1
+gerbil/lib/std/os/socket__0.scm
 @bin gerbil/lib/std/os/socket__1.o1
+gerbil/lib/std/os/socket__1.scm
 @bin gerbil/lib/std/os/socket__rt.o1
+gerbil/lib/std/os/socket__rt.scm
 gerbil/lib/std/parser/
 gerbil/lib/std/parser.ssi
 gerbil/lib/std/parser.ssxi.ss
 gerbil/lib/std/parser/base.ssi
 gerbil/lib/std/parser/base.ssxi.ss
 @bin gerbil/lib/std/parser/base__0.o1
+gerbil/lib/std/parser/base__0.scm
 @bin gerbil/lib/std/parser/base__1.o1
+gerbil/lib/std/parser/base__1.scm
 @bin gerbil/lib/std/parser/base__rt.o1
+gerbil/lib/std/parser/base__rt.scm
 gerbil/lib/std/parser/deflexer.ssi
 gerbil/lib/std/parser/deflexer.ssxi.ss
 @bin gerbil/lib/std/parser/deflexer__1.o1
+gerbil/lib/std/parser/deflexer__1.scm
 @bin gerbil/lib/std/parser/deflexer__rt.o1
+gerbil/lib/std/parser/deflexer__rt.scm
 gerbil/lib/std/parser/defparser.ssi
 gerbil/lib/std/parser/defparser.ssxi.ss
 @bin gerbil/lib/std/parser/defparser__0.o1
+gerbil/lib/std/parser/defparser__0.scm
 @bin gerbil/lib/std/parser/defparser__1.o1
+gerbil/lib/std/parser/defparser__1.scm
 @bin gerbil/lib/std/parser/defparser__rt.o1
+gerbil/lib/std/parser/defparser__rt.scm
 gerbil/lib/std/parser/grammar-reader.ssi
 gerbil/lib/std/parser/grammar-reader.ssxi.ss
 @bin gerbil/lib/std/parser/grammar-reader__0.o1
+gerbil/lib/std/parser/grammar-reader__0.scm
 @bin gerbil/lib/std/parser/grammar-reader__rt.o1
+gerbil/lib/std/parser/grammar-reader__rt.scm
 gerbil/lib/std/parser/grammar.ssi
 gerbil/lib/std/parser/grammar.ssxi.ss
 @bin gerbil/lib/std/parser/grammar__1.o1
+gerbil/lib/std/parser/grammar__1.scm
 @bin gerbil/lib/std/parser/grammar__rt.o1
+gerbil/lib/std/parser/grammar__rt.scm
 gerbil/lib/std/parser/lexer.ssi
 gerbil/lib/std/parser/lexer.ssxi.ss
 @bin gerbil/lib/std/parser/lexer__0.o1
+gerbil/lib/std/parser/lexer__0.scm
 @bin gerbil/lib/std/parser/lexer__1.o1
+gerbil/lib/std/parser/lexer__1.scm
 @bin gerbil/lib/std/parser/lexer__rt.o1
+gerbil/lib/std/parser/lexer__rt.scm
 gerbil/lib/std/parser/rlang.ssi
 gerbil/lib/std/parser/rlang.ssxi.ss
 @bin gerbil/lib/std/parser/rlang__0.o1
+gerbil/lib/std/parser/rlang__0.scm
 @bin gerbil/lib/std/parser/rlang__1.o1
+gerbil/lib/std/parser/rlang__1.scm
 @bin gerbil/lib/std/parser/rlang__rt.o1
+gerbil/lib/std/parser/rlang__rt.scm
 gerbil/lib/std/parser/rx-parser.ssi
 gerbil/lib/std/parser/rx-parser.ssxi.ss
 @bin gerbil/lib/std/parser/rx-parser__0.o1
+gerbil/lib/std/parser/rx-parser__0.scm
 @bin gerbil/lib/std/parser/rx-parser__rt.o1
+gerbil/lib/std/parser/rx-parser__rt.scm
 gerbil/lib/std/parser/stream.ssi
 gerbil/lib/std/parser/stream.ssxi.ss
 @bin gerbil/lib/std/parser/stream__0.o1
+gerbil/lib/std/parser/stream__0.scm
 @bin gerbil/lib/std/parser/stream__1.o1
+gerbil/lib/std/parser/stream__1.scm
 @bin gerbil/lib/std/parser/stream__rt.o1
+gerbil/lib/std/parser/stream__rt.scm
 @bin gerbil/lib/std/parser__rt.o1
+gerbil/lib/std/parser__rt.scm
 gerbil/lib/std/pregexp.ssi
 gerbil/lib/std/pregexp.ssxi.ss
 @bin gerbil/lib/std/pregexp__0.o1
+gerbil/lib/std/pregexp__0.scm
 @bin gerbil/lib/std/pregexp__1.o1
+gerbil/lib/std/pregexp__1.scm
 @bin gerbil/lib/std/pregexp__rt.o1
+gerbil/lib/std/pregexp__rt.scm
 gerbil/lib/std/protobuf/
 gerbil/lib/std/protobuf/io.ssi
 gerbil/lib/std/protobuf/io.ssxi.ss
 @bin gerbil/lib/std/protobuf/io__0.o1
+gerbil/lib/std/protobuf/io__0.scm
 @bin gerbil/lib/std/protobuf/io__rt.o1
+gerbil/lib/std/protobuf/io__rt.scm
 gerbil/lib/std/protobuf/macros.ssi
 gerbil/lib/std/protobuf/macros.ssxi.ss
 @bin gerbil/lib/std/protobuf/macros__1.o1
+gerbil/lib/std/protobuf/macros__1.scm
 @bin gerbil/lib/std/protobuf/macros__2.o1
+gerbil/lib/std/protobuf/macros__2.scm
 @bin gerbil/lib/std/protobuf/macros__rt.o1
+gerbil/lib/std/protobuf/macros__rt.scm
 gerbil/lib/std/protobuf/proto-grammar.ssi
 gerbil/lib/std/protobuf/proto-grammar.ssxi.ss
 @bin gerbil/lib/std/protobuf/proto-grammar__0.o1
+gerbil/lib/std/protobuf/proto-grammar__0.scm
 @bin gerbil/lib/std/protobuf/proto-grammar__rt.o1
+gerbil/lib/std/protobuf/proto-grammar__rt.scm
 gerbil/lib/std/protobuf/proto.ssi
 gerbil/lib/std/protobuf/proto.ssxi.ss
 @bin gerbil/lib/std/protobuf/proto__1.o1
+gerbil/lib/std/protobuf/proto__1.scm
 @bin gerbil/lib/std/protobuf/proto__rt.o1
+gerbil/lib/std/protobuf/proto__rt.scm
 gerbil/lib/std/ref.ssi
 gerbil/lib/std/ref.ssxi.ss
 @bin gerbil/lib/std/ref__0.o1
+gerbil/lib/std/ref__0.scm
 @bin gerbil/lib/std/ref__1.o1
+gerbil/lib/std/ref__1.scm
 @bin gerbil/lib/std/ref__rt.o1
+gerbil/lib/std/ref__rt.scm
 gerbil/lib/std/sort.ssi
 gerbil/lib/std/sort.ssxi.ss
 @bin gerbil/lib/std/sort__0.o1
+gerbil/lib/std/sort__0.scm
 @bin gerbil/lib/std/sort__1.o1
+gerbil/lib/std/sort__1.scm
 @bin gerbil/lib/std/sort__rt.o1
+gerbil/lib/std/sort__rt.scm
 gerbil/lib/std/srfi/
 gerbil/lib/std/srfi/1.ssi
 gerbil/lib/std/srfi/1.ssxi.ss
 gerbil/lib/std/srfi/101.ssi
 gerbil/lib/std/srfi/101.ssxi.ss
 @bin gerbil/lib/std/srfi/101__0.o1
+gerbil/lib/std/srfi/101__0.scm
 @bin gerbil/lib/std/srfi/101__1.o1
+gerbil/lib/std/srfi/101__1.scm
 @bin gerbil/lib/std/srfi/101__rt.o1
+gerbil/lib/std/srfi/101__rt.scm
 gerbil/lib/std/srfi/113.ssi
 gerbil/lib/std/srfi/113.ssxi.ss
 @bin gerbil/lib/std/srfi/113__0.o1
+gerbil/lib/std/srfi/113__0.scm
 @bin gerbil/lib/std/srfi/113__rt.o1
+gerbil/lib/std/srfi/113__rt.scm
+gerbil/lib/std/srfi/115.ssi
+gerbil/lib/std/srfi/115.ssxi.ss
+@bin gerbil/lib/std/srfi/115__0.o1
+gerbil/lib/std/srfi/115__0.scm
+@bin gerbil/lib/std/srfi/115__1.o1
+gerbil/lib/std/srfi/115__1.scm
+@bin gerbil/lib/std/srfi/115__rt.o1
+gerbil/lib/std/srfi/115__rt.scm
 gerbil/lib/std/srfi/116.ssi
 gerbil/lib/std/srfi/116.ssxi.ss
 @bin gerbil/lib/std/srfi/116__0.o1
+gerbil/lib/std/srfi/116__0.scm
 @bin gerbil/lib/std/srfi/116__1.o1
+gerbil/lib/std/srfi/116__1.scm
 @bin gerbil/lib/std/srfi/116__rt.o1
+gerbil/lib/std/srfi/116__rt.scm
 gerbil/lib/std/srfi/117.ssi
 gerbil/lib/std/srfi/117.ssxi.ss
 @bin gerbil/lib/std/srfi/117__0.o1
+gerbil/lib/std/srfi/117__0.scm
 @bin gerbil/lib/std/srfi/117__rt.o1
+gerbil/lib/std/srfi/117__rt.scm
 gerbil/lib/std/srfi/121-iter.ssi
 gerbil/lib/std/srfi/121-iter.ssxi.ss
 @bin gerbil/lib/std/srfi/121-iter__0.o1
+gerbil/lib/std/srfi/121-iter__0.scm
 @bin gerbil/lib/std/srfi/121-iter__rt.o1
+gerbil/lib/std/srfi/121-iter__rt.scm
 gerbil/lib/std/srfi/121.ssi
 gerbil/lib/std/srfi/121.ssxi.ss
 @bin gerbil/lib/std/srfi/121__0.o1
+gerbil/lib/std/srfi/121__0.scm
 @bin gerbil/lib/std/srfi/121__rt.o1
+gerbil/lib/std/srfi/121__rt.scm
 gerbil/lib/std/srfi/124.ssi
 gerbil/lib/std/srfi/124.ssxi.ss
 @bin gerbil/lib/std/srfi/124__0.o1
+gerbil/lib/std/srfi/124__0.scm
 @bin gerbil/lib/std/srfi/124__1.o1
+gerbil/lib/std/srfi/124__1.scm
 @bin gerbil/lib/std/srfi/124__rt.o1
+gerbil/lib/std/srfi/124__rt.scm
 gerbil/lib/std/srfi/125.ssi
 gerbil/lib/std/srfi/125.ssxi.ss
 @bin gerbil/lib/std/srfi/125__0.o1
+gerbil/lib/std/srfi/125__0.scm
 @bin gerbil/lib/std/srfi/125__rt.o1
+gerbil/lib/std/srfi/125__rt.scm
 gerbil/lib/std/srfi/127-iter.ssi
 gerbil/lib/std/srfi/127-iter.ssxi.ss
 @bin gerbil/lib/std/srfi/127-iter__0.o1
+gerbil/lib/std/srfi/127-iter__0.scm
 @bin gerbil/lib/std/srfi/127-iter__rt.o1
+gerbil/lib/std/srfi/127-iter__rt.scm
 gerbil/lib/std/srfi/127.ssi
 gerbil/lib/std/srfi/127.ssxi.ss
 @bin gerbil/lib/std/srfi/127__0.o1
+gerbil/lib/std/srfi/127__0.scm
 @bin gerbil/lib/std/srfi/127__rt.o1
+gerbil/lib/std/srfi/127__rt.scm
 gerbil/lib/std/srfi/128.ssi
 gerbil/lib/std/srfi/128.ssxi.ss
 @bin gerbil/lib/std/srfi/128__0.o1
+gerbil/lib/std/srfi/128__0.scm
 @bin gerbil/lib/std/srfi/128__1.o1
+gerbil/lib/std/srfi/128__1.scm
 @bin gerbil/lib/std/srfi/128__rt.o1
+gerbil/lib/std/srfi/128__rt.scm
 gerbil/lib/std/srfi/13.ssi
 gerbil/lib/std/srfi/13.ssxi.ss
+gerbil/lib/std/srfi/130.ssi
+gerbil/lib/std/srfi/130.ssxi.ss
+@bin gerbil/lib/std/srfi/130__0.o1
+gerbil/lib/std/srfi/130__0.scm
+@bin gerbil/lib/std/srfi/130__rt.o1
+gerbil/lib/std/srfi/130__rt.scm
 gerbil/lib/std/srfi/132.ssi
 gerbil/lib/std/srfi/132.ssxi.ss
 @bin gerbil/lib/std/srfi/132__0.o1
+gerbil/lib/std/srfi/132__0.scm
 @bin gerbil/lib/std/srfi/132__1.o1
+gerbil/lib/std/srfi/132__1.scm
 @bin gerbil/lib/std/srfi/132__rt.o1
+gerbil/lib/std/srfi/132__rt.scm
 gerbil/lib/std/srfi/133.ssi
 gerbil/lib/std/srfi/133.ssxi.ss
 @bin gerbil/lib/std/srfi/133__0.o1
+gerbil/lib/std/srfi/133__0.scm
 @bin gerbil/lib/std/srfi/133__1.o1
+gerbil/lib/std/srfi/133__1.scm
 @bin gerbil/lib/std/srfi/133__rt.o1
+gerbil/lib/std/srfi/133__rt.scm
 gerbil/lib/std/srfi/134.ssi
 gerbil/lib/std/srfi/134.ssxi.ss
 @bin gerbil/lib/std/srfi/134__0.o1
+gerbil/lib/std/srfi/134__0.scm
 @bin gerbil/lib/std/srfi/134__rt.o1
+gerbil/lib/std/srfi/134__rt.scm
 gerbil/lib/std/srfi/135.ssi
 gerbil/lib/std/srfi/135.ssxi.ss
 @bin gerbil/lib/std/srfi/135__rt.o1
+gerbil/lib/std/srfi/135__rt.scm
 @bin gerbil/lib/std/srfi/13__0.o1
+gerbil/lib/std/srfi/13__0.scm
 @bin gerbil/lib/std/srfi/13__rt.o1
+gerbil/lib/std/srfi/13__rt.scm
 gerbil/lib/std/srfi/14.ssi
 gerbil/lib/std/srfi/14.ssxi.ss
+gerbil/lib/std/srfi/141.ssi
+gerbil/lib/std/srfi/141.ssxi.ss
+@bin gerbil/lib/std/srfi/141__0.o1
+gerbil/lib/std/srfi/141__0.scm
+@bin gerbil/lib/std/srfi/141__rt.o1
+gerbil/lib/std/srfi/141__rt.scm
+gerbil/lib/std/srfi/143.ssi
+gerbil/lib/std/srfi/143.ssxi.ss
+@bin gerbil/lib/std/srfi/143__0.o1
+gerbil/lib/std/srfi/143__0.scm
+@bin gerbil/lib/std/srfi/143__rt.o1
+gerbil/lib/std/srfi/143__rt.scm
+gerbil/lib/std/srfi/144.ssi
+gerbil/lib/std/srfi/144.ssxi.ss
+@bin gerbil/lib/std/srfi/144__0.o1
+gerbil/lib/std/srfi/144__0.scm
+@bin gerbil/lib/std/srfi/144__rt.o1
+gerbil/lib/std/srfi/144__rt.scm
+gerbil/lib/std/srfi/145.ssi
+gerbil/lib/std/srfi/145.ssxi.ss
+@bin gerbil/lib/std/srfi/145__1.o1
+gerbil/lib/std/srfi/145__1.scm
+@bin gerbil/lib/std/srfi/145__rt.o1
+gerbil/lib/std/srfi/145__rt.scm
+gerbil/lib/std/srfi/146/
+gerbil/lib/std/srfi/146.ssi
+gerbil/lib/std/srfi/146.ssxi.ss
+gerbil/lib/std/srfi/146/hamt-map.ssi
+gerbil/lib/std/srfi/146/hamt-map.ssxi.ss
+@bin gerbil/lib/std/srfi/146/hamt-map__0.o1
+gerbil/lib/std/srfi/146/hamt-map__0.scm
+@bin gerbil/lib/std/srfi/146/hamt-map__rt.o1
+gerbil/lib/std/srfi/146/hamt-map__rt.scm
+gerbil/lib/std/srfi/146/hamt-misc.ssi
+gerbil/lib/std/srfi/146/hamt-misc.ssxi.ss
+@bin gerbil/lib/std/srfi/146/hamt-misc__0.o1
+gerbil/lib/std/srfi/146/hamt-misc__0.scm
+@bin gerbil/lib/std/srfi/146/hamt-misc__1.o1
+gerbil/lib/std/srfi/146/hamt-misc__1.scm
+@bin gerbil/lib/std/srfi/146/hamt-misc__rt.o1
+gerbil/lib/std/srfi/146/hamt-misc__rt.scm
+gerbil/lib/std/srfi/146/hamt.ssi
+gerbil/lib/std/srfi/146/hamt.ssxi.ss
+@bin gerbil/lib/std/srfi/146/hamt__0.o1
+gerbil/lib/std/srfi/146/hamt__0.scm
+@bin gerbil/lib/std/srfi/146/hamt__rt.o1
+gerbil/lib/std/srfi/146/hamt__rt.scm
+gerbil/lib/std/srfi/146/hash.ssi
+gerbil/lib/std/srfi/146/hash.ssxi.ss
+@bin gerbil/lib/std/srfi/146/hash__0.o1
+gerbil/lib/std/srfi/146/hash__0.scm
+@bin gerbil/lib/std/srfi/146/hash__rt.o1
+gerbil/lib/std/srfi/146/hash__rt.scm
+gerbil/lib/std/srfi/146/vector-edit.ssi
+gerbil/lib/std/srfi/146/vector-edit.ssxi.ss
+@bin gerbil/lib/std/srfi/146/vector-edit__0.o1
+gerbil/lib/std/srfi/146/vector-edit__0.scm
+@bin gerbil/lib/std/srfi/146/vector-edit__1.o1
+gerbil/lib/std/srfi/146/vector-edit__1.scm
+@bin gerbil/lib/std/srfi/146/vector-edit__rt.o1
+gerbil/lib/std/srfi/146/vector-edit__rt.scm
+@bin gerbil/lib/std/srfi/146__0.o1
+gerbil/lib/std/srfi/146__0.scm
+@bin gerbil/lib/std/srfi/146__rt.o1
+gerbil/lib/std/srfi/146__rt.scm
 @bin gerbil/lib/std/srfi/14__0.o1
+gerbil/lib/std/srfi/14__0.scm
 @bin gerbil/lib/std/srfi/14__rt.o1
+gerbil/lib/std/srfi/14__rt.scm
+gerbil/lib/std/srfi/151.ssi
+gerbil/lib/std/srfi/151.ssxi.ss
+@bin gerbil/lib/std/srfi/151__0.o1
+gerbil/lib/std/srfi/151__0.scm
+@bin gerbil/lib/std/srfi/151__rt.o1
+gerbil/lib/std/srfi/151__rt.scm
+gerbil/lib/std/srfi/158-iter.ssi
+gerbil/lib/std/srfi/158-iter.ssxi.ss
+@bin gerbil/lib/std/srfi/158-iter__rt.o1
+gerbil/lib/std/srfi/158-iter__rt.scm
+gerbil/lib/std/srfi/158.ssi
+gerbil/lib/std/srfi/158.ssxi.ss
+@bin gerbil/lib/std/srfi/158__0.o1
+gerbil/lib/std/srfi/158__0.scm
+@bin gerbil/lib/std/srfi/158__rt.o1
+gerbil/lib/std/srfi/158__rt.scm
+gerbil/lib/std/srfi/159/
+gerbil/lib/std/srfi/159.ssi
+gerbil/lib/std/srfi/159.ssxi.ss
+gerbil/lib/std/srfi/159/base.ssi
+gerbil/lib/std/srfi/159/base.ssxi.ss
+@bin gerbil/lib/std/srfi/159/base__0.o1
+gerbil/lib/std/srfi/159/base__0.scm
+@bin gerbil/lib/std/srfi/159/base__1.o1
+gerbil/lib/std/srfi/159/base__1.scm
+@bin gerbil/lib/std/srfi/159/base__rt.o1
+gerbil/lib/std/srfi/159/base__rt.scm
+gerbil/lib/std/srfi/159/color.ssi
+gerbil/lib/std/srfi/159/color.ssxi.ss
+@bin gerbil/lib/std/srfi/159/color__0.o1
+gerbil/lib/std/srfi/159/color__0.scm
+@bin gerbil/lib/std/srfi/159/color__rt.o1
+gerbil/lib/std/srfi/159/color__rt.scm
+gerbil/lib/std/srfi/159/columnar.ssi
+gerbil/lib/std/srfi/159/columnar.ssxi.ss
+@bin gerbil/lib/std/srfi/159/columnar__0.o1
+gerbil/lib/std/srfi/159/columnar__0.scm
+@bin gerbil/lib/std/srfi/159/columnar__rt.o1
+gerbil/lib/std/srfi/159/columnar__rt.scm
+gerbil/lib/std/srfi/159/environment.ssi
+gerbil/lib/std/srfi/159/environment.ssxi.ss
+@bin gerbil/lib/std/srfi/159/environment__1.o1
+gerbil/lib/std/srfi/159/environment__1.scm
+@bin gerbil/lib/std/srfi/159/environment__rt.o1
+gerbil/lib/std/srfi/159/environment__rt.scm
+gerbil/lib/std/srfi/159/show.ssi
+gerbil/lib/std/srfi/159/show.ssxi.ss
+@bin gerbil/lib/std/srfi/159/show__0.o1
+gerbil/lib/std/srfi/159/show__0.scm
+@bin gerbil/lib/std/srfi/159/show__rt.o1
+gerbil/lib/std/srfi/159/show__rt.scm
+gerbil/lib/std/srfi/159/string.ssi
+gerbil/lib/std/srfi/159/string.ssxi.ss
+@bin gerbil/lib/std/srfi/159/string__0.o1
+gerbil/lib/std/srfi/159/string__0.scm
+@bin gerbil/lib/std/srfi/159/string__rt.o1
+gerbil/lib/std/srfi/159/string__rt.scm
+gerbil/lib/std/srfi/159/unicode.ssi
+gerbil/lib/std/srfi/159/unicode.ssxi.ss
+@bin gerbil/lib/std/srfi/159/unicode__0.o1
+gerbil/lib/std/srfi/159/unicode__0.scm
+@bin gerbil/lib/std/srfi/159/unicode__rt.o1
+gerbil/lib/std/srfi/159/unicode__rt.scm
+@bin gerbil/lib/std/srfi/159__rt.o1
+gerbil/lib/std/srfi/159__rt.scm
+gerbil/lib/std/srfi/160/
+gerbil/lib/std/srfi/160/base.ssi
+gerbil/lib/std/srfi/160/base.ssxi.ss
+@bin gerbil/lib/std/srfi/160/base__0.o1
+gerbil/lib/std/srfi/160/base__0.scm
+@bin gerbil/lib/std/srfi/160/base__rt.o1
+gerbil/lib/std/srfi/160/base__rt.scm
+gerbil/lib/std/srfi/160/c128.ssi
+gerbil/lib/std/srfi/160/c128.ssxi.ss
+@bin gerbil/lib/std/srfi/160/c128__0.o1
+gerbil/lib/std/srfi/160/c128__0.scm
+@bin gerbil/lib/std/srfi/160/c128__rt.o1
+gerbil/lib/std/srfi/160/c128__rt.scm
+gerbil/lib/std/srfi/160/c64.ssi
+gerbil/lib/std/srfi/160/c64.ssxi.ss
+@bin gerbil/lib/std/srfi/160/c64__0.o1
+gerbil/lib/std/srfi/160/c64__0.scm
+@bin gerbil/lib/std/srfi/160/c64__rt.o1
+gerbil/lib/std/srfi/160/c64__rt.scm
+gerbil/lib/std/srfi/160/cvector.ssi
+gerbil/lib/std/srfi/160/cvector.ssxi.ss
+@bin gerbil/lib/std/srfi/160/cvector__0.o1
+gerbil/lib/std/srfi/160/cvector__0.scm
+@bin gerbil/lib/std/srfi/160/cvector__1.o1
+gerbil/lib/std/srfi/160/cvector__1.scm
+@bin gerbil/lib/std/srfi/160/cvector__rt.o1
+gerbil/lib/std/srfi/160/cvector__rt.scm
+gerbil/lib/std/srfi/160/f32.ssi
+gerbil/lib/std/srfi/160/f32.ssxi.ss
+@bin gerbil/lib/std/srfi/160/f32__0.o1
+gerbil/lib/std/srfi/160/f32__0.scm
+@bin gerbil/lib/std/srfi/160/f32__rt.o1
+gerbil/lib/std/srfi/160/f32__rt.scm
+gerbil/lib/std/srfi/160/f64.ssi
+gerbil/lib/std/srfi/160/f64.ssxi.ss
+@bin gerbil/lib/std/srfi/160/f64__0.o1
+gerbil/lib/std/srfi/160/f64__0.scm
+@bin gerbil/lib/std/srfi/160/f64__rt.o1
+gerbil/lib/std/srfi/160/f64__rt.scm
+gerbil/lib/std/srfi/160/macros.ssi
+gerbil/lib/std/srfi/160/macros.ssxi.ss
+@bin gerbil/lib/std/srfi/160/macros__1.o1
+gerbil/lib/std/srfi/160/macros__1.scm
+@bin gerbil/lib/std/srfi/160/macros__rt.o1
+gerbil/lib/std/srfi/160/macros__rt.scm
+gerbil/lib/std/srfi/160/s16.ssi
+gerbil/lib/std/srfi/160/s16.ssxi.ss
+@bin gerbil/lib/std/srfi/160/s16__0.o1
+gerbil/lib/std/srfi/160/s16__0.scm
+@bin gerbil/lib/std/srfi/160/s16__rt.o1
+gerbil/lib/std/srfi/160/s16__rt.scm
+gerbil/lib/std/srfi/160/s32.ssi
+gerbil/lib/std/srfi/160/s32.ssxi.ss
+@bin gerbil/lib/std/srfi/160/s32__0.o1
+gerbil/lib/std/srfi/160/s32__0.scm
+@bin gerbil/lib/std/srfi/160/s32__rt.o1
+gerbil/lib/std/srfi/160/s32__rt.scm
+gerbil/lib/std/srfi/160/s64.ssi
+gerbil/lib/std/srfi/160/s64.ssxi.ss
+@bin gerbil/lib/std/srfi/160/s64__0.o1
+gerbil/lib/std/srfi/160/s64__0.scm
+@bin gerbil/lib/std/srfi/160/s64__rt.o1
+gerbil/lib/std/srfi/160/s64__rt.scm
+gerbil/lib/std/srfi/160/s8.ssi
+gerbil/lib/std/srfi/160/s8.ssxi.ss
+@bin gerbil/lib/std/srfi/160/s8__0.o1
+gerbil/lib/std/srfi/160/s8__0.scm
+@bin gerbil/lib/std/srfi/160/s8__rt.o1
+gerbil/lib/std/srfi/160/s8__rt.scm
+gerbil/lib/std/srfi/160/u16.ssi
+gerbil/lib/std/srfi/160/u16.ssxi.ss
+@bin gerbil/lib/std/srfi/160/u16__0.o1
+gerbil/lib/std/srfi/160/u16__0.scm
+@bin gerbil/lib/std/srfi/160/u16__rt.o1
+gerbil/lib/std/srfi/160/u16__rt.scm
+gerbil/lib/std/srfi/160/u32.ssi
+gerbil/lib/std/srfi/160/u32.ssxi.ss
+@bin gerbil/lib/std/srfi/160/u32__0.o1
+gerbil/lib/std/srfi/160/u32__0.scm
+@bin gerbil/lib/std/srfi/160/u32__rt.o1
+gerbil/lib/std/srfi/160/u32__rt.scm
+gerbil/lib/std/srfi/160/u64.ssi
+gerbil/lib/std/srfi/160/u64.ssxi.ss
+@bin gerbil/lib/std/srfi/160/u64__0.o1
+gerbil/lib/std/srfi/160/u64__0.scm
+@bin gerbil/lib/std/srfi/160/u64__rt.o1
+gerbil/lib/std/srfi/160/u64__rt.scm
+gerbil/lib/std/srfi/160/u8.ssi
+gerbil/lib/std/srfi/160/u8.ssxi.ss
+@bin gerbil/lib/std/srfi/160/u8__0.o1
+gerbil/lib/std/srfi/160/u8__0.scm
+@bin gerbil/lib/std/srfi/160/u8__rt.o1
+gerbil/lib/std/srfi/160/u8__rt.scm
 gerbil/lib/std/srfi/19.ssi
 gerbil/lib/std/srfi/19.ssxi.ss
 @bin gerbil/lib/std/srfi/19__0.o1
+gerbil/lib/std/srfi/19__0.scm
 @bin gerbil/lib/std/srfi/19__1.o1
+gerbil/lib/std/srfi/19__1.scm
 @bin gerbil/lib/std/srfi/19__rt.o1
+gerbil/lib/std/srfi/19__rt.scm
 @bin gerbil/lib/std/srfi/1__0.o1
+gerbil/lib/std/srfi/1__0.scm
 @bin gerbil/lib/std/srfi/1__rt.o1
+gerbil/lib/std/srfi/1__rt.scm
 gerbil/lib/std/srfi/41-iter.ssi
 gerbil/lib/std/srfi/41-iter.ssxi.ss
 @bin gerbil/lib/std/srfi/41-iter__0.o1
+gerbil/lib/std/srfi/41-iter__0.scm
 @bin gerbil/lib/std/srfi/41-iter__1.o1
+gerbil/lib/std/srfi/41-iter__1.scm
 @bin gerbil/lib/std/srfi/41-iter__rt.o1
+gerbil/lib/std/srfi/41-iter__rt.scm
 gerbil/lib/std/srfi/41.ssi
 gerbil/lib/std/srfi/41.ssxi.ss
 @bin gerbil/lib/std/srfi/41__0.o1
+gerbil/lib/std/srfi/41__0.scm
 @bin gerbil/lib/std/srfi/41__1.o1
+gerbil/lib/std/srfi/41__1.scm
 @bin gerbil/lib/std/srfi/41__rt.o1
+gerbil/lib/std/srfi/41__rt.scm
 @bin gerbil/lib/std/srfi/42$$1__rt.o1
+gerbil/lib/std/srfi/42$$1__rt.scm
 @bin gerbil/lib/std/srfi/42$$2__rt.o1
+gerbil/lib/std/srfi/42$$2__rt.scm
 @bin gerbil/lib/std/srfi/42$$3__rt.o1
+gerbil/lib/std/srfi/42$$3__rt.scm
 @bin gerbil/lib/std/srfi/42$$4__rt.o1
+gerbil/lib/std/srfi/42$$4__rt.scm
 @bin gerbil/lib/std/srfi/42$$5__rt.o1
+gerbil/lib/std/srfi/42$$5__rt.scm
 @bin gerbil/lib/std/srfi/42$$6__rt.o1
+gerbil/lib/std/srfi/42$$6__rt.scm
 @bin gerbil/lib/std/srfi/42$$7__rt.o1
+gerbil/lib/std/srfi/42$$7__rt.scm
 @bin gerbil/lib/std/srfi/42$$8__rt.o1
+gerbil/lib/std/srfi/42$$8__rt.scm
 @bin gerbil/lib/std/srfi/42$$9__rt.o1
+gerbil/lib/std/srfi/42$$9__rt.scm
 gerbil/lib/std/srfi/42.ssi
 gerbil/lib/std/srfi/42.ssxi.ss
 @bin gerbil/lib/std/srfi/42__0.o1
+gerbil/lib/std/srfi/42__0.scm
 @bin gerbil/lib/std/srfi/42__1.o1
+gerbil/lib/std/srfi/42__1.scm
 @bin gerbil/lib/std/srfi/42__10.o1
+gerbil/lib/std/srfi/42__10.scm
 @bin gerbil/lib/std/srfi/42__2.o1
+gerbil/lib/std/srfi/42__2.scm
 @bin gerbil/lib/std/srfi/42__3.o1
+gerbil/lib/std/srfi/42__3.scm
 @bin gerbil/lib/std/srfi/42__4.o1
+gerbil/lib/std/srfi/42__4.scm
 @bin gerbil/lib/std/srfi/42__5.o1
+gerbil/lib/std/srfi/42__5.scm
 @bin gerbil/lib/std/srfi/42__6.o1
+gerbil/lib/std/srfi/42__6.scm
 @bin gerbil/lib/std/srfi/42__7.o1
+gerbil/lib/std/srfi/42__7.scm
 @bin gerbil/lib/std/srfi/42__8.o1
+gerbil/lib/std/srfi/42__8.scm
 @bin gerbil/lib/std/srfi/42__9.o1
+gerbil/lib/std/srfi/42__9.scm
 @bin gerbil/lib/std/srfi/42__rt.o1
+gerbil/lib/std/srfi/42__rt.scm
 gerbil/lib/std/srfi/43.ssi
 gerbil/lib/std/srfi/43.ssxi.ss
 @bin gerbil/lib/std/srfi/43__0.o1
+gerbil/lib/std/srfi/43__0.scm
 @bin gerbil/lib/std/srfi/43__1.o1
+gerbil/lib/std/srfi/43__1.scm
 @bin gerbil/lib/std/srfi/43__rt.o1
+gerbil/lib/std/srfi/43__rt.scm
 gerbil/lib/std/srfi/78.ssi
 gerbil/lib/std/srfi/78.ssxi.ss
 @bin gerbil/lib/std/srfi/78__0.o1
+gerbil/lib/std/srfi/78__0.scm
 @bin gerbil/lib/std/srfi/78__1.o1
+gerbil/lib/std/srfi/78__1.scm
 @bin gerbil/lib/std/srfi/78__rt.o1
+gerbil/lib/std/srfi/78__rt.scm
 gerbil/lib/std/srfi/8.ssi
 gerbil/lib/std/srfi/8.ssxi.ss
 @bin gerbil/lib/std/srfi/8__1.o1
+gerbil/lib/std/srfi/8__1.scm
 @bin gerbil/lib/std/srfi/8__rt.o1
+gerbil/lib/std/srfi/8__rt.scm
 gerbil/lib/std/srfi/9.ssi
 gerbil/lib/std/srfi/9.ssxi.ss
 gerbil/lib/std/srfi/95.ssi
 gerbil/lib/std/srfi/95.ssxi.ss
 @bin gerbil/lib/std/srfi/95__0.o1
+gerbil/lib/std/srfi/95__0.scm
 @bin gerbil/lib/std/srfi/95__rt.o1
+gerbil/lib/std/srfi/95__rt.scm
 @bin gerbil/lib/std/srfi/9__1.o1
+gerbil/lib/std/srfi/9__1.scm
 @bin gerbil/lib/std/srfi/9__rt.o1
+gerbil/lib/std/srfi/9__rt.scm
 gerbil/lib/std/srfi/srfi-135/
 gerbil/lib/std/srfi/srfi-135/binary.ssi
 gerbil/lib/std/srfi/srfi-135/binary.ssxi.ss
 @bin gerbil/lib/std/srfi/srfi-135/binary__0.o1
+gerbil/lib/std/srfi/srfi-135/binary__0.scm
 @bin gerbil/lib/std/srfi/srfi-135/binary__rt.o1
+gerbil/lib/std/srfi/srfi-135/binary__rt.scm
 gerbil/lib/std/srfi/srfi-135/etc.ssi
 gerbil/lib/std/srfi/srfi-135/etc.ssxi.ss
 @bin gerbil/lib/std/srfi/srfi-135/etc__0.o1
+gerbil/lib/std/srfi/srfi-135/etc__0.scm
 @bin gerbil/lib/std/srfi/srfi-135/etc__rt.o1
+gerbil/lib/std/srfi/srfi-135/etc__rt.scm
 gerbil/lib/std/srfi/srfi-135/kernel8.ssi
 gerbil/lib/std/srfi/srfi-135/kernel8.ssxi.ss
 @bin gerbil/lib/std/srfi/srfi-135/kernel8__0.o1
+gerbil/lib/std/srfi/srfi-135/kernel8__0.scm
 @bin gerbil/lib/std/srfi/srfi-135/kernel8__1.o1
+gerbil/lib/std/srfi/srfi-135/kernel8__1.scm
 @bin gerbil/lib/std/srfi/srfi-135/kernel8__rt.o1
+gerbil/lib/std/srfi/srfi-135/kernel8__rt.scm
 gerbil/lib/std/srfi/srfi-135/macros.ssi
 gerbil/lib/std/srfi/srfi-135/macros.ssxi.ss
 @bin gerbil/lib/std/srfi/srfi-135/macros__0.o1
+gerbil/lib/std/srfi/srfi-135/macros__0.scm
 @bin gerbil/lib/std/srfi/srfi-135/macros__1.o1
+gerbil/lib/std/srfi/srfi-135/macros__1.scm
 @bin gerbil/lib/std/srfi/srfi-135/macros__rt.o1
+gerbil/lib/std/srfi/srfi-135/macros__rt.scm
 gerbil/lib/std/srfi/srfi-135/text.ssi
 gerbil/lib/std/srfi/srfi-135/text.ssxi.ss
 @bin gerbil/lib/std/srfi/srfi-135/text__0.o1
+gerbil/lib/std/srfi/srfi-135/text__0.scm
 @bin gerbil/lib/std/srfi/srfi-135/text__rt.o1
+gerbil/lib/std/srfi/srfi-135/text__rt.scm
 gerbil/lib/std/srfi/srfi-support.ssi
 gerbil/lib/std/srfi/srfi-support.ssxi.ss
 @bin gerbil/lib/std/srfi/srfi-support__1.o1
+gerbil/lib/std/srfi/srfi-support__1.scm
 @bin gerbil/lib/std/srfi/srfi-support__rt.o1
+gerbil/lib/std/srfi/srfi-support__rt.scm
 gerbil/lib/std/stxparam.ssi
 gerbil/lib/std/stxparam.ssxi.ss
 @bin gerbil/lib/std/stxparam__1.o1
+gerbil/lib/std/stxparam__1.scm
 @bin gerbil/lib/std/stxparam__2.o1
+gerbil/lib/std/stxparam__2.scm
 @bin gerbil/lib/std/stxparam__rt.o1
+gerbil/lib/std/stxparam__rt.scm
+gerbil/lib/std/stxutil.ssi
+gerbil/lib/std/stxutil.ssxi.ss
+@bin gerbil/lib/std/stxutil__0.o1
+gerbil/lib/std/stxutil__0.scm
+@bin gerbil/lib/std/stxutil__rt.o1
+gerbil/lib/std/stxutil__rt.scm
 gerbil/lib/std/sugar.ssi
 gerbil/lib/std/sugar.ssxi.ss
 @bin gerbil/lib/std/sugar__1.o1
+gerbil/lib/std/sugar__1.scm
 @bin gerbil/lib/std/sugar__rt.o1
+gerbil/lib/std/sugar__rt.scm
 gerbil/lib/std/test.ssi
 gerbil/lib/std/test.ssxi.ss
 @bin gerbil/lib/std/test__0.o1
+gerbil/lib/std/test__0.scm
 @bin gerbil/lib/std/test__1.o1
+gerbil/lib/std/test__1.scm
 @bin gerbil/lib/std/test__rt.o1
+gerbil/lib/std/test__rt.scm
 gerbil/lib/std/text/
 @bin gerbil/lib/std/text/_zlib.o1
 gerbil/lib/std/text/_zlib.ssi
@@ -1481,42 +2446,73 @@ gerbil/lib/std/text/_zlib.ssi
 gerbil/lib/std/text/base58.ssi
 gerbil/lib/std/text/base58.ssxi.ss
 @bin gerbil/lib/std/text/base58__0.o1
+gerbil/lib/std/text/base58__0.scm
 @bin gerbil/lib/std/text/base58__1.o1
+gerbil/lib/std/text/base58__1.scm
 @bin gerbil/lib/std/text/base58__rt.o1
+gerbil/lib/std/text/base58__rt.scm
 @bin gerbil/lib/std/text/base64.o1
 gerbil/lib/std/text/base64.ssi
 @bin gerbil/lib/std/text/base64__rt.o1
 gerbil/lib/std/text/csv.ssi
 gerbil/lib/std/text/csv.ssxi.ss
 @bin gerbil/lib/std/text/csv__0.o1
+gerbil/lib/std/text/csv__0.scm
 @bin gerbil/lib/std/text/csv__rt.o1
+gerbil/lib/std/text/csv__rt.scm
 gerbil/lib/std/text/hex.ssi
 gerbil/lib/std/text/hex.ssxi.ss
 @bin gerbil/lib/std/text/hex__0.o1
+gerbil/lib/std/text/hex__0.scm
 @bin gerbil/lib/std/text/hex__rt.o1
+gerbil/lib/std/text/hex__rt.scm
 gerbil/lib/std/text/json.ssi
 gerbil/lib/std/text/json.ssxi.ss
 @bin gerbil/lib/std/text/json__0.o1
+gerbil/lib/std/text/json__0.scm
 @bin gerbil/lib/std/text/json__rt.o1
+gerbil/lib/std/text/json__rt.scm
+gerbil/lib/std/text/utf16.ssi
+gerbil/lib/std/text/utf16.ssxi.ss
+@bin gerbil/lib/std/text/utf16__0.o1
+gerbil/lib/std/text/utf16__0.scm
+@bin gerbil/lib/std/text/utf16__rt.o1
+gerbil/lib/std/text/utf16__rt.scm
+gerbil/lib/std/text/utf32.ssi
+gerbil/lib/std/text/utf32.ssxi.ss
+@bin gerbil/lib/std/text/utf32__0.o1
+gerbil/lib/std/text/utf32__0.scm
+@bin gerbil/lib/std/text/utf32__rt.o1
+gerbil/lib/std/text/utf32__rt.scm
 gerbil/lib/std/text/utf8.ssi
 gerbil/lib/std/text/utf8.ssxi.ss
 @bin gerbil/lib/std/text/utf8__0.o1
+gerbil/lib/std/text/utf8__0.scm
 @bin gerbil/lib/std/text/utf8__rt.o1
+gerbil/lib/std/text/utf8__rt.scm
 gerbil/lib/std/text/zlib.ssi
 gerbil/lib/std/text/zlib.ssxi.ss
 @bin gerbil/lib/std/text/zlib__0.o1
+gerbil/lib/std/text/zlib__0.scm
 @bin gerbil/lib/std/text/zlib__1.o1
+gerbil/lib/std/text/zlib__1.scm
 @bin gerbil/lib/std/text/zlib__rt.o1
+gerbil/lib/std/text/zlib__rt.scm
 gerbil/lib/std/web/
 gerbil/lib/std/web/fastcgi.ssi
 gerbil/lib/std/web/fastcgi.ssxi.ss
 @bin gerbil/lib/std/web/fastcgi__0.o1
+gerbil/lib/std/web/fastcgi__0.scm
 @bin gerbil/lib/std/web/fastcgi__1.o1
+gerbil/lib/std/web/fastcgi__1.scm
 @bin gerbil/lib/std/web/fastcgi__rt.o1
+gerbil/lib/std/web/fastcgi__rt.scm
 gerbil/lib/std/web/rack.ssi
 gerbil/lib/std/web/rack.ssxi.ss
 @bin gerbil/lib/std/web/rack__0.o1
+gerbil/lib/std/web/rack__0.scm
 @bin gerbil/lib/std/web/rack__rt.o1
+gerbil/lib/std/web/rack__rt.scm
 gerbil/lib/std/xml/
 gerbil/lib/std/xml.ssi
 gerbil/lib/std/xml.ssxi.ss
@@ -1526,30 +2522,44 @@ gerbil/lib/std/xml/_libxml.ssi
 gerbil/lib/std/xml/libxml.ssi
 gerbil/lib/std/xml/libxml.ssxi.ss
 @bin gerbil/lib/std/xml/libxml__0.o1
+gerbil/lib/std/xml/libxml__0.scm
 @bin gerbil/lib/std/xml/libxml__rt.o1
+gerbil/lib/std/xml/libxml__rt.scm
 gerbil/lib/std/xml/print.ssi
 gerbil/lib/std/xml/print.ssxi.ss
 @bin gerbil/lib/std/xml/print__0.o1
+gerbil/lib/std/xml/print__0.scm
 @bin gerbil/lib/std/xml/print__1.o1
+gerbil/lib/std/xml/print__1.scm
 @bin gerbil/lib/std/xml/print__rt.o1
+gerbil/lib/std/xml/print__rt.scm
 gerbil/lib/std/xml/ssax.ssi
 gerbil/lib/std/xml/ssax.ssxi.ss
 @bin gerbil/lib/std/xml/ssax__0.o1
+gerbil/lib/std/xml/ssax__0.scm
 @bin gerbil/lib/std/xml/ssax__1.o1
+gerbil/lib/std/xml/ssax__1.scm
 @bin gerbil/lib/std/xml/ssax__rt.o1
+gerbil/lib/std/xml/ssax__rt.scm
 @bin gerbil/lib/std/xml/sxml-to-xml.o1
 gerbil/lib/std/xml/sxml-to-xml.ssi
 @bin gerbil/lib/std/xml/sxml-to-xml__rt.o1
 gerbil/lib/std/xml/sxml.ssi
 gerbil/lib/std/xml/sxml.ssxi.ss
 @bin gerbil/lib/std/xml/sxml__0.o1
+gerbil/lib/std/xml/sxml__0.scm
 @bin gerbil/lib/std/xml/sxml__rt.o1
+gerbil/lib/std/xml/sxml__rt.scm
 gerbil/lib/std/xml/sxpath.ssi
 gerbil/lib/std/xml/sxpath.ssxi.ss
 @bin gerbil/lib/std/xml/sxpath__0.o1
+gerbil/lib/std/xml/sxpath__0.scm
 @bin gerbil/lib/std/xml/sxpath__1.o1
+gerbil/lib/std/xml/sxpath__1.scm
 @bin gerbil/lib/std/xml/sxpath__rt.o1
+gerbil/lib/std/xml/sxpath__rt.scm
 @bin gerbil/lib/std/xml__rt.o1
+gerbil/lib/std/xml__rt.scm
 gerbil/src/
 gerbil/src/TAGS
 gerbil/src/bootstrap/
@@ -1726,6 +2736,7 @@ gerbil/src/build/
 gerbil/src/build.sh
 gerbil/src/build/build0.scm
 gerbil/src/build/build1.ss
+gerbil/src/configure
 gerbil/src/gerbil/
 gerbil/src/gerbil/boot/
 gerbil/src/gerbil/boot/gx-init-exe.scm
@@ -1741,6 +2752,7 @@ gerbil/src/gerbil/compiler/driver.ss
 gerbil/src/gerbil/compiler/optimize-ann.ss
 gerbil/src/gerbil/compiler/optimize-base.ss
 gerbil/src/gerbil/compiler/optimize-call.ss
+gerbil/src/gerbil/compiler/optimize-spec.ss
 gerbil/src/gerbil/compiler/optimize-top.ss
 gerbil/src/gerbil/compiler/optimize-xform.ss
 gerbil/src/gerbil/compiler/optimize.ss
@@ -1784,6 +2796,7 @@ gerbil/src/gerbil/prelude/gambit/readtables.ss
 gerbil/src/gerbil/prelude/gambit/system.ss
 gerbil/src/gerbil/prelude/gambit/threads.ss
 gerbil/src/gerbil/runtime/
+gerbil/src/gerbil/runtime/build-lib.scm
 gerbil/src/gerbil/runtime/build.scm
 gerbil/src/gerbil/runtime/gx-gambc#.scm
 gerbil/src/gerbil/runtime/gx-gambc.scm
@@ -1791,11 +2804,13 @@ gerbil/src/gerbil/runtime/gx-gambc0.scm
 gerbil/src/gerbil/runtime/gx-gambc1.scm
 gerbil/src/gerbil/runtime/gx-gambc2.scm
 gerbil/src/gerbil/runtime/gx-version.scm
+gerbil/src/install
 gerbil/src/lang/
 gerbil/src/lang/build-deps
-gerbil/src/lang/build-deps-gen.ss
-gerbil/src/lang/build-spec.ss
 gerbil/src/lang/build.ss
+gerbil/src/lang/gerbil/
+gerbil/src/lang/gerbil.pkg
+gerbil/src/lang/gerbil/polydactyl.ss
 gerbil/src/lang/scheme/
 gerbil/src/lang/scheme/base-etc.ss
 gerbil/src/lang/scheme/base-impl.ss
@@ -1836,6 +2851,7 @@ gerbil/src/misc/http-perf/ab100k
 gerbil/src/misc/http-perf/ab10k
 gerbil/src/misc/http-perf/baseline.ss
 gerbil/src/misc/http-perf/build.ss
+gerbil/src/misc/http-perf/gerbil.pkg
 gerbil/src/misc/http-perf/hellod.ss
 gerbil/src/misc/http-perf/httperf100k
 gerbil/src/misc/http-perf/httperf100kses
@@ -1849,6 +2865,7 @@ gerbil/src/misc/rpc-perf/baseline-io1M
 gerbil/src/misc/rpc-perf/baseline-port.ss
 gerbil/src/misc/rpc-perf/baseline-port100k
 gerbil/src/misc/rpc-perf/build.ss
+gerbil/src/misc/rpc-perf/gerbil.pkg
 gerbil/src/misc/rpc-perf/nullproto.ss
 gerbil/src/misc/rpc-perf/nullproto100k
 gerbil/src/misc/rpc-perf/nullproto1M
@@ -1861,10 +2878,15 @@ gerbil/src/r7rs-large/build-deps
 gerbil/src/r7rs-large/build.ss
 gerbil/src/r7rs-large/gerbil.pkg
 gerbil/src/r7rs-large/scheme/
+gerbil/src/r7rs-large/scheme/bitwise.ss
 gerbil/src/r7rs-large/scheme/box.ss
+gerbil/src/r7rs-large/scheme/bytevector.ss
 gerbil/src/r7rs-large/scheme/charset.ss
 gerbil/src/r7rs-large/scheme/comparator.ss
+gerbil/src/r7rs-large/scheme/division.ss
 gerbil/src/r7rs-large/scheme/ephemeron.ss
+gerbil/src/r7rs-large/scheme/fixnum.ss
+gerbil/src/r7rs-large/scheme/flonum.ss
 gerbil/src/r7rs-large/scheme/generator.ss
 gerbil/src/r7rs-large/scheme/hash-table.ss
 gerbil/src/r7rs-large/scheme/ideque.ss
@@ -1872,12 +2894,31 @@ gerbil/src/r7rs-large/scheme/ilist.ss
 gerbil/src/r7rs-large/scheme/list-queue.ss
 gerbil/src/r7rs-large/scheme/list.ss
 gerbil/src/r7rs-large/scheme/lseq.ss
+gerbil/src/r7rs-large/scheme/mapping/
+gerbil/src/r7rs-large/scheme/mapping.ss
+gerbil/src/r7rs-large/scheme/mapping/hash.ss
+gerbil/src/r7rs-large/scheme/regex.ss
 gerbil/src/r7rs-large/scheme/rlist.ss
 gerbil/src/r7rs-large/scheme/set.ss
+gerbil/src/r7rs-large/scheme/show.ss
 gerbil/src/r7rs-large/scheme/sort.ss
 gerbil/src/r7rs-large/scheme/stream.ss
 gerbil/src/r7rs-large/scheme/text.ss
+gerbil/src/r7rs-large/scheme/vector/
 gerbil/src/r7rs-large/scheme/vector.ss
+gerbil/src/r7rs-large/scheme/vector/base.ss
+gerbil/src/r7rs-large/scheme/vector/c128.ss
+gerbil/src/r7rs-large/scheme/vector/c64.ss
+gerbil/src/r7rs-large/scheme/vector/f32.ss
+gerbil/src/r7rs-large/scheme/vector/f64.ss
+gerbil/src/r7rs-large/scheme/vector/s16.ss
+gerbil/src/r7rs-large/scheme/vector/s32.ss
+gerbil/src/r7rs-large/scheme/vector/s64.ss
+gerbil/src/r7rs-large/scheme/vector/s8.ss
+gerbil/src/r7rs-large/scheme/vector/u16.ss
+gerbil/src/r7rs-large/scheme/vector/u32.ss
+gerbil/src/r7rs-large/scheme/vector/u64.ss
+gerbil/src/r7rs-large/scheme/vector/u8.ss
 gerbil/src/release.ss
 gerbil/src/std/
 gerbil/src/std/actor/
@@ -1901,10 +2942,10 @@ gerbil/src/std/amb-test.ss
 gerbil/src/std/amb.ss
 gerbil/src/std/build-config.ss
 gerbil/src/std/build-deps
-gerbil/src/std/build-deps-gen.ss
 gerbil/src/std/build-features.ss
 gerbil/src/std/build-script.ss
 gerbil/src/std/build-spec.ss
+gerbil/src/std/build-std.ss
 gerbil/src/std/build.ss
 gerbil/src/std/coroutine-test.ss
 gerbil/src/std/coroutine.ss
@@ -1948,6 +2989,7 @@ gerbil/src/std/debug/threads.ss
 gerbil/src/std/error.ss
 gerbil/src/std/event-test.ss
 gerbil/src/std/event.ss
+gerbil/src/std/foreign-test.ss
 gerbil/src/std/foreign.ss
 gerbil/src/std/format.ss
 gerbil/src/std/generic/
@@ -1956,6 +2998,7 @@ gerbil/src/std/generic.ss
 gerbil/src/std/generic/builtin.ss
 gerbil/src/std/generic/dispatch.ss
 gerbil/src/std/generic/macros.ss
+gerbil/src/std/gerbil.pkg
 gerbil/src/std/getopt.ss
 gerbil/src/std/interactive.ss
 gerbil/src/std/iter-test.ss
@@ -1966,18 +3009,26 @@ gerbil/src/std/make.ss
 gerbil/src/std/misc/
 gerbil/src/std/misc/barrier-test.ss
 gerbil/src/std/misc/barrier.ss
+gerbil/src/std/misc/bytes-test.ss
+gerbil/src/std/misc/bytes.ss
 gerbil/src/std/misc/channel-test.ss
 gerbil/src/std/misc/channel.ss
 gerbil/src/std/misc/completion-test.ss
 gerbil/src/std/misc/completion.ss
+gerbil/src/std/misc/concurrent-plan.ss
 gerbil/src/std/misc/deque-test.ss
 gerbil/src/std/misc/deque.ss
 gerbil/src/std/misc/func-test.ss
 gerbil/src/std/misc/func.ss
+gerbil/src/std/misc/hash-test.ss
+gerbil/src/std/misc/hash.ss
 gerbil/src/std/misc/list-test.ss
 gerbil/src/std/misc/list.ss
 gerbil/src/std/misc/lru-test.ss
 gerbil/src/std/misc/lru.ss
+gerbil/src/std/misc/number-test.ss
+gerbil/src/std/misc/number.ss
+gerbil/src/std/misc/path.ss
 gerbil/src/std/misc/ports.ss
 gerbil/src/std/misc/pqueue-test.ss
 gerbil/src/std/misc/pqueue.ss
@@ -1992,6 +3043,7 @@ gerbil/src/std/misc/shared.ss
 gerbil/src/std/misc/shuffle.ss
 gerbil/src/std/misc/string-test.ss
 gerbil/src/std/misc/string.ss
+gerbil/src/std/misc/symbol.ss
 gerbil/src/std/misc/sync.ss
 gerbil/src/std/misc/text.ss
 gerbil/src/std/misc/threads.ss
@@ -2002,6 +3054,7 @@ gerbil/src/std/net/address.ss
 gerbil/src/std/net/bio/
 gerbil/src/std/net/bio.ss
 gerbil/src/std/net/bio/buffer.ss
+gerbil/src/std/net/bio/file.ss
 gerbil/src/std/net/bio/input.ss
 gerbil/src/std/net/bio/output.ss
 gerbil/src/std/net/httpd/
@@ -2038,6 +3091,7 @@ gerbil/src/std/os/error.ss
 gerbil/src/std/os/fcntl.ss
 gerbil/src/std/os/fd.ss
 gerbil/src/std/os/fdio.ss
+gerbil/src/std/os/flock.ss
 gerbil/src/std/os/inotify.ss
 gerbil/src/std/os/kqueue.ss
 gerbil/src/std/os/pid.ss
@@ -2109,6 +3163,7 @@ gerbil/src/std/srfi/
 gerbil/src/std/srfi/1.ss
 gerbil/src/std/srfi/101.ss
 gerbil/src/std/srfi/113.ss
+gerbil/src/std/srfi/115.ss
 gerbil/src/std/srfi/116.ss
 gerbil/src/std/srfi/117.ss
 gerbil/src/std/srfi/121-iter.ss
@@ -2119,11 +3174,63 @@ gerbil/src/std/srfi/127-iter.ss
 gerbil/src/std/srfi/127.ss
 gerbil/src/std/srfi/128.ss
 gerbil/src/std/srfi/13.ss
+gerbil/src/std/srfi/130.ss
 gerbil/src/std/srfi/132.ss
 gerbil/src/std/srfi/133.ss
 gerbil/src/std/srfi/134.ss
 gerbil/src/std/srfi/135.ss
 gerbil/src/std/srfi/14.ss
+gerbil/src/std/srfi/141.ss
+gerbil/src/std/srfi/143.ss
+gerbil/src/std/srfi/144.ss
+gerbil/src/std/srfi/145.ss
+gerbil/src/std/srfi/146/
+gerbil/src/std/srfi/146.ss
+gerbil/src/std/srfi/146/hamt-map.scm
+gerbil/src/std/srfi/146/hamt-map.ss
+gerbil/src/std/srfi/146/hamt-misc.scm
+gerbil/src/std/srfi/146/hamt-misc.ss
+gerbil/src/std/srfi/146/hamt.scm
+gerbil/src/std/srfi/146/hamt.ss
+gerbil/src/std/srfi/146/hash.scm
+gerbil/src/std/srfi/146/hash.ss
+gerbil/src/std/srfi/146/vector-edit.scm
+gerbil/src/std/srfi/146/vector-edit.ss
+gerbil/src/std/srfi/151.ss
+gerbil/src/std/srfi/158-iter.ss
+gerbil/src/std/srfi/158.ss
+gerbil/src/std/srfi/159/
+gerbil/src/std/srfi/159.ss
+gerbil/src/std/srfi/159/base.scm
+gerbil/src/std/srfi/159/base.ss
+gerbil/src/std/srfi/159/color.scm
+gerbil/src/std/srfi/159/color.ss
+gerbil/src/std/srfi/159/column.scm
+gerbil/src/std/srfi/159/columnar.ss
+gerbil/src/std/srfi/159/environment.scm
+gerbil/src/std/srfi/159/environment.ss
+gerbil/src/std/srfi/159/show.scm
+gerbil/src/std/srfi/159/show.ss
+gerbil/src/std/srfi/159/string.ss
+gerbil/src/std/srfi/159/unicode.scm
+gerbil/src/std/srfi/159/unicode.ss
+gerbil/src/std/srfi/159/write.scm
+gerbil/src/std/srfi/160/
+gerbil/src/std/srfi/160/base.ss
+gerbil/src/std/srfi/160/c128.ss
+gerbil/src/std/srfi/160/c64.ss
+gerbil/src/std/srfi/160/cvector.ss
+gerbil/src/std/srfi/160/f32.ss
+gerbil/src/std/srfi/160/f64.ss
+gerbil/src/std/srfi/160/macros.ss
+gerbil/src/std/srfi/160/s16.ss
+gerbil/src/std/srfi/160/s32.ss
+gerbil/src/std/srfi/160/s64.ss
+gerbil/src/std/srfi/160/s8.ss
+gerbil/src/std/srfi/160/u16.ss
+gerbil/src/std/srfi/160/u32.ss
+gerbil/src/std/srfi/160/u64.ss
+gerbil/src/std/srfi/160/u8.ss
 gerbil/src/std/srfi/19.ss
 gerbil/src/std/srfi/41-iter.ss
 gerbil/src/std/srfi/41.ss
@@ -2136,6 +3243,9 @@ gerbil/src/std/srfi/95.ss
 gerbil/src/std/srfi/srfi-1.scm
 gerbil/src/std/srfi/srfi-101.scm
 gerbil/src/std/srfi/srfi-113.scm
+gerbil/src/std/srfi/srfi-115/
+gerbil/src/std/srfi/srfi-115/charsets.scm
+gerbil/src/std/srfi/srfi-115/regexp.scm
 gerbil/src/std/srfi/srfi-116/
 gerbil/src/std/srfi/srfi-116/ilists-base.scm
 gerbil/src/std/srfi/srfi-116/ilists-impl.scm
@@ -2146,6 +3256,7 @@ gerbil/src/std/srfi/srfi-117.scm
 gerbil/src/std/srfi/srfi-121.scm
 gerbil/src/std/srfi/srfi-127.scm
 gerbil/src/std/srfi/srfi-13.scm
+gerbil/src/std/srfi/srfi-130.scm
 gerbil/src/std/srfi/srfi-132/
 gerbil/src/std/srfi/srfi-132/132.sld
 gerbil/src/std/srfi/srfi-132/delndups.scm
@@ -2176,6 +3287,21 @@ gerbil/src/std/srfi/srfi-135/macros.ss
 gerbil/src/std/srfi/srfi-135/text.scm
 gerbil/src/std/srfi/srfi-135/text.ss
 gerbil/src/std/srfi/srfi-14.scm
+gerbil/src/std/srfi/srfi-141.scm
+gerbil/src/std/srfi/srfi-143/
+gerbil/src/std/srfi/srfi-143/carries.scm
+gerbil/src/std/srfi/srfi-144/
+gerbil/src/std/srfi/srfi-144/144.body.scm
+gerbil/src/std/srfi/srfi-144/144.body0.scm
+gerbil/src/std/srfi/srfi-144/144.constants.scm
+gerbil/src/std/srfi/srfi-144/144.special.scm
+gerbil/src/std/srfi/srfi-146.scm
+gerbil/src/std/srfi/srfi-151/
+gerbil/src/std/srfi/srfi-151/bitwise-33.scm
+gerbil/src/std/srfi/srfi-151/bitwise-60.scm
+gerbil/src/std/srfi/srfi-151/bitwise-core.scm
+gerbil/src/std/srfi/srfi-151/bitwise-other.scm
+gerbil/src/std/srfi/srfi-158.scm
 gerbil/src/std/srfi/srfi-19.scm
 gerbil/src/std/srfi/srfi-41.scm
 gerbil/src/std/srfi/srfi-42.scm
@@ -2184,6 +3310,8 @@ gerbil/src/std/srfi/srfi-78.scm
 gerbil/src/std/srfi/srfi-95.scm
 gerbil/src/std/srfi/srfi-support.ss
 gerbil/src/std/stxparam.ss
+gerbil/src/std/stxutil.ss
+gerbil/src/std/sugar-test.ss
 gerbil/src/std/sugar.ss
 gerbil/src/std/test.ss
 gerbil/src/std/text/
@@ -2194,13 +3322,19 @@ gerbil/src/std/text/base64.scm
 gerbil/src/std/text/base64.ssi
 gerbil/src/std/text/csv-test.ss
 gerbil/src/std/text/csv.ss
+gerbil/src/std/text/hex-test.ss
 gerbil/src/std/text/hex.ss
 gerbil/src/std/text/json-test.ss
 gerbil/src/std/text/json.ss
 gerbil/src/std/text/libyaml.scm
 gerbil/src/std/text/libyaml.ssi
+gerbil/src/std/text/utf16-test.ss
+gerbil/src/std/text/utf16.ss
+gerbil/src/std/text/utf32-test.ss
+gerbil/src/std/text/utf32.ss
 gerbil/src/std/text/utf8-test.ss
 gerbil/src/std/text/utf8.ss
+gerbil/src/std/text/yaml-test.ss
 gerbil/src/std/text/yaml.ss
 gerbil/src/std/text/zlib.ss
 gerbil/src/std/web/
@@ -2240,16 +3374,16 @@ gerbil/src/tutorial/
 gerbil/src/tutorial/gerbil.pkg
 gerbil/src/tutorial/httpd/
 gerbil/src/tutorial/httpd/build.ss
+gerbil/src/tutorial/httpd/gerbil.pkg
 gerbil/src/tutorial/httpd/simpled.ss
 gerbil/src/tutorial/kvstore/
-gerbil/src/tutorial/kvstore/build-deps
 gerbil/src/tutorial/kvstore/build.ss
+gerbil/src/tutorial/kvstore/gerbil.pkg
 gerbil/src/tutorial/kvstore/kvstorec.ss
 gerbil/src/tutorial/kvstore/kvstored.ss
 gerbil/src/tutorial/kvstore/proto.ss
 gerbil/src/tutorial/lang/
 gerbil/src/tutorial/lang/auto-export.ss
-gerbil/src/tutorial/lang/build-deps
 gerbil/src/tutorial/lang/build.ss
 gerbil/src/tutorial/lang/dot-app.ss
 gerbil/src/tutorial/lang/example/
@@ -2257,14 +3391,15 @@ gerbil/src/tutorial/lang/example/my-app.ss
 gerbil/src/tutorial/lang/example/my-auto-export.ss
 gerbil/src/tutorial/lang/example/my-scuby.ss
 gerbil/src/tutorial/lang/example/my-sexp.ss
+gerbil/src/tutorial/lang/gerbil.pkg
 gerbil/src/tutorial/lang/scuby-etc.ss
 gerbil/src/tutorial/lang/scuby-grammar.ss
 gerbil/src/tutorial/lang/scuby.ss
 gerbil/src/tutorial/lang/sexp.ss
 gerbil/src/tutorial/proxy/
-gerbil/src/tutorial/proxy/build-deps
 gerbil/src/tutorial/proxy/build-static.ss
 gerbil/src/tutorial/proxy/build.ss
+gerbil/src/tutorial/proxy/gerbil.pkg
 gerbil/src/tutorial/proxy/socks-proxy.ss
 gerbil/src/tutorial/proxy/tcp-proxy.ss
 share/doc/pkg-readmes/${PKGSTEM}
