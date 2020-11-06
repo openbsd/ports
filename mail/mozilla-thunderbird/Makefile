@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.332 2020/10/22 10:00:17 landry Exp $
+# $OpenBSD: Makefile,v 1.333 2020/11/06 17:37:40 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	78.4.0
+MOZILLA_VERSION =	78.4.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
