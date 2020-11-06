@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.67 2020/04/24 16:02:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.68 2020/11/06 17:02:08 ajacoutot Exp $
 @conflict totem-<3.32.0
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -28,6 +28,8 @@ lib/pkgconfig/libnautilus-extension.pc
 share/applications/nautilus-autorun-software.desktop
 share/applications/org.gnome.Nautilus.desktop
 share/dbus-1/services/org.freedesktop.FileManager1.service
+share/dbus-1/services/org.gnome.Nautilus.Tracker3.Miner.Extract.service
+share/dbus-1/services/org.gnome.Nautilus.Tracker3.Miner.Files.service
 share/dbus-1/services/org.gnome.Nautilus.service
 share/gir-1.0/Nautilus-3.0.gir
 share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml
@@ -48,6 +50,8 @@ share/locale/be@latin/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
 share/locale/bn/LC_MESSAGES/nautilus.mo
 share/locale/bn_IN/LC_MESSAGES/nautilus.mo
+share/locale/bo/
+share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/nautilus.mo
 share/locale/br/LC_MESSAGES/nautilus.mo
 share/locale/bs/LC_MESSAGES/nautilus.mo
@@ -91,6 +95,7 @@ share/locale/is/LC_MESSAGES/nautilus.mo
 share/locale/it/LC_MESSAGES/nautilus.mo
 share/locale/ja/LC_MESSAGES/nautilus.mo
 share/locale/ka/LC_MESSAGES/nautilus.mo
+share/locale/kab/LC_MESSAGES/nautilus.mo
 share/locale/kk/LC_MESSAGES/nautilus.mo
 share/locale/km/LC_MESSAGES/nautilus.mo
 share/locale/kn/LC_MESSAGES/nautilus.mo
@@ -157,6 +162,12 @@ share/locale/zh_HK/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
 share/metainfo/org.gnome.Nautilus.appdata.xml
+share/nautilus/
+share/nautilus/ontology/
+share/nautilus/ontology/nautilus.description
+share/nautilus/ontology/nautilus.ontology
+share/tracker3/domain-ontologies/
+share/tracker3/domain-ontologies/org.gnome.Nautilus.domain.rule
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
