@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/08/23 09:12:25 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/06 20:46:15 sebastia Exp $
 
 COMMENT=		Ruby gem to ease i18n
 
-DISTNAME =		gettext-setup-0.31
+DISTNAME =		gettext-setup-0.34
 CATEGORIES =		devel
 HOMEPAGE =	https://github.com/puppetlabs/gettext-setup-gem
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -14,7 +14,7 @@ MODULES=		lang/ruby
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=		devel/ruby-fast_gettext,${MODRUBY_FLAVOR}>=1.1.0,<1.7 \
-			devel/ruby-gettext,${MODRUBY_FLAVOR}>=3.0.2
+			devel/ruby-gettext,${MODRUBY_FLAVOR}>=3.0.2,<3.3
 
 CONFIGURE_STYLE =	ruby gem
 
