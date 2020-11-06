@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/11/23 16:50:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/11/06 07:32:59 ajacoutot Exp $
 bin/install-printerdriver
 bin/scp-dbus-service
 bin/system-config-printer
@@ -42,6 +42,7 @@ share/examples/system-config-printer/xdg/autostart/print-applet.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/print-applet.desktop
 share/locale/ar/LC_MESSAGES/system-config-printer.mo
 share/locale/as/LC_MESSAGES/system-config-printer.mo
+share/locale/ast/LC_MESSAGES/system-config-printer.mo
 share/locale/bg/LC_MESSAGES/system-config-printer.mo
 share/locale/bn/LC_MESSAGES/system-config-printer.mo
 share/locale/bn_IN/LC_MESSAGES/system-config-printer.mo
