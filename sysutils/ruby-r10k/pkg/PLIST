@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/05/28 21:19:43 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/11/06 20:47:05 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -118,6 +118,7 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/tests/command_line/negative/neg_invalid_
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/HTTP_proxy_and_git_source.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_git.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_repeated_remote.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_ssh.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_submodule.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/negative/
