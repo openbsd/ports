@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2020/11/06 16:29:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.287 2020/11/06 16:33:45 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -107,7 +107,6 @@
      SUBDIR += usage
      SUBDIR += user-docs
      SUBDIR += vfs2
-     SUBDIR += vinagre
      SUBDIR += vino
      SUBDIR += weather
      SUBDIR += yelp
