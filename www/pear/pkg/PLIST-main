@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2019/09/26 21:57:42 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2020/11/06 17:01:24 sthen Exp $
 @conflict php5-pear-*
 @conflict php4-pear-*
 @conflict pear-XML-Util-*
@@ -23,7 +23,6 @@ pear/lib/.channels/pear.php.net.reg
 pear/lib/.channels/pecl.php.net.reg
 pear/lib/.depdb
 pear/lib/.depdblock
-pear/lib/.lock
 pear/lib/.registry/
 pear/lib/.registry/.channel.__uri/
 pear/lib/.registry/.channel.doc.php.net/

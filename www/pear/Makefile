@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2020/03/20 16:44:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2020/11/06 17:01:24 sthen Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
 
-VERSION=	1.10.9
+VERSION=	1.10.19
 DISTNAME=	go-pear-${VERSION}
 PKGNAME=	pear-${VERSION}
 DISTFILES=	go-pear-${VERSION}{go-pear}.phar
@@ -17,7 +17,7 @@ CATEGORIES=	www devel
 HOMEPAGE=	https://pear.php.net/
 MASTER_SITES=	https://github.com/pear/pearweb_phars/raw/v${VERSION}/
 
-MAINTAINER=	Robert Nagy <robert@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 PERMIT_PACKAGE=	Yes
 
