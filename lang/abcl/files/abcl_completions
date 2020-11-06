@@ -2,7 +2,6 @@
 %cadr
 %car
 %cdr
-%invalidate-namestring
 %make-dialog-prompt-stream
 %socket-address
 %socket-port
@@ -1637,6 +1636,7 @@ mop:find-generic-function
 mop:find-method-combination
 mop:find-slot-definition
 mop:fixup-standard-class-hierarchy
+mop:flet-call-next-method
 mop:funcallable-instance-function
 mop:funcallable-standard-instance-access
 mop:generate-emf-lambda
@@ -2389,6 +2389,7 @@ system:choose-disassembler
 system:circle-subst
 system:class-bytes
 system:class-resource-path
+system:clear-zip-cache
 system:coerce-error
 system:coerce-list-to-vector
 system:coerce-object-to-and-type
@@ -2485,6 +2486,7 @@ system:digest
 system:digest-nio
 system:digest-path
 system:dimension-subtypep
+system:directory-as-file
 system:directory-match-components
 system:directory-match-p
 system:disable-zip-cache
@@ -2513,7 +2515,6 @@ system:dump-uninterned-symbol-index
 system:dump-vector
 system:empty-environment-p
 system:ensure-available-symbols
-system:ensure-input-stream
 system:enumerate-resource-directories
 system:environment-add-function-definition
 system:environment-add-macro-definition
@@ -2588,6 +2589,7 @@ system:get-cached-emf
 system:get-fasl-function
 system:get-fasl-readtable
 system:get-function-info-value
+system:get-input-stream
 system:get-instance-form
 system:get-loaded-from
 system:get-memory-function
@@ -2763,7 +2765,7 @@ system:normal-mumble-delete-from-end
 system:normal-mumble-remove
 system:normal-mumble-remove-from-end
 system:normalize-type
-system:not-java-6
+system:not-java-6-p
 system:note-name-defined
 system:note-toplevel-form
 system:notinline-p
@@ -2794,11 +2796,11 @@ system:parse-keyword-pairs
 system:parse-lambda-list
 system:parse-lambda-list-like-thing
 system:parse-name-and-options
-system:pathname-as-file
 system:pathname-directory-p
 system:pick-obvious-year
 system:pick-result-array
 system:populate-zip-fasl
+system:pre-java-11-p
 system:precompile-package
 system:precompile-toplevel-form
 system:predicate-for-type
