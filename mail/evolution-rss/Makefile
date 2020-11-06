@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2020/05/14 14:54:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2020/11/06 14:29:59 ajacoutot Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.96
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		mail
 
@@ -27,19 +27,20 @@ WANTLIB += enchant-2 epoxy expat ffi fontconfig freetype fribidi
 WANTLIB += gailutil-3 gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdata
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gnome-autoar-0 gnome-autoar-gtk-0 gnome-desktop-3 goa-1.0
-WANTLIB += gobject-2.0 gpg-error graphite2 gspell-1 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += harfbuzz harfbuzz-icu hyphen ical ical-glib icalss
-WANTLIB += icalvcal iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
-WANTLIB += jpeg json-glib-1.0 lber ldap ltdl lz4 lzma m notify
-WANTLIB += nspr4 nss3 nssutil3 ogg openjp2 orc-0.4 p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png psl sasl2 secret-1 smime3 soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 ssl ssl3 tasn1 unistring vorbis vorbisfile
-WANTLIB += webkit2gtk-4.0 webp webpdemux woff2common woff2dec
-WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
-WANTLIB += xcb-shm xcb-sync xcb-xfixes xml2 xshmfence xslt z zstd
+WANTLIB += gobject-2.0 gpg-error graphite2 gspell-1 gstallocators-1.0
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen ical
+WANTLIB += ical-glib icalss icalvcal iconv icudata icui18n icuuc
+WANTLIB += idn2 intl javascriptcoregtk-4.0 jpeg json-glib-1.0
+WANTLIB += lber ldap ltdl lz4 lzma m notify nspr4 nss3 nssutil3
+WANTLIB += ogg openjp2 orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png psl sasl2
+WANTLIB += secret-1 smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl
+WANTLIB += ssl3 tasn1 unistring vorbis vorbisfile webkit2gtk-4.0
+WANTLIB += webp webpdemux woff2common woff2dec xcb xcb-dri2 xcb-dri3
+WANTLIB += xcb-glx xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
+WANTLIB += xml2 xshmfence xslt z zstd
 WANTLIB += lib/evolution/eabutil
 WANTLIB += lib/evolution/econtacteditor
 WANTLIB += lib/evolution/econtactlisteditor
