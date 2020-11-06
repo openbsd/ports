@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2019/11/23 12:07:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.58 2020/11/06 14:45:58 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -271,6 +271,7 @@ include/evolution-data-server/libedataserver/e-proxy.h
 include/evolution-data-server/libedataserver/e-secret-store.h
 include/evolution-data-server/libedataserver/e-sexp.h
 include/evolution-data-server/libedataserver/e-soup-auth-bearer.h
+include/evolution-data-server/libedataserver/e-soup-logger.h
 include/evolution-data-server/libedataserver/e-soup-session.h
 include/evolution-data-server/libedataserver/e-soup-ssl-trust.h
 include/evolution-data-server/libedataserver/e-source-address-book.h
@@ -328,6 +329,7 @@ include/evolution-data-server/libedataserver/e-xml-utils.h
 include/evolution-data-server/libedataserver/eds-version.h
 include/evolution-data-server/libedataserver/libedataserver.h
 include/evolution-data-server/libedataserverui/
+include/evolution-data-server/libedataserverui/e-buffer-tagger.h
 include/evolution-data-server/libedataserverui/e-cell-renderer-color.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-oauth2.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-password.h
@@ -350,6 +352,7 @@ lib/evolution-data-server/calendar-backends/
 @so lib/evolution-data-server/calendar-backends/libecalbackendgtasks.so
 @so lib/evolution-data-server/calendar-backends/libecalbackendhttp.so
 @so lib/evolution-data-server/calendar-backends/libecalbackendweather.so
+@so lib/evolution-data-server/calendar-backends/libecalbackendwebdavnotes.so
 lib/evolution-data-server/camel-providers/
 @so lib/evolution-data-server/camel-providers/libcamelimapx.so
 lib/evolution-data-server/camel-providers/libcamelimapx.urls
@@ -427,10 +430,10 @@ libexec/evolution-data-server/csv2vcard
 @bin libexec/evolution-user-prompter
 share/GConf/gsettings/evolution-data-server.convert
 share/applications/org.gnome.Evolution-alarm-notify.desktop
-share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook.service
-share/dbus-1/services/org.gnome.evolution.dataserver.Calendar.service
-share/dbus-1/services/org.gnome.evolution.dataserver.Sources.service
-share/dbus-1/services/org.gnome.evolution.dataserver.UserPrompter.service
+share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook10.service
+share/dbus-1/services/org.gnome.evolution.dataserver.Calendar8.service
+share/dbus-1/services/org.gnome.evolution.dataserver.Sources5.service
+share/dbus-1/services/org.gnome.evolution.dataserver.UserPrompter0.service
 share/evolution-data-server/
 share/evolution-data-server/evolutionperson.schema
 share/examples/evolution-data-server/
