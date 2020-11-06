@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_tools_pdfextract_c,v 1.8 2020/08/20 09:00:16 sthen Exp $
+$OpenBSD: patch-source_tools_pdfextract_c,v 1.9 2020/11/06 15:36:38 sthen Exp $
 
 add pledge(2) to "mutool extract"
 
@@ -17,7 +17,7 @@ Index: source/tools/pdfextract.c
  
  static pdf_document *doc = NULL;
  static fz_context *ctx = NULL;
-@@ -257,6 +260,12 @@ int pdfextract_main(int argc, char **argv)
+@@ -254,6 +257,12 @@ int pdfextract_main(int argc, char **argv)
  		usage();
  
  	infile = argv[fz_optind++];

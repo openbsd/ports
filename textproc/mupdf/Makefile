@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.99 2020/08/20 09:00:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2020/11/06 15:36:38 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.17.0
+V =		1.18.0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
-REVISION =	2
 
 CATEGORIES =	textproc x11
 
@@ -19,8 +18,8 @@ MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge(2)
-WANTLIB += X11 Xext c curl freetype harfbuzz jbig2dec jpeg m
-WANTLIB += openjp2 pthread z crypto
+WANTLIB += X11 Xext c curl freetype gumbo harfbuzz jbig2dec jpeg
+WANTLIB += m openjp2 pthread z crypto
 
 FLAVORS =	js
 FLAVOR ?=
@@ -39,7 +38,8 @@ LIB_DEPENDS =	devel/harfbuzz \
 		graphics/jbig2dec \
 		graphics/jpeg \
 		graphics/openjp2>=2.0.1 \
-		net/curl
+		net/curl \
+		www/gumbo
 
 USE_GMAKE =	Yes
 NO_TEST =	Yes
@@ -48,6 +48,7 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		XCFLAGS="${CFLAGS} -fPIC -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps -I${X11BASE}/include" \
 		LDFLAGS="${LDFLAGS}" LLD_EMUL="${LLD_EMUL}" \
 		USE_SYSTEM_LIBS=yes \
+		HAVE_TESSERACT=no HAVE_LEPTONICA=no \
 		build=release verbose=yes
 
 FAKE_FLAGS =	prefix=${PREFIX} mandir=${PREFIX}/man
