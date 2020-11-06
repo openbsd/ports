@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/11 22:54:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/11/06 14:30:33 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
-V =		0.63
-REVISION =	1
+V =		0.64
 DISTNAME =	moreutils_$V.orig
 PKGNAME =	moreutils-$V
 WRKDIST =	${WRKDIR}/moreutils-$V
