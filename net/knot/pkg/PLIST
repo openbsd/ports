@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/11/11 16:11:19 jca Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/11/06 23:02:23 jca Exp $
 @newgroup _knot:751
 @newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/knot
@@ -7,6 +7,7 @@
 @bin bin/knsec3hash
 @bin bin/knsupdate
 @bin bin/kzonecheck
+@bin bin/kzonesign
 include/knot/
 include/knot/module.h
 include/libdnssec/
@@ -95,11 +96,14 @@ lib/pkgconfig/libzscanner.pc
 @man man/man1/knsec3hash.1
 @man man/man1/knsupdate.1
 @man man/man1/kzonecheck.1
+@man man/man1/kzonesign.1
 @man man/man5/knot.conf.5
+@man man/man8/kcatalogprint.8
 @man man/man8/keymgr.8
 @man man/man8/kjournalprint.8
 @man man/man8/knotc.8
 @man man/man8/knotd.8
+@bin sbin/kcatalogprint
 @bin sbin/keymgr
 @bin sbin/kjournalprint
 @bin sbin/knotc
