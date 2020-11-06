@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/08/20 06:40:18 robert Exp $
+# $OpenBSD: Makefile,v 1.24 2020/11/06 16:12:13 ajacoutot Exp $
 
 COMMENT=		MATE control center
 
@@ -7,6 +7,7 @@ SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
 
 MATE_PROJECT=		mate-control-center
 MATE_VERSION=		1.24.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -41,7 +42,8 @@ RUN_DEPENDS=		x11/mate/settings-daemon \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp \
+			shared-mime-info
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/mate-control-center
 
