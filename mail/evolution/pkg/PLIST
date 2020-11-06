@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2020/08/13 13:44:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.60 2020/11/06 14:46:18 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -120,7 +120,6 @@ include/evolution/e-util/e-auth-combo-box.h
 include/evolution/e-util/e-autocomplete-selector.h
 include/evolution/e-util/e-bit-array.h
 include/evolution/e-util/e-book-source-config.h
-include/evolution/e-util/e-buffer-tagger.h
 include/evolution/e-util/e-cal-source-config.h
 include/evolution/e-util/e-calendar-item.h
 include/evolution/e-util/e-calendar.h
@@ -331,7 +330,6 @@ include/evolution/e-util/e-url-entry.h
 include/evolution/e-util/e-util-enums.h
 include/evolution/e-util/e-util-enumtypes.h
 include/evolution/e-util/e-util.h
-include/evolution/e-util/e-web-extension-container.h
 include/evolution/e-util/e-web-view-jsc-utils.h
 include/evolution/e-util/e-web-view-preview.h
 include/evolution/e-util/e-web-view.h
@@ -566,6 +564,7 @@ lib/evolution/modules/
 @so lib/evolution/modules/module-cal-config-local.so
 @so lib/evolution/modules/module-cal-config-weather.so
 @so lib/evolution/modules/module-cal-config-webcal.so
+@so lib/evolution/modules/module-cal-config-webdav-notes.so
 @so lib/evolution/modules/module-calendar.so
 @so lib/evolution/modules/module-composer-autosave.so
 @so lib/evolution/modules/module-composer-to-meeting.so
@@ -678,10 +677,6 @@ share/evolution/default/it/
 share/evolution/default/it/mail/
 share/evolution/default/it/mail/local/
 share/evolution/default/it/mail/local/Inbox
-share/evolution/default/ja/
-share/evolution/default/ja/mail/
-share/evolution/default/ja/mail/local/
-share/evolution/default/ja/mail/local/Inbox
 share/evolution/default/ko/
 share/evolution/default/ko/mail/
 share/evolution/default/ko/mail/local/
@@ -1015,6 +1010,9 @@ share/evolution/views/tasks/With_Status.galview
 share/evolution/views/tasks/galview.xml
 share/evolution/webkit/
 share/evolution/webkit/e-convert.js
+share/evolution/webkit/e-editor.js
+share/evolution/webkit/e-selection.js
+share/evolution/webkit/e-undo-redo.js
 share/evolution/webkit/e-web-view.js
 share/evolution/webkit/webview-print.css
 share/evolution/webkit/webview.css
@@ -1199,6 +1197,7 @@ share/help/C/evolution/mail-filters-not-working.page
 share/help/C/evolution/mail-filters.page
 share/help/C/evolution/mail-folders.page
 share/help/C/evolution/mail-follow-up-flag.page
+share/help/C/evolution/mail-imap-change-send-method.page
 share/help/C/evolution/mail-imap-subscriptions.page
 share/help/C/evolution/mail-labels.page
 share/help/C/evolution/mail-layout-changing.page
@@ -1429,6 +1428,7 @@ share/help/ca/evolution/mail-filters-not-working.page
 share/help/ca/evolution/mail-filters.page
 share/help/ca/evolution/mail-folders.page
 share/help/ca/evolution/mail-follow-up-flag.page
+share/help/ca/evolution/mail-imap-change-send-method.page
 share/help/ca/evolution/mail-imap-subscriptions.page
 share/help/ca/evolution/mail-labels.page
 share/help/ca/evolution/mail-layout-changing.page
@@ -1659,6 +1659,7 @@ share/help/cs/evolution/mail-filters-not-working.page
 share/help/cs/evolution/mail-filters.page
 share/help/cs/evolution/mail-folders.page
 share/help/cs/evolution/mail-follow-up-flag.page
+share/help/cs/evolution/mail-imap-change-send-method.page
 share/help/cs/evolution/mail-imap-subscriptions.page
 share/help/cs/evolution/mail-labels.page
 share/help/cs/evolution/mail-layout-changing.page
@@ -1889,6 +1890,7 @@ share/help/de/evolution/mail-filters-not-working.page
 share/help/de/evolution/mail-filters.page
 share/help/de/evolution/mail-folders.page
 share/help/de/evolution/mail-follow-up-flag.page
+share/help/de/evolution/mail-imap-change-send-method.page
 share/help/de/evolution/mail-imap-subscriptions.page
 share/help/de/evolution/mail-labels.page
 share/help/de/evolution/mail-layout-changing.page
@@ -2119,6 +2121,7 @@ share/help/el/evolution/mail-filters-not-working.page
 share/help/el/evolution/mail-filters.page
 share/help/el/evolution/mail-folders.page
 share/help/el/evolution/mail-follow-up-flag.page
+share/help/el/evolution/mail-imap-change-send-method.page
 share/help/el/evolution/mail-imap-subscriptions.page
 share/help/el/evolution/mail-labels.page
 share/help/el/evolution/mail-layout-changing.page
@@ -2350,6 +2353,7 @@ share/help/en_GB/evolution/mail-filters-not-working.page
 share/help/en_GB/evolution/mail-filters.page
 share/help/en_GB/evolution/mail-folders.page
 share/help/en_GB/evolution/mail-follow-up-flag.page
+share/help/en_GB/evolution/mail-imap-change-send-method.page
 share/help/en_GB/evolution/mail-imap-subscriptions.page
 share/help/en_GB/evolution/mail-labels.page
 share/help/en_GB/evolution/mail-layout-changing.page
@@ -2580,6 +2584,7 @@ share/help/es/evolution/mail-filters-not-working.page
 share/help/es/evolution/mail-filters.page
 share/help/es/evolution/mail-folders.page
 share/help/es/evolution/mail-follow-up-flag.page
+share/help/es/evolution/mail-imap-change-send-method.page
 share/help/es/evolution/mail-imap-subscriptions.page
 share/help/es/evolution/mail-labels.page
 share/help/es/evolution/mail-layout-changing.page
@@ -2810,6 +2815,7 @@ share/help/eu/evolution/mail-filters-not-working.page
 share/help/eu/evolution/mail-filters.page
 share/help/eu/evolution/mail-folders.page
 share/help/eu/evolution/mail-follow-up-flag.page
+share/help/eu/evolution/mail-imap-change-send-method.page
 share/help/eu/evolution/mail-imap-subscriptions.page
 share/help/eu/evolution/mail-labels.page
 share/help/eu/evolution/mail-layout-changing.page
@@ -3040,6 +3046,7 @@ share/help/fr/evolution/mail-filters-not-working.page
 share/help/fr/evolution/mail-filters.page
 share/help/fr/evolution/mail-folders.page
 share/help/fr/evolution/mail-follow-up-flag.page
+share/help/fr/evolution/mail-imap-change-send-method.page
 share/help/fr/evolution/mail-imap-subscriptions.page
 share/help/fr/evolution/mail-labels.page
 share/help/fr/evolution/mail-layout-changing.page
@@ -3270,6 +3277,7 @@ share/help/gl/evolution/mail-filters-not-working.page
 share/help/gl/evolution/mail-filters.page
 share/help/gl/evolution/mail-folders.page
 share/help/gl/evolution/mail-follow-up-flag.page
+share/help/gl/evolution/mail-imap-change-send-method.page
 share/help/gl/evolution/mail-imap-subscriptions.page
 share/help/gl/evolution/mail-labels.page
 share/help/gl/evolution/mail-layout-changing.page
@@ -3500,6 +3508,7 @@ share/help/hu/evolution/mail-filters-not-working.page
 share/help/hu/evolution/mail-filters.page
 share/help/hu/evolution/mail-folders.page
 share/help/hu/evolution/mail-follow-up-flag.page
+share/help/hu/evolution/mail-imap-change-send-method.page
 share/help/hu/evolution/mail-imap-subscriptions.page
 share/help/hu/evolution/mail-labels.page
 share/help/hu/evolution/mail-layout-changing.page
@@ -3731,6 +3740,7 @@ share/help/mk/evolution/mail-filters-not-working.page
 share/help/mk/evolution/mail-filters.page
 share/help/mk/evolution/mail-folders.page
 share/help/mk/evolution/mail-follow-up-flag.page
+share/help/mk/evolution/mail-imap-change-send-method.page
 share/help/mk/evolution/mail-imap-subscriptions.page
 share/help/mk/evolution/mail-labels.page
 share/help/mk/evolution/mail-layout-changing.page
@@ -3961,6 +3971,7 @@ share/help/oc/evolution/mail-filters-not-working.page
 share/help/oc/evolution/mail-filters.page
 share/help/oc/evolution/mail-folders.page
 share/help/oc/evolution/mail-follow-up-flag.page
+share/help/oc/evolution/mail-imap-change-send-method.page
 share/help/oc/evolution/mail-imap-subscriptions.page
 share/help/oc/evolution/mail-labels.page
 share/help/oc/evolution/mail-layout-changing.page
@@ -4192,6 +4203,7 @@ share/help/ru/evolution/mail-filters-not-working.page
 share/help/ru/evolution/mail-filters.page
 share/help/ru/evolution/mail-folders.page
 share/help/ru/evolution/mail-follow-up-flag.page
+share/help/ru/evolution/mail-imap-change-send-method.page
 share/help/ru/evolution/mail-imap-subscriptions.page
 share/help/ru/evolution/mail-labels.page
 share/help/ru/evolution/mail-layout-changing.page
@@ -4422,6 +4434,7 @@ share/help/sl/evolution/mail-filters-not-working.page
 share/help/sl/evolution/mail-filters.page
 share/help/sl/evolution/mail-folders.page
 share/help/sl/evolution/mail-follow-up-flag.page
+share/help/sl/evolution/mail-imap-change-send-method.page
 share/help/sl/evolution/mail-imap-subscriptions.page
 share/help/sl/evolution/mail-labels.page
 share/help/sl/evolution/mail-layout-changing.page
@@ -4652,6 +4665,7 @@ share/help/sv/evolution/mail-filters-not-working.page
 share/help/sv/evolution/mail-filters.page
 share/help/sv/evolution/mail-folders.page
 share/help/sv/evolution/mail-follow-up-flag.page
+share/help/sv/evolution/mail-imap-change-send-method.page
 share/help/sv/evolution/mail-imap-subscriptions.page
 share/help/sv/evolution/mail-labels.page
 share/help/sv/evolution/mail-layout-changing.page
@@ -4883,6 +4897,7 @@ share/help/te/evolution/mail-filters-not-working.page
 share/help/te/evolution/mail-filters.page
 share/help/te/evolution/mail-folders.page
 share/help/te/evolution/mail-follow-up-flag.page
+share/help/te/evolution/mail-imap-change-send-method.page
 share/help/te/evolution/mail-imap-subscriptions.page
 share/help/te/evolution/mail-labels.page
 share/help/te/evolution/mail-layout-changing.page
@@ -5113,6 +5128,7 @@ share/help/uk/evolution/mail-filters-not-working.page
 share/help/uk/evolution/mail-filters.page
 share/help/uk/evolution/mail-folders.page
 share/help/uk/evolution/mail-follow-up-flag.page
+share/help/uk/evolution/mail-imap-change-send-method.page
 share/help/uk/evolution/mail-imap-subscriptions.page
 share/help/uk/evolution/mail-labels.page
 share/help/uk/evolution/mail-layout-changing.page
@@ -5343,6 +5359,7 @@ share/help/zh_CN/evolution/mail-filters-not-working.page
 share/help/zh_CN/evolution/mail-filters.page
 share/help/zh_CN/evolution/mail-folders.page
 share/help/zh_CN/evolution/mail-follow-up-flag.page
+share/help/zh_CN/evolution/mail-imap-change-send-method.page
 share/help/zh_CN/evolution/mail-imap-subscriptions.page
 share/help/zh_CN/evolution/mail-labels.page
 share/help/zh_CN/evolution/mail-layout-changing.page
