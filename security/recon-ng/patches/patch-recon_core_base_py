@@ -1,40 +1,22 @@
-$OpenBSD: patch-recon_core_base_py,v 1.1.1.1 2017/11/26 10:20:55 jasper Exp $
+$OpenBSD: patch-recon_core_base_py,v 1.2 2020/11/06 18:19:16 jasper Exp $
 
 Index: recon/core/base.py
 --- recon/core/base.py.orig
 +++ recon/core/base.py
-@@ -17,7 +17,7 @@ import __builtin__
- from recon.core import framework
+@@ -19,7 +19,7 @@ from recon.core import framework
+ from recon.core.constants import BANNER, BANNER_SMALL
  
  # set the __version__ variable based on the VERSION file
--execfile(os.path.join(sys.path[0], 'VERSION'))
-+__version__ = '${VERSION}'
+-exec(open(os.path.join(Path(os.path.abspath(__file__)).parents[2], 'VERSION')).read())
++__version__ = '${GH_TAGNAME}'
  
  # using stdout to spool causes tab complete issues
  # therefore, override print function
-@@ -53,7 +53,7 @@ class Recon(framework.Framework):
-         self._base_prompt = self._prompt_template % ('', self._name)
-         # establish dynamic paths for framework elements
-         self.app_path = framework.Framework.app_path = sys.path[0]
--        self.data_path = framework.Framework.data_path = os.path.join(self.app_path, 'data')
-+        self.data_path = framework.Framework.data_path = '${TRUEPREFIX}/share/recon-ng/data'
-         self.core_path = framework.Framework.core_path = os.path.join(self.app_path, 'core')
-         self.options = self._global_options
-         self._init_global_options()
-@@ -68,6 +68,7 @@ class Recon(framework.Framework):
-     #==================================================
+@@ -102,6 +102,7 @@ class Recon(framework.Framework):
+         self._fetch_module_index()
  
-     def version_check(self):
+     def _check_version(self):
 +        return True
-         try:
-             pattern = "'(\d+\.\d+\.\d+[^']*)'"
-             remote = re.search(pattern, self.request('https://bitbucket.org/LaNMaSteR53/recon-ng/raw/master/VERSION').raw).group(1)
-@@ -127,7 +128,7 @@ class Recon(framework.Framework):
-         self.loaded_category = {}
-         self._loaded_modules = framework.Framework._loaded_modules
-         # crawl the module directory and build the module tree
--        for path in [os.path.join(x, 'modules') for x in (self.app_path, self._home)]:
-+        for path in [os.path.join(x, 'modules') for x in ('${TRUEPREFIX}/share/recon-ng/',)]:
-             for dirpath, dirnames, filenames in os.walk(path):
-                 # remove hidden files and directories
-                 filenames = [f for f in filenames if not f[0] == '.']
+         if self._check:
+             pattern = r"'(\d+\.\d+\.\d+[^']*)'"
+             remote = 0
