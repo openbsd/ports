@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2020/06/13 15:54:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/11/06 15:37:02 sthen Exp $
 
 V =		0.3.5
-REVISION =	0
+REVISION =	1
 COMMENT =	mupdf pdf plugin for zathura
 PROJECT =	zathura-pdf-mupdf
 
