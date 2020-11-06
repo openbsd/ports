@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/05/14 15:36:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/06 11:15:13 ajacoutot Exp $
 @conflict latexila-*
 @pkgpath x11/gnome/latexila
 @bin bin/gnome-latex
@@ -20,16 +20,19 @@ share/gnome-latex/ui/
 share/gnome-latex/ui/preferences_dialog.ui
 share/gnome-latex/ui/ui.xml
 share/gtk-doc/html/gnome-latex/
+share/gtk-doc/html/gnome-latex/LatexilaApp.html
 share/gtk-doc/html/gnome-latex/LatexilaBuildJob.html
 share/gtk-doc/html/gnome-latex/LatexilaBuildTool.html
 share/gtk-doc/html/gnome-latex/LatexilaBuildTools.html
 share/gtk-doc/html/gnome-latex/LatexilaBuildToolsDefault.html
 share/gtk-doc/html/gnome-latex/LatexilaBuildToolsPersonal.html
 share/gtk-doc/html/gnome-latex/LatexilaBuildView.html
+share/gtk-doc/html/gnome-latex/LatexilaFactory.html
 share/gtk-doc/html/gnome-latex/LatexilaPostProcessor.html
 share/gtk-doc/html/gnome-latex/LatexilaPostProcessorAllOutput.html
 share/gtk-doc/html/gnome-latex/LatexilaPostProcessorLatex.html
 share/gtk-doc/html/gnome-latex/LatexilaPostProcessorLatexmk.html
+share/gtk-doc/html/gnome-latex/LatexilaSettings.html
 share/gtk-doc/html/gnome-latex/LatexilaSynctex.html
 share/gtk-doc/html/gnome-latex/LatexilaTemplatesDefault.html
 share/gtk-doc/html/gnome-latex/LatexilaTemplatesManageDialog.html
@@ -42,6 +45,8 @@ share/gtk-doc/html/gnome-latex/ch02.html
 share/gtk-doc/html/gnome-latex/ch03.html
 share/gtk-doc/html/gnome-latex/ch04.html
 share/gtk-doc/html/gnome-latex/gnome-latex-LaTeX-commands.html
+share/gtk-doc/html/gnome-latex/gnome-latex-Latexila-Initialization-and-Finalization.html
+share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaBuffer.html
 share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaTemplatesDialogs.html
 share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaUtils.html
 share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaView.html
@@ -76,6 +81,15 @@ share/help/cs/gnome-latex/projects.page
 share/help/cs/gnome-latex/spell_checking.page
 share/help/cs/gnome-latex/structure.page
 share/help/cs/gnome-latex/synctex.page
+share/help/da/
+share/help/da/gnome-latex/
+share/help/da/gnome-latex/build_tools.page
+share/help/da/gnome-latex/completion.page
+share/help/da/gnome-latex/index.page
+share/help/da/gnome-latex/projects.page
+share/help/da/gnome-latex/spell_checking.page
+share/help/da/gnome-latex/structure.page
+share/help/da/gnome-latex/synctex.page
 share/help/de/
 share/help/de/gnome-latex/
 share/help/de/gnome-latex/build_tools.page
@@ -175,16 +189,12 @@ share/help/uk/gnome-latex/projects.page
 share/help/uk/gnome-latex/spell_checking.page
 share/help/uk/gnome-latex/structure.page
 share/help/uk/gnome-latex/synctex.page
-share/icons/hicolor/16x16/apps/gnome-latex.png
-share/icons/hicolor/22x22/apps/gnome-latex.png
-share/icons/hicolor/24x24/apps/gnome-latex.png
-share/icons/hicolor/256x256/apps/gnome-latex.png
-share/icons/hicolor/32x32/apps/gnome-latex.png
-share/icons/hicolor/48x48/apps/gnome-latex.png
-share/icons/hicolor/symbolic/apps/gnome-latex-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.gnome-latex.svg
+share/icons/hicolor/symbolic/apps/org.gnome.gnome-latex-symbolic.svg
 share/locale/bs/LC_MESSAGES/gnome-latex.mo
 share/locale/ca/LC_MESSAGES/gnome-latex.mo
 share/locale/cs/LC_MESSAGES/gnome-latex.mo
+share/locale/da/LC_MESSAGES/gnome-latex.mo
 share/locale/de/LC_MESSAGES/gnome-latex.mo
 share/locale/el/LC_MESSAGES/gnome-latex.mo
 share/locale/eo/LC_MESSAGES/gnome-latex.mo
