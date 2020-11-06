@@ -1,0 +1,8 @@
+$OpenBSD: patch-requirements_crypto_txt,v 1.4 2020/11/06 18:42:50 jasper Exp $
+
+Index: requirements/crypto.txt
+--- requirements/crypto.txt.orig
++++ requirements/crypto.txt
+@@ -1 +1 @@
+-pycryptodomex>=3.9.8
++pycryptodome
