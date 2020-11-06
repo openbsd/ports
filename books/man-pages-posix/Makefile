@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/06 19:50:06 jasper Exp $
 
 CATEGORIES =	books devel
 COMMENT =	POSIX manual pages
-DISTNAME =	man-pages-posix-2013-a
+DISTNAME =	man-pages-posix-2017-a
 PKGNAME =	${DISTNAME:C/(-[0-9]+)-/\1/}
 PKG_ARCH =	*
-REVISION =	0
 
 MASTER_SITES =	https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/
 EXTRACT_SUFX =	.tar.xz
@@ -17,6 +16,7 @@ USE_GROFF =	Yes
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
+WRKDIST =	${WRKDIR}/${DISTNAME:S/-a//g}
 DOCDIR =	${PREFIX}/share/doc/posix
 SUBST_VARS =	DOCDIR
 
