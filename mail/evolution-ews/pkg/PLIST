@@ -1,13 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/07/03 21:21:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/11/06 14:46:39 ajacoutot Exp $
 @so lib/evolution-data-server/addressbook-backends/libebookbackendews.so
+@so lib/evolution-data-server/addressbook-backends/libebookbackendmicrosoft365.so
 @so lib/evolution-data-server/calendar-backends/libecalbackendews.so
+@so lib/evolution-data-server/calendar-backends/libecalbackendmicrosoft365.so
 @so lib/evolution-data-server/camel-providers/libcamelews.so
 lib/evolution-data-server/camel-providers/libcamelews.urls
+@so lib/evolution-data-server/camel-providers/libcamelmicrosoft365.so
+lib/evolution-data-server/camel-providers/libcamelmicrosoft365.urls
 @so lib/evolution-data-server/registry-modules/module-ews-backend.so
+@so lib/evolution-data-server/registry-modules/module-microsoft365-backend.so
 lib/evolution-ews/
 @so lib/evolution-ews/libcamelews-priv.so
 @so lib/evolution-ews/libevolution-ews.so
+@so lib/evolution-ews/libevolution-microsoft365.so
 @so lib/evolution/modules/module-ews-configuration.so
+@so lib/evolution/modules/module-microsoft365-configuration.so
 share/evolution-data-server/ews/
 share/evolution-data-server/ews/windowsZones.xml
 share/evolution/errors/module-ews-configuration.error
