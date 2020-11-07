@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.57 2020/11/01 20:38:45 jca Exp $
+# $OpenBSD: Makefile,v 1.58 2020/11/07 08:29:17 ajacoutot Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=		m88k
 
 COMMENT=		cairo bindings for Python
 
-MODPY_EGG_VERSION=	1.18.2
+MODPY_EGG_VERSION=	1.20.0
 GH_ACCOUNT=		pygobject
 GH_PROJECT=		pycairo
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-cairo-${MODPY_EGG_VERSION}
-REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -21,7 +20,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${MODPY_WANTLIB} cairo pthread
+WANTLIB += cairo pthread
 
 MODULES=		lang/python
 
@@ -30,8 +29,7 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR=			python3
 
-LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			graphics/cairo
+LIB_DEPENDS=		graphics/cairo
 
 TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
 
