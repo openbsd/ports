@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2020/10/17 12:57:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2020/11/07 11:37:05 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -25,7 +25,9 @@ MODULES=		devel/meson \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# sync with devel/spidermonkey78 and SHARED_LIBS consumer(s): x11/gnome/shell
+# sync with devel/spidermonkey78 and SHARED_LIBS consumer(s):
+# - devel/glade
+#  -x11/gnome/shell
 COMPILER=		base-clang ports-clang
 
 MODPY_RUNDEP=		No
