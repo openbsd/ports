@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.289 2020/11/07 15:41:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.290 2020/11/07 15:55:30 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -39,7 +39,6 @@
      SUBDIR += gdm
      SUBDIR += gedit
      SUBDIR += gedit-plugins
-     SUBDIR += getting-started-docs
      SUBDIR += gfbgraph
      SUBDIR += ghex
      SUBDIR += gjs
