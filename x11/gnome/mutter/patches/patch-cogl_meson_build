@@ -1,0 +1,16 @@
+$OpenBSD: patch-cogl_meson_build,v 1.1 2020/11/07 13:13:32 jasper Exp $
+
+Revert:
+https://gitlab.gnome.org/GNOME/mutter/-/commit/5b07ccd0a766aeda3fa81a1ec32ab8fa51d05235
+
+Index: cogl/meson.build
+--- cogl/meson.build.orig
++++ cogl/meson.build
+@@ -17,7 +17,6 @@ cogl_config_h = configure_file(
+ 
+ cogl_pkg_deps = [
+   glib_dep,
+-  gio_dep,
+   gobject_dep,
+   graphene_dep,
+ ]
