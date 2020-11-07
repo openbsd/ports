@@ -1,0 +1,26 @@
+$OpenBSD: patch-meson_build,v 1.1 2020/11/07 08:59:35 jasper Exp $
+
+ERROR: C shared or static library 'dl' not found
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -125,18 +125,6 @@ config_h.set('ENABLE_DEBUG', enable_debug)
+ # FIXME AC_USE_SYSTEM_EXTENSIONS also supported non-gnu systems
+ config_h.set10('_GNU_SOURCE', true)
+ 
+-# Check for functions
+-
+-libdl_dep = cc.find_library('dl')
+-
+-check_dl_functions_required = [
+-  'dlsym',
+-]
+-
+-foreach func: check_dl_functions_required
+-  assert(cc.has_function(func, dependencies: libdl_dep), func + ' not found')
+-endforeach
+-
+ # Compiler flags
+ 
+ compiler_flags_common = [
