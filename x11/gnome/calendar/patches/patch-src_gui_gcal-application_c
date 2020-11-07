@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_gui_gcal-application_c,v 1.1 2020/11/07 09:27:14 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-calendar/-/commit/8be361b6ce8f0f8053e1609decbdbdc164ec8448
+
+Index: src/gui/gcal-application.c
+--- src/gui/gcal-application.c.orig
++++ src/gui/gcal-application.c
+@@ -34,6 +34,7 @@
+ #include <glib-object.h>
+ #include <gio/gio.h>
+ #include <glib/gi18n.h>
++#include <handy.h>
+ 
+ struct _GcalApplication
+ {
+@@ -445,6 +446,9 @@ gcal_application_startup (GApplication *app)
+   /* We're assuming the application is called as a service only by the shell search system */
+   if ((g_application_get_flags (app) & G_APPLICATION_IS_SERVICE) != 0)
+     g_application_set_inactivity_timeout (app, 3 * 60 * 1000);
++
++  /*  initialize libhandy */
++  hdy_init();
+ 
+   GCAL_EXIT;
+ }

@@ -1,0 +1,96 @@
+$OpenBSD: patch-src_gui_gcal-edit-dialog_ui,v 1.1 2020/11/07 09:27:14 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-calendar/-/commit/8be361b6ce8f0f8053e1609decbdbdc164ec8448
+
+Index: src/gui/gcal-edit-dialog.ui
+--- src/gui/gcal-edit-dialog.ui.orig
++++ src/gui/gcal-edit-dialog.ui
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <interface>
+-  <template class="GcalEditDialog" parent="HdyDialog">
++  <template class="GcalEditDialog" parent="GtkDialog">
+     <property name="can_focus">False</property>
+     <property name="resizable">False</property>
+     <property name="modal">True</property>
+@@ -156,7 +156,7 @@
+                         <property name="title" translatable="yes">Title</property>
+                         <property name="activatable-widget">summary_entry</property>
+ 
+-                        <child type="action">
++                        <child>
+                           <object class="GtkEntry" id="summary_entry">
+                             <property name="visible">True</property>
+                             <property name="valign">center</property>
+@@ -177,7 +177,7 @@
+                         <property name="title" translatable="yes">Location</property>
+                         <property name="activatable-widget">location_entry</property>
+ 
+-                        <child type="action">
++                        <child>
+                           <object class="GtkEntry" id="location_entry">
+                             <property name="visible">True</property>
+                             <property name="valign">center</property>
+@@ -226,7 +226,7 @@
+                         <property name="title" translatable="yes">All Day</property>
+                         <property name="activatable-widget">all_day_switch</property>
+ 
+-                        <child type="action">
++                        <child>
+                           <object class="GtkSwitch" id="all_day_switch">
+                             <property name="visible">True</property>
+                             <property name="can_focus">True</property>
+@@ -246,7 +246,7 @@
+                         <property name="visible">True</property>
+                         <property name="title" translatable="yes">Starts</property>
+ 
+-                        <child type="action">
++                        <child>
+                           <object class="GtkLabel" id="event_start_label">
+                             <property name="visible">True</property>
+                             <property name="can_focus">False</property>
+@@ -294,7 +294,7 @@
+                         <property name="visible">True</property>
+                         <property name="title" translatable="yes">Ends</property>
+ 
+-                        <child type="action">
++                        <child>
+                           <object class="GtkLabel" id="event_end_label">
+                             <property name="visible">True</property>
+                             <property name="can_focus">False</property>
+@@ -343,7 +343,7 @@
+                         <property name="title" translatable="yes">Repeat</property>
+                         <property name="activatable-widget">repeat_combo</property>
+ 
+-                        <child type="action">
++                        <child>
+                           <object class="GtkComboBoxText" id="repeat_combo">
+                             <property name="visible">True</property>
+                             <property name="can_focus">False</property>
+@@ -372,7 +372,7 @@
+                         <property name="title" translatable="yes">End Repeat</property>
+                         <property name="activatable-widget">repeat_combo</property>
+ 
+-                        <child type="action">
++                        <child>
+                           <object class="GtkComboBoxText" id="repeat_duration_combo">
+                             <property name="visible">True</property>
+                             <property name="can_focus">False</property>
+@@ -397,7 +397,7 @@
+                         <property name="title" translatable="yes">Number of Occurrences</property>
+                         <property name="activatable-widget">number_of_occurrences_spin</property>
+ 
+-                        <child type="action">
++                        <child>
+                           <object class = "GtkSpinButton" id="number_of_occurrences_spin">
+                             <property name="input_purpose">number</property>
+                             <property name="input-hints">no-emoji</property>
+@@ -415,7 +415,7 @@
+                         <property name="title" translatable="yes">End Repeat Date</property>
+                         <property name="activatable-widget">until_date_selector</property>
+ 
+-                        <child type="action">
++                        <child>
+                           <object class = "GcalDateSelector" id="until_date_selector">
+                             <property name="valign">center</property>
+                           </object>

@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_gui_gcal-edit-dialog_c,v 1.1 2020/11/07 09:27:14 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-calendar/-/commit/8be361b6ce8f0f8053e1609decbdbdc164ec8448
+
+Index: src/gui/gcal-edit-dialog.c
+--- src/gui/gcal-edit-dialog.c.orig
++++ src/gui/gcal-edit-dialog.c
+@@ -47,7 +47,7 @@
+ 
+ struct _GcalEditDialog
+ {
+-  HdyDialog         parent;
++  GtkDialog         parent;
+ 
+   gboolean          writable;
+ 
+@@ -133,7 +133,7 @@ static void          on_location_entry_changed_cb     
+ static void          on_add_alarm_button_clicked_cb              (GtkWidget          *button,
+                                                                   GcalEditDialog     *self);
+ 
+-G_DEFINE_TYPE (GcalEditDialog, gcal_edit_dialog, HDY_TYPE_DIALOG)
++G_DEFINE_TYPE (GcalEditDialog, gcal_edit_dialog, GTK_TYPE_DIALOG)
+ 
+ enum
+ {

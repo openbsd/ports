@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_gui_gcal-edit-dialog_h,v 1.1 2020/11/07 09:27:14 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-calendar/-/commit/8be361b6ce8f0f8053e1609decbdbdc164ec8448
+
+Index: src/gui/gcal-edit-dialog.h
+--- src/gui/gcal-edit-dialog.h.orig
++++ src/gui/gcal-edit-dialog.h
+@@ -22,7 +22,6 @@
+ #include "gcal-event.h"
+ #include "gcal-manager.h"
+ 
+-#include <handy.h>
+ 
+ G_BEGIN_DECLS
+ 
+@@ -32,7 +31,7 @@ G_BEGIN_DECLS
+ 
+ #define GCAL_TYPE_EDIT_DIALOG                (gcal_edit_dialog_get_type ())
+ 
+-G_DECLARE_FINAL_TYPE (GcalEditDialog, gcal_edit_dialog, GCAL, EDIT_DIALOG, HdyDialog);
++G_DECLARE_FINAL_TYPE (GcalEditDialog, gcal_edit_dialog, GCAL, EDIT_DIALOG, GtkDialog);
+ 
+ GtkWidget*           gcal_edit_dialog_new                     (void);
+ 

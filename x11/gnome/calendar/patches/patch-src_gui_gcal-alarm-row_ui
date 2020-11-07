@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gui_gcal-alarm-row_ui,v 1.1 2020/11/07 09:27:14 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-calendar/-/commit/8be361b6ce8f0f8053e1609decbdbdc164ec8448
+
+Index: src/gui/gcal-alarm-row.ui
+--- src/gui/gcal-alarm-row.ui.orig
++++ src/gui/gcal-alarm-row.ui
+@@ -3,7 +3,7 @@
+   <template class="GcalAlarmRow" parent="HdyActionRow">
+     <property name="visible">True</property>
+     <property name="can_focus">False</property>
+-    <child type="action">
++    <child>
+       <object class="GtkBox">
+         <property name="visible">True</property>
+         <property name="can_focus">False</property>

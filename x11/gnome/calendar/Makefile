@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2020/06/18 18:02:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2020/11/07 09:27:14 jasper Exp $
 
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
-GNOME_VERSION =		3.36.2
+GNOME_VERSION =		3.38.1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c cairo dazzle-1.0 ecal-2.0 edataserver-1.2 edataserverui-1.2
 WANTLIB += gdk-3 geoclue-2 gio-2.0 glib-2.0 goa-1.0 gobject-2.0
 WANTLIB += gtk-3 gweather-3 ical-glib intl m pango-1.0 pangocairo-1.0
-WANTLIB += soup-2.4 handy-0.0
+WANTLIB += soup-2.4 handy-1
 
 COMPILER =		base-clang ports-gcc base-gcc
 

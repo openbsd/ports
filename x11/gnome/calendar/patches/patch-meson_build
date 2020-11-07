@@ -1,0 +1,16 @@
+$OpenBSD: patch-meson_build,v 1.3 2020/11/07 09:27:14 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-calendar/-/commit/8be361b6ce8f0f8053e1609decbdbdc164ec8448
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -163,7 +163,7 @@ libedataserver_dep = dependency('libedataserver-1.2', 
+ libecal_dep = dependency('libecal-2.0', version: '>= 3.33.2')
+ libsoup_dep = dependency('libsoup-2.4')
+ libdazzle_dep = dependency('libdazzle-1.0', version: '>= 3.33.1')
+-libhandy_dep = dependency('libhandy-0.0', version: '>= 0.0.9')
++libhandy_dep = dependency('libhandy-1', version: '>= 1.0.0')
+ glib_dep = dependency('glib-2.0', version: '>= 2.58.0')
+ gtk_dep = dependency('gtk+-3.0', version: '>= 3.22.20')
+ gio_dep = dependency('gio-2.0', version: '>= 2.58.0')
