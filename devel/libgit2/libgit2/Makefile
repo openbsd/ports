@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2020/04/03 10:23:29 kn Exp $
+# $OpenBSD: Makefile,v 1.46 2020/11/07 14:51:46 jasper Exp $
 
 COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
 GH_PROJECT =		libgit2
-GH_TAGNAME =		v0.28.4
+GH_TAGNAME =		v1.1.0
 
-SHARED_LIBS +=  git2                      12.0 # 0.28
+SHARED_LIBS +=  git2                      13.0 # 0.28
 
 MODULES=		devel/cmake \
 			lang/python
@@ -21,9 +21,10 @@ MODGCC4_ARCHS=		hppa
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-LIB_DEPENDS=		security/libssh2
+LIB_DEPENDS=		devel/pcre \
+			security/libssh2
 
-WANTLIB += crypto pthread ssh2 ssl z
+WANTLIB += crypto pcre pcreposix pthread ssh2 ssl z
 
 CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="-I${LOCALBASE}/include" \
 			-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
