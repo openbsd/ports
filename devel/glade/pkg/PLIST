@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2020/05/14 15:13:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/11/07 11:37:02 jasper Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
@@ -43,15 +43,16 @@ include/libgladeui-2.0/gladeui/glade.h
 lib/girepository-1.0/Gladeui-2.0.typelib
 lib/glade/
 lib/glade/modules/
+@so lib/glade/modules/libgladegjs.so
 @so lib/glade/modules/libgladegtk.so
 @so lib/glade/modules/libgladepython.so
-@static-lib lib/libgladeui-2.a
-lib/libgladeui-2.la
 @lib lib/libgladeui-2.so.${LIBgladeui-2_VERSION}
 lib/pkgconfig/gladeui-2.0.pc
 @man man/man1/glade-previewer.1
 @man man/man1/glade.1
 share/applications/org.gnome.Glade.desktop
+share/gettext/its/glade-catalog.its
+share/gettext/its/glade-catalog.loc
 share/gir-1.0/Gladeui-2.0.gir
 share/glade/
 share/glade/catalogs/
@@ -376,62 +377,6 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-window.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-windowgroup.png
 share/glade/pixmaps/placeholder.png
 share/glade/pixmaps/plus.png
-share/gtk-doc/html/gladeui-2/
-share/gtk-doc/html/gladeui-2/GladeApp.html
-share/gtk-doc/html/gladeui-2/GladeBaseEditor.html
-share/gtk-doc/html/gladeui-2/GladeClipboard.html
-share/gtk-doc/html/gladeui-2/GladeCommand.html
-share/gtk-doc/html/gladeui-2/GladeDesignView.html
-share/gtk-doc/html/gladeui-2/GladeEditable.html
-share/gtk-doc/html/gladeui-2/GladeEditor.html
-share/gtk-doc/html/gladeui-2/GladeEditorProperty.html
-share/gtk-doc/html/gladeui-2/GladeInspector.html
-share/gtk-doc/html/gladeui-2/GladePalette.html
-share/gtk-doc/html/gladeui-2/GladePlaceholder.html
-share/gtk-doc/html/gladeui-2/GladeProject.html
-share/gtk-doc/html/gladeui-2/GladeProperty.html
-share/gtk-doc/html/gladeui-2/GladeSignal.html
-share/gtk-doc/html/gladeui-2/GladeSignalEditor.html
-share/gtk-doc/html/gladeui-2/GladeWidget.html
-share/gtk-doc/html/gladeui-2/GladeWidgetAction.html
-share/gtk-doc/html/gladeui-2/GladeWidgetAdaptor.html
-share/gtk-doc/html/gladeui-2/annotation-glossary.html
-share/gtk-doc/html/gladeui-2/api-index-full.html
-share/gtk-doc/html/gladeui-2/catalog.html
-share/gtk-doc/html/gladeui-2/catalogintro.html
-share/gtk-doc/html/gladeui-2/core.html
-share/gtk-doc/html/gladeui-2/dockables.html
-share/gtk-doc/html/gladeui-2/gladeui-2.devhelp2
-share/gtk-doc/html/gladeui-2/gladeui-Glade-Utils.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeAdaptorChooser.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeCatalog.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeCellRendererIcon.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeFixed.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeNameContext.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeObjectStub.html
-share/gtk-doc/html/gladeui-2/gladeui-GladePreview.html
-share/gtk-doc/html/gladeui-2/gladeui-GladePreviewer.html
-share/gtk-doc/html/gladeui-2/gladeui-GladePropertyDef.html
-share/gtk-doc/html/gladeui-2/gladeui-GladePropertyLabel.html
-share/gtk-doc/html/gladeui-2/gladeui-GladePropertyShell.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeSignalDef.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeSignalModel.html
-share/gtk-doc/html/gladeui-2/gladeui-GladeWidgetActionDef.html
-share/gtk-doc/html/gladeui-2/gladeui-Initializing-the-library.html
-share/gtk-doc/html/gladeui-2/gladeui-Xml-Utils.html
-share/gtk-doc/html/gladeui-2/home.png
-share/gtk-doc/html/gladeui-2/index.html
-share/gtk-doc/html/gladeui-2/left-insensitive.png
-share/gtk-doc/html/gladeui-2/left.png
-share/gtk-doc/html/gladeui-2/misc.html
-share/gtk-doc/html/gladeui-2/properties.html
-share/gtk-doc/html/gladeui-2/pythonsupport.html
-share/gtk-doc/html/gladeui-2/right-insensitive.png
-share/gtk-doc/html/gladeui-2/right.png
-share/gtk-doc/html/gladeui-2/style.css
-share/gtk-doc/html/gladeui-2/up-insensitive.png
-share/gtk-doc/html/gladeui-2/up.png
-share/gtk-doc/html/gladeui-2/widgetclasses.html
 share/help/C/glade/
 share/help/C/glade/figures/
 share/help/C/glade/figures/main-window.png
@@ -453,6 +398,12 @@ share/help/cs/glade/figures/
 share/help/cs/glade/figures/main-window.png
 share/help/cs/glade/index.docbook
 share/help/cs/glade/legal.xml
+share/help/da/
+share/help/da/glade/
+share/help/da/glade/figures/
+share/help/da/glade/figures/main-window.png
+share/help/da/glade/index.docbook
+share/help/da/glade/legal.xml
 share/help/de/glade/
 share/help/de/glade/figures/
 share/help/de/glade/figures/main-window.png
