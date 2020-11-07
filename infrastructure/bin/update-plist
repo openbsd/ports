@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.192 2020/06/26 14:47:05 espie Exp $
+# $OpenBSD: update-plist,v 1.193 2020/11/07 10:54:22 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1892,10 +1892,6 @@ sub try_pkglocate
 			$state->say("pkglocate already ran")
 			    unless $state->{quiet};
 			return;
-		}
-		if (defined $state->{PKGLOCATE_COOKIE}) {
-			if (-e $state->{PKGLOCATE_COOKIE}) {
-			}
 		}
 		$state->say("Looking for unregistered conflicts")
 		    unless $state->{quiet};
