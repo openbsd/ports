@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2020/11/06 16:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.187 2020/11/07 09:01:25 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -10,7 +10,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-extras=	0
+REVISION-main=		0
+REVISION-extras=	1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -36,6 +37,14 @@ RUN_DEPENDS-main +=	x11/xdg-user-dirs-gtk
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
 ################################################################################
 
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-developer-tools.bst
+RUN_DEPENDS-extras +=	x11/gnome/builder \
+			x11/gnome/dconf-editor \
+			x11/gnome/devhelp
+
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-os-services.bst
+RUN_DEPENDS-main +=	sysutils/upower
+
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-shell.bst
 RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			net/glib2-networking \
@@ -54,7 +63,6 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon \
 			x11/gnome/shell \
 			x11/gnome/shell-extensions \
-			x11/gnome/themes-extra \
 			x11/gnome/user-docs \
 			x11/gnome/mutter \
 			x11/gnome/orca \
@@ -77,10 +85,16 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/photos \
 			x11/gnome/screenshot \
 			x11/gnome/terminal \
-			x11/gnome/totem \
-			x11/gnome/weather
+			x11/gnome/weather \
+			x11/gnome/yelp
 # replacement for gnome-system-monitor
 RUN_DEPENDS-main +=	x11/gnome/usage
+
+RUN_DEPENDS-extras +=	graphics/simple-scan \
+			www/epiphany \
+			x11/gnome/baobab \
+			x11/gnome/system-monitor \
+			x11/gnome/totem
 
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core-deps.bst
@@ -99,23 +113,13 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			net/gupnp/igd \
 			x11/gnome/bijiben \
 			x11/gnome/books \
-			x11/gnome/builder \
-			x11/gnome/dconf-editor \
+			x11/gnome/connections \
 			x11/gnome/devel-docs \
-			x11/gnome/devhelp \
 			x11/gnome/dictionary \
 			x11/gnome/documents \
 			x11/gnome/todo \
+			x11/gnome/themes-extra \
 			x11/gnome/tweaks
-
-# moved from core
-RUN_DEPENDS-extras +=	graphics/simple-scan \
-			www/epiphany \
-			x11/gnome/baobab \
-			x11/gnome/system-monitor
-
-# misc
-RUN_DEPENDS-extras +=	x11/gnome/connections
 
 # depends on -main
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main
