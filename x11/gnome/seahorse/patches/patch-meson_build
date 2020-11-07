@@ -1,0 +1,16 @@
+$OpenBSD: patch-meson_build,v 1.1 2020/11/07 17:50:53 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/seahorse/-/merge_requests/142
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -37,7 +37,7 @@ glib_deps = [
+   dependency('gmodule-2.0', version: '>=' + min_glib_version),
+ ]
+ gtk = dependency('gtk+-3.0', version: '>= 3.22.0')
+-libhandy_dep = dependency('libhandy-1.0', version: '>= 1.0.0', required: false)
++libhandy_dep = dependency('libhandy-1', version: '>= 1.0.0', required: false)
+ if not libhandy_dep.found()
+   libhandy_subproj = subproject(
+     'libhandy',
