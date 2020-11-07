@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2020/11/07 15:50:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.192 2020/11/07 16:26:41 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -102,7 +102,7 @@ RUN_DEPENDS-extras +=	graphics/simple-scan \
 RUN_DEPENDS-main +=	x11/gnome/grilo-plugins \
 			x11/gnome/online-accounts \
 			x11/gnome/online-miners \
-			x11/gnome/tracker-miners
+			x11/gnome/tracker-miners \
 			x11/gnome/tracker3-miners
 
 ################################################################################
