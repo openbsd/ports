@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2020/11/07 11:39:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.191 2020/11/07 15:50:53 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -10,7 +10,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-extras=	2
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -53,7 +53,6 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/color-manager \
 			x11/gnome/control-center \
 			x11/gnome/desktop=${V} \
-			x11/gnome/getting-started-docs \
 			x11/gnome/gdm \
 			x11/gnome/gvfs \
 			x11/gnome/initial-setup \
@@ -63,6 +62,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon \
 			x11/gnome/shell \
 			x11/gnome/shell-extensions \
+			x11/gnome/tour \
 			x11/gnome/user-docs \
 			x11/gnome/mutter \
 			x11/gnome/orca \
