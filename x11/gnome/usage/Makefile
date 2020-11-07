@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/07 11:20:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/07 09:50:42 ajacoutot Exp $
 
 COMMENT=		system resources status
 
 GNOME_PROJECT=		gnome-usage
-GNOME_VERSION=		3.32.0
+GNOME_VERSION=		3.38.0
 
 CATEGORIES=		sysutils
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject dazzle-1.0 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtop-2.0 intl m
-WANTLIB += pango-1.0 pangocairo-1.0
+WANTLIB += c cairo dazzle-1.0 gdk-3 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-3 gtop-2.0 handy-1 intl m pango-1.0 tracker-sparql-3.0
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -21,6 +20,8 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache vala
 
 LIB_DEPENDS=		devel/libgtop2 \
-			x11/gnome/libdazzle
+			x11/gnome/libdazzle \
+			x11/gnome/tracker3 \
+			x11/libhandy
 
 .include <bsd.port.mk>
