@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/18 08:36:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/07 08:40:59 ajacoutot Exp $
+
+# XXX check for tracker3 support at next update
+#RUN_DEPENDS +=		x11/gnome/tracker3
 
 COMMENT=		simple and modern GTK eBook viewer
 
 GH_ACCOUNT=		johnfactotum
 GH_PROJECT=		foliate
 GH_TAGNAME=		2.5.0
+REVISION=		0
 
 CATEGORIES=		textproc graphics
 
@@ -29,7 +33,6 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			textproc/hyphen \
 			www/webkitgtk4 \
 			x11/gnome/gjs \
-			x11/gnome/tracker \
 			x11/gtk+3,-guic \
 			x11/libhandy
 
