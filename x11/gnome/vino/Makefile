@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2020/04/02 14:34:50 robert Exp $
+# $OpenBSD: Makefile,v 1.73 2020/11/07 10:18:40 ajacoutot Exp $
 
 COMMENT=		GNOME desktop sharing server
 
 GNOME_PROJECT=		vino
 GNOME_VERSION=		3.22.0
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -11,6 +12,8 @@ MASTER_SITES0=		http://nerd.hu/distfiles/
 
 DISTFILES+=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX} \
 			vino-preferences-20200330.tar.gz:0
+
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
