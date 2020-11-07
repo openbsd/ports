@@ -1,0 +1,18 @@
+$OpenBSD: patch-core_save-git_c,v 1.1 2020/11/07 14:54:11 jasper Exp $
+
+https://github.com/subsurface/subsurface/commit/67a717dc057a5936ae1f5820fc6c470524213b97
+
+Index: core/save-git.c
+--- core/save-git.c.orig
++++ core/save-git.c
+@@ -1033,10 +1033,8 @@ int update_git_checkout(git_repository *repo, git_obje
+ 
+ static int get_authorship(git_repository *repo, git_signature **authorp)
+ {
+-#if LIBGIT2_VER_MAJOR || LIBGIT2_VER_MINOR >= 20
+ 	if (git_signature_default(authorp, repo) == 0)
+ 		return 0;
+-#endif
+ 	/* try to fetch the user info from the OS, otherwise use default values. */
+ 	struct user_info user = { .name = NULL, .email = NULL };
+ 	subsurface_user_info(&user);
