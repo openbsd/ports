@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.105 2020/08/07 09:21:02 jsg Exp $
+# $OpenBSD: Makefile,v 1.106 2020/11/07 12:12:21 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.36.1
-REVISION=		0
+GNOME_VERSION=		3.38.1
 
 CATEGORIES=		devel
 
@@ -15,8 +14,8 @@ WANTLIB += atk-1.0 c cairo cairo-gobject clang dazzle-1.0 devhelp-3
 WANTLIB += enchant-2 fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += gladeui-2 glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
 WANTLIB += intl json-glib-1.0 jsonrpc-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre peas-1.0 template_glib-1.0 vte-2.91
-WANTLIB += webkit2gtk-4.0 xml2
+WANTLIB += pangoft2-1.0 pcre peas-1.0 soup-2.4 template_glib-1.0
+WANTLIB += vte-2.91 webkit2gtk-4.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
