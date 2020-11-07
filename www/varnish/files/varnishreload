@@ -1,18 +1,19 @@
 #!/bin/sh
 #
-# $OpenBSD: varnishreload,v 1.2 2020/01/18 11:34:34 kn Exp $
+# $OpenBSD: varnishreload,v 1.3 2020/11/07 17:17:22 kn Exp $
 #
 # Reload active VCL.
 set -Cefu
 
-if getopts '' _ || [ $# -ge 2 ]; then
+if [ $# -ge 2 ] || getopts '' _
+then
 	printf 'usage:\t%s [file]\n' "${0##*/}" 1>&2
 	exit 1
 fi
 
 FILE=${1:-${SYSCONFDIR}/varnish/default.vcl}
 NAME=${FILE##*/}
-NAME=${NAME%%.*}_$(date +%Y%m%d%H%M%S)
+NAME=${NAME%%.*}_$(date -u +%Y%m%d%H%M%S)
 
 ${TRUEPREFIX}/bin/varnishadm -- vcl.load "$NAME" "$FILE"
 ${TRUEPREFIX}/bin/varnishadm -- vcl.use "$NAME"

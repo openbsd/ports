@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/10/08 12:34:23 kn Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/11/07 17:17:22 kn Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @rcscript ${RCDIR}/varnishd
@@ -140,17 +140,13 @@ lib/varnish/vmods/
 share/aclocal/
 share/aclocal/varnish-legacy.m4
 share/aclocal/varnish.m4
-share/doc/varnish/
-share/doc/varnish/builtin.vcl
-share/doc/varnish/example.vcl
+@exec-add mkdir -p /var/varnish
+@extraunexec rm -fr /var/varnish
 share/examples/varnish/
 @sample ${SYSCONFDIR}/varnish/
 share/examples/varnish/builtin.vcl
-@sample ${SYSCONFDIR}/varnish/builtin.vcl
 share/examples/varnish/example.vcl
-@sample ${SYSCONFDIR}/varnish/example.vcl
-@exec-add mkdir -p /var/varnish
-@extraunexec rm -fr /var/varnish
+@sample ${SYSCONFDIR}/varnish/default.vcl
 share/varnish/
 share/varnish/vcl/
 share/varnish/vcl/devicedetect.vcl

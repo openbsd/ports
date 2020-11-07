@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2020/10/08 12:34:23 kn Exp $
+# $OpenBSD: Makefile,v 1.55 2020/11/07 17:17:21 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
 DISTNAME =		varnish-6.5.1
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -42,7 +43,8 @@ AUTORECONF =		./autogen.sh
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			PYTHON="${MODPY_BIN}"
-CONFIGURE_ARGS =	--with-rst2man=rst2man${MODPY_BIN_SUFFIX} \
+CONFIGURE_ARGS =	--docdir=${PREFIX}/share/examples/varnish \
+			--with-rst2man=rst2man${MODPY_BIN_SUFFIX} \
 			--with-sphinx-build=sphinx-build${MODPY_BIN_SUFFIX}
 
 TEST_TARGET =		check
@@ -59,9 +61,6 @@ pre-build:
 post-install:
 	${SUBST_PROGRAM} ${FILESDIR}/varnishreload ${PREFIX}/bin/varnishreload
 	${SUBST_MAN} ${FILESDIR}/varnishreload.1 ${PREFIX}/man/man1/varnishreload.1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/varnish
-	${INSTALL_DATA} ${WRKDIST}${SYSCONFDIR}/{example,builtin}.vcl \
-	    ${PREFIX}/share/examples/varnish
 	rm -f ${PREFIX}/lib/varnish/{vmods,}/*.{a,la}
 
 .include <bsd.port.mk>
