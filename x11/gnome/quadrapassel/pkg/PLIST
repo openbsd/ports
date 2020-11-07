@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/07/29 18:27:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/11/07 12:17:25 jasper Exp $
 @bin bin/quadrapassel
 @man man/man6/quadrapassel.6
 share/applications/org.gnome.Quadrapassel.desktop
@@ -58,6 +58,24 @@ share/help/cs/quadrapassel/playgame.page
 share/help/cs/quadrapassel/preferences.page
 share/help/cs/quadrapassel/score.page
 share/help/cs/quadrapassel/translate.page
+share/help/da/
+share/help/da/quadrapassel/
+share/help/da/quadrapassel/bug-filing.page
+share/help/da/quadrapassel/develop.page
+share/help/da/quadrapassel/documentation.page
+share/help/da/quadrapassel/index.page
+share/help/da/quadrapassel/legal.xml
+share/help/da/quadrapassel/license.page
+share/help/da/quadrapassel/media/
+share/help/da/quadrapassel/media/go-home.png
+share/help/da/quadrapassel/media/go-previous.png
+share/help/da/quadrapassel/media/previous.png
+share/help/da/quadrapassel/media/quadrapassel.png
+share/help/da/quadrapassel/media/quadrapassel22.png
+share/help/da/quadrapassel/playgame.page
+share/help/da/quadrapassel/preferences.page
+share/help/da/quadrapassel/score.page
+share/help/da/quadrapassel/translate.page
 share/help/de/
 share/help/de/quadrapassel/
 share/help/de/quadrapassel/bug-filing.page
