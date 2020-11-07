@@ -1,15 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/13 12:27:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/07 08:24:25 ajacoutot Exp $
 @bin bin/skk
 include/libskk/
 include/libskk/libskk.h
-lib/girepository-1.0/
 lib/girepository-1.0/Skk-1.0.typelib
-lib/libskk.a
+@static-lib lib/libskk.a
 lib/libskk.la
 @lib lib/libskk.so.${LIBskk_VERSION}
 lib/pkgconfig/libskk.pc
 @man man/man1/skk.1
-share/gir-1.0/
 share/gir-1.0/Skk-1.0.gir
 share/libskk/
 share/libskk/rules/
@@ -61,6 +59,7 @@ share/libskk/rules/default/rom-kana/
 share/libskk/rules/default/rom-kana/default.json
 share/libskk/rules/kzik/
 share/libskk/rules/kzik/keymap/
+share/libskk/rules/kzik/keymap/common.json
 share/libskk/rules/kzik/keymap/default.json
 share/libskk/rules/kzik/keymap/hankaku-katakana.json
 share/libskk/rules/kzik/keymap/hiragana.json
@@ -123,7 +122,5 @@ share/libskk/rules/tutcode/metadata.json
 share/libskk/rules/tutcode/rom-kana/
 share/libskk/rules/tutcode/rom-kana/default.json
 share/locale/ja/LC_MESSAGES/libskk.mo
-share/vala/
-share/vala/vapi/
 share/vala/vapi/skk-1.0.deps
 share/vala/vapi/skk-1.0.vapi
