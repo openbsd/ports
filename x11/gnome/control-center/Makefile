@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2020/07/03 21:07:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2020/11/07 10:13:09 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
 COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.36.4
+GNOME_VERSION=		3.38.1
 
 CATEGORIES=		x11
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 accountsservice atk-1.0 c cairo colord colord-gtk
 WANTLIB += colordprivate cups epoxy fontconfig gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gnome-desktop-3 goa-1.0 goa-backend-1.0
-WANTLIB += gobject-2.0 gsound gtk-3 gtop-2.0 handy-0.0 ibus-1.0
+WANTLIB += gobject-2.0 gsound gtk-3 gtop-2.0 handy-1 ibus-1.0
 WANTLIB += intl m pango-1.0 pangocairo-1.0 polkit-gobject-1 pulse
 WANTLIB += pulse-mainloop-glib pwquality smbclient soup-2.4 upower-glib
 WANTLIB += xml2

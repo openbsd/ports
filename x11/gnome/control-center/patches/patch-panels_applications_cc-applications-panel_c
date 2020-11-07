@@ -1,18 +1,18 @@
-$OpenBSD: patch-panels_applications_cc-applications-panel_c,v 1.2 2020/05/14 15:20:35 ajacoutot Exp $
+$OpenBSD: patch-panels_applications_cc-applications-panel_c,v 1.3 2020/11/07 10:13:09 ajacoutot Exp $
 
 XXX no gnome-software in OpenBSD (rework and push upstream)
 
 Index: panels/applications/cc-applications-panel.c
 --- panels/applications/cc-applications-panel.c.orig
 +++ panels/applications/cc-applications-panel.c
-@@ -1575,7 +1575,11 @@ update_panel (CcApplicationsPanel *self,
+@@ -1659,7 +1659,11 @@ update_panel (CcApplicationsPanel *self,
  
-   gtk_label_set_label (GTK_LABEL (self->title_label), g_app_info_get_display_name (info));
-   gtk_stack_set_visible_child_name (GTK_STACK (self->stack), "settings");
-+#ifdef HAVE_GNOME_SOFTWARE
-   gtk_widget_show (self->header_button);
-+#else
-+  gtk_widget_hide (self->header_button);
+   gtk_label_set_label (self->title_label, g_app_info_get_display_name (info));
+   gtk_stack_set_visible_child (self->stack, GTK_WIDGET (self->settings_box));
++#ifdef HAVE_GNOME_SOFTWARE                                                      
+   gtk_widget_show (GTK_WIDGET (self->header_button));
++#else                                                                           
++  gtk_widget_hide (GTK_WIDGET (self->header_button));
 +#endif
  
    g_clear_pointer (&self->current_app_id, g_free);

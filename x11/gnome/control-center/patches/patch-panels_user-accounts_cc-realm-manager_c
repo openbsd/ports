@@ -1,4 +1,4 @@
-$OpenBSD: patch-panels_user-accounts_cc-realm-manager_c,v 1.2 2019/11/02 13:51:04 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_cc-realm-manager_c,v 1.3 2020/11/07 10:13:09 ajacoutot Exp $
 
 Fix for Heimdal (versus MIT).
 
@@ -14,7 +14,7 @@ Index: panels/user-accounts/cc-realm-manager.c
  
  #include <glib.h>
  #include <glib/gi18n.h>
-@@ -656,8 +656,10 @@ login_perform_kinit (krb5_context k5,
+@@ -655,8 +655,10 @@ login_perform_kinit (krb5_context k5,
          code = krb5_get_init_creds_opt_alloc (k5, &opts);
          g_return_val_if_fail (code == 0, code);
  
