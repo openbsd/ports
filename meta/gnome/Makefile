@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2020/11/07 10:27:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.190 2020/11/07 11:39:17 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -11,7 +11,7 @@ PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
 REVISION-main=		2
-REVISION-extras=	1
+REVISION-extras=	2
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -112,7 +112,6 @@ RUN_DEPENDS-main +=	x11/gnome/grilo-plugins \
 RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			mail/evolution \
 			net/gupnp/igd \
-			x11/gnome/bijiben \
 			x11/gnome/books \
 			x11/gnome/connections \
 			x11/gnome/devel-docs \
