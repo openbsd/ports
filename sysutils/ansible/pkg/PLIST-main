@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2020/10/09 07:18:47 pvk Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2020/11/07 19:14:57 pvk Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -149,7 +149,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/${MODPY_PYCACHE}collection.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/${MODPY_PYCACHE}login.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/${MODPY_PYCACHE}role.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/${MODPY_PYCACHE}token.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/${MODPY_PYCACHE}user_agent.${MODPY_PYC_MAGIC_TAG}pyc
@@ -256,7 +255,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/data/network/tests/inven
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/data/network/tests/test.yml.j2
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/data/network/vars/
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/data/network/vars/main.yml.j2
-lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/login.py
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/role.py
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/token.py
 lib/python${MODPY_VERSION}/site-packages/ansible/galaxy/user_agent.py
