@@ -1,16 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/08/28 11:44:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/11/07 09:39:40 ajacoutot Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
 lib/geary/
-@so lib/geary/libgeary-client-3.36.so
+@so lib/geary/libgeary-client-3.38.so
 lib/geary/plugins/
 lib/geary/plugins/desktop-notifications/
 lib/geary/plugins/desktop-notifications/desktop-notifications.plugin
 @so lib/geary/plugins/desktop-notifications/libdesktop-notifications.so
+lib/geary/plugins/email-templates/
+lib/geary/plugins/email-templates/email-templates.plugin
+@so lib/geary/plugins/email-templates/libemail-templates.so
+lib/geary/plugins/folder-highlight/
+lib/geary/plugins/folder-highlight/folder-highlight.plugin
+@so lib/geary/plugins/folder-highlight/libfolder-highlight.so
+lib/geary/plugins/mail-merge/
+@so lib/geary/plugins/mail-merge/libmail-merge.so
+lib/geary/plugins/mail-merge/mail-merge.plugin
 lib/geary/plugins/notification-badge/
 @so lib/geary/plugins/notification-badge/libnotification-badge.so
 lib/geary/plugins/notification-badge/notification-badge.plugin
+lib/geary/plugins/sent-sound/
+@so lib/geary/plugins/sent-sound/libsent-sound.so
+lib/geary/plugins/sent-sound/sent-sound.plugin
+lib/geary/plugins/special-folders/
+@so lib/geary/plugins/special-folders/libspecial-folders.so
+lib/geary/plugins/special-folders/special-folders.plugin
 lib/geary/web-extensions/
 @so lib/geary/web-extensions/libgeary-web-process.so
 share/applications/geary-autostart.desktop
@@ -43,6 +58,9 @@ share/geary/sql/version-022.sql
 share/geary/sql/version-023.sql
 share/geary/sql/version-024.sql
 share/geary/sql/version-025.sql
+share/geary/sql/version-026.sql
+share/geary/sql/version-027.sql
+share/geary/sql/version-028.sql
 share/glib-2.0/schemas/org.gnome.Geary.gschema.xml
 share/help/
 share/help/C/

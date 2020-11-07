@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2020/10/31 12:09:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2020/11/07 09:39:40 ajacoutot Exp $
 
 COMMENT=		email application built around conversations
 
 GNOME_PROJECT=		geary
-GNOME_VERSION=		3.36.3.1
+GNOME_VERSION=		3.38.1
 
 CATEGORIES=		mail
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c cairo enchant-2 folks gck-1 gcr-base-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmime-3.0 goa-1.0 gobject-2.0
-WANTLIB += gspell-1 gtk-3 handy-0.0 intl javascriptcoregtk-4.0
+WANTLIB += gsound gspell-1 gtk-3 handy-1 intl javascriptcoregtk-4.0
 WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 peas-1.0 secret-1
 WANTLIB += soup-2.4 sqlite3 webkit2gtk-4.0 xml2 ytnef
 
@@ -43,7 +43,8 @@ RUN_DEPENDS=		devel/iso-codes
 BUILD_DEPENDS=		devel/appstream-glib \
 			devel/iso-codes
 
-LIB_DEPENDS=		converters/libytnef \
+LIB_DEPENDS=		audio/gsound \
+			converters/libytnef \
 			databases/sqlite3 \
 			devel/libgee \
 			devel/libpeas \
