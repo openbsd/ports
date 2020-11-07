@@ -1,23 +1,26 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/07 08:19:47 ajacoutot Exp $
 
-COMMENT =	large dictionary for the SKK system
+COMMENT =		large dictionary for the SKK system
 
-DISTNAME =	skk-jisyo-20131026
+DISTNAME =		SKK-JISYO.L
+EXTRACT_SUFX =		.gz
+PKGNAME =		skk-jisyo-20201101
+DIST_SUBDIR =		skk-jisyo-20201101
 
-CATEGORIES =	japanese
+CATEGORIES =		japanese
 
-HOMEPAGE =	http://openlab.ring.gr.jp/skk/
+HOMEPAGE =		http://openlab.ring.gr.jp/skk/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://distfiles.bsdfrog.org/
+MASTER_SITES =		http://openlab.ring.gr.jp/skk/dic/
 
-NO_BUILD =	Yes
-NO_TEST =	Yes
+NO_BUILD =		Yes
+NO_TEST =		Yes
 
-PKG_ARCH =	*
-WRKSRC =	${WRKDIR}
+PKG_ARCH =		*
+WRKSRC =		${WRKDIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/skk
