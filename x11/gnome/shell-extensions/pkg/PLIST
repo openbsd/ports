@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/11/02 15:04:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/11/07 13:13:35 jasper Exp $
 share/glib-2.0/schemas/00_org.gnome.shell.extensions.classic.gschema.override
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.screenshot-window-sizer.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.user-theme.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.window-list.gschema.xml
-share/gnome-session/sessions/gnome-classic.session
 share/gnome-shell/extensions/
 share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/extension.js
@@ -44,7 +43,9 @@ share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcam
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/metadata.json
+share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/prefs.js
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/stylesheet.css
+share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/util.js
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/classic.css
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/extension.js
@@ -107,6 +108,7 @@ share/locale/id/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/is/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/it/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ja/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/kab/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/kk/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/km/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/kn/LC_MESSAGES/gnome-shell-extensions.mo
