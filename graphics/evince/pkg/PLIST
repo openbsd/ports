@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/05/20 11:17:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2020/11/07 10:04:21 jasper Exp $
 @conflict evince-djvu-*
 @conflict evince-dvi-*
 @conflict nautilus-evince-*
@@ -37,6 +37,7 @@ include/evince/${MAJ_V}/libdocument/ev-document-type-builtins.h
 include/evince/${MAJ_V}/libdocument/ev-document.h
 include/evince/${MAJ_V}/libdocument/ev-file-exporter.h
 include/evince/${MAJ_V}/libdocument/ev-file-helpers.h
+include/evince/${MAJ_V}/libdocument/ev-form-field-private.h
 include/evince/${MAJ_V}/libdocument/ev-form-field.h
 include/evince/${MAJ_V}/libdocument/ev-image.h
 include/evince/${MAJ_V}/libdocument/ev-init.h
@@ -74,6 +75,8 @@ lib/girepository-1.0/EvinceView-${MAJ_V}.typelib
 @lib lib/libevview3.so.${LIBevview3_VERSION}
 lib/pkgconfig/evince-document-${MAJ_V}.pc
 lib/pkgconfig/evince-view-${MAJ_V}.pc
+@man man/man1/evince-previewer.1
+@man man/man1/evince-thumbnailer.1
 @man man/man1/evince.1
 share/GConf/gsettings/evince.convert
 share/applications/org.gnome.Evince-previewer.desktop
