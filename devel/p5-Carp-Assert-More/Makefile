@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/11/07 06:15:36 benoit Exp $
 
 COMMENT=	convenience wrappers around Carp::Assert
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	Carp-Assert-More-1.20
+DISTNAME =	Carp-Assert-More-1.24
 CATEGORIES=	devel
-REVISION =	0
 
 # Artistic 2.0
 PERMIT_PACKAGE=	Yes
