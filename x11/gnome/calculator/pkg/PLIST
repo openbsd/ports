@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/05/14 15:12:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/11/07 11:23:00 jasper Exp $
 @conflict gcalctool-*
 @pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
@@ -163,6 +163,39 @@ share/help/cs/gnome-calculator/scientific.page
 share/help/cs/gnome-calculator/superscript.page
 share/help/cs/gnome-calculator/trigonometry.page
 share/help/cs/gnome-calculator/variables.page
+share/help/da/
+share/help/da/gnome-calculator/
+share/help/da/gnome-calculator/absolute.page
+share/help/da/gnome-calculator/base.page
+share/help/da/gnome-calculator/boolean.page
+share/help/da/gnome-calculator/complex.page
+share/help/da/gnome-calculator/conv-base.page
+share/help/da/gnome-calculator/conv-character.page
+share/help/da/gnome-calculator/conv-currency.page
+share/help/da/gnome-calculator/conv-length.page
+share/help/da/gnome-calculator/conv-time.page
+share/help/da/gnome-calculator/conv-weight.page
+share/help/da/gnome-calculator/equation.page
+share/help/da/gnome-calculator/factorial.page
+share/help/da/gnome-calculator/factorize.page
+share/help/da/gnome-calculator/figures/
+share/help/da/gnome-calculator/figures/org.gnome.Calculator.svg
+share/help/da/gnome-calculator/financial.page
+share/help/da/gnome-calculator/functions.page
+share/help/da/gnome-calculator/history.page
+share/help/da/gnome-calculator/index.page
+share/help/da/gnome-calculator/keyboard.page
+share/help/da/gnome-calculator/legal.xml
+share/help/da/gnome-calculator/logarithm.page
+share/help/da/gnome-calculator/modulus.page
+share/help/da/gnome-calculator/mouse.page
+share/help/da/gnome-calculator/number-display.page
+share/help/da/gnome-calculator/percentage.page
+share/help/da/gnome-calculator/power.page
+share/help/da/gnome-calculator/scientific.page
+share/help/da/gnome-calculator/superscript.page
+share/help/da/gnome-calculator/trigonometry.page
+share/help/da/gnome-calculator/variables.page
 share/help/de/
 share/help/de/gnome-calculator/
 share/help/de/gnome-calculator/absolute.page
@@ -889,6 +922,39 @@ share/help/te/gnome-calculator/scientific.page
 share/help/te/gnome-calculator/superscript.page
 share/help/te/gnome-calculator/trigonometry.page
 share/help/te/gnome-calculator/variables.page
+share/help/uk/
+share/help/uk/gnome-calculator/
+share/help/uk/gnome-calculator/absolute.page
+share/help/uk/gnome-calculator/base.page
+share/help/uk/gnome-calculator/boolean.page
+share/help/uk/gnome-calculator/complex.page
+share/help/uk/gnome-calculator/conv-base.page
+share/help/uk/gnome-calculator/conv-character.page
+share/help/uk/gnome-calculator/conv-currency.page
+share/help/uk/gnome-calculator/conv-length.page
+share/help/uk/gnome-calculator/conv-time.page
+share/help/uk/gnome-calculator/conv-weight.page
+share/help/uk/gnome-calculator/equation.page
+share/help/uk/gnome-calculator/factorial.page
+share/help/uk/gnome-calculator/factorize.page
+share/help/uk/gnome-calculator/figures/
+share/help/uk/gnome-calculator/figures/org.gnome.Calculator.svg
+share/help/uk/gnome-calculator/financial.page
+share/help/uk/gnome-calculator/functions.page
+share/help/uk/gnome-calculator/history.page
+share/help/uk/gnome-calculator/index.page
+share/help/uk/gnome-calculator/keyboard.page
+share/help/uk/gnome-calculator/legal.xml
+share/help/uk/gnome-calculator/logarithm.page
+share/help/uk/gnome-calculator/modulus.page
+share/help/uk/gnome-calculator/mouse.page
+share/help/uk/gnome-calculator/number-display.page
+share/help/uk/gnome-calculator/percentage.page
+share/help/uk/gnome-calculator/power.page
+share/help/uk/gnome-calculator/scientific.page
+share/help/uk/gnome-calculator/superscript.page
+share/help/uk/gnome-calculator/trigonometry.page
+share/help/uk/gnome-calculator/variables.page
 share/help/zh_CN/
 share/help/zh_CN/gnome-calculator/
 share/help/zh_CN/gnome-calculator/absolute.page
