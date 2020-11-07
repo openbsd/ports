@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/07 09:06:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/07 09:11:43 jasper Exp $
 
 COMMENT =		building blocks for modern adaptive GNOME apps
 
@@ -40,8 +40,5 @@ LDFLAGS =		-L${X11BASE}/lib
 TEST_IS_INTERACTIVE =	X11
 
 SUBST_VARS +=		API_V
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
