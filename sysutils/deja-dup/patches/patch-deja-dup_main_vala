@@ -1,0 +1,24 @@
+$OpenBSD: patch-deja-dup_main_vala,v 1.1 2020/11/07 09:14:04 jasper Exp $
+
+https://gitlab.gnome.org/World/deja-dup/-/commit/77bc3d5c24db442a5870960b1cc8e1c221175bae
+
+Index: deja-dup/main.vala
+--- deja-dup/main.vala.orig
++++ deja-dup/main.vala
+@@ -156,6 +156,7 @@ public class DejaDupApp : Gtk.Application
+   {
+     base.startup();
+ 
++    Hdy.init();
+     DejaDup.gui_initialize();
+ 
+     add_action_entries(ACTIONS, this);
+@@ -371,8 +372,6 @@ int main(string[] args)
+   Gtk.Window.set_default_icon_name(Config.ICON_NAME);
+ 
+   resources_get_resource()._register();
+-
+-  Hdy.init(ref args);
+ 
+   return DejaDupApp.get_instance().run(args);
+ }

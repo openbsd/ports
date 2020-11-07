@@ -1,0 +1,26 @@
+$OpenBSD: patch-deja-dup_ConfigLocationRow_vala,v 1.1 2020/11/07 09:14:04 jasper Exp $
+
+https://gitlab.gnome.org/World/deja-dup/-/commit/77bc3d5c24db442a5870960b1cc8e1c221175bae
+
+Index: deja-dup/ConfigLocationRow.vala
+--- deja-dup/ConfigLocationRow.vala.orig
++++ deja-dup/ConfigLocationRow.vala
+@@ -21,17 +21,8 @@ public class ConfigLocationRow : BuilderWidget
+ 
+     update_text();
+ 
+-    // TODO: libhandy 1.0 makes this easier with a direct ActionRow "activated" signal
+-    var group = builder.get_object("storage_group") as Hdy.PreferencesGroup;
+     var location = builder.get_object("location") as Hdy.ActionRow;
+-    var listbox = location.get_ancestor(typeof(Gtk.ListBox)) as Gtk.ListBox;
+-    if (listbox != null) {
+-      listbox.row_activated.connect((row) => {
+-        if (row == location) {
+-          show_location_options();
+-        }
+-      });
+-    }
++    location.activated.connect(show_location_options);
+ 
+     new ConfigLocationGrid(builder);
+   }

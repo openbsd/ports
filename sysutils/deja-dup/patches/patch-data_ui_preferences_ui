@@ -1,0 +1,38 @@
+$OpenBSD: patch-data_ui_preferences_ui,v 1.1 2020/11/07 09:14:04 jasper Exp $
+
+https://gitlab.gnome.org/World/deja-dup/-/commit/77bc3d5c24db442a5870960b1cc8e1c221175bae
+
+Index: data/ui/preferences.ui
+--- data/ui/preferences.ui.orig
++++ data/ui/preferences.ui
+@@ -14,6 +14,7 @@ SPDX-FileCopyrightText: Michael Terry
+     <property name="default_width">500</property>
+     <property name="default_height">500</property>
+     <property name="destroy_with_parent">True</property>
++    <property name="search_enabled">False</property>
+     <child>
+       <object class="HdyPreferencesPage">
+         <property name="visible">True</property>
+@@ -29,10 +30,11 @@ SPDX-FileCopyrightText: Michael Terry
+               <object class="HdyActionRow" id="location">
+                 <property name="visible">True</property>
+                 <property name="can_focus">True</property>
++                <property name="activatable_widget">storage_row_grid</property>
+                 <property name="title" translatable="yes">_Location</property>
+                 <property name="use_underline">True</property>
+-                <child type="action">
+-                  <object class="GtkGrid">
++                <child>
++                  <object class="GtkGrid" id="storage_row_grid">
+                     <property name="visible">True</property>
+                     <property name="can_focus">False</property>
+                     <property name="halign">center</property>
+@@ -106,7 +108,7 @@ SPDX-FileCopyrightText: Michael Terry
+                 <property name="activatable_widget">auto_backup</property>
+                 <property name="title" translatable="yes">Back Up _Automatically</property>
+                 <property name="use_underline">True</property>
+-                <child type="action">
++                <child>
+                   <object class="GtkSwitch" id="auto_backup">
+                     <property name="visible">True</property>
+                     <property name="can_focus">False</property>

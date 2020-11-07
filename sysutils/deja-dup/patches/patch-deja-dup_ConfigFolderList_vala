@@ -1,0 +1,39 @@
+$OpenBSD: patch-deja-dup_ConfigFolderList_vala,v 1.1 2020/11/07 09:14:04 jasper Exp $
+
+https://gitlab.gnome.org/World/deja-dup/-/commit/77bc3d5c24db442a5870960b1cc8e1c221175bae
+
+Index: deja-dup/ConfigFolderList.vala
+--- deja-dup/ConfigFolderList.vala.orig
++++ deja-dup/ConfigFolderList.vala
+@@ -50,6 +50,14 @@ public class ConfigFolderList : BuilderWidget
+       row.visible = true;
+       group.add(row);
+ 
++      var install_env = DejaDup.InstallEnv.instance();
++      if (check_availability && !install_env.is_file_available(file)) {
++        var icon = new Gtk.Image.from_icon_name("dialog-warning", Gtk.IconSize.LARGE_TOOLBAR);
++        icon.visible = true;
++        icon.tooltip_text = _("This folder cannot be backed up because Backups does not have access to it.");
++        row.add(icon);
++      }
++
+       var button = new Gtk.Button.from_icon_name("list-remove-symbolic", Gtk.IconSize.BUTTON);
+       button.get_accessible().set_name(_("Remove"));
+       button.valign = Gtk.Align.CENTER;
+@@ -58,15 +66,7 @@ public class ConfigFolderList : BuilderWidget
+       button.clicked.connect(() => {
+         handle_remove(button.get_data("folder"));
+       });
+-      row.add_action(button);
+-
+-      var install_env = DejaDup.InstallEnv.instance();
+-      if (check_availability && !install_env.is_file_available(file)) {
+-        var icon = new Gtk.Image.from_icon_name("dialog-warning", Gtk.IconSize.LARGE_TOOLBAR);
+-        icon.visible = true;
+-        icon.tooltip_text = _("This folder cannot be backed up because Backups does not have access to it.");
+-        row.add_action(icon);
+-      }
++      row.add(button);
+     }
+ 
+     // Now the "add item" row
