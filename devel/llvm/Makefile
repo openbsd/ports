@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.265 2020/11/07 11:45:52 jca Exp $
+# $OpenBSD: Makefile,v 1.266 2020/11/07 22:21:41 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -103,7 +103,7 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 
 # Disable some protections in the compiler to regain performance.
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
-    ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el" || \
+    ${MACHINE_ARCH} == "mips64" || \
     ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "powerpc"
 CXXFLAGS+=	-fno-ret-protector
 .endif
