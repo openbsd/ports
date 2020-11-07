@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2020/10/10 18:31:55 daniel Exp $
+# $OpenBSD: Makefile,v 1.46 2020/11/07 20:32:47 daniel Exp $
 
 COMMENT =		optimising static compiler for Python and Cython
 
@@ -17,13 +17,20 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-BUILD_DEPENDS =		devel/py-setuptools_git${MODPY_FLAVOR}
-TEST_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
+
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+BUILD_DEPENDS =		devel/py-setuptools_git${MODPY_FLAVOR}
+
+.if ${FLAVOR:Mpython3}
+TEST_DEPENDS +=		math/py-numpy${MODPY_FLAVOR}
+.else
+NO_TEST =		Yes
+.endif
 
 PORTHOME =		${WRKDIR}
 
