@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2020/11/06 16:33:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.288 2020/11/07 14:22:25 jasper Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -17,7 +17,7 @@
      SUBDIR += calendar
      SUBDIR += caribou
      SUBDIR += characters
-     SUBDIR += chrome-gnome-shell 
+     SUBDIR += chrome-gnome-shell
      SUBDIR += clocks
      SUBDIR += color-manager
      SUBDIR += connections
@@ -69,6 +69,7 @@
      SUBDIR += libsecret
      SUBDIR += libxklavier
      SUBDIR += libzapojit
+     SUBDIR += mahjongg
      SUBDIR += maps
      SUBDIR += menus
      SUBDIR += mime-data
