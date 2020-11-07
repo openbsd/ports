@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2020/05/14 11:41:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.39 2020/11/07 22:20:46 sthen Exp $
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
 @pkgpath mail/mutt/snapshot[,compressed][,hcache][,idn][,sidebar]${FLAVOR_COMMA}
 @pkgpath mail/mutt[,compressed][,idn][,sidebar]${FLAVOR_COMMA}
@@ -84,6 +84,8 @@ share/examples/mutt/markdown2html
 @comment share/examples/mutt/mime.types
 share/examples/mutt/mime.types.dist
 @sample ${SYSCONFDIR}/mime.types
+share/examples/mutt/mutt_oauth2.py
+share/examples/mutt/mutt_oauth2.py.README
 share/examples/mutt/mutt_xtitle
 share/examples/mutt/pgp2.rc
 share/examples/mutt/pgp5.rc
