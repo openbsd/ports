@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2020/10/07 07:05:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2020/11/07 10:25:19 ajacoutot Exp $
 bin/gnome-music
 lib/org.gnome.Music/
 lib/org.gnome.Music/girepository-1.0/
@@ -10,8 +10,9 @@ lib/org.gnome.Music/pkgconfig/
 lib/org.gnome.Music/pkgconfig/gfm-0.1.pc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/__init__.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/albumartcache.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/albumart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/application.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/artcache.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/artistart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/corealbum.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coreartist.py
@@ -20,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/coregrilo.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coremodel.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coreselection.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coresong.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/embeddedart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/grlsearchwrapper.py
@@ -30,18 +32,20 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/inhibitsuspend.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/mediakeys.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/mpris.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/musiclogger.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/notificationmanager.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/pauseonsuspend.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/player.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/scrobbler.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/search.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/songart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/songliststore.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/storeart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/trackerwrapper.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/utils.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/albumsview.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/artistsview.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/baseview.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/emptyview.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/playlistsview.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/searchview.py
@@ -54,10 +58,9 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/albumwidget.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/appmenu.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artistalbumswidget.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artistalbumwidget.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artistartstack.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artistsearchtile.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artisttile.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/coverstack.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artstack.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/disclistboxwidget.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/headerbar.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/lastfmdialog.py

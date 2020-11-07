@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.76 2020/10/07 07:05:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2020/11/07 10:25:19 ajacoutot Exp $
 
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
-GNOME_VERSION=		3.36.6
+GNOME_VERSION=		3.38.1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -30,7 +30,7 @@ BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
 			x11/gnome/online-accounts \
-			x11/gnome/tracker
+			x11/gnome/tracker3
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
@@ -38,7 +38,7 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
 			x11/gnome/online-accounts \
-			x11/gnome/tracker
+			x11/gnome/tracker3
 
 # sndio(7) support
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base
