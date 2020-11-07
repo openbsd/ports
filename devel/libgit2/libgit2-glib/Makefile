@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2020/10/03 15:39:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2020/11/07 14:53:25 jasper Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
 V=			0.28.0.1
 DISTNAME=		libgit2-glib-$V
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=	git2-glib-1.0        5.1      # 0.0
 
@@ -25,7 +25,7 @@ MODPY_VERSION=          ${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
-LIB_DEPENDS=		devel/libgit2/libgit2>=0.28.0
+LIB_DEPENDS=		devel/libgit2/libgit2>=1.1.0
 
 USE_GMAKE=		Yes
 
