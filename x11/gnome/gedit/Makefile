@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.170 2020/11/06 10:53:18 ajacoutot Exp $
-
-BROKEN=			needs update to 3.38.0
+# $OpenBSD: Makefile,v 1.171 2020/11/07 11:11:11 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.36.2
-REVISION=		2
+GNOME_VERSION=		3.38.0
 
 CATEGORIES=		editors
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 atk-1.0 c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += atk-1.0 c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
 WANTLIB += intl m pango-1.0 peas-1.0 peas-gtk-1.0 amtk-5 tepl-5
 
