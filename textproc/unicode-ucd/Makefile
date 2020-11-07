@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/07 07:48:55 ajacoutot Exp $
 
 COMMENT =		Unicode Character Database (UCD)
 
-# XXX: Don't forget to bump x11/gnome/gucharmap when updating
-V =			12.0.0
+# XXX: bump x11/gnome/gucharmap when updating
+V =			13.0.0
 DISTNAME =		UCD
 PKGNAME =		unicode-ucd-$V
 CATEGORIES =		textproc
