@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/05/14 15:19:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/11/07 10:01:26 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/applications/org.gnome.clocks.desktop
 share/dbus-1/services/org.gnome.clocks.service
@@ -91,6 +91,21 @@ share/help/el/gnome-clocks/timer.page
 share/help/el/gnome-clocks/world-add.page
 share/help/el/gnome-clocks/world-check.page
 share/help/el/gnome-clocks/world-remove.page
+share/help/en_GB/
+share/help/en_GB/gnome-clocks/
+share/help/en_GB/gnome-clocks/alarm-add.page
+share/help/en_GB/gnome-clocks/alarm-edit.page
+share/help/en_GB/gnome-clocks/alarm-remove.page
+share/help/en_GB/gnome-clocks/alarm-snooze-stop.page
+share/help/en_GB/gnome-clocks/figures/
+share/help/en_GB/gnome-clocks/figures/gnome-clocks.png
+share/help/en_GB/gnome-clocks/index.page
+share/help/en_GB/gnome-clocks/legal.xml
+share/help/en_GB/gnome-clocks/stopwatch.page
+share/help/en_GB/gnome-clocks/timer.page
+share/help/en_GB/gnome-clocks/world-add.page
+share/help/en_GB/gnome-clocks/world-check.page
+share/help/en_GB/gnome-clocks/world-remove.page
 share/help/es/gnome-clocks/
 share/help/es/gnome-clocks/alarm-add.page
 share/help/es/gnome-clocks/alarm-edit.page
@@ -263,6 +278,20 @@ share/help/sv/gnome-clocks/timer.page
 share/help/sv/gnome-clocks/world-add.page
 share/help/sv/gnome-clocks/world-check.page
 share/help/sv/gnome-clocks/world-remove.page
+share/help/tr/gnome-clocks/
+share/help/tr/gnome-clocks/alarm-add.page
+share/help/tr/gnome-clocks/alarm-edit.page
+share/help/tr/gnome-clocks/alarm-remove.page
+share/help/tr/gnome-clocks/alarm-snooze-stop.page
+share/help/tr/gnome-clocks/figures/
+share/help/tr/gnome-clocks/figures/gnome-clocks.png
+share/help/tr/gnome-clocks/index.page
+share/help/tr/gnome-clocks/legal.xml
+share/help/tr/gnome-clocks/stopwatch.page
+share/help/tr/gnome-clocks/timer.page
+share/help/tr/gnome-clocks/world-add.page
+share/help/tr/gnome-clocks/world-check.page
+share/help/tr/gnome-clocks/world-remove.page
 share/help/uk/gnome-clocks/
 share/help/uk/gnome-clocks/alarm-add.page
 share/help/uk/gnome-clocks/alarm-edit.page

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.48 2020/05/14 15:19:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2020/11/07 10:01:26 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		3.36.2
+GNOME_VERSION=		3.38.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += c gdk-3 geoclue-2 geocode-glib gio-2.0 glib-2.0
 WANTLIB += gnome-desktop-3 gobject-2.0 gsound gtk-3 gweather-3
-WANTLIB += handy-0.0 intl m
+WANTLIB += handy-1 intl m
 
 MODULES=		devel/dconf \
 			devel/meson \
