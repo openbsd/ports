@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.67 2020/05/14 15:29:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.68 2020/11/07 13:13:36 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
 @so lib/nautilus/extensions-3.0/libterminal-nautilus.so
 @bin libexec/gnome-terminal-server
+@man man/man1/gnome-terminal.1
 share/applications/org.gnome.Terminal.desktop
 share/dbus-1/services/org.gnome.Terminal.service
 share/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
@@ -542,6 +543,39 @@ share/help/sv/gnome-terminal/txt-copy-paste.page
 share/help/sv/gnome-terminal/txt-links.page
 share/help/sv/gnome-terminal/txt-search.page
 share/help/sv/gnome-terminal/txt-select-text.page
+share/help/uk/gnome-terminal/
+share/help/uk/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/uk/gnome-terminal/app-colors.page
+share/help/uk/gnome-terminal/app-cursor.page
+share/help/uk/gnome-terminal/app-fonts.page
+share/help/uk/gnome-terminal/app-fullscreen.page
+share/help/uk/gnome-terminal/app-terminal-sizes.page
+share/help/uk/gnome-terminal/app-zoom.page
+share/help/uk/gnome-terminal/figures/
+share/help/uk/gnome-terminal/gs-execute-commands.page
+share/help/uk/gnome-terminal/gs-tabs.page
+share/help/uk/gnome-terminal/index.page
+share/help/uk/gnome-terminal/introduction.page
+share/help/uk/gnome-terminal/legal.xml
+share/help/uk/gnome-terminal/overview.page
+share/help/uk/gnome-terminal/pref-bell.page
+share/help/uk/gnome-terminal/pref-custom-command.page
+share/help/uk/gnome-terminal/pref-custom-exit.page
+share/help/uk/gnome-terminal/pref-keyboard-access.page
+share/help/uk/gnome-terminal/pref-login-shell.page
+share/help/uk/gnome-terminal/pref-menubar.page
+share/help/uk/gnome-terminal/pref-profile-char-width.page
+share/help/uk/gnome-terminal/pref-profile-encoding.page
+share/help/uk/gnome-terminal/pref-profiles.page
+share/help/uk/gnome-terminal/pref-scrolling.page
+share/help/uk/gnome-terminal/pref-tab-window.page
+share/help/uk/gnome-terminal/pref-user-input.page
+share/help/uk/gnome-terminal/pref.page
+share/help/uk/gnome-terminal/prob-reset.page
+share/help/uk/gnome-terminal/txt-copy-paste.page
+share/help/uk/gnome-terminal/txt-links.page
+share/help/uk/gnome-terminal/txt-search.page
+share/help/uk/gnome-terminal/txt-select-text.page
 share/icons/hicolor/scalable/apps/org.gnome.Terminal.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Terminal-symbolic.svg
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
