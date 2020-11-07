@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1106 2020/11/06 16:34:30 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1107 2020/11/07 15:56:32 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1904,6 +1904,7 @@ my $obsolete_reason = {
 	'vte' => 5,
 	'keybinder' => 6,
 	'vinagre' => 3,
+	'gnome-getting-started-docs' => 5,
 };
 
 # reasons for obsolete packages
