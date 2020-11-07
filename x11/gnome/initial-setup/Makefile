@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2020/07/05 20:56:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2020/11/07 15:51:26 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		3.36.4
+GNOME_VERSION=		3.38.1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -31,8 +31,8 @@ LIB_DEPENDS=		inputmethods/ibus \
 BUILD_DEPENDS=		geo/geoclue2
 RUN_DEPENDS=		geo/geoclue2
 
-# gnome-welcome-tour
-RUN_DEPENDS +=		x11/gnome/getting-started-docs
+# runs gnome-tour at the end of an initial setup run
+RUN_DEPENDS +=		x11/gnome/tour
 
 # share/polkit-1/rules.d/20-gnome-initial-setup.rules
 RUN_DEPENDS +=		sysutils/polkit
