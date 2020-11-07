@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2020/11/06 17:02:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.202 2020/11/07 08:37:41 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -29,7 +29,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		x11/gnome/gvfs \
 			devel/gsettings-desktop-schemas
 
-# needs org.freedesktop.Tracker.Miner.Files
+# needs tracker-miner-fs
 RUN_DEPENDS +=		x11/gnome/tracker3-miners
 
 LIB_DEPENDS=		graphics/libgexiv2 \
