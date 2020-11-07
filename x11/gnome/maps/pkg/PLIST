@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/05/14 15:47:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2020/11/07 10:09:40 ajacoutot Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
@@ -43,6 +43,7 @@ share/gnome-maps/icons/hicolor/24x24/apps/user-location.png
 share/gnome-maps/icons/hicolor/32x32/
 share/gnome-maps/icons/hicolor/32x32/apps/
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-continue-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-elevator-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-left-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-right-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-roundabout-0-symbolic.svg
@@ -65,6 +66,8 @@ share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpleft-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpright-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightleft-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-u-turn-left-symbolic.svg
+share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-u-turn-right-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/mark-location.png
 share/gnome-maps/maps-service.json
 share/gnome-maps/org.gnome.Maps
@@ -128,6 +131,7 @@ share/locale/sl/LC_MESSAGES/gnome-maps.mo
 share/locale/sr/LC_MESSAGES/gnome-maps.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-maps.mo
 share/locale/sv/LC_MESSAGES/gnome-maps.mo
+share/locale/ta/LC_MESSAGES/gnome-maps.mo
 share/locale/te/LC_MESSAGES/gnome-maps.mo
 share/locale/tg/LC_MESSAGES/gnome-maps.mo
 share/locale/tr/LC_MESSAGES/gnome-maps.mo
