@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2020/11/01 20:38:45 jca Exp $
+# $OpenBSD: Makefile,v 1.71 2020/11/07 17:19:21 jca Exp $
 
 BROKEN-alpha=	.got subsegment exceeds 64K
 
@@ -7,7 +7,7 @@ COMMENT=	GTK+2 Python bindings
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.24.0
 PKGNAME=	py-gtk2-${VERSION}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	x11
 
