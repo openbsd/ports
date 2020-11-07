@@ -1,0 +1,50 @@
+$OpenBSD: patch-lib_ephy-flatpak-utils_c,v 1.1 2020/11/07 11:11:50 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/epiphany/-/commit/afd155430075cee5380334a9c263cc28426fc79c
+
+Index: lib/ephy-flatpak-utils.c
+--- lib/ephy-flatpak-utils.c.orig
++++ lib/ephy-flatpak-utils.c
+@@ -28,7 +28,9 @@
+ #include <fcntl.h>
+ #include <gio/gio.h>
+ #include <gio/gunixfdlist.h>
++#if USE_LIBPORTAL
+ #include <libportal/portal-gtk3.h>
++#endif
+ #include <string.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+@@ -63,6 +65,7 @@ ephy_is_running_inside_flatpak (void)
+   return under_flatpak;
+ }
+ 
++#if USE_LIBPORTAL
+ static void
+ opened_uri (GObject      *object,
+             GAsyncResult *result,
+@@ -81,11 +84,13 @@ opened_uri (GObject      *object,
+   if (!res)
+     g_warning ("%s", error->message);
+ }
++#endif
+ 
+ static void
+ ephy_open_uri (const char *uri,
+                gboolean    is_dir)
+ {
++#if USE_LIBPORTAL
+   GApplication *application;
+   GtkWindow *window;
+   XdpParent *parent;
+@@ -101,6 +106,10 @@ ephy_open_uri (const char *uri,
+     xdp_portal_open_uri (g_steal_pointer (&portal), parent, uri, XDP_OPEN_URI_FLAG_ASK, NULL, opened_uri, GINT_TO_POINTER (FALSE));
+ 
+   xdp_parent_free (parent);
++#else
++  g_warning ("Flatpak portal support disabled at compile time, cannot open %s",
++             uri);
++#endif
+ }
+ 
+ void

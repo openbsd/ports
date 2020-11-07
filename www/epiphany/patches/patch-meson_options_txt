@@ -1,0 +1,20 @@
+$OpenBSD: patch-meson_options_txt,v 1.1 2020/11/07 11:11:50 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/epiphany/-/commit/afd155430075cee5380334a9c263cc28426fc79c
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -4,6 +4,12 @@ option('developer_mode',
+   description: 'Enable developer mode'
+ )
+ 
++option('libportal',
++  type: 'feature',
++  value: 'enabled',
++  description: 'Depend on libportal for Flatpak support'
++)
++
+ option('network_tests',
+   type: 'feature',
+   value: 'disabled',
