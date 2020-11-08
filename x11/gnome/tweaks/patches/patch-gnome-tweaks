@@ -1,0 +1,19 @@
+$OpenBSD: patch-gnome-tweaks,v 1.1 2020/11/08 17:48:00 ajacoutot Exp $
+
+From 403b0cd8511268689e437ed5fe4bac7511745cfc Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?X=E2=84=B9=20Ruoyao?= <xry111@mengyan1223.wang>
+Date: Thu, 8 Oct 2020 15:53:35 +0800
+Subject: [PATCH] Port to libhandy-1
+
+Index: gnome-tweaks
+--- gnome-tweaks.orig
++++ gnome-tweaks
+@@ -12,7 +12,7 @@ import sys
+ 
+ import gi
+ gi.require_version("Gtk", "3.0")
+-gi.require_version("Handy", "0.0")
++gi.require_version("Handy", "1")
+ 
+ import gtweak
+ from gtweak.defs import VERSION
