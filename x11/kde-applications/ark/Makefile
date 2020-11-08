@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 20:52:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/08 20:12:49 rsadowski Exp $
 
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
 CATEGORIES =	archivers
-REVISION =	0
 
 SHARED_LIBS +=  kerfuffle                 3.0 # 17.08
 

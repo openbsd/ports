@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/04 16:33:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/08 20:12:55 rsadowski Exp $
 
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
 CATEGORIES =	net www
-REVISION =	1
 
 HOMEPAGE =	http://knotesapp.com/
 

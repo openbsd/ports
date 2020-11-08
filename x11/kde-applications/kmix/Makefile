@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/04 05:48:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/08 20:12:55 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.kmix
 

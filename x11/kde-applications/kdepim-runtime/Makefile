@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/04 12:55:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/08 20:12:52 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 PKGNAME =	kdepim-runtime-kf5-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
 SHARED_LIBS +=  akonadi-filestore           1.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  1.0 # 5.13.2

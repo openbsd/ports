@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/04 06:38:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/08 20:12:49 rsadowski Exp $
 
 COMMENT =	PIM Akonadi calendar tools
 DISTNAME =	akonadi-calendar-tools-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiCore
 WANTLIB += KF5CalendarCore KF5CalendarSupport KF5CalendarUtils

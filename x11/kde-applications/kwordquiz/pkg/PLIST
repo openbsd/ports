@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/11/08 20:12:57 rsadowski Exp $
 @pkgpath x11/kde4/kwordquiz
 @bin bin/kwordquiz
 share/applications/org.kde.kwordquiz.desktop
@@ -74,6 +74,9 @@ share/doc/HTML/et/kwordquiz/index.docbook
 share/doc/HTML/it/kwordquiz/
 share/doc/HTML/it/kwordquiz/index.cache.bz2
 share/doc/HTML/it/kwordquiz/index.docbook
+share/doc/HTML/ko/kwordquiz/
+share/doc/HTML/ko/kwordquiz/index.cache.bz2
+share/doc/HTML/ko/kwordquiz/index.docbook
 share/doc/HTML/nl/kwordquiz/
 share/doc/HTML/nl/kwordquiz/index.cache.bz2
 share/doc/HTML/nl/kwordquiz/index.docbook

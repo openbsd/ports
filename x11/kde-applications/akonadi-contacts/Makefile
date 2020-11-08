@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/04 05:52:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/08 20:12:49 rsadowski Exp $
 
 COMMENT =	PIM Akonadi contacts support library
 DISTNAME =	akonadi-contacts-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  KF5AkonadiContact         0.0 # 5.13.2
 SHARED_LIBS +=  KF5ContactEditor          0.0 # 5.13.2

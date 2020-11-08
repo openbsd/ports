@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/04 05:54:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/08 20:12:49 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 SHARED_LIBS +=  akregatorinterfaces       1.0 # 5.13.2
 SHARED_LIBS +=  akregatorprivate          1.0 # 5.13.2

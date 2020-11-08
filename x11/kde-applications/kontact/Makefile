@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/05 20:31:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/08 20:12:55 rsadowski Exp $
 
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
-REVISION =	2
 
 SHARED_LIBS +=  kontactprivate       0.0 # 5.13.2
 

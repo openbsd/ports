@@ -1,4 +1,4 @@
-$OpenBSD: patch-shell_shell_cpp,v 1.3 2020/09/22 11:27:08 rsadowski Exp $
+$OpenBSD: patch-shell_shell_cpp,v 1.4 2020/11/08 20:12:58 rsadowski Exp $
 
 Clangs RTTI support don't work here, use qobject_cast<> to avoid runtime
 crashes.
@@ -14,7 +14,7 @@ Index: shell/shell.cpp
  #include <QTabBar>
  #include <QTabWidget>
  #include <QTimer>
-@@ -215,7 +216,7 @@ bool Shell::openDocument(const QUrl &url, const QStrin
+@@ -213,7 +214,7 @@ bool Shell::openDocument(const QUrl &url, const QStrin
      KParts::ReadWritePart *const part = m_tabs[0].part;
  
      // Return false if we can't open new tabs and the only part is occupied
@@ -23,7 +23,7 @@ Index: shell/shell.cpp
          return false;
      }
  
-@@ -235,7 +236,7 @@ bool Shell::canOpenDocs(int numDocs, int desktop)
+@@ -233,7 +234,7 @@ bool Shell::canOpenDocs(int numDocs, int desktop)
          return false;
  
      KParts::ReadWritePart *const part = m_tabs[0].part;
@@ -32,7 +32,7 @@ Index: shell/shell.cpp
  
      if (!allowTabs && (numDocs > 1 || !part->url().isEmpty()))
          return false;
-@@ -257,7 +258,7 @@ void Shell::openUrl(const QUrl &url, const QString &se
+@@ -255,7 +256,7 @@ void Shell::openUrl(const QUrl &url, const QString &se
                  applyOptionsToPart(activePart, serializedOptions);
                  activePart->openUrl(url);
              } else {

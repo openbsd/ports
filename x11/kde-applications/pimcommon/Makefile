@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/04 12:53:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/08 20:12:59 rsadowski Exp $
 
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  KF5PimCommon              2.0 # 5.13.3
 SHARED_LIBS +=  KF5PimCommonAkonadi       2.0 # 5.13.3

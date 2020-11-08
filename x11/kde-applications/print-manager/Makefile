@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/05 20:41:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/08 20:12:59 rsadowski Exp $
 
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
 CATEGORIES =	sysutils print
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.print-manager
 

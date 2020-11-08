@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/11/03 16:12:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/11/08 20:12:58 rsadowski Exp $
 @pkgpath x11/kde4/okular
 @bin bin/okular
 include/okular/
@@ -693,6 +693,7 @@ share/locale/ia/LC_MESSAGES/okular_mobi.mo
 share/locale/ia/LC_MESSAGES/okular_ooo.mo
 share/locale/ia/LC_MESSAGES/okular_plucker.mo
 share/locale/ia/LC_MESSAGES/okular_poppler.mo
+share/locale/ia/LC_MESSAGES/okular_tiff.mo
 share/locale/ia/LC_MESSAGES/okular_txt.mo
 share/locale/ia/LC_MESSAGES/okular_xps.mo
 share/locale/ia/LC_MESSAGES/org.kde.active.documentviewer.mo

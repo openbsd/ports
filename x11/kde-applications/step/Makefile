@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/04 06:18:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/08 20:12:59 rsadowski Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
 CATEGORIES =	education math
-REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/education/step
 

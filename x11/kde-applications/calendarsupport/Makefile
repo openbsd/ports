@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/04 06:01:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/08 20:12:50 rsadowski Exp $
 
 COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  KF5CalendarSupport       1.0 # 5.13.2
 

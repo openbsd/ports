@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/04 15:44:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/11/08 20:12:51 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${VERSION}
 CATEGORIES =	education
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui AnalitzaPlot
 WANTLIB += AnalitzaWidgets KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore

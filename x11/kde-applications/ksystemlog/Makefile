@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 19:41:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/08 20:12:56 rsadowski Exp $
 
 COMMENT =	system log viewer
 DISTNAME =	ksystemlog-${VERSION}
 CATEGORIES =	sysutils
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/system/ksystemlog/
 

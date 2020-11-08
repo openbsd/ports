@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/03 20:13:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/08 20:12:59 rsadowski Exp $
 
 COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  sieveeditor       1.0 # 5.13.2
 
