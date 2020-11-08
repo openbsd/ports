@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2020/11/07 10:13:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2020/11/08 13:59:49 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.38.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -58,9 +59,6 @@ RUN_DEPENDS +=	sysutils/consolekit
 
 # needed for gnome-color-panel
 RUN_DEPENDS +=		x11/gnome/color-manager
-
-# needed for gnome-power-panel+gnome-screen-panel
-RUN_DEPENDS +=		x11/gnome/power-manager
 
 # needed for gnome-printers-panel
 RUN_DEPENDS +=		print/cups-pk-helper \
