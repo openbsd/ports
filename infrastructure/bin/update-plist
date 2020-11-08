@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.193 2020/11/07 10:54:22 espie Exp $
+# $OpenBSD: update-plist,v 1.194 2020/11/08 17:01:52 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1150,8 +1150,11 @@ sub bookmark
 
 sub locate_files
 {
-	my ($self, $locator) = @_;
-	$locator->add_param($self->fullname);
+	my ($self, $locator, $exact) = @_;
+	my $p = $self->fullname;
+	if (!exists $exact->{$p}) {
+		$locator->add_param($p);
+	}
 }
 
 sub write_backsubst
@@ -1383,8 +1386,8 @@ sub handle_options
 		    },
 
 	};
-	$state->SUPER::handle_options('rvI:c:qV:FC:i:j:L:s:S:X:P:w:e:E:', 
-	    '[-Fmnrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-i var]',
+	$state->SUPER::handle_options('rvI:c:qV:fFC:i:j:L:s:S:X:P:w:e:E:', 
+	    '[-Ffmnrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-i var]',
 	    '[-I ignored] [-j jobs] [-L logfile] [-P pkgdir] [-S var]',
 	    '[-s var] [-V var] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
@@ -1814,7 +1817,11 @@ sub locate_list
 {
 	my ($self, $p) = @_;
 	my $locator = OpenBSD::Pkglocate->new($p->{state});
-	$p->nlist->locate_files($locator);
+	my $exact = $self->{exact};	# by default do not look up known files
+	if ($self->{state}->opt('f')) {	# unless we ask for them: neuter lookup
+		$exact = {};		# table
+	}
+	$p->nlist->locate_files($locator, $exact);
 	my $l = $p->nlist->conflict_list;
 	my $r = $locator->result;
 	for my $pkgname (sort keys %$r) {
