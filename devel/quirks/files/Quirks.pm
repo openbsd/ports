@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1107 2020/11/07 15:56:32 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1108 2020/11/08 08:50:12 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -505,6 +505,7 @@ my $stem_extensions = {
 	'py-toml' => 'py3-toml',
 	'py-textfsm' => 'py3-textfsm',
 	'py-unicodecsv' => 'py3-unicodecsv',
+	'py-enchant' => 'py3-enchant',
 };
 
 my $obsolete_reason = {
