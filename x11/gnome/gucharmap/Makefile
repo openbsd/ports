@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2020/11/07 08:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.128 2020/11/08 07:42:26 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
@@ -24,8 +24,11 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala yelp
 
 BUILD_DEPENDS=		archivers/unzip \
 			devel/gsettings-desktop-schemas \
+			textproc/gtk-doc \
 			textproc/unicode-ucd>=9.0.0
+
 RUN_DEPENDS =		devel/gsettings-desktop-schemas
+
 LIB_DEPENDS=		x11/gtk+3,-main
 
 CONFIGURE_ARGS +=	-Ducd_path=${LOCALBASE}/share/unicode/ucd/
