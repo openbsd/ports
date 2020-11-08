@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.652 2020/11/04 20:21:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.653 2020/11/08 08:49:11 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -397,7 +397,6 @@
      SUBDIR += py-elasticsearch,python3
      SUBDIR += py-emoji
      SUBDIR += py-emoji,python3
-     SUBDIR += py-enchant
      SUBDIR += py-enchant,python3
      SUBDIR += py-feedparser
      SUBDIR += py-feedparser,python3
