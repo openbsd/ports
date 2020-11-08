@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/03/21 16:14:57 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/11/08 07:55:30 ajacoutot Exp $
 include/mate-settings-daemon/
 include/mate-settings-daemon/mate-settings-client.h
 include/mate-settings-daemon/mate-settings-plugin.h
@@ -267,4 +267,3 @@ share/mate-settings-daemon/msd-a11y-preferences-dialog.ui
 share/polkit-1/actions/org.mate.settingsdaemon.datetimemechanism.policy
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag gtk-update-icon-cache %D/share/icons/mate

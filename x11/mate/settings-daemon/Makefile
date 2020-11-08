@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2020/08/14 12:06:35 robert Exp $
+# $OpenBSD: Makefile,v 1.20 2020/11/08 07:55:30 ajacoutot Exp $
 
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon
 MATE_VERSION=		1.24.1
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
