@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.31 2020/09/06 10:09:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.32 2020/11/08 13:29:20 ajacoutot Exp $
+lib/grilo-${API}/
 @so lib/grilo-${API}/libgrlchromaprint.so
 @so lib/grilo-${API}/libgrldleyna.so
 @so lib/grilo-${API}/libgrlfilesystem.so
@@ -16,7 +17,7 @@
 @so lib/grilo-${API}/libgrlraitv.so
 @so lib/grilo-${API}/libgrlshoutcast.so
 @so lib/grilo-${API}/libgrltmdb.so
-@so lib/grilo-${API}/libgrltracker.so
+@so lib/grilo-${API}/libgrltracker3.so
 @so lib/grilo-${API}/libgrlvimeo.so
 @so lib/grilo-${API}/libgrlyoutube.so
 lib/pkgconfig/grilo-plugins-${API}.pc
