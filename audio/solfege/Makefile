@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/08 15:58:48 jca Exp $
+
+BROKEN-hppa =	SIGILL when running lilypond
 
 COMMENT =	solfege and ear training program
-DISTNAME =	solfege-3.22.2
-CATEGORIES =	audio x11
-BROKEN-hppa =	SIGILL when running lilypond
-REVISION =	2
 
-HOMEPAGE =	http://www.solfege.org/
+DISTNAME =	solfege-3.23.4
+
+CATEGORIES =	audio x11
+
+HOMEPAGE =	https://www.solfege.org/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -14,22 +16,26 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=solfege/}
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/py-gobject3 \
 		print/lilypond,-main \
 		sysutils/coreutils \
-		x11/py-gtk2
+		textproc/txt2man
 
 RUN_DEPENDS =	audio/lame \
 		audio/mpg123 \
 		timidity-*|fluidsynth-*:audio/timidity \
 		audio/vorbis-tools \
 		devel/desktop-file-utils \
-		x11/py-gtk2
+		devel/py-gobject3 \
+		x11/gtk+3
 
 CONFIGURE_STYLE =	gnu
 
 USE_GMAKE =	Yes
+ALL_TARGET =
 
 FAKE_FLAGS =	sysconfdir=${LOCALBASE}/share/examples/solfege
 
