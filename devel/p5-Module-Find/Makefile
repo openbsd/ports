@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/11/08 21:37:54 benoit Exp $
 
 COMMENT=		find and use installed modules in a (sub)category
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		Module-Find-0.13
+DISTNAME =		Module-Find-0.15
 CATEGORIES=		devel
-REVISION=		0
 
 # Artistic
 PERMIT_PACKAGE=	Yes
