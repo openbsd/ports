@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/05 19:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/08 15:46:15 rsadowski Exp $
 
 BROKEN-i386=	various relocation R_386_PC32 cannot be used against symbol XX
 
 COMMENT=	Tanuki Java Service Wrapper
 
-DISTNAME=	wrapper_3.5.43_src
-PKGNAME=	java-tanukiwrapper-3.5.43
+V=		3.5.44
+DISTNAME=	wrapper_${V}_src
+PKGNAME=	java-tanukiwrapper-${V}
 CATEGORIES=	java
 
 HOMEPAGE=	https://wrapper.tanukisoftware.com/
 
 MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
-MASTER_SITES=	https://download.tanukisoftware.com/wrapper/3.5.43/
+MASTER_SITES=	https://download.tanukisoftware.com/wrapper/${V}/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
