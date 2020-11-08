@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/07 14:21:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/08 07:46:14 ajacoutot Exp $
 
 COMMENT =	mahjongg game for GNOME
 
@@ -22,7 +22,7 @@ RUN_DEPENDS =		devel/gsettings-desktop-schemas
 LIB_DEPENDS =		x11/gnome/librsvg \
 			x11/gtk+3
 
-MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache vala
 
 CONFIGURE_ARGS =	-Dcompile-schemas=disabled \
 			-Dupdate-icon-cache=disabled
