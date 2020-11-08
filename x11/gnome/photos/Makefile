@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.83 2020/11/07 10:33:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2020/11/08 13:20:35 ajacoutot Exp $
 
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.38.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -42,7 +43,7 @@ RUN_DEPENDS +=		x11/gnome/online-miners
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 # org.freedesktop.Tracker schema
-RUN_DEPENDS +=		x11/gnome/tracker3-miners
+RUN_DEPENDS +=		x11/gnome/tracker-miners
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
