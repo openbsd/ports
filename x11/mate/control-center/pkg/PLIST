@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/08/20 06:40:18 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/11/08 08:19:16 ajacoutot Exp $
 @bin bin/mate-about-me
 @bin bin/mate-appearance-properties
 @bin bin/mate-at-properties
@@ -2266,8 +2266,6 @@ share/mate-time-admin/map/timezone_9.png
 share/mate-time-admin/map/timezone_9_dim.png
 @comment share/mime/XMLnamespaces
 @comment share/mime/aliases
-share/mime/application/
-share/mime/application/x-mate-theme-package.xml
 @comment share/mime/generic-icons
 @comment share/mime/globs
 @comment share/mime/globs2
