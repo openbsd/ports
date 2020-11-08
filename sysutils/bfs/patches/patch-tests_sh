@@ -1,11 +1,18 @@
-$OpenBSD: patch-tests_sh,v 1.1 2020/05/17 20:43:09 bcallah Exp $
+$OpenBSD: patch-tests_sh,v 1.2 2020/11/08 20:37:14 bcallah Exp $
 
+Tests require bash
 touch -h is a GNU extension
 
 Index: tests.sh
 --- tests.sh.orig
 +++ tests.sh
-@@ -815,7 +815,7 @@ function make_times() {
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ ############################################################################
+ # bfs                                                                      #
+@@ -831,7 +831,7 @@ function make_times() {
      touch -t 199112140001 "$1/b"
      touch -t 199112140002 "$1/c"
      ln -s a "$1/l"
