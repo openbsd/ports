@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_misc_loginManager_js,v 1.12 2020/11/08 09:38:19 ajacoutot Exp $
+$OpenBSD: patch-js_misc_loginManager_js,v 1.13 2020/11/08 10:42:44 ajacoutot Exp $
 
 Index: js/misc/loginManager.js
 --- js/misc/loginManager.js.orig
@@ -34,7 +34,7 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -209,6 +215,77 @@ var LoginManagerSystemd = class {
+@@ -209,6 +215,79 @@ var LoginManagerSystemd = class {
  };
  Signals.addSignalMethods(LoginManagerSystemd.prototype);
  
@@ -75,7 +75,9 @@ Index: js/misc/loginManager.js
 +            if (error) {
 +                asyncCallback(false, false);
 +            } else {
-+                asyncCallback(result[0], false);
++                let needsAuth = result[0] == 'challenge';
++                let canSuspend = needsAuth || result[0] == 'yes';
++                asyncCallback(canSuspend, needsAuth);
 +            }
 +        });
 +    }
@@ -112,7 +114,7 @@ Index: js/misc/loginManager.js
  var LoginManagerDummy = class {
      getCurrentSessionProxy(_callback) {
          // we could return a DummySession object that fakes whatever callers
-@@ -218,13 +295,6 @@ var LoginManagerDummy = class {
+@@ -218,13 +297,6 @@ var LoginManagerDummy = class {
  
      canSuspend(asyncCallback) {
          asyncCallback(false, false);
