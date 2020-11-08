@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.259 2020/10/03 15:40:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.260 2020/11/08 08:34:58 ajacoutot Exp $
+
+PORTROACH=		limit:^2
 
 COMMENT=		metadata database and search tool
 
