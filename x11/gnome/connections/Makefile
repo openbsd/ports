@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/08 07:44:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/08 07:48:27 ajacoutot Exp $
 
 COMMENT=		remote desktop client for GNOME
 
@@ -17,8 +17,8 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
-			shared-mime-info vala
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
+			gtk-update-icon-cache shared-mime-info vala
 
 LIB_DEPENDS=		x11/freerdp \
 			x11/gtk-vnc
