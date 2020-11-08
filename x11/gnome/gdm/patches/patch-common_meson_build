@@ -1,0 +1,13 @@
+$OpenBSD: patch-common_meson_build,v 1.1 2020/11/08 09:52:01 ajacoutot Exp $
+
+Index: common/meson.build
+--- common/meson.build.orig
++++ common/meson.build
+@@ -11,7 +11,6 @@ libgdmcommon_src = files(
+ )
+ 
+ libgdmcommon_deps = [
+-  libsystemd_dep,
+   gobject_dep,
+   gio_dep,
+   gio_unix_dep,

@@ -1,0 +1,13 @@
+$OpenBSD: patch-libgdm_meson_build,v 1.1 2020/11/08 09:52:01 ajacoutot Exp $
+
+Index: libgdm/meson.build
+--- libgdm/meson.build.orig
++++ libgdm/meson.build
+@@ -56,7 +56,6 @@ libgdm_deps = [
+   glib_dep,
+   gio_dep,
+   gio_unix_dep,
+-  libsystemd_dep,
+   libgdmcommon_dep,
+ ]
+ 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.286 2020/11/05 08:26:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.287 2020/11/08 09:52:01 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.36.4
+GNOME_VERSION=		3.38.2
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} gdm-puffy.png:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -14,18 +14,13 @@ SHARED_LIBS +=  gdm                  0.0      # 1.0
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender accountsservice atk-1.0
-WANTLIB += atk-bridge-2.0 c cairo cairo-gobject canberra canberra-gtk3
-WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl ltdl m ogg pam
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread util vorbis vorbisfile xcb xcb-render
-WANTLIB += xcb-shm z ${COMPILER_LIBCXX}
+WANTLIB += X11 Xau Xdmcp accountsservice c canberra canberra-gtk3
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
+WANTLIB += intl pam util xcb
 
-MODULES=		x11/gnome \
-			devel/dconf
+MODULES=		devel/dconf \
+			devel/meson \
+			x11/gnome
 
 BUILD_DEPENDS=		devel/check \
 			devel/iso-codes
@@ -57,33 +52,37 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			sysutils/accountsservice
 
 MODGNOME_TOOLS=		gobject-introspection yelp
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib -lutil
 
-CONFIGURE_STYLE=	autoreconf
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
+# common/gdm-address.c
+MODGNOME_CPPFLAGS +=	-DHAS_SA_LEN
 
-CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
-			--disable-systemd-journal \
-			--disable-user-display-server \
-			--without-systemd \
-			--without-plymouth \
-			--with-lang-file=${SYSCONFDIR}/gdm/locale.conf \
-			--with-at-spi-registryd-directory=${LOCALBASE}/libexec \
-			--with-custom-conf=${SYSCONFDIR}/gdm/custom.conf \
-			--with-console-kit \
-			--with-dbus-sys=${SYSCONFDIR}/dbus-1/system.d \
-			--with-log-dir=/var/log/gdm \
-			--with-working-directory=/var/db/gdm \
-			--with-sysconfsubdir=gdm \
-			--with-pid-file=/var/run/gdm.pid \
-			--with-dmconfdir="${LOCALBASE}/share/xsessions" \
-			--with-screenshot-dir=/var/run/gdm/greeter \
-			--with-user=_gdm \
-			--with-group=_gdm \
-			--with-xauth-dir=/var/run/gdm \
-			--with-initial-vt=05
+# ConsoleKit
+MODGNOME_CPPFLAGS +=	-DWITH_CONSOLE_KIT=1 \
+			-DCONSOLEKIT_DIR='\"${LOCALBASE}/libexec\"'
+
+CONFIGURE_ARGS=		-Ddefault-pam-config=none \
+			-Duser=_gdm \
+			-Duser-display-server=false \
+			-Dat-spi-registryd-dir=${LOCALBASE}/libexec \
+			-Dcustom-conf=${SYSCONFDIR}/gdm/custom.conf \
+			-Ddbus-sys=${SYSCONFDIR}/dbus-1/system.d \
+			-Dlog-dir=/var/log/gdm \
+			-Dgroup=_gdm \
+			-Ddmconfdir=${LOCALBASE}/share/xsessions \
+			-Dinitial-vt=05 \
+			-Dlang-file=${SYSCONFDIR}/gdm/locale.conf \
+			-Dpid-file=/var/run/gdm.pid \
+			-Dplymouth=disabled \
+			-Dlibaudit=disabled \
+			-Dselinux=disabled \
+			-Dscreenshot-dir=/var/run/gdm/greeter \
+			-Dsysconfsubdir=gdm \
+			-Dsystemd-journal=false \
+			-Dwayland-support=false \
+			-Dworking-dir=/var/db/gdm \
+			-Dxauth-dir=/var/run/gdm
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -96,8 +95,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/gdm-puffy.png \
 		${PREFIX}/share/pixmaps/
-	rm -r ${WRKINST}/var/run/gdm ${WRKINST}/rules.d
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/etc/pam.d
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \
 		${PREFIX}/share/examples/gdm/etc/pam.d
 	${SUBST_CMD} -m 0644 -c -o ${SHAREOWN} -g ${SHAREGRP} \

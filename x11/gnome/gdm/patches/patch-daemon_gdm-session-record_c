@@ -1,18 +1,17 @@
-$OpenBSD: patch-daemon_gdm-session-record_c,v 1.11 2019/11/02 15:34:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-record_c,v 1.12 2020/11/08 09:52:01 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=722482
 
 Index: daemon/gdm-session-record.c
 --- daemon/gdm-session-record.c.orig
 +++ daemon/gdm-session-record.c
-@@ -33,6 +33,16 @@
+@@ -31,8 +31,15 @@
+ 
+ #if defined(HAVE_UTMP_H)
  #include <utmp.h>
++#include <util.h>
  #endif
  
-+#if defined(HAVE_UTIL_H)
-+#include <util.h>
-+#endif
-+
 +#if defined(HAVE_GETTTYENT)
 +#include <fcntl.h> /* open(2) */
 +#include <ttyent.h>
@@ -22,7 +21,7 @@ Index: daemon/gdm-session-record.c
  #include <glib.h>
  #include <glib/gi18n.h>
  #include <glib/gstdio.h>
-@@ -43,6 +53,9 @@
+@@ -43,6 +50,9 @@
  #define GDM_BAD_SESSION_RECORDS_FILE "/var/log/btmp"
  #endif
  
@@ -32,7 +31,7 @@ Index: daemon/gdm-session-record.c
  #if !defined(GDM_NEW_SESSION_RECORDS_FILE)
  #    if defined(WTMPX_FILE)
  #        define GDM_NEW_SESSION_RECORDS_FILE WTMPX_FILE
-@@ -168,6 +181,84 @@ record_set_line (UTMP       *u,
+@@ -168,6 +178,84 @@ record_set_line (UTMP       *u,
          g_debug ("using ut_line %.*s", (int) sizeof (u->ut_line), u->ut_line);
  }
  
@@ -117,7 +116,7 @@ Index: daemon/gdm-session-record.c
  void
  gdm_session_record_login (GPid                  session_pid,
                            const char           *user_name,
-@@ -214,8 +305,9 @@ gdm_session_record_login (GPid                  sessio
+@@ -214,8 +302,9 @@ gdm_session_record_login (GPid                  sessio
          setutxent();
          pututxline (&session_record);
          endutxent();
@@ -129,7 +128,7 @@ Index: daemon/gdm-session-record.c
  #endif
  }
  
-@@ -259,8 +351,8 @@ gdm_session_record_logout (GPid                  sessi
+@@ -259,8 +348,8 @@ gdm_session_record_logout (GPid                  sessi
          setutxent();
          pututxline (&session_record);
          endutxent();
