@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/08/18 11:05:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/09 23:25:12 sebastia Exp $
 
 COMMENT =		constant autoloading with Ruby semantics
 
-DISTNAME =		zeitwerk-2.4.0
+DISTNAME =		zeitwerk-2.4.1
 CATEGORIES =		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
