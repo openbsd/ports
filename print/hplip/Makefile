@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2020/10/11 15:45:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2020/11/09 12:38:27 kirby Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -15,7 +15,7 @@ SUBST_VARS=		V
 
 REVISION-main=		0
 REVISION-common=	0
-REVISION-gui=		0
+REVISION-gui=		1
 
 # https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/master/f/
@@ -180,6 +180,7 @@ pre-configure:
 		${WRKSRC}/fax/filters/pstotiff
 	${SUBST_CMD} \
 		${WRKSRC}/Makefile.in \
+		${WRKSRC}/hp-uiscan.desktop.in \
 		${WRKSRC}/prnt/cups.py \
 		${WRKSRC}/prnt/filters/hpps \
 		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
