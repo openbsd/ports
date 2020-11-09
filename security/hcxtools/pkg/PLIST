@@ -1,26 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/18 21:26:13 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/09 23:27:03 sebastia Exp $
 @bin bin/hcxessidtool
 @bin bin/hcxhash2cap
 @bin bin/hcxhashcattool
 @bin bin/hcxhashtool
 @bin bin/hcxmactool
 @bin bin/hcxpcapngtool
-@bin bin/hcxpcaptool
 @bin bin/hcxpmkidtool
 @bin bin/hcxpsktool
 @bin bin/hcxwltool
 @bin bin/whoismac
 @bin bin/wlancap2wpasec
-@bin bin/wlanhcx2john
-@bin bin/wlanhcx2ssid
-@bin bin/wlanhcxcat
-@bin bin/wlanhcxinfo
-@bin bin/wlanjohn2hcx
-@bin bin/wlanpmk2hcx
-@bin bin/wlanwkp2hcx
 @man man/man1/hcxhash2cap.1
 @man man/man1/hcxhashtool.1
 @man man/man1/hcxpcapngtool.1
-@man man/man1/hcxpcaptool.1
 @man man/man1/hcxpsktool.1
 @man man/man1/wlancap2wpasec.1
