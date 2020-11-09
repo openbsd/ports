@@ -1,64 +1,37 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/11/09 18:41:40 rsadowski Exp $
 
-COMMENT-main =		Qt Widgets for Technical Applications
-COMMENT-common =	common files for the qwt packages
+COMMENT=	Qt widgets for technical applications
 
-VERSION =		6.1.3
-DISTNAME =		qwt-${VERSION}
-SHARED_LIBS =		qwt${QTLIBSUFFIX} 7.0
-PKGNAME-main =	qwt-${VERSION}
-FULLPKGNAME-common =	qwt-common-${VERSION}
-FULLPKGPATH-common =	x11/qwt,-common
-REVISION =		2
+VERSION =	6.1.5
+DISTNAME =	qwt-${VERSION}
 
-CATEGORIES =		x11
-EXTRACT_SUFX =		.tar.bz2
+SHARED_LIBS =	qwt${QTLIBSUFFIX} 7.0
 
-HOMEPAGE =		http://qwt.sourceforge.net/
+CATEGORIES =	x11
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}
+HOMEPAGE =	http://qwt.sourceforge.net/
+
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qwt/}
+EXTRACT_SUFX =	.tar.bz2
 
 # Qwt License, Version 1.0
 # http://qwt.sourceforge.net/qwtlicense.html
 PERMIT_PACKAGE =	Yes
 
-MODULES =		devel/qmake
+WANTLIB += Qt5Gui Qt5OpenGL Qt5PrintSupport Qt5Svg Qt5Widgets
+WANTLIB += Qt5Xml m
+
+MODULES =	x11/qt5 \
+		devel/qmake
+
 MODQMAKE_INSTALL_ROOT =
-NO_TEST =		Yes
-USE_GMAKE =		Yes
-MULTI_PACKAGES=		-main -common
-FLAVORS =		qt5
-FLAVOR ?=
 
-COMPILER =		base-clang ports-gcc base-gcc
+NO_TEST =	Yes
+USE_GMAKE =	Yes
 
-.if ${FLAVOR:Mqt5}
-PKGSPEC-main =	qwt-*-qt5
-MODULES +=	x11/qt5
-QTVER =	qt5
-QTLIBSUFFIX =	-${QTVER}
-LIB_DEPENDS +=	x11/qt5/qtsvg \
-		x11/qt5/qttools
-WANTLIB-main +=	GL Qt5Concurrent Qt5Core Qt5Designer Qt5Gui Qt5OpenGL
-WANTLIB-main +=	Qt5PrintSupport Qt5Svg Qt5Widgets Qt5Xml
-.else
-PKGSPEC-main =	qwt-*-!qt5
-MODULES +=	x11/qt4
-QTVER =	qt4
-QTLIBSUFFIX =	# empty
-WANTLIB-main +=	GL ICE QtDesigner QtGui QtOpenGL QtScript QtSvg QtXml SM X11 Xext Xi
-WANTLIB-main +=	Xinerama Xrender fontconfig freetype pthread QtCore
-.endif
+LIB_DEPENDS =	x11/qt5/qtsvg
 
-WANTLIB-main +=	${COMPILER_LIBCXX} m
-
-WANTLIB-common = 	# empty
-RUN_DEPENDS-common = 	# empty
-LIB_DEPENDS-common = 	# empty
-PKG_ARCH-common=	*
-
-RUN_DEPENDS =	${FULLPKGPATH-common}
-
+QTVER =		qt5
 SUBST_VARS =	WRKINST QTVER QTLIBSUFFIX
 
 pre-configure:
@@ -66,12 +39,11 @@ pre-configure:
 		${WRKSRC}/designer/designer.pro \
 		${WRKSRC}/textengines/textengines.pri \
 		${WRKSRC}/src/src.pro
-
 post-configure:
-# ensure CXXFLAGS/-std=c++11 is passed to all clang++ invocations,including the ones generating dependencies
-.if ${FLAVOR:Mqt5}
-	sed -i -e 's/@$$(CXX) -M/@$$(CXX) $$(CXXFLAGS) -M/' ${WRKBUILD}/{src,designer}/Makefile
-.endif
+	# ensure CXXFLAGS/-std=c++11 is passed to all clang++
+	# invocations,including the ones generating dependencies
+	sed -i -e 's/@$$(CXX) -M/@$$(CXX) $$(CXXFLAGS) -M/' \
+		${WRKBUILD}/{src,designer}/Makefile
 
 post-install:
 	rm -rf ${PREFIX}/share/doc/qwt/html/*.md5

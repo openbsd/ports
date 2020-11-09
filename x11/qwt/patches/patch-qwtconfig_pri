@@ -1,4 +1,4 @@
-$OpenBSD: patch-qwtconfig_pri,v 1.3 2017/11/01 14:13:45 landry Exp $
+$OpenBSD: patch-qwtconfig_pri,v 1.4 2020/11/09 18:41:40 rsadowski Exp $
 
 Index: qwtconfig.pri
 --- qwtconfig.pri.orig
@@ -31,7 +31,7 @@ Index: qwtconfig.pri
  # linux distributors often organize the Qt installation
  # their way and QT_INSTALL_PREFIX doesn't offer a good
 @@ -63,7 +63,7 @@ QWT_INSTALL_PLUGINS   = $${QWT_INSTALL_PREFIX}/plugins
- # with every Qt upgrade. 
+ # with every Qt upgrade.
  ######################################################################
  
 -QWT_INSTALL_FEATURES  = $${QWT_INSTALL_PREFIX}/features

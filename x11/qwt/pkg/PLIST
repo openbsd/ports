@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST-common,v 1.1 2018/05/28 18:47:00 landry Exp $
-@conflict qwt-<6.1.3p0
+@comment $OpenBSD: PLIST,v 1.5 2020/11/09 18:41:40 rsadowski Exp $
+@conflict qwt-<6.1.5
+@conflict qwt-common-<6.1.5
+@conflict qwt-*-qt5
+@pkgpath x11/qwt,-main
+@pkgpath x11/qwt,-common
+@pkgpath x11/qwt,-main,qt5
 include/qwt.h
 include/qwt_abstract_legend.h
 include/qwt_abstract_scale.h
@@ -98,6 +103,16 @@ include/qwt_thermo.h
 include/qwt_transform.h
 include/qwt_wheel.h
 include/qwt_widget_overlay.h
+@lib lib/libqwt.so.${LIBqwt_VERSION}
+lib/${QTVER}/
+lib/${QTVER}/mkspecs/
+lib/${QTVER}/mkspecs/features/
+lib/${QTVER}/mkspecs/features/qwt.prf
+lib/${QTVER}/mkspecs/features/qwtconfig.pri
+lib/${QTVER}/mkspecs/features/qwtfunctions.pri
+lib/${QTVER}/plugins/
+lib/${QTVER}/plugins/designer/
+@so lib/${QTVER}/plugins/designer/libqwt_designer_plugin.so
 @man man/man3/QwtAbstractLegend.3
 @man man/man3/QwtAbstractScale.3
 @man man/man3/QwtAbstractScaleDraw.3
@@ -231,9 +246,6 @@ include/qwt_widget_overlay.h
 @man man/man3/QwtWeedingCurveFitter.3
 @man man/man3/QwtWheel.3
 @man man/man3/QwtWidgetOverlay.3
-@man man/man3/_tmp_qwt-6.1.3-tmp_src_.3
-@man man/man3/_tmp_qwt-6.1.3-tmp_textengines_.3
-@man man/man3/_tmp_qwt-6.1.3-tmp_textengines_mathml_.3
 @man man/man3/barchartscreenshots.3
 @man man/man3/controlscreenshots.3
 @man man/man3/curvescreenshots.3
@@ -244,11 +256,15 @@ include/qwt_widget_overlay.h
 @man man/man3/spectrogramscreenshots.3
 share/doc/qwt/
 share/doc/qwt/html/
+share/doc/qwt/html/_form0.eps
+share/doc/qwt/html/_form0.ps
+share/doc/qwt/html/_formulas.aux
+share/doc/qwt/html/_formulas.dvi
+share/doc/qwt/html/_formulas.log
+share/doc/qwt/html/_formulas.tex
 share/doc/qwt/html/analogclock.png
 share/doc/qwt/html/annotated.html
 share/doc/qwt/html/annotated_dup.js
-share/doc/qwt/html/arrowdown.png
-share/doc/qwt/html/arrowright.png
 share/doc/qwt/html/barchart-grouped-600x400.png
 share/doc/qwt/html/barchart-stacked-600x400.png
 share/doc/qwt/html/barchartscreenshots.html
@@ -887,17 +903,9 @@ share/doc/qwt/html/doxygen.png
 share/doc/qwt/html/dynsections.js
 share/doc/qwt/html/folderclosed.png
 share/doc/qwt/html/folderopen.png
-share/doc/qwt/html/form_0.png
-share/doc/qwt/html/form_1.png
-share/doc/qwt/html/form_2.png
-share/doc/qwt/html/form_3.png
-share/doc/qwt/html/form_4.png
-share/doc/qwt/html/form_5.png
-share/doc/qwt/html/formula.repository
 share/doc/qwt/html/friedberg-bars-600x400.png
 share/doc/qwt/html/friedberg-tube-600x400.png
 share/doc/qwt/html/functions.html
-share/doc/qwt/html/functions_0x7e.html
 share/doc/qwt/html/functions_b.html
 share/doc/qwt/html/functions_c.html
 share/doc/qwt/html/functions_d.html
@@ -932,7 +940,6 @@ share/doc/qwt/html/functions_eval_y.html
 share/doc/qwt/html/functions_f.html
 share/doc/qwt/html/functions_func.html
 share/doc/qwt/html/functions_func.js
-share/doc/qwt/html/functions_func_0x7e.html
 share/doc/qwt/html/functions_func_b.html
 share/doc/qwt/html/functions_func_c.html
 share/doc/qwt/html/functions_func_d.html
@@ -956,6 +963,7 @@ share/doc/qwt/html/functions_func_w.html
 share/doc/qwt/html/functions_func_x.html
 share/doc/qwt/html/functions_func_y.html
 share/doc/qwt/html/functions_func_z.html
+share/doc/qwt/html/functions_func_~.html
 share/doc/qwt/html/functions_g.html
 share/doc/qwt/html/functions_h.html
 share/doc/qwt/html/functions_i.html
@@ -977,6 +985,7 @@ share/doc/qwt/html/functions_w.html
 share/doc/qwt/html/functions_x.html
 share/doc/qwt/html/functions_y.html
 share/doc/qwt/html/functions_z.html
+share/doc/qwt/html/functions_~.html
 share/doc/qwt/html/graph_legend.html
 share/doc/qwt/html/graph_legend.png
 share/doc/qwt/html/hierarchy.html
@@ -1089,6 +1098,8 @@ share/doc/qwt/html/inherits.html
 share/doc/qwt/html/itemeditor-600x400.png
 share/doc/qwt/html/jquery.js
 share/doc/qwt/html/knob.png
+share/doc/qwt/html/menu.js
+share/doc/qwt/html/menudata.js
 share/doc/qwt/html/nav_f.png
 share/doc/qwt/html/nav_g.png
 share/doc/qwt/html/nav_h.png
