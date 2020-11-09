@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2020/11/08 10:42:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.199 2020/11/09 12:30:46 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.38.1
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -78,6 +78,9 @@ RUN_DEPENDS +=		x11/gnome/clocks
 
 # telepathyClient.js
 RUN_DEPENDS +=		net/telepathy/telepathy-logger
+
+# weather.js
+RUN_DEPENDS +=		x11/gnome/weather
 
 # yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;Unity;)
 # prevents => The URI "help:gnome-help/index" does not point to a valid page.
