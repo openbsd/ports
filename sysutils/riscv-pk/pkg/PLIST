@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/09 15:01:45 jasper Exp $
+riscv64-unknown-elf/
+riscv64-unknown-elf/bin/
+riscv64-unknown-elf/bin/bbl
+riscv64-unknown-elf/bin/dummy_payload
+riscv64-unknown-elf/bin/pk
+riscv64-unknown-elf/include/
+riscv64-unknown-elf/include/riscv-pk/
+riscv64-unknown-elf/include/riscv-pk/atomic.h
+riscv64-unknown-elf/include/riscv-pk/bbl.h
+riscv64-unknown-elf/include/riscv-pk/bits.h
+riscv64-unknown-elf/include/riscv-pk/boot.h
+riscv64-unknown-elf/include/riscv-pk/elf.h
+riscv64-unknown-elf/include/riscv-pk/emulation.h
+riscv64-unknown-elf/include/riscv-pk/encoding.h
+riscv64-unknown-elf/include/riscv-pk/fdt.h
+riscv64-unknown-elf/include/riscv-pk/file.h
+riscv64-unknown-elf/include/riscv-pk/finisher.h
+riscv64-unknown-elf/include/riscv-pk/fp_emulation.h
+riscv64-unknown-elf/include/riscv-pk/frontend.h
+riscv64-unknown-elf/include/riscv-pk/htif.h
+riscv64-unknown-elf/include/riscv-pk/internals.h
+riscv64-unknown-elf/include/riscv-pk/mcall.h
+riscv64-unknown-elf/include/riscv-pk/mmap.h
+riscv64-unknown-elf/include/riscv-pk/mtrap.h
+riscv64-unknown-elf/include/riscv-pk/opts-GCC.h
+riscv64-unknown-elf/include/riscv-pk/pk.h
+riscv64-unknown-elf/include/riscv-pk/platform.h
+riscv64-unknown-elf/include/riscv-pk/primitiveTypes.h
+riscv64-unknown-elf/include/riscv-pk/primitives.h
+riscv64-unknown-elf/include/riscv-pk/softfloat.h
+riscv64-unknown-elf/include/riscv-pk/softfloat_types.h
+riscv64-unknown-elf/include/riscv-pk/specialize.h
+riscv64-unknown-elf/include/riscv-pk/syscall.h
+riscv64-unknown-elf/include/riscv-pk/uart.h
+riscv64-unknown-elf/include/riscv-pk/uart16550.h
+riscv64-unknown-elf/include/riscv-pk/unprivileged_memory.h
+riscv64-unknown-elf/include/riscv-pk/vm.h
+riscv64-unknown-elf/lib/
+riscv64-unknown-elf/lib/riscv-pk/
+@static-lib riscv64-unknown-elf/lib/riscv-pk/libbbl.a
+@static-lib riscv64-unknown-elf/lib/riscv-pk/libdummy_payload.a
+@static-lib riscv64-unknown-elf/lib/riscv-pk/libmachine.a
+@static-lib riscv64-unknown-elf/lib/riscv-pk/libpk.a
+@static-lib riscv64-unknown-elf/lib/riscv-pk/libsoftfloat.a
+@static-lib riscv64-unknown-elf/lib/riscv-pk/libutil.a
