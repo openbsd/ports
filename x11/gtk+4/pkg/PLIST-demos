@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST-demos,v 1.1 2020/11/09 12:17:07 ajacoutot Exp $
+@conflict gtk+4-<3.99.4
+@bin bin/gtk4-demo
+@bin bin/gtk4-demo-application
+@bin bin/gtk4-icon-browser
+@bin bin/gtk4-print-editor
+@bin bin/gtk4-widget-factory
+share/applications/org.gtk.Demo4.desktop
+share/applications/org.gtk.IconBrowser4.desktop
+share/applications/org.gtk.PrintEditor4.desktop
+share/applications/org.gtk.WidgetFactory4.desktop
+share/glib-2.0/schemas/org.gtk.Demo4.gschema.xml
+share/icons/hicolor/scalable/apps/org.gtk.Demo4.svg
+share/icons/hicolor/scalable/apps/org.gtk.IconBrowser4.svg
+share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.Devel.svg
+share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.svg
+share/icons/hicolor/scalable/apps/org.gtk.WidgetFactory4.svg
+share/icons/hicolor/symbolic/apps/org.gtk.Demo4-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gtk.IconBrowser4-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gtk.PrintEditor4-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gtk.WidgetFactory4-symbolic.svg
+share/metainfo/
+share/metainfo/org.gtk.Demo4.appdata.xml
+share/metainfo/org.gtk.IconBrowser4.appdata.xml
+share/metainfo/org.gtk.PrintEditor4.appdata.xml
+share/metainfo/org.gtk.WidgetFactory4.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag glib-compile-schemas
+@tag update-desktop-database

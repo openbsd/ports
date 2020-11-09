@@ -1,13 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2020/08/14 07:00:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2020/11/09 12:17:07 ajacoutot Exp $
 @bin bin/gtk4-builder-tool
-@bin bin/gtk4-demo
-@bin bin/gtk4-demo-application
 @bin bin/gtk4-encode-symbolic-svg
-@bin bin/gtk4-icon-browser
 @bin bin/gtk4-launch
-@bin bin/gtk4-print-editor
 @bin bin/gtk4-query-settings
-@bin bin/gtk4-widget-factory
 include/gtk-4.0/
 include/gtk-4.0/gdk/
 include/gtk-4.0/gdk/gdk-autocleanup.h
@@ -55,6 +50,7 @@ include/gtk-4.0/gdk/gdksurface.h
 include/gtk-4.0/gdk/gdktexture.h
 include/gtk-4.0/gdk/gdktoplevel.h
 include/gtk-4.0/gdk/gdktoplevellayout.h
+include/gtk-4.0/gdk/gdktoplevelsize.h
 include/gtk-4.0/gdk/gdktypes.h
 include/gtk-4.0/gdk/gdkversionmacros.h
 include/gtk-4.0/gdk/gdkvulkancontext.h
@@ -83,6 +79,7 @@ include/gtk-4.0/gsk/gsk.h
 include/gtk-4.0/gsk/gskcairorenderer.h
 include/gtk-4.0/gsk/gskenums.h
 include/gtk-4.0/gsk/gskenumtypes.h
+include/gtk-4.0/gsk/gskglshader.h
 include/gtk-4.0/gsk/gskrenderer.h
 include/gtk-4.0/gsk/gskrendernode.h
 include/gtk-4.0/gsk/gskroundedrect.h
@@ -100,7 +97,6 @@ include/gtk-4.0/gtk/gtk-autocleanups.h
 include/gtk-4.0/gtk/gtk.h
 include/gtk-4.0/gtk/gtkaboutdialog.h
 include/gtk-4.0/gtk/gtkaccelgroup.h
-include/gtk-4.0/gtk/gtkaccellabel.h
 include/gtk-4.0/gtk/gtkaccessible.h
 include/gtk-4.0/gtk/gtkactionable.h
 include/gtk-4.0/gtk/gtkactionbar.h
@@ -271,7 +267,6 @@ include/gtk-4.0/gtk/gtkprintoperation.h
 include/gtk-4.0/gtk/gtkprintoperationpreview.h
 include/gtk-4.0/gtk/gtkprintsettings.h
 include/gtk-4.0/gtk/gtkprogressbar.h
-include/gtk-4.0/gtk/gtkradiobutton.h
 include/gtk-4.0/gtk/gtkrange.h
 include/gtk-4.0/gtk/gtkrecentmanager.h
 include/gtk-4.0/gtk/gtkrender.h
@@ -387,10 +382,6 @@ lib/pkgconfig/gtk4.pc
 @man man/man1/gtk4-query-settings.1
 @man man/man1/gtk4-update-icon-cache.1
 @man man/man1/gtk4-widget-factory.1
-share/applications/org.gtk.Demo4.desktop
-share/applications/org.gtk.IconBrowser4.desktop
-share/applications/org.gtk.PrintEditor4.desktop
-share/applications/org.gtk.WidgetFactory4.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/gettext/its/gtk4builder.its
 share/gettext/its/gtk4builder.loc
@@ -398,27 +389,19 @@ share/gir-1.0/Gdk-4.0.gir
 share/gir-1.0/GdkX11-4.0.gir
 share/gir-1.0/Gsk-4.0.gir
 share/gir-1.0/Gtk-4.0.gir
-share/glib-2.0/schemas/org.gtk.Demo4.gschema.xml
 share/glib-2.0/schemas/org.gtk.gtk4.Settings.ColorChooser.gschema.xml
 share/glib-2.0/schemas/org.gtk.gtk4.Settings.Debug.gschema.xml
 share/glib-2.0/schemas/org.gtk.gtk4.Settings.EmojiChooser.gschema.xml
 share/glib-2.0/schemas/org.gtk.gtk4.Settings.FileChooser.gschema.xml
 share/gtk-4.0/
+share/gtk-4.0/emoji/
+share/gtk-4.0/emoji/de.gresource
+share/gtk-4.0/emoji/es.gresource
+share/gtk-4.0/emoji/fr.gresource
+share/gtk-4.0/emoji/zh.gresource
 share/gtk-4.0/gtk4builder.rng
 share/gtk-4.0/valgrind/
 share/gtk-4.0/valgrind/gtk.supp
-share/icons/hicolor/scalable/apps/org.gtk.Demo4.svg
-share/icons/hicolor/scalable/apps/org.gtk.IconBrowser4.svg
-share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.Devel.svg
-share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.svg
-share/icons/hicolor/scalable/apps/org.gtk.WidgetFactory4.svg
-share/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.Devel.svg
-share/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.svg
-share/icons/hicolor/symbolic/apps/org.gtk.Demo4-symbolic.svg
-share/icons/hicolor/symbolic/apps/org.gtk.IconBrowser4-symbolic.svg
-share/icons/hicolor/symbolic/apps/org.gtk.PrintEditor4-symbolic.svg
-share/icons/hicolor/symbolic/apps/org.gtk.WidgetFactory4-symbolic.svg
-share/icons/hicolor/symbolic/apps/org.gtk.gtk4.NodeEditor-symbolic.svg
 share/locale/af/LC_MESSAGES/gtk40-properties.mo
 share/locale/af/LC_MESSAGES/gtk40.mo
 share/locale/am/LC_MESSAGES/gtk40-properties.mo
@@ -661,11 +644,5 @@ share/locale/zh_HK/LC_MESSAGES/gtk40-properties.mo
 share/locale/zh_HK/LC_MESSAGES/gtk40.mo
 share/locale/zh_TW/LC_MESSAGES/gtk40-properties.mo
 share/locale/zh_TW/LC_MESSAGES/gtk40.mo
-share/metainfo/
-share/metainfo/org.gtk.Demo4.appdata.xml
-share/metainfo/org.gtk.IconBrowser4.appdata.xml
-share/metainfo/org.gtk.PrintEditor4.appdata.xml
-share/metainfo/org.gtk.WidgetFactory4.appdata.xml
-@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
 @tag update-desktop-database
