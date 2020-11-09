@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/10/13 09:04:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/09 18:41:42 rsadowski Exp $
 
 COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
 V =		3.8.2.0
 DISTNAME =	gnuradio-$V
+REVISION =	0
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7
@@ -41,7 +42,7 @@ WANTLIB += Qt5Core Qt5Gui Qt5Widgets SDL boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c fftw3f
 WANTLIB += fftw3f_threads gmp gmpxx gsl gslcblas gsm iconv jack
-WANTLIB += log4cpp m orc-0.4 portaudio qwt-qt5 zmq
+WANTLIB += log4cpp m orc-0.4 portaudio qwt zmq
 
 MASTER_SITES =	https://github.com/gnuradio/gnuradio/releases/download/v$V/
 
@@ -92,7 +93,7 @@ LIB_DEPENDS =	audio/jack \
 		devel/sdl \
 		math/fftw3,float \
 		net/zeromq \
-		x11/qwt,qt5
+		x11/qwt
 
 CONFIGURE_ARGS =-DENABLE_DOXYGEN=OFF \
 		-DENABLE_GR_UHD=OFF \
