@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/07/12 20:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2020/11/09 23:09:10 jca Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -86,8 +86,7 @@ CONFIGURE_ARGS =--disable-backtrace \
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		WXCONFIG_CPPFLAGS="-I${X11BASE}/include" \
-		WXCONFIG_LDFLAGS_GUI="-L${X11BASE}/lib" \
-		ac_cv_lib_esd_esd_close=no
+		WXCONFIG_LDFLAGS_GUI="-L${X11BASE}/lib"
 
 # XXX: When used in conjunction with PIE, symbol versioning triggers
 # weird linking problems in dependent ports
