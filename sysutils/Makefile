@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.585 2020/11/04 15:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.586 2020/11/09 15:02:33 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -301,6 +301,7 @@
      SUBDIR += restic-rest-server
      SUBDIR += riemann
      SUBDIR += riemann-c-client
+     SUBDIR += riscv-pk
      SUBDIR += rofi
      SUBDIR += rpl
      SUBDIR += rsyslog
