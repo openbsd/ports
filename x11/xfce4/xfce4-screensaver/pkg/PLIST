@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 12:14:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/09 17:57:59 landry Exp $
 @bin bin/xfce4-screensaver
 @bin bin/xfce4-screensaver-command
 bin/xfce4-screensaver-configure
@@ -29,6 +29,12 @@ share/examples/xfce4-screensaver/xdg/autostart/xfce4-screensaver.desktop
 share/examples/xfce4-screensaver/xdg/menus/
 share/examples/xfce4-screensaver/xdg/menus/xfce4-screensavers.menu
 @sample ${SYSCONFDIR}/xdg/menus/xfce4-screensavers.menu
+share/icons/hicolor/128x128/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/16x16/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/24x24/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/32x32/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/48x48/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/scalable/apps/org.xfce.ScreenSaver.svg
 share/locale/be/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/bg/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/ca/LC_MESSAGES/xfce4-screensaver.mo
@@ -68,3 +74,4 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-screensaver.mo
 share/pixmaps/
 share/pixmaps/xfce-logo-white.svg
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

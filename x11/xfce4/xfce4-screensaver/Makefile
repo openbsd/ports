@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/30 07:54:57 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/09 17:57:58 landry Exp $
 
 COMMENT =	Xfce4 screensaver
 
-XFCE_VERSION =	0.1.10
+XFCE_VERSION =	0.1.11
 XFCE_GOODIE =	xfce4-screensaver
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
