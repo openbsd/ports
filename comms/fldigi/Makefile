@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/11/09 11:33:12 ajacoutot Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
 # skip alpha-test versions (x.x.x.x format version numbers)
 PORTROACH=	limit:^[0-9]+\.[0-9]+\.[0-9]+$$
 DISTNAME=	fldigi-4.0.18
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	comms hamradio
 
@@ -36,8 +36,13 @@ SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-oss \
+CONFIGURE_ARGS=	--disable-oss \
 		--without-pulseaudio
+
+# XXX
+# const char* szBeginner = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\
+# ./dialogs/guide.cxx:1:26: error: expected expression
+CONFIGURE_ARGS +=	--without-asciidoc
 
 MAKE_FLAGS=	ASCIIDOC_ICONS_DIR=${SYSCONFDIR}/asciidoc/images/icons
 
