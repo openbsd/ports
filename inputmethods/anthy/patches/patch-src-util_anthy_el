@@ -1,4 +1,4 @@
-$OpenBSD: patch-src-util_anthy_el,v 1.2 2020/08/24 13:42:26 jca Exp $
+$OpenBSD: patch-src-util_anthy_el,v 1.3 2020/11/09 22:43:46 yasuoka Exp $
 
 - old-style backquotes are obsolete
 - last-command-char is obsolete
@@ -23,6 +23,15 @@ Index: src-util/anthy.el
  
  ;; buffer local variables
  (anthy-deflocalvar anthy-context-id nil "コンテキストのid")
+@@ -745,7 +745,7 @@
+ 	(if anthy-agent-process
+ 	    (kill-process anthy-agent-process))
+ 	(setq anthy-agent-process proc)
+-	(process-kill-without-query proc)
++	(set-process-query-on-exit-flag proc nil)
+ 	(if anthy-xemacs
+ 	    (if (coding-system-p (find-coding-system 'euc-japan))
+ 		(set-process-coding-system proc 'euc-japan 'euc-japan))
 @@ -892,7 +892,7 @@
  	 ((event-matches-key-specifier-p event 'backspace) 8)
  	 (t
