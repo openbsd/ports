@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/09 05:22:57 rsadowski Exp $
 
 COMMENT =		UPnP audio control point
 
 DISTNAME =		upplay-1.3.3
+REVISION =		0
 
 CATEGORIES =		multimedia net
 
@@ -13,9 +14,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Script
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c jsoncpp
-WANTLIB += m upnpp
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5WebKit
+WANTLIB += Qt5WebKitWidgets Qt5Widgets c jsoncpp m upnpp
 
 MASTER_SITES =		https://www.lesbonscomptes.com/upplay/downloads/
 
@@ -29,7 +29,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/jsoncpp \
 			net/libupnpp>=0.17.1 \
-			x11/qt5/qtscript \
 			x11/qt5/qtwebkit
 
 NO_TEST =		Yes

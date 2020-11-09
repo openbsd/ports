@@ -1,4 +1,4 @@
-$OpenBSD: patch-upplay_pro,v 1.2 2019/05/06 16:34:44 kn Exp $
+$OpenBSD: patch-upplay_pro,v 1.3 2020/11/09 05:22:57 rsadowski Exp $
 
 Index: upplay.pro
 --- upplay.pro.orig
@@ -8,7 +8,7 @@ Index: upplay.pro
    message("Prefix is $$PREFIX")
    DEFINES += PREFIX=\\\"$$PREFIX\\\" 
 -  INCLUDEPATH += /usr/include/jsoncpp
-+  INCLUDEPATH += ${LOCALBASE}/include/jsoncpp
++  INCLUDEPATH += ${LOCALBASE}/include/json
    
   # Installation stuff
    target.path = "$$PREFIX/bin"
