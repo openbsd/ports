@@ -1,17 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/08/29 09:14:16 dcoppa Exp $
-include/jsoncpp/
-include/jsoncpp/json/
-include/jsoncpp/json/allocator.h
-include/jsoncpp/json/assertions.h
-include/jsoncpp/json/autolink.h
-include/jsoncpp/json/config.h
-include/jsoncpp/json/features.h
-include/jsoncpp/json/forwards.h
-include/jsoncpp/json/json.h
-include/jsoncpp/json/reader.h
-include/jsoncpp/json/value.h
-include/jsoncpp/json/version.h
-include/jsoncpp/json/writer.h
+@comment $OpenBSD: PLIST,v 1.4 2020/11/09 05:22:53 rsadowski Exp $
+include/json/
+include/json/allocator.h
+include/json/assertions.h
+include/json/config.h
+include/json/forwards.h
+include/json/json.h
+include/json/json_features.h
+include/json/reader.h
+include/json/value.h
+include/json/version.h
+include/json/writer.h
 @lib lib/libjsoncpp.so.${LIBjsoncpp_VERSION}
 lib/pkgconfig/jsoncpp.pc
 share/doc/jsoncpp/

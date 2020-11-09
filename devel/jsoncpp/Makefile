@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/11/09 05:22:52 rsadowski Exp $
 
 COMMENT =		JSON parsing C++ API
 
 GH_ACCOUNT =		open-source-parsers
 GH_PROJECT =		jsoncpp
-GH_TAGNAME =		1.8.4
-REVISION =		2
+GH_TAGNAME =		1.9.4
 
 # no upstream revision
-SHARED_LIBS =		jsoncpp 4.0
+SHARED_LIBS =		jsoncpp 5.0
 
 CATEGORIES =		devel
 
@@ -21,7 +20,13 @@ WANTLIB =		m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MODULES =		devel/meson
+MODULES =		devel/meson \
+			lang/python
+
+CONFIGURE_STYLE =	meson
+
+MODPY_RUNDEP =		No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 TEST_ENV +=	LD_PRELOAD=${WRKBUILD}/libjsoncpp.so.${LIBjsoncpp_VERSION}
 
