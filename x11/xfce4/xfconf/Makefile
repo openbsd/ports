@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2020/05/14 11:46:43 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2020/11/09 17:53:13 landry Exp $
 
 COMMENT=	Xfce4 settings daemon
 
-XFCE_VERSION =	4.14.3
+XFCE_VERSION =	4.14.4
 XFCE_PROJECT=	xfconf
 SHARED_LIBS =	xfconf-0 1.0 # 2.0
 HOMEPAGE =	https://docs.xfce.org/xfce/xfconf/start
