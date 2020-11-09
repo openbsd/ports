@@ -1,9 +1,9 @@
-$OpenBSD: patch-util_c,v 1.1 2017/06/09 13:32:29 sthen Exp $
+$OpenBSD: patch-util_c,v 1.2 2020/11/09 14:05:48 sthen Exp $
 
 Index: util.c
 --- util.c.orig
 +++ util.c
-@@ -172,6 +172,10 @@ void *mem_chunk(off_t base, size_t len, const char *de
+@@ -184,6 +184,10 @@ void *mem_chunk(off_t base, size_t len, const char *de
  	if ((fd = open(devmem, O_RDONLY)) == -1)
  	{
  		perror(devmem);

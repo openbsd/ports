@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/11/09 14:05:47 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	dump DMI/SMBIOS contents in human-readable format
-DISTNAME=	dmidecode-3.1
+DISTNAME=	dmidecode-3.3
+EXTRACT_SUFX=	.tar.xz
+
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=dmidecode/}
 
@@ -15,8 +17,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c
 
 MAKE_FLAGS=	CC="${CC}"
-FAKE_FLAGS=	DESTDIR="${WRKINST}" prefix="${WRKINST}${PREFIX}" \
-		mandir="${WRKINST}${PREFIX}/man"
+FAKE_FLAGS=	mandir="${PREFIX}/man"
 NO_TEST=	Yes
 
 post-install:
