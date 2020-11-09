@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/11/09 14:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/11/09 14:41:55 sthen Exp $
 
 COMMENT=	tool for manipulating IPv6 addresses
 
@@ -18,8 +18,8 @@ CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes
 MAKE_FLAGS=	DEFAULT_CFLAGS=
 
-# ipv6calc segfault on step "pipe tests"
 TEST_TARGET=	test
+TEST_DEPENDS=	shells/bash
 
 pre-test:
 	sed -i 's,^#!/bin/sh,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/*/test*.sh
