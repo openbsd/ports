@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/11/08 07:46:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/09 07:16:51 jasper Exp $
 
 COMMENT =	mahjongg game for GNOME
 
 GNOME_PROJECT =	gnome-mahjongg
 GNOME_VERSION =	3.38.3
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -22,7 +23,7 @@ RUN_DEPENDS =		devel/gsettings-desktop-schemas
 LIB_DEPENDS =		x11/gnome/librsvg \
 			x11/gtk+3
 
-MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache vala
+MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache vala yelp
 
 CONFIGURE_ARGS =	-Dcompile-schemas=disabled \
 			-Dupdate-icon-cache=disabled
