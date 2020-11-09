@@ -1,11 +1,12 @@
-$OpenBSD: patch-core_byteswap_h,v 1.1 2020/08/01 18:47:33 jasper Exp $
+$OpenBSD: patch-core_byteswap_h,v 1.2 2020/11/09 21:48:25 cwen Exp $
 
-Extracted from https://github.com/JulNadeauCA/libagar/commit/56b3500
+Hunk #1: Fix the build on powerpc, upstream code has been totally changed
+Hunk #2: Extracted from https://github.com/JulNadeauCA/libagar/commit/56b3500
 
 Index: core/byteswap.h
 --- core/byteswap.h.orig
 +++ core/byteswap.h
-@@ -33,7 +33,9 @@ AG_Swap16(Uint16 x)
+@@ -33,15 +33,17 @@ AG_Swap16(Uint16 x)
  		"0" (x));
  	return (x);
  }
@@ -16,6 +17,16 @@ Index: core/byteswap.h
  static __inline__ Uint16
  AG_Swap16(Uint16 x)
  {
+-	Uint16 rv;
++	Uint32 rv;
+ 	__asm__("rlwimi %0,%2,8,16,23" :
+ 	        "=&r" (rv) :
+ 		"0" (x >> 8), "r" (x));
+-	return (rv);
++	return (Uint16) (rv);
+ }
+ #else
+ static __inline__ Uint16
 @@ -72,7 +74,9 @@ AG_Swap32(Uint32 x)
  		"0" (x));
  	return (x);

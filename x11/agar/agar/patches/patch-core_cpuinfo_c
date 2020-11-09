@@ -1,6 +1,7 @@
-$OpenBSD: patch-core_cpuinfo_c,v 1.1 2020/08/01 18:47:33 jasper Exp $
+$OpenBSD: patch-core_cpuinfo_c,v 1.2 2020/11/09 21:48:25 cwen Exp $
 
 Extracted from https://github.com/JulNadeauCA/libagar/commit/56b3500
+Also add proper AltiVec detection on powerpc
 
 Index: core/cpuinfo.c
 --- core/cpuinfo.c.orig
@@ -16,8 +17,14 @@ Index: core/cpuinfo.c
  #include <agar/core/core.h>
  
  #if defined(__APPLE__) || defined(__MACOSX__)
-@@ -44,13 +40,6 @@
+@@ -42,15 +38,12 @@
+ # include <exec/exec.h>
+ # include <interfaces/exec.h>
  # include <proto/exec.h>
++#elif defined(__OpenBSD__) && defined(__ppc__)
++# include <machine/cpu.h>
++# include <sys/types.h>
++# include <sys/sysctl.h>
  #endif
  
 -#if !defined(__APPLE__) && !defined(__MACOSX__) && !defined(__ppc__) && \
@@ -30,7 +37,7 @@ Index: core/cpuinfo.c
  struct cpuid_regs {
  	Uint32 a;
  	Uint32 b;
-@@ -139,16 +128,6 @@ Conv32(char *d, unsigned int v)
+@@ -139,16 +132,6 @@ Conv32(char *d, unsigned int v)
  	d[3] = (v >> 24) & 0xff;
  }
  
@@ -47,7 +54,24 @@ Index: core/cpuinfo.c
  /* Initialize the CPUInfo structure. */
  void
  AG_GetCPUInfo(AG_CPUInfo *cpu)
-@@ -281,23 +260,5 @@ AG_GetCPUInfo(AG_CPUInfo *cpu)
+@@ -254,8 +237,15 @@ AG_GetCPUInfo(AG_CPUInfo *cpu)
+ 
+ #if (defined(__APPLE__) || defined(__MACOSX__)) && defined(__ppc__) && \
+     !defined(MAC_OS_X_VERSION_10_4)
++int selectors[2] = { CTL_HW, HW_VECTORUNIT };
++#elif defined(__OpenBSD__) && defined(__ppc__)
++int selectors[2] = { CTL_MACHDEP, CPU_ALTIVEC };
++#endif
++
++#if (defined(__APPLE__) || defined(__MACOSX__)) && defined(__ppc__) && \
++    !defined(MAC_OS_X_VERSION_10_4) || \
++    (defined(__OpenBSD__) && defined(__ppc__))
+ 	{
+-		int selectors[2] = { CTL_HW, HW_VECTORUNIT };
+ 		int flag = 0;
+ 		size_t length = sizeof(flag);
+ 	
+@@ -281,23 +271,5 @@ AG_GetCPUInfo(AG_CPUInfo *cpu)
      		if (rv == VECTORTYPE_ALTIVEC)
  			cpu->ext |= AG_EXT_ALTIVEC;
  	}

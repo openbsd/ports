@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2020/06/22 09:43:45 cwen Exp $
-
-BROKEN-powerpc =	agartest causes system freezes
+# $OpenBSD: Makefile.inc,v 1.4 2020/11/09 21:48:25 cwen Exp $
 
 V ?=			1.5.0
 DISTNAME ?=		agar-$V
