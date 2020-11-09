@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1108 2020/11/08 08:50:12 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1109 2020/11/09 21:42:51 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1906,6 +1906,8 @@ my $obsolete_reason = {
 	'keybinder' => 6,
 	'vinagre' => 3,
 	'gnome-getting-started-docs' => 5,
+	'py-poppler' => 3,
+	'pdfshuffler' => 3,
 };
 
 # reasons for obsolete packages
