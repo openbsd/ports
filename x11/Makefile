@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.678 2020/11/06 15:45:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.679 2020/11/09 18:42:30 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -258,7 +258,6 @@
      SUBDIR += qt5styleplugins
      SUBDIR += qtfm
      SUBDIR += qwt
-     SUBDIR += qwt,qt5
      SUBDIR += qdirstat
      SUBDIR += ratmen
      SUBDIR += ratpoison
