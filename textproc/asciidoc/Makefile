@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/11/09 11:33:39 ajacoutot Exp $
 
 COMMENT=	text document format for writing documents and man pages
 
-DISTNAME =	asciidoc-8.6.9
+V=		9.0.4
+DISTNAME=	asciidoc-${V}
+
 CATEGORIES=	textproc
-REVISION=	1
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-HOMEPAGE=	http://www.methods.co.nz/asciidoc/
+HOMEPAGE=	https://github.com/asciidoc/asciidoc-py3
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asciidoc/}
+MASTER_SITES=	https://github.com/asciidoc/asciidoc-py3/releases/download/${V}/
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	textproc/docbook-xsl \
-		www/lynx
+BUILD_DEPENDS=	textproc/docbook-xsl
 
-MODPY_ADJ_FILES=a2x.py \
-		asciidoc.py \
-		asciidocapi.py \
-		filters/{code,graphviz,latex,music}/*.py
+RUN_DEPENDS=	textproc/docbook-xsl \
+		w3m-*|lynx-*:www/w3m
+
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 PKG_ARCH=	*
 USE_GMAKE=	Yes
@@ -33,15 +33,19 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 
 CONFIGURE_STYLE=gnu
 
-post-configure:
-	@sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/asciidoc.py
+INSTALL_TARGET=	install docs
+
+pre-configure:
+	sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/doc/testasciidoc.1.txt
 
 post-install:
-	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_SITEPKG}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asciidoc/vim/syntax
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_SITEPKG} \
+		${PREFIX}/share/doc/asciidoc
 	${INSTALL_DATA} ${WRKSRC}/asciidocapi.py \
 		${WRKINST}${MODPY_SITEPKG}/asciidocapi.py
-	${INSTALL_DATA} ${WRKSRC}/vim/syntax/asciidoc.vim \
-		${PREFIX}/share/examples/asciidoc/vim/syntax/
+.for d in dblatex docbook-xsl images javascripts stylesheets
+	rm -r ${PREFIX}/share/doc/asciidoc/$d
+	ln -s ${SYSCONFDIR}/asciidoc/$d ${PREFIX}/share/doc/asciidoc/$d
+.endfor
 
 .include <bsd.port.mk>
