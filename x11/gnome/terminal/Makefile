@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2020/11/07 13:13:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.174 2020/11/09 18:15:57 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
@@ -27,6 +27,7 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
+		textproc/docbook-xsl \
 		x11/gnome/shell
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
