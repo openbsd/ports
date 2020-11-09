@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2020/11/05 09:21:34 semarie Exp $
+# $OpenBSD: Makefile,v 1.121 2020/11/09 18:56:10 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -18,6 +18,7 @@ CARGO_V =		0.48.0
 CLIPPY_V =		0.0.212
 RUSTFMT_V =		1.4.20
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.47.0-20201009
@@ -43,7 +44,7 @@ MAINTAINER =		Sebastien Marie <semarie@online.fr>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl m pthread ssh2 ssl z
+WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl git2 m pthread ssh2 ssl z
 WANTLIB-gdb =
 WANTLIB-clippy =	${COMPILER_LIBCXX} c m pthread
 WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
@@ -144,6 +145,7 @@ BUILD_DEPENDS +=	devel/ninja
 BUILD_DEPENDS +=	devel/gdb
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
+			devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
 
@@ -154,6 +156,7 @@ RUN_DEPENDS-rustfmt +=	lang/rust,-main
 
 MAKE_ENV +=	CARGO_HOME=${WRKBUILD}/cargo-home \
 		TMPDIR=${WRKBUILD} \
+		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 
 # cargo assert() on i386 with standard libz
