@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2020/11/03 10:27:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2020/11/10 16:40:18 sthen Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.32.0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=		mpv		0.1 # 1.107
 
@@ -36,6 +36,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS =		audio/ladspa \
 			textproc/py-docutils${MODPY_FLAVOR}
