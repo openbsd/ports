@@ -1,0 +1,23 @@
+$OpenBSD: patch-daemon_meson_build,v 1.1 2020/11/10 23:03:57 ajacoutot Exp $
+
+XXX push upstream: Undefined reference to logwtmp(3)
+
+Index: daemon/meson.build
+--- daemon/meson.build.orig
++++ daemon/meson.build
+@@ -121,6 +121,7 @@ endif
+ gdm_session_worker = executable('gdm-session-worker',
+   gdm_session_worker_src,
+   dependencies: gdm_session_worker_deps,
++  link_args : ['-lutil'],
+   include_directories: gdm_session_worker_includes,
+   install: true,
+   install_dir: get_option('libexecdir'),
+@@ -200,6 +201,7 @@ endif
+ gdm_daemon = executable('gdm',
+   [ gdm_daemon_sources, gdm_daemon_gen_sources ],
+   dependencies: gdm_daemon_deps,
++  link_args : ['-lutil'],
+   include_directories: config_h_dir,
+   install: true,
+   install_dir: get_option('sbindir')

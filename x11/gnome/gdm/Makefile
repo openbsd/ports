@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.287 2020/11/08 09:52:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.288 2020/11/10 23:03:57 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.38.2
+REVISION=		0
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} gdm-puffy.png:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -53,7 +54,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 
 MODGNOME_TOOLS=		gobject-introspection yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib -lutil
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 # common/gdm-address.c
 MODGNOME_CPPFLAGS +=	-DHAS_SA_LEN
