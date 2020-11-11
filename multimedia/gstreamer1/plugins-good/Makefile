@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2020/09/14 06:03:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2020/11/11 13:37:58 cwen Exp $
+
+# Reenable that port on non-rust archs at the cost of pulseaudio support:
+# pulseaudio -> [...] -> spidermonkey>=78 -> rust
+ONLY_FOR_ARCHS-pulse=	${RUST_ARCHS}
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -80,5 +84,10 @@ CONFIGURE_ARGS=		-Daalib=disabled \
 CONFIGURE_ARGS +=	-Dasm=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+.include <bsd.port.arch.mk>
+.if !${BUILD_PACKAGES:M-pulse}
+CONFIGURE_ARGS +=	-Dpulse=disabled
+.endif
 
 .include <bsd.port.mk>
