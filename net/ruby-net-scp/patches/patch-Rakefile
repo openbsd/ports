@@ -1,0 +1,15 @@
+$OpenBSD: patch-Rakefile,v 1.1 2020/11/11 01:31:09 jeremy Exp $
+
+Allow tests to run without jeweler.
+
+Index: Rakefile
+--- Rakefile.orig
++++ Rakefile
+@@ -35,7 +35,6 @@ begin
+   end
+   Jeweler::GemcutterTasks.new
+ rescue LoadError
+-  puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
+ end
+ 
+ require 'rake/testtask'

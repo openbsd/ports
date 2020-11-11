@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/11/11 01:31:09 jeremy Exp $
 
 COMMENT =		pure-Ruby implementation of the SCP protocol
 
@@ -17,7 +17,6 @@ CONFIGURE_STYLE =	ruby gem
 
 MODRUBY_TEST =		rake
 
-TEST_DEPENDS =		devel/ruby-jeweler,${MODRUBY_FLAVOR} \
-			devel/ruby-mocha,${MODRUBY_FLAVOR}
+TEST_DEPENDS =		devel/ruby-mocha,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>
