@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/11/11 09:51:05 benoit Exp $
 
 COMMENT =	support for the SSH 2 protocol via libssh2
 
-DISTNAME =	Net-SSH2-0.70
+DISTNAME =	Net-SSH2-0.71
 CATEGORIES =	net
 MODULES =	cpan
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
