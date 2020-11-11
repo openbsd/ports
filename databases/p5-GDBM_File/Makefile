@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/11/11 15:09:45 benoit Exp $
 
 COMMENT=	perl interface to gdbm
 
-PERL_V=		5.22.0
+PERL_V =	5.26.3
 DISTNAME=	perl-${PERL_V}
 EXTRACT_SUFX=	.tar.bz2
-PKGNAME=	p5-GDBM_File-1.22
+PKGNAME =	p5-GDBM_File-1.26.3
 CATEGORIES=	databases perl5
-REVISION=	0
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../src/}
 
