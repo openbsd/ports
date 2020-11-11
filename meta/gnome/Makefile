@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2020/11/10 11:52:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2020/11/11 11:47:24 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -10,8 +10,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		4
-REVISION-extras=	2
+REVISION-main=		5
+REVISION-extras=	3
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -19,9 +19,8 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 MULTI_PACKAGES=		-main -extras
 
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center)
-# add gtk+{2,3}-cups so that gtkprint() can see native CUPS printers;
+# add gtk+3-cups so that gtkprint() can see native CUPS printers;
 # add gtk+3-cloudprint, gnome-online-accounts is already a dependency
-RUN_DEPENDS-main +=	x11/gtk+2,-cups
 RUN_DEPENDS-main +=	x11/gtk+3,-cups
 RUN_DEPENDS-main +=	x11/gtk+3,-cloudprint
 
@@ -99,6 +98,7 @@ RUN_DEPENDS-extras +=	graphics/simple-scan \
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core-deps.bst
 ################################################################################
+
 RUN_DEPENDS-main +=	x11/gnome/grilo-plugins \
 			x11/gnome/online-accounts \
 			x11/gnome/online-miners \
@@ -117,11 +117,15 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			x11/gnome/dictionary \
 			x11/gnome/documents \
 			x11/gnome/todo \
-			x11/gnome/themes-extra \
 			x11/gnome/tweaks
+
+
+# gtk+2
+RUN_DEPENDS-extras +=	audio/libcanberra,-gtk \
+			x11/gnome/themes-extra \
+			x11/gtk+2,-cups
 
 # depends on -main
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main
-
 
 .include <bsd.port.mk>
