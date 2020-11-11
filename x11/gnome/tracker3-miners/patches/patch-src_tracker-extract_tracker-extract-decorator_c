@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract-decorator_c,v 1.1 2020/11/11 13:11:33 ajacoutot Exp $
+
+From 5699d14e025853256c98d9c75c4afcf4ca15d7b7 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Fri, 30 Oct 2020 13:25:38 +0100
+Subject: [PATCH] tracker-extract: Avoid non-native URIs
+
+Index: src/tracker-extract/tracker-extract-decorator.c
+--- src/tracker-extract/tracker-extract-decorator.c.orig
++++ src/tracker-extract/tracker-extract-decorator.c
+@@ -251,6 +251,7 @@ decorator_next_item_cb (TrackerDecorator *decorator,
+ 	GError *error = NULL;
+ 	ExtractData *data;
+ 	GTask *task;
++	GFile *file;
+ 
+ 	priv = tracker_extract_decorator_get_instance_private (TRACKER_EXTRACT_DECORATOR (decorator));
+ 	info = tracker_decorator_next_finish (decorator, result, &error);
+@@ -281,10 +282,21 @@ decorator_next_item_cb (TrackerDecorator *decorator,
+ 		return;
+ 	}
+ 
++	file = g_file_new_for_uri (tracker_decorator_info_get_url (info));
++
++	if (!g_file_is_native (file)) {
++		g_warning ("URI '%s' is not native",
++		           tracker_decorator_info_get_url (info));
++		priv->n_extracting_files--;
++		tracker_decorator_info_unref (info);
++		decorator_get_next_file (decorator);
++		return;
++	}
++
+ 	data = g_new0 (ExtractData, 1);
+ 	data->decorator = decorator;
+ 	data->decorator_info = info;
+-	data->file = g_file_new_for_uri (tracker_decorator_info_get_url (info));
++	data->file = file;
+ 	task = tracker_decorator_info_get_task (info);
+ 
+ 	g_debug ("Extracting metadata for '%s'", tracker_decorator_info_get_url (info));
