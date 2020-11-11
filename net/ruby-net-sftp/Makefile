@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/11/11 01:33:06 jeremy Exp $
 
 COMMENT =	pure-ruby implementation of the SFTP client protocol
 
@@ -17,7 +17,6 @@ CONFIGURE_STYLE = 	ruby gem
 
 MODRUBY_TEST =		rake
 
-TEST_DEPENDS =		devel/ruby-jeweler,${MODRUBY_FLAVOR} \
-			devel/ruby-mocha,${MODRUBY_FLAVOR}
+TEST_DEPENDS =		devel/ruby-mocha,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>
