@@ -1,17 +1,29 @@
-$OpenBSD: README-main,v 1.6 2018/09/04 12:46:27 espie Exp $
+$OpenBSD: README-main,v 1.7 2020/11/11 11:49:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Default theme
-=============
+Themes
+======
+
+Default
+-------
 The default GTK+ theme engine can be modified by editing:
     ~/.config/gtk-3.0/settings.ini
 and appending a line similar to:
 gtk-theme-name = oxygen-gtk
 
+Extras
+------
 Some themes are available as packages ("gtk3-*-engine").
+
+Sound
+-----
+GTK+ itself does not support event sounds, you have to use a loadable module
+like the one that comes with libcanberra which is loaded automatically when a
+GTK+ application is launched.
+You may want to install the "libcanberra-gtk3" package if you require these.
 
 Printing
 ========
