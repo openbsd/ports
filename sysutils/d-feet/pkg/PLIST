@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/08/10 08:22:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/11/11 10:32:52 ajacoutot Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/dfeet/
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py
@@ -114,7 +114,6 @@ share/locale/sv/LC_MESSAGES/d-feet.mo
 share/locale/tr/LC_MESSAGES/d-feet.mo
 share/locale/zh_CN/LC_MESSAGES/d-feet.mo
 share/metainfo/org.gnome.dfeet.appdata.xml
-@tag gtk-update-icon-cache %D/share/icons/HighContrast
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
 @tag update-desktop-database
