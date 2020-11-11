@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2020/11/11 13:14:49 cwen Exp $
 
 COMMENT=	Commodore 64 emulator
 
@@ -45,6 +45,12 @@ post-patch:
 	cp ${FILESDIR}/SID_sndio.i	${WRKSRC}
 
 NO_TEST=	Yes
+
+# There are powerpc-specific CodeWarrior like asm inline functions not
+# understood by clang
+.if ${MACHINE_ARCH:Mpowerpc}
+CFLAGS +=	-U__POWERPC__
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/Frodo ${PREFIX}/bin/frodo
