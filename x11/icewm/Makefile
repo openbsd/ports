@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2020/09/22 12:02:31 bket Exp $
+# $OpenBSD: Makefile,v 1.76 2020/11/11 09:51:46 ajacoutot Exp $
 
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
@@ -8,6 +8,7 @@ COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
+REVISION=	0
 
 HOMEPAGE=	https://ice-wm.org/
 
@@ -30,7 +31,7 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 LIB_DEPENDS=	audio/libao \
 		audio/libsndfile \
 		devel/fribidi \
-		graphics/gdk-pixbuf2
+		graphics/gdk-pixbuf-xlib
 
 RUN_DEPENDS=	devel/desktop-file-utils
 

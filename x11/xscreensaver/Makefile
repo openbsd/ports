@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.105 2020/03/21 21:07:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.106 2020/11/11 09:51:46 ajacoutot Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 # XXX x11/kde4/artwork plist may need regen if an update adds a new hack.
 DISTNAME=		xscreensaver-5.44
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -29,7 +30,7 @@ MODULES=		textproc/intltool
 RUN_DEPENDS=		devel/desktop-file-utils
 
 LIB_DEPENDS=		devel/libglade2 \
-			graphics/gdk-pixbuf2 \
+			graphics/gdk-pixbuf-xlib \
 			graphics/gle
 
 # ${FILESDIR}/migrate-xscreensaver-config.sh needs xsltproc

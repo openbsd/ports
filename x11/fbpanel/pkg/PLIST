@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/10/20 13:38:35 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/11 09:51:46 ajacoutot Exp $
 @bin bin/fbpanel
 lib/fbpanel/
-lib/fbpanel/dclock.so
-lib/fbpanel/deskno.so
-lib/fbpanel/deskno2.so
-lib/fbpanel/genmon.so
-lib/fbpanel/icons.so
-lib/fbpanel/image.so
-lib/fbpanel/launchbar.so
-lib/fbpanel/menu.so
-lib/fbpanel/pager.so
-lib/fbpanel/separator.so
-lib/fbpanel/space.so
-lib/fbpanel/taskbar.so
-lib/fbpanel/tclock.so
-lib/fbpanel/tray.so
-lib/fbpanel/wincmd.so
+@so lib/fbpanel/dclock.so
+@so lib/fbpanel/deskno.so
+@so lib/fbpanel/deskno2.so
+@so lib/fbpanel/genmon.so
+@so lib/fbpanel/icons.so
+@so lib/fbpanel/image.so
+@so lib/fbpanel/launchbar.so
+@so lib/fbpanel/menu.so
+@so lib/fbpanel/pager.so
+@so lib/fbpanel/separator.so
+@so lib/fbpanel/space.so
+@so lib/fbpanel/taskbar.so
+@so lib/fbpanel/tclock.so
+@so lib/fbpanel/tray.so
+@so lib/fbpanel/wincmd.so
 libexec/fbpanel/
 libexec/fbpanel/make_profile
 libexec/fbpanel/xlogout
