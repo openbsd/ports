@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:13:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/11/11 09:47:04 sebastia Exp $
 
 COMMENT=	HTTP library for Python
 
-MODPY_EGG_VERSION=1.25.9
+MODPY_EGG_VERSION=1.26.0
 DISTNAME=	urllib3-${MODPY_EGG_VERSION}
 PKGNAME=	py-urllib3-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	www
 
-
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

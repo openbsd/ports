@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/06/21 06:24:44 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/11/11 09:47:04 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/urllib3/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,6 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}_collections.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}connectionpool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -19,6 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}poolmanager.${M
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/_collections.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/_version.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/connection.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/connectionpool.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/
@@ -74,20 +76,24 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}proxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}queue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}retry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}ssl_.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}ssltransport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}timeout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}url.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}wait.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/connection.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/proxy.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/queue.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/request.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/response.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/retry.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/ssl_.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/ssltransport.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/timeout.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/url.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/wait.py
