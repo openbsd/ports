@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_org_gnome_SettingsDaemon_Dummy_desktop_in,v 1.1 2020/11/11 14:04:25 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/merge_requests/207
+
+Index: plugins/org.gnome.SettingsDaemon.Dummy.desktop.in
+--- plugins/org.gnome.SettingsDaemon.Dummy.desktop.in.orig
++++ plugins/org.gnome.SettingsDaemon.Dummy.desktop.in
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=Application
+ Name=GNOME Settings Daemon's @pluginname@ dummy autostart file
+-Exec=/bin/false
++Exec=false
+ OnlyShowIn=GNOME;
+ NoDisplay=true
+ Hidden=true
