@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.202 2020/11/07 08:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.203 2020/11/11 12:21:38 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.38.1
+REVISION=		0
 
 SHARED_LIBS += nautilus-extension        3.0 # 1.5.0
 
@@ -43,7 +44,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ARGS=		-Denable-selinux=false
+CONFIGURE_ARGS=		-Dselinux=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
