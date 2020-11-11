@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.528 2020/11/01 20:38:44 jca Exp $
+# $OpenBSD: Makefile,v 1.529 2020/11/11 09:51:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -68,6 +68,7 @@
      SUBDIR += gd
      SUBDIR += gdcm
      SUBDIR += gdk-pixbuf2
+     SUBDIR += gdk-pixbuf-xlib
      SUBDIR += geeqie
      SUBDIR += gegl04
      SUBDIR += geomview
