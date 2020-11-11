@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2032 2020/11/02 16:13:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2033 2020/11/11 02:27:31 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1266,6 +1266,7 @@
      SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
      SUBDIR += p5-common-sense
+     SUBDIR += p5-curry
      SUBDIR += p5-enum
      SUBDIR += p5-forks
      SUBDIR += p5-indirect
