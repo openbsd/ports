@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2020/11/05 11:23:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2020/11/11 15:53:41 jca Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
@@ -193,10 +193,11 @@ do-install:
 	# Libs and includes:
 	${INSTALL_DATA} ${WRKSRC}/stage/lib/lib!(*.so) ${PREFIX}/lib
 	${INSTALL_DATA} ${PY3_DIR}/lib!(*.so) ${PREFIX}/lib
-	cd ${WRKSRC} && \
-		find boost -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \;
-	cd ${WRKSRC} && \
-		find boost ! -name \*.orig -type f -exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
+	${INSTALL_DATA_DIR} ${PREFIX}/include/boost
+	cd ${WRKSRC}/boost && \
+		pax -rw -s ':^.*\.orig$$::' . ${PREFIX}/include/boost
+	find ${PREFIX}/include/boost -type d -exec chmod ${DIRMODE} {} +
+	find ${PREFIX}/include/boost -type f -exec chmod ${SHAREMODE} {} +
 	# boost-build:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/src/engine/bin.*/{b2,bjam} \
 		${PREFIX}/bin
