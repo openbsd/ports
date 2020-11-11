@@ -1,0 +1,17 @@
+$OpenBSD: patch-Source_WebCore_platform_graphics_x11_PlatformDisplayX11_cpp,v 1.1 2020/11/11 21:27:03 cwen Exp $
+
+Missing include for XVisualInfo(3), this code is only trigerred when
+`-DENABLE_GRAPHICS_CONTEXT_GL=OFF' is given to CONFIGURE_ARGS, currently
+only needed on powerpc.
+
+Index: Source/WebCore/platform/graphics/x11/PlatformDisplayX11.cpp
+--- Source/WebCore/platform/graphics/x11/PlatformDisplayX11.cpp.orig
++++ Source/WebCore/platform/graphics/x11/PlatformDisplayX11.cpp
+@@ -32,6 +32,7 @@
+ #include <X11/Xlib.h>
+ #include <X11/extensions/Xcomposite.h>
+ #if PLATFORM(GTK)
++#include <X11/Xutil.h>
+ #include <X11/extensions/Xdamage.h>
+ #endif
+ 

@@ -1,0 +1,58 @@
+$OpenBSD: powerpc-patch-Source_JavaScriptCore_llint_LowLevelInterpreter32_64_asm,v 1.1 2020/11/11 21:27:03 cwen Exp $
+
+Fix Javascript runtime on powerpc, from
+https://bugs.webkit.org/show_bug.cgi?id=211592
+
+Index: Source/JavaScriptCore/llint/LowLevelInterpreter32_64.asm
+--- Source/JavaScriptCore/llint/LowLevelInterpreter32_64.asm.orig
++++ Source/JavaScriptCore/llint/LowLevelInterpreter32_64.asm
+@@ -1552,13 +1552,21 @@ llintOpWithMetadata(op_put_by_id, OpPutById, macro (si
+     loadp StructureChain::m_vector[t3], t3
+     assert(macro (ok) btpnz t3, ok end)
+ 
+-    loadp Structure::m_prototype[t2], t2
++    if JSVALUE64
++        loadp Structure::m_prototype[t2], t2
++    else
++        loadp Structure::m_prototype + PayloadOffset[t2], t2
++    end
+     btpz t2, .opPutByIdTransitionChainDone
+ .opPutByIdTransitionChainLoop:
+     loadp [t3], t1
+     bineq t1, JSCell::m_structureID[t2], .opPutByIdSlow
+     addp 4, t3
+-    loadp Structure::m_prototype[t1], t2
++    if JSVALUE64
++        loadp Structure::m_prototype[t1], t2
++    else
++        loadp Structure::m_prototype + PayloadOffset[t1], t2
++    end
+     btpnz t2, .opPutByIdTransitionChainLoop
+ 
+ .opPutByIdTransitionChainDone:
+@@ -2182,7 +2190,11 @@ end)
+ 
+ 
+ op(llint_throw_from_slow_path_trampoline, macro()
+-    loadp Callee[cfr], t1
++    if JSVALUE64
++        loadp Callee[cfr], t1
++    else
++        loadp Callee + PayloadOffset[cfr], t1
++    end
+     convertCalleeToVM(t1)
+     copyCalleeSavesToVMEntryFrameCalleeSavesBuffer(t1, t2)
+ 
+@@ -2191,7 +2203,11 @@ op(llint_throw_from_slow_path_trampoline, macro()
+     # When throwing from the interpreter (i.e. throwing from LLIntSlowPaths), so
+     # the throw target is not necessarily interpreted code, we come to here.
+     # This essentially emulates the JIT's throwing protocol.
+-    loadp Callee[cfr], t1
++    if JSVALUE64
++        loadp Callee[cfr], t1
++    else
++        loadp Callee + PayloadOffset[cfr], t1
++    end
+     convertCalleeToVM(t1)
+     jmp VM::targetMachinePCForThrow[t1]
+ end)
