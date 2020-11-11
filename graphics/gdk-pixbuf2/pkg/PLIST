@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2019/11/10 17:26:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2020/11/11 09:50:14 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @define-tag update-gdk-pixbuf at-end %D/bin/gdk-pixbuf-query-loaders --update-cache
@@ -10,9 +10,6 @@
 @bin bin/gdk-pixbuf-thumbnailer
 include/gdk-pixbuf-2.0/
 include/gdk-pixbuf-2.0/gdk-pixbuf/
-include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/
-include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlib.h
-include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-animation.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h
@@ -34,7 +31,6 @@ lib/gdk-pixbuf-2.0/2.10.0/loaders/
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-icns.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ico.so
-@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jasper.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jpeg.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-pnm.so
@@ -47,9 +43,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/GdkPixbuf-2.0.typelib
 lib/girepository-1.0/GdkPixdata-2.0.typelib
 @lib lib/libgdk_pixbuf-2.0.so.${LIBgdk_pixbuf-2.0_VERSION}
-@lib lib/libgdk_pixbuf_xlib-2.0.so.${LIBgdk_pixbuf_xlib-2.0_VERSION}
 lib/pkgconfig/gdk-pixbuf-2.0.pc
-lib/pkgconfig/gdk-pixbuf-xlib-2.0.pc
 @man man/man1/gdk-pixbuf-csource.1
 @man man/man1/gdk-pixbuf-query-loaders.1
 share/gir-1.0/

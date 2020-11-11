@@ -1,4 +1,10 @@
-The Gdk Pixbuf library provides:
-    * Image loading and saving facilities
-    * Fast scaling and compositing of pixbufs
-    * Simple animation loading (ie. animated GIFs)
+GdkPixbuf is a library that loads image data in various formats and stores
+it as linear buffers in memory. The buffers can then be scaled, composited,
+modified, saved, or rendered.
+
+GdkPixbuf can load image data encoded in different formats, such as:
+ - PNG
+ - JPEG
+ - TIFF
+ - TGA
+ - GIF
