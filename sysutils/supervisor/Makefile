@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:13:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/11 10:12:09 benoit Exp $
 
 COMMENT=		system to monitor and control processes
 
-MODPY_EGG_VERSION =	4.2.0
+MODPY_EGG_VERSION =	4.2.1
 DISTNAME=		supervisor-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		sysutils
 
