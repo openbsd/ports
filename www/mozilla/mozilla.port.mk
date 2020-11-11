@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.135 2020/10/20 14:45:12 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.136 2020/11/11 17:12:50 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -156,6 +156,7 @@ MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3
 .else
 MODMOZ_WANTLIB +=	Xcursor Xi Xinerama Xrandr
 .endif
+# for NPAPI support (see #1377445 for the dependency removal)
 MODMOZ_LIB_DEPENDS +=	x11/gtk+2
 MODMOZ_WANTLIB +=	Xcomposite Xdamage Xfixes gdk-x11-2.0 gtk-x11-2.0
 
