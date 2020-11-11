@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/05 17:17:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/11/11 02:45:18 jeremy Exp $
 ${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/BSDL
-${GEM_LIB}/gems/${DISTNAME}/ChangeLog.tkextlib
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/MANUAL_tcltklib.eng
@@ -25,7 +24,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/README
 ${GEM_LIB}/gems/${DISTNAME}/lib/multi-tk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/remote-tk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tcltk.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/tcltklib.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/tcltklib.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/tk/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tk/after.rb
@@ -384,15 +383,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tkmngfocus.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tkpalette.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tkscrollbox.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tktext.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/tkutil.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/tkutil.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/tkvirtevent.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tkwinpkg.rb
-${GEM_LIB}/gems/${DISTNAME}/old-README.tcltklib.ja
 ${GEM_LIB}/gems/${DISTNAME}/sample/
 ${GEM_LIB}/gems/${DISTNAME}/sample/24hr_clock.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/binding_sample.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/bindtag_sample.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/binstr_usage.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/btn_with_frame.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/cd_timer.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/cmd_res_test.rb
@@ -636,10 +633,8 @@ ${GEM_LIB}/gems/${DISTNAME}/sample/multi-ip_sample2.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/optobj_sample.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/propagate.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/remote-ip_sample.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/remote-ip_sample2.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/resource.en
 ${GEM_LIB}/gems/${DISTNAME}/sample/resource.ja
-${GEM_LIB}/gems/${DISTNAME}/sample/safe-tk.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/scrollframe.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tcltklib/
 ${GEM_LIB}/gems/${DISTNAME}/sample/tcltklib/batsu.gif
@@ -1105,7 +1100,6 @@ ${GEM_LIB}/gems/${DISTNAME}/sample/tkmsgcat-load_tk.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tkmulticolumnlist.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tkmultilistbox.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tkmultilistframe.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/tkoptdb-safeTk.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tkoptdb.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tkrttimer.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tksleep_sample.rb
@@ -1114,8 +1108,6 @@ ${GEM_LIB}/gems/${DISTNAME}/sample/tktextio.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tktimer.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tktimer2.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/tktimer3.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/tktree.rb
-${GEM_LIB}/gems/${DISTNAME}/sample/tktree.tcl
 ${GEM_LIB}/gems/${DISTNAME}/sample/ttk_wrapper.rb
 ${GEM_LIB}/gems/${DISTNAME}/tk.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
