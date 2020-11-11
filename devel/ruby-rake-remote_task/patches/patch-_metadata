@@ -1,4 +1,6 @@
-$OpenBSD: patch-_metadata,v 1.1 2017/10/15 20:53:18 jeremy Exp $
+$OpenBSD: patch-_metadata,v 1.2 2020/11/11 02:42:55 jeremy Exp $
+
+Bump rake dependency to allow building on Ruby 2.6+.
 
 Index: .metadata
 --- .metadata.orig
@@ -8,7 +10,7 @@ Index: .metadata
      - - "<"
        - !ruby/object:Gem::Version
 -        version: '12.0'
-+        version: '13.0'
++        version: '14.0'
    type: :runtime
    prerelease: false
    version_requirements: !ruby/object:Gem::Requirement
@@ -17,7 +19,7 @@ Index: .metadata
      - - "<"
        - !ruby/object:Gem::Version
 -        version: '12.0'
-+        version: '13.0'
++        version: '14.0'
  - !ruby/object:Gem::Dependency
    name: open4
    requirement: !ruby/object:Gem::Requirement
