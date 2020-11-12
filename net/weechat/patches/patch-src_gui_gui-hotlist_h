@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_gui-hotlist_h,v 1.1 2020/11/12 05:26:17 rsadowski Exp $
+
+Index: src/gui/gui-hotlist.h
+--- src/gui/gui-hotlist.h.orig
++++ src/gui/gui-hotlist.h
+@@ -20,6 +20,8 @@
+ #ifndef WEECHAT_GUI_HOTLIST_H
+ #define WEECHAT_GUI_HOTLIST_H
+ 
++#include <sys/time.h>
++
+ enum t_gui_hotlist_priority
+ {
+     GUI_HOTLIST_LOW = 0,
