@@ -1,0 +1,3 @@
+Luassert extends Lua's built-in assertions to provide additional tests
+and the ability to create your own. It comes preloaded with argument
+formatters for common Lua types, but it is easy to roll your own.
