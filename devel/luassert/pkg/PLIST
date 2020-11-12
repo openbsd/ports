@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/12 09:35:32 semarie Exp $
-share/doc/luassert-1.7.11/
-share/doc/luassert-1.7.11/README.md
+@comment $OpenBSD: PLIST,v 1.2 2020/11/12 18:37:22 semarie Exp $
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/README.md
 share/lua/${MODLUA_VERSION}/luassert/
 share/lua/${MODLUA_VERSION}/luassert/array.lua
 share/lua/${MODLUA_VERSION}/luassert/assert.lua

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/12 09:35:32 semarie Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/12 18:37:22 semarie Exp $
 
 COMMENT=	assertion library for lua
 CATEGORIES=	devel
@@ -6,6 +6,7 @@ CATEGORIES=	devel
 GH_ACCOUNT=	Olivine-Labs
 GH_PROJECT=	luassert
 GH_TAGNAME=	v1.7.11
+REVISION=	0
 
 MAINTAINER=	sh+ports@codevoid.de
 
