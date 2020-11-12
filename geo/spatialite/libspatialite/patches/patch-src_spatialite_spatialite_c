@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_spatialite_spatialite_c,v 1.1 2020/11/12 13:59:31 landry Exp $
+
+stop printing meaningless debug info to stderr
+
+Index: src/spatialite/spatialite.c
+--- src/spatialite/spatialite.c.orig
++++ src/spatialite/spatialite.c
+@@ -53344,12 +53344,12 @@ spatialite_splash_screen (int verbose)
+ 		    ("\t- 'VirtualGPKG'\t[OGC GeoPackage interoperability]\n");
+ #endif
+ 		spatialite_i ("\t- 'SpatiaLite'\t\t[Spatial SQL - OGC]\n");
+-	    }
+ 
+ #ifdef ENABLE_LIBXML2		/* VirtualXPath is supported */
+ 		spatialite_i
+ 		    ("\t- 'VirtualXPath'\t[XML Path Language - XPath]\n");
+ #endif /* end including LIBXML2 */
++	    }
+ 
+ #ifndef OMIT_PROJ		/* PROJ.4 version */
+ 	  if (verbose)
