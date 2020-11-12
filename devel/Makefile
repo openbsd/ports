@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2033 2020/11/11 02:27:31 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2034 2020/11/12 09:38:19 semarie Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -401,6 +401,9 @@
      SUBDIR += lpeg,lua52
      SUBDIR += lpeg,lua53
      SUBDIR += ltcltk
+     SUBDIR += luassert
+     SUBDIR += luassert,lua52
+     SUBDIR += luassert,lua53
      SUBDIR += lua-bit32
      SUBDIR += lua-bitop
      SUBDIR += lua-bitop,lua52
@@ -423,6 +426,9 @@
      SUBDIR += lua-penlight
      SUBDIR += lua-penlight,lua52
      SUBDIR += lua-penlight,lua53
+     SUBDIR += lua-say
+     SUBDIR += lua-say,lua52
+     SUBDIR += lua-say,lua53
      SUBDIR += lua-term
      SUBDIR += lua-term,lua52
      SUBDIR += lua-term,lua53
