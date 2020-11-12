@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/03 20:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/11/12 17:00:06 sthen Exp $
 
 COMMENT=	simple RADIUS client library
 
 SHARED_LIBS +=	radcli               0.3      # 6.0
 
-V=		1.2.11
+V=		1.2.12
 DISTNAME=	radcli-$V
-REVISION=	0
 
 CATEGORIES=	net
 
