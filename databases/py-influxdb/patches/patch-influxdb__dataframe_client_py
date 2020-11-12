@@ -1,11 +1,11 @@
-$OpenBSD: patch-influxdb__dataframe_client_py,v 1.1 2020/08/23 10:15:25 bket Exp $
+$OpenBSD: patch-influxdb__dataframe_client_py,v 1.2 2020/11/12 06:18:29 bket Exp $
 
 Fix FutureWarning from pandas.
 
 Index: influxdb/_dataframe_client.py
 --- influxdb/_dataframe_client.py.orig
 +++ influxdb/_dataframe_client.py
-@@ -294,7 +294,7 @@ class DataFrameClient(InfluxDBClient):
+@@ -305,7 +305,7 @@ class DataFrameClient(InfluxDBClient):
               'time': np.int64(ts.value / precision_factor)}
              for ts, tag, (_, rec) in zip(
                  dataframe.index,
