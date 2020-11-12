@@ -1,4 +1,5 @@
-$OpenBSD: README,v 1.5 2018/09/04 12:46:24 espie Exp $
+$OpenBSD: README,v 1.6 2020/11/12 17:21:35 sthen Exp $
+
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -12,9 +13,8 @@ Administrator Quick Start
     doas chown www:www /var/www/caldav/kcaldav.db
     doas chmod 640 /var/www/caldav/kcaldav.db
 
-  Read kcaldav.passwd(1) for more details about creating
-  new calenders for users, changing email address and other
-  options.
+  Read kcaldav.passwd(1) for more details about creating new
+  calenders for users, changing email address and other options.
 
   With httpd(8) the kcaldav CGI can be run through slowcgi(8)
   using a configuration snippet like the following:
@@ -32,14 +32,28 @@ Administrator Quick Start
         }
     }
 
-  kcaldav.cgi uses http authentication for user security.
-  Install a tls certificate to ensure privacy of connection.
+  Remember to enable and start slowcgi(8):
+
+    rcctl enable slowcgi
+    rcttl start slowcgi
+
+  Also, kcaldav.cgi uses http authentication for user security.
+  Make sure your web server is configured to use https to ensure
+  privacy of connection.
+
 
 User Quick Start
 ================
-  Users can manage their account settings, create calendars
-  and find the URL for use with their calendar application
-  by browsing to: https://localhost/kcaldav/home.html
+  Users can manage their account settings, create calendars,
+  and find the URL for use with their calendar application by
+  browsing to:
+
+    https://example.org/kcaldav/home.html
+
+  The URL will look like:
+
+    https://example.org/cgi-bin/kcaldav/<username>/
+
 
 Porting Notes: Write Ahead Logging
 ==================================
@@ -53,26 +67,51 @@ Porting Notes: Write Ahead Logging
 
   Open the kcaldav.db:
 
-  % doas sqlite3 caldav/kcaldav.db
+    doas sqlite3 caldav/kcaldav.db
 
   Type:
 
-  sqlite> PRAGMA journal_mode=WAL;
+    sqlite> PRAGMA journal_mode=WAL;
 
-  To disable WAL later open the kcaldav db and type:
+  To disable WAL, open the kcaldav db and type:
 
-  sqlite> PRAGMA journal_mode=DELETE;
+    sqlite> PRAGMA journal_mode=DELETE;
 
   If you plan to run kcaldav in a chroot environment you must
-  create a /tmp directory in the chroot and it must be writable
+  create a /tmp directory in the chroot dir and make it writable
   by the httpd daemon account:
 
-  % doas mkdir /var/www/tmp
-  % doas chown www:daemon /var/www/tmp
-  % doas chmod 755 /var/www/tmp
+    doas mkdir /var/www/tmp
+    doas chown www:daemon /var/www/tmp
+    doas chmod 755 /var/www/tmp
 
   For more details about WAL and temp directory requirements
   see:
 
   https://www.sqlite.org/wal.html
   https://www.sqlite.org/c3ref/temp_directory.html
+
+
+Porting Notes: Debug and Logging
+================================
+
+  Logging in kcaldav is controlled by the LOGFILE and DEBUG
+  variables in the Makefile. LOGFILE sets the name and location
+  of the file to write to, DEBUG controls the amount of logging.
+
+  The DEBUG level can only be set at build time. There are four
+  DEBUG levels in ascending order of verbosity: 0 - 3, where 0
+  disables all debugging. This port disables logging by commenting
+  out the Makefile line:
+
+    CFLAGS  	+= -DLOGFILE=\"$(LOGFILE)\".
+
+  When sending error reports upstream, re-enable the line above,
+  set DEBUG=3, and rebuild.
+
+  LOGFILE defaults to /var/www/logs/kcaldav-system.log. This file
+  must be created by the user and permissions set:
+
+    touch /var/www/logs/kcaldav-system.log
+    chown www:www /var/www/logs/kcaldav-system.log
+    chmod 644 /var/www/logs/kcaldav-system.log

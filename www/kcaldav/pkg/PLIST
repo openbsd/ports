@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/02/01 20:44:16 jung Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/11/12 17:21:35 sthen Exp $
 @bin bin/kcaldav.passwd
 include/libkcaldav.h
 @static-lib lib/libkcaldav.a
 @man man/man1/kcaldav.passwd.1
-@man man/man3/libkcaldav.3
+@man man/man3/caldav_free.3
+@man man/man3/caldav_parse.3
+@man man/man3/ical_free.3
+@man man/man3/ical_parse.3
+@man man/man3/ical_print.3
 @man man/man8/kcaldav.8
 share/doc/pkg-readmes/${PKGSTEM}
 @cwd /var/www
@@ -21,6 +25,4 @@ htdocs/kcaldav/collection.html
 htdocs/kcaldav/collection.min.js
 htdocs/kcaldav/home.html
 htdocs/kcaldav/home.min.js
-htdocs/kcaldav/md5.min.js
-htdocs/kcaldav/script.min.js
 htdocs/kcaldav/style.css

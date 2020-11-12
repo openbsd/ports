@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/02/01 20:44:16 jung Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/12 17:21:35 sthen Exp $
 
 COMMENT =		a simple, safe, and minimal CalDAV server
 
-DISTNAME =		kcaldav-0.1.11
-REVISION =		0
+DISTNAME =		kcaldav-0.2.0
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kcaldav/
@@ -13,7 +12,7 @@ MAINTAINER =		Aaron Poffenberger <akp@hypernote.com>
 PERMIT_PACKAGE =	Yes
 
 # "make port-lib-depends-check" can help
-WANTLIB +=		c expat m sqlite3 pthread
+WANTLIB +=		c expat m sqlite3
 
 MASTER_SITES =		https://kristaps.bsd.lv/kcaldav/snapshots/
 EXTRACT_SUFX =		.tgz
@@ -21,21 +20,18 @@ EXTRACT_SUFX =		.tgz
 BUILD_DEPENDS =		www/kcgi
 LIB_DEPENDS =		databases/sqlite3
 
-CONFIGURE_STYLE =	simple
-USE_GMAKE = 		Yes
-CONFIGURE_ARGS =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
 FAKE_FLAGS =		PREFIX=${WRKINST}${TRUEPREFIX} \
 			HTDOCSPREFIX=${VARBASE}/www/htdocs/kcaldav \
 			CGIPREFIX=${VARBASE}/www/cgi-bin \
 			CALPREFIX=${VARBASE}/www/caldav
 
-# no doc on how to run tests
-NO_TEST =		Yes
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 ALL_TARGET =		all libkcaldav.a
 INSTALL_TARGET =	install installcgi
+TEST_TARGET =		regress
 
 post-install:
 	ln -s kcaldav ${WRKINST}${VARBASE}/www/cgi-bin/kcaldav.cgi
