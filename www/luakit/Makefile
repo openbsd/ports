@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/09/17 18:20:14 semarie Exp $
-
-BROKEN-powerpc = help2man: can't get `--help' info from ./luakit
+# $OpenBSD: Makefile,v 1.28 2020/11/12 14:39:54 semarie Exp $
 
 COMMENT =	fast, small, webkit based browser written in lua
 
 GH_ACCOUNT =	luakit
-GH_TAGNAME =	2.2
 GH_PROJECT =	luakit
-REVISION =	1
+GH_TAGNAME =	2.2.1
 
 EPOCH =		1
 
@@ -31,8 +28,6 @@ WANTLIB += pangocairo-1.0 pthread soup-2.4 sqlite3 webkit2gtk-4.0
 
 MODULES =	lang/lua
 
-NO_TEST =	Yes
-
 BUILD_DEPENDS =	devel/help2man \
 		devel/luafs
 
@@ -42,6 +37,11 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	lang/luajit \
 		www/webkitgtk4
+
+TEST_DEPENDS =	devel/luassert \
+		devel/luacheck
+
+TEST_TARGET =	run-tests
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good \
