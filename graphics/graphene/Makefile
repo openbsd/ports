@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/06/24 16:52:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2020/11/13 17:18:56 kmos Exp $
 
 COMMENT=		thin layer of graphic data types
 
@@ -20,6 +20,8 @@ MASTER_SITES=		https://github.com/ebassi/graphene/releases/download/${GNOME_VERS
 
 MODULES=		devel/meson \
 			x11/gnome
+
+COMPILER=		base-clang ports-gcc
 
 MODGNOME_TOOLS=		gobject-introspection
 
