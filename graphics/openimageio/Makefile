@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2020/10/26 18:37:59 jca Exp $
+# $OpenBSD: Makefile,v 1.45 2020/11/13 23:25:38 sthen Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -34,7 +34,7 @@ WANTLIB += jpeg m openjpeg png raw_r swscale tiff webp z
 
 MODULES =		devel/cmake \
 			lang/python \
-			x11/qt5 \
+			x11/qt5
 
 COMPILER =		base-clang ports-gcc
 
