@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/07 21:55:11 sthen Exp $
-bin/sqlformat${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.5 2020/11/13 22:41:14 sthen Exp $
+@conflict py-sqlparse-*
+@pkgpath databases/py-sqlparse
+bin/sqlformat
 lib/python${MODPY_VERSION}/site-packages/sqlparse/
 lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,7 +15,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}formatter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}keywords.${MODPY_PYC_MAGIC_TAG}pyc
@@ -22,7 +23,6 @@ lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}sql.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}tokens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/cli.py
-lib/python${MODPY_VERSION}/site-packages/sqlparse/compat.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/
 lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/${MODPY_PYCACHE}/

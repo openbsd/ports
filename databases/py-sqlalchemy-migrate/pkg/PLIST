@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/12/30 13:02:48 sthen Exp $
-bin/migrate${MODPY_BIN_SUFFIX}
-bin/migrate-repository${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.7 2020/11/13 22:41:14 sthen Exp $
+@conflict py-sqlalchemy-migrate-*
+@pkgpath databases/py-sqlalchemy-migrate
+bin/migrate
+bin/migrate-repository
 lib/python${MODPY_VERSION}/site-packages/migrate/
 lib/python${MODPY_VERSION}/site-packages/migrate/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/migrate/${MODPY_PYCACHE}/

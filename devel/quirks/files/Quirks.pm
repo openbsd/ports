@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1109 2020/11/09 21:42:51 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.1110 2020/11/13 22:41:14 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -506,6 +506,8 @@ my $stem_extensions = {
 	'py-textfsm' => 'py3-textfsm',
 	'py-unicodecsv' => 'py3-unicodecsv',
 	'py-enchant' => 'py3-enchant',
+	'py-sqlparse' => 'py3-sqlparse',
+	'py-sqlalchemy-migrate' => 'py3-sqlalchemy-migrate',
 };
 
 my $obsolete_reason = {

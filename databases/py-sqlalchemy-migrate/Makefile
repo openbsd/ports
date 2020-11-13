@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:12:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/11/13 22:41:14 sthen Exp $
 
 COMMENT =		schema migration tools for SQLAlchemy
 
 MODPY_EGG_VERSION =	0.13.0
 DISTNAME =		sqlalchemy-migrate-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		databases
 
@@ -26,15 +26,9 @@ RUN_DEPENDS =		databases/py-sqlalchemy${MODPY_FLAVOR} \
 			www/py-tempita${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 # test needs unported tempest, py-cfgparse & py-scripttest
 NO_TEST =		Yes
-
-post-install:
-	mv ${PREFIX}/bin/migrate \
-		${PREFIX}/bin/migrate${MODPY_BIN_SUFFIX}
-	mv ${PREFIX}/bin/migrate-repository \
-		${PREFIX}/bin/migrate-repository${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

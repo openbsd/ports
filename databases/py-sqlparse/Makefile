@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/11/13 22:41:14 sthen Exp $
 
 COMMENT =		non-validating SQL parser
 
-MODPY_EGG_VERSION =	0.2.4
+MODPY_EGG_VERSION =	0.4.1
 DISTNAME =		sqlparse-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		databases
 
@@ -18,10 +17,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests/
 
-FLAVORS =		python3
-FLAVOR ?=
-
-post-install:
-	mv ${PREFIX}/bin/sqlformat ${PREFIX}/bin/sqlformat${MODPY_BIN_SUFFIX}
+FLAVORS =	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>
