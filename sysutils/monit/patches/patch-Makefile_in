@@ -1,12 +1,26 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2019/09/14 21:18:18 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2020/11/13 21:34:26 sthen Exp $
 
-Using $< in a non-suffix rule context is a GNUmake idiom (Makefile:1279)
+Using $< in a non-suffix rule context is a GNUmake idiom.
+
+Using the "define" directive is a GNUmake idiom.
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1297,7 +1297,7 @@ cleanall: clean distclean
- 	-rm -rf m4 config
+@@ -1292,11 +1292,6 @@ uninstall-man: uninstall-man1
+ .PRECIOUS: Makefile
+ 
+ 
+-define check-exit
+-|| exit 1
+-
+-endef
+-
+ # -------
+ # Targets
+ # -------
+@@ -1331,7 +1326,7 @@ cleanall: clean distclean
+ 	-git clean -fxd
  
  monit.1: doc/monit.pod
 -	$(POD2MAN) $(POD2MANFLAGS) $< > $@
@@ -14,3 +28,21 @@ Index: Makefile.in
  	-rm -f pod2*
  
  # -------------
+@@ -1342,14 +1337,14 @@ src/y.tab.c src/y.tab.h: run-yacc
+ 
+ .INTERMEDIATE: run-yacc
+ run-yacc: src/p.y
+-	$(YACC) $(YACCFLAGS) -o src/y.tab.c $<
++	$(YACC) $(YACCFLAGS) -o src/y.tab.c src/p.y
+ 
+ src/lex.yy.c: src/l.l
+-	$(FLEX) $(FLEXFLAGS) -o$@ $<
++	$(FLEX) $(FLEXFLAGS) -o$@ src/l.l
+ @WITH_CODESIGN_TRUE@all-local: $(bin_PROGRAMS)
+ @WITH_CODESIGN_TRUE@	$(foreach file, $(bin_PROGRAMS), \
+ @WITH_CODESIGN_TRUE@                codesign -s $(CODESIGN_IDENTITY) -v --deep --timestamp --options runtime $(file) \
+-@WITH_CODESIGN_TRUE@        $(check-exit))
++@WITH_CODESIGN_TRUE@        || exit 1)
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
