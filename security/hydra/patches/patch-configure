@@ -1,282 +1,223 @@
-$OpenBSD: patch-configure,v 1.10 2017/11/20 13:04:09 jasper Exp $
+$OpenBSD: patch-configure,v 1.11 2020/11/13 21:33:44 sthen Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -443,106 +443,6 @@ fi
-   fi
- #fi
+@@ -170,6 +170,13 @@ fi
+ STRIP="strip"
+ echo
  
--echo "Checking for SVN (libsvn_client-1 libapr-1.so libaprutil-1.so) ..."
--for i in $LIBDIRS ; do
--    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.so" ]; then
--            SVN_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$APR_PATH" ]; then   
--        if [ -f "$i/libapr-1.so" -a -f "$i/libaprutil-1.so" ]; then
--	    APR_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.dll.a" ]; then
--            SVN_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$APR_PATH" ]; then   
--        if [ -f "$i/libapr-1.dll.a" -a -f "$i/libaprutil-1.dll.a" ]; then
--	    APR_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.dylib" ]; then
--            SVN_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$APR_PATH" ]; then   
--        if [ -f "$i/libapr-1.dylib" -a -f "$i/libaprutil-1.dylib" ]; then
--	    APR_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.a" ]; then
--            SVN_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$APR_PATH" ]; then   
--        if [ -f "$i/libapr-1.a" -a -f "$i/libaprutil-1.a" ]; then
--	    APR_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.0.dylib" ]; then
--            SVN_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$APR_PATH" ]; then   
--        if [ -f "$i/libapr-1.0.dylib" -a -f "$i/libaprutil-1.0.dylib" ]; then
--	    APR_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$SVN_PATH" ]; then
--        TMP_LIB1=`/bin/ls $i/libsvn_client*.so* 2> /dev/null | grep libsvn_client.`
--        if [ -n "$TMP_LIB1" ]; then
--          SVN_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$APR_PATH" ]; then   
--        TMP_LIB2=`/bin/ls $i/libapr-1*.so* 2> /dev/null | grep libsvn_client.`
--        TMP_LIB3=`/bin/ls $i/libaprutil-1*.so* 2> /dev/null | grep libsvn_client.`
--        if [ -n "$TMP_LIB2" -a -n "$TMP_LIB3" ]; then
--	  APR_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$SVN_PATH" ]; then
--        TMP_LIB1=`/bin/ls $i/libsvn_client*.dll* 2> /dev/null | grep libsvn_client.`
--        if [ -n "$TMP_LIB1" ]; then
--          SVN_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$APR_PATH" ]; then   
--        TMP_LIB2=`/bin/ls $i/libapr-1*.dll* 2> /dev/null | grep libsvn_client.`
--        TMP_LIB3=`/bin/ls $i/libaprutil-1*.dll* 2> /dev/null | grep libsvn_client.`
--        if [ -n "$TMP_LIB2" -a -n "$TMP_LIB3" ]; then
--	  APR_PATH="$i"
--        fi
--    fi
--done
--for i in $INCDIRS ; do
--    if [ "X" = "X$SVN_IPATH" ]; then
--        if [ -d "$i/subversion-1" ]; then
--            SVN_IPATH="$i/subversion-1"
--        fi
--        if [ -d "$i/svn" ]; then
--            SVN_IPATH="$i/svn"
--        fi
--    fi  
--    if [ "X" = "X$APR_IPATH" ]; then
--        if [ -d "$i/apr-1.0" ]; then
--            APR_IPATH="$i/apr-1.0"
--        fi
--        if [ -d "$i/apr-1" ]; then
--            APR_IPATH="$i/apr-1"
--        fi
--        if [ -d "$i/apr" ]; then
--            APR_IPATH="$i/apr"
--        fi
--    fi  
--done
- if [ "X" != "X$DEBUG" ]; then
-    echo DEBUG: SVN_PATH=$SVN_PATH/libsvn_client-1
-    echo DEBUG: APR_PATH=$APR_PATH/libapr
-@@ -569,26 +469,6 @@ if [ "X" = "X$SVN_PATH" -o "X" = "X$APR_PATH" ]; then
-     echo "                                                               ... NOT found, module svn disabled"
++if [ "$SYSS" = "OpenBSD" ]; then
++LIBDIRS="/usr/lib /usr/X11R6/lib"
++INCDIRS="/usr/include"
++LIBDIRS_ALL="/usr/lib /usr/X11R6/lib /usr/local/lib"
++INCDIRS_ALL="/usr/include /usr/local/include"
++fi
++
+ echo "Checking for zlib (libz/zlib.h) ..."
+ for i in $INCDIRS; do
+    if [ -f "$i/zlib.h" ]; then
+@@ -267,13 +274,13 @@ if [ "$SSL_IPATH" = "/usr/include" ]; then
  fi
  
--echo "Checking for firebird (libfbclient.so) ..."
+ echo "Checking for gcrypt (libgcrypt/gpg-error.h) ..."
 -for i in $LIBDIRS ; do
--    if [ "X" = "X$FIREBIRD_PATH" ]; then
--        if [ -f "$i/libfbclient.so" -o -f "$i/libfbclient.dylib" -o -f "$i/libfbclient.a" ]; then
--            FIREBIRD_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$FIREBIRD_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/libfbclient.so.* 2> /dev/null | grep libfbclient.`
--        if [ -n "$TMP_LIB" ]; then
--          FIREBIRD_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$FIREBIRD_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/libfbclient.dll* 2> /dev/null | grep libfbclient.`
--        if [ -n "$TMP_LIB" ]; then
--          FIREBIRD_PATH="$i"
--        fi
--    fi
--done
- for i in $INCDIRS ; do
-     if [ "X" != "X$FIREBIRD_PATH" ]; then
-         if [ -f "$i/ibase.h" ]; then
-@@ -658,26 +538,6 @@ if [ -f "/usr/include/math.h" ]; then
- else
-       echo "                                       ... math.h not found, module Mysql disabled"
- fi
--echo "Checking for AFP (libafpclient.so) ..."
--for i in $LIBDIRS ; do
--    if [ "X" = "X$AFP_PATH" ]; then
--        if [ -f "$i/libafpclient.so" -o -f "$i/libafpclient.so" -o -f "$i/libafpclient.a"   ]; then
--            AFP_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$AFP_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/libafpclient.so.* 2> /dev/null | grep libafpclient.`
--        if [ -n "$TMP_LIB" ]; then
--          AFP_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$AFP_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/libafpclient.dll* 2> /dev/null | grep libafpclient.`
--        if [ -n "$TMP_LIB" ]; then
--          AFP_PATH="$i"
--        fi
--    fi
--done
- for i in $INCDIRS ; do
-     if [ "X" != "X$AFP_PATH" ]; then
-         if [ -f "$i/afpfs-ng/afp.h" ]; then
-@@ -698,26 +558,6 @@ if [ "X" = "X$AFP_PATH" -o "X" = "X$AFP_IPATH" ]; then
-     AFP_IPATH=""
- fi
- 
--echo "Checking for NCP (libncp.so / nwcalls.h) ..."
--for i in $LIBDIRS ; do
--    if [ "X" = "X$NCP_PATH" ]; then
--        if [ -f "$i/libncp.so" -o -f "$i/libncp.dylib" -o -f "$i/libncp.a"  ]; then
--            NCP_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$NCP_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/libncp.so.* 2> /dev/null | grep ncp.`
--        if [ -n "$TMP_LIB" ]; then
--            NCP_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$NCP_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/libncp.dll* 2> /dev/null | grep ncp.`
--        if [ -n "$TMP_LIB" ]; then
--            NCP_PATH="$i"
--        fi
--    fi
--done
- for i in $INCDIRS ; do
-     if [ "X" != "X$NCP_PATH" ]; then
-         if [ -f "$i/ncp/nwcalls.h" ]; then
-@@ -738,27 +578,6 @@ if [ "X" = "X$NCP_PATH" -o "X" = "X$NCP_IPATH" ]; then
-     NCP_IPATH=""
- fi
- 
--echo "Checking for SAP/R3 (librfc/saprfc.h) ..."
--for i in $LIBDIRS  ; do
--    if [ "X" = "X$SAPR3_PATH" ]; then
--        if [ -f "$i/librfc.a" -o -f "$i/librfc.dylib" -o "$i/librfc32.dll" ]; then
--            SAPR3_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$SAPR3_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/librfc.* $i/librfc32.* 2> /dev/null | grep librfc`
--        if [ -n "$TMP_LIB" ]; then
--          SAPR3_PATH="$i"
--        fi
--    fi
--done
--for i in $INCDIRS ; do
--    if [ "X" = "X$SAPR3_IPATH" ]; then
--        if [ -f "$i/saprfc.h" ]; then
--            SAPR3_IPATH="$i"
--        fi
--    fi
--done
- if [ "X" != "X$DEBUG" ]; then
-    echo DEBUG: SAPR3_PATH=$SAPR3_PATH/librfc
-    echo DEBUG: SAPR3_IPATH=$SAPR3_IPATH/saprfc.h
-@@ -842,47 +661,6 @@ if [ "X" != "X$DEBUG" ]; then
-    echo DEBUG: ORACLE_INC=$INCDIRS
- fi
- 
--for i in $LIBDIRS ; do
--    if [ "X" = "X$ORACLE_PATH" ]; then
--        if [ -f "$i/libocci.so" -a -f "$i/libclntsh.so" ]; then
--            ORACLE_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$ORACLE_PATH" ]; then
--        if [ -f "$i/libocci.dylib" -a -f "$i/libclntsh.dylib" ]; then
--            ORACLE_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$ORACLE_PATH" ]; then
--        if [ -f "$i/libocci.a" -a -f "$i/libclntsh.a" ]; then
--            ORACLE_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$ORACLE_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/libocci.so.* 2> /dev/null | grep occi.`
--        if [ -n "$TMP_LIB" ]; then
--            ORACLE_PATH="$i"
--        fi
--        if [ "X" != "X$ORACLE_PATH" ]; then
--          TMP_LIB=`/bin/ls $i/libclntsh.so.* 2> /dev/null | grep clntsh.`
--          if [ -z "$TMP_LIB" ]; then
--            ORACLE_PATH=""
--          fi
--        fi
--    fi
--    if [ "X" = "X$ORACLE_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/libocci.dll* 2> /dev/null | grep occi.`
--        if [ -n "$TMP_LIB" ]; then
--            ORACLE_PATH="$i"
--        fi
--        if [ "X" != "X$ORACLE_PATH" ]; then
--          TMP_LIB=`/bin/ls $i/libclntsh.dll* 2> /dev/null | grep clntsh.`
--          if [ -z "$TMP_LIB" ]; then
--            ORACLE_PATH=""
--          fi
--        fi
--    fi
--done
- if [ "X" != "X$DEBUG" ]; then
-    echo DEBUG: ORACLE_PATH=$ORACLE_PATH/libocci
- fi
-@@ -914,13 +692,6 @@ if [ "X" != "X$DEBUG" ]; then
-    echo DEBUG: ORACLE_PATH=$ORACLE_PATH/libaio
- fi
++for i in $LIBDIRS_ALL ; do
+     if [ -f "$i/libgcrypt.so" -o -f "$i/libgcrypt.dylib" -o -f "$i/libgcrypt.a" -o -f "$i/libgcrypt.dll.a" -o -f "$i/libgcrypt.la" ]; then
+ 	  HAVE_GCRYPT="y"
+     fi
+ done
  
 -for i in $INCDIRS ; do
--    if [ "X" != "X$ORACLE_PATH" ]; then
--        if [ -f "$i/oci.h" ]; then
--            ORACLE_IPATH="$i"
--        fi
--    fi
--done
- if [ "X" != "X$DEBUG" ]; then
-    echo DEBUG: ORACLE_IPATH=$ORACLE_IPATH/oci.h
++for i in $INCDIRS_ALL ; do
+     if [ "X" = "X$GPGERROR_IPATH" ]; then
+         TMP_PATH=`/bin/ls $i/$SYSM*/gpg-error.h 2> /dev/null`
+         if [ -n "$TMP_PATH" ]; then
+@@ -294,7 +301,7 @@ else
  fi
+ 
+ echo "Checking for idn (libidn) ..."
+-for i in $LIBDIRS ; do
++for i in $LIBDIRS_ALL ; do
+     if [ "X" = "X$IDN_PATH" ]; then
+         if [ -f "$i/libidn.so" -o -f "$i/libidn.dylib" -o -f "$i/libidn.a" -o -f "$i/libidn.dll.a" -o -f "$i/libidn.la" ]; then
+             IDN_PATH="$i"
+@@ -307,7 +314,7 @@ for i in $LIBDIRS ; do
+         fi
+     fi
+ done
+-for i in $INCDIRS ; do
++for i in $INCDIRS_ALL ; do
+     if [ "X" != "X$IDN_PATH" ]; then
+         if [ -f "$i/stringprep.h" ]; then
+             IDN_IPATH="$i"
+@@ -379,7 +386,7 @@ if [ "X" = "X$CURSES_PATH" -o "X" = "X$CURSES_IPATH" ]
+ fi
+ 
+ echo "Checking for pcre (libpcre/pcre.h) ..."
+-for i in $LIBDIRS ; do
++for i in $LIBDIRS_ALL ; do
+     if [ "X" = "X$PCRE_PATH" ]; then
+         if [ -f "$i/libpcre.so" -o -f "$i/libpcre.dylib" -o -f "$i/libpcre.a"   ]; then
+             PCRE_PATH="$i"
+@@ -398,7 +405,7 @@ for i in $LIBDIRS ; do
+         fi
+     fi
+ done
+-for i in $INCDIRS ; do
++for i in $INCDIRS_ALL ; do
+     if [ "X" != "X$PCRE_PATH" ]; then
+         if [ -f "$i/pcre.h" ]; then
+             PCRE_IPATH="$i"
+@@ -424,7 +431,7 @@ echo "Checking for Postgres (libpq/libpq-fe.h) ..."
+ #    POSTGRES_PATH=""
+ #    POSTGRES_IPATH=""
+ #else
+-  for i in $LIBDIRS ; do
++  for i in $LIBDIRS_ALL ; do
+     if [ "X" = "X$POSTGRES_PATH" ]; then
+         if [ -f "$i/libpq.so" -o -f "$i/libpq.dylib" -o -f "$i/libpq.a" ]; then
+             POSTGRES_PATH="$i"
+@@ -444,7 +451,7 @@ echo "Checking for Postgres (libpq/libpq-fe.h) ..."
+     fi
+   done
+   POSTGRES_IPATH=
+-  for i in $INCDIRS \
++  for i in $INCDIRS_ALL \
+     /opt/p*sql*/include /usr/*p*sql*/include /usr/local/*psql*/include
+   do
+     if [ "X" = "X$POSTGRES_IPATH" ]; then
+@@ -648,7 +655,7 @@ if [ "X" = "X$FIREBIRD_PATH" -o "X" = "X$FIREBIRD_IPAT
+ fi
+ 
+ echo "Checking for MYSQL client (libmysqlclient/math.h) ..."
+-for i in $LIBDIRS ; do
++for i in $LIBDIRS_ALL ; do
+     if [ "X" = "X$MYSQL_PATH" ]; then
+         if [ -f "$i/libmysqlclient.so" -o -f "$i/libmysqlclient.dylib" -o -f "$i/libmysqlclient.a" ]; then
+             MYSQL_PATH="$i"
+@@ -668,7 +675,7 @@ for i in $LIBDIRS ; do
+     fi
+ done
+ MYSQLINSUBDIR=""
+-for i in $INCDIRS ; do
++for i in $INCDIRS_ALL ; do
+     if [ "X" != "X$MYSQL_PATH" ]; then
+         if [ -f "$i/mysql/mysql.h" ]; then
+             MYSQL_IPATH="$i/mysql"
+@@ -819,7 +826,7 @@ if [ "$SAPR3_IPATH" = "/usr/include" ]; then
+ fi
+ 
+ echo "Checking for libssh (libssh/libssh.h) ..."
+-for i in $LIBDIRS ; do
++for i in $LIBDIRS_ALL ; do
+     if [ "X" = "X$SSH_PATH" ]; then
+         if [ -f "$i/libssh.so" -o -f "$i/libssh.dylib" -o -f "$i/libssh.a"  ]; then
+             SSH_PATH="$i"
+@@ -838,7 +845,7 @@ for i in $LIBDIRS ; do
+         fi
+     fi
+ done
+-for i in $INCDIRS ; do
++for i in $INCDIRS_ALL ; do
+     if [ "X" = "X$SSH_IPATH" ]; then
+         if [ -f "$i/libssh/libssh.h" ]; then
+             SSH_IPATH="$i"
+@@ -971,7 +978,7 @@ fi
+ 
+ echo "Checking for Memcached (libmemcached/memcached.h) ..."
+ 
+-  for i in $LIBDIRS ; do
++  for i in $LIBDIRS_ALL ; do
+     if [ "X" = "X$MCACHED_PATH" ]; then
+         if [ -f "$i/libmemcached.so" -o -f "$i/libmemcached.dylib" -o -f "$i/libmemcached.a" ]; then
+             MCACHED_PATH="$i"
+@@ -992,7 +999,7 @@ echo "Checking for Memcached (libmemcached/memcached.h
+   done
+ 
+   MCACHED_IPATH=
+-  for i in $INCDIRS ; do
++  for i in $INCDIRS_ALL ; do
+     if [ "X" = "X$MCACHED_IPATH" ]; then
+         if [ -f "$i/memcached.h" ]; then
+             MCACHED_IPATH="$i"
+@@ -1021,7 +1028,7 @@ fi
+ 
+ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/libwinpr3/winpr.h) ..."
+ 
+-  for i in $LIBDIRS ; do
++  for i in $LIBDIRS_ALL ; do
+     if [ "X" = "X$FREERDP3_PATH" ]; then
+         if [ -f "$i/libfreerdp3.so" -o -f "$i/libfreerdp3.dylib" -o -f "$i/libfreerdp3.a" -o -f "$i/libfreerdp3.dll.a" ]; then
+             FREERDP3_PATH="$i"
+@@ -1036,7 +1043,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+   done
+ 
+   FREERDP3_IPATH=
+-  for i in $INCDIRS ; do
++  for i in $INCDIRS_ALL ; do
+     if [ "X" = "X$FREERDP3_IPATH" ]; then
+         if [ -f "$i/freerdp/freerdp.h" ]; then
+             FREERDP3_IPATH="$i/freerdp3"
+@@ -1047,7 +1054,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+     fi
+   done
+ 
+- for i in $LIBDIRS ; do
++ for i in $LIBDIRS_ALL ; do
+     if [ "X" = "X$WINPR3_PATH" ]; then
+         if [ -f "$i/libwinpr3.so" -o -f "$i/libwinpr3.dylib" -o -f "$i/libwinpr3.a" ]; then
+             WINPR3_PATH="$i"
+@@ -1062,7 +1069,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+   done
+ 
+   WINPR3_IPATH=
+-  for i in $INCDIRS ; do
++  for i in $INCDIRS_ALL ; do
+     if [ "X" = "X$WINPR3_IPATH" ]; then
+         if [ -f "$i/winpr.h" ]; then
+             WINPR3_IPATH="$i"
+@@ -1094,7 +1101,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+   if [ "X" = "X$FREERDP3_PATH" -o "X" = "X$FREERDP3_IPATH" -o "X" = "X$WINPR3_PATH" -o "X" = "X$WINPR3_IPATH" ]; then
+     echo "Checking for Freerdp2 (libfreerdp2/freerdp.h/libwinpr2/winpr.h) ..."
+ 
+-    for i in $LIBDIRS ; do
++    for i in $LIBDIRS_ALL ; do
+         if [ "X" = "X$FREERDP2_PATH" ]; then
+             if [ -f "$i/libfreerdp2.so" -o -f "$i/libfreerdp2.dylib" -o -f "$i/libfreerdp2.a" -o -f "$i/libfreerdp2.dll.a" ]; then
+                 FREERDP2_PATH="$i"
+@@ -1109,7 +1116,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+     done
+ 
+     FREERDP2_IPATH=
+-    for i in $INCDIRS ; do
++    for i in $INCDIRS_ALL ; do
+         if [ "X" = "X$FREERDP2_IPATH" ]; then
+             if [ -f "$i/freerdp/freerdp.h" ]; then
+                 FREERDP2_IPATH="$i/freerdp2"
+@@ -1120,14 +1127,14 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+         fi
+     done
+ 
+-    for i in $LIBDIRS ; do
++    for i in $LIBDIRS_ALL ; do
+         if [ "X" = "X$WINPR2_PATH" ]; then
+             if [ -f "$i/libwinpr2.so" -o -f "$i/libwinpr2.dylib" -o -f "$i/libwinpr2.a" ]; then
+                 WINPR2_PATH="$i"
+             fi
+         fi
+         if [ "X" = "X$WINPR2_PATH" ]; then
+-            TMP_LIB=`/bin/ls $i/libwinpr2.dll.a 2> /dev/null | grep winpr`
++            TMP_LIB=`/bin/ls $i/libwinpr2.so.* $i/libwinpr2.dll.a 2> /dev/null | grep winpr`
+             if [ -n "$TMP_LIB" ]; then
+             WINPR2_PATH="$i"
+             fi
+@@ -1135,7 +1142,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+     done
+ 
+     WINPR2_IPATH=
+-    for i in $INCDIRS ; do
++    for i in $INCDIRS_ALL ; do
+         if [ "X" = "X$WINPR2_IPATH" ]; then
+             if [ -f "$i/winpr.h" ]; then
+                 WINPR2_IPATH="$i"

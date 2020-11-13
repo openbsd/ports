@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_am,v 1.5 2020/11/13 21:33:44 sthen Exp $
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -4,7 +4,7 @@
+ WARN_CLANG=-Wformat-nonliteral -Wstrncat-size -Wformat-security -Wsign-conversion -Wconversion -Wfloat-conversion -Wshorten-64-to-32 -Wuninitialized -Wmissing-variable-declarations  -Wmissing-declarations
+ WARN_GCC=-Wformat=2 -Wformat-overflow=2 -Wformat-nonliteral -Wformat-truncation=2 -Wnull-dereference -Wstrict-overflow=2 -Wstringop-overflow=4 -Walloca-larger-than=4096 -Wtype-limits -Wconversion -Wtrampolines -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fno-common -Wcast-align
+ CFLAGS ?= -g
+-OPTS=-I. -O3 $(CFLAGS) -fcommon
++OPTS=-I. $(CFLAGS) -fcommon
+ # -Wall -g -pedantic
+ LIBS=-lm
+ DESTDIR ?=
+@@ -68,10 +68,11 @@ strip:	all
+ 	strip $(BINS)
+ 	-echo OK > /dev/null && test -x xhydra && strip xhydra || echo OK > /dev/null
+ 
+-install:	strip
++install:
+ 	-mkdir -p $(DESTDIR)$(PREFIX)$(BINDIR)
+-	cp -f hydra-wizard.sh $(BINS) $(DESTDIR)$(PREFIX)$(BINDIR) && cd $(DESTDIR)$(PREFIX)$(BINDIR) && chmod 755 hydra-wizard.sh $(BINS)
+-	-echo OK > /dev/null && test -x xhydra && cp xhydra $(DESTDIR)$(PREFIX)$(BINDIR) && cd $(DESTDIR)$(PREFIX)$(BINDIR) && chmod 755 xhydra || echo OK > /dev/null
++	cp -f hydra-wizard.sh $(DESTDIR)$(PREFIX)$(BINDIR) && cd $(DESTDIR)$(PREFIX)$(BINDIR) && chmod 755 hydra-wizard.sh
++	${BSD_INSTALL_PROGRAM} $(BINS) $(DESTDIR)$(PREFIX)$(BINDIR)
++	-echo OK > /dev/null && test -x xhydra && ${BSD_INSTALL_PROGRAM} xhydra $(DESTDIR)$(PREFIX)$(BINDIR) || echo OK > /dev/null
+ 	-sed -e "s|^INSTALLDIR=.*|INSTALLDIR="$(PREFIX)"|" dpl4hydra.sh | sed -e "s|^LOCATION=.*|LOCATION="$(DATADIR)"|" > $(DESTDIR)$(PREFIX)$(BINDIR)/dpl4hydra.sh
+ 	-chmod 755 $(DESTDIR)$(PREFIX)$(BINDIR)/dpl4hydra.sh
+ 	-mkdir -p $(DESTDIR)$(PREFIX)$(DATADIR)

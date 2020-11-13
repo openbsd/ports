@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2017/02/28 12:47:56 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2020/11/13 21:33:44 sthen Exp $
 @pkgpath security/hydra
 bin/dpl4hydra.sh
 @bin bin/hydra
@@ -8,6 +8,6 @@ bin/hydra-wizard.sh
 @man man/man1/pw-inspector.1
 share/doc/hydra/
 share/doc/hydra/LICENSE
-share/doc/hydra/README
+share/doc/hydra/README.md
 share/doc/hydra/dpl4hydra_full.csv
 share/doc/hydra/dpl4hydra_local.csv
