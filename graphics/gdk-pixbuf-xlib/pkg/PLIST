@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/11 09:51:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/11/13 17:41:39 ajacoutot Exp $
 @conflict gdk-pixbuf-<2.42.0
-include/gdk-pixbuf-2.0/
 include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/
 include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlib.h
 include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h
