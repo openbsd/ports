@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2020/02/25 20:43:13 kmos Exp $
+# $OpenBSD: Makefile,v 1.33 2020/11/13 22:25:45 sthen Exp $
 
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
+# if unbreaking i386, games/vegastrike can be reenabled
 BROKEN-i386 =		MMX-related problems with clang build
 BROKEN-sparc64 =	undefined reference to TiXml*
 BROKEN-powerpc =	undefined reference to TiXml*

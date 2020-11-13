@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 20:46:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2020/11/13 22:25:45 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
+BROKEN-i386 =		-engine depends on broken x11/ogre, other subports are useless withtou
 
 V =			0.5.1.r1
 
