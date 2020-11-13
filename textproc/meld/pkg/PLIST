@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2020/04/19 07:26:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2020/11/13 08:48:46 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -224,5 +224,4 @@ share/mime/packages/org.gnome.meld.xml
 @tag glib-compile-schemas
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag gtk-update-icon-cache %D/share/icons/HighContrast
 @tag update-desktop-database
