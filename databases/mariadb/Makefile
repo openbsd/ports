@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2020/11/06 22:34:33 jca Exp $
+# $OpenBSD: Makefile,v 1.101 2020/11/13 17:18:20 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -79,6 +79,7 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_SUPPORTFILESDIR="share/examples/mysql" \
 		-DMYSQL_UNIX_ADDR="${SOCKET_DIR}/mysql.sock" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
+		-DPLUGIN_OQGRAPH=NO \
 		-DWITH_EXTERNAL_ZLIB=On \
 		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
@@ -97,9 +98,6 @@ CONFIGURE_ARGS+=-DHAVE_PAM_APPL_H=0
 # force disabling libexecinfo if it is installed
 CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
 		-DHAVE_LIBEXECINFO=0
-
-# CMake test fails on OpenBSD
-CONFIGURE_ARGS+=-DHAVE_NETINET_TCP_H=1
 
 # The ColumnStore, Mroonga, RocksDB, and TokuDB storage engines are disabled.
 # ColumnStore is only buildable on X86.
