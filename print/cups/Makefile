@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2020/04/28 06:43:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.256 2020/11/14 11:04:04 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -46,9 +46,6 @@ LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${VERSION} \
 			devel/libusb1
 
 RUN_DEPENDS-main=	print/cups-filters
-
-# optional for now
-#RUN_DEPENDS-main +=	graphics/colord
 
 # we don't install the desktop file
 #BUILD_DEPENDS +=	devel/xdg-utils

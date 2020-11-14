@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2020/10/17 07:59:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2020/11/14 11:04:04 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
@@ -50,9 +50,6 @@ LIB_DEPENDS=	print/cups,-libs \
 # make it easier for users: bring in foomatic-db and allow the
 # regeneration of PPD files from share/foomatic/db/source/*/*.xml
 RUN_DEPENDS +=	print/foomatic-db-engine
-
-# don't enforce dependency on colord; it'll be used only if found
-#RUN_DEPENDS +=	graphics/colord
 
 FAKE_FLAGS=	pkgfontconfigdir=${PREFIX}/share/examples/cups-filters \
 		pkgcupsserverrootdir=${PREFIX}/share/examples/cups-filters/cups
