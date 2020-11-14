@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2034 2020/11/12 09:38:19 semarie Exp $
+# $OpenBSD: Makefile,v 1.2035 2020/11/14 09:05:39 benoit Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1077,6 +1077,7 @@
      SUBDIR += p5-String-Interpolate-Named
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-String-Truncate
+     SUBDIR += p5-Struct-Dumb
      SUBDIR += p5-Sub-Attribute
      SUBDIR += p5-Sub-Exporter
      SUBDIR += p5-Sub-Exporter-ForMethods
