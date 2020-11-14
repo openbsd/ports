@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:12:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/11/14 08:07:37 benoit Exp $
 
 COMMENT =	PostgreSQL module for Python
 
-MODPY_EGG_VERSION =	5.1.1
+MODPY_EGG_VERSION =	5.2.1
 DISTNAME =		PyGreSQL-${MODPY_EGG_VERSION}
 PKGNAME =		py-pygresql-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
-REVISION =		0
 
 HOMEPAGE =		http://www.pygresql.org/
 
@@ -15,8 +14,8 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-FLAVORS=	python3
-FLAVOR ?=
+FLAVORS =	python3
+FLAVOR =	python3
 
 MODULES =	lang/python
 LIB_DEPENDS =	databases/postgresql

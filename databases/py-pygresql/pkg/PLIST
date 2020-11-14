@@ -1,15 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/06 08:32:24 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/11/14 08:07:37 benoit Exp $
+@conflict py-pygresql-*
+@pkgpath databases/py-pygresql
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pgdb.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/_pg.so
 lib/python${MODPY_VERSION}/site-packages/pg.py
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgdb.py
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pgdb.${MODPY_PYC_MAGIC_TAG}pyc
 share/doc/${MODPY_PY_PREFIX}pygresql/
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/Makefile
