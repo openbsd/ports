@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.290 2020/11/14 10:59:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.291 2020/11/14 11:45:33 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.38.2
-REVISION=		2
+REVISION=		3
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} gdm-puffy.png:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -70,7 +70,7 @@ CONFIGURE_ARGS=		-Ddefault-pam-config=none \
 			-Dcustom-conf=${SYSCONFDIR}/gdm/custom.conf \
 			-Ddbus-sys=${SYSCONFDIR}/dbus-1/system.d \
 			-Dlog-dir=/var/log/gdm \
-			-Dgroup=_gdm \
+			-Dgroup=_x11 \
 			-Ddmconfdir=${LOCALBASE}/share/xsessions \
 			-Dinitial-vt=05 \
 			-Dlang-file=${SYSCONFDIR}/gdm/locale.conf \
