@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.529 2020/11/11 09:51:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.530 2020/11/14 11:06:54 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -26,8 +26,6 @@
      SUBDIR += cfdg
      SUBDIR += chafa
      SUBDIR += clutter
-     SUBDIR += colord
-     SUBDIR += colord-gtk
      SUBDIR += colorexplorer
      SUBDIR += comix
      SUBDIR += cstitch
