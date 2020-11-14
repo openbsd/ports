@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.408 2020/11/14 08:07:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.409 2020/11/14 09:20:48 benoit Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -106,6 +106,7 @@
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-Jifty-DBI
      SUBDIR += p5-Mojo-Pg
+     SUBDIR += p5-Net-Prometheus
      SUBDIR += p5-Redis
      SUBDIR += p5-Rose-DB
      SUBDIR += p5-Rose-DB-Object
