@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/14 09:17:14 benoit Exp $
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/Prometheus/
+${P5ARCH}/auto/Net/Prometheus/PerlCollector/
+${P5ARCH}/auto/Net/Prometheus/PerlCollector/PerlCollector.bs
+${P5ARCH}/auto/Net/Prometheus/PerlCollector/PerlCollector.so
+${P5ARCH}/Net/
+${P5ARCH}/Net/Prometheus.pm
+${P5ARCH}/Net/Prometheus/
+${P5ARCH}/Net/Prometheus/Counter.pm
+${P5ARCH}/Net/Prometheus/Gauge.pm
+${P5ARCH}/Net/Prometheus/Histogram.pm
+${P5ARCH}/Net/Prometheus/Metric.pm
+${P5ARCH}/Net/Prometheus/PerlCollector.pm
+${P5ARCH}/Net/Prometheus/ProcessCollector.pm
+${P5ARCH}/Net/Prometheus/Registry.pm
+${P5ARCH}/Net/Prometheus/Summary.pm
+${P5ARCH}/Net/Prometheus/Types.pm
+${P5ARCH}/Net/Prometheus/ProcessCollector/linux.pm
+@man man/man3p/Net::Prometheus.3p
+@man man/man3p/Net::Prometheus::Counter.3p
+@man man/man3p/Net::Prometheus::Gauge.3p
+@man man/man3p/Net::Prometheus::Histogram.3p
+@man man/man3p/Net::Prometheus::Metric.3p
+@man man/man3p/Net::Prometheus::PerlCollector.3p
+@man man/man3p/Net::Prometheus::ProcessCollector.3p
+@man man/man3p/Net::Prometheus::ProcessCollector::linux.3p
+@man man/man3p/Net::Prometheus::Registry.3p
+@man man/man3p/Net::Prometheus::Summary.3p
+@man man/man3p/Net::Prometheus::Types.3p
