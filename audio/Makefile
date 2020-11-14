@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.441 2020/11/14 11:57:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.442 2020/11/14 14:55:47 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -197,7 +197,6 @@
      SUBDIR += py-last
      SUBDIR += py-last,python3
      SUBDIR += py-mpd
-     SUBDIR += py-mpd2
      SUBDIR += py-mpd2,python3
      SUBDIR += py-musicbrainzngs
      SUBDIR += py-musicbrainzngs,python3
