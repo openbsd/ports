@@ -1,0 +1,7 @@
+Struct::Dumb creates record-like structure types,
+similar to the struct keyword in C, C++ or C#,
+or Record in Pascal.
+An invocation of this module will create a construction
+function which returns new object references with the
+given field values. These references all respond to
+lvalue methods that access or modify the values stored.
