@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/27 21:03:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/11/14 17:15:43 ajacoutot Exp $
 bin/sonata
 lib/python${MODPY_VERSION}/site-packages/Sonata-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Sonata-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/Sonata-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/Sonata-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sonata/
 lib/python${MODPY_VERSION}/site-packages/sonata/__init__.py
-lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}artwork.${MODPY_PYC_MAGIC_TAG}pyc
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/sonata/pixmaps/sonatacd.png
 lib/python${MODPY_VERSION}/site-packages/sonata/playlists.py
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/__init__.py
-lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}covers_lastfm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}gajim_tune.${MODPY_PYC_MAGIC_TAG}pyc

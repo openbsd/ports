@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.60 2020/10/03 15:39:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2020/11/14 17:15:43 ajacoutot Exp $
 
 COMMENT=	GTK+ client for the Music Player Daemon
 
 MODPY_EGG_VERSION=1.7b1
 DISTNAME=	sonata-${MODPY_EGG_VERSION}
 EPOCH=		0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	audio
 
-GH_COMMIT=	0a1d63022720f95d092cc82da53f2b210d2ed26a
+GH_COMMIT=	34c00d3b830904b5ad3ef0f131ea9c0a17ba7e34
 GH_ACCOUNT=	multani
 GH_PROJECT=	sonata
 
@@ -39,5 +39,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/sonata/pixmaps/sonata.png \
 		${PREFIX}/share/pixmaps
+	mv ${PREFIX}/share/man/* ${PREFIX}/man/
+	rm -r ${PREFIX}/share/{man,sonata}
 
 .include <bsd.port.mk>
