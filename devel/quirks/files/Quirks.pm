@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1112 2020/11/14 11:12:39 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1113 2020/11/14 11:57:57 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -509,6 +509,7 @@ my $stem_extensions = {
 	'py-sqlparse' => 'py3-sqlparse',
 	'py-sqlalchemy-migrate' => 'py3-sqlalchemy-migrate',
 	'py-pygresql' => 'py3-pygresql',
+	'py-tagpy' => 'py3-tagpy',
 };
 
 my $obsolete_reason = {
@@ -1914,6 +1915,7 @@ my $obsolete_reason = {
 	'colord' => 27,
 	'colord-gtk' => 27,
 	'gnome-color-manager' => 5,
+	'zeya' => 3,
 };
 
 # reasons for obsolete packages

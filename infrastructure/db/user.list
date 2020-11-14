@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.379 2020/11/14 11:07:10 ajacoutot Exp $
+$OpenBSD: user.list,v 1.380 2020/11/14 11:57:56 sthen Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -188,7 +188,7 @@ id  user		group		port
 677 _scamper		_scamper	net/scamper
 678 _owampd		_owampd		net/owamp
 679 _milter-checkrcpt	_milter-checkrcpt	mail/milter-checkrcpt
-680 _zeya		_zeya		audio/zeya
+#680 _zeya		_zeya		audio/zeya
 681 _inadyn		_inadyn		net/inadyn
 682 _backuppc		_backuppc	sysutils/backuppc
 683 _pulse		_pulse		audio/pulseaudio

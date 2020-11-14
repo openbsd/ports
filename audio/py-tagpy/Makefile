@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.31 2020/08/15 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2020/11/14 11:57:57 sthen Exp $
 
 COMMENT=		Python bindings to TagLib audio file tag library
 
 MODPY_EGG_VERSION =	2013.1
 DISTNAME =		tagpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		12
+REVISION =		13
 
 CATEGORIES =		audio devel
 
-HOMEPAGE =		http://mathema.tician.de/software/tagpy
+HOMEPAGE =		https://mathema.tician.de/software/tagpy
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -24,8 +24,8 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-FLAVORS=		python3
-FLAVOR?=
+FLAVORS =		python3
+FLAVOR =		python3
 
 LIB_DEPENDS =		lang/python/${MODPY_VERSION} \
 			audio/taglib \
@@ -39,6 +39,6 @@ CONFIGURE_ARGS +=	--boost-compiler=gcc42 \
 			--boost-python-libname=boost_python${MODPY_VERSION:C/\.//g}-mt
 
 do-configure:
-		cd ${WRKSRC} && env ${CONFIGURE_ENV} ${MODPY_BIN} ./configure.py ${CONFIGURE_ARGS}
+	cd ${WRKSRC} && env ${CONFIGURE_ENV} ${MODPY_BIN} ./configure.py ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>

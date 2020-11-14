@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.440 2020/10/31 15:49:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.441 2020/11/14 11:57:57 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -203,7 +203,6 @@
      SUBDIR += py-musicbrainzngs,python3
      SUBDIR += py-mutagen,python3
      SUBDIR += py-ogg
-     SUBDIR += py-tagpy
      SUBDIR += py-tagpy,python3
      SUBDIR += py-vorbis
      SUBDIR += pykaraoke
@@ -265,6 +264,5 @@
      SUBDIR += xmp
      SUBDIR += ympd
      SUBDIR += yt-audio
-     SUBDIR += zeya
 
 .include <bsd.port.subdir.mk>
