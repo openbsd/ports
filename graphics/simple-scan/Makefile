@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2020/11/01 08:28:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2020/11/14 11:03:45 ajacoutot Exp $
 
 COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
 GNOME_VERSION=		3.38.1
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -14,8 +15,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c cairo colord gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 intl m sane webp webpmux z
+WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-3 intl m sane webp z
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -23,8 +24,7 @@ MODULES=		devel/dconf \
 
 LIB_DEPENDS=		graphics/libwebp \
 			graphics/sane-backends \
-			x11/gtk+3 \
-			graphics/colord
+			x11/gtk+3
 
 # xdg-email(1)
 RUN_DEPENDS +=		devel/xdg-utils

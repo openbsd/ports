@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/11/07 10:13:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/11/14 11:03:46 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -12,7 +12,6 @@
 share/applications/gnome-applications-panel.desktop
 share/applications/gnome-background-panel.desktop
 share/applications/gnome-camera-panel.desktop
-share/applications/gnome-color-panel.desktop
 share/applications/gnome-control-center.desktop
 share/applications/gnome-datetime-panel.desktop
 share/applications/gnome-default-apps-panel.desktop
@@ -58,35 +57,27 @@ share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/gnome-control-center-search-provider.ini
 share/icons/hicolor/16x16/apps/gnome-power-manager.png
 share/icons/hicolor/16x16/apps/goa-panel.png
-share/icons/hicolor/16x16/apps/preferences-color.png
 share/icons/hicolor/16x16/apps/preferences-desktop-display.png
 share/icons/hicolor/16x16/apps/preferences-system-time.png
 share/icons/hicolor/22x22/apps/gnome-power-manager.png
 share/icons/hicolor/22x22/apps/goa-panel.png
-share/icons/hicolor/22x22/apps/preferences-color.png
 share/icons/hicolor/22x22/apps/preferences-desktop-display.png
 share/icons/hicolor/22x22/apps/preferences-system-time.png
 share/icons/hicolor/24x24/apps/gnome-power-manager.png
 share/icons/hicolor/24x24/apps/goa-panel.png
-share/icons/hicolor/24x24/apps/preferences-color.png
 share/icons/hicolor/24x24/apps/preferences-desktop-display.png
 share/icons/hicolor/256x256/apps/gnome-power-manager.png
 share/icons/hicolor/256x256/apps/goa-panel.png
-share/icons/hicolor/256x256/apps/preferences-color.png
 share/icons/hicolor/256x256/apps/preferences-system-time.png
 share/icons/hicolor/32x32/apps/gnome-power-manager.png
 share/icons/hicolor/32x32/apps/goa-panel.png
-share/icons/hicolor/32x32/apps/preferences-color.png
 share/icons/hicolor/32x32/apps/preferences-desktop-display.png
 share/icons/hicolor/32x32/apps/preferences-system-time.png
 share/icons/hicolor/48x48/apps/gnome-power-manager.png
 share/icons/hicolor/48x48/apps/goa-panel.png
-share/icons/hicolor/48x48/apps/preferences-color.png
 share/icons/hicolor/48x48/apps/preferences-system-time.png
-share/icons/hicolor/64x64/apps/preferences-color.png
 share/icons/hicolor/scalable/apps/org.gnome.Settings.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.svg
-share/icons/hicolor/scalable/apps/preferences-color.svg
 share/icons/hicolor/scalable/apps/preferences-desktop-display.svg
 share/icons/hicolor/scalable/apps/preferences-system-time.svg
 share/icons/hicolor/scalable/categories/slideshow-symbolic.svg

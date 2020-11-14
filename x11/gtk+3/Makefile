@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2020/11/11 11:49:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.241 2020/11/14 11:03:46 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -20,7 +20,7 @@ PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
 REVISION-main=		0
-REVISION-cups=		0
+REVISION-cups=		1
 
 CATEGORIES=		x11 devel
 
@@ -73,10 +73,10 @@ WANTLIB-cups += ${WANTLIB} ${COMPILER_LIBCXX} epoxy idn2 fribidi
 WANTLIB-cups += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cups += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
-WANTLIB-cups += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-cups += pangoft2-1.0 pixman-1 xcb xcb-render png
-WANTLIB-cups += avahi-client avahi-common cups gdk-3 gmp xcb-shm
-WANTLIB-cups += gnutls gtk-3 hogweed nettle p11-kit tasn1 unistring
+WANTLIB-cups += graphite2 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-cups += pixman-1 xcb xcb-render png avahi-client avahi-common
+WANTLIB-cups += cups gdk-3 gmp xcb-shm gnutls gtk-3 hogweed nettle
+WANTLIB-cups += p11-kit tasn1 unistring
 
 LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
 			devel/json-glib \
@@ -110,14 +110,6 @@ CONFIGURE_ARGS=		--disable-libcanberra
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=	-std=gnu99
-.endif
-
-# colord -> polkit -> spidermonkey>=78 -> rust
-.if ${PROPERTIES:Mrust}
-LIB_DEPENDS-cups +=	graphics/colord
-WANTLIB-cups +=	colordprivate colord lcms2
-.else
-CONFIGURE_ARGS +=	--disable-colord
 .endif
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3

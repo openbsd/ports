@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2020/11/11 14:04:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.190 2020/11/14 11:03:45 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -6,16 +6,15 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		3.38.1
-REVISION=		0
+REVISION=		1
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xext Xi c canberra canberra-gtk3 colord colordprivate
-WANTLIB += cups fontconfig gdk-3 geoclue-2 geocode-glib gio-2.0
-WANTLIB += glib-2.0 gnome-desktop-3 gobject-2.0 gtk-3 gweather-3
-WANTLIB += intl lcms2 m notify nspr4 nss3 polkit-gobject-1 pulse
-WANTLIB += pulse-mainloop-glib upower-glib
+WANTLIB += X11 Xext Xi c canberra canberra-gtk3 cups fontconfig
+WANTLIB += gdk-3 geoclue-2 geocode-glib gio-2.0 glib-2.0 gnome-desktop-3
+WANTLIB += gobject-2.0 gtk-3 gweather-3 intl m notify nspr4 nss3
+WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib upower-glib
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -25,7 +24,6 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio \
 			devel/libnotify \
 			geo/geocode-glib \
-			graphics/colord \
 			print/cups,-libs \
 			security/nss \
 			sysutils/upower \
@@ -61,7 +59,8 @@ CONFIGURE_ARGS= 	-Dalsa=false \
 			-Drfkill=false \
 			-Dsystemd=false \
 			-Dwayland=false \
-			-Dwwan=false
+			-Dwwan=false \
+			-Dcolord=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

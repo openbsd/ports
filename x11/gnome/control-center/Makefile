@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2020/11/11 10:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2020/11/14 11:03:46 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,19 +6,18 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.38.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 accountsservice atk-1.0 c cairo colord colord-gtk
-WANTLIB += colordprivate cups epoxy fontconfig gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gnome-desktop-3 goa-1.0 goa-backend-1.0
-WANTLIB += gobject-2.0 gsound gtk-3 gtop-2.0 handy-1 ibus-1.0
-WANTLIB += intl m pango-1.0 pangocairo-1.0 polkit-gobject-1 pulse
-WANTLIB += pulse-mainloop-glib pwquality smbclient soup-2.4 upower-glib
+WANTLIB += X11 accountsservice atk-1.0 c cairo cups epoxy fontconfig
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnome-desktop-3
+WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gsound gtk-3 gtop-2.0
+WANTLIB += handy-1 ibus-1.0 intl m pango-1.0 pangocairo-1.0 polkit-gobject-1
+WANTLIB += pulse pulse-mainloop-glib pwquality smbclient upower-glib
 WANTLIB += xml2
 
 MODULES=		devel/meson \
@@ -32,7 +31,6 @@ CFLAGS=			-std=gnu99
 LIB_DEPENDS=		audio/gsound \
 			audio/pulseaudio \
 			devel/libgtop2 \
-			graphics/colord-gtk \
 			net/samba \
 			print/cups,-libs \
 			security/libpwquality \
@@ -56,9 +54,6 @@ RUN_DEPENDS=		x11/gnome/settings-daemon \
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=	sysutils/consolekit
-
-# needed for gnome-color-panel
-RUN_DEPENDS +=		x11/gnome/color-manager
 
 # needed for gnome-printers-panel
 RUN_DEPENDS +=		print/cups-pk-helper \

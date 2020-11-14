@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2020/09/07 08:44:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2020/11/14 11:03:46 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 aarch64 powerpc64
 
@@ -8,6 +8,7 @@ V=		3.2.1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	graphics x11
 
@@ -18,12 +19,11 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 WANTLIB += GraphicsMagick Iex-2_5 IlmImf-2_5 X11 Xrandr avif c
-WANTLIB += cairo colord colord-gtk colordprivate cups curl exiv2
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gphoto2 gphoto2_port gtk-3 intl jpeg json-glib-1.0
-WANTLIB += lcms2 lensfun m openjp2 osmgpsmap-1.0 pango-1.0 pangocairo-1.0
-WANTLIB += png pugixml rsvg-2 secret-1 soup-2.4 sqlite3 tiff webp
-WANTLIB += xml2 z
+WANTLIB += cairo cups curl exiv2 gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port
+WANTLIB += gtk-3 intl jpeg json-glib-1.0 lcms2 lensfun m openjp2
+WANTLIB += osmgpsmap-1.0 pango-1.0 pangocairo-1.0 png pugixml
+WANTLIB += rsvg-2 secret-1 soup-2.4 sqlite3 tiff webp xml2 z
 
 MASTER_SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/
 
@@ -46,7 +46,6 @@ LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/libsoup \
 		geo/osm-gps-map \
 		graphics/GraphicsMagick \
-		graphics/colord-gtk \
 		graphics/exiv2>=0.22 \
 		graphics/lcms2 \
 		graphics/libavif \

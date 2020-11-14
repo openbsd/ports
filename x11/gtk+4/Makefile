@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2020/11/11 11:49:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2020/11/14 11:03:46 ajacoutot Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
-# XXX drop colord support? (it's disabled by default)
 
 DPB_PROPERTIES=		parallel
 
@@ -19,6 +18,7 @@ GNOME_PROJECT=		gtk
 GNOME_VERSION=		3.99.4
 
 REVISION-main=		0
+REVISION-cups=		0
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+4-cloudprint-${GNOME_VERSION}
@@ -102,6 +102,7 @@ RUN_DEPENDS-guic=	x11/hicolor-icon-theme
 # uses pledge()
 WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 gtk-4 intl
 
+# gstreamer1-plugins-bad: gstplayer-1.0
 LIB_DEPENDS-media=	multimedia/gstreamer1/plugins-bad \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 
@@ -121,13 +122,6 @@ CONFIGURE_ARGS +=	-Dmedia-ffmpeg=disabled
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=		-Wno-error
-.endif
-
-# colord -> polkit -> spidermonkey>=78 -> rust
-.if ${PROPERTIES:Mrust}
-CONFIGURE_ARGS +=	-Dcolord=enabled
-LIB_DEPENDS-cups +=	graphics/colord
-WANTLIB-cups +=	colord
 .endif
 
 pre-configure:
