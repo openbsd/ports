@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.30 2020/06/14 10:19:46 jasper Exp $
+$OpenBSD: README-server,v 1.31 2020/11/14 13:03:49 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -169,16 +169,16 @@ faster than a dump and reload, especially for large databases.
 in a UTF-8 locale; if that is the case and you require an ASCII database
 environment, use "initdb --locale=C /var/postgresql/data [...]").
 
-5) Restore your old pg_hba.conf and (if used) SSL certificates
+5) Temporarily support connecting without a password for local users by
+   editing pg_hba.conf to include "local all postgres trust"
+# vi /var/postgresql/data-${PREV_MAJOR}/pg_hba.conf
+
+6) Restore your old pg_hba.conf and (if used) SSL certificates
 # cp -p /var/postgresql/data-${PREV_MAJOR}/pg_hba.conf /var/postgresql/data/
 # cp -p /var/postgresql/data-${PREV_MAJOR}/server.{crt,key} /var/postgresql/data/
 
 Some postgresql.conf settings changed or disappeared in this version.
 Examine your old file for local changes and apply them to the new version.
-
-6) Temporarily support connecting without a password for local users by
-   editing pg_hba.conf to include "local all postgres trust"
-# vi /var/postgresql/data{,-${PREV_MAJOR}}/pg_hba.conf
 
 7) Run pg_upgrade:
 # su _postgresql -c "cd /var/postgresql && \
@@ -186,7 +186,7 @@ Examine your old file for local changes and apply them to the new version.
     -U postgres -d /var/postgresql/data-${PREV_MAJOR}/ -D /var/postgresql/data"
 
 8) Remove "local all postgres trust" line from pg_hba.conf
-# vi /var/postgresql/data{,-${PREV_MAJOR}}/pg_hba.conf
+# vi /var/postgresql/data/pg_hba.conf
 
 9) Start PostgreSQL:
 # rcctl start postgresql
