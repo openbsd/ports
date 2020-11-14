@@ -1,9 +1,10 @@
-@comment $OpenBSD: PFRAG.bc,v 1.1 2020/05/20 16:08:29 juanfra Exp $
+@comment $OpenBSD: PFRAG.bc,v 1.2 2020/11/14 21:37:09 juanfra Exp $
 include/racket/escheme.h
 include/racket/ext.exp
 include/racket/mzconfig.h
 include/racket/mzscheme.exp
 include/racket/mzscheme3m.exp
+include/racket/racket_version.h
 include/racket/scheme.h
 include/racket/schemef.h
 include/racket/schemegc2.h
