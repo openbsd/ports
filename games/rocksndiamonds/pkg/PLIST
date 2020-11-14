@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/10/06 11:17:53 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/11/14 07:53:23 benoit Exp $
 @extraunexec rm -rf /var/games/rocksndiamonds/*
 @mode 2555
 @group games
@@ -28,6 +28,7 @@ share/rocksndiamonds/graphics/gfx_classic/RocksFontEM.png
 share/rocksndiamonds/graphics/gfx_classic/RocksFontMedium.png
 share/rocksndiamonds/graphics/gfx_classic/RocksFontSmall.png
 share/rocksndiamonds/graphics/gfx_classic/RocksHeroes.png
+share/rocksndiamonds/graphics/gfx_classic/RocksIcon32x32.png
 share/rocksndiamonds/graphics/gfx_classic/RocksMM.png
 share/rocksndiamonds/graphics/gfx_classic/RocksMore.png
 share/rocksndiamonds/graphics/gfx_classic/RocksSP.png
