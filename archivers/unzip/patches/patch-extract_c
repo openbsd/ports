@@ -1,4 +1,4 @@
-$OpenBSD: patch-extract_c,v 1.3 2020/03/11 21:57:32 naddy Exp $
+$OpenBSD: patch-extract_c,v 1.4 2020/11/14 17:45:17 jcs Exp $
 
 Fix CVE-2015-7696: prevent unsigned overflow on invalid input
     https://bugzilla.redhat.com/attachment.cgi?id=1075942
@@ -14,6 +14,7 @@ Fix CVE-2015-7697: infinite loop when extracting empty bzip2 data
     https://bugzilla.redhat.com/attachment.cgi?id=1073339
 Fix CVE-2019-13232: a zip bomb using overlapped entries
 https://github.com/madler/unzip/commit/47b3ceae397d21bf822bc2ac73052a4b1daf8e1c
+https://github.com/madler/unzip/commit/6d351831be705cc26d897db44f878a978f4138fc
 
 Index: extract.c
 --- extract.c.orig
@@ -165,12 +166,15 @@ Index: extract.c
  /**************************************/
  /*  Function extract_or_test_files()  */
  /**************************************/
-@@ -374,6 +495,29 @@ int extract_or_test_files(__G)    /* return PK-type er
+@@ -374,6 +495,42 @@ int extract_or_test_files(__G)    /* return PK-type er
      }
  #endif /* !SFX || SFX_EXDIR */
  
-+    /* One more: initialize cover structure for bomb detection. Start with a
-+       span that covers the central directory though the end of the file. */
++    /* One more: initialize cover structure for bomb detection. Start with
++       spans that cover any extra bytes at the start, the central directory,
++       the end of central directory record (including the Zip64 end of central
++       directory locator, if present), and the Zip64 end of central directory
++       record, if present. */
 +    if (G.cover == NULL) {
 +        G.cover = malloc(sizeof(cover_t));
 +        if (G.cover == NULL) {
@@ -182,20 +186,30 @@ Index: extract.c
 +        ((cover_t *)G.cover)->max = 0;
 +    }
 +    ((cover_t *)G.cover)->num = 0;
-+    if ((G.extra_bytes != 0 &&
-+         cover_add((cover_t *)G.cover, 0, G.extra_bytes) != 0) ||
-+        cover_add((cover_t *)G.cover,
++    if (cover_add((cover_t *)G.cover,
 +                  G.extra_bytes + G.ecrec.offset_start_central_directory,
-+                  G.ziplen) != 0) {
++                  G.extra_bytes + G.ecrec.offset_start_central_directory +
++                  G.ecrec.size_central_directory) != 0) {
 +        Info(slide, 0x401, ((char *)slide,
 +          LoadFarString(NotEnoughMemCover)));
 +        return PK_MEM;
++    }
++    if ((G.extra_bytes != 0 &&
++         cover_add((cover_t *)G.cover, 0, G.extra_bytes) != 0) ||
++        (G.ecrec.have_ecr64 &&
++         cover_add((cover_t *)G.cover, G.ecrec.ec64_start,
++                   G.ecrec.ec64_end) != 0) ||
++        cover_add((cover_t *)G.cover, G.ecrec.ec_start,
++                  G.ecrec.ec_end) != 0) {
++        Info(slide, 0x401, ((char *)slide,
++          LoadFarString(OverlappedComponents)));
++        return PK_BOMB;
 +    }
 +
  /*---------------------------------------------------------------------------
      The basic idea of this function is as follows.  Since the central di-
      rectory lies at the end of the zipfile and the member files lie at the
-@@ -591,7 +735,8 @@ int extract_or_test_files(__G)    /* return PK-type er
+@@ -591,7 +748,8 @@ int extract_or_test_files(__G)    /* return PK-type er
              if (error > error_in_archive)
                  error_in_archive = error;
              /* ...and keep going (unless disk full or user break) */
@@ -205,7 +219,7 @@ Index: extract.c
                  /* clear reached_end to signal premature stop ... */
                  reached_end = FALSE;
                  /* ... and cancel scanning the central directory */
-@@ -1060,6 +1205,11 @@ static int extract_or_test_entrylist(__G__ numchunk,
+@@ -1060,6 +1218,11 @@ static int extract_or_test_entrylist(__G__ numchunk,
  
          /* seek_zipf(__G__ pInfo->offset);  */
          request = G.pInfo->offset + G.extra_bytes;
@@ -217,7 +231,7 @@ Index: extract.c
          inbuf_offset = request % INBUFSIZ;
          bufstart = request - inbuf_offset;
  
-@@ -1255,8 +1405,17 @@ static int extract_or_test_entrylist(__G__ numchunk,
+@@ -1255,8 +1418,17 @@ static int extract_or_test_entrylist(__G__ numchunk,
          if (G.lrec.compression_method == STORED) {
              zusz_t csiz_decrypted = G.lrec.csize;
  
@@ -236,7 +250,7 @@ Index: extract.c
              if (G.lrec.ucsize != csiz_decrypted) {
                  Info(slide, 0x401, ((char *)slide,
                    LoadFarStringSmall2(WrnStorUCSizCSizDiff),
-@@ -1591,6 +1750,18 @@ reprompt:
+@@ -1591,6 +1763,18 @@ reprompt:
              return IZ_CTRLC;        /* cancel operation by user request */
          }
  #endif
@@ -255,7 +269,7 @@ Index: extract.c
  #ifdef MACOS  /* MacOS is no preemptive OS, thus call event-handling by hand */
          UserStop();
  #endif
-@@ -1992,6 +2163,34 @@ static int extract_or_test_member(__G)    /* return PK
+@@ -1992,6 +2176,34 @@ static int extract_or_test_member(__G)    /* return PK
      }
  
      undefer_input(__G);
@@ -290,7 +304,7 @@ Index: extract.c
      return error;
  
  } /* end function extract_or_test_member() */
-@@ -2023,7 +2222,8 @@ static int TestExtraField(__G__ ef, ef_len)
+@@ -2023,7 +2235,8 @@ static int TestExtraField(__G__ ef, ef_len)
          ebID = makeword(ef);
          ebLen = (unsigned)makeword(ef+EB_LEN);
  
@@ -300,7 +314,7 @@ Index: extract.c
             /* Discovered some extra field inconsistency! */
              if (uO.qflag)
                  Info(slide, 1, ((char *)slide, "%-22s ",
-@@ -2158,11 +2358,19 @@ static int TestExtraField(__G__ ef, ef_len)
+@@ -2158,11 +2371,19 @@ static int TestExtraField(__G__ ef, ef_len)
                  }
                  break;
              case EF_PKVMS:
@@ -321,7 +335,7 @@ Index: extract.c
                  break;
              case EF_PKW32:
              case EF_PKUNIX:
-@@ -2217,15 +2425,32 @@ static int test_compr_eb(__G__ eb, eb_size, compr_offs
+@@ -2217,15 +2438,32 @@ static int test_compr_eb(__G__ eb, eb_size, compr_offs
      ulg eb_ucsize;
      uch *eb_ucptr;
      int r;
@@ -357,7 +371,7 @@ Index: extract.c
      if (
  #ifdef INT_16BIT
          (((ulg)(extent)eb_ucsize) != eb_ucsize) ||
-@@ -2700,6 +2925,12 @@ __GDEF
+@@ -2700,6 +2938,12 @@ __GDEF
      int err=BZ_OK;
      int repeated_buf_err;
      bz_stream bstrm;

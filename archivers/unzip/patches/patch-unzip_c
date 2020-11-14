@@ -1,13 +1,22 @@
-$OpenBSD: patch-unzip_c,v 1.2 2015/10/20 13:13:52 ajacoutot Exp $
---- unzip.c.orig	Wed Oct  7 12:11:04 2015
-+++ unzip.c	Wed Oct  7 12:12:09 2015
-@@ -717,6 +717,9 @@ int MAIN(argc, argv)   /* return PK-type error code (e
+$OpenBSD: patch-unzip_c,v 1.3 2020/11/14 17:45:17 jcs Exp $
+Index: unzip.c
+--- unzip.c.orig
++++ unzip.c
+@@ -65,6 +65,7 @@
+ 
+ #define __UNZIP_C       /* identifies this source module */
+ #define UNZIP_INTERNAL
++#include <err.h>
+ #include "unzip.h"      /* includes, typedefs, macros, prototypes, etc. */
+ #include "crypt.h"
+ #include "unzvers.h"
+@@ -716,6 +717,9 @@ int MAIN(argc, argv)   /* return PK-type error code (e
+     char *argv[];
  {
      int r;
- 
++
 +    if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1)
 +        err(1, "pledge");
-+
+ 
      CONSTRUCTGLOBALS();
      r = unzip(__G__ argc, argv);
-     DESTROYGLOBALS();

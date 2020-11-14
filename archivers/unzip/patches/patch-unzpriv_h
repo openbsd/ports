@@ -1,0 +1,25 @@
+$OpenBSD: patch-unzpriv_h,v 1.1 2020/11/14 17:45:17 jcs Exp $
+
+Fix CVE-2019-13232: a zip bomb using overlapped entries
+https://github.com/madler/unzip/commit/6d351831be705cc26d897db44f878a978f4138fc
+
+Index: unzpriv.h
+--- unzpriv.h.orig
++++ unzpriv.h
+@@ -2185,6 +2185,16 @@ typedef struct VMStimbuf {
+        int have_ecr64;                  /* valid Zip64 ecdir-record exists */
+        int is_zip64_archive;            /* Zip64 ecdir-record is mandatory */
+        ush zipfile_comment_length;
++       zusz_t ec_start, ec_end;         /* offsets of start and end of the
++                                           end of central directory record,
++                                           including if present the Zip64
++                                           end of central directory locator,
++                                           which immediately precedes the
++                                           end of central directory record */
++       zusz_t ec64_start, ec64_end;     /* if have_ecr64 is true, then these
++                                           are the offsets of the start and
++                                           end of the Zip64 end of central
++                                           directory record */
+    } ecdir_rec;
+ 
+ 

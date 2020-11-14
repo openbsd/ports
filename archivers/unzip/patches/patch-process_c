@@ -1,4 +1,4 @@
-$OpenBSD: patch-process_c,v 1.4 2020/03/11 21:57:32 naddy Exp $
+$OpenBSD: patch-process_c,v 1.5 2020/11/14 17:45:17 jcs Exp $
 
 Fix: handle the PKWare verification bit of internal attributes
     https://bugs.debian.org/630078
@@ -10,6 +10,7 @@ Fix: restore uid and gid information when requested
     https://bugs.debian.org/689212
 Fix CVE-2019-13232: a zip bomb using overlapped entries
 https://github.com/madler/unzip/commit/47b3ceae397d21bf822bc2ac73052a4b1daf8e1c
+https://github.com/madler/unzip/commit/6d351831be705cc26d897db44f878a978f4138fc
 
 Index: process.c
 --- process.c.orig
@@ -35,7 +36,27 @@ Index: process.c
  } /* end function free_G_buffers() */
  
  
-@@ -1729,6 +1736,13 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
+@@ -1401,6 +1408,10 @@ static int find_ecrec64(__G__ searchlen)         /* re
+ 
+     /* Now, we are (almost) sure that we have a Zip64 archive. */
+     G.ecrec.have_ecr64 = 1;
++    G.ecrec.ec_start -= ECLOC64_SIZE+4;
++    G.ecrec.ec64_start = ecrec64_start_offset;
++    G.ecrec.ec64_end = ecrec64_start_offset +
++                       12 + makeint64(&byterec[ECREC64_LENGTH]);
+ 
+     /* Update the "end-of-central-dir offset" for later checks. */
+     G.real_ecrec_offset = ecrec64_start_offset;
+@@ -1535,6 +1546,8 @@ static int find_ecrec(__G__ searchlen)          /* ret
+       makelong(&byterec[OFFSET_START_CENTRAL_DIRECTORY]);
+     G.ecrec.zipfile_comment_length =
+       makeword(&byterec[ZIPFILE_COMMENT_LENGTH]);
++    G.ecrec.ec_start = G.real_ecrec_offset;
++    G.ecrec.ec_end = G.ecrec.ec_start + 22 + G.ecrec.zipfile_comment_length;
+ 
+     /* Now, we have to read the archive comment, BEFORE the file pointer
+        is moved away backwards to seek for a Zip64 ECLOC64 structure.
+@@ -1729,6 +1742,13 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
      else if (uO.L_flag > 1)   /* let -LL force lower case for all names */
          G.pInfo->lcflag = 1;
  
@@ -49,7 +70,7 @@ Index: process.c
      /* do Amigas (AMIGA_) also have volume labels? */
      if (IS_VOLID(G.crec.external_file_attributes) &&
          (G.pInfo->hostnum == FS_FAT_ || G.pInfo->hostnum == FS_HPFS_ ||
-@@ -1751,6 +1765,12 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
+@@ -1751,6 +1771,12 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
          = (G.crec.general_purpose_bit_flag & (1 << 11)) == (1 << 11);
  #endif
  
@@ -62,7 +83,7 @@ Index: process.c
      return PK_COOL;
  
  } /* end function process_cdir_file_hdr() */
-@@ -1888,48 +1908,84 @@ int getZip64Data(__G__ ef_buf, ef_len)
+@@ -1888,48 +1914,84 @@ int getZip64Data(__G__ ef_buf, ef_len)
      and a 4-byte version of disk start number.
      Sets both local header and central header fields.  Not terribly clever,
      but it means that this procedure is only called in one place.
@@ -163,7 +184,7 @@ Index: process.c
          ef_buf += (eb_len + EB_HEADSIZE);
          ef_len -= (eb_len + EB_HEADSIZE);
      }
-@@ -2037,6 +2093,8 @@ int getUnicodeData(__G__ ef_buf, ef_len)
+@@ -2037,6 +2099,8 @@ int getUnicodeData(__G__ ef_buf, ef_len)
                      (ZCONST char *)(offset + ef_buf), ULen);
              G.unipath_filename[ULen] = '\0';
            }
@@ -172,7 +193,7 @@ Index: process.c
          }
  
          /* Skip this extra field block */
-@@ -2867,10 +2925,13 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2867,10 +2931,13 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
              break;
  
            case EF_IZUNIX2:
@@ -188,7 +209,7 @@ Index: process.c
  #ifdef IZ_HAVE_UXUIDGID
              if (have_new_type_eb > 1)
                  break;          /* IZUNIX3 overrides IZUNIX2 e.f. block ! */
-@@ -2886,6 +2947,8 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2886,6 +2953,8 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
              /* new 3rd generation Unix ef */
              have_new_type_eb = 2;
  
@@ -197,7 +218,7 @@ Index: process.c
          /*
            Version       1 byte      version of this extra field, currently 1
            UIDSize       1 byte      Size of UID field
-@@ -2897,7 +2960,7 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2897,7 +2966,7 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
  #ifdef IZ_HAVE_UXUIDGID
              if (eb_len >= EB_UX3_MINLEN
                  && z_uidgid != NULL
@@ -206,7 +227,7 @@ Index: process.c
                      /* only know about version 1 */
              {
                  uch uid_size;
-@@ -2906,13 +2969,11 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2906,13 +2975,11 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
                  uid_size = *((EB_HEADSIZE + 1) + ef_buf);
                  gid_size = *((EB_HEADSIZE + uid_size + 2) + ef_buf);
  
