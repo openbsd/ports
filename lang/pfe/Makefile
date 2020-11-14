@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/11/14 10:26:18 phessler Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
+BROKEN-arm=	missing assembly for arch
+BROKEN-aaarch64=	missing assembly for arch
 
 COMMENT=	Portable Forth Environment
 
