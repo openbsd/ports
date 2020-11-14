@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2020/11/01 01:00:58 kmos Exp $
+# $OpenBSD: Makefile,v 1.41 2020/11/14 04:56:41 kmos Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
 # Must be <45.0 to support Python 2.7
+PORTROACH=		limit:^44\.
 
 MODPY_EGG_VERSION=	44.1.1
 DISTNAME=		setuptools-${MODPY_EGG_VERSION}
