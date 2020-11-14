@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/14 11:59:49 stu Exp $
 
 COMMENT =		Tcl bindings for SQLite3
 
-V =			3.24.0
+V =			3.33.0
 VER =			${V:S/.//g}
 
 DISTNAME =		sqlite-autoconf-${VER:C/.$/0\0/}00
@@ -16,11 +16,15 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 
-MASTER_SITES =		${HOMEPAGE}2018/
+MASTER_SITES =		${HOMEPAGE}2020/
 
 MODULES =		lang/tcl
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
+
+# Build against Tcl 8.5 so this Tcl extension
+# can work with Tcl 8.5 and Tcl 8.6.
+MODTCL_VERSION =	8.5
 
 FAKE_FLAGS =		PKG_DIR=sqlite3
 SEPARATE_BUILD =	Yes
