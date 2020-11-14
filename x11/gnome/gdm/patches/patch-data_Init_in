@@ -1,14 +1,18 @@
-$OpenBSD: patch-data_Init_in,v 1.10 2019/05/12 21:28:50 ajacoutot Exp $
+$OpenBSD: patch-data_Init_in,v 1.11 2020/11/14 10:59:36 ajacoutot Exp $
 
 Index: data/Init.in
 --- data/Init.in.orig
 +++ data/Init.in
-@@ -6,6 +6,15 @@
+@@ -6,6 +6,19 @@
  PATH="@X_PATH@:$PATH"
  OLD_IFS=$IFS
  
-+# enhance fade in look
-+xsetroot -solid black
++# enhance fade in look;
++# gnome-shell-3.38.1/data/theme/gnome-shell-sass/widgets/_screen-shield.scss:
++# #lockDialogGroup {
++#   background-color: lighten(#2e3436, 8%);
++# }
++xsetroot -solid "#2e3436"
 +
 +# wait for ttys to be initialized
 +while ! pgrep -qf "^/usr/libexec/getty "; do
@@ -19,7 +23,7 @@ Index: data/Init.in
  gdmwhich () {
    COMMAND="$1"
    OUTPUT=
-@@ -85,5 +94,15 @@ if [ "x$SETXKBMAP" != "x" ] ; then
+@@ -85,5 +98,15 @@ if [ "x$SETXKBMAP" != "x" ] ; then
      fi
    fi
  fi
