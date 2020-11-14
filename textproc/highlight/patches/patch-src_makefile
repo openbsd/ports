@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_makefile,v 1.26 2020/09/21 13:48:01 benoit Exp $
---- src/makefile.orig	Mon Sep  7 22:21:10 2020
-+++ src/makefile	Mon Sep 21 15:04:49 2020
-@@ -13,12 +13,12 @@
+$OpenBSD: patch-src_makefile,v 1.27 2020/11/14 07:44:59 benoit Exp $
+--- src/makefile.orig	Fri Nov 13 21:00:38 2020
++++ src/makefile	Sat Nov 14 08:37:09 2020
+@@ -13,11 +13,11 @@
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
  #CXX ?= clang++
@@ -10,13 +10,12 @@ $OpenBSD: patch-src_makefile,v 1.26 2020/09/21 13:48:01 benoit Exp $
  
  QMAKE ?= qmake
  
- # Added -std=c++11 because of auto_ptr to unique_ptr transition
 -CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG -std=c++11 -D_FILE_OFFSET_BITS=64
 +#CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG -std=c++11 -D_FILE_OFFSET_BITS=64
  
  #CFLAGS:= -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection
  
-@@ -44,8 +44,8 @@
+@@ -43,8 +43,8 @@
  LUA_PKG_NAME=lua
  endif
  
@@ -27,7 +26,7 @@ $OpenBSD: patch-src_makefile,v 1.26 2020/09/21 13:48:01 benoit Exp $
  
  # luajit lib
  # LUA_LIBS=$(shell pkg-config --libs luajit)
-@@ -56,13 +56,13 @@
+@@ -55,13 +55,13 @@
  DILU_DIR=${CORE_DIR}Diluculum/
  
  ifndef HL_CONFIG_DIR

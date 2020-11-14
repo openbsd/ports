@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2020/09/21 13:48:01 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.45 2020/11/14 07:44:59 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -196,11 +196,13 @@ share/highlight/langDefs/qml.lang
 share/highlight/langDefs/qu.lang
 share/highlight/langDefs/r.lang
 share/highlight/langDefs/rebol.lang
+share/highlight/langDefs/rego.lang
 share/highlight/langDefs/rexx.lang
 share/highlight/langDefs/rnc.lang
 share/highlight/langDefs/rpg.lang
 share/highlight/langDefs/rpl.lang
 share/highlight/langDefs/rs.lang
+share/highlight/langDefs/rst.lang
 share/highlight/langDefs/ruby.lang
 share/highlight/langDefs/s.lang
 share/highlight/langDefs/sam.lang
