@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2035 2020/11/14 09:05:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.2036 2020/11/14 18:22:10 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1685,6 +1685,7 @@
      SUBDIR += py-tabulate,python3
      SUBDIR += py-tempora
      SUBDIR += py-tempora,python3
+     SUBDIR += py-tenacity,python3
      SUBDIR += py-test
      SUBDIR += py-test,python3
      SUBDIR += py-test-benchmark
