@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/10/28 04:04:04 daniel Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/14 19:20:31 kmos Exp $
 
 COMMENT =	set of python modules for machine learning and data mining
 
@@ -14,6 +14,9 @@ MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # BSD-3
 PERMIT_PACKAGE =	Yes
+
+# C++11
+COMPILER =		base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
