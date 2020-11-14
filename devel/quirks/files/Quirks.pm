@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1111 2020/11/14 08:14:41 benoit Exp $
+# $OpenBSD: Quirks.pm,v 1.1112 2020/11/14 11:12:39 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1911,6 +1911,9 @@ my $obsolete_reason = {
 	'gnome-getting-started-docs' => 5,
 	'py-poppler' => 3,
 	'pdfshuffler' => 3,
+	'colord' => 27,
+	'colord-gtk' => 27,
+	'gnome-color-manager' => 5,
 };
 
 # reasons for obsolete packages
@@ -1942,6 +1945,7 @@ my @msg = (
 	"no longer maintained upstream, suggest qbirthday", #24
 	"no longer maintained upstream, suggest qmapshack", #25
 	"outdated Qt4 application, suggest keepassxc", #26
+	"requires GUdev or GUsb", #27
 );
 
 # ->is_base_system($handle, $state):
