@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2020/09/07 11:50:42 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2020/11/14 08:02:49 landry Exp $
 
 COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.6.2
 XFCE_GOODIE=	xfce4-notifyd
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -16,6 +17,7 @@ MODXFCE_WANTLIB =	xfce4panel-2.0
 
 LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		devel/libnotify
+CONFIGURE_ARGS =	--enable-dbus-start-daemon
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
