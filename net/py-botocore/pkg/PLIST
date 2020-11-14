@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.146 2020/10/03 12:40:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.147 2020/11/14 09:06:10 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -398,6 +398,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/databrew/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/databrew/2017-07-25/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/databrew/2017-07-25/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/databrew/2017-07-25/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dataexchange/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dataexchange/2017-07-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dataexchange/2017-07-25/paginators-1.json
@@ -1124,6 +1128,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/service-quotas/2019-06-24
 lib/python${MODPY_VERSION}/site-packages/botocore/data/service-quotas/2019-06-24/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/service-quotas/2019-06-24/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog-appregistry/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog-appregistry/2020-06-24/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog-appregistry/2020-06-24/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog-appregistry/2020-06-24/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog/2015-12-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog/2015-12-10/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicecatalog/2015-12-10/paginators-1.json
