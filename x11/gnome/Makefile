@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.290 2020/11/07 15:55:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.291 2020/11/14 11:05:43 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -19,7 +19,6 @@
      SUBDIR += characters
      SUBDIR += chrome-gnome-shell
      SUBDIR += clocks
-     SUBDIR += color-manager
      SUBDIR += connections
      SUBDIR += contacts
      SUBDIR += control-center
