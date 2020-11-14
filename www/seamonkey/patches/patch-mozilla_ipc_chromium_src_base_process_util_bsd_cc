@@ -1,0 +1,14 @@
+$OpenBSD: patch-mozilla_ipc_chromium_src_base_process_util_bsd_cc,v 1.1 2020/11/14 17:42:12 landry Exp $
+
+Index: mozilla/ipc/chromium/src/base/process_util_bsd.cc
+--- mozilla/ipc/chromium/src/base/process_util_bsd.cc.orig
++++ mozilla/ipc/chromium/src/base/process_util_bsd.cc
+@@ -41,7 +41,7 @@ bool LaunchApp(const std::vector<std::string>& argv,
+   // as close-on-exec.
+   SetAllFDsToCloseOnExec();
+ 
+-  EnvironmentArray vars = BuildEnvironmentArray(options.environ);
++  EnvironmentArray vars = BuildEnvironmentArray(options.env_map);
+ 
+   posix_spawn_file_actions_t file_actions;
+   if (posix_spawn_file_actions_init(&file_actions) != 0) {

@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.242 2020/10/20 14:45:50 landry Exp $
+# $OpenBSD: Makefile,v 1.243 2020/11/14 17:42:12 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.4
+MOZILLA_VERSION =	2.53.5
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.4
+PKGNAME-lightning =	lightning-seamonkey-5.8.5
 EPOCH-lightning =	0
-REVISION-main =		0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
@@ -21,7 +20,7 @@ SO_VERSION =	47.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 mozavcodec mozavutil mozgtk prldap60 suite xul lgpllibs
+MOZILLA_LIBS = ldap60 ldif60 mozavcodec mozavutil mozgtk mozsqlite3 prldap60 suite xul lgpllibs
 
 CATEGORIES=	www mail net news
 
@@ -40,6 +39,8 @@ MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 MOZILLA_USE_GTK3 = Yes
 # firefox >= 53 needs rust
 BUILD_DEPENDS +=	lang/rust>=1.43
+# #1611386
+MOZILLA_USE_BUNDLED_SQLITE = Yes
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
 CONFIGURE_ARGS +=	--disable-gconf
@@ -61,9 +62,6 @@ WANTLIB-lightning=
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
-
-# SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
