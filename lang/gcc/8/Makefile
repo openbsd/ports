@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/11/13 17:16:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2020/11/14 00:00:39 sthen Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
@@ -18,7 +18,7 @@ DPB_PROPERTIES = parallel
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 0
+REVISION = 1
 
 ADASTRAP-amd64 = adastrap-amd64-8.3.0-2.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
@@ -66,8 +66,9 @@ EXTRACT_ONLY =	${DISTNAME}.tar.xz
 BUILD_DEPENDS +=	devel/bison \
 			devel/libexecinfo
 
-.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "arm"
+# would be helpful on i386/amd64 too, but some ports also need the old
+# ld.bfd in base which can't cope with new gas.
 BUILD_DEPENDS +=	devel/gas
 RUN_DEPENDS +=		devel/gas
 RUN_DEPENDS-main +=	devel/gas
