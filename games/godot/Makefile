@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2020/09/19 06:37:23 thfr Exp $
+# $OpenBSD: Makefile,v 1.17 2020/11/15 22:05:10 gkoehler Exp $
 
 COMMENT =	2D and 3D game engine
 
 V =		3.2.3
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
+REVISION =	0
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Omar Polo <op@omarpolo.com>
@@ -78,8 +79,6 @@ WANTLIB +=     atomic
 
 # Fix relocation overflows
 .if ${MACHINE_ARCH:Mpowerpc}
-CFLAGS +=      -mlongcall
-CXXFLAGS +=    -mlongcall
 LDFLAGS +=     -Wl,--relax
 .endif
 
