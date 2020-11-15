@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/03 16:12:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2020/11/15 06:57:07 rsadowski Exp $
 
 COMMENT =	KDE configuration dialog for desktop notifications
 DISTNAME =	knotifyconfig-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5NotifyConfig		6.0
 
@@ -14,7 +15,12 @@ WANTLIB += m
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kconfigwidgets>=${MODKF5_VERSION} \
 		devel/kf5/knotifications>=${MODKF5_VERSION} \
-		devel/kf5/kxmlgui>=${MODKF5_VERSION}
+		devel/kf5/kxmlgui>=${MODKF5_VERSION} \
+		multimedia/phonon \
+		x11/qt5/qtspeech
+
+RUN_DEPENDS =	multimedia/phonon \
+		x11/qt5/qtspeech
 
 LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		devel/kf5/kconfig>=${MODKF5_VERSION} \
@@ -23,10 +29,8 @@ LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		devel/kf5/kio>=${MODKF5_VERSION} \
 		devel/kf5/kjobwidgets>=${MODKF5_VERSION} \
 		devel/kf5/kservice>=${MODKF5_VERSION} \
-		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
-		multimedia/phonon
+		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION}
 
-CONFIGURE_ARGS +=	-DBUILD_TESTING=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Qt5TextToSpeech=ON
+CONFIGURE_ARGS +=	-DBUILD_TESTING=ON
 
 .include <bsd.port.mk>
