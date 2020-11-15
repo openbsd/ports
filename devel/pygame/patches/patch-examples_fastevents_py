@@ -1,9 +1,0 @@
-$OpenBSD: patch-examples_fastevents_py,v 1.2 2009/04/09 22:49:39 ajacoutot Exp $
---- examples/fastevents.py.orig	Mon Jul  7 07:58:40 2008
-+++ examples/fastevents.py	Mon Apr  6 20:08:49 2009
-@@ -1,4 +1,5 @@
- #!/usr/bin/env python
-+#!/usr/bin/env python
- """  This is a stress test for the fastevents module.
- 
- *Fast events does not appear faster!*
