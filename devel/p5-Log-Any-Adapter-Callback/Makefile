@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/15 08:22:32 benoit Exp $
 
 COMMENT=		module to send Log::Any logs to a subroutine
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		Log-Any-Adapter-Callback-0.09
+DISTNAME =		Log-Any-Adapter-Callback-0.101
 CATEGORIES=		devel
-REVISION=		0
 
 # perl
 PERMIT_PACKAGE=	Yes
