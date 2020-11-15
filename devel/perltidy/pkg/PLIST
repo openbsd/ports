@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/06/06 20:22:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/11/15 09:45:18 benoit Exp $
 bin/perltidy
 ${P5SITE}/Perl/
 ${P5SITE}/Perl/Tidy/
@@ -36,6 +36,7 @@ share/examples/perltidy/ex_mp.pl
 share/examples/perltidy/filter_example.in
 share/examples/perltidy/filter_example.pl
 share/examples/perltidy/find_naughty.pl
+share/examples/perltidy/fix-scbb-csc-bug.pl
 share/examples/perltidy/lextest
 share/examples/perltidy/perlcomment.pl
 share/examples/perltidy/perllinetype.pl

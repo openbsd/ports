@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2020/08/23 20:54:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/11/15 09:45:18 benoit Exp $
 
 COMMENT =	tool to indent and reformat perl scripts
 
-V =		20200822
+V =		20201001
 DISTNAME =	Perl-Tidy-$V
 PKGNAME =	perltidy-$V
 CATEGORIES =	devel
