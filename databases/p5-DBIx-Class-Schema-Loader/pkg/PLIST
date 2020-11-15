@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/04/06 09:59:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/15 19:17:37 afresh1 Exp $
 bin/dbicdump
 ${P5SITE}/DBIx/Class/Schema/Loader/
 ${P5SITE}/DBIx/Class/Schema/Loader.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/Base.pm
+${P5SITE}/DBIx/Class/Schema/Loader/Column.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/ADO/
@@ -56,6 +57,7 @@ ${P5SITE}/DBIx/Class/Schema/Loader/Utils.pm
 @man man/man1/dbicdump.1
 @man man/man3p/DBIx::Class::Schema::Loader.3p
 @man man/man3p/DBIx::Class::Schema::Loader::Base.3p
+@man man/man3p/DBIx::Class::Schema::Loader::Column.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::ADO.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::ADO::MS_Jet.3p
