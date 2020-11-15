@@ -1,0 +1,30 @@
+$OpenBSD: README,v 1.1.1.1 2020/11/15 09:12:13 denis Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Enabling TimescaleDB
+====================
+You will need to edit your postgresql.conf file to include the TimescaleDB
+library, and then restart PostgreSQL.
+
+        shared_preload_libraries = 'timescaledb'
+
+Disabling telemetry
+===================
+TimescaleDB sends telemetry reports periodically in the background by default.
+
+To turn off telemetry for a whole instance, simply include the following line
+in your postgresql.conf file:
+
+        timescaledb.telemetry_level=off
+
+Alternatively, you can disable it from psql:
+
+        ALTER [SYSTEM | DATABASE | USER] { *db_name* | *role_specification* }
+            SET timescaledb.telemetry_level=off;
+
+Then reload the configuration.
+
+To re-enable it at a later time, replace 'off' with 'basic' in the above.
