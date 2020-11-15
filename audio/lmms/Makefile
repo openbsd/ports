@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.23 2020/01/30 14:13:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/11/15 14:56:34 sthen Exp $
 
 COMMENT =		music studio with tracking, sampling and MIDI
 
-# rolled from git; requires submodules
-# git clone --recurse-submodules -b v1.2.0 https://github.com/lmms/lmms
-DISTNAME =		lmms-1.2.0
-REVISION =		0
+V =			1.2.2
+DISTNAME =		lmms_$V
+PKGNAME =		lmms-$V
+WRKDIST =		${WRKDIR}/lmms
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		audio
 
 HOMEPAGE =		https://lmms.io/
 
-MASTER_SITES =		https://spacehopper.org/mirrors/
+MASTER_SITES =		https://github.com/LMMS/lmms/releases/download/v$V/
+
+MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

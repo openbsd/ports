@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/06/14 13:51:01 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/11/15 14:56:34 sthen Exp $
 
 don't link deprecated ossaudio on OpenBSD
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -354,12 +354,12 @@ ENDIF(WANT_OGGVORBIS)
+@@ -366,12 +366,12 @@ ENDIF(WANT_OGGVORBIS)
  
  
  # check whether to enable OSS-support
