@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_util_piglit-subprocess_c,v 1.1 2020/11/15 12:28:27 kettenis Exp $
+
+avoid running atexit(3) hooks in child
+
+Index: tests/util/piglit-subprocess.c
+--- tests/util/piglit-subprocess.c.orig
++++ tests/util/piglit-subprocess.c
+@@ -167,7 +167,7 @@ piglit_subprocess(char * const *arguments,
+ 			close(i);
+ 		execvp(arguments[0], arguments);
+ 		fprintf(stderr, "%s: %s\n", arguments[0], strerror(errno));
+-		exit(EXIT_FAILURE);
++		_exit(EXIT_FAILURE);
+ 	} else {
+ 		close(stdin_pipe[0]);
+ 		close(stdout_pipe[1]);
