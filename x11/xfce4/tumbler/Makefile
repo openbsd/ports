@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2020/08/06 16:22:06 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2020/11/15 17:45:33 landry Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
-XFCE_VERSION=	0.2.9
+XFCE_VERSION=	0.3.1
 XFCE_PROJECT=	tumbler
 
 SHARED_LIBS+=	tumbler-1 0.0
@@ -25,8 +25,10 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	x11/xfce4
 MODXFCE_PURGE_LA =	lib/tumbler-1/plugins lib/tumbler-1/plugins/cache
+MODXFCE_ICON_CACHE =	Yes
 
 CONFIGURE_ARGS =	--disable-raw-thumbnailer \
+			--disable-gepub-thumbnailer \
 			--disable-gstreamer-thumbnailer
 
 # correctly find bindtextdomain

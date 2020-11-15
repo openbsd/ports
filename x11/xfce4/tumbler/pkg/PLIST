@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/08/06 16:22:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/11/15 17:45:34 landry Exp $
 include/tumbler-1/
 include/tumbler-1/tumbler/
 include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h
@@ -73,6 +73,7 @@ share/gtk-doc/html/tumbler/tumbler-Version-Information-and-Compatibility-Checks.
 share/gtk-doc/html/tumbler/tumbler.devhelp2
 share/gtk-doc/html/tumbler/up-insensitive.png
 share/gtk-doc/html/tumbler/up.png
+share/icons/hicolor/32x32/apps/org.xfce.tumbler.png
 share/locale/ar/LC_MESSAGES/tumbler.mo
 share/locale/ast/LC_MESSAGES/tumbler.mo
 share/locale/be/LC_MESSAGES/tumbler.mo
@@ -93,11 +94,15 @@ share/locale/fi/LC_MESSAGES/tumbler.mo
 share/locale/fr/LC_MESSAGES/tumbler.mo
 share/locale/gl/LC_MESSAGES/tumbler.mo
 share/locale/he/LC_MESSAGES/tumbler.mo
+share/locale/hi/LC_MESSAGES/tumbler.mo
 share/locale/hr/LC_MESSAGES/tumbler.mo
 share/locale/hu/LC_MESSAGES/tumbler.mo
 share/locale/hy_AM/
 share/locale/hy_AM/LC_MESSAGES/
 share/locale/hy_AM/LC_MESSAGES/tumbler.mo
+share/locale/hye/
+share/locale/hye/LC_MESSAGES/
+share/locale/hye/LC_MESSAGES/tumbler.mo
 share/locale/id/LC_MESSAGES/tumbler.mo
 share/locale/is/LC_MESSAGES/tumbler.mo
 share/locale/it/LC_MESSAGES/tumbler.mo
@@ -131,3 +136,4 @@ share/locale/uk/LC_MESSAGES/tumbler.mo
 share/locale/zh_CN/LC_MESSAGES/tumbler.mo
 share/locale/zh_HK/LC_MESSAGES/tumbler.mo
 share/locale/zh_TW/LC_MESSAGES/tumbler.mo
+@tag gtk-update-icon-cache %D/share/icons/hicolor
