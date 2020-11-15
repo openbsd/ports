@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/09 18:41:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/15 06:46:29 rsadowski Exp $
 
 COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
 V =		3.8.2.0
 DISTNAME =	gnuradio-$V
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7
@@ -96,6 +96,7 @@ LIB_DEPENDS =	audio/jack \
 		x11/qwt
 
 CONFIGURE_ARGS =-DENABLE_DOXYGEN=OFF \
+		-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 		-DENABLE_GR_UHD=OFF \
 		-DGR_PKG_DOC_DIR="${PREFIX}/share/doc/gnuradio" \
 		-DGR_PKG_CONF_DIR="${PREFIX}/share/examples/gnuradio/conf.d" \
