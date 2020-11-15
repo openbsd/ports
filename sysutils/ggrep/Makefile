@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2020/10/12 17:37:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2020/11/15 23:17:00 naddy Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
-DISTNAME=	grep-3.5
+DISTNAME=	grep-3.6
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	sysutils
 HOMEPAGE=	https://www.gnu.org/software/grep/grep.html
@@ -29,10 +29,5 @@ CONFIGURE_ENV+= ac_cv_libsigsegv=no
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-
-# Prevent rebuilding due to inconsistent timestamp.
-# Our makeinfo(1) is too old to process the .texi source.
-post-patch:
-	cd ${WRKSRC}/doc && touch -r stamp-vti grep.info
 
 .include <bsd.port.mk>
