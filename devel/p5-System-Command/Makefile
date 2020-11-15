@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/15 08:42:53 benoit Exp $
 
 COMMENT = 	object for running system commands
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	System-Command-1.119
+DISTNAME =	System-Command-1.121
 CATEGORIES =	devel
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
@@ -14,7 +13,8 @@ PERMIT_PACKAGE =	Yes
 RUN_DEPENDS =	devel/p5-IPC-Run
 
 TEST_DEPENDS =	devel/p5-Test-Command \
-		devel/p5-Test-Output
+		devel/p5-Test-Output \
+		devel/p5-Test-CPAN-Meta
 
 # Requires Pod::Coverage::TrustPod that we don't have in ports
 MAKE_ENV +=	TEST_POD= AUTHOR_TESTING=
