@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/27 14:00:19 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/15 07:48:21 benoit Exp $
 
 COMMENT =	Perl extension for access to cdb databases
 
-DISTNAME =	CDB_File-1.02
+DISTNAME =	CDB_File-1.03
 
 CATEGORIES =	databases
 
