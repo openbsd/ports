@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.409 2020/11/14 09:20:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.410 2020/11/15 09:39:52 denis Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -242,6 +242,7 @@
      SUBDIR += tdbc-mysql
      SUBDIR += tdbc-postgres
      SUBDIR += tdbc-sqlite3
+     SUBDIR += timescaledb
      SUBDIR += tinycdb
      SUBDIR += tokyocabinet
      SUBDIR += virtuoso
