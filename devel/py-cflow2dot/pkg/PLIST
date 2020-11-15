@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/11 19:36:31 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/11/15 10:02:19 benoit Exp $
 bin/cflow2dot
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pycflow2dot.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pycflow2dot/
 lib/python${MODPY_VERSION}/site-packages/pycflow2dot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pycflow2dot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pycflow2dot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -8,4 +8,10 @@ lib/python${MODPY_VERSION}/site-packages/pycflow2dot-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/pycflow2dot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pycflow2dot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pycflow2dot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/pycflow2dot.py
+lib/python${MODPY_VERSION}/site-packages/pycflow2dot/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pycflow2dot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pycflow2dot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pycflow2dot/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pycflow2dot/${MODPY_PYCACHE}pycflow2dot.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pycflow2dot/_version.py
+lib/python${MODPY_VERSION}/site-packages/pycflow2dot/pycflow2dot.py
