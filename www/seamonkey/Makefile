@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2020/11/14 17:42:12 landry Exp $
+# $OpenBSD: Makefile,v 1.244 2020/11/15 17:29:00 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -43,6 +43,10 @@ BUILD_DEPENDS +=	lang/rust>=1.43
 MOZILLA_USE_BUNDLED_SQLITE = Yes
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
+.if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
+# 67 requires nasm for bundled libdav1d
+BUILD_DEPENDS +=	devel/nasm
+.endif
 CONFIGURE_ARGS +=	--disable-gconf
 NO_TEST=	Yes
 
