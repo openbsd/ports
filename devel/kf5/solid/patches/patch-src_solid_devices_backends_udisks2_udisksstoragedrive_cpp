@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_solid_devices_backends_udisks2_udisksstoragedrive_cpp,v 1.1 2020/09/07 14:48:51 rsadowski Exp $
+$OpenBSD: patch-src_solid_devices_backends_udisks2_udisksstoragedrive_cpp,v 1.2 2020/11/15 06:48:36 rsadowski Exp $
 
 Index: src/solid/devices/backends/udisks2/udisksstoragedrive.cpp
 --- src/solid/devices/backends/udisks2/udisksstoragedrive.cpp.orig
 +++ src/solid/devices/backends/udisks2/udisksstoragedrive.cpp
-@@ -38,7 +38,7 @@ bool StorageDrive::isHotpluggable() const
+@@ -37,7 +37,7 @@ bool StorageDrive::isHotpluggable() const
  #if UDEV_FOUND
      return _bus == Solid::StorageDrive::Usb || _bus == Solid::StorageDrive::Ieee1394 ||
             (m_udevDevice.deviceProperty("UDISKS_SYSTEM").isValid() && !m_udevDevice.deviceProperty("UDISKS_SYSTEM").toBool());
@@ -12,7 +12,7 @@ Index: src/solid/devices/backends/udisks2/udisksstoragedrive.cpp
      return m_device->prop("bsdisks_IsHotpluggable").toBool();
  #else
  #error Implement this or stub this out for your platform
-@@ -90,7 +90,7 @@ Solid::StorageDrive::Bus StorageDrive::bus() const
+@@ -89,7 +89,7 @@ Solid::StorageDrive::Bus StorageDrive::bus() const
      const QString udevBus = 
  #if UDEV_FOUND
          m_udevDevice.deviceProperty("ID_BUS").toString();
@@ -21,7 +21,7 @@ Index: src/solid/devices/backends/udisks2/udisksstoragedrive.cpp
          m_device->prop("bsdisks_ConnectionBus").toString();
  #else
  #error Implement this or stub this out for your platform
-@@ -105,7 +105,7 @@ Solid::StorageDrive::Bus StorageDrive::bus() const
+@@ -104,7 +104,7 @@ Solid::StorageDrive::Bus StorageDrive::bus() const
          } else { // parallel (classical) ATA
              return Solid::StorageDrive::Ide;
          }

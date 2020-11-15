@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/11/03 16:12:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/11/15 06:48:34 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -38,6 +38,7 @@ include/KF5/KIOCore/KIO/MimetypeJob
 include/KF5/KIOCore/KIO/MkdirJob
 include/KF5/KIOCore/KIO/MkpathJob
 include/KF5/KIOCore/KIO/MultiGetJob
+include/KF5/KIOCore/KIO/NameFinderJob
 include/KF5/KIOCore/KIO/RestoreJob
 include/KF5/KIOCore/KIO/Scheduler
 include/KF5/KIOCore/KIO/SimpleJob
@@ -103,6 +104,7 @@ include/KF5/KIOCore/kio/mimetypejob.h
 include/KF5/KIOCore/kio/mkdirjob.h
 include/KF5/KIOCore/kio/mkpathjob.h
 include/KF5/KIOCore/kio/multigetjob.h
+include/KF5/KIOCore/kio/namefinderjob.h
 include/KF5/KIOCore/kio/restorejob.h
 include/KF5/KIOCore/kio/scheduler.h
 include/KF5/KIOCore/kio/simplejob.h

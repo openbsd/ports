@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2020/11/03 16:12:03 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2020/11/15 06:48:31 rsadowski Exp $
 @conflict kf5-baloo-<=5.51.0p1v0
 @conflict kde-l10n-*
 @conflict kde-i18n-*
@@ -134,6 +134,8 @@ share/locale/de/LC_MESSAGES/kio5_timeline.mo
 share/locale/el/LC_MESSAGES/baloo_file5.mo
 share/locale/el/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/el/LC_MESSAGES/balooctl5.mo
+share/locale/el/LC_MESSAGES/baloodb5.mo
+share/locale/el/LC_MESSAGES/balooengine5.mo
 share/locale/el/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/el/LC_MESSAGES/baloosearch5.mo
 share/locale/el/LC_MESSAGES/balooshow5.mo

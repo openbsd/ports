@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/11/03 16:12:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/11/15 06:48:32 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -16,6 +16,7 @@ share/ECM/find-modules/FindEGL.cmake
 share/ECM/find-modules/FindFontconfig.cmake
 share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
+share/ECM/find-modules/FindGradle.cmake
 share/ECM/find-modules/FindIcoTool.cmake
 share/ECM/find-modules/FindInotify.cmake
 share/ECM/find-modules/FindKF5.cmake
@@ -46,8 +47,10 @@ share/ECM/find-modules/${MODPY_PYCACHE}Qt5Ruleset.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/find-modules/${MODPY_PYCACHE}rules_engine.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/find-modules/${MODPY_PYCACHE}run-sip.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/find-modules/${MODPY_PYCACHE}sip_generator.${MODPY_PYC_MAGIC_TAG}pyc
+share/ECM/find-modules/local.properties.cmake
 share/ECM/find-modules/rules_engine.py
 share/ECM/find-modules/run-sip.py
+share/ECM/find-modules/settings.gradle.cmake
 share/ECM/find-modules/sip_generator.py
 share/ECM/kde-modules/
 share/ECM/kde-modules/KDECMakeSettings.cmake
@@ -121,6 +124,7 @@ share/doc/ECM/html/_sources/find-module/FindEGL.txt
 share/doc/ECM/html/_sources/find-module/FindFontconfig.txt
 share/doc/ECM/html/_sources/find-module/FindGLIB2.txt
 share/doc/ECM/html/_sources/find-module/FindGperf.txt
+share/doc/ECM/html/_sources/find-module/FindGradle.txt
 share/doc/ECM/html/_sources/find-module/FindIcoTool.txt
 share/doc/ECM/html/_sources/find-module/FindInotify.txt
 share/doc/ECM/html/_sources/find-module/FindKF5.txt
@@ -218,6 +222,7 @@ share/doc/ECM/html/find-module/FindEGL.html
 share/doc/ECM/html/find-module/FindFontconfig.html
 share/doc/ECM/html/find-module/FindGLIB2.html
 share/doc/ECM/html/find-module/FindGperf.html
+share/doc/ECM/html/find-module/FindGradle.html
 share/doc/ECM/html/find-module/FindIcoTool.html
 share/doc/ECM/html/find-module/FindInotify.html
 share/doc/ECM/html/find-module/FindKF5.html

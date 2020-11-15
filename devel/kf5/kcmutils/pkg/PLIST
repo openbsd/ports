@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/03 16:12:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/15 06:48:32 rsadowski Exp $
 include/KF5/KCMUtils/
 include/KF5/KCMUtils/KCModuleContainer
 include/KF5/KCMUtils/KCModuleData
@@ -26,8 +26,11 @@ include/KF5/kcmutils_version.h
 lib/cmake/KF5KCMUtils/
 lib/cmake/KF5KCMUtils/KF5KCMUtilsConfig.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsConfigVersion.cmake
+lib/cmake/KF5KCMUtils/KF5KCMUtilsMacros.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5KCMUtils/KF5KCMUtilsTargets.cmake
+lib/cmake/KF5KCMUtils/kcmutilsgeneratemoduledata.cpp.in
+lib/cmake/KF5KCMUtils/kcmutilsgeneratemoduledata.h.in
 @lib lib/libKF5KCMUtils.so.${LIBKF5KCMUtils_VERSION}
 share/kf5/mkspecs/qt_KCMUtils.pri
 share/kservicetypes5/kcmodule.desktop

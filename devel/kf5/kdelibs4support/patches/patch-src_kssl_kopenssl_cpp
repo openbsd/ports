@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_kssl_kopenssl_cpp,v 1.1 2020/03/23 18:01:06 rsadowski Exp $
+$OpenBSD: patch-src_kssl_kopenssl_cpp,v 1.2 2020/11/15 06:48:33 rsadowski Exp $
 
 Fix compile
 
 Index: src/kssl/kopenssl.cpp
 --- src/kssl/kopenssl.cpp.orig
 +++ src/kssl/kopenssl.cpp
-@@ -270,7 +270,7 @@ static QString findMostRecentLib(QString dir, QString 
+@@ -269,7 +269,7 @@ static QString findMostRecentLib(QString dir, QString 
      QString best = 0L;
      // where do we start
      uint s = filter.length() - 1;

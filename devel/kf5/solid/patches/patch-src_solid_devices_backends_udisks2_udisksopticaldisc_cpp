@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_solid_devices_backends_udisks2_udisksopticaldisc_cpp,v 1.1 2020/09/07 14:48:51 rsadowski Exp $
+$OpenBSD: patch-src_solid_devices_backends_udisks2_udisksopticaldisc_cpp,v 1.2 2020/11/15 06:48:36 rsadowski Exp $
 
 Index: src/solid/devices/backends/udisks2/udisksopticaldisc.cpp
 --- src/solid/devices/backends/udisks2/udisksopticaldisc.cpp.orig
 +++ src/solid/devices/backends/udisks2/udisksopticaldisc.cpp
-@@ -352,7 +352,7 @@ bool OpticalDisc::isAppendable() const
+@@ -351,7 +351,7 @@ bool OpticalDisc::isAppendable() const
      //qDebug() << "appendable prop" << m_udevDevice.deviceProperty("ID_CDROM_MEDIA_STATE");
  #if UDEV_FOUND
      return m_udevDevice.deviceProperty("ID_CDROM_MEDIA_STATE").toString() == QLatin1String("appendable");
