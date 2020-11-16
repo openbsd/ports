@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/11/16 22:21:10 gsoares Exp $
+# $OpenBSD: Makefile,v 1.36 2020/11/16 23:56:37 gsoares Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-i386 =		various "invalid operand for instruction", OpenBSD-386-asm.S
