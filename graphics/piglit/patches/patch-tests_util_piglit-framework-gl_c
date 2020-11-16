@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_util_piglit-framework-gl_c,v 1.1 2020/11/16 05:17:33 jsg Exp $
+
+include libgen.h for basename(3)
+
+Index: tests/util/piglit-framework-gl.c
+--- tests/util/piglit-framework-gl.c.orig
++++ tests/util/piglit-framework-gl.c
+@@ -27,6 +27,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
++#include <libgen.h>
+ 
+ #include "piglit-util-gl.h"
+ #include "piglit-framework-gl/piglit_gl_framework.h"

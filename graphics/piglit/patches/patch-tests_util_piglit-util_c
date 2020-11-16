@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_util_piglit-util_c,v 1.1 2020/11/16 05:17:33 jsg Exp $
+
+include libgen.h for basename(3)
+
+Index: tests/util/piglit-util.c
+--- tests/util/piglit-util.c.orig
++++ tests/util/piglit-util.c
+@@ -41,6 +41,7 @@
+ #include <errno.h>
+ #include <inttypes.h>
+ #include <time.h>
++#include <libgen.h>
+ 
+ #if defined(PIGLIT_HAS_POSIX_CLOCK_MONOTONIC) && defined(PIGLIT_HAS_POSIX_TIMER_NOTIFY_THREAD)
+ #include <pthread.h>
