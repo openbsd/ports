@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/16 18:41:21 jeremy Exp $
 
 COMMENT =	ruby DSL around a subset of XPath 1.0
 
-DISTNAME =	xpath-3.1.0
+DISTNAME =	xpath-3.2.0
 CATEGORIES =	www
 
 HOMEPAGE=	https://github.com/jnicklas/xpath
