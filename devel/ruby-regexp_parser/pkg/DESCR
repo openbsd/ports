@@ -1,0 +1,10 @@
+regexp_parser is a Ruby gem for tokenizing, parsing, and transforming
+regular expressions.
+
+Features:
+
+* Multilayered
+  * A scanner/tokenizer based on Ragel
+  * A lexer that produces a "stream" of token objects.
+  * A parser that produces a "tree" of Expression objects (OO API)
+* Recognizes Ruby 1.8, 1.9, and 2.x regular expressions
