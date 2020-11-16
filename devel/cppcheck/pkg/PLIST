@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/12/28 14:45:14 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/11/16 22:17:48 gsoares Exp $
 @bin bin/cppcheck
 @man man/man1/cppcheck.1
 share/cppcheck/
@@ -12,9 +12,11 @@ share/cppcheck/cfg/cppcheck-lib.cfg
 share/cppcheck/cfg/cppunit.cfg
 share/cppcheck/cfg/daca.cfg
 share/cppcheck/cfg/embedded_sql.cfg
+share/cppcheck/cfg/emscripten.cfg
 share/cppcheck/cfg/gnu.cfg
 share/cppcheck/cfg/googletest.cfg
 share/cppcheck/cfg/gtk.cfg
+share/cppcheck/cfg/icu.cfg
 share/cppcheck/cfg/kde.cfg
 share/cppcheck/cfg/libcerror.cfg
 share/cppcheck/cfg/libcurl.cfg
@@ -23,6 +25,7 @@ share/cppcheck/cfg/lua.cfg
 share/cppcheck/cfg/mfc.cfg
 share/cppcheck/cfg/microsoft_atl.cfg
 share/cppcheck/cfg/microsoft_sal.cfg
+share/cppcheck/cfg/microsoft_unittest.cfg
 share/cppcheck/cfg/motif.cfg
 share/cppcheck/cfg/nspr.cfg
 share/cppcheck/cfg/opencv2.cfg
