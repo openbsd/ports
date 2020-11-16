@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/06/21 20:37:21 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/11/16 22:21:10 gsoares Exp $
 @unexec-delete rm -f ${PREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
@@ -5506,7 +5506,6 @@ plan9/src/cmd/devdraw/x11-memdraw.h
 plan9/src/cmd/devdraw/x11-pixelbits.c
 plan9/src/cmd/devdraw/x11-screen.c
 plan9/src/cmd/devdraw/x11-unload.c
-plan9/src/cmd/dformat
 plan9/src/cmd/dial.c
 plan9/src/cmd/dict/
 plan9/src/cmd/dict/ahd.c

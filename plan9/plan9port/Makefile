@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/06/25 10:23:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2020/11/16 22:21:10 gsoares Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-i386 =		various "invalid operand for instruction", OpenBSD-386-asm.S
@@ -6,11 +6,11 @@ BROKEN-powerpc =	threading issues
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20200616
+DISTNAME =		plan9port-20200927
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
-GH_COMMIT =			329831171dd6ef81c113f101093c7b4947381003
+GH_COMMIT =		291f7411783bf6871b253f3b15ce691eea7a257e
 
 CATEGORIES =		plan9
 
