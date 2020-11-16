@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/11/02 14:41:58 tracey Exp $
+# $OpenBSD: Makefile,v 1.39 2020/11/16 20:34:39 sthen Exp $
 
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.7.0
@@ -26,7 +26,8 @@ COMPILER=		base-clang ports-gcc
 
 MODULES=		devel/dconf
 
-BUILD_DEPENDS=		shells/bash
+BUILD_DEPENDS=		shells/bash \
+			devel/gettext,-tools
 LIB_DEPENDS=		x11/gtk+2
 
 RUN_DEPENDS=		devel/desktop-file-utils \
