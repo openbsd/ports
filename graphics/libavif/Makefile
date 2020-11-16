@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/14 21:22:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/11/16 11:21:59 sthen Exp $
 
 COMMENT=	library for encoding and decoding .avif files
 
 GH_ACCOUNT=	AOMediaCodec
 GH_PROJECT=	libavif
 GH_TAGNAME=	v0.8.2
+REVISION=	0
 CATEGORIES=	graphics
 
-SHARED_LIBS=	avif	2.1
+SHARED_LIBS=	avif	3.0
 
 HOMEPAGE=	https://github.com/AOMediaCodec/libavif
 
