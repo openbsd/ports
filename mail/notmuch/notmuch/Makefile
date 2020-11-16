@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/01 09:48:48 bket Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/16 15:53:10 bket Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
@@ -13,8 +13,8 @@ DEBUG_PACKAGES =	-main
 
 COMPILER=		base-clang ports-gcc
 
-WANTLIB-main +=		${COMPILER_LIBCXX} c glib-2.0 gmime-3.0
-WANTLIB-main +=		gobject-2.0 intl m pthread talloc xapian z
+WANTLIB-main +=		${COMPILER_LIBCXX} c glib-2.0 gmime-3.0 gobject-2.0
+WANTLIB-main +=		talloc xapian z
 
 LIB_DEPENDS =		databases/xapian-core \
 			devel/libtalloc \
@@ -67,10 +67,8 @@ post-extract:
 	cd ${WRKSRC}/test; [ -r test-lib-OPENBSD.sh ] || \
 	    cp test-lib-FREEBSD.sh test-lib-OPENBSD.sh
 
-# Avoid conflict with C++20 <version>, also see patches
 pre-configure:
-	cd ${WRKSRC}; mv version version.txt; \
-	    ${SUBST_CMD} lib/Makefile.local
+	cd ${WRKSRC}; ${SUBST_CMD} lib/Makefile.local
 	ln -s ${PREFIX}/bin/sphinx-build${MODPY_BIN_SUFFIX} ${WRKDIR}/bin/sphinx-build
 
 post-install:
