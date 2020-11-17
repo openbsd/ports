@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.136 2020/11/11 17:12:50 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.137 2020/11/17 15:56:55 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -61,7 +61,7 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.58
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.59
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
@@ -72,38 +72,26 @@ MODMOZ_WANTLIB +=	nspr4 plc4 plds4
 CONFIGURE_ARGS +=	--with-system-nspr
 .endif
 
-.if !defined(MOZILLA_USE_BUNDLED_LIBEVENT)
-MODMOZ_WANTLIB +=	event
-CONFIGURE_ARGS +=	--with-system-libevent=/usr/
-.endif
-
 .if !defined(MOZILLA_USE_BUNDLED_ICU)
 MODMOZ_LIB_DEPENDS +=	textproc/icu4c
 MODMOZ_WANTLIB +=	icudata icui18n icuuc
 CONFIGURE_ARGS +=	--with-system-icu
 .endif
 
-.if !defined(MOZILLA_USE_BUNDLED_HUNSPELL)
-MODMOZ_LIB_DEPENDS +=	textproc/hunspell>=1.7
-MODMOZ_WANTLIB +=	hunspell-1.7
-CONFIGURE_ARGS +=	--with-system-hunspell
-.endif
-
-.if !defined(MOZILLA_USE_BUNDLED_SQLITE)
-MODMOZ_WANTLIB +=	sqlite3
-MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.31.1
-CONFIGURE_ARGS +=	--enable-system-sqlite
-# hack to build against systemwide sqlite3 (# 546162)
-CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
-.endif
-
 # bug #736961
 SEPARATE_BUILD =	Yes
 
-# needed for webm
 .if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
+# needed for webm
 MODMOZ_BUILD_DEPENDS +=	devel/yasm
+# needed for dav1d since 67
+MODMOZ_BUILD_DEPENDS +=	devel/nasm
 .endif
+
+# 53 needs rust
+MODMOZ_BUILD_DEPENDS +=	lang/rust
+# stylo build needs LLVM
+MODMOZ_BUILD_DEPENDS +=	devel/llvm
 
 MODMOZ_WANTLIB +=	X11 Xext Xrender Xt atk-1.0 c cairo \
 		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
@@ -122,9 +110,11 @@ RUN_DEPENDS +=	${MODMOZ_RUN_DEPENDS}
 USE_GMAKE ?=	Yes
 
 # no --with-system-jpeg starting with fx 18, requires libjpeg-turbo because of bug 791305
-# no --with-system-cairo, too much gfx problems because of version mismatch
 # no --with-system-ffi, needs 3.0.10 when not using gcc
+# no --with-system-cairo, removed in #1432751
 # no --with-system-png, apng support not bundled in
+# no --with-system-sqlite, option removed in #1611386 and we need to use bundled sqlite which has SQLITE_ENABLE_FTS3_TOKENIZER (#1252937)
+# no --enable-system-hunspell, removed in #1460600
 
 AUTOCONF_VERSION =	2.13
 CONFIGURE_ARGS +=	--with-system-zlib	\
@@ -135,27 +125,10 @@ CONFIGURE_ARGS +=	--with-system-zlib	\
 		--disable-updater		\
 		--disable-dbus
 
-FLAVORS +=	debug
-FLAVOR ?=
-
-.if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS +=	--enable-debug-symbols=-ggdb1 \
-			--disable-install-strip
-INSTALL_STRIP =
-.endif
-
-.if !defined(MOZILLA_USE_BUNDLED_CAIRO)
-# https://bugzilla.mozilla.org/show_bug.cgi?id=983843
-CONFIGURE_ARGS +=	--with-system-cairo
-.endif
-
-.if defined(MOZILLA_USE_GTK3)
+# firefox >= 46 defaults to gtk+3
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
 MODMOZ_LIB_DEPENDS +=	x11/gtk+3
 MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3
-.else
-MODMOZ_WANTLIB +=	Xcursor Xi Xinerama Xrandr
-.endif
 # for NPAPI support (see #1377445 for the dependency removal)
 MODMOZ_LIB_DEPENDS +=	x11/gtk+2
 MODMOZ_WANTLIB +=	Xcomposite Xdamage Xfixes gdk-x11-2.0 gtk-x11-2.0
