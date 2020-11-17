@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/07/30 14:28:23 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/11/17 16:09:58 landry Exp $
 bin/${MOZILLA_PROJECT}
 lib/${MOZILLA_PROJECT}/
 lib/${MOZILLA_PROJECT}/application.ini
@@ -64,4 +64,6 @@ lib/${MOZILLA_PROJECT}/platform.ini
 lib/${MOZILLA_PROJECT}/removed-files
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${PKGSTEM}
+share/pixmaps/
+share/pixmaps/${MOZILLA_PROJECT}.png
 @tag update-desktop-database

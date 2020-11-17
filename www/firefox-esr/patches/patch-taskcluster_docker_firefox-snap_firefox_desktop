@@ -1,4 +1,4 @@
-$OpenBSD: patch-taskcluster_docker_firefox-snap_firefox_desktop,v 1.2 2020/07/30 14:30:23 landry Exp $
+$OpenBSD: patch-taskcluster_docker_firefox-snap_firefox_desktop,v 1.3 2020/11/17 16:09:58 landry Exp $
 
 fix exec entry to properly execute firefox-esr binary
 set full path to icon
@@ -16,7 +16,7 @@ Index: taskcluster/docker/firefox-snap/firefox.desktop
  X-MultipleArgs=false
  Type=Application
 -Icon=/browser/chrome/icons/default/default128.png
-+Icon=${TRUEPREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default128.png
++Icon=${TRUEPREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
  Categories=GNOME;GTK;Network;WebBrowser;
  MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
  StartupNotify=true
