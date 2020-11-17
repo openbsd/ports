@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/11/16 22:21:10 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/11/17 00:04:59 gsoares Exp $
 @unexec-delete rm -f ${PREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
