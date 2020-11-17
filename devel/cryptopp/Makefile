@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/11/17 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/11/17 20:53:11 sthen Exp $
 
 COMMENT =	C++ library of cryptographic algorithms
 CATEGORIES =	devel security
@@ -9,9 +9,9 @@ MASTER_SITES =	${HOMEPAGE}
 V =		5.6.5
 DISTNAME =	cryptopp${V:S/.//g}
 PKGNAME =	cryptopp-$V
-REVISION =	5
 
 EXTRACT_SUFX =	.zip
+UNZIP =		unzip -a
 WRKDIST =	${WRKDIR}
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -39,9 +39,6 @@ MAKE_FLAGS +=	CXX="${CXX}" \
 MAKE_FILE =	${WRKDIR}/GNUmakefile
 
 TEST_FLAGS += WRKDIST=${WRKDIST}
-
-pre-patch:
-	@cd ${WRKSRC}; perl -i -pe 's/\r$$//' `find . -type f`
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/cryptopp
