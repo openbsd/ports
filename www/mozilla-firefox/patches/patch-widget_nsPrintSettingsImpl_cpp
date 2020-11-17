@@ -1,8 +1,8 @@
-$OpenBSD: patch-widget_nsPrintSettingsImpl_cpp,v 1.9 2020/09/22 13:00:55 landry Exp $
+$OpenBSD: patch-widget_nsPrintSettingsImpl_cpp,v 1.10 2020/11/17 16:07:08 landry Exp $
 Index: widget/nsPrintSettingsImpl.cpp
 --- widget/nsPrintSettingsImpl.cpp.orig
 +++ widget/nsPrintSettingsImpl.cpp
-@@ -26,7 +26,7 @@ nsPrintSettings::nsPrintSettings()
+@@ -25,7 +25,7 @@ nsPrintSettings::nsPrintSettings()
        mIsCancelled(false),
        mSaveOnCancel(true),
        mPrintSilent(false),
@@ -10,4 +10,4 @@ Index: widget/nsPrintSettingsImpl.cpp
 +      mShrinkToFit(false),
        mShowPrintProgress(true),
        mShowMarginGuides(false),
-       mPrintPageDelay(50),
+       mHonorPageRuleMargins(true),
