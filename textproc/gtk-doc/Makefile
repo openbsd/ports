@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2020/10/03 10:54:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2020/11/17 15:48:35 ajacoutot Exp $
 
 # only files under tests/ are compiled but not installed
 PKG_ARCH=		*
 
 COMMENT=		GTK C code documentation system
 
-GNOME_VERSION=		1.33.0
+GNOME_VERSION=		1.33.1
 GNOME_PROJECT=		gtk-doc
 
 CATEGORIES=		textproc devel
