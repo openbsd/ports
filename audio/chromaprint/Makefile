@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2019/08/23 20:18:04 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/11/17 06:17:24 rsadowski Exp $
 
 COMMENT =		audio fingerprint extraction library
 
 GH_ACCOUNT =		acoustid
 GH_PROJECT =		chromaprint
-GH_TAGNAME =		v1.4.3
+GH_TAGNAME =		v1.5.0
 
-SHARED_LIBS =		chromaprint               2.0 # 1.4.3
+SHARED_LIBS =		chromaprint               3.0 # 1.5.0
 
 CATEGORIES =		audio devel
 
