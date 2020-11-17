@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/08/18 14:25:08 bket Exp $
+# $OpenBSD: Makefile,v 1.12 2020/11/17 06:11:28 rsadowski Exp $
 
 COMMENT =		the missing terminal file browser for X
 
-V =			3.4
+V =			3.5
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
 
