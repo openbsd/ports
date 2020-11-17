@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.244 2020/11/15 17:29:00 landry Exp $
+# $OpenBSD: Makefile,v 1.245 2020/11/17 16:01:45 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
 MOZILLA_VERSION =	2.53.5
@@ -13,6 +13,7 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-5.8.5
 EPOCH-lightning =	0
+REVISION-main =		0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
@@ -33,25 +34,19 @@ MODPY_RUNDEP =	No
 COMPILER =		base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
 
-# gecko >= 44 doesnt build with base libevent
-MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
-# gecko >= 46 defaults to gtk+3
-MOZILLA_USE_GTK3 = Yes
-# firefox >= 53 needs rust
-BUILD_DEPENDS +=	lang/rust>=1.43
-# #1611386
-MOZILLA_USE_BUNDLED_SQLITE = Yes
-# stylo build needs LLVM
-BUILD_DEPENDS +=	devel/llvm
-.if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
-# 67 requires nasm for bundled libdav1d
-BUILD_DEPENDS +=	devel/nasm
-.endif
 CONFIGURE_ARGS +=	--disable-gconf
 NO_TEST=	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
+
+LIB_DEPENDS +=	textproc/hunspell>=1.7
+WANTLIB +=	hunspell-1.7
+# option removed in 62, cf #1460600
+CONFIGURE_ARGS +=	--with-system-hunspell
+
+# https://bugzilla.mozilla.org/show_bug.cgi?id=983843
+CONFIGURE_ARGS +=	--with-system-cairo
 
 # lld blows when linking libxul
 .if ${MACHINE_ARCH:Mi386}
