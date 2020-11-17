@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.335 2020/11/12 07:26:24 landry Exp $
+# $OpenBSD: Makefile,v 1.336 2020/11/17 15:59:00 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 COMMENT =		Mozilla e-mail, calendar, rss and usenet client
@@ -11,6 +11,7 @@ MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+REVISION =	0
 
 # XXX badly formed debug in libxul ?
 DWZ = :
@@ -35,30 +36,13 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 COMPILER =	base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
 
-MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
-# firefox >= 46 defaults to gtk+3
-MOZILLA_USE_GTK3 = Yes
-# use bundled sqlite which has SQLITE_ENABLE_FTS3_TOKENIZER (#1252937)
-MOZILLA_USE_BUNDLED_SQLITE =	Yes
 # 56 requires 59.1
 MOZILLA_USE_BUNDLED_ICU =	Yes
-# 59 is broken with system cairo and the option is being dropped
-MOZILLA_USE_BUNDLED_CAIRO = Yes
-# #1460600
-MOZILLA_USE_BUNDLED_HUNSPELL = Yes
 
-# 53 needs rust
-BUILD_DEPENDS +=	lang/rust
-# stylo build needs LLVM
-BUILD_DEPENDS +=	devel/llvm
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen
-.if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
-# 67 requires nasm for bundled libdav1d
-BUILD_DEPENDS +=	devel/nasm
-.endif
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 
