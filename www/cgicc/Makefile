@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/11/17 21:05:29 benoit Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
-DISTNAME=	cgicc-3.2.16
-REVISION =	2
+DISTNAME =	cgicc-3.2.19
 
 CATEGORIES=	www devel
 SHARED_LIBS=	cgicc	5.0

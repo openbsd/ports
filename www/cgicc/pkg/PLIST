@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/05/07 18:36:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/11/17 21:05:29 benoit Exp $
 bin/cgicc-config
 include/cgicc/
 include/cgicc/CgiDefs.h
@@ -29,7 +29,7 @@ include/cgicc/MStreamable.h
 include/cgicc/XHTMLDoctype.h
 include/cgicc/XMLDeclaration.h
 include/cgicc/XMLPI.h
-lib/libcgicc.a
+@static-lib lib/libcgicc.a
 lib/libcgicc.la
 @lib lib/libcgicc.so.${LIBcgicc_VERSION}
 lib/pkgconfig/cgicc.pc
