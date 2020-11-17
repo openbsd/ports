@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/04/10 14:07:14 fcambus Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/17 03:19:37 jeremy Exp $
 
 BROKEN-arm =		SIGBUS
 
@@ -8,7 +8,7 @@ COMMENT =		lightweight, embeddable implementation of ruby
 GH_ACCOUNT =		mruby
 GH_PROJECT =		mruby
 GH_TAGNAME =		2.0.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		lang
 HOMEPAGE =		https://mruby.org/

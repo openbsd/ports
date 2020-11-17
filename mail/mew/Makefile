@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/11/17 03:19:37 jeremy Exp $
 
 COMMENT=	emacs-based mail client
 
 DISTNAME=	mew-6.8
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mew.org/
 

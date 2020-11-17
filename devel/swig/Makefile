@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2019/07/12 20:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2020/11/17 03:19:37 jeremy Exp $
 
 COMMENT =	simplified wrapper and interface generator
 
@@ -7,7 +7,7 @@ VERSION =	3.0.12
 
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.swig.org/
 

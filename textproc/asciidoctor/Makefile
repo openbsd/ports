@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/01 17:05:17 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/17 03:19:38 jeremy Exp $
 
 COMMENT =	better AsciiDoc text proc/publishing software
 
 V =		2.0.10
 DISTNAME =	asciidoctor-${V}
 FULLPKGNAME =	${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	textproc
 

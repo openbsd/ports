@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2020/10/06 16:21:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.206 2020/11/17 03:19:37 jeremy Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -7,6 +7,7 @@ V=		8.2.1805
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
+REVISION=	0
 
 T=		${V:C/\.0+/./}
 PKGNAME-main=	vim-$T

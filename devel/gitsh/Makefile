@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/11/17 03:19:36 jeremy Exp $
 
 VERSION =		0.13
-REVISION =		0
+REVISION =		1
 
 COMMENT =		interactive shell for git
 

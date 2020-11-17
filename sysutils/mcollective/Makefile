@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2019/10/22 09:17:04 sebastia Exp $
+# $OpenBSD: Makefile,v 1.58 2020/11/17 03:19:37 jeremy Exp $
 
 BROKEN-alpha=	SIGABRT during make fake
 COMMENT=	framework for server orchestration/parallel job execution
 DISTNAME=	mcollective-2.12.5
+
+REVISION=	0
 
 CATEGORIES=	sysutils
 

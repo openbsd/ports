@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2020/08/07 14:30:10 jsg Exp $
+# $OpenBSD: Makefile,v 1.27 2020/11/17 03:19:38 jeremy Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -14,7 +14,7 @@ PKGNAME =		qtwebkit-${VERSION}
 PKGSPEC =		qtwebkit->=${VERSION}v0
 
 EPOCH=			0
-REVISION =		1
+REVISION =		2
 
 
 SHARED_LIBS +=  Qt5WebKit               3.1 # 5.9
