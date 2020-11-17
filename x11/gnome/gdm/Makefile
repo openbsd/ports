@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.291 2020/11/14 11:45:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.292 2020/11/17 17:48:19 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.38.2
-REVISION=		3
+REVISION=		4
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} gdm-puffy.png:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -58,6 +58,9 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 # common/gdm-address.c
 MODGNOME_CPPFLAGS +=	-DHAS_SA_LEN
+
+# daemon/gdm-session-worker.c
+MODGNOME_CPPFLAGS +=	-DHAVE_LOGINCAP
 
 # ConsoleKit
 MODGNOME_CPPFLAGS +=	-DWITH_CONSOLE_KIT=1 \
