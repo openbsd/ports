@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2020/11/17 20:53:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2020/11/17 20:53:51 sthen Exp $
 
 COMMENT =	C++ library of cryptographic algorithms
 CATEGORIES =	devel security
@@ -9,6 +9,7 @@ MASTER_SITES =	${HOMEPAGE}
 V =		5.6.5
 DISTNAME =	cryptopp${V:S/.//g}
 PKGNAME =	cryptopp-$V
+REVISION =	5
 
 EXTRACT_SUFX =	.zip
 UNZIP =		unzip -a
