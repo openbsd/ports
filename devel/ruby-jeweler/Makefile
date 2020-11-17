@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/17 03:15:00 jeremy Exp $
 
 COMMENT =		simple helper for creating rubygem projects
 
@@ -12,6 +12,8 @@ HOMEPAGE =		https://github.com/technicalpickles/jeweler
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
+
+FLAVOR =		ruby26
 
 CONFIGURE_STYLE =	ruby gem
 
