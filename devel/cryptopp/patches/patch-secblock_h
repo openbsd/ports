@@ -1,6 +1,8 @@
-$OpenBSD: patch-secblock_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
---- secblock.h.orig	Mon Oct 10 14:11:39 2016
-+++ secblock.h	Mon Oct 10 14:13:34 2016
+$OpenBSD: patch-secblock_h,v 1.7 2020/11/17 20:51:34 sthen Exp $
+
+Index: secblock.h
+--- secblock.h.orig
++++ secblock.h
 @@ -10,7 +10,7 @@
  #include "stdcpp.h"
  #include "misc.h"

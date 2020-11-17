@@ -1,6 +1,8 @@
-$OpenBSD: patch-algparam_h,v 1.5 2016/11/22 17:20:25 dcoppa Exp $
---- algparam.h.orig	Tue Nov 22 09:16:47 2016
-+++ algparam.h	Tue Nov 22 09:16:48 2016
+$OpenBSD: patch-algparam_h,v 1.6 2020/11/17 20:51:34 sthen Exp $
+
+Index: algparam.h
+--- algparam.h.orig
++++ algparam.h
 @@ -12,7 +12,7 @@
  #include "cryptlib.h"
  

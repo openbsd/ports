@@ -1,4 +1,5 @@
-$OpenBSD: patch-config_h,v 1.10 2018/01/21 20:25:48 juanfra Exp $
+$OpenBSD: patch-config_h,v 1.11 2020/11/17 20:51:34 sthen Exp $
+
 Index: config.h
 --- config.h.orig
 +++ config.h

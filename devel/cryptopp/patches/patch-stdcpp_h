@@ -1,6 +1,8 @@
-$OpenBSD: patch-stdcpp_h,v 1.4 2016/11/22 17:20:25 dcoppa Exp $
---- stdcpp.h.orig	Tue Nov 22 09:55:43 2016
-+++ stdcpp.h	Tue Nov 22 09:56:58 2016
+$OpenBSD: patch-stdcpp_h,v 1.5 2020/11/17 20:51:34 sthen Exp $
+
+Index: stdcpp.h
+--- stdcpp.h.orig
++++ stdcpp.h
 @@ -1,7 +1,7 @@
  #ifndef CRYPTOPP_STDCPP_H
  #define CRYPTOPP_STDCPP_H

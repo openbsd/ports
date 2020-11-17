@@ -1,6 +1,8 @@
-$OpenBSD: patch-misc_h,v 1.7 2016/11/22 17:20:25 dcoppa Exp $
---- misc.h.orig	Tue Nov 22 15:09:45 2016
-+++ misc.h	Tue Nov 22 15:12:43 2016
+$OpenBSD: patch-misc_h,v 1.8 2020/11/17 20:51:34 sthen Exp $
+
+Index: misc.h
+--- misc.h.orig
++++ misc.h
 @@ -9,9 +9,9 @@
  
  #include "config.h"

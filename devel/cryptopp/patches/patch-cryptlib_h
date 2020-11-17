@@ -1,6 +1,8 @@
-$OpenBSD: patch-cryptlib_h,v 1.2 2016/11/22 17:20:25 dcoppa Exp $
---- cryptlib.h.orig	Tue Nov 22 09:16:47 2016
-+++ cryptlib.h	Tue Nov 22 09:16:48 2016
+$OpenBSD: patch-cryptlib_h,v 1.3 2020/11/17 20:51:34 sthen Exp $
+
+Index: cryptlib.h
+--- cryptlib.h.orig
++++ cryptlib.h
 @@ -91,7 +91,7 @@ and getting us started on the manual.
  # include <signal.h>
  #endif

@@ -1,6 +1,8 @@
-$OpenBSD: patch-osrng_h,v 1.4 2016/10/10 12:55:51 dcoppa Exp $
---- osrng.h.orig	Mon Oct 10 14:11:19 2016
-+++ osrng.h	Mon Oct 10 14:12:17 2016
+$OpenBSD: patch-osrng_h,v 1.5 2020/11/17 20:51:34 sthen Exp $
+
+Index: osrng.h
+--- osrng.h.orig
++++ osrng.h
 @@ -253,7 +253,7 @@ CRYPTOPP_DLL_TEMPLATE_CLASS AutoSeededX917RNG<AES>;
  class DefaultAutoSeededRNG {}
  #else

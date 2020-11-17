@@ -1,6 +1,8 @@
-$OpenBSD: patch-trap_h,v 1.1 2016/11/22 17:20:25 dcoppa Exp $
---- trap.h.orig	Tue Nov 22 11:49:31 2016
-+++ trap.h	Tue Nov 22 11:50:55 2016
+$OpenBSD: patch-trap_h,v 1.2 2020/11/17 20:51:34 sthen Exp $
+
+Index: trap.h
+--- trap.h.orig
++++ trap.h
 @@ -18,7 +18,7 @@
  
  #include "config.h"

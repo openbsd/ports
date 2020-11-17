@@ -1,6 +1,8 @@
-$OpenBSD: patch-filters_h,v 1.2 2016/11/22 17:20:25 dcoppa Exp $
---- filters.h.orig	Tue Nov 22 09:16:47 2016
-+++ filters.h	Tue Nov 22 09:16:48 2016
+$OpenBSD: patch-filters_h,v 1.3 2020/11/17 20:51:34 sthen Exp $
+
+Index: filters.h
+--- filters.h.orig
++++ filters.h
 @@ -8,7 +8,7 @@
  
  #include "cryptlib.h"

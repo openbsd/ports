@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 21:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/11/17 20:51:34 sthen Exp $
 
-COMMENT = 	C++ library of cryptographic algorithms
-CATEGORIES = 	devel security
+COMMENT =	C++ library of cryptographic algorithms
+CATEGORIES =	devel security
 
-HOMEPAGE = 	http://www.cryptopp.com/
-MASTER_SITES = 	${HOMEPAGE}
-DISTNAME = 	cryptopp565
-PKGNAME = 	cryptopp-5.6.5
-REVISION =      4
+HOMEPAGE =	https://www.cryptopp.com/
+MASTER_SITES =	${HOMEPAGE}
 
-EXTRACT_SUFX = 	.zip
-WRKDIST = 	${WRKDIR}
+V =		5.6.5
+DISTNAME =	cryptopp${V:S/.//g}
+PKGNAME =	cryptopp-$V
+REVISION =	5
+
+EXTRACT_SUFX =	.zip
+WRKDIST =	${WRKDIR}
+FIX_EXTRACT_PERMISSIONS = Yes
 
 # individual files are public domain
 # compilation is licensed under the Boost Software License 1.0
@@ -18,11 +21,11 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	m pthread ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-SHARED_LIBS = 	cryptopp	4.0
+SHARED_LIBS =	cryptopp	4.0
 
-USE_GMAKE = 	Yes
+USE_GMAKE =	Yes
 MAKE_FLAGS +=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} -Wno-unused \
 			-DCRYPTOPP_DISABLE_SSSE3 \
@@ -33,7 +36,7 @@ MAKE_FLAGS +=	CXX="${CXX}" \
 		PREFIX=${PREFIX} \
 		LIBcryptopp_VERSION=${LIBcryptopp_VERSION}
 
-MAKE_FILE = 	${WRKDIR}/GNUmakefile
+MAKE_FILE =	${WRKDIR}/GNUmakefile
 
 TEST_FLAGS += WRKDIST=${WRKDIST}
 
