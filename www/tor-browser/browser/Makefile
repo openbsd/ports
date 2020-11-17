@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2020/11/14 11:53:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2020/11/17 15:58:06 landry Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -46,32 +46,13 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 COMPILER =		base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
 
-# firefox >= 44 doesnt build with base libevent
-MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
-# firefox >= 46 defaults to gtk+3
-MOZILLA_USE_GTK3 =	 	Yes
-# 59 is broken with system cairo and the option is being dropped
-MOZILLA_USE_BUNDLED_CAIRO = Yes
-# #1460600
-MOZILLA_USE_BUNDLED_HUNSPELL =	Yes
 # tor-browser needs built-in nss, sqlite
 MOZILLA_USE_BUNDLED_NSPR =	Yes
 MOZILLA_USE_BUNDLED_NSS =	Yes
-# #1611386
-MOZILLA_USE_BUNDLED_SQLITE =	Yes
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen>=0.14.3
-.if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
-# 67 requires nasm for bundled libdav1d
-BUILD_DEPENDS +=	devel/nasm
-.endif
-
-# firefox >= 53 needs rust
-BUILD_DEPENDS +=	lang/rust
-# stylo build needs LLVM
-BUILD_DEPENDS +=	devel/llvm
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
