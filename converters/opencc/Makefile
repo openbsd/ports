@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/17 08:44:05 bentley Exp $
 
 COMMENT =	convert between traditional and simplified Chinese
 
-V =		1.0.5
+V =		1.1.1
 DISTNAME =	opencc-$V
 
 GH_ACCOUNT =	BYVoid
@@ -26,8 +26,6 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python
 MODPY_RUNDEP =		No
-
-CONFIGURE_ARGS =	-DOPENCC_PYTHON="${MODPY_BIN}"
 
 WRKDIST =		${WRKDIR}/OpenCC-ver.$V
 
