@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/09/19 13:33:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2020/11/17 10:23:18 sthen Exp $
 
 COMMENT =		kevent based inotify
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =		libinotify-kqueue
 GH_PROJECT =		libinotify-kqueue
 GH_TAGNAME =		20170711
 PKGNAME =		libinotify-${GH_TAGNAME}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		inotify 2.1
 
@@ -18,6 +18,8 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoreconf

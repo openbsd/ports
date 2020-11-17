@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/09/19 13:33:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/11/17 10:23:18 sthen Exp $
 include/inotify/
 include/inotify/sys/
 include/inotify/sys/inotify.h
 lib/inotify/
-lib/inotify/libinotify.a
+@static-lib lib/inotify/libinotify.a
 lib/inotify/libinotify.la
 @lib lib/inotify/libinotify.so.${LIBinotify_VERSION}
 lib/pkgconfig/libinotify.pc
@@ -14,3 +14,4 @@ lib/pkgconfig/libinotify.pc
 @man man/man3/inotify_rm_watch.3
 @man man/man3/inotify_set_param.3
 @man man/man3/libinotify.3
+share/doc/pkg-readmes/${PKGSTEM}
