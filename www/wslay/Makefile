@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/09 12:19:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/18 19:43:26 sthen Exp $
 
 COMMENT =	websocket library
 
-V =		1.1.0
+V =		1.1.1
 DISTNAME =	wslay-$V
 
 SHARED_LIBS +=  wslay                     0.0 # 1.0
@@ -21,5 +21,7 @@ BUILD_DEPENDS =		devel/cunit
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

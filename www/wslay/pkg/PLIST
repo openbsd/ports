@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/08 03:11:18 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/11/18 19:43:26 sthen Exp $
 include/wslay/
 include/wslay/wslay.h
 include/wslay/wslayver.h
-lib/libwslay.a
+@static-lib lib/libwslay.a
 lib/libwslay.la
 @lib lib/libwslay.so.${LIBwslay_VERSION}
 lib/pkgconfig/libwslay.pc
