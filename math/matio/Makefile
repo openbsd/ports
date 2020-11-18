@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/11/18 14:20:14 benoit Exp $
 
 COMMENT=	library for reading and writing Matlab MAT files
 
-DISTNAME=	matio-1.5.9
-SHARED_LIBS=	matio	2.0      # 6.0
+DISTNAME=	matio-1.5.19
+SHARED_LIBS=	matio	3.0      # 11.1
 CATEGORIES=	math
 
-HOMEPAGE=	http://sourceforge.net/projects/matio/
+HOMEPAGE=	https://sourceforge.net/projects/matio/
 
 # BSD
 PERMIT_PACKAGE=	Yes
