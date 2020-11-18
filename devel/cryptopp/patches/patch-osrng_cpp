@@ -1,9 +1,9 @@
-$OpenBSD: patch-osrng_cpp,v 1.2 2020/11/17 20:51:34 sthen Exp $
+$OpenBSD: patch-osrng_cpp,v 1.3 2020/11/18 00:15:35 sthen Exp $
 
 Index: osrng.cpp
 --- osrng.cpp.orig
 +++ osrng.cpp
-@@ -189,11 +189,7 @@ void NonblockingRng::GenerateBlock(byte *output, size_
+@@ -187,11 +187,7 @@ void NonblockingRng::GenerateBlock(byte *output, size_
  #ifdef BLOCKING_RNG_AVAILABLE
  
  #ifndef CRYPTOPP_BLOCKING_RNG_FILENAME

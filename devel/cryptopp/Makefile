@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2020/11/17 20:53:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/11/18 00:15:35 sthen Exp $
 
 COMMENT =	C++ library of cryptographic algorithms
 CATEGORIES =	devel security
 
-HOMEPAGE =	https://www.cryptopp.com/
+HOMEPAGE =	https://cryptopp.com/
 MASTER_SITES =	${HOMEPAGE}
 
-V =		5.6.5
+V =		8.2.0
 DISTNAME =	cryptopp${V:S/.//g}
 PKGNAME =	cryptopp-$V
-REVISION =	5
 
 EXTRACT_SUFX =	.zip
 UNZIP =		unzip -a
@@ -22,31 +21,38 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	m pthread ${COMPILER_LIBCXX}
 
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
-SHARED_LIBS =	cryptopp	4.0
+SHARED_LIBS =	cryptopp	5.0
+
+CXXFLAGS +=	-fPIC -Wno-unused -DNDEBUG
 
 USE_GMAKE =	Yes
-MAKE_FLAGS +=	CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS} -Wno-unused \
-			-DCRYPTOPP_DISABLE_SSSE3 \
-			-DCRYPTOPP_DISABLE_AESNI \
-			-DCRYPTOPP_NO_UNALIGNED_DATA_ACCESS \
-			-DNDEBUG -fPIC" \
+MAKE_FLAGS +=	CC="${CC}" \
+		CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="-lpthread" \
 		PREFIX=${PREFIX} \
-		LIBcryptopp_VERSION=${LIBcryptopp_VERSION}
+		HAS_SOLIB_VERSION=1 \
+		SOLIB_VERSION_SUFFIX=.${LIBcryptopp_VERSION}
 
 MAKE_FILE =	${WRKDIR}/GNUmakefile
 
-TEST_FLAGS += WRKDIST=${WRKDIST}
+TEST_FLAGS +=	WRKDIST=${WRKDIST}
+
+ALL_TARGET =	all libcryptopp.pc
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CXXFLAGS +=	-DCRYPTOPP_DISABLE_MIXED_ASM
+.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/cryptopp
-	${INSTALL_DATA} ${WRKDIR}/*.h ${PREFIX}/include/cryptopp
-	${INSTALL_DATA} ${WRKDIR}/libcryptopp.{a,so.${LIBcryptopp_VERSION}} \
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/cryptopp
+	${INSTALL_DATA} ${WRKSRC}/libcryptopp.{a,so.${LIBcryptopp_VERSION}} \
 		${PREFIX}/lib
-	${SUBST_DATA} ${FILESDIR}/cryptopp.pc \
-		${PREFIX}/lib/pkgconfig/cryptopp.pc
+	${SUBST_DATA} ${WRKSRC}/libcryptopp.pc \
+		${PREFIX}/lib/pkgconfig/libcryptopp.pc
 
 .include <bsd.port.mk>
