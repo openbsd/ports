@@ -1,0 +1,2 @@
+dog is an open-source DNS client for the command-line. It has colourful
+output, supports the DoT and DoH protocols, and can emit JSON.

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/18 10:24:19 sthen Exp $
+@comment .crates2.json
+@bin bin/dog
