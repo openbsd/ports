@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_Target_PowerPC_CMakeLists_txt,v 1.1 2020/11/18 21:13:37 jca Exp $
+
+Add RETGUARD implementation for powerpc and powerpc64.
+
+Index: lib/Target/PowerPC/CMakeLists.txt
+--- lib/Target/PowerPC/CMakeLists.txt.orig
++++ lib/Target/PowerPC/CMakeLists.txt
+@@ -35,6 +35,7 @@ add_llvm_target(PowerPCCodeGen
+   PPCMachineScheduler.cpp
+   PPCMIPeephole.cpp
+   PPCRegisterInfo.cpp
++  PPCReturnProtectorLowering.cpp
+   PPCQPXLoadSplat.cpp
+   PPCSubtarget.cpp
+   PPCTargetMachine.cpp

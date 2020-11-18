@@ -1,14 +1,16 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64ReturnProtectorLowering_cpp,v 1.2 2019/07/09 13:21:37 jca Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64ReturnProtectorLowering_cpp,v 1.3 2020/11/18 21:13:37 jca Exp $
 
 - Add retguard for arm64.
 - Do not store the retguard cookie in frame in leaf functions if possible.
   Makes things slightly faster and also improves security in these functions,
   since the retguard cookie can't leak via the stack.
+- Fix frame pointer slot on aarch64 for functions that do not save callee
+  registers with retguard enabled.
 
 Index: lib/Target/AArch64/AArch64ReturnProtectorLowering.cpp
 --- lib/Target/AArch64/AArch64ReturnProtectorLowering.cpp.orig
 +++ lib/Target/AArch64/AArch64ReturnProtectorLowering.cpp
-@@ -0,0 +1,130 @@
+@@ -0,0 +1,124 @@
 +//===-- AArch64ReturnProtectorLowering.cpp --------------------------------===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -126,16 +128,10 @@ Index: lib/Target/AArch64/AArch64ReturnProtectorLowering.cpp
 +    return;
 +  }
 +
-+  // Put the temp reg after FP and LR to avoid layout issues
-+  // with the D registers later.
-+  bool added = false;
-+  for (auto CSRI = CSI.begin(); CSRI != CSI.end(); CSRI++) {
-+    if (CSRI->getReg() != AArch64::FP && CSRI->getReg() != AArch64::LR) {
-+      CSI.insert(CSRI, CalleeSavedInfo(MFI.getReturnProtectorRegister()));
-+      added = true;
-+      break;
-+    }
-+  }
-+  if (!added)
-+    CSI.push_back(CalleeSavedInfo(MFI.getReturnProtectorRegister()));
++  // CSI Reg order is important for pairing registers later.
++  // The expected order of the CSI is given by getCalleeSavedRegs(),
++  // which for us returns a list of GPRs and FPRs in ascending
++  // order. Since our temp regs are all before the usual callee
++  // saved regs, we can just insert our reg first.
++  CSI.insert(CSI.begin(), CalleeSavedInfo(MFI.getReturnProtectorRegister()));
 +}
