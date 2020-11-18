@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_pdfium_core_fxge_cfx_fontmapper_cpp,v 1.1 2020/11/18 12:29:33 robert Exp $
+
+Index: third_party/pdfium/core/fxge/cfx_fontmapper.cpp
+--- third_party/pdfium/core/fxge/cfx_fontmapper.cpp.orig
++++ third_party/pdfium/core/fxge/cfx_fontmapper.cpp
+@@ -154,7 +154,7 @@ const AltFontFamily g_AltFontFamilies[] = {
+     {"ForteMT", "Forte"},
+ };
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ASMJS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ASMJS) || defined(OS_BSD)
+ const char kNarrowFamily[] = "LiberationSansNarrow";
+ #elif defined(OS_ANDROID)
+ const char kNarrowFamily[] = "RobotoCondensed";

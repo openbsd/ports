@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_input_input_device_change_observer_cc,v 1.4 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_input_input_device_change_observer_cc,v 1.5 2020/11/18 12:29:33 robert Exp $
 
 Index: content/browser/renderer_host/input/input_device_change_observer.cc
 --- content/browser/renderer_host/input/input_device_change_observer.cc.orig
 +++ content/browser/renderer_host/input/input_device_change_observer.cc
-@@ -10,7 +10,7 @@
+@@ -9,7 +9,7 @@
  
  #if defined(OS_WIN)
  #include "ui/events/devices/input_device_observer_win.h"
@@ -12,7 +12,7 @@ Index: content/browser/renderer_host/input/input_device_change_observer.cc
  #include "ui/events/devices/device_data_manager.h"
  #elif defined(OS_ANDROID)
  #include "ui/events/devices/input_device_observer_android.h"
-@@ -22,7 +22,7 @@ InputDeviceChangeObserver::InputDeviceChangeObserver(R
+@@ -21,7 +21,7 @@ InputDeviceChangeObserver::InputDeviceChangeObserver(R
    render_view_host_impl_ = rvhi;
  #if defined(OS_WIN)
    ui::InputDeviceObserverWin::GetInstance()->AddObserver(this);
@@ -21,7 +21,7 @@ Index: content/browser/renderer_host/input/input_device_change_observer.cc
    ui::DeviceDataManager::GetInstance()->AddObserver(this);
  #elif defined(OS_ANDROID)
    ui::InputDeviceObserverAndroid::GetInstance()->AddObserver(this);
-@@ -32,7 +32,7 @@ InputDeviceChangeObserver::InputDeviceChangeObserver(R
+@@ -31,7 +31,7 @@ InputDeviceChangeObserver::InputDeviceChangeObserver(R
  InputDeviceChangeObserver::~InputDeviceChangeObserver() {
  #if defined(OS_WIN)
    ui::InputDeviceObserverWin::GetInstance()->RemoveObserver(this);

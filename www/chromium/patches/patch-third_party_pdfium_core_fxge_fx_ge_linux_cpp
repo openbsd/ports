@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_pdfium_core_fxge_fx_ge_linux_cpp,v 1.10 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-third_party_pdfium_core_fxge_fx_ge_linux_cpp,v 1.11 2020/11/18 12:29:33 robert Exp $
 
 Index: third_party/pdfium/core/fxge/fx_ge_linux.cpp
 --- third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig
@@ -12,15 +12,15 @@ Index: third_party/pdfium/core/fxge/fx_ge_linux.cpp
  #error "Included on the wrong platform"
  #endif
  
-@@ -159,9 +159,8 @@ std::unique_ptr<SystemFontInfoIface> SystemFontInfoIfa
-     const char** pUserPaths) {
-   auto pInfo = std::make_unique<CFX_LinuxFontInfo>();
-   if (!pInfo->ParseFontCfg(pUserPaths)) {
--    pInfo->AddPath("/usr/share/fonts");
--    pInfo->AddPath("/usr/share/X11/fonts/Type1");
--    pInfo->AddPath("/usr/share/X11/fonts/TTF");
-+    pInfo->AddPath("/usr/X11R6/lib/X11/fonts/Type1");
-+    pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
-     pInfo->AddPath("/usr/local/share/fonts");
-   }
-   return std::move(pInfo);
+@@ -165,9 +165,8 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
+   std::unique_ptr<SystemFontInfoIface> CreateDefaultSystemFontInfo() override {
+     auto pInfo = std::make_unique<CFX_LinuxFontInfo>();
+     if (!pInfo->ParseFontCfg(CFX_GEModule::Get()->GetUserFontPaths())) {
+-      pInfo->AddPath("/usr/share/fonts");
+-      pInfo->AddPath("/usr/share/X11/fonts/Type1");
+-      pInfo->AddPath("/usr/share/X11/fonts/TTF");
++      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/Type1");
++      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
+       pInfo->AddPath("/usr/local/share/fonts");
+     }
+     return pInfo;

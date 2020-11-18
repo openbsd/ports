@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_BUILD_gn,v 1.32 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_common_BUILD_gn,v 1.33 2020/11/18 12:29:33 robert Exp $
 Index: chrome/common/BUILD.gn
 --- chrome/common/BUILD.gn.orig
 +++ chrome/common/BUILD.gn
-@@ -503,6 +503,10 @@ static_library("common") {
+@@ -498,6 +498,10 @@ static_library("common") {
      deps += [ "//sandbox/linux:sandbox_services" ]
    }
  

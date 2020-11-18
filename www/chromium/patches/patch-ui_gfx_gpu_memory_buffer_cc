@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_gpu_memory_buffer_cc,v 1.8 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-ui_gfx_gpu_memory_buffer_cc,v 1.9 2020/11/18 12:29:34 robert Exp $
 
 Index: ui/gfx/gpu_memory_buffer.cc
 --- ui/gfx/gpu_memory_buffer.cc.orig
@@ -11,4 +11,4 @@ Index: ui/gfx/gpu_memory_buffer.cc
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    handle.native_pixmap_handle = CloneHandleForIPC(native_pixmap_handle);
  #elif defined(OS_MAC)
-   NOTIMPLEMENTED();
+   handle.mach_port = mach_port;

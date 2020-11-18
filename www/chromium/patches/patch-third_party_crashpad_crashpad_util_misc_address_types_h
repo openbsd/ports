@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_address_types_h,v 1.1 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_address_types_h,v 1.2 2020/11/18 12:29:33 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/misc/address_types.h
 --- third_party/crashpad/crashpad/util/misc/address_types.h.orig
@@ -7,8 +7,8 @@ Index: third_party/crashpad/crashpad/util/misc/address_types.h
  #include <mach/mach_types.h>
  #elif defined(OS_WIN)
  #include "util/win/address_types.h"
--#elif defined(OS_LINUX) || defined(OS_ANDROID)
-+#elif defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
  #include "util/linux/address_types.h"
  #elif defined(OS_FUCHSIA)
  #include <zircon/types.h>
@@ -16,8 +16,8 @@ Index: third_party/crashpad/crashpad/util/misc/address_types.h
  using VMAddress = WinVMAddress;
  using VMSize = WinVMSize;
  
--#elif defined(OS_LINUX) || defined(OS_ANDROID)
-+#elif defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
  
  using VMAddress = LinuxVMAddress;
  using VMSize = LinuxVMSize;

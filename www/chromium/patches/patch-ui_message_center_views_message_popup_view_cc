@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_message_center_views_message_popup_view_cc,v 1.7 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-ui_message_center_views_message_popup_view_cc,v 1.8 2020/11/18 12:29:34 robert Exp $
 
 Index: ui/message_center/views/message_popup_view.cc
 --- ui/message_center/views/message_popup_view.cc.orig
 +++ ui/message_center/views/message_popup_view.cc
-@@ -101,7 +101,7 @@ void MessagePopupView::AutoCollapse() {
+@@ -110,7 +110,7 @@ void MessagePopupView::AutoCollapse() {
  void MessagePopupView::Show() {
    views::Widget::InitParams params(views::Widget::InitParams::TYPE_POPUP);
    params.z_order = ui::ZOrderLevel::kFloatingWindow;

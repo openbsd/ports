@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_intranet_redirect_detector_h,v 1.1 2020/11/18 12:29:33 robert Exp $
+
+Index: chrome/browser/intranet_redirect_detector.h
+--- chrome/browser/intranet_redirect_detector.h.orig
++++ chrome/browser/intranet_redirect_detector.h
+@@ -28,7 +28,7 @@ class SimpleURLLoader;
+ class PrefRegistrySimple;
+ 
+ #if !(defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
+-      defined(OS_CHROMEOS))
++      defined(OS_CHROMEOS) || defined(OS_BSD))
+ #error "IntranetRedirectDetector should only be built on Desktop platforms."
+ #endif
+ 

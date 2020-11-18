@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_memory_discardable_memory_cc,v 1.1 2020/02/22 12:33:20 robert Exp $
+$OpenBSD: patch-base_memory_discardable_memory_cc,v 1.2 2020/11/18 12:29:32 robert Exp $
 
 Index: base/memory/discardable_memory.cc
 --- base/memory/discardable_memory.cc.orig
@@ -7,8 +7,8 @@ Index: base/memory/discardable_memory.cc
      "MadvFreeDiscardableMemory", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_POSIX)
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  const base::Feature kDiscardableMemoryBackingTrial{
      "DiscardableMemoryBackingTrial", base::FEATURE_DISABLED_BY_DEFAULT};
  
@@ -16,8 +16,8 @@ Index: base/memory/discardable_memory.cc
  
  namespace {
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
  DiscardableMemoryBacking GetBackingForFieldTrial() {
    DiscardableMemoryTrialGroup trial_group =
@@ -25,8 +25,8 @@ Index: base/memory/discardable_memory.cc
  
  }  // namespace
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
  // Probe capabilities of this device to determine whether we should participate
  // in the discardable memory backing trial.
@@ -34,8 +34,8 @@ Index: base/memory/discardable_memory.cc
  DiscardableMemory::~DiscardableMemory() = default;
  
  DiscardableMemoryBacking GetDiscardableMemoryBacking() {
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (DiscardableMemoryBackingFieldTrialIsEnabled()) {
      return GetBackingForFieldTrial();
    }

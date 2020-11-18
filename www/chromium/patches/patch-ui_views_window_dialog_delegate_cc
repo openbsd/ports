@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.25 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.26 2020/11/18 12:29:34 robert Exp $
 
 Index: ui/views/window/dialog_delegate.cc
 --- ui/views/window/dialog_delegate.cc.orig
 +++ ui/views/window/dialog_delegate.cc
-@@ -62,7 +62,7 @@ Widget* DialogDelegate::CreateDialogWidget(WidgetDeleg
+@@ -71,7 +71,7 @@ Widget* DialogDelegate::CreateDialogWidget(
  
  // static
  bool DialogDelegate::CanSupportCustomFrame(gfx::NativeView parent) {

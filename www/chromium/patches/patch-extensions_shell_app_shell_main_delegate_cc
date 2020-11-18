@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_shell_app_shell_main_delegate_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-extensions_shell_app_shell_main_delegate_cc,v 1.3 2020/11/18 12:29:33 robert Exp $
 
 Index: extensions/shell/app/shell_main_delegate.cc
 --- extensions/shell/app/shell_main_delegate.cc.orig
 +++ extensions/shell/app/shell_main_delegate.cc
-@@ -38,7 +38,7 @@
+@@ -37,7 +37,7 @@
  
  #if defined(OS_WIN)
  #include "base/base_paths_win.h"
@@ -12,7 +12,7 @@ Index: extensions/shell/app/shell_main_delegate.cc
  #include "base/nix/xdg_util.h"
  #elif defined(OS_MAC)
  #include "base/base_paths_mac.h"
-@@ -70,7 +70,7 @@ base::FilePath GetDataPath() {
+@@ -69,7 +69,7 @@ base::FilePath GetDataPath() {
      return cmd_line->GetSwitchValuePath(switches::kContentShellDataPath);
  
    base::FilePath data_dir;

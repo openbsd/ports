@@ -1,13 +1,13 @@
-$OpenBSD: patch-content_public_browser_BUILD_gn,v 1.5 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_public_browser_BUILD_gn,v 1.6 2020/11/18 12:29:33 robert Exp $
 
 Index: content/public/browser/BUILD.gn
 --- content/public/browser/BUILD.gn.orig
 +++ content/public/browser/BUILD.gn
-@@ -469,6 +469,7 @@ source_set("browser_sources") {
+@@ -481,6 +481,7 @@ source_set("browser_sources") {
      "//media/capture",
      "//net",
      "//ppapi/c",
 +    "//services/content/public/cpp:cpp",
      "//services/device/public/cpp/geolocation",
      "//services/metrics/public/cpp:metrics_cpp",
-     "//services/service_manager/embedder:embedder_result_codes",
+     "//ui/accessibility",

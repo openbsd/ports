@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.63 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.64 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/common/pref_names.cc
 --- chrome/common/pref_names.cc.orig
 +++ chrome/common/pref_names.cc
-@@ -1088,7 +1088,7 @@ const char kForceYouTubeRestrict[] = "settings.force_y
+@@ -1076,7 +1076,7 @@ const char kForceYouTubeRestrict[] = "settings.force_y
  // only using an account that belongs to one of the domains from this pref.
  const char kAllowedDomainsForApps[] = "settings.allowed_domains_for_apps";
  
@@ -12,7 +12,7 @@ Index: chrome/common/pref_names.cc
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1234,7 +1234,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1238,7 +1238,7 @@ const char kShowUpdatePromotionInfoBar[] =
      "browser.show_update_promotion_info_bar";
  #endif
  
@@ -39,7 +39,7 @@ Index: chrome/common/pref_names.cc
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  const char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -2952,7 +2952,7 @@ const char kAutoplayWhitelist[] = "media.autoplay_whit
+@@ -2931,7 +2931,7 @@ const char kAutoplayWhitelist[] = "media.autoplay_whit
  const char kBlockAutoplayEnabled[] = "media.block_autoplay";
  #endif  // !defined(OS_ANDROID)
  

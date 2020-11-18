@@ -1,9 +1,9 @@
-$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.43 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.44 2020/11/18 12:29:33 robert Exp $
 
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -68,7 +68,7 @@
+@@ -69,7 +69,7 @@
  #include "ui/gfx/geometry/vector2d.h"
  #include "v8/include/v8.h"
  
@@ -12,8 +12,8 @@ Index: pdf/pdfium/pdfium_engine.cc
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -411,7 +411,7 @@ void InitializeSDK(bool enable_v8) {
-   config.m_v8EmbedderSlot = gin::kEmbedderPDFium;
+@@ -416,7 +416,7 @@ void InitializeSDK(bool enable_v8) {
+ 
    FPDF_InitLibraryWithConfig(&config);
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -21,7 +21,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    InitializeLinuxFontMapper();
  #endif
  
-@@ -465,7 +465,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
+@@ -475,7 +475,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client,
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
@@ -30,7 +30,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    // PreviewModeClient does not know its pp::Instance.
    SetLastInstance(client_->GetPluginInstance());
  #endif
-@@ -939,7 +939,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
+@@ -948,7 +948,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
  
    KillFormFocus();
  
@@ -39,7 +39,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3041,7 +3041,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -3042,7 +3042,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
  
    last_progressive_start_time_ = base::Time::Now();
@@ -48,7 +48,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3536,7 +3536,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3529,7 +3529,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

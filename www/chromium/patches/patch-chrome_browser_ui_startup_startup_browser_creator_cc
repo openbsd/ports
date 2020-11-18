@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.38 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.39 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/browser/ui/startup/startup_browser_creator.cc
 --- chrome/browser/ui/startup/startup_browser_creator.cc.orig
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -273,7 +273,7 @@ bool CanOpenProfileOnStartup(Profile* profile) {
+@@ -275,7 +275,7 @@ bool CanOpenProfileOnStartup(Profile* profile) {
  bool IsGuestModeEnforced(const base::CommandLine& command_line,
                           bool show_warning) {
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \

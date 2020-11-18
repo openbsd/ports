@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_base_switches_h,v 1.5 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-base_base_switches_h,v 1.6 2020/11/18 12:29:32 robert Exp $
 
 Index: base/base_switches.h
 --- base/base_switches.h.orig
@@ -7,8 +7,8 @@ Index: base/base_switches.h
  extern const char kForceFieldTrialParams[];
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  extern const char kEnableThreadInstructionCount[];
  #endif
  

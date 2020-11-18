@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_handle_h,v 1.2 2019/11/05 22:30:26 robert Exp $
+$OpenBSD: patch-base_process_process_handle_h,v 1.3 2020/11/18 12:29:32 robert Exp $
 
 Index: base/process/process_handle.h
 --- base/process/process_handle.h.orig
@@ -7,8 +7,8 @@ Index: base/process/process_handle.h
  // processes may be reused.
  BASE_EXPORT UniqueProcId GetUniqueIdForProcess();
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  // When a process is started in a different PID namespace from the browser
  // process, this function must be called with the process's PID in the browser's
  // PID namespace in order to initialize its unique ID. Not thread safe.

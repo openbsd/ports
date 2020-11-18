@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.15 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.16 2020/11/18 12:29:33 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
@@ -57,7 +57,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
      const sandbox::policy::SandboxLinux::Options& options) {
    sandbox::syscall_broker::BrokerCommandSet command_set;
 @@ -462,13 +469,17 @@ bool BrokerProcessPreSandboxHook(
-   service_manager::SetProcessTitleFromCommandLine(nullptr);
+   SetProcessTitleFromCommandLine(nullptr);
    return true;
  }
 +#endif

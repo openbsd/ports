@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.40 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.41 2020/11/18 12:29:32 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -59,7 +59,7 @@ declare_args() {
+@@ -53,7 +53,7 @@ declare_args() {
    # replacement base::Location::Current(). On by default in non-official builds
    # for testing purposes.
    # TODO(https://crbug.com/974061): remove this eventually.
@@ -16,8 +16,8 @@ Index: base/BUILD.gn
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
--    if (!is_nacl && !is_mac && !is_ios) {
-+    if (!is_nacl && !is_mac && !is_ios && !is_openbsd) {
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_openbsd) {
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
@@ -34,7 +34,7 @@ Index: base/BUILD.gn
    }
  
    if (is_win) {
-@@ -1288,11 +1294,16 @@ component("base") {
+@@ -1295,11 +1301,16 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -52,16 +52,16 @@ Index: base/BUILD.gn
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1308,7 +1319,7 @@ component("base") {
-         "allocator/winheap_stubs_win.cc",
-         "allocator/winheap_stubs_win.h",
-       ]
--    } else if ((is_linux || is_chromeos) && use_allocator == "tcmalloc") {
-+    } else if (((is_linux && !is_openbsd) || is_chromeos) && use_allocator == "tcmalloc") {
-       sources += [
-         "allocator/allocator_shim_default_dispatch_to_tcmalloc.cc",
-         "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1930,6 +1941,29 @@ component("base") {
+@@ -1316,7 +1327,7 @@ component("base") {
+     if (is_apple) {
+       sources += [ "allocator/allocator_shim_override_mac_symbols.h" ]
+     }
+-    if (is_chromeos || is_linux) {
++    if (is_chromeos || (is_linux && !is_openbsd)) {
+       sources += [ "allocator/allocator_shim_override_glibc_weak_symbols.h" ]
+     }
+     if (is_win) {
+@@ -1956,6 +1967,29 @@ component("base") {
      }
    }
  
@@ -91,7 +91,7 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      sources -= [
-@@ -2502,6 +2536,8 @@ if (is_win) {
+@@ -2541,6 +2575,8 @@ if (is_win) {
        "//base/win:base_win_buildflags",
      ]
    }

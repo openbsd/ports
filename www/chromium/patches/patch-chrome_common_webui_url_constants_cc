@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_cc,v 1.23 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_common_webui_url_constants_cc,v 1.24 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/common/webui_url_constants.cc
 --- chrome/common/webui_url_constants.cc.orig
 +++ chrome/common/webui_url_constants.cc
-@@ -333,7 +333,7 @@ bool IsSystemWebUIHost(base::StringPiece host) {
+@@ -339,7 +339,7 @@ bool IsSystemWebUIHost(base::StringPiece host) {
  #endif  // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/common/webui_url_constants.cc
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  const char kChromeUIHatsHost[] = "hats";
-@@ -354,17 +354,17 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+@@ -361,17 +361,17 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
  #endif
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -33,7 +33,7 @@ Index: chrome/common/webui_url_constants.cc
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
-@@ -533,14 +533,14 @@ const char* const kChromeHostURLs[] = {
+@@ -543,14 +543,14 @@ const char* const kChromeHostURLs[] = {
      kChromeUIAssistantOptInHost,
  #endif
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

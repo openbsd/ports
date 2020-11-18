@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_compositor_compositor_cc,v 1.7 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_cc,v 1.8 2020/11/18 12:29:34 robert Exp $
 
 Index: ui/compositor/compositor.cc
 --- ui/compositor/compositor.cc.orig
 +++ ui/compositor/compositor.cc
-@@ -731,7 +731,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
+@@ -730,7 +730,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
    throughput_tracker_map_.erase(tracker_id);
  }
  

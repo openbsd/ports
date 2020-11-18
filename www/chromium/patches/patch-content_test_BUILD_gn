@@ -1,23 +1,23 @@
-$OpenBSD: patch-content_test_BUILD_gn,v 1.4 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_test_BUILD_gn,v 1.5 2020/11/18 12:29:33 robert Exp $
 
 Index: content/test/BUILD.gn
 --- content/test/BUILD.gn.orig
 +++ content/test/BUILD.gn
-@@ -1609,7 +1609,7 @@ static_library("run_all_unittests") {
+@@ -1625,7 +1625,7 @@ static_library("run_all_unittests") {
      ":test_support",
      "//base/test:test_support",
    ]
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_openbsd) {
-     deps += [ "//services/service_manager/embedder:set_process_title_linux" ]
+     deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -2436,7 +2436,7 @@ test("content_unittests") {
+@@ -2446,7 +2446,7 @@ test("content_unittests") {
      deps += [ "//ui/gfx/x" ]
    }
  
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_openbsd) {
-     sources += [ "../../services/service_manager/embedder/set_process_title_linux_unittest.cc" ]
-     deps += [ "//services/service_manager/embedder:set_process_title_linux" ]
+     sources += [ "../common/set_process_title_linux_unittest.cc" ]
+     deps += [ "//content/common:set_process_title_linux" ]
    }

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.14 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.15 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
 --- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -301,7 +301,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -303,7 +303,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !defined(OS_ANDROID)
    media_router::MediaRouterUIServiceFactory::GetInstance();
  #endif

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.26 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.27 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -75,7 +75,7 @@ extern const base::Feature kAppShimRemoteCocoa;
+@@ -82,7 +82,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
@@ -12,3 +12,12 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
+@@ -214,7 +214,7 @@ extern const base::Feature kEnableAmbientAuthenticatio
+ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kEnableAmbientAuthenticationInIncognito;
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC) || defined(OS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop;
+ #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC)

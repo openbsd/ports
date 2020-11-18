@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_shell_browser_shell_extensions_api_client_h,v 1.1 2019/09/23 07:18:04 robert Exp $
+$OpenBSD: patch-extensions_shell_browser_shell_extensions_api_client_h,v 1.2 2020/11/18 12:29:33 robert Exp $
 
 Index: extensions/shell/browser/shell_extensions_api_client.h
 --- extensions/shell/browser/shell_extensions_api_client.h.orig
 +++ extensions/shell/browser/shell_extensions_api_client.h
-@@ -32,14 +32,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
+@@ -33,14 +33,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
        content::BrowserContext* browser_context) const override;
    std::unique_ptr<DisplayInfoProvider> CreateDisplayInfoProvider()
        const override;

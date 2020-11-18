@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_libxml_linux_config_h,v 1.1 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-third_party_libxml_linux_config_h,v 1.2 2020/11/18 12:29:33 robert Exp $
 
 Index: third_party/libxml/linux/config.h
 --- third_party/libxml/linux/config.h.orig
 +++ third_party/libxml/linux/config.h
-@@ -123,6 +123,9 @@
+@@ -129,6 +129,9 @@
  /* Define to 1 if you have the `rand' function. */
  #define HAVE_RAND 1
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_fake_video_capture_device_factory_cc,v 1.16 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-media_capture_video_fake_video_capture_device_factory_cc,v 1.17 2020/11/18 12:29:33 robert Exp $
 
 Index: media/capture/video/fake_video_capture_device_factory.cc
 --- media/capture/video/fake_video_capture_device_factory.cc.orig
@@ -7,8 +7,8 @@ Index: media/capture/video/fake_video_capture_device_factory.cc
    int entry_index = 0;
    for (const auto& entry : devices_config_) {
      VideoCaptureApi api =
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
          VideoCaptureApi::LINUX_V4L2_SINGLE_PLANE;
  #elif defined(OS_MAC)
          VideoCaptureApi::MACOSX_AVFOUNDATION;

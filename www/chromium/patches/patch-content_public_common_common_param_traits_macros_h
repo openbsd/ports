@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_public_common_common_param_traits_macros_h,v 1.16 2020/11/03 13:21:54 robert Exp $
+$OpenBSD: patch-content_public_common_common_param_traits_macros_h,v 1.17 2020/11/18 12:29:33 robert Exp $
 
 Index: content/public/common/common_param_traits_macros.h
 --- content/public/common/common_param_traits_macros.h.orig
 +++ content/public/common/common_param_traits_macros.h
-@@ -314,7 +314,7 @@ IPC_STRUCT_TRAITS_BEGIN(blink::mojom::RendererPreferen
-   IPC_STRUCT_TRAITS_MEMBER(disable_client_blocked_error_page)
+@@ -138,7 +138,7 @@ IPC_STRUCT_TRAITS_BEGIN(blink::mojom::RendererPreferen
+   IPC_STRUCT_TRAITS_MEMBER(accept_languages)
    IPC_STRUCT_TRAITS_MEMBER(plugin_fullscreen_allowed)
    IPC_STRUCT_TRAITS_MEMBER(caret_browsing_enabled)
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)

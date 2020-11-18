@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.18 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.19 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/browser/ui/views/tabs/new_tab_button.cc
 --- chrome/browser/ui/views/tabs/new_tab_button.cc.orig
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc
 @@ -57,7 +57,7 @@ class NewTabButton::HighlightPathGenerator
- NewTabButton::NewTabButton(TabStrip* tab_strip, views::ButtonListener* listener)
-     : views::ImageButton(listener), tab_strip_(tab_strip) {
-   set_animate_on_state_change(true);
+ NewTabButton::NewTabButton(TabStrip* tab_strip, PressedCallback callback)
+     : views::ImageButton(std::move(callback)), tab_strip_(tab_strip) {
+   SetAnimateOnStateChange(true);
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
-   set_triggerable_event_flags(triggerable_event_flags() |
-                               ui::EF_MIDDLE_MOUSE_BUTTON);
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   SetTriggerableEventFlags(GetTriggerableEventFlags() |
+                            ui::EF_MIDDLE_MOUSE_BUTTON);
  #endif

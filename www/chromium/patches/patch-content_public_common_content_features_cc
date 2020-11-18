@@ -1,20 +1,20 @@
-$OpenBSD: patch-content_public_common_content_features_cc,v 1.15 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.16 2020/11/18 12:29:33 robert Exp $
 
 WebUSB is bad and it makes the chrome process spin the CPU anyway
 
 Index: content/public/common/content_features.cc
 --- content/public/common/content_features.cc.orig
 +++ content/public/common/content_features.cc
-@@ -48,7 +48,7 @@ const base::Feature kAudioServiceLaunchOnStartup{
+@@ -53,7 +53,7 @@ const base::Feature kAudioServiceLaunchOnStartup{
+ // Runs the audio service in a separate process.
  const base::Feature kAudioServiceOutOfProcess {
    "AudioServiceOutOfProcess",
- #if defined(OS_WIN) || defined(OS_MAC) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-       base::FEATURE_DISABLED_BY_DEFAULT
-@@ -59,7 +59,7 @@ const base::Feature kAudioServiceOutOfProcess {
+@@ -65,7 +65,7 @@ const base::Feature kAudioServiceOutOfProcess {
  // kAudioServiceOutOfProcess feature is enabled.
  const base::Feature kAudioServiceSandbox {
    "AudioServiceSandbox",
@@ -23,16 +23,16 @@ Index: content/public/common/content_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -759,7 +759,7 @@ const base::Feature kWebAssemblyThreads {
- };
+@@ -777,7 +777,7 @@ const base::Feature kWebAssemblyThreads {
  
  // Enable WebAssembly trap handler.
--#if (defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)) && \
-+#if (defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD)) && \
+ #if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
+-     defined(OS_MAC)) &&                                             \
++     defined(OS_MAC) || defined(OS_BSD)) &&                          \
      defined(ARCH_CPU_X86_64)
  const base::Feature kWebAssemblyTrapHandler{"WebAssemblyTrapHandler",
                                              base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -789,7 +789,7 @@ const base::Feature kWebAuth{"WebAuthentication",
+@@ -807,7 +807,7 @@ const base::Feature kWebAuth{"WebAuthentication",
  // https://w3c.github.io/webauthn
  const base::Feature kWebAuthCable {
    "WebAuthenticationCable",
@@ -41,7 +41,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -853,7 +853,7 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+@@ -871,7 +871,7 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

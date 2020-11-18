@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.18 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.19 2020/11/18 12:29:33 robert Exp $
 
 Index: content/app/content_main_runner_impl.cc
 --- content/app/content_main_runner_impl.cc.orig
 +++ content/app/content_main_runner_impl.cc
-@@ -122,17 +122,17 @@
+@@ -121,17 +121,17 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -24,7 +24,7 @@ Index: content/app/content_main_runner_impl.cc
  #include "base/native_library.h"
  #include "base/rand_util.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
-@@ -164,6 +164,13 @@
+@@ -163,6 +163,13 @@
  #include "media/base/media_switches.h"
  #endif
  
@@ -37,7 +37,7 @@ Index: content/app/content_main_runner_impl.cc
 +
  #if defined(OS_ANDROID)
  #include "content/browser/android/browser_startup_controller.h"
- #endif
+ #include "content/common/android/cpu_affinity.h"
 @@ -301,7 +308,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
@@ -75,7 +75,7 @@ Index: content/app/content_main_runner_impl.cc
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -473,7 +488,7 @@ int RunZygote(ContentMainDelegate* delegate) {
+@@ -455,7 +470,7 @@ int RunZygote(ContentMainDelegate* delegate) {
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -84,21 +84,20 @@ Index: content/app/content_main_runner_impl.cc
    PreSandboxInit();
  #endif
  
-@@ -617,11 +632,11 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
-                    base::GlobalDescriptors::kBaseDescriptor);
+@@ -597,10 +612,10 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+              kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_OPENBSD)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-     g_fds->Set(service_manager::kCrashDumpSignal,
-                service_manager::kCrashDumpSignal +
-                    base::GlobalDescriptors::kBaseDescriptor);
+   g_fds->Set(kCrashDumpSignal,
+              kCrashDumpSignal + base::GlobalDescriptors::kBaseDescriptor);
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_OPENBSD)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
  #endif  // !OS_WIN
  
-@@ -814,6 +829,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -791,6 +806,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
      }
  #endif
  
@@ -115,7 +114,7 @@ Index: content/app/content_main_runner_impl.cc
      delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -853,7 +878,7 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
+@@ -830,7 +855,7 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
        delegate_->PostFieldTrialInitialization();
      }
  
@@ -124,7 +123,7 @@ Index: content/app/content_main_runner_impl.cc
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -876,6 +901,11 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
+@@ -853,6 +878,11 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
  #endif
  
    RegisterMainThreadFactories();

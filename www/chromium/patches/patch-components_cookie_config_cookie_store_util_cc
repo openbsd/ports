@@ -1,14 +1,14 @@
-$OpenBSD: patch-components_cookie_config_cookie_store_util_cc,v 1.4 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-components_cookie_config_cookie_store_util_cc,v 1.5 2020/11/18 12:29:33 robert Exp $
 
 Index: components/cookie_config/cookie_store_util.cc
 --- components/cookie_config/cookie_store_util.cc.orig
 +++ components/cookie_config/cookie_store_util.cc
-@@ -11,7 +11,7 @@
- 
+@@ -12,7 +12,7 @@
  namespace cookie_config {
  
--#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
  namespace {
  
  // Use the operating system's mechanisms to encrypt cookies before writing

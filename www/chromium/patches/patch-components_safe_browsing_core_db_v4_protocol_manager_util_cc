@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_safe_browsing_core_db_v4_protocol_manager_util_cc,v 1.2 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-components_safe_browsing_core_db_v4_protocol_manager_util_cc,v 1.3 2020/11/18 12:29:33 robert Exp $
 
 Index: components/safe_browsing/core/db/v4_protocol_manager_util.cc
 --- components/safe_browsing/core/db/v4_protocol_manager_util.cc.orig
@@ -7,8 +7,8 @@ Index: components/safe_browsing/core/db/v4_protocol_manager_util.cc
  PlatformType GetCurrentPlatformType() {
  #if defined(OS_WIN)
    return WINDOWS_PLATFORM;
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    return LINUX_PLATFORM;
  #elif defined(OS_IOS)
    return IOS_PLATFORM;

@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_network_session_configurator_browser_network_session_configurator_cc,v 1.22 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-components_network_session_configurator_browser_network_session_configurator_cc,v 1.23 2020/11/18 12:29:33 robert Exp $
 
 Index: components/network_session_configurator/browser/network_session_configurator.cc
 --- components/network_session_configurator/browser/network_session_configurator.cc.orig
 +++ components/network_session_configurator/browser/network_session_configurator.cc
-@@ -732,7 +732,7 @@ net::URLRequestContextBuilder::HttpCacheParams::Type C
+@@ -749,7 +749,7 @@ net::URLRequestContextBuilder::HttpCacheParams::Type C
    }
  #endif  // #if !defined(OS_ANDROID)
  

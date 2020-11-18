@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.7 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.8 2020/11/18 12:29:33 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_util.cc
 --- components/policy/core/common/cloud/cloud_policy_util.cc.orig
@@ -39,16 +39,16 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -133,7 +133,7 @@ std::string GetMachineName() {
+@@ -136,7 +136,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
--#if defined(OS_LINUX) || defined(OS_APPLE)
-+#if defined(OS_LINUX) || defined(OS_APPLE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD)
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -156,7 +156,7 @@ std::string GetOSArchitecture() {
+@@ -159,7 +159,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

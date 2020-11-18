@@ -1,12 +1,12 @@
-$OpenBSD: patch-sandbox_policy_BUILD_gn,v 1.1 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-sandbox_policy_BUILD_gn,v 1.2 2020/11/18 12:29:33 robert Exp $
 
 Index: sandbox/policy/BUILD.gn
 --- sandbox/policy/BUILD.gn.orig
 +++ sandbox/policy/BUILD.gn
 @@ -27,7 +27,7 @@ component("policy") {
-     "//base",
      "//sandbox:common",
    ]
+   public_deps = []
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_openbsd) {
      sources += [

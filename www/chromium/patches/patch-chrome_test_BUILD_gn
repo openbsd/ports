@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_test_BUILD_gn,v 1.17 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_test_BUILD_gn,v 1.18 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/test/BUILD.gn
 --- chrome/test/BUILD.gn.orig
 +++ chrome/test/BUILD.gn
-@@ -6375,7 +6375,7 @@ test("chrome_app_unittests") {
+@@ -6572,7 +6572,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
      "//pdf:pdf_ppapi",
    ]

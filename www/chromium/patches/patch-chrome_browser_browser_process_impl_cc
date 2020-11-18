@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.44 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.45 2020/11/18 12:29:32 robert Exp $
 
 Index: chrome/browser/browser_process_impl.cc
 --- chrome/browser/browser_process_impl.cc.orig
 +++ chrome/browser/browser_process_impl.cc
-@@ -1421,7 +1421,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1405,7 +1405,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.

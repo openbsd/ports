@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.15 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.16 2020/11/18 12:29:33 robert Exp $
 
 Index: content/browser/child_process_launcher_helper_linux.cc
 --- content/browser/child_process_launcher_helper_linux.cc.orig
@@ -61,7 +61,7 @@ Index: content/browser/child_process_launcher_helper_linux.cc
    } else {
 @@ -141,13 +147,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
-   process.process.Terminate(service_manager::RESULT_CODE_NORMAL_EXIT, false);
+   process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
 +#if !defined(OS_BSD)
    if (process.zygote) {

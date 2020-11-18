@@ -1,14 +1,14 @@
-$OpenBSD: patch-components_autofill_core_browser_personal_data_manager_cc,v 1.11 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_personal_data_manager_cc,v 1.12 2020/11/18 12:29:33 robert Exp $
 
 Index: components/autofill/core/browser/personal_data_manager.cc
 --- components/autofill/core/browser/personal_data_manager.cc.orig
 +++ components/autofill/core/browser/personal_data_manager.cc
-@@ -1918,7 +1918,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
+@@ -1961,7 +1961,7 @@ bool PersonalDataManager::IsServerCard(const CreditCar
+ bool PersonalDataManager::ShouldShowCardsFromAccountOption() const {
  // The feature is only for Linux, Windows and Mac.
- #if defined(OS_CHROMEOS)
-   return false;
--#elif !defined(OS_LINUX) && !defined(OS_WIN) && !defined(OS_APPLE)
-+#elif !defined(OS_LINUX) && !defined(OS_WIN) && !defined(OS_APPLE) && !defined(OS_BSD)
-   return false;
- #else
+ #if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_WIN) || \
+-    defined(OS_APPLE)
++    defined(OS_APPLE) || defined(OS_BSD)
    // This option should only be shown for users that have not enabled the Sync
+   // Feature and that have server credit cards available.
+   if (!sync_service_ || sync_service_->IsSyncFeatureEnabled() ||

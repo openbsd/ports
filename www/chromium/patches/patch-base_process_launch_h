@@ -1,4 +1,5 @@
-$OpenBSD: patch-base_process_launch_h,v 1.17 2020/02/22 12:33:20 robert Exp $
+$OpenBSD: patch-base_process_launch_h,v 1.18 2020/11/18 12:29:32 robert Exp $
+
 Index: base/process/launch.h
 --- base/process/launch.h.orig
 +++ base/process/launch.h
@@ -6,8 +7,8 @@ Index: base/process/launch.h
    bool clear_environment = false;
  #endif  // OS_WIN || OS_POSIX || OS_FUCHSIA
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // If non-zero, start the process using clone(), using flags as provided.
    // Unlike in clone, clone_flags may not contain a custom termination signal
    // that is sent to the parent when the child dies. The termination signal will

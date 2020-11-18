@@ -1,10 +1,10 @@
-$OpenBSD: patch-third_party_webrtc_system_wrappers_BUILD_gn,v 1.19 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-third_party_webrtc_system_wrappers_BUILD_gn,v 1.20 2020/11/18 12:29:33 robert Exp $
 Index: third_party/webrtc/system_wrappers/BUILD.gn
 --- third_party/webrtc/system_wrappers/BUILD.gn.orig
 +++ third_party/webrtc/system_wrappers/BUILD.gn
-@@ -60,8 +60,6 @@ rtc_library("system_wrappers") {
+@@ -62,8 +62,6 @@ rtc_library("system_wrappers") {
      if (!build_with_chromium) {
-       deps += [ ":cpu_features_linux" ]
+       sources += [ "source/cpu_features_linux.cc" ]
      }
 -
 -    libs += [ "rt" ]

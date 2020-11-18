@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.46 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.47 2020/11/18 12:29:33 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
 +++ content/renderer/render_thread_impl.cc
-@@ -175,7 +175,7 @@
+@@ -173,7 +173,7 @@
  
  #if defined(OS_MAC)
  #include <malloc/malloc.h>
@@ -12,7 +12,7 @@ Index: content/renderer/render_thread_impl.cc
  #include <malloc.h>
  #endif
  
-@@ -713,7 +713,7 @@ void RenderThreadImpl::Init() {
+@@ -715,7 +715,7 @@ void RenderThreadImpl::Init() {
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -21,7 +21,7 @@ Index: content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -736,7 +736,7 @@ void RenderThreadImpl::Init() {
+@@ -738,7 +738,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
        discardable_memory_allocator_.get());
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.45 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.46 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 --- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -241,12 +241,12 @@
+@@ -247,12 +247,12 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -18,7 +18,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
  #include "chrome/browser/ui/webui/sandbox/sandbox_internals_ui.h"
  #endif
  
-@@ -401,7 +401,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -425,7 +425,7 @@ bool IsAboutUI(const GURL& url) {
  #if !defined(OS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -27,7 +27,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if defined(OS_CHROMEOS)
-@@ -784,7 +784,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -817,7 +817,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
      return &NewWebUI<NaClUI>;
  #endif
  #if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
@@ -36,7 +36,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
      return &NewWebUI<ConstrainedWebDialogUI>;
  #endif
-@@ -833,17 +833,17 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -866,17 +866,17 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

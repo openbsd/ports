@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_updater_installer_cc,v 1.2 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-chrome_updater_installer_cc,v 1.3 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/updater/installer.cc
 --- chrome/updater/installer.cc.orig
 +++ chrome/updater/installer.cc
-@@ -236,7 +236,7 @@ base::FilePath Installer::GetCurrentInstallDir() const
+@@ -245,7 +245,7 @@ base::FilePath Installer::GetCurrentInstallDir() const
    return GetAppInstallDir(app_id_).AppendASCII(pv_.GetString());
  }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  int Installer::RunApplicationInstaller(const base::FilePath& app_installer,
                                         const std::string& arguments) {
    NOTREACHED();

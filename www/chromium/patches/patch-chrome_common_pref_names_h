@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.62 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.63 2020/11/18 12:29:33 robert Exp $
 
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
-@@ -350,7 +350,7 @@ extern const char kHistoryMenuPromoShown[];
+@@ -355,7 +355,7 @@ extern const char kHistoryMenuPromoShown[];
  extern const char kForceGoogleSafeSearch[];
  extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
@@ -12,7 +12,7 @@ Index: chrome/common/pref_names.h
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -381,7 +381,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+@@ -385,7 +385,7 @@ extern const char kDefaultBrowserSettingEnabled[];
  #if defined(OS_MAC)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -21,7 +21,7 @@ Index: chrome/common/pref_names.h
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -557,7 +557,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
+@@ -555,7 +555,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
  extern const char kDownloadAllowedURLsForOpenByPolicy[];
  extern const char kDownloadDirUpgraded[];
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,7 +30,7 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -781,7 +781,7 @@ extern const char kAllowCrossOriginAuthPrompt[];
+@@ -777,7 +777,7 @@ extern const char kAllowCrossOriginAuthPrompt[];
  extern const char kGloballyScopeHTTPAuthCacheEnabled[];
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  
@@ -39,7 +39,7 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -1015,7 +1015,7 @@ extern const char kAutoplayWhitelist[];
+@@ -1006,7 +1006,7 @@ extern const char kAutoplayWhitelist[];
  extern const char kBlockAutoplayEnabled[];
  #endif
  

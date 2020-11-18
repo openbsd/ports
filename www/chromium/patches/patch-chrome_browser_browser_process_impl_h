@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.32 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.33 2020/11/18 12:29:32 robert Exp $
 
 Index: chrome/browser/browser_process_impl.h
 --- chrome/browser/browser_process_impl.h.orig
 +++ chrome/browser/browser_process_impl.h
-@@ -348,7 +348,7 @@ class BrowserProcessImpl : public BrowserProcess,
+@@ -359,7 +359,7 @@ class BrowserProcessImpl : public BrowserProcess,
  
    std::unique_ptr<BatteryMetrics> battery_metrics_;
  

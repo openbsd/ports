@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_h,v 1.5 2019/12/15 12:03:46 robert Exp $
+$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_h,v 1.6 2020/11/18 12:29:33 robert Exp $
 
 Index: gpu/ipc/common/gpu_memory_buffer_support.h
 --- gpu/ipc/common/gpu_memory_buffer_support.h.orig
@@ -7,8 +7,8 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.h
  #include "ui/gfx/geometry/size.h"
  #include "ui/gfx/gpu_memory_buffer.h"
  
--#if defined(OS_LINUX) || defined(USE_OZONE)
-+#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE) || defined(OS_BSD)
  namespace gfx {
  class ClientNativePixmapFactory;
  }
@@ -16,8 +16,8 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.h
    bool IsNativeGpuMemoryBufferConfigurationSupported(gfx::BufferFormat format,
                                                       gfx::BufferUsage usage);
  
--#if defined(OS_LINUX) || defined(USE_OZONE)
-+#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE) || defined(OS_BSD)
    gfx::ClientNativePixmapFactory* client_native_pixmap_factory() {
      return client_native_pixmap_factory_.get();
    }
@@ -25,8 +25,8 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.h
        GpuMemoryBufferImpl::DestructionCallback callback);
  
   private:
--#if defined(OS_LINUX) || defined(USE_OZONE)
-+#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE) || defined(OS_BSD)
    std::unique_ptr<gfx::ClientNativePixmapFactory> client_native_pixmap_factory_;
  #endif
  

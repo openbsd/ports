@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_examples_widget_example_cc,v 1.14 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-ui_views_examples_widget_example_cc,v 1.15 2020/11/18 12:29:34 robert Exp $
 
 Index: ui/views/examples/widget_example.cc
 --- ui/views/examples/widget_example.cc.orig
 +++ ui/views/examples/widget_example.cc
-@@ -80,7 +80,7 @@ void WidgetExample::CreateExampleView(View* container)
+@@ -67,7 +67,7 @@ void WidgetExample::CreateExampleView(View* container)
                DIALOG);
    BuildButton(container, GetStringUTF16(IDS_WIDGET_MODAL_BUTTON_LABEL),
                MODAL_DIALOG);

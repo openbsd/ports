@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.15 2019/05/10 21:55:39 robert Exp $
+$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.16 2020/11/18 12:29:32 robert Exp $
 
 Index: build/config/BUILDCONFIG.gn
 --- build/config/BUILDCONFIG.gn.orig
@@ -12,7 +12,7 @@ Index: build/config/BUILDCONFIG.gn
  
    # Set to true when compiling with the Clang compiler.
 -  is_clang = current_os != "linux" ||
-+  is_clang = current_os != "linux" || curent_os == "openbsd" ||
++  is_clang = current_os != "linux" || current_os == "openbsd" ||
               (current_cpu != "s390x" && current_cpu != "s390" &&
                current_cpu != "ppc64" && current_cpu != "ppc" &&
                current_cpu != "mips" && current_cpu != "mips64")
@@ -38,8 +38,8 @@ Index: build/config/BUILDCONFIG.gn
  is_chromeos = current_os == "chromeos"
  is_fuchsia = current_os == "fuchsia"
  is_ios = current_os == "ios"
--is_linux = current_os == "chromeos" || current_os == "linux"
-+is_linux = current_os == "chromeos" || current_os == "linux" || current_os == "openbsd"
+-is_linux = current_os == "linux"
++is_linux = current_os == "linux" || current_os == "openbsd"
 +is_openbsd = current_os == "openbsd"
  is_mac = current_os == "mac"
  is_nacl = current_os == "nacl"

@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.536 2020/11/14 08:59:08 robert Exp $
-
-BROKEN-i386=	runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
-#  2254 sh       NAMI  "/usr/local/chrome/chrome"
-#  2254 sh       RET   execve -1 errno 12 Cannot allocate memory
+# $OpenBSD: Makefile,v 1.537 2020/11/18 12:29:32 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -16,8 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			86.0.4240.198
-REVISION=		0
+V=			87.0.4280.66
 
 DISTNAME=		chromium-${V}
 
@@ -77,7 +72,7 @@ WANTLIB += harfbuzz harfbuzz-subset
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
-WANTLIB += gbm xcb-dri3
+WANTLIB += gbm xkbcommon
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -101,6 +96,7 @@ LIB_DEPENDS=	devel/harfbuzz \
 		security/nss \
 		textproc/libxslt \
 		x11/gtk+3 \
+		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 

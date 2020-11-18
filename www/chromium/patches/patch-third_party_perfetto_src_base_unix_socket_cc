@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_perfetto_src_base_unix_socket_cc,v 1.2 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-third_party_perfetto_src_base_unix_socket_cc,v 1.3 2020/11/18 12:29:33 robert Exp $
 
 Index: third_party/perfetto/src/base/unix_socket.cc
 --- third_party/perfetto/src/base/unix_socket.cc.orig
 +++ third_party/perfetto/src/base/unix_socket.cc
-@@ -608,7 +608,11 @@ void UnixSocket::ReadPeerCredentials() {
+@@ -627,7 +627,11 @@ void UnixSocket::ReadPeerCredentials() {
  
  #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)

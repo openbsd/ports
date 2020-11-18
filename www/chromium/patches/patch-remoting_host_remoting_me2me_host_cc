@@ -1,18 +1,18 @@
-$OpenBSD: patch-remoting_host_remoting_me2me_host_cc,v 1.19 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-remoting_host_remoting_me2me_host_cc,v 1.20 2020/11/18 12:29:33 robert Exp $
 
 Index: remoting/host/remoting_me2me_host.cc
 --- remoting/host/remoting_me2me_host.cc.orig
 +++ remoting/host/remoting_me2me_host.cc
-@@ -117,7 +117,7 @@
+@@ -118,7 +118,7 @@
  #include "remoting/host/mac/permission_utils.h"
  #endif  // defined(OS_APPLE)
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include <gtk/gtk.h>
+ 
  #include "base/linux_util.h"
- #include "remoting/host/audio_capturer_linux.h"
-@@ -158,7 +158,7 @@ const char kApplicationName[] = "chromoting";
+@@ -161,7 +161,7 @@ const char kApplicationName[] = "chromoting";
  const char kStdinConfigPath[] = "-";
  #endif  // !defined(REMOTING_MULTI_PROCESS)
  
@@ -21,7 +21,7 @@ Index: remoting/host/remoting_me2me_host.cc
  // The command line switch used to pass name of the pipe to capture audio on
  // linux.
  const char kAudioPipeSwitchName[] = "audio-pipe-name";
-@@ -356,7 +356,7 @@ class HostProcess : public ConfigWatcher::Delegate,
+@@ -362,7 +362,7 @@ class HostProcess : public ConfigWatcher::Delegate,
  
    std::unique_ptr<ChromotingHostContext> context_;
  
@@ -30,7 +30,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Watch for certificate changes and kill the host when changes occur
    std::unique_ptr<CertificateWatcher> cert_watcher_;
  #endif
-@@ -752,7 +752,7 @@ void HostProcess::CreateAuthenticatorFactory() {
+@@ -761,7 +761,7 @@ void HostProcess::CreateAuthenticatorFactory() {
      DCHECK(third_party_auth_config_.token_url.is_valid());
      DCHECK(third_party_auth_config_.token_validation_url.is_valid());
  
@@ -39,7 +39,7 @@ Index: remoting/host/remoting_me2me_host.cc
      if (!cert_watcher_) {
        cert_watcher_ = std::make_unique<CertificateWatcher>(
            base::BindRepeating(&HostProcess::ShutdownHost, this,
-@@ -839,7 +839,7 @@ void HostProcess::StartOnUiThread() {
+@@ -848,7 +848,7 @@ void HostProcess::StartOnUiThread() {
        base::BindRepeating(&HostProcess::OnPolicyUpdate, base::Unretained(this)),
        base::BindRepeating(&HostProcess::OnPolicyError, base::Unretained(this)));
  
@@ -48,7 +48,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // If an audio pipe is specific on the command-line then initialize
    // AudioCapturerLinux to capture from it.
    base::FilePath audio_pipe_name = base::CommandLine::ForCurrentProcess()->
-@@ -897,7 +897,7 @@ void HostProcess::ShutdownOnUiThread() {
+@@ -906,7 +906,7 @@ void HostProcess::ShutdownOnUiThread() {
    // It is now safe for the HostProcess to be deleted.
    self_ = nullptr;
  
@@ -57,7 +57,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Cause the global AudioPipeReader to be freed, otherwise the audio
    // thread will remain in-use and prevent the process from exiting.
    // TODO(wez): DesktopEnvironmentFactory should own the pipe reader.
-@@ -1498,7 +1498,7 @@ void HostProcess::StartHost() {
+@@ -1512,7 +1512,7 @@ void HostProcess::StartHost() {
    host_->AddExtension(std::make_unique<TestEchoExtension>());
  
    // TODO(simonmorris): Get the maximum session duration from a policy.
@@ -66,12 +66,12 @@ Index: remoting/host/remoting_me2me_host.cc
    host_->SetMaximumSessionDuration(base::TimeDelta::FromHours(20));
  #endif
  
-@@ -1668,7 +1668,7 @@ void HostProcess::OnCrash(const std::string& function_
+@@ -1687,7 +1687,7 @@ void HostProcess::OnCrash(const std::string& function_
  int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   std::unique_ptr<ui::X11EventSource> event_source;
    if (!base::CommandLine::ForCurrentProcess()->HasSwitch(
            kReportOfflineReasonSwitchName)) {
-     // Required in order for us to run multiple X11 threads.

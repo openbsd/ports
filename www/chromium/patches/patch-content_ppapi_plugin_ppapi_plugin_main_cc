@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.14 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.15 2020/11/18 12:29:33 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_plugin_main.cc
 --- content/ppapi_plugin/ppapi_plugin_main.cc.orig
@@ -19,8 +19,8 @@ Index: content/ppapi_plugin/ppapi_plugin_main.cc
    gin::V8Initializer::LoadV8Snapshot();
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    sandbox::policy::SandboxLinux::GetInstance()->InitializeSandbox(
        sandbox::policy::SandboxTypeFromCommandLine(command_line),
        sandbox::policy::SandboxLinux::PreSandboxHook(),

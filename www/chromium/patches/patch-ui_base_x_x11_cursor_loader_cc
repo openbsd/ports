@@ -1,30 +1,17 @@
-$OpenBSD: patch-ui_base_x_x11_cursor_loader_cc,v 1.1 2020/11/14 08:59:08 robert Exp $
+$OpenBSD: patch-ui_base_x_x11_cursor_loader_cc,v 1.2 2020/11/18 12:29:34 robert Exp $
 
 Index: ui/base/x/x11_cursor_loader.cc
 --- ui/base/x/x11_cursor_loader.cc.orig
 +++ ui/base/x/x11_cursor_loader.cc
-@@ -28,6 +28,10 @@
- #include "ui/gfx/x/connection.h"
- #include "ui/gfx/x/xproto.h"
+@@ -134,7 +134,11 @@ std::string CursorPathFromLibXcursor() {
+     void operator()(void* ptr) const { dlclose(ptr); }
+   };
  
 +#if defined(OS_BSD)
-+#include <X11/Xcursor/Xcursor.h>
-+#endif
-+
- namespace ui {
- 
- namespace {
-@@ -121,8 +125,13 @@ std::string GetEnv(const std::string& var) {
- }
- 
- std::string CursorPath() {
-+#if defined(OS_BSD)
-+  // use the same path for cursor icons as xenocara
-+  const char *kDefaultPath = XcursorLibraryPath();
++  std::unique_ptr<void, DlCloser> lib(dlopen("libXcursor.so", RTLD_LAZY));
 +#else
-   constexpr const char kDefaultPath[] =
-       "~/.icons:/usr/share/icons:/usr/share/pixmaps:/usr/X11R6/lib/X11/icons";
+   std::unique_ptr<void, DlCloser> lib(dlopen("libXcursor.so.1", RTLD_LAZY));
 +#endif
-   std::string path = GetEnv("XCURSOR_PATH");
-   return path.empty() ? kDefaultPath : path;
- }
+   if (!lib)
+     return "";
+ 

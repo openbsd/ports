@@ -1,9 +1,9 @@
-$OpenBSD: patch-printing_print_settings_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-printing_print_settings_cc,v 1.3 2020/11/18 12:29:33 robert Exp $
 
 Index: printing/print_settings.cc
 --- printing/print_settings.cc.orig
 +++ printing/print_settings.cc
-@@ -291,7 +291,7 @@ void PrintSettings::Clear() {
+@@ -277,7 +277,7 @@ void PrintSettings::Clear() {
  #endif
    is_modifiable_ = true;
    pages_per_sheet_ = 1;

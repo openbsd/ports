@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_handle_cc,v 1.3 2020/09/22 11:47:39 robert Exp $
+$OpenBSD: patch-base_process_process_handle_cc,v 1.4 2020/11/18 12:29:32 robert Exp $
 
 Index: base/process/process_handle.cc
 --- base/process/process_handle.cc.orig
@@ -7,8 +7,8 @@ Index: base/process/process_handle.cc
               : UniqueProcId(GetCurrentProcId());
  }
  
--#if defined(OS_LINUX) || defined(OS_AIX)
-+#if defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_AIX)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_AIX) || defined(OS_BSD)
  
  void InitUniqueIdForProcessInPidNamespace(ProcessId pid_outside_of_namespace) {
    DCHECK(pid_outside_of_namespace != kNullProcessId);

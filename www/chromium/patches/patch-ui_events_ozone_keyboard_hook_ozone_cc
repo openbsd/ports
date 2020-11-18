@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_events_ozone_keyboard_hook_ozone_cc,v 1.1 2020/11/18 12:29:34 robert Exp $
+
+Index: ui/events/ozone/keyboard_hook_ozone.cc
+--- ui/events/ozone/keyboard_hook_ozone.cc.orig
++++ ui/events/ozone/keyboard_hook_ozone.cc
+@@ -29,7 +29,7 @@ bool KeyboardHookOzone::RegisterHook() {
+   return true;
+ }
+ 
+-#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
+ // static
+ std::unique_ptr<KeyboardHook> KeyboardHook::CreateModifierKeyboardHook(
+     base::Optional<base::flat_set<DomCode>> dom_codes,
