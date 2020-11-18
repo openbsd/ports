@@ -72,6 +72,7 @@ SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/V
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/winreg-0.6.2.tar.gz) = spht61gcT+EbYhmYpeUzYe/mtIoVEXjQzZ7v+k3GrMk=
 SHA256 (dog-0.1.0.tar.gz) = gjh9OHJ7rH/NsICXDoSzbegL/nkjzoP5k6d9mseEeFg=
+SHA256 (dog-v0.1.0-x86_64-apple-darwin.zip) = l7dJEk473LHDqXB2ovs97infwWopyfY4va4QYK1OPYk=
 SIZE (cargo/addr2line-0.14.0.tar.gz) = 30065
 SIZE (cargo/adler-0.2.3.tar.gz) = 12168
 SIZE (cargo/ansi_term-0.11.0.tar.gz) = 17087
@@ -146,3 +147,4 @@ SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SIZE (cargo/winreg-0.6.2.tar.gz) = 19338
 SIZE (dog-0.1.0.tar.gz) = 449366
+SIZE (dog-v0.1.0-x86_64-apple-darwin.zip) = 271723

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/18 10:24:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/18 12:10:08 sthen Exp $
 
 COMMENT =		command-line DNS lookup tool
 
 GH_ACCOUNT =		ogham
 GH_PROJECT =		dog
 GH_TAGNAME =		v0.1.0
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -20,8 +21,9 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 HOMEPAGE =		https://dns.lookup.dog/
-
-DISTFILES +=            ${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX}
+MASTER_SITES0 =		https://github.com/ogham/dog/releases/download/${GH_TAGNAME}/
+DISTFILES +=            ${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX} \
+			dog-${GH_TAGNAME}-x86_64-apple-darwin.zip:0
 
 # some entries from modcargo-gen-crates dropped;
 #
@@ -104,5 +106,8 @@ MODCARGO_CRATES +=	winapi	0.3.9	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winapi-i686-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winapi-x86_64-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winreg	0.6.2	# MIT
+
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/man/dog.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
