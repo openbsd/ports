@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/01/18 23:53:12 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/11/18 00:17:18 sthen Exp $
 
 # See https://github.com/citra-emu/citra/issues/4571
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-BROKEN-i386 =	undefined reference to `operator delete(void*, std::align_val_t)', etc.
+BROKEN-i386 =	undefined reference to operator delete(void*, std::align_val_t), etc.
 
 USE_WXNEEDED =	Yes
 
@@ -12,7 +12,7 @@ COMMENT =	nintendo 3DS emulator
 V =		729
 DISTNAME =	citra-nightly-${V}
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	emulators
 
