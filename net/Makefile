@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1227 2020/11/04 19:15:15 solene Exp $
+# $OpenBSD: Makefile,v 1.1228 2020/11/18 10:24:41 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -81,6 +81,7 @@
      SUBDIR += dnstop
      SUBDIR += dnstracer
      SUBDIR += doc
+     SUBDIR += dog
      SUBDIR += doh
      SUBDIR += dsocks
      SUBDIR += dsvpn
@@ -615,6 +616,7 @@
      SUBDIR += py-ripe.atlas.sagan
      SUBDIR += py-ripe.atlas.sagan,python3
      SUBDIR += py-ripe.atlas.tools
+     SUBDIR += py-rrdtool
      SUBDIR += py-rrdtool,python3
      SUBDIR += py-s3transfer,python3
      SUBDIR += py-simplesoap
