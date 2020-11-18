@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_SystemZ_h,v 1.1 2020/11/18 21:20:00 jca Exp $
+
+Disable strict floating point if not X86.
+
+Index: tools/clang/lib/Basic/Targets/SystemZ.h
+--- tools/clang/lib/Basic/Targets/SystemZ.h.orig
++++ tools/clang/lib/Basic/Targets/SystemZ.h
+@@ -47,6 +47,7 @@ class LLVM_LIBRARY_VISIBILITY SystemZTargetInfo : publ
+     MinGlobalAlign = 16;
+     resetDataLayout("E-m:e-i1:8:16-i8:8:16-i64:64-f128:64-a:8:16-n32:64");
+     MaxAtomicPromoteWidth = MaxAtomicInlineWidth = 64;
++    HasStrictFP = true;
+   }
+ 
+   void getTargetDefines(const LangOptions &Opts,

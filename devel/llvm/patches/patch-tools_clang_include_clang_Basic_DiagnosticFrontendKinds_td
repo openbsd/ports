@@ -1,0 +1,20 @@
+$OpenBSD: patch-tools_clang_include_clang_Basic_DiagnosticFrontendKinds_td,v 1.1 2020/11/18 21:20:00 jca Exp $
+
+Disable strict floating point if not X86.
+
+Index: tools/clang/include/clang/Basic/DiagnosticFrontendKinds.td
+--- tools/clang/include/clang/Basic/DiagnosticFrontendKinds.td.orig
++++ tools/clang/include/clang/Basic/DiagnosticFrontendKinds.td
+@@ -37,6 +37,12 @@ def note_fe_backend_plugin: Note<"%0">, BackendInfo;
+ def warn_fe_override_module : Warning<
+     "overriding the module target triple with %0">,
+     InGroup<DiagGroup<"override-module">>;
++def warn_fe_backend_unsupported_fp_rounding : Warning<
++    "overriding currently unsupported rounding mode on this target">,
++    InGroup<UnsupportedFPOpt>;
++def warn_fe_backend_unsupported_fp_exceptions : Warning<
++    "overriding currently unsupported use of floating point exceptions "
++    "on this target">, InGroup<UnsupportedFPOpt>;
+ 
+ def remark_fe_backend_optimization_remark : Remark<"%0">, BackendInfo,
+     InGroup<BackendOptimizationRemark>;

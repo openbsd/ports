@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_clang_include_clang_Basic_DiagnosticGroups_td,v 1.3 2020/11/18 21:20:00 jca Exp $
+
+Disable strict floating point if not X86.
+
+Index: tools/clang/include/clang/Basic/DiagnosticGroups.td
+--- tools/clang/include/clang/Basic/DiagnosticGroups.td.orig
++++ tools/clang/include/clang/Basic/DiagnosticGroups.td
+@@ -103,6 +103,7 @@ def DoublePromotion : DiagGroup<"double-promotion">;
+ def EnumTooLarge : DiagGroup<"enum-too-large">;
+ def UnsupportedNan : DiagGroup<"unsupported-nan">;
+ def UnsupportedAbs : DiagGroup<"unsupported-abs">;
++def UnsupportedFPOpt : DiagGroup<"unsupported-floating-point-opt">;
+ def UnsupportedCB : DiagGroup<"unsupported-cb">;
+ def UnsupportedGPOpt : DiagGroup<"unsupported-gpopt">;
+ def UnsupportedTargetOpt : DiagGroup<"unsupported-target-opt">;

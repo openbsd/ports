@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_clang_include_clang_Basic_LangOptions_def,v 1.1 2020/11/18 21:20:00 jca Exp $
+
+Disable strict floating point if not X86.
+
+Index: tools/clang/include/clang/Basic/LangOptions.def
+--- tools/clang/include/clang/Basic/LangOptions.def.orig
++++ tools/clang/include/clang/Basic/LangOptions.def
+@@ -257,6 +257,7 @@ LANGOPT(SinglePrecisionConstants , 1, 0, "treating dou
+ LANGOPT(FastRelaxedMath , 1, 0, "OpenCL fast relaxed math")
+ /// FP_CONTRACT mode (on/off/fast).
+ ENUM_LANGOPT(DefaultFPContractMode, FPContractModeKind, 2, FPC_Off, "FP contraction type")
++COMPATIBLE_LANGOPT(ExpStrictFP, 1, false, "Enable experimental strict floating point")
+ ENUM_LANGOPT(FPRoundingMode, FPRoundingModeKind, 3, FPR_ToNearest, "FP Rounding Mode type")
+ ENUM_LANGOPT(FPExceptionMode, FPExceptionModeKind, 2, FPE_Ignore, "FP Exception Behavior Mode type")
+ LANGOPT(NoBitFieldTypeAlign , 1, 0, "bit-field type alignment")

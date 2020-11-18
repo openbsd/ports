@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_clang_lib_Basic_TargetInfo_cpp,v 1.1 2020/11/18 21:20:00 jca Exp $
+
+Disable strict floating point if not X86.
+
+Index: tools/clang/lib/Basic/TargetInfo.cpp
+--- tools/clang/lib/Basic/TargetInfo.cpp.orig
++++ tools/clang/lib/Basic/TargetInfo.cpp
+@@ -36,6 +36,7 @@ TargetInfo::TargetInfo(const llvm::Triple &T) : Target
+   HasLegalHalfType = false;
+   HasFloat128 = false;
+   HasFloat16 = false;
++  HasStrictFP = false;
+   PointerWidth = PointerAlign = 32;
+   BoolWidth = BoolAlign = 8;
+   IntWidth = IntAlign = 32;
