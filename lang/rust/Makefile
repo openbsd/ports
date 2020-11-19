@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2020/11/09 18:56:10 semarie Exp $
+# $OpenBSD: Makefile,v 1.122 2020/11/19 16:06:06 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,18 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.47.0
-CARGO_V =		0.48.0
-CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.4.20
+V =			1.48.0
 DISTNAME =		rustc-${V}-src
-REVISION =		0
 
 # rustc bootstrap version
-BV-aarch64 =		1.47.0-20201009
-BV-amd64 =		1.47.0-20201007
-BV-i386 =		1.47.0-20201010
-BV-sparc64 =		1.47.0-20201008
+BV-aarch64 =		1.48.0-20201119
+BV-amd64 =		1.48.0-20201117
+BV-i386 =		1.48.0-20201118
+BV-sparc64 =		1.48.0-20201117
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -247,8 +243,8 @@ do-build:
 		library/std src/librustc cargo clippy rustfmt
 	rm -rf -- ${WRKBUILD}/build/tmp/dist
 
-COMPONENTS ?=	rustc-${V} rust-std-${V} cargo-${CARGO_V} \
-		clippy-${CLIPPY_V} rustfmt-${RUSTFMT_V}
+COMPONENTS ?=	rustc-${V} rust-std-${V} cargo-${V} \
+		clippy-${V} rustfmt-${V}
 do-install:
 	rm -rf ${WRKBUILD}/_extractdist
 .for _c in ${COMPONENTS}
@@ -295,7 +291,7 @@ bootstrap: build
 	${MAKE} clean=fake
 	${MAKE} fake \
 		PREFIX="${BOOTSTRAPDIR}" \
-		COMPONENTS="rustc-${V} rust-std-${V} cargo-${CARGO_V}" \
+		COMPONENTS="rustc-${V} rust-std-${V} cargo-${V}" \
 		FAKE_SETUP=""
 	${_PBUILD} rm -rf ${BOOTSTRAPDIR}/{man,share} \
 		${BOOTSTRAPDIR}/bin/rust-gdb*

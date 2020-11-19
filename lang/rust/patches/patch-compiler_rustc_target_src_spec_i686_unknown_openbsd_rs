@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_librustc_target_spec_i686_unknown_openbsd_rs,v 1.5 2020/02/11 12:48:20 semarie Exp $
+$OpenBSD: patch-compiler_rustc_target_src_spec_i686_unknown_openbsd_rs,v 1.1 2020/11/19 16:06:07 semarie Exp $
 i386 should be pentiumpro (no SSE2, no ...)
 pass -znotext to avoid relocation problem with __rust_probestack symbol
-Index: src/librustc_target/spec/i686_unknown_openbsd.rs
---- src/librustc_target/spec/i686_unknown_openbsd.rs.orig
-+++ src/librustc_target/spec/i686_unknown_openbsd.rs
+Index: compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
+--- compiler/rustc_target/src/spec/i686_unknown_openbsd.rs.orig
++++ compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
 @@ -2,10 +2,11 @@ use crate::spec::{LinkerFlavor, Target, TargetResult};
  
  pub fn target() -> TargetResult {

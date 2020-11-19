@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_librustc_session_filesearch_rs,v 1.12 2020/11/05 09:21:34 semarie Exp $
+$OpenBSD: patch-compiler_rustc_session_src_filesearch_rs,v 1.1 2020/11/19 16:06:07 semarie Exp $
 fallback to LOCALBASE as default sysroot.
-Index: src/librustc_session/filesearch.rs
---- src/librustc_session/filesearch.rs.orig
-+++ src/librustc_session/filesearch.rs
-@@ -132,7 +132,10 @@ pub fn get_or_default_sysroot() -> PathBuf {
+Index: compiler/rustc_session/src/filesearch.rs
+--- compiler/rustc_session/src/filesearch.rs.orig
++++ compiler/rustc_session/src/filesearch.rs
+@@ -130,7 +130,10 @@ pub fn get_or_default_sysroot() -> PathBuf {
              p.pop();
              p
          }
