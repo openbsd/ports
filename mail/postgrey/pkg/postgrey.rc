@@ -1,12 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: postgrey.rc,v 1.4 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: postgrey.rc,v 1.5 2020/11/19 14:00:55 sthen Exp $
 
 daemon="${TRUEPREFIX}/libexec/postgrey -d"
 daemon_flags="--inet=10023"
 
 . /etc/rc.d/rc.subr
 
-pexp="perl: ${daemon}${daemon_flags:+ ${daemon_flags}}"
+pexp="perl: ${daemon}${daemon_flags:+ ${daemon_flags}}.*"
 
 rc_cmd $1

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2019/08/31 15:55:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/11/19 14:00:55 sthen Exp $
 
 COMMENT=	postfix greylist daemon
 
 DISTNAME=	postgrey-1.37
+REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	https://postgrey.schweikert.ch/
