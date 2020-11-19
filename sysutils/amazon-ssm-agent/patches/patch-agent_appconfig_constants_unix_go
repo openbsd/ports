@@ -1,48 +1,19 @@
-$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.13 2020/10/07 11:29:56 ajacoutot Exp $
+$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.14 2020/11/19 16:10:45 ajacoutot Exp $
 
 Index: agent/appconfig/constants_unix.go
 --- agent/appconfig/constants_unix.go.orig
 +++ agent/appconfig/constants_unix.go
-@@ -26,52 +26,52 @@ import (
+@@ -28,7 +28,7 @@ import (
  const (
  
+ 	// AgentExtensions specified the root folder for various kinds of downloaded content
+-	AgentData = "/var/lib/amazon/ssm/"
++	AgentData = "/var/db/amazon/ssm/"
+ 
  	// PackageRoot specifies the directory under which packages will be downloaded and installed
--	PackageRoot = "/var/lib/amazon/ssm/packages"
-+	PackageRoot = "/var/db/amazon/ssm/packages"
- 
- 	// PackageLockRoot specifies the directory under which package lock files will reside
--	PackageLockRoot = "/var/lib/amazon/ssm/locks/packages"
-+	PackageLockRoot = "/var/db/amazon/ssm/locks/packages"
- 
- 	// PackagePlatform is the platform name to use when looking for packages
- 	PackagePlatform = "linux"
- 
- 	// DaemonRoot specifies the directory where daemon registration information is stored
--	DaemonRoot = "/var/lib/amazon/ssm/daemons"
-+	DaemonRoot = "/var/db/amazon/ssm/daemons"
- 
- 	// LocalCommandRoot specifies the directory where users can submit command documents offline
--	LocalCommandRoot = "/var/lib/amazon/ssm/localcommands"
-+	LocalCommandRoot = "/var/db/amazon/ssm/localcommands"
- 
- 	// LocalCommandRootSubmitted is the directory where locally submitted command documents
- 	// are moved when they have been picked up
--	LocalCommandRootSubmitted = "/var/lib/amazon/ssm/localcommands/submitted"
--	LocalCommandRootCompleted = "/var/lib/amazon/ssm/localcommands/completed"
-+	LocalCommandRootSubmitted = "/var/db/amazon/ssm/localcommands/submitted"
-+	LocalCommandRootCompleted = "/var/db/amazon/ssm/localcommands/completed"
- 
- 	// LocalCommandRootInvalid is the directory where locally submitted command documents
- 	// are moved if the service cannot validate the document (generally impossible via cli)
--	LocalCommandRootInvalid = "/var/lib/amazon/ssm/localcommands/invalid"
-+	LocalCommandRootInvalid = "/var/db/amazon/ssm/localcommands/invalid"
- 
- 	// DownloadRoot specifies the directory under which files will be downloaded
- 	DownloadRoot = "/var/log/amazon/ssm/download/"
- 
- 	// DefaultDataStorePath represents the directory for storing system data
--	DefaultDataStorePath = "/var/lib/amazon/ssm/"
-+	DefaultDataStorePath = "/var/db/amazon/ssm/"
+ 	PackageRoot = AgentData + "packages"
+@@ -61,10 +61,10 @@ const (
+ 	DefaultDataStorePath = AgentData
  
  	// EC2ConfigDataStorePath represents the directory for storing ec2 config data
 -	EC2ConfigDataStorePath = "/var/lib/amazon/ec2config/"
@@ -53,40 +24,20 @@ Index: agent/appconfig/constants_unix.go
 +	EC2ConfigSettingPath = "/var/db/amazon/ec2configservice/"
  
  	// UpdaterArtifactsRoot represents the directory for storing update related information
--	UpdaterArtifactsRoot = "/var/lib/amazon/ssm/update/"
-+	UpdaterArtifactsRoot = "/var/db/amazon/ssm/update/"
- 
- 	// UpdaterPidLockfile represents the location of the updater lockfile
- 	UpdaterPidLockfile = DefaultDataStorePath + "update.lock"
- 
- 	// DefaultPluginPath represents the directory for storing plugins in SSM
--	DefaultPluginPath = "/var/lib/amazon/ssm/plugins"
-+	DefaultPluginPath = "/var/db/amazon/ssm/plugins"
- 
- 	// ManifestCacheDirectory represents the directory for storing all downloaded manifest files
--	ManifestCacheDirectory = "/var/lib/amazon/ssm/manifests"
-+	ManifestCacheDirectory = "/var/db/amazon/ssm/manifests"
- 
- 	// List all plugin names, unfortunately golang doesn't support const arrays of strings
- 
-@@ -101,11 +101,11 @@ const (
+ 	UpdaterArtifactsRoot = AgentData + "update/"
+@@ -112,9 +112,9 @@ const (
  var PowerShellPluginCommandName string
  
  // DefaultProgramFolder is the default folder for SSM
 -var DefaultProgramFolder = "/etc/amazon/ssm/"
--var DefaultSSMAgentWorker = "/usr/bin/ssm-agent-worker"
--var DefaultDocumentWorker = "/usr/bin/ssm-document-worker"
--var DefaultSessionWorker = "/usr/bin/ssm-session-worker"
--var DefaultSessionLogger = "/usr/bin/ssm-session-logger"
 +var DefaultProgramFolder = "${SYSCONFDIR}/amazon/ssm/"
-+var DefaultSSMAgentWorker = "${LOCALBASE}/bin/ssm-agent-worker"
-+var DefaultDocumentWorker = "${LOCALBASE}/bin/ssm-document-worker"
-+var DefaultSessionWorker = "${LOCALBASE}/bin/ssm-session-worker"
-+var DefaultSessionLogger = "${LOCALBASE}/bin/ssm-session-logger"
  
- // AppConfigPath is the path of the AppConfig
- var AppConfigPath = DefaultProgramFolder + AppConfigFileName
-@@ -114,9 +114,9 @@ func init() {
+-var defaultWorkerPath = "/usr/bin/"
++var defaultWorkerPath = "${LOCALBASE}/bin/"
+ var DefaultSSMAgentWorker = defaultWorkerPath + "ssm-agent-worker"
+ var DefaultDocumentWorker = defaultWorkerPath + "ssm-document-worker"
+ var DefaultSessionWorker = defaultWorkerPath + "ssm-session-worker"
+@@ -133,9 +133,9 @@ func init() {
  	/*
  	   Powershell command used to be poweshell in alpha versions, now it's pwsh in prod versions
  	*/
@@ -97,4 +48,4 @@ Index: agent/appconfig/constants_unix.go
 +		PowerShellPluginCommandName = "${LOCALBASE}/bin/pwsh"
  	}
  
- 	// Find current directory path for amazon-ssm-agent, DefaultDocumentWorker should exist in same directory
+ 	// curdir is amazon-ssm-agent current directory path
