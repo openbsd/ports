@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_logstash,v 1.1 2018/05/17 10:50:12 pvk Exp $
+$OpenBSD: patch-bin_logstash,v 1.2 2020/11/19 20:49:18 pvk Exp $
 
 Index: bin/logstash
 --- bin/logstash.orig
@@ -6,6 +6,6 @@ Index: bin/logstash
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/bin/env bash
- # Run logstash from source
+ # Run logstash
  #
- # This is most useful when done from a git checkout.
+ # Usage:

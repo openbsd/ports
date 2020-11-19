@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2020/09/10 13:54:53 pvk Exp $
+# $OpenBSD: Makefile,v 1.40 2020/11/19 20:49:18 pvk Exp $
 
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 
-V =			7.9.1
-DISTNAME =		logstash-oss-$V
+V =			7.10.0
+DISTNAME =		logstash-oss-$V-darwin-x86_64
 PKGNAME =		logstash-$V
 EPOCH =			0
 
@@ -18,10 +18,6 @@ MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://artifacts.elastic.co/downloads/logstash/
-
-MASTER_SITES0 =		https://distfiles.tristero.se/
-DISTFILES =		logstash-oss-$V.tar.gz
-EXTRACT_ONLY =		logstash-oss-$V.tar.gz
 
 MODULES =		java
 MODJAVA_VER =		11
