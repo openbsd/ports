@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/19 07:15:49 benoit Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Section/
+${P5SITE}/Data/Section/Simple.pm
+@man man/man3p/Data::Section::Simple.3p

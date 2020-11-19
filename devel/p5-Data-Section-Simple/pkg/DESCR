@@ -1,0 +1,2 @@
+Data::Section::Simple is a simple module to extract data from "__DATA__"
+section of the file.
