@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2020/11/17 16:01:45 landry Exp $
+# $OpenBSD: Makefile,v 1.246 2020/11/19 16:06:10 semarie Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -13,7 +13,7 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-5.8.5
 EPOCH-lightning =	0
-REVISION-main =		0
+REVISION-main =		1
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
@@ -61,6 +61,10 @@ WANTLIB-lightning=
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
+
+post-patch:
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/mozilla/third_party/rust/*/.cargo-checksum.json
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/

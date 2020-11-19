@@ -1,0 +1,14 @@
+$OpenBSD: patch-mozilla_third_party_rust_packed_simd_src_api_into_bits_arch_specific_rs,v 1.1 2020/11/19 16:06:10 semarie Exp $
+build with rust 1.48.0
+backport https://github.com/rust-lang/packed_simd/commit/57d96e45916066fa9b5cdf2bc695e190207e78af
+Index: mozilla/third_party/rust/packed_simd/src/api/into_bits/arch_specific.rs
+--- mozilla/third_party/rust/packed_simd/src/api/into_bits/arch_specific.rs.orig
++++ mozilla/third_party/rust/packed_simd/src/api/into_bits/arch_specific.rs
+@@ -84,7 +84,6 @@ macro_rules! impl_arch {
+ // FIXME: 64-bit single element types
+ // FIXME: arm/aarch float16x4_t missing
+ impl_arch!(
+-    [x86["x86"]: __m64], [x86_64["x86_64"]: __m64],
+     [arm["arm"]: int8x8_t, uint8x8_t, poly8x8_t, int16x4_t, uint16x4_t,
+      poly16x4_t, int32x2_t, uint32x2_t, float32x2_t, int64x1_t,
+      uint64x1_t],

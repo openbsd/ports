@@ -1,0 +1,21 @@
+$OpenBSD: patch-mozilla_third_party_rust_packed_simd_src_codegen_reductions_mask_x86_rs,v 1.1 2020/11/19 16:06:10 semarie Exp $
+build with rust 1.48.0
+backport https://github.com/rust-lang/packed_simd/commit/778c0706f356118c7a5dd11c06725fc6c6b84621
+Index: mozilla/third_party/rust/packed_simd/src/codegen/reductions/mask/x86.rs
+--- mozilla/third_party/rust/packed_simd/src/codegen/reductions/mask/x86.rs.orig
++++ mozilla/third_party/rust/packed_simd/src/codegen/reductions/mask/x86.rs
+@@ -19,13 +19,7 @@ mod avx2;
+ /// x86 64-bit m8x8 implementation
+ macro_rules! x86_m8x8_impl {
+     ($id:ident) => {
+-        cfg_if! {
+-            if #[cfg(all(target_arch = "x86_64", target_feature = "sse"))] {
+-                x86_m8x8_sse_impl!($id);
+-            } else {
+-                fallback_impl!($id);
+-            }
+-        }
++        fallback_impl!($id);
+     };
+ }
+ 

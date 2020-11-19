@@ -1,0 +1,14 @@
+$OpenBSD: patch-mozilla_third_party_rust_packed_simd_src_lib_rs,v 1.1 2020/11/19 16:06:10 semarie Exp $
+build with rust 1.48.0
+backport https://github.com/rust-lang/packed_simd/commit/778c0706f356118c7a5dd11c06725fc6c6b84621
+Index: mozilla/third_party/rust/packed_simd/src/lib.rs
+--- mozilla/third_party/rust/packed_simd/src/lib.rs.orig
++++ mozilla/third_party/rust/packed_simd/src/lib.rs
+@@ -210,7 +210,6 @@
+     core_intrinsics,
+     stmt_expr_attributes,
+     align_offset,
+-    mmx_target_feature,
+     crate_visibility_modifier,
+     custom_inner_attributes
+ )]
