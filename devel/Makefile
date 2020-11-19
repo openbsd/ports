@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2037 2020/11/16 18:40:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2038 2020/11/19 07:19:54 benoit Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -661,6 +661,7 @@
      SUBDIR += p5-Data-OptList
      SUBDIR += p5-Data-Printer
      SUBDIR += p5-Data-Random
+     SUBDIR += p5-Data-Section-Simple
      SUBDIR += p5-Data-SExpression
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-Stag
