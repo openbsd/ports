@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/11/30 18:28:46 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/19 21:08:04 naddy Exp $
 @conflict gmp-<4.2
 include/mpf2mpfr.h
 include/mpfr.h
 @info info/mpfr.info
-lib/libmpfr.a
+@static-lib lib/libmpfr.a
 lib/libmpfr.la
 @lib lib/libmpfr.so.${LIBmpfr_VERSION}
 lib/pkgconfig/mpfr.pc
@@ -21,4 +21,5 @@ share/examples/mpfr/can_round.c
 share/examples/mpfr/divworst.c
 share/examples/mpfr/rndo-add.c
 share/examples/mpfr/sample.c
+share/examples/mpfr/threads.c
 share/examples/mpfr/version.c
