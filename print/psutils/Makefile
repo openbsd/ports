@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2020/07/03 18:00:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2020/11/19 15:17:48 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	utilities for manipulating PostScript documents
 
-V=		2.03
+V=		2.04
 DISTNAME=	psutils-${V}
-REVISION=	1
 
 CATEGORIES=	print
 
