@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/11/18 00:15:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/11/19 11:30:55 sthen Exp $
 
 COMMENT =	C++ library of cryptographic algorithms
 CATEGORIES =	devel security
@@ -7,6 +7,7 @@ HOMEPAGE =	https://cryptopp.com/
 MASTER_SITES =	${HOMEPAGE}
 
 V =		8.2.0
+REVISION =	0
 DISTNAME =	cryptopp${V:S/.//g}
 PKGNAME =	cryptopp-$V
 
@@ -43,7 +44,10 @@ TEST_FLAGS +=	WRKDIST=${WRKDIST}
 ALL_TARGET =	all libcryptopp.pc
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
+.if ${MACHINE_ARCH:Mpowerpc*}
+# https://marc.info/?l=openbsd-ports&m=160575195204466&w=2
+CXXFLAGS +=	-DCRYPTOPP_DISABLE_ASM
+.elif ${PROPERTIES:Mclang}
 CXXFLAGS +=	-DCRYPTOPP_DISABLE_MIXED_ASM
 .endif
 
