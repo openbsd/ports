@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_kibana_yml,v 1.6 2020/09/10 13:47:57 pvk Exp $
+$OpenBSD: patch-config_kibana_yml,v 1.7 2020/11/19 20:28:03 pvk Exp $
 Index: config/kibana.yml
 --- config/kibana.yml.orig
 +++ config/kibana.yml
-@@ -94,13 +94,13 @@
+@@ -86,13 +86,13 @@
  #pid.file: /var/run/kibana.pid
  
  # Enables you to specify a file where Kibana stores log output.
