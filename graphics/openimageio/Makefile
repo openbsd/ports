@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2020/11/17 20:37:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2020/11/19 11:41:01 sthen Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -57,6 +57,7 @@ LIB_DEPENDS =		devel/boost>=1.67.0 \
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="man/man1" \
 			-DSTOP_ON_WARNING=OFF \
+			-DUSE_CCACHE=OFF \
 			-DUSE_DICOM=OFF \
 			-DUSE_EXTERNAL_PUGIXML=ON \
 			-DUSE_OPENCV=OFF
