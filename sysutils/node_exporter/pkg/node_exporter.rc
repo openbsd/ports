@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: node_exporter.rc,v 1.1.1.1 2019/05/08 12:37:09 claudio Exp $
+# $OpenBSD: node_exporter.rc,v 1.2 2020/11/20 21:17:21 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/node_exporter"
 daemon_user=_nodeexporter

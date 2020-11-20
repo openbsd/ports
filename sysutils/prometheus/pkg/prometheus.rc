@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: prometheus.rc,v 1.1.1.1 2018/01/10 16:26:19 claudio Exp $
+# $OpenBSD: prometheus.rc,v 1.2 2020/11/20 21:17:21 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/prometheus"
 daemon_flags="--config.file ${SYSCONFDIR}/prometheus/prometheus.yml"
