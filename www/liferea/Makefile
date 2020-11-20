@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.113 2020/11/20 20:26:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2020/11/20 20:48:43 sthen Exp $
 
 COMMENT=		simple GTK desktop news aggregator
 
 V=			1.12.9
 DISTNAME=		liferea-${V}
+REVISION=		0
 
 CATEGORIES=		www news x11
 
@@ -12,22 +13,24 @@ HOMEPAGE=		https://lzone.de/liferea/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xt Xxf86vm aspell atk-1.0 atk-bridge-2.0 brotlicommon brotlidec
-WANTLIB += c cairo cairo-gobject drm enchant-2 epoxy expat ffi fontconfig
-WANTLIB += freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += girepository-1.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
-WANTLIB += gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv icudata
-WANTLIB += icui18n icuuc idn2 intl javascriptcoregtk-4.0 jpeg json-glib-1.0
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += EGL GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
+WANTLIB += aspell atk-1.0 atk-bridge-2.0 brotlicommon brotlidec
+WANTLIB += c cairo cairo-gobject drm enchant-2 epoxy expat ffi
+WANTLIB += fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glapi glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gpg-error graphite2 gstallocators-1.0 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += harfbuzz harfbuzz-icu hyphen iconv icudata icui18n
+WANTLIB += icuuc idn2 intl javascriptcoregtk-4.0 jpeg json-glib-1.0
 WANTLIB += lzma m notify openjp2 orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png psl
-WANTLIB += secret-1 soup-2.4 sqlite3 tasn1 unistring webkit2gtk-4.0 webp
-WANTLIB += webpdemux woff2common woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx
-WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes xml2
-WANTLIB += xshmfence xslt z
+WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
+WANTLIB += psl secret-1 soup-2.4 sqlite3 tasn1 unistring webkit2gtk-4.0
+WANTLIB += webp webpdemux woff2common woff2dec xcb xcb-dri2 xcb-dri3
+WANTLIB += xcb-glx xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
+WANTLIB += xml2 xshmfence xslt z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
