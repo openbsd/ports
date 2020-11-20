@@ -1,12 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/09 14:05:48 sthen Exp $
-@man man/man8/biosdecode.8
+@comment $OpenBSD: PLIST,v 1.5 2020/11/20 11:07:54 sthen Exp $
+%%x86%%
 @man man/man8/dmidecode.8
-@man man/man8/ownership.8
-@man man/man8/vpddecode.8
-@bin sbin/biosdecode
 @bin sbin/dmidecode
-@bin sbin/ownership
-@bin sbin/vpddecode
 share/doc/dmidecode/
 share/doc/dmidecode/AUTHORS
 share/doc/dmidecode/NEWS
