@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2020/11/20 11:42:51 mestre Exp $
+# $OpenBSD: Makefile,v 1.216 2020/11/20 19:38:48 sthen Exp $
 
 COMMENT =	CLI program to download videos from YouTube and other sites
 
@@ -15,7 +15,7 @@ MAINTAINER =	Paul Irofti <paul@irofti.net>
 # Public Domain
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://youtube-dl.org/downloads/latest/
+MASTER_SITES =	https://youtube-dl.org/downloads/${VERSION}/
 
 MODULES =	lang/python
 
