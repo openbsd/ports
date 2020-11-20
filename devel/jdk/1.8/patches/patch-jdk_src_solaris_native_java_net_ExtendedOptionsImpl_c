@@ -1,0 +1,35 @@
+$OpenBSD: patch-jdk_src_solaris_native_java_net_ExtendedOptionsImpl_c,v 1.1 2020/11/20 20:48:15 kurt Exp $
+
+No support for socket options TCP_KEEPIDLE, TCP_KEEPCNT and
+TCP_KEEPINTVL.
+
+Index: jdk/src/solaris/native/java/net/ExtendedOptionsImpl.c
+--- jdk/src/solaris/native/java/net/ExtendedOptionsImpl.c.orig
++++ jdk/src/solaris/native/java/net/ExtendedOptionsImpl.c
+@@ -336,7 +336,7 @@ static jboolean flowSupported0() {
+ 
+ // Keep alive options are available for MACOSX and Linux only for
+ // the time being.
+-#if defined(__linux__) || defined(MACOSX) || defined(_ALLBSD_SOURCE)
++#if defined(__linux__) || defined(MACOSX) || (defined(_ALLBSD_SOURCE) && !defined(__OpenBSD__))
+ 
+ // Map socket option level/name to OS specific constant
+ #ifdef __linux__
+@@ -412,7 +412,7 @@ static jint getTcpSocketOption
+     }
+ }
+ 
+-#else /* __linux__ || MACOSX || _ALLBSD_SOURCE */
++#else /* __linux__ || MACOSX || (_ALLBSD_SOURCE && !__OpenBSD__) */
+ 
+ // On AIX and Solaris these constants aren't defined. Map them to a
+ // value so that the code below compiles. Values aren't used as
+@@ -440,7 +440,7 @@ static jint getTcpSocketOption
+         "unsupported socket option");
+ }
+ 
+-#endif /* __linux__ || MACOSX || _ALLBSD_SOURCE */
++#endif /* __linux__ || MACOSX || (_ALLBSD_SOURCE && !__OpenBSD__) */
+ 
+ JNIEXPORT jboolean JNICALL Java_sun_net_ExtendedOptionsImpl_flowSupported
+   (JNIEnv *env, jclass UNUSED) {

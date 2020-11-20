@@ -1,0 +1,44 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.1 2020/11/20 20:48:15 kurt Exp $
+
+Reduce optimization level of bitMap.cpp to -O1 to fix an undefined
+symbol runtime linking error with clang 10 on i386.
+
+Index: hotspot/make/bsd/makefiles/gcc.make
+--- hotspot/make/bsd/makefiles/gcc.make.orig
++++ hotspot/make/bsd/makefiles/gcc.make
+@@ -145,11 +145,20 @@ ifeq ($(USE_CLANG), true)
+     # level specific PCH files for the opt build and use them here, but
+     # it's probably not worth the effort as long as only a few files
+     # need this special handling.
+-    PCH_FLAG/loopTransform.o = $(PCH_FLAG/NO_PCH)
+     PCH_FLAG/sharedRuntimeTrig.o = $(PCH_FLAG/NO_PCH)
+     PCH_FLAG/sharedRuntimeTrans.o = $(PCH_FLAG/NO_PCH)
+-    PCH_FLAG/unsafe.o = $(PCH_FLAG/NO_PCH)
+-  
++    ifeq ($(shell expr $(CC_VER_MAJOR) = 4 \& $(CC_VER_MINOR) = 2), 1)
++      PCH_FLAG/loopTransform.o = $(PCH_FLAG/NO_PCH)
++      PCH_FLAG/unsafe.o = $(PCH_FLAG/NO_PCH)
++    endif
++    ifeq ($(shell expr $(CC_VER_MAJOR) = 6 \& $(CC_VER_MINOR) = 0), 1)
++      PCH_FLAG/unsafe.o = $(PCH_FLAG/NO_PCH)
++    endif
++    ifeq ($(shell expr $(CC_VER_MAJOR) = 10 \& $(CC_VER_MINOR) = 0), 1)
++      ifeq ($(BUILDARCH), i486)
++        PCH_FLAG/bitMap.o = $(PCH_FLAG/NO_PCH)
++      endif
++    endif
+   endif
+ else # ($(USE_CLANG), true)
+   # check for precompiled headers support
+@@ -336,6 +345,11 @@ ifeq ($(USE_CLANG), true)
+   endif
+   ifeq ($(shell expr $(CC_VER_MAJOR) = 6 \& $(CC_VER_MINOR) = 0), 1)
+     OPT_CFLAGS/unsafe.o += -O1
++  endif
++  ifeq ($(shell expr $(CC_VER_MAJOR) = 10 \& $(CC_VER_MINOR) = 0), 1)
++    ifeq ($(BUILDARCH), i486)
++      OPT_CFLAGS/bitMap.o += -O1
++    endif
+   endif
+ else
+   # 6835796. Problem in GCC 4.3.0 with mulnode.o optimized compilation.

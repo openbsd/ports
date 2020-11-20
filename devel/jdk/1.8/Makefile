@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2020/08/03 16:10:25 kurt Exp $
+# $OpenBSD: Makefile,v 1.55 2020/11/20 20:48:15 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -6,7 +6,7 @@ DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${V}
 BASE_VER=	1.8.0
-UPDATE_VER=	265
+UPDATE_VER=	275
 BUILD_VER=	b01
 BSD_PORT_REL=	1
 V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
