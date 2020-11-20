@@ -1,0 +1,29 @@
+$OpenBSD: patch-platform_h,v 1.1 2020/11/20 12:48:58 sthen Exp $
+
+fix generic endian detection for openbsd (aarch64 falls through to
+the generic as we don't define __ARMEL__ or __ARMEB__).
+
+Index: platform.h
+--- platform.h.orig
++++ platform.h
+@@ -141,11 +141,17 @@
+ #if !IS_WINDOWS
+ #include <sys/param.h>
+ 
+-#if defined (__BYTE_ORDER)
++#if defined (__BYTE_ORDER__)
++#if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
++#define __FLASHROM_LITTLE_ENDIAN__ 1
++#elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
++#define __FLASHROM_BIG_ENDIAN__ 1
++#endif
++#elif defined (__BYTE_ORDER)
+ #if __BYTE_ORDER == __LITTLE_ENDIAN
+-#define __FLASHROM_LITTLE_ENDIAN__
++#define __FLASHROM_LITTLE_ENDIAN__ 1
+ #elif __BYTE_ORDER == __BIG_ENDIAN
+-#define __FLASHROM_BIG_ENDIAN__
++#define __FLASHROM_BIG_ENDIAN__ 1
+ #else
+ #error Unknown byte order!
+ #endif

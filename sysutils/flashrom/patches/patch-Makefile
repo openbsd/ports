@@ -1,12 +1,35 @@
-$OpenBSD: patch-Makefile,v 1.5 2020/06/13 14:04:53 kn Exp $
+$OpenBSD: patch-Makefile,v 1.6 2020/11/20 12:48:58 sthen Exp $
 
-use patched pciutils.
+- fix arch/endian detection, machine/endian.h includes some asm that
+isn't stripped by upstream's pipeline
 
-fix clock_gettime detection.
+- OpenBSD clock_gettime is in libc not librt
+
+- use patched pciutils
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
+@@ -106,7 +106,7 @@ endif
+ # IMPORTANT: The following line must be placed before TARGET_OS is ever used
+ # (of course), but should come after any lines setting CC because the line
+ # below uses CC itself.
+-override TARGET_OS := $(strip $(call debug_shell,$(CC) $(CPPFLAGS) -E os.h 2>/dev/null | grep -v '^\#' | grep '"' | cut -f 2 -d'"'))
++override TARGET_OS := $(strip $(call debug_shell,$(CC) $(CPPFLAGS) -E os.h 2>/dev/null | grep -v '^\#' | grep '"' | cut -f 2 -d'"' | tail -1))
+ 
+ ifeq ($(TARGET_OS), Darwin)
+ override CPPFLAGS += -I/opt/local/include -I/usr/local/include
+@@ -421,8 +421,8 @@ endif
+ # IMPORTANT: The following line must be placed before ARCH is ever used
+ # (of course), but should come after any lines setting CC because the line
+ # below uses CC itself.
+-override ARCH := $(strip $(call debug_shell,$(CC) $(CPPFLAGS) -E archtest.c 2>/dev/null | grep -v '^\#' | grep '"' | cut -f 2 -d'"'))
+-override ENDIAN := $(strip $(call debug_shell,$(CC) $(CPPFLAGS) -E endiantest.c 2>/dev/null | grep -v '^\#'))
++override ARCH := $(strip $(call debug_shell,$(CC) $(CPPFLAGS) -E archtest.c 2>/dev/null | grep -v '^\#' | grep '"' | cut -f 2 -d'"' | tail -1))
++override ENDIAN := $(strip $(call debug_shell,$(CC) $(CPPFLAGS) -E endiantest.c 2>/dev/null | grep -v '^\#' | tail -1))
+ 
+ # Disable the internal programmer on unsupported architectures (everything but x86 and mipsel)
+ ifneq ($(ARCH)-little, $(filter $(ARCH),x86 mips)-$(ENDIAN))
 @@ -1120,7 +1120,6 @@ FEATURE_CFLAGS += $(call debug_shell,grep -q "UTSNAME 
  FEATURE_LIBS += $(call debug_shell,grep -q "NEEDLIBZ := yes" .libdeps && printf "%s" "-lz")
  

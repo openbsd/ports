@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/11 22:54:39 sthen Exp $
-
-ONLY_FOR_ARCHS=	i386 amd64
+# $OpenBSD: Makefile,v 1.18 2020/11/20 12:48:58 sthen Exp $
 
 COMMENT=	flash ROM programmer for BIOS etc
 
@@ -8,7 +6,7 @@ V=		1.2
 DISTNAME=	flashrom-v${V}
 PKGNAME=	flashrom-${V}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -23,22 +21,28 @@ WANTLIB=	c ftdi1 usb-1.0 z
 
 MASTER_SITES=	https://download.flashrom.org/releases/
 
-# pciutils' libpci.a is linked statically; a patched version is required.
-BUILD_DEPENDS=	sysutils/pciutils:patch
-RUN_DEPENDS=	sysutils/dmidecode
 LIB_DEPENDS=	devel/libftdi1 \
 		devel/libusb1
-MAKE_FLAGS=	LDFLAGS="-L./pciutils/lib" WARNERROR=no
+MAKE_FLAGS+=	WARNERROR=no
 FAKE_FLAGS=	PREFIX="${TRUEPREFIX}" MANDIR="${TRUEPREFIX}/man"
 
 PATCHORIG=	.orig.port
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
+.if ${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == i386
+# a patched pciutils libpci.a is needed (see patches/patchpci-*)
+BUILD_DEPENDS=	sysutils/pciutils:patch
+MAKE_FLAGS+=	LDFLAGS="-L./pciutils/lib"
+PATCH_LIST=	patchpci-* patch-*
+
 pre-patch:
 	mv ${WRKDIR}/sysutils/pciutils/pciutils-* ${WRKSRC}/pciutils
 
 do-configure:
 	${MAKE_PROGRAM} -C ${WRKSRC}/pciutils CC="${CC}" OPT="${CFLAGS}"
+.else
+MAKE_FLAGS+=	CONFIG_ENABLE_LIBPCI_PROGRAMMERS=no
+.endif
 
 .include <bsd.port.mk>

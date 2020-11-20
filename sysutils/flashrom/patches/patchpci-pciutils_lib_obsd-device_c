@@ -1,4 +1,4 @@
-$OpenBSD: patch-pciutils_lib_obsd-device_c,v 1.1.1.1 2016/06/01 16:42:23 sthen Exp $
+$OpenBSD: patchpci-pciutils_lib_obsd-device_c,v 1.1 2020/11/20 12:48:58 sthen Exp $
 
 OpenBSD's /dev/pci only permits aligned 32 bit writes.
 Emulate smaller writes by doing read/modify/write.
