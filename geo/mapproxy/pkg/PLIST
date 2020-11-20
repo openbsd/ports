@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/01/03 17:58:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/11/20 07:43:41 landry Exp $
 bin/mapproxy-seed
 bin/mapproxy-util
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -7,7 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mapproxy/
@@ -333,17 +332,9 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/common/1.
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/common/1.0/enums/enum_slv.xsd
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/common/1.0/enums/enum_spa.xsd
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/common/1.0/enums/enum_swe.xsd
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/common/1.0/examples/
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/common/1.0/examples/inspireresourcemddataset.xml
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/common/1.0/examples/inspireresourcemdseries.xml
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/common/1.0/examples/inspireresourcemdservice.xml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/common/1.0/network.xsd
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/inspire_vs/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/inspire_vs/1.0/
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/inspire_vs/1.0/examples/
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/inspire_vs/1.0/examples/WMS_Image2000GetCapabilities_InspireSchema.xml
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/inspire_vs/1.0/examples/wms_at.xml
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/inspire_vs/1.0/examples/wms_geoimage.xml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/inspire/inspire_vs/1.0/inspire_vs.xsd
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/kml/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/kml/2.2.0/
@@ -477,7 +468,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_xslt_featureinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/${MODPY_PYCACHE}cgi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/${MODPY_PYCACHE}minimal_cgi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/arcgis.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/auth.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache.mbtiles
@@ -513,7 +504,6 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_grid
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_mbtiles.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_s3.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_source.yaml
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cgi.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/combined_sources.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/coverage.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/disable_storage.yaml
@@ -529,6 +519,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/legendgrap
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/mapnik_source.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/mapproxy_export.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/mapserver.yaml
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/minimal_cgi.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/mixed_mode.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/multi_cache_layers.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/multiapp1.yaml

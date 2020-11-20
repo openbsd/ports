@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:12:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/11/20 07:43:41 landry Exp $
 
 COMMENT =	GIS WMTS/TMS tile caching server
 
-MODPY_EGG_VERSION =	1.12.0
+MODPY_EGG_VERSION =	1.13.0
 DISTNAME =		MapProxy-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
-REVISION =	1
 
 CATEGORIES =	geo www
 
@@ -21,8 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	mapproxy/test/system/fixture/cgi.py
 
-# libproj is dlopen'ed by proj.py - otherwise fallbacks to py-proj
-RUN_DEPENDS =	devel/proj \
+RUN_DEPENDS =	geo/py-proj${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR} \
 		graphics/py-Pillow${MODPY_FLAVOR}
