@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.112 2020/07/03 21:13:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2020/11/20 20:26:28 sthen Exp $
 
 COMMENT=		simple GTK desktop news aggregator
 
-V=			1.12.6
-DISTNAME=		liferea-${V}b
-REVISION=		0
+V=			1.12.9
+DISTNAME=		liferea-${V}
 
 CATEGORIES=		www news x11
 
