@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.11 2019/12/19 15:48:56 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.12 2020/11/20 17:29:11 sthen Exp $
 
 Avoid the broken libwsutil.so that gets generated with -pie -shared
 (probably following tools/clang/lib/Driver/Tools.cpp r1.13 "push back
@@ -7,7 +7,7 @@ Avoid the broken libwsutil.so that gets generated with -pie -shared
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -935,7 +935,7 @@ endif()
+@@ -953,7 +953,7 @@ endif()
  
  include(CheckCLinkerFlag)
  

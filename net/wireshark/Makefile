@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.112 2020/10/29 22:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2020/11/20 17:29:11 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
-V =		3.2.8
+V =		3.4.0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -26,8 +26,7 @@ EXTRACT_SUFX =	.tar.xz
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE = Yes
 
-cWANTLIB +=	c gcrypt glib-2.0 gmodule-2.0
-cWANTLIB +=	m pcap z
+cWANTLIB +=	c gcrypt glib-2.0 gmodule-2.0 m pcap z
 
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -60,10 +59,10 @@ MODPY_RUNDEP =	No
 
 WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
 WANTLIB-text += bcg729 brotlidec cares gnutls lz4 maxminddb nghttp2
-WANTLIB-text += smi snappy spandsp speexdsp ssh xml2 zstd
+WANTLIB-text += opus smi snappy spandsp speexdsp ssh xml2 zstd
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += speexdsp wireshark wiretap wsutil
+WANTLIB-main += minizip speexdsp wireshark wiretap wsutil
 WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
 
 MASTER_SITES =		https://www.wireshark.org/download/src/all-versions/
@@ -88,6 +87,7 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			archivers/brotli \
 			archivers/lz4 \
 			archivers/snappy \
+			audio/opus \
 			audio/speexdsp \
 			devel/glib2 \
 			net/libcares \
@@ -103,19 +103,17 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			tshark-$V:${BUILD_PKGPATH:S/,$//},-text \
-			x11/qt5/qtmultimedia \
-			x11/qt5/qtsvg
-# will probably be "extra" - this library dep doesn't seem to actually show
-# up in the package, possibly due to as-needed, but it does link the final
-# binary with -lQt5Svg if it was found during configure. I'd rather have
-# an "Extra" (that may later change to a real WANTLIB) than failing builds.
-WANTLIB-main +=		Qt5Svg
+			archivers/minizip \
+			x11/qt5/qtmultimedia
+# required for displaying language icons at Preferences; see a5abaa81ad9
+RUN_DEPENDS-main +=	x11/qt5/qtsvg
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ENV +=	WIRESHARK_VERSION_EXTRA=" from OpenBSD packages"
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
-			-DENABLE_MINIZIP=false \
+			-DENABLE_SBC=false \
+			-DENABLE_ILBC=false \
 			-DCOMPILER_CAN_HANDLE_SSE4_2=false
 
 .include <bsd.port.arch.mk>

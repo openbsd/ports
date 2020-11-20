@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-text,v 1.13 2020/04/09 20:06:48 sthen Exp $
+@comment $OpenBSD: PLIST-text,v 1.14 2020/11/20 17:29:11 sthen Exp $
 @newgroup _wireshark:735
 @bin bin/capinfos
 @bin bin/captype
@@ -36,6 +36,7 @@ include/wireshark/epan/bridged_pids.h
 include/wireshark/epan/capture_dissectors.h
 include/wireshark/epan/charsets.h
 include/wireshark/epan/chdlctypes.h
+include/wireshark/epan/cisco_pid.h
 include/wireshark/epan/color_filters.h
 include/wireshark/epan/column-info.h
 include/wireshark/epan/column-utils.h
@@ -60,6 +61,7 @@ include/wireshark/epan/dissectors/
 include/wireshark/epan/dissectors/file-rbm.h
 include/wireshark/epan/dissectors/packet-6lowpan.h
 include/wireshark/epan/dissectors/packet-a21.h
+include/wireshark/epan/dissectors/packet-acdr.h
 include/wireshark/epan/dissectors/packet-acp133.h
 include/wireshark/epan/dissectors/packet-acse.h
 include/wireshark/epan/dissectors/packet-actrace.h
@@ -89,6 +91,7 @@ include/wireshark/epan/dissectors/packet-btavrcp.h
 include/wireshark/epan/dissectors/packet-bthci_acl.h
 include/wireshark/epan/dissectors/packet-bthci_cmd.h
 include/wireshark/epan/dissectors/packet-bthci_evt.h
+include/wireshark/epan/dissectors/packet-bthci_iso.h
 include/wireshark/epan/dissectors/packet-bthci_sco.h
 include/wireshark/epan/dissectors/packet-btl2cap.h
 include/wireshark/epan/dissectors/packet-btle.h
@@ -153,6 +156,7 @@ include/wireshark/epan/dissectors/packet-epmd.h
 include/wireshark/epan/dissectors/packet-erf.h
 include/wireshark/epan/dissectors/packet-ess.h
 include/wireshark/epan/dissectors/packet-eth.h
+include/wireshark/epan/dissectors/packet-f1ap.h
 include/wireshark/epan/dissectors/packet-f5ethtrailer.h
 include/wireshark/epan/dissectors/packet-fc.h
 include/wireshark/epan/dissectors/packet-fcbls.h
@@ -168,6 +172,7 @@ include/wireshark/epan/dissectors/packet-fix.h
 include/wireshark/epan/dissectors/packet-fmp.h
 include/wireshark/epan/dissectors/packet-frame.h
 include/wireshark/epan/dissectors/packet-ftam.h
+include/wireshark/epan/dissectors/packet-ftdi-ft.h
 include/wireshark/epan/dissectors/packet-geonw.h
 include/wireshark/epan/dissectors/packet-giop.h
 include/wireshark/epan/dissectors/packet-gluster.h
@@ -245,6 +250,7 @@ include/wireshark/epan/dissectors/packet-llc.h
 include/wireshark/epan/dissectors/packet-lnet.h
 include/wireshark/epan/dissectors/packet-logotypecertextn.h
 include/wireshark/epan/dissectors/packet-lpp.h
+include/wireshark/epan/dissectors/packet-lppa.h
 include/wireshark/epan/dissectors/packet-lte-rrc.h
 include/wireshark/epan/dissectors/packet-mac-lte.h
 include/wireshark/epan/dissectors/packet-mausb.h
@@ -424,6 +430,7 @@ include/wireshark/epan/dissectors/packet-xmpp-jingle.h
 include/wireshark/epan/dissectors/packet-xmpp-other.h
 include/wireshark/epan/dissectors/packet-xmpp-utils.h
 include/wireshark/epan/dissectors/packet-xmpp.h
+include/wireshark/epan/dissectors/packet-xnap.h
 include/wireshark/epan/dissectors/packet-ypbind.h
 include/wireshark/epan/dissectors/packet-yppasswd.h
 include/wireshark/epan/dissectors/packet-ypserv.h
@@ -579,6 +586,7 @@ include/wireshark/wsutil/crc7.h
 include/wireshark/wsutil/crc8.h
 include/wireshark/wsutil/curve25519.h
 include/wireshark/wsutil/eax.h
+include/wireshark/wsutil/epochs.h
 include/wireshark/wsutil/filesystem.h
 include/wireshark/wsutil/frequency-utils.h
 include/wireshark/wsutil/g711.h
@@ -647,6 +655,7 @@ lib/wireshark/plugins/${WVER}/codecs/
 @so lib/wireshark/plugins/${WVER}/codecs/g726.so
 @so lib/wireshark/plugins/${WVER}/codecs/g729.so
 @so lib/wireshark/plugins/${WVER}/codecs/l16mono.so
+@so lib/wireshark/plugins/${WVER}/codecs/opus_dec.so
 lib/wireshark/plugins/${WVER}/epan/
 @so lib/wireshark/plugins/${WVER}/epan/ethercat.so
 @so lib/wireshark/plugins/${WVER}/epan/gryphon.so
@@ -704,6 +713,7 @@ share/wireshark/diameter/HP.xml
 share/wireshark/diameter/Huawei.xml
 share/wireshark/diameter/Inovar.xml
 share/wireshark/diameter/Juniper.xml
+share/wireshark/diameter/Metaswitch.xml
 share/wireshark/diameter/Microsoft.xml
 share/wireshark/diameter/Nokia.xml
 share/wireshark/diameter/NokiaSolutionsAndNetworks.xml
@@ -820,6 +830,7 @@ share/wireshark/radius/dictionary.dlink
 share/wireshark/radius/dictionary.dragonwave
 share/wireshark/radius/dictionary.efficientip
 share/wireshark/radius/dictionary.eltex
+share/wireshark/radius/dictionary.enterasys
 share/wireshark/radius/dictionary.epygi
 share/wireshark/radius/dictionary.equallogic
 share/wireshark/radius/dictionary.ericsson
@@ -841,6 +852,7 @@ share/wireshark/radius/dictionary.h3c
 share/wireshark/radius/dictionary.hp
 share/wireshark/radius/dictionary.huawei
 share/wireshark/radius/dictionary.iana
+share/wireshark/radius/dictionary.identity_engines
 share/wireshark/radius/dictionary.iea
 share/wireshark/radius/dictionary.infoblox
 share/wireshark/radius/dictionary.infonet
