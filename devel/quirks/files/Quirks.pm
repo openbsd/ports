@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1114 2020/11/14 14:55:24 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1115 2020/11/20 05:41:11 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2116,6 +2116,7 @@ my $cve = {
 	'shells/bash' => 'bash-<4.3.27',
 	'sysutils/ansible,-main' => 'ansible-<2.7.1',
 	'sysutils/mcollective' => 'mcollective-<2.5.3',
+	'sysutils/rclone' => 'rclone-<1.53.3',
 	'sysutils/salt' => 'salt-<3002',
 	'telephony/asterisk,-main' => 'asterisk-<13.23.1',
 	'telephony/coturn' => 'turnserver-<4.5.1.2',
