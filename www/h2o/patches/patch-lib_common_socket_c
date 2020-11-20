@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_common_socket_c,v 1.1 2020/11/20 19:28:10 otto Exp $
+
+make sure servers call SSL_accept(), not SSL_connect()
+
+Index: lib/common/socket.c
+--- lib/common/socket.c.orig
++++ lib/common/socket.c
+@@ -1191,6 +1191,13 @@ void h2o_socket_ssl_handshake(h2o_socket_t *sock, SSL_
+     sock->ssl->handshake.cb = handshake_cb;
+     if (server_name == NULL) {
+         /* is server */
++#if !H2O_USE_PICOTLS
++        if (sock->ssl->ossl == NULL) {
++                create_ossl(sock);
++                if (sock->ssl->ossl != NULL)
++                        SSL_set_accept_state(sock->ssl->ossl);
++        }       
++#endif
+         if (SSL_CTX_sess_get_get_cb(sock->ssl->ssl_ctx) != NULL)
+             sock->ssl->handshake.server.async_resumption.state = ASYNC_RESUMPTION_STATE_RECORD;
+         if (sock->ssl->input.encrypted->size != 0)
