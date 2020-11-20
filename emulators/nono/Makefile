@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/02 13:15:58 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/20 10:00:11 gonzalo Exp $
 
 # Big endian support is not complete as of 0.1.0
 NOT_FOR_ARCHS=		${BE_ARCHS}
@@ -6,7 +6,7 @@ BROKEN-i386=		requires __m128i and similar types; may work if SSE is disabled
 
 COMMENT=		LUNA-I emulator
 
-DISTNAME=		nono-0.1.2
+DISTNAME=		nono-0.1.3
 CATEGORIES=		emulators
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
