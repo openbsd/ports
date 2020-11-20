@@ -1,36 +1,39 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/20 19:16:18 edd Exp $
 
 COMMENT =		solve vertex enumeration and convex hull problems
 
-DISTNAME =		lrslib-042c
-PKGNAME =		lrs-042
-REVISION =		1
+V =			071a
+DISTNAME =		lrslib-${V}
+PKGNAME =		lrs-${V}
 FIX_EXTRACT_PERMISSIONS=Yes
+
+SHARED_LIBS =		lrs		0.0 # 1.0
 
 CATEGORIES =		math
 
 HOMEPAGE =		http://cgm.cs.mcgill.ca/~avis/C/lrs.html
 
-MAINTAINER =		Edd Barrett <edd@openbsd.org>
+MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c gmp
 
-MASTER_SITES =		http://cgm.cs.mcgill.ca/~avis/C/lrslib/
+MASTER_SITES =		http://cgm.cs.mcgill.ca/~avis/C/lrslib/archive/
+
+USE_GMAKE =		Yes
 
 MAKE_FILE =		makefile
-MAKE_FLAGS =		CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
-ALL_TARGET =		gmp	# build with arbitrary precision numbers
+MAKE_FLAGS =		CPPFLAGS=-I${LOCALBASE}/include \
+			LDFLAGS=-L${LOCALBASE}/lib \
+			CFLAGS="${CFLAGS} -Wall" \
+			SONAME="liblrs.so.${LIBlrs_VERSION:R}" \
+			SOMINOR=".${LIBlrs_VERSION:E}"
+
+ALL_TARGET =		lrs lrsnash single all-shared
 
 LIB_DEPENDS =		devel/gmp
-
-BINARIES =		2gnash buffer gfourier glrs gnash gredund
-do-install:
-.for i in ${BINARIES}
-	${INSTALL_PROGRAM} ${WRKBUILD}/${i} ${PREFIX}/bin/
-.endfor
 
 # A simple test to check it works
 REGRESS_FILES =		test.ine expected_outcome.ine openbsd_regress.sh
@@ -39,10 +42,5 @@ do-test:
 	cp ${FILESDIR}/${i} ${WRKBUILD}
 .endfor
 	cd ${WRKBUILD} && sh openbsd_regress.sh
-
-# resolve conflict with www/gnash and misc/buffer
-post-install:
-	mv ${PREFIX}/bin/gnash ${PREFIX}/bin/lrsgnash
-	mv ${PREFIX}/bin/buffer ${PREFIX}/bin/lrsbuffer
 
 .include <bsd.port.mk>

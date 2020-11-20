@@ -1,7 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/07 12:16:22 edd Exp $
-@bin bin/2gnash
-@bin bin/gfourier
-@bin bin/glrs
-@bin bin/gredund
-@bin bin/lrsbuffer
-@bin bin/lrsgnash
+@comment $OpenBSD: PLIST,v 1.3 2020/11/20 19:16:18 edd Exp $
+@bin bin/2nash
+@bin bin/lrs
+@bin bin/lrs1
+@bin bin/lrs2
+@bin bin/lrsgmp
+@bin bin/lrsnash
+@bin bin/lrsnash1
+@bin bin/lrsnash2
+@bin bin/lrsnashgmp
+@bin bin/nashdemo
+@bin bin/redund
+@bin bin/redund1
+@bin bin/redund2
+@bin bin/redundgmp
+include/lrslib/
+include/lrslib/lrsdriver.h
+include/lrslib/lrsgmp.h
+include/lrslib/lrslib.h
+include/lrslib/lrslong.h
+include/lrslib/lrsmp.h
+include/lrslib/lrsnashlib.h
+include/lrslib/lrsrestart.h
+@lib lib/liblrs.so.${LIBlrs_VERSION}
