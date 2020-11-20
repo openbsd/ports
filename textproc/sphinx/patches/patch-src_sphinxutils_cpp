@@ -1,18 +1,9 @@
-$OpenBSD: patch-src_sphinxutils_cpp,v 1.1 2018/04/10 22:04:52 sthen Exp $
+$OpenBSD: patch-src_sphinxutils_cpp,v 1.2 2020/11/20 14:18:22 sthen Exp $
 
 Index: src/sphinxutils.cpp
 --- src/sphinxutils.cpp.orig
 +++ src/sphinxutils.cpp
-@@ -274,7 +274,7 @@ int CSphConfigSection::GetSize ( const char * sKey, in
- 	if ( iSize>INT_MAX )
- 	{
- 		iSize = INT_MAX;
--		sphWarning ( "'%s = "INT64_FMT"' clamped to %d(INT_MAX)", sKey, iSize, INT_MAX );
-+		sphWarning ( "'%s = " INT64_FMT "' clamped to %d(INT_MAX)", sKey, iSize, INT_MAX );
- 	}
- 	return (int)iSize;
- }
-@@ -1980,11 +1980,11 @@ void sphBacktrace ( int iFD, bool bSafe )
+@@ -2103,11 +2103,11 @@ void sphBacktrace ( int iFD, bool bSafe )
  #endif
  
  #ifdef CONFIGURE_FLAGS

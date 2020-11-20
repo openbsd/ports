@@ -1,6 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2015/06/22 08:00:07 jasper Exp $
---- Makefile.in.orig	Wed Nov 20 14:49:43 2013
-+++ Makefile.in	Fri Jun 19 10:39:57 2015
+$OpenBSD: patch-Makefile_in,v 1.5 2020/11/20 14:18:22 sthen Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -304,15 +304,15 @@ sphinx-min.conf.dist: $(top_builddir)/config.status $(
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  install-sysconfDATA: $(sysconf_DATA)

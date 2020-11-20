@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2020/11/20 14:18:21 sthen Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
 
 # Note: this is not Sphinx (the Python documentation generator) -
-# see also textproc/py-sphinx.
+# see textproc/py-sphinx.
 
-VERSION =	2.2.9
+VERSION =	2.2.11
 DISTNAME =	sphinx-${VERSION}-release
 PKGNAME =	sphinx-${VERSION}
 CATEGORIES =	textproc
-REVISION =	2
 
-HOMEPAGE =	http://www.sphinxsearch.com/
+HOMEPAGE =	https://www.sphinxsearch.com/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -21,7 +20,7 @@ WANTLIB =		c expat iconv m pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${HOMEPAGE}/files/
+MASTER_SITES =		${HOMEPAGE}files/
 
 MODULES =		lang/php
 
@@ -51,13 +50,14 @@ WANTLIB +=		pq
 .else
 CONFIGURE_ARGS +=	 --with-mysql
 LIB_DEPENDS +=		databases/mariadb
-WANTLIB +=		crypto ssl mariadb
+WANTLIB +=		mariadb
 .endif
 
-# Needs php with mysqli setup and mariadb listening on 127.0.0.1.
+# Needs php with mysqli setup, mariadb listening on 127.0.0.1, and maybe
+# a database named "test" pre-created.
 TEST_IS_INTERACTIVE =	Yes
 
-TEST_DEPENDS =		lang/php/${MODPHP_VERSION},-mysql \
+TEST_DEPENDS =		lang/php/${MODPHP_VERSION} \
 			lang/php/${MODPHP_VERSION},-mysqli \
 			databases/mariadb,-server
 MAKE_ENV =		MODPHP_BIN=${MODPHP_BIN}
