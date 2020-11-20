@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.327 2020/11/06 09:05:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.328 2020/11/20 12:38:53 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.14.1
+VER=		16.15.0
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
@@ -306,6 +306,7 @@ pre-patch:
 post-patch:
 	cd ${WRKSRC}/third-party/pjproject/source; ../../apply_patches ../patches .
 	touch ${WRKSRC}/third-party/pjproject/source/.unpacked
+	${SUBST_CMD} ${WRKSRC}/configure.ac
 
 menuselect: configure
 	@cd ${WRKSRC}; ${_PBUILD} ${MAKE_PROGRAM} menuselect

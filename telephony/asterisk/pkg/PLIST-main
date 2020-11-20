@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.87 2020/09/04 21:22:41 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.88 2020/11/20 12:38:53 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -130,6 +130,7 @@ include/asterisk/linkedlists.h
 include/asterisk/localtime.h
 include/asterisk/lock.h
 include/asterisk/logger.h
+include/asterisk/logger_category.h
 include/asterisk/manager.h
 include/asterisk/max_forwards.h
 include/asterisk/md5.h
@@ -173,6 +174,7 @@ include/asterisk/res_pjsip_presence_xml.h
 include/asterisk/res_pjsip_pubsub.h
 include/asterisk/res_pjsip_session.h
 include/asterisk/res_srtp.h
+include/asterisk/res_stir_shaken.h
 include/asterisk/rtp_engine.h
 include/asterisk/say.h
 include/asterisk/sched.h
@@ -506,6 +508,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_pjsip_send_to_voicemail.so
 @so lib/asterisk/modules/res_pjsip_session.so
 @so lib/asterisk/modules/res_pjsip_sips_contact.so
+@so lib/asterisk/modules/res_pjsip_stir_shaken.so
 @so lib/asterisk/modules/res_pjsip_t38.so
 @so lib/asterisk/modules/res_pjsip_transport_websocket.so
 @so lib/asterisk/modules/res_pjsip_xpidf_body_generator.so
@@ -529,6 +532,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_stasis_recording.so
 @so lib/asterisk/modules/res_stasis_snoop.so
 @so lib/asterisk/modules/res_statsd.so
+@so lib/asterisk/modules/res_stir_shaken.so
 @so lib/asterisk/modules/res_stun_monitor.so
 @so lib/asterisk/modules/res_timing_pthread.so
 @so lib/asterisk/modules/res_xmpp.so
@@ -564,6 +568,7 @@ share/asterisk/images/
 share/asterisk/images/asterisk-intro.jpg
 share/asterisk/images/kpad2.jpg
 share/asterisk/keys/
+share/asterisk/keys/stir_shaken/
 share/asterisk/phoneprov/
 share/asterisk/phoneprov/000000000000-directory.xml
 share/asterisk/phoneprov/000000000000-phone.cfg
@@ -738,6 +743,7 @@ share/examples/asterisk/default/sorcery.conf
 share/examples/asterisk/default/ss7.timers
 share/examples/asterisk/default/stasis.conf
 share/examples/asterisk/default/statsd.conf
+share/examples/asterisk/default/stir_shaken.conf
 share/examples/asterisk/default/telcordia-1.adsi
 share/examples/asterisk/default/test_sorcery.conf
 share/examples/asterisk/default/udptl.conf
