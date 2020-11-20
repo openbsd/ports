@@ -1,0 +1,27 @@
+$OpenBSD: patch-Config_mk_in,v 1.1 2020/11/20 20:48:11 sthen Exp $
+
+Index: Config.mk.in
+--- Config.mk.in.orig
++++ Config.mk.in
+@@ -21,7 +21,7 @@ PREFIX		:= @prefix@
+ BINDIR		:= @bindir@
+ LOCALEPATH	:= @localedir@
+ MANPATH		:= @mandir@
+-BUILDDIR	:= @builddir@/${NAME}
++BUILDDIR	:= @builddir@/build
+ PKGDIR		:= @pkgdir@
+ O		:= .o/
+ 
+@@ -29,11 +29,5 @@ O		:= .o/
+ 
+ CFLAGS		:= -Wall -Wextra -Wredundant-decls -Wshadow \
+ 		   -std=c11 -I/usr/include/libxml2
+ LDFLAGS		:= -liconv -lintl -lxml2 -lncurses -lz
+-ifdef DEBUG
+-    CFLAGS	+= -O0 -ggdb3
+-    LDFLAGS	+= -g -rdynamic
+-else
+-    CFLAGS	+= -Os -g0 -DNDEBUG=1
+-    LDFLAGS	+= -s
+-endif
++CFLAGS	+= ${COPTFLAGS}

@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1 2020/11/20 20:48:12 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Snownews does not natively support https.
+
+To fetch feeds that require https you can use an external process to fetch
+by entering something like this in the URL box:
+
+   exec:ftp -Vo- <FEED URL>
