@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.147 2020/11/14 09:06:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.148 2020/11/20 07:52:18 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -926,6 +926,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/pagina
 lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/service-2.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/network-firewall/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/network-firewall/2020-11-12/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/network-firewall/2020-11-12/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/network-firewall/2020-11-12/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/networkmanager/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/networkmanager/2019-07-05/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/networkmanager/2019-07-05/paginators-1.json
