@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.33 2020/07/25 11:15:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2020/11/20 07:56:53 ajacoutot Exp $
 bin/gcompris
 @bin bin/gcompris-qt
 share/applications/org.kde.gcompris.desktop
 share/doc/HTML/
 share/doc/HTML/en/
 share/doc/HTML/en/gcompris-qt/
+share/doc/HTML/en/gcompris-qt/activity-config.png
+share/doc/HTML/en/gcompris-qt/dataset.png
 share/doc/HTML/en/gcompris-qt/gcompris-main-menu.png
 share/doc/HTML/en/gcompris-qt/index.cache.bz2
 share/doc/HTML/en/gcompris-qt/index.docbook
-share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 share/gcompris-qt/
 share/gcompris-qt/rcc/
 share/gcompris-qt/rcc/activities.rcc
@@ -21,6 +22,8 @@ share/gcompris-qt/rcc/algorithm.rcc
 share/gcompris-qt/rcc/align4-2players.rcc
 share/gcompris-qt/rcc/align4.rcc
 share/gcompris-qt/rcc/alphabet-sequence.rcc
+share/gcompris-qt/rcc/analog_electricity.rcc
+share/gcompris-qt/rcc/baby_keyboard.rcc
 share/gcompris-qt/rcc/baby_tangram.rcc
 share/gcompris-qt/rcc/baby_wordprocessor.rcc
 share/gcompris-qt/rcc/babymatch.rcc
@@ -78,6 +81,7 @@ share/gcompris-qt/rcc/gnumch-inequality.rcc
 share/gcompris-qt/rcc/gnumch-multiples.rcc
 share/gcompris-qt/rcc/gnumch-primes.rcc
 share/gcompris-qt/rcc/graph-coloring.rcc
+share/gcompris-qt/rcc/gravity.rcc
 share/gcompris-qt/rcc/guesscount.rcc
 share/gcompris-qt/rcc/guessnumber.rcc
 share/gcompris-qt/rcc/hangman.rcc
@@ -86,9 +90,11 @@ share/gcompris-qt/rcc/hanoi_real.rcc
 share/gcompris-qt/rcc/hexagon.rcc
 share/gcompris-qt/rcc/imagename.rcc
 share/gcompris-qt/rcc/instruments.rcc
-share/gcompris-qt/rcc/intro_gravity.rcc
 share/gcompris-qt/rcc/land_safe.rcc
 share/gcompris-qt/rcc/lang.rcc
+share/gcompris-qt/rcc/learn_additions.rcc
+share/gcompris-qt/rcc/learn_digits.rcc
+share/gcompris-qt/rcc/learn_subtractions.rcc
 share/gcompris-qt/rcc/leftright.rcc
 share/gcompris-qt/rcc/letter-in-word.rcc
 share/gcompris-qt/rcc/lightsoff.rcc
@@ -194,6 +200,7 @@ share/gcompris-qt/translations/gcompris_gl.qm
 share/gcompris-qt/translations/gcompris_he.qm
 share/gcompris-qt/translations/gcompris_hi.qm
 share/gcompris-qt/translations/gcompris_hu.qm
+share/gcompris-qt/translations/gcompris_ia.qm
 share/gcompris-qt/translations/gcompris_id.qm
 share/gcompris-qt/translations/gcompris_it.qm
 share/gcompris-qt/translations/gcompris_ja.qm
