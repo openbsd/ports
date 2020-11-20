@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2020/11/20 11:07:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/11/20 13:10:23 sthen Exp $
 
-# builds on aarch64 but "No SMBIOS nor DMI entry point found, sorry" on at
-# least od1000 and rpi4.
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+# builds on aarch64 but for !x86 it requires code to lookup the entry
+# point from EFI and only FreeBSD/Linux implementations are present.
+ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	dump DMI/SMBIOS contents in human-readable format
 DISTNAME=	dmidecode-3.3
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
