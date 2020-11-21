@@ -1,12 +1,13 @@
-$OpenBSD: patch-xbindkeys_1,v 1.2 2014/08/13 06:19:59 dcoppa Exp $
---- xbindkeys.1.orig	Wed Dec 12 22:21:52 2012
-+++ xbindkeys.1	Mon Aug 11 22:17:41 2014
-@@ -168,7 +168,7 @@ xbindkeys reload its configuration file each time it h
- But if you want to force it reloading its configuration file, you can
- send a HUP signal:
+$OpenBSD: patch-xbindkeys_1,v 1.3 2020/11/21 05:18:45 bket Exp $
+Index: xbindkeys.1
+--- xbindkeys.1.orig
++++ xbindkeys.1
+@@ -162,7 +162,7 @@ And xbindkeys --defaults-guile > ~/.xbindkeysrc.scm to
+ xbindkeys reloads the configuration file if modified.
+ Send a HUP signal to force reloading:
  .LP
 -killall -HUP xbindkeys
 +pkill -HUP xbindkeys
  .LP
- When HUP signal is send to xbindkeys, changes in $HOME/.xbindkeysrc
- takes effect only after moving mouse.
+ When a HUP signal is sent to xbindkeys, changes take effect only after
+ moving the mouse.
