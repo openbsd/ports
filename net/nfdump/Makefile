@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2020/03/30 14:13:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2020/11/21 17:34:59 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-V =			1.6.20
+V =			1.6.22
 GH_ACCOUNT =		phaag
 GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V

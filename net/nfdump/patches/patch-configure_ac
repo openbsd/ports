@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_ac,v 1.1 2020/11/21 17:34:59 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -9,7 +9,6 @@ AC_CONFIG_HEADER([config.h])
+ AM_INIT_AUTOMAKE([subdir-objects])
+ 
+ # Checks for programs.
+-CFLAGS="-g -O3"
+ AC_PROG_CC([clang gcc])
+ AX_CHECK_C11
+ CFLAGS="$CFLAGS -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-noreturn -fno-strict-aliasing"
