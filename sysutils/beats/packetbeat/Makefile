@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.34 2020/09/22 17:59:25 pvk Exp $
+# $OpenBSD: Makefile,v 1.35 2020/11/21 15:58:41 pvk Exp $
 
 COMMENT =	lightweight shipper for real-time network analytics
 
 BEAT =		packetbeat
 
 CONFIGS =	${BEAT}.{reference.yml,yml}
+KIBANA_DASHBOARDS = yes
 
 WANTLIB +=	pcap
+
+KIBANA_DASHBOARDS = yes
 
 pre-build:
 	cd ${WRKSRC}/${BEAT}/cmd && ${MODGO_CMD} get ${MODGO_FLAGS} -d -v ./...

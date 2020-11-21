@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/29 14:17:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/21 15:58:40 pvk Exp $
 
     SUBDIR =
     SUBDIR += filebeat
@@ -8,4 +8,3 @@
     SUBDIR += packetbeat
 
 .include <bsd.port.subdir.mk>
-

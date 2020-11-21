@@ -1,4 +1,4 @@
-$OpenBSD: patch-packetbeat_packetbeat_yml,v 1.2 2020/07/01 12:04:47 pvk Exp $
+$OpenBSD: patch-packetbeat_packetbeat_yml,v 1.3 2020/11/21 15:58:41 pvk Exp $
 
 'any' interface doesn't work on non-Linux
 
@@ -13,4 +13,19 @@ Index: packetbeat/packetbeat.yml
 +packetbeat.interfaces.device: em0
  
  # =================================== Flows ====================================
+ 
+@@ -210,10 +210,10 @@ processors:
+     then:
+       - drop_fields:
+           fields: [host]
+-    else:
+-      - add_host_metadata: ~
+-  - add_cloud_metadata: ~
+-  - add_docker_metadata: ~
++  #  else:
++  #    - add_host_metadata: ~
++  #- add_cloud_metadata: ~
++  #- add_docker_metadata: ~
+ 
+ # ================================== Logging ===================================
  

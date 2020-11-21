@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2020/09/22 17:59:25 pvk Exp $
+# $OpenBSD: Makefile,v 1.27 2020/11/21 15:58:40 pvk Exp $
 
 COMMENT =	lightweight shipper for system metrics
 
 BEAT =		metricbeat
 
 BEATS_MODULES =	yes
+KIBANA_DASHBOARDS = yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-$OpenBSD: patch-filebeat_filebeat_yml,v 1.10 2020/09/22 17:59:25 pvk Exp $
+$OpenBSD: patch-filebeat_filebeat_yml,v 1.11 2020/11/21 15:58:40 pvk Exp $
 
 add_host_metadata processor not yet implemented for OpenBSD
 
@@ -15,7 +15,7 @@ Index: filebeat/filebeat.yml
  
    # Exclude lines. A list of regular expressions to match. It drops the lines that are
    # matching any regular expression from the list.
-@@ -65,6 +66,8 @@ filebeat.inputs:
+@@ -94,6 +95,8 @@ filebeat.inputs:
  # ============================== Filebeat modules ==============================
  
  filebeat.config.modules:
@@ -24,7 +24,7 @@ Index: filebeat/filebeat.yml
    # Glob pattern for configuration loading
    path: ${path.config}/modules.d/*.yml
  
-@@ -172,12 +175,12 @@ output.elasticsearch:
+@@ -201,12 +204,12 @@ output.elasticsearch:
    #ssl.key: "/etc/pki/client/cert.key"
  
  # ================================= Processors =================================

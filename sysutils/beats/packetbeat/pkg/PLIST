@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/04/04 03:07:49 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/11/21 15:58:41 pvk Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/packetbeat/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/packetbeat/*
 @rcscript ${RCDIR}/packetbeat
 @bin bin/packetbeat
-share/doc/pkg-readmes/${PKGSTEM}
 share/examples/packetbeat/
 @sample ${SYSCONFDIR}/packetbeat/
 @sample ${LOCALSTATEDIR}/db/packetbeat/
@@ -11,3 +10,21 @@ share/examples/packetbeat/
 share/examples/packetbeat/packetbeat.reference.yml
 share/examples/packetbeat/packetbeat.yml
 @sample ${SYSCONFDIR}/packetbeat/packetbeat.yml
+share/packetbeat/
+share/packetbeat/kibana/
+share/packetbeat/kibana/7/
+share/packetbeat/kibana/7/dashboard/
+share/packetbeat/kibana/7/dashboard/Packetbeat-cassandra.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-dhcpv4.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-dns-overview.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-dns-tunneling.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-flows.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-http.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-mongodb.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-mysql.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-nfs.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-overview.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-pgsql.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-thrift.json
+share/packetbeat/kibana/7/dashboard/Packetbeat-tls.json
+share/packetbeat/module/

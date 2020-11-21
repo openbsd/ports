@@ -1,11 +1,8 @@
 #!/bin/ksh
 #
-# $OpenBSD: filebeat.rc,v 1.6 2020/04/04 02:52:58 pvk Exp $
+# $OpenBSD: filebeat.rc,v 1.7 2020/11/21 15:58:40 pvk Exp $
 
 daemon="${PREFIX}/bin/filebeat"
-daemon_flags="-path.config ${SYSCONFDIR}/filebeat \
-	-path.data ${LOCALSTATEDIR}/db/filebeat \
-	-path.logs ${LOCALSTATEDIR}/log/filebeat"
 
 . /etc/rc.d/rc.subr
 
