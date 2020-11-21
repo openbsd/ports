@@ -1,11 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.8 2020/02/15 22:01:56 daniel Exp $
+$OpenBSD: patch-setup_py,v 1.9 2020/11/21 20:01:41 daniel Exp $
 
 Manual patch
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -442,7 +442,7 @@ if __name__ == '__main__':
+@@ -438,7 +438,7 @@ if __name__ == '__main__':
                'sympy.integrals.rubi.parsetools': ['header.py.txt'],
                'sympy.plotting.tests': ['test_region_*.png'],
                },
