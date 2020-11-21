@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:12:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/11/21 17:03:20 sthen Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
+# 1.0.0+ requires new modules: yamlloader, nocaselist, nocasedict
 MODPY_EGG_VERSION=	0.17.2
 DISTNAME=		pywbem-${MODPY_EGG_VERSION}
 PKGNAME=		py-wbem-${MODPY_EGG_VERSION}
