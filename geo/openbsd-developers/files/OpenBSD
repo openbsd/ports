@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.168 2020/07/24 11:59:48 landry Exp $
+# $OpenBSD: OpenBSD,v 1.169 2020/11/21 01:50:57 namn Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -27,6 +27,7 @@
 35.698		139.713		"mcbride"	# Ryan Thomas McBride
 36.134		-86.70		"david"		# David Krause
 37.25230	-121.81576	"mlarkin"	# Mike Larkin
+37.32488	-121.81304	"namn"		# Nam Nguyen
 37.40203	-122.06842	"pd"		# Pratik Vyas
 37.3706		-122.0138	"ckuethe"	# Chris Kuethe
 37.38		-122.08		"akoshibe"	# Ayaka Koshibe
