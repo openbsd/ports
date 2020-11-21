@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/06 11:14:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/21 08:07:30 ajacoutot Exp $
 
 COMMENT=		Text Editor Product Line
 
 GNOME_PROJECT=		tepl
-GNOME_VERSION=		5.0.0
+GNOME_VERSION=		5.0.1
 
 CATEGORIES=		devel
 
