@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/11/01 08:26:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/11/21 08:16:28 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-3/
 include/devhelp-3/devhelp/
@@ -61,6 +61,13 @@ share/help/cs/devhelp/index-file-format.page
 share/help/cs/devhelp/index.page
 share/help/cs/devhelp/installing-api-documentation.page
 share/help/cs/devhelp/search.page
+share/help/da/
+share/help/da/devhelp/
+share/help/da/devhelp/book-format.page
+share/help/da/devhelp/index-file-format.page
+share/help/da/devhelp/index.page
+share/help/da/devhelp/installing-api-documentation.page
+share/help/da/devhelp/search.page
 share/help/de/devhelp/
 share/help/de/devhelp/book-format.page
 share/help/de/devhelp/index-file-format.page
