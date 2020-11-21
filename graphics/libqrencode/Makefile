@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/11/21 17:11:06 sthen Exp $
 
 COMMENT=		library for encoding data in a QR Code symbol
 
-DISTNAME=		qrencode-4.0.2
+DISTNAME=		qrencode-4.1.1
 PKGNAME=		lib${DISTNAME}
 
-SHARED_LIBS +=  qrencode             2.0      # 4.0
+SHARED_LIBS +=  qrencode             2.1      # 4.0
 
 CATEGORIES=		graphics
 
