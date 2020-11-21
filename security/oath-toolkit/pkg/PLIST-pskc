@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pskc,v 1.6 2018/06/29 09:58:56 espie Exp $
+@comment $OpenBSD: PLIST-pskc,v 1.7 2020/11/21 17:29:44 sthen Exp $
 @bin bin/pskctool
 include/pskc/
 include/pskc/container.h
@@ -9,7 +9,7 @@ include/pskc/global.h
 include/pskc/keypackage.h
 include/pskc/pskc.h
 include/pskc/version.h
-lib/libpskc.a
+@static-lib lib/libpskc.a
 lib/libpskc.la
 @lib lib/libpskc.so.${LIBpskc_VERSION}
 lib/pkgconfig/libpskc.pc

@@ -1,19 +1,20 @@
-$OpenBSD: patch-libpskc_examples_pskctool-h_txt,v 1.1 2014/03/26 14:17:53 sthen Exp $
+$OpenBSD: patch-libpskc_examples_pskctool-h_txt,v 1.2 2020/11/21 17:29:44 sthen Exp $
 
 sync for regression test
 
---- libpskc/examples/pskctool-h.txt.orig	Wed Mar 26 14:05:56 2014
-+++ libpskc/examples/pskctool-h.txt	Wed Mar 26 14:05:59 2014
-@@ -2,7 +2,7 @@ Manipulate Portable Symmetric Key Container (PSKC) dat
- 
- Usage: pskctool [OPTIONS]... [FILE]...
+Index: libpskc/examples/pskctool-h.txt
+--- libpskc/examples/pskctool-h.txt.orig
++++ libpskc/examples/pskctool-h.txt
+@@ -1,7 +1,7 @@
+ Usage: pskctool [OPTION]... [FILE]...
+ Manipulate Portable Symmetric Key Container (PSKC) data.
  
 -This tool allows you to parse, print, validate, sign and verify PSKC data.  The
 +This tool allows you to parse, print, validate, sign and verify PSKC data.  The 
  input is provided in FILE or on standard input.
  
    -h, --help             Print help and exit
-@@ -15,7 +15,7 @@ input is provided in FILE or on standard input.
+@@ -14,7 +14,7 @@ input is provided in FILE or on standard input.
  Selecting one of the following modes is required:
  
   Mode: info
