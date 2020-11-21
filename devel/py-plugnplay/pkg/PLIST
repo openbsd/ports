@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/08 09:17:04 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/11/21 14:46:07 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/plugnplay/
 lib/python${MODPY_VERSION}/site-packages/plugnplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/plugnplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,5 +8,5 @@ lib/python${MODPY_VERSION}/site-packages/plugnplay-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/plugnplay/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plugnplay/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plugnplay/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/plugnplay/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plugnplay/manager.py
+lib/python${MODPY_VERSION}/site-packages/plugnplay/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
