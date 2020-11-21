@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/20 19:16:18 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/21 14:13:06 sthen Exp $
 
 COMMENT =		solve vertex enumeration and convex hull problems
 
 V =			071a
+REVISION =		0
 DISTNAME =		lrslib-${V}
 PKGNAME =		lrs-${V}
 FIX_EXTRACT_PERMISSIONS=Yes
@@ -25,22 +26,24 @@ MASTER_SITES =		http://cgm.cs.mcgill.ca/~avis/C/lrslib/archive/
 USE_GMAKE =		Yes
 
 MAKE_FILE =		makefile
-MAKE_FLAGS =		CPPFLAGS=-I${LOCALBASE}/include \
-			LDFLAGS=-L${LOCALBASE}/lib \
+MAKE_FLAGS =		INCLUDEDIR="${LOCALBASE}/include" \
+			LIBDIR="${LOCALBASE}/lib" \
 			CFLAGS="${CFLAGS} -Wall" \
 			SONAME="liblrs.so.${LIBlrs_VERSION:R}" \
 			SOMINOR=".${LIBlrs_VERSION:E}"
 
-ALL_TARGET =		lrs lrsnash single all-shared
-
 LIB_DEPENDS =		devel/gmp
 
+# targets "lrs", "lrsnash", "single", "all-shared" require 128-bit ints
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+ALL_TARGET =		lrs lrsnash single all-shared
+
 # A simple test to check it works
-REGRESS_FILES =		test.ine expected_outcome.ine openbsd_regress.sh
 do-test:
-.for i in ${REGRESS_FILES}
-	cp ${FILESDIR}/${i} ${WRKBUILD}
-.endfor
+	cd ${FILESDIR} && \
+	    cp test.ine expected_outcome.ine openbsd_regress.sh ${WRKBUILD}
 	cd ${WRKBUILD} && sh openbsd_regress.sh
 
 .include <bsd.port.mk>
