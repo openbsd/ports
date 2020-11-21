@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/21 21:37:16 benoit Exp $
 
 COMMENT =	Python cgi/fastcgi/mod_python framework
 
-MODPY_EGG_VERSION =	0.13
+MODPY_EGG_VERSION =	0.14
 DISTNAME =		jonpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
