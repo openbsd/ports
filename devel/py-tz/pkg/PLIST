@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/06/12 12:49:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.27 2020/11/21 16:53:37 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -636,7 +636,6 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/WET
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Zulu
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/iso3166.tab
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/leapseconds
-lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/posixrules
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/tzdata.zi
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/zone.tab
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/zone1970.tab
