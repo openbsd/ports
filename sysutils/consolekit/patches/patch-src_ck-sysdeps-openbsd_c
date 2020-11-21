@@ -1,20 +1,106 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.26 2019/01/19 01:50:49 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.27 2020/11/21 09:44:30 ajacoutot Exp $
 
 https://github.com/ConsoleKit2/ConsoleKit2/pull/117
++ck_process_stat_get_tty refacto
++DEV_ENCODE removal
++max_consoles++ move and doubling
++sys/user.h include removal
++tty_text remove
++state2proc refacto
 
 Index: src/ck-sysdeps-openbsd.c
 --- src/ck-sysdeps-openbsd.c.orig
 +++ src/ck-sysdeps-openbsd.c
-@@ -200,7 +200,7 @@ stat2proc (pid_t        pid,
+@@ -36,7 +36,6 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/sysctl.h>
+-#include <sys/user.h>
+ #include <sys/ioctl.h>
  
-         if (p.p_tdev == NODEV) {
- 		/* XXX how do we associate X with its tty? */
+ #ifdef __OpenBSD__
+@@ -102,7 +101,6 @@ struct _CkProcessStat
+         int exit_signal;                /* stat            might not be SIGCHLD */
+         int processor;                  /* stat            current (or most recent?) CPU */
+         uintptr_t penv;                 /* stat            address of initial environment vector */
+-        char tty_text[11];              /* stat            device name */
+ 
+ };
+ 
+@@ -127,7 +125,11 @@ ck_process_stat_get_tty (CkProcessStat *stat)
+ {
+         g_return_val_if_fail (stat != NULL, NULL);
+ 
+-        return g_strdup (stat->tty_text);
++        if (stat->tty == NODEV){
++                return NULL;
++        }
++
++        return g_strdup_printf ("/dev/%s", devname (stat->tty, S_IFCHR));
+ }
+ 
+ static gboolean
+@@ -186,27 +188,8 @@ stat2proc (pid_t        pid,
+         P->flags      = p.p_psflags;
+         P->tpgid      = p.p_tpgid;
+         P->processor  = p.p_cpuid;
++        P->tty        = p.p_tdev;
+ 
+-        /* we like it Linux-encoded :-) */
+-        tty_maj = major (p.p_tdev);
+-        tty_min = minor (p.p_tdev);
+-        P->tty = DEV_ENCODE (tty_maj,tty_min);
+-
+-        snprintf (P->tty_text, sizeof P->tty_text, "%3d,%-3d", tty_maj, tty_min);
+-
+-        if (p.p_tdev != NODEV && (ttname = devname (p.p_tdev, S_IFCHR)) != NULL) {
+-                memcpy (P->tty_text, ttname, sizeof (P->tty_text));
+-        }
+-
+-        if (p.p_tdev == NODEV) {
+-		/* XXX how do we associate X with its tty? */
 -#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
-+#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__) || defined(__aarch64__)
-                 memcpy (P->tty_text, "/dev/ttyC4", sizeof (P->tty_text));
- #else
-                 memcpy (P->tty_text, "/dev/ttyC0", sizeof (P->tty_text));
-@@ -397,8 +397,7 @@ ck_get_console_device_for_num (guint num)
+-                memcpy (P->tty_text, "/dev/ttyC4", sizeof (P->tty_text));
+-#else
+-                memcpy (P->tty_text, "/dev/ttyC0", sizeof (P->tty_text));
+-#endif
+-        }
+-
+         if (P->pid != pid) {
+                 return FALSE;
+         }
+@@ -369,19 +352,23 @@ ck_get_max_num_consoles (guint *num)
+                         max_consoles++;
+         }
+ 
+-        /* Increment one more so that all consoles are properly counted
+-         * this is arguable a bug in vt_add_watches().
+-         */
+-        max_consoles++;
+-
+         ret = TRUE;
+ 
+         endttyent ();
+ 
++        /*
++         * Increment 2 more:
++         * - ttyC4 is marked as off (X11)
++         * - vt_add_watches() for loop misses the last console
++         *   ("< max_consoles"; instead of "<=")
++         */
++        max_consoles++;
++        max_consoles++;
++
+ done:
+-         if (num != NULL) {
++        if (num != NULL) {
+                 *num = max_consoles;
+-         }
++        }
+ 
+         return ret;
+ }
+@@ -397,8 +384,7 @@ ck_get_console_device_for_num (guint num)
  {
          char *device;
  
@@ -24,7 +110,7 @@ Index: src/ck-sysdeps-openbsd.c
          /* The device number is always one less than the VT number. */
          num--;
  #endif
-@@ -423,8 +422,7 @@ ck_get_console_num_from_device (const char *device,
+@@ -423,8 +409,7 @@ ck_get_console_num_from_device (const char *device,
          }
  
          if (sscanf (device, "/dev/ttyC%u", &n) == 1) {
@@ -34,7 +120,7 @@ Index: src/ck-sysdeps-openbsd.c
                  /* The VT number is always one more than the device number. */
                  n++;
  #endif
-@@ -451,8 +449,7 @@ ck_get_active_console_num (int    console_fd,
+@@ -451,8 +436,7 @@ ck_get_active_console_num (int    console_fd,
          active = 0;
          ret = FALSE;
  
@@ -44,7 +130,7 @@ Index: src/ck-sysdeps-openbsd.c
          res = ioctl (console_fd, VT_GETACTIVE, &active);
          if (res == ERROR) {
                  perror ("ioctl VT_GETACTIVE");
-@@ -477,13 +474,28 @@ ck_get_active_console_num (int    console_fd,
+@@ -477,13 +461,28 @@ ck_get_active_console_num (int    console_fd,
  gboolean
  ck_system_can_suspend (void)
  {
