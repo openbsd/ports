@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/21 13:49:06 benoit Exp $
 
 COMMENT =		guppy programming environment
 
-MODPY_EGG_VERSION =	0.1.10
+MODPY_EGG_VERSION =	0.1.11
 DISTNAME =		guppy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
