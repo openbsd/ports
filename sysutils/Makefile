@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.586 2020/11/09 15:02:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.587 2020/11/21 12:26:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -22,6 +22,7 @@
      SUBDIR += bfs
      SUBDIR += binwalk
      SUBDIR += bitrot
+     SUBDIR += blackbox_exporter
      SUBDIR += boar
      SUBDIR += borgbackup
      SUBDIR += borgmatic
