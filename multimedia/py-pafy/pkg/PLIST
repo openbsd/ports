@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/11/25 20:34:37 danj Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/21 09:40:10 benoit Exp $
 bin/ytdl
 lib/python${MODPY_VERSION}/site-packages/pafy/
 lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pafy/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pafy/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pafy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pafy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pafy/${MODPY_PYCACHE}backend_internal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pafy/${MODPY_PYCACHE}backend_shared.${MODPY_PYC_MAGIC_TAG}pyc
