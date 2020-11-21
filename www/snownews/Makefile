@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/11/20 20:48:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2020/11/21 22:03:13 kmos Exp $
 
 COMMENT=	text mode rss newsreader
 CATEGORIES=	www
@@ -11,6 +11,9 @@ HOMEPAGE=	https://github.com/kouya/snownews
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
+
+# C11
+COMPILER=	base-clang ports-gcc
 
 WANTLIB +=	c curses iconv intl xml2 z
 
