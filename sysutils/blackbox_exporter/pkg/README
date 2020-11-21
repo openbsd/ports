@@ -1,0 +1,13 @@
+$OpenBSD: README,v 1.1.1.1 2020/11/21 12:25:58 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+By default, Blackbox exporter runs as an unprivileged user. This is
+suitable for probing TCP (including HTTP, HTTPS) and DNS endpoints. In
+order to probe ICMP endpoints you must run as root - to do this using
+the supplied rc.d script you can use the following commands:
+
+    rcctl enable blackbox_exporter
+    rcctl set blackbox_exporter user root

@@ -1,0 +1,4 @@
+This Prometheus exporter allows "blackbox" probing of endpoints over
+HTTP, HTTPS, DNS, TCP and ICMP. That is, it allows making requests using
+various protocols from a management machine to standard network servers
+and gathering metrics from them.
