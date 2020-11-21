@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_c_camera_v4l2_c,v 1.1 2020/11/21 01:05:22 daniel Exp $
+
+Index: src_c/camera_v4l2.c
+--- src_c/camera_v4l2.c.orig
++++ src_c/camera_v4l2.c
+@@ -161,7 +161,11 @@ v4l2_read_raw(pgCameraObject *self)
+  */
+ 
+ int
++#ifdef __OpenBSD__
++v4l2_xioctl(int fd, unsigned long request, void *arg)
++#else
+ v4l2_xioctl(int fd, int request, void *arg)
++#endif
+ {
+     int r;
+ 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_unix_py,v 1.6 2018/04/01 09:27:43 landry Exp $
+$OpenBSD: patch-buildconfig_config_unix_py,v 1.1 2020/11/21 01:05:22 daniel Exp $
 
-Index: config_unix.py
---- config_unix.py.orig
-+++ config_unix.py
-@@ -206,15 +206,6 @@ def main():
+Index: buildconfig/config_unix.py
+--- buildconfig/config_unix.py.orig
++++ buildconfig/config_unix.py
+@@ -254,15 +254,6 @@ def main(sdl2=False):
      for d in DEPS:
          d.configure(incdirs, libdirs)
  

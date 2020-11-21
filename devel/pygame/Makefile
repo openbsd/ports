@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2020/11/15 03:31:52 daniel Exp $
+# $OpenBSD: Makefile,v 1.40 2020/11/21 01:05:21 daniel Exp $
 
 COMMENT=	set of Python modules designed for writing games
 
-MODPY_EGG_VERSION =	1.9.3
+MODPY_EGG_VERSION =	1.9.6
 DISTNAME=	pygame-${MODPY_EGG_VERSION}
 PKGNAME =	py-game-${MODPY_EGG_VERSION}
 CATEGORIES=	devel games
-REVISION =	4
 
 HOMEPAGE=	https://www.pygame.org/
 
@@ -41,8 +40,8 @@ TEST_IS_INTERACTIVE=	x11
 TEST_ENV =	PYTHONPATH=${WRKSRC}
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/Setup.in
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} config.py
+	${SUBST_CMD} ${WRKSRC}/buildconfig/Setup.SDL1.in
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} buildconfig/config.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
@@ -51,7 +50,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/data
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/data/* ${EXAMPLESDIR}/data
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.rst ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.rst ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.{gif,html} ${DOCDIR}
 .for i in ref tut
 	${INSTALL_DATA_DIR} ${DOCDIR}/$i

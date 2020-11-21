@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/10/17 17:06:17 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/11/21 01:05:22 daniel Exp $
 @conflict pygame-*
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/_camera.h
@@ -11,6 +11,7 @@ include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/font.h
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/freetype.h
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/mask.h
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/mixer.h
+include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/palette.h
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/pgarrinter.h
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/pgbufferproxy.h
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/pygame/pgcompat.h
@@ -23,8 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/pygame-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/pygame-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pygame-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/pygame-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pygame-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/pygame-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/pygame/LGPL
 lib/python${MODPY_VERSION}/site-packages/pygame/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}camera.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}colordict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}cursors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}draw_py.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}freetype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}ftfont.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}locals.${MODPY_PYC_MAGIC_TAG}pyc
@@ -79,6 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/pygame/docs/pygame_tiny.gif
 lib/python${MODPY_VERSION}/site-packages/pygame/docs/ref/
 lib/python${MODPY_VERSION}/site-packages/pygame/docs/ref/docscomments.json
 @so lib/python${MODPY_VERSION}/site-packages/pygame/draw.so
+lib/python${MODPY_VERSION}/site-packages/pygame/draw_py.py
 @so lib/python${MODPY_VERSION}/site-packages/pygame/event.so
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/__init__.py
@@ -87,11 +90,13 @@ lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}aacircle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}aliens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}arraydemo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}audiocapture.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}blend_fill.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}blit_blends.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}camera.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}chimp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}cursors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}dropevent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}eventlist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}fastevents.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}fonty.${MODPY_PYC_MAGIC_TAG}pyc
@@ -114,10 +119,13 @@ lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}sound.$
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}sound_array_demos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}stars.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}testsprite.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}textinput.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}vgrade.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}video.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/aacircle.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/aliens.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/arraydemo.py
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/audiocapture.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/blend_fill.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/blit_blends.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/camera.py
@@ -158,6 +166,7 @@ lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/shot.gif
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/static.png
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/whiff.wav
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/yuv_1.pgm
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/dropevent.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/eventlist.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/fastevents.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/fonty.py
@@ -194,24 +203,17 @@ lib/python${MODPY_VERSION}/site-packages/pygame/examples/sound.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/sound_array_demos.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/stars.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/testsprite.py
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/textinput.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/vgrade.py
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/video.py
 @so lib/python${MODPY_VERSION}/site-packages/pygame/fastevent.so
 @so lib/python${MODPY_VERSION}/site-packages/pygame/font.so
 lib/python${MODPY_VERSION}/site-packages/pygame/freesansbold.ttf
 lib/python${MODPY_VERSION}/site-packages/pygame/freetype.py
 lib/python${MODPY_VERSION}/site-packages/pygame/ftfont.py
 @so lib/python${MODPY_VERSION}/site-packages/pygame/gfxdraw.so
-lib/python${MODPY_VERSION}/site-packages/pygame/gp2x/
-lib/python${MODPY_VERSION}/site-packages/pygame/gp2x/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/gp2x/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/pygame/gp2x/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygame/gp2x/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygame/gp2x/${MODPY_PYCACHE}locals.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygame/gp2x/constants.py
-lib/python${MODPY_VERSION}/site-packages/pygame/gp2x/locals.py
 @so lib/python${MODPY_VERSION}/site-packages/pygame/image.so
 @so lib/python${MODPY_VERSION}/site-packages/pygame/imageext.so
-lib/python${MODPY_VERSION}/site-packages/pygame/install.html
 @so lib/python${MODPY_VERSION}/site-packages/pygame/joystick.so
 @so lib/python${MODPY_VERSION}/site-packages/pygame/key.so
 lib/python${MODPY_VERSION}/site-packages/pygame/locals.py
@@ -232,7 +234,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/pygame_icon.bmp
 lib/python${MODPY_VERSION}/site-packages/pygame/pygame_icon.icns
 lib/python${MODPY_VERSION}/site-packages/pygame/pygame_icon.svg
 lib/python${MODPY_VERSION}/site-packages/pygame/pygame_icon.tiff
-lib/python${MODPY_VERSION}/site-packages/pygame/readme.html
 @so lib/python${MODPY_VERSION}/site-packages/pygame/rect.so
 @so lib/python${MODPY_VERSION}/site-packages/pygame/rwobject.so
 @so lib/python${MODPY_VERSION}/site-packages/pygame/scrap.so
@@ -256,10 +257,12 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}cdrom_tags
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}cdrom_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}color_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}compat_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}constants_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}cursors_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}display_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}draw_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}event_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}fastevent_tags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}fastevent_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}font_tags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}font_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -284,6 +287,7 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}mixer_musi
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}mixer_tags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}mixer_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}mouse_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}overlay_tags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}overlay_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}pixelarray_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}pixelcopy_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -302,7 +306,10 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}sysfont_te
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}test_test_.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}threads_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}time_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}touch_tags.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}touch_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}transform_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}version_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/base_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/blit_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/bufferproxy_test.py
@@ -311,10 +318,12 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/cdrom_tags.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/cdrom_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/color_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/compat_test.py
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/constants_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/cursors_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/display_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/draw_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/event_test.py
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/fastevent_tags.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/fastevent_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/fixtures/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/fixtures/fonts/
@@ -352,6 +361,7 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/mixer_music_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/mixer_tags.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/mixer_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/mouse_test.py
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/overlay_tags.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/overlay_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/pixelarray_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/pixelcopy_test.py
@@ -498,7 +508,10 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/test_utils/test_machinery.
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/test_utils/test_runner.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/threads_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/time_test.py
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/touch_tags.py
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/touch_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/transform_test.py
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/version_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/threads/
 lib/python${MODPY_VERSION}/site-packages/pygame/threads/Py25Queue.py
 lib/python${MODPY_VERSION}/site-packages/pygame/threads/__init__.py
@@ -509,12 +522,12 @@ lib/python${MODPY_VERSION}/site-packages/pygame/threads/${MODPY_PYCACHE}__init__
 @so lib/python${MODPY_VERSION}/site-packages/pygame/transform.so
 lib/python${MODPY_VERSION}/site-packages/pygame/version.py
 share/doc/pygame${MODPY_BIN_SUFFIX}/
+share/doc/pygame${MODPY_BIN_SUFFIX}/README.rst
 share/doc/pygame${MODPY_BIN_SUFFIX}/logos.html
 share/doc/pygame${MODPY_BIN_SUFFIX}/pygame_logo.gif
 share/doc/pygame${MODPY_BIN_SUFFIX}/pygame_powered.gif
 share/doc/pygame${MODPY_BIN_SUFFIX}/pygame_small.gif
 share/doc/pygame${MODPY_BIN_SUFFIX}/pygame_tiny.gif
-share/doc/pygame${MODPY_BIN_SUFFIX}/readme.rst
 share/doc/pygame${MODPY_BIN_SUFFIX}/ref/
 share/doc/pygame${MODPY_BIN_SUFFIX}/ref/bufferproxy.rst
 share/doc/pygame${MODPY_BIN_SUFFIX}/ref/camera.rst
@@ -551,6 +564,7 @@ share/doc/pygame${MODPY_BIN_SUFFIX}/ref/surface.rst
 share/doc/pygame${MODPY_BIN_SUFFIX}/ref/surfarray.rst
 share/doc/pygame${MODPY_BIN_SUFFIX}/ref/tests.rst
 share/doc/pygame${MODPY_BIN_SUFFIX}/ref/time.rst
+share/doc/pygame${MODPY_BIN_SUFFIX}/ref/touch.rst
 share/doc/pygame${MODPY_BIN_SUFFIX}/ref/transform.rst
 share/doc/pygame${MODPY_BIN_SUFFIX}/tut/
 share/doc/pygame${MODPY_BIN_SUFFIX}/tut/CameraIntro.rst
@@ -603,6 +617,7 @@ share/examples/pygame${MODPY_BIN_SUFFIX}/__init__.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/aacircle.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/aliens.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/arraydemo.py
+share/examples/pygame${MODPY_BIN_SUFFIX}/audiocapture.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/blend_fill.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/blit_blends.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/camera.py
@@ -643,6 +658,7 @@ share/examples/pygame${MODPY_BIN_SUFFIX}/data/shot.gif
 share/examples/pygame${MODPY_BIN_SUFFIX}/data/static.png
 share/examples/pygame${MODPY_BIN_SUFFIX}/data/whiff.wav
 share/examples/pygame${MODPY_BIN_SUFFIX}/data/yuv_1.pgm
+share/examples/pygame${MODPY_BIN_SUFFIX}/dropevent.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/eventlist.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/fastevents.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/fonty.py
@@ -666,4 +682,6 @@ share/examples/pygame${MODPY_BIN_SUFFIX}/sound.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/sound_array_demos.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/stars.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/testsprite.py
+share/examples/pygame${MODPY_BIN_SUFFIX}/textinput.py
 share/examples/pygame${MODPY_BIN_SUFFIX}/vgrade.py
+share/examples/pygame${MODPY_BIN_SUFFIX}/video.py
