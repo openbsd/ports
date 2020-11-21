@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_route_c,v 1.1 2020/11/21 14:33:31 sthen Exp $
+
+From 9eee07b482593f9db498ee1bdc6f6f24137ce164 Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Sat, 21 Nov 2020 08:46:30 +0000
+Subject: DHCP6: Fix segfault introduced in dhcpcd-9.3.3
+
+From 0857eedfc89794cea5b0ff5d0bba0f60dee4183c Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Sat, 21 Nov 2020 11:59:07 +0000
+Subject: DHCP6: Delegated activations work once more
+
+Index: src/route.c
+--- src/route.c.orig
++++ src/route.c
+@@ -713,7 +713,10 @@ rt_build(struct dhcpcd_ctx *ctx, int af)
+ #endif
+ 
+ 	RB_TREE_FOREACH_SAFE(rt, &routes, rtn) {
+-		if (!(rt->rt_ifp->options->options & DHCPCD_CONFIGURE))
++		if (rt->rt_ifp->active) {
++			if (!(rt->rt_ifp->options->options & DHCPCD_CONFIGURE))
++				continue;
++		} else if (!(ctx->options & DHCPCD_CONFIGURE))
+ 			continue;
+ #ifdef BSD
+ 		if (rt_is_default(rt) &&
