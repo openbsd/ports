@@ -1,0 +1,16 @@
+$OpenBSD: patch-pyVmomi_Version_py,v 1.1 2020/11/21 22:03:39 pvk Exp $
+
+Fix test SyntaxWarning: "is" with a literal
+
+Index: pyVmomi/Version.py
+--- pyVmomi/Version.py.orig
++++ pyVmomi/Version.py
+@@ -23,7 +23,7 @@ def AddVersion(version, ns, versionId='', isLegacy=0, 
+       nsMap[version] = ns
+       if len(versionId) > 0:
+          versionMap[ns + '/' + versionId] = version
+-      if isLegacy or ns is "":
++      if isLegacy or ns == "":
+          versionMap[ns] = version
+       versionIdMap[version] = versionId
+       if not serviceNs:
