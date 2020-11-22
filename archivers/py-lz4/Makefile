@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/12 20:35:13 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/22 10:19:33 benoit Exp $
 
 COMMENT =		lz4 bindings for Python
 
-MODPY_EGG_VERSION =	3.1.0
+MODPY_EGG_VERSION =	3.1.1
 
 DISTNAME =		lz4-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
