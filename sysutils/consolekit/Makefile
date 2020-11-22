@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2020/11/21 09:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2020/11/22 10:07:49 ajacoutot Exp $
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
 PKGNAME=		${DISTNAME:L}
-REVISION=		10
+REVISION=		11
 
 GH_TAGNAME=		1.2.1
 GH_ACCOUNT=		ConsoleKit2

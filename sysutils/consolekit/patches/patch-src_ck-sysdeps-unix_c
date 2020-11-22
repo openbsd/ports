@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.14 2019/02/10 17:40:28 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.15 2020/11/22 10:07:49 ajacoutot Exp $
 
 https://github.com/ConsoleKit2/ConsoleKit2/pull/118
 
@@ -21,3 +21,12 @@ Index: src/ck-sysdeps-unix.c
  #ifdef __linux__
  	if (fd < 0 && errno == EIO) {
  		/* Linux can return EIO if the tty is currently closing,
+@@ -316,7 +322,7 @@ ck_get_a_console_fd (void)
+ #endif
+ 
+ #if defined(__OpenBSD__)
+-        fd = ck_open_a_console ("/dev/ttyC0");
++        fd = ck_open_a_console ("/dev/ttyCcfg");
+         if (fd >= 0) {
+                 goto done;
+         }
