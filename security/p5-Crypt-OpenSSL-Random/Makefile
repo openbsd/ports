@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2020/11/22 08:36:14 benoit Exp $
 
-COMMENT=	routines for accessing the OpenSSL prng
+COMMENT =	routines for accessing the OpenSSL prng
 
-MODULES=	cpan
-DISTNAME=	Crypt-OpenSSL-Random-0.11
-CATEGORIES=	security
-REVISION=	0
+MODULES =	cpan
+DISTNAME =	Crypt-OpenSSL-Random-0.15
+CATEGORIES =	security
+CPAN_AUTHOR =	RURBAN
 
 # perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto perl ssl
+WANTLIB += 	c crypto perl ssl
 
-CPAN_AUTHOR=	RURBAN
+MAKE_ENV +=	TEST_POD=Yes
+
+RUN_DEPENDS =	security/p5-Crypt-OpenSSL-Guess
+BUILD_DEPENDS = ${RUN_DEPENDS}
 
 .include <bsd.port.mk>
