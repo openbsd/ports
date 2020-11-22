@@ -1,18 +1,18 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2018/07/11 15:09:00 chrisz Exp $
+$OpenBSD: patch-configure,v 1.2 2020/11/22 21:30:43 daniel Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -292,7 +292,7 @@ fi
+@@ -314,7 +314,7 @@ fi
  
  arch='none'
  case $host in
 -    x86_64-*linux-gnu|x86_64-kfreebsd-gnu)
 +    x86_64-*linux-gnu|x86_64-kfreebsd-gnu|amd64-*-openbsd*)
          ccdef="-DZ_ELF -DZ_DOT_LABEL_PREFIX $ccdef"
-         arch='x86_64';;
-     i486-*linux-gnu|i686-*linux-gnu|i486-kfreebsd-gnu)
-@@ -307,7 +307,7 @@ case $host in
+         if test $wordsize = 32; then
+             # 32-bit OCaml on a 64-bit host
+@@ -337,7 +337,7 @@ case $host in
              arch='i686'
          fi
  	;;
@@ -21,7 +21,7 @@ Index: configure
          ccdef="-DZ_UNDERSCORE_PREFIX -DZ_MACOS $ccdef"
          if test "x$wordsize" = "x64"; then
              ccopt="-arch x86_64 $ccopt"
-@@ -321,7 +321,7 @@ case $host in
+@@ -351,7 +351,7 @@ case $host in
              checkcc
          fi
          ;;
