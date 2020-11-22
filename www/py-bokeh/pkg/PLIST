@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/08/30 09:24:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/11/22 14:53:02 daniel Exp $
 @conflict py-bokeh-*
-@pkgpath www/py-bokeh,python3
+@pkgpath www/py-bokeh
 bin/bokeh
 lib/python${MODPY_VERSION}/site-packages/bokeh/
 lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
