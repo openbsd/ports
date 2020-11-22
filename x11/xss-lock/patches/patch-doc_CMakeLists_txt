@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1.1.1 2020/11/22 18:25:12 sthen Exp $
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -8,7 +8,7 @@ if(rst2man)
+                        COMMAND ${rst2man} ${man_input} ${man_output}
+                        DEPENDS ${man_input})
+     add_custom_target(man ALL DEPENDS ${man_output})
+-    install(FILES ${man_output} DESTINATION share/man/man1)
++    install(FILES ${man_output} DESTINATION man/man1)
+ else()
+     message(WARNING "rst2man (docutils) not found, disabling man page generation")
+ endif()

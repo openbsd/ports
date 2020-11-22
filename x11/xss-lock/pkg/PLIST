@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/22 18:25:12 sthen Exp $
+@bin bin/xss-lock
+@man man/man1/xss-lock.1
+share/bash-completion/completions/xss-lock
+share/doc/xss-lock/
+share/doc/xss-lock/NEWS
+share/doc/xss-lock/dim-screen.sh
+share/doc/xss-lock/transfer-sleep-lock-generic-delay.sh
+share/doc/xss-lock/transfer-sleep-lock-i3lock.sh
+share/doc/xss-lock/xdg-screensaver.patch
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_xss-lock
