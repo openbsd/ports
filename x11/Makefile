@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.679 2020/11/09 18:42:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.680 2020/11/22 18:25:36 sthen Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -415,6 +415,7 @@
      SUBDIR += xscribble
      SUBDIR += xsel
      SUBDIR += xsettingsd
+     SUBDIR += xss-lock
      SUBDIR += xtacy
      SUBDIR += xtermset
      SUBDIR += xtestpicture
