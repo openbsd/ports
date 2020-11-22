@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:48:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/11/22 20:52:14 mestre Exp $
 
 COMMENT=		console jabber client
-DISTNAME=		mcabber-1.1.0
+DISTNAME=		mcabber-1.1.2
 CATEGORIES=		net
-REVISION=		4
 
 HOMEPAGE=		https://mcabber.com/
 
@@ -13,7 +12,7 @@ MAINTAINER=		Markus Hennecke <markus-hennecke@markus-hennecke.de>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += assuan c crypto curses gcrypt glib-2.0 gpg-error gpgme iconv
-WANTLIB += idn intl loudmouth-1>=3 otr panelw pcre pthread ssl
+WANTLIB += idn intl loudmouth-1>=3 otr panel pcre pthread ssl
 
 MASTER_SITES=		${HOMEPAGE}/files/
 EXTRACT_SUFX=		.tar.bz2
