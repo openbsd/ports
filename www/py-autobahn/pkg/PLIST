@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/04/23 16:43:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/11/22 15:12:03 daniel Exp $
+@conflict py-autobahn-*
+@pkgpath www/py-autobahn
 lib/python${MODPY_VERSION}/site-packages/autobahn/
 lib/python${MODPY_VERSION}/site-packages/autobahn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/autobahn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
