@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.594 2020/10/07 13:32:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.595 2020/11/22 08:30:08 benoit Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -195,6 +195,7 @@
      SUBDIR += p5-Crypt-OpenSSL-DSA
      SUBDIR += p5-Crypt-OpenSSL-EC
      SUBDIR += p5-Crypt-OpenSSL-ECDSA
+     SUBDIR += p5-Crypt-OpenSSL-Guess
      SUBDIR += p5-Crypt-OpenSSL-PKCS10
      SUBDIR += p5-Crypt-OpenSSL-RSA
      SUBDIR += p5-Crypt-OpenSSL-Random
