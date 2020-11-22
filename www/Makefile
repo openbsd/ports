@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.987 2020/11/06 18:18:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.988 2020/11/22 14:54:28 daniel Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -426,7 +426,7 @@
      SUBDIR += py-betamax,python3
      SUBDIR += py-bleach
      SUBDIR += py-bleach,python3
-     SUBDIR += py-bokeh
+     SUBDIR += py-bokeh,python3
      SUBDIR += py-bottle
      SUBDIR += py-bottle,python3
      SUBDIR += py-cheroot
