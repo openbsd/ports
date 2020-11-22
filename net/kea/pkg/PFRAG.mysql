@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.1 2019/12/20 17:16:37 sthen Exp $
+@comment $OpenBSD: PFRAG.mysql,v 1.2 2020/11/22 14:43:02 sthen Exp $
 include/kea/dhcpsrv/mysql_host_data_source.h
 include/kea/dhcpsrv/mysql_lease_mgr.h
 include/kea/mysql/
@@ -27,4 +27,7 @@ share/kea/scripts/mysql/upgrade_7.0_to_8.0.sh
 share/kea/scripts/mysql/upgrade_8.0_to_8.1.sh
 share/kea/scripts/mysql/upgrade_8.1_to_8.2.sh
 share/kea/scripts/mysql/upgrade_8.2_to_9.0.sh
+share/kea/scripts/mysql/upgrade_9.0_to_9.1.sh
+share/kea/scripts/mysql/upgrade_9.1_to_9.2.sh
+share/kea/scripts/mysql/upgrade_9.2_to_9.3.sh
 share/kea/scripts/mysql/wipe_data.sh

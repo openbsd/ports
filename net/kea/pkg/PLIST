@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/05/14 11:48:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/11/22 14:43:02 sthen Exp $
 @newgroup _kea:763
 @newuser _kea:763:_kea:daemon:Kea user:/nonexistent:/sbin/nologin
 @mode 0750
@@ -217,6 +217,7 @@ include/kea/dhcpsrv/parsers/shared_networks_list_parser.h
 include/kea/dhcpsrv/parsers/simple_parser4.h
 include/kea/dhcpsrv/parsers/simple_parser6.h
 include/kea/dhcpsrv/pool.h
+include/kea/dhcpsrv/resource_handler.h
 include/kea/dhcpsrv/sanity_checker.h
 include/kea/dhcpsrv/shared_network.h
 include/kea/dhcpsrv/srv_config.h
@@ -398,6 +399,7 @@ include/kea/util/random/
 include/kea/util/random/qid_gen.h
 include/kea/util/random/random_number_generator.h
 include/kea/util/range_utilities.h
+include/kea/util/readwrite_mutex.h
 include/kea/util/signal_set.h
 include/kea/util/staged_value.h
 include/kea/util/state_model.h
@@ -406,6 +408,7 @@ include/kea/util/stopwatch_impl.h
 include/kea/util/strutil.h
 include/kea/util/thread_pool.h
 include/kea/util/time_utilities.h
+include/kea/util/unlock_guard.h
 include/kea/util/versioned_csv_file.h
 include/kea/util/watch_socket.h
 include/kea/util/watched_thread.h
@@ -482,6 +485,7 @@ share/doc/kea/CONTRIBUTING.md
 share/doc/kea/COPYING
 share/doc/kea/ChangeLog
 share/doc/kea/README
+share/doc/kea/code_of_conduct.md
 share/doc/kea/examples/
 share/doc/kea/examples/agent/
 share/doc/kea/examples/agent/comments.json

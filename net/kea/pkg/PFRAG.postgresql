@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.postgresql,v 1.1 2019/12/20 17:16:37 sthen Exp $
+@comment $OpenBSD: PFRAG.postgresql,v 1.2 2020/11/22 14:43:02 sthen Exp $
 include/kea/dhcpsrv/pgsql_host_data_source.h
 include/kea/dhcpsrv/pgsql_lease_mgr.h
 include/kea/pgsql/
@@ -20,4 +20,5 @@ share/kea/scripts/pgsql/upgrade_3.3_to_4.0.sh
 share/kea/scripts/pgsql/upgrade_4.0_to_5.0.sh
 share/kea/scripts/pgsql/upgrade_5.0_to_5.1.sh
 share/kea/scripts/pgsql/upgrade_5.1_to_6.0.sh
+share/kea/scripts/pgsql/upgrade_6.0_to_6.1.sh
 share/kea/scripts/pgsql/wipe_data.sh
