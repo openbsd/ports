@@ -1,15 +1,14 @@
-$OpenBSD: patch-libyelp_yelp-man-parser_c,v 1.4 2020/11/01 08:25:42 ajacoutot Exp $
+$OpenBSD: patch-libyelp_yelp-man-parser_c,v 1.5 2020/11/22 09:41:11 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/yelp/-/issues/50
-
---- libyelp/yelp-man-parser.c.orig	Thu May  7 02:07:29 2015
-+++ libyelp/yelp-man-parser.c	Sun Jul 31 08:58:32 2016
+Index: libyelp/yelp-man-parser.c
+--- libyelp/yelp-man-parser.c.orig
++++ libyelp/yelp-man-parser.c
 @@ -369,7 +369,7 @@ get_troff (gchar *path, GError **error)
  {
      gint ystdout;
      GError *err = NULL;
 -    const gchar *argv[] = { "man", "-Z", "-Tutf8", "-EUTF-8", path, NULL };
-+    const gchar *argv[] = { "${PREFIX}/libexec/yelp-groff", path, NULL };
++    const gchar *argv[] = { "groff", "-m", "man", "-Z", "-Tutf8", path, NULL };
      gchar **my_argv;
  
      /* g_strdupv() should accept a "const gchar **". */
