@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1116 2020/11/22 15:17:13 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1117 2020/11/22 17:40:08 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1919,6 +1919,7 @@ my $obsolete_reason = {
 	'colord-gtk' => 27,
 	'gnome-color-manager' => 5,
 	'zeya' => 3,
+	'py-trollius' => 3,
 };
 
 # reasons for obsolete packages
