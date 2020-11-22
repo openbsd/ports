@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2020/09/08 20:57:48 remi Exp $
+# $OpenBSD: Makefile,v 1.50 2020/11/22 17:05:59 remi Exp $
 
 COMMENT-main =		syslog daemon supporting databases, TCP, SSL, RELP
 COMMENT-mysql =		MySQL plugin for rsyslog
@@ -16,6 +16,7 @@ PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
+REVISION-main =		0
 
 HOMEPAGE =		https://www.rsyslog.com/
 
@@ -64,7 +65,8 @@ CONFIGURE_ARGS +=	--enable-pgsql \
 			--enable-mmnormalize \
 			--enable-gnutls \
 			--enable-relp \
-			--enable-elasticsearch
+			--enable-elasticsearch \
+			--enable-imfile
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 
 post-install:
