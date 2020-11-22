@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.587 2020/11/21 12:26:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.588 2020/11/22 20:52:44 pvk Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -284,6 +284,7 @@
      SUBDIR += py-threadpoolctl,python3
      SUBDIR += py-tsk,python3
      SUBDIR += py-vmomi,python3
+     SUBDIR += py-vsphere-automation,python3
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
