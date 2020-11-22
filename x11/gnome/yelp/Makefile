@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2020/11/22 09:41:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2020/11/22 18:45:00 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
@@ -46,13 +46,7 @@ CONFIGURE_STYLE=	gnu
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/libyelp/yelp-man-parser.c
-
 post-install:
-# https://bugzilla.gnome.org/show_bug.cgi?id=648854
-	${INSTALL_SCRIPT} ${FILESDIR}/yelp-groff \
-		${PREFIX}/libexec/yelp-groff
 	rm ${PREFIX}/lib/yelp/web-extensions/*.{a,la}
 
 .include <bsd.port.mk>
