@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2038 2020/11/19 07:19:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.2039 2020/11/22 15:15:04 daniel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1728,7 +1728,6 @@
      SUBDIR += py-trollius
      SUBDIR += py-twisted
      SUBDIR += py-twisted,python3
-     SUBDIR += py-txaio
      SUBDIR += py-txaio,python3
      SUBDIR += py-typing
      SUBDIR += py-typing-extensions,python3
