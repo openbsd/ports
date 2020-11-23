@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/11/17 03:19:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.28 2020/11/23 12:39:34 sthen Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -116,6 +116,12 @@ CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN}
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
+.endif
+
+.if ${MACHINE_ARCH} == "aarch64"
+# dwz fails when compressing debug symbols;
+# assertion "off == cu_size" failed: file "dwz.c", line 9607, function "recompute_abbrevs"
+DWZ = :
 .endif
 
 # ld.lld does not have this option
