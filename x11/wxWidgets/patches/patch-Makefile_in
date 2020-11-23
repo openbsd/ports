@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.11 2019/01/21 18:55:07 jca Exp $
+$OpenBSD: patch-Makefile_in,v 1.12 2020/11/23 00:49:15 jca Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -15219,12 +15219,12 @@ COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_HTML_1___html
+@@ -15215,12 +15215,12 @@ COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_HTML_1___html
  @COND_USE_EXCEPTIONS_0@__EXCEPTIONS_DEFINE_p_65 = --define wxNO_EXCEPTIONS
  @COND_USE_RTTI_0@__RTTI_DEFINE_p_65 = --define wxNO_RTTI
  @COND_USE_THREADS_0@__THREAD_DEFINE_p_65 = --define wxNO_THREADS
@@ -13,12 +13,12 @@ Index: Makefile.in
  @COND_USE_SOVERSION_0@dll___targetsuf2 = .$(SO_SUFFIX)
  @COND_PLATFORM_MACOSX_0_USE_SOVERCYGWIN_0_USE_SOVERSION_1@dll___targetsuf3 \
  @COND_PLATFORM_MACOSX_0_USE_SOVERCYGWIN_0_USE_SOVERSION_1@	= \
--@COND_PLATFORM_MACOSX_0_USE_SOVERCYGWIN_0_USE_SOVERSION_1@	.$(SO_SUFFIX).0.4.0
+-@COND_PLATFORM_MACOSX_0_USE_SOVERCYGWIN_0_USE_SOVERSION_1@	.$(SO_SUFFIX).0.5.0
 +@COND_PLATFORM_MACOSX_0_USE_SOVERCYGWIN_0_USE_SOVERSION_1@	.$(SO_SUFFIX).$(SO_VERSION)
  @COND_PLATFORM_MACOSX_1_USE_SOVERSION_1@dll___targetsuf3 \
- @COND_PLATFORM_MACOSX_1_USE_SOVERSION_1@	= .0.4.0.$(SO_SUFFIX)
+ @COND_PLATFORM_MACOSX_1_USE_SOVERSION_1@	= .0.5.0.$(SO_SUFFIX)
  @COND_USE_SOVERCYGWIN_1_USE_SOVERSION_1@dll___targetsuf3 = -0.$(SO_SUFFIX)
-@@ -15527,7 +15527,6 @@ distclean: clean
+@@ -15522,7 +15522,6 @@ distclean: clean
  
  @COND_MONOLITHIC_1_SHARED_1@install_monodll: $(__monodll___depname)
  @COND_MONOLITHIC_1_SHARED_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -26,7 +26,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_1_SHARED_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_1_SHARED_1@	(cd $(DESTDIR)$(libdir) ; $(__monodll___so_symlinks_inst_cmd))
  
-@@ -15562,7 +15561,6 @@ distclean: clean
+@@ -15557,7 +15556,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1@install_basedll: $(__basedll___depname)
  @COND_MONOLITHIC_0_SHARED_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -34,7 +34,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIX)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1@	(cd $(DESTDIR)$(libdir) ; $(__basedll___so_symlinks_inst_cmd))
  
-@@ -15599,7 +15597,6 @@ distclean: clean
+@@ -15594,7 +15592,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1@install_netdll: $(__netdll___depname)
  @COND_MONOLITHIC_0_SHARED_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -42,7 +42,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIX)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_net$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1@	(cd $(DESTDIR)$(libdir) ; $(__netdll___so_symlinks_inst_cmd))
  
-@@ -15636,7 +15633,6 @@ distclean: clean
+@@ -15631,7 +15628,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1@install_coredll: $(__coredll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -50,7 +50,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_core$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1@	(cd $(DESTDIR)$(libdir) ; $(__coredll___so_symlinks_inst_cmd))
  
-@@ -15673,7 +15669,6 @@ distclean: clean
+@@ -15668,7 +15664,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1@install_advdll: $(__advdll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -58,7 +58,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_adv$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1@	(cd $(DESTDIR)$(libdir) ; $(__advdll___so_symlinks_inst_cmd))
  
-@@ -15710,7 +15705,6 @@ distclean: clean
+@@ -15705,7 +15700,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1@install_mediadll: $(__mediadll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -66,7 +66,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_media$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1@	(cd $(DESTDIR)$(libdir) ; $(__mediadll___so_symlinks_inst_cmd))
  
-@@ -15747,7 +15741,6 @@ distclean: clean
+@@ -15742,7 +15736,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_HTML_1@install_htmldll: $(__htmldll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_HTML_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -74,7 +74,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_HTML_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_html$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_HTML_1@	(cd $(DESTDIR)$(libdir) ; $(__htmldll___so_symlinks_inst_cmd))
  
-@@ -15784,7 +15777,6 @@ distclean: clean
+@@ -15779,7 +15772,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_WEBVIEW_1@install_webviewdll: $(__webviewdll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_WEBVIEW_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -82,7 +82,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_WEBVIEW_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_webview$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_WEBVIEW_1@	(cd $(DESTDIR)$(libdir) ; $(__webviewdll___so_symlinks_inst_cmd))
  
-@@ -15821,7 +15813,6 @@ distclean: clean
+@@ -15816,7 +15808,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_QA_1@install_qadll: $(__qadll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_QA_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -90,7 +90,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_QA_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_qa$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_QA_1@	(cd $(DESTDIR)$(libdir) ; $(__qadll___so_symlinks_inst_cmd))
  
-@@ -15858,7 +15849,6 @@ distclean: clean
+@@ -15853,7 +15844,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1@install_xmldll: $(__xmldll___depname)
  @COND_MONOLITHIC_0_SHARED_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -98,7 +98,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIX)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_xml$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1@	(cd $(DESTDIR)$(libdir) ; $(__xmldll___so_symlinks_inst_cmd))
  
-@@ -15895,7 +15885,6 @@ distclean: clean
+@@ -15890,7 +15880,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_XRC_1@install_xrcdll: $(__xrcdll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_XRC_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -106,7 +106,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_XRC_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_xrc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_XRC_1@	(cd $(DESTDIR)$(libdir) ; $(__xrcdll___so_symlinks_inst_cmd))
  
-@@ -15932,7 +15921,6 @@ distclean: clean
+@@ -15927,7 +15916,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_AUI_1@install_auidll: $(__auidll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_AUI_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -114,7 +114,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_AUI_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_aui$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_AUI_1@	(cd $(DESTDIR)$(libdir) ; $(__auidll___so_symlinks_inst_cmd))
  
-@@ -15969,7 +15957,6 @@ distclean: clean
+@@ -15964,7 +15952,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_RIBBON_1@install_ribbondll: $(__ribbondll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_RIBBON_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -122,7 +122,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_RIBBON_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_ribbon$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_RIBBON_1@	(cd $(DESTDIR)$(libdir) ; $(__ribbondll___so_symlinks_inst_cmd))
  
-@@ -16006,7 +15993,6 @@ distclean: clean
+@@ -16001,7 +15988,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_PROPGRID_1@install_propgriddll: $(__propgriddll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_PROPGRID_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -130,7 +130,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_PROPGRID_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_propgrid$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_PROPGRID_1@	(cd $(DESTDIR)$(libdir) ; $(__propgriddll___so_symlinks_inst_cmd))
  
-@@ -16043,7 +16029,6 @@ distclean: clean
+@@ -16038,7 +16024,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_RICHTEXT_1@install_richtextdll: $(__richtextdll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_RICHTEXT_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -138,7 +138,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_RICHTEXT_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_richtext$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_RICHTEXT_1@	(cd $(DESTDIR)$(libdir) ; $(__richtextdll___so_symlinks_inst_cmd))
  
-@@ -16080,7 +16065,6 @@ distclean: clean
+@@ -16075,7 +16060,6 @@ distclean: clean
  
  @COND_MONOLITHIC_0_SHARED_1_USE_STC_1@install_stcdll: $(__stcdll___depname)
  @COND_MONOLITHIC_0_SHARED_1_USE_STC_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
@@ -146,7 +146,7 @@ Index: Makefile.in
  @COND_MONOLITHIC_0_SHARED_1_USE_STC_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3) $(DESTDIR)$(libdir)
  @COND_MONOLITHIC_0_SHARED_1_USE_STC_1@	(cd $(DESTDIR)$(libdir) ; $(__stcdll___so_symlinks_inst_cmd))
  
-@@ -16117,7 +16101,6 @@ distclean: clean
+@@ -16112,7 +16096,6 @@ distclean: clean
  
  @COND_SHARED_1_USE_GUI_1_USE_OPENGL_1@install_gldll: $(__gldll___depname)
  @COND_SHARED_1_USE_GUI_1_USE_OPENGL_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)

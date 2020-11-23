@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.5 2019/01/21 18:55:07 jca Exp $
+$OpenBSD: patch-configure,v 1.6 2020/11/23 00:49:15 jca Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -40002,6 +40002,11 @@ EOF
+@@ -39051,6 +39051,11 @@ fi
          USE_SOVERSION=1
          USE_SOVERLINUX=1
          USE_SOTWOSYMLINKS=1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2019/01/02 12:41:48 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2020/11/23 00:49:15 jca Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -765,9 +765,10 @@ lib/wx/include/gtk3-unicode-3.0/wx/setup.h
 share/aclocal/wxwin.m4
 share/bakefile/
 share/bakefile/presets/
+${MODPY_COMMENT}share/bakefile/presets/${MODPY_PYCACHE}/
+share/bakefile/presets/${MODPY_PYCACHE}wx_presets.${MODPY_PYC_MAGIC_TAG}pyc
 share/bakefile/presets/wx.bkl
 share/bakefile/presets/wx_presets.py
-share/bakefile/presets/wx_presets.pyc
 share/bakefile/presets/wx_unix.bkl
 share/bakefile/presets/wx_win32.bkl
 share/bakefile/presets/wx_xrc.bkl
