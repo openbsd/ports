@@ -1,4 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2020/11/08 15:46:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2020/11/23 12:37:25 sthen Exp $
+
+# would normally be set in java.port.mk, but i2p pulls in bsd.port.arch.mk
+# itself which interferes with ONLY_FOR_ARCHS coming from MODULES.
+# list is for jdk 1.8 arches.
+ONLY_FOR_ARCHS= amd64 i386
 
 BROKEN-i386=	various relocation R_386_PC32 cannot be used against symbol XX
 

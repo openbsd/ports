@@ -1,4 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/05 19:54:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/23 12:37:25 sthen Exp $
+
+# would normally be set in java.port.mk, but i2p pulls in bsd.port.arch.mk
+# itself which interferes with ONLY_FOR_ARCHS coming from MODULES.
+# list is for jdk 1.8 arches.
+ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	i2p routing protocol
 
