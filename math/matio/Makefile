@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/18 14:20:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/23 14:32:51 kmos Exp $
 
 COMMENT=	library for reading and writing Matlab MAT files
 
@@ -12,6 +12,8 @@ HOMEPAGE=	https://sourceforge.net/projects/matio/
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=matio/}
+
+COMPILER=		base-clang ports-gcc
 
 WANTLIB =		c hdf5 m z
 
