@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.16 2020/05/25 05:12:00 rsadowski Exp $
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.17 2020/11/23 07:25:15 rsadowski Exp $
 
 Index: Modules/Platform/OpenBSD.cmake
 --- Modules/Platform/OpenBSD.cmake.orig
@@ -7,8 +7,8 @@ Index: Modules/Platform/OpenBSD.cmake
    set(OPENBSD_X11BASE /usr/X11R6)
  endif()
  
-+# If DEBUG_PACKAGES set don't create install stripa rule
-+if($ENV{DEBUG_PACKAGES})
++# If DEBUG_PACKAGES set don't create install strip(1) rule
++if(DEFINED ENV{DEBUG_PACKAGES})
 +  set(CMAKE_OPENBSD_DEBUG_PACKAGES)
 +endif()
 +
