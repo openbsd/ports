@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/23 07:48:32 benoit Exp $
 
 COMMENT =	parse Perl string literals and string-literal-like things
 
-DISTNAME =	PPIx-QuoteLike-0.009
-REVISION =	0
+DISTNAME =	PPIx-QuoteLike-0.013
 
 CATEGORIES =	textproc
 
