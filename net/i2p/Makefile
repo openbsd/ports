@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/23 12:37:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/23 14:40:26 sthen Exp $
 
 # would normally be set in java.port.mk, but i2p pulls in bsd.port.arch.mk
 # itself which interferes with ONLY_FOR_ARCHS coming from MODULES.
@@ -11,7 +11,7 @@ V=		0.9.47
 DISTNAME=	i2psource_${V}
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	i2p-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -25,7 +25,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	gmp
 
-MASTER_SITES=	https://download.i2p2.de/releases/$V/
+MASTER_SITES=	https://download.i2p2.de/releases/$V/ \
+		https://launchpad.net/i2p/trunk/$V/+download/
 
 MODULES=	java
 MODJAVA_VER=	1.8
@@ -48,6 +49,8 @@ DB_DIR=		${LOCALSTATEDIR}/i2p
 
 SUBST_VARS=	DB_DIR JAVA_HOME
 
+MAKE_ENV=	CC=${CC} BITS=${BITS}
+
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
 # test requires addition dependencies (atleast: junit, hamcrest, jmockfit)
@@ -59,8 +62,7 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/installer/resources/eepget
 
 post-build:
-	cd ${WRKSRC}/core/c && CC=${CC} BITS=${BITS} \
-		${WRKSRC}/core/c/build.sh
+	cd ${WRKSRC}/core/c && ${MAKE_ENV} ${WRKSRC}/core/c/build.sh
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/i2p

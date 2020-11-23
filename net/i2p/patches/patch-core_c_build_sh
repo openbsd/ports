@@ -1,0 +1,21 @@
+$OpenBSD: patch-core_c_build_sh,v 1.1 2020/11/23 14:40:26 sthen Exp $
+
+fix jar location
+
+Index: core/c/build.sh
+--- core/c/build.sh.orig
++++ core/c/build.sh
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/sh -e
+ 
+ (cd jcpuid ; sh build.sh ; cd ..)
+ (cd jbigi ; sh build.sh ; cd ..)
+@@ -9,6 +9,6 @@ cp jcpuid/lib/freenet/support/CPUInformation/*jcpuid* 
+ mkdir -p t/net/i2p/util/
+ cp jbigi/lib/*jbigi* t/
+ 
+-(cd t ; jar cf ../jbigi.jar . ; cd ..)
++(cd t ; ${JAVA_HOME}/bin/jar cf ../jbigi.jar . ; cd ..)
+ 
+ echo "Native code built into jbigi.jar"
