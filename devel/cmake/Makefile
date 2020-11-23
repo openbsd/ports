@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2020/10/23 13:44:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.188 2020/11/23 07:33:20 rsadowski Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,6 +8,7 @@ VER =		3.17.5
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://www.cmake.org/
 

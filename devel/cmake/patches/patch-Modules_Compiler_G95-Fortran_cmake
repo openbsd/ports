@@ -1,13 +1,22 @@
-$OpenBSD: patch-Modules_Compiler_G95-Fortran_cmake,v 1.4 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/Compiler/G95-Fortran.cmake.orig	Sat Nov 26 12:29:14 2016
-+++ Modules/Compiler/G95-Fortran.cmake	Sat Nov 26 12:29:44 2016
-@@ -1,8 +1,6 @@
+$OpenBSD: patch-Modules_Compiler_G95-Fortran_cmake,v 1.5 2020/11/23 07:33:20 rsadowski Exp $
+Index: Modules/Compiler/G95-Fortran.cmake
+--- Modules/Compiler/G95-Fortran.cmake.orig
++++ Modules/Compiler/G95-Fortran.cmake
+@@ -1,8 +1,13 @@
  string(APPEND CMAKE_Fortran_FLAGS_INIT " ")
- string(APPEND CMAKE_Fortran_FLAGS_DEBUG_INIT " -g")
+-string(APPEND CMAKE_Fortran_FLAGS_DEBUG_INIT " -g")
 -string(APPEND CMAKE_Fortran_FLAGS_MINSIZEREL_INIT " -Os")
 -string(APPEND CMAKE_Fortran_FLAGS_RELEASE_INIT " -O3")
 -string(APPEND CMAKE_Fortran_FLAGS_RELWITHDEBINFO_INIT " -O2 -g")
-+string(APPEND CMAKE_Fortran_FLAGS_RELWITHDEBINFO_INIT " -g")
++if(DEFINED ENV{MODCMAKE_PORT_BUILD})
++  string(APPEND CMAKE_Fortran_FLAGS_DEBUG_INIT " -g")
++  string(APPEND CMAKE_Fortran_FLAGS_RELWITHDEBINFO_INIT " -g")
++else()
++  string(APPEND CMAKE_Fortran_FLAGS_DEBUG_INIT " -g")
++  string(APPEND CMAKE_Fortran_FLAGS_MINSIZEREL_INIT " -Os")
++  string(APPEND CMAKE_Fortran_FLAGS_RELEASE_INIT " -O3")
++  string(APPEND CMAKE_Fortran_FLAGS_RELWITHDEBINFO_INIT " -O2 -g")
++endif()
  set(CMAKE_Fortran_MODDIR_FLAG "-fmod=")
  set(CMAKE_Fortran_VERBOSE_FLAG "-v")
  set(CMAKE_Fortran_FORMAT_FIXED_FLAG "-ffixed-form")
