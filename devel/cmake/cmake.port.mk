@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.69 2020/11/23 09:58:35 rsadowski Exp $
+# $OpenBSD: cmake.port.mk,v 1.70 2020/11/23 18:35:03 sthen Exp $
 
 BUILD_DEPENDS+=	devel/cmake
 
@@ -124,6 +124,7 @@ MODCMAKE_WANTCOLOR ?= No
 MODCMAKE_VERBOSE ?= Yes
 
 # Disable cmake's default optimization flags, putting them under ports control
+CONFIGURE_ENV += MODCMAKE_PORT_BUILD=yes
 MAKE_ENV += MODCMAKE_PORT_BUILD=yes
 
 .if ${MODCMAKE_WANTCOLOR:L} == "yes" && defined(TERM)
