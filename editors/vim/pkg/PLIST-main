@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.41 2020/10/06 16:21:00 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.42 2020/11/23 10:49:41 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -481,6 +481,7 @@ share/vim/${P}/ftplugin/occam.vim
 share/vim/${P}/ftplugin/pamconf.vim
 share/vim/${P}/ftplugin/pascal.vim
 share/vim/${P}/ftplugin/passwd.vim
+share/vim/${P}/ftplugin/pbtxt.vim
 share/vim/${P}/ftplugin/pdf.vim
 share/vim/${P}/ftplugin/perl.vim
 share/vim/${P}/ftplugin/perl6.vim
@@ -1290,6 +1291,7 @@ share/vim/${P}/syntax/pamenv.vim
 share/vim/${P}/syntax/papp.vim
 share/vim/${P}/syntax/pascal.vim
 share/vim/${P}/syntax/passwd.vim
+share/vim/${P}/syntax/pbtxt.vim
 share/vim/${P}/syntax/pcap.vim
 share/vim/${P}/syntax/pccts.vim
 share/vim/${P}/syntax/pdf.vim
