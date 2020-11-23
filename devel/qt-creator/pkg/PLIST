@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/09/21 15:31:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/11/23 07:10:05 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
@@ -1055,8 +1055,8 @@ share/qtcreator/templates/wizards/projects/vcs/subversion/icon@2x.png
 share/qtcreator/templates/wizards/projects/vcs/subversion/wizard.json
 share/qtcreator/templates/wizards/qtcreatorplugin/
 share/qtcreator/templates/wizards/qtcreatorplugin/MyPlugin.json.in
-share/qtcreator/templates/wizards/qtcreatorplugin/github_workflow_README.md
-share/qtcreator/templates/wizards/qtcreatorplugin/github_workflow_build_qmake.yml
+share/qtcreator/templates/wizards/qtcreatorplugin/github_workflows_README.md
+share/qtcreator/templates/wizards/qtcreatorplugin/github_workflows_build_qmake.yml
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.cpp
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.h
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.pro
