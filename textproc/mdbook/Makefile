@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/08 22:35:54 edd Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/23 15:16:44 edd Exp $
 
 COMMENT =		create books from markdown files
 
 GH_ACCOUNT =            rust-lang
 GH_PROJECT =            mdBook
-GH_TAGNAME =            v0.4.1
+GH_TAGNAME =            v0.4.4
 PKGNAME =               ${DISTNAME:L}
 
 CATEGORIES =		textproc www
@@ -96,7 +96,7 @@ MODCARGO_CRATES +=	maplit	1.0.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	markup5ever	0.10.0	# MIT / Apache-2.0
 MODCARGO_CRATES +=	markup5ever_rcdom	0.1.0	# MIT / Apache-2.0
 MODCARGO_CRATES +=	matches	0.1.8	# MIT
-MODCARGO_CRATES +=	mdbook	0.4.1	# MPL-2.0
+MODCARGO_CRATES +=	mdbook	0.4.4	# MPL-2.0
 MODCARGO_CRATES +=	memchr	2.3.3	# Unlicense/MIT
 MODCARGO_CRATES +=	mime	0.3.16	# MIT/Apache-2.0
 MODCARGO_CRATES +=	mime_guess	2.0.3	# MIT
@@ -210,11 +210,11 @@ RELEASE_DIR =		${MODCARGO_TARGET_DIR}/release
 
 # Build the docs.
 pre-fake:
-	cd ${WRKSRC}/book-example && ${RELEASE_DIR}/mdbook build
+	cd ${WRKSRC}/guide && ${RELEASE_DIR}/mdbook build
 
 do-install:
 	${INSTALL_PROGRAM} ${RELEASE_DIR}/mdbook ${PREFIX}/bin/
-	cp -r ${WRKSRC}/book-example/book/ ${PREFIX}/share/doc/mdbook/
+	cp -r ${WRKSRC}/guide/book ${PREFIX}/share/doc/mdbook/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/mdbook/
 
 .include <bsd.port.mk>

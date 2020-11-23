@@ -74,7 +74,7 @@ SHA256 (cargo/maplit-1.0.2.tar.gz) = Pi5loaLkPPy0eolcTIsQ0fSmEJf58lTxg67mDK2cZR0
 SHA256 (cargo/markup5ever-0.10.0.tar.gz) = quONZpOWyptwe/w9slS8OC3blPV8xcI180YjpmmgHas=
 SHA256 (cargo/markup5ever_rcdom-0.1.0.tar.gz) = 8BXaQ7zY1PFEVZo0I/RZHWm4zgZSyQU3TacgXfM2ris=
 SHA256 (cargo/matches-0.1.8.tar.gz) = f/xcUzhGnU0+oX0mn6jqNRKtJHJHwwvS32nmgwntCgg=
-SHA256 (cargo/mdbook-0.4.1.tar.gz) = QGuxjLeftFox35pNvB2cxR3q2JICVT0CkFc7zEF+WQI=
+SHA256 (cargo/mdbook-0.4.4.tar.gz) = cUo6w2K5sy7vlGjs/mBMuOIgTVB5NgLp1J/uRHgSMOc=
 SHA256 (cargo/memchr-2.3.3.tar.gz) = NyjYF9meWsQHQR+kcf+YAKd42IokaFlos2gk6vS+5AA=
 SHA256 (cargo/mime-0.3.16.tar.gz) = KmDHzlAcceA6nJwNNbhhQTrpJb2XnMek4w0GAGmqrI0=
 SHA256 (cargo/mime_guess-2.0.3.tar.gz) = JoTUwul9mYSNMLMksAyPzH5ciXt8u1gZsJ58kOi68hI=
@@ -178,7 +178,7 @@ SHA256 (cargo/winapi-util-0.1.5.tar.gz) = cOxs6FuxWBUcrl5ch/lajpfSwMSwASI/M6M048
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/ws2_32-sys-0.2.1.tar.gz) = 1Zzv69DIkvot1t5YHpNzAdhVLLREic3/A1xhh8tj+l4=
 SHA256 (cargo/xml5ever-0.16.1.tar.gz) = CxtS5uhhTUpYuOcM9R7AzCGyVq2CBnCLz/gTm1u9alk=
-SHA256 (mdBook-0.4.1.tar.gz) = SO4tcQK0QNvbXssISegjaKV3d7A/PWdQrHxHFXsdp6w=
+SHA256 (mdBook-0.4.4.tar.gz) = 6vAQhb0l4u+ge1YRSK+l49ozhuXyw1skWWHcSFViwVQ=
 SIZE (cargo/aho-corasick-0.7.10.tar.gz) = 111039
 SIZE (cargo/ammonia-3.1.0.tar.gz) = 35518
 SIZE (cargo/ansi_term-0.11.0.tar.gz) = 17087
@@ -255,7 +255,7 @@ SIZE (cargo/maplit-1.0.2.tar.gz) = 8871
 SIZE (cargo/markup5ever-0.10.0.tar.gz) = 42925
 SIZE (cargo/markup5ever_rcdom-0.1.0.tar.gz) = 25165
 SIZE (cargo/matches-0.1.8.tar.gz) = 2216
-SIZE (cargo/mdbook-0.4.1.tar.gz) = 1435372
+SIZE (cargo/mdbook-0.4.4.tar.gz) = 1442227
 SIZE (cargo/memchr-2.3.3.tar.gz) = 22566
 SIZE (cargo/mime-0.3.16.tar.gz) = 15206
 SIZE (cargo/mime_guess-2.0.3.tar.gz) = 27437
@@ -359,4 +359,4 @@ SIZE (cargo/winapi-util-0.1.5.tar.gz) = 10164
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SIZE (cargo/ws2_32-sys-0.2.1.tar.gz) = 4697
 SIZE (cargo/xml5ever-0.16.1.tar.gz) = 41282
-SIZE (mdBook-0.4.1.tar.gz) = 1460610
+SIZE (mdBook-0.4.4.tar.gz) = 1474967
