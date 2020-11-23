@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/08/16 08:03:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/11/23 09:31:46 rsadowski Exp $
 bin/makehuman
 share/applications/MakeHuman.desktop
 share/makehuman/
@@ -1839,6 +1839,7 @@ share/makehuman/data/themes/default/
 share/makehuman/data/themes/default.mht
 share/makehuman/data/themes/default/images/
 share/makehuman/data/themes/default/images/splash.png
+share/makehuman/data/themes/default/images/splash.xcf
 share/makehuman/data/themes/makehuman/
 share/makehuman/data/themes/makehuman.mht
 share/makehuman/data/themes/makehuman.qss

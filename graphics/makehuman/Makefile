@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2020/08/16 08:03:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2020/11/23 09:31:46 rsadowski Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
-PKGNAME=	makehuman-1.2.0beta2
-
 GH_ACCOUNT=	makehumancommunity
 GH_PROJECT=	makehuman
-GH_TAGNAME=	b0ca7c8837327b6fbcccfcc85f75a9854f95ea05
+GH_TAGNAME=	v1.2.0
 
 CATEGORIES=	graphics
 
