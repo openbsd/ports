@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2020/03/10 21:25:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/11/23 20:51:42 sthen Exp $
 
 MULTI_PACKAGES=	-main -db -ldap
 COMMENT-main=	ICAP server for use with web proxies
 COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
-V=		0.5.6
-REVISION=	0
+V=		0.5.7
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
@@ -47,7 +46,7 @@ WANTLIB-db=	${WANTLIB} c db icapapi
 LIB_DEPENDS-ldap= ${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
 		databases/openldap
-WANTLIB-ldap=	${WANTLIB} crypto icapapi lber-2.4 ldap-2.4 sasl2 ssl
+WANTLIB-ldap=	${WANTLIB} crypto icapapi lber ldap_r sasl2 ssl
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/c-icap.conf.in
