@@ -1,10 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/01/03 14:42:18 sthen Exp $
-@conflict py-Imaging-*
+@comment $OpenBSD: PLIST,v 1.13 2020/11/24 16:43:38 sthen Exp $
 @pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
-@pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
-@pkgpath graphics/py-Imaging,-docs[,python2.4][,python2.5][,python2.6][,python2.7]
-@pkgpath graphics/py-Imaging,-examples[,python2.4][,python2.5][,python2.6][,python2.7]
-@pkgpath graphics/py-Imaging,-main[,python2.4][,python2.5][,python2.6][,python2.7]
 ${INCL_DIR}/ImPlatform.h
 ${INCL_DIR}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
