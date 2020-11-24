@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/11/24 16:44:16 sthen Exp $
 
 COMMENT=		PDF-generating toolkit for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	3.2.0
 DISTNAME=		reportlab-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
-REVISION=		4
+REVISION=		5
 
 # see patches/patch-setup_py
 # grep 'archive =' reportlab-3.2.0/setup.py
@@ -35,7 +35,7 @@ MODPY_SETUPTOOLS=	Yes
 
 LIB_DEPENDS=		graphics/libart
 
-RUN_DEPENDS=		graphics/py-Pillow${MODPY_FLAVOR}
+RUN_DEPENDS=		graphics/py2-Pillow
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 # requires network access

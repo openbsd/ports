@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2020/10/09 19:12:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.73 2020/11/24 16:44:16 sthen Exp $
 
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.5
 CATEGORIES=	print
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.scribus.net/
 
@@ -26,7 +26,7 @@ MODULES=	x11/qt5 \
 BUILD_DEPENDS=	devel/boost
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		graphics/py-Pillow \
+		graphics/py2-Pillow \
 		print/ghostscript/gnu \
 		textproc/antiword \
 		misc/shared-mime-info \

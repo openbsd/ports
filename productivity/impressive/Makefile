@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/11/24 16:44:17 sthen Exp $
 
 COMMENT =		stylish PDF presentation generator
 
 MODPY_EGG_VERSION =	0.11.1
 DISTNAME =		Impressive-${MODPY_EGG_VERSION}
 PKGNAME =		impressive-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity
 HOMEPAGE =		http://impressive.sourceforge.net/
@@ -20,7 +20,7 @@ NO_TEST =		Yes
 
 RUN_DEPENDS =		devel/pygame \
 			devel/xdg-utils \
-			graphics/py-Pillow \
+			graphics/py2-Pillow \
 			graphics/py-opengl \
 			print/poppler,-utils \
 			textproc/pdftk

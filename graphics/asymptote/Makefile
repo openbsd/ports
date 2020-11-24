@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2020/01/25 14:29:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.38 2020/11/24 16:44:16 sthen Exp $
 
 NOT_FOR_ARCHS=		${CLANG_ARCHS} # hangs during build, while running
 # ../asy -dir ../base -config "" -render=0 -f pdf -noprc cube.asy
-# in WRKSRC/doc. run the abovef command with -vvv for more info.
+# in WRKSRC/doc. run the above command with -vvv for more info.
 # this does not fail with ports clang, though.
 
 COMMENT=		powerful descriptive vector graphics language
@@ -10,7 +10,7 @@ BROKEN-hppa=		ghostscript segfaults during build
 
 DISTNAME=		asymptote-2.41.src
 PKGNAME=		asymptote-2.41
-REVISION=		2
+REVISION=		3
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://asymptote.sourceforge.net/
@@ -31,7 +31,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 BUILD_DEPENDS=		print/texinfo \
 			print/texlive/base \
 			print/texlive/texmf,-main
-RUN_DEPENDS=		graphics/py-Pillow \
+RUN_DEPENDS=		graphics/py2-Pillow \
 			print/texlive/texmf,-full \
 			${MODPY_TKINTER_DEPENDS}
 

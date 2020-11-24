@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/01 21:07:06 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/24 16:44:16 sthen Exp $
 
 COMMENT =	multiplatform vector graphics editor
 
 VERSION =	2.0rc3
 DISTNAME =	sk1-${VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	graphics
 
@@ -31,7 +31,7 @@ LIB_DEPENDS +=		devel/pango \
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
-			graphics/py-Pillow \
+			graphics/py2-Pillow \
 			graphics/py2-cairo \
 			print/py-reportlab \
 			x11/py-wxPython \

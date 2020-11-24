@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/24 16:44:16 sthen Exp $
 
 # This port is known to generate errors on (some) radeon cards.
 # Intel cards appear to work fine.
@@ -7,7 +7,7 @@ V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		11
+REVISION =		12
 
 CATEGORIES =		games x11
 
@@ -23,10 +23,10 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/pygame			\
-			graphics/py-Pillow		\
-			graphics/py-opengl		\
-			math/py-numpy
+RUN_DEPENDS =		devel/pygame${MODPY_FLAVOR} \
+			graphics/py2-Pillow \
+			graphics/py-opengl${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR}
 
 WRKDIST =		"${WRKDIR}/Frets on Fire-${V}"
 NO_TEST =		Yes

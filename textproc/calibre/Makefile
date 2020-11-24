@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2020/03/20 16:44:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2020/11/24 16:44:17 sthen Exp $
 
 COMMENT =		ebook management application
 
@@ -7,7 +7,7 @@ V =			2.85.1
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
-REVISION =		12
+REVISION =		13
 
 HOMEPAGE =		https://calibre-ebook.com/
 
@@ -33,7 +33,7 @@ COMMON_DEPENDS =	databases/py-apsw \
 			devel/py-dateutil \
 			devel/xdg-utils \
 			graphics/libwmf \
-			graphics/py-Pillow \
+			graphics/py2-Pillow \
 			net/py-dnspython \
 			graphics/png \
 			print/poppler \

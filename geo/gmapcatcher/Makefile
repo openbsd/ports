@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/01/26 11:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2020/11/24 16:44:16 sthen Exp $
 
 COMMENT=	offline maps viewer
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	0.8.0.4
 DISTNAME=	mapcatcher_${MODPY_EGG_VERSION}
 WRKDIST=	${WRKDIR}/mapcatcher-${MODPY_EGG_VERSION}
 PKGNAME=	gmapcatcher-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	geo x11
 
@@ -21,11 +21,11 @@ MODULES=	lang/python
 
 BUILD_DEPENDS=	x11/py-gtk2 \
 		databases/py-sqlite2 \
-		graphics/py-Pillow
+		graphics/py2-Pillow
 
 RUN_DEPENDS=	x11/py-gtk2 \
 		databases/py-sqlite2 \
-		graphics/py-Pillow \
+		graphics/py2-Pillow \
 		devel/desktop-file-utils
 
 pre-configure:
