@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/28 05:11:05 feinerer Exp $
-bin/qr${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.2 2020/11/24 13:08:43 sthen Exp $
+@conflict py-qrcode-*
+@pkgpath graphics/py-qrcode
+bin/qr
 lib/python${MODPY_VERSION}/site-packages/qrcode/
 lib/python${MODPY_VERSION}/site-packages/qrcode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/qrcode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -54,4 +56,4 @@ lib/python${MODPY_VERSION}/site-packages/qrcode/tests/test_qrcode.py
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/test_release.py
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/test_script.py
 lib/python${MODPY_VERSION}/site-packages/qrcode/util.py
-@man man/man1/qr${MODPY_BIN_SUFFIX}.1
+@man man/man1/qr.1
