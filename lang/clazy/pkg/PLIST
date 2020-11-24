@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/07/21 20:30:47 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/11/24 16:04:38 rsadowski Exp $
 bin/clazy
 @bin bin/clazy-standalone
-@so lib/libClazyPlugin.so
+@so lib/ClazyPlugin.so
 @man man/man1/clazy.1
 share/doc/clazy/
 share/doc/clazy/COPYING-LGPL2.txt
@@ -90,7 +90,10 @@ share/doc/clazy/manuallevel/README-qrequiredresult-candidates.md
 share/doc/clazy/manuallevel/README-qstring-varargs.md
 share/doc/clazy/manuallevel/README-qt-keywords.md
 share/doc/clazy/manuallevel/README-qt4-qstring-from-array.md
-share/doc/clazy/manuallevel/README-qt6-qlatin1string-to-u.md
+share/doc/clazy/manuallevel/README-qt6-deprecated-api-fixes.md
+share/doc/clazy/manuallevel/README-qt6-header-fixes.md
+share/doc/clazy/manuallevel/README-qt6-qhash-signature.md
+share/doc/clazy/manuallevel/README-qt6-qlatin1stringchar-to-u.md
 share/doc/clazy/manuallevel/README-qvariant-template-instantiation.md
 share/doc/clazy/manuallevel/README-raw-environment-function.md
 share/doc/clazy/manuallevel/README-reserve-candidates.md
@@ -98,5 +101,6 @@ share/doc/clazy/manuallevel/README-signal-with-return-value.md
 share/doc/clazy/manuallevel/README-thread-with-slots.md
 share/doc/clazy/manuallevel/README-tr-non-literal.md
 share/doc/clazy/manuallevel/README-unneeded-cast.md
+share/doc/clazy/manuallevel/README-use-chrono-in-qtimer.md
 share/metainfo/
 share/metainfo/org.kde.clazy.metainfo.xml

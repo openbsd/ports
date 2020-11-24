@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/21 20:30:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/24 16:04:38 rsadowski Exp $
 
 COMMENT =	static source code analyzer for Qt5-based C++
 
 GH_ACCOUNT =	KDE
 GH_PROJECT =	clazy
-GH_TAGNAME =	v1.7
+GH_TAGNAME =	v1.8
 
 CATEGORIES =	lang devel
 
@@ -13,7 +13,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c m
+WANTLIB += ${COMPILER_LIBCXX} c clang-cpp m
 
 COMPILER =		base-clang ports-gcc
 
