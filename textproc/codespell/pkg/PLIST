@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/30 07:55:22 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/11/24 16:45:43 millert Exp $
 bin/codespell
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -6,11 +6,14 @@ lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/codespell-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}_codespell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/_codespell.py
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/
@@ -23,12 +26,5 @@ lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_en-GB_to_
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_informal.txt
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_names.txt
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_rare.txt
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/dictionary_usage.txt
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/linux-kernel.exclude
-lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/
-lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/${MODPY_PYCACHE}test_basic.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/${MODPY_PYCACHE}test_dictionary.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/test_basic.py
-lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/test_dictionary.py
