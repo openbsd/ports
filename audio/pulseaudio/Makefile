@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2020/10/31 09:28:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2020/11/24 13:42:58 ajacoutot Exp $
 
 # XXX sndio: what to do with (channel) map
 # XXX sndio: check sample format
@@ -6,11 +6,11 @@
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		13.99.3
+VERSION=		14.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  pulse                7.1      # .22.0
+SHARED_LIBS +=  pulse                7.1      # .23.0
 SHARED_LIBS +=  pulse-simple         1.2      # .1.1
 SHARED_LIBS +=  pulse-mainloop-glib  1.2      # .0.6
 
@@ -107,7 +107,7 @@ CONFIGURE_ARGS+=	--disable-neon-opt
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${TRUEPREFIX}/lib/pulseaudio:${TRUEPREFIX}/lib/pulse-${VERSION:R}/modules" \
+				-Wl,-rpath,${TRUEPREFIX}/lib/pulseaudio:${TRUEPREFIX}/lib/pulse-${VERSION}/modules" \
 			ac_cv_prog_M4=m4
 
 FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse" \
@@ -125,7 +125,7 @@ pre-configure:
 		${WRKSRC}/shell-completion/bash/pulseaudio
 
 post-install:
-	rm ${PREFIX}/lib/pulse-${VERSION:R}/modules/*.a
+	rm ${PREFIX}/lib/pulse-${VERSION}/modules/*.a
 # we don't install padsp
 	cd ${PREFIX} && rm man/man1/padsp.1
 
