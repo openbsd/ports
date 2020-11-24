@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2020/11/24 16:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/11/24 18:44:50 sthen Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
-MODPY_EGG_VERSION=	6.2.2
+MODPY_EGG_VERSION=	8.0.1
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
-REVISION=		1
 
 HOMEPAGE=		https://python-pillow.org/
 
@@ -14,14 +13,13 @@ HOMEPAGE=		https://python-pillow.org/
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE=	Yes
 
+WANTLIB += freetype jpeg lcms2 openjp2 pthread tiff webp webpdemux
+WANTLIB += webpmux z
+
 FLAVORS=		python3
 FLAVOR=			python3
 
 MODPY_PI =		Yes
-
-WANTLIB=		freetype openjp2 jpeg lcms2 pthread tiff webp z \
-			webpdemux webpmux \
-			${MODPY_WANTLIB}
 
 MODULES=		lang/python
 MODPY_PYTEST=		Yes
@@ -38,6 +36,8 @@ INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
 
 pre-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py
+	# Removing PyQt-related tests that segfault
+	cd ${WRKSRC}/Tests; rm -f test_qt_image_fromqpixmap.py test_qt_image_toqimage.py test_qt_image_toqpixmap.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_INCDIR}
