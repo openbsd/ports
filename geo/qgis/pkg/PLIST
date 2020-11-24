@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2020/10/24 16:58:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.62 2020/11/24 13:12:46 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -1696,6 +1696,7 @@ share/qgis/i18n/qgis_pt_BR.qm
 share/qgis/i18n/qgis_pt_PT.qm
 share/qgis/i18n/qgis_ro.qm
 share/qgis/i18n/qgis_ru.qm
+share/qgis/i18n/qgis_sc.qm
 share/qgis/i18n/qgis_sv.qm
 share/qgis/i18n/qgis_uk.qm
 share/qgis/i18n/qgis_vi.qm
@@ -4403,12 +4404,20 @@ share/qgis/resources/server/api/ogc/static/landingpage/README
 share/qgis/resources/server/api/ogc/static/landingpage/css/
 share/qgis/resources/server/api/ogc/static/landingpage/css/app.ca3f5643.css
 share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-123bc409.8679d8ba.css
+share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-5cedae10.45a18619.css
+share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-db289a14.336091d0.css
 share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-vendors.a728f495.css
 share/qgis/resources/server/api/ogc/static/landingpage/favicon.ico
 share/qgis/resources/server/api/ogc/static/landingpage/index.html
 share/qgis/resources/server/api/ogc/static/landingpage/js/
+share/qgis/resources/server/api/ogc/static/landingpage/js/app.fa6cb20b.js
+share/qgis/resources/server/api/ogc/static/landingpage/js/app.fa6cb20b.js.map
 share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-123bc409.ef3c4d35.js
 share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-123bc409.ef3c4d35.js.map
+share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-5cedae10.b1aed77d.js
+share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-5cedae10.b1aed77d.js.map
+share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-db289a14.4c4313be.js
+share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-db289a14.4c4313be.js.map
 share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-vendors.ebebb286.js
 share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-vendors.ebebb286.js.map
 share/qgis/resources/server/api/ogc/static/style.css
