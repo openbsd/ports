@@ -1,4 +1,4 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_ExtendedOptionsImpl_c,v 1.1 2020/11/20 20:48:15 kurt Exp $
+$OpenBSD: patch-jdk_src_solaris_native_java_net_ExtendedOptionsImpl_c,v 1.2 2020/11/25 13:22:42 sthen Exp $
 
 No support for socket options TCP_KEEPIDLE, TCP_KEEPCNT and
 TCP_KEEPINTVL.
@@ -24,7 +24,7 @@ Index: jdk/src/solaris/native/java/net/ExtendedOptionsImpl.c
  
  // On AIX and Solaris these constants aren't defined. Map them to a
  // value so that the code below compiles. Values aren't used as
-@@ -440,7 +440,7 @@ static jint getTcpSocketOption
+@@ -440,14 +440,14 @@ static jint getTcpSocketOption
          "unsupported socket option");
  }
  
@@ -33,3 +33,11 @@ Index: jdk/src/solaris/native/java/net/ExtendedOptionsImpl.c
  
  JNIEXPORT jboolean JNICALL Java_sun_net_ExtendedOptionsImpl_flowSupported
    (JNIEnv *env, jclass UNUSED) {
+     return flowSupported0();
+ }
+ 
+-#if defined(__linux__) || defined(MACOSX) || defined(_ALLBSD_SOURCE)
++#if defined(__linux__) || defined(MACOSX) || (defined(_ALLBSD_SOURCE) && !defined(__OpenBSD__))
+ 
+ /*
+  * Class:     sun_net_ExtendedOptionsImpl
