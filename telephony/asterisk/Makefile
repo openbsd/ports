@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.328 2020/11/20 12:38:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.329 2020/11/25 14:11:17 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
 VER=		16.15.0
+REVISION-main=	0
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
@@ -100,6 +101,8 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 BUILD_DEPENDS+=		archivers/bzip2 \
 			devel/libtool,-ltdl # bogus dependencies in menuselect
+MAJV=			${VER:C/\..*//}
+SUBST_VARS+=		MAJV
 
 CPPFLAGS+=		-I${X11BASE}/include \
 			-I${LOCALBASE}/include

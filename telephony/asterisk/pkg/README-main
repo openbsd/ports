@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2018/09/04 12:46:23 espie Exp $
+$OpenBSD: README-main,v 1.6 2020/11/25 14:11:17 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -27,8 +27,7 @@ can be handled by adding a line like the following to /etc/newsyslog.conf:
 
 /var/log/asterisk/messages		640  5     1000 *     Z "asterisk -rx 'logger reload'"
 
-
 Documentation
 =============
-${PREFIX}/share/doc/asterisk/AST.pdf is probably the single best
-resource for the current version.
+See https://www.asterisk.org/community/documentation/ and
+https://wiki.asterisk.org/wiki/display/AST/Asterisk+${MAJV}+Documentation
