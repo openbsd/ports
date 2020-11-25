@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/03/11 19:27:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/11/25 19:58:48 sthen Exp $
+@rcscript ${RCDIR}/nsca_ng
 @man man/man5/nsca-ng.cfg.5
 @man man/man8/nsca-ng.8
 @bin sbin/nsca-ng
@@ -11,11 +12,7 @@ share/examples/nsca-ng/downtime
 share/examples/nsca-ng/enable_notifications
 share/examples/nsca-ng/invoke_check
 share/examples/nsca-ng/nsca-ng.cfg
+@mode 750
 @owner root
 @group wheel
-@mode 750
 @sample ${SYSCONFDIR}/nsca-ng.cfg
-@mode
-@group
-@owner
-@rcscript ${RCDIR}/nsca_ng
