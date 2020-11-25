@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/07/16 10:07:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2020/11/25 21:14:43 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -149,6 +149,7 @@ include/isc/base64.h
 include/isc/bind9.h
 include/isc/buffer.h
 include/isc/bufferlist.h
+include/isc/cmocka.h
 include/isc/commandline.h
 include/isc/condition.h
 include/isc/counter.h
