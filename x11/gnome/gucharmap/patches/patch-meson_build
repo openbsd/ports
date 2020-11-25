@@ -1,6 +1,8 @@
-$OpenBSD: patch-meson_build,v 1.1 2020/11/07 08:59:35 jasper Exp $
+$OpenBSD: patch-meson_build,v 1.2 2020/11/25 21:19:51 cwen Exp $
 
-ERROR: C shared or static library 'dl' not found
+Hunk #1: ERROR: C shared or static library 'dl' not found
+Hunk #2: fix the build on ld.bfd archs, where the -Bsymbolic-functions
+         linker flag is not supported
 
 Index: meson.build
 --- meson.build.orig
@@ -24,3 +26,17 @@ Index: meson.build
  # Compiler flags
  
  compiler_flags_common = [
+@@ -226,8 +214,11 @@ linker_flags = [
+ ]
+ 
+ foreach flag: linker_flags
+-  assert(cc.has_link_argument(flag), flag + ' is required but not supported')
+-  add_project_link_arguments(flag, language: 'c',)
++  if cc.has_link_argument(flag)
++    add_project_link_arguments(flag, language: 'c',)
++  else
++    message(flag + ' is not supported')
++  endif
+ endforeach
+ 
+ # Dependencies
