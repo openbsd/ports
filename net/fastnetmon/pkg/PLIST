@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/05/14 11:47:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/11/25 13:54:12 sthen Exp $
 @newgroup _fastnetmon:814
 @newuser _fastnetmon:814:_fastnetmon:daemon:FastNetMon User:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/fastnetmon/*
@@ -14,17 +14,18 @@ share/examples/fastnetmon/
 share/examples/fastnetmon/README.md
 share/examples/fastnetmon/bgp_network_collector.py
 share/examples/fastnetmon/bgp_network_retriever.py
-share/examples/fastnetmon/build_any_package.pl
-share/examples/fastnetmon/build_libary_bundle.pl
-share/examples/fastnetmon/enable_passthrough_for_pcie_nic_to_kvm_vm.pl
+@comment share/examples/fastnetmon/build_any_package.pl
+@comment share/examples/fastnetmon/build_libary_bundle.pl
+@comment share/examples/fastnetmon/enable_passthrough_for_pcie_nic_to_kvm_vm.pl
 share/examples/fastnetmon/exabgp_network_collector.conf
+@sample ${SYSCONFDIR}/fastnetmon/exabgp_network_collector.conf
 share/examples/fastnetmon/fastnetmon.conf
 @sample ${SYSCONFDIR}/fastnetmon/fastnetmon.conf
 share/examples/fastnetmon/fastnetmon_notify.py
-share/examples/fastnetmon/install_binary.pl
+@comment share/examples/fastnetmon/install_binary.pl
 share/examples/fastnetmon/notify_about_attack.sh
 share/examples/fastnetmon/notify_with_slack.sh
-share/examples/fastnetmon/reformat_code_with_clang_format.sh
+@comment share/examples/fastnetmon/reformat_code_with_clang_format.sh
 share/examples/fastnetmon/reset_redis_stats
 @owner _fastnetmon
 @group _fastnetmon
