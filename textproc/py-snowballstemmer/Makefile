@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/25 21:32:40 daniel Exp $
 
 COMMENT =		snowball stemming library collection for Python
 
-MODPY_EGG_VERSION =	1.2.1
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		snowballstemmer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		textproc
 
@@ -14,12 +13,13 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		textproc/py-stemmer${MODPY_FLAVOR}
-
-MODPY_PI =		Yes
-
 FLAVORS =		python3
 FLAVOR ?=
+
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+RUN_DEPENDS =		textproc/py-stemmer${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
