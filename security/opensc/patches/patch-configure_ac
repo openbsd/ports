@@ -1,48 +1,33 @@
-$OpenBSD: patch-configure_ac,v 1.11 2020/02/08 10:36:01 cwen Exp $
+$OpenBSD: patch-configure_ac,v 1.12 2020/11/25 14:26:26 sthen Exp $
 
-Fix version string
-
-libdl is not required on OpenBSD
-
-Put port supplied CFLAGS on top priority so it builds with gcc by
-supplying `-Wno-error' (upstreamed, can be removed for opensc > 0.20.0)
+- libressl pkg-config file claims to be 1.0.0
+- libdl is not used on OpenBSD
+- various tools print OPENSC_SCM_REVISION with --version; set it to
+something sensible. (.git doesn't exist in the release tarballs so the
+above test to check if it's a git repo can be ignored).
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -363,29 +363,9 @@ elif test "${xslstylesheetsdir}" != "no"; then
- fi
- AC_MSG_RESULT([${xslstylesheetsdir}])
+@@ -21,7 +21,7 @@ define([VS_FF_PRODUCT_URL], [https://github.com/OpenSC
  
--AC_MSG_CHECKING([git checkout])
--GIT_CHECKOUT="no"
--if test -n "${GIT}" -a -d "${srcdir}/.git"; then
--	GIT_CHECKOUT="yes"
--fi
--AC_MSG_RESULT([${GIT_CHECKOUT}])
-+OPENSC_SCM_REVISION="OpenSC-0.20.0, rev: 45e29056, commit-time: 2019-12-29 13:42:06 2019 +0100"
-+OPENSC_VERSION_REVISION="0"
+ m4_sinclude(version.m4.ci)
  
--if test "${GIT_CHECKOUT}" = "yes"; then
--	REVISION_DESCRIPTION="$(${GIT} describe || echo '<version not available>' )"
--	if test "${REVISION_DESCRIPTION}" = "<version not available>"; then
--		REVISION_DESCRIPTION="$(${GIT} describe --tags || echo '<version not available>')"
--	fi
--
--	HASH_COMMIT_DATE="$(${GIT} log -1 --pretty=format:'rev: %h, commit-time: %ci')"
--	GIT_TAG_COMMIT="$(${GIT} rev-list --tags --no-walk --max-count=1)"
--
--	OPENSC_SCM_REVISION="OpenSC-${REVISION_DESCRIPTION}, ${HASH_COMMIT_DATE}"
--	OPENSC_VERSION_REVISION="$(${GIT} rev-list ${GIT_TAG_COMMIT}..HEAD --count || echo 0)"
--else
+-m4_define([openssl_minimum_version], [1.0.1])
++m4_define([openssl_minimum_version], [1.0.0])
+ 
+ AC_INIT([PRODUCT_NAME],[PACKAGE_VERSION_MAJOR.PACKAGE_VERSION_MINOR.PACKAGE_VERSION_FIX[]PACKAGE_SUFFIX],[PRODUCT_BUGREPORT],[PRODUCT_TARNAME],[PRODUCT_URL])
+ AC_CONFIG_AUX_DIR([.])
+@@ -386,7 +386,7 @@ if test "${GIT_CHECKOUT}" = "yes"; then
+ 	OPENSC_SCM_REVISION="OpenSC-${REVISION_DESCRIPTION}, ${HASH_COMMIT_DATE}"
+ 	OPENSC_VERSION_REVISION="$(${GIT} rev-list ${GIT_TAG_COMMIT}..HEAD --count || echo 0)"
+ else
 -	OPENSC_SCM_REVISION="No Git revision info available"
--	OPENSC_VERSION_REVISION="0"
--fi
--
- dnl C Compiler features
- AC_C_INLINE
++	OPENSC_SCM_REVISION="${PACKAGE_STRING}"
+ 	OPENSC_VERSION_REVISION="0"
+ fi
  
-@@ -436,11 +416,6 @@ AC_CHECK_LIB(
+@@ -454,11 +454,6 @@ AC_CHECK_LIB(
  )
  
  if test "${WIN32}" = "no"; then
@@ -54,21 +39,3 @@ Index: configure.ac
  	dnl Special check for pthread support.
  	AX_PTHREAD(
  		[AC_DEFINE(
-@@ -1061,7 +1036,6 @@ AM_CONDITIONAL([ENABLE_DNIE_UI], [test "${enable_dnie_
- AM_CONDITIONAL([ENABLE_NPATOOL], [test "${ENABLE_NPATOOL}" = "yes"])
- AM_CONDITIONAL([ENABLE_AUTOSTART], [test "${enable_autostart}" = "yes"])
- AM_CONDITIONAL([ENABLE_CMOCKA], [test "${enable_cmocka}" = "yes"])
--AM_CONDITIONAL([GIT_CHECKOUT], [test "${GIT_CHECKOUT}" = "yes"])
- AM_CONDITIONAL([ENABLE_FUZZING], [test "${enable_fuzzing}" = "yes"])
- AM_CONDITIONAL([ENABLE_SHARED], [test "${enable_shared}" = "yes"])
- AS_IF([test "${enable_shared}" = "yes"], [AC_DEFINE([ENABLE_SHARED], [1], [Enable shared libraries])])
-@@ -1071,7 +1045,8 @@ if test "${enable_pedantic}" = "yes"; then
- 	CFLAGS="${CFLAGS} -pedantic"
- fi
- if test "${enable_strict}" = "yes"; then
--	CFLAGS="${CFLAGS} -Wall -Wextra -Wno-unused-parameter -Werror"
-+	# XXX This can be removed with opensc > 0.20.0 (upstreamed)
-+	CFLAGS="-Wall -Wextra -Wno-unused-parameter -Werror ${CFLAGS}"
- fi
- 
- AC_CONFIG_FILES([

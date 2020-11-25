@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2020/02/08 10:36:01 cwen Exp $
+# $OpenBSD: Makefile,v 1.56 2020/11/25 14:26:26 sthen Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
-V=		0.20.0
-REVISION =	0
+V=		0.21.0
 DISTNAME=	opensc-${V}
-SUBST_VARS +=	V
 
-SHARED_LIBS +=	opensc 7.1	# 6.0
+SHARED_LIBS +=	opensc 7.2	# 6.0
 SHARED_LIBS +=	smm-local 3.1	# 6.0
 
 CATEGORIES=	security
@@ -53,5 +51,10 @@ post-install:
 	${SUBST_CMD} -c -m ${NONBINMODE} -o ${BINOWN} -g ${BINGRP} \
 	    ${FILESDIR}/libopensc.pc ${PREFIX}/lib/pkgconfig/libopensc.pc
 	@find ${PREFIX}/lib/pkcs11/ -name '*.la' -delete
+
+# only a few tests are normally run. src/tests/regression has a number
+# of other tests that require a card.
+pre-test:
+	sed -i 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/tests/*
 
 .include <bsd.port.mk>

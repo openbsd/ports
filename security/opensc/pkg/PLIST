@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/01/30 07:15:08 kn Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/11/25 14:26:26 sthen Exp $
 @bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/dnie-tool
@@ -39,6 +39,7 @@ lib/pkgconfig/libopensc.pc
 @man man/man1/egk-tool.1
 @man man/man1/eidenv.1
 @man man/man1/gids-tool.1
+@man man/man1/goid-tool.1
 @man man/man1/iasecc-tool.1
 @man man/man1/netkey-tool.1
 @man man/man1/npa-tool.1
@@ -48,6 +49,7 @@ lib/pkgconfig/libopensc.pc
 @man man/man1/opensc-notify.1
 @man man/man1/opensc-tool.1
 @man man/man1/piv-tool.1
+@man man/man1/pkcs11-register.1
 @man man/man1/pkcs11-tool.1
 @man man/man1/pkcs15-crypt.1
 @man man/man1/pkcs15-init.1
