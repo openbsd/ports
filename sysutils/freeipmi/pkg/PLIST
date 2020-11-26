@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/06/06 20:30:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/11/26 13:59:48 sthen Exp $
 include/freeipmi/
 include/freeipmi/api/
 include/freeipmi/api/ipmi-api.h
@@ -435,6 +435,7 @@ share/examples/freeipmi/freeipmi_interpret_sel.conf
 share/examples/freeipmi/freeipmi_interpret_sensor.conf
 @sample ${SYSCONFDIR}/freeipmi/freeipmi_interpret_sensor.conf
 share/examples/freeipmi/ipckey
+@sample /var/db/freeipmi/
 @sample /var/db/freeipmi/ipckey
 share/examples/freeipmi/ipmidetect.conf
 @sample ${SYSCONFDIR}/freeipmi/ipmidetect.conf
