@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2040 2020/11/22 17:40:08 daniel Exp $
+# $OpenBSD: Makefile,v 1.2041 2020/11/26 03:41:39 jmatthew Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1798,6 +1798,7 @@
      SUBDIR += re2c
      SUBDIR += readline
      SUBDIR += rebar
+     SUBDIR += rebar3
      SUBDIR += remake
      SUBDIR += reposurgeon
      SUBDIR += rgbds
