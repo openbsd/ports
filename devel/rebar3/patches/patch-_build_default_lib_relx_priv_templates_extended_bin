@@ -1,0 +1,43 @@
+$OpenBSD: patch-_build_default_lib_relx_priv_templates_extended_bin,v 1.1.1.1 2020/11/26 03:31:56 jmatthew Exp $
+
+use versioned erlang binary
+
+Index: _build/default/lib/relx/priv/templates/extended_bin
+--- _build/default/lib/relx/priv/templates/extended_bin.orig
++++ _build/default/lib/relx/priv/templates/extended_bin
+@@ -127,7 +127,7 @@ find_erts_dir() {
+         ERTS_DIR="$__erts_dir";
+         ROOTDIR="$RELEASE_ROOT_DIR"
+     else
+-        __erl="$(which erl)"
++        __erl="$(which erl${ERL_VERSION})"
+         code="io:format(\"~s\", [code:root_dir()]), halt()."
+         __erl_root="$("$__erl" -boot no_dot_erlang -sasl errlog_type error -noshell -eval "$code")"
+         ERTS_DIR="$__erl_root/erts-$ERTS_VSN"
+@@ -150,7 +150,7 @@ relx_get_pid() {
+ relx_get_nodename() {
+     id="longname$(relx_gen_id)-${NAME}"
+     if [ -z "$COOKIE" ]; then
+-        "$BINDIR/erl" -boot start_clean \
++        "$BINDIR/erl${ERL_VERSION}" -boot start_clean \
+                       -mode interactive \
+                       -boot_var ERTS_LIB_DIR "$ERTS_LIB_DIR" \
+                       -eval '[_,H]=re:split(atom_to_list(node()),"@",[unicode,{return,list}]), io:format("~s~n",[H]), halt()' \
+@@ -158,7 +158,7 @@ relx_get_nodename() {
+                       -noshell ${NAME_TYPE} $id
+     else
+         # running with setcookie prevents a ~/.erlang.cookie from being created
+-        "$BINDIR/erl" -boot start_clean \
++        "$BINDIR/erl${ERL_VERSION}" -boot start_clean \
+                       -mode interactive \
+                       -boot_var ERTS_LIB_DIR "$ERTS_LIB_DIR" \
+                       -eval '[_,H]=re:split(atom_to_list(node()),"@",[unicode,{return,list}]), io:format("~s~n",[H]), halt()' \
+@@ -178,7 +178,7 @@ relx_rem_sh() {
+     TICKTIME="$(relx_nodetool rpcterms net_kernel get_net_ticktime)"
+ 
+     # Setup remote shell command to control node
+-    exec "$BINDIR/erl" "$NAME_TYPE" "$id" -remsh "$NAME" -boot start_clean -mode interactive \
++    exec "$BINDIR/erl${ERL_VERSION}" "$NAME_TYPE" "$id" -remsh "$NAME" -boot start_clean -mode interactive \
+          -boot_var ERTS_LIB_DIR "$ERTS_LIB_DIR" $MAYBE_DIST_ARGS \
+          -setcookie "$COOKIE" -hidden -kernel net_ticktime $TICKTIME
+ }

@@ -1,0 +1,13 @@
+$OpenBSD: patch-bootstrap,v 1.1.1.1 2020/11/26 03:31:56 jmatthew Exp $
+
+Use versioned escript.
+
+Index: bootstrap
+--- bootstrap.orig
++++ bootstrap
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env escript
++#!/usr/bin/env escript${ERL_VERSION}
+ %% -*- mode: erlang;erlang-indent-level: 4;indent-tabs-mode: nil -*-
+ %% ex: ft=erlang ts=4 sw=4 et
+ 

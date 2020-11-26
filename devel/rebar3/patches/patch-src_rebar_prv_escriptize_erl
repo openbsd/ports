@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_rebar_prv_escriptize_erl,v 1.1.1.1 2020/11/26 03:31:56 jmatthew Exp $
+
+Use versioned escript
+
+Index: src/rebar_prv_escriptize.erl
+--- src/rebar_prv_escriptize.erl.orig
++++ src/rebar_prv_escriptize.erl
+@@ -126,7 +126,7 @@ escriptize(State0, App) ->
+                           [AppNameStr, AppNameStr, AppNameStr]),
+     EscriptSections =
+         [ {shebang,
+-           def("#!", State, escript_shebang, "#!/usr/bin/env escript\n")}
++           def("#!", State, escript_shebang, "#!/usr/bin/env escript${ERL_VERSION}\n")}
+         , {comment, def("%%", State, escript_comment, "%%\n")}
+         , {emu_args, def("%%!", State, escript_emu_args, DefaultEmuArgs)}
+         , {archive, Files, []} ],

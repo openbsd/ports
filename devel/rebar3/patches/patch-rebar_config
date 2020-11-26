@@ -1,0 +1,16 @@
+$OpenBSD: patch-rebar_config,v 1.1.1.1 2020/11/26 03:31:56 jmatthew Exp $
+
+set main module name for escript
+
+Index: rebar.config
+--- rebar.config.orig
++++ rebar.config
+@@ -24,7 +24,7 @@
+ 
+ {escript_name, rebar3}.
+ {escript_comment, "%%Rebar3 3.13.2\n"}.
+-{escript_emu_args, "%%! +sbtu +A1\n"}.
++{escript_emu_args, "%%! +sbtu +A1 -escript main rebar3\n"}.
+ %% escript_incl_extra is for internal rebar-private use only.
+ %% Do not use outside rebar. Config interface is not stable.
+ {escript_incl_extra, [{"relx/priv/templates/*", "_build/default/lib/"},

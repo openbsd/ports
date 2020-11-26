@@ -1,0 +1,16 @@
+$OpenBSD: patch-_build_default_lib_relx_priv_templates_bin,v 1.1.1.1 2020/11/26 03:31:56 jmatthew Exp $
+
+use versioned erlang binary
+
+Index: _build/default/lib/relx/priv/templates/bin
+--- _build/default/lib/relx/priv/templates/bin.orig
++++ _build/default/lib/relx/priv/templates/bin
+@@ -21,7 +21,7 @@ find_erts_dir() {
+         ERTS_DIR="$__erts_dir";
+         ROOTDIR="$RELEASE_ROOT_DIR"
+     else
+-        __erl="$(which erl)"
++        __erl="$(which erl${ERL_VERSION})"
+         code="io:format(\"~s\", [code:root_dir()]), halt()."
+         __erl_root="$("$__erl" -boot no_dot_erlang -noshell -eval "$code")"
+         ERTS_DIR="$__erl_root/erts-$ERTS_VSN"
