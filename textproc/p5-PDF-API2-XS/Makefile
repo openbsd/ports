@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/07 08:40:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/26 14:24:03 sthen Exp $
 
 COMMENT =	XS module to speed some PDF::API2 operations
 
-DISTNAME =	PDF-API2-XS-1.001
+DISTNAME =	PDF-API2-XS-1.002
 
 CATEGORIES =	textproc
 
