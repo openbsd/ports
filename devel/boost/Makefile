@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2020/11/26 00:06:04 jca Exp $
+# $OpenBSD: Makefile,v 1.104 2020/11/26 00:08:36 jca Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
@@ -137,9 +137,6 @@ DPB_PROPERTIES= parallel
 NO_TEST=	Yes
 
 SUBST_VARS+=	SO_VERSION
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/tools/build/src/engine/Jambase
 
 do-configure:
 	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/user-config.jam
