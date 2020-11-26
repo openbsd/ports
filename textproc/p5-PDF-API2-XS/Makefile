@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/11/26 14:24:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/11/26 14:24:40 sthen Exp $
 
 COMMENT =	XS module to speed some PDF::API2 operations
 
@@ -8,7 +8,7 @@ CATEGORIES =	textproc
 
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
-# LGPLv2.1
+# Perl
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
