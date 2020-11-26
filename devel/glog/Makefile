@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/26 20:37:13 sthen Exp $
 
 COMMENT =		C++ application-level logging library
 
 GH_ACCOUNT =		google
 GH_PROJECT =		glog
-GH_TAGNAME =		v0.3.5
-REVISION =		1
+GH_TAGNAME =		v0.4.0
 
-SHARED_LIBS +=		glog 1.0 # 0.2.1
+SHARED_LIBS +=		glog 2.0 # 0.2.1
 
 CATEGORIES =		devel
 
 # New BSD
 PERMIT_PACKAGE =	Yes
+
+MAINTAINER= 		Ashton Fagg <ashton@fagg.id.au>
 
 WANTLIB += ${COMPILER_LIBCXX} gflags m
 
