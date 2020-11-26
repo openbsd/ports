@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/06 13:58:07 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/26 17:33:23 paco Exp $
 
 COMMENT =	non-web browser
 
 MODGO_MODNAME =	tildegit.org/sloum/bombadillo
-MODGO_VERSION =	v0.0.0-20200530165248-abc6a170dcca
+MODGO_VERSION =	v0.0.0-20201120043812-757305db6692
 
 DISTNAME =	bombadillo-${MODGO_VERSION}
-PKGNAME =	bombadillo-2.3.1.20200530
+PKGNAME =	bombadillo-2.3.3.20201120
 
 CATEGORIES =	net
 
