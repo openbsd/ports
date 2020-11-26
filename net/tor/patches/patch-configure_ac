@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.11 2020/05/28 15:18:34 pascal Exp $
+$OpenBSD: patch-configure_ac,v 1.12 2020/11/26 15:40:48 pascal Exp $
 disable -fasynchronous-unwind-tables as it breaks build on armv7
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1408,13 +1408,6 @@ fi
+@@ -1415,13 +1415,6 @@ fi
  CFLAGS="$saved_CFLAGS"
  AC_SUBST(F_OMIT_FRAME_POINTER)
  
