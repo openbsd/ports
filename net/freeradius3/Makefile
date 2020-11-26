@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2020/07/11 22:54:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2020/11/26 17:43:40 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -12,7 +12,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
 V=		3.0.21
-REVISION=	0
+REVISION=	1
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -27,16 +27,18 @@ PKGNAME-python=	freeradius-python-$V
 
 CATEGORIES=	net security
 
-MASTER_SITES=	http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
+MASTER_SITES=	https://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
 		ftp://ftp.freeradius.org/pub/freeradius/ \
 		ftp://ftp.freeradius.org/pub/freeradius/old/
 
-HOMEPAGE=	http://www.freeradius.org/
+HOMEPAGE=	https://freeradius.org/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2 - LGPLv2 - OpenSSL exemption
 PERMIT_PACKAGE=	Yes
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE= gnu
 # Don't allow FR_LOCATE_DIR to use locate(1) to guess possible
