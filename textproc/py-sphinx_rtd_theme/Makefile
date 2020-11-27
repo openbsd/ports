@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/27 01:59:28 daniel Exp $
 
 COMMENT =		readthedocs.org theme for Sphinx
 
-MODPY_EGG_VERSION =	0.2.4
+MODPY_EGG_VERSION =	0.4.3
 DISTNAME =		sphinx_rtd_theme-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		textproc
 

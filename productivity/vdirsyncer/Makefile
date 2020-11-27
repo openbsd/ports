@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/08/12 19:48:29 remi Exp $
+# $OpenBSD: Makefile,v 1.15 2020/11/27 01:59:28 daniel Exp $
 
 COMMENT =		synchronize calendars and contacts
 
 MODPY_EGG_VERSION =	0.16.8
 DISTNAME =		vdirsyncer-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity
 
@@ -22,7 +23,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests/
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.4.8p5 \
 			devel/py-setuptools_scm${MODPY_FLAVOR} \
 			${RUN_DEPENDS}
 
