@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.588 2020/11/22 20:52:44 pvk Exp $
+# $OpenBSD: Makefile,v 1.589 2020/11/27 14:20:14 solene Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -293,6 +293,7 @@
      SUBDIR += ranval
      SUBDIR += raspberrypi-firmware
      SUBDIR += rclone
+     SUBDIR += rclone-browser
      SUBDIR += rcm
      SUBDIR += rdiff-backup
      SUBDIR += reed-alert
