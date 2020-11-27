@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/02/23 09:13:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/11/27 16:40:04 solene Exp $
 @bin bin/znc
 bin/znc-buildmod
 include/znc/
@@ -76,9 +76,7 @@ lib/znc/
 @so lib/znc/nickserv.so
 @so lib/znc/notes.so
 @so lib/znc/notify_connect.so
-@so lib/znc/partyline.so
 @so lib/znc/perform.so
-@so lib/znc/q.so
 @so lib/znc/raw.so
 @so lib/znc/route_replies.so
 @so lib/znc/sample.so
@@ -168,6 +166,7 @@ share/znc/translations/fr-FR
 share/znc/translations/id-ID
 share/znc/translations/it-IT
 share/znc/translations/nl-NL
+share/znc/translations/pl-PL
 share/znc/translations/ru-RU
 share/znc/webskins/
 share/znc/webskins/_default_/
