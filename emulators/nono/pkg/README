@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2020/07/06 17:42:25 gonzalo Exp $
+$OpenBSD: README,v 1.2 2020/11/27 09:24:41 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running NetBSD on ${PKGSTEM}
@@ -38,24 +38,22 @@ For more options you should read the manual (for now only in Japanese).
 | Running OpenBSD on ${PKGSTEM}
 +-----------------------------------------------------------------------
 
-Currently nono's luna88k emulation is under construction.
-It can start OpenBSD/luna88k bsd.rd and bsd but it will stop after
-"WARNING: clock gained ..." line.
+Currently nono's luna88k emulation is under construction, but aoyama@
+build a custom image for ${PKGSTEM}.
 
-You can use it downloading the bsd or bsd.rd from one of the mirrors
-and place it on ~/nono
+You can follow the README file in:
+
+http://www.nk-home.net/~aoyama/liveimage/
+
+To boot OpenBSD on ${PKGSTEM}.
 
 The config file nono.cfg inside ~/nono should be like:
 
 vmtype = luna88k
 luna-dipsw1 = 11111111
 ram-size = 64MB
-spc0-id0-image = hd,luna88k.img
-
-The luna88k.img could be created with zeros or with vmctl(8), so far
-you will not use it.
+spc0-id6-image = hd,liveimage-luna88k-raw-20201121.img
 
 To turn it on:
 
-$ nono -c ~/nono -s 0.5 -A bsd.rd
-
+$ nono -c ~/nono -s 0.5 -f -A boot
