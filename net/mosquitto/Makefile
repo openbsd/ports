@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2020/08/22 13:55:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2020/11/27 14:56:29 sthen Exp $
 
 COMMENT =		opensource MQTT broker
 
 DISTNAME =		mosquitto-1.6.12
+REVISION =		0
 
 SHARED_LIBS +=  mosquitto                 1.0 # 1.5
 SHARED_LIBS +=  mosquittopp               1.0 # 1.5
@@ -15,7 +16,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # EPL/EDL
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c crypto m pthread ssl ${COMPILER_LIBCXX}
+WANTLIB +=		c crypto m pthread ssl websockets ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://mosquitto.org/files/source/
 
@@ -29,12 +30,15 @@ MODPY_RUNDEP=		No
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/uthash
+LIB_DEPENDS =		www/libwebsockets
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-CONFIGURE_ARGS=		-DWITH_SRV=no
+CONFIGURE_ARGS=		-DWITH_SRV=no \
+			-DWITH_WEBSOCKETS=yes
 # Pre-shared key support was intentionally removed from libressl
 CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
 
 CFLAGS +=		-I${LOCALBASE}/include
 
