@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2020/11/05 08:25:34 sebastia Exp $
+# $OpenBSD: Makefile,v 1.41 2020/11/27 09:21:23 sebastia Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
 GH_ACCOUNT =		puppetlabs
 GH_PROJECT =		leatherman
-GH_TAGNAME =		1.12.2
+GH_TAGNAME =		1.12.3
 
 # N.B.: Upstream doesn't care about ABI, better just bump major on update
 SHARED_LIBS =	leatherman_curl           1.1 # 0.12
