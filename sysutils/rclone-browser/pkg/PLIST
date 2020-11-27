@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/27 14:19:55 solene Exp $
+@bin bin/rclone-browser
+share/applications/rclone-browser.desktop
+share/icons/hicolor/128x128/apps/rclone-browser.png
+share/icons/hicolor/256x256/apps/rclone-browser.png
+share/icons/hicolor/32x32/apps/rclone-browser.png
+share/icons/hicolor/512x512/apps/rclone-browser.png
+share/icons/hicolor/64x64/apps/rclone-browser.png
+share/icons/hicolor/scalable/apps/rclone-browser.svg
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
