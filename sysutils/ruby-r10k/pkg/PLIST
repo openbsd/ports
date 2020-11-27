@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/11/06 20:47:05 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/11/27 09:35:28 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -8,6 +8,7 @@ ${GEM_LIB}/gems/${DISTNAME}/.github/pull_request_template.md
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/docker.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/rspec_tests.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.mkd
