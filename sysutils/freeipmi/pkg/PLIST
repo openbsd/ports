@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/11/26 13:59:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/11/28 08:34:50 ajacoutot Exp $
 include/freeipmi/
 include/freeipmi/api/
 include/freeipmi/api/ipmi-api.h
@@ -447,6 +447,5 @@ share/examples/freeipmi/libipmiconsole.conf
 @sample ${SYSCONFDIR}/freeipmi/libipmiconsole.conf
 @sample /var/cache/ipmimonitoringsdrcache/
 @sample /var/cache/ipmiseld/
-@sample /var/db/freeipmi/
 @sample /var/log/freeipmi/
 @sample /var/log/ipmiconsole/
