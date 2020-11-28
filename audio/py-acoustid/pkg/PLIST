@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/02/07 13:04:46 benoit Exp $
-lib/python${MODPY_VERSION}/site-packages/acoustid.py
+@comment $OpenBSD: PLIST,v 1.6 2020/11/28 19:57:56 daniel Exp $
+@conflict py-acoustid-*
+@pkgpath audio/py-acoustid
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}acoustid.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/chromaprint.py
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}chromaprint.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/acoustid.py
+lib/python${MODPY_VERSION}/site-packages/chromaprint.py
 lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/.pbr.json.icloud
 lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
