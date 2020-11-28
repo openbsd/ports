@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2020/11/14 11:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.191 2020/11/28 15:02:56 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		3.38.1
-REVISION=		1
+REVISION=		2
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
