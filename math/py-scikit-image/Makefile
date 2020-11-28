@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/11/28 02:44:19 daniel Exp $
 
 COMMENT =		image processing routines for SciPy
 
-MODPY_EGG_VERSION =	0.16.2
+MODPY_EGG_VERSION =	0.17.2
 DISTNAME =		scikit-image-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		1
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -17,6 +16,10 @@ MODULES =		lang/python
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR} \
@@ -29,11 +32,5 @@ RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 BUILD_DEPENDS =         lang/cython${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
-
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
-
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>
