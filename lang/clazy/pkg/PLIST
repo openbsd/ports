@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/24 16:04:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/11/28 09:30:46 rsadowski Exp $
 bin/clazy
 @bin bin/clazy-standalone
-@so lib/ClazyPlugin.so
+@so lib/libClazyPlugin.so
 @man man/man1/clazy.1
 share/doc/clazy/
 share/doc/clazy/COPYING-LGPL2.txt

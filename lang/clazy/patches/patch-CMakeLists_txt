@@ -1,0 +1,13 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2020/11/28 09:30:46 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -190,7 +190,6 @@ if (NOT CLAZY_BUILD_WITH_CLANG)
+   add_clang_plugin(ClazyPlugin ${CLAZY_PLUGIN_SRCS} ${CLAZY_MINI_AST_DUMPER_SRCS})
+   set_target_properties(ClazyPlugin PROPERTIES
+     LINKER_LANGUAGE CXX
+-    PREFIX ""
+   )
+ 
+   install(TARGETS ClazyPlugin
