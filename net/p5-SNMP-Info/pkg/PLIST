@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/10/17 20:22:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/11/28 12:46:24 sthen Exp $
 ${P5SITE}/SNMP/
 ${P5SITE}/SNMP/Info/
 ${P5SITE}/SNMP/Info.pm
@@ -122,6 +122,7 @@ ${P5SITE}/SNMP/Info/Layer3/SonicWALL.pm
 ${P5SITE}/SNMP/Info/Layer3/Steelhead.pm
 ${P5SITE}/SNMP/Info/Layer3/Sun.pm
 ${P5SITE}/SNMP/Info/Layer3/Tasman.pm
+${P5SITE}/SNMP/Info/Layer3/Teltonika.pm
 ${P5SITE}/SNMP/Info/Layer3/Timetra.pm
 ${P5SITE}/SNMP/Info/Layer3/VMware.pm
 ${P5SITE}/SNMP/Info/Layer3/VyOS.pm
@@ -258,6 +259,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Steelhead.3p
 @man man/man3p/SNMP::Info::Layer3::Sun.3p
 @man man/man3p/SNMP::Info::Layer3::Tasman.3p
+@man man/man3p/SNMP::Info::Layer3::Teltonika.3p
 @man man/man3p/SNMP::Info::Layer3::Timetra.3p
 @man man/man3p/SNMP::Info::Layer3::VMware.3p
 @man man/man3p/SNMP::Info::Layer3::VyOS.3p
