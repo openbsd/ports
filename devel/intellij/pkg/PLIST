@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2020/10/22 20:45:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.46 2020/11/28 08:14:46 rsadowski Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -207,7 +207,6 @@ intellij/lib/jffi-1.2.19.jar
 intellij/lib/jing-20030619.jar
 intellij/lib/jna-platform.jar
 intellij/lib/jna.jar
-intellij/lib/jnaerator-runtime-0.12.jar
 intellij/lib/jnr-a64asm-1.0.0.jar
 intellij/lib/jnr-constants-0.9.12.jar
 intellij/lib/jnr-enxio-0.21.jar
@@ -309,7 +308,6 @@ intellij/lib/pty4j-native/linux/x86_64/
 intellij/lib/pty4j-native/linux/x86_64/libpty.so
 intellij/lib/purejavacomm-0.0.11.1.jar
 intellij/lib/qdox-2.0-M10.jar
-intellij/lib/quiche-jna-stubs-15.jar
 intellij/lib/rd-core-0.202.100.jar
 intellij/lib/rd-framework-0.202.100.jar
 intellij/lib/rd-swing-0.202.100.jar
@@ -334,7 +332,6 @@ intellij/lib/testFramework.core.jar
 intellij/lib/testFramework.jar
 intellij/lib/tests_bootstrap.jar
 intellij/lib/tips-intellij-idea-community-202.13.jar
-intellij/lib/tls-channel-0.3.2.jar
 intellij/lib/trang-core.jar
 intellij/lib/trove4j.jar
 intellij/lib/txw2-2.3.1.jar
@@ -644,14 +641,14 @@ intellij/plugins/gradle-java/lib/gradle-java.jar
 intellij/plugins/gradle-java/lib/gradle-jps-plugin.jar
 intellij/plugins/gradle-java/lib/resources_en.jar
 intellij/plugins/gradle/lib/
-intellij/plugins/gradle/lib/gradle-api-6.5.jar
-intellij/plugins/gradle/lib/gradle-api-impldep-6.5.jar
+intellij/plugins/gradle/lib/gradle-api-6.5.1-java7-sp2.jar
+intellij/plugins/gradle/lib/gradle-api-impldep-6.5.1-java7-sp2.jar
 intellij/plugins/gradle/lib/gradle-common.jar
-intellij/plugins/gradle/lib/gradle-launcher-6.5.jar
+intellij/plugins/gradle/lib/gradle-launcher-6.5.1-java7-sp2.jar
 intellij/plugins/gradle/lib/gradle-tooling-extension-api.jar
 intellij/plugins/gradle/lib/gradle-tooling-extension-impl.jar
 intellij/plugins/gradle/lib/gradle-toolingLoaderRt.jar
-intellij/plugins/gradle/lib/gradle-wrapper-6.5.jar
+intellij/plugins/gradle/lib/gradle-wrapper-6.5.1-java7-sp2.jar
 intellij/plugins/gradle/lib/gradle.jar
 intellij/plugins/grazie/
 intellij/plugins/grazie/lib/
