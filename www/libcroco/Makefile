@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/05/16 18:46:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2020/11/28 09:34:08 ajacoutot Exp $
 
 # !!! CANNOT BE REMOVED until legacy arches move to the new librsvg version
 
@@ -6,6 +6,7 @@ COMMENT=		generic CSS parsing library for GNOME project
 
 GNOME_PROJECT=		libcroco
 GNOME_VERSION=		0.6.13
+REVISION=		0
 
 SHARED_LIBS +=  croco-0.6            4.0      # 3.1
 
@@ -27,7 +28,10 @@ LIB_DEPENDS=		devel/glib2 \
 
 CONFIGURE_STYLE=	gnu
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
 # error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,18 @@
+$OpenBSD: patch-meson_options_txt,v 1.1 2020/11/28 09:34:08 ajacoutot Exp $
+
+ERROR: Assert failed: -Wl,-Bsymbolic-functions is required but not supported
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -61,3 +61,10 @@ option(
+   value: true,
+   description: 'Enable Vala bindings',
+ )
++
++option(
++  'symbolic_functions',
++  type: 'boolean',
++  value: true,
++  description: 'Enable bind defined function symbols locally',
++)

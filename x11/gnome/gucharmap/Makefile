@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.128 2020/11/08 07:42:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2020/11/28 09:34:08 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		13.0.4
+REVISION=		0
 
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 
@@ -32,5 +33,11 @@ RUN_DEPENDS =		devel/gsettings-desktop-schemas
 LIB_DEPENDS=		x11/gtk+3,-main
 
 CONFIGURE_ARGS +=	-Ducd_path=${LOCALBASE}/share/unicode/ucd/
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+# ERROR: Assert failed: -Wl,-Bsymbolic-functions is required but not supported
+CONFIGURE_ARGS +=	-Dsymbolic_functions=false
+.endif
 
 .include <bsd.port.mk>
