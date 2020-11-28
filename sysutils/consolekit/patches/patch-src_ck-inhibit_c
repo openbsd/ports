@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_ck-inhibit_c,v 1.1 2020/11/28 15:06:40 ajacoutot Exp $
+
+Make sure the lock type isn't NULL; this should not happen but it does in some
+situations and crashes console-kit-daemon(8).
+
+Index: src/ck-inhibit.c
+--- src/ck-inhibit.c.orig
++++ src/ck-inhibit.c
+@@ -693,6 +693,11 @@ ck_inhibit_get_what (CkInhibit   *inhibit)
+         string = check_event_and_add_to_string (inhibit, CK_INHIBIT_EVENT_HIBERNATE_KEY, "handle-hibernate-key", string);
+         string = check_event_and_add_to_string (inhibit, CK_INHIBIT_EVENT_LID_SWITCH, "handle-lid-switch", string);
+ 
++        if (string == NULL) {
++                g_warning ("empty lock type received");
++                string = g_strdup("");
++        }
++
+         return string;
+ }
+ 
