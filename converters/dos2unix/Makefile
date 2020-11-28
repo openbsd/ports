@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/10/19 18:23:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.23 2020/11/28 22:55:53 mestre Exp $
 
 COMMENT=	convert DOS/MAC files to UNIX (line-endings/charset)
 
-DISTNAME =	dos2unix-7.4.1
+DISTNAME =	dos2unix-7.4.2
 
 CATEGORIES=	converters
 
