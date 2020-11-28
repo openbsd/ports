@@ -1,11 +1,11 @@
-$OpenBSD: patch-docs_06-appearance_md_lua,v 1.1 2017/08/05 20:18:11 dcoppa Exp $
+$OpenBSD: patch-docs_06-appearance_md_lua,v 1.2 2020/11/28 08:10:44 rsadowski Exp $
 
 Index: docs/06-appearance.md.lua
 --- docs/06-appearance.md.lua.orig
 +++ docs/06-appearance.md.lua
 @@ -1,4 +1,4 @@
 -#! /usr/bin/lua
-+#!${MODLUA_BIN}
++#! ${MODLUA_BIN}
  local args = {...}
+ local parser = require("docs._parser")
  
- local gio = require("lgi").Gio

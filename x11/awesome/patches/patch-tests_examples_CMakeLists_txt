@@ -1,0 +1,44 @@
+$OpenBSD: patch-tests_examples_CMakeLists_txt,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
+
+Index: tests/examples/CMakeLists.txt
+--- tests/examples/CMakeLists.txt.orig
++++ tests/examples/CMakeLists.txt
+@@ -17,7 +17,7 @@ endif()
+ cmake_minimum_required(VERSION 3.0.0)
+ 
+ # Get and update the LUA_PATH so the scripts can be executed without awesome.
+-execute_process(COMMAND lua -e "p = package.path:gsub(';', '\\\\;'); io.stdout:write(p)"
++execute_process(COMMAND ${MODLUA_BIN} -e "p = package.path:gsub(';', '\\\\;'); io.stdout:write(p)"
+     OUTPUT_VARIABLE "LUA_PATH_")
+ 
+ # Make sure the system can be called from the test directory
+@@ -30,7 +30,7 @@ endif()
+ 
+ if (DO_COVERAGE)
+   execute_process(
+-    COMMAND env "SOURCE_DIRECTORY=${TOP_SOURCE_DIR}" lua -e "require('luacov.runner')('${TOP_SOURCE_DIR}/.luacov')"
++    COMMAND env "SOURCE_DIRECTORY=${TOP_SOURCE_DIR}" ${MODLUA_BIN} -e "require('luacov.runner')('${TOP_SOURCE_DIR}/.luacov')"
+     RESULT_VARIABLE TEST_RESULT
+     ERROR_VARIABLE  TEST_ERROR
+     ERROR_STRIP_TRAILING_WHITESPACE)
+@@ -38,9 +38,9 @@ if (DO_COVERAGE)
+     message(${TEST_ERROR})
+     message(FATAL_ERROR "Failed to run luacov.runner.")
+   endif()
+-  set(LUA_COV_RUNNER lua "-erequire('luacov.runner')('${TOP_SOURCE_DIR}/.luacov')")
++  set(LUA_COV_RUNNER ${MODLUA_BIN} "-erequire('luacov.runner')('${TOP_SOURCE_DIR}/.luacov')")
+ else()
+-  set(LUA_COV_RUNNER lua)
++  set(LUA_COV_RUNNER ${MODLUA_BIN})
+ endif()
+ 
+ if (STRICT_TESTS)
+@@ -66,7 +66,7 @@ ${TOP_SOURCE_DIR}/tests/examples/shims/?\\;\
+ ${LUA_PATH_}")
+ 
+ # $SOURCE_DIRECTORY is used by .luacov.
+-set(LUA_COV_RUNNER env -u LUA_PATH_5_1 -u LUA_PATH_5_2 -u LUA_PATH_5_3 "LUA_PATH=${LUA_PATH_}" "AWESOME_THEMES_PATH=${TOP_SOURCE_DIR}/themes/" "SOURCE_DIRECTORY=${TOP_SOURCE_DIR}" ${LUA_COV_RUNNER})
++set(LUA_COV_RUNNER env "LUA_PATH=${LUA_PATH_}" "AWESOME_THEMES_PATH=${TOP_SOURCE_DIR}/themes/" "SOURCE_DIRECTORY=${TOP_SOURCE_DIR}" ${LUA_COV_RUNNER})
+ 
+ # The documentation images directory.
+ set(IMAGE_DIR "${CMAKE_BINARY_DIR}/doc/images")

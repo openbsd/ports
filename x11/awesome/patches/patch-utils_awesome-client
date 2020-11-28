@@ -1,6 +1,8 @@
-$OpenBSD: patch-utils_awesome-client,v 1.2 2017/03/21 19:48:01 dcoppa Exp $
---- utils/awesome-client.orig	Sat Mar 18 10:49:46 2017
-+++ utils/awesome-client	Tue Mar 21 18:07:44 2017
+$OpenBSD: patch-utils_awesome-client,v 1.3 2020/11/28 08:10:44 rsadowski Exp $
+
+Index: utils/awesome-client
+--- utils/awesome-client.orig
++++ utils/awesome-client
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!${LOCALBASE}/bin/bash

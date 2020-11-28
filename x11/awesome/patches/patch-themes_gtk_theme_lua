@@ -1,9 +1,9 @@
-$OpenBSD: patch-themes_xresources_theme_lua,v 1.4 2020/11/28 08:10:44 rsadowski Exp $
+$OpenBSD: patch-themes_gtk_theme_lua,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
 
-Index: themes/xresources/theme.lua
---- themes/xresources/theme.lua.orig
-+++ themes/xresources/theme.lua
-@@ -94,7 +94,7 @@ theme = theme_assets.recolor_titlebar(
+Index: themes/gtk/theme.lua
+--- themes/gtk/theme.lua.orig
++++ themes/gtk/theme.lua
+@@ -310,7 +310,7 @@ theme = theme_assets.recolor_titlebar(
  )
  
  -- Define the icon theme for application icons. If not set then the icons

@@ -1,0 +1,23 @@
+$OpenBSD: patch-docs_07-my-first-awesome_md,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
+
+Index: docs/07-my-first-awesome.md
+--- docs/07-my-first-awesome.md.orig
++++ docs/07-my-first-awesome.md
+@@ -76,7 +76,7 @@ the file:
+ For this tutorial we will stick with the default theme.
+ 
+ Now we will customize the theme. Copy
+-`/usr/share/awesome/themes/default/theme.lua` to `~/.config/awesome/` and change
++`${LOCALBASE}/share/awesome/themes/default/theme.lua` to `~/.config/awesome/` and change
+ the above line in your theme like this (remember to replace `USER` with your
+ user name):
+ 
+@@ -87,7 +87,7 @@ user name):
+ Your desktop background image is handled in your theme file. To change it, edit
+ this line in your theme file:
+ 
+-    beautiful.get().wallpaper = "/usr/share/awesome/themes/default/background.png"
++    beautiful.get().wallpaper = "${LOCALBASE}/share/awesome/themes/default/background.png"
+ 
+ ## Personalize your layouts
+ 

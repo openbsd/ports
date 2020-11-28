@@ -1,0 +1,14 @@
+$OpenBSD: patch-docs_90-FAQ_md,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
+
+Index: docs/90-FAQ.md
+--- docs/90-FAQ.md.orig
++++ docs/90-FAQ.md
+@@ -389,7 +389,7 @@ To see where, run the following command:
+ 
+ There's handy way to run Awesome and redirect both its standard output and error streams to files:
+ 
+-    exec /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
++    exec ${LOCALBASE}/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+ 
+ If you put it into `.xinitrc` (for `startx`) or `~/.xsession`, you'll be able to
+ watch (with `tail -f`) everything right from Awesome.

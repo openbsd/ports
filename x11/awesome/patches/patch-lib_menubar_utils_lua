@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_menubar_utils_lua,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
+
+Index: lib/menubar/utils.lua
+--- lib/menubar/utils.lua.orig
++++ lib/menubar/utils.lua
+@@ -170,7 +170,7 @@ local function get_icon_lookup_path()
+     local paths = add_with_dir({}, glib.get_home_dir(), '.icons')
+     add_with_dir(paths, {
+         glib.get_user_data_dir(),           -- $XDG_DATA_HOME, typically $HOME/.local/share
+-        unpack(glib.get_system_data_dirs()) -- $XDG_DATA_DIRS, typically /usr/{,local/}share
++        unpack(glib.get_system_data_dirs()) -- $XDG_DATA_DIRS, typically ${LOCALBASE}/{,local/}share
+     }, 'icons')
+     add_with_dir(paths, glib.get_system_data_dirs(), 'pixmaps')
+ 
