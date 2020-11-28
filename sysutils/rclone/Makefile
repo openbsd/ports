@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2020/11/20 05:39:54 bket Exp $
+# $OpenBSD: Makefile,v 1.21 2020/11/28 06:18:43 bket Exp $
 
 COMMENT =	rsync for cloud storage
+
+BROKEN-aarch64 =	SIGILL when running rclone
+BROKEN-arm =		SIGBUS when running rclone
 
 V =		1.53.3
 DISTNAME =	rclone-v${V}
