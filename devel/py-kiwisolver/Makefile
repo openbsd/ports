@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/10/14 18:45:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/28 02:41:24 daniel Exp $
 
 COMMENT =		fast implementation of the Cassowary constraint solver
 
-MODPY_EGG_VERSION =	1.2.0
+MODPY_EGG_VERSION =	1.3.1
 DISTNAME =		kiwisolver-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,11 +17,12 @@ COMPILER =		base-clang ports-gcc ports-clang
 WANTLIB =	${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
 
 MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =	python3
 FLAVOR  =	python3
+
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		devel/py-cppy${MODPY_FLAVOR}
 
