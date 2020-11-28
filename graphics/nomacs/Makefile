@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2020/09/04 04:43:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.30 2020/11/28 08:50:30 rsadowski Exp $
 
 COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
-GH_TAGNAME =	3.16.224
+GH_TAGNAME =	3.17.2206
 
 CATEGORIES =	graphics
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://nomacs.org
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  nomacsCore                5.0 # 3.3
+SHARED_LIBS +=  nomacsCore                6.0 # 3.3
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -37,14 +37,15 @@ LIB_DEPENDS =		archivers/quazip \
 			x11/qt5/qtsvg
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_QUAZIP=ON \
-			-DENABLE_TRANSLATIONS=ON
+			-DENABLE_TRANSLATIONS=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Python=ON
 
 WRKDIST =		${WRKDIR}/${PKGNAME}/ImageLounge
 
 NO_TEST =		Yes
 
 pre-configure:
-	find ${WRKSRC} -type f -name "*.cpp" -exec \
-		sed -i 's,#include <quazip/JlCompress.h>,#include <quazip5/JlCompress.h>,' {} \;
+	find ${WRKSRC} -type f -name "*.cpp" -exec sed -i \
+		's,<quazip/JlCompress.h>,<quazip5/JlCompress.h>,' {} \;
 
 .include <bsd.port.mk>

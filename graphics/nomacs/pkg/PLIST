@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/09/04 04:43:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/11/28 08:50:30 rsadowski Exp $
 @bin bin/nomacs
 @lib lib/libnomacsCore.so.${LIBnomacsCore_VERSION}
 @man man/man1/nomacs.1
@@ -13,7 +13,6 @@ share/nomacs/Image Lounge/themes/Dark-Theme.css
 share/nomacs/Image Lounge/themes/Light-Theme.css
 share/nomacs/Image Lounge/themes/System.css
 share/nomacs/Image Lounge/translations/
-share/nomacs/Image Lounge/translations/nomacs_als.qm
 share/nomacs/Image Lounge/translations/nomacs_ar.qm
 share/nomacs/Image Lounge/translations/nomacs_bg.qm
 share/nomacs/Image Lounge/translations/nomacs_br_pt.qm
