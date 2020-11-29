@@ -1,0 +1,15 @@
+$OpenBSD: patch-extern_wcwidth_wcwidth_h,v 1.1 2020/11/29 19:57:01 sthen Exp $
+
+uchar.h doesn't exist in OpenBSD
+
+--- extern/wcwidth/wcwidth.h.orig	Tue Sep 22 19:36:29 2020
++++ extern/wcwidth/wcwidth.h	Sun Nov 22 13:12:51 2020
+@@ -21,7 +21,7 @@
+ #define __WCWIDTH_H__
+ 
+ #ifndef __cplusplus
+-#  if defined(__APPLE__) || defined(__NetBSD__)
++#  if defined(__APPLE__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ /* The <uchar.h> standard header is missing on macOS. */
+ #include <stddef.h>
+ typedef unsigned int char32_t;

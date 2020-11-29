@@ -1,11 +1,11 @@
-$OpenBSD: patch-intern_ffmpeg_ffmpeg_compat_h,v 1.5 2017/11/09 17:00:28 pascal Exp $
+$OpenBSD: patch-intern_ffmpeg_ffmpeg_compat_h,v 1.6 2020/11/29 19:57:01 sthen Exp $
 
 Fix building with older FFmpeg.
 
 Index: intern/ffmpeg/ffmpeg_compat.h
---- intern/ffmpeg/ffmpeg_compat.h.orig
-+++ intern/ffmpeg/ffmpeg_compat.h
-@@ -413,7 +413,7 @@ void avformat_close_input(AVFormatContext **ctx)
+--- intern/ffmpeg/ffmpeg_compat.h.orig	Tue Sep 22 19:36:29 2020
++++ intern/ffmpeg/ffmpeg_compat.h	Sun Nov 22 13:12:51 2020
+@@ -489,7 +489,7 @@ void avformat_close_input(AVFormatContext **ctx)
  }
  #endif
  

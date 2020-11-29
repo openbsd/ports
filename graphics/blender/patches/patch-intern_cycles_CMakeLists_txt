@@ -1,0 +1,25 @@
+$OpenBSD: patch-intern_cycles_CMakeLists_txt,v 1.7 2020/11/29 19:57:01 sthen Exp $
+
+Fix conflict with textproc/pugixml
+
+Index: intern/cycles/CMakeLists.txt
+--- intern/cycles/CMakeLists.txt.orig	Wed Nov 25 14:01:32 2020
++++ intern/cycles/CMakeLists.txt	Sat Nov 28 21:50:54 2020
+@@ -320,11 +320,16 @@ include_directories(
+   SYSTEM
+   ${BOOST_INCLUDE_DIR}
+   ${OPENIMAGEIO_INCLUDE_DIRS}
+-  ${OPENIMAGEIO_INCLUDE_DIRS}/OpenImageIO
+   ${OPENEXR_INCLUDE_DIR}
+   ${OPENEXR_INCLUDE_DIRS}
+   ${PUGIXML_INCLUDE_DIR}
+   ${TBB_INCLUDE_DIRS}
++)
++
++include_directories(
++  BEFORE
++  SYSTEM
++  ${OPENIMAGEIO_INCLUDE_DIRS}/OpenImageIO
+ )
+ 
+ if(CYCLES_STANDALONE_REPOSITORY)

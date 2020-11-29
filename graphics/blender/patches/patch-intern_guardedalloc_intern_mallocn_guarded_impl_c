@@ -1,20 +1,22 @@
-$OpenBSD: patch-intern_guardedalloc_intern_mallocn_guarded_impl_c,v 1.5 2015/09/22 18:48:40 pascal Exp $
---- intern/guardedalloc/intern/mallocn_guarded_impl.c.orig	Tue Jun 30 15:07:35 2015
-+++ intern/guardedalloc/intern/mallocn_guarded_impl.c	Thu Sep 10 19:35:19 2015
-@@ -687,6 +687,9 @@ static int compare_len(const void *p1, const void *p2)
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_guarded_impl_c,v 1.6 2020/11/29 19:57:01 sthen Exp $
+
+Index: intern/guardedalloc/intern/mallocn_guarded_impl.c
+--- intern/guardedalloc/intern/mallocn_guarded_impl.c.orig	Fri Oct 30 13:00:11 2020
++++ intern/guardedalloc/intern/mallocn_guarded_impl.c	Sat Nov 28 21:50:54 2020
+@@ -620,6 +620,9 @@ static int compare_len(const void *p1, const void *p2)
  
  void MEM_guarded_printmemlist_stats(void)
  {
 +#ifdef __OpenBSD__
-+	printf("MEM_guarded_printmemlist_stats not implemented on OpenBSD.");
++  printf("MEM_guarded_printmemlist_stats not implemented on OpenBSD.");
 +#else
- 	MemHead *membl;
- 	MemPrintBlock *pb, *printblock;
- 	unsigned int totpb, a, b;
-@@ -761,6 +764,7 @@ void MEM_guarded_printmemlist_stats(void)
+   MemHead *membl;
+   MemPrintBlock *pb, *printblock;
+   unsigned int totpb, a, b;
+@@ -718,6 +721,7 @@ void MEM_guarded_printmemlist_stats(void)
  #ifdef HAVE_MALLOC_STATS
- 	printf("System Statistics:\n");
- 	malloc_stats();
+   printf("System Statistics:\n");
+   malloc_stats();
 +#endif
  #endif
  }

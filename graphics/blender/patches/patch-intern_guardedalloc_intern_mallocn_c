@@ -1,15 +1,17 @@
-$OpenBSD: patch-intern_guardedalloc_intern_mallocn_c,v 1.4 2015/04/01 21:26:40 pascal Exp $
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_c,v 1.5 2020/11/29 19:57:01 sthen Exp $
 
 Use posix_memalign() on OpenBSD.
 
---- intern/guardedalloc/intern/mallocn.c.orig	Wed Mar 25 12:01:16 2015
-+++ intern/guardedalloc/intern/mallocn.c	Wed Apr  1 11:56:33 2015
-@@ -75,7 +75,7 @@ void *aligned_malloc(size_t size, size_t alignment)
- 	assert(alignment == 16);
- 	(void)alignment;
- 	return malloc(size);
--#elif defined(__FreeBSD__) || defined(__NetBSD__)
-+#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
- 	void *result;
+Index: intern/guardedalloc/intern/mallocn.c
+--- intern/guardedalloc/intern/mallocn.c.orig	Tue Sep 22 19:36:29 2020
++++ intern/guardedalloc/intern/mallocn.c	Sun Nov 22 13:12:51 2020
+@@ -71,7 +71,8 @@ void *aligned_malloc(size_t size, size_t alignment)
  
- 	if (posix_memalign(&result, alignment, size)) {
+ #ifdef _WIN32
+   return _aligned_malloc(size, alignment);
+-#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__)
++#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__) || \
++      defined(__OpenBSD__)
+   void *result;
+ 
+   if (posix_memalign(&result, alignment, size)) {

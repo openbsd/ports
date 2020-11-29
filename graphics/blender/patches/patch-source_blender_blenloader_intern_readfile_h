@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_blender_blenloader_intern_readfile_h,v 1.1 2020/11/29 19:57:01 sthen Exp $
+
+Index: source/blender/blenloader/intern/readfile.h
+--- source/blender/blenloader/intern/readfile.h.orig	Wed Nov 25 14:01:32 2020
++++ source/blender/blenloader/intern/readfile.h	Sat Nov 28 21:50:54 2020
+@@ -62,7 +62,8 @@ enum eFileDataFlag {
+ #  pragma GCC poison off_t
+ #endif
+ 
+-#if defined(_MSC_VER) || defined(__APPLE__) || defined(__HAIKU__) || defined(__NetBSD__)
++#if defined(_MSC_VER) || defined(__APPLE__) || defined(__HAIKU__) || \
++    defined(__NetBSD__) || defined(__OpenBSD__)
+ typedef int64_t off64_t;
+ #endif
+ 
