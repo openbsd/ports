@@ -1,6 +1,9 @@
-$OpenBSD: patch-vendor_github_com_shirou_gopsutil_v3_process_process_openbsd_go,v 1.1 2020/11/29 10:56:31 ajacoutot Exp $
+$OpenBSD: patch-vendor_github_com_shirou_gopsutil_v3_process_process_openbsd_go,v 1.2 2020/11/29 15:03:59 ajacoutot Exp $
 
-https://github.com/shirou/gopsutil/pull/1003
+From 0178a24563ec9de39e5ebcf2564ac3deb66c4919 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sun, 29 Nov 2020 11:53:05 +0100
+Subject: [PATCH] v3/process: unbreak on OpenBSD
 
 Index: vendor/github.com/shirou/gopsutil/v3/process/process_openbsd.go
 --- vendor/github.com/shirou/gopsutil/v3/process/process_openbsd.go.orig
