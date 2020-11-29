@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/08/19 12:08:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/11/29 09:13:46 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -80,6 +80,7 @@ share/liblouis/tables/ckb-translation.cti
 share/liblouis/tables/ckb.tbl
 share/liblouis/tables/compress.cti
 share/liblouis/tables/controlchars.cti
+share/liblouis/tables/cop-eg-comp8.utb
 share/liblouis/tables/corrections.cti
 share/liblouis/tables/countries.cti
 share/liblouis/tables/cs-chardefs.cti
