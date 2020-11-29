@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:46:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/29 09:34:14 benoit Exp $
 
 COMMENT=		backend for searching www.ebay.com
 
-DISTNAME=		WWW-Search-Ebay-3.054
+DISTNAME =		WWW-Search-Ebay-3.056
 CATEGORIES=		www
-REVISION=		0
 
 # Perl
 PERMIT_PACKAGE=		Yes
