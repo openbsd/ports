@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_ck-inhibit_h,v 1.1 2020/11/29 10:48:27 robert Exp $
+
+Index: src/ck-inhibit.h
+--- src/ck-inhibit.h.orig
++++ src/ck-inhibit.h
+@@ -101,6 +101,7 @@ const gchar    *ck_inhibit_get_what                   
+ const gchar    *ck_inhibit_get_who                     (CkInhibit   *inhibit);
+ const gchar    *ck_inhibit_get_why                     (CkInhibit   *inhibit);
+ const gchar    *ck_inhibit_get_mode                    (CkInhibit   *inhibit);
++const gchar    *ck_inhibit_get_named_pipe_path         (CkInhibit   *inhibit);
+ CkInhibitMode   ck_inhibit_get_inhibit_mode            (CkInhibit   *inhibit);
+ uid_t           ck_inhibit_get_uid                     (CkInhibit   *inhibit);
+ pid_t           ck_inhibit_get_pid                     (CkInhibit   *inhibit);

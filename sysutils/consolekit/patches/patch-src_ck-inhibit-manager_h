@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ck-inhibit-manager_h,v 1.1 2020/11/29 10:48:27 robert Exp $
+
+Index: src/ck-inhibit-manager.h
+--- src/ck-inhibit-manager.h.orig
++++ src/ck-inhibit-manager.h
+@@ -63,7 +63,7 @@ gint              ck_inhibit_manager_create_lock      
+                                                                   pid_t             pid);
+ 
+ gboolean          ck_inhibit_manager_remove_lock                 (CkInhibitManager *manager,
+-                                                                  const gchar      *who);
++                                                                  const gchar      *named_pipe_path);
+ 
+ gboolean          ck_inhibit_manager_is_shutdown_delayed         (CkInhibitManager *manager);
+ gboolean          ck_inhibit_manager_is_suspend_delayed          (CkInhibitManager *manager);
