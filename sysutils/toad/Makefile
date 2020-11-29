@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2020/11/28 16:50:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2020/11/29 10:07:32 ajacoutot Exp $
 
 COMMENT=		hotplugd(8) automounter (Toad Opens All Devices)
 
 GH_ACCOUNT=		ajacoutot
 GH_PROJECT=		toad
-GH_TAGNAME=		v1.9
+GH_TAGNAME=		v1.11
 
 CATEGORIES=		sysutils
 
@@ -25,6 +25,6 @@ NO_TEST=		Yes
 
 pre-configure:
 	sed -i -e "s,/usr/local,${LOCALBASE},g" -e "s,/etc,${SYSCONFDIR},g" \
-		${WRKSRC}/toad.{8,pl}
+		${WRKSRC}/toad.8
 
 .include <bsd.port.mk>
