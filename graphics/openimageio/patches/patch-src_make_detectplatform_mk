@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_make_detectplatform_mk,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp $
---- src/make/detectplatform.mk.orig	Sun Apr  1 23:51:00 2012
-+++ src/make/detectplatform.mk	Sun Apr  1 23:52:57 2012
+$OpenBSD: patch-src_make_detectplatform_mk,v 1.2 2020/11/29 20:05:50 sthen Exp $
+
+Index: src/make/detectplatform.mk
+--- src/make/detectplatform.mk.orig
++++ src/make/detectplatform.mk
 @@ -25,7 +25,9 @@ ifneq (${hw},x86)
    ifneq (${hw},x86_64)
      ifneq (${hw},i386)

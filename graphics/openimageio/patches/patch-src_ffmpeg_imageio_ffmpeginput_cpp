@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_ffmpeg_imageio_ffmpeginput_cpp,v 1.1 2019/02/21 22:01:30 sthen Exp $
+$OpenBSD: patch-src_ffmpeg_imageio_ffmpeginput_cpp,v 1.2 2020/11/29 20:05:50 sthen Exp $
 
 Update for newer FFmpeg API.
 
 Index: src/ffmpeg.imageio/ffmpeginput.cpp
 --- src/ffmpeg.imageio/ffmpeginput.cpp.orig
 +++ src/ffmpeg.imageio/ffmpeginput.cpp
-@@ -330,7 +330,7 @@ FFmpegInput::open (const std::string &name, ImageSpec 
+@@ -338,7 +338,7 @@ FFmpegInput::open (const std::string &name, ImageSpec 
          !strcmp (m_codec_context->codec->name, "dvvideo")) {
          m_offset_time = false;
      }

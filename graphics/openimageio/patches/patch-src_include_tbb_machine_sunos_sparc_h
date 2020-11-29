@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_include_tbb_machine_sunos_sparc_h,v 1.1 2012/06/13 11:32:39 pascal Exp $
---- src/include/tbb/machine/sunos_sparc.h.orig	Mon Jun 11 11:57:42 2012
-+++ src/include/tbb/machine/sunos_sparc.h	Mon Jun 11 12:00:47 2012
+$OpenBSD: patch-src_include_tbb_machine_sunos_sparc_h,v 1.2 2020/11/29 20:05:50 sthen Exp $
+
+Index: src/include/tbb/machine/sunos_sparc.h
+--- src/include/tbb/machine/sunos_sparc.h.orig
++++ src/include/tbb/machine/sunos_sparc.h
 @@ -0,0 +1,213 @@
 +/*
 +    Copyright 2005-2012 Intel Corporation.  All Rights Reserved.
