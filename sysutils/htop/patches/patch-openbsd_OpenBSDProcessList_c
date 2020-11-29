@@ -1,4 +1,4 @@
-$OpenBSD: patch-openbsd_OpenBSDProcessList_c,v 1.2 2020/09/11 12:34:28 rsadowski Exp $
+$OpenBSD: patch-openbsd_OpenBSDProcessList_c,v 1.3 2020/11/29 20:15:05 sthen Exp $
 
 Index: openbsd/OpenBSDProcessList.c
 --- openbsd/OpenBSDProcessList.c.orig
@@ -63,3 +63,12 @@ Index: openbsd/OpenBSDProcessList.c
     }
  
     return pl;
+@@ -372,7 +397,7 @@ static void OpenBSDProcessList_scanCPUTime(OpenBSDProc
+    u_int64_t avg[CPUSTATES] = {0};
+ 
+    for (int i = 0; i < this->super.cpuCount; i++) {
+-      getKernelCPUTimes(i, kernelTimes);
++      getKernelCPUTimes(this->cpuIndex[i], kernelTimes);
+       CPUData* cpu = this->cpus + i + 1;
+       kernelCPUTimesToHtop(kernelTimes, cpu);
+ 

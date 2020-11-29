@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2020/09/12 17:25:21 ians Exp $
+# $OpenBSD: Makefile,v 1.24 2020/11/29 20:15:05 sthen Exp $
 
 COMMENT =	interactive process viewer
 
 GH_ACCOUNT =	htop-dev
 GH_PROJECT =	htop
 GH_TAGNAME =	3.0.1
+REVISION =	0
 
 CATEGORIES =	sysutils
 
