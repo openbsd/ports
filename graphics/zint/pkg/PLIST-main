@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/02/19 19:32:01 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2020/11/29 12:59:25 kirby Exp $
 @bin bin/zint
 include/zint.h
 @lib lib/libzint.so.${LIBzint_VERSION}
+@comment share/applications/
 share/cmake/
 share/cmake/Modules/
 share/cmake/Modules/FindZint.cmake
