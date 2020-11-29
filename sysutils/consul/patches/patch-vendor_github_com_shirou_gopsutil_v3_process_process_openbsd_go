@@ -1,0 +1,16 @@
+$OpenBSD: patch-vendor_github_com_shirou_gopsutil_v3_process_process_openbsd_go,v 1.1 2020/11/29 10:56:31 ajacoutot Exp $
+
+https://github.com/shirou/gopsutil/pull/1003
+
+Index: vendor/github.com/shirou/gopsutil/v3/process/process_openbsd.go
+--- vendor/github.com/shirou/gopsutil/v3/process/process_openbsd.go.orig
++++ vendor/github.com/shirou/gopsutil/v3/process/process_openbsd.go
+@@ -241,7 +241,7 @@ func (p *Process) MemoryInfoWithContext(ctx context.Co
+ 	if err != nil {
+ 		return nil, err
+ 	}
+-	pageSize, err := mem.GetpageSizeWithContext(ctx)
++	pageSize, err := mem.GetPageSizeWithContext(ctx)
+ 	if err != nil {
+ 		return nil, err
+ 	}
