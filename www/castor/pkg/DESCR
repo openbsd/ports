@@ -1,0 +1,2 @@
+Castor is a graphical client for plain-text protocols written in Rust with GTK.
+It currently supports the Gemini, Gopher and Finger protocols.
