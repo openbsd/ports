@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/10/22 20:45:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/11/29 07:53:51 rsadowski Exp $
 bin/pycharm
 @man man/man1/pycharm.1
 pycharm/
@@ -157,7 +157,6 @@ pycharm/lib/jffi-1.2.19.jar
 pycharm/lib/jing-20030619.jar
 pycharm/lib/jna-platform.jar
 pycharm/lib/jna.jar
-pycharm/lib/jnaerator-runtime-0.12.jar
 pycharm/lib/jnr-a64asm-1.0.0.jar
 pycharm/lib/jnr-constants-0.9.12.jar
 pycharm/lib/jnr-enxio-0.21.jar
@@ -243,7 +242,6 @@ pycharm/lib/proxy-vole-1.0.5-jb.2.jar
 pycharm/lib/pty4j-0.9.6.jar
 pycharm/lib/purejavacomm-0.0.11.1.jar
 pycharm/lib/pycharm.jar
-pycharm/lib/quiche-jna-stubs-15.jar
 pycharm/lib/rd-core-0.202.100.jar
 pycharm/lib/rd-framework-0.202.100.jar
 pycharm/lib/rd-swing-0.202.100.jar
@@ -265,7 +263,6 @@ pycharm/lib/streamex-0.7.2.jar
 pycharm/lib/swingx-core-1.6.2-2.jar
 pycharm/lib/testFramework.jar
 pycharm/lib/tips-pycharm-community-202.10.jar
-pycharm/lib/tls-channel-0.3.2.jar
 pycharm/lib/trang-core.jar
 pycharm/lib/trove4j.jar
 pycharm/lib/txw2-2.3.1.jar
