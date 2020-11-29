@@ -1,9 +1,9 @@
-$OpenBSD: patch-config,v 1.10 2020/02/23 18:39:51 sthen Exp $
+$OpenBSD: patch-config,v 1.11 2020/11/29 19:08:14 sthen Exp $
 
 Index: config
 --- config.orig
 +++ config
-@@ -258,7 +258,7 @@
+@@ -259,7 +259,7 @@
  #
  #      No trailing "/", please.
  #
@@ -12,7 +12,7 @@ Index: config
  #
  #  2.2. templdir
  #  ==============
-@@ -343,7 +343,7 @@ confdir .
+@@ -344,7 +344,7 @@ confdir .
  #
  #      No trailing "/", please.
  #

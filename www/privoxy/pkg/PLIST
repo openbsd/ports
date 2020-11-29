@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/02/23 18:39:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/11/29 19:08:14 sthen Exp $
 @newgroup _privoxy:516
 @newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/var/privoxy:/sbin/nologin
 @rcscript ${RCDIR}/privoxy
@@ -12,6 +12,7 @@ share/doc/privoxy/
 share/doc/privoxy/AUTHORS
 share/doc/privoxy/ChangeLog
 share/doc/privoxy/LICENSE
+share/doc/privoxy/LICENSE.GPLv3
 share/doc/privoxy/README
 share/doc/privoxy/developer-manual/
 share/doc/privoxy/developer-manual/coding.html
