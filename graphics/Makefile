@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.532 2020/11/24 16:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.533 2020/11/29 20:08:49 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -181,7 +181,6 @@
      SUBDIR += openexr
      SUBDIR += openimageio
      SUBDIR += openjp2
-     SUBDIR += openjpeg
      SUBDIR += openscenegraph
      SUBDIR += optipng
      SUBDIR += orthanc
