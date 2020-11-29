@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/29 18:47:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2020/11/29 18:53:50 ajacoutot Exp $
 
 COMMENT=		graphical browser for plain-text protocols
 
 V=			0.8.16
 DISTNAME=		castor-${V}
+REVISION=		0
 
 DIST_SUBDIR=		castor
 DISTFILES=		${V}${EXTRACT_SUFX}
@@ -36,13 +37,13 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
 .for i in 16 32 64 128
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/$ix$i
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/$ix$i/apps
 	${INSTALL_DATA} ${WRKSRC}/data/org.typed-hole.castor-$i.png \
-		${PREFIX}/share/icons/hicolor/$ix$i/
+		${PREFIX}/share/icons/hicolor/apps/$ix$i/apps/
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/data/org.typed-hole.castor.svg \
-		${PREFIX}/share/icons/hicolor/scalable/
+		${PREFIX}/share/icons/hicolor/scalable/apps/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/data/Castor.desktop \
 		${PREFIX}/share/applications/
