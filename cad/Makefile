@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2020/11/05 20:38:02 tracey Exp $
+# $OpenBSD: Makefile,v 1.44 2020/11/30 15:10:46 tracey Exp $
 
      SUBDIR =
      SUBDIR += abc
+     SUBDIR += dxf2gcode
      SUBDIR += fritzing
      SUBDIR += geda-gaf
      SUBDIR += gerbv
