@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2020/09/12 07:57:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2020/11/30 15:46:04 jasper Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
-V =			1.6.0
+V =			1.6.1
 DISTNAME =		rofi-${V}
 
 CATEGORIES =		sysutils x11
@@ -15,15 +15,12 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/releases/download/${V}/
 
-WANTLIB += c cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
-WANTLIB += pthread rsvg-2 startup-notification-1 xcb xcb-ewmh
-WANTLIB += xcb-icccm xcb-randr xcb-render xcb-util xcb-xinerama
-WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11 jpeg
+WANTLIB += c m pthread startup-notification-1 xcb xcb-ewmh xcb-icccm
+WANTLIB += xcb-randr xcb-render xcb-util xcb-xinerama xcb-xkb
+WANTLIB += xcb-xrm xkbcommon xkbcommon-x11
 
 BUILD_DEPENDS +=	devel/bison
 LIB_DEPENDS =		devel/startup-notification \
-			x11/gnome/librsvg \
 			x11/xkbcommon
 
 CONFIGURE_STYLE =	gnu
