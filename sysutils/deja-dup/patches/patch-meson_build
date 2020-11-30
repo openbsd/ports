@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.1 2020/11/07 09:14:04 jasper Exp $
+$OpenBSD: patch-meson_build,v 1.2 2020/11/30 14:59:44 ajacoutot Exp $
 
 https://gitlab.gnome.org/World/deja-dup/-/commit/77bc3d5c24db442a5870960b1cc8e1c221175bae
 
@@ -14,11 +14,3 @@ Index: meson.build
  json_dep = dependency('json-glib-1.0', version: '>= 1.2')
  packagekit_dep = dependency('packagekit-glib2', version: '>=0.6.5', required: false)
  secret_dep = dependency('libsecret-1', version: '>= 0.18.6')
-@@ -65,7 +65,6 @@ common_vflags = [
-     '--vapidir', vapidir,
- ]
- common_cflags = [
--    '-DHANDY_USE_UNSTABLE_API',
-     '-DI_KNOW_THE_PACKAGEKIT_GLIB2_API_IS_SUBJECT_TO_CHANGE',
-     '-DDUPLICITY_COMMAND="@0@"'.format(get_option('duplicity_command')),
-     '-DDUPLICITY_PACKAGES="@0@"'.format(get_option('duplicity_pkgs')),
