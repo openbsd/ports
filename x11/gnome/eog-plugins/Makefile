@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.89 2020/10/03 15:40:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2020/11/30 15:44:36 jasper Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		3.26.5
-REVISION =		3
+GNOME_VERSION=		3.26.6
 
 CATEGORIES=		graphics
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
+WANTLIB  = ${COMPILER_LIBCXX}
 WANTLIB += EGL X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 brotlicommon
 WANTLIB += brotlidec cairo cairo-gobject champlain-0.12 champlain-gtk-0.12
