@@ -1,0 +1,16 @@
+$OpenBSD: patch-dxf2gcode_globals_config_py,v 1.1.1.1 2020/11/30 15:10:22 tracey Exp $
+
+# sys.platform return openbsd, not unix here
+
+Index: dxf2gcode/globals/config.py
+--- dxf2gcode/globals/config.py.orig
++++ dxf2gcode/globals/config.py
+@@ -53,7 +53,7 @@ old versions are recognized and skipped"
+ """
+ 
+ # Paths change whether platform is Linux or Windows
+-if "linux" in sys.platform.lower() or "unix" in sys.platform.lower():
++if "linux" in sys.platform.lower() or "openbsd" in sys.platform.lower():
+     #Declare here the path that are specific to Linux
+     IMPORT_DIR = "~/Documents"
+     OUTPUT_DIR = "~/Documents"

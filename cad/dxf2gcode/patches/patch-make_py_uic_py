@@ -1,0 +1,16 @@
+$OpenBSD: patch-make_py_uic_py,v 1.1.1.1 2020/11/30 15:10:22 tracey Exp $
+
+# sys.platform return openbsd, not unix here
+
+Index: make_py_uic.py
+--- make_py_uic.py.orig
++++ make_py_uic.py
+@@ -31,7 +31,7 @@ def which(program):
+ 
+ pyQtVer = '5'
+ 
+-if "linux" in sys.platform.lower() or "unix" in sys.platform.lower() or "darwin" in sys.platform.lower():
++if "linux" in sys.platform.lower() or "openbsd" in sys.platform.lower() or "darwin" in sys.platform.lower():
+     # On Linux and macOS executables are normaly on the PATH (on Linux please install packages like lib64-qt5-devel and python-qt5-devel)
+     names = ["pyuic%s" % pyQtVer]
+     UICPATH = None

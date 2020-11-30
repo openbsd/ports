@@ -1,0 +1,16 @@
+$OpenBSD: patch-make_tr_py,v 1.1.1.1 2020/11/30 15:10:22 tracey Exp $
+
+# sys.platform return openbsd, not unix here
+
+Index: make_tr.py
+--- make_tr.py.orig
++++ make_tr.py
+@@ -94,7 +94,7 @@ def extract_from_pro(qmf, varname):
+     return ts
+ 
+ 
+-if "linux" in sys.platform.lower() or "unix" in sys.platform.lower() or "darwin" in sys.platform.lower():
++if "linux" in sys.platform.lower() or "openbsd" in sys.platform.lower() or "darwin" in sys.platform.lower():
+     # On Linux, the executable are normaly on the PATH
+     LREPATH = None
+     names = ["lrelease-qt5", "lrelease5", "lrelease"]
