@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2020/08/26 22:44:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.48 2020/11/30 16:46:44 bcallah Exp $
 
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
-DISTNAME =	worker-4.5.1
+DISTNAME =	worker-4.6.0
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.boomerangsworld.de/
@@ -11,8 +11,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ICE SM X11 Xext Xft Xinerama Xrender c expat
-WANTLIB += fontconfig freetype m pthread xcb z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext Xft Xinerama Xrender
+WANTLIB += c crypto expat fontconfig freetype m ssl xcb z
 
 MASTER_SITES =	http://www.boomerangsworld.de/cms/worker/downloads/
 
