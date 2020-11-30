@@ -1,6 +1,26 @@
-# $OpenBSD: Makefile,v 1.8 2020/04/06 08:48:06 pirofti Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/30 16:34:36 sthen Exp $
 
-BROKEN =	has locally modified copied of MuPDF files; some of these have changed API in 1.12.0 causing breakage
+# if un-breaking, reenable in ../Makefile
+BROKEN =	k2pdfopt uses modified builds of MuPDF, Leptonica, Tesseract; at least some of these have been updated causing mods to fail
+
+# Notes on updating:
+# - go to https://www.willus.com/k2pdfopt/k2pdfopt_version.txt;
+#   some of the dependencies need modifying by replacing source
+#   files with files from XXX_mod in k2pdfopt source; using the
+#   above file you can figure out which version of those libs
+#   is needed
+# - modify the port to:
+#   1. fetch those files
+#   2. move the files from XXX_mod/somefile to replace the relevant
+#      file in the library (you'll also need to figure out where in
+#      the library source that file is; they are dumped into the
+#      one XXX_mod dir per library)
+#   3. replicate the library build process (make them static)
+#   4. build k2pdfopt, pointed at the newly built libraries
+#
+# Alternatively you may get away with removing use of mupdf (there's
+# some fallback to ghostscript) and patching use of the libraries;
+# debian packaging takes this approach. It's still very fragile though.
 
 COMMENT =	optimizes PDF/DJVU files for mobile e-readers
 
