@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/11/29 18:53:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/12/01 14:48:03 jturner Exp $
 
 COMMENT=		graphical browser for plain-text protocols
 
@@ -39,7 +39,7 @@ post-install:
 .for i in 16 32 64 128
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/$ix$i/apps
 	${INSTALL_DATA} ${WRKSRC}/data/org.typed-hole.castor-$i.png \
-		${PREFIX}/share/icons/hicolor/apps/$ix$i/apps/
+		${PREFIX}/share/icons/hicolor/$ix$i/apps/
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/data/org.typed-hole.castor.svg \
