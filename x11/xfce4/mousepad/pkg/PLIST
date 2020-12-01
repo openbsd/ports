@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/08/15 06:54:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/12/01 07:25:00 landry Exp $
 @bin bin/mousepad
 share/applications/mousepad.desktop
 share/glib-2.0/schemas/org.xfce.mousepad.gschema.xml
+share/icons/hicolor/128x128/apps/org.xfce.mousepad.png
+share/icons/hicolor/16x16/apps/org.xfce.mousepad.png
+share/icons/hicolor/48x48/apps/org.xfce.mousepad.png
+share/icons/hicolor/scalable/apps/org.xfce.mousepad.svg
 share/locale/ar/LC_MESSAGES/mousepad.mo
 share/locale/ast/LC_MESSAGES/mousepad.mo
 share/locale/be/LC_MESSAGES/mousepad.mo
@@ -11,11 +15,10 @@ share/locale/cs/LC_MESSAGES/mousepad.mo
 share/locale/da/LC_MESSAGES/mousepad.mo
 share/locale/de/LC_MESSAGES/mousepad.mo
 share/locale/el/LC_MESSAGES/mousepad.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/mousepad.mo
 share/locale/en_GB/LC_MESSAGES/mousepad.mo
 share/locale/es/LC_MESSAGES/mousepad.mo
+share/locale/et/LC_MESSAGES/mousepad.mo
 share/locale/eu/LC_MESSAGES/mousepad.mo
 share/locale/fi/LC_MESSAGES/mousepad.mo
 share/locale/fr/LC_MESSAGES/mousepad.mo
@@ -23,12 +26,9 @@ share/locale/gl/LC_MESSAGES/mousepad.mo
 share/locale/he/LC_MESSAGES/mousepad.mo
 share/locale/hr/LC_MESSAGES/mousepad.mo
 share/locale/hu/LC_MESSAGES/mousepad.mo
-share/locale/hy_AM/
-share/locale/hy_AM/LC_MESSAGES/
 share/locale/hy_AM/LC_MESSAGES/mousepad.mo
+share/locale/hye/LC_MESSAGES/mousepad.mo
 share/locale/id/LC_MESSAGES/mousepad.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/mousepad.mo
 share/locale/is/LC_MESSAGES/mousepad.mo
 share/locale/it/LC_MESSAGES/mousepad.mo
@@ -58,8 +58,11 @@ share/locale/ug/LC_MESSAGES/mousepad.mo
 share/locale/uk/LC_MESSAGES/mousepad.mo
 share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 share/locale/zh_TW/LC_MESSAGES/mousepad.mo
-@tag update-desktop-database
-@tag glib-compile-schemas
+share/metainfo/
+share/metainfo/mousepad.appdata.xml
 share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.xfce.mousepad.policy
+@tag update-desktop-database
+@tag glib-compile-schemas
+@tag gtk-update-icon-cache %D/share/icons/hicolor
