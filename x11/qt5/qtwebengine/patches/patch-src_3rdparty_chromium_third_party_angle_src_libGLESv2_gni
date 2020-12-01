@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/third_party/angle/src/libGLESv2.gni
+--- src/3rdparty/chromium/third_party/angle/src/libGLESv2.gni.orig
++++ src/3rdparty/chromium/third_party/angle/src/libGLESv2.gni
+@@ -74,7 +74,7 @@ angle_system_utils_sources = [
+   "src/common/system_utils.h",
+ ]
+ 
+-if (is_linux || is_android || is_fuchsia) {
++if (is_linux || is_android || is_fuchsia || is_openbsd) {
+   angle_system_utils_sources += [
+     "src/common/system_utils_linux.cpp",
+     "src/common/system_utils_posix.cpp",

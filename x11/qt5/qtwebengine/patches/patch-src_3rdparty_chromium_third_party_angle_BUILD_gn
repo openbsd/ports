@@ -3,6 +3,15 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/angle/BUILD.gn
 --- src/3rdparty/chromium/third_party/angle/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/angle/BUILD.gn
+@@ -378,7 +378,7 @@ angle_static_library("angle_gpu_info_util") {
+     libs += [ "dxgi.lib" ]
+   }
+ 
+-  if (is_linux || is_fuchsia) {
++  if (is_linux || is_fuchsia || is_openbsd) {
+     sources += libangle_gpu_info_util_linux_sources
+ 
+     if (angle_use_x11) {
 @@ -389,6 +389,7 @@ angle_static_library("angle_gpu_info_util") {
          "X11",
          "Xi",
@@ -11,14 +20,12 @@ Index: src/3rdparty/chromium/third_party/angle/BUILD.gn
        ]
      }
    }
-@@ -1107,10 +1108,6 @@ foreach(is_shared_library,
- 
-     if (is_linux) {
-       sources += util_linux_sources
--      libs += [
--        "rt",
--        "dl",
--      ]
+@@ -1105,7 +1106,7 @@ foreach(is_shared_library,
+       deps += [ ":angle_stack_walker" ]
      }
  
-     if (is_mac) {
+-    if (is_linux) {
++    if (is_linux && !is_openbsd) {
+       sources += util_linux_sources
+       libs += [
+         "rt",

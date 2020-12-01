@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/third_party/angle/gni/angle.gni
+--- src/3rdparty/chromium/third_party/angle/gni/angle.gni.orig
++++ src/3rdparty/chromium/third_party/angle/gni/angle.gni
+@@ -22,7 +22,7 @@ if (angle_has_build) {
+     import("//build/config/win/visual_studio_version.gni")
+   }
+ 
+-  angle_use_x11 = use_x11 && !is_ggp
++  angle_use_x11 = (use_x11 && !is_ggp) || is_openbsd
+ } else {
+   declare_args() {
+     is_ubsan = false

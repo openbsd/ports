@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,347 @@
+@@ -0,0 +1,350 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -144,8 +144,9 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +    }
 +  }
 +
-+  if (!command_line->HasSwitch(switches::kDisableUnveil))
-+    SetUnveil(process_type, sandbox_type);
++  // Disable unveil support for qtwebengine
++  //if (!command_line->HasSwitch(switches::kDisableUnveil))
++  //  SetUnveil(process_type, sandbox_type);
 +
 +  pre_initialized_ = true;
 +}
@@ -292,6 +293,8 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +    errno = error;
 +    PCHECK(limited_as);
 +  }
++  // Disable pledge support for qtwebengine
++  return true;
 +
 +  if (process_type.empty()) {
 +    // XXX use a file for listing pledges of the main process for now
