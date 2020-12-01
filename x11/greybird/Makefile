@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/24 10:23:33 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2020/12/01 07:12:56 landry Exp $
 
 COMMENT =	Desktop suite theme for Xfce
 
-GH_TAGNAME =	v3.22.12
+GH_TAGNAME =	v3.22.13
 GH_ACCOUNT =	shimmerproject
 GH_PROJECT =	Greybird
 PKGNAME =	${DISTNAME:L}
