@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.111 2020/11/28 08:10:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.112 2020/12/01 06:03:24 rsadowski Exp $
 
 COMMENT=		highly configurable framework window manager
 
 V=			4.3
 DISTNAME=		awesome-${V}
 CATEGORIES=		x11
+REVISION=		0
 
 HOMEPAGE=		https://awesomewm.org/
 
@@ -36,8 +37,7 @@ LIB_DEPENDS=		${MODLUA_LIB_DEPENDS} \
 
 MODLUA_BUILD_DEPENDS=	devel/lua-lgi
 
-BUILD_DEPENDS=		devel/lualdoc \
-			devel/pango \
+BUILD_DEPENDS=		devel/pango \
 			graphics/ImageMagick \
 			textproc/asciidoctor
 
@@ -46,8 +46,11 @@ MODLUA_RUN_DEPENDS=	devel/lua-lgi
 RUN_DEPENDS=		misc/rlwrap \
 			shells/bash
 
-CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off \
+CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=OFF \
 			-DSYSCONFDIR=${SYSCONFDIR}
+
+# It fails to build with docs enabled on sparc64
+CONFIGURE_ARGS+=	-DGENERATE_DOC=OFF
 
 NO_TEST=		Yes
 
@@ -61,11 +64,6 @@ pre-configure:
 		${WRKSRC}/lib/beautiful/init.lua \
 		${WRKSRC}/lib/awful/util.lua \
 		${WRKSRC}/lib/awful/completion.lua \
-		${WRKSRC}/docs/build_rules_index.lua \
-		${WRKSRC}/docs/90-FAQ.md \
-		${WRKSRC}/docs/07-my-first-awesome.md \
-		${WRKSRC}/docs/06-appearance.md.lua \
-		${WRKSRC}/docs/05-awesomerc.md.lua \
 		${WRKSRC}/utils/awesome-client \
 		${WRKSRC}/themes/xresources/theme.lua \
 		${WRKSRC}/themes/gtk/theme.lua \
