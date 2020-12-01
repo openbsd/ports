@@ -54,6 +54,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 BUILD_DEPENDS =	archivers/bzip2 \
 		devel/bison \
 		devel/gperf \
+		devel/ninja \
 		devel/protobuf \
 		shells/bash \
 		sysutils/flock \
@@ -85,9 +86,9 @@ GN_SYSTEM_LIBS =	libevent \
 
 DEBUGFLAG =		-g0
 
-#CONFIGURE_ENV =		NINJAFLAGS="-j${MAKE_JOBS}" \
-#			NINJA_PATH="${LOCALBASE}/bin/ninja" \
-#			PATH=${WRKSRC}/bin:${LOCALBASE}/bin:${PATH}
+CONFIGURE_ENV =		NINJAFLAGS="-j${MAKE_JOBS}" \
+			NINJA_PATH="${LOCALBASE}/bin/ninja" \
+			PATH=${WRKSRC}/bin:${LOCALBASE}/bin:${PATH}
 
 MAKE_ENV +=		CC="${CC}" CXX="${CXX}" \
 			C_INCLUDE_PATH="${LOCALBASE}/include:${X11BASE}/include" \
