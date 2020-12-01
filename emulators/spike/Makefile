@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/05 08:35:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2020/12/01 21:54:58 cwen Exp $
 
 # uses huge amounts of memory compiling disasm.cc on i386, the available
 # address space is not large enough
 NOT_FOR_ARCHS =	i386
+
+BROKEN-powerpc=	internal 'exception trap_instruction_page_fault' at runtime
 
 COMMENT =	RISC-V ISA simulator
 
 GH_COMMIT =	ec6ded4f2f21cb7aef4a0b31b82b91ef91d22c36
 GH_ACCOUNT =	riscv
 GH_PROJECT =	riscv-isa-sim
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	spike-1.0.0
 
@@ -21,6 +23,9 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
+
+# C++11
+COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/dtc
 

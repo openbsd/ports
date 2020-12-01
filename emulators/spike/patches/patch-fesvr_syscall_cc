@@ -1,0 +1,17 @@
+$OpenBSD: patch-fesvr_syscall_cc,v 1.1 2020/12/01 21:54:58 cwen Exp $
+
+There is no overloaded function for swap(unsigned long). big endian archs
+fix for: riscv/byteorder.h:22:58: error: call to 'swap' is ambiguous
+
+Index: fesvr/syscall.cc
+--- fesvr/syscall.cc.orig
++++ fesvr/syscall.cc
+@@ -300,7 +300,7 @@ reg_t syscall_t::sys_getmainvars(reg_t pbuf, reg_t lim
+ {
+   std::vector<std::string> args = htif->target_args();
+   std::vector<uint64_t> words(args.size() + 3);
+-  words[0] = to_le(args.size());
++  words[0] = to_le((uint32_t) args.size());
+   words[args.size()+1] = 0; // argv[argc] = NULL
+   words[args.size()+2] = 0; // envp[0] = NULL
+ 
