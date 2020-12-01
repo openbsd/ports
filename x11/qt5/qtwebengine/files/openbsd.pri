@@ -28,7 +28,6 @@ include(linux.pri)
 #gn_args +=   enable_basic_printing=true \
 #             enable_print_preview=true \
 #             use_dbus=true \
-#             use_udev=false
 #
 # Once the port works better, we can think about readding the diverse `use_system_<foo>`
 # for bundled libraries.
@@ -36,4 +35,25 @@ include(linux.pri)
 # Upcoming qt version, form FreeBSD
 #gn_args += use_system_yasm=true
 
-gn_args +=	use_udev=false
+gn_args +=	enable_nacl=false \
+		is_official_build=true \
+		is_debug=false \
+		is_cfi=false \
+		use_udev=false \
+		optimize_webui=false \
+		enable_one_click_signin=true \
+		enable_remoting=false \
+		use_kerberos=false \
+		use_sndio=true \
+		use_cups=true \
+		use_system_libdrm=true \
+		use_bundled_fontconfig=false \
+		use_system_harfbuzz=true \
+		use_system_freetype=false \
+		use_gnome_keyring=false \
+		is_clang=true \
+		use_sysroot=false \
+		treat_warnings_as_errors=false \
+		clang_use_chrome_plugins=false \
+		use_allocator=\"none\" \
+		fieldtrial_testing_like_official_build=true

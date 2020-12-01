@@ -15,6 +15,7 @@ COMMENT =		Chromium-based web engine for Qt5
 
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
+REVISION =		4
 
 CATEGORIES =		www
 
