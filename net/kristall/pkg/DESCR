@@ -1,0 +1,11 @@
+Kristall is a multi-protocol support (Gemini, Gopher, Finger,
+Http(s)) navigator with features such as:
+
+- Document rendering based on MIME
+- TLS Management
+- Favourite Sites
+- Navigation history
+- Tabbed interface
+- Outline generation
+- Special link highlighting for different targets
+- Color Themes

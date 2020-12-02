@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2020/12/02 19:07:31 solene Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -9,13 +9,13 @@ INSTALL_PROGRAM=$(INSTALL) -Dm 755
+ INSTALL_DATA=$(INSTALL) -m 644
+ 
+ # Directories into which to install the various files
+-bindir=$(DESTDIR)$(PREFIX)/bin
+-sharedir=$(DESTDIR)$(PREFIX)/share
++bindir=$(PREFIX)/bin
++sharedir=$(PREFIX)/share
+ MAKEDIR=mkdir -p
+ 
+ # Default Qmake Command For Ubuntu (and probably other Debian) distributions
+ 
+-QMAKE_COMMAND := qmake
++QMAKE_COMMAND := qmake-qt5
+ # For Fedora 32 and similar distributions, use the next line instead of the above.
+ # QMAKE_COMMAND := /usr/bin/qmake-qt5
+ 
