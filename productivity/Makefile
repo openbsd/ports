@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2020/09/13 13:21:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.96 2020/12/02 19:11:08 solene Exp $
 
      SUBDIR =
      SUBDIR += aqbanking
@@ -8,6 +8,7 @@
      SUBDIR += davical
      SUBDIR += deskzilla
      SUBDIR += devtodo
+     SUBDIR += epr-reader
      SUBDIR += fet
      SUBDIR += glabels
      SUBDIR += gnucash
