@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.49 2020/07/28 07:30:10 kmos Exp $
+# $OpenBSD: Makefile,v 1.50 2020/12/02 10:26:22 ajacoutot Exp $
 
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=		spice-gtk-0.38
-REVISION=		0
+DISTNAME=		spice-gtk-0.39
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		x11 net
 
-SHARED_LIBS +=  spice-client-glib-2.0 6.1      # 14.0
-SHARED_LIBS +=  spice-client-gtk-3.0  4.1      # 5.0
+SHARED_LIBS += spice-client-glib-2.0     6.1 # 8.7.0
+SHARED_LIBS += spice-client-gtk-3.0      4.1 # 5.0.0
 
 HOMEPAGE=		http://www.spice-space.org/page/Spice-Gtk
 
@@ -59,8 +58,7 @@ LIB_DEPENDS=		archivers/lz4 \
 
 CONFIGURE_ARGS=		-Dsmartcard=disabled \
 			-Dusbredir=disabled \
-			-Dpulse=disabled \
-			-Dcelt051=disabled \
+			-Dlibcap-ng=disabled \
 			-Dgtk_doc=disabled
 
 # XXX requires new phodav port
