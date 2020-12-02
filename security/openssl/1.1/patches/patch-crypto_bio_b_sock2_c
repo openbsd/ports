@@ -1,0 +1,14 @@
+$OpenBSD: patch-crypto_bio_b_sock2_c,v 1.1 2020/12/02 17:32:50 sthen Exp $
+
+Index: crypto/bio/b_sock2.c
+--- crypto/bio/b_sock2.c.orig
++++ crypto/bio/b_sock2.c
+@@ -243,7 +243,7 @@ int BIO_listen(int sock, const BIO_ADDR *addr, int opt
+         }
+     }
+ 
+-# ifdef IPV6_V6ONLY
++# ifdef IPV6_V6ONLY && !defined(__OpenBSD__)
+     if (BIO_ADDR_family(addr) == AF_INET6) {
+         /*
+          * Note: Windows default of IPV6_V6ONLY is ON, and Linux is OFF.
