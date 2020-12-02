@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_mkvtoolnix-gui_jobs_program_runner_cpp,v 1.1 2018/08/18 06:47:58 rsadowski Exp $
+$OpenBSD: patch-src_mkvtoolnix-gui_jobs_program_runner_cpp,v 1.2 2020/12/02 06:44:11 rsadowski Exp $
 
 Index: src/mkvtoolnix-gui/jobs/program_runner.cpp
 --- src/mkvtoolnix-gui/jobs/program_runner.cpp.orig
@@ -12,7 +12,7 @@ Index: src/mkvtoolnix-gui/jobs/program_runner.cpp
  #elif defined(SYS_WINDOWS)
  #include "mkvtoolnix-gui/jobs/program_runner/windows_program_runner.h"
  #endif // SYS_WINDOWS
-@@ -158,6 +160,8 @@ ProgramRunner::create() {
+@@ -164,6 +166,8 @@ ProgramRunner::create() {
    runner.reset(new LinuxProgramRunner{});
  #elif defined(SYS_APPLE)
    runner.reset(new MacOSProgramRunner{});

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/08/18 06:47:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/12/02 06:44:11 rsadowski Exp $
 @bin bin/mkvextract
 @bin bin/mkvinfo
 @bin bin/mkvmerge
@@ -7,6 +7,7 @@
 @man man/man1/mkvinfo.1
 @man man/man1/mkvmerge.1
 @man man/man1/mkvpropedit.1
+share/locale/bg/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ca/LC_MESSAGES/mkvtoolnix.mo
 share/locale/cs/LC_MESSAGES/mkvtoolnix.mo
 share/locale/de/LC_MESSAGES/mkvtoolnix.mo
