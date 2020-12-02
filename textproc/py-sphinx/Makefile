@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.29 2020/11/27 01:59:28 daniel Exp $
+# $OpenBSD: Makefile,v 1.30 2020/12/02 00:50:26 daniel Exp $
 
 COMMENT =		python documentation generator
 
 MODPY_EGG_VERSION =	1.4.8
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://sphinx-doc.org/
-
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -24,7 +23,6 @@ RUN_DEPENDS =		devel/py-babel${MODPY_FLAVOR} \
 			textproc/py-alabaster${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
-			textproc/py-sphinx_rtd_theme${MODPY_FLAVOR}>=0.4.3 \
 			textproc/py-snowballstemmer${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
