@@ -1,11 +1,11 @@
-$OpenBSD: patch-mdal_CMakeLists_txt,v 1.4 2020/06/20 10:17:59 landry Exp $
+$OpenBSD: patch-mdal_CMakeLists_txt,v 1.5 2020/12/02 12:05:56 landry Exp $
 
 version the .so
 
 Index: mdal/CMakeLists.txt
 --- mdal/CMakeLists.txt.orig
 +++ mdal/CMakeLists.txt
-@@ -143,6 +143,11 @@ IF (BUILD_SHARED OR ENABLE_TESTS)
+@@ -145,6 +145,11 @@ IF (BUILD_SHARED OR ENABLE_TESTS)
    ENDIF(WIN32)
  ENDIF (BUILD_SHARED OR ENABLE_TESTS)
  
@@ -17,7 +17,7 @@ Index: mdal/CMakeLists.txt
  # LINK
  FOREACH(LIB_NAME ${MDAL_LIBS})
    TARGET_INCLUDE_DIRECTORIES(${LIB_NAME}
-@@ -176,8 +181,8 @@ FOREACH(LIB_NAME ${MDAL_LIBS})
+@@ -179,8 +184,8 @@ FOREACH(LIB_NAME ${MDAL_LIBS})
    ENDIF(XML_FOUND)
  
    IF(SQLITE3_FOUND)
