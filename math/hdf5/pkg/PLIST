@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/10/12 06:56:07 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/12/02 13:27:55 martin Exp $
 @bin bin/gif2h5
 @bin bin/h52gif
 bin/h5c++
@@ -8,6 +8,7 @@ bin/h5cc
 @bin bin/h5debug
 @bin bin/h5diff
 @bin bin/h5dump
+bin/h5fc
 @bin bin/h5format_convert
 @bin bin/h5import
 @bin bin/h5jam
@@ -20,8 +21,6 @@ bin/h5redeploy
 @bin bin/h5stat
 @bin bin/h5unjam
 @bin bin/h5watch
-@bin bin/mirror_server
-@bin bin/mirror_server_stop
 include/H5ACpublic.h
 include/H5AbstractDs.h
 include/H5Apublic.h
@@ -43,6 +42,7 @@ include/H5DataType.h
 include/H5DcreatProp.h
 include/H5Dpublic.h
 include/H5DxferProp.h
+include/H5ESpublic.h
 include/H5EnumType.h
 include/H5Epubgen.h
 include/H5Epublic.h
@@ -52,14 +52,12 @@ include/H5FDdirect.h
 include/H5FDfamily.h
 include/H5FDhdfs.h
 include/H5FDlog.h
-include/H5FDmirror.h
 include/H5FDmpi.h
 include/H5FDmpio.h
 include/H5FDmulti.h
 include/H5FDpublic.h
 include/H5FDros3.h
 include/H5FDsec2.h
-include/H5FDsplitter.h
 include/H5FDstdio.h
 include/H5FDwindows.h
 include/H5FaccProp.h
@@ -82,6 +80,7 @@ include/H5Library.h
 include/H5Location.h
 include/H5Lpublic.h
 include/H5MMpublic.h
+include/H5Mpublic.h
 include/H5Object.h
 include/H5OcreatProp.h
 include/H5Opublic.h
@@ -97,14 +96,47 @@ include/H5Spublic.h
 include/H5StrType.h
 include/H5TBpublic.h
 include/H5Tpublic.h
+include/H5VLconnector.h
+include/H5VLconnector_passthru.h
+include/H5VLnative.h
+include/H5VLpassthru.h
+include/H5VLpublic.h
 include/H5VarLenType.h
 include/H5Zpublic.h
 include/H5api_adpt.h
+include/H5f90i.h
+include/H5f90i_gen.h
 include/H5overflow.h
 include/H5pubconf.h
 include/H5public.h
 include/H5version.h
+include/h5_gen.mod
+include/h5a.mod
+include/h5d.mod
+include/h5ds.mod
+include/h5e.mod
+include/h5f.mod
+include/h5fortkit.mod
+include/h5fortran_types.mod
+include/h5g.mod
+include/h5global.mod
+include/h5i.mod
+include/h5im.mod
+include/h5l.mod
+include/h5lib.mod
+include/h5lt.mod
+include/h5lt_const.mod
+include/h5o.mod
+include/h5p.mod
+include/h5r.mod
+include/h5s.mod
+include/h5t.mod
+include/h5tb.mod
+include/h5tb_const.mod
+include/h5vl.mod
+include/h5z.mod
 include/hdf5.h
+include/hdf5.mod
 include/hdf5_hl.h
 @static-lib lib/libhdf5.a
 lib/libhdf5.la
@@ -113,12 +145,19 @@ lib/libhdf5.settings
 @static-lib lib/libhdf5_cpp.a
 lib/libhdf5_cpp.la
 @lib lib/libhdf5_cpp.so.${LIBhdf5_cpp_VERSION}
+@static-lib lib/libhdf5_fortran.a
+lib/libhdf5_fortran.la
+@lib lib/libhdf5_fortran.so.${LIBhdf5_fortran_VERSION}
 @static-lib lib/libhdf5_hl.a
 lib/libhdf5_hl.la
 @lib lib/libhdf5_hl.so.${LIBhdf5_hl_VERSION}
 @static-lib lib/libhdf5_hl_cpp.a
 lib/libhdf5_hl_cpp.la
 @lib lib/libhdf5_hl_cpp.so.${LIBhdf5_hl_cpp_VERSION}
+@static-lib lib/libhdf5_hl_fortran.a
+@static-lib lib/libhdf5hl_fortran.a
+lib/libhdf5hl_fortran.la
+@lib lib/libhdf5hl_fortran.so.${LIBhdf5hl_fortran_VERSION}
 share/doc/hdf5/
 share/doc/hdf5/COPYING
 share/examples/hdf5/
@@ -151,7 +190,6 @@ share/examples/hdf5/c/h5_crtdat.c
 share/examples/hdf5/c/h5_crtgrp.c
 share/examples/hdf5/c/h5_crtgrpar.c
 share/examples/hdf5/c/h5_crtgrpd.c
-share/examples/hdf5/c/h5_debug_trace.c
 share/examples/hdf5/c/h5_drivers.c
 share/examples/hdf5/c/h5_elink_unix2win.c
 share/examples/hdf5/c/h5_extend.c
@@ -161,8 +199,10 @@ share/examples/hdf5/c/h5_group.c
 share/examples/hdf5/c/h5_mount.c
 share/examples/hdf5/c/h5_rdwt.c
 share/examples/hdf5/c/h5_read.c
-share/examples/hdf5/c/h5_ref2reg.c
-share/examples/hdf5/c/h5_reference.c
+share/examples/hdf5/c/h5_ref2reg_deprec.c
+share/examples/hdf5/c/h5_ref_compat.c
+share/examples/hdf5/c/h5_ref_extern.c
+share/examples/hdf5/c/h5_reference_deprec.c
 share/examples/hdf5/c/h5_select.c
 share/examples/hdf5/c/h5_shared_mesg.c
 share/examples/hdf5/c/h5_subset.c
@@ -177,6 +217,28 @@ share/examples/hdf5/c/h5_vds.c
 share/examples/hdf5/c/h5_write.c
 share/examples/hdf5/c/ph5example.c
 share/examples/hdf5/c/run-c-ex.sh
+share/examples/hdf5/fortran/
+share/examples/hdf5/fortran/compound.f90
+share/examples/hdf5/fortran/compound_complex_fortran2003.f90
+share/examples/hdf5/fortran/compound_fortran2003.f90
+share/examples/hdf5/fortran/h5_cmprss.f90
+share/examples/hdf5/fortran/h5_crtatt.f90
+share/examples/hdf5/fortran/h5_crtdat.f90
+share/examples/hdf5/fortran/h5_crtgrp.f90
+share/examples/hdf5/fortran/h5_crtgrpar.f90
+share/examples/hdf5/fortran/h5_crtgrpd.f90
+share/examples/hdf5/fortran/h5_extend.f90
+share/examples/hdf5/fortran/h5_rdwt.f90
+share/examples/hdf5/fortran/h5_subset.f90
+share/examples/hdf5/fortran/hyperslab.f90
+share/examples/hdf5/fortran/mountexample.f90
+share/examples/hdf5/fortran/nested_derived_type.f90
+share/examples/hdf5/fortran/ph5example.f90
+share/examples/hdf5/fortran/refobjexample.f90
+share/examples/hdf5/fortran/refregexample.f90
+share/examples/hdf5/fortran/run-fortran-ex.sh
+share/examples/hdf5/fortran/rwdset_fortran2003.f90
+share/examples/hdf5/fortran/selectele.f90
 share/examples/hdf5/hl/
 share/examples/hdf5/hl/c/
 share/examples/hdf5/hl/c++/
@@ -205,5 +267,9 @@ share/examples/hdf5/hl/c/image8.txt
 share/examples/hdf5/hl/c/pal_rgb.h
 share/examples/hdf5/hl/c/ptExampleFL.c
 share/examples/hdf5/hl/c/run-hlc-ex.sh
+share/examples/hdf5/hl/fortran/
+share/examples/hdf5/hl/fortran/ex_ds1.f90
+share/examples/hdf5/hl/fortran/exlite.f90
+share/examples/hdf5/hl/fortran/run-hlfortran-ex.sh
 share/examples/hdf5/hl/run-hl-ex.sh
 share/examples/hdf5/run-all-ex.sh

@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_test_h5repack_h5repack_plugin_sh_in,v 1.1 2020/12/02 13:27:54 martin Exp $
+
+Index: tools/test/h5repack/h5repack_plugin.sh.in
+--- tools/test/h5repack/h5repack_plugin.sh.in.orig
++++ tools/test/h5repack/h5repack_plugin.sh.in
+@@ -37,7 +37,7 @@ PLUGIN_LIBDIR=testdir3
+ RM='rm -rf'
+ 
+ GREP='grep'
+-CP='cp'
++CP='cp -R'
+ DIRNAME='dirname'
+ LS='ls'
+ AWK='awk'
