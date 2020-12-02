@@ -1,0 +1,7 @@
+Identify the different types of hashes used to encrypt data and
+especially passwords.
+
+It is able to identify a single hash, parse a file or read multiple
+files in a directory and identify the hashes within them. hashID is also
+capable of including the corresponding hashcat mode and/or JohnTheRipper
+format in its output.
