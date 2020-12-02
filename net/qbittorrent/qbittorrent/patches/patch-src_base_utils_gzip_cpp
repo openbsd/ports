@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_base_utils_gzip_cpp,v 1.1.1.1 2018/09/17 09:56:29 bentley Exp $
+$OpenBSD: patch-src_base_utils_gzip_cpp,v 1.2 2020/12/02 22:33:17 mariani Exp $
 
 Index: src/base/utils/gzip.cpp
 --- src/base/utils/gzip.cpp.orig
@@ -12,7 +12,7 @@ Index: src/base/utils/gzip.cpp
      strm.avail_in = uInt(data.size());
      strm.next_out = reinterpret_cast<Bytef *>(tmpBuf.data());
      strm.avail_out = BUFSIZE;
-@@ -110,7 +110,7 @@ QByteArray Utils::Gzip::decompress(const QByteArray &d
+@@ -113,7 +113,7 @@ QByteArray Utils::Gzip::decompress(const QByteArray &d
      strm.zalloc = Z_NULL;
      strm.zfree = Z_NULL;
      strm.opaque = Z_NULL;
