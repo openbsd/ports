@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.26 2020/10/23 16:51:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2020/12/02 06:17:34 rsadowski Exp $
 
 COMMENT =	graphical music player focused on a clean ui
-V =		1.10
+V =		1.10.1
 DISTNAME =	musique-${V}
 CATEGORIES =	audio
 
