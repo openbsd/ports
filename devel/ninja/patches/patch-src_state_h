@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_state_h,v 1.1 2019/12/20 15:51:26 kurt Exp $
+$OpenBSD: patch-src_state_h,v 1.2 2020/12/02 20:24:22 sthen Exp $
 
 Use a deque for the ready_ queue so that build order is not randomized
 by using a set of pointers.
@@ -13,13 +13,13 @@ Index: src/state.h
 +#include <deque>
  #include <string>
  #include <vector>
- using namespace std;
-@@ -62,7 +63,7 @@ struct Pool {
+ 
+@@ -61,7 +62,7 @@ struct Pool {
    void DelayEdge(Edge* edge);
  
    /// Pool will add zero or more edges to the ready_queue
--  void RetrieveReadyEdges(set<Edge*>* ready_queue);
-+  void RetrieveReadyEdges(deque<Edge*>* ready_queue);
+-  void RetrieveReadyEdges(std::set<Edge*>* ready_queue);
++  void RetrieveReadyEdges(std::deque<Edge*>* ready_queue);
  
    /// Dump the Pool and its edges (useful for debugging).
    void Dump() const;
