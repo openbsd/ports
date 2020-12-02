@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.595 2020/11/22 08:30:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.596 2020/12/02 11:58:23 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -73,6 +73,7 @@
      SUBDIR += gpgme
      SUBDIR += gringotts
      SUBDIR += hashdeep
+     SUBDIR += hashid
      SUBDIR += hatchet
      SUBDIR += hcxtools
      SUBDIR += heimdal
@@ -408,6 +409,7 @@
      SUBDIR += vpnc
      SUBDIR += wapiti
      SUBDIR += wesng
+     SUBDIR += wfuzz
      SUBDIR += wpa_supplicant
      SUBDIR += wpscan
      SUBDIR += wycheproof-testvectors
