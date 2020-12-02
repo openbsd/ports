@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2020/11/17 03:19:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.148 2020/12/02 12:14:48 tb Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -21,7 +21,7 @@ VERSION=	1.18.0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-xslt=	0
 REVISION-passenger=	0
 
@@ -125,6 +125,7 @@ PREFIX$i=	${NGINX_DIR}/modules
 .endfor
 
 CFLAGS+=	-DTLS1_3_VERSION=0x0304
+CFLAGS+=	-DSSL_OP_NO_TLSv1_3=0x20000000L
 
 CFLAGS+=	-Wall -Wpointer-arith \
 		-I "${LOCALBASE}/include/libxml2" \
