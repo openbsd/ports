@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/16 13:58:46 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.2 2020/12/02 08:23:04 gonzalo Exp $
 
 COMMENT =	disk Usage/free utility
 
 MODGO_MODNAME =	github.com/muesli/duf
-MODGO_VERSION =	v0.4.0
+MODGO_VERSION =	v0.5.0
 
 DISTNAME =	duf-${MODGO_VERSION}
-PKGNAME =	duf-0.4.0
+PKGNAME =	duf-0.5.0
 
 CATEGORIES =	sysutils
 

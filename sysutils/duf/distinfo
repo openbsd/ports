@@ -1,4 +1,4 @@
-SHA256 (duf-v0.4.0.zip) = xkbTnHfAnK3Ic4SoLcrJFncofMr0tMN6SpVMnMrEWN8=
+SHA256 (duf-v0.5.0.zip) = KoYG+wM0nFdOAlTNSk6m0OpHw6wgBnQj8U/N/v5xLCU=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = a0SoQ5UfNxtwEMdU7MPKvv6BXVztHFuUCfstaX6KiQ0=
 SHA256 (go_modules/github.com/jedib0t/go-pretty/v6/@v/v6.0.5.mod) = h91BexKLyKmi+zORQ7cJ4XlqPpme33h565513f1P9qI=
@@ -30,7 +30,7 @@ SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20200918174421-af09f7315aff.mod) =
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20200918174421-af09f7315aff.zip) = CLO15P5/3rictkMOakq1szlOu1cvU6tSt3WWBGc4BNI=
 SHA256 (go_modules/golang.org/x/text/@v/v0.3.0.mod) = NoedWG/YAB6E2oeHGQoR5PeHSeKoHf6Lm2kxiZ//Mc8=
 SHA256 (go_modules/golang.org/x/text/@v/v0.3.0.zip) = 6jBoOVUD08fvjOFqKG91yMk4gsJaZsKqbI4q1Np6muA=
-SIZE (duf-v0.4.0.zip) = 136929
+SIZE (duf-v0.5.0.zip) = 139882
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = 60320
 SIZE (go_modules/github.com/jedib0t/go-pretty/v6/@v/v6.0.5.mod) = 316
