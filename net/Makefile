@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1228 2020/11/18 10:24:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.1229 2020/12/02 19:08:01 solene Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -191,6 +191,7 @@
      SUBDIR += kissd
      SUBDIR += knot
      SUBDIR += konversation
+     SUBDIR += kristall
      SUBDIR += ktorrent
      SUBDIR += kurly
      SUBDIR += ladvd
