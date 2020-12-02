@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2020/12/01 07:25:00 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2020/12/02 07:04:14 landry Exp $
 
 COMMENT=	Xfce4 simple text editor
 
@@ -11,8 +11,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
-# https://gitlab.xfce.org/apps/mousepad/-/issues/79
-WRKDIST =	${WRKDIR}/${DISTNAME:C/.0$/./}
 
 LIB_DEPENDS=	x11/xfce4/xfconf \
 		x11/gtksourceview3
