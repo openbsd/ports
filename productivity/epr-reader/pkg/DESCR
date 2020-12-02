@@ -1,0 +1,10 @@
+Terminal/CLI Epub reader with features:
+
+- Remembers last read file
+- Remembers last reading state for each file
+- Adjustable text area width
+- Adaptive to terminal resize
+- Supports EPUB3 (no audio support)
+- Secondary vim-like bindings
+- Supports opening images
+- Dark/Light colorscheme
