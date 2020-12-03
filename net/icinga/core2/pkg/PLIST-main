@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2020/08/06 15:00:11 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2020/12/03 15:22:40 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -8,7 +8,8 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/spool/icinga2/*
 @extraunexec rm -f ${SYSCONFDIR}/icinga2/features-enabled/*
 @mode 770
-@group _icinga
+@owner _icinga
+@group wheel
 @sample ${SYSCONFDIR}/icinga2/
 @mode
 @group
@@ -119,6 +120,8 @@ share/examples/icinga2/bash_completion.d/
 @sample ${SYSCONFDIR}/bash_completion.d/
 share/examples/icinga2/bash_completion.d/icinga2
 @sample ${SYSCONFDIR}/bash_completion.d/icinga2
+@owner _icinga
+@group wheel
 share/examples/icinga2/conf.d/
 @mode 775
 @sample ${SYSCONFDIR}/icinga2/conf.d/
@@ -271,6 +274,8 @@ share/examples/icinga2/zones.d/README
 @mode 664
 @sample ${SYSCONFDIR}/icinga2/zones.d/README
 @mode
+@owner
+@group
 share/icinga2/
 share/icinga2/include/
 share/icinga2/include/command-icinga.conf

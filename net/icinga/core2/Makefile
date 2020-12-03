@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.105 2020/10/16 17:11:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.106 2020/12/03 15:22:40 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.12.1
+V =		2.12.2
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -43,8 +43,16 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_context-mt boost_coroutine-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c crypto curses edit
-WANTLIB += m ssl
+WANTLIB += boost_system-mt boost_thread-mt c curses edit m
+
+# libressl
+#WANTLIB += crypto ssl
+
+# openssl
+WANTLIB +=		lib/eopenssl11/crypto lib/eopenssl11/ssl
+LIB_DEPENDS-main +=	security/openssl/1.1
+CONFIGURE_ARGS +=	-DCMAKE_PREFIX_PATH="${LOCALBASE}/include/eopenssl11;${LOCALBASE}/lib/eopenssl11"
+LDFLAGS +=		-Wl,-rpath=${LOCALBASE}/lib/eopenssl11 -L${LOCALBASE}/lib/eopenssl11
 
 MODULES =		devel/cmake
 
@@ -53,8 +61,10 @@ COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		devel/bison
 
 MULTI_PACKAGES =	-main -mysql -pgsql
+PSEUDO_FLAVORS =	no_mysql no_pgsql
+FLAVOR ?=
 
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
+LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			devel/boost,-md
 RUN_DEPENDS-main =	net/monitoring-plugins
 
@@ -79,11 +89,20 @@ CONFIGURE_ARGS += \
 	-DICINGA2_GIT_VERSION_INFO=OFF \
 	-DICINGA2_PLUGINDIR=${LOCALBASE}/libexec/nagios \
 	-DHAVE_LIBEXECINFO=OFF
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
 
-# Fix "undefined reference to `__atomic_fetch_sub_8'"
+# "undefined reference to `__atomic_fetch_sub_8'"
 .if ${MACHINE_ARCH:Mhppa}
 WANTLIB +=		atomic
-CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
+LDFLAGS +=		-latomic
+.endif
+
+.include <bsd.port.arch.mk>
+.if !${BUILD_PACKAGES:Mmysql}
+CONFIGURE_ARGS += -DICINGA2_WITH_MYSQL=OFF
+.endif
+.if !${BUILD_PACKAGES:Mpgsql}
+CONFIGURE_ARGS += -DICINGA2_WITH_PGSQL=OFF
 .endif
 
 post-install:
