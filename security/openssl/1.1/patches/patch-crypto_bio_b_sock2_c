@@ -1,10 +1,7 @@
-$OpenBSD: patch-crypto_bio_b_sock2_c,v 1.2 2020/12/03 11:38:42 sthen Exp $
+$OpenBSD: patch-crypto_bio_b_sock2_c,v 1.3 2020/12/03 11:58:48 sthen Exp $
 
 On OpenBSD, setsockopt(sock, IPPROTO_IPV6, IPV6_V6ONLY, ...) only allows
 setting to 1 (which is the default anyway). Setting to 0 results in EINVAL.
-
-This doesn't fix everything, there are still some other problems with binds
-to v6 addresses with OpenSSL 1.1 on OpenBSD.
 
 Index: crypto/bio/b_sock2.c
 --- crypto/bio/b_sock2.c.orig
@@ -14,7 +11,7 @@ Index: crypto/bio/b_sock2.c
      }
  
 -# ifdef IPV6_V6ONLY
-+# ifdef IPV6_V6ONLY && !defined(__OpenBSD__)
++# if defined (IPV6_V6ONLY) && !defined(__OpenBSD__)
      if (BIO_ADDR_family(addr) == AF_INET6) {
          /*
           * Note: Windows default of IPV6_V6ONLY is ON, and Linux is OFF.
