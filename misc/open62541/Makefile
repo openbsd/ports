@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/24 21:08:02 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2020/12/03 07:46:18 ajacoutot Exp $
 
 COMMENT =	library implementation of OPC UA
 
@@ -31,7 +31,8 @@ BUILD_DEPENDS =		devel/check \
 			print/texlive/base \
 			print/texlive/texmf,-main \
 			print/texlive/texmf,-full \
-			textproc/py-sphinx
+			textproc/py-sphinx \
+			textproc/py-sphinx_rtd_theme
 # needed to build with encryption
 LIB_DEPENDS =		security/polarssl
 
