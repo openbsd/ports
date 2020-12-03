@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.42 2020/11/23 10:49:41 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.43 2020/12/03 21:35:56 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -185,6 +185,7 @@ share/vim/${P}/compiler/xbuild.vim
 share/vim/${P}/compiler/xmllint.vim
 share/vim/${P}/compiler/xmlwf.vim
 share/vim/${P}/compiler/xo.vim
+share/vim/${P}/compiler/zsh.vim
 share/vim/${P}/defaults.vim
 share/vim/${P}/delmenu.vim
 share/vim/${P}/doc/
@@ -741,6 +742,8 @@ share/vim/${P}/keymap/hebrewp_iso-8859-8.vim
 share/vim/${P}/keymap/hebrewp_utf-8.vim
 share/vim/${P}/keymap/kana.vim
 share/vim/${P}/keymap/kazakh-jcuken.vim
+share/vim/${P}/keymap/korean-dubeolsik_utf-8.vim
+share/vim/${P}/keymap/korean.vim
 share/vim/${P}/keymap/lithuanian-baltic.vim
 share/vim/${P}/keymap/magyar_utf-8.vim
 share/vim/${P}/keymap/mongolian_utf-8.vim
@@ -982,6 +985,8 @@ share/vim/${P}/syntax/bzl.vim
 share/vim/${P}/syntax/bzr.vim
 share/vim/${P}/syntax/c.vim
 share/vim/${P}/syntax/cabal.vim
+share/vim/${P}/syntax/cabalconfig.vim
+share/vim/${P}/syntax/cabalproject.vim
 share/vim/${P}/syntax/calendar.vim
 share/vim/${P}/syntax/catalog.vim
 share/vim/${P}/syntax/cdl.vim

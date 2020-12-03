@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.207 2020/11/23 10:49:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.208 2020/12/03 21:35:55 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		8.2.2034
+# if updating, regen plists with a gui flavour so -lang isn't messed up
+V=		8.2.2083
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -39,6 +40,8 @@ FLAVOR?=	gtk3
 
 .include <bsd.port.arch.mk>
 .if ${FLAVOR:Mno_x11}
+# knock out -lang on non-gui builds so that -lang includes manpages
+# for the gui parts without having to flavour it
 BUILD_PACKAGES := ${BUILD_PACKAGES:N-lang}
 .endif
 
