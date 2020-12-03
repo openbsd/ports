@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_features_cc,v 1.16 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.17 2020/12/03 18:46:47 robert Exp $
 
 WebUSB is bad and it makes the chrome process spin the CPU anyway
 
@@ -23,7 +23,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -777,7 +777,7 @@ const base::Feature kWebAssemblyThreads {
+@@ -782,7 +782,7 @@ const base::Feature kWebAssemblyThreads {
  
  // Enable WebAssembly trap handler.
  #if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
@@ -32,7 +32,7 @@ Index: content/public/common/content_features.cc
      defined(ARCH_CPU_X86_64)
  const base::Feature kWebAssemblyTrapHandler{"WebAssemblyTrapHandler",
                                              base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -807,7 +807,7 @@ const base::Feature kWebAuth{"WebAuthentication",
+@@ -812,7 +812,7 @@ const base::Feature kWebAuth{"WebAuthentication",
  // https://w3c.github.io/webauthn
  const base::Feature kWebAuthCable {
    "WebAuthenticationCable",
@@ -41,7 +41,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -871,7 +871,7 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+@@ -876,7 +876,7 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

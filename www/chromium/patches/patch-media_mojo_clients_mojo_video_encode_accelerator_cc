@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_mojo_clients_mojo_video_encode_accelerator_cc,v 1.6 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-media_mojo_clients_mojo_video_encode_accelerator_cc,v 1.7 2020/12/03 18:46:47 robert Exp $
 
 Index: media/mojo/clients/mojo_video_encode_accelerator.cc
 --- media/mojo/clients/mojo_video_encode_accelerator.cc.orig
 +++ media/mojo/clients/mojo_video_encode_accelerator.cc
-@@ -132,7 +132,7 @@ void MojoVideoEncodeAccelerator::Encode(scoped_refptr<
+@@ -134,7 +134,7 @@ void MojoVideoEncodeAccelerator::Encode(scoped_refptr<
    DCHECK_EQ(num_planes, frame->layout().num_planes());
    DCHECK(vea_.is_bound());
  

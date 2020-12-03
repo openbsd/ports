@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_bluetooth_BUILD_gn,v 1.23 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-device_bluetooth_BUILD_gn,v 1.24 2020/12/03 18:46:47 robert Exp $
 Index: device/bluetooth/BUILD.gn
 --- device/bluetooth/BUILD.gn.orig
 +++ device/bluetooth/BUILD.gn
@@ -11,7 +11,7 @@ Index: device/bluetooth/BUILD.gn
    use_real_dbus_clients = false
  }
  
-@@ -294,7 +294,7 @@ component("bluetooth") {
+@@ -295,7 +295,7 @@ component("bluetooth") {
      ]
    }
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.6 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.7 2020/12/03 18:46:46 robert Exp $
 
 Index: chrome/browser/chrome_browser_interface_binders.cc
 --- chrome/browser/chrome_browser_interface_binders.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
-@@ -734,7 +734,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -731,7 +731,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
