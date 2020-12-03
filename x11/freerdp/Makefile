@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/11/04 10:30:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2020/12/03 12:48:22 sthen Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
@@ -12,7 +12,12 @@ CATEGORIES =		x11 net
 # XXX This version has known security issues.
 
 # XXX Can't be updated without either timer_create() and friends or
-#     an alternative timer implementation (as was done for OSX)
+#     an alternative timer implementation (as was done for OSX).
+#     Make sure it gets through the waitable timer checks in "make
+#     test" without hanging or failing. Since it came up a few times,
+#     just setting "timer->fd = kqueue()" in InitializeWaitableTimer
+#     is not enough. See https://junkpile.org/freerdp.diff for the
+#     non-timer-related parts of an update.
 
 SHARED_LIBS +=  freerdp-client2           0.0 # 2.0
 SHARED_LIBS +=  freerdp2                  0.0 # 2.0
