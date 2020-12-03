@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/12/03 09:32:30 gonzalo Exp $
 
 COMMENT=	tiny download accelerator
 
-V=		2.16.1
+V=		2.17.10
 DISTNAME=	axel-$V
-REVISION=	0
 
 CATEGORIES=	net
 
@@ -15,20 +14,14 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/axel-download-accelerator/axel/releases/download/v${V}/
 
-WANTLIB=	c crypto iconv intl pthread ssl
-
-LIB_DEPENDS=	devel/gettext,-runtime
-
-BUILD_DEPENDS=	devel/gettext,-tools
+WANTLIB += c crypto pthread ssl
 
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
 
 pre-configure:
-	@sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/man/axel.1
+	@sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/doc/axel.1
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/axel
