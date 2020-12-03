@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.32 2020/10/13 10:26:28 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.33 2020/12/03 20:58:53 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -13,10 +13,7 @@ webapps/ROOT/bg-nav.png
 webapps/ROOT/bg-upper.png
 webapps/ROOT/favicon.ico
 webapps/ROOT/index.jsp
-webapps/ROOT/tomcat-power.gif
 webapps/ROOT/tomcat.css
-webapps/ROOT/tomcat.gif
-webapps/ROOT/tomcat.png
 webapps/ROOT/tomcat.svg
 webapps/docs/
 webapps/docs/BUILDING.txt
@@ -470,6 +467,7 @@ webapps/docs/api/org/apache/catalina/realm/JAASCallbackHandler.html
 webapps/docs/api/org/apache/catalina/realm/JAASMemoryLoginModule.html
 webapps/docs/api/org/apache/catalina/realm/JAASRealm.html
 webapps/docs/api/org/apache/catalina/realm/JDBCRealm.html
+webapps/docs/api/org/apache/catalina/realm/JNDIRealm.JNDIConnection.html
 webapps/docs/api/org/apache/catalina/realm/JNDIRealm.User.html
 webapps/docs/api/org/apache/catalina/realm/JNDIRealm.html
 webapps/docs/api/org/apache/catalina/realm/LockOutRealm.LockRecord.html
@@ -513,6 +511,7 @@ webapps/docs/api/org/apache/catalina/servlets/package-summary.html
 webapps/docs/api/org/apache/catalina/servlets/package-tree.html
 webapps/docs/api/org/apache/catalina/session/
 webapps/docs/api/org/apache/catalina/session/Constants.html
+webapps/docs/api/org/apache/catalina/session/DataSourceStore.html
 webapps/docs/api/org/apache/catalina/session/FileStore.html
 webapps/docs/api/org/apache/catalina/session/JDBCStore.html
 webapps/docs/api/org/apache/catalina/session/ManagerBase.SessionTiming.html
@@ -1063,6 +1062,8 @@ webapps/docs/api/org/apache/coyote/http11/package-summary.html
 webapps/docs/api/org/apache/coyote/http11/package-tree.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/
 webapps/docs/api/org/apache/coyote/http11/upgrade/InternalHttpUpgradeHandler.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeGroupInfo.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeInfo.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeProcessorBase.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeProcessorExternal.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeProcessorInternal.html
@@ -2742,6 +2743,8 @@ webapps/docs/websocketapi/stylesheet.css
 webapps/docs/windows-auth-howto.html
 webapps/docs/windows-service-howto.html
 webapps/examples/
+webapps/examples/META-INF/
+webapps/examples/META-INF/context.xml
 webapps/examples/WEB-INF/
 webapps/examples/WEB-INF/classes/
 webapps/examples/WEB-INF/classes/CookieExample.class

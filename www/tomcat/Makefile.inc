@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2019/08/08 21:03:16 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2020/12/03 20:58:53 sthen Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -48,36 +48,39 @@ post-extract:
 	@rm -rf ${WRKDIST}/webapps/docs
 	mv ${WRKDIR}/tomcat-${MAJ_VER}.${MIN_VER}-doc ${WRKDIST}/webapps/docs
 
+.if ${MAJ_VER} == 7
+MGR_XML=	${WRKDIST}/webapps/host-manager/manager.xml
+.else
+MGR_XML=	${WRKDIST}/webapps/host-manager/WEB-INF/manager.xml
+.endif
+
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/tomcat \
-		${PREFIX}/tomcat/webapps \
-		${SAMPLEDIR} \
-		${WRKINST}/${CATALINA_BASE} \
-		${WRKINST}/${CATALINA_BASE}/webapps
-	cd ${WRKDIST} && \
-		tar cf - bin lib `find * -prune -type f` | \
+	${INSTALL_DATA_DIR} ${SAMPLEDIR} ${PREFIX}/tomcat{,/webapps} \
+		${WRKINST}/${CATALINA_BASE}{,/webapps}
+
+	# -main
+	cd ${WRKDIST} && tar cf - bin lib `find * -prune -type f` | \
 		tar -C ${PREFIX}/tomcat -xf -
-	cd ${WRKDIST}/webapps && \
-		tar cf - host-manager manager | \
+	cd ${WRKDIST}/webapps && tar cf - host-manager manager | \
 		tar -C ${PREFIX}/tomcat/webapps -xf -
-	@chmod 0555 ${PREFIX}/tomcat/bin/*.sh
 	${INSTALL_DATA} `find ${WRKDIST}/conf/* -prune -type f` ${SAMPLEDIR}
+	${INSTALL_DATA} ${MGR_XML} ${SAMPLEDIR}/
+	${INSTALL_DATA} ${MGR_XML} ${SAMPLEDIR}/host-manager.xml
+	perl -pi -e 's/manager/host-manager/' ${SAMPLEDIR}/host-manager.xml
+	chmod 0555 ${PREFIX}/tomcat/bin/*.sh
 	${SUBST_CMD} ${SAMPLEDIR}/server.xml
-	${INSTALL_DATA} ${WRKDIST}/webapps/host-manager/manager.xml \
-		${SAMPLEDIR}
-	${INSTALL_DATA} ${WRKDIST}/webapps/host-manager/manager.xml \
-		${SAMPLEDIR}/host-manager.xml
-	@perl -pi -e 's/manager/host-manager/' ${SAMPLEDIR}/host-manager.xml
-	cd ${WRKDIST}/webapps && \
-		tar cf - ROOT docs examples | \
+
+	# -examples
+	cd ${WRKDIST}/webapps && tar cf - ROOT docs examples | \
 		tar -C ${WRKINST}/${CATALINA_BASE}/webapps -xf -
+	# included directly in PLIST-examples via @cwd
 	${INSTALL_DATA_DIR} ${WRKINST}/${CONFDIR}/Catalina/localhost
-	${INSTALL_DATA} ${WRKDIST}/webapps/host-manager/manager.xml \
-		${WRKINST}/${CONFDIR}/Catalina/localhost
-	${INSTALL_DATA} ${WRKDIST}/webapps/host-manager/manager.xml \
+	${INSTALL_DATA} ${MGR_XML} ${WRKINST}/${CONFDIR}/Catalina/localhost
+	${INSTALL_DATA} ${MGR_XML} \
 		${WRKINST}/${CONFDIR}/Catalina/localhost/host-manager.xml
-	@perl -pi -e 's/manager/host-manager/' \
+	perl -pi -e 's/manager/host-manager/' \
 		${WRKINST}/${CONFDIR}/Catalina/localhost/host-manager.xml
+
 	find ${WRKINST} \( \
 		-name '*.beforesubst' -or \
 		-name '*.orig' -or \
