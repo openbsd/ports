@@ -1,23 +1,23 @@
-$OpenBSD: patch-daily_sh,v 1.30 2020/08/01 11:16:49 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.31 2020/12/03 18:04:02 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -31,7 +31,7 @@ LOG_DIR=$(php -r "@include '${LIBRENMS_DIR}/config.php
- 
+@@ -32,7 +32,7 @@ LOG_DIR=$(php -r "@include '${LIBRENMS_DIR}/config.php
  # get the librenms user
+ # shellcheck source=/var/www/librenms/.env
  source "${LIBRENMS_DIR}/.env"
 -LIBRENMS_USER="${LIBRENMS_USER:-librenms}"
 +LIBRENMS_USER="${LIBRENMS_USER:-_librenms}"
  LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
  
  #######################################
-@@ -126,7 +126,7 @@ set_notifiable_result() {
- #   Exit-Code: 0 >= min ver, 1 < min ver
- #######################################
+@@ -132,7 +132,7 @@ set_notifiable_result() {
  check_dependencies() {
--    local branch=$(git rev-parse --abbrev-ref HEAD)
-+    local branch=master
+     local branch ver_56 ver_71 ver_72 ver_73 python3 python_deps phpver pythonver old_branches msg
+ 
+-    branch=$(git rev-parse --abbrev-ref HEAD)
++    branch=master
      scripts/check_requirements.py > /dev/null 2>&1 || pip3 install -r requirements.txt > /dev/null 2>&1
  
-     local ver_56=$(php -r "echo (int)version_compare(PHP_VERSION, '5.6.4', '<');")
+     ver_56=$(php -r "echo (int)version_compare(PHP_VERSION, '5.6.4', '<');")
