@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2020/10/10 19:49:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/12/03 18:21:34 sthen Exp $
 
 COMMENT=	validating DNS resolver library
 
-DISTNAME=	unbound-1.12.0
+DISTNAME=	unbound-1.13.0
 PKGNAME=	lib${DISTNAME}
 
 SHARED_LIBS +=  unbound              4.1      # 9.3
@@ -28,20 +28,20 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 # (enabled in src) and --with-pthreads (enabled here)
 CONFIGURE_ARGS+= \
 		--enable-shared \
-		--enable-static \
 		--with-ssl=/usr \
 		--with-libevent=/usr \
 		--with-libexpat=/usr \
 		--with-pthreads \
 		--without-pythonmodule \
+		--with-libunbound-only \
 		--with-chroot-dir=/var/unbound \
 		--with-pidfile="" \
 		--with-rootkey-file=/var/unbound/db/root.key \
 		--with-conf-file=/var/unbound/etc/unbound.conf \
 		--with-username=_unbound
 
-ALL_TARGET=	lib
-INSTALL_TARGET=	install-lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/contrib/libunbound.pc ${PREFIX}/lib/pkgconfig/
