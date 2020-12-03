@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2020/05/30 15:50:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2020/12/03 16:51:56 naddy Exp $
 
 COMMENT=	multi-format archive and compression library
 
-DISTNAME=	libarchive-3.4.3
-SHARED_LIBS=	archive		11.1	# 17.3
+DISTNAME=	libarchive-3.5.0
+SHARED_LIBS=	archive		11.2	# 18.0
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.libarchive.org/
 
@@ -35,6 +35,7 @@ CONFIGURE_ENV+=	ac_cv_header_ext2fs_ext2_fs_h=no
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-# Note: Numerous regression tests fail due to locale issues
+# Note: Numerous regression tests fail because they required unsupported
+# locales or character encodings.
 
 .include <bsd.port.mk>
