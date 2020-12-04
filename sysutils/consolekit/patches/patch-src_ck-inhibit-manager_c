@@ -1,9 +1,14 @@
-$OpenBSD: patch-src_ck-inhibit-manager_c,v 1.3 2020/12/04 15:00:39 robert Exp $
+$OpenBSD: patch-src_ck-inhibit-manager_c,v 1.4 2020/12/04 16:01:00 ajacoutot Exp $
 
 From 5d9925bae370cc1edc260909a55b44f6550294f1 Mon Sep 17 00:00:00 2001
 From: Robert Nagy <robert@openbsd.org>
 Date: Sun, 29 Nov 2020 12:15:20 +0100
 Subject: [PATCH] change the inhibitor lock handling to use the named_pipe_path as a reference
+
+From e8960c0fb789e1ddefe5b4cbfcde4861f7fa3169 Mon Sep 17 00:00:00 2001
+From: Robert Nagy <robert@openbsd.org>
+Date: Fri, 4 Dec 2020 15:21:14 +0100
+Subject: [PATCH] only disconnect the signal handler after the lock is removed
 
 Index: src/ck-inhibit-manager.c
 --- src/ck-inhibit-manager.c.orig
