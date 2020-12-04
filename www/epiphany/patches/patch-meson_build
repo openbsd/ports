@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.1 2020/11/07 11:11:50 jasper Exp $
+$OpenBSD: patch-meson_build,v 1.2 2020/12/04 09:31:35 jasper Exp $
 
 https://gitlab.gnome.org/GNOME/epiphany/-/commit/afd155430075cee5380334a9c263cc28426fc79c
 
@@ -8,7 +8,7 @@ Index: meson.build
 @@ -1,7 +1,7 @@
  project('epiphany', 'c',
    license: 'GPL3+',
-   version: '3.38.1',
+   version: '3.38.2',
 -  meson_version: '>= 0.46.0',
 +  meson_version: '>= 0.47.0',
    default_options: ['c_std=gnu11',
