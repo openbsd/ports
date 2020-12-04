@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2020/11/09 12:38:27 kirby Exp $
+# $OpenBSD: Makefile,v 1.187 2020/12/04 12:36:50 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,13 +9,9 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.20.9
+V=			3.20.11
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
-
-REVISION-main=		0
-REVISION-common=	0
-REVISION-gui=		1
 
 # https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/master/f/

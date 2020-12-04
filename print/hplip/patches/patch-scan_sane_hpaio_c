@@ -1,4 +1,4 @@
-$OpenBSD: patch-scan_sane_hpaio_c,v 1.4 2020/10/03 13:39:31 ajacoutot Exp $
+$OpenBSD: patch-scan_sane_hpaio_c,v 1.5 2020/12/04 12:36:50 ajacoutot Exp $
 
 scan/sane/hpaio.c:555:8: error: void function 'sane_hpaio_cancel' should not return a value [-Wreturn-type]
        return orblite_cancel(handle)
@@ -6,7 +6,7 @@ scan/sane/hpaio.c:555:8: error: void function 'sane_hpaio_cancel' should not ret
 Index: scan/sane/hpaio.c
 --- scan/sane/hpaio.c.orig
 +++ scan/sane/hpaio.c
-@@ -425,7 +425,7 @@ extern void sane_hpaio_close(SANE_Handle handle)
+@@ -427,7 +427,7 @@ extern void sane_hpaio_close(SANE_Handle handle)
      if (strcmp(*((char **)handle), "ESCL") == 0)
         return escl_close(handle);
      if (strcmp(*((char **)handle), "ORBLITE") == 0)
@@ -15,7 +15,7 @@ Index: scan/sane/hpaio.c
  }  /* sane_hpaio_close() */
  
  extern const SANE_Option_Descriptor * sane_hpaio_get_option_descriptor(SANE_Handle handle, SANE_Int option)
-@@ -558,7 +558,7 @@ extern void sane_hpaio_cancel( SANE_Handle handle )
+@@ -560,7 +560,7 @@ extern void sane_hpaio_cancel( SANE_Handle handle )
      if (strcmp(*((char **)handle), "ESCL") == 0)
         return escl_cancel(handle);
      if (strcmp(*((char **)handle), "ORBLITE") == 0)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2020/02/22 15:02:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.35 2020/12/04 12:36:50 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.13.7p2
 @extraunexec rm -rf ${PREFIX}/share/hplip/data/firmware
@@ -123,6 +123,7 @@ share/hplip/base/${MODPY_PYCACHE}g.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}imageprocessing.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}imagesize.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}ldif.${MODPY_PYC_MAGIC_TAG}pyc
+share/hplip/base/${MODPY_PYCACHE}local.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}magic.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}maint.${MODPY_PYC_MAGIC_TAG}pyc
@@ -156,6 +157,7 @@ share/hplip/base/g.py
 share/hplip/base/imageprocessing.py
 share/hplip/base/imagesize.py
 share/hplip/base/ldif.py
+share/hplip/base/local.py
 share/hplip/base/logger.py
 share/hplip/base/magic.py
 share/hplip/base/maint.py
