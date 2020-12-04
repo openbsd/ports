@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.129 2020/10/09 08:47:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2020/12/04 12:23:57 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.2.4
+V=			3.2.5
 DISTNAME=		cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
@@ -39,8 +39,7 @@ LIB_DEPENDS=		databases/sqlite3 \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			cyrus_cv_sse42=no
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 			--libexec=${PREFIX}/cyrus/libexec \
 			--sbindir=${PREFIX}/cyrus/sbin \
@@ -48,17 +47,12 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 			--with-cyrus-user=_cyrus \
 			--with-syslogfacility=MAIL \
 			--without-chardet \
-			--without-cld2 \
 			--without-sphinx-build \
 			--without-zeroskip \
 			--disable-gssapi \
 			--enable-autocreate \
 			--enable-idled \
-			--enable-murder \
-			--enable-nntp
-
-# XXX FLAVOR
-CONFIGURE_ARGS +=	--without-snmp
+			--enable-murder
 
 # XXX notyet; FLAVOR
 CONFIGURE_ARGS +=	--without-clamav \
