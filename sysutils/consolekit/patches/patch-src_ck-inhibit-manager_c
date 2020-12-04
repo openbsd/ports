@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-inhibit-manager_c,v 1.2 2020/11/29 11:33:30 ajacoutot Exp $
+$OpenBSD: patch-src_ck-inhibit-manager_c,v 1.3 2020/12/04 15:00:39 robert Exp $
 
 From 5d9925bae370cc1edc260909a55b44f6550294f1 Mon Sep 17 00:00:00 2001
 From: Robert Nagy <robert@openbsd.org>
@@ -36,7 +36,7 @@ Index: src/ck-inhibit-manager.c
  {
          CkInhibitManagerPrivate *priv;
          GList                   *l;
-@@ -256,7 +255,7 @@ ck_inhibit_manager_remove_lock (CkInhibitManager *mana
+@@ -256,15 +255,15 @@ ck_inhibit_manager_remove_lock (CkInhibitManager *mana
          priv = CK_INHIBIT_MANAGER_GET_PRIVATE (manager);
  
          for (l = g_list_first (priv->inhibit_list); l != NULL; l = l->next) {
@@ -45,3 +45,12 @@ Index: src/ck-inhibit-manager.c
                          CkInhibit *inhibit = l->data;
  
                          /* Found it! Remove it from the list and unref the object */
+                         priv->inhibit_list = g_list_remove (priv->inhibit_list, inhibit);
++                        ck_inhibit_remove_lock (inhibit);
+                         g_signal_handlers_disconnect_by_func (inhibit,
+                                                               G_CALLBACK (cb_changed_event),
+                                                               manager);
+-                        ck_inhibit_remove_lock (inhibit);
+                         g_object_unref (inhibit);
+                         return TRUE;
+                 }
