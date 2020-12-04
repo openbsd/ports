@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2020/12/03 15:22:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2020/12/04 16:53:48 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
@@ -98,11 +98,15 @@ LDFLAGS +=		-latomic
 .endif
 
 .include <bsd.port.arch.mk>
-.if !${BUILD_PACKAGES:Mmysql}
+.if !${BUILD_PACKAGES:M-mysql}
 CONFIGURE_ARGS += -DICINGA2_WITH_MYSQL=OFF
 .endif
-.if !${BUILD_PACKAGES:Mpgsql}
+.if !${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS += -DICINGA2_WITH_PGSQL=OFF
+.endif
+
+.if !${ARCH:Mamd64} || defined(DEBUG)
+CONFIGURE_ARGS += -DICINGA2_UNITY_BUILD=OFF
 .endif
 
 post-install:
@@ -119,10 +123,5 @@ post-install:
 .endfor
 	sed -i "s,/usr/share/icinga2,${TRUEPREFIX}/share/icinga2,g" \
 		${PREFIX}/share/doc/icinga2/markdown/*.md
-
-.include <bsd.port.arch.mk>
-.if !${ARCH:Mamd64} || defined(DEBUG)
-CONFIGURE_ARGS += -DICINGA2_UNITY_BUILD=OFF
-.endif
 
 .include <bsd.port.mk>
