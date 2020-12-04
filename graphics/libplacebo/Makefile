@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2020/10/04 18:34:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/12/04 12:40:06 ajacoutot Exp $
 
 COMMENT=	reusable library for GPU-accelerated video/image rendering
 
 GH_ACCOUNT=	haasn
 GH_PROJECT=	libplacebo
-GH_TAGNAME=	v2.72.0
-REVISION=	0
+GH_TAGNAME=	v2.72.2
 CATEGORIES=	graphics
 
-SHARED_LIBS=	placebo	2.0
+SHARED_LIBS=	placebo	2.1
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
