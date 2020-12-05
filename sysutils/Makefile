@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.589 2020/11/27 14:20:14 solene Exp $
+# $OpenBSD: Makefile,v 1.590 2020/12/05 20:44:15 solene Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -110,6 +110,7 @@
      SUBDIR += ggrep
      SUBDIR += gitolite
      SUBDIR += gkrellm
+     SUBDIR += glances
      SUBDIR += glastree
      SUBDIR += glide
      SUBDIR += go-cs
