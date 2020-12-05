@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:44:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/12/05 18:22:22 afresh1 Exp $
 
 COMMENT =	an object representing a stack trace
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Devel-StackTrace-2.03
+DISTNAME =	Devel-StackTrace-2.04
 CATEGORIES =	devel
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
-# Perl
+# Artistic 2.0
 PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>
