@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: i2p.rc,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
+# $OpenBSD: i2p.rc,v 1.2 2020/12/05 17:21:55 solene Exp $
 
 daemon="${TRUEPREFIX}/bin/i2prouter"
 daemon_flags="start"
@@ -13,7 +13,7 @@ rc_check() {
 }
 
 rc_stop() {
-	${rcexec} "${daemon} graceful"
+	${rcexec} "${daemon} stop"
 }
 
 rc_cmd $1

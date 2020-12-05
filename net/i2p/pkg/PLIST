@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/11/05 15:23:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/12/05 17:21:55 solene Exp $
 @newgroup _i2p:861
 @newuser _i2p:861:861:daemon:i2p account:${DB_DIR}:/sbin/nologin
 @rcscript ${RCDIR}/i2p
@@ -44,7 +44,6 @@ share/i2p/certificates/reseed/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/reseed/hottuna_at_mail.i2p.crt
 share/i2p/certificates/reseed/igor_at_novg.net.crt
 share/i2p/certificates/reseed/lazygravy_at_mail.i2p.crt
-share/i2p/certificates/reseed/meeh_at_mail.i2p.crt
 share/i2p/certificates/reseed/reseed_at_diva.exchange.crt
 share/i2p/certificates/revocations/
 share/i2p/certificates/router/
@@ -55,7 +54,6 @@ share/i2p/certificates/ssl/
 share/i2p/certificates/ssl/echelon.reseed2017.crt
 share/i2p/certificates/ssl/i2pseed.creativecowpat.net.crt
 share/i2p/certificates/ssl/isrgrootx1.crt
-share/i2p/certificates/ssl/reseed.onion.im.crt
 share/i2p/clients.config
 share/i2p/docs/
 share/i2p/docs/ahelper-conflict-header.ht
@@ -460,6 +458,7 @@ share/i2p/docs/themes/console/images/folder.png
 share/i2p/docs/themes/console/images/glass.png
 share/i2p/docs/themes/console/images/group.png
 share/i2p/docs/themes/console/images/group_gear.png
+share/i2p/docs/themes/console/images/i2pgit.png
 share/i2p/docs/themes/console/images/i2plogo.png
 share/i2p/docs/themes/console/images/i2psnark.png
 share/i2p/docs/themes/console/images/i2pwiki_logo.png
@@ -484,7 +483,6 @@ share/i2p/docs/themes/console/images/info/export_key.png
 share/i2p/docs/themes/console/images/info/family.png
 share/i2p/docs/themes/console/images/info/floodfill_32x32.png
 share/i2p/docs/themes/console/images/info/from_file.png
-share/i2p/docs/themes/console/images/info/gateway.png
 share/i2p/docs/themes/console/images/info/home.png
 share/i2p/docs/themes/console/images/info/infohelp.png
 share/i2p/docs/themes/console/images/info/infowarn.png
@@ -531,6 +529,7 @@ share/i2p/docs/themes/console/images/local_inprogress.png
 share/i2p/docs/themes/console/images/local_up.png
 share/i2p/docs/themes/console/images/muwire.png
 share/i2p/docs/themes/console/images/outbound.png
+share/i2p/docs/themes/console/images/paste.png
 share/i2p/docs/themes/console/images/paste_plain.png
 share/i2p/docs/themes/console/images/plugin.png
 share/i2p/docs/themes/console/images/question.png
