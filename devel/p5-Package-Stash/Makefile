@@ -1,26 +1,28 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/12/05 18:51:09 afresh1 Exp $
 
 COMMENT =		routines for manipulating stashes
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Package-Stash-0.38
+DISTNAME =		Package-Stash-0.39
 CATEGORIES =		devel
-REVISION =		0
 
-MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
+FIX_EXTRACT_PERMISSIONS =	Yes
 
-# perl
+MAINTAINER =		Andrew Hewus Fresh <afresh1@openbsd.org>
+
+# Perl
 PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	devel/p5-Dist-CheckConflicts>=0.02
 
-RUN_DEPENDS =	devel/p5-Module-Implementation>=0.06 \
-		devel/p5-Package-Stash-XS>=0.26
+RUN_DEPENDS =	devel/p5-Module-Implementation>=0.06
 
-TEST_DEPENDS =	devel/p5-Test-Fatal \
-		devel/p5-Test-Requires
+# Recommended, not required
+RUN_DEPENDS +=	devel/p5-Package-Stash-XS>=0.26
 
-FIX_EXTRACT_PERMISSIONS =	Yes
+TEST_DEPENDS =	devel/p5-CPAN-Meta-Check>=0.011 \
+		devel/p5-Test-Fatal \
+		devel/p5-Test-Needs
 
 .include <bsd.port.mk>
