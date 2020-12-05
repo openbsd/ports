@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/12/05 19:41:58 afresh1 Exp $
 
 COMMENT =	parameterizable packages
-DISTNAME =	Package-Variant-1.002002
+DISTNAME =	Package-Variant-1.003002
 CATEGORIES =	devel
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-RUN_DEPENDS =	devel/p5-Import-Into>=1 \
+RUN_DEPENDS =	devel/p5-Import-Into>=1.0 \
 		devel/p5-Module-Runtime>=0.013 \
-		devel/p5-strictures>=1
+		devel/p5-strictures>=2.0
 
-# p5-Moo to avoid skipping tests
-TEST_DEPENDS =	devel/p5-Test-Fatal \
-		devel/p5-Moo
+TEST_DEPENDS =	devel/p5-Test-Fatal
+
+# Addtitional depends to avoid skipping tests
+TEST_DEPENDS +=	devel/p5-Moo
 
 .include <bsd.port.mk>

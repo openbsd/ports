@@ -1,6 +1,10 @@
-This module allows you to build packages that return different
-variations depending on what parameters are given.
+This module allows you to build a variable package that contains a
+package template and can use it to build variant packages at runtime.
 
-Users of your package will receive a subroutine able to take parameters
-and return the name of a suitable variant package. The implementation
-does not care about what kind of package it builds.
+Your variable package will export a subroutine which will build a
+variant package, combining its arguments with the template, and
+return the name of the new variant package.
+
+The implementation does not care about what kind of packages it
+builds, be they simple function exporters, classes, singletons or
+something entirely different.
