@@ -2,11 +2,11 @@
 Version=1.0
 Encoding=UTF-8
 Type=Application
-Name=PyCharm
-GenericName=PyCharm
-Comment=PyCharm Integrated Development Environment
+Name=PyCharm Light Edit
+GenericName=PyCharm Light Edit
+Comment=PyCharm Integrated Development Environment - Light Mode
 Icon=${TRUEPREFIX}/pycharm/bin/pycharm.png
-Exec=${TRUEPREFIX}/bin/pycharm
+Exec=${TRUEPREFIX}/bin/pycharm-lightedit
 Terminal=false
 StartupNotify=true
 Categories=Application;Development;

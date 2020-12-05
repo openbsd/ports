@@ -1,12 +1,7 @@
 #!/bin/sh
-#
-# $OpenBSD: pycharm,v 1.3 2020/12/05 11:23:04 rsadowski Exp $
-#
 # OpenBSD-specific startup script for PyCharm IDE
 
 PYCHARM_HOME=${TRUEPREFIX}/pycharm
-DATASIZE="2048000"
-[[ `arch -s` == i386 ]] && DATASIZE="1536000"
 
 #-----------------------------------------------------------------------------
 # Determine configuration settings
@@ -29,16 +24,4 @@ if [ ! -x "${PYCHARM_HOME}/bin/pycharm.sh" ]; then
 	exit 1
 fi
 
-xm_log() {
-	echo -n "$@\nDo you want to run PyCharm anyway?\n\
-(If you don't increase these limits, PyCharm might fail to work properly.)" | \
-		${X11BASE}/bin/xmessage -file - -center -buttons yes:0,no:1 -default no
-}
-
-if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
-	ulimit -Sd ${DATASIZE} || \
-		xm_log "Cannot increase datasize-cur to at least ${DATASIZE}"
-		[ $? -eq 0 ] || exit
-fi
-
-PATH=${JAVA_HOME}/bin:$PATH exec "${PYCHARM_HOME}/bin/pycharm.sh" $@
+PATH=${JAVA_HOME}/bin:$PATH exec "${PYCHARM_HOME}/bin/pycharm.sh" -e $@
