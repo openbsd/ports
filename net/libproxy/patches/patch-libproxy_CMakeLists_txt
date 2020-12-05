@@ -1,4 +1,4 @@
-$OpenBSD: patch-libproxy_CMakeLists_txt,v 1.7 2017/05/12 07:12:10 ajacoutot Exp $
+$OpenBSD: patch-libproxy_CMakeLists_txt,v 1.8 2020/12/05 11:11:30 ajacoutot Exp $
 
 Adding -pthread:
 https://code.google.com/p/libproxy/issues/detail?id=196&thanks=196&ts=1370457244
@@ -10,7 +10,7 @@ https://svnweb.freebsd.org/ports/head/net/libproxy/files/patch-libproxy_CMakeLis
 Index: libproxy/CMakeLists.txt
 --- libproxy/CMakeLists.txt.orig
 +++ libproxy/CMakeLists.txt
-@@ -6,8 +6,7 @@ set_project_version(0 4 15)
+@@ -6,8 +6,7 @@ set_project_version(0 4 16)
  if (WIN32)
    add_definitions(-D_CRT_SECURE_NO_WARNINGS=1)
  else(WIN32)

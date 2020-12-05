@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2016/01/19 16:16:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2020/12/05 11:11:30 ajacoutot Exp $
 @conflict libproxy-gnome-*
 @pkgpath net/libproxy,-gnome
 @bin bin/proxy
@@ -7,8 +7,9 @@ lib/libproxy/
 @lib lib/libproxy.so.${LIBproxy_VERSION}
 lib/libproxy/${GH_TAGNAME}/
 lib/libproxy/${GH_TAGNAME}/modules/
-lib/libproxy/${GH_TAGNAME}/modules/config_gnome3.so
-lib/libproxy/${GH_TAGNAME}/modules/config_kde.so
+@so lib/libproxy/${GH_TAGNAME}/modules/config_gnome3.so
+@so lib/libproxy/${GH_TAGNAME}/modules/config_kde.so
+@so lib/libproxy/${GH_TAGNAME}/modules/config_pacrunner.so
 lib/pkgconfig/libproxy-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/libproxy.py
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
@@ -17,7 +18,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/Libproxy.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Libproxy/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Libproxy/Libproxy.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Libproxy/Libproxy.so
 @bin libexec/pxgsettings
 share/cmake/
 share/cmake/Modules/

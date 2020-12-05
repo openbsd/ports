@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-webkit,v 1.4 2016/01/19 16:16:38 ajacoutot Exp $
-lib/libproxy/${GH_TAGNAME}/modules/pacrunner_webkit.so
+@comment $OpenBSD: PLIST-webkit,v 1.5 2020/12/05 11:11:30 ajacoutot Exp $
+@so lib/libproxy/${GH_TAGNAME}/modules/pacrunner_webkit.so
