@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/12/05 18:40:50 afresh1 Exp $
 
 COMMENT =	merges arbitrarily deep hashes into a single hash
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Hash-Merge-0.300
+DISTNAME =	Hash-Merge-0.302
 CATEGORIES =	devel
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	devel/p5-Clone>=0 \
-		devel/p5-Clone-Choose
+RUN_DEPENDS =	devel/p5-Clone \
+		devel/p5-Clone-Choose>=0.008
+
+# Additional depends to avoid skipping tests
+TEST_DEPENDS +=	devel/p5-Clone-PP
 
 .include <bsd.port.mk>
