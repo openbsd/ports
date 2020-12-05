@@ -1,0 +1,19 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2020/12/05 20:43:51 solene Exp $
+
+Just install the supplied man file.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -32,9 +32,8 @@ with open('README.rst', encoding='utf-8') as f:
+ 
+ def get_data_files():
+     data_files = [
+-        ('share/doc/glances', ['AUTHORS', 'COPYING', 'NEWS.rst', 'README.rst',
+-                               'CONTRIBUTING.md', 'conf/glances.conf']),
+-        ('share/man/man1', ['docs/man/glances.1'])
++        ('share/examples/glances', ['conf/glances.conf']),
++        ('man/man1', ['docs/man/glances.1'])
+     ]
+ 
+     return data_files

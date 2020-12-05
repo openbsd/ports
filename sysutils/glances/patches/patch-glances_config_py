@@ -1,0 +1,17 @@
+$OpenBSD: patch-glances_config_py,v 1.1.1.1 2020/12/05 20:43:51 solene Exp $
+
+Index: glances/config.py
+--- glances/config.py.orig
++++ glances/config.py
+@@ -77,9 +77,9 @@ def system_config_dir():
+     - *BSD, macOS: /usr/local/etc/glances
+     - Windows: %APPDATA%\glances
+     """
+-    if LINUX or SUNOS:
++    if LINUX or SUNOS or BSD:
+         path = '/etc'
+-    elif BSD or MACOS:
++    elif MACOS:
+         path = '/usr/local/etc'
+     else:
+         path = os.environ.get('APPDATA')
