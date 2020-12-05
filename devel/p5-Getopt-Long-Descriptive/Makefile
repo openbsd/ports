@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/12/05 19:53:26 afresh1 Exp $
 
 COMMENT =	Getopt::Long, but simpler and more powerful
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Getopt-Long-Descriptive-0.103
+DISTNAME =	Getopt-Long-Descriptive-0.105
 CATEGORIES =	devel
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Params-Validate>=0.97 \
-		devel/p5-Sub-Exporter
+		devel/p5-Sub-Exporter>=0.972
 
 TEST_DEPENDS =	devel/p5-CPAN-Meta-Check>=0.011 \
 		devel/p5-Test-Fatal \
