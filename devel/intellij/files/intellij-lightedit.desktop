@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=Intellij Idea Light Edit
+GenericName=Intellij IDE Light Edit
+Comment=Intellij Integrated Development Environment - Light Mode
+Icon=${TRUEPREFIX}/intellij/bin/idea.png
+Exec=${TRUEPREFIX}/bin/intellij-lightedit
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2020/11/28 08:14:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.74 2020/12/05 11:19:30 rsadowski Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2020.2.4
+V=			2020.3
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
@@ -25,8 +25,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 NO_TEST=		Yes
 
-WRKDIST=		${WRKDIR}/idea-IC-202.8194.7
 IJ=			${PREFIX}/intellij
+
+EXTRACT_ONLY=
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
 # a no-op for do-build.
@@ -34,18 +35,22 @@ do-build:
 	@true
 
 do-install:
-	${INSTALL_DATA_DIR} ${IJ}
-	cd ${WRKDIST} && pax -rw . ${IJ}
+	tar xzf ${DISTDIR}/${DISTFILES} -C ${PREFIX}
+	mv ${PREFIX}/idea-IC-* ${IJ}
 	@rm -rf ${IJ}/bin/libdbm64.so
 	@rm -rf ${IJ}/jbr
 	@rm -rf ${IJ}/plugins/android
 	@${SUBST_PROGRAM} ${FILESDIR}/idea ${PREFIX}/bin/idea
+	@${SUBST_PROGRAM} ${FILESDIR}/idea-lightedit \
+		${PREFIX}/bin/idea-lightedit
 	@ln -s ${TRUEPREFIX}/bin/idea ${PREFIX}/bin/intellij
+	@ln -s ${TRUEPREFIX}/bin/idea-lightedit \
+		${PREFIX}/bin/intellij-lightedit
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	cd ${WRKDIST}/lib && ${JAVA_HOME}/bin/jar xf icons.jar
-	${INSTALL_DATA} ${WRKDIST}/lib/icon.png ${IJ}/idea.png
 	@${SUBST_DATA} ${FILESDIR}/intellij.desktop \
 		${PREFIX}/share/applications/intellij.desktop
+	@${SUBST_DATA} ${FILESDIR}/intellij-lightedit.desktop \
+		${PREFIX}/share/applications/intellij-lightedit.desktop
 
 .include <bsd.port.mk>
