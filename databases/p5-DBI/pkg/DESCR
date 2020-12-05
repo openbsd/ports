@@ -1,11 +1,9 @@
-The DBI interface allows perl programs to use DBD (Database Definition)
-drivers with a common set of routines.  A program can then
-(theoretically) change from using mSQL to Oracle (for example)
-without changing the entire program around.
+The DBI module enables your Perl applications to access multiple
+database types transparently. You can connect to PostgreSQL, SQLite,
+MySQL, MSSQL, Oracle, Informix, Sybase, ODBC and many more without
+having to know the different underlying interfaces of each. The API
+defined by DBI will work on all these database types and many more.
 
-This DBI interface is not yet fully specified. The current development
-work is focused on writing drivers, such as DBD::Oracle, which also
-implement emulations of old perl4 database interfaces, e.g., oraperl.
-This strategy enables the DBI and drivers to serve a useful purpose
-whilst allowing the real interface to evolve with experience behind
-the emulation interface.
+You can connect to multiple databases of different types at the
+same time and easily move data between them. The DBI layer allows
+you to do this simply and powerfully.
