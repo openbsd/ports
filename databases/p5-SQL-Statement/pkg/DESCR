@@ -1,5 +1,19 @@
-The SQL::Statement module implements a small, abstract SQL engine.  By
-parsing an SQL query you create an SQL::Statement instance. This instance
-offers methods for retrieving syntax, for WHERE clause and statement
-evaluation.  The implementation is designed to work with the DBI driver
-DBD::CSV, and should be easily extensible.
+The SQL::Statement module implements a pure Perl SQL parsing and
+execution engine. While it by no means implements full ANSI standard,
+it does support many features including column and table aliases,
+built-in and user-defined functions, implicit and explicit joins,
+complex nested search conditions, and other features.
+
+SQL::Statement is a small embeddable Database Management System
+(DBMS). This means that it provides all of the services of a simple
+DBMS except that instead of a persistent storage mechanism, it has
+two things: 1) an in-memory storage mechanism that allows you to
+prepare, execute, and fetch from SQL statements using temporary
+tables and 2) a set of software sockets where any author can plug
+in any storage mechanism.
+
+There are three main uses for SQL::Statement. One or another
+(hopefully not all) may be irrelevant for your needs: 1) to access
+and manipulate data in CSV, XML, and other formats 2) to build your
+own DBD for a new data source 3) to parse and examine the structure
+of SQL statements.
