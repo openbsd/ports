@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/12/05 21:19:18 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.25 2020/12/05 21:26:14 afresh1 Exp $
 
 COMMENT =	YAML Ain't Markup Language
 
@@ -18,10 +18,6 @@ RUN_DEPENDS =	devel/p5-YAML-XS
 
 TEST_DEPENDS =	devel/p5-Test-Deep \
 		devel/p5-Test-YAML>=1.05
-
-# Additional depends to avoid skipping tests
-TEST_ENV +=	AUTHOR_TESTING=1
-TEST_DEPENDS +=	devel/p5-Test-Pod>=1.41
 
 .include <bsd.port.mk>
 
