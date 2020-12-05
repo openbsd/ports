@@ -1,3 +1,6 @@
+The YAML.pm module implements a YAML Loader and Dumper based on the
+YAML 1.0 specification. http://www.yaml.org/spec/
+
 YAML is a generic data serialization language that is optimized for
-human readability. It can be used to express the data structures of most
-modern programming languages.
+human readability. It can be used to express the data structures
+of most modern programming languages. (Including Perl!!!)

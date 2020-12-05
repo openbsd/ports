@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/12/05 21:19:18 afresh1 Exp $
 
 COMMENT =	YAML Ain't Markup Language
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	YAML-1.26
+DISTNAME =	YAML-1.30
 CATEGORIES =	devel
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
