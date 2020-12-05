@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/20 08:45:07 solene Exp $
+# $OpenBSD: Makefile,v 1.7 2020/12/05 13:49:20 solene Exp $
 
 COMMENT=		easily hackable Common LISP window manager
 
-VERSION=		19.11
+VERSION=		20.11
 DISTNAME=		stumpwm-${VERSION}
 
 CATEGORIES=		x11
@@ -35,6 +35,8 @@ CONFIGURE_STYLE=	autoconf no-autoheader
 USE_GMAKE=		yes
 MAKE_ENV=		MAKEINFO=${PREFIX}/bin/gmakeinfo \
 			ASDF_OUTPUT_TRANSLATIONS=/:
+
+MAKE_FLAGS=		'-e'
 
 DESTDIRNAME=		destdir
 NO_TEST=		yes
