@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2020/11/05 18:34:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.198 2020/12/06 12:55:48 sthen Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -156,6 +156,7 @@
      SUBDIR += suitesparse
      SUBDIR += udunits
      SUBDIR += veusz
+     SUBDIR += visidata
      SUBDIR += wcalc
      SUBDIR += wmcalc
      SUBDIR += wxMaxima
