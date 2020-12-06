@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2020/12/06 12:55:25 sthen Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -24,7 +24,7 @@ setup(name='visidata',
+       install_requires=['python-dateutil'],
+       packages=['visidata',  'visidata.loaders', 'visidata.tests'],
+       include_package_data=True,
+-      data_files = [('share/man/man1', ['visidata/man/vd.1'])],
++      data_files = [('man/man1', ['visidata/man/vd.1'])],
+       package_data={'visidata': ['man/vd.1']},
+       license='GPLv3',
+       classifiers=[

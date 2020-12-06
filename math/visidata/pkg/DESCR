@@ -1,0 +1,15 @@
+VisiData is an interactive multitool for tabular data. It combines the
+clarity of a spreadsheet, the efficiency of the terminal, and the power
+of Python, into a lightweight utility which can handle millions of rows
+with ease.
+
+It's very flexible - see https://www.visidata.org/blog/2020/ten/ for
+examples of what it can do, https://jsvine.github.io/intro-to-visidata/
+for a tutorial, and the vd(1) manual for a good reference guide.
+
+All of the obvious data formats are supported, as are more specialist
+types including pcap, HTML tables, SQL databases, geographic data and
+more - see https://www.visidata.org/formats/. This package does not
+force optional dependencies for all of these - check the list or try
+opening the file and see the "module not found" message - pkglocate
+is useful to find the relevant py3-module to install.
