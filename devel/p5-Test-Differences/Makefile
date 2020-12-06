@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/12/06 19:41:09 afresh1 Exp $
 
 COMMENT =	test and show differences in strings and data structures
 
-DISTNAME =	Test-Differences-0.64
+DISTNAME =	Test-Differences-0.67
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
-# Artistic
+# Artistic or GPL
 PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	sysutils/p5-Capture-Tiny>=0.24 \
