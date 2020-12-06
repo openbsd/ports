@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2020/11/27 09:13:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.34 2020/12/06 16:19:59 benoit Exp $
 
 COMMENT =	graph data structures and algorithms
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Graph-0.9711
+DISTNAME =	Graph-0.9712
 CATEGORIES =	devel
 
 # Perl
