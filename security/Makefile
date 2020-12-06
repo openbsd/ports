@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.596 2020/12/02 11:58:23 sebastia Exp $
+# $OpenBSD: Makefile,v 1.597 2020/12/06 11:51:43 pvk Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -381,6 +381,7 @@
      SUBDIR += sqlmap
      SUBDIR += ssdeep
      SUBDIR += ssh-askpass-fullscreen
+     SUBDIR += ssh-audit
      SUBDIR += ssh-ldap-helper
      SUBDIR += sshguard
      SUBDIR += sshlockout
