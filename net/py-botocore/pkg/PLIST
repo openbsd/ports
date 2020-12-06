@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.149 2020/11/29 10:29:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.150 2020/12/06 08:55:26 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -82,6 +82,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/amplify/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/amplify/2017-07-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/amplify/2017-07-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/amplify/2017-07-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/amplifybackend/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/amplifybackend/2020-08-11/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/amplifybackend/2020-08-11/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/amplifybackend/2020-08-11/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/examples-1.json
@@ -103,6 +107,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appintegrations/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appintegrations/2020-07-29/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appintegrations/2020-07-29/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appintegrations/2020-07-29/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/examples-1.json
@@ -385,6 +393,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/example
 lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connect/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connect-contact-lens/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connect-contact-lens/2020-08-21/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connect-contact-lens/2020-08-21/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connect-contact-lens/2020-08-21/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connect/2017-08-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connect/2017-08-08/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connect/2017-08-08/paginators-1.json
@@ -398,6 +410,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/2020-08-15/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/2020-08-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/2020-08-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/databrew/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/databrew/2017-07-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/databrew/2017-07-25/paginators-1.json
@@ -428,6 +444,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/devicefarm/2015-06-23/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/devicefarm/2015-06-23/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/devicefarm/2015-06-23/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/devicefarm/2015-06-23/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/devops-guru/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/devops-guru/2020-12-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/devops-guru/2020-12-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/devops-guru/2020-12-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/directconnect/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/directconnect/2012-10-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/directconnect/2012-10-25/examples-1.json
@@ -515,6 +535,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/paginators
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr-public/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr-public/2020-10-30/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr-public/2020-10-30/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr-public/2020-10-30/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr/2015-09-21/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr/2015-09-21/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr/2015-09-21/paginators-1.json
@@ -661,6 +685,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/health/2016-08-04/service
 lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/
@@ -823,6 +848,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutvision/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutvision/2020-11-20/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutvision/2020-11-20/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutvision/2020-11-20/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/machinelearning/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/machinelearning/2014-12-12/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/machinelearning/2014-12-12/examples-1.json
@@ -1094,6 +1123,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-a2i-runtime/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-a2i-runtime/2019-11-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-a2i-runtime/2019-11-07/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-a2i-runtime/2019-11-07/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-featurestore-runtime/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-featurestore-runtime/2020-07-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-featurestore-runtime/2020-07-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-featurestore-runtime/2020-07-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-runtime/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-runtime/2017-05-13/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-runtime/2017-05-13/examples-1.json
