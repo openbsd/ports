@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.57 2020/06/30 10:20:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.58 2020/12/06 09:00:22 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -119,6 +119,7 @@ include/gtk-3.0/gtk/a11y/gtkmenushellaccessible.h
 include/gtk-3.0/gtk/a11y/gtknotebookaccessible.h
 include/gtk-3.0/gtk/a11y/gtknotebookpageaccessible.h
 include/gtk-3.0/gtk/a11y/gtkpanedaccessible.h
+include/gtk-3.0/gtk/a11y/gtkplugaccessible.h
 include/gtk-3.0/gtk/a11y/gtkpopoveraccessible.h
 include/gtk-3.0/gtk/a11y/gtkprogressbaraccessible.h
 include/gtk-3.0/gtk/a11y/gtkradiobuttonaccessible.h
@@ -128,6 +129,7 @@ include/gtk-3.0/gtk/a11y/gtkrenderercellaccessible.h
 include/gtk-3.0/gtk/a11y/gtkscaleaccessible.h
 include/gtk-3.0/gtk/a11y/gtkscalebuttonaccessible.h
 include/gtk-3.0/gtk/a11y/gtkscrolledwindowaccessible.h
+include/gtk-3.0/gtk/a11y/gtksocketaccessible.h
 include/gtk-3.0/gtk/a11y/gtkspinbuttonaccessible.h
 include/gtk-3.0/gtk/a11y/gtkspinneraccessible.h
 include/gtk-3.0/gtk/a11y/gtkstackaccessible.h
