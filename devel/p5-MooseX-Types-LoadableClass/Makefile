@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/12/06 20:15:40 afresh1 Exp $
 
 COMMENT =	ClassName type constraint with coercion to load the class
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	MooseX-Types-LoadableClass-0.014
+DISTNAME =	MooseX-Types-LoadableClass-0.015
 CATEGORIES =	devel
-FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	0
+FIX_EXTRACT_PERMISSIONS=	Yes
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
+
+CONFIGURE_STYLE =	modbuild tiny
 
 RUN_DEPENDS =	devel/p5-Module-Runtime \
 		devel/p5-MooseX-Types \
 		devel/p5-namespace-autoclean
-
-BUILD_DEPENDS =	devel/p5-Module-Build-Tiny>=0.007
 
 TEST_DEPENDS =	devel/p5-Class-Load \
 		devel/p5-Moose \
