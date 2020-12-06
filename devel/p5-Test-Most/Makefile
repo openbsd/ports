@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/12/06 19:49:23 afresh1 Exp $
 
 COMMENT =	most commonly needed test functions and features
-DISTNAME =	Test-Most-0.35
+DISTNAME =	Test-Most-0.37
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # perl_5
 PERMIT_PACKAGE =	Yes
