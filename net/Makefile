@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1229 2020/12/02 19:08:01 solene Exp $
+# $OpenBSD: Makefile,v 1.1230 2020/12/06 23:03:22 solene Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -42,6 +42,7 @@
      SUBDIR += bwm-ng
      SUBDIR += cadaver
      SUBDIR += castget
+     SUBDIR += catgirl
      SUBDIR += cftp
      SUBDIR += cgo
      SUBDIR += cgterm
