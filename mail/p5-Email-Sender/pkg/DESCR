@@ -1,3 +1,8 @@
 Email::Sender replaces the old and sometimes problematic Email::Send
 library, which did a decent job at handling very simple email sending
-tasks, but was not suitable for serious use, for a variety of reasons.
+tasks, but was not suitable for serious use, for a variety of
+reasons.
+
+Most users will be able to use Email::Sender::Simple to send mail.
+Users with more specific needs should look at the available
+Email::Sender::Transport classes.

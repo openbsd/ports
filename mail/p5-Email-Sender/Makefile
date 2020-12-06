@@ -1,28 +1,26 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/12/06 19:57:39 afresh1 Exp $
 
 COMMENT =	library for sending email
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	Email-Sender-1.300034
+DISTNAME =	Email-Sender-1.300035
 CATEGORIES =	mail
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	devel/p5-List-MoreUtils>=0 \
-		devel/p5-Module-Runtime>=0 \
-		devel/p5-Moo>=0 \
-		devel/p5-MooX-Types-MooseLike>=0 \
-		devel/p5-Sub-Exporter>=0 \
+RUN_DEPENDS =	devel/p5-Module-Runtime \
+		devel/p5-Moo>=2.0 \
+		devel/p5-MooX-Types-MooseLike>=0.15 \
+		devel/p5-Sub-Exporter \
 		devel/p5-Throwable>=0.200003 \
-		devel/p5-Try-Tiny>=0 \
+		devel/p5-Try-Tiny \
 		mail/p5-Email-Abstract>=3.006 \
-		mail/p5-Email-Address>=0 \
+		mail/p5-Email-Address \
 		mail/p5-Email-Simple>=1.998
 
 TEST_DEPENDS =	sysutils/p5-Capture-Tiny>=0.08
