@@ -1,15 +1,12 @@
-$OpenBSD: patch-src_Makefile,v 1.13 2020/08/21 05:57:19 benoit Exp $
-Index: src/Makefile
---- src/Makefile.orig
-+++ src/Makefile
-@@ -123,8 +123,8 @@ SYS_LDFLAGS := $(shell echo $(SYS_LDFLAGS) |	\
- OPTIONS = -O3 -Wall
+$OpenBSD: patch-src_Makefile,v 1.14 2020/12/06 09:13:17 benoit Exp $
+--- src/Makefile.orig	Fri Nov 27 00:40:22 2020
++++ src/Makefile	Sun Dec  6 10:08:03 2020
+@@ -140,7 +140,7 @@
+ OPTIONS = -O2 -Wall
  endif
  
 -CFLAGS = $(OPTIONS) $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
--LDFLAGS =           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm -lz
-+CFLAGS += $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
-+LDFLAGS +=           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm -lz
++CFLAGS = $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
+ LDFLAGS =           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS)
  
  
- SRCS =	main.c		\
