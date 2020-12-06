@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.124 2020/11/14 09:06:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.125 2020/12/06 08:56:02 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -75,6 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}c
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}dynamodb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}ecr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}ecr_public.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}flatten.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}generatecliskeleton.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}globalargs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -242,6 +243,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/protocolarg.p
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/runinstances.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/secgroupsimplify.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecr.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecr_public.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}/
@@ -2147,6 +2149,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/wait/vpn-connection
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/wait/vpn-connection-deleted.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/withdraw-byoip-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr-public/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr-public/get-login-password_description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/batch-check-layer-availability.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/batch-delete-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/batch-get-image.rst
