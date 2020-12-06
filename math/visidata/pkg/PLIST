@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/12/06 12:55:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/06 14:12:40 sthen Exp $
 bin/vd
 bin/visidata
 lib/python${MODPY_VERSION}/site-packages/visidata/
@@ -223,3 +223,4 @@ lib/python${MODPY_VERSION}/site-packages/visidata/utils.py
 lib/python${MODPY_VERSION}/site-packages/visidata/vdobj.py
 lib/python${MODPY_VERSION}/site-packages/visidata/wrappers.py
 @man man/man1/vd.1
+share/doc/pkg-readmes/${PKGSTEM}

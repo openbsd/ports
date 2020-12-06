@@ -1,0 +1,17 @@
+$OpenBSD: patch-visidata_loaders_xlsx_py,v 1.1 2020/12/06 14:12:40 sthen Exp $
+
+https://github.com/saulpw/visidata/pull/825
+
+Index: visidata/loaders/xlsx.py
+--- visidata/loaders/xlsx.py.orig
++++ visidata/loaders/xlsx.py
+@@ -4,7 +4,8 @@ from visidata import *
+ def open_xlsx(p):
+     return XlsxIndexSheet(p.name, source=p)
+ 
+-open_xls = open_xlsx
++def open_xls(p):
++    return XlsIndexSheet(p.name, source=p)
+ 
+ class XlsxIndexSheet(IndexSheet):
+     'Load XLSX file (in Excel Open XML format).'
