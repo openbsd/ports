@@ -1,67 +1,42 @@
-# $OpenBSD: Makefile,v 1.80 2020/01/26 11:14:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2020/12/06 08:32:12 rsadowski Exp $
 
 COMMENT=	display the Earth on X11
 
+V=		0.6.3
+DISTNAME=	xglobe-${V}
+
 CATEGORIES=	x11 geo
-HOMEPAGE=	http://www.shaderwrangler.com/xglobe/
-#MASTER_SITES=	${HOMEPAGE}
-# Temporary release
-MASTER_SITES=	https://distfiles.sigtrap.nl/
-DISTNAME=	xglobe-0.5p2
-PKGNAME=	xglobe-0.5
-REVISION=	44
+
+HOMEPAGE=	https://github.com/sizeofvoid/xglobe
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-# GPL, included map is free
+# GPLv2, included map is free
 PERMIT_PACKAGE=	Yes
-WANTLIB=		X11 c m pthread ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5DBus Qt5Gui Qt5Widgets
+WANTLIB += Qt5X11Extras SM X11 Xext c m
 
-MODULES=		x11/qt3
+MASTER_SITES=	https://github.com/sizeofvoid/xglobe/releases/download/v${V}/
 
-MAKE_FLAGS=	XGLOBE_DIR=${PREFIX}
+MODULES=	devel/cmake \
+		x11/qt5
 
-RUN_DEPENDS=	geo/openbsd-developers
+LIB_DEPENDS=	x11/qt5/qtx11extras
+
+RUN_DEPENDS=	geo/openbsd-developers \
+		x11/xwallpaper
+BUILD_DEPENDS=	x11/xwallpaper
 
 FLAVORS=	no_map
 FLAVOR?=
 .if ${FLAVOR:Mno_map}
-DISTFILES=	${DISTNAME}-no-map${EXTRACT_SUFX}
-
-# Kludge install for no map around
-pre-install:
-	@touch ${WRKSRC}/map.bmp
-
-post-install::
-	@rm ${PREFIX}/lib/xglobe/map.bmp
+CONFIGURE_ARGS =	-DENABLE_INSTALL_MAPS=OFF
+.else
+CONFIGURE_ARGS =	-DENABLE_INSTALL_MAPS=ON
 .endif
 
-
-MAKE_FLAGS+=	QT_INCLUDE_DIR=${MODQT_INCDIR}
-MAKE_FLAGS+=	QT_LIB_DIR=${MODQT_LIBDIR}
-
-MAKE_FLAGS+=	CPP="${CXX}" LINK="${CXX}"
-MAKE_FLAGS+=	OPTIONS="${CXXFLAGS} -pthread -fno-exceptions -funroll-loops"
-MAKE_FLAGS+=	LFLAGS='-pthread'
-MAKE_FLAGS+=	LIBS='-lX11 -lqt-mt -lm'
-
-# for linking against libpng
-MAKE_FLAGS+=	'LIB_DIRS=-L$$(QT_LIB_DIR) -L$$(X11_LIB_DIR) -L$(LOCALBASE)/lib'
-MAKE_FLAGS+=	COPTS='${COPTS}'
-
-NO_TEST=	Yes
-
-post-install::
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xglobe
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xglobe
-	${INSTALL_DATA} ${WRKSRC}/README.maps ${PREFIX}/share/doc/xglobe
+post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/getcloudmap ${PREFIX}/bin
-	ln -sf ${TRUEPREFIX}/share/markers/OpenBSD ${PREFIX}/lib/xglobe/OpenBSD-markers
-
-SUPDISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-no-map${EXTRACT_SUFX}
-
-FAKE_FLAGS=	XGLOBE_DIR=${WRKINST}${PREFIX}
 
 .include <bsd.port.mk>
