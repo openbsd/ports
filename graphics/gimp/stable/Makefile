@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.139 2020/11/05 11:39:44 espie Exp $
+# $OpenBSD: Makefile,v 1.140 2020/12/06 08:33:18 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.22
+REVISION =	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -48,7 +49,6 @@ MODULES=	textproc/intltool \
 		lang/python
 
 COMMON_DEPENDS=	archivers/lzip/lzlib \
-		devel/appstream-glib \
 		devel/desktop-file-utils \
 		devel/iso-codes \
 		graphics/jasper \
@@ -57,7 +57,8 @@ COMMON_DEPENDS=	archivers/lzip/lzlib \
 		print/poppler-data \
 		x11/py-gtk2
 
-BUILD_DEPENDS=	${COMMON_DEPENDS}
+BUILD_DEPENDS=	${COMMON_DEPENDS} \
+		devel/appstream-glib
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/xdg-utils \
