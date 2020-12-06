@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/14 12:04:11 robert Exp $
-${P5SITE}/CGI/
+@comment $OpenBSD: PLIST,v 1.2 2020/12/06 20:06:06 afresh1 Exp $
 ${P5SITE}/CGI/Emulate/
 ${P5SITE}/CGI/Emulate/PSGI.pm
 ${P5SITE}/CGI/Parse/

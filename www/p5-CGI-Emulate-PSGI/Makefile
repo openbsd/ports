@@ -1,25 +1,22 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/12/06 20:06:06 afresh1 Exp $
 
 COMMENT =	PSGI adapter for CGI
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	CGI-Emulate-PSGI-0.22
+DISTNAME =	CGI-Emulate-PSGI-0.23
 CATEGORIES =	www
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	www/p5-HTTP-Message
+RUN_DEPENDS =	www/p5-CGI>=3.63 \
+		www/p5-HTTP-Message
 TEST_DEPENDS =	devel/p5-Test-Requires>=0.08
 
-# Additional dependencies to avoid warnings and skipping test
-MAKE_ENV =	AUTHOR_TESTING=1
-TEST_DEPENDS +=	www/p5-CGI \
-		www/p5-Plack \
-		devel/p5-Test-Pod
+# Additional dependencies to avoid skipping test
+TEST_DEPENDS +=	www/p5-Plack
 
 .include <bsd.port.mk>
