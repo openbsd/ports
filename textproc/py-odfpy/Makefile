@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2020/12/06 13:50:23 sthen Exp $
 
 COMMENT=		Python API and tools to manipulate OpenDocument files
 
@@ -19,6 +19,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_PYTEST=		Yes
 
 RUN_DEPENDS=		textproc/py-defusedxml${MODPY_FLAVOR}
 
