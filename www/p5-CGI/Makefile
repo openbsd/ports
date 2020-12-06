@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/12/06 03:37:37 afresh1 Exp $
 
-COMMENT =	handle Common Gateway Interface requests and responses
-DISTNAME =	CGI-4.43
+COMMENT =	Handle Common Gateway Interface requests and responses
+DISTNAME =	CGI-4.51
 CATEGORIES =	www
-REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
