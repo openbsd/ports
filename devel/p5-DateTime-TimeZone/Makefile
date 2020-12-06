@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2020/11/04 04:18:48 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.22 2020/12/06 20:27:48 afresh1 Exp $
 
 COMMENT =		DateTime submodule for TZ
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		DateTime-TimeZone-2.43
+DISTNAME =		DateTime-TimeZone-2.44
 CATEGORIES =		devel
 
 MAINTAINER =		Andrew Hewus Fresh <afresh1@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Class-Singleton>=1.03 \
