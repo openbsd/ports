@@ -1,0 +1,7 @@
+catgirl proposes features such as:
+- Tab complete, Split scroll, URL detection, Nick coloring,
+  Topic diffing, Ignore
+
+But won't implement so called "non-features" as:
+- Dynamic configuration, Multi-network, Reconnection, CTCP,
+  Cleartext IRC
