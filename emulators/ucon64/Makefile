@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/12/05 16:53:25 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2020/12/07 13:30:12 fcambus Exp $
 
 COMMENT =	swiss army knife for video game console emulators
 
@@ -31,6 +31,10 @@ CONFIGURE_ARGS += --disable-parallel
 USE_GMAKE =	Yes
 
 NO_TEST =	Yes
+
+pre-configure:
+	@sed -i 's,-O3,,' ${WRKSRC}/Makefile \
+		${WRKSRC}/libdiscmage/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ucon64 ${PREFIX}/bin
