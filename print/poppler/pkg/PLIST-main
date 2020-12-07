@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2020/07/09 18:35:41 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2020/12/07 21:31:24 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -157,10 +157,8 @@ lib/girepository-1.0/Poppler-0.18.typelib
 @lib lib/libpoppler-cpp.so.${LIBpoppler-cpp_VERSION}
 @lib lib/libpoppler-glib.so.${LIBpoppler-glib_VERSION}
 @lib lib/libpoppler.so.${LIBpoppler_VERSION}
-lib/pkgconfig/poppler-cairo.pc
 lib/pkgconfig/poppler-cpp.pc
 lib/pkgconfig/poppler-glib.pc
-lib/pkgconfig/poppler-splash.pc
 lib/pkgconfig/poppler.pc
 share/gir-1.0/
 share/gir-1.0/Poppler-0.18.gir
