@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/02 08:01:01 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2020/12/07 08:24:51 landry Exp $
 
 COMMENT =	browse LDAP server with a shell-like CLI
 
@@ -6,6 +6,7 @@ V =		1.5.1
 DISTNAME =	shelldap-${V}
 HG_COMMIT =	e8af5aa8bd15
 EPOCH =	0
+REVISION =	0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://hg.sr.ht/~mahlon/shelldap/
@@ -21,6 +22,7 @@ RUN_DEPENDS =	databases/p5-ldap \
 		devel/p5-Algorithm-Diff \
 		devel/p5-Term-ReadLine-Gnu \
 		devel/p5-Term-Shell \
+		devel/p5-Tie-IxHash \
 		devel/p5-YAML-Syck
 
 do-install:
