@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/06 23:02:58 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2020/12/07 13:57:56 solene Exp $
 
 COMMENT =	curses TLS-only IRC client
 VERSION =	1.3
+REVISION =	0
 
 DISTNAME =	catgirl-${VERSION}
 
