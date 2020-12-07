@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2020/11/11 11:49:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.237 2020/12/07 20:21:32 naddy Exp $
 
 DPB_PROPERTIES=		parallel
 
@@ -11,7 +11,7 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
-REVISION-main=		10
+REVISION-main=		11
 REVISION-cups=		4
 
 CATEGORIES=		x11 devel
