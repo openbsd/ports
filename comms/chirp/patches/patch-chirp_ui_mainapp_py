@@ -1,8 +1,10 @@
-$OpenBSD: patch-chirp_ui_mainapp_py,v 1.1 2020/06/08 09:07:33 sthen Exp $
+$OpenBSD: patch-chirp_ui_mainapp_py,v 1.2 2020/12/08 16:34:57 tracey Exp $
 
 generic_xml is the only thing needing py-libxml which is moving to py3-only
 https://chirp.danplanet.com/projects/chirp/repository/revisions/49d2862932d4
 https://chirp.danplanet.com/issues/495 etc
+
+While here, disable update checks
 
 Index: chirp/ui/mainapp.py
 --- chirp/ui/mainapp.py.orig
@@ -16,3 +18,11 @@ Index: chirp/ui/mainapp.py
  from chirp.drivers import ic9x, kenwood_live, idrp, vx7, vx5, vx6
  from chirp.drivers import icf, ic9x_icf
  from chirp import CHIRP_VERSION, chirp_common, detect, errors
+@@ -2156,5 +2156,5 @@ of file.
+         def updates_callback(ver):
+             gobject.idle_add(self._updates, ver)
+ 
+-        if not CONF.get_bool("skip_update_check", "state"):
+-            reporting.check_for_updates(updates_callback)
++        # if not CONF.get_bool("skip_update_check", "state"):
++        #     reporting.check_for_updates(updates_callback)

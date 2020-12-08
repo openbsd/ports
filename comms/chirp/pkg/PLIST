@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/09/25 13:48:50 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/12/08 16:34:57 tracey Exp $
 bin/chirpw
 bin/rpttool
 lib/python${MODPY_VERSION}/site-packages/chirp/
@@ -40,6 +40,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/anytone778uv.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/anytone778uv.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/anytone_ht.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/anytone_ht.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/anytone_iii.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/anytone_iii.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ap510.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ap510.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_common.py
@@ -238,6 +240,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uv3r25.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uv3r25.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uv8000.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uv8000.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uv88.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uv88.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uvf8d.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th_uvf8d.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/thd72.py
