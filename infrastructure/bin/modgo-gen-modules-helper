@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: modgo-gen-modules-helper,v 1.1 2020/10/09 13:23:51 paco Exp $
+# $OpenBSD: modgo-gen-modules-helper,v 1.2 2020/12/08 09:03:29 paco Exp $
 #
 # Copyright (c) 2020 Paco Esteban <paco@openbsd.org>
 #
@@ -40,5 +40,5 @@ $port->set_other( MODGO_MODULES  => "\\\n" . join(" \\\n", @{$portinfo->{Dist}})
 $port->set_other( MODGO_MODFILES => "\\\n" . join(" \\\n", @{$portinfo->{Mods}})) if $portinfo->{Mods};
 
 say "MODGO_VERSION =\t$portinfo->{Version}\n";
-say "MODGO_MODULES =\t$port->{'MODGO_MODULES'}\n";
-say "MODGO_MODFILES =\t$port->{'MODGO_MODFILES'}\n";
+say "MODGO_MODULES =\t$port->{'MODGO_MODULES'}\n" if defined($port->{'MODGO_MODULES'});
+say "MODGO_MODFILES =\t$port->{'MODGO_MODFILES'}\n" if defined($port->{'MODGO_MODFILES'});
