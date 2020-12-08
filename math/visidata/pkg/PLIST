@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/12/06 14:12:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/12/08 20:34:07 sthen Exp $
 bin/vd
 bin/visidata
 lib/python${MODPY_VERSION}/site-packages/visidata/
@@ -10,8 +10,10 @@ lib/python${MODPY_VERSION}/site-packages/visidata-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/visidata-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/visidata-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/visidata/__init__.py
+lib/python${MODPY_VERSION}/site-packages/visidata/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}_input.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}_open.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}pyc
@@ -44,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}macros.${MODPY
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}mainloop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}melt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}menu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}metasheets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}modify.${MODPY_PYC_MAGIC_TAG}pyc
@@ -181,7 +184,9 @@ lib/python${MODPY_VERSION}/site-packages/visidata/main.py
 lib/python${MODPY_VERSION}/site-packages/visidata/mainloop.py
 lib/python${MODPY_VERSION}/site-packages/visidata/man/
 lib/python${MODPY_VERSION}/site-packages/visidata/man/vd.1
+lib/python${MODPY_VERSION}/site-packages/visidata/man/vd.txt
 lib/python${MODPY_VERSION}/site-packages/visidata/melt.py
+lib/python${MODPY_VERSION}/site-packages/visidata/menu.py
 lib/python${MODPY_VERSION}/site-packages/visidata/metasheets.py
 lib/python${MODPY_VERSION}/site-packages/visidata/misc.py
 lib/python${MODPY_VERSION}/site-packages/visidata/modify.py
