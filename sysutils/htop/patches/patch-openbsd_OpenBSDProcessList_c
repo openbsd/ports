@@ -1,17 +1,20 @@
-$OpenBSD: patch-openbsd_OpenBSDProcessList_c,v 1.3 2020/11/29 20:15:05 sthen Exp $
+$OpenBSD: patch-openbsd_OpenBSDProcessList_c,v 1.4 2020/12/08 16:23:17 sthen Exp $
+
+Don't include "offline" CPUs in the stats (i.e. CPUs which have been
+disabled by sysctl hw.smt=0).
 
 Index: openbsd/OpenBSDProcessList.c
 --- openbsd/OpenBSDProcessList.c.orig
 +++ openbsd/OpenBSDProcessList.c
-@@ -79,24 +79,36 @@ typedef struct OpenBSDProcessList_ {
+@@ -30,24 +30,36 @@ in the source distribution for its full text.
  static long fscale;
  
- ProcessList* ProcessList_new(UsersTable* usersTable, Hashtable* pidWhiteList, uid_t userId) {
+ ProcessList* ProcessList_new(UsersTable* usersTable, Hashtable* pidMatchList, uid_t userId) {
 -   int mib[] = { CTL_HW, HW_NCPU };
++   int nmib[] = { CTL_HW, HW_NCPU };
 +   int mib[] = { CTL_HW, HW_NCPUONLINE };
     int fmib[] = { CTL_KERN, KERN_FSCALE };
 -   int i, e;
-+   int nmib[] = { CTL_HW, HW_NCPU };
 +   int ncmib[] = { CTL_KERN, KERN_CPUSTATS, 0 };
 +   int i, e, ncpu, cpu_index_c;
     OpenBSDProcessList* opl;
@@ -27,7 +30,7 @@ Index: openbsd/OpenBSDProcessList.c
 +   size_ncpu = sizeof(int);
 +   size_cpustats = sizeof(cpu_stats);
 +   cpu_index_c = 0;
-    ProcessList_init(pl, Class(OpenBSDProcess), usersTable, pidWhiteList, userId);
+    ProcessList_init(pl, Class(OpenBSDProcess), usersTable, pidMatchList, userId);
  
     e = sysctl(mib, 2, &pl->cpuCount, &size, NULL, 0);
     if (e == -1 || pl->cpuCount < 1) {
@@ -43,12 +46,10 @@ Index: openbsd/OpenBSDProcessList.c
  
     size = sizeof(fscale);
     if (sysctl(fmib, 2, &fscale, &size, NULL, 0) < 0) {
-@@ -112,6 +124,19 @@ ProcessList* ProcessList_new(UsersTable* usersTable, H
-    opl->kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf);
-    if (opl->kd == NULL) {
+@@ -65,6 +77,19 @@ ProcessList* ProcessList_new(UsersTable* usersTable, H
        errx(1, "kvm_open: %s", errbuf);
-+   }
-+
+    }
+ 
 +   for (i = 0; i < ncpu; i++) {
 +      ncmib[2] = i;
 +      sysctl(ncmib, 3, &cpu_stats, &size_cpustats, NULL, 0);
@@ -60,10 +61,12 @@ Index: openbsd/OpenBSDProcessList.c
 +      if (cpu_index_c == pl->cpuCount) {
 +	break;
 +      }
-    }
- 
++   }
++
     return pl;
-@@ -372,7 +397,7 @@ static void OpenBSDProcessList_scanCPUTime(OpenBSDProc
+ }
+ 
+@@ -323,7 +348,7 @@ static void OpenBSDProcessList_scanCPUTime(OpenBSDProc
     u_int64_t avg[CPUSTATES] = {0};
  
     for (int i = 0; i < this->super.cpuCount; i++) {

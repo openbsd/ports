@@ -1,17 +1,15 @@
-$OpenBSD: patch-Header_c,v 1.2 2020/11/21 15:50:40 sthen Exp $
+$OpenBSD: patch-Header_c,v 1.3 2020/12/08 16:23:17 sthen Exp $          
 
 Index: Header.c
 --- Header.c.orig
 +++ Header.c
-@@ -192,8 +192,9 @@ void Header_draw(const Header* this) {
+@@ -168,7 +168,8 @@ void Header_draw(const Header* this) {
     Header_forEachColumn(this, col) {
        Vector* meters = this->columns[col];
        for (int y = (pad / 2), i = 0; i < Vector_size(meters); i++) {
 -         Meter* meter = (Meter*) Vector_get(meters, i);
--         meter->draw(meter, x, y, width);
 +         Meter* meter = (Meter*) Vector_get(meters, i);         
 +         if (meter == 0x1 || meter->draw == 0x1) continue;
-+	 meter->draw(meter, x, y, width);
+          meter->draw(meter, x, y, width);
           y += meter->h;
        }
-       x += width + pad;

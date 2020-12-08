@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2020/11/29 20:15:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2020/12/08 16:23:17 sthen Exp $
 
 COMMENT =	interactive process viewer
 
 GH_ACCOUNT =	htop-dev
 GH_PROJECT =	htop
-GH_TAGNAME =	3.0.1
-REVISION =	0
+GH_TAGNAME =	3.0.2
 
 CATEGORIES =	sysutils
 
@@ -18,7 +17,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c curses kvm m
 
-MODULES =	lang/python
 RUN_DEPENDS =	devel/desktop-file-utils
 
 NO_TEST =	Yes
@@ -29,9 +27,6 @@ AUTOMAKE_VERSION =	1.16
 AUTORECONF =		./autogen.sh
 CONFIGURE_ARGS +=	--disable-unicode \
 			--disable-taskstats
-
-MODPY_RUNDEP =		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # htop has some bugs which take hours or days to reach.
 # Keep the symbols to give a chance to the user to get an useful coredump.

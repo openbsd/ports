@@ -1,9 +1,9 @@
-$OpenBSD: patch-openbsd_Platform_c,v 1.8 2020/09/11 12:34:28 rsadowski Exp $
+$OpenBSD: patch-openbsd_Platform_c,v 1.9 2020/12/08 16:23:17 sthen Exp $
 
 Index: openbsd/Platform.c
 --- openbsd/Platform.c.orig
 +++ openbsd/Platform.c
-@@ -235,7 +235,7 @@ void Platform_setSwapValues(Meter* this) {
+@@ -227,7 +227,7 @@ void Platform_setSwapValues(Meter* this) {
     this->total = pl->totalSwap = total;
     this->values[0] = pl->usedSwap = used;
  

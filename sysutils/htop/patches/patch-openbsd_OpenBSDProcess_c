@@ -1,11 +1,12 @@
-$OpenBSD: patch-openbsd_OpenBSDProcess_c,v 1.2 2018/07/26 12:49:04 ians Exp $
+$OpenBSD: patch-openbsd_OpenBSDProcess_c,v 1.3 2020/12/08 16:23:17 sthen Exp $
 
 This function is called at the wrong time and will cause use-after-free's,
 so we leak for now.
 
---- openbsd/OpenBSDProcess.c.orig	Tue Nov 15 16:49:01 2016
-+++ openbsd/OpenBSDProcess.c	Tue Nov 15 16:49:12 2016
-@@ -193,9 +193,7 @@ OpenBSDProcess* OpenBSDProcess_new(Settings* settings)
+Index: openbsd/OpenBSDProcess.c
+--- openbsd/OpenBSDProcess.c.orig
++++ openbsd/OpenBSDProcess.c
+@@ -173,9 +173,7 @@ OpenBSDProcess* OpenBSDProcess_new(Settings* settings)
  }
  
  void Process_delete(Object* cast) {
