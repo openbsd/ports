@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/02/12 22:48:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/12/08 20:45:16 naddy Exp $
 @pkgpath shells/bash,static
 @shell bin/bash
 bin/bashbug
@@ -66,7 +66,10 @@ include/bash/y.tab.h
 @info info/bash.info
 lib/bash/
 lib/bash/Makefile.inc
+@bin lib/bash/accept
 @bin lib/bash/basename
+@bin lib/bash/csv
+@bin lib/bash/cut
 @bin lib/bash/dirname
 @bin lib/bash/fdflags
 @bin lib/bash/finfo
@@ -76,12 +79,15 @@ lib/bash/Makefile.inc
 lib/bash/loadables.h
 @bin lib/bash/logname
 @bin lib/bash/mkdir
+@bin lib/bash/mkfifo
+@bin lib/bash/mktemp
 @bin lib/bash/mypid
 @bin lib/bash/pathchk
 @bin lib/bash/print
 @bin lib/bash/printenv
 @bin lib/bash/push
 @bin lib/bash/realpath
+@bin lib/bash/rm
 @bin lib/bash/rmdir
 @bin lib/bash/seq
 @bin lib/bash/setpgid
@@ -131,6 +137,7 @@ share/locale/hu/LC_MESSAGES/bash.mo
 share/locale/id/LC_MESSAGES/bash.mo
 share/locale/it/LC_MESSAGES/bash.mo
 share/locale/ja/LC_MESSAGES/bash.mo
+share/locale/ko/LC_MESSAGES/bash.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/bash.mo
