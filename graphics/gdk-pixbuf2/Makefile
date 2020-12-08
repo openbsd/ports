@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.83 2020/11/11 09:50:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2020/12/08 08:08:00 ajacoutot Exp $
 
 COMMENT=		image data transformation library
 
 GNOME_PROJECT=		gdk-pixbuf
-GNOME_VERSION=		2.42.0
+GNOME_VERSION=		2.42.2
 
 CATEGORIES=		graphics
 
-SHARED_LIBS += gdk_pixbuf-2.0            3200.3 # 0.4200.0
+SHARED_LIBS += gdk_pixbuf-2.0            3200.3 # 0.4200.2
 
 HOMEPAGE=		http://www.gtk.org/
 
