@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2020/12/06 14:12:40 sthen Exp $
+$OpenBSD: README,v 1.2 2020/12/08 08:17:03 sthen Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -22,12 +22,14 @@ At the time of writing, these are supported internally:
 
 These are supported with additional packages (install with pkg_add):
 
-  yaml/yml		py3-yaml
-  pcap			py3-dpkt py3-dnslib
-  postgresql		py3-psycopg2
   hdf5			py3-h5py
   html/htm, xml		py3-lxml
+  mysql/mariadb		py3-mysqlclient
+  pcap			py3-dpkt py3-dnslib
+  pdf			py3-pdfminer
+  postgresql		py3-psycopg2
   xls			py3-xlrd
+  yaml/yml		py3-yaml
   (various via pandas)	py3-pandas
 
 http is also supported as a transport for other file formats; install
