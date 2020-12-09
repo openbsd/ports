@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/16 21:29:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/12/09 21:41:43 sthen Exp $
 
 COMMENT=	gdb for arm-none-eabi cross-development
 
 DISTNAME=	gdb-7.9.1
 EXTRACT_SUFX=	.tar.xz
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -25,9 +25,5 @@ CONFIGURE_ARGS+=	--enable-multilib \
 MODULES=	lang/python
 
 TEST_DEPENDS=devel/dejagnu
-
-post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/gdb/system-gdbinit
 
 .include <bsd.port.mk>

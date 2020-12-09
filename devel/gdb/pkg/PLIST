@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/03/29 14:47:52 kn Exp $
-@conflict arm-none-eabi-gdb-*
-@conflict libbfd-*
+@comment $OpenBSD: PLIST,v 1.22 2020/12/09 21:41:43 sthen Exp $
 @bin bin/egdb
 include/ansidecl.h
 include/bfd.h
