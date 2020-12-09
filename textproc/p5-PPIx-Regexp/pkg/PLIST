@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/01/13 14:33:42 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/12/09 01:30:47 afresh1 Exp $
 ${P5SITE}/PPIx/
 ${P5SITE}/PPIx/Regexp/
 ${P5SITE}/PPIx/Regexp.pm
@@ -10,7 +10,6 @@ ${P5SITE}/PPIx/Regexp/Node/
 ${P5SITE}/PPIx/Regexp/Node.pm
 ${P5SITE}/PPIx/Regexp/Node/Range.pm
 ${P5SITE}/PPIx/Regexp/Node/Unknown.pm
-${P5SITE}/PPIx/Regexp/StringTokenizer.pm
 ${P5SITE}/PPIx/Regexp/Structure/
 ${P5SITE}/PPIx/Regexp/Structure.pm
 ${P5SITE}/PPIx/Regexp/Structure/Assertion.pm
@@ -81,7 +80,6 @@ ${P5SITE}/PPIx/Regexp/Util.pm
 @man man/man3p/PPIx::Regexp::Node.3p
 @man man/man3p/PPIx::Regexp::Node::Range.3p
 @man man/man3p/PPIx::Regexp::Node::Unknown.3p
-@man man/man3p/PPIx::Regexp::StringTokenizer.3p
 @man man/man3p/PPIx::Regexp::Structure.3p
 @man man/man3p/PPIx::Regexp::Structure::Assertion.3p
 @man man/man3p/PPIx::Regexp::Structure::Atomic_Script_Run.3p
