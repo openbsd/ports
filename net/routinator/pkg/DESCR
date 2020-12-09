@@ -5,7 +5,12 @@ signed statements about the association of Internet routing resources.
 In particular, it allows the holder of an IP address prefix to publish
 which AS number will be the origin of BGP route announcements for it.
 
-All of these statements are published in a distributed repository.
-Routinator will collect these statements into a local copy, validate
-their signatures, and output a list of associations between IP address
-prefixes and AS numbers in a number of useful formats.
+Routinator connects to the Trust Anchors of the five Regional Internet
+Registries (RIRs) — APNIC, AFRINIC, ARIN, LACNIC and RIPE NCC —
+downloads all of the certificates and ROAs in the various repositories,
+verifies the signatures and makes the result available for use in the
+BGP workflow. It can perform RPKI validation as a one-time operation
+and store the result on disk in formats such as CSV, JSON and RPSL,
+or run as a service that periodically fetches and verifies RPKI data.
+The data is then served via the built-in HTTP server, or fetched from
+RPKI-capable routers via the RPKI-RTR protocol.
