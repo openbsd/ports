@@ -1,22 +1,24 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/31 10:40:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2020/12/09 10:28:02 sthen Exp $
 
-COMMENT = 	gimp plugin for correcting lens distortion
+COMMENT =	gimp plugin for correcting lens distortion
 
-PKGNAME = 	gimp-lensfun-plugin-$V
+PKGNAME =	gimp-lensfun-plugin-$V
 
 V = 0.2.4
 GH_ACCOUNT = seebk
 GH_PROJECT = GIMP-Lensfun
 GH_TAGNAME = $V
 
-CATEGORIES = 	graphics
+REVISION =	0
+
+CATEGORIES =	graphics
 
 HOMEPAGE = https://seebk.github.io/GIMP-Lensfun/
 
 # GPLv3
 PERMIT_PACKAGE = Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext 
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 babl-0.1
 WANTLIB += c cairo exiv2 fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gegl-0.4 gimp-2.0 gimpbase-2.0 gimpcolor-2.0 gimpconfig-2.0
@@ -27,7 +29,6 @@ WANTLIB += pangoft2-1.0 z lensfun
 
 
 # MASTER_SITES = http://www.logarithmic.net/pfh-files/resynthesizer/
-MASTER_SITES = ${MASTER_SITES_GITHUB}
 
 COMPILER =		base-clang ports-gcc
 
