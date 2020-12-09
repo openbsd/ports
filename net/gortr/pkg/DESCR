@@ -1,0 +1,11 @@
+goRTR is an open-source implementation of the RPKI to Router protocol
+(RFC 6810), normally used with BGP routers, using the Go programming
+language.
+
+Features of the server
+    Refreshes a JSON list of prefixes
+    Prometheus metrics
+    Lightweight
+    TLS
+    SSH
+    Signature verification and expiration control
