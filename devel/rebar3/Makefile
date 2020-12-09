@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/26 03:31:56 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.2 2020/12/09 10:00:44 sthen Exp $
+
+BROKEN =	tries to access /root/.config/rebar3/rebar.config
 
 COMMENT = 		Erlang build tool
 
