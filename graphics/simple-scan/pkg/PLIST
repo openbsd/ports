@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/05/14 14:53:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/12/09 10:36:50 ajacoutot Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
 share/applications/simple-scan.desktop
@@ -698,7 +698,6 @@ share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/simple-scan.mo
 share/locale/ca/LC_MESSAGES/simple-scan.mo
 share/locale/ca@valencia/LC_MESSAGES/simple-scan.mo
-share/locale/ce/LC_MESSAGES/simple-scan.mo
 share/locale/cs/LC_MESSAGES/simple-scan.mo
 share/locale/da/LC_MESSAGES/simple-scan.mo
 share/locale/de/LC_MESSAGES/simple-scan.mo
