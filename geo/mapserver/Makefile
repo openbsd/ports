@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2020/08/01 06:08:19 landry Exp $
+# $OpenBSD: Makefile,v 1.76 2020/12/09 07:40:52 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
@@ -8,7 +8,7 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V =		7.6.1
+V =		7.6.2
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
