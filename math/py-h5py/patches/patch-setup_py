@@ -1,0 +1,17 @@
+Relax Numpy and Python requirements.
+
+$OpenBSD: patch-setup_py,v 1.1 2020/12/09 09:52:23 martin Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -29,8 +29,7 @@ NUMPY_MIN_VERSIONS = [
+     # Numpy    Python
+     ('1.12',   "=='3.6'"),
+     ('1.14.5', "=='3.7'"),
+-    ('1.17.5', "=='3.8'"),
+-    ('1.19.3', ">='3.9'"),
++    ('1.16.5', ">='3.8'"),
+ ]
+ 
+ # these are required to use h5py

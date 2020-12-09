@@ -1,0 +1,18 @@
+Avoid rebuild during make fake.
+
+$OpenBSD: patch-setup_configure_py,v 1.1 2020/12/09 09:52:23 martin Exp $
+
+Index: setup_configure.py
+--- setup_configure.py.orig
++++ setup_configure.py
+@@ -150,8 +150,8 @@ class BuildConfig:
+         }
+ 
+     def changed(self):
+-        """Has the config changed since the last build?"""
+-        return self.as_dict() != load_stashed_config()
++        """Our build is always up to date"""
++        load_stashed_config()
+ 
+     def record_built(self):
+         """Record config after a successful build"""

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/04 07:54:18 martin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/09 09:52:23 martin Exp $
 lib/python${MODPY_VERSION}/site-packages/h5py/
 lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,7 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/h5py/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}h5py_warnings.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}highlevel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}ipy_completer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/h5py/_conv.so
@@ -45,6 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/h5py/_hl/selections2.py
 lib/python${MODPY_VERSION}/site-packages/h5py/_hl/vds.py
 @so lib/python${MODPY_VERSION}/site-packages/h5py/_objects.so
 @so lib/python${MODPY_VERSION}/site-packages/h5py/_proxy.so
+@so lib/python${MODPY_VERSION}/site-packages/h5py/_selector.so
 @so lib/python${MODPY_VERSION}/site-packages/h5py/defs.so
 @so lib/python${MODPY_VERSION}/site-packages/h5py/h5.so
 @so lib/python${MODPY_VERSION}/site-packages/h5py/h5a.so
@@ -64,26 +64,27 @@ lib/python${MODPY_VERSION}/site-packages/h5py/h5py_warnings.py
 @so lib/python${MODPY_VERSION}/site-packages/h5py/h5s.so
 @so lib/python${MODPY_VERSION}/site-packages/h5py/h5t.so
 @so lib/python${MODPY_VERSION}/site-packages/h5py/h5z.so
-lib/python${MODPY_VERSION}/site-packages/h5py/highlevel.py
 lib/python${MODPY_VERSION}/site-packages/h5py/ipy_completer.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_attribute_create.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_attrs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_attrs_data.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_big_endian_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_completions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_dataset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_dataset_getitem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_dataset_swmr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_datatype.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_deprecation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_dimension_scales.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_dims_dimensionproxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_dtype.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_file2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_file_image.${MODPY_PYC_MAGIC_TAG}pyc
@@ -98,21 +99,29 @@ lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_h5t.${M
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_objects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_selections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_slicing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_threads.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/common.py
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/conftest.py
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/vlen_string_dset.h5
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/vlen_string_dset_utc.h5
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/vlen_string_s390x.h5
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_attribute_create.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_attrs.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_attrs_data.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_base.py
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_big_endian_file.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_completions.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_dataset.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_dataset_getitem.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_dataset_swmr.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_datatype.py
-lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_deprecation.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_dimension_scales.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_dims_dimensionproxy.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_dtype.py
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_errors.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_file.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_file2.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_file_image.py
@@ -127,7 +136,6 @@ lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_h5t.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_objects.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_selections.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_slicing.py
-lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_threads.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/${MODPY_PYCACHE}/
