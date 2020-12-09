@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/05 13:38:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2020/12/09 15:40:29 ajacoutot Exp $
 
 COMMENT=		efficient search engine and triplestore
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		3.0.1
+GNOME_VERSION=		3.0.2
 PKGNAME=		tracker3-${GNOME_VERSION}
 
-SHARED_LIBS += tracker-sparql-3.0        0.0 # 0.1.0
+SHARED_LIBS += tracker-sparql-3.0        0.0 # 0.2.0
 
 # LGPLv2.1+; GPLv2+; BSD-3-clause
 PERMIT_PACKAGE=		Yes
@@ -33,8 +33,7 @@ LIB_DEPENDS=		devel/json-glib \
 			devel/libsoup \
 			textproc/icu4c
 
-CONFIGURE_ARGS=		-Dnetwork_manager=disabled \
-			-Dsystemd_user_services=false \
+CONFIGURE_ARGS=		-Dsystemd_user_services=false \
 			-Ddocs=false
 
 # needs libstemmer
