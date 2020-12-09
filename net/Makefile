@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1230 2020/12/06 23:03:22 solene Exp $
+# $OpenBSD: Makefile,v 1.1231 2020/12/09 11:12:22 claudio Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -122,6 +122,7 @@
      SUBDIR += gomuks
      SUBDIR += gopher
      SUBDIR += gophernicus
+     SUBDIR += gortr
      SUBDIR += gotthard
      SUBDIR += gpodder
      SUBDIR += grake
