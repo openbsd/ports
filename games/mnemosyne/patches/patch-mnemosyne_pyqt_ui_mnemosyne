@@ -1,0 +1,26 @@
+$OpenBSD: patch-mnemosyne_pyqt_ui_mnemosyne,v 1.1 2020/12/09 20:29:01 sthen Exp $
+
+Disable Google integration.  Python packages aren't available in ports.
+
+Index: mnemosyne/pyqt_ui/mnemosyne
+--- mnemosyne/pyqt_ui/mnemosyne.orig
++++ mnemosyne/pyqt_ui/mnemosyne
+@@ -266,12 +266,12 @@ mnemosyne.gui_for_component["CramAll"] = [\
+ mnemosyne.gui_for_component["CramRecent"] = [\
+                            ("mnemosyne.pyqt_ui.review_wdgt_cramming",
+                             "ReviewWdgtCramming")]
+-mnemosyne.gui_for_component["GooglePronouncer"] = [\
+-                           ("mnemosyne.pyqt_ui.pronouncer_dlg",
+-                            "PronouncerDlg")]
+-mnemosyne.gui_for_component["GoogleTranslator"] = [\
+-                           ("mnemosyne.pyqt_ui.translator_dlg",
+-                            "TranslatorDlg")]
++# mnemosyne.gui_for_component["GooglePronouncer"] = [\
++#                            ("mnemosyne.pyqt_ui.pronouncer_dlg",
++#                             "PronouncerDlg")]
++# mnemosyne.gui_for_component["GoogleTranslator"] = [\
++#                            ("mnemosyne.pyqt_ui.translator_dlg",
++#                             "TranslatorDlg")]
+ 
+ # Run Mnemosyne.
+ mnemosyne.initialise(data_dir=data_dir, filename=filename,

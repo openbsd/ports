@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2020/07/20 13:35:05 kirby Exp $
+# $OpenBSD: Makefile,v 1.42 2020/12/09 20:29:01 sthen Exp $
 
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION = 2.6.1
+MODPY_EGG_VERSION = 2.7.3
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
@@ -17,15 +17,19 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mnemosyne-proj/}
 MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
+# build needs some of the py-qt5 tools; pull them in via
+# py-qtwebengine so that build fails early on arches where
+# qtwebengine isn't available
+BUILD_DEPENDS =	www/py-qtwebengine${MODPY_FLAVOR}
+
 MODPY_SETUPTOOLS=yes
 
-RUN_DEPENDS=	x11/py-qt5,python3 \
-		textproc/py-xml \
-		graphics/py-Pillow,python3 \
-		graphics/py-matplotlib,python3 \
-		www/py-cheroot,python3 \
-		www/py-webob,python3>=1.3.1 \
-		www/py-qtwebengine \
+RUN_DEPENDS=	x11/py-qt5${MODPY_FLAVOR}>=5.6 \
+		www/py-qtwebengine${MODPY_FLAVOR} \
+		graphics/py-Pillow${MODPY_FLAVOR} \
+		graphics/py-matplotlib${MODPY_FLAVOR} \
+		www/py-cheroot${MODPY_FLAVOR}>=5 \
+		www/py-webob${MODPY_FLAVOR}>=1.4 \
 		devel/desktop-file-utils
 
 NO_TEST=	Yes
@@ -42,6 +46,8 @@ post-install:
 
 pre-patch:
 	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' \
-		setup.py
+		setup.py \
+                mnemosyne/libmnemosyne/__init__.py \
+                mnemosyne/pyqt_ui/mnemosyne
 
 .include <bsd.port.mk>

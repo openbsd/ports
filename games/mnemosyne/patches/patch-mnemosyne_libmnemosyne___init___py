@@ -1,0 +1,22 @@
+$OpenBSD: patch-mnemosyne_libmnemosyne___init___py,v 1.1 2020/12/09 20:29:01 sthen Exp $
+
+Disable Google integration.  Python packages aren't available in ports.
+
+Index: mnemosyne/libmnemosyne/__init__.py
+--- mnemosyne/libmnemosyne/__init__.py.orig
++++ mnemosyne/libmnemosyne/__init__.py
+@@ -156,10 +156,10 @@ class Mnemosyne(Component):
+           "Translator"),
+          ("mnemosyne.libmnemosyne.pronouncer",
+           "Pronouncer"),
+-         ("mnemosyne.libmnemosyne.translators.google_translator",
+-          "GoogleTranslator"),
+-         ("mnemosyne.libmnemosyne.pronouncers.google_pronouncer",
+-          "GooglePronouncer"),
++#         ("mnemosyne.libmnemosyne.translators.google_translator",
++#          "GoogleTranslator"),
++#         ("mnemosyne.libmnemosyne.pronouncers.google_pronouncer",
++#          "GooglePronouncer"),
+          ("mnemosyne.libmnemosyne.languages.afrikaans",
+           "Afrikaans"),
+          ("mnemosyne.libmnemosyne.languages.albanian",

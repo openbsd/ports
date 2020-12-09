@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.7 2020/07/20 13:35:05 kirby Exp $
+$OpenBSD: patch-setup_py,v 1.8 2020/12/09 20:29:01 sthen Exp $
 
 Index: setup.py
 --- setup.py.orig
@@ -7,8 +7,8 @@ Index: setup.py
  else:
      base_path = os.path.join(sys.exec_prefix, "lib", "python" + sys.version[:3],
                               "site-packages","mnemosyne")
--    data_files = [("share/applications", ["mnemosyne.desktop"]),
--                  ("share/icons", ["pixmaps/mnemosyne.png"])]
+-    data_files = [(os.path.join(sys.exec_prefix, "share", "applications"), ["mnemosyne.desktop"]),
+-                  (os.path.join(sys.exec_prefix, "share", "icons"), ["pixmaps/mnemosyne.png"])]
 +    data_files = []
  
  # Translations.
