@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2020/11/21 01:05:21 daniel Exp $
+# $OpenBSD: Makefile,v 1.41 2020/12/09 04:49:12 daniel Exp $
 
 COMMENT=	set of Python modules designed for writing games
 
-MODPY_EGG_VERSION =	1.9.6
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME=	pygame-${MODPY_EGG_VERSION}
 PKGNAME =	py-game-${MODPY_EGG_VERSION}
 CATEGORIES=	devel games
@@ -41,12 +41,12 @@ TEST_ENV =	PYTHONPATH=${WRKSRC}
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/buildconfig/Setup.SDL1.in
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} buildconfig/config.py
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} buildconfig/config.py -auto -sdl1
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/readme.txt ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/README.rst ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/data
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/data/* ${EXAMPLESDIR}/data
 	${INSTALL_DATA_DIR} ${DOCDIR}

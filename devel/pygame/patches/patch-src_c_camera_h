@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_c_camera_h,v 1.1 2020/11/21 01:05:22 daniel Exp $
+$OpenBSD: patch-src_c_camera_h,v 1.2 2020/12/09 04:49:12 daniel Exp $
 
 Index: src_c/camera.h
 --- src_c/camera.h.orig
 +++ src_c/camera.h
-@@ -39,9 +39,12 @@
+@@ -41,9 +41,12 @@
      /* on freebsd there is no asm/types */
      #ifdef linux
          #include <asm/types.h>          /* for videodev2.h */
@@ -17,7 +17,7 @@ Index: src_c/camera.h
  #elif defined(__APPLE__)
      #include <AvailabilityMacros.h>
      /* We support OSX 10.6 and below. */
-@@ -165,7 +168,11 @@ char** v4l2_list_cameras (int* num_devices);
+@@ -167,7 +170,11 @@ char** v4l2_list_cameras (int* num_devices);
  int v4l2_get_control (int fd, int id, int *value);
  int v4l2_set_control (int fd, int id, int value);
  PyObject* v4l2_read_raw (pgCameraObject* self);
