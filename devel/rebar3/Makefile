@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/12/09 10:00:44 sthen Exp $
-
-BROKEN =	tries to access /root/.config/rebar3/rebar.config
+# $OpenBSD: Makefile,v 1.3 2020/12/09 22:50:45 jmatthew Exp $
 
 COMMENT = 		Erlang build tool
 
@@ -73,7 +71,7 @@ pre-configure:
 		${WRKSRC}/_build/default/lib/relx/priv/templates/extended_bin
 
 do-build:
-	cd ${WRKBUILD} && ${WRKSRC}/bootstrap
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${WRKSRC}/bootstrap
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rebar3 ${PREFIX}/bin/rebar3-${ERL_VERSION}
