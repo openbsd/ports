@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/17 12:18:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2020/12/09 15:59:16 ajacoutot Exp $
 
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		3.0.1
+GNOME_VERSION=		3.0.3
 PKGNAME=		tracker3-miners-${GNOME_VERSION}
-REVISION=		2
 
 #SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 
