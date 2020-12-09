@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2020/11/09 12:17:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2020/12/09 13:42:56 ajacoutot Exp $
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-encode-symbolic-svg
 @bin bin/gtk4-launch
@@ -183,7 +183,6 @@ include/gtk-4.0/gtk/gtkeventcontrollerscroll.h
 include/gtk-4.0/gtk/gtkexpander.h
 include/gtk-4.0/gtk/gtkexpression.h
 include/gtk-4.0/gtk/gtkfilechooser.h
-include/gtk-4.0/gtk/gtkfilechooserbutton.h
 include/gtk-4.0/gtk/gtkfilechooserdialog.h
 include/gtk-4.0/gtk/gtkfilechoosernative.h
 include/gtk-4.0/gtk/gtkfilechooserwidget.h
