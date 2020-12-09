@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2020/10/05 23:04:15 jca Exp $
+# $OpenBSD: Makefile,v 1.52 2020/12/09 10:24:57 gonzalo Exp $
 
 COMMENT=		lightweight Emacs clone
-DISTNAME=		zile-2.4.14
+DISTNAME=		zile-2.4.15
 CATEGORIES=		editors
 HOMEPAGE=		https://www.gnu.org/software/zile/
-REVISION=		1
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
