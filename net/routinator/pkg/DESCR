@@ -6,7 +6,7 @@ In particular, it allows the holder of an IP address prefix to publish
 which AS number will be the origin of BGP route announcements for it.
 
 Routinator connects to the Trust Anchors of the five Regional Internet
-Registries (RIRs) — APNIC, AFRINIC, ARIN, LACNIC and RIPE NCC —
+Registries (RIRs) - APNIC, AFRINIC, ARIN, LACNIC and RIPE NCC -
 downloads all of the certificates and ROAs in the various repositories,
 verifies the signatures and makes the result available for use in the
 BGP workflow. It can perform RPKI validation as a one-time operation
