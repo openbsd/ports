@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_tds_sysdep_public_h_in,v 1.2 2019/10/18 21:00:41 sthen Exp $
+$OpenBSD: patch-include_tds_sysdep_public_h_in,v 1.3 2020/12/10 17:28:39 sthen Exp $
 
 Index: include/tds_sysdep_public.h.in
 --- include/tds_sysdep_public.h.in.orig
@@ -11,5 +11,5 @@ Index: include/tds_sysdep_public.h.in
 +/* avoid conflicting definition; __STDC_VERSION__ is not defined with ports gcc */
 +#if defined(__OpenBSD__) || (defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L)
  #  include <stdint.h>
- #elif defined(__sun) && defined(__SVR4)
+ #elif (defined(__sun) && defined(__SVR4)) || defined(__hpux)
  #  include <inttypes.h>
