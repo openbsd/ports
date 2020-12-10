@@ -1,26 +1,8 @@
-$OpenBSD: patch-src_tracker_sdl_SDL_Main_cpp,v 1.4 2018/04/08 19:20:50 fcambus Exp $
+$OpenBSD: patch-src_tracker_sdl_SDL_Main_cpp,v 1.5 2020/12/10 14:12:51 fcambus Exp $
 Index: src/tracker/sdl/SDL_Main.cpp
 --- src/tracker/sdl/SDL_Main.cpp.orig
 +++ src/tracker/sdl/SDL_Main.cpp
-@@ -609,7 +609,7 @@ void translateKeyDownEvent(const SDL_Event& event)
- 	printf ("DEBUG: Key pressed: VK: %d, SC: %d, Scancode: %d\n", toVK(keysym), toSC(keysym), keysym.sym);
- #endif
- 
--	pp_uint16 chr[3] = {toVK(keysym), toSC(keysym), keysym.sym};
-+	pp_uint16 chr[3] = {toVK(keysym), toSC(keysym), static_cast<pp_uint16> (keysym.sym)};
- 
- 	PPEvent myEvent(eKeyDown, &chr, sizeof(chr));
- 	RaiseEventSerialized(&myEvent);
-@@ -621,7 +621,7 @@ void translateKeyUpEvent(const SDL_Event& event)
- 
- 	preTranslateKey(keysym);
- 
--	pp_uint16 chr[3] = {toVK(keysym), toSC(keysym), keysym.sym};
-+	pp_uint16 chr[3] = {toVK(keysym), toSC(keysym), static_cast<pp_uint16> (keysym.sym)};
- 
- 	PPEvent myEvent(eKeyUp, &chr, sizeof(chr));
- 	RaiseEventSerialized(&myEvent);
-@@ -669,7 +669,7 @@ void processSDLUserEvents(const SDL_UserEvent& event)
+@@ -670,7 +670,7 @@ void processSDLUserEvents(const SDL_UserEvent& event)
  {
  	union {
  		void *ptr;
