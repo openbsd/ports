@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/12/10 02:20:30 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/12/10 21:41:39 sthen Exp $
 @conflict hs-xhtml-*
 @conflict hs-deepseq-<=1.1.0.2p0
 @conflict hs-binary-*
@@ -4593,49 +4593,6 @@ lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/Elements.p_hi
 share/doc/ghc/
 share/doc/ghc/html/
 share/doc/ghc/html/haddock/
-share/doc/ghc/html/haddock/.build-html/
-share/doc/ghc/html/haddock/.build-html/.buildinfo
-share/doc/ghc/html/haddock/.build-html/.doctrees/
-share/doc/ghc/html/haddock/.build-html/.doctrees/environment.pickle
-share/doc/ghc/html/haddock/.build-html/.doctrees/index.doctree
-share/doc/ghc/html/haddock/.build-html/.doctrees/intro.doctree
-share/doc/ghc/html/haddock/.build-html/.doctrees/invoking.doctree
-share/doc/ghc/html/haddock/.build-html/.doctrees/markup.doctree
-share/doc/ghc/html/haddock/.build-html/_sources/
-share/doc/ghc/html/haddock/.build-html/_sources/index.rst.txt
-share/doc/ghc/html/haddock/.build-html/_sources/intro.rst.txt
-share/doc/ghc/html/haddock/.build-html/_sources/invoking.rst.txt
-share/doc/ghc/html/haddock/.build-html/_sources/markup.rst.txt
-share/doc/ghc/html/haddock/.build-html/_static/
-share/doc/ghc/html/haddock/.build-html/_static/ajax-loader.gif
-share/doc/ghc/html/haddock/.build-html/_static/alabaster.css
-share/doc/ghc/html/haddock/.build-html/_static/basic.css
-share/doc/ghc/html/haddock/.build-html/_static/comment-bright.png
-share/doc/ghc/html/haddock/.build-html/_static/comment-close.png
-share/doc/ghc/html/haddock/.build-html/_static/comment.png
-share/doc/ghc/html/haddock/.build-html/_static/custom.css
-share/doc/ghc/html/haddock/.build-html/_static/doctools.js
-share/doc/ghc/html/haddock/.build-html/_static/down-pressed.png
-share/doc/ghc/html/haddock/.build-html/_static/down.png
-share/doc/ghc/html/haddock/.build-html/_static/file.png
-share/doc/ghc/html/haddock/.build-html/_static/jquery-3.1.0.js
-share/doc/ghc/html/haddock/.build-html/_static/jquery.js
-share/doc/ghc/html/haddock/.build-html/_static/minus.png
-share/doc/ghc/html/haddock/.build-html/_static/plus.png
-share/doc/ghc/html/haddock/.build-html/_static/pygments.css
-share/doc/ghc/html/haddock/.build-html/_static/searchtools.js
-share/doc/ghc/html/haddock/.build-html/_static/underscore.js
-share/doc/ghc/html/haddock/.build-html/_static/up-pressed.png
-share/doc/ghc/html/haddock/.build-html/_static/up.png
-share/doc/ghc/html/haddock/.build-html/_static/websupport.js
-share/doc/ghc/html/haddock/.build-html/genindex.html
-share/doc/ghc/html/haddock/.build-html/index.html
-share/doc/ghc/html/haddock/.build-html/intro.html
-share/doc/ghc/html/haddock/.build-html/invoking.html
-share/doc/ghc/html/haddock/.build-html/markup.html
-share/doc/ghc/html/haddock/.build-html/objects.inv
-share/doc/ghc/html/haddock/.build-html/search.html
-share/doc/ghc/html/haddock/.build-html/searchindex.js
 share/doc/ghc/html/haddock/.buildinfo
 share/doc/ghc/html/haddock/.doctrees/
 share/doc/ghc/html/haddock/.doctrees/environment.pickle
