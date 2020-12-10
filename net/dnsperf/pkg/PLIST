@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/28 14:35:41 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/10 17:22:52 sthen Exp $
 @bin bin/dnsperf
 @bin bin/resperf
 bin/resperf-report
 @man man/man1/dnsperf.1
 @man man/man1/resperf.1
+share/doc/dnsperf/
+share/doc/dnsperf/CHANGES
+share/doc/dnsperf/LICENSE
+share/doc/dnsperf/README.md
