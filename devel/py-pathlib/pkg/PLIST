@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/09/01 16:55:55 danj Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/12/10 02:20:30 daniel Exp $
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pathlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pathlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -7,7 +7,7 @@ share/doc/${MODPY_PY_PREFIX}pathlib/
 share/doc/${MODPY_PY_PREFIX}pathlib/_images/
 share/doc/${MODPY_PY_PREFIX}pathlib/_images/pathlib-inheritance.png
 share/doc/${MODPY_PY_PREFIX}pathlib/_sources/
-share/doc/${MODPY_PY_PREFIX}pathlib/_sources/index.txt
+share/doc/${MODPY_PY_PREFIX}pathlib/_sources/index.rst.txt
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/alabaster.css
@@ -20,6 +20,7 @@ share/doc/${MODPY_PY_PREFIX}pathlib/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/down.png
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/file.png
+share/doc/${MODPY_PY_PREFIX}pathlib/_static/jquery-3.1.0.js
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/plus.png

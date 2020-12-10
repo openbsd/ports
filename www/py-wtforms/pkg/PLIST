@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/02 09:29:37 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/12/10 02:20:31 daniel Exp $
 @conflict py-flask-wtk-<0.9.4p0
 lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -206,21 +206,21 @@ lib/python${MODPY_VERSION}/site-packages/wtforms/widgets/core.py
 lib/python${MODPY_VERSION}/site-packages/wtforms/widgets/html5.py
 share/doc/${MODPY_PY_PREFIX}wtforms/
 share/doc/${MODPY_PY_PREFIX}wtforms/_sources/
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/changes.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/contributing.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/crash_course.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/csrf.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/ext.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/faq.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/fields.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/forms.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/i18n.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/index.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/meta.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/specific_problems.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/validators.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/whats_new.txt
-share/doc/${MODPY_PY_PREFIX}wtforms/_sources/widgets.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/changes.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/contributing.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/crash_course.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/csrf.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/ext.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/faq.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/fields.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/forms.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/i18n.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/index.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/meta.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/specific_problems.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/validators.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/whats_new.rst.txt
+share/doc/${MODPY_PY_PREFIX}wtforms/_sources/widgets.rst.txt
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/alabaster.css
@@ -234,6 +234,7 @@ share/doc/${MODPY_PY_PREFIX}wtforms/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/down.png
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/file.png
+share/doc/${MODPY_PY_PREFIX}wtforms/_static/jquery-3.1.0.js
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/main.css
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/minus.png

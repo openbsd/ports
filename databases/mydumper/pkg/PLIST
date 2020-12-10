@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/04/15 08:53:48 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/12/10 02:20:29 daniel Exp $
 @bin bin/mydumper
 @bin bin/myloader
 @man man/man1/mydumper.1
@@ -11,13 +11,13 @@ share/doc/mydumper/files.rst
 share/doc/mydumper/html/
 share/doc/mydumper/html/.buildinfo
 share/doc/mydumper/html/_sources/
-share/doc/mydumper/html/_sources/authors.txt
-share/doc/mydumper/html/_sources/compiling.txt
-share/doc/mydumper/html/_sources/examples.txt
-share/doc/mydumper/html/_sources/files.txt
-share/doc/mydumper/html/_sources/index.txt
-share/doc/mydumper/html/_sources/mydumper_usage.txt
-share/doc/mydumper/html/_sources/myloader_usage.txt
+share/doc/mydumper/html/_sources/authors.rst.txt
+share/doc/mydumper/html/_sources/compiling.rst.txt
+share/doc/mydumper/html/_sources/examples.rst.txt
+share/doc/mydumper/html/_sources/files.rst.txt
+share/doc/mydumper/html/_sources/index.rst.txt
+share/doc/mydumper/html/_sources/mydumper_usage.rst.txt
+share/doc/mydumper/html/_sources/myloader_usage.rst.txt
 share/doc/mydumper/html/_static/
 share/doc/mydumper/html/_static/ajax-loader.gif
 share/doc/mydumper/html/_static/basic.css
@@ -30,6 +30,7 @@ share/doc/mydumper/html/_static/doctools.js
 share/doc/mydumper/html/_static/down-pressed.png
 share/doc/mydumper/html/_static/down.png
 share/doc/mydumper/html/_static/file.png
+share/doc/mydumper/html/_static/jquery-3.1.0.js
 share/doc/mydumper/html/_static/jquery.js
 share/doc/mydumper/html/_static/minus.png
 share/doc/mydumper/html/_static/plus.png

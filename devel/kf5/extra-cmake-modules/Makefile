@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2020/09/07 14:48:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2020/12/10 02:20:30 daniel Exp $
 
 COMMENT =		CMake modules required by KDE5
 DISTNAME =		extra-cmake-modules-${VERSION}
 HOMEPAGE =		https://projects.kde.org/projects/kdesupport/extra-cmake-modules
+REVISION =		0
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.5
 
 CONFIGURE_ARGS +=	-DBUILD_QTHELP_DOCS=ON \
 			-DQCollectionGenerator_EXECUTABLE=${MODQT_LIBDIR}/bin/qcollectiongenerator \

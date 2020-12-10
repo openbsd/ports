@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2020/07/03 21:13:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/12/10 02:20:31 daniel Exp $
 
 COMMENT =		WSGI utility collection
 
 MODPY_EGG_VERSION =	0.12.1
 DISTNAME =		Werkzeug-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www devel
 
@@ -22,7 +22,7 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.5
 
 TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}

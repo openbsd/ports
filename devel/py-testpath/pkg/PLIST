@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/09/23 13:38:23 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/12/10 02:20:30 daniel Exp $
 lib/python${MODPY_VERSION}/site-packages/testpath/
 lib/python${MODPY_VERSION}/site-packages/testpath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/testpath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -28,11 +28,11 @@ share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/fsasserts.doctree
 share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/index.doctree
 share/doc/${MODPY_PY_PREFIX}testpath/.doctrees/tempdir.doctree
 share/doc/${MODPY_PY_PREFIX}testpath/_sources/
-share/doc/${MODPY_PY_PREFIX}testpath/_sources/commands.txt
-share/doc/${MODPY_PY_PREFIX}testpath/_sources/env.txt
-share/doc/${MODPY_PY_PREFIX}testpath/_sources/fsasserts.txt
-share/doc/${MODPY_PY_PREFIX}testpath/_sources/index.txt
-share/doc/${MODPY_PY_PREFIX}testpath/_sources/tempdir.txt
+share/doc/${MODPY_PY_PREFIX}testpath/_sources/commands.rst.txt
+share/doc/${MODPY_PY_PREFIX}testpath/_sources/env.rst.txt
+share/doc/${MODPY_PY_PREFIX}testpath/_sources/fsasserts.rst.txt
+share/doc/${MODPY_PY_PREFIX}testpath/_sources/index.rst.txt
+share/doc/${MODPY_PY_PREFIX}testpath/_sources/tempdir.rst.txt
 share/doc/${MODPY_PY_PREFIX}testpath/_static/
 share/doc/${MODPY_PY_PREFIX}testpath/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}testpath/_static/basic.css
@@ -45,6 +45,7 @@ share/doc/${MODPY_PY_PREFIX}testpath/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}testpath/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}testpath/_static/down.png
 share/doc/${MODPY_PY_PREFIX}testpath/_static/file.png
+share/doc/${MODPY_PY_PREFIX}testpath/_static/jquery-3.1.0.js
 share/doc/${MODPY_PY_PREFIX}testpath/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}testpath/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}testpath/_static/plus.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.4 2019/12/28 18:00:11 sthen Exp $
+@comment $OpenBSD: PLIST-python,v 1.5 2020/12/10 02:20:29 daniel Exp $
 lib/python${MODPY_VERSION}/site-packages/xapian/
 lib/python${MODPY_VERSION}/site-packages/xapian/__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xapian/__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -20,10 +20,10 @@ share/doc/xapian-bindings/python3/html/_modules/_weakref.html
 share/doc/xapian-bindings/python3/html/_modules/index.html
 share/doc/xapian-bindings/python3/html/_modules/xapian.html
 share/doc/xapian-bindings/python3/html/_sources/
-share/doc/xapian-bindings/python3/html/_sources/examples.txt
-share/doc/xapian-bindings/python3/html/_sources/index.txt
-share/doc/xapian-bindings/python3/html/_sources/introduction.txt
-share/doc/xapian-bindings/python3/html/_sources/xapian.txt
+share/doc/xapian-bindings/python3/html/_sources/examples.rst.txt
+share/doc/xapian-bindings/python3/html/_sources/index.rst.txt
+share/doc/xapian-bindings/python3/html/_sources/introduction.rst.txt
+share/doc/xapian-bindings/python3/html/_sources/xapian.rst.txt
 share/doc/xapian-bindings/python3/html/_static/
 share/doc/xapian-bindings/python3/html/_static/ajax-loader.gif
 share/doc/xapian-bindings/python3/html/_static/basic.css
@@ -36,6 +36,7 @@ share/doc/xapian-bindings/python3/html/_static/doctools.js
 share/doc/xapian-bindings/python3/html/_static/down-pressed.png
 share/doc/xapian-bindings/python3/html/_static/down.png
 share/doc/xapian-bindings/python3/html/_static/file.png
+share/doc/xapian-bindings/python3/html/_static/jquery-3.1.0.js
 share/doc/xapian-bindings/python3/html/_static/jquery.js
 share/doc/xapian-bindings/python3/html/_static/minus.png
 share/doc/xapian-bindings/python3/html/_static/plus.png

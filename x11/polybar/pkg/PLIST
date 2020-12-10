@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/20 08:18:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/10 02:20:31 daniel Exp $
 @bin bin/polybar
 @bin bin/polybar-msg
 @man man/man1/polybar.1
@@ -6,9 +6,9 @@ share/bash-completion/completions/polybar
 share/doc/polybar/
 share/doc/polybar/.buildinfo
 share/doc/polybar/_sources/
-share/doc/polybar/_sources/index.txt
+share/doc/polybar/_sources/index.rst.txt
 share/doc/polybar/_sources/man/
-share/doc/polybar/_sources/man/polybar.1.txt
+share/doc/polybar/_sources/man/polybar.1.rst.txt
 share/doc/polybar/_static/
 share/doc/polybar/_static/ajax-loader.gif
 share/doc/polybar/_static/alabaster.css
@@ -21,6 +21,7 @@ share/doc/polybar/_static/doctools.js
 share/doc/polybar/_static/down-pressed.png
 share/doc/polybar/_static/down.png
 share/doc/polybar/_static/file.png
+share/doc/polybar/_static/jquery-3.1.0.js
 share/doc/polybar/_static/jquery.js
 share/doc/polybar/_static/minus.png
 share/doc/polybar/_static/plus.png

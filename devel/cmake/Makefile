@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2020/11/23 07:33:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.189 2020/12/10 02:20:29 daniel Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,7 +8,7 @@ VER =		3.17.5
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.cmake.org/
 
@@ -26,7 +26,7 @@ MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.5
 
 LIB_DEPENDS =		archivers/libarchive \
 			devel/libuv \

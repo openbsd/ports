@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/27 01:59:28 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/12/10 02:20:30 daniel Exp $
 bin/luacheck
 share/doc/luacheck/
 share/doc/luacheck/_sources/
-share/doc/luacheck/_sources/cli.txt
-share/doc/luacheck/_sources/config.txt
-share/doc/luacheck/_sources/index.txt
-share/doc/luacheck/_sources/inline.txt
-share/doc/luacheck/_sources/module.txt
-share/doc/luacheck/_sources/warnings.txt
+share/doc/luacheck/_sources/cli.rst.txt
+share/doc/luacheck/_sources/config.rst.txt
+share/doc/luacheck/_sources/index.rst.txt
+share/doc/luacheck/_sources/inline.rst.txt
+share/doc/luacheck/_sources/module.rst.txt
+share/doc/luacheck/_sources/warnings.rst.txt
 share/doc/luacheck/_static/
 share/doc/luacheck/_static/ajax-loader.gif
 share/doc/luacheck/_static/basic.css
@@ -53,6 +53,7 @@ share/doc/luacheck/_static/fonts/fontawesome-webfont.svg
 share/doc/luacheck/_static/fonts/fontawesome-webfont.ttf
 share/doc/luacheck/_static/fonts/fontawesome-webfont.woff
 share/doc/luacheck/_static/fonts/fontawesome-webfont.woff2
+share/doc/luacheck/_static/jquery-3.1.0.js
 share/doc/luacheck/_static/jquery.js
 share/doc/luacheck/_static/js/
 share/doc/luacheck/_static/js/modernizr.min.js

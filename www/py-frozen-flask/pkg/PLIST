@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/23 21:14:35 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/10 02:20:31 daniel Exp $
 lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/static/style.css
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/tests.py
 share/doc/${MODPY_PY_PREFIX}frozen-flask/
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_sources/
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_sources/index.txt
+share/doc/${MODPY_PY_PREFIX}frozen-flask/_sources/index.rst.txt
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/artwork/
@@ -48,6 +48,7 @@ share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/down.png
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/file.png
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/flasky.css
+share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/jquery-3.1.0.js
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/plus.png

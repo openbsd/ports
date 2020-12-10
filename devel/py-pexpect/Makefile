@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/07/03 21:12:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2020/12/10 02:20:30 daniel Exp $
 
 COMMENT=		pure Python Expect-like module
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	4.7.0
 DISTNAME=		pexpect-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		https://pexpect.readthedocs.io/
 
@@ -20,7 +20,7 @@ MODULES=		lang/python
 
 RUN_DEPENDS =		devel/py-ptyprocess${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS} \
-			textproc/py-sphinx${MODPY_FLAVOR}
+			textproc/py-sphinx${MODPY_FLAVOR}>=1.5
 TEST_DEPENDS =		shells/bash
 
 FLAVORS =		python3

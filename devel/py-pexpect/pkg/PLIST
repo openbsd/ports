@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/04/23 20:19:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/12/10 02:20:30 daniel Exp $
 lib/python${MODPY_VERSION}/site-packages/pexpect/
 lib/python${MODPY_VERSION}/site-packages/pexpect-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pexpect/ANSI.py
@@ -48,20 +48,20 @@ share/doc/${MODPY_PY_PREFIX}pexpect/_modules/pexpect/run.html
 share/doc/${MODPY_PY_PREFIX}pexpect/_modules/pexpect/spawnbase.html
 share/doc/${MODPY_PY_PREFIX}pexpect/_modules/pexpect/utils.html
 share/doc/${MODPY_PY_PREFIX}pexpect/_sources/
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/FAQ.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/FAQ.rst.txt
 share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/fdpexpect.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/index.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/pexpect.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/popen_spawn.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/pxssh.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/replwrap.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/commonissues.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/examples.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/history.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/index.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/install.txt
-share/doc/${MODPY_PY_PREFIX}pexpect/_sources/overview.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/fdpexpect.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/index.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/pexpect.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/popen_spawn.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/pxssh.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/api/replwrap.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/commonissues.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/examples.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/history.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/index.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/install.rst.txt
+share/doc/${MODPY_PY_PREFIX}pexpect/_sources/overview.rst.txt
 share/doc/${MODPY_PY_PREFIX}pexpect/_static/
 share/doc/${MODPY_PY_PREFIX}pexpect/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}pexpect/_static/basic.css
@@ -74,6 +74,7 @@ share/doc/${MODPY_PY_PREFIX}pexpect/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}pexpect/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}pexpect/_static/down.png
 share/doc/${MODPY_PY_PREFIX}pexpect/_static/file.png
+share/doc/${MODPY_PY_PREFIX}pexpect/_static/jquery-3.1.0.js
 share/doc/${MODPY_PY_PREFIX}pexpect/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}pexpect/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}pexpect/_static/plus.png

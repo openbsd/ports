@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/12/02 00:50:25 daniel Exp $
+# $OpenBSD: Makefile,v 1.30 2020/12/10 02:20:30 daniel Exp $
 
 COMMENT =		virtual Python environment builder
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	16.0.0
 DISTNAME =		virtualenv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://www.virtualenv.org/
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.4.8p5 \
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.5 \
 			textproc/py-sphinx_rtd_theme${MODPY_FLAVOR}>=0.4.3
 TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}

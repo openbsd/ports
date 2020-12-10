@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/09/17 15:33:39 danj Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/12/10 02:20:29 daniel Exp $
 bin/pwiz${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}peewee.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pwiz.${MODPY_PYC_MAGIC_TAG}pyc
@@ -68,20 +68,20 @@ share/doc/${MODPY_PY_PREFIX}peewee/_images/schema.jpg
 share/doc/${MODPY_PY_PREFIX}peewee/_images/sqlite.png
 share/doc/${MODPY_PY_PREFIX}peewee/_images/tweepee.jpg
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/index.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/index.rst.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/api.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/contributing.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/database.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/example.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/hacks.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/installation.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/models.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/more-resources.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/playhouse.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/querying.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/quickstart.txt
-share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/transactions.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/api.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/contributing.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/database.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/example.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/hacks.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/installation.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/models.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/more-resources.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/playhouse.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/querying.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/quickstart.rst.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/transactions.rst.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_static/
 share/doc/${MODPY_PY_PREFIX}peewee/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}peewee/_static/basic.css
@@ -94,6 +94,7 @@ share/doc/${MODPY_PY_PREFIX}peewee/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}peewee/_static/down.png
 share/doc/${MODPY_PY_PREFIX}peewee/_static/file.png
+share/doc/${MODPY_PY_PREFIX}peewee/_static/jquery-3.1.0.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}peewee/_static/peewee-white.png

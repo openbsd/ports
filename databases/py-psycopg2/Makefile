@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/07/03 21:12:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/12/10 02:20:29 daniel Exp $
 
 COMMENT =		PostgreSQL database adapter for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	2.8.3
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://initd.org/projects/psycopg2
 
@@ -26,7 +26,7 @@ MODPY_SETUPTOOLS =	Yes
 LIB_DEPENDS =		databases/postgresql
 RUN_DEPENDS =		databases/postgresql
 BUILD_DEPENDS =		textproc/py-pygments${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR}
+			textproc/py-sphinx${MODPY_FLAVOR}>=1.5
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 FLAVORS =		python3

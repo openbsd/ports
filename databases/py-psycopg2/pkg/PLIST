@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/06/23 14:32:22 danj Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/12/10 02:20:29 daniel Exp $
 lib/python${MODPY_VERSION}/site-packages/psycopg2/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}tz.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_ipaddress.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_json.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_lru_cache.py
-lib/python${MODPY_VERSION}/site-packages/psycopg2/_psycopg.so
+@so lib/python${MODPY_VERSION}/site-packages/psycopg2/_psycopg.so
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_range.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/compat.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/errorcodes.py
@@ -35,23 +35,23 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/sql.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tz.py
 share/doc/${MODPY_PY_PREFIX}psycopg2/
 share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/advanced.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/connection.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/cursor.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/errorcodes.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/errors.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/extensions.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/extras.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/faq.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/index.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/install.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/license.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/module.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/news.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/pool.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/sql.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/tz.txt
-share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/usage.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/advanced.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/connection.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/cursor.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/errorcodes.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/errors.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/extensions.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/extras.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/faq.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/index.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/install.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/license.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/module.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/news.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/pool.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/sql.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/tz.rst.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/usage.rst.txt
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/basic.css
@@ -63,6 +63,7 @@ share/doc/${MODPY_PY_PREFIX}psycopg2/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/down.png
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/file.png
+share/doc/${MODPY_PY_PREFIX}psycopg2/_static/jquery-3.1.0.js
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/plus.png

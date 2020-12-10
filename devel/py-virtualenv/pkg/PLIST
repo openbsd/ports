@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/11/27 01:59:28 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/12/10 02:20:30 daniel Exp $
 bin/virtualenv${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}virtualenv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -18,12 +18,12 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-39.1.0-py
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/wheel-0.31.1-py2.py3-none-any.whl
 share/doc/${MODPY_PY_PREFIX}virtualenv/
 share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/
-share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/changes.txt
-share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/development.txt
-share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/index.txt
-share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/installation.txt
-share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/reference.txt
-share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/userguide.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/changes.rst.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/development.rst.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/index.rst.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/installation.rst.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/reference.rst.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/userguide.rst.txt
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/basic.css
@@ -69,6 +69,7 @@ share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/fontawesome-webfont.svg
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/fontawesome-webfont.ttf
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/fontawesome-webfont.woff
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/fontawesome-webfont.woff2
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/jquery-3.1.0.js
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/js/
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/js/modernizr.min.js
