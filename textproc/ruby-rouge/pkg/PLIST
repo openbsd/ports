@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/10/15 10:41:23 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/12/10 08:28:57 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -140,6 +140,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nix
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/objective_c
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/objective_cpp
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ocaml
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ocl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/openedge
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/opentype_feature_file
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/pascal
@@ -163,6 +164,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/r
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/racket
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/reasonml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/rego
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/rescript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/robot_framework
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ruby
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/rust
@@ -388,6 +390,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/objective_cpp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml/common.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/openedge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/opentype_feature_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/pascal.rb
@@ -413,6 +416,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/r.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/racket.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/reasonml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/rego.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/rescript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/robot_framework.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/rust.rb
