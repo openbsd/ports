@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.157 2020/10/18 11:53:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.158 2020/12/10 20:52:25 naddy Exp $
 
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-7.73.0
+DISTNAME=	curl-7.74.0
 SHARED_LIBS=	curl                 26.7     # 11.0
 CATEGORIES=	net
-HOMEPAGE=	https://curl.haxx.se/
+HOMEPAGE=	https://curl.se/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://curl.haxx.se/download/
+MASTER_SITES=	https://curl.se/download/
 EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	www/nghttp2

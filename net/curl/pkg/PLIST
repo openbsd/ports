@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.62 2020/10/18 11:53:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.63 2020/12/10 20:52:26 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -176,6 +176,12 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_HEADERDATA.3
 @man man/man3/CURLOPT_HEADERFUNCTION.3
 @man man/man3/CURLOPT_HEADEROPT.3
+@man man/man3/CURLOPT_HSTS.3
+@man man/man3/CURLOPT_HSTSREADDATA.3
+@man man/man3/CURLOPT_HSTSREADFUNCTION.3
+@man man/man3/CURLOPT_HSTSWRITEDATA.3
+@man man/man3/CURLOPT_HSTSWRITEFUNCTION.3
+@man man/man3/CURLOPT_HSTS_CTRL.3
 @man man/man3/CURLOPT_HTTP09_ALLOWED.3
 @man man/man3/CURLOPT_HTTP200ALIASES.3
 @man man/man3/CURLOPT_HTTPAUTH.3
