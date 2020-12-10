@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/12/07 13:57:56 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2020/12/10 16:39:46 kmos Exp $
 
 COMMENT =	curses TLS-only IRC client
 VERSION =	1.3
@@ -14,6 +14,10 @@ HOMEPAGE =	https://git.causal.agency/catgirl
 
 # GPLv3+
 PERMIT_PACKAGE =Yes
+
+# C11
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB +=	c curses tls
 
