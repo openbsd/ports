@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/05 20:58:51 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2020/12/10 08:29:43 fcambus Exp $
 
 PORTROACH =	ignore:1
 
 COMMENT =	conversion tools for .PSF fonts
 
-DISTNAME =	psftools-1.0.13
+DISTNAME =	psftools-1.0.14
 SHARED_LIBS +=	psf	0.0	# 1.1
-REVISION =	0
 
 CATEGORIES =	sysutils
 

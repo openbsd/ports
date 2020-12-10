@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/07/27 16:36:37 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/12/10 08:29:43 fcambus Exp $
+@bin bin/ams2psf
 @bin bin/bbc2psf
 @bin bin/cpi2psf
 @bin bin/cpicomp
@@ -8,6 +9,7 @@
 @bin bin/fon2fnts
 @bin bin/mda2psf
 @bin bin/page2cp2
+@bin bin/psf2ams
 @bin bin/psf2bbc
 @bin bin/psf2bdf
 @bin bin/psf2bsd
@@ -33,9 +35,10 @@
 @bin bin/zx2psf
 include/psflib.h
 include/psfutils.h
-lib/libpsf.a
+@static-lib lib/libpsf.a
 lib/libpsf.la
 @lib lib/libpsf.so.${LIBpsf_VERSION}
+@man man/man1/ams2psf.1
 @man man/man1/cpi2psf.1
 @man man/man1/cpicomp.1
 @man man/man1/cpidcomp.1
@@ -43,6 +46,7 @@ lib/libpsf.la
 @man man/man1/fnts2fon.1
 @man man/man1/fon2fnts.1
 @man man/man1/mda2psf.1
+@man man/man1/psf2ams.1
 @man man/man1/psf2bdf.1
 @man man/man1/psf2bsd.1
 @man man/man1/psf2fnt.1
