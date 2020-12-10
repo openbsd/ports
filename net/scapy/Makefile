@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2020/11/05 14:49:02 bluhm Exp $
+# $OpenBSD: Makefile,v 1.40 2020/12/10 11:49:23 sthen Exp $
 
 COMMENT =	powerful interactive packet manipulation in python
 
 MODPY_EGG_VERSION =	2.4.4
+REVISION =	0
 
 DISTNAME =	scapy-${MODPY_EGG_VERSION}
 
@@ -21,14 +22,23 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		lang/python
 
+FLAVORS =		python3
+FLAVOR ?=
+.if ${FLAVOR:Mpython3}
+PKGNAME =	py3-${DISTNAME}
+.endif
+
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
 
-RUN_DEPENDS =		net/libdnet,-python \
-			net/py-libpcap \
-			security/py-cryptodome \
-			security/py-ecdsa
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mcxx11}
+# py-cryptography is only for architectures with newer compilers.
+# it is not needed for all features; include the dependency
+# where available but skip it on base-gcc architectures.
+RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR}
+.endif
 
 pre-configure:
 	sed -i "s,/etc/ethertypes,${SYSCONFDIR}/ethertypes,g" \
@@ -37,6 +47,9 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/scapy
 	${INSTALL_DATA} ${DISTDIR}/ethertypes-20120703 \
-	    ${PREFIX}/share/examples/scapy/ethertypes
+	    ${PREFIX}/share/examples/scapy/ethertypes${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/UTscapy{,${MODPY_BIN_SUFFIX}}
+	mv ${PREFIX}/man/man1/scapy{,${MODPY_BIN_SUFFIX}}.1
+	mv ${PREFIX}/bin/scapy{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>
