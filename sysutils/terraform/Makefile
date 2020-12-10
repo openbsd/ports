@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2020/12/03 13:25:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2020/12/10 10:05:42 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v0.14.0
+MODGO_VERSION=	v0.14.2
 DISTNAME=	terraform-${MODGO_VERSION}
 
 CATEGORIES=		sysutils net
@@ -155,7 +155,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-version				 v1.2.0 \
 	github.com/hashicorp/golang-lru				 v0.5.1 \
 	github.com/hashicorp/hcl				 v0.0.0-20170504190234-a4b07c25de5f \
-	github.com/hashicorp/hcl/v2				 v2.7.2 \
+	github.com/hashicorp/hcl/v2				 v2.8.0 \
 	github.com/hashicorp/memberlist				 v0.1.0 \
 	github.com/hashicorp/serf				 v0.0.0-20160124182025-e4ec8cc423bb \
 	github.com/hashicorp/terraform-config-inspect		 v0.0.0-20191212124732-c6ae6269b9d7 \
@@ -306,6 +306,7 @@ MODGO_MODULES =	\
 	rsc.io/sampler						 v1.3.0 \
 	sigs.k8s.io/structured-merge-diff			 v0.0.0-20190525122527-15d366b2352e \
 	sigs.k8s.io/yaml					 v1.1.0
+
 MODGO_MODFILES =	\
 	cloud.google.com/go				 v0.26.0 \
 	cloud.google.com/go				 v0.34.0 \
