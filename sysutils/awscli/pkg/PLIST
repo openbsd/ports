@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.126 2020/12/08 09:01:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.127 2020/12/10 08:39:44 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -328,6 +328,20 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/ssh.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/sshutils.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/steputils.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/terminateclusters.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}base36.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}eks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}iam.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}update_role_trust_policy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/base36.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/constants.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/eks.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/iam.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/update_role_trust_policy.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/flatten.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/__init__.py
@@ -2473,6 +2487,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/wait/load-balance
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/wait/target-deregistered.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/wait/target-in-service.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr-containers/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr-containers/update-role-trust-policy/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr-containers/update-role-trust-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr-containers/update-role-trust-policy/_description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-instance-fleet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-steps.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-tags.rst
