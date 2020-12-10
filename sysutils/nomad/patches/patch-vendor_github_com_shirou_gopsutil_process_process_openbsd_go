@@ -1,0 +1,24 @@
+$OpenBSD: patch-vendor_github_com_shirou_gopsutil_process_process_openbsd_go,v 1.1 2020/12/10 09:30:55 ajacoutot Exp $
+
+From 013cd610f5084787a33363545979a4391b24819d Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sat, 24 Oct 2020 15:35:19 +0200
+Subject: [PATCH] process: unbreak build on OpenBSD
+
+Index: vendor/github.com/shirou/gopsutil/process/process_openbsd.go
+--- vendor/github.com/shirou/gopsutil/process/process_openbsd.go.orig
++++ vendor/github.com/shirou/gopsutil/process/process_openbsd.go
+@@ -227,7 +227,12 @@ func (p *Process) GroupsWithContext(ctx context.Contex
+ 		return nil, err
+ 	}
+ 
+-	return k.Groups, nil
++	groups := make([]int32, k.Ngroups)
++	for i := int16(0); i < k.Ngroups; i++ {
++		groups[i] = int32(k.Groups[i])
++	}
++
++	return groups, nil
+ }
+ func (p *Process) Terminal() (string, error) {
+ 	return p.TerminalWithContext(context.Background())
