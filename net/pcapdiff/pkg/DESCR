@@ -1,9 +1,6 @@
-Pcapdiff is a tool developed by the EFF to compare two packet captures
-and identify potentially forged, dropped, or mangled packets.
-
-Two technically-inclined friends can set up packet captures on their
-own computers and produce network traffic between their two computers
-over the Internet.
-
-Later, they can run pcapdiff on the two packet capture files to
-identify suspicious packets for further investigation.
+pcap_diff.py is a tool that takes two or more pcap files as input,
+compares them, and produces a pcap file or displays to show differences
+between the two. It is useful when comparing packets captured at two
+points to identify interference with packets. It has options to ignore
+certain parts of the packet (by default ttl, checksums and timestamps
+are ignored).
