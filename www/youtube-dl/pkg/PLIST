@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.137 2020/11/28 08:15:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.138 2020/12/10 08:19:32 mestre Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -268,6 +268,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}fr
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}freespeech.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}freshlive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}frontendmasters.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}fujitv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}funimation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}funk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}fusion.${MODPY_PYC_MAGIC_TAG}pyc
@@ -701,6 +702,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}tv
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}tva.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}tvanouvelles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}tvc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}tver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}tvigle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}tvland.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}tvn24.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1040,6 +1042,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freesound.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freespeech.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freshlive.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/frontendmasters.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fujitv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/funimation.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/funk.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fusion.py
@@ -1473,6 +1476,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tv5mondeplus.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tva.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvanouvelles.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvc.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tver.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvigle.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvland.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvn24.py
