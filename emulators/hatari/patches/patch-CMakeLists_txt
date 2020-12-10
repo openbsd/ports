@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2019/08/14 10:07:17 fcambus Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2020/12/10 15:22:33 fcambus Exp $
 
 Make PortAudio, PortMidi and CAPSImage detection conditional and disabled
 by default, and disable building the Python GTK+2 user interface.
@@ -6,7 +6,7 @@ by default, and disable building the Python GTK+2 user interface.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -57,6 +57,14 @@ set(ENABLE_SMALL_MEM 0
+@@ -55,6 +55,14 @@ set(ENABLE_SMALL_MEM 0
      CACHE BOOL "Enable to use less memory - at the expense of emulation speed")
  set(ENABLE_WINUAE_CPU 1
      CACHE BOOL "Enable WinUAE CPU core")
@@ -19,48 +19,48 @@ Index: CMakeLists.txt
 +set(ENABLE_UI 0
 +    CACHE BOOL "Enable building the Python GTK+2 user interface, requires GTK+2 bindings")
  
- # Run-time checks with GCC "mudflap" etc features:
+ # Run-time checks with GCC / LLVM (Clang) AddressSanitizer:
  # - stack protection
 @@ -144,20 +152,26 @@ if (NOT ENABLE_OSX_BUNDLE)
  	endif(X11_FOUND)
  endif()
  
 -find_package(PortAudio)
--if(PORTAUDIO_FOUND)
+-if(PortAudio_FOUND)
 -	set(HAVE_PORTAUDIO 1)
--endif(PORTAUDIO_FOUND)
+-endif(PortAudio_FOUND)
 +if(ENABLE_PORTAUDIO)
 +	find_package(PortAudio)
-+	if(PORTAUDIO_FOUND)
++	if(PortAudio_FOUND)
 +		set(HAVE_PORTAUDIO 1)
-+	endif(PORTAUDIO_FOUND)
++	endif(PortAudio_FOUND)
 +endif(ENABLE_PORTAUDIO)
  
 -find_package(PortMidi)
--if(PORTMIDI_FOUND)
+-if(PortMidi_FOUND)
 -	set(HAVE_PORTMIDI 1)
--endif(PORTMIDI_FOUND)
+-endif(PortMidi_FOUND)
 +if(ENABLE_PORTMIDI)
 +	find_package(PortMidi)
-+	if(PORTMIDI_FOUND)
++	if(PortMidi_FOUND)
 +		set(HAVE_PORTMIDI 1)
-+	endif(PORTMIDI_FOUND)
++	endif(PortMidi_FOUND)
 +endif(ENABLE_PORTMIDI)
  
 -find_package(CapsImage)
--if(CAPSIMAGE_FOUND)
+-if(CapsImage_FOUND)
 -	set(HAVE_CAPSIMAGE 1)
--endif(CAPSIMAGE_FOUND)
+-endif(CapsImage_FOUND)
 +if(ENABLE_CAPSIMAGE)
 +	find_package(CapsImage)
-+	if(CAPSIMAGE_FOUND)
++	if(CapsImage_FOUND)
 +		set(HAVE_CAPSIMAGE 1)
-+	endif(CAPSIMAGE_FOUND)
++	endif(CapsImage_FOUND)
 +endif(ENABLE_CAPSIMAGE)
  
  find_package(Udev)
- if(UDEV_FOUND)
-@@ -338,10 +352,12 @@ add_subdirectory(doc)
+ if(Udev_FOUND)
+@@ -346,10 +360,12 @@ add_subdirectory(doc)
  add_subdirectory(tests)
  add_subdirectory(tools)
  
@@ -77,48 +77,48 @@ Index: CMakeLists.txt
  
  if(UNIX AND NOT ENABLE_OSX_BUNDLE)
  	add_subdirectory(share)
-@@ -389,23 +405,29 @@ else()
+@@ -397,23 +413,29 @@ else()
    message( "  - png :\tnot found, install it to compress screenshot/avi files using png" )
  endif(PNG_FOUND)
  
--if(PORTAUDIO_FOUND)
+-if(PortAudio_FOUND)
 -  message( "  - portaudio :\tfound, enables the microphone input in Falcon mode" )
 -else()
 -  message( "  - portaudio :\tnot found, install it to enable the Falcon microphone input" )
--endif(PORTAUDIO_FOUND)
+-endif(PortAudio_FOUND)
 +if(ENABLE_PORTAUDIO)
-+  if(PORTAUDIO_FOUND)
++  if(PortAudio_FOUND)
 +    message( "  - portaudio :\tfound, enables the microphone input in Falcon mode" )
 +  else()
 +    message( "  - portaudio :\tnot found, install it to enable the Falcon microphone input" )
-+  endif(PORTAUDIO_FOUND)
++  endif(PortAudio_FOUND)
 +endif(ENABLE_PORTAUDIO)
  
--if(PORTMIDI_FOUND)
+-if(PortMidi_FOUND)
 -  message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
 -else()
 -  message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
--endif(PORTMIDI_FOUND)
+-endif(PortMidi_FOUND)
 +if(ENABLE_PORTMIDI)
-+  if(PORTMIDI_FOUND)
++  if(PortMidi_FOUND)
 +    message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
 +  else()
 +    message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
-+  endif(PORTMIDI_FOUND)
++  endif(PortMidi_FOUND)
 +endif(ENABLE_PORTMIDI)
  
--if(CAPSIMAGE_FOUND)
--  message( "  - capsimage :\tv${CAPSIMAGE_VERSION} found, allow to use .IPF, .RAW and .CTR disk images" )
+-if(CapsImage_FOUND)
+-  message( "  - capsimage :\tv5 found, allow to use .IPF, .RAW and .CTR disk images" )
 -else()
--  message( "  - capsimage :\tv${CAPSIMAGE_VERSION} not found, install it to use .IPF, .RAW and .CTR disk images" )
--endif(CAPSIMAGE_FOUND)
+-  message( "  - capsimage :\tv5 not found, install it to use .IPF, .RAW and .CTR disk images" )
+-endif(CapsImage_FOUND)
 +if(ENABLE_CAPSIMAGE)
-+  if(CAPSIMAGE_FOUND)
-+    message( "  - capsimage :\tv${CAPSIMAGE_VERSION} found, allow to use .IPF, .RAW and .CTR disk images" )
++  if(CapsImage_FOUND)
++    message( "  - capsimage :\tv5 found, allow to use .IPF, .RAW and .CTR disk images" )
 +  else()
-+    message( "  - capsimage :\tv${CAPSIMAGE_VERSION} not found, install it to use .IPF, .RAW and .CTR disk images" )
-+  endif(CAPSIMAGE_FOUND)
++    message( "  - capsimage :\tv5 not found, install it to use .IPF, .RAW and .CTR disk images" )
++  endif(CapsImage_FOUND)
 +endif(ENABLE_CAPSIMAGE)
  
- if(UDEV_FOUND)
+ if(Udev_FOUND)
    message( "  - udev :\tfound, required for media change detection in NatFeats SCSI" )

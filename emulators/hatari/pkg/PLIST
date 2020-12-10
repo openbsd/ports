@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/02/04 21:26:06 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/12/10 15:22:33 fcambus Exp $
 bin/atari-convert-dir
 @bin bin/gst2ascii
 @bin bin/hatari
@@ -18,6 +18,7 @@ share/applications/hatari.desktop
 share/doc/hatari/
 share/doc/hatari/authors.txt
 share/doc/hatari/compatibility.html
+share/doc/hatari/debugger.html
 share/doc/hatari/emutos.txt
 share/doc/hatari/images/
 share/doc/hatari/images/callgraph.png
@@ -39,10 +40,12 @@ share/doc/hatari/images/sound.png
 share/doc/hatari/images/system.png
 share/doc/hatari/images/tos.png
 share/doc/hatari/keymap-sample.txt
+share/doc/hatari/manual.css
 share/doc/hatari/manual.html
 share/doc/hatari/memory-usage.txt
 share/doc/hatari/midi-linux.txt
 share/doc/hatari/release-notes.txt
+share/doc/hatari/toc.js
 share/doc/hatari/todo.txt
 share/hatari/
 share/hatari/hatari-icon.bmp
