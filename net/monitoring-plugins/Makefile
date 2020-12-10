@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/11 22:54:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2020/12/10 19:52:15 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -11,8 +11,7 @@ COMMENT-samba=	samba monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-V=		2.2
-REVISION=	11
+V=		2.3
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
@@ -34,13 +33,17 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl pthread
-WANTLIB-main=	${WANTLIB} crypto m ssl
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://www.monitoring-plugins.org/download/
 
 LIB_DEPENDS=	devel/gettext,-runtime
+
+WANTLIB-main=	${WANTLIB} crypto curl m nghttp2 ssl uriparser z
+LIB_DEPENDS-main=${LIB_DEPENDS} \
+		net/curl \
+		www/uriparser
 
 FAKE_FLAGS=	setuid_root_mode=0555
 
@@ -96,7 +99,7 @@ RUN_DEPENDS-snmp=	${RUN_DEPENDS} \
 
 LIB_DEPENDS-radius=	net/radcli
 WANTLIB-radius+=	${WANTLIB} ffi gmp gnutls hogweed idn2 nettle
-WANTLIB-radius+=	p11-kit radcli tasn1 unistring z
+WANTLIB-radius+=	p11-kit radcli tasn1 unistring
 
 # MYSQL
 .if !${BUILD_PACKAGES:M-mysql}
@@ -105,7 +108,7 @@ CONFIGURE_ARGS += --without-mysql
 CONFIGURE_ARGS += --with-mysql=${LOCALBASE}
 .endif
 LIB_DEPENDS-mysql = ${LIB_DEPENDS} databases/mariadb
-WANTLIB-mysql = ${WANTLIB} crypto m mysqlclient ssl ${COMPILER_LIBCXX} z
+WANTLIB-mysql = ${WANTLIB} crypto m mariadb ssl z
 
 # PGSQL
 .if !${BUILD_PACKAGES:M-pgsql}
@@ -114,7 +117,7 @@ CONFIGURE_ARGS += --without-pgsql
 CONFIGURE_ARGS += --with-pgsql=${LOCALBASE}
 .endif
 LIB_DEPENDS-pgsql = ${LIB_DEPENDS} databases/postgresql
-WANTLIB-pgsql += ${WANTLIB} crypto pq ssl
+WANTLIB-pgsql += ${WANTLIB} crypto m pq ssl
 
 # DBI
 .if !${BUILD_PACKAGES:M-dbi}
@@ -125,6 +128,6 @@ WANTLIB-dbi = ${WANTLIB} dbi m
 
 # LDAP
 LIB_DEPENDS-ldap = ${LIB_DEPENDS} databases/openldap
-WANTLIB-ldap += ${WANTLIB} crypto lber-2.4 ldap-2.4 sasl2 ssl
+WANTLIB-ldap += ${WANTLIB} crypto lber ldap sasl2 ssl
 
 .include <bsd.port.mk>

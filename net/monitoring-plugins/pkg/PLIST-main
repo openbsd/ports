@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2014/07/11 20:08:04 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2020/12/10 19:52:15 sthen Exp $
 @conflict nagios-plugins-*
 @conflict nagios-plugins-ntp-*
 @pkgpath net/nagios/plugins
@@ -10,6 +10,7 @@ libexec/nagios/
 @bin libexec/nagios/check_by_ssh
 libexec/nagios/check_clamd
 @bin libexec/nagios/check_cluster
+@bin libexec/nagios/check_curl
 @bin libexec/nagios/check_dhcp
 @bin libexec/nagios/check_dig
 @bin libexec/nagios/check_disk
@@ -56,6 +57,7 @@ libexec/nagios/check_ssmtp
 @bin libexec/nagios/check_time
 libexec/nagios/check_udp
 @bin libexec/nagios/check_ups
+libexec/nagios/check_uptime
 @bin libexec/nagios/check_users
 libexec/nagios/check_wave
 @bin libexec/nagios/negate
