@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/22 11:39:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/11 22:36:25 sthen Exp $
 include/uWebSockets/
 include/uWebSockets/App.h
 include/uWebSockets/AsyncSocket.h
@@ -12,8 +12,11 @@ include/uWebSockets/HttpResponseData.h
 include/uWebSockets/HttpRouter.h
 include/uWebSockets/Loop.h
 include/uWebSockets/LoopData.h
+include/uWebSockets/MessageParser.h
+include/uWebSockets/Multipart.h
 include/uWebSockets/PerMessageDeflate.h
 include/uWebSockets/ProxyParser.h
+include/uWebSockets/QueryParser.h
 include/uWebSockets/TopicTree.h
 include/uWebSockets/Utilities.h
 include/uWebSockets/WebSocket.h
