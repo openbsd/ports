@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/04 10:02:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/12/11 12:42:28 martin Exp $
 
 BROKEN-arm =	llvm out of memory
 BROKEN-powerpc = virtual memory exhausted, even with -O1
@@ -6,9 +6,7 @@ BROKEN-powerpc = virtual memory exhausted, even with -O1
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
 
-V = 		3.2.1
-REVISION-main =		1
-REVISION-python =	2
+V = 		3.4.2
 
 # STB stuff
 # XXX remember to bump REV if they change
@@ -62,6 +60,7 @@ MODPY_RUNDEP =	No
 BUILD_DEPENDS += 	textproc/txt2man \
 			lang/cython${MODPY_FLAVOR} \
 			math/ensmallen \
+			devel/py-setuptools${MODPY_FLAVOR} \
 			math/py-pandas${MODPY_FLAVOR} \
 			devel/py-distutils-extra${MODPY_FLAVOR} \
 			devel/py-test-runner${MODPY_FLAVOR}
@@ -84,6 +83,7 @@ CONFIGURE_ARGS += 	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
 			-DUSING_GIT=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=TRUE \
 			-DDOWNLOAD_ENSMALLEN=OFF \
+			-DBUILD_PYTHON_BINDINGS=ON \
 			-DCMAKE_INSTALL_MANDIR=${PREFIX}/man/man1
 
 # naddy reported a burp

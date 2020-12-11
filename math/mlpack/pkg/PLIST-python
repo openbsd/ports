@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.6 2020/02/27 18:15:25 bket Exp $
+@comment $OpenBSD: PLIST-python,v 1.7 2020/12/11 12:42:28 martin Exp $
 @conflict mlpack-<3.0.4
 @conflict py-mlpack-*
 @pkgpath math/mlpack,-python${FLAVOR_EXT}
@@ -13,7 +13,6 @@ include/mlpack/bindings/python/get_printable_param.hpp
 include/mlpack/bindings/python/import_decl.hpp
 include/mlpack/bindings/python/mlpack/
 include/mlpack/bindings/python/mlpack/arma_util.hpp
-include/mlpack/bindings/python/mlpack/cli_util.hpp
 include/mlpack/bindings/python/mlpack/serialization.hpp
 include/mlpack/bindings/python/print_class_defn.hpp
 include/mlpack/bindings/python/print_defn.hpp
@@ -25,6 +24,7 @@ include/mlpack/bindings/python/print_output_processing.hpp
 include/mlpack/bindings/python/print_pyx.hpp
 include/mlpack/bindings/python/py_option.hpp
 include/mlpack/bindings/python/strip_type.hpp
+${SITEDIR}/
 ${SITEDIR}/mlpack/
 ${EGGDIR}/
 ${EGGDIR}/PKG-INFO
@@ -37,49 +37,53 @@ ${SITEDIR}/mlpack/__init__.py
 ${MODPY_COMMENT}${SITEDIR}/mlpack/${MODPY_PYCACHE}/
 ${SITEDIR}/mlpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 ${SITEDIR}/mlpack/${MODPY_PYCACHE}matrix_utils.${MODPY_PYC_MAGIC_TAG}pyc
-${SITEDIR}/mlpack/adaboost.so
-${SITEDIR}/mlpack/approx_kfn.so
-${SITEDIR}/mlpack/arma_numpy.so
-${SITEDIR}/mlpack/cf.so
-${SITEDIR}/mlpack/dbscan.so
-${SITEDIR}/mlpack/decision_stump.so
-${SITEDIR}/mlpack/decision_tree.so
-${SITEDIR}/mlpack/det.so
-${SITEDIR}/mlpack/emst.so
-${SITEDIR}/mlpack/fastmks.so
-${SITEDIR}/mlpack/gmm_generate.so
-${SITEDIR}/mlpack/gmm_probability.so
-${SITEDIR}/mlpack/gmm_train.so
-${SITEDIR}/mlpack/hmm_generate.so
-${SITEDIR}/mlpack/hmm_loglik.so
-${SITEDIR}/mlpack/hmm_train.so
-${SITEDIR}/mlpack/hmm_viterbi.so
-${SITEDIR}/mlpack/hoeffding_tree.so
-${SITEDIR}/mlpack/kde.so
-${SITEDIR}/mlpack/kernel_pca.so
-${SITEDIR}/mlpack/kfn.so
-${SITEDIR}/mlpack/kmeans.so
-${SITEDIR}/mlpack/knn.so
-${SITEDIR}/mlpack/krann.so
-${SITEDIR}/mlpack/lars.so
-${SITEDIR}/mlpack/linear_regression.so
-${SITEDIR}/mlpack/lmnn.so
-${SITEDIR}/mlpack/local_coordinate_coding.so
-${SITEDIR}/mlpack/logistic_regression.so
-${SITEDIR}/mlpack/lsh.so
+@so ${SITEDIR}/mlpack/adaboost.so
+@so ${SITEDIR}/mlpack/approx_kfn.so
+@so ${SITEDIR}/mlpack/arma_numpy.so
+@so ${SITEDIR}/mlpack/bayesian_linear_regression.so
+@so ${SITEDIR}/mlpack/cf.so
+@so ${SITEDIR}/mlpack/dbscan.so
+@so ${SITEDIR}/mlpack/decision_stump.so
+@so ${SITEDIR}/mlpack/decision_tree.so
+@so ${SITEDIR}/mlpack/det.so
+@so ${SITEDIR}/mlpack/emst.so
+@so ${SITEDIR}/mlpack/fastmks.so
+@so ${SITEDIR}/mlpack/gmm_generate.so
+@so ${SITEDIR}/mlpack/gmm_probability.so
+@so ${SITEDIR}/mlpack/gmm_train.so
+@so ${SITEDIR}/mlpack/hmm_generate.so
+@so ${SITEDIR}/mlpack/hmm_loglik.so
+@so ${SITEDIR}/mlpack/hmm_train.so
+@so ${SITEDIR}/mlpack/hmm_viterbi.so
+@so ${SITEDIR}/mlpack/hoeffding_tree.so
+@so ${SITEDIR}/mlpack/image_converter.so
+@so ${SITEDIR}/mlpack/kde.so
+@so ${SITEDIR}/mlpack/kernel_pca.so
+@so ${SITEDIR}/mlpack/kfn.so
+@so ${SITEDIR}/mlpack/kmeans.so
+@so ${SITEDIR}/mlpack/knn.so
+@so ${SITEDIR}/mlpack/krann.so
+@so ${SITEDIR}/mlpack/lars.so
+@so ${SITEDIR}/mlpack/linear_regression.so
+@so ${SITEDIR}/mlpack/linear_svm.so
+@so ${SITEDIR}/mlpack/lmnn.so
+@so ${SITEDIR}/mlpack/local_coordinate_coding.so
+@so ${SITEDIR}/mlpack/logistic_regression.so
+@so ${SITEDIR}/mlpack/lsh.so
 ${SITEDIR}/mlpack/matrix_utils.py
-${SITEDIR}/mlpack/mean_shift.so
-${SITEDIR}/mlpack/nbc.so
-${SITEDIR}/mlpack/nca.so
-${SITEDIR}/mlpack/nmf.so
-${SITEDIR}/mlpack/pca.so
-${SITEDIR}/mlpack/perceptron.so
-${SITEDIR}/mlpack/preprocess_binarize.so
-${SITEDIR}/mlpack/preprocess_describe.so
-${SITEDIR}/mlpack/preprocess_scale.so
-${SITEDIR}/mlpack/preprocess_split.so
-${SITEDIR}/mlpack/radical.so
-${SITEDIR}/mlpack/random_forest.so
-${SITEDIR}/mlpack/softmax_regression.so
-${SITEDIR}/mlpack/sparse_coding.so
-${SITEDIR}/mlpack/test_python_binding.so
+@so ${SITEDIR}/mlpack/mean_shift.so
+@so ${SITEDIR}/mlpack/nbc.so
+@so ${SITEDIR}/mlpack/nca.so
+@so ${SITEDIR}/mlpack/nmf.so
+@so ${SITEDIR}/mlpack/pca.so
+@so ${SITEDIR}/mlpack/perceptron.so
+@so ${SITEDIR}/mlpack/preprocess_binarize.so
+@so ${SITEDIR}/mlpack/preprocess_describe.so
+@so ${SITEDIR}/mlpack/preprocess_one_hot_encoding.so
+@so ${SITEDIR}/mlpack/preprocess_scale.so
+@so ${SITEDIR}/mlpack/preprocess_split.so
+@so ${SITEDIR}/mlpack/radical.so
+@so ${SITEDIR}/mlpack/random_forest.so
+@so ${SITEDIR}/mlpack/softmax_regression.so
+@so ${SITEDIR}/mlpack/sparse_coding.so
+@so ${SITEDIR}/mlpack/test_python_binding.so
