@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/09 03:19:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2020/12/11 10:13:14 espie Exp $
 
 USE_WXNEEDED =	Yes
 COMMENT =	video editor
 
-V =		20.07.11
+V =		20.10.31
 DISTNAME =	shotcut-$V
 
 CATEGORIES =	multimedia
@@ -21,7 +21,7 @@ GH_TAGNAME =	v$V
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5OpenGL
 WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5WebSockets Qt5Widgets
+WANTLIB += Qt5WebSockets Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml X11 c m mlt mlt++
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -37,7 +37,7 @@ RUN_DEPENDS =		audio/jack \
 			x11/qt5/qtquickcontrols
 LIB_DEPENDS =		multimedia/mlt \
 			x11/qt5/qtmultimedia \
-			x11/qt5/qtwebkit \
+			x11/qt5/qtwebsockets \
 			x11/qt5/qtx11extras
 
 CONFIGURE_STYLE =	qmake

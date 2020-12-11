@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/07/30 14:40:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/12/11 10:13:14 espie Exp $
 @bin bin/shotcut
 @man man/man1/shotcut.1
 share/applications/org.shotcut.Shotcut.desktop
@@ -56,6 +56,8 @@ share/shotcut/qml/filters/audio_gain/ui.qml
 share/shotcut/qml/filters/audio_highpass/
 share/shotcut/qml/filters/audio_highpass/meta.qml
 share/shotcut/qml/filters/audio_highpass/ui.qml
+share/shotcut/qml/filters/audio_invert/
+share/shotcut/qml/filters/audio_invert/meta.qml
 share/shotcut/qml/filters/audio_limiter/
 share/shotcut/qml/filters/audio_limiter/meta.qml
 share/shotcut/qml/filters/audio_limiter/ui.qml
@@ -110,6 +112,7 @@ share/shotcut/qml/filters/bigsh0t_stabilize_360/ui.qml
 share/shotcut/qml/filters/bigsh0t_transform_360/
 share/shotcut/qml/filters/bigsh0t_transform_360/meta.qml
 share/shotcut/qml/filters/bigsh0t_transform_360/ui.qml
+share/shotcut/qml/filters/bigsh0t_transform_360/vui.qml
 share/shotcut/qml/filters/blend_mode/
 share/shotcut/qml/filters/blend_mode/meta.qml
 share/shotcut/qml/filters/blend_mode/ui.qml
@@ -135,6 +138,9 @@ share/shotcut/qml/filters/brightness/meta.qml
 share/shotcut/qml/filters/brightness/meta_movit.qml
 share/shotcut/qml/filters/brightness/ui.qml
 share/shotcut/qml/filters/brightness/ui_movit.qml
+share/shotcut/qml/filters/choppy/
+share/shotcut/qml/filters/choppy/meta.qml
+share/shotcut/qml/filters/choppy/ui.qml
 share/shotcut/qml/filters/chromahold/
 share/shotcut/qml/filters/chromahold/meta.qml
 share/shotcut/qml/filters/chromahold/ui.qml
@@ -156,6 +162,13 @@ share/shotcut/qml/filters/crop/
 share/shotcut/qml/filters/crop/meta.qml
 share/shotcut/qml/filters/crop/meta_movit.qml
 share/shotcut/qml/filters/crop/ui.qml
+share/shotcut/qml/filters/crop_circle/
+share/shotcut/qml/filters/crop_circle/meta.qml
+share/shotcut/qml/filters/crop_circle/ui.qml
+share/shotcut/qml/filters/crop_rectangle/
+share/shotcut/qml/filters/crop_rectangle/meta.qml
+share/shotcut/qml/filters/crop_rectangle/ui.qml
+share/shotcut/qml/filters/crop_rectangle/vui.qml
 share/shotcut/qml/filters/dance/
 share/shotcut/qml/filters/dance/meta_dance.qml
 share/shotcut/qml/filters/dance/ui_dance.qml
@@ -279,6 +292,10 @@ share/shotcut/qml/filters/opacity/
 share/shotcut/qml/filters/opacity/meta.qml
 share/shotcut/qml/filters/opacity/meta_movit.qml
 share/shotcut/qml/filters/opacity/ui.qml
+share/shotcut/qml/filters/pillar_echo/
+share/shotcut/qml/filters/pillar_echo/meta.qml
+share/shotcut/qml/filters/pillar_echo/ui.qml
+share/shotcut/qml/filters/pillar_echo/vui.qml
 share/shotcut/qml/filters/posterize/
 share/shotcut/qml/filters/posterize/meta.qml
 share/shotcut/qml/filters/posterize/ui.qml
@@ -290,6 +307,10 @@ share/shotcut/qml/filters/rectangle/vui.qml
 share/shotcut/qml/filters/rgbsplit0r/
 share/shotcut/qml/filters/rgbsplit0r/meta.qml
 share/shotcut/qml/filters/rgbsplit0r/ui.qml
+share/shotcut/qml/filters/richtext/
+share/shotcut/qml/filters/richtext/meta.qml
+share/shotcut/qml/filters/richtext/ui.qml
+share/shotcut/qml/filters/richtext/vui.qml
 share/shotcut/qml/filters/rotate/
 share/shotcut/qml/filters/rotate/meta.qml
 share/shotcut/qml/filters/rotate/ui.qml
@@ -375,34 +396,6 @@ share/shotcut/qml/filters/waveform/
 share/shotcut/qml/filters/waveform/meta.qml
 share/shotcut/qml/filters/waveform/ui.qml
 share/shotcut/qml/filters/waveform/vui.qml
-share/shotcut/qml/filters/webvfx/
-share/shotcut/qml/filters/webvfx/meta.qml
-share/shotcut/qml/filters/webvfx/templates/
-share/shotcut/qml/filters/webvfx/templates/plain/
-share/shotcut/qml/filters/webvfx/templates/plain/Basic/
-share/shotcut/qml/filters/webvfx/templates/plain/Basic/Blank HTML/
-share/shotcut/qml/filters/webvfx/templates/plain/Basic/Blank HTML/blank.html
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/Blue Middle Bar/
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/Blue Middle Bar/blue_middle_bar.html
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/Blue Middle Bar/blue_middle_bar.svg
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 1/
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 1/creative_commons_music_1.html
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 1/creative_commons_music_1.svg
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 2/
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 2/creative_commons_music_2.html
-share/shotcut/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 2/creative_commons_music_2.svg
-share/shotcut/qml/filters/webvfx/templates/webvfx/
-share/shotcut/qml/filters/webvfx/templates/webvfx/Basic/
-share/shotcut/qml/filters/webvfx/templates/webvfx/Basic/Blank with Web Animations/
-share/shotcut/qml/filters/webvfx/templates/webvfx/Basic/Blank with Web Animations/web-animations.html
-share/shotcut/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/
-share/shotcut/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll.html
-share/shotcut/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll_ui.qml
-share/shotcut/qml/filters/webvfx/templates/webvfx/Basic/Two Column Scroll/
-share/shotcut/qml/filters/webvfx/templates/webvfx/Basic/Two Column Scroll/two_column_scroll.html
-share/shotcut/qml/filters/webvfx/templates/webvfx/Basic/Two Column Scroll/two_column_scroll_ui.qml
-share/shotcut/qml/filters/webvfx/ui.qml
 share/shotcut/qml/filters/webvfx_choppy/
 share/shotcut/qml/filters/webvfx_choppy/choppy.html
 share/shotcut/qml/filters/webvfx_choppy/meta.qml
@@ -448,9 +441,6 @@ share/shotcut/qml/filters/white/
 share/shotcut/qml/filters/white/meta_frei0r.qml
 share/shotcut/qml/filters/white/meta_movit.qml
 share/shotcut/qml/filters/white/ui.qml
-share/shotcut/qml/htmleditor/
-share/shotcut/qml/htmleditor/text_outline.qml
-share/shotcut/qml/htmleditor/text_shadow.qml
 share/shotcut/qml/modules/
 share/shotcut/qml/modules/Shotcut/
 share/shotcut/qml/modules/Shotcut/Controls/
