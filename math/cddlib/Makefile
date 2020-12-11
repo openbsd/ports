@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/04 07:27:36 martin Exp $
+# $OpenBSD: Makefile,v 1.3 2020/12/11 12:38:20 martin Exp $
 
 COMMENT =	C library for double description method for convex polyhedra
 
 GH_ACCOUNT =	cddlib
 GH_PROJECT =	cddlib
-GH_TAGNAME =	0.94l
+GH_TAGNAME =	0.94m
 
-SHARED_LIBS +=	cdd		0.1 # 1.1
-SHARED_LIBS +=	cddgmp		0.1 # 1.1
+SHARED_LIBS +=	cdd		0.1 # 1.2
+SHARED_LIBS +=	cddgmp		0.1 # 1.2
 
 CATEGORIES =	math
 
