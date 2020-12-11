@@ -1,14 +1,22 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/17 01:38:30 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2020/12/11 22:33:22 sthen Exp $
 
 COMMENT	=	eventing, networking & crypto for async applications
-PKGNAME =	${DISTNAME:L}
 CATEGORIES =	net
+
+VERSION =	0.6.0
+REVISION =	0
+
+DISTNAME =	usockets-${VERSION}
+PKGNAME =	${DISTNAME:L}
 
 SHARED_LIBS =	usockets 1.0
 
 GH_ACCOUNT =	uNetworking
 GH_PROJECT =	uSockets
-GH_TAGNAME =	v0.6.0
+#GH_TAGNAME =	v0.6.0
+# cstdlib include error
+GH_COMMIT =	7683672d87067cd75b854f4e36b9820f4809a4be
+
 
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 
@@ -23,12 +31,9 @@ COMPILER =	base-clang ports-gcc
 LIB_DEPENDS =	devel/libuv
 
 USE_GMAKE =	Yes
-ALL_TARGET =	default
-MAKE_FLAGS =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		LIBusockets_VERSION="${LIBusockets_VERSION}" \
-		WITH_OPENSSL=1 WITH_LIBUV=1
+MAKE_FLAGS =	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		CC="${CC}" CXX="${CXX}" \
+		LIBusockets_VERSION="${LIBusockets_VERSION}"
 
 NO_TEST =	Yes
 
