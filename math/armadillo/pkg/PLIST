@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/10/28 15:13:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/12/11 12:40:44 martin Exp $
 include/armadillo
 include/armadillo_bits/
 include/armadillo_bits/BaseCube_bones.hpp
@@ -83,6 +83,7 @@ include/armadillo_bits/cond_rel_meat.hpp
 include/armadillo_bits/config.hpp
 include/armadillo_bits/constants.hpp
 include/armadillo_bits/constants_old.hpp
+include/armadillo_bits/csv_name.hpp
 include/armadillo_bits/debug.hpp
 include/armadillo_bits/def_arpack.hpp
 include/armadillo_bits/def_atlas.hpp
@@ -162,6 +163,7 @@ include/armadillo_bits/fn_join.hpp
 include/armadillo_bits/fn_kmeans.hpp
 include/armadillo_bits/fn_kron.hpp
 include/armadillo_bits/fn_log_det.hpp
+include/armadillo_bits/fn_log_normpdf.hpp
 include/armadillo_bits/fn_logmat.hpp
 include/armadillo_bits/fn_lu.hpp
 include/armadillo_bits/fn_max.hpp
@@ -182,9 +184,11 @@ include/armadillo_bits/fn_orth_null.hpp
 include/armadillo_bits/fn_pinv.hpp
 include/armadillo_bits/fn_polyfit.hpp
 include/armadillo_bits/fn_polyval.hpp
+include/armadillo_bits/fn_powmat.hpp
 include/armadillo_bits/fn_princomp.hpp
 include/armadillo_bits/fn_prod.hpp
 include/armadillo_bits/fn_qr.hpp
+include/armadillo_bits/fn_quantile.hpp
 include/armadillo_bits/fn_qz.hpp
 include/armadillo_bits/fn_randg.hpp
 include/armadillo_bits/fn_randi.hpp
@@ -226,6 +230,7 @@ include/armadillo_bits/fn_trans.hpp
 include/armadillo_bits/fn_trapz.hpp
 include/armadillo_bits/fn_trig.hpp
 include/armadillo_bits/fn_trimat.hpp
+include/armadillo_bits/fn_trimat_ind.hpp
 include/armadillo_bits/fn_trunc_exp.hpp
 include/armadillo_bits/fn_trunc_log.hpp
 include/armadillo_bits/fn_unique.hpp
@@ -269,6 +274,8 @@ include/armadillo_bits/glue_polyfit_bones.hpp
 include/armadillo_bits/glue_polyfit_meat.hpp
 include/armadillo_bits/glue_polyval_bones.hpp
 include/armadillo_bits/glue_polyval_meat.hpp
+include/armadillo_bits/glue_quantile_bones.hpp
+include/armadillo_bits/glue_quantile_meat.hpp
 include/armadillo_bits/glue_relational_bones.hpp
 include/armadillo_bits/glue_relational_meat.hpp
 include/armadillo_bits/glue_solve_bones.hpp
@@ -286,6 +293,7 @@ include/armadillo_bits/gmm_full_meat.hpp
 include/armadillo_bits/gmm_misc_bones.hpp
 include/armadillo_bits/gmm_misc_meat.hpp
 include/armadillo_bits/hdf5_misc.hpp
+include/armadillo_bits/hdf5_name.hpp
 include/armadillo_bits/include_atlas.hpp
 include/armadillo_bits/include_hdf5.hpp
 include/armadillo_bits/include_superlu.hpp
@@ -403,6 +411,8 @@ include/armadillo_bits/op_orth_null_bones.hpp
 include/armadillo_bits/op_orth_null_meat.hpp
 include/armadillo_bits/op_pinv_bones.hpp
 include/armadillo_bits/op_pinv_meat.hpp
+include/armadillo_bits/op_powmat_bones.hpp
+include/armadillo_bits/op_powmat_meat.hpp
 include/armadillo_bits/op_princomp_bones.hpp
 include/armadillo_bits/op_princomp_meat.hpp
 include/armadillo_bits/op_prod_bones.hpp
