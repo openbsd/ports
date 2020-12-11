@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/12/11 22:33:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/12/11 22:34:51 sthen Exp $
 
 COMMENT	=	eventing, networking & crypto for async applications
 CATEGORIES =	net
 
 VERSION =	0.6.0
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	usockets-${VERSION}
 PKGNAME =	${DISTNAME:L}
