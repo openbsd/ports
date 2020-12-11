@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/12/11 21:34:18 bluhm Exp $
 
 COMMENT =	widgets for OPC UA
 
-MODPY_EGG_VERSION =	0.5.9
+MODPY_EGG_VERSION =	0.5.10
 
 DISTNAME =	opcua-widgets-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	misc
 
