@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/06/10 10:53:16 kn Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/12/11 19:17:41 kn Exp $
 bin/vis-clipboard
 bin/vis-complete
 @bin bin/vis-digraph
@@ -67,6 +67,7 @@ share/vis/lexers/fortran.lua
 share/vis/lexers/fsharp.lua
 share/vis/lexers/fstab.lua
 share/vis/lexers/gap.lua
+share/vis/lexers/gemini.lua
 share/vis/lexers/gettext.lua
 share/vis/lexers/gherkin.lua
 share/vis/lexers/git-rebase.lua
@@ -100,6 +101,7 @@ share/vis/lexers/makefile.lua
 share/vis/lexers/man.lua
 share/vis/lexers/markdown.lua
 share/vis/lexers/matlab.lua
+share/vis/lexers/meson.lua
 share/vis/lexers/moonscript.lua
 share/vis/lexers/myrddin.lua
 share/vis/lexers/nemerle.lua
@@ -129,6 +131,7 @@ share/vis/lexers/rebol.lua
 share/vis/lexers/rest.lua
 share/vis/lexers/rexx.lua
 share/vis/lexers/rhtml.lua
+share/vis/lexers/routeros.lua
 share/vis/lexers/rstats.lua
 share/vis/lexers/ruby.lua
 share/vis/lexers/rust.lua
@@ -159,6 +162,7 @@ share/vis/lexers/xml.lua
 share/vis/lexers/xs.lua
 share/vis/lexers/xtend.lua
 share/vis/lexers/yaml.lua
+share/vis/lexers/zig.lua
 share/vis/plugins/
 share/vis/plugins/complete-filename.lua
 share/vis/plugins/complete-word.lua
