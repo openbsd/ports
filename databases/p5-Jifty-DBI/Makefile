@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/12/11 14:09:39 benoit Exp $
 
 COMMENT= 	database OO schema for Jifty
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME=	Jifty-DBI-0.68
+DISTNAME=	Jifty-DBI-0.78
 CATEGORIES=	databases www
-REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes
 
-BUILD_DEPENDS=	devel/p5-Test-Warn
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	databases/p5-DBI \
-		databases/p5-DBIx-DBSchema \
-		databases/p5-Data-Page \
+		databases/p5-DBIx-DBSchema>=0.34 \
+		databases/p5-Data-Page>=2.0 \
 		devel/p5-Cache-Memcached \
-		devel/p5-Cache-Simple-TimedExpiry \
+		devel/p5-Cache-Simple-TimedExpiry>=0.21 \
 		devel/p5-Class-Accessor \
 		devel/p5-Class-Data-Inheritable \
 		devel/p5-Class-ReturnValue \
@@ -30,11 +29,15 @@ RUN_DEPENDS=	databases/p5-DBI \
 		devel/p5-Hash-Merge \
 		devel/p5-Object-Declare>=0.22 \
 		devel/p5-Scalar-Defer>=0.10 \
-		devel/p5-Universal-require \
+		devel/p5-Time-Duration \
+		devel/p5-Time-Duration-Parse \
+		devel/p5-Universal-require>=0.11 \
+		devel/p5-YAML-Syck \
 		textproc/p5-Lingua-EN-Inflect \
 		www/p5-URI
 
 # a lot of tests will be skipped without DB connections
-TEST_DEPENDS=databases/p5-DBD-SQLite
+TEST_DEPENDS=	databases/p5-DBD-SQLite \
+		devel/p5-Test-Warn
 
 .include <bsd.port.mk>
