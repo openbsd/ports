@@ -1,4 +1,4 @@
-$OpenBSD: patch-gtweak_tweakview_py,v 1.1 2020/11/08 17:48:00 ajacoutot Exp $
+$OpenBSD: patch-gtweak_tweakview_py,v 1.2 2020/12/11 07:54:07 ajacoutot Exp $
 
 From 403b0cd8511268689e437ed5fe4bac7511745cfc Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?X=E2=84=B9=20Ruoyao?= <xry111@mengyan1223.wang>
@@ -8,7 +8,7 @@ Subject: [PATCH] Port to libhandy-1
 Index: gtweak/tweakview.py
 --- gtweak/tweakview.py.orig
 +++ gtweak/tweakview.py
-@@ -23,8 +23,7 @@ class Window(Gtk.ApplicationWindow):
+@@ -24,8 +24,7 @@ class Window(Gtk.ApplicationWindow):
          self.hsize_group = Gtk.SizeGroup(mode=Gtk.SizeGroupMode.HORIZONTAL)
  
          self.main_box = Handy.Leaflet()
@@ -18,7 +18,7 @@ Index: gtweak/tweakview.py
  
          left_box = self.sidebar()
          right_box = self.main_content()
-@@ -68,14 +67,13 @@ class Window(Gtk.ApplicationWindow):
+@@ -69,14 +68,13 @@ class Window(Gtk.ApplicationWindow):
      def titlebar(self):
  
          header = Handy.Leaflet()
@@ -36,7 +36,7 @@ Index: gtweak/tweakview.py
          right_header.props.show_close_button = True
          right_header.props.hexpand = True
  
-@@ -226,9 +224,9 @@ class Window(Gtk.ApplicationWindow):
+@@ -227,9 +225,9 @@ class Window(Gtk.ApplicationWindow):
      def _update_decorations(self, *_):
          header = self.get_titlebar()
          if header.props.folded:
