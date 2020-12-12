@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.133 2020/08/20 17:58:57 rsadowski Exp $
+# $OpenBSD: portcheck,v 1.134 2020/12/12 15:12:07 rsadowski Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1312,32 +1312,21 @@ check_plist() {
 }
 
 # Checks made:
-#   * lib/kde/ and lib/kde4/ prefixes not missing where applicable.
 #   * stdc++ doesn't get into WANTLIB when gcc4.port.mk is used.
 check_wantlib() {
 	local portref="$1"; shift
 	local modules="$1"; shift
 	local default_compiler="$1"; shift
 
-	local phonon_s_wantlib=false
-
-	local kde3_module=false
-	local kde4_module=false
 	local gcc4_module=false
 
 	local v
 
 	for v in $modules; do case $v in
 		gcc4)			gcc4_module=true;;
-		x11/kde)		kde3_module=true;;
-		x11/kde4)		kde4_module=true;;
 	esac; done
 
 	for v; do case $v in
-		phonon_s?(?(">")=+([0-9])))
-			phonon_s_wantlib=true
-			;;
-
 		@(smbclient|wbclient)?(?('>')=+([0-9])))
 			err "$portref$v instead of lib/samba/$v" \
 			    "in WANTLIB"
@@ -1346,19 +1335,6 @@ check_wantlib() {
 		@(DCOP|soundserver_idl|vcard)?(?('>')=+([0-9])))
 			err "$portref$v instead of \${KDE}/$v" \
 			    "in WANTLIB (check other libs, too!)"
-			;;
-
-		@(kdecore|kdeui|kio)?(?('>')=+([0-9])))
-			if $kde4_module; then
-				err "$portref$v instead of \${KDE4LIB}/$v" \
-				    "in WANTLIB (check other libs, too!)"
-			elif $kde3_module; then 
-				err "$portref$v instead of \${KDE}/$v" \
-				    "in WANTLIB (check other libs, too!)"
-			else
-				err "$portref$v WANTLIB without x11/kde*" \
-				    "in MODULES (check other libs, too!)"
-			fi
 			;;
 
 		@(c++|stdc++)?(?('>')=+([0-9])))
