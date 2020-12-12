@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/12/12 08:57:32 benoit Exp $
 
 COMMENT =	convert singular to plural, select a or an
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Lingua-EN-Inflect-1.899
+DISTNAME =	Lingua-EN-Inflect-1.905
 CATEGORIES =	textproc
-REVISION =	1
 
 # Same as Perl
 PERMIT_PACKAGE =	Yes
