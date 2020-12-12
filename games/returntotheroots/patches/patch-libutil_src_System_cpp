@@ -1,0 +1,24 @@
+$OpenBSD: patch-libutil_src_System_cpp,v 1.1 2020/12/12 06:59:51 bcallah Exp $
+
+Fix build with newer Boost.
+
+Index: libutil/src/System.cpp
+--- libutil/src/System.cpp.orig
++++ libutil/src/System.cpp
+@@ -251,7 +251,6 @@ bfs::path System::getExecutablePath()
+ 
+ #undef AIX
+ #undef AMIGAOS
+-#undef ANDROID
+ #undef BEOS
+ #undef BSD
+ #undef CYGWIN
+@@ -271,7 +270,7 @@ bfs::path System::getExecutablePath()
+ #undef BSD_NET
+ #undef BSD_OPEN
+ #define RTTR_BOOST_OS_LIST                                                                                                         \
+-    (AIX)(AMIGAOS)(ANDROID)(BEOS)(BSD)(CYGWIN)(HPUX)(IRIX)(LINUX)(MACOS)(OS400)(QNX)(SOLARIS)(UNIX)(SVR4)(VMS)(WINDOWS)(BSD_BSDI)( \
++    (AIX)(AMIGAOS)(BEOS)(BSD)(CYGWIN)(HPUX)(IRIX)(LINUX)(MACOS)(OS400)(QNX)(SOLARIS)(UNIX)(SVR4)(VMS)(WINDOWS)(BSD_BSDI)( \
+       BSD_DRAGONFLY)(BSD_FREE)(BSD_NET)(BSD_OPEN)
+ 
+ #undef BORLAND
