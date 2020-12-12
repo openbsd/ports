@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/11 21:43:59 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/12 15:02:35 sthen Exp $
 @newgroup _purritobin:858
 @newuser _purritobin:858:858:daemon:PurritoBin Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/purritobin
 @bin bin/purrito
+@man man/man1/purrito.1
 share/doc/pkg-readmes/${PKGSTEM}
 @owner _purritobin
 @group _purritobin
