@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/10/23 19:21:47 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2020/12/12 09:11:26 rsadowski Exp $
 bin/qutebrowser
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -297,6 +297,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/global_wrapper.j
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/globalthis_quirk.user.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/greasemonkey_wrapper.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/history.js
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/object_fromentries_quirk.user.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/pac_utils.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/position_caret.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/print.js
