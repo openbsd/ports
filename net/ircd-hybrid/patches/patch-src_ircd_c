@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_ircd_c,v 1.18 2020/05/15 06:34:13 ajacoutot Exp $
+$OpenBSD: patch-src_ircd_c,v 1.19 2020/12/12 19:28:21 solene Exp $
 
 Index: src/ircd.c
 --- src/ircd.c.orig
 +++ src/ircd.c
-@@ -331,7 +331,6 @@ make_daemon(void)
+@@ -330,7 +330,6 @@ make_daemon(void)
    }
    else if (pid > 0)
    {
@@ -11,7 +11,7 @@ Index: src/ircd.c
      exit(EXIT_SUCCESS);
    }
  
-@@ -344,8 +343,19 @@ main(int argc, char *argv[])
+@@ -343,8 +342,19 @@ main(int argc, char *argv[])
    /* Check to see if the user is running us as root, which is a nono */
    if (geteuid() == 0)
    {
