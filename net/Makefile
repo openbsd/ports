@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1232 2020/12/10 11:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.1233 2020/12/12 14:22:39 solene Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -197,6 +197,7 @@
      SUBDIR += ktorrent
      SUBDIR += kurly
      SUBDIR += ladvd
+     SUBDIR += lagrange
      SUBDIR += ldns
      SUBDIR += lftp
      SUBDIR += libbgpdump
