@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2020/09/09 08:01:32 bket Exp $
+# $OpenBSD: Makefile,v 1.37 2020/12/12 06:23:37 bket Exp $
 
 PORTROACH=	limit:^2\.16
 
@@ -6,7 +6,7 @@ COMMENT=	SSL library with an intuitive API and readable source code
 
 GH_ACCOUNT=	ARMmbed
 GH_PROJECT=	mbedtls
-GH_TAGNAME=	mbedtls-2.16.8
+GH_TAGNAME=	mbedtls-2.16.9
 DISTNAME=	${GH_TAGNAME}
 
 # check SOVERSION
