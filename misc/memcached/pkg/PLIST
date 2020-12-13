@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/05/14 16:49:05 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/12/13 08:19:19 giovanni Exp $
 @newgroup _memcached:637
 @newuser _memcached:637:_memcached:daemon:memcache daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/memcached
@@ -9,7 +9,10 @@ include/memcached/protocol_binary.h
 @man man/man1/memcached-tool.1
 @man man/man1/memcached.1
 share/doc/memcached/
+share/doc/memcached/napi_ids.txt
 share/doc/memcached/new_lru.txt
+share/doc/memcached/protocol-binary-range.txt
+share/doc/memcached/protocol-binary.txt
 share/doc/memcached/protocol.txt
 share/doc/memcached/readme.txt
 share/doc/memcached/storage.txt

@@ -1,13 +1,49 @@
-$OpenBSD: patch-configure,v 1.13 2019/05/14 16:49:05 giovanni Exp $
+$OpenBSD: patch-configure,v 1.14 2020/12/13 08:19:19 giovanni Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6818,7 +6818,7 @@ $as_echo "#define _GNU_SOURCE 1" >>confdefs.h
+@@ -5773,7 +5773,7 @@ else
+   le_found=no
+   for ledir in $trylibeventdir "" $prefix /usr/local ; do
+     LDFLAGS="$saved_LDFLAGS"
+-    LIBS="-levent $saved_LIBS"
++    LIBS="-levent_core $saved_LIBS"
+ 
+     # Skip the directory if it isn't there.
+     if test ! -z "$ledir" -a ! -d "$ledir" ; then
+@@ -5796,7 +5796,7 @@ else
+ /* end confdefs.h.  */
+ #include <sys/time.h>
+ #include <sys/types.h>
+-#include <event.h>
++#include <event2/event.h>
+ int
+ main ()
+ {
+@@ -5843,7 +5843,7 @@ fi
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_libevent_dir" >&5
+ $as_echo "$ac_cv_libevent_dir" >&6; }
+-LIBS="-levent $LIBS"
++LIBS="-levent_core $LIBS"
+ if test $ac_cv_libevent_dir != "(system)"; then
+   if test -d "$ac_cv_libevent_dir/lib" ; then
+     LDFLAGS="-L$ac_cv_libevent_dir/lib $LDFLAGS"
+@@ -5866,7 +5866,7 @@ else
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+-#include <event.h>
++#include <event2/event.h>
+ 
+ int
+ main ()
+@@ -7254,7 +7254,7 @@ $as_echo "#define _GNU_SOURCE 1" >>confdefs.h
  elif test "$GCC" = "yes"
  then
    GCC_VERSION=`$CC -dumpversion`
 -  CFLAGS="$CFLAGS -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls"
 +  CFLAGS="$CFLAGS -Wall -Wmissing-prototypes -pedantic -Wmissing-declarations"
-   case $GCC_VERSION in
-     4.4.*)
-     CFLAGS="$CFLAGS -fno-strict-aliasing"
+   if test "x$enable_asan" = "xyes"; then
+     CFLAGS="$CFLAGS -fsanitize=address"
+   fi

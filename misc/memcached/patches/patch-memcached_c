@@ -1,9 +1,9 @@
-$OpenBSD: patch-memcached_c,v 1.17 2019/05/14 16:49:05 giovanni Exp $
+$OpenBSD: patch-memcached_c,v 1.18 2020/12/13 08:19:19 giovanni Exp $
 
 Index: memcached.c
 --- memcached.c.orig
 +++ memcached.c
-@@ -7719,8 +7719,8 @@ int main (int argc, char **argv) {
+@@ -5309,8 +5309,8 @@ int main (int argc, char **argv) {
                  start_lru_maintainer = false;
                  break;
              case NO_DROP_PRIVILEGES:

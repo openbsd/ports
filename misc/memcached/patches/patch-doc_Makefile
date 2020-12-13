@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_Makefile,v 1.1 2020/12/13 08:19:19 giovanni Exp $
+
+Index: doc/Makefile
+--- doc/Makefile.orig
++++ doc/Makefile
+@@ -184,7 +184,7 @@ INSTALL_SCRIPT = ${INSTALL}
+ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
+ LDFLAGS = 
+ LIBOBJS = 
+-LIBS = -levent 
++LIBS = -levent_core
+ LTLIBOBJS = 
+ MAKEINFO = ${SHELL} /home/dormando/d/p/danga/git/memcached/missing makeinfo
+ MKDIR_P = /bin/mkdir -p
