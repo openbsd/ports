@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/06/09 17:34:15 chrisz Exp $
+# $OpenBSD: Makefile,v 1.32 2020/12/13 05:56:11 daniel Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -8,9 +8,9 @@ CATEGORIES=	textproc print
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c m pthread
 
-DISTNAME =	hevea-2.32
-REVISION =	2
-MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/ \
+DISTNAME =	hevea-2.34
+MASTER_SITES =	http://hevea.inria.fr/distri/ \
+		http://hevea.inria.fr/old/ \
 		https://spacehopper.org/mirrors/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}
