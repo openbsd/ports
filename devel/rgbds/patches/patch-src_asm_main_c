@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_asm_main_c,v 1.4 2020/04/12 04:24:56 bentley Exp $
+$OpenBSD: patch-src_asm_main_c,v 1.5 2020/12/13 14:24:29 bentley Exp $
 
 Index: src/asm/main.c
 --- src/asm/main.c.orig
 +++ src/asm/main.c
-@@ -31,6 +31,8 @@
+@@ -34,6 +34,8 @@
  #include "helpers.h"
  #include "version.h"
  
 +int pledge(const char *, const char *);
 +
- extern int yyparse(void);
- 
- size_t cldefines_index;
-@@ -342,6 +344,9 @@ int main(int argc, char *argv[])
+ // Old Bison versions (confirmed for 2.3) do not forward-declare `yyparse` in the generated header
+ // Unfortunately, macOS still ships 2.3, which is from 2008...
+ int yyparse(void);
+@@ -307,6 +309,9 @@ int main(int argc, char *argv[])
  	cldefines = malloc(cldefines_bufsize);
  	if (!cldefines)
- 		fatalerror("No memory for command line defines");
+ 		fatalerror("No memory for command line defines\n");
 +
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1)
 +		fatalerror("pledge");

@@ -1,18 +1,18 @@
-$OpenBSD: patch-src_link_main_c,v 1.2 2020/04/12 04:24:56 bentley Exp $
+$OpenBSD: patch-src_link_main_c,v 1.3 2020/12/13 14:24:29 bentley Exp $
 
 Index: src/link/main.c
 --- src/link/main.c.orig
 +++ src/link/main.c
-@@ -51,6 +51,8 @@ FILE *openFile(char const *fileName, char const *mode)
+@@ -144,6 +144,8 @@ FILE *openFile(char const *fileName, char const *mode)
  /* Short options */
- static char const *optstring = "dl:m:n:O:o:p:s:tVvw";
+ static char const *optstring = "dl:m:n:O:o:p:s:tVvwx";
  
 +int pledge(const char *, const char *);
 +
  /*
   * Equivalent long options
   * Please keep in the same order as short opts
-@@ -112,6 +114,9 @@ int main(int argc, char *argv[])
+@@ -207,6 +209,9 @@ int main(int argc, char *argv[])
  	int optionChar;
  	char *endptr; /* For error checking with `strtol` */
  	unsigned long value; /* For storing `strtoul`'s return value */
