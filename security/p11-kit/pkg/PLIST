@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/01/25 06:26:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2020/12/13 09:40:34 ajacoutot Exp $
 @bin bin/p11-kit
 @bin bin/trust
 include/p11-kit-1/
@@ -23,6 +23,10 @@ libexec/p11-kit/
 @bin libexec/p11-kit/p11-kit-remote
 @bin libexec/p11-kit/p11-kit-server
 libexec/p11-kit/trust-extract-compat
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/p11-kit
+share/bash-completion/completions/trust
 share/examples/p11-kit/
 share/examples/p11-kit/pkcs11/
 @sample ${SYSCONFDIR}/pkcs11/

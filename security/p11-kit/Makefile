@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2020/08/19 12:32:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2020/12/13 09:40:34 ajacoutot Exp $
 
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
 GH_PROJECT=		p11-kit
 GH_ACCOUNT=		p11-glue
-GH_TAGNAME=		0.23.21
+GH_TAGNAME=		0.23.22
 
 CATEGORIES=		security
 
@@ -18,6 +18,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += 	c ffi iconv intl pthread tasn1
+
+BUILD_DEPENDS=		shells/bash-completion
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libffi \
