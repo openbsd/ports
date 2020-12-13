@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_import_cc,v 1.1 2020/12/13 20:40:55 sthen Exp $
+
+Fix build with newer Boost.
+
+Index: src/import.cc
+--- src/import.cc.orig
++++ src/import.cc
+@@ -50,7 +50,6 @@ namespace fs = boost::filesystem;
+ #include <boost/assign/std/vector.hpp>
+ using namespace boost::assign; // bring 'operator+=()' into scope
+ 
+-#include <boost/detail/endian.hpp>
+ #include <cstdint>
+ 
+ extern PolySet * import_amf(std::string, const Location &loc);
