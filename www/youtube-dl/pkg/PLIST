@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.138 2020/12/10 08:19:32 mestre Exp $
+@comment $OpenBSD: PLIST,v 1.139 2020/12/13 19:15:53 mestre Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -100,7 +100,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}az
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}baidu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bandcamp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bbc.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}beampro.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}beatport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}beeg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}behindkink.${MODPY_PYC_MAGIC_TAG}pyc
@@ -603,7 +602,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}sk
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}slideshare.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}slideslive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}slutload.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}smotri.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}snotr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}sohu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}sonyliv.${MODPY_PYC_MAGIC_TAG}pyc
@@ -874,7 +872,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/azmedien.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/baidu.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bandcamp.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bbc.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/beampro.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/beatport.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/beeg.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/behindkink.py
@@ -1377,7 +1374,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/skynewsarabia.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/slideshare.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/slideslive.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/slutload.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/smotri.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/snotr.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sohu.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sonyliv.py
