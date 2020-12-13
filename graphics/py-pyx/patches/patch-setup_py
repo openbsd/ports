@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.3 2020/12/13 22:12:54 daniel Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -20,7 +20,7 @@ old releases up to PyX 0.12.x, i.e. execute something 
+     exit()
+ 
+ 
+-from distutils.core import setup, Extension
++from setuptools import setup, Extension
+ import configparser
+ import pyx.version
+ 
