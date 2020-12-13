@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/26 19:55:08 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2020/12/13 02:42:17 gkoehler Exp $
 
 
 COMMENT =	smalltalk system, exploration image
@@ -7,6 +7,7 @@ PKG_ARCH =	*
 
 DISTFILES =	FunSqueak3.10alpha.7.zip
 DISTNAME =	squeak-funsqueak-3.10alpha7
+REVISION=	0
 EPOCH =		0
 MASTER_SITES =	${SQUEAK_SITE}../various_images/FunSqueak/
 RUN_DEPENDS =	lang/squeak/vm>=3.10

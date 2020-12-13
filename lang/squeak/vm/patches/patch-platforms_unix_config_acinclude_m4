@@ -1,14 +1,25 @@
-$OpenBSD: patch-platforms_unix_config_acinclude_m4,v 1.1 2020/01/14 22:20:29 sthen Exp $
+$OpenBSD: patch-platforms_unix_config_acinclude_m4,v 1.2 2020/12/13 02:42:17 gkoehler Exp $
 
-fix build on alpha
+fix build on alpha, powerpc
 
 Index: platforms/unix/config/acinclude.m4
 --- platforms/unix/config/acinclude.m4.orig
 +++ platforms/unix/config/acinclude.m4
-@@ -255,16 +255,6 @@ fi)
+@@ -114,9 +114,6 @@ if test "$GCC" = yes; then
+   i?86)
+     ac_optflags="-fomit-frame-pointer"
+     ;;
+-  powerpc|ppc)
+-    ac_optflags="-O3 -funroll-loops -mcpu=750 -mno-fused-madd"
+-    ;;
+   esac
+   AC_DEFINE(VM_BUILD_STRING, ["Unix built on "__DATE__ " "__TIME__" Compiler: "__VERSION__])
+ else
+@@ -254,16 +251,6 @@ else ac_cv_module_prefix="lib"
+ fi)
  AC_DEFINE_UNQUOTED(VM_MODULE_PREFIX,"$mkfrags_lib_prefix")
  test "$ac_cv_module_prefix" = lib && mkfrags_lib_prefix=lib])
- 
+-
 -AC_DEFUN([AC_64BIT_ARCH],
 -[AC_MSG_CHECKING(for compiler flags to force 32-bit addresses)
 -case $host in
@@ -18,7 +29,6 @@ Index: platforms/unix/config/acinclude.m4
 -    ;;
 -esac
 -AC_MSG_RESULT($CFLAGS_32)])
--
+ 
  
  ### plugin support
- 

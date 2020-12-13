@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/23 11:17:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2020/12/13 02:42:17 gkoehler Exp $
 
 
 COMMENT =	smalltalk system, smalltalk sources
@@ -9,6 +9,7 @@ NO_BUILD =	Yes
 DISTNAME =	squeak-sources-${SOURCEV}
 PKG_ARCH = *
 MASTER_SITES =	${SQUEAK_SITE}
+REVISION=	0
 
 do-install:
 	${INSTALL_DATA_DIR} ${SQUEAK_DIR}

@@ -1,0 +1,14 @@
+$OpenBSD: patch-platforms_unix_config_Makefile_in,v 1.1 2020/12/13 02:42:17 gkoehler Exp $
+
+Index: platforms/unix/config/Makefile.in
+--- platforms/unix/config/Makefile.in.orig
++++ platforms/unix/config/Makefile.in
+@@ -43,7 +43,7 @@ all : $(squeak) plugins squeak.1 $(npsqueak)
+ # VM
+ 
+ $(squeak) : config.sh $(SQLIBS) version.o
+-	$(LINK) $(squeak) $(SQLIBS) version.o $(LIBS) [plibs] vm/vm.a
++	$(LINK) $(squeak) vm/vm.a $(SQLIBS) version.o $(LIBS) [plibs]
+ 	@echo
+ 	@size $(squeak)
+ 	@echo

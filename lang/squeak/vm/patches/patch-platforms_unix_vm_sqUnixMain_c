@@ -1,4 +1,4 @@
-$OpenBSD: patch-platforms_unix_vm_sqUnixMain_c,v 1.7 2020/01/14 22:20:29 sthen Exp $
+$OpenBSD: patch-platforms_unix_vm_sqUnixMain_c,v 1.8 2020/12/13 02:42:17 gkoehler Exp $
 
 Index: platforms/unix/vm/sqUnixMain.c
 --- platforms/unix/vm/sqUnixMain.c.orig
@@ -25,6 +25,17 @@ Index: platforms/unix/vm/sqUnixMain.c
    { &soundModule,   "sound",   "custom" },	/*** NO DEFAULT ***/
    /* defaults */
    { &displayModule, "display", "Quartz" },
+@@ -1292,8 +1289,8 @@ void imgInit(void)
+ 			|| defined(POWERPC) || defined(__POWERPC) || defined (__POWERPC__) )
+   void mtfsfi(unsigned long long fpscr)
+   {
+-    __asm__("lfd   f0, %0" :: "m"(fpscr));
+-    __asm__("mtfsf 0xff, f0");
++    __asm__("lfd   0, %0" :: "m"(fpscr));
++    __asm__("mtfsf 0xff, 0");
+   }
+ #else
+ # define mtfsfi(fpscr)
 @@ -1329,17 +1326,6 @@ int main(int argc, char **argv, char **envp)
      outOfMemory();
  

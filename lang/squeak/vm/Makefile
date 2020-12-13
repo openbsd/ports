@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/02/11 13:44:10 kmos Exp $
-
-BROKEN-sparc64 = Many undefined references when linking
+# $OpenBSD: Makefile,v 1.31 2020/12/13 02:42:17 gkoehler Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -8,7 +6,7 @@ SRCV =		1
 DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz
 
 PKGNAME =	squeak-vm-$V.${SRCV}
-REVISION =	10
+REVISION =	11
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config

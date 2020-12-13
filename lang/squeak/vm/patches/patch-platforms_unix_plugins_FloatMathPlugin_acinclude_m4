@@ -1,0 +1,15 @@
+$OpenBSD: patch-platforms_unix_plugins_FloatMathPlugin_acinclude_m4,v 1.1 2020/12/13 02:42:17 gkoehler Exp $
+
+Index: platforms/unix/plugins/FloatMathPlugin/acinclude.m4
+--- platforms/unix/plugins/FloatMathPlugin/acinclude.m4.orig
++++ platforms/unix/plugins/FloatMathPlugin/acinclude.m4
+@@ -5,9 +5,6 @@ if test "$GCC" = yes; then
+   i?86)
+     libm_cflags="-O -fomit-frame-pointer"
+     ;;
+-  powerpc|ppc)
+-    libm_cflags="-O3 -funroll-loops -mcpu=750 -mno-fused-madd"
+-    ;;
+   esac
+ fi
+ 
