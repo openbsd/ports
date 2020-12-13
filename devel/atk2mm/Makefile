@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/12/13 16:14:41 ajacoutot Exp $
 
 COMMENT=		C++ binding for the ATK library
 
 GNOME_PROJECT=		atkmm
-GNOME_VERSION=		2.28.0
+GNOME_VERSION=		2.28.1
 PKGNAME=		atk2mm-${GNOME_VERSION}
 
 CATEGORIES=		devel
@@ -17,19 +17,18 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += atk-1.0 ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += iconv intl m pcre pthread sigc-2.0
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} atk-1.0 glib-2.0 glibmm-2.4 gobject-2.0
+WANTLIB += sigc-2.0
 
-MODULES=		x11/gnome
+MODULES=		devel/meson \
+			x11/gnome
+
 # c++11
-COMPILER =		base-clang ports-gcc
+COMPILER=		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/glib2mm \
 			devel/atk
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-static \
-			--disable-dependency-tracking
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
