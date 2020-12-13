@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: apache2.rc,v 1.5 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: apache2.rc,v 1.6 2020/12/13 08:45:14 giovanni Exp $
 
 daemon="${TRUEPREFIX}/sbin/httpd2"
 
@@ -15,7 +15,7 @@ rc_start() {
 }
 
 rc_stop() {
-	${TRUEPREFIX}/sbin/apachectl2 graceful-stop
+	${TRUEPREFIX}/sbin/apachectl2 graceful-stop ${daemon_flags}
 }
 
 rc_cmd $1
