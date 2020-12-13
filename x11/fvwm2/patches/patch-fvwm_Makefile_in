@@ -1,25 +1,27 @@
-$OpenBSD: patch-fvwm_Makefile_in,v 1.7 2012/05/19 18:31:07 shadchin Exp $
---- fvwm/Makefile.in.orig	Fri Apr 20 17:03:55 2012
-+++ fvwm/Makefile.in	Mon Apr 30 21:20:31 2012
-@@ -35,7 +35,7 @@ PRE_UNINSTALL = :
+$OpenBSD: patch-fvwm_Makefile_in,v 1.8 2020/12/13 21:17:02 sthen Exp $
+
+Index: fvwm/Makefile.in
+--- fvwm/Makefile.in.orig
++++ fvwm/Makefile.in
+@@ -79,7 +79,7 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
 -bin_PROGRAMS = fvwm$(EXEEXT)
 +bin_PROGRAMS = fvwm2$(EXEEXT)
  subdir = fvwm
- DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -450,7 +450,7 @@ uninstall-binPROGRAMS:
- 
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/etc/depcomp
+@@ -549,7 +549,7 @@ uninstall-binPROGRAMS:
  clean-binPROGRAMS:
  	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
--fvwm$(EXEEXT): $(fvwm_OBJECTS) $(fvwm_DEPENDENCIES) 
-+fvwm2$(EXEEXT): $(fvwm_OBJECTS) $(fvwm_DEPENDENCIES) 
- 	@rm -f fvwm$(EXEEXT)
- 	$(LINK) $(fvwm_OBJECTS) $(fvwm_LDADD) $(LIBS)
  
-@@ -689,7 +689,7 @@ install-dvi: install-dvi-am
+-fvwm$(EXEEXT): $(fvwm_OBJECTS) $(fvwm_DEPENDENCIES) $(EXTRA_fvwm_DEPENDENCIES) 
++fvwm2$(EXEEXT): $(fvwm_OBJECTS) $(fvwm_DEPENDENCIES) $(EXTRA_fvwm_DEPENDENCIES) 
+ 	@rm -f fvwm$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(fvwm_OBJECTS) $(fvwm_LDADD) $(LIBS)
+ 
+@@ -795,7 +795,7 @@ install-dvi: install-dvi-am
  
  install-dvi-am:
  

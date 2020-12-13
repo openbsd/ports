@@ -1,0 +1,19 @@
+$OpenBSD: patch-default-config_Makefile_in,v 1.1 2020/12/13 21:17:02 sthen Exp $
+
+Index: default-config/Makefile.in
+--- default-config/Makefile.in.orig
++++ default-config/Makefile.in
+@@ -597,9 +597,10 @@ uninstall-am: uninstall-configDATA
+ 
+ install-data-hook:
+ 	cp -r $(srcdir)/images $(inst_location)
+-	ln -sf $(inst_location)/FvwmScript-DateTime $(inst_location)/..
+-	ln -sf $(inst_location)/FvwmScript-ConfirmQuit $(inst_location)/..
+-	ln -sf $(inst_location)/FvwmScript-ConfirmCopyConfig $(inst_location)/..
++	mv $(inst_location)/FvwmScript-DateTime $(inst_location)/..
++	mv $(inst_location)/FvwmScript-ConfirmQuit $(inst_location)/..
++	mv $(inst_location)/FvwmScript-ConfirmCopyConfig $(inst_location)/..
++
+ 
+ uninstall-hook:
+ 	rm -fr $(DESTDIR)/$(configdir)

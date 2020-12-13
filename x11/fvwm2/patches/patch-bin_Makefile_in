@@ -1,12 +1,14 @@
-$OpenBSD: patch-bin_Makefile_in,v 1.1 2011/04/26 18:50:46 shadchin Exp $
---- bin/Makefile.in.orig	Fri Mar  4 08:47:50 2011
-+++ bin/Makefile.in	Fri Mar  4 08:48:13 2011
-@@ -710,14 +710,13 @@ info: info-am
+$OpenBSD: patch-bin_Makefile_in,v 1.2 2020/12/13 21:17:02 sthen Exp $
+
+Index: bin/Makefile.in
+--- bin/Makefile.in.orig
++++ bin/Makefile.in
+@@ -824,14 +824,13 @@ info: info-am
  
  info-am:
  
--install-data-am: install-data-local install-man
-+install-data-am: install-man
+-install-data-am: install-configDATA install-data-local install-man
++install-data-am: install-configDATA install-man
  
  install-dvi: install-dvi-am
  
