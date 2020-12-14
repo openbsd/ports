@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/09/08 17:02:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/12/14 06:26:27 rsadowski Exp $
 include/yaml-cpp/
 include/yaml-cpp/anchor.h
 include/yaml-cpp/binary.h
@@ -10,6 +10,7 @@ include/yaml-cpp/emitfromevents.h
 include/yaml-cpp/emitter.h
 include/yaml-cpp/emitterdef.h
 include/yaml-cpp/emittermanip.h
+include/yaml-cpp/emitterstyle.h
 include/yaml-cpp/eventhandler.h
 include/yaml-cpp/exceptions.h
 include/yaml-cpp/mark.h
@@ -32,12 +33,17 @@ include/yaml-cpp/node/node.h
 include/yaml-cpp/node/parse.h
 include/yaml-cpp/node/ptr.h
 include/yaml-cpp/node/type.h
-include/yaml-cpp/noncopyable.h
 include/yaml-cpp/null.h
 include/yaml-cpp/ostream_wrapper.h
 include/yaml-cpp/parser.h
 include/yaml-cpp/stlemitter.h
 include/yaml-cpp/traits.h
 include/yaml-cpp/yaml.h
+lib/cmake/
+lib/cmake/yaml-cpp/
+lib/cmake/yaml-cpp/yaml-cpp-config-version.cmake
+lib/cmake/yaml-cpp/yaml-cpp-config.cmake
+lib/cmake/yaml-cpp/yaml-cpp-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/yaml-cpp/yaml-cpp-targets.cmake
 @lib lib/libyaml-cpp.so.${LIByaml-cpp_VERSION}
 lib/pkgconfig/yaml-cpp.pc
