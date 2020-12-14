@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/12/11 16:11:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2020/12/14 17:41:37 kmos Exp $
 
 COMMENT =		Python interface to MySQL
 
@@ -17,6 +17,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${MODPY_WANTLIB} mariadb pthread
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=m/mysqlclient/}
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
