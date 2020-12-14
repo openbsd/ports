@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/15 19:57:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/12/14 15:59:33 rsadowski Exp $
 
 COMMENT-main=	open H.265 video codec implementation
 COMMENT-tools=	tools for libde265 open H.265 video codec
 
-V=		1.0.5
+V=		1.0.7
 DISTNAME=	libde265-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tools=	libde265-tools-$V
-REVISION=	1
-REVISION-tools=	3
 
-SHARED_LIBS +=  de265                     0.0 # 0.12
+SHARED_LIBS +=  de265                     0.1 # 0.12
 
 CATEGORIES=	multimedia
 
@@ -22,8 +20,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} m
 
 WANTLIB-tools += ${WANTLIB}
-WANTLIB-tools += GL Qt5Core Qt5Gui Qt5Widgets SDL X11 X11-xcb Xdamage
-WANTLIB-tools += Xext Xfixes Xxf86vm avutil c de265 double-conversion
+WANTLIB-tools += GL Qt5Core Qt5Gui Qt5Widgets SDL X11 X11-xcb Xau Xdamage
+WANTLIB-tools += Xdmcp Xext Xfixes Xxf86vm avutil c de265 double-conversion
 WANTLIB-tools += drm execinfo expat freetype glapi glib-2.0 graphite2
 WANTLIB-tools += gthread-2.0 harfbuzz iconv icudata icui18n icuio icuuc
 WANTLIB-tools += intl pcre pcre2-16 png sndio swscale usbhid xcb xcb-dri2
