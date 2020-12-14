@@ -1,0 +1,17 @@
+$OpenBSD: patch-common_compat_c,v 1.6 2020/12/14 07:59:31 ajacoutot Exp $
+
+Index: common/compat.c
+--- common/compat.c.orig
++++ common/compat.c
+@@ -40,6 +40,11 @@
+  */
+ #define _XOPEN_SOURCE 700
+ 
++/*
++ * This is needed to expose issetugid since we define _XOPEN_SOURCE
++ */
++#define _BSD_SOURCE
++
+ #include "compat.h"
+ #include "debug.h"
+ 

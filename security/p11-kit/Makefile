@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.58 2020/12/13 09:40:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2020/12/14 07:59:31 ajacoutot Exp $
 
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
 GH_PROJECT=		p11-kit
 GH_ACCOUNT=		p11-glue
 GH_TAGNAME=		0.23.22
+REVISION=		0
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  p11-kit              3.0      # 3.0
+SHARED_LIBS += p11-kit                   3.0 # 0.3.0
 
 HOMEPAGE=		http://p11-glue.freedesktop.org/
 
@@ -17,35 +18,28 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += 	c ffi iconv intl pthread tasn1
+WANTLIB += c ffi pthread tasn1
 
-BUILD_DEPENDS=		shells/bash-completion
+MODULES=		devel/meson
 
-LIB_DEPENDS=		devel/gettext,-runtime \
-			devel/libffi \
+CFLAGS +=		-pthread
+
+BUILD_DEPENDS=		devel/gettext,-tools \
+			shells/bash-completion
+
+LIB_DEPENDS=		devel/libffi \
 			security/libtasn1
 
-CONFIGURE_STYLE=	autoreconf
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--with-module-path=${PREFIX}/lib/pkcs11 \
-			--with-trust-paths=/etc/ssl/cert.pem \
-			--without-systemd
-
-# no translation yet
-#CONFIGURE_ARGS +=	--disable-nls
+CONFIGURE_ARGS=		-Dmodule_path=${PREFIX}/lib/pkcs11 \
+			-Dtrust_paths=/etc/ssl/cert.pem \
+			-Dsystemd=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
-AUTORECONF=		./autogen.sh
-BUILD_DEPENDS +=	devel/gettext,-tools
-
 post-install:
-	rm ${PREFIX}/lib/pkcs11/*.{a,la}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p11-kit/
+	mv ${WRKINST}${SYSCONFDIR}/pkcs11 \
+		${PREFIX}/share/examples/p11-kit/
 # see the install-exec-hook target in p11-kit/Makefile.am
 	ln -sf libp11-kit.so.${LIBp11-kit_VERSION} ${PREFIX}/lib/p11-kit-proxy.so
 
