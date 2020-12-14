@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/24 17:59:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2020/12/14 16:06:00 rsadowski Exp $
 
 COMMENT =		library supporting Blu-ray playback
 
-V =			1.1.2
+V =			1.2.1
 DISTNAME =		libbluray-${V}
 CATEGORIES =		multimedia
 
-HOMEPAGE =		http://www.videolan.org/developers/libbluray.html
+HOMEPAGE =		https://www.videolan.org/developers/libbluray.html
 
 MASTER_SITES =		https://download.videolan.org/pub/videolan/libbluray/${V}/ \
 			ftp://ftp.videolan.org/pub/videolan/libbluray/${V}/
@@ -18,14 +18,17 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c expat fontconfig freetype iconv lzma m pthread
 WANTLIB +=		xml2 z
 
-SHARED_LIBS +=		bluray		3.0	# 11.0
+SHARED_LIBS +=		bluray		3.1	# 11.0
 
 LIB_DEPENDS =		converters/libiconv \
 			textproc/libxml
 BUILD_DEPENDS =		devel/bison
 
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
+
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 YACC =			${LOCALBASE}/bin/bison -y
 CONFIGURE_ARGS +=	--disable-bdjava-jar \
 			--disable-doxygen-doc \

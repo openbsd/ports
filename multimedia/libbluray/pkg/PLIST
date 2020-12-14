@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/11/24 17:59:04 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/12/14 16:06:00 rsadowski Exp $
 @bin bin/bd_info
+@bin bin/bd_list_titles
+@bin bin/bd_splice
 include/libbluray/
 include/libbluray/bluray-version.h
 include/libbluray/bluray.h

@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2020/12/14 16:06:00 rsadowski Exp $
+
+- Allow libbluray to be able to find mount points using the getfsstat() API.
+- Remove setting _POSIX_C_SOURCE as that breaks building some of the BSD headers
+  due to BSD types.
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -25,7 +25,6 @@ AM_CFLAGS = \
+ 
+ AM_CPPFLAGS = \
+ 	-D_ISOC99_SOURCE \
+-	-D_POSIX_C_SOURCE=$(POSIX_C_SOURCE) \
+ 	-D_REENTRANT \
+ 	\
+ 	-I$(top_srcdir)/src \
+@@ -203,7 +202,7 @@ libbluray_la_SOURCES+= \
+ 	src/file/dirs_xdg.c \
+ 	src/file/dl_posix.c \
+ 	src/file/file_posix.c \
+-	src/file/mount.c
++	src/file/mount_getfsstat.c
+ endif
+ endif
+ 
