@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2020/11/26 23:28:27 danj Exp $
+# $OpenBSD: Makefile,v 1.72 2020/12/14 23:26:59 danj Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-2.0.18
+DISTNAME =	haproxy-2.0.19
 CATEGORIES =	net www
 HOMEPAGE =	http://www.haproxy.org/
 MAINTAINER =	Daniel Jakots <obsd@chown.me>
-REVISION =	1
 
 # GPLv2
 PERMIT_PACKAGE =		Yes
