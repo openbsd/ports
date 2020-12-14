@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/10/18 11:41:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2020/12/14 05:33:55 sthen Exp $
 
 COMMENT = 		Python charting module
 
@@ -13,7 +13,6 @@ MODPY_PI = 		Yes
 
 MODULES = 		lang/python
 
-MODPY_PYPI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests/*.py
 MODPY_SETUPTOOLS = 	Yes
