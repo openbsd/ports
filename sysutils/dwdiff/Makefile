@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2020/11/01 08:17:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2020/12/14 07:28:47 benoit Exp $
 
 COMMENT =		word-based diff program
 
-DISTNAME =		dwdiff-2.1.3
+DISTNAME =		dwdiff-2.1.4
 CATEGORIES =		sysutils textproc
 FIX_EXTRACT_PERMISSIONS=Yes
 
