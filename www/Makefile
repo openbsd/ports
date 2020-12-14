@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.990 2020/11/29 18:48:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.991 2020/12/14 03:16:31 daniel Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -447,7 +447,6 @@
      SUBDIR += py-flup,python3
      SUBDIR += py-formencode
      SUBDIR += py-formencode,python3
-     SUBDIR += py-frozen-flask
      SUBDIR += py-frozen-flask,python3
      SUBDIR += py-genshi
      SUBDIR += py-genshi,python3
