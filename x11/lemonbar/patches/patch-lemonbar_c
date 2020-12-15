@@ -1,0 +1,23 @@
+$OpenBSD: patch-lemonbar_c,v 1.1 2020/12/15 14:16:08 feinerer Exp $
+
+Index: lemonbar.c
+--- lemonbar.c.orig
++++ lemonbar.c
+@@ -1,5 +1,4 @@
+ // vim:sw=4:ts=4:et:
+-#define _POSIX_C_SOURCE 200809L
+ #include <stdbool.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -1503,6 +1502,11 @@ main (int argc, char **argv)
+     free(wm_name);
+     // Get the fd to Xserver
+     pollin[1].fd = xcb_get_file_descriptor(c);
++
++    if (pledge("stdio", NULL) == -1) {
++        fprintf(stderr, "pledge: %s\n", strerror(errno));
++        return EXIT_FAILURE;
++    }
+ 
+     for (;;) {
+         bool redraw = false;
