@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.86 2020/11/29 10:19:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2020/12/15 07:59:49 ajacoutot Exp $
 
 # i386: pty_openbsd.go:24:10: undefined: ptmget
 ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		AWS SSM agent
 
-GH_TAGNAME=		3.0.431.0
+GH_TAGNAME=		3.0.502.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ssm-agent
 
