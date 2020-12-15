@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/01/16 20:09:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/12/15 09:03:27 landry Exp $
 @pkgpath databases/sqlite3,-main
 @bin bin/sqlite3
 include/sqlite3.h
 include/sqlite3ext.h
-lib/libsqlite3.a
+@static-lib lib/libsqlite3.a
 lib/libsqlite3.la
 @lib lib/libsqlite3.so.${LIBsqlite3_VERSION}
 lib/pkgconfig/sqlite3.pc
@@ -44,6 +44,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/SQLITE_SYNC_NORMAL.3
 @man man/man3/SQLITE_TESTCTRL_FIRST.3
 @man man/man3/SQLITE_TRACE_STMT.3
+@man man/man3/SQLITE_TXN_NONE.3
 @man man/man3/SQLITE_UTF8.3
 @man man/man3/SQLITE_VERSION.3
 @man man/man3/SQLITE_VTAB_CONSTRAINT_SUPPORT.3
@@ -87,10 +88,12 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_context.3
 @man man/man3/sqlite3_context_db_handle.3
 @man man/man3/sqlite3_create_collation.3
+@man man/man3/sqlite3_create_filename.3
 @man man/man3/sqlite3_create_function.3
 @man man/man3/sqlite3_create_module.3
 @man man/man3/sqlite3_data_count.3
 @man man/man3/sqlite3_data_directory.3
+@man man/man3/sqlite3_database_file_object.3
 @man man/man3/sqlite3_db_cacheflush.3
 @man man/man3/sqlite3_db_config.3
 @man man/man3/sqlite3_db_filename.3
@@ -102,6 +105,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_declare_vtab.3
 @man man/man3/sqlite3_deserialize.3
 @man man/man3/sqlite3_destructor_type.3
+@man man/man3/sqlite3_drop_modules.3
 @man man/man3/sqlite3_enable_load_extension.3
 @man man/man3/sqlite3_enable_shared_cache.3
 @man man/man3/sqlite3_errcode.3
@@ -109,6 +113,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_extended_result_codes.3
 @man man/man3/sqlite3_file.3
 @man man/man3/sqlite3_file_control.3
+@man man/man3/sqlite3_filename_database.3
 @man man/man3/sqlite3_finalize.3
 @man man/man3/sqlite3_get_autocommit.3
 @man man/man3/sqlite3_get_auxdata.3
@@ -165,6 +170,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_step.3
 @man man/man3/sqlite3_stmt.3
 @man man/man3/sqlite3_stmt_busy.3
+@man man/man3/sqlite3_stmt_isexplain.3
 @man man/man3/sqlite3_stmt_readonly.3
 @man man/man3/sqlite3_stmt_scanstatus.3
 @man man/man3/sqlite3_stmt_scanstatus_reset.3
@@ -185,6 +191,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_total_changes.3
 @man man/man3/sqlite3_trace.3
 @man man/man3/sqlite3_trace_v2.3
+@man man/man3/sqlite3_txn_state.3
 @man man/man3/sqlite3_unlock_notify.3
 @man man/man3/sqlite3_update_hook.3
 @man man/man3/sqlite3_uri_parameter.3
