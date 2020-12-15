@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/05/01 03:51:17 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/12/15 18:57:38 rsadowski Exp $
 include/dvdread/
 include/dvdread/bitreader.h
 include/dvdread/dvd_reader.h
@@ -10,7 +10,7 @@ include/dvdread/nav_print.h
 include/dvdread/nav_read.h
 include/dvdread/nav_types.h
 include/dvdread/version.h
-lib/libdvdread.a
+@static-lib lib/libdvdread.a
 lib/libdvdread.la
 @lib lib/libdvdread.so.${LIBdvdread_VERSION}
 lib/pkgconfig/dvdread.pc

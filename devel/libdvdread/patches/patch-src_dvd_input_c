@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_dvd_input_c,v 1.4 2019/05/01 03:51:17 kmos Exp $
+$OpenBSD: patch-src_dvd_input_c,v 1.5 2020/12/15 18:57:38 rsadowski Exp $
 
 Index: src/dvd_input.c
 --- src/dvd_input.c.orig
 +++ src/dvd_input.c
-@@ -282,7 +282,7 @@ int dvdinput_setup(void)
+@@ -324,7 +324,7 @@ int dvdinput_setup(void *priv, dvd_logger_cb *logcb)
  #elif defined(__OS2__)
    #define CSS_LIB "dvdcss2.dll"
  #else
