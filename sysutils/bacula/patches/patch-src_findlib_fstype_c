@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_findlib_fstype_c,v 1.1 2020/12/15 17:16:27 robert Exp $
+
+Index: src/findlib/fstype.c
+--- src/findlib/fstype.c.orig
++++ src/findlib/fstype.c
+@@ -110,11 +110,13 @@ void add_mtab_item(void *user_ctx, struct stat *st, co
+  */
+ uint32_t fstypeid(char *fname, FF_PKT *ff_pkt)
+ {
++#if !defined(HAVE_OPENBSD_OS)
+    struct statfs st;
+ 
+    if (statfs(fname, &st) == 0) {
+       return st.f_type;
+    }
++#endif
+    return 0;
+ }
+ 

@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_tools_cdp-client_Makefile_in,v 1.1 2020/12/15 17:16:27 robert Exp $
+
+Index: src/tools/cdp-client/Makefile.in
+--- src/tools/cdp-client/Makefile.in.orig
++++ src/tools/cdp-client/Makefile.in
+@@ -21,6 +21,9 @@ DEBUG=@DEBUG@
+ 
+ DB_LIBS=@DB_LIBS@
+ 
++INOTIFY_INC=${TRUEPREFIX}/include/inotify
++INOTIFY_LIB=-L${TRUEPREFIX}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify
++
+ first_rule: all
+ dummy:
+ 
+@@ -37,10 +40,10 @@ FINDOBJS = backupservice.cpp  cdp-client.cpp  folderwa
+ # inference rules
+ .c.lo:
+ 	@echo "Compiling $<"
+-	$(NO_ECHO) $(LIBTOOL_COMPILE) $(CXX) $(DEFS) $(DEBUG) -c $(CPPFLAGS) -I$(srcdir) -I$(basedir) -I$(basedir)/lib -I$(basedir)/plugins/fd $(DINCLUDE) $(CFLAGS) $<
++	$(NO_ECHO) $(LIBTOOL_COMPILE) $(CXX) $(DEFS) $(DEBUG) -c $(CPPFLAGS) -I$(srcdir) -I$(basedir) -I$(basedir)/lib -I$(basedir)/plugins/fd $(DINCLUDE) -I$(INOTIFY_INC) $(CFLAGS) $<
+ .cpp.lo:
+ 	@echo "Compiling $<"
+-	$(NO_ECHO) $(LIBTOOL_COMPILE) $(CXX) $(DEFS) $(DEBUG) -c $(CPPFLAGS) -I$(srcdir) -I$(basedir) -I$(basedir)/lib -I$(basedir)/plugins/fd $(DINCLUDE) $(CFLAGS) $<
++	$(NO_ECHO) $(LIBTOOL_COMPILE) $(CXX) $(DEFS) $(DEBUG) -c $(CPPFLAGS) -I$(srcdir) -I$(basedir) -I$(basedir)/lib -I$(basedir)/plugins/fd $(DINCLUDE) -I$(INOTIFY_INC) $(CFLAGS) $<
+ 
+ #-------------------------------------------------------------------------
+ all: Makefile cdp-client
+@@ -48,7 +51,7 @@ all: Makefile cdp-client
+ 	@echo " "
+ 
+ cdp-client: Makefile cdp-client.lo $(FINDOBJS) ../../plugins/fd/journal.lo   backupservice.lo  folderwatcher.lo ../../lib/libbac$(DEFAULT_ARCHIVE_TYPE)
+-	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -L../../lib -L../../findlib -o $@ cdp-client.lo ../../plugins/fd/journal.lo  backupservice.lo  folderwatcher.lo -lbac -lbacfind -lm $(DLIB) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
++	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -L../../lib -L../../findlib -o $@ cdp-client.lo ../../plugins/fd/journal.lo  backupservice.lo  folderwatcher.lo -lbac -lbacfind -lm $(DLIB) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(INOTIFY_LIB)
+ 
+ Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
+ 	cd $(topdir) \

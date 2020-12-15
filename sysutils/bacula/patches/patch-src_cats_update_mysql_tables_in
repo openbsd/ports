@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_cats_update_mysql_tables_in,v 1.1 2020/12/15 17:16:27 robert Exp $
+
+From 057fd0ca7ab815f3a432fc18056dfe4cf49d508f Mon Sep 17 00:00:00 2001
+From: Eric Bollengier <eric@baculasystems.com>
+Date: Tue, 15 Dec 2020 13:48:27 +0100
+Subject: Fix MySQL update procedure with incorrect handling of the FileIndex
+ type
+
+Index: src/cats/update_mysql_tables.in
+--- src/cats/update_mysql_tables.in.orig
++++ src/cats/update_mysql_tables.in
+@@ -168,7 +168,7 @@ DROP INDEX JobId_2 on File;
+ 
+ CREATE TABLE file_temp (
+    FileId BIGINT UNSIGNED NOT NULL,
+-   FileIndex INTEGER UNSIGNED DEFAULT 0,
++   FileIndex INTEGER DEFAULT 0,
+    JobId INTEGER UNSIGNED NOT NULL,
+    PathId INTEGER UNSIGNED NOT NULL,
+    Filename BLOB NOT NULL,
+@@ -218,7 +218,7 @@ DROP INDEX JobId_2 on File;
+ 
+ CREATE TABLE file_temp (
+    FileId BIGINT UNSIGNED NOT NULL,
+-   FileIndex INTEGER UNSIGNED DEFAULT 0,
++   FileIndex INTEGER DEFAULT 0,
+    JobId INTEGER UNSIGNED NOT NULL,
+    PathId INTEGER UNSIGNED NOT NULL,
+    Filename BLOB NOT NULL,
+@@ -321,9 +321,9 @@ fi
+ if [ "$SKIP1018" = 1 -a "$DBVERSION" -eq 1018 ]; then
+     if mysql $* -f  <<END-OF-DATA
+ USE ${db_name};
+-ALTER TABLE File MODIFY FileIndex INTEGER UNSIGNED DEFAULT 0;
+-ALTER TABLE RestoreObject MODIFY FileIndex INTEGER UNSIGNED DEFAULT 0;
+-ALTER TABLE BaseFiles MODIFY FileIndex INTEGER UNSIGNED DEFAULT 0;
++ALTER TABLE File MODIFY FileIndex INTEGER DEFAULT 0;
++ALTER TABLE RestoreObject MODIFY FileIndex INTEGER DEFAULT 0;
++ALTER TABLE BaseFiles MODIFY FileIndex INTEGER DEFAULT 0;
+ UPDATE Version SET VersionId=1019;
+ END-OF-DATA
+     then

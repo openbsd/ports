@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_cats_make_catalog_backup_pl_in,v 1.1 2019/09/09 11:10:10 robert Exp $
+$OpenBSD: patch-src_cats_make_catalog_backup_pl_in,v 1.2 2020/12/15 17:16:27 robert Exp $
 
 psql(1) will fail if the current working directory is not accessible
 
@@ -12,4 +12,4 @@ Index: src/cats/make_catalog_backup.pl.in
 +    chdir($wd);
  
      if ($args{db_address}) {
-         $ENV{PGHOST}=$args{db_address};
+ 	$ENV{PGHOST}=$args{db_address};

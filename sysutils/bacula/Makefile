@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2020/06/12 11:14:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2020/12/15 17:16:27 robert Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -10,7 +10,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			9.6.5
+V=			11.0.0
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -21,13 +21,13 @@ PKGNAME-sqlite3=	bacula-sqlite3-$V
 
 CATEGORIES=		sysutils
 
-SHARED_LIBS +=  bac                  8.1
-SHARED_LIBS +=  baccfg               7.0
-SHARED_LIBS +=  bacfind              6.0
+SHARED_LIBS +=  bac                  9.1
+SHARED_LIBS +=  baccfg               8.0
+SHARED_LIBS +=  bacfind              7.0
 SHARED_LIBS +=  bacsd                1.0
-SHARED_LIBS +=  bacsql               6.0
+SHARED_LIBS +=  bacsql               7.0
 
-BACCATS_LIBV =	4.0
+BACCATS_LIBV =	5.0
 SHARED_LIBS +=  baccats              ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-mysql        ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-postgresql   ${BACCATS_LIBV}
@@ -36,14 +36,12 @@ SHARED_LIBS +=  baccats-sqlite3      ${BACCATS_LIBV}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
 
-WANTLIB += c crypto iconv intl m pthread ssl z ${COMPILER_LIBCXX}
+WANTLIB += c crypto m pthread ssl z ${COMPILER_LIBCXX}
 
 # AGPLv3 with exception for OpenSSL (majority),
 # FDL (docs), LGPL (some libraries), and PD
 # http://www.bacula.org/7.0.x-manuals/en/main/Bacula_Copyright_Trademark_.html
 PERMIT_PACKAGE=		Yes
-
-LIB_DEPENDS=		devel/gettext,-runtime
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/bacula
 SYSCONFDIR=		${BASESYSCONFDIR}/bacula
@@ -75,6 +73,7 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--with-bsrdir=${LOCALSTATEDIR} \
 			--with-logdir=${LOCALSTATEDIR} \
 			--with-sbin-perm=755 \
+			--with-lzo=${LOCALBASE} \
 			--without-x \
 			--disable-nls \
 			--disable-conio \
@@ -89,9 +88,7 @@ MAKE_FLAGS=		NO_ECHO=
 USE_LIBTOOL=		gnu# base libtool with Qt5 is in the too-hard basket
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${MODQT_LIBDIR}" \
-			CONFIG_SITE="${PORTSDIR}/infrastructure/db/config.site" \
+CONFIGURE_ENV=		CONFIG_SITE="${PORTSDIR}/infrastructure/db/config.site" \
 			MTX=/bin/chio \
 			PKG_CONFIG_LIBDIR="${MODQT_LIBDIR}/pkgconfig:${MODQT_LIBDIR}" \
 			QMAKE="${MODQT_QMAKE}"
@@ -128,15 +125,15 @@ LIB_DEPENDS-sqlite3=	${MODGCC4_CPPLIBDEP} \
 MODULES +=		x11/qt5
 MODQT_DEPS =		No
 
-WANTLIB-bat += ${WANTLIB}
-WANTLIB-bat += GL Qt5Core Qt5Gui Qt5Widgets X11 X11-xcb Xdamage Xext
-WANTLIB-bat += Xfixes Xxf86vm bac baccfg bacfind drm expat glapi xcb
-WANTLIB-bat += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes
-WANTLIB-bat += xshmfence
+WANTLIB-bat += ${WANTLIB} bac baccfg bacfind
+WANTLIB-bat += GL Qt5Core Qt5Gui Qt5Widgets
+WANTLIB-bat += lib/inotify/inotify
+
 RUN_DEPENDS-bat=	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 LIB_DEPENDS-bat=	${LIB_DEPENDS} \
 			${MODQT_LIB_DEPENDS} \
+			devel/libinotify \
 			sysutils/bacula,-main
 
 RUN_DEPENDS-server=	lang/gawk
@@ -163,7 +160,8 @@ CONFIGURE_ARGS +=	--with-postgresql
 
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} manpages/bat.1 \
-		src/qt-console/main.cpp scripts/baculabackupreport.in
+		src/qt-console/main.cpp scripts/baculabackupreport.in \
+		src/qt-console/tray-monitor/tray-monitor.pro.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bacula

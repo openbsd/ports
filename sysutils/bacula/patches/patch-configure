@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.26 2020/06/11 14:38:51 sthen Exp $
+$OpenBSD: patch-configure,v 1.27 2020/12/15 17:16:27 robert Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -4854,7 +4854,7 @@ $as_echo "no" >&6; }
+@@ -4870,7 +4870,7 @@ $as_echo "no" >&6; }
  fi
  
  
@@ -12,7 +12,7 @@ Index: configure
     as_fn_error $? "Unable to find C++ compiler" "$LINENO" 5
  fi
  
-@@ -16751,7 +16751,7 @@ if test x$use_libtool != xno; then
+@@ -16767,7 +16767,7 @@ if test x$use_libtool != xno; then
     LIBTOOL_INSTALL_TARGET="libtool-install"
     LIBTOOL_UNINSTALL_TARGET="libtool-uninstall"
     LIBTOOL_CLEAN_TARGET="libtool-clean"
@@ -21,7 +21,7 @@ Index: configure
     FD_PLUGIN_DIR="src/plugins/fd"
     have_plugins=yes
  else
-@@ -22417,7 +22417,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -22431,7 +22431,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  
  $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
@@ -30,7 +30,7 @@ Index: configure
  		    got_readline="yes"
  
  else
-@@ -22456,7 +22456,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+@@ -22470,7 +22470,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
  			got_readline="yes"
  			CONS_INC="-I${TOP_DIR}/depkgs/readline"
@@ -39,7 +39,37 @@ Index: configure
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -31210,6 +31210,7 @@ netbsd)
+@@ -29931,13 +29931,19 @@ if test "${with_lzo+set}" = set; then :
+ 	     ;;
+ 	  yes|*)
+ 	     if test -f ${with_lzo}/include/lzo/lzoconf.h; then
+-		LZO_INC="-I${with_lzo}/include"
++		LZO_INC="-I${with_lzo}/include/"
+ 		LZO_LDFLAGS="-L${with_lzo}/lib"
+ 		with_lzo="${with_lzo}/include"
+ 	     else
+ 		with_lzo="/usr/include"
+ 	     fi
+ 
++             saved_CPPFLAGS="${CPPFLAGS}"
++             saved_LDFLAGS="${LDFLAGS}"
++             CPPFLAGS="${CPPFLAGS} ${LZO_INC}"
++             LDFLAGS="${LDLAGS} ${LZO_LDFLAGS}"
++
++		echo ${with_lzo}/lzo/lzoconf.h
+ 	     as_ac_Header=`$as_echo "ac_cv_header_${with_lzo}/lzo/lzoconf.h" | $as_tr_sh`
+ ac_fn_c_check_header_mongrel "$LINENO" "${with_lzo}/lzo/lzoconf.h" "$as_ac_Header" "$ac_includes_default"
+ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -29957,6 +29963,8 @@ else
+ 
+ fi
+ 
++             CPPFLAGS="${saved_CPPFLAGS}"
++             LDFLAGS="${saved_LDFLAGS}"
+ 
+ 	     ;;
+ 	  esac
+@@ -31460,6 +31468,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -47,7 +77,7 @@ Index: configure
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -31228,6 +31229,7 @@ openbsd)
+@@ -31478,6 +31487,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"

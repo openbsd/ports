@@ -1,21 +1,27 @@
-$OpenBSD: patch-src_stored_Makefile_in,v 1.7 2020/06/11 14:38:51 sthen Exp $
+$OpenBSD: patch-src_stored_Makefile_in,v 1.8 2020/12/15 17:16:27 robert Exp $
 
 Index: src/stored/Makefile.in
 --- src/stored/Makefile.in.orig
 +++ src/stored/Makefile.in
-@@ -139,17 +139,17 @@ libbacsd.la: Makefile $(LIBBACSD_LOBJS)
+@@ -167,7 +167,7 @@ libbacsd.la: Makefile $(LIBBACSD_LOBJS)
  	@echo "Making $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ \
- 	  $(TOKYOCABINET_LIBS) $(LIBBACSD_LOBJS) \
+ 	  $(LIBBACSD_LOBJS) \
 -	  -export-dynamic -rpath $(libdir) -release $(LIBBACSD_LT_RELEASE)
 +	  -export-dynamic -rpath $(libdir)
  
  #
  # Loadable driver
- #
- bacula-sd-cloud-driver.la: Makefile $(CLOUD_LOBJS)
--	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_LOBJS) -o $@ $(S3_LIBS) -rpath $(libdir) -module -export-dynamic -release $(LIBBACSD_LT_RELEASE)
-+	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_LOBJS) -o $@ $(S3_LIBS) -rpath $(libdir) -module -export-dynamic
+@@ -178,14 +178,14 @@ drivers: bacula-sd-cloud-driver.la ${CLOUD_DRIVERS}
+ s3-driver: bacula-sd-cloud-s3-driver.la
+ 
+ bacula-sd-cloud-driver.la: Makefile $(CLOUD_ALL_LOBJS)
+-	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_ALL_LOBJS) -o $@ -R $(libdir) -rpath $(libdir) -module -export-dynamic -release $(LIBBACSD_LT_RELEASE)
++	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_ALL_LOBJS) -o $@ -R $(libdir) -rpath $(libdir) -module -export-dynamic
+ 
+ bacula-sd-cloud-s3-driver.la: Makefile $(CLOUD_S3_LOBJS)
+-	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_S3_LOBJS) -o $@ $(S3_LIBS) -R $(libdir) -rpath $(libdir) -module -export-dynamic -release $(LIBBACSD_LT_RELEASE)
++	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_S3_LOBJS) -o $@ $(S3_LIBS) -R $(libdir) -rpath $(libdir) -module -export-dynamic
  
  bacula-sd-aligned-driver.la: Makefile $(ALIGNED_LOBJS)
  	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(ALIGNED_LOBJS) -o $@ -rpath $(plugindir) \
