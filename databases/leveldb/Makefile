@@ -1,40 +1,33 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/12/15 16:03:42 sthen Exp $
 
-#'atomic_pointer.h: error Please implement AtomicPointer for this platform' on other archs
-ONLY_FOR_ARCHS =	i386 amd64
+GH_ACCOUNT=		google
+GH_PROJECT=		leveldb
+GH_TAGNAME=		1.22
 
-COMMENT =	fast key-value storage library
+COMMENT=		fast key-value storage library
+CATEGORIES=		databases devel
 
-GH_ACCOUNT =	google
-GH_PROJECT =	leveldb
-GH_TAGNAME =	v1.20
+SHARED_LIBS=		leveldb	3.0 # 0.0
 
-SHARED_LIBS +=  leveldb                   2.0 # 0.0
-
-CATEGORIES =	databases devel
+MAINTAINER=		Ashton Fagg <ashton@fagg.id.au>
 
 # BSD3
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=		Yes
 
-MAKE_ENV =		CC="${CC}" CXX="${CXX}" OPT="${CXXFLAGS}" \
-			SHARED_VERSION_MAJOR=${LIBleveldb_VERSION:R} \
-			SHARED_VERSION_MINOR=${LIBleveldb_VERSION:E}
+WANTLIB=		${COMPILER_LIBCXX} m pthread
 
-USE_GMAKE =		Yes
+# C++11
+COMPILER=		base-clang ports-gcc
 
-TEST_TARGET =		check
+MODULES=		devel/cmake
 
-DOC =			${PREFIX}/share/doc/leveldb/
+CONFIGURE_ARGS+=	-DBUILD_SHARED_LIBS=on \
+			-DLEVELDB_INSTALL=on \
+			-DLEVELDB_BUILD_BENCHMARKS=off
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/leveldb
-	${INSTALL_DATA} ${WRKSRC}/include/leveldb/* ${PREFIX}/include/leveldb
-	${INSTALL_DATA} ${WRKSRC}/out-static/*.a \
-		${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/out-shared/libleveldb.so.${LIBleveldb_VERSION} \
-		${PREFIX}/lib/libleveldb.so.${LIBleveldb_VERSION}
-	${INSTALL_DATA_DIR} ${DOC}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${DOC}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOC}
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/leveldb/
+	${INSTALL_DATA} ${WRKSRC}/{LICENSE,doc/*.md} \
+		${PREFIX}/share/doc/leveldb/
 
 .include <bsd.port.mk>

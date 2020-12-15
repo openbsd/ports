@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/01/03 20:25:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/12/15 16:03:43 sthen Exp $
 include/leveldb/
 include/leveldb/c.h
 include/leveldb/cache.h
@@ -6,6 +6,7 @@ include/leveldb/comparator.h
 include/leveldb/db.h
 include/leveldb/dumpfile.h
 include/leveldb/env.h
+include/leveldb/export.h
 include/leveldb/filter_policy.h
 include/leveldb/iterator.h
 include/leveldb/options.h
@@ -14,9 +15,13 @@ include/leveldb/status.h
 include/leveldb/table.h
 include/leveldb/table_builder.h
 include/leveldb/write_batch.h
-lib/libleveldb.a
+lib/cmake/
+lib/cmake/leveldb/
+lib/cmake/leveldb/leveldbConfig.cmake
+lib/cmake/leveldb/leveldbConfigVersion.cmake
+lib/cmake/leveldb/leveldbTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/leveldb/leveldbTargets.cmake
 @lib lib/libleveldb.so.${LIBleveldb_VERSION}
-lib/libmemenv.a
 share/doc/leveldb/
 share/doc/leveldb/LICENSE
 share/doc/leveldb/impl.md
