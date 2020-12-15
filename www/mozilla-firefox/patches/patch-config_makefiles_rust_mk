@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_makefiles_rust_mk,v 1.4 2020/09/22 13:00:55 landry Exp $
+$OpenBSD: patch-config_makefiles_rust_mk,v 1.5 2020/12/15 16:41:12 landry Exp $
 
 use lto=thin to reduce memory pressure when building gkrust
 https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
@@ -7,9 +7,9 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
 Index: config/makefiles/rust.mk
 --- config/makefiles/rust.mk.orig
 +++ config/makefiles/rust.mk
-@@ -61,7 +61,8 @@ ifndef MOZ_DEBUG_RUST
- # Enable link-time optimization for release builds, but not when linking
- # gkrust_gtest.
+@@ -67,7 +67,8 @@ ifndef MOZ_DEBUG_RUST
+ # gkrust_gtest. And not when doing cross-language LTO.
+ ifndef MOZ_LTO_RUST_CROSS
  ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE)))
 -cargo_rustc_flags += -Clto
 +cargo_rustc_flags += -Clto=thin

@@ -1,9 +1,12 @@
-# $OpenBSD: unveil.main,v 1.5 2020/07/28 14:13:35 landry Exp $
+# $OpenBSD: unveil.main,v 1.6 2020/12/15 16:41:12 landry Exp $
 # for uuid generation?
 /dev/urandom r
 /dev/video rw
 /dev/video0 rw
 /dev/fido rw
+# for webgl info in about:support
+/dev/drm0 rw
+/usr/lib r
 
 /etc/fonts r
 /etc/machine-id r

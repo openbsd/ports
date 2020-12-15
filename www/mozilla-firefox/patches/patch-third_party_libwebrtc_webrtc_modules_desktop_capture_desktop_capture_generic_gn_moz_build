@@ -1,0 +1,16 @@
+$OpenBSD: patch-third_party_libwebrtc_webrtc_modules_desktop_capture_desktop_capture_generic_gn_moz_build,v 1.1 2020/12/15 16:41:12 landry Exp $
+
+https://hg.mozilla.org/mozilla-central/rev/2c1390ba3315
+
+Index: third_party/libwebrtc/webrtc/modules/desktop_capture/desktop_capture_generic_gn/moz.build
+--- third_party/libwebrtc/webrtc/modules/desktop_capture/desktop_capture_generic_gn/moz.build.orig
++++ third_party/libwebrtc/webrtc/modules/desktop_capture/desktop_capture_generic_gn/moz.build
+@@ -5,6 +5,8 @@
+ 
+   ### This moz.build was AUTOMATICALLY GENERATED from a GN config,  ###
+   ### DO NOT edit it by hand.                                       ###
++if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
++    CXXFLAGS += CONFIG["TK_CFLAGS"]
+ 
+ COMPILE_FLAGS["OS_INCLUDES"] = []
+ AllowCompilerWarnings()
