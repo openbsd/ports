@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2020/12/15 18:43:42 fcambus Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -3112,7 +3112,7 @@ AUTOMAKE=${AUTOMAKE-"${am_missing_run}automake-${am__a
+ AUTOHEADER=${AUTOHEADER-"${am_missing_run}autoheader"}
+ 
+ 
+-MAKEINFO=${MAKEINFO-"${am_missing_run}makeinfo"}
++MAKEINFO=${MAKEINFO-"${am_missing_run}gmakeinfo"}
+ 
+ # For better backward compatibility.  To be removed once Automake 1.9.x
+ # dies out for good.  For more background, see:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 07:39:01 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/15 18:43:42 fcambus Exp $
 @conflict open-cobol-*
 @pkgpath lang/open-cobol
 bin/cob-config
@@ -8,13 +8,15 @@ include/libcob/
 include/libcob.h
 include/libcob/cobgetopt.h
 include/libcob/common.h
+include/libcob/exception-io.def
 include/libcob/exception.def
 @info info/gnucobol.info
 lib/gnucobol/
-lib/gnucobol/CBL_OC_DUMP.so
-lib/libcob.a
+@so lib/gnucobol/CBL_OC_DUMP.so
+@static-lib lib/libcob.a
 lib/libcob.la
 @lib lib/libcob.so.${LIBcob_VERSION}
+@man man/man1/cob-config.1
 @man man/man1/cobc.1
 @man man/man1/cobcrun.1
 share/gnucobol/
@@ -42,6 +44,9 @@ share/gnucobol/config/mf.words
 share/gnucobol/config/mvs-strict.conf
 share/gnucobol/config/mvs.conf
 share/gnucobol/config/mvs.words
+share/gnucobol/config/realia-strict.conf
+share/gnucobol/config/realia.conf
+share/gnucobol/config/realia.words
 share/gnucobol/config/rm-strict.conf
 share/gnucobol/config/rm.conf
 share/gnucobol/config/rm.words
@@ -52,11 +57,16 @@ share/gnucobol/copy/
 share/gnucobol/copy/screenio.cpy
 share/gnucobol/copy/sqlca.cpy
 share/gnucobol/copy/sqlda.cpy
+share/gnucobol/copy/xfhfcd.cpy
+share/gnucobol/copy/xfhfcd3.cpy
 share/locale/de/LC_MESSAGES/gnucobol.mo
 share/locale/en@boldquot/LC_MESSAGES/gnucobol.mo
 share/locale/en@quot/LC_MESSAGES/gnucobol.mo
 share/locale/es/LC_MESSAGES/gnucobol.mo
+share/locale/fr/LC_MESSAGES/gnucobol.mo
 share/locale/it/LC_MESSAGES/gnucobol.mo
 share/locale/ja/LC_MESSAGES/gnucobol.mo
 share/locale/nl/LC_MESSAGES/gnucobol.mo
 share/locale/pt/LC_MESSAGES/gnucobol.mo
+share/locale/sr/LC_MESSAGES/gnucobol.mo
+share/locale/sv/LC_MESSAGES/gnucobol.mo
