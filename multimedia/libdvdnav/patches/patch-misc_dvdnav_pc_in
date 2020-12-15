@@ -1,11 +1,11 @@
-$OpenBSD: patch-misc_dvdnav_pc_in,v 1.4 2020/03/21 18:58:07 kmos Exp $
+$OpenBSD: patch-misc_dvdnav_pc_in,v 1.5 2020/12/15 18:57:43 rsadowski Exp $
 
 Index: misc/dvdnav.pc.in
 --- misc/dvdnav.pc.in.orig
 +++ misc/dvdnav.pc.in
 @@ -9,4 +9,5 @@ Version: @VERSION@
  
- Requires.private: dvdread >= 4.1.2
+ Requires.private: dvdread >= @DVDREAD_MIN_VERSION@
  Cflags: -I${includedir} @THREAD_CFLAGS@
 -Libs: -L${libdir} -ldvdnav @THREAD_LIBS@
 +Libs: -L${libdir} -ldvdnav

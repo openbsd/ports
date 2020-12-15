@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/11/29 07:36:37 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/12/15 18:57:43 rsadowski Exp $
 include/dvdnav/
 include/dvdnav/dvd_types.h
 include/dvdnav/dvdnav.h
 include/dvdnav/dvdnav_events.h
-lib/libdvdnav.a
+include/dvdnav/version.h
+@static-lib lib/libdvdnav.a
 lib/libdvdnav.la
 @lib lib/libdvdnav.so.${LIBdvdnav_VERSION}
 lib/pkgconfig/dvdnav.pc
