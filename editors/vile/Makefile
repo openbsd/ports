@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/12 14:22:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/12/15 15:39:28 sthen Exp $
 
 COMMENT=		VI Editor Like Emacs
-DISTNAME=		vile-9.8t
+DISTNAME=		vile-9.8u
 CATEGORIES=		editors
 HOMEPAGE=		https://invisible-island.net/vile/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/12 14:22:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/12/15 15:39:29 sthen Exp $
 @bin bin/vile
 bin/vile-libdir-path
 bin/vile-pager
@@ -49,9 +49,11 @@ lib/vile/
 @bin lib/vile/vile-mcrl-filt
 @bin lib/vile/vile-midl-filt
 @bin lib/vile/vile-mms-filt
+@bin lib/vile/vile-nmake-filt
 @bin lib/vile/vile-nr-filt
 @bin lib/vile/vile-pas-filt
 @bin lib/vile/vile-perl-filt
+@bin lib/vile/vile-perl6-filt
 @bin lib/vile/vile-php-filt
 @bin lib/vile/vile-pot-filt
 @bin lib/vile/vile-ps-filt
@@ -77,6 +79,7 @@ lib/vile/
 @bin lib/vile/vile-tcl-filt
 @bin lib/vile/vile-texi-filt
 @bin lib/vile/vile-ti-filt
+@bin lib/vile/vile-tpu-filt
 @bin lib/vile/vile-txt-filt
 @bin lib/vile/vile-vile-filt
 @bin lib/vile/vile-vlog-filt
@@ -126,6 +129,7 @@ share/vile/est.keywords
 share/vile/fdl.keywords
 share/vile/filters.rc
 share/vile/gnugpg.rc
+share/vile/go.keywords
 share/vile/hs.keywords
 share/vile/html.keywords
 share/vile/imake.keywords
@@ -149,6 +153,7 @@ share/vile/mcrl.keywords
 share/vile/midl.keywords
 share/vile/modes.rc
 share/vile/mvn.keywords
+share/vile/nmake.keywords
 share/vile/nr.keywords
 share/vile/nsis.keywords
 share/vile/objc.keywords
@@ -156,6 +161,7 @@ share/vile/palettes.rc
 share/vile/pas.keywords
 share/vile/pc.keywords
 share/vile/perl.keywords
+share/vile/perl6.keywords
 share/vile/php.keywords
 share/vile/pictmode.rc
 share/vile/pot.keywords
@@ -188,6 +194,8 @@ share/vile/tcl.keywords
 share/vile/tex.keywords
 share/vile/texi.keywords
 share/vile/ti.keywords
+share/vile/tpu.keywords
+share/vile/ts.keywords
 share/vile/vb.keywords
 share/vile/vb6.keywords
 share/vile/vbs.keywords
