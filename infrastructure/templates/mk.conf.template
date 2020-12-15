@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.28 2019/11/30 18:11:46 kmos Exp $
+# $OpenBSD: mk.conf.template,v 1.29 2020/12/15 14:52:27 sthen Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -29,9 +29,12 @@
 .poison MODGNOME_DESKTOP_FILE
 .poison MODGNOME_ICON_CACHE
 .poison MODGNOME_MIME_FILE
+.poison MODPY_ADJFILES
 .poison MODPY_BUILDEP
 .poison MODPY_BUILD_DEP
+.poison MODPY_PYPI
 .poison MODPY_RUN_DEP
+.poison MODPY_TEST
 .poison NO_TESTS
 .poison NOT_FOR_ARCH
 .poison NOT_FOR_ARCHES
@@ -50,7 +53,6 @@
 .poison WKRDIST
 .poison WKRINST
 .poison WKRSRC
-.poison MODPY_TEST
 
 # not a misspelling, but wrong, BUILD_DEPENDS isn't subpackaged
 .poison BUILD_DEPENDS-main
