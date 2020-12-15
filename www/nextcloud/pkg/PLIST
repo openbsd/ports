@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2020/11/23 09:32:26 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.47 2020/12/15 12:25:20 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -3156,12 +3156,6 @@ nextcloud/3rdparty/icewind/streams/src/SeekableWrapper.php
 nextcloud/3rdparty/icewind/streams/src/Url.php
 nextcloud/3rdparty/icewind/streams/src/UrlCallBack.php
 nextcloud/3rdparty/icewind/streams/src/Wrapper.php
-nextcloud/3rdparty/interfasys/
-nextcloud/3rdparty/interfasys/lognormalizer/
-nextcloud/3rdparty/interfasys/lognormalizer/AUTHORS.md
-nextcloud/3rdparty/interfasys/lognormalizer/COPYING
-nextcloud/3rdparty/interfasys/lognormalizer/src/
-nextcloud/3rdparty/interfasys/lognormalizer/src/Normalizer.php
 nextcloud/3rdparty/jeremeamia/
 nextcloud/3rdparty/jeremeamia/SuperClosure/
 nextcloud/3rdparty/jeremeamia/SuperClosure/LICENSE.md
@@ -3532,6 +3526,11 @@ nextcloud/3rdparty/mtdowling/jmespath.php/src/SyntaxErrorException.php
 nextcloud/3rdparty/mtdowling/jmespath.php/src/TreeCompiler.php
 nextcloud/3rdparty/mtdowling/jmespath.php/src/TreeInterpreter.php
 nextcloud/3rdparty/mtdowling/jmespath.php/src/Utils.php
+nextcloud/3rdparty/nextcloud/
+nextcloud/3rdparty/nextcloud/lognormalizer/
+nextcloud/3rdparty/nextcloud/lognormalizer/COPYING
+nextcloud/3rdparty/nextcloud/lognormalizer/src/
+nextcloud/3rdparty/nextcloud/lognormalizer/src/Normalizer.php
 nextcloud/3rdparty/nikic/
 nextcloud/3rdparty/nikic/php-parser/
 nextcloud/3rdparty/nikic/php-parser/.gitattributes
@@ -6826,6 +6825,7 @@ nextcloud/apps/activity/lib/Migration/Version2011Date20201006132544.php
 nextcloud/apps/activity/lib/Migration/Version2011Date20201006132545.php
 nextcloud/apps/activity/lib/Migration/Version2011Date20201006132546.php
 nextcloud/apps/activity/lib/Migration/Version2011Date20201006132547.php
+nextcloud/apps/activity/lib/Migration/Version2011Date20201207091915.php
 nextcloud/apps/activity/lib/Navigation.php
 nextcloud/apps/activity/lib/NotificationGenerator.php
 nextcloud/apps/activity/lib/Settings/
@@ -6869,6 +6869,8 @@ nextcloud/apps/admin_audit/l10n/de.js
 nextcloud/apps/admin_audit/l10n/de.json
 nextcloud/apps/admin_audit/l10n/de_DE.js
 nextcloud/apps/admin_audit/l10n/de_DE.json
+nextcloud/apps/admin_audit/l10n/en_GB.js
+nextcloud/apps/admin_audit/l10n/en_GB.json
 nextcloud/apps/admin_audit/l10n/es.js
 nextcloud/apps/admin_audit/l10n/es.json
 nextcloud/apps/admin_audit/l10n/es_CO.js
@@ -6889,6 +6891,8 @@ nextcloud/apps/admin_audit/l10n/it.js
 nextcloud/apps/admin_audit/l10n/it.json
 nextcloud/apps/admin_audit/l10n/ja.js
 nextcloud/apps/admin_audit/l10n/ja.json
+nextcloud/apps/admin_audit/l10n/ko.js
+nextcloud/apps/admin_audit/l10n/ko.json
 nextcloud/apps/admin_audit/l10n/nb.js
 nextcloud/apps/admin_audit/l10n/nb.json
 nextcloud/apps/admin_audit/l10n/nl.js
@@ -6909,6 +6913,8 @@ nextcloud/apps/admin_audit/l10n/tr.js
 nextcloud/apps/admin_audit/l10n/tr.json
 nextcloud/apps/admin_audit/l10n/zh_CN.js
 nextcloud/apps/admin_audit/l10n/zh_CN.json
+nextcloud/apps/admin_audit/l10n/zh_TW.js
+nextcloud/apps/admin_audit/l10n/zh_TW.json
 nextcloud/apps/admin_audit/lib/
 nextcloud/apps/admin_audit/lib/Actions/
 nextcloud/apps/admin_audit/lib/Actions/Action.php
@@ -6954,6 +6960,8 @@ nextcloud/apps/cloud_federation_api/l10n/de_DE.js
 nextcloud/apps/cloud_federation_api/l10n/de_DE.json
 nextcloud/apps/cloud_federation_api/l10n/el.js
 nextcloud/apps/cloud_federation_api/l10n/el.json
+nextcloud/apps/cloud_federation_api/l10n/en_GB.js
+nextcloud/apps/cloud_federation_api/l10n/en_GB.json
 nextcloud/apps/cloud_federation_api/l10n/es.js
 nextcloud/apps/cloud_federation_api/l10n/es.json
 nextcloud/apps/cloud_federation_api/l10n/fr.js
@@ -6966,10 +6974,14 @@ nextcloud/apps/cloud_federation_api/l10n/it.js
 nextcloud/apps/cloud_federation_api/l10n/it.json
 nextcloud/apps/cloud_federation_api/l10n/mk.js
 nextcloud/apps/cloud_federation_api/l10n/mk.json
+nextcloud/apps/cloud_federation_api/l10n/nl.js
+nextcloud/apps/cloud_federation_api/l10n/nl.json
 nextcloud/apps/cloud_federation_api/l10n/pl.js
 nextcloud/apps/cloud_federation_api/l10n/pl.json
 nextcloud/apps/cloud_federation_api/l10n/pt_BR.js
 nextcloud/apps/cloud_federation_api/l10n/pt_BR.json
+nextcloud/apps/cloud_federation_api/l10n/ru.js
+nextcloud/apps/cloud_federation_api/l10n/ru.json
 nextcloud/apps/cloud_federation_api/l10n/sk.js
 nextcloud/apps/cloud_federation_api/l10n/sk.json
 nextcloud/apps/cloud_federation_api/l10n/sl.js
@@ -7269,6 +7281,8 @@ nextcloud/apps/contactsinteraction/l10n/de_DE.js
 nextcloud/apps/contactsinteraction/l10n/de_DE.json
 nextcloud/apps/contactsinteraction/l10n/el.js
 nextcloud/apps/contactsinteraction/l10n/el.json
+nextcloud/apps/contactsinteraction/l10n/en_GB.js
+nextcloud/apps/contactsinteraction/l10n/en_GB.json
 nextcloud/apps/contactsinteraction/l10n/es.js
 nextcloud/apps/contactsinteraction/l10n/es.json
 nextcloud/apps/contactsinteraction/l10n/eu.js
@@ -7283,6 +7297,8 @@ nextcloud/apps/contactsinteraction/l10n/it.js
 nextcloud/apps/contactsinteraction/l10n/it.json
 nextcloud/apps/contactsinteraction/l10n/mk.js
 nextcloud/apps/contactsinteraction/l10n/mk.json
+nextcloud/apps/contactsinteraction/l10n/nl.js
+nextcloud/apps/contactsinteraction/l10n/nl.json
 nextcloud/apps/contactsinteraction/l10n/pl.js
 nextcloud/apps/contactsinteraction/l10n/pl.json
 nextcloud/apps/contactsinteraction/l10n/pt_BR.js
@@ -11543,6 +11559,8 @@ nextcloud/apps/lookup_server_connector/l10n/de.js
 nextcloud/apps/lookup_server_connector/l10n/de.json
 nextcloud/apps/lookup_server_connector/l10n/de_DE.js
 nextcloud/apps/lookup_server_connector/l10n/de_DE.json
+nextcloud/apps/lookup_server_connector/l10n/en_GB.js
+nextcloud/apps/lookup_server_connector/l10n/en_GB.json
 nextcloud/apps/lookup_server_connector/l10n/es.js
 nextcloud/apps/lookup_server_connector/l10n/es.json
 nextcloud/apps/lookup_server_connector/l10n/fr.js
@@ -12373,12 +12391,10 @@ nextcloud/apps/photos/js/photos-0.js
 nextcloud/apps/photos/js/photos-0.js.map
 nextcloud/apps/photos/js/photos-1.js
 nextcloud/apps/photos/js/photos-1.js.map
-nextcloud/apps/photos/js/photos-11.js
-nextcloud/apps/photos/js/photos-11.js.map
+nextcloud/apps/photos/js/photos-10.js
+nextcloud/apps/photos/js/photos-10.js.map
 nextcloud/apps/photos/js/photos-2.js
 nextcloud/apps/photos/js/photos-2.js.map
-nextcloud/apps/photos/js/photos-3.js
-nextcloud/apps/photos/js/photos-3.js.map
 nextcloud/apps/photos/js/photos-4.js
 nextcloud/apps/photos/js/photos-4.js.map
 nextcloud/apps/photos/js/photos-5.js
@@ -12393,6 +12409,7 @@ nextcloud/apps/photos/js/photos-9.js
 nextcloud/apps/photos/js/photos-9.js.map
 nextcloud/apps/photos/js/photos-main.js
 nextcloud/apps/photos/js/photos-main.js.map
+nextcloud/apps/photos/js/photos-service-worker.js
 nextcloud/apps/photos/l10n/
 nextcloud/apps/photos/l10n/af.js
 nextcloud/apps/photos/l10n/af.json
@@ -12579,6 +12596,7 @@ nextcloud/apps/photos/lib/AppInfo/
 nextcloud/apps/photos/lib/AppInfo/Application.php
 nextcloud/apps/photos/lib/Controller/
 nextcloud/apps/photos/lib/Controller/AlbumsController.php
+nextcloud/apps/photos/lib/Controller/ApiController.php
 nextcloud/apps/photos/lib/Controller/PageController.php
 nextcloud/apps/photos/postcss.config.js
 nextcloud/apps/photos/screenshots/
@@ -13216,8 +13234,6 @@ nextcloud/apps/settings/js/vue-settings-admin-security.js
 nextcloud/apps/settings/js/vue-settings-admin-security.js.map
 nextcloud/apps/settings/js/vue-settings-apps-489d5f46c67b4e8fbf67.js
 nextcloud/apps/settings/js/vue-settings-apps-489d5f46c67b4e8fbf67.js.map
-nextcloud/apps/settings/js/vue-settings-apps-819bd91780a5b5e34199.js
-nextcloud/apps/settings/js/vue-settings-apps-819bd91780a5b5e34199.js.map
 nextcloud/apps/settings/js/vue-settings-apps-users-management.js
 nextcloud/apps/settings/js/vue-settings-apps-users-management.js.map
 nextcloud/apps/settings/js/vue-settings-nextcloud-pdf.js
@@ -13230,8 +13246,6 @@ nextcloud/apps/settings/js/vue-settings-users-949e04a80c66e7d41667.js
 nextcloud/apps/settings/js/vue-settings-users-949e04a80c66e7d41667.js.map
 nextcloud/apps/settings/js/vue-vendors-settings-apps-0e3130278180acc1bb58.js
 nextcloud/apps/settings/js/vue-vendors-settings-apps-0e3130278180acc1bb58.js.map
-nextcloud/apps/settings/js/vue-vendors-settings-apps-9cccd48110cd039530d3.js
-nextcloud/apps/settings/js/vue-vendors-settings-apps-9cccd48110cd039530d3.js.map
 nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-f077c891fa908a10fb34.js
 nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-f077c891fa908a10fb34.js.map
 nextcloud/apps/settings/js/vue-vendors-settings-users-3a6581e78bc592eedd33.js
@@ -15784,6 +15798,8 @@ nextcloud/apps/user_status/l10n/is.js
 nextcloud/apps/user_status/l10n/is.json
 nextcloud/apps/user_status/l10n/it.js
 nextcloud/apps/user_status/l10n/it.json
+nextcloud/apps/user_status/l10n/ko.js
+nextcloud/apps/user_status/l10n/ko.json
 nextcloud/apps/user_status/l10n/lt_LT.js
 nextcloud/apps/user_status/l10n/lt_LT.json
 nextcloud/apps/user_status/l10n/mk.js
@@ -16340,12 +16356,7 @@ nextcloud/apps/workflowengine/templates/settings.php
 @owner www
 @group www
 nextcloud/config/
-@mode
-@owner
-@group
 @mode 0640
-@owner www
-@group www
 nextcloud/config/config.php.dist
 @sample nextcloud/config/config.php
 nextcloud/config/config.sample.php
@@ -16540,7 +16551,7 @@ nextcloud/core/Migrations/Version20000Date20201109081918.php
 nextcloud/core/Migrations/Version20000Date20201109081919.php
 nextcloud/core/Migrations/Version20000Date20201111081915.php
 nextcloud/core/Notification/
-nextcloud/core/Notification/RemoveLinkSharesNotifier.php
+nextcloud/core/Notification/CoreNotifier.php
 nextcloud/core/Service/
 nextcloud/core/Service/LoginFlowV2Service.php
 nextcloud/core/ajax/
@@ -16612,6 +16623,7 @@ nextcloud/core/doc/admin/_images/external-sites-2.png
 nextcloud/core/doc/admin/_images/external-sites-3.png
 nextcloud/core/doc/admin/_images/external-sites-4.png
 nextcloud/core/doc/admin/_images/external-sites-5.png
+nextcloud/core/doc/admin/_images/externalStorages_variables.png
 nextcloud/core/doc/admin/_images/federation-0.png
 nextcloud/core/doc/admin/_images/federation-1.png
 nextcloud/core/doc/admin/_images/federation-2.png
@@ -17043,6 +17055,7 @@ nextcloud/core/doc/user/_images/contact_picture_options.png
 nextcloud/core/doc/user/_images/contact_picture_set.png
 nextcloud/core/doc/user/_images/contact_uploadbutton.png
 nextcloud/core/doc/user/_images/contacts_empty.png
+nextcloud/core/doc/user/_images/contacts_link.png
 nextcloud/core/doc/user/_images/contacts_menu.png
 nextcloud/core/doc/user/_images/contacts_popup.png
 nextcloud/core/doc/user/_images/create_public_share-6.png
