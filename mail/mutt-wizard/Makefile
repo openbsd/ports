@@ -1,13 +1,13 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.2 2020/12/15 16:54:48 sthen Exp $
 
 COMMENT =	neomutt and isync configuration with good defaults
-# commit date 20200906
-DISTNAME =	mutt-wizard-20200906
+# commit date 20201210
+DISTNAME =	mutt-wizard-20201210
 CATEGORIES =	mail
 
 GH_ACCOUNT =	LukeSmithxyz
 GH_PROJECT =	mutt-wizard
-GH_COMMIT =	95cf003c036dd95000ab80ca6c680dab2e3ca092
+GH_COMMIT =	456d02d1ee0ab196ac256b91c9ac86a01f3c0bb6
 
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 
