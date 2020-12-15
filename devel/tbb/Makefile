@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2020/05/18 16:42:20 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/12/15 15:39:11 sthen Exp $
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 
 COMMENT =		threading building blocks
 
-V =			2020.2
+V =			2020.3
 GH_ACCOUNT =		oneapi-src
 GH_PROJECT =		oneTBB
 GH_TAGNAME =		v${V}
 PKGNAME =		tbb-${V}
 
-SHARED_LIBS +=		tbb		1.0	#2020.2
-SHARED_LIBS +=		tbbmalloc	1.0	#2020.2
+SHARED_LIBS +=		tbb		1.0	#2020.3
+SHARED_LIBS +=		tbbmalloc	1.0	#2020.3
 
 CATEGORIES =		devel
 
