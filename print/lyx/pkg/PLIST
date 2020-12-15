@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2020/08/01 23:49:30 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.30 2020/12/15 23:07:33 mariani Exp $
 @pkgpath print/lyx,qt
 @pkgpath print/lyx,xforms
 @bin bin/lyx
@@ -570,6 +570,7 @@ share/lyx/fonts/cmex10.ttf
 share/lyx/fonts/cmmi10.ttf
 share/lyx/fonts/cmr10.ttf
 share/lyx/fonts/cmsy10.ttf
+share/lyx/fonts/dsrom10.ttf
 share/lyx/fonts/esint10.ttf
 share/lyx/fonts/eufm10.ttf
 share/lyx/fonts/msam10.ttf
@@ -2287,6 +2288,8 @@ share/lyx/layouts/amsbook.layout
 share/lyx/layouts/amsdefs.inc
 share/lyx/layouts/apa.layout
 share/lyx/layouts/apa6.layout
+share/lyx/layouts/apa7.layout
+share/lyx/layouts/apax.inc
 share/lyx/layouts/arab-article.layout
 share/lyx/layouts/article-beamer.layout
 share/lyx/layouts/article.layout
