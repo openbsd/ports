@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.329 2020/11/25 14:11:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.330 2020/12/16 17:57:08 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
 VER=		16.15.0
-REVISION-main=	0
+REVISION-main=	1
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
 
-.if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
-# ld: error: cli_telnet.c:(.debug_info+0x1DF087): has non-ABS relocation R_386_GOTOFF against symbol 'CR_LF.6215'
-USE_LLD=		No
+# cli_telnet.c:(.debug_info+0x1DF087): has non-ABS relocation R_386_GOTOFF against symbol 'CR_LF.6215'
+.if ${MACHINE_ARCH} == i386
+USE_LLD=	No
 .endif
 
 CATEGORIES=	telephony
@@ -27,10 +27,6 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # notes in codecs/ilbc/LICENSE_ADDENDUM.
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-main += ${MODGCC4_CPPWANTLIB}
-# XXX somehow COMPILER_LIBCXX doesn't get set to gcc libs?
-# XXX Asterisk is not allowed to use other ports which pull in C++ libs
-# XXX otherwise there is a conflict between libstdc++ and libc++.
 WANTLIB-main += c crypto curl curses edit gsm iconv iksemel
 WANTLIB-main += jansson lzma m ogg portaudio pthread radcli
 WANTLIB-main += spandsp sqlite3 srtp2 ssl tiff uriparser unbound uuid
@@ -51,12 +47,13 @@ DPB_PROPERTIES=	parallel
 # on ld.lld arches by adding "-fuse-ld=bfd")
 #
 # - runtime fails on ld.lld arches: dlopen()ing the .so modules results in
-# undefined symbols (same symbols as ld.bfd detects as missing) from the
-# BlocksRuntime lib.
+# undefined symbols from the BlocksRuntime lib (_NSConcreteStackBlock,
+# _Block_object_dispose, _Block_object_assign, etc); Asterisk appears to
+# start up but without modules loaded it is useless.
 #
 # So, as things stand, this requires building with gcc.
 #
-# If changing this, keep telephony/asterisk-g729 in sync.
+# If this is fixed and moved to clang, update telephony/asterisk-g729 in sync.
 COMPILER=		ports-gcc
 
 SHARED_LIBS+=		asteriskssl 0.0		# 1
@@ -66,8 +63,7 @@ MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -lua \
 			-odbc -pgsql -snmp -speex -tds
 PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:N-kqueue:C/-/no_/g}
 
-LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
-			audio/gsm \
+LIB_DEPENDS-main=	audio/gsm \
 			audio/libogg \
 			audio/libvorbis \
 			audio/portaudio-svn \
@@ -343,6 +339,10 @@ post-install:
 
 .if ${CHOSEN_COMPILER} == ports-gcc
 CFLAGS+=		-ftrampolines
+WANTLIB-main+=		${MODGCC4_CPPWANTLIB}
+LIB_DEPENDS-main+=	${MODGCC4_CPPLIBDEP}
 .else
 BUILD_DEPENDS+=		devel/blocksruntime
+LDFLAGS+=		-lBlocksRuntime
+WANTLIB-main+=		${COMPILER_LIBCXX}
 .endif
