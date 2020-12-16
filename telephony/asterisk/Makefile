@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.330 2020/12/16 17:57:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.331 2020/12/16 21:51:02 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -63,7 +63,10 @@ MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -lua \
 			-odbc -pgsql -snmp -speex -tds
 PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:N-kqueue:C/-/no_/g}
 
-LIB_DEPENDS-main=	audio/gsm \
+# MODGCC4_CPPLIBDEP is empty on a clang build.
+# leave it here, don't try to conditionalize it below, dpb doesn't like that.
+LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
+			audio/gsm \
 			audio/libogg \
 			audio/libvorbis \
 			audio/portaudio-svn \
@@ -340,7 +343,6 @@ post-install:
 .if ${CHOSEN_COMPILER} == ports-gcc
 CFLAGS+=		-ftrampolines
 WANTLIB-main+=		${MODGCC4_CPPWANTLIB}
-LIB_DEPENDS-main+=	${MODGCC4_CPPLIBDEP}
 .else
 BUILD_DEPENDS+=		devel/blocksruntime
 LDFLAGS+=		-lBlocksRuntime
