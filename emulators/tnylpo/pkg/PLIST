@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/12/16 16:53:48 bcallah Exp $
+@bin bin/tnylpo
+@bin bin/tnylpo-convert
+@man man/man1/tnylpo-convert.1
+@man man/man1/tnylpo.1
+share/tnylpo/
+share/tnylpo/README.md
+share/tnylpo/mine.com
+share/tnylpo/mine.conf

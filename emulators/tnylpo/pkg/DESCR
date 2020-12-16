@@ -1,0 +1,20 @@
+tnylpo allows the execution of programs written for CP/M-80 version 2.2
+under Unixy operating systems. The companion program tnylpo-convert
+converts text files to and from the CP/M format.
+
+Features:
+* Full Z80 instruction set (including undocumented instructions and
+  features)
+* All BDOS calls of CP/M 2.2 and a few taken from CP/M 3 (mostly for
+  date and time handling)
+* All character handling BIOS calls of CP/M 2.2
+* Maps CP/M file operations to operations on files in the Unix file
+  system
+* Allows you to map up to 16 CP/M drives to arbitrary Unix directories
+* Built-in curses based emulation of the DEC VT52
+* Allows you to combine CP/M programs with Unix shell redirections and
+  pipelines
+
+Note that all CP/M program and data file names are expected in lower
+case. For example, files called TURBO.COM or L80.COM need to be renamed
+to turbo.com and l80.com to be accessible by tnylpo.
