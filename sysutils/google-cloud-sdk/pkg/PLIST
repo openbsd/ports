@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.180 2020/12/10 08:48:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.181 2020/12/16 07:55:58 ajacoutot Exp $
 @conflict gsutil-*
 bin/bq
 bin/gcloud
@@ -1042,7 +1042,9 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}application_status.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}component.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}component_status.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}component_template.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}devkit.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}domainmapping.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1050,11 +1052,14 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}environment.
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}kubernetesobject.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}mapobject.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}module_status.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}revision.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}service.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}status.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/${MODPY_PYCACHE}traffic.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/application_status.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/component.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/component_status.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/component_template.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/devkit.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/domainmapping.py
@@ -1062,6 +1067,7 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/environment.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/kubernetesobject.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/mapobject.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/metadata.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/module_status.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/revision.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/service.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/kuberun/status.py
@@ -3207,8 +3213,10 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}kuberun_
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}kuberuncli.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}messages.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}pretty_print.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}resource_args.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}revision_printer.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}service_printer.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}status_printer.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}traffic_pair.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/${MODPY_PYCACHE}traffic_printer.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/auth.py
@@ -3219,8 +3227,10 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/kuberun_command.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/kuberuncli.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/messages.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/pretty_print.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/resource_args.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/revision_printer.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/service_printer.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/status_printer.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/traffic_pair.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kuberun/traffic_printer.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/labelmanager/
@@ -4158,7 +4168,6 @@ google-cloud-sdk/lib/googlecloudsdk/core/credentials/${MODPY_PYCACHE}gce_read.${
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/${MODPY_PYCACHE}google_auth_credentials.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/${MODPY_PYCACHE}requests.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/core/credentials/${MODPY_PYCACHE}service_account.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/${MODPY_PYCACHE}store.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/${MODPY_PYCACHE}transport.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/${MODPY_PYCACHE}transports.${MODPY_PYC_MAGIC_TAG}pyc
@@ -4174,7 +4183,6 @@ google-cloud-sdk/lib/googlecloudsdk/core/credentials/http.py
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/oauth2_landing.html
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/oauth2_landing_error.html
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/requests.py
-google-cloud-sdk/lib/googlecloudsdk/core/credentials/service_account.py
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/transport.py
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/transports.py
@@ -4383,6 +4391,21 @@ google-cloud-sdk/lib/googlecloudsdk/core/yaml.py
 google-cloud-sdk/lib/googlecloudsdk/core/yaml_location_value.py
 google-cloud-sdk/lib/googlecloudsdk/core/yaml_validator.py
 google-cloud-sdk/lib/googlecloudsdk/gcloud_main.py
+google-cloud-sdk/lib/googlecloudsdk/googledata/
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/reference/
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/reference/_toc.yaml
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/reference/compute/
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/reference/compute/_toc.yaml
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/reference/compute/index.html
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/reference/compute/instances/
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/reference/compute/instances/index.html
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/reference/compute/instances/list.html
+google-cloud-sdk/lib/googlecloudsdk/googledata/devsite/site-cloud/en/sdk/gcloud/reference/index.html
 google-cloud-sdk/lib/googlecloudsdk/schemas/
 google-cloud-sdk/lib/googlecloudsdk/schemas/compute/
 google-cloud-sdk/lib/googlecloudsdk/schemas/compute/alpha/
@@ -5116,16 +5139,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/${MODPY_PYCAC
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/cloudasset_v1_client.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/cloudasset_v1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/resources.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/__init__.py
-${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/${MODPY_PYCACHE}/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/${MODPY_PYCACHE}cloudasset_v1beta1_client.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/${MODPY_PYCACHE}cloudasset_v1beta1_messages.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/cloudasset_v1beta1_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/cloudasset_v1beta1_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1p1beta1/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1p1beta1/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1p1beta1/${MODPY_PYCACHE}/
@@ -5171,7 +5184,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1p5beta1/${MODP
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1p5beta1/cloudasset_v1p5beta1_client.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1p5beta1/cloudasset_v1p5beta1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset_v1.json
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset_v1p1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset_v1p2beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset_v1p4alpha1.json
@@ -5988,6 +6000,16 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/${MODPY_PYCACHE}eventarc_v1_client.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/${MODPY_PYCACHE}eventarc_v1_messages.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/eventarc_v1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/eventarc_v1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1beta1/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1beta1/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1beta1/${MODPY_PYCACHE}/
@@ -5998,6 +6020,7 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1beta1/${MODPY_PY
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1beta1/eventarc_v1beta1_client.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1beta1/eventarc_v1beta1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc/v1beta1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventarc_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventflow/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/eventflow/__init__.py
@@ -7147,6 +7170,16 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/${MODPY_PYCACHE}servicedirectory_v1_client.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/${MODPY_PYCACHE}servicedirectory_v1_messages.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/servicedirectory_v1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1/servicedirectory_v1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1beta1/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1beta1/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1beta1/${MODPY_PYCACHE}/
@@ -7157,6 +7190,7 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1beta1/${
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1beta1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1beta1/servicedirectory_v1beta1_client.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory/v1beta1/servicedirectory_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicedirectory_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicemanagement/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicemanagement/__init__.py
@@ -12904,8 +12938,10 @@ google-cloud-sdk/lib/surface/kuberun/applications/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/kuberun/applications/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/kuberun/applications/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/kuberun/applications/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/applications/${MODPY_PYCACHE}get_status.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/kuberun/applications/${MODPY_PYCACHE}init.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/kuberun/applications/describe.py
+google-cloud-sdk/lib/surface/kuberun/applications/get_status.py
 google-cloud-sdk/lib/surface/kuberun/applications/init.py
 google-cloud-sdk/lib/surface/kuberun/components/
 google-cloud-sdk/lib/surface/kuberun/components/__init__.py
@@ -12935,6 +12971,14 @@ google-cloud-sdk/lib/surface/kuberun/core/domain_mappings/create.py
 google-cloud-sdk/lib/surface/kuberun/core/domain_mappings/delete.py
 google-cloud-sdk/lib/surface/kuberun/core/domain_mappings/describe.py
 google-cloud-sdk/lib/surface/kuberun/core/domain_mappings/list.py
+google-cloud-sdk/lib/surface/kuberun/core/event_types/
+google-cloud-sdk/lib/surface/kuberun/core/event_types/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/kuberun/core/event_types/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/kuberun/core/event_types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/core/event_types/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/core/event_types/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/kuberun/core/event_types/describe.py
+google-cloud-sdk/lib/surface/kuberun/core/event_types/list.py
 google-cloud-sdk/lib/surface/kuberun/core/revisions/
 google-cloud-sdk/lib/surface/kuberun/core/revisions/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/kuberun/core/revisions/${MODPY_PYCACHE}/
@@ -15134,6 +15178,7 @@ google-cloud-sdk/lib/surface/workspace_add_ons/deployments/describe.yaml
 google-cloud-sdk/lib/surface/workspace_add_ons/deployments/install.yaml
 google-cloud-sdk/lib/surface/workspace_add_ons/deployments/install_status.yaml
 google-cloud-sdk/lib/surface/workspace_add_ons/deployments/list.yaml
+google-cloud-sdk/lib/surface/workspace_add_ons/deployments/replace.yaml
 google-cloud-sdk/lib/surface/workspace_add_ons/deployments/uninstall.yaml
 google-cloud-sdk/lib/surface/workspace_add_ons/get_authorization.yaml
 google-cloud-sdk/lib/third_party/
@@ -22030,6 +22075,11 @@ google-cloud-sdk/lib/third_party/websocket/_socket.py
 google-cloud-sdk/lib/third_party/websocket/_ssl_compat.py
 google-cloud-sdk/lib/third_party/websocket/_url.py
 google-cloud-sdk/lib/third_party/websocket/_utils.py
+google-cloud-sdk/lib/third_party/win_inet_pton/
+google-cloud-sdk/lib/third_party/win_inet_pton/LICENSE
+google-cloud-sdk/lib/third_party/win_inet_pton/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/third_party/win_inet_pton/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/third_party/win_inet_pton/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/third_party/yaml/
 google-cloud-sdk/lib/third_party/yaml/LICENSE
 google-cloud-sdk/lib/third_party/yaml/__init__.py
@@ -22789,6 +22839,9 @@ ${MODPY_COMMENT}google-cloud-sdk/platform/ext-runtime/ruby/test/${MODPY_PYCACHE}
 google-cloud-sdk/platform/ext-runtime/ruby/test/${MODPY_PYCACHE}runtime_test.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/ext-runtime/ruby/test/runtime_test.py
 google-cloud-sdk/platform/gsutil/
+google-cloud-sdk/platform/gsutil/.github/
+google-cloud-sdk/platform/gsutil/.github/workflows/
+google-cloud-sdk/platform/gsutil/.github/workflows/ci.yml
 google-cloud-sdk/platform/gsutil/CHANGES.md
 google-cloud-sdk/platform/gsutil/CHECKSUM
 google-cloud-sdk/platform/gsutil/CONTRIBUTING.md
@@ -22814,6 +22867,7 @@ google-cloud-sdk/platform/gsutil/gslib/${MODPY_PYCACHE}cloud_api_delegator.${MOD
 google-cloud-sdk/platform/gsutil/gslib/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/${MODPY_PYCACHE}command_argument.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/${MODPY_PYCACHE}command_runner.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/platform/gsutil/gslib/${MODPY_PYCACHE}context_config.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/${MODPY_PYCACHE}cred_types.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/${MODPY_PYCACHE}cs_api_map.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/${MODPY_PYCACHE}daisy_chain_wrapper.${MODPY_PYC_MAGIC_TAG}pyc
@@ -22867,7 +22921,6 @@ google-cloud-sdk/platform/gsutil/gslib/addlhelp/${MODPY_PYCACHE}encryption.${MOD
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/${MODPY_PYCACHE}naming.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/${MODPY_PYCACHE}prod.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/platform/gsutil/gslib/addlhelp/${MODPY_PYCACHE}projects.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/${MODPY_PYCACHE}retries.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/${MODPY_PYCACHE}security.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/${MODPY_PYCACHE}subdirs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -22886,7 +22939,6 @@ google-cloud-sdk/platform/gsutil/gslib/addlhelp/encryption.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/metadata.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/naming.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/prod.py
-google-cloud-sdk/platform/gsutil/gslib/addlhelp/projects.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/retries.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/security.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/subdirs.py
@@ -22981,6 +23033,7 @@ google-cloud-sdk/platform/gsutil/gslib/commands/update.py
 google-cloud-sdk/platform/gsutil/gslib/commands/version.py
 google-cloud-sdk/platform/gsutil/gslib/commands/versioning.py
 google-cloud-sdk/platform/gsutil/gslib/commands/web.py
+google-cloud-sdk/platform/gsutil/gslib/context_config.py
 google-cloud-sdk/platform/gsutil/gslib/cred_types.py
 google-cloud-sdk/platform/gsutil/gslib/cs_api_map.py
 google-cloud-sdk/platform/gsutil/gslib/daisy_chain_wrapper.py
@@ -23025,11 +23078,14 @@ google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}rewrite_helper.${MO
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}signurl_signatures.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_Doption.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_acl.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_boto_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_bucketconfig.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_bucketpolicyonly.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_cat.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_cloud_api_delegator.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_command_runner.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_compose.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_context_config.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_copy_helper_funcs.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_copy_objects_iterator.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_cors.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23041,6 +23097,7 @@ google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_defstorageclas
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_du.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_encryption_helper.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_file_part.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_gcs_json_api.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_gcs_json_media.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_gsutil.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_hash.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23055,6 +23112,7 @@ google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_logging.${MODP
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_ls.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_mb.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_metrics.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_mtls.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_mv.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_naming.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/${MODPY_PYCACHE}test_notification.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23095,11 +23153,14 @@ google-cloud-sdk/platform/gsutil/gslib/tests/rewrite_helper.py
 google-cloud-sdk/platform/gsutil/gslib/tests/signurl_signatures.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_Doption.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_acl.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_boto_util.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_bucketconfig.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_bucketpolicyonly.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_cat.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_cloud_api_delegator.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_command_runner.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_compose.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_context_config.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_copy_helper_funcs.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_copy_objects_iterator.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_cors.py
@@ -23118,6 +23179,7 @@ google-cloud-sdk/platform/gsutil/gslib/tests/test_defstorageclass.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_du.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_encryption_helper.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_file_part.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_gcs_json_api.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_gcs_json_media.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_gsutil.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_hash.py
@@ -23132,6 +23194,7 @@ google-cloud-sdk/platform/gsutil/gslib/tests/test_logging.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_ls.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_mb.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_metrics.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_mtls.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_mv.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_naming.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_notification.py
