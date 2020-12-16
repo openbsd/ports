@@ -1,3 +1,5 @@
 This package contains Icinga's modern API-based web frontend (requiring a
 database). The simpler classic frontend is also available in the icinga-cgi
 package.
+
+Don't use this for new installations, use icinga-web2 instead.

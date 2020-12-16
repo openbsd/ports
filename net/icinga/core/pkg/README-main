@@ -1,8 +1,17 @@
-$OpenBSD: README-main,v 1.32 2018/09/04 12:53:16 espie Exp $
+$OpenBSD: README-main,v 1.33 2020/12/16 21:25:36 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
+
+NOTICE
+======
+
+Do not use icinga 1 for new installations, it is out of support
+and no longer receives fixes of any kind.
+
+Uninstall this package and start with icinga2 instead.
+
 
 Getting Started
 ===============
