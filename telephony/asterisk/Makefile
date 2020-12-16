@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.331 2020/12/16 21:51:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.332 2020/12/16 23:57:26 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.15.0
-REVISION-main=	1
+VER=		18.1.0
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
 
-# i386 issue linking libasteriskpj.so.0.0:
-# cli_telnet.c:(.debug_info+0x1DF087): has non-ABS relocation R_386_GOTOFF against symbol 'CR_LF.6215'
 .if ${MACHINE_ARCH} == i386
+# i386 issue linking libasteriskpj.so.0.0:
+# ld: error: cli_telnet.c:(.debug_info+0x1DF087): has non-ABS relocation R_386_GOTOFF against symbol 'CR_LF.6215'
 USE_LLD=	No
 .endif
 
@@ -60,8 +59,14 @@ SHARED_LIBS+=		asteriskssl 0.0		# 1
 SHARED_LIBS+=		asteriskpj 0.0		# 2
 
 MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -lua \
-			-odbc -pgsql -snmp -speex -tds
+			-odbc -pgsql -snmp -speex -tds -vm_imap -vm_odbc
+# can't disable main/kqueue
 PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:N-kqueue:C/-/no_/g}
+FLAVOR?=
+# disabling odbc must also knock out vm_odbc
+.if ${FLAVOR:Mno_odbc}
+FLAVOR+=        no_vm_odbc
+.endif
 
 # MODGCC4_CPPLIBDEP is empty on a clang build.
 # leave it here, don't try to conditionalize it below, dpb doesn't like that.
@@ -100,8 +105,6 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 BUILD_DEPENDS+=		archivers/bzip2 \
 			devel/libtool,-ltdl # bogus dependencies in menuselect
-MAJV=			${VER:C/\..*//}
-SUBST_VARS+=		MAJV
 
 CPPFLAGS+=		-I${X11BASE}/include \
 			-I${LOCALBASE}/include
@@ -126,7 +129,10 @@ CONFIGURE_ARGS+=	--localstatedir=/var \
 CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729 --disable-vpx"
 MAKE_ENV=		LOCALBASE="${LOCALBASE}"
 
-CONFIGURE_ARGS+=	--with-asound=no \
+CONFIGURE_ARGS+=	--with-SDL_image=no \
+			--with-asound=no \
+			--with-avcodec=no \
+			--with-beanstalk=no \
 			--with-bfd=no \
 			--with-bluetooth=no \
 			--with-cap=no \
@@ -134,7 +140,7 @@ CONFIGURE_ARGS+=	--with-asound=no \
 			--with-cpg=no \
 			--with-dahdi=no \
 			--with-execinfo=no \
-			--with-avcodec=no \
+			--with-fftw3=no \
 			--with-gtk2=no \
 			--with-h323=no \
 			--with-hoard=no \
@@ -148,14 +154,11 @@ CONFIGURE_ARGS+=	--with-asound=no \
 			--with-opusfile=no \
 			--with-osptk=no \
 			--with-oss=no \
-			--with-beanstalk=no \
 			--with-portaudio=${LOCALBASE} \
 			--with-pri=no \
-			--with-fftw3=no \
 			--with-resample=no \
-			--with-sndfile=no \
 			--with-sdl=no \
-			--with-SDL_image=no \
+			--with-sndfile=no \
 			--with-sqlite=no \
 			--with-ss7=no \
 			--with-suppserv=no \
@@ -165,21 +168,6 @@ CONFIGURE_ARGS+=	--with-asound=no \
 # Some build options (including a useful malloc debug) are available
 # via menuselect. They may be enabled by running 'make menuselect'
 # before building.
-
-FLAVOR?=
-FLAVORS=		imap
-
-## flavours:
-
-.if ${FLAVOR:Mimap}
-CONFIGURE_ARGS+=	--with-imap=system
-MAKE_FLAGS+=		MENUSELECT_OPTS_app_voicemail=IMAP_STORAGE
-CPPFLAGS+=		-I${LOCALBASE}/include/c-client
-LIB_DEPENDS-main+=	mail/alpine,-c-client
-WANTLIB-main+=		c-client
-.else
-CONFIGURE_ARGS+=	--with-imap=no
-.endif
 
 ## multipackages:
 .include <bsd.port.arch.mk>
@@ -202,6 +190,17 @@ LIB_DEPENDS-http_post=	devel/gettext,-runtime \
 WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-3.0 gobject-2.0 intl pthread
 .if !${BUILD_PACKAGES:M-http_post}
 CONFIGURE_ARGS+=	--with-gmime=no
+.endif
+
+COMMENT-vm_imap=	IMAP voicemail support for Asterisk
+LIB_DEPENDS-vm_imap=	mail/alpine,-c-client
+WANTLIB-vm_imap=		c-client crypto pthread ssl
+.if !${BUILD_PACKAGES:M-vm_imap}
+CONFIGURE_ARGS+=	--with-imap=no
+.else
+CONFIGURE_ARGS+=	--with-imap=system
+CPPFLAGS+=		-I${LOCALBASE}/include/c-client
+MENUSELECT+=		--enable app_voicemail_imap
 .endif
 
 # ldap
@@ -250,6 +249,13 @@ WANTLIB-odbc=		iodbc pthread
 CONFIGURE_ARGS+=	--with-iodbc=no \
 			--with-ltdl=no
 .endif
+# vm_odbc
+COMMENT-vm_odbc=	ODBC voicemail support for Asterisk
+LIB_DEPENDS-vm_odbc=	databases/iodbc
+WANTLIB-vm_odbc=	iodbc pthread
+.if ${BUILD_PACKAGES:M-vm_odbc}
+MENUSELECT+=		--enable app_voicemail_odbc
+.endif
 
 # postgresql
 COMMENT-pgsql=		PostgreSQL support for Asterisk
@@ -276,7 +282,7 @@ CONFIGURE_ARGS+=	--with-speex=no
 .endif
 
 NO_TEST=		Yes
-INSTALL_TARGET=		install samples
+INSTALL_TARGET=		install install-headers samples
 EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
 EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \
 			modules.conf musiconhold.conf sip.conf voicemail.conf
@@ -308,7 +314,13 @@ pre-patch:
 post-patch:
 	cd ${WRKSRC}/third-party/pjproject/source; ../../apply_patches ../patches .
 	touch ${WRKSRC}/third-party/pjproject/source/.unpacked
-	${SUBST_CMD} ${WRKSRC}/configure.ac
+
+post-configure:
+	@cd ${WRKSRC}; ${MAKE_PROGRAM} menuselect.makeopts; cp menuselect.makeopts{,.orig}
+.if defined(MENUSELECT)
+	cd ${WRKSRC}; menuselect/menuselect ${MENUSELECT}
+.endif
+	@cd ${WRKSRC}; diff -u0 menuselect.makeopts{.orig,} || true
 
 menuselect: configure
 	@cd ${WRKSRC}; ${_PBUILD} ${MAKE_PROGRAM} menuselect
@@ -341,10 +353,10 @@ post-install:
 .include <bsd.port.mk>
 
 .if ${CHOSEN_COMPILER} == ports-gcc
-CFLAGS+=		-ftrampolines
-WANTLIB-main+=		${MODGCC4_CPPWANTLIB}
+CFLAGS +=		-ftrampolines
+WANTLIB-main +=		${MODGCC4_CPPWANTLIB}
 .else
-BUILD_DEPENDS+=		devel/blocksruntime
-LDFLAGS+=		-lBlocksRuntime
-WANTLIB-main+=		${COMPILER_LIBCXX}
+BUILD_DEPENDS +=	devel/blocksruntime
+LDFLAGS +=		-lBlocksRuntime
+WANTLIB-main +=		${COMPILER_LIBCXX}
 .endif

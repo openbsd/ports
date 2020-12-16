@@ -1,0 +1,4 @@
+IMAP voicemail for Asterisk.
+
+Only one voicemail module may be loaded at a time; all others should
+be disabled with "noload" in modules.conf.

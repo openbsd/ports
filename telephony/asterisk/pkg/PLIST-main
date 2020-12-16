@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.88 2020/11/20 12:38:53 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.89 2020/12/16 23:57:26 sthen Exp $
+@ask-update asterisk-*-imap IMAP voicemail moved from a flavour to an optional module. Install asterisk-vm_imap and enable in modules.conf.
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -13,6 +14,7 @@
 @pkgpath telephony/chan_unistim
 @pkgpath telephony/asterisk,-fax
 @pkgpath telephony/asterisk,-fax,h323
+@pkgpath telephony/asterisk,-main,imap
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/asterisk
@@ -161,6 +163,7 @@ include/asterisk/poll-compat.h
 include/asterisk/presencestate.h
 include/asterisk/privacy.h
 include/asterisk/pval.h
+include/asterisk/res_audiosocket.h
 include/asterisk/res_fax.h
 include/asterisk/res_hep.h
 include/asterisk/res_mwi_external.h
@@ -173,6 +176,8 @@ include/asterisk/res_pjsip_outbound_publish.h
 include/asterisk/res_pjsip_presence_xml.h
 include/asterisk/res_pjsip_pubsub.h
 include/asterisk/res_pjsip_session.h
+include/asterisk/res_pjsip_session_caps.h
+include/asterisk/res_prometheus.h
 include/asterisk/res_srtp.h
 include/asterisk/res_stir_shaken.h
 include/asterisk/rtp_engine.h
@@ -210,6 +215,7 @@ include/asterisk/stasis_channels.h
 include/asterisk/stasis_endpoints.h
 include/asterisk/stasis_internal.h
 include/asterisk/stasis_message_router.h
+include/asterisk/stasis_state.h
 include/asterisk/stasis_system.h
 include/asterisk/stasis_test.h
 include/asterisk/statsd.h
@@ -248,6 +254,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_alarmreceiver.so
 @so lib/asterisk/modules/app_amd.so
 @so lib/asterisk/modules/app_attended_transfer.so
+@so lib/asterisk/modules/app_audiosocket.so
 @so lib/asterisk/modules/app_authenticate.so
 @so lib/asterisk/modules/app_blind_transfer.so
 @so lib/asterisk/modules/app_bridgeaddchan.so
@@ -327,6 +334,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/cel_manager.so
 @so lib/asterisk/modules/cel_radius.so
 @so lib/asterisk/modules/cel_sqlite3_custom.so
+@so lib/asterisk/modules/chan_audiosocket.so
 @so lib/asterisk/modules/chan_bridge_media.so
 @so lib/asterisk/modules/chan_console.so
 @so lib/asterisk/modules/chan_iax2.so
@@ -434,6 +442,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_ari_playbacks.so
 @so lib/asterisk/modules/res_ari_recordings.so
 @so lib/asterisk/modules/res_ari_sounds.so
+@so lib/asterisk/modules/res_audiosocket.so
 @so lib/asterisk/modules/res_clialiases.so
 @so lib/asterisk/modules/res_clioriginate.so
 @so lib/asterisk/modules/res_config_curl.so
@@ -512,6 +521,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_pjsip_t38.so
 @so lib/asterisk/modules/res_pjsip_transport_websocket.so
 @so lib/asterisk/modules/res_pjsip_xpidf_body_generator.so
+@so lib/asterisk/modules/res_prometheus.so
 @so lib/asterisk/modules/res_realtime.so
 @so lib/asterisk/modules/res_resolver_unbound.so
 @so lib/asterisk/modules/res_rtp_asterisk.so
@@ -720,6 +730,7 @@ share/examples/asterisk/default/pjproject.conf
 share/examples/asterisk/default/pjsip.conf
 share/examples/asterisk/default/pjsip_notify.conf
 share/examples/asterisk/default/pjsip_wizard.conf
+share/examples/asterisk/default/prometheus.conf
 share/examples/asterisk/default/queuerules.conf
 share/examples/asterisk/default/queues.conf
 @comment share/examples/asterisk/default/res_config_mysql.conf

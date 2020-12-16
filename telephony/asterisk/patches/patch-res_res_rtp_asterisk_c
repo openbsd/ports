@@ -1,4 +1,4 @@
-$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.5 2020/11/20 12:38:53 sthen Exp $
+$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.6 2020/12/16 23:57:26 sthen Exp $
 
 Index: res/res_rtp_asterisk.c
 --- res/res_rtp_asterisk.c.orig

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.40 2020/05/29 21:59:46 feinerer Exp $
+# $OpenBSD: Makefile,v 1.41 2020/12/16 23:57:26 sthen Exp $
 
      SUBDIR =
      SUBDIR += asterisk
-     SUBDIR += asterisk,imap
      SUBDIR += asterisk-g729
      SUBDIR += asterisk-openbsd-moh
      SUBDIR += asterisk-sounds
