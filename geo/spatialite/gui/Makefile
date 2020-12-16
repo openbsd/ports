@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/10/11 16:37:53 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2020/12/16 14:39:32 cwen Exp $
 
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-2.1.0-beta1
@@ -37,6 +37,16 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS +=	--disable-xlsxwriter
+
+# Checking libpq fails on ld.bfd archs; LIBS is crowded with flags coming
+# from other configure AC_CHECK_LIB checks, pulling X11 libraries.
+# ac_cv_lib_pq_PQconnectdb="yes" could have been used as well. The extra
+# space matters.
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ENV +=	LIBS="-L${X11BASE}/lib "
+.endif
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}
 	${INSTALL_DATA} ${WRKSRC}/gnome_resource/*.desktop ${PREFIX}/share/applications/
