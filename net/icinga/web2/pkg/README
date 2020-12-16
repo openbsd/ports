@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2019/02/16 22:17:13 sthen Exp $
+$OpenBSD: README,v 1.8 2020/12/16 21:27:33 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -23,21 +23,21 @@ but a few things will need to be setup FIRST.
 - If using php-fpm, configure it to run scripts as the _icingaweb2
 user, and set the /tmp directory. You may add this to ${SYSCONFDIR}/php-fpm.conf:
 
-   [icingaweb2]
-   user = _icingaweb2
-   group = _icingaweb2
-   listen = ${PREFIX}/run/php-fpm-icingaweb2.sock
-   listen.owner = www
-   listen.group = www
-   listen.mode = 0660
-   pm = dynamic
-   pm.max_children = 20
-   pm.start_servers = 4
-   pm.min_spare_servers = 2
-   pm.max_spare_servers = 5
-   chroot = /var/www
-   env[TMP] = /icinga-web2/tmp
-   env[TMPDIR] = /icinga-web2/tmp
+[icingaweb2]
+user = _icingaweb2
+group = _icingaweb2
+listen = ${PREFIX}/run/php-fpm-icingaweb2.sock
+listen.owner = www
+listen.group = www
+listen.mode = 0660
+pm = dynamic
+pm.max_children = 20
+pm.start_servers = 4
+pm.min_spare_servers = 2
+pm.max_spare_servers = 5
+chroot = /var/www
+env[TMP] = /icinga-web2/tmp
+env[TMPDIR] = /icinga-web2/tmp
 
 (If instead of php-fpm you use Apache with mod_php, you will need to
 add the userid running PHP scripts to the _icingaweb2 group).
@@ -63,8 +63,8 @@ after adding), using the above php-fpm section:
 
 Using icingacli, create the config directory and a token to allow setup:
 
-   # ${PREFIX}/icinga-web2/bin/icingacli setup config directory --group _icingaweb2
-   # ${PREFIX}/icinga-web2/bin/icingacli setup token create
+   # ${PREFIX}/icinga-web2/bin/icingacli setup config directory --group _icingaweb2; \
+     ${PREFIX}/icinga-web2/bin/icingacli setup token create
 
 Open the web interface http://localhost/icingaweb2/. Paste in the token
 that was displayed on-screen in the above step and proceed to the web-based
