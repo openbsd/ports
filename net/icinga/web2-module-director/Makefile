@@ -1,25 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2020/03/10 21:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/12/16 21:26:41 sthen Exp $
 
-COMMENT =	web-based config deployment tool for Icinga 2
+COMMENT=	web-based config deployment tool for Icinga 2
 
-GH_ACCOUNT =	Icinga
-GH_PROJECT =	icingaweb2-module-director
-GH_TAGNAME =	v1.7.2
-REVISION =	0
-PKGNAME =	${DISTNAME:S/icingaweb2/icinga-web2/}
+MODULE_NAME=	director
+MODULE_VERSION=	v1.8.0
 
-MODULES=	lang/php
-
-RUN_DEPENDS =	net/icinga/web2 \
+RUN_DEPENDS=	net/icinga/web2-module-incubator \
+		net/icinga/web2-module-ipl \
+		net/icinga/web2-module-reactbundle \
 		lang/php/${MODPHP_VERSION},-curl
-
-NO_TEST =	Yes
-NO_BUILD =	Yes
-
-PREFIX =	${VARBASE}/www
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/icinga-web2/modules/director
-	cd ${WRKSRC}; pax -rw ./ ${PREFIX}/icinga-web2/modules/director
 
 .include <bsd.port.mk>
