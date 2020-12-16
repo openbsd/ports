@@ -1,45 +1,52 @@
-# $OpenBSD: Makefile,v 1.32 2020/03/20 16:44:22 naddy Exp $
+MODPY_VERSION=3.8
+# $OpenBSD: Makefile,v 1.33 2020/12/16 19:00:02 sthen Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
-# XXX outdated; http://pgfoundry.org/frs/download.php/3622/skytools-3.2.tar.gz
-MODPY_EGG_VERSION=	3.1.1
-DISTNAME=		skytools-${MODPY_EGG_VERSION}
-REVISION=	6
+MODPY_EGG_VERSION=	3.2.6
+GH_ACCOUNT=	pgq
+GH_PROJECT=	skytools-legacy
+GH_TAGNAME=	${MODPY_EGG_VERSION}
+PKGNAME=	skytools-${MODPY_EGG_VERSION}
 
 CATEGORIES=	databases
 
-HOMEPAGE=	http://pgfoundry.org/projects/skytools
-
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
+HOMEPAGE=	https://wiki.postgresql.org/wiki/SkyTools
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB= 	c pq pthread ${MODPY_WANTLIB}
-
-MASTER_SITES=	https://github.com/downloads/markokr/skytools/
+WANTLIB=	c pq pthread ${MODPY_WANTLIB}
 
 MODULES=	lang/python
 
+MASTER_SITES0=	https://github.com/markokr/libusual/archive/
+DISTFILES=	${DISTNAME}.tar.gz libusual-{}2c1cb7f9bfa0a2a183354eb2630a3e4136d0f96b.tar.gz:0
+
 BUILD_DEPENDS=	databases/postgresql,-server>=12 \
-		databases/postgresql,-main>=12
+		databases/postgresql,-main>=12 \
+		textproc/asciidoc \
+		textproc/xmlto
 LIB_DEPENDS=	databases/postgresql,-main>=12
-RUN_DEPENDS=    databases/py-psycopg2
+RUN_DEPENDS=	databases/py-psycopg2
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-python=${MODPY_BIN}
+CONFIGURE_STYLE= autoreconf
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.16
+AUTORECONF=	./autogen.sh
+CONFIGURE_ARGS=	--with-python=${MODPY_BIN} \
+		--with-asciidoc
 
-BINFILES=	bulk_loader.py cube_dispatcher.py londiste.py \
-		pgqadm.py queue_mover.py queue_splitter.py \
-		scriptmgr.py skytools_upgrade.py table_dispatcher.py \
-		walmgr.py
+MAKE_ENV=	PYTHON=${MODPY_BIN}
+MAKE_FLAGS=	V=1
+
+post-extract:
+	mv ${WRKDIR}/libusual-*/* ${WRKSRC}/lib/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/doc/Makefile
 	find ${WRKSRC} -name '*.py' \
 		-exec sed -i 's,/usr/bin/env python,${MODPY_BIN},' {} +
 

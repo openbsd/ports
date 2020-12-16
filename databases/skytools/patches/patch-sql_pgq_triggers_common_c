@@ -1,4 +1,4 @@
-$OpenBSD: patch-sql_pgq_triggers_common_c,v 1.1 2019/02/19 05:11:57 jeremy Exp $
+$OpenBSD: patch-sql_pgq_triggers_common_c,v 1.2 2020/12/16 19:00:02 sthen Exp $
 
 Support PostgreSQL 11.
 
@@ -13,7 +13,7 @@ Index: sql/pgq/triggers/common.c
  #include <commands/trigger.h>
  #include <catalog/pg_type.h>
  #include <catalog/pg_namespace.h>
-@@ -121,9 +122,9 @@ static void fill_magic_columns(PgqTriggerEvent *ev)
+@@ -125,9 +126,9 @@ static void fill_magic_columns(PgqTriggerEvent *ev)
  
  	for (i = 0; i < tupdesc->natts; i++) {
  		/* Skip dropped columns */
@@ -25,7 +25,7 @@ Index: sql/pgq/triggers/common.c
  		if (!is_magic_field(col_name))
  			continue;
  		if (strcmp(col_name, "_pgq_ev_type") == 0)
-@@ -477,7 +478,7 @@ static void parse_oldstyle_args(PgqTriggerEvent *ev, T
+@@ -481,7 +482,7 @@ static void parse_oldstyle_args(PgqTriggerEvent *ev, T
  	 */
  	tupdesc = tg->tg_relation->rd_att;
  	for (i = 0, attcnt = 0; i < tupdesc->natts; i++) {
@@ -34,7 +34,7 @@ Index: sql/pgq/triggers/common.c
  			attcnt++;
  	}
  
-@@ -594,9 +595,9 @@ bool pgqtriga_skip_col(PgqTriggerEvent *ev, int i, int
+@@ -598,9 +599,9 @@ bool pgqtriga_skip_col(PgqTriggerEvent *ev, int i, int
  	const char *name;
  
  	tupdesc = tg->tg_relation->rd_att;
@@ -46,7 +46,7 @@ Index: sql/pgq/triggers/common.c
  
  	if (is_magic_field(name)) {
  		ev->tgargs->custom_fields = 1;
-@@ -628,9 +629,9 @@ bool pgqtriga_is_pkey(PgqTriggerEvent *ev, int i, int 
+@@ -632,9 +633,9 @@ bool pgqtriga_is_pkey(PgqTriggerEvent *ev, int i, int 
  		return ev->attkind[attkind_idx] == 'k';
  	} else if (ev->pkey_list) {
  		tupdesc = tg->tg_relation->rd_att;
