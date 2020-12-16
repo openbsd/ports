@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.28 2020/12/09 07:30:35 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.29 2020/12/16 13:11:34 landry Exp $
 
-MODPY_EGG_VERSION ?=	2.9.2
+MODPY_EGG_VERSION ?=	2.9.3
 DISTNAME ?=	buildbot-${PART}-${MODPY_EGG_VERSION}
 PKGNAME ?=	py-${DISTNAME:S/post/pl/}
 
