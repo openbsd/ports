@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/12/14 12:38:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2020/12/16 17:20:04 ajacoutot Exp $
 
 COMMENT=		documentation for gtk3mm
 
@@ -24,7 +24,7 @@ COMPILER =		base-clang ports-clang
 
 PKG_ARCH=		*
 
-MODGNOME_TOOLS=		yelp
+MODGNOME_TOOLS=		docbook yelp
 
 BUILD_DEPENDS=		x11/gtk3mm
 
