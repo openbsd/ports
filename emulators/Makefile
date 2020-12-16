@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2020/11/01 15:03:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.107 2020/12/16 16:54:16 bcallah Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -50,6 +50,7 @@
     SUBDIR += spike
     SUBDIR += spim
     SUBDIR += stella
+    SUBDIR += tnylpo
     SUBDIR += uae
     SUBDIR += ucon64
     SUBDIR += vbam
