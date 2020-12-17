@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.89 2020/12/16 23:57:26 sthen Exp $
-@ask-update asterisk-*-imap IMAP voicemail moved from a flavour to an optional module. Install asterisk-vm_imap and enable in modules.conf.
+@comment $OpenBSD: PLIST-main,v 1.90 2020/12/17 00:03:44 sthen Exp $
+@ask-update asterisk-*-imap IMAP voicemail moved from a flavour to an optional module. Install asterisk-vm_imap and enable in modules.conf
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
