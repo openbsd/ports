@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/25 10:09:18 thfr Exp $
+# $OpenBSD: Makefile,v 1.8 2020/12/17 07:45:16 thfr Exp $
 
 COMMENT =	library to move calls to Direct3D shaders to OpenGL
 
 # HG_CHANGESET and HG_COMMIT must be kept in sync.
-HG_CHANGESET =	1303
-HG_COMMIT = 	7a43f238f28a
+HG_CHANGESET =	1318
+HG_COMMIT = 	ff4eb6d9c9c2
 
 DISTNAME =	mojoshader-${HG_COMMIT}{${HG_COMMIT}}
 PKGNAME =	mojoshader-${HG_CHANGESET}
