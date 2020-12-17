@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.10 2020/04/06 15:11:11 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.11 2020/12/17 15:17:52 robert Exp $
 
 enable cooperative suspend by default
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1350,7 +1350,7 @@ with_unreal_default=no
+@@ -1351,7 +1351,7 @@ with_unreal_default=no
  with_wasm_default=no
  
  with_bitcode_default=no
@@ -14,7 +14,7 @@ Index: configure.ac
  enable_hybrid_suspend_default=no
  
  # For the sake of clearer error messages, these numbers should all be different from each other.
-@@ -5661,7 +5661,7 @@ fi
+@@ -5705,7 +5705,7 @@ fi
  dnl Now check if there were flags overriding the defaults
  
  AC_ARG_WITH(cooperative_gc,        [  --with-cooperative-gc=yes|no        Enable cooperative stop-the-world garbage collection (sgen only) (defaults to no)], [AC_MSG_WARN([--with-cooperative-gc is deprecated, use --enable-cooperative-suspend instead])], [with_cooperative_gc=default])
@@ -23,7 +23,7 @@ Index: configure.ac
  
  if test x$enable_cooperative_suspend = xdefault -a x$with_cooperative_gc != xdefault; then
  	enable_cooperative_suspend=$with_cooperative_gc
-@@ -5676,7 +5676,7 @@ if test x$enable_cooperative_suspend != xno; then
+@@ -5720,7 +5720,7 @@ if test x$enable_cooperative_suspend != xno; then
  	enable_hybrid_suspend_default=no
  fi
  
@@ -32,7 +32,7 @@ Index: configure.ac
  
  AC_ARG_ENABLE(hybrid_suspend, [ --enable-hybrid-suspend     Enable hybrid stop-the-world garbage collection (sgen only) - cooperative suspend for threads running managed and runtime code, and preemptive suspend for threads running native and P/Invoke code (defaults to no)], [], [enable_hybrid_suspend=default])
  
-@@ -6516,6 +6516,22 @@ elif case $host_os in netbsd*) true;; *) false;; esac;
+@@ -6583,6 +6583,22 @@ elif case $host_os in netbsd*) true;; *) false;; esac;
  	AC_MSG_RESULT(netbsd)
  
  	MONO_NATIVE_PLATFORM_TYPE="MONO_NATIVE_PLATFORM_TYPE_NETBSD"
@@ -55,7 +55,7 @@ Index: configure.ac
  elif case $host_os in haiku*) true;; *) false;; esac; then
  	mono_native_text="Haiku"
  	MONO_NATIVE_CC=$CC
-@@ -6590,6 +6606,7 @@ AM_CONDITIONAL(MONO_NATIVE_PLATFORM_AIX, test x$MONO_N
+@@ -6657,6 +6673,7 @@ AM_CONDITIONAL(MONO_NATIVE_PLATFORM_AIX, test x$MONO_N
  AM_CONDITIONAL(MONO_NATIVE_PLATFORM_ANDROID, test x$MONO_NATIVE_PLATFORM = xandroid)
  AM_CONDITIONAL(MONO_NATIVE_PLATFORM_FREEBSD, test x$MONO_NATIVE_PLATFORM = xfreebsd)
  AM_CONDITIONAL(MONO_NATIVE_PLATFORM_NETBSD, test x$MONO_NATIVE_PLATFORM = xnetbsd)
