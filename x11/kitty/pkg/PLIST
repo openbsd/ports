@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/07 12:19:53 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/17 07:53:18 thfr Exp $
 @bin bin/kitty
 lib/kitty/
 lib/kitty/__main__.py
@@ -99,6 +99,16 @@ lib/kitty/kittens/hints/${MODPY_PYCACHE}url_regex.${MODPY_PYC_MAGIC_TAG}opt-2.py
 lib/kitty/kittens/hints/${MODPY_PYCACHE}url_regex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kittens/hints/main.py
 lib/kitty/kittens/hints/url_regex.py
+lib/kitty/kittens/hyperlinked_grep/
+lib/kitty/kittens/hyperlinked_grep/__init__.py
+${MODPY_COMMENT}lib/kitty/kittens/hyperlinked_grep/${MODPY_PYCACHE}/
+lib/kitty/kittens/hyperlinked_grep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/hyperlinked_grep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/hyperlinked_grep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/hyperlinked_grep/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/hyperlinked_grep/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/hyperlinked_grep/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/hyperlinked_grep/main.py
 lib/kitty/kittens/icat/
 lib/kitty/kittens/icat/__init__.py
 ${MODPY_COMMENT}lib/kitty/kittens/icat/${MODPY_PYCACHE}/
@@ -129,6 +139,26 @@ lib/kitty/kittens/panel/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEX
 lib/kitty/kittens/panel/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kittens/panel/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kittens/panel/main.py
+lib/kitty/kittens/query_terminal/
+lib/kitty/kittens/query_terminal/__init__.py
+${MODPY_COMMENT}lib/kitty/kittens/query_terminal/${MODPY_PYCACHE}/
+lib/kitty/kittens/query_terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/query_terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/query_terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/query_terminal/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/query_terminal/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/query_terminal/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/query_terminal/main.py
+lib/kitty/kittens/remote_file/
+lib/kitty/kittens/remote_file/__init__.py
+${MODPY_COMMENT}lib/kitty/kittens/remote_file/${MODPY_PYCACHE}/
+lib/kitty/kittens/remote_file/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/remote_file/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/remote_file/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/remote_file/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/remote_file/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/remote_file/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/remote_file/main.py
 lib/kitty/kittens/resize_window/
 lib/kitty/kittens/resize_window/__init__.py
 ${MODPY_COMMENT}lib/kitty/kittens/resize_window/${MODPY_PYCACHE}/
@@ -166,6 +196,9 @@ ${MODPY_COMMENT}lib/kitty/kittens/tui/${MODPY_PYCACHE}/
 lib/kitty/kittens/tui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kittens/tui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kittens/tui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/tui/${MODPY_PYCACHE}dircolors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/tui/${MODPY_PYCACHE}dircolors.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/tui/${MODPY_PYCACHE}dircolors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kittens/tui/${MODPY_PYCACHE}handler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kittens/tui/${MODPY_PYCACHE}handler.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kittens/tui/${MODPY_PYCACHE}handler.${MODPY_PYC_MAGIC_TAG}pyc
@@ -184,12 +217,21 @@ lib/kitty/kittens/tui/${MODPY_PYCACHE}operations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kittens/tui/${MODPY_PYCACHE}operations_stub.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kittens/tui/${MODPY_PYCACHE}operations_stub.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kittens/tui/${MODPY_PYCACHE}operations_stub.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/tui/${MODPY_PYCACHE}path_completer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/tui/${MODPY_PYCACHE}path_completer.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/tui/${MODPY_PYCACHE}path_completer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/tui/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/tui/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/tui/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/tui/dircolors.py
 lib/kitty/kittens/tui/handler.py
 lib/kitty/kittens/tui/images.py
 lib/kitty/kittens/tui/line_edit.py
 lib/kitty/kittens/tui/loop.py
 lib/kitty/kittens/tui/operations.py
 lib/kitty/kittens/tui/operations_stub.py
+lib/kitty/kittens/tui/path_completer.py
+lib/kitty/kittens/tui/utils.py
 lib/kitty/kittens/unicode_input/
 lib/kitty/kittens/unicode_input/__init__.py
 ${MODPY_COMMENT}lib/kitty/kittens/unicode_input/${MODPY_PYCACHE}/
@@ -240,6 +282,9 @@ lib/kitty/kitty/${MODPY_PYCACHE}config_data.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kitty/${MODPY_PYCACHE}guess_mime_type.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kitty/${MODPY_PYCACHE}guess_mime_type.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kitty/${MODPY_PYCACHE}guess_mime_type.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/${MODPY_PYCACHE}key_encoding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/${MODPY_PYCACHE}key_encoding.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/${MODPY_PYCACHE}key_encoding.${MODPY_PYC_MAGIC_TAG}pyc
@@ -264,6 +309,9 @@ lib/kitty/kitty/${MODPY_PYCACHE}multiprocessing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/${MODPY_PYCACHE}notify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/${MODPY_PYCACHE}notify.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/${MODPY_PYCACHE}notify.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kitty/${MODPY_PYCACHE}open_actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kitty/${MODPY_PYCACHE}open_actions.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kitty/${MODPY_PYCACHE}open_actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/${MODPY_PYCACHE}options_stub.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/${MODPY_PYCACHE}options_stub.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/${MODPY_PYCACHE}options_stub.${MODPY_PYC_MAGIC_TAG}pyc
@@ -369,6 +417,7 @@ lib/kitty/kitty/fonts/render.py
 @so lib/kitty/kitty/glfw-x11.so
 lib/kitty/kitty/graphics_fragment.glsl
 lib/kitty/kitty/graphics_vertex.glsl
+lib/kitty/kitty/guess_mime_type.py
 lib/kitty/kitty/key_encoding.py
 lib/kitty/kitty/key_names.py
 lib/kitty/kitty/keys.py
@@ -413,6 +462,7 @@ lib/kitty/kitty/main.py
 lib/kitty/kitty/marks.py
 lib/kitty/kitty/multiprocessing.py
 lib/kitty/kitty/notify.py
+lib/kitty/kitty/open_actions.py
 lib/kitty/kitty/options_stub.py
 lib/kitty/kitty/os_window_size.py
 lib/kitty/kitty/rc/
@@ -574,6 +624,7 @@ share/doc/kitty/html/_images/
 share/doc/kitty/html/_images/diff.png
 share/doc/kitty/html/_images/hints_mode.png
 share/doc/kitty/html/_images/panel.png
+share/doc/kitty/html/_images/remote_file.png
 share/doc/kitty/html/_images/screenshot.png
 share/doc/kitty/html/_images/splits.png
 share/doc/kitty/html/_images/unicode.png
@@ -596,12 +647,16 @@ share/doc/kitty/html/_sources/kittens/clipboard.rst.txt
 share/doc/kitty/html/_sources/kittens/custom.rst.txt
 share/doc/kitty/html/_sources/kittens/diff.rst.txt
 share/doc/kitty/html/_sources/kittens/hints.rst.txt
+share/doc/kitty/html/_sources/kittens/hyperlinked_grep.rst.txt
 share/doc/kitty/html/_sources/kittens/icat.rst.txt
 share/doc/kitty/html/_sources/kittens/panel.rst.txt
+share/doc/kitty/html/_sources/kittens/query_terminal.rst.txt
+share/doc/kitty/html/_sources/kittens/remote_file.rst.txt
 share/doc/kitty/html/_sources/kittens/unicode-input.rst.txt
 share/doc/kitty/html/_sources/launch.rst.txt
 share/doc/kitty/html/_sources/layouts.rst.txt
 share/doc/kitty/html/_sources/marks.rst.txt
+share/doc/kitty/html/_sources/open_actions.rst.txt
 share/doc/kitty/html/_sources/performance.rst.txt
 share/doc/kitty/html/_sources/pipe.rst.txt
 share/doc/kitty/html/_sources/protocol-extensions.rst.txt
@@ -645,13 +700,17 @@ share/doc/kitty/html/kittens/clipboard.html
 share/doc/kitty/html/kittens/custom.html
 share/doc/kitty/html/kittens/diff.html
 share/doc/kitty/html/kittens/hints.html
+share/doc/kitty/html/kittens/hyperlinked_grep.html
 share/doc/kitty/html/kittens/icat.html
 share/doc/kitty/html/kittens/panel.html
+share/doc/kitty/html/kittens/query_terminal.html
+share/doc/kitty/html/kittens/remote_file.html
 share/doc/kitty/html/kittens/unicode-input.html
 share/doc/kitty/html/launch.html
 share/doc/kitty/html/layouts.html
 share/doc/kitty/html/marks.html
 share/doc/kitty/html/objects.inv
+share/doc/kitty/html/open_actions.html
 share/doc/kitty/html/performance.html
 share/doc/kitty/html/pipe.html
 share/doc/kitty/html/protocol-extensions.html

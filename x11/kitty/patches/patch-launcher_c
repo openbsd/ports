@@ -1,7 +1,6 @@
-$OpenBSD: patch-launcher_c,v 1.1.1.1 2020/09/07 12:19:52 thfr Exp $
+$OpenBSD: patch-launcher_c,v 1.2 2020/12/17 07:53:18 thfr Exp $
 
 disable procfs
-hardcode exe_dir
 
 Index: launcher.c
 --- launcher.c.orig
@@ -11,13 +10,13 @@ Index: launcher.c
  #endif
  
 -#ifndef __FreeBSD__
-+#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
++#if !defined(__FreeBSD__)
  static inline bool
  safe_realpath(const char* src, char *buf, size_t buf_sz) {
      char* ans = realpath(src, NULL);
-@@ -147,7 +147,13 @@ read_exe_path(char *exe, size_t buf_sz) {
-     if (!safe_realpath("/proc/curproc/exe", exe, buf_sz)) { fprintf(stderr, "Failed to read /proc/curproc/exe\n"); return false; }
-     return true;
+@@ -166,7 +166,13 @@ read_exe_path(char *exe, size_t buf_sz) {
+     fprintf(stderr, "kitty not found in PATH aborting\n");
+     return false;
  }
 +#elif defined(__OpenBSD__)
  
@@ -29,7 +28,7 @@ Index: launcher.c
  #else
  
  static inline bool
-@@ -165,7 +171,7 @@ int main(int argc, char *argv[]) {
+@@ -184,7 +190,7 @@ int main(int argc, char *argv[]) {
  #endif
      if (!read_exe_path(exe, sizeof(exe))) return 1;
  
