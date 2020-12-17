@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/04 05:10:04 thfr Exp $
+# $OpenBSD: Makefile,v 1.11 2020/12/17 07:41:42 thfr Exp $
 
 # versions are in sync with FNA versions
-V =		20.09
+V =		20.12
 COMMENT =	XAudio reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	faudio-${V}
@@ -16,7 +16,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL2 glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB +=	gstreamer-1.0 intl
+WANTLIB +=	gstreamer-1.0 gsttag-1.0 intl
 
 MASTER_SITES =	https://github.com/FNA-XNA/FNA/releases/download/${V}/
 EXTRACT_SUFX =	.zip

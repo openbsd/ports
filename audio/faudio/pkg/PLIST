@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/20 04:26:41 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/17 07:41:42 thfr Exp $
 include/F3DAudio.h
 include/FACT.h
 include/FACT3D.h
@@ -12,3 +12,4 @@ lib/cmake/FAudio/FAudio-config.cmake
 lib/cmake/FAudio/FAudio-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/FAudio/FAudio-targets.cmake
 @lib lib/libFAudio.so.${LIBFAudio_VERSION}
+lib/pkgconfig/FAudio.pc
