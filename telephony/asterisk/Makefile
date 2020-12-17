@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.332 2020/12/16 23:57:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.333 2020/12/17 00:00:11 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -288,9 +288,13 @@ EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \
 			modules.conf musiconhold.conf sip.conf voicemail.conf
 
 .for i in ${MULTI_PACKAGES:N-main}
-# subpackages aren't flavoured, so overwrite the default name/path
-FULLPKGNAME$i ?=	asterisk$i-${VER}
-FULLPKGPATH$i ?=	${PKGPATH},$i
+# previously vm_imap was a flavour of the main build due to how the build
+# system worked. it didn't affect other subpackages so the following lines
+# were used to overwrite the flavour of those with the default name/path.
+# kept commented-out here for reference as this is my go-to port if I need
+# to do it again.
+#FULLPKGNAME$i ?=	asterisk$i-${VER}
+#FULLPKGPATH$i ?=	${PKGPATH},$i
 RUN_DEPENDS$i +=	asterisk-${VER}:telephony/asterisk
 .endfor
 
