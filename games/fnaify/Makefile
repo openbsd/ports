@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/10/07 22:14:12 thfr Exp $
+# $OpenBSD: Makefile,v 1.10 2020/12/17 07:49:25 thfr Exp $
 
 # Don't bother on non-mono archs.
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
@@ -7,6 +7,7 @@ V =		3.0
 COMMENT =	run FNA/XNA games on OpenBSD
 DISTNAME =	fnaify-${V}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.PlayOnBSD.com
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
@@ -23,6 +24,7 @@ RUN_DEPENDS =	audio/faudio \
 		audio/libvorbis \
 		audio/openal \
 		devel/sdl2-image \
+		games/fna \
 		games/steamworks-nosteam \
 		graphics/fna3d \
 		graphics/jpeg \
