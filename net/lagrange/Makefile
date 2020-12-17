@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/12/12 21:13:07 solene Exp $
+# $OpenBSD: Makefile,v 1.4 2020/12/17 22:26:24 kmos Exp $
 
 COMMENT =	SDL multi protocol navigator
 VERSION =	0.13.1
@@ -19,6 +19,9 @@ WANTLIB +=	SDL2 mpg123 pcre unistring
 WANTLIB +=	c crypto m ssl z pthread
 
 MASTER_SITES =	https://git.skyjake.fi/skyjake/lagrange/releases/download/v${VERSION}/
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MODULES =	devel/cmake
 
