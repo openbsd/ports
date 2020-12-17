@@ -7,7 +7,3 @@ Interactive Voice Response, and Call Queuing.
 Asterisk supports Voice over IP in many protocols, and can
 interoperate with almost all standards-based telephony equipment
 using relatively inexpensive hardware.
-
-Flavours:
-
-	IMAP - use imap for voicemail storage instead of files.
