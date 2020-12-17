@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/05 09:24:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/12/17 07:49:55 ajacoutot Exp $
 
 VERSION=	1.16
-DISTNAME=	automake-${VERSION}.2
+DISTNAME=	automake-${VERSION}.3
 PKGSPEC=	automake->=${VERSION},<1.17
 EXTRACT_SUFX=	.tar.xz
 
