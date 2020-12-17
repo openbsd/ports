@@ -1,5 +1,4 @@
-MODPY_VERSION=3.8
-# $OpenBSD: Makefile,v 1.33 2020/12/16 19:00:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/12/17 10:18:46 sthen Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
