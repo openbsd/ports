@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/12/07 13:30:12 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2020/12/18 15:32:58 fcambus Exp $
 
 COMMENT =	swiss army knife for video game console emulators
 
 DISTNAME =	ucon64-2.2.1-src
 PKGNAME =	${DISTNAME:S/-src//}
+REVISION =	0
 
 CATEGORIES =	emulators
 
