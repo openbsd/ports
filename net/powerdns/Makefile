@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2020/11/05 20:33:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2020/12/18 12:09:50 otto Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP database access module for PowerDNS
 
-V=			4.3.1
+V=			4.4.0
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -13,10 +13,10 @@ PKGSPEC-main=		powerdns-=${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
-#REVISION-main=		1
-REVISION-mysql=		0
-#REVISION-pgsql=		1
-#REVISION-ldap=		1
+#REVISION-main=		0
+#REVISION-mysql=		0
+#REVISION-pgsql=		0
+#REVISION-ldap=		0
 
 CATEGORIES=		net
 
@@ -62,6 +62,7 @@ BACKENDS=		gsqlite3
 SYSCONFDIR=		${BASESYSCONFDIR}/pdns
 
 CONFIGURE_STYLE=	gnu
+USE_GMAKE=		Yes
 CONFIGURE_ARGS+=	--disable-shared \
 			--with-modules="bind" \
 			--with-sqlite3 \
@@ -74,7 +75,8 @@ CONFIGURE_ARGS+=	--disable-shared \
 			--enable-ixfrdist
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			CXXFLAGS="-Wno-deprecated-copy"
 LIBTOOL_FLAGS=		--tag=disable-static
 
 .include <bsd.port.arch.mk>
