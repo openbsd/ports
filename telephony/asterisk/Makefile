@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.335 2020/12/17 00:03:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.336 2020/12/18 09:00:23 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -296,6 +296,7 @@ EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \
 # to do it again.
 #FULLPKGNAME$i ?=	asterisk$i-${VER}
 #FULLPKGPATH$i ?=	${PKGPATH},$i
+PKGNAME$i ?=		asterisk$i-${VER}
 RUN_DEPENDS$i +=	asterisk-${VER}:telephony/asterisk
 .endfor
 
