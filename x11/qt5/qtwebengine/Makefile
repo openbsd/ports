@@ -15,13 +15,12 @@ COMMENT =		Chromium-based web engine for Qt5
 
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
-REVISION =		4
 
 CATEGORIES =		www
 
-SHARED_LIBS +=  Qt5WebEngine              0.0 # 5.13
-SHARED_LIBS +=  Qt5WebEngineCore          0.0 # 5.13
-SHARED_LIBS +=  Qt5WebEngineWidgets       0.0 # 5.13
+SHARED_LIBS +=  Qt5WebEngine              1.0 # 5.13
+SHARED_LIBS +=  Qt5WebEngineCore          1.0 # 5.13
+SHARED_LIBS +=  Qt5WebEngineWidgets       1.0 # 5.13
 SHARED_LIBS +=  Qt5Pdf                    0.0 # 5.15
 SHARED_LIBS +=  Qt5PdfWidgets             0.0 # 5.15
 
@@ -48,7 +47,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
-		x11/gnome/libgnome-keyring \
 		x11/gtk+3,-cups \
 		x11/gtk+3,-guic
 
@@ -59,8 +57,7 @@ BUILD_DEPENDS =	archivers/bzip2 \
 		devel/protobuf \
 		shells/bash \
 		sysutils/flock \
-		sysutils/pciutils \
-		x11/gnome/libgnome-keyring
+		sysutils/pciutils
 
 LIB_DEPENDS =	archivers/snappy \
 		devel/harfbuzz \
@@ -104,9 +101,6 @@ PKG_ARGS+=		-Dswiftshader=1
 .endif
 
 PATCHORIG=		.orig.port
-
-# XXX dwz doesn't work with chromium yet
-DWZ = :
 
 SUBST_VARS +=	WRKSRC WRKDIR DEBUGFLAG WRKBUILD
 
