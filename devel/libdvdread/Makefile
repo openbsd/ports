@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.32 2020/12/15 18:57:38 rsadowski Exp $
+#$OpenBSD: Makefile,v 1.33 2020/12/18 17:28:16 kmos Exp $
 
 COMMENT =	accessing DVD files
 
@@ -24,5 +24,10 @@ LIB_DEPENDS =	converters/libdvdcss>=1.4.2
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS =--disable-apidoc
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
