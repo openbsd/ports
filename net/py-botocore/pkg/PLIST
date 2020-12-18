@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.152 2020/12/16 08:58:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.153 2020/12/18 11:20:28 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -875,6 +875,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/lightsail/2016-11-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lightsail/2016-11-28/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lightsail/2016-11-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lightsail/2016-11-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/location/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/location/2020-11-19/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/location/2020-11-19/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/location/2020-11-19/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/examples-1.json
@@ -1349,6 +1353,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/wafv2/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/wafv2/2019-07-29/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/wafv2/2019-07-29/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/wafv2/2019-07-29/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wellarchitected/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wellarchitected/2020-03-31/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wellarchitected/2020-03-31/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wellarchitected/2020-03-31/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workdocs/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workdocs/2016-05-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workdocs/2016-05-01/examples-1.json
