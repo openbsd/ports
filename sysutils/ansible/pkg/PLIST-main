@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2020/11/07 19:14:57 pvk Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2020/12/18 22:47:41 pvk Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -11915,6 +11915,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}color.${M
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}context_objects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}encrypt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}fqcn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}hashing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}jsonrpc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -11936,6 +11937,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/color.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/context_objects.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/display.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/encrypt.py
+lib/python${MODPY_VERSION}/site-packages/ansible/utils/fqcn.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/hashing.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/helpers.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/jsonrpc.py
@@ -12106,6 +12108,10 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/import/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/import/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/import/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/import/importer.py
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/integration-aliases/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/integration-aliases/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/integration-aliases/${MODPY_PYCACHE}yaml_to_json.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/integration-aliases/yaml_to_json.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/pep8/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/pep8/current-ignore.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/sanity/pslint/
