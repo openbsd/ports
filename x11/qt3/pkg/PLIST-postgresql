@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-postgresql,v 1.5 2005/12/28 16:50:59 espie Exp $
-lib/qt3/${QT_PLUGINS}/sqldrivers/libqsqlpsql.so
