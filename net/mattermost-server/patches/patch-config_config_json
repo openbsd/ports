@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_json,v 1.10 2020/11/19 20:14:02 pvk Exp $
+$OpenBSD: patch-config_config_json,v 1.11 2020/12/19 12:24:50 pvk Exp $
 
 Index: config/config.json
 --- config/config.json.orig
@@ -19,9 +19,9 @@ Index: config/config.json
 -    "LocalModeSocketLocation": "/var/tmp/mattermost_local.socket",
 +    "LocalModeSocketLocation": "${LOCALSTATEDIR}/mattermost/mattermost_local.socket",
      "EnableAWSMetering": false,
-     "ThreadAutoFollow": true,
-     "ManagedResourcePaths": ""
-@@ -153,13 +153,13 @@
+     "SplitKey": "",
+     "FeatureFlagSyncIntervalSeconds": 30,
+@@ -156,13 +156,13 @@
      "DisableDatabaseSearch": false
    },
    "LogSettings": {
@@ -37,7 +37,7 @@ Index: config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "EnableSentry": true,
-@@ -176,13 +176,13 @@
+@@ -179,13 +179,13 @@
      "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
@@ -53,7 +53,7 @@ Index: config/config.json
      "AdvancedLoggingConfig": ""
    },
    "PasswordSettings": {
-@@ -198,7 +198,7 @@
+@@ -201,7 +201,7 @@
      "EnableMobileDownload": true,
      "MaxFileSize": 52428800,
      "DriverName": "local",
@@ -62,7 +62,7 @@ Index: config/config.json
      "EnablePublicLink": false,
      "PublicLinkSalt": "",
      "InitialFont": "nunito-bold.ttf",
-@@ -227,11 +227,11 @@
+@@ -230,11 +230,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -77,7 +77,7 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -267,7 +267,7 @@
+@@ -270,7 +270,7 @@
      "SupportEmail": "feedback@mattermost.com",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -86,7 +86,7 @@ Index: config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -354,7 +354,7 @@
+@@ -357,7 +357,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -95,7 +95,7 @@ Index: config/config.json
      "EnableDaily": false
    },
    "LocalizationSettings": {
-@@ -498,8 +498,8 @@
+@@ -503,8 +503,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadUrl": false,
      "EnableHealthCheck": true,
@@ -106,10 +106,12 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.nps": {
-@@ -529,4 +529,4 @@
-     "RemoteImageProxyURL": "",
-     "RemoteImageProxyOptions": ""
-   }
--}
-\ No newline at end of file
+@@ -531,7 +531,7 @@
+   "ImageProxySettings": {
+     "Enable": false,
+     "ImageProxyType": "local",
+-    "RemoteImageProxyURL": "",
 +}
+     "RemoteImageProxyOptions": ""
+   },
+   "CloudSettings": {
