@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gui_accountmanager_cpp,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+$OpenBSD: patch-src_gui_accountmanager_cpp,v 1.2 2020/12/19 19:34:21 rsadowski Exp $
 
 Index: src/gui/accountmanager.cpp
 --- src/gui/accountmanager.cpp.orig
@@ -12,7 +12,7 @@ Index: src/gui/accountmanager.cpp
 -        authType = "webflow";
 -        settings.setValue(QLatin1String(authTypeC), authType);
 -
--        foreach(QString key, settings.childKeys()) {
+-        for (const QString &key : settings.childKeys()) {
 -            if (!key.startsWith("http_"))
 -                continue;
 -            auto newkey = QString::fromLatin1("webflow_").append(key.mid(5));

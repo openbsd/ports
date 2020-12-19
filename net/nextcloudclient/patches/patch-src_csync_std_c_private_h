@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_csync_std_c_private_h,v 1.1.1.1 2019/11/16 10:27:43 rsadowski Exp $
+$OpenBSD: patch-src_csync_std_c_private_h,v 1.2 2020/12/19 19:34:21 rsadowski Exp $
 
 Index: src/csync/std/c_private.h
 --- src/csync/std/c_private.h.orig
 +++ src/csync/std/c_private.h
-@@ -156,7 +156,7 @@ typedef char           mbchar_t;
+@@ -156,7 +156,7 @@ typedef char           mbchar_t; // NOLINT this is som
  #endif
  
  /* FIXME: Implement TLS for OS X */
