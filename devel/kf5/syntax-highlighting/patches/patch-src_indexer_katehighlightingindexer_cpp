@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_indexer_katehighlightingindexer_cpp,v 1.1 2020/12/19 16:25:07 rsadowski Exp $
+
+https://invent.kde.org/frameworks/syntax-highlighting/-/issues/6
+
+Index: src/indexer/katehighlightingindexer.cpp
+--- src/indexer/katehighlightingindexer.cpp.orig
++++ src/indexer/katehighlightingindexer.cpp
+@@ -1390,7 +1390,7 @@ class HlFilesChecker (private)
+     //! - "Comment##ISO C++"-> "Comment" in ISO C++
+     void resolveContextName(Definition &definition, const Context& context, ContextName &contextName, int line)
+     {
+-        QStringView name = contextName.name;
++        QString name = contextName.name;
+         if (name.isEmpty()) {
+             contextName.stay = true;
+         }
+@@ -1422,16 +1422,16 @@ class HlFilesChecker (private)
+             if (!name.isEmpty()) {
+                 const int idx = name.indexOf(QStringLiteral("##"));
+                 if (idx == -1) {
+-                    auto it = definition.contexts.find(name.toString());
++                    auto it = definition.contexts.find(name);
+                     if (it != definition.contexts.end())
+                         contextName.context = &*it;
+                 } else {
+                     auto defName = name.mid(idx + 2);
+                     auto listName = name.left(idx);
+-                    auto it = m_definitions.find(defName.toString());
++                    auto it = m_definitions.find(defName);
+                     if (it != m_definitions.end()) {
+                         definition.referencedDefinitions.insert(&*it);
+-                        auto ctxIt = it->contexts.find(listName.isEmpty() ? it->firstContextName : listName.toString());
++                        auto ctxIt = it->contexts.find(listName.isEmpty() ? it->firstContextName : listName);
+                         if (ctxIt != it->contexts.end()) {
+                             contextName.context = &*ctxIt;
+                         }

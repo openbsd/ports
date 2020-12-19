@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/12/19 16:25:07 rsadowski Exp $
 include/KF5/
 include/KF5/KWidgetsAddons/
 include/KF5/KWidgetsAddons/KAcceleratorManager
@@ -31,6 +31,7 @@ include/KF5/KWidgetsAddons/KLed
 include/KF5/KWidgetsAddons/KMessageBox
 include/KF5/KWidgetsAddons/KMessageBoxDontAskAgainInterface
 include/KF5/KWidgetsAddons/KMessageBoxNotifyInterface
+include/KF5/KWidgetsAddons/KMessageDialog
 include/KF5/KWidgetsAddons/KMessageWidget
 include/KF5/KWidgetsAddons/KMimeTypeChooser
 include/KF5/KWidgetsAddons/KMimeTypeChooserDialog
@@ -107,6 +108,7 @@ include/KF5/KWidgetsAddons/kled.h
 include/KF5/KWidgetsAddons/kmessagebox.h
 include/KF5/KWidgetsAddons/kmessageboxdontaskagaininterface.h
 include/KF5/KWidgetsAddons/kmessageboxnotifyinterface.h
+include/KF5/KWidgetsAddons/kmessagedialog.h
 include/KF5/KWidgetsAddons/kmessagewidget.h
 include/KF5/KWidgetsAddons/kmimetypechooser.h
 include/KF5/KWidgetsAddons/kmimetypeeditor.h

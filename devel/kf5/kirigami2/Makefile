@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/09/07 14:48:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/12/19 16:25:05 rsadowski Exp $
 
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami2-${VERSION}
@@ -6,7 +6,7 @@ PKGNAME =	kf5-${DISTNAME}
 
 HOMEPAGE =	https://api.kde.org/frameworks/kirigami/html/index.html
 
-SHARED_LIBS +=  KF5Kirigami2              3.0 # 5.41
+SHARED_LIBS +=  KF5Kirigami2              3.1 # 5.41
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Qml Qt5Quick Qt5QuickControls2 m

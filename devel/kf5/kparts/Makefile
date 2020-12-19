@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2020/09/07 14:48:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/12/19 16:25:06 rsadowski Exp $
 
 COMMENT =		KDE plugin framework for user interface components
 DISTNAME =		kparts-${VERSION}
 
-SHARED_LIBS =		KF5Parts	6.0
+SHARED_LIBS =		KF5Parts	6.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/12/10 02:20:30 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.17 2020/12/19 16:25:03 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -111,6 +111,7 @@ share/ECM/toolchain/Android.cmake
 share/ECM/toolchain/ECMAndroidDeployQt.cmake
 share/ECM/toolchain/deployment-file-qt514.json.in
 share/ECM/toolchain/deployment-file.json.in
+share/ECM/toolchain/generate-fastlane-metadata.py
 share/ECM/toolchain/hasMainSymbol.cmake
 share/ECM/toolchain/specifydependencies.cmake
 share/doc/ECM/

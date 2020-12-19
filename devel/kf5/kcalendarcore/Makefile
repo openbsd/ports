@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/06 04:48:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2020/12/19 16:25:04 rsadowski Exp $
 
 COMMENT =	The KDE calendar access library
 DISTNAME =	kcalendarcore-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5CalendarCore           2.0 # 5.7
+SHARED_LIBS +=  KF5CalendarCore           2.1 # 5.7
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui ical icalss icalvcal
 WANTLIB += m

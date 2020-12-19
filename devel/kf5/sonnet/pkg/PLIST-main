@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2020/09/07 14:48:52 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2020/12/19 16:25:07 rsadowski Exp $
 @bin bin/gentrigrams
 @bin bin/parsetrigrams
 include/KF5/
@@ -51,6 +51,7 @@ share/kf5/mkspecs/qt_SonnetUi.pri
 share/locale/af/LC_MESSAGES/sonnet5_qt.qm
 share/locale/ar/LC_MESSAGES/sonnet5_qt.qm
 share/locale/as/LC_MESSAGES/sonnet5_qt.qm
+share/locale/ast/LC_MESSAGES/sonnet5_qt.qm
 share/locale/az/LC_MESSAGES/sonnet5_qt.qm
 share/locale/be/LC_MESSAGES/sonnet5_qt.qm
 share/locale/be@latin/LC_MESSAGES/sonnet5_qt.qm

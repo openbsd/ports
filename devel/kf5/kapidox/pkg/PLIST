@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/03 16:12:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/12/19 16:25:03 rsadowski Exp $
 bin/depdiagram-generate
 bin/depdiagram-generate-all
 bin/depdiagram-prepare
@@ -26,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/Doxyfile.global
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/DoxygenLayout.xml
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/dependencies.md.tmpl
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/footer.html
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/global.qdocconf
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/header.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/3rd-party/
@@ -67,6 +68,8 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/libinfo.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/library-sidebar.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/library.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/maintainers.html
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/qdoc-sidebar.html
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/qdoc-wrapper.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/search.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/subgroup-sidebar.html
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/templates/subgroup.html

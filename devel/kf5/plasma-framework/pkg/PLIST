@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/11/15 06:48:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/12/19 16:25:07 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -320,6 +320,7 @@ lib/qt5/qml/org/kde/plasma/core/private/DefaultToolTip.qml
 lib/qt5/qml/org/kde/plasma/core/qmldir
 lib/qt5/qml/org/kde/plasma/extras/
 lib/qt5/qml/org/kde/plasma/extras/App.qml
+lib/qt5/qml/org/kde/plasma/extras/BasicPlasmoidHeading.qml
 lib/qt5/qml/org/kde/plasma/extras/ConditionalLoader.qml
 lib/qt5/qml/org/kde/plasma/extras/DescriptiveLabel.qml
 lib/qt5/qml/org/kde/plasma/extras/ExpandableListItem.qml
@@ -329,6 +330,7 @@ lib/qt5/qml/org/kde/plasma/extras/PageRow.qml
 lib/qt5/qml/org/kde/plasma/extras/Paragraph.qml
 lib/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml
 lib/qt5/qml/org/kde/plasma/extras/PlasmoidHeading.qml
+lib/qt5/qml/org/kde/plasma/extras/Representation.qml
 lib/qt5/qml/org/kde/plasma/extras/ScrollArea.qml
 lib/qt5/qml/org/kde/plasma/extras/Title.qml
 lib/qt5/qml/org/kde/plasma/extras/animations/
@@ -339,6 +341,9 @@ lib/qt5/qml/org/kde/plasma/extras/animations/PressedAnimation.qml
 lib/qt5/qml/org/kde/plasma/extras/animations/ReleasedAnimation.qml
 @so lib/qt5/qml/org/kde/plasma/extras/libplasmaextracomponentsplugin.so
 lib/qt5/qml/org/kde/plasma/extras/plugins.qmltypes
+lib/qt5/qml/org/kde/plasma/extras/private/
+lib/qt5/qml/org/kde/plasma/extras/private/BackgroundMetrics.qml
+lib/qt5/qml/org/kde/plasma/extras/private/qmldir
 lib/qt5/qml/org/kde/plasma/extras/qmldir
 lib/qt5/qml/org/kde/plasma/platformcomponents/
 @so lib/qt5/qml/org/kde/plasma/platformcomponents/libplatformcomponentsplugin.so
@@ -600,6 +605,7 @@ share/plasma/desktoptheme/default/icons/kpackagekit.svgz
 share/plasma/desktoptheme/default/icons/kruler.svgz
 share/plasma/desktoptheme/default/icons/kteatime.svgz
 share/plasma/desktoptheme/default/icons/ktorrent.svgz
+share/plasma/desktoptheme/default/icons/kup.svgz
 share/plasma/desktoptheme/default/icons/list.svgz
 share/plasma/desktoptheme/default/icons/mail.svgz
 share/plasma/desktoptheme/default/icons/media.svgz
@@ -662,6 +668,7 @@ share/plasma/desktoptheme/default/widgets/glowbar.svgz
 share/plasma/desktoptheme/default/widgets/line.svgz
 share/plasma/desktoptheme/default/widgets/lineedit.svgz
 share/plasma/desktoptheme/default/widgets/listitem.svgz
+share/plasma/desktoptheme/default/widgets/margins-highlight.svgz
 share/plasma/desktoptheme/default/widgets/media-delegate.svgz
 share/plasma/desktoptheme/default/widgets/monitor.svgz
 share/plasma/desktoptheme/default/widgets/notes.svgz

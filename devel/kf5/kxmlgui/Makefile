@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/03 16:12:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/12/19 16:25:07 rsadowski Exp $
 
 COMMENT =		KDE framework for managing menu and toolbar actions
 DISTNAME =		kxmlgui-${VERSION}
@@ -7,9 +7,9 @@ SHARED_LIBS =		KF5XmlGui		6.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5GlobalAccel KF5I18n KF5IconThemes KF5ItemViews KF5WidgetsAddons
-WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
+WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml c m
 
 MODULES +=	lang/python
 
