@@ -28,14 +28,15 @@ SHARED_LIBS +=  Qt5PdfWidgets             0.0 # 5.15
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Designer Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5WebChannel Qt5Widgets Qt5Xml X11 X11-xcb Xcomposite
-WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xrandr Xrender Xss Xtst
-WANTLIB += avcodec avformat avutil c cbor crypto cups dbus-1 event
-WANTLIB += execinfo expat fido2 fontconfig freetype glib-2.0 graphite2
-WANTLIB += harfbuzz iconv intl jpeg kvm lcms2 lzma m nspr4 nss3
-WANTLIB += nssutil3 opus pcre plc4 plds4 png smime3 snappy sndio
-WANTLIB += swresample usbhid util vpx webp webpdemux webpmux xcb
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5WebChannel Qt5Widgets Qt5Xml
+WANTLIB += X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xrandr Xrender Xss Xtst avcodec avformat avutil
+WANTLIB += c cbor crypto cups dbus-1 event execinfo expat fido2
+WANTLIB += fontconfig freetype glib-2.0 graphite2 harfbuzz iconv
+WANTLIB += intl jpeg kvm lcms2 lzma m nspr4 nss3 nssutil3 opus
+WANTLIB += pcre plc4 plds4 png smime3 snappy sndio swresample
+WANTLIB += usbhid util vpx webp webpdemux webpmux xcb xcb-dri3
 WANTLIB += xkbcommon xml2 xslt z
 
 MODULES =	lang/python \

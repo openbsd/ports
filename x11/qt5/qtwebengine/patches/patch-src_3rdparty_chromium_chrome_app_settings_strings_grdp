@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/chrome/app/settings_strings.grdp
 --- src/3rdparty/chromium/chrome/app/settings_strings.grdp.orig
 +++ src/3rdparty/chromium/chrome/app/settings_strings.grdp
-@@ -784,7 +784,7 @@
+@@ -111,7 +111,7 @@
        Themes
      </message>
    </if>
@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/chrome/app/settings_strings.grdp
      <message name="IDS_SETTINGS_SYSTEM_THEME" desc="Text of the label describing the system (GTK+) browser theme on Linux">
        GTK+
      </message>
-@@ -798,7 +798,7 @@
+@@ -125,7 +125,7 @@
        Use Classic
      </message>
    </if>

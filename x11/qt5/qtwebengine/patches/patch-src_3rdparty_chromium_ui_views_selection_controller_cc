@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/ui/views/selection_controller.cc
 --- src/3rdparty/chromium/ui/views/selection_controller.cc.orig
 +++ src/3rdparty/chromium/ui/views/selection_controller.cc
-@@ -22,7 +22,7 @@ SelectionController::SelectionController(SelectionCont
+@@ -23,7 +23,7 @@ SelectionController::SelectionController(SelectionCont
        delegate_(delegate),
        handles_selection_clipboard_(false) {
  // On Linux, update the selection clipboard on a text selection.

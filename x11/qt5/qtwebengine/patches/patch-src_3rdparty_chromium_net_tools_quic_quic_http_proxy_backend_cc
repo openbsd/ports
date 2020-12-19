@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/net/tools/quic/quic_http_proxy_backend.cc
 --- src/3rdparty/chromium/net/tools/quic/quic_http_proxy_backend.cc.orig
 +++ src/3rdparty/chromium/net/tools/quic/quic_http_proxy_backend.cc
-@@ -161,7 +161,7 @@ void QuicHttpProxyBackend::InitializeURLRequestContext
+@@ -162,7 +162,7 @@ void QuicHttpProxyBackend::InitializeURLRequestContext
    // Enable HTTP2, but disable QUIC on the backend
    context_builder.SetSpdyAndQuicEnabled(true /* http2 */, false /* quic */);
  

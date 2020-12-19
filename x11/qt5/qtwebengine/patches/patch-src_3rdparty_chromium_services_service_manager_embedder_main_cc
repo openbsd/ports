@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/services/service_manager/embedder/main.cc
 --- src/3rdparty/chromium/services/service_manager/embedder/main.cc.orig
 +++ src/3rdparty/chromium/services/service_manager/embedder/main.cc
-@@ -274,7 +274,7 @@ int Main(const MainParams& params) {
+@@ -277,7 +277,7 @@ int Main(const MainParams& params) {
      base::EnableTerminationOnOutOfMemory();
  #endif
  

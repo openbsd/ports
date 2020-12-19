@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
+--- src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
+@@ -20,7 +20,7 @@ def init(root_src_dir):
+     root_src_dir = os.path.abspath(root_src_dir)
+ 
+     # Determine //buildtools/<platform>/ directory
+-    if sys.platform.startswith("linux"):
++    if sys.platform.startswith("linux") or sys.platform.startswith("openbsd"):
+         platform = "linux64"
+         exe_suffix = ""
+     elif sys.platform.startswith("darwin"):

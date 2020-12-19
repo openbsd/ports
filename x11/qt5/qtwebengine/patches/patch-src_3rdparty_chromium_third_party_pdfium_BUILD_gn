@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/pdfium/BUILD.gn
 --- src/3rdparty/chromium/third_party/pdfium/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/pdfium/BUILD.gn
-@@ -198,9 +198,9 @@ component("pdfium") {
+@@ -196,9 +196,9 @@ component("pdfium") {
      configs -= [ "//build/config/compiler:thin_archive" ]
    }
  

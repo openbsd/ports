@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_x11.
  #include <X11/Xlib.h>
  
  #include "common/debug.h"
-@@ -18,8 +20,39 @@
+@@ -18,8 +20,40 @@
  #    error SystemInfo_x11.cpp compiled without GPU_INFO_USE_X11
  #endif
  
@@ -21,6 +21,7 @@ Index: src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_x11.
 +
  namespace angle
  {
++
 +bool CollectMesaCardInfo(std::vector<GPUDeviceInfo> *devices)
 +{
 +    unsigned int vid[3], did[3];

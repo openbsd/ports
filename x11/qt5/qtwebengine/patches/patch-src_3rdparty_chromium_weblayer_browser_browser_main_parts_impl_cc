@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/weblayer/browser/browser_main_parts_impl.cc
 --- src/3rdparty/chromium/weblayer/browser/browser_main_parts_impl.cc.orig
 +++ src/3rdparty/chromium/weblayer/browser/browser_main_parts_impl.cc
-@@ -39,7 +39,7 @@
+@@ -47,7 +47,7 @@
  #if defined(USE_AURA) && defined(USE_X11)
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/weblayer/browser/browser_main_parts_impl.cc
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -90,7 +90,7 @@ int BrowserMainPartsImpl::PreEarlyInitialization() {
+@@ -121,7 +121,7 @@ int BrowserMainPartsImpl::PreEarlyInitialization() {
  #if defined(USE_X11)
    ui::SetDefaultX11ErrorHandlers();
  #endif

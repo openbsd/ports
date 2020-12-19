@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/net/nqe/network_quality_estimator.cc
 --- src/3rdparty/chromium/net/nqe/network_quality_estimator.cc.orig
 +++ src/3rdparty/chromium/net/nqe/network_quality_estimator.cc
-@@ -101,7 +101,7 @@ nqe::internal::NetworkID DoGetCurrentNetworkID() {
+@@ -104,7 +104,7 @@ nqe::internal::NetworkID DoGetCurrentNetworkID(
        case NetworkChangeNotifier::ConnectionType::CONNECTION_ETHERNET:
          break;
        case NetworkChangeNotifier::ConnectionType::CONNECTION_WIFI:

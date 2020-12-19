@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/swiftshader/BUILD.gn
 --- src/3rdparty/chromium/third_party/swiftshader/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/swiftshader/BUILD.gn
-@@ -152,8 +152,6 @@ config("swiftshader_config") {
+@@ -155,8 +155,6 @@ config("swiftshader_config") {
            "-Wl,--hash-style=sysv",
            "-mips64r2",
          ]

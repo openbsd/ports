@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/opus/BUILD.gn
 --- src/3rdparty/chromium/third_party/opus/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/opus/BUILD.gn
-@@ -45,7 +45,6 @@ config("opus_private_config") {
+@@ -46,7 +46,6 @@ config("opus_private_config") {
      # Prefer alloca() over variable length arrays which are often inefficient;
      # the opus code will automatically handle this correctly per-platform.
      "USE_ALLOCA",

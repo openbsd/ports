@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/content/renderer/render_thread_impl.cc
 --- src/3rdparty/chromium/content/renderer/render_thread_impl.cc.orig
 +++ src/3rdparty/chromium/content/renderer/render_thread_impl.cc
-@@ -175,7 +175,7 @@
+@@ -178,7 +178,7 @@
  
  #if defined(OS_MACOSX)
  #include <malloc/malloc.h>
@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/content/renderer/render_thread_impl.cc
  #include <malloc.h>
  #endif
  
-@@ -736,7 +736,7 @@ void RenderThreadImpl::Init() {
+@@ -739,7 +739,7 @@ void RenderThreadImpl::Init() {
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -21,7 +21,7 @@ Index: src/3rdparty/chromium/content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -759,7 +759,7 @@ void RenderThreadImpl::Init() {
+@@ -762,7 +762,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
        discardable_memory_allocator_.get());
  
@@ -30,7 +30,7 @@ Index: src/3rdparty/chromium/content/renderer/render_thread_impl.cc
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
-@@ -1129,7 +1129,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1148,7 +1148,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames);
  #else
        cmd_line->HasSwitch(switches::kEnableGpuMemoryBufferVideoFrames);

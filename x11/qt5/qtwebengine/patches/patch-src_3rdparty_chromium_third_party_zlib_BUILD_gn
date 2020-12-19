@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/zlib/BUILD.gn
 --- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
-@@ -80,7 +80,7 @@ if (use_arm_neon_optimizations) {
+@@ -86,7 +86,7 @@ if (use_arm_neon_optimizations) {
      # Disabled for iPhone, as described in DDI0487C_a_armv8_arm:
      #  "All implementations of the ARMv8.1 architecture are required to
      #   implement the CRC32* instructions. These are optional in ARMv8.0."
@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/third_party/zlib/BUILD.gn
        defines = [ "CRC32_ARMV8_CRC32" ]
        if (is_android) {
          defines += [ "ARMV8_OS_ANDROID" ]
-@@ -99,7 +99,7 @@ if (use_arm_neon_optimizations) {
+@@ -105,7 +105,7 @@ if (use_arm_neon_optimizations) {
    source_set("zlib_arm_crc32") {
      visibility = [ ":*" ]
  
@@ -20,8 +20,8 @@ Index: src/3rdparty/chromium/third_party/zlib/BUILD.gn
 +    if (!is_ios && !is_openbsd) {
        include_dirs = [ "." ]
  
-       if (is_android) {
-@@ -369,7 +369,7 @@ static_library("bundled_minizip") {
+       if (!is_win && !is_clang) {
+@@ -383,7 +383,7 @@ static_library("bundled_minizip") {
      ]
    }
  

@@ -39,7 +39,7 @@ Index: src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.cc
      ) {
      struct v4l2_control control = {};
      control.id = V4L2_CID_POWER_LINE_FREQUENCY;
-@@ -643,7 +645,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
+@@ -657,7 +659,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
  
  V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
  
@@ -48,7 +48,7 @@ Index: src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.cc
    int num_retries = 0;
    for (; DoIoctl(request, argp) < 0 && num_retries < kMaxIOCtrlRetries;
         ++num_retries) {
-@@ -653,7 +655,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
+@@ -667,7 +669,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
    return num_retries != kMaxIOCtrlRetries;
  }
  

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/media/BUILD.gn
 --- src/3rdparty/chromium/media/BUILD.gn.orig
 +++ src/3rdparty/chromium/media/BUILD.gn
-@@ -64,6 +64,9 @@ config("media_config") {
+@@ -67,6 +67,9 @@ config("media_config") {
        defines += [ "DLOPEN_PULSEAUDIO" ]
      }
    }

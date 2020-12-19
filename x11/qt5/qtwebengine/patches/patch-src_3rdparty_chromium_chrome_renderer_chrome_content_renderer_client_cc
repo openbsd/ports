@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/chrome/renderer/chrome_content_renderer_client.cc
 --- src/3rdparty/chromium/chrome/renderer/chrome_content_renderer_client.cc.orig
 +++ src/3rdparty/chromium/chrome/renderer/chrome_content_renderer_client.cc
-@@ -1056,7 +1056,7 @@ WebPlugin* ChromeContentRendererClient::CreatePlugin(
+@@ -1059,7 +1059,7 @@ WebPlugin* ChromeContentRendererClient::CreatePlugin(
        }
  
        case chrome::mojom::PluginStatus::kRestartRequired: {

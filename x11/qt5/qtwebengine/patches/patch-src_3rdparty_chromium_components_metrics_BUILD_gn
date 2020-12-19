@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/components/metrics/BUILD.gn
 --- src/3rdparty/chromium/components/metrics/BUILD.gn.orig
 +++ src/3rdparty/chromium/components/metrics/BUILD.gn
-@@ -148,6 +148,10 @@ jumbo_static_library("metrics") {
+@@ -150,6 +150,10 @@ jumbo_static_library("metrics") {
      "//url",
    ]
  

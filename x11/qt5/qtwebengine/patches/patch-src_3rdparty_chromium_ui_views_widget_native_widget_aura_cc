@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/ui/views/widget/native_widget_aura.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #include "ui/views/widget/desktop_aura/desktop_window_tree_host_linux.h"
  #endif
-@@ -1095,13 +1095,13 @@ void Widget::CloseAllSecondaryWidgets() {
+@@ -1102,13 +1102,13 @@ void Widget::CloseAllSecondaryWidgets() {
    EnumThreadWindows(GetCurrentThreadId(), WindowCallbackProc, 0);
  #endif
  

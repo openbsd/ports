@@ -12,11 +12,11 @@ Index: src/3rdparty/chromium/base/profiler/stack_sampler_openbsd.cc
 +
 +namespace base {
 +
-+// static
 +std::unique_ptr<StackSampler> StackSampler::Create(
 +    SamplingProfilerThreadToken thread_token,
 +    ModuleCache* module_cache,
-+    StackSamplerTestDelegate* test_delegate) {
++    StackSamplerTestDelegate* test_delegate,
++    std::unique_ptr<Unwinder> native_unwinder) {
 +  return nullptr;
 +}
 +

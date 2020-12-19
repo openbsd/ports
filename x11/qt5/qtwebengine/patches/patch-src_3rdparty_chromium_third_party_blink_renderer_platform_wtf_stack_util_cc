@@ -15,7 +15,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.
  namespace WTF {
  
  size_t GetUnderestimatedStackSize() {
-@@ -62,6 +67,8 @@ size_t GetUnderestimatedStackSize() {
+@@ -61,6 +66,8 @@ size_t GetUnderestimatedStackSize() {
    //    low as 512k.
    //
    return 512 * 1024;
@@ -24,7 +24,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.
  #elif defined(OS_MACOSX)
    // pthread_get_stacksize_np() returns too low a value for the main thread on
    // OSX 10.9,
-@@ -98,12 +105,18 @@ return Threading::ThreadStackSize();
+@@ -97,12 +104,18 @@ return Threading::ThreadStackSize();
  
  void* GetStackStart() {
  #if defined(__GLIBC__) || defined(OS_ANDROID) || defined(OS_FREEBSD) || \

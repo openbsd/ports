@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/ui/compositor/compositor.h
 --- src/3rdparty/chromium/ui/compositor/compositor.h.orig
 +++ src/3rdparty/chromium/ui/compositor/compositor.h
-@@ -417,7 +417,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
+@@ -341,7 +341,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
    void OnFirstSurfaceActivation(const viz::SurfaceInfo& surface_info) override;
    void OnFrameTokenChanged(uint32_t frame_token) override;
  

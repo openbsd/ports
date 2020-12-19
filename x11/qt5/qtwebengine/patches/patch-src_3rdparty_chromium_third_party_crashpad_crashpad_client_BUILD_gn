@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn
 --- src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn
-@@ -71,7 +71,13 @@ static_library("client") {
+@@ -75,7 +75,13 @@ static_library("client") {
      sources += [ "crashpad_client_fuchsia.cc" ]
    }
  

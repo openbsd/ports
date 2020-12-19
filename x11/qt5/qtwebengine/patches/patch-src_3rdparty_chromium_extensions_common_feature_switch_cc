@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/extensions/common/feature_switch.cc
 --- src/3rdparty/chromium/extensions/common/feature_switch.cc.orig
 +++ src/3rdparty/chromium/extensions/common/feature_switch.cc
-@@ -42,11 +42,7 @@ class CommonSwitches {
+@@ -39,11 +39,7 @@ class CommonSwitches {
                           FeatureSwitch::DEFAULT_ENABLED),
          load_media_router_component_extension(
              kLoadMediaRouterComponentExtensionFlag,

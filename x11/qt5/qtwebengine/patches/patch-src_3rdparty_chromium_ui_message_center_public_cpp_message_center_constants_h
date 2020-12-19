@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/ui/message_center/public/cpp/message_center_constants.h
 --- src/3rdparty/chromium/ui/message_center/public/cpp/message_center_constants.h.orig
 +++ src/3rdparty/chromium/ui/message_center/public/cpp/message_center_constants.h
-@@ -105,7 +105,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
+@@ -109,7 +109,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
  const int kButtonIconTopPadding = 11;      // In DIPs.
  const int kButtonIconToTitlePadding = 16;  // In DIPs.
  

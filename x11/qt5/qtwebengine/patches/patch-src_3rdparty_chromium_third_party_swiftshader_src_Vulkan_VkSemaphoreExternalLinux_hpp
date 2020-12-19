@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp
 --- src/3rdparty/chromium/third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp.orig
 +++ src/3rdparty/chromium/third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp
-@@ -48,13 +48,17 @@ class SharedSemaphore (public)
+@@ -49,13 +49,17 @@ class SharedSemaphore (public)
  	{
  		pthread_mutexattr_t mattr;
  		pthread_mutexattr_init(&mattr);

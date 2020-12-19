@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/third_party/blink/renderer/BUILD.gn
+--- src/3rdparty/chromium/third_party/blink/renderer/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/BUILD.gn
+@@ -59,9 +59,6 @@ config("inside_blink") {
+       "-Wno-implicit-int-conversion",
+     ]
+ 
+-    if (!is_chromeos || default_toolchain != "//build/toolchain/cros:target") {
+-      cflags += [ "-Wno-enum-float-conversion" ]
+-    }
+   }
+ }
+ 

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/net/url_request/url_request_context.h
 --- src/3rdparty/chromium/net/url_request/url_request_context.h.orig
 +++ src/3rdparty/chromium/net/url_request/url_request_context.h
-@@ -91,7 +91,7 @@ class NET_EXPORT URLRequestContext
+@@ -82,7 +82,7 @@ class NET_EXPORT URLRequestContext
    // session.
    const HttpNetworkSession::Context* GetNetworkSessionContext() const;
  

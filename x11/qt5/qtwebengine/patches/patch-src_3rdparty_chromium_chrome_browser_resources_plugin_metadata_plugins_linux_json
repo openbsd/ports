@@ -5,7 +5,7 @@ Index: src/3rdparty/chromium/chrome/browser/resources/plugin_metadata/plugins_li
 +++ src/3rdparty/chromium/chrome/browser/resources/plugin_metadata/plugins_linux.json
 @@ -1,27 +1,5 @@
  {
-   "x-version": 42,
+   "x-version": 43,
 -  "adobe-flash-player": {
 -    "mime_types": [
 -      "application/futuresplash",
@@ -16,9 +16,9 @@ Index: src/3rdparty/chromium/chrome/browser/resources/plugin_metadata/plugins_li
 -    ],
 -    "versions": [
 -      {
--        "version": "32.0.0.255",
+-        "version": "32.0.0.330",
 -        "status": "up_to_date",
--        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb19-46.html"
+-        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb20-06.html"
 -      }
 -    ],
 -    "lang": "en-US",

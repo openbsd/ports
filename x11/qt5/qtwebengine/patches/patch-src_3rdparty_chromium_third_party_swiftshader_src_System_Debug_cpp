@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/third_party/swiftshader/src/System/Debug.cpp
+--- src/3rdparty/chromium/third_party/swiftshader/src/System/Debug.cpp.orig
++++ src/3rdparty/chromium/third_party/swiftshader/src/System/Debug.cpp
+@@ -46,7 +46,7 @@ namespace {
+ 
+ bool IsUnderDebugger()
+ {
+-#if defined(PTRACE) && !defined(__APPLE__) && !defined(__MACH__)
++#if defined(PTRACE) && !defined(__APPLE__) && !defined(__MACH__) && !defined(__OpenBSD__)
+ 	static bool checked = false;
+ 	static bool res = false;
+ 

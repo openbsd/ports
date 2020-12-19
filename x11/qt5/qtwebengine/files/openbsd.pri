@@ -13,7 +13,6 @@ include(linux.pri)
 #
 #gn_args +=   enable_basic_printing=true \
 #             enable_print_preview=true \
-#             use_dbus=true \
 #
 
 gn_args +=	enable_nacl=false \
@@ -27,7 +26,6 @@ gn_args +=	enable_nacl=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
-		use_system_libdrm=true \
 		use_bundled_fontconfig=false \
 		use_system_harfbuzz=true \
 		use_system_freetype=false \
@@ -37,4 +35,11 @@ gn_args +=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
-		fieldtrial_testing_like_official_build=true
+		fieldtrial_testing_like_official_build=true \
+		use_dbus=true \
+		ffmpeg_branding=\"Chrome\" \
+		proprietary_codecs=true \
+		enable_basic_printing=true \
+		enable_print_preview=true \
+		closure_compile=false \
+		use_jumbo_build=true

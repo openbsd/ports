@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/content/public/common/content_switches.cc
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -983,7 +985,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
+@@ -1005,7 +1007,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
  // Enable indication that browser is controlled by automation.
  const char kEnableAutomation[] = "enable-automation";
  

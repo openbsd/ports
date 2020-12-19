@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/components/autofill/core/common/autofill_payments_features.cc
 --- src/3rdparty/chromium/components/autofill/core/common/autofill_payments_features.cc.orig
 +++ src/3rdparty/chromium/components/autofill/core/common/autofill_payments_features.cc
-@@ -129,7 +129,7 @@ const base::Feature kAutofillUpstreamEditableExpiratio
+@@ -100,7 +100,7 @@ const base::Feature kAutofillUpstreamEditableExpiratio
  };
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

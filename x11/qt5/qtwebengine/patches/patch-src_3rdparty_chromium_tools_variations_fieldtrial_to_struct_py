@@ -3,11 +3,11 @@ $OpenBSD$
 Index: src/3rdparty/chromium/tools/variations/fieldtrial_to_struct.py
 --- src/3rdparty/chromium/tools/variations/fieldtrial_to_struct.py.orig
 +++ src/3rdparty/chromium/tools/variations/fieldtrial_to_struct.py
-@@ -39,6 +39,7 @@ _platforms = [
-   'linux',
-   'mac',
-   'windows',
-+  'openbsd',
+@@ -40,6 +40,7 @@ _platforms = [
+     'linux',
+     'mac',
+     'windows',
++    'openbsd',
  ]
  
  _form_factors = [

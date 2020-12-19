@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/content/browser/scheduler/responsiveness/jank_monitor.cc
 --- src/3rdparty/chromium/content/browser/scheduler/responsiveness/jank_monitor.cc.orig
 +++ src/3rdparty/chromium/content/browser/scheduler/responsiveness/jank_monitor.cc
-@@ -321,7 +321,7 @@ void JankMonitor::ThreadExecutionState::DidRunTaskOrEv
+@@ -322,7 +322,7 @@ void JankMonitor::ThreadExecutionState::DidRunTaskOrEv
      // in context menus, among others). Simply ignore the mismatches for now.
      // See https://crbug.com/929813 for the details of why the mismatch
      // happens.
