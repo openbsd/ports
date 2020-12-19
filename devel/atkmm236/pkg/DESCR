@@ -1,0 +1,2 @@
+atkmm is a C++ interface for the ATK accessibility toolkit library.
+It may be used, for instance, by user interfaces implemented with gtkmm.
