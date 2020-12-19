@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_legacy,v 1.2 2018/04/24 18:10:55 naddy Exp $
+$OpenBSD: patch-src_Makefile_legacy,v 1.3 2020/12/19 21:32:07 sebastia Exp $
 Index: src/Makefile.legacy
 --- src/Makefile.legacy.orig
 +++ src/Makefile.legacy
-@@ -1073,11 +1073,9 @@ openbsd-alpha:
+@@ -976,11 +976,9 @@ openbsd-alpha:
  openbsd-sparc64:
  	$(LN) sparc64.h arch.h
  	@echo "#define JOHN_BLD" '"'$@'"' > john_build_rule.h
@@ -16,7 +16,7 @@ Index: src/Makefile.legacy
  	@echo "All done"
  
  openbsd-sparc:
-@@ -1922,7 +1920,7 @@ generic: generic.h
+@@ -1718,7 +1716,7 @@ generic: generic.h
  	$(RM) arch.h
  	ln -s generic.h arch.h
  	@echo "#define JOHN_BLD" '"'$@'"' > john_build_rule.h
@@ -25,12 +25,12 @@ Index: src/Makefile.legacy
  
  generic.h:
  	$(RM) arch.h
-@@ -2307,7 +2305,7 @@ john.com: john.asm
+@@ -1919,7 +1917,7 @@ john.com: john.asm
  
  ../run/cprepair: cprepair.c unicode.c unicode.h options.h misc.h misc.c \
- 	memdbg.h memdbg.c
+ 
 -	$(CC) -Wall -O3 -s -DNOT_JOHN -D_JOHN_MISC_NO_LOG cprepair.c unicode.c \
 +	$(CC) -Wall $(COPTFLAGS) -s -DNOT_JOHN -D_JOHN_MISC_NO_LOG cprepair.c unicode.c \
- 	misc.c memdbg.c -o ../run/cprepair
+ 	misc.c memory.c -o ../run/cprepair
  
  ../run/tgtsnarf: tgtsnarf.o

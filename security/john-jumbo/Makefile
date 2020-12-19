@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2020/04/07 13:29:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.23 2020/12/19 21:32:07 sebastia Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
 FIX_EXTRACT_PERMISSIONS=Yes
 
-V =		1.8.0
+V =		1.9.0
 JV =		1
-REVISION =	4
 EXTRACT_SUFX =	.tar.xz
 
 DISTNAME =	john-$V-jumbo-${JV}
@@ -14,17 +13,17 @@ PKGNAME =	john-jumbo-$V.${JV}
 CATEGORIES =	security
 
 HOMEPAGE =	https://www.openwall.com/john/
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # files from various authors; see license review txt file
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 pthread smime3
-WANTLIB += nssutil3 sqlite3 ssl ssl3 z
+WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 smime3
+WANTLIB += nssutil3 ssl ssl3 z
 
-MASTER_SITES =		https://www.openwall.com/john/j/
+MASTER_SITES =		https://www.openwall.com/john/k/
 
-LIB_DEPENDS =		databases/sqlite3 \
-			security/nss
+LIB_DEPENDS =		security/nss
 
 USE_GMAKE =		Yes
 MAKE_FILE =		Makefile.legacy
@@ -68,17 +67,17 @@ ALL_TARGET=		openbsd-sparc64
 ALL_TARGET=		generic
 .endif
 
-BINS += SIPdump calc_stat cprepair genmkvpwd luks2john makechr
+BINS += SIPdump calc_stat cprepair genmkvpwd makechr
 BINS += mkvcalcproba raw2dyna tgtsnarf uaf2john vncpcap2john wpapcap2john
 
 do-configure:
 	perl -pi -e 's,\$$JOHN/john.conf,${SYSCONFDIR}/john.conf,' ${WRKSRC}/params.h
 	rm ${WRKSRC}/KRB4_*_plug.c	# no old DES API support in LibreSSL
-	rm ${WRKSRC}/rawSHA0_fmt_plug.c # no SHA-0 support in LibreSSL
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/john
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/john/rules
 	${INSTALL_PROGRAM} ${WRKDIST}/run/john ${PREFIX}/bin
 	cd ${WRKDIST}/run; ${INSTALL_PROGRAM} ${BINS} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIST}/run/mailer \
@@ -87,7 +86,9 @@ do-install:
 	    ln -sf john ${PREFIX}/bin/`basename $$i`; done
 	${INSTALL_DATA} ${WRKDIST}/run/*.{chr,conf,lst} \
 	    ${PREFIX}/share/examples/john
-	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
+	${INSTALL_DATA} ${WRKDIST}/run/rules/*.rule \
+	    ${PREFIX}/share/examples/john/rules
+	cp -R ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
 
 # not using TEST_TARGET as it gets confused by the quotes in CFLAGS
 do-test:

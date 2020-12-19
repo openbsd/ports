@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_gpg_fmt_plug_c,v 1.4 2015/01/18 11:57:22 sthen Exp $
---- src/gpg_fmt_plug.c.orig	Thu Dec 18 00:59:02 2014
-+++ src/gpg_fmt_plug.c	Sun Jan 18 04:51:59 2015
-@@ -54,6 +54,10 @@ john_register_one(&fmt_gpg);
- #include "stdint.h"
- #include "memdbg.h"
+$OpenBSD: patch-src_gpg_fmt_plug_c,v 1.5 2020/12/19 21:32:07 sebastia Exp $
+Index: src/gpg_fmt_plug.c
+--- src/gpg_fmt_plug.c.orig
++++ src/gpg_fmt_plug.c
+@@ -50,6 +50,10 @@ john_register_one(&fmt_gpg);
+ #include "sha2.h"
+ #include "gpg_common.h"
  
 +#ifndef C_Block
 +#define C_Block DES_cblock

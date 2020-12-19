@@ -1,111 +1,161 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/01/16 15:40:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/12/19 21:32:07 sebastia Exp $
 @conflict john-*
 bin/1password2john.py
-bin/7z2john.py
+bin/7z2john.pl
+bin/DPAPImk2john.py
 @bin bin/SIPdump
+bin/adxcsouf2john.py
+bin/aem2john.py
 bin/aix2john.pl
 bin/aix2john.py
+bin/andotp2john.py
+bin/androidbackup2john.py
 bin/androidfde2john.py
+bin/ansible2john.py
 bin/apex2john.py
+bin/applenotes2john.py
+bin/aruba2john.py
+bin/axcrypt2john.py
 bin/base64conv
+bin/bestcrypt2john.py
 bin/bitcoin2john.py
+bin/bitshares2john.py
+bin/bitwarden2john.py
+bin/bks2john.py
 bin/blockchain2john.py
 @bin bin/calc_stat
+bin/ccache2john.py
 bin/cisco2john.pl
+bin/codepage.pl
 @bin bin/cprepair
 bin/cracf2john.py
-bin/dmg2john
+bin/dashlane2john.py
+bin/deepsound2john.py
+bin/diskcryptor2john.py
 bin/dmg2john.py
 bin/ecryptfs2john.py
-bin/efs2john.py
+bin/ejabberd2john.py
+bin/electrum2john.py
 bin/encfs2john.py
+bin/enpass2john.py
+bin/ethereum2john.py
+bin/filezilla2john.py
+bin/fuzz_option.pl
+bin/geli2john.py
 bin/genincstats.rb
 @bin bin/genmkvpwd
 bin/gpg2john
-bin/hccap2john
+bin/hccapx2john.py
 bin/hextoraw.pl
 bin/htdigest2john.py
+bin/ibmiscanner2john.py
 bin/ikescan2john.py
 bin/ios7tojohn.pl
+bin/itunes_backup2john.pl
+bin/iwork2john.py
 @bin bin/john
 bin/kdcdump2john.py
-bin/keepass2john
-bin/keychain2john
 bin/keychain2john.py
-bin/keyring2john
-bin/keystore2john
+bin/keyring2john.py
 bin/keystore2john.py
+bin/kirbi2john.py
 bin/known_hosts2john.py
-bin/kwallet2john
+bin/krb2john.py
 bin/kwallet2john.py
+bin/lastpass2john.py
 bin/ldif2john.pl
 bin/leet.pl
+bin/libreoffice2john.py
 bin/lion2john-alt.pl
 bin/lion2john.pl
 bin/lotus2john.py
-@bin bin/luks2john
+bin/luks2john.py
+bin/mac2john-alt.py
+bin/mac2john.py
 bin/mailer
 bin/makechr
 bin/mcafee_epo2john.py
 @bin bin/mkvcalcproba
-bin/ml2john.py
+bin/monero2john.py
+bin/money2john.py
 bin/mozilla2john.py
+bin/multibit2john.py
+bin/neo2john.py
 bin/netntlm.pl
 bin/netscreen.py
-bin/odf2john.py
 bin/office2john.py
 bin/openbsd_softraid2john.py
 bin/openssl2john.py
+bin/padlock2john.py
 bin/pass_gen.pl
 bin/pcap2john.py
-bin/pdf2john.py
-bin/pfx2john
-bin/putty2john
-bin/pwsafe2john
-bin/racf2john
+bin/pdf2john.pl
+bin/pem2john.py
+bin/pfx2john.py
+bin/pgpdisk2john.py
+bin/pgpsda2john.py
+bin/pgpwde2john.py
+bin/potcheck.pl
+bin/prosody2john.py
+bin/ps_token2john.py
+bin/pse2john.py
+bin/pwsafe2john.py
 bin/radius2john.pl
+bin/radius2john.py
 bin/rar2john
 @bin bin/raw2dyna
 bin/rexgen2rules.pl
+bin/rulestack.pl
 bin/sap2john.pl
 bin/sha-dump.pl
 bin/sha-test.pl
+bin/signal2john.py
 bin/sipdump2john.py
-bin/ssh2john
-bin/ssh2sshng.py
-bin/sshng2john.py
+bin/ssh2john.py
+bin/sspr2john.py
+bin/staroffice2john.py
 bin/strip2john.py
-bin/sxc2john.py
+bin/telegram2john.py
+bin/tezos2john.py
 @bin bin/tgtsnarf
-bin/truecrypt_volume2john
+bin/truecrypt2john.py
 @bin bin/uaf2john
 bin/unafs
 bin/undrop
 bin/unique
+bin/unrule.pl
 bin/unshadow
+bin/vdi2john.pl
+bin/vmx2john.py
 @bin bin/vncpcap2john
 @bin bin/wpapcap2john
 bin/zip2john
 share/doc/john/
-share/doc/john/AddressSanitizer-HOWTO.txt
-share/doc/john/BUGS
+share/doc/john/Auditing-Kerio-Connect.md
+share/doc/john/Auditing-Openfire.md
+share/doc/john/AxCrypt-Auditing-HOWTO.md
 share/doc/john/CHANGES
 share/doc/john/CHANGES-jumbo
-share/doc/john/CHANGES-jumbo.git
 share/doc/john/CONFIG
 share/doc/john/CONTACT
 share/doc/john/COPYING
+share/doc/john/CRAM-MD5.txt
 share/doc/john/CREDITS
 share/doc/john/CREDITS-jumbo
 share/doc/john/DYNAMIC
+share/doc/john/DYNAMIC_COMPILER_FORMATS.md
+share/doc/john/DYNAMIC_EXPRESSIONS
 share/doc/john/DYNAMIC_SCRIPTING
+share/doc/john/DiskCryptor-HOWTO.md
 share/doc/john/ENCODINGS
 share/doc/john/EXAMPLES
 share/doc/john/EXTERNAL
 share/doc/john/FAQ
 share/doc/john/HDAA_README
 share/doc/john/INSTALL
+share/doc/john/INSTALL-FEDORA
 share/doc/john/INSTALL-UBUNTU
+share/doc/john/INSTALL-WINDOWS
 share/doc/john/Kerberos-Auditing-HOWTO.md
 share/doc/john/LICENSE
 share/doc/john/LICENSE.mpi
@@ -113,20 +163,36 @@ share/doc/john/MARKOV
 share/doc/john/MASK
 share/doc/john/MODES
 share/doc/john/NETNTLM_README
+share/doc/john/NEWS
 share/doc/john/OFFICE
 share/doc/john/OPTIONS
+share/doc/john/PRINCE
 share/doc/john/README
-share/doc/john/README-CUDA
+share/doc/john/README-DISTROS
+share/doc/john/README-MIC
 share/doc/john/README-OPENCL
+share/doc/john/README-PDF
+share/doc/john/README-PST
+share/doc/john/README-TACACS+
+share/doc/john/README-ZIP
+share/doc/john/README-ZTEX
 share/doc/john/README-krb5-18-23
+share/doc/john/README.7z2john.md
 share/doc/john/README.Apple_DMG
+share/doc/john/README.BitLocker
+share/doc/john/README.Ethereum
+share/doc/john/README.FileVault2
 share/doc/john/README.FreeBSD
+share/doc/john/README.IBM_AS400
 share/doc/john/README.LUKS
 share/doc/john/README.LotusNotes
 share/doc/john/README.MinGW
+share/doc/john/README.RACF
+share/doc/john/README.Tezos
 share/doc/john/README.apex
 share/doc/john/README.bash-completion
 share/doc/john/README.bitcoin
+share/doc/john/README.coding-style
 share/doc/john/README.cprepair
 share/doc/john/README.format-epi
 share/doc/john/README.gpg
@@ -134,6 +200,7 @@ share/doc/john/README.ios7
 share/doc/john/README.keychain
 share/doc/john/README.keyring
 share/doc/john/README.keystore
+share/doc/john/README.krb5tgs-17-18-23.md
 share/doc/john/README.kwallet
 share/doc/john/README.librexgen
 share/doc/john/README.mozilla
@@ -141,16 +208,22 @@ share/doc/john/README.mpi
 share/doc/john/README.pwsafe
 share/doc/john/README.ssh
 share/doc/john/RULES
+share/doc/john/RULES-hashcat
 share/doc/john/Regen-Lost-Salts.txt
+share/doc/john/SHOW_FORMATS.md
 share/doc/john/SIPcrack-LICENSE
+share/doc/john/SUBSETS
 share/doc/john/SecureMode-tutorial.md
 share/doc/john/dynamic_history.txt
-share/doc/john/john-1.7.9-jumbo-7-licensing-stats.txt
-share/doc/john/john-1.7.9-jumbo-7-licensing.txt
+share/doc/john/extras/
+share/doc/john/extras/AddressSanitizer-HOWTO.txt
+share/doc/john/extras/HACKING.md
+share/doc/john/extras/README-CUDA
+share/doc/john/extras/john-1.7.9-jumbo-7-licensing-stats.txt
+share/doc/john/extras/john-1.7.9-jumbo-7-licensing.txt
+share/doc/john/extras/libFuzzer-HOWTO.txt
 share/doc/john/pass_gen.Manifest
 share/doc/john/pcap2john.readme
-share/doc/john/pdfcrack_README
-share/doc/john/pdfcrack_TODO
 share/examples/john/
 @sample ${SYSCONFDIR}/john/
 share/examples/john/alnum.chr
@@ -169,11 +242,14 @@ share/examples/john/dumb32.conf
 @sample ${SYSCONFDIR}/john/dumb32.conf
 share/examples/john/dynamic.conf
 @sample ${SYSCONFDIR}/john/dynamic.conf
+share/examples/john/dynamic_disabled.conf
+@sample ${SYSCONFDIR}/john/dynamic_disabled.conf
 share/examples/john/dynamic_flat_sse_formats.conf
 @sample ${SYSCONFDIR}/john/dynamic_flat_sse_formats.conf
+share/examples/john/hybrid.conf
+@sample ${SYSCONFDIR}/john/hybrid.conf
 share/examples/john/john.conf
 @sample ${SYSCONFDIR}/john.conf
-share/examples/john/john.local.conf
 share/examples/john/korelogic.conf
 @sample ${SYSCONFDIR}/john/korelogic.conf
 share/examples/john/lanman.chr
@@ -196,6 +272,30 @@ share/examples/john/repeats16.conf
 @sample ${SYSCONFDIR}/john/repeats16.conf
 share/examples/john/repeats32.conf
 @sample ${SYSCONFDIR}/john/repeats32.conf
+share/examples/john/rules/
+@sample ${SYSCONFDIR}/john/rules/
+share/examples/john/rules/InsidePro-PasswordsPro.rule
+@sample ${SYSCONFDIR}/john/rules/InsidePro-PasswordsPro.rule
+share/examples/john/rules/T0XlC-insert_top_100_passwords_1_G.rule
+@sample ${SYSCONFDIR}/john/rules/T0XlC-insert_top_100_passwords_1_G.rule
+share/examples/john/rules/T0XlC.rule
+@sample ${SYSCONFDIR}/john/rules/T0XlC.rule
+share/examples/john/rules/T0XlCv1.rule
+@sample ${SYSCONFDIR}/john/rules/T0XlCv1.rule
+share/examples/john/rules/best64.rule
+@sample ${SYSCONFDIR}/john/rules/best64.rule
+share/examples/john/rules/d3ad0ne.rule
+@sample ${SYSCONFDIR}/john/rules/d3ad0ne.rule
+share/examples/john/rules/dive.rule
+@sample ${SYSCONFDIR}/john/rules/dive.rule
+share/examples/john/rules/passphrase-rule1.rule
+@sample ${SYSCONFDIR}/john/rules/passphrase-rule1.rule
+share/examples/john/rules/passphrase-rule2.rule
+@sample ${SYSCONFDIR}/john/rules/passphrase-rule2.rule
+share/examples/john/rules/rockyou-30000.rule
+@sample ${SYSCONFDIR}/john/rules/rockyou-30000.rule
+share/examples/john/rules/specific.rule
+@sample ${SYSCONFDIR}/john/rules/specific.rule
 share/examples/john/upper.chr
 @sample ${SYSCONFDIR}/john/upper.chr
 share/examples/john/uppernum.chr
