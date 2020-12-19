@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2042 2020/12/19 09:55:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2043 2020/12/19 17:51:35 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -168,7 +168,7 @@
      SUBDIR += glade
      SUBDIR += glib2
      SUBDIR += glib2mm
-     SUBDIR += glibmm26
+     SUBDIR += glibmm268
      SUBDIR += glog
      SUBDIR += glpk
      SUBDIR += gmake

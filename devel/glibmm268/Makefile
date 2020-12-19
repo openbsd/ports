@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/19 09:54:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1 2020/12/19 17:51:35 ajacoutot Exp $
 
 COMMENT=		C++ API for parts of GLib
 
 GNOME_PROJECT=		glibmm
 GNOME_VERSION=		2.68.0
-PKGNAME=		glibmm26-${GNOME_VERSION}
+PKGNAME=		glibmm268-${GNOME_VERSION}
+REVISION=		0
 
-V=			2.68
-SUBST_VARS=		V
-
-SHARED_LIBS += glibmm_generate_extra_defs-${V} 0.0 # 1.3.0
-SHARED_LIBS += glibmm-${V}                0.0 # 1.3.0
-SHARED_LIBS += giomm-${V}                 0.0 # 1.3.0
+SHARED_LIBS += glibmm_generate_extra_defs-2.68 0.0 # 1.3.0
+SHARED_LIBS += glibmm-2.68                0.0 # 1.3.0
+SHARED_LIBS += giomm-2.68                 0.0 # 1.3.0
 
 CATEGORIES=		devel
 

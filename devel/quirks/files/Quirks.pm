@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1126 2020/12/19 15:53:34 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1127 2020/12/19 17:51:35 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -521,6 +521,7 @@ my $stem_extensions = {
 	'fvwm2+fvicons' => 'fvwm2',
 	'fvicons' => 'fvwm2',
 	'py-frozen-flask' => 'py3-frozen-flask',
+	'glibmm26' => 'glibmm268',
 };
 
 my $obsolete_reason = {
