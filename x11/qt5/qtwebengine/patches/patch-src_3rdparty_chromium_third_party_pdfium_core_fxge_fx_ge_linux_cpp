@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp
 --- src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig
 +++ src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp
-@@ -151,9 +151,8 @@ std::unique_ptr<SystemFontInfoIface> SystemFontInfoIfa
+@@ -155,9 +155,8 @@ std::unique_ptr<SystemFontInfoIface> SystemFontInfoIfa
      const char** pUserPaths) {
    auto pInfo = pdfium::MakeUnique<CFX_LinuxFontInfo>();
    if (!pInfo->ParseFontCfg(pUserPaths)) {

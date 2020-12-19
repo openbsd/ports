@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/sqlite/BUILD.gn
 --- src/3rdparty/chromium/third_party/sqlite/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/sqlite/BUILD.gn
-@@ -262,7 +262,7 @@ config("sqlite_warnings") {
+@@ -138,7 +138,7 @@ config("sqlite_warnings") {
        ]
      }
    }

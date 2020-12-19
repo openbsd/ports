@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/chrome/common/BUILD.gn
 --- src/3rdparty/chromium/chrome/common/BUILD.gn.orig
 +++ src/3rdparty/chromium/chrome/common/BUILD.gn
-@@ -278,6 +278,10 @@ static_library("common") {
+@@ -277,6 +277,10 @@ static_library("common") {
      public_deps += [ "//ppapi/shared_impl" ]
    }
  

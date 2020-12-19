@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn
 --- src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn
-@@ -961,7 +961,7 @@ rtc_library("rtc_base") {
+@@ -932,7 +932,7 @@ rtc_library("rtc_base") {
      deps += [ "system:cocoa_threading" ]
    }
  

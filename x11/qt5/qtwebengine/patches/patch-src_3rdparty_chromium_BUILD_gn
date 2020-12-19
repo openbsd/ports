@@ -3,16 +3,16 @@ $OpenBSD$
 Index: src/3rdparty/chromium/BUILD.gn
 --- src/3rdparty/chromium/BUILD.gn.orig
 +++ src/3rdparty/chromium/BUILD.gn
-@@ -44,7 +44,7 @@ declare_args() {
+@@ -46,7 +46,7 @@ declare_args() {
  if (is_official_build) {
    # An official (maximally optimized!) component (optimized for build times)
    # build doesn't make sense and usually doesn't work.
 -  assert(!is_component_build)
-+  #assert(!is_component_build)
++  # assert(!is_component_build)
  }
  
  # This file defines the following two main targets:
-@@ -412,7 +412,7 @@ group("gn_all") {
+@@ -419,7 +419,7 @@ group("gn_all") {
      ]
    }
  
@@ -21,7 +21,7 @@ Index: src/3rdparty/chromium/BUILD.gn
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -453,8 +453,6 @@ group("gn_all") {
+@@ -460,8 +460,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -30,7 +30,7 @@ Index: src/3rdparty/chromium/BUILD.gn
        "//testing:empty_main",
      ]
  
-@@ -509,10 +507,6 @@ group("gn_all") {
+@@ -516,10 +514,6 @@ group("gn_all") {
          "//chrome/test:load_library_perf_tests",
          "//chrome/test:sync_performance_tests",
          "//chrome/test/chromedriver:chromedriver",
@@ -41,7 +41,7 @@ Index: src/3rdparty/chromium/BUILD.gn
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -580,10 +574,6 @@ group("gn_all") {
+@@ -592,10 +586,6 @@ group("gn_all") {
        "//mojo:mojo_perftests",
        "//services/service_manager/public/cpp",
        "//testing/gmock:gmock_main",
@@ -52,24 +52,16 @@ Index: src/3rdparty/chromium/BUILD.gn
      ]
  
      if (!is_android) {
-@@ -713,7 +703,7 @@ group("gn_all") {
-     deps += [ "//third_party/sqlite:sqlite_shell" ]
+@@ -669,7 +659,7 @@ group("gn_all") {
+         host_os == "win" && !use_qt) {
+       deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
+     }
+-  } else if (!is_android && !is_ios && !is_fuchsia && !is_win) {
++  } else if (!is_android && !is_ios && !is_fuchsia && !is_win && !is_openbsd) {
+     deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
--  if (is_linux && !is_chromeos && !is_chromecast) {
-+  if ((is_linux || is_openbsd) && !is_chromeos && !is_chromecast) {
-     # TODO(GYP): Figure out if any of these should be in gn_all
-     # and figure out how cross-platform they are
-     deps += [
-@@ -931,7 +921,6 @@ if (is_chromeos) {
-       "//ppapi/examples/video_decode",
-       "//sandbox/linux:chrome_sandbox",
-       "//sandbox/linux:sandbox_linux_unittests",
--      "//third_party/breakpad:minidump_stackwalk($host_toolchain)",
- 
-       # Blocked on https://github.com/catapult-project/catapult/issues/2297
-       #"//third_party/catapult/telemetry:bitmaptools",
-@@ -1082,7 +1071,7 @@ if (!is_ios && !use_qt) {
+@@ -1085,7 +1075,7 @@ if (!is_ios && !use_qt) {
        ]
      }
  
@@ -78,7 +70,7 @@ Index: src/3rdparty/chromium/BUILD.gn
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1091,7 +1080,7 @@ if (!is_ios && !use_qt) {
+@@ -1094,7 +1084,7 @@ if (!is_ios && !use_qt) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -87,7 +79,7 @@ Index: src/3rdparty/chromium/BUILD.gn
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1232,9 +1221,6 @@ group("chromium_builder_perf") {
+@@ -1286,9 +1276,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

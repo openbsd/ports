@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/net/dns/dns_util.cc
 --- src/3rdparty/chromium/net/dns/dns_util.cc.orig
 +++ src/3rdparty/chromium/net/dns/dns_util.cc
-@@ -38,6 +38,8 @@ const uint16_t kFlagNamePointer = 0xc000;
+@@ -39,6 +39,8 @@ const uint16_t kFlagNamePointer = 0xc000;
  
  }  // namespace
  

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/crc32c/BUILD.gn
 --- src/3rdparty/chromium/third_party/crc32c/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/crc32c/BUILD.gn
-@@ -46,7 +46,7 @@ config("crc32c_config") {
+@@ -47,7 +47,7 @@ config("crc32c_config") {
    }
  
    # Android added <sys/auxv.h> in API level 18.

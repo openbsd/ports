@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/services/device/serial/BUILD.gn
 --- src/3rdparty/chromium/services/device/serial/BUILD.gn.orig
 +++ src/3rdparty/chromium/services/device/serial/BUILD.gn
-@@ -60,6 +60,13 @@ if (is_win || (is_linux && use_udev) || is_mac) {
+@@ -58,6 +58,13 @@ if (is_win || (is_linux && use_udev) || is_mac) {
        ]
      }
  

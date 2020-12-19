@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn
 --- src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn
-@@ -263,7 +263,7 @@ rtc_library("audio_device_impl") {
+@@ -259,7 +259,7 @@ rtc_library("audio_device_impl") {
      if (rtc_use_dummy_audio_file_devices) {
        defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
      } else {

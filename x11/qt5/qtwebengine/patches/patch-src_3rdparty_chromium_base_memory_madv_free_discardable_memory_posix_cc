@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/base/memory/madv_free_discardable_memory_posix.cc
 --- src/3rdparty/chromium/base/memory/madv_free_discardable_memory_posix.cc.orig
 +++ src/3rdparty/chromium/base/memory/madv_free_discardable_memory_posix.cc
-@@ -271,6 +271,10 @@ void MadvFreeDiscardableMemoryPosix::SetKeepMemoryForT
+@@ -286,6 +286,10 @@ void MadvFreeDiscardableMemoryPosix::SetKeepMemoryForT
  
  bool MadvFreeDiscardableMemoryPosix::IsResident() const {
    DFAKE_SCOPED_RECURSIVE_LOCK(thread_collision_warner_);
@@ -14,7 +14,7 @@ Index: src/3rdparty/chromium/base/memory/madv_free_discardable_memory_posix.cc
  #ifdef OS_MACOSX
    std::vector<char> vec(allocated_pages_);
  #else
-@@ -286,6 +290,7 @@ bool MadvFreeDiscardableMemoryPosix::IsResident() cons
+@@ -301,6 +305,7 @@ bool MadvFreeDiscardableMemoryPosix::IsResident() cons
        return false;
    }
    return true;

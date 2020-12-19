@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/content/browser/renderer_host/pepper/pepper_file_io
    // Quarantining a file before its contents are available is only supported on
    // Windows and Linux.
    if (!FileOpenForWrite(open_flags_) || error_code != base::File::FILE_OK) {
-@@ -453,7 +453,7 @@ void PepperFileIOHost::OnLocalFileOpened(
+@@ -454,7 +454,7 @@ void PepperFileIOHost::OnLocalFileOpened(
  #endif
  }
  

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.cc
 --- src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.cc.orig
 +++ src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.cc
-@@ -167,7 +167,7 @@ HeadlessContentBrowserClient::GetGeneratedCodeCacheSet
+@@ -157,7 +157,7 @@ HeadlessContentBrowserClient::GetGeneratedCodeCacheSet
    return content::GeneratedCodeCacheSettings(true, 0, context->GetPath());
  }
  

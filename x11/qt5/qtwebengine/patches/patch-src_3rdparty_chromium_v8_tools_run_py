@@ -8,4 +8,4 @@ Index: src/3rdparty/chromium/v8/tools/run.py
  import sys
  
 -sys.exit(subprocess.call(sys.argv[1:]))
-+sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"${WRKBUILD}/src/core/release:${WRKBUILD}/src/core/release/host", "PATH":"${WRKBUILD}/src/core/release:${WRKBUILD}/src/core/release/host"}))
++sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release"}))

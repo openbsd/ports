@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc
 --- src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc.orig
 +++ src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc
-@@ -157,6 +157,9 @@ std::vector<BrokerFilePermission> GetAudioFilePermissi
+@@ -160,6 +160,9 @@ std::vector<BrokerFilePermission> GetAudioFilePermissi
  }
  
  void LoadAudioLibraries() {
@@ -11,9 +11,9 @@ Index: src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc
 +  NOTIMPLEMENTED();
 +#else
    const std::string libraries[]{"libasound.so.2", "libpulse.so.0",
-                                 "libnss_files.so.2"};
+                                 "libnss_files.so.2", "libnss_compat.so.2"};
    for (const auto& library_name : libraries) {
-@@ -166,6 +169,7 @@ void LoadAudioLibraries() {
+@@ -169,6 +172,7 @@ void LoadAudioLibraries() {
                     << " with error: " << dlerror();
      }
    }

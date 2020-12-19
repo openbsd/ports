@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/services/service_manager/BUILD.gn
 --- src/3rdparty/chromium/services/service_manager/BUILD.gn.orig
 +++ src/3rdparty/chromium/services/service_manager/BUILD.gn
-@@ -67,7 +67,7 @@ source_set("service_manager") {
+@@ -65,7 +65,7 @@ source_set("service_manager") {
      ]
    }
  

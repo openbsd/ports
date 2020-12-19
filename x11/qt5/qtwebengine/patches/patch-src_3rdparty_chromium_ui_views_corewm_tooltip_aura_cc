@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/ui/views/corewm/tooltip_aura.cc
 --- src/3rdparty/chromium/ui/views/corewm/tooltip_aura.cc.orig
 +++ src/3rdparty/chromium/ui/views/corewm/tooltip_aura.cc
-@@ -43,7 +43,7 @@ constexpr int kVerticalPaddingBottom = 5;
+@@ -46,7 +46,7 @@ constexpr int kVerticalPaddingBottom = 5;
  
  // TODO(varkha): Update if native widget can be transparent on Linux.
  bool CanUseTranslucentTooltipWidget() {

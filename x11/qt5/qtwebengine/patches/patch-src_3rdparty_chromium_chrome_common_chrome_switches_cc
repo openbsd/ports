@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/chrome/common/chrome_switches.cc
 --- src/3rdparty/chromium/chrome/common/chrome_switches.cc.orig
 +++ src/3rdparty/chromium/chrome/common/chrome_switches.cc
-@@ -868,7 +868,7 @@ const char kAllowNaClFileHandleAPI[]        = "allow-n
+@@ -850,7 +850,7 @@ const char kAllowNaClFileHandleAPI[]        = "allow-n
  const char kAllowNaClSocketAPI[]            = "allow-nacl-socket-api";
  #endif
  

@@ -27,6 +27,7 @@ extern "C" {
 #include "base/location.h"
 #include "base/logging.h"
 #include "base/posix/eintr_wrapper.h"
+#include "base/task/thread_pool.h"
 #include "base/single_thread_task_runner.h"
 #include "base/stl_util.h"
 #include "base/strings/pattern.h"
@@ -46,11 +47,11 @@ namespace {
 
 struct ConnectParams {
   ConnectParams(scoped_refptr<HidDeviceInfo> device_info,
-                const HidService::ConnectCallback &callback)
-      : device_info(std::move(device_info)), callback(callback),
+                HidService::ConnectCallback callback)
+      : device_info(std::move(device_info)), callback(std::move(callback)),
         task_runner(base::ThreadTaskRunnerHandle::Get()),
-        blocking_task_runner(
-            base::CreateSequencedTaskRunner(HidService::kBlockingTaskTraits)) {}
+        blocking_task_runner(base::ThreadPool::CreateSequencedTaskRunner(
+            HidService::kBlockingTaskTraits)) {}
   ~ConnectParams() {}
 
   scoped_refptr<HidDeviceInfo> device_info;
@@ -62,7 +63,7 @@ struct ConnectParams {
 
 void CreateConnection(std::unique_ptr<ConnectParams> params) {
   DCHECK(params->fd.is_valid());
-  params->callback.Run(base::MakeRefCounted<HidConnectionFido>(
+  std::move(params->callback).Run(base::MakeRefCounted<HidConnectionFido>(
       std::move(params->device_info), std::move(params->fd),
       std::move(params->blocking_task_runner)));
 }
@@ -136,12 +137,12 @@ void OpenOnBlockingThread(std::unique_ptr<ConnectParams> params) {
   if (!device_file.IsValid()) {
     HID_LOG(EVENT) << "Failed to open '" << device_node << "': "
                    << base::File::ErrorToString(device_file.error_details());
-    task_runner->PostTask(FROM_HERE, base::Bind(params->callback, nullptr));
+    task_runner->PostTask(FROM_HERE, base::BindOnce(std::move(params->callback), nullptr));
     return;
   }
   if (!terrible_ping_kludge(device_file.GetPlatformFile(), device_node)) {
     HID_LOG(EVENT) << "Failed to ping " << device_node;
-    task_runner->PostTask(FROM_HERE, base::Bind(params->callback, nullptr));
+    task_runner->PostTask(FROM_HERE, base::BindOnce(std::move(params->callback), nullptr));
     return;
   }
   params->fd.reset(device_file.TakePlatformFile());
@@ -251,8 +252,8 @@ public:
     std::vector<uint8_t> report_descriptor(
         kU2fReportDesc, kU2fReportDesc + sizeof(kU2fReportDesc));
     scoped_refptr<HidDeviceInfo> device_info(new HidDeviceInfo(
-        device_node, fido_dev_info_vendor(di), fido_dev_info_product(di),
-        null_as_empty(fido_dev_info_product_string(di)),
+        device_node, /*physical_device_id=*/"", fido_dev_info_vendor(di),
+        fido_dev_info_product(di), null_as_empty(fido_dev_info_product_string(di)),
         null_as_empty(fido_dev_info_manufacturer_string(di)),
         device::mojom::HidBusType::kHIDBusTypeUSB, report_descriptor,
         device_node));
@@ -281,7 +282,7 @@ private:
 HidServiceFido::HidServiceFido()
     : task_runner_(base::ThreadTaskRunnerHandle::Get()),
       blocking_task_runner_(
-          base::CreateSequencedTaskRunner(kBlockingTaskTraits)),
+          base::ThreadPool::CreateSequencedTaskRunner(kBlockingTaskTraits)),
       weak_factory_(this), helper_(std::make_unique<BlockingTaskHelper>(
                                weak_factory_.GetWeakPtr())) {
   blocking_task_runner_->PostTask(
@@ -298,19 +299,19 @@ base::WeakPtr<HidService> HidServiceFido::GetWeakPtr() {
 }
 
 void HidServiceFido::Connect(const std::string &device_guid,
-                             const ConnectCallback &callback) {
+                             ConnectCallback callback) {
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 
   const auto &map_entry = devices().find(device_guid);
   if (map_entry == devices().end()) {
     base::ThreadTaskRunnerHandle::Get()->PostTask(
-        FROM_HERE, base::Bind(callback, nullptr));
+        FROM_HERE, base::BindOnce(std::move(callback), nullptr));
     return;
   }
 
   scoped_refptr<HidDeviceInfo> device_info = map_entry->second;
 
-  auto params = std::make_unique<ConnectParams>(device_info, callback);
+  auto params = std::make_unique<ConnectParams>(device_info, std::move(callback));
 
   scoped_refptr<base::SequencedTaskRunner> blocking_task_runner =
       params->blocking_task_runner;

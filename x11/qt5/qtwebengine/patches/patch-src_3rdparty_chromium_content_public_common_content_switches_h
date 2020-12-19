@@ -11,7 +11,7 @@ Index: src/3rdparty/chromium/content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
  CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
-@@ -276,7 +277,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
+@@ -286,7 +287,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
  CONTENT_EXPORT extern const char kRendererWaitForJavaDebugger[];
  #endif
  

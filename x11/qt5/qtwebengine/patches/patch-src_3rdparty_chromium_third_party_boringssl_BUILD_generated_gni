@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/boringssl/BUILD.generated.gni
 --- src/3rdparty/chromium/third_party/boringssl/BUILD.generated.gni.orig
 +++ src/3rdparty/chromium/third_party/boringssl/BUILD.generated.gni
-@@ -171,6 +171,7 @@ crypto_sources = [
+@@ -172,6 +172,7 @@ crypto_sources = [
    "src/crypto/rand_extra/deterministic.c",
    "src/crypto/rand_extra/forkunsafe.c",
    "src/crypto/rand_extra/fuchsia.c",

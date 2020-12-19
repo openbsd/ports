@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/tools/json_schema_compiler/feature_compiler.py
 --- src/3rdparty/chromium/tools/json_schema_compiler/feature_compiler.py.orig
 +++ src/3rdparty/chromium/tools/json_schema_compiler/feature_compiler.py
-@@ -220,6 +220,7 @@ FEATURE_GRAMMAR = (
+@@ -221,6 +221,7 @@ FEATURE_GRAMMAR = (
            'linux': 'Feature::LINUX_PLATFORM',
            'mac': 'Feature::MACOSX_PLATFORM',
            'win': 'Feature::WIN_PLATFORM',

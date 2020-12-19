@@ -10,9 +10,9 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/core/scroll/scrollbar_th
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS))
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    return false;
- #endif
- 
-@@ -312,7 +312,7 @@ ScrollbarPart ScrollbarThemeAura::PartsToInvalidateOnT
+ #else
+   return true;
+@@ -301,7 +301,7 @@ ScrollbarPart ScrollbarThemeAura::PartsToInvalidateOnT
  
  bool ScrollbarThemeAura::ShouldCenterOnThumb(const Scrollbar& scrollbar,
                                               const WebMouseEvent& event) {

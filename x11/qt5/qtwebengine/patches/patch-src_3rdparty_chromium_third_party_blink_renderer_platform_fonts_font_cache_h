@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cach
  #include "ui/gfx/font_fallback_linux.h"
  #endif
  
-@@ -166,7 +166,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -169,7 +169,7 @@ class PLATFORM_EXPORT FontCache {
    sk_sp<SkFontMgr> FontManager() { return font_manager_; }
    static void SetFontManager(sk_sp<SkFontMgr>);
  
@@ -21,7 +21,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cach
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -241,7 +241,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -244,7 +244,7 @@ class PLATFORM_EXPORT FontCache {
        const FontDescription&);
  #endif  // defined(OS_ANDROID)
  
@@ -30,7 +30,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cach
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -317,7 +317,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -327,7 +327,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     std::string& name);
  
@@ -39,7 +39,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cach
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -356,7 +356,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -366,7 +366,7 @@ class PLATFORM_EXPORT FontCache {
    std::unique_ptr<FallbackFamilyStyleCache> fallback_params_cache_;
  #endif  // defined(OS_WIN)
  

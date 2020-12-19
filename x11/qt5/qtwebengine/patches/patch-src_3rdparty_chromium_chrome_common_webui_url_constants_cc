@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/chrome/common/webui_url_constants.cc
 --- src/3rdparty/chromium/chrome/common/webui_url_constants.cc.orig
 +++ src/3rdparty/chromium/chrome/common/webui_url_constants.cc
-@@ -318,7 +318,7 @@ bool IsSystemWebUIHost(base::StringPiece host) {
+@@ -322,7 +322,7 @@ bool IsSystemWebUIHost(base::StringPiece host) {
  const char kChromeUICastHost[] = "cast";
  #endif
  
@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/chrome/common/webui_url_constants.cc
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  const char kChromeUIHatsHost[] = "hats";
-@@ -329,17 +329,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
+@@ -333,17 +333,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
  const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
  #endif
  
@@ -33,7 +33,7 @@ Index: src/3rdparty/chromium/chrome/common/webui_url_constants.cc
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
  
-@@ -605,13 +605,13 @@ const char* const kChromeHostURLs[] = {
+@@ -629,13 +629,13 @@ const char* const kChromeHostURLs[] = {
      kChromeUIInternetDetailDialogHost,
      kChromeUIAssistantOptInHost,
  #endif

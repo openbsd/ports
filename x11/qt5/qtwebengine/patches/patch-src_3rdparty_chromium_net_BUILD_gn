@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1960,7 +1960,7 @@ component("net") {
+@@ -1386,7 +1386,7 @@ component("net") {
        }
      }
  
@@ -21,7 +21,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
        sources += [
          "base/network_change_notifier_posix.cc",
          "base/network_change_notifier_posix.h",
-@@ -1991,7 +1991,7 @@ component("net") {
+@@ -1419,7 +1419,7 @@ component("net") {
      }
  
      # Use getifaddrs() on POSIX platforms, except Linux and Android.
@@ -30,7 +30,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
        sources += [
          "base/network_interfaces_getifaddrs.cc",
          "base/network_interfaces_getifaddrs.h",
-@@ -2110,6 +2110,15 @@ component("net") {
+@@ -1541,6 +1541,15 @@ component("net") {
        ]
      }
  
@@ -46,7 +46,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      if (!disable_ftp_support) {
        sources += [
          "ftp/ftp_auth_cache.cc",
-@@ -6018,7 +6027,7 @@ test("net_unittests") {
+@@ -4757,7 +4766,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.

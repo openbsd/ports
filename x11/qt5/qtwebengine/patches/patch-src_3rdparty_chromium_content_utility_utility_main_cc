@@ -3,7 +3,19 @@ $OpenBSD$
 Index: src/3rdparty/chromium/content/utility/utility_main.cc
 --- src/3rdparty/chromium/content/utility/utility_main.cc.orig
 +++ src/3rdparty/chromium/content/utility/utility_main.cc
-@@ -35,6 +35,10 @@
+@@ -22,8 +22,10 @@
+ #include "services/service_manager/sandbox/sandbox.h"
+ #include "services/tracing/public/cpp/trace_startup.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
++#if !defined(OS_BSD)
+ #include "content/utility/soda/soda_sandbox_hook_linux.h"
++#endif
+ #include "services/audio/audio_sandbox_hook_linux.h"
+ #include "services/network/network_sandbox_hook_linux.h"
+ #include "services/service_manager/sandbox/linux/sandbox_linux.h"
+@@ -37,6 +39,10 @@
  #include "base/message_loop/message_pump_mac.h"
  #endif
  
@@ -14,7 +26,7 @@ Index: src/3rdparty/chromium/content/utility/utility_main.cc
  #if defined(OS_WIN)
  #include "base/rand_util.h"
  #include "sandbox/win/src/sandbox.h"
-@@ -71,12 +75,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -73,12 +79,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
@@ -27,9 +39,9 @@ Index: src/3rdparty/chromium/content/utility/utility_main.cc
        service_manager::SandboxTypeFromCommandLine(parameters.command_line);
 +#if !defined(OS_BSD)
    if (parameters.zygote_child ||
-       sandbox_type == service_manager::SANDBOX_TYPE_NETWORK ||
+       sandbox_type == service_manager::SandboxType::kNetwork ||
  #if defined(OS_CHROMEOS)
-@@ -97,6 +102,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -104,6 +111,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          service_manager::SandboxLinux::Options());
    }

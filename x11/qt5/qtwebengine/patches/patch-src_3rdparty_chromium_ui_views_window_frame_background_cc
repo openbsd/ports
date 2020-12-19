@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/ui/views/window/frame_background.cc
 --- src/3rdparty/chromium/ui/views/window/frame_background.cc.orig
 +++ src/3rdparty/chromium/ui/views/window/frame_background.cc
-@@ -107,7 +107,7 @@ void FrameBackground::PaintMaximized(gfx::Canvas* canv
+@@ -99,7 +99,7 @@ void FrameBackground::PaintMaximized(gfx::Canvas* canv
                                       const View* view) const {
  // Fill the top with the frame color first so we have a constant background
  // for areas not covered by the theme image.

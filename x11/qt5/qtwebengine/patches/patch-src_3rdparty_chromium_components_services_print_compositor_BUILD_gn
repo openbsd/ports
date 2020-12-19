@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/components/services/print_compositor/BUILD.gn
+--- src/3rdparty/chromium/components/services/print_compositor/BUILD.gn.orig
++++ src/3rdparty/chromium/components/services/print_compositor/BUILD.gn
+@@ -16,6 +16,7 @@ static_library("print_compositor") {
+     "//components/discardable_memory/client",
+     "//components/discardable_memory/public/mojom",
+     "//components/services/print_compositor/public/cpp",
++    "//components/services/print_compositor/public/mojom",
+     "//content/public/utility",
+     "//printing/buildflags",
+     "//printing/common",

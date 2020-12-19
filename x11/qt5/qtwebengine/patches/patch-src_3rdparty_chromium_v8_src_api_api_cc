@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/v8/src/api/api.cc
  #include <signal.h>
  #include "include/v8-wasm-trap-handler-posix.h"
  #include "src/trap-handler/handler-inside-posix.h"
-@@ -5653,7 +5653,7 @@ bool v8::V8::Initialize() {
+@@ -5726,7 +5726,7 @@ bool v8::V8::Initialize() {
    return true;
  }
  

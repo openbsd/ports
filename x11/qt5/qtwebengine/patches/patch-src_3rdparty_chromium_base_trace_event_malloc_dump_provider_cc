@@ -21,4 +21,4 @@ Index: src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc
 +  allocated_objects_size = 0;
  #else
    struct mallinfo info = mallinfo();
- #if !defined(ADDRESS_SANITIZER) && !defined(THREAD_SANITIZER)
+   // In case of Android's jemalloc |arena| is 0 and the outer pages size is

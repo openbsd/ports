@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/third_party/webrtc/webrtc.gni
 --- src/3rdparty/chromium/third_party/webrtc/webrtc.gni.orig
 +++ src/3rdparty/chromium/third_party/webrtc/webrtc.gni
-@@ -262,7 +262,7 @@ rtc_opus_dir = "//third_party/opus"
+@@ -269,7 +269,7 @@ rtc_opus_dir = "//third_party/opus"
  # Desktop capturer is supported only on Windows, OSX and Linux.
  rtc_desktop_capture_supported =
      (is_win && current_os != "winuwp") || is_mac ||

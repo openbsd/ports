@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/ui/views/controls/label.cc
    if (event.IsOnlyMiddleMouseButton() && GetFocusManager() && !had_focus)
      GetFocusManager()->SetFocusedView(this);
  #endif
-@@ -880,7 +880,7 @@ bool Label::PasteSelectionClipboard() {
+@@ -881,7 +881,7 @@ bool Label::PasteSelectionClipboard() {
  }
  
  void Label::UpdateSelectionClipboard() {
