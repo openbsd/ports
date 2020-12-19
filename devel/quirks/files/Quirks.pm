@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1125 2020/12/14 03:16:31 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1126 2020/12/19 15:53:34 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2008,6 +2008,12 @@ my $obsolete_reason = {
 	'kdegames' => 3,
 	'kdelibs' => 3,
 	'kdesamba' => 3,
+	'qt3-examples' => 3,
+	'qt3-html' => 3,
+	'qt3-mt' => 3,
+	'qt3-mysql' => 3,
+	'qt3-postgresql' => 3,
+	'qt3-sqlite2' => 3,
 };
 
 # reasons for obsolete packages
