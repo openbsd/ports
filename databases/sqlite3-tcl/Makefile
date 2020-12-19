@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/14 11:59:49 stu Exp $
+# $OpenBSD: Makefile,v 1.12 2020/12/19 10:10:05 stu Exp $
 
 COMMENT =		Tcl bindings for SQLite3
 
-V =			3.33.0
+V =			3.34.0
 VER =			${V:S/.//g}
 
 DISTNAME =		sqlite-autoconf-${VER:C/.$/0\0/}00
