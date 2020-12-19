@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2043 2020/12/19 17:51:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2044 2020/12/19 18:08:46 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -32,6 +32,7 @@
      SUBDIR += atf
      SUBDIR += atk
      SUBDIR += atk2mm
+     SUBDIR += atkmm236
      SUBDIR += atlas
      SUBDIR += attinycore
      SUBDIR += autoconf
@@ -1288,6 +1289,7 @@
      SUBDIR += p5-strictures
      SUBDIR += pango
      SUBDIR += pangomm
+     SUBDIR += pangomm248
      SUBDIR += pasmo
      SUBDIR += pccts
      SUBDIR += pcre
