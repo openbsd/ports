@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/12/20 19:18:25 robert Exp $
 
 COMMENT=		all-in-one management software
 
-MV=			12.0
-SV=			20190517
+MV=			13.0
+SV=			20201216
 V=			${MV}.${SV}
-REVISION=		2
 
 DISTNAME=		odoo_${V}
 
@@ -32,6 +31,7 @@ RUN_DEPENDS=		converters/py-html2text${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-gevent${MODPY_FLAVOR} \
+			devel/py-stdnum${MODPY_FLAVOR} \
 			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
 			lang/node \
@@ -42,6 +42,7 @@ RUN_DEPENDS=		converters/py-html2text${MODPY_FLAVOR} \
 			textproc/py-PyPDF2${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
+			textproc/py-polib${MODPY_FLAVOR} \
 			textproc/py-vobject${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			textproc/wkhtmltopdf \
