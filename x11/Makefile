@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.682 2020/12/19 15:50:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.683 2020/12/20 15:15:21 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -114,6 +114,7 @@
      SUBDIR += gtkglarea
      SUBDIR += gtkglext
      SUBDIR += gtkhotkey
+     SUBDIR += gtkmm40
      SUBDIR += gtksourceview
      SUBDIR += gtksourceview3
      SUBDIR += gtksourceview4
