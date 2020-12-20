@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/20 23:27:48 tb Exp $
+# $OpenBSD: Makefile,v 1.9 2020/12/20 04:53:20 tb Exp $
 
 COMMENT =		Python SSL and TLS library
 
-MODPY_EGG_VERSION =	0.8.0-alpha38
+MODPY_EGG_VERSION =	0.8.0-alpha39
 DISTNAME =		tlslite-ng-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-alpha/alpha/}
 EPOCH =			0
-REVISION =		1
 
 CATEGORIES =		net
 
