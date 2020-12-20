@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/11/03 19:57:02 bket Exp $
+# $OpenBSD: Makefile,v 1.19 2020/12/20 05:48:06 bket Exp $
 
 COMMENT =		manual tiling window manager
 DISTNAME =		herbstluftwm-0.9.0
@@ -20,7 +20,10 @@ MASTER_SITES =		https://herbstluftwm.org/tarballs/
 # c++11
 COMPILER =		base-clang ports-gcc
 
-MODULES +=		devel/cmake
+MODULES +=		devel/cmake \
+			lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP =		No
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			shells/bash \
