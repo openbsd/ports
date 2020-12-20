@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2020/11/24 18:14:47 paco Exp $
+# $OpenBSD: Makefile,v 1.29 2020/12/20 09:39:46 paco Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.78.2
+MODGO_VERSION =	v0.79.0
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
@@ -77,7 +77,7 @@ MODGO_MODULES =	\
 	github.com/!shopify/toxiproxy				 v2.1.4+incompatible \
 	github.com/akavel/rsrc					 v0.8.0 \
 	github.com/alecthomas/assert				 v0.0.0-20170929043011-405dbfeb8e38 \
-	github.com/alecthomas/chroma				 v0.8.1 \
+	github.com/alecthomas/chroma				 v0.8.2 \
 	github.com/alecthomas/colour				 v0.0.0-20160524082231-60882d9e2721 \
 	github.com/alecthomas/kong				 v0.2.4 \
 	github.com/alecthomas/kong-hcl				 v0.1.8-0.20190615233001-b21fea9723c8 \
@@ -114,17 +114,17 @@ MODGO_MODULES =	\
 	github.com/dgryski/go-sip13				 v0.0.0-20181026042036-e10d5fee7954 \
 	github.com/dimchansky/utfbom				 v1.1.0 \
 	github.com/disintegration/gift				 v1.2.1 \
-	github.com/dlclark/regexp2				 v1.2.0 \
+	github.com/dlclark/regexp2				 v1.4.0 \
 	github.com/dustin/go-humanize				 v1.0.0 \
 	github.com/eapache/go-resiliency			 v1.1.0 \
 	github.com/eapache/go-xerial-snappy			 v0.0.0-20180814174437-776d5712da21 \
 	github.com/eapache/queue				 v1.1.0 \
-	github.com/evanw/esbuild				 v0.8.6 \
+	github.com/evanw/esbuild				 v0.8.15 \
 	github.com/fatih/color					 v1.7.0 \
 	github.com/fortytw2/leaktest				 v1.3.0 \
 	github.com/frankban/quicktest				 v1.11.2 \
 	github.com/fsnotify/fsnotify				 v1.4.9 \
-	github.com/getkin/kin-openapi				 v0.26.0 \
+	github.com/getkin/kin-openapi				 v0.31.0 \
 	github.com/ghodss/yaml					 v1.0.0 \
 	github.com/go-gl/glfw					 v0.0.0-20190409004039-e6da0acd62b1 \
 	github.com/go-ini/ini					 v1.25.4 \
@@ -141,7 +141,7 @@ MODGO_MODULES =	\
 	github.com/golang/protobuf				 v1.3.2 \
 	github.com/golang/snappy				 v0.0.1 \
 	github.com/google/btree					 v1.0.0 \
-	github.com/google/go-cmp				 v0.5.2 \
+	github.com/google/go-cmp				 v0.5.3 \
 	github.com/google/martian				 v2.1.1-0.20190517191504-25dcb96d9e51+incompatible \
 	github.com/google/pprof					 v0.0.0-20190515194954-54271f7e092f \
 	github.com/google/renameio				 v0.1.0 \
@@ -321,7 +321,7 @@ MODGO_MODULES =	\
 	gopkg.in/neurosnap/sentences.v1				 v1.0.6 \
 	gopkg.in/resty.v1					 v1.12.0 \
 	gopkg.in/tomb.v1					 v1.0.0-20141024135613-dd632973f1e7 \
-	gopkg.in/yaml.v2					 v2.3.0 \
+	gopkg.in/yaml.v2					 v2.4.0 \
 	gopkg.in/yaml.v3					 v3.0.0-20200313102051-9f266ea9e77c \
 	honnef.co/go/tools					 v0.0.1-2019.2.3 \
 	pack.ag/amqp						 v0.11.0 \
@@ -354,6 +354,7 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew		 v0.0.0-20161028175848-04cdfd42973b \
 	github.com/davecgh/go-spew		 v1.1.0 \
 	github.com/dlclark/regexp2		 v1.1.6 \
+	github.com/dlclark/regexp2		 v1.2.0 \
 	github.com/fortytw2/leaktest		 v1.2.0 \
 	github.com/frankban/quicktest		 v1.4.1 \
 	github.com/frankban/quicktest		 v1.7.2 \
@@ -371,6 +372,7 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp		 v0.2.0 \
 	github.com/google/go-cmp		 v0.3.0 \
 	github.com/google/go-cmp		 v0.3.1 \
+	github.com/google/go-cmp		 v0.5.2 \
 	github.com/google/martian		 v2.1.0+incompatible \
 	github.com/google/pprof			 v0.0.0-20181206194817-3ea8567a2e57 \
 	github.com/googleapis/gax-go/v2		 v2.0.4 \
@@ -549,6 +551,7 @@ MODGO_MODFILES =	\
 	gopkg.in/yaml.v2			 v2.2.2 \
 	gopkg.in/yaml.v2			 v2.2.4 \
 	gopkg.in/yaml.v2			 v2.2.8 \
+	gopkg.in/yaml.v2			 v2.3.0 \
 	honnef.co/go/tools			 v0.0.0-20180728063816-88497007e858 \
 	honnef.co/go/tools			 v0.0.0-20190102054323-c2f93a96b099 \
 	honnef.co/go/tools			 v0.0.0-20190106161140-3f1c8253044a \
