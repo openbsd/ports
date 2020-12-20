@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/12/19 18:06:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/12/20 14:54:19 ajacoutot Exp $
 @pkgpath devel/glibmm26
-@conflict glibmm26
+@conflict glibmm26-*
 include/giomm-2.68/
 include/giomm-2.68/giomm/
 include/giomm-2.68/giomm.h
