@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2020/12/13 16:14:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2020/12/20 08:07:28 ajacoutot Exp $
+
+PORTROACH=		limit:^2\.28
 
 COMMENT=		C++ binding for the ATK library
 

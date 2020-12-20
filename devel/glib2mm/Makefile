@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.107 2020/12/19 17:54:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2020/12/20 08:07:28 ajacoutot Exp $
+
+PORTROACH=		limit:^2\.64
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
