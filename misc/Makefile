@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2020/08/03 18:51:51 thfr Exp $
+# $OpenBSD: Makefile,v 1.198 2020/12/20 15:19:27 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -37,7 +37,6 @@
      SUBDIR += gone
      SUBDIR += gpsd
      SUBDIR += gramps
-     SUBDIR += gtk3mm-documentation
      SUBDIR += hfsplus
      SUBDIR += hwdata
      SUBDIR += ietf-cli

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1127 2020/12/19 17:51:35 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1128 2020/12/20 15:19:27 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2015,6 +2015,7 @@ my $obsolete_reason = {
 	'qt3-mysql' => 3,
 	'qt3-postgresql' => 3,
 	'qt3-sqlite2' => 3,
+	'gtk3mm-documentation' => 6,
 };
 
 # reasons for obsolete packages
