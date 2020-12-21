@@ -1,0 +1,52 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2020/12/21 13:25:28 ajacoutot Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -857,7 +857,7 @@ AM_YFLAGS = -d
+ # after the recoll version (e.g librecoll-1.27.1.so)
+ # -version-info $(VERSION_INFO) would handle ABI compat issues, we don't
+ # need it
+-librecoll_la_LDFLAGS = -release $(VERSION) -no-undefined @NO_UNDEF_LINK_FLAG@
++librecoll_la_LDFLAGS = -release $(VERSION) -version-info !!LIBrecoll_VERSION_R!!:!!LIBrecoll_VERSION_E!! -no-undefined @NO_UNDEF_LINK_FLAG@
+ librecoll_la_LIBADD = $(XSLT_LIBS) $(LIBXAPIAN) $(LIBICONV) $(LIBTHREADS)
+ recollindex_SOURCES = \
+                     index/recollindex.cpp \
+@@ -2700,16 +2700,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+ @MAKEPYTHON_TRUE@clean-local:: recollpython-clean
+ @MAKEPYTHON_TRUE@recollpython: librecoll.la
+ @MAKEPYTHON_TRUE@	(cd python/recoll; set -x; \
+-@MAKEPYTHON_TRUE@        for v in 2 3;do test -n "`which python$${v}`" && \
+-@MAKEPYTHON_TRUE@        libdir=$(libdir) python$${v} setup.py build; \
+-@MAKEPYTHON_TRUE@        done \
++@MAKEPYTHON_TRUE@        libdir=$(libdir) ${MODPY_BIN} setup.py build; \
+ @MAKEPYTHON_TRUE@        )
+ @MAKEPYTHON_TRUE@recollpython-install:
+ @MAKEPYTHON_TRUE@	(cd python/recoll; set -x; \
+-@MAKEPYTHON_TRUE@        for v in 2 3;do test -n "`which python$${v}`" && \
+-@MAKEPYTHON_TRUE@        python$${v} setup.py install \
++@MAKEPYTHON_TRUE@        ${MODPY_BIN} setup.py install \
+ @MAKEPYTHON_TRUE@         --prefix=${prefix} --root=$${DESTDIR:-/} $(OPTSFORPYTHON); \
+-@MAKEPYTHON_TRUE@        done; \
+ @MAKEPYTHON_TRUE@         )
+ @MAKEPYTHON_TRUE@recollpython-clean:
+ @MAKEPYTHON_TRUE@	rm -f python/recoll/*.pyc
+@@ -2725,16 +2721,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+ @MAKEPYTHONCHM_TRUE@clean-local:: rclpychm-clean
+ @MAKEPYTHONCHM_TRUE@rclpychm:
+ @MAKEPYTHONCHM_TRUE@	(cd python/pychm; set -x; \
+-@MAKEPYTHONCHM_TRUE@        for v in 2 3;do \
+-@MAKEPYTHONCHM_TRUE@        test -n "`which python$${v}`" && python$${v} setup.py build;\
+-@MAKEPYTHONCHM_TRUE@        done \
++@MAKEPYTHONCHM_TRUE@        ${MODPY_BIN} setup.py build;\
+ @MAKEPYTHONCHM_TRUE@        )
+ @MAKEPYTHONCHM_TRUE@rclpychm-install:
+ @MAKEPYTHONCHM_TRUE@	(cd python/pychm; set -x; \
+-@MAKEPYTHONCHM_TRUE@        for v in 2 3;do test -n "`which python$${v}`" && \
+-@MAKEPYTHONCHM_TRUE@        python$${v} setup.py install \
++@MAKEPYTHONCHM_TRUE@        ${MODPY_BIN} setup.py install \
+ @MAKEPYTHONCHM_TRUE@         --prefix=${prefix} --root=$${DESTDIR:-/} $(OPTSFORPYTHON); \
+-@MAKEPYTHONCHM_TRUE@        done \
+ @MAKEPYTHONCHM_TRUE@        )
+ @MAKEPYTHONCHM_TRUE@rclpychm-clean:
+ @MAKEPYTHONCHM_TRUE@	rm -rf python/pychm/build

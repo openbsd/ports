@@ -1,0 +1,123 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2020/12/21 13:25:28 ajacoutot Exp $
+@bin bin/recollindex
+lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/recoll/
+lib/python${MODPY_VERSION}/site-packages/recoll/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}conftree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}rclconfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}rclextract.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}recoll.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/recoll/_recoll.so
+lib/python${MODPY_VERSION}/site-packages/recoll/conftree.py
+lib/python${MODPY_VERSION}/site-packages/recoll/rclconfig.py
+lib/python${MODPY_VERSION}/site-packages/recoll/rclextract.py
+lib/python${MODPY_VERSION}/site-packages/recoll/recoll.py
+lib/recoll/
+@lib lib/recoll/librecoll-1.27.12.so.${LIBrecoll-1.27.12_VERSION}
+@static-lib lib/recoll/librecoll.a
+lib/recoll/librecoll.la
+@lib lib/recoll/librecoll.so.${LIBrecoll_VERSION}
+@man man/man1/recoll.1
+@man man/man1/recollindex.1
+@man man/man1/recollq.1
+@man man/man1/xadump.1
+@man man/man5/recoll.conf.5
+share/recoll/
+share/recoll/examples/
+share/recoll/examples/fields
+share/recoll/examples/fragbuts.xml
+share/recoll/examples/mimeconf
+share/recoll/examples/mimemap
+share/recoll/examples/mimeview
+share/recoll/examples/rclmon.sh
+share/recoll/examples/recoll-dark.css
+share/recoll/examples/recoll-dark.qss
+share/recoll/examples/recoll.conf
+share/recoll/examples/recoll.qss
+share/recoll/examples/recollindex.desktop
+share/recoll/filters/
+share/recoll/filters/abiword.xsl
+share/recoll/filters/cmdtalk.py
+share/recoll/filters/conftree.py
+share/recoll/filters/fb2.xsl
+share/recoll/filters/gnumeric.xsl
+share/recoll/filters/hotrecoll.py
+share/recoll/filters/kosplitter.py
+share/recoll/filters/msodump.zip
+share/recoll/filters/okular-note.xsl
+share/recoll/filters/opendoc-body.xsl
+share/recoll/filters/opendoc-flat.xsl
+share/recoll/filters/opendoc-meta.xsl
+share/recoll/filters/openxml-meta.xsl
+share/recoll/filters/openxml-word-body.xsl
+share/recoll/filters/openxml-xls-body.xsl
+share/recoll/filters/ppt-dump.py
+share/recoll/filters/rcl7z
+share/recoll/filters/rclaptosidman
+share/recoll/filters/rclaudio
+share/recoll/filters/rclbasehandler.py
+share/recoll/filters/rclbibtex.sh
+share/recoll/filters/rclcheckneedretry.sh
+share/recoll/filters/rclchm
+share/recoll/filters/rclconfig.py
+share/recoll/filters/rcldia
+share/recoll/filters/rcldjvu.py
+share/recoll/filters/rcldoc.py
+share/recoll/filters/rcldvi
+share/recoll/filters/rclepub
+share/recoll/filters/rclepub1
+share/recoll/filters/rclexec1.py
+share/recoll/filters/rclexecm.py
+share/recoll/filters/rclfb2.py
+share/recoll/filters/rclgaim
+share/recoll/filters/rclgenxslt.py
+share/recoll/filters/rclhwp.py
+share/recoll/filters/rclics
+share/recoll/filters/rclimg
+share/recoll/filters/rclimg.py
+share/recoll/filters/rclinfo
+share/recoll/filters/rclkar
+share/recoll/filters/rclkwd
+share/recoll/filters/rcllatinclass.py
+share/recoll/filters/rcllatinstops.zip
+share/recoll/filters/rcllyx
+share/recoll/filters/rclman
+share/recoll/filters/rclmidi.py
+share/recoll/filters/rclocr.py
+share/recoll/filters/rclocrabbyy.py
+share/recoll/filters/rclocrcache.py
+share/recoll/filters/rclocrtesseract.py
+share/recoll/filters/rclopxml.py
+share/recoll/filters/rclpdf.py
+share/recoll/filters/rclppt.py
+share/recoll/filters/rclps
+share/recoll/filters/rclpst.py
+share/recoll/filters/rclpurple
+share/recoll/filters/rclpython.py
+share/recoll/filters/rclrar
+share/recoll/filters/rclrtf.py
+share/recoll/filters/rclscribus
+share/recoll/filters/rclshowinfo
+share/recoll/filters/rcltar
+share/recoll/filters/rcltex
+share/recoll/filters/rcltext.py
+share/recoll/filters/rcluncomp
+share/recoll/filters/rcluncomp.py
+share/recoll/filters/rclwar
+share/recoll/filters/rclxls.py
+share/recoll/filters/rclxml.py
+share/recoll/filters/rclxmp.py
+share/recoll/filters/rclxslt.py
+share/recoll/filters/rclzip
+share/recoll/filters/recoll-we-move-files.py
+share/recoll/filters/recollepub.zip
+share/recoll/filters/svg.xsl
+share/recoll/filters/xls-dump.py
+share/recoll/filters/xlsxmltocsv.py
+share/recoll/filters/xml.xsl

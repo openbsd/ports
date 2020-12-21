@@ -1,0 +1,41 @@
+$OpenBSD: patch-utils_listmem_cpp,v 1.1.1.1 2020/12/21 13:25:28 ajacoutot Exp $
+
+utils/listmem.cpp:31:38: error: too many arguments provided to function-like macro invocation
+static void swap16(unsigned char *d, const unsigned char *s, int n)
+                                     ^
+/usr/include/sys/endian.h:70:9: note: macro 'swap16' defined here
+#define swap16(x) __swap16(x)
+
+Index: utils/listmem.cpp
+--- utils/listmem.cpp.orig
++++ utils/listmem.cpp
+@@ -28,7 +28,7 @@ static char *hexa(unsigned int i)
+     return (asc);
+ }
+ 
+-static void swap16(unsigned char *d, const unsigned char *s, int n)
++static void eswap16(unsigned char *d, const unsigned char *s, int n)
+ {
+     if (n & 1) {
+         n >>= 1;
+@@ -44,7 +44,7 @@ static void swap16(unsigned char *d, const unsigned ch
+     }
+ }
+ 
+-static void swap32(unsigned char *d, const unsigned char *s, int n)
++static void eswap32(unsigned char *d, const unsigned char *s, int n)
+ {
+     if (n & 3) {
+         n >>= 2;
+@@ -96,9 +96,9 @@ void listmem(ostream& os, const void *_ptr, int siz, i
+             return;
+         }
+         if (opts & LISTMEM_SWAP16) {
+-            swap16(mpt, ptr, siz);
++            eswap16(mpt, ptr, siz);
+         } else if (opts & LISTMEM_SWAP32) {
+-            swap32(mpt, ptr, siz);
++            eswap32(mpt, ptr, siz);
+         }
+     } else {
+         mpt = (unsigned char *)ptr;
