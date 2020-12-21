@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.104 2020/11/05 15:49:49 robert Exp $
+# $OpenBSD: Makefile,v 1.105 2020/12/21 18:25:13 sthen Exp $
+
+BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
 
 .include <bsd.port.arch.mk>
 
