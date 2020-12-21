@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/10/28 23:17:36 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/12/21 21:58:42 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -97,6 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}symlink.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}tar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}uimage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}wasm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xsb.${MODPY_PYC_MAGIC_TAG}pyc
@@ -167,6 +168,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/squashfs.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/symlink.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/tar.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/text.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/uimage.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/${MODPY_PYCACHE}/
