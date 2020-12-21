@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2020/07/25 19:48:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2020/12/21 15:00:10 sthen Exp $
 
 COMMENT=	search engine library
 
-V=		1.4.16
+V=		1.4.17
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
 # the other xapian ports should be kept in-sync:
@@ -18,7 +18,7 @@ HOMEPAGE=	https://xapian.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c m ${COMPILER_LIBCXX} z uuid
+WANTLIB += c m ${COMPILER_LIBCXX} z
 
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -26,12 +26,12 @@ EXTRACT_SUFX=	.tar.xz
 # -std=gnu++11
 COMPILER=       base-clang ports-gcc base-gcc
 
-LIB_DEPENDS=	sysutils/e2fsprogs>=1.42.7
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -Wno-redundant-decls" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_header_uuid_uuid_h=false
+# xapian is happy with libc uuid functions, but picks up libuuid if present
 
 .include <bsd.port.arch.mk>
 # amd64-capable CPUs all have SSE

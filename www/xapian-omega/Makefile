@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/25 19:48:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/12/21 15:00:10 sthen Exp $
 
 COMMENT=	web search application
 
-V=		1.4.16
+V=		1.4.17
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://xapian.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c iconv m magic pcre uuid xapian z
+WANTLIB += ${COMPILER_LIBCXX} c iconv m magic pcre xapian z
 
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -21,7 +21,8 @@ EXTRACT_SUFX=	.tar.xz
 # C++11
 COMPILER=       base-clang ports-gcc base-gcc
 
-LIB_DEPENDS=	databases/xapian-core>=${V} \
+LIB_DEPENDS=	converters/libiconv \
+		databases/xapian-core>=${V} \
 		devel/pcre \
 		devel/libmagic
 
