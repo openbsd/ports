@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.65 2020/11/10 16:40:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2020/12/21 08:57:20 rsadowski Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.32.0
-REVISION =		2
+GH_TAGNAME =		v0.33.0
 
-SHARED_LIBS +=		mpv		0.1 # 1.107
+SHARED_LIBS +=		mpv		0.2 # 1.107
 
 CATEGORIES =		multimedia x11
 
@@ -25,9 +24,10 @@ WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm archive ass
 WANTLIB += avcodec avdevice avfilter avformat avresample avutil
 WANTLIB += bluray c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread
-WANTLIB += epoxy expat fontconfig freetype fribidi gbm iconv jpeg
-WANTLIB += lcms2 lua5.1 m placebo postproc pthread sndio swresample
-WANTLIB += swscale xcb xcb-dri2 xcb-glx xml2 z
+WANTLIB += epoxy expat fontconfig freetype fribidi gbm glib-2.0
+WANTLIB += graphite2 harfbuzz iconv intl jpeg lcms2 ${MODLUA_WANTLIB} m pcre
+WANTLIB += placebo postproc pthread swresample swscale xcb xcb-dri2
+WANTLIB += xcb-glx xml2 z
 
 MODULES =		lang/lua \
 			lang/python
@@ -66,7 +66,6 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--enable-cdda \
 			--enable-dvdnav \
 			--enable-libmpv-shared \
-			--enable-sndio \
 			--enable-sdl2 \
 			--disable-alsa \
 			--disable-caca \
@@ -75,12 +74,10 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-gl-wayland \
 			--disable-jack \
 			--disable-rubberband \
-			--disable-oss-audio \
 			--disable-openal \
 			--disable-optimize \
 			--disable-pulse \
-			--disable-rsound \
-			--disable-libsmbclient \
+			--disable-sixel \
 			--disable-uchardet \
 			--disable-vaapi \
 			--disable-vaapi-drm \

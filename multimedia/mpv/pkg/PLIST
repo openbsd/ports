@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/01/29 06:52:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/12/21 08:57:20 rsadowski Exp $
 @bin bin/mpv
 include/mpv/
 include/mpv/client.h
 include/mpv/opengl_cb.h
-include/mpv/qthelper.hpp
 include/mpv/render.h
 include/mpv/render_gl.h
 include/mpv/stream_cb.h
@@ -20,6 +19,7 @@ share/examples/mpv/mpv.conf
 share/examples/mpv/mpv_identify.sh
 share/examples/mpv/restore-old-bindings.conf
 share/examples/mpv/umpv
+share/icons/hicolor/128x128/apps/mpv.png
 share/icons/hicolor/16x16/apps/mpv.png
 share/icons/hicolor/32x32/apps/mpv.png
 share/icons/hicolor/64x64/apps/mpv.png
