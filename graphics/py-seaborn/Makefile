@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/09 08:00:36 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2020/12/21 09:29:01 bket Exp $
 
 COMMENT =		statistical data visualization
 
-MODPY_EGG_VERSION =	0.11.0
+MODPY_EGG_VERSION =	0.11.1
 DISTNAME =		seaborn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -28,11 +28,11 @@ RUN_DEPENDS =		graphics/py-matplotlib${MODPY_FLAVOR}>=2.2.0 \
 
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
-# TestAxesStyle.test_reset_orig is the only test that fails as it needs
-# 'GTK3Agg' as backend.
-TEST_ENV =		MPLBACKEND=AGG
+TEST_IS_INTERACTIVE =	x11
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+PORTHOME =		${WRKDIR}
 
 .include <bsd.port.mk>
