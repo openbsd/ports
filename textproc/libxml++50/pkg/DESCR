@@ -1,0 +1,4 @@
+libxmlplusplus (aka libxml++) is a C++ wrapper for the libxml2 XML parser
+library.
+It has SAX and DOM-like APIs, but does not attempt to conform exactly to the DOM
+specification. Its API is simpler than the underlying libxml2 C API.
