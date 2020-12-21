@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/12/10 10:42:59 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.14 2020/12/21 05:10:20 bcallah Exp $
 @bin bin/dialog
+bin/dialog-config
+include/dialog.h
+include/dlg_colors.h
+include/dlg_config.h
+include/dlg_keys.h
 @static-lib lib/libdialog.a
 @man man/man1/dialog.1
+@man man/man3/dialog.3
 share/locale/an/
 share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/dialog.mo
