@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/11/29 09:13:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2020/12/21 21:27:54 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -57,6 +57,7 @@ share/liblouis/tables/as-in-g1.utb
 share/liblouis/tables/as.tbl
 share/liblouis/tables/aw-in-g1.utb
 share/liblouis/tables/awa.tbl
+share/liblouis/tables/ba.utb
 share/liblouis/tables/be-in-g1.utb
 share/liblouis/tables/bengali.cti
 share/liblouis/tables/bg.ctb
@@ -149,6 +150,7 @@ share/liblouis/tables/en-us-comp6.ctb
 share/liblouis/tables/en-us-comp8-ext.utb
 share/liblouis/tables/en-us-comp8.ctb
 share/liblouis/tables/en-us-compbrl.uti
+share/liblouis/tables/en-us-emphasis.uti
 share/liblouis/tables/en-us-g1.ctb
 share/liblouis/tables/en-us-g2.ctb
 share/liblouis/tables/en-us-interline.ctb
@@ -341,12 +343,11 @@ share/liblouis/tables/ro.tbl
 share/liblouis/tables/ru-chardefs.cti
 share/liblouis/tables/ru-compbrl.ctb
 share/liblouis/tables/ru-letters.dis
+share/liblouis/tables/ru-litbrl-detailed.utb
 share/liblouis/tables/ru-litbrl.ctb
-share/liblouis/tables/ru-ru-g1.utb
 share/liblouis/tables/ru-ru.dis
 share/liblouis/tables/ru-unicode.dis
 share/liblouis/tables/ru.ctb
-share/liblouis/tables/ru.tbl
 share/liblouis/tables/sa-in-g1.utb
 share/liblouis/tables/sa.tbl
 share/liblouis/tables/sd.tbl
