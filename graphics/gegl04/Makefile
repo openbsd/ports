@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2020/09/05 16:46:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2020/12/21 11:40:13 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.26
+V=			0.4.28
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
-SHARED_LIBS += gegl-0.4                  0.4 # 0.425.1
+SHARED_LIBS += gegl-0.4                  0.4 # 0.427.1
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -56,6 +55,7 @@ CONFIGURE_ARGS=		-Dgraphviz=disabled \
 			-Dlibv4l=disabled \
 			-Dlibv4l2=disabled \
 			-Dlua=disabled \
+			-Dmaxflow=disabled \
 			-Dmrg=disabled \
 			-Dopenexr=disabled \
 			-Dsdl1=disabled \

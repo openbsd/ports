@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/06/08 16:46:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/12/21 11:40:13 ajacoutot Exp $
 @conflict gegl-*
 @conflict gegl03-*
 @pkgpath graphics/gegl,-main
@@ -151,6 +151,9 @@ share/locale/hr/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/id/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/is/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/it/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/ko/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/lv/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/mr/LC_MESSAGES/gegl-${API_VERSION}.mo
@@ -161,6 +164,7 @@ share/locale/oc/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/pl/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/pt/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/ro/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/ru/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/sk/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/sl/LC_MESSAGES/gegl-${API_VERSION}.mo
