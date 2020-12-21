@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/26 14:35:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2020/12/21 15:20:41 stu Exp $
 
 COMMENT =		ODBC driver for SQLite3
 
-V =			0.9996
+V =			0.9998
 DISTNAME =		sqliteodbc-${V}
 PKGNAME =		sqlite3-odbc-${V}
 CATEGORIES =		databases
