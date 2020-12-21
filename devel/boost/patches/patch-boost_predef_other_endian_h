@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_predef_other_endian_h,v 1.2 2020/11/05 11:23:03 sthen Exp $
+$OpenBSD: patch-boost_predef_other_endian_h,v 1.3 2020/12/21 19:07:53 rsadowski Exp $
 
 Index: boost/predef/other/endian.h
 --- boost/predef/other/endian.h.orig
@@ -23,7 +23,7 @@ Index: boost/predef/other/endian.h
 -#           endif
 +#       endif
 +#       if BOOST_OS_BSD
-+            include <sys/endian.h> 
++#           include <sys/endian.h> 
  #       endif
  #   endif
  #   if defined(__BYTE_ORDER)

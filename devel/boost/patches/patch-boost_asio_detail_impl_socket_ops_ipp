@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_asio_detail_impl_socket_ops_ipp,v 1.1 2020/11/05 11:23:03 sthen Exp $
+$OpenBSD: patch-boost_asio_detail_impl_socket_ops_ipp,v 1.2 2020/12/21 19:07:53 rsadowski Exp $
 
 Use MSG_NOSIGNAL with sendmsg().
 
@@ -13,7 +13,7 @@ Index: boost/asio/detail/impl/socket_ops.ipp
 +#if defined(MSG_NOSIGNAL)
    flags |= MSG_NOSIGNAL;
 -#endif // defined(__linux__)
-+#endif // defined(MSG_NOSIGNAL
++#endif // defined(MSG_NOSIGNAL)
    signed_size_type result = error_wrapper(::sendmsg(s, &msg, flags), ec);
    if (result >= 0)
      ec = boost::system::error_code();

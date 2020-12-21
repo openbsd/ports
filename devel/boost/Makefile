@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2020/12/15 18:53:17 otto Exp $
+# $OpenBSD: Makefile,v 1.106 2020/12/21 19:07:52 rsadowski Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
@@ -6,7 +6,7 @@ COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
 VERSION=	1.70.0
-REVISION=	1
+REVISION=	2
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
