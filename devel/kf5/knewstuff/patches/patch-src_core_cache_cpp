@@ -1,0 +1,93 @@
+$OpenBSD: patch-src_core_cache_cpp,v 1.1 2020/12/21 13:28:10 rsadowski Exp $
+
+- https://invent.kde.org/frameworks/knewstuff/commit/243ea6155b28457c8b1441fee8ab1037828d21ba.
+This fixes https://bugs.kde.org/show_bug.cgi?id=429442.
+
+Index: src/core/cache.cpp
+--- src/core/cache.cpp.orig
++++ src/core/cache.cpp
+@@ -11,17 +11,42 @@
+ #include <QDir>
+ #include <QFileInfo>
+ #include <QFileSystemWatcher>
++#include <QPointer>
+ #include <QTimer>
+ #include <QXmlStreamReader>
+ #include <qstandardpaths.h>
+ #include <knewstuffcore_debug.h>
+ 
++class KNSCore::CachePrivate {
++public:
++    CachePrivate(Cache* qq)
++        : q(qq)
++    {}
++    ~CachePrivate() {}
++
++    Cache* q;
++    QHash<QString, EntryInternal::List> requestCache;
++
++    QPointer<QTimer> throttleTimer;
++    void throttleWrite() {
++        if (!throttleTimer) {
++            throttleTimer = new QTimer(q);
++            QObject::connect(throttleTimer, &QTimer::timeout, q, [this](){ q->writeRegistry(); });
++            throttleTimer->setSingleShot(true);
++            throttleTimer->setInterval(1000);
++        }
++        throttleTimer->start();
++    }
++};
++
+ using namespace KNSCore;
+ 
+ typedef QHash<QString, QWeakPointer<Cache> > CacheHash;
+ Q_GLOBAL_STATIC(CacheHash, s_caches)
+ 
+-Cache::Cache(const QString &appName): QObject(nullptr)
++Cache::Cache(const QString &appName)
++    : QObject(nullptr)
++    , d(new CachePrivate(this))
+ {
+     m_kns2ComponentName = appName;
+ 
+@@ -280,36 +305,30 @@ void Cache::registerChangedEntry(const KNSCore::EntryI
+     if (entry.status() == KNS3::Entry::Updating || entry.status() == KNS3::Entry::Installing) {
+         return;
+     }
+-    static QTimer* writeThrottle{nullptr};
+-    if (!writeThrottle) {
+-        writeThrottle = new QTimer(this);
+-        connect(writeThrottle, &QTimer::timeout, this, [this](){ writeRegistry(); });
+-        writeThrottle->setInterval(1000);
+-    }
+     if (!property("reloadingRegistry").toBool()) {
+         setProperty("dirty", true);
+         cache.remove(entry); // If value already exists in the set, the set is left unchanged
+         cache.insert(entry);
+-        writeThrottle->start();
++        d->throttleWrite();
+     }
+ }
+ 
+ void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const KNSCore::EntryInternal::List &entries)
+ {
+     // append new entries
+-    auto &cacheList = requestCache[request.hashForRequest()];
++    auto &cacheList = d->requestCache[request.hashForRequest()];
+     for (const auto &entry : entries) {
+         if (!cacheList.contains(entry)) {
+             cacheList.append(entry);
+         }
+     }
+-    qCDebug(KNEWSTUFFCORE) << request.hashForRequest() << " add: " << entries.size() << " keys: " << requestCache.keys();
++    qCDebug(KNEWSTUFFCORE) << request.hashForRequest() << " add: " << entries.size() << " keys: " << d->requestCache.keys();
+ }
+ 
+ EntryInternal::List Cache::requestFromCache(const KNSCore::Provider::SearchRequest &request)
+ {
+     qCDebug(KNEWSTUFFCORE) << request.hashForRequest();
+-    return requestCache.value(request.hashForRequest());
++    return d->requestCache.value(request.hashForRequest());
+ }
+ 
+ void KNSCore::Cache::removeDeletedEntries()

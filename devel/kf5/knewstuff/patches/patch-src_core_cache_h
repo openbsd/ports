@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_core_cache_h,v 1.1 2020/12/21 13:28:10 rsadowski Exp $
+
+- https://invent.kde.org/frameworks/knewstuff/commit/243ea6155b28457c8b1441fee8ab1037828d21ba.
+This fixes https://bugs.kde.org/show_bug.cgi?id=429442.
+
+Index: src/core/cache.h
+--- src/core/cache.h.orig
++++ src/core/cache.h
+@@ -16,9 +16,11 @@
+ 
+ #include "knewstuffcore_export.h"
+ 
++#include <memory.h>
++
+ namespace KNSCore
+ {
+-
++class CachePrivate;
+ class KNEWSTUFFCORE_EXPORT Cache : public QObject
+ {
+     Q_OBJECT
+@@ -99,7 +101,8 @@ public Q_SLOTS: (private)
+     QString m_kns2ComponentName;
+ 
+     QSet<EntryInternal> cache;
+-    QHash<QString, EntryInternal::List> requestCache;
++
++    std::unique_ptr<CachePrivate> d;
+ };
+ 
+ }
