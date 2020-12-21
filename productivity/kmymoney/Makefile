@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2020/10/26 15:36:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2020/12/21 11:14:52 rsadowski Exp $
 
 
 COMMENT =		accounting for KDE 5
 
 HOMEPAGE =		https://kmymoney.org/
 
-VERSION =		5.1.0
+VERSION =		5.1.1
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		1
 
 CATEGORIES =		productivity x11
 
@@ -15,7 +14,7 @@ SHARED_LIBS +=  kmm_csvimportercore       0.0 # 5.1.0
 SHARED_LIBS +=  kmm_icons                 0.0 # 5.1.0
 SHARED_LIBS +=  kmm_menus                 0.0 # 5.1.0
 SHARED_LIBS +=  kmm_models                0.0 # 5.1.0
-SHARED_LIBS +=  kmm_mymoney               0.0 # 5.1.0
+SHARED_LIBS +=  kmm_mymoney               0.1 # 5.1.0
 SHARED_LIBS +=  kmm_payeeidentifier       0.0 # 5.1.0
 SHARED_LIBS +=  kmm_plugin                0.0 # 5.1.0
 SHARED_LIBS +=  kmm_printer               0.0 # 5.1.0

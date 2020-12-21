@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2020/07/25 10:45:44 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/12/21 11:14:52 rsadowski Exp $
 
 - Remove weboob support, depends on python2
 - Remove linker, compiler  flags
@@ -16,7 +16,7 @@ Index: CMakeLists.txt
  endif()
  
  if (PkgConfig_FOUND)
-@@ -235,7 +235,7 @@ if(ENABLE_OFXIMPORTER)
+@@ -237,7 +237,7 @@ if(ENABLE_OFXIMPORTER)
      set(PATH_TO_LIBOFX_HEADER "${PATH_TO_LIBOFX_HEADER}/libofx/libofx.h")
      unset(LIBOFX_HAVE_CLIENTUID)
      unset(LIBOFX_HAVE_CLIENTUID CACHE) #not doing this will prevent updating below check
@@ -25,7 +25,7 @@ Index: CMakeLists.txt
    endif()
  
    if (LIBOFX_HAVE_CLIENTUID)
-@@ -263,23 +263,7 @@ cmake_dependent_option(ENABLE_KBANKING "Enable KBankin
+@@ -265,23 +265,7 @@ cmake_dependent_option(ENABLE_KBANKING "Enable KBankin
  
  add_feature_info(KBanking ENABLE_KBANKING "Interface for the following online banking protocols: HBCI, EBICS, OFX Direct Connect, Paypal")
  
@@ -50,7 +50,7 @@ Index: CMakeLists.txt
                         "PYTHONLIBS_FOUND;PYTHONINTERP_FOUND;PY_WEBOOB;Qt5Concurrent_FOUND" OFF)
  add_feature_info(Weboob ENABLE_WEBOOB "Online banking interface using Weboob.")
  
-@@ -328,38 +312,7 @@ The default value is: 'RelWithDebInfo'" FORCE)
+@@ -330,38 +314,7 @@ The default value is: 'RelWithDebInfo'" FORCE)
  include(KDECompilerSettings)
  kde_enable_exceptions()
  
@@ -89,7 +89,7 @@ Index: CMakeLists.txt
  # Set compiler flags
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wlogical-op -Wno-null-dereference -Wshadow -Wunused -Wno-misleading-indentation -Wsuggest-override -Wcast-qual -Wformat=2 -fno-common")
-@@ -376,14 +329,6 @@ endif()
+@@ -378,14 +331,6 @@ endif()
  set(CMAKE_POSITION_INDEPENDENT_CODE ON)
  
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
