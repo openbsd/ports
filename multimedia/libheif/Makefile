@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/27 12:20:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/12/21 06:21:35 rsadowski Exp $
 
-COMMENT=	ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+COMMENT=	HEIF and AVIF file format decoder and encoder
 
-V=		1.6.2
+V=		1.10.0
 DISTNAME=	libheif-$V
-REVISION=	1
 
-SHARED_LIBS +=  heif                      0.0 # 7.2
+SHARED_LIBS +=  heif                      1.0 # 9.0
 
 CATEGORIES=	multimedia graphics
 
@@ -15,20 +14,23 @@ HOMEPAGE=	https://github.com/strukturag/libheif
 # LGPLv3+ (library), MIT (sample applications)
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c de265 ffi gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 iconv intl jpeg m
-WANTLIB += pcre png x265 z
+WANTLIB += ${COMPILER_LIBCXX} aom c dav1d de265 ffi gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv intl
+WANTLIB += jpeg m pcre png x265 z
 
 MASTER_SITES=	https://github.com/strukturag/libheif/releases/download/v$V/
 
 COMPILER=	base-clang ports-gcc
 
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-go
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
-USE_GMAKE=	Yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 LIB_DEPENDS=	graphics/gdk-pixbuf2 \
+		multimedia/aom \
+		multimedia/dav1d \
 		multimedia/libde265 \
 		multimedia/x265
 RUN_DEPENDS=	misc/shared-mime-info

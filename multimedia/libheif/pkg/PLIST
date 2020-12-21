@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/24 23:22:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/21 06:21:35 rsadowski Exp $
 @bin bin/heif-convert
 @bin bin/heif-enc
 @bin bin/heif-info
@@ -19,6 +19,7 @@ lib/pkgconfig/libheif.pc
 @man man/man1/heif-enc.1
 @man man/man1/heif-info.1
 @man man/man1/heif-thumbnailer.1
+share/mime/packages/avif.xml
 share/mime/packages/heif.xml
 share/thumbnailers/heif.thumbnailer
 @tag update-mime-database
