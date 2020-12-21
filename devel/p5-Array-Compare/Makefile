@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2020/12/08 12:35:41 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2020/12/21 15:40:32 benoit Exp $
 
 COMMENT=	Perl module for comparing arrays
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Array-Compare-v3.0.7
+DISTNAME=	Array-Compare-v3.0.8
 PKGNAME=	${DISTNAME:S/v//g}
 CATEGORIES=	devel
 
