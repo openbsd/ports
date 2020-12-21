@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2020/12/11 16:11:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.412 2020/12/21 13:26:33 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -198,6 +198,7 @@
      SUBDIR += py-sybase
      SUBDIR += py-whisper
      SUBDIR += qdbm
+     SUBDIR += recoll
      SUBDIR += redis
      SUBDIR += repmgr
      SUBDIR += riak
