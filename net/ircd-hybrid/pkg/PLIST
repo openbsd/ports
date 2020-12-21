@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/12/12 19:28:21 solene Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/12/21 09:01:02 rsadowski Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
@@ -72,6 +72,8 @@ lib/ircd-hybrid/modules/autoload/m_metadata.la
 @so lib/ircd-hybrid/modules/autoload/m_metadata.so
 lib/ircd-hybrid/modules/autoload/m_module.la
 @so lib/ircd-hybrid/modules/autoload/m_module.so
+lib/ircd-hybrid/modules/autoload/m_monitor.la
+@so lib/ircd-hybrid/modules/autoload/m_monitor.so
 lib/ircd-hybrid/modules/autoload/m_motd.la
 @so lib/ircd-hybrid/modules/autoload/m_motd.so
 lib/ircd-hybrid/modules/autoload/m_names.la
@@ -138,8 +140,6 @@ lib/ircd-hybrid/modules/autoload/m_version.la
 @so lib/ircd-hybrid/modules/autoload/m_version.so
 lib/ircd-hybrid/modules/autoload/m_wallops.la
 @so lib/ircd-hybrid/modules/autoload/m_wallops.so
-lib/ircd-hybrid/modules/autoload/m_watch.la
-@so lib/ircd-hybrid/modules/autoload/m_watch.so
 lib/ircd-hybrid/modules/autoload/m_webirc.la
 @so lib/ircd-hybrid/modules/autoload/m_webirc.so
 lib/ircd-hybrid/modules/autoload/m_who.la
