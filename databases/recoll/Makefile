@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/21 13:25:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2020/12/21 13:26:29 ajacoutot Exp $
 
 COMMENT= 	full text search application
 
@@ -12,7 +12,7 @@ CATEGORIES= 	databases sysutils
 
 HOMEPAGE= 	https://www.lesbonscomptes.com/recoll/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://www.lesbonscomptes.com/recoll/
