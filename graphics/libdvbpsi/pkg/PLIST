@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/10/05 06:08:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2020/12/21 08:47:54 rsadowski Exp $
 include/dvbpsi/
 include/dvbpsi/atsc_eit.h
 include/dvbpsi/atsc_ett.h
@@ -79,7 +79,7 @@ include/dvbpsi/sis.h
 include/dvbpsi/tot.h
 include/dvbpsi/types/
 include/dvbpsi/types/aac_profile.h
-lib/libdvbpsi.a
+@static-lib lib/libdvbpsi.a
 lib/libdvbpsi.la
 @lib lib/libdvbpsi.so.${LIBdvbpsi_VERSION}
 lib/pkgconfig/libdvbpsi.pc
