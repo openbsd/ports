@@ -1,6 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.15 2020/11/18 21:20:00 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.16 2020/12/21 21:38:51 jca Exp $
 
 - Switch Powerpc64 Big Endian to ELFv2 on OpenBSD.
+- Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
 - Add -msvr4-struct-return for powerpc.
 - Disable -fstrict-aliasing per default on OpenBSD.
 - Enable -fwrapv by default
@@ -45,7 +46,19 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
          ABIName = "elfv2";
        else
          ABIName = "elfv1";
-@@ -4421,6 +4422,19 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -2365,6 +2366,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
+           CmdArgs.push_back("-soft-float");
+           continue;
+         }
++        if (Value.startswith("-mfix-loongson2f-btb")) {
++          CmdArgs.push_back("-mllvm");
++          CmdArgs.push_back("-fix-loongson2f-btb");
++          continue;
++        }
+ 
+         MipsTargetFeature = llvm::StringSwitch<const char *>(Value)
+                                 .Case("-mips1", "+mips1")
+@@ -4421,6 +4427,19 @@ void Clang::ConstructJob(Compilation &C, const JobActi
      CmdArgs.push_back(A->getValue());
    }
  
@@ -65,7 +78,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    if (Arg *A = Args.getLastArg(options::OPT_fpcc_struct_return,
                                 options::OPT_freg_struct_return)) {
      if (TC.getArch() != llvm::Triple::x86) {
-@@ -4465,9 +4479,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4465,9 +4484,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -80,7 +93,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -5167,7 +5184,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5167,7 +5189,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -90,7 +103,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -5184,9 +5202,50 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5184,9 +5207,50 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                     false))
      CmdArgs.push_back(Args.MakeArgString("-mspeculative-load-hardening"));
  
@@ -142,7 +155,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    // Translate -mstackrealign
    if (Args.hasFlag(options::OPT_mstackrealign, options::OPT_mno_stackrealign,
                     false))
-@@ -5674,6 +5733,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5674,6 +5738,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");
