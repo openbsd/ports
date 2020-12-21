@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2020/07/03 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2020/12/21 15:00:34 sthen Exp $
 
 # undefined ref's to libicon*, libintl* with ld.bfd
 ONLY_FOR_ARCHS=	${LLD_ARCHS}
@@ -10,7 +10,7 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail www productivity
 
@@ -55,7 +55,7 @@ WANTLIB-main += mariadb curses ssl xml2
 WANTLIB-main += gsoapssl++ tidy
 WANTLIB-main += ${LIBCXX}
 WANTLIB-main += icalvcal ldap_r HX jsoncpp
-WANTLIB-main += db_cxx uuid xapian
+WANTLIB-main += db_cxx xapian
 WANTLIB-main += X11 Xext Xrender expat fontconfig freetype pixman-1
 WANTLIB-main += xcb xcb-render xcb-shm
 WANTLIB-main += cairo glib-2.0 gobject-2.0 graphite2

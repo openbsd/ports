@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2020/09/01 13:57:39 paco Exp $
+# $OpenBSD: Makefile,v 1.22 2020/12/21 15:00:34 sthen Exp $
 
 COMMENT=	maildir indexer and searcher with emacs frontend
 
 V=		1.4.13
 GUILE_V=	2.2
+REVISION=	0
 
 DISTNAME=	mu-$V
 
@@ -23,7 +24,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} assuan c curses ffi gio-2.0 glib-2.0
 WANTLIB += gmime-3.0 gmodule-2.0 gobject-2.0 gpg-error gpgme gthread-2.0
 WANTLIB += iconv idn2 intl json-glib-1.0 m pcre readline unistring
-WANTLIB += uuid xapian z
+WANTLIB += xapian z
 
 MASTER_SITES=	https://github.com/djcb/mu/releases/download/${V}/
 EXTRACT_SUFX=	.tar.xz

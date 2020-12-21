@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/19 15:23:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2020/12/21 15:00:35 sthen Exp $
 
 COMMENT=		full text search plugin for Dovecot using Xapian
 
 GH_ACCOUNT=		grosjo
 GH_PROJECT=		fts-xapian
 GH_TAGNAME=		1.3.3
+REVISION=		0
 PKGNAME=		dovecot-${DISTNAME}
 
 CATEGORIES=		mail
@@ -15,7 +16,7 @@ MAINTAINER=		Tom Wong-Cornall <tom@wongcornall.com>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuio icuuc m sqlite3
-WANTLIB += uuid xapian z
+WANTLIB += xapian z
 
 COMPILER=		base-clang ports-gcc
 

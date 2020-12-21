@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/12/21 13:26:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2020/12/21 15:00:35 sthen Exp $
 
 COMMENT= 	full text search application
 
 V=		1.27.12
 DISTNAME= 	recoll-${V}
+REVISION=	0
 
 SHARED_LIBS +=	recoll-${V}            0.0 # 0.0
 SHARED_LIBS +=  recoll                 0.0 # 0.0
@@ -17,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://www.lesbonscomptes.com/recoll/
 
-WANTLIB += ${COMPILER_LIBCXX} c iconv lzma m uuid xapian xml2
+WANTLIB += ${COMPILER_LIBCXX} c iconv lzma m xapian xml2
 WANTLIB += xslt z
 
 MODULES=		lang/python
