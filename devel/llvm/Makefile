@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2020/12/21 21:38:51 jca Exp $
+# $OpenBSD: Makefile,v 1.271 2020/12/22 22:29:01 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -18,7 +18,7 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	7
+REVISION-main =	8
 REVISION-lldb =	1
 CATEGORIES =	devel
 
@@ -102,7 +102,7 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 # Disable some protections in the compiler to regain performance.
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "mips64" || \
-    ${MACHINE_ARCH} == "powerpc"
+    ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "powerpc"
 CXXFLAGS+=	-fno-ret-protector
 .endif
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
