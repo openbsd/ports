@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2019/10/30 14:08:59 sthen Exp $
+$OpenBSD: README,v 1.2 2020/12/22 12:59:36 sthen Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -40,20 +40,40 @@ You are free to edit local.d/redis.conf to make changes as necessary
 (i.e. the above warning about editing existing files doesn't apply
 here).
 
-Integration with MTAs
----------------------
+Integration with MTAs and using sockets
+---------------------------------------
 For OpenSMTPd, you can use the opensmtpd-filter-rspamd package which has its
 own pkg-readme file.
 
-For other MTAs, see https://rspamd.com/doc/integration.html for standard
-instructions, but it might be useful to know how to set the path for
-the milter socket for use with Postfix's chroot mode often used on OpenBSD -
+The default setup uses network sockets on localhost, which can be used by any
+local user. The official documentation goes on to explain how to configure ssl
+and passwords to fix that problem, but a simpler option is using unix sockets.
 
-- in ${SYSCONFDIR}/local.d/worker-proxy.inc use the full path:
+This example is for Postfix - where we have to put the proxy socket in Postfix's
+chroot - but it shouldn't be hard to adapt to other MTAs:
 
-    bind_socket = "/var/spool/postfix/var/run/rspamd-milter.sock mode=0600 owner=_postfix";
+
+- in ${SYSCONFDIR}/rspamd/local.d/worker-controller.inc
+
+    bind_socket = "/var/run/rspamd/controller_socket mode=0600 owner=_rspamd";
+
+- in ${SYSCONFDIR}/rspamd/local.d/worker-normal.inc
+
+    bind_socket = "/var/run/rspamd/normal_socket mode=0600 owner=_rspamd";
+
+- in ${SYSCONFDIR}/rpsamd/local.d/worker-proxy.inc
+
+    bind_socket = "/var/spool/postfix/var/rspamd/socket mode=0600 owner=_postfix";
+    upstream "local" {
+      default = yes;
+      hosts = "/var/run/rspamd/normal_socket";
+    }
 
 - and in ${SYSCONFDIR}/postfix/main.cf use the chroot-relative path:
 
     smtpd_milters = unix:/var/run/rspamd-milter.sock
     milter_default_action = accept
+
+
+Of course you can also use https://rspamd.com/doc/integration.html for standard
+instructions.
