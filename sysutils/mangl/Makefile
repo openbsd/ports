@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/12/21 18:10:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2020/12/22 03:27:42 bcallah Exp $
 
 COMMENT =	graphical manual page viewer using mandoc
 CATEGORIES =	sysutils x11
 
 GH_ACCOUNT =	zigalenarcic
 GH_PROJECT =	mangl
-GH_TAGNAME =	v1.0.2
+GH_TAGNAME =	v1.0.3
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -31,5 +31,6 @@ do-gen:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mangl ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mangl.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

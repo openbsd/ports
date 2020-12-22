@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/21 13:50:12 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/22 03:27:42 bcallah Exp $
 @bin bin/mangl
+@man man/man1/mangl.1
