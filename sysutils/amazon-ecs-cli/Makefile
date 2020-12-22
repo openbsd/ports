@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2020/07/10 06:34:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2020/12/22 12:55:18 ajacoutot Exp $
 
 BROKEN-aarch64 = looks like the vendored golang.org/x/sys/unix is too old for aarch64
 # try removing above with next update
 
 COMMENT=		CLI for AWS ECS
 
-GH_TAGNAME=		v1.20.0
+GH_TAGNAME=		v1.21.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ecs-cli
 PKGNAME=		${DISTNAME:S/amazon-//}
