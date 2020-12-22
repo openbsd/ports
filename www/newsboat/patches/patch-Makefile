@@ -1,17 +1,20 @@
-$OpenBSD: patch-Makefile,v 1.6 2020/06/22 11:05:37 fcambus Exp $
+$OpenBSD: patch-Makefile,v 1.7 2020/12/22 15:38:49 fcambus Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -16,7 +16,7 @@ CXX_FOR_BUILD?=$(CXX)
+@@ -16,9 +16,9 @@ CXX_FOR_BUILD?=$(CXX)
  # compiler and linker flags
  DEFINES=-DLOCALEDIR=\"$(localedir)\"
  
 -WARNFLAGS=-Werror -Wall -Wextra -Wunreachable-code
 +WARNFLAGS=-Wall -Wextra -Wunreachable-code
  INCLUDES=-Iinclude -Istfl -Ifilter -I. -Irss
- BARE_CXXFLAGS=-std=c++11 -O2 -ggdb $(INCLUDES)
+-BARE_CXXFLAGS=-std=c++11 -O2 -ggdb $(INCLUDES)
++BARE_CXXFLAGS=-std=c++11 $(INCLUDES)
  LDFLAGS+=-L.
+ 
+ PACKAGE=newsboat
 @@ -46,7 +46,7 @@ FILTERLIB_OUTPUT=libfilter.a
  NEWSBOAT=newsboat
  NEWSBOAT_SOURCES:=$(shell cat mk/newsboat.deps)
