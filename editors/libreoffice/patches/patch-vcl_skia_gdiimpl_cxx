@@ -1,11 +1,11 @@
-$OpenBSD: patch-vcl_skia_gdiimpl_cxx,v 1.1 2020/08/09 06:33:26 robert Exp $
+$OpenBSD: patch-vcl_skia_gdiimpl_cxx,v 1.2 2020/12/22 15:28:19 robert Exp $
 
 Index: vcl/skia/gdiimpl.cxx
 --- vcl/skia/gdiimpl.cxx.orig
 +++ vcl/skia/gdiimpl.cxx
-@@ -722,7 +722,7 @@ bool SkiaSalGraphicsImpl::drawPolyPolygon(const basegf
+@@ -867,7 +867,7 @@ void SkiaSalGraphicsImpl::performDrawPolyPolygon(const
+         getDrawCanvas()->drawPath(polygonPath, aPaint);
      }
-     addXorRegion(aPath.getBounds());
      postDraw();
 -#if defined LINUX
 +#if defined LINUX || defined OPENBSD

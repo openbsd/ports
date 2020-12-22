@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2020/10/15 17:36:42 robert Exp $
+# $OpenBSD: Makefile,v 1.239 2020/12/22 15:28:19 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -26,7 +26,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.11 # 4.11
 
 BV=		7.0
-VERSION=	${BV}.2.2
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -103,7 +103,7 @@ DISTFILES += commons-logging-1.2-src.tar.gz:0
 DISTFILES += cppunit-1.15.1.tar.gz:0
 DISTFILES += culmus-0.131.tar.gz:0
 DISTFILES += dtoa-20180411.tgz:0
-DISTFILES += language-subtag-registry-2020-04-01.tar.bz2:0
+DISTFILES += language-subtag-registry-2020-09-29.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
 DISTFILES += libcdr-0.1.6.tar.xz:0
 DISTFILES += libcmis-0.5.2.tar.xz:0
@@ -131,8 +131,8 @@ DISTFILES += libwps-0.4.11.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
 DISTFILES += mdds-1.6.0.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
-DISTFILES += pdfium-4137.tar.bz2:0
-DISTFILES += skia-m84-c1baf6e1c2a5454148adb516f0f833483b5a0353.tar.xz:0
+DISTFILES += pdfium-4306.tar.bz2:0
+DISTFILES += skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar.xz:0
 DISTFILES += source-serif-pro-3.000R.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
 DISTFILES += xmlsec1-1.2.30.tar.gz:0

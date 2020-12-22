@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.59 2020/08/07 07:09:30 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.60 2020/12/22 15:28:19 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -497,6 +497,7 @@ lib/libreoffice/share/autocorr/acor_sr-RS.dat
 lib/libreoffice/share/autocorr/acor_sv-SE.dat
 lib/libreoffice/share/autocorr/acor_tr-TR.dat
 lib/libreoffice/share/autocorr/acor_vi-VN.dat
+lib/libreoffice/share/autocorr/acor_vro-EE.dat
 lib/libreoffice/share/autocorr/acor_zh-CN.dat
 lib/libreoffice/share/autocorr/acor_zh-TW.dat
 lib/libreoffice/share/autotext/
@@ -2446,6 +2447,7 @@ lib/libreoffice/share/config/soffice.cfg/svx/ui/imapmenu.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/inspectortextpanel.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/interimdockparent.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/interimparent.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/interimtearableparent.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/labelbox.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/lightingwindow.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/linkwarndialog.ui
