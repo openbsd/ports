@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2020/12/15 12:25:20 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.48 2020/12/22 13:21:01 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -6883,6 +6883,8 @@ nextcloud/apps/admin_audit/l10n/fr.js
 nextcloud/apps/admin_audit/l10n/fr.json
 nextcloud/apps/admin_audit/l10n/gl.js
 nextcloud/apps/admin_audit/l10n/gl.json
+nextcloud/apps/admin_audit/l10n/hr.js
+nextcloud/apps/admin_audit/l10n/hr.json
 nextcloud/apps/admin_audit/l10n/hu.js
 nextcloud/apps/admin_audit/l10n/hu.json
 nextcloud/apps/admin_audit/l10n/id.js
@@ -6968,6 +6970,8 @@ nextcloud/apps/cloud_federation_api/l10n/fr.js
 nextcloud/apps/cloud_federation_api/l10n/fr.json
 nextcloud/apps/cloud_federation_api/l10n/gl.js
 nextcloud/apps/cloud_federation_api/l10n/gl.json
+nextcloud/apps/cloud_federation_api/l10n/hr.js
+nextcloud/apps/cloud_federation_api/l10n/hr.json
 nextcloud/apps/cloud_federation_api/l10n/is.js
 nextcloud/apps/cloud_federation_api/l10n/is.json
 nextcloud/apps/cloud_federation_api/l10n/it.js
@@ -7293,8 +7297,12 @@ nextcloud/apps/contactsinteraction/l10n/fr.js
 nextcloud/apps/contactsinteraction/l10n/fr.json
 nextcloud/apps/contactsinteraction/l10n/gl.js
 nextcloud/apps/contactsinteraction/l10n/gl.json
+nextcloud/apps/contactsinteraction/l10n/hr.js
+nextcloud/apps/contactsinteraction/l10n/hr.json
 nextcloud/apps/contactsinteraction/l10n/it.js
 nextcloud/apps/contactsinteraction/l10n/it.json
+nextcloud/apps/contactsinteraction/l10n/lt_LT.js
+nextcloud/apps/contactsinteraction/l10n/lt_LT.json
 nextcloud/apps/contactsinteraction/l10n/mk.js
 nextcloud/apps/contactsinteraction/l10n/mk.json
 nextcloud/apps/contactsinteraction/l10n/nl.js
@@ -7421,6 +7429,8 @@ nextcloud/apps/dashboard/l10n/tr.js
 nextcloud/apps/dashboard/l10n/tr.json
 nextcloud/apps/dashboard/l10n/zh_CN.js
 nextcloud/apps/dashboard/l10n/zh_CN.json
+nextcloud/apps/dashboard/l10n/zh_TW.js
+nextcloud/apps/dashboard/l10n/zh_TW.json
 nextcloud/apps/dashboard/lib/
 nextcloud/apps/dashboard/lib/Controller/
 nextcloud/apps/dashboard/lib/Controller/DashboardController.php
@@ -8334,6 +8344,7 @@ nextcloud/apps/federatedfilesharing/lib/Listeners/
 nextcloud/apps/federatedfilesharing/lib/Listeners/LoadAdditionalScriptsListener.php
 nextcloud/apps/federatedfilesharing/lib/Migration/
 nextcloud/apps/federatedfilesharing/lib/Migration/Version1010Date20200630191755.php
+nextcloud/apps/federatedfilesharing/lib/Migration/Version1011Date20201120125158.php
 nextcloud/apps/federatedfilesharing/lib/Notifications.php
 nextcloud/apps/federatedfilesharing/lib/Notifier.php
 nextcloud/apps/federatedfilesharing/lib/OCM/
@@ -10167,7 +10178,6 @@ nextcloud/apps/files_rightclick/screenshots/picture.png
 nextcloud/apps/files_sharing/
 nextcloud/apps/files_sharing/appinfo/
 nextcloud/apps/files_sharing/appinfo/app.php
-nextcloud/apps/files_sharing/appinfo/database.xml
 nextcloud/apps/files_sharing/appinfo/info.xml
 nextcloud/apps/files_sharing/appinfo/routes.php
 nextcloud/apps/files_sharing/appinfo/signature.json
@@ -10495,6 +10505,7 @@ nextcloud/apps/files_sharing/lib/Migration/
 nextcloud/apps/files_sharing/lib/Migration/OwncloudGuestShareType.php
 nextcloud/apps/files_sharing/lib/Migration/SetAcceptedStatus.php
 nextcloud/apps/files_sharing/lib/Migration/SetPasswordColumn.php
+nextcloud/apps/files_sharing/lib/Migration/Version11300Date20201120141438.php
 nextcloud/apps/files_sharing/lib/MountProvider.php
 nextcloud/apps/files_sharing/lib/Notification/
 nextcloud/apps/files_sharing/lib/Notification/Listener.php
@@ -11567,6 +11578,8 @@ nextcloud/apps/lookup_server_connector/l10n/fr.js
 nextcloud/apps/lookup_server_connector/l10n/fr.json
 nextcloud/apps/lookup_server_connector/l10n/gl.js
 nextcloud/apps/lookup_server_connector/l10n/gl.json
+nextcloud/apps/lookup_server_connector/l10n/hr.js
+nextcloud/apps/lookup_server_connector/l10n/hr.json
 nextcloud/apps/lookup_server_connector/l10n/it.js
 nextcloud/apps/lookup_server_connector/l10n/it.json
 nextcloud/apps/lookup_server_connector/l10n/nl.js
@@ -12817,6 +12830,8 @@ nextcloud/apps/provisioning_api/l10n/fr.js
 nextcloud/apps/provisioning_api/l10n/fr.json
 nextcloud/apps/provisioning_api/l10n/gl.js
 nextcloud/apps/provisioning_api/l10n/gl.json
+nextcloud/apps/provisioning_api/l10n/hr.js
+nextcloud/apps/provisioning_api/l10n/hr.json
 nextcloud/apps/provisioning_api/l10n/it.js
 nextcloud/apps/provisioning_api/l10n/it.json
 nextcloud/apps/provisioning_api/l10n/nl.js
@@ -15794,6 +15809,8 @@ nextcloud/apps/user_status/l10n/fr.js
 nextcloud/apps/user_status/l10n/fr.json
 nextcloud/apps/user_status/l10n/gl.js
 nextcloud/apps/user_status/l10n/gl.json
+nextcloud/apps/user_status/l10n/hr.js
+nextcloud/apps/user_status/l10n/hr.json
 nextcloud/apps/user_status/l10n/is.js
 nextcloud/apps/user_status/l10n/is.json
 nextcloud/apps/user_status/l10n/it.js
@@ -16116,6 +16133,8 @@ nextcloud/apps/weather_status/l10n/fr.js
 nextcloud/apps/weather_status/l10n/fr.json
 nextcloud/apps/weather_status/l10n/gl.js
 nextcloud/apps/weather_status/l10n/gl.json
+nextcloud/apps/weather_status/l10n/hr.js
+nextcloud/apps/weather_status/l10n/hr.json
 nextcloud/apps/weather_status/l10n/hu.js
 nextcloud/apps/weather_status/l10n/hu.json
 nextcloud/apps/weather_status/l10n/is.js
@@ -16550,6 +16569,7 @@ nextcloud/core/Migrations/Version20000Date20201109081915.php
 nextcloud/core/Migrations/Version20000Date20201109081918.php
 nextcloud/core/Migrations/Version20000Date20201109081919.php
 nextcloud/core/Migrations/Version20000Date20201111081915.php
+nextcloud/core/Migrations/Version21000Date20201120141228.php
 nextcloud/core/Notification/
 nextcloud/core/Notification/CoreNotifier.php
 nextcloud/core/Service/
@@ -18621,8 +18641,14 @@ nextcloud/lib/private/Repair/NC${MAJOR}/EncryptionMigration.php
 nextcloud/lib/private/Repair/NC${MAJOR}/ShippedDashboardEnable.php
 nextcloud/lib/private/Repair/OldGroupMembershipShares.php
 nextcloud/lib/private/Repair/Owncloud/
+nextcloud/lib/private/Repair/Owncloud/CleanPreviews.php
+nextcloud/lib/private/Repair/Owncloud/CleanPreviewsBackgroundJob.php
 nextcloud/lib/private/Repair/Owncloud/DropAccountTermsTable.php
+nextcloud/lib/private/Repair/Owncloud/InstallCoreBundle.php
+nextcloud/lib/private/Repair/Owncloud/MoveAvatars.php
+nextcloud/lib/private/Repair/Owncloud/MoveAvatarsBackgroundJob.php
 nextcloud/lib/private/Repair/Owncloud/SaveAccountsTableData.php
+nextcloud/lib/private/Repair/Owncloud/UpdateLanguageCodes.php
 nextcloud/lib/private/Repair/RemoveLinkShares.php
 nextcloud/lib/private/Repair/RepairInvalidShares.php
 nextcloud/lib/private/Repair/RepairMimeTypes.php

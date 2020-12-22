@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.16 2019/10/29 07:24:03 gonzalo Exp $
+$OpenBSD: README,v 1.17 2020/12/22 13:21:02 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -237,7 +237,7 @@ share:
 
 Synchronization
 ===============
-The "owncloudclient" package (net/owncloudclient) is a graphical (Qt)
+The "nextcloudclient" package (net/nextcloudclient) is a graphical (Qt)
 application to synchronize with a Nextcloud server.
 
 Apps and dependencies
