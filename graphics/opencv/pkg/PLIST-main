@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2020/10/26 12:55:52 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2020/12/23 18:33:05 rsadowski Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
 @bin bin/opencv_version
@@ -117,6 +117,8 @@ include/opencv4/opencv2/core/operations.hpp
 include/opencv4/opencv2/core/optim.hpp
 include/opencv4/opencv2/core/ovx.hpp
 include/opencv4/opencv2/core/persistence.hpp
+include/opencv4/opencv2/core/quaternion.hpp
+include/opencv4/opencv2/core/quaternion.inl.hpp
 include/opencv4/opencv2/core/saturate.hpp
 include/opencv4/opencv2/core/simd_intrinsics.hpp
 include/opencv4/opencv2/core/softfloat.hpp
@@ -205,6 +207,7 @@ include/opencv4/opencv2/imgcodecs/imgcodecs_c.h
 include/opencv4/opencv2/imgcodecs/ios.h
 include/opencv4/opencv2/imgcodecs/legacy/
 include/opencv4/opencv2/imgcodecs/legacy/constants_c.h
+include/opencv4/opencv2/imgcodecs/macosx.h
 include/opencv4/opencv2/imgproc/
 include/opencv4/opencv2/imgproc.hpp
 include/opencv4/opencv2/imgproc/detail/
