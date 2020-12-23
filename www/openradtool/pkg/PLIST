@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/24 15:28:18 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/12/23 01:01:06 jturner Exp $
 @conflict kwebapp-*
 @pkgpath www/kwebapp
 @bin bin/ort
@@ -9,12 +9,21 @@
 @bin bin/ort-c-source
 @bin bin/ort-diff
 @bin bin/ort-javascript
+@bin bin/ort-json
 @bin bin/ort-nodejs
 @bin bin/ort-sql
 @bin bin/ort-sqldiff
 @bin bin/ort-xliff
+include/ort-lang-json.h
 include/ort.h
+@static-lib lib/libort-lang-c.a
+@static-lib lib/libort-lang-javascript.a
+@static-lib lib/libort-lang-json.a
+@static-lib lib/libort-lang-nodejs.a
+@static-lib lib/libort-lang-sql.a
+@static-lib lib/libort-lang-xliff.a
 @static-lib lib/libort.a
+lib/pkgconfig/ort-lang-json.pc
 lib/pkgconfig/ort.pc
 @man man/man1/ort-audit-gv.1
 @man man/man1/ort-audit-json.1
@@ -23,6 +32,7 @@ lib/pkgconfig/ort.pc
 @man man/man1/ort-c-source.1
 @man man/man1/ort-diff.1
 @man man/man1/ort-javascript.1
+@man man/man1/ort-json.1
 @man man/man1/ort-nodejs.1
 @man man/man1/ort-sql.1
 @man man/man1/ort-sqldiff.1
@@ -33,6 +43,9 @@ lib/pkgconfig/ort.pc
 @man man/man3/ort_config_free.3
 @man man/man3/ort_diff.3
 @man man/man3/ort_diff_free.3
+@man man/man3/ort_lang_c_header.3
+@man man/man3/ort_lang_c_source.3
+@man man/man3/ort_lang_json.3
 @man man/man3/ort_parse_close.3
 @man man/man3/ort_parse_file.3
 @man man/man3/ort_write_diff_file.3
@@ -45,4 +58,5 @@ share/openradtool/audit.js
 share/openradtool/b64_ntop.c
 share/openradtool/gensalt.c
 share/openradtool/jsmn.c
+share/openradtool/ort-json.ts
 share/openradtool/ortPrivate.ts
