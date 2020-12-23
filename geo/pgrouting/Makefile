@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2020/11/24 09:33:51 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2020/12/23 10:22:01 landry Exp $
 
 BROKEN-i386 =	clang 10.0.1 ICE compiling get_edges_9_columns in edges_input.c
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
-V =		3.1.1
+V =		3.1.2
 DISTNAME =	pgrouting-${V}
 MASTER_SITES =	https://github.com/pgRouting/pgrouting/releases/download/v${V}/
 
@@ -34,8 +34,5 @@ MODPOSTGRESQL_TEST_DBNAME =	___pgr___test___
 MODPOSTGRESQL_TEST_CMD = \
 	cd ${WRKSRC}; \
 	sh ./tools/testers/pg_prove_tests.sh postgres 5432
-post-extract:
-	# tests crashes the server
-	rm -f ${WRKSRC}/pgtap/vrp_basic/no_crash_test-vrpOneDepot.sql ${WRKSRC}/pgtap/pickDeliver/pickDeliver/innerQuery.sql
 
 .include <bsd.port.mk>
