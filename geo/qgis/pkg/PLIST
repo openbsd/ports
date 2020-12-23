@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.62 2020/11/24 13:12:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.63 2020/12/23 10:22:25 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -512,6 +512,7 @@ include/qgis/qgshtmlannotation.h
 include/qgis/qgshtmlutils.h
 include/qgis/qgshtmlwidgetwrapper.h
 include/qgis/qgshuesaturationfilter.h
+include/qgis/qgsidentifycontext.h
 include/qgis/qgsidentifymenu.h
 include/qgis/qgsidwinterpolator.h
 include/qgis/qgsifeatureselectionmanager.h
