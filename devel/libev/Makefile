@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2019/08/31 17:21:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/12/23 13:29:57 sthen Exp $
 
 COMMENT =	high-performance event loop library
 
 # p5-EV should probably be kept in sync
-DISTNAME =	libev-4.27
+DISTNAME =	libev-4.33
+
 CATEGORIES =	devel
 
 SHARED_LIBS=	ev 3.1 # 4.0
@@ -17,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>
