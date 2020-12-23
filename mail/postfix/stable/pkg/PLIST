@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2019/04/15 21:10:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.39 2020/12/23 21:18:00 sthen Exp $
 @option is-branch
 @conflict postfix-*
 @pkgpath mail/postfix/stable,sqlite
@@ -60,6 +60,7 @@ libexec/postfix/postmulti-script
 @man man/man1/postmulti.1
 @man man/man1/postqueue.1
 @man man/man1/postsuper.1
+@man man/man1/posttls-finger.1
 @man man/man1/qshape.1
 @man man/man1/sendmail.1
 @man man/man5/access.5
@@ -142,6 +143,7 @@ sbin/postfix-install
 @mode
 @group
 @bin sbin/postsuper
+@bin sbin/posttls-finger
 sbin/qshape
 @bin sbin/sendmail
 share/doc/postfix/
