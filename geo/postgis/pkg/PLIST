@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.32 2020/11/24 09:22:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/12/23 10:19:18 landry Exp $
 @bin bin/pgsql2shp
 @bin bin/raster2pgsql
 @bin bin/shp2pgsql
-@comment lib/postgresql/liblwgeom.a
-@comment lib/postgresql/liblwgeom.la
 @so lib/postgresql/address_standardizer-3.so
 @so lib/postgresql/postgis-3.so
 @so lib/postgresql/postgis_raster-3.so
@@ -78,7 +76,6 @@ share/doc/postgresql/postgis/images/st_buffer11.png
 share/doc/postgresql/postgis/images/st_buffer12.png
 share/doc/postgresql/postgis/images/st_buffer13.png
 share/doc/postgresql/postgis/images/st_buildarea01.png
-share/doc/postgresql/postgis/images/st_buildarea02.png
 share/doc/postgresql/postgis/images/st_centroid01.png
 share/doc/postgresql/postgis/images/st_centroid02.png
 share/doc/postgresql/postgis/images/st_centroid03.png
@@ -135,6 +132,9 @@ share/doc/postgresql/postgis/images/st_extrude04.png
 share/doc/postgresql/postgis/images/st_generatepoints01.png
 share/doc/postgresql/postgis/images/st_generatepoints02.png
 share/doc/postgresql/postgis/images/st_geometricmedian01.png
+share/doc/postgresql/postgis/images/st_hexagongrid01.png
+share/doc/postgresql/postgis/images/st_hexagongrid02.png
+share/doc/postgresql/postgis/images/st_hexagongrid03.png
 share/doc/postgresql/postgis/images/st_invdistweight4ma_equation.png
 share/doc/postgresql/postgis/images/st_issimple01.png
 share/doc/postgresql/postgis/images/st_issimple02.png
@@ -162,6 +162,10 @@ share/doc/postgresql/postgis/images/st_linecrossingdirection04.png
 share/doc/postgresql/postgis/images/st_longestline01.png
 share/doc/postgresql/postgis/images/st_longestline02.png
 share/doc/postgresql/postgis/images/st_longestline03.png
+share/doc/postgresql/postgis/images/st_makevalid01.png
+share/doc/postgresql/postgis/images/st_makevalid02.png
+share/doc/postgresql/postgis/images/st_makevalid03.png
+share/doc/postgresql/postgis/images/st_makevalid04.png
 share/doc/postgresql/postgis/images/st_mapalgebraexpr01.png
 share/doc/postgresql/postgis/images/st_mapalgebraexpr02.png
 share/doc/postgresql/postgis/images/st_mapalgebraexpr2_01.png
@@ -179,6 +183,8 @@ share/doc/postgresql/postgis/images/st_mapalgebramask01.png
 share/doc/postgresql/postgis/images/st_mapalgebramask02.png
 share/doc/postgresql/postgis/images/st_mapalgebramask03.png
 share/doc/postgresql/postgis/images/st_mapalgebramask04.png
+share/doc/postgresql/postgis/images/st_maximuminscribedcircle01.png
+share/doc/postgresql/postgis/images/st_maximuminscribedcircle02.png
 share/doc/postgresql/postgis/images/st_minimumboundingcircle01.png
 share/doc/postgresql/postgis/images/st_minkowskisum01.png
 share/doc/postgresql/postgis/images/st_minkowskisum02.png
@@ -237,29 +243,27 @@ share/doc/postgresql/postgis/images/warning.png
 share/doc/postgresql/postgis/postgis.html
 share/doc/postgresql/postgis/style.css
 share/postgresql/contrib/
-share/postgresql/contrib/postgis-3.0/
-share/postgresql/contrib/postgis-3.0/legacy.sql
-share/postgresql/contrib/postgis-3.0/legacy_gist.sql
-share/postgresql/contrib/postgis-3.0/legacy_minimal.sql
-share/postgresql/contrib/postgis-3.0/postgis.sql
-share/postgresql/contrib/postgis-3.0/postgis_comments.sql
-share/postgresql/contrib/postgis-3.0/postgis_proc_set_search_path.sql
-share/postgresql/contrib/postgis-3.0/postgis_restore.pl
-share/postgresql/contrib/postgis-3.0/postgis_upgrade.sql
-share/postgresql/contrib/postgis-3.0/raster_comments.sql
-share/postgresql/contrib/postgis-3.0/rtpostgis.sql
-share/postgresql/contrib/postgis-3.0/rtpostgis_legacy.sql
-share/postgresql/contrib/postgis-3.0/rtpostgis_proc_set_search_path.sql
-share/postgresql/contrib/postgis-3.0/rtpostgis_upgrade.sql
-share/postgresql/contrib/postgis-3.0/sfcgal_comments.sql
-share/postgresql/contrib/postgis-3.0/spatial_ref_sys.sql
-share/postgresql/contrib/postgis-3.0/topology.sql
-share/postgresql/contrib/postgis-3.0/topology_comments.sql
-share/postgresql/contrib/postgis-3.0/topology_upgrade.sql
-share/postgresql/contrib/postgis-3.0/uninstall_legacy.sql
-share/postgresql/contrib/postgis-3.0/uninstall_postgis.sql
-share/postgresql/contrib/postgis-3.0/uninstall_rtpostgis.sql
-share/postgresql/contrib/postgis-3.0/uninstall_topology.sql
+share/postgresql/contrib/postgis-3.1/
+share/postgresql/contrib/postgis-3.1/legacy.sql
+share/postgresql/contrib/postgis-3.1/legacy_gist.sql
+share/postgresql/contrib/postgis-3.1/legacy_minimal.sql
+share/postgresql/contrib/postgis-3.1/postgis.sql
+share/postgresql/contrib/postgis-3.1/postgis_comments.sql
+share/postgresql/contrib/postgis-3.1/postgis_restore.pl
+share/postgresql/contrib/postgis-3.1/postgis_upgrade.sql
+share/postgresql/contrib/postgis-3.1/raster_comments.sql
+share/postgresql/contrib/postgis-3.1/rtpostgis.sql
+share/postgresql/contrib/postgis-3.1/rtpostgis_legacy.sql
+share/postgresql/contrib/postgis-3.1/rtpostgis_upgrade.sql
+share/postgresql/contrib/postgis-3.1/sfcgal_comments.sql
+share/postgresql/contrib/postgis-3.1/spatial_ref_sys.sql
+share/postgresql/contrib/postgis-3.1/topology.sql
+share/postgresql/contrib/postgis-3.1/topology_comments.sql
+share/postgresql/contrib/postgis-3.1/topology_upgrade.sql
+share/postgresql/contrib/postgis-3.1/uninstall_legacy.sql
+share/postgresql/contrib/postgis-3.1/uninstall_postgis.sql
+share/postgresql/contrib/postgis-3.1/uninstall_rtpostgis.sql
+share/postgresql/contrib/postgis-3.1/uninstall_topology.sql
 share/postgresql/extension/address_standardizer--1.0--${V}.sql
 share/postgresql/extension/address_standardizer--2.0.0--${V}.sql
 share/postgresql/extension/address_standardizer--2.0.1--${V}.sql
@@ -319,8 +323,11 @@ share/postgresql/extension/address_standardizer--2.5.5--${V}.sql
 share/postgresql/extension/address_standardizer--3.0.0--${V}.sql
 share/postgresql/extension/address_standardizer--3.0.1--${V}.sql
 share/postgresql/extension/address_standardizer--3.0.2--${V}.sql
+share/postgresql/extension/address_standardizer--3.0.3--${V}.sql
+share/postgresql/extension/address_standardizer--${V}--${V}.sql
 share/postgresql/extension/address_standardizer--${V}--${V}next.sql
 share/postgresql/extension/address_standardizer--${V}.sql
+share/postgresql/extension/address_standardizer--${V}dev--${V}.sql
 share/postgresql/extension/address_standardizer--${V}next--${V}.sql
 share/postgresql/extension/address_standardizer--ANY--${V}.sql
 share/postgresql/extension/address_standardizer.control
@@ -388,11 +395,15 @@ share/postgresql/extension/postgis--2.5.5--${V}.sql
 share/postgresql/extension/postgis--3.0.0--${V}.sql
 share/postgresql/extension/postgis--3.0.1--${V}.sql
 share/postgresql/extension/postgis--3.0.2--${V}.sql
+share/postgresql/extension/postgis--3.0.3--${V}.sql
+share/postgresql/extension/postgis--${V}--${V}.sql
 share/postgresql/extension/postgis--${V}--${V}next.sql
 share/postgresql/extension/postgis--${V}.sql
+share/postgresql/extension/postgis--${V}dev--${V}.sql
 share/postgresql/extension/postgis--${V}next--${V}.sql
 share/postgresql/extension/postgis--ANY--${V}.sql
 share/postgresql/extension/postgis--unpackaged--${V}.sql
+share/postgresql/extension/postgis--unpackaged.sql
 share/postgresql/extension/postgis.control
 share/postgresql/extension/postgis_raster--2.0.0--${V}.sql
 share/postgresql/extension/postgis_raster--2.0.1--${V}.sql
@@ -452,11 +463,15 @@ share/postgresql/extension/postgis_raster--2.5.5--${V}.sql
 share/postgresql/extension/postgis_raster--3.0.0--${V}.sql
 share/postgresql/extension/postgis_raster--3.0.1--${V}.sql
 share/postgresql/extension/postgis_raster--3.0.2--${V}.sql
+share/postgresql/extension/postgis_raster--3.0.3--${V}.sql
+share/postgresql/extension/postgis_raster--${V}--${V}.sql
 share/postgresql/extension/postgis_raster--${V}--${V}next.sql
 share/postgresql/extension/postgis_raster--${V}.sql
+share/postgresql/extension/postgis_raster--${V}dev--${V}.sql
 share/postgresql/extension/postgis_raster--${V}next--${V}.sql
 share/postgresql/extension/postgis_raster--ANY--${V}.sql
 share/postgresql/extension/postgis_raster--unpackaged--${V}.sql
+share/postgresql/extension/postgis_raster--unpackaged.sql
 share/postgresql/extension/postgis_raster.control
 share/postgresql/extension/postgis_tiger_geocoder--2.0.0--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.0.1--${V}.sql
@@ -516,8 +531,11 @@ share/postgresql/extension/postgis_tiger_geocoder--2.5.5--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.0.0--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.0.1--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.0.2--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--3.0.3--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--${V}--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}--${V}next.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--${V}dev--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}next--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--ANY--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--unpackaged--${V}.sql
@@ -580,9 +598,13 @@ share/postgresql/extension/postgis_topology--2.5.5--${V}.sql
 share/postgresql/extension/postgis_topology--3.0.0--${V}.sql
 share/postgresql/extension/postgis_topology--3.0.1--${V}.sql
 share/postgresql/extension/postgis_topology--3.0.2--${V}.sql
+share/postgresql/extension/postgis_topology--3.0.3--${V}.sql
+share/postgresql/extension/postgis_topology--${V}--${V}.sql
 share/postgresql/extension/postgis_topology--${V}--${V}next.sql
 share/postgresql/extension/postgis_topology--${V}.sql
+share/postgresql/extension/postgis_topology--${V}dev--${V}.sql
 share/postgresql/extension/postgis_topology--${V}next--${V}.sql
 share/postgresql/extension/postgis_topology--ANY--${V}.sql
 share/postgresql/extension/postgis_topology--unpackaged--${V}.sql
+share/postgresql/extension/postgis_topology--unpackaged.sql
 share/postgresql/extension/postgis_topology.control
