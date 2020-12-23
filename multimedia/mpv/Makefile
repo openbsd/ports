@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2020/12/23 14:09:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.68 2020/12/23 18:30:47 rsadowski Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.33.0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		mpv		0.2 # 1.107
 
@@ -26,9 +26,9 @@ WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm archive ass
 WANTLIB += avcodec avdevice avfilter avformat avresample avutil
 WANTLIB += bluray c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread
 WANTLIB += epoxy expat fontconfig freetype fribidi gbm glib-2.0
-WANTLIB += graphite2 harfbuzz iconv intl jpeg lcms2 ${MODLUA_WANTLIB} m pcre
-WANTLIB += placebo postproc pthread swresample swscale xcb xcb-dri2
-WANTLIB += luajit-5.1 xcb-glx xml2 z
+WANTLIB += graphite2 harfbuzz iconv intl jpeg lcms2 ${MODLUA_WANTLIB}
+WANTLIB += m pcre placebo postproc pthread swresample swscale xcb
+WANTLIB += xcb-dri2 xcb-glx xml2 z
 
 MODULES =		lang/lua \
 			lang/python
@@ -53,8 +53,7 @@ LIB_DEPENDS =		archivers/libarchive \
 			graphics/libplacebo \
 			multimedia/libass \
 			multimedia/libbluray \
-			multimedia/libdvdnav \
-			lang/luajit
+			multimedia/libdvdnav
 
 MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -65,6 +64,7 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--confdir=${LOCALBASE}/share/examples/mpv \
 			--mandir=${LOCALBASE}/man \
 			--docdir=${LOCALBASE}/share/examples/mpv \
+			--lua="${MODLUA_DEP_VERSION}obsd" \
 			--enable-cdda \
 			--enable-dvdnav \
 			--enable-libmpv-shared \
