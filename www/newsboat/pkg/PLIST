@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/24 17:38:34 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/12/23 18:40:36 fcambus Exp $
 @bin bin/newsboat
 @bin bin/podboat
 @man man/man1/newsboat.1
@@ -6,6 +6,7 @@
 share/doc/newsboat/
 share/doc/newsboat/CHANGELOG.md
 share/doc/newsboat/contrib/
+share/doc/newsboat/contrib/README.md
 share/doc/newsboat/contrib/bookmark-evernote.sh
 share/doc/newsboat/contrib/bookmark-pinboard.sh
 share/doc/newsboat/contrib/colorschemes/
@@ -22,6 +23,7 @@ share/doc/newsboat/contrib/colorschemes/schleichfahrt
 share/doc/newsboat/contrib/colorschemes/simple
 share/doc/newsboat/contrib/colorschemes/solarized-dark
 share/doc/newsboat/contrib/colorschemes/solarized-light
+share/doc/newsboat/contrib/exportOPMLWithTags.py
 share/doc/newsboat/contrib/feedgrabber.rb
 share/doc/newsboat/contrib/getpocket.com/
 share/doc/newsboat/contrib/getpocket.com/after_authentication.md
@@ -29,6 +31,11 @@ share/doc/newsboat/contrib/getpocket.com/create-pocket-user-token.sh
 share/doc/newsboat/contrib/getpocket.com/readme.md
 share/doc/newsboat/contrib/getpocket.com/send-to-pocket.sh
 share/doc/newsboat/contrib/heise.rb
+share/doc/newsboat/contrib/image-preview/
+share/doc/newsboat/contrib/image-preview/README.org
+share/doc/newsboat/contrib/image-preview/nbparser
+share/doc/newsboat/contrib/image-preview/nbrun
+share/doc/newsboat/contrib/image-preview/vifmimg
 share/doc/newsboat/contrib/pinboard.pl
 share/doc/newsboat/contrib/slashdot.rb
 share/doc/newsboat/contrib/urls-maintenance.sh
