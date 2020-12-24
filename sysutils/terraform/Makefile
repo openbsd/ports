@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2020/12/10 10:05:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2020/12/24 08:08:16 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v0.14.2
+MODGO_VERSION=	v0.14.3
 DISTNAME=	terraform-${MODGO_VERSION}
 
 CATEGORIES=		sysutils net
@@ -155,7 +155,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-version				 v1.2.0 \
 	github.com/hashicorp/golang-lru				 v0.5.1 \
 	github.com/hashicorp/hcl				 v0.0.0-20170504190234-a4b07c25de5f \
-	github.com/hashicorp/hcl/v2				 v2.8.0 \
+	github.com/hashicorp/hcl/v2				 v2.8.1 \
 	github.com/hashicorp/memberlist				 v0.1.0 \
 	github.com/hashicorp/serf				 v0.0.0-20160124182025-e4ec8cc423bb \
 	github.com/hashicorp/terraform-config-inspect		 v0.0.0-20191212124732-c6ae6269b9d7 \
@@ -255,7 +255,7 @@ MODGO_MODULES =	\
 	github.com/xiang90/probing				 v0.0.0-20160813154853-07dd2e8dfe18 \
 	github.com/xlab/treeprint				 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/yuin/goldmark				 v1.2.1 \
-	github.com/zclconf/go-cty				 v1.7.0 \
+	github.com/zclconf/go-cty				 v1.7.1 \
 	github.com/zclconf/go-cty-yaml				 v1.0.2 \
 	go.opencensus.io					 v0.22.4 \
 	go.uber.org/atomic					 v1.3.2 \
