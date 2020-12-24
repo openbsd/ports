@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/20 14:14:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2020/12/24 19:26:09 bcallah Exp $
 
-V =		13.0.03
+V =		13.0.05
 COMMENT =	free Unicode font from the GNU project
 DISTNAME =	unifont-${V}
-REVISION =	0
 DISTFILES =	${DISTNAME}.ttf \
 		unifont_csur-${V}.ttf \
 		unifont_jp-${V}.ttf \
@@ -13,8 +12,9 @@ CATEGORIES =	fonts
 HOMEPAGE =	https://unifoundry.com/unifont/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
-# GPLv2+
-# with font embedding in documents exception
+# Dual licensed:
+# SIL OFL 1.1 or
+# GPLv2+ with font embedding in documents exception
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://unifoundry.com/pub/unifont/unifont-${V}/font-builds/
