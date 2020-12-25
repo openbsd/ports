@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.19 2020/09/05 02:14:46 jsg Exp $
+@comment $OpenBSD: PFRAG.aarch64,v 1.20 2020/12/25 12:18:05 dtucker Exp $
 @pkgpath sysutils/u-boot-pinebook
 share/u-boot/
 share/u-boot/a64-olinuxino/
@@ -70,6 +70,13 @@ share/u-boot/orangepi_win/u-boot-sunxi-with-spl.bin
 share/u-boot/orangepi_win/u-boot.bin
 share/u-boot/orangepi_win/u-boot.img
 share/u-boot/orangepi_win/u-boot.itb
+share/u-boot/orangepi_zero_plus/
+share/u-boot/orangepi_zero_plus/sunxi-spl.bin
+share/u-boot/orangepi_zero_plus/u-boot
+share/u-boot/orangepi_zero_plus/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_zero_plus/u-boot.bin
+share/u-boot/orangepi_zero_plus/u-boot.img
+share/u-boot/orangepi_zero_plus/u-boot.itb
 share/u-boot/pine64-lts/
 share/u-boot/pine64-lts/sunxi-spl.bin
 share/u-boot/pine64-lts/u-boot
