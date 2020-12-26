@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.91 2020/11/05 08:30:35 sebastia Exp $
+# $OpenBSD: Makefile,v 1.92 2020/12/26 00:25:18 cwen Exp $
 
 COMMENT = 	web based groupware server
 
 VERSION =	5.0.1
+REVISION =	0
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
@@ -36,10 +37,6 @@ LIB_DEPENDS +=		archivers/libzip \
 			www/sope>=${VERSION}
 RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
 			archivers/zip
-
-.if ${MACHINE_ARCH} == "powerpc"
-PATCH_LIST =		patch-* gcc-*
-.endif
 
 CONFIGURE_STYLE =	simple dest
 CONFIGURE_ARGS +=	--gsmake=`gnustep-config --variable=GNUSTEP_MAKEFILES` \
