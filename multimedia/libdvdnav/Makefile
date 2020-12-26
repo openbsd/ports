@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/12/15 18:57:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2020/12/26 19:02:45 kmos Exp $
 
 COMMENT=	DVD navigation library
 
@@ -21,5 +21,10 @@ WANTLIB=	dvdread>=9.0 pthread
 LIB_DEPENDS=	devel/libdvdread>=6.1.1
 
 CONFIGURE_STYLE= gnu
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS+=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
