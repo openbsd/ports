@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/12/27 17:22:26 sthen Exp $
 
 COMMENT=	parser for RDF Site Summary files in PHP
 
-DISTNAME=	XML_RSS-1.0.2
+DISTNAME=	XML_RSS-1.1.0
 CATEGORIES=	textproc
 
 MODULES=	www/pear
