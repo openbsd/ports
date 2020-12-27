@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2020/10/23 17:50:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2020/12/27 14:01:53 gonzalo Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
-SURICATA_V =	6.0.0
+SURICATA_V =	6.0.1
 SUPDATE_V =	1.2.0
-REVISION =	0
 
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
@@ -21,9 +20,9 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES =	https://www.openinfosecfoundation.org/download/
 
 # uses pledge()
-WANTLIB +=	${COMPILER_LIBCXX} c iconv jansson lz4 lzma m magic
-WANTLIB +=	net nspr4 nss3 nssutil3 pcap pcre plc4 plds4 smime3
-WANTLIB +=	ssl3 yaml-0 z
+WANTLIB +=  ${COMPILER_LIBCXX} c iconv jansson lz4 lzma m magic
+WANTLIB +=  net nspr4 nss3 nssutil3 pcap pcre plc4 plds4 smime3
+WANTLIB +=  ssl3 yaml-0 z
 
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
@@ -59,7 +58,8 @@ CONFIGURE_ARGS =	--disable-gccmarch-native \
 SUBST_VARS =		VARBASE SURICATA_V SUPDATE_V
 
 post-patch:
-	# permit patching libc-rs to support sparc64 (could be removed with libc>=0.2.63)
+	# permit patching libc-rs to support sparc64
+	# (could be removed with libc>=0.2.63)
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/rust/vendor/libc/.cargo-checksum.json
 
@@ -71,12 +71,13 @@ pre-configure:
 # Remove auto-generated file (present iff git was installed)
 pre-install:
 	rm -f ${WRKSRC}/suricata-update/suricata/update/revision.py
-	
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata/rules
 	${INSTALL_DATA} ${WRKSRC}/*.config ${PREFIX}/share/examples/suricata
 	${INSTALL_DATA} ${WRKSRC}/suricata.yaml ${PREFIX}/share/examples/suricata
 	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${PREFIX}/share/examples/suricata/rules
-	rm -r ${PREFIX}/share/doc/suricata # nothing particularly useful in there as of 5.0.1
+	# nothing particularly useful in there as of 5.0.1
+	rm -r ${PREFIX}/share/doc/suricata
 
 .include <bsd.port.mk>

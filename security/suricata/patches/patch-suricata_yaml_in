@@ -1,4 +1,4 @@
-$OpenBSD: patch-suricata_yaml_in,v 1.8 2020/10/19 10:10:59 gonzalo Exp $
+$OpenBSD: patch-suricata_yaml_in,v 1.9 2020/12/27 14:01:53 gonzalo Exp $
 
 After reload allow to write log files or use syslog.
 Switch user and group to avoid running as root.
@@ -116,7 +116,7 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -1865,7 +1877,19 @@ napatech:
+@@ -1859,7 +1871,19 @@ napatech:
  default-rule-path: @e_defaultruledir@
  
  rule-files:

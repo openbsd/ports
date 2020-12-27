@@ -1,11 +1,11 @@
-$OpenBSD: patch-doc_userguide_Makefile_in,v 1.2 2020/10/19 10:10:59 gonzalo Exp $
+$OpenBSD: patch-doc_userguide_Makefile_in,v 1.3 2020/12/27 14:01:53 gonzalo Exp $
 
 Fix path to sphinx-build
 
 Index: doc/userguide/Makefile.in
 --- doc/userguide/Makefile.in.orig
 +++ doc/userguide/Makefile.in
-@@ -373,7 +373,7 @@ EXTRA_DIST = _static 3rd-party-integration acknowledge
+@@ -374,7 +374,7 @@ EXTRA_DIST = _static 3rd-party-integration acknowledge
  	what-is-suricata.rst $(am__append_1)
  @HAVE_SPHINXBUILD_TRUE@dist_man1_MANS = suricata.1
  @HAVE_SURICATA_MAN_TRUE@dist_man1_MANS = suricata.1
