@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/15 18:43:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2020/12/27 16:54:11 fcambus Exp $
 
 COMMENT=	COBOL compiler, formerly known as OpenCOBOL
 
-DISTNAME =	gnucobol-3.1.1
+DISTNAME =	gnucobol-3.1.2
 
 SHARED_LIBS +=	cob	5.0	# 5.0
 
@@ -14,7 +14,8 @@ HOMEPAGE =	http://www.opencobol.org/
 # run-time library: LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses db gmp iconv intl m
+WANTLIB += c curses db gmp iconv intl json-c lzma m pthread xml2
+WANTLIB += z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=gnucobol/}
 
@@ -23,7 +24,9 @@ BUILD_DEPENDS =	print/texinfo
 
 LIB_DEPENDS =	databases/db/v4 \
 		devel/gettext,-runtime \
-		devel/gmp
+		devel/gmp \
+		devel/json-c \
+		textproc/libxml
 
 CONFIGURE_STYLE = gnu
 
