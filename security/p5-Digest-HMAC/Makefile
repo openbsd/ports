@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/12/27 17:16:39 sthen Exp $
 
 COMMENT=	interface to HMAC Message-Digest Algorithms
 
@@ -11,4 +11,4 @@ REVISION =	1
 # Perl
 PERMIT_PACKAGE=	Yes
 
-.include <bsd.port.mk>	
+.include <bsd.port.mk>
