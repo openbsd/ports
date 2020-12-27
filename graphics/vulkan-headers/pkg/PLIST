@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/07/07 08:08:06 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/12/27 15:58:43 thfr Exp $
 include/vulkan/
 include/vulkan/vk_icd.h
 include/vulkan/vk_layer.h
@@ -9,6 +9,7 @@ include/vulkan/vulkan.hpp
 include/vulkan/vulkan_android.h
 include/vulkan/vulkan_beta.h
 include/vulkan/vulkan_core.h
+include/vulkan/vulkan_directfb.h
 include/vulkan/vulkan_fuchsia.h
 include/vulkan/vulkan_ggp.h
 include/vulkan/vulkan_ios.h
