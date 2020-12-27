@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1 2020/12/27 17:24:20 sthen Exp $
+
+libressl uses an old version number in pkgconfig files
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -354,7 +354,7 @@ fi
+ LIBS=$save_LIBS
+ 
+ # openssl (for src)
+-PKG_CHECK_MODULES([OPENSSL], [openssl >= 1.0.1],
++PKG_CHECK_MODULES([OPENSSL], [openssl >= 1.0.0],
+                   [have_openssl=yes], [have_openssl=no])
+ if test "x${have_openssl}" = "xno"; then
+   AC_MSG_NOTICE($OPENSSL_PKG_ERRORS)
