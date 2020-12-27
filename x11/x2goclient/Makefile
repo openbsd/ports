@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2020/03/19 19:51:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2020/12/27 17:01:44 landry Exp $
 
 COMMENT =	Qt client for the X2Go system
 
 DISTNAME =	x2goclient-4.1.2.2
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -28,12 +29,14 @@ LIB_DEPENDS =	databases/openldap \
 
 RUN_DEPENDS =	x11/nx/nxcomp \
 		x11/nx/nxproxy \
+		x11/gtk+3,-guic \
+		devel/desktop-file-utils \
 		shells/bash
 
-DOCSDIR =	${PREFIX}/share/doc/x2goclient
 EXAMPLESDIR =	${PREFIX}/share/examples/x2goclient
+MAKE_ENV =	CURDIR=${WRKSRC}
 
-do-configure:
+post-patch:
 	find ${WRKSRC} -type f -iname "*.cpp"  -exec \
 		perl -pi -e 's,Q_OS_LINUX,Q_OS_UNIX,g;' \
 		-e 's,#include <linux/fs.h>,,g;' {} \;
@@ -42,14 +45,8 @@ do-configure:
 		-e 's,#include <linux/fs.h>,,g;' {} \;
 	sed -i -e 's,nxproxy -S nx,${LOCALBASE}/NX/bin/nxproxy -S nx,' \
 		${WRKSRC}/src/onmainwindow.cpp
-	cd ${WRKSRC} && ${MODQT_LRELEASE} x2goclient.pro \
-		&& ${MODQT_QMAKE} x2goclient.pro
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/x2goclient ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/man1/x2goclient.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/x2goclient-cli ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/HOWTO.GPGCARD ${EXAMPLESDIR}
