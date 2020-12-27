@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2020/07/24 13:49:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.33 2020/12/27 18:13:18 sthen Exp $
 
 COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 DISTNAME=		aircrack-ng-1.5.2
-REVISION=		5
+REVISION=		6
 CATEGORIES=		security
 
 HOMEPAGE=		https://www.aircrack-ng.org/
@@ -37,7 +37,7 @@ CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV+=		ax_cv_neon_cflags=no ax_cv_neon_cxxflags=no
 
 MAKE_ENV+=		SQLITE=true UNSTABLE=true
-MAKE_FLAGS+=		CC=${CC}
+MAKE_FLAGS+=		CC="${CC}" CFLAGS="${CFLAGS}"
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=              -Dx86=1
