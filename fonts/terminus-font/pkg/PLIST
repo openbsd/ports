@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/17 15:24:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/12/27 17:13:48 sthen Exp $
 @pkgpath x11/terminus-font
 share/doc/pkg-readmes/${PKGSTEM}
 share/fonts/
@@ -220,23 +220,43 @@ share/fonts/terminus/ter-p28b.pcf.gz
 share/fonts/terminus/ter-p28n.pcf.gz
 share/fonts/terminus/ter-p32b.pcf.gz
 share/fonts/terminus/ter-p32n.pcf.gz
+@comment share/fonts/terminus/ter-u12b.otb
 @comment share/fonts/terminus/ter-u12b.pcf.gz
+share/fonts/terminus/ter-u12n.otb
 share/fonts/terminus/ter-u12n.pcf.gz
+share/fonts/terminus/ter-u14b.otb
 share/fonts/terminus/ter-u14b.pcf.gz
+share/fonts/terminus/ter-u14n.otb
 share/fonts/terminus/ter-u14n.pcf.gz
+share/fonts/terminus/ter-u14v.otb
+share/fonts/terminus/ter-u16b.otb
 share/fonts/terminus/ter-u16b.pcf.gz
+share/fonts/terminus/ter-u16n.otb
 share/fonts/terminus/ter-u16n.pcf.gz
+share/fonts/terminus/ter-u16v.otb
+share/fonts/terminus/ter-u18b.otb
 share/fonts/terminus/ter-u18b.pcf.gz
+share/fonts/terminus/ter-u18n.otb
 share/fonts/terminus/ter-u18n.pcf.gz
+share/fonts/terminus/ter-u20b.otb
 share/fonts/terminus/ter-u20b.pcf.gz
+share/fonts/terminus/ter-u20n.otb
 share/fonts/terminus/ter-u20n.pcf.gz
+share/fonts/terminus/ter-u22b.otb
 share/fonts/terminus/ter-u22b.pcf.gz
+share/fonts/terminus/ter-u22n.otb
 share/fonts/terminus/ter-u22n.pcf.gz
+share/fonts/terminus/ter-u24b.otb
 share/fonts/terminus/ter-u24b.pcf.gz
+share/fonts/terminus/ter-u24n.otb
 share/fonts/terminus/ter-u24n.pcf.gz
+share/fonts/terminus/ter-u28b.otb
 share/fonts/terminus/ter-u28b.pcf.gz
+share/fonts/terminus/ter-u28n.otb
 share/fonts/terminus/ter-u28n.pcf.gz
+share/fonts/terminus/ter-u32b.otb
 share/fonts/terminus/ter-u32b.pcf.gz
+share/fonts/terminus/ter-u32n.otb
 share/fonts/terminus/ter-u32n.pcf.gz
 @comment share/fonts/terminus/ter-x12b.pcf.gz
 share/fonts/terminus/ter-x12n.pcf.gz
