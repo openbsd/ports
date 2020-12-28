@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/12/28 04:01:48 kn Exp $
 
 COMMENT =		print sun4v machine descriptions
 
@@ -6,7 +6,7 @@ COMMENT =		print sun4v machine descriptions
 DISTNAME =		ldomsmanager-3.5.0.0-30.2411.1
 # own version, documented in source code
 PKGNAME =		mdprint-1.3
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils devel
 
@@ -36,7 +36,7 @@ post-extract:
 	${TAR} -C${WRKDIR} -xf${WRKDIR}/${DISTNAME}.tar ${DISTNAME}/${MDPRINT}
 
 do-build:
-	2to3 --no-diffs -w ${WRKSRC}/${MDPRINT}
+	2to3-${MODPY_VERSION} --no-diffs -W ${WRKSRC}/${MDPRINT}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${MDPRINT} ${PREFIX}/bin/mdprint
