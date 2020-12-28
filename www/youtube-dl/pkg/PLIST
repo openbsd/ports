@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.140 2020/12/23 07:51:59 mestre Exp $
+@comment $OpenBSD: PLIST,v 1.141 2020/12/28 11:32:22 mestre Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -116,6 +116,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}blinkx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bloomberg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bokecc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bongacams.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bostonglobe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}box.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bpb.${MODPY_PYC_MAGIC_TAG}pyc
@@ -182,6 +183,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}cr
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}crunchyroll.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}cspan.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}ctsnews.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}ctv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}ctvnews.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}cultureunplugged.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}curiositystream.${MODPY_PYC_MAGIC_TAG}pyc
@@ -884,6 +886,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bleacherreport.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/blinkx.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bloomberg.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bokecc.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bongacams.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bostonglobe.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/box.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bpb.py
@@ -950,6 +953,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/crooksandliars.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/crunchyroll.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cspan.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ctsnews.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ctv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ctvnews.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cultureunplugged.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/curiositystream.py
