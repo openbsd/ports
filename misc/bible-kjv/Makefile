@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/12/28 16:31:52 naddy Exp $
 
 COMMENT=	Bible reading, browsing, and searching tool
 
-DISTNAME=	bible-kjv_4.30
+DISTNAME=	bible-kjv_4.31
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	misc
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses readline
 
 MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/b/bible-kjv/}
 
-WRKDIST=	${WRKDIR}/bible-kjv
+#WRKDIST=	${WRKDIR}/bible-kjv
+WRKDIST=	${WRKDIR}/work
 
 MAKE_FLAGS=	DEST=${PREFIX} \
 		CFLAGS='${CFLAGS} -DDESTLIB=\"${PREFIX}/lib\"' \
