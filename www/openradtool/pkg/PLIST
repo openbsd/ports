@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/12/23 01:01:06 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/12/28 00:30:22 jturner Exp $
 @conflict kwebapp-*
 @pkgpath www/kwebapp
 @bin bin/ort
@@ -46,10 +46,15 @@ lib/pkgconfig/ort.pc
 @man man/man3/ort_lang_c_header.3
 @man man/man3/ort_lang_c_source.3
 @man man/man3/ort_lang_json.3
+@man man/man3/ort_lang_xliff_extract.3
+@man man/man3/ort_lang_xliff_join.3
+@man man/man3/ort_lang_xliff_update.3
+@man man/man3/ort_msg.3
 @man man/man3/ort_parse_close.3
 @man man/man3/ort_parse_file.3
 @man man/man3/ort_write_diff_file.3
 @man man/man3/ort_write_file.3
+@man man/man3/ort_write_msg_file.3
 @man man/man5/ort.5
 share/openradtool/
 share/openradtool/audit.css
