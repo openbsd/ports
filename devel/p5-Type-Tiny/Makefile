@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 03:03:51 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.11 2020/12/28 13:41:28 benoit Exp $
 
 COMMENT =		tiny, yet Moo(se)-compatible type constraint
 
-DISTNAME =		Type-Tiny-1.010006
+DISTNAME =		Type-Tiny-1.012000
 CATEGORIES =		devel
 
 # perl
