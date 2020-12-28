@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1.1.1 2020/10/05 20:48:12 kmos Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2020/12/28 22:28:14 daniel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -2502,6 +2502,9 @@ lib/python3.9/test/test_asyncio/__pycache__/test_events.cpython-39.pyc
 lib/python3.9/test/test_asyncio/__pycache__/test_futures.cpython-39.opt-1.pyc
 lib/python3.9/test/test_asyncio/__pycache__/test_futures.cpython-39.opt-2.pyc
 lib/python3.9/test/test_asyncio/__pycache__/test_futures.cpython-39.pyc
+lib/python3.9/test/test_asyncio/__pycache__/test_futures2.cpython-39.opt-1.pyc
+lib/python3.9/test/test_asyncio/__pycache__/test_futures2.cpython-39.opt-2.pyc
+lib/python3.9/test/test_asyncio/__pycache__/test_futures2.cpython-39.pyc
 lib/python3.9/test/test_asyncio/__pycache__/test_locks.cpython-39.opt-1.pyc
 lib/python3.9/test/test_asyncio/__pycache__/test_locks.cpython-39.opt-2.pyc
 lib/python3.9/test/test_asyncio/__pycache__/test_locks.cpython-39.pyc
@@ -2571,6 +2574,7 @@ lib/python3.9/test/test_asyncio/test_buffered_proto.py
 lib/python3.9/test/test_asyncio/test_context.py
 lib/python3.9/test/test_asyncio/test_events.py
 lib/python3.9/test/test_asyncio/test_futures.py
+lib/python3.9/test/test_asyncio/test_futures2.py
 lib/python3.9/test/test_asyncio/test_locks.py
 lib/python3.9/test/test_asyncio/test_pep492.py
 lib/python3.9/test/test_asyncio/test_proactor_events.py

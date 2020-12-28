@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2020/10/05 20:48:10 kmos Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2020/12/28 22:28:14 daniel Exp $
 
 #1: Set ports library version
 #2: Don't pick up an installed linux/e2fsprogs libuuid.so
@@ -15,7 +15,7 @@ Index: configure.ac
  
  # The later defininition of _XOPEN_SOURCE disables certain features
  # on Linux, so we need _GNU_SOURCE to re-enable them (makedev, tm_zone).
-@@ -2829,18 +2829,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
+@@ -2844,18 +2844,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
  AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
  
  # checks for uuid.h location
