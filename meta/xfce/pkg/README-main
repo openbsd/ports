@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.14 2019/08/15 07:16:48 landry Exp $
+$OpenBSD: README-main,v 1.15 2020/12/29 15:26:35 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -72,11 +72,11 @@ properly configure the default encoding in terminal properties.
 Similarly, if you want localized graphical applications, add this line
 to your .xinitrc/.xsession before startxfce4:
 
-export LC_MESSAGES=fr
+export LC_MESSAGES=fr_FR.UTF-8
 
-where 'fr' is your language tag.
+where 'fr_FR' is your language tag.
 See https://www.openbsd.org/faq/faq8.html#locales for more information
 on that topic.
 
-More generally, https://wiki.xfce.org/faq and https://wiki.xfce.org/tips
+More generally, https://docs.xfce.org and https://docs.xfce.org/faq
 are the best resources for user-level documentation.

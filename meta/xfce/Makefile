@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2019/11/11 18:02:23 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2020/12/29 15:26:35 landry Exp $
 
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
 
-V =		4.14
+V =		4.16
 PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
@@ -28,7 +28,6 @@ RUN_DEPENDS-main += \
 RUN_DEPENDS-main += \
 		x11/xfce4/xfwm4-themes \
 		x11/greybird
-# x11/xfce4/xfce4-icon-theme (outdated)
 
 # common apps
 RUN_DEPENDS-main += \
@@ -41,8 +40,6 @@ RUN_DEPENDS-main += \
 		x11/xfce4/xfce4-screensaver \
 		x11/xfce4/xfce4-taskmanager \
 		x11/xfce4/tumbler
-
-# x11/xfce4/orage (outdated)
 
 # extra apps
 RUN_DEPENDS-extras += \
@@ -77,7 +74,6 @@ RUN_DEPENDS-extras += \
 		x11/xfce4/xfce4-places \
 		x11/xfce4/xfce4-screenshooter \
 		x11/xfce4/xfce4-smartbookmark \
-		x11/xfce4/xfce4-statusnotifier \
 		x11/xfce4/xfce4-systemload \
 		x11/xfce4/xfce4-time-out \
 		x11/xfce4/xfce4-verve \
