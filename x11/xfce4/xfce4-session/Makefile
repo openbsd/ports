@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.82 2020/03/30 07:56:27 landry Exp $
+# $OpenBSD: Makefile,v 1.83 2020/12/29 14:40:02 landry Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
-XFCE_VERSION=	4.14.2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -35,6 +34,7 @@ WANTLIB += startup-notification-1 wnck-3 xcb xcb-util
 WANTLIB += xcb-render xcb-shm xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 polkit-gobject-1 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
+WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfce4-session \
 		conffilesdir=${PREFIX}/share/examples/xfce4-session \

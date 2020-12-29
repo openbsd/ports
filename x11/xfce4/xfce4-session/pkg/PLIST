@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2020/03/30 07:56:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.33 2020/12/29 14:40:02 landry Exp $
 @conflict xfce4-toys-*
 @conflict xfce-utils-*
 @pkgpath x11/xfce4/xfce-utils
@@ -21,14 +21,26 @@ share/examples/xfce4-session/xinitrc
 @sample ${SYSCONFDIR}/xdg/xfce4/xinitrc
 share/examples/xfce4-session/xscreensaver.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/xscreensaver.desktop
-share/icons/hicolor/128x128/apps/xfce4-session.png
+share/icons/hicolor/128x128/apps/org.xfce.session.png
+share/icons/hicolor/16x16/apps/org.xfce.session.png
+share/icons/hicolor/24x24/actions/xfsm-hibernate.png
+share/icons/hicolor/24x24/actions/xfsm-lock.png
+share/icons/hicolor/24x24/actions/xfsm-logout.png
+share/icons/hicolor/24x24/actions/xfsm-reboot.png
+share/icons/hicolor/24x24/actions/xfsm-shutdown.png
+share/icons/hicolor/24x24/actions/xfsm-suspend.png
+share/icons/hicolor/24x24/actions/xfsm-switch-user.png
+share/icons/hicolor/24x24/apps/org.xfce.session.png
+share/icons/hicolor/32x32/apps/org.xfce.session.png
 share/icons/hicolor/48x48/actions/xfsm-hibernate.png
+share/icons/hicolor/48x48/actions/xfsm-lock.png
 share/icons/hicolor/48x48/actions/xfsm-logout.png
 share/icons/hicolor/48x48/actions/xfsm-reboot.png
 share/icons/hicolor/48x48/actions/xfsm-shutdown.png
 share/icons/hicolor/48x48/actions/xfsm-suspend.png
-share/icons/hicolor/48x48/apps/xfce4-session.png
-share/icons/hicolor/scalable/apps/xfce4-session.svg
+share/icons/hicolor/48x48/actions/xfsm-switch-user.png
+share/icons/hicolor/48x48/apps/org.xfce.session.png
+share/icons/hicolor/scalable/apps/org.xfce.session.svg
 share/locale/am/LC_MESSAGES/xfce4-session.mo
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
 share/locale/ast/LC_MESSAGES/xfce4-session.mo
@@ -44,6 +56,7 @@ share/locale/da/LC_MESSAGES/xfce4-session.mo
 share/locale/de/LC_MESSAGES/xfce4-session.mo
 share/locale/el/LC_MESSAGES/xfce4-session.mo
 share/locale/en_AU/LC_MESSAGES/xfce4-session.mo
+share/locale/en_CA/LC_MESSAGES/xfce4-session.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-session.mo
 share/locale/eo/LC_MESSAGES/xfce4-session.mo
 share/locale/es/LC_MESSAGES/xfce4-session.mo
@@ -53,9 +66,11 @@ share/locale/fi/LC_MESSAGES/xfce4-session.mo
 share/locale/fr/LC_MESSAGES/xfce4-session.mo
 share/locale/gl/LC_MESSAGES/xfce4-session.mo
 share/locale/he/LC_MESSAGES/xfce4-session.mo
+share/locale/hi/LC_MESSAGES/xfce4-session.mo
 share/locale/hr/LC_MESSAGES/xfce4-session.mo
 share/locale/hu/LC_MESSAGES/xfce4-session.mo
 share/locale/hy_AM/LC_MESSAGES/xfce4-session.mo
+share/locale/hye/LC_MESSAGES/xfce4-session.mo
 share/locale/id/LC_MESSAGES/xfce4-session.mo
 share/locale/ie/LC_MESSAGES/xfce4-session.mo
 share/locale/is/LC_MESSAGES/xfce4-session.mo
