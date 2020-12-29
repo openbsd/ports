@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2019/08/15 06:56:53 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2020/12/29 15:14:57 landry Exp $
 
 COMMENT =	Thunar vcs integration plugin
 
 XFCE_VERSION =	0.2.0
+REVISION =	0
 THUNAR_PLUGIN =	thunar-vcs-plugin
 
 # GPLv2
@@ -18,7 +19,7 @@ WANTLIB += sasl2 serf-1 sqlite3 svn_client-1 svn_delta-1
 WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
 WANTLIB += svn_fs_x-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1 svn_ra_svn-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 thunarx-3 xcb xcb-render
-WANTLIB += xcb-shm xfce4util z iconv intl
+WANTLIB += xcb-shm xfce4util z iconv intl ${COMPILER_LIBCXX}
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy fribidi lz4
 
 MODULES =	x11/xfce4
