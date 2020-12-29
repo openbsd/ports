@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/12/29 14:55:40 landry Exp $
 @bin bin/xfdashboard
 @bin bin/xfdashboard-settings
 include/xfdashboard/
 include/xfdashboard/libxfdashboard/
 include/xfdashboard/libxfdashboard/action-button.h
 include/xfdashboard/libxfdashboard/actor.h
+include/xfdashboard/libxfdashboard/animation.h
 include/xfdashboard/libxfdashboard/application-button.h
 include/xfdashboard/libxfdashboard/application-database.h
 include/xfdashboard/libxfdashboard/application-tracker.h
@@ -21,6 +22,8 @@ include/xfdashboard/libxfdashboard/click-action.h
 include/xfdashboard/libxfdashboard/collapse-box.h
 include/xfdashboard/libxfdashboard/compat.h
 include/xfdashboard/libxfdashboard/css-selector.h
+include/xfdashboard/libxfdashboard/debug.h
+include/xfdashboard/libxfdashboard/desktop-app-info-action.h
 include/xfdashboard/libxfdashboard/desktop-app-info.h
 include/xfdashboard/libxfdashboard/drag-action.h
 include/xfdashboard/libxfdashboard/drop-action.h
@@ -30,13 +33,19 @@ include/xfdashboard/libxfdashboard/fill-box-layout.h
 include/xfdashboard/libxfdashboard/focus-manager.h
 include/xfdashboard/libxfdashboard/focusable.h
 include/xfdashboard/libxfdashboard/image-content.h
+include/xfdashboard/libxfdashboard/label.h
 include/xfdashboard/libxfdashboard/libxfdashboard.h
+include/xfdashboard/libxfdashboard/live-window-simple.h
 include/xfdashboard/libxfdashboard/live-window.h
 include/xfdashboard/libxfdashboard/live-workspace.h
 include/xfdashboard/libxfdashboard/model.h
 include/xfdashboard/libxfdashboard/outline-effect.h
 include/xfdashboard/libxfdashboard/plugin.h
 include/xfdashboard/libxfdashboard/plugins-manager.h
+include/xfdashboard/libxfdashboard/popup-menu-item-button.h
+include/xfdashboard/libxfdashboard/popup-menu-item-separator.h
+include/xfdashboard/libxfdashboard/popup-menu-item.h
+include/xfdashboard/libxfdashboard/popup-menu.h
 include/xfdashboard/libxfdashboard/quicklaunch.h
 include/xfdashboard/libxfdashboard/scaled-table-layout.h
 include/xfdashboard/libxfdashboard/scrollbar.h
@@ -49,22 +58,32 @@ include/xfdashboard/libxfdashboard/stage-interface.h
 include/xfdashboard/libxfdashboard/stage.h
 include/xfdashboard/libxfdashboard/stylable.h
 include/xfdashboard/libxfdashboard/text-box.h
+include/xfdashboard/libxfdashboard/theme-animation.h
 include/xfdashboard/libxfdashboard/theme-css.h
 include/xfdashboard/libxfdashboard/theme-effects.h
 include/xfdashboard/libxfdashboard/theme-layout.h
 include/xfdashboard/libxfdashboard/theme.h
 include/xfdashboard/libxfdashboard/toggle-button.h
 include/xfdashboard/libxfdashboard/tooltip-action.h
+include/xfdashboard/libxfdashboard/transition-group.h
 include/xfdashboard/libxfdashboard/types.h
 include/xfdashboard/libxfdashboard/utils.h
 include/xfdashboard/libxfdashboard/view-manager.h
 include/xfdashboard/libxfdashboard/view-selector.h
 include/xfdashboard/libxfdashboard/view.h
 include/xfdashboard/libxfdashboard/viewpad.h
+include/xfdashboard/libxfdashboard/window-content-x11.h
 include/xfdashboard/libxfdashboard/window-content.h
+include/xfdashboard/libxfdashboard/window-tracker-backend-gdk.h
+include/xfdashboard/libxfdashboard/window-tracker-backend-x11.h
+include/xfdashboard/libxfdashboard/window-tracker-backend.h
+include/xfdashboard/libxfdashboard/window-tracker-monitor-x11.h
 include/xfdashboard/libxfdashboard/window-tracker-monitor.h
+include/xfdashboard/libxfdashboard/window-tracker-window-x11.h
 include/xfdashboard/libxfdashboard/window-tracker-window.h
+include/xfdashboard/libxfdashboard/window-tracker-workspace-x11.h
 include/xfdashboard/libxfdashboard/window-tracker-workspace.h
+include/xfdashboard/libxfdashboard/window-tracker-x11.h
 include/xfdashboard/libxfdashboard/window-tracker.h
 include/xfdashboard/libxfdashboard/windows-view.h
 include/xfdashboard/libxfdashboard/workspace-selector.h
@@ -73,12 +92,11 @@ lib/libxfdashboard.la
 lib/pkgconfig/libxfdashboard.pc
 lib/xfdashboard/
 lib/xfdashboard/plugins/
-lib/xfdashboard/plugins/clock-view.la
-lib/xfdashboard/plugins/clock-view.so
-lib/xfdashboard/plugins/gnome-shell-search-provider.la
-lib/xfdashboard/plugins/gnome-shell-search-provider.so
-lib/xfdashboard/plugins/hot-corner.la
-lib/xfdashboard/plugins/hot-corner.so
+@so lib/xfdashboard/plugins/clock-view.so
+@so lib/xfdashboard/plugins/example-search-provider.so
+@so lib/xfdashboard/plugins/gnome-shell-search-provider.so
+@so lib/xfdashboard/plugins/hot-corner.so
+@so lib/xfdashboard/plugins/middle-click-window-close.so
 share/appdata/
 share/appdata/xfdashboard.appdata.xml
 share/applications/xfdashboard-settings.desktop
@@ -86,26 +104,51 @@ share/applications/xfdashboard.desktop
 share/examples/xfdashboard/
 share/examples/xfdashboard/xfdashboard-autostart.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/xfdashboard-autostart.desktop
-share/icons/hicolor/128x128/apps/xfdashboard.png
-share/icons/hicolor/16x16/apps/xfdashboard.png
-share/icons/hicolor/22x22/apps/xfdashboard.png
-share/icons/hicolor/24x24/apps/xfdashboard.png
-share/icons/hicolor/256x256/apps/xfdashboard.png
-share/icons/hicolor/32x32/apps/xfdashboard.png
-share/icons/hicolor/48x48/apps/xfdashboard.png
-share/icons/hicolor/64x64/apps/xfdashboard.png
-share/icons/hicolor/96x96/apps/xfdashboard.png
+share/icons/hicolor/128x128/apps/org.xfce.xfdashboard.png
+share/icons/hicolor/16x16/apps/org.xfce.xfdashboard.png
+share/icons/hicolor/24x24/apps/org.xfce.xfdashboard.png
+share/icons/hicolor/32x32/apps/org.xfce.xfdashboard.png
+share/icons/hicolor/48x48/apps/org.xfce.xfdashboard.png
+share/icons/hicolor/scalable/apps/org.xfce.xfdashboard.svg
+share/locale/bg/LC_MESSAGES/xfdashboard.mo
+share/locale/ca/LC_MESSAGES/xfdashboard.mo
+share/locale/da/LC_MESSAGES/xfdashboard.mo
+share/locale/de/LC_MESSAGES/xfdashboard.mo
+share/locale/el/LC_MESSAGES/xfdashboard.mo
 share/locale/es/LC_MESSAGES/xfdashboard.mo
 share/locale/fr/LC_MESSAGES/xfdashboard.mo
+share/locale/gl/LC_MESSAGES/xfdashboard.mo
 share/locale/he/LC_MESSAGES/xfdashboard.mo
+share/locale/id/LC_MESSAGES/xfdashboard.mo
+share/locale/ie/LC_MESSAGES/xfdashboard.mo
 share/locale/it_IT/
 share/locale/it_IT/LC_MESSAGES/
 share/locale/it_IT/LC_MESSAGES/xfdashboard.mo
+share/locale/ja/LC_MESSAGES/xfdashboard.mo
+share/locale/kk/LC_MESSAGES/xfdashboard.mo
 share/locale/lt/LC_MESSAGES/xfdashboard.mo
+share/locale/nb/LC_MESSAGES/xfdashboard.mo
+share/locale/nl/LC_MESSAGES/xfdashboard.mo
+share/locale/pl/LC_MESSAGES/xfdashboard.mo
+share/locale/pt/LC_MESSAGES/xfdashboard.mo
+share/locale/pt_BR/LC_MESSAGES/xfdashboard.mo
+share/locale/ru/LC_MESSAGES/xfdashboard.mo
+share/locale/ru_RU/
+share/locale/ru_RU/LC_MESSAGES/
+share/locale/ru_RU/LC_MESSAGES/xfdashboard.mo
+share/locale/sl/LC_MESSAGES/xfdashboard.mo
+share/locale/sq/LC_MESSAGES/xfdashboard.mo
 share/locale/sr/LC_MESSAGES/xfdashboard.mo
+share/locale/sv/LC_MESSAGES/xfdashboard.mo
+share/locale/sv_SE/
+share/locale/sv_SE/LC_MESSAGES/
+share/locale/sv_SE/LC_MESSAGES/xfdashboard.mo
+share/locale/tr/LC_MESSAGES/xfdashboard.mo
+share/locale/zh_CN/LC_MESSAGES/xfdashboard.mo
 share/themes/xfdashboard/
 share/themes/xfdashboard-auber/
 share/themes/xfdashboard-auber/xfdashboard-1.0/
+share/themes/xfdashboard-auber/xfdashboard-1.0/animations.xml
 share/themes/xfdashboard-auber/xfdashboard-1.0/effects.xml
 share/themes/xfdashboard-auber/xfdashboard-1.0/screenshot-xfdashboard-auber.png
 share/themes/xfdashboard-auber/xfdashboard-1.0/xfdashboard-auber.css
@@ -115,7 +158,9 @@ share/themes/xfdashboard-auber/xfdashboard-1.0/xfdashboard.theme
 share/themes/xfdashboard-auber/xfdashboard-1.0/xfdashboard.xml
 share/themes/xfdashboard-blue/
 share/themes/xfdashboard-blue/xfdashboard-1.0/
+share/themes/xfdashboard-blue/xfdashboard-1.0/animations.xml
 share/themes/xfdashboard-blue/xfdashboard-1.0/effects.xml
+share/themes/xfdashboard-blue/xfdashboard-1.0/screenshot-xfdashboard-blue.png
 share/themes/xfdashboard-blue/xfdashboard-1.0/xfdashboard-blue.css
 share/themes/xfdashboard-blue/xfdashboard-1.0/xfdashboard-secondary.xml
 share/themes/xfdashboard-blue/xfdashboard-1.0/xfdashboard.css
@@ -123,6 +168,7 @@ share/themes/xfdashboard-blue/xfdashboard-1.0/xfdashboard.theme
 share/themes/xfdashboard-blue/xfdashboard-1.0/xfdashboard.xml
 share/themes/xfdashboard-dark/
 share/themes/xfdashboard-dark/xfdashboard-1.0/
+share/themes/xfdashboard-dark/xfdashboard-1.0/animations.xml
 share/themes/xfdashboard-dark/xfdashboard-1.0/effects.xml
 share/themes/xfdashboard-dark/xfdashboard-1.0/screenshot-xfdashboard-dark.png
 share/themes/xfdashboard-dark/xfdashboard-1.0/xfdashboard-dark.css
@@ -132,6 +178,7 @@ share/themes/xfdashboard-dark/xfdashboard-1.0/xfdashboard.theme
 share/themes/xfdashboard-dark/xfdashboard-1.0/xfdashboard.xml
 share/themes/xfdashboard-mint/
 share/themes/xfdashboard-mint/xfdashboard-1.0/
+share/themes/xfdashboard-mint/xfdashboard-1.0/animations.xml
 share/themes/xfdashboard-mint/xfdashboard-1.0/effects.xml
 share/themes/xfdashboard-mint/xfdashboard-1.0/screenshot-xfdashboard-mint.png
 share/themes/xfdashboard-mint/xfdashboard-1.0/xfdashboard-mint.css
@@ -141,6 +188,7 @@ share/themes/xfdashboard-mint/xfdashboard-1.0/xfdashboard.theme
 share/themes/xfdashboard-mint/xfdashboard-1.0/xfdashboard.xml
 share/themes/xfdashboard-moranga/
 share/themes/xfdashboard-moranga/xfdashboard-1.0/
+share/themes/xfdashboard-moranga/xfdashboard-1.0/animations.xml
 share/themes/xfdashboard-moranga/xfdashboard-1.0/effects.xml
 share/themes/xfdashboard-moranga/xfdashboard-1.0/screenshot-xfdashboard-moranga.png
 share/themes/xfdashboard-moranga/xfdashboard-1.0/xfdashboard-moranga.css
@@ -150,6 +198,7 @@ share/themes/xfdashboard-moranga/xfdashboard-1.0/xfdashboard.theme
 share/themes/xfdashboard-moranga/xfdashboard-1.0/xfdashboard.xml
 share/themes/xfdashboard-wine/
 share/themes/xfdashboard-wine/xfdashboard-1.0/
+share/themes/xfdashboard-wine/xfdashboard-1.0/animations.xml
 share/themes/xfdashboard-wine/xfdashboard-1.0/effects.xml
 share/themes/xfdashboard-wine/xfdashboard-1.0/screenshot-xfdashboard-wine.png
 share/themes/xfdashboard-wine/xfdashboard-1.0/xfdashboard-secondary.xml
@@ -158,6 +207,7 @@ share/themes/xfdashboard-wine/xfdashboard-1.0/xfdashboard.css
 share/themes/xfdashboard-wine/xfdashboard-1.0/xfdashboard.theme
 share/themes/xfdashboard-wine/xfdashboard-1.0/xfdashboard.xml
 share/themes/xfdashboard/xfdashboard-1.0/
+share/themes/xfdashboard/xfdashboard-1.0/animations.xml
 share/themes/xfdashboard/xfdashboard-1.0/effects.xml
 share/themes/xfdashboard/xfdashboard-1.0/screenshot-xfdashboard.png
 share/themes/xfdashboard/xfdashboard-1.0/windows-view.png
