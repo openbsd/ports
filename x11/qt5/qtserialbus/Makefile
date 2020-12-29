@@ -7,10 +7,7 @@ MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt5SerialBus               1.0 # 5.9
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5SerialPort
-WANTLIB += c m
-
-LIB_DEPENDS =		x11/qt5/qtserialport>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network c m
 
 FLAVORS =		debug
 

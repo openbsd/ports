@@ -1,9 +1,23 @@
 $OpenBSD$
 
+https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
+
 Index: src/network/ssl/qsslcontext_openssl.cpp
 --- src/network/ssl/qsslcontext_openssl.cpp.orig
 +++ src/network/ssl/qsslcontext_openssl.cpp
-@@ -397,16 +397,28 @@ init_context:
+@@ -351,9 +351,11 @@ init_context:
+         return;
+     }
+ 
++#ifndef LIBRESSL_VERSION_NUMBER
+     // A nasty hacked OpenSSL using a level that will make our auto-tests fail:
+     if (q_SSL_CTX_get_security_level(sslContext->ctx) > 1 && *forceSecurityLevel())
+         q_SSL_CTX_set_security_level(sslContext->ctx, 1);
++#endif // LIBRESSL_VERSION_NUMBER
+ 
+     const long anyVersion =
+ #if QT_CONFIG(dtls)
+@@ -408,16 +410,28 @@ init_context:
          maxVersion = DTLS1_VERSION;
          break;
      case QSsl::DtlsV1_0OrLater:
@@ -32,7 +46,7 @@ Index: src/network/ssl/qsslcontext_openssl.cpp
          break;
      case QSsl::TlsV1_3OrLater:
  #ifdef TLS1_3_VERSION
-@@ -711,6 +723,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -722,6 +736,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
      }
  #endif // ocsp
  
@@ -40,7 +54,7 @@ Index: src/network/ssl/qsslcontext_openssl.cpp
      QSharedPointer<SSL_CONF_CTX> cctx(q_SSL_CONF_CTX_new(), &q_SSL_CONF_CTX_free);
      if (cctx) {
          q_SSL_CONF_CTX_set_ssl_ctx(cctx.data(), sslContext->ctx);
-@@ -757,7 +770,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -768,7 +783,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
              sslContext->errorStr = msgErrorSettingBackendConfig(QSslSocket::tr("SSL_CONF_finish() failed"));
              sslContext->errorCode = QSslError::UnspecifiedError;
          }

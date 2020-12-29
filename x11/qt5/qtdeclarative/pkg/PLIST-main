@@ -792,6 +792,8 @@ include/X11/qt5/QtQuickWidgets/qquickwidget.h
 include/X11/qt5/QtQuickWidgets/qtquickwidgetsglobal.h
 include/X11/qt5/QtQuickWidgets/qtquickwidgetsversion.h
 @lib lib/libQt5Qml.so.${LIBQt5Qml_VERSION}
+@lib lib/libQt5QmlModels.so.${LIBQt5QmlModels_VERSION}
+@lib lib/libQt5QmlWorkerScript.so.${LIBQt5QmlWorkerScript_VERSION}
 @lib lib/libQt5Quick.so.${LIBQt5Quick_VERSION}
 @lib lib/libQt5QuickParticles.so.${LIBQt5QuickParticles_VERSION}
 @lib lib/libQt5QuickShapes.so.${LIBQt5QuickShapes_VERSION}

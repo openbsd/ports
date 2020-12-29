@@ -20,7 +20,7 @@ SHARED_LIBS +=  Qt53DQuickScene2D            1.0 # 5.9
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Gamepad
 WANTLIB += Qt5Gui Qt5Network Qt5OpenGLExtensions Qt5Qml Qt5Quick
-WANTLIB += assimp c m
+WANTLIB += Qt5QmlModels assimp c m
 
 BUILD_DEPENDS =		x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 RUN_DEPENDS-examples =	x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
