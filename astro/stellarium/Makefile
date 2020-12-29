@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2020/10/03 12:24:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2020/12/29 12:09:35 ajacoutot Exp $
 
 COMMENT=		free open source planetarium
 
-GH_TAGNAME=		v0.20.3
+GH_TAGNAME=		v0.20.4
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
 
@@ -47,10 +47,5 @@ NO_TEST=		Yes
 
 pre-configure:
 	sed -i 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/CMakeLists.txt
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/data/stellarium.desktop \
-		${PREFIX}/share/applications
 
 .include <bsd.port.mk>
