@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/08/15 06:36:51 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2020/12/29 14:33:58 landry Exp $
 @conflict xfdesktop-<=4.7.0
 include/garcon-1/
 include/garcon-1/garcon/
@@ -18,22 +18,17 @@ include/garcon-1/garcon/garcon-menu-separator.h
 include/garcon-1/garcon/garcon-menu-tree-provider.h
 include/garcon-1/garcon/garcon-menu.h
 include/garcon-1/garcon/garcon.h
-include/garcon-gtk2-1/
-include/garcon-gtk2-1/garcon-gtk/
-include/garcon-gtk2-1/garcon-gtk/garcon-gtk-menu.h
-include/garcon-gtk2-1/garcon-gtk/garcon-gtk.h
 include/garcon-gtk3-1/
 include/garcon-gtk3-1/garcon-gtk/
 include/garcon-gtk3-1/garcon-gtk/garcon-gtk-menu.h
 include/garcon-gtk3-1/garcon-gtk/garcon-gtk.h
+lib/girepository-1.0/Garcon-1.0.typelib
+lib/girepository-1.0/GarconGtk-1.0.typelib
 lib/libgarcon-1.la
 @lib lib/libgarcon-1.so.${LIBgarcon-1_VERSION}
-lib/libgarcon-gtk2-1.la
-@lib lib/libgarcon-gtk2-1.so.${LIBgarcon-gtk2-1_VERSION}
 lib/libgarcon-gtk3-1.la
 @lib lib/libgarcon-gtk3-1.so.${LIBgarcon-gtk3-1_VERSION}
 lib/pkgconfig/garcon-1.pc
-lib/pkgconfig/garcon-gtk2-1.pc
 lib/pkgconfig/garcon-gtk3-1.pc
 share/desktop-directories/
 share/desktop-directories/xfce-accessories.directory
@@ -54,6 +49,8 @@ share/examples/garcon/
 @sample ${SYSCONFDIR}/xdg/menus/
 share/examples/garcon/xfce-applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/xfce-applications.menu
+share/gir-1.0/Garcon-1.0.gir
+share/gir-1.0/GarconGtk-1.0.gir
 share/gtk-doc/html/garcon/
 share/gtk-doc/html/garcon/GarconMenu.html
 share/gtk-doc/html/garcon/GarconMenuDirectory.html
@@ -89,6 +86,7 @@ share/gtk-doc/html/garcon/right.png
 share/gtk-doc/html/garcon/style.css
 share/gtk-doc/html/garcon/up-insensitive.png
 share/gtk-doc/html/garcon/up.png
+share/icons/hicolor/32x32/apps/org.xfce.garcon.png
 share/locale/am/LC_MESSAGES/garcon.mo
 share/locale/ar/LC_MESSAGES/garcon.mo
 share/locale/ast/LC_MESSAGES/garcon.mo
@@ -116,11 +114,13 @@ share/locale/hr/LC_MESSAGES/garcon.mo
 share/locale/hu/LC_MESSAGES/garcon.mo
 share/locale/hy/LC_MESSAGES/garcon.mo
 share/locale/hy_AM/LC_MESSAGES/garcon.mo
+share/locale/hye/LC_MESSAGES/garcon.mo
 share/locale/id/LC_MESSAGES/garcon.mo
 share/locale/ie/LC_MESSAGES/garcon.mo
 share/locale/is/LC_MESSAGES/garcon.mo
 share/locale/it/LC_MESSAGES/garcon.mo
 share/locale/ja/LC_MESSAGES/garcon.mo
+share/locale/ka/LC_MESSAGES/garcon.mo
 share/locale/kk/LC_MESSAGES/garcon.mo
 share/locale/ko/LC_MESSAGES/garcon.mo
 share/locale/lt/LC_MESSAGES/garcon.mo
@@ -153,3 +153,4 @@ share/locale/uz@Latn/LC_MESSAGES/garcon.mo
 share/locale/zh_CN/LC_MESSAGES/garcon.mo
 share/locale/zh_HK/LC_MESSAGES/garcon.mo
 share/locale/zh_TW/LC_MESSAGES/garcon.mo
+@tag gtk-update-icon-cache %D/share/icons/hicolor

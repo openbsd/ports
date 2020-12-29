@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2020/01/21 10:51:50 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2020/12/29 14:33:58 landry Exp $
 
 COMMENT =	Xfce4 freedesktop.org compliant menu implementation
 
 XFCE_PROJECT =	garcon
-XFCE_VERSION =	0.6.4
-REVISION =	0
+XFCE_VERSION =	0.8.0
 
 SHARED_LIBS +=	garcon-1	0.0
-SHARED_LIBS +=	garcon-gtk2-1	0.0 # 0.0
-SHARED_LIBS +=	garcon-gtk3-1   0.0 # 0.0
+SHARED_LIBS +=	garcon-gtk3-1	0.1 # 0.0
 
 HOMEPAGE=	http://www.xfce.org/
 
@@ -16,18 +14,20 @@ HOMEPAGE=	http://www.xfce.org/
 PERMIT_PACKAGE=	Yes
 
 MODULES =	x11/xfce4
-LIB_DEPENDS =	x11/xfce4/libxfce4util \
-		x11/xfce4/libxfce4ui
-WANTLIB =	xfce4util gio-2.0 gmodule-2.0 glib-2.0 gobject-2.0 gthread-2.0 \
-		pcre pthread z ffi iconv intl
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fribidi
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2
-WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png startup-notification-1 xcb
-WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-1
-WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3
-WANTLIB += gtk-3 xfce4ui-2
+MODXFCE_ICON_CACHE=	Yes
+LIB_DEPENDS =	x11/xfce4/libxfce4util>=4.15.6 \
+		x11/xfce4/libxfce4ui>=4.15.7
+BUILD_DEPENDS += devel/gobject-introspection
+
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += atk-bridge-2.0 cairo cairo-gobject epoxy expat ffi
+WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png startup-notification-1
+WANTLIB += xcb xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util
+WANTLIB += z
 
 FAKE_FLAGS =	menudir=${PREFIX}/share/examples/garcon
 
