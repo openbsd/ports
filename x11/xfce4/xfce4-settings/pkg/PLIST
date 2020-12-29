@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/11/14 11:03:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2020/12/29 14:44:13 landry Exp $
 @conflict xfce-mcs-manager-*
 @conflict xfce-mcs-plugins-*
+@conflict exo-<4.15
 @bin bin/xfce4-accessibility-settings
 @bin bin/xfce4-appearance-settings
 @bin bin/xfce4-display-settings
 @bin bin/xfce4-find-cursor
 @bin bin/xfce4-keyboard-settings
+@bin bin/xfce4-mime-helper
 @bin bin/xfce4-mime-settings
 @bin bin/xfce4-mouse-settings
 @bin bin/xfce4-settings-editor
@@ -13,14 +15,19 @@
 @bin bin/xfsettingsd
 lib/xfce4/settings/
 lib/xfce4/settings/appearance-install-theme
+lib/xfce4/xfce4-compose-mail
 share/applications/xfce-display-settings.desktop
 share/applications/xfce-keyboard-settings.desktop
 share/applications/xfce-mouse-settings.desktop
 share/applications/xfce-settings-manager.desktop
 share/applications/xfce-ui-settings.desktop
 share/applications/xfce4-accessibility-settings.desktop
+share/applications/xfce4-file-manager.desktop
+share/applications/xfce4-mail-reader.desktop
 share/applications/xfce4-mime-settings.desktop
 share/applications/xfce4-settings-editor.desktop
+share/applications/xfce4-terminal-emulator.desktop
+share/applications/xfce4-web-browser.desktop
 share/examples/xfce4-settings/
 share/examples/xfce4-settings/xfce-settings-manager.menu
 @sample ${SYSCONFDIR}/xdg/menus/xfce-settings-manager.menu
@@ -28,11 +35,89 @@ share/examples/xfce4-settings/xfsettingsd.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/xfsettingsd.desktop
 share/examples/xfce4-settings/xsettings.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+share/icons/hicolor/128x128/apps/org.xfce.filemanager.png
+share/icons/hicolor/128x128/apps/org.xfce.mailreader.png
+share/icons/hicolor/128x128/apps/org.xfce.settings.accessibility.png
+share/icons/hicolor/128x128/apps/org.xfce.settings.appearance.png
+share/icons/hicolor/128x128/apps/org.xfce.settings.color.png
+share/icons/hicolor/128x128/apps/org.xfce.settings.default-applications.png
+share/icons/hicolor/128x128/apps/org.xfce.settings.display.png
+share/icons/hicolor/128x128/apps/org.xfce.settings.editor.png
+share/icons/hicolor/128x128/apps/org.xfce.settings.keyboard.png
+share/icons/hicolor/128x128/apps/org.xfce.settings.manager.png
+share/icons/hicolor/128x128/apps/org.xfce.settings.mouse.png
+share/icons/hicolor/128x128/apps/org.xfce.terminalemulator.png
+share/icons/hicolor/128x128/apps/org.xfce.webbrowser.png
 share/icons/hicolor/128x128/devices/xfce-display-extend.png
 share/icons/hicolor/128x128/devices/xfce-display-external.png
 share/icons/hicolor/128x128/devices/xfce-display-internal.png
 share/icons/hicolor/128x128/devices/xfce-display-mirror.png
 share/icons/hicolor/128x128/devices/xfce-display-profile.png
+share/icons/hicolor/16x16/apps/org.xfce.filemanager.png
+share/icons/hicolor/16x16/apps/org.xfce.mailreader.png
+share/icons/hicolor/16x16/apps/org.xfce.settings.accessibility.png
+share/icons/hicolor/16x16/apps/org.xfce.settings.appearance.png
+share/icons/hicolor/16x16/apps/org.xfce.settings.color.png
+share/icons/hicolor/16x16/apps/org.xfce.settings.default-applications.png
+share/icons/hicolor/16x16/apps/org.xfce.settings.display.png
+share/icons/hicolor/16x16/apps/org.xfce.settings.editor.png
+share/icons/hicolor/16x16/apps/org.xfce.settings.keyboard.png
+share/icons/hicolor/16x16/apps/org.xfce.settings.manager.png
+share/icons/hicolor/16x16/apps/org.xfce.settings.mouse.png
+share/icons/hicolor/16x16/apps/org.xfce.terminalemulator.png
+share/icons/hicolor/16x16/apps/org.xfce.webbrowser.png
+share/icons/hicolor/24x24/apps/org.xfce.filemanager.png
+share/icons/hicolor/24x24/apps/org.xfce.mailreader.png
+share/icons/hicolor/24x24/apps/org.xfce.settings.accessibility.png
+share/icons/hicolor/24x24/apps/org.xfce.settings.appearance.png
+share/icons/hicolor/24x24/apps/org.xfce.settings.color.png
+share/icons/hicolor/24x24/apps/org.xfce.settings.default-applications.png
+share/icons/hicolor/24x24/apps/org.xfce.settings.display.png
+share/icons/hicolor/24x24/apps/org.xfce.settings.editor.png
+share/icons/hicolor/24x24/apps/org.xfce.settings.keyboard.png
+share/icons/hicolor/24x24/apps/org.xfce.settings.manager.png
+share/icons/hicolor/24x24/apps/org.xfce.settings.mouse.png
+share/icons/hicolor/24x24/apps/org.xfce.terminalemulator.png
+share/icons/hicolor/24x24/apps/org.xfce.webbrowser.png
+share/icons/hicolor/32x32/apps/org.xfce.filemanager.png
+share/icons/hicolor/32x32/apps/org.xfce.mailreader.png
+share/icons/hicolor/32x32/apps/org.xfce.settings.accessibility.png
+share/icons/hicolor/32x32/apps/org.xfce.settings.appearance.png
+share/icons/hicolor/32x32/apps/org.xfce.settings.color.png
+share/icons/hicolor/32x32/apps/org.xfce.settings.default-applications.png
+share/icons/hicolor/32x32/apps/org.xfce.settings.display.png
+share/icons/hicolor/32x32/apps/org.xfce.settings.editor.png
+share/icons/hicolor/32x32/apps/org.xfce.settings.keyboard.png
+share/icons/hicolor/32x32/apps/org.xfce.settings.manager.png
+share/icons/hicolor/32x32/apps/org.xfce.settings.mouse.png
+share/icons/hicolor/32x32/apps/org.xfce.terminalemulator.png
+share/icons/hicolor/32x32/apps/org.xfce.webbrowser.png
+share/icons/hicolor/48x48/apps/org.xfce.filemanager.png
+share/icons/hicolor/48x48/apps/org.xfce.mailreader.png
+share/icons/hicolor/48x48/apps/org.xfce.settings.accessibility.png
+share/icons/hicolor/48x48/apps/org.xfce.settings.appearance.png
+share/icons/hicolor/48x48/apps/org.xfce.settings.color.png
+share/icons/hicolor/48x48/apps/org.xfce.settings.default-applications.png
+share/icons/hicolor/48x48/apps/org.xfce.settings.display.png
+share/icons/hicolor/48x48/apps/org.xfce.settings.editor.png
+share/icons/hicolor/48x48/apps/org.xfce.settings.keyboard.png
+share/icons/hicolor/48x48/apps/org.xfce.settings.manager.png
+share/icons/hicolor/48x48/apps/org.xfce.settings.mouse.png
+share/icons/hicolor/48x48/apps/org.xfce.terminalemulator.png
+share/icons/hicolor/48x48/apps/org.xfce.webbrowser.png
+share/icons/hicolor/scalable/apps/org.xfce.filemanager.svg
+share/icons/hicolor/scalable/apps/org.xfce.mailreader.svg
+share/icons/hicolor/scalable/apps/org.xfce.settings.accessibility.svg
+share/icons/hicolor/scalable/apps/org.xfce.settings.appearance.svg
+share/icons/hicolor/scalable/apps/org.xfce.settings.color.svg
+share/icons/hicolor/scalable/apps/org.xfce.settings.default-applications.svg
+share/icons/hicolor/scalable/apps/org.xfce.settings.display.svg
+share/icons/hicolor/scalable/apps/org.xfce.settings.editor.svg
+share/icons/hicolor/scalable/apps/org.xfce.settings.keyboard.svg
+share/icons/hicolor/scalable/apps/org.xfce.settings.manager.svg
+share/icons/hicolor/scalable/apps/org.xfce.settings.mouse.svg
+share/icons/hicolor/scalable/apps/org.xfce.terminalemulator.svg
+share/icons/hicolor/scalable/apps/org.xfce.webbrowser.svg
 share/locale/am/LC_MESSAGES/xfce4-settings.mo
 share/locale/ar/LC_MESSAGES/xfce4-settings.mo
 share/locale/ast/LC_MESSAGES/xfce4-settings.mo
@@ -51,6 +136,7 @@ share/locale/en_AU/LC_MESSAGES/xfce4-settings.mo
 share/locale/en_CA/LC_MESSAGES/xfce4-settings.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-settings.mo
 share/locale/es/LC_MESSAGES/xfce4-settings.mo
+share/locale/et/LC_MESSAGES/xfce4-settings.mo
 share/locale/eu/LC_MESSAGES/xfce4-settings.mo
 share/locale/fi/LC_MESSAGES/xfce4-settings.mo
 share/locale/fr/LC_MESSAGES/xfce4-settings.mo
@@ -59,6 +145,7 @@ share/locale/he/LC_MESSAGES/xfce4-settings.mo
 share/locale/hr/LC_MESSAGES/xfce4-settings.mo
 share/locale/hu/LC_MESSAGES/xfce4-settings.mo
 share/locale/hy_AM/LC_MESSAGES/xfce4-settings.mo
+share/locale/hye/LC_MESSAGES/xfce4-settings.mo
 share/locale/id/LC_MESSAGES/xfce4-settings.mo
 share/locale/ie/LC_MESSAGES/xfce4-settings.mo
 share/locale/is/LC_MESSAGES/xfce4-settings.mo
@@ -97,3 +184,58 @@ share/locale/zh_HK/LC_MESSAGES/xfce4-settings.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-settings.mo
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/xfce4/
+share/xfce4/helpers/
+share/xfce4/helpers/aterm.desktop
+share/xfce4/helpers/balsa.desktop
+share/xfce4/helpers/brave.desktop
+share/xfce4/helpers/caja.desktop
+share/xfce4/helpers/chromium.desktop
+share/xfce4/helpers/debian-sensible-browser.desktop
+share/xfce4/helpers/debian-x-terminal-emulator.desktop
+share/xfce4/helpers/dillo.desktop
+share/xfce4/helpers/encompass.desktop
+share/xfce4/helpers/epiphany.desktop
+share/xfce4/helpers/eterm.desktop
+share/xfce4/helpers/evolution.desktop
+share/xfce4/helpers/firefox.desktop
+share/xfce4/helpers/galeon.desktop
+share/xfce4/helpers/geary.desktop
+share/xfce4/helpers/gnome-terminal.desktop
+share/xfce4/helpers/google-chrome.desktop
+share/xfce4/helpers/icecat.desktop
+share/xfce4/helpers/icedove.desktop
+share/xfce4/helpers/iceweasel.desktop
+share/xfce4/helpers/jumanji.desktop
+share/xfce4/helpers/kmail.desktop
+share/xfce4/helpers/konqueror.desktop
+share/xfce4/helpers/links.desktop
+share/xfce4/helpers/lynx.desktop
+share/xfce4/helpers/midori.desktop
+share/xfce4/helpers/mozilla-browser.desktop
+share/xfce4/helpers/mozilla-mailer.desktop
+share/xfce4/helpers/mutt.desktop
+share/xfce4/helpers/nautilus.desktop
+share/xfce4/helpers/netscape-navigator.desktop
+share/xfce4/helpers/nxterm.desktop
+share/xfce4/helpers/opera-browser.desktop
+share/xfce4/helpers/pcmanfm-qt.desktop
+share/xfce4/helpers/pcmanfm.desktop
+share/xfce4/helpers/qterminal.desktop
+share/xfce4/helpers/qtfm.desktop
+share/xfce4/helpers/qupzilla.desktop
+share/xfce4/helpers/rodent.desktop
+share/xfce4/helpers/rox-filer.desktop
+share/xfce4/helpers/sakura.desktop
+share/xfce4/helpers/surf.desktop
+share/xfce4/helpers/sylpheed-claws.desktop
+share/xfce4/helpers/sylpheed.desktop
+share/xfce4/helpers/terminator.desktop
+share/xfce4/helpers/thunar.desktop
+share/xfce4/helpers/thunderbird.desktop
+share/xfce4/helpers/urxvt.desktop
+share/xfce4/helpers/vimprobable2.desktop
+share/xfce4/helpers/w3m.desktop
+share/xfce4/helpers/xfce4-terminal.desktop
+share/xfce4/helpers/xfe.desktop
+share/xfce4/helpers/xterm.desktop
