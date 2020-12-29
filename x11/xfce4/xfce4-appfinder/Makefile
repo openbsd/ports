@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2019/11/11 20:49:28 landry Exp $
+# $OpenBSD: Makefile,v 1.54 2020/12/29 14:48:52 landry Exp $
 
 COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder
-XFCE_VERSION=	4.14.0
-REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -26,5 +24,6 @@ WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread startup-notification-1 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0
 WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/08/15 06:41:33 landry Exp $
+@comment $OpenBSD: PLIST,v 1.22 2020/12/29 14:48:52 landry Exp $
 @conflict xfce-utils-*
 @bin bin/xfce4-appfinder
 bin/xfrun4
 share/applications/xfce4-appfinder.desktop
 share/applications/xfce4-run.desktop
+share/icons/hicolor/128x128/apps/org.xfce.appfinder.png
+share/icons/hicolor/16x16/apps/org.xfce.appfinder.png
+share/icons/hicolor/24x24/apps/org.xfce.appfinder.png
+share/icons/hicolor/32x32/apps/org.xfce.appfinder.png
+share/icons/hicolor/48x48/apps/org.xfce.appfinder.png
+share/icons/hicolor/scalable/apps/org.xfce.appfinder.svg
 share/locale/am/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ar/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ast/LC_MESSAGES/xfce4-appfinder.mo
@@ -16,6 +22,7 @@ share/locale/da/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/de/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/el/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/en_AU/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/en_CA/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/eo/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/es/LC_MESSAGES/xfce4-appfinder.mo
@@ -25,9 +32,11 @@ share/locale/fi/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/fr/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/gl/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/he/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/hi/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/hr/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/hu/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/hy_AM/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/hye/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/id/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ie/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/is/LC_MESSAGES/xfce4-appfinder.mo
@@ -67,3 +76,4 @@ share/locale/zh_HK/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-appfinder.mo
 share/metainfo/org.xfce.xfce4-appfinder.appdata.xml
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
