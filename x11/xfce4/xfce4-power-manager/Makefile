@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.35 2020/03/09 12:58:57 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2020/12/29 14:52:54 landry Exp $
 
 COMMENT =	Xfce4 power manager
 
-XFCE_VERSION =	1.6.6
 XFCE_PROJECT =	xfce4-power-manager
 
 # GPLv2
@@ -37,5 +36,6 @@ WANTLIB += png pthread startup-notification-1 xcb
 WANTLIB += xcb-util xcb-render xcb-shm xfce4panel-2.0 xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z upower-glib iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 fribidi
+WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
