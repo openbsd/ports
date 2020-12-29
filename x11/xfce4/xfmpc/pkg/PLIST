@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/07/21 09:31:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/12/29 15:19:18 landry Exp $
 @bin bin/xfmpc
 @man man/man1/xfmpc.1
 share/applications/xfmpc.desktop
@@ -22,8 +22,6 @@ share/locale/gl/LC_MESSAGES/xfmpc.mo
 share/locale/he/LC_MESSAGES/xfmpc.mo
 share/locale/hr/LC_MESSAGES/xfmpc.mo
 share/locale/hu/LC_MESSAGES/xfmpc.mo
-share/locale/hy_AM/
-share/locale/hy_AM/LC_MESSAGES/
 share/locale/hy_AM/LC_MESSAGES/xfmpc.mo
 share/locale/id/LC_MESSAGES/xfmpc.mo
 share/locale/ie/LC_MESSAGES/xfmpc.mo
