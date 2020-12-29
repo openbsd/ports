@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.122 2020/10/05 20:51:18 kmos Exp $
+# $OpenBSD: python.port.mk,v 1.123 2020/12/29 14:31:01 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -17,6 +17,7 @@ MODPY_DEFAULT_VERSION_3 = 3.8
 # - In the new version, @conflict on the old REVISION of the old version
 #   (3.6.8p1 was "default py3 is py3.6", 3.6.8p2 was after the switch to "default
 #   is py3.7", so the 3.7 ports had @conflict python-subpkg-<3.6.8p2)
+# - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
 
 # If later *removing* an old version:
 # - *move* the numbered @conflict python-*->=3.2,<3.7 to the new version
