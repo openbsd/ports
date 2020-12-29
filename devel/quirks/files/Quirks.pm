@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1130 2020/12/22 21:02:31 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.1131 2020/12/29 15:23:42 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2018,6 +2018,8 @@ my $obsolete_reason = {
 	'qt3-sqlite2' => 3,
 	'gtk3mm-documentation' => 6,
 	'libxml++3' => 5,
+	'orage' => 3,
+	'xfce4-statusnotifier' => 3,
 };
 
 # reasons for obsolete packages
