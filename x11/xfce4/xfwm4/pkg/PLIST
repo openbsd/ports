@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/07/27 17:18:13 landry Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/12/29 14:45:10 landry Exp $
 @bin bin/xfwm4
 @bin bin/xfwm4-settings
 @bin bin/xfwm4-tweaks-settings
@@ -8,6 +8,12 @@ lib/xfce4/xfwm4/
 share/applications/xfce-wm-settings.desktop
 share/applications/xfce-wmtweaks-settings.desktop
 share/applications/xfce-workspaces-settings.desktop
+share/icons/hicolor/128x128/apps/org.xfce.workspaces.png
+share/icons/hicolor/128x128/apps/org.xfce.xfwm4-tweaks.png
+share/icons/hicolor/128x128/apps/org.xfce.xfwm4.png
+share/icons/hicolor/16x16/apps/org.xfce.workspaces.png
+share/icons/hicolor/16x16/apps/org.xfce.xfwm4-tweaks.png
+share/icons/hicolor/16x16/apps/org.xfce.xfwm4.png
 share/icons/hicolor/22x22/actions/xfce-wm-close.png
 share/icons/hicolor/22x22/actions/xfce-wm-maximize.png
 share/icons/hicolor/22x22/actions/xfce-wm-menu.png
@@ -17,10 +23,10 @@ share/icons/hicolor/22x22/actions/xfce-wm-stick.png
 share/icons/hicolor/22x22/actions/xfce-wm-unmaximize.png
 share/icons/hicolor/22x22/actions/xfce-wm-unshade.png
 share/icons/hicolor/22x22/actions/xfce-wm-unstick.png
-share/icons/hicolor/48x48/apps/wmtweaks.png
-share/icons/hicolor/48x48/apps/xfce4-workspaces.png
+share/icons/hicolor/48x48/apps/org.xfce.workspaces.png
+share/icons/hicolor/48x48/apps/org.xfce.xfwm4-tweaks.png
+share/icons/hicolor/48x48/apps/org.xfce.xfwm4.png
 share/icons/hicolor/48x48/apps/xfwm4-default.png
-share/icons/hicolor/48x48/apps/xfwm4.png
 share/icons/hicolor/scalable/actions/xfce-wm-close.svg
 share/icons/hicolor/scalable/actions/xfce-wm-maximize.svg
 share/icons/hicolor/scalable/actions/xfce-wm-menu.svg
@@ -30,10 +36,10 @@ share/icons/hicolor/scalable/actions/xfce-wm-stick.svg
 share/icons/hicolor/scalable/actions/xfce-wm-unmaximize.svg
 share/icons/hicolor/scalable/actions/xfce-wm-unshade.svg
 share/icons/hicolor/scalable/actions/xfce-wm-unstick.svg
-share/icons/hicolor/scalable/apps/wmtweaks.svg
-share/icons/hicolor/scalable/apps/xfce4-workspaces.svg
+share/icons/hicolor/scalable/apps/org.xfce.workspaces.svg
+share/icons/hicolor/scalable/apps/org.xfce.xfwm4-tweaks.svg
+share/icons/hicolor/scalable/apps/org.xfce.xfwm4.svg
 share/icons/hicolor/scalable/apps/xfwm4-default.svg
-share/icons/hicolor/scalable/apps/xfwm4.svg
 share/locale/am/LC_MESSAGES/xfwm4.mo
 share/locale/ar/LC_MESSAGES/xfwm4.mo
 share/locale/ast/LC_MESSAGES/xfwm4.mo
