@@ -1,0 +1,15 @@
+$OpenBSD: patch-catfish_CatfishSearchEngine_py,v 1.6 2020/12/29 15:29:36 landry Exp $
+
+silence locate --help call that will always fail for us
+Index: catfish/CatfishSearchEngine.py
+--- catfish/CatfishSearchEngine.py.orig
++++ catfish/CatfishSearchEngine.py
+@@ -718,7 +718,7 @@ class CatfishSearchMethod_Locate(CatfishSearchMethodEx
+             "regex": False
+         }
+         try:
+-            details = subprocess.check_output(["locate", "--help"])
++            details = subprocess.check_output(["locate", "--help"],stderr=subprocess.DEVNULL)
+             details = details.decode("utf-8")
+             if "--existing" in details:
+                 caps["existing"] = True

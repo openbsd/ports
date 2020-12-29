@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2020/10/03 15:39:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2020/12/29 15:29:35 landry Exp $
 
 COMMENT =	versatile file searching tool
 
 XFCE_GOODIE =	catfish
-XFCE_VERSION =	1.4.13
+XFCE_VERSION =	4.15.0
 MODPY_EGG_VERSION =	${XFCE_VERSION}
 CATEGORIES =	textproc
-REVISION =		2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -34,5 +33,9 @@ BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS} \
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
+
+# fix zero-mtime *.po files which arent built by build_i18n
+post-patch:
+	touch ${WRKSRC}/po/*.po
 
 .include <bsd.port.mk>

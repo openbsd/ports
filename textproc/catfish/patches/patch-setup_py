@@ -1,8 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.4 2020/01/21 09:35:58 landry Exp $
+$OpenBSD: patch-setup_py,v 1.5 2020/12/29 15:29:36 landry Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -225,7 +225,7 @@ DistUtilsExtra.auto.setup(
+@@ -258,7 +258,7 @@ DistUtilsExtra.auto.setup(
                       'needs by using several command line options.',
      url=__url__,
      data_files=[
