@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2020/03/30 07:54:28 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2020/12/29 15:19:44 landry Exp $
 
 COMMENT=	Xfce4 pulseaudio control line panel plugin
 
 XFCE_VERSION=	0.4.3
+REVISION=	0
 XFCE_PLUGIN=	pulseaudio
 
 # GPLv2
@@ -28,5 +29,6 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pulse
 WANTLIB += pulse-mainloop-glib sndfile startup-notification-1 vorbis
 WANTLIB += vorbisenc wnck-3 xcb xcb-render xcb-shm xcb-util xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z
+WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
