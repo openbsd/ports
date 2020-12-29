@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.6 2020/06/24 20:52:49 bket Exp $
+$OpenBSD: patch-lib_Makefile_in,v 1.7 2020/12/29 10:47:01 cwen Exp $
 
 Index: lib/Makefile.in
 --- lib/Makefile.in.orig
 +++ lib/Makefile.in
-@@ -365,7 +365,7 @@ target_vendor = @target_vendor@
+@@ -367,7 +367,7 @@ target_vendor = @target_vendor@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

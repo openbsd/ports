@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/09/22 12:02:32 bket Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/12/29 10:47:01 cwen Exp $
 @bin bin/icehelp
 @bin bin/icesh
 @bin bin/icesound
@@ -125,10 +125,18 @@ share/icewm/icons/run_16x16.xpm
 share/icewm/icons/run_32x32.xpm
 share/icewm/icons/save_16x16.png
 share/icewm/icons/save_32x32.png
+share/icewm/icons/setscreen12_32x32.png
+share/icewm/icons/setscreen12x_32x32.png
+share/icewm/icons/setscreen1_32x32.png
+share/icewm/icons/setscreen21_32x32.png
+share/icewm/icons/setscreen21x_32x32.png
+share/icewm/icons/setscreen2_32x32.png
 share/icewm/icons/settings_16x16.xpm
 share/icewm/icons/settings_32x32.xpm
 share/icewm/icons/shutdown_16x16.xpm
 share/icewm/icons/shutdown_32x32.xpm
+share/icewm/icons/suspend_16x16.xpm
+share/icewm/icons/suspend_32x32.xpm
 share/icewm/icons/themes_16x16.xpm
 share/icewm/icons/themes_32x32.xpm
 share/icewm/icons/vim_16x16.xpm
