@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2019/08/15 07:04:06 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2020/12/29 14:58:22 landry Exp $
 
 COMMENT=	Xfce4 web search panel plugin
 
-XFCE_VERSION=	0.5.1
+XFCE_VERSION=	0.5.2
 XFCE_PLUGIN=	smartbookmark
 
 # GPLv2
@@ -14,9 +14,10 @@ WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
 WANTLIB += cairo cairo-gobject epoxy expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread startup-notification-1 xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util z
+WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
