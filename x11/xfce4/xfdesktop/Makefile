@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.72 2020/11/03 16:48:09 landry Exp $
+# $OpenBSD: Makefile,v 1.73 2020/12/29 14:46:04 landry Exp $
 
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
-XFCE_VERSION =	4.14.3
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -34,6 +33,7 @@ WANTLIB += wnck-3 xcb xcb-util xcb-render xcb-shm xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
+WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS=	menudir=${PREFIX}/share/examples/xfdesktop
 

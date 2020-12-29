@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2020/11/03 16:48:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.31 2020/12/29 14:46:04 landry Exp $
 @bin bin/xfdesktop
 @bin bin/xfdesktop-settings
 @man man/man1/xfdesktop.1
@@ -8,12 +8,13 @@ share/backgrounds/xfce/
 share/backgrounds/xfce/xfce-blue.jpg
 share/backgrounds/xfce/xfce-stripes.png
 share/backgrounds/xfce/xfce-teal.jpg
-share/icons/hicolor/32x32/apps/xfce4-backdrop.png
-share/icons/hicolor/32x32/apps/xfce4-menueditor.png
-share/icons/hicolor/48x48/apps/xfce4-backdrop.png
-share/icons/hicolor/48x48/apps/xfce4-menueditor.png
-share/icons/hicolor/scalable/apps/xfce4-backdrop.svg
-share/icons/hicolor/scalable/apps/xfce4-menueditor.svg
+share/backgrounds/xfce/xfce-verticals.png
+share/icons/hicolor/128x128/apps/org.xfce.xfdesktop.png
+share/icons/hicolor/16x16/apps/org.xfce.xfdesktop.png
+share/icons/hicolor/24x24/apps/org.xfce.xfdesktop.png
+share/icons/hicolor/32x32/apps/org.xfce.xfdesktop.png
+share/icons/hicolor/48x48/apps/org.xfce.xfdesktop.png
+share/icons/hicolor/scalable/apps/org.xfce.xfdesktop.svg
 share/locale/am/LC_MESSAGES/xfdesktop.mo
 share/locale/ar/LC_MESSAGES/xfdesktop.mo
 share/locale/ast/LC_MESSAGES/xfdesktop.mo
