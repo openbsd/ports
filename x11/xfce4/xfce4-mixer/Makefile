@@ -1,39 +1,35 @@
-# $OpenBSD: Makefile,v 1.51 2019/08/15 07:09:22 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2020/12/29 15:12:18 landry Exp $
 
 COMMENT=	Xfce4 volume mixer
 
 XFCE_GOODIE=	xfce4-mixer
-XFCE_VERSION=	4.11.0
-REVISION=	8
-HOMEPAGE=	https://www.xfce.org/
+XFCE_VERSION=	4.11.0pl1
+XFCE_COMMIT=	f5b133449d7af2e2a08e4d5d95c94272e38ab023
+MASTER_SITES_GIT=https://gitlab.xfce.org/landry/${XFCE_GOODIE:L}/-/archive/${XFCE_COMMIT}/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
-
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
-WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 harfbuzz lzma m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread startup-notification-1 unique-1.0 xcb
-WANTLIB += xcb-render xcb-shm xcb-util xfce4panel-1.0 xfce4ui-1
-WANTLIB += xfce4util xfconf-0 xml2 z iconv intl fribidi
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_PURGE_LA =	lib/xfce4/panel/plugins
 
-LIB_DEPENDS=	devel/libunique \
-		multimedia/gstreamer-0.10/core \
-		multimedia/gstreamer-0.10/plugins-base \
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += atk-bridge-2.0 c cairo cairo-gobject dbus-1 dbus-glib-1
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gstreamer-1.0 sndio gthread-2.0 gtk-3 harfbuzz iconv intl
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png startup-notification-1 xcb xcb-render xcb-shm xcb-util
+WANTLIB += xfce4panel-2.0 xfce4ui-2 xfce4util xfconf-0 z
+
+LIB_DEPENDS=	multimedia/gstreamer1/core \
 		x11/dbus-glib \
 		x11/xfce4/xfce4-panel
 
-# needed for libgstossaudio..
-RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good
 CONFIGURE_ARGS+=	--disable-linker-opts
 CONFIGURE_ARGS+=	--disable-keybinder
+CONFIGURE_ARGS+=	--disable-pulse
 
 .include <bsd.port.mk>

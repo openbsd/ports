@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/06/27 21:04:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/12/29 15:12:18 landry Exp $
 @bin bin/xfce4-mixer
-lib/xfce4/panel/plugins/libmixer.so
+@so lib/xfce4/panel/plugins/libmixer.so
 @man man/man1/xfce4-mixer.1
 share/applications/xfce4-mixer.desktop
 share/locale/ar/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ast/LC_MESSAGES/xfce4-mixer.mo
+share/locale/be/LC_MESSAGES/xfce4-mixer.mo
 share/locale/bg/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ca/LC_MESSAGES/xfce4-mixer.mo
 share/locale/cs/LC_MESSAGES/xfce4-mixer.mo
@@ -12,15 +13,20 @@ share/locale/da/LC_MESSAGES/xfce4-mixer.mo
 share/locale/de/LC_MESSAGES/xfce4-mixer.mo
 share/locale/el/LC_MESSAGES/xfce4-mixer.mo
 share/locale/en_AU/LC_MESSAGES/xfce4-mixer.mo
+share/locale/en_CA/LC_MESSAGES/xfce4-mixer.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-mixer.mo
 share/locale/es/LC_MESSAGES/xfce4-mixer.mo
 share/locale/eu/LC_MESSAGES/xfce4-mixer.mo
 share/locale/fi/LC_MESSAGES/xfce4-mixer.mo
 share/locale/fr/LC_MESSAGES/xfce4-mixer.mo
 share/locale/gl/LC_MESSAGES/xfce4-mixer.mo
+share/locale/he/LC_MESSAGES/xfce4-mixer.mo
 share/locale/hr/LC_MESSAGES/xfce4-mixer.mo
 share/locale/hu/LC_MESSAGES/xfce4-mixer.mo
+share/locale/hy_AM/LC_MESSAGES/xfce4-mixer.mo
+share/locale/hye/LC_MESSAGES/xfce4-mixer.mo
 share/locale/id/LC_MESSAGES/xfce4-mixer.mo
+share/locale/ie/LC_MESSAGES/xfce4-mixer.mo
 share/locale/is/LC_MESSAGES/xfce4-mixer.mo
 share/locale/it/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ja/LC_MESSAGES/xfce4-mixer.mo
@@ -40,6 +46,8 @@ share/locale/ro/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ru/LC_MESSAGES/xfce4-mixer.mo
 share/locale/si/LC_MESSAGES/xfce4-mixer.mo
 share/locale/sk/LC_MESSAGES/xfce4-mixer.mo
+share/locale/sl/LC_MESSAGES/xfce4-mixer.mo
+share/locale/sq/LC_MESSAGES/xfce4-mixer.mo
 share/locale/sr/LC_MESSAGES/xfce4-mixer.mo
 share/locale/sv/LC_MESSAGES/xfce4-mixer.mo
 share/locale/th/LC_MESSAGES/xfce4-mixer.mo
@@ -48,21 +56,20 @@ share/locale/ug/LC_MESSAGES/xfce4-mixer.mo
 share/locale/uk/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ur/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-mixer.mo
-share/locale/vi/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mixer.mo
 share/pixmaps/xfce4-mixer/
 share/pixmaps/xfce4-mixer/chain-broken.png
 share/pixmaps/xfce4-mixer/chain.png
-share/xfce4-mixer/
-share/xfce4-mixer/icons/
-share/xfce4-mixer/icons/hicolor/
-share/xfce4-mixer/icons/hicolor/16x16/
-share/xfce4-mixer/icons/hicolor/16x16/status/
-share/xfce4-mixer/icons/hicolor/16x16/status/audio-input-microphone-muted.png
-share/xfce4-mixer/icons/hicolor/scalable/
-share/xfce4-mixer/icons/hicolor/scalable/status/
-share/xfce4-mixer/icons/hicolor/scalable/status/audio-input-microphone-muted.svg
+share/xfce4/mixer/
+share/xfce4/mixer/icons/
+share/xfce4/mixer/icons/hicolor/
+share/xfce4/mixer/icons/hicolor/16x16/
+share/xfce4/mixer/icons/hicolor/16x16/status/
+share/xfce4/mixer/icons/hicolor/16x16/status/audio-input-microphone-muted.png
+share/xfce4/mixer/icons/hicolor/scalable/
+share/xfce4/mixer/icons/hicolor/scalable/status/
+share/xfce4/mixer/icons/hicolor/scalable/status/audio-input-microphone-muted.svg
 share/xfce4/panel/plugins/mixer.desktop
 @tag update-desktop-database

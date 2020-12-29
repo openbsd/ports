@@ -1,0 +1,19 @@
+$OpenBSD: patch-panel-plugin_xfce-volume-button_c,v 1.1 2020/12/29 15:12:18 landry Exp $
+
+fix volume change by mousewheeling on the panel button
+
+https://gitlab.xfce.org/apps/xfce4-mixer/-/merge_requests/1
+
+Index: panel-plugin/xfce-volume-button.c
+--- panel-plugin/xfce-volume-button.c.orig
++++ panel-plugin/xfce-volume-button.c
+@@ -299,6 +299,9 @@ xfce_volume_button_init (XfceVolumeButton *button)
+   /* Connect signal for theme changes */
+   g_signal_connect_swapped (gtk_icon_theme_get_default (), "changed", G_CALLBACK (xfce_volume_button_update_icons), button);
+ 
++  /* Intercept scroll events */
++  gtk_widget_add_events (GTK_WIDGET (button), GDK_SCROLL_MASK);
++
+   /* Update the state of the button */
+   xfce_volume_button_update (button);
+ }
