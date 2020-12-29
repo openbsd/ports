@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.85 2020/11/01 11:54:30 landry Exp $
+# $OpenBSD: Makefile,v 1.86 2020/12/29 14:48:09 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
-XFCE_VERSION=	1.8.16
 XFCE_PROJECT=	thunar
 
 SHARED_LIBS=	thunarx-3	0.0
@@ -18,6 +17,7 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m
 WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread startup-notification-1 xcb xcb-render xcb-shm
 WANTLIB += xcb-util xfce4kbd-private-3 xfce4ui-2 xfce4util xfconf-0 z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
@@ -34,7 +34,7 @@ FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/Thunar
 BUILD_DEPENDS =	textproc/gtk-doc
 
 LIB_DEPENDS=	x11/xfce4/exo>=0.10.0 \
-		x11/xfce4/libxfce4ui>=4.13 \
+		x11/xfce4/libxfce4ui>=4.15.3 \
 		x11/xfce4/xfce4-panel \
 		devel/libnotify \
 		devel/pcre \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/11/01 11:54:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/12/29 14:48:09 landry Exp $
 @conflict xffm-*
 bin/Thunar
 @bin bin/thunar
@@ -20,7 +20,6 @@ include/thunarx-3/thunarx/thunarx-renamer-provider.h
 include/thunarx-3/thunarx/thunarx-renamer.h
 include/thunarx-3/thunarx/thunarx.h
 lib/Thunar/
-lib/Thunar/ThunarBulkRename
 @bin lib/Thunar/thunar-sendto-email
 lib/girepository-1.0/Thunarx-3.0.typelib
 lib/libthunarx-3.la
@@ -86,16 +85,14 @@ share/gtk-doc/html/thunarx/thunarx-writing-extensions.html
 share/gtk-doc/html/thunarx/thunarx.devhelp2
 share/gtk-doc/html/thunarx/up-insensitive.png
 share/gtk-doc/html/thunarx/up.png
-share/icons/hicolor/128x128/apps/Thunar.png
-share/icons/hicolor/16x16/apps/Thunar.png
+share/icons/hicolor/128x128/apps/org.xfce.thunar.png
+share/icons/hicolor/16x16/apps/org.xfce.thunar.png
 share/icons/hicolor/16x16/stock/navigation/stock_folder-copy.png
 share/icons/hicolor/16x16/stock/navigation/stock_folder-move.png
-share/icons/hicolor/24x24/apps/Thunar.png
 share/icons/hicolor/24x24/stock/navigation/stock_folder-copy.png
 share/icons/hicolor/24x24/stock/navigation/stock_folder-move.png
-share/icons/hicolor/48x48/apps/Thunar.png
-share/icons/hicolor/64x64/apps/Thunar.png
-share/icons/hicolor/scalable/apps/Thunar.svg
+share/icons/hicolor/48x48/apps/org.xfce.thunar.png
+share/icons/hicolor/scalable/apps/org.xfce.thunar.svg
 share/locale/am/LC_MESSAGES/thunar.mo
 share/locale/ar/LC_MESSAGES/thunar.mo
 share/locale/ast/LC_MESSAGES/thunar.mo
@@ -161,8 +158,6 @@ share/locale/zh_CN/LC_MESSAGES/thunar.mo
 share/locale/zh_HK/LC_MESSAGES/thunar.mo
 share/locale/zh_TW/LC_MESSAGES/thunar.mo
 share/metainfo/org.xfce.thunar.appdata.xml
-share/pixmaps/Thunar/
-share/pixmaps/Thunar/Thunar-about-logo.png
 share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.xfce.thunar.policy
