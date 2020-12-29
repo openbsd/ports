@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2019/08/15 06:42:11 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2020/12/29 14:49:37 landry Exp $
 
 COMMENT =	Xfce4 developer tools and macros
 
-XFCE_VERSION =	4.14.0
 XFCE_PROJECT =	xfce4-dev-tools
 HOMEPAGE =	http://users.xfce.org/~benny/projects/xfce4-dev-tools/
 

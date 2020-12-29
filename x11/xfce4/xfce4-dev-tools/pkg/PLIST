@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/08/15 06:42:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/12/29 14:49:37 landry Exp $
 bin/xdt-autogen
 @bin bin/xdt-csource
-share/xfce4/
-share/xfce4/dev-tools/
-share/xfce4/dev-tools/m4macros/
-share/xfce4/dev-tools/m4macros/xdt-depends.m4
-share/xfce4/dev-tools/m4macros/xdt-features.m4
-share/xfce4/dev-tools/m4macros/xdt-i18n.m4
+@comment bin/xfce-build
+bin/xfce-do-release
+bin/xfce-get-release-notes
+bin/xfce-get-translations
+bin/xfce-update-news
+@man man/man1/xdt-csource.1
+share/aclocal/xdt-depends.m4
+share/aclocal/xdt-features.m4
+share/aclocal/xdt-i18n.m4
+share/aclocal/xdt-version.m4
