@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2019/08/15 07:04:54 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2020/12/29 15:02:28 landry Exp $
 
 COMMENT=	Xfce4 command line panel plugin
 
-XFCE_VERSION=	2.0.0
+XFCE_VERSION=	2.0.1
 XFCE_PLUGIN=	verve
 
 # GPLv2
@@ -18,5 +18,6 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread startup-notification-1 xcb xcb-render xcb-shm
 WANTLIB += xcb-util xfce4ui-2 xfce4util z
+WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
