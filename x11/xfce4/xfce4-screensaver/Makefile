@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/09 17:57:58 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2020/12/29 15:18:18 landry Exp $
 
 COMMENT =	Xfce4 screensaver
 
 XFCE_VERSION =	0.1.11
+REVISION =	0
 XFCE_GOODIE =	xfce4-screensaver
-DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -30,6 +30,7 @@ WANTLIB += pcre pixman-1 png pthread startup-notification-1 xcb
 WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xfce4ui-2 xfce4util xfconf-0
 WANTLIB += xkbfile xklavier xml2 xshmfence z harfbuzz dbus-glib-1 wnck-3
+WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS =	menudir=${PREFIX}/share/examples/xfce4-screensaver/xdg/menus
 
