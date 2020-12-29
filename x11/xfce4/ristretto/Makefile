@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2019/08/15 06:55:21 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2020/12/29 15:13:08 landry Exp $
 
 COMMENT=	Xfce4 lightweight image-viewer
 
 XFCE_VERSION=	0.10.0
 XFCE_GOODIE=	ristretto
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -24,6 +25,6 @@ LIB_DEPENDS=	devel/libmagic \
 WANTLIB += ICE SM X11 atk-1.0 c cairo cairo-gobject exif gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 intl m magic pango-1.0 pangocairo-1.0 pthread
-WANTLIB += xfce4ui-2 xfce4util xfconf-0
+WANTLIB += xfce4ui-2 xfce4util xfconf-0 harfbuzz
 
 .include <bsd.port.mk>
