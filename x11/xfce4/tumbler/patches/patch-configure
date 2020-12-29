@@ -1,0 +1,58 @@
+$OpenBSD: patch-configure,v 1.1 2020/12/29 14:47:09 landry Exp $
+fix typo in https://gitlab.xfce.org/xfce/tumbler/-/commit/6e6dbd1ad0bbac5d59901883e31057ef99fb6cf8#87db583be5c13c1f7b3c958b10e03d67b6a2ca06_151_150
+
+https://gitlab.xfce.org/xfce/tumbler/-/merge_requests/14
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -16160,12 +16160,12 @@ if test -n "$GTHREAD_CFLAGS"; then
+     pkg_cv_GTHREAD_CFLAGS="$GTHREAD_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gthread-2.0 >= 2.5ß.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "gthread-2.0 >= 2.5ß.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gthread-2.0 >= 2.50.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "gthread-2.0 >= 2.50.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_GTHREAD_CFLAGS=`$PKG_CONFIG --cflags "gthread-2.0 >= 2.5ß.0" 2>/dev/null`
++  pkg_cv_GTHREAD_CFLAGS=`$PKG_CONFIG --cflags "gthread-2.0 >= 2.50.0" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -16177,12 +16177,12 @@ if test -n "$GTHREAD_LIBS"; then
+     pkg_cv_GTHREAD_LIBS="$GTHREAD_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gthread-2.0 >= 2.5ß.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "gthread-2.0 >= 2.5ß.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gthread-2.0 >= 2.50.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "gthread-2.0 >= 2.50.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_GTHREAD_LIBS=`$PKG_CONFIG --libs "gthread-2.0 >= 2.5ß.0" 2>/dev/null`
++  pkg_cv_GTHREAD_LIBS=`$PKG_CONFIG --libs "gthread-2.0 >= 2.50.0" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -16203,14 +16203,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        GTHREAD_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "gthread-2.0 >= 2.5ß.0" 2>&1`
++	        GTHREAD_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "gthread-2.0 >= 2.50.0" 2>&1`
+         else
+-	        GTHREAD_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gthread-2.0 >= 2.5ß.0" 2>&1`
++	        GTHREAD_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gthread-2.0 >= 2.50.0" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$GTHREAD_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (gthread-2.0 >= 2.5ß.0) were not met:
++	as_fn_error $? "Package requirements (gthread-2.0 >= 2.50.0) were not met:
+ 
+ $GTHREAD_PKG_ERRORS
+ 
