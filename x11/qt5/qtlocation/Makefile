@@ -10,8 +10,8 @@ SHARED_LIBS +=  Qt5PositioningQuick       0.0 # 5.13
 MULTI_PACKAGES =	-main -examples
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Sql crypto m ssl
-WANTLIB += z
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql
+WANTLIB += crypto icudata icui18n icuuc m ssl z
 
 LIB_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 

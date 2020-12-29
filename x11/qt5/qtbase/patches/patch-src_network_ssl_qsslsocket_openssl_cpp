@@ -1,5 +1,7 @@
 $OpenBSD$
 
+https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
+
 Index: src/network/ssl/qsslsocket_openssl.cpp
 --- src/network/ssl/qsslsocket_openssl.cpp.orig
 +++ src/network/ssl/qsslsocket_openssl.cpp

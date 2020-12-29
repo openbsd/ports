@@ -15,7 +15,7 @@ SHARED_LIBS +=  Qt5DesignerComponents   3.0 # 5.9
 SHARED_LIBS +=  Qt5Help                 3.0 # 5.9
 
 WANTLIB-main =	${WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += GL c m pthread clang
+WANTLIB-main += GL c m pthread clang Qt5QmlModels
 WANTLIB-main +=	Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB-main +=	Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Widgets Qt5Xml
 

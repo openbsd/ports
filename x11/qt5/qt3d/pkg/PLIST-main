@@ -1272,7 +1272,6 @@ lib/qt5/cmake/Qt53DQuickScene2D/Qt53DQuickScene2DConfigVersion.cmake
 lib/qt5/cmake/Qt53DRender/
 lib/qt5/cmake/Qt53DRender/Qt53DRenderConfig.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRenderConfigVersion.cmake
-lib/qt5/cmake/Qt53DRender/Qt53DRender_AssimpSceneImportPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_DefaultGeometryLoaderPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_GLTFGeometryLoaderPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_GLTFSceneExportPlugin.cmake
@@ -1377,7 +1376,6 @@ lib/qt5/plugins/renderers/
 lib/qt5/plugins/renderplugins/
 @so lib/qt5/plugins/renderplugins/libscene2d.so
 lib/qt5/plugins/sceneparsers/
-@so lib/qt5/plugins/sceneparsers/libassimpsceneimport.so
 @so lib/qt5/plugins/sceneparsers/libgltfsceneexport.so
 @so lib/qt5/plugins/sceneparsers/libgltfsceneimport.so
 lib/qt5/qml/Qt3D/

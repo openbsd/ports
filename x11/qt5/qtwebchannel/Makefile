@@ -8,7 +8,7 @@ SHARED_LIBS +=  Qt5WebChannel            2.0 # 5.9
 MULTI_PACKAGES =	-main -examples
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Quick m
+WANTLIB += Qt5QmlModels Qt5Quick m
 
 BUILD_DEPENDS =		x11/qt5/qtwebsockets>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 RUN_DEPENDS =		x11/qt5/qtwebsockets>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}

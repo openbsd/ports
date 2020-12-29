@@ -26,6 +26,7 @@ lib/qt5/cmake/Qt5TextToSpeech/
 lib/qt5/cmake/Qt5TextToSpeech/Qt5TextToSpeechConfig.cmake
 lib/qt5/cmake/Qt5TextToSpeech/Qt5TextToSpeechConfigVersion.cmake
 lib/qt5/cmake/Qt5TextToSpeech/Qt5TextToSpeech_QTextToSpeechPluginSpeechd.cmake
+lib/qt5/examples/
 lib/qt5/libQt5TextToSpeech.la
 lib/qt5/libQt5TextToSpeech.prl
 @lib lib/qt5/libQt5TextToSpeech.so.${LIBQt5TextToSpeech_VERSION}
