@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/06/29 22:16:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2020/12/29 15:09:08 landry Exp $
 @bin bin/xfce4-notes
 @bin bin/xfce4-notes-settings
 @bin bin/xfce4-popup-notes
-lib/xfce4/panel/plugins/libnotes.so
+@so lib/xfce4/panel/plugins/libnotes.so
 share/applications/xfce4-notes.desktop
 share/examples/xfce4-notes/
 share/examples/xfce4-notes/xfce4-notes-autostart.desktop
@@ -12,8 +12,10 @@ share/icons/hicolor/22x22/apps/xfce4-notes-plugin.png
 share/icons/hicolor/24x24/apps/xfce4-notes-plugin.png
 share/icons/hicolor/32x32/apps/xfce4-notes-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-notes-plugin.svg
+share/locale/am/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ar/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/be/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/bg/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-notes-plugin.mo
@@ -27,9 +29,13 @@ share/locale/eu/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/he/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/hy_AM/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/hye/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/ie/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/is/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-notes-plugin.mo
@@ -61,38 +67,11 @@ share/locale/vi/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-notes-plugin.mo
 share/xfce4-notes-plugin/
-share/xfce4-notes-plugin/gtk-2.0/
-share/xfce4-notes-plugin/gtk-2.0/gradient.png
-share/xfce4-notes-plugin/gtk-2.0/notes.gtkrc
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/slider-horiz-active.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/slider-horiz.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/slider-vert-active.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/slider-vert.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-down-active.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-down.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-left-active.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-left.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-right-active.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-right.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-up-active.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-up.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/trough-scrollbar-horiz.png
-share/xfce4-notes-plugin/gtk-2.0/scrollbars/trough-scrollbar-vert.png
-share/xfce4-notes-plugin/gtk-2.0/tabs/
-share/xfce4-notes-plugin/gtk-2.0/tabs/notebook.png
-share/xfce4-notes-plugin/gtk-2.0/tabs/tab-bottom-active.png
-share/xfce4-notes-plugin/gtk-2.0/tabs/tab-bottom.png
-share/xfce4-notes-plugin/gtk-2.0/tabs/tab-left-active.png
-share/xfce4-notes-plugin/gtk-2.0/tabs/tab-left.png
-share/xfce4-notes-plugin/gtk-2.0/tabs/tab-right-active.png
-share/xfce4-notes-plugin/gtk-2.0/tabs/tab-right.png
-share/xfce4-notes-plugin/gtk-2.0/tabs/tab-top-active.png
-share/xfce4-notes-plugin/gtk-2.0/tabs/tab-top.png
+share/xfce4-notes-plugin/gtk-3.0/
+share/xfce4-notes-plugin/gtk-3.0/gtk-main.css
 share/xfce4-notes-plugin/pixmaps/
 share/xfce4-notes-plugin/pixmaps/notes-menu-active.png
 share/xfce4-notes-plugin/pixmaps/notes-menu.png
-share/xfce4/panel-plugins/
-share/xfce4/panel-plugins/xfce4-notes-plugin.desktop
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/xfce4/panel/plugins/xfce4-notes-plugin.desktop
