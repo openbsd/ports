@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.134 2020/02/11 11:45:31 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.135 2020/12/29 23:59:06 daniel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -50,12 +50,6 @@ MULTI_PACKAGES =	-main -tests -gdbm -idle -tkinter
 DEBUG_PACKAGES ?=	-main -gdbm -tkinter
 .endif
 
-.if ${VERSION} == "3.7"
-LIB_SUFX =		m
-.else
-LIB_SUFX =	
-.endif
-
 # Python 2.7 lists BSD db 4.6.x as unstable on most architectures (see
 # setup.py:allow_db_version). XXX revisit if databases/db/v4 is updated to 4.7
 .if ${VERSION} == "2.7"
@@ -92,11 +86,11 @@ LIB_DEPENDS-bsddb +=	databases/db/v4,no_tcl,no_java,bootstrap
 .else
 LIB_DEPENDS-bsddb +=	databases/db/v4
 .endif
-WANTLIB-bsddb =		lib/db4/db>=4 pthread python${VERSION}${LIB_SUFX}
+WANTLIB-bsddb =		lib/db4/db>=4 pthread python${VERSION}
 
 LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/python/${VERSION},-main
-WANTLIB-gdbm =		gdbm>=3 pthread python${VERSION}${LIB_SUFX}
+WANTLIB-gdbm =		gdbm>=3 pthread python${VERSION}
 
 RUN_DEPENDS-idle =	lang/python/${VERSION},-tkinter \
 			${RUN_DEPENDS}
@@ -107,7 +101,7 @@ MODULES +=		x11/tk
 MODTK_VERSION =		8.5
 LIB_DEPENDS-tkinter =	lang/python/${VERSION},-main \
 			${MODTK_LIB_DEPENDS}
-WANTLIB-tkinter =	X11 pthread python${VERSION}${LIB_SUFX} \
+WANTLIB-tkinter =	X11 pthread python${VERSION} \
 			${MODTK_WANTLIB}
 
 AUTOCONF_VERSION =	2.69
