@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.98 2020/10/19 19:51:01 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.99 2020/12/29 20:23:05 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -75,6 +75,7 @@ libexec/git/git-difftool--helper
 libexec/git/git-filter-branch
 @bin libexec/git/git-fmt-merge-msg
 @bin libexec/git/git-for-each-ref
+@bin libexec/git/git-for-each-repo
 @bin libexec/git/git-format-patch
 @bin libexec/git/git-fsck
 @bin libexec/git/git-fsck-objects
@@ -98,6 +99,7 @@ libexec/git/git-instaweb
 @bin libexec/git/git-ls-tree
 @bin libexec/git/git-mailinfo
 @bin libexec/git/git-mailsplit
+@bin libexec/git/git-maintenance
 @bin libexec/git/git-merge
 @bin libexec/git/git-merge-base
 @bin libexec/git/git-merge-file
@@ -121,7 +123,6 @@ libexec/git/git-p4
 @bin libexec/git/git-pack-objects
 @bin libexec/git/git-pack-redundant
 @bin libexec/git/git-pack-refs
-libexec/git/git-parse-remote
 @bin libexec/git/git-patch-id
 @bin libexec/git/git-prune
 @bin libexec/git/git-prune-packed
@@ -261,6 +262,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-filter-branch.1
 @man man/man1/git-fmt-merge-msg.1
 @man man/man1/git-for-each-ref.1
+@man man/man1/git-for-each-repo.1
 @man man/man1/git-format-patch.1
 @man man/man1/git-fsck-objects.1
 @man man/man1/git-fsck.1
@@ -303,7 +305,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-pack-objects.1
 @man man/man1/git-pack-redundant.1
 @man man/man1/git-pack-refs.1
-@man man/man1/git-parse-remote.1
 @man man/man1/git-patch-id.1
 @man man/man1/git-prune-packed.1
 @man man/man1/git-prune.1
@@ -413,6 +414,7 @@ share/git-core/templates/hooks/pre-push.sample
 share/git-core/templates/hooks/pre-rebase.sample
 share/git-core/templates/hooks/pre-receive.sample
 share/git-core/templates/hooks/prepare-commit-msg.sample
+share/git-core/templates/hooks/push-to-checkout.sample
 share/git-core/templates/hooks/setgitperms.perl
 share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/
@@ -437,6 +439,7 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/git.mo
 share/locale/it/LC_MESSAGES/git.mo
 share/locale/ko/LC_MESSAGES/git.mo
+share/locale/pl/LC_MESSAGES/git.mo
 share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/git.mo
