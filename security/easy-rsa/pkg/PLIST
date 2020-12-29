@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/04/16 06:26:00 bket Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/12/29 15:18:22 bket Exp $
 @extraunexec rm -rf %D/share/easy-rsa/pki
 share/easy-rsa/
 share/easy-rsa/COPYING.md
@@ -12,7 +12,6 @@ share/easy-rsa/doc/EasyRSA-Upgrade-Notes.md
 share/easy-rsa/doc/Hacking.md
 share/easy-rsa/doc/Intro-To-PKI.md
 share/easy-rsa/easyrsa
-@comment share/easy-rsa/easyrsa-e
 share/easy-rsa/gpl-2.0.txt
 share/easy-rsa/mktemp.txt
 share/easy-rsa/openssl-easyrsa.cnf
