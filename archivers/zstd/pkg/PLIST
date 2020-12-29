@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/12/08 18:41:48 bket Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/12/29 20:40:31 bket Exp $
 bin/unzstd
 @bin bin/zstd
 bin/zstdcat
 bin/zstdgrep
 bin/zstdless
 bin/zstdmt
-include/zbuff.h
 include/zdict.h
 include/zstd.h
 include/zstd_errors.h
