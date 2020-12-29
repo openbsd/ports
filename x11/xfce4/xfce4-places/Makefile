@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2019/08/15 07:03:35 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2020/12/29 15:17:45 landry Exp $
 
 COMMENT=	Xfce4 places panel plugin
 
 XFCE_VERSION=	1.8.1
+REVISION=	0
 XFCE_PLUGIN=	places
 
 # GPLv2
@@ -22,5 +23,6 @@ WANTLIB += harfbuzz iconv intl m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1
 WANTLIB += xcb xcb-render xcb-shm xcb-util xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z
+WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
