@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2020/12/23 18:33:05 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2020/12/30 22:08:25 sthen Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
 @bin bin/opencv_version
@@ -286,25 +286,18 @@ lib/cmake/opencv4/OpenCVModules.cmake
 @lib lib/libopencv_videoio.so.${LIBopencv_videoio_VERSION}
 lib/python${MODPY_VERSION}/site-packages/cv2/
 lib/python${MODPY_VERSION}/site-packages/cv2/__init__.py
-lib/python${MODPY_VERSION}/site-packages/cv2/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}config-${MODPY_VERSION}.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}load_config_py2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}load_config_py3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/config-${MODPY_VERSION}.py
-lib/python${MODPY_VERSION}/site-packages/cv2/config-${MODPY_VERSION}.pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/config.py
-lib/python${MODPY_VERSION}/site-packages/cv2/config.pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py2.py
-lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py2.pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py3.py
-lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py3.pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/
 @so lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/cv2.so
-lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/
-lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/__init__.py
-lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/config-${MODPY_DEFAULT_VERSION_3}.py
-lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/config.py
-lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/load_config_py2.py
-lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/load_config_py3.py
-lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/python-${MODPY_DEFAULT_VERSION_3}/
-@so lib/python${MODPY_DEFAULT_VERSION_3}/site-packages/cv2/python-${MODPY_DEFAULT_VERSION_3}/cv2.so
 share/licenses/
 share/licenses/opencv4/
 share/licenses/opencv4/SoftFloat-COPYING.txt

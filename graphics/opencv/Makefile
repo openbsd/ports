@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.64 2020/12/23 18:33:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.65 2020/12/30 22:08:24 sthen Exp $
 
-ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
 CATEGORIES =		graphics devel
-COMMENT-main =		library for computer vision real-time processin
+COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
 V =			4.5.1
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
+REVISION =		0
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
@@ -18,8 +18,6 @@ PKGNAME-java =		opencv-java-${V}
 HOMEPAGE =		https://www.opencv.org/
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
-
-DISTFILES =		opencv-{opencv/archive/}${V}${EXTRACT_SUFX}
 
 .for i in opencv_calib3d opencv_core opencv_features2d \
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
@@ -47,18 +45,14 @@ FLAVOR ?=
 # BSDL
 PERMIT_PACKAGE =	Yes
 
-.include <bsd.port.arch.mk>
-
 MODULES =		devel/cmake \
 			lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =		lang/python/${MODPY_DEFAULT_VERSION_3} \
-			math/eigen3 \
-			math/py-numpy \
-			math/py-numpy,python3
+BUILD_DEPENDS =		math/eigen3 \
+			math/py-numpy${MODPY_FLAVOR}
 
-RUN_DEPENDS-main =	math/py-numpy \
-			math/py-numpy,python3
+RUN_DEPENDS-main =	math/py-numpy${MODPY_FLAVOR}
 
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
@@ -77,7 +71,7 @@ LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
 
 # XXX PIE cannot be produced due to problems with inline assembly.
 # Since OpenCV is mostly used as a LIBrary, switch to PIC.
-.if ${ARCH:Mi386}
+.if ${MACHINE_ARCH:Mi386}
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
 			CXXFLAGS="${CXXFLAGS} -fPIC"
 .endif
@@ -96,8 +90,11 @@ CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
 			-DBUILD_ITT=OFF \
 			-DBUILD_PERF_TESTS=OFF \
 			-DBUILD_TESTS=OFF \
+			-DBUILD_opencv_python2=OFF \
 			-DINSTALL_PYTHON_EXAMPLES=OFF \
 			-DINSTALL_TESTS=OFF \
+			-DOPENCV_SKIP_PYTHON_WARNING=ON \
+			-DPYTHON_DEFAULT_EXECUTABLE=${MODPY_BIN} \
 			-DWITH_1394=OFF \
 			-DWITH_ADE=OFF \
 			-DWITH_CUDA=OFF \
@@ -106,6 +103,8 @@ CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
 			-DWITH_OPENCL=OFF \
 			-DWITH_V4L=OFF \
 			-DWITH_VTK=OFF
+
+.include <bsd.port.arch.mk>
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
@@ -120,8 +119,6 @@ CONFIG_ADJ_CMD =	perl -pi
 .for _l _v in ${SHARED_LIBS}
 CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
 .endfor
-
-SUBST_VARS +=	MODPY_DEFAULT_VERSION_3
 
 NO_TEST =	Yes
 # Enable to run the regression tests
