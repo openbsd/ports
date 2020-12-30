@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/30 09:10:41 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2020/12/30 08:32:16 daniel Exp $
 lib/python${MODPY_VERSION}/site-packages/wrapt/
 lib/python${MODPY_VERSION}/site-packages/wrapt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/wrapt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,12 +8,10 @@ lib/python${MODPY_VERSION}/site-packages/wrapt-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/wrapt/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}wrappers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/wrapt/_wrappers.so
-lib/python${MODPY_VERSION}/site-packages/wrapt/arguments.py
+@so lib/python${MODPY_VERSION}/site-packages/wrapt/_wrappers.so
 lib/python${MODPY_VERSION}/site-packages/wrapt/decorators.py
 lib/python${MODPY_VERSION}/site-packages/wrapt/importer.py
 lib/python${MODPY_VERSION}/site-packages/wrapt/wrappers.py
