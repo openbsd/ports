@@ -1,26 +1,24 @@
-$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.14 2020/10/09 18:50:41 rsadowski Exp $
+$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.15 2020/12/30 07:17:34 rsadowski Exp $
 
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -4154,9 +4154,15 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -4774,9 +4774,14 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    // Check for library version properties.
-   const char* version = this->GetProperty("VERSION");
-   const char* soversion = this->GetProperty("SOVERSION");
+   cmProp version = this->GetProperty("VERSION");
+   cmProp soversion = this->GetProperty("SOVERSION");
 +#if defined(__OpenBSD__)
 +  if (this->GetType() != cmStateEnums::SHARED_LIBRARY &&
-+      this->GetType() != cmStateEnums::MODULE_LIBRARY)
++      this->GetType() != cmStateEnums::MODULE_LIBRARY) {
 +#else
    if (!this->HasSOName(config) ||
        this->Makefile->IsOn("CMAKE_PLATFORM_NO_VERSIONED_SONAME") ||
--      this->IsFrameworkOnApple()) {
-+      this->IsFrameworkOnApple())
+       this->IsFrameworkOnApple()) {
 +#endif
-+  {
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
      version = nullptr;
-@@ -4180,6 +4186,35 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -4800,6 +4805,36 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
  
    // The library name.
    targetNames.Output = prefix + targetNames.Base + suffix;
@@ -30,15 +28,15 @@ Index: Source/cmGeneratorTarget.cxx
 +  // environment variable. Needed for OpenBSD ports system.
 +  if (this->GetType() == cmStateEnums::SHARED_LIBRARY ||
 +      this->GetType() == cmStateEnums::MODULE_LIBRARY) {
-+    std::string env_name = "LIB" + targetNames.Base + "_VERSION";
-+    char *env_vers_cstr = getenv(env_name.c_str());
 +
-+    if (env_vers_cstr && strlen(env_vers_cstr) > 0) {
-+      // This means an override is present.
-+      std::string env_vers = std::string(env_vers_cstr);
++    std::string env_vers;
++    const std::string env_name("LIB" + targetNames.Base + "_VERSION");
++    if (char * env = getenv(env_name.c_str()))
++      env_vers = env;
 +
-+      size_t first = env_vers.find_first_of(".");
-+      size_t last = env_vers.find_last_of(".");
++    if (!env_vers.empty()) {
++      const size_t first = env_vers.find_first_of(".");
++      const size_t last = env_vers.find_last_of(".");
 +
 +      if ((first != last) || (first == std::string::npos)) {
 +        std::string msg = "Bad ";
@@ -47,12 +45,13 @@ Index: Source/cmGeneratorTarget.cxx
 +        msg += env_vers;
 +        this->LocalGenerator->IssueMessage(MessageType::INTERNAL_ERROR, msg);
 +      } else {
-+        version = env_vers_cstr;
-+        soversion = env_vers_cstr;
++        version = new std::string(env_vers);
++        soversion = new std::string(env_vers);
 +      }
 +    }
 +  }
 +#endif
++
  
    if (this->IsFrameworkOnApple()) {
      targetNames.Real = prefix;

@@ -1,15 +1,15 @@
-$OpenBSD: patch-Source_cmGlobalGenerator_cxx,v 1.14 2020/10/23 13:44:30 rsadowski Exp $
+$OpenBSD: patch-Source_cmGlobalGenerator_cxx,v 1.15 2020/12/30 07:17:34 rsadowski Exp $
 
 Index: Source/cmGlobalGenerator.cxx
 --- Source/cmGlobalGenerator.cxx.orig
 +++ Source/cmGlobalGenerator.cxx
-@@ -2515,6 +2515,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
+@@ -2589,6 +2589,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
    cmCustomCommandLine singleLine;
    singleLine.push_back(cmSystemTools::GetCTestCommand());
    singleLine.push_back("--force-new-ctest-process");
 +  // Skip tests requiring internet access
 +  singleLine.push_back("--exclude-regex");
 +  singleLine.push_back("\"CMake.FileDownload|CTestTestUpload|RunCMake.ctest_submit\"");
-   if (auto testArgs = mf->GetDefinition("CMAKE_CTEST_ARGUMENTS")) {
-     std::vector<std::string> args;
-     cmExpandList(testArgs, args);
+   std::vector<std::string> args;
+   if (mf->GetDefExpandList("CMAKE_CTEST_ARGUMENTS", args)) {
+     for (auto const& arg : args) {

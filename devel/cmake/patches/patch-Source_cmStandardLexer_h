@@ -1,0 +1,23 @@
+$OpenBSD: patch-Source_cmStandardLexer_h,v 1.1 2020/12/30 07:17:34 rsadowski Exp $
+
+Index: Source/cmStandardLexer.h
+--- Source/cmStandardLexer.h.orig
++++ Source/cmStandardLexer.h
+@@ -6,7 +6,7 @@
+ /* Needed for glibc < 2.12 */
+ #  define _XOPEN_SOURCE 600
+ #endif
+-#if !defined(_WIN32) && !defined(__sun)
++#if !defined(_WIN32) && !defined(__sun) && !defined(__OpenBSD__)
+ /* POSIX APIs are needed */
+ #  define _POSIX_C_SOURCE 200809L
+ #endif
+@@ -14,7 +14,7 @@
+ /* C sources: for fileno and strdup */
+ #  define _XOPEN_SOURCE 600
+ #endif
+-#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__)
+ /* For isascii */
+ #  define _XOPEN_SOURCE 700
+ #endif

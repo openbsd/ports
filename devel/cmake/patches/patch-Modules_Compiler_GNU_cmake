@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_Compiler_GNU_cmake,v 1.15 2020/11/23 07:33:20 rsadowski Exp $
+$OpenBSD: patch-Modules_Compiler_GNU_cmake,v 1.16 2020/12/30 07:17:34 rsadowski Exp $
 Index: Modules/Compiler/GNU.cmake
 --- Modules/Compiler/GNU.cmake.orig
 +++ Modules/Compiler/GNU.cmake
-@@ -53,10 +53,18 @@ macro(__compiler_gnu lang)
+@@ -54,10 +54,17 @@ macro(__compiler_gnu lang)
  
    # Initial configuration flags.
    string(APPEND CMAKE_${lang}_FLAGS_INIT " ")
@@ -21,7 +21,6 @@ Index: Modules/Compiler/GNU.cmake
 +    string(APPEND CMAKE_${lang}_FLAGS_RELEASE_INIT " -O3 -DNDEBUG")
 +    string(APPEND CMAKE_${lang}_FLAGS_RELWITHDEBINFO_INIT " -O2 -g -DNDEBUG")
 +  endif()
-+
    set(CMAKE_${lang}_CREATE_PREPROCESSED_SOURCE "<CMAKE_${lang}_COMPILER> <DEFINES> <INCLUDES> <FLAGS> -E <SOURCE> > <PREPROCESSED_SOURCE>")
    set(CMAKE_${lang}_CREATE_ASSEMBLY_SOURCE "<CMAKE_${lang}_COMPILER> <DEFINES> <INCLUDES> <FLAGS> -S <SOURCE> -o <ASSEMBLY_SOURCE>")
    if(NOT APPLE OR NOT CMAKE_${lang}_COMPILER_VERSION VERSION_LESS 4) # work around #4462

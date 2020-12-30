@@ -1,9 +1,14 @@
-$OpenBSD: patch-Modules_FindTclStub_cmake,v 1.7 2019/08/21 05:47:40 rsadowski Exp $
+$OpenBSD: patch-Modules_FindTclStub_cmake,v 1.8 2020/12/30 07:17:34 rsadowski Exp $
 Index: Modules/FindTclStub.cmake
 --- Modules/FindTclStub.cmake.orig
 +++ Modules/FindTclStub.cmake
-@@ -49,13 +49,21 @@ include(${CMAKE_CURRENT_LIST_DIR}/FindTCL.cmake)
+@@ -47,15 +47,26 @@ variables were moved or removed.  Changes compared to 
  
+ include(${CMAKE_CURRENT_LIST_DIR}/FindTCL.cmake)
+ 
++set(MODTCL_VERSION $ENV{MODTCL_VERSION})
++set(MODTK_VERSION $ENV{MODTK_VERSION})/MODTK_VERSION
++
  get_filename_component(TCL_TCLSH_PATH "${TCL_TCLSH}" PATH)
  get_filename_component(TCL_TCLSH_PATH_PARENT "${TCL_TCLSH_PATH}" PATH)
 -string(REGEX REPLACE
@@ -28,7 +33,7 @@ Index: Modules/FindTclStub.cmake
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -70,14 +78,20 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -70,14 +81,20 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
  string(REGEX REPLACE
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  

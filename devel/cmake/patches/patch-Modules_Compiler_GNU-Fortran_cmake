@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_Compiler_GNU-Fortran_cmake,v 1.9 2020/11/23 07:33:20 rsadowski Exp $
+$OpenBSD: patch-Modules_Compiler_GNU-Fortran_cmake,v 1.10 2020/12/30 07:17:34 rsadowski Exp $
 Index: Modules/Compiler/GNU-Fortran.cmake
 --- Modules/Compiler/GNU-Fortran.cmake.orig
 +++ Modules/Compiler/GNU-Fortran.cmake
-@@ -12,9 +12,11 @@ set(CMAKE_Fortran_FORMAT_FREE_FLAG "-ffree-form")
+@@ -17,9 +17,11 @@ endif()
  
  set(CMAKE_Fortran_POSTPROCESS_FLAG "-fpreprocessed")
  

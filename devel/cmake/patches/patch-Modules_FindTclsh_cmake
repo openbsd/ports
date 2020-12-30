@@ -1,18 +1,14 @@
-$OpenBSD: patch-Modules_FindTclsh_cmake,v 1.6 2019/08/21 05:47:40 rsadowski Exp $
+$OpenBSD: patch-Modules_FindTclsh_cmake,v 1.7 2020/12/30 07:17:34 rsadowski Exp $
 Index: Modules/FindTclsh.cmake
 --- Modules/FindTclsh.cmake.orig
 +++ Modules/FindTclsh.cmake
-@@ -20,14 +20,21 @@ In cygwin, look for the cygwin version first.  Don't l
- to avoid finding the cygwin version on a Win32 build.
+@@ -17,18 +17,30 @@ library is.  This code sets the following variables:
+   TCL_TCLSH = the path to the tclsh executable
  #]=======================================================================]
  
 +set(MODTCL_VERSION $ENV{MODTCL_VERSION})
 +set(MODTK_VERSION $ENV{MODTK_VERSION})
 +
- if(CYGWIN)
-   find_program(TCL_TCLSH NAMES cygtclsh83 cygtclsh80)
- endif()
- 
  get_filename_component(TK_WISH_PATH "${TK_WISH}" PATH)
  get_filename_component(TK_WISH_PATH_PARENT "${TK_WISH_PATH}" PATH)
 -string(REGEX REPLACE
@@ -26,3 +22,18 @@ Index: Modules/FindTclsh.cmake
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
+ 
+ get_filename_component(TCL_LIBRARY_PATH "${TCL_LIBRARY}" PATH)
+ get_filename_component(TCL_LIBRARY_PATH_PARENT "${TCL_LIBRARY_PATH}" PATH)
+-string(REGEX REPLACE
+-  "^.*tcl([0-9]\\.*[0-9]).*$" "\\1" TCL_LIBRARY_VERSION "${TCL_LIBRARY}")
++
++if(MODTCL_VERSION)
++  set(TCL_LIBRARY_VERSION "${MODTCL_VERSION}")
++else(MODTCL_VERSION)
++  string(REGEX REPLACE
++    "^.*tcl([0-9]\\.*[0-9]).*$" "\\1" TCL_LIBRARY_VERSION "${TCL_LIBRARY}")
++endif(MODTCL_VERSION)
+ 
+ get_filename_component(TK_LIBRARY_PATH "${TK_LIBRARY}" PATH)
+ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LIBRARY_PATH}" PATH)

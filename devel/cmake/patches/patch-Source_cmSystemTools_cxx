@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.15 2020/05/25 05:12:00 rsadowski Exp $
+$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.16 2020/12/30 07:17:34 rsadowski Exp $
 
 Get rid of cmLocaleRAII.
 
@@ -29,7 +29,21 @@ the invalid use of the interface.
 Index: Source/cmSystemTools.cxx
 --- Source/cmSystemTools.cxx.orig
 +++ Source/cmSystemTools.cxx
-@@ -1508,8 +1508,6 @@ bool extract_tar(const std::string& outFileName,
+@@ -1,11 +1,11 @@
+ /* Distributed under the OSI-approved BSD 3-Clause License.  See accompanying
+    file Copyright.txt or https://cmake.org/licensing for details.  */
+ 
+-#if !defined(_WIN32) && !defined(__sun)
++#if !defined(_WIN32) && !defined(__sun) && !defined(__OpenBSD__)
+ // POSIX APIs are needed
+ #  define _POSIX_C_SOURCE 200809L
+ #endif
+-#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__) ||    \
++#if defined(__FreeBSD__) || defined(__NetBSD__) ||    \
+   defined(__QNX__)
+ // For isascii
+ #  define _XOPEN_SOURCE 700
+@@ -1674,8 +1674,6 @@ bool extract_tar(const std::string& outFileName,
                   const std::vector<std::string>& files, bool verbose,
                   bool extract)
  {

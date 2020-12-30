@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.189 2020/12/10 02:20:29 daniel Exp $
+# $OpenBSD: Makefile,v 1.190 2020/12/30 07:17:34 rsadowski Exp $
 
 DPB_PROPERTIES =	parallel
 
 COMMENT =	portable build system
 
-VER =		3.17.5
+VER =		3.19.1
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
-REVISION =	1
 
 HOMEPAGE =	https://www.cmake.org/
 
@@ -51,6 +50,10 @@ CONFIGURE_ARGS =	--datadir=share/cmake \
 CONFIGURE_ENV +=	MAKE=${MAKE_PROGRAM}
 
 MAKE_FLAGS +=		VERBOSE=1
+
+# bootstrap build
+CONFIGURE_ENV += MODCMAKE_PORT_BUILD=yes
+MAKE_ENV += MODCMAKE_PORT_BUILD=yes
 
 PORTHOME =		${WRKDIR}
 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-Utilities_cmlibuv_src_unix_core_c,v 1.1 2020/12/30 07:17:34 rsadowski Exp $
+
+Index: Utilities/cmlibuv/src/unix/core.c
+--- Utilities/cmlibuv/src/unix/core.c.orig
++++ Utilities/cmlibuv/src/unix/core.c
+@@ -73,7 +73,6 @@ extern char** environ;
+ # include <sys/filio.h>
+ # include <sys/wait.h>
+ # include <sys/param.h>
+-# include <sys/cpuset.h>
+ # if defined(__FreeBSD__)
+ #  define uv__accept4 accept4
+ # endif
