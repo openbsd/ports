@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/08/19 12:25:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2020/12/30 03:41:47 daniel Exp $
 
 COMMENT=	simple, fast and efficient podcast parser
 
-MODPY_EGG_VERSION=	0.6.5
+MODPY_EGG_VERSION=	0.6.6
 DISTNAME=	podcastparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
 
 MAINTAINER=	Tim Meunier <trondd@kagu-tsuchi.com>
 
@@ -17,10 +16,12 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 
+MODPY_PYTEST=	Yes
+
 BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
 
-TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
-		devel/py-coverage${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
+		devel/py-test-cov${MODPY_FLAVOR}
 
 FLAVORS=	python3
 FLAVOR=		python3
