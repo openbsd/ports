@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/09/23 11:12:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.17 2020/12/30 15:51:19 sthen Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
 MODPY_EGG_VERSION =	20200717
+REVISION =		0
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
@@ -22,7 +23,7 @@ MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS = Yes
 
-RUN_DEPENDS +=	archivers/py-lz4 \
+RUN_DEPENDS +=	archivers/py-lz4${MODPY_FLAVOR} \
 		databases/py-redis${MODPY_FLAVOR} \
 		devel/py-bencode${MODPY_FLAVOR} \
 		devel/py-biplist${MODPY_FLAVOR} \
