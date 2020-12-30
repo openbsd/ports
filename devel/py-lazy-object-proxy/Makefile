@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/12/30 08:44:38 daniel Exp $
+# $OpenBSD: Makefile,v 1.10 2020/12/30 22:34:04 kn Exp $
 
 COMMENT =		fast and thorough lazy object proxy
 
@@ -22,6 +22,8 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	--ignore=src
+
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-test-benchmark${MODPY_FLAVOR}
 
