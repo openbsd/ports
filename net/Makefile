@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1233 2020/12/12 14:22:39 solene Exp $
+# $OpenBSD: Makefile,v 1.1234 2020/12/30 15:52:35 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -561,7 +561,6 @@
      SUBDIR += py-boto,python3
      SUBDIR += py-boto3,python3
      SUBDIR += py-botocore,python3
-     SUBDIR += py-cares
      SUBDIR += py-cares,python3
      SUBDIR += py-curl
      SUBDIR += py-curl,python3
