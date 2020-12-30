@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2020/12/30 22:30:43 sthen Exp $
 
 COMMENT =		c++ commandline flags processing library
 
 GH_ACCOUNT =		gflags
 GH_PROJECT =		gflags
-GH_TAGNAME =		v2.2.1
-REVISION =		0
+GH_TAGNAME =		v2.2.2
 
 SHARED_LIBS +=		gflags               1.0      # .0.0
 SHARED_LIBS +=		gflags_nothreads     1.0      # .0.0
@@ -16,6 +15,8 @@ HOMEPAGE =		https://gflags.github.io/gflags/
 
 # New BSD
 PERMIT_PACKAGE =	Yes
+
+MAINTAINER = 		Ashton Fagg <ashton@fagg.id.au>
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
