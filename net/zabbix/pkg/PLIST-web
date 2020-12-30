@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.40 2020/10/31 10:07:36 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.41 2020/12/30 13:19:05 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 @sample conf/modules.sample/
@@ -248,6 +248,7 @@ zabbix/app/views/js/administration.autoreg.edit.js.php
 zabbix/app/views/js/administration.housekeeping.edit.js.php
 zabbix/app/views/js/administration.iconmap.edit.js.php
 zabbix/app/views/js/administration.image.edit.js.php
+zabbix/app/views/js/administration.image.list.js.php
 zabbix/app/views/js/administration.macros.edit.js.php
 zabbix/app/views/js/administration.mediatype.edit.js.php
 zabbix/app/views/js/administration.proxy.edit.js.php
@@ -257,6 +258,7 @@ zabbix/app/views/js/administration.trigdisplay.edit.js.php
 zabbix/app/views/js/administration.trigseverity.edit.js.php
 zabbix/app/views/js/administration.user.edit.common.js.php
 zabbix/app/views/js/administration.user.edit.js.php
+zabbix/app/views/js/administration.user.list.js.php
 zabbix/app/views/js/administration.usergroup.edit.js.php
 zabbix/app/views/js/administration.userprofile.edit.js.php
 zabbix/app/views/js/administration.valuemap.edit.js.php
@@ -264,6 +266,7 @@ zabbix/app/views/js/monitoring.charts.view.js.php
 zabbix/app/views/js/monitoring.dashboard.view.js.php
 zabbix/app/views/js/monitoring.host.view.js.php
 zabbix/app/views/js/monitoring.latest.view.js.php
+zabbix/app/views/js/monitoring.map.view.js.php
 zabbix/app/views/js/monitoring.problem.view.js.php
 zabbix/app/views/js/popup.acknowledge.edit.js.php
 zabbix/app/views/js/popup.discovery.check.js.php
@@ -272,7 +275,9 @@ zabbix/app/views/js/popup.maintenance.period.js.php
 zabbix/app/views/js/popup.media.js.php
 zabbix/app/views/js/popup.mediatype.message.js.php
 zabbix/app/views/js/popup.mediatypetest.edit.js.php
+zabbix/app/views/js/popup.triggerexpr.js.php
 zabbix/app/views/js/popup.triggerwizard.js.php
+zabbix/app/views/js/report.services.js.php
 zabbix/app/views/js/reports.auditlog.list.js.php
 zabbix/app/views/layout.csv.php
 zabbix/app/views/layout.htmlpage.php
@@ -560,8 +565,6 @@ zabbix/include/classes/html/CCol.php
 zabbix/include/classes/html/CColHeader.php
 zabbix/include/classes/html/CCollapsibleUiWidget.php
 zabbix/include/classes/html/CColor.php
-zabbix/include/classes/html/CComboBox.php
-zabbix/include/classes/html/CComboItem.php
 zabbix/include/classes/html/CDashboardWidgetMap.php
 zabbix/include/classes/html/CDateSelector.php
 zabbix/include/classes/html/CDiv.php
@@ -581,6 +584,7 @@ zabbix/include/classes/html/CLink.php
 zabbix/include/classes/html/CLinkAction.php
 zabbix/include/classes/html/CList.php
 zabbix/include/classes/html/CListBox.php
+zabbix/include/classes/html/CListBoxItem.php
 zabbix/include/classes/html/CListItem.php
 zabbix/include/classes/html/CMacroValue.php
 zabbix/include/classes/html/CMenu.php
@@ -840,7 +844,6 @@ zabbix/include/classes/widgets/fields/CWidgetField.php
 zabbix/include/classes/widgets/fields/CWidgetFieldApplication.php
 zabbix/include/classes/widgets/fields/CWidgetFieldCheckBox.php
 zabbix/include/classes/widgets/fields/CWidgetFieldCheckBoxList.php
-zabbix/include/classes/widgets/fields/CWidgetFieldComboBox.php
 zabbix/include/classes/widgets/fields/CWidgetFieldDatePicker.php
 zabbix/include/classes/widgets/fields/CWidgetFieldGraphDataSet.php
 zabbix/include/classes/widgets/fields/CWidgetFieldGraphOverride.php
@@ -859,12 +862,13 @@ zabbix/include/classes/widgets/fields/CWidgetFieldNumericBox.php
 zabbix/include/classes/widgets/fields/CWidgetFieldRadioButtonList.php
 zabbix/include/classes/widgets/fields/CWidgetFieldRangeControl.php
 zabbix/include/classes/widgets/fields/CWidgetFieldReference.php
+zabbix/include/classes/widgets/fields/CWidgetFieldSelect.php
 zabbix/include/classes/widgets/fields/CWidgetFieldSelectResource.php
 zabbix/include/classes/widgets/fields/CWidgetFieldSeverities.php
 zabbix/include/classes/widgets/fields/CWidgetFieldTags.php
 zabbix/include/classes/widgets/fields/CWidgetFieldTextBox.php
 zabbix/include/classes/widgets/fields/CWidgetFieldUrl.php
-zabbix/include/classes/widgets/fields/CWidgetFieldWidgetListComboBox.php
+zabbix/include/classes/widgets/fields/CWidgetFieldWidgetSelect.php
 zabbix/include/classes/widgets/forms/
 zabbix/include/classes/widgets/forms/CWidgetForm.php
 zabbix/include/classes/widgets/forms/CWidgetFormActionLog.php
@@ -1028,6 +1032,9 @@ zabbix/include/views/js/configuration.triggers.list.js.php
 zabbix/include/views/js/editabletable.js.php
 zabbix/include/views/js/item.preprocessing.js.php
 zabbix/include/views/js/itemtest.js.php
+zabbix/include/views/js/monitoring.history.js.php
+zabbix/include/views/js/monitoring.hostscreen.js.php
+zabbix/include/views/js/monitoring.screen.constructor.edit.js.php
 zabbix/include/views/js/monitoring.screen.edit.js.php
 zabbix/include/views/js/monitoring.screen.js.php
 zabbix/include/views/js/monitoring.slideconf.edit.js.php
@@ -1109,9 +1116,13 @@ zabbix/js/multilineinput.js
 zabbix/js/multiselect.js
 zabbix/js/pages/
 zabbix/js/pages/items.js
+zabbix/js/pages/monitoring.overview.js
 zabbix/js/pages/popup.condition.common.js
 zabbix/js/pages/popup.operation.common.js
+zabbix/js/pages/report2.js
+zabbix/js/pages/report4.js
 zabbix/js/pages/setup.js
+zabbix/js/pages/srv_status.js
 zabbix/js/servercheck.js
 zabbix/js/textareaflexible.js
 zabbix/js/vector/
