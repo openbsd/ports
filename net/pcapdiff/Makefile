@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/12/10 22:02:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/12/30 21:38:58 kn Exp $
 
 COMMENT =		compare pcap dump files
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =		isginf
 GH_PROJECT =		pcap-diff
 GH_COMMIT =		d4c129e98527f42fbd94362d50608d5286e3f57d
 DISTNAME =		pcapdiff-0.20180816
+REVISION =		0
 
 CATEGORIES =		net security
 
@@ -13,7 +14,7 @@ CATEGORIES =		net security
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-RUN_DEPENDS =		net/scapy,python3
+RUN_DEPENDS =		net/scapy
 
 NO_TEST =		Yes
 NO_BUILD =		Yes

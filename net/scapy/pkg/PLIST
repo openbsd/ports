@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/12/10 11:49:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2020/12/30 21:38:58 kn Exp $
+@conflict py3-scapy-*
 @conflict scapy6-*
+@pkgpath net/scapy,python3
 @pkgpath net/scapy6
-bin/UTscapy${MODPY_BIN_SUFFIX}
-bin/scapy${MODPY_BIN_SUFFIX}
+bin/UTscapy
+bin/scapy
 lib/python${MODPY_VERSION}/site-packages/scapy/
 lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -616,7 +618,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/tools/scapy_pyannotate.py
 lib/python${MODPY_VERSION}/site-packages/scapy/utils.py
 lib/python${MODPY_VERSION}/site-packages/scapy/utils6.py
 lib/python${MODPY_VERSION}/site-packages/scapy/volatile.py
-@man man/man1/scapy${MODPY_BIN_SUFFIX}.1
+@man man/man1/scapy.1
 share/examples/scapy/
-share/examples/scapy/ethertypes${MODPY_BIN_SUFFIX}
+share/examples/scapy/ethertypes
 @sample ${SYSCONFDIR}/ethertypes

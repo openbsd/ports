@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1234 2020/12/30 15:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.1235 2020/12/30 21:38:58 kn Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -687,7 +687,6 @@
      SUBDIR += sbm
      SUBDIR += scamper
      SUBDIR += scapy
-     SUBDIR += scapy,python3
      SUBDIR += seafile
      SUBDIR += sendxmpp
      SUBDIR += serf

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2020/12/10 11:49:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2020/12/30 21:38:58 kn Exp $
 
 COMMENT =	powerful interactive packet manipulation in python
 
 MODPY_EGG_VERSION =	2.4.4
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	scapy-${MODPY_EGG_VERSION}
 
@@ -21,13 +21,7 @@ DISTFILES =		${EXTRACT_ONLY} ethertypes-20120703:0
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR ?=
-.if ${FLAVOR:Mpython3}
-PKGNAME =	py3-${DISTNAME}
-.endif
-
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
@@ -47,9 +41,6 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/scapy
 	${INSTALL_DATA} ${DISTDIR}/ethertypes-20120703 \
-	    ${PREFIX}/share/examples/scapy/ethertypes${MODPY_BIN_SUFFIX}
-	mv ${PREFIX}/bin/UTscapy{,${MODPY_BIN_SUFFIX}}
-	mv ${PREFIX}/man/man1/scapy{,${MODPY_BIN_SUFFIX}}.1
-	mv ${PREFIX}/bin/scapy{,${MODPY_BIN_SUFFIX}}
+	    ${PREFIX}/share/examples/scapy/ethertypes
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1132 2020/12/30 08:44:38 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1133 2020/12/30 21:38:58 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -524,6 +524,7 @@ my $stem_extensions = {
 	'glibmm26' => 'glibmm268',
 	'docker' => 'docker-cli',
 	'py-lazy-object-proxy' => 'py3-lazy-project-proxy',
+	'py3-scapy' => 'scapy',
 };
 
 my $obsolete_reason = {
