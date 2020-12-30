@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/08 22:57:41 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2020/12/30 14:37:54 benoit Exp $
 
 COMMENT =		library for nonlinear optimization
 
 GH_ACCOUNT =		stevengj
 GH_PROJECT =		nlopt
-GH_TAGNAME =		v2.6.2
-REVISION =		0
+GH_TAGNAME =		v2.7.0
 
-SHARED_LIBS =		nlopt	0.2	# 0.10.0
+SHARED_LIBS =		nlopt	1.0	# 0.11.0
 
 CATEGORIES =		math
 
