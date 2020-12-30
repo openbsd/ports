@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/25 20:45:03 cwen Exp $
+# $OpenBSD: Makefile,v 1.37 2020/12/30 12:09:55 sthen Exp $
 
 COMMENT =	next generation web framework for Perl
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Mojolicious-8.22
+REVISION =	0
 CATEGORIES =	www
-
-MAINTAINER =	Manolis Tzanidakis <mtzanidakis@gmail.com>
 
 # Perl
 PERMIT_PACKAGE =		Yes
