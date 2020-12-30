@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2020/12/20 05:48:06 bket Exp $
+# $OpenBSD: Makefile,v 1.20 2020/12/30 06:53:15 rsadowski Exp $
 
 COMMENT =		manual tiling window manager
-DISTNAME =		herbstluftwm-0.9.0
-REVISION =		0
+DISTNAME =		herbstluftwm-0.9.1
 CATEGORIES =		x11
 
 HOMEPAGE =		https://herbstluftwm.org/
@@ -20,10 +19,7 @@ MASTER_SITES =		https://herbstluftwm.org/tarballs/
 # c++11
 COMPILER =		base-clang ports-gcc
 
-MODULES +=		devel/cmake \
-			lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_RUNDEP =		No
+MODULES +=		devel/cmake
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			shells/bash \
@@ -53,5 +49,7 @@ post-install:
 		${PREFIX}/man/man1/herbstluftwm.1
 	${INSTALL_MAN} ${WRKSRC}/doc/herbstluftwm-tutorial.7 \
 		${PREFIX}/man/man7/herbstluftwm-tutorial.7
+	${INSTALL_DATA} ${WRKSRC}/doc/hlwm-doc.json \
+		${PREFIX}/share/doc/herbstluftwm/
 
 .include <bsd.port.mk>

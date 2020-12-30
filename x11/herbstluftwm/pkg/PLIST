@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/03 19:57:02 bket Exp $
+@comment $OpenBSD: PLIST,v 1.9 2020/12/30 06:53:15 rsadowski Exp $
 @tag update-desktop-database
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/herbstluftwm/
@@ -8,6 +8,8 @@ bin/dmenu_run_hlwm
 @man man/man1/herbstclient.1
 @man man/man1/herbstluftwm.1
 @man man/man7/herbstluftwm-tutorial.7
+share/bash-completion/
+share/bash-completion/completions/
 share/bash-completion/completions/herbstclient
 share/doc/herbstluftwm/
 share/doc/herbstluftwm/BUGS
