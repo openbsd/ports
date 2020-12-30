@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2044 2020/12/19 18:08:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2045 2020/12/30 08:44:37 daniel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1538,7 +1538,6 @@
      SUBDIR += py-jupyter_core,python3
      SUBDIR += py-kitchen,python3
      SUBDIR += py-kiwisolver,python3
-     SUBDIR += py-lazy-object-proxy
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch
      SUBDIR += py-linecache2
