@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2020/12/05 11:11:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2020/12/30 09:25:22 ajacoutot Exp $
 
 COMMENT-main=		library handling all the details of proxy configuration
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
 
 GH_ACCOUNT=		libproxy
 GH_PROJECT=		libproxy
-GH_TAGNAME=		0.4.16
+GH_TAGNAME=		0.4.17
 SUBST_VARS=		GH_TAGNAME
 
 PKGNAME-main=		${DISTNAME}
