@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2019/12/04 20:07:26 fcambus Exp $
+# $OpenBSD: Makefile,v 1.11 2020/12/30 18:22:06 fcambus Exp $
 
 COMMENT=		utilities for PostScript Type 1 fonts
-DISTNAME=		t1utils-1.41
-REVISION=		0
+DISTNAME=		t1utils-1.42
 CATEGORIES=		print fonts
 
 HOMEPAGE=		https://www.lcdf.org/~eddietwo/type/
