@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/11/05 20:27:59 kn Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/12/30 23:13:54 kn Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppetlabs/*
 @rcscript ${RCDIR}/puppet
-@rcscript ${RCDIR}/puppetmaster
+@comment @rcscript /etc/rc.d/puppetmaster
 bin/puppet
 ${MODRUBY_SITEDIR}/hiera/
 ${MODRUBY_SITEDIR}/hiera/puppet_function.rb
