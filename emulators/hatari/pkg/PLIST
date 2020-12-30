@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/12/10 15:22:33 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/12/30 18:21:26 fcambus Exp $
 bin/atari-convert-dir
 @bin bin/gst2ascii
 @bin bin/hatari
@@ -24,6 +24,7 @@ share/doc/hatari/images/
 share/doc/hatari/images/callgraph.png
 share/doc/hatari/images/callgraph.svg
 share/doc/hatari/images/cpu.png
+share/doc/hatari/images/devices-portmidi.png
 share/doc/hatari/images/devices.png
 share/doc/hatari/images/fileselector.png
 share/doc/hatari/images/floppydisks.png
