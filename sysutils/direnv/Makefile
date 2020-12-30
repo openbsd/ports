@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/12/22 22:03:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/12/30 22:29:24 sthen Exp $
 
 COMMENT =		tool for managing environment based on current directory
 
 GH_ACCOUNT =		direnv
 GH_PROJECT =		direnv
-GH_TAGNAME =		v2.25.2
+GH_TAGNAME =		v2.26.0
 
 MAINTAINER=		Ashton Fagg <ashton@fagg.id.au>
 CATEGORIES =		sysutils devel
