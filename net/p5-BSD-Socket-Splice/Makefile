@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/12/30 01:52:20 bluhm Exp $
 
-COMMENT =		perl interface to OpenBSD socket splicing
+COMMENT =	perl interface to OpenBSD socket splicing
 
-DISTNAME =		BSD-Socket-Splice-0.06
-REVISION =		0
+DISTNAME =	BSD-Socket-Splice-0.07
+CPAN_AUTHOR =	BLUHM
 
-CATEGORIES =		net
+CATEGORIES =	net
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c perl
+WANTLIB =		c perl
 
 MODULES =		cpan
 
