@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.159 2020/02/05 20:18:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.160 2020/12/30 12:46:01 sthen Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.55
+DISTNAME=	lighttpd-1.4.58
 CATEGORIES=	www net
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto m pcre ssl z ${MODLUA_WANTLIB}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes
@@ -30,7 +30,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir="${PREFIX}/lib/lighttpd" \
 		 --with-lua \
 		 --with-openssl \
-		 --without-bzip2 \
 		 --without-libev
 CONFIGURE_ENV+=	CC_FOR_BUILD="${CC}" \
 		CFLAGS_FOR_BUILD="${CFLAGS}" \
@@ -45,13 +44,13 @@ FLAVOR?=
 .if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+= --with-ldap
 LIB_DEPENDS+=	databases/openldap
-WANTLIB+=	lber-2.4 ldap-2.4 sasl2
+WANTLIB+=	lber ldap sasl2
 .endif
 
 .if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS+= --with-mysql
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB+=	mysqlclient pthread ${COMPILER_LIBCXX}
+WANTLIB+=	mariadb pthread
 .endif
 
 post-extract:

@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.3 2016/11/11 10:23:34 sthen Exp $
-lib/lighttpd/mod_authn_mysql.so
-lib/lighttpd/mod_mysql_vhost.so
+@comment $OpenBSD: PFRAG.mysql,v 1.4 2020/12/30 12:46:01 sthen Exp $
+@so lib/lighttpd/mod_authn_mysql.so
+@so lib/lighttpd/mod_mysql_vhost.so
+@so lib/lighttpd/mod_vhostdb_mysql.so
