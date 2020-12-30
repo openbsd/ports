@@ -1,0 +1,14 @@
+$OpenBSD: patch-htdocs_syweb_class_graph_inc,v 1.4 2020/12/30 12:47:56 sthen Exp $
+
+Index: htdocs/syweb/class_graph.inc
+--- htdocs/syweb/class_graph.inc.orig
++++ htdocs/syweb/class_graph.inc
+@@ -49,7 +49,7 @@ class Graph {
+     var $definition;
+     var $url;
+ 
+-    function Graph(&$group_vars) {
++    function __construct(&$group_vars) {
+ 	$this->group_vars = $group_vars;
+     }
+ 

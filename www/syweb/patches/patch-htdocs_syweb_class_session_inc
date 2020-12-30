@@ -1,0 +1,18 @@
+$OpenBSD: patch-htdocs_syweb_class_session_inc,v 1.1 2020/12/30 12:47:56 sthen Exp $
+
+Index: htdocs/syweb/class_session.inc
+--- htdocs/syweb/class_session.inc.orig
++++ htdocs/syweb/class_session.inc
+@@ -46,7 +46,7 @@ require_once("tools.inc");
+ class Session {
+     var $vars;
+ 
+-    function Session() {
++    function __construct() {
+ 	$this->vars = new Vars();
+     }
+ 
+@@ -200,4 +200,4 @@ class Session {
+ if (!isset($session)) {
+     $session = new Session();
+ }

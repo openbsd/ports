@@ -1,0 +1,18 @@
+$OpenBSD: patch-htdocs_syweb_class_cache_inc,v 1.1 2020/12/30 12:47:56 sthen Exp $
+
+Index: htdocs/syweb/class_cache.inc
+--- htdocs/syweb/class_cache.inc.orig
++++ htdocs/syweb/class_cache.inc
+@@ -54,7 +54,7 @@ class Cache {
+     var $db;
+     var $timestamp;
+ 
+-    function Cache() {
++    function __construct() {
+ 	global $symon;
+ 
+ 	if (!isset($symon["cache_duration"])) {
+@@ -240,4 +240,4 @@ class Cache {
+ if (!isset($cache)) {
+     $cache = new Cache();
+ }

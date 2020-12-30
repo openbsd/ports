@@ -1,0 +1,18 @@
+$OpenBSD: patch-htdocs_syweb_class_text_inc,v 1.1 2020/12/30 12:47:56 sthen Exp $
+
+Index: htdocs/syweb/class_text.inc
+--- htdocs/syweb/class_text.inc.orig
++++ htdocs/syweb/class_text.inc
+@@ -40,7 +40,7 @@ require_once('class_lexer.inc');
+ class Text {
+     var $text;
+ 
+-    function Text($text='') {
++    function __construct($text='') {
+ 	$this->text = $text;
+     }
+ 
+@@ -63,4 +63,4 @@ class Text {
+ 	$this->_display();
+     }
+ }

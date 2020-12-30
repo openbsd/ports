@@ -1,0 +1,18 @@
+$OpenBSD: patch-htdocs_syweb_class_rrdtool_inc,v 1.1 2020/12/30 12:47:56 sthen Exp $
+
+Index: htdocs/syweb/class_rrdtool.inc
+--- htdocs/syweb/class_rrdtool.inc.orig
++++ htdocs/syweb/class_rrdtool.inc
+@@ -40,7 +40,7 @@ class RRDTool {
+     var $error;
+     var $output;
+ 
+-    function RRDTool() {
++    function __construct() {
+ 	global $symon;
+ 
+ 	$this->method = '';
+@@ -149,4 +149,4 @@ class RRDTool {
+ 	return 1;
+     }
+ }
