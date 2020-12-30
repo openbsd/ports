@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.991 2020/12/14 03:16:31 daniel Exp $
+# $OpenBSD: Makefile,v 1.992 2020/12/30 15:02:41 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -482,7 +482,7 @@
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
      SUBDIR += py-paste-script
-     SUBDIR += py-qtwebengine
+     SUBDIR += py-qtwebengine,python3
      SUBDIR += py-query
      SUBDIR += py-query,python3
      SUBDIR += py-quixote
