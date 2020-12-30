@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/11/25 06:36:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/12/30 07:18:12 rsadowski Exp $
 include/catch2/
 include/catch2/catch.hpp
 include/catch2/catch_reporter_automake.hpp
@@ -10,9 +10,11 @@ lib/cmake/Catch2/
 lib/cmake/Catch2/Catch.cmake
 lib/cmake/Catch2/Catch2Config.cmake
 lib/cmake/Catch2/Catch2ConfigVersion.cmake
+lib/cmake/Catch2/Catch2Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Catch2/Catch2Targets.cmake
 lib/cmake/Catch2/CatchAddTests.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
+@static-lib lib/libCatch2WithMain.a
 share/Catch2/
 share/Catch2/gdbinit
 share/Catch2/lldbinit
