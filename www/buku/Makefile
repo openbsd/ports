@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:13:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/12/31 10:17:30 feinerer Exp $
 
 COMMENT =	powerful command-line bookmark manager
 
-MODPY_EGG_VERSION =	4.4
+MODPY_EGG_VERSION =	4.5
 DISTNAME =	buku-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	www
 
