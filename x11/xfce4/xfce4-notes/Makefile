@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2020/12/29 15:09:08 landry Exp $
+# $OpenBSD: Makefile,v 1.57 2020/12/31 15:50:46 landry Exp $
 
 COMMENT=	Xfce4 sticky notes panel plugin
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE =	Yes
 MODXFCE_ICON_CACHE=	Yes
+BUILD_DEPENDS +=	lang/vala
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
