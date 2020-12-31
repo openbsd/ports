@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_Makefile_legacy,v 1.3 2020/12/19 21:32:07 sebastia Exp $
+$OpenBSD: patch-src_Makefile_legacy,v 1.4 2020/12/31 20:41:07 naddy Exp $
 Index: src/Makefile.legacy
 --- src/Makefile.legacy.orig
 +++ src/Makefile.legacy
+@@ -170,7 +170,7 @@ BENCH_DES_BS_OBJS_DEPEND = \
+ 	DES_bs_b.o
+ 
+ BENCH_MD5_OBJS_DEPEND = \
+-	MD5_fmt.o MD5_std.o md5crypt_common.o
++	MD5_fmt.o MD5_std.o md5crypt_common.o md5.o
+ 
+ BENCH_BF_OBJS_DEPEND = \
+ 	BF_fmt.o BF_std.o BF_common.o
 @@ -976,11 +976,9 @@ openbsd-alpha:
  openbsd-sparc64:
  	$(LN) sparc64.h arch.h
