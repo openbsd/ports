@@ -3,7 +3,7 @@ $OpenBSD$
 Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,351 @@
+@@ -0,0 +1,355 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -131,7 +131,7 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +    base::FilePath cache_directory, local_directory;
 +
 +    base::PathService::Get(base::DIR_CACHE, &cache_directory);
-+    base::PathService::Get(base::DIR_HOME, &local_directory);   
++    base::PathService::Get(base::DIR_HOME, &local_directory);
 +
 +    cache_directory = cache_directory.AppendASCII("chromium");
 +    local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");
@@ -148,8 +148,10 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +  if (process_type == switches::kRendererProcess)
 +    gfx::InitializeFonts();
 +
++  /* rsadowski@
 +  if (!command_line->HasSwitch(switches::kDisableUnveil))
 +    SetUnveil(process_type, sandbox_type);
++  */
 +
 +  pre_initialized_ = true;
 +}
@@ -297,6 +299,8 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +    PCHECK(limited_as);
 +  }
 +
++  return true;
++  // rsadowski@
 +  if (process_type.empty()) {
 +    // XXX use a file for listing pledges of the main process for now
 +    // XXX not having the file is not a fatal error

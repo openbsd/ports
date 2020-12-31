@@ -80,8 +80,7 @@ LIB_DEPENDS =	archivers/snappy \
 # These libraries are used from the system and the build infrastructure
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
-GN_SYSTEM_LIBS =	libevent \
-			libxslt
+GN_SYSTEM_LIBS =	libevent libxml libxslt yasm
 
 DEBUGFLAG =		-g0
 
@@ -127,6 +126,7 @@ pre-configure:
 	@cd ${WRKSRC} && /usr/local/lib/qt5/bin/syncqt.pl -version ${QT5_VERSION}
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS} \
+
 
 pre-build:
 	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py ${CHROMESRC}/v8/tools/run.py \
