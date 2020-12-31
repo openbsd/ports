@@ -1,15 +1,51 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2011/07/17 20:23:46 sthen Exp $
+$OpenBSD: patch-setup_py,v 1.2 2020/12/31 20:05:33 cwen Exp $
 
-Fix manpage path
+setuptools is required at runtime, but using MODPY_SETUPTOOLS=Yes broke the
+build because of --single-version-externally-managed that distutils can't
+deal with. It's needed to supercede distutils' install by setuptools' one.
 
---- setup.py.orig	Thu Jul 14 11:45:34 2011
-+++ setup.py	Thu Jul 14 11:45:45 2011
-@@ -57,7 +57,7 @@ setup(name = 'lfm',
-                     'lfm/config', 'lfm/pyview'],
-       scripts = ['lfm/lfm', 'lfm/pyview'],
-       data_files = [('share/doc/lfm', DOC_FILES),
--                    ('share/man/man1', MAN_FILES)]
-+                    ('man/man1', MAN_FILES)]
- #      **addargs
-      )
+Install the manpage and docs according to our file hierarchy, otherwise:
+* the manpage was installed in /usr/share/man/man1
+* doc files were in sites-packages, now they're in ${LOCALBASE}/share/doc/lfm;
+  see also patch-lfm_actions_py
+* default config files are needed in sites-packages in case $HOME/.config/lfm
+is empty, and can be restored through a runtime option. There is no need for @sample
+entries in PLIST since lfm reads its configuration files in ~/.config/lfm only.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -12,6 +12,7 @@ Released under GNU Public License, read COPYING file f
  
+ import os
+ from distutils.core import setup
++from setuptools.command.install import install as install
+ from os.path import join
+ from sys import argv, exit, prefix, version_info
+ 
+@@ -52,9 +53,6 @@ if 'bdist_wheel' in argv:
+ import shutil
+ try:
+     try:
+-        os.mkdir('lfm/doc')
+-        for f in DOC_FILES:
+-            shutil.copy2(f, 'lfm/doc')
+         os.symlink('../etc', 'lfm/etc')
+     except:
+         pass
+@@ -71,11 +69,12 @@ try:
+           license='GPL3+',
+           packages=['lfm'],
+           scripts=['lfm/lfm'],
+-          data_files=[(join(prefix, 'share/man/man1'), MAN_FILES)],
+-          package_data={'': CONFIG_FILES + [join('doc', f) for f in DOC_FILES]},
++          data_files=[(join(prefix, 'man/man1'), MAN_FILES),
++                      (join(prefix, 'share/doc/lfm'), DOC_FILES),
++                     ],
++          package_data={'': CONFIG_FILES},
+     )
+ finally:
+-    shutil.rmtree('lfm/doc')
+     try:
+         os.unlink('lfm/etc')
+     except IsADirectoryError:

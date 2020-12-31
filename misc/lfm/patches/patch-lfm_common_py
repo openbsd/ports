@@ -1,0 +1,16 @@
+$OpenBSD: patch-lfm_common_py,v 1.1 2020/12/31 20:05:33 cwen Exp $
+
+Change default handler for rar files
+
+Index: lfm/common.py
+--- lfm/common.py.orig
++++ lfm/common.py
+@@ -37,7 +37,7 @@ SYSPROGS = {'tar': 'tar',
+             'gzip': 'gzip',
+             'zip': 'zip',
+             'unzip': 'unzip',
+-            'rar': 'rar',
++            'rar': 'unrar',
+             '7z': '7z',
+             'xz': 'xz',
+             'lzip': 'lzip',

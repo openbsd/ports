@@ -1,0 +1,27 @@
+$OpenBSD: patch-lfm_actions_py,v 1.1 2020/12/31 20:05:33 cwen Exp $
+
+Allow reading lfm documentation in lfm while making the document available in
+${LOCALBASE}/share/doc/lfm
+
+Index: lfm/actions.py
+--- lfm/actions.py.orig
++++ lfm/actions.py
+@@ -1111,11 +1111,13 @@ def help_menu():
+         else:
+             docfile = {'r': 'README', 'n': 'NEWS', 't': 'TODO', 'l': 'COPYING'}.get(ret[0])
+             try:
+-                filename = pkg_resources.resource_filename('lfm', 'doc/' + docfile)
+-                utils.run_on_current_file(app.cfg.programs['pager'], filename)
+-            except NotImplementedError:
+-                buf = str(pkg_resources.resource_string('lfm', 'doc/' + docfile), 'UTF-8')
+-                InternalView(docfile, [(l, 'view_white_on_black') for l in buf.splitlines()], center=False).run()
++                filename = '${LOCALBASE}/share/doc/lfm/' + docfile
++                with open(filename) as f:
++                    buf = f.readlines()
++                f.close()
++                InternalView(docfile, [(l, 'view_white_on_black') for l in buf], center=False).run()
++            except Exception as e:
++                DialogError('Cannot read the doc!\n{}'.format(str(e)))
+         return refresh()
+     else:
+         return RetCode.nothing, None

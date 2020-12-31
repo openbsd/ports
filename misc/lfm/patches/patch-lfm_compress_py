@@ -1,15 +1,43 @@
-$OpenBSD: patch-lfm_compress_py,v 1.1.1.1 2011/07/17 20:23:46 sthen Exp $
+$OpenBSD: patch-lfm_compress_py,v 1.2 2020/12/31 20:05:33 cwen Exp $
 
 Incompatible GNU tar option
 
---- lfm/compress.py.orig	Thu Jul 14 12:19:36 2011
-+++ lfm/compress.py	Thu Jul 14 12:19:48 2011
-@@ -111,7 +111,7 @@ class PackagerTGZ(PackagerBase):
-     exts = ('.tar.gz', '.tgz', '.tar.Z')
+Index: lfm/compress.py
+--- lfm/compress.py.orig
++++ lfm/compress.py
+@@ -108,7 +108,7 @@ class PackagerTGZ(PackagerBase):
      need_tar = True
-     uncompress_prog = compress_prog = sysprogs['gzip']
--    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + sysprogs['tar'] + ' xfi -'
-+    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + sysprogs['tar'] + ' xf -'
-     compress_cmd = sysprogs['tar'] + ' cf - \"%s\" | ' + compress_prog + ' > \"%s\"'
-     compressXXX_cmd = sysprogs['tar'] + ' cf - %s | ' + compress_prog + ' > \"%s\"'
+     can_vfs = True
+     uncompress_prog = compress_prog = SYSPROGS['gzip']
+-    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + SYSPROGS['tar'] + ' xfi -'
++    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + SYSPROGS['tar'] + ' xf -'
+     compress_cmd = SYSPROGS['tar'] + ' cf - \"%s\" | ' + compress_prog + ' > \"%s\"'
+     compress2_cmd = SYSPROGS['tar'] + ' cf - %s | ' + compress_prog + ' > \"%s\"'
+ 
+@@ -130,7 +130,7 @@ class PackagerTXZ(PackagerBase):
+     need_tar = True
+     can_vfs = True
+     uncompress_prog = compress_prog = SYSPROGS['xz']
+-    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + SYSPROGS['tar'] + ' xfi -'
++    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + SYSPROGS['tar'] + ' xf -'
+     compress_cmd = SYSPROGS['tar'] + ' cf - \"%s\" | ' + compress_prog + ' > \"%s\"'
+     compress2_cmd = SYSPROGS['tar'] + ' cf - %s | ' + compress_prog + ' > \"%s\"'
+ 
+@@ -152,7 +152,7 @@ class PackagerTLZ(PackagerBase):
+     need_tar = True
+     can_vfs = True
+     uncompress_prog = compress_prog = SYSPROGS['lzip']
+-    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + SYSPROGS['tar'] + ' xfi -'
++    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + SYSPROGS['tar'] + ' xf -'
+     compress_cmd = SYSPROGS['tar'] + ' cf - \"%s\" | ' + compress_prog + ' > \"%s\"'
+     compress2_cmd = SYSPROGS['tar'] + ' cf - %s | ' + compress_prog + ' > \"%s\"'
+ 
+@@ -174,7 +174,7 @@ class PackagerTLZ4(PackagerBase):
+     need_tar = True
+     can_vfs = True
+     uncompress_prog = compress_prog = SYSPROGS['lz4']
+-    uncompress_cmd = uncompress_prog + ' -q -d \"%s\" -c | ' + SYSPROGS['tar'] + ' xfi -'
++    uncompress_cmd = uncompress_prog + ' -q -d \"%s\" -c | ' + SYSPROGS['tar'] + ' xf -'
+     compress_cmd = SYSPROGS['tar'] + ' cf - \"%s\" | ' + compress_prog + ' -9 -q > \"%s\"'
+     compress2_cmd = SYSPROGS['tar'] + ' cf - %s | ' + compress_prog + ' -9 -q > \"%s\"'
  
