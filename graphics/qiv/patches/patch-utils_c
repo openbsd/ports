@@ -1,0 +1,18 @@
+$OpenBSD: patch-utils_c,v 1.5 2020/12/31 20:16:54 cwen Exp $
+
+Fix "implicit conversion from 'int' to 'float' changes value from
+2147483647 to 2147483648"
+From https://codeberg.org/ciberandy/qiv/commit/195fe9d5
+
+Index: utils.c
+--- utils.c.orig
++++ utils.c
+@@ -608,7 +608,7 @@ int get_random(int replace, int num, int direction)
+ 
+       for (n=0;n<num;n++)   /* simple insertion sort, fine for num small */
+ 	{
+-	  p=(int)(((float)rand()/RAND_MAX) * (num-n)) + n ; /* n <= p < num */
++	  p=(int)(((float)rand()/(float)RAND_MAX) * (num-n)) + n ; /* n <= p < num */
+ 	  q=rindices[n];
+ 	  rindices[n]=rindices[p]; /* Switch the two numbers to make random order */
+ 	  rindices[p]=q;

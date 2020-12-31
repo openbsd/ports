@@ -1,6 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.8 2014/08/23 14:33:07 kirby Exp $
---- Makefile.orig	Fri Dec 20 04:50:37 2013
-+++ Makefile	Thu Aug 14 14:06:52 2014
+$OpenBSD: patch-Makefile,v 1.9 2020/12/31 20:16:54 cwen Exp $
+
+Hunk #4 is a fix for bogus manpaths that can be removed for qiv>2.3.2,
+see https://codeberg.org/ciberandy/qiv/commit/195fe9d5
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -4,7 +4,7 @@
  #######################################################################
  
@@ -8,9 +13,9 @@ $OpenBSD: patch-Makefile,v 1.8 2014/08/23 14:33:07 kirby Exp $
 -PREFIX = /usr/local
 +PREFIX ?= /usr/local
  
- # Font to use for statusbar in fullscreen mode
+ # Fonts to use for statusbar and comments
  STATUSBAR_FONT = "Monospace 9"
-@@ -30,7 +30,7 @@ GETOPT_LONG = -DHAVE_GETOPT_LONG
+@@ -31,7 +31,7 @@ GETOPT_LONG = -DHAVE_GETOPT_LONG
  
  # This program will be run on the manual page after it is installed.
  # If you don't want to compress the manpage, change it to 'true'.
@@ -19,23 +24,35 @@ $OpenBSD: patch-Makefile,v 1.8 2014/08/23 14:33:07 kirby Exp $
  
  # Comment this line out if your system doesn't have lcms2 installed
  # (for minimal Color Management support)
-@@ -49,11 +49,11 @@ EXIF = -DHAVE_EXIF
- # Do not edit below here!
+@@ -51,14 +51,12 @@ EXIF = -DHAVE_EXIF
  ######################################################################
  
--CC        = gcc
-+CC        ?= gcc
+ ifeq ($(origin CC),default)
+-CC = gcc
++CC ?= gcc
+ endif
+ 
+ PKG_CONFIG ?= pkg-config
  #CFLAGS    = -O0 -g -Wall
 -CFLAGS    = -O2 -Wall \
 -	    -fcaller-saves -ffast-math -fno-strength-reduce \
 -	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
-+#CFLAGS    = -O2 -Wall \
-+#	    -fcaller-saves -ffast-math -fno-strength-reduce \
-+#	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
++CFLAGS    = -Wall
  #CFLAGS    = -O2 -Wall -fomit-frame-pointer -finline-functions \
  #	    -fcaller-saves -ffast-math -fno-strength-reduce \
  #	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
-@@ -159,10 +159,6 @@ install: $(PROGRAM)
+@@ -153,8 +151,8 @@ install: $(PROGRAM)
+ 	  echo install -d -m 0755 $(PREFIX)/man/man1; \
+ 	  install -d -m 0755 $(PREFIX)/man/man1; \
+ 	fi
+-	install -m 0644 $(PROGRAM).1 $(PREFIX)/share/man/man1
+-	$(COMPRESS_PROG) $(PREFIX)/share/man/man1/$(PROGRAM).1
++	install -m 0644 $(PROGRAM).1 $(PREFIX)/man/man1
++	$(COMPRESS_PROG) $(PREFIX)/man/man1/$(PROGRAM).1
+ 	@if [ ! -e $(PREFIX)/share/pixmaps ]; then \
+ 	  echo install -d -m 0755 $(PREFIX)/share/pixmaps; \
+ 	  install -d -m 0755 $(PREFIX)/share/pixmaps; \
+@@ -165,10 +163,6 @@ install: $(PROGRAM)
  	  install -d -m 0755 $(PREFIX)/share/applications; \
  	fi
  	install -m 0644 qiv.desktop $(PREFIX)/share/applications/qiv.desktop

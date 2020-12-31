@@ -1,0 +1,18 @@
+$OpenBSD: patch-options_c,v 1.1 2020/12/31 20:16:54 cwen Exp $
+
+Fix "implicit conversion from 'int' to 'float' changes value from
+2147483647 to 2147483648"
+From https://codeberg.org/ciberandy/qiv/commit/195fe9d5
+
+Index: options.c
+--- options.c.orig
++++ options.c
+@@ -395,7 +395,7 @@ void options_read(int argc, char **argv, qiv_image *q)
+         char *fn;
+         int i, p;
+         for (i=0;i<images;i++) { /* simple insertion sort, fine for small num */
+-          p = (int)(((float)rand()/RAND_MAX) * (images-i)) + i;
++          p = (int)(((float)rand()/(float)RAND_MAX) * (images-i)) + i;
+           fn = image_names[i];
+           image_names[i] = image_names[p];
+           image_names[p] = fn;

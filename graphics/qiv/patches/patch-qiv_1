@@ -1,7 +1,8 @@
-$OpenBSD: patch-qiv_1,v 1.1 2014/08/23 14:33:07 kirby Exp $
---- qiv.1.orig	Thu Aug 14 14:33:47 2014
-+++ qiv.1	Thu Aug 14 14:37:26 2014
-@@ -307,6 +307,7 @@ changed to this new name and updates its internal file
+$OpenBSD: patch-qiv_1,v 1.2 2020/12/31 20:16:54 cwen Exp $
+Index: qiv.1
+--- qiv.1.orig
++++ qiv.1
+@@ -322,6 +322,7 @@ changed to this new name and updates its internal file
  This is very useful when using qiv-command to rename files.
  .P
  Please also see the example that came together with qiv.
