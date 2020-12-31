@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/09/11 06:00:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.13 2020/12/31 14:44:35 sthen Exp $
 
 BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
 BROKEN-sparc64 =out of memory when compiling fifePYTHON_wrap.cxx
@@ -8,6 +8,7 @@ COMMENT =	2D game engine
 GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_TAGNAME =	0.4.2
+REVISION =	0
 
 CATEGORIES =	games
 
