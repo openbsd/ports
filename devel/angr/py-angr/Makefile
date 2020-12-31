@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2020/11/04 20:58:16 kn Exp $
+# $OpenBSD: Makefile,v 1.14 2020/12/31 14:11:49 sthen Exp $
 
 COMMENT =	multi-architecture binary analysis toolkit
-REVISION =	0
+REVISION =	1
 
 ANGR_PYTHON_MODULE =	angr
 
@@ -11,10 +11,6 @@ WANTLIB =	${COMPILER_LIBCXX} m
 
 # C++11
 COMPILER =	base-clang ports-gcc
-
-# XXX: py-unicorn ships unicorn.so, but angr links against .1 - why?!
-# Missing lib: libunicorn.so.1 (/usr/local/lib/python3.7/site-packages/angr/lib/angr_native.so) (NOT REACHABLE)
-LIB_DEPENDS =	devel/py-unicorn${MODPY_FLAVOR}>=1.0.2rc2
 
 BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
 		devel/py-bitstring${MODPY_FLAVOR} \
@@ -41,6 +37,17 @@ RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_EGG_VERSION} \
 		math/py-networkx${MODPY_FLAVOR} \
 		net/py-dpkt${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR}
+
+# XXX this is a bit of a mess. angr_native.so actually links against
+# /usr/local/lib/pythonXXX/site-packages/unicorn/lib/libunicorn.so
+# (which isn't in a place where a linked library would normally be
+# found). SONAME in libunicorn.so is "libunicorn.so.1" so the
+# lib-depends-check message is a bit unexpected. BDEP+RDEP is the
+# simplest way to make it work. LIB_DEPENDS doesn't work because
+# it is stripped unless there's a matching WANTLIB and that can't
+# be done with an unversioned .so.
+BUILD_DEPENDS += devel/py-unicorn${MODPY_FLAVOR}>=1.0.2rc2
+RUN_DEPENDS +=	devel/py-unicorn${MODPY_FLAVOR}>=1.0.2rc2
 
 USE_GMAKE =	Yes
 
