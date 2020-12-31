@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/12/31 14:32:43 sthen Exp $
+
+# https://github.com/mhagger/cvs2svn/issues/9
+#BROKEN=	needs porting to Python 3
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
-# Beware! Upgrades need a new directory in MASTER_SITES,
-# otherwise you probably get the old files, not 404.
 MODPY_EGG_VERSION=	2.4.0
-REVISION=		0
+REVISION=		1
 DISTNAME=		cvs2svn-${MODPY_EGG_VERSION}
-MASTER_SITES=		${HOMEPAGE}files/documents/1462/49237/
+MASTER_SITES=		https://spacehopper.org/mirrors/
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://cvs2svn.tigris.org/
+HOMEPAGE=		https://github.com/mhagger/cvs2svn
 
 # BSD-like
 PERMIT_PACKAGE=	Yes
