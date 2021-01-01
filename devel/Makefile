@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2046 2020/12/30 15:55:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.2047 2021/01/01 08:35:40 benoit Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -797,6 +797,7 @@
      SUBDIR += p5-File-ShareDir-Install
      SUBDIR += p5-File-ShareDir-PathClass
      SUBDIR += p5-File-Slurp
+     SUBDIR += p5-File-Slurp-Tiny
      SUBDIR += p5-File-Slurper
      SUBDIR += p5-File-Sync
      SUBDIR += p5-File-Tail
