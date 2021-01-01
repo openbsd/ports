@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.412 2020/12/21 13:26:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.413 2021/01/01 11:27:15 benoit Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -191,7 +191,6 @@
      SUBDIR += py-sqlalchemy-migrate,python3
      SUBDIR += py-sqlite
      SUBDIR += py-sqlite2
-     SUBDIR += py-sqlobject
      SUBDIR += py-sqlobject,python3
      SUBDIR += py-sqlparse,python3
      SUBDIR += py-storm
