@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.99 2020/11/29 19:57:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2021/01/01 22:57:46 sthen Exp $
 
-ONLY_FOR_ARCHS = amd64 i386
+ONLY_FOR_ARCHS = amd64
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.91.0
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -21,9 +22,9 @@ WANTLIB += IlmThread-2_5 Imath-2_5 OpenColorIO OpenImageIO SDL2
 WANTLIB += X11 Xfixes Xi Xrender Xxf86vm avcodec avdevice avformat
 WANTLIB += avutil boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt c fftw3 freetype jpeg m openal openjp2
-WANTLIB += png potrace sndfile swscale tbb tiff tinyxml util yaml-cpp
-WANTLIB += z
+WANTLIB += boost_thread-mt c fftw3 freetype gmp gmpxx jpeg m openal
+WANTLIB += openjp2 png potrace sndfile swscale tbb tiff tinyxml
+WANTLIB += util yaml-cpp z
 
 MASTER_SITES =	https://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
@@ -39,30 +40,29 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
-			-DWITH_CODEC_FFMPEG=ON \
 			-DWITH_INTERNATIONAL=OFF \
-			-DWITH_RAYOPTIMIZATION=OFF \
-			-DWITH_OPENCOLORIO=ON \
 			-DWITH_OPENMP=OFF \
 			-DWITH_SYSTEM_GLEW=ON \
-			-DWITH_CPU_SSE=OFF \
 			-DWITH_CYCLES_EMBREE=OFF \
 			-DWITH_JACK=OFF
 
-BUILD_DEPENDS =	devel/gflags \
-		math/py-numpy${MODPY_FLAVOR}
-LIB_DEPENDS =	graphics/png \
-		graphics/jpeg \
-		graphics/glew \
-		graphics/openexr \
-		graphics/tiff \
-		devel/boost \
-		devel/tbb \
+BUILD_DEPENDS = math/py-numpy${MODPY_FLAVOR}
+LIB_DEPENDS =	audio/libsndfile \
 		audio/openal \
-		graphics/openjp2 \
+		devel/boost \
+		devel/gmp,-cxx \
+		devel/sdl2 \
+		devel/tbb \
 		graphics/ffmpeg \
+		graphics/glew \
+		graphics/jpeg \
+		graphics/opencolorio \
+		graphics/openexr \
 		graphics/openimageio \
+		graphics/openjp2 \
+		graphics/png \
 		graphics/potrace \
+		graphics/tiff \
 		math/fftw3 \
 		${MODPY_LIB_DEPENDS}
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -71,7 +71,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 NO_TEST =	Yes
 
-CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include -pthread
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
 CFLAGS +=	-I${LOCALBASE}/include
 
 MODPY_ADJ_FILES =	release/bin/blender-thumbnailer.py \
