@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_core_Platform_h,v 1.1.1.1 2014/03/25 10:33:33 pascal Exp $
---- src/core/Platform.h.orig	Wed Oct  9 00:59:34 2013
-+++ src/core/Platform.h	Mon Mar 24 22:58:05 2014
+$OpenBSD: patch-src_core_Platform_h,v 1.2 2021/01/01 22:48:56 sthen Exp $
+--- src/core/Platform.h.orig	Thu Mar 28 10:42:57 2019
++++ src/core/Platform.h	Thu Dec  3 20:01:17 2020
 @@ -85,7 +85,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
+ // assume linux/unix/posix
  
- // linux/unix/posix
  #include <stdlib.h>
 -#if !defined(__FreeBSD__)
 +#if !defined(__FreeBSD__) && !defined(__OpenBSD__)

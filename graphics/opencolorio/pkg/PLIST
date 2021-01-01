@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/25 10:33:33 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/01 22:48:56 sthen Exp $
 include/OpenColorIO/
 include/OpenColorIO/OpenColorABI.h
 include/OpenColorIO/OpenColorIO.h
@@ -6,8 +6,12 @@ include/OpenColorIO/OpenColorTransforms.h
 include/OpenColorIO/OpenColorTypes.h
 include/PyOpenColorIO/
 include/PyOpenColorIO/PyOpenColorIO.h
+lib/cmake/OpenColorIO/
+lib/cmake/OpenColorIO/OpenColorIO${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/OpenColorIO/OpenColorIO.cmake
+lib/cmake/OpenColorIO/OpenColorIOConfig.cmake
 @lib lib/libOpenColorIO.so.${LIBOpenColorIO_VERSION}
 lib/pkgconfig/OpenColorIO.pc
-lib/python${MODPY_VERSION}/site-packages/PyOpenColorIO.so
+@so lib/python${MODPY_VERSION}/site-packages/PyOpenColorIO.so
 share/ocio/
 share/ocio/setup_ocio.sh

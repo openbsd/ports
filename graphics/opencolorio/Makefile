@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2020/12/14 15:28:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/01/01 22:48:55 sthen Exp $
 
 COMMENT =		color management library
 
-V =			20140911
-DISTNAME =		OpenColorIO-$V
-PKGNAME =		opencolorio-$V
-REVISION =		4
+GH_ACCOUNT =		AcademySoftwareFoundation
+GH_PROJECT =		OpenColorIO
+GH_TAGNAME =		v1.1.1
+PKGNAME =		${DISTNAME:L}
 
-SHARED_LIBS +=  OpenColorIO               1.0 # 1.0
+EPOCH =			0
+
+SHARED_LIBS +=  OpenColorIO               1.1 # 1.1.1
 
 CATEGORIES =		graphics
 
@@ -22,10 +24,11 @@ WANTLIB += m pthread ${COMPILER_LIBCXX} tinyxml yaml-cpp
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://deftly.net/
-
 MODULES =		devel/cmake \
 			lang/python
+
+FLAVORS =		python3
+FLAVOR =		python3
 
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		textproc/tinyxml \
@@ -43,8 +46,10 @@ CONFIGURE_ARGS +=	-DPYTHON="${MODPY_BIN}" \
 
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/OpenColorIO-master
-
-CFLAGS =		-pthread
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/cmake/OpenColorIO
+	mv ${PREFIX}/cmake/*.cmake ${PREFIX}/OpenColorIO*.cmake \
+		 ${PREFIX}/lib/cmake/OpenColorIO
+	rm -rf ${PREFIX}/cmake
 
 .include <bsd.port.mk>

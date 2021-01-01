@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_core_OCIOYaml_cpp,v 1.3 2020/12/14 06:26:25 rsadowski Exp $
+$OpenBSD: patch-src_core_OCIOYaml_cpp,v 1.4 2021/01/01 22:48:56 sthen Exp $
 
 Fix the build with newer yaml-cpp.
 
 Index: src/core/OCIOYaml.cpp
---- src/core/OCIOYaml.cpp.orig
-+++ src/core/OCIOYaml.cpp
-@@ -30,43 +30,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
+--- src/core/OCIOYaml.cpp.orig	Thu Dec 24 17:16:21 2020
++++ src/core/OCIOYaml.cpp	Thu Dec 24 17:16:43 2020
+@@ -30,53 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
  
  #include <OpenColorIO/OpenColorIO.h>
  
--#ifndef WINDOWS
+-#ifndef WIN32
 -
 -// fwd declare yaml-cpp visibility
 -#pragma GCC visibility push(hidden)
@@ -46,6 +46,16 @@ Index: src/core/OCIOYaml.cpp
 -
 -#endif
 -
+-#ifdef WIN32
+-#pragma warning( push )
+-#pragma warning( disable: 4146 )
+-#endif
+-
  #include <yaml-cpp/yaml.h>
+-
+-#ifdef WIN32
+-#pragma warning( pop )
+-#endif
  
  #include "Logging.h"
+ #include "MathUtils.h"
