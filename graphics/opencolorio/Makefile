@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/01 22:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/01/01 22:53:20 sthen Exp $
 
 COMMENT =		color management library
 
+EPOCH =			0
 GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenColorIO
 GH_TAGNAME =		v1.1.1
+REVISION =		0
 PKGNAME =		${DISTNAME:L}
-
-EPOCH =			0
 
 SHARED_LIBS +=  OpenColorIO               1.1 # 1.1.1
 
@@ -22,13 +22,12 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread ${COMPILER_LIBCXX} tinyxml yaml-cpp
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		textproc/tinyxml \
