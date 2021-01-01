@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/11 03:07:51 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/01 10:32:49 benoit Exp $
 ${P5SITE}/Graph/
 ${P5SITE}/Graph.pm
 ${P5SITE}/Graph.pod
 ${P5SITE}/Graph/AdjacencyMap/
 ${P5SITE}/Graph/AdjacencyMap.pm
-${P5SITE}/Graph/AdjacencyMap/Heavy.pm
 ${P5SITE}/Graph/AdjacencyMap/Light.pm
-${P5SITE}/Graph/AdjacencyMap/Vertex.pm
 ${P5SITE}/Graph/AdjacencyMatrix.pm
 ${P5SITE}/Graph/Attribute.pm
 ${P5SITE}/Graph/BitMatrix.pm
@@ -25,7 +23,6 @@ ${P5SITE}/Graph/Undirected.pm
 ${P5SITE}/Graph/UnionFind.pm
 @man man/man3p/Graph.3p
 @man man/man3p/Graph::AdjacencyMap.3p
-@man man/man3p/Graph::AdjacencyMap::Vertex.3p
 @man man/man3p/Graph::AdjacencyMatrix.3p
 @man man/man3p/Graph::BitMatrix.3p
 @man man/man3p/Graph::Directed.3p
