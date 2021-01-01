@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/12/17 07:53:18 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/01 16:00:46 thfr Exp $
 
 # Requires OpenGL>=3.3
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =		fast, feature full, GPU-based terminal emulator
 
-MODPY_EGG_VERSION =	0.19.2
+MODPY_EGG_VERSION =	0.19.3
 DISTNAME =		kitty-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/

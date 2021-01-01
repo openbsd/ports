@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/12/17 07:53:18 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/01/01 16:00:46 thfr Exp $
 @bin bin/kitty
 lib/kitty/
 lib/kitty/__main__.py
@@ -25,6 +25,16 @@ lib/kitty/kittens/ask/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTE
 lib/kitty/kittens/ask/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kittens/ask/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kittens/ask/main.py
+lib/kitty/kittens/broadcast/
+lib/kitty/kittens/broadcast/__init__.py
+${MODPY_COMMENT}lib/kitty/kittens/broadcast/${MODPY_PYCACHE}/
+lib/kitty/kittens/broadcast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/broadcast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/broadcast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/broadcast/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kittens/broadcast/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kittens/broadcast/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kittens/broadcast/main.py
 lib/kitty/kittens/choose/
 lib/kitty/kittens/choose/__init__.py
 ${MODPY_COMMENT}lib/kitty/kittens/choose/${MODPY_PYCACHE}/
@@ -643,6 +653,7 @@ share/doc/kitty/html/_sources/integrations.rst.txt
 share/doc/kitty/html/_sources/invocation.rst.txt
 share/doc/kitty/html/_sources/key-encoding.rst.txt
 share/doc/kitty/html/_sources/kittens/
+share/doc/kitty/html/_sources/kittens/broadcast.rst.txt
 share/doc/kitty/html/_sources/kittens/clipboard.rst.txt
 share/doc/kitty/html/_sources/kittens/custom.rst.txt
 share/doc/kitty/html/_sources/kittens/diff.rst.txt
@@ -696,6 +707,7 @@ share/doc/kitty/html/integrations.html
 share/doc/kitty/html/invocation.html
 share/doc/kitty/html/key-encoding.html
 share/doc/kitty/html/kittens/
+share/doc/kitty/html/kittens/broadcast.html
 share/doc/kitty/html/kittens/clipboard.html
 share/doc/kitty/html/kittens/custom.html
 share/doc/kitty/html/kittens/diff.html
