@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2020/11/19 16:06:06 semarie Exp $
+# $OpenBSD: Makefile,v 1.123 2021/01/01 09:02:54 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,14 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.48.0
+V =			1.49.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.48.0-20201119
-BV-amd64 =		1.48.0-20201117
-BV-i386 =		1.48.0-20201118
-BV-sparc64 =		1.48.0-20201117
+BV-aarch64 =		1.49.0-20201231
+BV-amd64 =		1.49.0-20201230
+BV-i386 =		1.49.0-20201230
+BV-sparc64 =		1.49.0-20201231
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}

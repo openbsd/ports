@@ -1,12 +1,12 @@
-$OpenBSD: patch-compiler_rustc_target_src_spec_i686_unknown_openbsd_rs,v 1.1 2020/11/19 16:06:07 semarie Exp $
+$OpenBSD: patch-compiler_rustc_target_src_spec_i686_unknown_openbsd_rs,v 1.2 2021/01/01 09:02:54 semarie Exp $
 i386 should be pentiumpro (no SSE2, no ...)
 pass -znotext to avoid relocation problem with __rust_probestack symbol
 Index: compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
 --- compiler/rustc_target/src/spec/i686_unknown_openbsd.rs.orig
 +++ compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
-@@ -2,10 +2,11 @@ use crate::spec::{LinkerFlavor, Target, TargetResult};
+@@ -2,10 +2,11 @@ use crate::spec::{LinkerFlavor, Target};
  
- pub fn target() -> TargetResult {
+ pub fn target() -> Target {
      let mut base = super::openbsd_base::opts();
 -    base.cpu = "pentium4".to_string();
 +    base.cpu = "pentiumpro".to_string();
@@ -16,4 +16,4 @@ Index: compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
 +    base.pre_link_args.get_mut(&LinkerFlavor::Gcc).unwrap().push("-Wl,-znotext".to_string());
      base.stack_probes = true;
  
-     Ok(Target {
+     Target {
