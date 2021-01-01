@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_parser_Makefile_in,v 1.1.1.1 2021/01/01 12:28:25 bluhm Exp $
+
+Index: src/parser/Makefile.in
+--- src/parser/Makefile.in.orig
++++ src/parser/Makefile.in
+@@ -475,7 +475,6 @@ libmodsec_parser_la_CPPFLAGS = \
+ 	-I.. \
+ 	-g \
+ 	-fPIC \
+-	-O3 \
+ 	$(GEOIP_CFLAGS) \
+ 	$(GLOBAL_CPPFLAGS) \
+ 	$(MODSEC_NO_LOGS) \

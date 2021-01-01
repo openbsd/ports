@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/01 12:28:25 bluhm Exp $
+@bin bin/modsec-rules-check
+include/modsecurity/
+include/modsecurity/actions/
+include/modsecurity/actions/action.h
+include/modsecurity/anchored_set_variable.h
+include/modsecurity/anchored_variable.h
+include/modsecurity/audit_log.h
+include/modsecurity/collection/
+include/modsecurity/collection/collection.h
+include/modsecurity/collection/collections.h
+include/modsecurity/debug_log.h
+include/modsecurity/intervention.h
+include/modsecurity/modsecurity.h
+include/modsecurity/reading_logs_via_rule_message.h
+include/modsecurity/rule.h
+include/modsecurity/rule_message.h
+include/modsecurity/rules.h
+include/modsecurity/rules_exceptions.h
+include/modsecurity/rules_properties.h
+include/modsecurity/transaction.h
+include/modsecurity/variable_origin.h
+include/modsecurity/variable_value.h
+@static-lib lib/libmodsecurity.a
+lib/libmodsecurity.la
+@lib lib/libmodsecurity.so.${LIBmodsecurity_VERSION}
+lib/pkgconfig/modsecurity.pc
+share/modsecurity/
+share/modsecurity/unicode.mapping
