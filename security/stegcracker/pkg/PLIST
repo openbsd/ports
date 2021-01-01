@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/01 14:04:38 sebastia Exp $
+bin/stegcracker
+lib/python${MODPY_VERSION}/site-packages/stegcracker/
+lib/python${MODPY_VERSION}/site-packages/stegcracker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/stegcracker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/stegcracker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/stegcracker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/stegcracker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/stegcracker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/stegcracker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/stegcracker/__init__.py
+lib/python${MODPY_VERSION}/site-packages/stegcracker/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stegcracker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stegcracker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stegcracker/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stegcracker/${MODPY_PYCACHE}cracker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stegcracker/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stegcracker/cracker.py
+lib/python${MODPY_VERSION}/site-packages/stegcracker/helpers.py
