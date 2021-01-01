@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/01/21 20:38:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/01 11:22:56 benoit Exp $
+@conflict py-sqlobject-*
+@pkgpath databases/py-sqlobject
 bin/sqlobject-admin${MODPY_BIN_SUFFIX}
 bin/sqlobject-convertOldURI${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
