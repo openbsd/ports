@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/01/02 08:49:38 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -291,7 +291,7 @@ add_flex_bison_dependency(SdfLex SdfParser)
+ 
+ ################################################################
+ 
+-find_package(SWIG REQUIRED 3.0)
++find_package(SWIG 3.0 REQUIRED)
+ include(UseSWIG)
+ 
+ set(STA_SWIG_FILE app/StaApp.i)

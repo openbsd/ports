@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/25 19:00:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/02 08:49:37 rsadowski Exp $
 
 COMMENT =	Parallax Static Timing Analyzer
 
 GH_ACCOUNT =	The-OpenROAD-Project
 GH_PROJECT =	OpenSTA
 GH_TAGNAME =	v2.2.0
+REVISION =	0
 PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	cad
