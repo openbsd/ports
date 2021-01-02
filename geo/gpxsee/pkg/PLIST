@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/23 08:20:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/02 09:47:48 landry Exp $
 @bin bin/gpxsee
 share/applications/gpxsee.desktop
 share/gpxsee/
@@ -13,8 +13,13 @@ share/gpxsee/maps/OpenStreetMap.xml
 share/gpxsee/maps/OpenTopoMap.xml
 share/gpxsee/maps/USGS-imagery.xml
 share/gpxsee/maps/USGS-topo.xml
+share/icons/hicolor/128x128/apps/gpxsee.png
+share/icons/hicolor/16x16/apps/gpxsee.png
+share/icons/hicolor/32x32/apps/gpxsee.png
+share/icons/hicolor/48x48/apps/gpxsee.png
+share/icons/hicolor/64x64/apps/gpxsee.png
+share/icons/hicolor/scalable/apps/gpxsee.svg
 share/mime/packages/gpxsee.xml
-share/pixmaps/
-share/pixmaps/gpxsee.png
 @tag update-mime-database
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
