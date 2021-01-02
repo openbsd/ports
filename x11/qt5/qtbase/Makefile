@@ -72,7 +72,6 @@ USE_GMAKE =		Yes
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			archivers/zstd \
-			databases/iodbc \
 			databases/sqlite3 \
 			devel/atk \
 			devel/harfbuzz \
