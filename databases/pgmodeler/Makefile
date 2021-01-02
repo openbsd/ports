@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.11 2020/04/16 07:01:17 feinerer Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/02 22:31:45 feinerer Exp $
 
 COMMENT =	PostgreSQL Database Modeler
 
-VERSION =	0.9.2
+VERSION =	0.9.3
 
 GH_ACCOUNT =	pgmodeler
 GH_PROJECT =	pgmodeler
 GH_TAGNAME =	v${VERSION}
 
-SHARED_LIBS +=  objrenderer	1.0 # 1.0
-SHARED_LIBS +=  parsers		1.0 # 1.0
-SHARED_LIBS +=  pgconnector	1.0 # 1.0
-SHARED_LIBS +=  pgmodeler	1.0 # 1.0
-SHARED_LIBS +=  pgmodeler_ui	1.0 # 1.0
-SHARED_LIBS +=  utils		1.0 # 1.0
+SHARED_LIBS +=  objrenderer	1.1 # 1.0
+SHARED_LIBS +=  parsers		2.0 # 1.0
+SHARED_LIBS +=  pgconnector	2.0 # 1.0
+SHARED_LIBS +=  pgmodeler	2.0 # 1.0
+SHARED_LIBS +=  pgmodeler_ui	2.0 # 1.0
+SHARED_LIBS +=  utils		1.1 # 1.0
 
 CATEGORIES =	databases
 

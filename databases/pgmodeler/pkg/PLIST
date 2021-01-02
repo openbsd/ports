@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/04/16 07:01:17 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/02 22:31:45 feinerer Exp $
 @bin bin/pgmodeler
+@bin bin/pgmodeler-ch
 @bin bin/pgmodeler-cli
 lib/pgmodeler/
-lib/pgmodeler/bin/
-@bin lib/pgmodeler/bin/pgmodeler-ch
 @lib lib/pgmodeler/libobjrenderer.so.${LIBobjrenderer_VERSION}
 @lib lib/pgmodeler/libparsers.so.${LIBparsers_VERSION}
 @lib lib/pgmodeler/libpgconnector.so.${LIBpgconnector_VERSION}
@@ -104,6 +103,7 @@ share/pgmodeler/schemas/alter/index.sch
 share/pgmodeler/schemas/alter/owner.sch
 share/pgmodeler/schemas/alter/permission.sch
 share/pgmodeler/schemas/alter/policy.sch
+share/pgmodeler/schemas/alter/procedure.sch
 share/pgmodeler/schemas/alter/relationship.sch
 share/pgmodeler/schemas/alter/rename.sch
 share/pgmodeler/schemas/alter/role.sch
@@ -133,10 +133,12 @@ share/pgmodeler/schemas/catalog/function.sch
 share/pgmodeler/schemas/catalog/index.sch
 share/pgmodeler/schemas/catalog/language.sch
 share/pgmodeler/schemas/catalog/notextobject.sch
+share/pgmodeler/schemas/catalog/objcount.sch
 share/pgmodeler/schemas/catalog/opclass.sch
 share/pgmodeler/schemas/catalog/operator.sch
 share/pgmodeler/schemas/catalog/opfamily.sch
 share/pgmodeler/schemas/catalog/policy.sch
+share/pgmodeler/schemas/catalog/procedure.sch
 share/pgmodeler/schemas/catalog/role.sch
 share/pgmodeler/schemas/catalog/rule.sch
 share/pgmodeler/schemas/catalog/schema.sch
@@ -145,6 +147,7 @@ share/pgmodeler/schemas/catalog/server.sch
 share/pgmodeler/schemas/catalog/table.sch
 share/pgmodeler/schemas/catalog/tablespace.sch
 share/pgmodeler/schemas/catalog/template.sch
+share/pgmodeler/schemas/catalog/transform.sch
 share/pgmodeler/schemas/catalog/trigger.sch
 share/pgmodeler/schemas/catalog/usermapping.sch
 share/pgmodeler/schemas/catalog/usertype.sch
@@ -191,6 +194,7 @@ share/pgmodeler/schemas/sql/parameter.sch
 share/pgmodeler/schemas/sql/partitionkey.sch
 share/pgmodeler/schemas/sql/permission.sch
 share/pgmodeler/schemas/sql/policy.sch
+share/pgmodeler/schemas/sql/procedure.sch
 share/pgmodeler/schemas/sql/relationship.sch
 share/pgmodeler/schemas/sql/role.sch
 share/pgmodeler/schemas/sql/rule.sch
@@ -198,6 +202,7 @@ share/pgmodeler/schemas/sql/schema.sch
 share/pgmodeler/schemas/sql/sequence.sch
 share/pgmodeler/schemas/sql/table.sch
 share/pgmodeler/schemas/sql/tablespace.sch
+share/pgmodeler/schemas/sql/transform.sch
 share/pgmodeler/schemas/sql/trigger.sch
 share/pgmodeler/schemas/sql/typeattribute.sch
 share/pgmodeler/schemas/sql/usermapping.sch
@@ -208,6 +213,7 @@ share/pgmodeler/schemas/xml/aggregate.sch
 share/pgmodeler/schemas/xml/appendedsql.sch
 share/pgmodeler/schemas/xml/basetype.sch
 share/pgmodeler/schemas/xml/cast.sch
+share/pgmodeler/schemas/xml/changelog.sch
 share/pgmodeler/schemas/xml/collation.sch
 share/pgmodeler/schemas/xml/column.sch
 share/pgmodeler/schemas/xml/comment.sch
@@ -223,6 +229,7 @@ share/pgmodeler/schemas/xml/dtd/aggregate.dtd
 share/pgmodeler/schemas/xml/dtd/baseelements.dtd
 share/pgmodeler/schemas/xml/dtd/basetype.dtd
 share/pgmodeler/schemas/xml/dtd/cast.dtd
+share/pgmodeler/schemas/xml/dtd/changelog.dtd
 share/pgmodeler/schemas/xml/dtd/collation.dtd
 share/pgmodeler/schemas/xml/dtd/column.dtd
 share/pgmodeler/schemas/xml/dtd/constraint.dtd
@@ -247,8 +254,10 @@ share/pgmodeler/schemas/xml/dtd/object.dtd
 share/pgmodeler/schemas/xml/dtd/opclass.dtd
 share/pgmodeler/schemas/xml/dtd/operator.dtd
 share/pgmodeler/schemas/xml/dtd/opfamily.dtd
+share/pgmodeler/schemas/xml/dtd/parameter.dtd
 share/pgmodeler/schemas/xml/dtd/permission.dtd
 share/pgmodeler/schemas/xml/dtd/policy.dtd
+share/pgmodeler/schemas/xml/dtd/procedure.dtd
 share/pgmodeler/schemas/xml/dtd/relationship.dtd
 share/pgmodeler/schemas/xml/dtd/role.dtd
 share/pgmodeler/schemas/xml/dtd/rule.dtd
@@ -258,11 +267,13 @@ share/pgmodeler/schemas/xml/dtd/table.dtd
 share/pgmodeler/schemas/xml/dtd/tablespace.dtd
 share/pgmodeler/schemas/xml/dtd/tag.dtd
 share/pgmodeler/schemas/xml/dtd/textbox.dtd
+share/pgmodeler/schemas/xml/dtd/transform.dtd
 share/pgmodeler/schemas/xml/dtd/trigger.dtd
 share/pgmodeler/schemas/xml/dtd/usermapping.dtd
 share/pgmodeler/schemas/xml/dtd/usertype.dtd
 share/pgmodeler/schemas/xml/dtd/view.dtd
 share/pgmodeler/schemas/xml/element.sch
+share/pgmodeler/schemas/xml/entry.sch
 share/pgmodeler/schemas/xml/eventtrigger.sch
 share/pgmodeler/schemas/xml/excelement.sch
 share/pgmodeler/schemas/xml/extension.sch
@@ -287,6 +298,7 @@ share/pgmodeler/schemas/xml/permission.sch
 share/pgmodeler/schemas/xml/policy.sch
 share/pgmodeler/schemas/xml/position.sch
 share/pgmodeler/schemas/xml/prependedsql.sch
+share/pgmodeler/schemas/xml/procedure.sch
 share/pgmodeler/schemas/xml/reference.sch
 share/pgmodeler/schemas/xml/reftable.sch
 share/pgmodeler/schemas/xml/relationship.sch
@@ -299,6 +311,7 @@ share/pgmodeler/schemas/xml/table.sch
 share/pgmodeler/schemas/xml/tablespace.sch
 share/pgmodeler/schemas/xml/tag.sch
 share/pgmodeler/schemas/xml/textbox.sch
+share/pgmodeler/schemas/xml/transform.sch
 share/pgmodeler/schemas/xml/trigger.sch
 share/pgmodeler/schemas/xml/typeattribute.sch
 share/pgmodeler/schemas/xml/usermapping.sch
