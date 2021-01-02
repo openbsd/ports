@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/12/01 14:48:03 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/02 16:46:17 semarie Exp $
 
 COMMENT=		graphical browser for plain-text protocols
 
@@ -6,9 +6,7 @@ V=			0.8.16
 DISTNAME=		castor-${V}
 REVISION=		0
 
-DIST_SUBDIR=		castor
-DISTFILES=		${V}${EXTRACT_SUFX}
-MODCARGO_DIST_SUBDIR=	# empty
+DISTFILES=		castor-{castor/archive/}${V}${EXTRACT_SUFX}
 
 CATEGORIES=		www
 
@@ -22,7 +20,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c c++abi crypto gdk-3 glib-2.0 gobject-2.0 gtk-3 pthread
 WANTLIB += ssl
 
-MASTER_SITES=		https://git.sr.ht/~julienxx/castor/archive/
+MASTER_SITES=		https://git.sr.ht/~julienxx/
 
 MODULES=		devel/cargo
 
