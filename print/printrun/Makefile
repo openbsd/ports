@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/02 19:09:55 daniel Exp $
 
-COMMENT=	3D printing host suite
-DISTNAME=	printrun-20150310
-CATEGORIES=	print
-REVISION=	0
+COMMENT =		3D printing host suite
+
+MODPY_EGG_VERSION =	1.6.0
+DISTNAME =		printrun-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT=	kliment
 GH_PROJECT=	Printrun
 GH_TAGNAME=	${DISTNAME}
+EPOCH=		0
+
+CATEGORIES=	print
 
 HOMEPAGE=	http://www.pronterface.com/
-
-MAINTAINER=     Aaron Bieber <abieber@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
