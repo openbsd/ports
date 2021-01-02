@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/02 21:51:19 jca Exp $
+include/fmt/
+include/fmt/chrono.h
+include/fmt/color.h
+include/fmt/compile.h
+include/fmt/core.h
+include/fmt/format-inl.h
+include/fmt/format.h
+include/fmt/locale.h
+include/fmt/os.h
+include/fmt/ostream.h
+include/fmt/posix.h
+include/fmt/printf.h
+include/fmt/ranges.h
+lib/cmake/
+lib/cmake/fmt/
+lib/cmake/fmt/fmt-config-version.cmake
+lib/cmake/fmt/fmt-config.cmake
+lib/cmake/fmt/fmt-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/fmt/fmt-targets.cmake
+@lib lib/libfmt.so.${LIBfmt_VERSION}
+lib/pkgconfig/fmt.pc
