@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2020/07/27 16:46:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.80 2021/01/02 14:51:45 jcs Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -51,6 +51,7 @@
      SUBDIR += smstools
      SUBDIR += spisniffer
      SUBDIR += sredird
+     SUBDIR += syncterm
      SUBDIR += tkhylafax
      SUBDIR += tlf
      SUBDIR += wammu
