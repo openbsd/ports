@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_xpdev_genwrap_h,v 1.1.1.1 2021/01/02 14:49:18 jcs Exp $
+
+Index: src/xpdev/genwrap.h
+--- src/xpdev/genwrap.h.orig
++++ src/xpdev/genwrap.h
+@@ -201,7 +201,7 @@ extern "C" {
+ 	#define ARCHITECTURE_DESC "x86"
+ #elif defined(__mips__)
+ 	#define ARCHITECTURE_DESC "mips"
+-#elif defined(__arm__)
++#elif defined(__arm__) || defined(__aarch64__)
+ 	#define ARCHITECTURE_DESC "arm"
+ #elif defined(_M_PPC) || defined(__ppc__)
+ 	#define ARCHITECTURE_DESC "ppc"

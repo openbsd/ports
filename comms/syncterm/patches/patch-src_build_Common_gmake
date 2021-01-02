@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_build_Common_gmake,v 1.1.1.1 2021/01/02 14:49:18 jcs Exp $
+
+Index: src/build/Common.gmake
+--- src/build/Common.gmake.orig
++++ src/build/Common.gmake
+@@ -433,7 +433,7 @@ ifdef DEBUG
+ else # RELEASE
+  # -finline functions breaks the baja build badly.
+  # This also means that -O3 won't work either.
+- CFLAGS	:= -O2 -fomit-frame-pointer -ffast-math -funroll-loops $(CFLAGS)
++ CFLAGS	:= -fomit-frame-pointer -ffast-math -funroll-loops $(CFLAGS)
+ endif
+ 
+ -include targets.mk

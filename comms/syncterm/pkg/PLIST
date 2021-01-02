@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/02 14:49:18 jcs Exp $
+@bin bin/syncterm
+@man man/man1/syncterm.1
+share/applications/
+share/applications/syncterm.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/syncterm.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
