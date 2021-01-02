@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2047 2021/01/01 08:35:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.2048 2021/01/02 21:55:04 jca Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -143,6 +143,7 @@
      SUBDIR += flake8
      SUBDIR += flatzebra
      SUBDIR += flawfinder
+     SUBDIR += fmt
      SUBDIR += fossil
      SUBDIR += fossil,static
      SUBDIR += fox
