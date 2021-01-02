@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2021/01/02 09:15:43 landry Exp $
+# $OpenBSD: Makefile,v 1.55 2021/01/02 10:45:24 landry Exp $
 
 COMMENT=	Xfce4 volume mixer
 
 XFCE_GOODIE=	xfce4-mixer
-XFCE_VERSION=	4.11.0pl3
-XFCE_COMMIT=	2bf296300ae3440bfe8d46f3e9e4ae42204c21ff
+XFCE_VERSION=	4.11.0pl4
+XFCE_COMMIT=	21eb6f543ef6e2d99f4192a63d3f53eb1ca704a0
 MASTER_SITES_GIT=https://gitlab.xfce.org/landry/${XFCE_GOODIE:L}/-/archive/${XFCE_COMMIT}/
 
 # GPLv2
