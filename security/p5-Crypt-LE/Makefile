@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/14 13:38:58 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/02 16:35:19 benoit Exp $
 
 COMMENT =	Let's Encrypt API interfacing module and client
 
-DISTNAME =	Crypt-LE-0.36
-REVISION =	0
+DISTNAME =	Crypt-LE-0.37
 CATEGORIES =	security
 
 # perl

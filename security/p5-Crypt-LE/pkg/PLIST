@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/31 06:18:07 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/02 16:35:19 benoit Exp $
 bin/le.pl
-${P5SITE}/Crypt/
 ${P5SITE}/Crypt/LE/
 ${P5SITE}/Crypt/LE.pm
 ${P5SITE}/Crypt/LE/Challenge/
