@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/12/08 01:03:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/03 15:44:41 jcs Exp $
 
 VERSION =		2.7.2
 DISTNAME =		ruby-${VERSION}
@@ -6,7 +6,7 @@ SHARED_LIBS =		ruby27	0.0
 NEXTVER =		2.8
 PKGSPEC-main ?=         ruby->=2.7.0,<${NEXTVER}
 
-REVISION-main =		1
+REVISION-main =		2
 
 MASTER_SITES0 =		https://github.com/ruby/ruby/commit/
 # First patch: Fix copy coroutine to avoid crash on fiber usage (affects at

@@ -1,5 +1,6 @@
 If you want to use this package as your default system ruby, as root
 create symbolic links like so (overwriting any previous default):
+
  ln -sf ${PREFIX}/bin/ruby27 ${PREFIX}/bin/ruby
  ln -sf ${PREFIX}/bin/erb27 ${PREFIX}/bin/erb
  ln -sf ${PREFIX}/bin/irb27 ${PREFIX}/bin/irb
@@ -12,3 +13,6 @@ create symbolic links like so (overwriting any previous default):
  ln -sf ${PREFIX}/bin/racc27 ${PREFIX}/bin/racc
  ln -sf ${PREFIX}/bin/racc2y27 ${PREFIX}/bin/racc2y
  ln -sf ${PREFIX}/bin/y2racc27 ${PREFIX}/bin/y2racc
+
+The ruby-shims package is also available to automatically select an
+appropriate Ruby version per-project directory or system-wide.
