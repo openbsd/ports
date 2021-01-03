@@ -3,6 +3,7 @@
 bin/pylupdate5${MODPY_BIN_SUFFIX}
 bin/pyrcc5${MODPY_BIN_SUFFIX}
 bin/pyuic5${MODPY_BIN_SUFFIX}
+lib/python${MODPY_VERSION}/site-packages/PyQt5/
 lib/python${MODPY_VERSION}/site-packages/PyQt5-${V}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/PyQt5-${V}.dist-info/INSTALLER
 lib/python${MODPY_VERSION}/site-packages/PyQt5-${V}.dist-info/METADATA
