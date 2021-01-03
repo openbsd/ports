@@ -2,7 +2,7 @@
 
 COMMENT	=	python Qt5 bindings
 
-V=		5.15.1
+V=		5.15.2
 DISTNAME=	PyQt5-${V}
 PKGNAME=	py-qt5-${V}
 
@@ -17,11 +17,10 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt5Bluetooth Qt5Core Qt5DBus
 WANTLIB += Qt5Designer Qt5Gui Qt5Help Qt5Location Qt5Multimedia
 WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5NetworkAuth Qt5Nfc
 WANTLIB += Qt5OpenGL Qt5Positioning Qt5PositioningQuick Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5RemoteObjects Qt5Sensors
-WANTLIB += Qt5SerialPort Qt5Sql Qt5Svg Qt5Test Qt5WebChannel Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5WebSockets Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml Qt5XmlPatterns dbus-1 glib-2.0 intl m pulse
-WANTLIB += pulse-mainloop-glib ${MODPY_WANTLIB}
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5RemoteObjects
+WANTLIB += Qt5Sensors Qt5SerialPort Qt5Sql Qt5Svg Qt5Test Qt5WebChannel
+WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5WebSockets Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml Qt5XmlPatterns dbus-1 m ${MODPY_WANTLIB}
 
 FLAVORS =	python3
 FLAVOR ?=
@@ -63,7 +62,7 @@ RUN_DEPENDS += devel/py-enum34
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=${MODPY_BIN} configure.py
 CONFIGURE_ARGS=	--verbose \
-		--qmake="${LOCALBASE}/bin/qmake-qt5" \
+		--qmake="${MODQT5_QMAKE}" \
 		--sip="${LOCALBASE}/bin/sip${MODPY_BIN_SUFFIX}" \
 		--bindir="${PREFIX}/bin" \
 		--destdir="${MODPY_SITEPKG}" \
