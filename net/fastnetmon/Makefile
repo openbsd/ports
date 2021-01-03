@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/25 13:54:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/01/03 12:00:12 jasper Exp $
 
 COMMENT =		DDoS detector with multiple packet capture engines
 
 GH_ACCOUNT =		pavel-odintsov
 GH_PROJECT =		fastnetmon
 GH_TAGNAME =		v1.1.7
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://fastnetmon.com/guides/
 
 CATEGORIES =		net security
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
