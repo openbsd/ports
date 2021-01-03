@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/12 15:05:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/03 11:57:16 jasper Exp $
 
 COMMENT =		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT =		libhandy
-GNOME_VERSION =		1.0.2
+GNOME_VERSION =		1.0.3
 CATEGORIES =		x11
 
 API_V =			1
