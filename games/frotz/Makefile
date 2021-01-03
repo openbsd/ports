@@ -1,28 +1,38 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/01/03 16:12:02 bcallah Exp $
 
-COMMENT=		curses-based interpreter for Infocom-compatible games
+V =			2.52
+COMMENT=		interpreter for Infocom-compatible games
 
-DISTNAME=		frotz-2.44
-REVISION=		0
+DISTNAME=		frotz-${V}
 CATEGORIES=     	games
 
-HOMEPAGE=		http://frotz.sourceforge.net/
+HOMEPAGE=		https://davidgriffith.gitlab.io/frotz/
+MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c curses
+WANTLIB += SDL2 SDL2_mixer ao c curses freetype jpeg m modplug
+WANTLIB += png pthread samplerate sndfile vorbisfile z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=frotz/}
+MASTER_SITES=		https://gitlab.com/DavidGriffith/frotz/-/archive/${V}/
+
+LIB_DEPENDS=		audio/libao \
+			audio/libmodplug \
+			audio/libsamplerate \
+			devel/sdl2-mixer \
+			graphics/jpeg \
+			graphics/png
 
 USE_GMAKE=		Yes
 MAKE_FLAGS=		CC="${CC}" OPTS="${CFLAGS}" CONFIG_DIR="${SYSCONFDIR}"
 FAKE_FLAGS=		PREFIX=${WRKINST}${TRUEPREFIX}
 
-ALL_TARGET=		frotz dfrotz
-INSTALL_TARGET=		install install_dumb
+INSTALL_TARGET=		install install_dumb install_sdl
 
 CFLAGS +=		-DUSE_UNISTD_H -DCOLOR_SUPPORT -DEMACS_EDITING
+
+FAKE_FLAGS =		DESTDIR= MAN_PREFIX="${DESTDIR}${PREFIX}"
 
 NO_TEST=		Yes
 

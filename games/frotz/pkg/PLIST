@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/10/18 19:19:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/03 16:12:02 bcallah Exp $
 @bin bin/dfrotz
 @bin bin/frotz
+@bin bin/sfrotz
 @man man/man6/dfrotz.6
 @man man/man6/frotz.6
+@man man/man6/sfrotz.6
