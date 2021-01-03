@@ -72,6 +72,7 @@ lib/qt5/qsci/api/python/Python-3.5.api
 lib/qt5/qsci/api/python/Python-3.6.api
 lib/qt5/qsci/api/python/Python-3.7.api
 lib/qt5/qsci/api/python/Python-3.8.api
+lib/qt5/qsci/api/python/Python-3.9.api
 lib/qt5/translations/
 lib/qt5/translations/qscintilla_cs.qm
 lib/qt5/translations/qscintilla_de.qm
