@@ -1,0 +1,10 @@
+FlatBuffers is an efficient cross platform serialization library for
+C++, C#, C, Go, Java, Kotlin, JavaScript, Lobster, Lua, TypeScript,
+PHP, Python, Rust and Swift. It was originally created at Google for
+game development and other performance-critical applications.
+
+What sets FlatBuffers apart is that it represents hierarchical data in
+a flat binary buffer in such a way that it can still be accessed
+directly without parsing/unpacking, while also still supporting data
+structure evolution (forwards/backwards compatibility).
+
