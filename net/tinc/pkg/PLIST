@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/09 20:32:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/03 22:53:18 kn Exp $
 @newgroup _tinc:759
 @newuser _tinc:759:_tinc:daemon:tinc user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/tincd
 @info info/tinc.info
 @man man/man5/tinc.conf.5
+@comment @man man/man8/tinc-gui.8
+@man man/man8/tinc.8
 @man man/man8/tincd.8
+@bin sbin/tinc
 @bin sbin/tincd
 share/examples/tinc/
 share/examples/tinc/hosts/
