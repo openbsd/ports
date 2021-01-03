@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/01 12:28:25 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/03 23:40:40 bluhm Exp $
 
-COMMENT =		intrusion detection and prevention engine
+COMMENT =	intrusion detection and prevention engine
 
-V =			3.0.4
-DISTNAME =		modsecurity-v$V
-PKGNAME  =		libmodsecurity-$V
+VERSION =	3.0.4
+REVISION =	0
+DISTNAME =	modsecurity-v${VERSION}
+PKGNAME  =	libmodsecurity-${VERSION}
 
-SHARED_LIBS +=		modsecurity	0.0	# 0.0
+SHARED_LIBS =	modsecurity	0.0	# 0.0
 
-CATEGORIES =		security
+CATEGORIES =	security
 
-HOMEPAGE =		https://www.modsecurity.org
-
-WANTLIB +=		${COMPILER_LIBCXX} c crypto curl iconv lzma m ssl z
-WANTLIB +=		maxminddb nghttp2 pcre xml2 yajl
-
-MASTER_SITES =		https://github.com/SpiderLabs/ModSecurity/releases/download/v$V/
+HOMEPAGE =	https://www.modsecurity.org
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
+
+WANTLIB =		${COMPILER_LIBCXX} c crypto curl iconv lzma m ssl z \
+			maxminddb nghttp2 pcre xml2 yajl
+
+MASTER_SITES =		https://github.com/SpiderLabs/ModSecurity/releases/download/v${VERSION}/
 
 COMPILER =		base-clang ports-gcc
 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-examples_multiprocess_c_Makefile_in,v 1.1 2021/01/03 23:40:40 bluhm Exp $
+
+Index: examples/multiprocess_c/Makefile.in
+--- examples/multiprocess_c/Makefile.in.orig
++++ examples/multiprocess_c/Makefile.in
+@@ -435,7 +435,6 @@ multi_LDFLAGS = \
+ 	-lmodsecurity \
+ 	-lpthread \
+ 	-lm \
+-	-lstdc++ \
+ 	$(LUA_LDFLAGS) \
+ 	$(SSDEEP_LDFLAGS) \
+ 	$(MAXMIND_LDFLAGS) \
