@@ -1,0 +1,9 @@
+Inform 6 is an object-oriented language for writing interactive fiction,
+also known as "text adventures" or "adventure games".
+
+As an interactive fiction developer, you create Inform 6 source code
+defining the story. Then compile from source code to a "story file".
+The resulting story files are highly portable, with interpreters
+available for many different platforms.
+
+This package contains the Inform 6 standard library.
