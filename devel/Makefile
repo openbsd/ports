@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2048 2021/01/02 21:55:04 jca Exp $
+# $OpenBSD: Makefile,v 1.2049 2021/01/03 10:17:13 jca Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -141,6 +141,7 @@
      SUBDIR += fasm
      SUBDIR += ffcall
      SUBDIR += flake8
+     SUBDIR += flatbuffers
      SUBDIR += flatzebra
      SUBDIR += flawfinder
      SUBDIR += fmt
