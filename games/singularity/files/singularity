@@ -1,5 +1,0 @@
-#!/bin/sh
-#
-
-cd ${TRUEPREFIX}/share/singularity && \
-	exec ${MODPY_BIN} singularity.py "$@"
