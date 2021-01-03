@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2020/10/28 22:46:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2021/01/03 17:14:19 bcallah Exp $
 
-V =		1.5.1
+V =		1.6.0
 COMMENT =	open source re-implementation of Caesar III game engine
 DISTNAME =	julius-${V}
 EXTRACT_SUFX =	-source.tar.gz
