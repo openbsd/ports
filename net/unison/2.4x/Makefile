@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/05 05:35:33 bket Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/03 19:59:15 bket Exp $
 
 VER=		2.48.15
 REV=		v4
-REVISION=	4
+REVISION=	5
 GH_TAGNAME=	v${VER}${REV}
 PKGNAME=	unison-${VER}${REV:S/^v/pl/}
 
