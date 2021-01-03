@@ -1,15 +1,14 @@
-$OpenBSD: patch-src_gui_CMakeLists_txt,v 1.1.1.1 2020/01/31 23:32:54 abieber Exp $
-
-https://github.com/debauchee/barrier/pull/468
+$OpenBSD: patch-src_gui_CMakeLists_txt,v 1.2 2021/01/03 08:35:56 rsadowski Exp $
 
 Index: src/gui/CMakeLists.txt
 --- src/gui/CMakeLists.txt.orig
 +++ src/gui/CMakeLists.txt
-@@ -48,6 +48,6 @@ target_link_libraries (barrier common)
- 
- if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-     install (TARGETS barrier DESTINATION ${BARRIER_BUNDLE_BINARY_DIR})
--elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
-     install (TARGETS barrier DESTINATION bin)
+@@ -41,7 +41,7 @@ else()
  endif()
+ 
+ if (HAVE_X11)
+-    target_link_libraries (barrier X11)
++    target_link_libraries (barrier X11 pthread)
+ endif()
+ 
+ target_link_libraries (barrier common)
