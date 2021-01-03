@@ -1,13 +1,11 @@
-$OpenBSD: patch-src_Makefile,v 1.4 2020/06/13 10:12:53 jasper Exp $
+$OpenBSD: patch-src_Makefile,v 1.5 2021/01/03 12:43:49 jasper Exp $
 
-Hunk#1: -Bsymbolic-functions is not supported by ld.bfd
-Hunk#2: Fix error: Cannot use '/usr/local/bin/python3.6', Python 2.4 or
-        later is required.
+-Bsymbolic-functions is not supported by ld.bfd
 
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -153,7 +153,11 @@ else
+@@ -218,7 +218,11 @@ else
  EXT = so
  VERSION_EXT = $(EXT).$(API_MAJOR)
  AR_EXT = a
@@ -19,12 +17,3 @@ Index: src/Makefile
  UNICORN_CFLAGS += -fvisibility=hidden
  endif
  
-@@ -172,7 +176,7 @@ LIBRARY_SYMLINK = lib$(LIBNAME).$(EXT)
- endif
- endif
- 
--UNICORN_QEMU_FLAGS += --python=$(shell which /usr/bin/python || which python || which python2 || which python3)
-+UNICORN_QEMU_FLAGS += --python=$(shell which python3)
- 
- ifeq ($(UNICORN_STATIC),yes)
- ifneq ($(filter MINGW%,$(UNAME_S)),)

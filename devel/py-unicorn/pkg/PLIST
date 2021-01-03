@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/13 10:12:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/03 12:43:49 jasper Exp $
 @conflict py-unicorn-*
 @pkgpath devel/py-unicorn
 lib/python${MODPY_VERSION}/site-packages/unicorn/
@@ -6,8 +6,8 @@ lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/unicorn/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
