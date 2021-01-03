@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2020/04/05 09:45:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/03 19:35:24 sthen Exp $
 
 COMMENT =	lightweight Tox client
 
-V =		0.17.0
+V =		0.18.0
 
 DISTNAME =	uTox-${V}-full
 PKGNAME =	utox-${V}
 MASTER_SITES =	https://github.com/uTox/uTox/releases/download/v${V}/
-REVISION =	2
+FIX_EXTRACT_PERMISSIONS = Yes
 
 CATEGORIES =	net
 
@@ -34,7 +34,9 @@ NO_TEST =	yes
 
 WRKDIST =	${WRKDIR}/uTox
 
-CONFIGURE_ARGS =-DLLD_EMUL:String=${LLD_EMUL}
+CONFIGURE_ARGS = -DLLD_EMUL:String=${LLD_EMUL} \
+		-DENABLE_FILTERAUDIO=OFF \
+		-DENABLE_TESTS=OFF
 
 post-extract:
 	perl -i -pe 's/\r$$//' ${WRKSRC}/src/av/audio.h
