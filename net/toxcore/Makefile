@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/24 23:05:10 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/03 19:35:02 sthen Exp $
 
 COMMENT =		Tox client library
 
-V =			0.2.3
-REVISION =		3
+V =			0.2.12
 DISTNAME =		toxcore-$V
 
 GH_ACCOUNT =		TokTok
 GH_PROJECT =		c-toxcore
 GH_TAGNAME =		v$V
 
-SHARED_LIBS +=  	toxcore	0.1 # 0.1
+SHARED_LIBS +=		toxcore	1.0
+
 CATEGORIES =		net telephony
 
 HOMEPAGE =		https://tox.chat/
@@ -21,12 +21,11 @@ PERMIT_PACKAGE =	Yes
 WANTLIB = c config m opus pthread sodium vpx
 
 MODULES =		devel/cmake
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		audio/opus \
 			devel/libconfig \
 			multimedia/libvpx \
 			security/libsodium
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>

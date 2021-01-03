@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/29 11:14:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/03 19:35:02 sthen Exp $
+@bin bin/DHT_bootstrap
 @bin bin/tox-bootstrapd
 include/tox/
 include/tox/tox.h
 include/tox/toxav.h
 include/tox/toxencryptsave.h
-lib/libtoxcore.a
+@static-lib lib/libtoxcore.a
 @lib lib/libtoxcore.so.${LIBtoxcore_VERSION}
 lib/pkgconfig/toxcore.pc
