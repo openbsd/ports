@@ -7,7 +7,7 @@ V =			2.85.1
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
-REVISION =		13
+REVISION =		14
 
 HOMEPAGE =		https://calibre-ebook.com/
 
