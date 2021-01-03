@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:11:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/03 19:36:09 sthen Exp $
 
 COMMENT =		ncurses-based Tox client
 
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
-GH_TAGNAME =		v0.8.2
-REVISION =		4
+GH_TAGNAME =		v0.10.0
 
 CATEGORIES =		net
 
@@ -26,6 +25,8 @@ MAKE_ENV +=		ENABLE_PYTHON=1 \
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 CONFIGURE_STYLE =	none
+FAKE_FLAGS =		PREFIX="${TRUEPREFIX}" \
+			MANDIR="${PREFIX}/man"
 
 USE_GMAKE =		yes
 
