@@ -2,7 +2,7 @@
 
 COMMENT =	python Qt5WebEngine bindings
 
-MODPY_EGG_VERSION =	5.15.1
+MODPY_EGG_VERSION =	5.15.2
 DISTNAME =	PyQtWebEngine-${MODPY_EGG_VERSION}
 PKGNAME =	py-qtwebengine-${MODPY_EGG_VERSION}
 
@@ -15,8 +15,9 @@ HOMEPAGE =	https://www.riverbankcomputing.com/software/pyqtwebengine/intro
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5WebChannel Qt5WebEngine
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets m
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel
+WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
+WANTLIB += m
 
 MODULES =	lang/python \
 		x11/qt5
