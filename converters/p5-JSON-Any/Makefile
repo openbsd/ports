@@ -1,26 +1,34 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/01/03 22:30:15 bluhm Exp $
 
 COMMENT =	wrapper class for the various JSON classes
 
-MODULES =	cpan
-PKG_ARCH =	*
 DISTNAME =	JSON-Any-1.39
-CATEGORIES =	converters
+REVISION =	1
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	0
+
+CATEGORIES =	converters
 
 # Perl
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE = 	Yes
 
-RUN_DEPENDS =	converters/p5-JSON>=2.21 \
-		converters/p5-JSON-DWIW \
-		converters/p5-JSON-XS>=2.33v1 \
-		devel/p5-YAML-Syck
-BUILD_DEPENDS =	${RUN_DEPENDS}
+MODULES =		cpan
 
-TEST_DEPENDS =	devel/p5-Test-Fatal \
-		devel/p5-Test-Requires \
-		devel/p5-Test-Warnings \
-		devel/p5-Test-Without-Module
+TEST_DEPENDS =		devel/p5-Test-Fatal \
+			devel/p5-Test-Requires \
+			devel/p5-Test-Warnings>=0.009 \
+			devel/p5-Test-Without-Module
+
+# Without JSON packages the module runs with JSON::PP from Perl base.
+# But for testing check that it passes with any JSON package installed.
+# Note that JSON and JSON::XS test are skipped.  Upstream will never
+# fix this as JSON::Any has been deprecated by its author.
+# https://rt.cpan.org/Public/Bug/Display.html?id=127753
+TEST_DEPENDS +=		converters/p5-Cpanel-JSON-XS \
+			converters/p5-JSON \
+			converters/p5-JSON-DWIW \
+			converters/p5-JSON-XS \
+			devel/p5-YAML-Syck
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/20 11:05:43 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/03 22:30:15 bluhm Exp $
+${P5SITE}/JSON/
 ${P5SITE}/JSON/Any.pm
 @man man/man3p/JSON::Any.3p
