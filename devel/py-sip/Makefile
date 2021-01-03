@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	-b ${PREFIX}/bin \
 		-d ${MODPY_SITEPKG} \
 		-e ${MODPY_INCDIR} \
 		-v ${PREFIX}/share/sip \
+		--sip-module PyQt5.sip \
 		INCDIR=${LOCALBASE}/include \
 		LIBDIR=${LOCALBASE}/lib \
 		CC=${CC} CXX=${CXX} \
