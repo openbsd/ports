@@ -3,7 +3,7 @@
 COMMENT =	Qt port of the Scintilla source code editor
 
 # XXX update py-qscintilla alongside this port (same distfile).
-VERSION =	2.11.5
+VERSION =	2.11.6
 DISTNAME =	QScintilla-${VERSION}
 PKGNAME =	${DISTNAME:L}
 
