@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/11 17:52:19 kirby Exp $
+# $OpenBSD: Makefile,v 1.14 2021/01/04 17:00:36 kirby Exp $
 
 COMMENT=		rogue-like zombie survival game
-DISTNAME=		cataclysm-dda-0.E.2
 CATEGORIES=		games
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
-GH_TAGNAME=		0.E-2
+GH_TAGNAME=		0.E-3
+DISTNAME=		cataclysm-dda-0.E.3
 EPOCH=			0
 
 HOMEPAGE=		https://cataclysmdda.org
@@ -18,13 +18,12 @@ PERMIT_PACKAGE=	Yes
 FLAVORS=		no_x11
 FLAVOR?=
 
-WANTLIB=		${COMPILER_LIBCXX} c execinfo iconv intl m pthread
+WANTLIB=		${COMPILER_LIBCXX} c iconv intl m pthread
 
+# C++14
 COMPILER=		base-clang ports-gcc
 
 MODULES=		textproc/intltool
-
-BUILD_DEPENDS=		devel/libexecinfo
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libexecinfo
@@ -32,7 +31,7 @@ LIB_DEPENDS=		devel/gettext,-runtime \
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 MAKE_FLAGS=		ASTYLE=0 BSD=1 RELEASE=1 USE_XDG_DIR=1 \
-			LINTJSON=0 LOCALIZE=1 LANGUAGES=all
+			LINTJSON=0 LOCALIZE=1 LANGUAGES=all BACKTRACE=0
 
 .if ${FLAVOR:Mno_x11}
 WANTLIB+=		curses
