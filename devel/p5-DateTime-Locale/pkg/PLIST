@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/07/24 01:23:27 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/04 00:05:10 afresh1 Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/Locale/
 ${P5SITE}/DateTime/Locale.pm
@@ -106,8 +106,6 @@ ${P5SITE}/DateTime/Locale/ckb_IQ.pod
 ${P5SITE}/DateTime/Locale/ckb_IR.pod
 ${P5SITE}/DateTime/Locale/cs.pod
 ${P5SITE}/DateTime/Locale/cs_CZ.pod
-${P5SITE}/DateTime/Locale/cu.pod
-${P5SITE}/DateTime/Locale/cu_RU.pod
 ${P5SITE}/DateTime/Locale/cy.pod
 ${P5SITE}/DateTime/Locale/cy_GB.pod
 ${P5SITE}/DateTime/Locale/da.pod
@@ -125,6 +123,8 @@ ${P5SITE}/DateTime/Locale/de_LI.pod
 ${P5SITE}/DateTime/Locale/de_LU.pod
 ${P5SITE}/DateTime/Locale/dje.pod
 ${P5SITE}/DateTime/Locale/dje_NE.pod
+${P5SITE}/DateTime/Locale/doi.pod
+${P5SITE}/DateTime/Locale/doi_IN.pod
 ${P5SITE}/DateTime/Locale/dsb.pod
 ${P5SITE}/DateTime/Locale/dsb_DE.pod
 ${P5SITE}/DateTime/Locale/dua.pod
@@ -595,8 +595,6 @@ ${P5SITE}/DateTime/Locale/pcm.pod
 ${P5SITE}/DateTime/Locale/pcm_NG.pod
 ${P5SITE}/DateTime/Locale/pl.pod
 ${P5SITE}/DateTime/Locale/pl_PL.pod
-${P5SITE}/DateTime/Locale/prg.pod
-${P5SITE}/DateTime/Locale/prg_001.pod
 ${P5SITE}/DateTime/Locale/ps.pod
 ${P5SITE}/DateTime/Locale/ps_AF.pod
 ${P5SITE}/DateTime/Locale/ps_PK.pod
@@ -638,6 +636,8 @@ ${P5SITE}/DateTime/Locale/rw.pod
 ${P5SITE}/DateTime/Locale/rw_RW.pod
 ${P5SITE}/DateTime/Locale/rwk.pod
 ${P5SITE}/DateTime/Locale/rwk_TZ.pod
+${P5SITE}/DateTime/Locale/sa.pod
+${P5SITE}/DateTime/Locale/sa_IN.pod
 ${P5SITE}/DateTime/Locale/sah.pod
 ${P5SITE}/DateTime/Locale/sah_RU.pod
 ${P5SITE}/DateTime/Locale/saq.pod
@@ -760,8 +760,6 @@ ${P5SITE}/DateTime/Locale/vai_Vaii.pod
 ${P5SITE}/DateTime/Locale/vai_Vaii_LR.pod
 ${P5SITE}/DateTime/Locale/vi.pod
 ${P5SITE}/DateTime/Locale/vi_VN.pod
-${P5SITE}/DateTime/Locale/vo.pod
-${P5SITE}/DateTime/Locale/vo_001.pod
 ${P5SITE}/DateTime/Locale/vun.pod
 ${P5SITE}/DateTime/Locale/vun_TZ.pod
 ${P5SITE}/DateTime/Locale/wae.pod
@@ -896,8 +894,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/ckb-IR.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ckb.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/cs-CZ.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/cs.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/cu-RU.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/cu.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/cy-GB.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/cy.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/da-DK.pl
@@ -915,6 +911,8 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/de-LU.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/de.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/dje-NE.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/dje.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/doi-IN.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/doi.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/dsb-DE.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/dsb.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/dua-CM.pl
@@ -1087,8 +1085,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Adlm-NG.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Adlm-SL.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Adlm-SN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Adlm.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/ff-CM.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/ff-GN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Latn-BF.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Latn-CM.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Latn-GH.pl
@@ -1102,8 +1098,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Latn-NG.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Latn-SL.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Latn-SN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff-Latn.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/ff-MR.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/ff-SN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ff.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/fi-FI.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/fi.pl
@@ -1252,7 +1246,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/kok-IN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kok.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ks-Arab-IN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ks-Arab.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/ks-IN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ks.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ksb-TZ.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ksb.pl
@@ -1383,8 +1376,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/pcm-NG.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/pcm.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/pl-PL.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/pl.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/prg-001.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/prg.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ps-AF.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ps-PK.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ps.pl
@@ -1425,6 +1416,8 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/rw-RW.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/rw.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/rwk-TZ.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/rwk.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/sa-IN.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/sa.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/sah-RU.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/sah.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/saq-KE.pl
@@ -1438,7 +1431,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/sd-Arab-PK.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/sd-Arab.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/sd-Deva-IN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/sd-Deva.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/sd-PK.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/sd.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/se-FI.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/se-NO.pl
@@ -1548,8 +1540,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/vai-Vaii.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/vai.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/vi-VN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/vi.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/vo-001.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/vo.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/vun-TZ.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/vun.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/wae-CH.pl
@@ -1567,7 +1557,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/yi.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yo-BJ.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yo-NG.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yo.pl
-${P5SITE}/auto/share/dist/DateTime-Locale/yue-HK.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yue-Hans-CN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yue-Hans.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yue-Hant-HK.pl
@@ -1689,8 +1678,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/zu.pl
 @man man/man3p/DateTime::Locale::ckb_IR.3p
 @man man/man3p/DateTime::Locale::cs.3p
 @man man/man3p/DateTime::Locale::cs_CZ.3p
-@man man/man3p/DateTime::Locale::cu.3p
-@man man/man3p/DateTime::Locale::cu_RU.3p
 @man man/man3p/DateTime::Locale::cy.3p
 @man man/man3p/DateTime::Locale::cy_GB.3p
 @man man/man3p/DateTime::Locale::da.3p
@@ -1708,6 +1695,8 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/zu.pl
 @man man/man3p/DateTime::Locale::de_LU.3p
 @man man/man3p/DateTime::Locale::dje.3p
 @man man/man3p/DateTime::Locale::dje_NE.3p
+@man man/man3p/DateTime::Locale::doi.3p
+@man man/man3p/DateTime::Locale::doi_IN.3p
 @man man/man3p/DateTime::Locale::dsb.3p
 @man man/man3p/DateTime::Locale::dsb_DE.3p
 @man man/man3p/DateTime::Locale::dua.3p
@@ -2178,8 +2167,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/zu.pl
 @man man/man3p/DateTime::Locale::pcm_NG.3p
 @man man/man3p/DateTime::Locale::pl.3p
 @man man/man3p/DateTime::Locale::pl_PL.3p
-@man man/man3p/DateTime::Locale::prg.3p
-@man man/man3p/DateTime::Locale::prg_001.3p
 @man man/man3p/DateTime::Locale::ps.3p
 @man man/man3p/DateTime::Locale::ps_AF.3p
 @man man/man3p/DateTime::Locale::ps_PK.3p
@@ -2221,6 +2208,8 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/zu.pl
 @man man/man3p/DateTime::Locale::rw_RW.3p
 @man man/man3p/DateTime::Locale::rwk.3p
 @man man/man3p/DateTime::Locale::rwk_TZ.3p
+@man man/man3p/DateTime::Locale::sa.3p
+@man man/man3p/DateTime::Locale::sa_IN.3p
 @man man/man3p/DateTime::Locale::sah.3p
 @man man/man3p/DateTime::Locale::sah_RU.3p
 @man man/man3p/DateTime::Locale::saq.3p
@@ -2343,8 +2332,6 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/zu.pl
 @man man/man3p/DateTime::Locale::vai_Vaii_LR.3p
 @man man/man3p/DateTime::Locale::vi.3p
 @man man/man3p/DateTime::Locale::vi_VN.3p
-@man man/man3p/DateTime::Locale::vo.3p
-@man man/man3p/DateTime::Locale::vo_001.3p
 @man man/man3p/DateTime::Locale::vun.3p
 @man man/man3p/DateTime::Locale::vun_TZ.3p
 @man man/man3p/DateTime::Locale::wae.3p
