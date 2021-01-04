@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2020/12/30 20:36:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2021/01/04 13:58:47 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_EGG_VERSION=1.5.2
+REVISION=	0
 PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
 PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
@@ -26,7 +27,7 @@ COMMON_DEPS=	devel/py-babel${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR}
 
 RUN_DEPENDS=	${COMMON_DEPS} \
-		devel/subversion${MODPY_FLAVOR},-python \
+		devel/subversion,-python \
 		textproc/py-docutils${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR}
 
