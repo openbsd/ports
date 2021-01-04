@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2020/10/30 19:38:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/04 15:02:37 jasper Exp $
 
 COMMENT =	Pwntools CTF framework and exploit development library
 
 MODPY_EGG_VERSION =	4.2.2
 DISTNAME =	pwntools-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -25,7 +26,7 @@ RUN_DEPENDS =		devel/capstone/python${MODPY_FLAVOR} \
 			devel/py-intervaltree${MODPY_FLAVOR} \
 			devel/py-serial${MODPY_FLAVOR} \
 			devel/py-sortedcontainers${MODPY_FLAVOR} \
-			devel/py-unicorn${MODPY_FLAVOR}<=1.0.2rc3 \
+			devel/py-unicorn${MODPY_FLAVOR}<=1.0.2 \
 			net/py-socks${MODPY_FLAVOR} \
 			security/ROPgadget \
 			security/py-paramiko${MODPY_FLAVOR} \
