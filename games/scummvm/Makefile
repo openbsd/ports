@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2021/01/04 03:10:15 jsg Exp $
+# $OpenBSD: Makefile,v 1.88 2021/01/04 17:43:02 cwen Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		2.2.0
@@ -40,6 +40,11 @@ LIB_DEPENDS=	audio/fluidsynth \
 CXXFLAGS+=	-mxgot
 .endif
 
+# Fix relocation overflows
+.if ${MACHINE_ARCH} == "powerpc"
+LDFLAGS+=	-Wl,--relax
+.endif
+
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--disable-alsa \
 		--disable-cloud \
@@ -55,7 +60,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--enable-sndio \
 		--mandir="${LOCALBASE}/man"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
