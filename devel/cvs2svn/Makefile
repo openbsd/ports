@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2020/12/31 14:32:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/01/04 13:56:09 sthen Exp $
 
 # https://github.com/mhagger/cvs2svn/issues/9
-#BROKEN=	needs porting to Python 3
+BROKEN=	needs porting to Python 3, subversion with swig 4.x is 3-only
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
