@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.71 2020/11/17 03:19:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.72 2021/01/04 13:57:24 sthen Exp $
 
 COMMENT =	simplified wrapper and interface generator
 
 SUBST_VARS =	VERSION
-VERSION =	3.0.12
+VERSION =	4.0.2
 
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
 HOMEPAGE =	http://www.swig.org/
 
@@ -23,8 +22,12 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=swig/}
 MODULES =	lang/python \
 		lang/ruby \
 		lang/tcl
+
 MODRUBY_RUNDEP = No
+
 MODPY_RUNDEP =	No
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 		lang/guile
 LIB_DEPENDS =	devel/pcre
@@ -37,7 +40,7 @@ CONFIGURE_ARGS += --with-tclincl=${MODTCL_INCDIR} \
 		 --with-python=${MODPY_BIN} \
 		 --with-ruby=${RUBY} \
 		 --without-mzscheme \
-		 --without-php4 \
+		 --without-php \
 		 --without-ocaml
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/Tools/config
 
