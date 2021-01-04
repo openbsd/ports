@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/07/24 01:22:36 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/01/04 00:07:19 afresh1 Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/TimeZone/
 ${P5SITE}/DateTime/TimeZone.pm
@@ -261,7 +261,6 @@ ${P5SITE}/DateTime/TimeZone/Australia/
 ${P5SITE}/DateTime/TimeZone/Australia/Adelaide.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Brisbane.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Broken_Hill.pm
-${P5SITE}/DateTime/TimeZone/Australia/Currie.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Darwin.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Eucla.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Hobart.pm
