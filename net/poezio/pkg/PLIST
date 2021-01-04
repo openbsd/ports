@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/07/10 03:33:06 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/04 14:06:35 sthen Exp $
 bin/poezio
 bin/poezio_logs
 lib/python${MODPY_VERSION}/site-packages/poezio/
@@ -92,8 +92,8 @@ lib/python${MODPY_VERSION}/site-packages/poezio/plugin_e2ee.py
 lib/python${MODPY_VERSION}/site-packages/poezio/plugin_manager.py
 lib/python${MODPY_VERSION}/site-packages/poezio/poezio.py
 lib/python${MODPY_VERSION}/site-packages/poezio/poezio_shlex.py
+@so lib/python${MODPY_VERSION}/site-packages/poezio/poopt.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/poezio/poopt.py
-@so lib/python${MODPY_VERSION}/site-packages/poezio/poopt.so
 lib/python${MODPY_VERSION}/site-packages/poezio/roster.py
 lib/python${MODPY_VERSION}/site-packages/poezio/roster_sorting.py
 lib/python${MODPY_VERSION}/site-packages/poezio/size_manager.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/04/24 16:34:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/04 14:06:30 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/gevent/
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -16,18 +16,18 @@ lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/top_level.txt
+@so lib/python${MODPY_VERSION}/site-packages/gevent/__abstract_linkable.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/__abstract_linkable.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/__abstract_linkable.so
+@so lib/python${MODPY_VERSION}/site-packages/gevent/__greenlet_primitives.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/__greenlet_primitives.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/__greenlet_primitives.so
+@so lib/python${MODPY_VERSION}/site-packages/gevent/__hub_local.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/__hub_local.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/__hub_local.so
+@so lib/python${MODPY_VERSION}/site-packages/gevent/__hub_primitives.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/__hub_primitives.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/__hub_primitives.so
+@so lib/python${MODPY_VERSION}/site-packages/gevent/__ident.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/__ident.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/__ident.so
+@so lib/python${MODPY_VERSION}/site-packages/gevent/__imap.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/__imap.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/__imap.so
 lib/python${MODPY_VERSION}/site-packages/gevent/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -89,19 +89,19 @@ lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}time.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}timeout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}win32util.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/gevent/__semaphore.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/__semaphore.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/__semaphore.so
+@so lib/python${MODPY_VERSION}/site-packages/gevent/__tracer.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/__tracer.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/__tracer.so
+@so lib/python${MODPY_VERSION}/site-packages/gevent/__waiter.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/__waiter.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/__waiter.so
 lib/python${MODPY_VERSION}/site-packages/gevent/_abstract_linkable.c
 lib/python${MODPY_VERSION}/site-packages/gevent/_abstract_linkable.html
 lib/python${MODPY_VERSION}/site-packages/gevent/_abstract_linkable.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_compat.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_config.py
+@so lib/python${MODPY_VERSION}/site-packages/gevent/_event.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/_event.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/_event.so
 lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/
 lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/${MODPY_PYCACHE}/
@@ -114,8 +114,8 @@ lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/loop.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/watcher.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_fileobjectcommon.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_fileobjectposix.py
+@so lib/python${MODPY_VERSION}/site-packages/gevent/_greenlet.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/_greenlet.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/_greenlet.so
 lib/python${MODPY_VERSION}/site-packages/gevent/_greenlet_primitives.c
 lib/python${MODPY_VERSION}/site-packages/gevent/_greenlet_primitives.html
 lib/python${MODPY_VERSION}/site-packages/gevent/_greenlet_primitives.py
@@ -132,12 +132,12 @@ lib/python${MODPY_VERSION}/site-packages/gevent/_imap.c
 lib/python${MODPY_VERSION}/site-packages/gevent/_imap.html
 lib/python${MODPY_VERSION}/site-packages/gevent/_imap.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_interfaces.py
+@so lib/python${MODPY_VERSION}/site-packages/gevent/_local.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/_local.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/_local.so
 lib/python${MODPY_VERSION}/site-packages/gevent/_monitor.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_patcher.py
+@so lib/python${MODPY_VERSION}/site-packages/gevent/_queue.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/_queue.pxd
-lib/python${MODPY_VERSION}/site-packages/gevent/_queue.so
 lib/python${MODPY_VERSION}/site-packages/gevent/_semaphore.c
 lib/python${MODPY_VERSION}/site-packages/gevent/_semaphore.html
 lib/python${MODPY_VERSION}/site-packages/gevent/_semaphore.py
@@ -179,17 +179,17 @@ lib/python${MODPY_VERSION}/site-packages/gevent/libev/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/${MODPY_PYCACHE}_corecffi_build.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/${MODPY_PYCACHE}corecffi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/${MODPY_PYCACHE}watcher.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gevent/libev/_corecffi${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/gevent/libev/_corecffi${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/_corecffi_build.py
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/_corecffi_cdef.c
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/_corecffi_source.c
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/callbacks.c
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/callbacks.h
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/corecext.c
+@so lib/python${MODPY_VERSION}/site-packages/gevent/libev/corecext.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/corecext.h
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/corecext.html
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/corecext.pyx
-lib/python${MODPY_VERSION}/site-packages/gevent/libev/corecext.so
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/corecffi.py
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/libev.h
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/libev.pxd
@@ -203,7 +203,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/libuv/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/${MODPY_PYCACHE}_corecffi_build.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/${MODPY_PYCACHE}loop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/${MODPY_PYCACHE}watcher.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gevent/libuv/_corecffi${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/gevent/libuv/_corecffi${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/_corecffi_build.py
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/_corecffi_cdef.c
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/_corecffi_source.c
@@ -231,9 +231,9 @@ lib/python${MODPY_VERSION}/site-packages/gevent/resolver/${MODPY_PYCACHE}thread.
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/ares.py
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/blocking.py
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/cares.c
+@so lib/python${MODPY_VERSION}/site-packages/gevent/resolver/cares.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/cares.html
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/cares.pyx
-lib/python${MODPY_VERSION}/site-packages/gevent/resolver/cares.so
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/cares_ntop.h
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/cares_pton.h
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/dnshelper.c

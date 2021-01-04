@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/10/10 18:45:00 daniel Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/04 14:06:33 sthen Exp $
 
 COMMENT=		Python SANE module
 
@@ -7,7 +7,7 @@ DISTNAME=		Sane-${MODPY_EGG_VERSION}
 DISTFILES=		${DISTNAME}{v${MODPY_EGG_VERSION}}.tar.gz
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		graphics
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://python-pillow.github.io/
 

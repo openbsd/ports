@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/10/08 12:03:49 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/01/04 14:06:32 sthen Exp $
 @conflict py-matplotlib-*
 @pkgpath graphics/py-matplotlib
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pylab.${MODPY_PYC_MAGIC_TAG}pyc
@@ -84,15 +84,15 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/_cm.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_cm_listed.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_color_data.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_constrained_layout.py
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_contour.so
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_image.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_contour.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_image.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_layoutbox.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_mathtext_data.py
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_path.so
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_png.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_path.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_png.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_pylab_helpers.py
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_qhull.so
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_tri.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_qhull.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/_tri.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_version.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/afm.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/animation.py
@@ -147,10 +147,10 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}qt_
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}tkagg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}windowing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}wx_compat.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_backend_agg.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_backend_agg.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_backend_tk.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_gtk3_compat.py
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_tkagg.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_tkagg.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_cairo.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_gtk3.py
@@ -258,7 +258,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/dviread.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/figure.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/font_manager.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/fontconfig_pattern.py
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/ft2font.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/ft2font.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/gridspec.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/hatch.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/image.py
@@ -3212,7 +3212,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/tripcolor.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/triplot.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/trirefine.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/tritools.py
-@so lib/python${MODPY_VERSION}/site-packages/matplotlib/ttconv.so
+@so lib/python${MODPY_VERSION}/site-packages/matplotlib/ttconv.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/type1font.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/units.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/widgets.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/12/13 15:37:08 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/04 14:06:33 sthen Exp $
 @conflict py-pyx-*
 @pkgpath graphics/py-pyx
 lib/python${MODPY_VERSION}/site-packages/PyX-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -116,7 +116,7 @@ lib/python${MODPY_VERSION}/site-packages/pyx/font/${MODPY_PYCACHE}metric.${MODPY
 lib/python${MODPY_VERSION}/site-packages/pyx/font/${MODPY_PYCACHE}pfmfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/font/${MODPY_PYCACHE}t1code.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/font/${MODPY_PYCACHE}t1file.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/pyx/font/_t1code.so
+@so lib/python${MODPY_VERSION}/site-packages/pyx/font/_t1code.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyx/font/afmfile.py
 lib/python${MODPY_VERSION}/site-packages/pyx/font/font.py
 lib/python${MODPY_VERSION}/site-packages/pyx/font/metric.py

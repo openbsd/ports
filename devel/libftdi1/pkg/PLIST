@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/03 05:59:52 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:29 sthen Exp $
 @bin bin/ftdi_eeprom
 bin/libftdi1-config
 include/libftdi1/
@@ -9,13 +9,13 @@ lib/cmake/libftdi1/
 lib/cmake/libftdi1/LibFTDI1Config.cmake
 lib/cmake/libftdi1/LibFTDI1ConfigVersion.cmake
 lib/cmake/libftdi1/UseLibFTDI1.cmake
-lib/libftdi1.a
+@static-lib lib/libftdi1.a
 @lib lib/libftdi1.so.${LIBftdi1_VERSION}
-lib/libftdipp1.a
+@static-lib lib/libftdipp1.a
 @lib lib/libftdipp1.so.${LIBftdipp1_VERSION}
 lib/pkgconfig/libftdi1.pc
 lib/pkgconfig/libftdipp1.pc
-lib/python${MODPY_VERSION}/site-packages/_ftdi1.so
+@so lib/python${MODPY_VERSION}/site-packages/_ftdi1.so
 lib/python${MODPY_VERSION}/site-packages/ftdi1.py
 share/doc/libftdi1/
 share/doc/libftdi1/example.conf

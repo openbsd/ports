@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/12/10 02:20:29 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/01/04 14:06:28 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/psycopg2/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}tz.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_ipaddress.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_json.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_lru_cache.py
-@so lib/python${MODPY_VERSION}/site-packages/psycopg2/_psycopg.so
+@so lib/python${MODPY_VERSION}/site-packages/psycopg2/_psycopg.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_range.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/compat.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/errorcodes.py

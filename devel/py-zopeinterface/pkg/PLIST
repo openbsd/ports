@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/09/03 16:27:51 eric Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/04 14:06:31 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/zope/
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py$
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/zope/interface/
@@ -28,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/${MODPY_PYCACHE}verify.$
 lib/python${MODPY_VERSION}/site-packages/zope/interface/_compat.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/_flatten.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/_zope_interface_coptimizations.c
-lib/python${MODPY_VERSION}/site-packages/zope/interface/_zope_interface_coptimizations.so
+@so lib/python${MODPY_VERSION}/site-packages/zope/interface/_zope_interface_coptimizations.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/zope/interface/adapter.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/advice.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/

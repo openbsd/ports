@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/12/21 13:25:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:28 sthen Exp $
 @bin bin/recollindex
 lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}conftree.${MODPY
 lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}rclconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}rclextract.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}recoll.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/recoll/_recoll.so
+@so lib/python${MODPY_VERSION}/site-packages/recoll/_recoll.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/recoll/conftree.py
 lib/python${MODPY_VERSION}/site-packages/recoll/rclconfig.py
 lib/python${MODPY_VERSION}/site-packages/recoll/rclextract.py

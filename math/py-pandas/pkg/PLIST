@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/08/23 09:29:01 bket Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/04 14:06:34 sthen Exp $
 @conflict py-pandas-*
 @pkgpath math/py-pandas
 lib/python${MODPY_VERSION}/site-packages/pandas/
@@ -34,54 +34,54 @@ lib/python${MODPY_VERSION}/site-packages/pandas/_libs/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/_libs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/algos.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/groupby.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/hashing.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/hashtable.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/index.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/indexing.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/internals.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/interval.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/join.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/json.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/lib.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/missing.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/ops.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/ops_dispatch.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/parsers.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/properties.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/reduction.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/reshape.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/sparse.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/testing.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslib.so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/algos.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/groupby.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/hashing.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/hashtable.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/index.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/indexing.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/internals.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/interval.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/join.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/json.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/lib.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/missing.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/ops.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/ops_dispatch.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/parsers.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/properties.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/reduction.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/reshape.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/sparse.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/testing.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslib.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/base.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/ccalendar.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/conversion.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/dtypes.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/fields.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/nattype.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/np_datetime.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/offsets.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/parsing.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/period.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/strptime.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/timedeltas.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/timestamps.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/timezones.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/tzconversion.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/vectorized.so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/base.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/ccalendar.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/conversion.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/dtypes.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/fields.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/nattype.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/np_datetime.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/offsets.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/parsing.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/period.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/strptime.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/timedeltas.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/timestamps.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/timezones.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/tzconversion.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/vectorized.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/aggregations.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/indexers.so
-@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/writers.so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/aggregations.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/indexers.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/writers.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pandas/_testing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/_typing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/_version.py
@@ -523,7 +523,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/${MODPY_PYCACHE}sas7bdat.
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/${MODPY_PYCACHE}sas_constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/${MODPY_PYCACHE}sas_xport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/${MODPY_PYCACHE}sasreader.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/_sas.so
+@so lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/_sas.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/sas7bdat.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/sas_constants.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/sas_xport.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/10/10 18:31:55 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/01/04 14:06:33 sthen Exp $
 bin/cygdb${MODPY_BIN_SUFFIX}
 bin/cython${MODPY_BIN_SUFFIX}
 bin/cythonize${MODPY_BIN_SUFFIX}
@@ -53,11 +53,11 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/CythonScope.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/DebugFlags.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Errors.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/ExprNodes.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FlowControl.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FlowControl.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FlowControl.py
-@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FlowControl.so
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FusedNode.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FusedNode.py
-@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FusedNode.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Future.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Interpreter.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Lexicon.py
@@ -75,9 +75,9 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Parsing.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pipeline.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/PyrexTypes.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pythran.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.py
-@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Scanning.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/StringEncoding.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Symtab.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/
@@ -117,9 +117,9 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/TypeSlots.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/UtilNodes.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/UtilityCode.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Version.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Visitor.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Visitor.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Visitor.py
-@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Visitor.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}AnalysedTreeTransforms.${MODPY_PYC_MAGIC_TAG}pyc
@@ -344,17 +344,17 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/types.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/unistd.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/wait.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Actions.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Actions.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Actions.py
-@so lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Actions.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/DFA.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Errors.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Lexicons.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Machines.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Regexps.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Scanners.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Scanners.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Scanners.py
-@so lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Scanners.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Timing.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Traditional.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Transitions.py
@@ -375,8 +375,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.pyx
-@so lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Shadow.py
 lib/python${MODPY_VERSION}/site-packages/Cython/StringIOTree.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/
@@ -387,8 +387,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/${MODPY_PYCACHE}_looper.
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/${MODPY_PYCACHE}_tempita.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/${MODPY_PYCACHE}compat3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/_looper.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/_tempita.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/_tempita.py
-@so lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/_tempita.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/compat3.py
 lib/python${MODPY_VERSION}/site-packages/Cython/TestUtils.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/

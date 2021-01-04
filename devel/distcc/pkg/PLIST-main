@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2020/06/12 14:19:11 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/01/04 14:06:28 sthen Exp $
 @bin bin/distcc
 @bin bin/distccmon-text
 @bin bin/lsdistcc
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/include_server/c_extensions_test.py
 lib/python${MODPY_VERSION}/site-packages/include_server/cache_basics.py
 lib/python${MODPY_VERSION}/site-packages/include_server/compiler_defaults.py
 lib/python${MODPY_VERSION}/site-packages/include_server/compress_files.py
-@so lib/python${MODPY_VERSION}/site-packages/include_server/distcc_pump_c_extensions.so
+@so lib/python${MODPY_VERSION}/site-packages/include_server/distcc_pump_c_extensions.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer.py
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node.py
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node_test.py

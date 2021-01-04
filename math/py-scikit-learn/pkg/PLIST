@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/10/28 04:04:04 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/04 14:06:34 sthen Exp $
 @pkgpath math/py-scikit-learn
 lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/_check_build.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/_check_build.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/setup.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sklearn/${MODPY_PYCACHE}/
@@ -47,7 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/openmp_helpers.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/pre_build_helpers.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/_config.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/_distributor_init.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/_isotonic.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/_isotonic.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/_loss/
 lib/python${MODPY_VERSION}/site-packages/sklearn/_loss/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sklearn/_loss/${MODPY_PYCACHE}/
@@ -91,13 +91,13 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_agglomerative.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_bicluster.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_birch.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_dbscan.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_dbscan_inner.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_dbscan_inner.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_feature_agglomeration.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_hierarchical_fast.so
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_k_means_elkan.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_hierarchical_fast.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_k_means_elkan.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_k_means_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_k_means_fast.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_k_means_fast.so
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_k_means_lloyd.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_k_means_lloyd.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_kmeans.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_mean_shift.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/cluster/_optics.py
@@ -248,7 +248,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/_openml.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/_rcv1.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/_samples_generator.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/_species_distributions.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/_svmlight_format_fast.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/_svmlight_format_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/_svmlight_format_io.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/_twenty_newsgroups.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/base.py
@@ -438,7 +438,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/${MODPY_PYCACHE}s
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/${MODPY_PYCACHE}sparse_pca.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/${MODPY_PYCACHE}truncated_svd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_base.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_cdnmf_fast.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_cdnmf_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_dict_learning.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_factor_analysis.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_fastica.py
@@ -446,7 +446,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_incremental_pca.
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_kernel_pca.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_lda.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_nmf.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_online_lda_fast.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_online_lda_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_pca.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_sparse_pca.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/decomposition/_truncated_svd.py
@@ -516,7 +516,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_base.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_forest.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_gb.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_gb_losses.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_gradient_boosting.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_gradient_boosting.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/${MODPY_PYCACHE}/
@@ -526,19 +526,19 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boostin
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/${MODPY_PYCACHE}grower.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/${MODPY_PYCACHE}loss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/${MODPY_PYCACHE}predictor.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/_binning.so
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/_gradient_boosting.so
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/_loss.so
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/_predictor.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/_binning.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/_gradient_boosting.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/_loss.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/_predictor.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/binning.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/common.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/common.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/common.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/gradient_boosting.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/grower.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/histogram.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/histogram.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/loss.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/predictor.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/splitting.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/splitting.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/${MODPY_PYCACHE}/
@@ -563,7 +563,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boostin
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_predictor.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_splitting.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_warm_start.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/utils.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_hist_gradient_boosting/utils.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_iforest.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_stacking.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/ensemble/_voting.py
@@ -646,7 +646,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/feature_extraction/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/sklearn/feature_extraction/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/feature_extraction/_dict_vectorizer.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/feature_extraction/_hash.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/feature_extraction/_hashing_fast.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/feature_extraction/_hashing_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/feature_extraction/_stop_words.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/feature_extraction/dict_vectorizer.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/feature_extraction/hashing.py
@@ -833,7 +833,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/${MODPY_PYCACHE}st
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/${MODPY_PYCACHE}theil_sen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_base.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_bayes.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_cd_fast.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_cd_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_coordinate_descent.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_glm/
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_glm/__init__.py
@@ -860,9 +860,9 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_perceptron.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_ransac.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_ridge.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_sag.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_sag_fast.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_sag_fast.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_sgd_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_sgd_fast.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_sgd_fast.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_stochastic_gradient.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/_theil_sen.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/linear_model/base.py
@@ -932,13 +932,13 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/${MODPY_PYCACHE}mds.${
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/${MODPY_PYCACHE}spectral_embedding_.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/${MODPY_PYCACHE}t_sne.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/_barnes_hut_tsne.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/_barnes_hut_tsne.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/_isomap.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/_locally_linear.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/_mds.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/_spectral_embedding.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/_t_sne.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/_utils.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/_utils.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/isomap.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/locally_linear.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/manifold/mds.py
@@ -978,7 +978,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/${MODPY_PYCACHE}scorer.
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/_base.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/_classification.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/_pairwise_fast.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/_pairwise_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/_plot/
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/_plot/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/_plot/${MODPY_PYCACHE}/
@@ -1019,7 +1019,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/cluster/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/cluster/${MODPY_PYCACHE}supervised.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/cluster/${MODPY_PYCACHE}unsupervised.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/cluster/_bicluster.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/cluster/_expected_mutual_info_fast.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/cluster/_expected_mutual_info_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/cluster/_supervised.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/cluster/_unsupervised.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/metrics/cluster/bicluster.py
@@ -1140,22 +1140,22 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/${MODPY_PYCACHE}regre
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/${MODPY_PYCACHE}typedefs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/${MODPY_PYCACHE}unsupervised.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_ball_tree.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_ball_tree.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_base.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_classification.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_dist_metrics.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_dist_metrics.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_dist_metrics.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_graph.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_kd_tree.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_kd_tree.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_kde.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_lof.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_nca.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_nearest_centroid.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_quad_tree.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_quad_tree.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_quad_tree.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_regression.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_typedefs.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_typedefs.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_typedefs.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/_unsupervised.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/ball_tree.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/neighbors/base.py
@@ -1241,7 +1241,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/preprocessing/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/sklearn/preprocessing/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/preprocessing/${MODPY_PYCACHE}label.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/preprocessing/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/preprocessing/_data.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/preprocessing/_discretization.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/preprocessing/_encoders.py
@@ -1299,9 +1299,9 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/svm/${MODPY_PYCACHE}setup.${MOD
 lib/python${MODPY_VERSION}/site-packages/sklearn/svm/_base.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/svm/_bounds.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/svm/_classes.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/svm/_liblinear.so
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/svm/_libsvm.so
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/svm/_libsvm_sparse.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/svm/_liblinear.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/svm/_libsvm.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/svm/_libsvm_sparse.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/svm/base.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/svm/bounds.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/svm/classes.py
@@ -1374,16 +1374,16 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/tree/${MODPY_PYCACHE}export.${M
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/${MODPY_PYCACHE}tree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_classes.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_criterion.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_criterion.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_criterion.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_export.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_reingold_tilford.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_splitter.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_splitter.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_splitter.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_tree.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_tree.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_tree.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_utils.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_utils.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/tree/_utils.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/export.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/setup.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/tree/tests/
@@ -1427,26 +1427,26 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}stats.${M
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}validation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}weight_vector.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_cython_blas.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_cython_blas.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_cython_blas.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_estimator_html_repr.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_fast_dict.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_fast_dict.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_fast_dict.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_joblib.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_logistic_sigmoid.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_logistic_sigmoid.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_mask.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_mocking.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_openmp_helpers.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_openmp_helpers.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_pprint.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_random.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_random.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_random.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_seq_dataset.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_seq_dataset.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_seq_dataset.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_show_versions.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_testing.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_weight_vector.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_weight_vector.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_weight_vector.so
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/arrayfuncs.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/arrayfuncs.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/class_weight.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/deprecation.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/estimator_checks.py
@@ -1454,18 +1454,18 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/utils/extmath.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/fast_dict.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/fixes.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/graph.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/graph_shortest_path.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/graph_shortest_path.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/metaestimators.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/mocking.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/multiclass.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/murmurhash.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/murmurhash.pxd
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/murmurhash.so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/optimize.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/random.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/seq_dataset.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/setup.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/sparsefuncs.py
-@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/sparsefuncs_fast.so
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/sparsefuncs_fast.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/stats.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/testing.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/14 19:20:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/04 14:06:34 sthen Exp $
 
 COMMENT =	set of python modules for machine learning and data mining
 
 MODPY_EGG_VERSION =	0.23.2
+REVISION =		0
 DISTNAME =		scikit-learn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

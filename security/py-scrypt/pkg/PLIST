@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 15:10:06 sthen Exp $
-@so lib/python${MODPY_VERSION}/site-packages/_scrypt.so
+@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:37 sthen Exp $
+@so lib/python${MODPY_VERSION}/site-packages/_scrypt.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scrypt/
 lib/python${MODPY_VERSION}/site-packages/scrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/scrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

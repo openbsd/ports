@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/04 04:24:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/04 14:06:35 sthen Exp $
 include/libtorrent/
 include/libtorrent/add_torrent_params.hpp
 include/libtorrent/address.hpp
@@ -252,7 +252,7 @@ include/libtorrent/xml_parse.hpp
 lib/libtorrent-rasterbar.la
 @lib lib/libtorrent-rasterbar.so.${LIBtorrent-rasterbar_VERSION}
 lib/pkgconfig/libtorrent-rasterbar.pc
-@so lib/python${MODPY_VERSION}/site-packages/libtorrent.so
+@so lib/python${MODPY_VERSION}/site-packages/libtorrent.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/python_libtorrent-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 share/cmake/
 share/cmake/Modules/

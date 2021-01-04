@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/10/25 18:12:58 martin Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/01/04 14:06:27 sthen Exp $
 @conflict biopython-*
 @pkgpath biology/py-biopython
 lib/python${MODPY_VERSION}/site-packages/Bio/
@@ -37,7 +37,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}AlignInfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/_aligners.c
-@so lib/python${MODPY_VERSION}/site-packages/Bio/Align/_aligners.so
+@so lib/python${MODPY_VERSION}/site-packages/Bio/Align/_aligners.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/substitution_matrices/
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/substitution_matrices/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Align/substitution_matrices/${MODPY_PYCACHE}/
@@ -124,7 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/_cluster.so
+@so lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/_cluster.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/cluster.c
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/cluster.h
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/clustermodule.c
@@ -565,7 +565,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Nexus/${MODPY_PYCACHE}StandardData.
 lib/python${MODPY_VERSION}/site-packages/Bio/Nexus/${MODPY_PYCACHE}Trees.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Nexus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Nexus/cnexus.c
-@so lib/python${MODPY_VERSION}/site-packages/Bio/Nexus/cnexus.so
+@so lib/python${MODPY_VERSION}/site-packages/Bio/Nexus/cnexus.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/AbstractPropertyMap.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Atom.py
@@ -592,7 +592,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.c
-@so lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.so
+@so lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Residue.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/ResidueDepth.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/SCADIO.py
@@ -642,7 +642,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/PDB/ic_data.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/ic_rebuild.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/internal_coords.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/kdtrees.c
-@so lib/python${MODPY_VERSION}/site-packages/Bio/PDB/kdtrees.so
+@so lib/python${MODPY_VERSION}/site-packages/Bio/PDB/kdtrees.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/mmcifio.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/mmtf/
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/mmtf/DefaultParser.py
@@ -1010,7 +1010,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/codonalign/${MODPY_PYCACHE}codonseq
 lib/python${MODPY_VERSION}/site-packages/Bio/codonalign/chisq.py
 lib/python${MODPY_VERSION}/site-packages/Bio/codonalign/codonalignment.py
 lib/python${MODPY_VERSION}/site-packages/Bio/codonalign/codonseq.py
-@so lib/python${MODPY_VERSION}/site-packages/Bio/cpairwise2.so
+@so lib/python${MODPY_VERSION}/site-packages/Bio/cpairwise2.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/cpairwise2module.c
 lib/python${MODPY_VERSION}/site-packages/Bio/kNN.py
 lib/python${MODPY_VERSION}/site-packages/Bio/motifs/
@@ -1028,7 +1028,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/motifs/${MODPY_PYCACHE}thresholds.$
 lib/python${MODPY_VERSION}/site-packages/Bio/motifs/${MODPY_PYCACHE}transfac.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/motifs/${MODPY_PYCACHE}xms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/motifs/_pwm.c
-@so lib/python${MODPY_VERSION}/site-packages/Bio/motifs/_pwm.so
+@so lib/python${MODPY_VERSION}/site-packages/Bio/motifs/_pwm.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/motifs/alignace.py
 lib/python${MODPY_VERSION}/site-packages/Bio/motifs/applications/
 lib/python${MODPY_VERSION}/site-packages/Bio/motifs/applications/__init__.py

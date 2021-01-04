@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/04/02 07:39:09 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/01/04 14:06:34 sthen Exp $
 @comment bin/f2py
 @comment bin/f2py3
 bin/f2py${MODPY_VERSION}
@@ -79,17 +79,17 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/_add_newdocs.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_aliased_types.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_dtype.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_dtype_ctypes.py
-@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_dummy.so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_dummy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_internal.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_methods.py
-@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_multiarray_tests.so
-@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_multiarray_umath.so
-@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_operand_flag_tests.so
-@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_rational_tests.so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_multiarray_tests.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_multiarray_umath.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_operand_flag_tests.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_rational_tests.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_string_helpers.py
-@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_struct_ufunc_tests.so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_struct_ufunc_tests.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_type_aliases.py
-@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_umath_tests.so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/core/_umath_tests.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/numpy/core/arrayprint.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/cversions.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/defchararray.py
@@ -466,7 +466,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/fft/${MODPY_PYCACHE}helper.${MODP
 lib/python${MODPY_VERSION}/site-packages/numpy/fft/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/fft/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/fft/fftpack.py
-@so lib/python${MODPY_VERSION}/site-packages/numpy/fft/fftpack_lite.so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/fft/fftpack_lite.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/numpy/fft/helper.py
 lib/python${MODPY_VERSION}/site-packages/numpy/fft/info.py
 lib/python${MODPY_VERSION}/site-packages/numpy/fft/setup.py
@@ -570,9 +570,9 @@ lib/python${MODPY_VERSION}/site-packages/numpy/linalg/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/${MODPY_PYCACHE}linalg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/numpy/linalg/_umath_linalg.so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/linalg/_umath_linalg.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/info.py
-@so lib/python${MODPY_VERSION}/site-packages/numpy/linalg/lapack_lite.so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/linalg/lapack_lite.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/linalg.py
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/setup.py
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/tests/
@@ -668,7 +668,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/random/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/numpy/random/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/random/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/random/info.py
-@so lib/python${MODPY_VERSION}/site-packages/numpy/random/mtrand.so
+@so lib/python${MODPY_VERSION}/site-packages/numpy/random/mtrand.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/numpy/random/randomkit.h
 lib/python${MODPY_VERSION}/site-packages/numpy/random/setup.py
 lib/python${MODPY_VERSION}/site-packages/numpy/random/tests/

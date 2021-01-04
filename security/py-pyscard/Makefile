@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/12/14 22:45:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/04 14:06:37 sthen Exp $
 
 COMMENT =	smartcard package for Python
 
 MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		pyscard-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =	security
 

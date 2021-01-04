@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2020/01/10 13:30:41 martin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:35 sthen Exp $
 bin/pt2to3
 bin/ptdump
 bin/ptrepack
@@ -43,8 +43,8 @@ lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}undoredo.${MODPY
 lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}unimplemented.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}vlarray.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/tables/_comp_bzip2.so
-@so lib/python${MODPY_VERSION}/site-packages/tables/_comp_lzo.so
+@so lib/python${MODPY_VERSION}/site-packages/tables/_comp_bzip2.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/tables/_comp_lzo.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/tables/array.py
 lib/python${MODPY_VERSION}/site-packages/tables/atom.py
 lib/python${MODPY_VERSION}/site-packages/tables/attributeset.py
@@ -58,15 +58,15 @@ lib/python${MODPY_VERSION}/site-packages/tables/file.py
 lib/python${MODPY_VERSION}/site-packages/tables/filters.py
 lib/python${MODPY_VERSION}/site-packages/tables/flavor.py
 lib/python${MODPY_VERSION}/site-packages/tables/group.py
-@so lib/python${MODPY_VERSION}/site-packages/tables/hdf5extension.so
+@so lib/python${MODPY_VERSION}/site-packages/tables/hdf5extension.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/tables/idxutils.py
 lib/python${MODPY_VERSION}/site-packages/tables/index.py
 lib/python${MODPY_VERSION}/site-packages/tables/indexes.py
-@so lib/python${MODPY_VERSION}/site-packages/tables/indexesextension.so
+@so lib/python${MODPY_VERSION}/site-packages/tables/indexesextension.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/tables/leaf.py
 lib/python${MODPY_VERSION}/site-packages/tables/link.py
-@so lib/python${MODPY_VERSION}/site-packages/tables/linkextension.so
-@so lib/python${MODPY_VERSION}/site-packages/tables/lrucacheextension.so
+@so lib/python${MODPY_VERSION}/site-packages/tables/linkextension.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/tables/lrucacheextension.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/tables/misc/
 lib/python${MODPY_VERSION}/site-packages/tables/misc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tables/misc/${MODPY_PYCACHE}/
@@ -108,7 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/tables/scripts/ptdump.py
 lib/python${MODPY_VERSION}/site-packages/tables/scripts/ptrepack.py
 lib/python${MODPY_VERSION}/site-packages/tables/scripts/pttree.py
 lib/python${MODPY_VERSION}/site-packages/tables/table.py
-@so lib/python${MODPY_VERSION}/site-packages/tables/tableextension.so
+@so lib/python${MODPY_VERSION}/site-packages/tables/tableextension.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/tables/tests/
 lib/python${MODPY_VERSION}/site-packages/tables/tests/Table2_1_lzo_nrv2e_shuffle.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/Tables_lzo1.h5
@@ -231,5 +231,5 @@ lib/python${MODPY_VERSION}/site-packages/tables/tests/zerodim-attrs-1.4.h5
 lib/python${MODPY_VERSION}/site-packages/tables/undoredo.py
 lib/python${MODPY_VERSION}/site-packages/tables/unimplemented.py
 lib/python${MODPY_VERSION}/site-packages/tables/utils.py
-@so lib/python${MODPY_VERSION}/site-packages/tables/utilsextension.so
+@so lib/python${MODPY_VERSION}/site-packages/tables/utilsextension.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/tables/vlarray.py

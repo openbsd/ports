@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/04/24 19:00:34 sthen Exp $
-@pkgpath www/py3-aiohttp
+@comment $OpenBSD: PLIST,v 1.4 2021/01/04 14:06:39 sthen Exp $
+@pkgpath www/${MODPY_PY_PREFIX}aiohttp
 lib/python${MODPY_VERSION}/site-packages/aiohttp/
 lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/aiohttp/__init__.py
-lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}base_protocol.${MODPY_PYC_MAGIC_TAG}pyc
@@ -61,22 +61,22 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/_find_header.c
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_find_header.h
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_find_header.pxd
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_frozenlist.c
+@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_frozenlist.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_frozenlist.pyx
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_frozenlist.so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_headers.pxi
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.c
+@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.pyi
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.pyx
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.c
+@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.pyx
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.c
+@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.pyx
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket.c
+@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket.pyx
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket.so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/abc.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/base_protocol.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/client.py

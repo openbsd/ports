@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/04 14:06:39 sthen Exp $
 
 COMMENT =		multidict implementation
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	4.7.5
 DISTNAME =		multidict-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www devel
-REVISION =		0
+REVISION =		1
 
 WANTLIB +=		pthread ${MODPY_WANTLIB}
 

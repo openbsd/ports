@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/20 11:33:20 feinerer Exp $
-lib/python${MODPY_VERSION}/site-packages/axolotl_curve25519.so
+@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:37 sthen Exp $
+@so lib/python${MODPY_VERSION}/site-packages/axolotl_curve25519.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_EGG_VERSION}.post2-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_EGG_VERSION}.post2-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_EGG_VERSION}.post2-py${MODPY_VERSION}.egg-info/SOURCES.txt

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/10/28 01:24:38 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/01/04 14:06:35 sthen Exp $
 @conflict py-scipy-*
 @pkgpath math/py-scipy
 lib/python${MODPY_VERSION}/site-packages/scipy/
@@ -58,13 +58,13 @@ lib/python${MODPY_VERSION}/site-packages/scipy/_lib/${MODPY_PYCACHE}doccer.${MOD
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/${MODPY_PYCACHE}uarray.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_ccallback.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_ccallback_c.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_fpumode.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_ccallback_c.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_fpumode.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_gcutils.py
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_pep440.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_test_ccallback.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_test_deprecation_call.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_test_deprecation_def.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_test_ccallback.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_test_deprecation_call.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_test_deprecation_def.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_testutils.py
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_threadsafety.py
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_tmpdirs.py
@@ -76,13 +76,13 @@ lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_uarray/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_uarray/${MODPY_PYCACHE}_backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_uarray/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_uarray/_backend.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_uarray/_uarray.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_uarray/_uarray.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_uarray/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/_util.py
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/decorator.py
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/deprecation.py
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/doccer.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/messagestream.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/_lib/messagestream.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/tests/
 lib/python${MODPY_VERSION}/site-packages/scipy/_lib/tests/__init__.py
@@ -116,9 +116,9 @@ lib/python${MODPY_VERSION}/site-packages/scipy/cluster/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/scipy/cluster/${MODPY_PYCACHE}hierarchy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/cluster/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/cluster/${MODPY_PYCACHE}vq.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/scipy/cluster/_hierarchy.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/cluster/_optimal_leaf_ordering.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/cluster/_vq.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/cluster/_hierarchy.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/cluster/_optimal_leaf_ordering.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/cluster/_vq.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/cluster/hierarchy.py
 lib/python${MODPY_VERSION}/site-packages/scipy/cluster/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/cluster/tests/
@@ -176,7 +176,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/fft/_pocketfft/${MODPY_PYCACHE}re
 lib/python${MODPY_VERSION}/site-packages/scipy/fft/_pocketfft/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/fft/_pocketfft/basic.py
 lib/python${MODPY_VERSION}/site-packages/scipy/fft/_pocketfft/helper.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/fft/_pocketfft/pypocketfft.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/fft/_pocketfft/pypocketfft.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/fft/_pocketfft/realtransforms.py
 lib/python${MODPY_VERSION}/site-packages/scipy/fft/_pocketfft/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/fft/_pocketfft/tests/
@@ -215,7 +215,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/fftpack/${MODPY_PYCACHE}pseudo_di
 lib/python${MODPY_VERSION}/site-packages/scipy/fftpack/${MODPY_PYCACHE}realtransforms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/fftpack/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/fftpack/basic.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/fftpack/convolve.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/fftpack/convolve.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/fftpack/helper.py
 lib/python${MODPY_VERSION}/site-packages/scipy/fftpack/pseudo_diffs.py
 lib/python${MODPY_VERSION}/site-packages/scipy/fftpack/realtransforms.py
@@ -257,7 +257,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/integrate/${MODPY_PYCACHE}odepack
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/${MODPY_PYCACHE}quadpack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_bvp.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_dop.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_dop.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/${MODPY_PYCACHE}/
@@ -287,13 +287,13 @@ lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/tests/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/tests/test_ivp.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ivp/tests/test_rk.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_ode.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_odepack.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_odepack.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_quad_vec.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_quadpack.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_quadpack.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_quadrature.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_test_multivariate.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_test_odeint_banded.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/lsoda.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_test_multivariate.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/_test_odeint_banded.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/lsoda.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/odepack.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/quadpack.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/setup.py
@@ -317,7 +317,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/integrate/tests/test_integrate.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/tests/test_odeint_jac.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/tests/test_quadpack.py
 lib/python${MODPY_VERSION}/site-packages/scipy/integrate/tests/test_quadrature.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/vode.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/integrate/vode.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/${MODPY_PYCACHE}/
@@ -334,17 +334,17 @@ lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/${MODPY_PYCACHE}ndgri
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/${MODPY_PYCACHE}polyint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/${MODPY_PYCACHE}rbf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_bspl.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_bspl.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_bsplines.py
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_cubic.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_fitpack.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_fitpack.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_fitpack_impl.py
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_pade.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_ppoly.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/dfitpack.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/_ppoly.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/dfitpack.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/fitpack.py
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/fitpack2.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/interpnd.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/interpnd.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/interpnd_info.py
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/interpolate.py
 lib/python${MODPY_VERSION}/site-packages/scipy/interpolate/ndgriddata.py
@@ -391,7 +391,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/io/${MODPY_PYCACHE}netcdf.${MODPY
 lib/python${MODPY_VERSION}/site-packages/scipy/io/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/io/${MODPY_PYCACHE}wavfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/io/_fortran.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/io/_test_fortran.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/io/_test_fortran.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/io/arff/
 lib/python${MODPY_VERSION}/site-packages/scipy/io/arff/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/io/arff/${MODPY_PYCACHE}/
@@ -457,11 +457,11 @@ lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/mio.py
 lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/mio4.py
 lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/mio5.py
 lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/mio5_params.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/mio5_utils.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/mio_utils.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/mio5_utils.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/mio_utils.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/miobase.py
 lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/setup.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/streams.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/streams.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/tests/
 lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/io/matlab/tests/${MODPY_PYCACHE}/
@@ -731,27 +731,27 @@ lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_decomp_cossin.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_decomp_ldl.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_decomp_polar.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_decomp_qz.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_decomp_update.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_decomp_update.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_expm_frechet.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_fblas.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_flapack.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_flinalg.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_fblas.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_flapack.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_flinalg.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_generate_pyx.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_interpolative.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_interpolative.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_interpolative_backend.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_matfuncs_inv_ssq.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_matfuncs_sqrtm.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_procrustes.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_sketches.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_solve_toeplitz.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_solve_toeplitz.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_solvers.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/_testutils.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/basic.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/blas.py
+@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/cython_blas.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/cython_blas.pxd
-@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/cython_blas.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/cython_lapack.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/cython_lapack.pxd
-@so lib/python${MODPY_VERSION}/site-packages/scipy/linalg/cython_lapack.so
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/decomp.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/decomp_cholesky.py
 lib/python${MODPY_VERSION}/site-packages/scipy/linalg/decomp_lu.py
@@ -856,12 +856,12 @@ lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/${MODPY_PYCACHE}interpola
 lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/${MODPY_PYCACHE}measurements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/${MODPY_PYCACHE}morphology.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_ctest.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_ctest_oldapi.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_cytest.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_nd_image.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_ctest.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_ctest_oldapi.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_cytest.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_nd_image.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_ni_docstrings.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_ni_label.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_ni_label.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/_ni_support.py
 lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/filters.py
 lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/fourier.py
@@ -897,7 +897,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/tests/test_regression.py
 lib/python${MODPY_VERSION}/site-packages/scipy/ndimage/tests/test_splines.py
 lib/python${MODPY_VERSION}/site-packages/scipy/odr/
 lib/python${MODPY_VERSION}/site-packages/scipy/odr/__init__.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/odr/__odrpack.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/odr/__odrpack.${MODPY_PYC_MAGIC_TAG}so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/odr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scipy/odr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/odr/${MODPY_PYCACHE}_add_newdocs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -917,7 +917,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/odr/tests/test_odr.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize.pxd
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/__init__.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/__nnls.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/__nnls.${MODPY_PYC_MAGIC_TAG}so
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/optimize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/${MODPY_PYCACHE}_basinhopping.${MODPY_PYC_MAGIC_TAG}pyc
@@ -957,22 +957,22 @@ lib/python${MODPY_VERSION}/site-packages/scipy/optimize/${MODPY_PYCACHE}slsqp.${
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/${MODPY_PYCACHE}tnc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/${MODPY_PYCACHE}zeros.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_basinhopping.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_bglu_dense.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_cobyla.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_bglu_dense.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_cobyla.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_constraints.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_differentiable_functions.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_differentialevolution.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_dual_annealing.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_group_columns.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_group_columns.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_hessian_update_strategy.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lbfgsb.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lbfgsb.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_linprog.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_linprog_ip.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_linprog_rs.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_linprog_simplex.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_linprog_util.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsap.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsap_module.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsap_module.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/${MODPY_PYCACHE}/
@@ -988,14 +988,14 @@ lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/${MODPY_PYCACHE}trf
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/bvls.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/common.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/dogbox.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/givens_elimination.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/givens_elimination.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/least_squares.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/lsq_linear.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/trf.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_lsq/trf_linear.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_minimize.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_minpack.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_minpack.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_nnls.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_numdiff.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_remove_redundancy.py
@@ -1011,14 +1011,14 @@ lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_shgo_lib/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_shgo_lib/sobol_seq.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_shgo_lib/sobol_vec.gz
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_shgo_lib/triangulation.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_slsqp.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_slsqp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_spectral.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trlib/
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trlib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trlib/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trlib/_trlib.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trlib/_trlib.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trlib/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trustregion.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trustregion_constr/
@@ -1058,23 +1058,23 @@ lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trustregion_exact.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trustregion_krylov.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_trustregion_ncg.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_tstutils.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_zeros.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/_zeros.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cobyla.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cython_optimize/
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cython_optimize.pxd
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cython_optimize/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cython_optimize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cython_optimize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cython_optimize/_zeros.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cython_optimize/_zeros.pxd
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cython_optimize/_zeros.so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/cython_optimize/c_zeros.pxd
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/lbfgsb.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/lbfgsb_src/
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/lbfgsb_src/README
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/linesearch.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/minpack.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/minpack2.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/moduleTNC.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/minpack2.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/optimize/moduleTNC.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/nonlin.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/optimize.py
 lib/python${MODPY_VERSION}/site-packages/scipy/optimize/setup.py
@@ -1177,14 +1177,14 @@ lib/python${MODPY_VERSION}/site-packages/scipy/signal/${MODPY_PYCACHE}waveforms.
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/${MODPY_PYCACHE}wavelets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/_arraytools.py
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/_max_len_seq.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_max_len_seq_inner.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_max_len_seq_inner.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/_peak_finding.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_peak_finding_utils.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_peak_finding_utils.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/_savitzky_golay.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_sosfilt.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_spectral.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_sosfilt.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_spectral.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/_upfirdn.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_upfirdn_apply.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/_upfirdn_apply.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/bsplines.py
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/filter_design.py
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/fir_filter_design.py
@@ -1192,9 +1192,9 @@ lib/python${MODPY_VERSION}/site-packages/scipy/signal/lti_conversion.py
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/ltisys.py
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/signaltools.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/sigtools.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/sigtools.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/spectral.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/spline.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/signal/spline.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/tests/
 lib/python${MODPY_VERSION}/site-packages/scipy/signal/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/signal/tests/${MODPY_PYCACHE}/
@@ -1266,10 +1266,10 @@ lib/python${MODPY_VERSION}/site-packages/scipy/sparse/${MODPY_PYCACHE}setup.${MO
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/${MODPY_PYCACHE}sparsetools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/${MODPY_PYCACHE}spfuncs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/${MODPY_PYCACHE}sputils.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/_csparsetools.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/_csparsetools.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/_index.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/_matrix_io.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/_sparsetools.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/_sparsetools.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/base.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/bsr.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/compressed.py
@@ -1283,14 +1283,14 @@ lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/${MODPY_PYCACHE}_laplacian.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/${MODPY_PYCACHE}_validation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_flow.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_flow.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_laplacian.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_matching.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_min_spanning_tree.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_reordering.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_shortest_path.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_tools.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_traversal.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_matching.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_min_spanning_tree.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_reordering.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_shortest_path.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_tools.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_traversal.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/_validation.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/csgraph/tests/
@@ -1345,7 +1345,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/${MODPY_PYCACHE}linsolve.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/_add_newdocs.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/_superlu.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/_superlu.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/linsolve.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/tests/
@@ -1367,7 +1367,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/eig
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/eigen/arpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/eigen/arpack/${MODPY_PYCACHE}arpack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/eigen/arpack/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/eigen/arpack/arpack.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/eigen/arpack/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/eigen/arpack/tests/
@@ -1405,7 +1405,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/isolve/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/isolve/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/isolve/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/isolve/_gcrotmk.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/isolve/_iterative.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/isolve/_iterative.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/isolve/iterative.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/isolve/lgmres.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/isolve/lsmr.py
@@ -1491,19 +1491,19 @@ lib/python${MODPY_VERSION}/site-packages/scipy/spatial/${MODPY_PYCACHE}_spherica
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/${MODPY_PYCACHE}distance.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/${MODPY_PYCACHE}kdtree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_distance_wrap.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_distance_wrap.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_geometric_slerp.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_hausdorff.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_hausdorff.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_plotutils.py
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_procrustes.py
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_spherical_voronoi.py
+@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_voronoi.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_voronoi.pyi
-@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/_voronoi.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/ckdtree.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/ckdtree.pyi
-@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/ckdtree.so
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/distance.py
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/kdtree.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/qhull.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/spatial/qhull.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/qhull_src/
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/qhull_src/COPYING.txt
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/setup.py
@@ -1601,9 +1601,9 @@ lib/python${MODPY_VERSION}/site-packages/scipy/special/${MODPY_PYCACHE}setup.${M
 lib/python${MODPY_VERSION}/site-packages/scipy/special/${MODPY_PYCACHE}sf_error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/special/${MODPY_PYCACHE}spfun_stats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_basic.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_comb.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_comb.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_ellip_harm.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_ellip_harm_2.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_ellip_harm_2.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_generate_pyx.py
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_lambertw.py
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_logsumexp.py
@@ -1633,22 +1633,22 @@ lib/python${MODPY_VERSION}/site-packages/scipy/special/_precompute/utils.py
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_precompute/wrightomega.py
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_precompute/zetac.py
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_spherical_bessel.py
+@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_test_round.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_test_round.pyi
-@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_test_round.so
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_testutils.py
+@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_ufuncs.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/special/_ufuncs.pyi
-@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_ufuncs.so
-@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_ufuncs_cxx.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/special/_ufuncs_cxx.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/special/add_newdocs.py
 lib/python${MODPY_VERSION}/site-packages/scipy/special/basic.py
+@so lib/python${MODPY_VERSION}/site-packages/scipy/special/cython_special.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/special/cython_special.pxd
 lib/python${MODPY_VERSION}/site-packages/scipy/special/cython_special.pyi
-@so lib/python${MODPY_VERSION}/site-packages/scipy/special/cython_special.so
 lib/python${MODPY_VERSION}/site-packages/scipy/special/orthogonal.py
 lib/python${MODPY_VERSION}/site-packages/scipy/special/orthogonal.pyi
 lib/python${MODPY_VERSION}/site-packages/scipy/special/setup.py
 lib/python${MODPY_VERSION}/site-packages/scipy/special/sf_error.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/special/specfun.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/special/specfun.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/special/spfun_stats.py
 lib/python${MODPY_VERSION}/site-packages/scipy/special/tests/
 lib/python${MODPY_VERSION}/site-packages/scipy/special/tests/__init__.py
@@ -1777,7 +1777,7 @@ lib/python${MODPY_VERSION}/site-packages/scipy/stats/_hypotests.py
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/_ksstats.py
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/_multivariate.py
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/_rvs_sampling.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/stats/_stats.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/stats/_stats.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/_stats_mstats_common.py
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/_tukeylambda_stats.py
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/_wilcoxon_data.py
@@ -1788,9 +1788,9 @@ lib/python${MODPY_VERSION}/site-packages/scipy/stats/morestats.py
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/mstats.py
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/mstats_basic.py
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/mstats_extras.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/stats/mvn.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/stats/mvn.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/setup.py
-@so lib/python${MODPY_VERSION}/site-packages/scipy/stats/statlib.so
+@so lib/python${MODPY_VERSION}/site-packages/scipy/stats/statlib.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/stats.py
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/tests/
 lib/python${MODPY_VERSION}/site-packages/scipy/stats/tests/__init__.py

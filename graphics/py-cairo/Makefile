@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2020/11/07 08:29:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2021/01/04 14:06:32 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=		m88k
@@ -10,6 +10,7 @@ GH_ACCOUNT=		pygobject
 GH_PROJECT=		pycairo
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-cairo-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		graphics
 

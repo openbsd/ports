@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.10 2020/12/30 22:34:04 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/04 14:06:30 sthen Exp $
 
 COMMENT =		fast and thorough lazy object proxy
 
 MODPY_EGG_VERSION =	1.4.3
+REVISION =		0
 DISTNAME =		lazy-object-proxy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 
 HOMEPAGE =		https://python-lazy-object-proxy.readthedocs.org
 
-WANTLIB += pthread ${MODPY_WANTLIB}
 # BSD
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
 

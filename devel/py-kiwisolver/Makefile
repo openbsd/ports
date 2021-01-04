@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/28 02:41:24 daniel Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/04 14:06:30 sthen Exp $
 
 COMMENT =		fast implementation of the Cassowary constraint solver
 
 MODPY_EGG_VERSION =	1.3.1
 DISTNAME =		kiwisolver-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

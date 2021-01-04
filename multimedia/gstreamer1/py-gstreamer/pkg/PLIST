@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/10/28 15:42:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/04 14:06:35 sthen Exp $
 @pkgpath multimedia/gstreamer1/py-gstreamer
 @so lib/gstreamer-${API}/libgstpython.so
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gst.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstPbutils.py
-@so lib/python${MODPY_VERSION}/site-packages/gi/overrides/_gi_gst.so
+@so lib/python${MODPY_VERSION}/site-packages/gi/overrides/_gi_gst.${MODPY_PYC_MAGIC_TAG}so

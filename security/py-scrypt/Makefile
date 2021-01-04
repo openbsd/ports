@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/04 14:06:37 sthen Exp $
 
 COMMENT =	support for the scrypt key derivation function
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.8.13
 
 DISTNAME =	scrypt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 

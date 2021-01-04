@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/12/09 12:08:05 martin Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/04 14:06:34 sthen Exp $
 
 COMMENT=	Python interface to the netCDF C library
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	1.5.5
 DISTNAME=		netCDF4-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
+REVISION=		0
 
 HOMEPAGE=		http://unidata.github.io/netcdf4-python/
 

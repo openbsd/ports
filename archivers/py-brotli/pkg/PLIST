@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/12 20:38:14 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:26 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/Brotli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Brotli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Brotli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/Brotli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/Brotli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}brotli.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/_brotli.so
+@so lib/python${MODPY_VERSION}/site-packages/_brotli.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/brotli.py

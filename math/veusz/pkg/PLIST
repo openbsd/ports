@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/09/16 06:07:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/01/04 14:06:35 sthen Exp $
 bin/veusz
 lib/python${MODPY_VERSION}/site-packages/veusz/
 lib/python${MODPY_VERSION}/site-packages/veusz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -230,11 +230,11 @@ lib/python${MODPY_VERSION}/site-packages/veusz/helpers/
 lib/python${MODPY_VERSION}/site-packages/veusz/helpers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/helpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/_nc_cntr.so
-@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/qtloops.so
-@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/qtmml.so
-@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/recordpaint.so
-@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/threed.so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/_nc_cntr.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/qtloops.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/qtmml.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/recordpaint.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/threed.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_axis-broken.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_axis-function.svg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/25 10:01:17 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/04 14:06:32 sthen Exp $
 @conflict py-rasterio-*
 @pkgpath geo/py-rasterio
 bin/rio
@@ -38,17 +38,17 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}transform.${MO
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}vrt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}warp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_base.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_crs.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_env.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_err.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_example.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_features.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_fill.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_io.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_shim.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_transform.so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_warp.so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_base.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_crs.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_env.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_err.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_example.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_features.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_fill.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_io.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_shim.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_transform.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_warp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rasterio/compat.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/control.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/coords.py
@@ -118,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/rio/transform.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/warp.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/sample.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/session.py
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/shutil.so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/shutil.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rasterio/tools.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/transform.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/vrt.py

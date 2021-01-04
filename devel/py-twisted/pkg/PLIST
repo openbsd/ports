@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/18 05:54:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/04 14:06:31 sthen Exp $
 @conflict py-twisted-core-*
 @conflict py-twisted-conch-*
 @conflict py-twisted-lore-*
@@ -1351,7 +1351,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/test/process_tester.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/process_tty.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/process_twisted.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/proto_helpers.py
-@so lib/python${MODPY_VERSION}/site-packages/twisted/test/raiser.so
+@so lib/python${MODPY_VERSION}/site-packages/twisted/test/raiser.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/twisted/test/reflect_helper_IE.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/reflect_helper_VE.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/reflect_helper_ZDE.py

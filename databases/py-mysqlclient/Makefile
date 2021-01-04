@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2020/12/14 17:41:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2021/01/04 14:06:28 sthen Exp $
 
 COMMENT =		Python interface to MySQL
 
 MODPY_EGG_VERSION =	2.0.2
 DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		databases
 

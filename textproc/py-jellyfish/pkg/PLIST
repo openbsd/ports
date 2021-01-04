@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/06/28 17:07:35 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/04 14:06:38 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/jellyfish/
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}compat.${MODP
 lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}porter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jellyfish/_jellyfish.py
-lib/python${MODPY_VERSION}/site-packages/jellyfish/cjellyfish.so
+@so lib/python${MODPY_VERSION}/site-packages/jellyfish/cjellyfish.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/jellyfish/compat.py
 lib/python${MODPY_VERSION}/site-packages/jellyfish/porter.py
 lib/python${MODPY_VERSION}/site-packages/jellyfish/test.py

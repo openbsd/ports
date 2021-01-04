@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/12/11 12:42:28 martin Exp $
+# $OpenBSD: Makefile,v 1.18 2021/01/04 14:06:33 sthen Exp $
 
 BROKEN-arm =	llvm out of memory
 BROKEN-powerpc = virtual memory exhausted, even with -O1
@@ -13,6 +13,8 @@ V = 		3.4.2
 # should be "fixed" in next version
 V1 =		2.22
 V2 =		1.13
+
+REVISION-python =       0
 
 
 DISTNAME = 	mlpack-$V

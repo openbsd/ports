@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:12:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/04 14:06:29 sthen Exp $
 
 COMMENT =		list-like type with better asymptotic performance
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.3.6
 DISTNAME =		blist-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://stutzbachenterprises.com/blist/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/10/13 11:48:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/01/04 14:06:37 sthen Exp $
 @bin bin/pwmake
 @bin bin/pwscore
 include/pwquality.h
@@ -7,7 +7,7 @@ lib/libpwquality.la
 @lib lib/libpwquality.so.${LIBpwquality_VERSION}
 lib/pkgconfig/pwquality.pc
 lib/python${MODPY_VERSION}/site-packages/pwquality-${V}-py${MODPY_VERSION}.egg-info
-@so lib/python${MODPY_VERSION}/site-packages/pwquality.so
+@so lib/python${MODPY_VERSION}/site-packages/pwquality.${MODPY_PYC_MAGIC_TAG}so
 @man man/man1/pwmake.1
 @man man/man1/pwscore.1
 @man man/man3/pwquality.3

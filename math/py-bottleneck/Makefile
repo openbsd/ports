@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/04 14:06:33 sthen Exp $
 
 COMMENT =		fast NumPy array functions written in C
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.3.2
 DISTNAME =		Bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

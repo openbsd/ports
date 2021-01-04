@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/16 19:49:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/01/04 14:06:37 sthen Exp $
 @conflict py-reportlab-barcode-*
 @conflict py-reportlab-renderPM-*
 @pkgpath print/py-reportlab/plugins/renderPM
@@ -57,7 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}shap
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}testdrawings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}testshapes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}widgetbase.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/_renderPM.so
+@so lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/_renderPM.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}/
@@ -219,7 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}units.${M
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}yaml.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/reportlab/lib/_rl_accel.so
+@so lib/python${MODPY_VERSION}/site-packages/reportlab/lib/_rl_accel.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/abag.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/arciv.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/attrmap.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2020/08/09 19:38:18 juanfra Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2021/01/04 14:06:29 sthen Exp $
 @pkgpath devel/mercurial
 @bin bin/chg
 bin/hg
@@ -150,7 +150,7 @@ lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/${MODPY_PYCACHE}load.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/${MODPY_PYCACHE}pybser.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/bser.so
+@so lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/bser.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/capabilities.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/compat.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/pywatchman/encoding.py
@@ -502,11 +502,11 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/cext/
 lib/python${MODPY_VERSION}/site-packages/mercurial/cext/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mercurial/cext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mercurial/cext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/base85.so
-@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/bdiff.so
-@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/mpatch.so
-@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/osutil.so
-@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/parsers.so
+@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/base85.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/bdiff.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/mpatch.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/osutil.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/mercurial/cext/parsers.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/mercurial/cffi/
 lib/python${MODPY_VERSION}/site-packages/mercurial/cffi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mercurial/cffi/${MODPY_PYCACHE}/
@@ -998,7 +998,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/filters.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/validators.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/selectors2.py
-@so lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/sha1dc.so
+@so lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/sha1dc.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/${MODPY_PYCACHE}/
@@ -1021,7 +1021,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/interface/${M
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/interface/${MODPY_PYCACHE}verify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/interface/_compat.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/interface/_flatten.py
-@so lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/interface/_zope_interface_coptimizations.so
+@so lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/interface/_zope_interface_coptimizations.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/interface/adapter.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/interface/advice.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/zope/interface/declarations.py
@@ -1075,7 +1075,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/wireprotov1server.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/wireprotov2peer.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/wireprotov2server.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/worker.py
-@so lib/python${MODPY_VERSION}/site-packages/mercurial/zstd.so
+@so lib/python${MODPY_VERSION}/site-packages/mercurial/zstd.${MODPY_PYC_MAGIC_TAG}so
 @man man/man1/chg.1
 @man man/man1/hg.1
 @man man/man5/hgignore.5

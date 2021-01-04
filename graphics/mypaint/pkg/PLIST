@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/12 20:57:21 pamela Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:32 sthen Exp $
 bin/mypaint
 bin/mypaint-ora-thumbnailer
 lib/mypaint/
@@ -251,7 +251,7 @@ lib/mypaint/lib/${MODPY_PYCACHE}surface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/lib/${MODPY_PYCACHE}tiledsurface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/lib/${MODPY_PYCACHE}validation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/lib/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/mypaint/lib/_mypaintlib.so
+@so lib/mypaint/lib/_mypaintlib.${MODPY_PYC_MAGIC_TAG}so
 lib/mypaint/lib/alg.py
 lib/mypaint/lib/autosave.py
 lib/mypaint/lib/brush.py
@@ -548,8 +548,6 @@ share/locale/brx/LC_MESSAGES/mypaint.mo
 share/locale/bs/LC_MESSAGES/mypaint.mo
 share/locale/ca/LC_MESSAGES/mypaint.mo
 share/locale/ca@valencia/LC_MESSAGES/mypaint.mo
-share/locale/ckb/
-share/locale/ckb/LC_MESSAGES/
 share/locale/ckb/LC_MESSAGES/mypaint.mo
 share/locale/cs/LC_MESSAGES/mypaint.mo
 share/locale/csb/LC_MESSAGES/mypaint.mo

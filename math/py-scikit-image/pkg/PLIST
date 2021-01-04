@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/11/28 02:44:19 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/04 14:06:34 sthen Exp $
 @pkgpath math/py-scikit-image
 bin/skivi
 lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -32,10 +32,10 @@ lib/python${MODPY_VERSION}/site-packages/skimage/_shared/${MODPY_PYCACHE}version
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/_geometry.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/_tempfile.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/_warnings.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/_shared/fast_exp.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/_shared/fast_exp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/fft.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/_shared/geometry.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/_shared/interpolation.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/_shared/geometry.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/_shared/interpolation.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/setup.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/testing.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/
@@ -58,7 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/test_testing.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/test_version_requirements.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/test_warnings.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/_shared/transform.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/_shared/transform.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/utils.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/version_requirements.py
 lib/python${MODPY_VERSION}/site-packages/skimage/color/
@@ -144,7 +144,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/draw/${MODPY_PYCACHE}draw.${MOD
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/${MODPY_PYCACHE}draw3d.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/${MODPY_PYCACHE}draw_nd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/skimage/draw/_draw.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/draw/_draw.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/_polygon2mask.py
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/_random_shapes.py
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/draw.py
@@ -206,25 +206,25 @@ lib/python${MODPY_VERSION}/site-packages/skimage/feature/${MODPY_PYCACHE}templat
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/${MODPY_PYCACHE}texture.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/_canny.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_cascade.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_cascade.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/_daisy.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_haar.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_hessian_det_appx.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_haar.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_hessian_det_appx.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/_hog.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_hoghistogram.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_hoghistogram.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/_orb_descriptor_positions.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_texture.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/_texture.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/blob.py
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/brief.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/brief_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/brief_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/censure.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/censure_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/censure_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/corner.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/corner_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/corner_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/haar.py
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/match.py
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/orb.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/orb_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/feature/orb_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/orb_descriptor_positions.txt
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/peak.py
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/setup.py
@@ -283,7 +283,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/filters/${MODPY_PYCACHE}thresho
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/_gabor.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/_gaussian.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/_median.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/_multiotsu.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/_multiotsu.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/_rank_order.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/_unsharp_mask.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/_window.py
@@ -298,11 +298,11 @@ lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/${MODPY_PYCACHE}bi
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/${MODPY_PYCACHE}generic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/_percentile.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/bilateral.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/bilateral_cy.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/core_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/bilateral_cy.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/core_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/generic.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/generic_cy.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/percentile_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/generic_cy.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/percentile_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/${MODPY_PYCACHE}/
@@ -350,7 +350,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/future/graph/${MODPY_PYCACHE}gr
 lib/python${MODPY_VERSION}/site-packages/skimage/future/graph/${MODPY_PYCACHE}rag.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/future/graph/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/future/graph/_ncut.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/future/graph/_ncut_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/future/graph/_ncut_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/future/graph/graph_cut.py
 lib/python${MODPY_VERSION}/site-packages/skimage/future/graph/graph_merge.py
 lib/python${MODPY_VERSION}/site-packages/skimage/future/graph/rag.py
@@ -364,9 +364,9 @@ lib/python${MODPY_VERSION}/site-packages/skimage/graph/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/${MODPY_PYCACHE}mcp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/${MODPY_PYCACHE}spath.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/skimage/graph/_mcp.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/graph/_spath.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/graph/heap.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/graph/_mcp.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/graph/_spath.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/graph/heap.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/mcp.py
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/setup.py
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/spath.py
@@ -417,8 +417,8 @@ lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/${MODPY_PYCACHE}sim
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/${MODPY_PYCACHE}skivi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/${MODPY_PYCACHE}tifffile_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/_colormixer.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/_histograms.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/_colormixer.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/_histograms.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/fits_plugin.ini
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/fits_plugin.py
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/gdal_plugin.ini
@@ -502,18 +502,18 @@ lib/python${MODPY_VERSION}/site-packages/skimage/measure/${MODPY_PYCACHE}pnpoly.
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/${MODPY_PYCACHE}profile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/${MODPY_PYCACHE}simple_metrics.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_ccomp.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_ccomp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/_find_contours.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_find_contours_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_find_contours_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/_label.py
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/_marching_cubes_classic.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_marching_cubes_classic_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_marching_cubes_classic_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/_marching_cubes_lewiner.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_marching_cubes_lewiner_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_marching_cubes_lewiner_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/_marching_cubes_lewiner_luts.py
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/_moments.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_moments_cy.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_pnpoly.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_moments_cy.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/measure/_pnpoly.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/_polygon.py
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/_regionprops.py
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/_structural_similarity.py
@@ -583,16 +583,16 @@ lib/python${MODPY_VERSION}/site-packages/skimage/morphology/${MODPY_PYCACHE}max_
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/${MODPY_PYCACHE}selem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_convex_hull.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_convex_hull.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_deprecated.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_extrema_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_extrema_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_flood_fill.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_flood_fill_cy.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_greyreconstruct.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_max_tree.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_flood_fill_cy.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_greyreconstruct.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_max_tree.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_skeletonize.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_skeletonize_3d_cy.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_skeletonize_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_skeletonize_3d_cy.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_skeletonize_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_util.py
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/binary.py
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/convex_hull.py
@@ -660,11 +660,11 @@ lib/python${MODPY_VERSION}/site-packages/skimage/restoration/${MODPY_PYCACHE}uft
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/${MODPY_PYCACHE}unwrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_cycle_spin.py
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_denoise.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_denoise_cy.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_nl_means_denoising.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_unwrap_1d.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_unwrap_2d.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_unwrap_3d.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_denoise_cy.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_nl_means_denoising.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_unwrap_1d.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_unwrap_2d.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/restoration/_unwrap_3d.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/deconvolution.py
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/inpaint.py
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/j_invariant.py
@@ -711,13 +711,13 @@ lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/${MODPY_PYCACHE}sl
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_chan_vese.py
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_clear_border.py
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_felzenszwalb.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_felzenszwalb_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_felzenszwalb_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_join.py
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_quickshift.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_quickshift_cy.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_slic.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_quickshift_cy.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_slic.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_watershed.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_watershed_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/_watershed_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/active_contour_model.py
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/boundaries.py
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/morphsnakes.py
@@ -767,10 +767,10 @@ lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}pyram
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}radon_transform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/_geometric.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/transform/_hough_transform.so
-@so lib/python${MODPY_VERSION}/site-packages/skimage/transform/_radon_transform.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/transform/_hough_transform.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/transform/_radon_transform.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/_warps.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/transform/_warps_cy.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/transform/_warps_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/finite_radon_transform.py
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/histogram_matching.py
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/hough_transform.py
@@ -817,7 +817,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/util/_invert.py
 lib/python${MODPY_VERSION}/site-packages/skimage/util/_map_array.py
 lib/python${MODPY_VERSION}/site-packages/skimage/util/_montage.py
 lib/python${MODPY_VERSION}/site-packages/skimage/util/_regular_grid.py
-@so lib/python${MODPY_VERSION}/site-packages/skimage/util/_remap.so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/util/_remap.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/util/apply_parallel.py
 lib/python${MODPY_VERSION}/site-packages/skimage/util/arraycrop.py
 lib/python${MODPY_VERSION}/site-packages/skimage/util/compare.py

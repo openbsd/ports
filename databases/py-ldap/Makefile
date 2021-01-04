@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2020/07/06 11:38:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/01/04 14:06:27 sthen Exp $
 
 COMMENT-main=		LDAP client API for Python
 COMMENT-examples=	example programs for the LDAP client API for Python
@@ -11,6 +11,8 @@ FULLPKGPATH-main=	databases/py-ldap,-main${MODPY_FLAVOR}
 FULLPKGNAME-main=	${MODPY_PY_PREFIX}ldap-${MODPY_EGG_VERSION}
 FULLPKGPATH-examples=	databases/py-ldap,-examples${MODPY_FLAVOR}
 FULLPKGNAME-examples=	${MODPY_PY_PREFIX}ldap-examples-${MODPY_EGG_VERSION}
+REVISION-examples=	0
+REVISION-main=		0
 
 CATEGORIES=		databases
 

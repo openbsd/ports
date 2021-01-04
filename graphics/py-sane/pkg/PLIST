@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/10/10 18:45:00 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/04 14:06:33 sthen Exp $
 @conflict py-sane-*
 @pkgpath graphics/py-Pillow,-sane${MODPY_FLAVOR}
 @pkgpath graphics/py-sane
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}sane.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/_sane.so
+@so lib/python${MODPY_VERSION}/site-packages/_sane.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/sane.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2019/12/30 13:02:26 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2021/01/04 14:06:28 sthen Exp $
 @pkgpath databases/py-sqlalchemy${MODPY_FLAVOR}
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -29,9 +29,9 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/${MODPY_PYCACHE}z
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/mxodbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/pyodbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/connectors/zxJDBC.py
-@so lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cprocessors.so
-@so lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cresultproxy.so
-@so lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cutils.so
+@so lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cprocessors.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cresultproxy.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sqlalchemy/cutils.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/databases/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/databases/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/databases/${MODPY_PYCACHE}/

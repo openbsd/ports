@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/01/24 18:16:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/04 14:06:38 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/psutil/
 lib/python${MODPY_VERSION}/site-packages/psutil-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/psutil-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -28,8 +28,8 @@ lib/python${MODPY_VERSION}/site-packages/psutil/_pslinux.py
 lib/python${MODPY_VERSION}/site-packages/psutil/_psosx.py
 lib/python${MODPY_VERSION}/site-packages/psutil/_psposix.py
 lib/python${MODPY_VERSION}/site-packages/psutil/_pssunos.py
-lib/python${MODPY_VERSION}/site-packages/psutil/_psutil_bsd.so
-lib/python${MODPY_VERSION}/site-packages/psutil/_psutil_posix.so
+@so lib/python${MODPY_VERSION}/site-packages/psutil/_psutil_bsd.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/psutil/_psutil_posix.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/psutil/_pswindows.py
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/__init__.py

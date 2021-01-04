@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2020/11/05 10:26:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2021/01/04 14:06:30 sthen Exp $
 
 COMMENT=		Python bindings for GLib and GObject
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		3.38.0
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 PKGNAME=		py3-gobject3-${GNOME_VERSION}
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

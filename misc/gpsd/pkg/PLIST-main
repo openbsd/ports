@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2020/09/21 14:24:38 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2021/01/04 14:06:35 sthen Exp $
 @conflict gpsd-python-<=2.38p3
 @pkgpath misc/gpsd,-python
 @newuser _gpsd:551:dialer:daemon:GPS server:/nonexistent:/sbin/nologin
@@ -39,11 +39,11 @@ lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}misc.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}watch_options.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}watch_options.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gps/client.py
-@so lib/python${MODPY_VERSION}/site-packages/gps/clienthelpers.so
+@so lib/python${MODPY_VERSION}/site-packages/gps/clienthelpers.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gps/fake.py
 lib/python${MODPY_VERSION}/site-packages/gps/gps.py
 lib/python${MODPY_VERSION}/site-packages/gps/misc.py
-@so lib/python${MODPY_VERSION}/site-packages/gps/packet.so
+@so lib/python${MODPY_VERSION}/site-packages/gps/packet.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gps/watch_options.py
 @man man/man1/cgps.1
 @man man/man1/gegps.1

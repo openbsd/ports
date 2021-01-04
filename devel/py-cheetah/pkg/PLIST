@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/12/27 21:36:55 danj Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/01/04 14:06:29 sthen Exp $
 bin/cheetah${MODPY_BIN_SUFFIX}
 bin/cheetah-analyze${MODPY_BIN_SUFFIX}
 bin/cheetah-compile${MODPY_BIN_SUFFIX}
@@ -132,7 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}Version.${MODPY
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}convertTmplPathToModuleName.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Cheetah/_namemapper.so
+@so lib/python${MODPY_VERSION}/site-packages/Cheetah/_namemapper.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cheetah/compat.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/convertTmplPathToModuleName.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

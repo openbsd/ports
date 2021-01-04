@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/12/05 18:08:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/01/04 14:06:36 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/curl/
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curl/${MODPY_PYCACHE}/
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-@so lib/python${MODPY_VERSION}/site-packages/pycurl.so
+@so lib/python${MODPY_VERSION}/site-packages/pycurl.${MODPY_PYC_MAGIC_TAG}so
 share/doc/${MODPY_PY_PREFIX}curl/
 share/doc/${MODPY_PY_PREFIX}curl/AUTHORS
 share/doc/${MODPY_PY_PREFIX}curl/COPYING-LGPL

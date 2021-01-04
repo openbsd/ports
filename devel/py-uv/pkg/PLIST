@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/12 10:08:32 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:31 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pyuv/
 lib/python${MODPY_VERSION}/site-packages/pyuv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyuv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,5 +9,5 @@ lib/python${MODPY_VERSION}/site-packages/pyuv/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyuv/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyuv/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyuv/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyuv/_cpyuv.so
+@so lib/python${MODPY_VERSION}/site-packages/pyuv/_cpyuv.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyuv/_version.py

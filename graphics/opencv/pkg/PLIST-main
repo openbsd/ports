@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2020/12/30 22:08:25 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2021/01/04 14:06:32 sthen Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
 @bin bin/opencv_version
@@ -297,7 +297,7 @@ lib/python${MODPY_VERSION}/site-packages/cv2/config.py
 lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py2.py
 lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py3.py
 lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/
-@so lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/cv2.so
+@so lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/cv2.${MODPY_PYC_MAGIC_TAG}so
 share/licenses/
 share/licenses/opencv4/
 share/licenses/opencv4/SoftFloat-COPYING.txt

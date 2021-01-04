@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/12 09:56:18 landry Exp $
-@so lib/python${MODPY_VERSION}/site-packages/_libldap0.so
+@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:28 sthen Exp $
+@so lib/python${MODPY_VERSION}/site-packages/_libldap0.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ldap0/
 lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

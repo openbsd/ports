@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2020/10/03 15:39:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2021/01/04 14:06:35 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -9,7 +9,7 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=		gps	20.0 # 25.0
 CATEGORIES=		misc geo

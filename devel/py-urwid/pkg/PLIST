@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/09/15 07:38:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/01/04 14:06:31 sthen Exp $
 @pkgpath devel/py-urwid
 lib/python${MODPY_VERSION}/site-packages/urwid/
 lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -56,7 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/urwid/old_str_util.py
 lib/python${MODPY_VERSION}/site-packages/urwid/raw_display.py
 lib/python${MODPY_VERSION}/site-packages/urwid/signals.py
 lib/python${MODPY_VERSION}/site-packages/urwid/split_repr.py
-@so lib/python${MODPY_VERSION}/site-packages/urwid/str_util.so
+@so lib/python${MODPY_VERSION}/site-packages/urwid/str_util.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/
 lib/python${MODPY_VERSION}/site-packages/urwid/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urwid/tests/${MODPY_PYCACHE}/

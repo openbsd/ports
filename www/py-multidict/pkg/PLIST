@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/10 16:24:04 paco Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/04 14:06:39 sthen Exp $
 @pkgpath www/py-multidict
-@pkgpath www/py3-multidict
+@pkgpath www/${MODPY_PY_PREFIX}multidict
 lib/python${MODPY_VERSION}/site-packages/multidict/
 lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_multidict_py
 lib/python${MODPY_VERSION}/site-packages/multidict/_abc.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_compat.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.c
-@so lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.so
+@so lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/multidict/_multidict_base.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_multidict_py.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/

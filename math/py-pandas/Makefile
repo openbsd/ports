@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/22 17:43:41 daniel Exp $
+# $OpenBSD: Makefile,v 1.18 2021/01/04 14:06:34 sthen Exp $
 
 COMMENT =		data analysis and manipulation library
 
 MODPY_EGG_VERSION =	1.1.4
+REVISION =		0
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

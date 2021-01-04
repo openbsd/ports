@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/02/25 10:05:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/04 14:06:32 sthen Exp $
 @conflict fio-*
 @conflict py-fiona-*
 @pkgpath geo/py-fiona
@@ -28,12 +28,12 @@ lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}rfc3339.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}transform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}vfs.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/fiona/_crs.so
-@so lib/python${MODPY_VERSION}/site-packages/fiona/_env.so
-@so lib/python${MODPY_VERSION}/site-packages/fiona/_err.so
-@so lib/python${MODPY_VERSION}/site-packages/fiona/_geometry.so
-@so lib/python${MODPY_VERSION}/site-packages/fiona/_shim.so
-@so lib/python${MODPY_VERSION}/site-packages/fiona/_transform.so
+@so lib/python${MODPY_VERSION}/site-packages/fiona/_crs.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/fiona/_env.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/fiona/_err.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/fiona/_geometry.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/fiona/_shim.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/fiona/_transform.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/fiona/collection.py
 lib/python${MODPY_VERSION}/site-packages/fiona/compat.py
 lib/python${MODPY_VERSION}/site-packages/fiona/crs.py
@@ -79,10 +79,10 @@ lib/python${MODPY_VERSION}/site-packages/fiona/fio/rm.py
 lib/python${MODPY_VERSION}/site-packages/fiona/inspector.py
 lib/python${MODPY_VERSION}/site-packages/fiona/io.py
 lib/python${MODPY_VERSION}/site-packages/fiona/logutils.py
-@so lib/python${MODPY_VERSION}/site-packages/fiona/ogrext.so
+@so lib/python${MODPY_VERSION}/site-packages/fiona/ogrext.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/fiona/path.py
 lib/python${MODPY_VERSION}/site-packages/fiona/rfc3339.py
-@so lib/python${MODPY_VERSION}/site-packages/fiona/schema.so
+@so lib/python${MODPY_VERSION}/site-packages/fiona/schema.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/fiona/session.py
 lib/python${MODPY_VERSION}/site-packages/fiona/transform.py
 lib/python${MODPY_VERSION}/site-packages/fiona/vfs.py

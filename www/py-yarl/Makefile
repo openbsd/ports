@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/04 14:06:39 sthen Exp $
 
 COMMENT =		yet another URL library
 
 MODPY_EGG_VERSION =	1.4.2
 DISTNAME =		yarl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www devel
 

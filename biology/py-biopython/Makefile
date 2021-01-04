@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/10/25 18:12:58 martin Exp $
+# $OpenBSD: Makefile,v 1.32 2021/01/04 14:06:27 sthen Exp $
 
 COMMENT =		Python tools for computational molecular biology
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.78
 DISTNAME =		biopython-${MODPY_EGG_VERSION}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 HOMEPAGE =		http://www.biopython.org/
 
