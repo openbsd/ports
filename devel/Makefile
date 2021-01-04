@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2049 2021/01/03 10:17:13 jca Exp $
+# $OpenBSD: Makefile,v 1.2050 2021/01/04 13:58:31 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1944,7 +1944,6 @@
      SUBDIR += stm32loader
      SUBDIR += stp
      SUBDIR += subversion
-     SUBDIR += subversion,python3
      SUBDIR += swig
      SUBDIR += t1lib
      SUBDIR += tbb

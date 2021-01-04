@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2020/07/03 21:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.183 2021/01/04 13:58:31 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -9,19 +9,14 @@ COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.14.0
 REVISION=		0
-REVISION-python=	1
+REVISION-python=	2
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
-FULLPKGNAME-main=	subversion-${VERSION}${FLAVOR_EXT:S/-python3//}
-FULLPKGPATH-main=	devel/subversion,-main${FLAVOR_EXT:S/-python3//:S/-/,/g}
-FULLPKGNAME-perl=	p5-SVN-${VERSION}
-FULLPKGPATH-perl=	devel/subversion,-perl
-FULLPKGNAME-ruby=	ruby${MODRUBY_BINREV}-subversion-${VERSION}
-FULLPKGPATH-ruby=	devel/subversion,-ruby
-FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
-FULLPKGPATH-ap2=	devel/subversion,-ap2
-FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
-FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
+PKGNAME-perl=		p5-SVN-${VERSION}
+PKGNAME-python=		py-subversion-${VERSION}
+PKGNAME-ruby=		ruby${MODRUBY_BINREV}-subversion-${VERSION}
+PKGNAME-ap2=		ap2-subversion-${VERSION}
+PKGNAME-gnome-keyring= 	gnome-keyring-subversion-${VERSION}
 
 MODRUBY_REV ?=	2.7
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
@@ -55,25 +50,14 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby no_gnome-keyring
-FLAVORS=	maintainer_mode python3
+FLAVORS=	maintainer_mode
 FLAVOR?=
 .if ${FLAVOR:Mno_bindings}
 FLAVOR += no_perl no_python no_ruby
 .endif
 
-.if ${FLAVOR:Mpython3}
-FULLPKGNAME-python=	py3-subversion-${VERSION}
-FULLPKGPATH-python=	devel/subversion,python3,-python
-# py-subversion and py3-subversion both install libsvn_swig_py-1;
-# conflict with the other flavour
-PY_CONFLICT=		py-subversion-*
-.else
-FULLPKGNAME-python=	py-subversion-${VERSION}
-FULLPKGPATH-python=	devel/subversion,-python
-PY_CONFLICT=		py3-subversion-*
-.endif
-
 MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB=	expat iconv intl lz4 m pthread z
 
