@@ -1,0 +1,4 @@
+filter-admdscrub is an opensmtpd filter that checks mail for
+"Authentication-Results" headers in a specified authserv-id domain.
+Matching headers will be removed or the message will be rejected at session
+time.
