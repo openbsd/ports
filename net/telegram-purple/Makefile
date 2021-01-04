@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/25 15:03:07 tb Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/04 11:56:28 sthen Exp $
 
-# assertion "get_int () == TLS_SCHEMA_V2" failed: file "generate.c", line 2831, function "parse_tlo_file"
+# endianness issues in tgl/generate.c
 NOT_FOR_ARCHS =		${BE_ARCHS}
 
-V =			1.3.1
-REVISION =		2
+V =			1.4.6
 COMMENT =		Telegram support for Pidgin
 DISTNAME =		telegram-purple_$V.orig
 PKGNAME =		telegram-purple-$V
@@ -13,11 +12,12 @@ CATEGORIES =		net
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += gcrypt glib-2.0 intl purple webp z
+WANTLIB += gcrypt glib-2.0 intl png purple webp z
 
 MASTER_SITES =	https://github.com/majn/telegram-purple/releases/download/v$V/
 
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =		devel/gettext,-tools \
+			sysutils/coreutils
 LIB_DEPENDS =		devel/gettext,-runtime \
 			graphics/libwebp \
 			net/pidgin,-libpurple \
@@ -31,6 +31,10 @@ CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS =		-L${LOCALBASE}/lib
 
 WRKDIST =		${WRKDIR}/telegram-purple
+
+pre-configure:
+	sed -i 's|sha256sum|gsha256sum|g' ${WRKDIST}/Makefile.in \
+		${WRKDIST}/mkwindows.sh ${WRKDIST}/tgl/Makefile.in
 
 post-install:
 	mv ${DESTDIR}/etc/telegram-purple ${PREFIX}/share/purple

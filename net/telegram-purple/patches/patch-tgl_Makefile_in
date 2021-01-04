@@ -1,4 +1,4 @@
-$OpenBSD: patch-tgl_Makefile_in,v 1.1.1.1 2017/06/24 00:20:17 czarkoff Exp $
+$OpenBSD: patch-tgl_Makefile_in,v 1.2 2021/01/04 11:56:28 sthen Exp $
 
 Index: tgl/Makefile.in
 --- tgl/Makefile.in.orig
@@ -7,12 +7,12 @@ Index: tgl/Makefile.in
  LDFLAGS=@LDFLAGS@ @OPENSSL_LDFLAGS@
  CPPFLAGS=@CPPFLAGS@ @OPENSSL_INCLUDES@
  DEFS=@DEFS@
--COMPILE_FLAGS=${CFLAGS} ${CPFLAGS} ${CPPFLAGS} ${DEFS} -Wall -Wextra -Werror -Wno-deprecated-declarations -fno-strict-aliasing -fno-omit-frame-pointer -ggdb -Wno-unused-parameter -fPIC -D_FORTIFY_SOURCE=2
+-COMPILE_FLAGS=${CFLAGS} ${CPFLAGS} ${CPPFLAGS} ${DEFS} -Wall -Wextra -Wno-deprecated-declarations -fno-strict-aliasing -fno-omit-frame-pointer -ggdb -Wno-unused-parameter -fPIC -D_FORTIFY_SOURCE=2
 +COMPILE_FLAGS=${CFLAGS} ${CPFLAGS} ${CPPFLAGS} ${DEFS} -fno-strict-aliasing -fno-omit-frame-pointer -fPIC
  
  EXTRA_LIBS=@LIBS@ @EXTRA_LIBS@ @OPENSSL_LIBS@
 -LOCAL_LDFLAGS=-rdynamic -ggdb ${EXTRA_LIBS}
 +LOCAL_LDFLAGS=-rdynamic ${EXTRA_LIBS}
- LINK_FLAGS=${LDFLAGS} ${LOCAL_LDFLAGS}
+ LINK_FLAGS=${CFLAGS} ${LDFLAGS} ${LOCAL_LDFLAGS}
  
  DEP=dep

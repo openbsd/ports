@@ -1,14 +1,13 @@
-$OpenBSD: patch-tgl_configure,v 1.1 2018/09/04 10:01:05 espie Exp $
+$OpenBSD: patch-tgl_configure,v 1.2 2021/01/04 11:56:28 sthen Exp $
 
 Index: tgl/configure
 --- tgl/configure.orig
 +++ tgl/configure
-@@ -4188,19 +4188,8 @@ fi
+@@ -4296,19 +4296,7 @@ fi
  
  done
  
-+tgl_found_execinfo_header=no
- 
+-
 -# FreeBSD needs -lexecinfo
 -for ac_header in execinfo.h
 -do :
@@ -21,6 +20,7 @@ Index: tgl/configure
 -fi
 -
 -done
++tgl_found_execinfo_header=no;
  
  if test "x$tgl_found_execinfo_header" = "xyes"; then :
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing backtrace_symbols_fd" >&5
