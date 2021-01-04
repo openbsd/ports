@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2020/12/21 11:14:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2021/01/04 06:13:31 rsadowski Exp $
 
 
 COMMENT =		accounting for KDE 5
@@ -7,6 +7,7 @@ HOMEPAGE =		https://kmymoney.org/
 
 VERSION =		5.1.1
 DISTNAME =		kmymoney-${VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity x11
 

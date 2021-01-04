@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/12/21 11:14:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/01/04 06:13:31 rsadowski Exp $
 @bin bin/kmymoney
 include/kmymoney/
 include/kmymoney/amountedit.h
@@ -1713,4 +1713,3 @@ share/mime/packages/x-kmymoney.xml
 @tag update-desktop-database
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag gtk-update-icon-cache %D/share/icons/locolor
