@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.6 2020/12/29 23:59:06 daniel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.7 2021/01/04 14:04:42 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -2490,6 +2490,9 @@ lib/python3.8/test/test_asyncio/__pycache__/echo3.cpython-38.pyc
 lib/python3.8/test/test_asyncio/__pycache__/functional.cpython-38.opt-1.pyc
 lib/python3.8/test/test_asyncio/__pycache__/functional.cpython-38.opt-2.pyc
 lib/python3.8/test/test_asyncio/__pycache__/functional.cpython-38.pyc
+lib/python3.8/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-38.opt-1.pyc
+lib/python3.8/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-38.opt-2.pyc
+lib/python3.8/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-38.pyc
 lib/python3.8/test/test_asyncio/__pycache__/test_base_events.cpython-38.opt-1.pyc
 lib/python3.8/test/test_asyncio/__pycache__/test_base_events.cpython-38.opt-2.pyc
 lib/python3.8/test/test_asyncio/__pycache__/test_base_events.cpython-38.pyc
@@ -2505,6 +2508,9 @@ lib/python3.8/test/test_asyncio/__pycache__/test_events.cpython-38.pyc
 lib/python3.8/test/test_asyncio/__pycache__/test_futures.cpython-38.opt-1.pyc
 lib/python3.8/test/test_asyncio/__pycache__/test_futures.cpython-38.opt-2.pyc
 lib/python3.8/test/test_asyncio/__pycache__/test_futures.cpython-38.pyc
+lib/python3.8/test/test_asyncio/__pycache__/test_futures2.cpython-38.opt-1.pyc
+lib/python3.8/test/test_asyncio/__pycache__/test_futures2.cpython-38.opt-2.pyc
+lib/python3.8/test/test_asyncio/__pycache__/test_futures2.cpython-38.pyc
 lib/python3.8/test/test_asyncio/__pycache__/test_locks.cpython-38.opt-1.pyc
 lib/python3.8/test/test_asyncio/__pycache__/test_locks.cpython-38.opt-2.pyc
 lib/python3.8/test/test_asyncio/__pycache__/test_locks.cpython-38.pyc
@@ -2566,11 +2572,13 @@ lib/python3.8/test/test_asyncio/echo.py
 lib/python3.8/test/test_asyncio/echo2.py
 lib/python3.8/test/test_asyncio/echo3.py
 lib/python3.8/test/test_asyncio/functional.py
+lib/python3.8/test/test_asyncio/test_asyncio_waitfor.py
 lib/python3.8/test/test_asyncio/test_base_events.py
 lib/python3.8/test/test_asyncio/test_buffered_proto.py
 lib/python3.8/test/test_asyncio/test_context.py
 lib/python3.8/test/test_asyncio/test_events.py
 lib/python3.8/test/test_asyncio/test_futures.py
+lib/python3.8/test/test_asyncio/test_futures2.py
 lib/python3.8/test/test_asyncio/test_locks.py
 lib/python3.8/test/test_asyncio/test_pep492.py
 lib/python3.8/test/test_asyncio/test_proactor_events.py
@@ -3873,6 +3881,9 @@ lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-38.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-38.opt-1.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-38.opt-2.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-38.pyc
+lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_simpledialog.cpython-38.opt-1.pyc
+lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_simpledialog.cpython-38.opt-2.pyc
+lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_simpledialog.cpython-38.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_text.cpython-38.opt-1.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_text.cpython-38.opt-2.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_text.cpython-38.pyc
@@ -3887,6 +3898,7 @@ lib/python3.8/tkinter/test/test_tkinter/test_geometry_managers.py
 lib/python3.8/tkinter/test/test_tkinter/test_images.py
 lib/python3.8/tkinter/test/test_tkinter/test_loadtk.py
 lib/python3.8/tkinter/test/test_tkinter/test_misc.py
+lib/python3.8/tkinter/test/test_tkinter/test_simpledialog.py
 lib/python3.8/tkinter/test/test_tkinter/test_text.py
 lib/python3.8/tkinter/test/test_tkinter/test_variables.py
 lib/python3.8/tkinter/test/test_tkinter/test_widgets.py
