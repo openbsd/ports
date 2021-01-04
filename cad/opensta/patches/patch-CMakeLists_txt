@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/01/02 08:49:38 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/01/04 13:53:16 sthen Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -8,7 +8,7 @@ Index: CMakeLists.txt
  ################################################################
  
 -find_package(SWIG REQUIRED 3.0)
-+find_package(SWIG 3.0 REQUIRED)
++find_package(SWIG REQUIRED)
  include(UseSWIG)
  
  set(STA_SWIG_FILE app/StaApp.i)
