@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.413 2021/01/01 11:27:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.414 2021/01/05 07:49:18 benoit Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -115,6 +115,7 @@
      SUBDIR += p5-SQL-Abstract
      SUBDIR += p5-SQL-Abstract-Classic
      SUBDIR += p5-SQL-Abstract-Limit
+     SUBDIR += p5-SQL-Abstract-More
      SUBDIR += p5-SQL-ReservedWords
      SUBDIR += p5-SQL-Statement
      SUBDIR += p5-SQL-Translator
