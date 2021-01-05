@@ -97,7 +97,7 @@ lib/qt5/mkspecs/modules/qt_lib_avwidgets.pri
 lib/qt5/mkspecs/modules/qt_lib_avwidgets_private.pri
 lib/qt5/qml/QtAV/
 lib/qt5/qml/QtAV/Video.qml
-lib/qt5/qml/QtAV/libQmlAV.so
+@so lib/qt5/qml/QtAV/libQmlAV.so
 lib/qt5/qml/QtAV/plugins.qmltypes
 lib/qt5/qml/QtAV/qmldir
 @tag update-desktop-database
