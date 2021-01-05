@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_engine_Makefile_am,v 1.1 2020/10/22 12:11:05 bket Exp $
+$OpenBSD: patch-src_engine_Makefile_am,v 1.2 2021/01/05 18:29:19 bket Exp $
 
 Index: src/engine/Makefile.am
 --- src/engine/Makefile.am.orig
 +++ src/engine/Makefile.am
-@@ -139,7 +139,7 @@ libfzclient_private_la_SOURCES += ../pugixml/pugixml.c
+@@ -142,7 +142,7 @@ libfzclient_private_la_SOURCES += ../pugixml/pugixml.c
  endif
  
  libfzclient_private_la_CXXFLAGS = -fvisibility=hidden
 -libfzclient_private_la_LDFLAGS = -no-undefined -release $(PACKAGE_VERSION_MAJOR).$(PACKAGE_VERSION_MINOR).$(PACKAGE_VERSION_MICRO)
-+libfzclient_private_la_LDFLAGS = -no-undefined -release $(LIBfzclient_private_VERSION)
++libfzclient_private_la_LDFLAGS = -no-undefined
  libfzclient_private_la_LDFLAGS += $(LIBFILEZILLA_LIBS)
  libfzclient_private_la_LDFLAGS += $(IDN_LIB)
  
