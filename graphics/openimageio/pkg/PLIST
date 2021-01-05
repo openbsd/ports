@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/11/29 20:05:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/01/05 20:53:18 jca Exp $
 @conflict idiff-*
 @bin bin/iconvert
 @bin bin/idiff
@@ -8,14 +8,22 @@
 @bin bin/maketx
 @bin bin/oiiotool
 include/OpenImageIO/
-include/OpenImageIO/SHA1.h
+include/OpenImageIO/Imath.h
 include/OpenImageIO/argparse.h
 include/OpenImageIO/array_view.h
 include/OpenImageIO/atomic.h
+include/OpenImageIO/attrdelegate.h
 include/OpenImageIO/benchmark.h
 include/OpenImageIO/color.h
 include/OpenImageIO/dassert.h
 include/OpenImageIO/deepdata.h
+include/OpenImageIO/detail/
+include/OpenImageIO/detail/fmt/
+include/OpenImageIO/detail/fmt/core.h
+include/OpenImageIO/detail/fmt/format-inl.h
+include/OpenImageIO/detail/fmt/format.h
+include/OpenImageIO/detail/fmt/ostream.h
+include/OpenImageIO/detail/fmt/printf.h
 include/OpenImageIO/errorhandler.h
 include/OpenImageIO/export.h
 include/OpenImageIO/filesystem.h
@@ -33,7 +41,6 @@ include/OpenImageIO/imageio.h
 include/OpenImageIO/missing_math.h
 include/OpenImageIO/oiioversion.h
 include/OpenImageIO/optparser.h
-include/OpenImageIO/osdep.h
 include/OpenImageIO/parallel.h
 include/OpenImageIO/paramlist.h
 include/OpenImageIO/platform.h
@@ -47,17 +54,23 @@ include/OpenImageIO/strutil.h
 include/OpenImageIO/sysutil.h
 include/OpenImageIO/texture.h
 include/OpenImageIO/thread.h
+include/OpenImageIO/tiffutils.h
 include/OpenImageIO/timer.h
-include/OpenImageIO/tinyformat.h
 include/OpenImageIO/typedesc.h
 include/OpenImageIO/unittest.h
 include/OpenImageIO/unordered_map_concurrent.h
 include/OpenImageIO/ustring.h
 include/OpenImageIO/varyingref.h
 include/OpenImageIO/version.h
+lib/cmake/OpenImageIO/
+lib/cmake/OpenImageIO/OpenImageIOConfig.cmake
+lib/cmake/OpenImageIO/OpenImageIOConfigVersion.cmake
+lib/cmake/OpenImageIO/OpenImageIOTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/OpenImageIO/OpenImageIOTargets.cmake
 @lib lib/libOpenImageIO.so.${LIBOpenImageIO_VERSION}
 @lib lib/libOpenImageIO_Util.so.${LIBOpenImageIO_Util_VERSION}
-lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.${LIBOpenImageIO_VERSION}
+lib/pkgconfig/OpenImageIO.pc
+lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.8.0
 @man man/man1/iconvert.1
 @man man/man1/idiff.1
 @man man/man1/igrep.1
@@ -65,10 +78,13 @@ lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.${LIBOpenImageIO_VERSION
 @man man/man1/iv.1
 @man man/man1/maketx.1
 @man man/man1/oiiotool.1
+share/cmake/Modules/FindOpenImageIO.cmake
 share/doc/OpenImageIO/
+share/doc/OpenImageIO/CHANGES-0.x.md
+share/doc/OpenImageIO/CHANGES-1.x.md
 share/doc/OpenImageIO/CHANGES.md
-share/doc/OpenImageIO/LICENSE
-share/doc/OpenImageIO/openimageio.pdf
+share/doc/OpenImageIO/LICENSE.md
+share/doc/OpenImageIO/THIRD-PARTY.md
 share/fonts/
 @fontdir share/fonts/OpenImageIO/
 share/fonts/OpenImageIO/DroidSans-Bold.ttf
