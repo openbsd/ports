@@ -1,0 +1,12 @@
+This module contains functions for converting between Julian dates and
+calendar dates.
+
+A function for converting Gregorian calendar dates to Julian dates,
+and another function for converting Julian calendar dates to Julian
+dates are defined. Two functions for the reverse calculations are also
+defined.
+
+Different regions of the world switched to Gregorian calendar from
+Julian calendar on different dates. Having separate functions for Julian
+and Gregorian calendars allow maximum flexibility in choosing the
+relevant calendar.
