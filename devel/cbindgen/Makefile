@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2020/10/21 10:54:27 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2021/01/05 10:27:06 landry Exp $
 
 COMMENT =		C bindings generator from rust code
 
 GH_ACCOUNT =		eqrion
 GH_PROJECT =		cbindgen
-GH_TAGNAME =		v0.15.0
+GH_TAGNAME =		v0.16.0
 
 CATEGORIES =		devel
 
@@ -26,14 +26,19 @@ MODCARGO_CRATES +=      autocfg 1.0.1   # Apache-2.0 OR MIT
 MODCARGO_CRATES +=      bitflags        1.2.1   # MIT/Apache-2.0
 MODCARGO_CRATES +=      cfg-if  0.1.10  # MIT/Apache-2.0
 MODCARGO_CRATES +=      clap    2.33.3  # MIT
+MODCARGO_CRATES +=      cloudabi        0.0.3   # BSD-2-Clause
 MODCARGO_CRATES +=      getrandom       0.1.15  # MIT OR Apache-2.0
 MODCARGO_CRATES +=      hashbrown       0.9.1   # Apache-2.0/MIT
 MODCARGO_CRATES +=      heck    0.3.1   # MIT OR Apache-2.0
 MODCARGO_CRATES +=      hermit-abi      0.1.16  # MIT/Apache-2.0
 MODCARGO_CRATES +=      indexmap        1.6.0   # Apache-2.0/MIT
 MODCARGO_CRATES +=      itoa    0.4.6   # MIT OR Apache-2.0
+MODCARGO_CRATES +=      lazy_static     1.4.0   # MIT/Apache-2.0
 MODCARGO_CRATES +=      libc    0.2.77  # MIT OR Apache-2.0
+MODCARGO_CRATES +=      lock_api        0.3.4   # Apache-2.0/MIT
 MODCARGO_CRATES +=      log     0.4.11  # MIT OR Apache-2.0
+MODCARGO_CRATES +=      parking_lot     0.10.2  # Apache-2.0/MIT
+MODCARGO_CRATES +=      parking_lot_core        0.7.2   # Apache-2.0/MIT
 MODCARGO_CRATES +=      ppv-lite86      0.2.9   # MIT/Apache-2.0
 MODCARGO_CRATES +=      proc-macro2     1.0.21  # MIT OR Apache-2.0
 MODCARGO_CRATES +=      quote   1.0.7   # MIT OR Apache-2.0
@@ -44,9 +49,13 @@ MODCARGO_CRATES +=      rand_hc 0.2.0   # MIT/Apache-2.0
 MODCARGO_CRATES +=      redox_syscall   0.1.57  # MIT
 MODCARGO_CRATES +=      remove_dir_all  0.5.3   # MIT/Apache-2.0
 MODCARGO_CRATES +=      ryu     1.0.5   # Apache-2.0 OR BSL-1.0
+MODCARGO_CRATES +=      scopeguard      1.1.0   # MIT/Apache-2.0
 MODCARGO_CRATES +=      serde   1.0.116 # MIT OR Apache-2.0
 MODCARGO_CRATES +=      serde_derive    1.0.116 # MIT OR Apache-2.0
 MODCARGO_CRATES +=      serde_json      1.0.57  # MIT OR Apache-2.0
+MODCARGO_CRATES +=      serial_test     0.5.0   # MIT
+MODCARGO_CRATES +=      serial_test_derive      0.5.0   # MIT
+MODCARGO_CRATES +=      smallvec        1.4.2   # MIT/Apache-2.0
 MODCARGO_CRATES +=      strsim  0.8.0   # MIT
 MODCARGO_CRATES +=      syn     1.0.41  # MIT OR Apache-2.0
 MODCARGO_CRATES +=      tempfile        3.1.0   # MIT OR Apache-2.0
