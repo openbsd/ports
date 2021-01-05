@@ -4,10 +4,10 @@ COMMENT =	sip extension for qt5
 
 # XXX  keep in sync with py-sip and carefully test with py-qt5 consumers
 
-MODPY_EGG_VERSION =	5.5.1
-DISTNAME =	sip-5.5.1.dev2011271026
-PKGNAME =	py-sip-qt5-${MODPY_EGG_VERSION}
-CATEGORIES =	x11
+MODPY_EGG_VERSION =	5.5.0
+DISTNAME =		sip-${MODPY_EGG_VERSION}
+PKGNAME =		py-sip-qt5-${MODPY_EGG_VERSION}
+CATEGORIES =		x11
 
 HOMEPAGE =	https://www.riverbankcomputing.com/software/sip/intro
 
@@ -18,13 +18,12 @@ WANTLIB =	m ${COMPILER_LIBCXX}
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://www.riverbankcomputing.com/static/Downloads/sip/
-
 MODULES =	lang/python
 
 FLAVORS =	python3
 FLAVOR =	python3
 
+MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
 
 .include <bsd.port.mk>
