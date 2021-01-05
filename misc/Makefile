@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2020/12/20 15:19:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.199 2021/01/05 13:01:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -86,6 +86,7 @@
      SUBDIR += portroach
      SUBDIR += posixtestsuite
      SUBDIR += py-imdb
+     SUBDIR += py-jdcal,python3
      SUBDIR += py-memcached
      SUBDIR += py-memcached,python3
      SUBDIR += randtype
