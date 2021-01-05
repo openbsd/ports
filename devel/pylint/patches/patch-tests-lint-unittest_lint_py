@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests-lint-unittest_lint_py,v 1.1 2021/01/05 04:37:20 kn Exp $
+Index: tests/lint/unittest_lint.py
+--- tests/lint/unittest_lint.py.orig
++++ tests/lint/unittest_lint.py
+@@ -630,6 +630,12 @@ def pop_pylintrc():
+ 
+ @pytest.mark.usefixtures("pop_pylintrc")
+ def test_pylint_home():
++    if os.environ['PYLINTHOME']:
++        pylintd = os.environ['PYLINTHOME']
++        reload_module(config)
++        self.assertEqual(config.PYLINT_HOME, pylintd)
++        return
++
+     uhome = os.path.expanduser("~")
+     if uhome == "~":
+         expected = ".pylint.d"

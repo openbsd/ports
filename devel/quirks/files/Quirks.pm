@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1134 2021/01/01 11:31:58 benoit Exp $
+# $OpenBSD: Quirks.pm,v 1.1135 2021/01/05 04:37:19 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2023,6 +2023,7 @@ my $obsolete_reason = {
 	'libxml++3' => 5,
 	'orage' => 3,
 	'xfce4-statusnotifier' => 3,
+	'pylint3-gui' => 3,
 };
 
 # reasons for obsolete packages
