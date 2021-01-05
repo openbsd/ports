@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/05 12:58:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/05 13:01:12 sthen Exp $
 
 COMMENT=	Python library to read/write Excel 2010 xlsx/xlsm files
 
@@ -18,7 +18,9 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+FLAVOR=			python3
+FLAVORS=		python3
 
 # not in pypi distfile
 NO_TEST=		Yes
