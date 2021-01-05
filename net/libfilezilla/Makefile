@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2020/10/22 12:10:02 bket Exp $
+# $OpenBSD: Makefile,v 1.17 2021/01/05 18:28:44 bket Exp $
 
 COMMENT =	support library for FileZilla
 
-DISTNAME =	libfilezilla-0.25.0
+DISTNAME =	libfilezilla-0.26.0
 
-SHARED_LIBS +=  filezilla	5.2 # 10.0.0
+SHARED_LIBS +=  filezilla	6.0 # 11.0.0
 
 CATEGORIES =	net
 
@@ -15,8 +15,8 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ffi gmp gnutls hogweed iconv idn2
-WANTLIB += intl m nettle p11-kit tasn1 unistring
+WANTLIB += ${COMPILER_LIBCXX} gmp gnutls hogweed iconv idn2 intl
+WANTLIB += m nettle p11-kit tasn1 unistring
 
 MASTER_SITES =		https://download.filezilla-project.org/libfilezilla/
 EXTRACT_SUFX =		.tar.bz2

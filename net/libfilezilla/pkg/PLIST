@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/10/22 12:10:03 bket Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/05 18:28:44 bket Exp $
 include/libfilezilla/
 include/libfilezilla/apply.hpp
 include/libfilezilla/buffer.hpp
@@ -20,6 +20,7 @@ include/libfilezilla/libfilezilla.hpp
 include/libfilezilla/local_filesys.hpp
 include/libfilezilla/logger.hpp
 include/libfilezilla/mutex.hpp
+include/libfilezilla/nonowning_buffer.hpp
 include/libfilezilla/optional.hpp
 include/libfilezilla/private/
 include/libfilezilla/private/defs.hpp
@@ -51,11 +52,7 @@ lib/pkgconfig/libfilezilla.pc
 share/locale/an/
 share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/libfilezilla.mo
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libfilezilla.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libfilezilla.mo
 share/locale/bg_BG/
 share/locale/bg_BG/LC_MESSAGES/
@@ -70,8 +67,6 @@ share/locale/co/LC_MESSAGES/libfilezilla.mo
 share/locale/cs_CZ/
 share/locale/cs_CZ/LC_MESSAGES/
 share/locale/cs_CZ/LC_MESSAGES/libfilezilla.mo
-share/locale/cy/
-share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/libfilezilla.mo
 share/locale/da/LC_MESSAGES/libfilezilla.mo
 share/locale/de/LC_MESSAGES/libfilezilla.mo
@@ -140,8 +135,6 @@ share/locale/nl/LC_MESSAGES/libfilezilla.mo
 share/locale/nn_NO/
 share/locale/nn_NO/LC_MESSAGES/
 share/locale/nn_NO/LC_MESSAGES/libfilezilla.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/libfilezilla.mo
 share/locale/pl_PL/
 share/locale/pl_PL/LC_MESSAGES/
