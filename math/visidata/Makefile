@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/12/08 20:34:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/05 13:03:14 sthen Exp $
 
 COMMENT=	console-based multitool to explore and arrange tabular data
 
 MODPY_EGG_VERSION=	2.1
+REVISION=	0
 DISTNAME=	visidata-${MODPY_EGG_VERSION}
 
 CATEGORIES=	math textproc
