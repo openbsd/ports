@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_audiolib_src_xmp_cpp,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+$OpenBSD: patch-source_audiolib_src_xmp_cpp,v 1.2 2021/01/06 03:26:04 jsg Exp $
 
 use packaged libxmp instead of bundled libxmp-lite, works around
 build issue when libxmp package is installed
@@ -13,5 +13,5 @@ Index: source/audiolib/src/xmp.cpp
 -#include "libxmp-lite/xmp.h"
 +#include <xmp.h>
  
- typedef struct {
-     void * ptr;
+ int  MV_GetXMPPosition(VoiceNode *voice)               { return voice->position; }
+ void MV_SetXMPPosition(VoiceNode *voice, int position) { xmp_seek_time((xmp_context)voice->rawdataptr, position); }

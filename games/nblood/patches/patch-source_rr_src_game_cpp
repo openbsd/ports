@@ -1,51 +1,37 @@
-$OpenBSD: patch-source_rr_src_game_cpp,v 1.3 2020/03/14 06:15:15 jsg Exp $
+$OpenBSD: patch-source_rr_src_game_cpp,v 1.4 2021/01/06 03:26:04 jsg Exp $
 
 store log file in ~/.config/rednukem/
 
 Index: source/rr/src/game.cpp
 --- source/rr/src/game.cpp.orig
 +++ source/rr/src/game.cpp
-@@ -7832,6 +7832,9 @@ EDUKE32_STATIC_ASSERT(sizeof(DukePlayer_t)%4 == 0);
- 
- int app_main(int argc, char const * const * argv)
- {
-+    char logpath[BMAX_PATH];
-+    char *homedir;
-+    int r;
- #ifndef NETCODE_DISABLE
-     if (enet_initialize() != 0)
-         initprintf("An error occurred while initializing ENet.\n");
-@@ -7862,21 +7865,22 @@ int app_main(int argc, char const * const * argv)
- 
-     G_ExtPreInit(argc, argv);
- 
--#ifdef __APPLE__
--    if (!g_useCwd)
-+    homedir = Bgethomedir();
-+    if (!g_useCwd && homedir != NULL)
-     {
--        char cwd[BMAX_PATH];
--        char *homedir = Bgethomedir();
--        if (homedir)
--            Bsnprintf(cwd, sizeof(cwd), "%s/Library/Logs/" APPBASENAME ".log", homedir);
-+        Bsnprintf(logpath, sizeof(logpath), "%s/.config/%s", homedir, APPBASENAME);
-+        r = Bmkdir(logpath, S_IRWXU);
-+        if (r == 0 || (r == -1 && errno == EEXIST))
-+        {
-+            Bsnprintf(logpath, sizeof(logpath), "%s/.config/%s/%s.log", homedir, APPBASENAME, APPBASENAME);
-+            OSD_SetLogFile(logpath);
-+        }
-         else
--            Bstrcpy(cwd, APPBASENAME ".log");
--        OSD_SetLogFile(cwd);
--        Bfree(homedir);
-+            OSD_SetLogFile(APPBASENAME ".log");
+@@ -8161,6 +8161,29 @@ int app_main(int argc, char const * const * argv)
+         Bfree(homedir);
      }
      else
--#endif
--    OSD_SetLogFile(APPBASENAME ".log");
-+        OSD_SetLogFile(APPBASENAME ".log");
-+    Bfree(homedir);
++#else
++    if (!g_useCwd)
++    {
++        char cwd[BMAX_PATH];
++        char *homedir = Bgethomedir();
++        int r;
++        if (homedir)
++        {
++            Bsnprintf(cwd, sizeof(cwd), "%s/.config/%s", homedir, APPBASENAME);
++            r = Bmkdir(cwd, S_IRWXU);
++            if (r == 0 || (r == -1 && errno == EEXIST)) {
++                Bsnprintf(cwd, sizeof(cwd), "%s/.config/%s/%s.log",
++                    homedir, APPBASENAME, APPBASENAME);
++            } else {
++                Bstrcpy(cwd, APPBASENAME ".log");
++            }
++        } else {
++            Bstrcpy(cwd, APPBASENAME ".log");
++        }
++        OSD_SetLogFile(cwd);
++        Xfree(homedir);
++    }
++    else
+ #endif
+     OSD_SetLogFile(APPBASENAME ".log");
  
-     OSD_SetFunctions(GAME_drawosdchar,
-                      GAME_drawosdstr,

@@ -1,13 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/08 22:41:18 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/06 03:26:04 jsg Exp $
 
 COMMENT =	reverse-engineered ports of Build games
 
-DISTNAME =	nblood-1.01.20200313
+DISTNAME =	nblood-1.01.20210103
 
 GH_ACCOUNT =	nukeykt
 GH_PROJECT =	NBlood
-GH_COMMIT =	369b790af785c9a0f144dfa9e82bda87af48da7a
+GH_COMMIT =	edc76dee4d1eb9ee9ae7b8be5bf0ce371a91d1e3
 CATEGORIES =	games x11
+
+VC_BRANCH =	master
+# git rev-list --count hash
+VC_REV =	12112
+# git rev-parse --short=9 hash
+VC_HASH =	edc76dee4
 
 MAINTAINER =	Jonathan Gray <jsg@openbsd.org>
 
@@ -65,6 +71,11 @@ post-extract:
 	@sed -i "s,/usr/share/games/nblood,${TRUEPREFIX}/share/nblood," \
 		${WRKSRC}/source/blood/src/common.cpp
 	rm ${WRKSRC}/source/build/include/lz4.h ${WRKSRC}/source/build/src/lz4.c
+
+post-patch:
+	echo "VC_BRANCH := ${VC_BRANCH}" > ${WRKSRC}/EDUKE32_REVISION.mak
+	echo "VC_REV := ${VC_REV}" >> ${WRKSRC}/EDUKE32_REVISION.mak
+	echo "VC_HASH := ${VC_HASH}" >> ${WRKSRC}/EDUKE32_REVISION.mak
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/nblood ${PREFIX}/bin
