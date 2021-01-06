@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/04/01 20:43:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/01/06 22:32:08 thfr Exp $
 bin/sdl2-config
 include/SDL2/
 include/SDL2/SDL.h
@@ -23,10 +23,12 @@ include/SDL2/SDL_joystick.h
 include/SDL2/SDL_keyboard.h
 include/SDL2/SDL_keycode.h
 include/SDL2/SDL_loadso.h
+include/SDL2/SDL_locale.h
 include/SDL2/SDL_log.h
 include/SDL2/SDL_main.h
 include/SDL2/SDL_messagebox.h
 include/SDL2/SDL_metal.h
+include/SDL2/SDL_misc.h
 include/SDL2/SDL_mouse.h
 include/SDL2/SDL_mutex.h
 include/SDL2/SDL_name.h
@@ -75,7 +77,6 @@ include/SDL2/SDL_video.h
 include/SDL2/SDL_vulkan.h
 include/SDL2/begin_code.h
 include/SDL2/close_code.h
-lib/cmake/
 lib/cmake/SDL2/
 lib/cmake/SDL2/sdl2-config-version.cmake
 lib/cmake/SDL2/sdl2-config.cmake

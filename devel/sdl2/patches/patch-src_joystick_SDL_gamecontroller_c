@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.6 2020/05/24 03:24:54 jsg Exp $
+$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.7 2021/01/06 22:32:08 thfr Exp $
 
 enable GameController API the Linux fallback way (by posing as Xbox360
 controller)
@@ -11,7 +11,7 @@ many controllers use this mapping
 Index: src/joystick/SDL_gamecontroller.c
 --- src/joystick/SDL_gamecontroller.c.orig
 +++ src/joystick/SDL_gamecontroller.c
-@@ -739,7 +739,7 @@ static char *SDL_PrivateGetControllerGUIDFromMappingSt
+@@ -968,7 +968,7 @@ static char *SDL_PrivateGetControllerGUIDFromMappingSt
              SDL_memcpy(&pchGUID[8], &pchGUID[0], 4);
              SDL_memcpy(&pchGUID[0], "03000000", 8);
          }
@@ -20,10 +20,10 @@ Index: src/joystick/SDL_gamecontroller.c
          if (SDL_strlen(pchGUID) == 32 &&
              SDL_memcmp(&pchGUID[4], "000000000000", 12) == 0 &&
              SDL_memcmp(&pchGUID[20], "000000000000", 12) == 0) {
-@@ -1026,17 +1026,21 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
+@@ -1131,17 +1131,21 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
      ControllerMapping_t *mapping;
  
-     mapping = SDL_PrivateGetControllerMappingForGUID(&guid, SDL_FALSE);
+     mapping = SDL_PrivateGetControllerMappingForGUID(guid, SDL_FALSE);
 -#ifdef __LINUX__
 +#if defined(__LINUX__) || defined(__OpenBSD__)
      if (!mapping && name) {
@@ -37,9 +37,8 @@ Index: src/joystick/SDL_gamecontroller.c
 +        if (SDL_GetHint(SDL_HINT_GAMECONTROLLERCONFIG) == NULL) {
              mapping = SDL_PrivateAddMappingForGUID(guid,
 -"none,X360 Wireless Controller,a:b0,b:b1,back:b6,dpdown:b14,dpleft:b11,dpright:b12,dpup:b13,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3",
--                          &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
 +"none,XBox360 Controller,a:b7,b:b8,back:b1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b4,leftstick:b2,lefttrigger:a2,leftx:a0,lefty:a1~,rightshoulder:b5,rightstick:b3,righttrigger:a5,rightx:a3,righty:a4~,start:b0,x:b9,y:b10",
-+                &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
+                           &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
 +        } else {
 +            mapping = SDL_PrivateAddMappingForGUID(guid, SDL_GetHint(SDL_HINT_GAMECONTROLLERCONFIG), &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
          }
@@ -47,5 +46,5 @@ Index: src/joystick/SDL_gamecontroller.c
 -#endif /* __LINUX__ */
 +#endif /* __LINUX__ || __OpenBSD__ */
  
-     if (!mapping && name) {
+     if (!mapping && name && !SDL_IsJoystickWGI(guid)) {
          if (SDL_strstr(name, "Xbox") || SDL_strstr(name, "X-Box") || SDL_strstr(name, "XBOX")) {
