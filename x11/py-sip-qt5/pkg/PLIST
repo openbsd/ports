@@ -41,7 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/argument_parser.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/bindings.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/buildable.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/builder.py
-@so lib/python${MODPY_VERSION}/site-packages/sipbuild/code_generator.so
+@so lib/python${MODPY_VERSION}/site-packages/sipbuild/code_generator.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sipbuild/configurable.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/__init__.py
