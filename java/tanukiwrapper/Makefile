@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/11/23 12:37:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/01/06 13:30:22 solene Exp $
 
 # would normally be set in java.port.mk, but i2p pulls in bsd.port.arch.mk
 # itself which interferes with ONLY_FOR_ARCHS coming from MODULES.
@@ -9,7 +9,7 @@ BROKEN-i386=	various relocation R_386_PC32 cannot be used against symbol XX
 
 COMMENT=	Tanuki Java Service Wrapper
 
-V=		3.5.44
+V=		3.5.45
 DISTNAME=	wrapper_${V}_src
 PKGNAME=	java-tanukiwrapper-${V}
 CATEGORIES=	java
