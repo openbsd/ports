@@ -1,0 +1,9 @@
+$OpenBSD: README,v 1.1 2021/01/06 09:57:09 paco Exp $
+
+Gajim Plugins
+=============
+
+Some plugins in Gajim require additional Python modules to function
+properly.  For instance, in order to use the OMEMO plugin, axolotl is
+required.  This is available on OpenBSD via the py3-axolotl package or
+net/py-axolotl,python3 port.
