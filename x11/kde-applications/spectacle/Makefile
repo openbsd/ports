@@ -4,7 +4,7 @@ COMMENT =	KDE screen capture and screenshot program
 VERSION =	19.04.3
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/spectacle/
 

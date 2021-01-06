@@ -3,6 +3,7 @@
 COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5CalendarSupport       1.0 # 5.13.2
 
