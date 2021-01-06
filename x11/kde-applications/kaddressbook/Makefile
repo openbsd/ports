@@ -3,6 +3,7 @@
 COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
+REVISION =	1
 
 SHARED_LIBS +=  kaddressbookprivate       1.0 # 5.13.2
 

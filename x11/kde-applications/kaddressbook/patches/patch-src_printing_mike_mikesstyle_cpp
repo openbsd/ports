@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Unbreak Qt 5.15 build
+https://github.com/KDE/kaddressbook/commit/8aee8d40ae2a1c920d3520163d550d3b49720226
+
+Index: src/printing/mike/mikesstyle.cpp
+--- src/printing/mike/mikesstyle.cpp.orig
++++ src/printing/mike/mikesstyle.cpp
+@@ -123,7 +123,7 @@ MikesStyle::~MikesStyle()
+ void MikesStyle::print(const KContacts::Addressee::List &contacts, PrintProgress *progress)
+ {
+     QPrinter *printer = wizard()->printer();
+-    printer->setPageMargins(20, 20, 20, 20, QPrinter::DevicePixel);
++    printer->setPageMargins(QMarginsF(20, 20, 20, 20), QPageLayout::Point);
+ 
+     progress->addMessage(i18n("Setting up document"));
+ 

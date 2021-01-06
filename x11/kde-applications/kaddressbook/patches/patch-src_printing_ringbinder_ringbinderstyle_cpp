@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Unbreak Qt 5.15 build
+https://github.com/KDE/kaddressbook/commit/8aee8d40ae2a1c920d3520163d550d3b49720226
+
+Index: src/printing/ringbinder/ringbinderstyle.cpp
+--- src/printing/ringbinder/ringbinderstyle.cpp.orig
++++ src/printing/ringbinder/ringbinderstyle.cpp
+@@ -175,7 +175,7 @@ void RingBinderPrintStyle::print(const KContacts::Addr
+     config.sync();
+ 
+     QPrinter *printer = wizard()->printer();
+-    printer->setPageMargins(50, 20, 0, 50, QPrinter::DevicePixel);
++    printer->setPageMargins(QMarginsF(50, 20, 0, 50), QPageLayout::Point);
+ 
+     progress->addMessage(i18n("Setting up document"));
+ 

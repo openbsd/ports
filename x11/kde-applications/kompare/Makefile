@@ -3,6 +3,7 @@
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${VERSION}
 CATEGORIES =	textproc devel
+REVISION =	1
 
 SHARED_LIBS +=  komparedialogpages  2.0 # 0.0
 SHARED_LIBS +=  kompareinterface    2.0 # 0.0
