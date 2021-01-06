@@ -1,4 +1,4 @@
 SHA256 (geolite2-data-20191224.tar.xz) = kJrRPBB23sbSOVMzZXHpr0W9gfNYiQSdHlEFdHSBl6M=
-SHA256 (libmaxminddb-1.4.3.tar.gz) = pf32x7SID9x2IPis5b1cvp9lZQyUkwNLW5/H2DVRpDk=
+SHA256 (libmaxminddb-1.5.0.tar.gz) = fFbnkf8qZVIV5+04ZLH/3X00o4g1d57+1WpC8Fa9WKo=
 SIZE (geolite2-data-20191224.tar.xz) = 22991100
-SIZE (libmaxminddb-1.4.3.tar.gz) = 602272
+SIZE (libmaxminddb-1.5.0.tar.gz) = 603923
