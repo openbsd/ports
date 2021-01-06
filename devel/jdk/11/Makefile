@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/11/20 20:49:59 kurt Exp $
+# $OpenBSD: Makefile,v 1.21 2021/01/06 14:56:56 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
@@ -13,6 +13,7 @@ PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -138,7 +139,7 @@ CONFIGURE_ARGS+=--enable-aot=no
 PKG_ARGS+=	-Daot=0
 .endif
 
-.if ${MACHINE_ARCH} == "aarch64"
+.if ${MACHINE_ARCH} != "i386"
 PKG_ARGS+=	-Dci=1
 .else
 PKG_ARGS+=	-Dci=0

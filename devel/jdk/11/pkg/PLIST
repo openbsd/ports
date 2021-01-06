@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/20 20:49:59 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/06 14:56:56 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=11v0,<12v0
@@ -459,6 +459,7 @@ jdk-11/legal/jdk.internal.opt/ADDITIONAL_LICENSE_INFO
 jdk-11/legal/jdk.internal.opt/ASSEMBLY_EXCEPTION
 jdk-11/legal/jdk.internal.opt/LICENSE
 jdk-11/legal/jdk.internal.opt/jopt-simple.md
+%%ci%%
 jdk-11/legal/jdk.jartool/
 jdk-11/legal/jdk.jartool/ADDITIONAL_LICENSE_INFO
 jdk-11/legal/jdk.jartool/ASSEMBLY_EXCEPTION
@@ -680,4 +681,3 @@ jdk-11/man/man1/
 jdk-11/release
 share/doc/pkg-readmes/${PKGSTEM}
 %%aot%%
-%%ci%%
