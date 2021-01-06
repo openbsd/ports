@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2021/01/05 04:37:20 kn Exp $
+# $OpenBSD: Makefile,v 1.35 2021/01/06 10:19:25 sthen Exp $
 
 COMMENT =		lint-like code checker for Python code
 
 MODPY_EGG_VERSION =	2.6.0
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
+REVISION=		0
+
 CATEGORIES=		devel
 
 HOMEPAGE=		https://www.pylint.org/
@@ -29,10 +31,5 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 FULLPKGNAME =		${PKGNAME:S/pylint/pylint3/}
-
-post-install:
-.for i in epylint pylint pyreverse symilar
-	mv ${PREFIX}/bin/$i{,${MODPY_BIN_SUFFIX}}
-.endfor
 
 .include <bsd.port.mk>

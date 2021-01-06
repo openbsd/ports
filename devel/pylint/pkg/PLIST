@@ -1,17 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/01/05 04:37:20 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/06 10:19:25 sthen Exp $
 @conflict pylint-*
-@conflict pylint-main-*
 @conflict pylint-gui-*
-@conflict pylint3-main-*
 @conflict pylint3-gui-*
 @pkgpath devel/pylint,-main
 @pkgpath devel/pylint,-gui
 @pkgpath devel/pylint,-main,python3
 @pkgpath devel/pylint,-gui,python3
-bin/epylint${MODPY_BIN_SUFFIX}
-bin/pylint${MODPY_BIN_SUFFIX}
-bin/pyreverse${MODPY_BIN_SUFFIX}
-bin/symilar${MODPY_BIN_SUFFIX}
+bin/epylint
+bin/pylint
+bin/pyreverse
+bin/symilar
 lib/python${MODPY_VERSION}/site-packages/pylint/
 lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
