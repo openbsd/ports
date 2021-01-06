@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/09/19 07:52:24 solene Exp $
+@comment $OpenBSD: PLIST,v 1.29 2021/01/06 09:56:15 paco Exp $
 bin/gajim
 bin/gajim-history-manager
 bin/gajim-remote
@@ -179,7 +179,6 @@ lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}mu
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}pep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}ping.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}presence.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}privacylists.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}pubsub.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}receipts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/${MODPY_PYCACHE}register.${MODPY_PYC_MAGIC_TAG}pyc
@@ -226,7 +225,6 @@ lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/muc.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/pep.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/ping.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/presence.py
-lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/privacylists.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/pubsub.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/receipts.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/modules/register.py
@@ -293,9 +291,6 @@ lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/blocked_contacts_window.
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/blocking_list.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/bookmarks.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/certificate_dialog.ui
-lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/change_activity_dialog.ui
-lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/change_mood_dialog.ui
-lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/change_status_message_dialog.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/chat_control.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/chat_to_muc_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/contact_context_menu.ui
@@ -326,8 +321,6 @@ lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/passphrase_dialog.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/plugins_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/popup_notification_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/preferences_window.ui
-lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/privacy_list_window.ui
-lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/privacy_lists_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/profile_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/roster_item_exchange_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/roster_window.ui
@@ -337,6 +330,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/shortcuts_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/single_message_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/ssl_error_dialog.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/start_chat_dialog.ui
+lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/status_change_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/subscription_request_window.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/synchronise_select_account_dialog.ui
 lib/python${MODPY_VERSION}/site-packages/gajim/data/gui/synchronise_select_contacts_dialog.ui
@@ -1079,7 +1073,6 @@ lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}message_input
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}notification.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}pep_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}preferences.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}privacy_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}profile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}proxies.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}remove_account.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1092,6 +1085,8 @@ lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}single_messag
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}sounds.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}ssl_error_dialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}start_chat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}status_change.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}status_selector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}statusicon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}subscription_request.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}themes.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1137,7 +1132,6 @@ lib/python${MODPY_VERSION}/site-packages/gajim/gtk/message_input.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/notification.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/pep_config.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/preferences.py
-lib/python${MODPY_VERSION}/site-packages/gajim/gtk/privacy_list.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/profile.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/proxies.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/remove_account.py
@@ -1150,6 +1144,8 @@ lib/python${MODPY_VERSION}/site-packages/gajim/gtk/single_message.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/sounds.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/ssl_error_dialog.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/start_chat.py
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/status_change.py
+lib/python${MODPY_VERSION}/site-packages/gajim/gtk/status_selector.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/statusicon.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/subscription_request.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/themes.py
@@ -1211,9 +1207,6 @@ share/locale/kk/LC_MESSAGES/gajim.mo
 share/locale/lt/LC_MESSAGES/gajim.mo
 share/locale/nb_NO/LC_MESSAGES/gajim.mo
 share/locale/nl/LC_MESSAGES/gajim.mo
-share/locale/nl_BE/
-share/locale/nl_BE/LC_MESSAGES/
-share/locale/nl_BE/LC_MESSAGES/gajim.mo
 share/locale/pl/LC_MESSAGES/gajim.mo
 share/locale/pt/LC_MESSAGES/gajim.mo
 share/locale/pt_BR/LC_MESSAGES/gajim.mo
@@ -1232,3 +1225,4 @@ share/metainfo/
 share/metainfo/org.gajim.Gajim.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/doc/pkg-readmes/${PKGSTEM}

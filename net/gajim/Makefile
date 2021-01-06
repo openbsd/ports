@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.90 2020/09/19 07:52:24 solene Exp $
+# $OpenBSD: Makefile,v 1.91 2021/01/06 09:56:15 paco Exp $
 
 COMMENT=	jabber client written in pygtk
-MODPY_EGG_VERSION=	1.2.0
+MODPY_EGG_VERSION=	1.2.2
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/libsoup \
 		graphics/py-Pillow${MODPY_FLAVOR} \
 		graphics/py-cairo${MODPY_FLAVOR} \
-		net/py-nbxmpp${MODPY_FLAVOR}>=1.0.0 \
+		net/py-nbxmpp${MODPY_FLAVOR}>=1.0.2 \
 		security/py-cryptodome${MODPY_FLAVOR} \
 		security/py-gnupg${MODPY_FLAVOR} \
 		security/py-keyring${MODPY_FLAVOR} \
