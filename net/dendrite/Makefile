@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/22 13:51:39 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/06 00:05:50 abieber Exp $
 
 COMMENT =	matrix homeserver written in Go
 
 MODGO_MODNAME =	github.com/matrix-org/dendrite
-MODGO_VERSION =	v0.2.1
+MODGO_VERSION =	v0.3.4
 
 DISTNAME =	dendrite-${MODGO_VERSION}
 
@@ -164,7 +164,7 @@ MODGO_MODULES =	\
 	github.com/kisielk/gotool				 v1.0.0 \
 	github.com/kkdai/bstream				 v0.0.0-20161212061736-f391b8402d23 \
 	github.com/klauspost/compress				 v1.10.10 \
-	github.com/konsorten/go-windows-terminal-sequences	 v1.0.3 \
+	github.com/konsorten/go-windows-terminal-sequences	 v1.0.2 \
 	github.com/koron/go-ssdp				 v0.0.0-20191105050749-2e1c40ed0b5d \
 	github.com/kr/logfmt					 v0.0.0-20140226030751-b84e30acd515 \
 	github.com/kr/pretty					 v0.2.0 \
@@ -233,7 +233,7 @@ MODGO_MODULES =	\
 	github.com/matrix-org/go-http-js-libp2p			 v0.0.0-20200518170932-783164aeeda4 \
 	github.com/matrix-org/go-sqlite3-js			 v0.0.0-20200522092705-bc8506ccbcf3 \
 	github.com/matrix-org/gomatrix				 v0.0.0-20200827122206-7dd5e2a05bcd \
-	github.com/matrix-org/gomatrixserverlib			 v0.0.0-20201020162226-22169fe9cda7 \
+	github.com/matrix-org/gomatrixserverlib			 v0.0.0-20201209172200-eb6a8903f9fb \
 	github.com/matrix-org/naffka				 v0.0.0-20200901083833-bcdd62999a91 \
 	github.com/matrix-org/util				 v0.0.0-20200807132607-55161520e1d4 \
 	github.com/mattn/go-colorable				 v0.1.2 \
@@ -308,7 +308,7 @@ MODGO_MODULES =	\
 	github.com/shurcoo!l/sanitized_anchor_name		 v0.0.0-20170918181015-86672fcb3f95 \
 	github.com/shurcoo!l/users				 v0.0.0-20180125191416-49c67e49c537 \
 	github.com/shurcoo!l/webdavfs				 v0.0.0-20170829043945-18c3829fa133 \
-	github.com/sirupsen/logrus				 v1.6.0 \
+	github.com/sirupsen/logrus				 v1.7.0 \
 	github.com/smola/gocompat				 v0.2.0 \
 	github.com/sourcegraph/annotate				 v0.0.0-20160123013949-f4cad6c6324d \
 	github.com/sourcegraph/syntaxhighlight			 v0.0.0-20170531221838-bd320f5d308e \
@@ -326,10 +326,10 @@ MODGO_MODULES =	\
 	github.com/stretchr/testify				 v1.6.1 \
 	github.com/syndtr/goleveldb				 v1.0.0 \
 	github.com/tarm/serial					 v0.0.0-20180830185346-98f6abe2eb07 \
-	github.com/tidwall/gjson				 v1.6.1 \
-	github.com/tidwall/match				 v1.0.1 \
+	github.com/tidwall/gjson				 v1.6.3 \
+	github.com/tidwall/match				 v1.0.2 \
 	github.com/tidwall/pretty				 v1.0.2 \
-	github.com/tidwall/sjson				 v1.1.1 \
+	github.com/tidwall/sjson				 v1.1.2 \
 	github.com/uber/jaeger-client-go			 v2.25.0+incompatible \
 	github.com/uber/jaeger-lib				 v2.2.0+incompatible \
 	github.com/ugorji/go/codec				 v0.0.0-20181204163529-d75b2dcb6bc8 \
@@ -357,7 +357,7 @@ MODGO_MODULES =	\
 	go.uber.org/zap						 v1.15.0 \
 	go4.org							 v0.0.0-20180809161055-417644f6feb5 \
 	golang.org/x/build					 v0.0.0-20190111050920-041ab4dc3f9d \
-	golang.org/x/crypto					 v0.0.0-20200820211705-5c72a883971a \
+	golang.org/x/crypto					 v0.0.0-20201117144127-c1f2f97bffc9 \
 	golang.org/x/exp					 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/lint					 v0.0.0-20190930215403-16217165b5de \
 	golang.org/x/mod					 v0.1.1-0.20191105210325-c90efee705ee \
@@ -365,7 +365,8 @@ MODGO_MODULES =	\
 	golang.org/x/oauth2					 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/perf					 v0.0.0-20180704124530-6e6d33e29852 \
 	golang.org/x/sync					 v0.0.0-20200317015054-43a5402ce75a \
-	golang.org/x/sys					 v0.0.0-20200615200032-f1bc736245b1 \
+	golang.org/x/sys					 v0.0.0-20201119102817-f84b799fce68 \
+	golang.org/x/term					 v0.0.0-20201117132131-f5c789dd3221 \
 	golang.org/x/text					 v0.3.3-0.20191230102452-929e72ca90de \
 	golang.org/x/time					 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/tools					 v0.0.0-20191216052735-49a3e744a425 \
@@ -488,7 +489,6 @@ MODGO_MODFILES =	\
 	github.com/kisielk/errcheck				 v1.1.0 \
 	github.com/klauspost/compress				 v1.9.8 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.1 \
-	github.com/konsorten/go-windows-terminal-sequences	 v1.0.2 \
 	github.com/kr/pretty					 v0.1.0 \
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.1.0 \
@@ -672,6 +672,8 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify				 v1.5.1 \
 	github.com/stretchr/testify				 v1.6.0 \
 	github.com/tidwall/gjson				 v1.6.0 \
+	github.com/tidwall/gjson				 v1.6.1 \
+	github.com/tidwall/match				 v1.0.1 \
 	github.com/tidwall/pretty				 v1.0.0 \
 	github.com/tidwall/pretty				 v1.0.1 \
 	github.com/tidwall/sjson				 v1.0.3 \
@@ -763,6 +765,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20190924154521-2837fb4f24fe \
 	golang.org/x/sys					 v0.0.0-20191003212358-c178f38b412c \
 	golang.org/x/sys					 v0.0.0-20191008105621-543471e840be \
+	golang.org/x/sys					 v0.0.0-20191026070338-33540a1f6037 \
 	golang.org/x/sys					 v0.0.0-20191120155948-bd437916bb0e \
 	golang.org/x/sys					 v0.0.0-20191128015809-6d18c012aee9 \
 	golang.org/x/sys					 v0.0.0-20200106162015-b016eb3dc98e \
@@ -771,6 +774,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20200301040627-c5d0d7b4ec88 \
 	golang.org/x/sys					 v0.0.0-20200302150141-5c8b2ff67527 \
 	golang.org/x/sys					 v0.0.0-20200323222414-85ca7c5b95cd \
+	golang.org/x/sys					 v0.0.0-20200615200032-f1bc736245b1 \
 	golang.org/x/text					 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text					 v0.3.0 \
 	golang.org/x/text					 v0.3.1-0.20180807135948-17ff2d5776d2 \
