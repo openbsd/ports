@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/01/06 22:34:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/01/07 19:53:27 sthen Exp $
 
 # bump security/sslscan if updating
 PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
@@ -21,6 +21,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			no-threads no-rc5 no-ssl3 \
 			no-devcryptoeng \
 			shared
+
+INSTALL_TARGET=	install_sw install_ssldirs install_man_docs
 
 # install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
@@ -49,7 +51,6 @@ post-install:
 	mv ${PREFIX}/bin/openssl ${PREFIX}/bin/eopenssl11
 	mv ${PREFIX}/bin/c_rehash ${PREFIX}/bin/c_rehash11
 	rm -f ${PREFIX}/lib/eopenssl11/lib{crypto,ssl}.so
-	rm -rf ${PREFIX}/share/doc/openssl/html/man*
-	cd ${PREFIX}; rmdir share/doc/openssl{/html,} lib/eopenssl11/pkgconfig
+	rmdir ${PREFIX}/lib/eopenssl11/pkgconfig
 
 .include <bsd.port.mk>
