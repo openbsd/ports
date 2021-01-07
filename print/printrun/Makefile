@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/02 19:09:55 daniel Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/07 14:47:07 ajacoutot Exp $
 
 COMMENT =		3D printing host suite
 
@@ -9,6 +9,7 @@ GH_ACCOUNT=	kliment
 GH_PROJECT=	Printrun
 GH_TAGNAME=	${DISTNAME}
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	print
 
