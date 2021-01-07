@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/06 22:34:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/07 20:13:47 sthen Exp $
 
 PORTROACH=	limit:^1\.0\.
 V=		1.0.2u
@@ -10,6 +10,18 @@ SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 
 WANTLIB=	c
+
+# dev flavour, pod2man is pretty slow on these
+FLAVOR?=
+FLAVORS=	no_man
+
+.if ${FLAVOR:Mno_man}
+MAN_PREFIX=	"@comment "
+INSTALL_TARGET=	install_sw
+.else
+MAN_PREFIX=	@man lib/eopenssl/man
+.endif
+SUBST_VARS+=	MAN_PREFIX
 
 FAKE_FLAGS=	MANDIR=${PREFIX}/lib/eopenssl/man
 

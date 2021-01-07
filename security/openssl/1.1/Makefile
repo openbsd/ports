@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/07 19:53:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/01/07 20:13:47 sthen Exp $
 
 # bump security/sslscan if updating
 PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
@@ -14,6 +14,10 @@ WANTLIB=	c
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
+# dev flavour, pod2man is pretty slow on these
+FLAVOR?=
+FLAVORS=	no_man
+
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
@@ -22,7 +26,14 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			no-devcryptoeng \
 			shared
 
-INSTALL_TARGET=	install_sw install_ssldirs install_man_docs
+INSTALL_TARGET=		install_sw install_ssldirs
+SUBST_VARS+=		MAN_PREFIX
+.if ${FLAVOR:Mno_man}
+MAN_PREFIX=		"@comment "
+.else
+MAN_PREFIX=		@man lib/eopenssl11/man
+INSTALL_TARGET+=	install_man_docs
+.endif
 
 # install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
