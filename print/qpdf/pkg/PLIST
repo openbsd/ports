@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/01/27 16:29:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/01/07 15:11:08 ajacoutot Exp $
 @bin bin/fix-qdf
 @bin bin/qpdf
 @bin bin/zlib-flate
@@ -42,6 +42,7 @@ include/qpdf/QPDFOutlineObjectHelper.hh
 include/qpdf/QPDFPageDocumentHelper.hh
 include/qpdf/QPDFPageLabelDocumentHelper.hh
 include/qpdf/QPDFPageObjectHelper.hh
+include/qpdf/QPDFStreamFilter.hh
 include/qpdf/QPDFSystemError.hh
 include/qpdf/QPDFTokenizer.hh
 include/qpdf/QPDFWriter.hh
