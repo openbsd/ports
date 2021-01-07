@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/17 07:48:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/07 08:29:55 paco Exp $
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -24,12 +24,14 @@ lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}socket_options.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}source.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}ssl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}x509.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/appengine.py
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/fingerprint.py
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/host_header_ssl.py
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/socket_options.py
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/source.py
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/ssl.py
+lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/x509.py
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/auth/
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/auth/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/auth/${MODPY_PYCACHE}/
