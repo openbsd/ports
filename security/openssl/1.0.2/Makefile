@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/07 20:13:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/07 21:55:33 tb Exp $
 
 PORTROACH=	limit:^1\.0\.
 V=		1.0.2u
-REVISION=	2
+REVISION=	3
 PKGSPEC=	openssl-<1.1.0
 
 SHLIBVER=	6.2
