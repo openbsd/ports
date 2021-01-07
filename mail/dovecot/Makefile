@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2020/08/13 19:07:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.292 2021/01/07 17:17:54 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -6,9 +6,8 @@ COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.3
-V_DOVECOT=	2.3.11.3
+V_DOVECOT=	2.3.13
 EPOCH=		0
-REVISION-server=0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -40,7 +39,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB-server=	bz2 c crypto expat iconv lz4 lzma m pthread sodium \
 		sqlite3 ssl z zstd
 WANTLIB-ldap=	crypto iconv lber ldap sasl2 ssl lib/dovecot/dovecot
-WANTLIB-mysql=	crypto iconv m mariadb pthread ssl z
+WANTLIB-mysql=	crypto m mariadb pthread ssl z
 WANTLIB-postgresql= crypto m pq ssl
 
 LIB_DEPENDS+=	archivers/bzip2 \

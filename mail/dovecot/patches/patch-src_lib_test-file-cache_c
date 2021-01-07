@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_lib_test-file-cache_c,v 1.1 2021/01/07 17:17:54 sthen Exp $
+
+Maybe could use RLIMIT_DATA instead.
+
+Index: src/lib/test-file-cache.c
+--- src/lib/test-file-cache.c.orig
++++ src/lib/test-file-cache.c
+@@ -254,6 +254,7 @@ static void test_file_cache_errors(void)
+ 	test_assert(size == 0);
+ 	test_assert(map == NULL);
+ 
++#ifdef HAVE_RLIMIT_AS
+ 	/* temporarily set a small memory limit to make mmap attempt fail */
+ 	struct rlimit rl_cur;
+ 	test_assert(getrlimit(RLIMIT_AS, &rl_cur) == 0);
+@@ -277,6 +278,7 @@ static void test_file_cache_errors(void)
+ 	test_expect_error_string(errstr);
+ 	test_assert(file_cache_set_size(cache, page_size*2) == -1);
+ 	test_assert(setrlimit(RLIMIT_AS, &rl_cur) == 0);
++#endif
+ 
+ 	file_cache_free(&cache);
+ 	i_close_fd(&fd);
