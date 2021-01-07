@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/03 10:48:58 solene Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/07 22:29:58 cwen Exp $
 
 COMMENT =	SDL multi protocol navigator
 VERSION =	1.0.2
+REVISION =	0
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -31,6 +32,9 @@ LIB_DEPENDS =	audio/mpg123 \
 		converters/libunistring \
 		devel/pcre \
 		devel/sdl2
+
+# Don't enable SSE4.1, it fails at runtime on old amd64 machines and i386
+CONFIGURE_ARGS +=	-DTFDN_ENABLE_SSE41=No
 
 NO_TEST =	Yes
 
