@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/12/13 21:17:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/01/08 15:01:14 solene Exp $
+@pkgpath x11/fvwm2,-fvwm2
 @bin bin/FvwmCommand
 bin/fvwm-bug
 bin/fvwm-config
@@ -152,6 +153,8 @@ share/fvwm/perllib/General/FileSystem.pm
 share/fvwm/perllib/General/Parse.pm
 share/locale/ar/LC_MESSAGES/FvwmScript.mo
 share/locale/ar/LC_MESSAGES/fvwm.mo
+share/locale/da/LC_MESSAGES/FvwmScript.mo
+share/locale/da/LC_MESSAGES/fvwm.mo
 share/locale/de/LC_MESSAGES/FvwmScript.mo
 share/locale/de/LC_MESSAGES/fvwm.mo
 share/locale/es/LC_MESSAGES/FvwmScript.mo
