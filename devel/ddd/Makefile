@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2020/02/11 21:23:00 cwen Exp $
+# $OpenBSD: Makefile,v 1.82 2021/01/08 20:17:27 jasper Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -32,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 # needed for is_ppc_file() in ddd/filetype.C
-.if ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "powerpc64"
 WANTLIB +=	elf
 .else
 CONFIGURE_ENV += ac_cv_lib_elf_elf_version=no
