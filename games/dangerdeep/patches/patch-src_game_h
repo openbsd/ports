@@ -1,12 +1,25 @@
-$OpenBSD: patch-src_game_h,v 1.1 2017/04/30 08:56:45 espie Exp $
+$OpenBSD: patch-src_game_h,v 1.2 2021/01/08 18:43:37 naddy Exp $
+Index: src/game.h
 --- src/game.h.orig
 +++ src/game.h
-@@ -212,7 +212,7 @@ class game (protected)
+@@ -210,9 +210,9 @@ class game (protected)
+ 	void simulate_objects_mt(double delta_t, unsigned idxoff, unsigned idxmod, bool record,
+ 				 double& nearest_contact);
  
- 	class simulate_worker : public thread
+-	class simulate_worker : public thread
++	class simulate_worker : public ::thread
  	{
 -		mutex mtx;
 +		dd::mutex mtx;
  		condvar cond;
  		condvar condfini;
  		game& gm;
+@@ -230,7 +230,7 @@ class game (protected)
+ 		double sync();
+ 	};
+ 
+-	thread::auto_ptr<simulate_worker> myworker;
++	::thread::auto_ptr<simulate_worker> myworker;
+ 
+ 	player_info playerinfo;
+ 
