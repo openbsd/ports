@@ -1,0 +1,25 @@
+$OpenBSD: patch-amtterm_man,v 1.1 2021/01/08 13:32:57 sthen Exp $
+
+From 8617629bbd9e084dc70d7d418bc6928293d1b44f Mon Sep 17 00:00:00 2001
+From: Gerd Hoffmann <kraxel@redhat.com>
+Date: Tue, 28 Apr 2020 13:30:11 +0200
+Subject: add note for newer machines to amtterm manpage
+
+(openbsd doesn't have wsman in packages, but might be a useful hint for
+someone..)
+
+Index: amtterm.man
+--- amtterm.man.orig
++++ amtterm.man
+@@ -37,6 +37,11 @@ will prompt on the terminal if unspecified.
+ .TP
+ .B AMT_PASSWORD
+ Default value for the password.
++.SH NOTE
++Newer AMT machines have the SoL port disabled by default, it can be
++enabled remotely using:
++"wsman put http://intel.com/wbem/wscim/1/amt-schema/1/AMT_RedirectionService
++-h ${AMT_HOST} -P 16992 -u admin -p ${AMT_PASSWORD} -k ListenerEnabled=true"
+ .SH SEE ALSO
+ gamt(1), amttool(1), amt-howto(7)
+ .SH AUTHOR

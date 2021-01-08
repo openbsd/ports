@@ -1,0 +1,25 @@
+$OpenBSD: patch-redir_h,v 1.1 2021/01/08 13:32:57 sthen Exp $
+
+Add SSL/auth code
+https://github.com/Openwsman/wsmancli/issues/10#issuecomment-751253133
+
+Index: redir.h
+--- redir.h.orig
++++ redir.h
+@@ -26,12 +26,16 @@ struct redir {
+     unsigned char     type[4];
+     int               verbose;
+     int               trace;
++    int               legacy;
+     enum redir_state  state;
+     unsigned char     err[128]; // state == REDIR_ERROR
+ 
+     int               sock;
+     unsigned char     buf[64];
+     unsigned int      blen;
++
++    void              *cacert;
++    void              *ctx;
+ 
+     /* callbacks */
+     void *cb_data;

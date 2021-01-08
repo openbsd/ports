@@ -1,6 +1,9 @@
-$OpenBSD: patch-parseconfig_c,v 1.1 2020/11/02 16:10:23 jasper Exp $
+$OpenBSD: patch-parseconfig_c,v 1.2 2021/01/08 13:32:57 sthen Exp $
 
-https://git.kraxel.org/cgit/amtterm/commit/?id=ea1717899294af93f7342069b15fc197b525ad29
+From ea1717899294af93f7342069b15fc197b525ad29 Mon Sep 17 00:00:00 2001
+From: Gerd Hoffmann <kraxel@redhat.com>
+Date: Tue, 20 Feb 2018 09:42:43 +0100
+Subject: fix memory leak
 
 Index: parseconfig.c
 --- parseconfig.c.orig

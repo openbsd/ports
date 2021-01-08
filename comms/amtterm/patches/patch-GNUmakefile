@@ -1,0 +1,44 @@
+$OpenBSD: patch-GNUmakefile,v 1.1 2021/01/08 13:32:57 sthen Exp $
+
+Add SSL/auth code
+https://github.com/Openwsman/wsmancli/issues/10#issuecomment-751253133
+
+Index: GNUmakefile
+--- GNUmakefile.orig
++++ GNUmakefile
+@@ -1,11 +1,24 @@
+ # config
++#USE_OPENSSL=1
++#USE_GNUTLS=1
+ srcdir	= .
+ VPATH	= $(srcdir)
+ -include Make.config
+ include $(srcdir)/mk/Variables.mk
+ 
++ifdef USE_OPENSSL
++SSL_DEFS=-DUSE_OPENSSL
++pkglst+=openssl
++endif
++
++ifdef USE_GNUTLS
++SSL_DEFS=-DUSE_GNUTLS
++pkglst+=gnutls
++endif
++
+ CFLAGS	+= -Wall -Wno-pointer-sign
+ CFLAGS	+= -DVERSION='"$(VERSION)"'
++CFLAGS  += $(SSL_DEFS)
+ 
+ TARGETS	:= amtterm
+ DESKTOP := $(wildcard *.desktop)
+@@ -60,8 +73,8 @@ distclean: clean
+ 
+ #################################################################
+ 
+-amtterm: amtterm.o redir.o tcp.o
+-gamt: gamt.o redir.o tcp.o parseconfig.o
++amtterm: amtterm.o redir.o tcp.o auth.o ssl.o
++gamt: gamt.o redir.o tcp.o parseconfig.o auth.o ssl.o
+ 
+ #################################################################
+ 

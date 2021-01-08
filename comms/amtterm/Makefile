@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/02 16:10:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/08 13:32:56 sthen Exp $
 
 COMMENT-term=	cli client for Intel AMT serial-over-lan
 COMMENT-main=	client and tools for Intel AMT serial-over-lan
 
 V=		1.6
+REVISION=	0
 DISTNAME=	amtterm-$V
 PKGNAME-main=	amtterm-$V
 PKGNAME-term=	amtterm-cli-$V
@@ -17,10 +18,11 @@ HOMEPAGE=	https://www.kraxel.org/blog/linux/amtterm/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-term += c
-WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += atk-1.0 c cairo cairo-gobject crypto gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0
-WANTLIB += pangocairo-1.0 vte-2.91
+WANTLIB += pangocairo-1.0 ssl vte-2.91
 
+# https://git.kraxel.org/cgit/amtterm/
 MASTER_SITES=	https://www.kraxel.org/releases/amtterm/
 
 LIB_DEPENDS-term=
@@ -30,7 +32,7 @@ RUN_DEPENDS-main= comms/amtterm,-term \
 		devel/desktop-file-utils \
 		www/p5-SOAP-Lite
 
-MAKE_FLAGS=	verbose=yes
+MAKE_FLAGS=	verbose=yes USE_OPENSSL=1
 FAKE_FLAGS=	mandir=${WRKINST}${PREFIX}/man
 
 USE_GMAKE=	Yes

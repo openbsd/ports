@@ -1,0 +1,835 @@
+$OpenBSD: patch-auth_c,v 1.1 2021/01/08 13:32:57 sthen Exp $
+
+Add SSL/auth code
+https://github.com/Openwsman/wsmancli/issues/10#issuecomment-751253133
+
+Index: auth.c
+--- auth.c.orig
++++ auth.c
+@@ -0,0 +1,826 @@
++/*
++ *  Authentication helper functions.
++ *
++ *  Copyright (C) 2014 Andreas Steinmetz <ast@domdv.de>
++ *
++ *  This program is free software; you can redistribute it and/or modify
++ *  it under the terms of the GNU General Public License as published by
++ *  the Free Software Foundation; either version 2 of the License, or
++ *  (at your option) any later version.
++ *
++ *  This program is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *  GNU General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public License along
++ *  with this program; if not, write to the Free Software Foundation, Inc.,
++ *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++ */
++
++#include <string.h>
++#include <stdint.h>
++#include "auth.h"
++
++#define MD5_SIZE	16
++#define MD5_HEX		(MD5_SIZE<<1)
++#define MD5(a)		uint8_t a[MD5_SIZE]
++
++#define AUTH_SESS	0x13
++#define AUTH_SESS_REPLY	0x14
++
++#define AUTH_SUCCESS	0x00
++#define AUTH_FAIL	0x01
++
++#define TYPE_METHODS	0x00
++#define TYPE_PLAIN	0x01
++#define TYPE_RFC2069	0x03
++#define TYPE_RFC2617	0x04
++
++#define MAX_USER	32
++#define MAX_PASS	32
++#define MAX_REALM	64
++#define MAX_NONCE	MD5_HEX
++#define MAX_CNONCE	MD5_HEX
++#define MAX_RESPONSE	MD5_HEX
++#define MAX_QOP		8
++
++#define URI		"/RedirectionService"
++#define NC		"00000002"
++#define QOP		"auth"
++#define METHOD		"POST"
++
++#define put_header(data,length,type)			\
++do {							\
++	*data++=AUTH_SESS;				\
++	*data++=AUTH_SUCCESS;				\
++	*data++=0;					\
++	*data++=0;					\
++	*data++=type;					\
++	*data++=(unsigned char)(length);		\
++	*data++=(unsigned char)(length>>8);		\
++	*data++=(unsigned char)(length>>16);		\
++	*data++=(unsigned char)(length>>24);		\
++} while(0)
++
++#define put_element(data,element)			\
++do {							\
++	int length=strlen(element);			\
++	*data++=(unsigned char)length;			\
++	memcpy(data,element,length);			\
++	data+=length;					\
++} while(0)
++
++#define get_header(data,len,method,status)		\
++do {							\
++	if(data[0]!=AUTH_SESS_REPLY)goto out;		\
++	status=data[1];					\
++	if(data[4]!=method)goto out;			\
++	len=data[8];					\
++	len<<=8;					\
++	len|=data[7];					\
++	len<<=8;					\
++	len|=data[6];					\
++	len<<=8;					\
++	len|=data[5];					\
++} while(0)
++
++#define get_element(data,len,element,max)		\
++do {							\
++	int blen=*data++;				\
++	if(blen>--len||blen>max)goto out;		\
++	memcpy(element,data,blen);			\
++	element[blen]=0;				\
++	data+=blen;					\
++	len-=blen;					\
++} while(0)
++
++typedef struct
++{
++	uint32_t md5[4];
++	uint32_t total;
++	uint8_t bfr[64];
++	uint8_t size;
++} md5_ctx;
++
++static void md5block(uint32_t *md5,uint8_t *block)
++{
++	register uint32_t a;
++	register uint32_t b;
++	register uint32_t c;
++	register uint32_t d;
++	uint32_t bfr[16];
++
++	a=block[3];
++	a<<=8;
++	a+=block[2];
++	a<<=8;
++	a+=block[1];
++	a<<=8;
++	bfr[0]=a+block[0];
++
++	a=block[7];
++	a<<=8;
++	a+=block[6];
++	a<<=8;
++	a+=block[5];
++	a<<=8;
++	bfr[1]=a+block[4];
++
++	a=block[11];
++	a<<=8;
++	a+=block[10];
++	a<<=8;
++	a+=block[9];
++	a<<=8;
++	bfr[2]=a+block[8];
++
++	a=block[15];
++	a<<=8;
++	a+=block[14];
++	a<<=8;
++	a+=block[13];
++	a<<=8;
++	bfr[3]=a+block[12];
++
++	a=block[19];
++	a<<=8;
++	a+=block[18];
++	a<<=8;
++	a+=block[17];
++	a<<=8;
++	bfr[4]=a+block[16];
++
++	a=block[23];
++	a<<=8;
++	a+=block[22];
++	a<<=8;
++	a+=block[21];
++	a<<=8;
++	bfr[5]=a+block[20];
++
++	a=block[27];
++	a<<=8;
++	a+=block[26];
++	a<<=8;
++	a+=block[25];
++	a<<=8;
++	bfr[6]=a+block[24];
++
++	a=block[31];
++	a<<=8;
++	a+=block[30];
++	a<<=8;
++	a+=block[29];
++	a<<=8;
++	bfr[7]=a+block[28];
++
++	a=block[35];
++	a<<=8;
++	a+=block[34];
++	a<<=8;
++	a+=block[33];
++	a<<=8;
++	bfr[8]=a+block[32];
++
++	a=block[39];
++	a<<=8;
++	a+=block[38];
++	a<<=8;
++	a+=block[37];
++	a<<=8;
++	bfr[9]=a+block[36];
++
++	a=block[43];
++	a<<=8;
++	a+=block[42];
++	a<<=8;
++	a+=block[41];
++	a<<=8;
++	bfr[10]=a+block[40];
++
++	a=block[47];
++	a<<=8;
++	a+=block[46];
++	a<<=8;
++	a+=block[45];
++	a<<=8;
++	bfr[11]=a+block[44];
++
++	a=block[51];
++	a<<=8;
++	a+=block[50];
++	a<<=8;
++	a+=block[49];
++	a<<=8;
++	bfr[12]=a+block[48];
++
++	a=block[55];
++	a<<=8;
++	a+=block[54];
++	a<<=8;
++	a+=block[53];
++	a<<=8;
++	bfr[13]=a+block[52];
++
++	a=block[59];
++	a<<=8;
++	a+=block[58];
++	a<<=8;
++	a+=block[57];
++	a<<=8;
++	bfr[14]=a+block[56];
++
++	a=block[63];
++	a<<=8;
++	a+=block[62];
++	a<<=8;
++	a+=block[61];
++	a<<=8;
++	bfr[15]=a+block[60];
++
++	a=md5[0];
++	b=md5[1];
++	c=md5[2];
++	d=md5[3];
++
++	a+=bfr[0];
++	a+=0xd76aa478;
++	a+=d^(b&(c^d));
++	a=(a<<7)|(a>>25);
++	a+=b;
++	d+=bfr[1];
++	d+=0xe8c7b756;
++	d+=c^(a&(b^c));
++	d=(d<<12)|(d>>20);
++	d+=a;
++	c+=bfr[2];
++	c+=0x242070db;
++	c+=b^(d&(a^b));
++	c=(c<<17)|(c>>15);
++	c+=d;
++	b+=bfr[3];
++	b+=0xc1bdceee;
++	b+=a^(c&(d^a));
++	b=(b<<22)|(b>>10);
++	b+=c;
++	a+=bfr[4];
++	a+=0xf57c0faf;
++	a+=d^(b&(c^d));
++	a=(a<<7)|(a>>25);
++	a+=b;
++	d+=bfr[5];
++	d+=0x4787c62a;
++	d+=c^(a&(b^c));
++	d=(d<<12)|(d>>20);
++	d+=a;
++	c+=bfr[6];
++	c+=0xa8304613;
++	c+=b^(d&(a^b));
++	c=(c<<17)|(c>>15);
++	c+=d;
++	b+=bfr[7];
++	b+=0xfd469501;
++	b+=a^(c&(d^a));
++	b=(b<<22)|(b>>10);
++	b+=c;
++	a+=bfr[8];
++	a+=0x698098d8;
++	a+=d^(b&(c^d));
++	a=(a<<7)|(a>>25);
++	a+=b;
++	d+=bfr[9];
++	d+=0x8b44f7af;
++	d+=c^(a&(b^c));
++	d=(d<<12)|(d>>20);
++	d+=a;
++	c+=bfr[10];
++	c+=0xffff5bb1;
++	c+=b^(d&(a^b));
++	c=(c<<17)|(c>>15);
++	c+=d;
++	b+=bfr[11];
++	b+=0x895cd7be;
++	b+=a^(c&(d^a));
++	b=(b<<22)|(b>>10);
++	b+=c;
++	a+=bfr[12];
++	a+=0x6b901122;
++	a+=d^(b&(c^d));
++	a=(a<<7)|(a>>25);
++	a+=b;
++	d+=bfr[13];
++	d+=0xfd987193;
++	d+=c^(a&(b^c));
++	d=(d<<12)|(d>>20);
++	d+=a;
++	c+=bfr[14];
++	c+=0xa679438e;
++	c+=b^(d&(a^b));
++	c=(c<<17)|(c>>15);
++	c+=d;
++	b+=bfr[15];
++	b+=0x49b40821;
++	b+=a^(c&(d^a));
++	b=(b<<22)|(b>>10);
++	b+=c;
++
++	a+=bfr[1];
++	a+=0xf61e2562;
++	a+=c^(d&(b^c));
++	a=(a<<5)|(a>>27);
++	a+=b;
++	d+=bfr[6];
++	d+=0xc040b340;
++	d+=b^(c&(a^b));
++	d=(d<<9)|(d>>23);
++	d+=a;
++	c+=bfr[11];
++	c+=0x265e5a51;
++	c+=a^(b&(d^a));
++	c=(c<<14)|(c>>18);
++	c+=d;
++	b+=bfr[0];
++	b+=0xe9b6c7aa;
++	b+=d^(a&(c^d));
++	b=(b<<20)|(b>>12);
++	b+=c;
++	a+=bfr[5];
++	a+=0xd62f105d;
++	a+=c^(d&(b^c));
++	a=(a<<5)|(a>>27);
++	a+=b;
++	d+=bfr[10];
++	d+=0x02441453;
++	d+=b^(c&(a^b));
++	d=(d<<9)|(d>>23);
++	d+=a;
++	c+=bfr[15];
++	c+=0xd8a1e681;
++	c+=a^(b&(d^a));
++	c=(c<<14)|(c>>18);
++	c+=d;
++	b+=bfr[4];
++	b+=0xe7d3fbc8;
++	b+=d^(a&(c^d));
++	b=(b<<20)|(b>>12);
++	b+=c;
++	a+=bfr[9];
++	a+=0x21e1cde6;
++	a+=c^(d&(b^c));
++	a=(a<<5)|(a>>27);
++	a+=b;
++	d+=bfr[14];
++	d+=0xc33707d6;
++	d+=b^(c&(a^b));
++	d=(d<<9)|(d>>23);
++	d+=a;
++	c+=bfr[3];
++	c+=0xf4d50d87;
++	c+=a^(b&(d^a));
++	c=(c<<14)|(c>>18);
++	c+=d;
++	b+=bfr[8];
++	b+=0x455a14ed;
++	b+=d^(a&(c^d));
++	b=(b<<20)|(b>>12);
++	b+=c;
++	a+=bfr[13];
++	a+=0xa9e3e905;
++	a+=c^(d&(b^c));
++	a=(a<<5)|(a>>27);
++	a+=b;
++	d+=bfr[2];
++	d+=0xfcefa3f8;
++	d+=b^(c&(a^b));
++	d=(d<<9)|(d>>23);
++	d+=a;
++	c+=bfr[7];
++	c+=0x676f02d9;
++	c+=a^(b&(d^a));
++	c=(c<<14)|(c>>18);
++	c+=d;
++	b+=bfr[12];
++	b+=0x8d2a4c8a;
++	b+=d^(a&(c^d));
++	b=(b<<20)|(b>>12);
++	b+=c;
++
++	a+=bfr[5];
++	a+=0xfffa3942;
++	a+=b^c^d;
++	a=(a<<4)|(a>>28);
++	a+=b;
++	d+=bfr[8];
++	d+=0x8771f681;
++	d+=a^b^c;
++	d=(d<<11)|(d>>21);
++	d+=a;
++	c+=bfr[11];
++	c+=0x6d9d6122;
++	c+=d^a^b;
++	c=(c<<16)|(c>>16);
++	c+=d;
++	b+=bfr[14];
++	b+=0xfde5380c;
++	b+=c^d^a;
++	b=(b<<23)|(b>>9);
++	b+=c;
++	a+=bfr[1];
++	a+=0xa4beea44;
++	a+=b^c^d;
++	a=(a<<4)|(a>>28);
++	a+=b;
++	d+=bfr[4];
++	d+=0x4bdecfa9;
++	d+=a^b^c;
++	d=(d<<11)|(d>>21);
++	d+=a;
++	c+=bfr[7];
++	c+=0xf6bb4b60;
++	c+=d^a^b;
++	c=(c<<16)|(c>>16);
++	c+=d;
++	b+=bfr[10];
++	b+=0xbebfbc70;
++	b+=c^d^a;
++	b=(b<<23)|(b>>9);
++	b+=c;
++	a+=bfr[13];
++	a+=0x289b7ec6;
++	a+=b^c^d;
++	a=(a<<4)|(a>>28);
++	a+=b;
++	d+=bfr[0];
++	d+=0xeaa127fa;
++	d+=a^b^c;
++	d=(d<<11)|(d>>21);
++	d+=a;
++	c+=bfr[3];
++	c+=0xd4ef3085;
++	c+=d^a^b;
++	c=(c<<16)|(c>>16);
++	c+=d;
++	b+=bfr[6];
++	b+=0x04881d05;
++	b+=c^d^a;
++	b=(b<<23)|(b>>9);
++	b+=c;
++	a+=bfr[9];
++	a+=0xd9d4d039;
++	a+=b^c^d;
++	a=(a<<4)|(a>>28);
++	a+=b;
++	d+=bfr[12];
++	d+=0xe6db99e5;
++	d+=a^b^c;
++	d=(d<<11)|(d>>21);
++	d+=a;
++	c+=bfr[15];
++	c+=0x1fa27cf8;
++	c+=d^a^b;
++	c=(c<<16)|(c>>16);
++	c+=d;
++	b+=bfr[2];
++	b+=0xc4ac5665;
++	b+=c^d^a;
++	b=(b<<23)|(b>>9);
++	b+=c;
++
++	a+=bfr[0];
++	a+=0xf4292244;
++	a+=c^(b|~d);
++	a=(a<<6)|(a>>26);
++	a+=b;
++	d+=bfr[7];
++	d+=0x432aff97;
++	d+=b^(a|~c);
++	d=(d<<10)|(d>>22);
++	d+=a;
++	c+=bfr[14];
++	c+=0xab9423a7;
++	c+=a^(d|~b);
++	c=(c<<15)|(c>>17);
++	c+=d;
++	b+=bfr[5];
++	b+=0xfc93a039;
++	b+=d^(c|~a);
++	b=(b<<21)|(b>>11);
++	b+=c;
++	a+=bfr[12];
++	a+=0x655b59c3;
++	a+=c^(b|~d);
++	a=(a<<6)|(a>>26);
++	a+=b;
++	d+=bfr[3];
++	d+=0x8f0ccc92;
++	d+=b^(a|~c);
++	d=(d<<10)|(d>>22);
++	d+=a;
++	c+=bfr[10];
++	c+=0xffeff47d;
++	c+=a^(d|~b);
++	c=(c<<15)|(c>>17);
++	c+=d;
++	b+=bfr[1];
++	b+=0x85845dd1;
++	b+=d^(c|~a);
++	b=(b<<21)|(b>>11);
++	b+=c;
++	a+=bfr[8];
++	a+=0x6fa87e4f;
++	a+=c^(b|~d);
++	a=(a<<6)|(a>>26);
++	a+=b;
++	d+=bfr[15];
++	d+=0xfe2ce6e0;
++	d+=b^(a|~c);
++	d=(d<<10)|(d>>22);
++	d+=a;
++	c+=bfr[6];
++	c+=0xa3014314;
++	c+=a^(d|~b);
++	c=(c<<15)|(c>>17);
++	c+=d;
++	b+=bfr[13];
++	b+=0x4e0811a1;
++	b+=d^(c|~a);
++	b=(b<<21)|(b>>11);
++	b+=c;
++	a+=bfr[4];
++	a+=0xf7537e82;
++	a+=c^(b|~d);
++	a=(a<<6)|(a>>26);
++	a+=b;
++	d+=bfr[11];
++	d+=0xbd3af235;
++	d+=b^(a|~c);
++	d=(d<<10)|(d>>22);
++	d+=a;
++	c+=bfr[2];
++	c+=0x2ad7d2bb;
++	c+=a^(d|~b);
++	c=(c<<15)|(c>>17);
++	c+=d;
++	b+=bfr[9];
++	b+=0xeb86d391;
++	b+=d^(c|~a);
++	b=(b<<21)|(b>>11);
++	b+=c;
++
++	md5[0]+=a;
++	md5[1]+=b;
++	md5[2]+=c;
++	md5[3]+=d;
++}
++
++static void md5init(register md5_ctx *ptr)
++{
++	ptr->total=ptr->size=0;
++	ptr->md5[0]=0x67452301;
++	ptr->md5[1]=0xefcdab89;
++	ptr->md5[2]=0x98badcfe;
++	ptr->md5[3]=0x10325476;
++}
++
++static void md5next(register uint8_t *data,register uint32_t length,
++	register md5_ctx *ptr)
++{
++	register uint32_t i;
++
++	ptr->total+=length;
++
++	for(i=ptr->size;(i&63)&&length;length--)ptr->bfr[i++]=*data++;
++
++	if(i==64)
++	{
++		i=0;
++		md5block(ptr->md5,ptr->bfr);
++	}
++
++	for(;length>63;data+=64,length-=64)
++		md5block(ptr->md5,data);
++
++	for(;length;length--)ptr->bfr[i++]=*data++;
++
++	ptr->size=(uint8_t)(i);
++}
++
++static void md5end(register uint8_t *result,register md5_ctx *ptr)
++{
++	register uint32_t i=ptr->size;
++
++	ptr->bfr[i++]=0x80;
++	if(i>56)
++	{
++		for(;i<64;i++)ptr->bfr[i]=0;
++		i=0;
++		md5block(ptr->md5,ptr->bfr);
++	}
++	for(;i<56;i++)ptr->bfr[i]=0;
++
++	ptr->bfr[56]=(uint8_t)((ptr->total)<<3);
++	ptr->bfr[57]=(uint8_t)((ptr->total)>>5);
++	ptr->bfr[58]=(uint8_t)((ptr->total)>>13);
++	ptr->bfr[59]=(uint8_t)((ptr->total)>>21);
++	ptr->bfr[60]=(uint8_t)((ptr->total)>>29);
++	ptr->bfr[61]=0;
++	ptr->bfr[62]=0;
++	ptr->bfr[63]=0;
++
++	md5block(ptr->md5,ptr->bfr);
++
++	result[ 0]=(uint8_t) (ptr->md5[0]);
++	result[ 1]=(uint8_t)((ptr->md5[0])>>8);
++	result[ 2]=(uint8_t)((ptr->md5[0])>>16);
++	result[ 3]=(uint8_t)((ptr->md5[0])>>24);
++	result[ 4]=(uint8_t) (ptr->md5[1]);
++	result[ 5]=(uint8_t)((ptr->md5[1])>>8);
++	result[ 6]=(uint8_t)((ptr->md5[1])>>16);
++	result[ 7]=(uint8_t)((ptr->md5[1])>>24);
++	result[ 8]=(uint8_t) (ptr->md5[2]);
++	result[ 9]=(uint8_t)((ptr->md5[2])>>8);
++	result[10]=(uint8_t)((ptr->md5[2])>>16);
++	result[11]=(uint8_t)((ptr->md5[2])>>24);
++	result[12]=(uint8_t) (ptr->md5[3]);
++	result[13]=(uint8_t)((ptr->md5[3])>>8);
++	result[14]=(uint8_t)((ptr->md5[3])>>16);
++	result[15]=(uint8_t)((ptr->md5[3])>>24);
++}
++
++static void bin2hex(unsigned char *bin,int len,char *hex)
++{
++	while(len--)
++	{
++		*hex=*bin>>4;
++		if(*hex>9)*hex+++='a'-10;
++		else *hex+++='0';
++		*hex=*bin++&0xf;
++		if(*hex>9)*hex+++='a'-10;
++		else *hex+++='0';
++	}
++	*hex=0;
++}
++
++int authenticate(int mode,char *user,char *pass,
++	int (*io)(void *parm,unsigned char *data,int len,int mode),void *parm)
++{
++	int r=-1;
++	int len;
++	int status;
++	int method;
++	unsigned char *ptr;
++	unsigned char bfr[512];
++	char realm[MAX_REALM+1];
++	char nonce[MAX_NONCE+1];
++	char cnonce[MAX_CNONCE+1];
++	char response[MAX_RESPONSE+1];
++	char qop[MAX_QOP+1];
++	char tmp[MD5_HEX+1];
++	MD5(md5);
++	md5_ctx ctx;
++
++	if(strlen(user)>MAX_USER||strlen(pass)>MAX_PASS)return -1;
++
++	ptr=bfr;
++	put_header(ptr,0,TYPE_METHODS);
++	if(io(parm,bfr,9,WRITE))goto out;
++
++	if(io(parm,bfr,9,READ))goto out;
++	get_header(bfr,len,TYPE_METHODS,status);
++	if(status!=AUTH_SUCCESS)goto out;
++	if(len>sizeof(bfr))goto out;
++	if(io(parm,bfr,len,READ))goto out;
++
++	for(method=0,ptr=bfr;len;len--)
++	{
++		if(!*ptr||*ptr>=sizeof(method)*8)return -1;
++		method|=1<<*ptr++;
++	}
++
++	if(method&(1<<TYPE_RFC2617))method=TYPE_RFC2617;
++	else if(method&(1<<TYPE_RFC2069))method=TYPE_RFC2069;
++	else if(method&(1<<TYPE_PLAIN))method=TYPE_PLAIN;
++	else goto out;
++
++	switch(method)
++	{
++	case TYPE_PLAIN:
++		len=strlen(user)+strlen(pass)+2;
++		ptr=bfr;
++		put_header(ptr,len,method);
++		put_element(ptr,user);
++		put_element(ptr,pass);
++		break;
++
++	case TYPE_RFC2069:
++	case TYPE_RFC2617:
++		len=strlen(user)+strlen(URI)+(method==TYPE_RFC2617?8:7);
++		ptr=bfr;
++		put_header(ptr,len,method);
++		put_element(ptr,user);
++		*ptr++=0;
++		*ptr++=0;
++		put_element(ptr,URI);
++		*ptr++=0;
++		*ptr++=0;
++		*ptr++=0;
++		*ptr=0;
++		if(io(parm,bfr,len+9,WRITE))goto out;
++
++		if(io(parm,bfr,9,READ))goto out;
++		get_header(bfr,len,method,status);
++		if(status!=AUTH_FAIL)goto out;
++		if(len>sizeof(bfr))goto out;
++		if(io(parm,bfr,len,READ))goto out;
++		ptr=bfr;
++		if(!len)goto out;
++		get_element(ptr,len,realm,MAX_REALM);
++		if(!len)goto out;
++		get_element(ptr,len,nonce,MAX_NONCE);
++		if(!len)*qop=0;
++		else get_element(ptr,len,qop,MAX_QOP);
++
++		if(method==TYPE_RFC2617)
++		{
++			if(strcmp(qop,QOP))goto out;
++		}
++		else if(*qop)goto out;
++
++		if(io(parm,bfr,16,RANDOM))goto out;
++		md5init(&ctx);
++		md5next(bfr,16,&ctx);
++		md5end(md5,&ctx);
++		bin2hex(md5,MD5_SIZE,cnonce);
++
++		md5init(&ctx);
++		md5next((uint8_t *)user,strlen(user),&ctx);
++		md5next((uint8_t *)":",1,&ctx);
++		md5next((uint8_t *)realm,strlen(realm),&ctx);
++		md5next((uint8_t *)":",1,&ctx);
++		md5next((uint8_t *)pass,strlen(pass),&ctx);
++		md5end(md5,&ctx);
++		bin2hex(md5,MD5_SIZE,tmp);
++
++		md5init(&ctx);
++		md5next((uint8_t *)METHOD,strlen(METHOD),&ctx);
++		md5next((uint8_t *)":",1,&ctx);
++		md5next((uint8_t *)URI,strlen(URI),&ctx);
++		md5end(md5,&ctx);
++		bin2hex(md5,MD5_SIZE,response);
++
++		md5init(&ctx);
++		md5next((uint8_t *)tmp,strlen(tmp),&ctx);
++		md5next((uint8_t *)":",1,&ctx);
++		md5next((uint8_t *)nonce,strlen(nonce),&ctx);
++		md5next((uint8_t *)":",1,&ctx);
++		if(method==TYPE_RFC2617)
++		{
++			md5next((uint8_t *)NC,strlen(NC),&ctx);
++			md5next((uint8_t *)":",1,&ctx);
++			md5next((uint8_t *)cnonce,strlen(cnonce),&ctx);
++			md5next((uint8_t *)":",1,&ctx);
++			md5next((uint8_t *)qop,strlen(qop),&ctx);
++			md5next((uint8_t *)":",1,&ctx);
++		}
++		md5next((uint8_t *)response,strlen(response),&ctx);
++		md5end(md5,&ctx);
++		bin2hex(md5,MD5_SIZE,response);
++
++		len=strlen(user)+strlen(realm)+strlen(nonce)
++			+strlen(URI)+strlen(cnonce)+strlen(NC)
++			+strlen(response)+strlen(qop)+
++			(method==TYPE_RFC2617?8:7);
++		ptr=bfr;
++		put_header(ptr,len,method);
++		put_element(ptr,user);
++		put_element(ptr,realm);
++		put_element(ptr,nonce);
++		put_element(ptr,URI);
++		put_element(ptr,cnonce);
++		put_element(ptr,NC);
++		put_element(ptr,response);
++		put_element(ptr,qop);
++		break;
++
++	default:goto out;
++	}
++
++	if(io(parm,bfr,len+9,WRITE))goto out;
++
++	if(mode)
++	{
++		if(io(parm,bfr,9,READ))goto out;
++		get_header(bfr,len,method,status);
++		if(len>sizeof(bfr))goto out;
++		if(io(parm,bfr,len,READ))goto out;
++
++		if(status==AUTH_SUCCESS)r=0;
++		else r=-2;
++	}
++	else r=0;
++
++out:	memset(bfr,0,sizeof(bfr));
++
++	return r;
++}

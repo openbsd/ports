@@ -1,0 +1,51 @@
+$OpenBSD: patch-amtterm_c,v 1.1 2021/01/08 13:32:57 sthen Exp $
+
+Add SSL/auth code
+https://github.com/Openwsman/wsmancli/issues/10#issuecomment-751253133
+
+Index: amtterm.c
+--- amtterm.c.orig
++++ amtterm.c
+@@ -179,10 +179,18 @@ static void usage(FILE *fp)
+             "   -h            print this text\n"
+             "   -v            verbose (default)\n"
+             "   -q            quiet\n"
++            "   -L            use legacy authentication\n"
++#if defined(USE_OPENSSL) || defined(USE_GNUTLS)
++            "   -C cacert     enable SSL and use PEM cacert file\n"
++#endif
+             "   -u user       username (default: admin)\n"
+             "   -p pass       password (default: $AMT_PASSWORD)\n"
+             "\n"
++#if defined(USE_OPENSSL) || defined(USE_GNUTLS)
++            "By default port 16994 (SSL: 16995) is used.\n"
++#else
+             "By default port 16994 is used.\n"
++#endif
+ 	    "If no password is given " APPNAME " will ask for one.\n"
+             "\n"
+             "-- \n"
+@@ -209,7 +217,7 @@ int main(int argc, char *argv[])
+ 	snprintf(r.pass, sizeof(r.pass), "%s", h);
+ 
+     for (;;) {
+-        if (-1 == (c = getopt(argc, argv, "hvqu:p:")))
++        if (-1 == (c = getopt(argc, argv, "hvqu:p:LC:")))
+             break;
+         switch (c) {
+ 	case 'v':
+@@ -225,6 +233,14 @@ int main(int argc, char *argv[])
+ 	    snprintf(r.pass, sizeof(r.pass), "%s", optarg);
+ 	    memset(optarg,'*',strlen(optarg)); /* rm passwd from ps list */
+ 	    break;
++	case 'L':
++	    r.legacy = 1;
++	    break;
++#if defined(USE_OPENSSL) || defined(USE_GNUTLS)
++	case 'C':
++	    r.cacert = optarg;
++	    break;
++#endif
+ 
+         case 'h':
+             usage(stdout);

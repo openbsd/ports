@@ -1,0 +1,67 @@
+$OpenBSD: patch-gamt_c,v 1.1 2021/01/08 13:32:57 sthen Exp $
+
+Add SSL/auth code
+https://github.com/Openwsman/wsmancli/issues/10#issuecomment-751253133
+
+Index: gamt.c
+--- gamt.c.orig
++++ gamt.c
+@@ -84,6 +84,8 @@ static char amt_user[32] = "admin";
+ static char amt_pass[32];
+ static int amt_trace;
+ static int amt_debug;
++static int amt_legacy;
++static char *amt_cacert;
+ 
+ static int gamt_getstring(GtkWidget *window, char *title, char *message,
+ 			  char *dest, int dlen, int hide);
+@@ -768,6 +770,8 @@ static int gamt_connect(struct gamt_window *gamt)
+     gamt->redir.cb_data  = gamt;
+     gamt->redir.cb_recv  = recv_gtk;
+     gamt->redir.cb_state = state_gtk;
++    gamt->redir.legacy   = amt_legacy;
++    gamt->redir.cacert   = amt_cacert;
+ 
+     if (-1 == redir_connect(&gamt->redir))
+ 	return -1;
+@@ -905,8 +909,16 @@ static void usage(FILE *fp)
+             "   -c color      text color\n"
+             "   -b color      background color\n"
+             "   -l file       logfile\n"
++            "   -L            use legacy authentication\n"
++#if defined(USE_OPENSSL) || defined(USE_GNUTLS)
++            "   -C cacert     enable SSL and use PEM cacert file\n"
++#endif
+             "\n"
++#if defined(USE_OPENSSL) || defined(USE_GNUTLS)
++            "By default port 16994 (SSL: 16995) is used.\n"
++#else
+             "By default port 16994 is used.\n"
++#endif
+ 	    "If no password is given " APPNAME " will ask for one.\n"
+             "\n"
+             "-- \n"
+@@ -941,7 +953,7 @@ main(int argc, char *argv[])
+     fcntl(ConnectionNumber(dpy),F_SETFD,FD_CLOEXEC);
+ 
+     for (;;) {
+-        if (-1 == (c = getopt(argc, argv, "hdtu:p:f:c:b:l:")))
++        if (-1 == (c = getopt(argc, argv, "hdtu:p:f:c:b:l:LC:")))
+             break;
+         switch (c) {
+ 	case 'd':
+@@ -960,6 +972,14 @@ main(int argc, char *argv[])
+ 	case 'l':
+             log = optarg;
+ 	    break;
++	case 'L':
++	    amt_legacy = 1;
++	    break;
++#if defined(USE_OPENSSL) || defined(USE_GNUTLS)
++	case 'C':
++	    amt_cacert = optarg;
++	    break;
++#endif
+ 
+ 	case 'f':
+ 	    cfg_set_str(CFG_FONT, optarg);
