@@ -1,9 +1,9 @@
-$OpenBSD: patch-GNUmakefile,v 1.3 2019/12/30 08:32:46 jsg Exp $
+$OpenBSD: patch-GNUmakefile,v 1.4 2021/01/08 23:58:29 jsg Exp $
 
 Index: GNUmakefile
 --- GNUmakefile.orig
 +++ GNUmakefile
-@@ -240,7 +240,6 @@ engine_objs := \
+@@ -222,7 +222,6 @@ engine_objs := \
      hightile.cpp \
      klzw.cpp \
      kplib.cpp \
@@ -11,7 +11,7 @@ Index: GNUmakefile
      md4.cpp \
      mhk.cpp \
      miniz.c \
-@@ -403,8 +402,8 @@ ifeq ($(RENDERTYPE),SDL)
+@@ -387,8 +386,8 @@ ifeq ($(RENDERTYPE),SDL)
  endif
  
  ifneq (0,$(HAVE_XMP))
@@ -22,7 +22,7 @@ Index: GNUmakefile
  endif
  
  
-@@ -684,7 +683,7 @@ ifeq ($(SUBPLATFORM),LINUX)
+@@ -587,7 +586,7 @@ ifeq ($(SUBPLATFORM),LINUX)
  endif
  
  ifeq ($(PLATFORM),BSD)
@@ -31,7 +31,7 @@ Index: GNUmakefile
  endif
  
  ifeq ($(PLATFORM),DARWIN)
-@@ -851,13 +850,14 @@ endif
+@@ -760,13 +759,14 @@ endif
  
  #### Final setup
  
@@ -47,11 +47,3 @@ Index: GNUmakefile
  
  ifneq (0,$(USE_PHYSFS))
      COMPILERFLAGS += -I$(physfs_inc) -DUSE_PHYSFS
-@@ -875,7 +875,6 @@ libraries := \
-     audiolib \
-     engine \
-     glad \
--    libxmplite \
-     lpeg \
-     mact \
-     voidwrap \

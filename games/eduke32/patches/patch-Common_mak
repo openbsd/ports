@@ -1,9 +1,9 @@
-$OpenBSD: patch-Common_mak,v 1.2 2019/12/30 08:32:46 jsg Exp $
+$OpenBSD: patch-Common_mak,v 1.3 2021/01/08 23:58:29 jsg Exp $
 
 Index: Common.mak
 --- Common.mak.orig
 +++ Common.mak
-@@ -710,7 +710,7 @@ ifeq (0,$(RELEASE))
+@@ -693,7 +693,7 @@ ifeq (0,$(RELEASE))
      F_NO_STACK_PROTECTOR :=
  else
      ifeq (0,$(CLANG))
@@ -12,3 +12,13 @@ Index: Common.mak
      endif
  
      ifeq (0,$(FORCEDEBUG))
+@@ -1017,7 +1017,8 @@ ifeq (,$(VC_HASH))
+     VC_HASH := $(shell git rev-parse --short=9 HEAD 2>&1)
+ endif
+ ifeq (,$(VC_BRANCH))
+-    VC_BRANCH := $(shell git rev-parse --abbrev-ref HEAD 2>&1)
++#    VC_BRANCH := $(shell git rev-parse --abbrev-ref HEAD 2>&1)
++    VC_BRANCH := master
+     ifneq (master,$(VC_BRANCH))
+         VC_REV := $(VC_REV)[$(VC_BRANCH)]
+     endif

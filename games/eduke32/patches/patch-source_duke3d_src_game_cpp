@@ -1,13 +1,13 @@
-$OpenBSD: patch-source_duke3d_src_game_cpp,v 1.1 2020/01/04 05:44:39 jsg Exp $
+$OpenBSD: patch-source_duke3d_src_game_cpp,v 1.2 2021/01/08 23:58:29 jsg Exp $
 
 store log file in ~/.config/eduke32/
 
 Index: source/duke3d/src/game.cpp
 --- source/duke3d/src/game.cpp.orig
 +++ source/duke3d/src/game.cpp
-@@ -6367,6 +6367,9 @@ EDUKE32_STATIC_ASSERT(sizeof(DukePlayer_t)%4 == 0);
+@@ -6384,6 +6384,9 @@ void G_DrawFrame(void)
  
- int app_main(int argc, char const * const * argv)
+ int app_main(int argc, char const* const* argv)
  {
 +    char logpath[BMAX_PATH];
 +    char *homedir;
@@ -15,7 +15,7 @@ Index: source/duke3d/src/game.cpp
  #ifndef NETCODE_DISABLE
      if (enet_initialize() != 0)
          initprintf("An error occurred while initializing ENet.\n");
-@@ -6397,21 +6400,22 @@ int app_main(int argc, char const * const * argv)
+@@ -6410,21 +6413,22 @@ int app_main(int argc, char const* const* argv)
  
      G_ExtPreInit(argc, argv);
  
