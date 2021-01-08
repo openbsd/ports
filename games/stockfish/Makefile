@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/16 02:59:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/08 19:53:47 jasper Exp $
 
 V =		12
 COMMENT =	open source chess engine
@@ -35,6 +35,8 @@ MAKE_ENV =	ARCH=x86-32
 MAKE_ENV =	ARCH=armv7
 .elif ${MACHINE_ARCH:Mpowerpc}
 MAKE_ENV =	ARCH=ppc-32
+.elif ${MACHINE_ARCH:Mpowerpc64}
+MAKE_ENV =	ARCH=ppc-64
 .elif ${MACHINE_ARCH:Maarch64} || ${MACHINE_ARCH:Malpha} || \
 	${MACHINE_ARCH:Msparc64} || ${MACHINE_ARCH:Mmips64} || \
 	${MACHINE_ARCH:Mmips64el}
