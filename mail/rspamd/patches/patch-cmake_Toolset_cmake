@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_Toolset_cmake,v 1.4 2020/10/02 18:51:13 sthen Exp $
+$OpenBSD: patch-cmake_Toolset_cmake,v 1.5 2021/01/09 12:50:09 sthen Exp $
 
 Fails on ports-gcc arches: see CMakeError.log
 
@@ -7,7 +7,7 @@ egcc: error: unrecognized command line option '-fuse-ld=lld'; did you mean '-fus
 Index: cmake/Toolset.cmake
 --- cmake/Toolset.cmake.orig
 +++ cmake/Toolset.cmake
-@@ -54,7 +54,7 @@ if(NOT LINKER_NAME)
+@@ -55,7 +55,7 @@ if(NOT LINKER_NAME)
      endif()
  endif()
  
@@ -16,7 +16,7 @@ Index: cmake/Toolset.cmake
      set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=${LINKER_NAME}")
      set (CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -fuse-ld=${LINKER_NAME}")
  
-@@ -134,8 +134,8 @@ if (COMPILER_GCC)
+@@ -135,8 +135,8 @@ if (COMPILER_GCC)
      set (CMAKE_C_FLAGS_RELWITHDEBINFO      "${CMAKE_C_FLAGS_RELEASE} -O2 ${COMPILER_FAST_MATH} ${COMPILER_DEBUG_FLAGS}")
      set (CMAKE_CXX_FLAGS_RELWITHDEBINFO    "${CMAKE_CXX_FLAGS_RELEASE} -O2 ${COMPILER_FAST_MATH} ${COMPILER_DEBUG_FLAGS}")
  
@@ -26,8 +26,8 @@ Index: cmake/Toolset.cmake
 +    set (CMAKE_CXX_FLAGS_RELEASE       "${CMAKE_CXX_FLAGS_RELEASE} ${COMPILER_FAST_MATH} -fomit-frame-pointer")
  
      if (ENABLE_FULL_DEBUG MATCHES "ON")
-         if (COMPILER_GCC)
-@@ -155,8 +155,8 @@ if (COMPILER_GCC)
+         if (ENABLE_ANALYZER MATCHES "ON")
+@@ -156,8 +156,8 @@ if (COMPILER_GCC)
  else ()
      # Clang flags
      set (COMPILER_DEBUG_FLAGS "-g -glldb -gdwarf-aranges -gdwarf-4")

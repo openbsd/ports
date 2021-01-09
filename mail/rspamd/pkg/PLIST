@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2020/10/02 18:51:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.40 2021/01/09 12:50:09 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd
@@ -92,6 +92,8 @@ share/examples/rspamd/modules.d/hfilter.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/hfilter.conf
 share/examples/rspamd/modules.d/history_redis.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/history_redis.conf
+share/examples/rspamd/modules.d/http_headers.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/http_headers.conf
 share/examples/rspamd/modules.d/maillist.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/maillist.conf
 share/examples/rspamd/modules.d/metadata_exporter.conf
@@ -308,9 +310,13 @@ share/rspamd/lualib/lua_urls_compose.lua
 share/rspamd/lualib/lua_util.lua
 share/rspamd/lualib/lua_verdict.lua
 share/rspamd/lualib/lupa.lua
+share/rspamd/lualib/plugins/
+share/rspamd/lualib/plugins/neural.lua
+share/rspamd/lualib/plugins/rbl.lua
 share/rspamd/lualib/plugins_stats.lua
 share/rspamd/lualib/rescore_utility.lua
 share/rspamd/lualib/rspamadm/
+share/rspamd/lualib/rspamadm/clickhouse.lua
 share/rspamd/lualib/rspamadm/configgraph.lua
 share/rspamd/lualib/rspamadm/confighelp.lua
 share/rspamd/lualib/rspamadm/configwizard.lua
@@ -347,6 +353,7 @@ share/rspamd/plugins/fuzzy_collect.lua
 share/rspamd/plugins/greylist.lua
 share/rspamd/plugins/hfilter.lua
 share/rspamd/plugins/history_redis.lua
+share/rspamd/plugins/http_headers.lua
 share/rspamd/plugins/ip_score.lua
 share/rspamd/plugins/maillist.lua
 share/rspamd/plugins/maps_stats.lua
@@ -380,11 +387,11 @@ share/rspamd/rules/content.lua
 share/rspamd/rules/controller/
 share/rspamd/rules/controller/init.lua
 share/rspamd/rules/controller/maps.lua
+share/rspamd/rules/controller/neural.lua
 share/rspamd/rules/controller/selectors.lua
 share/rspamd/rules/forwarding.lua
 share/rspamd/rules/headers_checks.lua
 share/rspamd/rules/html.lua
-share/rspamd/rules/http_headers.lua
 share/rspamd/rules/mid.lua
 share/rspamd/rules/misc.lua
 share/rspamd/rules/regexp/
