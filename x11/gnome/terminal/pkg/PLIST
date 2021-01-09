@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.68 2020/11/07 13:13:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.69 2021/01/09 21:10:33 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -342,6 +342,40 @@ share/help/hu/gnome-terminal/txt-copy-paste.page
 share/help/hu/gnome-terminal/txt-links.page
 share/help/hu/gnome-terminal/txt-search.page
 share/help/hu/gnome-terminal/txt-select-text.page
+share/help/id/
+share/help/id/gnome-terminal/
+share/help/id/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/id/gnome-terminal/app-colors.page
+share/help/id/gnome-terminal/app-cursor.page
+share/help/id/gnome-terminal/app-fonts.page
+share/help/id/gnome-terminal/app-fullscreen.page
+share/help/id/gnome-terminal/app-terminal-sizes.page
+share/help/id/gnome-terminal/app-zoom.page
+share/help/id/gnome-terminal/figures/
+share/help/id/gnome-terminal/gs-execute-commands.page
+share/help/id/gnome-terminal/gs-tabs.page
+share/help/id/gnome-terminal/index.page
+share/help/id/gnome-terminal/introduction.page
+share/help/id/gnome-terminal/legal.xml
+share/help/id/gnome-terminal/overview.page
+share/help/id/gnome-terminal/pref-bell.page
+share/help/id/gnome-terminal/pref-custom-command.page
+share/help/id/gnome-terminal/pref-custom-exit.page
+share/help/id/gnome-terminal/pref-keyboard-access.page
+share/help/id/gnome-terminal/pref-login-shell.page
+share/help/id/gnome-terminal/pref-menubar.page
+share/help/id/gnome-terminal/pref-profile-char-width.page
+share/help/id/gnome-terminal/pref-profile-encoding.page
+share/help/id/gnome-terminal/pref-profiles.page
+share/help/id/gnome-terminal/pref-scrolling.page
+share/help/id/gnome-terminal/pref-tab-window.page
+share/help/id/gnome-terminal/pref-user-input.page
+share/help/id/gnome-terminal/pref.page
+share/help/id/gnome-terminal/prob-reset.page
+share/help/id/gnome-terminal/txt-copy-paste.page
+share/help/id/gnome-terminal/txt-links.page
+share/help/id/gnome-terminal/txt-search.page
+share/help/id/gnome-terminal/txt-select-text.page
 share/help/ko/gnome-terminal/
 share/help/ko/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/ko/gnome-terminal/app-colors.page
