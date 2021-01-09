@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/11/20 23:39:02 mestre Exp $
+# $OpenBSD: Makefile,v 1.32 2021/01/09 18:25:37 jasper Exp $
 
 BROKEN-hppa =	../../include/mednafen/state.h:21:7: error: 'exception_ptr' in namespace 'std' does not name a type
 COMMENT =	emulates numerous game consoles
@@ -38,8 +38,10 @@ CONFIGURE_ARGS =	--disable-alsa \
 			--disable-jack \
 			--with-gnu-ld
 
-# this intrinsic is not supported with our old gcc
+# this intrinsic is not supported with our old gcc on powerpc.
+.if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--disable-altivec
+.endif
 
 pre-configure:
 	sed -i.beforesubst 's/^__inline//' ${WRKDIST}/src/quicklz/quicklz.c
