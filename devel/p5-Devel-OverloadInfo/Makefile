@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/23 13:27:13 cwen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/09 14:34:26 bluhm Exp $
 
 COMMENT =	introspect overloaded operators
 
@@ -20,8 +20,5 @@ TEST_DEPENDS =		devel/p5-Test-Fatal \
 			devel/p5-Test-Spelling
 
 PKG_ARCH =		*
-
-# POD Spelling tests fail due to missing words /usr/share/dict
-MAKE_ENV =		TEST_POD=yes AUTHOR_TESTING=yes
 
 .include <bsd.port.mk>
