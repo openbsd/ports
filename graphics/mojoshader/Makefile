@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/12/17 07:45:16 thfr Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/09 17:59:04 kmos Exp $
 
 COMMENT =	library to move calls to Direct3D shaders to OpenGL
 
@@ -39,6 +39,11 @@ CFLAGS +=	-I${LOCALBASE}/include
 WRKDIST =	${WRKDIR}/mojoshader-${HG_COMMIT}
 
 SUBST_VARS +=	HG_CHANGESET HG_COMMIT
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
