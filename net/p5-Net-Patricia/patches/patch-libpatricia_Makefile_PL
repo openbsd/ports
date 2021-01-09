@@ -1,0 +1,16 @@
+$OpenBSD: patch-libpatricia_Makefile_PL,v 1.1 2021/01/09 12:42:57 bluhm Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=117929
+
+Index: libpatricia/Makefile.PL
+--- libpatricia/Makefile.PL.orig
++++ libpatricia/Makefile.PL
+@@ -12,6 +12,8 @@ all :: static
+ 
+ test ::
+ 
++test_dynamic ::
++
+ static ::       libpatricia$(LIB_EXT)
+ 
+ libpatricia$(LIB_EXT): $(O_FILES)

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/16 23:57:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/09 12:42:57 bluhm Exp $
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/Patricia.pm
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/Patricia/
-${P5ARCH}/auto/Net/Patricia/Patricia.so
+@so ${P5ARCH}/auto/Net/Patricia/Patricia.so
 @man man/man3p/Net::Patricia.3p
