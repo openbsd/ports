@@ -1,27 +1,27 @@
-$OpenBSD: patch-Makefile,v 1.11 2020/06/07 11:41:05 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.12 2021/01/09 14:05:40 ajacoutot Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -41,7 +41,7 @@ else
+@@ -52,7 +52,7 @@ else
+           endif
+         else
+           OS:=linux
+-          GPERF:=/usr/bin/gperf
++          GPERF:=${LOCALBASE}/bin/gperf
          endif
-       else
-         OS:=linux
--        GPERF:=/usr/bin/gperf
-+        GPERF:=${LOCALBASE}/bin/gperf
        endif
      endif
-   endif
-@@ -98,7 +98,7 @@ ARCH_LIBS:=$($(OS)_ARCH_LIBS)
+@@ -110,7 +110,7 @@ ARCH_LIBS:=$($(OS)_ARCH_LIBS)
  windows_ARCH_CFLAGS:=
- osx_ARCH_CFLAGS:=-mmacosx-version-min=10.8 -isystem /opt/local/include -DHAVE_STRCASESTR -w -headerpad_max_install_names
+ macos_ARCH_CFLAGS:=-mmacosx-version-min=10.8 -isystem /opt/local/include -DHAVE_STRCASESTR -w -headerpad_max_install_names
  beos_ARCH_CFLAGS:=
 -linux_ARCH_CFLAGS:=
 +#linux_ARCH_CFLAGS:=
  ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
  
  windows_ARCH_LDFLAGS:=
-@@ -108,9 +108,8 @@ linux_ARCH_LDFLAGS:=
+@@ -120,9 +120,8 @@ linux_ARCH_LDFLAGS:=
  ARCH_LDFLAGS:=$($(OS)_ARCH_LDFLAGS)
  LDFLAGS:=$(ARCH_LDFLAGS)
  
@@ -33,16 +33,16 @@ Index: Makefile
  
  FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
  FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
-@@ -132,7 +131,7 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
+@@ -144,7 +143,7 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
  windows_PREFIX:=/usr/local
- osx_PREFIX:=Resources
+ macos_PREFIX:=Resources
  linux_PREFIX:=/usr/local
 -PREFIX:=$($(OS)_PREFIX)
 +PREFIX:=${TRUEPREFIX}
  
  # Root directory to place files when creating packages.
  # PKG_ROOT is the old name for this, and should be undefined.
-@@ -166,19 +165,19 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+@@ -178,19 +177,19 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
  MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
  
  # Docs and man page:
@@ -67,7 +67,7 @@ Index: Makefile
  endif
  
  ifeq ($(SYSNAME),Haiku)
-@@ -646,18 +645,16 @@ uninstall:	uninstall-i18n
+@@ -658,18 +657,16 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -90,7 +90,7 @@ Index: Makefile
  
  
  # Install example stamps
-@@ -665,7 +662,7 @@ install-bash-completion:
+@@ -677,7 +674,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -99,19 +99,19 @@ Index: Makefile
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -715,7 +712,10 @@ $(THUMB_STARTERS):
+@@ -727,7 +724,10 @@ $(THUMB_STARTERS):
  	fi
  
  $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
--	@install -D -m 644 $< $@
+-	@install -D -m 644 $< $@ || ( echo "NO THUMB $<" )
 +	@cd starters ; \
-+	    ${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/tuxpaint/starters ; \
-+	    for i in `ls *.*` ; do \
-+	   ${BSD_INSTALL_DATA} $$i $(DESTDIR)$(PREFIX)/share/tuxpaint/starters ; done
++		${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/tuxpaint/starters ; \
++		for i in `ls *.*` ; do \
++		${BSD_INSTALL_DATA} $$i $(DESTDIR)$(PREFIX)/share/tuxpaint/starters ; done
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -822,24 +822,22 @@ install-nokia770:
+@@ -834,24 +834,22 @@ install-nokia770:
  install-xdg:
  	@echo
  	@echo "...Installing launcher icon into desktop environment..."
@@ -152,7 +152,7 @@ Index: Makefile
  
  # Install the PNG icon (for KDE desktop, etc.)
  # and the 24-color 32x32 XPM (for other Window managers):
-@@ -847,12 +845,9 @@ install-xdg:
+@@ -859,12 +857,9 @@ install-xdg:
  install-icon:
  	@echo
  	@echo "...Installing launcher icon graphics..."
@@ -168,7 +168,7 @@ Index: Makefile
  
  
  # Install the program:
-@@ -860,9 +855,8 @@ install-icon:
+@@ -872,9 +867,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
@@ -178,9 +178,9 @@ Index: Makefile
 +	${BSD_INSTALL_DATA_DIR} $(BIN_PREFIX)
 +	${BSD_INSTALL_PROGRAM} tuxpaint $(BIN_PREFIX)
  
- # Install the required Windows DLLs into the 'bdist' directory
+ # Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -939,8 +933,7 @@ install-haiku:
+@@ -949,8 +943,7 @@ install-haiku:
  install-importscript:
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -190,7 +190,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -948,12 +941,14 @@ install-importscript:
+@@ -958,12 +951,14 @@ install-importscript:
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -207,7 +207,7 @@ Index: Makefile
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -973,7 +968,7 @@ install-osk:
+@@ -983,7 +978,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
@@ -216,7 +216,7 @@ Index: Makefile
  	@cp -R docs/* $(DOC_PREFIX)
  	@# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
  	@install -d $(DOC_PREFIX)/en/magic-docs
-@@ -987,25 +982,13 @@ install-man:
+@@ -997,25 +992,13 @@ install-man:
  	@echo
  	@echo "...Installing man pages..."
  	@# man1 directory...

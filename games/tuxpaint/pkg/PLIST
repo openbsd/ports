@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/06/07 11:41:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/01/09 14:05:40 ajacoutot Exp $
 bin/tp-magic-config
 @bin bin/tuxpaint
 bin/tuxpaint-import
@@ -364,8 +364,10 @@ share/doc/tuxpaint/html/images/icon-win32.png
 share/doc/tuxpaint/html/images/open_back.png
 share/doc/tuxpaint/html/images/open_dialog.jpg
 share/doc/tuxpaint/html/images/open_erase.png
+share/doc/tuxpaint/html/images/open_export.png
 share/doc/tuxpaint/html/images/open_open.png
 share/doc/tuxpaint/html/images/open_slides.png
+share/doc/tuxpaint/html/images/open_slides_export_gif.png
 share/doc/tuxpaint/html/images/saveover.png
 share/doc/tuxpaint/html/images/selector.jpg
 share/doc/tuxpaint/html/images/stamp_edit.png
@@ -630,6 +632,9 @@ share/locale/sat/LC_MESSAGES/tuxpaint.mo
 share/locale/sat@olchiki/
 share/locale/sat@olchiki/LC_MESSAGES/
 share/locale/sat@olchiki/LC_MESSAGES/tuxpaint.mo
+share/locale/sc/
+share/locale/sc/LC_MESSAGES/
+share/locale/sc/LC_MESSAGES/tuxpaint.mo
 share/locale/sd/
 share/locale/sd/LC_MESSAGES/
 share/locale/sd/LC_MESSAGES/tuxpaint.mo
@@ -718,6 +723,12 @@ share/tuxpaint/brushes/flower_5_small.png
 share/tuxpaint/brushes/flower_6.png
 share/tuxpaint/brushes/flower_6_small.png
 share/tuxpaint/brushes/flower_7.png
+share/tuxpaint/brushes/footprints-human-shoes.dat
+share/tuxpaint/brushes/footprints-human-shoes.png
+share/tuxpaint/brushes/footprints-human.dat
+share/tuxpaint/brushes/footprints-human.png
+share/tuxpaint/brushes/footprints-paws.dat
+share/tuxpaint/brushes/footprints-paws.png
 share/tuxpaint/brushes/heart.png
 share/tuxpaint/brushes/hexagon.png
 share/tuxpaint/brushes/inksplat.dat
@@ -999,6 +1010,7 @@ share/tuxpaint/images/ui/
 share/tuxpaint/images/ui/back.png
 share/tuxpaint/images/ui/bold.png
 share/tuxpaint/images/ui/btn_down.png
+share/tuxpaint/images/ui/btn_hold.png
 share/tuxpaint/images/ui/btn_nav.png
 share/tuxpaint/images/ui/btn_off.png
 share/tuxpaint/images/ui/btn_up.png
@@ -1020,6 +1032,7 @@ share/tuxpaint/images/ui/cursor_up_large.png
 share/tuxpaint/images/ui/dead40x40.png
 share/tuxpaint/images/ui/erase.png
 share/tuxpaint/images/ui/flip.png
+share/tuxpaint/images/ui/gif_export.png
 share/tuxpaint/images/ui/grow.png
 share/tuxpaint/images/ui/italic.png
 share/tuxpaint/images/ui/magic_fullscreen.png
@@ -1039,6 +1052,7 @@ share/tuxpaint/images/ui/osk_shift.png
 share/tuxpaint/images/ui/osk_tab.png
 share/tuxpaint/images/ui/paintcan.png
 share/tuxpaint/images/ui/paintwell.png
+share/tuxpaint/images/ui/pict_export.png
 share/tuxpaint/images/ui/play.png
 share/tuxpaint/images/ui/popup_arrow.png
 share/tuxpaint/images/ui/prev.png
@@ -1051,6 +1065,8 @@ share/tuxpaint/images/ui/scroll_down_off.png
 share/tuxpaint/images/ui/scroll_up.png
 share/tuxpaint/images/ui/scroll_up_off.png
 share/tuxpaint/images/ui/select_digits.png
+share/tuxpaint/images/ui/shapes_center.png
+share/tuxpaint/images/ui/shapes_corner.png
 share/tuxpaint/images/ui/shrink.png
 share/tuxpaint/images/ui/slideshow.png
 share/tuxpaint/images/ui/sparkles-old.png
