@@ -1,0 +1,38 @@
+$OpenBSD: patch-blowfish-bcrypt_c,v 1.1 2021/01/09 10:29:44 ajacoutot Exp $
+
+blowfish-bcrypt.c:152:33: error: too many arguments provided to function-like macro invocation
+static void swap32(uint32_t *x, int count)
+                                ^
+/usr/include/sys/endian.h:71:9: note: macro 'swap32' defined here
+#define swap32(x) __swap32(x)
+
+Index: blowfish-bcrypt.c
+--- blowfish-bcrypt.c.orig
++++ blowfish-bcrypt.c
+@@ -149,7 +149,7 @@ static uint32_t magic_w[6] = {
+   0x64657253, 0x63727944, 0x6F756274
+ };
+ 
+-static void swap32(uint32_t *x, int count)
++static void eswap32(uint32_t *x, int count)
+ {
+ #if !WORDS_BIGENDIAN
+   do {
+@@ -340,7 +340,7 @@ static int ibcrypt(uint8_t *dst,
+   else if (lenscheme < HASHOFFSET)
+     return 0;
+   memcpy(psalt, data.binary.salt, BLOWFISH_BCRYPT_BINSALT_SIZE);
+-  swap32(data.binary.salt, 4);
++  eswap32(data.binary.salt, 4);
+ 
+   if (log2rounds < minlog2rounds || log2rounds > 31)
+     return 0;
+@@ -445,7 +445,7 @@ static int ibcrypt(uint8_t *dst,
+   dst = (uint8_t*)
+         encode_radix64((char*) dst, BLOWFISH_BCRYPT_BINSALT_SIZE, psalt) - 1;
+ 
+-  swap32(data.binary.output, 6);
++  eswap32(data.binary.output, 6);
+ /* This has to be bug-compatible with the original implementation, so
+    only encode 23 of the 24 bytes. */
+   encode_radix64((char*) dst, 23, (uint8_t *) data.binary.output);
