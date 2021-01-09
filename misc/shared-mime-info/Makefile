@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.70 2020/05/17 18:16:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2021/01/09 11:14:37 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
-DISTNAME=		shared-mime-info-2.0
+DISTNAME=		shared-mime-info-2.1
 
 CATEGORIES=		misc
 
@@ -14,9 +14,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB += c glib-2.0 intl xml2
+WANTLIB += c glib-2.0 xml2
 
-MASTER_SITES=		https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/0440063a2e6823a4b1a6fb2f2af8350f/
+MASTER_SITES=		https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/0ee50652091363ab0d17e335e5e74fbe/
+
 EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/meson
