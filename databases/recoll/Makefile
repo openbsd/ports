@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/04 14:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/09 21:32:47 kmos Exp $
 
 COMMENT= 	full text search application
 
@@ -17,6 +17,9 @@ HOMEPAGE= 	https://www.lesbonscomptes.com/recoll/
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://www.lesbonscomptes.com/recoll/
+
+# C++11
+COMPILER=	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} c iconv lzma m xapian xml2
 WANTLIB += xslt z
