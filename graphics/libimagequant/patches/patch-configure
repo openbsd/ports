@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2021/01/09 14:05:02 ajacoutot Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -157,10 +157,10 @@ cflags "-std=c99 -I."
+ 
+ # DEBUG
+ if [ -z "$DEBUG" ]; then
+-    cflags "-O3 -DNDEBUG"
++    cflags "-DNDEBUG"
+     status "Debug" "no"
+ else
+-    cflags "-O1 -g -DDEBUG"
++    cflags "-g -DDEBUG"
+     status "Debug" "yes"
+ fi
+ 

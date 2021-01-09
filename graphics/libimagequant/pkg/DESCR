@@ -1,0 +1,2 @@
+libimagequant is a small, portable C library for high-quality conversion of RGBA
+images to 8-bit indexed-color (palette) images.
