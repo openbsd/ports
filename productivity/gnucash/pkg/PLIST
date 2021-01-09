@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2020/10/03 14:01:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.52 2021/01/09 12:02:43 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -535,6 +535,7 @@ share/glib-2.0/schemas/org.gnucash.dialogs.business.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.checkprinting.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.commodities.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.export.csv.gschema.xml
+share/glib-2.0/schemas/org.gnucash.dialogs.flicker.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.import.csv.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.import.generic.gschema.xml
