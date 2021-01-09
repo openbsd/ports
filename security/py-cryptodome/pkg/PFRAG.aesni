@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.aesni,v 1.1 2021/01/09 10:36:33 sthen Exp $
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_aesni.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_ghash_clmul.${MODPY_PYC_MAGIC_TAG}so
