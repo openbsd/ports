@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/12/17 08:49:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2021/01/09 11:30:47 ajacoutot Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -15,7 +15,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.0.0
+GNOME_VERSION=		4.0.1
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+4-cloudprint-${GNOME_VERSION}
@@ -26,7 +26,7 @@ PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     3.3 # 1.0.0
+SHARED_LIBS += gtk-4                     3.3 # 1.0.1
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -103,8 +103,8 @@ WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 gtk-4 intl
 LIB_DEPENDS-media=	multimedia/gstreamer1/plugins-bad \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 
-WANTLIB-media += gio-2.0 glib-2.0 gobject-2.0 gstbase-1.0 gstplayer-1.0
-WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gtk-4
+WANTLIB-media += gio-2.0 glib-2.0 gobject-2.0 gstgl-1.0 gstbase-1.0
+WANTLIB-media += gstplayer-1.0 gstreamer-1.0 gstvideo-1.0 gtk-4 m
 
 TEST_IS_INTERACTIVE=	x11
 

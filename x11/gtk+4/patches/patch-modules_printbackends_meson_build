@@ -1,11 +1,11 @@
-$OpenBSD: patch-modules_printbackends_meson_build,v 1.5 2020/12/17 08:49:04 ajacoutot Exp $
+$OpenBSD: patch-modules_printbackends_meson_build,v 1.6 2021/01/09 11:30:47 ajacoutot Exp $
 
 Always enable the lpr print backend.
 
 Index: modules/printbackends/meson.build
 --- modules/printbackends/meson.build.orig
 +++ modules/printbackends/meson.build
-@@ -40,17 +40,17 @@ if cups_dep.found()
+@@ -25,17 +25,17 @@ if cups_dep.found()
      install_dir: printbackends_install_dir,
      install: true,
    )
