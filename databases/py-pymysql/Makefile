@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/08/19 12:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/09 11:32:40 sthen Exp $
 
 COMMENT =	MySQL driver in pure Python
 
-MODPY_EGG_VERSION =	0.9.3
+MODPY_EGG_VERSION =	1.0.1
 
 DISTNAME =	PyMySQL-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	databases
 
