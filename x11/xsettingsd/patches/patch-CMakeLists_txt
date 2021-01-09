@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/01/09 15:29:48 sthen Exp $
+
+https://github.com/derat/xsettingsd/pull/22
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -11,6 +11,7 @@ include(GNUInstallDirs)
+ include(CTest)
+ 
+ find_package(X11 REQUIRED)
++include_directories(${X11_INCLUDE_DIR})
+ find_package(GTest)
+ 
+ add_library(libxsettingsd STATIC

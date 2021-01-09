@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/31 20:49:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/09 15:29:48 sthen Exp $
 @bin bin/dump_xsettings
 @bin bin/xsettingsd
+@comment lib/systemd/
+@comment lib/systemd/user/
+@comment lib/systemd/user/xsettingsd.service
+@man man/man1/dump_xsettings.1
 @man man/man1/xsettingsd.1
