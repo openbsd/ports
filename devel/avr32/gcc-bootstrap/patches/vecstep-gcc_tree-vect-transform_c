@@ -1,0 +1,18 @@
+$OpenBSD: vecstep-gcc_tree-vect-transform_c,v 1.1 2021/01/09 21:41:16 jasper Exp $
+
+clang on powerpc64 defines vec_step already which collides with the
+symbol in gcc, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=239266#c23
+renaming suggested at https://gcc.gnu.org/legacy-ml/gcc/2019-07/msg00131.html
+
+Index: gcc/tree-vect-transform.c
+--- gcc/tree-vect-transform.c.orig
++++ gcc/tree-vect-transform.c
+@@ -46,6 +46,8 @@ along with GCC; see the file COPYING3.  If not see
+ #include "toplev.h"
+ #include "real.h"
+ 
++#define vec_step vec_step_
++
+ /* Utility functions for the code transformation.  */
+ static bool vect_transform_stmt (gimple, gimple_stmt_iterator *, bool *,
+ 				 slp_tree, slp_instance);

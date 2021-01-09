@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/07/21 15:52:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2021/01/09 21:41:16 jasper Exp $
 
 TOOL=			gcc
 TOOL_V= 		4.6.3
@@ -14,6 +14,10 @@ DISTFILES=		gcc-core-${TOOL_V}${EXTRACT_SUFX} \
 
 LTS_PATCHES=		msp430-gcc-4.6.3-20120406-sf3540953.patch \
 			msp430-gcc-4.6.3-20120406-sf3559978.patch
+
+.if ${MACHINE_ARCH} == "powerpc64"
+PATCH_LIST =		patch-* vecstep-*
+.endif
 
 WANTLIB +=		c gmp mpc mpfr
 

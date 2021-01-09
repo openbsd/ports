@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/14 17:20:34 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/09 21:41:16 jasper Exp $
 
 COMMENT=	gcc for riscv-elf cross-development
 
@@ -15,6 +15,10 @@ DIST_SUBDIR=	gcc
 COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
+
+.if ${MACHINE_ARCH} == "powerpc64"
+PATCH_LIST =	patch-* vecstep-*
+.endif
 
 BUILD_DEPENDS+=	devel/autoconf/2.13	\
 		devel/bison		\

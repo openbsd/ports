@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/29 20:33:34 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/09 21:41:16 jasper Exp $
 
 BROKEN-sparc64=	'build/genmddeps /usr/ports/pobj/xtensa-elf-gcc-6.3.0/gcc-6.3.0/gcc/common.md /usr/ports/pobj/xtensa-elf-gcc-6.3.0/gcc-6.3.0/gcc/config/xtensa/xtensa.md > tmp-mddeps' 'Illegal instruction (core dumped)'
 
@@ -16,7 +16,11 @@ DIST_SUBDIR=	gcc
 
 MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
+
+.if ${MACHINE_ARCH} == "powerpc64"
+PATCH_LIST =	patch-* vecstep-*
+.endif
 
 BUILD_DEPENDS+=	devel/bison \
 		devel/xtensa-elf/binutils

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/09 15:13:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2021/01/09 21:41:16 jasper Exp $
 
 BROKEN-alpha =	relocation truncated to fit: GPRELHIGH against symbol default_target_hard_regs
 
@@ -19,6 +19,10 @@ MASTER_SITES =		http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSP
 DIST_SUBDIR =		ti-msp430gcc-$V
 DISTFILES =		msp430-gcc-source.tar.bz2 \
 			msp430-gcc-support-files.zip
+
+.if ${MACHINE_ARCH} == "powerpc64"
+PATCH_LIST =		patch-* vecstep-*
+.endif
 
 WANTLIB += c gmp m mpc mpfr ${COMPILER_LIBCXX} z
 

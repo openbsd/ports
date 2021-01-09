@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/09 21:41:16 jasper Exp $
 
 COMMENT = 	bootstrap compiler for the AVR32 toolchain
 V = 		4.4.7
@@ -35,6 +35,9 @@ CFLAGS +=		-fgnu89-inline
 
 SEPARATE_BUILD =	Yes
 
+.if ${MACHINE_ARCH} == "powerpc64"
+PATCH_LIST =		patch-* vecstep-*
+.endif
 
 # This file confuses 'make update-patches'
 post-extract:

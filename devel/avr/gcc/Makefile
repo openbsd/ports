@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/03/20 16:44:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2021/01/09 21:41:16 jasper Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
@@ -19,6 +19,10 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(V)/}
 EXTRACT_SUFX=	.tar.bz2
 DIST_SUBDIR=	gcc
+
+.if ${MACHINE_ARCH} == "powerpc64"
+PATCH_LIST =	patch-* vecstep-*
+.endif
 
 BUILD_DEPENDS+=		devel/autoconf/2.13 \
 			devel/bison		\

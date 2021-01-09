@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/05/07 14:24:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/01/09 21:41:15 jasper Exp $
 
 BROKEN-arm=	ICE: Bus error in unwind-dw2.c
 BROKEN-powerpc=	libgcc/libgcc2.c:1999:1: internal compiler error: in create_edge, at cgraph.c:850
@@ -23,6 +23,10 @@ ERRORS+=	"either aarch64 or arm FLAVOR should be set"
 
 GCC_VERSION=	7.4.1
 SUBST_VARS+=	VERSION CONFIG GCC_VERSION
+
+.if ${MACHINE_ARCH} == "powerpc64"
+PATCH_LIST =	patch-* vecstep-*
+.endif
 
 WANTLIB=	c m ${COMPILER_LIBCXX} gmp mpfr mpc
 DIST_SUBDIR=	gcc

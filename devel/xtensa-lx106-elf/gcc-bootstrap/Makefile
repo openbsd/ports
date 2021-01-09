@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/05 21:55:01 tracey Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/09 21:41:16 jasper Exp $
 
 COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 
@@ -15,6 +15,10 @@ WANTLIB =	${COMPILER_LIBCXX} c gmp m mpc mpfr
 SUBST_VARS +=	VERSION
 
 COMPILER=	base-clang ports-gcc base-gcc
+
+.if ${MACHINE_ARCH} == "powerpc64"
+PATCH_LIST =	patch-* vecstep-*
+.endif
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/${CONFIG}/binutils
