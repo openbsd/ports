@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2020/06/06 10:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2021/01/09 12:16:01 ajacoutot Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 #'
 
-DISTNAME=	tuxpaint-config-0.0.15
+DISTNAME=	tuxpaint-config-0.0.16
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
