@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/01/04 14:06:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/01/09 10:18:10 bket Exp $
 bin/borg
 bin/borgfs
 lib/python${MODPY_VERSION}/site-packages/borg/
@@ -185,3 +185,12 @@ lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}-py${MOD
 @man man/man1/borg-with-lock.1
 @man man/man1/borg.1
 @man man/man1/borgfs.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/borg
+share/fish/
+share/fish/completions/
+share/fish/completions/borg.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_borg

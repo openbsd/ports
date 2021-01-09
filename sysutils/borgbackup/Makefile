@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2021/01/04 14:06:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/01/09 10:18:10 bket Exp $
 
 COMMENT =		deduplicating backup program
 
-MODPY_EGG_VERSION =	1.1.14
+MODPY_EGG_VERSION =	1.1.15
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -22,14 +21,14 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	--ignore lib* --ignore src/borg/testsuite/benchmark.py
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-WANTLIB +=		${COMPILER_LIBCXX} ${MODPY_WANTLIB} b2 crypto lz4 m zstd
+WANTLIB +=		${COMPILER_LIBCXX} b2 crypto lz4 m xxhash zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} \
-			archivers/lz4 \
+LIB_DEPENDS +=		archivers/lz4 \
 			archivers/zstd \
-			security/libb2
+			security/libb2 \
+			sysutils/xxhash
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 
 # XXX pytest-benchmark is currently not picked up as plugin by pytest, as result
@@ -43,6 +42,18 @@ PORTHOME =		${WRKDIR}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 ${PREFIX}/man/man1/
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA} ${WRKSRC}/scripts/shell_completions/bash/borg \
+		${PREFIX}/share/bash-completion/completions/
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${WRKSRC}/scripts/shell_completions/fish/borg.fish \
+		${PREFIX}/share/fish/completions/
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKSRC}/scripts/shell_completions/zsh/_borg \
+		${PREFIX}/share/zsh/site-functions/
 
 pre-test:
 	${MODPY_CMD} build_ext --inplace
