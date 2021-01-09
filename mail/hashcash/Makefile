@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/09 15:45:37 jasper Exp $
+
+BROKEN-powerpc64 =	non-portable altivec / gcc-isms
 
 COMMENT=		hashcash anti-spam / denial of service counter-measure tool
 
