@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2020/12/23 18:40:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.23 2021/01/09 18:22:12 fcambus Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
 V =		2.22
 DISTNAME =	newsboat-$V
+REVISION =	0
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://www.newsboat.org/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
