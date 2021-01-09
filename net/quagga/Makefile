@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2020/09/23 22:26:02 jca Exp $
+# $OpenBSD: Makefile,v 1.61 2021/01/09 21:51:09 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-1.2.4
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 
@@ -24,8 +25,7 @@ BUILD_DEPENDS=	lang/gawk
 USE_GMAKE=	Yes
 SYSCONFDIR=	${BASESYSCONFDIR}/quagga
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --includedir=${LOCALBASE}/include/quagga \
 		--disable-backtrace \
 		--enable-user=_quagga \
@@ -48,6 +48,13 @@ LIB_DEPENDS+=	net/net-snmp
 WANTLIB += crypto kvm netsnmp netsnmpagent netsnmpmibs perl
 CONFIGURE_ARGS+= --enable-snmp=agentx
 .endif
+
+# XXX temporary check to make sure this fails on build machines that aren't
+# updated yet
+pre-configure:
+	@if ! grep -q ip_mreqn /usr/include/netinet/in.h; then echo; \
+	    echo "*** Building quagge requires newer base (struct ip_mreqn in netinet/in.h)"; \
+	    echo; false; fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/quagga
