@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_cfg,v 1.1 2021/01/10 20:02:07 sthen Exp $
+
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -14,7 +14,7 @@ multi_line_output = 3
+ not_skip = __init__.py
+ 
+ [tool:pytest]
+-addopts = --showlocals --full-trace --flake8 --isort --cov rgain3 --cov-report term-missing
++addopts = --showlocals --full-trace --cov rgain3 --cov-report term-missing
+ flake8-max-line-length = 80
+ flake8-max-complexity = 20
+ 
