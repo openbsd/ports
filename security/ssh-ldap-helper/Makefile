@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/23 19:17:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/10 22:34:50 kn Exp $
 
 COMMENT =	fetch ssh AuthorizedKeys from LDAP
 
-DISTNAME =	openssh-5.3p1-81.el6.src.rpm
+DISTNAME =	openssh-5.3p1-81
 PKGNAME =	ssh-ldap-helper-5.3
 REVISION =	0
 
 CATEGORIES =	security net
-EXTRACT_SUFX=
+EXTRACT_SUFX=	.el6.src.rpm
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -15,12 +15,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB +=	c crypto lber-2.4 ldap-2.4 util z
 
 MASTER_SITES =	http://ftp.redhat.com/pub/redhat/linux/enterprise/6Server/en/os/SRPMS/
-
-do-extract:
-	cd ${WRKDIR} && \
-		${LOCALBASE}/bin/rpm2cpio ${FULLDISTDIR}/${DISTNAME} | cpio -id
-	cd ${WRKDIR} && \
-		${TAR} xjf openssh-5.3p1-noacss.tar.bz2
 
 PATCH_LIST =	${WRKDIR}/openssh-5.3p1-ldap.patch patch-*
 PATCH_STRIP =	-p1
@@ -33,9 +27,11 @@ CONFIGURE_ARGS =	--with-ldap=${LOCALBASE} \
 NO_TEST =	Yes
 ALL_TARGET =	ssh-ldap-helper
 
-BUILD_DEPENDS=	converters/rpm2cpio \
-		archivers/bzip2
+BUILD_DEPENDS=	archivers/bzip2
 LIB_DEPENDS =	databases/openldap
+
+post-extract:
+	cd ${WRKDIR} && ${TAR} xjf openssh-5.3p1-noacss.tar.bz2
 
 # The LDAP_SET_REBIND_PROC_ARGS macro is set to literal
 # "$ac_cv_ldap_set_rebind_proc" instead of "3" because of the improper
