@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/09 21:41:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/10 05:20:37 daniel Exp $
 
 COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 
@@ -14,7 +14,7 @@ SUBST_VARS +=	V
 
 WANTLIB =	${COMPILER_LIBCXX} c gmp m mpc mpfr
 
-f ${MACHINE_ARCH} == "powerpc64"
+.if ${MACHINE_ARCH} == "powerpc64"
 PATCH_LIST =	patch-* vecstep-*
 .endif
 
