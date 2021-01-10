@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2020/01/02 08:59:22 fcambus Exp $
+# $OpenBSD: Makefile,v 1.20 2021/01/10 18:05:56 fcambus Exp $
 
 COMMENT =		versatile Commodore emulator
 
-DISTNAME =		vice-3.3
-REVISION =		2
+DISTNAME =		vice-3.5
 
 CATEGORIES =		emulators
 
@@ -12,8 +11,8 @@ HOMEPAGE =		http://vice-emu.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC SDL2 c gif iconv intl jpeg
-WANTLIB += m ogg png readline vorbis vorbisenc vorbisfile z
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image c iconv intl m png
+WANTLIB += readline z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -21,29 +20,22 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
 
 BUILD_DEPENDS =		devel/xa
 
-LIB_DEPENDS =		audio/flac \
-			audio/libvorbis \
-			devel/gettext,-runtime \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/sdl2 \
-			graphics/giflib \
-			graphics/jpeg \
+			devel/sdl2-image \
 			graphics/png
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.69
 
-CONFIGURE_ARGS +=	--without-oss \
+CONFIGURE_ARGS +=	--without-alsa \
+			--without-oss \
 			--without-pulse \
 			--disable-lame \
 			--disable-portaudio \
+			--disable-pdf-docs \
 			--enable-sdlui2
 
 CONFIGURE_ENV +=	ac_cv_header_mpg123_h=no
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/man/vice.1
-
-post-install:
-	rm ${PREFIX}/lib/vice/doc/vice.info
 
 .include <bsd.port.mk>
