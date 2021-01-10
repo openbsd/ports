@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2020/10/23 12:42:34 kirby Exp $
+# $OpenBSD: Makefile,v 1.48 2021/01/10 20:30:15 kirby Exp $
 
 COMMENT =		owncloud sync client
 
-DISTNAME =		owncloudclient-2.6.3.14058
-REVISION =		0
+V = 			2.7.4.2934
+DISTNAME =		ownCloud-${V}
+PKGNAME =  		owncloudclient-${V}
 
 SHARED_LIBS +=		owncloudsync	5.0
 SHARED_LIBS +=		owncloud_csync	0.0
@@ -17,30 +18,35 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml qt5keychain
-WANTLIB += c lib/inotify/inotify m pthread sqlite3 z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain
+WANTLIB += secret-1 sqlite3 z ${COMPILER_LIBCXX}
 
-MASTER_SITES =		https://download.owncloud.com/desktop/stable/
+MASTER_SITES =		https://download.owncloud.com/desktop/ownCloud/stable/latest/source/ \
+			https://download.owncloud.com/desktop/ownCloud/stable/${V}/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake x11/qt5
 
+BUILD_DEPENDS = 	devel/kf5/extra-cmake-modules
 RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
-			security/qtkeychain \
-			x11/qt5/qtwebkit
+			security/qtkeychain
+#			x11/qt5/qtwebkit
 
 CONFIGURE_ARGS +=	-Wno-dev \
 			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR} \
+			-DKDE_INSTALL_PLUGINDIR=${PREFIX}/lib/ownCloud/plugins/ \
 			-DCMAKE_C_FLAGS="${CFLAGS} \
+				-I/usr/include \
 				-I${LOCALBASE}/include/inotify \
 				-I${LOCALBASE}/include/qtkeychain \
 				-I${LOCALBASE}/include" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
+				-I/usr/include \
 				-I${LOCALBASE}/include/inotify \
 				-I${LOCALBASE}/include/qtkeychain \
 				-I${LOCALBASE}/include" \
@@ -49,7 +55,10 @@ CONFIGURE_ARGS +=	-Wno-dev \
 				-L${LOCALBASE}/lib \
 				-linotify \
 				-Wl,-rpath=${LOCALBASE}/lib/inotify" \
-			-DCMAKE_DISABLE_FIND_PACKAGE_KF5=TRUE
+			-DCMAKE_DISABLE_FIND_PACKAGE_KF5=TRUE \
+			-DInotify_INCLUDE_DIRS=${LOCALBASE}/include/inotify \
+			-DInotify_LIBRARIES=${LOCALBASE}/lib/inotify \
+			-DCSYNC_REQUIRED_LIBRARIES=c
 
 NO_TEST =		Yes
 

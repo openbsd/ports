@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/02/12 14:43:54 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/01/10 20:30:15 kirby Exp $
 @conflict ocsync-*
 @conflict mirall-*
 @pkgpath net/ocsync
@@ -53,7 +53,7 @@ share/icons/hicolor/16x16/apps/ownCloud_sync_shared.png
 share/icons/hicolor/16x16/apps/ownCloud_warn.png
 share/icons/hicolor/16x16/apps/ownCloud_warn_shared.png
 share/icons/hicolor/16x16/apps/owncloud.png
-share/icons/hicolor/22x22/apps/owncloud.png
+share/icons/hicolor/24x24/apps/owncloud.png
 share/icons/hicolor/256x256/apps/ownCloud_error.png
 share/icons/hicolor/256x256/apps/ownCloud_error_shared.png
 share/icons/hicolor/256x256/apps/ownCloud_ok.png
@@ -81,7 +81,6 @@ share/icons/hicolor/48x48/apps/ownCloud_sync_shared.png
 share/icons/hicolor/48x48/apps/ownCloud_warn.png
 share/icons/hicolor/48x48/apps/ownCloud_warn_shared.png
 share/icons/hicolor/48x48/apps/owncloud.png
-share/icons/hicolor/512x512/apps/owncloud.png
 share/icons/hicolor/64x64/apps/ownCloud_error.png
 share/icons/hicolor/64x64/apps/ownCloud_error_shared.png
 share/icons/hicolor/64x64/apps/ownCloud_ok.png
