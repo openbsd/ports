@@ -1,0 +1,2 @@
+This is a simple command line tool, using Poppler and Cairo to read a
+PDF file and render the contents to an SVG file.

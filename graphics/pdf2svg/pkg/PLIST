@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/pdf2svg
