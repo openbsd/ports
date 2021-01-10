@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2021/01/04 14:06:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/01/10 20:24:23 sthen Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
-MODPY_EGG_VERSION=	8.0.1
+MODPY_EGG_VERSION=	8.1.0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
-REVISION=		0
 
 HOMEPAGE=		https://python-pillow.org/
 
@@ -30,7 +29,8 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 LIB_DEPENDS=		graphics/lcms2 \
 			graphics/openjp2>=2.3.0p0 \
 			graphics/libwebp
-TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			sysutils/py-packaging${MODPY_FLAVOR}
 
 SUBST_VARS+=		INCL_DIR MODPY_FLAVOR
 INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
