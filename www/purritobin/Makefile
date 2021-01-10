@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${COMPILER_LIBCXX} c m usockets
 
 # C++2a
-COMPILER =	base-clang ports-gcc
+COMPILER =	base-clang
 
 BUILD_DEPENDS =	www/uwebsockets
 
