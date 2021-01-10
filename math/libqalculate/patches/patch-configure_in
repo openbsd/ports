@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2013/04/11 13:38:31 zhuk Exp $
+$OpenBSD: patch-configure_in,v 1.2 2021/01/10 14:00:26 naddy Exp $
 OpenBSD doesn't need -lhistory for -lreadline.
---- configure.in.orig	Tue Jan  5 18:15:27 2010
-+++ configure.in	Thu Sep 22 03:00:45 2011
-@@ -188,7 +194,7 @@ if test "x$enable_textport" = "xyes" ; then
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -188,7 +188,7 @@ if test "x$enable_textport" = "xyes" ; then
        fi
      fi
      if test x${HAVE_LIBREADLINE} = xtrue; then
