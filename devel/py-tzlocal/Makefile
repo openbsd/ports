@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:12:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/10 20:13:04 sthen Exp $
 
 COMMENT =		python tzinfo object for the local timezone
 
-MODPY_EGG_VERSION =	1.3
+MODPY_EGG_VERSION =	2.1
 DISTNAME =		tzlocal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		devel
 
@@ -18,10 +17,11 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR?=
+FLAVOR =		python3
 
 MODULES =		lang/python
 
 RUN_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

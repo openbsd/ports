@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2050 2021/01/04 13:58:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2051 2021/01/10 20:13:04 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -103,7 +103,6 @@
      SUBDIR += cvs20hg
      SUBDIR += cvs2cl
      SUBDIR += cvs2gitdump
-     SUBDIR += cvs2svn
      SUBDIR += cvsgraph
      SUBDIR += cvslock
      SUBDIR += cvsplot
@@ -1736,7 +1735,6 @@
      SUBDIR += py-typing-extensions,python3
      SUBDIR += py-tz
      SUBDIR += py-tz,python3
-     SUBDIR += py-tzlocal
      SUBDIR += py-tzlocal,python3
      SUBDIR += py-uncompyle6
      SUBDIR += py-uncompyle6,python3

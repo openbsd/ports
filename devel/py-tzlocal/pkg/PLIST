@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/11/03 10:10:38 florian Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/10 20:13:04 sthen Exp $
+@pkgpath devel/py-tzlocal
 lib/python${MODPY_VERSION}/site-packages/tzlocal/
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,41 +11,11 @@ lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/tzlocal/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}darwin.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}unix.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}win32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}windows_tz.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tzlocal/darwin.py
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/Harare
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/localtime/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/localtime/etc/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/localtime/etc/localtime
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/symlink_localtime/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/symlink_localtime/etc/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/symlink_localtime/etc/localtime
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/symlink_localtime/usr/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/symlink_localtime/usr/share/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/symlink_localtime/usr/share/zoneinfo/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/symlink_localtime/usr/share/zoneinfo/Africa/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/symlink_localtime/usr/share/zoneinfo/Africa/Harare
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone/etc/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone/etc/timezone
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone_setting/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone_setting/etc/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone_setting/etc/conf.d/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone_setting/etc/conf.d/clock
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/vardbzoneinfo/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/vardbzoneinfo/var/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/vardbzoneinfo/var/db/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/vardbzoneinfo/var/db/zoneinfo
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/zone_setting/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/zone_setting/etc/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/zone_setting/etc/sysconfig/
-lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/zone_setting/etc/sysconfig/clock
-lib/python${MODPY_VERSION}/site-packages/tzlocal/tests.py
 lib/python${MODPY_VERSION}/site-packages/tzlocal/unix.py
+lib/python${MODPY_VERSION}/site-packages/tzlocal/utils.py
 lib/python${MODPY_VERSION}/site-packages/tzlocal/win32.py
 lib/python${MODPY_VERSION}/site-packages/tzlocal/windows_tz.py
