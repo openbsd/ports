@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/09 10:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2021/01/10 18:00:22 jasper Exp $
 
 COMMENT=		cryptographic library
 
@@ -32,6 +32,13 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 # fix relocation errors
 .if ${MACHINE_ARCH} == "sparc64"
 CONFIGURE_ENV +=	CCPIC=-fPIC
+.endif
+
+# aes-encrypt-internal-2.s:326:1: error: unexpected token at start of statement
+# .0:
+# ^
+.if ${MACHINE_ARCH} == "powerpc64"
+CONFIGURE_ARGS +=	--disable-assembler
 .endif
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
