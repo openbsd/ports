@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1542 2020/06/26 11:51:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1543 2021/01/10 22:29:33 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1385,6 +1385,11 @@ PATCH_CASES += *.bz2) \
 	${BZIP2} -d <$$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 .endif
 
+.if !empty(_LIST_EXTRACTED:M*.rpm)
+BUILD_DEPENDS += converters/rpm2cpio
+EXTRACT_CASES += *.rpm) \
+	cd ${WRKDIR} && rpm2cpio ${FULLDISTDIR}/$$archive | cpio -id -- ${EXTRACT_FILES};;
+.endif
 
 _PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is a shell archive):)'
 
