@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.29 2020/08/29 12:26:52 fcambus Exp $
+# $OpenBSD: Makefile,v 1.30 2021/01/10 16:52:36 fcambus Exp $
 
 COMMENT=	view and edit files in hexadecimal or ASCII
 
 GH_ACCOUNT=	pixel
 GH_PROJECT=	hexedit
 GH_TAGNAME=	1.5
+REVISION=	0
 
 CATEGORIES=	editors
 
 HOMEPAGE=	http://rigaux.org/hexedit.html
-
-MAINTAINER=	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
