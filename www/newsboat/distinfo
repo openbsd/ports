@@ -95,7 +95,7 @@ SHA256 (cargo/winapi-util-0.1.5.tar.gz) = cOxs6FuxWBUcrl5ch/lajpfSwMSwASI/M6M048
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/wyz-0.2.0.tar.gz) = heYLDRtfmdslVpNOIZNwIHdqXTFSC/Fp6FGsROZCAhQ=
 SHA256 (cargo/xdg-2.2.0.tar.gz) = 0IloGqEGqG+t4bASj7Xa8H1YZ6UJqwNtmZiN7IBCmlc=
-SHA256 (newsboat-2.22.tar.xz) = Uob4FdmgC0dSpVctmbvZvFEracBpMUU/qkFZaIgc15A=
+SHA256 (newsboat-2.22.1.tar.xz) = iSD0HMU3drZ8DoWtFpawln9qwkjzuJE9l3lCwV115pA=
 SIZE (cargo/addr2line-0.13.0.tar.gz) = 29996
 SIZE (cargo/adler-0.2.3.tar.gz) = 12168
 SIZE (cargo/aho-corasick-0.7.13.tar.gz) = 111381
@@ -193,4 +193,4 @@ SIZE (cargo/winapi-util-0.1.5.tar.gz) = 10164
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SIZE (cargo/wyz-0.2.0.tar.gz) = 12926
 SIZE (cargo/xdg-2.2.0.tar.gz) = 13387
-SIZE (newsboat-2.22.tar.xz) = 773764
+SIZE (newsboat-2.22.1.tar.xz) = 773900

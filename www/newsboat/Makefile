@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2021/01/09 18:22:12 fcambus Exp $
+# $OpenBSD: Makefile,v 1.24 2021/01/10 16:49:55 fcambus Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
-V =		2.22
+V =		2.22.1
 DISTNAME =	newsboat-$V
-REVISION =	0
 
 CATEGORIES =	www
 
