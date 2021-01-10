@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2020/08/26 21:06:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.19 2021/01/10 16:58:29 fcambus Exp $
 
 COMMENT=	test tool for slow HTTP reads/posts
 
 GH_ACCOUNT=	shekyan
 GH_PROJECT=	slowhttptest
 GH_TAGNAME=	v1.8.2
+REVISION=	0
 
 CATEGORIES=	www security
-
-MAINTAINER=	Frederic Cambus <fcambus@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
