@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/09 14:05:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/10 08:23:45 ajacoutot Exp $
 
 COMMENT=		image quantization library
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += m
 
 USE_GMAKE=		Yes
+
+BUILD_DEPENDS=		shells/bash
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--disable-sse
