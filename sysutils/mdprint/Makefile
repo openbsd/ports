@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/12/28 04:01:48 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/10 22:33:22 kn Exp $
 
 COMMENT =		print sun4v machine descriptions
 
@@ -17,9 +17,6 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://yum.oracle.com/repo/OracleLinux/OL6/latest/source/getPackageSource/
 EXTRACT_SUFX =		.el6.src.rpm
-EXTRACT_ONLY =		# empty
-
-BUILD_DEPENDS =		converters/rpm2cpio
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
@@ -31,9 +28,7 @@ NO_TEST =		Yes
 
 # the SRC RPM contains a SPEC file and the actual uncompressed source tarball
 post-extract:
-	cd ${WRKDIR} && rpm2cpio ${FULLDISTDIR}/${DISTFILES} | \
-		cpio -i ${DISTNAME}.tar
-	${TAR} -C${WRKDIR} -xf${WRKDIR}/${DISTNAME}.tar ${DISTNAME}/${MDPRINT}
+	cd ${WRKDIR} && ${TAR} -xf./${DISTNAME}.tar
 
 do-build:
 	2to3-${MODPY_VERSION} --no-diffs -W ${WRKSRC}/${MDPRINT}

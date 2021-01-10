@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/05/30 08:50:13 robert Exp $
+# $OpenBSD: Makefile,v 1.22 2021/01/10 22:33:22 kn Exp $
 
 COMMENT=	next generation web interface for Kopano
 
@@ -24,21 +24,18 @@ MINOR=		2765
 RPMVER=		1630.1
 PKGNAME=	kopano-webapp-${WAPP_VERSION}.${MINOR}
 
-EXTRACT_SUFX=	# empty
+EXTRACT_SUFX=	.noarch.rpm
 
 # https://download.kopano.io/community/webapp%3A/webapp-4.1.2765%2B1630.1.dbabb97-RHEL_7-noarch.tar.gz
 .for _dfile in ${PLUGINS}
-EDISTFILES+=    kopano-webapp-plugin-${_dfile}.noarch.rpm
+DISTFILES+=	kopano-webapp-plugin-${_dfile}${EXTRACT_SUFX}
 .endfor
-EDISTFILES+=    kopano-webapp-lang-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm
-EXTRACT_ONLY=   ${EDISTFILES:C/:[0-9]$//}
+DISTFILES+=	kopano-webapp-lang-${WAPP_VERSION}.${MINOR}-${RPMVER}${EXTRACT_SUFX}
 
-DISTFILES+=	kopano-webapp-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm
-DISTFILES+=	kopano-webapp-plugin-files-3.0.0.42-362.1.noarch.rpm \
-		kopano-webapp-plugin-filesbackend-owncloud-3.0.0.15-115.1.noarch.rpm \
-		kopano-webapp-plugin-filesbackend-smb-3.0.0.14-82.1.noarch.rpm
-
-DISTFILES+=	${EDISTFILES}
+DISTFILES+=	kopano-webapp-${WAPP_VERSION}.${MINOR}-${RPMVER}${EXTRACT_SUFX}
+DISTFILES+=	kopano-webapp-plugin-files-3.0.0.42-362.1${EXTRACT_SUFX} \
+		kopano-webapp-plugin-filesbackend-owncloud-3.0.0.15-115.1${EXTRACT_SUFX} \
+		kopano-webapp-plugin-filesbackend-smb-3.0.0.14-82.1${EXTRACT_SUFX}
 
 MASTER_SITES=	http://nerd.hu/distfiles/kopano-webapp/
 
@@ -49,7 +46,6 @@ MODULES=	lang/php
 MODPHP_BUILDDEP=No
 MODPHP_RUNDEP=	No
 
-BUILD_DEPENDS=	converters/rpm2cpio
 RUN_DEPENDS=	mail/kopano/core,-mapi # php-mapi
 
 NO_BUILD=	Yes
@@ -62,12 +58,6 @@ INSTDIR=	${PREFIX}/kopano-webapp
 TINSTDIR=	${TRUEPREFIX}/kopano-webapp
 
 SUBST_VARS=	INSTDIR TINSTDIR
-
-do-extract:
-.for _dfile in ${DISTFILES}
-	cd ${WRKDIR} && \
-		${LOCALBASE}/bin/rpm2cpio ${FULLDISTDIR}/${_dfile} | cpio -id
-.endfor
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/kopano/webapp/config.php
