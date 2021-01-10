@@ -1,4 +1,4 @@
-$OpenBSD: patch-hacks_glx_crumbler_c,v 1.1 2018/08/13 18:53:50 sthen Exp $
+$OpenBSD: patch-hacks_glx_crumbler_c,v 1.2 2021/01/10 21:32:12 sthen Exp $
 
 Index: hacks/glx/crumbler.c
 --- hacks/glx/crumbler.c.orig
@@ -11,5 +11,5 @@ Index: hacks/glx/crumbler.c
 +     density *= 0.5;
 +#endif
  # ifdef HAVE_MOBILE
- #  ifdef USE_IPHONE
+ #  ifdef HAVE_IPHONE
       density *= 0.5;  /* iPhone 6s runs out of memory at 4500 nverts. */

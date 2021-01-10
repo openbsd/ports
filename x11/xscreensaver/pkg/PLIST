@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2020/03/21 21:07:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.50 2021/01/10 21:32:12 sthen Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -16,7 +16,6 @@ bin/xscreensaver-getimage-file
 bin/xscreensaver-getimage-video
 @bin bin/xscreensaver-gl-helper
 bin/xscreensaver-text
-lib/X11/app-defaults/XScreenSaver
 libexec/xscreensaver/
 @bin libexec/xscreensaver/abstractile
 @bin libexec/xscreensaver/anemone
@@ -30,6 +29,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/attraction
 @bin libexec/xscreensaver/atunnel
 @bin libexec/xscreensaver/barcode
+@bin libexec/xscreensaver/beats
 @bin libexec/xscreensaver/binaryring
 @bin libexec/xscreensaver/blaster
 @bin libexec/xscreensaver/blinkbox
@@ -54,6 +54,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/companioncube
 @bin libexec/xscreensaver/compass
 @bin libexec/xscreensaver/coral
+@bin libexec/xscreensaver/covid19
 @bin libexec/xscreensaver/crackberg
 @bin libexec/xscreensaver/crumbler
 @bin libexec/xscreensaver/crystal
@@ -124,6 +125,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/halftone
 @bin libexec/xscreensaver/halo
 @bin libexec/xscreensaver/handsy
+@bin libexec/xscreensaver/headroom
 @bin libexec/xscreensaver/helix
 @bin libexec/xscreensaver/hexadrop
 @bin libexec/xscreensaver/hexstrut
@@ -212,6 +214,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/slip
 @bin libexec/xscreensaver/sonar
 @bin libexec/xscreensaver/speedmine
+@bin libexec/xscreensaver/sphereeversion
 @bin libexec/xscreensaver/spheremonics
 @bin libexec/xscreensaver/splitflap
 @bin libexec/xscreensaver/splodesic
@@ -277,6 +280,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/attraction.6
 @man man/man6/atunnel.6
 @man man/man6/barcode.6
+@man man/man6/beats.6
 @man man/man6/binaryring.6
 @man man/man6/blaster.6
 @man man/man6/blinkbox.6
@@ -300,6 +304,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/companioncube.6
 @man man/man6/compass.6
 @man man/man6/coral.6
+@man man/man6/covid19.6
 @man man/man6/crackberg.6
 @man man/man6/crumbler.6
 @man man/man6/crystal.6
@@ -369,6 +374,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/halftone.6
 @man man/man6/halo.6
 @man man/man6/handsy.6
+@man man/man6/headroom.6
 @man man/man6/helix.6
 @man man/man6/hexadrop.6
 @man man/man6/hexstrut.6
@@ -455,6 +461,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/slip.6
 @man man/man6/sonar.6
 @man man/man6/speedmine.6
+@man man/man6/sphereeversion.6
 @man man/man6/spheremonics.6
 @man man/man6/splitflap.6
 @man man/man6/splodesic.6
@@ -516,6 +523,7 @@ share/applications/screensavers/atlantis.desktop
 share/applications/screensavers/attraction.desktop
 share/applications/screensavers/atunnel.desktop
 share/applications/screensavers/barcode.desktop
+share/applications/screensavers/beats.desktop
 share/applications/screensavers/binaryring.desktop
 share/applications/screensavers/blaster.desktop
 share/applications/screensavers/blinkbox.desktop
@@ -538,9 +546,11 @@ share/applications/screensavers/celtic.desktop
 share/applications/screensavers/circuit.desktop
 share/applications/screensavers/cityflow.desktop
 share/applications/screensavers/cloudlife.desktop
+share/applications/screensavers/co____9.desktop
 share/applications/screensavers/companioncube.desktop
 share/applications/screensavers/compass.desktop
 share/applications/screensavers/coral.desktop
+share/applications/screensavers/covid19.desktop
 share/applications/screensavers/crackberg.desktop
 share/applications/screensavers/critical.desktop
 share/applications/screensavers/crumbler.desktop
@@ -616,6 +626,7 @@ share/applications/screensavers/greynetic.desktop
 share/applications/screensavers/halftone.desktop
 share/applications/screensavers/halo.desktop
 share/applications/screensavers/handsy.desktop
+share/applications/screensavers/headroom.desktop
 share/applications/screensavers/helix.desktop
 share/applications/screensavers/hexadrop.desktop
 share/applications/screensavers/hexstrut.desktop
@@ -715,6 +726,7 @@ share/applications/screensavers/slip.desktop
 share/applications/screensavers/sonar.desktop
 share/applications/screensavers/speedmine.desktop
 share/applications/screensavers/sphere.desktop
+share/applications/screensavers/sphereeversion.desktop
 share/applications/screensavers/spheremonics.desktop
 share/applications/screensavers/spiral.desktop
 share/applications/screensavers/splitflap.desktop
@@ -805,6 +817,7 @@ share/xscreensaver/config/atlantis.xml
 share/xscreensaver/config/attraction.xml
 share/xscreensaver/config/atunnel.xml
 share/xscreensaver/config/barcode.xml
+share/xscreensaver/config/beats.xml
 share/xscreensaver/config/binaryring.xml
 share/xscreensaver/config/blaster.xml
 share/xscreensaver/config/blinkbox.xml
@@ -829,6 +842,7 @@ share/xscreensaver/config/cloudlife.xml
 share/xscreensaver/config/companioncube.xml
 share/xscreensaver/config/compass.xml
 share/xscreensaver/config/coral.xml
+share/xscreensaver/config/covid19.xml
 share/xscreensaver/config/crackberg.xml
 share/xscreensaver/config/crumbler.xml
 share/xscreensaver/config/crystal.xml
@@ -899,6 +913,7 @@ share/xscreensaver/config/greynetic.xml
 share/xscreensaver/config/halftone.xml
 share/xscreensaver/config/halo.xml
 share/xscreensaver/config/handsy.xml
+share/xscreensaver/config/headroom.xml
 share/xscreensaver/config/helix.xml
 share/xscreensaver/config/hexadrop.xml
 share/xscreensaver/config/hexstrut.xml
@@ -986,6 +1001,7 @@ share/xscreensaver/config/slidescreen.xml
 share/xscreensaver/config/slip.xml
 share/xscreensaver/config/sonar.xml
 share/xscreensaver/config/speedmine.xml
+share/xscreensaver/config/sphereeversion.xml
 share/xscreensaver/config/spheremonics.xml
 share/xscreensaver/config/splitflap.xml
 share/xscreensaver/config/splodesic.xml
@@ -1030,12 +1046,12 @@ share/xscreensaver/config/xmatrix.xml
 share/xscreensaver/config/xrayswarm.xml
 share/xscreensaver/config/xspirograph.xml
 share/xscreensaver/config/zoom.xml
-share/xscreensaver/glade/
-share/xscreensaver/glade/screensaver-cmndln.png
-share/xscreensaver/glade/screensaver-colorselector.png
-share/xscreensaver/glade/screensaver-diagnostic.png
-share/xscreensaver/glade/screensaver-locking.png
-share/xscreensaver/glade/screensaver-power.png
-share/xscreensaver/glade/screensaver-snap.png
-share/xscreensaver/glade/xscreensaver-demo.glade2
+share/xscreensaver/ui/
+share/xscreensaver/ui/screensaver-cmndln.png
+share/xscreensaver/ui/screensaver-colorselector.png
+share/xscreensaver/ui/screensaver-diagnostic.png
+share/xscreensaver/ui/screensaver-locking.png
+share/xscreensaver/ui/screensaver-power.png
+share/xscreensaver/ui/screensaver-snap.png
+share/xscreensaver/ui/xscreensaver-demo.ui
 @tag update-desktop-database
