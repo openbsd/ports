@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/12/11 15:47:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/01/10 05:44:34 kmos Exp $
 
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
@@ -66,6 +66,11 @@ CONFIGURE_ENV +=	ASPELL_LIBS="-L${LOCALBASE}/lib -laspell" \
 WANTLIB+=		aspell
 .else
 CONFIGURE_ARGS+=	--disable-aspell
+.endif
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=		-std=gnu99
 .endif
 
 pre-test:
