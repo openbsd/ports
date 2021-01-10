@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.33 2020/07/03 21:13:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/01/10 21:20:36 sthen Exp $
 
 COMMENT=	Python syntax highlighter
 
-# 2.6.1 requires py3; some dep's still require py2:
-# security/pwntools - py3 supported in newer version
-# www/trac - see https://trac.edgewall.org/ticket/12130, also needs py3
-#   support in py-subversion (in 1.14 dev releases)
+# 2.6.0+ is py3-only; some ports depending on this require py2:
+#   databases/py-psycopg2; used for doc build via sphinx
+#   textproc/py-docutils
+#   textproc/py-sphinx
 MODPY_EGG_VERSION = 2.5.2
 
 DISTNAME=	Pygments-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L:S/^/py-/}
 CATEGORIES=	textproc devel
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	http://pygments.org/
+HOMEPAGE=	https://pygments.org/
 
 # BSD
 PERMIT_PACKAGE=	Yes
