@@ -1,42 +1,39 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/01/10 16:10:37 sthen Exp $
 
-COMMENT =	applied math library
+COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
-DISTNAME =	libqalculate-0.9.7
-REVISION =	6
-HOMEPAGE =	http://qalculate.sourceforge.net/
 
-SHARED_LIBS =	qalculate		0.0	# 5.0
+V =		3.16.1
+DISTNAME =	libqalculate-$V
+HOMEPAGE =	https://qalculate.github.io/
+
+SHARED_LIBS =	qalculate		1.0	# .31.2
 
 # GPLv2+
 PERMIT_PACKAGE = Yes
 
-WANTLIB += c cln glib-2.0 gmp iconv intl lzma m curses pcre pthread readline
-WANTLIB += ${COMPILER_LIBCXX} xml2 z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += c crypto curl curses ehistory ereadline gmp iconv icudata
+WANTLIB += icuuc intl lzma m mpfr nghttp2 ssl xml2 z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qalculate/}
+MASTER_SITES =	https://github.com/Qalculate/libqalculate/releases/download/v$V/
 
 MODULES =	textproc/intltool
 
-LIB_DEPENDS =	devel/cln \
-		devel/glib2 \
+LIB_DEPENDS =	devel/gettext,-runtime \
+		devel/mpfr \
+		devel/readline \
+		net/curl \
+		textproc/icu4c \
 		textproc/libxml
 
-# Without recreating Makefile, shell globs in docs/reference/Makefile are
-# not expanded, and "fake" and "test" stages fail.
-# And just running "good" autoconf is not enough, it whines.
-# So we have to re-run automake, too.
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 
-USE_LIBTOOL =		gnu
-SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${WRKSRC} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-AUTOCONF_VERSION =	2.67
-AUTOMAKE_VERSION =	1.11
-
-SUBST_VARS +=		DISTNAME
+CONFIGURE_ARGS =	--with-readline=ereadline
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

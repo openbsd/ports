@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure_ac,v 1.1 2021/01/10 16:10:37 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -173,6 +173,8 @@ if test "x$enable_textport" = "xyes" ; then
+       only) USE_READLINE="yes"
+             EXTRA_LIBREADLINE_DEPS=" "
+             AC_MSG_RESULT([yes (using only readline)]) ;;
++      ereadline) USE_READLINE="ereadline"
++            AC_MSG_RESULT([yes (using ereadline)]) ;;
+       *) USE_READLINE="yes"
+          EXTRA_LIBREADLINE_DEPS="${withval}"
+          AC_MSG_RESULT([yes (using extra libraries ${withval})]) ;;
+@@ -182,7 +184,11 @@ if test "x$enable_textport" = "xyes" ; then
+   dnl When checking readline, check using extra libraries first.
+   dnl We want to protect against the link somehow succeeding, but only
+   dnl failing at runtime, as seems to happen on some BSD systems.
+-  if test "$USE_READLINE" = yes ; then
++  if test "$USE_READLINE" = ereadline ; then
++      EXTRA_LIBREADLINE_DEPS=" "
++      AC_DEFINE(HAVE_LIBREADLINE, [1], [Define if the text port uses readline])
++      READLINE_LIBS="-lereadline -lehistory"
++  else if test "$USE_READLINE" = yes ; then
+    AC_CHECK_HEADERS(readline/readline.h readline/history.h)
+    if test "x${ac_cv_header_readline_readline_h}" != "xyes" -o "x${ac_cv_header_readline_history_h}" != "xyes"; then
+      AC_MSG_WARN([Could not find the headers for libreadline.])
+@@ -236,6 +242,7 @@ if test "x$enable_textport" = "xyes" ; then
+       AC_MSG_WARN([Could not find libreadline.])
+     fi
+    fi
++  fi
+   fi
+ fi
+ 
