@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2020/12/27 16:54:11 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/11 20:08:37 sthen Exp $
 
 COMMENT=	COBOL compiler, formerly known as OpenCOBOL
 
 DISTNAME =	gnucobol-3.1.2
+REVISION =	0
 
 SHARED_LIBS +=	cob	5.0	# 5.0
 
 CATEGORIES =	lang
 
-HOMEPAGE =	http://www.opencobol.org/
+HOMEPAGE =	https://gnucobol.sourceforge.io/
 
 # compiler: GPLv3+
 # run-time library: LGPLv3+
