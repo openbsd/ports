@@ -1,0 +1,17 @@
+$OpenBSD: patch-frontends_gtk_res_netsurf-gtk_desktop,v 1.1 2021/01/11 02:17:59 cwen Exp $
+
+Make the .desktop file actually call Netsurf
+See https://bugs.netsurf-browser.org/mantis/view.php?id=2805
+
+Index: frontends/gtk/res/netsurf-gtk.desktop
+--- frontends/gtk/res/netsurf-gtk.desktop.orig
++++ frontends/gtk/res/netsurf-gtk.desktop
+@@ -57,7 +57,7 @@ GenericName[pl]=Przeglądarka WWW
+ GenericName[pt]=Navegador Web
+ GenericName[pt_BR]=Navegador Web
+ GenericName[sk]=Internetový prehliadač
+-Exec=netsurf-gtk %u
++Exec=netsurf-gtk3 %u
+ Terminal=false
+ X-MultipleArgs=false
+ Type=Application
