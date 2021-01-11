@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2020/11/28 09:34:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2021/01/11 00:49:44 kmos Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
@@ -16,6 +16,10 @@ WANTLIB += gtk-3 intl pango-1.0 pangocairo-1.0
 
 MASTER_SITES =		https://gitlab.gnome.org/GNOME/gucharmap/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX =		.tar.bz2
+
+# C11
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/dconf \
 			devel/meson \
