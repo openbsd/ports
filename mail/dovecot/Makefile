@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.292 2021/01/07 17:17:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.293 2021/01/11 22:17:55 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
 COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
+# XXX -stable package builds can't detect PKGSPEC updates properly;
+# if backporting an update to stable, ensure all ports depending on
+# this are bumped and that -current is same/newer version than -stable
 V_MAJOR=	2.3
 V_DOVECOT=	2.3.13
 EPOCH=		0

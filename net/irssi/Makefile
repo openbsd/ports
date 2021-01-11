@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.92 2020/05/27 11:08:51 kn Exp $
+# $OpenBSD: Makefile,v 1.93 2021/01/11 22:17:55 sthen Exp $
 
 MULTI_PACKAGES = -main -otr
 
+# XXX -stable package builds can't detect PKGSPEC updates properly;
+# if backporting an update to stable, ensure all ports depending on
+# this are bumped and that -current is same/newer version than -stable
 COMMENT-main =	modular IRC client with many features
 COMMENT-otr =	OTR (off-the-record) plugin for irssi
 

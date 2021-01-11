@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2020/05/23 09:16:42 landry Exp $
+# $OpenBSD: Makefile,v 1.75 2021/01/11 22:17:56 sthen Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
+# XXX -stable package builds can't detect PKGSPEC updates properly;
+# if backporting an update to stable, ensure all ports depending on
+# this are bumped and that -current is same/newer version than -stable
 V=			3.6
 DISTNAME=		bitlbee-$V
 PKGSPEC=		bitlbee-=$V
