@@ -1,0 +1,87 @@
+#!/bin/ksh
+#
+# Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+set -Cefu -o pipefail
+
+usage() {
+	printf 'usage:\t%s [-o] [-m maintainer [-p pkgpath]] [-u url]\n' \
+	    "${0##*/}" 1>&2
+	exit 1
+}
+
+fetch_data() {
+	# ftp(1) and curl(1) do *not* URL encode unsafe characters, wget(1) does
+	# use jq(1) to avoid dependency
+	local file
+
+	file=$(jq -nr --arg str "$1" '$str | @uri')
+	ftp -MVo- -- "${url}/json/${file}.json"
+}
+
+show_totals() {
+	fetch_data totals | jq --argjson oflag "$oflag" '.results[] |
+		if $oflag then select(.withnewdistfile > 0) else . end'
+}
+
+show_ports() {
+	fetch_data "$1" | jq --argjson oflag "$oflag" \
+	    --argjson pflag "$pflag" --arg pkgpath "$pkgpath" '.[] |
+		if $oflag then select(.newdistfile | length > 0) else . end |
+		if $pflag then select(.basepkgpath | test($pkgpath; "i")) else . end'
+}
+
+mflag=false maintainer=
+oflag=false
+pflag=false pkgpath=
+url=https://portroach.openbsd.org
+
+while getopts m:op:u: opt
+do
+	case $opt in
+	m)	mflag=true maintainer=$OPTARG ;;
+	o)	oflag=true ;;
+	p)	pflag=true pkgpath=$OPTARG ;;
+	u)	url=$OPTARG ;;
+	*)	usage
+	esac
+done
+shift $((OPTIND - 1))
+$pflag && ! $mflag && usage
+[ $# -eq 0 ] || usage
+
+if $mflag
+then
+	show_totals | jq -r --arg maintainer "$maintainer" '
+		.maintainer | select(. | test($maintainer; "i"))' |
+	while read -r match
+	do
+		ports=$(show_ports "$match" | jq -r '
+			[.basepkgpath, .ver,
+			 if (.newver | length) > 0 then .newver
+			 else "up-to-date" end, .homepage] |
+			@tsv')
+		if [ -n "$ports" ]
+		then
+			printf '\n===>\t%s\n' "$match"
+			printf %s "$ports" | column -tc4 -s'	'
+		fi
+	done
+else
+	show_totals | jq -r '
+		[.maintainer, .total, .withnewdistfile,
+		 (.percentage | tostring) + "%"] |
+		@tsv' | column -tc4 -s'	'
+fi

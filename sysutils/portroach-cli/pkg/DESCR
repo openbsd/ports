@@ -1,0 +1,3 @@
+portroach-cli is a utility to query a portroach(1) instance.
+
+It can filter ports and prints results on standard output.

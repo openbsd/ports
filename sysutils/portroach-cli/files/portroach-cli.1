@@ -1,0 +1,71 @@
+.\"	$OpenBSD: portroach-cli.1,v 1.1.1.1 2021/01/11 22:12:03 kn Exp $
+.\" Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: January 11 2021 $
+.Dt PORTROACH-CLI 1
+.Os
+.Sh NAME
+.Nm portroach-cli
+.Nd query portroach
+.Sh SYNOPSIS
+.Nm
+.Op Fl o
+.Op Fl m Ar maintainer Op Fl p Ar pkgpath
+.Op Fl u Ar url
+.Sh DESCRIPTION
+.Nm
+is a utility to query a
+.Xr portroach 1
+instance.
+.Pp
+It can filter ports and prints results on standard output.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl o
+Show outdated ports.
+.It Fl m Ar maintainer
+Show ports whose
+.Dv MAINTAINER
+value matches the case-insensitive basic regular expression
+.Ar maintainer ,
+see
+.Xr bsd.port.mk 5 .
+.It Fl p Ar pkgpath
+Show ports whose
+.Dv BASE_PKGPATH
+value matches the case-insensitive basic regular expression
+.Ar pkgpath ,
+see
+.Xr bsd.port.mk 5 .
+.It Fl u Ar url
+Query the portroach instance at
+.Ar url .
+Default to
+.Lk https://portroach.openbsd.org .
+.El
+.Sh EXAMPLES
+Show all ports maintained by John Doe for which an update is available:
+.Pp
+.Dl $ portroach-cli -o -m doe@
+.Pp
+Show all ports maintained by John Doe which belong to the
+.Dq sysutils
+category:
+.Pp
+.Dl $ portroach-cli -m doe@ -p ^sysutils/
+.Sh SEE ALSO
+.Xr portroach 1 ,
+.Xr bsd.port.mk 5
