@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2020/12/22 15:28:19 robert Exp $
+# $OpenBSD: Makefile,v 1.240 2021/01/11 13:26:27 naddy Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -37,6 +37,8 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
+
+REVISION=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
