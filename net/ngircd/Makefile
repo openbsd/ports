@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2020/06/26 10:32:15 solene Exp $
+# $OpenBSD: Makefile,v 1.21 2021/01/11 11:52:37 solene Exp $
 
 COMMENT =	lightweight irc server
 
-DISTNAME =	ngircd-26
+DISTNAME =	ngircd-26.1
 
 CATEGORIES =	net
 

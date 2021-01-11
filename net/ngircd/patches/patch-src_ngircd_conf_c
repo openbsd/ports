@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ngircd_conf_c,v 1.7 2020/06/26 10:32:15 solene Exp $
+$OpenBSD: patch-src_ngircd_conf_c,v 1.8 2021/01/11 11:52:37 solene Exp $
 Index: src/ngircd/conf.c
 --- src/ngircd/conf.c.orig
 +++ src/ngircd/conf.c
@@ -6,7 +6,7 @@ Index: src/ngircd/conf.c
  	printf("  MaxConnectionsIP = %d\n", Conf_MaxConnectionsIP);
  	printf("  MaxJoins = %d\n", Conf_MaxJoins > 0 ? Conf_MaxJoins : -1);
  	printf("  MaxNickLength = %u\n", Conf_MaxNickLength - 1);
--	printf("  MaxPenaltyTime = %ld\n", Conf_MaxPenaltyTime);
+-	printf("  MaxPenaltyTime = %ld\n", (long)Conf_MaxPenaltyTime);
 +	printf("  MaxPenaltyTime = %lld\n", (long long)Conf_MaxPenaltyTime);
  	printf("  MaxListSize = %d\n", Conf_MaxListSize);
  	printf("  PingTimeout = %d\n", Conf_PingTimeout);
