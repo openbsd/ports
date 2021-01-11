@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/06/08 14:11:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/11 14:25:55 sthen Exp $
 bin/arouteserver
 lib/python${MODPY_VERSION}/site-packages/arouteserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/arouteserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -130,6 +130,9 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/fingerpri
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/html/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/html/macros.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/html/main.j2
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/irr-as-set/
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/irr-as-set/plain_rpsl.j2
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/irr-as-set/ripe_ripeinator_yml.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/openbgpd/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/openbgpd/clients.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/openbgpd/filters.j2
