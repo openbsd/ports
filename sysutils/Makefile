@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.590 2020/12/05 20:44:15 solene Exp $
+# $OpenBSD: Makefile,v 1.591 2021/01/11 22:13:08 kn Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -247,6 +247,7 @@
      SUBDIR += pick
      SUBDIR += pkg_mgr
      SUBDIR += polkit
+     SUBDIR += portroach-cli
      SUBDIR += prometheus
      SUBDIR += pscpug
      SUBDIR += psftools
