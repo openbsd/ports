@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/01/10 18:05:56 fcambus Exp $
+# $OpenBSD: Makefile,v 1.21 2021/01/12 19:14:53 sthen Exp $
 
 COMMENT =		versatile Commodore emulator
 
@@ -18,7 +18,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
 
-BUILD_DEPENDS =		devel/xa
+BUILD_DEPENDS =		devel/xa \
+			converters/dos2unix
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/sdl2 \
