@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_kern_c,v 1.1 2021/01/12 17:59:49 sthen Exp $
+
+Index: src/kern.c
+--- src/kern.c.orig
++++ src/kern.c
+@@ -114,6 +114,9 @@ void k_set_if(uint32_t ifa) {
+ void k_join(struct IfDesc *ifd, uint32_t grp) {
+     struct ip_mreq mreq;
+ 
++    if (config_getinterface(ifd->Name) == NULL)
++        return;
++
+     mreq.imr_multiaddr.s_addr = grp;
+     mreq.imr_interface.s_addr = ifd->InAdr.s_addr;
+ 
+@@ -135,6 +138,9 @@ void k_join(struct IfDesc *ifd, uint32_t grp) {
+ 
+ void k_leave(struct IfDesc *ifd, uint32_t grp) {
+     struct ip_mreq mreq;
++
++    if (config_getinterface(ifd->Name) == NULL)
++        return;
+ 
+     mreq.imr_multiaddr.s_addr = grp;
+     mreq.imr_interface.s_addr = ifd->InAdr.s_addr;

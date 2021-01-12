@@ -1,0 +1,199 @@
+$OpenBSD: patch-src_ifvc_c,v 1.1 2021/01/12 17:59:49 sthen Exp $
+
+Index: src/ifvc.c
+--- src/ifvc.c.orig
++++ src/ifvc.c
+@@ -33,6 +33,7 @@
+ */
+ 
+ #include "igmpproxy.h"
++#include <ifaddrs.h>
+ 
+ /* We need a temporary copy to not break strict aliasing rules */
+ static inline uint32_t s_addr_from_sockaddr(const struct sockaddr *addr) {
+@@ -201,129 +202,93 @@ void rebuildIfVc () {
+ **
+ */
+ void buildIfVc(void) {
+-    struct ifreq IfVc[ sizeof( IfDescVc ) / sizeof( IfDescVc[ 0 ] )  ];
+-    struct ifreq *IfEp;
+-    struct Config *config = getCommonConfig();
++    struct ifaddrs *ifap, *ifa;
++    struct IfDesc *ifp;
++    struct SubnetList *net;
+ 
+-    int Sock;
++    if (getifaddrs(&ifap) < 0)
++        my_log( LOG_ERR, errno, "getifaddrs" );
+ 
+-    if ( (Sock = socket( AF_INET, SOCK_DGRAM, 0 )) < 0 )
+-        my_log( LOG_ERR, errno, "RAW socket open" );
+-
+-    /* get If vector
+-     */
+-    {
+-        struct ifconf IoCtlReq;
+-
+-        IoCtlReq.ifc_buf = (void *)IfVc;
+-        IoCtlReq.ifc_len = sizeof( IfVc );
+-
+-        if ( ioctl( Sock, SIOCGIFCONF, &IoCtlReq ) < 0 )
+-            my_log( LOG_ERR, errno, "ioctl SIOCGIFCONF" );
+-
+-        IfEp = (void *)((char *)IfVc + IoCtlReq.ifc_len);
+-    }
+-
+     /* loop over interfaces and copy interface info to IfDescVc
+      */
+     {
+-        struct ifreq  *IfPt, *IfNext;
+-
+         // Temp keepers of interface params...
+         uint32_t addr, subnet, mask;
+ 
+-        for ( IfPt = IfVc; IfPt < IfEp; IfPt = IfNext ) {
+-            struct ifreq IfReq;
++        for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
+             char FmtBu[ 32 ];
+ 
+-            IfNext = (struct ifreq *)((char *)&IfPt->ifr_addr +
+-#ifdef HAVE_STRUCT_SOCKADDR_SA_LEN
+-                    IfPt->ifr_addr.sa_len
+-#else
+-                    sizeof(struct sockaddr_in)
+-#endif
+-            );
+-            if (IfNext < IfPt + 1)
+-                IfNext = IfPt + 1;
++            if (IfDescEp >= &IfDescVc[ MAX_IF ]) {
++                my_log(LOG_WARNING, 0, "Too many interfaces, skipping %d", ifa->ifa_name);
++                continue;
++            }
+ 
+-            strncpy( IfDescEp->Name, IfPt->ifr_name, sizeof( IfDescEp->Name ) );
++            /* ignore non-IP interfaces
++             */
++            if ( ifa->ifa_addr->sa_family != AF_INET )
++                continue;
+ 
+-            // Currently don't set any allowed nets...
+-            //IfDescEp->allowednets = NULL;
++            if ((ifp = getIfByName(ifa->ifa_name)) == NULL) {
++                if (config_getinterface(ifa->ifa_name) == NULL)
++                    continue; 
+ 
+-            // Set the index to -1 by default.
+-            IfDescEp->index = (unsigned int)-1;
++                strlcpy( IfDescEp->Name, ifa->ifa_name, sizeof( IfDescEp->Name ) );
+ 
+-            /* don't retrieve more info for non-IP interfaces
+-             */
+-            if ( IfPt->ifr_addr.sa_family != AF_INET ) {
+-                IfDescEp->InAdr.s_addr = 0;  /* mark as non-IP interface */
+-                IfDescEp++;
+-                continue;
+-            }
++                my_log(LOG_DEBUG, 0, "Adding physical index value of IF '%s': %d",
++                IfDescEp->Name, if_nametoindex(IfDescEp->Name));
+ 
+-            // Get the interface adress...
+-            IfDescEp->InAdr.s_addr = s_addr_from_sockaddr(&IfPt->ifr_addr);
+-            addr = IfDescEp->InAdr.s_addr;
++                // Set the index to -1 by default.
++                IfDescEp->index = -1;
+ 
+-            memcpy( IfReq.ifr_name, IfDescEp->Name, sizeof( IfReq.ifr_name ) );
++                // Get the interface adress...
++                IfDescEp->InAdr = ((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
+ 
+-            // Get the subnet mask...
+-            if (ioctl(Sock, SIOCGIFNETMASK, &IfReq ) < 0)
+-                my_log(LOG_ERR, errno, "ioctl SIOCGIFNETMASK for %s", IfReq.ifr_name);
+-            mask = s_addr_from_sockaddr(&IfReq.ifr_addr); // Do not use ifr_netmask as it is not available on freebsd
+-            subnet = addr & mask;
++                /* get if flags
++                **
++                ** typical flags:
++                ** lo    0x0049 -> Running, Loopback, Up
++                ** ethx  0x1043 -> Multicast, Running, Broadcast, Up
++                ** ipppx 0x0091 -> NoArp, PointToPoint, Up
++                ** grex  0x00C1 -> NoArp, Running, Up
++                ** ipipx 0x00C1 -> NoArp, Running, Up
++                */
+ 
+-            /* get if flags
+-            **
+-            ** typical flags:
+-            ** lo    0x0049 -> Running, Loopback, Up
+-            ** ethx  0x1043 -> Multicast, Running, Broadcast, Up
+-            ** ipppx 0x0091 -> NoArp, PointToPoint, Up
+-            ** grex  0x00C1 -> NoArp, Running, Up
+-            ** ipipx 0x00C1 -> NoArp, Running, Up
+-            */
+-            if ( ioctl( Sock, SIOCGIFFLAGS, &IfReq ) < 0 )
+-                my_log( LOG_ERR, errno, "ioctl SIOCGIFFLAGS" );
++                IfDescEp->Flags = ifa->ifa_flags;
+ 
+-            IfDescEp->Flags = IfReq.ifr_flags;
++                // Set the default params for the IF...
++                IfDescEp->state         = IF_STATE_DOWNSTREAM;
++                IfDescEp->robustness    = DEFAULT_ROBUSTNESS;
++                IfDescEp->threshold     = DEFAULT_THRESHOLD;   /* ttl limit */
++                IfDescEp->ratelimit     = DEFAULT_RATELIMIT; 
++                IfDescEp->allowednets   = NULL;
++                ifp = IfDescEp++;
++           }
+ 
+-            // aimwang: when pppx get dstaddr for use
+-            if (0x10d1 == IfDescEp->Flags)
+-            {
+-                if ( ioctl( Sock, SIOCGIFDSTADDR, &IfReq ) < 0 )
+-                    my_log(LOG_ERR, errno, "ioctl SIOCGIFDSTADDR for %s", IfReq.ifr_name);
+-                addr = s_addr_from_sockaddr(&IfReq.ifr_dstaddr);
+-                subnet = addr & mask;
+-            }
+ 
+             // Insert the verified subnet as an allowed net...
+-            IfDescEp->allowednets = (struct SubnetList *)malloc(sizeof(struct SubnetList));
+-            if(IfDescEp->allowednets == NULL) my_log(LOG_ERR, 0, "Out of memory !");
++            addr = ((struct sockaddr_in *)ifa->ifa_addr)->sin_addr.s_addr;
++            mask = ((struct sockaddr_in *)ifa->ifa_netmask)->sin_addr.s_addr;
++            subnet = addr & mask;
+ 
+-            // Create the network address for the IF..
+-            IfDescEp->allowednets->next = NULL;
+-            IfDescEp->allowednets->subnet_mask = mask;
+-            IfDescEp->allowednets->subnet_addr = subnet;
++            net = (struct SubnetList *)malloc(sizeof(struct SubnetList));
++            if(net == NULL)
++                my_log(LOG_ERR, 0, "Out of memory !");
+ 
+-            // Set the default params for the IF...
+-            IfDescEp->state         = config->defaultInterfaceState;
+-            IfDescEp->robustness    = DEFAULT_ROBUSTNESS;
+-            IfDescEp->threshold     = DEFAULT_THRESHOLD;   /* ttl limit */
+-            IfDescEp->ratelimit     = DEFAULT_RATELIMIT;
++            net->next = ifp->allowednets;
++            net->subnet_mask = mask;
++            net->subnet_addr = subnet;
++            ifp->allowednets = net;
+ 
+             // Debug log the result...
+             my_log( LOG_DEBUG, 0, "buildIfVc: Interface %s Addr: %s, Flags: 0x%04x, Network: %s",
+-                 IfDescEp->Name,
+-                 fmtInAdr( FmtBu, IfDescEp->InAdr ),
+-                 IfDescEp->Flags,
++                 ifp->Name,
++                 fmtInAdr( FmtBu, ifp->InAdr ),
++                 ifp->Flags,
+                  inetFmts(subnet,mask, s1));
+ 
+-            IfDescEp++;
+         }
+     }
+-
+-    close( Sock );
++    freeifaddrs(ifap);
+ }
+ 
+ /*

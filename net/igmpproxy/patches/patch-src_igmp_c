@@ -1,0 +1,65 @@
+$OpenBSD: patch-src_igmp_c,v 1.1 2021/01/12 17:59:49 sthen Exp $
+
+Index: src/igmp.c
+--- src/igmp.c.orig
++++ src/igmp.c
+@@ -139,6 +139,7 @@ void acceptIgmp(int recvlen) {
+         }
+         else {
+             struct IfDesc *checkVIF;
++            int downIf = -1;
+ 
+             for(i=0; i<MAX_UPS_VIFS; i++)
+             {
+@@ -156,20 +157,29 @@ void acceptIgmp(int recvlen) {
+                         return;
+                     }
+                     else if(!isAdressValidForIf(checkVIF, src)) {
+-                        struct IfDesc *downVIF = getIfByAddress(src);
+-                        if (downVIF && downVIF->state & IF_STATE_DOWNSTREAM) {
+-                            my_log(LOG_NOTICE, 0, "The source address %s for group %s is from downstream VIF[%d]. Ignoring.",
+-                                inetFmt(src, s1), inetFmt(dst, s2), i);
++                        unsigned Ix;
++                        struct IfDesc *Dp;
++
++                        for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
++                            if ((Dp->state == IF_STATE_DOWNSTREAM) && isAdressValidForIf(Dp, src)) {
++                                downIf = Ix;
++                                break;
++                            }
++                        }
++
++                        if (downIf == -1) {
++                            my_log(LOG_WARNING, 0, "The source address %s for group %s, is not in any valid net for upstream VIF.",
++                               inetFmt(src, s1), inetFmt(dst, s2));
++                            return;
+                         } else {
+-                            my_log(LOG_WARNING, 0, "The source address %s for group %s, is not in any valid net for upstream VIF[%d].",
+-                                inetFmt(src, s1), inetFmt(dst, s2), i);
++                            my_log(LOG_NOTICE, 0, "The source address %s for group %s, is valid DOWNSTREAM VIF #%d.",
++                            inetFmt(src, s1), inetFmt(dst, s2), downIf);
+                         }
+                     } else {
+                         // Activate the route.
+-                        int vifindex = checkVIF->index;
+-                        my_log(LOG_DEBUG, 0, "Route activate request from %s to %s on VIF[%d]",
+-                            inetFmt(src,s1), inetFmt(dst,s2), vifindex);
+-                        activateRoute(dst, src, vifindex);
++                        my_log(LOG_DEBUG, 0, "Route activate request from %s to %s, downIf %d",
++                            inetFmt(src,s1), inetFmt(dst,s2), downIf);
++                        activateRoute(dst, src, downIf);
+                         i = MAX_UPS_VIFS;
+                     }
+                 } else {
+@@ -199,9 +209,9 @@ void acceptIgmp(int recvlen) {
+         return;
+     }
+ 
+-    my_log(LOG_NOTICE, 0, "RECV %s from %-15s to %s",
++    my_log(LOG_NOTICE, 0, "RECV %s from %-15s to %s (ip_hl %d, data %d)",
+         igmpPacketKind(igmp->igmp_type, igmp->igmp_code),
+-        inetFmt(src, s1), inetFmt(dst, s2) );
++        inetFmt(src, s1), inetFmt(dst, s2), iphdrlen, ipdatalen);
+ 
+     switch (igmp->igmp_type) {
+     case IGMP_V1_MEMBERSHIP_REPORT:

@@ -1,33 +1,33 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/01/12 17:59:49 sthen Exp $
 
 COMMENT =	multicast router utilizing IGMP forwarding
 
-VERSION =	0.1-beta2
-DISTNAME =	igmpproxy-src-${VERSION}
-PKGNAME =	igmpproxy-${VERSION:S/-beta/b/}
-REVISION =	12
+VERSION =	0.3
+DISTNAME =	igmpproxy-${VERSION}
 CATEGORIES =	net
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=igmpproxy/}
+MASTER_SITES =	https://github.com/pali/igmpproxy/releases/download/${VERSION}/
 
-HOMEPAGE =	http://igmpproxy.sourceforge.net/
+HOMEPAGE =	https://github.com/pali/igmpproxy/
 
-# GPLv2+ + mrouted license in igmpproxy/doc/mrouted-LICENSE
+# GPLv2+ + mrouted license in igmpproxy/COPYING
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 
 USE_GMAKE =	Yes
 
+CFLAGS +=	-Wall
 MAKE_FLAGS =	LDFLAGS="${LDFLAGS}"
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/igmpproxy/src
+CONFIGURE_STYLE =	gnu
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/igmpproxy ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/../doc/igmpproxy.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/../doc/igmpproxy.conf.5 ${PREFIX}/man/man5
+	${INSTALL_PROGRAM} ${WRKSRC}/src/igmpproxy ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/doc/igmpproxy.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/igmpproxy.conf.5 ${PREFIX}/man/man5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/igmpproxy
 	${INSTALL_DATA} ${WRKSRC}/igmpproxy.conf \
 	    ${PREFIX}/share/examples/igmpproxy

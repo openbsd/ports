@@ -1,0 +1,74 @@
+$OpenBSD: patch-src_igmpproxy_c,v 1.1 2021/01/12 17:59:49 sthen Exp $
+
+Index: src/igmpproxy.c
+--- src/igmpproxy.c.orig
++++ src/igmpproxy.c
+@@ -37,13 +37,10 @@
+ *   February 2005 - Johnny Egeland
+ */
+ 
+-/* getopt() and clock_getime() */
+-#ifndef _POSIX_C_SOURCE
+-#define _POSIX_C_SOURCE 200112L
+-#endif
+-
+ #include "igmpproxy.h"
+ 
++#include <sys/sysctl.h>
++
+ static const char Usage[] =
+ "Usage: igmpproxy [-h] [-n] [-d] [-v [-v]] <configfile>\n"
+ "\n"
+@@ -123,6 +120,25 @@ int main( int ArgCn, char *ArgVc[] ) {
+ 
+     openlog("igmpproxy", LOG_PID, LOG_USER);
+ 
++    {
++       int ipmforwarding = 0;
++       int mib[4];
++       size_t len;
++
++        /* multicast IP forwarding must be enabled */
++        mib[0] = CTL_NET;
++        mib[1] = PF_INET;
++        mib[2] = IPPROTO_IP;
++        mib[3] = IPCTL_MFORWARDING;
++        len = sizeof(ipmforwarding);
++        if (sysctl(mib, 4, &ipmforwarding, &len, NULL, 0) == -1)
++           my_log(LOG_ERR, 0, "sysctl");
++
++        if (!ipmforwarding)
++           my_log(LOG_ERR, 0, "multicast IP forwarding not enabled");
++    }
++
++
+     // Write debug notice with file path...
+     my_log(LOG_DEBUG, 0, "Searching for config file at '%s'" , configFilePath);
+ 
+@@ -142,16 +158,8 @@ int main( int ArgCn, char *ArgVc[] ) {
+ 
+         if ( !NotAsDaemon ) {
+ 
+-            // Only daemon goes past this line...
+-            if (fork()) exit(0);
+-
+-            // Detach daemon from terminal
+-            if ( close( 0 ) < 0 || close( 1 ) < 0 || close( 2 ) < 0
+-                || open( "/dev/null", 0 ) != 0 || dup2( 0, 1 ) < 0 || dup2( 0, 2 ) < 0
+-                || setpgid( 0, 0 ) < 0
+-            ) {
++            if ( daemon(1, 0 ) < 0 )
+                 my_log( LOG_ERR, errno, "failed to detach daemon" );
+-            }
+         }
+ 
+         // Go to the main loop.
+@@ -207,6 +215,8 @@ int igmpProxyInit(void) {
+         }
+ 
+         for ( Ix = 0; (Dp = getIfByIx(Ix)); Ix++ ) {
++            if (config_getinterface(Dp->Name) == NULL)
++               continue;
+ 
+             if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {
+                 if(Dp->state == IF_STATE_UPSTREAM) {

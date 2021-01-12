@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_igmpproxy_h,v 1.1 2021/01/12 17:59:49 sthen Exp $
+
+Index: src/igmpproxy.h
+--- src/igmpproxy.h.orig
++++ src/igmpproxy.h
+@@ -36,7 +36,6 @@
+ */
+ 
+ #include "config.h"
+-#include "os.h"
+ 
+ #include <errno.h>
+ #include <stdarg.h>
+@@ -60,6 +59,8 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
++#include "os.h"
++
+ /*
+  * Limit on length of route data
+  */
+@@ -218,6 +219,7 @@ int getVifIx( struct IfDesc *IfDp );
+ int loadConfig(char *configFile);
+ void configureVifs(void);
+ struct Config *getCommonConfig(void);
++struct vifconfig *config_getinterface(const char *ifname);
+ 
+ /* igmp.c
+ */

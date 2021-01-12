@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_request_c,v 1.1 2021/01/12 17:59:49 sthen Exp $
+
+Index: src/request.c
+--- src/request.c.orig
++++ src/request.c
+@@ -183,6 +183,8 @@ void sendGroupSpecificMemberQuery(void *argument) {
+     // Loop through all downstream interfaces
+     for ( Ix = 0; (Dp = getIfByIx(Ix)); Ix++ ) {
+         if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {
++            if (config_getinterface(Dp->Name) == NULL)
++                continue;
+             if(Dp->state == IF_STATE_DOWNSTREAM) {
+                 // Is that interface used in the group?
+                 if (interfaceInRoute(gvDesc->group ,Dp->index)) {
