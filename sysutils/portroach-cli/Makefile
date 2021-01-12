@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/11 22:12:03 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/12 08:34:58 kn Exp $
 
 COMMENT =		query portroach(1)
 CATEGORIES =		sysutils
 DISTFILES =		# empty
-# portroach API.rev
-PKGNAME =		portroach-cli-1.0
+# <portroach API>.rev
+PKGNAME =		portroach-cli-1.1
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # ISC

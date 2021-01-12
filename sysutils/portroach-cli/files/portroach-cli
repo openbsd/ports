@@ -1,5 +1,7 @@
 #!/bin/ksh
 #
+# $OpenBSD: portroach-cli,v 1.2 2021/01/12 08:34:58 kn Exp $
+#
 # Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -16,9 +18,16 @@
 
 set -Cefu -o pipefail
 
+readonly self=${0##*/}
+
+err() {
+	printf '%s: %s\n' "$self" "$*" 1>&2
+	exit 1
+}
+
 usage() {
 	printf 'usage:\t%s [-o] [-m maintainer [-p pkgpath]] [-u url]\n' \
-	    "${0##*/}" 1>&2
+	    "$self" 1>&2
 	exit 1
 }
 
@@ -46,7 +55,7 @@ show_ports() {
 mflag=false maintainer=
 oflag=false
 pflag=false pkgpath=
-url=https://portroach.openbsd.org
+uflag=false url=https://portroach.openbsd.org
 
 while getopts m:op:u: opt
 do
@@ -54,12 +63,13 @@ do
 	m)	mflag=true maintainer=$OPTARG ;;
 	o)	oflag=true ;;
 	p)	pflag=true pkgpath=$OPTARG ;;
-	u)	url=$OPTARG ;;
+	u)	uflag=true url=$OPTARG ;;
 	*)	usage
 	esac
 done
 shift $((OPTIND - 1))
 $pflag && ! $mflag && usage
+$uflag && [[ $url != @(file|ftp|http|https)://* ]] && err 'invalid url'
 [ $# -eq 0 ] || usage
 
 if $mflag
