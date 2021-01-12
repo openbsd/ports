@@ -1,9 +1,9 @@
-#	$OpenBSD: Makefile,v 1.20 2020/08/24 08:59:51 jsg Exp $
+#	$OpenBSD: Makefile,v 1.21 2021/01/12 04:33:38 jsg Exp $
 
 COMMENT=	Raspberry Pi firmware
 GH_ACCOUNT=	raspberrypi
 GH_PROJECT=	firmware
-GH_TAGNAME=	1.20200811
+GH_TAGNAME=	1.20210108
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 #DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${V}
 EXTRACT_FILES=	${GH_PROJECT}-${GH_TAGNAME}/boot
