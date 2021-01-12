@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/11/28 09:30:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/12 05:21:18 rsadowski Exp $
 bin/clazy
 @bin bin/clazy-standalone
 @so lib/libClazyPlugin.so
@@ -91,6 +91,7 @@ share/doc/clazy/manuallevel/README-qstring-varargs.md
 share/doc/clazy/manuallevel/README-qt-keywords.md
 share/doc/clazy/manuallevel/README-qt4-qstring-from-array.md
 share/doc/clazy/manuallevel/README-qt6-deprecated-api-fixes.md
+share/doc/clazy/manuallevel/README-qt6-fwd-fixes.md
 share/doc/clazy/manuallevel/README-qt6-header-fixes.md
 share/doc/clazy/manuallevel/README-qt6-qhash-signature.md
 share/doc/clazy/manuallevel/README-qt6-qlatin1stringchar-to-u.md

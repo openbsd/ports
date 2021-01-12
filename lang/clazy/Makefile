@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/28 09:30:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/12 05:21:18 rsadowski Exp $
 
-COMMENT =	static source code analyzer for Qt5-based C++
+COMMENT =	static source code analyzer for Qt-based C++
 
-GH_ACCOUNT =	KDE
-GH_PROJECT =	clazy
-GH_TAGNAME =	v1.8
-REVISION =	0
+V =		1.9
+DISTNAME =	clazy-${V}
 
 CATEGORIES =	lang devel
 
@@ -16,6 +14,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c clang-cpp m
 
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/clazy/${V}/src/}
+EXTRACT_SUFX =		.tar.xz
+
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
@@ -23,8 +24,7 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/llvm
 RUN_DEPENDS =		devel/llvm
 
-CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR="${PREFIX}/man/man1" \
-			-DLLVM_ROOT="${LOCALBASE}"
+CONFIGURE_ARGS =	-DLLVM_ROOT="${LOCALBASE}"
 
 NO_TEST =		Yes
 
