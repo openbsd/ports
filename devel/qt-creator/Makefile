@@ -4,25 +4,25 @@
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.13.3
+V =			4.14.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
 SHARED_LIBS +=	Aggregation               0.0 # 0.0
-SHARED_LIBS +=	CPlusPlus                 2.0 # 0.0
+SHARED_LIBS +=	CPlusPlus                 3.0 # 0.0
 SHARED_LIBS +=	ExtensionSystem           4.0 # 0.0
 SHARED_LIBS +=	GLSL                      0.0 # 0.0
 SHARED_LIBS +=	LanguageUtils             0.0 # 0.0
 SHARED_LIBS +=	QmlDebug                  4.0 # 0.0
 SHARED_LIBS +=	QmlEditorWidgets          0.0 # 0.0
-SHARED_LIBS +=	QmlJS                     5.0 # 0.0
-SHARED_LIBS +=	QtcSsh                    0.0 # 0.0
-SHARED_LIBS +=	Utils                     5.0 # 0.0
-SHARED_LIBS +=	Sqlite                    4.0 # 1.0
+SHARED_LIBS +=	QmlJS                     6.0 # 0.0
+SHARED_LIBS +=	QtcSsh                    1.0 # 0.0
+SHARED_LIBS +=	Utils                     6.0 # 0.0
+SHARED_LIBS +=	Sqlite                    5.0 # 1.0
 SHARED_LIBS +=	Modeling                  4.0 # 1.0
 SHARED_LIBS +=	Clangsupport              1.0 # 4.5
-SHARED_LIBS +=	Tracing                   0.0 # 4.7
-SHARED_LIBS +=  LanguageServerProtocol    0.0 # 4.8
+SHARED_LIBS +=	Tracing                   1.0 # 4.7
+SHARED_LIBS +=  LanguageServerProtocol    1.0 # 4.8
 SHARED_LIBS +=  AdvancedDockingSystem     0.0 # 4.12
 
 MAKE_FLAGS =	BUILD_TESTS=1
@@ -41,10 +41,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF5SyntaxHighlighting Qt5Concurrent
 WANTLIB += Qt5Core Qt5Designer Qt5DesignerComponents Qt5Gui Qt5Help
-WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick
-WANTLIB += Qt5QuickWidgets Qt5SerialPort Qt5Sql Qt5Svg Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += c clang m yaml-cpp
+WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5SerialPort Qt5Sql Qt5Svg
+WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5Xml c clang m yaml-cpp
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
