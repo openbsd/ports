@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portroach-cli,v 1.2 2021/01/12 08:34:58 kn Exp $
+# $OpenBSD: portroach-cli,v 1.3 2021/01/12 13:20:41 kn Exp $
 #
 # Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 #
@@ -49,7 +49,7 @@ show_ports() {
 	fetch_data "$1" | jq --argjson oflag "$oflag" \
 	    --argjson pflag "$pflag" --arg pkgpath "$pkgpath" '.[] |
 		if $oflag then select(.newdistfile | length > 0) else . end |
-		if $pflag then select(.basepkgpath | test($pkgpath; "i")) else . end'
+		if $pflag then select(.basepkgpath | test($pkgpath; "in")) else . end'
 }
 
 mflag=false maintainer=
@@ -75,13 +75,14 @@ $uflag && [[ $url != @(file|ftp|http|https)://* ]] && err 'invalid url'
 if $mflag
 then
 	show_totals | jq -r --arg maintainer "$maintainer" '
-		.maintainer | select(. | test($maintainer; "i"))' |
+		.maintainer | select(. | test($maintainer; "in"))' |
 	while read -r match
 	do
 		ports=$(show_ports "$match" | jq -r '
-			[.basepkgpath, .ver,
-			 if (.newver | length) > 0 then .newver
-			 else "up-to-date" end, .homepage] |
+			def aorb($a; $b): if ($a | length) > 0 then $a else $b end;
+
+			[.basepkgpath, .ver, aorb(.newver; "up-to-date"),
+			 aorb(.homepage; .comment)] |
 			@tsv')
 		if [ -n "$ports" ]
 		then
