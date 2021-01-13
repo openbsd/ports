@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/10/11 08:44:10 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/01/13 09:11:35 benoit Exp $
 @bin bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
 share/doc/stella/graphics/
+share/doc/stella/graphics/Stella_icon.png
 share/doc/stella/graphics/cheat.png
 share/doc/stella/graphics/chucky_cheese.png
 share/doc/stella/graphics/circuit.png
@@ -34,6 +35,7 @@ share/doc/stella/graphics/eventmapping_combo.png
 share/doc/stella/graphics/eventmapping_devsports.png
 share/doc/stella/graphics/eventmapping_mouse.png
 share/doc/stella/graphics/eventmapping_remap.png
+share/doc/stella/graphics/highscores.png
 share/doc/stella/graphics/jr_pacman.png
 share/doc/stella/graphics/launcher.png
 share/doc/stella/graphics/launcher_options_snapshots.png
@@ -52,6 +54,7 @@ share/doc/stella/graphics/options_gameinfo_cartridge.png
 share/doc/stella/graphics/options_gameinfo_console.png
 share/doc/stella/graphics/options_gameinfo_controller.png
 share/doc/stella/graphics/options_gameinfo_emulation.png
+share/doc/stella/graphics/options_gameinfo_highscores.png
 share/doc/stella/graphics/options_gameinfo_quadtari.png
 share/doc/stella/graphics/options_misc.png
 share/doc/stella/graphics/options_misc_classic.png
