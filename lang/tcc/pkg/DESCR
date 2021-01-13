@@ -1,0 +1,8 @@
+TCC (Tiny C Compiler) is a small and fast ANSI C compiler.
+It generates optimized code, and can compile, assemble, and link several
+times faster than 'gcc -O0'. Any C dynamic library can be used directly.
+It includes an optional memory and bounds checker, and bounds-checked
+code can be mixed freely with standard code. C scripting is also
+supported via the usual hash-bang mechanism.
+
+Backends exist for amd64, i386, arm, and arm64.

@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/13 21:52:03 bcallah Exp $
+@bin bin/tcc
+include/libtcc.h
+@info info/tcc-doc.info
+@static-lib lib/libtcc.a
+lib/tcc/
+lib/tcc/bcheck.o
+lib/tcc/bt-exe.o
+lib/tcc/bt-log.o
+lib/tcc/include/
+lib/tcc/include/float.h
+lib/tcc/include/stdalign.h
+lib/tcc/include/stdarg.h
+lib/tcc/include/stdbool.h
+lib/tcc/include/stddef.h
+lib/tcc/include/stdnoreturn.h
+lib/tcc/include/tccdefs.h
+lib/tcc/include/tcclib.h
+lib/tcc/include/tgmath.h
+lib/tcc/include/varargs.h
+@static-lib lib/tcc/libtcc1.a
+@man man/man1/tcc.1
+share/doc/tcc/
+share/doc/tcc/tcc-doc.html
