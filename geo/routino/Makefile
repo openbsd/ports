@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/22 06:01:08 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/13 13:05:43 kirby Exp $
 
 COMMENT =		OpenStreetMap routing software
 
-DISTNAME =		routino-3.3.2
+DISTNAME =		routino-3.3.3
 
 SHARED_LIBS +=		routino 0.0
 SHARED_LIBS +=		routino-slim 0.0
