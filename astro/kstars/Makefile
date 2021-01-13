@@ -2,7 +2,7 @@
 
 COMMENT =	planetarium simulator for KDE
 
-DISTNAME =	kstars-3.5.0
+DISTNAME =	kstars-3.5.1
 EPOCH =		0
 
 CATEGORIES =	astro education
@@ -22,9 +22,9 @@ WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Notifications
 WANTLIB += KF5NotifyConfig KF5Plotting KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5DataVisualization Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5WebSockets Qt5Widgets
-WANTLIB += Qt5Xml c cfitsio gio-2.0 glib-2.0 gobject-2.0 intl
-WANTLIB += m qt5keychain raw secret-1 wcs z
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql Qt5Svg Qt5WebSockets
+WANTLIB += Qt5Widgets Qt5Xml c cfitsio gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += intl m qt5keychain raw secret-1 wcs z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kstars/}
 
