@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/25 04:30:12 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/13 09:41:58 fcambus Exp $
 
 COMMENT =	faithfully remade Amiga fonts
 
 GH_ACCOUNT =	rewtnull
 GH_PROJECT =	amigafonts
 GH_TAGNAME =	1.02
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	fonts
 
 HOMEPAGE =	https://www.trueschool.se/html/fonts.html
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPL-FE
 PERMIT_PACKAGE =	Yes
