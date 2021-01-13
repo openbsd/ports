@@ -4,7 +4,6 @@ QT5NAME =		QtTools
 COMMENT-main =		Qt development tools
 COMMENT-webview =	Webkit-based Qt Designer plugin
 PKGNAME-webview =	qwebview-${VERSION}
-REVISION-webview =	0
 
 DPB_PROPERTIES =	parallel
 

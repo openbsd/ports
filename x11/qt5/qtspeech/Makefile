@@ -2,7 +2,6 @@
 
 QT5NAME =		QtSpeech
 COMMENT-main =		Qt5 text-to-speech components
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 
