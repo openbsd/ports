@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v 1.11 2020/01/27 10:31:00 rsadowski Exp $
+@conflict py3-sip-qt5-<5.5.0
 @bin bin/sip${MODPY_BIN_SUFFIX}
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/sip.h
 lib/python${MODPY_VERSION}/site-packages/PyQt5/
