@@ -18,9 +18,10 @@ WANTLIB += Qt5Designer Qt5Gui Qt5Help Qt5Location Qt5Multimedia
 WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5NetworkAuth Qt5Nfc
 WANTLIB += Qt5OpenGL Qt5Positioning Qt5PositioningQuick Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5RemoteObjects
-WANTLIB += Qt5Sensors Qt5SerialPort Qt5Sql Qt5Svg Qt5Test Qt5WebChannel
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5WebSockets Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml Qt5XmlPatterns dbus-1 m ${MODPY_WANTLIB}
+WANTLIB += Qt5Sensors Qt5SerialPort Qt5Sql Qt5Svg Qt5Test Qt5TextToSpeech
+WANTLIB += Qt5WebChannel Qt5WebKit Qt5WebKitWidgets Qt5WebSockets
+WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns dbus-1
+WANTLIB += m ${MODPY_WANTLIB}
 
 FLAVORS =	python3
 FLAVOR ?=
@@ -34,13 +35,14 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qtconnectivity \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
-		x11/qt5/qtnetworkauth \
 		x11/qt5/qtmultimedia \
-		x11/qt5/qtserialport \
+		x11/qt5/qtnetworkauth \
+		x11/qt5/qtremoteobjects \
 		x11/qt5/qtsensors \
+		x11/qt5/qtserialport \
+		x11/qt5/qtspeech \
 		x11/qt5/qtsvg \
 		x11/qt5/qttools \
-		x11/qt5/qtremoteobjects \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebkit \
 		x11/qt5/qtwebsockets \
@@ -57,9 +59,6 @@ MODULES=	lang/python \
 .if !${FLAVOR:Mpython3}
 BUILD_DEPENDS += devel/py-enum34
 RUN_DEPENDS += devel/py-enum34
-.else
-LIB_DEPENDS +=	x11/qt5/qtspeech
-WANTLIB += Qt5TextToSpeech
 .endif
 
 CONFIGURE_STYLE=simple
