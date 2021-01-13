@@ -1,24 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/05 18:52:24 denis Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/13 09:02:30 denis Exp $
 @bin bin/flameshot
-share/applications/flameshot.desktop
+share/applications/org.flameshot.Flameshot.desktop
 share/bash-completion/completions/flameshot
-share/dbus-1/interfaces/org.dharkael.Flameshot.xml
-share/dbus-1/services/org.dharkael.Flameshot.service
+share/dbus-1/interfaces/org.flameshot.Flameshot.xml
+share/dbus-1/services/org.flameshot.Flameshot.service
 share/flameshot/
 share/flameshot/translations/
 share/flameshot/translations/Internationalization_ca.qm
+share/flameshot/translations/Internationalization_cs.qm
+share/flameshot/translations/Internationalization_de_DE.qm
 share/flameshot/translations/Internationalization_es.qm
+share/flameshot/translations/Internationalization_eu.qm
 share/flameshot/translations/Internationalization_fr.qm
+share/flameshot/translations/Internationalization_hu.qm
+share/flameshot/translations/Internationalization_it_IT.qm
+share/flameshot/translations/Internationalization_ja.qm
 share/flameshot/translations/Internationalization_ka.qm
+share/flameshot/translations/Internationalization_ko.qm
+share/flameshot/translations/Internationalization_nl.qm
+share/flameshot/translations/Internationalization_nl_NL.qm
 share/flameshot/translations/Internationalization_pl.qm
+share/flameshot/translations/Internationalization_pt_BR.qm
 share/flameshot/translations/Internationalization_ru.qm
+share/flameshot/translations/Internationalization_sk.qm
+share/flameshot/translations/Internationalization_sr_SP.qm
+share/flameshot/translations/Internationalization_sv_SE.qm
 share/flameshot/translations/Internationalization_tr.qm
+share/flameshot/translations/Internationalization_uk.qm
 share/flameshot/translations/Internationalization_zh_CN.qm
 share/flameshot/translations/Internationalization_zh_TW.qm
 share/icons/hicolor/128x128/apps/flameshot.png
+share/icons/hicolor/128x128/apps/org.flameshot.Flameshot.png
 share/icons/hicolor/48x48/apps/flameshot.png
+share/icons/hicolor/48x48/apps/org.flameshot.Flameshot.png
 share/icons/hicolor/scalable/apps/flameshot.svg
+share/icons/hicolor/scalable/apps/org.flameshot.Flameshot.svg
 share/metainfo/
-share/metainfo/flameshot.appdata.xml
+share/metainfo/org.flameshot.Flameshot.metainfo.xml
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_flameshot
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
