@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/05 21:01:06 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/13 09:43:44 fcambus Exp $
 
 COMMENT =	simple text-based game of interstellar trading
 
-DISTNAME =	trader-7.14
-REVISION =	0
+DISTNAME =	trader-7.15
 
 CATEGORIES =	games
 
