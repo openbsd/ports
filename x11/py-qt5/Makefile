@@ -57,6 +57,9 @@ MODULES=	lang/python \
 .if !${FLAVOR:Mpython3}
 BUILD_DEPENDS += devel/py-enum34
 RUN_DEPENDS += devel/py-enum34
+.else
+LIB_DEPENDS +=	x11/qt5/qtspeech
+WANTLIB += Qt5TextToSpeech
 .endif
 
 CONFIGURE_STYLE=simple
