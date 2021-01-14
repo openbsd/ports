@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2021/01/10 18:05:56 fcambus Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2021/01/14 09:38:55 fcambus Exp $
+
+OpenBSD's file(1) doesn't support the --mime-encoding option, so remove
+those checks as they cause the build to fail.
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig

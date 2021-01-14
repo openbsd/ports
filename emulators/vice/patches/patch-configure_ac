@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.6 2021/01/10 18:05:56 fcambus Exp $
+$OpenBSD: patch-configure_ac,v 1.7 2021/01/14 09:38:55 fcambus Exp $
 
-Don't run fc-cache on install.
-Avoid picking up net/libnet.
+- Remove hardcoding debug and optimization flags
+- Avoid picking up net/libnet
+- Don't run fc-cache on install
 
 Index: configure.ac
 --- configure.ac.orig

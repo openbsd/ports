@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_iodrv_io-unix-access_c,v 1.1 2019/03/07 14:45:29 fcambus Exp $
+$OpenBSD: patch-src_iodrv_io-unix-access_c,v 1.2 2021/01/14 09:38:55 fcambus Exp $
+
+Fix the build on non amd64/i386 platforms by patching the I/O code so we
+only call outb() if HAVE_I386_SET_IOPERM or HAVE_LIBAMD64 are defined.
 
 Index: src/iodrv/io-unix-access.c
 --- src/iodrv/io-unix-access.c.orig
