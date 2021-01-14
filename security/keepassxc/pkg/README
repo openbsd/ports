@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2020/07/07 17:33:56 rsadowski Exp $
+$OpenBSD: README,v 1.2 2021/01/14 07:03:18 rsadowski Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -8,4 +8,4 @@ In order to use browser integration with firefox you need to add following
 unveil rule to /etc/firefox/unveil.main:
 
 # for using the KeePassXC-Browser addon with the keepassxc--browser package
-/usr/local/bin/keepassxc-proxy rx
+${LOCALBASE}/bin/keepassxc-proxy rx

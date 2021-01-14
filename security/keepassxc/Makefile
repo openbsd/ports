@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2020/10/23 13:44:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2021/01/14 07:03:18 rsadowski Exp $
 
 COMMENT =	management tool for password and sensitive data
 
-V =		2.6.2
+V =		2.6.3
 DISTNAME =	keepassxc-${V}
 
 CATEGORIES =	security
