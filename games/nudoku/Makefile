@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2020/11/24 18:59:28 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/14 21:55:22 fcambus Exp $
 
 COMMENT =	ncurses based sudoku game
 
 GH_ACCOUNT =	jubalh
 GH_PROJECT =	nudoku
 GH_TAGNAME =	2.1.0
+REVISION =	0
 
 CATEGORIES =	games
 
 HOMEPAGE =	https://jubalh.github.io/nudoku/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

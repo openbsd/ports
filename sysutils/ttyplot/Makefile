@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/14 21:55:22 fcambus Exp $
 
 COMMENT =	realtime plotting utility for terminals
 
 GH_ACCOUNT =	tenox7
 GH_PROJECT =	ttyplot
 GH_TAGNAME =	1.4
+REVISION =	0
 
 CATEGORIES =	sysutils
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

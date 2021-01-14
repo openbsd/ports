@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/01/29 09:38:25 fcambus Exp $
+# $OpenBSD: Makefile,v 1.19 2021/01/14 21:55:22 fcambus Exp $
 
 PORTROACH =	limit:^[0-9].*
 
@@ -7,14 +7,12 @@ COMMENT =	nyancat in your terminal
 GH_ACCOUNT =	klange
 GH_PROJECT =	nyancat
 GH_TAGNAME =	1.5.2
-REVISION =	0
+REVISION =	1
 EPOCH =		0
 
 CATEGORIES =	misc
 
 HOMEPAGE =	https://nyancat.dakko.us/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # NCSA
 PERMIT_PACKAGE =	Yes

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2020/12/18 15:32:58 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/14 21:55:21 fcambus Exp $
 
 COMMENT =	swiss army knife for video game console emulators
 
 DISTNAME =	ucon64-2.2.1-src
 PKGNAME =	${DISTNAME:S/-src//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://ucon64.sourceforge.io/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

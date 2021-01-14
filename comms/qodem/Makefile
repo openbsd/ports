@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/14 21:55:21 fcambus Exp $
 
 COMMENT =	Qodem Terminal Emulator
 
 DISTNAME =	qodem-1.0.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	comms
 
 HOMEPAGE =	http://qodem.sourceforge.net/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # CC0 (Public Domain)
 # MIT (UTF-8 decoder in source/codepage.c)

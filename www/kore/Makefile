@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2020/09/09 20:32:22 fcambus Exp $
+# $OpenBSD: Makefile,v 1.23 2021/01/14 21:55:22 fcambus Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
 DISTNAME =	kore-4.0.1
+REVISION =	0
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://kore.io/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

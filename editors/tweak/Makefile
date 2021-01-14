@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/14 21:55:21 fcambus Exp $
 
 COMMENT =	efficient hex editor
 
 DISTNAME =	tweak-3.02
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	editors
 
 HOMEPAGE =	https://www.chiark.greenend.org.uk/~sgtatham/tweak/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

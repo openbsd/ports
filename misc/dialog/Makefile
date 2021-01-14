@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.47 2020/12/21 05:10:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.48 2021/01/14 21:55:22 fcambus Exp $
 
 COMMENT =		curses widgets (menus, lists, etc) for shell scripts
 
 V =			1.3-20201126
 DISTNAME =		dialog-${V}
 PKGNAME =		dialog-${V:S/-/./}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		misc
 
 HOMEPAGE =		https://invisible-island.net/dialog/dialog.html
-
-MAINTAINER =		Frederic Cambus <fcambus@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

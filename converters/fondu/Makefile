@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/14 21:55:21 fcambus Exp $
 
 COMMENT =	convert Mac font formats to/from pfb, ttf, otf and bdf files
 
 DISTNAME =	fondu_src-060102
 PKGNAME =	${DISTNAME:S/_src//}
 EXTRACT_SUFX =	.tgz
+REVISION =	0
 
 CATEGORIES =	converters
 
 HOMEPAGE =	http://fondu.sourceforge.net/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

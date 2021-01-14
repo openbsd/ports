@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2019/09/01 20:10:32 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/14 21:55:21 fcambus Exp $
 
 COMMENT =	binary I/O stream class library
 
 DISTNAME =	libbinio-1.5
 EXTRACT_SUFX =	.tar.bz2
 SHARED_LIBS +=	binio	0.0	# 1.0
+REVISION =	0
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://adplug.github.io/libbinio/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
