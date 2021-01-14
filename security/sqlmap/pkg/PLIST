@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/10/19 12:31:24 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.25 2021/01/14 10:49:01 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -225,6 +225,7 @@ share/sqlmap/extra/shutils/precommit-hook.sh
 share/sqlmap/extra/shutils/pycodestyle.sh
 share/sqlmap/extra/shutils/pydiatra.sh
 share/sqlmap/extra/shutils/pyflakes.sh
+share/sqlmap/extra/shutils/pylint.sh
 share/sqlmap/extra/shutils/pypi.sh
 share/sqlmap/extra/shutils/recloak.sh
 share/sqlmap/extra/shutils/strip.sh
