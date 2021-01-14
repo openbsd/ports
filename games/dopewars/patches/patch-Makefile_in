@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2007/07/05 17:28:18 jasper Exp $
---- Makefile.in.orig	Wed Dec 20 20:53:11 2006
-+++ Makefile.in	Wed Dec 20 20:53:22 2006
-@@ -652,7 +652,7 @@ info: info-recursive
+$OpenBSD: patch-Makefile_in,v 1.6 2021/01/14 09:32:20 fcambus Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -823,7 +823,7 @@ info: info-recursive
  
  info-am:
  
 -install-data-am: install-data-local
 +install-data-am:
  
- install-exec-am:
+ install-dvi: install-dvi-recursive
  
