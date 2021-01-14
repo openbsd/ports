@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2020/11/01 20:15:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/01/14 23:35:48 sthen Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
-DISTNAME=	lldpd-1.0.7
+DISTNAME=	lldpd-1.0.8
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		LLDP-MIB-200505060000Z.txt:0
+		LLDP-MIB-200505060000Z.mib:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 SHARED_LIBS +=	lldpctl                   2.3 # 13.0
@@ -13,7 +13,7 @@ CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-HOMEPAGE=	http://vincentbernat.github.com/lldpd/
+HOMEPAGE=	https://lldpd.github.io/
 
 # Program: ISC. Bundled MIB is from IEEE 802.1AB-2005; "Users of this
 # standard may freely reproduce the MIB contained in this subclause so
@@ -22,8 +22,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses event_core event_extra pthread readline
 
-MASTER_SITES=	http://media.luffy.cx/files/lldpd/
-MASTER_SITES0=	http://www.ieee802.org/1/files/public/MIBs/
+MASTER_SITES=	https://media.luffy.cx/files/lldpd/
+MASTER_SITES0=	https://www.ieee802.org/1/files/public/MIBs/
 
 FLAVORS=	snmp
 FLAVOR?=
@@ -57,7 +57,7 @@ WANTLIB += crypto kvm m perl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs/
-	${INSTALL_DATA} ${FULLDISTDIR}/LLDP-MIB-200505060000Z.txt \
+	${INSTALL_DATA} ${FULLDISTDIR}/LLDP-MIB-200505060000Z.mib \
 		${PREFIX}/share/snmp/mibs/LLDP-MIB.txt
 .endif
 
