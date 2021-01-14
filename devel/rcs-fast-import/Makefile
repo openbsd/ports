@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/14 20:34:38 sthen Exp $
 
 COMMENT =		unpack git fast-import streams into RCS file tree
 
-DISTNAME =		rcs-fast-import-1.0
-REVISION =		0
+DISTNAME =		rcs-fast-import-1.1
 
 CATEGORIES =		devel
 
@@ -16,6 +15,7 @@ MASTER_SITES =		${HOMEPAGE}
 
 MODULES =		lang/python
 MODPY_ADJ_FILES =	rcs-fast-import
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/git \
 			devel/grcs
