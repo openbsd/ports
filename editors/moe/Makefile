@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/01/14 23:42:58 bcallah Exp $
 
 COMMENT =	powerful and user-friendly console text editor
-DISTNAME =	moe-1.10
+DISTNAME =	moe-1.11
 EXTRACT_SUFX =	.tar.lz
 CATEGORIES =	editors
 
