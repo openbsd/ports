@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/14 09:26:26 fcambus Exp $
 
 COMMENT =	library for parsing/normalizing street addresses
 
 GH_ACCOUNT =	openvenues
 GH_PROJECT =	libpostal
 GH_TAGNAME =	v1.0.0
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	postal	0.0	# 1.0
 
 CATEGORIES =	geo
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
