@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2020/11/10 10:01:37 edd Exp $
+# $OpenBSD: Makefile,v 1.33 2021/01/14 23:39:51 edd Exp $
 
 BROKEN-aarch64 =golang.org/x/Sys/cpu panic (illegal instruction)
 
 COMMENT =	open decentralized synchronization utility
 
-V =		1.11.1
+V =		1.12.1
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
