@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2021/01/04 13:56:09 sthen Exp $
-
-# https://github.com/mhagger/cvs2svn/issues/9
-BROKEN=	needs porting to Python 3, subversion with swig 4.x is 3-only
+# $OpenBSD: Makefile,v 1.17 2021/01/15 12:09:07 sthen Exp $
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
+# py3: https://github.com/mhagger/cvs2svn/issues/9
 MODPY_EGG_VERSION=	2.4.0
-REVISION=		1
+REVISION=		2
 DISTNAME=		cvs2svn-${MODPY_EGG_VERSION}
 MASTER_SITES=		https://spacehopper.org/mirrors/
 
@@ -19,8 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	devel/subversion,-python \
-		${MODPY_RUN_DEPENDS},-bsddb
+RUN_DEPENDS=	${MODPY_RUN_DEPENDS},-bsddb
 
 TEST_FLAGS=	PYTHON=${MODPY_BIN}
 
