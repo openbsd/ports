@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/15 01:00:15 daniel Exp $
 
 COMMENT =		Sphinx extension to build a 404 page with absolute URLs
 
 MODPY_EGG_VERSION =	0.4
 DISTNAME =		sphinx-notfound-page-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
+FLAVORS =		python3
+FLAVOR  =		python3
+
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-FLAVORS =		python3
-FLAVOR ?=
 
 RUN_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
 

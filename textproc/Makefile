@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.656 2021/01/05 13:01:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.657 2021/01/15 01:00:15 daniel Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -460,7 +460,6 @@
      SUBDIR += py-sphinx,python3
      SUBDIR += py-sphinx-intl
      SUBDIR += py-sphinx-intl,python3
-     SUBDIR += py-sphinx-notfound-page
      SUBDIR += py-sphinx-notfound-page,python3
      SUBDIR += py-sphinx_guzzle_theme
      SUBDIR += py-sphinx_guzzle_theme,python3

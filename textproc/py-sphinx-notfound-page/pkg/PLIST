@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/25 05:12:48 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/15 01:00:16 daniel Exp $
+@conflict py-sphinx-notfound-page-*
+@pkgpath textproc/py-sphinx-notfound-page
 lib/python${MODPY_VERSION}/site-packages/notfound/
 lib/python${MODPY_VERSION}/site-packages/notfound/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notfound/${MODPY_PYCACHE}/

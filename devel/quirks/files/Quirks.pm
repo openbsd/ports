@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1137 2021/01/10 20:13:04 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1138 2021/01/15 01:00:15 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -528,6 +528,7 @@ my $stem_extensions = {
 	'py-sqlobject' => 'py3-sqlobject',
 	'pyglet' => 'py-pyglet',
 	'py-tzlocal' => 'py3-tzlocal',
+	'py-sphinx-notfound-page' => 'py3-sphinx-notfound-page',
 };
 
 my $obsolete_reason = {
