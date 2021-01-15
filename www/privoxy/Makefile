@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/11/29 19:08:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/01/15 17:26:04 kmos Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
@@ -32,6 +32,11 @@ CONFIGURE_ARGS=	--with-docbook=no \
 		--with-openssl
 CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 pre-configure:
 	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoheader
