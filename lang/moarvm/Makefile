@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/01/15 20:42:01 jasper Exp $
 
-ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
+ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 sparc64
 BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
 
 COMMENT =		virtual machine for nqp/rakudo
