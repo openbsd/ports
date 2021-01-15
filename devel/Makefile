@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2051 2021/01/10 20:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.2052 2021/01/15 15:03:26 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -111,6 +111,7 @@
      SUBDIR += cvsutils
      SUBDIR += cvsweb
      SUBDIR += darcs
+     SUBDIR += dasm
      SUBDIR += dconf
      SUBDIR += ddd
      SUBDIR += dejagnu
