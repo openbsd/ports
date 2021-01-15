@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2020/12/30 18:21:25 fcambus Exp $
+# $OpenBSD: Makefile,v 1.20 2021/01/15 20:46:57 jasper Exp $
 
-ONLY_FOR_ARCHS = i386 amd64 powerpc arm
+ONLY_FOR_ARCHS = i386 amd64 powerpc powerpc64 arm
 
 COMMENT =	Atari ST/STE/TT/Falcon emulator
 
