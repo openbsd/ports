@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/15 10:35:52 gonzalo Exp $
+@bin bin/dasm
+@bin bin/ftohex
+share/doc/dasm/
+share/doc/dasm/6502.tex
+share/doc/dasm/6803.tex
+share/doc/dasm/68705.tex
+share/doc/dasm/68HC11.tex
+share/doc/dasm/ChannelF.tex
+share/doc/dasm/F8.tex
+share/doc/dasm/HD6303.tex
+share/doc/dasm/changelog.tex
+share/doc/dasm/dasm.pdf
+share/doc/dasm/dasm.tex
+share/doc/dasm/images/
+share/doc/dasm/images/illegal.png
+share/doc/dasm/introduction.tex
+share/doc/dasm/legal.tex
+share/doc/dasm/machines.tex
+share/doc/dasm/manual.tex
+share/doc/dasm/mc68hc908.tex
+share/doc/dasm/preface.tex
+share/doc/dasm/processor6502.tex
+share/doc/dasm/titlepage.tex

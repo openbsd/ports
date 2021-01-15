@@ -1,0 +1,41 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2021/01/15 10:35:52 gonzalo Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -33,7 +33,9 @@ all: build
+ 
+ # install, currently not implemented
+ install: build
+-	echo "Installation not implemented, you're on your own, sorry."
++	install -m 0755 src/dasm $(PREFIX)/bin/dasm
++	install -m 0755 src/ftohex $(PREFIX)/bin/ftohex
++	
+ 
+ # just run all the tests
+ test: build
+@@ -78,23 +80,10 @@ TSTS=test/*.asm test/*.bin.ref test/*.hex.ref test/Mak
+ # other files
+ OTHS=Makefile
+ 
+-ifeq ($(strip $(BINARY)),)
+-# source release, no binaries
+-CONTENTS=$(DOCS) $(MACS) $(SRCS) $(TSTS) $(OTHS)
+-DIRNAME=dasm-$(RELEASE)
+-ZIPNAME=dasm-$(RELEASE)
+-else
+-# binary release for specific platform
+-CONTENTS=$(BINS) $(DOCS) $(MACS) $(SRCS) $(TSTS) $(OTHS)
+-DIRNAME=dasm-$(RELEASE)
+-ZIPNAME=dasm-$(RELEASE)-$(BINARY)
+-endif
+-
+ # create a distribution archive for publication 
+ dist: build
+ 	mkdir $(DIRNAME)
+-	cp -p -r --parents $(CONTENTS) $(DIRNAME)
+-	tar cvf - $(DIRNAME) | gzip -9 >$(ZIPNAME).tar.gz
++	cp -r $(CONTENTS) $(DIRNAME)
+ #	tar cvf - $(DIRNAME) | bzip2 -9 >$(ZIPNAME).tar.bz2
+ 	rm -rf $(DIRNAME)
+ 

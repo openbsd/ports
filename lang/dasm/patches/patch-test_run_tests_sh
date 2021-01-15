@@ -1,0 +1,20 @@
+$OpenBSD: patch-test_run_tests_sh,v 1.1.1.1 2021/01/15 10:35:52 gonzalo Exp $
+
+Index: test/run_tests.sh
+--- test/run_tests.sh.orig
++++ test/run_tests.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ # Simple test script adapted from Matt Dillon's 2.16  release.
+ # It's harder to do this in a Makefile, so let's use a script.
+@@ -71,7 +71,7 @@ do
+ 	    then
+ 		echo "		file [$NAME.hex.ref] missing	FAILED!" 
+ 	    else
+-		diff -bBduw $NAME.hex $NAME.hex.ref >$NAME.hex.diff
++		diff -bduw $NAME.hex $NAME.hex.ref >$NAME.hex.diff
+ 		echo "		binaries differ	FAILED!" 
+ 	    fi
+ 	    fail="$[$fail+1]"
