@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/05 13:01:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/15 14:46:55 sthen Exp $
 
 COMMENT=	Python library to read/write Excel 2010 xlsx/xlsm files
 
-MODPY_EGG_VERSION=	3.0.5
+MODPY_EGG_VERSION=	3.0.6
 
 DISTNAME=	openpyxl-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}

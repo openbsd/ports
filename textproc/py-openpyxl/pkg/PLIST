@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/05 12:58:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/15 14:46:55 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/openpyxl/
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -128,13 +128,13 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/${MODPY_PYCACHE}accumulate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/${MODPY_PYCACHE}numbers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/${MODPY_PYCACHE}product.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/${MODPY_PYCACHE}singleton.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/${MODPY_PYCACHE}strings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/abc.py
-lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/accumulate.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/numbers.py
+lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/product.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/singleton.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/compat/strings.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/descriptors/
