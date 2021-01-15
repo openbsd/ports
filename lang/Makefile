@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2021/01/13 21:52:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.246 2021/01/15 10:37:40 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -23,6 +23,7 @@
      SUBDIR += cython
      SUBDIR += cython,python3
      SUBDIR += datalog
+     SUBDIR += dasm
      SUBDIR += duktape
      SUBDIR += eagle
      SUBDIR += ecl
