@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2020/10/11 17:40:55 juanfra Exp $
+# $OpenBSD: Makefile,v 1.32 2021/01/15 23:06:07 juanfra Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
-VERSION =		5.3.0
+VERSION =		5.4.0
 DISTNAME =		wavpack-${VERSION}
 CATEGORIES =		audio
 
