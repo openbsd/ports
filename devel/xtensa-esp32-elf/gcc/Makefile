@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/29 14:10:51 tracey Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/15 19:03:58 jasper Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
@@ -13,6 +13,10 @@ GH_TAGNAME =	esp-2020r3
 SUBST_VARS +=	V
 
 WANTLIB =	${COMPILER_LIBCXX} c gmp m mpc mpfr z
+
+.if ${MACHINE_ARCH} == "powerpc64"
+PATCH_LIST =	patch-* vecstep-*
+.endif
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/${CONFIG}/binutils \
