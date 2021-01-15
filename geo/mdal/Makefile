@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2020/12/02 12:05:56 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2021/01/15 12:05:17 landry Exp $
 
 COMMENT =	mesh data abstration library
 
 GH_ACCOUNT=	lutraconsulting
 GH_PROJECT =	MDAL
-GH_TAGNAME =	release-0.7.3
+GH_TAGNAME =	0.8.0
 
 PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/release-//}
 
-SHARED_LIBS =	mdal 4.0
+SHARED_LIBS =	mdal 5.0
 
 CATEGORIES =	geo devel textproc
 
