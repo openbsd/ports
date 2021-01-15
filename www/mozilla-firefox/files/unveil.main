@@ -1,4 +1,4 @@
-# $OpenBSD: unveil.main,v 1.6 2020/12/15 16:41:12 landry Exp $
+# $OpenBSD: unveil.main,v 1.7 2021/01/15 11:00:50 sthen Exp $
 # for uuid generation?
 /dev/urandom r
 /dev/video rw
@@ -10,6 +10,9 @@
 
 /etc/fonts r
 /etc/machine-id r
+
+# normally "pledge dns" exempts this from unveil, but pledge might be disabled
+/etc/resolv.conf r
 
 /usr/local/lib r
 /usr/local/lib/firefox rx

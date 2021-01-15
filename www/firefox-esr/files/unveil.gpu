@@ -1,4 +1,4 @@
-# $OpenBSD: unveil.gpu,v 1.1 2020/07/28 14:21:48 landry Exp $
+# $OpenBSD: unveil.gpu,v 1.2 2021/01/15 11:00:50 sthen Exp $
 /dev/drm0 rw
 
 /usr/local/lib/firefox-esr r
@@ -6,6 +6,9 @@
 /usr/X11R6/lib r
 /usr/share/locale r
 /usr/local/share r
+
+# normally "pledge dns" exempts this from unveil, but pledge might be disabled
+/etc/resolv.conf r
 
 /tmp rwc
 

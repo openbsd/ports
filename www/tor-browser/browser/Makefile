@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2020/12/16 21:33:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/01/15 11:00:50 sthen Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -11,6 +11,7 @@ MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
 TL_VERSION =		0.2.26
 HE_VERSION =		2020.11.17
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
