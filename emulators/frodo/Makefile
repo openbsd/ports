@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2020/11/11 13:14:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/01/15 19:54:12 jasper Exp $
 
 COMMENT=	Commodore 64 emulator
 
@@ -48,7 +48,7 @@ NO_TEST=	Yes
 
 # There are powerpc-specific CodeWarrior like asm inline functions not
 # understood by clang
-.if ${MACHINE_ARCH:Mpowerpc}
+.if ${MACHINE_ARCH:Mpowerpc*}
 CFLAGS +=	-U__POWERPC__
 .endif
 
