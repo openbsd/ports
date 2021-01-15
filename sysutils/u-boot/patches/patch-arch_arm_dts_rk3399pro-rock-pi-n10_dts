@@ -1,0 +1,13 @@
+$OpenBSD: patch-arch_arm_dts_rk3399pro-rock-pi-n10_dts,v 1.1 2021/01/15 00:01:16 kurt Exp $
+
+Index: arch/arm/dts/rk3399pro-rock-pi-n10.dts
+--- arch/arm/dts/rk3399pro-rock-pi-n10.dts.orig
++++ arch/arm/dts/rk3399pro-rock-pi-n10.dts
+@@ -17,6 +17,6 @@
+ 		     "rockchip,rk3399pro";
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ };

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.76 2021/01/14 00:56:54 jsg Exp $
+#	$OpenBSD: Makefile,v 1.77 2021/01/15 00:01:16 kurt Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
@@ -8,6 +8,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2021.01
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -30,6 +31,7 @@ BUILD_DEPENDS=	devel/bison \
 MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
+MODPY_SETUPTOOLS=Yes
 
 MODPY_ADJ_FILES=\
 	arch/arm/mach-rockchip/make_fit_atf.py
@@ -77,6 +79,7 @@ BOARDS=\
 	rock64-rk3328 \
 	rock960-rk3399 \
 	rock-pi-4-rk3399 \
+	rock-pi-n10-rk3399pro \
 	rockpro64-rk3399 \
 	rpi_3 \
 	rpi_4
@@ -163,7 +166,7 @@ do-build:
 	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 	        O="build/${BOARD}" \
 	        -f ${MAKE_FILE} "${BOARD}"_defconfig
-.if "${BOARD:M*-rk3399}"
+.if "${BOARD:M*-rk3399*}"
 	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} BL31=${RK3399_BL31} ${MAKE_PROGRAM} \
 	        ${MAKE_FLAGS} O="build/${BOARD}" \

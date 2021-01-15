@@ -1,0 +1,14 @@
+$OpenBSD: patch-configs_rock-pi-n10-rk3399pro_defconfig,v 1.1 2021/01/15 00:01:16 kurt Exp $
+
+Index: configs/rock-pi-n10-rk3399pro_defconfig
+--- configs/rock-pi-n10-rk3399pro_defconfig.orig
++++ configs/rock-pi-n10-rk3399pro_defconfig
+@@ -50,7 +50,7 @@ CONFIG_REGULATOR_RK8XX=y
+ CONFIG_PWM_ROCKCHIP=y
+ # CONFIG_RAM_ROCKCHIP_DEBUG is not set
+ CONFIG_DM_RESET=y
+-CONFIG_BAUDRATE=1500000
++CONFIG_BAUDRATE=115200
+ CONFIG_DEBUG_UART_SHIFT=2
+ CONFIG_SYSRESET=y
+ CONFIG_USB=y
