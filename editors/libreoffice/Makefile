@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2021/01/11 13:26:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.241 2021/01/16 11:17:05 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -38,7 +38,7 @@ DPB_PROPERTIES=	parallel
 
 EPOCH=		0
 
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
