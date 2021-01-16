@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/16 13:43:21 fcambus Exp $
 
 COMMENT =	modern HTTP benchmarking tool
 
 GH_ACCOUNT =	wg
 GH_PROJECT =	wrk
 GH_TAGNAME =	4.1.0
+REVISION =	0
 
 CATEGORIES =	benchmarks
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Apache 2.0, BSD, MIT
 PERMIT_PACKAGE =	Yes

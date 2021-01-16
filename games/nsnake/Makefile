@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/06 11:05:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/16 13:43:21 fcambus Exp $
 
 COMMENT =	classic snake game on the terminal
 
 DISTNAME =	nsnake-3.0.1
+REVISION =	0
 
 CATEGORIES =	games
 
 HOMEPAGE =	http://nsnake.sourceforge.net/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

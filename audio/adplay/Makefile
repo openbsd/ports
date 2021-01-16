@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2020/05/25 10:36:53 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2021/01/16 13:43:21 fcambus Exp $
 
 COMMENT =	console-based OPL2 audio player
 
 V =		1.8.1
 DISTNAME =	adplay-${V}
+REVISION =	0
 
 CATEGORIES =	audio
 
 HOMEPAGE =	https://adplug.github.io/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

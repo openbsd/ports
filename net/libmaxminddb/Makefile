@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2021/01/06 15:25:52 fcambus Exp $
+# $OpenBSD: Makefile,v 1.58 2021/01/16 13:43:21 fcambus Exp $
 
 COMMENT-main =	library for MaxMind GeoIP2/GeoLite2 IP geolocation databases
 COMMENT-db =	GeoIP2 GeoLite2 database: IPv4/v6 address to country
@@ -14,17 +14,16 @@ PKGNAME-city =	geolite2-city-${D}
 PKGNAME-asn =	geolite2-asn-${D}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		geolite2-data-$D.tar.xz:0
-REVISION-db =	0
-REVISION-city = 0
-REVISION-asn =  0
+REVISION-db =	1
+REVISION-city = 1
+REVISION-asn =  1
+REVISION-main =	0
 
 SHARED_LIBS +=	maxminddb	0.0	# 0.7
 
 CATEGORIES =	net geo
 
 HOMEPAGE =	http://maxmind.github.io/libmaxminddb/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # libmaxminddb: Apache 2.0
 # GeoLite2 DBs: CC BY-SA 4.0
