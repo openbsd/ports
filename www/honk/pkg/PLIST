@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/10/24 15:37:33 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/16 23:42:57 abieber Exp $
 @newgroup _honk:833
 @newuser _honk:833:_honk:daemon:Honk User:${VARBASE}/honk:/sbin/nologin
 @rcscript ${RCDIR}/honk
+@bin bin/autobonker
 @bin bin/gettoken
 @bin bin/honk
 @bin bin/saytheday

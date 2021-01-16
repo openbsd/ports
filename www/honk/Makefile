@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2020/10/24 15:37:33 abieber Exp $
+# $OpenBSD: Makefile,v 1.13 2021/01/16 23:42:57 abieber Exp $
 
 COMMENT =		federated status conveyance
 
-DISTNAME =		honk-0.9.2
+DISTNAME =		honk-0.9.5
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
@@ -28,7 +28,7 @@ DOCDIR ?=		${PREFIX}/share/doc/honk
 EXAMPLESDIR = 		${PREFIX}/share/examples/honk
 
 post-build:
-.for toy in gettoken saytheday sprayandpray youvegothonks
+.for toy in autobonker gettoken saytheday sprayandpray youvegothonks
 	${MODGO_CMD} build ${MODGO_FLAGS} -o ${MODGO_WORKSPACE}/bin/${toy} \
 		${MODGO_WORKSPACE}/src/${ALL_TARGET}/toys/${toy}.go
 .endfor
