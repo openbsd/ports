@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2021/01/07 10:52:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2021/01/16 09:35:31 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
-GH_ACCOUNT=		OpenPrinting
-GH_PROJECT=		system-config-printer
-GH_TAGNAME=		v1.5.14
+V=			1.5.15
+DISTNAME=		system-config-printer-${V}
 
 CATEGORIES=		print sysutils
 
@@ -12,6 +11,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
+
+MASTER_SITES=		https://github.com/OpenPrinting/system-config-printer/releases/download/v${V}/
 
 MODULES=		lang/python \
 			textproc/intltool
@@ -51,11 +52,6 @@ FAKE_FLAGS=		dbusdir=${PREFIX}/share/examples/system-config-printer/dbus-1/syste
 			autostartdir=${PREFIX}/share/examples/system-config-printer/xdg/autostart/ \
 			cupshelpersdir=${PREFIX}/share/examples/system-config-printer/cupshelpers/
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
 pre-configure:
 	cd ${WRKSRC} && sed -i \
 		-e "s,/usr/share/system-config-printer,${PREFIX}/share/system-config-printer,g;" \
@@ -70,12 +66,8 @@ pre-configure:
 		cupshelpers/xmldriverprefs.py \
 		newprinter.py \
 		probe_printer.py \
-		test/test-cups-driver.py \
 		udev/udev-configure-printer.c
 	grep -rl "/usr/bin/python3" ${WRKSRC} | \
 		xargs sed -i "s,/usr/bin/python3,${MODPY_BIN},g"
-	cd ${WRKSRC} && touch INSTALL README ChangeLog && ${SETENV} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
+
 .include <bsd.port.mk>

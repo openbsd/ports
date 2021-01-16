@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2017/07/14 16:12:00 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.13 2021/01/16 09:35:31 ajacoutot Exp $
 
-Index: Makefile.am
---- Makefile.am.orig
-+++ Makefile.am
-@@ -335,7 +335,7 @@ push-translations: zanata.xml
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -2066,7 +2066,7 @@ push-translations: zanata.xml
  	zanata-cli -B push --src-dir=$(top_srcdir)/po --trans-dir=$(top_srcdir)/po
  
  missing-languages:
@@ -12,7 +12,7 @@ Index: Makefile.am
  	eval $$(grep ALL_LINGUAS configure.ac); \
  	diff -u <(echo $$ALL_LINGUAS | xargs -rn1 echo) \
  		<(cd po; ls -1 *.po | sed -e "s,\.po$$,,")'
-@@ -383,7 +383,7 @@ help:
+@@ -2114,7 +2114,7 @@ help:
  	@echo " test-xmldriverprefs  Show preferred driver order for all models"
  
  test-xml-validity.sh:	FORCE
@@ -21,7 +21,7 @@ Index: Makefile.am
  	echo "set -e" >> "$@"
  	echo "xmllint --relaxng \\" >> "$@"
  	echo "    $(top_srcdir)/xml/preferreddrivers.rng \\" >> "$@"
-@@ -393,7 +393,7 @@ test-xml-validity.sh:	FORCE
+@@ -2124,7 +2124,7 @@ test-xml-validity.sh:	FORCE
  	chmod 755 "$@"
  
  py.test.sh:	FORCE
