@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2021/01/16 21:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/01/16 22:36:17 sthen Exp $
 
 COMMENT=		DNS toolkit for Python
 
-# dnspython>=2 is py3-only; some deps are hard to update:
-# mail/mailman net/samba textproc/calibre
+# see net/py2-dnspython for py2 version
 MODPY_EGG_VERSION=	2.1.0
 DISTNAME=		dnspython-${MODPY_EGG_VERSION}
 EXTRACT_SUFX=		.zip
