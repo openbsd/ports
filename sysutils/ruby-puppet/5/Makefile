@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.31 2021/01/15 11:54:00 kn Exp $
+# $OpenBSD: Makefile,v 1.32 2021/01/16 04:45:36 kn Exp $
 
 PORTROACH=		limit:^5
 
 VERSION=		5.5.22
-REVISION=		1
+REVISION=		2
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.28,<1 \
 			devel/ruby-locale,${MODRUBY_FLAVOR}>=2.1,<3 \
 			devel/ruby-rgen,${MODRUBY_FLAVOR} \
+			devel/ruby-sync,${MODRUBY_FLAVOR} \
 			converters/ruby-multi_json,${MODRUBY_FLAVOR} \
 			sysutils/facter
 
