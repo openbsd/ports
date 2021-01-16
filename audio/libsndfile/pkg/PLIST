@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/04/23 08:48:54 jca Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/01/16 12:53:12 sthen Exp $
 @bin bin/sndfile-cmp
 @bin bin/sndfile-concat
 @bin bin/sndfile-convert
@@ -12,8 +12,12 @@
 @bin bin/sndfile-salvage
 include/sndfile.h
 include/sndfile.hh
-lib/libsndfile.a
-lib/libsndfile.la
+lib/cmake/
+lib/cmake/SndFile/
+lib/cmake/SndFile/SndFileConfig.cmake
+lib/cmake/SndFile/SndFileConfigVersion.cmake
+lib/cmake/SndFile/SndFileTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SndFile/SndFileTargets.cmake
 @lib lib/libsndfile.so.${LIBsndfile_VERSION}
 lib/pkgconfig/sndfile.pc
 @man man/man1/sndfile-cmp.1
@@ -32,12 +36,14 @@ share/doc/libsndfile/api.html
 share/doc/libsndfile/bugs.html
 share/doc/libsndfile/command.html
 share/doc/libsndfile/embedded_files.html
+share/doc/libsndfile/formats.html
 share/doc/libsndfile/index.html
 share/doc/libsndfile/libsndfile.css
 share/doc/libsndfile/libsndfile.jpg
 share/doc/libsndfile/lists.html
 share/doc/libsndfile/new_file_type.HOWTO
 share/doc/libsndfile/octave.html
+share/doc/libsndfile/print.css
 share/doc/libsndfile/sndfile_info.html
 share/doc/libsndfile/tutorial.html
 share/doc/libsndfile/win32.html
