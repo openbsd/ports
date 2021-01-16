@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2019/07/16 21:29:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2021/01/16 18:52:19 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.32
+DISTNAME=	tar-1.33
 PKGNAME=	g${DISTNAME}
-REVISION=	1
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/tar/
 
