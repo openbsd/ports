@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.94 2020/05/07 19:06:49 okan Exp $
+# $OpenBSD: Makefile,v 1.95 2021/01/16 21:21:04 sthen Exp $
 
 COMMENT=	mailing list manager with web interface
 
 DISTNAME=	mailman-2.1.32
+REVISION=	0
 CATEGORIES=	mail www
 
 HOMEPAGE=	https://www.gnu.org/software/mailman/
@@ -17,8 +18,8 @@ EXTRACT_SUFX=		.tgz
 
 MODULES=		lang/python
 
-BUILD_DEPENDS=		net/py-dnspython
-RUN_DEPENDS=		net/py-dnspython
+BUILD_DEPENDS=		net/py2-dnspython
+RUN_DEPENDS=		net/py2-dnspython
 
 NO_TEST=		Yes
 

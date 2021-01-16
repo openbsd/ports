@@ -1,0 +1,8 @@
+$OpenBSD: patch-requirements_txt,v 1.1 2021/01/16 21:21:04 sthen Exp $
+
+Index: requirements.txt
+--- requirements.txt.orig
++++ requirements.txt
+@@ -1 +1 @@
+-dnspython==1.16.0
++dnspython

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/16 21:21:04 sthen Exp $
 
 COMMENT =		DNS reconnaissance tool for locating non-contiguous IP space
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.4.0
 GH_ACCOUNT =		mschwager
 GH_PROJECT =		fierce
 GH_TAGNAME =		${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 

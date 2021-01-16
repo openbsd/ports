@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1235 2020/12/30 21:38:58 kn Exp $
+# $OpenBSD: Makefile,v 1.1236 2021/01/16 21:21:04 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -569,7 +569,7 @@
      SUBDIR += py-dns
      SUBDIR += py-dnslib
      SUBDIR += py-dnslib,python3
-     SUBDIR += py-dnspython
+     SUBDIR += py2-dnspython
      SUBDIR += py-dnspython,python3
      SUBDIR += py-dpkt
      SUBDIR += py-eapi
