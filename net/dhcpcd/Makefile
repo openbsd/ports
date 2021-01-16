@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2020/12/29 15:47:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2021/01/16 23:35:47 tb Exp $
 
 COMMENT=	DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client
 
 DISTNAME=	dhcpcd-9.4.0
+REVISION=	0
 EPOCH=		0
 
 CATEGORIES=	net

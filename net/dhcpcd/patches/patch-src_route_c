@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_route_c,v 1.3 2021/01/16 23:35:47 tb Exp $
+
+Avoid log noise and plug a memory leak:
+https://roy.marples.name/archives/dhcpcd-discuss/0003426.html
+
+Index: src/route.c
+--- src/route.c.orig
++++ src/route.c
+@@ -409,6 +409,7 @@ rt_proto_add_ctx(rb_tree_t *tree, struct rt *rt, struc
+ 		return rt;
+ 
+ 	rt_free(rt);
++	errno = EEXIST;
+ 	return NULL;
+ }
+ 
