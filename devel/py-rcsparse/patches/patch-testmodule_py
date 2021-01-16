@@ -1,0 +1,18 @@
+$OpenBSD: patch-testmodule_py,v 1.1 2021/01/16 13:56:09 sthen Exp $
+
+Index: testmodule.py
+--- testmodule.py.orig
++++ testmodule.py
+@@ -1,11 +1,10 @@
+ import rcsparse
+-import md5
+ 
+ f=rcsparse.rcsfile('test,v')
+ print f.head
+ print f.branch
+ s=f.symbols
+-print s['RELENG_4']
++#how to convert?   print s['RELENG_4']
+ print s.items()
+ r=f.revs
+ i=r.items()

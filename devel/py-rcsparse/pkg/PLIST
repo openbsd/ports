@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/10/31 16:30:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/16 13:56:09 sthen Exp $
 @conflict rcsparse-*
 lib/python${MODPY_VERSION}/site-packages/rcsparse-0.1-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/rcsparse.so
+@so lib/python${MODPY_VERSION}/site-packages/rcsparse.so
