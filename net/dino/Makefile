@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/13 11:58:55 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/16 21:08:39 kn Exp $
 
 COMMENT=	XMPP desktop client
-VERSION=	0.1.0
+VERSION=	0.2.0
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
 

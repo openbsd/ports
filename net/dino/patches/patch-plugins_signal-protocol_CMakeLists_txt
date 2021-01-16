@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_signal-protocol_CMakeLists_txt,v 1.1 2020/04/07 23:34:52 jca Exp $
+$OpenBSD: patch-plugins_signal-protocol_CMakeLists_txt,v 1.2 2021/01/16 21:08:39 kn Exp $
 
 Loosen the dep on libsignal-protocol-c
 
@@ -9,8 +9,8 @@ Index: plugins/signal-protocol/CMakeLists.txt
      # libsignal-protocol-c has a history of breaking compatibility on the patch level
      # we'll have to check compatibility for every new release
      # distro maintainers may update this dependency after compatibility tests
--    find_package(SignalProtocol 2.3.2 EXACT REQUIRED)
-+    find_package(SignalProtocol 2.3 EXACT REQUIRED)
+-    find_package(SignalProtocol 2.3.2 REQUIRED)
++    find_package(SignalProtocol 2.3 REQUIRED)
  else()
      add_subdirectory(libsignal-protocol-c EXCLUDE_FROM_ALL)
      set_property(TARGET curve25519 PROPERTY POSITION_INDEPENDENT_CODE ON)
