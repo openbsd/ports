@@ -1,4 +1,4 @@
-SHA256 (dendrite-v0.3.4.zip) = FkoO2GZgjnkybrM1hdITN/IhSdQ91kC4OrxkTdSEqfg=
+SHA256 (dendrite-v0.3.5.zip) = ZT8yRQ4UaPXh9TcsUhNDfq6iYWYAn7q7boDPGAE4ePk=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = IhijTyC5cbwZUhbUGV9XUgoqy9hd5/wxrPxEAmZwTBE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.31.0.mod) = IhijTyC5cbwZUhbUGV9XUgoqy9hd5/wxrPxEAmZwTBE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = IhijTyC5cbwZUhbUGV9XUgoqy9hd5/wxrPxEAmZwTBE=
@@ -1172,7 +1172,7 @@ SHA256 (go_modules/sourcegraph.com/sourcegraph/go-diff/@v/v0.5.0.mod) = 9WNW6ejm
 SHA256 (go_modules/sourcegraph.com/sourcegraph/go-diff/@v/v0.5.0.zip) = LF6q0dN0Oz1L1t5wRZpBPmLRdTZz1blkAt2idQhFSzs=
 SHA256 (go_modules/sourcegraph.com/sqs/pbtypes/@v/v0.0.0-20180604144634-d3ebe8f20ae4.mod) = beI+oio6/+GcOONyatp1eqwvD1oxDF4Ao0Bpj2gLF4k=
 SHA256 (go_modules/sourcegraph.com/sqs/pbtypes/@v/v0.0.0-20180604144634-d3ebe8f20ae4.zip) = Z1D4YY7L3hZo3jMoAOwB1xPeuxRd7jlcI/yaNzwgf+M=
-SIZE (dendrite-v0.3.4.zip) = 3301885
+SIZE (dendrite-v0.3.5.zip) = 3308242
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.31.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27

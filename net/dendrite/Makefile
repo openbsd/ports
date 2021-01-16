@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/06 00:05:50 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/16 19:23:55 abieber Exp $
 
 COMMENT =	matrix homeserver written in Go
 
 MODGO_MODNAME =	github.com/matrix-org/dendrite
-MODGO_VERSION =	v0.3.4
+MODGO_VERSION =	v0.3.5
 
 DISTNAME =	dendrite-${MODGO_VERSION}
 
