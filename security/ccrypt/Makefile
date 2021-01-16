@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/01/16 22:51:21 cwen Exp $
+
+PORTROACH=	skipv:1.11.mac-x86_64
 
 COMMENT=	encrypt and decrypt AES files and streams
 
