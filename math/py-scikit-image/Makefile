@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/04 14:06:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/16 21:49:14 kmos Exp $
 
 COMMENT =		image processing routines for SciPy
 
 MODPY_EGG_VERSION =	0.17.2
-REVISION =		0
+REVISION =		1
 DISTNAME =		scikit-image-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
@@ -12,6 +12,11 @@ MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # BSD
 PERMIT_PACKAGE =	Yes
+
+WANTLIB +=		${COMPILER_LIBCXX} m
+
+# c++0x
+COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
 
