@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/16 12:58:11 sthen Exp $
 
 BROKEN-hppa =	no atomic ops in pulse-simple dependency
+
 COMMENT =	general-purpose software audio FSK modem
-DISTNAME =	minimodem-0.22.1
+# next version should have a native sndio backend
+DISTNAME =	minimodem-0.24
 CATEGORIES =	comms
-REVISION =	1
 
 HOMEPAGE =	http://www.whence.com/minimodem/
 
@@ -29,5 +30,8 @@ CONFIGURE_ARGS =	--without-alsa \
 			--with-sndfile
 
 MAKE_FLAGS =	LIBS="-lfftw3f_threads -lfftw3f -lpulse-simple -lpulse -lsndfile -lintl -lm"
+
+do-test:
+	cd ${WRKSRC}/tests; ./run-self-tests
 
 .include <bsd.port.mk>

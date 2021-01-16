@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_run-self-tests,v 1.1 2021/01/16 12:58:11 sthen Exp $
+
+Index: tests/run-self-tests
+--- tests/run-self-tests.orig
++++ tests/run-self-tests
+@@ -1,8 +1,8 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ for testcase in ./*.test
+ do
+-   $testcase
++   sh $testcase
+    if [ $? -eq 0 ]
+    then echo "PASS: $testcase"
+    else echo "FAIL: $testcase"

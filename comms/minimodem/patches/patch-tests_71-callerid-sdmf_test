@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_71-callerid-sdmf_test,v 1.1 2021/01/16 12:58:11 sthen Exp $
+
+Index: tests/71-callerid-sdmf.test
+--- tests/71-callerid-sdmf.test.orig
++++ tests/71-callerid-sdmf.test
+@@ -1,2 +1,2 @@
+ #!/bin/bash
+-exec ./70-callerid-mdmf.test testdata-callerid-sdmf.bytes
++sh ./70-callerid-mdmf.test testdata-callerid-sdmf.bytes

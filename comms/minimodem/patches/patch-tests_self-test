@@ -1,0 +1,19 @@
+$OpenBSD: patch-tests_self-test,v 1.1 2021/01/16 12:58:11 sthen Exp $
+
+Index: tests/self-test
+--- tests/self-test.orig
++++ tests/self-test
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ 
+ MINIMODEM="${MINIMODEM-./minimodem}"
+ [ -f "$MINIMODEM" ] || {
+@@ -83,6 +83,6 @@ exitcode=0
+     fi
+ }
+ 
+-echo -e "$result $stats"
++echo "$result $stats"
+ 
+ exit $exitcode

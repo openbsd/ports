@@ -1,0 +1,28 @@
+$OpenBSD: patch-tests_16-verify-tx-consistent_test,v 1.1 2021/01/16 12:58:11 sthen Exp $
+
+Index: tests/16-verify-tx-consistent.test
+--- tests/16-verify-tx-consistent.test.orig
++++ tests/16-verify-tx-consistent.test
+@@ -19,19 +19,19 @@ trap "rm -f $TMPF.*" 0
+ set -e
+ 
+ $MINIMODEM --tx --file $TMPF.1.wav $minimodem_tx_args < "$textfile"
+-sum1=$(md5sum -b < $TMPF.1.wav)
++sum1=$(md5 < $TMPF.1.wav)
+ echo "$sum1 $TMPF.1.wav"
+ 
+ sleep 1
+ 
+ $MINIMODEM --tx --file $TMPF.2.wav $minimodem_tx_args < "$textfile"
+-sum2=$(md5sum -b < $TMPF.2.wav)
++sum2=$(md5 < $TMPF.2.wav)
+ echo "$sum2 $TMPF.2.wav"
+ 
+ sleep 1
+ 
+ $MINIMODEM --tx --file $TMPF.3.wav $minimodem_tx_args < "$textfile"
+-sum3=$(md5sum -b < $TMPF.3.wav)
++sum3=$(md5 < $TMPF.3.wav)
+ echo "$sum3 $TMPF.3.wav"
+ 
+ [ "$sum1" == "$sum2" ] || {
