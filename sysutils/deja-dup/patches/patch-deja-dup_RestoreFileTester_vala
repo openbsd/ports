@@ -1,11 +1,11 @@
-$OpenBSD: patch-deja-dup_RestoreFileTester_vala,v 1.1 2020/07/05 09:29:00 ajacoutot Exp $
+$OpenBSD: patch-deja-dup_RestoreFileTester_vala,v 1.2 2021/01/16 10:08:34 ajacoutot Exp $
 
 No euidaccess on OpenBSD
 
 Index: deja-dup/RestoreFileTester.vala
 --- deja-dup/RestoreFileTester.vala.orig
 +++ deja-dup/RestoreFileTester.vala
-@@ -69,12 +69,12 @@ public class RestoreFileTester : Object
+@@ -75,12 +75,12 @@ public class RestoreFileTester : Object
          // a file in it. But testing write access is probably good enough for now.
          exists = false;
          string iter = path;
