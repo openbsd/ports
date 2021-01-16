@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2020/06/10 08:15:25 fcambus Exp $
+# $OpenBSD: Makefile,v 1.13 2021/01/16 12:20:38 fcambus Exp $
 
 COMMENT =	AdLib sound player library
 
 V =		2.3.3
 DISTNAME =	adplug-${V}
 SHARED_LIBS +=	adplug	2.0
+REVISION =	0
 
 CATEGORIES =	audio
 
 HOMEPAGE =	https://adplug.github.io/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
