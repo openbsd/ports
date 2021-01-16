@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portroach-cli,v 1.3 2021/01/12 13:20:41 kn Exp $
+# $OpenBSD: portroach-cli,v 1.4 2021/01/16 05:24:42 kn Exp $
 #
 # Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 #
@@ -87,7 +87,9 @@ then
 		if [ -n "$ports" ]
 		then
 			printf '\n===>\t%s\n' "$match"
-			printf %s "$ports" | column -tc4 -s'	'
+			printf '%s\t%s\t%s\t%s\n%s' BASE_PKGPATH VERSION NEW \
+			    HOMEPAGE/COMMENT "$ports" |
+				column -tc4 -s'	'
 		fi
 	done
 else
