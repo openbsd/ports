@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.36 2020/11/25 15:23:49 sthen Exp $
+# $OpenBSD: go.port.mk,v 1.37 2021/01/16 23:38:13 abieber Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -13,6 +13,10 @@ MASTER_SITES${MODGO_MASTER_SITESN} ?= ${MASTER_SITE_ATHENS}
 
 MODGO_RUN_DEPENDS =	lang/go
 MODGO_BUILD_DEPENDS =	lang/go
+
+.for l in a b c d e f g h i j k l m n o p q r s t u v w x y z
+_subst := ${_subst}:S/${l:U}/!$l/g
+.endfor
 
 .if ${NO_BUILD:L} == "no" && ${MODGO_BUILDDEP:L} == "yes"
 BUILD_DEPENDS +=	${MODGO_BUILD_DEPENDS}
@@ -57,13 +61,18 @@ MODGO_TEST_CMD +=	-ldflags="${MODGO_LDFLAGS}"
 .endif
 
 .if defined(MODGO_MODNAME)
+.for _s in ${_subst}
+MODGO_MODNAME_ESC =	${MODGO_MODNAME${_s}}
+DISTNAME_ESC =		${DISTNAME${_s}}
+.endfor
+
 EXTRACT_SUFX ?=		.zip
 PKGNAME ?=		${DISTNAME:S/-v/-/}
 ALL_TARGET ?=		${MODGO_MODNAME}
 MODGO_FLAGS +=		-modcacherw
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{${MODGO_VERSION}${EXTRACT_SUFX}}
-EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
-MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME}/@v/
+DISTFILES =		${DISTNAME_ESC}${EXTRACT_SUFX}{${MODGO_VERSION}${EXTRACT_SUFX}}
+EXTRACT_ONLY =		${DISTNAME_ESC}${EXTRACT_SUFX}
+MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME_ESC}/@v/
 .  for _modpath _modver in ${MODGO_MODULES}
 DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.zip{${_modpath}/@v/${_modver}.zip}:${MODGO_MASTER_SITESN}
 DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/${_modver}.mod}:${MODGO_MASTER_SITESN}

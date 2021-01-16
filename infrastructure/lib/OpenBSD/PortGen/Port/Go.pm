@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.6 2020/07/11 22:26:01 abieber Exp $
+# $OpenBSD: Go.pm,v 1.7 2021/01/16 23:38:13 abieber Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -67,7 +67,7 @@ sub _go_determine_name
 	# Some modules end in "v1" or "v2", if we find one of these, we need
 	# to set PKGNAME to something up a level
 	my ( $self, $module ) = @_;
-	my $json = $self->get_json( $module . '/@latest' );
+	my $json = $self->get_json( $self->_go_mod_normalize($module) . '/@latest' );
 
 	if ($json->{Version} =~ m/incompatible/) {
 		my $msg = "${module} $json->{Version} is incompatible with Go modules.";
@@ -131,7 +131,7 @@ sub _go_mod_info
 	my ($self, $json) = @_;
 	my $dir = tempdir(CLEANUP => 0);
 
-	my $mod = $self->get("$json->{Module}/\@v/$json->{Version}.mod");
+	my $mod = $self->get($self->_go_mod_normalize($json->{Module}) . "/\@v/$json->{Version}.mod");
 	my ($module) = $mod =~ /\bmodule\s+(.*?)\s/;
 
 	unless ( $json->{Module} eq $module ) {
@@ -169,9 +169,10 @@ sub _go_mod_info
 	foreach my $mod (@raw_mods) {
 		foreach my $m (split(/ /, $mod)) {
 			$m =~ s/@/ /;
+			next if $m eq $json->{Module};
 			$m = $self->_go_mod_normalize($m);
 			if (! defined $all_deps->{$m}) {
-				push @mods, $m unless $m eq $json->{Module};
+				push @mods, $m;
 				$all_deps->{$m} = 1;
 			}
 		}
@@ -220,7 +221,7 @@ sub get_ver_info
 	# semver, this means we will have to fallback to @latest to get the
 	# version information.
 	if ($version_list eq "") {
-		$ret = $self->get_json( $module . '/@latest' );
+		$ret = $self->get_json( $self->_go_mod_normalize($module) . '/@latest' );
 	} else {
 		my @parts = split("\n", $version_list);
 		for my $v ( @parts ) {
