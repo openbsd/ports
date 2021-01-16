@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/06 03:26:04 jsg Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/16 03:50:32 jsg Exp $
 
 COMMENT =	reverse-engineered ports of Build games
 
-DISTNAME =	nblood-1.01.20210103
+DISTNAME =	nblood-1.01.20210115
 
 GH_ACCOUNT =	nukeykt
 GH_PROJECT =	NBlood
-GH_COMMIT =	edc76dee4d1eb9ee9ae7b8be5bf0ce371a91d1e3
+GH_COMMIT =	6ae5ab57d788328dd61a12dab9c9600c982adec1
 CATEGORIES =	games x11
 
 VC_BRANCH =	master
