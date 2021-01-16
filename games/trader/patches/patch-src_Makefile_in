@@ -1,4 +1,9 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2021/01/13 09:43:44 fcambus Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.5 2021/01/16 12:34:50 fcambus Exp $
+
+The program requires strfmon(3) which we don't have. Go around this issue
+by using FreeBSD's libc version of strfmon() like productivity/gnucash is
+doing, using borrowed/libc/strfmon.{c,h} from the GnuCash distribution
+tarball.
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig
