@@ -1,4 +1,7 @@
-$OpenBSD: patch-Build_PL,v 1.1.1.1 2019/02/25 10:01:19 fcambus Exp $
+$OpenBSD: patch-Build_PL,v 1.2 2021/01/16 12:15:47 fcambus Exp $
+
+Do not pass the -fms-extensions flag, it is unsupported on OpenBSD and
+breaks the build.
 
 Index: Build.PL
 --- Build.PL.orig
