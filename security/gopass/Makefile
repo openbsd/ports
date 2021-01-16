@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2020/10/22 12:13:39 abieber Exp $
+# $OpenBSD: Makefile,v 1.19 2021/01/16 17:26:16 abieber Exp $
 
 COMMENT =	pass compatible password manager written in go
 
 MODGO_MODNAME =	github.com/gopasspw/gopass
 MODGO_VERSION =	v1.10.1
+REVISION =	0
 
 DISTNAME =	gopass-${MODGO_VERSION}
 
 CATEGORIES =	security
-
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

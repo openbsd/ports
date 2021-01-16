@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/09/23 15:17:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/16 17:26:16 abieber Exp $
 
 COMMENT=	lightweight game library for java
 
@@ -8,7 +8,7 @@ GH_PROJECT=	lwjgl
 GH_TAGNAME=	${GH_PROJECT}${V}
 DISTNAME=	lwjgl${V}
 PKGNAME=	lwjgl-${V}
-REVISION=	3
+REVISION=	4
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH=		""
@@ -21,8 +21,6 @@ LWJGL_HOME=	${PREFIX}/share/lwjgl
 CATEGORIES=	games devel
 
 HOMEPAGE=	http://lwjgl.org
-
-MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

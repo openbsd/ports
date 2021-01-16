@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/16 17:26:16 abieber Exp $
 
 COMMENT =	OTP extension for password-store
 
 V =		1.1.1
 DISTNAME =	pass-otp-${V}
+REVISION =	0
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/tadfisher/pass-otp
-
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

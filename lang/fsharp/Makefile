@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/16 17:26:16 abieber Exp $
 
 COMMENT=	functional-first programming language
 
 GH_ACCOUNT=	fsharp
 GH_PROJECT=	fsharp
 GH_TAGNAME=	4.0.1.1
+REVISION=	0
 
 CATEGORIES=	lang devel
 
 HOMEPAGE=	http://fsharp.org/
-
-MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # Apache 2
 PERMIT_PACKAGE=	Yes

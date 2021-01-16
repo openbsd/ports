@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/28 19:23:44 abieber Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/16 17:26:16 abieber Exp $
 
 COMMENT =	command-line editor and web browser
 
 DISTNAME =	edbrowse-3.7.6
+REVISION =	0
 
 CATEGORIES =	www
-
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 HOMEPAGE =	http://edbrowse.org/
 

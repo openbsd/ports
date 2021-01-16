@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/01/20 23:32:55 abieber Exp $
+# $OpenBSD: Makefile,v 1.35 2021/01/16 17:26:16 abieber Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	fritzing
 GH_PROJECT=	fritzing-app
 GH_TAGNAME=	0.9.2b
 
-REVISION=	5
+REVISION=	6
 
 DISTNAME=	fritzing-${GH_TAGNAME}
 CATEGORIES=	cad
@@ -15,8 +15,6 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		fritzing-parts-${GH_TAGNAME}${EXTRACT_SUFX}:0
 
 HOMEPAGE=	https://fritzing.org/
-
-MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 MASTER_SITES0=	https://github.com/fritzing/fritzing-parts/archive/${GH_TAGNAME}/
 

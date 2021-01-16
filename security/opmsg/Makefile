@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/16 17:26:16 abieber Exp $
 
 COMMENT =	a replacement for gpg which can encrypt/sign/verify
 
 DISTNAME =	opmsg-1.78s
 EXTRACT_SUFX =	.tgz
-REVISION =	0
+REVISION =	1
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/stealth/opmsg
-
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
