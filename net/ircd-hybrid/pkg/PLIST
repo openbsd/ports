@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/12/21 09:01:02 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.25 2021/01/17 15:47:40 sthen Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
@@ -229,6 +229,7 @@ share/ircd-hybrid/help/locops
 share/ircd-hybrid/help/lusers
 share/ircd-hybrid/help/map
 share/ircd-hybrid/help/module
+share/ircd-hybrid/help/monitor
 share/ircd-hybrid/help/motd
 share/ircd-hybrid/help/names
 share/ircd-hybrid/help/nick
