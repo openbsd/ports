@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/05 19:27:38 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/17 19:50:59 jasper Exp $
 
 # sync with devel/angr/Makefile.inc
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		ROP chain builder based off of angr
 
+MODPY_EGG_VERSION =	9.0.5405
 DISTNAME =		angrop-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
@@ -18,10 +19,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_EGG_VERSION =	8.20.7.6
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-REVISION =		2
 
 RUN_DEPENDS =		devel/angr/py-angr>=${MODPY_EGG_VERSION} \
 			devel/py-progressbar${MODPY_FLAVOR}
