@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/04 20:58:16 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/17 19:50:45 jasper Exp $
 
 COMMENT =		CLE loads binaries and their associated libraries
-REVISION =		0
 
 ANGR_PYTHON_MODULE =	cle
 

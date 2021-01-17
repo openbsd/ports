@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2020/12/31 14:11:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/01/17 19:50:44 jasper Exp $
 
 COMMENT =	multi-architecture binary analysis toolkit
-REVISION =	1
 
 ANGR_PYTHON_MODULE =	angr
 
@@ -57,7 +56,7 @@ CFLAGS +=	-I${LOCALBASE}/include/angr-vex/
 
 DOCDIR =	${PREFIX}/share/doc/py-${ANGR_PYTHON_MODULE}
 
-post-patch:
+pre-configure:
 	${SUBST_CMD} ${WRKSRC}/native/Makefile
 
 post-install:

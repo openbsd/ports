@@ -1,16 +1,16 @@
-$OpenBSD: patch-setup_py,v 1.2 2019/09/15 13:29:50 kn Exp $
+$OpenBSD: patch-setup_py,v 1.3 2021/01/17 19:50:44 jasper Exp $
 
-native/Makefile requires GNU make.
+Relax unicorn dependency
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -68,7 +68,7 @@ def _build_native():
-             pass
+@@ -130,7 +130,7 @@ if 'bdist_wheel' in sys.argv and '--plat-name' not in 
+         # https://www.python.org/dev/peps/pep-0425/
+         sys.argv.append(name.replace('.', '_').replace('-', '_'))
  
-     cmd1 = ['nmake', '/f', 'Makefile-win']
--    cmd2 = ['make']
-+    cmd2 = ['gmake']
-     for cmd in (cmd1, cmd2):
-         try:
-             if subprocess.call(cmd, cwd='native', env=env) != 0:
+-_UNICORN = "unicorn==1.0.2rc4"
++_UNICORN = "unicorn"
+ 
+ setup(
+     name='angr',

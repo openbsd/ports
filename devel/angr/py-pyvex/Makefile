@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/04 20:58:16 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/17 19:50:45 jasper Exp $
 
 COMMENT =		Python interface to libVEX and VEX IR
-REVISION =		0
 
 ANGR_PYTHON_MODULE =	pyvex
 
@@ -10,12 +9,12 @@ CFLAGS +=		-shared -fPIC -I${LOCALBASE}/include/angr-vex/
 
 MODPY_PYTEST =		Yes
 
-BUILD_DEPENDS +=	devel/angr/vex \
+BUILD_DEPENDS +=	devel/angr/vex>=9.0 \
 			devel/py-cffi${MODPY_FLAVOR} \
 			devel/py-cparser${MODPY_FLAVOR} \
 
 # dlopen(3)s libpyvex.so
-RUN_DEPENDS +=		devel/angr/vex \
+RUN_DEPENDS +=		devel/angr/vex>=9.0 \
 			devel/py-cffi${MODPY_FLAVOR} \
 			devel/py-cparser${MODPY_FLAVOR} \
 			devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
