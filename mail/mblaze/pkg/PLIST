@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/02/12 14:27:35 sunil Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/17 07:36:21 kn Exp $
 @bin bin/maddr
 @bin bin/magrep
 bin/mbnc
@@ -58,3 +58,29 @@ bin/museragent
 @man man/man5/mblaze-profile.5
 @man man/man7/mblaze.7
 @man man/man7/mmsg.7
+share/mblaze/
+share/mblaze/contrib/
+share/mblaze/contrib/README.md
+share/mblaze/contrib/_mblaze
+share/mblaze/contrib/malternative
+share/mblaze/contrib/mblow
+share/mblaze/contrib/mcount
+share/mblaze/contrib/mencrypt
+share/mblaze/contrib/menter
+share/mblaze/contrib/mfillmid
+share/mblaze/contrib/mgpg
+share/mblaze/contrib/mhasatt
+share/mblaze/contrib/mmailto
+share/mblaze/contrib/mmairix
+share/mblaze/contrib/mp7m
+share/mblaze/contrib/mpeek
+share/mblaze/contrib/mraw
+share/mblaze/contrib/mrecode
+share/mblaze/contrib/msearch
+share/mblaze/contrib/msearch.1
+share/mblaze/contrib/msendmail
+share/mblaze/contrib/msign
+share/mblaze/contrib/msuck
+share/mblaze/contrib/mtwoscan
+share/mblaze/contrib/mverify
+share/mblaze/contrib/mvi
