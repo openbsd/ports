@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/01/17 15:46:53 sthen Exp $
 
-COMMENT=		Dynamic DNS service update client
+COMMENT=	update client for dynamic DNS services
 
-DISTNAME=		ddclient-3.8.3
-CATEGORIES=		net
-REVISION=		1
+GH_ACCOUNT=	ddclient
+GH_PROJECT=	ddclient
+GH_TAGNAME=	v3.9.1
 
-HOMEPAGE=		http://ddclient.sourceforge.net/
+CATEGORIES=	net
+
+HOMEPAGE=	https://ddclient.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ddclient/}
+RUN_DEPENDS=	devel/p5-Data-Validate-IP \
+		net/p5-IO-Socket-INET6 \
+		security/p5-IO-Socket-SSL
 
-RUN_DEPENDS=		security/p5-Digest-SHA1 \
-			security/p5-IO-Socket-SSL
-
-NO_BUILD=		Yes
-NO_TEST=		Yes
-PKG_ARCH=		*
+NO_BUILD=	Yes
+NO_TEST=	Yes
+PKG_ARCH=	*
 
 SAMPLES=	sample-etc_cron.d_ddclient sample-etc_ddclient.conf \
 		sample-etc_dhclient-exit-hooks sample-etc_dhcpc_dhcpcd-eth0.exe \
@@ -33,7 +34,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ddclient ${PREFIX}/sbin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ddclient
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ddclient
-	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/ddclient 
+	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/ddclient
 .for i in ${SAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/examples/ddclient
 .endfor
