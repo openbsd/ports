@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/17 06:10:19 kmos Exp $
 
 COMMENT =	subdomain scanner
 
 MODPY_EGG_VERSION =	4.1
 VERSION = 	4.1.0
+REVISION =	0
 
 DISTNAME =	knockpy-${VERSION}
 
@@ -22,7 +23,7 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		net/py-dnspython
+RUN_DEPENDS =		net/py2-dnspython
 
 fix-plist: plist
 	sed -i \
