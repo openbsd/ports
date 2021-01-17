@@ -1,21 +1,13 @@
 #!/bin/ksh
 #
-# $OpenBSD: gitea.rc,v 1.5 2019/02/14 10:08:53 pvk Exp $
+# $OpenBSD: gitea.rc,v 1.6 2021/01/17 21:07:41 pvk Exp $
 
 daemon="${TRUEPREFIX}/sbin/gitea"
 daemon_user="_gitea"
-daemon_flags="web -c ${SYSCONFDIR}/gitea/app.ini"
 
 . /etc/rc.d/rc.subr
 
 rc_bg=YES
 rc_reload=NO
-
-rc_start() {
-	${rcexec} "env HOME=${LOCALSTATEDIR}/gitea USER=${daemon_user} \
-		GITEA_WORK_DIR=${TRUEPREFIX}/share/gitea \
-		GITEA_CUSTOM=${LOCALSTATEDIR}/gitea/custom \
-		${daemon} ${daemon_flags}"
-}
 
 rc_cmd $1
