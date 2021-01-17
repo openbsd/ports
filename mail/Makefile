@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.397 2020/10/09 02:43:51 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.398 2021/01/17 21:27:56 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -29,6 +29,7 @@
      SUBDIR += cucipop
      SUBDIR += cue
      SUBDIR += cyrus-imapd
+     SUBDIR += dcc
      SUBDIR += dkimproxy
      SUBDIR += dma
      SUBDIR += dovecot
