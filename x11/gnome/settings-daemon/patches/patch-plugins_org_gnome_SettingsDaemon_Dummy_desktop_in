@@ -1,6 +1,9 @@
-$OpenBSD: patch-plugins_org_gnome_SettingsDaemon_Dummy_desktop_in,v 1.1 2020/11/11 14:04:25 ajacoutot Exp $
+$OpenBSD: patch-plugins_org_gnome_SettingsDaemon_Dummy_desktop_in,v 1.2 2021/01/17 09:33:37 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/merge_requests/207
+From 3c206a2a2ba2199e87ca3d2b302d848e106b1139 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 11 Nov 2020 15:02:47 +0100
+Subject: [PATCH] dummy: Do not hardcode path to false(1).
 
 Index: plugins/org.gnome.SettingsDaemon.Dummy.desktop.in
 --- plugins/org.gnome.SettingsDaemon.Dummy.desktop.in.orig
