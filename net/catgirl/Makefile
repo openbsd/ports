@@ -1,10 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2020/12/10 16:39:46 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/17 10:17:51 kn Exp $
 
 COMMENT =	curses TLS-only IRC client
-VERSION =	1.3
-REVISION =	0
-
-DISTNAME =	catgirl-${VERSION}
+DISTNAME =	catgirl-1.5
 
 CATEGORIES =	net
 
@@ -19,6 +16,7 @@ PERMIT_PACKAGE =Yes
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
+# uses pledge()
 WANTLIB +=	c curses tls
 
 MASTER_SITES =	https://git.causal.agency/catgirl/snapshot/
