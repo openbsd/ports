@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.541 2021/01/07 14:29:19 robert Exp $
+# $OpenBSD: Makefile,v 1.542 2021/01/17 10:56:05 robert Exp $
 
 BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
 
@@ -15,6 +15,7 @@ DPB_PROPERTIES=		lonesome
 COMMENT=		Chromium browser
 
 V=			87.0.4280.141
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
