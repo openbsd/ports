@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/05/29 21:17:20 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/17 16:14:33 bcallah Exp $
 @bin bin/dibuja
 @comment lib/gegl-0.4/dibuja-insta-curve.a
 @comment lib/gegl-0.4/dibuja-insta-curve.la
@@ -28,10 +28,13 @@ share/dibuja/ui/dibuja.ui
 share/dibuja/ui/draw-curve.png
 share/dibuja/ui/draw-ellipse.png
 share/dibuja/ui/draw-line.png
+share/dibuja/ui/draw-polygon.png
 share/dibuja/ui/draw-polyline.png
 share/dibuja/ui/draw-rectangle.png
 share/dibuja/ui/draw-rounded-rectangle.png
 share/dibuja/ui/stock-tool-bucket-fill-22.png
+share/dibuja/ui/stock-tool-ellipse-select-22.png
+share/dibuja/ui/stock-tool-free-select-22.png
 share/dibuja/ui/stock-tool-paintbrush-22.png
 share/dibuja/ui/stock-tool-pencil-22.png
 share/dibuja/ui/stock-tool-rect-select-22.png
@@ -57,15 +60,22 @@ share/doc/dibuja/flood-fill.png
 share/doc/dibuja/gplv3.htm
 share/doc/dibuja/line-tool.png
 share/doc/dibuja/pencil-tool.png
+share/doc/dibuja/polygon-tool.png
 share/doc/dibuja/polyline-tool.png
 share/doc/dibuja/rectangle-tool.png
 share/doc/dibuja/rectangular-selection.png
 share/doc/dibuja/selection.png
+share/doc/dibuja/stock-tool-ellipse-select-22.png
+share/doc/dibuja/stock-tool-free-select-22.png
 share/doc/dibuja/text-tool-dialog.png
 share/doc/dibuja/text-tool.png
 share/locale/ca/LC_MESSAGES/dibuja.mo
+share/locale/cs/LC_MESSAGES/dibuja.mo
 share/locale/de/LC_MESSAGES/dibuja.mo
 share/locale/es/LC_MESSAGES/dibuja.mo
+share/locale/fr/LC_MESSAGES/dibuja.mo
+share/locale/pt/LC_MESSAGES/dibuja.mo
+share/locale/ru/LC_MESSAGES/dibuja.mo
 share/pixmaps/
 share/pixmaps/dibuja.png
 share/pixmaps/dibuja.xpm

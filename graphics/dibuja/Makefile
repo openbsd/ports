@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/29 21:17:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/17 16:14:33 bcallah Exp $
 
-V =		0.12.0
+V =		0.21.12
 COMMENT =	simple to use paint program
 DISTNAME =	dibuja-${V}
 CATEGORIES =	graphics x11
