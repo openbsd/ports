@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/01/17 10:54:54 semarie Exp $
 
 COMMENT =	list obsolete files between OpenBSD upgrades
 
-V =		2.8
+V =		2.9
 DISTNAME =	sysclean-${V}
 
 CATEGORIES =	sysutils
