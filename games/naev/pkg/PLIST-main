@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2021/01/17 11:11:14 kirby Exp $
+@pkgpath games/naev/base
+@bin bin/naev
+@man man/man6/naev.6
+share/applications/org.naev.naev.desktop
+share/doc/naev/
+share/doc/naev/LICENSE
+share/doc/naev/README
+share/doc/naev/TODO
+share/icons/hicolor/256x256/apps/naev.png
+share/locale/de/LC_MESSAGES/naev_src.mo
+share/locale/ja/LC_MESSAGES/naev_src.mo
+share/locale/ko/LC_MESSAGES/naev_src.mo
+share/metainfo/
+share/metainfo/org.naev.naev.metainfo.xml
+share/naev/
+share/naev/naev-confupdate.sh
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

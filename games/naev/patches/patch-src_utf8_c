@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_utf8_c,v 1.1 2021/01/17 11:11:14 kirby Exp $
+
+Index: src/utf8.c
+--- src/utf8.c.orig
++++ src/utf8.c
+@@ -22,8 +22,10 @@
+ 
+ #if HAS_WIN32
+ #include <malloc.h>
+-#else /* HAS_WIN32 */
++#elif HAS_LINUX
+ #include <alloca.h> /* Not available in windows, necessary for linux. */
++#else
++#include <sys/malloc.h>
+ #endif /* HAS_WIN32 */
+ #include <assert.h>
+ 
