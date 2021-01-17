@@ -1,0 +1,124 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/17 21:26:38 sthen Exp $
+@newgroup _dcc:863
+@newuser _dcc:863:_dcc:daemon:dcc user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/dcc
+@mode 4555
+@owner _dcc
+@bin bin/cdcc
+@mode
+@owner
+@bin bin/dccif-test
+@mode 4555
+@owner _dcc
+@bin bin/dccproc
+@mode
+@owner
+dcc/
+dcc/cgi-bin/
+dcc/cgi-bin/README
+dcc/cgi-bin/chgpasswd
+dcc/cgi-bin/common
+dcc/cgi-bin/common.pm
+dcc/cgi-bin/edit-whiteclnt
+dcc/cgi-bin/footer
+dcc/cgi-bin/footer-dist
+dcc/cgi-bin/header
+dcc/cgi-bin/header-dist
+dcc/cgi-bin/http2https
+dcc/cgi-bin/list-log
+dcc/cgi-bin/list-msg
+dcc/cgi-bin/webuser-notify
+libexec/dcc/
+@bin libexec/dcc/check_ip_range
+@bin libexec/dcc/ck2ip
+libexec/dcc/cron-dccd
+@bin libexec/dcc/dbclean
+@bin libexec/dcc/dblist
+libexec/dcc/dcc-nagios
+libexec/dcc/dcc-stats-collect
+libexec/dcc/dcc-stats-graph
+libexec/dcc/dcc-stats-init
+libexec/dcc/dcc-stats-update
+@bin libexec/dcc/dccd
+@bin libexec/dcc/dccifd
+@mode 4555
+@owner _dcc
+@bin libexec/dcc/dccsight
+@mode
+@owner
+@bin libexec/dcc/dns-helper
+@bin libexec/dcc/dump-clients
+libexec/dcc/fetch-testmsg-whitelist
+libexec/dcc/fetchblack
+libexec/dcc/fetchids
+libexec/dcc/fix-map
+libexec/dcc/hackmc
+libexec/dcc/list-clients
+libexec/dcc/logger
+libexec/dcc/newwebuser
+libexec/dcc/rcDCC
+libexec/dcc/start-dccd
+libexec/dcc/start-dccifd
+libexec/dcc/start-dccm
+libexec/dcc/start-grey
+libexec/dcc/stats-get
+libexec/dcc/stop-dccd
+libexec/dcc/uninstalldcc
+libexec/dcc/updatedcc
+@bin libexec/dcc/wlist
+@comment update-plist will whine about these; ignore it, they are only available as preformatted pages
+@man man/cat8/cdcc.0
+@man man/cat8/dbclean.0
+@man man/cat8/dblist.0
+@man man/cat8/dcc.0
+@man man/cat8/dccd.0
+@man man/cat8/dccifd.0
+@man man/cat8/dccm.0
+@man man/cat8/dccproc.0
+@man man/cat8/dccsight.0
+share/doc/dcc/
+share/doc/dcc/FAQ.html
+share/doc/dcc/INSTALL.html
+share/doc/dcc/cdcc.html
+share/doc/dcc/dbclean.html
+share/doc/dcc/dblist.html
+share/doc/dcc/dcc.html
+share/doc/dcc/dccd.html
+share/doc/dcc/dccifd.html
+share/doc/dcc/dccm.html
+share/doc/dcc/dccproc.html
+share/doc/dcc/dccsight.html
+share/examples/dcc/
+@owner _dcc
+@group _dcc
+@comment update-plist will try to move the following line; it is wrong
+@sample /var/dcc/
+share/examples/dcc/dcc_conf
+@sample /var/dcc/dcc_conf
+share/examples/dcc/flod
+@sample /var/dcc/flod
+share/examples/dcc/grey_flod
+@sample /var/dcc/grey_flod
+share/examples/dcc/grey_whitelist
+@sample /var/dcc/grey_whitelist
+@mode 600
+share/examples/dcc/ids
+@sample /var/dcc/ids
+@mode 710
+share/examples/dcc/log/
+@sample /var/dcc/log/
+@mode 600
+share/examples/dcc/map
+@sample /var/dcc/map
+share/examples/dcc/map.txt
+@sample /var/dcc/map.txt
+@mode
+share/examples/dcc/whiteclnt
+@sample /var/dcc/whiteclnt
+share/examples/dcc/whitecommon
+@sample /var/dcc/whitecommon
+share/examples/dcc/whitelist
+@sample /var/dcc/whitelist
+@cwd /var/dcc
+@owner
+libexec

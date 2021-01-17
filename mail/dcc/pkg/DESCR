@@ -1,0 +1,22 @@
+The Distributed Checksum Clearinghouses or DCC is an anti-spam content
+filter that runs on a variety of operating systems. The counts can be
+used by SMTP servers and mail user agents to detect and reject or filter
+spam or unsolicited bulk mail. DCC servers exchange or "flood" common
+checksums. The checksums include values that are constant across common
+variations in bulk messages, including "personalizations."
+
+The DCC software is distributed under a license that is free only to
+organizations that participate in the global DCC network. ISPs that use
+DCC to filter mail for their own users are intended to be covered by the
+license. You can redistribute unchanged copies of the DCC source, but
+you may not redistribute modified, "fixed," or "improved" versions of
+the source or binaries. You also can't call it your own or blame anyone
+for the results of using it.
+
+Organizations selling anti-spam appliances or managed mail services are
+not eligible for the free license.
+
+The DCC client programs are configured to use the public DCC servers by
+default. You should use these if your mail system handles fewer than
+100,000 messages per day. If your system handles more than that, you
+should run your own local DCC servers as part of the global network.
