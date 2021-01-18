@@ -1,0 +1,4 @@
+This module provides a single function, module_path(), which takes a module
+name and finds the first directory in your @INC path where the module is
+installed locally. It returns the full path to that file, resolving any
+symlinks.
