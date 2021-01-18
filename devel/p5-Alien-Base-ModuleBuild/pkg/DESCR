@@ -1,0 +1,3 @@
+This is a subclass of Module::Build, that with Alien::Base allows for easy
+creation of Alien distributions. This module is used during the build step of
+your distribution.

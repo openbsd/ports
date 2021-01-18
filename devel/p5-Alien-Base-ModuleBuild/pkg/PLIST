@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:28:08 robert Exp $
+${P5SITE}/Alien/Base/ModuleBuild/
+${P5SITE}/Alien/Base/ModuleBuild.pm
+${P5SITE}/Alien/Base/ModuleBuild/API.pod
+${P5SITE}/Alien/Base/ModuleBuild/Authoring.pod
+${P5SITE}/Alien/Base/ModuleBuild/Cabinet.pm
+${P5SITE}/Alien/Base/ModuleBuild/FAQ.pod
+${P5SITE}/Alien/Base/ModuleBuild/File.pm
+${P5SITE}/Alien/Base/ModuleBuild/Repository/
+${P5SITE}/Alien/Base/ModuleBuild/Repository.pm
+${P5SITE}/Alien/Base/ModuleBuild/Repository/FTP.pm
+${P5SITE}/Alien/Base/ModuleBuild/Repository/HTTP.pm
+${P5SITE}/Alien/Base/ModuleBuild/Repository/Local.pm
+${P5SITE}/Alien/Base/ModuleBuild/Utils.pm
+@man man/man3p/Alien::Base::ModuleBuild.3p
+@man man/man3p/Alien::Base::ModuleBuild::API.3p
+@man man/man3p/Alien::Base::ModuleBuild::Authoring.3p
+@man man/man3p/Alien::Base::ModuleBuild::Cabinet.3p
+@man man/man3p/Alien::Base::ModuleBuild::FAQ.3p
+@man man/man3p/Alien::Base::ModuleBuild::File.3p
+@man man/man3p/Alien::Base::ModuleBuild::Repository.3p
+@man man/man3p/Alien::Base::ModuleBuild::Repository::FTP.3p
+@man man/man3p/Alien::Base::ModuleBuild::Repository::HTTP.3p
+@man man/man3p/Alien::Base::ModuleBuild::Repository::Local.3p
+@man man/man3p/Alien::Base::ModuleBuild::Utils.3p
