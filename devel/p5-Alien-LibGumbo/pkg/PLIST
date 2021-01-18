@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:28:33 robert Exp $
+${P5SITE}/Alien/LibGumbo/
+${P5SITE}/Alien/LibGumbo.pm
+${P5SITE}/Alien/LibGumbo/ConfigData.pm
+${P5SITE}/Alien/LibGumbo/Install/
+${P5SITE}/Alien/LibGumbo/Install/Files.pm
+${P5SITE}/auto/
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
+${P5SITE}/auto/share/dist/Alien-LibGumbo/
+${P5SITE}/auto/share/dist/Alien-LibGumbo/README
+@man man/man3p/Alien::LibGumbo.3p
+@man man/man3p/Alien::LibGumbo::ConfigData.3p
