@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1 2018/05/18 10:52:13 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2021/01/18 10:24:49 sthen Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -13,6 +13,6 @@ Index: configure.ac
 -  CFLAGS="-O2 ${CFLAGS}"
 -fi
 -
- dnl set debug level
- AC_MSG_CHECKING([whether to enable debugging compiler options])
- AC_ARG_ENABLE(debug,
+ AC_CHECK_FUNCS([strlcpy])
+ 
+ dnl: shared object handling

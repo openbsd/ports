@@ -1,13 +1,13 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.5 2018/01/24 21:22:58 job Exp $
-share/doc/pmacct/README.mysql
-share/examples/pmacct/sql/pmacct-create-db_bgp_v1.mysql
-share/examples/pmacct/sql/pmacct-create-db_v1.mysql
-share/examples/pmacct/sql/pmacct-create-db_v2.mysql
-share/examples/pmacct/sql/pmacct-create-db_v3.mysql
-share/examples/pmacct/sql/pmacct-create-db_v4.mysql
-share/examples/pmacct/sql/pmacct-create-db_v5.mysql
-share/examples/pmacct/sql/pmacct-create-db_v6.mysql
-share/examples/pmacct/sql/pmacct-create-db_v7.mysql
-share/examples/pmacct/sql/pmacct-create-db_v8.mysql
-share/examples/pmacct/sql/pmacct-create-db_v9.mysql
-share/examples/pmacct/sql/pmacct-grant-db.mysql
+@comment $OpenBSD: PFRAG.mysql,v 1.6 2021/01/18 10:24:49 sthen Exp $
+share/pmacct/sql/pmacct-create-db_bgp_v1.mysql
+share/pmacct/sql/pmacct-create-db_v1.mysql
+share/pmacct/sql/pmacct-create-db_v2.mysql
+share/pmacct/sql/pmacct-create-db_v3.mysql
+share/pmacct/sql/pmacct-create-db_v4.mysql
+share/pmacct/sql/pmacct-create-db_v5.mysql
+share/pmacct/sql/pmacct-create-db_v6.mysql
+share/pmacct/sql/pmacct-create-db_v7.mysql
+share/pmacct/sql/pmacct-create-db_v8.mysql
+share/pmacct/sql/pmacct-create-db_v9.mysql
+share/pmacct/sql/pmacct-grant-db.mysql
+share/pmacct/sql/README.mysql

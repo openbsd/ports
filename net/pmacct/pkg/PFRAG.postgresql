@@ -1,12 +1,12 @@
-@comment $OpenBSD: PFRAG.postgresql,v 1.5 2018/01/24 21:22:58 job Exp $
-share/doc/pmacct/README.pgsql
-share/examples/pmacct/sql/pmacct-create-db.pgsql
-share/examples/pmacct/sql/pmacct-create-table_bgp_v1.pgsql
-share/examples/pmacct/sql/pmacct-create-table_v1.pgsql
-share/examples/pmacct/sql/pmacct-create-table_v2.pgsql
-share/examples/pmacct/sql/pmacct-create-table_v3.pgsql
-share/examples/pmacct/sql/pmacct-create-table_v4.pgsql
-share/examples/pmacct/sql/pmacct-create-table_v5.pgsql
-share/examples/pmacct/sql/pmacct-create-table_v6.pgsql
-share/examples/pmacct/sql/pmacct-create-table_v7.pgsql
-share/examples/pmacct/sql/pmacct-create-table_v9.pgsql
+@comment $OpenBSD: PFRAG.postgresql,v 1.6 2021/01/18 10:24:49 sthen Exp $
+share/pmacct/sql/README.pgsql
+share/pmacct/sql/pmacct-create-db.pgsql
+share/pmacct/sql/pmacct-create-table_bgp_v1.pgsql
+share/pmacct/sql/pmacct-create-table_v1.pgsql
+share/pmacct/sql/pmacct-create-table_v2.pgsql
+share/pmacct/sql/pmacct-create-table_v3.pgsql
+share/pmacct/sql/pmacct-create-table_v4.pgsql
+share/pmacct/sql/pmacct-create-table_v5.pgsql
+share/pmacct/sql/pmacct-create-table_v6.pgsql
+share/pmacct/sql/pmacct-create-table_v7_v8.pgsql
+share/pmacct/sql/pmacct-create-table_v9.pgsql
