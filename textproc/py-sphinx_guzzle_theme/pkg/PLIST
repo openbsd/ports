@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/20 12:00:30 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/18 06:43:19 daniel Exp $
+@conflict py-sphinx_guzzle_theme-*
+@pkgpath textproc/py-sphinx_guzzle_theme
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme/
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
