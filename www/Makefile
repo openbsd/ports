@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.993 2021/01/18 13:39:46 robert Exp $
+# $OpenBSD: Makefile,v 1.994 2021/01/18 21:26:25 daniel Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -512,7 +512,6 @@
      SUBDIR += py-tempita
      SUBDIR += py-tempita,python3
      SUBDIR += py-terminado,python3
-     SUBDIR += py-tornado
      SUBDIR += py-tornado,python3
      SUBDIR += py-treq,python3
      SUBDIR += py-uritemplate
