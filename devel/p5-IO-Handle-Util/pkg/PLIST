@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:28:42 robert Exp $
+${P5SITE}/IO/Handle/
+${P5SITE}/IO/Handle/Iterator.pm
+${P5SITE}/IO/Handle/Prototype/
+${P5SITE}/IO/Handle/Prototype.pm
+${P5SITE}/IO/Handle/Prototype/Fallback.pm
+${P5SITE}/IO/Handle/Util/
+${P5SITE}/IO/Handle/Util.pm
+${P5SITE}/IO/Handle/Util/Overloading.pm
+${P5SITE}/IO/Handle/Util/Tie.pm
+@man man/man3p/IO::Handle::Iterator.3p
+@man man/man3p/IO::Handle::Prototype.3p
+@man man/man3p/IO::Handle::Prototype::Fallback.3p
+@man man/man3p/IO::Handle::Util.3p
+@man man/man3p/IO::Handle::Util::Overloading.3p
+@man man/man3p/IO::Handle::Util::Tie.3p
