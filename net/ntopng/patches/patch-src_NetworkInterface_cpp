@@ -1,21 +1,37 @@
-$OpenBSD: patch-src_NetworkInterface_cpp,v 1.6 2020/10/02 18:47:15 sthen Exp $
+$OpenBSD: patch-src_NetworkInterface_cpp,v 1.7 2021/01/18 13:15:40 sthen Exp $
 
 Index: src/NetworkInterface.cpp
 --- src/NetworkInterface.cpp.orig
 +++ src/NetworkInterface.cpp
-@@ -1312,6 +1312,7 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
- 	       0, len_on_wire, 1, 24 /* 8 Preamble + 4 CRC + 12 IFG */);
+@@ -1322,6 +1322,7 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
+ 	       0, len_on_wire, 1);
        return(pass_verdict);
      }
 +#ifdef IPPROTO_SCTP
    } else if(l4_proto == IPPROTO_SCTP) {
      if(trusted_l4_packet_len >= sizeof(struct sctphdr)) {
        /* SCTP */
-@@ -1328,6 +1329,7 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
- 	       0, len_on_wire, 1, 24 /* 8 Preamble + 4 CRC + 12 IFG */);
+@@ -1338,6 +1339,7 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
+ 	       0, len_on_wire, 1);
        return(pass_verdict);
      }
 +#endif
    } else if(l4_proto == IPPROTO_ICMP) {
      icmp_info.dissectICMP(trusted_l4_packet_len, l4);
    } else {
+@@ -1629,9 +1631,13 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
+      (2) ensures that periodic_stats_update is not performed too frequently as it could be detrimental for performances and lead
+          to packet drops.
+    */
++  timeval tmpt;
++  tmpt.tv_sec = when->tv_sec;
++  tmpt.tv_usec = when->tv_usec;
++
+   if(flow->get_current_bytes_cli2srv() + flow->get_current_bytes_srv2cli() >= PERIODIC_STATS_UPDATE_MIN_REFRESH_BYTES
+-     && Utils::msTimevalDiff(when, flow->get_current_update_time()) >= PERIODIC_STATS_UPDATE_MIN_REFRESH_MS) {
+-    flow->periodic_stats_update(when);
++     && Utils::msTimevalDiff(&tmpt, flow->get_current_update_time()) >= PERIODIC_STATS_UPDATE_MIN_REFRESH_MS) {
++    flow->periodic_stats_update(&tmpt);
+   }
+ 
+   return(pass_verdict);

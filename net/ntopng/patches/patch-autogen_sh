@@ -1,4 +1,4 @@
-$OpenBSD: patch-autogen_sh,v 1.3 2020/10/02 18:47:14 sthen Exp $
+$OpenBSD: patch-autogen_sh,v 1.4 2021/01/18 13:15:40 sthen Exp $
 
 Index: autogen.sh
 --- autogen.sh.orig
@@ -7,5 +7,16 @@ Index: autogen.sh
 -#!/usr/bin/env bash
 +#!/bin/ksh
  
- TODAY=`date +%y%m%d`
- MAJOR_RELEASE="4"
+ 
+ AUTOCONF=$(command -v autoconf)
+@@ -47,8 +47,8 @@ GIT_DATE=`date +%Y%m%d`
+ GIT_RELEASE="$GIT_TAG:$GIT_DATE"
+ GIT_BRANCH=`git rev-parse --abbrev-ref HEAD | sed "s/heads\///g"`
+ else
+-GIT_RELEASE="$VERSION"
+-GIT_DATE=`date`
++GIT_RELEASE="${GIT_RELEASE:=$VERSION}"
++GIT_DATE="${GIT_DATE:=`date`}"
+ GIT_BRANCH=""
+ fi
+ 
