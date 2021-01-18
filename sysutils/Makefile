@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.591 2021/01/11 22:13:08 kn Exp $
+# $OpenBSD: Makefile,v 1.592 2021/01/18 13:20:24 robert Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -236,6 +236,7 @@
      SUBDIR += p5-Sys-Virt
      SUBDIR += p5-UPS-Nut
      SUBDIR += p5-Unix-PID
+     SUBDIR += p5-Unix-Process
      SUBDIR += p5-Unix-Statgrab
      SUBDIR += p5-Unix-Syslog
      SUBDIR += packer
