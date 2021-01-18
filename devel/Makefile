@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2055 2021/01/17 19:34:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2056 2021/01/18 13:35:19 robert Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -522,6 +522,9 @@
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Munkres
      SUBDIR += p5-Algorithm-Permute
+     SUBDIR += p5-Alien-Base
+     SUBDIR += p5-Alien-Base-ModuleBuild
+     SUBDIR += p5-Alien-LibGumbo
      SUBDIR += p5-Alien-wxWidgets
      SUBDIR += p5-Any-Moose
      SUBDIR += p5-AnyEvent
@@ -663,6 +666,7 @@
      SUBDIR += p5-Data-Lazy
      SUBDIR += p5-Data-Munge
      SUBDIR += p5-Data-OptList
+     SUBDIR += p5-Data-Perl
      SUBDIR += p5-Data-Printer
      SUBDIR += p5-Data-Random
      SUBDIR += p5-Data-Section-Simple
@@ -843,6 +847,7 @@
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-CaptureOutput
      SUBDIR += p5-IO-Digest
+     SUBDIR += p5-IO-Handle-Util
      SUBDIR += p5-IO-Interactive
      SUBDIR += p5-IO-KQueue
      SUBDIR += p5-IO-Lambda
@@ -905,6 +910,7 @@
      SUBDIR += p5-Memoize-ExpireLRU
      SUBDIR += p5-Mixin-Linewise
      SUBDIR += p5-Mock-Config
+     SUBDIR += p5-Module-Path
      SUBDIR += p5-Modern-Perl
      SUBDIR += p5-Module-Build
      SUBDIR += p5-Module-Build-Pluggable
@@ -930,9 +936,12 @@
      SUBDIR += p5-Module-Which
      SUBDIR += p5-Moo
      SUBDIR += p5-MooX-Aliases
+     SUBDIR += p5-MooX-HandlesVia
      SUBDIR += p5-MooX-StrictConstructor
      SUBDIR += p5-MooX-Traits
+     SUBDIR += p5-MooX-TypeTiny
      SUBDIR += p5-MooX-Types-MooseLike
+     SUBDIR += p5-MooX-late
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Aliases
      SUBDIR += p5-MooseX-Attribute-Chained
@@ -1022,6 +1031,7 @@
      SUBDIR += p5-Parse-Win32Registry
      SUBDIR += p5-Parse-Yapp
      SUBDIR += p5-Path-Class
+     SUBDIR += p5-Path-Dispatcher
      SUBDIR += p5-Path-Tiny
      SUBDIR += p5-Perl-Command
      SUBDIR += p5-Perl-Critic
@@ -1070,6 +1080,8 @@
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Shell
      SUBDIR += p5-Shell-Command
+     SUBDIR += p5-Shell-Config-Generate
+     SUBDIR += p5-Shell-Guess
      SUBDIR += p5-Signal-Mask
      SUBDIR += p5-Smart-Comments
      SUBDIR += p5-Sort-Key
@@ -1088,6 +1100,7 @@
      SUBDIR += p5-Sub-Exporter
      SUBDIR += p5-Sub-Exporter-ForMethods
      SUBDIR += p5-Sub-Exporter-Progressive
+     SUBDIR += p5-Sub-HandlesVia
      SUBDIR += p5-Sub-Identify
      SUBDIR += p5-Sub-Info
      SUBDIR += p5-Sub-Install
@@ -1274,6 +1287,7 @@
      SUBDIR += p5-ZMQ-LibZMQ3
      SUBDIR += p5-accessors
      SUBDIR += p5-aliased
+     SUBDIR += p5-asa
      SUBDIR += p5-autobox
      SUBDIR += p5-bareword-filehandles
      SUBDIR += p5-boolean
