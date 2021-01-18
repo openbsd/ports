@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:36:50 robert Exp $
+${P5SITE}/HTML/
+${P5SITE}/HTML/FormatExternal.pm
+${P5SITE}/HTML/FormatText/
+${P5SITE}/HTML/FormatText/Elinks.pm
+${P5SITE}/HTML/FormatText/Html2text.pm
+${P5SITE}/HTML/FormatText/Links.pm
+${P5SITE}/HTML/FormatText/Lynx.pm
+${P5SITE}/HTML/FormatText/Netrik.pm
+${P5SITE}/HTML/FormatText/Vilistextum.pm
+${P5SITE}/HTML/FormatText/W3m.pm
+${P5SITE}/HTML/FormatText/Zen.pm
+@man man/man3p/HTML::FormatExternal.3p
+@man man/man3p/HTML::FormatText::Elinks.3p
+@man man/man3p/HTML::FormatText::Html2text.3p
+@man man/man3p/HTML::FormatText::Links.3p
+@man man/man3p/HTML::FormatText::Lynx.3p
+@man man/man3p/HTML::FormatText::Netrik.3p
+@man man/man3p/HTML::FormatText::Vilistextum.3p
+@man man/man3p/HTML::FormatText::W3m.3p
+@man man/man3p/HTML::FormatText::Zen.3p

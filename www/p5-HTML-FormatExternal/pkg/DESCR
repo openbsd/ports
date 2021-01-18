@@ -1,0 +1,11 @@
+This is a collection of formatter modules which turn HTML into plain text by
+dumping it through the respective external programs. e.g.:
+
+- HTML::FormatText::Elinks
+- HTML::FormatText::Html2text
+- HTML::FormatText::Links
+- HTML::FormatText::Lynx
+- HTML::FormatText::Netrik
+- HTML::FormatText::Vilistextum
+- HTML::FormatText::W3m
+- HTML::FormatText::Zen
