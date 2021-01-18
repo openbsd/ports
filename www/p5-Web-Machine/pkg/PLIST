@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:37:32 robert Exp $
+@conflict p5-libwww-<6.0
+${P5SITE}/Web/
+${P5SITE}/Web/Machine/
+${P5SITE}/Web/Machine.pm
+${P5SITE}/Web/Machine/FSM/
+${P5SITE}/Web/Machine/FSM.pm
+${P5SITE}/Web/Machine/FSM/States.pm
+${P5SITE}/Web/Machine/I18N/
+${P5SITE}/Web/Machine/I18N.pm
+${P5SITE}/Web/Machine/I18N/en.pm
+${P5SITE}/Web/Machine/Manual.pod
+${P5SITE}/Web/Machine/Resource.pm
+${P5SITE}/Web/Machine/Util/
+${P5SITE}/Web/Machine/Util.pm
+${P5SITE}/Web/Machine/Util/BodyEncoding.pm
+${P5SITE}/Web/Machine/Util/ContentNegotiation.pm
+@man man/man3p/Web::Machine.3p
+@man man/man3p/Web::Machine::FSM.3p
+@man man/man3p/Web::Machine::FSM::States.3p
+@man man/man3p/Web::Machine::I18N.3p
+@man man/man3p/Web::Machine::I18N::en.3p
+@man man/man3p/Web::Machine::Manual.3p
+@man man/man3p/Web::Machine::Resource.3p
+@man man/man3p/Web::Machine::Util.3p
+@man man/man3p/Web::Machine::Util::BodyEncoding.3p
+@man man/man3p/Web::Machine::Util::ContentNegotiation.3p
