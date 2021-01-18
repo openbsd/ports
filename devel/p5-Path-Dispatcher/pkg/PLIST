@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:29:04 robert Exp $
+${P5SITE}/Path/
+${P5SITE}/Path/Dispatcher/
+${P5SITE}/Path/Dispatcher.pm
+${P5SITE}/Path/Dispatcher/Cookbook.pod
+${P5SITE}/Path/Dispatcher/Dispatch.pm
+${P5SITE}/Path/Dispatcher/Match.pm
+${P5SITE}/Path/Dispatcher/Path.pm
+${P5SITE}/Path/Dispatcher/Role/
+${P5SITE}/Path/Dispatcher/Role/Rules.pm
+${P5SITE}/Path/Dispatcher/Rule/
+${P5SITE}/Path/Dispatcher/Rule.pm
+${P5SITE}/Path/Dispatcher/Rule/Alternation.pm
+${P5SITE}/Path/Dispatcher/Rule/Always.pm
+${P5SITE}/Path/Dispatcher/Rule/Chain.pm
+${P5SITE}/Path/Dispatcher/Rule/CodeRef.pm
+${P5SITE}/Path/Dispatcher/Rule/Dispatch.pm
+${P5SITE}/Path/Dispatcher/Rule/Empty.pm
+${P5SITE}/Path/Dispatcher/Rule/Enum.pm
+${P5SITE}/Path/Dispatcher/Rule/Eq.pm
+${P5SITE}/Path/Dispatcher/Rule/Intersection.pm
+${P5SITE}/Path/Dispatcher/Rule/Metadata.pm
+${P5SITE}/Path/Dispatcher/Rule/Regex.pm
+${P5SITE}/Path/Dispatcher/Rule/Sequence.pm
+${P5SITE}/Path/Dispatcher/Rule/Tokens.pm
+${P5SITE}/Path/Dispatcher/Rule/Under.pm
+@man man/man3p/Path::Dispatcher.3p
+@man man/man3p/Path::Dispatcher::Cookbook.3p
+@man man/man3p/Path::Dispatcher::Dispatch.3p
+@man man/man3p/Path::Dispatcher::Match.3p
+@man man/man3p/Path::Dispatcher::Path.3p
+@man man/man3p/Path::Dispatcher::Role::Rules.3p
+@man man/man3p/Path::Dispatcher::Rule.3p
+@man man/man3p/Path::Dispatcher::Rule::Alternation.3p
+@man man/man3p/Path::Dispatcher::Rule::Always.3p
+@man man/man3p/Path::Dispatcher::Rule::Chain.3p
+@man man/man3p/Path::Dispatcher::Rule::CodeRef.3p
+@man man/man3p/Path::Dispatcher::Rule::Dispatch.3p
+@man man/man3p/Path::Dispatcher::Rule::Empty.3p
+@man man/man3p/Path::Dispatcher::Rule::Enum.3p
+@man man/man3p/Path::Dispatcher::Rule::Eq.3p
+@man man/man3p/Path::Dispatcher::Rule::Intersection.3p
+@man man/man3p/Path::Dispatcher::Rule::Metadata.3p
+@man man/man3p/Path::Dispatcher::Rule::Regex.3p
+@man man/man3p/Path::Dispatcher::Rule::Sequence.3p
+@man man/man3p/Path::Dispatcher::Rule::Tokens.3p
+@man man/man3p/Path::Dispatcher::Rule::Under.3p
