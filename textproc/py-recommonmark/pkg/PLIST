@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/01 10:02:50 jca Exp $
-bin/cm2html${MODPY_BIN_SUFFIX}
-bin/cm2latex${MODPY_BIN_SUFFIX}
-bin/cm2man${MODPY_BIN_SUFFIX}
-bin/cm2pseudoxml${MODPY_BIN_SUFFIX}
-bin/cm2xetex${MODPY_BIN_SUFFIX}
-bin/cm2xml${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.2 2021/01/18 00:15:38 daniel Exp $
+@conflict py-recommonmark-*
+@pkgpath textproc/py-recommonmark
+bin/cm2html
+bin/cm2latex
+bin/cm2man
+bin/cm2pseudoxml
+bin/cm2xetex
+bin/cm2xml
 lib/python${MODPY_VERSION}/site-packages/recommonmark/
 lib/python${MODPY_VERSION}/site-packages/recommonmark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/recommonmark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

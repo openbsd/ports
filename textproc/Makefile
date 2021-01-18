@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.657 2021/01/15 01:00:15 daniel Exp $
+# $OpenBSD: Makefile,v 1.658 2021/01/18 00:15:37 daniel Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -381,7 +381,6 @@
      SUBDIR += py-chardet,python3
      SUBDIR += py-colored
      SUBDIR += py-colored,python3
-     SUBDIR += py-commonmark
      SUBDIR += py-commonmark,python3
      SUBDIR += py-css-parser,python3
      SUBDIR += py-cssselect
@@ -444,7 +443,6 @@
      SUBDIR += py-pygments,python3
      SUBDIR += py-pykwalify
      SUBDIR += py-pykwalify,python3
-     SUBDIR += py-recommonmark
      SUBDIR += py-recommonmark,python3
      SUBDIR += py-ruamel.yaml
      SUBDIR += py-ruamel.yaml,python3

@@ -1,10 +1,10 @@
-$OpenBSD: patch-CommonMark_tests_run_spec_tests_py,v 1.1.1.1 2017/11/02 09:32:36 sebastia Exp $
+$OpenBSD: patch-commonmark_tests_run_spec_tests_py,v 1.1 2021/01/18 00:15:38 daniel Exp $
 
 The UTF chars break the test
 
-Index: CommonMark/tests/run_spec_tests.py
---- CommonMark/tests/run_spec_tests.py.orig
-+++ CommonMark/tests/run_spec_tests.py
+Index: commonmark/tests/run_spec_tests.py
+--- commonmark/tests/run_spec_tests.py.orig
++++ commonmark/tests/run_spec_tests.py
 @@ -185,7 +185,7 @@ def main():
              passed += 1
              catStats[current_section][0] += 1
