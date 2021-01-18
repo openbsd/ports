@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2021/01/09 01:28:03 mestre Exp $
+# $OpenBSD: Makefile,v 1.227 2021/01/18 10:02:28 mestre Exp $
 
 COMMENT =	CLI program to download videos from YouTube and other sites
 
@@ -10,7 +10,7 @@ CATEGORIES =	www
 
 HOMEPAGE =	https://yt-dl.org
 
-MAINTAINER =	Paul Irofti <paul@irofti.net>
+MAINTAINER =	Ricardo Mestre <mestre@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE =	Yes
