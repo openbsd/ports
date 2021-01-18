@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.118 2020/12/05 17:44:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.119 2021/01/18 00:09:04 naddy Exp $
 
 COMMENT=	simple editor, inspired by Pico
 
-DISTNAME=	nano-5.4
+DISTNAME=	nano-5.5
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
 
