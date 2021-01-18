@@ -1,30 +1,9 @@
-$OpenBSD: patch-src_LuaEngine_cpp,v 1.4 2020/10/02 18:47:15 sthen Exp $
+$OpenBSD: patch-src_LuaEngine_cpp,v 1.5 2021/01/18 11:17:57 sthen Exp $
 
 Index: src/LuaEngine.cpp
 --- src/LuaEngine.cpp.orig
 +++ src/LuaEngine.cpp
-@@ -4274,16 +4274,20 @@ static int ntop_interface_live_capture(lua_State* vm) 
-   //ntop->getTrace()->traceEvent(TRACE_NORMAL, "Using capture filter '%s'", bpf);
- 
-   if(bpf[0] != '\0') {
-+#ifndef __OpenBSD__ /* needs non-ancient libpcap */
-     if(pcap_compile_nopcap(65535,   /* snaplen */
- 			   iface->get_datalink(), /* linktype */
- 			   &c->live_capture.fcode, /* program */
- 			   bpf,     /* const char *buf */
- 			   0,       /* optimize */
- 			   PCAP_NETMASK_UNKNOWN) == -1)
-+#endif
-       ntop->getTrace()->traceEvent(TRACE_WARNING,
- 				   "Unable to set capture filter %s. Filter ignored.", bpf);
-+#ifndef __OpenBSD__ /* needs non-ancient libpcap */
-     else
-       c->live_capture.bpfFilterSet = true;
-+#endif
-   }
- 
-   if(ntop_interface->registerLiveCapture(c, &capture_id)) {
-@@ -7411,7 +7415,7 @@ static int ntop_generate_csrf_value(lua_State* vm) {
+@@ -7411,7 +7411,7 @@ static int ntop_generate_csrf_value(lua_State* vm) {
  
  #ifdef __OpenBSD__
    snprintf(random_a, sizeof(random_a), "%d", arc4random());

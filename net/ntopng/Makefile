@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/10/21 00:24:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/01/18 11:17:57 sthen Exp $
 
 # shared lib is built but not actually installed at present; patches
 # are needed for the build so it seems easier to keep the SHARED_LIBS
@@ -10,6 +10,8 @@ COMMENT=	network traffic probe with web ui and deep packet inspection
 GH_ACCOUNT=	ntop
 GH_PROJECT=	ntopng
 GH_COMMIT=	882b2551c1f845d9769894f4953a9495451848fc
+REVISION=	0
+# i fail at dates
 DISTNAME=	ntopng-4.0pl20202010
 DISTFILES=	ntopng-{}${GH_COMMIT}.tar.gz ndpi-${NDPI_V}.tar.gz:0
 # using newer commits from the 4.0-stable/3.2-stable branches; normally has
