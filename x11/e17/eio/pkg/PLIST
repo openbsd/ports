@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/12/28 12:26:39 sthen Exp $
-include/eio-1/
-include/eio-1/Eio.h
-include/eio-1/eio_inline_helper.x
-lib/libeio.la
-@lib lib/libeio.so.${LIBeio_VERSION}
-lib/pkgconfig/eio.pc
-@comment share/eio/
-@comment share/eio/examples/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.684 2021/01/10 22:17:22 daniel Exp $
+# $OpenBSD: Makefile,v 1.685 2021/01/18 19:48:14 jasper Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -54,7 +54,6 @@
      SUBDIR += dzen2
      SUBDIR += dzen2,xft
      SUBDIR += e16keyedit
-     SUBDIR += e17
      SUBDIR += echinus
      SUBDIR += ede
      SUBDIR += elementary

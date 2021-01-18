@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1141 2021/01/18 06:43:19 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1142 2021/01/18 19:48:14 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2031,6 +2031,19 @@ my $obsolete_reason = {
 	'orage' => 3,
 	'xfce4-statusnotifier' => 3,
 	'pylint3-gui' => 3,
+	'e_dbus' => 3,
+	'ecore' => 3,
+	'edje' => 3,
+	'eet' => 3,
+	'efreet' => 3,
+	'eina' => 3,
+	'eio' => 3,
+	'elementary' => 3,
+	'embryo' => 3,
+	'emotion' => 3,
+	'enlightenment' => 3,
+	'ethumb' => 3,
+	'evas' => 3,
 };
 
 # reasons for obsolete packages
