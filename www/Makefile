@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.992 2020/12/30 15:02:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.993 2021/01/18 13:39:46 robert Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -233,9 +233,11 @@
      SUBDIR += p5-HTML-Form
      SUBDIR += p5-HTML-FormFu
      SUBDIR += p5-HTML-Format
+     SUBDIR += p5-HTML-FormatExternal
      SUBDIR += p5-HTML-FormatText-WithLinks
      SUBDIR += p5-HTML-FormatText-WithLinks-AndTables
      SUBDIR += p5-HTML-FromText
+     SUBDIR += p5-HTML-Gumbo
      SUBDIR += p5-HTML-Highlight
      SUBDIR += p5-HTML-Lint
      SUBDIR += p5-HTML-Mason
@@ -278,6 +280,7 @@
      SUBDIR += p5-HTTP-Date
      SUBDIR += p5-HTTP-Entity-Parser
      SUBDIR += p5-HTTP-GetImages
+     SUBDIR += p5-HTTP-Headers-ActionPack
      SUBDIR += p5-HTTP-Headers-Fast
      SUBDIR += p5-HTTP-Lite
      SUBDIR += p5-HTTP-Message
@@ -361,6 +364,7 @@
      SUBDIR += p5-WWW-Tumblr
      SUBDIR += p5-WWW-Wikipedia
      SUBDIR += p5-Weather-Com
+     SUBDIR += p5-Web-Machine
      SUBDIR += p5-WebService-Audioscrobbler
      SUBDIR += p5-WebService-MusicBrainz
      SUBDIR += p5-XML-Atom
