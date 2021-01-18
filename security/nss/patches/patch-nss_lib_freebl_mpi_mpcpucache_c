@@ -1,0 +1,30 @@
+$OpenBSD: patch-nss_lib_freebl_mpi_mpcpucache_c,v 1.1 2021/01/18 12:17:47 jasper Exp $
+
+Index: nss/lib/freebl/mpi/mpcpucache.c
+--- nss/lib/freebl/mpi/mpcpucache.c.orig
++++ nss/lib/freebl/mpi/mpcpucache.c
+@@ -706,6 +706,16 @@ s_mpi_getProcessorLineSize()
+ #endif
+ 
+ #if defined(__ppc64__)
++#if defined(__OpenBSD__)
++unsigned long
++s_mpi_getProcessorLineSize()
++{
++	/* Lacking a mechanism to query for the processor line size
++	 * we can safely fallback to this value instead.
++	 */
++	return 128;
++}
++#else
+ /*
+  *  Sigh, The PPC has some really nice features to help us determine cache
+  *  size, since it had lots of direct control functions to do so. The POWER
+@@ -759,6 +769,7 @@ s_mpi_getProcessorLineSize()
+     }
+     return 0;
+ }
++#endif
+ 
+ #define MPI_GET_PROCESSOR_LINE_SIZE_DEFINED 1
+ #endif
