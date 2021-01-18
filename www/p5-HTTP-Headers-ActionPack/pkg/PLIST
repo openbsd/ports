@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:37:26 robert Exp $
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/Headers/
+${P5SITE}/HTTP/Headers/ActionPack/
+${P5SITE}/HTTP/Headers/ActionPack.pm
+${P5SITE}/HTTP/Headers/ActionPack/AcceptCharset.pm
+${P5SITE}/HTTP/Headers/ActionPack/AcceptLanguage.pm
+${P5SITE}/HTTP/Headers/ActionPack/AuthenticationInfo.pm
+${P5SITE}/HTTP/Headers/ActionPack/Authorization/
+${P5SITE}/HTTP/Headers/ActionPack/Authorization.pm
+${P5SITE}/HTTP/Headers/ActionPack/Authorization/Basic.pm
+${P5SITE}/HTTP/Headers/ActionPack/Authorization/Digest.pm
+${P5SITE}/HTTP/Headers/ActionPack/ContentNegotiation.pm
+${P5SITE}/HTTP/Headers/ActionPack/Core/
+${P5SITE}/HTTP/Headers/ActionPack/Core/Base.pm
+${P5SITE}/HTTP/Headers/ActionPack/Core/BaseAuthHeader.pm
+${P5SITE}/HTTP/Headers/ActionPack/Core/BaseHeaderList.pm
+${P5SITE}/HTTP/Headers/ActionPack/Core/BaseHeaderType.pm
+${P5SITE}/HTTP/Headers/ActionPack/Core/BaseHeaderWithParams.pm
+${P5SITE}/HTTP/Headers/ActionPack/DateHeader.pm
+${P5SITE}/HTTP/Headers/ActionPack/LinkHeader.pm
+${P5SITE}/HTTP/Headers/ActionPack/LinkList.pm
+${P5SITE}/HTTP/Headers/ActionPack/MediaType.pm
+${P5SITE}/HTTP/Headers/ActionPack/MediaTypeList.pm
+${P5SITE}/HTTP/Headers/ActionPack/PriorityList.pm
+${P5SITE}/HTTP/Headers/ActionPack/Util.pm
+${P5SITE}/HTTP/Headers/ActionPack/WWWAuthenticate.pm
+@man man/man3p/HTTP::Headers::ActionPack.3p
+@man man/man3p/HTTP::Headers::ActionPack::AcceptCharset.3p
+@man man/man3p/HTTP::Headers::ActionPack::AcceptLanguage.3p
+@man man/man3p/HTTP::Headers::ActionPack::AuthenticationInfo.3p
+@man man/man3p/HTTP::Headers::ActionPack::Authorization.3p
+@man man/man3p/HTTP::Headers::ActionPack::Authorization::Basic.3p
+@man man/man3p/HTTP::Headers::ActionPack::Authorization::Digest.3p
+@man man/man3p/HTTP::Headers::ActionPack::ContentNegotiation.3p
+@man man/man3p/HTTP::Headers::ActionPack::Core::Base.3p
+@man man/man3p/HTTP::Headers::ActionPack::Core::BaseAuthHeader.3p
+@man man/man3p/HTTP::Headers::ActionPack::Core::BaseHeaderList.3p
+@man man/man3p/HTTP::Headers::ActionPack::Core::BaseHeaderType.3p
+@man man/man3p/HTTP::Headers::ActionPack::Core::BaseHeaderWithParams.3p
+@man man/man3p/HTTP::Headers::ActionPack::DateHeader.3p
+@man man/man3p/HTTP::Headers::ActionPack::LinkHeader.3p
+@man man/man3p/HTTP::Headers::ActionPack::LinkList.3p
+@man man/man3p/HTTP::Headers::ActionPack::MediaType.3p
+@man man/man3p/HTTP::Headers::ActionPack::MediaTypeList.3p
+@man man/man3p/HTTP::Headers::ActionPack::PriorityList.3p
+@man man/man3p/HTTP::Headers::ActionPack::Util.3p
+@man man/man3p/HTTP::Headers::ActionPack::WWWAuthenticate.3p
