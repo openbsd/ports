@@ -1,0 +1,3 @@
+All fields from the ps command can be fetched by calling a function of their
+name (see SYNOPSIS). If the pid is not given as an argument to the function, $$
+(cur pid) is assumed.
