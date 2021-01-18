@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:28:51 robert Exp $
+${P5SITE}/Data/Perl/Bool/
+${P5SITE}/Data/Perl/Bool/MooseLike.pm
+${P5SITE}/Data/Perl/Collection/Array/
+${P5SITE}/Data/Perl/Collection/Array/MooseLike.pm
+${P5SITE}/Data/Perl/Collection/Hash/
+${P5SITE}/Data/Perl/Collection/Hash/MooseLike.pm
+${P5SITE}/Data/Perl/Number/
+${P5SITE}/Data/Perl/Number/MooseLike.pm
+${P5SITE}/Data/Perl/String/
+${P5SITE}/Data/Perl/String/MooseLike.pm
+${P5SITE}/MooX/
+${P5SITE}/MooX/HandlesVia.pm
+@man man/man3p/Data::Perl::Bool::MooseLike.3p
+@man man/man3p/Data::Perl::Collection::Array::MooseLike.3p
+@man man/man3p/Data::Perl::Collection::Hash::MooseLike.3p
+@man man/man3p/Data::Perl::Number::MooseLike.3p
+@man man/man3p/Data::Perl::String::MooseLike.3p
+@man man/man3p/MooX::HandlesVia.3p
