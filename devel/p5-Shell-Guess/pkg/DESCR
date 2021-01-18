@@ -1,0 +1,5 @@
+Shell::Guess makes a reasonably aggressive attempt to determine the shell being
+employed by the user, either the shell that executed the perl script directly
+(the "running" shell), or the users' login shell (the "login" shell). It does
+this by a variety of means available to it, depending on the platform that it
+is running on.
