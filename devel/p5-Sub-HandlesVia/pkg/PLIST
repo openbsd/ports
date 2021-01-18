@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:29:18 robert Exp $
+${P5SITE}/Sub/
+${P5SITE}/Sub/HandlesVia/
+${P5SITE}/Sub/HandlesVia.pm
+${P5SITE}/Sub/HandlesVia/Handler.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/
+${P5SITE}/Sub/HandlesVia/HandlerLibrary.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Array.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Bool.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Code.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Counter.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Hash.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Number.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Scalar.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/String.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/
+${P5SITE}/Sub/HandlesVia/Toolkit.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Moo.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Moose.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Mouse.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Plain.pm
+@man man/man3p/Sub::HandlesVia.3p
+@man man/man3p/Sub::HandlesVia::Toolkit.3p
