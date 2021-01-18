@@ -1,0 +1,3 @@
+Alien::Base comprises base classes to help in the construction of Alien::
+modules. Modules in the Alien namespace are used to locate and install (if
+necessary) external libraries needed by other Perl modules.
