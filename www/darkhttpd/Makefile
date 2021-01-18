@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/18 21:20:58 sthen Exp $
 
-COMMENT=		simple and small webserver intended for ad-hoc usage
+COMMENT=	simple and small webserver intended for ad-hoc usage
 
-DISTNAME =		darkhttpd-1.12
-CATEGORIES=		www
+CATEGORIES=	www
+GH_ACCOUNT=	emikulic
+GH_PROJECT=	darkhttpd
+GH_TAGNAME=	v1.13
 
-HOMEPAGE=		http://unix4lyfe.org/darkhttpd/
+HOMEPAGE=	https://unix4lyfe.org/darkhttpd/
 
 # ISC
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB=	c
 
-WANTLIB=		c
-
-NO_TEST=		Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/darkhttpd ${PREFIX}/sbin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/darkhttpd/
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/darkhttpd/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/darkhttpd/README
 
 .include <bsd.port.mk>
