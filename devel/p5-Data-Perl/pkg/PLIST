@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:28:37 robert Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Perl/
+${P5SITE}/Data/Perl.pm
+${P5SITE}/Data/Perl/Bool.pm
+${P5SITE}/Data/Perl/Code.pm
+${P5SITE}/Data/Perl/Collection/
+${P5SITE}/Data/Perl/Collection/Array.pm
+${P5SITE}/Data/Perl/Collection/Hash.pm
+${P5SITE}/Data/Perl/Counter.pm
+${P5SITE}/Data/Perl/Number.pm
+${P5SITE}/Data/Perl/Role/
+${P5SITE}/Data/Perl/Role/Bool.pm
+${P5SITE}/Data/Perl/Role/Code.pm
+${P5SITE}/Data/Perl/Role/Collection/
+${P5SITE}/Data/Perl/Role/Collection/Array.pm
+${P5SITE}/Data/Perl/Role/Collection/Hash.pm
+${P5SITE}/Data/Perl/Role/Counter.pm
+${P5SITE}/Data/Perl/Role/Number.pm
+${P5SITE}/Data/Perl/Role/String.pm
+${P5SITE}/Data/Perl/String.pm
+@man man/man3p/Data::Perl.3p
+@man man/man3p/Data::Perl::Bool.3p
+@man man/man3p/Data::Perl::Code.3p
+@man man/man3p/Data::Perl::Collection::Array.3p
+@man man/man3p/Data::Perl::Collection::Hash.3p
+@man man/man3p/Data::Perl::Counter.3p
+@man man/man3p/Data::Perl::Number.3p
+@man man/man3p/Data::Perl::Role::Bool.3p
+@man man/man3p/Data::Perl::Role::Code.3p
+@man man/man3p/Data::Perl::Role::Collection::Array.3p
+@man man/man3p/Data::Perl::Role::Collection::Hash.3p
+@man man/man3p/Data::Perl::Role::Counter.3p
+@man man/man3p/Data::Perl::Role::Number.3p
+@man man/man3p/Data::Perl::Role::String.3p
+@man man/man3p/Data::Perl::String.3p
