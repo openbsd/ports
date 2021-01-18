@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:15:15 robert Exp $
+${P5ARCH}/
+${P5ARCH}/Encode/
+${P5ARCH}/Encode/HanExtra.pm
+${P5ARCH}/Encode/TW/
+${P5ARCH}/Encode/TW/Unisys/
+${P5ARCH}/Encode/TW/Unisys/SOSI1.pm
+${P5ARCH}/Encode/TW/Unisys/SOSI2.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Encode/
+${P5ARCH}/auto/Encode/HanExtra/
+@so ${P5ARCH}/auto/Encode/HanExtra/HanExtra.so
+@man man/man3p/Encode::HanExtra.3p
+@man man/man3p/Encode::TW::Unisys::SOSI1.3p
+@man man/man3p/Encode::TW::Unisys::SOSI2.3p
