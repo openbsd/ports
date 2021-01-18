@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/02/22 16:57:08 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/01/18 15:37:13 sthen Exp $
 lib/
 lib/php/
 pear/lib/.registry/mail_mime.reg
@@ -12,6 +12,7 @@ pear/tests/Mail_Mime/tests/content_transfer_encoding.phpt
 pear/tests/Mail_Mime/tests/encoding_case.phpt
 pear/tests/Mail_Mime/tests/headers_with_mbstring.phpt
 pear/tests/Mail_Mime/tests/headers_without_mbstring.phpt
+pear/tests/Mail_Mime/tests/qp_encoding_test.phpt
 pear/tests/Mail_Mime/tests/sleep_wakeup_EOL-bug3488-part1.phpt
 pear/tests/Mail_Mime/tests/sleep_wakeup_EOL-bug3488-part2.phpt
 pear/tests/Mail_Mime/tests/test_Bug_10596_1.phpt
@@ -54,3 +55,5 @@ pear/tests/Mail_Mime/tests/test_Bug_8541_1.phpt
 pear/tests/Mail_Mime/tests/test_Bug_9722_1.phpt
 pear/tests/Mail_Mime/tests/test_Bug_GH16.phpt
 pear/tests/Mail_Mime/tests/test_Bug_GH19.phpt
+pear/tests/Mail_Mime/tests/test_linebreak_dot.phpt
+pear/tests/Mail_Mime/tests/test_linebreak_larger_76.phpt
