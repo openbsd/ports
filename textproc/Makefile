@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.659 2021/01/18 06:43:19 daniel Exp $
+# $OpenBSD: Makefile,v 1.660 2021/01/18 13:17:15 robert Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -174,6 +174,7 @@
      SUBDIR += p5-Data-Password
      SUBDIR += p5-Email-Find
      SUBDIR += p5-Encode-Detect
+     SUBDIR += p5-Encode-HanExtra
      SUBDIR += p5-Encode-Locale
      SUBDIR += p5-File-KeePass
      SUBDIR += p5-Font-AFM
