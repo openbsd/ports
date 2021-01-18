@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2019/10/17 06:32:20 robert Exp $
+# $OpenBSD: Makefile,v 1.48 2021/01/18 13:52:23 robert Exp $
 
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-4.4.4
+DISTNAME=		rt-5.0.0
 CATEGORIES=		www
-
-REVISION=		1
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
@@ -38,9 +36,13 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			devel/p5-Locale-Maketext-Fuzzy \
 			devel/p5-Locale-Maketext-Lexicon \
 			devel/p5-Log-Dispatch \
+			devel/p5-Module-Path \
 			devel/p5-Module-Pluggable \
 			devel/p5-Module-Refresh \
 			devel/p5-Module-Versions-Report \
+			devel/p5-MooseX-NonMoose \
+			devel/p5-MooseX-Role-Parameterized \
+			devel/p5-Path-Dispatcher \
 			devel/p5-PerlIO-eol \
 			devel/p5-Regexp-IPv6 \
 			devel/p5-Role-Basic \
@@ -67,9 +69,11 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			security/p5-Crypt-Eksblowfish \
 			security/p5-Crypt-SSLeay \
 			security/p5-Crypt-X509 \
-			security/p5-GnuPG-Interface \
+			security/p5-GnuPG-Interface>=1.00 \
 			security/p5-Text-Password-Pronounceable \
 			sysutils/p5-File-Which \
+			textproc/p5-Encode-Detect \
+			textproc/p5-Encode-HanExtra \
 			textproc/p5-List-UtilsBy \
 			textproc/p5-Regexp-Common \
 			textproc/p5-String-ShellQuote \
@@ -86,8 +90,10 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			www/p5-CSS-Squish \
 			www/p5-Data-Page-Pageset \
 			www/p5-HTML-Format \
+			www/p5-HTML-FormatExternal \
 			www/p5-HTML-FormatText-WithLinks \
 			www/p5-HTML-FormatText-WithLinks-AndTables \
+			www/p5-HTML-Gumbo \
 			www/p5-HTML-Mason-PSGIHandler \
 			www/p5-HTML-Quoted \
 			www/p5-HTML-RewriteAttributes \
@@ -98,6 +104,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			www/p5-JavaScript-Minifier-XS \
 			www/p5-Starlet \
 			www/p5-Starman \
+			www/p5-Web-Machine \
 			www/p5-libwww
 
 # GPL
@@ -134,12 +141,15 @@ CONFIGURE_ARGS+=	--with-db-type=SQLite
 RUN_DEPENDS+=		databases/p5-DBD-mysql
 .endif
 
-# needs an initialized database and /etc/rt3/RT_Config.pm to be present
+# needs an initialized database and /etc/rt/RT_Config.pm to be present
 TEST_IS_INTERACTIVE=	Yes
 TEST_TARGET=		test
 TEST_DEPENDS=		devel/p5-Log-Dispatch-Perl
 # fill these in with appropriate values
 TEST_ENV=		RT_DBA_USER=rt_user RT_DBA_PASSWORD=1234
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/sbin/rt-test-dependencies.in
 
 post-install:
 	@mv ${PREFIX}/sbin/standalone_httpd ${PREFIX}/sbin/rt-standalone_httpd

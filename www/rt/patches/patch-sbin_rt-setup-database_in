@@ -1,0 +1,14 @@
+$OpenBSD: patch-sbin_rt-setup-database_in,v 1.1 2021/01/18 13:52:23 robert Exp $
+
+Index: sbin/rt-setup-database.in
+--- sbin/rt-setup-database.in.orig
++++ sbin/rt-setup-database.in
+@@ -426,7 +426,7 @@ sub action_insert {
+ 
+ sub action_upgrade {
+     my %args = @_;
+-    my $base_dir = $args{'datadir'} || "./etc/upgrade";
++    my $base_dir = $args{'datadir'} || "/etc/rt/upgrade";
+     return (0, "Couldn't read dir '$base_dir' with upgrade data")
+         unless -d $base_dir || -r _;
+ 

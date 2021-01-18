@@ -1,3 +1,5 @@
+$OpenBSD: patch-Makefile_in,v 1.7 2021/01/18 13:52:23 robert Exp $
+
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
@@ -11,13 +13,28 @@ Index: Makefile.in
 +INSTALL_DATA_DIR	=	@INSTALL_DATA_DIR@
 +INSTALL_SCRIPT		=	@INSTALL_SCRIPT@
 +
-+CONFIG_FILE_PATH	=	@prefix@/share/examples/rt3
++CONFIG_FILE_PATH	=	@prefix@/share/examples/rt
 +
  CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
  SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
  
-@@ -288,13 +294,13 @@ fixperms:
+@@ -275,27 +281,23 @@ testdeps:
+ depends: fixdeps
  
+ fixdeps:
+-	$(PERL) ./sbin/rt-test-dependencies --install
++	$(PERL) ./sbin/rt-test-dependencies --verbose
+ 
+ #}}}
+ 
+ fixperms:
+ 	# Make the libraries readable
+ 	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_PATH)
+-	chown -R $(LIBS_OWNER) $(DESTDIR)$(RT_LIB_PATH)
+-	chgrp -R $(LIBS_GROUP) $(DESTDIR)$(RT_LIB_PATH)
+-	chmod -R  u+rwX,go-w,go+rX $(DESTDIR)$(RT_LIB_PATH)
+ 
+-
  	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
  
 -	chmod 0755 $(DESTDIR)$(RT_ETC_PATH)
@@ -34,16 +51,7 @@ Index: Makefile.in
  
  	chmod 0440 $(DESTDIR)$(CONFIG_FILE)
  	chmod 0640 $(DESTDIR)$(SITE_CONFIG_FILE)
-@@ -307,7 +313,7 @@ fixperms:
- 
- 	# Make upgrade scripts executable if they are in the source.
- 	#
--	( cd etc/upgrade && find . -type f -not -name '*.in' -perm @FINDPERM@0111 -print ) | while read file ; do \
-+	( cd etc/upgrade && find . -type f \! -name '*.in' -perm +0111 -print ) | while read file ; do \
- 		chmod a+x "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
- 	done
- 
-@@ -362,7 +368,7 @@ clean-mason-cache:
+@@ -363,7 +365,7 @@ clean-mason-cache:
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/etc/*
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/obj/*
  
@@ -52,31 +60,27 @@ Index: Makefile.in
  
  files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install po-install static-install
  
-@@ -370,6 +376,7 @@ config-install:
- @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
- @COMMENT_INPLACE_LAYOUT@	-$(INSTALL) -m 0440 -o $(BIN_OWNER) -g $(RTGROUP)  etc/RT_Config.pm $(DESTDIR)$(CONFIG_FILE)
- @COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 -o $(BIN_OWNER) -g $(RTGROUP) etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
-+@COMMENT_INPLACE_LAYOUT@	-cp -rp etc/upgrade $(DESTDIR)$(CONFIG_FILE_PATH)
- @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
- 
- test: 
-@@ -456,16 +463,16 @@ doc-install:
+@@ -457,17 +459,17 @@ doc-install:
  
  
  etc-install:
 -@COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(RT_ETC_PATH) ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(RT_ETC_PATH)
+-@COMMENT_INPLACE_LAYOUT@	[ -d "$(DESTDIR)$(RT_ETC_PATH)/RT_SiteConfig.d" ] || $(INSTALL) -m 0755 -d "$(DESTDIR)$(RT_ETC_PATH)/RT_SiteConfig.d"
 +@COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(CONFIG_FILE_PATH) ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(CONFIG_FILE_PATH)
- @COMMENT_INPLACE_LAYOUT@	[ -d "$(DESTDIR)$(RT_ETC_PATH)/RT_SiteConfig.d" ] || $(INSTALL) -m 0755 -d "$(DESTDIR)$(RT_ETC_PATH)/RT_SiteConfig.d"
++@COMMENT_INPLACE_LAYOUT@	[ -d "$(DESTDIR)$(CONFIG_FILE_PATH)/RT_SiteConfig.d" ] || $(INSTALL) -m 0755 -d "$(DESTDIR)$(CONFIG_FILE_PATH)/RT_SiteConfig.d"
  @COMMENT_INPLACE_LAYOUT@	for file in $(ETC_FILES) ; do \
 -@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/$$file" "$(DESTDIR)$(RT_ETC_PATH)/" ; \
 +@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 -o root -g wheel "etc/$$file" "$(DESTDIR)$(CONFIG_FILE_PATH)/" ; \
  @COMMENT_INPLACE_LAYOUT@	done
- @COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(RT_ETC_PATH)/upgrade ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(RT_ETC_PATH)/upgrade
+-@COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(RT_ETC_PATH)/upgrade ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(RT_ETC_PATH)/upgrade
++@COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(CONFIG_FILE_PATH)/upgrade ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(CONFIG_FILE_PATH)/upgrade
  @COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type d -print ) | while read dir ; do \
- @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 -d "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$dir" ; \
+-@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 -d "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$dir" ; \
++@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 -d "$(DESTDIR)$(CONFIG_FILE_PATH)/upgrade/$$dir" ; \
  @COMMENT_INPLACE_LAYOUT@	done
--@COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type f -not -name '*.in' -print ) | while read file ; do \
-+@COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type f \! -name '*.in' -print ) | while read file ; do \
- @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/upgrade/$$file" "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
+ @COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type f -not -name '*.in' -print ) | while read file ; do \
+-@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/upgrade/$$file" "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
++@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/upgrade/$$file" "$(DESTDIR)$(CONFIG_FILE_PATH)/upgrade/$$file" ; \
  @COMMENT_INPLACE_LAYOUT@	done
+ 
  

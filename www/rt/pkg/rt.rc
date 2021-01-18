@@ -1,8 +1,9 @@
 #!/bin/ksh
 #
-# $OpenBSD: rt.rc,v 1.7 2019/08/25 12:07:49 robert Exp $
+# $OpenBSD: rt.rc,v 1.8 2021/01/18 13:52:23 robert Exp $
 
 daemon="${TRUEPREFIX}/sbin/rt-server"
+daemon_flags="--port 8080"
 daemon_user="_rt"
 
 . /etc/rc.d/rc.subr

@@ -1,23 +1,14 @@
-$OpenBSD: patch-sbin_rt-test-dependencies_in,v 1.5 2019/08/18 09:14:44 robert Exp $
+$OpenBSD: patch-sbin_rt-test-dependencies_in,v 1.6 2021/01/18 13:52:23 robert Exp $
 
 Index: sbin/rt-test-dependencies.in
 --- sbin/rt-test-dependencies.in.orig
 +++ sbin/rt-test-dependencies.in
-@@ -139,7 +139,7 @@ Digest::MD5 2.27
- Digest::SHA
- Email::Address 1.912
- Email::Address::List 0.06
--Encode 2.64
-+Encode 2.60
- Errno
- File::Glob
- File::ShareDir
-@@ -244,7 +244,7 @@ XML::Simple
- .
+@@ -237,7 +237,7 @@ sub read_deps {
+     };
  
- $deps{'FASTCGI'} = [ text_to_hash( << '.') ];
--FCGI 0.74
-+FCGI 0.67
- .
+     my ($vol, $dir, $path) = File::Spec->splitpath( $script_path );
+-    my $ret = do "$dir/../etc/cpanfile";
++    my $ret = do "/etc/rt/cpanfile";
+     die "Failed to load cpanfile: @{[$@ || $!]}" if not defined $ret and ($@ or $!);
  
- $deps{'MODPERL1'} = [ text_to_hash( << '.') ];
+     return %deps;
