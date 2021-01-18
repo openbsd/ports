@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2021/01/16 04:45:36 kn Exp $
+# $OpenBSD: Makefile,v 1.33 2021/01/18 22:26:11 sebastia Exp $
 
 PORTROACH=		limit:^5
 
 VERSION=		5.5.22
-REVISION=		2
+REVISION=		3
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.28,<1 \
@@ -32,5 +32,7 @@ do-install:
 	mv ${WRKINST}${SYSCONFDIR}/puppetlabs ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
 	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/
+	# Suppress a huge number of Ruby deprecation/obsolete warnings
+	sed -i -e "s/ruby${MODRUBY_BINREV}/ruby${MODRUBY_BINREV} -W0/" ${PREFIX}/bin/puppet
 
 .include <bsd.port.mk>
