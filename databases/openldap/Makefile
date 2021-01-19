@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.183 2020/11/12 17:00:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.184 2021/01/19 17:54:47 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-DISTNAME =		openldap-2.4.56
+DISTNAME =		openldap-2.4.57
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -42,7 +42,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 EXTRACT_SUFX =		.tgz
 
 SEPARATE_BUILD =	Yes
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.65
 CONFIGURE_STYLE =	autoconf
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
