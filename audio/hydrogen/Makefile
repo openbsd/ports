@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2020/02/22 17:34:35 rapha Exp $
+# $OpenBSD: Makefile,v 1.29 2021/01/19 06:53:25 rsadowski Exp $
 
 COMMENT=		software drum machine
 
 DISTNAME=		hydrogen-1.0.0-beta1
 PKGNAME=		${DISTNAME:S/-beta/beta/}
 CATEGORIES=		audio
+REVISION=		0
 
 HOMEPAGE=		http://www.hydrogen-music.org/
 
