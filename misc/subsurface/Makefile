@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/07 14:54:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/19 06:40:43 rsadowski Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =	Yes
@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	divelog program for recreational, tech, and free-divers
 
 VER =		4.8.5
-REVISION =	1
+REVISION =	2
 PKGNAME =	subsurface-${VER}
 DISTNAME =	Subsurface-${VER}
 

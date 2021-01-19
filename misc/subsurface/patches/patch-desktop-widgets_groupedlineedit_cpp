@@ -1,0 +1,13 @@
+$OpenBSD: patch-desktop-widgets_groupedlineedit_cpp,v 1.1 2021/01/19 06:40:43 rsadowski Exp $
+
+Index: desktop-widgets/groupedlineedit.cpp
+--- desktop-widgets/groupedlineedit.cpp.orig
++++ desktop-widgets/groupedlineedit.cpp
+@@ -32,6 +32,7 @@
+ #include <QScrollBar>
+ #include <QTextBlock>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QApplication>
+ #include <QStyle>
+ #include <QStyleOptionFocusRect>
