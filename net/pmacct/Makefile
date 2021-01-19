@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2021/01/19 17:21:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/01/19 17:46:19 sthen Exp $
 
 COMMENT=	passive IP network monitoring tools: traffic accounting, etc
 
 DISTNAME=	pmacct-1.7.5
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+= --disable-pgsql
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB+=	crypto mysqlclient ssl
+WANTLIB+=	mariadb
 CONFIGURE_ARGS+= --enable-mysql
 .else
 CONFIGURE_ARGS+= --disable-mysql
