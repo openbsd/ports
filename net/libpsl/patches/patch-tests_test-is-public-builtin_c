@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_test-is-public-builtin_c,v 1.1 2018/11/28 13:45:43 jca Exp $
+$OpenBSD: patch-tests_test-is-public-builtin_c,v 1.2 2021/01/19 21:34:49 jca Exp $
 
 Print time_t in a portable way.
 
@@ -9,7 +9,7 @@ Index: tests/test-is-public-builtin.c
  		}
  	}
  
--	printf("psl_builtin_file_time()=%ld\n", psl_builtin_file_time());
+-	printf("psl_builtin_file_time()=%ld\n", (long) psl_builtin_file_time());
 +	printf("psl_builtin_file_time()=%lld\n", (long long)psl_builtin_file_time());
  	psl_builtin_file_time() == 0 ? failed++ : ok++;
  

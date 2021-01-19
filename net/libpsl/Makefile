@@ -1,30 +1,29 @@
-# $OpenBSD: Makefile,v 1.16 2019/12/27 22:35:42 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2021/01/19 21:34:49 jca Exp $
 
 COMMENT =		public suffix list library
 
-DISTNAME =		libpsl-0.20.2
-REVISION =		1
+V =			0.21.1
+DISTNAME =		libpsl-${V}
 
-SHARED_LIBS +=		psl	1.2	# 8.1
+SHARED_LIBS +=		psl	1.2	# 8.3
 
 CATEGORIES =		net www
 
 HOMEPAGE =		https://github.com/rockdaboot/libpsl/
-
-MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv idn2 intl unistring
 
-MASTER_SITES =		${HOMEPAGE}/releases/download/${DISTNAME}/
+MASTER_SITES =		${HOMEPAGE}/releases/download/${V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODULES =		lang/python
 
 MODPY_RUNDEP =		No
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			sysutils/coreutils
