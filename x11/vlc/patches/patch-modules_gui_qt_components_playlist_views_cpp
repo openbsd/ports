@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_gui_qt_components_playlist_views_cpp,v 1.1 2021/01/19 06:19:49 rsadowski Exp $
+
+Index: modules/gui/qt/components/playlist/views.cpp
+--- modules/gui/qt/components/playlist/views.cpp.orig
++++ modules/gui/qt/components/playlist/views.cpp
+@@ -35,6 +35,7 @@
+ #include <QMetaType>
+ #include <QHeaderView>
+ #include <QSvgRenderer>
++#include <QPainterPath>
+ 
+ #include <assert.h>
+ 
