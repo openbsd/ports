@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_ppapi_plugin_ppapi_plugin_main_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_content_ppapi_plugin_ppapi_plugin_main_cc,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc
 --- src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc.orig
@@ -24,8 +24,8 @@ Index: src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc
  #if defined(OS_POSIX) && !defined(OS_ANDROID)
  #include <stdlib.h>
  #endif
-@@ -121,7 +126,7 @@ int PpapiPluginMain(const MainFunctionParams& paramete
-   gin::V8Initializer::LoadV8Natives();
+@@ -120,7 +125,7 @@ int PpapiPluginMain(const MainFunctionParams& paramete
+   gin::V8Initializer::LoadV8Snapshot();
  #endif
  
 -#if defined(OS_LINUX)

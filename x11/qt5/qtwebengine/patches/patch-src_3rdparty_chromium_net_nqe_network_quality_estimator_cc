@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_net_nqe_network_quality_estimator_cc,v 1.1 2021/01/19 06:16:34 rsadowski Exp $
+
+Index: src/3rdparty/chromium/net/nqe/network_quality_estimator.cc
+--- src/3rdparty/chromium/net/nqe/network_quality_estimator.cc.orig
++++ src/3rdparty/chromium/net/nqe/network_quality_estimator.cc
+@@ -104,7 +104,7 @@ nqe::internal::NetworkID DoGetCurrentNetworkID(
+       case NetworkChangeNotifier::ConnectionType::CONNECTION_ETHERNET:
+         break;
+       case NetworkChangeNotifier::ConnectionType::CONNECTION_WIFI:
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+         network_id.id = GetWifiSSID();
+ #endif
+         break;

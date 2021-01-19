@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_BUILD_gn,v 1.1 2021/01/19 06:16:34 rsadowski Exp $
+
+Index: src/3rdparty/chromium/services/service_manager/BUILD.gn
+--- src/3rdparty/chromium/services/service_manager/BUILD.gn.orig
++++ src/3rdparty/chromium/services/service_manager/BUILD.gn
+@@ -65,7 +65,7 @@ source_set("service_manager") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     deps += [ "//sandbox/linux:sandbox_services" ]
+   }
+ }

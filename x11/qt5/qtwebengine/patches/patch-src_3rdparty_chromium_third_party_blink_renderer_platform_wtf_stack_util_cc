@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_renderer_platform_wtf_stack_util_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_renderer_platform_wtf_stack_util_cc,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
 
 Index: src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.cc
 --- src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.cc.orig
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.cc
-@@ -18,6 +18,11 @@
+@@ -17,6 +17,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
  
@@ -15,7 +15,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.
  namespace WTF {
  
  size_t GetUnderestimatedStackSize() {
-@@ -63,6 +68,8 @@ size_t GetUnderestimatedStackSize() {
+@@ -61,6 +66,8 @@ size_t GetUnderestimatedStackSize() {
    //    low as 512k.
    //
    return 512 * 1024;
@@ -24,7 +24,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.
  #elif defined(OS_MACOSX)
    // pthread_get_stacksize_np() returns too low a value for the main thread on
    // OSX 10.9,
-@@ -99,12 +106,18 @@ size_t GetUnderestimatedStackSize() {
+@@ -97,12 +104,18 @@ return Threading::ThreadStackSize();
  
  void* GetStackStart() {
  #if defined(__GLIBC__) || defined(OS_ANDROID) || defined(OS_FREEBSD) || \

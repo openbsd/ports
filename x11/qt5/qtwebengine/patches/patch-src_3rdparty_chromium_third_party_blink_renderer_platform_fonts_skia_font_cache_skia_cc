@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
 
 Index: src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
 --- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig
@@ -7,12 +7,12 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/skia/font
    return AtomicString::FromUTF8(str.c_str(), str.size());
  }
  
--#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_FUCHSIA)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
- // Android special locale for retrieving the color emoji font
- // based on the proposed changes in UTR #51 for introducing
- // an Emoji script code:
-@@ -249,7 +249,7 @@ sk_sp<SkTypeface> FontCache::CreateTypeface(
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+ // This function is called on android or when we are emulating android fonts on
+ // linux and the embedder has overriden the default fontManager with
+ // WebFontRendering::setSkiaFontMgr.
+@@ -228,7 +228,7 @@ sk_sp<SkTypeface> FontCache::CreateTypeface(
    }
  #endif
  
@@ -21,12 +21,12 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/skia/font
    // On linux if the fontManager has been overridden then we should be calling
    // the embedder provided font Manager rather than calling
    // SkTypeface::CreateFromName which may redirect the call to the default font
-@@ -276,7 +276,7 @@ std::unique_ptr<FontPlatformData> FontCache::CreateFon
-   CString name;
+@@ -262,7 +262,7 @@ std::unique_ptr<FontPlatformData> FontCache::CreateFon
+   std::string name;
  
    sk_sp<SkTypeface> typeface;
 -#if defined(OS_ANDROID) || defined(OS_LINUX)
 +#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
    if (alternate_name == AlternateFontName::kLocalUniqueFace &&
        RuntimeEnabledFeatures::FontSrcLocalMatchingEnabled()) {
-     typeface = CreateTypefaceFromUniqueName(creation_params, name);
+     typeface = CreateTypefaceFromUniqueName(creation_params);

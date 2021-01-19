@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_chrome_app_generated_resources_grd,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_chrome_app_generated_resources_grd,v 1.2 2021/01/19 06:16:33 rsadowski Exp $
 
 Index: src/3rdparty/chromium/chrome/app/generated_resources.grd
 --- src/3rdparty/chromium/chrome/app/generated_resources.grd.orig
@@ -12,16 +12,16 @@ Index: src/3rdparty/chromium/chrome/app/generated_resources.grd
  for making strings OS specific.  Other platform defines such as use_titlecase
  are declared in tools/grit/grit_rule.gni.
  -->
-@@ -5339,7 +5339,7 @@ the Bookmarks menu.">
-         </message>
+@@ -5137,7 +5137,7 @@ Keep your key file in a safe place. You will need it t
        </if>
  
--      <if expr="is_win or (is_linux and not chromeos)">
-+      <if expr="is_win or (is_posix and not chromeos)">
-         <message name="IDS_QUIT_ACCELERATOR_TUTORIAL" desc="Instructions for how the user should quit using keyboard shortcuts.">
-           Press |<ph name="ACCELERATOR1">$1<ex>Ctrl</ex></ph>|+|<ph name="ACCELERATOR2">$2<ex>Shift</ex></ph>| followed by |<ph name="ACCELERATOR3">$3<ex>Q</ex></ph>| to exit
+       <!-- chrome://browser-switch strings -->
+-      <if expr="is_win or is_macosx or (is_linux and not chromeos)">
++      <if expr="is_win or is_macosx or (is_posix and not chromeos)">
+         <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
+           Legacy Browser Support
          </message>
-@@ -6160,7 +6160,7 @@ the Bookmarks menu.">
+@@ -6880,7 +6880,7 @@ the Bookmarks menu.">
          Google Pay
        </message>
  
@@ -30,7 +30,7 @@ Index: src/3rdparty/chromium/chrome/app/generated_resources.grd
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -6946,7 +6946,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -7806,7 +7806,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_media_media_options_gni,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_media_media_options_gni,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/media/media_options.gni
 --- src/3rdparty/chromium/media/media_options.gni.orig
 +++ src/3rdparty/chromium/media/media_options.gni
-@@ -104,9 +104,12 @@ declare_args() {
+@@ -123,9 +123,12 @@ declare_args() {
    # Enables runtime selection of ALSA library for audio.
    use_alsa = false
  
@@ -17,8 +17,8 @@ Index: src/3rdparty/chromium/media/media_options.gni
        (!is_chromecast || is_cast_desktop_build || is_cast_audio_only)) {
      use_alsa = true
  
-@@ -114,6 +117,10 @@ declare_args() {
-     if (!use_cras && !is_chromecast) {
+@@ -140,6 +143,10 @@ declare_args() {
+     if (!use_cras && !is_chromecast && !is_asan && !is_tsan) {
        use_pulseaudio = true
      }
 +  }

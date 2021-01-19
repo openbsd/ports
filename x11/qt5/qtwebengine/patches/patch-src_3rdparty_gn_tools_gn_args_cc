@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_3rdparty_gn_tools_gn_args_cc,v 1.1 2020/05/16 07:03:01 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_gn_tools_gn_args_cc,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
 
 Index: src/3rdparty/gn/tools/gn/args.cc
 --- src/3rdparty/gn/tools/gn/args.cc.orig
 +++ src/3rdparty/gn/tools/gn/args.cc
-@@ -296,6 +296,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
-   os = "linux";
- #elif defined(OS_FREEBSD)
-   os = "freebsd";
-+#elif defined(OS_OPENBSD)
-+  os = "openbsd";
- #elif defined(OS_AIX)
-   os = "aix";
- #else
+@@ -338,6 +338,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+     arch = kX86;
+   else if (os_arch == "x86_64")
+     arch = kX64;
++  else if (os_arch == "arm64")
++    arch = kArm64;
+   else if (os_arch.substr(0, 3) == "arm")
+     arch = kArm;
+   else if (os_arch == "aarch64")

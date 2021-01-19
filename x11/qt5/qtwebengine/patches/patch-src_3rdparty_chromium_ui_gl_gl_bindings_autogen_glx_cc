@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_gl_gl_bindings_autogen_glx_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
 
 Index: src/3rdparty/chromium/ui/gl/gl_bindings_autogen_glx.cc
 --- src/3rdparty/chromium/ui/gl/gl_bindings_autogen_glx.cc.orig
@@ -35,19 +35,19 @@ Index: src/3rdparty/chromium/ui/gl/gl_bindings_autogen_glx.cc
  void GLXApiBase::glXGetSelectedEventFn(Display* dpy,
                                         GLXDrawable drawable,
                                         unsigned long* mask) {
-@@ -650,6 +661,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -651,6 +662,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
    return glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
 +__GLXextFuncPtr TraceGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
-+  TRACE_EVENT_BINARY_EFFICIENT0("gpu", "TraceGLAPI::glXGetProcAddressARB")
++  TRACE_EVENT_BINARY_EFFICIENT0("gpu", "TraceGLXAPI::glXGetProcAddressARB")
 +  return glx_api_->glXGetProcAddressARBFn(procName);
 +}
 +
  void TraceGLXApi::glXGetSelectedEventFn(Display* dpy,
                                          GLXDrawable drawable,
                                          unsigned long* mask) {
-@@ -1072,6 +1088,14 @@ bool DebugGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -1072,6 +1088,14 @@ bool LogGLXApi::glXGetMscRateOMLFn(Display* dpy,
                   << static_cast<const void*>(denominator) << ")");
    bool result =
        glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
@@ -55,7 +55,7 @@ Index: src/3rdparty/chromium/ui/gl/gl_bindings_autogen_glx.cc
 +  return result;
 +}
 +
-+__GLXextFuncPtr DebugGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
++__GLXextFuncPtr LogGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
 +  GL_SERVICE_LOG("glXGetProcAddressARB"
 +                 << "(" << static_cast<const void*>(procName) << ")");
 +  __GLXextFuncPtr result = glx_api_->glXGetProcAddressARBFn(procName);

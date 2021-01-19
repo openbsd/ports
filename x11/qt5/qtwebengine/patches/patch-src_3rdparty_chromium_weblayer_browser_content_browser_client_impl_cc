@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_3rdparty_chromium_weblayer_browser_content_browser_client_impl_cc,v 1.1 2021/01/19 06:16:35 rsadowski Exp $
+
+Index: src/3rdparty/chromium/weblayer/browser/content_browser_client_impl.cc
+--- src/3rdparty/chromium/weblayer/browser/content_browser_client_impl.cc.orig
++++ src/3rdparty/chromium/weblayer/browser/content_browser_client_impl.cc
+@@ -87,7 +87,7 @@
+ #include "weblayer/browser/safe_browsing/safe_browsing_service.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ #include "content/public/common/content_descriptors.h"
+ #endif
+ 
+@@ -321,7 +321,7 @@ ContentBrowserClientImpl::CreateNetworkContext(
+ 
+ void ContentBrowserClientImpl::OnNetworkServiceCreated(
+     network::mojom::NetworkService* network_service) {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
+   content::GetNetworkService()->SetCryptConfig(std::move(config));
+ #endif
+@@ -537,7 +537,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+ }
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ void ContentBrowserClientImpl::GetAdditionalMappedFilesForChildProcess(
+     const base::CommandLine& command_line,
+     int child_process_id,

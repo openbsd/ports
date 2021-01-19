@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_chrome_common_extensions_command_cc,v 1.1 2021/01/19 06:16:33 rsadowski Exp $
+
+Index: src/3rdparty/chromium/chrome/common/extensions/command.cc
+--- src/3rdparty/chromium/chrome/common/extensions/command.cc.orig
++++ src/3rdparty/chromium/chrome/common/extensions/command.cc
+@@ -300,7 +300,7 @@ std::string Command::CommandPlatform() {
+   return values::kKeybindingPlatformMac;
+ #elif defined(OS_CHROMEOS)
+   return values::kKeybindingPlatformChromeOs;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   return values::kKeybindingPlatformLinux;
+ #else
+   return "";

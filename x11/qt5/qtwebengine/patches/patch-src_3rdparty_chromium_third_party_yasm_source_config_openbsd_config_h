@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_yasm_source_config_openbsd_config_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_third_party_yasm_source_config_openbsd_config_h,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
 
 Index: src/3rdparty/chromium/third_party/yasm/source/config/openbsd/config.h
 --- src/3rdparty/chromium/third_party/yasm/source/config/openbsd/config.h.orig

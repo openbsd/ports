@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/13 16:53:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/01/19 06:16:29 rsadowski Exp $
 
 QT5NAME =		Qt3D
 COMMENT-main =		Qt5 components for 3D graphics
@@ -20,7 +20,7 @@ SHARED_LIBS +=  Qt53DQuickScene2D            1.0 # 5.9
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Gamepad
 WANTLIB += Qt5Gui Qt5Network Qt5OpenGLExtensions Qt5Qml Qt5Quick
-WANTLIB += assimp c m
+WANTLIB += Qt5QmlModels assimp c m
 
 BUILD_DEPENDS =		x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 RUN_DEPENDS-examples =	x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}

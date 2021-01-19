@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:53 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/01/19 06:16:32 rsadowski Exp $
 include/X11/qt5/QtHunspellInputMethod/
 include/X11/qt5/QtHunspellInputMethod/${VERSION}/
 include/X11/qt5/QtHunspellInputMethod/${VERSION}/QtHunspellInputMethod/
@@ -55,6 +55,8 @@ include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardinputcontext.h
 include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardinputengine.h
 include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardselectionlistmodel.h
 include/X11/qt5/QtVirtualKeyboard/qvirtualkeyboardtrace.h
+@lib lib/libQt5HunspellInputMethod.so.${LIBQt5HunspellInputMethod_VERSION}
+@lib lib/libQt5VirtualKeyboard.so.${LIBQt5VirtualKeyboard_VERSION}
 lib/pkgconfig/Qt5VirtualKeyboard.pc
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake
 lib/qt5/cmake/Qt5HunspellInputMethod/

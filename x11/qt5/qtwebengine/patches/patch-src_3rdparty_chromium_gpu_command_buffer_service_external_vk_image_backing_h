@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_gpu_command_buffer_service_external_vk_image_backing_h,v 1.1 2021/01/19 06:16:34 rsadowski Exp $
+
+Index: src/3rdparty/chromium/gpu/command_buffer/service/external_vk_image_backing.h
+--- src/3rdparty/chromium/gpu/command_buffer/service/external_vk_image_backing.h.orig
++++ src/3rdparty/chromium/gpu/command_buffer/service/external_vk_image_backing.h
+@@ -151,7 +151,7 @@ class ExternalVkImageBacking final : public ClearTrack
+ 
+  private:
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   // Extract file descriptor from image
+   int GetMemoryFd(const GrVkImageInfo& image_info);
+ #endif

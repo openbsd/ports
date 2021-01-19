@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_events_devices_x11_device_data_manager_x11_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_ui_events_devices_x11_device_data_manager_x11_cc,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
 
 Index: src/3rdparty/chromium/ui/events/devices/x11/device_data_manager_x11.cc
 --- src/3rdparty/chromium/ui/events/devices/x11/device_data_manager_x11.cc.orig
 +++ src/3rdparty/chromium/ui/events/devices/x11/device_data_manager_x11.cc
-@@ -828,6 +828,7 @@ void DeviceDataManagerX11::SetDisabledKeyboardAllowedK
+@@ -826,6 +826,7 @@ void DeviceDataManagerX11::SetDisabledKeyboardAllowedK
  }
  
  void DeviceDataManagerX11::DisableDevice(int deviceid) {

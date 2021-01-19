@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.10 2020/05/16 09:43:44 rsadowski Exp $
+@comment $OpenBSD: PLIST-html,v 1.11 2021/01/19 06:16:29 rsadowski Exp $
 @conflict qt3d-html-*
 @conflict qtactiveqt-html-*
 @conflict qtbase-html-*
@@ -135,6 +135,7 @@ share/doc/qt5/qt3d/images/planets-qml-example.jpg
 share/doc/qt5/qt3d/images/qt3d-wireframe-rendering.png
 share/doc/qt5/qt3d/images/scene2d.png
 share/doc/qt5/qt3d/images/scene3d.png
+share/doc/qt5/qt3d/images/scene3dview.png
 share/doc/qt5/qt3d/images/shadowmapping-depth.png
 share/doc/qt5/qt3d/images/shadowmapping-qt3d.png
 share/doc/qt5/qt3d/images/simple-cpp.png
@@ -143,8 +144,6 @@ share/doc/qt5/qt3d/images/simple-framegraph.png
 share/doc/qt5/qt3d/images/simple-qml.png
 share/doc/qt5/qt3d/images/wave.png
 share/doc/qt5/qt3d/images/widgets-scene3d.png
-share/doc/qt5/qt3d/qml-computecommand-members.html
-share/doc/qt5/qt3d/qml-computecommand.html
 share/doc/qt5/qt3d/qml-qt3d-animation-abstractanimation-members.html
 share/doc/qt5/qt3d/qml-qt3d-animation-abstractanimation.html
 share/doc/qt5/qt3d/qml-qt3d-animation-abstractclipanimator-members.html
@@ -304,6 +303,8 @@ share/doc/qt5/qt3d/qml-qt3d-logic-frameaction-members.html
 share/doc/qt5/qt3d/qml-qt3d-logic-frameaction.html
 share/doc/qt5/qt3d/qml-qt3d-render-abstractraycaster-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-abstractraycaster.html
+share/doc/qt5/qt3d/qml-qt3d-render-abstracttexture-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-abstracttexture.html
 share/doc/qt5/qt3d/qml-qt3d-render-abstracttextureimage-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-abstracttextureimage.html
 share/doc/qt5/qt3d/qml-qt3d-render-alphacoverage-members.html
@@ -321,6 +322,8 @@ share/doc/qt5/qt3d/qml-qt3d-render-blitframebuffer.html
 share/doc/qt5/qt3d/qml-qt3d-render-buffer-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-buffer-obsolete.html
 share/doc/qt5/qt3d/qml-qt3d-render-buffer.html
+share/doc/qt5/qt3d/qml-qt3d-render-buffercapture-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-buffercapture.html
 share/doc/qt5/qt3d/qml-qt3d-render-camera-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-camera-obsolete.html
 share/doc/qt5/qt3d/qml-qt3d-render-camera.html
@@ -334,8 +337,12 @@ share/doc/qt5/qt3d/qml-qt3d-render-clipplane-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-clipplane.html
 share/doc/qt5/qt3d/qml-qt3d-render-colormask-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-colormask.html
+share/doc/qt5/qt3d/qml-qt3d-render-computecommand-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-computecommand.html
 share/doc/qt5/qt3d/qml-qt3d-render-cullface-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-cullface.html
+share/doc/qt5/qt3d/qml-qt3d-render-depthrange-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-depthrange.html
 share/doc/qt5/qt3d/qml-qt3d-render-depthtest-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-depthtest.html
 share/doc/qt5/qt3d/qml-qt3d-render-directionallight-members.html
@@ -390,6 +397,8 @@ share/doc/qt5/qt3d/qml-qt3d-render-nodepthmask-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-nodepthmask.html
 share/doc/qt5/qt3d/qml-qt3d-render-nodraw-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-nodraw.html
+share/doc/qt5/qt3d/qml-qt3d-render-nopicking-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-nopicking.html
 share/doc/qt5/qt3d/qml-qt3d-render-objectpicker-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-objectpicker.html
 share/doc/qt5/qt3d/qml-qt3d-render-parameter-members.html
@@ -412,8 +421,12 @@ share/doc/qt5/qt3d/qml-qt3d-render-polygonoffset-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-polygonoffset.html
 share/doc/qt5/qt3d/qml-qt3d-render-proximityfilter-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-proximityfilter.html
+share/doc/qt5/qt3d/qml-qt3d-render-rastermode-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-rastermode.html
 share/doc/qt5/qt3d/qml-qt3d-render-raycaster-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-raycaster.html
+share/doc/qt5/qt3d/qml-qt3d-render-rendercapabilities-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-rendercapabilities.html
 share/doc/qt5/qt3d/qml-qt3d-render-rendercapture-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-rendercapture-obsolete.html
 share/doc/qt5/qt3d/qml-qt3d-render-rendercapture.html
@@ -426,6 +439,8 @@ share/doc/qt5/qt3d/qml-qt3d-render-renderpassfilter-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-renderpassfilter.html
 share/doc/qt5/qt3d/qml-qt3d-render-rendersettings-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-rendersettings.html
+share/doc/qt5/qt3d/qml-qt3d-render-renderstate-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-renderstate.html
 share/doc/qt5/qt3d/qml-qt3d-render-renderstateset-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-renderstateset.html
 share/doc/qt5/qt3d/qml-qt3d-render-rendersurfaceselector-members.html
@@ -444,6 +459,8 @@ share/doc/qt5/qt3d/qml-qt3d-render-screenraycaster-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-screenraycaster.html
 share/doc/qt5/qt3d/qml-qt3d-render-seamlesscubemap-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-seamlesscubemap.html
+share/doc/qt5/qt3d/qml-qt3d-render-shaderimage-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-shaderimage.html
 share/doc/qt5/qt3d/qml-qt3d-render-shaderprogram-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-shaderprogram.html
 share/doc/qt5/qt3d/qml-qt3d-render-shaderprogrambuilder-members.html
@@ -464,22 +481,46 @@ share/doc/qt5/qt3d/qml-qt3d-render-stenciltest-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-stenciltest.html
 share/doc/qt5/qt3d/qml-qt3d-render-stenciltestarguments-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-stenciltestarguments.html
+share/doc/qt5/qt3d/qml-qt3d-render-subtreeenabler-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-subtreeenabler.html
 share/doc/qt5/qt3d/qml-qt3d-render-technique-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-technique.html
 share/doc/qt5/qt3d/qml-qt3d-render-techniquefilter-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-techniquefilter.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture1d-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture1d.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture1darray-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture1darray.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture2d-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture2d.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture2darray-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture2darray.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture2dmultisample-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture2dmultisample.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture2dmultisamplearray-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture2dmultisamplearray.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture3d-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texture3d.html
+share/doc/qt5/qt3d/qml-qt3d-render-texturebuffer-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texturebuffer.html
+share/doc/qt5/qt3d/qml-qt3d-render-texturecubemap-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texturecubemap.html
+share/doc/qt5/qt3d/qml-qt3d-render-texturecubemaparray-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texturecubemaparray.html
 share/doc/qt5/qt3d/qml-qt3d-render-textureimage-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-textureimage.html
 share/doc/qt5/qt3d/qml-qt3d-render-textureloader-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-textureloader.html
+share/doc/qt5/qt3d/qml-qt3d-render-texturerectangle-members.html
+share/doc/qt5/qt3d/qml-qt3d-render-texturerectangle.html
 share/doc/qt5/qt3d/qml-qt3d-render-viewport-members.html
 share/doc/qt5/qt3d/qml-qt3d-render-viewport.html
 share/doc/qt5/qt3d/qml-qtquick-scene2d-scene2d-members.html
 share/doc/qt5/qt3d/qml-qtquick-scene2d-scene2d.html
 share/doc/qt5/qt3d/qml-qtquick-scene3d-scene3d-members.html
 share/doc/qt5/qt3d/qml-qtquick-scene3d-scene3d.html
-share/doc/qt5/qt3d/qml-renderstate-members.html
-share/doc/qt5/qt3d/qml-renderstate.html
+share/doc/qt5/qt3d/qml-qtquick-scene3d-scene3dview-members.html
+share/doc/qt5/qt3d/qml-qtquick-scene3d-scene3dview.html
 share/doc/qt5/qt3d/qt3d-advancedcustommaterial-example.html
 share/doc/qt5/qt3d/qt3d-animation-qmlmodule.html
 share/doc/qt5/qt3d/qt3d-audio-visualizer-qml-example.html
@@ -499,6 +540,7 @@ share/doc/qt5/qt3d/qt3d-qml.html
 share/doc/qt5/qt3d/qt3d-render-qmlmodule.html
 share/doc/qt5/qt3d/qt3d-scene2d-example.html
 share/doc/qt5/qt3d/qt3d-scene3d-example.html
+share/doc/qt5/qt3d/qt3d-scene3dview-example.html
 share/doc/qt5/qt3d/qt3d-shadow-map-qml-example.html
 share/doc/qt5/qt3d/qt3d-simple-cpp-example.html
 share/doc/qt5/qt3d/qt3d-simple-qml-example.html
@@ -528,7 +570,6 @@ share/doc/qt5/qt3d/qt3dcore-qpropertyvalueaddedchange-proxy.html
 share/doc/qt5/qt3d/qt3dcore-qpropertyvalueaddedchangebase-proxy.html
 share/doc/qt5/qt3d/qt3dcore-qpropertyvalueremovedchange-proxy.html
 share/doc/qt5/qt3d/qt3dcore-qpropertyvalueremovedchangebase-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qscenechange-proxy.html
 share/doc/qt5/qt3d/qt3dcore-qstaticpropertyupdatedchangebase-proxy.html
 share/doc/qt5/qt3d/qt3dcore.html
 share/doc/qt5/qt3d/qt3dextras-module.html
@@ -546,6 +587,8 @@ share/doc/qt5/qt3d/qt3drender-protips.html
 share/doc/qt5/qt3d/qt3drender-qabstractfunctor-proxy.html
 share/doc/qt5/qt3d/qt3drender-qattribute-proxy.html
 share/doc/qt5/qt3d/qt3drender-qbuffer-proxy.html
+share/doc/qt5/qt3d/qt3drender-qgraphicsapifilter-proxy.html
+share/doc/qt5/qt3d/qt3drender-quick.html
 share/doc/qt5/qt3d/qt3drender-render.html
 share/doc/qt5/qt3d/qt3drender.html
 share/doc/qt5/qt3d/qt3dscene2d-module.html
@@ -1127,6 +1170,7 @@ share/doc/qt5/qtdoc/images/wayland-single-process-develop.png
 share/doc/qt5/qtdoc/images/wayland-single-process-eglfs.png
 share/doc/qt5/qtdoc/images/xml-examples.png
 share/doc/qt5/qtdoc/index.html
+share/doc/qt5/qtdoc/inputs-linux-device.html
 share/doc/qt5/qtdoc/integrity-building-monolith.html
 share/doc/qt5/qtdoc/integrity-building-qt-for-imx6quad-board.html
 share/doc/qt5/qtdoc/integrity-building-u-boot-image.html
@@ -1166,6 +1210,8 @@ share/doc/qt5/qtdoc/newclasses510.html
 share/doc/qt5/qtdoc/newclasses511.html
 share/doc/qt5/qtdoc/newclasses512.html
 share/doc/qt5/qtdoc/newclasses513.html
+share/doc/qt5/qtdoc/newclasses514.html
+share/doc/qt5/qtdoc/newclasses515.html
 share/doc/qt5/qtdoc/newclasses52.html
 share/doc/qt5/qtdoc/newclasses53.html
 share/doc/qt5/qtdoc/newclasses54.html
@@ -1176,7 +1222,6 @@ share/doc/qt5/qtdoc/newclasses58.html
 share/doc/qt5/qtdoc/newclasses59.html
 share/doc/qt5/qtdoc/obsoleteclasses.html
 share/doc/qt5/qtdoc/obsoleteqmltypes.html
-share/doc/qt5/qtdoc/opensourcelicense.html
 share/doc/qt5/qtdoc/overviews-main.html
 share/doc/qt5/qtdoc/overviews.html
 share/doc/qt5/qtdoc/plugins-howto.html
@@ -1435,6 +1480,8 @@ share/doc/qt5/qtdoc/whatsnew510.html
 share/doc/qt5/qtdoc/whatsnew511.html
 share/doc/qt5/qtdoc/whatsnew512.html
 share/doc/qt5/qtdoc/whatsnew513.html
+share/doc/qt5/qtdoc/whatsnew514.html
+share/doc/qt5/qtdoc/whatsnew515.html
 share/doc/qt5/qtdoc/whatsnew52.html
 share/doc/qt5/qtdoc/whatsnew53.html
 share/doc/qt5/qtdoc/whatsnew54.html
@@ -2019,6 +2066,7 @@ share/doc/qt5/qtmultimedia/images/video-videowidget.png
 share/doc/qt5/qtmultimedia/multimedia-examples.html
 share/doc/qt5/qtmultimedia/multimediabackend.html
 share/doc/qt5/qtmultimedia/multimediaoverview.html
+share/doc/qt5/qtmultimedia/platform-notes-gstreamer-on-android.html
 share/doc/qt5/qtmultimedia/qaudio.html
 share/doc/qt5/qtmultimedia/qaudiobuffer.html
 share/doc/qt5/qtmultimedia/qaudiodecodercontrol-proxy.html
@@ -2079,6 +2127,7 @@ share/doc/qt5/qtmultimedia/qml-qtaudioengine-soundinstance.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-audio-members.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-audio.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-camera-members.html
+share/doc/qt5/qtmultimedia/qml-qtmultimedia-camera-obsolete.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-camera.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-cameracapture-members.html
 share/doc/qt5/qtmultimedia/qml-qtmultimedia-cameracapture.html
@@ -2220,10 +2269,17 @@ share/doc/qt5/qtremoteobjects/images/ico_note.png
 share/doc/qt5/qtremoteobjects/images/ico_note_attention.png
 share/doc/qt5/qtremoteobjects/images/ico_out.png
 share/doc/qt5/qtremoteobjects/images/logo.png
+share/doc/qt5/qtremoteobjects/qml-qtremoteobjects-host-members.html
+share/doc/qt5/qtremoteobjects/qml-qtremoteobjects-host.html
 share/doc/qt5/qtremoteobjects/qml-qtremoteobjects-node-members.html
 share/doc/qt5/qtremoteobjects/qml-qtremoteobjects-node.html
+share/doc/qt5/qtremoteobjects/qml-qtremoteobjects-qtremoteobjects-members.html
+share/doc/qt5/qtremoteobjects/qml-qtremoteobjects-qtremoteobjects.html
 share/doc/qt5/qtremoteobjects/qml-qtremoteobjects-settingsstore-members.html
 share/doc/qt5/qtremoteobjects/qml-qtremoteobjects-settingsstore.html
+share/doc/qt5/qtremoteobjects/qremoteobjectpendingreply-members.html
+share/doc/qt5/qtremoteobjects/qremoteobjectpendingreply.html
+share/doc/qt5/qtremoteobjects/qtremoteobjects-cmake-qt5-generate-repc.html
 share/doc/qt5/qtremoteobjects/qtremoteobjects-compatibility.html
 share/doc/qt5/qtremoteobjects/qtremoteobjects-external-schemas.html
 share/doc/qt5/qtremoteobjects/qtremoteobjects-gettingstarted.html
@@ -2885,6 +2941,7 @@ share/doc/qt5/qtxmlpatterns/images/ico_note_attention.png
 share/doc/qt5/qtxmlpatterns/images/ico_out.png
 share/doc/qt5/qtxmlpatterns/images/logo.png
 share/doc/qt5/qtxmlpatterns/images/patternist-wordProcessor.png
+share/doc/qt5/qtxmlpatterns/images/qml-xmllistmodel-example.png
 share/doc/qt5/qtxmlpatterns/images/recipes-example.png
 share/doc/qt5/qtxmlpatterns/images/schema-example.png
 share/doc/qt5/qtxmlpatterns/qml-qtquick-xmllistmodel-xmllistmodel-members.html

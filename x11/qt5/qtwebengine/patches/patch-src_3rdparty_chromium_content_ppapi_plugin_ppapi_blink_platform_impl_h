@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/content/ppapi_plugin/ppapi_blink_platform_impl.h
 --- src/3rdparty/chromium/content/ppapi_plugin/ppapi_blink_platform_impl.h.orig
@@ -12,8 +12,8 @@ Index: src/3rdparty/chromium/content/ppapi_plugin/ppapi_blink_platform_impl.h
  #include "components/services/font/public/cpp/font_loader.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  #endif
-@@ -42,11 +42,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
-                          bool sync_dir) override;
+@@ -36,11 +36,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
+   blink::WebThemeEngine* ThemeEngine() override;
  
   private:
 -#if defined(OS_LINUX) || defined(OS_MACOSX)

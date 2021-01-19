@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_perfetto_include_perfetto_base_event_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_third_party_perfetto_include_perfetto_base_event_h,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
 
-Index: src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/event.h
---- src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/event.h.orig
-+++ src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/event.h
+Index: src/3rdparty/chromium/third_party/perfetto/include/perfetto/ext/base/event_fd.h
+--- src/3rdparty/chromium/third_party/perfetto/include/perfetto/ext/base/event_fd.h.orig
++++ src/3rdparty/chromium/third_party/perfetto/include/perfetto/ext/base/event_fd.h
 @@ -20,7 +20,7 @@
  #include "perfetto/base/build_config.h"
- #include "perfetto/base/scoped_file.h"
+ #include "perfetto/ext/base/scoped_file.h"
  
 -#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
 +#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)) || \

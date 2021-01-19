@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_zygote_zygote_main_linux_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_zygote_zygote_main_linux_cc,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/services/service_manager/zygote/zygote_main_linux.cc
 --- src/3rdparty/chromium/services/service_manager/zygote/zygote_main_linux.cc.orig
@@ -13,7 +13,7 @@ Index: src/3rdparty/chromium/services/service_manager/zygote/zygote_main_linux.c
  #include <sys/socket.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -51,6 +53,7 @@ namespace service_manager {
+@@ -49,6 +51,7 @@ namespace service_manager {
  
  namespace {
  
@@ -21,7 +21,7 @@ Index: src/3rdparty/chromium/services/service_manager/zygote/zygote_main_linux.c
  void CloseFds(const std::vector<int>& fds) {
    for (const auto& it : fds) {
      PCHECK(0 == IGNORE_EINTR(close(it)));
-@@ -68,9 +71,11 @@ base::OnceClosure ClosureFromTwoClosures(base::OnceClo
+@@ -66,9 +69,11 @@ base::OnceClosure ClosureFromTwoClosures(base::OnceClo
        },
        std::move(one), std::move(two));
  }
@@ -33,7 +33,7 @@ Index: src/3rdparty/chromium/services/service_manager/zygote/zygote_main_linux.c
  // This function triggers the static and lazy construction of objects that need
  // to be created before imposing the sandbox.
  static void ZygotePreSandboxInit() {
-@@ -177,9 +182,11 @@ static void EnterLayerOneSandbox(service_manager::Sand
+@@ -175,9 +180,11 @@ static void EnterLayerOneSandbox(service_manager::Sand
      CHECK(!using_layer1_sandbox);
    }
  }

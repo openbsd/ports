@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/10/20 16:30:27 cwen Exp $
+# $OpenBSD: Makefile,v 1.40 2021/01/19 06:16:29 rsadowski Exp $
 
 DISTNAME =		qtbase-everywhere-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -16,8 +16,6 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-REVISION-main =		0
-
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 
@@ -27,7 +25,7 @@ SHARED_LIBS +=  Qt5Concurrent                3.0 # 5.9
 SHARED_LIBS +=  Qt5Core                      3.0 # 5.9
 SHARED_LIBS +=  Qt5DBus                      3.0 # 5.9
 SHARED_LIBS +=  Qt5Gui                       3.0 # 5.9
-SHARED_LIBS +=  Qt5Network                   3.0 # 5.9
+SHARED_LIBS +=  Qt5Network                   4.0 # 5.9
 SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.9
 SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.9
 SHARED_LIBS +=  Qt5Sql                       3.0 # 5.9
@@ -43,12 +41,11 @@ WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext atk-1.0
 WANTLIB-main += c cairo cairo-gobject crypto cups dbus-1 double-conversion
 WANTLIB-main += drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB-main += icudata icui18n icuio icuuc iodbc iodbcinst jpeg m
-WANTLIB-main += pango-1.0 pangocairo-1.0 pcre2-16 png sqlite3 ssl xcb
-WANTLIB-main += xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr xcb-render
-WANTLIB-main += xcb-render-util xcb-shape xcb-shm xcb-sync xcb-xfixes
-WANTLIB-main += xcb-xinerama xcb-xinput xcb-xkb xkbcommon xkbcommon-x11
-WANTLIB-main += z zstd
+WANTLIB-main += icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
+WANTLIB-main += pcre2-16 png sqlite3 ssl xcb xcb-glx xcb-icccm xcb-image
+WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
+WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xinput
+WANTLIB-main += xcb-util xcb-xkb xkbcommon xkbcommon-x11 z zstd
 
 WANTLIB-global =
 
@@ -75,7 +72,6 @@ USE_GMAKE =		Yes
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			archivers/zstd \
-			databases/iodbc \
 			databases/sqlite3 \
 			devel/atk \
 			devel/harfbuzz \
@@ -89,7 +85,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/icu4c \
 			x11/dbus \
 			x11/gtk+3 \
-			x11/xkbcommon
+			x11/xkbcommon>=1.0.1
 
 # those come from gthread-2.0, not used by Qt itself
 WANTLIB-main +=		intl
@@ -163,7 +159,6 @@ CONFIGURE_ARGS +=	-bindir ${QT_BINDIR} \
 
 # generic args
 CONFIGURE_ARGS +=	-confirm-license \
-			-no-compile-examples \
 			-opensource \
 			-rpath \
 			-shared \
@@ -182,6 +177,9 @@ CONFIGURE_ARGS +=	-no-ccache \
 			-no-optimized-qmake \
 			-no-pch \
 			-no-use-gold-linker
+
+# https://www.qt.io/blog/qt-is-relocatable (QTBUG-87220)
+CONFIGURE_ARGS +=	-no-feature-relocatable
 
 # Don't run tests inside main build.
 # XXX It looks like affecting other Qt modules as well.
@@ -211,7 +209,6 @@ CONFIGURE_ARGS +=	-accessibility \
 			-system-libpng \
 			-system-pcre \
 			-system-sqlite \
-			-system-xcb \
 			-system-zlib
 
 # database support
@@ -257,21 +254,6 @@ post-extract:
 		${WRKDIST}/mkspecs/openbsd-clang/qmake.conf
 	cp ${WRKDIST}/mkspecs/openbsd-g++/qplatformdefs.h \
 		${WRKDIST}/mkspecs/openbsd-clang/
-
-pre-configure:
-	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`; \
-	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
-		-D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
-		${WRKSRC}/mkspecs/openbsd-g++/qmake.conf \
-		${WRKSRC}/mkspecs/openbsd-clang/qmake.conf
-
-# WARNING!
-# Many tests won't run if window manager has either
-# "focus follows pointer", or "click to activate" policy.
-do-test:
-	${MODQMAKE_configure}
-	${MODQMAKE_build}
-	${MODQMAKE_test}
 
 post-install:
 	# often-used includes directory

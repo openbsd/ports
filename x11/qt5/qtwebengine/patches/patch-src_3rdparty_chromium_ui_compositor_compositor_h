@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_compositor_compositor_h,v 1.1 2021/01/19 06:16:35 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/compositor/compositor.h
+--- src/3rdparty/chromium/ui/compositor/compositor.h.orig
++++ src/3rdparty/chromium/ui/compositor/compositor.h
+@@ -341,7 +341,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
+   void OnFirstSurfaceActivation(const viz::SurfaceInfo& surface_info) override;
+   void OnFrameTokenChanged(uint32_t frame_token) override;
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   void OnCompleteSwapWithNewSize(const gfx::Size& size);
+ #endif
+ 

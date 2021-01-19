@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_3rdparty_chromium_net_dns_host_resolver_proc_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_net_dns_host_resolver_proc_cc,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/net/dns/host_resolver_proc.cc
 --- src/3rdparty/chromium/net/dns/host_resolver_proc.cc.orig
 +++ src/3rdparty/chromium/net/dns/host_resolver_proc.cc
-@@ -15,10 +15,6 @@
- #include "net/dns/dns_reloader.h"
+@@ -18,10 +18,6 @@
  #include "net/dns/dns_util.h"
+ #include "net/dns/host_resolver.h"
  
 -#if defined(OS_OPENBSD)
 -#define AI_ADDRCONFIG 0
@@ -13,4 +13,4 @@ Index: src/3rdparty/chromium/net/dns/host_resolver_proc.cc
 -
  namespace net {
  
- namespace {
+ HostResolverProc* HostResolverProc::default_proc_ = nullptr;

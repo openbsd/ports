@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_zygote_host_zygote_host_impl_linux_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_zygote_host_zygote_host_impl_linux_cc,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/services/service_manager/zygote/host/zygote_host_impl_linux.cc
 --- src/3rdparty/chromium/services/service_manager/zygote/host/zygote_host_impl_linux.cc.orig
@@ -57,7 +57,7 @@ Index: src/3rdparty/chromium/services/service_manager/zygote/host/zygote_host_im
    int fds[2];
    CHECK_EQ(0, socketpair(AF_UNIX, SOCK_SEQPACKET, 0, fds));
    CHECK(base::UnixDomainSocket::EnableReceiveProcessId(fds[0]));
-@@ -210,6 +219,9 @@ pid_t ZygoteHostImpl::LaunchZygote(
+@@ -213,6 +222,9 @@ pid_t ZygoteHostImpl::LaunchZygote(
  
    AddZygotePid(pid);
    return pid;

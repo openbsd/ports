@@ -1,13 +1,29 @@
-$OpenBSD: patch-src_3rdparty_chromium_net_base_network_change_notifier_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_net_base_network_change_notifier_cc,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/net/base/network_change_notifier.cc
 --- src/3rdparty/chromium/net/base/network_change_notifier.cc.orig
 +++ src/3rdparty/chromium/net/base/network_change_notifier.cc
-@@ -221,7 +221,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
+@@ -35,7 +35,7 @@
+ #include "net/base/network_change_notifier_linux.h"
+ #elif defined(OS_MACOSX)
+ #include "net/base/network_change_notifier_mac.h"
+-#elif defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#elif defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ #include "net/base/network_change_notifier_posix.h"
  #elif defined(OS_FUCHSIA)
-   return new NetworkChangeNotifierFuchsia(0 /* required_features */);
- #else
--  NOTIMPLEMENTED();
-   return NULL;
- #endif
- }
+ #include "net/base/network_change_notifier_fuchsia.h"
+@@ -229,9 +229,13 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+   // service in a separate process.
+   return std::make_unique<NetworkChangeNotifierPosix>(initial_type,
+                                                       initial_subtype);
+-#elif defined(OS_CHROMEOS)
++#elif defined(OS_CHROMEOS) || defined(OS_BSD)
++#if !defined(OS_BSD)
+   return std::make_unique<NetworkChangeNotifierPosix>(initial_type,
+                                                       initial_subtype);
++#else
++  return NULL;
++#endif
+ #elif defined(OS_LINUX)
+   return std::make_unique<NetworkChangeNotifierLinux>(
+       std::unordered_set<std::string>());

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_ui_gfx_mojom_buffer_types_mojom_traits_cc,v 1.1 2021/01/19 06:16:35 rsadowski Exp $
+
+Index: src/3rdparty/chromium/ui/gfx/mojom/buffer_types_mojom_traits.cc
+--- src/3rdparty/chromium/ui/gfx/mojom/buffer_types_mojom_traits.cc.orig
++++ src/3rdparty/chromium/ui/gfx/mojom/buffer_types_mojom_traits.cc
+@@ -33,7 +33,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTra
+       return gfx::mojom::GpuMemoryBufferPlatformHandle::NewSharedMemoryHandle(
+           std::move(handle.region));
+     case gfx::NATIVE_PIXMAP:
+-#if defined(OS_LINUX) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+       return gfx::mojom::GpuMemoryBufferPlatformHandle::NewNativePixmapHandle(
+           std::move(handle.native_pixmap_handle));
+ #else
+@@ -109,7 +109,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
+       out->type = gfx::SHARED_MEMORY_BUFFER;
+       out->region = std::move(platform_handle->get_shared_memory_handle());
+       return true;
+-#if defined(OS_LINUX) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+     case gfx::mojom::GpuMemoryBufferPlatformHandleDataView::Tag::
+         NATIVE_PIXMAP_HANDLE:
+       out->type = gfx::NATIVE_PIXMAP;

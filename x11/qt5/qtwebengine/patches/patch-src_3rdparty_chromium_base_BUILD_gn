@@ -1,22 +1,54 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_BUILD_gn,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_base_BUILD_gn,v 1.2 2021/01/19 06:16:33 rsadowski Exp $
 
 Index: src/3rdparty/chromium/base/BUILD.gn
 --- src/3rdparty/chromium/base/BUILD.gn.orig
 +++ src/3rdparty/chromium/base/BUILD.gn
-@@ -128,7 +128,6 @@ jumbo_component("base") {
-     # Same for ios: https://crbug.com/776313.
-     never_build_jumbo = true
+@@ -59,7 +59,7 @@ declare_args() {
+   # replacement base::Location::Current(). On by default in non-official builds
+   # for testing purposes.
+   # TODO(https://crbug.com/974061): remove this eventually.
+-  from_here_uses_location_builtins = !is_official_build
++  from_here_uses_location_builtins = !is_official_build && !is_bsd
+ 
+   # Unsafe developer build. Has developer-friendly features that may weaken or
+   # disable security measures like sandboxing or ASLR.
+@@ -929,7 +929,7 @@ jumbo_component("base") {
+       "timer/hi_res_timer_manager_posix.cc",
+     ]
+ 
+-    if (!is_nacl && !is_mac && !is_ios) {
++    if (!is_nacl && !is_mac && !is_ios && !is_openbsd) {
+       sources += [
+         "profiler/stack_copier_signal.cc",
+         "profiler/stack_copier_signal.h",
+@@ -938,6 +938,12 @@ jumbo_component("base") {
+         "profiler/thread_delegate_posix.h",
+       ]
+     }
++
++    if (is_openbsd) {
++      sources += [
++        "profiler/stack_sampler_openbsd.cc",
++      ]
++    }
    }
--
-   sources = [
-     "allocator/allocator_check.cc",
-     "allocator/allocator_check.h",
-@@ -1183,11 +1182,16 @@ jumbo_component("base") {
+ 
+   jumbo_excluded_sources = []
+@@ -1239,7 +1245,7 @@ jumbo_component("base") {
+       "process/process_metrics_linux.cc",
+       "threading/platform_thread_linux.cc",
+     ]
+-    jumbo_excluded_sources += [ "process/memory_linux.cc" ]
++    #jumbo_excluded_sources += [ "process/memory_linux.cc" ]
+   }
+ 
+   if (!is_nacl) {
+@@ -1324,11 +1330,17 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
 -  if (!use_sysroot && (is_android || (is_linux && !is_chromecast && !use_qt)) &&
-+  if (!use_sysroot && (is_android || (is_linux && !is_chromecast) && !is_clang) &&
++  if (!use_sysroot && (is_android || (is_linux && !is_chromecast && !use_qt && !is_clang)) &&
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
@@ -26,10 +58,11 @@ Index: src/3rdparty/chromium/base/BUILD.gn
 +    libs += [ "kvm" ]
 +  }
 +
++
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1209,7 +1213,7 @@ jumbo_component("base") {
+@@ -1350,7 +1362,7 @@ jumbo_component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
@@ -38,7 +71,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1749,6 +1753,29 @@ jumbo_component("base") {
+@@ -1947,6 +1959,29 @@ jumbo_component("base") {
      }
    }
  
@@ -67,22 +100,13 @@ Index: src/3rdparty/chromium/base/BUILD.gn
 +
    # iOS
    if (is_ios) {
-     set_sources_assignment_filter([])
-@@ -1819,6 +1846,8 @@ jumbo_component("base") {
-     set_sources_assignment_filter(sources_assignment_filter)
-   }
- 
-+  libs += [ "execinfo" ]
-+
-   if (dep_libevent) {
-     deps += [ "//base/third_party/libevent" ]
-   }
-@@ -2834,6 +2863,8 @@ test("base_unittests") {
-       # data += [ "$root_out_dir/base_unittests.dSYM/" ]
+     sources -= [
+@@ -2393,6 +2428,8 @@ if (is_win || is_mac) {
+       sources = [ "profiler/test_support_library.cc" ]
      }
    }
 +
 +  libs = [ "execinfo" ]
  }
  
- action("build_date") {
+ source_set("base_stack_sampling_profiler_test_util") {

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_message_center_public_cpp_message_center_constants_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_ui_message_center_public_cpp_message_center_constants_h,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
 
 Index: src/3rdparty/chromium/ui/message_center/public/cpp/message_center_constants.h
 --- src/3rdparty/chromium/ui/message_center/public/cpp/message_center_constants.h.orig
 +++ src/3rdparty/chromium/ui/message_center/public/cpp/message_center_constants.h
-@@ -101,7 +101,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
+@@ -109,7 +109,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
  const int kButtonIconTopPadding = 11;      // In DIPs.
  const int kButtonIconToTitlePadding = 16;  // In DIPs.
  

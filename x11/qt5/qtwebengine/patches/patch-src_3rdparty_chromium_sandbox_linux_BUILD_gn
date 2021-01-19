@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_3rdparty_chromium_sandbox_linux_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_sandbox_linux_BUILD_gn,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/sandbox/linux/BUILD.gn
 --- src/3rdparty/chromium/sandbox/linux/BUILD.gn.orig
@@ -19,7 +19,7 @@ Index: src/3rdparty/chromium/sandbox/linux/BUILD.gn
  }
  
  if (is_nacl_nonsfi) {
-@@ -257,7 +257,7 @@ component("seccomp_bpf") {
+@@ -250,7 +250,7 @@ component("seccomp_bpf") {
      "//base/third_party/dynamic_annotations",
    ]
  
@@ -28,7 +28,7 @@ Index: src/3rdparty/chromium/sandbox/linux/BUILD.gn
      cflags = [ "-fgnu-inline-asm" ]
      sources -= [
        "bpf_dsl/bpf_dsl_forward.h",
-@@ -330,30 +330,8 @@ component("sandbox_services") {
+@@ -323,30 +323,8 @@ component("sandbox_services") {
      "services/proc_util.h",
      "services/resource_limits.cc",
      "services/resource_limits.h",
@@ -59,7 +59,7 @@ Index: src/3rdparty/chromium/sandbox/linux/BUILD.gn
    ]
  
    defines = [ "SANDBOX_IMPLEMENTATION" ]
-@@ -405,6 +383,10 @@ component("sandbox_services") {
+@@ -396,6 +374,10 @@ component("sandbox_services") {
        "syscall_broker/broker_process.h",
        "syscall_broker/broker_simple_message.cc",
        "syscall_broker/broker_simple_message.h",

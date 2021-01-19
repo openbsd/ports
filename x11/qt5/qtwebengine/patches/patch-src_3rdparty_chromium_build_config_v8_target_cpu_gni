@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_build_config_v8_target_cpu_gni,v 1.1 2021/01/19 06:16:33 rsadowski Exp $
+
+Index: src/3rdparty/chromium/build/config/v8_target_cpu.gni
+--- src/3rdparty/chromium/build/config/v8_target_cpu.gni.orig
++++ src/3rdparty/chromium/build/config/v8_target_cpu.gni
+@@ -36,6 +36,8 @@ declare_args() {
+ if (v8_target_cpu == "") {
+   if (current_toolchain == "//build/toolchain/linux:clang_x64_v8_arm64") {
+     v8_target_cpu = "arm64"
++  } else if (current_toolchain == "//build/toolchain/openbsd:clang_arm64") {
++    v8_target_cpu = "arm64"
+   } else if (current_toolchain == "//build/toolchain/linux:clang_x86_v8_arm") {
+     v8_target_cpu = "arm"
+   } else if (current_toolchain ==

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:39 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2021/01/19 06:16:32 rsadowski Exp $
 lib/qt5/examples/svg/
 lib/qt5/examples/svg/draganddrop/
 lib/qt5/examples/svg/draganddrop/delayedencoding/
@@ -116,23 +116,6 @@ lib/qt5/examples/svg/embeddedsvgviewer/files/
 lib/qt5/examples/svg/embeddedsvgviewer/files/default.svg
 lib/qt5/examples/svg/embeddedsvgviewer/files/v-slider-handle.svg
 lib/qt5/examples/svg/embeddedsvgviewer/main.cpp
-lib/qt5/examples/svg/network/
-lib/qt5/examples/svg/network/bearercloud/
-lib/qt5/examples/svg/network/bearercloud/bearercloud.cpp
-lib/qt5/examples/svg/network/bearercloud/bearercloud.h
-lib/qt5/examples/svg/network/bearercloud/bearercloud.pro
-lib/qt5/examples/svg/network/bearercloud/bluetooth.svg
-lib/qt5/examples/svg/network/bearercloud/cell.svg
-lib/qt5/examples/svg/network/bearercloud/cloud.cpp
-lib/qt5/examples/svg/network/bearercloud/cloud.h
-lib/qt5/examples/svg/network/bearercloud/gprs.svg
-lib/qt5/examples/svg/network/bearercloud/icons.qrc
-lib/qt5/examples/svg/network/bearercloud/lan.svg
-lib/qt5/examples/svg/network/bearercloud/main.cpp
-lib/qt5/examples/svg/network/bearercloud/umts.svg
-lib/qt5/examples/svg/network/bearercloud/unknown.svg
-lib/qt5/examples/svg/network/bearercloud/wlan.svg
-lib/qt5/examples/svg/network/network.pro
 lib/qt5/examples/svg/opengl/
 lib/qt5/examples/svg/opengl/framebufferobject/
 lib/qt5/examples/svg/opengl/framebufferobject/bubbles.svg

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_third_party_symbolize_symbolize_cc,v 1.1 2020/05/16 07:02:59 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_base_third_party_symbolize_symbolize_cc,v 1.2 2021/01/19 06:16:33 rsadowski Exp $
 
 Index: src/3rdparty/chromium/base/third_party/symbolize/symbolize.cc
 --- src/3rdparty/chromium/base/third_party/symbolize/symbolize.cc.orig
 +++ src/3rdparty/chromium/base/third_party/symbolize/symbolize.cc
-@@ -111,7 +111,7 @@ _END_GOOGLE_NAMESPACE_
- #if defined(__ELF__)
- 
+@@ -113,7 +113,7 @@ _END_GOOGLE_NAMESPACE_
+ #if defined(HAVE_DLFCN_H)
  #include <dlfcn.h>
+ #endif
 -#if defined(OS_OPENBSD)
 +#if defined(__OpenBSD__)
  #include <sys/exec_elf.h>

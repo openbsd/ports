@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/13 16:53:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2021/01/19 06:16:31 rsadowski Exp $
 
 QT5NAME =	Qt Labs Controls
 DISTNAME =	qtquickcontrols2-everywhere-src-${DIST_VERSION}
@@ -10,7 +10,7 @@ SHARED_LIBS +=  Qt5QuickTemplates2            1.0 # 5.9
 MULTI_PACKAGES =	-main -examples
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Quick Qt5Widgets m
+WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets m
 
 LIB_DEPENDS =	x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 

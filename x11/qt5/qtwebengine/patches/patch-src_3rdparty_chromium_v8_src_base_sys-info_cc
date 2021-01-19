@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_v8_src_base_sys-info_cc,v 1.1 2021/01/19 06:16:35 rsadowski Exp $
+
+Index: src/3rdparty/chromium/v8/src/base/sys-info.cc
+--- src/3rdparty/chromium/v8/src/base/sys-info.cc.orig
++++ src/3rdparty/chromium/v8/src/base/sys-info.cc
+@@ -32,7 +32,7 @@ namespace base {
+ // static
+ int SysInfo::NumberOfProcessors() {
+ #if V8_OS_OPENBSD
+-  int mib[2] = {CTL_HW, HW_NCPU};
++  int mib[2] = {CTL_HW, HW_NCPUONLINE};
+   int ncpu = 0;
+   size_t len = sizeof(ncpu);
+   if (sysctl(mib, arraysize(mib), &ncpu, &len, nullptr, 0) != 0) {

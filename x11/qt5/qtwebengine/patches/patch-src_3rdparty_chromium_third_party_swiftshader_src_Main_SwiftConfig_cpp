@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_swiftshader_src_Main_SwiftConfig_cpp,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_third_party_swiftshader_src_Main_SwiftConfig_cpp,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
 
 Index: src/3rdparty/chromium/third_party/swiftshader/src/Main/SwiftConfig.cpp
 --- src/3rdparty/chromium/third_party/swiftshader/src/Main/SwiftConfig.cpp.orig
 +++ src/3rdparty/chromium/third_party/swiftshader/src/Main/SwiftConfig.cpp
-@@ -762,7 +762,11 @@ namespace sw
+@@ -764,7 +764,11 @@ namespace sw
  		struct stat status;
  		int lastModified = ini.getInteger("LastModified", "Time", 0);
  

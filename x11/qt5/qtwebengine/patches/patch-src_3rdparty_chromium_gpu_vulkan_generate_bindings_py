@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_gpu_vulkan_generate_bindings_py,v 1.1 2021/01/19 06:16:34 rsadowski Exp $
+
+Index: src/3rdparty/chromium/gpu/vulkan/generate_bindings.py
+--- src/3rdparty/chromium/gpu/vulkan/generate_bindings.py.orig
++++ src/3rdparty/chromium/gpu/vulkan/generate_bindings.py
+@@ -181,7 +181,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+     ]
+   },
+   {
+-    'ifdef': 'defined(OS_LINUX) || defined(OS_ANDROID)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)',
+     'extension': 'VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME',
+     'functions': [
+       'vkGetSemaphoreFdKHR',
+@@ -189,7 +189,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+     ]
+   },
+   {
+-    'ifdef': 'defined(OS_LINUX) || defined(OS_ANDROID)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)',
+     'extension': 'VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME',
+     'functions': [
+       'vkGetMemoryFdKHR',

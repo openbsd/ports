@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2020/03/13 16:53:49 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2021/01/19 06:16:29 rsadowski Exp $
 @conflict qt5-<5.6
-include/X11/qt5/
 include/X11/qt5/Qt3DAnimation/
 include/X11/qt5/Qt3DAnimation/${VERSION}/
 include/X11/qt5/Qt3DAnimation/${VERSION}/Qt3DAnimation/
 include/X11/qt5/Qt3DAnimation/${VERSION}/Qt3DAnimation/private/
+include/X11/qt5/Qt3DAnimation/${VERSION}/Qt3DAnimation/private/abstractevaluateclipanimatorjob_p.h
 include/X11/qt5/Qt3DAnimation/${VERSION}/Qt3DAnimation/private/additiveclipblend_p.h
 include/X11/qt5/Qt3DAnimation/${VERSION}/Qt3DAnimation/private/animationclip_p.h
 include/X11/qt5/Qt3DAnimation/${VERSION}/Qt3DAnimation/private/animationlogging_p.h
@@ -156,9 +156,7 @@ include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qaspectjob_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qaspectjobmanager_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qaspectjobproviderinterface_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qaspectmanager_p.h
-include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qaspectthread_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qbackendnode_p.h
-include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qbackendnodefactory_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qboundedcircularbuffer_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qchangearbiter_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qcircularbuffer_p.h
@@ -176,6 +174,7 @@ include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qframeallocator_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qframeallocator_p_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qhandle_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qjoint_p.h
+include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qloadgltf_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qlockableobserverinterface_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qmath3d_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qnode_p.h
@@ -201,7 +200,6 @@ include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qpropertyvalueremovedchange
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qresourcemanager_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qscene_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qscenechange_p.h
-include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qsceneobserverinterface_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qscheduler_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qservicelocator_p.h
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/private/qskeleton_p.h
@@ -237,12 +235,9 @@ include/X11/qt5/Qt3DCore/QBackendNodeMapper
 include/X11/qt5/Qt3DCore/QBackendNodeMapperPtr
 include/X11/qt5/Qt3DCore/QComponent
 include/X11/qt5/Qt3DCore/QComponentAddedChange
-include/X11/qt5/Qt3DCore/QComponentAddedChangePtr
 include/X11/qt5/Qt3DCore/QComponentRemovedChange
-include/X11/qt5/Qt3DCore/QComponentRemovedChangePtr
 include/X11/qt5/Qt3DCore/QComponentVector
 include/X11/qt5/Qt3DCore/QDynamicPropertyUpdatedChange
-include/X11/qt5/Qt3DCore/QDynamicPropertyUpdatedChangePtr
 include/X11/qt5/Qt3DCore/QEntity
 include/X11/qt5/Qt3DCore/QEntityPtr
 include/X11/qt5/Qt3DCore/QJoint
@@ -253,33 +248,23 @@ include/X11/qt5/Qt3DCore/QNodeCreatedChange
 include/X11/qt5/Qt3DCore/QNodeCreatedChangeBase
 include/X11/qt5/Qt3DCore/QNodeCreatedChangeBasePtr
 include/X11/qt5/Qt3DCore/QNodeDestroyedChange
-include/X11/qt5/Qt3DCore/QNodeDestroyedChangePtr
 include/X11/qt5/Qt3DCore/QNodeId
 include/X11/qt5/Qt3DCore/QNodeIdTypePair
 include/X11/qt5/Qt3DCore/QNodePtr
 include/X11/qt5/Qt3DCore/QNodeVector
 include/X11/qt5/Qt3DCore/QPropertyNodeAddedChange
-include/X11/qt5/Qt3DCore/QPropertyNodeAddedChangePtr
 include/X11/qt5/Qt3DCore/QPropertyNodeRemovedChange
-include/X11/qt5/Qt3DCore/QPropertyNodeRemovedChangePtr
 include/X11/qt5/Qt3DCore/QPropertyUpdatedChange
 include/X11/qt5/Qt3DCore/QPropertyUpdatedChangeBase
-include/X11/qt5/Qt3DCore/QPropertyUpdatedChangeBasePtr
-include/X11/qt5/Qt3DCore/QPropertyUpdatedChangePtr
 include/X11/qt5/Qt3DCore/QPropertyValueAddedChange
 include/X11/qt5/Qt3DCore/QPropertyValueAddedChangeBase
-include/X11/qt5/Qt3DCore/QPropertyValueAddedChangeBasePtr
-include/X11/qt5/Qt3DCore/QPropertyValueAddedChangePtr
 include/X11/qt5/Qt3DCore/QPropertyValueRemovedChange
 include/X11/qt5/Qt3DCore/QPropertyValueRemovedChangeBase
-include/X11/qt5/Qt3DCore/QPropertyValueRemovedChangeBasePtr
-include/X11/qt5/Qt3DCore/QPropertyValueRemovedChangePtr
 include/X11/qt5/Qt3DCore/QSceneChange
 include/X11/qt5/Qt3DCore/QSceneChangePtr
 include/X11/qt5/Qt3DCore/QSkeleton
 include/X11/qt5/Qt3DCore/QSkeletonLoader
 include/X11/qt5/Qt3DCore/QStaticPropertyUpdatedChangeBase
-include/X11/qt5/Qt3DCore/QStaticPropertyUpdatedChangeBasePtr
 include/X11/qt5/Qt3DCore/QStaticPropertyValueAddedChangeBase
 include/X11/qt5/Qt3DCore/QStaticPropertyValueRemovedChangeBase
 include/X11/qt5/Qt3DCore/QTransform
@@ -398,6 +383,7 @@ include/X11/qt5/Qt3DExtras/QSpriteSheet
 include/X11/qt5/Qt3DExtras/QSpriteSheetItem
 include/X11/qt5/Qt3DExtras/QText2DEntity
 include/X11/qt5/Qt3DExtras/QTextureMaterial
+include/X11/qt5/Qt3DExtras/QTexturedMetalRoughMaterial
 include/X11/qt5/Qt3DExtras/QTorusGeometry
 include/X11/qt5/Qt3DExtras/QTorusMesh
 include/X11/qt5/Qt3DExtras/Qt3DExtras
@@ -459,6 +445,7 @@ include/X11/qt5/Qt3DInput/${VERSION}/Qt3DInput/private/axis_p.h
 include/X11/qt5/Qt3DInput/${VERSION}/Qt3DInput/private/axisaccumulator_p.h
 include/X11/qt5/Qt3DInput/${VERSION}/Qt3DInput/private/axisaccumulatorjob_p.h
 include/X11/qt5/Qt3DInput/${VERSION}/Qt3DInput/private/axissetting_p.h
+include/X11/qt5/Qt3DInput/${VERSION}/Qt3DInput/private/backendnode_p.h
 include/X11/qt5/Qt3DInput/${VERSION}/Qt3DInput/private/buttonaxisinput_p.h
 include/X11/qt5/Qt3DInput/${VERSION}/Qt3DInput/private/eventsourcesetterhelper_p.h
 include/X11/qt5/Qt3DInput/${VERSION}/Qt3DInput/private/genericdevicebackendnode_p.h
@@ -731,7 +718,7 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/abstractpickingjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/abstractrenderer_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/aligned_malloc_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/apitexturemanager_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/apishadermanager_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/armature_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/attachmentpack_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/attribute_p.h
@@ -749,18 +736,17 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/calcgeometrytrianglevol
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/cameralens_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/cameraselectornode_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/clearbuffers_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/commandexecuter_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/commandthread_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/computecommand_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/computefilteredboundingvolumejob_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/debugoverlay_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/dispatchcompute_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/effect_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/entity_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/entity_p_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/entityaccumulator_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/entityvisitor_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/environmentlight_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/expandboundingvolumejob_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/filtercompatibletechniquejob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/filterentitybycomponentjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/filterkey_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/filterlayerentityjob_p.h
@@ -768,7 +754,6 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/filterproximitydistance
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/framecleanupjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/framegraphnode_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/framegraphvisitor_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/frameprofiler_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/frustumculling_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/frustumcullingjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/genericlambdajob_p.h
@@ -776,22 +761,7 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/genericstate_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/geometry_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/geometryrenderer_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/geometryrenderermanager_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/glbuffer_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/glcommands_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/glfence_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/gltexture_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/gltexturemanager_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/gltfskeletonloader_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicscontext_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicshelperes2_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicshelperes3_1_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicshelperes3_2_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicshelperes3_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicshelpergl2_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicshelpergl3_2_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicshelpergl3_3_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicshelpergl4_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/graphicshelperinterface_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/handle_types_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/job_common_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/joint_p.h
@@ -805,17 +775,15 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/loadbufferjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/loadgeometryjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/loadscenejob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/loadskeletonjob_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/loadtexturedatajob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/managers_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/material_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/materialparametergathererjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/memorybarrier_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/nodefunctor_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/nodemanagers_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/nodraw_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/nopicking_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/objectpicker_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/offscreensurfacehelper_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/openglvertexarrayobject_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/parameter_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/parameterpack_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/pickboundingvolumejob_p.h
@@ -848,6 +816,8 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qcollisionqueryresult_p
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qcolormask_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qcomputecommand_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qcullface_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qdebugoverlay_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qdepthrange_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qdepthtest_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qdirectionallight_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qdispatchcompute_p.h
@@ -862,10 +832,10 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qgeometryloaderfactory_
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qgeometryloaderinterface_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qgeometryrenderer_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qgraphicsapifilter_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qgraphicsutils_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qlayer_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qlayerfilter_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qlevelofdetail_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qlevelofdetailswitch_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qlinewidth_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qmaterial_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qmemorybarrier_p.h
@@ -875,14 +845,19 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qpaintedtextureimage_p.
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qparameter_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qpickevent_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qpickingsettings_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qpicktriangleevent_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qpointlight_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qpointsize_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qpolygonoffset_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qproximityfilter_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qrastermode_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qray3d_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qraycastingservice_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qrenderaspect_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qrendercapabilities_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qrendercapture_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qrendererplugin_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qrendererpluginfactory_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qrenderpass_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qrenderpassfilter_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qrenderplugin_p.h
@@ -906,6 +881,15 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qsceneloader_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qscissortest_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qsetfence_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshaderdata_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshaderformat_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshadergenerator_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshadergraph_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshadergraphloader_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshaderimage_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshaderlanguage_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshadernode_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshadernodeport_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshadernodesloader_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshaderprogram_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qshaderprogrambuilder_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qsortpolicy_p.h
@@ -915,11 +899,13 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qstenciloperation_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qstenciloperationarguments_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qstenciltest_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qstenciltestarguments_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qsubtreeenabler_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qt3drender-config_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qt3drender_global_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qtechnique_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qtechniquefilter_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qtexture_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qtexturedataupdate_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qtextureimage_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qtextureimagedata_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qurlhelper_p.h
@@ -927,15 +913,10 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qviewport_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/qwaitfence_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/raycaster_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/raycastingjob_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderbuffer_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/rendercapture_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/rendercommand_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderer_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderercache_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderlogging_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderpass_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderpassfilternode_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderqueue_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/rendersettings_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderstatenode_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderstates_p.h
@@ -945,24 +926,17 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/rendertarget_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/rendertargetoutput_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/rendertargetselectornode_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderthread_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderview_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderviewbuilder_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderviewbuilderjob_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderviewinitializerjob_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/renderviewjobutils_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/resourceaccessor_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/scene_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/scenemanager_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/segmentsvisitor_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/sendbuffercapturejob_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/sendrendercapturejob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/setfence_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/shader_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/shaderbuilder_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/shadercache_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/shaderdata_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/shaderparameterpack_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/shadervariables_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/shaderimage_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/skeleton_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/skeletondata_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/sortpolicy_p.h
@@ -971,20 +945,18 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/statemask_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/statesetnode_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/statevariant_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/stringtoint_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/submissioncontext_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/subtreeenabler_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/technique_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/techniquefilternode_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/techniquemanager_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/texture_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/texturedatamanager_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/textureimage_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/texturesubmissioncontext_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/transform_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/triangleboundingvolume_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/trianglesextractor_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/trianglesvisitor_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/uniform_p.h
-include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/updateentityhierarchyjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/updateentitylayersjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/updatelevelofdetailjob_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/updatemeshtrianglelistjob_p.h
@@ -996,6 +968,7 @@ include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/updateworldtransformjob
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/viewportnode_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/visitorutils_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/vsyncframeadvanceservice_p.h
+include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/vulkaninstance_p.h
 include/X11/qt5/Qt3DRender/${VERSION}/Qt3DRender/private/waitfence_p.h
 include/X11/qt5/Qt3DRender/FunctorType
 include/X11/qt5/Qt3DRender/ParameterList
@@ -1025,6 +998,8 @@ include/X11/qt5/Qt3DRender/QClipPlane
 include/X11/qt5/Qt3DRender/QColorMask
 include/X11/qt5/Qt3DRender/QComputeCommand
 include/X11/qt5/Qt3DRender/QCullFace
+include/X11/qt5/Qt3DRender/QDebugOverlay
+include/X11/qt5/Qt3DRender/QDepthRange
 include/X11/qt5/Qt3DRender/QDepthTest
 include/X11/qt5/Qt3DRender/QDirectionalLight
 include/X11/qt5/Qt3DRender/QDispatchCompute
@@ -1055,6 +1030,7 @@ include/X11/qt5/Qt3DRender/QMesh
 include/X11/qt5/Qt3DRender/QMultiSampleAntiAliasing
 include/X11/qt5/Qt3DRender/QNoDepthMask
 include/X11/qt5/Qt3DRender/QNoDraw
+include/X11/qt5/Qt3DRender/QNoPicking
 include/X11/qt5/Qt3DRender/QObjectPicker
 include/X11/qt5/Qt3DRender/QPaintedTextureImage
 include/X11/qt5/Qt3DRender/QParameter
@@ -1071,9 +1047,11 @@ include/X11/qt5/Qt3DRender/QPointLight
 include/X11/qt5/Qt3DRender/QPointSize
 include/X11/qt5/Qt3DRender/QPolygonOffset
 include/X11/qt5/Qt3DRender/QProximityFilter
+include/X11/qt5/Qt3DRender/QRasterMode
 include/X11/qt5/Qt3DRender/QRayCaster
 include/X11/qt5/Qt3DRender/QRayCasterHit
 include/X11/qt5/Qt3DRender/QRenderAspect
+include/X11/qt5/Qt3DRender/QRenderCapabilities
 include/X11/qt5/Qt3DRender/QRenderCapture
 include/X11/qt5/Qt3DRender/QRenderCaptureReply
 include/X11/qt5/Qt3DRender/QRenderPass
@@ -1091,6 +1069,7 @@ include/X11/qt5/Qt3DRender/QScreenRayCaster
 include/X11/qt5/Qt3DRender/QSeamlessCubemap
 include/X11/qt5/Qt3DRender/QSetFence
 include/X11/qt5/Qt3DRender/QShaderData
+include/X11/qt5/Qt3DRender/QShaderImage
 include/X11/qt5/Qt3DRender/QShaderProgram
 include/X11/qt5/Qt3DRender/QShaderProgramBuilder
 include/X11/qt5/Qt3DRender/QSortPolicy
@@ -1100,11 +1079,13 @@ include/X11/qt5/Qt3DRender/QStencilOperation
 include/X11/qt5/Qt3DRender/QStencilOperationArguments
 include/X11/qt5/Qt3DRender/QStencilTest
 include/X11/qt5/Qt3DRender/QStencilTestArguments
+include/X11/qt5/Qt3DRender/QSubtreeEnabler
 include/X11/qt5/Qt3DRender/QTechnique
 include/X11/qt5/Qt3DRender/QTechniqueFilter
 include/X11/qt5/Qt3DRender/QTexture
 include/X11/qt5/Qt3DRender/QTextureData
 include/X11/qt5/Qt3DRender/QTextureDataPtr
+include/X11/qt5/Qt3DRender/QTextureDataUpdate
 include/X11/qt5/Qt3DRender/QTextureGenerator
 include/X11/qt5/Qt3DRender/QTextureGeneratorPtr
 include/X11/qt5/Qt3DRender/QTextureImage
@@ -1140,6 +1121,8 @@ include/X11/qt5/Qt3DRender/qclipplane.h
 include/X11/qt5/Qt3DRender/qcolormask.h
 include/X11/qt5/Qt3DRender/qcomputecommand.h
 include/X11/qt5/Qt3DRender/qcullface.h
+include/X11/qt5/Qt3DRender/qdebugoverlay.h
+include/X11/qt5/Qt3DRender/qdepthrange.h
 include/X11/qt5/Qt3DRender/qdepthtest.h
 include/X11/qt5/Qt3DRender/qdirectionallight.h
 include/X11/qt5/Qt3DRender/qdispatchcompute.h
@@ -1167,6 +1150,7 @@ include/X11/qt5/Qt3DRender/qmesh.h
 include/X11/qt5/Qt3DRender/qmultisampleantialiasing.h
 include/X11/qt5/Qt3DRender/qnodepthmask.h
 include/X11/qt5/Qt3DRender/qnodraw.h
+include/X11/qt5/Qt3DRender/qnopicking.h
 include/X11/qt5/Qt3DRender/qobjectpicker.h
 include/X11/qt5/Qt3DRender/qpaintedtextureimage.h
 include/X11/qt5/Qt3DRender/qparameter.h
@@ -1179,9 +1163,12 @@ include/X11/qt5/Qt3DRender/qpointlight.h
 include/X11/qt5/Qt3DRender/qpointsize.h
 include/X11/qt5/Qt3DRender/qpolygonoffset.h
 include/X11/qt5/Qt3DRender/qproximityfilter.h
+include/X11/qt5/Qt3DRender/qrastermode.h
 include/X11/qt5/Qt3DRender/qraycaster.h
 include/X11/qt5/Qt3DRender/qraycasterhit.h
+include/X11/qt5/Qt3DRender/qrenderapi.h
 include/X11/qt5/Qt3DRender/qrenderaspect.h
+include/X11/qt5/Qt3DRender/qrendercapabilities.h
 include/X11/qt5/Qt3DRender/qrendercapture.h
 include/X11/qt5/Qt3DRender/qrenderpass.h
 include/X11/qt5/Qt3DRender/qrenderpassfilter.h
@@ -1198,6 +1185,7 @@ include/X11/qt5/Qt3DRender/qscreenraycaster.h
 include/X11/qt5/Qt3DRender/qseamlesscubemap.h
 include/X11/qt5/Qt3DRender/qsetfence.h
 include/X11/qt5/Qt3DRender/qshaderdata.h
+include/X11/qt5/Qt3DRender/qshaderimage.h
 include/X11/qt5/Qt3DRender/qshaderprogram.h
 include/X11/qt5/Qt3DRender/qshaderprogrambuilder.h
 include/X11/qt5/Qt3DRender/qsortpolicy.h
@@ -1207,6 +1195,7 @@ include/X11/qt5/Qt3DRender/qstenciloperation.h
 include/X11/qt5/Qt3DRender/qstenciloperationarguments.h
 include/X11/qt5/Qt3DRender/qstenciltest.h
 include/X11/qt5/Qt3DRender/qstenciltestarguments.h
+include/X11/qt5/Qt3DRender/qsubtreeenabler.h
 include/X11/qt5/Qt3DRender/qt3drender-config.h
 include/X11/qt5/Qt3DRender/qt3drender_global.h
 include/X11/qt5/Qt3DRender/qt3drenderversion.h
@@ -1214,6 +1203,7 @@ include/X11/qt5/Qt3DRender/qtechnique.h
 include/X11/qt5/Qt3DRender/qtechniquefilter.h
 include/X11/qt5/Qt3DRender/qtexture.h
 include/X11/qt5/Qt3DRender/qtexturedata.h
+include/X11/qt5/Qt3DRender/qtexturedataupdate.h
 include/X11/qt5/Qt3DRender/qtexturegenerator.h
 include/X11/qt5/Qt3DRender/qtextureimage.h
 include/X11/qt5/Qt3DRender/qtextureimagedata.h
@@ -1245,10 +1235,7 @@ lib/pkgconfig/Qt53DQuickInput.pc
 lib/pkgconfig/Qt53DQuickRender.pc
 lib/pkgconfig/Qt53DQuickScene2D.pc
 lib/pkgconfig/Qt53DRender.pc
-lib/qt5/
-lib/qt5/bin/
 @bin lib/qt5/bin/qgltf
-lib/qt5/cmake/
 lib/qt5/cmake/Qt53DAnimation/
 lib/qt5/cmake/Qt53DAnimation/Qt53DAnimationConfig.cmake
 lib/qt5/cmake/Qt53DAnimation/Qt53DAnimationConfigVersion.cmake
@@ -1285,13 +1272,30 @@ lib/qt5/cmake/Qt53DQuickScene2D/Qt53DQuickScene2DConfigVersion.cmake
 lib/qt5/cmake/Qt53DRender/
 lib/qt5/cmake/Qt53DRender/Qt53DRenderConfig.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRenderConfigVersion.cmake
-lib/qt5/cmake/Qt53DRender/Qt53DRender_AssimpSceneImportPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_DefaultGeometryLoaderPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_GLTFGeometryLoaderPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_GLTFSceneExportPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_GLTFSceneImportPlugin.cmake
+lib/qt5/cmake/Qt53DRender/Qt53DRender_OpenGLRendererPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_Scene2DPlugin.cmake
-lib/qt5/examples/
+lib/qt5/examples/qt3d/controlsunderlay/
+lib/qt5/examples/qt3d/controlsunderlay/Logo.qml
+lib/qt5/examples/qt3d/controlsunderlay/Qt_logo.obj
+lib/qt5/examples/qt3d/controlsunderlay/controls.qrc
+lib/qt5/examples/qt3d/controlsunderlay/controlsunderlay.pro
+lib/qt5/examples/qt3d/controlsunderlay/main.cpp
+lib/qt5/examples/qt3d/controlsunderlay/main.qml
+lib/qt5/examples/qt3d/scene3dview/
+lib/qt5/examples/qt3d/scene3dview/AnimatedEntity.qml
+lib/qt5/examples/qt3d/scene3dview/doc/
+lib/qt5/examples/qt3d/scene3dview/doc/images/
+lib/qt5/examples/qt3d/scene3dview/doc/images/scene3dview.png
+lib/qt5/examples/qt3d/scene3dview/doc/src/
+lib/qt5/examples/qt3d/scene3dview/doc/src/scene3dview.qdoc
+lib/qt5/examples/qt3d/scene3dview/main.cpp
+lib/qt5/examples/qt3d/scene3dview/main.qml
+lib/qt5/examples/qt3d/scene3dview/scene3dview.pro
+lib/qt5/examples/qt3d/scene3dview/scene3dview.qrc
 lib/qt5/libQt53DAnimation.la
 lib/qt5/libQt53DAnimation.prl
 @lib lib/qt5/libQt53DAnimation.so.${LIBQt53DAnimation_VERSION}
@@ -1328,8 +1332,6 @@ lib/qt5/libQt53DQuickScene2D.prl
 lib/qt5/libQt53DRender.la
 lib/qt5/libQt53DRender.prl
 @lib lib/qt5/libQt53DRender.so.${LIBQt53DRender_VERSION}
-lib/qt5/mkspecs/
-lib/qt5/mkspecs/modules/
 lib/qt5/mkspecs/modules/qt_lib_3danimation.pri
 lib/qt5/mkspecs/modules/qt_lib_3danimation_private.pri
 lib/qt5/mkspecs/modules/qt_lib_3dcore.pri
@@ -1354,7 +1356,6 @@ lib/qt5/mkspecs/modules/qt_lib_3dquickscene2d.pri
 lib/qt5/mkspecs/modules/qt_lib_3dquickscene2d_private.pri
 lib/qt5/mkspecs/modules/qt_lib_3drender.pri
 lib/qt5/mkspecs/modules/qt_lib_3drender_private.pri
-lib/qt5/pkgconfig/
 lib/qt5/pkgconfig/Qt53DAnimation.pc
 lib/qt5/pkgconfig/Qt53DCore.pc
 lib/qt5/pkgconfig/Qt53DExtras.pc
@@ -1367,17 +1368,16 @@ lib/qt5/pkgconfig/Qt53DQuickInput.pc
 lib/qt5/pkgconfig/Qt53DQuickRender.pc
 lib/qt5/pkgconfig/Qt53DQuickScene2D.pc
 lib/qt5/pkgconfig/Qt53DRender.pc
-lib/qt5/plugins/
 lib/qt5/plugins/geometryloaders/
 @so lib/qt5/plugins/geometryloaders/libdefaultgeometryloader.so
 @so lib/qt5/plugins/geometryloaders/libgltfgeometryloader.so
+lib/qt5/plugins/renderers/
+@so lib/qt5/plugins/renderers/libopenglrenderer.so
 lib/qt5/plugins/renderplugins/
 @so lib/qt5/plugins/renderplugins/libscene2d.so
 lib/qt5/plugins/sceneparsers/
-@so lib/qt5/plugins/sceneparsers/libassimpsceneimport.so
 @so lib/qt5/plugins/sceneparsers/libgltfsceneexport.so
 @so lib/qt5/plugins/sceneparsers/libgltfsceneimport.so
-lib/qt5/qml/
 lib/qt5/qml/Qt3D/
 lib/qt5/qml/Qt3D/Animation/
 @so lib/qt5/qml/Qt3D/Animation/libquick3danimationplugin.so
@@ -1403,7 +1403,6 @@ lib/qt5/qml/Qt3D/Render/
 @so lib/qt5/qml/Qt3D/Render/libquick3drenderplugin.so
 lib/qt5/qml/Qt3D/Render/plugins.qmltypes
 lib/qt5/qml/Qt3D/Render/qmldir
-lib/qt5/qml/QtQuick/
 lib/qt5/qml/QtQuick/Scene2D/
 @so lib/qt5/qml/QtQuick/Scene2D/libqtquickscene2dplugin.so
 lib/qt5/qml/QtQuick/Scene2D/plugins.qmltypes

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_corelib_global_global_pri,v 1.4 2020/03/13 16:53:50 rsadowski Exp $
+$OpenBSD: patch-src_corelib_global_global_pri,v 1.5 2021/01/19 06:16:29 rsadowski Exp $
 
 Index: src/corelib/global/global.pri
 --- src/corelib/global/global.pri.orig
 +++ src/corelib/global/global.pri
-@@ -101,6 +101,10 @@ linux:!static {
+@@ -105,6 +105,10 @@ linux:!static {
      HEADERS += global/minimum-linux_p.h
  }
  

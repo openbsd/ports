@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_sandbox_openbsd_sandbox_openbsd_h,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_services_service_manager_sandbox_openbsd_sandbox_openbsd_h,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.h
 --- src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.h.orig
 +++ src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_openbsd.h
-@@ -0,0 +1,264 @@
+@@ -0,0 +1,265 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -59,11 +59,11 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +  // This isn't the full list, values < 32 are reserved for methods called from
 +  // Skia, and values < 64 are reserved for libc_interceptor.cc.
 +  enum LinuxSandboxIPCMethods {
-+    METHOD_GET_FALLBACK_FONT_FOR_CHAR = 64,
++    DEPRECATED_METHOD_GET_FALLBACK_FONT_FOR_CHAR = 64,
 +    DEPRECATED_METHOD_GET_CHILD_WITH_INODE,
-+    METHOD_GET_STYLE_FOR_STRIKE,
++    DEPRECATED_METHOD_GET_STYLE_FOR_STRIKE,
 +    METHOD_MAKE_SHARED_MEMORY_SEGMENT,
-+    METHOD_MATCH_WITH_FALLBACK,
++    DEPRECATED_METHOD_MATCH_WITH_FALLBACK,
 +  };
 +
 +  // These form a bitmask which describes the conditions of the Linux sandbox.
@@ -113,7 +113,8 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +  // Get our singleton instance.
 +  static SandboxLinux* GetInstance();
 +
-+  bool SetUnveil(const std::string process_type);
++  bool SetPledge(const char *pstring, const char *ppath);
++  bool SetUnveil(const std::string process_type, SandboxType sandbox_type);
 +
 +  // Do some initialization that can only be done before any of the sandboxes
 +  // are enabled. If using the setuid sandbox, this should be called manually
@@ -124,7 +125,7 @@ Index: src/3rdparty/chromium/services/service_manager/sandbox/openbsd/sandbox_op
 +  // Otherwise file descriptors that bypass the security of the setuid sandbox
 +  // would be kept open. One must be particularly careful if a process performs
 +  // a fork().
-+  void PreinitializeSandbox();
++  void PreinitializeSandbox(SandboxType sandbox_type);
 +
 +  // Check that the current process is the init process of a new PID
 +  // namespace and then proceed to drop access to the file system by using

@@ -1,107 +1,106 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.5 2020/03/13 16:53:50 rsadowski Exp $
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.6 2021/01/19 06:16:29 rsadowski Exp $
 
 Index: qmake/generators/unix/unixmake2.cpp
 --- qmake/generators/unix/unixmake2.cpp.orig
 +++ qmake/generators/unix/unixmake2.cpp
-@@ -68,6 +68,10 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
+@@ -63,6 +63,10 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
      if (writeDummyMakefile(t))
          return true;
  
-+    t << "LOCALBASE     ?=" << var("LOCALBASE") << endl
-+      << "X11BASE       ?=" << var("X11BASE")   << endl
-+      << endl;
++    t << "LOCALBASE     ?=" << var("LOCALBASE") << Qt::endl
++      << "X11BASE       ?=" << var("X11BASE")   << Qt::endl
++      << Qt::endl;
 +
      if (project->first("TEMPLATE") == "app" ||
          project->first("TEMPLATE") == "lib" ||
          project->first("TEMPLATE") == "aux") {
-@@ -196,17 +200,18 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -189,16 +193,17 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
      writeExportedVariables(t);
  
      t << "####### Compiler, tools and options\n\n";
--    t << "CC            = " << var("QMAKE_CC") << endl;
--    t << "CXX           = " << var("QMAKE_CXX") << endl;
+-    t << "CC            = " << var("QMAKE_CC") << Qt::endl;
+-    t << "CXX           = " << var("QMAKE_CXX") << Qt::endl;
 -    t << "DEFINES       = "
-+    t << "CC           ?= " << var("QMAKE_CC") << endl;
-+    t << "CXX          ?= " << var("QMAKE_CXX") << endl;
-+    t << "DEFINES      += "
++    t << "CC            ?= " << var("QMAKE_CC") << Qt::endl;
++    t << "CXX           ?= " << var("QMAKE_CXX") << Qt::endl;
++    t << "DEFINES       += "
        << varGlue("PRL_EXPORT_DEFINES","-D"," -D"," ")
-       << varGlue("DEFINES","-D"," -D","") << endl;
+       << varGlue("DEFINES","-D"," -D","") << Qt::endl;
 -    t << "CFLAGS        = " << var("QMAKE_CFLAGS") << " $(DEFINES)\n";
 -    t << "CXXFLAGS      = " << var("QMAKE_CXXFLAGS") << " $(DEFINES)\n";
 -    t << "INCPATH       =";
 +    t << "CFLAGS        = " << var("QMAKE_CFLAGS") << " $(DEFINES) $(COPTS)\n";
 +    t << "CXXFLAGS      = " << var("QMAKE_CXXFLAGS") << " $(DEFINES) $(CXXOPTS)\n";
-+    t << "INCPATH      +=";
++    t << "INCPATH       +=";
      {
-         QString isystem = var("QMAKE_CFLAGS_ISYSTEM");
 -        const ProStringList &incs = project->values("INCLUDEPATH");
 +        // Extend INCPATH with -isystem /usr/include/c++/v1 ...
 +        ProStringList incs = project->values("QMAKE_INCDIR_PREPEND") + project->values("INCLUDEPATH");
          for(int i = 0; i < incs.size(); ++i) {
              const ProString &inc = incs.at(i);
              if (inc.isEmpty())
-@@ -226,9 +231,9 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -214,9 +219,9 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
      writeDefaultVariables(t);
  
      if(!project->isActiveConfig("staticlib")) {
--        t << "LINK          = " << var("QMAKE_LINK") << endl;
-+        t << "LINK         ?= " << var("QMAKE_LINK") << endl;
-         t << "LFLAGS        = " << var("QMAKE_LFLAGS") << endl;
+-        t << "LINK          = " << var("QMAKE_LINK") << Qt::endl;
++        t << "LINK          ?= " << var("QMAKE_LINK") << Qt::endl;
+         t << "LFLAGS        = " << var("QMAKE_LFLAGS") << Qt::endl;
 -        t << "LIBS          = $(SUBLIBS) " << fixLibFlags("LIBS").join(' ') << ' '
-+        t << "LIBS         += $(SUBLIBS) " << fixLibFlags("LIBS").join(' ') << ' '
++        t << "LIBS          += $(SUBLIBS) " << fixLibFlags("LIBS").join(' ') << ' '
                                             << fixLibFlags("LIBS_PRIVATE").join(' ') << ' '
                                             << fixLibFlags("QMAKE_LIBS").join(' ') << ' '
-                                            << fixLibFlags("QMAKE_LIBS_PRIVATE").join(' ') << endl;
-@@ -236,8 +241,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+                                            << fixLibFlags("QMAKE_LIBS_PRIVATE").join(' ') << Qt::endl;
+@@ -224,8 +229,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
  
-     t << "AR            = " << var("QMAKE_AR") << endl;
-     t << "RANLIB        = " << var("QMAKE_RANLIB") << endl;
--    t << "SED           = " << var("QMAKE_STREAM_EDITOR") << endl;
--    t << "STRIP         = " << var("QMAKE_STRIP") << endl;
-+    t << "SED          ?= " << var("QMAKE_STREAM_EDITOR") << endl;
-+    t << "STRIP        ?= " << var("QMAKE_STRIP") << endl;
+     t << "AR            = " << var("QMAKE_AR") << Qt::endl;
+     t << "RANLIB        = " << var("QMAKE_RANLIB") << Qt::endl;
+-    t << "SED           = " << var("QMAKE_STREAM_EDITOR") << Qt::endl;
+-    t << "STRIP         = " << var("QMAKE_STRIP") << Qt::endl;
++    t << "SED           ?= " << var("QMAKE_STREAM_EDITOR") << Qt::endl;
++    t << "STRIP         ?= " << var("QMAKE_STRIP") << Qt::endl;
  
-     t << endl;
+     t << Qt::endl;
  
-@@ -301,12 +306,19 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
-             t << "TARGET0       = " << fileVar("TARGET_") << endl;
+@@ -259,12 +264,19 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+             t << "TARGET0       = " << fileVar("TARGET_") << Qt::endl;
          } else if (!project->isActiveConfig("unversioned_libname")) {
-             t << "TARGET0       = " << fileVar("TARGET_") << endl;
+             t << "TARGET0       = " << fileVar("TARGET_") << Qt::endl;
 -            if (project->isEmpty("QMAKE_HPUX_SHLIB")) {
--                t << "TARGETD       = " << fileVar("TARGET_x.y.z") << endl;
--                t << "TARGET1       = " << fileVar("TARGET_x") << endl;
--                t << "TARGET2       = " << fileVar("TARGET_x.y") << endl;
+-                t << "TARGETD       = " << fileVar("TARGET_x.y.z") << Qt::endl;
+-                t << "TARGET1       = " << fileVar("TARGET_x") << Qt::endl;
+-                t << "TARGET2       = " << fileVar("TARGET_x.y") << Qt::endl;
 +            if (!project->isEmpty("QMAKE_OPENBSD_SHLIB")) {
 +                t << "LIB" << fileVar("QMAKE_ORIG_TARGET") << "_VERSION   ?= "
 +                  << project->first("VER_MAJ") << "." << project->first("VER_MIN")
-+                  << endl;
-+                t << "TARGETD       = " << fileVar("TARGET_x.y") << endl;
++                  <<Qt::endl;
++                t << "TARGETD       = " << fileVar("TARGET_x.y") <<Qt::endl;
              } else {
--                t << "TARGETD       = " << fileVar("TARGET_x") << endl;
+-                t << "TARGETD       = " << fileVar("TARGET_x") << Qt::endl;
 +                if (project->isEmpty("QMAKE_HPUX_SHLIB")) {
-+                    t << "TARGETD       = " << fileVar("TARGET_x.y.z") << endl;
-+                    t << "TARGET1       = " << fileVar("TARGET_x") << endl;
-+                    t << "TARGET2       = " << fileVar("TARGET_x.y") << endl;
++                    t << "TARGETD       = " << fileVar("TARGET_x.y.z") <<Qt::endl;
++                    t << "TARGET1       = " << fileVar("TARGET_x") <<Qt::endl;
++                    t << "TARGET2       = " << fileVar("TARGET_x.y") <<Qt::endl;
 +                } else {
-+                    t << "TARGETD       = " << fileVar("TARGET_x,y") << endl;
++                    t << "TARGETD       = " << fileVar("TARGET_x,y") <<Qt::endl;
 +                }
              }
          }
      }
-@@ -628,7 +640,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -589,7 +601,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
-             t << endl << endl;
+             t << Qt::endl << Qt::endl;
 -        } else if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
 +        } else if(project->isEmpty("QMAKE_HPUX_SHLIB")
-+                  && project->isEmpty("QMAKE_OPENBSD_SHLIB")) {
++                && project->isEmpty("QMAKE_OPENBSD_SHLIB")) {
              t << "\n\t";
  
              if (!project->isActiveConfig("unversioned_libname"))
-@@ -662,7 +675,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -623,7 +636,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
-             t << endl << endl;
+             t << Qt::endl << Qt::endl;
 +        } else if (!project->isEmpty("QMAKE_OPENBSD_SHLIB")) {
 +            // OpenBSD-specific shared libraries handling:
 +            // libfoo.so.X.Y, without any symlinks.
@@ -114,14 +113,14 @@ Index: qmake/generators/unix/unixmake2.cpp
 +                   << "\n\t-$(MOVE) $(TARGET)  " << destdir;
 +            if(!project->isEmpty("QMAKE_POST_LINK"))
 +                t << "\n\t" << var("QMAKE_POST_LINK");
-+            t << endl << endl;
++            t <<Qt::endl <<Qt::endl;
          } else {
 +            // HP-UX-specific shared libraries handling:
 +            // libfoo.sl.X, with symlink to libfoo.sl.
              t << "\n\t"
                << "-$(DEL_FILE) $(TARGET) $(TARGET0)\n\t"
                << var("QMAKE_LINK_SHLIB_CMD") << "\n\t";
-@@ -1282,6 +1310,12 @@ void UnixMakefileGenerator::init2()
+@@ -1245,6 +1273,12 @@ void UnixMakefileGenerator::init2()
                  project->values("TARGET_x").append("lib" + project->first("TARGET") + "." +
                                                          project->first("VER_MAJ"));
              project->values("TARGET") = project->values("TARGET_x");
@@ -134,14 +133,14 @@ Index: qmake/generators/unix/unixmake2.cpp
          } else if (!project->isEmpty("QMAKE_AIX_SHLIB")) {
              project->values("PRL_TARGET").prepend("lib" + project->first("TARGET"));
              project->values("TARGET_").append(project->first("QMAKE_PREFIX_STATICLIB") + project->first("TARGET")
-@@ -1503,18 +1537,33 @@ UnixMakefileGenerator::writeLibtoolFile()
+@@ -1465,18 +1499,33 @@ UnixMakefileGenerator::writeLibtoolFile()
        << QT_VERSION_STR << ")";
      t << "\n";
  
 +    if (!project->isEmpty("QMAKE_OPENBSD_SHLIB"))
 +      t << "LIB" << fileVar("QMAKE_ORIG_TARGET") << "_VERSION="
 +        << project->first("VER_MAJ") << "." << project->first("VER_MIN")
-+        << endl;
++        <<Qt::endl;
 +
      t << "# The name that we can dlopen(3).\n"
 -      << "dlname='" << fileVar(project->isActiveConfig("plugin") ? "TARGET" : "TARGET_x")

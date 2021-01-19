@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_chromium_media_capture_video_linux_v4l2_capture_device_impl_cc,v 1.1 2021/01/19 06:16:34 rsadowski Exp $
+
+Index: src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_device_impl.cc
+--- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_device_impl.cc.orig
++++ src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_device_impl.cc
+@@ -22,7 +22,7 @@ int V4L2CaptureDeviceImpl::close(int fd) {
+   return ::close(fd);
+ }
+ 
+-int V4L2CaptureDeviceImpl::ioctl(int fd, int request, void* argp) {
++int V4L2CaptureDeviceImpl::ioctl(int fd, unsigned long request, void* argp) {
+   return ::ioctl(fd, request, argp);
+ }
+ 

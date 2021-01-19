@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_angle_third_party_vulkan-loader_BUILD_gn,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_third_party_angle_third_party_vulkan-loader_BUILD_gn,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
-Index: src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/BUILD.gn
---- src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/BUILD.gn.orig
-+++ src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/BUILD.gn
-@@ -192,7 +192,7 @@ config("vulkan_loader_config") {
+Index: src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/src/BUILD.gn
+--- src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/src/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/angle/third_party/vulkan-loader/src/BUILD.gn
+@@ -56,7 +56,7 @@ config("vulkan_loader_config") {
    if (is_win) {
      cflags = [ "/wd4201" ]
    }

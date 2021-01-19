@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_3rdparty_chromium_net_dns_dns_util_cc,v 1.1 2020/05/16 07:03:00 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_net_dns_dns_util_cc,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
 
 Index: src/3rdparty/chromium/net/dns/dns_util.cc
 --- src/3rdparty/chromium/net/dns/dns_util.cc.orig
 +++ src/3rdparty/chromium/net/dns/dns_util.cc
-@@ -36,6 +36,8 @@ const uint16_t kFlagNamePointer = 0xc000;
+@@ -39,6 +39,8 @@ const uint16_t kFlagNamePointer = 0xc000;
  
  }  // namespace
  

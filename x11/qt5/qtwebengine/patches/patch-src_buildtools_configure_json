@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_buildtools_configure_json,v 1.1 2021/01/19 06:16:35 rsadowski Exp $
+
+Index: src/buildtools/configure.json
+--- src/buildtools/configure.json.orig
++++ src/buildtools/configure.json
+@@ -362,7 +362,7 @@
+     "features": {
+         "webengine-core-support": {
+             "label": "Support Qt WebEngine Core",
+-            "condition": "(config.linux || config.win32 || config.macos)
++            "condition": "(config.linux || config.openbsd || config.win32 || config.macos)
+                          && !config.static
+                          && module.gui
+                          && features.webengine-submodule
+@@ -388,7 +388,7 @@
+         },
+         "webengine-qtpdf-support": {
+             "label": "Support Qt Pdf",
+-            "condition": "(config.linux || config.win32 || config.macos || config.ios)
++            "condition": "(config.linux || config.openbsd || config.win32 || config.macos || config.ios)
+                          && module.gui
+                          && features.webengine-submodule
+                          && features.webengine-nowhitespace
+@@ -548,6 +548,7 @@
+         },
+         "webengine-system-minizip" : {
+             "label": "minizip",
++            "autoDetect": "false",
+             "condition": "config.unix && libs.webengine-minizip",
+             "output": [ "privateFeature" ]
+         },
+@@ -604,7 +605,7 @@
+         },
+         "webengine-system-ffmpeg": {
+             "label": "ffmpeg",
+-            "autoDetect": "false",
++            "autoDetect": "true",
+             "condition": "libs.webengine-ffmpeg && features.webengine-system-opus && features.webengine-system-libwebp",
+             "output": [ "privateFeature" ]
+         },
