@@ -1,0 +1,13 @@
+$OpenBSD: patch-app_tikzeditor_cpp,v 1.1 2021/01/19 06:48:22 rsadowski Exp $
+
+Index: app/tikzeditor.cpp
+--- app/tikzeditor.cpp.orig
++++ app/tikzeditor.cpp
+@@ -38,6 +38,7 @@
+ #include "tikzeditor.h"
+ 
+ #include <QtGui/QPainter>
++#include <QtGui/QPainterPath>
+ #include <QtGui/QPalette>
+ #include <QtGui/QTextBlock>
+ #include <QtGui/QTextLayout>

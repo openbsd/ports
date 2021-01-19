@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/04/06 08:48:06 pirofti Exp $
+# $OpenBSD: Makefile,v 1.15 2021/01/19 06:48:22 rsadowski Exp $
 
 COMMENT =		editor for the TikZ language
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =		fhackenberger
 GH_PROJECT =		ktikz
 GH_TAGNAME =		0.12
 PKGNAME =		KtikZ-${GH_TAGNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		editors
 HOMEPAGE =		http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/
