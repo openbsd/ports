@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_tiled_mapobjectitem_h,v 1.1 2021/01/19 06:47:06 rsadowski Exp $
+
+Index: src/tiled/mapobjectitem.h
+--- src/tiled/mapobjectitem.h.orig
++++ src/tiled/mapobjectitem.h
+@@ -23,6 +23,7 @@
+ 
+ #include <QCoreApplication>
+ #include <QGraphicsItem>
++#include <QPainterPath>
+ 
+ namespace Tiled {
+ 

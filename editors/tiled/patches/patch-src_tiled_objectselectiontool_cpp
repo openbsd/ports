@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_tiled_objectselectiontool_cpp,v 1.1 2021/01/19 06:47:06 rsadowski Exp $
+
+Index: src/tiled/objectselectiontool.cpp
+--- src/tiled/objectselectiontool.cpp.orig
++++ src/tiled/objectselectiontool.cpp
+@@ -52,6 +52,7 @@
+ #include <QMenu>
+ #include <QTransform>
+ #include <QUndoStack>
++#include <QPainterPath>
+ 
+ #include "qtcompat_p.h"
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_tiled_raiselowerhelper_cpp,v 1.1 2021/01/19 06:47:06 rsadowski Exp $
+
+Index: src/tiled/raiselowerhelper.cpp
+--- src/tiled/raiselowerhelper.cpp.orig
++++ src/tiled/raiselowerhelper.cpp
+@@ -31,6 +31,7 @@
+ #include "rangeset.h"
+ 
+ #include <QCoreApplication>
++#include <QPainterPath>
+ 
+ namespace Tiled {
+ 

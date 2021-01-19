@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/01/19 06:47:06 rsadowski Exp $
 
 # XXX qmake picks up Cocoa/Cocoa.h even though it's apparently unused
 DPB_PROPERTIES =	nojunk
@@ -8,7 +8,7 @@ COMMENT =		tile map editor
 GH_ACCOUNT =		bjorn
 GH_PROJECT =		tiled
 GH_TAGNAME =		v1.3.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		tiled                     1.0 # 1.0
 
