@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2020/10/09 19:12:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2021/01/19 06:47:35 rsadowski Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -12,9 +12,9 @@ GH_TAGNAME =		release-${V}
 PKGNAME-main =		texworks-${V}
 PKGNAME-lua =		texworks-lua-${V}
 PKGNAME-python =	texworks-python-${V}
-REVISION-lua =		0
-REVISION-python =	1
-REVISION-main =		4
+REVISION-lua =		1
+REVISION-python =	2
+REVISION-main =		5
 
 EPOCH =			0
 
