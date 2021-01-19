@@ -1,0 +1,13 @@
+$OpenBSD: patch-3rdparty_posterazor_paintcanvas_cpp,v 1.1 2021/01/19 06:42:43 rsadowski Exp $
+
+Index: 3rdparty/posterazor/paintcanvas.cpp
+--- 3rdparty/posterazor/paintcanvas.cpp.orig
++++ 3rdparty/posterazor/paintcanvas.cpp
+@@ -23,6 +23,7 @@
+ #include "paintcanvas.h"
+ #include <QImage>
+ #include <QPainter>
++#include <QPainterPath>
+ 
+ PaintCanvas::PaintCanvas(QWidget *parent)
+     : QWidget(parent)

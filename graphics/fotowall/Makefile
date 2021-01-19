@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2020/02/27 05:36:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/19 06:42:43 rsadowski Exp $
 
 COMMENT =	Pictures collage & creativity tool
 
 V =		1.0
 DISTNAME =	Fotowall-${V}
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
