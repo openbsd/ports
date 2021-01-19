@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/01/19 06:34:20 rsadowski Exp $
 
 COMMENT =	capybara driver that uses WebKit
 
 DISTNAME =	capybara-webkit-1.15.0
 CATEGORIES =	www
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	https://github.com/thoughtbot/capybara-webkit
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	GL Qt5Core Qt5Gui Qt5Network Qt5WebKit Qt5WebKitWidgets
 WANTLIB +=	Qt5Widgets ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem ext
