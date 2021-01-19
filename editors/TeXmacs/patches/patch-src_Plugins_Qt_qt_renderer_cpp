@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Plugins_Qt_qt_renderer_cpp,v 1.1 2021/01/19 06:49:33 rsadowski Exp $
+
+Index: src/Plugins/Qt/qt_renderer.cpp
+--- src/Plugins/Qt/qt_renderer.cpp.orig
++++ src/Plugins/Qt/qt_renderer.cpp
+@@ -21,6 +21,7 @@
+ #include <QObject>
+ #include <QWidget>
+ #include <QPaintDevice>
++#include <QPainterPath>
+ #include <QPixmap>
+ 
+ /******************************************************************************
