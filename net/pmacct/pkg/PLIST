@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/01/18 10:24:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/01/19 17:21:34 sthen Exp $
 @pkgpath net/pmacct,threads
 @bin bin/pmacct
 lib/pmacct/
@@ -68,42 +68,19 @@ share/pmacct/sql/README.iface
 share/pmacct/sql/README.label
 share/pmacct/sql/README.mask
 share/pmacct/sql/README.mpls
-share/pmacct/sql/README.mysql
 share/pmacct/sql/README.nat
-share/pmacct/sql/README.pgsql
 share/pmacct/sql/README.sampling
 share/pmacct/sql/README.sqlite3
 share/pmacct/sql/README.tag2
 share/pmacct/sql/README.timestamp
 share/pmacct/sql/README.tunnel
-share/pmacct/sql/pmacct-create-db.pgsql
-share/pmacct/sql/pmacct-create-db_bgp_v1.mysql
-share/pmacct/sql/pmacct-create-db_v1.mysql
-share/pmacct/sql/pmacct-create-db_v2.mysql
-share/pmacct/sql/pmacct-create-db_v3.mysql
-share/pmacct/sql/pmacct-create-db_v4.mysql
-share/pmacct/sql/pmacct-create-db_v5.mysql
-share/pmacct/sql/pmacct-create-db_v6.mysql
-share/pmacct/sql/pmacct-create-db_v7.mysql
-share/pmacct/sql/pmacct-create-db_v8.mysql
-share/pmacct/sql/pmacct-create-db_v9.mysql
-share/pmacct/sql/pmacct-create-table_bgp_v1.pgsql
 share/pmacct/sql/pmacct-create-table_bgp_v1.sqlite3
-share/pmacct/sql/pmacct-create-table_v1.pgsql
 share/pmacct/sql/pmacct-create-table_v1.sqlite3
-share/pmacct/sql/pmacct-create-table_v2.pgsql
 share/pmacct/sql/pmacct-create-table_v2.sqlite3
-share/pmacct/sql/pmacct-create-table_v3.pgsql
 share/pmacct/sql/pmacct-create-table_v3.sqlite3
-share/pmacct/sql/pmacct-create-table_v4.pgsql
 share/pmacct/sql/pmacct-create-table_v4.sqlite3
-share/pmacct/sql/pmacct-create-table_v5.pgsql
 share/pmacct/sql/pmacct-create-table_v5.sqlite3
-share/pmacct/sql/pmacct-create-table_v6.pgsql
 share/pmacct/sql/pmacct-create-table_v6.sqlite3
 share/pmacct/sql/pmacct-create-table_v7.sqlite3
-share/pmacct/sql/pmacct-create-table_v7_v8.pgsql
 share/pmacct/sql/pmacct-create-table_v8.sqlite3
-share/pmacct/sql/pmacct-create-table_v9.pgsql
 share/pmacct/sql/pmacct-create-table_v9.sqlite3
-share/pmacct/sql/pmacct-grant-db.mysql
