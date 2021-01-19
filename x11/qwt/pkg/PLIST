@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/09 18:41:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/19 06:20:27 rsadowski Exp $
 @conflict qwt-<6.1.5
 @conflict qwt-common-<6.1.5
 @conflict qwt-*-qt5
@@ -104,13 +104,9 @@ include/qwt_transform.h
 include/qwt_wheel.h
 include/qwt_widget_overlay.h
 @lib lib/libqwt.so.${LIBqwt_VERSION}
-lib/${QTVER}/
-lib/${QTVER}/mkspecs/
-lib/${QTVER}/mkspecs/features/
 lib/${QTVER}/mkspecs/features/qwt.prf
 lib/${QTVER}/mkspecs/features/qwtconfig.pri
 lib/${QTVER}/mkspecs/features/qwtfunctions.pri
-lib/${QTVER}/plugins/
 lib/${QTVER}/plugins/designer/
 @so lib/${QTVER}/plugins/designer/libqwt_designer_plugin.so
 @man man/man3/QwtAbstractLegend.3
@@ -256,12 +252,6 @@ lib/${QTVER}/plugins/designer/
 @man man/man3/spectrogramscreenshots.3
 share/doc/qwt/
 share/doc/qwt/html/
-share/doc/qwt/html/_form0.eps
-share/doc/qwt/html/_form0.ps
-share/doc/qwt/html/_formulas.aux
-share/doc/qwt/html/_formulas.dvi
-share/doc/qwt/html/_formulas.log
-share/doc/qwt/html/_formulas.tex
 share/doc/qwt/html/analogclock.png
 share/doc/qwt/html/annotated.html
 share/doc/qwt/html/annotated_dup.js
@@ -899,10 +889,17 @@ share/doc/qwt/html/dir_68267d1309a1af8e8297ef4c3efbcdba.html
 share/doc/qwt/html/distrowatch-600x400.png
 share/doc/qwt/html/doc.png
 share/doc/qwt/html/doxygen.css
-share/doc/qwt/html/doxygen.png
+share/doc/qwt/html/doxygen.svg
 share/doc/qwt/html/dynsections.js
 share/doc/qwt/html/folderclosed.png
 share/doc/qwt/html/folderopen.png
+share/doc/qwt/html/form_0.png
+share/doc/qwt/html/form_1.png
+share/doc/qwt/html/form_2.png
+share/doc/qwt/html/form_3.png
+share/doc/qwt/html/form_4.png
+share/doc/qwt/html/form_5.png
+share/doc/qwt/html/formula.repository
 share/doc/qwt/html/friedberg-bars-600x400.png
 share/doc/qwt/html/friedberg-tube-600x400.png
 share/doc/qwt/html/functions.html
@@ -1288,7 +1285,7 @@ share/doc/qwt/html/search/classes_1.html
 share/doc/qwt/html/search/classes_1.js
 share/doc/qwt/html/search/classes_2.html
 share/doc/qwt/html/search/classes_2.js
-share/doc/qwt/html/search/close.png
+share/doc/qwt/html/search/close.svg
 share/doc/qwt/html/search/enums_0.html
 share/doc/qwt/html/search/enums_0.js
 share/doc/qwt/html/search/enums_1.html
@@ -1423,7 +1420,7 @@ share/doc/qwt/html/search/functions_e.html
 share/doc/qwt/html/search/functions_e.js
 share/doc/qwt/html/search/functions_f.html
 share/doc/qwt/html/search/functions_f.js
-share/doc/qwt/html/search/mag_sel.png
+share/doc/qwt/html/search/mag_sel.svg
 share/doc/qwt/html/search/nomatches.html
 share/doc/qwt/html/search/pages_0.html
 share/doc/qwt/html/search/pages_0.js

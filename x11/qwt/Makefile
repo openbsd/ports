@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2020/11/09 18:41:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.31 2021/01/19 06:20:27 rsadowski Exp $
 
 COMMENT=	Qt widgets for technical applications
 
-VERSION =	6.1.5
+VERSION =	6.1.6
 DISTNAME =	qwt-${VERSION}
 
-SHARED_LIBS =	qwt${QTLIBSUFFIX} 7.0
+SHARED_LIBS =	qwt${QTLIBSUFFIX} 7.1
 
 CATEGORIES =	x11
 
@@ -18,8 +18,8 @@ EXTRACT_SUFX =	.tar.bz2
 # http://qwt.sourceforge.net/qwtlicense.html
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += Qt5Gui Qt5OpenGL Qt5PrintSupport Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += m
 
 MODULES =	x11/qt5 \
 		devel/qmake
