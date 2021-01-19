@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/19 04:19:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/19 06:34:56 rsadowski Exp $
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngine.pyi
 @so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngine.so
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineCore.pyi
 @so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineCore.so
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineWidgets.so
-lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-5.13.2.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-5.13.2.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-5.13.2.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-5.13.2.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-${MODPY_EGG_VERSION}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/${QTVER}/qsci/
 lib/${QTVER}/qsci/api/
 lib/${QTVER}/qsci/api/python/
@@ -22,6 +22,7 @@ ${SIPDIR}/QtWebEngineCore/
 ${SIPDIR}/QtWebEngineCore/QtWebEngineCoremod.sip
 ${SIPDIR}/QtWebEngineCore/qwebengineclientcertificatestore.sip
 ${SIPDIR}/QtWebEngineCore/qwebenginecookiestore.sip
+${SIPDIR}/QtWebEngineCore/qwebenginefindtextresult.sip
 ${SIPDIR}/QtWebEngineCore/qwebenginehttprequest.sip
 ${SIPDIR}/QtWebEngineCore/qwebenginenotification.sip
 ${SIPDIR}/QtWebEngineCore/qwebenginequotarequest.sip

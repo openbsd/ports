@@ -1,30 +1,31 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/19 06:34:56 rsadowski Exp $
 
 COMMENT =	python Qt5WebEngine bindings
 
-V =		5.13.2
-DISTNAME =	PyQtWebEngine-${V}
-PKGNAME =	py-qtwebengine-${V}
-REVISION =	0
+MODPY_EGG_VERSION =	5.15.2
+DISTNAME =	PyQtWebEngine-${MODPY_EGG_VERSION}
+PKGNAME =	py-qtwebengine-${MODPY_EGG_VERSION}
+
 
 CATEGORIES =	www devel
 
 HOMEPAGE =	https://www.riverbankcomputing.com/software/pyqtwebengine/intro
 
-MASTER_SITES =	https://www.riverbankcomputing.com/static/Downloads/PyQtWebEngine/${V}/
-
 # GPLv3 with exceptions for use with certain named open-source licenses
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5WebChannel Qt5WebEngine
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets m
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel
+WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
+WANTLIB += m
 
 MODULES =	lang/python \
 		x11/qt5
 
 FLAVORS =	python3
 FLAVOR =	python3
+
+MODPY_PI =	Yes
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qtwebengine
