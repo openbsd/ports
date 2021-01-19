@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2020/11/01 01:10:35 daniel Exp $
+# $OpenBSD: Makefile,v 1.49 2021/01/19 06:45:44 rsadowski Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 #'
 BROKEN-hppa =	needs atomic ops
 
 DISTNAME =	pokerth-1.1.2
-REVISION =	6
+REVISION =	7
 
 CATEGORIES=	games x11
 
@@ -56,9 +56,11 @@ pre-configure:
 		protoc --cpp_out=src/third_party/protobuf chatcleaner.proto && \
 		protoc --cpp_out=src/third_party/protobuf pokerth.proto && \
 	find . -name "*.pro" -exec perl -pi -e 's,qmake,${MODQT5_QMAKE},g;' {} +
+post-configure:
+	sed -i 's,pokerth-1.1.2-rc/pokerth ,pokerth-1.1.2-rc/build-amd64/pokerth ,g;' \
+		${WRKBUILD}/Makefile.pokerth_game
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/pokerth ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/pokerth_server ${PREFIX}/bin
 
 .include <bsd.port.mk>
