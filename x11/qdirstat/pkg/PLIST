@@ -1,33 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/08/14 09:39:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/19 06:29:39 rsadowski Exp $
 @conflict kdirstat-*
 @pkgpath x11/kdirstat
 @bin bin/qdirstat
 bin/qdirstat-cache-writer
 share/applications/qdirstat.desktop
-share/doc/qdirstat/
-share/doc/qdirstat/Btrfs-Free-Size.md
-share/doc/qdirstat/Building.md
-share/doc/qdirstat/Contributing.md
-share/doc/qdirstat/Debugging-Tips.md
-share/doc/qdirstat/DevHistory.md
-share/doc/qdirstat/GitHub-Workflow.md
-share/doc/qdirstat/Installing.md
-share/doc/qdirstat/Pkg-View.md
-share/doc/qdirstat/QDirStat-for-Servers.md
-share/doc/qdirstat/README.md
-share/doc/qdirstat/Troubleshooting.md
-share/doc/qdirstat/Unpkg-View.md
-share/doc/qdirstat/cache-file-format.txt
-share/doc/qdirstat/stats/
-share/doc/qdirstat/stats/Buckets-Table.md
-share/doc/qdirstat/stats/File-Size-Histogram.md
-share/doc/qdirstat/stats/Histogram-Options.md
-share/doc/qdirstat/stats/Histograms-in-General.md
-share/doc/qdirstat/stats/Median-Percentiles.md
-share/doc/qdirstat/stats/Overflow-Area.md
-share/doc/qdirstat/stats/Percentiles-Table.md
-share/doc/qdirstat/stats/README.md
-share/doc/qdirstat/stats/Statistics.md
 share/icons/hicolor/32x32/apps/qdirstat.svg
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

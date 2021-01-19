@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/08/14 09:39:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/19 06:29:39 rsadowski Exp $
 
 COMMENT =	Qt-based directory statistics
 
 GH_ACCOUNT =	shundhammer
 GH_PROJECT =	qdirstat
 GH_TAGNAME =	1.7
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -22,9 +23,15 @@ MODULES =	devel/qmake \
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-MODQMAKE_ARGS +=	INSTALL_PREFIX=${PREFIX}
-
-post-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/src/qdirstat ${PREFIX}/bin/
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/src/qdirstat ${PREFIX}/bin/qdirstat
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/qdirstat-cache-writer \
+		${PREFIX}/bin/qdirstat-cache-writer
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/src/qdirstat.desktop \
+		${PREFIX}/share/applications/qdirstat.desktop
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/32x32/apps/
+	${INSTALL_DATA} ${WRKSRC}/src/icons/qdirstat.svg \
+		${PREFIX}/share/icons/hicolor/32x32/apps/qdirstat.svg
 
 .include <bsd.port.mk>
