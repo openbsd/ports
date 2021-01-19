@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_plugins_tts_speechdispatcher_speechdispatcher_pro,v 1.1 2021/01/19 06:18:23 rsadowski Exp $
+
+Index: src/plugins/tts/speechdispatcher/speechdispatcher.pro
+--- src/plugins/tts/speechdispatcher/speechdispatcher.pro.orig
++++ src/plugins/tts/speechdispatcher/speechdispatcher.pro
+@@ -2,6 +2,10 @@ TARGET = qtexttospeech_speechd
+ PLUGIN_TYPE = texttospeech
+ PLUGIN_CLASS_NAME = QTextToSpeechPluginSpeechd
+ 
++CONFIG += link_pkgconfig
++packagesExist(speech-dispatcher): PKGCONFIG = speech-dispatcher
++config_speechd: LIBS += -lspeechd
++
+ load(qt_plugin)
+ 
+ QT = core texttospeech
+@@ -18,4 +22,5 @@ SOURCES += \
+ OTHER_FILES += \
+     speechd_plugin.json
+ 
+-qtConfig(speechd): QMAKE_USE_PRIVATE += speechd
++#qtConfig(speechd): QMAKE_USE_PRIVATE += speechd
++
