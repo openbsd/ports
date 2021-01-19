@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/14 12:21:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/19 06:40:09 rsadowski Exp $
 
 COMMENT =	FFmpeg-based Qt multimedia framework
 
 GH_ACCOUNT =	wang-bin
 GH_PROJECT =	QtAV
 GH_TAGNAME =	v1.12.0
-REVISION =	3
+REVISION =	4
 
 PKGNAME =	${DISTNAME:L}
 

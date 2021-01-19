@@ -1,0 +1,13 @@
+$OpenBSD: patch-qml_SGVideoNode_cpp,v 1.1 2021/01/19 06:40:09 rsadowski Exp $
+
+Index: qml/SGVideoNode.cpp
+--- qml/SGVideoNode.cpp.orig
++++ qml/SGVideoNode.cpp
+@@ -26,6 +26,7 @@
+ #include <QtCore/QScopedPointer>
+ #include <QtGui/QOpenGLFunctions>
+ #include <QtQuick/QSGMaterialShader>
++#include <QtQuick/QSGMaterial>
+ 
+ // all in QSGRenderThread
+ namespace QtAV {

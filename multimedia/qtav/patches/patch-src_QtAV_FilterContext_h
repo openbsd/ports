@@ -1,9 +1,18 @@
-$OpenBSD: patch-src_QtAV_FilterContext_h,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+$OpenBSD: patch-src_QtAV_FilterContext_h,v 1.2 2021/01/19 06:40:09 rsadowski Exp $
 
 Index: src/QtAV/FilterContext.h
 --- src/QtAV/FilterContext.h.orig
 +++ src/QtAV/FilterContext.h
-@@ -122,7 +122,7 @@ class Q_AV_EXPORT QPainterFilterContext Q_DECL_FINAL: 
+@@ -26,6 +26,8 @@
+ #include <QtCore/QByteArray>
+ #include <QtCore/QRect>
+ #include <QtGui/QPainter>
++#include <QPainterPath>
++
+ /*
+  * QPainterFilterContext, D2DFilterContext, ...
+  */
+@@ -122,7 +124,7 @@ class Q_AV_EXPORT QPainterFilterContext Q_DECL_FINAL: 
      VideoFrameConverter *cvt;
  };
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/11/03 11:06:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/01/19 06:40:09 rsadowski Exp $
 include/X11/qt5/QtAV/
 include/X11/qt5/QtAV/${QT5_VERSION}/
 include/X11/qt5/QtAV/${QT5_VERSION}/QtAV/
@@ -97,7 +97,7 @@ lib/qt5/mkspecs/modules/qt_lib_avwidgets.pri
 lib/qt5/mkspecs/modules/qt_lib_avwidgets_private.pri
 lib/qt5/qml/QtAV/
 lib/qt5/qml/QtAV/Video.qml
-lib/qt5/qml/QtAV/libQmlAV.so
+@so lib/qt5/qml/QtAV/libQmlAV.so
 lib/qt5/qml/QtAV/plugins.qmltypes
 lib/qt5/qml/QtAV/qmldir
 @tag update-desktop-database
