@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gui_RRulerQt_cpp,v 1.1 2021/01/19 06:52:19 rsadowski Exp $
+
+Index: src/gui/RRulerQt.cpp
+--- src/gui/RRulerQt.cpp.orig
++++ src/gui/RRulerQt.cpp
+@@ -25,6 +25,7 @@
+ #include "RMdiChildQt.h"
+ 
+ #include <QPainter>
++#include <QPainterPath>
+ 
+ /**
+  * Constructor

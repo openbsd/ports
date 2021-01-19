@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gui_RRulerQt_h,v 1.1 2021/01/19 06:52:19 rsadowski Exp $
+
+Index: src/gui/RRulerQt.h
+--- src/gui/RRulerQt.h.orig
++++ src/gui/RRulerQt.h
+@@ -24,6 +24,7 @@
+ 
+ #include <QFrame>
+ #include <QMetaType>
++#include <QPainterPath>
+ 
+ #include "RCoordinateListener.h"
+ #include "RRuler.h"
