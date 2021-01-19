@@ -1,0 +1,13 @@
+$OpenBSD: patch-librecad_src_lib_gui_rs_painterqt_h,v 1.1 2021/01/19 06:52:44 rsadowski Exp $
+
+Index: librecad/src/lib/gui/rs_painterqt.h
+--- librecad/src/lib/gui/rs_painterqt.h.orig
++++ librecad/src/lib/gui/rs_painterqt.h
+@@ -29,6 +29,7 @@
+ #define RS_PAINTERQT_H
+ 
+ #include <QPainter>
++#include <QPainterPath>
+ 
+ #include "rs_painter.h"
+ #include "rs_pen.h"
