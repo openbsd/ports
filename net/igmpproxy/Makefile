@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2021/01/12 17:59:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/01/19 10:50:12 sthen Exp $
 
 COMMENT =	multicast router utilizing IGMP forwarding
 
 VERSION =	0.3
+REVISION =	0
 DISTNAME =	igmpproxy-${VERSION}
 CATEGORIES =	net
 MASTER_SITES =	https://github.com/pali/igmpproxy/releases/download/${VERSION}/

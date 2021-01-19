@@ -1,56 +1,12 @@
-$OpenBSD: patch-src_config_c,v 1.1 2021/01/12 17:59:49 sthen Exp $
+$OpenBSD: patch-src_config_c,v 1.2 2021/01/19 10:50:12 sthen Exp $
 
 Index: src/config.c
 --- src/config.c.orig
 +++ src/config.c
-@@ -393,33 +393,19 @@ struct vifconfig *parsePhyintToken(void) {
- */
- struct SubnetList *parseSubnetAddress(char *addrstr) {
-     struct SubnetList   *tmpSubnet;
--    char                *tmpStr;
-     uint32_t            addr = 0x00000000;
-     uint32_t            mask = 0xFFFFFFFF;
-+    int			bitcnt;
- 
--    // First get the network part of the address...
--    tmpStr = strtok(addrstr, "/");
--    addr = inet_addr(tmpStr);
-+    bitcnt = inet_net_pton(AF_INET, addrstr, &addr, sizeof(addr));
-+    if(bitcnt<0) {
-+        my_log(LOG_WARNING, 0, "Unable to parse address token '%s'.",addrstr);
-+         return NULL;
-+    } else if(bitcnt>0)
-+	mask <<= (32 - bitcnt);
-+    else
-+	mask = 0;
- 
--    tmpStr = strtok(NULL, "/");
--    if(tmpStr != NULL) {
--        int bitcnt = atoi(tmpStr);
--        if(bitcnt < 0 || bitcnt > 32) {
--            my_log(LOG_WARNING, 0, "The bits part of the address is invalid : %d.",tmpStr);
--            return NULL;
--        }
--
--        if (bitcnt == 0)
--            mask = 0;
--        else
--            mask <<= (32 - bitcnt);
--    }
--
--    if(addr == (uint32_t)-1) {
--        my_log(LOG_WARNING, 0, "Unable to parse address token '%s'.", addrstr);
--        return NULL;
--    }
--
-     tmpSubnet = (struct SubnetList*) malloc(sizeof(struct SubnetList));
-     tmpSubnet->subnet_addr = addr;
-     tmpSubnet->subnet_mask = ntohl(mask);
-@@ -429,4 +415,22 @@ struct SubnetList *parseSubnetAddress(char *addrstr) {
-             inetFmts(tmpSubnet->subnet_addr, tmpSubnet->subnet_mask,s1));
+@@ -430,3 +430,21 @@ struct SubnetList *parseSubnetAddress(char *addrstr) {
  
      return tmpSubnet;
-+}
+ }
 +
 +struct vifconfig *
 +config_getinterface(const char *ifname)
@@ -68,4 +24,4 @@ Index: src/config.c
 +	}
 +
 +	return (NULL);
- }
++}
