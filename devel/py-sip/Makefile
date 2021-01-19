@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.51 2020/07/03 21:12:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2021/01/19 06:26:49 rsadowski Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
 # XXX  py-sip updates FREQUENTLY break other ports
 # XXX  BE ESPECIALLY CAREFUL WHEN TESTING UPDATES!
 
-MODPY_EGG_VERSION =	4.19.19
+MODPY_EGG_VERSION =	4.19.24
 EPOCH=		0
 DISTNAME=	sip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://www.riverbankcomputing.com/software/sip/intro
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m c ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://www.riverbankcomputing.com/static/Downloads/sip/${MODPY_EGG_VERSION}/
 
@@ -34,6 +33,7 @@ CONFIGURE_ARGS=	-b ${PREFIX}/bin \
 		-d ${MODPY_SITEPKG} \
 		-e ${MODPY_INCDIR} \
 		-v ${PREFIX}/share/sip \
+		--sip-module PyQt5.sip \
 		INCDIR=${LOCALBASE}/include \
 		LIBDIR=${LOCALBASE}/lib \
 		CC=${CC} CXX=${CXX} \
