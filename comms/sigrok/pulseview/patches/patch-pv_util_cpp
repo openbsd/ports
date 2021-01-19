@@ -1,0 +1,26 @@
+$OpenBSD: patch-pv_util_cpp,v 1.1 2021/01/19 06:51:41 rsadowski Exp $
+
+Unbreak Qt5.15 build
+ae726b70a7ada9a4be5808e00f0c951318479684
+
+Index: pv/util.cpp
+--- pv/util.cpp.orig
++++ pv/util.cpp
+@@ -137,7 +137,7 @@ QString format_time_si(const Timestamp& v, SIPrefix pr
+ 	QString s;
+ 	QTextStream ts(&s);
+ 	if (sign && !v.is_zero())
+-		ts << forcesign;
++		ts.setNumberFlags(ts.numberFlags() | QTextStream::ForceSign);
+ 	ts << qSetRealNumberPrecision(precision) << (v * multiplier) << ' '
+ 		<< prefix << unit;
+ 
+@@ -171,7 +171,7 @@ QString format_value_si(double v, SIPrefix prefix, uns
+ 	QString s;
+ 	QTextStream ts(&s);
+ 	if (sign && (v != 0))
+-		ts << forcesign;
++		ts.setNumberFlags(ts.numberFlags() | QTextStream::ForceSign);
+ 	ts.setRealNumberNotation(QTextStream::FixedNotation);
+ 	ts.setRealNumberPrecision(precision);
+ 	ts << (v * multiplier) << ' ' << prefix << unit;
