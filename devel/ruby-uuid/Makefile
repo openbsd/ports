@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/19 19:30:46 jeremy Exp $
 
 COMMENT=		UUID generator
 
-DISTNAME=		uuid-2.3.8
+DISTNAME=		uuid-2.3.9
 CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/assaf/uuid
@@ -16,6 +16,7 @@ CONFIGURE_STYLE=	gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		net/ruby-macaddr,${MODRUBY_FLAVOR}
+TEST_DEPENDS=		devel/ruby-mocha,${MODRUBY_FLAVOR}
 
 MODRUBY_TEST=		rake
 
