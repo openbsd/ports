@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/19 06:33:36 rsadowski Exp $
 
 COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
+REVISION =	1
 
 SHARED_LIBS +=  kaddressbookprivate       1.0 # 5.13.2
 

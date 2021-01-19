@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_printing_calprinter_cpp,v 1.1 2021/01/19 06:33:36 rsadowski Exp $
+
+Unbreak Qt5.15 build
+https://github.com/KDE/calendarsupport/commit/b4193facb223bd5b73a65318dec8ced51b66adf7
+
+Index: src/printing/calprinter.cpp
+--- src/printing/calprinter.cpp.orig
++++ src/printing/calprinter.cpp
+@@ -142,13 +142,13 @@ void CalPrinter::doPrint(PrintPlugin *selectedStyle, C
+     QPrinter printer;
+     switch (dlgorientation) {
+     case eOrientPlugin:
+-        printer.setOrientation(selectedStyle->defaultOrientation());
++        printer.setPageOrientation(selectedStyle->defaultOrientation());
+         break;
+     case eOrientPortrait:
+-        printer.setOrientation(QPrinter::Portrait);
++        printer.setPageOrientation(QPageLayout::Portrait);
+         break;
+     case eOrientLandscape:
+-        printer.setOrientation(QPrinter::Landscape);
++        printer.setPageOrientation(QPageLayout::Landscape);
+         break;
+     case eOrientPrinter:
+         break;

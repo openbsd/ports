@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_printing_compact_compactstyle_cpp,v 1.1 2021/01/19 06:33:36 rsadowski Exp $
+
+Unbreak Qt 5.15 build
+https://github.com/KDE/kaddressbook/commit/8aee8d40ae2a1c920d3520163d550d3b49720226
+
+Index: src/printing/compact/compactstyle.cpp
+--- src/printing/compact/compactstyle.cpp.orig
++++ src/printing/compact/compactstyle.cpp
+@@ -184,7 +184,7 @@ void CompactStyle::print(const KContacts::Addressee::L
+ 
+     // print
+     QPrinter *printer = wizard()->printer();
+-    printer->setPageMargins(20, 20, 20, 20, QPrinter::DevicePixel);
++    printer->setPageMargins(QMarginsF(20, 20, 20, 20), QPageLayout::Point);
+ 
+     progress->addMessage(i18n("Setting up document"));
+ 

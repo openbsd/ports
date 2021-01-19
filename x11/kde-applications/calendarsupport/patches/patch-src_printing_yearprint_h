@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_printing_yearprint_h,v 1.1 2021/01/19 06:33:36 rsadowski Exp $
+
+Unbreak Qt5.15 build
+https://github.com/KDE/calendarsupport/commit/b4193facb223bd5b73a65318dec8ced51b66adf7
+
+Index: src/printing/yearprint.h
+--- src/printing/yearprint.h.orig
++++ src/printing/yearprint.h
+@@ -64,7 +64,7 @@ class CalPrintYear : public CalPrintPluginBase (public
+     }
+ 
+     QWidget *createConfigWidget(QWidget *) override;
+-    Q_REQUIRED_RESULT QPrinter::Orientation defaultOrientation() const override;
++    Q_REQUIRED_RESULT QPageLayout::Orientation defaultOrientation() const override;
+ 
+ public:
+     void print(QPainter &p, int width, int height) override;

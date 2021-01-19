@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_printing_printplugin_h,v 1.1 2021/01/19 06:33:36 rsadowski Exp $
+
+Unbreak Qt5.15 build
+https://github.com/KDE/calendarsupport/commit/b4193facb223bd5b73a65318dec8ced51b66adf7
+
+Index: src/printing/printplugin.h
+--- src/printing/printplugin.h.orig
++++ src/printing/printplugin.h
+@@ -153,9 +153,9 @@ class PrintPlugin : public Plugin (public)
+       config settings), implement this function in your subclass and
+       return the desired orientation.
+     */
+-    virtual QPrinter::Orientation defaultOrientation() const
++    virtual QPageLayout::Orientation defaultOrientation() const
+     {
+-        return QPrinter::Portrait;
++        return QPageLayout::Portrait;
+     }
+ 
+     /**
