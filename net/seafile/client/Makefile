@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/10/28 17:52:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.39 2021/01/19 06:39:07 rsadowski Exp $
 
 COMMENT =		seafile client
 
@@ -8,6 +8,7 @@ GH_PROJECT =		seafile-client
 # this commit is from the "v7.0.10" tag
 GH_COMMIT =		5722c864659a142193cc45737fa7118f9782504f
 DISTNAME =		seafile-client-7.0.10pl20201026
+REVISION =		0
 
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets c
 WANTLIB += crypto event_core event_extra gio-2.0 glib-2.0 gobject-2.0
