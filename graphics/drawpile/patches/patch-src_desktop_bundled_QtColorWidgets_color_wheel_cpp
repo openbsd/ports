@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_desktop_bundled_QtColorWidgets_color_wheel_cpp,v 1.1 2021/01/19 06:43:19 rsadowski Exp $
+
+Index: src/desktop/bundled/QtColorWidgets/color_wheel.cpp
+--- src/desktop/bundled/QtColorWidgets/color_wheel.cpp.orig
++++ src/desktop/bundled/QtColorWidgets/color_wheel.cpp
+@@ -25,6 +25,7 @@
+ #include <QtMath>
+ #include <QMouseEvent>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QLineF>
+ #include <QDragEnterEvent>
+ #include <QMimeData>
