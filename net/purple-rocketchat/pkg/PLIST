@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/23 18:39:30 landry Exp $
-lib/purple-2/librocketchat.so
+@comment $OpenBSD: PLIST,v 1.2 2021/01/19 14:23:57 landry Exp $
+@so lib/purple-2/librocketchat.so
 share/pixmaps/
 share/pixmaps/pidgin/
 share/pixmaps/pidgin/protocols/
