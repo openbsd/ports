@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/19 06:42:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/19 21:19:17 rsadowski Exp $
 
 COMMENT =	libraries for creating business diagrams
 
 VERSION =	2.7.0
 DISTNAME =	kdiagram-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
