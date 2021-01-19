@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_KGantt_CMakeLists_txt,v 1.1 2021/01/19 06:42:21 rsadowski Exp $
+
+Index: src/KGantt/CMakeLists.txt
+--- src/KGantt/CMakeLists.txt.orig
++++ src/KGantt/CMakeLists.txt
+@@ -72,6 +72,7 @@ target_include_directories(KGantt
+ target_link_libraries( KGantt
+ PUBLIC
+     Qt5::Widgets
++    c
+ PRIVATE
+     Qt5::PrintSupport
+ )
