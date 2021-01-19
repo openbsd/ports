@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.42 2020/05/17 16:35:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.43 2021/01/19 06:44:55 rsadowski Exp $
 
 COMMENT =	OpenStreetMap editor
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
