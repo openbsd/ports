@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/08/25 18:43:54 kirby Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/19 06:44:20 rsadowski Exp $
 
 COMMENT =	map management tool
 
 GH_ACCOUNT =	Maproom
 GH_PROJECT =	qmapshack
 GH_TAGNAME =	V_1.15.0
+REVISION =	0
 
 CATEGORIES =	geo
 

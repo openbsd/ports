@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_qmaptool_helpers_CDraw_cpp,v 1.1 2021/01/19 06:44:20 rsadowski Exp $
+
+Index: src/qmaptool/helpers/CDraw.cpp
+--- src/qmaptool/helpers/CDraw.cpp.orig
++++ src/qmaptool/helpers/CDraw.cpp
+@@ -24,6 +24,7 @@
+ #include <QImage>
+ #include <QPointF>
+ #include <QtMath>
++#include <QPainterPath>
+ 
+ QPen CDraw::penBorderBlue(QColor(10,10,150,220),2);
+ QPen CDraw::penBorderGray(Qt::lightGray,2);
