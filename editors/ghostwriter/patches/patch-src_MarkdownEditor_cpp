@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_MarkdownEditor_cpp,v 1.1 2021/01/19 06:49:01 rsadowski Exp $
+
+Index: src/MarkdownEditor.cpp
+--- src/MarkdownEditor.cpp.orig
++++ src/MarkdownEditor.cpp
+@@ -34,6 +34,7 @@
+ #include <QUrl>
+ #include <QPixmap>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QFileInfo>
+ #include <QDir>
+ 
