@@ -1,0 +1,14 @@
+Argon2 is a secure password hashing algorithm. Is is designed to
+have both a configurable runtime as well as memory consumption.
+
+The current workhorses of password hashing are unquestionably bcrypt
+and PBKDF2. And while they're still fine to use, the password
+cracking community embraced new technologies like GPUs and ASICs
+to crack passwords in a highly parallel fashion.
+
+An effective measure against extreme parallelism proved making
+computation of password hashes also memory hard.
+
+Between 2012 and 2015, the password hashing competition took place
+to find a new, secure, and future-proof password hashing algorithm.
+The winner of this competition was announced as Argon2.

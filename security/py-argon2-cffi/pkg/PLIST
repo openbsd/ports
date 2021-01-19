@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/19 05:27:50 daniel Exp $
+lib/python${MODPY_VERSION}/site-packages/argon2/
+lib/python${MODPY_VERSION}/site-packages/argon2/__init__.py
+lib/python${MODPY_VERSION}/site-packages/argon2/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/argon2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/argon2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argon2/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argon2/${MODPY_PYCACHE}_ffi_build.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argon2/${MODPY_PYCACHE}_legacy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argon2/${MODPY_PYCACHE}_password_hasher.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argon2/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argon2/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argon2/${MODPY_PYCACHE}low_level.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/argon2/_ffi${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/argon2/_ffi_build.py
+lib/python${MODPY_VERSION}/site-packages/argon2/_legacy.py
+lib/python${MODPY_VERSION}/site-packages/argon2/_password_hasher.py
+lib/python${MODPY_VERSION}/site-packages/argon2/_utils.py
+lib/python${MODPY_VERSION}/site-packages/argon2/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/argon2/low_level.py
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
