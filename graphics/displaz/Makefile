@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/14 12:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/19 06:43:46 rsadowski Exp $
 
 COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
 GH_PROJECT =	displaz
 GH_TAGNAME =	v0.4.0
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://c42f.github.io/displaz/
 

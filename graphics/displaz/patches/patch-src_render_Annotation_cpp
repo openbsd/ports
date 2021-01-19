@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_render_Annotation_cpp,v 1.1 2021/01/19 06:43:46 rsadowski Exp $
+
+Index: src/render/Annotation.cpp
+--- src/render/Annotation.cpp.orig
++++ src/render/Annotation.cpp
+@@ -10,6 +10,7 @@
+ #include <QColor>
+ #include <QImage>
+ #include <QPainter>
++#include <QPainterPath>
+ 
+ /// Creates and returns a texture containing some text.
+ static std::unique_ptr<Texture> makeTextureFromText(const QString& text)
