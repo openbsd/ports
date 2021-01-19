@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/01/19 06:50:27 rsadowski Exp $
 
 # qt5 webkit
 USE_WXNEEDED =	Yes
@@ -7,7 +7,7 @@ COMMENT =	simple offline API documentation browser
 
 V =	0.6.1
 DISTNAME = zeal-${V}
-REVISION = 0
+REVISION = 1
 
 CATEGORIES =	devel
 

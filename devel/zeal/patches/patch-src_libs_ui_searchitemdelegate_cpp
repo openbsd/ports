@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_libs_ui_searchitemdelegate_cpp,v 1.1 2021/01/19 06:50:27 rsadowski Exp $
+
+Index: src/libs/ui/searchitemdelegate.cpp
+--- src/libs/ui/searchitemdelegate.cpp.orig
++++ src/libs/ui/searchitemdelegate.cpp
+@@ -27,6 +27,7 @@
+ #include <QFontMetrics>
+ #include <QHelpEvent>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QToolTip>
+ 
+ using namespace Zeal::WidgetUi;
