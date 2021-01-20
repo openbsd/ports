@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_public_common_common_param_traits_macros_h,v 1.17 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-content_public_common_common_param_traits_macros_h,v 1.18 2021/01/20 07:28:10 robert Exp $
 
 Index: content/public/common/common_param_traits_macros.h
 --- content/public/common/common_param_traits_macros.h.orig
 +++ content/public/common/common_param_traits_macros.h
-@@ -138,7 +138,7 @@ IPC_STRUCT_TRAITS_BEGIN(blink::mojom::RendererPreferen
+@@ -134,7 +134,7 @@ IPC_STRUCT_TRAITS_BEGIN(blink::RendererPreferences)
    IPC_STRUCT_TRAITS_MEMBER(accept_languages)
    IPC_STRUCT_TRAITS_MEMBER(plugin_fullscreen_allowed)
    IPC_STRUCT_TRAITS_MEMBER(caret_browsing_enabled)

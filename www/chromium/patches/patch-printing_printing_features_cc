@@ -1,9 +1,9 @@
-$OpenBSD: patch-printing_printing_features_cc,v 1.1 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-printing_printing_features_cc,v 1.2 2021/01/20 07:28:11 robert Exp $
 
 Index: printing/printing_features.cc
 --- printing/printing_features.cc.orig
 +++ printing/printing_features.cc
-@@ -48,7 +48,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
+@@ -50,7 +50,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

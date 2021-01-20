@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feed_core_proto_wire_version_proto,v 1.1 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-components_feed_core_proto_wire_version_proto,v 1.2 2021/01/20 07:28:09 robert Exp $
 
 Index: components/feed/core/proto/wire/version.proto
 --- components/feed/core/proto/wire/version.proto.orig

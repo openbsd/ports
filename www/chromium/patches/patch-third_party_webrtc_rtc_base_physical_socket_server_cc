@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_physical_socket_server_cc,v 1.5 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_physical_socket_server_cc,v 1.6 2021/01/20 07:28:12 robert Exp $
 
 Index: third_party/webrtc/rtc_base/physical_socket_server.cc
 --- third_party/webrtc/rtc_base/physical_socket_server.cc.orig

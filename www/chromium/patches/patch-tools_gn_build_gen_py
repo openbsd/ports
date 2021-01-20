@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_build_gen_py,v 1.12 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-tools_gn_build_gen_py,v 1.13 2021/01/20 07:28:12 robert Exp $
 
 Index: tools/gn/build/gen.py
 --- tools/gn/build/gen.py.orig

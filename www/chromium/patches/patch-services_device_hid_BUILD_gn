@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.6 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.7 2021/01/20 07:28:11 robert Exp $
 
 Index: services/device/hid/BUILD.gn
 --- services/device/hid/BUILD.gn.orig
 +++ services/device/hid/BUILD.gn
-@@ -31,6 +31,16 @@ source_set("hid") {
+@@ -33,6 +33,16 @@ source_set("hid") {
      "//services/device/public/mojom",
    ]
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_browser_child_process_host_impl_cc,v 1.14 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-content_browser_browser_child_process_host_impl_cc,v 1.15 2021/01/20 07:28:09 robert Exp $
 
 Index: content/browser/browser_child_process_host_impl.cc
 --- content/browser/browser_child_process_host_impl.cc.orig

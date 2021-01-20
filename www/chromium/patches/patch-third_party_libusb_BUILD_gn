@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.7 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.8 2021/01/20 07:28:11 robert Exp $
 
 Index: third_party/libusb/BUILD.gn
 --- third_party/libusb/BUILD.gn.orig
@@ -10,9 +10,9 @@ Index: third_party/libusb/BUILD.gn
 -assert(is_win || is_mac)
 +assert(is_win || is_mac || is_openbsd)
  
+ import("//build/config/chromeos/ui_mode.gni")
  import("//build/config/features.gni")
- 
-@@ -115,7 +115,7 @@ static_library("libusb") {
+@@ -116,7 +116,7 @@ static_library("libusb") {
      ]
    }
  
@@ -21,7 +21,7 @@ Index: third_party/libusb/BUILD.gn
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
-@@ -126,6 +126,16 @@ static_library("libusb") {
+@@ -127,6 +127,16 @@ static_library("libusb") {
      ]
    }
  
@@ -35,10 +35,10 @@ Index: third_party/libusb/BUILD.gn
 +    ]
 +  }
 +
-   if (is_chromeos) {
+   if (is_ash) {
      defines += [ "USBI_TIMERFD_AVAILABLE" ]
    }
-@@ -139,7 +149,7 @@ static_library("libusb") {
+@@ -140,7 +150,7 @@ static_library("libusb") {
      deps += [ "//build/linux/libudev" ]
    }
  

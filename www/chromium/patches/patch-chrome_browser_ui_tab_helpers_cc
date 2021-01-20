@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.33 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.34 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -147,7 +147,7 @@
+@@ -150,7 +150,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/tab_helpers.cc
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
  #endif
-@@ -397,13 +397,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -408,13 +408,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
    policy::DlpContentTabHelper::CreateForWebContents(web_contents);
  #endif
  

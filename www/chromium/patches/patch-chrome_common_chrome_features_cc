@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.28 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.29 2021/01/20 07:28:09 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
@@ -12,12 +12,12 @@ Index: chrome/common/chrome_features.cc
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -337,7 +337,7 @@ const base::Feature kEnableAmbientAuthenticationInInco
-     "EnableAmbientAuthenticationInIncognito",
-     base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -344,7 +344,7 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
+                                             base::FEATURE_DISABLED_BY_DEFAULT};
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC) || defined(OS_BSD)
+ #if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
  COMPONENT_EXPORT(CHROME_FEATURES)
  // Enables ephemeral Guest profiles on desktop.
  extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop{

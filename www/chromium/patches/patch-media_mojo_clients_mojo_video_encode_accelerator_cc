@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_mojo_clients_mojo_video_encode_accelerator_cc,v 1.7 2020/12/03 18:46:47 robert Exp $
+$OpenBSD: patch-media_mojo_clients_mojo_video_encode_accelerator_cc,v 1.8 2021/01/20 07:28:10 robert Exp $
 
 Index: media/mojo/clients/mojo_video_encode_accelerator.cc
 --- media/mojo/clients/mojo_video_encode_accelerator.cc.orig

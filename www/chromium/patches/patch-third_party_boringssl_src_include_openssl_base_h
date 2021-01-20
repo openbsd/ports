@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_boringssl_src_include_openssl_base_h,v 1.5 2019/12/15 12:03:47 robert Exp $
+$OpenBSD: patch-third_party_boringssl_src_include_openssl_base_h,v 1.6 2021/01/20 07:28:11 robert Exp $
 
 Index: third_party/boringssl/src/include/openssl/base.h
 --- third_party/boringssl/src/include/openssl/base.h.orig
 +++ third_party/boringssl/src/include/openssl/base.h
-@@ -146,6 +146,11 @@ extern "C" {
+@@ -149,6 +149,11 @@ extern "C" {
  #define OPENSSL_FUCHSIA
  #endif
  

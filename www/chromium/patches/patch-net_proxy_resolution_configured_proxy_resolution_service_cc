@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_proxy_resolution_configured_proxy_resolution_service_cc,v 1.4 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-net_proxy_resolution_configured_proxy_resolution_service_cc,v 1.5 2021/01/20 07:28:11 robert Exp $
 
 Index: net/proxy_resolution/configured_proxy_resolution_service.cc
 --- net/proxy_resolution/configured_proxy_resolution_service.cc.orig
 +++ net/proxy_resolution/configured_proxy_resolution_service.cc
-@@ -46,7 +46,7 @@
+@@ -47,7 +47,7 @@
  #elif defined(OS_MAC)
  #include "net/proxy_resolution/proxy_config_service_mac.h"
  #include "net/proxy_resolution/proxy_resolver_mac.h"
@@ -12,7 +12,7 @@ Index: net/proxy_resolution/configured_proxy_resolution_service.cc
  #include "net/proxy_resolution/proxy_config_service_linux.h"
  #elif defined(OS_ANDROID)
  #include "net/proxy_resolution/proxy_config_service_android.h"
-@@ -60,7 +60,7 @@ namespace net {
+@@ -61,7 +61,7 @@ namespace net {
  namespace {
  
  #if defined(OS_WIN) || defined(OS_APPLE) || \

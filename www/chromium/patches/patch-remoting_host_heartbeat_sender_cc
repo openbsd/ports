@@ -1,14 +1,14 @@
-$OpenBSD: patch-remoting_host_heartbeat_sender_cc,v 1.2 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-remoting_host_heartbeat_sender_cc,v 1.3 2021/01/20 07:28:11 robert Exp $
 
 Index: remoting/host/heartbeat_sender.cc
 --- remoting/host/heartbeat_sender.cc.orig
 +++ remoting/host/heartbeat_sender.cc
-@@ -385,7 +385,7 @@ HeartbeatSender::CreateHeartbeatRequest() {
-   heartbeat->set_is_initial_heartbeat(!initial_heartbeat_sent_);
-   // Only set the hostname if the user's email is @google.com and they are using
-   // a Linux OS.
+@@ -109,7 +109,7 @@ const net::BackoffEntry::Policy kBackoffPolicy = {
+ };
+ 
+ std::string GetHostname() {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
-   if (is_googler_) {
-     heartbeat->set_hostname(net::GetHostName());
-   }
+   return net::GetHostName();
+ #elif defined(OS_WIN)
+   wchar_t buffer[MAX_PATH] = {0};

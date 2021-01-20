@@ -1,10 +1,17 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.22 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.23 2021/01/20 07:28:09 robert Exp $
 
 Index: chrome/common/webui_url_constants.h
 --- chrome/common/webui_url_constants.h.orig
 +++ chrome/common/webui_url_constants.h
-@@ -292,7 +292,7 @@ bool IsSystemWebUIHost(base::StringPiece host);
+@@ -292,13 +292,13 @@ bool IsSystemWebUIHost(base::StringPiece host);
+ 
  #endif  // defined(OS_CHROMEOS)
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ extern const char kChromeUIWebUIJsExceptionHost[];
+ extern const char kChromeUIWebUIJsExceptionURL[];
+ #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
@@ -12,7 +19,7 @@ Index: chrome/common/webui_url_constants.h
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
  extern const char kChromeUIHatsHost[];
-@@ -312,17 +312,17 @@ extern const char kChromeUILinuxProxyConfigHost[];
+@@ -315,11 +315,11 @@ extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -26,10 +33,12 @@ Index: chrome/common/webui_url_constants.h
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
+@@ -331,7 +331,7 @@ extern const char kChromeUIProfilePickerStartupQuery[]
  #endif
  
--#if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
-+#if ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || \
-     defined(USE_AURA)
+ #if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
+-    defined(USE_AURA)
++    defined(USE_AURA) || defined(OS_BSD)
  extern const char kChromeUITabModalConfirmDialogHost[];
  #endif
+ 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_compositor_compositor_h,v 1.8 2020/11/18 12:29:34 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_h,v 1.9 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/compositor/compositor.h
 --- ui/compositor/compositor.h.orig

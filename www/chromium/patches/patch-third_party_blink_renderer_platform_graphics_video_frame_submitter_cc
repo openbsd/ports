@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_graphics_video_frame_submitter_cc,v 1.5 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_graphics_video_frame_submitter_cc,v 1.6 2021/01/20 07:28:11 robert Exp $
 
 Index: third_party/blink/renderer/platform/graphics/video_frame_submitter.cc
 --- third_party/blink/renderer/platform/graphics/video_frame_submitter.cc.orig

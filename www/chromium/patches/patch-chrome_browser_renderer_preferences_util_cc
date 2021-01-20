@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.32 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.33 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/renderer_preferences_util.cc
 --- chrome/browser/renderer_preferences_util.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/renderer_preferences_util.cc
  #include "chrome/browser/themes/theme_service.h"
  #include "chrome/browser/themes/theme_service_factory.h"
  #include "ui/views/linux_ui/linux_ui.h"
-@@ -164,7 +164,7 @@ void UpdateFromSystemSettings(blink::mojom::RendererPr
+@@ -153,7 +153,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
      prefs->caret_blink_interval = interval;
  #endif
  
@@ -21,7 +21,7 @@ Index: chrome/browser/renderer_preferences_util.cc
    views::LinuxUI* linux_ui = views::LinuxUI::instance();
    if (linux_ui) {
      if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
-@@ -184,7 +184,7 @@ void UpdateFromSystemSettings(blink::mojom::RendererPr
+@@ -173,7 +173,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
  #endif
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \

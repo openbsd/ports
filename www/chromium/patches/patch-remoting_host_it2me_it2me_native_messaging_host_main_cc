@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.10 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.11 2021/01/20 07:28:11 robert Exp $
 
 Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
 --- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig
@@ -12,12 +12,12 @@ Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
  #include <gtk/gtk.h>
  
  #include "base/linux_util.h"
-@@ -113,7 +113,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -112,7 +112,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
  
    remoting::LoadResources("");
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   // Required in order for us to run multiple X11 threads.
-   XInitThreads();
- 
+   // Create an X11EventSource so the global X11 connection
+   // (x11::Connection::Get()) can dispatch X events.
+   auto event_source =

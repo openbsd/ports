@@ -1,18 +1,9 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.41 2020/11/18 12:29:32 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.42 2021/01/20 07:28:07 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -53,7 +53,7 @@ declare_args() {
-   # replacement base::Location::Current(). On by default in non-official builds
-   # for testing purposes.
-   # TODO(https://crbug.com/974061): remove this eventually.
--  from_here_uses_location_builtins = !is_official_build
-+  from_here_uses_location_builtins = !is_official_build && !is_bsd
- 
-   # Unsafe developer build. Has developer-friendly features that may weaken or
-   # disable security measures like sandboxing or ASLR.
-@@ -878,7 +878,7 @@ component("base") {
+@@ -873,7 +873,7 @@ component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -21,7 +12,7 @@ Index: base/BUILD.gn
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
-@@ -889,6 +889,12 @@ component("base") {
+@@ -884,6 +884,12 @@ component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -34,7 +25,7 @@ Index: base/BUILD.gn
    }
  
    if (is_win) {
-@@ -1295,11 +1301,16 @@ component("base") {
+@@ -1293,11 +1299,16 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -58,13 +49,15 @@ Index: base/BUILD.gn
      }
 -    if (is_chromeos || is_linux) {
 +    if (is_chromeos || (is_linux && !is_openbsd)) {
-       sources += [ "allocator/allocator_shim_override_glibc_weak_symbols.h" ]
+       sources += [
+         "allocator/allocator_shim_override_cpp_symbols.h",
+         "allocator/allocator_shim_override_glibc_weak_symbols.h",
+@@ -1967,6 +1978,29 @@ component("base") {
+         "linux_util.h",
+       ]
      }
-     if (is_win) {
-@@ -1956,6 +1967,29 @@ component("base") {
-     }
-   }
- 
++  }
++
 +  if (is_openbsd) {
 +    sources -= [
 +      "files/file_path_watcher_linux.cc",
@@ -84,19 +77,8 @@ Index: base/BUILD.gn
 +      "system/sys_info_openbsd.cc",
 +      "files/file_path_watcher_kqueue.cc",
 +      "files/file_path_watcher_kqueue.h",
-+      "files/file_path_watcher_stub.cc",
++      "files/file_path_watcher_bsd.cc",
 +    ]
-+  }
-+
-   # iOS
-   if (is_ios) {
-     sources -= [
-@@ -2541,6 +2575,8 @@ if (is_win) {
-       "//base/win:base_win_buildflags",
-     ]
    }
-+
-+  libs = [ "execinfo" ]
- }
  
- if ((is_win && (current_cpu == "x64" || current_cpu == "arm64")) || is_mac ||
+   # iOS

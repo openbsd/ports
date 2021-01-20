@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.8 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.9 2021/01/20 07:28:12 robert Exp $
 
 Index: v8/src/base/platform/platform-openbsd.cc
 --- v8/src/base/platform/platform-openbsd.cc.orig
@@ -17,7 +17,7 @@ Index: v8/src/base/platform/platform-openbsd.cc
  void OS::AdjustSchedulingParams() {}
 +
 +// static
-+void* Stack::GetStackStart() {
++Stack::StackSlot Stack::GetStackStart() {
 +  stack_t ss;
 +  void *base;
 +  if (pthread_stackseg_np(pthread_self(), &ss) != 0)

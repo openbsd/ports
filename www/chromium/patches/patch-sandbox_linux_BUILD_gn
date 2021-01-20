@@ -1,10 +1,10 @@
-$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.17 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.18 2021/01/20 07:28:11 robert Exp $
 
 Index: sandbox/linux/BUILD.gn
 --- sandbox/linux/BUILD.gn.orig
 +++ sandbox/linux/BUILD.gn
-@@ -19,12 +19,12 @@ import("//build/config/deprecated_default_sources_assi
- set_sources_assignment_filter(deprecated_default_sources_assignment_filter)
+@@ -12,12 +12,12 @@ if (is_android) {
+ }
  
  declare_args() {
 -  compile_suid_client = is_linux || is_chromeos
@@ -20,8 +20,8 @@ Index: sandbox/linux/BUILD.gn
  
  if (is_nacl_nonsfi) {
 @@ -262,7 +262,7 @@ component("seccomp_bpf") {
-     "//sandbox:sandbox_buildflags",
-   ]
+     ]
+   }
  
 -  if (is_nacl_nonsfi) {
 +  if (is_nacl_nonsfi && !is_openbsd) {

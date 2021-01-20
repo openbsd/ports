@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_shell_app_shell_main_delegate_cc,v 1.4 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-content_shell_app_shell_main_delegate_cc,v 1.5 2021/01/20 07:28:10 robert Exp $
 
 Index: content/shell/app/shell_main_delegate.cc
 --- content/shell/app/shell_main_delegate.cc.orig

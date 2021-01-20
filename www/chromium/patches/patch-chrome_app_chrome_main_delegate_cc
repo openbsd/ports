@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.63 2020/11/18 12:29:32 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.64 2021/01/20 07:28:07 robert Exp $
 
 Index: chrome/app/chrome_main_delegate.cc
 --- chrome/app/chrome_main_delegate.cc.orig
 +++ chrome/app/chrome_main_delegate.cc
-@@ -108,7 +108,7 @@
+@@ -109,7 +109,7 @@
  #include "chrome/app/shutdown_signal_handlers_posix.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/app/chrome_main_delegate.cc
  #include "components/nacl/common/nacl_paths.h"
  #include "components/nacl/zygote/nacl_fork_delegate_linux.h"
  #endif
-@@ -147,7 +147,7 @@
+@@ -148,12 +148,12 @@
  #include "v8/include/v8.h"
  #endif
  
@@ -21,7 +21,13 @@ Index: chrome/app/chrome_main_delegate.cc
  #include "base/environment.h"
  #endif
  
-@@ -339,7 +339,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
+ #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_ANDROID) || \
+-    defined(OS_LINUX) || defined(OS_CHROMEOS)
++    defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "chrome/browser/policy/policy_path_parser.h"
+ #include "components/crash/core/app/crashpad.h"
+ #endif
+@@ -338,7 +338,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
    return false;
  }
  
@@ -30,7 +36,7 @@ Index: chrome/app/chrome_main_delegate.cc
  // Show the man page if --help or -h is on the command line.
  void HandleHelpSwitches(const base::CommandLine& command_line) {
    if (command_line.HasSwitch(switches::kHelp) ||
-@@ -351,7 +351,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
+@@ -350,7 +350,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
  }
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
@@ -39,7 +45,7 @@ Index: chrome/app/chrome_main_delegate.cc
  void SIGTERMProfilingShutdown(int signal) {
    content::Profiling::Stop();
    struct sigaction sigact;
-@@ -403,7 +403,7 @@ void InitializeUserDataDir(base::CommandLine* command_
+@@ -402,7 +402,7 @@ void InitializeUserDataDir(base::CommandLine* command_
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -48,7 +54,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -716,7 +716,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -720,7 +720,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
      *exit_code = 0;
      return true;  // Got a --version switch; exit with a success error code.
    }
@@ -57,7 +63,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -744,7 +744,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -748,7 +748,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
  #if defined(OS_CHROMEOS)
    chromeos::RegisterPathProvider();
  #endif
@@ -66,7 +72,7 @@ Index: chrome/app/chrome_main_delegate.cc
    nacl::RegisterPathProvider();
  #endif
  
-@@ -1056,7 +1056,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1058,7 +1058,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
          locale;
    }
  

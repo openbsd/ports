@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.38 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.39 2021/01/20 07:28:11 robert Exp $
 
 Index: net/base/network_change_notifier.cc
 --- net/base/network_change_notifier.cc.orig
 +++ net/base/network_change_notifier.cc
-@@ -36,7 +36,7 @@
+@@ -35,7 +35,7 @@
  #include "net/base/network_change_notifier_linux.h"
  #elif defined(OS_APPLE)
  #include "net/base/network_change_notifier_mac.h"

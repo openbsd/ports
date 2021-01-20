@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.69 2020/12/03 18:46:46 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.70 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -424,7 +424,7 @@
+@@ -432,7 +432,7 @@
  #include "components/user_manager/user.h"
  #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "base/android/application_status_listener.h"
-@@ -481,7 +481,7 @@
+@@ -489,7 +489,7 @@
  #include "chrome/grit/chrome_unscaled_resources.h"  // nogncheck crbug.com/1125897
  #endif  //  !defined(OS_ANDROID)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_navigation_throttle.h"
  #endif
-@@ -514,7 +514,7 @@
+@@ -522,7 +522,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -30,7 +30,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -817,7 +817,7 @@ bool IsAutoplayAllowedByPolicy(content::WebContents* c
+@@ -833,7 +833,7 @@ bool IsAutoplayAllowedByPolicy(content::WebContents* c
  int GetCrashSignalFD(const base::CommandLine& command_line) {
    return crashpad::CrashHandlerHost::Get()->GetDeathSignalSocket();
  }
@@ -39,25 +39,25 @@ Index: chrome/browser/chrome_content_browser_client.cc
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1364,7 +1364,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -1378,7 +1378,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
  #elif defined(OS_CHROMEOS)
    main_parts = std::make_unique<chromeos::ChromeBrowserMainPartsChromeos>(
-       parameters, startup_data_);
+       parameters, &startup_data_);
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
    main_parts =
-       std::make_unique<ChromeBrowserMainPartsLinux>(parameters, startup_data_);
+       std::make_unique<ChromeBrowserMainPartsLinux>(parameters, &startup_data_);
  #elif defined(OS_ANDROID)
-@@ -1390,7 +1390,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
-     // Construct additional browser parts. Stages are called in the order in
-     // which they are added.
- #if defined(TOOLKIT_VIEWS)
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+@@ -1407,7 +1407,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+ #if BUILDFLAG(IS_LACROS)
+   main_parts->AddParts(
+       std::make_unique<ChromeBrowserMainExtraPartsViewsLacros>());
+-#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    main_parts->AddParts(
        std::make_unique<ChromeBrowserMainExtraPartsViewsLinux>());
  #else
-@@ -2147,6 +2147,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2171,6 +2171,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
  #elif defined(OS_POSIX)
  #if defined(OS_ANDROID)
    bool enable_crash_reporter = true;
@@ -66,7 +66,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #else
    bool enable_crash_reporter = false;
    if (crash_reporter::IsCrashpadEnabled()) {
-@@ -2443,7 +2445,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2461,7 +2463,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
    ThreadProfilerConfiguration::Get()->AppendCommandLineSwitchForChildProcess(
        command_line);
  
@@ -75,7 +75,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // Processes may only query perf_event_open with the BPF sandbox disabled.
    if (browser_command_line.HasSwitch(switches::kEnableThreadInstructionCount) &&
        command_line->HasSwitch(sandbox::policy::switches::kNoSandbox)) {
-@@ -3738,7 +3740,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3725,7 +3727,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -84,7 +84,16 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -4103,7 +4105,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -3847,7 +3849,7 @@ bool ChromeContentBrowserClient::IsRendererCodeIntegri
+ #endif  // defined(OS_WIN)
+ 
+ void ChromeContentBrowserClient::WillStartServiceManager() {
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+   auto* chrome_feature_list_creator =
+       startup_data_.chrome_feature_list_creator();
+@@ -4082,7 +4084,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
              handle));
    }
  

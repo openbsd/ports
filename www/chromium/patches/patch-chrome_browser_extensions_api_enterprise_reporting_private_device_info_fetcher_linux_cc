@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_device_info_fetcher_linux_cc,v 1.4 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_device_info_fetcher_linux_cc,v 1.5 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/extensions/api/enterprise_reporting_private/device_info_fetcher_linux.cc
 --- chrome/browser/extensions/api/enterprise_reporting_private/device_info_fetcher_linux.cc.orig

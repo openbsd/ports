@@ -1,0 +1,17 @@
+$OpenBSD: patch-base_allocator_partition_allocator_spinning_mutex_cc,v 1.1 2021/01/20 07:28:07 robert Exp $
+
+Index: base/allocator/partition_allocator/spinning_mutex.cc
+--- base/allocator/partition_allocator/spinning_mutex.cc.orig
++++ base/allocator/partition_allocator/spinning_mutex.cc
+@@ -11,7 +11,11 @@
+ 
+ #if defined(PA_HAS_LINUX_KERNEL)
+ #include <errno.h>
++#if defined(OS_BSD)
++#include <sys/futex.h>
++#else
+ #include <linux/futex.h>
++#endif
+ #include <sys/syscall.h>
+ #include <unistd.h>
+ #endif  // defined(PA_HAS_LINUX_KERNEL)

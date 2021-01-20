@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_autofill_core_common_autofill_util_cc,v 1.7 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-components_autofill_core_common_autofill_util_cc,v 1.8 2021/01/20 07:28:09 robert Exp $
 
 Index: components/autofill/core/common/autofill_util.cc
 --- components/autofill/core/common/autofill_util.cc.orig

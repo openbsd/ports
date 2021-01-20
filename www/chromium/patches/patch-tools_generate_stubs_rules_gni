@@ -1,0 +1,13 @@
+$OpenBSD: patch-tools_generate_stubs_rules_gni,v 1.1 2021/01/20 07:28:12 robert Exp $
+
+Index: tools/generate_stubs/rules.gni
+--- tools/generate_stubs/rules.gni.orig
++++ tools/generate_stubs/rules.gni
+@@ -96,7 +96,6 @@ template("generate_stubs") {
+       "${target_gen_dir}/${invoker.output_name}.cc",
+       "${target_gen_dir}/${invoker.output_name}.h",
+     ]
+-    libs = [ "dl" ]
+     include_dirs = [ target_gen_dir ]
+     if (defined(invoker.configs)) {
+       configs += invoker.configs

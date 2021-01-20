@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.26 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.27 2021/01/20 07:28:09 robert Exp $
 
 Index: chrome/common/chrome_paths.h
 --- chrome/common/chrome_paths.h.orig
@@ -21,7 +21,7 @@ Index: chrome/common/chrome_paths.h
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -91,7 +91,7 @@ enum {
+@@ -87,7 +87,7 @@ enum {
    DIR_PNACL_BASE,                   // Full path to the base dir for PNaCl.
    DIR_PNACL_COMPONENT,              // Full path to the latest PNaCl version
                                      // (subdir of DIR_PNACL_BASE).
@@ -30,7 +30,7 @@ Index: chrome/common/chrome_paths.h
    DIR_BUNDLED_WIDEVINE_CDM,  // Full path to the directory containing the
                               // bundled Widevine CDM.
  #if !defined(OS_CHROMEOS)
-@@ -120,7 +120,7 @@ enum {
+@@ -116,7 +116,7 @@ enum {
    DIR_SUPERVISED_USER_INSTALLED_WHITELISTS,  // Directory where sanitized
                                               // supervised user whitelists are
                                               // installed.
@@ -39,7 +39,7 @@ Index: chrome/common/chrome_paths.h
    DIR_NATIVE_MESSAGING,       // System directory where native messaging host
                                // manifest files are stored.
    DIR_USER_NATIVE_MESSAGING,  // Directory with Native Messaging Hosts
-@@ -135,7 +135,7 @@ enum {
+@@ -131,7 +131,7 @@ enum {
    DIR_GEN_TEST_DATA,  // Directory where generated test data resides.
    DIR_TEST_DATA,      // Directory where unit test data resides.
    DIR_TEST_TOOLS,     // Directory where unit test tools reside.

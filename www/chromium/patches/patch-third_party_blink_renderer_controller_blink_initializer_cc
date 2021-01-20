@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_controller_blink_initializer_cc,v 1.5 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_controller_blink_initializer_cc,v 1.6 2021/01/20 07:28:11 robert Exp $
 
 Index: third_party/blink/renderer/controller/blink_initializer.cc
 --- third_party/blink/renderer/controller/blink_initializer.cc.orig
@@ -27,7 +27,7 @@ Index: third_party/blink/renderer/controller/blink_initializer.cc
    // Initialize UserLevelMemoryPressureSignalGenerator so it starts monitoring.
    if (UserLevelMemoryPressureSignalGenerator::Enabled())
      UserLevelMemoryPressureSignalGenerator::Instance();
-@@ -212,7 +212,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
+@@ -220,7 +220,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
                main_thread->GetTaskRunner());
  #endif
  

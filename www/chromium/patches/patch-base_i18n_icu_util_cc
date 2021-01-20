@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_i18n_icu_util_cc,v 1.11 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-base_i18n_icu_util_cc,v 1.12 2021/01/20 07:28:07 robert Exp $
 
 Index: base/i18n/icu_util.cc
 --- base/i18n/icu_util.cc.orig
@@ -12,8 +12,8 @@ Index: base/i18n/icu_util.cc
      ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && !BUILDFLAG(IS_CHROMECAST))
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  #endif
-@@ -341,7 +341,8 @@ void InitializeIcuTimeZone() {
-       fuchsia::IntlProfileWatcher::GetPrimaryTimeZoneIdForIcuInitialization();
+@@ -342,7 +342,8 @@ void InitializeIcuTimeZone() {
+       FuchsiaIntlProfileWatcher::GetPrimaryTimeZoneIdForIcuInitialization();
    icu::TimeZone::adoptDefault(
        icu::TimeZone::createTimeZone(icu::UnicodeString::fromUTF8(zone_id)));
 -#elif (defined(OS_LINUX) || defined(OS_CHROMEOS)) && !BUILDFLAG(IS_CHROMECAST)

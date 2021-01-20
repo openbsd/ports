@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.10 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.11 2021/01/20 07:28:09 robert Exp $
 
 Index: components/autofill/core/common/autofill_payments_features.cc
 --- components/autofill/core/common/autofill_payments_features.cc.orig
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -122,7 +122,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
+@@ -128,7 +128,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
      "AutofillUpstreamAllowAllEmailDomains", base::FEATURE_DISABLED_BY_DEFAULT};
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

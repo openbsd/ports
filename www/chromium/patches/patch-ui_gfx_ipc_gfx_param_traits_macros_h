@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.10 2020/11/18 12:29:34 robert Exp $
+$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.11 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/gfx/ipc/gfx_param_traits_macros.h
 --- ui/gfx/ipc/gfx_param_traits_macros.h.orig
@@ -20,7 +20,7 @@ Index: ui/gfx/ipc/gfx_param_traits_macros.h
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    IPC_STRUCT_TRAITS_MEMBER(native_pixmap_handle)
  #elif defined(OS_APPLE)
-   IPC_STRUCT_TRAITS_MEMBER(mach_port)
+   IPC_STRUCT_TRAITS_MEMBER(io_surface)
 @@ -63,12 +63,12 @@ IPC_STRUCT_TRAITS_BEGIN(gfx::GpuMemoryBufferId)
    IPC_STRUCT_TRAITS_MEMBER(id)
  IPC_STRUCT_TRAITS_END()

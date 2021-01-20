@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_video_capture_broadcasting_receiver_cc,v 1.6 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-services_video_capture_broadcasting_receiver_cc,v 1.7 2021/01/20 07:28:11 robert Exp $
 
 Index: services/video_capture/broadcasting_receiver.cc
 --- services/video_capture/broadcasting_receiver.cc.orig

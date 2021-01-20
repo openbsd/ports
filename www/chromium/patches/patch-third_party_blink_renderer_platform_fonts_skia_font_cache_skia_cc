@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.12 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.13 2021/01/20 07:28:11 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
 --- third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig

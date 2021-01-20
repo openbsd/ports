@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_ui_base_features_h,v 1.13 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_h,v 1.14 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/base/ui_base_features.h
 --- ui/base/ui_base_features.h.orig
 +++ ui/base/ui_base_features.h
-@@ -61,7 +61,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES) bool IsUsingWMPoint
+@@ -63,7 +63,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES) bool IsUsingWMPoint
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \

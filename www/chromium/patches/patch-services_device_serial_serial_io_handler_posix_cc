@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_device_serial_serial_io_handler_posix_cc,v 1.4 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-services_device_serial_serial_io_handler_posix_cc,v 1.5 2021/01/20 07:28:11 robert Exp $
 
 Index: services/device/serial/serial_io_handler_posix.cc
 --- services/device/serial/serial_io_handler_posix.cc.orig
 +++ services/device/serial/serial_io_handler_posix.cc
-@@ -67,7 +67,7 @@ bool BitrateToSpeedConstant(int bitrate, speed_t* spee
+@@ -68,7 +68,7 @@ bool BitrateToSpeedConstant(int bitrate, speed_t* spee
      BITRATE_TO_SPEED_CASE(9600)
      BITRATE_TO_SPEED_CASE(19200)
      BITRATE_TO_SPEED_CASE(38400)

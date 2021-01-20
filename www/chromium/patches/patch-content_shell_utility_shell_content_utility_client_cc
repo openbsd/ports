@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_shell_utility_shell_content_utility_client_cc,v 1.4 2020/11/18 12:29:33 robert Exp $
+$OpenBSD: patch-content_shell_utility_shell_content_utility_client_cc,v 1.5 2021/01/20 07:28:10 robert Exp $
 
 Index: content/shell/utility/shell_content_utility_client.cc
 --- content/shell/utility/shell_content_utility_client.cc.orig
@@ -9,7 +9,7 @@ Index: content/shell/utility/shell_content_utility_client.cc
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- #include "services/service_manager/tests/sandbox_status_service.h"
+ #include "content/test/sandbox_status_service.h"
  #endif
  
 @@ -143,7 +143,7 @@ void ShellContentUtilityClient::ExposeInterfacesToBrow
@@ -19,5 +19,5 @@ Index: content/shell/utility/shell_content_utility_client.cc
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (register_sandbox_status_helper_) {
-     binders->Add<service_manager::mojom::SandboxStatusService>(
+     binders->Add<content::mojom::SandboxStatusService>(
          base::BindRepeating(

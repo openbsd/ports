@@ -1,9 +1,9 @@
-$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_h,v 1.1 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_h,v 1.2 2021/01/20 07:28:11 robert Exp $
 
 Index: sandbox/policy/openbsd/sandbox_openbsd.h
 --- sandbox/policy/openbsd/sandbox_openbsd.h.orig
 +++ sandbox/policy/openbsd/sandbox_openbsd.h
-@@ -0,0 +1,266 @@
+@@ -0,0 +1,268 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -159,6 +159,8 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // this returns what will actually happen once InitializeSandbox()
 +  // is called from inside these processes.
 +  int GetStatus();
++
++  static std::string GetSandboxTypeInEnglish(SandboxType sandbox_type);
 +
 +  // Returns true if the current process is single-threaded or if the number
 +  // of threads cannot be determined.
