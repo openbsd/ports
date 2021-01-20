@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/18 19:30:56 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/20 06:46:45 jsg Exp $
 
 FW_DRIVER=	radeondrm
-FW_VER=		20181218
+FW_VER=		20201218
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,radeon/\*.bin}
@@ -9,6 +9,7 @@ EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,radeon/\*.bin}
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 HOMEPAGE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/radeon
+MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/firmware/radeon
