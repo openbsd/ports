@@ -1,0 +1,29 @@
+$OpenBSD: patch-lib_cli_js,v 1.1.1.1 2021/01/20 15:06:29 abieber Exp $
+
+node doesn't know where it is relative to itself when called without the full
+path.
+
+Index: lib/cli.js
+--- lib/cli.js.orig
++++ lib/cli.js
+@@ -34190,11 +34190,11 @@ var getWrappersFolder = exports.getWrappersFolder = fu
+ 
+     wrappersFolder = yield (_fs || _load_fs()).makeTempDir();
+ 
+-    yield (0, (_portableScript || _load_portableScript()).makePortableProxyScript)(process.execPath, wrappersFolder, {
++    yield (0, (_portableScript || _load_portableScript()).makePortableProxyScript)('${LOCALBASE}/bin/node', wrappersFolder, {
+       proxyBasename: 'node'
+     });
+ 
+-    yield (0, (_portableScript || _load_portableScript()).makePortableProxyScript)(process.execPath, wrappersFolder, {
++    yield (0, (_portableScript || _load_portableScript()).makePortableProxyScript)('${LOCALBASE}/bin/node', wrappersFolder, {
+       proxyBasename: 'yarn',
+       prependArguments: [process.argv[1]]
+     });
+@@ -153385,4 +153385,4 @@ module.exports = require("dns");
+ module.exports = require("domain");
+ 
+ /***/ })
+-/******/ ]);
+\ No newline at end of file
++/******/ ]);

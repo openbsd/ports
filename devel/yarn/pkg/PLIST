@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/20 15:06:29 abieber Exp $
+bin/yarn
+@comment bin/yarn.cmd
+bin/yarn.js
+bin/yarnpkg
+@comment bin/yarnpkg.cmd
+lib/cli.js
+lib/v8-compile-cache.js
