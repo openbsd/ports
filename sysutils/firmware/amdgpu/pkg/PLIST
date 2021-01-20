@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/10/05 08:11:45 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/20 10:06:33 jsg Exp $
 firmware/amdgpu/
 firmware/amdgpu/amdgpu-license
 firmware/amdgpu/banks_k_2_smc.bin
@@ -254,8 +254,21 @@ firmware/amdgpu/renoir_mec2.bin
 firmware/amdgpu/renoir_pfp.bin
 firmware/amdgpu/renoir_rlc.bin
 firmware/amdgpu/renoir_sdma.bin
+firmware/amdgpu/renoir_ta.bin
 firmware/amdgpu/renoir_vcn.bin
 firmware/amdgpu/si58_mc.bin
+firmware/amdgpu/sienna_cichlid_ce.bin
+firmware/amdgpu/sienna_cichlid_dmcub.bin
+firmware/amdgpu/sienna_cichlid_me.bin
+firmware/amdgpu/sienna_cichlid_mec.bin
+firmware/amdgpu/sienna_cichlid_mec2.bin
+firmware/amdgpu/sienna_cichlid_pfp.bin
+firmware/amdgpu/sienna_cichlid_rlc.bin
+firmware/amdgpu/sienna_cichlid_sdma.bin
+firmware/amdgpu/sienna_cichlid_smc.bin
+firmware/amdgpu/sienna_cichlid_sos.bin
+firmware/amdgpu/sienna_cichlid_ta.bin
+firmware/amdgpu/sienna_cichlid_vcn.bin
 firmware/amdgpu/stoney_ce.bin
 firmware/amdgpu/stoney_me.bin
 firmware/amdgpu/stoney_mec.bin
