@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/17 10:17:51 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/20 07:31:55 kn Exp $
 
 COMMENT =	curses TLS-only IRC client
 DISTNAME =	catgirl-1.5
@@ -22,5 +22,8 @@ WANTLIB +=	c curses tls
 MASTER_SITES =	https://git.causal.agency/catgirl/snapshot/
 
 NO_TEST =	Yes
+
+FAKE_FLAGS =	PREFIX=${PREFIX} \
+		MANDIR=${PREFIX}/man
 
 .include <bsd.port.mk>
