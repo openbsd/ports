@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2020/11/06 23:02:23 jca Exp $
+# $OpenBSD: Makefile,v 1.53 2021/01/20 22:41:35 jca Exp $
 
 COMMENT =		authoritative DNS server
 
-DISTNAME =		knot-3.0.1
+DISTNAME =		knot-3.0.3
 
 SHARED_LIBS +=	dnssec               3.0      # .8.0
-SHARED_LIBS +=	knot                 7.0      # .11.0
+SHARED_LIBS +=	knot                 7.1      # .11.0
 SHARED_LIBS +=	zscanner             1.1      # .3.0
 
 CATEGORIES =		net
@@ -17,7 +17,7 @@ MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses edit ffi gmp gnutls hogweed iconv idn2 intl
+WANTLIB += c curses edit gmp gnutls hogweed iconv idn2 intl
 WANTLIB += lmdb m nettle nghttp2 p11-kit pthread tasn1 unistring urcu
 WANTLIB += urcu-common
 
