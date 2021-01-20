@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2056 2021/01/18 13:35:19 robert Exp $
+# $OpenBSD: Makefile,v 1.2057 2021/01/20 15:07:03 abieber Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1997,6 +1997,7 @@
      SUBDIR += xtensa-esp32-elf
      SUBDIR += xtensa-lx106-elf
      SUBDIR += yaml-cpp
+     SUBDIR += yarn
      SUBDIR += yasm
      SUBDIR += z80ex
      SUBDIR += zeal
