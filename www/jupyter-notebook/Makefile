@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:13:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/01/20 05:58:42 bket Exp $
 
 COMMENT =		web-based notebook for interactive computing
 
-MODPY_EGG_VERSION =	6.0.3
+MODPY_EGG_VERSION =	6.1.0
 DISTNAME =		notebook-${MODPY_EGG_VERSION}
 PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		www devel
 
@@ -29,9 +28,10 @@ RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-send2trash${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR}>=4.2.1 \
 			net/py-zmq${MODPY_FLAVOR}>=17 \
+			security/py-argon2-cffi${MODPY_FLAVOR} \
 			sysutils/py-prometheus_client${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
-			www/py-terminado${MODPY_FLAVOR}>=0.8.1 \
+			www/py-terminado${MODPY_FLAVOR}>=0.8.3 \
 			www/py-tornado${MODPY_FLAVOR}>=5.0
 
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
@@ -39,6 +39,7 @@ TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-nose-warnings-filters${MODPY_FLAVOR} \
 			devel/py-nbval${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
+			www/py-requests-unixsocket${MODPY_FLAVOR} \
 			www/py-selenium${MODPY_FLAVOR}
 
 # XXX once we have a port of pandoc, we can make docs.

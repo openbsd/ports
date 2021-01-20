@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/02/19 17:16:48 bket Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/20 05:58:42 bket Exp $
 @conflict jupyter-notebook3-*
 @pkgpath www/jupyter-notebook,python3
 bin/jupyter-bundlerextension
@@ -130,6 +130,30 @@ lib/python${MODPY_VERSION}/site-packages/notebook/i18n/fr_FR/LC_MESSAGES/nbui.mo
 lib/python${MODPY_VERSION}/site-packages/notebook/i18n/fr_FR/LC_MESSAGES/nbui.po
 lib/python${MODPY_VERSION}/site-packages/notebook/i18n/fr_FR/LC_MESSAGES/notebook.mo
 lib/python${MODPY_VERSION}/site-packages/notebook/i18n/fr_FR/LC_MESSAGES/notebook.po
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ja_JP/
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ja_JP/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ja_JP/LC_MESSAGES/nbjs.json
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ja_JP/LC_MESSAGES/nbjs.po
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ja_JP/LC_MESSAGES/nbui.mo
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ja_JP/LC_MESSAGES/nbui.po
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ja_JP/LC_MESSAGES/notebook.mo
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ja_JP/LC_MESSAGES/notebook.po
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/nl/
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/nl/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/nl/LC_MESSAGES/nbjs.json
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/nl/LC_MESSAGES/nbjs.po
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/nl/LC_MESSAGES/nbui.mo
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/nl/LC_MESSAGES/nbui.po
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/nl/LC_MESSAGES/notebook.mo
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/nl/LC_MESSAGES/notebook.po
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ru_RU/
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ru_RU/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ru_RU/LC_MESSAGES/nbjs.json
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ru_RU/LC_MESSAGES/nbjs.po
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ru_RU/LC_MESSAGES/nbui.mo
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ru_RU/LC_MESSAGES/nbui.po
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ru_RU/LC_MESSAGES/notebook.mo
+lib/python${MODPY_VERSION}/site-packages/notebook/i18n/ru_RU/LC_MESSAGES/notebook.po
 lib/python${MODPY_VERSION}/site-packages/notebook/i18n/zh_CN/
 lib/python${MODPY_VERSION}/site-packages/notebook/i18n/zh_CN/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/notebook/i18n/zh_CN/LC_MESSAGES/nbjs.json
@@ -379,6 +403,7 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/MathJax/exte
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/MathJax/extensions/TeX/newcommand.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/MathJax/extensions/TeX/noErrors.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/MathJax/extensions/TeX/noUndefined.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/MathJax/extensions/TeX/text-macros.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/MathJax/extensions/TeX/unicode.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/MathJax/extensions/TeX/verb.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/MathJax/extensions/a11y/
@@ -1632,6 +1657,8 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/vhdl/vhdl.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/vue/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/vue/vue.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/wast/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/wast/wast.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/webidl/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/webidl/webidl.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/xml/
@@ -1648,6 +1675,12 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/z80/z80.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/rollup.config.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/addon/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/addon/runmode/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/addon/runmode/codemirror-standalone.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/addon/runmode/codemirror.node.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/addon/runmode/runmode-standalone.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/addon/runmode/runmode.node.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/codemirror.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/display/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/src/display/Display.js
@@ -1724,6 +1757,8 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/t
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/abcdef.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/ambiance-mobile.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/ambiance.css
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/ayu-dark.css
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/ayu-mirage.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/base16-dark.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/base16-light.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/bespin.css
@@ -1745,11 +1780,15 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/t
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/lesser-dark.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/liquibyte.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/lucario.css
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/material-darker.css
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/material-ocean.css
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/material-palenight.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/material.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/mbo.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/mdn-like.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/midnight.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/monokai.css
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/moxer.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/neat.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/neo.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/theme/night.css
@@ -1962,8 +2001,16 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notebook/terminal/${MOD
 lib/python${MODPY_VERSION}/site-packages/notebook/terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/terminal/${MODPY_PYCACHE}api_handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/terminal/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notebook/terminal/${MODPY_PYCACHE}terminalmanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/terminal/api_handlers.py
 lib/python${MODPY_VERSION}/site-packages/notebook/terminal/handlers.py
+lib/python${MODPY_VERSION}/site-packages/notebook/terminal/terminalmanager.py
+lib/python${MODPY_VERSION}/site-packages/notebook/terminal/tests/
+lib/python${MODPY_VERSION}/site-packages/notebook/terminal/tests/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notebook/terminal/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/notebook/terminal/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notebook/terminal/tests/${MODPY_PYCACHE}test_terminals_api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notebook/terminal/tests/test_terminals_api.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notebook/tests/${MODPY_PYCACHE}/
@@ -1975,6 +2022,7 @@ lib/python${MODPY_VERSION}/site-packages/notebook/tests/${MODPY_PYCACHE}test_gat
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/${MODPY_PYCACHE}test_i18n.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/${MODPY_PYCACHE}test_nbextensions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/${MODPY_PYCACHE}test_notebookapp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notebook/tests/${MODPY_PYCACHE}test_notebookapp_integration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/${MODPY_PYCACHE}test_paths.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/${MODPY_PYCACHE}test_serialize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/${MODPY_PYCACHE}test_serverextensions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1996,8 +2044,6 @@ lib/python${MODPY_VERSION}/site-packages/notebook/tests/notebook/dualmode_merge.
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/notebook/execute_selected_cells.js
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/notebook/inject_js.js
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/notebook/markdown.js
-lib/python${MODPY_VERSION}/site-packages/notebook/tests/notebook/move_multiselection.js
-lib/python${MODPY_VERSION}/site-packages/notebook/tests/notebook/notifications.js
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/notebook/output.js
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/notebook/roundtrip.js
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/notebook/safe_append_output.js
@@ -2026,11 +2072,14 @@ lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_kernel_menu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_markdown.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_merge_cells.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_move_multiselection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_multiselect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_multiselect_toggle.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_notifications.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_prompt_numbers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_save.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_save_as_notebook.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_save_readonly_as.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_shutdown.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}test_undelete.${MODPY_PYC_MAGIC_TAG}pyc
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2054,11 +2103,14 @@ lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_interrupt.
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_kernel_menu.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_markdown.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_merge_cells.py
+lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_move_multiselection.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_multiselect.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_multiselect_toggle.py
+lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_notifications.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_prompt_numbers.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_save.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_save_as_notebook.py
+lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_save_readonly_as.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_shutdown.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/test_undelete.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/selenium/utils.py
@@ -2072,6 +2124,7 @@ lib/python${MODPY_VERSION}/site-packages/notebook/tests/test_gateway.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/test_i18n.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/test_nbextensions.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/test_notebookapp.py
+lib/python${MODPY_VERSION}/site-packages/notebook/tests/test_notebookapp_integration.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/test_paths.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/test_serialize.py
 lib/python${MODPY_VERSION}/site-packages/notebook/tests/test_serverextensions.py
