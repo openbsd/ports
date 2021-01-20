@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-glib,v 1.7 2019/12/16 20:42:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-glib,v 1.8 2021/01/20 12:25:46 ajacoutot Exp $
 include/libical-glib/
 include/libical-glib/i-cal-array.h
 include/libical-glib/i-cal-attach.h
@@ -32,10 +32,14 @@ include/libical-glib/i-cal-trigger.h
 include/libical-glib/i-cal-unknowntokenhandling.h
 include/libical-glib/i-cal-value.h
 include/libical-glib/libical-glib.h
+lib/cmake/LibIcal/IcalGlibSrcGenerator${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibIcal/IcalGlibSrcGenerator.cmake
 lib/girepository-1.0/ICalGLib-3.0.typelib
 @static-lib lib/libical-glib.a
 @lib lib/libical-glib.so.${LIBical-glib_VERSION}
 lib/pkgconfig/libical-glib.pc
+libexec/libical/
+@bin libexec/libical/ical-glib-src-generator
 share/gir-1.0/ICalGLib-3.0.gir
 share/vala/
 share/vala/vapi/

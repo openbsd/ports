@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_libical_icaltz-util_c,v 1.9 2021/01/20 12:25:46 ajacoutot Exp $
+
+Index: src/libical/icaltz-util.c
+--- src/libical/icaltz-util.c.orig
++++ src/libical/icaltz-util.c
+@@ -49,8 +49,13 @@
+ #endif
+ #endif
+ 
+-#if defined(__OpenBSD__) && !defined(bswap_32)
++#if defined(__OpenBSD__)
++#if !defined(bswap_32)
+ #define bswap_32 swap32
++#endif
++#if !defined(bswap_64)
++#define bswap_64 swap64
++#endif
+ #endif
+ 
+ #if defined(_MSC_VER)
