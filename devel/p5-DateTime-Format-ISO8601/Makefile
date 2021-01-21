@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/01/21 00:16:30 bluhm Exp $
 
-COMMENT= 	DateTime parser for ISO8601 date formats
+COMMENT = 	DateTime parser for ISO8601 date formats
 
-MODULES=	cpan 
-PKG_ARCH=	*
-DISTNAME=	DateTime-Format-ISO8601-0.08
-CATEGORIES=	devel
+DISTNAME =	DateTime-Format-ISO8601-0.15
 EPOCH =		0
-REVISION=	0
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-TEST_DEPENDS =	devel/p5-Test-Distribution \
-			devel/p5-Test-Pod
-RUN_DEPENDS=		devel/p5-DateTime-Format-Builder
+# Perl
+PERMIT_PACKAGE =	Yes
 
-CONFIGURE_STYLE=modbuild
+MODULES =		cpan
+RUN_DEPENDS =		devel/p5-DateTime>=1.45 \
+			devel/p5-DateTime-Format-Builder>=0.77 \
+			devel/p5-Params-ValidationCompiler>=0.26 \
+			devel/p5-Specio>=0.18 \
+			devel/p5-namespace-autoclean
+TEST_DEPENDS =		devel/p5-Test2-Suite
 
-MAKE_ENV=TEST_POD=Yes
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
