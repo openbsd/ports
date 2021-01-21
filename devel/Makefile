@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2057 2021/01/20 15:07:03 abieber Exp $
+# $OpenBSD: Makefile,v 1.2058 2021/01/21 16:24:23 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -103,6 +103,7 @@
      SUBDIR += cvs20hg
      SUBDIR += cvs2cl
      SUBDIR += cvs2gitdump
+     SUBDIR += cvs2svn
      SUBDIR += cvsgraph
      SUBDIR += cvslock
      SUBDIR += cvsplot
