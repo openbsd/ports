@@ -1,0 +1,14 @@
+$OpenBSD: patch-etc_lfrc_example,v 1.1.1.1 2021/01/21 17:12:16 paco Exp $
+
+Index: etc/lfrc.example
+--- etc/lfrc.example.orig
++++ etc/lfrc.example
+@@ -73,7 +73,7 @@ cmd extract ${{
+     case $f in
+         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+         *.tar.gz|*.tgz) tar xzvf $f;;
+-        *.tar.xz|*.txz) tar xJvf $f;;
++        *.tar.xz|*.txz) xzcat $f | tar xvf -;;
+         *.zip) unzip $f;;
+         *.rar) unrar x $f;;
+         *.7z) 7z x $f;;
