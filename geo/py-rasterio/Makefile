@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2021/01/04 14:06:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/01/21 00:26:46 daniel Exp $
 
 COMMENT =	geospatial raster data API and CLI
 
 MODPY_EGG_VERSION =	1.1.8
 DISTNAME =	rasterio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo
 
@@ -33,6 +33,7 @@ BUILD_DEPENDS +=	math/py-numpy${MODPY_FLAVOR}
 
 RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR}>=0.5 \
 		net/py-boto3${MODPY_FLAVOR} \
+		devel/py-attrs${MODPY_FLAVOR} \
 		devel/py-click${MODPY_FLAVOR} \
 		devel/py-click-plugins${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
