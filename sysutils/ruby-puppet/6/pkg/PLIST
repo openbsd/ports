@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/12/30 23:13:54 kn Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/21 11:51:17 kn Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -141,6 +141,11 @@ ${MODRUBY_SITEDIR}/puppet/feature/selinux.rb
 ${MODRUBY_SITEDIR}/puppet/feature/ssh.rb
 ${MODRUBY_SITEDIR}/puppet/feature/telnet.rb
 ${MODRUBY_SITEDIR}/puppet/feature/zlib.rb
+${MODRUBY_SITEDIR}/puppet/ffi/
+${MODRUBY_SITEDIR}/puppet/ffi/posix/
+${MODRUBY_SITEDIR}/puppet/ffi/posix.rb
+${MODRUBY_SITEDIR}/puppet/ffi/posix/constants.rb
+${MODRUBY_SITEDIR}/puppet/ffi/posix/functions.rb
 ${MODRUBY_SITEDIR}/puppet/file_bucket/
 ${MODRUBY_SITEDIR}/puppet/file_bucket.rb
 ${MODRUBY_SITEDIR}/puppet/file_bucket/dipper.rb
@@ -337,8 +342,10 @@ ${MODRUBY_SITEDIR}/puppet/indirector/envelope.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/errors.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/exec.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/face.rb
+${MODRUBY_SITEDIR}/puppet/indirector/fact_search.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/facter.rb
+${MODRUBY_SITEDIR}/puppet/indirector/facts/json.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/network_device.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/rest.rb
@@ -374,6 +381,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/msgpack.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/
 ${MODRUBY_SITEDIR}/puppet/indirector/node/exec.rb
+${MODRUBY_SITEDIR}/puppet/indirector/node/json.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/msgpack.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/plain.rb
@@ -383,6 +391,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/node/yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/none.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/plain.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/report/
+${MODRUBY_SITEDIR}/puppet/indirector/report/json.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/report/msgpack.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/report/processor.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/report/rest.rb
@@ -947,6 +956,7 @@ ${MODRUBY_SITEDIR}/puppet/scheduler/splay_job.rb
 ${MODRUBY_SITEDIR}/puppet/scheduler/timer.rb
 ${MODRUBY_SITEDIR}/puppet/settings/
 ${MODRUBY_SITEDIR}/puppet/settings.rb
+${MODRUBY_SITEDIR}/puppet/settings/alias_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/array_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/autosign_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/base_setting.rb
@@ -1065,6 +1075,7 @@ ${MODRUBY_SITEDIR}/puppet/util/docs.rb
 ${MODRUBY_SITEDIR}/puppet/util/errors.rb
 ${MODRUBY_SITEDIR}/puppet/util/execution.rb
 ${MODRUBY_SITEDIR}/puppet/util/execution_stub.rb
+${MODRUBY_SITEDIR}/puppet/util/fact_dif.rb
 ${MODRUBY_SITEDIR}/puppet/util/feature.rb
 ${MODRUBY_SITEDIR}/puppet/util/file_watcher.rb
 ${MODRUBY_SITEDIR}/puppet/util/fileparsing.rb
