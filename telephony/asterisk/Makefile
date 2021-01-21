@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.337 2020/12/23 14:00:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.338 2021/01/21 20:04:53 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		18.1.1
+VER=		18.2.0
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
@@ -239,6 +239,7 @@ CONFIGURE_ARGS+=	--with-lua=no
 MODLUA_BUILDDEP=	no
 .else
 CONFIGURE_ARGS+=	--with-lua
+CONFIGURE_ENV+=		LUA_VERSIONS="${MODLUA_VERSION}"
 .endif
 
 # odbc

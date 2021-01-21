@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.45 2020/09/12 19:35:37 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.46 2021/01/21 20:04:53 sthen Exp $
 
 - don't force compiler flags
 - don't unconditionally set -ftrampolines, it is gcc-only.
@@ -9,7 +9,7 @@ testing, and added-back in the port Makefile).
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -138,7 +138,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
+@@ -139,7 +139,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -18,7 +18,7 @@ Index: Makefile
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -187,7 +187,9 @@ OPTIONS=
+@@ -188,7 +188,9 @@ OPTIONS=
  
  ifeq ($(findstring -save-temps,$(_ASTCFLAGS) $(ASTCFLAGS)),)
    ifeq ($(findstring -pipe,$(_ASTCFLAGS) $(ASTCFLAGS)),)
@@ -28,7 +28,7 @@ Index: Makefile
    endif
  endif
  
-@@ -231,7 +233,7 @@ ifeq ($(OSARCH),NetBSD)
+@@ -232,7 +234,7 @@ ifeq ($(OSARCH),NetBSD)
  endif
  
  ifeq ($(OSARCH),OpenBSD)
