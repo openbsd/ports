@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/01/21 09:59:27 kirby Exp $
 
 COMMENT=	collection of educational activities for young children
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.childsplay.mobi/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://download.savannah.gnu.org/releases/childsplay/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=/childsplay/}
 
 MODULES=	lang/python
 
