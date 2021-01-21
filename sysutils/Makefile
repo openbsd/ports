@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.592 2021/01/18 13:20:24 robert Exp $
+# $OpenBSD: Makefile,v 1.593 2021/01/21 17:14:12 paco Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -137,6 +137,7 @@
      SUBDIR += krename
      SUBDIR += ktsuss
      SUBDIR += kubectl
+     SUBDIR += lf
      SUBDIR += libburn
      SUBDIR += libesedb
      SUBDIR += libevt
