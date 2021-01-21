@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2021/01/19 06:45:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.50 2021/01/21 16:22:26 sthen Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 #'
@@ -56,9 +56,9 @@ pre-configure:
 		protoc --cpp_out=src/third_party/protobuf chatcleaner.proto && \
 		protoc --cpp_out=src/third_party/protobuf pokerth.proto && \
 	find . -name "*.pro" -exec perl -pi -e 's,qmake,${MODQT5_QMAKE},g;' {} +
-post-configure:
-	sed -i 's,pokerth-1.1.2-rc/pokerth ,pokerth-1.1.2-rc/build-amd64/pokerth ,g;' \
-		${WRKBUILD}/Makefile.pokerth_game
+
+post-build:
+	ln ${WRKBUILD}/pokerth ${WRKSRC}/pokerth
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/pokerth_server ${PREFIX}/bin
