@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1236 2021/01/16 21:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.1237 2021/01/21 03:33:00 abieber Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -795,6 +795,7 @@
      SUBDIR += yafc
      SUBDIR += yaz
      SUBDIR += yersinia
+     SUBDIR += yggdrasil-go
      SUBDIR += ysmv7
      SUBDIR += ytalk
      SUBDIR += ytalk,no_x11
