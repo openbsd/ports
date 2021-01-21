@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/31 12:28:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/01/21 15:43:58 kirby Exp $
 
 COMMENT =		RTP (RFC3550) library
 DISTNAME =		ortp-0.25.0
+REVISION =		0
 
 SHARED_LIBS +=	ortp                 2.1      # 10.0
 
 CATEGORIES =		net multimedia
-HOMEPAGE =		http://www.linphone.org/eng/documentation/dev/ortp.html
+HOMEPAGE =		https://www.linphone.org/technical-corner/ortp
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		crypto m pthread ssl
 
-MASTER_SITES =		http://download.savannah.nongnu.org/releases/linphone/ortp/sources/
+MASTER_SITES =		https://download.savannah.nongnu.org/releases/linphone/ortp/sources/
 
 SEPARATE_BUILD =	Yes
 
