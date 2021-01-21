@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2020/09/27 16:48:56 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.44 2021/01/21 14:47:15 abieber Exp $
 bin/go
 bin/gofmt
 go/
@@ -202,6 +202,7 @@ go/misc/arm/
 go/misc/arm/a
 go/misc/cgo/
 go/misc/cgo/errors/
+go/misc/cgo/errors/badsym_test.go
 go/misc/cgo/errors/errors_test.go
 go/misc/cgo/errors/ptr_test.go
 go/misc/cgo/errors/testdata/
@@ -359,6 +360,9 @@ go/misc/cgo/test/testdata/issue30527/
 go/misc/cgo/test/testdata/issue30527.go
 go/misc/cgo/test/testdata/issue30527/a.go
 go/misc/cgo/test/testdata/issue30527/b.go
+go/misc/cgo/test/testdata/issue41761.go
+go/misc/cgo/test/testdata/issue41761a/
+go/misc/cgo/test/testdata/issue41761a/a.go
 go/misc/cgo/test/testdata/issue8756/
 go/misc/cgo/test/testdata/issue8756.go
 go/misc/cgo/test/testdata/issue8756/issue8756.go
@@ -1041,6 +1045,7 @@ go/pkg${GOCFG}/internal/
 go/pkg${GOCFG}/internal/bytealg.a
 go/pkg${GOCFG}/internal/cfg.a
 go/pkg${GOCFG}/internal/cpu.a
+go/pkg${GOCFG}/internal/execabs.a
 go/pkg${GOCFG}/internal/fmtsort.a
 go/pkg${GOCFG}/internal/goroot.a
 go/pkg${GOCFG}/internal/goversion.a
@@ -2388,6 +2393,7 @@ go/src/cmd/go/testdata/script/cgo_asm_error.txt
 go/src/cmd/go/testdata/script/cgo_bad_directives.txt
 go/src/cmd/go/testdata/script/cgo_depends_on_syscall.txt
 go/src/cmd/go/testdata/script/cgo_flag_contains_space.txt
+go/src/cmd/go/testdata/script/cgo_path.txt
 go/src/cmd/go/testdata/script/cgo_syso_issue29253.txt
 go/src/cmd/go/testdata/script/clean_cache_n.txt
 go/src/cmd/go/testdata/script/clean_testcache.txt
@@ -2474,6 +2480,7 @@ go/src/cmd/go/testdata/script/install_rebuild_removed.txt
 go/src/cmd/go/testdata/script/install_relative_gobin_fail.txt
 go/src/cmd/go/testdata/script/install_shadow_gopath.txt
 go/src/cmd/go/testdata/script/issue36000.txt
+go/src/cmd/go/testdata/script/ldflag.txt
 go/src/cmd/go/testdata/script/link_syso_issue33139.txt
 go/src/cmd/go/testdata/script/linkname.txt
 go/src/cmd/go/testdata/script/list_ambiguous_path.txt
@@ -3147,6 +3154,8 @@ go/src/cmd/link/internal/ld/testdata/issue32233/main/main.go
 go/src/cmd/link/internal/ld/testdata/issue38192/
 go/src/cmd/link/internal/ld/testdata/issue38192/main.go
 go/src/cmd/link/internal/ld/testdata/issue38192/oneline.s
+go/src/cmd/link/internal/ld/testdata/issue39757/
+go/src/cmd/link/internal/ld/testdata/issue39757/issue39757main.go
 go/src/cmd/link/internal/ld/typelink.go
 go/src/cmd/link/internal/ld/util.go
 go/src/cmd/link/internal/ld/xcoff.go
@@ -5556,6 +5565,9 @@ go/src/internal/cpu/cpu_x86.go
 go/src/internal/cpu/cpu_x86.s
 go/src/internal/cpu/cpu_x86_test.go
 go/src/internal/cpu/export_test.go
+go/src/internal/execabs/
+go/src/internal/execabs/execabs.go
+go/src/internal/execabs/execabs_test.go
 go/src/internal/fmtsort/
 go/src/internal/fmtsort/export_test.go
 go/src/internal/fmtsort/sort.go
@@ -6886,6 +6898,7 @@ go/src/runtime/internal/atomic/asm_mips64x.s
 go/src/runtime/internal/atomic/asm_mipsx.s
 go/src/runtime/internal/atomic/asm_ppc64x.s
 go/src/runtime/internal/atomic/asm_s390x.s
+go/src/runtime/internal/atomic/asm_wasm.s
 go/src/runtime/internal/atomic/atomic_386.go
 go/src/runtime/internal/atomic/atomic_amd64.go
 go/src/runtime/internal/atomic/atomic_arm.go
@@ -7455,6 +7468,7 @@ go/src/runtime/testdata/testprogcgo/exec.go
 go/src/runtime/testdata/testprogcgo/lockosthread.c
 go/src/runtime/testdata/testprogcgo/lockosthread.go
 go/src/runtime/testdata/testprogcgo/main.go
+go/src/runtime/testdata/testprogcgo/needmdeadlock.go
 go/src/runtime/testdata/testprogcgo/numgoroutine.go
 go/src/runtime/testdata/testprogcgo/pprof.go
 go/src/runtime/testdata/testprogcgo/raceprof.go
@@ -10009,15 +10023,20 @@ go/test/fixedbugs/issue39472.go
 go/test/fixedbugs/issue39541.go
 go/test/fixedbugs/issue39651.go
 go/test/fixedbugs/issue40367.go
+go/test/fixedbugs/issue40629.go
 go/test/fixedbugs/issue4066.go
 go/test/fixedbugs/issue40746.go
 go/test/fixedbugs/issue4085a.go
 go/test/fixedbugs/issue4085b.go
 go/test/fixedbugs/issue40917.go
+go/test/fixedbugs/issue40954.go
 go/test/fixedbugs/issue4097.go
 go/test/fixedbugs/issue4099.go
 go/test/fixedbugs/issue4162.go
 go/test/fixedbugs/issue4167.go
+go/test/fixedbugs/issue41711.go
+go/test/fixedbugs/issue42032.go
+go/test/fixedbugs/issue42076.go
 go/test/fixedbugs/issue4215.go
 go/test/fixedbugs/issue4232.go
 go/test/fixedbugs/issue4251.go
@@ -10026,6 +10045,7 @@ go/test/fixedbugs/issue4252.dir/a.go
 go/test/fixedbugs/issue4252.dir/main.go
 go/test/fixedbugs/issue4252.go
 go/test/fixedbugs/issue4264.go
+go/test/fixedbugs/issue42753.go
 go/test/fixedbugs/issue4283.go
 go/test/fixedbugs/issue4313.go
 go/test/fixedbugs/issue4316.go
