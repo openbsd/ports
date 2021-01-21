@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/17 19:50:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/21 19:46:43 jasper Exp $
 
 # sync with devel/angr/Makefile.inc
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		ROP chain builder based off of angr
 
-MODPY_EGG_VERSION =	9.0.5405
+MODPY_EGG_VERSION =	9.0.5450
 DISTNAME =		angrop-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
