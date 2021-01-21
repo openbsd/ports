@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2020/11/28 06:18:43 bket Exp $
-
-COMMENT =	rsync for cloud storage
+# $OpenBSD: Makefile,v 1.22 2021/01/21 04:30:33 bket Exp $
 
 BROKEN-aarch64 =	SIGILL when running rclone
 BROKEN-arm =		SIGBUS when running rclone
 
-V =		1.53.3
+COMMENT =	rsync for cloud storage
+
+V =		1.53.4
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
 
@@ -16,11 +16,11 @@ HOMEPAGE =	https://rclone.org/
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += c pthread
+WANTLIB =	c pthread
 
-MASTER_SITES =  https://downloads.rclone.org/v${V}/
+MASTER_SITES =	https://downloads.rclone.org/v${V}/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-vendor${EXTRACT_SUFX}
 
