@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1145 2021/01/20 07:36:43 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1146 2021/01/22 22:34:32 bluhm Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2047,6 +2047,7 @@ my $obsolete_reason = {
 	'ethumb' => 3,
 	'evas' => 3,
 	'qtstyleplugins' => 3,
+	'p5-Regexp-Copy' => 0,
 };
 
 # reasons for obsolete packages
