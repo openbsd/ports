@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2058 2021/01/21 16:24:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.2059 2021/01/22 15:45:29 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1557,6 +1557,7 @@
      SUBDIR += py-kiwisolver,python3
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch
+     SUBDIR += py-lief,python3
      SUBDIR += py-linecache2
      SUBDIR += py-llvmlite
      SUBDIR += py-llvmlite,python3
