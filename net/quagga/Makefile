@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.61 2021/01/09 21:51:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2021/01/22 15:58:13 kirby Exp $
 
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-1.2.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 
 .for i in ospf ospfapiclient zebra fpm_pb quagga_pb
 SHARED_LIBS+=	$i 1.0
 .endfor
 
-HOMEPAGE=	http://www.quagga.net/
+HOMEPAGE=	https://www.quagga.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
+
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=quagga/}
 
 WANTLIB += c curses m readline
 
