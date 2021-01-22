@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2059 2021/01/22 15:45:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.2060 2021/01/22 22:00:15 bluhm Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1057,7 +1057,6 @@
      SUBDIR += p5-Readonly-XS
      SUBDIR += p5-Ref-Util
      SUBDIR += p5-Ref-Util-XS
-     SUBDIR += p5-Regexp-Copy
      SUBDIR += p5-Regexp-IPv6
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-Return-MultiLevel

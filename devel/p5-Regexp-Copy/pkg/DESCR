@@ -1,4 +1,0 @@
-Regexp::Copy - copy Perl Regexp objects
-
-Regexp::Copy allows you to copy the contents of one Regexp object
-to another.
