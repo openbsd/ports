@@ -1,6 +1,13 @@
 puddletag is an audio tag editor similar to the Windows program, Mp3tag.
 It uses a spreadsheet-like layout so that all the tags you want to edit
 by hand are visible and easily editable.
-Tagging your files can be supported by the AcoustID library, which
-creates digital fingerprints from your files and uses them to search the
-tag database. To enable this feature, install chromaprint.
+
+The usual tag editor features are supported like extracting tag information
+from filenames, renaming files based on their tags by using patterns and basic
+tag editing.
+
+There are also Functions, which can do things like replace text, trim it, do
+case conversions, etc. Actions can automate repetitive tasks.
+
+Supported formats: ID3v1, ID3v2 (mp3), MP4 (mp4, m4a, etc.), VorbisComments
+(ogg, flac), Musepack (mpc), Monkeys Audio (.ape) and WavPack (wv).
