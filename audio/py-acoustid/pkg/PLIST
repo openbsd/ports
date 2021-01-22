@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/11/28 19:57:56 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/22 17:06:33 rsadowski Exp $
 @conflict py-acoustid-*
 @pkgpath audio/py-acoustid
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}acoustid.${MODPY_PYC_MAGIC_TAG}pyc
@@ -6,9 +6,9 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}chromaprint.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/acoustid.py
 lib/python${MODPY_VERSION}/site-packages/chromaprint.py
 lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/.pbr.json.icloud
 lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pyacoustid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
