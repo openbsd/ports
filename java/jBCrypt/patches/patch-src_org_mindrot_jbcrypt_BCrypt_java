@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_org_mindrot_jbcrypt_BCrypt_java,v 1.1 2021/01/22 13:42:09 sthen Exp $
+
+Accept $2b$ bcrypt prefix.
+
+jBCrypt didn't have the 255-char bug affecting OpenBSD libc in the
+first place, so its $2a$ handling doesn't match OpenBSD's. Changing
+that would break compatibility with older jBCrypt versions with long
+passwords which is more likely to be a problem than compatibility with
+old OpenBSD, so that is left alone for now.
+
+Index: src/org/mindrot/jbcrypt/BCrypt.java
+--- src/org/mindrot/jbcrypt/BCrypt.java.orig
++++ src/org/mindrot/jbcrypt/BCrypt.java
+@@ -661,7 +661,11 @@ public class BCrypt {
+ 			off = 3;
+ 		else {
+ 			minor = salt.charAt(2);
+-			if (minor != 'a' || salt.charAt(3) != '$')
++			// 2;  short-lived original
++			// 2a; specified UTF-8 and terminating NUL
++			// 2b; 256-char wrap bug in OpenBSD libc was fixed
++			// (jBCrypt handling of 2a doesn't match OpenBSD's as it didn't have the bug)
++			if ((minor != 'a' && minor != 'b') || salt.charAt(3) != '$')
+ 				throw new IllegalArgumentException ("Invalid salt revision");
+ 			off = 4;
+ 		}
+@@ -716,6 +720,9 @@ public class BCrypt {
+ 
+ 		random.nextBytes(rnd);
+ 
++		// keep writing $2a$ for now to give backwards compat with
++		// older jBCrypt versions; though this means that bcrypts of
++		// very long input passwords might not be accepted by OpenBSD
+ 		rs.append("$2a$");
+ 		if (log_rounds < 10)
+ 			rs.append("0");
