@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/16 12:42:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/22 19:31:47 ajacoutot Exp $
 @rcscript ${RCDIR}/coredns
 @bin bin/coredns
 @man man/man1/coredns.1
@@ -15,6 +15,7 @@
 @man man/man7/coredns-chaos.7
 @man man/man7/coredns-clouddns.7
 @man man/man7/coredns-debug.7
+@man man/man7/coredns-dns64.7
 @man man/man7/coredns-dnssec.7
 @man man/man7/coredns-dnstap.7
 @man man/man7/coredns-erratic.7
@@ -29,6 +30,7 @@
 @man man/man7/coredns-k8s_external.7
 @man man/man7/coredns-kubernetes.7
 @man man/man7/coredns-loadbalance.7
+@man man/man7/coredns-local.7
 @man man/man7/coredns-log.7
 @man man/man7/coredns-loop.7
 @man man/man7/coredns-metadata.7
