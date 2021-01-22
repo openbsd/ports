@@ -1,0 +1,3 @@
+LIEF is a library to instrument executable formats. It aims to provide a
+cross platform library to parse, modify and abstract ELF, PE and MachO
+formats.
