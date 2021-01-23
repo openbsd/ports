@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2020/01/28 09:21:24 stsp Exp $
+# $OpenBSD: Makefile,v 1.25 2021/01/23 23:17:48 kn Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
 V=		2.0
 DISTNAME=	fdm-$V
 CATEGORIES=	mail
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>
 

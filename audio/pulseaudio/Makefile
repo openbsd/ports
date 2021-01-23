@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2021/01/17 10:39:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2021/01/23 23:17:48 kn Exp $
 
 # XXX sndio: what to do with (channel) map
 # XXX sndio: check sample format
@@ -9,6 +9,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		14.2
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=  pulse                7.1      # .23.0
 SHARED_LIBS +=  pulse-simple         1.2      # .1.1

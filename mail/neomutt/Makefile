@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2020/11/27 14:33:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2021/01/23 23:17:48 kn Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	20201127
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/

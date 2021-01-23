@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2020/03/14 15:35:29 kn Exp $
+# $OpenBSD: Makefile,v 1.33 2021/01/23 23:17:47 kn Exp $
 
-COMMENT=	trivial database library
+COMMENT-main=	trivial database library
+COMMENT-python=	Python ${MODPY_VERSION} bindings for tdb
 
 # Keep in sync with the version bundled in net/samba
 DISTNAME=	tdb-1.3.18
+PKGNAME-main=	${DISTNAME}
+REVISION-main=	0
+PKGNAME-python=	py-${DISTNAME}
+MULTI_PACKAGES=	-main -python
 
 # 0750 on Makefile and other files breaks update-patches with PORTS_PRIVSEP=Yes
 FIX_EXTRACT_PERMISSIONS=	Yes
@@ -19,7 +24,8 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c intl m pthread util ${MODPY_WANTLIB}
+WANTLIB-main=	c pthread
+WANTLIB-python=	intl m pthread tdb util ${MODPY_WANTLIB}
 
 MASTER_SITES=	https://download.samba.org/pub/tdb/
 
@@ -32,7 +38,8 @@ MODPY_ADJ_FILES= buildtools/bin/waf
 BUILD_DEPENDS=	textproc/docbook-xsl \
 		textproc/libxslt
 
-LIB_DEPENDS=	${MODPY_LIB_DEPENDS}
+LIB_DEPENDS-python=	${BUILD_PKGPATH} \
+			${MODPY_LIB_DEPENDS}
 
 WAF_ARGS=	-v -j ${MAKE_JOBS}
 MAKE_FLAGS=	WAF_ARGS="${WAF_ARGS}"

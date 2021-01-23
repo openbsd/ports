@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2020/01/05 13:23:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.58 2021/01/23 23:17:48 kn Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -437,7 +437,6 @@ share/help/cs/rhythmbox/figures/rb-volume-changer.png
 share/help/cs/rhythmbox/figures/rb-window.png
 share/help/cs/rhythmbox/index.docbook
 share/help/cs/rhythmbox/legal.xml
-share/help/da/
 share/help/da/rhythmbox/
 share/help/da/rhythmbox/figures/
 share/help/da/rhythmbox/figures/rb-iradio-main.png
@@ -641,7 +640,6 @@ share/help/sv/rhythmbox/figures/rb-volume-changer.png
 share/help/sv/rhythmbox/figures/rb-window.png
 share/help/sv/rhythmbox/index.docbook
 share/help/sv/rhythmbox/legal.xml
-share/help/uk/
 share/help/uk/rhythmbox/
 share/help/uk/rhythmbox/figures/
 share/help/uk/rhythmbox/figures/rb-iradio-main.png
