@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2020/08/31 22:20:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/23 14:44:02 jasper Exp $
 
 # Should work on all other archs.
-NOT_FOR_ARCHS =	aarch64 m88k mips64
+NOT_FOR_ARCHS =	aarch64 m88k mips64 powerpc64
 
 COMMENT =	GNU Pascal compiler
 DISTNAME =	gpc-20070904
