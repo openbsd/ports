@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/12/19 16:25:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/01/23 18:09:51 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -40,6 +40,7 @@ share/ECM/find-modules/FindWaylandProtocols.cmake
 share/ECM/find-modules/FindWaylandScanner.cmake
 share/ECM/find-modules/FindX11_XCB.cmake
 share/ECM/find-modules/FindXCB.cmake
+share/ECM/find-modules/Findepoxy.cmake
 share/ECM/find-modules/GeneratePythonBindingUmbrellaModule.cmake
 share/ECM/find-modules/Qt5Ruleset.py
 ${MODPY_COMMENT}share/ECM/find-modules/${MODPY_PYCACHE}/
@@ -145,6 +146,7 @@ share/doc/ECM/html/_sources/find-module/FindWaylandProtocols.rst.txt
 share/doc/ECM/html/_sources/find-module/FindWaylandScanner.rst.txt
 share/doc/ECM/html/_sources/find-module/FindX11_XCB.rst.txt
 share/doc/ECM/html/_sources/find-module/FindXCB.rst.txt
+share/doc/ECM/html/_sources/find-module/Findepoxy.rst.txt
 share/doc/ECM/html/_sources/index.rst.txt
 share/doc/ECM/html/_sources/kde-module/
 share/doc/ECM/html/_sources/kde-module/KDECMakeSettings.rst.txt
@@ -244,6 +246,7 @@ share/doc/ECM/html/find-module/FindWaylandProtocols.html
 share/doc/ECM/html/find-module/FindWaylandScanner.html
 share/doc/ECM/html/find-module/FindX11_XCB.html
 share/doc/ECM/html/find-module/FindXCB.html
+share/doc/ECM/html/find-module/Findepoxy.html
 share/doc/ECM/html/genindex.html
 share/doc/ECM/html/index.html
 share/doc/ECM/html/kde-module/

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/01/23 18:09:53 rsadowski Exp $
+@so lib/qt5/plugins/imageformats/kimg_avif.so
 @so lib/qt5/plugins/imageformats/kimg_eps.so
 @so lib/qt5/plugins/imageformats/kimg_exr.so
 @so lib/qt5/plugins/imageformats/kimg_hdr.so
@@ -13,6 +14,7 @@
 @so lib/qt5/plugins/imageformats/kimg_xcf.so
 share/kservices5/
 share/kservices5/qimageioplugins/
+share/kservices5/qimageioplugins/avif.desktop
 share/kservices5/qimageioplugins/dds.desktop
 share/kservices5/qimageioplugins/eps.desktop
 share/kservices5/qimageioplugins/exr.desktop

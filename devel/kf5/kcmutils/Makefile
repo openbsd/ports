@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/03 16:12:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/01/23 18:09:52 rsadowski Exp $
 
 COMMENT =	utility classes for KDE control modules
 DISTNAME =	kcmutils-${VERSION}
 
-SHARED_LIBS =	KF5KCMUtils	6.1
+SHARED_LIBS =	KF5KCMUtils	6.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Declarative
 WANTLIB += KF5GuiAddons KF5I18n KF5ItemViews KF5Package KF5QuickAddons
 WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets
-WANTLIB += Qt5Xml m
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Widgets Qt5Xml m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt5/qtquickcontrols

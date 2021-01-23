@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/12/19 16:25:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/01/23 18:09:51 rsadowski Exp $
 share/icons/breeze/
 share/icons/breeze-dark/
 share/icons/breeze-dark/actions/
@@ -5302,6 +5302,7 @@ share/icons/breeze-dark/mimetypes/16/application-x-mimearchive.svg
 share/icons/breeze-dark/mimetypes/16/application-x-mplayer2.svg
 share/icons/breeze-dark/mimetypes/16/application-x-ms-dos-executable.svg
 share/icons/breeze-dark/mimetypes/16/application-x-ms-shortcut.svg
+share/icons/breeze-dark/mimetypes/16/application-x-ms-wim.svg
 share/icons/breeze-dark/mimetypes/16/application-x-mswinurl.svg
 share/icons/breeze-dark/mimetypes/16/application-x-mswrite.svg
 share/icons/breeze-dark/mimetypes/16/application-x-n64-rom.svg
@@ -5788,6 +5789,7 @@ share/icons/breeze-dark/mimetypes/22/application-x-mimearchive.svg
 share/icons/breeze-dark/mimetypes/22/application-x-mplayer2.svg
 share/icons/breeze-dark/mimetypes/22/application-x-ms-dos-executable.svg
 share/icons/breeze-dark/mimetypes/22/application-x-ms-shortcut.svg
+share/icons/breeze-dark/mimetypes/22/application-x-ms-wim.svg
 share/icons/breeze-dark/mimetypes/22/application-x-mswinurl.svg
 share/icons/breeze-dark/mimetypes/22/application-x-mswrite.svg
 share/icons/breeze-dark/mimetypes/22/application-x-n64-rom.svg
@@ -6274,6 +6276,7 @@ share/icons/breeze-dark/mimetypes/32/application-x-mimearchive.svg
 share/icons/breeze-dark/mimetypes/32/application-x-mplayer2.svg
 share/icons/breeze-dark/mimetypes/32/application-x-ms-dos-executable.svg
 share/icons/breeze-dark/mimetypes/32/application-x-ms-shortcut.svg
+share/icons/breeze-dark/mimetypes/32/application-x-ms-wim.svg
 share/icons/breeze-dark/mimetypes/32/application-x-mswinurl.svg
 share/icons/breeze-dark/mimetypes/32/application-x-mswrite.svg
 share/icons/breeze-dark/mimetypes/32/application-x-n64-rom.svg
@@ -6759,6 +6762,7 @@ share/icons/breeze-dark/mimetypes/64/application-x-mimearchive.svg
 share/icons/breeze-dark/mimetypes/64/application-x-mplayer2.svg
 share/icons/breeze-dark/mimetypes/64/application-x-ms-dos-executable.svg
 share/icons/breeze-dark/mimetypes/64/application-x-ms-shortcut.svg
+share/icons/breeze-dark/mimetypes/64/application-x-ms-wim.svg
 share/icons/breeze-dark/mimetypes/64/application-x-mswinurl.svg
 share/icons/breeze-dark/mimetypes/64/application-x-mswrite.svg
 share/icons/breeze-dark/mimetypes/64/application-x-n64-rom.svg
@@ -7784,6 +7788,7 @@ share/icons/breeze-dark/status/16/firewall-applet-error.svg
 share/icons/breeze-dark/status/16/firewall-applet-panic.svg
 share/icons/breeze-dark/status/16/firewall-applet-shields_up.svg
 share/icons/breeze-dark/status/16/firewall-applet.svg
+share/icons/breeze-dark/status/16/image-missing.svg
 share/icons/breeze-dark/status/16/input-caps-on.svg
 share/icons/breeze-dark/status/16/irc-channel-joined.svg
 share/icons/breeze-dark/status/16/irc-channel-parted.svg
@@ -7922,6 +7927,7 @@ share/icons/breeze-dark/status/22/haguichi-connecting-1.svg
 share/icons/breeze-dark/status/22/haguichi-connecting-2.svg
 share/icons/breeze-dark/status/22/haguichi-connecting-3.svg
 share/icons/breeze-dark/status/22/haguichi-disconnected.svg
+share/icons/breeze-dark/status/22/image-missing.svg
 share/icons/breeze-dark/status/22/input-caps-on.svg
 share/icons/breeze-dark/status/22/input-keyboard-virtual-off.svg
 share/icons/breeze-dark/status/22/input-keyboard-virtual-on.svg
@@ -8052,6 +8058,7 @@ share/icons/breeze-dark/status/64/dialog-password.svg
 share/icons/breeze-dark/status/64/dialog-positive.svg
 share/icons/breeze-dark/status/64/dialog-question.svg
 share/icons/breeze-dark/status/64/dialog-warning.svg
+share/icons/breeze-dark/status/64/image-missing.svg
 share/icons/breeze-dark/status/64/security-high.svg
 share/icons/breeze-dark/status/64/security-low.svg
 share/icons/breeze-dark/status/64/security-medium.svg
@@ -13449,6 +13456,7 @@ share/icons/breeze/mimetypes/16/application-x-mimearchive.svg
 share/icons/breeze/mimetypes/16/application-x-mplayer2.svg
 share/icons/breeze/mimetypes/16/application-x-ms-dos-executable.svg
 share/icons/breeze/mimetypes/16/application-x-ms-shortcut.svg
+share/icons/breeze/mimetypes/16/application-x-ms-wim.svg
 share/icons/breeze/mimetypes/16/application-x-mswinurl.svg
 share/icons/breeze/mimetypes/16/application-x-mswrite.svg
 share/icons/breeze/mimetypes/16/application-x-n64-rom.svg
@@ -13938,6 +13946,7 @@ share/icons/breeze/mimetypes/22/application-x-mimearchive.svg
 share/icons/breeze/mimetypes/22/application-x-mplayer2.svg
 share/icons/breeze/mimetypes/22/application-x-ms-dos-executable.svg
 share/icons/breeze/mimetypes/22/application-x-ms-shortcut.svg
+share/icons/breeze/mimetypes/22/application-x-ms-wim.svg
 share/icons/breeze/mimetypes/22/application-x-mswinurl.svg
 share/icons/breeze/mimetypes/22/application-x-mswrite.svg
 share/icons/breeze/mimetypes/22/application-x-n64-rom.svg
@@ -14427,6 +14436,7 @@ share/icons/breeze/mimetypes/32/application-x-mimearchive.svg
 share/icons/breeze/mimetypes/32/application-x-mplayer2.svg
 share/icons/breeze/mimetypes/32/application-x-ms-dos-executable.svg
 share/icons/breeze/mimetypes/32/application-x-ms-shortcut.svg
+share/icons/breeze/mimetypes/32/application-x-ms-wim.svg
 share/icons/breeze/mimetypes/32/application-x-mswinurl.svg
 share/icons/breeze/mimetypes/32/application-x-mswrite.svg
 share/icons/breeze/mimetypes/32/application-x-n64-rom.svg
@@ -14916,6 +14926,7 @@ share/icons/breeze/mimetypes/64/application-x-mimearchive.svg
 share/icons/breeze/mimetypes/64/application-x-mplayer2.svg
 share/icons/breeze/mimetypes/64/application-x-ms-dos-executable.svg
 share/icons/breeze/mimetypes/64/application-x-ms-shortcut.svg
+share/icons/breeze/mimetypes/64/application-x-ms-wim.svg
 share/icons/breeze/mimetypes/64/application-x-mswinurl.svg
 share/icons/breeze/mimetypes/64/application-x-mswrite.svg
 share/icons/breeze/mimetypes/64/application-x-n64-rom.svg
@@ -15942,6 +15953,7 @@ share/icons/breeze/status/16/firewall-applet-error.svg
 share/icons/breeze/status/16/firewall-applet-panic.svg
 share/icons/breeze/status/16/firewall-applet-shields_up.svg
 share/icons/breeze/status/16/firewall-applet.svg
+share/icons/breeze/status/16/image-missing.svg
 share/icons/breeze/status/16/input-caps-on.svg
 share/icons/breeze/status/16/irc-channel-joined.svg
 share/icons/breeze/status/16/irc-channel-parted.svg
@@ -16080,6 +16092,7 @@ share/icons/breeze/status/22/haguichi-connecting-1.svg
 share/icons/breeze/status/22/haguichi-connecting-2.svg
 share/icons/breeze/status/22/haguichi-connecting-3.svg
 share/icons/breeze/status/22/haguichi-disconnected.svg
+share/icons/breeze/status/22/image-missing.svg
 share/icons/breeze/status/22/input-caps-on.svg
 share/icons/breeze/status/22/input-keyboard-virtual-off.svg
 share/icons/breeze/status/22/input-keyboard-virtual-on.svg
@@ -16210,6 +16223,7 @@ share/icons/breeze/status/64/dialog-password.svg
 share/icons/breeze/status/64/dialog-positive.svg
 share/icons/breeze/status/64/dialog-question.svg
 share/icons/breeze/status/64/dialog-warning.svg
+share/icons/breeze/status/64/image-missing.svg
 share/icons/breeze/status/64/security-high.svg
 share/icons/breeze/status/64/security-low.svg
 share/icons/breeze/status/64/security-medium.svg

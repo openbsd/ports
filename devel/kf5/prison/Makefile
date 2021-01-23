@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/09/07 14:48:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/01/23 18:09:56 rsadowski Exp $
 
 COMMENT =		bar code generator
 DISTNAME =		prison-${VERSION}
@@ -7,7 +7,7 @@ PKGNAME =		prison-kf5-${VERSION}
 SHARED_LIBS =		KF5Prison	6.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Quick dmtx m qrencode
+WANTLIB += Qt5QmlModels Qt5Quick dmtx m qrencode
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 

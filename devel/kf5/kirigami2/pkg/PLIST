@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/11/03 16:12:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/01/23 18:09:54 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
@@ -37,11 +37,13 @@ lib/qt5/qml/org/kde/kirigami.2/Card.qml
 lib/qt5/qml/org/kde/kirigami.2/CardsGridView.qml
 lib/qt5/qml/org/kde/kirigami.2/CardsLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/CardsListView.qml
+lib/qt5/qml/org/kde/kirigami.2/CheckableListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/ContextDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/FlexColumn.qml
 lib/qt5/qml/org/kde/kirigami.2/FormLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/GlobalDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/Heading.qml
+lib/qt5/qml/org/kde/kirigami.2/Hero.qml
 lib/qt5/qml/org/kde/kirigami.2/InlineMessage.qml
 lib/qt5/qml/org/kde/kirigami.2/ItemViewHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/Label.qml
@@ -168,6 +170,7 @@ share/locale/lt/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ml/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/nl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/nn/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/pa/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pt/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pt_BR/LC_MESSAGES/libkirigami2plugin_qt.qm

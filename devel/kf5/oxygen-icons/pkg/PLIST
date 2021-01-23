@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/03/23 18:01:11 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/01/23 18:09:55 rsadowski Exp $
 @pkgpath x11/kde4/oxygen-icons
 share/icons/oxygen/
 share/icons/oxygen/base/
@@ -1628,6 +1628,7 @@ share/icons/oxygen/base/16x16/actions/umbrello_diagram_state.png
 share/icons/oxygen/base/16x16/actions/umbrello_diagram_usecase.png
 share/icons/oxygen/base/16x16/actions/unlock.png
 share/icons/oxygen/base/16x16/actions/upcomingevents-amarok.png
+share/icons/oxygen/base/16x16/actions/upindicator.png
 share/icons/oxygen/base/16x16/actions/usecase.png
 share/icons/oxygen/base/16x16/actions/user-group-delete.png
 share/icons/oxygen/base/16x16/actions/user-group-new.png
