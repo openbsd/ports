@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.7 2020/09/09 20:32:22 fcambus Exp $
+$OpenBSD: patch-Makefile,v 1.8 2021/01/23 20:35:02 fcambus Exp $
 
 GCC 4.2.1 doesn't recognize the "-Wtype-limits" option.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -8,7 +8,7 @@ KORE=kore
- KODEV=kodev/kodev
+@@ -9,7 +9,7 @@ KODEV=kodev/kodev
+ KOREPATH?=$(shell pwd)
  KORE_CRYPTO?=crypto
  INSTALL_DIR=$(PREFIX)/bin
 -MAN_DIR?=$(PREFIX)/share/man
@@ -14,7 +14,7 @@ Index: Makefile
  SHARE_DIR=$(PREFIX)/share/kore
  INCLUDE_DIR=$(PREFIX)/include/kore
  
-@@ -28,7 +28,6 @@ FEATURES_INC=
+@@ -31,7 +31,6 @@ FEATURES_INC=
  CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes
  CFLAGS+=-Wmissing-declarations -Wshadow -Wpointer-arith -Wcast-qual
  CFLAGS+=-Wsign-compare -Iinclude/kore -I$(OBJDIR) -std=c99 -pedantic
@@ -22,7 +22,7 @@ Index: Makefile
  CFLAGS+=-DPREFIX='"$(PREFIX)"' -fstack-protector-all
  
  ifneq ("$(OPENSSL_PATH)", "")
-@@ -50,8 +49,6 @@ endif
+@@ -53,8 +52,6 @@ endif
  
  ifneq ("$(NOOPT)", "")
  	CFLAGS+=-O0
