@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.48 2020/10/18 08:16:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.49 2021/01/23 09:50:10 ajacoutot Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -135,6 +135,7 @@ lib/vlc/plugins/access/
 @so lib/vlc/plugins/access/libimem_plugin.so
 @so lib/vlc/plugins/access/liblibbluray_plugin.so
 @so lib/vlc/plugins/access/libnfs_plugin.so
+@so lib/vlc/plugins/access/librist_plugin.so
 @so lib/vlc/plugins/access/librtp_plugin.so
 @so lib/vlc/plugins/access/libsatip_plugin.so
 @so lib/vlc/plugins/access/libsdp_plugin.so
@@ -152,6 +153,7 @@ lib/vlc/plugins/access_output/
 @so lib/vlc/plugins/access_output/libaccess_output_file_plugin.so
 @so lib/vlc/plugins/access_output/libaccess_output_http_plugin.so
 @so lib/vlc/plugins/access_output/libaccess_output_livehttp_plugin.so
+@so lib/vlc/plugins/access_output/libaccess_output_rist_plugin.so
 @so lib/vlc/plugins/access_output/libaccess_output_udp_plugin.so
 lib/vlc/plugins/audio_filter/
 @so lib/vlc/plugins/audio_filter/libaudio_format_plugin.so
