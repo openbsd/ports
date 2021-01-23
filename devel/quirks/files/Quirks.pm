@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1146 2021/01/22 22:34:32 bluhm Exp $
+# $OpenBSD: Quirks.pm,v 1.1147 2021/01/23 12:48:37 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2048,6 +2048,7 @@ my $obsolete_reason = {
 	'evas' => 3,
 	'qtstyleplugins' => 3,
 	'p5-Regexp-Copy' => 0,
+	'mcollective-puppet-agent' => 28,
 };
 
 # reasons for obsolete packages
@@ -2080,6 +2081,7 @@ my @msg = (
 	"no longer maintained upstream, suggest qmapshack", #25
 	"outdated Qt4 application, suggest keepassxc", #26
 	"requires GUdev or GUsb", #27
+	"consider migrating MCollective agents and filters using tools like Bolt and PuppetDB's Puppet Query Language", #28
 );
 
 # ->is_base_system($handle, $state):

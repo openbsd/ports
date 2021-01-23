@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/24 17:09:39 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/23 12:48:37 kn Exp $
 
 SUBDIR =
 SUBDIR += filemgr-agent
 SUBDIR += nrpe-agent
 SUBDIR += package-agent
-SUBDIR += puppet-agent
 SUBDIR += service-agent
 SUBDIR += sysctl-data
 
