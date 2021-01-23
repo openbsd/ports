@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.543 2021/01/20 07:28:06 robert Exp $
+# $OpenBSD: Makefile,v 1.544 2021/01/23 15:15:58 sthen Exp $
+
+# /usr/local/bin/chrome[60]: /usr/local/chrome/chrome: Cannot allocate memory
+BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
 
 .include <bsd.port.arch.mk>
 
