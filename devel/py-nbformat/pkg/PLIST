@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/03/31 19:19:23 bket Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/23 07:25:06 bket Exp $
 @conflict py-nbformat-*
 @pkgpath devel/py-nbformat
 lib/python${MODPY_VERSION}/site-packages/nbformat/
@@ -30,6 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/tests/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/${MODPY_PYCACHE}test_convert.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbformat/tests/${MODPY_PYCACHE}test_nbformat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/${MODPY_PYCACHE}test_reader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/${MODPY_PYCACHE}test_sign.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/${MODPY_PYCACHE}test_validator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -45,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test4jupyter_metadata_ti
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test4plus.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test_api.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test_convert.py
+lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test_nbformat.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test_reader.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test_sign.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/tests/test_validator.py
