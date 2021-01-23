@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/06/25 11:54:19 bket Exp $
+# $OpenBSD: Makefile,v 1.36 2021/01/23 18:34:17 bket Exp $
 
 COMMENT=		small tiling window manager
 
@@ -7,6 +7,8 @@ GH_ACCOUNT=		conformal
 GH_PROJECT=		spectrwm
 GH_TAGNAME=		SPECTRWM_${V:S/./_/g}
 DISTNAME=		${GH_PROJECT}-${V}
+
+REVISION=		0
 
 SHARED_LIBS=		swmhack 1.0
 
