@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_conf_c,v 1.7 2014/09/04 12:33:27 dcoppa Exp $
---- src/conf.c.orig	Thu Sep  4 11:23:40 2014
-+++ src/conf.c	Thu Sep  4 11:24:42 2014
-@@ -89,23 +89,23 @@ const char *getStrConf(param_t param)
+$OpenBSD: patch-src_conf_c,v 1.8 2021/01/23 09:22:47 kn Exp $
+Index: src/conf.c
+--- src/conf.c.orig
++++ src/conf.c
+@@ -90,23 +90,23 @@ const char *getStrConf(param_t param)
  		case CERTIFICATE:
  			setting = config_lookup(&configuration, "certificate");
  			if (!setting)

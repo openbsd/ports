@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_client_c,v 1.8 2019/07/24 12:47:13 feinerer Exp $
+$OpenBSD: patch-src_client_c,v 1.9 2021/01/23 09:22:47 kn Exp $
 Index: src/client.c
 --- src/client.c.orig
 +++ src/client.c
@@ -11,7 +11,7 @@ Index: src/client.c
  	int users = 0, opus = 0;
  	message_t *sendmsg;
  	struct dlist codec_list, *itr, *save;
-@@ -676,7 +676,7 @@ void Client_textmessage(client_t *client, char *text)
+@@ -679,7 +679,7 @@ void Client_textmessage(client_t *client, char *text)
  	sendmsg->payload.textMessage->message = message;
  	sendmsg->payload.textMessage->n_tree_id = 1;
  	sendmsg->payload.textMessage->tree_id = tree_id;

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/12 09:50:43 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/23 09:22:47 kn Exp $
 @newgroup _umurmur:671
 @newuser _umurmur:671:_umurmur:daemon:uMurmur Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/umurmurd
 @man man/man5/umurmur.conf.5
 @man man/man8/umurmurd.8
 @bin sbin/umurmurd
@@ -12,7 +13,3 @@ share/examples/umurmur/umurmur.conf
 @sample ${SYSCONFDIR}/umurmur/
 @mode 660
 @sample ${SYSCONFDIR}/umurmur/umurmur.conf
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/umurmurd

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/26 05:49:39 feinerer Exp $
+# $OpenBSD: Makefile,v 1.28 2021/01/23 09:22:47 kn Exp $
 
 COMMENT =		minimalistic Mumble server
 
 GH_ACCOUNT =		umurmur
 GH_PROJECT =		umurmur
-GH_TAGNAME =		0.2.17
-REVISION =		0
+GH_TAGNAME =		0.2.18
 CATEGORIES =		audio
 
 HOMEPAGE =		https://umurmur.net/

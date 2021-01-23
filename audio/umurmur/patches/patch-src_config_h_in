@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_config_h_in,v 1.3 2019/07/24 12:47:13 feinerer Exp $
+$OpenBSD: patch-src_config_h_in,v 1.4 2021/01/23 09:22:47 kn Exp $
 Index: src/config.h.in
 --- src/config.h.in.orig
 +++ src/config.h.in
-@@ -11,6 +11,6 @@
+@@ -8,6 +8,6 @@
  
  #cmakedefine USE_SHAREDMEMORY_API
  
--#define DEFAULT_CONFIG "${CMAKE_INSTALL_PREFIX}/etc/umurmur.conf"
+-#define DEFAULT_CONFIG "${CMAKE_INSTALL_SYSCONFDIR}/etc/umurmur.conf"
 +#define DEFAULT_CONFIG "${SYSCONFDIR}/umurmur/umurmur.conf"
  
  #endif // CONFIG_H
