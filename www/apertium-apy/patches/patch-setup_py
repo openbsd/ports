@@ -1,0 +1,18 @@
+$OpenBSD: patch-setup_py,v 1.1 2021/01/23 08:08:55 daniel Exp $
+
+fix the build with tornado6
+
+backport of commit 15cfa135 from upstream
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -52,7 +52,7 @@ setup(
+         'Programming Language :: Python :: 3 :: Only',
+     ],
+     python_requires='>=3.5',
+-    install_requires=['tornado>=4.2,<6'],
++    install_requires=['tornado>=4.2,<7'],
+     extras_require={
+         'spelling': ['apertium-streamparser'],
+         'suggestions': ['requests'],
