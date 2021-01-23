@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/10/28 15:04:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/01/23 18:10:39 rsadowski Exp $
 @bin bin/kdwsdl2cpp
 include/KDSoapClient/
 include/KDSoapClient/KDDateTime
@@ -63,10 +63,22 @@ lib/cmake/KDSoap/KDSoapTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KDSoap/KDSoapTargets.cmake
 @lib lib/libkdsoap-server.so.${LIBkdsoap-server_VERSION}
 @lib lib/libkdsoap.so.${LIBkdsoap_VERSION}
+mkspecs/
+mkspecs/modules/
+mkspecs/modules/qt_KDSoapClient.pri
+mkspecs/modules/qt_KDSoapServer.pri
 share/doc/KDSoap/
-share/doc/KDSoap/LICENSE.GPL.txt
-share/doc/KDSoap/LICENSE.US.txt
-share/doc/KDSoap/LICENSE.txt
+share/doc/KDSoap/LICENSES/
+share/doc/KDSoap/LICENSES/BSD-3-Clause.txt
+share/doc/KDSoap/LICENSES/GPL-2.0-only.txt
+share/doc/KDSoap/LICENSES/GPL-3.0-only.txt
+share/doc/KDSoap/LICENSES/LGPL-2.0-or-later.txt
+share/doc/KDSoap/LICENSES/LGPL-2.1-only.txt
+share/doc/KDSoap/LICENSES/LGPL-3.0-only.txt
+share/doc/KDSoap/LICENSES/LicenseRef-KDAB-KDSoap-AGPL3-Modified.txt
+share/doc/KDSoap/LICENSES/LicenseRef-KDAB-KDSoap-US.txt
+share/doc/KDSoap/LICENSES/LicenseRef-KDAB-KDSoap.txt
+share/doc/KDSoap/README-commercial.txt
 share/doc/KDSoap/README.txt
 share/doc/KDSoap/kdsoap.pri
 share/doc/KDSoap/kdwsdl2cpp.pri
