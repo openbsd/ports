@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/08 20:12:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:19 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
@@ -16,16 +16,17 @@ WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
 WANTLIB += KF5AkonadiWidgets KF5AlarmCalendar KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5CalendarCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5DAV KF5Holidays KF5I18n KF5IMAP KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIONTLM KF5KIOWidgets
-WANTLIB += KF5Ldap KF5Libkdepim KF5MailTransport KF5MailTransportAkonadi
-WANTLIB += KF5Mbox KF5Mime KF5Notifications KF5NotifyConfig KF5PimCommon
-WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += KPimGAPICalendar KPimGAPIContacts KPimGAPICore KPimGAPITasks
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5NetworkAuth
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5TextToSpeech
+WANTLIB += KF5CoreAddons KF5DAV KF5GrantleeTheme KF5Holidays KF5I18n
+WANTLIB += KF5IMAP KF5IdentityManagement KF5ItemModels KF5ItemViews
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOGui KF5KIONTLM KF5KIOWidgets KF5Ldap KF5Libkdepim
+WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5Mbox KF5Mime
+WANTLIB += KF5Notifications KF5NotifyConfig KF5PimCommon KF5PimTextEdit
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPimGAPICalendar
+WANTLIB += KPimGAPIContacts KPimGAPICore KPimGAPITasks Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5NetworkAuth Qt5Positioning
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5TextToSpeech
 WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5Xml c m qca-qt5 sasl2
 

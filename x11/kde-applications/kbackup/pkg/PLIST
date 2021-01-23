@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/11/08 20:12:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/23 18:10:17 rsadowski Exp $
 @bin bin/kbackup
+@man man/man1/kbackup.1
 share/applications/org.kde.kbackup.desktop
 share/doc/HTML/ca/kbackup/
 share/doc/HTML/ca/kbackup/index.cache.bz2

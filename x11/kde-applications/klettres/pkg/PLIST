@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:22 rsadowski Exp $
 @pkgpath x11/kde4/klettres
 @bin bin/klettres
 share/applications/org.kde.klettres.desktop
@@ -7,6 +7,13 @@ share/config.kcfg/klettres.kcfg
 share/doc/HTML/ca/klettres/
 share/doc/HTML/ca/klettres/index.cache.bz2
 share/doc/HTML/ca/klettres/index.docbook
+share/doc/HTML/ca/klettres/klettres-newstuff.png
+share/doc/HTML/ca/klettres/klettres-newstuff2.png
+share/doc/HTML/ca/klettres/klettres1.png
+share/doc/HTML/ca/klettres/klettres2.png
+share/doc/HTML/ca/klettres/klettres3.png
+share/doc/HTML/ca/klettres/klettres4.png
+share/doc/HTML/ca/klettres/klettres5.png
 share/doc/HTML/de/klettres/
 share/doc/HTML/de/klettres/index.cache.bz2
 share/doc/HTML/de/klettres/index.docbook
@@ -86,10 +93,6 @@ share/doc/HTML/uk/klettres/klettres3.png
 share/doc/HTML/uk/klettres/klettres4.png
 share/doc/HTML/uk/klettres/klettres5.png
 share/doc/HTML/uk/klettres/klettres6.png
-share/examples/klettres/
-share/examples/klettres/xdg/
-share/examples/klettres/xdg/klettres.knsrc
-@sample ${SYSCONFDIR}/xdg/klettres.knsrc
 share/icons/hicolor/128x128/apps/klettres.png
 share/icons/hicolor/16x16/apps/klettres.png
 share/icons/hicolor/22x22/apps/klettres.png
@@ -2130,6 +2133,8 @@ share/klettres/uk/syllab/zhy.ogg
 share/klettres/uk/syllab/zhyt.ogg
 share/klettres/uk/syllab/zmi.ogg
 share/klettres/uk/syllab/zyk.ogg
+share/knsrcfiles/
+share/knsrcfiles/klettres.knsrc
 share/kxmlgui5/
 share/kxmlgui5/klettres/
 share/kxmlgui5/klettres/klettresui.rc

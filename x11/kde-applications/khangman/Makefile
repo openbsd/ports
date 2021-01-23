@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:20 rsadowski Exp $
 
 COMMENT =	KDE hangman game
 DISTNAME =	khangman-${VERSION}
@@ -6,10 +6,10 @@ CATEGORIES =	games education
 
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5Declarative KF5I18n KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5Package KF5Service KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
+WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -28,10 +28,8 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
-		devel/kf5/kdeclarative \
 		devel/kf5/ki18n \
 		devel/kf5/knewstuff \
-		devel/kf5/kpackage \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \

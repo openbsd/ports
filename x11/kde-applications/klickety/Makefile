@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:22 rsadowski Exp $
 
 COMMENT =	adaptation of clickomania game
 DISTNAME =	klickety-${VERSION}
@@ -13,8 +13,8 @@ WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KDEGames KF5KIOCore
 WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIONTLM KF5KIOWidgets
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c
-WANTLIB += m
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Widgets
+WANTLIB += Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

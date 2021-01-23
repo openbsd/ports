@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/08 20:12:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/23 18:10:13 rsadowski Exp $
 
 COMMENT =	PIM Akonadi contacts support library
 DISTNAME =	akonadi-contacts-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5AkonadiContact         0.0 # 5.13.2
-SHARED_LIBS +=  KF5ContactEditor          0.0 # 5.13.2
+SHARED_LIBS +=  KF5AkonadiContact         0.1 # 5.13.2
+SHARED_LIBS +=  KF5ContactEditor          0.1 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiWidgets
-WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Mime KF5Prison KF5Service
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCore
+WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
+WANTLIB += KF5CoreAddons KF5GrantleeTheme KF5I18n KF5IconThemes
+WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Libkleo KF5Mime KF5Prison KF5Service KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -35,8 +36,11 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/prison \
 		devel/kf5/sonnet \
+		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \
-		x11/kde-applications/kmime
+		x11/kde-applications/kmime \
+		x11/kde-applications/libkleo \
+		x11/kde-applications/grantleetheme
 
 TEST_IS_INTERACTIVE =	X11
 

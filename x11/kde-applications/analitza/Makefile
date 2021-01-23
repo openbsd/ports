@@ -10,7 +10,8 @@ SHARED_LIBS +=  AnalitzaPlot              2.0 # 8.0
 SHARED_LIBS +=  AnalitzaWidgets           2.0 # 8.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5Svg Qt5Widgets Qt5Xml m
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Svg Qt5Widgets Qt5Xml
+WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
 

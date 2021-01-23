@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:24 rsadowski Exp $
 @pkgpath x11/kde4/krfb
 @bin bin/krfb
 @lib lib/libkrfbprivate.so.${LIBkrfbprivate_VERSION}
@@ -140,3 +140,4 @@ share/locale/zh_TW/LC_MESSAGES/krfb.mo
 share/metainfo/
 share/metainfo/org.kde.krfb.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/krfb.categories

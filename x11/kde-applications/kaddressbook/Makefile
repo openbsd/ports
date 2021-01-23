@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/19 06:33:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/23 18:10:15 rsadowski Exp $
 
 COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
-SHARED_LIBS +=  kaddressbookprivate       1.0 # 5.13.2
+SHARED_LIBS +=  kaddressbookprivate         1.1 # 5.13.2
+SHARED_LIBS +=  KPimAddressbookImportExport 0.0 # 5.16.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiSearchDebug KF5AkonadiWidgets KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5GrantleeTheme KF5I18n KF5IMAP KF5ItemModels KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KaddressbookGrantlee
-WANTLIB += KF5KaddressbookImportExport KF5KontactInterface KF5Libkdepim
-WANTLIB += KF5Mime KF5Parts KF5PimCommon KF5PimCommonAkonadi KF5Prison
-WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KontactInterface
+WANTLIB += KF5Libkdepim KF5Mime KF5Parts KF5PimCommon KF5PimCommonAkonadi
+WANTLIB += KF5Prison KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
 WANTLIB += c m
@@ -54,7 +53,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/sonnet \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kdepim-apps-libs \
 		x11/kde-applications/kimap \
 		x11/kde-applications/kmime \
 		x11/kde-applications/kontactinterface \

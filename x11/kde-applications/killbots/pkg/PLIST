@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/23 18:10:21 rsadowski Exp $
 @pkgpath x11/kde4/killbots
 @bin bin/killbots
 share/applications/org.kde.killbots.desktop
@@ -87,6 +87,7 @@ share/locale/en_GB/LC_MESSAGES/killbots.mo
 share/locale/eo/LC_MESSAGES/killbots.mo
 share/locale/es/LC_MESSAGES/killbots.mo
 share/locale/et/LC_MESSAGES/killbots.mo
+share/locale/eu/LC_MESSAGES/killbots.mo
 share/locale/fi/LC_MESSAGES/killbots.mo
 share/locale/fr/LC_MESSAGES/killbots.mo
 share/locale/ga/LC_MESSAGES/killbots.mo

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/23 18:10:27 rsadowski Exp $
 
 COMMENT =	library for common kdepim apps
 DISTNAME =	libkdepim-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5Libkdepim               2.0 # 5.6
+SHARED_LIBS +=  KF5Libkdepim               3.0 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

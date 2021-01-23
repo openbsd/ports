@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/09/11 11:23:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/01/23 18:10:15 rsadowski Exp $
 @conflict dolphin-plugins-<=4.14.3
 @bin bin/dolphin
 @bin bin/servicemenuinstaller
@@ -237,6 +237,7 @@ share/locale/he/LC_MESSAGES/dolphin.mo
 share/locale/hi/LC_MESSAGES/dolphin.mo
 share/locale/hr/LC_MESSAGES/dolphin.mo
 share/locale/hu/LC_MESSAGES/dolphin.mo
+share/locale/hu/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ia/LC_MESSAGES/dolphin.mo
 share/locale/ia/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/id/LC_MESSAGES/dolphin.mo
@@ -264,6 +265,7 @@ share/locale/nl/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/nn/LC_MESSAGES/dolphin.mo
 share/locale/nn/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/pa/LC_MESSAGES/dolphin.mo
+share/locale/pa/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/pl/LC_MESSAGES/dolphin.mo
 share/locale/pl/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/pt/LC_MESSAGES/dolphin.mo

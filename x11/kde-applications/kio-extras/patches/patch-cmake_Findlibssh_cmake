@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmake_Findlibssh_cmake,v 1.2 2020/03/23 18:01:21 rsadowski Exp $
+$OpenBSD: patch-cmake_Findlibssh_cmake,v 1.3 2021/01/23 18:10:21 rsadowski Exp $
 
 Index: cmake/Findlibssh.cmake
 --- cmake/Findlibssh.cmake.orig
 +++ cmake/Findlibssh.cmake
-@@ -50,13 +50,6 @@ endmacro()
+@@ -28,13 +28,6 @@ endmacro()
  # config by default and fall back to manual lookup iff the config was not found.
  # https://bugs.kde.org/show_bug.cgi?id=400291
  # https://bugs.launchpad.net/ubuntu/+source/libssh/+bug/1800135

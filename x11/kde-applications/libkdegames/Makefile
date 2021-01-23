@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/08 20:12:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/23 18:10:27 rsadowski Exp $
 
 COMMENT =	common code and data for many KDE games
 DISTNAME =	libkdegames-${VERSION}
@@ -13,8 +13,8 @@ WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DNSSD KF5Declarative
 WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Package KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml m openal sndfile
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
+WANTLIB += Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5Xml m openal sndfile
 
 MODKDE5_TRANSLATIONS = yes
 

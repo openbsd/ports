@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:20 rsadowski Exp $
 @pkgpath x11/kde4/kgoldrunner
 @bin bin/kgoldrunner
 share/applications/org.kde.kgoldrunner.desktop
@@ -52,10 +52,6 @@ share/doc/HTML/uk/kgoldrunner/index.cache.bz2
 share/doc/HTML/uk/kgoldrunner/index.docbook
 share/doc/HTML/uk/kgoldrunner/select.png
 share/doc/HTML/uk/kgoldrunner/tute008.png
-share/examples/kgoldrunner/
-share/examples/kgoldrunner/xdg/
-share/examples/kgoldrunner/xdg/kgoldrunner.knsrc
-@sample ${SYSCONFDIR}/xdg/kgoldrunner.knsrc
 share/icons/hicolor/128x128/apps/kgoldrunner.png
 share/icons/hicolor/16x16/apps/kgoldrunner.png
 share/icons/hicolor/22x22/apps/kgoldrunner.png
@@ -135,6 +131,8 @@ share/kgoldrunner/themes/nostalgia/blue-set.svg
 share/kgoldrunner/themes/nostalgia/nostalgia-blues.png
 share/kgoldrunner/themes/nostalgia/nostalgia.png
 share/kgoldrunner/themes/nostalgia/set.svg
+share/knsrcfiles/
+share/knsrcfiles/kgoldrunner.knsrc
 share/kxmlgui5/
 share/kxmlgui5/kgoldrunner/
 share/kxmlgui5/kgoldrunner/kgoldrunnerui.rc

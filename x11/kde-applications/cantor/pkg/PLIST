@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/09/11 11:23:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/01/23 18:10:14 rsadowski Exp $
 @pkgpath x11/kde4/cantor
 @bin bin/cantor
 @bin bin/cantor_pythonserver
@@ -23,6 +23,8 @@ include/cantor/imageresult.h
 include/cantor/jupyterutils.h
 include/cantor/latexresult.h
 include/cantor/mimeresult.h
+include/cantor/panelplugin.h
+include/cantor/panelpluginhandler.h
 include/cantor/renderer.h
 include/cantor/result.h
 include/cantor/session.h
@@ -65,6 +67,7 @@ lib/qt5/plugins/cantor/backends/
 lib/qt5/plugins/cantor/panels/
 @so lib/qt5/plugins/cantor/panels/cantor_filebrowserpanelplugin.so
 @so lib/qt5/plugins/cantor/panels/cantor_helppanelplugin.so
+@so lib/qt5/plugins/cantor/panels/cantor_tocpanelplugin.so
 @so lib/qt5/plugins/cantor/panels/cantor_variablemanagerplugin.so
 @so lib/qt5/plugins/libcantorpart.so
 share/applications/org.kde.cantor.desktop
@@ -177,27 +180,6 @@ share/doc/HTML/uk/cantor/plot2d-dlg.png
 share/doc/HTML/uk/cantor/plot3d-dlg.png
 share/doc/HTML/uk/cantor/screenshot.png
 share/doc/HTML/uk/cantor/solve-equations-dlg.png
-share/examples/cantor/
-share/examples/cantor/xdg/
-share/examples/cantor/xdg/cantor.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor.knsrc
-share/examples/cantor/xdg/cantor_kalgebra.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_kalgebra.knsrc
-share/examples/cantor/xdg/cantor_lua.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_lua.knsrc
-share/examples/cantor/xdg/cantor_maxima.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_maxima.knsrc
-share/examples/cantor/xdg/cantor_octave.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_octave.knsrc
-share/examples/cantor/xdg/cantor_python.knsrc
-share/examples/cantor/xdg/cantor_qalculate.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_qalculate.knsrc
-share/examples/cantor/xdg/cantor_r.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_r.knsrc
-share/examples/cantor/xdg/cantor_sage.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_sage.knsrc
-share/examples/cantor/xdg/cantor_scilab.knsrc
-@sample ${SYSCONFDIR}/xdg/cantor_scilab.knsrc
 share/icons/hicolor/128x128/apps/cantor.png
 share/icons/hicolor/16x16/apps/cantor.png
 share/icons/hicolor/22x22/apps/cantor.png
@@ -214,6 +196,17 @@ share/icons/hicolor/48x48/apps/rbackend.png
 share/icons/hicolor/48x48/apps/sagebackend.png
 share/icons/hicolor/48x48/apps/scilabbackend.png
 share/icons/hicolor/64x64/apps/cantor.png
+share/knsrcfiles/
+share/knsrcfiles/cantor.knsrc
+share/knsrcfiles/cantor_kalgebra.knsrc
+share/knsrcfiles/cantor_lua.knsrc
+share/knsrcfiles/cantor_maxima.knsrc
+share/knsrcfiles/cantor_octave.knsrc
+share/knsrcfiles/cantor_python.knsrc
+share/knsrcfiles/cantor_qalculate.knsrc
+share/knsrcfiles/cantor_r.knsrc
+share/knsrcfiles/cantor_sage.knsrc
+share/knsrcfiles/cantor_scilab.knsrc
 share/kxmlgui5/
 share/kxmlgui5/cantor/
 share/kxmlgui5/cantor/cantor_advancedplot_assistant.rc
@@ -250,6 +243,7 @@ share/locale/ga/LC_MESSAGES/cantor.mo
 share/locale/gl/LC_MESSAGES/cantor.mo
 share/locale/hr/LC_MESSAGES/cantor.mo
 share/locale/hu/LC_MESSAGES/cantor.mo
+share/locale/ia/LC_MESSAGES/cantor.mo
 share/locale/it/LC_MESSAGES/cantor.mo
 share/locale/ja/LC_MESSAGES/cantor.mo
 share/locale/kk/LC_MESSAGES/cantor.mo

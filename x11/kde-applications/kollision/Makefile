@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/23 18:10:23 rsadowski Exp $
 
 COMMENT =	simple ball dodging game
 DISTNAME =	kollision-${VERSION}
@@ -10,7 +10,8 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n KF5KDEGames KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml
+WANTLIB += c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

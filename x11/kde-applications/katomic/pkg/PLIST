@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:02 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:17 rsadowski Exp $
 @pkgpath x11/kde4/katomic
 @bin bin/katomic
 share/applications/org.kde.katomic.desktop
@@ -43,10 +43,6 @@ share/doc/HTML/uk/katomic/
 share/doc/HTML/uk/katomic/index.cache.bz2
 share/doc/HTML/uk/katomic/index.docbook
 share/doc/HTML/uk/katomic/mainscreen.png
-share/examples/katomic/
-share/examples/katomic/xdg/
-share/examples/katomic/xdg/katomic.knsrc
-@sample ${SYSCONFDIR}/xdg/katomic.knsrc
 share/icons/hicolor/128x128/apps/katomic.png
 share/icons/hicolor/16x16/apps/katomic.png
 share/icons/hicolor/22x22/apps/katomic.png
@@ -60,6 +56,8 @@ share/katomic/pics/
 share/katomic/pics/default_theme.svgz
 share/kconf_update/katomic-levelset-upd.pl
 share/kconf_update/katomic-levelset.upd
+share/knsrcfiles/
+share/knsrcfiles/katomic.knsrc
 share/kxmlgui5/
 share/kxmlgui5/katomic/
 share/kxmlgui5/katomic/katomicui.rc

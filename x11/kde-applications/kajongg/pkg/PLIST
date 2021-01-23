@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/09/07 14:49:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/23 18:10:16 rsadowski Exp $
 bin/kajongg
 bin/kajonggserver
 share/applications/org.kde.kajongg.desktop
@@ -68,6 +68,7 @@ ${MODPY_COMMENT}share/kajongg/${MODPY_PYCACHE}/
 share/kajongg/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}altint.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}pyc
+share/kajongg/${MODPY_PYCACHE}appversion.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}background.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}backgroundselector.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}board.${MODPY_PYC_MAGIC_TAG}pyc
@@ -136,6 +137,7 @@ share/kajongg/${MODPY_PYCACHE}wind.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/about.py
 share/kajongg/altint.py
 share/kajongg/animation.py
+share/kajongg/appversion.py
 share/kajongg/background.py
 share/kajongg/backgroundselector.py
 share/kajongg/backgroundselector.ui

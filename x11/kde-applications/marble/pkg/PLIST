@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/09/11 11:23:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/01/23 18:10:28 rsadowski Exp $
 @conflict marble-<=4.14.3
 @bin bin/marble
 @bin bin/marble-qt
@@ -31,6 +31,7 @@ include/marble/DownloadRegion.h
 include/marble/DownloadRegionDialog.h
 include/marble/EditPlacemarkDialog.h
 include/marble/ElevationModel.h
+include/marble/FileManager.h
 include/marble/FileViewWidget.h
 include/marble/FlyToEditWidget.h
 include/marble/FormattedTextWidget.h
@@ -183,73 +184,73 @@ lib/cmake/Marble/MarbleTargets.cmake
 @lib lib/libmarblewidget-qt5.so.${LIBmarblewidget-qt5_VERSION}
 lib/marble/
 lib/marble/plugins/
-@so lib/marble/plugins/libAnnotatePlugin.so
-@so lib/marble/plugins/libAprsPlugin.so
-@so lib/marble/plugins/libAtmospherePlugin.so
-@so lib/marble/plugins/libCachePlugin.so
-@so lib/marble/plugins/libCompassFloatItem.so
-@so lib/marble/plugins/libCrosshairsPlugin.so
-@so lib/marble/plugins/libCycleStreetsPlugin.so
-@so lib/marble/plugins/libEarthquakePlugin.so
-@so lib/marble/plugins/libEclipsesPlugin.so
-@so lib/marble/plugins/libElevationProfileFloatItem.so
-@so lib/marble/plugins/libElevationProfileMarker.so
-@so lib/marble/plugins/libFlightGearPositionProviderPlugin.so
-@so lib/marble/plugins/libFoursquarePlugin.so
-@so lib/marble/plugins/libGeoUriPlugin.so
-@so lib/marble/plugins/libGosmoreReverseGeocodingPlugin.so
-@so lib/marble/plugins/libGosmoreRoutingPlugin.so
-@so lib/marble/plugins/libGpsInfo.so
-@so lib/marble/plugins/libGpsbabelPlugin.so
-@so lib/marble/plugins/libGpsdPositionProviderPlugin.so
-@so lib/marble/plugins/libGpxPlugin.so
-@so lib/marble/plugins/libGraticulePlugin.so
-@so lib/marble/plugins/libHostipPlugin.so
-@so lib/marble/plugins/libJsonPlugin.so
-@so lib/marble/plugins/libKmlPlugin.so
-@so lib/marble/plugins/libLatLonPlugin.so
-@so lib/marble/plugins/libLicense.so
-@so lib/marble/plugins/libLocalDatabasePlugin.so
-@so lib/marble/plugins/libLocalOsmSearchPlugin.so
-@so lib/marble/plugins/libLogPlugin.so
-@so lib/marble/plugins/libMapQuestPlugin.so
-@so lib/marble/plugins/libMapScaleFloatItem.so
-@so lib/marble/plugins/libMeasureTool.so
-@so lib/marble/plugins/libMonavPlugin.so
-@so lib/marble/plugins/libNavigationFloatItem.so
-@so lib/marble/plugins/libNominatimReverseGeocodingPlugin.so
-@so lib/marble/plugins/libNominatimSearchPlugin.so
-@so lib/marble/plugins/libNotesPlugin.so
-@so lib/marble/plugins/libOSRMPlugin.so
-@so lib/marble/plugins/libOpenDesktopPlugin.so
-@so lib/marble/plugins/libOpenLocationCodeSearchPlugin.so
-@so lib/marble/plugins/libOpenRouteServicePlugin.so
-@so lib/marble/plugins/libOsmPlugin.so
-@so lib/marble/plugins/libOverviewMap.so
-@so lib/marble/plugins/libPhoto.so
-@so lib/marble/plugins/libPn2Plugin.so
-@so lib/marble/plugins/libPntPlugin.so
-@so lib/marble/plugins/libPositionMarker.so
-@so lib/marble/plugins/libPostalCode.so
-@so lib/marble/plugins/libProgressFloatItem.so
-@so lib/marble/plugins/libQtPositioningPositionProviderPlugin.so
-@so lib/marble/plugins/libRoutingPlugin.so
-@so lib/marble/plugins/libRoutinoPlugin.so
-@so lib/marble/plugins/libSatellitesPlugin.so
-@so lib/marble/plugins/libShpPlugin.so
-@so lib/marble/plugins/libSpeedometer.so
-@so lib/marble/plugins/libStarsPlugin.so
-@so lib/marble/plugins/libSunPlugin.so
-@so lib/marble/plugins/libWeather.so
-@so lib/marble/plugins/libWikipedia.so
-@so lib/marble/plugins/libYoursPlugin.so
+@so lib/marble/plugins/AnnotatePlugin.so
+@so lib/marble/plugins/AprsPlugin.so
+@so lib/marble/plugins/AtmospherePlugin.so
+@so lib/marble/plugins/CachePlugin.so
+@so lib/marble/plugins/CompassFloatItem.so
+@so lib/marble/plugins/CrosshairsPlugin.so
+@so lib/marble/plugins/CycleStreetsPlugin.so
+@so lib/marble/plugins/EarthquakePlugin.so
+@so lib/marble/plugins/EclipsesPlugin.so
+@so lib/marble/plugins/ElevationProfileFloatItem.so
+@so lib/marble/plugins/ElevationProfileMarker.so
+@so lib/marble/plugins/FlightGearPositionProviderPlugin.so
+@so lib/marble/plugins/FoursquarePlugin.so
+@so lib/marble/plugins/GeoUriPlugin.so
+@so lib/marble/plugins/GosmoreReverseGeocodingPlugin.so
+@so lib/marble/plugins/GosmoreRoutingPlugin.so
+@so lib/marble/plugins/GpsInfo.so
+@so lib/marble/plugins/GpsbabelPlugin.so
+@so lib/marble/plugins/GpsdPositionProviderPlugin.so
+@so lib/marble/plugins/GpxPlugin.so
+@so lib/marble/plugins/GraticulePlugin.so
+@so lib/marble/plugins/HostipPlugin.so
+@so lib/marble/plugins/JsonPlugin.so
+@so lib/marble/plugins/KmlPlugin.so
+@so lib/marble/plugins/LatLonPlugin.so
+@so lib/marble/plugins/License.so
+@so lib/marble/plugins/LocalDatabasePlugin.so
+@so lib/marble/plugins/LocalOsmSearchPlugin.so
+@so lib/marble/plugins/LogPlugin.so
+@so lib/marble/plugins/MapQuestPlugin.so
+@so lib/marble/plugins/MapScaleFloatItem.so
+@so lib/marble/plugins/MeasureTool.so
+@so lib/marble/plugins/MonavPlugin.so
+@so lib/marble/plugins/NavigationFloatItem.so
+@so lib/marble/plugins/NominatimReverseGeocodingPlugin.so
+@so lib/marble/plugins/NominatimSearchPlugin.so
+@so lib/marble/plugins/NotesPlugin.so
+@so lib/marble/plugins/OSRMPlugin.so
+@so lib/marble/plugins/OpenDesktopPlugin.so
+@so lib/marble/plugins/OpenLocationCodeSearchPlugin.so
+@so lib/marble/plugins/OpenRouteServicePlugin.so
+@so lib/marble/plugins/OsmPlugin.so
+@so lib/marble/plugins/OverviewMap.so
+@so lib/marble/plugins/Photo.so
+@so lib/marble/plugins/Pn2Plugin.so
+@so lib/marble/plugins/PntPlugin.so
+@so lib/marble/plugins/PositionMarker.so
+@so lib/marble/plugins/PostalCode.so
+@so lib/marble/plugins/ProgressFloatItem.so
+@so lib/marble/plugins/QtPositioningPositionProviderPlugin.so
+@so lib/marble/plugins/RoutingPlugin.so
+@so lib/marble/plugins/RoutinoPlugin.so
+@so lib/marble/plugins/SatellitesPlugin.so
+@so lib/marble/plugins/ShpPlugin.so
+@so lib/marble/plugins/Speedometer.so
+@so lib/marble/plugins/StarsPlugin.so
+@so lib/marble/plugins/SunPlugin.so
+@so lib/marble/plugins/Weather.so
+@so lib/marble/plugins/Wikipedia.so
+@so lib/marble/plugins/YoursPlugin.so
 lib/plugins/
 lib/plugins/designer/
-@so lib/plugins/designer/libLatLonEditPlugin.so
-@so lib/plugins/designer/libMarbleNavigatorPlugin.so
-@so lib/plugins/designer/libMarbleWidgetPlugin.so
+@so lib/plugins/designer/LatLonEditPlugin.so
+@so lib/plugins/designer/MarbleNavigatorPlugin.so
+@so lib/plugins/designer/MarbleWidgetPlugin.so
 @so lib/qt5/plugins/libmarble_part.so
-@so lib/qt5/plugins/libmarblethumbnail.so
+@so lib/qt5/plugins/marblethumbnail.so
 @so lib/qt5/plugins/plasma_runner_marble.so
 lib/qt5/qml/org/kde/marble/
 lib/qt5/qml/org/kde/marble/private/
@@ -447,16 +448,14 @@ share/doc/HTML/uk/marble/routing-5.png
 share/doc/HTML/uk/marble/routing-6.png
 share/doc/HTML/uk/marble/search-1.png
 share/doc/HTML/uk/marble/search-2.png
-share/examples/marble-kf5/
-share/examples/marble-kf5/xdg/
-share/examples/marble-kf5/xdg/marble.knsrc
-@sample ${SYSCONFDIR}/xdg/marble.knsrc
 share/icons/hicolor/128x128/apps/marble.png
 share/icons/hicolor/16x16/apps/marble.png
 share/icons/hicolor/22x22/apps/marble.png
 share/icons/hicolor/32x32/apps/marble.png
 share/icons/hicolor/48x48/apps/marble.png
 share/icons/hicolor/64x64/apps/marble.png
+share/knsrcfiles/
+share/knsrcfiles/marble.knsrc
 share/kservices5/marble_part.desktop
 share/kservices5/marble_thumbnail_geojson.desktop
 share/kservices5/marble_thumbnail_gpx.desktop

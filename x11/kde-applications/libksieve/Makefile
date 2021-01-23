@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/08 20:12:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/23 18:10:27 rsadowski Exp $
 
 COMMENT =	sieve script library
 DISTNAME =	libksieve-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  KF5KManageSieve   1.0 # 5.13.2
 SHARED_LIBS +=  KF5KSieve         1.0 # 5.13.2
-SHARED_LIBS +=  KF5KSieveUi       1.0 # 5.13.2
+SHARED_LIBS +=  KF5KSieveUi       1.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -17,8 +17,8 @@ WANTLIB += KF5NewStuff KF5NewStuffCore KF5PimCommon KF5PimTextEdit
 WANTLIB += KF5Service KF5SonnetUi KF5SyntaxHighlighting KF5Wallet
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml m sasl2
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml m sasl2
 
 MODKDE5_TRANSLATIONS = yes
 

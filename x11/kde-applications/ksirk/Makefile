@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/03 16:12:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/23 18:10:25 rsadowski Exp $
 
 COMMENT =	world domination strategy game
 DISTNAME =	ksirk-${VERSION}
@@ -10,10 +10,10 @@ SHARED_LIBS +=  iris_ksirk                2.0 # 2.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5IconThemes KF5KDEGames
-WANTLIB += KF5KDEGamesPrivate KF5KIOCore KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Service KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5KDEGames KF5KDEGamesPrivate
+WANTLIB += KF5KIOCore KF5NewStuff KF5NewStuffCore KF5Service KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
 WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m phonon4qt5 qca-qt5 z
 
 MODKDE5_ICON_CACHE = yes

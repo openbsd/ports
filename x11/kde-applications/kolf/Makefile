@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/03 16:12:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/23 18:10:23 rsadowski Exp $
 
 COMMENT =	miniature golf
 DISTNAME =	kolf-${VERSION}
@@ -13,8 +13,8 @@ WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KDEGames
 WANTLIB += KF5KIOCore KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c
-WANTLIB += m
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Widgets
+WANTLIB += Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

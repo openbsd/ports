@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:14 rsadowski Exp $
 
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
@@ -12,8 +12,9 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Qml Qt5Quick Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml Qt5XmlPatterns c m
+WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5Sql Qt5Widgets Qt5Xml Qt5XmlPatterns c
+WANTLIB += m
 
 MODULES +=	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/08 20:12:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:22 rsadowski Exp $
 
 COMMENT =	KMail account wizard
 DISTNAME =	kmail-account-wizard-${VERSION}
@@ -26,7 +26,8 @@ BUILD_DEPENDS =	devel/boost \
 		devel/kf5/knotifyconfig \
 		devel/kf5/ktexteditor
 
-RUN_DEPENDS =	devel/kf5/knotifyconfig
+RUN_DEPENDS =	devel/kf5/knotifyconfig \
+		misc/shared-mime-info
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \

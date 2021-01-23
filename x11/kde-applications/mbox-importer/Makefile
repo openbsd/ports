@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/08 20:12:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:28 rsadowski Exp $
 
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
@@ -8,13 +8,13 @@ WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5IMAP KF5IdentityManagement KF5ItemModels
-WANTLIB += KF5KIOCore KF5Libkdepim KF5Libkleo KF5MailCommon KF5MailImporter
-WANTLIB += KF5MailImporterAkonadi KF5MessageComposer KF5MessageCore
-WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5WidgetsAddons
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml c gpgmepp m qgpgme
+WANTLIB += KF5GrantleeTheme KF5I18n KF5IMAP KF5IdentityManagement
+WANTLIB += KF5ItemModels KF5KIOCore KF5Libkdepim KF5Libkleo KF5MailCommon
+WANTLIB += KF5MailImporter KF5MailImporterAkonadi KF5MessageComposer
+WANTLIB += KF5MessageCore KF5MessageViewer KF5Mime KF5MimeTreeParser
+WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Service
+WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml c gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

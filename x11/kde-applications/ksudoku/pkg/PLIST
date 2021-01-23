@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/11 11:23:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:25 rsadowski Exp $
 @pkgpath x11/kde4/ksudoku
 @bin bin/ksudoku
 share/applications/org.kde.ksudoku.desktop
+share/doc/HTML/ca/ksudoku/
+share/doc/HTML/ca/ksudoku/index.cache.bz2
+share/doc/HTML/ca/ksudoku/index.docbook
 share/doc/HTML/de/ksudoku/
 share/doc/HTML/de/ksudoku/index.cache.bz2
 share/doc/HTML/de/ksudoku/index.docbook

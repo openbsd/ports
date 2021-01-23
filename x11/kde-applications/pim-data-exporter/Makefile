@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/08 20:12:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:29 rsadowski Exp $
 
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
@@ -10,10 +10,10 @@ WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiNotes KF5AkonadiWidgets KF5Archive
 WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n
-WANTLIB += KF5IMAP KF5IdentityManagement KF5ItemModels KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Libkdepim KF5Libkleo KF5MailCommon
+WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DBusAddons KF5GrantleeTheme
+WANTLIB += KF5I18n KF5IMAP KF5IdentityManagement KF5ItemModels
+WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Libkdepim KF5Libkleo KF5MailCommon
 WANTLIB += KF5MailTransport KF5MessageComposer KF5MessageCore
 WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5Notifications
 WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Service

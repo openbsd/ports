@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/23 18:10:15 rsadowski Exp $
 
 COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
@@ -11,7 +11,7 @@ WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth
 WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarSupport KF5CalendarUtils
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5EventViews
-WANTLIB += KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
+WANTLIB += KF5GrantleeTheme KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
 WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Ldap KF5Libkdepim KF5MailTransport KF5MailTransportAkonadi
 WANTLIB += KF5Mime KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit

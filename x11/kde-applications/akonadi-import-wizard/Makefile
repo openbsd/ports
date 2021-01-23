@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/03 16:12:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/23 18:10:13 rsadowski Exp $
 
 COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
@@ -10,7 +10,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5I18n KF5IMAP KF5IdentityManagement
+WANTLIB += KF5DBusAddons KF5GrantleeTheme KF5I18n KF5IMAP KF5IdentityManagement
 WANTLIB += KF5ItemModels KF5KIOCore KF5Libkdepim KF5Libkleo KF5MailCommon
 WANTLIB += KF5MailImporter KF5MailImporterAkonadi KF5MailTransport
 WANTLIB += KF5MessageComposer KF5MessageCore KF5MessageViewer

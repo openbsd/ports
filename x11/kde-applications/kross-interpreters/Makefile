@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/17 03:19:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/23 18:10:25 rsadowski Exp $
 
 COMMENT =	Kross interpreter plugins for programming
 DISTNAME =	kross-interpreters-${VERSION}
 PKGNAME =	kross-interpreters-kf5-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5KrossCore Qt5Core Qt5Gui Qt5Script
 WANTLIB += Qt5Widgets Qt5Xml m ${MODPY_WANTLIB}

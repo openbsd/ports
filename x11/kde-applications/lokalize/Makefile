@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/04 12:20:16 rsadowski Exp $
-
-BROKEN =	Depends on Qt 5.14+
+# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:27 rsadowski Exp $
 
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
@@ -49,10 +47,5 @@ MODPY_ADJ_FILES =	scripts/xliffmerge.py
 post-install:
 	find ${PREFIX}/share/lokalize/scripts/odf \
 		-type f -name \*.py -exec ${MODPY_BIN_ADJ} {} +
-	2to3 -w -n ${PREFIX}/share/lokalize/scripts/odf
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/apps/lokalize/scripts/ \
-		${PREFIX}/share/lokalize/scripts/odf/ \
-		${PREFIX}/share/lokalize/scripts/
 
 .include <bsd.port.mk>

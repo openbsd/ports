@@ -1,33 +1,33 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/03 20:05:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/23 18:10:28 rsadowski Exp $
 
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5MessageComposer       1.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageComposer       3.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageCore           1.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageList           1.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageViewer         1.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageViewer         2.0 # 5.13.2
 SHARED_LIBS +=  KF5MimeTreeParser        1.0 # 5.13.2
 SHARED_LIBS +=  KF5TemplateParser        1.0 # 5.13.2
-SHARED_LIBS +=  KF5WebEngineViewer       1.0 # 5.13.2
+SHARED_LIBS +=  KF5WebEngineViewer       2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchPIM KF5AkonadiWidgets
 WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5GrantleeTheme
-WANTLIB += KF5Gravatar KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5KaddressbookGrantlee
+WANTLIB += KF5Gravatar KF5GuiAddons KF5I18n KF5IMAP KF5IconThemes
+WANTLIB += KF5IdentityManagement KF5ItemModels KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Libkdepim KF5Libkleo KF5MailTransport KF5MailTransportAkonadi
 WANTLIB += KF5Mbox KF5Mime KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
 WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += gpgmepp m qca-qt5 qgpgme
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5Xml gpgmepp m qca-qt5 qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -61,8 +61,8 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		security/qca-qt5 \
 		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \
+		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kdepim-apps-libs \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kimap \
 		x11/kde-applications/kmailtransport \

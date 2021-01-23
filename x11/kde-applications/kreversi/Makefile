@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:24 rsadowski Exp $
 
 COMMENT =	reversi board game
 DISTNAME =	kreversi-${VERSION}
@@ -13,8 +13,8 @@ WANTLIB += KF5Declarative KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KDEGames KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Package KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

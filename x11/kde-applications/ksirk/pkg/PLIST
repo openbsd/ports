@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:25 rsadowski Exp $
 @pkgpath x11/kde4/ksirk
 @bin bin/ksirk
 @bin bin/ksirkskineditor
@@ -137,10 +137,6 @@ share/doc/HTML/uk/ksirk/shownumberofarmies.png
 share/doc/HTML/uk/ksirkskineditor/
 share/doc/HTML/uk/ksirkskineditor/index.cache.bz2
 share/doc/HTML/uk/ksirkskineditor/index.docbook
-share/examples/ksirk/
-share/examples/ksirk/xdg/
-share/examples/ksirk/xdg/ksirk.knsrc
-@sample ${SYSCONFDIR}/xdg/ksirk.knsrc
 share/icons/hicolor/128x128/apps/ksirk.png
 share/icons/hicolor/16x16/apps/ksirk.png
 share/icons/hicolor/22x22/apps/ksirk.png
@@ -148,6 +144,8 @@ share/icons/hicolor/32x32/apps/ksirk.png
 share/icons/hicolor/48x48/apps/ksirk.png
 share/icons/hicolor/64x64/apps/ksirk.png
 share/icons/hicolor/scalable/apps/ksirk.svgz
+share/knsrcfiles/
+share/knsrcfiles/ksirk.knsrc
 share/ksirk/
 share/ksirk/jabber.png
 share/ksirk/skins/

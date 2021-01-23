@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/08 20:12:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/23 18:10:24 rsadowski Exp $
 
 COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
 
 SHARED_LIBS +=  KF5Konq              1.0 # 5.97.0
-SHARED_LIBS +=  konquerorprivate     1.0 # 5.97.0
-SHARED_LIBS +=  konqsidebarplugin    1.0 # 20.08.0
+SHARED_LIBS +=  konquerorprivate     1.1 # 5.97.0
+SHARED_LIBS +=  konqsidebarplugin    1.1 # 20.08.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Archive KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KCMUtils KF5KDELibs4Support KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Notifications
-WANTLIB += KF5Parts KF5Pty KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5Su KF5TextWidgets KF5UnitConversion KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5Quick Qt5Script Qt5TextToSpeech Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += SM X11 Xext c m z
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Pty
+WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5Su
+WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5Script Qt5TextToSpeech Qt5WebChannel Qt5WebEngine
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml SM X11 Xext c m z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -41,7 +41,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
-		devel/kf5/kdelibs4support \
 		devel/kf5/kdesu \
 		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
@@ -54,7 +53,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kpty \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kunitconversion \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \

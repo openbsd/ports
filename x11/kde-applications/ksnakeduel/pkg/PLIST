@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/11 11:23:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:25 rsadowski Exp $
 @bin bin/ksnakeduel
 share/applications/org.kde.ksnakeduel.desktop
 share/config.kcfg/
@@ -44,10 +44,6 @@ share/doc/HTML/uk/ksnakeduel/index.cache.bz2
 share/doc/HTML/uk/ksnakeduel/index.docbook
 share/doc/HTML/uk/ksnakeduel/settings-general.png
 share/doc/HTML/uk/ksnakeduel/settings-theme.png
-share/examples/ksnakeduel/
-share/examples/ksnakeduel/xdg/
-share/examples/ksnakeduel/xdg/ksnakeduel.knsrc
-@sample ${SYSCONFDIR}/xdg/ksnakeduel.knsrc
 share/icons/hicolor/128x128/apps/ksnakeduel.png
 share/icons/hicolor/16x16/apps/ksnakeduel.png
 share/icons/hicolor/22x22/apps/ksnakeduel.png
@@ -55,6 +51,8 @@ share/icons/hicolor/256x256/apps/ksnakeduel.png
 share/icons/hicolor/32x32/apps/ksnakeduel.png
 share/icons/hicolor/48x48/apps/ksnakeduel.png
 share/icons/hicolor/64x64/apps/ksnakeduel.png
+share/knsrcfiles/
+share/knsrcfiles/ksnakeduel.knsrc
 share/ksnakeduel/
 share/ksnakeduel/themes/
 share/ksnakeduel/themes/default.desktop

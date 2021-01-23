@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/08 20:12:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:26 rsadowski Exp $
 @pkgpath x11/kde4/kwordquiz
 @bin bin/kwordquiz
 share/applications/org.kde.kwordquiz.desktop
@@ -123,10 +123,6 @@ share/doc/HTML/uk/kwordquiz/kwq-tutor-popup-native.png
 share/doc/HTML/uk/kwordquiz/kwq-tutor-settings.png
 share/doc/HTML/uk/kwordquiz/kwq-tutor-shortcuts.png
 share/doc/HTML/uk/kwordquiz/kwq-tutor-welcome.png
-share/examples/kwordquiz/
-share/examples/kwordquiz/xdg/
-share/examples/kwordquiz/xdg/kwordquiz.knsrc
-@sample ${SYSCONFDIR}/xdg/kwordquiz.knsrc
 share/icons/hicolor/128x128/apps/kwordquiz.png
 share/icons/hicolor/128x128/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/16x16/apps/kwordquiz.png
@@ -139,6 +135,8 @@ share/icons/hicolor/48x48/apps/kwordquiz.png
 share/icons/hicolor/48x48/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/64x64/apps/kwordquiz.png
 share/knotifications5/kwordquiz.notifyrc
+share/knsrcfiles/
+share/knsrcfiles/kwordquiz.knsrc
 share/kwordquiz/
 share/kwordquiz/examples/
 share/kwordquiz/examples/example.kvtml

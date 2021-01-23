@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/11/03 16:12:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/01/23 18:10:28 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
@@ -8,7 +8,7 @@ CATEGORIES =	geo
 HOMEPAGE =	https://marble.kde.org/
 
 SHARED_LIBS +=  astro                     2.0 # 0.17
-SHARED_LIBS +=  marblewidget-qt5          2.0 # 0.28
+SHARED_LIBS +=  marblewidget-qt5          3.0 # 0.28
 SHARED_LIBS +=  marbledeclarative         1.0 # 0.28
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
@@ -18,10 +18,10 @@ WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Package KF5Parts KF5Plasma KF5Runner KF5Service
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5SerialPort
-WANTLIB += Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c gps m phonon4qt5
-WANTLIB += shp z
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5SerialPort Qt5Sql Qt5Svg Qt5WebChannel
+WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
+WANTLIB += Qt5Xml c gps m phonon4qt5 protobuf shp z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -58,6 +58,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/plasma-framework \
 		devel/kf5/sonnet \
 		devel/shapelib \
+		devel/protobuf \
 		misc/gpsd,-main \
 		multimedia/phonon \
 		x11/qt5/qtdeclarative \

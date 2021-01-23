@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/03 16:12:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/23 18:10:26 rsadowski Exp $
 @pkgpath x11/kde4/kubrick
 @bin bin/kubrick
 share/applications/org.kde.kubrick.desktop
+share/doc/HTML/ca/kubrick/
+share/doc/HTML/ca/kubrick/index.cache.bz2
+share/doc/HTML/ca/kubrick/index.docbook
 share/doc/HTML/de/kubrick/
 share/doc/HTML/de/kubrick/index.cache.bz2
 share/doc/HTML/de/kubrick/index.docbook

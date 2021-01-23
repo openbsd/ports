@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/23 18:10:29 rsadowski Exp $
 
 COMMENT =	single player puzzle game for KDE
 DISTNAME =	picmi-${VERSION}
@@ -11,8 +11,8 @@ WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KDEGames
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Service KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

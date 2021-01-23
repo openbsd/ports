@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/03 16:12:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/23 18:10:22 rsadowski Exp $
 
 COMMENT =	Minesweeper-like Game
 DISTNAME =	kmines-${VERSION}
@@ -10,8 +10,8 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n KF5KDEGames KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c
-WANTLIB += m
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Widgets
+WANTLIB += Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2020/09/07 14:49:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.61 2021/01/23 18:10:12 rsadowski Exp $
 
      SUBDIR =
 
@@ -129,7 +129,6 @@
      SUBDIR += kaddressbook
      SUBDIR += kalarm
      SUBDIR += kdepim-addons
-     SUBDIR += kdepim-apps-libs
      SUBDIR += kdepim-runtime
      SUBDIR += kleopatra
      SUBDIR += kmail

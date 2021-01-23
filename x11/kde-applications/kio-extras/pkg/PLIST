@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/11/08 20:12:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/23 18:10:21 rsadowski Exp $
 include/KF5/kio_archivebase.h
 include/KF5/libkioarchive_export.h
 lib/cmake/KioArchive/
@@ -19,6 +19,7 @@ lib/cmake/KioArchive/KioArchiveTargets.cmake
 @so lib/qt5/plugins/kf5/kded/filenamesearchmodule.so
 @so lib/qt5/plugins/kf5/kded/networkwatcher.so
 @so lib/qt5/plugins/kf5/kded/recentdocumentsnotifier.so
+@so lib/qt5/plugins/kf5/kded/smbwatcher.so
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
 @so lib/qt5/plugins/kf5/kio/about.so
@@ -46,6 +47,7 @@ lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/textthumbnail.so
 @so lib/qt5/plugins/windowsexethumbnail.so
 @so lib/qt5/plugins/windowsimagethumbnail.so
+@bin libexec/kf5/smbnotifier
 share/config.kcfg/
 share/config.kcfg/jpegcreatorsettings5.kcfg
 share/dbus-1/interfaces/kf5_org.kde.network.kioslavenotifier.xml
@@ -200,6 +202,9 @@ share/doc/HTML/es/kioslave5/network/index.docbook
 share/doc/HTML/es/kioslave5/nfs/
 share/doc/HTML/es/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/es/kioslave5/nfs/index.docbook
+share/doc/HTML/es/kioslave5/recentdocuments/
+share/doc/HTML/es/kioslave5/recentdocuments/index.cache.bz2
+share/doc/HTML/es/kioslave5/recentdocuments/index.docbook
 share/doc/HTML/es/kioslave5/sftp/
 share/doc/HTML/es/kioslave5/sftp/index.cache.bz2
 share/doc/HTML/es/kioslave5/sftp/index.docbook
@@ -994,6 +999,7 @@ share/locale/ia/LC_MESSAGES/kio5_fish.mo
 share/locale/ia/LC_MESSAGES/kio5_info.mo
 share/locale/ia/LC_MESSAGES/kio5_man.mo
 share/locale/ia/LC_MESSAGES/kio5_mtp.mo
+share/locale/ia/LC_MESSAGES/kio5_network.mo
 share/locale/ia/LC_MESSAGES/kio5_nfs.mo
 share/locale/ia/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ia/LC_MESSAGES/kio5_sftp.mo

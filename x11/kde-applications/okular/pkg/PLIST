@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/08 20:12:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:29 rsadowski Exp $
 @pkgpath x11/kde4/okular
 @bin bin/okular
 include/okular/
@@ -55,7 +55,6 @@ lib/qt5/plugins/okular/generators/
 @so lib/qt5/plugins/okular/generators/okularGenerator_kimgio.so
 @so lib/qt5/plugins/okular/generators/okularGenerator_md.so
 @so lib/qt5/plugins/okular/generators/okularGenerator_mobi.so
-@so lib/qt5/plugins/okular/generators/okularGenerator_ooo.so
 @so lib/qt5/plugins/okular/generators/okularGenerator_plucker.so
 @so lib/qt5/plugins/okular/generators/okularGenerator_poppler.so
 @so lib/qt5/plugins/okular/generators/okularGenerator_tiff.so
@@ -73,7 +72,6 @@ share/applications/okularApplication_ghostview.desktop
 share/applications/okularApplication_kimgio.desktop
 share/applications/okularApplication_md.desktop
 share/applications/okularApplication_mobi.desktop
-share/applications/okularApplication_ooo.desktop
 share/applications/okularApplication_pdf.desktop
 share/applications/okularApplication_plucker.desktop
 share/applications/okularApplication_tiff.desktop
@@ -90,7 +88,6 @@ share/applications/org.kde.mobile.okular_ghostview.desktop
 share/applications/org.kde.mobile.okular_kimgio.desktop
 share/applications/org.kde.mobile.okular_md.desktop
 share/applications/org.kde.mobile.okular_mobi.desktop
-share/applications/org.kde.mobile.okular_ooo.desktop
 share/applications/org.kde.mobile.okular_pdf.desktop
 share/applications/org.kde.mobile.okular_plucker.desktop
 share/applications/org.kde.mobile.okular_tiff.desktop
@@ -291,7 +288,6 @@ share/kservices5/okularGhostview.desktop
 share/kservices5/okularKimgio.desktop
 share/kservices5/okularMd.desktop
 share/kservices5/okularMobi.desktop
-share/kservices5/okularOoo.desktop
 share/kservices5/okularPlucker.desktop
 share/kservices5/okularPoppler.desktop
 share/kservices5/okularTiff.desktop
@@ -315,7 +311,6 @@ share/locale/ar/LC_MESSAGES/okular_fictionbook.mo
 share/locale/ar/LC_MESSAGES/okular_ghostview.mo
 share/locale/ar/LC_MESSAGES/okular_kimgio.mo
 share/locale/ar/LC_MESSAGES/okular_mobi.mo
-share/locale/ar/LC_MESSAGES/okular_ooo.mo
 share/locale/ar/LC_MESSAGES/okular_plucker.mo
 share/locale/ar/LC_MESSAGES/okular_poppler.mo
 share/locale/ar/LC_MESSAGES/okular_txt.mo
@@ -335,7 +330,6 @@ share/locale/bg/LC_MESSAGES/okular_fictionbook.mo
 share/locale/bg/LC_MESSAGES/okular_ghostview.mo
 share/locale/bg/LC_MESSAGES/okular_kimgio.mo
 share/locale/bg/LC_MESSAGES/okular_mobi.mo
-share/locale/bg/LC_MESSAGES/okular_ooo.mo
 share/locale/bg/LC_MESSAGES/okular_plucker.mo
 share/locale/bg/LC_MESSAGES/okular_poppler.mo
 share/locale/bg/LC_MESSAGES/okular_txt.mo
@@ -352,7 +346,6 @@ share/locale/bs/LC_MESSAGES/okular_fictionbook.mo
 share/locale/bs/LC_MESSAGES/okular_ghostview.mo
 share/locale/bs/LC_MESSAGES/okular_kimgio.mo
 share/locale/bs/LC_MESSAGES/okular_mobi.mo
-share/locale/bs/LC_MESSAGES/okular_ooo.mo
 share/locale/bs/LC_MESSAGES/okular_plucker.mo
 share/locale/bs/LC_MESSAGES/okular_poppler.mo
 share/locale/bs/LC_MESSAGES/okular_txt.mo
@@ -370,7 +363,6 @@ share/locale/ca/LC_MESSAGES/okular_ghostview.mo
 share/locale/ca/LC_MESSAGES/okular_kimgio.mo
 share/locale/ca/LC_MESSAGES/okular_markdown.mo
 share/locale/ca/LC_MESSAGES/okular_mobi.mo
-share/locale/ca/LC_MESSAGES/okular_ooo.mo
 share/locale/ca/LC_MESSAGES/okular_plucker.mo
 share/locale/ca/LC_MESSAGES/okular_poppler.mo
 share/locale/ca/LC_MESSAGES/okular_tiff.mo
@@ -389,7 +381,6 @@ share/locale/ca@valencia/LC_MESSAGES/okular_ghostview.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_kimgio.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_markdown.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_mobi.mo
-share/locale/ca@valencia/LC_MESSAGES/okular_ooo.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_plucker.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_poppler.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_tiff.mo
@@ -408,7 +399,6 @@ share/locale/cs/LC_MESSAGES/okular_ghostview.mo
 share/locale/cs/LC_MESSAGES/okular_kimgio.mo
 share/locale/cs/LC_MESSAGES/okular_markdown.mo
 share/locale/cs/LC_MESSAGES/okular_mobi.mo
-share/locale/cs/LC_MESSAGES/okular_ooo.mo
 share/locale/cs/LC_MESSAGES/okular_plucker.mo
 share/locale/cs/LC_MESSAGES/okular_poppler.mo
 share/locale/cs/LC_MESSAGES/okular_tiff.mo
@@ -427,7 +417,6 @@ share/locale/da/LC_MESSAGES/okular_ghostview.mo
 share/locale/da/LC_MESSAGES/okular_kimgio.mo
 share/locale/da/LC_MESSAGES/okular_markdown.mo
 share/locale/da/LC_MESSAGES/okular_mobi.mo
-share/locale/da/LC_MESSAGES/okular_ooo.mo
 share/locale/da/LC_MESSAGES/okular_plucker.mo
 share/locale/da/LC_MESSAGES/okular_poppler.mo
 share/locale/da/LC_MESSAGES/okular_txt.mo
@@ -445,7 +434,6 @@ share/locale/de/LC_MESSAGES/okular_ghostview.mo
 share/locale/de/LC_MESSAGES/okular_kimgio.mo
 share/locale/de/LC_MESSAGES/okular_markdown.mo
 share/locale/de/LC_MESSAGES/okular_mobi.mo
-share/locale/de/LC_MESSAGES/okular_ooo.mo
 share/locale/de/LC_MESSAGES/okular_plucker.mo
 share/locale/de/LC_MESSAGES/okular_poppler.mo
 share/locale/de/LC_MESSAGES/okular_tiff.mo
@@ -464,7 +452,6 @@ share/locale/el/LC_MESSAGES/okular_ghostview.mo
 share/locale/el/LC_MESSAGES/okular_kimgio.mo
 share/locale/el/LC_MESSAGES/okular_markdown.mo
 share/locale/el/LC_MESSAGES/okular_mobi.mo
-share/locale/el/LC_MESSAGES/okular_ooo.mo
 share/locale/el/LC_MESSAGES/okular_plucker.mo
 share/locale/el/LC_MESSAGES/okular_poppler.mo
 share/locale/el/LC_MESSAGES/okular_tiff.mo
@@ -483,7 +470,6 @@ share/locale/en_GB/LC_MESSAGES/okular_ghostview.mo
 share/locale/en_GB/LC_MESSAGES/okular_kimgio.mo
 share/locale/en_GB/LC_MESSAGES/okular_markdown.mo
 share/locale/en_GB/LC_MESSAGES/okular_mobi.mo
-share/locale/en_GB/LC_MESSAGES/okular_ooo.mo
 share/locale/en_GB/LC_MESSAGES/okular_plucker.mo
 share/locale/en_GB/LC_MESSAGES/okular_poppler.mo
 share/locale/en_GB/LC_MESSAGES/okular_tiff.mo
@@ -501,7 +487,6 @@ share/locale/eo/LC_MESSAGES/okular_fictionbook.mo
 share/locale/eo/LC_MESSAGES/okular_ghostview.mo
 share/locale/eo/LC_MESSAGES/okular_kimgio.mo
 share/locale/eo/LC_MESSAGES/okular_mobi.mo
-share/locale/eo/LC_MESSAGES/okular_ooo.mo
 share/locale/eo/LC_MESSAGES/okular_plucker.mo
 share/locale/eo/LC_MESSAGES/okular_poppler.mo
 share/locale/eo/LC_MESSAGES/okular_xps.mo
@@ -517,7 +502,6 @@ share/locale/es/LC_MESSAGES/okular_ghostview.mo
 share/locale/es/LC_MESSAGES/okular_kimgio.mo
 share/locale/es/LC_MESSAGES/okular_markdown.mo
 share/locale/es/LC_MESSAGES/okular_mobi.mo
-share/locale/es/LC_MESSAGES/okular_ooo.mo
 share/locale/es/LC_MESSAGES/okular_plucker.mo
 share/locale/es/LC_MESSAGES/okular_poppler.mo
 share/locale/es/LC_MESSAGES/okular_tiff.mo
@@ -536,7 +520,6 @@ share/locale/et/LC_MESSAGES/okular_ghostview.mo
 share/locale/et/LC_MESSAGES/okular_kimgio.mo
 share/locale/et/LC_MESSAGES/okular_markdown.mo
 share/locale/et/LC_MESSAGES/okular_mobi.mo
-share/locale/et/LC_MESSAGES/okular_ooo.mo
 share/locale/et/LC_MESSAGES/okular_plucker.mo
 share/locale/et/LC_MESSAGES/okular_poppler.mo
 share/locale/et/LC_MESSAGES/okular_txt.mo
@@ -554,7 +537,6 @@ share/locale/eu/LC_MESSAGES/okular_ghostview.mo
 share/locale/eu/LC_MESSAGES/okular_kimgio.mo
 share/locale/eu/LC_MESSAGES/okular_markdown.mo
 share/locale/eu/LC_MESSAGES/okular_mobi.mo
-share/locale/eu/LC_MESSAGES/okular_ooo.mo
 share/locale/eu/LC_MESSAGES/okular_plucker.mo
 share/locale/eu/LC_MESSAGES/okular_poppler.mo
 share/locale/eu/LC_MESSAGES/okular_tiff.mo
@@ -574,7 +556,6 @@ share/locale/fi/LC_MESSAGES/okular_ghostview.mo
 share/locale/fi/LC_MESSAGES/okular_kimgio.mo
 share/locale/fi/LC_MESSAGES/okular_markdown.mo
 share/locale/fi/LC_MESSAGES/okular_mobi.mo
-share/locale/fi/LC_MESSAGES/okular_ooo.mo
 share/locale/fi/LC_MESSAGES/okular_plucker.mo
 share/locale/fi/LC_MESSAGES/okular_poppler.mo
 share/locale/fi/LC_MESSAGES/okular_tiff.mo
@@ -593,7 +574,6 @@ share/locale/fr/LC_MESSAGES/okular_ghostview.mo
 share/locale/fr/LC_MESSAGES/okular_kimgio.mo
 share/locale/fr/LC_MESSAGES/okular_markdown.mo
 share/locale/fr/LC_MESSAGES/okular_mobi.mo
-share/locale/fr/LC_MESSAGES/okular_ooo.mo
 share/locale/fr/LC_MESSAGES/okular_plucker.mo
 share/locale/fr/LC_MESSAGES/okular_poppler.mo
 share/locale/fr/LC_MESSAGES/okular_tiff.mo
@@ -611,7 +591,6 @@ share/locale/ga/LC_MESSAGES/okular_fictionbook.mo
 share/locale/ga/LC_MESSAGES/okular_ghostview.mo
 share/locale/ga/LC_MESSAGES/okular_kimgio.mo
 share/locale/ga/LC_MESSAGES/okular_mobi.mo
-share/locale/ga/LC_MESSAGES/okular_ooo.mo
 share/locale/ga/LC_MESSAGES/okular_plucker.mo
 share/locale/ga/LC_MESSAGES/okular_poppler.mo
 share/locale/ga/LC_MESSAGES/okular_xps.mo
@@ -628,7 +607,6 @@ share/locale/gl/LC_MESSAGES/okular_ghostview.mo
 share/locale/gl/LC_MESSAGES/okular_kimgio.mo
 share/locale/gl/LC_MESSAGES/okular_markdown.mo
 share/locale/gl/LC_MESSAGES/okular_mobi.mo
-share/locale/gl/LC_MESSAGES/okular_ooo.mo
 share/locale/gl/LC_MESSAGES/okular_plucker.mo
 share/locale/gl/LC_MESSAGES/okular_poppler.mo
 share/locale/gl/LC_MESSAGES/okular_txt.mo
@@ -642,7 +620,6 @@ share/locale/hi/LC_MESSAGES/okular_dvi.mo
 share/locale/hi/LC_MESSAGES/okular_fictionbook.mo
 share/locale/hi/LC_MESSAGES/okular_ghostview.mo
 share/locale/hi/LC_MESSAGES/okular_kimgio.mo
-share/locale/hi/LC_MESSAGES/okular_ooo.mo
 share/locale/hi/LC_MESSAGES/okular_plucker.mo
 share/locale/hi/LC_MESSAGES/okular_poppler.mo
 share/locale/hi/LC_MESSAGES/okular_xps.mo
@@ -657,7 +634,6 @@ share/locale/hr/LC_MESSAGES/okular_fictionbook.mo
 share/locale/hr/LC_MESSAGES/okular_ghostview.mo
 share/locale/hr/LC_MESSAGES/okular_kimgio.mo
 share/locale/hr/LC_MESSAGES/okular_mobi.mo
-share/locale/hr/LC_MESSAGES/okular_ooo.mo
 share/locale/hr/LC_MESSAGES/okular_plucker.mo
 share/locale/hr/LC_MESSAGES/okular_poppler.mo
 share/locale/hr/LC_MESSAGES/okular_xps.mo
@@ -671,10 +647,11 @@ share/locale/hu/LC_MESSAGES/okular_fax.mo
 share/locale/hu/LC_MESSAGES/okular_fictionbook.mo
 share/locale/hu/LC_MESSAGES/okular_ghostview.mo
 share/locale/hu/LC_MESSAGES/okular_kimgio.mo
+share/locale/hu/LC_MESSAGES/okular_markdown.mo
 share/locale/hu/LC_MESSAGES/okular_mobi.mo
-share/locale/hu/LC_MESSAGES/okular_ooo.mo
 share/locale/hu/LC_MESSAGES/okular_plucker.mo
 share/locale/hu/LC_MESSAGES/okular_poppler.mo
+share/locale/hu/LC_MESSAGES/okular_tiff.mo
 share/locale/hu/LC_MESSAGES/okular_txt.mo
 share/locale/hu/LC_MESSAGES/okular_xps.mo
 share/locale/hu/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -690,7 +667,6 @@ share/locale/ia/LC_MESSAGES/okular_ghostview.mo
 share/locale/ia/LC_MESSAGES/okular_kimgio.mo
 share/locale/ia/LC_MESSAGES/okular_markdown.mo
 share/locale/ia/LC_MESSAGES/okular_mobi.mo
-share/locale/ia/LC_MESSAGES/okular_ooo.mo
 share/locale/ia/LC_MESSAGES/okular_plucker.mo
 share/locale/ia/LC_MESSAGES/okular_poppler.mo
 share/locale/ia/LC_MESSAGES/okular_tiff.mo
@@ -709,7 +685,6 @@ share/locale/is/LC_MESSAGES/okular_fictionbook.mo
 share/locale/is/LC_MESSAGES/okular_ghostview.mo
 share/locale/is/LC_MESSAGES/okular_kimgio.mo
 share/locale/is/LC_MESSAGES/okular_mobi.mo
-share/locale/is/LC_MESSAGES/okular_ooo.mo
 share/locale/is/LC_MESSAGES/okular_plucker.mo
 share/locale/is/LC_MESSAGES/okular_poppler.mo
 share/locale/is/LC_MESSAGES/okular_xps.mo
@@ -726,7 +701,6 @@ share/locale/it/LC_MESSAGES/okular_ghostview.mo
 share/locale/it/LC_MESSAGES/okular_kimgio.mo
 share/locale/it/LC_MESSAGES/okular_markdown.mo
 share/locale/it/LC_MESSAGES/okular_mobi.mo
-share/locale/it/LC_MESSAGES/okular_ooo.mo
 share/locale/it/LC_MESSAGES/okular_plucker.mo
 share/locale/it/LC_MESSAGES/okular_poppler.mo
 share/locale/it/LC_MESSAGES/okular_tiff.mo
@@ -745,7 +719,6 @@ share/locale/ja/LC_MESSAGES/okular_ghostview.mo
 share/locale/ja/LC_MESSAGES/okular_kimgio.mo
 share/locale/ja/LC_MESSAGES/okular_markdown.mo
 share/locale/ja/LC_MESSAGES/okular_mobi.mo
-share/locale/ja/LC_MESSAGES/okular_ooo.mo
 share/locale/ja/LC_MESSAGES/okular_plucker.mo
 share/locale/ja/LC_MESSAGES/okular_poppler.mo
 share/locale/ja/LC_MESSAGES/okular_txt.mo
@@ -762,7 +735,6 @@ share/locale/kk/LC_MESSAGES/okular_fictionbook.mo
 share/locale/kk/LC_MESSAGES/okular_ghostview.mo
 share/locale/kk/LC_MESSAGES/okular_kimgio.mo
 share/locale/kk/LC_MESSAGES/okular_mobi.mo
-share/locale/kk/LC_MESSAGES/okular_ooo.mo
 share/locale/kk/LC_MESSAGES/okular_plucker.mo
 share/locale/kk/LC_MESSAGES/okular_poppler.mo
 share/locale/kk/LC_MESSAGES/okular_txt.mo
@@ -779,7 +751,6 @@ share/locale/km/LC_MESSAGES/okular_fictionbook.mo
 share/locale/km/LC_MESSAGES/okular_ghostview.mo
 share/locale/km/LC_MESSAGES/okular_kimgio.mo
 share/locale/km/LC_MESSAGES/okular_mobi.mo
-share/locale/km/LC_MESSAGES/okular_ooo.mo
 share/locale/km/LC_MESSAGES/okular_plucker.mo
 share/locale/km/LC_MESSAGES/okular_poppler.mo
 share/locale/km/LC_MESSAGES/okular_xps.mo
@@ -795,7 +766,6 @@ share/locale/ko/LC_MESSAGES/okular_ghostview.mo
 share/locale/ko/LC_MESSAGES/okular_kimgio.mo
 share/locale/ko/LC_MESSAGES/okular_markdown.mo
 share/locale/ko/LC_MESSAGES/okular_mobi.mo
-share/locale/ko/LC_MESSAGES/okular_ooo.mo
 share/locale/ko/LC_MESSAGES/okular_plucker.mo
 share/locale/ko/LC_MESSAGES/okular_poppler.mo
 share/locale/ko/LC_MESSAGES/okular_tiff.mo
@@ -814,9 +784,9 @@ share/locale/lt/LC_MESSAGES/okular_ghostview.mo
 share/locale/lt/LC_MESSAGES/okular_kimgio.mo
 share/locale/lt/LC_MESSAGES/okular_markdown.mo
 share/locale/lt/LC_MESSAGES/okular_mobi.mo
-share/locale/lt/LC_MESSAGES/okular_ooo.mo
 share/locale/lt/LC_MESSAGES/okular_plucker.mo
 share/locale/lt/LC_MESSAGES/okular_poppler.mo
+share/locale/lt/LC_MESSAGES/okular_tiff.mo
 share/locale/lt/LC_MESSAGES/okular_txt.mo
 share/locale/lt/LC_MESSAGES/okular_xps.mo
 share/locale/lt/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -831,7 +801,6 @@ share/locale/lv/LC_MESSAGES/okular_fictionbook.mo
 share/locale/lv/LC_MESSAGES/okular_ghostview.mo
 share/locale/lv/LC_MESSAGES/okular_kimgio.mo
 share/locale/lv/LC_MESSAGES/okular_mobi.mo
-share/locale/lv/LC_MESSAGES/okular_ooo.mo
 share/locale/lv/LC_MESSAGES/okular_plucker.mo
 share/locale/lv/LC_MESSAGES/okular_poppler.mo
 share/locale/lv/LC_MESSAGES/okular_xps.mo
@@ -847,7 +816,6 @@ share/locale/ml/LC_MESSAGES/okular_ghostview.mo
 share/locale/ml/LC_MESSAGES/okular_kimgio.mo
 share/locale/ml/LC_MESSAGES/okular_markdown.mo
 share/locale/ml/LC_MESSAGES/okular_mobi.mo
-share/locale/ml/LC_MESSAGES/okular_ooo.mo
 share/locale/ml/LC_MESSAGES/okular_plucker.mo
 share/locale/ml/LC_MESSAGES/okular_poppler.mo
 share/locale/ml/LC_MESSAGES/okular_txt.mo
@@ -864,7 +832,6 @@ share/locale/mr/LC_MESSAGES/okular_fictionbook.mo
 share/locale/mr/LC_MESSAGES/okular_ghostview.mo
 share/locale/mr/LC_MESSAGES/okular_kimgio.mo
 share/locale/mr/LC_MESSAGES/okular_mobi.mo
-share/locale/mr/LC_MESSAGES/okular_ooo.mo
 share/locale/mr/LC_MESSAGES/okular_plucker.mo
 share/locale/mr/LC_MESSAGES/okular_poppler.mo
 share/locale/mr/LC_MESSAGES/okular_xps.mo
@@ -880,7 +847,6 @@ share/locale/nb/LC_MESSAGES/okular_fictionbook.mo
 share/locale/nb/LC_MESSAGES/okular_ghostview.mo
 share/locale/nb/LC_MESSAGES/okular_kimgio.mo
 share/locale/nb/LC_MESSAGES/okular_mobi.mo
-share/locale/nb/LC_MESSAGES/okular_ooo.mo
 share/locale/nb/LC_MESSAGES/okular_plucker.mo
 share/locale/nb/LC_MESSAGES/okular_poppler.mo
 share/locale/nb/LC_MESSAGES/okular_txt.mo
@@ -897,7 +863,6 @@ share/locale/nds/LC_MESSAGES/okular_fictionbook.mo
 share/locale/nds/LC_MESSAGES/okular_ghostview.mo
 share/locale/nds/LC_MESSAGES/okular_kimgio.mo
 share/locale/nds/LC_MESSAGES/okular_mobi.mo
-share/locale/nds/LC_MESSAGES/okular_ooo.mo
 share/locale/nds/LC_MESSAGES/okular_plucker.mo
 share/locale/nds/LC_MESSAGES/okular_poppler.mo
 share/locale/nds/LC_MESSAGES/okular_txt.mo
@@ -915,7 +880,6 @@ share/locale/nl/LC_MESSAGES/okular_ghostview.mo
 share/locale/nl/LC_MESSAGES/okular_kimgio.mo
 share/locale/nl/LC_MESSAGES/okular_markdown.mo
 share/locale/nl/LC_MESSAGES/okular_mobi.mo
-share/locale/nl/LC_MESSAGES/okular_ooo.mo
 share/locale/nl/LC_MESSAGES/okular_plucker.mo
 share/locale/nl/LC_MESSAGES/okular_poppler.mo
 share/locale/nl/LC_MESSAGES/okular_tiff.mo
@@ -934,9 +898,9 @@ share/locale/nn/LC_MESSAGES/okular_ghostview.mo
 share/locale/nn/LC_MESSAGES/okular_kimgio.mo
 share/locale/nn/LC_MESSAGES/okular_markdown.mo
 share/locale/nn/LC_MESSAGES/okular_mobi.mo
-share/locale/nn/LC_MESSAGES/okular_ooo.mo
 share/locale/nn/LC_MESSAGES/okular_plucker.mo
 share/locale/nn/LC_MESSAGES/okular_poppler.mo
+share/locale/nn/LC_MESSAGES/okular_tiff.mo
 share/locale/nn/LC_MESSAGES/okular_txt.mo
 share/locale/nn/LC_MESSAGES/okular_xps.mo
 share/locale/nn/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -951,7 +915,6 @@ share/locale/pa/LC_MESSAGES/okular_fictionbook.mo
 share/locale/pa/LC_MESSAGES/okular_ghostview.mo
 share/locale/pa/LC_MESSAGES/okular_kimgio.mo
 share/locale/pa/LC_MESSAGES/okular_mobi.mo
-share/locale/pa/LC_MESSAGES/okular_ooo.mo
 share/locale/pa/LC_MESSAGES/okular_plucker.mo
 share/locale/pa/LC_MESSAGES/okular_poppler.mo
 share/locale/pa/LC_MESSAGES/okular_txt.mo
@@ -969,9 +932,9 @@ share/locale/pl/LC_MESSAGES/okular_ghostview.mo
 share/locale/pl/LC_MESSAGES/okular_kimgio.mo
 share/locale/pl/LC_MESSAGES/okular_markdown.mo
 share/locale/pl/LC_MESSAGES/okular_mobi.mo
-share/locale/pl/LC_MESSAGES/okular_ooo.mo
 share/locale/pl/LC_MESSAGES/okular_plucker.mo
 share/locale/pl/LC_MESSAGES/okular_poppler.mo
+share/locale/pl/LC_MESSAGES/okular_tiff.mo
 share/locale/pl/LC_MESSAGES/okular_txt.mo
 share/locale/pl/LC_MESSAGES/okular_xps.mo
 share/locale/pl/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -987,7 +950,6 @@ share/locale/pt/LC_MESSAGES/okular_ghostview.mo
 share/locale/pt/LC_MESSAGES/okular_kimgio.mo
 share/locale/pt/LC_MESSAGES/okular_markdown.mo
 share/locale/pt/LC_MESSAGES/okular_mobi.mo
-share/locale/pt/LC_MESSAGES/okular_ooo.mo
 share/locale/pt/LC_MESSAGES/okular_plucker.mo
 share/locale/pt/LC_MESSAGES/okular_poppler.mo
 share/locale/pt/LC_MESSAGES/okular_tiff.mo
@@ -1006,7 +968,6 @@ share/locale/pt_BR/LC_MESSAGES/okular_ghostview.mo
 share/locale/pt_BR/LC_MESSAGES/okular_kimgio.mo
 share/locale/pt_BR/LC_MESSAGES/okular_markdown.mo
 share/locale/pt_BR/LC_MESSAGES/okular_mobi.mo
-share/locale/pt_BR/LC_MESSAGES/okular_ooo.mo
 share/locale/pt_BR/LC_MESSAGES/okular_plucker.mo
 share/locale/pt_BR/LC_MESSAGES/okular_poppler.mo
 share/locale/pt_BR/LC_MESSAGES/okular_tiff.mo
@@ -1024,7 +985,6 @@ share/locale/ro/LC_MESSAGES/okular_fictionbook.mo
 share/locale/ro/LC_MESSAGES/okular_ghostview.mo
 share/locale/ro/LC_MESSAGES/okular_kimgio.mo
 share/locale/ro/LC_MESSAGES/okular_mobi.mo
-share/locale/ro/LC_MESSAGES/okular_ooo.mo
 share/locale/ro/LC_MESSAGES/okular_plucker.mo
 share/locale/ro/LC_MESSAGES/okular_poppler.mo
 share/locale/ro/LC_MESSAGES/okular_txt.mo
@@ -1042,9 +1002,9 @@ share/locale/ru/LC_MESSAGES/okular_ghostview.mo
 share/locale/ru/LC_MESSAGES/okular_kimgio.mo
 share/locale/ru/LC_MESSAGES/okular_markdown.mo
 share/locale/ru/LC_MESSAGES/okular_mobi.mo
-share/locale/ru/LC_MESSAGES/okular_ooo.mo
 share/locale/ru/LC_MESSAGES/okular_plucker.mo
 share/locale/ru/LC_MESSAGES/okular_poppler.mo
+share/locale/ru/LC_MESSAGES/okular_tiff.mo
 share/locale/ru/LC_MESSAGES/okular_txt.mo
 share/locale/ru/LC_MESSAGES/okular_xps.mo
 share/locale/ru/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -1060,7 +1020,6 @@ share/locale/sk/LC_MESSAGES/okular_ghostview.mo
 share/locale/sk/LC_MESSAGES/okular_kimgio.mo
 share/locale/sk/LC_MESSAGES/okular_markdown.mo
 share/locale/sk/LC_MESSAGES/okular_mobi.mo
-share/locale/sk/LC_MESSAGES/okular_ooo.mo
 share/locale/sk/LC_MESSAGES/okular_plucker.mo
 share/locale/sk/LC_MESSAGES/okular_poppler.mo
 share/locale/sk/LC_MESSAGES/okular_tiff.mo
@@ -1079,9 +1038,9 @@ share/locale/sl/LC_MESSAGES/okular_ghostview.mo
 share/locale/sl/LC_MESSAGES/okular_kimgio.mo
 share/locale/sl/LC_MESSAGES/okular_markdown.mo
 share/locale/sl/LC_MESSAGES/okular_mobi.mo
-share/locale/sl/LC_MESSAGES/okular_ooo.mo
 share/locale/sl/LC_MESSAGES/okular_plucker.mo
 share/locale/sl/LC_MESSAGES/okular_poppler.mo
+share/locale/sl/LC_MESSAGES/okular_tiff.mo
 share/locale/sl/LC_MESSAGES/okular_txt.mo
 share/locale/sl/LC_MESSAGES/okular_xps.mo
 share/locale/sl/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -1097,7 +1056,6 @@ share/locale/sr/LC_MESSAGES/okular_ghostview.mo
 share/locale/sr/LC_MESSAGES/okular_kimgio.mo
 share/locale/sr/LC_MESSAGES/okular_markdown.mo
 share/locale/sr/LC_MESSAGES/okular_mobi.mo
-share/locale/sr/LC_MESSAGES/okular_ooo.mo
 share/locale/sr/LC_MESSAGES/okular_plucker.mo
 share/locale/sr/LC_MESSAGES/okular_poppler.mo
 share/locale/sr/LC_MESSAGES/okular_txt.mo
@@ -1114,7 +1072,6 @@ share/locale/sv/LC_MESSAGES/okular_ghostview.mo
 share/locale/sv/LC_MESSAGES/okular_kimgio.mo
 share/locale/sv/LC_MESSAGES/okular_markdown.mo
 share/locale/sv/LC_MESSAGES/okular_mobi.mo
-share/locale/sv/LC_MESSAGES/okular_ooo.mo
 share/locale/sv/LC_MESSAGES/okular_plucker.mo
 share/locale/sv/LC_MESSAGES/okular_poppler.mo
 share/locale/sv/LC_MESSAGES/okular_tiff.mo
@@ -1132,7 +1089,6 @@ share/locale/tr/LC_MESSAGES/okular_fictionbook.mo
 share/locale/tr/LC_MESSAGES/okular_ghostview.mo
 share/locale/tr/LC_MESSAGES/okular_kimgio.mo
 share/locale/tr/LC_MESSAGES/okular_mobi.mo
-share/locale/tr/LC_MESSAGES/okular_ooo.mo
 share/locale/tr/LC_MESSAGES/okular_plucker.mo
 share/locale/tr/LC_MESSAGES/okular_poppler.mo
 share/locale/tr/LC_MESSAGES/okular_txt.mo
@@ -1149,7 +1105,6 @@ share/locale/ug/LC_MESSAGES/okular_fictionbook.mo
 share/locale/ug/LC_MESSAGES/okular_ghostview.mo
 share/locale/ug/LC_MESSAGES/okular_kimgio.mo
 share/locale/ug/LC_MESSAGES/okular_mobi.mo
-share/locale/ug/LC_MESSAGES/okular_ooo.mo
 share/locale/ug/LC_MESSAGES/okular_plucker.mo
 share/locale/ug/LC_MESSAGES/okular_poppler.mo
 share/locale/ug/LC_MESSAGES/okular_txt.mo
@@ -1167,7 +1122,6 @@ share/locale/uk/LC_MESSAGES/okular_ghostview.mo
 share/locale/uk/LC_MESSAGES/okular_kimgio.mo
 share/locale/uk/LC_MESSAGES/okular_markdown.mo
 share/locale/uk/LC_MESSAGES/okular_mobi.mo
-share/locale/uk/LC_MESSAGES/okular_ooo.mo
 share/locale/uk/LC_MESSAGES/okular_plucker.mo
 share/locale/uk/LC_MESSAGES/okular_poppler.mo
 share/locale/uk/LC_MESSAGES/okular_tiff.mo
@@ -1184,7 +1138,6 @@ share/locale/wa/LC_MESSAGES/okular_fictionbook.mo
 share/locale/wa/LC_MESSAGES/okular_ghostview.mo
 share/locale/wa/LC_MESSAGES/okular_kimgio.mo
 share/locale/wa/LC_MESSAGES/okular_mobi.mo
-share/locale/wa/LC_MESSAGES/okular_ooo.mo
 share/locale/wa/LC_MESSAGES/okular_plucker.mo
 share/locale/wa/LC_MESSAGES/okular_poppler.mo
 share/locale/wa/LC_MESSAGES/okular_xps.mo
@@ -1200,7 +1153,6 @@ share/locale/zh_CN/LC_MESSAGES/okular_ghostview.mo
 share/locale/zh_CN/LC_MESSAGES/okular_kimgio.mo
 share/locale/zh_CN/LC_MESSAGES/okular_markdown.mo
 share/locale/zh_CN/LC_MESSAGES/okular_mobi.mo
-share/locale/zh_CN/LC_MESSAGES/okular_ooo.mo
 share/locale/zh_CN/LC_MESSAGES/okular_plucker.mo
 share/locale/zh_CN/LC_MESSAGES/okular_poppler.mo
 share/locale/zh_CN/LC_MESSAGES/okular_tiff.mo
@@ -1219,7 +1171,6 @@ share/locale/zh_TW/LC_MESSAGES/okular_ghostview.mo
 share/locale/zh_TW/LC_MESSAGES/okular_kimgio.mo
 share/locale/zh_TW/LC_MESSAGES/okular_markdown.mo
 share/locale/zh_TW/LC_MESSAGES/okular_mobi.mo
-share/locale/zh_TW/LC_MESSAGES/okular_ooo.mo
 share/locale/zh_TW/LC_MESSAGES/okular_plucker.mo
 share/locale/zh_TW/LC_MESSAGES/okular_poppler.mo
 share/locale/zh_TW/LC_MESSAGES/okular_txt.mo
@@ -1235,7 +1186,6 @@ share/metainfo/org.kde.okular-fb.metainfo.xml
 share/metainfo/org.kde.okular-kimgio.metainfo.xml
 share/metainfo/org.kde.okular-md.metainfo.xml
 share/metainfo/org.kde.okular-mobipocket.metainfo.xml
-share/metainfo/org.kde.okular-ooo.metainfo.xml
 share/metainfo/org.kde.okular-plucker.metainfo.xml
 share/metainfo/org.kde.okular-poppler.metainfo.xml
 share/metainfo/org.kde.okular-spectre.metainfo.xml

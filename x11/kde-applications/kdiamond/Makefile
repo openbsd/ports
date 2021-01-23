@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:19 rsadowski Exp $
 
 COMMENT =	three-in-a-row game
 DISTNAME =	kdiamond-${VERSION}
@@ -10,8 +10,8 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n KF5KDEGames KF5Notifications
 WANTLIB += KF5NotifyConfig KF5WidgetsAddons KF5XmlGui Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
+WANTLIB += Qt5QuickWidgets Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

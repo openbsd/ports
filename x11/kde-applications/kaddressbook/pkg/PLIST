@@ -1,7 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:49:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/01/23 18:10:16 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/kaddressbook
+include/KPim/KAddressBookImportExport/
+include/KPim/KAddressBookImportExport/ContactFields
+include/KPim/KAddressBookImportExport/ContactList
+include/KPim/KAddressBookImportExport/ContactSelectionDialog
+include/KPim/KAddressBookImportExport/ContactSelectionWidget
+include/KPim/KAddressBookImportExport/ExportSelectionWidget
+include/KPim/KAddressBookImportExport/ImportExportEngine
+include/KPim/KAddressBookImportExport/Plugin
+include/KPim/KAddressBookImportExport/PluginInterface
+include/KPim/KAddressBookImportExport/PluginManager
+include/KPim/kaddressbookimportexport/
+include/KPim/kaddressbookimportexport/contactfields.h
+include/KPim/kaddressbookimportexport/contactlist.h
+include/KPim/kaddressbookimportexport/contactselectiondialog.h
+include/KPim/kaddressbookimportexport/contactselectionwidget.h
+include/KPim/kaddressbookimportexport/exportselectionwidget.h
+include/KPim/kaddressbookimportexport/importexportengine.h
+include/KPim/kaddressbookimportexport/kaddressbook_importexport_export.h
+include/KPim/kaddressbookimportexport/plugin.h
+include/KPim/kaddressbookimportexport/plugininterface.h
+include/KPim/kaddressbookimportexport/pluginmanager.h
+include/KPim/kaddressbookimportexport_version.h
+lib/cmake/KPimAddressbookImportExport/
+lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportConfig.cmake
+lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportConfigVersion.cmake
+lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportTargets.cmake
+@lib lib/libKPimAddressbookImportExport.so.${LIBKPimAddressbookImportExport_VERSION}
 @lib lib/libkaddressbookprivate.so.${LIBkaddressbookprivate_VERSION}
 @so lib/qt5/plugins/kaddressbook_config_plugins.so
 @so lib/qt5/plugins/kaddressbookpart.so
@@ -34,6 +62,11 @@ share/doc/HTML/en/kaddressbook/addressbook121.png
 share/doc/HTML/en/kaddressbook/addressbook122.png
 share/doc/HTML/en/kaddressbook/addressbook123.png
 share/doc/HTML/en/kaddressbook/addressbook130.png
+share/doc/HTML/en/kaddressbook/addressbook131.png
+share/doc/HTML/en/kaddressbook/addressbook132.png
+share/doc/HTML/en/kaddressbook/addressbook133.png
+share/doc/HTML/en/kaddressbook/addressbook134.png
+share/doc/HTML/en/kaddressbook/addressbook135.png
 share/doc/HTML/en/kaddressbook/addressbook20.png
 share/doc/HTML/en/kaddressbook/addressbook30.png
 share/doc/HTML/en/kaddressbook/addressbook31.png
@@ -247,6 +280,7 @@ share/kaddressbook/viewertemplates/default/contactgroup_memberrow.html
 share/kaddressbook/viewertemplates/default/theme.desktop
 share/kconf_update/kaddressbook-15.08-kickoff.sh
 share/kconf_update/kaddressbook.upd
+share/kf5/mkspecs/qt_KAddressbookImportExport.pri
 share/kontact/
 share/kontact/ksettingsdialog/
 share/kontact/ksettingsdialog/kaddressbook.setdlg

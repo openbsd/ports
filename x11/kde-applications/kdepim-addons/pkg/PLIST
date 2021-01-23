@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/03 16:12:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:19 rsadowski Exp $
 @conflict kdepimlibs-<=4
 bin/kmail_antivir.sh
 bin/kmail_clamav.sh
@@ -9,27 +9,26 @@ lib/contacteditor/editorpageplugins/
 @so lib/contacteditor/editorpageplugins/cryptopageplugin.so
 @lib lib/libadblocklibprivate.so.${LIBadblocklibprivate_VERSION}
 @lib lib/libdkimverifyconfigure.so.${LIBdkimverifyconfigure_VERSION}
+@lib lib/libexpireaccounttrashfolderconfig.so.${LIBexpireaccounttrashfolderconfig_VERSION}
+@lib lib/libfolderconfiguresettings.so.${LIBfolderconfiguresettings_VERSION}
 @lib lib/libgrammarcommon.so.${LIBgrammarcommon_VERSION}
-@lib lib/libkaddressbookimportexportlibprivate.so.${LIBkaddressbookimportexportlibprivate_VERSION}
 @lib lib/libkaddressbookmergelibprivate.so.${LIBkaddressbookmergelibprivate_VERSION}
 @lib lib/libkmailgrammalecte.so.${LIBkmailgrammalecte_VERSION}
 @lib lib/libkmaillanguagetool.so.${LIBkmaillanguagetool_VERSION}
 @lib lib/libkmailmarkdown.so.${LIBkmailmarkdown_VERSION}
 @lib lib/libkmailquicktextpluginprivate.so.${LIBkmailquicktextpluginprivate_VERSION}
 @lib lib/libshorturlpluginprivate.so.${LIBshorturlpluginprivate_VERSION}
+lib/qt5/
+lib/qt5/plugins/
+lib/qt5/plugins/akonadi/
 @so lib/qt5/plugins/akonadi/emailaddressselectionldapdialogplugin.so
+lib/qt5/plugins/importwizard/
 @so lib/qt5/plugins/importwizard/evolutionv1importerplugin.so
 @so lib/qt5/plugins/importwizard/evolutionv2importerplugin.so
 @so lib/qt5/plugins/importwizard/gearyimporterplugin.so
 @so lib/qt5/plugins/importwizard/nylasmailimporterplugin.so
 @so lib/qt5/plugins/importwizard/operaimporterplugin.so
 lib/qt5/plugins/kaddressbook/
-lib/qt5/plugins/kaddressbook/importexportplugin/
-@so lib/qt5/plugins/kaddressbook/importexportplugin/kaddressbook_importexportcsvplugin.so
-@so lib/qt5/plugins/kaddressbook/importexportplugin/kaddressbook_importexportgmxplugin.so
-@so lib/qt5/plugins/kaddressbook/importexportplugin/kaddressbook_importexportldapplugin.so
-@so lib/qt5/plugins/kaddressbook/importexportplugin/kaddressbook_importexportldifplugin.so
-@so lib/qt5/plugins/kaddressbook/importexportplugin/kaddressbook_importexportvcardplugin.so
 lib/qt5/plugins/kaddressbook/mainview/
 @so lib/qt5/plugins/kaddressbook/mainview/kaddressbook_checkgravatarplugin.so
 @so lib/qt5/plugins/kaddressbook/mainview/kaddressbook_mergecontactsplugin.so
@@ -70,7 +69,9 @@ lib/qt5/plugins/libksieve/
 @so lib/qt5/plugins/libksieve/emaillineeditplugin.so
 @so lib/qt5/plugins/libksieve/imapfoldercompletionplugin.so
 @so lib/qt5/plugins/libksieve/regexpeditorlineeditplugin.so
+lib/qt5/plugins/mailtransport/
 @so lib/qt5/plugins/mailtransport/mailtransport_sendplugin.so
+lib/qt5/plugins/messageviewer/
 lib/qt5/plugins/messageviewer/bodypartformatter/
 @so lib/qt5/plugins/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_gnupgwks.so
 @so lib/qt5/plugins/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_mstnef.so
@@ -82,8 +83,13 @@ lib/qt5/plugins/messageviewer/bodypartformatter/
 @so lib/qt5/plugins/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_vcard.so
 lib/qt5/plugins/messageviewer/configuresettings/
 @so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_dkimconfigplugin.so
+@so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_expireaccounttrashfolderconfigplugin.so
+@so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_folderconfiguresettingsplugin.so
 @so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_gravatarconfigplugin.so
+lib/qt5/plugins/messageviewer/grantlee/
+lib/qt5/plugins/messageviewer/grantlee/5.0/
 @so lib/qt5/plugins/messageviewer/grantlee/5.0/kitinerary_grantlee_extension.so
+lib/qt5/plugins/messageviewer/headerstyle/
 @so lib/qt5/plugins/messageviewer/headerstyle/messageviewer_briefheaderstyleplugin.so
 @so lib/qt5/plugins/messageviewer/headerstyle/messageviewer_fancyheaderstyleplugin.so
 @so lib/qt5/plugins/messageviewer/headerstyle/messageviewer_grantleeheaderstyleplugin.so
@@ -114,6 +120,10 @@ lib/qt5/plugins/webengineviewer/
 lib/qt5/plugins/webengineviewer/urlinterceptor/
 @so lib/qt5/plugins/webengineviewer/urlinterceptor/webengineviewer_adblockplugin.so
 @so lib/qt5/plugins/webengineviewer/urlinterceptor/webengineviewer_donottrackplugin.so
+lib/qt5/qml/
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/plasma/
 lib/qt5/qml/org/kde/plasma/PimCalendars/
 @so lib/qt5/qml/org/kde/plasma/PimCalendars/libpimcalendarsplugin.so
 lib/qt5/qml/org/kde/plasma/PimCalendars/qmldir
@@ -123,8 +133,10 @@ share/examples/kdepim-addons/xdg/kmail.antispamrc
 @sample ${SYSCONFDIR}/xdg/kmail.antispamrc
 share/examples/kdepim-addons/xdg/kmail.antivirusrc
 @sample ${SYSCONFDIR}/xdg/kmail.antivirusrc
+share/kconf_update/
 share/kconf_update/languagetool_kmail.upd
 share/kconf_update/webengineurlinterceptoradblock.upd
+share/kservices5/
 share/kservices5/korganizer/
 share/kservices5/korganizer/datenums.desktop
 share/kservices5/korganizer/picoftheday.desktop
@@ -480,6 +492,8 @@ share/locale/hu/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/hu/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/hu/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/hu/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/cryptopageplugin.mo
 share/locale/ia/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ia/LC_MESSAGES/importwizard_plugins.mo
@@ -565,6 +579,8 @@ share/locale/kk/LC_MESSAGES/korganizer_plugins.mo
 share/locale/kk/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/kk/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/kk/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/cryptopageplugin.mo
 share/locale/km/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/km/LC_MESSAGES/korganizer_plugins.mo
@@ -984,6 +1000,7 @@ share/locale/zh_TW/LC_MESSAGES/messageviewerplugins.mo
 share/locale/zh_TW/LC_MESSAGES/pimeventsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/webengineurlinterceptor.mo
+share/qlogging-categories5/
 share/qlogging-categories5/kdepim-addons.categories
 share/qlogging-categories5/kdepim-addons.renamecategories
 share/qtcreator/

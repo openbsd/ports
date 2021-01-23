@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/23 18:10:25 rsadowski Exp $
 
 COMMENT =	Shisen-Sho Mahjongg-like game
 DISTNAME =	kshisen-${VERSION}
@@ -10,8 +10,8 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5KDEGames KF5KDEGamesPrivate
 WANTLIB += KF5KMahjongglib KF5WidgetsAddons KF5XmlGui Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
+WANTLIB += Qt5QuickWidgets Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

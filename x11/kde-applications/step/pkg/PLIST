@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/03 16:12:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:29 rsadowski Exp $
 @pkgpath x11/kde4/step
 @bin bin/step
 share/applications/org.kde.step.desktop
@@ -69,10 +69,6 @@ share/doc/HTML/uk/step/index.cache.bz2
 share/doc/HTML/uk/step/index.docbook
 share/doc/HTML/uk/step/mainwindow.png
 share/doc/HTML/uk/step/tutorials.docbook
-share/examples/step/
-share/examples/step/xdg/
-share/examples/step/xdg/step.knsrc
-@sample ${SYSCONFDIR}/xdg/step.knsrc
 share/icons/hicolor/128x128/apps/step.png
 share/icons/hicolor/16x16/apps/step.png
 share/icons/hicolor/22x22/actions/pointer.png
@@ -103,6 +99,8 @@ share/icons/hicolor/22x22/apps/step.png
 share/icons/hicolor/32x32/apps/step.png
 share/icons/hicolor/48x48/apps/step.png
 share/icons/hicolor/64x64/apps/step.png
+share/knsrcfiles/
+share/knsrcfiles/step.knsrc
 share/kxmlgui5/
 share/kxmlgui5/step/
 share/kxmlgui5/step/stepui.rc
@@ -174,6 +172,7 @@ share/locale/nn/LC_SCRIPTS/step/
 share/locale/nn/LC_SCRIPTS/step/step.js
 share/locale/pa/LC_MESSAGES/step.mo
 share/locale/pl/LC_MESSAGES/step.mo
+share/locale/pl/LC_MESSAGES/step_objinfo_files.mo
 share/locale/pt/LC_MESSAGES/step.mo
 share/locale/pt/LC_MESSAGES/step_example_files.mo
 share/locale/pt/LC_MESSAGES/step_objinfo_files.mo
@@ -188,6 +187,7 @@ share/locale/sk/LC_MESSAGES/step.mo
 share/locale/sk/LC_MESSAGES/step_example_files.mo
 share/locale/sk/LC_MESSAGES/step_objinfo_files.mo
 share/locale/sl/LC_MESSAGES/step.mo
+share/locale/sl/LC_MESSAGES/step_objinfo_files.mo
 share/locale/sv/LC_MESSAGES/step.mo
 share/locale/sv/LC_MESSAGES/step_example_files.mo
 share/locale/sv/LC_MESSAGES/step_objinfo_files.mo
@@ -748,24 +748,6 @@ share/step/objinfo/l10n/da/spring.html
 share/step/objinfo/l10n/da/weightforce.html
 share/step/objinfo/l10n/da/world.html
 share/step/objinfo/l10n/de/
-share/step/objinfo/l10n/de/Anchor.html
-share/step/objinfo/l10n/de/Box.html
-share/step/objinfo/l10n/de/ChargedParticle.html
-share/step/objinfo/l10n/de/CoulombForce.html
-share/step/objinfo/l10n/de/Disk.html
-share/step/objinfo/l10n/de/Gas.html
-share/step/objinfo/l10n/de/GasLJForce.html
-share/step/objinfo/l10n/de/GasParticle.html
-share/step/objinfo/l10n/de/GravitationForce.html
-share/step/objinfo/l10n/de/LinearMotor.html
-share/step/objinfo/l10n/de/Meter.html
-share/step/objinfo/l10n/de/Note.html
-share/step/objinfo/l10n/de/Particle.html
-share/step/objinfo/l10n/de/Pin.html
-share/step/objinfo/l10n/de/Polygon.html
-share/step/objinfo/l10n/de/Spring.html
-share/step/objinfo/l10n/de/WeightForce.html
-share/step/objinfo/l10n/de/World.html
 share/step/objinfo/l10n/de/anchor.html
 share/step/objinfo/l10n/de/box.html
 share/step/objinfo/l10n/de/chargedparticle.html
@@ -906,17 +888,6 @@ share/step/objinfo/l10n/fr/spring.html
 share/step/objinfo/l10n/fr/weightforce.html
 share/step/objinfo/l10n/fr/world.html
 share/step/objinfo/l10n/it/
-share/step/objinfo/l10n/it/Box.html
-share/step/objinfo/l10n/it/ChargedParticle.html
-share/step/objinfo/l10n/it/Disk.html
-share/step/objinfo/l10n/it/Gas.html
-share/step/objinfo/l10n/it/GasParticle.html
-share/step/objinfo/l10n/it/Meter.html
-share/step/objinfo/l10n/it/Note.html
-share/step/objinfo/l10n/it/Particle.html
-share/step/objinfo/l10n/it/Polygon.html
-share/step/objinfo/l10n/it/Spring.html
-share/step/objinfo/l10n/it/World.html
 share/step/objinfo/l10n/it/anchor.html
 share/step/objinfo/l10n/it/box.html
 share/step/objinfo/l10n/it/chargedparticle.html
@@ -1016,6 +987,26 @@ share/step/objinfo/l10n/nl/softbody.html
 share/step/objinfo/l10n/nl/spring.html
 share/step/objinfo/l10n/nl/weightforce.html
 share/step/objinfo/l10n/nl/world.html
+share/step/objinfo/l10n/pl/
+share/step/objinfo/l10n/pl/anchor.html
+share/step/objinfo/l10n/pl/box.html
+share/step/objinfo/l10n/pl/chargedparticle.html
+share/step/objinfo/l10n/pl/coulombforce.html
+share/step/objinfo/l10n/pl/disk.html
+share/step/objinfo/l10n/pl/gas.html
+share/step/objinfo/l10n/pl/gasljforce.html
+share/step/objinfo/l10n/pl/gasparticle.html
+share/step/objinfo/l10n/pl/gravitationforce.html
+share/step/objinfo/l10n/pl/linearmotor.html
+share/step/objinfo/l10n/pl/meter.html
+share/step/objinfo/l10n/pl/note.html
+share/step/objinfo/l10n/pl/particle.html
+share/step/objinfo/l10n/pl/pin.html
+share/step/objinfo/l10n/pl/polygon.html
+share/step/objinfo/l10n/pl/softbody.html
+share/step/objinfo/l10n/pl/spring.html
+share/step/objinfo/l10n/pl/weightforce.html
+share/step/objinfo/l10n/pl/world.html
 share/step/objinfo/l10n/pt/
 share/step/objinfo/l10n/pt/anchor.html
 share/step/objinfo/l10n/pt/box.html
@@ -1096,6 +1087,26 @@ share/step/objinfo/l10n/sk/softbody.html
 share/step/objinfo/l10n/sk/spring.html
 share/step/objinfo/l10n/sk/weightforce.html
 share/step/objinfo/l10n/sk/world.html
+share/step/objinfo/l10n/sl/
+share/step/objinfo/l10n/sl/anchor.html
+share/step/objinfo/l10n/sl/box.html
+share/step/objinfo/l10n/sl/chargedparticle.html
+share/step/objinfo/l10n/sl/coulombforce.html
+share/step/objinfo/l10n/sl/disk.html
+share/step/objinfo/l10n/sl/gas.html
+share/step/objinfo/l10n/sl/gasljforce.html
+share/step/objinfo/l10n/sl/gasparticle.html
+share/step/objinfo/l10n/sl/gravitationforce.html
+share/step/objinfo/l10n/sl/linearmotor.html
+share/step/objinfo/l10n/sl/meter.html
+share/step/objinfo/l10n/sl/note.html
+share/step/objinfo/l10n/sl/particle.html
+share/step/objinfo/l10n/sl/pin.html
+share/step/objinfo/l10n/sl/polygon.html
+share/step/objinfo/l10n/sl/softbody.html
+share/step/objinfo/l10n/sl/spring.html
+share/step/objinfo/l10n/sl/weightforce.html
+share/step/objinfo/l10n/sl/world.html
 share/step/objinfo/l10n/sv/
 share/step/objinfo/l10n/sv/anchor.html
 share/step/objinfo/l10n/sv/box.html

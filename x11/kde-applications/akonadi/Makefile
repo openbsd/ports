@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/23 18:10:12 rsadowski Exp $
 
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
@@ -7,9 +7,9 @@ CATEGORIES =	databases productivity
 HOMEPAGE =	https://kontact.kde.org/
 
 SHARED_LIBS +=  KF5AkonadiAgentBase       1.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiCore            1.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiPrivate         1.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiWidgets         1.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiCore            2.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiPrivate         1.1 # 5.6
+SHARED_LIBS +=  KF5AkonadiWidgets         1.1 # 5.6
 SHARED_LIBS +=  KF5AkonadiXml             1.0 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
@@ -17,7 +17,7 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5KIOCore
 WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml c m sqlite3 xml2
+WANTLIB += Qt5Widgets Qt5Xml c lzma m sqlite3 xml2
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -63,5 +63,6 @@ LIB_DEPENDS =		databases/sqlite3 \
 CONFIGURE_ARGS =	-DDATABASE_BACKEND=SQLITE
 
 TEST_IS_INTERACTIVE =	X11
+CXXFLAGS +=         -std=c++17
 
 .include <bsd.port.mk>

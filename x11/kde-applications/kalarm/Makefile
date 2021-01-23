@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/08 20:12:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/01/23 18:10:16 rsadowski Exp $
 
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
@@ -9,15 +9,15 @@ WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5AlarmCalendar KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5CalendarUtils
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GlobalAccel KF5GuiAddons KF5Holidays
-WANTLIB += KF5I18n KF5IdentityManagement KF5ItemModels KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5MailTransport KF5MailTransportAkonadi
-WANTLIB += KF5Mime KF5Notifications KF5PimCommon KF5PimTextEdit
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml X11 c m phonon4qt5
+WANTLIB += KF5DBusAddons KF5GlobalAccel KF5GrantleeTheme KF5GuiAddons
+WANTLIB += KF5Holidays KF5I18n KF5IdentityManagement KF5IdleTime
+WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5MailTransport
+WANTLIB += KF5MailTransportAkonadi KF5Mime KF5Notifications KF5NotifyConfig
+WANTLIB += KF5PimCommon KF5PimTextEdit KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c m phonon4qt5
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -44,6 +44,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
+		devel/kf5/kidletime \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kglobalaccel \
 		devel/kf5/kguiaddons \
@@ -62,6 +63,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
 		multimedia/phonon \
+		x11/kde-applications/grantleetheme \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/kalarmcal \

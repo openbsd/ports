@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/08 20:12:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:14 rsadowski Exp $
 @conflict kdebase-<4
 include/audiocdencoder.h
 include/audiocdplugins_export.h
@@ -379,6 +379,7 @@ share/locale/zh_TW/LC_MESSAGES/kio_audiocd.mo
 share/metainfo/
 share/metainfo/org.kde.kio_audiocd.metainfo.xml
 share/qlogging-categories5/kio_audiocd.categories
+share/qlogging-categories5/kio_audiocd.renamecategories
 share/solid/
 share/solid/actions/
 share/solid/actions/solid_audiocd.desktop

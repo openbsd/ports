@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:49:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:24 rsadowski Exp $
 @conflict kdebase-<4
 @pkgpath x11/kde4/konsole
 @bin bin/konsole
@@ -66,6 +66,7 @@ share/konsole/SolarizedLight.colorscheme
 share/konsole/WhiteOnBlack.colorscheme
 share/konsole/default.keytab
 share/konsole/linux.keytab
+share/konsole/macos.keytab
 share/konsole/solaris.keytab
 share/kservices5/ServiceMenus/
 share/kservices5/ServiceMenus/konsolehere.desktop

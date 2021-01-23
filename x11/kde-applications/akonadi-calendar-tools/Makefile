@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/08 20:12:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/23 18:10:13 rsadowski Exp $
 
 COMMENT =	PIM Akonadi calendar tools
 DISTNAME =	akonadi-calendar-tools-${VERSION}
@@ -28,7 +28,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/akonadi-calendar \
-		x11/kde-applications/libkdepim \
 		x11/kde-applications/kpimtextedit \
 		x11/kde-applications/kmime \
 		x11/kde-applications/calendarsupport

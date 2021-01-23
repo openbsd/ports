@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/23 18:10:26 rsadowski Exp $
 @conflict kdegames-*
 @bin bin/ktuberling
 share/applications/org.kde.ktuberling.desktop
@@ -37,6 +37,30 @@ share/doc/HTML/et/ktuberling/
 share/doc/HTML/et/ktuberling/index.cache.bz2
 share/doc/HTML/et/ktuberling/index.docbook
 share/doc/HTML/et/ktuberling/technical-reference.docbook
+share/doc/HTML/fr/ktuberling/
+share/doc/HTML/fr/ktuberling/button-new.png
+share/doc/HTML/fr/ktuberling/button-open.png
+share/doc/HTML/fr/ktuberling/button-print.png
+share/doc/HTML/fr/ktuberling/button-redo.png
+share/doc/HTML/fr/ktuberling/button-save.png
+share/doc/HTML/fr/ktuberling/button-undo.png
+share/doc/HTML/fr/ktuberling/gameboard.png
+share/doc/HTML/fr/ktuberling/index.cache.bz2
+share/doc/HTML/fr/ktuberling/index.docbook
+share/doc/HTML/fr/ktuberling/menu-edit.png
+share/doc/HTML/fr/ktuberling/menu-game.png
+share/doc/HTML/fr/ktuberling/menu-help.png
+share/doc/HTML/fr/ktuberling/menu-settings.png
+share/doc/HTML/fr/ktuberling/menu.edit.png
+share/doc/HTML/fr/ktuberling/menu.file.png
+share/doc/HTML/fr/ktuberling/menu.game.png
+share/doc/HTML/fr/ktuberling/menu.help.png
+share/doc/HTML/fr/ktuberling/menu.option.png
+share/doc/HTML/fr/ktuberling/menu.playground.png
+share/doc/HTML/fr/ktuberling/menu.raw.png
+share/doc/HTML/fr/ktuberling/menu.speech.png
+share/doc/HTML/fr/ktuberling/technical-reference.docbook
+share/doc/HTML/fr/ktuberling/toolbar.png
 share/doc/HTML/it/ktuberling/
 share/doc/HTML/it/ktuberling/index.cache.bz2
 share/doc/HTML/it/ktuberling/index.docbook

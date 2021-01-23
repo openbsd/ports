@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/01/23 18:10:27 rsadowski Exp $
 @pkgpath x11/kde4/kmix
 @bin bin/lokalize
 share/applications/org.kde.lokalize.desktop
@@ -27,19 +27,31 @@ share/doc/HTML/es/lokalize/index.docbook
 share/doc/HTML/et/lokalize/
 share/doc/HTML/et/lokalize/index.cache.bz2
 share/doc/HTML/et/lokalize/index.docbook
+share/doc/HTML/fr/lokalize/
+share/doc/HTML/fr/lokalize/index.cache.bz2
+share/doc/HTML/fr/lokalize/index.docbook
 share/doc/HTML/id/
 share/doc/HTML/id/lokalize/
 share/doc/HTML/id/lokalize/index.cache.bz2
 share/doc/HTML/id/lokalize/index.docbook
 share/doc/HTML/it/lokalize/
+share/doc/HTML/it/lokalize/configure_shortcuts.png
+share/doc/HTML/it/lokalize/configure_toolbar.png
+share/doc/HTML/it/lokalize/default_editor_lokalize.png
+share/doc/HTML/it/lokalize/glossary.png
 share/doc/HTML/it/lokalize/index.cache.bz2
 share/doc/HTML/it/lokalize/index.docbook
+share/doc/HTML/it/lokalize/original-diff.png
+share/doc/HTML/it/lokalize/project_overview.png
+share/doc/HTML/it/lokalize/sync.png
+share/doc/HTML/it/lokalize/tmview.png
 share/doc/HTML/nl/lokalize/
 share/doc/HTML/nl/lokalize/index.cache.bz2
 share/doc/HTML/nl/lokalize/index.docbook
 share/doc/HTML/pt/lokalize/
 share/doc/HTML/pt/lokalize/index.cache.bz2
 share/doc/HTML/pt/lokalize/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/lokalize/
 share/doc/HTML/pt_BR/lokalize/index.cache.bz2
 share/doc/HTML/pt_BR/lokalize/index.docbook
@@ -68,6 +80,7 @@ share/icons/hicolor/128x128/apps/lokalize.png
 share/icons/hicolor/32x32/apps/lokalize.png
 share/icons/hicolor/64x64/apps/lokalize.png
 share/icons/hicolor/scalable/apps/lokalize.svgz
+share/knotifications5/
 share/knotifications5/lokalize.notifyrc
 share/kxmlgui5/
 share/kxmlgui5/lokalize/
@@ -295,10 +308,6 @@ share/lokalize/scripts/find-gui-text.sh
 share/lokalize/scripts/msgmerge.py
 share/lokalize/scripts/msgmerge.rc
 share/lokalize/scripts/odf/
-share/lokalize/scripts/odf/${MODPY_PYCACHE}/
-share/lokalize/scripts/odf/${MODPY_PYCACHE}xliff2odf-standalone.${MODPY_PYC_MAGIC_TAG}pyc
-share/lokalize/scripts/odf/${MODPY_PYCACHE}xliff2odf.${MODPY_PYC_MAGIC_TAG}pyc
-share/lokalize/scripts/odf/${MODPY_PYCACHE}xliffmerge.${MODPY_PYC_MAGIC_TAG}pyc
 share/lokalize/scripts/odf/xliff2odf-standalone.py
 share/lokalize/scripts/odf/xliff2odf.py
 share/lokalize/scripts/odf/xliff2odf.rc

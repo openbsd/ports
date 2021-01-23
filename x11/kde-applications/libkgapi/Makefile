@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/23 18:10:27 rsadowski Exp $
 
 COMMENT =	KDE-based library for accessing various Google services
 DISTNAME =	libkgapi-${VERSION}
 CATEGORIES =	www devel
 
-SHARED_LIBS +=  KPimGAPIBlogger       1.0 # 5.13.3
-SHARED_LIBS +=  KPimGAPICalendar      1.0 # 5.13.3
-SHARED_LIBS +=  KPimGAPIContacts      1.0 # 5.13.3
-SHARED_LIBS +=  KPimGAPICore          1.0 # 5.13.3
-SHARED_LIBS +=  KPimGAPIDrive         1.0 # 5.13.3
-SHARED_LIBS +=  KPimGAPILatitude      1.0 # 5.13.3
-SHARED_LIBS +=  KPimGAPIMaps          1.0 # 5.13.3
-SHARED_LIBS +=  KPimGAPITasks         1.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPIBlogger       2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPICalendar      2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPIContacts      2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPICore          2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPIDrive         2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPILatitude      2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPIMaps          2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPITasks         2.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CalendarCore KF5Completion KF5ConfigCore
 WANTLIB += KF5Contacts KF5CoreAddons KF5JobWidgets KF5KIOCore

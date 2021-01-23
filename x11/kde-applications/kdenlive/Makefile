@@ -1,6 +1,6 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.16 2021/01/23 18:10:18 rsadowski Exp $
 
-#Qt5Webkit
+# Qt5WebEngine
 USE_WXNEEDED =	Yes
 
 COMMENT =	non-linear video editor for KDE
@@ -17,8 +17,9 @@ WANTLIB += KF5NewStuffCore KF5Notifications KF5NotifyConfig KF5Package
 WANTLIB += KF5Purpose KF5PurposeWidgets KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Qml Qt5Quick Qt5QuickControls2 Qt5QuickWidgets
-WANTLIB += Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
+WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickControls2 Qt5QuickWidgets Qt5Svg Qt5WebChannel
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
 WANTLIB += c m mlt mlt++ rttr_core
 
 MODKDE5_DESKTOP_FILE = yes
@@ -68,10 +69,10 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/rttr \
 		multimedia/mlt,-main \
 		x11/qt5/qtdeclarative \
-		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtmultimedia \
+		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtsvg \
-		x11/qt5/qtwebkit
+		x11/qt5/qtwebengine
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes
 

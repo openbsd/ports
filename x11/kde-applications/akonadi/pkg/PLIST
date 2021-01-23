@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/03 16:12:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:12 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath productivity/akonadi
 @bin bin/akonadi2xml
@@ -307,6 +307,7 @@ include/KF5/akonadi/abstractsearchplugin.h
 include/KF5/akonadi/private/
 include/KF5/akonadi/private/akonadiprivate_export.h
 include/KF5/akonadi/private/capabilities_p.h
+include/KF5/akonadi/private/compressionstream_p.h
 include/KF5/akonadi/private/dbus_p.h
 include/KF5/akonadi/private/externalpartstorage_p.h
 include/KF5/akonadi/private/imapparser_p.h

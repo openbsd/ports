@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:21 rsadowski Exp $
 include/KF5/KIMAP/
 include/KF5/KIMAP/KIMAP/
 include/KF5/KIMAP/KIMAP/Acl
@@ -10,6 +10,7 @@ include/KF5/KIMAP/KIMAP/CopyJob
 include/KF5/KIMAP/KIMAP/CreateJob
 include/KF5/KIMAP/KIMAP/DeleteAclJob
 include/KF5/KIMAP/KIMAP/DeleteJob
+include/KF5/KIMAP/KIMAP/EnableJob
 include/KF5/KIMAP/KIMAP/ExpungeJob
 include/KF5/KIMAP/KIMAP/FetchJob
 include/KF5/KIMAP/KIMAP/GetAclJob
@@ -52,6 +53,7 @@ include/KF5/KIMAP/kimap/CopyJob
 include/KF5/KIMAP/kimap/CreateJob
 include/KF5/KIMAP/kimap/DeleteAclJob
 include/KF5/KIMAP/kimap/DeleteJob
+include/KF5/KIMAP/kimap/EnableJob
 include/KF5/KIMAP/kimap/ExpungeJob
 include/KF5/KIMAP/kimap/FetchJob
 include/KF5/KIMAP/kimap/GetAclJob
@@ -93,6 +95,7 @@ include/KF5/KIMAP/kimap/copyjob.h
 include/KF5/KIMAP/kimap/createjob.h
 include/KF5/KIMAP/kimap/deleteacljob.h
 include/KF5/KIMAP/kimap/deletejob.h
+include/KF5/KIMAP/kimap/enablejob.h
 include/KF5/KIMAP/kimap/expungejob.h
 include/KF5/KIMAP/kimap/fetchjob.h
 include/KF5/KIMAP/kimap/getacljob.h

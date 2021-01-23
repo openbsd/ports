@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 04:59:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/23 18:10:22 rsadowski Exp $
 @bin bin/accountwizard
 @bin bin/ispdb
 @so lib/qt5/plugins/accountwizard_plugin.so
@@ -68,6 +68,7 @@ share/locale/nds/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/nl/LC_MESSAGES/accountwizard.mo
 share/locale/nl/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/nn/LC_MESSAGES/accountwizard.mo
+share/locale/nn/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/pa/LC_MESSAGES/accountwizard.mo
 share/locale/pl/LC_MESSAGES/accountwizard.mo
 share/locale/pl/LC_MESSAGES/accountwizard_tine20.mo

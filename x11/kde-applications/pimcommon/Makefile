@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/08 20:12:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:29 rsadowski Exp $
 
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5PimCommon              2.0 # 5.13.3
-SHARED_LIBS +=  KF5PimCommonAkonadi       2.0 # 5.13.3
+SHARED_LIBS +=  KF5PimCommon              2.1 # 5.13.3
+SHARED_LIBS +=  KF5PimCommonAkonadi       3.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiSearchPIM KF5AkonadiWidgets KF5Archive KF5Attica
 WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5I18n KF5IMAP KF5ItemModels KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Ldap
-WANTLIB += KF5Libkdepim KF5Mime KF5NewStuff KF5NewStuffCore KF5PimTextEdit
-WANTLIB += KF5Purpose KF5PurposeWidgets KF5Service KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += m
+WANTLIB += KF5GrantleeTheme KF5I18n KF5IMAP KF5ItemModels KF5ItemViews
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Ldap KF5Libkdepim KF5Mime KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5PimTextEdit KF5Purpose KF5PurposeWidgets KF5Service
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 
