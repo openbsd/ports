@@ -1,0 +1,37 @@
+$OpenBSD: patch-cipher_kdf_c,v 1.1 2021/01/23 08:55:21 ajacoutot Exp $
+
+From: Jussi Kivilinna <jussi.kivilinna@iki.fi>
+Date: Tue, 19 Jan 2021 18:04:30 +0000 (+0200)
+Subject: kdf: add missing null-terminator for self-test test-vector array
+X-Git-Url: http://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commitdiff_plain;h=c6425a5537294dfe2beaafc9105f7af4ceac677f
+kdf: add missing null-terminator for self-test test-vector array
+
+From: Jussi Kivilinna <jussi.kivilinna@iki.fi>
+Date: Tue, 19 Jan 2021 18:05:58 +0000 (+0200)
+Subject: kdf: make self-test test-vector array read-only
+X-Git-Url: http://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commitdiff_plain;h=097148bc89ec8c18b9e4795733e0f0b1ae0ecd1d
+kdf: make self-test test-vector array read-only
+* cipher/kdf.c (selftest_pbkdf2): Make 'tv[]' constant.
+
+Index: cipher/kdf.c
+--- cipher/kdf.c.orig
++++ cipher/kdf.c
+@@ -342,7 +342,7 @@ check_one (int algo, int hash_algo,
+ static gpg_err_code_t
+ selftest_pbkdf2 (int extended, selftest_report_func_t report)
+ {
+-  static struct {
++  static const struct {
+     const char *desc;
+     const char *p;   /* Passphrase.  */
+     size_t plen;     /* Length of P. */
+@@ -452,7 +452,8 @@ selftest_pbkdf2 (int extended, selftest_report_func_t 
+       "\x34\x8c\x89\xdb\xcb\xd3\x2b\x2f\x32\xd8\x14\xb8\x11\x6e\x84\xcf"
+       "\x2b\x17\x34\x7e\xbc\x18\x00\x18\x1c\x4e\x2a\x1f\xb8\xdd\x53\xe1"
+       "\xc6\x35\x51\x8c\x7d\xac\x47\xe9"
+-    }
++    },
++    { NULL }
+   };
+   const char *what;
+   const char *errtxt;
