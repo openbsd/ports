@@ -1,20 +1,11 @@
-$OpenBSD: patch-m4_input_m4,v 1.3 2019/12/25 15:50:45 ajacoutot Exp $
+$OpenBSD: patch-m4_input_m4,v 1.4 2021/01/23 09:27:49 ajacoutot Exp $
 
-- Enable libv4l on OpenBSD.
-- Don't pick up GnuTLS over OpenSSL.
+Don't pick up GnuTLS over OpenSSL.
 
 Index: m4/input.m4
 --- m4/input.m4.orig
 +++ m4/input.m4
-@@ -42,6 +42,7 @@ AC_DEFUN([XINE_INPUT_PLUGINS], [
-             ;;
-         netbsd* | openbsd*)
-             default_enable_v4l2=yes
-+            default_enable_libv4l=yes
-             ;;
-         linux-android*)
-             default_enable_gnomevfs=no
-@@ -256,8 +257,7 @@ AC_DEFUN([XINE_INPUT_PLUGINS], [
+@@ -257,8 +257,7 @@ AC_DEFUN([XINE_INPUT_PLUGINS], [
      dnl TLS support (ftps, https)
      XINE_ARG_ENABLE([tls], [Enable TLS support using gnutls (enables secure http (https) and ftp (ftps)])
      if test "x$enable_tls" != "xno"; then
