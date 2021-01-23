@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/18 18:08:13 bket Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/23 06:37:10 bket Exp $
 @conflict py-nbconvert-*
 @pkgpath devel/py-nbconvert
 bin/jupyter-nbconvert
@@ -74,10 +74,12 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/cheese.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/attachment.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/notebook2.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/pngmetadata.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/prompt_numbers.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/rawtest.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/svg.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/test_asciidoc.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/test_export.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/test_exporter.py
@@ -157,6 +159,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}clearmetadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}clearoutput.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}coalescestreams.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}convertfigures.${MODPY_PYC_MAGIC_TAG}pyc
@@ -170,6 +173,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}svg2pdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/${MODPY_PYCACHE}tagremove.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/base.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/clearmetadata.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/clearoutput.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/coalescestreams.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/convertfigures.py
@@ -188,6 +192,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}fake_kernelmanager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_clearmetadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_clearoutput.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_coalescestreams.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_PYCACHE}test_csshtmlheader.${MODPY_PYC_MAGIC_TAG}pyc
@@ -202,17 +207,29 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/fake_kernelmanager.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Check History in Memory.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Clear Output.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Disable Stdin.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Empty Cell.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Factorials.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/HelloWorld.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Inline Image.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Interrupt-IPY6.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Interrupt.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/JupyterWidgets.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Parallel Execute A.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Parallel Execute B.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/SVG.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Skip Exceptions with Cell Tags-IPY6.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Skip Exceptions with Cell Tags.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Skip Exceptions-IPY6.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Skip Exceptions.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Sleep One.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Unicode.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/UnicodePy3.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/python.png
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/update-display-id.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_clearmetadata.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_clearoutput.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_coalescestreams.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_csshtmlheader.py
@@ -234,6 +251,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/README.md
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/asciidoc.tpl
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/basic.tpl
+lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/celltags.tpl
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/full.tpl
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/mathjax.tpl
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/slides_reveal.tpl
@@ -248,6 +266,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/skeleton/null
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_bw_ipython.tplx
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_bw_python.tplx
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_ipython.tplx
+lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_jupyter.tplx
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_python.tplx
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/markdown.tpl
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/python.tpl
@@ -264,6 +283,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/${MODPY_PYCACHE}fake_exporters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/${MODPY_PYCACHE}test_nbconvertapp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/exporter_entrypoint/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/exporter_entrypoint/${MODPY_PYCACHE}/
@@ -288,9 +308,11 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook2.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook3_with_errors.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook4_jpeg.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook_jl.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook_tags.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/override.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/testimage.png
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/test_nbconvertapp.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/utils.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}/
@@ -312,8 +334,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/$
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/${MODPY_PYCACHE}test_io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/${MODPY_PYCACHE}test_pandoc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/${MODPY_PYCACHE}test_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/test_io.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/test_pandoc.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/test_version.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/version.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/__init__.py

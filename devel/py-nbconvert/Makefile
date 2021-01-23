@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:12:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/01/23 06:37:09 bket Exp $
 
 COMMENT =		converting Jupyter notebooks
 
-MODPY_EGG_VERSION =	5.3.1
+MODPY_EGG_VERSION =	5.6.1
 DISTNAME =		nbconvert-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -29,15 +28,17 @@ RUN_DEPENDS =		devel/py-entrypoints${MODPY_FLAVOR}>=0.2.2 \
 			devel/py-nbformat${MODPY_FLAVOR}>=4.4 \
 			devel/py-testpath${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
-			textproc/py-mistune${MODPY_FLAVOR}>=0.7.4 \
+			textproc/py-defusedxml${MODPY_FLAVOR} \
+			textproc/py-mistune${MODPY_FLAVOR}>=0.8.1 \
 			textproc/py-pandocfilters${MODPY_FLAVOR}>=1.4.1 \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			www/py-bleach${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR}
+			www/py-jinja2${MODPY_FLAVOR}>2.4
 TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-ipykernel${MODPY_FLAVOR} \
-			devel/py-jupyter_client${MODPY_FLAVOR}>=4.2 \
+			devel/py-jupyter_client${MODPY_FLAVOR}>=5.3.1 \
 			devel/py-nose${MODPY_FLAVOR} \
+			devel/py-pebble${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}>=4.0
 
 PORTHOME =		${WRKDIR}

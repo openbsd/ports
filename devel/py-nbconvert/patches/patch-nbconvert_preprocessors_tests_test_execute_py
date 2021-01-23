@@ -1,0 +1,15 @@
+$OpenBSD: patch-nbconvert_preprocessors_tests_test_execute_py,v 1.1 2021/01/23 06:37:10 bket Exp $
+
+Index: nbconvert/preprocessors/tests/test_execute.py
+--- nbconvert/preprocessors/tests/test_execute.py.orig
++++ nbconvert/preprocessors/tests/test_execute.py
+@@ -297,8 +297,7 @@ def test_parallel_notebooks(capfd, tmpdir):
+     captured = capfd.readouterr()
+     assert captured.err == ""
+ 
+-@pytest.mark.skipif(not PY3,
+-                    reason = "Not tested for Python 2")
++@pytest.mark.skip(reason="test hangs on python3.8")
+ def test_many_parallel_notebooks(capfd):
+     """Ensure that when many IPython kernels are run in parallel, nothing awful happens.
+ 
