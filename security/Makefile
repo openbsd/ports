@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.600 2021/01/19 05:29:55 daniel Exp $
+# $OpenBSD: Makefile,v 1.601 2021/01/23 09:41:00 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -68,6 +68,7 @@
      SUBDIR += go-crypto
      SUBDIR += go-siphash
      SUBDIR += go-ed25519
+     SUBDIR += gobuster
      SUBDIR += gopass
      SUBDIR += gpa
      SUBDIR += gpgme
