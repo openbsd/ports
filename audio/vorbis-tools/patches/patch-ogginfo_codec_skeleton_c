@@ -1,0 +1,13 @@
+$OpenBSD: patch-ogginfo_codec_skeleton_c,v 1.1 2021/01/23 22:13:14 naddy Exp $
+
+Index: ogginfo/codec_skeleton.c
+--- ogginfo/codec_skeleton.c.orig
++++ ogginfo/codec_skeleton.c
+@@ -24,6 +24,7 @@
+ 
+ #include <ogg/ogg.h>
+ 
++#include "utf8.h"
+ #include "i18n.h"
+ 
+ #include "private.h"

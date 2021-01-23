@@ -1,11 +1,12 @@
-$OpenBSD: patch-ogg123_ogg123_c,v 1.3 2012/05/15 19:51:53 naddy Exp $
+$OpenBSD: patch-ogg123_ogg123_c,v 1.4 2021/01/23 22:13:14 naddy Exp $
 
 The underlying mutex is actually guaranteed to be unlocked when we
 reach this point.  Do not try to unlock it again.
 
---- ogg123/ogg123.c.orig	Mon May 14 16:33:30 2012
-+++ ogg123/ogg123.c	Tue May 15 21:40:42 2012
-@@ -743,7 +743,6 @@ void play (char *source_string)
+Index: ogg123/ogg123.c
+--- ogg123/ogg123.c.orig
++++ ogg123/ogg123.c
+@@ -742,7 +742,6 @@ void play (const char *source_string)
  
    format->cleanup(decoder);
    transport->close(source);
