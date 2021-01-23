@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.103 2020/11/14 11:03:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2021/01/23 12:04:10 jasper Exp $
 
-ONLY_FOR_ARCHS= amd64 aarch64 powerpc64
+NOT_FOR_ARCHS =	${BE_ARCHS}
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
