@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.64 2020/03/20 16:44:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2021/01/23 09:23:08 ajacoutot Exp $
 
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.35
+DISTNAME=	GraphicsMagick-1.3.36
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	GraphicsMagick		9.0 \
-		GraphicsMagick++	5.2 \
+SHARED_LIBS=	GraphicsMagick		9.1 \
+		GraphicsMagick++	5.3 \
 		GraphicsMagickWand	4.0 \
 
 HOMEPAGE=	http://www.graphicsmagick.org/
@@ -24,7 +24,7 @@ WANTLIB += tiff webp webpmux wmflite-0.2 xcb xml2 z zstd
 
 WANTLIB += perl # uses perl ABI
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/xz \
