@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2021/01/05 20:53:18 jca Exp $
+# $OpenBSD: Makefile,v 1.50 2021/01/23 12:46:26 jasper Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -11,6 +11,7 @@ GH_TAGNAME =		Release-$V
 V =			2.2.10.0
 ROBIN_VER =		0.6.2
 DISTNAME =		openimageio-${V}
+REVISION =		0
 
 SHARED_LIBS +=		OpenImageIO		8.0 # 2.2.10
 SHARED_LIBS +=		OpenImageIO_Util	4.0 # 2.2.10
