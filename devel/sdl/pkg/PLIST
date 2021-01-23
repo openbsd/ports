@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2015/05/22 11:31:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/01/23 17:52:00 thfr Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 @pkgpath ${BASE_PKGPATH},caca
 @pkgpath ${BASE_PKGPATH},esd
@@ -37,10 +37,10 @@ include/SDL/SDL_version.h
 include/SDL/SDL_video.h
 include/SDL/begin_code.h
 include/SDL/close_code.h
-lib/libSDL.a
+@static-lib lib/libSDL.a
 lib/libSDL.la
 @lib lib/libSDL.so.${LIBSDL_VERSION}
-lib/libSDLmain.a
+@static-lib lib/libSDLmain.a
 lib/libSDLmain.la
 lib/pkgconfig/sdl.pc
 @man man/man3/SDLKey.3

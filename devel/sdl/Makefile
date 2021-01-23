@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.104 2019/07/12 21:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2021/01/23 17:52:00 thfr Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.15
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	10
+REVISION=	11
 CATEGORIES=	devel
+MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
 MASTER_SITES=	${HOMEPAGE}release/
 
 SHARED_LIBS=	SDL	8.0
@@ -67,6 +68,7 @@ NO_TEST=	Yes
 pre-configure:
 	@mkdir -p ${WRKSRC}/src/audio/sndio
 	@cp ${FILESDIR}/SDL_sndioaudio.{c,h} ${WRKSRC}/src/audio/sndio
-	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} PATH=${PORTPATH} ./autogen.sh
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} PATH=${PORTPATH} \
+		./autogen.sh
 
 .include <bsd.port.mk>
