@@ -1,0 +1,66 @@
+$OpenBSD: patch-otf2bdf_c,v 1.1 2021/01/23 16:32:34 jasper Exp $
+
+Check return value of FT_Get_Sfnt_Table() to fix a NULL deref on invalid input.
+
+Index: otf2bdf.c
+--- otf2bdf.c.orig
++++ otf2bdf.c
+@@ -533,7 +533,7 @@ print_encoding_table(void)
+  * Create an XLFD name.  Assumes there is enough space in the string passed
+  * to fit a reasonably long XLFD name into, up to the 256 byte maximum.
+  */
+-static void
++static int
+ make_xlfd_name(char *name, int name_size, FT_Long awidth, int ismono)
+ {
+     FT_Long i;
+@@ -542,6 +542,9 @@ make_xlfd_name(char *name, int name_size, FT_Long awid
+     double dr, dp;
+     TT_OS2 *os2 = FT_Get_Sfnt_Table(face, ft_sfnt_os2);
+ 
++    if (!os2)
++	    return -1;
++
+     /*
+      * Default the foundry name to "FreeType" in honor of the project and
+      * because the foundry name is too difficult to automatically determine
+@@ -666,7 +669,7 @@ make_xlfd_name(char *name, int name_size, FT_Long awid
+     otf2bdf_remap_charset(&r, &e);
+     if (r != 0 && e != 0) {
+         sprintf(name, "-%s-%s", r, e);
+-        return;
++        return 0;
+     }
+ 
+     /*
+@@ -718,6 +721,8 @@ make_xlfd_name(char *name, int name_size, FT_Long awid
+             break;
+         }
+     }
++
++    return 0;
+ }
+ 
+ static int
+@@ -738,6 +743,9 @@ generate_font(FILE *out, char *iname, char *oname)
+     imetrics = face->size->metrics;
+     horizontal = FT_Get_Sfnt_Table(face, ft_sfnt_hhea);
+ 
++    if (!horizontal)
++	    return -1;
++
+     /*
+      * Clear the BBX.
+      */
+@@ -977,7 +985,10 @@ generate_font(FILE *out, char *iname, char *oname)
+     /*
+      * Generate the XLFD font name.
+      */
+-    make_xlfd_name(xlfd, sizeof(xlfd), aw, ismono);
++    if (make_xlfd_name(xlfd, sizeof(xlfd), aw, ismono) == -1) {
++	    fprintf(stderr, "%s: invalid input file\n", prog);
++	    return -1;
++    }
+ 
+     /*
+      * Start writing the font out.
