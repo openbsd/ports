@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/04/28 18:38:41 cwen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/01/23 11:44:27 jasper Exp $
 
 COMMENT=	library of optimized inner loops
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m
 
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION= 2.64
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--disable-glib
 
 # Workaround for invalid assembly code with clang

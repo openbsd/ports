@@ -1,0 +1,14 @@
+$OpenBSD: patch-m4_as-host-defines_m4,v 1.1 2021/01/23 11:44:27 jasper Exp $
+
+Index: m4/as-host-defines.m4
+--- m4/as-host-defines.m4.orig
++++ m4/as-host-defines.m4
+@@ -19,7 +19,7 @@ AC_DEFUN([AS_HOST_DEFINES],
+       HAVE_AMD64=yes
+       AC_DEFINE(HAVE_AMD64, 1, [Defined if host is amd64])
+       ;;
+-    xpowerpc|xppc|xpowerpc64|xppc64)
++    xpowerpc|xppc)
+       HAVE_POWERPC=yes
+       AC_DEFINE(HAVE_POWERPC, 1, [Defined if host is powerpc])
+       ;;
