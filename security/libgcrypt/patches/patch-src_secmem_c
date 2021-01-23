@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_secmem_c,v 1.6 2017/12/14 14:30:22 ajacoutot Exp $
+$OpenBSD: patch-src_secmem_c,v 1.7 2021/01/23 07:15:01 ajacoutot Exp $
 
 Our swap is encrypted by default
 (synced with gnupg/patches/patch-util_secmem_c)
@@ -15,7 +15,7 @@ Index: src/secmem.c
  
  #include "g10lib.h"
  #include "secmem.h"
-@@ -249,8 +251,24 @@ mb_get_new (pooldesc_t *pool, memblock_t *block, size_
+@@ -279,8 +281,24 @@ mb_get_new (pooldesc_t *pool, memblock_t *block, size_
  static void
  print_warn (void)
  {
