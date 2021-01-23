@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/09 07:27:57 pamela Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/01/23 23:11:13 sthen Exp $
+bin/mailsync
 bin/mw
 bin/openfile
 @man man/man1/mw.1
