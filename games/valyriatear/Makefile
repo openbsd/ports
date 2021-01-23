@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2019/09/22 21:39:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.29 2021/01/23 15:19:54 jasper Exp $
+
+NOT_FOR_ARCHS=	${BE_ARCHS}
 
 V =		1.1.0
 COMMENT =	free J-RPG game
