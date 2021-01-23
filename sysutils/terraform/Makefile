@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2021/01/09 11:27:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2021/01/23 09:45:49 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v0.14.4
+MODGO_VERSION=	v0.14.5
 DISTNAME=	terraform-${MODGO_VERSION}
 
 CATEGORIES=		sysutils net
@@ -181,7 +181,7 @@ MODGO_MODULES =	\
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.1.0 \
 	github.com/kylelemons/godebug				 v1.1.0 \
-	github.com/lib/pq					 v1.0.0 \
+	github.com/lib/pq					 v1.8.0 \
 	github.com/likexian/gokit				 v0.20.15 \
 	github.com/likexian/simplejson-go			 v0.0.0-20190502021454-d8787b4bfa0b \
 	github.com/lusis/go-artifactory				 v0.0.0-20160115162124-7e4ce345df82 \

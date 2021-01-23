@@ -424,8 +424,8 @@ SHA256 (go_modules/github.com/kr/text/@v/v0.1.0.zip) = k2OkyPHzOHo2AU3lG0d7gxoTm
 SHA256 (go_modules/github.com/kylelemons/godebug/@v/v0.0.0-20170820004349-d65d576e9348.mod) = 7/nRMre5Lc4Gh1hWGKDQzFynBz1pqx0Ybkas0FcSZ20=
 SHA256 (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.mod) = FgWHHolTMaOfWVJVnrvJEijYa4EANU+Fe1YoZuyluxM=
 SHA256 (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.zip) = 270M6ML0kyuwNwTXMCayGvEr1o1bj0eY2/EKSHorbRM=
-SHA256 (go_modules/github.com/lib/pq/@v/v1.0.0.mod) = TIrIOpiVeYUwFf3mEuZWOybLZ9G5N2SbvgoYd6wkkRQ=
-SHA256 (go_modules/github.com/lib/pq/@v/v1.0.0.zip) = iqSohw29MMixQ/5w8SHD6pF7ZIMlHROE2hsB/GxvbDA=
+SHA256 (go_modules/github.com/lib/pq/@v/v1.8.0.mod) = lMFIhoiyuYIqluE3XjIAKmUswa7nFSD2v6h77I63nAY=
+SHA256 (go_modules/github.com/lib/pq/@v/v1.8.0.zip) = iYiVZg0IS45SjSWzr2OCT6/gB6A5EatijoU9LXjRVpY=
 SHA256 (go_modules/github.com/likexian/gokit/@v/v0.0.0-20190309162924-0a377eecf7aa.mod) = n32WcJK/gKi8Y/Wgl+82AzEDxyMqZTlzaqiMM5XyZJA=
 SHA256 (go_modules/github.com/likexian/gokit/@v/v0.0.0-20190418170008-ace88ad0983b.mod) = UeiLbkEoRTAGoN6Otnm5w1IS4/VE7KS3c5lDeODawOg=
 SHA256 (go_modules/github.com/likexian/gokit/@v/v0.0.0-20190501133040-e77ea8b19cdc.mod) = aimxwlSSsv/WJhZSCbNL2c3aCWOzTf845TKoCsw2ozs=
@@ -989,7 +989,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = bfT2TH3pDi8StbfvnZU5cHD3v4bJq3P6LY/0yuc3v1k=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpCuYufPNlG+cZrfUVo=
-SHA256 (terraform-v0.14.4.zip) = zSG8YE5zF6EdfYQx45TBty+4V6HjmWPGj96wl5+d3pQ=
+SHA256 (terraform-v0.14.5.zip) = W7RTc8UXdvRdSiUP5n7NpyqWWNSFGOygXwXS43iWhr8=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1416,8 +1416,8 @@ SIZE (go_modules/github.com/kr/text/@v/v0.1.0.zip) = 12591
 SIZE (go_modules/github.com/kylelemons/godebug/@v/v0.0.0-20170820004349-d65d576e9348.mod) = 37
 SIZE (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.mod) = 46
 SIZE (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.zip) = 25634
-SIZE (go_modules/github.com/lib/pq/@v/v1.0.0.mod) = 25
-SIZE (go_modules/github.com/lib/pq/@v/v1.0.0.zip) = 109027
+SIZE (go_modules/github.com/lib/pq/@v/v1.8.0.mod) = 34
+SIZE (go_modules/github.com/lib/pq/@v/v1.8.0.zip) = 118447
 SIZE (go_modules/github.com/likexian/gokit/@v/v0.0.0-20190309162924-0a377eecf7aa.mod) = 33
 SIZE (go_modules/github.com/likexian/gokit/@v/v0.0.0-20190418170008-ace88ad0983b.mod) = 111
 SIZE (go_modules/github.com/likexian/gokit/@v/v0.0.0-20190501133040-e77ea8b19cdc.mod) = 111
@@ -1981,4 +1981,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d3
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = 113591
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
-SIZE (terraform-v0.14.4.zip) = 4101927
+SIZE (terraform-v0.14.5.zip) = 4104013
