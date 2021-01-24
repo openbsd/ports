@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2020/05/14 19:16:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2021/01/24 18:30:50 ajacoutot Exp $
 
 COMMENT=	image metadata manipulation
 
 CATEGORIES=	graphics devel
 
-DISTNAME=	exiv2-0.27.2-Source
-PKGNAME=	exiv2-0.27.2
+DISTNAME=	exiv2-0.27.3-Source
+PKGNAME=	exiv2-0.27.3
 EPOCH=		0
 
 SHARED_LIBS +=  exiv2                12.0      # 14.0
