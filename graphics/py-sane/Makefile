@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/04 14:06:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/24 18:18:45 ajacoutot Exp $
 
 COMMENT=		Python SANE module
 
-MODPY_EGG_VERSION=	2.8.3
+MODPY_EGG_VERSION=	2.9.1
 DISTNAME=		Sane-${MODPY_EGG_VERSION}
 DISTFILES=		${DISTNAME}{v${MODPY_EGG_VERSION}}.tar.gz
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		graphics
-REVISION=		3
 
 HOMEPAGE=		http://python-pillow.github.io/
 
@@ -15,7 +14,7 @@ HOMEPAGE=		http://python-pillow.github.io/
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += pthread sane ${MODPY_WANTLIB}
+WANTLIB += pthread sane
 
 MASTER_SITES=          https://github.com/python-pillow/Sane/archive/
 
@@ -23,13 +22,15 @@ FLAVORS=		python3
 FLAVOR =		python3
 
 MODULES=		lang/python
+
 SUBST_VARS=		MODPY_SITEPKG
+
+MODPY_SETUPTOOLS=	Yes
 
 RUN_DEPENDS=		graphics/py-Pillow${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 
-LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			graphics/sane-backends
+LIB_DEPENDS=		graphics/sane-backends
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py
