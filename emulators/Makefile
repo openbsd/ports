@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2020/12/16 16:54:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.108 2021/01/24 09:28:49 rsadowski Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -23,7 +23,6 @@
     SUBDIR += fuse
     SUBDIR += fuse-utils
     SUBDIR += gambatte
-    SUBDIR += gns3
     SUBDIR += gnusim8085
     SUBDIR += gr-lida
     SUBDIR += gsplus
