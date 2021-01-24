@@ -1,8 +1,17 @@
-$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.7 2021/01/20 07:28:12 robert Exp $
+$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.8 2021/01/24 07:15:04 robert Exp $
 
 Index: third_party/usrsctp/BUILD.gn
 --- third_party/usrsctp/BUILD.gn.orig
 +++ third_party/usrsctp/BUILD.gn
+@@ -12,7 +12,7 @@ config("usrsctp_config") {
+ 
+   # This is part of the public config because it's used both by usrsctp and
+   # the client (WebRTC), to determine if the length field needs populating.
+-  if (is_mac || is_ios || target_os == "freebsd") {
++  if (is_mac || is_ios || target_os == "freebsd" || is_openbsd) {
+     defines = [ "HAVE_SCONN_LEN" ]
+   }
+ }
 @@ -127,9 +127,14 @@ static_library("usrsctp") {
      "-UINET6",
    ]
