@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/06/10 07:13:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/01/24 18:43:28 ajacoutot Exp $
 @conflict gqview-*
 @pkgpath graphics/gqview
 @bin bin/geeqie
@@ -14,6 +14,7 @@ lib/geeqie/geeqie-tethered-photography
 lib/geeqie/geeqie-tethered-photography-hook-script
 @comment lib/geeqie/geeqie-ufraw
 lib/geeqie/geocode-parameters.awk
+lib/geeqie/lensID
 @man man/man1/geeqie.1
 share/applications/geeqie.desktop
 share/geeqie/
@@ -69,6 +70,8 @@ share/locale/uk/LC_MESSAGES/geeqie.mo
 share/locale/vi/LC_MESSAGES/geeqie.mo
 share/locale/zh_CN/LC_MESSAGES/geeqie.mo
 share/locale/zh_TW/LC_MESSAGES/geeqie.mo
+share/metainfo/
+share/metainfo/org.geeqie.Geeqie.appdata.xml
 share/pixmaps/
 share/pixmaps/geeqie.png
 @tag update-desktop-database

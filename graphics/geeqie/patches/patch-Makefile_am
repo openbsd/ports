@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2019/12/01 14:24:17 kirby Exp $
+$OpenBSD: patch-Makefile_am,v 1.3 2021/01/24 18:43:28 ajacoutot Exp $
 
 Index: Makefile.am
 --- Makefile.am.orig
@@ -15,10 +15,10 @@ Index: Makefile.am
  endif
  
  desktopdir = $(datadir)/applications
-@@ -36,10 +36,6 @@ dist-hook: geeqie.spec
+@@ -47,10 +47,6 @@ dist-hook: geeqie.spec
  
  DISTCLEANFILES = config.report
- CLEANFILES = $(desktop_DATA) ChangeLog.html
+ CLEANFILES = $(desktop_DATA) ChangeLog.html $(appdata_DATA)
 -
 -.PHONY: ChangeLog
 -ChangeLog.html:
