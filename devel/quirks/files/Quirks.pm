@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1150 2021/01/24 10:43:12 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1151 2021/01/24 13:53:55 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2050,7 +2050,7 @@ my $obsolete_reason = {
 	'p5-Regexp-Copy' => 0,
 	'mcollective-puppet-agent' => 28,
 	'kdepim-apps-libs' => 3,
-	'gns3' => 0,
+	'gns3' => 29,
 	'py-qt4' => 3,
 	'py-qt4-docs' => 3,
 };
@@ -2086,6 +2086,7 @@ my @msg = (
 	"outdated Qt4 application, suggest keepassxc", #26
 	"requires GUdev or GUsb", #27
 	"consider migrating MCollective agents and filters using tools like Bolt and PuppetDB's Puppet Query Language", #28
+	"unmaintained port that was blocking other changes in ports", #29
 );
 
 # ->is_base_system($handle, $state):
