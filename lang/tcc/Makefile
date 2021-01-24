@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/13 21:52:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/24 16:03:41 bcallah Exp $
 
-# armv7 backend unfinished
 # Also has a riscv target
-ONLY_FOR_ARCHS =	amd64 arm64 i386
+ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386
 
 COMMENT =	tiny C compiler
-DISTNAME =	tcc-0.9.27.20210112
+DISTNAME =	tcc-0.9.27.20210124
 CATEGORIES =	lang
 
 # 0.9.27 release pre-dates OpenBSD support; use GH_COMMIT
 GH_ACCOUNT =	TinyCC
 GH_PROJECT =	tinycc
-GH_COMMIT =	56f74f2eeb62107de736cca0c2aa38040de3333a
+GH_COMMIT =	5043268cb187b668fff575baa50a8c48a282eb46
 
 HOMEPAGE =	https://bellard.org/tcc/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
