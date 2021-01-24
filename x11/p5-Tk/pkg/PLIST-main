@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2019/11/08 21:39:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2021/01/24 18:05:47 ajacoutot Exp $
 @pkgpath x11/p5-Tk
 bin/gedi
 bin/ptked
@@ -361,6 +361,7 @@ ${P5ARCH}/Tk/pTk/tk_f.h
 ${P5ARCH}/Tk/pack.pod
 ${P5ARCH}/Tk/palette.pod
 ${P5ARCH}/Tk/place.pod
+${P5ARCH}/Tk/ppport.h
 ${P5ARCH}/Tk/prolog.ps
 ${P5ARCH}/Tk/selection.pod
 ${P5ARCH}/Tk/send.pod
@@ -384,18 +385,18 @@ ${P5ARCH}/Tk/wintext.xpm
 ${P5ARCH}/auto/Tk/
 ${P5ARCH}/auto/Tk/CancelRepeat.al
 ${P5ARCH}/auto/Tk/Canvas/
-${P5ARCH}/auto/Tk/Canvas/Canvas.so
+@so ${P5ARCH}/auto/Tk/Canvas/Canvas.so
 ${P5ARCH}/auto/Tk/Clipboard/
 ${P5ARCH}/auto/Tk/Clipboard/autosplit.ix
 ${P5ARCH}/auto/Tk/Clipboard/getSelected.al
 ${P5ARCH}/auto/Tk/Compound/
-${P5ARCH}/auto/Tk/Compound/Compound.so
+@so ${P5ARCH}/auto/Tk/Compound/Compound.so
 ${P5ARCH}/auto/Tk/EnterFocus.al
 ${P5ARCH}/auto/Tk/Entry/
-${P5ARCH}/auto/Tk/Entry/Entry.so
+@so ${P5ARCH}/auto/Tk/Entry/Entry.so
 ${P5ARCH}/auto/Tk/Error.al
 ${P5ARCH}/auto/Tk/Event/
-${P5ARCH}/auto/Tk/Event/Event.so
+@so ${P5ARCH}/auto/Tk/Event/Event.so
 ${P5ARCH}/auto/Tk/FirstMenu.al
 ${P5ARCH}/auto/Tk/FocusChildren.al
 ${P5ARCH}/auto/Tk/FocusOK.al
@@ -412,15 +413,15 @@ ${P5ARCH}/auto/Tk/Frame/queuePack.al
 ${P5ARCH}/auto/Tk/Frame/sbset.al
 ${P5ARCH}/auto/Tk/Frame/scrollbars.al
 ${P5ARCH}/auto/Tk/HList/
-${P5ARCH}/auto/Tk/HList/HList.so
+@so ${P5ARCH}/auto/Tk/HList/HList.so
 ${P5ARCH}/auto/Tk/IO/
-${P5ARCH}/auto/Tk/IO/IO.so
+@so ${P5ARCH}/auto/Tk/IO/IO.so
 ${P5ARCH}/auto/Tk/ImageNames.al
 ${P5ARCH}/auto/Tk/ImageTypes.al
 ${P5ARCH}/auto/Tk/InputO/
-${P5ARCH}/auto/Tk/InputO/InputO.so
+@so ${P5ARCH}/auto/Tk/InputO/InputO.so
 ${P5ARCH}/auto/Tk/JPEG/
-${P5ARCH}/auto/Tk/JPEG/JPEG.so
+@so ${P5ARCH}/auto/Tk/JPEG/JPEG.so
 ${P5ARCH}/auto/Tk/Listbox/
 ${P5ARCH}/auto/Tk/Listbox/AutoScan.al
 ${P5ARCH}/auto/Tk/Listbox/BeginExtend.al
@@ -439,7 +440,7 @@ ${P5ARCH}/auto/Tk/Listbox/EXTEND.al
 ${P5ARCH}/auto/Tk/Listbox/ExtendUpDown.al
 ${P5ARCH}/auto/Tk/Listbox/FETCH.al
 ${P5ARCH}/auto/Tk/Listbox/FETCHSIZE.al
-${P5ARCH}/auto/Tk/Listbox/Listbox.so
+@so ${P5ARCH}/auto/Tk/Listbox/Listbox.so
 ${P5ARCH}/auto/Tk/Listbox/Motion.al
 ${P5ARCH}/auto/Tk/Listbox/POP.al
 ${P5ARCH}/auto/Tk/Listbox/PUSH.al
@@ -458,15 +459,15 @@ ${P5ARCH}/auto/Tk/Listbox/deleteSelected.al
 ${P5ARCH}/auto/Tk/Listbox/getSelected.al
 ${P5ARCH}/auto/Tk/Listbox/xyIndex.al
 ${P5ARCH}/auto/Tk/Menubutton/
-${P5ARCH}/auto/Tk/Menubutton/Menubutton.so
+@so ${P5ARCH}/auto/Tk/Menubutton/Menubutton.so
 ${P5ARCH}/auto/Tk/Mwm/
-${P5ARCH}/auto/Tk/Mwm/Mwm.so
+@so ${P5ARCH}/auto/Tk/Mwm/Mwm.so
 ${P5ARCH}/auto/Tk/NBFrame/
-${P5ARCH}/auto/Tk/NBFrame/NBFrame.so
+@so ${P5ARCH}/auto/Tk/NBFrame/NBFrame.so
 ${P5ARCH}/auto/Tk/PNG/
-${P5ARCH}/auto/Tk/PNG/PNG.so
+@so ${P5ARCH}/auto/Tk/PNG/PNG.so
 ${P5ARCH}/auto/Tk/Pixmap/
-${P5ARCH}/auto/Tk/Pixmap/Pixmap.so
+@so ${P5ARCH}/auto/Tk/Pixmap/Pixmap.so
 ${P5ARCH}/auto/Tk/Receive.al
 ${P5ARCH}/auto/Tk/RepeatId.al
 ${P5ARCH}/auto/Tk/Scale/
@@ -479,7 +480,7 @@ ${P5ARCH}/auto/Tk/Scale/EndDrag.al
 ${P5ARCH}/auto/Tk/Scale/Enter.al
 ${P5ARCH}/auto/Tk/Scale/Increment.al
 ${P5ARCH}/auto/Tk/Scale/Leave.al
-${P5ARCH}/auto/Tk/Scale/Scale.so
+@so ${P5ARCH}/auto/Tk/Scale/Scale.so
 ${P5ARCH}/auto/Tk/Scale/autosplit.ix
 ${P5ARCH}/auto/Tk/Scrollbar/
 ${P5ARCH}/auto/Tk/Scrollbar/ButtonDown.al
@@ -493,13 +494,13 @@ ${P5ARCH}/auto/Tk/Scrollbar/ScrlByPages.al
 ${P5ARCH}/auto/Tk/Scrollbar/ScrlByUnits.al
 ${P5ARCH}/auto/Tk/Scrollbar/ScrlToPos.al
 ${P5ARCH}/auto/Tk/Scrollbar/ScrlTopBottom.al
-${P5ARCH}/auto/Tk/Scrollbar/Scrollbar.so
+@so ${P5ARCH}/auto/Tk/Scrollbar/Scrollbar.so
 ${P5ARCH}/auto/Tk/Scrollbar/Select.al
 ${P5ARCH}/auto/Tk/Scrollbar/StartDrag.al
 ${P5ARCH}/auto/Tk/Scrollbar/autosplit.ix
 ${P5ARCH}/auto/Tk/Selection.al
 ${P5ARCH}/auto/Tk/TList/
-${P5ARCH}/auto/Tk/TList/TList.so
+@so ${P5ARCH}/auto/Tk/TList/TList.so
 ${P5ARCH}/auto/Tk/Table/
 ${P5ARCH}/auto/Tk/Table/Create.al
 ${P5ARCH}/auto/Tk/Table/Posn.al
@@ -508,15 +509,15 @@ ${P5ARCH}/auto/Tk/Table/see.al
 ${P5ARCH}/auto/Tk/Table/totalColumns.al
 ${P5ARCH}/auto/Tk/Table/totalRows.al
 ${P5ARCH}/auto/Tk/Text/
-${P5ARCH}/auto/Tk/Text/Text.so
+@so ${P5ARCH}/auto/Tk/Text/Text.so
 ${P5ARCH}/auto/Tk/Text/autosplit.ix
 ${P5ARCH}/auto/Tk/TextEdit/
 ${P5ARCH}/auto/Tk/TextEdit/autosplit.ix
 ${P5ARCH}/auto/Tk/TextUndo/
 ${P5ARCH}/auto/Tk/TextUndo/autosplit.ix
 ${P5ARCH}/auto/Tk/TixGrid/
-${P5ARCH}/auto/Tk/TixGrid/TixGrid.so
-${P5ARCH}/auto/Tk/Tk.so
+@so ${P5ARCH}/auto/Tk/TixGrid/TixGrid.so
+@so ${P5ARCH}/auto/Tk/Tk.so
 ${P5ARCH}/auto/Tk/Toplevel/
 ${P5ARCH}/auto/Tk/Toplevel/FG_BindIn.al
 ${P5ARCH}/auto/Tk/Toplevel/FG_BindOut.al
@@ -541,7 +542,7 @@ ${P5ARCH}/auto/Tk/Widget/bindDump.al
 ${P5ARCH}/auto/Tk/Widget/clipboardKeysyms.al
 ${P5ARCH}/auto/Tk/Widget/pathname.al
 ${P5ARCH}/auto/Tk/WinPhoto/
-${P5ARCH}/auto/Tk/WinPhoto/WinPhoto.so
+@so ${P5ARCH}/auto/Tk/WinPhoto/WinPhoto.so
 ${P5ARCH}/auto/Tk/Wm/
 ${P5ARCH}/auto/Tk/Wm/AnchorAdjust.al
 ${P5ARCH}/auto/Tk/Wm/FullScreen.al
@@ -550,10 +551,10 @@ ${P5ARCH}/auto/Tk/Wm/Post.al
 ${P5ARCH}/auto/Tk/Wm/autosplit.ix
 ${P5ARCH}/auto/Tk/Wm/iconposition.al
 ${P5ARCH}/auto/Tk/X/
-${P5ARCH}/auto/Tk/X/X.so
+@so ${P5ARCH}/auto/Tk/X/X.so
 ${P5ARCH}/auto/Tk/X/autosplit.ix
 ${P5ARCH}/auto/Tk/Xlib/
-${P5ARCH}/auto/Tk/Xlib/Xlib.so
+@so ${P5ARCH}/auto/Tk/Xlib/Xlib.so
 ${P5ARCH}/auto/Tk/autosplit.ix
 ${P5ARCH}/auto/Tk/break.al
 ${P5ARCH}/auto/Tk/focusFollowsMouse.al
