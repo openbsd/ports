@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/11/17 20:05:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/01/24 16:08:23 ajacoutot Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 @conflict foomatic-db-gutenprint-*
 @pkgpath print/gutenprint,-foomatic
@@ -424,6 +424,8 @@ share/locale/fr/LC_MESSAGES/gutenprint.mo
 share/locale/fr/gutenprint_fr.po
 share/locale/gl/LC_MESSAGES/gutenprint.mo
 share/locale/gl/gutenprint_gl.po
+share/locale/hr/LC_MESSAGES/gutenprint.mo
+share/locale/hr/gutenprint_hr.po
 share/locale/hu/LC_MESSAGES/gutenprint.mo
 share/locale/hu/gutenprint_hu.po
 share/locale/it/LC_MESSAGES/gutenprint.mo

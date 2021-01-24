@@ -1,10 +1,22 @@
-$OpenBSD: patch-configure,v 1.12 2019/11/17 20:05:49 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.13 2021/01/24 16:08:23 ajacoutot Exp $
+
+Don't set POSIX_C_SOURCE, this interferes with BSD_VISIBLE;
+see patch-src_escputil_escputil_c
 
 Don't enforce compiler optimizations.
 
 Index: configure
 --- configure.orig
 +++ configure
+@@ -18629,7 +18629,7 @@ _ACEOF
+ 
+ if test x$ac_compiler_gnu = "xyes"; then
+ 
+-  for stp_ac_arg in -Wall -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Wwrite-strings -Werror-implicit-function-declaration -Winline -Wformat=2 -finline-limit=131072 -Wformat -Werror=format-security -D_POSIX_C_SOURCE=200809L -std=c99 ; do
++  for stp_ac_arg in -Wall -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Wwrite-strings -Werror-implicit-function-declaration -Winline -Wformat=2 -finline-limit=131072 -Wformat -Werror=format-security -std=c99 ; do
+ 
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking if ${CC} supports ${stp_ac_arg}" >&5
+ $as_echo_n "checking if ${CC} supports ${stp_ac_arg}... " >&6; }
 @@ -18731,7 +18731,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  
    else

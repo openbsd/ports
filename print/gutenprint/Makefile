@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2019/11/17 20:05:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2021/01/24 16:08:23 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
-V=			5.3.3
+V=			5.3.4
 DISTNAME=		gutenprint-${V}
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,9 +21,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += avahi-client avahi-common c cups curses dbus-1 ffi
-WANTLIB += gmp gnutls hogweed iconv idn2 intl m nettle p11-kit
-WANTLIB += pthread readline tasn1 unistring usb-1.0 z
+WANTLIB += avahi-client avahi-common c cups curses dbus-1 gmp
+WANTLIB += gnutls hogweed iconv idn2 intl m nettle p11-kit pthread
+WANTLIB += readline tasn1 unistring usb-1.0 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimp-print/}
 
@@ -38,8 +38,7 @@ RUN_DEPENDS +=		print/cups-filters
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-static \
-			--enable-cups-ppds-at-top-level \
+CONFIGURE_ARGS=		--enable-cups-ppds-at-top-level \
 			--disable-translated-cups-ppds \
 			--disable-libgutenprintui2 \
 			--with-cups=${LOCALBASE} \
@@ -55,6 +54,9 @@ MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
 FAKE_FLAGS=		cups_conf_serverroot=${PREFIX}/share/examples/gutenprint
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/gutenprintui2/plist.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
