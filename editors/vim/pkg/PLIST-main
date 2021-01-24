@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.43 2020/12/03 21:35:56 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.44 2021/01/24 15:20:07 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
-%%gtk2%%
+%%gtk3%%
 bin/ex
 bin/rview
 bin/rvim
@@ -403,6 +403,7 @@ share/vim/${P}/ftplugin/fetchmail.vim
 share/vim/${P}/ftplugin/flexwiki.vim
 share/vim/${P}/ftplugin/fortran.vim
 share/vim/${P}/ftplugin/framescript.vim
+share/vim/${P}/ftplugin/fstab.vim
 share/vim/${P}/ftplugin/fvwm.vim
 share/vim/${P}/ftplugin/gdb.vim
 share/vim/${P}/ftplugin/git.vim
@@ -520,6 +521,7 @@ share/vim/${P}/ftplugin/scss.vim
 share/vim/${P}/ftplugin/sensors.vim
 share/vim/${P}/ftplugin/services.vim
 share/vim/${P}/ftplugin/setserial.vim
+share/vim/${P}/ftplugin/sexplib.vim
 share/vim/${P}/ftplugin/sgml.vim
 share/vim/${P}/ftplugin/sh.vim
 share/vim/${P}/ftplugin/sieve.vim
@@ -604,6 +606,7 @@ share/vim/${P}/indent/docbk.vim
 share/vim/${P}/indent/dosbatch.vim
 share/vim/${P}/indent/dtd.vim
 share/vim/${P}/indent/dtrace.vim
+share/vim/${P}/indent/dune.vim
 share/vim/${P}/indent/dylan.vim
 share/vim/${P}/indent/eiffel.vim
 share/vim/${P}/indent/elm.vim
@@ -1116,6 +1119,7 @@ share/vim/${P}/syntax/fvwm2m4.vim
 share/vim/${P}/syntax/gdb.vim
 share/vim/${P}/syntax/gdmo.vim
 share/vim/${P}/syntax/gedcom.vim
+share/vim/${P}/syntax/gift.vim
 share/vim/${P}/syntax/git.vim
 share/vim/${P}/syntax/gitcommit.vim
 share/vim/${P}/syntax/gitconfig.vim
@@ -1288,6 +1292,7 @@ share/vim/${P}/syntax/objcpp.vim
 share/vim/${P}/syntax/ocaml.vim
 share/vim/${P}/syntax/occam.vim
 share/vim/${P}/syntax/omnimark.vim
+share/vim/${P}/syntax/opam.vim
 share/vim/${P}/syntax/openroad.vim
 share/vim/${P}/syntax/opl.vim
 share/vim/${P}/syntax/ora.vim
@@ -1387,6 +1392,7 @@ share/vim/${P}/syntax/sendpr.vim
 share/vim/${P}/syntax/sensors.vim
 share/vim/${P}/syntax/services.vim
 share/vim/${P}/syntax/setserial.vim
+share/vim/${P}/syntax/sexplib.vim
 share/vim/${P}/syntax/sgml.vim
 share/vim/${P}/syntax/sgmldecl.vim
 share/vim/${P}/syntax/sgmllnx.vim

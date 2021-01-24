@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.209 2020/12/27 18:24:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.210 2021/01/24 15:20:06 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # if updating, regen plists with a gui flavour so -lang isn't messed up
-V=		8.2.2230
+V=		8.2.2401
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -32,9 +32,9 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 MULTI_PACKAGES=	-main -lang
 
 # UI flavours (pick one only)
-FLAVORS+=	gtk2 gtk3 no_x11
+FLAVORS+=	gtk3 no_x11
 # others
-FLAVORS+=	lua perl python python3 ruby
+FLAVORS+=	lua perl python3 ruby
 # bump deps if changing (RUN_DEPENDS in dependent ports picks this up)
 FLAVOR?=	gtk3
 
@@ -78,16 +78,6 @@ CONFIGURE_ARGS+= --enable-perlinterp
 WANTLIB+=	perl
 .endif
 
-.if ${FLAVOR:Mpython}
-MODULES+=	lang/python
-CONFIGURE_ENV+=	vi_cv_path_python=${MODPY_BIN}
-CONFIGURE_ARGS+= --enable-pythoninterp=yes \
-		--enable-python3interp=no \
-		--with-python-config-dir=${MODPY_LIBDIR}/config
-LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	${MODPY_WANTLIB}
-.endif
-
 .if ${FLAVOR:Mpython3}
 MODULES+=	lang/python
 MODPY_MAJOR_VERSION = 3
@@ -97,14 +87,6 @@ CONFIGURE_ARGS+= --enable-python3interp=yes \
 		--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
 WANTLIB+=	${MODPY_WANTLIB}
-.endif
-
-# Some parts of vim (like python autocompletion) require a version of vim
-# compiled with "+python" or "+python3". If python2 and python3 are enabled
-# in configure, vim is compiled with "+python/dyn" and "+python3/dyn" and that
-# breaks some plugins.
-.if ${FLAVOR:Mpython} && ${FLAVOR:Mpython3}
-ERRORS=		"Fatal: You only can select one python flavor"
 .endif
 
 .if ${FLAVOR:Mruby}
@@ -122,16 +104,6 @@ CONFIGURE_ARGS+= --disable-gui \
 		--without-x
 .endif
 
-.if ${FLAVOR:Mgtk2}
-_GUISET+=	ok
-LIB_DEPENDS+=	x11/gtk+2
-CONFIGURE_ARGS+= --enable-gui="gtk2" \
-		--enable-xim \
-		--with-x
-WANTLIB += ICE SM X11 Xt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 pango-1.0
-.endif
-
 .if ${FLAVOR:Mgtk3}
 _GUISET+=	ok
 LIB_DEPENDS+=	x11/gtk+3
@@ -143,7 +115,7 @@ WANTLIB += gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
 .endif
 
 .if "${_GUISET}" != ok
-ERRORS=		"Fatal: You must select one (and only one) GUI interface: no_x11, gtk2 or gtk3"
+ERRORS=		"Fatal: You must select one (and only one) GUI interface: no_x11 or gtk3"
 .endif
 
 RUN_DEPENDS-lang=	editors/vim,-main
