@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1147 2021/01/23 12:48:37 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1148 2021/01/24 06:46:08 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2049,6 +2049,7 @@ my $obsolete_reason = {
 	'qtstyleplugins' => 3,
 	'p5-Regexp-Copy' => 0,
 	'mcollective-puppet-agent' => 28,
+	'kdepim-apps-libs' => 3,
 };
 
 # reasons for obsolete packages
