@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1543 2021/01/10 22:29:33 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1544 2021/01/24 14:38:34 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -445,8 +445,10 @@ CCACHE_ENV ?=
 CCACHE_DIR ?= ${WRKOBJDIR_${PKGPATH}}/.ccache
 MAKE_ENV += CCACHE_DIR=${CCACHE_DIR} ${CCACHE_ENV}
 CONFIGURE_ENV += CCACHE_DIR=${CCACHE_DIR}
-BUILD_DEPENDS += devel/ccache
-COMPILER_WRAPPER = ccache
+COMPILER_WRAPPER += ccache
+.  if !exists(${LOCALBASE}/bin/ccache)
+ERRORS += "Fatal: USE_CCACHE is set, but ccache is not installed."
+.  endif
 .endif
 
 # by default, installation (fake) does not need -jN.
