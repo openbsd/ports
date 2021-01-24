@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_system_hpp,v 1.1 2021/01/24 15:25:01 sthen Exp $
+
+The (experimental, as of 4.1) inode cache requires pthread_mutexattr_setpshared.
+
+Index: src/system.hpp
+--- src/system.hpp.orig
++++ src/system.hpp
+@@ -172,7 +172,7 @@ DLLIMPORT extern char** environ;
+ #  define O_BINARY 0
+ #endif
+ 
+-#ifdef HAVE_SYS_MMAN_H
++#if defined(HAVE_SYS_MMAN_H) && defined(HAVE_PTHREAD_MUTEXATTR_SETPSHARED)
+ #  define INODE_CACHE_SUPPORTED
+ #endif
+ 

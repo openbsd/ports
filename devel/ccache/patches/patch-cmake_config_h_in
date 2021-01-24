@@ -1,0 +1,27 @@
+$OpenBSD: patch-cmake_config_h_in,v 1.1 2021/01/24 15:25:01 sthen Exp $
+
+Fix up ctypes.
+The (experimental, as of 4.1) inode cache requires pthread_mutexattr_setpshared.
+
+Index: cmake/config.h.in
+--- cmake/config.h.in.orig
++++ cmake/config.h.in
+@@ -32,7 +32,7 @@
+ 
+ #if defined(__SunOS_5_8) || defined(__SunOS_5_9) || defined(__SunOS_5_10)
+ #  define _XOPEN_SOURCE 500
+-#elif !defined(__SunOS_5_11) && !defined(__APPLE__)
++#elif !defined(__SunOS_5_11) && !defined(__APPLE__) && !defined(__OpenBSD__)
+ #  define _XOPEN_SOURCE
+ #endif
+ 
+@@ -88,6 +88,9 @@
+ 
+ // Define if you have the "posix_fallocate.
+ #cmakedefine HAVE_POSIX_FALLOCATE
++
++// Define if you have the "pthread_mutexattr_setpshared" function.
++#cmakedefine HAVE_PTHREAD_MUTEXATTR_SETPSHARED
+ 
+ // Define if you have the <pwd.h> header file.
+ #cmakedefine HAVE_PWD_H
