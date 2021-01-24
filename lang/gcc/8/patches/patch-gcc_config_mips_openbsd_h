@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.2 2019/05/20 14:59:05 pascal Exp $
+$OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.3 2021/01/24 04:41:50 gkoehler Exp $
 Index: gcc/config/mips/openbsd.h
 --- gcc/config/mips/openbsd.h.orig
 +++ gcc/config/mips/openbsd.h
@@ -142,7 +142,7 @@ Index: gcc/config/mips/openbsd.h
 +   %{!static:-Bdynamic} \
 +   %{rdynamic:-export-dynamic} \
 +   %{assert*} \
-+   %{!shared:%{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}}"
++   %{!static:-dynamic-linker /usr/libexec/ld.so}"
 +
 +/* As an elf system, we need crtbegin/crtend stuff.  */
 +#undef STARTFILE_SPEC

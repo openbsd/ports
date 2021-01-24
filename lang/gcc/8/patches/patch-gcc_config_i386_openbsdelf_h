@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.3 2020/08/08 16:48:48 sthen Exp $
+$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.4 2021/01/24 04:41:50 gkoehler Exp $
 
 Index: gcc/config/i386/openbsdelf.h
 --- gcc/config/i386/openbsdelf.h.orig
@@ -10,8 +10,8 @@ Index: gcc/config/i386/openbsdelf.h
 +   %{rdynamic:-export-dynamic} \
     %{assert*} \
 -   -dynamic-linker /usr/libexec/ld.so"
-+   %{!shared:%{!-dynamic-linker:-dynamic-linker /usr/libexec/ld.so}} \
-+   -L/usr/lib"
++   %{!static:-dynamic-linker /usr/libexec/ld.so} \
++   %{!nostdlib:-L/usr/lib}"
  
  #undef STARTFILE_SPEC
 -#define STARTFILE_SPEC "\

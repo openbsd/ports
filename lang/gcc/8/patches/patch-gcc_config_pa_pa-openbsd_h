@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_pa_pa-openbsd_h,v 1.2 2019/05/20 14:59:05 pascal Exp $
+$OpenBSD: patch-gcc_config_pa_pa-openbsd_h,v 1.3 2021/01/24 04:41:51 gkoehler Exp $
 Index: gcc/config/pa/pa-openbsd.h
 --- gcc/config/pa/pa-openbsd.h.orig
 +++ gcc/config/pa/pa-openbsd.h
@@ -9,7 +9,7 @@ Index: gcc/config/pa/pa-openbsd.h
 +   %{rdynamic:-export-dynamic} \
     %{assert*} \
 -   -dynamic-linker /usr/libexec/ld.so"
-+   %{!shared:%{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}}"
++   %{!static:-dynamic-linker /usr/libexec/ld.so}"
  
  #undef STARTFILE_SPEC
  #define STARTFILE_SPEC "\

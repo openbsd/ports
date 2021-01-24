@@ -1,7 +1,8 @@
-$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
---- gcc/config/rs6000/openbsd.h.orig	Fri Nov 15 12:47:25 2013
-+++ gcc/config/rs6000/openbsd.h	Fri Nov 15 12:49:07 2013
-@@ -0,0 +1,129 @@
+$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.2 2021/01/24 04:41:51 gkoehler Exp $
+Index: gcc/config/rs6000/openbsd.h
+--- gcc/config/rs6000/openbsd.h.orig
++++ gcc/config/rs6000/openbsd.h
+@@ -0,0 +1,132 @@
 +/* Configuration file for an rs6000 OpenBSD target.
 +   Copyright (C) 1999 Free Software Foundation, Inc.
 +
@@ -63,12 +64,15 @@ $OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2019/01/04 15:50:39 pascal
 +#define CPP_OS_DEFAULT_SPEC "%(cpp_os_openbsd)"
 +
 +#undef LINK_SPEC
-+#define LINK_SPEC "%{shared:-shared} \
-+  %{!shared: \
-+    %{!static: \
-+      %{rdynamic:-export-dynamic} \
-+      %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}} \
-+    %{static:-static}}"
++#define LINK_SPEC \
++  "%{!shared:%{!nostdlib:%{!r:%{!e*:-e __start}}}} \
++   %{shared:-shared} %{R*} \
++   %{static:-Bstatic} \
++   %{!static:-Bdynamic} \
++   %{rdynamic:-export-dynamic} \
++   %{assert*} \
++   %{!static:-dynamic-linker /usr/libexec/ld.so} \
++   %{!nostdlib:-L/usr/lib}"
 +
 +#undef	LIB_DEFAULT_SPEC
 +#define LIB_DEFAULT_SPEC "%(lib_openbsd)"
