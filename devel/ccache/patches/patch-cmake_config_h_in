@@ -1,7 +1,9 @@
-$OpenBSD: patch-cmake_config_h_in,v 1.1 2021/01/24 15:25:01 sthen Exp $
+$OpenBSD: patch-cmake_config_h_in,v 1.2 2021/01/25 11:09:22 sthen Exp $
+
+The (experimental, as of 4.1) inode cache requires pthread_mutexattr_setpshared.
+https://github.com/ccache/ccache/pull/791
 
 Fix up ctypes.
-The (experimental, as of 4.1) inode cache requires pthread_mutexattr_setpshared.
 
 Index: cmake/config.h.in
 --- cmake/config.h.in.orig
