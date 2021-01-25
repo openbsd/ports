@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.288 2021/01/16 21:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.289 2021/01/25 12:52:20 sthen Exp $
 
 VERSION =		4.9.18
 DISTNAME =		samba-${VERSION}
@@ -21,8 +21,8 @@ PKG_ARCH-docs =		*
 LDB_V =			1.4.8
 TEVENT_V =		0.9.37
 
-REVISION-ldb =		1
-REVISION-main =		0
+REVISION-ldb =		2
+REVISION-main =		1
 REVISION-tevent =	0
 
 SHARED_LIBS =		asn1-samba4		0.0 \
@@ -112,8 +112,8 @@ BUILD_DEPENDS =		devel/cmocka \
 			textproc/docbook-xsl \
 			x11/dbus
 
-RUN_DEPENDS-main =	net/py2-dnspython
-
+RUN_DEPENDS-main =	net/py2-dnspython \
+			databases/tdb,-python
 RUN_DEPENDS-docs =
 
 LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
