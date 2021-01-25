@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/11/07 22:13:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/01/25 14:01:52 sthen Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -27,7 +27,7 @@ PERMIT_PACKAGE=	Yes
 MULTI_PACKAGES=		-main -utils
 
 MODULES=		lang/php
-BUILD_DEPENDS=		${_MODPHP_BUILD_DEPENDS}
+MODPHP_BUILDDEP=	Yes
 RUN_DEPENDS-main=	www/pear,-utils
 
 # Most of pear has to live in /var/www where php-fpm is typically chroot'ed.
@@ -36,7 +36,7 @@ PREFIX-utils=	/usr/local
 
 NO_TEST=	Yes
 
-BUILD_DEPENDS=	devel/p5-Expect
+BUILD_DEPENDS+=	devel/p5-Expect
 SUBST_VARS=	MODPHP_BIN
 
 do-extract:

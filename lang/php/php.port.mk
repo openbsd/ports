@@ -1,4 +1,4 @@
-# $OpenBSD: php.port.mk,v 1.29 2020/04/21 20:38:31 sthen Exp $
+# $OpenBSD: php.port.mk,v 1.30 2021/01/25 14:01:51 sthen Exp $
 
 CATEGORIES+=		lang/php
 
@@ -21,7 +21,7 @@ MODPHP_LIB_DEPENDS=	${MODPHPSPEC}:lang/php/${MODPHP_VERSION}
 MODPHP_WANTLIB =	php${MODPHP_VERSION}
 _MODPHP_BUILD_DEPENDS=	${MODPHPSPEC}:lang/php/${MODPHP_VERSION}
 
-MODPHP_BUILDDEP?=	Yes
+MODPHP_BUILDDEP?=	No
 MODPHP_RUNDEP?=		Yes
 
 .if ${NO_BUILD:L} == "no" && ${MODPHP_BUILDDEP:L} == "yes"

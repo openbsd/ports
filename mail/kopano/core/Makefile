@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2020/12/21 15:00:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2021/01/25 14:01:51 sthen Exp $
 
 # undefined ref's to libicon*, libintl* with ld.bfd
 ONLY_FOR_ARCHS=	${LLD_ARCHS}
@@ -36,6 +36,7 @@ MODULES=	lang/python \
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPHP_DO_SAMPLE=mapi
+MODPHP_BUILDDEP=Yes
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 

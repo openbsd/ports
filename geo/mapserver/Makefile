@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2020/12/09 07:40:52 landry Exp $
+# $OpenBSD: Makefile,v 1.77 2021/01/25 14:01:51 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
@@ -32,6 +32,7 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/php lang/python devel/cmake
+MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
 MODPY_SETUPTOOLS=	Yes
 MODPY_EGG_VERSION=	${V}
