@@ -1,0 +1,29 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/01/25 19:09:16 cwen Exp $
+
+Hunk#1: Don't run ccache unconditionally
+Hunk#2: Don't build with -Werror
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -5,11 +5,6 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9"
+     CACHE STRING "Minimum macOS deployment version"
+ )
+ 
+-find_program(CCACHE_PROGRAM ccache)
+-if(CCACHE_PROGRAM)
+-    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
+-endif()
+-
+ project(firewallbuilder LANGUAGES CXX C)
+ 
+ ### Version variables and include file
+@@ -45,7 +40,7 @@ endif()
+ set(CMAKE_CXX_STANDARD 11)
+ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ set(CXX_DEFAULT_FLAGS # clang/GCC warnings
+-	$<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:-Wall;-Wextra;-Werror;-Wno-overloaded-virtual>
++	$<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:-Wall;-Wextra;-Wno-overloaded-virtual>
+                          # MSVC warnings
+     $<$<CXX_COMPILER_ID:MSVC>:/WX;/W4>)
+ 

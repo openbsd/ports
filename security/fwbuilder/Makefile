@@ -1,76 +1,58 @@
-# $OpenBSD: Makefile,v 1.45 2020/06/09 07:14:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2021/01/25 19:09:16 cwen Exp $
 
 COMMENT =	firewall GUI
-DISTNAME =	fwbuilder-5.1.0.3599
-CATEGORIES =	net security
-REVISION =	8
 
-HOMEPAGE =	http://www.fwbuilder.org/
+V =		6.0.0
+# We need to have ${LOCALBASE}/share/* directories matching with our own
+# versioning, see CONFIGURE_ARGS and patches/patch-cmake_VERSION_cmake as well.
+RC =		rc1
+GH_ACCOUNT =	fwbuilder
+GH_PROJECT =	fwbuilder
+GH_TAGNAME =	v${V}-${RC}
+DISTNAME =	${GH_PROJECT}-${V}${RC}
+
+CATEGORIES =	net security
 
 # GPLv2+ mostly, some code under BSD-like
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto iconv m netsnmp QtGui QtNetwork
-WANTLIB += lzma pthread ${COMPILER_LIBCXX} util xml2 xslt z
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += c crypto m netsnmp util xml2 xslt z
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
+MODULES =	devel/cmake \
+		x11/qt5
 
 # .orig produces too much spam in tests directories
-PATCHORIG =		.ports.orig
+PATCHORIG =	.orig.port
 
-AUTOMAKE_VERSION =	1.10
-AUTOCONF_VERSION =	2.63
-AUTORECONF =		sh autogen.sh
+LIB_DEPENDS =	net/net-snmp \
+		textproc/libxml \
+		textproc/libxslt \
+		x11/qt5/qtbase
 
-CONFIGURE_STYLE =	autoreconf
-
-BUILD_DEPENDS +=devel/cppunit
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-COPTS =		${DEBUG}
-
-CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \
-			--with-templatedir=${TRUEPREFIX}/share/fwbuilder \
-			--with-qtdir=${MODQT_QTDIR} \
-			--with-qmake=qmake4 \
-			--without-distcc
-MAKE_ENV +=		QMAKE=${MODQT_QTDIR}/bin/qmake \
-			CXXFLAGS="${CXXFLAGS}" \
-			COPTS="${COPTS}" \
-			LDFLAGS="${LDFLAGS}"
-
-USE_LIBTOOL =	gnu
-MODULES =	x11/qt4
-DESTDIRNAME =	INSTALL_ROOT
-LIB_DEPENDS =	converters/libiconv \
-		net/net-snmp \
-		textproc/libxml \
-		textproc/libxslt \
-		x11/qt4
-		
+# Requires itself to be installed for tests
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
-TEST_TARGET =	tests
-TEST_ENV +=		COPTS="${COPTS}"
+
+CONFIGURE_ARGS +=	-DNETSNMP_INCLUDE_DIR="${LOCALBASE}/include/net-snmp/library" \
+			-DPROJECT_VERSION_EXTRA="${RC}"
+CONFIGURE_ENV +=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+# 2 failures:
+# instDialogInstallTest: fails because it can't catch its own background process
+# FirewallDialogTest: the test seems broken because the dialog text changed
 TEST_IS_INTERACTIVE =	X11
 
-FAKE_FLAGS =	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_FILE="${INSTALL_DATA}"
+# For PLIST
+SUBST_VARS +=	DISTNAME
 
+# gunzip all manpages, it's an hell to patch.
 post-install:
-	cd ${WRKSRC}/src/res/Icons && find . -type d -mindepth 1 -maxdepth 1 | \
-		while read D; do \
-			${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/$$D; \
-			${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/$$D/apps; \
-		done
-
-	cd ${WRKSRC}/src/res/Icons && find . -name '*.png' | \
-		while read F; do \
-			${INSTALL_DATA} $$F \
-				${PREFIX}/share/icons/hicolor/`dirname $$F`/apps/`basename $$F`; \
-		done
+	ln -sf /usr/bin/gunzip ${WRKDIR}/bin/gunzip
+	cd ${PREFIX}/man/man1 && gunzip *.1.gz
 
 .include <bsd.port.mk>
