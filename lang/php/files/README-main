@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.9 2019/01/29 20:25:15 sthen Exp $
+$OpenBSD: README-main,v 1.10 2021/01/25 14:02:45 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -28,7 +28,7 @@ and start it at runtime:
     rcctl enable php${SV}_fpm
     rcctl start php${SV}_fpm
 
-php-fpm has its own configuration file, ${SYSCONFDIR}/php-fpm.conf.
+php-fpm has its own configuration file, ${SYSCONFDIR}/php-fpm.conf
 This controls how the php processes are started. The default settings
 are suitable for many standard cases, but can be changed to provide
 greater control for sites handling high loads or to provide
@@ -37,7 +37,8 @@ under different uids or in individual chroot(2) jails.
 
 Your HTTP server needs to be configured to pass requests for PHP
 resources to php-fpm. See the documentation and sample configuration.
-For nginx, an example is provided in ${LOCALBASE}/share/nginx/nginx.conf.
+For nginx, see the "FastCGI server listening on unix socket" example
+provided in ${LOCALBASE}/share/nginx/nginx.conf
 For OpenBSD base's httpd(8) you can use a configuration fragment like:
 
 	location "*.php" {
