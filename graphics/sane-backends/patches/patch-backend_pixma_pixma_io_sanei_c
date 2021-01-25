@@ -1,0 +1,18 @@
+$OpenBSD: patch-backend_pixma_pixma_io_sanei_c,v 1.1 2021/01/25 19:28:00 mglocker Exp $
+
+Issue reported upstream:
+https://gitlab.com/sane-project/backends/-/issues/412
+
+Index: backend/pixma/pixma_io_sanei.c
+--- backend/pixma/pixma_io_sanei.c.orig	Sun Aug 23 13:59:20 2020
++++ backend/pixma/pixma_io_sanei.c	Tue Jan  5 15:30:06 2021
+@@ -538,8 +538,7 @@ pixma_wait_interrupt (pixma_io_t * io, void *buf, unsi
+ #endif
+       error = map_error (sanei_usb_read_int (io->dev, buf, &count));
+     }
+-  if (error == PIXMA_EIO ||
+-      (io->interface == INT_BJNP && error == PIXMA_EOF))     /* EOF is a bjnp timeout error! */
++  if (error == PIXMA_EIO || error == PIXMA_EOF)
+     error = PIXMA_ETIMEDOUT;	/* FIXME: SANE doesn't have ETIMEDOUT!! */
+   if (error == 0)
+     error = count;
