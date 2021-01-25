@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_icesh_cc,v 1.9 2020/12/29 10:47:01 cwen Exp $
+$OpenBSD: patch-src_icesh_cc,v 1.10 2021/01/25 14:29:54 sthen Exp $
 
 Don't do this GNU extension stuff.
 
 Index: src/icesh.cc
 --- src/icesh.cc.orig
 +++ src/icesh.cc
-@@ -2199,6 +2199,8 @@ void IceSh::doSync()
+@@ -2215,6 +2215,8 @@ void IceSh::doSync()
  
  bool IceSh::colormaps()
  {
@@ -14,7 +14,7 @@ Index: src/icesh.cc
      if ( !isAction("colormaps", 0))
          return false;
  
-@@ -2207,7 +2209,7 @@ bool IceSh::colormaps()
+@@ -2223,7 +2225,7 @@ bool IceSh::colormaps()
  
      tlog("colormaps");
      running = true;
@@ -23,7 +23,7 @@ Index: src/icesh.cc
      while (running) {
          int n = 0;
          Colormap* map = XListInstalledColormaps(display, root, &n);
-@@ -2324,11 +2326,13 @@ bool IceSh::delay()
+@@ -2352,11 +2354,13 @@ void IceSh::monitors()
  
  bool IceSh::guiEvents()
  {
