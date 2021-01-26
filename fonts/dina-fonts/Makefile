@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/10/26 08:09:44 chrisz Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/26 18:18:47 rsadowski Exp $
 
 PKG_ARCH =	*
 
@@ -6,11 +6,9 @@ COMMENT =	monospace bitmap font, primarily aimed at programmers
 
 DISTNAME =	dina-fonts-2.92
 CATEGORIES =	fonts
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	https://www.dcmembers.com/jibsen/download/61/
-
-MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE = Yes
