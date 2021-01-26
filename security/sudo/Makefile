@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2021/01/26 18:19:19 millert Exp $
+# $OpenBSD: Makefile,v 1.52 2021/01/26 21:18:35 sthen Exp $
 
 COMMENT-main=	execute a command as another user
 COMMENT-python=	sudo Python plugin
 
 V=		1.9.5p2
+REVISION-main=	0
 DISTNAME=	sudo-${V}
 CATEGORIES=	security
 
@@ -38,6 +39,7 @@ PSEUDO_FLAVORS=	no_python
 FLAVORS=	gettext ldap
 FLAVOR?=
 FLAVOR_STRING=	${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS=	FLAVOR_STRING
 
 MULTI_PACKAGES=		-main -python
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
