@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.19 2020/10/24 10:56:33 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2021/01/26 18:17:40 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -40,6 +40,11 @@ ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	databases/mongodb<3.6.0 \
 		java/javaPathHelper
+
+# disable dup file check, embedded version numbers in PLISTs result
+# in many changes for each update resulting in burning cpu on all
+# cores for many minutes at a time while pkglocate runs.
+UPDATE_PLIST_ARGS = -F
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
