@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/24 18:43:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2021/01/26 16:26:21 ajacoutot Exp $
 
 COMMENT=		lightweight Gtk+3 based image viewer
 
@@ -6,6 +6,7 @@ DISTNAME=		geeqie-1.6
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
 EPOCH=			0
+REVISION=		0
 
 HOMEPAGE=		http://geeqie.org/
 
@@ -29,7 +30,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			graphics/exiftran
 
 LIB_DEPENDS=		graphics/exiv2 \
-			graphics/lcms2 \
+			graphics/openjp2 \
 			x11/gtk+3
 
 USE_GMAKE=		Yes
