@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.44 2020/11/14 17:42:12 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.45 2021/01/26 15:57:23 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
@@ -24,6 +24,9 @@ lib/${MOZILLA_PROJECT}/chrome/icons/default/addressbookWindow48.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/bookmarkproperties.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/bookmarkproperties16.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/bookmarkproperties48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/chatzilla-window.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/chatzilla-window16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/chatzilla-window48.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default128.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default16.png
@@ -56,6 +59,9 @@ lib/${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow48.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/places.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/places16.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/places48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/winInspectorMain.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/winInspectorMain16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/winInspectorMain48.png
 lib/${MOZILLA_PROJECT}/defaults/
 lib/${MOZILLA_PROJECT}/defaults/messenger/
 lib/${MOZILLA_PROJECT}/defaults/messenger/mailViews.dat
