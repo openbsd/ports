@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.537 2021/01/26 13:44:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.538 2021/01/26 15:47:11 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -6,6 +6,7 @@
      SUBDIR += ImageMagick
      SUBDIR += aalib
      SUBDIR += agg
+     SUBDIR += alembic
      SUBDIR += allegropng
      SUBDIR += animorph
      SUBDIR += ansilove
