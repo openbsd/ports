@@ -1,4 +1,4 @@
-# $OpenBSD: pecl.port.mk,v 1.17 2020/04/21 20:38:32 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.18 2021/01/26 14:34:47 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
@@ -12,10 +12,10 @@ FLAVOR ?= php73
 # flavour PFRAG files.
 MODPECL_DEFAULTV ?= "@comment "
 MODPHP_VERSION = ${FLAVOR:C/php([0-9])([0-9])/\1.\2/}
-
 .if ${FLAVOR} == php73
 MODPECL_DEFAULTV = ""
 .endif
+MODPHP_BUILDDEP = Yes
 
 CATEGORIES +=	www
 
