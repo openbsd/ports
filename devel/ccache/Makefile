@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2021/01/24 15:25:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2021/01/26 12:45:46 sthen Exp $
 
 COMMENT =	compiler cache
 
@@ -26,6 +26,7 @@ CXXFLAGS +=		-D_BSD_SOURCE -D_XOPEN_SOURCE=700
 
 COMPILER =		base-clang ports-gcc
 
+BUILD_DEPENDS =		textproc/asciidoc
 LIB_DEPENDS =		archivers/zstd
 
 # Failure in cpp1 test suite appears to be due to an embedded filename
