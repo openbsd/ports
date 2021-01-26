@@ -1,0 +1,32 @@
+$OpenBSD: patch-lib_Alembic_AbcCoreOgawa_StreamManager_cpp,v 1.1.1.1 2021/01/26 15:46:19 rsadowski Exp $
+
+ffsll not available on OpenBSD
+
+--- lib/Alembic/AbcCoreOgawa/StreamManager.cpp.orig	Tue Dec  1 15:36:46 2020
++++ lib/Alembic/AbcCoreOgawa/StreamManager.cpp	Tue Dec  1 15:37:15 2020
+@@ -45,6 +45,25 @@ namespace ALEMBIC_VERSION_NS {
+ // C++11 std::atomics version
+ #if !defined( ALEMBIC_LIB_USES_TR1 ) && __cplusplus >= 201103L
+ #define COMPARE_EXCHANGE( V, COMP, EXCH ) V.compare_exchange_weak( COMP, EXCH, std::memory_order_seq_cst, std::memory_order_seq_cst )
++
++Alembic::Util::int64_t ffsll( Alembic::Util::int64_t iValue )
++{
++    if ( !iValue )
++    {
++        return 0;
++    }
++
++    for ( Alembic::Util::int64_t bit = 0; bit < 64; ++bit )
++    {
++        if ( iValue & ( Alembic::Util::int64_t( 1 ) << bit ) )
++        {
++            return bit + 1;
++        }
++    }
++
++    return 0;
++}
++
+ // Windows
+ #elif defined( _MSC_VER )
+ #define COMPARE_EXCHANGE( V, COMP, EXCH ) (InterlockedCompareExchange64( &V, EXCH, COMP ) == COMP)
