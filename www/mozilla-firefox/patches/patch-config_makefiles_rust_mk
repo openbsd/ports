@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_makefiles_rust_mk,v 1.5 2020/12/15 16:41:12 landry Exp $
+$OpenBSD: patch-config_makefiles_rust_mk,v 1.6 2021/01/26 15:52:58 landry Exp $
 
 use lto=thin to reduce memory pressure when building gkrust
 https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
@@ -7,7 +7,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
 Index: config/makefiles/rust.mk
 --- config/makefiles/rust.mk.orig
 +++ config/makefiles/rust.mk
-@@ -67,7 +67,8 @@ ifndef MOZ_DEBUG_RUST
+@@ -70,7 +70,8 @@ ifndef MOZ_DEBUG_RUST
  # gkrust_gtest. And not when doing cross-language LTO.
  ifndef MOZ_LTO_RUST_CROSS
  ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE)))
@@ -15,5 +15,5 @@ Index: config/makefiles/rust.mk
 +cargo_rustc_flags += -Clto=thin
 +export CARGO_PROFILE_RELEASE_LTO=thin
  endif
- # Versions of rust >= 1.45 need -Cembed-bitcode=yes for all crates when
- # using -Clto.
+ # We need -Cembed-bitcode=yes for all crates when using -Clto.
+ RUSTFLAGS += -Cembed-bitcode=yes
