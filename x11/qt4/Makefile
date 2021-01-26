@@ -1,9 +1,6 @@
-# $OpenBSD: Makefile,v 1.164 2020/08/13 15:00:17 jca Exp $
-
-USE_WXNEEDED =		Yes # QtWebKit
+# $OpenBSD: Makefile,v 1.165 2021/01/26 18:29:01 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
-BROKEN-hppa =	libQtWebKit.so.3.0: undefined reference to __sync_sub_and_fetch_4
 BROKEN-arm =	invalid instruction, vmov.u32 r2, r3, s8, s9, related to FELightingNEON.cpp
 
 USE_GMAKE =		Yes
@@ -26,13 +23,13 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		23
+REVISION-main =		24
 REVISION-mysql =	8
 REVISION-postgresql =	7
 REVISION-sqlite2 =	7
 REVISION-tds =		7
-REVISION-debug =	4
-REVISION-examples =	9
+REVISION-debug =	5
+REVISION-examples =	10
 REVISION-html =		4
 
 # XXX qmake include parser is bogus
@@ -44,22 +41,15 @@ SHARED_LIBS =	Qt3Support 10.0 \
 		QtDesignerComponents 8.0 \
 		QtGui 11.0 \
 		QtNetwork 12.0 \
-		QtOpenGL 8.0 \
 		QtSql 9.0 \
 		QtXml 9.0 \
 		QtSvg 8.0 \
 		QtTest 9.0 \
 		QtDBus 4.0 \
-		QtMultimedia 1.0 \
 		QtScript 3.0 \
 		QtCLucene 2.0 \
 		QtHelp 3.0 \
-		QtXmlPatterns 2.0 \
-		QtScriptTools 1.0 \
-		QtWebKit 6.0 \
-		phonon 5.0 \
-		QtDeclarative 2.0
-
+		QtScriptTools 1.0
 
 VERSION =	4.8.7
 PKGVERSION =	4.8.7
@@ -123,6 +113,13 @@ CONFIGURE_ARGS +=	-I${LOCALBASE}/include/postgresql \
 			-I${LOCALBASE}/include/postgresql/server \
 			-plugin-sql-psql
 
+CONFIGURE_ARGS +=	-no-multimedia \
+			-no-webkit \
+			-no-phonon \
+			-no-opengl \
+			-no-xmlpatterns \
+			-no-declarative
+
 # XXX make sure those libraries gets written to libQtGui.la
 QMAKE_LIBS_GUI =	freetype SM ICE Xi Xrender Xinerama fontconfig Xext X11
 
@@ -154,7 +151,7 @@ LIB_DEPENDS =
 WANTLIB =
 RUN_DEPENDS =
 
-commonWANTLIB =		c pthread GL m ${COMPILER_LIBCXX}
+commonWANTLIB =		c pthread m ${COMPILER_LIBCXX}
 
 sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql ${COMPILER_LIBCXX} pthread
 
@@ -163,14 +160,12 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/glib2 \
 			graphics/jpeg \
 			graphics/libmng \
-			multimedia/gstreamer-0.10/plugins-base \
 			graphics/png
 WANTLIB-main =		${commonWANTLIB} iconv intl jpeg mng \
-			lcms tiff gobject-2.0 gstvideo-0.10 \
-			gstbase-0.10 gstreamer-0.10 xml2 \
-			gobject-2.0 gmodule-2.0 gstinterfaces-0.10 \
+			lcms tiff gobject-2.0 \
+			gobject-2.0 \
 			glib-2.0 gthread-2.0 \
-			gstaudio-0.10 ICE SM X11>=10 Xext Xi Xinerama \
+			ICE SM X11>=10 Xext Xi Xinerama \
 			Xrender fontconfig freetype png>=2 z \
 			sqlite3
 # QtNetwork dlopen()s ssl libs.
@@ -201,13 +196,10 @@ WANTLIB-tds =		${sqlWANTLIB} sybdb
 LIB_DEPENDS-examples =	${BUILD_PKGPATH}
 WANTLIB-examples =	${commonWANTLIB} lib/qt4/QtDesigner \
 			lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtNetwork \
-			lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtXml \
+			lib/qt4/QtSql lib/qt4/QtXml \
 			lib/qt4/QtSvg lib/qt4/QtTest \
-			lib/qt4/QtDBus \
+			lib/qt4/QtDBus lib/qt4/QtHelp \
 			lib/qt4/QtScript lib/qt4/QtScriptTools \
-			lib/qt4/QtHelp lib/qt4/phonon \
-			lib/qt4/QtMultimedia lib/qt4/QtDeclarative \
-			lib/qt4/QtWebKit lib/qt4/QtXmlPatterns \
 			ICE SM X11 Xext  Xi Xinerama Xrender fontconfig \
 			freetype
 
@@ -280,8 +272,6 @@ post-install:
 	    perl -pi.bak -e 's,-L${WRKBUILD}/lib,,g;' $$i; \
 	    rm $$i.bak; \
 	done
-	@sed -i -e s/"-lQtWebKit"/"-lQtWebKit -Wl,-z,wxneeded"/ \
-		${QT_PKGCFGDIR}/QtWebKit.pc
 	# this helps qdbuscpp2xml
 	cd ${QT_BINDIR} && ln -sf moc moc4
 .for l v in ${SHARED_LIBS}

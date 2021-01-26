@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2020/03/18 05:14:03 tb Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2021/01/26 18:29:01 rsadowski Exp $
 @conflict qt4-sqlite-*
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
@@ -24,20 +24,15 @@ include/X11/qt4/Qt/
 include/X11/qt4/Qt/Qt3Support
 include/X11/qt4/Qt/QtCore
 include/X11/qt4/Qt/QtDBus
-include/X11/qt4/Qt/QtDeclarative
 include/X11/qt4/Qt/QtGui
 include/X11/qt4/Qt/QtHelp
-include/X11/qt4/Qt/QtMultimedia
 include/X11/qt4/Qt/QtNetwork
-include/X11/qt4/Qt/QtOpenGL
 include/X11/qt4/Qt/QtScript
 include/X11/qt4/Qt/QtScriptTools
 include/X11/qt4/Qt/QtSql
 include/X11/qt4/Qt/QtSvg
 include/X11/qt4/Qt/QtTest
-include/X11/qt4/Qt/QtWebKit
 include/X11/qt4/Qt/QtXml
-include/X11/qt4/Qt/QtXmlPatterns
 include/X11/qt4/Qt/q3accel.h
 include/X11/qt4/Qt/q3action.h
 include/X11/qt4/Qt/q3asciicache.h
@@ -153,7 +148,6 @@ include/X11/qt4/Qt/qabstractfontengine_qws.h
 include/X11/qt4/Qt/qabstractitemdelegate.h
 include/X11/qt4/Qt/qabstractitemmodel.h
 include/X11/qt4/Qt/qabstractitemview.h
-include/X11/qt4/Qt/qabstractmessagehandler.h
 include/X11/qt4/Qt/qabstractnetworkcache.h
 include/X11/qt4/Qt/qabstractpagesetupdialog.h
 include/X11/qt4/Qt/qabstractprintdialog.h
@@ -165,11 +159,6 @@ include/X11/qt4/Qt/qabstractspinbox.h
 include/X11/qt4/Qt/qabstractstate.h
 include/X11/qt4/Qt/qabstracttextdocumentlayout.h
 include/X11/qt4/Qt/qabstracttransition.h
-include/X11/qt4/Qt/qabstracturiresolver.h
-include/X11/qt4/Qt/qabstractvideobuffer.h
-include/X11/qt4/Qt/qabstractvideosurface.h
-include/X11/qt4/Qt/qabstractxmlnodemodel.h
-include/X11/qt4/Qt/qabstractxmlreceiver.h
 include/X11/qt4/Qt/qaccessible.h
 include/X11/qt4/Qt/qaccessible2.h
 include/X11/qt4/Qt/qaccessiblebridge.h
@@ -209,13 +198,6 @@ include/X11/qt4/Qt/qatomic_vxworks.h
 include/X11/qt4/Qt/qatomic_windows.h
 include/X11/qt4/Qt/qatomic_windowsce.h
 include/X11/qt4/Qt/qatomic_x86_64.h
-include/X11/qt4/Qt/qaudio.h
-include/X11/qt4/Qt/qaudiodeviceinfo.h
-include/X11/qt4/Qt/qaudioengine.h
-include/X11/qt4/Qt/qaudioengineplugin.h
-include/X11/qt4/Qt/qaudioformat.h
-include/X11/qt4/Qt/qaudioinput.h
-include/X11/qt4/Qt/qaudiooutput.h
 include/X11/qt4/Qt/qauthenticator.h
 include/X11/qt4/Qt/qbasicatomic.h
 include/X11/qt4/Qt/qbasictimer.h
@@ -282,28 +264,6 @@ include/X11/qt4/Qt/qdbusservicewatcher.h
 include/X11/qt4/Qt/qdbusunixfiledescriptor.h
 include/X11/qt4/Qt/qdbusvirtualobject.h
 include/X11/qt4/Qt/qdebug.h
-include/X11/qt4/Qt/qdeclarative.h
-include/X11/qt4/Qt/qdeclarativecomponent.h
-include/X11/qt4/Qt/qdeclarativecontext.h
-include/X11/qt4/Qt/qdeclarativedebug.h
-include/X11/qt4/Qt/qdeclarativeengine.h
-include/X11/qt4/Qt/qdeclarativeerror.h
-include/X11/qt4/Qt/qdeclarativeexpression.h
-include/X11/qt4/Qt/qdeclarativeextensioninterface.h
-include/X11/qt4/Qt/qdeclarativeextensionplugin.h
-include/X11/qt4/Qt/qdeclarativeimageprovider.h
-include/X11/qt4/Qt/qdeclarativeinfo.h
-include/X11/qt4/Qt/qdeclarativeitem.h
-include/X11/qt4/Qt/qdeclarativelist.h
-include/X11/qt4/Qt/qdeclarativenetworkaccessmanagerfactory.h
-include/X11/qt4/Qt/qdeclarativeparserstatus.h
-include/X11/qt4/Qt/qdeclarativeprivate.h
-include/X11/qt4/Qt/qdeclarativeproperty.h
-include/X11/qt4/Qt/qdeclarativepropertymap.h
-include/X11/qt4/Qt/qdeclarativepropertyvalueinterceptor.h
-include/X11/qt4/Qt/qdeclarativepropertyvaluesource.h
-include/X11/qt4/Qt/qdeclarativescriptstring.h
-include/X11/qt4/Qt/qdeclarativeview.h
 include/X11/qt4/Qt/qdecoration_qws.h
 include/X11/qt4/Qt/qdecorationdefault_qws.h
 include/X11/qt4/Qt/qdecorationfactory_qws.h
@@ -362,15 +322,7 @@ include/X11/qt4/Qt/qgenericplugin_qpa.h
 include/X11/qt4/Qt/qgenericpluginfactory_qpa.h
 include/X11/qt4/Qt/qgesture.h
 include/X11/qt4/Qt/qgesturerecognizer.h
-include/X11/qt4/Qt/qgl.h
-include/X11/qt4/Qt/qglbuffer.h
-include/X11/qt4/Qt/qglcolormap.h
-include/X11/qt4/Qt/qglframebufferobject.h
-include/X11/qt4/Qt/qglfunctions.h
 include/X11/qt4/Qt/qglobal.h
-include/X11/qt4/Qt/qglpixelbuffer.h
-include/X11/qt4/Qt/qglscreen_qws.h
-include/X11/qt4/Qt/qglshaderprogram.h
 include/X11/qt4/Qt/qglyphrun.h
 include/X11/qt4/Qt/qgraphicsanchorlayout.h
 include/X11/qt4/Qt/qgraphicseffect.h
@@ -387,7 +339,6 @@ include/X11/qt4/Qt/qgraphicssvgitem.h
 include/X11/qt4/Qt/qgraphicssystemhelper_symbian.h
 include/X11/qt4/Qt/qgraphicstransform.h
 include/X11/qt4/Qt/qgraphicsview.h
-include/X11/qt4/Qt/qgraphicswebview.h
 include/X11/qt4/Qt/qgraphicswidget.h
 include/X11/qt4/Qt/qgridlayout.h
 include/X11/qt4/Qt/qgroupbox.h
@@ -605,7 +556,6 @@ include/X11/qt4/Qt/qshortcut.h
 include/X11/qt4/Qt/qsignalmapper.h
 include/X11/qt4/Qt/qsignalspy.h
 include/X11/qt4/Qt/qsignaltransition.h
-include/X11/qt4/Qt/qsimplexmlnodemodel.h
 include/X11/qt4/Qt/qsize.h
 include/X11/qt4/Qt/qsizegrip.h
 include/X11/qt4/Qt/qsizepolicy.h
@@ -614,7 +564,6 @@ include/X11/qt4/Qt/qsocketnotifier.h
 include/X11/qt4/Qt/qsortfilterproxymodel.h
 include/X11/qt4/Qt/qsound.h
 include/X11/qt4/Qt/qsoundqss_qws.h
-include/X11/qt4/Qt/qsourcelocation.h
 include/X11/qt4/Qt/qspinbox.h
 include/X11/qt4/Qt/qsplashscreen.h
 include/X11/qt4/Qt/qsplitter.h
@@ -769,24 +718,7 @@ include/X11/qt4/Qt/qvector2d.h
 include/X11/qt4/Qt/qvector3d.h
 include/X11/qt4/Qt/qvector4d.h
 include/X11/qt4/Qt/qvfbhdr.h
-include/X11/qt4/Qt/qvideoframe.h
-include/X11/qt4/Qt/qvideosurfaceformat.h
 include/X11/qt4/Qt/qwaitcondition.h
-include/X11/qt4/Qt/qwebdatabase.h
-include/X11/qt4/Qt/qwebelement.h
-include/X11/qt4/Qt/qwebframe.h
-include/X11/qt4/Qt/qwebhistory.h
-include/X11/qt4/Qt/qwebhistoryinterface.h
-include/X11/qt4/Qt/qwebinspector.h
-include/X11/qt4/Qt/qwebkitglobal.h
-include/X11/qt4/Qt/qwebkitplatformplugin.h
-include/X11/qt4/Qt/qwebkitversion.h
-include/X11/qt4/Qt/qwebpage.h
-include/X11/qt4/Qt/qwebpluginfactory.h
-include/X11/qt4/Qt/qwebscriptworld.h
-include/X11/qt4/Qt/qwebsecurityorigin.h
-include/X11/qt4/Qt/qwebsettings.h
-include/X11/qt4/Qt/qwebview.h
 include/X11/qt4/Qt/qwhatsthis.h
 include/X11/qt4/Qt/qwidget.h
 include/X11/qt4/Qt/qwidgetaction.h
@@ -814,14 +746,6 @@ include/X11/qt4/Qt/qwsutils_qws.h
 include/X11/qt4/Qt/qx11embed_x11.h
 include/X11/qt4/Qt/qx11info_x11.h
 include/X11/qt4/Qt/qxml.h
-include/X11/qt4/Qt/qxmlformatter.h
-include/X11/qt4/Qt/qxmlname.h
-include/X11/qt4/Qt/qxmlnamepool.h
-include/X11/qt4/Qt/qxmlquery.h
-include/X11/qt4/Qt/qxmlresultitems.h
-include/X11/qt4/Qt/qxmlschema.h
-include/X11/qt4/Qt/qxmlschemavalidator.h
-include/X11/qt4/Qt/qxmlserializer.h
 include/X11/qt4/Qt/qxmlstream.h
 include/X11/qt4/Qt3Support/
 include/X11/qt4/Qt3Support/Q3Accel
@@ -1612,54 +1536,6 @@ include/X11/qt4/QtDBus/qdbusserver.h
 include/X11/qt4/QtDBus/qdbusservicewatcher.h
 include/X11/qt4/QtDBus/qdbusunixfiledescriptor.h
 include/X11/qt4/QtDBus/qdbusvirtualobject.h
-include/X11/qt4/QtDeclarative/
-include/X11/qt4/QtDeclarative/QDeclarativeAttachedPropertiesFunc
-include/X11/qt4/QtDeclarative/QDeclarativeComponent
-include/X11/qt4/QtDeclarative/QDeclarativeContext
-include/X11/qt4/QtDeclarative/QDeclarativeDebuggingEnabler
-include/X11/qt4/QtDeclarative/QDeclarativeEngine
-include/X11/qt4/QtDeclarative/QDeclarativeError
-include/X11/qt4/QtDeclarative/QDeclarativeExpression
-include/X11/qt4/QtDeclarative/QDeclarativeExtensionInterface
-include/X11/qt4/QtDeclarative/QDeclarativeExtensionPlugin
-include/X11/qt4/QtDeclarative/QDeclarativeImageProvider
-include/X11/qt4/QtDeclarative/QDeclarativeInfo
-include/X11/qt4/QtDeclarative/QDeclarativeItem
-include/X11/qt4/QtDeclarative/QDeclarativeListProperty
-include/X11/qt4/QtDeclarative/QDeclarativeListReference
-include/X11/qt4/QtDeclarative/QDeclarativeNetworkAccessManagerFactory
-include/X11/qt4/QtDeclarative/QDeclarativeParserStatus
-include/X11/qt4/QtDeclarative/QDeclarativeProperties
-include/X11/qt4/QtDeclarative/QDeclarativeProperty
-include/X11/qt4/QtDeclarative/QDeclarativePropertyMap
-include/X11/qt4/QtDeclarative/QDeclarativePropertyValueInterceptor
-include/X11/qt4/QtDeclarative/QDeclarativePropertyValueSource
-include/X11/qt4/QtDeclarative/QDeclarativeScriptString
-include/X11/qt4/QtDeclarative/QDeclarativeTypeInfo
-include/X11/qt4/QtDeclarative/QDeclarativeView
-include/X11/qt4/QtDeclarative/QtDeclarative
-include/X11/qt4/QtDeclarative/qdeclarative.h
-include/X11/qt4/QtDeclarative/qdeclarativecomponent.h
-include/X11/qt4/QtDeclarative/qdeclarativecontext.h
-include/X11/qt4/QtDeclarative/qdeclarativedebug.h
-include/X11/qt4/QtDeclarative/qdeclarativeengine.h
-include/X11/qt4/QtDeclarative/qdeclarativeerror.h
-include/X11/qt4/QtDeclarative/qdeclarativeexpression.h
-include/X11/qt4/QtDeclarative/qdeclarativeextensioninterface.h
-include/X11/qt4/QtDeclarative/qdeclarativeextensionplugin.h
-include/X11/qt4/QtDeclarative/qdeclarativeimageprovider.h
-include/X11/qt4/QtDeclarative/qdeclarativeinfo.h
-include/X11/qt4/QtDeclarative/qdeclarativeitem.h
-include/X11/qt4/QtDeclarative/qdeclarativelist.h
-include/X11/qt4/QtDeclarative/qdeclarativenetworkaccessmanagerfactory.h
-include/X11/qt4/QtDeclarative/qdeclarativeparserstatus.h
-include/X11/qt4/QtDeclarative/qdeclarativeprivate.h
-include/X11/qt4/QtDeclarative/qdeclarativeproperty.h
-include/X11/qt4/QtDeclarative/qdeclarativepropertymap.h
-include/X11/qt4/QtDeclarative/qdeclarativepropertyvalueinterceptor.h
-include/X11/qt4/QtDeclarative/qdeclarativepropertyvaluesource.h
-include/X11/qt4/QtDeclarative/qdeclarativescriptstring.h
-include/X11/qt4/QtDeclarative/qdeclarativeview.h
 include/X11/qt4/QtDesigner/
 include/X11/qt4/QtDesigner/QAbstractExtensionFactory
 include/X11/qt4/QtDesigner/QAbstractExtensionManager
@@ -2609,33 +2485,6 @@ include/X11/qt4/QtHelp/qhelpindexwidget.h
 include/X11/qt4/QtHelp/qhelpsearchengine.h
 include/X11/qt4/QtHelp/qhelpsearchquerywidget.h
 include/X11/qt4/QtHelp/qhelpsearchresultwidget.h
-include/X11/qt4/QtMultimedia/
-include/X11/qt4/QtMultimedia/QAbstractAudioDeviceInfo
-include/X11/qt4/QtMultimedia/QAbstractAudioInput
-include/X11/qt4/QtMultimedia/QAbstractAudioOutput
-include/X11/qt4/QtMultimedia/QAbstractVideoBuffer
-include/X11/qt4/QtMultimedia/QAbstractVideoSurface
-include/X11/qt4/QtMultimedia/QAudio
-include/X11/qt4/QtMultimedia/QAudioDeviceInfo
-include/X11/qt4/QtMultimedia/QAudioEngineFactoryInterface
-include/X11/qt4/QtMultimedia/QAudioEnginePlugin
-include/X11/qt4/QtMultimedia/QAudioFormat
-include/X11/qt4/QtMultimedia/QAudioInput
-include/X11/qt4/QtMultimedia/QAudioOutput
-include/X11/qt4/QtMultimedia/QVideoFrame
-include/X11/qt4/QtMultimedia/QVideoSurfaceFormat
-include/X11/qt4/QtMultimedia/QtMultimedia
-include/X11/qt4/QtMultimedia/qabstractvideobuffer.h
-include/X11/qt4/QtMultimedia/qabstractvideosurface.h
-include/X11/qt4/QtMultimedia/qaudio.h
-include/X11/qt4/QtMultimedia/qaudiodeviceinfo.h
-include/X11/qt4/QtMultimedia/qaudioengine.h
-include/X11/qt4/QtMultimedia/qaudioengineplugin.h
-include/X11/qt4/QtMultimedia/qaudioformat.h
-include/X11/qt4/QtMultimedia/qaudioinput.h
-include/X11/qt4/QtMultimedia/qaudiooutput.h
-include/X11/qt4/QtMultimedia/qvideoframe.h
-include/X11/qt4/QtMultimedia/qvideosurfaceformat.h
 include/X11/qt4/QtNetwork/
 include/X11/qt4/QtNetwork/QAbstractNetworkCache
 include/X11/qt4/QtNetwork/QAbstractSocket
@@ -2713,35 +2562,6 @@ include/X11/qt4/QtNetwork/qtcpserver.h
 include/X11/qt4/QtNetwork/qtcpsocket.h
 include/X11/qt4/QtNetwork/qudpsocket.h
 include/X11/qt4/QtNetwork/qurlinfo.h
-include/X11/qt4/QtOpenGL/
-include/X11/qt4/QtOpenGL/QGL
-include/X11/qt4/QtOpenGL/QGLBuffer
-include/X11/qt4/QtOpenGL/QGLColormap
-include/X11/qt4/QtOpenGL/QGLContext
-include/X11/qt4/QtOpenGL/QGLFormat
-include/X11/qt4/QtOpenGL/QGLFramebufferObject
-include/X11/qt4/QtOpenGL/QGLFramebufferObjectFormat
-include/X11/qt4/QtOpenGL/QGLFunctions
-include/X11/qt4/QtOpenGL/QGLFunctionsPrivate
-include/X11/qt4/QtOpenGL/QGLPixelBuffer
-include/X11/qt4/QtOpenGL/QGLScreen
-include/X11/qt4/QtOpenGL/QGLScreenSurfaceFunctions
-include/X11/qt4/QtOpenGL/QGLShader
-include/X11/qt4/QtOpenGL/QGLShaderProgram
-include/X11/qt4/QtOpenGL/QGLWidget
-include/X11/qt4/QtOpenGL/QMacCompatGLenum
-include/X11/qt4/QtOpenGL/QMacCompatGLint
-include/X11/qt4/QtOpenGL/QMacCompatGLuint
-include/X11/qt4/QtOpenGL/QMacGLCompatTypes
-include/X11/qt4/QtOpenGL/QtOpenGL
-include/X11/qt4/QtOpenGL/qgl.h
-include/X11/qt4/QtOpenGL/qglbuffer.h
-include/X11/qt4/QtOpenGL/qglcolormap.h
-include/X11/qt4/QtOpenGL/qglframebufferobject.h
-include/X11/qt4/QtOpenGL/qglfunctions.h
-include/X11/qt4/QtOpenGL/qglpixelbuffer.h
-include/X11/qt4/QtOpenGL/qglscreen_qws.h
-include/X11/qt4/QtOpenGL/qglshaderprogram.h
 include/X11/qt4/QtScript/
 include/X11/qt4/QtScript/QScriptClass
 include/X11/qt4/QtScript/QScriptClassPropertyIterator
@@ -2906,48 +2726,6 @@ include/X11/qt4/QtUiTools/
 include/X11/qt4/QtUiTools/QUiLoader
 include/X11/qt4/QtUiTools/QtUiTools
 include/X11/qt4/QtUiTools/quiloader.h
-include/X11/qt4/QtWebKit/
-include/X11/qt4/QtWebKit/QGraphicsWebView
-include/X11/qt4/QtWebKit/QWebDatabase
-include/X11/qt4/QtWebKit/QWebElement
-include/X11/qt4/QtWebKit/QWebElementCollection
-include/X11/qt4/QtWebKit/QWebFrame
-include/X11/qt4/QtWebKit/QWebFullScreenVideoHandler
-include/X11/qt4/QtWebKit/QWebHapticFeedbackPlayer
-include/X11/qt4/QtWebKit/QWebHistory
-include/X11/qt4/QtWebKit/QWebHistoryInterface
-include/X11/qt4/QtWebKit/QWebHistoryItem
-include/X11/qt4/QtWebKit/QWebHitTestResult
-include/X11/qt4/QtWebKit/QWebInspector
-include/X11/qt4/QtWebKit/QWebKitPlatformPlugin
-include/X11/qt4/QtWebKit/QWebNotificationData
-include/X11/qt4/QtWebKit/QWebNotificationPresenter
-include/X11/qt4/QtWebKit/QWebPage
-include/X11/qt4/QtWebKit/QWebPluginFactory
-include/X11/qt4/QtWebKit/QWebScriptWorld
-include/X11/qt4/QtWebKit/QWebSecurityOrigin
-include/X11/qt4/QtWebKit/QWebSelectData
-include/X11/qt4/QtWebKit/QWebSelectMethod
-include/X11/qt4/QtWebKit/QWebSettings
-include/X11/qt4/QtWebKit/QWebTouchModifier
-include/X11/qt4/QtWebKit/QWebView
-include/X11/qt4/QtWebKit/QtWebKit
-include/X11/qt4/QtWebKit/qgraphicswebview.h
-include/X11/qt4/QtWebKit/qwebdatabase.h
-include/X11/qt4/QtWebKit/qwebelement.h
-include/X11/qt4/QtWebKit/qwebframe.h
-include/X11/qt4/QtWebKit/qwebhistory.h
-include/X11/qt4/QtWebKit/qwebhistoryinterface.h
-include/X11/qt4/QtWebKit/qwebinspector.h
-include/X11/qt4/QtWebKit/qwebkitglobal.h
-include/X11/qt4/QtWebKit/qwebkitplatformplugin.h
-include/X11/qt4/QtWebKit/qwebkitversion.h
-include/X11/qt4/QtWebKit/qwebpage.h
-include/X11/qt4/QtWebKit/qwebpluginfactory.h
-include/X11/qt4/QtWebKit/qwebscriptworld.h
-include/X11/qt4/QtWebKit/qwebsecurityorigin.h
-include/X11/qt4/QtWebKit/qwebsettings.h
-include/X11/qt4/QtWebKit/qwebview.h
 include/X11/qt4/QtXml/
 include/X11/qt4/QtXml/QDomAttr
 include/X11/qt4/QtXml/QDomCDATASection
@@ -2996,148 +2774,21 @@ include/X11/qt4/QtXml/QtXml
 include/X11/qt4/QtXml/qdom.h
 include/X11/qt4/QtXml/qxml.h
 include/X11/qt4/QtXml/qxmlstream.h
-include/X11/qt4/QtXmlPatterns/
-include/X11/qt4/QtXmlPatterns/QAbstractMessageHandler
-include/X11/qt4/QtXmlPatterns/QAbstractUriResolver
-include/X11/qt4/QtXmlPatterns/QAbstractXmlNodeModel
-include/X11/qt4/QtXmlPatterns/QAbstractXmlReceiver
-include/X11/qt4/QtXmlPatterns/QSimpleXmlNodeModel
-include/X11/qt4/QtXmlPatterns/QSourceLocation
-include/X11/qt4/QtXmlPatterns/QXmlFormatter
-include/X11/qt4/QtXmlPatterns/QXmlItem
-include/X11/qt4/QtXmlPatterns/QXmlName
-include/X11/qt4/QtXmlPatterns/QXmlNamePool
-include/X11/qt4/QtXmlPatterns/QXmlNodeModelIndex
-include/X11/qt4/QtXmlPatterns/QXmlQuery
-include/X11/qt4/QtXmlPatterns/QXmlResultItems
-include/X11/qt4/QtXmlPatterns/QXmlSchema
-include/X11/qt4/QtXmlPatterns/QXmlSchemaValidator
-include/X11/qt4/QtXmlPatterns/QXmlSerializer
-include/X11/qt4/QtXmlPatterns/QtXmlPatterns
-include/X11/qt4/QtXmlPatterns/qabstractmessagehandler.h
-include/X11/qt4/QtXmlPatterns/qabstracturiresolver.h
-include/X11/qt4/QtXmlPatterns/qabstractxmlnodemodel.h
-include/X11/qt4/QtXmlPatterns/qabstractxmlreceiver.h
-include/X11/qt4/QtXmlPatterns/qsimplexmlnodemodel.h
-include/X11/qt4/QtXmlPatterns/qsourcelocation.h
-include/X11/qt4/QtXmlPatterns/qxmlformatter.h
-include/X11/qt4/QtXmlPatterns/qxmlname.h
-include/X11/qt4/QtXmlPatterns/qxmlnamepool.h
-include/X11/qt4/QtXmlPatterns/qxmlquery.h
-include/X11/qt4/QtXmlPatterns/qxmlresultitems.h
-include/X11/qt4/QtXmlPatterns/qxmlschema.h
-include/X11/qt4/QtXmlPatterns/qxmlschemavalidator.h
-include/X11/qt4/QtXmlPatterns/qxmlserializer.h
-include/X11/qt4/phonon/
-include/X11/qt4/phonon/AbstractAudioOutput
-include/X11/qt4/phonon/AbstractMediaStream
-include/X11/qt4/phonon/AbstractVideoOutput
-include/X11/qt4/phonon/AddonInterface
-include/X11/qt4/phonon/AudioCaptureDevice
-include/X11/qt4/phonon/AudioCaptureDeviceModel
-include/X11/qt4/phonon/AudioChannelDescription
-include/X11/qt4/phonon/AudioChannelDescriptionModel
-include/X11/qt4/phonon/AudioDataOutput
-include/X11/qt4/phonon/AudioDataOutputInterface
-include/X11/qt4/phonon/AudioOutput
-include/X11/qt4/phonon/AudioOutputDevice
-include/X11/qt4/phonon/AudioOutputDeviceModel
-include/X11/qt4/phonon/AudioOutputInterface
-include/X11/qt4/phonon/AudioOutputInterface40
-include/X11/qt4/phonon/AudioOutputInterface42
-include/X11/qt4/phonon/BackendCapabilities
-include/X11/qt4/phonon/BackendInterface
-include/X11/qt4/phonon/Effect
-include/X11/qt4/phonon/EffectDescription
-include/X11/qt4/phonon/EffectDescriptionModel
-include/X11/qt4/phonon/EffectInterface
-include/X11/qt4/phonon/EffectParameter
-include/X11/qt4/phonon/EffectWidget
-include/X11/qt4/phonon/Global
-include/X11/qt4/phonon/GlobalConfig
-include/X11/qt4/phonon/MediaController
-include/X11/qt4/phonon/MediaNode
-include/X11/qt4/phonon/MediaObject
-include/X11/qt4/phonon/MediaObjectInterface
-include/X11/qt4/phonon/MediaSource
-include/X11/qt4/phonon/ObjectDescription
-include/X11/qt4/phonon/ObjectDescriptionData
-include/X11/qt4/phonon/ObjectDescriptionModel
-include/X11/qt4/phonon/ObjectDescriptionModelData
-include/X11/qt4/phonon/Path
-include/X11/qt4/phonon/Phonon
-include/X11/qt4/phonon/PlatformPlugin
-include/X11/qt4/phonon/PulseSupport
-include/X11/qt4/phonon/SeekSlider
-include/X11/qt4/phonon/StreamInterface
-include/X11/qt4/phonon/SubtitleDescription
-include/X11/qt4/phonon/SubtitleDescriptionModel
-include/X11/qt4/phonon/VideoPlayer
-include/X11/qt4/phonon/VideoWidget
-include/X11/qt4/phonon/VideoWidgetInterface
-include/X11/qt4/phonon/VideoWidgetInterface44
-include/X11/qt4/phonon/VideoWidgetInterfaceLatest
-include/X11/qt4/phonon/VolumeFaderEffect
-include/X11/qt4/phonon/VolumeFaderInterface
-include/X11/qt4/phonon/VolumeSlider
-include/X11/qt4/phonon/abstractaudiooutput.h
-include/X11/qt4/phonon/abstractmediastream.h
-include/X11/qt4/phonon/abstractvideooutput.h
-include/X11/qt4/phonon/addoninterface.h
-include/X11/qt4/phonon/audiodataoutput.h
-include/X11/qt4/phonon/audiodataoutputinterface.h
-include/X11/qt4/phonon/audiooutput.h
-include/X11/qt4/phonon/audiooutputinterface.h
-include/X11/qt4/phonon/backendcapabilities.h
-include/X11/qt4/phonon/backendinterface.h
-include/X11/qt4/phonon/effect.h
-include/X11/qt4/phonon/effectinterface.h
-include/X11/qt4/phonon/effectparameter.h
-include/X11/qt4/phonon/effectwidget.h
-include/X11/qt4/phonon/globalconfig.h
-include/X11/qt4/phonon/mediacontroller.h
-include/X11/qt4/phonon/medianode.h
-include/X11/qt4/phonon/mediaobject.h
-include/X11/qt4/phonon/mediaobjectinterface.h
-include/X11/qt4/phonon/mediasource.h
-include/X11/qt4/phonon/objectdescription.h
-include/X11/qt4/phonon/objectdescriptionmodel.h
-include/X11/qt4/phonon/path.h
-include/X11/qt4/phonon/phonon
-include/X11/qt4/phonon/phonon_export.h
-include/X11/qt4/phonon/phonondefs.h
-include/X11/qt4/phonon/phononnamespace.h
-include/X11/qt4/phonon/platformplugin.h
-include/X11/qt4/phonon/pulsesupport.h
-include/X11/qt4/phonon/seekslider.h
-include/X11/qt4/phonon/streaminterface.h
-include/X11/qt4/phonon/videoplayer.h
-include/X11/qt4/phonon/videowidget.h
-include/X11/qt4/phonon/videowidgetinterface.h
-include/X11/qt4/phonon/volumefadereffect.h
-include/X11/qt4/phonon/volumefaderinterface.h
-include/X11/qt4/phonon/volumeslider.h
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/libQtCLucene.so.${LIBQtCLucene_VERSION}
 @lib lib/libQtCore.so.${LIBQtCore_VERSION}
 @lib lib/libQtDBus.so.${LIBQtDBus_VERSION}
-@lib lib/libQtDeclarative.so.${LIBQtDeclarative_VERSION}
 @lib lib/libQtDesigner.so.${LIBQtDesigner_VERSION}
 @lib lib/libQtDesignerComponents.so.${LIBQtDesignerComponents_VERSION}
 @lib lib/libQtGui.so.${LIBQtGui_VERSION}
 @lib lib/libQtHelp.so.${LIBQtHelp_VERSION}
-@lib lib/libQtMultimedia.so.${LIBQtMultimedia_VERSION}
 @lib lib/libQtNetwork.so.${LIBQtNetwork_VERSION}
-@lib lib/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
 @lib lib/libQtScript.so.${LIBQtScript_VERSION}
 @lib lib/libQtScriptTools.so.${LIBQtScriptTools_VERSION}
 @lib lib/libQtSql.so.${LIBQtSql_VERSION}
 @lib lib/libQtSvg.so.${LIBQtSvg_VERSION}
 @lib lib/libQtTest.so.${LIBQtTest_VERSION}
-@lib lib/libQtWebKit.so.${LIBQtWebKit_VERSION}
 @lib lib/libQtXml.so.${LIBQtXml_VERSION}
-@lib lib/libQtXmlPatterns.so.${LIBQtXmlPatterns_VERSION}
-@lib lib/libphonon.so.${LIBphonon_VERSION}
 lib/qt4/
 lib/qt4/bin/
 @bin lib/qt4/bin/assistant
@@ -3160,8 +2811,6 @@ lib/qt4/bin/moc4
 @bin lib/qt4/bin/qhelpconverter
 @bin lib/qt4/bin/qhelpgenerator
 @bin lib/qt4/bin/qmake
-@bin lib/qt4/bin/qmlplugindump
-@bin lib/qt4/bin/qmlviewer
 @bin lib/qt4/bin/qt3to4
 @bin lib/qt4/bin/qtconfig
 @bin lib/qt4/bin/qttracereplay
@@ -3169,26 +2818,6 @@ lib/qt4/bin/moc4
 lib/qt4/bin/syncqt
 @bin lib/qt4/bin/uic
 @bin lib/qt4/bin/uic3
-@bin lib/qt4/bin/xmlpatterns
-@bin lib/qt4/bin/xmlpatternsvalidator
-lib/qt4/imports/
-lib/qt4/imports/Qt/
-lib/qt4/imports/Qt/labs/
-lib/qt4/imports/Qt/labs/folderlistmodel/
-@so lib/qt4/imports/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin.so
-lib/qt4/imports/Qt/labs/folderlistmodel/qmldir
-lib/qt4/imports/Qt/labs/gestures/
-@so lib/qt4/imports/Qt/labs/gestures/libqmlgesturesplugin.so
-lib/qt4/imports/Qt/labs/gestures/qmldir
-lib/qt4/imports/Qt/labs/particles/
-@so lib/qt4/imports/Qt/labs/particles/libqmlparticlesplugin.so
-lib/qt4/imports/Qt/labs/particles/qmldir
-lib/qt4/imports/Qt/labs/shaders/
-@so lib/qt4/imports/Qt/labs/shaders/libqmlshadersplugin.so
-lib/qt4/imports/Qt/labs/shaders/qmldir
-lib/qt4/imports/QtWebKit/
-@so lib/qt4/imports/QtWebKit/libqmlwebkitplugin.so
-lib/qt4/imports/QtWebKit/qmldir
 lib/qt4/include
 lib/qt4/libQt3Support.la
 lib/qt4/libQt3Support.prl
@@ -3202,9 +2831,6 @@ lib/qt4/libQtCore.prl
 lib/qt4/libQtDBus.la
 lib/qt4/libQtDBus.prl
 @lib lib/qt4/libQtDBus.so.${LIBQtDBus_VERSION}
-lib/qt4/libQtDeclarative.la
-lib/qt4/libQtDeclarative.prl
-@lib lib/qt4/libQtDeclarative.so.${LIBQtDeclarative_VERSION}
 lib/qt4/libQtDesigner.prl
 @lib lib/qt4/libQtDesigner.so.${LIBQtDesigner_VERSION}
 lib/qt4/libQtDesignerComponents.prl
@@ -3215,15 +2841,9 @@ lib/qt4/libQtGui.prl
 lib/qt4/libQtHelp.la
 lib/qt4/libQtHelp.prl
 @lib lib/qt4/libQtHelp.so.${LIBQtHelp_VERSION}
-lib/qt4/libQtMultimedia.la
-lib/qt4/libQtMultimedia.prl
-@lib lib/qt4/libQtMultimedia.so.${LIBQtMultimedia_VERSION}
 lib/qt4/libQtNetwork.la
 lib/qt4/libQtNetwork.prl
 @lib lib/qt4/libQtNetwork.so.${LIBQtNetwork_VERSION}
-lib/qt4/libQtOpenGL.la
-lib/qt4/libQtOpenGL.prl
-@lib lib/qt4/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
 lib/qt4/libQtScript.la
 lib/qt4/libQtScript.prl
 @lib lib/qt4/libQtScript.so.${LIBQtScript_VERSION}
@@ -3241,18 +2861,9 @@ lib/qt4/libQtTest.prl
 @lib lib/qt4/libQtTest.so.${LIBQtTest_VERSION}
 @static-lib lib/qt4/libQtUiTools.a
 lib/qt4/libQtUiTools.prl
-lib/qt4/libQtWebKit.la
-lib/qt4/libQtWebKit.prl
-@lib lib/qt4/libQtWebKit.so.${LIBQtWebKit_VERSION}
 lib/qt4/libQtXml.la
 lib/qt4/libQtXml.prl
 @lib lib/qt4/libQtXml.so.${LIBQtXml_VERSION}
-lib/qt4/libQtXmlPatterns.la
-lib/qt4/libQtXmlPatterns.prl
-@lib lib/qt4/libQtXmlPatterns.so.${LIBQtXmlPatterns_VERSION}
-lib/qt4/libphonon.la
-lib/qt4/libphonon.prl
-@lib lib/qt4/libphonon.so.${LIBphonon_VERSION}
 lib/qt4/mkspecs/
 lib/qt4/mkspecs/aix-g++/
 lib/qt4/mkspecs/aix-g++-64/
@@ -3616,8 +3227,6 @@ lib/qt4/mkspecs/macx-xcode/qplatformdefs.h
 lib/qt4/mkspecs/macx-xlc/
 lib/qt4/mkspecs/macx-xlc/qmake.conf
 lib/qt4/mkspecs/macx-xlc/qplatformdefs.h
-lib/qt4/mkspecs/modules/
-lib/qt4/mkspecs/modules/qt_webkit_version.pri
 lib/qt4/mkspecs/netbsd-g++/
 lib/qt4/mkspecs/netbsd-g++/qmake.conf
 lib/qt4/mkspecs/netbsd-g++/qplatformdefs.h
@@ -4031,24 +3640,18 @@ lib/qt4/pkgconfig/Qt3Support.pc
 lib/qt4/pkgconfig/QtCLucene.pc
 lib/qt4/pkgconfig/QtCore.pc
 lib/qt4/pkgconfig/QtDBus.pc
-lib/qt4/pkgconfig/QtDeclarative.pc
 lib/qt4/pkgconfig/QtDesigner.pc
 lib/qt4/pkgconfig/QtDesignerComponents.pc
 lib/qt4/pkgconfig/QtGui.pc
 lib/qt4/pkgconfig/QtHelp.pc
-lib/qt4/pkgconfig/QtMultimedia.pc
 lib/qt4/pkgconfig/QtNetwork.pc
-lib/qt4/pkgconfig/QtOpenGL.pc
 lib/qt4/pkgconfig/QtScript.pc
 lib/qt4/pkgconfig/QtScriptTools.pc
 lib/qt4/pkgconfig/QtSql.pc
 lib/qt4/pkgconfig/QtSvg.pc
 lib/qt4/pkgconfig/QtTest.pc
 lib/qt4/pkgconfig/QtUiTools.pc
-lib/qt4/pkgconfig/QtWebKit.pc
 lib/qt4/pkgconfig/QtXml.pc
-lib/qt4/pkgconfig/QtXmlPatterns.pc
-lib/qt4/pkgconfig/phonon.pc
 lib/qt4/plugins/
 lib/qt4/plugins/accessible/
 @so lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
@@ -4061,12 +3664,8 @@ lib/qt4/plugins/codecs/
 @so lib/qt4/plugins/codecs/libqkrcodecs.so
 @so lib/qt4/plugins/codecs/libqtwcodecs.so
 lib/qt4/plugins/designer/
-@so lib/qt4/plugins/designer/libphononwidgets.so
-@so lib/qt4/plugins/designer/libqdeclarativeview.so
 @so lib/qt4/plugins/designer/libqt3supportwidgets.so
-@so lib/qt4/plugins/designer/libqwebview.so
 lib/qt4/plugins/graphicssystems/
-@so lib/qt4/plugins/graphicssystems/libqglgraphicssystem.so
 @so lib/qt4/plugins/graphicssystems/libqtracegraphicssystem.so
 lib/qt4/plugins/iconengines/
 @so lib/qt4/plugins/iconengines/libqsvgicon.so
@@ -4080,42 +3679,11 @@ lib/qt4/plugins/imageformats/
 @so lib/qt4/plugins/imageformats/libqtiff.so
 lib/qt4/plugins/inputmethods/
 @so lib/qt4/plugins/inputmethods/libqimsw-multi.so
-lib/qt4/plugins/phonon_backend/
-@so lib/qt4/plugins/phonon_backend/libphonon_gstreamer.so
-lib/qt4/plugins/qmltooling/
-@so lib/qt4/plugins/qmltooling/libqmldbg_inspector.so
-@so lib/qt4/plugins/qmltooling/libqmldbg_tcp.so
 lib/qt4/plugins/script/
 @so lib/qt4/plugins/script/libqtscriptdbus.so
 lib/qt4/plugins/sqldrivers/
 @so lib/qt4/plugins/sqldrivers/libqsqlite.so
 lib/qt4/q3porting.xml
-lib/qt4/tests/
-lib/qt4/tests/qt4/
-lib/qt4/tests/qt4/tst_hybridPixmap/
-@bin lib/qt4/tests/qt4/tst_hybridPixmap/hybridPixmap
-lib/qt4/tests/qt4/tst_loading/
-@bin lib/qt4/tests/qt4/tst_loading/tst_loading
-lib/qt4/tests/qt4/tst_painting/
-@bin lib/qt4/tests/qt4/tst_painting/tst_painting
-lib/qt4/tests/qt4/tst_qdeclarativewebview/
-@bin lib/qt4/tests/qt4/tst_qdeclarativewebview/tst_qdeclarativewebview
-lib/qt4/tests/qt4/tst_qgraphicswebview/
-@bin lib/qt4/tests/qt4/tst_qgraphicswebview/tst_qgraphicswebview
-lib/qt4/tests/qt4/tst_qwebelement/
-@bin lib/qt4/tests/qt4/tst_qwebelement/tst_qwebelement
-lib/qt4/tests/qt4/tst_qwebframe/
-@bin lib/qt4/tests/qt4/tst_qwebframe/tst_qwebframe
-lib/qt4/tests/qt4/tst_qwebhistory/
-@bin lib/qt4/tests/qt4/tst_qwebhistory/tst_qwebhistory
-lib/qt4/tests/qt4/tst_qwebhistoryinterface/
-@bin lib/qt4/tests/qt4/tst_qwebhistoryinterface/tst_qwebhistoryinterface
-lib/qt4/tests/qt4/tst_qwebinspector/
-@bin lib/qt4/tests/qt4/tst_qwebinspector/tst_qwebinspector
-lib/qt4/tests/qt4/tst_qwebpage/
-@bin lib/qt4/tests/qt4/tst_qwebpage/tst_qwebpage
-lib/qt4/tests/qt4/tst_qwebview/
-@bin lib/qt4/tests/qt4/tst_qwebview/tst_qwebview
 lib/qt4/translations/
 lib/qt4/translations/assistant_cs.qm
 lib/qt4/translations/assistant_da.qm
