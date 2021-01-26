@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/09/16 07:31:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/01/26 15:54:42 rsadowski Exp $
 @pkgpath x11/yakuake-kde4
 @bin bin/yakuake
 share/applications/org.kde.yakuake.desktop
 share/dbus-1/services/org.kde.yakuake.service
-share/examples/yakuake/
-share/examples/yakuake/xdg/
-share/examples/yakuake/xdg/yakuake.knsrc
-@sample ${SYSCONFDIR}/xdg/yakuake.knsrc
 share/icons/hicolor/128x128/apps/yakuake.png
 share/icons/hicolor/16x16/apps/yakuake.png
 share/icons/hicolor/22x22/apps/yakuake.png
@@ -15,6 +11,7 @@ share/icons/hicolor/32x32/apps/yakuake.png
 share/icons/hicolor/48x48/apps/yakuake.png
 share/icons/hicolor/64x64/apps/yakuake.png
 share/knotifications5/yakuake.notifyrc
+share/knsrcfiles/yakuake.knsrc
 share/locale/ar/LC_MESSAGES/yakuake.mo
 share/locale/ast/LC_MESSAGES/yakuake.mo
 share/locale/bs/LC_MESSAGES/yakuake.mo
