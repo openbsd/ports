@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.536 2021/01/26 13:17:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.537 2021/01/26 13:44:27 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -184,6 +184,7 @@
      SUBDIR += openjp2
      SUBDIR += openscenegraph
      SUBDIR += opensubdiv
+     SUBDIR += openvdb
      SUBDIR += optipng
      SUBDIR += orthanc
      SUBDIR += p5-Barcode-DataMatrix
