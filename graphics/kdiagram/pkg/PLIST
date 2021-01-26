@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/05/14 19:46:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/26 11:44:08 rsadowski Exp $
 include/KChart/
 include/KChart/KChart
 include/KChart/KChartAbstractArea
@@ -149,6 +149,7 @@ include/KGantt/KGanttItemDelegate
 include/KGantt/KGanttLegend
 include/KGantt/KGanttListViewRowController
 include/KGantt/KGanttPenStyleComboBox
+include/KGantt/KGanttPrintingContext
 include/KGantt/KGanttProxyModel
 include/KGantt/KGanttStyleOptionGanttItem
 include/KGantt/KGanttSummaryHandlingProxyModel
@@ -174,6 +175,7 @@ include/KGantt/kganttitemdelegate.h
 include/KGantt/kganttlegend.h
 include/KGantt/kganttlistviewrowcontroller.h
 include/KGantt/kganttpenstylecombobox.h
+include/KGantt/kganttprintingcontext.h
 include/KGantt/kganttproxymodel.h
 include/KGantt/kganttstyleoptionganttitem.h
 include/KGantt/kganttsummaryhandlingproxymodel.h
@@ -199,6 +201,8 @@ share/kf5/mkspecs/qt_KChart.pri
 share/kf5/mkspecs/qt_KGantt.pri
 share/locale/ar/LC_MESSAGES/kchart_qt.qm
 share/locale/ar/LC_MESSAGES/kgantt_qt.qm
+share/locale/ast/LC_MESSAGES/kchart_qt.qm
+share/locale/ast/LC_MESSAGES/kgantt_qt.qm
 share/locale/bg/LC_MESSAGES/kgantt_qt.qm
 share/locale/bs/LC_MESSAGES/kchart_qt.qm
 share/locale/bs/LC_MESSAGES/kgantt_qt.qm
@@ -208,6 +212,7 @@ share/locale/ca@valencia/LC_MESSAGES/kchart_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/kgantt_qt.qm
 share/locale/cs/LC_MESSAGES/kchart_qt.qm
 share/locale/cs/LC_MESSAGES/kgantt_qt.qm
+share/locale/da/LC_MESSAGES/kgantt_qt.qm
 share/locale/de/LC_MESSAGES/kchart_qt.qm
 share/locale/de/LC_MESSAGES/kgantt_qt.qm
 share/locale/el/LC_MESSAGES/kchart_qt.qm
