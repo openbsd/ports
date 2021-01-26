@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.995 2021/01/20 05:57:48 bket Exp $
+# $OpenBSD: Makefile,v 1.996 2021/01/26 20:31:55 paco Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -336,6 +336,7 @@
      SUBDIR += p5-Starman
      SUBDIR += p5-Test-HTTP-LocalServer
      SUBDIR += p5-Test-HTTP-Server-Simple
+     SUBDIR += p5-Test-LWP-UserAgent
      SUBDIR += p5-Twiggy
      SUBDIR += p5-URI
      SUBDIR += p5-URI-Fetch
