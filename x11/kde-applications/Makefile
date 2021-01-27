@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2021/01/23 18:10:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.62 2021/01/27 05:21:23 rsadowski Exp $
 
      SUBDIR =
 
@@ -245,5 +245,13 @@
      # Gone upstream?
      #SUBDIR += kdav
      #SUBDIR += kblog
+     #SUBDIR += kdepim-apps-libs
+
+     # XXX keep in sync
+     # life outside of x11/kde-applications
+     # net/konversation
+     # net/ktorrent
+     # net/libktorrent
+     # x11/yakuake
 
 .include <bsd.port.subdir.mk>
