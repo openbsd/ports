@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.23 2020/06/08 19:41:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2021/01/27 05:52:08 rsadowski Exp $
 
 COMMENT =	KTorrent engine
 
-DISTNAME =	libktorrent-2.2.0
+VERSION = 	20.12.1
+DISTNAME =	libktorrent-${VERSION}
 
 CATEGORIES =	net
 
-SHARED_LIBS +=  KF5Torrent                1.0 # 6.0
+SHARED_LIBS +=  KF5Torrent                2.0 # 6.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Completion KF5ConfigCore
-WANTLIB += KF5CoreAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets
-WANTLIB += KF5Service KF5Solid KF5WidgetsAddons Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += gcrypt gmp m qca-qt5
+WANTLIB += KF5CoreAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
+WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml gcrypt gmp m qca-qt5
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktorrent/5.2.0/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
 
 MODULES =	devel/kf5
 
@@ -43,6 +44,7 @@ LIB_DEPENDS =	devel/gmp \
 		devel/kf5/kjobwidgets\
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
 		devel/kf5/solid \
 		security/libgcrypt \
 		security/qca-qt5
