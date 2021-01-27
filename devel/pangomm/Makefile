@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.40 2021/01/27 12:00:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2021/01/27 12:08:56 ajacoutot Exp $
 
-PORTROACH=		limit:^2\.42
+PORTROACH=		limit:^2\.46
 
 COMMENT =		C++ interface for pango
 
