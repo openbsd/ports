@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/04 05:09:17 thfr Exp $
+# $OpenBSD: Makefile,v 1.6 2021/01/27 16:48:35 thfr Exp $
+
+PORTROACH =	^[0-9]
 
 COMMENT =	reference front-end for GLSL and ESSL
 
