@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/28 20:57:30 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/27 18:38:29 solene Exp $
 
 COMMENT =	client for the I2P anonymous network
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.31.0
+GH_TAGNAME =	2.35.0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website
 
-MAINTAINER =	Mikal Villa <mikalv@mikalv.net>
+MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # BSD
 PERMIT_PACKAGE = Yes
@@ -28,15 +28,14 @@ USE_GMAKE =	Yes
 WRKSRC =	${WRKDIST}/build
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i2pd/certificates/family
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i2pd/certificates/reseed
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i2pd/certificates/router
-	${INSTALL_DATA} ${WRKDIST}/contrib/certificates/family/* \
-		${PREFIX}/share/examples/i2pd/certificates/family
-	${INSTALL_DATA} ${WRKDIST}/contrib/certificates/reseed/* \
-		${PREFIX}/share/examples/i2pd/certificates/reseed
-	${INSTALL_DATA} ${WRKDIST}/contrib/certificates/router/* \
-		${PREFIX}/share/examples/i2pd/certificates/router
+	${INSTALL_DATA_DIR} ${PREFIX}/include/i2pd
+	${INSTALL_DATA} ${WRKDIST}/libi2pd{,_client}/*.h \
+		 ${PREFIX}/include/i2pd
+.for dir in family reseed router
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i2pd/certificates/${dir}
+	${INSTALL_DATA} ${WRKDIST}/contrib/certificates/${dir}/* \
+		${PREFIX}/share/examples/i2pd/certificates/${dir}
+.endfor
 	${INSTALL_DATA} ${WRKDIST}/contrib/i2pd.conf \
 		${PREFIX}/share/examples/i2pd/i2pd.conf
 	${INSTALL_DATA} ${WRKDIST}/contrib/tunnels.conf \
@@ -44,6 +43,6 @@ post-install:
 
 do-test:
 	cd ${WRKDIST}/tests && ${MAKE_PROGRAM} CXX="${CXX}" \
-		INCFLAGS="-L${LOCALBASE}/lib -I${LOCALBASE}/include"
+		INCFLAGS="-L${LOCALBASE}/lib -I${LOCALBASE}/include ${CFLAGS}" 
 
 .include <bsd.port.mk>
