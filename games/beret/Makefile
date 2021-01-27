@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/27 13:06:52 kirby Exp $
 
 COMMENT=	2D puzzle-platformer game
 DISTNAME=	beret-1.2.1pl1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://kiwisauce.com/beret/
+HOMEPAGE=	https://kiwisauce.com/beret/
 
 # LGPLv3
 # AveriaSans-regular.ttf: SIL Open Font License
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c m SDL SDL_image SDL_mixer
 WANTLIB += SDL_ttf pthread
 
-MASTER_SITES=	http://mirrors.nycbug.org/pub/distfiles/
+MASTER_SITES=	https://mirrors.nycbug.org/pub/distfiles/
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer \
