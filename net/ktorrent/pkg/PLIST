@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/06/08 19:41:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/01/27 05:53:50 rsadowski Exp $
 @conflict ktorrent-kde4-*
 @pkgpath net/ktorrent-kde4
 @bin bin/ktmagnetdownloader
@@ -14,6 +14,7 @@ lib/qt5/plugins/ktorrent/
 @so lib/qt5/plugins/ktorrent/ktorrent_magnetgenerator.so
 @so lib/qt5/plugins/ktorrent/ktorrent_mediaplayer.so
 @so lib/qt5/plugins/ktorrent/ktorrent_scanfolder.so
+@so lib/qt5/plugins/ktorrent/ktorrent_scanforlostfiles.so
 @so lib/qt5/plugins/ktorrent/ktorrent_scripting.so
 @so lib/qt5/plugins/ktorrent/ktorrent_search.so
 @so lib/qt5/plugins/ktorrent/ktorrent_stats.so
@@ -21,59 +22,49 @@ lib/qt5/plugins/ktorrent/
 @so lib/qt5/plugins/ktorrent/ktorrent_upnp.so
 @so lib/qt5/plugins/ktorrent/ktorrent_zeroconf.so
 share/applications/org.kde.ktorrent.desktop
-share/doc/HTML/
-share/doc/HTML/ca/
 share/doc/HTML/ca/ktorrent/
 share/doc/HTML/ca/ktorrent/index.cache.bz2
 share/doc/HTML/ca/ktorrent/index.docbook
-share/doc/HTML/de/
 share/doc/HTML/de/ktorrent/
 share/doc/HTML/de/ktorrent/index.cache.bz2
 share/doc/HTML/de/ktorrent/index.docbook
-share/doc/HTML/en/
 share/doc/HTML/en/ktorrent/
 share/doc/HTML/en/ktorrent/index.cache.bz2
 share/doc/HTML/en/ktorrent/index.docbook
-share/doc/HTML/es/
 share/doc/HTML/es/ktorrent/
 share/doc/HTML/es/ktorrent/index.cache.bz2
 share/doc/HTML/es/ktorrent/index.docbook
-share/doc/HTML/et/
 share/doc/HTML/et/ktorrent/
 share/doc/HTML/et/ktorrent/index.cache.bz2
 share/doc/HTML/et/ktorrent/index.docbook
-share/doc/HTML/fr/
 share/doc/HTML/fr/ktorrent/
 share/doc/HTML/fr/ktorrent/index.cache.bz2
 share/doc/HTML/fr/ktorrent/index.docbook
-share/doc/HTML/it/
 share/doc/HTML/it/ktorrent/
 share/doc/HTML/it/ktorrent/index.cache.bz2
 share/doc/HTML/it/ktorrent/index.docbook
-share/doc/HTML/nl/
 share/doc/HTML/nl/ktorrent/
 share/doc/HTML/nl/ktorrent/index.cache.bz2
 share/doc/HTML/nl/ktorrent/index.docbook
-share/doc/HTML/pt/
 share/doc/HTML/pt/ktorrent/
 share/doc/HTML/pt/ktorrent/index.cache.bz2
 share/doc/HTML/pt/ktorrent/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/ktorrent/
 share/doc/HTML/pt_BR/ktorrent/index.cache.bz2
 share/doc/HTML/pt_BR/ktorrent/index.docbook
-share/doc/HTML/ru/
 share/doc/HTML/ru/ktorrent/
 share/doc/HTML/ru/ktorrent/index.cache.bz2
 share/doc/HTML/ru/ktorrent/index.docbook
-share/doc/HTML/sv/
 share/doc/HTML/sv/ktorrent/
 share/doc/HTML/sv/ktorrent/index.cache.bz2
 share/doc/HTML/sv/ktorrent/index.docbook
-share/doc/HTML/uk/
 share/doc/HTML/uk/ktorrent/
 share/doc/HTML/uk/ktorrent/index.cache.bz2
 share/doc/HTML/uk/ktorrent/index.docbook
+share/doc/HTML/zh_CN/
+share/doc/HTML/zh_CN/ktorrent/
+share/doc/HTML/zh_CN/ktorrent/index.cache.bz2
+share/doc/HTML/zh_CN/ktorrent/index.docbook
 share/icons/hicolor/128x128/apps/ktorrent.png
 share/icons/hicolor/16x16/actions/kt-add-feeds.png
 share/icons/hicolor/16x16/actions/kt-add-filters.png
@@ -144,7 +135,6 @@ share/icons/hicolor/scalable/actions/kt-magnet.svgz
 share/icons/hicolor/scalable/actions/kt-set-max-download-speed.svgz
 share/icons/hicolor/scalable/actions/kt-set-max-upload-speed.svgz
 share/icons/hicolor/scalable/actions/kt-speed-limits.svgz
-share/knotifications5/
 share/knotifications5/ktorrent.notifyrc
 share/ktorrent/
 share/ktorrent/opensearch/
@@ -162,6 +152,8 @@ share/ktorrent/opensearch/torrentproject.se/favicon.ico
 share/ktorrent/opensearch/torrentproject.se/opensearch.xml
 share/ktorrent/scripts/
 share/ktorrent/scripts/auto_remove/
+${MODPY_COMMENT}share/ktorrent/scripts/auto_remove/${MODPY_PYCACHE}/
+share/ktorrent/scripts/auto_remove/${MODPY_PYCACHE}auto_remove.${MODPY_PYC_MAGIC_TAG}pyc
 share/ktorrent/scripts/auto_remove/auto_remove.desktop
 share/ktorrent/scripts/auto_remove/auto_remove.py
 share/ktorrent/scripts/auto_remove/auto_remove.ui
@@ -170,10 +162,14 @@ share/ktorrent/scripts/auto_resume/auto_resume.desktop
 share/ktorrent/scripts/auto_resume/auto_resume.py
 share/ktorrent/scripts/auto_resume/auto_resume.ui
 share/ktorrent/scripts/email_notifications/
+${MODPY_COMMENT}share/ktorrent/scripts/email_notifications/${MODPY_PYCACHE}/
+share/ktorrent/scripts/email_notifications/${MODPY_PYCACHE}email_notifications.${MODPY_PYC_MAGIC_TAG}pyc
 share/ktorrent/scripts/email_notifications/email_notifications.desktop
 share/ktorrent/scripts/email_notifications/email_notifications.py
 share/ktorrent/scripts/email_notifications/emailconfig.ui
 share/ktorrent/scripts/tracker_groups/
+${MODPY_COMMENT}share/ktorrent/scripts/tracker_groups/${MODPY_PYCACHE}/
+share/ktorrent/scripts/tracker_groups/${MODPY_PYCACHE}tracker_groups.${MODPY_PYC_MAGIC_TAG}pyc
 share/ktorrent/scripts/tracker_groups/tracker_groups.desktop
 share/ktorrent/scripts/tracker_groups/tracker_groups.py
 share/ktorrent/search/
@@ -204,7 +200,6 @@ share/kxmlgui5/ktorrent/ktorrent_syndicationui.rc
 share/kxmlgui5/ktorrent/ktorrentui.rc
 share/kxmlgui5/ktorrent/kttorrentactivityui.rc
 share/locale/ar/LC_MESSAGES/ktorrent.mo
-share/locale/be/LC_MESSAGES/ktorrent.mo
 share/locale/bg/LC_MESSAGES/ktorrent.mo
 share/locale/bs/LC_MESSAGES/ktorrent.mo
 share/locale/ca/LC_MESSAGES/ktorrent.mo
@@ -224,9 +219,6 @@ share/locale/ga/LC_MESSAGES/ktorrent.mo
 share/locale/gl/LC_MESSAGES/ktorrent.mo
 share/locale/he/LC_MESSAGES/ktorrent.mo
 share/locale/hi/LC_MESSAGES/ktorrent.mo
-share/locale/hne/
-share/locale/hne/LC_MESSAGES/
-share/locale/hne/LC_MESSAGES/ktorrent.mo
 share/locale/hr/LC_MESSAGES/ktorrent.mo
 share/locale/hu/LC_MESSAGES/ktorrent.mo
 share/locale/ia/LC_MESSAGES/ktorrent.mo
@@ -236,30 +228,21 @@ share/locale/ja/LC_MESSAGES/ktorrent.mo
 share/locale/kk/LC_MESSAGES/ktorrent.mo
 share/locale/km/LC_MESSAGES/ktorrent.mo
 share/locale/ko/LC_MESSAGES/ktorrent.mo
-share/locale/ku/LC_MESSAGES/ktorrent.mo
 share/locale/lt/LC_MESSAGES/ktorrent.mo
 share/locale/lv/LC_MESSAGES/ktorrent.mo
 share/locale/mr/LC_MESSAGES/ktorrent.mo
-share/locale/ms/LC_MESSAGES/ktorrent.mo
 share/locale/nb/LC_MESSAGES/ktorrent.mo
 share/locale/nds/LC_MESSAGES/ktorrent.mo
 share/locale/nl/LC_MESSAGES/ktorrent.mo
 share/locale/nn/LC_MESSAGES/ktorrent.mo
-share/locale/oc/LC_MESSAGES/ktorrent.mo
 share/locale/pl/LC_MESSAGES/ktorrent.mo
 share/locale/pt/LC_MESSAGES/ktorrent.mo
 share/locale/pt_BR/LC_MESSAGES/ktorrent.mo
 share/locale/ro/LC_MESSAGES/ktorrent.mo
 share/locale/ru/LC_MESSAGES/ktorrent.mo
-share/locale/se/LC_MESSAGES/ktorrent.mo
-share/locale/si/LC_MESSAGES/ktorrent.mo
 share/locale/sk/LC_MESSAGES/ktorrent.mo
 share/locale/sl/LC_MESSAGES/ktorrent.mo
-share/locale/sq/LC_MESSAGES/ktorrent.mo
 share/locale/sr/LC_MESSAGES/ktorrent.mo
-share/locale/sr@ijekavian/LC_MESSAGES/ktorrent.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/ktorrent.mo
-share/locale/sr@latin/LC_MESSAGES/ktorrent.mo
 share/locale/sv/LC_MESSAGES/ktorrent.mo
 share/locale/tr/LC_MESSAGES/ktorrent.mo
 share/locale/ug/LC_MESSAGES/ktorrent.mo

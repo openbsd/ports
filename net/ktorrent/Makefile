@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2020/08/20 18:00:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2021/01/27 05:53:50 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
-VERSION =	5.2.0
+VERSION = 	20.12.1
 DISTNAME =	ktorrent-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  ktcore                    1.1 # 0.0
+SHARED_LIBS +=  ktcore                    2.0 # 0.0
 
 CATEGORIES =	net
 
@@ -21,18 +20,22 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5DNSSD KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
-WANTLIB += KF5KrossCore KF5Notifications KF5NotifyConfig KF5Parts
-WANTLIB += KF5Plotting KF5Service KF5Solid KF5SonnetUi KF5Syndication
-WANTLIB += KF5TextWidgets KF5Torrent KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5Script
-WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml c gcrypt gmp m phonon4qt5 tag
+WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5KrossCore KF5Notifications KF5NotifyConfig
+WANTLIB += KF5Parts KF5Plotting KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5Syndication KF5TextWidgets KF5Torrent KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5Script Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c gcrypt gmp
+WANTLIB += m phonon4qt5 tag
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktorrent/${VERSION}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
 
-MODULES =		devel/kf5
+MODULES =		devel/kf5 \
+			lang/python
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/boost
@@ -70,7 +73,7 @@ LIB_DEPENDS =		audio/taglib \
 			devel/kf5/solid \
 			devel/kf5/sonnet \
 			devel/kf5/syndication \
-			net/libktorrent>=2.2.0 \
+			net/libktorrent>=${VERSION} \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtlocation \
 			x11/qt5/qtscript \
@@ -78,5 +81,13 @@ LIB_DEPENDS =		audio/taglib \
 			x11/qt5/qtwebengine \
 			multimedia/phonon
 
-.include <bsd.port.mk>
+# email_notifications py2
+#
+post-install:
+	2to3 -w -n ${PREFIX}/share/ktorrent/scripts/email_notifications/
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/ktorrent/scripts/auto_remove/ \
+		${PREFIX}/share/ktorrent/scripts/email_notifications/ \
+		${PREFIX}/share/ktorrent/scripts/tracker_groups/
 
+.include <bsd.port.mk>
