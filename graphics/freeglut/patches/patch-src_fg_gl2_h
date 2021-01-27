@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_fg_gl2_h,v 1.1 2021/01/27 21:01:12 naddy Exp $
+
+fix for -fno-common
+https://sourceforge.net/p/freeglut/code/1863/
+
+Index: src/fg_gl2.h
+--- src/fg_gl2.h.orig
++++ src/fg_gl2.h
+@@ -67,13 +67,13 @@ typedef void (APIENTRY *FGH_PFNGLENABLEVERTEXATTRIBARR
+ typedef void (APIENTRY *FGH_PFNGLDISABLEVERTEXATTRIBARRAYPROC) (GLuint);
+ typedef void (APIENTRY *FGH_PFNGLVERTEXATTRIBPOINTERPROC) (GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid *pointer);
+ 
+-FGH_PFNGLGENBUFFERSPROC fghGenBuffers;
+-FGH_PFNGLDELETEBUFFERSPROC fghDeleteBuffers;
+-FGH_PFNGLBINDBUFFERPROC fghBindBuffer;
+-FGH_PFNGLBUFFERDATAPROC fghBufferData;
+-FGH_PFNGLENABLEVERTEXATTRIBARRAYPROC fghEnableVertexAttribArray;
+-FGH_PFNGLDISABLEVERTEXATTRIBARRAYPROC fghDisableVertexAttribArray;
+-FGH_PFNGLVERTEXATTRIBPOINTERPROC fghVertexAttribPointer;
++extern FGH_PFNGLGENBUFFERSPROC fghGenBuffers;
++extern FGH_PFNGLDELETEBUFFERSPROC fghDeleteBuffers;
++extern FGH_PFNGLBINDBUFFERPROC fghBindBuffer;
++extern FGH_PFNGLBUFFERDATAPROC fghBufferData;
++extern FGH_PFNGLENABLEVERTEXATTRIBARRAYPROC fghEnableVertexAttribArray;
++extern FGH_PFNGLDISABLEVERTEXATTRIBARRAYPROC fghDisableVertexAttribArray;
++extern FGH_PFNGLVERTEXATTRIBPOINTERPROC fghVertexAttribPointer;
+ 
+ #    endif
+ 
