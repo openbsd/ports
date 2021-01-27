@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/01/27 18:40:54 ajacoutot Exp $
 @bin bin/celestia
 share/applications/celestia.desktop
 share/celestia/
@@ -85,6 +85,7 @@ share/celestia/data/visualbins.stc
 share/celestia/data/world-capitals.ssc
 share/celestia/demo.cel
 share/celestia/demo_be.cel
+share/celestia/demo_bg.cel
 share/celestia/demo_de.cel
 share/celestia/demo_es.cel
 share/celestia/demo_fr.cel
@@ -94,6 +95,7 @@ share/celestia/demo_ja.cel
 share/celestia/demo_ko.cel
 share/celestia/demo_lt.cel
 share/celestia/demo_lv.cel
+share/celestia/demo_nb.cel
 share/celestia/demo_nl.cel
 share/celestia/demo_no.cel
 share/celestia/demo_pl.cel
@@ -234,6 +236,7 @@ share/celestia/guide_it.cel
 share/celestia/guide_ja.cel
 share/celestia/guide_ko.cel
 share/celestia/guide_lt.cel
+share/celestia/guide_nb.cel
 share/celestia/guide_nl.cel
 share/celestia/guide_pl.cel
 share/celestia/guide_pt.cel
@@ -379,6 +382,7 @@ share/celestia/start_ja.cel
 share/celestia/start_ko.cel
 share/celestia/start_lt.cel
 share/celestia/start_lv.cel
+share/celestia/start_nb.cel
 share/celestia/start_nl.cel
 share/celestia/start_pl.cel
 share/celestia/start_pt.cel
@@ -578,6 +582,8 @@ share/locale/lt/LC_MESSAGES/celestia.mo
 share/locale/lt/LC_MESSAGES/celestia_constellations.mo
 share/locale/lv/LC_MESSAGES/celestia.mo
 share/locale/lv/LC_MESSAGES/celestia_constellations.mo
+share/locale/nb/LC_MESSAGES/celestia.mo
+share/locale/nb/LC_MESSAGES/celestia_constellations.mo
 share/locale/nl/LC_MESSAGES/celestia.mo
 share/locale/nl/LC_MESSAGES/celestia_constellations.mo
 share/locale/no/LC_MESSAGES/celestia.mo

@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_celestia_windatepicker_cpp,v 1.1 2009/11/17 23:12:16 ajacoutot Exp $
+$OpenBSD: patch-src_celestia_windatepicker_cpp,v 1.2 2021/01/27 18:40:54 ajacoutot Exp $
+
 --- src/celestia/windatepicker.cpp.orig	Tue Nov 17 15:25:29 2009
 +++ src/celestia/windatepicker.cpp	Tue Nov 17 15:25:38 2009
 @@ -162,7 +162,7 @@ DatePicker::redraw(HDC hdc)

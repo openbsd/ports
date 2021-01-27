@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_celestia_gtk_data_celestia_desktop,v 1.1 2009/06/13 12:07:36 ajacoutot Exp $
---- src/celestia/gtk/data/celestia.desktop.orig	Sat Jun 13 13:50:50 2009
-+++ src/celestia/gtk/data/celestia.desktop	Sat Jun 13 13:51:03 2009
-@@ -9,4 +9,4 @@ Terminal=false
- Name=Celestia
- Comment=Space Simulator
- StartupNotify=true
--Categories=Astronomy;Science;Application;
+$OpenBSD: patch-src_celestia_gtk_data_celestia_desktop,v 1.2 2021/01/27 18:40:54 ajacoutot Exp $
+
+Index: src/celestia/gtk/data/celestia.desktop
+--- src/celestia/gtk/data/celestia.desktop.orig
++++ src/celestia/gtk/data/celestia.desktop
+@@ -9,5 +9,5 @@ Terminal=false
+ Name=Celestia (Gtk+)
+ GenericName=Space Simulator
+ Comment=Explore the Universe in this detailed space simulation
+-StartupNotify=true
 +Categories=Astronomy;Science;Application;Education
+ Categories=Astronomy;Education;Application;
