@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2020/12/20 08:07:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2021/01/27 12:00:35 ajacoutot Exp $
 
 PORTROACH=		limit:^2\.64
 
@@ -8,13 +8,12 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 COMMENT=		C++ interface for glib2
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.64.5
+GNOME_VERSION=		2.66.0
 PKGNAME=		glib2mm-${GNOME_VERSION}
-REVISION=		0
 
 SHARED_LIBS += glibmm_generate_extra_defs-2.4 13.4 # 1.3.0
-SHARED_LIBS += glibmm-2.4                15.3 # 1.3.0
-SHARED_LIBS += giomm-2.4                 14.2 # 1.3.0
+SHARED_LIBS += glibmm-2.4                15.4 # 1.3.0
+SHARED_LIBS += giomm-2.4                 14.3 # 1.3.0
 
 CATEGORIES=		devel
 
