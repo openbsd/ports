@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.100 2021/01/01 22:57:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2021/01/27 20:15:25 rsadowski Exp $
 
 ONLY_FOR_ARCHS = amd64
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.91.0
-REVISION =	0
+DISTNAME =	blender-2.91.2
 
 CATEGORIES =	graphics
 
@@ -17,13 +16,14 @@ MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW Half-2_5 Iex-2_5 IlmImf-2_5
-WANTLIB += IlmThread-2_5 Imath-2_5 OpenColorIO OpenImageIO SDL2
-WANTLIB += X11 Xfixes Xi Xrender Xxf86vm avcodec avdevice avformat
-WANTLIB += avutil boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt c fftw3 freetype gmp gmpxx jpeg m openal
-WANTLIB += openjp2 png potrace sndfile swscale tbb tiff tinyxml
+WANTLIB += ${COMPILER_LIBCXX} Alembic GL GLEW Half-2_5 Iex-2_5
+WANTLIB += IlmImf-2_5 IlmThread-2_5 Imath-2_5 OpenColorIO OpenImageIO
+WANTLIB += SDL2 X11 Xfixes Xi Xrender Xxf86vm avcodec avdevice
+WANTLIB += avformat avutil blosc boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c fftw3
+WANTLIB += freetype gmp gmpxx jpeg m openal openjp2 openvdb osdCPU
+WANTLIB += osdGPU png potrace sndfile swscale tbb tiff tinyxml
 WANTLIB += util yaml-cpp z
 
 MASTER_SITES =	https://download.blender.org/source/ \
@@ -53,6 +53,7 @@ LIB_DEPENDS =	audio/libsndfile \
 		devel/gmp,-cxx \
 		devel/sdl2 \
 		devel/tbb \
+		graphics/alembic \
 		graphics/ffmpeg \
 		graphics/glew \
 		graphics/jpeg \
@@ -60,6 +61,8 @@ LIB_DEPENDS =	audio/libsndfile \
 		graphics/openexr \
 		graphics/openimageio \
 		graphics/openjp2 \
+		graphics/opensubdiv \
+		graphics/openvdb \
 		graphics/png \
 		graphics/potrace \
 		graphics/tiff \
