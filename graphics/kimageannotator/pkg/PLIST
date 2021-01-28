@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/28 19:59:02 rsadowski Exp $
+include/kImageAnnotator/
+include/kImageAnnotator/KImageAnnotator.h
+include/kImageAnnotator/KImageAnnotatorExport.h
+lib/cmake/kImageAnnotator/
+lib/cmake/kImageAnnotator/kImageAnnotator-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/kImageAnnotator/kImageAnnotator-targets.cmake
+lib/cmake/kImageAnnotator/kImageAnnotatorConfig-version.cmake
+lib/cmake/kImageAnnotator/kImageAnnotatorConfig.cmake
+@lib lib/libkImageAnnotator.so.${LIBkImageAnnotator_VERSION}
+share/kImageAnnotator/
+share/kImageAnnotator/translations/
+share/kImageAnnotator/translations/kImageAnnotator_cs.qm
+share/kImageAnnotator/translations/kImageAnnotator_da.qm
+share/kImageAnnotator/translations/kImageAnnotator_de.qm
+share/kImageAnnotator/translations/kImageAnnotator_el.qm
+share/kImageAnnotator/translations/kImageAnnotator_es.qm
+share/kImageAnnotator/translations/kImageAnnotator_eu.qm
+share/kImageAnnotator/translations/kImageAnnotator_fr.qm
+share/kImageAnnotator/translations/kImageAnnotator_fr_CA.qm
+share/kImageAnnotator/translations/kImageAnnotator_gl.qm
+share/kImageAnnotator/translations/kImageAnnotator_hu.qm
+share/kImageAnnotator/translations/kImageAnnotator_id.qm
+share/kImageAnnotator/translations/kImageAnnotator_it.qm
+share/kImageAnnotator/translations/kImageAnnotator_ja.qm
+share/kImageAnnotator/translations/kImageAnnotator_nl.qm
+share/kImageAnnotator/translations/kImageAnnotator_no.qm
+share/kImageAnnotator/translations/kImageAnnotator_pl.qm
+share/kImageAnnotator/translations/kImageAnnotator_pt.qm
+share/kImageAnnotator/translations/kImageAnnotator_ru.qm
+share/kImageAnnotator/translations/kImageAnnotator_sv.qm
+share/kImageAnnotator/translations/kImageAnnotator_tr.qm
+share/kImageAnnotator/translations/kImageAnnotator_uk.qm
+share/kImageAnnotator/translations/kImageAnnotator_zh_CN.qm
