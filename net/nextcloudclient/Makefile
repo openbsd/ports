@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2020/12/24 08:31:20 rsadowski Exp $ #
+# $OpenBSD: Makefile,v 1.14 2021/01/28 20:23:01 rsadowski Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.1.1
+V =		3.1.2
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -22,10 +22,10 @@ MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Qml Qt5Quick Qt5QuickControls2 Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml c crypto m qt5keychain sqlite3 ssl
-WANTLIB += z lib/inotify/inotify
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl secret-1
+WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
+WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets Qt5Xml c crypto gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 intl m qt5keychain secret-1 sqlite3
+WANTLIB += ssl z lib/inotify/inotify
 
 MODULES =		devel/cmake \
 			x11/qt5
@@ -43,7 +43,8 @@ LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
 			security/qtkeychain \
 			x11/qt5/qtsvg \
-			x11/qt5/qtquickcontrols2
+			x11/qt5/qtquickcontrols2 \
+			x11/qt5/qtwebsockets
 
 CONFIGURE_ARGS =	-DBUILD_SHELL_INTEGRATION_NAUTILUS=OFF \
 			-DBUILD_SHELL_INTEGRATION_DOLPHIN=OFF \
