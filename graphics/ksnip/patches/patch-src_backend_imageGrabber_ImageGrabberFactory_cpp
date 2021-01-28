@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_backend_imageGrabber_ImageGrabberFactory_cpp,v 1.1.1.1 2021/01/28 20:00:19 rsadowski Exp $
+
+backporting commit
+https://github.com/ksnip/ksnip/commit/aa3ef9087100574d1f32022eac2e6e46043afa5c
+
+Index: src/backend/imageGrabber/ImageGrabberFactory.cpp
+--- src/backend/imageGrabber/ImageGrabberFactory.cpp.orig
++++ src/backend/imageGrabber/ImageGrabberFactory.cpp
+@@ -25,7 +25,7 @@ AbstractImageGrabber* ImageGrabberFactory::createImage
+     return new MacImageGrabber();
+ #endif
+ 
+-#if defined(__linux__)
++#if defined(UNIX_X11)
+     if (PlatformChecker::instance()->isX11()) {
+         return new X11ImageGrabber();
+     } else if (PlatformChecker::instance()->isWayland()) {

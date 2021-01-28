@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/28 20:00:19 rsadowski Exp $
+@bin bin/ksnip
+share/applications/org.ksnip.ksnip.desktop
+share/icons/hicolor/scalable/apps/ksnip.svg
+share/ksnip/
+share/ksnip/translations/
+share/ksnip/translations/ksnip_bn_BD.qm
+share/ksnip/translations/ksnip_cs.qm
+share/ksnip/translations/ksnip_da.qm
+share/ksnip/translations/ksnip_de.qm
+share/ksnip/translations/ksnip_el.qm
+share/ksnip/translations/ksnip_es.qm
+share/ksnip/translations/ksnip_eu.qm
+share/ksnip/translations/ksnip_fa.qm
+share/ksnip/translations/ksnip_fr.qm
+share/ksnip/translations/ksnip_fr_CA.qm
+share/ksnip/translations/ksnip_gl.qm
+share/ksnip/translations/ksnip_hu.qm
+share/ksnip/translations/ksnip_id.qm
+share/ksnip/translations/ksnip_it.qm
+share/ksnip/translations/ksnip_ja.qm
+share/ksnip/translations/ksnip_nl.qm
+share/ksnip/translations/ksnip_no.qm
+share/ksnip/translations/ksnip_pl.qm
+share/ksnip/translations/ksnip_pt.qm
+share/ksnip/translations/ksnip_pt_BR.qm
+share/ksnip/translations/ksnip_ru.qm
+share/ksnip/translations/ksnip_si.qm
+share/ksnip/translations/ksnip_sv.qm
+share/ksnip/translations/ksnip_tr.qm
+share/ksnip/translations/ksnip_uk.qm
+share/ksnip/translations/ksnip_zh_CN.qm
+share/metainfo/
+share/metainfo/org.ksnip.ksnip.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

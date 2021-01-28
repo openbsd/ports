@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_common_platform_HdpiScaler_mm,v 1.1.1.1 2021/01/28 20:00:19 rsadowski Exp $
+
+backporting commit
+https://github.com/ksnip/ksnip/commit/aa3ef9087100574d1f32022eac2e6e46043afa5c
+
+Index: src/common/platform/HdpiScaler.mm
+--- src/common/platform/HdpiScaler.mm.orig
++++ src/common/platform/HdpiScaler.mm
+@@ -48,7 +48,7 @@ QRect HdpiScaler::scale(const QRect &rect) const
+ qreal HdpiScaler::scaleFactor() const
+ {
+ 	auto desktopWidget = QApplication::desktop();
+-	
++
+ #if defined(__APPLE__)
+     auto myWindow = QGuiApplication::topLevelWindows().first();
+     qDebug("QWindow devicePixelRatio: %s", qPrintable(QString::number(myWindow->devicePixelRatio())));
+@@ -67,8 +67,8 @@ qreal HdpiScaler::scaleFactor() const
+ 	return [[NSScreen mainScreen] backingScaleFactor];
+ 
+ #endif
+-	
+-#if defined(__linux__) || defined(_WIN32)
++
++#if defined(UNIX_X11) || defined(_WIN32)
+ 	return desktopWidget->devicePixelRatioF();
+ #endif
+ }

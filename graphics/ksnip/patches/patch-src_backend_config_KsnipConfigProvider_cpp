@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_backend_config_KsnipConfigProvider_cpp,v 1.1.1.1 2021/01/28 20:00:19 rsadowski Exp $
+
+backporting commit
+https://github.com/ksnip/ksnip/commit/aa3ef9087100574d1f32022eac2e6e46043afa5c
+
+Index: src/backend/config/KsnipConfigProvider.cpp
+--- src/backend/config/KsnipConfigProvider.cpp.orig
++++ src/backend/config/KsnipConfigProvider.cpp
+@@ -26,7 +26,7 @@ KsnipConfig* KsnipConfigProvider::instance()
+ 	return &instance;
+ #endif
+ 
+-#if defined(__linux__)
++#if defined(UNIX_X11)
+ 	if (PlatformChecker::instance()->isWayland()) {
+ 		static KsnipWaylandConfig instance;
+ 		return &instance;

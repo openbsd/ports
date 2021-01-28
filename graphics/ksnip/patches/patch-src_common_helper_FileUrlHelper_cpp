@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_common_helper_FileUrlHelper_cpp,v 1.1.1.1 2021/01/28 20:00:19 rsadowski Exp $
+
+backporting commit
+https://github.com/ksnip/ksnip/commit/aa3ef9087100574d1f32022eac2e6e46043afa5c
+
+Index: src/common/helper/FileUrlHelper.cpp
+--- src/common/helper/FileUrlHelper.cpp.orig
++++ src/common/helper/FileUrlHelper.cpp
+@@ -26,7 +26,7 @@ QString FileUrlHelper::parse(const QString &text)
+ 	return url.remove(QStringLiteral("file://"));
+ #endif
+ 
+-#if defined(__linux__)
++#if defined(UNIX_X11)
+ 	return url.remove(QStringLiteral("file://"));
+ #endif
+ 
