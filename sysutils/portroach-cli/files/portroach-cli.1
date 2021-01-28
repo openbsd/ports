@@ -1,4 +1,4 @@
-.\"	$OpenBSD: portroach-cli.1,v 1.1.1.1 2021/01/11 22:12:03 kn Exp $
+.\"	$OpenBSD: portroach-cli.1,v 1.2 2021/01/28 22:01:54 kn Exp $
 .\" Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 .\"
 .\" Permission to use, copy, modify, and distribute this software for any
@@ -13,7 +13,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 11 2021 $
+.Dd $Mdocdate: January 28 2021 $
 .Dt PORTROACH-CLI 1
 .Os
 .Sh NAME
@@ -26,11 +26,12 @@
 .Op Fl u Ar url
 .Sh DESCRIPTION
 .Nm
-is a utility to query a
+queries a
 .Xr portroach 1
-instance.
+instance for outdated ports.
 .Pp
-It can filter ports and prints results on standard output.
+It can filter results and prints them on standard output similar to portroach's
+web interface.
 .Pp
 The options are as follows:
 .Bl -tag -width Ds
@@ -69,3 +70,5 @@ category:
 .Sh SEE ALSO
 .Xr portroach 1 ,
 .Xr bsd.port.mk 5
+.Sh AUTHORS
+.An Klemens Nanni Aq Mt kn@openbsd.org

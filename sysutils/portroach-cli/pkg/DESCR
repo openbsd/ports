@@ -1,3 +1,4 @@
-portroach-cli is a utility to query a portroach(1) instance.
+portroach-cli queries a portroach(1) instance for outdated ports.
 
-It can filter ports and prints results on standard output.
+It can filter results and prints them on standard output similar to portroach's
+web interface.
