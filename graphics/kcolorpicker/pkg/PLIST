@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/28 19:56:50 rsadowski Exp $
+include/kColorPicker/
+include/kColorPicker/KColorPicker.h
+include/kColorPicker/KColorPickerExport.h
+lib/cmake/kColorPicker/
+lib/cmake/kColorPicker/kColorPicker-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/kColorPicker/kColorPicker-targets.cmake
+lib/cmake/kColorPicker/kColorPickerConfig-version.cmake
+lib/cmake/kColorPicker/kColorPickerConfig.cmake
+@lib lib/libkColorPicker.so.${LIBkColorPicker_VERSION}
