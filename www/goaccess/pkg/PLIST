@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/08/08 07:36:57 kirby Exp $
-@pkgpath  www/goaccess,tokyocabinet
+@comment $OpenBSD: PLIST,v 1.8 2021/01/28 14:26:47 kirby Exp $
+@pkgpath www/goaccess,tokyocabinet
 @bin bin/goaccess
 @man man/man1/goaccess.1
 share/examples/goaccess/
@@ -14,5 +14,7 @@ share/locale/es/LC_MESSAGES/goaccess.mo
 share/locale/fr/LC_MESSAGES/goaccess.mo
 share/locale/ja/LC_MESSAGES/goaccess.mo
 share/locale/pt_BR/LC_MESSAGES/goaccess.mo
+share/locale/ru/LC_MESSAGES/goaccess.mo
 share/locale/sv/LC_MESSAGES/goaccess.mo
+share/locale/uk/LC_MESSAGES/goaccess.mo
 share/locale/zh_CN/LC_MESSAGES/goaccess.mo
