@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/01/28 15:21:43 sthen Exp $
 bin/cdg2mpg
 bin/pycdg
 bin/pykar
 bin/pykaraoke
 bin/pykaraoke_mini
 bin/pympg
-lib/python${MODPY_VERSION}/site-packages/_pycdgAux.so
+@so lib/python${MODPY_VERSION}/site-packages/_pycdgAux.so
 lib/python${MODPY_VERSION}/site-packages/performer_prompt.py
 lib/python${MODPY_VERSION}/site-packages/performer_prompt.pyc
 lib/python${MODPY_VERSION}/site-packages/pycdg.py
