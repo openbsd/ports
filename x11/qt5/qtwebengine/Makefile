@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/19 06:16:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/01/28 11:51:25 rsadowski Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -15,6 +15,7 @@ COMMENT =		Chromium-based web engine for Qt5
 
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
+REVISION =		0
 
 CATEGORIES =		www
 
