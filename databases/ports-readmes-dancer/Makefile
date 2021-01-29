@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/01/20 13:32:26 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2021/01/29 10:32:46 espie Exp $
 
 COMMENT =		ports-readmes dancer web app
 PKG_ARCH = *
@@ -6,7 +6,7 @@ PKG_ARCH = *
 MAINTAINER =		Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = ports-readmes-dancer
-GH_TAGNAME = 3.4
+GH_TAGNAME = 3.5
 GH_ACCOUNT = marcespie
 CATEGORIES =		databases www
 
@@ -29,7 +29,7 @@ RUN_DEPENDS = 	www/p5-Dancer \
 		databases/p5-DBD-SQLite \
 		textproc/p5-Template \
 		devel/p5-YAML \
-		databases/sqlports>=7.0 \
+		databases/sqlports>=7.33 \
 		databases/pkglocatedb
 
 .include <bsd.port.mk>
