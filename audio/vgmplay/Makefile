@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/01/29 21:02:56 bcallah Exp $
 
 COMMENT =	command line audio player for VGM files
+REVISION =	0
 CATEGORIES =	audio
 
 GH_ACCOUNT =	vgmrips
