@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2020/12/29 12:09:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2021/01/29 16:48:01 rsadowski Exp $
 
 COMMENT=		free open source planetarium
 
 GH_TAGNAME=		v0.20.4
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
+REVISION=		0
 
 CATEGORIES=		astro x11
 
@@ -15,14 +16,20 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia Qt5MultimediaWidgets
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Script Qt5SerialPort Qt5Widgets
-WANTLIB += c m pthread z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia
+WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Script Qt5SerialPort Qt5Widgets c gps m z
 
 MODULES=		devel/cmake \
+			lang/python \
 			x11/qt5
 
-LIB_DEPENDS=		x11/qt5/qtmultimedia \
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP=		No
+
+LIB_DEPENDS=		misc/gpsd \
+			x11/qt5/qtlocation \
+			x11/qt5/qtmultimedia \
 			x11/qt5/qtscript \
 			x11/qt5/qtserialport
 
@@ -33,13 +40,11 @@ RUN_DEPENDS=		net/curl \
 			x11/gtk+3,-guic
 
 CONFIGURE_ENV=		HOME=${WRKDIR}
-CONFIGURE_ARGS=		-Wno-dev \
-			-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
 
-# XXX needs FindQt5Positioning.cmake
-CONFIGURE_ARGS=		-DENABLE_GPS=0 -DENABLE_LIBGPS=0
+CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+			-DSTELLARIUM_RELEASE_BUILD=1
 
 PORTHOME=		${WRKDIR}
 
