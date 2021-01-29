@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/01/29 15:54:37 sthen Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
@@ -7,7 +7,7 @@ V =			0.5.11
 DISTNAME =		baresip-$V
 PKGNAME-main =		baresip-$V
 PKGNAME-gtk2 =		baresip-gtk2-$V
-REVISION-gtk2 =		0
+REVISION-gtk2 =		1
 REVISION-main =		0
 
 WANTLIB-main += SDL2 X11 Xext avahi-client avahi-common avcodec avdevice
@@ -18,8 +18,8 @@ WANTLIB-main += twolame v4l2 vpx x264 x265
 WANTLIB-gtk2 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-gtk2 += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
 WANTLIB-gtk2 += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB-gtk2 += gstbase-1.0 gstreamer-1.0 gtk-x11-2.0 intl mpg123 pango-1.0
-WANTLIB-gtk2 += pangocairo-1.0 pangoft2-1.0 re z
+WANTLIB-gtk2 += gstbase-1.0 gstreamer-1.0 gtk-x11-2.0 harbuzz intl mpg123
+WANTLIB-gtk2 += pango-1.0 pangocairo-1.0 pangoft2-1.0 re z
 
 
 BUILD_DEPENDS =		telephony/libzrtp>=0.20170512
