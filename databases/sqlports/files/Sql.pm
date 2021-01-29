@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.34 2019/05/18 21:35:22 espie Exp $
+# $OpenBSD: Sql.pm,v 1.35 2021/01/29 08:30:37 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -859,6 +859,13 @@ our @ISA = qw(Sql::Column);
 sub type
 {
 	"TEXT";
+}
+
+package Sql::Column::CurrentDate;
+our @ISA = qw(Sql::Column::Text);
+sub placeholder
+{
+	"CURRENT_DATE";
 }
 
 package Sql::Column::Key;

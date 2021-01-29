@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.127 2020/07/07 10:53:27 espie Exp $
+# $OpenBSD: Makefile,v 1.128 2021/01/29 08:30:37 espie Exp $
 
 CATEGORIES =		databases
-V =			7.32
+V =			7.33
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -13,7 +13,6 @@ PKGNAME-list =		portslist-$V
 
 PERMIT_PACKAGE =	Yes
 MULTI_PACKAGES =	-main -list
-REVISION =		0
 
 DBNAME =		sqlports
 SQLCACHE =		${DBNAME}_cache.sql

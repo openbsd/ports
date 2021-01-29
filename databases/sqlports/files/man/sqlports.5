@@ -1,4 +1,4 @@
-.\"	$OpenBSD: sqlports.5,v 1.4 2020/07/07 10:53:27 espie Exp $
+.\"	$OpenBSD: sqlports.5,v 1.5 2021/01/29 08:30:38 espie Exp $
 .\"
 .\" Copyright (c) 2020 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 7 2020 $
+.Dd $Mdocdate: January 29 2021 $
 .Dt SQLPORTS 5
 .Os
 .Sh NAME
@@ -34,7 +34,17 @@ Table names are prefixed with underscore, .e.g,
 contrary to views, e.g.,
 .Sq Paths .
 .Pp
-Tables are as follows:
+The special table
+.Sq Meta
+contains only one entry, detailing the current database.
+.Bl -tag -offset indent -width keyword
+.It Meta (SchemaVersion, Hash, CurrentDate)
+SchemaVersion follows the usual major.minor rules as shared libraries,
+Hash is unique to each generated database,
+CurrentDate is the date the database was generated.
+.El
+.Pp
+Other tables are as follows:
 .Bl -tag -offset indent -width keyword
 .It _Paths (ID, FULLPKGPATH, PKGPATH, CANONICAL)
 PKGPATH points to a PATHS entry corresponding to the stripped down version of 

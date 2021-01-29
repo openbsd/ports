@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.40 2019/05/17 20:41:54 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.41 2021/01/29 08:30:37 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -257,7 +257,8 @@ sub create_meta
 {
 	Sql::Create::Table->new("Meta")->add(
 	    Sql::Column::Text->new("SchemaVersion"),
-	    Sql::Column::Text->new("Hash"));
+	    Sql::Column::Text->new("Hash"),
+	    Sql::Column::CurrentDate->new("CreationDate"));
 }
 
 sub create_path_table
