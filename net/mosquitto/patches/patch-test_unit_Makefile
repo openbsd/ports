@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_unit_Makefile,v 1.1 2020/06/10 10:05:20 jasper Exp $
+$OpenBSD: patch-test_unit_Makefile,v 1.2 2021/01/29 16:08:27 sthen Exp $
 
 - disable coverage tests (undefined references)
 - fix LDFLAGS for cunit
@@ -12,9 +12,9 @@ Index: test/unit/Makefile
 -.PHONY: all check test test-broker test-lib clean coverage
 +.PHONY: all check test test-broker test-lib clean
  
- CPPFLAGS:=$(CPPFLAGS) -I../.. -I../../lib -I../../src
+ CPPFLAGS:=$(CPPFLAGS) -I../.. -I../../include -I../../lib -I../../src
  ifeq ($(WITH_BUNDLED_DEPS),yes)
-         CPPFLAGS:=$(CPPFLAGS) -I../../src/deps
+         CPPFLAGS:=$(CPPFLAGS) -I../../deps
  endif
  
 -CFLAGS:=$(CFLAGS) -coverage -Wall -ggdb

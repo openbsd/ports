@@ -1,9 +1,10 @@
-$OpenBSD: patch-mosquitto_conf,v 1.6 2019/11/13 20:53:32 jasper Exp $
+$OpenBSD: patch-mosquitto_conf,v 1.7 2021/01/29 16:08:27 sthen Exp $
+
 Index: mosquitto.conf
 --- mosquitto.conf.orig
 +++ mosquitto.conf
-@@ -158,7 +158,7 @@
- # This should be set to /var/run/mosquitto.pid if mosquitto is
+@@ -148,7 +148,7 @@
+ # This should be set to /var/run/mosquitto/mosquitto.pid if mosquitto is
  # being run automatically on boot with an init script and
  # start-stop-daemon or similar.
 -#pid_file
@@ -11,25 +12,16 @@ Index: mosquitto.conf
  
  # Set to true to queue messages with QoS 0 when a persistent client is
  # disconnected. These messages are included in the limit imposed by
-@@ -195,7 +195,7 @@
+@@ -187,7 +187,7 @@
  # If run as a non-root user, this setting has no effect.
- # Note that on Windows this has no effect and so mosquitto should
- # be started by the user you wish it to run as.
+ # Note that on Windows this has no effect and so mosquitto should be started by
+ # the user you wish it to run as.
 -#user mosquitto
 +user _mosquitto
  
  # =================================================================
- # Default listener
-@@ -205,7 +205,7 @@
- # given, the default listener will not be bound to a specific
- # address and so will be accessible to all network interfaces.
- # bind_address ip-address/host name
--#bind_address
-+bind_address 127.0.0.1
- 
- # Port to use for the default listener.
- #port 1883
-@@ -585,7 +585,7 @@
+ # Listeners
+@@ -448,7 +448,7 @@
  # Note that if the broker is running as a Windows service it will default to
  # "log_dest none" and neither stdout nor stderr logging is available.
  # Use "log_dest none" if you wish to disable logging.

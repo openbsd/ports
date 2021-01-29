@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2021/01/03 12:00:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2021/01/29 16:08:27 sthen Exp $
 
 COMMENT =		opensource MQTT broker
 
-DISTNAME =		mosquitto-1.6.12
-REVISION =		1
+DISTNAME =		mosquitto-2.0.6
 
-SHARED_LIBS +=  mosquitto                 1.0 # 1.5
+SHARED_LIBS +=  mosquitto                 1.1 # 1.5
 SHARED_LIBS +=  mosquittopp               1.0 # 1.5
 
 CATEGORIES =		net
@@ -33,9 +32,8 @@ LIB_DEPENDS =		www/libwebsockets
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CONFIGURE_ARGS=		-DWITH_SRV=no \
-			-DWITH_WEBSOCKETS=yes
-# Pre-shared key support was intentionally removed from libressl
-CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
+			-DWITH_WEBSOCKETS=yes \
+			-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/share/examples
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
 
 CFLAGS +=		-I${LOCALBASE}/include
@@ -46,12 +44,15 @@ TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 
 pre-test:
 	ln -fs ${WRKBUILD}/src/mosquitto ${WRKSRC}/src/
+	ln -fs ${WRKBUILD}/client/mosquitto_{p,s}ub ${WRKSRC}/client/
 	${SUBST_CMD} ${WRKSRC}/test/unit/Makefile
 
+# Pre-shared key support was intentionally removed from libressl
+# We don't have cJSON in ports yet
 do-test:
 	cd ${WRKSRC}/test; env ${MAKE_ENV} \
 	    WRKLIB=${WRKBUILD}/lib/libmosquitto.so.${LIBmosquitto_VERSION} \
 	    WRKLIBPP=${WRKBUILD}/lib/cpp/libmosquittopp.so.${LIBmosquittopp_VERSION} \
-	    LDFLAGS="-L${LOCALBASE}/lib" gmake WITH_TLS_PSK=no test
+	    LDFLAGS="-L${LOCALBASE}/lib" gmake WITH_TLS_PSK=no WITH_CJSON=no test
 
 .include <bsd.port.mk>
