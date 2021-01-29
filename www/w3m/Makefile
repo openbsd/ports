@@ -1,12 +1,17 @@
-# $OpenBSD: Makefile,v 1.93 2020/10/10 10:05:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2021/01/29 21:35:16 sthen Exp $
 
 COMMENT=	pager/text-based web browser
 
 V=		0.5.3
-P=		38
-DISTNAME=	w3m-$V
+P=		20210102
+
+DISTNAME=	w3m_$V+git$P
 PKGNAME=	w3m-$Vpl$P
+WRKDIST=	${WRKDIR}/w3m-$V+git$P
+EXTRACT_SUFX=	.orig.tar.xz
+
 CATEGORIES=	www
+
 HOMEPAGE=	http://w3m.sourceforge.net/
 
 # BSD-like
@@ -14,11 +19,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curses gc iconv intl m ssl z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
-MASTER_SITES0=	${MASTER_SITE_DEBIAN:=main/w/w3m/}
-
-DISTFILES=	${DISTNAME}.tar.gz \
-		w3m_$V-$P.debian.tar.xz:0
+MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/w/w3m/}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
@@ -38,29 +39,11 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .if ${FLAVOR:Mimage}
 LIB_DEPENDS+=	graphics/imlib2
-CONFIGURE_ARGS+=--with-imagelib=imlib2
+CONFIGURE_ARGS+= --with-imagelib=imlib2
 WANTLIB+=	Imlib2 X11
 .else
-CONFIGURE_ARGS+=--enable-image=no
+CONFIGURE_ARGS+= --enable-image=no
 .endif
-
-PATCH_DIST_STRIP= -p1
-
-do-distpatch:
-	@for p in ${WRKDIR}/debian/patches/*.patch; do \
-	    ${PATCH} ${PATCH_DIST_ARGS} < $$p; \
-	done
-
-post-build:
-	cd ${WRKSRC}/doc-jp; \
-	    for f in ${EUC_JP}; do \
-		iconv -f euc-jp -t utf-8 $$f >$$f.tmp; \
-		mv $$f.tmp $$f; \
-	    done; \
-	    for f in ${ISO_2022_JP}; do \
-		iconv -f iso-2022-jp -t utf-8 $$f >$$f.tmp; \
-		mv $$f.tmp $$f; \
-	    done
 
 post-install:
 .for src dst in doc "" doc-jp ja doc-de de
@@ -69,11 +52,8 @@ post-install:
 	    ${INSTALL_DATA} !(w3m.1|CVS|*${DISTORIG}|README.cygwin) \
 		${PREFIX}/share/doc/w3m/${dst}
 .endfor
-
-EUC_JP=		FAQ.html HISTORY MANUAL.html README README.SSL README.cookie \
-		README.dict README.func README.img README.keymap README.m17n \
-		README.mailcap README.menu README.migemo README.mouse \
-		README.siteconf STORY.html menu.default menu.submenu w3m.1
-ISO_2022_JP=	README.passwd README.pre_form README.tab
+.if !${FLAVOR:Mimage}
+	rm ${PREFIX}/share/doc/w3m/README.img
+.endif
 
 .include <bsd.port.mk>

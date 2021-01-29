@@ -1,4 +1,2 @@
-SHA256 (w3m-0.5.3.tar.gz) = 6ZTSY/L9LCL+v75FEDUm4AFFp2dKD9p5yCK5fCdwqeM=
-SHA256 (w3m_0.5.3-38.debian.tar.xz) = In3Y0nlG8hGG10rGt7zxSMN9lwZsfM3tFkldniJSB5I=
-SIZE (w3m-0.5.3.tar.gz) = 2202328
-SIZE (w3m_0.5.3-38.debian.tar.xz) = 200556
+SHA256 (w3m_0.5.3+git20210102.orig.tar.xz) = Mvz0eZmk+rWQITgtOCrdhv6HFZ2eOpW92v2iRq4S9fk=
+SIZE (w3m_0.5.3+git20210102.orig.tar.xz) = 1161620
