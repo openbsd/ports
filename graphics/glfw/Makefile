@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/29 14:31:30 kmos Exp $
 
 COMMENT =	open source, multi-platform library for creating windows
-DISTNAME =	glfw-3.2.1
+V =		3.3.2
+DISTNAME =	glfw-${V}
 CATEGORIES =	graphics x11
-REVISION =	0
 
-SHARED_LIBS +=  glfw                      1.0 # 3.1
+SHARED_LIBS +=  glfw                      1.1 # 3.1
 
 HOMEPAGE =	http://www.glfw.org/
 MAINTAINER =	Gregor Best <gbe@unobtanium.de>
@@ -15,7 +15,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcursor Xinerama Xrandr Xxf86vm m pthread
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=glfw/}
+MASTER_SITES =	https://github.com/glfw/glfw/releases/download/${V}/
+EXTRACT_SUFX =	.zip
 
 MODULES =	devel/cmake
 
