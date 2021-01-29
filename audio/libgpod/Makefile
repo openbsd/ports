@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2021/01/28 15:02:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/01/29 16:04:28 sthen Exp $
 
 COMMENT=	library to access the contents of an iPod
 
 DISTNAME=	libgpod-0.8.0
-REVISION=	11
+REVISION=	12
 
 SHARED_LIBS=	gpod	721.0	# 7.1
 
@@ -34,11 +34,12 @@ LIB_DEPENDS=	databases/sqlite3 \
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-gdk-pixbuf \
-		--enable-pygobject \
 		--without-hal \
 		--without-libimobiledevice \
 		--without-mono \
 		--without-python \
+		--without-python \
+		--disable-pygobject \
 		--localedir=${TRUEPREFIX}/share/locale
 
 .include <bsd.port.mk>

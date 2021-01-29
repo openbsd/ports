@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/28 15:02:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/01/29 16:04:28 sthen Exp $
 @conflict py-gpod-*
 @pkgpath audio/libgpod,-main
 @pkgpath audio/libgpod,-python
@@ -6,7 +6,7 @@
 include/gpod-1.0/
 include/gpod-1.0/gpod/
 include/gpod-1.0/gpod/itdb.h
-lib/libgpod.a
+@static-lib lib/libgpod.a
 lib/libgpod.la
 @lib lib/libgpod.so.${LIBgpod_VERSION}
 lib/pkgconfig/libgpod-1.0.pc
