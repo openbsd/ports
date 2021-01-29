@@ -1,5 +1,8 @@
---- usbctl.c.orig	Mon Feb 25 01:50:55 2002
-+++ usbctl.c	Tue Apr 16 22:42:31 2013
+$OpenBSD: patch-usbctl_c,v 1.5 2021/01/29 11:45:51 sthen Exp $
+
+Index: usbctl.c
+--- usbctl.c.orig
++++ usbctl.c
 @@ -62,6 +62,7 @@
  #endif
  
@@ -53,6 +56,20 @@
  #ifdef NSTRINGS
  	USETW(req.ucr_request.wLength, sizeof(usb_string_descriptor_t));
  	req.ucr_flags = USBD_SHORT_XFER_OK;
+@@ -253,11 +280,11 @@ prconfd(usb_config_descriptor_t *d)
+ 	getstring(d->iConfiguration, conf);
+ 	if (d->bDescriptorType != UDESC_CONFIG) printf("weird descriptorType, should be %d\n", UDESC_CONFIG);
+ 	printf("\
+-bLength=%d bDescriptorType=%s wTotalLength=%d bNumInterface=%d\n\
++bLength=%d bDescriptorType=%s wTotalLength=%d bNumInterfaces=%d\n\
+ bConfigurationValue=%d iConfiguration=%d(%s) bmAttributes=%x bMaxPower=%d mA\n",
+ 	       d->bLength, descTypeName(d->bDescriptorType), 
+ 	       UGETW(d->wTotalLength),
+-	       d->bNumInterface, d->bConfigurationValue, d->iConfiguration,
++	       d->bNumInterfaces, d->bConfigurationValue, d->iConfiguration,
+ 	       conf,
+ 	       d->bmAttributes, d->bMaxPower*2);
+ }
 @@ -309,7 +336,7 @@ bPwrOn2PwrGood=%d bHubContrCurrent=%d DeviceRemovable=
  }
  

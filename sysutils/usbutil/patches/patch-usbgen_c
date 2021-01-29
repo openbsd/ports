@@ -1,0 +1,28 @@
+$OpenBSD: patch-usbgen_c,v 1.3 2021/01/29 11:45:51 sthen Exp $
+
+Index: usbgen.c
+--- usbgen.c.orig
++++ usbgen.c
+@@ -86,11 +86,11 @@ void
+ show_config_desc(int indent, usb_config_descriptor_t *d)
+ {
+ 	printf("\
+-%*sbLength=%d bDescriptorType=%d wTotalLength=%d bNumInterface=%d\n\
++%*sbLength=%d bDescriptorType=%d wTotalLength=%d bNumInterfaces=%d\n\
+ %*sbConfigurationValue=%d iConfiguration=%d bmAttributes=%x bMaxPower=%d mA\n",
+ 	       indent, "",
+ 	       d->bLength, d->bDescriptorType, 
+-	       UGETW(d->wTotalLength), d->bNumInterface, 
++	       UGETW(d->wTotalLength), d->bNumInterfaces, 
+ 	       indent, "",
+ 	       d->bConfigurationValue, d->iConfiguration,
+ 	       d->bmAttributes, d->bMaxPower*2);
+@@ -187,7 +187,7 @@ dump_cdesc(int f, int all, int cindex)
+ 	show_config_desc(0, &cdesc.ucd_desc);
+ 	printf("\n");
+ 	
+-	for (i = 0; i < cdesc.ucd_desc.bNumInterface; i++) {
++	for (i = 0; i < cdesc.ucd_desc.bNumInterfaces; i++) {
+ 		if (all) {
+ #if 0
+ 			if (ioctl(f, USB_GET_ALTINTERFACE, &ai) != 0)
