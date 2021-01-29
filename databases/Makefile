@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.414 2021/01/05 07:49:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.415 2021/01/29 17:05:32 jeremy Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -204,6 +204,7 @@
      SUBDIR += riak
      SUBDIR += ruby-amalgalite,ruby26
      SUBDIR += ruby-amalgalite,ruby27
+     SUBDIR += ruby-amalgalite,ruby30
      SUBDIR += ruby-hiera3
      SUBDIR += ruby-hiera-eyaml
      SUBDIR += ruby-hiera-eyaml-gpg
@@ -211,22 +212,29 @@
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby26
      SUBDIR += ruby-ldap,ruby27
+     SUBDIR += ruby-ldap,ruby30
      SUBDIR += ruby-mysql,ruby26
      SUBDIR += ruby-mysql,ruby27
+     SUBDIR += ruby-mysql,ruby30
      SUBDIR += ruby-mysql2,ruby26
      SUBDIR += ruby-mysql2,ruby27
+     SUBDIR += ruby-mysql2,ruby30
      SUBDIR += ruby-pg,ruby26
      SUBDIR += ruby-pg,ruby27
+     SUBDIR += ruby-pg,ruby30
      SUBDIR += ruby-redis
      SUBDIR += ruby-redis-namespace
      SUBDIR += ruby-resque
      SUBDIR += ruby-sequel
      SUBDIR += ruby-sequel_pg,ruby26
      SUBDIR += ruby-sequel_pg,ruby27
+     SUBDIR += ruby-sequel_pg,ruby30
      SUBDIR += ruby-sqlite3,ruby26
      SUBDIR += ruby-sqlite3,ruby27
+     SUBDIR += ruby-sqlite3,ruby30
      SUBDIR += ruby-tiny_tds,ruby26
      SUBDIR += ruby-tiny_tds,ruby27
+     SUBDIR += ruby-tiny_tds,ruby30
      SUBDIR += sharedance
      SUBDIR += skytools
      SUBDIR += sqlbox
