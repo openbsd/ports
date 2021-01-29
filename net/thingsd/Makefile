@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/08/26 16:59:56 tracey Exp $
+# $OpenBSD: Makefile,v 1.7 2021/01/29 19:33:43 tracey Exp $
 
 COMMENT =	things proxy daemon for OpenBSD
 CATEGORIES =	net
 
 GH_ACCOUNT =	basepr1me
 GH_PROJECT =	thingsd
-GH_TAGNAME =	3.0.3
+GH_TAGNAME =	3.0.4
 
 MAINTAINER =	Tracey Emery <tracey@traceyemery.net>
 
