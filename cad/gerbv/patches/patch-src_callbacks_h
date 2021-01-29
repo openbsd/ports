@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_callbacks_h,v 1.1 2021/01/29 21:06:25 bcallah Exp $
+
+From https://sources.debian.org/patches/gerbv/2.7.0-2/fixes/gcc10-extern.patch/
+Fix for -fno-common
+
+Index: src/callbacks.h
+--- src/callbacks.h.orig
++++ src/callbacks.h
+@@ -26,7 +26,7 @@
+     \ingroup gerbv
+ */
+ 
+-enum {
++extern enum {
+ 	CALLBACKS_SAVE_PROJECT_AS,
+ 	CALLBACKS_SAVE_FILE_PS,
+ 	CALLBACKS_SAVE_FILE_PDF,
+@@ -43,7 +43,7 @@ enum {
+ 	
+ } CALLBACKS_SAVE_FILE_TYPE;
+ 
+-enum {
++extern enum {
+ 	LAYER_SELECTED =	-1,
+ 	LAYER_ALL_ON =		-2,
+ 	LAYER_ALL_OFF =		-3,
