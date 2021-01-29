@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.57 2019/11/11 20:44:39 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.58 2021/01/29 10:28:31 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -39,8 +39,8 @@ our @ISA = (qw(TreeWalker));
 
 sub new
 {
-	my ($class, $inserter, $strict) = @_;
-	my $o =  $class->SUPER::new($strict);
+	my ($class, $inserter, @r) = @_;
+	my $o =  $class->SUPER::new(@r);
 	$o->{inserter} = $inserter;
 	return $o;
 }
@@ -110,10 +110,10 @@ sub digest
 	return encode_base64($d->digest, '');
 }
 
-our ($opt_v, $opt_q, $opt_p, $opt_V, $opt_C, $opt_w, $opt_s);
+our ($opt_v, $opt_q, $opt_p, $opt_V, $opt_C, $opt_w, $opt_s, $opt_S);
 
 Trace->setup(\%SIG);
-getopts('svq:p:V:C:w:');
+getopts('svq:p:V:C:w:S:');
 my $dbname;
 if (@ARGV == 1) {
 	$dbname = shift;
@@ -133,7 +133,7 @@ if ($opt_p) {
 	$ENV{'REPORT_PROBLEM_LOGFILE'}= $opt_p;
 }
 
-my $walker = MyTreeWalker->new($inserter, $opt_s);
+my $walker = MyTreeWalker->new($inserter, $opt_s, $opt_S);
 if (defined $opt_C) {
 	open(my $f, '>', $opt_C) or die;
 	my $cache = "PortsQ";

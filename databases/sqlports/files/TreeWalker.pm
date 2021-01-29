@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.16 2020/05/19 08:44:44 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.17 2021/01/29 10:28:31 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -23,8 +23,8 @@ use PkgPath;
 
 sub new
 {
-	my ($class, $strict) = @_;
-	return bless { strict => $strict }, $class;
+	my ($class, $strict, $startdir) = @_;
+	return bless { strict => $strict, startdir => $startdir }, $class;
 }
 
 sub subdirlist
@@ -50,6 +50,8 @@ sub dump_dirs
 			$myenv{'SUBDIR'} = $self->subdirlist($subdirs);
 		} elsif (defined $ENV{SUBDIRLIST}) {
 			$myenv{'SUBDIRLIST'} = $ENV{SUBDIRLIST};
+		} elsif (defined $self->{startdir}) {
+			$myenv{'STARTDIR'} = $self->{startdir};
 		}
 		$myenv{'NO_IGNORE'} = 'Yes';
 		$myenv{PORTSDIR} = $portsdir;
