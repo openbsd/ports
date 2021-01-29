@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_options_h,v 1.1 2021/01/29 16:38:00 semarie Exp $
+Compile with -fno-common
+https://github.com/ggreer/the_silver_searcher/commit/21eaa1c4160b868b0c5bbf59da17974429f30055
+
+Index: src/options.h
+--- src/options.h.orig
++++ src/options.h
+@@ -91,7 +91,7 @@ typedef struct {
+ } cli_options;
+ 
+ /* global options. parse_options gives it sane values, everything else reads from it */
+-cli_options opts;
++extern cli_options opts;
+ 
+ typedef struct option option_t;
+ 

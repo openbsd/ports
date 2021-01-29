@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ignore_c,v 1.3 2021/01/29 16:38:00 semarie Exp $
+Compile with -fno-common
+https://github.com/ggreer/the_silver_searcher/commit/21eaa1c4160b868b0c5bbf59da17974429f30055
+
+Index: src/ignore.c
+--- src/ignore.c.orig
++++ src/ignore.c
+@@ -20,6 +20,8 @@
+ const int fnmatch_flags = FNM_PATHNAME;
+ #endif
+ 
++ignores *root_ignores;
++
+ /* TODO: build a huge-ass list of files we want to ignore by default (build cache stuff, pyc files, etc) */
+ 
+ const char *evil_hardcoded_ignore_files[] = {

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_log_h,v 1.1 2021/01/29 16:38:00 semarie Exp $
+Compile with -fno-common
+https://github.com/ggreer/the_silver_searcher/commit/21eaa1c4160b868b0c5bbf59da17974429f30055
+
+Index: src/log.h
+--- src/log.h.orig
++++ src/log.h
+@@ -9,7 +9,7 @@
+ #include <pthread.h>
+ #endif
+ 
+-pthread_mutex_t print_mtx;
++extern pthread_mutex_t print_mtx;
+ 
+ enum log_level {
+     LOG_LEVEL_DEBUG = 10,

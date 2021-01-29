@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_options_c,v 1.3 2021/01/29 16:38:00 semarie Exp $
+Compile with -fno-common
+https://github.com/ggreer/the_silver_searcher/commit/21eaa1c4160b868b0c5bbf59da17974429f30055
+
+Index: src/options.c
+--- src/options.c.orig
++++ src/options.c
+@@ -20,6 +20,8 @@ const char *color_line_number = "\033[1;33m"; /* bold 
+ const char *color_match = "\033[30;43m";      /* black with yellow background */
+ const char *color_path = "\033[1;32m";        /* bold green */
+ 
++cli_options opts;
++
+ /* TODO: try to obey out_fd? */
+ void usage(void) {
+     printf("\n");

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ignore_h,v 1.1 2021/01/29 16:38:00 semarie Exp $
+Compile with -fno-common
+https://github.com/ggreer/the_silver_searcher/commit/21eaa1c4160b868b0c5bbf59da17974429f30055
+
+Index: src/ignore.h
+--- src/ignore.h.orig
++++ src/ignore.h
+@@ -29,7 +29,7 @@ struct ignores {
+ };
+ typedef struct ignores ignores;
+ 
+-ignores *root_ignores;
++extern ignores *root_ignores;
+ 
+ extern const char *evil_hardcoded_ignore_files[];
+ extern const char *ignore_pattern_files[];

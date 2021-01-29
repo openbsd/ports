@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_util_h,v 1.1 2021/01/29 16:38:00 semarie Exp $
+Compile with -fno-common
+https://github.com/ggreer/the_silver_searcher/commit/21eaa1c4160b868b0c5bbf59da17974429f30055
+
+Index: src/util.h
+--- src/util.h.orig
++++ src/util.h
+@@ -12,7 +12,7 @@
+ #include "log.h"
+ #include "options.h"
+ 
+-FILE *out_fd;
++extern FILE *out_fd;
+ 
+ #ifndef TRUE
+ #define TRUE 1
+@@ -51,7 +51,7 @@ typedef struct {
+ } ag_stats;
+ 
+ 
+-ag_stats stats;
++extern ag_stats stats;
+ 
+ /* Union to translate between chars and words without violating strict aliasing */
+ typedef union {

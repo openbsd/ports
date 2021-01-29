@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_log_c,v 1.1 2021/01/29 16:38:00 semarie Exp $
+Compile with -fno-common
+https://github.com/ggreer/the_silver_searcher/commit/21eaa1c4160b868b0c5bbf59da17974429f30055
+
+Index: src/log.c
+--- src/log.c.orig
++++ src/log.c
+@@ -4,6 +4,7 @@
+ #include "log.h"
+ #include "util.h"
+ 
++pthread_mutex_t print_mtx = PTHREAD_MUTEX_INITIALIZER;
+ static enum log_level log_threshold = LOG_LEVEL_ERR;
+ 
+ void set_log_level(enum log_level threshold) {
