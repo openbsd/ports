@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1152 2021/01/25 14:21:29 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1153 2021/01/29 16:50:42 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2055,6 +2055,7 @@ my $obsolete_reason = {
 	'gns3' => 29,
 	'py-qt4' => 3,
 	'py-qt4-docs' => 3,
+	'hitch' => 29,
 };
 
 # reasons for obsolete packages
