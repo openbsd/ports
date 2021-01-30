@@ -1,0 +1,15 @@
+$OpenBSD: patch-share_text_h,v 1.1 2021/01/30 07:00:05 benoit Exp $
+
+Fix -fno-common build failure.
+
+--- share/text.h.orig	Sat Jan 30 07:41:12 2021
++++ share/text.h	Sat Jan 30 07:41:30 2021
+@@ -15,7 +15,7 @@
+ 
+ /*---------------------------------------------------------------------------*/
+ 
+-char text_input[MAXSTR];
++extern char text_input[MAXSTR];
+ 
+ void text_input_start(void (*cb)(int typing));
+ void text_input_stop(void);
