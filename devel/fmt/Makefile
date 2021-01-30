@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/02 21:51:19 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/30 15:37:05 cwen Exp $
 
 COMMENT=		alternative formatting library for C and C++
 
@@ -22,5 +22,12 @@ WANTLIB+=		${COMPILER_LIBCXX}
 
 
 CONFIGURE_ARGS+=	-DBUILD_SHARED_LIBS=on
+
+# Fix undefined references to pthread_* symbols on clang+ld.bfd archs by
+# disabling -Wl,--as-needed.
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld} && ${PROPERTIES:Mclang}
+CONFIGURE_ARGS+=	-DAS_NEEDED=off
+.endif
 
 .include <bsd.port.mk>
