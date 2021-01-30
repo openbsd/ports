@@ -1,0 +1,15 @@
+$OpenBSD: patch-ssl_h,v 1.1 2021/01/30 07:14:29 benoit Exp $
+
+Fix -fno-common build failure.
+
+--- ssl.h.org	Sat Jan 30 08:09:44 2021
++++ ssl.h	Sat Jan 30 08:09:56 2021
+@@ -25,7 +25,7 @@
+ 
+ #include "types.h"
+ 
+-_s32 ssl_cli_tap, ssl_srv_tap;
++extern _s32 ssl_cli_tap, ssl_srv_tap;
+ 
+ void ssl_setup(void);
+ 
