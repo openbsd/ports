@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.444 2021/01/29 17:05:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.445 2021/01/30 11:45:54 kn Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -200,9 +200,7 @@
      SUBDIR += py-musicbrainzngs
      SUBDIR += py-musicbrainzngs,python3
      SUBDIR += py-mutagen,python3
-     SUBDIR += py-ogg
      SUBDIR += py-tagpy,python3
-     SUBDIR += py-vorbis
      SUBDIR += pykaraoke
      SUBDIR += qsynth
      SUBDIR += quodlibet
