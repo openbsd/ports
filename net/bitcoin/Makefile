@@ -1,4 +1,4 @@
- $OpenBSD: Makefile,v 1.25 2020/08/14 11:12:12 rsadowski Exp $
+$OpenBSD: Makefile,v 1.26 2021/01/30 06:17:16 rsadowski Exp $
 
 BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
@@ -6,10 +6,10 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v0.20.1
+GH_TAGNAME =		v0.21.0
 
-SHARED_LIBS +=  bitcoinconsensus          3.0 # 0.0
-SHARED_LIBS +=  secp256k1                 0.0 # 0.0
+SHARED_LIBS +=  bitcoinconsensus          4.0 # 0.0
+SHARED_LIBS +=  secp256k1                 0.1 # 0.0
 SHARED_LIBS +=  univalue                  0.0 # 100.3
 
 CATEGORIES =		net
@@ -22,8 +22,8 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_filesystem
-WANTLIB += boost_system boost_system-mt boost_thread-mt c crypto
-WANTLIB += db_cxx event_core event_extra event_pthreads icuio
+WANTLIB += boost_system boost_thread-mt c crypto
+WANTLIB += db_cxx event_core event_extra event_pthreads
 WANTLIB += m sodium ssl zmq zstd
 
 LIB_DEPENDS =		archivers/zstd \
@@ -65,7 +65,7 @@ WANTLIB += expat freetype glapi glib-2.0 graphite2 gthread-2.0
 WANTLIB += harfbuzz iconv icudata icui18n icuuc intl miniupnpc
 WANTLIB += pcre pcre2-16 png qrencode xcb xcb-dri2 double-conversion
 WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
-WANTLIB += z
+WANTLIB += Xau Xdmcp sqlite3 z
 
 MODULES +=		x11/qt5
 

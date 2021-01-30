@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/01/13 19:59:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/01/30 06:17:16 rsadowski Exp $
 @newgroup _bitcoind:813
 @newuser _bitcoind:813:813:daemon:Bitcoind Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/bitcoind
@@ -18,7 +18,10 @@
 @comment @bin bin/test_bitcoin-qt
 include/bitcoinconsensus.h
 include/secp256k1.h
+include/secp256k1_extrakeys.h
+include/secp256k1_preallocated.h
 include/secp256k1_recovery.h
+include/secp256k1_schnorrsig.h
 include/univalue.h
 @static-lib lib/libbitcoinconsensus.a
 lib/libbitcoinconsensus.la
