@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/12/30 15:55:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/01/30 14:27:32 kn Exp $
 
      SUBDIR =
      SUBDIR += AcePerl
@@ -6,7 +6,6 @@
      SUBDIR += bioperl
      SUBDIR += emboss
      SUBDIR += hmmer
-     SUBDIR += nutdb
      SUBDIR += p5-Bio-ASN1-EntrezGene
      SUBDIR += p5-Bio-Cluster
      SUBDIR += p5-Bio-DB-EMBL

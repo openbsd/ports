@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1156 2021/01/30 14:14:38 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1157 2021/01/30 14:27:33 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2060,6 +2060,7 @@ my $obsolete_reason = {
 	'py-vorbis' => 31,
 	'py-ogg' => 31,
 	'sattrack' => 32,
+	'sattrack' => 33,
 };
 
 # reasons for obsolete packages
@@ -2097,6 +2098,7 @@ my @msg = (
 	"crashes in many different ways at runtime, does not build with '-fno-common'", #30
 	"upstream is dead, python2-only, nothing uses it", #31
 	"no more public distfiles, license forbids distributing package due to local changes", #32
+	"no longer maintained upstream, website suggests https://cronometer.com until rewrite is done", #33
 );
 
 # ->is_base_system($handle, $state):
