@@ -1,0 +1,31 @@
+$OpenBSD: patch-tests_variables_at,v 1.1 2021/01/30 23:37:40 naddy Exp $
+
+Index: tests/variables.at
+--- tests/variables.at.orig
++++ tests/variables.at
+@@ -593,10 +593,10 @@ echo $home
+ ]])
+ AT_CHECK([
+ case "$(uname -s)" in
+-Darwin)
++Darwin[)]
+     HOME=$(dscl . read "/Users/$USER" NFSHomeDirectory | awk '{ print $NF }')
+     ;;
+-*)
++*[)]
+     HOME=$(getent passwd $(id -un) | awk -F: '{ print $(NF - 1) }')
+     ;;
+ esac;
+@@ -721,10 +721,10 @@ AT_CLEANUP
+ AT_SETUP([$ cdtohome])
+ AT_CHECK([
+ case "$(uname -s)" in
+-Darwin)
++Darwin[)]
+     HOME=$(dscl . read "/Users/$USER" NFSHomeDirectory | awk '{ print $NF }')
+     ;;
+-*)
++*[)]
+     HOME=$(getent passwd $(id -un) | awk -F: '{ print $(NF - 1) }')
+     ;;
+ esac;

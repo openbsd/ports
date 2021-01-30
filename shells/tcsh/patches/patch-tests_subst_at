@@ -1,0 +1,31 @@
+$OpenBSD: patch-tests_subst_at,v 1.1 2021/01/30 23:37:40 naddy Exp $
+
+Index: tests/subst.at
+--- tests/subst.at.orig
++++ tests/subst.at
+@@ -52,10 +52,10 @@ foo* ab{c,d} ^fo*
+ 
+ AT_CHECK([
+ case "$(uname -s)" in
+-Darwin)
++Darwin[)]
+     HOME=$(dscl . read "/Users/$USER" NFSHomeDirectory | awk '{ print $NF }')
+     ;;
+-*)
++*[)]
+     HOME=$(getent passwd $(id -un) | awk -F: '{ print $(NF - 1) }')
+     ;;
+ esac;
+@@ -67,10 +67,10 @@ echo 'echo ~; echo "$HOME"' | tcsh -f | uniq | wc -l |
+ 
+ AT_CHECK([
+ case "$(uname -s)" in
+-Darwin)
++Darwin[)]
+     HOME=$(dscl . read "/Users/$USER" NFSHomeDirectory | awk '{ print $NF }')
+     ;;
+-*)
++*[)]
+     HOME=$(getent passwd $(id -un) | awk -F: '{ print $(NF - 1) }')
+     ;;
+ esac;
