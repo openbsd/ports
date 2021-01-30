@@ -1,0 +1,17 @@
+$OpenBSD: patch-troff_n5_c,v 1.1 2021/01/30 09:12:45 jsg Exp $
+
+Fix build with GCC 10.
+a5294cbbfd90e7b7b2c3c69186d6e67ba12bc913
+
+Index: troff/n5.c
+--- troff/n5.c.orig
++++ troff/n5.c
+@@ -1588,8 +1588,6 @@ caseie(void)
+ 	caseif(1);
+ }
+ 
+-int	tryglf;
+-
+ void
+ caseif(int x)
+ {
