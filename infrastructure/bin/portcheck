@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.134 2020/12/12 15:12:07 rsadowski Exp $
+# $OpenBSD: portcheck,v 1.135 2021/01/30 08:01:10 rsadowski Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -940,8 +940,8 @@ sub_checks() {
 #
 #   * Manual pages shouldn't be compressed.
 #
-#   * If port installs QML files, it should depend on either x11/qt4,-main
-#     or x11/qt5/qtdeclarative,-main
+#   * If port installs QML files, it should depend on
+#     x11/qt5/qtdeclarative,-main
 #
 #   * Qt5-QML files should live under PREFIX/lib/qt5/qml/.
 #
@@ -998,7 +998,7 @@ check_plist() {
 	local regsh_exec=false unregsh_exec=false
 
 	local qml_found=false qt5_qml_found=false non_qt5_qml_found=false
-	local qt4_dep=false qt5_dep=false qt5declarative_dep=false
+	local qt5_dep=false qt5declarative_dep=false
 	local lib_found=false
 
 	local owner_set=false group_set=false mode_set=false
@@ -1077,9 +1077,6 @@ check_plist() {
 			    "invocation: ${l#@* }"
 			;;
 
-		"@depend x11/qt4,-main"*)
-			qt4_dep=true
-			;;
 		"@depend x11/qt5/qtdeclarative,-main"*)
 			qt5declarative_dep=true
 			qt5_dep=true
@@ -1215,16 +1212,11 @@ check_plist() {
 	fi
 
 	# QML
-	$qml_found && ! $qt4_dep && ! $qt5_dep &&
-		[[ $fullpkgname != qt4-[0-9]* ]] &&
-		[[ $fullpkgname != qtdeclarative-[0-9]* ]] &&
-		err "${portref}looks like providing QML files without" \
-		    "Qt dependency"
 	$qt5_qml_found && ! $qt5declarative_dep &&
 		[[ $fullpkgname != qtdeclarative-[0-9]* ]] &&
 		err "${portref}provides Qt5 QML files without" \
 		    "x11/qt5/qtdeclarative dependency"
-	$qt5_dep && ! $qt4_dep && $non_qt5_qml_found &&
+	$qt5_dep && $non_qt5_qml_found &&
 		err "${portref}depends on Qt5 but installs QML files" \
 		    "outside PREFIX/lib/qt5/qml/"
 
