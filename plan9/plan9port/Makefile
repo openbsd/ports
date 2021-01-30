@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2020/11/16 23:56:37 gsoares Exp $
+# $OpenBSD: Makefile,v 1.37 2021/01/30 12:51:34 jsg Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-i386 =		various "invalid operand for instruction", OpenBSD-386-asm.S
@@ -6,11 +6,11 @@ BROKEN-powerpc =	threading issues
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20200927
+DISTNAME =		plan9port-20210129
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
-GH_COMMIT =		291f7411783bf6871b253f3b15ce691eea7a257e
+GH_COMMIT =		36cd4c58c1346375b98f517fb8568be5bb47618d
 
 CATEGORIES =		plan9
 
@@ -32,10 +32,6 @@ NO_TEST =		Yes
 
 SUBST_VARS +=		CC
 UPDATE_PLIST_ARGS += -i CC
-
-post-patch:
-	cd ${WRKSRC}/src/libthread && mv OpenBSD-386-asm.s \
-		OpenBSD-386-asm.S
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/INSTALL ${WRKSRC}/bin/{9c,9l}
