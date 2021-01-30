@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.604 2021/01/29 17:05:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.605 2021/01/30 19:17:11 abieber Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -346,6 +346,7 @@
      SUBDIR += qtpass
      SUBDIR += radiusniff
      SUBDIR += rarcrack
+     SUBDIR += rbw
      SUBDIR += rdp
      SUBDIR += reaver
      SUBDIR += recon-ng
