@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2020/05/22 04:49:05 kirby Exp $
+# $OpenBSD: Makefile,v 1.26 2021/01/30 08:34:15 kirby Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.2.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		geo x11
 

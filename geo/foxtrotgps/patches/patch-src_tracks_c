@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tracks_c,v 1.1 2021/01/30 08:34:15 kirby Exp $
+Fix for -fno-common
+https://bazaar.launchpad.net/~foxtrotgps-team/foxtrotgps/trunk/revision/323
+
+Index: src/tracks.c
+--- src/tracks.c.orig
++++ src/tracks.c
+@@ -30,7 +30,7 @@
+ 
+ GSList *loaded_track = NULL;
+ GtkWidget *window12;
+-GtkWidget *dialog10;
++static GtkWidget *dialog10;
+ 
+ 
+ 
