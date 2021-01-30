@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1155 2021/01/30 11:45:54 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1156 2021/01/30 14:14:38 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2059,6 +2059,7 @@ my $obsolete_reason = {
 	'xtraceroute' => 30,
 	'py-vorbis' => 31,
 	'py-ogg' => 31,
+	'sattrack' => 32,
 };
 
 # reasons for obsolete packages
@@ -2095,6 +2096,7 @@ my @msg = (
 	"unmaintained port that was blocking other changes in ports", #29
 	"crashes in many different ways at runtime, does not build with '-fno-common'", #30
 	"upstream is dead, python2-only, nothing uses it", #31
+	"no more public distfiles, license forbids distributing package due to local changes", #32
 );
 
 # ->is_base_system($handle, $state):
