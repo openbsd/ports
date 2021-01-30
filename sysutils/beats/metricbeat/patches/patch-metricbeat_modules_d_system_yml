@@ -1,9 +1,9 @@
-$OpenBSD: patch-metricbeat_modules_d_system_yml,v 1.3 2020/09/22 17:59:25 pvk Exp $
+$OpenBSD: patch-metricbeat_modules_d_system_yml,v 1.4 2021/01/30 10:03:41 pvk Exp $
 
 Index: metricbeat/modules.d/system.yml
 --- metricbeat/modules.d/system.yml.orig
 +++ metricbeat/modules.d/system.yml
-@@ -7,10 +7,10 @@
+@@ -7,36 +7,14 @@
      - cpu
      - load
      - memory
@@ -11,10 +11,32 @@ Index: metricbeat/modules.d/system.yml
 -    - process
 -    - process_summary
 -    - socket_summary
-+    #- network
-+    #- process
-+    #- process_summary
-+    #- socket_summary
-     #- entropy
-     #- core
-     #- diskio
+-    #- entropy
+-    #- core
+-    #- diskio
+-    #- socket
+-    #- service
+-    #- users
+-  process.include_top_n:
+-    by_cpu: 5      # include top 5 processes by CPU
+-    by_memory: 5   # include top 5 processes by memory
+ 
+ - module: system
+   period: 1m
+   metricsets:
+     - filesystem
+     - fsstat
+-  processors:
+-  - drop_event.when.regexp:
+-      system.filesystem.mount_point: '^/(sys|cgroup|proc|dev|etc|host|lib|snap)($|/)'
+ 
+ - module: system
+   period: 15m
+   metricsets:
+     - uptime
+-
+-#- module: system
+-#  period: 5m
+-#  metricsets:
+-#    - raid
+-#  raid.mount_point: '/'

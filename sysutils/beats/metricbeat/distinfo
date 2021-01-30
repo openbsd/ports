@@ -1,4 +1,4 @@
-SHA256 (beats-v7.10.0.zip) = LhB67J4EXpuvrpP2Q8dSQOOS8BMuMMLPULNXbeRHnq4=
+SHA256 (beats-v7.10.2.zip) = m4Piook35H7o4BdGN0FsetvfWGyDEgZ6clJimImrpdU=
 SHA256 (go_modules/4d63.com/embedfiles/@v/v0.0.0-20190311033909-995e0740726f.mod) = FKes+LJ05eSFEAdjs0euMn/EDFbI9AiS/vbbw1z6eK4=
 SHA256 (go_modules/4d63.com/embedfiles/@v/v0.0.0-20190311033909-995e0740726f.zip) = PNG6762Yzsbpjv+5pbwkdCPIU35s7WZKyZqpNKDS9JM=
 SHA256 (go_modules/4d63.com/tz/@v/v1.1.1-0.20191124060701-6d37baae851b.mod) = WqVm7Riq/a5jAMrVEhGlEbnO1ieb75CUinDFfjih4dg=
@@ -1137,7 +1137,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v3/@v/v3.0.0.zip) = 0fZxQ7P
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SIZE (beats-v7.10.0.zip) = 93317600
+SIZE (beats-v7.10.2.zip) = 93331796
 SIZE (go_modules/4d63.com/embedfiles/@v/v0.0.0-20190311033909-995e0740726f.mod) = 27
 SIZE (go_modules/4d63.com/embedfiles/@v/v0.0.0-20190311033909-995e0740726f.zip) = 2886
 SIZE (go_modules/4d63.com/tz/@v/v1.1.1-0.20191124060701-6d37baae851b.mod) = 92

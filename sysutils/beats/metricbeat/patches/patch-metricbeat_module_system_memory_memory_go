@@ -1,0 +1,46 @@
+$OpenBSD: patch-metricbeat_module_system_memory_memory_go,v 1.1 2021/01/30 10:03:41 pvk Exp $
+
+Index: metricbeat/module/system/memory/memory.go
+--- metricbeat/module/system/memory/memory.go.orig
++++ metricbeat/module/system/memory/memory.go
+@@ -28,7 +28,7 @@ import (
+ 	mem "github.com/elastic/beats/v7/libbeat/metric/system/memory"
+ 	"github.com/elastic/beats/v7/metricbeat/mb"
+ 	"github.com/elastic/beats/v7/metricbeat/mb/parse"
+-	linux "github.com/elastic/beats/v7/metricbeat/module/linux/memory"
++	//linux "github.com/elastic/beats/v7/metricbeat/module/linux/memory"
+ 	"github.com/elastic/beats/v7/metricbeat/module/system"
+ )
+ 
+@@ -87,9 +87,9 @@ func (m *MetricSet) Fetch(r mb.ReporterV2) error {
+ 	}
+ 
+ 	vmstat, err := mem.GetVMStat()
+-	if err != nil {
+-		return errors.Wrap(err, "VMStat")
+-	}
++	//if err != nil {
++	//	return errors.Wrap(err, "VMStat")
++	//}
+ 
+ 	swap := common.MapStr{
+ 		"total": swapStat.Total,
+@@ -117,12 +117,12 @@ func (m *MetricSet) Fetch(r mb.ReporterV2) error {
+ 	}
+ 
+ 	// for backwards compatibility, only report if we're not in fleet mode
+-	if !m.IsAgent {
+-		err := linux.FetchLinuxMemStats(memory)
+-		if err != nil {
+-			return errors.Wrap(err, "error getting page stats")
+-		}
+-	}
++	//if !m.IsAgent {
++	//	err := linux.FetchLinuxMemStats(memory)
++	//	if err != nil {
++	//		return errors.Wrap(err, "error getting page stats")
++	//	}
++	//}
+ 
+ 	memory["swap"] = swap
+ 

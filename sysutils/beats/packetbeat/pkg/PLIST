@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/11/21 15:58:41 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/01/30 10:03:41 pvk Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/packetbeat/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/packetbeat/*
 @rcscript ${RCDIR}/packetbeat
@@ -27,4 +27,3 @@ share/packetbeat/kibana/7/dashboard/Packetbeat-overview.json
 share/packetbeat/kibana/7/dashboard/Packetbeat-pgsql.json
 share/packetbeat/kibana/7/dashboard/Packetbeat-thrift.json
 share/packetbeat/kibana/7/dashboard/Packetbeat-tls.json
-share/packetbeat/module/

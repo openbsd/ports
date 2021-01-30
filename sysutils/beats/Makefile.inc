@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.15 2020/11/21 15:58:40 pvk Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2021/01/30 10:03:40 pvk Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 MODGO_MODNAME =		github.com/elastic/beats/v7
-MODGO_VERSION =		v7.10.0
+MODGO_VERSION =		v7.10.2
 
 DISTNAME =		beats-${MODGO_VERSION}
 PKGNAME =		${BEAT}-${MODGO_VERSION:S/v//}
@@ -34,8 +34,9 @@ post-patch:
 	${SUBST_CMD} ${SUBST_TARGETS}
 
 .if defined(KIBANA_DASHBOARDS) && ${KIBANA_DASHBOARDS:L} == "yes"
-MODULES +=		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION =		3.8
+MODPY_BIN =		${LOCALBASE}/bin/python${MODPY_VERSION}
+BUILD_DEPENDS +=        lang/python/${MODPY_VERSION}
 post-build:
 	cd ${WRKSRC}/${BEAT} && \
 	find . -type d -path \*_meta/\* -name kibana \
