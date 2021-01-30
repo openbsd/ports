@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_hugin_base_CMakeLists_txt,v 1.5 2019/01/21 17:35:34 kirby Exp $
+$OpenBSD: patch-src_hugin_base_CMakeLists_txt,v 1.6 2021/01/30 10:05:43 kirby Exp $
 
 /usr/local/include/boost/config/requires_threads.hpp:47:5: error:
 #error "Compiler threading support is not turned on. Please set the
@@ -8,7 +8,7 @@ correct command line options for threading: -pthread (Linux),
 Index: src/hugin_base/CMakeLists.txt
 --- src/hugin_base/CMakeLists.txt.orig
 +++ src/hugin_base/CMakeLists.txt
-@@ -151,6 +151,8 @@ vigra_ext/utils.h
+@@ -152,6 +152,8 @@ vigra_ext/utils.h
  vigra_ext/VignettingCorrection.h
  )
  

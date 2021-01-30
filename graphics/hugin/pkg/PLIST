@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/05/14 19:16:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/01/30 10:05:43 kirby Exp $
 @bin bin/PTBatcherGUI
 @bin bin/align_image_stack
 @bin bin/autooptimiser
@@ -39,11 +39,12 @@ lib/hugin/
 @lib lib/hugin/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
 @lib lib/hugin/libicpfindlib.so.${LIBicpfindlib_VERSION}
 @lib lib/hugin/liblocalfeatures.so.${LIBlocalfeatures_VERSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hpi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hsi.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/_hsi.so
 lib/python${MODPY_VERSION}/site-packages/hpi.py
-lib/python${MODPY_VERSION}/site-packages/hpi.pyc
 lib/python${MODPY_VERSION}/site-packages/hsi.py
-lib/python${MODPY_VERSION}/site-packages/hsi.pyc
 @man man/man1/PTBatcherGUI.1
 @man man/man1/align_image_stack.1
 @man man/man1/autooptimiser.1
@@ -59,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/hsi.pyc
 @man man/man1/hugin_executor.1
 @man man/man1/hugin_hdrmerge.1
 @man man/man1/hugin_lensdb.1
+@man man/man1/hugin_stacker.1
 @man man/man1/hugin_stitch_project.1
 @man man/man1/icpfind.1
 @man man/man1/linefind.1
@@ -75,10 +77,6 @@ lib/python${MODPY_VERSION}/site-packages/hsi.pyc
 @man man/man1/tca_correct.1
 @man man/man1/verdandi.1
 @man man/man1/vig_optimize.1
-share/appdata/
-share/appdata/PTBatcherGUI.appdata.xml
-share/appdata/calibrate_lens_gui.appdata.xml
-share/appdata/hugin.appdata.xml
 share/applications/PTBatcherGUI.desktop
 share/applications/calibrate_lens_gui.desktop
 share/applications/hugin.desktop
@@ -107,14 +105,11 @@ share/hugin/data/plugins-templates/
 share/hugin/data/plugins-templates/dual_use.py
 share/hugin/data/plugins-templates/plugin_skeleton.py
 share/hugin/data/plugins/README_woa.txt
-share/hugin/data/plugins/crop_cp.py
-share/hugin/data/plugins/crop_cp.pyc
-share/hugin/data/plugins/shooting_pattern.py
-share/hugin/data/plugins/shooting_pattern.pyc
+${MODPY_COMMENT}share/hugin/data/plugins/${MODPY_PYCACHE}/
+share/hugin/data/plugins/${MODPY_PYCACHE}top_five.${MODPY_PYC_MAGIC_TAG}pyc
+share/hugin/data/plugins/${MODPY_PYCACHE}woa.${MODPY_PYC_MAGIC_TAG}pyc
 share/hugin/data/plugins/top_five.py
-share/hugin/data/plugins/top_five.pyc
 share/hugin/data/plugins/woa.py
-share/hugin/data/plugins/woa.pyc
 share/hugin/data/scanned.assistant
 share/hugin/data/scanned2.assistant
 share/hugin/data/stacked.assistant
@@ -586,7 +581,7 @@ share/hugin/xrc/reset_dialog.xrc
 share/icons/gnome/
 share/icons/gnome/48x48/
 share/icons/gnome/48x48/mimetypes/
-share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
+share/icons/gnome/48x48/mimetypes/application-x-ptoptimizer-script.png
 share/icons/hicolor/128x128/apps/hugin.png
 share/icons/hicolor/128x128/apps/ptbatcher.png
 share/icons/hicolor/16x16/apps/hugin.png
@@ -627,6 +622,10 @@ share/locale/sk/LC_MESSAGES/hugin.mo
 share/locale/sv/LC_MESSAGES/hugin.mo
 share/locale/zh_CN/LC_MESSAGES/hugin.mo
 share/locale/zh_TW/LC_MESSAGES/hugin.mo
+share/metainfo/
+share/metainfo/PTBatcherGUI.appdata.xml
+share/metainfo/calibrate_lens_gui.appdata.xml
+share/metainfo/hugin.appdata.xml
 share/mime/packages/hugin.xml
 @tag update-desktop-database
 @tag update-mime-database
