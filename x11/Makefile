@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.688 2021/01/29 17:05:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.689 2021/01/30 11:41:49 kn Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -417,7 +417,6 @@
      SUBDIR += xtermset
      SUBDIR += xtestpicture
      SUBDIR += xtoolwait
-     SUBDIR += xtraceroute
      SUBDIR += xtu
      SUBDIR += xvkbd
      SUBDIR += xwallpaper

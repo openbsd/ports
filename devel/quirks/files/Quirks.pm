@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1153 2021/01/29 16:50:42 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1154 2021/01/30 11:41:50 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2056,6 +2056,7 @@ my $obsolete_reason = {
 	'py-qt4' => 3,
 	'py-qt4-docs' => 3,
 	'hitch' => 29,
+	'xtraceroute' => 30,
 };
 
 # reasons for obsolete packages
@@ -2090,6 +2091,7 @@ my @msg = (
 	"requires GUdev or GUsb", #27
 	"consider migrating MCollective agents and filters using tools like Bolt and PuppetDB's Puppet Query Language", #28
 	"unmaintained port that was blocking other changes in ports", #29
+	"crashes in many different ways at runtime, does not build with '-fno-common'", #30
 );
 
 # ->is_base_system($handle, $state):
