@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_main_workqueue_h,v 1.1 2021/01/30 08:05:43 bentley Exp $
+From upstream 39975200ad4926cfc79c96609b64696289065502.
+
+Index: src/main/workqueue.h
+--- src/main/workqueue.h.orig
++++ src/main/workqueue.h
+@@ -27,7 +27,6 @@
+ 
+ struct work_struct;
+ 
+-struct work_struct *work;
+ typedef void (*work_func_t)(struct work_struct *work);
+ struct work_struct {
+     work_func_t func;

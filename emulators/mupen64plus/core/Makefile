@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2020/10/06 16:49:31 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2021/01/30 08:05:43 bentley Exp $
 
 COMMENT =		n64 emulator core
 SHARED_LIBS =		mupen64plus 2.4 # 2.5.9
-REVISION =	0
+REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
