@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/05 07:46:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/30 13:40:30 benoit Exp $
 
 COMMENT =	extension of SQL::Abstract with more constructs
 
-DISTNAME =	SQL-Abstract-More-1.33
+DISTNAME =	SQL-Abstract-More-1.37
 
 CATEGORIES =	databases
 
