@@ -1,11 +1,13 @@
-$OpenBSD: patch-Makefile,v 1.8 2019/12/08 09:55:37 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.9 2021/01/30 13:07:21 kn Exp $
+
+Fix shared library versions.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -18,8 +18,8 @@ CONFIG_LOCALVERSION =
+@@ -22,8 +22,8 @@ ASSUME_MASK ?= 0
  
- CPPFLAGS = -I libfdt -I .
+ CPPFLAGS = -I libfdt -I . -DFDT_ASSUME_MASK=$(ASSUME_MASK)
  WARNINGS = -Wall -Wpointer-arith -Wcast-qual -Wnested-externs \
 -	-Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls -Wshadow
 -CFLAGS = -g -Os $(SHAREDLIB_CFLAGS) -Werror $(WARNINGS) $(EXTRA_CFLAGS)
@@ -14,7 +16,7 @@ Index: Makefile
  
  BISON = bison
  LEX = flex
-@@ -66,7 +66,7 @@ SHAREDLIB_LDFLAGS = -shared -Wl,--version-script=$(LIB
+@@ -72,7 +72,7 @@ SHAREDLIB_LDFLAGS = -shared -Wl,--version-script=$(LIB
  else
  SHAREDLIB_EXT     = so
  SHAREDLIB_CFLAGS  = -fPIC
@@ -23,7 +25,7 @@ Index: Makefile
  endif
  
  #
-@@ -151,7 +151,7 @@ all: $(BIN) libfdt
+@@ -157,7 +157,7 @@ all: $(BIN) libfdt
  check_python_deps = \
  	if $(PKG_CONFIG) --cflags $(PYTHON) >/dev/null 2>&1; then \
  		if which swig >/dev/null 2>&1; then \
@@ -32,7 +34,7 @@ Index: Makefile
  		fi; \
  	fi; \
  	if [ "$${can_build}" = "yes" ]; then \
-@@ -198,9 +198,8 @@ $(LIBFDT_archive): $(addprefix $(LIBFDT_dir)/,$(LIBFDT
+@@ -204,9 +204,8 @@ $(LIBFDT_archive): $(addprefix $(LIBFDT_dir)/,$(LIBFDT
  
  $(LIBFDT_lib): $(addprefix $(LIBFDT_dir)/,$(LIBFDT_OBJS)) $(LIBFDT_version)
  	@$(VECHO) LD $@
@@ -43,7 +45,7 @@ Index: Makefile
  
  ifneq ($(DEPTARGETS),)
  -include $(LIBFDT_OBJS:%.o=$(LIBFDT_dir)/%.d)
-@@ -221,8 +220,6 @@ install-lib: all
+@@ -227,8 +226,6 @@ install-lib: all
  	@$(VECHO) INSTALL-LIB
  	$(INSTALL) -d $(DESTDIR)$(LIBDIR)
  	$(INSTALL_LIB) $(LIBFDT_lib) $(DESTDIR)$(LIBDIR)
