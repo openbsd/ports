@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/01/31 22:25:56 kn Exp $
 
 COMMENT=		simple slang-based menu program
 
-VERSION =		1.3.4
-DISTNAME=		pdmenu_${VERSION}
-PKGNAME=		pdmenu-${VERSION}
+DISTNAME=		pdmenu-1.3.6
 CATEGORIES=     	misc
-REVISION=		1
 
-HOMEPAGE=		http://kitenet.net/programs/pdmenu/
+HOMEPAGE=		https://kitenet.net/programs/pdmenu
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c curses iconv intl m slang
 
-MASTER_SITES=		${MASTER_SITE_DEBIAN:=main/p/pdmenu/}
+MASTER_SITES=		https://git.kitenet.net/index.cgi/pdmenu.git/snapshot/
 
 BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		devel/gettext,-runtime \
@@ -31,7 +28,6 @@ CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=		LIBS="-lm -lcurses -lintl -liconv" \
 			SLANG_LIB_LOC=${LOCALBASE}/lib \
 			SLANG_H_LOC=${LOCALBASE}/include/slang.h
-WRKDIST=		${WRKDIR}/pdmenu
 
 NO_TEST=		Yes
 
