@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_table_c,v 1.1 2021/01/31 16:45:21 cwen Exp $
+
+Fix the build with -fno-common
+
+Index: lib/table.c
+--- lib/table.c.orig
++++ lib/table.c
+@@ -57,7 +57,7 @@ static int ex=0, ey=0, ew=0, eh=0;
+ static int graphics_disabled = 1;
+ 
+ OptionDesc *app_options;
+-OptionDesc *xwin_options;
++extern OptionDesc *xwin_options;
+ static OptionDesc *options[5];
+ 
+ static OptionDesc ace_options[] = {
