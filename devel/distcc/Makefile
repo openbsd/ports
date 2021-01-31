@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/31 19:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/01/31 20:47:25 sthen Exp $
 
 COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
@@ -42,6 +42,7 @@ WANTLIB-server =	${WANTLIB}
 LIB_DEPENDS-server =	${LIB_DEPENDS}
 
 LIB_DEPENDS-gtk =	${LIB_DEPENDS} \
+			x11/gtk+2
 RUN_DEPENDS-gtk =	devel/desktop-file-utils
 WANTLIB-gtk +=		${WANTLIB} X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-gtk +=		Xinerama Xrandr Xrender atk-1.0 cairo fontconfig freetype
