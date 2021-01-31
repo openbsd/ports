@@ -1,0 +1,21 @@
+$OpenBSD: patch-ykpers-args_h,v 1.1 2021/01/31 19:41:30 sthen Exp $
+
+From 09ea16d9e2030e4da6ad00c1e5147e962aa7ff84 Mon Sep 17 00:00:00 2001
+From: Klas Lindfors <klas@yubico.com>
+Date: Mon, 17 Feb 2020 08:58:33 +0100
+Subject: [PATCH] make header declarations extern
+
+Index: ykpers-args.h
+--- ykpers-args.h.orig
++++ ykpers-args.h
+@@ -33,8 +33,8 @@
+ 
+ #include "ykpers.h"
+ 
+-const char *usage;
+-const char *optstring;
++extern const char *usage;
++extern const char *optstring;
+ 
+ int args_to_config(int argc, char **argv, YKP_CONFIG *cfg, char *oathid,
+ 		   size_t oathid_len, const char **infname,
