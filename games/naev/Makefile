@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/17 11:11:14 kirby Exp $
+# $OpenBSD: Makefile,v 1.3 2021/01/31 10:03:19 ajacoutot Exp $
 
 # Requires OpenGL>=3.2
 ONLY_FOR_ARCHS = 	aarch64 amd64 i386
@@ -47,6 +47,10 @@ CONFIGURE_ARGS +=	--disable-shave \
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
+
+# XXX don't pick up itstool(1):
+# libxml2.xpathError: xmlXPathNewContext() failed
+CONFIGURE_ENV +=	ac_cv_prog_ITSTOOL=
 
 MULTI_PACKAGES = 	-main -data
 
