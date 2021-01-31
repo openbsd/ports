@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/12/19 22:59:27 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/01/31 22:14:02 sthen Exp $
 @pkgpath audio/soundtracker,esd
 @pkgpath audio/soundtracker,gnome
 @pkgpath audio/soundtracker,gnome,esd
 @bin bin/soundtracker
+bin/soundtracker_convert_config
+@man man/man1/soundtracker.1
+share/appdata/
+share/appdata/soundtracker.appdata.xml
+share/applications/soundtracker.desktop
 share/doc/soundtracker/
 share/doc/soundtracker/FAQ
 share/doc/soundtracker/NEWS
@@ -23,22 +28,31 @@ share/locale/ja/LC_MESSAGES/soundtracker.mo
 share/locale/no/LC_MESSAGES/soundtracker.mo
 share/locale/pl/LC_MESSAGES/soundtracker.mo
 share/locale/ru/LC_MESSAGES/soundtracker.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/soundtracker.mo
 share/locale/sk/LC_MESSAGES/soundtracker.mo
 share/locale/sl/LC_MESSAGES/soundtracker.mo
 share/locale/sv/LC_MESSAGES/soundtracker.mo
 share/locale/tr/LC_MESSAGES/soundtracker.mo
 share/locale/vi/LC_MESSAGES/soundtracker.mo
+share/pixmaps/soundtracker-icon.png
 share/soundtracker/
+share/soundtracker/cheat-sheet.C.txt
+share/soundtracker/cheat-sheet.ru.txt
 share/soundtracker/downarrow.xpm
+share/soundtracker/envelope-box.xml
 share/soundtracker/flat.xpm
 share/soundtracker/lock.xpm
+share/soundtracker/loop.xpm
 share/soundtracker/muted.png
 share/soundtracker/play.xpm
+share/soundtracker/play_block.xpm
 share/soundtracker/play_cur.xpm
+share/soundtracker/play_from.xpm
 share/soundtracker/rightarrow.xpm
 share/soundtracker/sharp.xpm
+share/soundtracker/soundtracker-icon.png
+share/soundtracker/soundtracker.xml
 share/soundtracker/soundtracker_splash.png
 share/soundtracker/stop.xpm
+share/soundtracker/unmuted.png
+@tag update-desktop-database

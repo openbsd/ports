@@ -1,33 +1,38 @@
-# $OpenBSD: Makefile,v 1.34 2021/01/31 20:05:17 kn Exp $
+# $OpenBSD: Makefile,v 1.35 2021/01/31 22:14:02 sthen Exp $
 
-COMMENT=		music tracking tool for X11
+BROKEN=		crashes at startup; keys_init -> keys_make_xkeys -> qsort
 
-V=			0.6.8
-DISTNAME=		soundtracker_$V.gtk2_17092006_1613
-PKGNAME=		soundtracker-$V
-REVISION=		9
-CATEGORIES=		audio
-HOMEPAGE=		http://soundtracker.org
+COMMENT=	music tracking tool for X11
 
-# GPLv2
+DISTNAME=	soundtracker-1.0.1
+EXTRACT_SUFX=	.tar.bz2
+
+CATEGORIES=	audio
+
+HOMEPAGE=	http://soundtracker.org/
+
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://www.shaltev.org/data/
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 harfbuzz intl m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread sndfile
+WANTLIB += sndio z
 
-WANTLIB += ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo
-WANTLIB += fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2
-WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += popt pthread sndfile sndio z
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=soundtracker/}
 
 LIB_DEPENDS=		audio/libsndfile \
-			x11/gnome/libgnomeui
+			x11/gtk+2
+RUN_DEPENDS=		devel/desktop-file-utils
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS+=		devel/gettext,-tools
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 CONFIGURE_ARGS=		--disable-alsa \
 			--disable-sgi \
 			--disable-oss \
@@ -37,13 +42,11 @@ CONFIGURE_ARGS=		--disable-alsa \
 			--disable-jack \
 			--disable-splash
 
-CFLAGS +=		-fgnu89-inline
+CFLAGS+=		-fgnu89-inline
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -DDRIVER_SNDIO" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-lsndio"
-
-WRKDIST= 		${WRKDIR}/soundtracker-$V.gtk2
 
 DOCS=			FAQ NEWS README \
 			doc/xi.txt doc/xm.txt doc/xp.txt

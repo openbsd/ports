@@ -1,0 +1,16 @@
+$OpenBSD: patch-app_drivers_Makefile_am,v 1.3 2021/01/31 22:14:02 sthen Exp $
+
+Index: app/drivers/Makefile.am
+--- app/drivers/Makefile.am.orig
++++ app/drivers/Makefile.am
+@@ -27,6 +27,10 @@ if DRIVER_SDL
+   libdrivers_a_SOURCES += sdl-output.c
+ endif
+ 
++if DRIVER_SNDIO
++  libdrivers_a_SOURCES += sndio-output.c sndio-input.c
++endif
++
+ AM_CPPFLAGS = -I..
+ 
+ EXTRA_DIST = dsound-output.c

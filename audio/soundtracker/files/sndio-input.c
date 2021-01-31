@@ -192,27 +192,25 @@ sndio_getwidget(void *dp)
 }
 
 static gboolean
-sndio_loadsettings(void *dp, prefs_node *f)
+sndio_loadsettings(void *dp, const gchar *f)
 {
 	return TRUE;
 }
 
 static gboolean
-sndio_savesettings(void *dp, prefs_node *f)
+sndio_savesettings(void *dp, const gchar *f)
 {
 	return TRUE;
 }
 
-st_io_driver driver_in_sndio = {
-	{
-		"Sndio Input",
-		sndio_new,
-		sndio_destroy,
-		sndio_open,
-		sndio_release,
+st_driver driver_in_sndio = {
+	"Sndio Input",
+	sndio_new,
+	sndio_destroy,
+	sndio_open,
+	sndio_release,
 
-		sndio_getwidget,
-		sndio_loadsettings,
-		sndio_savesettings,
-	}
+	sndio_getwidget,
+	sndio_loadsettings,
+	sndio_savesettings,
 };
