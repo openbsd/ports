@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/17 21:26:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/01/31 19:44:30 sthen Exp $
 
 COMMENT=	bulk mail detection (Distributed Checksum Clearinghouses)
 
@@ -22,6 +22,8 @@ WANTLIB += c curses edit m pthread
 MASTER_SITES=	https://www.dcc-servers.net/dcc/source/old/
 
 USE_GMAKE=	Yes
+
+CFLAGS+=	-fcommon
 
 CONFIGURE_STYLE= simple
 # find the rrdtool path without requiring a dep
