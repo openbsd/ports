@@ -1,0 +1,16 @@
+$OpenBSD: patch-network_h,v 1.1 2021/01/31 16:42:51 cwen Exp $
+
+Fix -fno-common build failure.
+
+Index: network.h
+--- network.h.orig
++++ network.h
+@@ -105,7 +105,7 @@ typedef enum
+ #define TEAM_UNDEF 252
+ 
+ /* team color assignment */
+-const XBColor teamColors[NUM_XBTS];
++extern const XBColor teamColors[NUM_XBTS];
+ 
+ /* results of game config receive/create */
+ typedef enum

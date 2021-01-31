@@ -1,0 +1,16 @@
+$OpenBSD: patch-cfg_control_h,v 1.1 2021/01/31 16:42:51 cwen Exp $
+
+Fix -fno-common build failure.
+
+Index: cfg_control.h
+--- cfg_control.h.orig
++++ cfg_control.h
+@@ -29,7 +29,7 @@
+ #define NUM_KEYB_CONTROLS  2
+ 
+ /* constant assignment of control to event type */
+-const XBEventCode keyEventType[NUM_KEYB_CONTROLS];
++extern const XBEventCode keyEventType[NUM_KEYB_CONTROLS];
+ 
+ /* ingame controls for editing*/
+ typedef struct

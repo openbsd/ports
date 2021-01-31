@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/01/31 16:42:51 cwen Exp $
 
 COMMENT=	graphical multi-player real-time strategy game for X11
 
 DISTNAME=	xblast-2.10.4
-REVISION=	3
+REVISION=	4
 DIST_SUBDIR=	xblast
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		images-2005-01-06${EXTRACT_SUFX} \
