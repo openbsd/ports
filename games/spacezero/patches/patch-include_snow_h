@@ -1,0 +1,21 @@
+$OpenBSD: patch-include_snow_h,v 1.1 2021/01/31 04:07:22 bcallah Exp $
+
+Fix for -fno-common
+
+Index: include/snow.h
+--- include/snow.h.orig
++++ include/snow.h
+@@ -29,13 +29,6 @@
+ #include "objects.h"
+ 
+ 
+-struct Flake *flakes;
+-
+-struct Flake{
+-  float x,y;
+-  float vx,vy;
+-  float s;
+-};
+ 
+ void UpdateFlakes(struct Planet *planet);
+ void DrawFlakes(GdkPixmap *pxmap,GdkGC *pen,int x,int y);

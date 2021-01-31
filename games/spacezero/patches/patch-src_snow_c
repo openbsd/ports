@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_snow_c,v 1.1 2021/01/31 04:07:22 bcallah Exp $
+
+Fix for -fno-common
+
+Index: src/snow.c
+--- src/snow.c.orig
++++ src/snow.c
+@@ -38,6 +38,14 @@
+ 
+ #define NFLAKES 1000
+ 
++struct Flake{
++  float x,y;
++  float vx,vy;
++  float s;
++};
++
++struct Flake *flakes;
++
+ 
+ void CreateSnow(int w,int h){
+   int i;
