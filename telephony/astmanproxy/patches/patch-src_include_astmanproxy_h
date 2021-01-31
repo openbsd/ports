@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_include_astmanproxy_h,v 1.1 2021/01/31 19:06:09 sthen Exp $
+
+Index: src/include/astmanproxy.h
+--- src/include/astmanproxy.h.orig
++++ src/include/astmanproxy.h
+@@ -134,7 +134,7 @@ struct message {
+ 	struct mansession *session;
+ };
+ 
+-struct proxyconfig pc;
++extern struct proxyconfig pc;
+ extern int debug;
+ 
+ /* Common Function Prototypes */

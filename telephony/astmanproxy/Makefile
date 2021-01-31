@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/11 22:54:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/31 19:06:09 sthen Exp $
 
 COMMENT =	proxy for Asterisk Manager Interface
 
-# there is a slightly more active fork in davies147/astmanproxy, but it needs
-# fixing to not use gnu extensions
+# there is an active fork in davies147/astmanproxy, but it uses various
+# linuxisms (pthread_timedjoin_np, prctl)
 GH_ACCOUNT =	davetroy
 GH_PROJECT =	astmanproxy
 GH_COMMIT =	f4b952a717b7e982b585bf0daa86398add394a88
 DISTNAME =	astmanproxy-1.22pre20081208
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	telephony
 
