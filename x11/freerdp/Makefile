@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/12/03 12:48:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/01/31 20:14:42 sthen Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
@@ -6,7 +6,7 @@ BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
 DISTNAME =		freerdp-2.0.0-rc1
 PKGNAME =		freerdp-2.0.0rc1
-REVISION =		4
+REVISION =		5
 CATEGORIES =		x11 net
 
 # XXX This version has known security issues.
@@ -39,6 +39,8 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
 
 CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
+
+CFLAGS +=		-fcommon
 
 BUILD_DEPENDS =		security/pcsc-lite \
 			textproc/xmlto
