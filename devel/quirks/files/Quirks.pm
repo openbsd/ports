@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1158 2021/01/31 00:36:12 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1159 2021/01/31 18:53:55 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -537,6 +537,10 @@ my $stem_extensions = {
 	'py-sphinx_guzzle_theme' => 'py3-sphinx_guzzle_theme',
 	'py-tornado' => 'py3-tornado',
 	'py-sphinx-intl' => 'py3-sphinx-intl',
+	'icinga' => 'icinga2',
+	'icinga-web' => 'icinga-web2',
+	'icinga-cgi' => 'icinga-web2',
+	'icinga-idoutils' => 'icinga2-ido-mysql',
 };
 
 my $obsolete_reason = {

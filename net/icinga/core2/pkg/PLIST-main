@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2020/12/16 15:10:59 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2021/01/31 18:53:54 sthen Exp $
+@ask-update icinga-<2 Icinga 2.x is a major update from Icinga 1.x - config will need to be rewritten
+@pkgpath net/icinga/core,-main
 @newgroup _icinga:667
 @newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin

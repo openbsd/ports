@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/06/10 13:14:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/01/31 18:53:55 sthen Exp $
+@ask-update icinga-cgi-<2 Icinga 2.x is a major update from Icinga 1.x - config will need to be rewritten
+@pkgpath net/icinga/web
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
