@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/02/12 02:26:40 jsg Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/01/31 03:19:35 jsg Exp $
 
 From FreeBSD
 include same flags for OpenBSD
@@ -6,7 +6,7 @@ include same flags for OpenBSD
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -37,7 +37,7 @@ if(X11_FOUND)
+@@ -35,7 +35,7 @@ if(X11_FOUND)
  	add_definitions(-DPIGLIT_HAS_X11)
  endif()
  
@@ -15,7 +15,7 @@ Index: CMakeLists.txt
  	set(PIGLIT_BUILD_GLES_TESTS_DEFAULT ON)
  else()
  	set(PIGLIT_BUILD_GLES_TESTS_DEFAULT OFF)
-@@ -53,7 +53,7 @@ if(PIGLIT_BUILD_GL_TESTS)
+@@ -51,7 +51,7 @@ if(PIGLIT_BUILD_GL_TESTS)
  	find_package(OpenGL REQUIRED)
  endif()
  
@@ -24,8 +24,8 @@ Index: CMakeLists.txt
  	option(PIGLIT_USE_WAFFLE "Use Waffle in place of GLUT" ON)
  else()
  	option(PIGLIT_USE_WAFFLE "Use Waffle in place of GLUT" OFF)
-@@ -132,7 +132,7 @@ if(PIGLIT_BUILD_CL_TESTS)
- 	find_package(OpenCL REQUIRED)
+@@ -130,7 +130,7 @@ if(PIGLIT_BUILD_CL_TESTS)
+ 	find_package(OpenCL 1.2 REQUIRED)
  endif(PIGLIT_BUILD_CL_TESTS)
  
 -IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
@@ -33,7 +33,19 @@ Index: CMakeLists.txt
  	if(X11_FOUND AND OPENGL_gl_LIBRARY)
  		# Assume the system has GLX. In the future, systems may exist
  		# with libGL and libX11 but no GLX, but that world hasn't
-@@ -386,7 +386,7 @@ endif()
+@@ -169,6 +169,11 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ 	pkg_check_modules(XCB_DRI2 QUIET xcb-dri2)
+ 	pkg_check_modules(GLPROTO QUIET glproto)
+ 	pkg_check_modules(LIBVULKAN QUIET vulkan)
++
++	if (LIBVULKAN_FOUND)
++		include_directories(${LIBVULKAN_INCLUDE_DIRS})
++	endif()
++
+ ELSEIF(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+ 	if (PIGLIT_USE_WAFFLE)
+ 		set(PIGLIT_HAS_WGL True)
+@@ -380,7 +385,7 @@ endif()
  
  check_c_source_compiles(
  	"
@@ -42,12 +54,12 @@ Index: CMakeLists.txt
  	#include <time.h>
  	int main() { return clock_gettime(CLOCK_MONOTONIC, NULL); }
  	"
-@@ -430,7 +430,7 @@ if(HAVE_LIBCACA)
+@@ -424,7 +429,7 @@ if(HAVE_LIBCACA)
  endif(HAVE_LIBCACA)
  endif(GBM_FOUND)
  
 -if(PIGLIT_USE_WAFFLE AND ${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 +if(PIGLIT_USE_WAFFLE AND ${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
- 	pkg_check_modules(EGL egl>=11.0)
+ 	pkg_check_modules(EGL egl)
  endif()
  

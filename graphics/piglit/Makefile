@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2020/11/16 05:17:33 jsg Exp $
+# $OpenBSD: Makefile,v 1.14 2021/01/31 03:19:35 jsg Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
 
-DISTNAME =	piglit-20190208
-REVISION =	6
+DISTNAME =	piglit-20210128
 
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
-GH_COMMIT =	5d4935e2378a5f3b950bfcbcb6c396ad7e882952
+GH_COMMIT =	83173d9536c9f5e1571efe5933d210466ec255b8
 
 CATEGORIES =	graphics
 
@@ -26,19 +25,26 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		devel/cmake \
 			lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_ADJ_FILES =	tests/glslparsertest/glsl2/gen_builtin_test.py \
+			tests/oglconform.py \
+			tests/vulkan.py \
+			framework/replay/backends/renderdoc/renderdoc_dump_images.py \
+			tests/glslparsertest/glsl2/gen_builtin_test.py \
+			replayer/replayer.py \
+			piglit
 
-RUN_DEPENDS =		devel/py-six \
-			devel/py-subprocess32 \
-			math/py-numpy \
-			www/py-mako
-BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR} \
+			www/py-mako${MODPY_FLAVOR}
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			graphics/vulkan-headers
 
 LIB_DEPENDS =		graphics/waffle \
-			graphics/png
+			graphics/png \
+			graphics/vulkan-loader
 
 CONFIGURE_ARGS =	-DPIGLIT_BUILD_CL_TESTS:BOOL=OFF \
-			-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW \
 			-DHAVE_LIBCACA:BOOL=FALSE
 CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"

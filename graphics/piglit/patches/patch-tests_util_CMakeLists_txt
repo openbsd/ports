@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_util_CMakeLists_txt,v 1.2 2019/02/12 02:26:40 jsg Exp $
+$OpenBSD: patch-tests_util_CMakeLists_txt,v 1.3 2021/01/31 03:19:35 jsg Exp $
 
 account for OpenBSD
 
@@ -14,11 +14,12 @@ Index: tests/util/CMakeLists.txt
  	# One needs to have at least one hardware driver present, otherwise
  	# there is no point compiling just the dispatcher.
  	if(PIGLIT_BUILD_DMA_BUF_TESTS)
-@@ -163,6 +163,6 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+@@ -163,7 +163,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
  		list(APPEND UTIL_GL_LIBS ${WAYLAND_LDFLAGS})
          endif()
  
 -endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 +endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
  
- piglit_include_target_api()
+ if(MSVC)
+ 	list(APPEND UTIL_SOURCES msvc/getopt.c)
