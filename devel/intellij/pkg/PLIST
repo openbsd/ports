@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2020/12/05 11:19:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.48 2021/01/31 16:51:36 rsadowski Exp $
 bin/idea
 bin/idea-lightedit
 bin/intellij
@@ -356,7 +356,7 @@ intellij/lib/testFramework-java.jar
 intellij/lib/testFramework.core.jar
 intellij/lib/testFramework.jar
 intellij/lib/tests_bootstrap.jar
-intellij/lib/tips-intellij-idea-community-202.13.jar
+intellij/lib/tips-intellij-idea-community-203.16.jar
 intellij/lib/trang-core.jar
 intellij/lib/trove4j.jar
 intellij/lib/txw2-2.3.1.jar
@@ -806,6 +806,11 @@ intellij/plugins/junit/lib/idea-junit.jar
 intellij/plugins/junit/lib/junit-rt.jar
 intellij/plugins/junit/lib/junit5-rt.jar
 intellij/plugins/junit/lib/resources_en.jar
+intellij/plugins/lombok/
+intellij/plugins/lombok/lib/
+intellij/plugins/lombok/lib/lombok-generated.jar
+intellij/plugins/lombok/lib/lombok.jar
+intellij/plugins/lombok/lib/resources_en.jar
 intellij/plugins/markdown/
 intellij/plugins/markdown/lib/
 intellij/plugins/markdown/lib/markdown-0.1.41.jar
