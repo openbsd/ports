@@ -1,6 +1,2 @@
 SoundTracker is a music tracking tool for X11 similar in design to the
 DOS program `FastTracker' and the Amiga legend `ProTracker'.
-
-Packages can be built with additional FLAVORs:
-
-  esd:   SoundTracker built with the esound package.
