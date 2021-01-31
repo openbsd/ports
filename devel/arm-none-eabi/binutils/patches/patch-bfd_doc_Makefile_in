@@ -1,13 +1,13 @@
-$OpenBSD: patch-bfd_doc_Makefile_in,v 1.2 2017/07/16 12:44:19 kettenis Exp $
+$OpenBSD: patch-bfd_doc_Makefile_in,v 1.3 2021/01/31 11:26:40 kettenis Exp $
 Index: bfd/doc/Makefile.in
 --- bfd/doc/Makefile.in.orig
 +++ bfd/doc/Makefile.in
-@@ -104,7 +104,7 @@ CONFIG_CLEAN_VPATH_FILES =
- depcomp =
- am__depfiles_maybe =
- SOURCES =
+@@ -174,7 +174,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
 -INFO_DEPS = bfd.info
 +INFO_DEPS =
- TEXINFO_TEX = $(top_srcdir)/../texinfo/texinfo.tex
- am__TEXINFO_TEX_DIR = $(top_srcdir)/../texinfo
+ am__TEXINFO_TEX_DIR = $(srcdir)
  DVIS = bfd.dvi
+ PDFS = bfd.pdf

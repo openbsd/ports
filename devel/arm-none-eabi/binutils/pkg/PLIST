@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/07/16 12:44:19 kettenis Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/01/31 11:26:40 kettenis Exp $
 %%aarch64%%
 %%arm%%
 ${CONFIG}/
@@ -37,7 +37,6 @@ ${CONFIG}/bin/
 @man man/man1/${CONFIG}-elfedit.1
 @man man/man1/${CONFIG}-gprof.1
 @man man/man1/${CONFIG}-ld.1
-@man man/man1/${CONFIG}-nlmconv.1
 @man man/man1/${CONFIG}-nm.1
 @man man/man1/${CONFIG}-objcopy.1
 @man man/man1/${CONFIG}-objdump.1
