@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/04 14:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/01/31 19:28:02 sthen Exp $
 
 COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
@@ -6,13 +6,12 @@ COMMENT-server =	distcc server
 
 GH_PROJECT =		distcc
 GH_ACCOUNT =		distcc
-VERSION =		3.3.3
+VERSION =		3.3.5
 DISTNAME =		distcc-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gtk =		distcc-gtk-${VERSION}
 PKGNAME-server =	distcc-server-${VERSION}
 EPOCH =			0
-REVISION =		1
 CATEGORIES =		devel net
 
 HOMEPAGE =		https://distcc.github.io/
@@ -33,16 +32,16 @@ MODPY_RUNDEP =		No
 
 WANTLIB +=		c popt pthread
 LIB_DEPENDS =		devel/popt
+TEST_DEPENDS =		devel/gdb
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 RUN_DEPENDS-main +=	${MODPY_RUN_DEPENDS}
-WANTLIB-main =		${WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-main =		${WANTLIB}
 
 WANTLIB-server =	${WANTLIB}
 LIB_DEPENDS-server =	${LIB_DEPENDS}
 
 LIB_DEPENDS-gtk =	${LIB_DEPENDS} \
-			x11/gtk+2
 RUN_DEPENDS-gtk =	devel/desktop-file-utils
 WANTLIB-gtk +=		${WANTLIB} X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-gtk +=		Xinerama Xrandr Xrender atk-1.0 cairo fontconfig freetype
@@ -69,5 +68,8 @@ pre-configure:
 
 post-install:
 	rm -r ${PREFIX}/share/examples/default
+
+pre-test:
+	ln -s ${LOCALBASE}/bin/egdb ${WRKDIR}/bin/gdb
 
 .include <bsd.port.mk>
