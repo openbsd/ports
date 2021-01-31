@@ -1,0 +1,14 @@
+$OpenBSD: patch-remote_c,v 1.1 2021/01/31 20:18:25 naddy Exp $
+
+Index: remote.c
+--- remote.c.orig
++++ remote.c
+@@ -59,7 +59,7 @@ enum mad_flow remote_parse_input(buffer *buf, playlist
+ 
+     if (select (1, &fd, NULL, NULL, &tv))
+     {
+-      if (!(numread = read(0, remote_input_buf + alreadyread, (sizeof(input)-1)-alreadyread)) > 0)
++      if (!((numread = read(0, remote_input_buf + alreadyread, (sizeof(input)-1)-alreadyread)) > 0))
+       {
+         numread = 0;
+         /* fprintf(stderr, "remote_parse_input() called with no input queued!");

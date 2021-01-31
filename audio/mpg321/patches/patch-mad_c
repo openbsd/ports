@@ -1,0 +1,38 @@
+$OpenBSD: patch-mad_c,v 1.3 2021/01/31 20:18:25 naddy Exp $
+
+Index: mad.c
+--- mad.c.orig
++++ mad.c
+@@ -359,6 +359,7 @@ enum mad_flow read_header(void *data, struct mad_heade
+     {
+         if (!options.skip_printing_frames 
+             || (options.skip_printing_frames && !(current_frame % options.skip_printing_frames)))
++	{
+    
+ 	      	if(count > 0)
+ 		{
+@@ -391,6 +392,7 @@ enum mad_flow read_header(void *data, struct mad_heade
+ 					playbuf->num_frames > 0 ? playbuf->num_frames - current_frame : 0, long_currenttime_str, long_remaintime_str);
+ 			}
+ 		}
++	}
+     }
+     else if (options.opt & MPG321_REMOTE_PLAY)
+     {
+@@ -891,14 +893,14 @@ static void perform_and_print(char *samples,fft_state 
+ 	printf("\n");
+ }
+ 
+-static int process_fft( char *data, int size)
++static void process_fft( char *data, int size)
+ {
+ 	static fft_state *left_fftstate;
+ 	static int init=0;
+ 	static char buff_samples[1024];
+ 	static int buff_sample_count;
+ 
+-	if(!((options.opt & MPG321_PRINT_FFT) && (options.opt & MPG321_REMOTE_PLAY))) return 0;
++	if(!((options.opt & MPG321_PRINT_FFT) && (options.opt & MPG321_REMOTE_PLAY))) return;
+ 
+ 	if(!init)
+ 	{

@@ -1,17 +1,89 @@
-$OpenBSD: patch-mpg321_h,v 1.1 2012/07/13 09:05:38 naddy Exp $
---- mpg321.h.orig	Sun Mar 25 14:27:49 2012
-+++ mpg321.h	Sun Jul  8 14:00:16 2012
-@@ -200,6 +200,7 @@ void check_ao_default_play_device();
+$OpenBSD: patch-mpg321_h,v 1.2 2021/01/31 20:18:25 naddy Exp $
+Index: mpg321.h
+--- mpg321.h.orig
++++ mpg321.h
+@@ -116,7 +116,7 @@ extern char *playlist_file;
+ extern int quit_now;
+ extern char remote_input_buf[PATH_MAX + 5];
+ extern int file_change;
+-int loop_remaining;
++extern int loop_remaining;
+ 
+ extern int status;
+ extern int scrobbler_time;
+@@ -175,6 +175,9 @@ void clear_remote_file(playlist *pl);
+ void shuffle_files(playlist *pl);
+ void trim_whitespace(char *);
+ 
++/* authentication functions */
++void do_basicauth();
++
+ /* network functions */
+ int tcp_open(char * address, int port);
+ int udp_open(char * address, int port);
+@@ -187,6 +190,7 @@ enum mad_flow read_from_mmap(void *data, struct mad_st
+ enum mad_flow read_from_fd(void *data, struct mad_stream *stream);
+ enum mad_flow read_header(void *data, struct mad_header const * header);
+ enum mad_flow output(void *data, struct mad_header const *header, struct mad_pcm *pcm);
++int calc_http_length(buffer *buf);
+ int calc_length(char *file, buffer*buf );
+ 
+ static enum mad_flow handle_error(void *data, struct mad_stream *stream, struct mad_frame *frame);
+@@ -198,8 +202,10 @@ void pause_play(buffer *buf, playlist *pl);
+ /* libao interfacing and general audio-out functions */
+ void check_ao_default_play_device();
  void check_default_play_device();
++int check_default_play_device_buffer();
  int playdevice_is_live();
  void open_ao_playdevice(struct mad_header const *header);
 +ao_device *open_ao_playdevice_buffer(struct mad_header const *header);
  
  /* remote control (-R) functions */
  void remote_get_input_wait(buffer *buf);
-@@ -290,7 +291,7 @@ output_frame *Output_Queue;
+@@ -233,8 +239,8 @@ RETSIGTYPE handle_sigchld(int sig);
+ #define FFT_BUFFER_SIZE_LOG 9
+ #define FFT_BUFFER_SIZE (1 << FFT_BUFFER_SIZE_LOG) /* 512 */
+ /*Temporary data stores to perform FFT in */
+-double real[FFT_BUFFER_SIZE];
+-double imag[FFT_BUFFER_SIZE];
++extern double real[FFT_BUFFER_SIZE];
++extern double imag[FFT_BUFFER_SIZE];
+ 
+ typedef struct {
+ 	double real[FFT_BUFFER_SIZE];
+@@ -242,7 +248,7 @@ typedef struct {
+ } fft_state;
+ 
+ typedef short int sound_sample;
+-//void fft_perform(const sound_sample *input, double *output, fft_state *state);
++void fft_perform(const sound_sample *input, double *output, fft_state *state);
+ 
+ fft_state *fft_init(void);
+ 
+@@ -258,10 +264,10 @@ fft_state *fft_init(void);
+ /* Output buffer process */
+ void frame_buffer_p();
+ /* Semaphore array */
+-int semarray;
++extern int semarray;
+ /* Input/Output buffer position */
+-int mad_decoder_position;
+-int output_buffer_position;
++extern int mad_decoder_position;
++extern int output_buffer_position;
+ /* Output Frame including needed information */
+ typedef struct {
+ 	unsigned char data[4*1152];
+@@ -285,12 +291,12 @@ typedef struct {
+ } decoded_frames;
+ 
+ /* Output frame queue pointer */
+-output_frame *Output_Queue;
++extern output_frame *Output_Queue;
+ 
  /* Shared total decoded frames */
- decoded_frames *Decoded_Frames;
+-decoded_frames *Decoded_Frames;
++extern decoded_frames *Decoded_Frames;
  
 -#if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
 +#if (defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)) || defined(__OpenBSD__)

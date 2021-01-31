@@ -1,0 +1,14 @@
+$OpenBSD: patch-fft_c,v 1.1 2021/01/31 20:18:25 naddy Exp $
+
+Index: fft.c
+--- fft.c.orig
++++ fft.c
+@@ -147,7 +147,7 @@ static void fft_prepare(const sound_sample *input, dou
+ #ifdef DEBUG
+         printf("%i is reversed to %i and maps to %i %i\n", i, bitReverse[i], bitReverse[i] * 2, (bitReverse[i] * 2) + 1);
+ #endif
+-        sound_sample* ptr = &(input[bitReverse[i] * 2]);
++        const sound_sample* ptr = &(input[bitReverse[i] * 2]);
+         *realptr++ = (ptr[0] + ptr[1]) / 2;
+         *imagptr++ = 0;
+     }

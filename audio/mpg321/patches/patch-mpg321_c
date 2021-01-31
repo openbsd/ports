@@ -1,7 +1,59 @@
-$OpenBSD: patch-mpg321_c,v 1.7 2012/07/13 09:05:38 naddy Exp $
---- mpg321.c.orig	Sun Mar 25 14:27:49 2012
-+++ mpg321.c	Sun Jul  8 14:15:18 2012
-@@ -332,9 +332,15 @@ void mpg321_error(char *file)
+$OpenBSD: patch-mpg321_c,v 1.8 2021/01/31 20:18:25 naddy Exp $
+Index: mpg321.c
+--- mpg321.c.orig
++++ mpg321.c
+@@ -63,7 +63,23 @@
+ #include <pthread.h>
+ #include <semaphore.h>
+ 
++int loop_remaining;
+ 
++/*Temporary data stores to perform FFT in */
++double real[FFT_BUFFER_SIZE];
++double imag[FFT_BUFFER_SIZE];
++/* Semaphore array */
++int semarray;
++/* Input/Output buffer position */
++int mad_decoder_position;
++int output_buffer_position;
++
++/* Output frame queue pointer */   
++output_frame *Output_Queue;
++
++/* Shared total decoded frames */
++decoded_frames *Decoded_Frames;
++
+ int pflag = 0;
+ int volume = 0;
+ int count = -1;
+@@ -99,7 +115,7 @@ int buffer_size = 0;
+ /* PID of frame buffer process */
+ pid_t output_pid;
+ /* Not used for the moment. It only works for CBR http/ftp retrieved files */
+-extern http_file_length;
++extern int http_file_length;
+ #ifdef HAVE_ALSA
+ /* ALSA Volume Range */
+ extern long volume_min,volume_max;
+@@ -183,7 +199,7 @@ void *read_keyb(void *ptr)
+ 				else{
+ #endif					
+ 					if(!(options.opt & MPG321_ENABLE_BUFFER))
+-						fprintf(stderr,"Volume: %ld%%      \r",volume);
++						fprintf(stderr,"Volume: %d%%      \r",volume);
+ #ifdef HAVE_ALSA
+ 				}
+ #endif
+@@ -233,7 +249,7 @@ void *read_keyb(void *ptr)
+ 				else{
+ #endif
+ 					if(!(options.opt & MPG321_ENABLE_BUFFER))
+-						fprintf(stderr,"Volume: %ld%%      \r",volume);
++						fprintf(stderr,"Volume: %d%%      \r",volume);
+ #ifdef HAVE_ALSA
+ 				}
+ #endif
+@@ -332,9 +348,15 @@ void mpg321_error(char *file)
  
  void usage(char *argv0)
  {
@@ -18,7 +70,7 @@ $OpenBSD: patch-mpg321_c,v 1.7 2012/07/13 09:05:38 naddy Exp $
          "Options supported:\n"
          "   --verbose or -v          Increase verbosity\n"
          "   --quiet or -q            Quiet mode (no title or boilerplate)\n"
-@@ -342,7 +348,13 @@ void usage(char *argv0)
+@@ -342,7 +364,13 @@ void usage(char *argv0)
          "   --skip N or -k N         Skip N frames into the file\n"
          "   --frames N or -n N       Play only the first N frames\n"
          "   -o dt                    Set output devicetype to dt\n" 
@@ -33,7 +85,7 @@ $OpenBSD: patch-mpg321_c,v 1.7 2012/07/13 09:05:38 naddy Exp $
          "   --audiodevice N or -a N  Use N for audio-out\n"
          "   --stdout or -s           Use stdout for audio-out\n"
          "   --au N                   Use au file N for output\n"
-@@ -376,7 +388,7 @@ void usage(char *argv0)
+@@ -376,7 +404,7 @@ void usage(char *argv0)
  	"n        Skip song.                                    \n"
  	"\n"
          "This version of mpg321 has been configured with " AUDIO_DEFAULT " as its default\n"
@@ -42,7 +94,25 @@ $OpenBSD: patch-mpg321_c,v 1.7 2012/07/13 09:05:38 naddy Exp $
  }
  
  /* retsigtype is defined by configure;
-@@ -539,6 +551,8 @@ int main(int argc, char *argv[])
+@@ -447,7 +475,7 @@ static int show_id3(struct id3_tag const *tag)
+         {
+             if(!names[i])
+             {
+-                printf(emptystring);
++                printf("%s", emptystring);
+             }
+             
+             else
+@@ -465,7 +493,7 @@ static int show_id3(struct id3_tag const *tag)
+         for (i=0; i<=5; i++)    {
+             fprintf (stderr, "%s", info_id3[i].name);
+             if (!names[i])  {
+-                fprintf (stderr, emptystring);
++                fprintf (stderr, "%s", emptystring);
+             }   else    {
+                 fprintf (stderr, "%s", names[i]);
+                 free (names[i]);
+@@ -539,6 +567,8 @@ int main(int argc, char *argv[])
  
      status = MPG321_PLAYING;
      
@@ -51,7 +121,7 @@ $OpenBSD: patch-mpg321_c,v 1.7 2012/07/13 09:05:38 naddy Exp $
      /* Get the command line options */
      parse_options(argc, argv, pl);
  
-@@ -666,7 +680,6 @@ int main(int argc, char *argv[])
+@@ -666,7 +696,6 @@ int main(int argc, char *argv[])
  
      }
      else {
@@ -59,7 +129,7 @@ $OpenBSD: patch-mpg321_c,v 1.7 2012/07/13 09:05:38 naddy Exp $
  	    check_default_play_device();
      }
      
-@@ -764,6 +777,8 @@ int main(int argc, char *argv[])
+@@ -764,6 +793,8 @@ int main(int argc, char *argv[])
          signal(SIGINT, SIG_DFL);
          
          playbuf.buf = NULL;
