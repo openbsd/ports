@@ -8,4 +8,5 @@ with Nagios), featuring:
 
 Flavors:
 	(default):	use file locations for Icinga
+	(requires "icinga2 feature enable statusdata" which is deprecated)
 	nagios:		use file locations for Nagios

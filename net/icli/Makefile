@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/01/31 21:58:27 sthen Exp $
 
 COMMENT=	command-line interface to Icinga
 
 V=		0.48
 DISTNAME=	App-Icli-$V
 PKGNAME=	icli-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
@@ -22,8 +22,8 @@ FLAVOR?=
 RUN_DEPENDS=		net/nagios/nagios
 DATDIR=			${VARBASE}/nagios
 .else
-RUN_DEPENDS=		net/icinga/core
-DATDIR=			${VARBASE}/icinga
+RUN_DEPENDS=		net/icinga/core2
+DATDIR=			${VARBASE}/cache/icinga2
 .endif
 
 RUN_DEPENDS+=		devel/p5-DateTime-Format-Strptime \
