@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/01/31 07:37:18 bentley Exp $
 
 COMMENT =		vertical shoot-em-up with nontraditional elements
 
 DISTNAME =		garden-1.0.9
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		games
 
@@ -26,6 +26,6 @@ LIB_DEPENDS =		games/allegro
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
-CFLAGS += -fgnu89-inline
+CFLAGS += -fgnu89-inline -fcommon
 
 .include <bsd.port.mk>
