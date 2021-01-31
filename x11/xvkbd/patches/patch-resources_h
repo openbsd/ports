@@ -1,0 +1,18 @@
+$OpenBSD: patch-resources_h,v 1.1 2021/01/31 15:16:54 naddy Exp $
+
+the variables should be long enabling conversion to pointers.
+
+Index: resources.h
+--- resources.h.orig
++++ resources.h
+@@ -103,8 +103,8 @@ struct appres_struct {
+   float max_height_ratio;
+   int text_delay;
+   int key_click_pitch;
+-  int key_click_duration;
+-  int autoclick_delay;
++  long key_click_duration;
++  long autoclick_delay;
+ 
+   int save_private_dict_interval;
+   float private_dict_decay;

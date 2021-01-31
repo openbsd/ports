@@ -1,23 +1,94 @@
-$OpenBSD: patch-xvkbd_c,v 1.3 2019/04/01 11:54:14 naddy Exp $
+$OpenBSD: patch-xvkbd_c,v 1.4 2021/01/31 15:16:54 naddy Exp $
+
+the variables should be long enabling conversion to pointers,
+and one indentation fix.
 
 Index: xvkbd.c
 --- xvkbd.c.orig
 +++ xvkbd.c
-@@ -1114,7 +1114,7 @@ static void SendKeyPressedEvent(KeySym keysym, unsigne
-       	for (inx = (keycode - min_keycode) * keysym_per_keycode;
- 	     inx < (keycode - min_keycode + 1) * keysym_per_keycode;
- 	     inx++)
--	  fprintf(stderr, " 0x%x (%s)",
-+	  fprintf(stderr, " 0x%lx (%s)",
- 		  keysym_table[inx], keysym_table[inx] ? XKeysymToString(keysym_table[inx]) : "null");
- 	fprintf(stderr, "\n");
-       } else
-@@ -1964,7 +1964,7 @@ static void SetWindowManagerHint(Boolean initial)
- 	       FALSE, SubstructureNotifyMask | SubstructureRedirectMask,
- 	       (XEvent *)&ev);
-     if (appres.debug)
--      fprintf(stderr, "SetWindowManagerHint: _NET_WM_STATE_ABOVE = %d\n", ev.data.l[0]);
-+      fprintf(stderr, "SetWindowManagerHint: _NET_WM_STATE_ABOVE = %ld\n", ev.data.l[0]);
-   }
- }
+@@ -1730,7 +1730,7 @@ static void SendString(const char *str)
+   const char *cp, *cp2;
+   char key[50];
+   int len;
+-  int val;
++  long val;
+   Window target_root, child, junk_w;
+   int junk_i;
+   unsigned junk_u;
+@@ -1828,7 +1828,7 @@ static void SendString(const char *str)
+ 	break;
+       case 'x':
+       case 'y':  /* move mouse pointer */
+-	sscanf(cp + 1, "%d", &val);
++	sscanf(cp + 1, "%ld", &val);
+ 	target_root = RootWindow(target_dpy, DefaultScreen(target_dpy));
+ 	XQueryPointer(target_dpy, target_root, &junk_w, &child,
+ 		      &cur_x, &cur_y, &junk_i, &junk_i, &junk_u);
+@@ -2354,8 +2354,8 @@ static void PropsItemToggled(Widget w, char *key, char
+   XtVaGetValues(XtNameToWidget(props_panel, "*integrate_completion_panel"),
+ 		XtNstate, &appres.integrate_completion_panel, NULL);
  
+-  appres.key_click_duration = (int)XawToggleGetCurrent(click_buttons);
+-  appres.autoclick_delay = (int)XawToggleGetCurrent(autoclick_buttons);
++  appres.key_click_duration = (long)XawToggleGetCurrent(click_buttons);
++  appres.autoclick_delay = (long)XawToggleGetCurrent(autoclick_buttons);
+ 
+   SaveProperty();
+   SetWindowManagerHint(FALSE);
+@@ -2427,7 +2427,7 @@ static void PopupPropsPanel(void)
+     Widget label, button;
+     Widget form, w;
+     int i;
+-    int val;
++    long val;
+ 
+     props_panel = XtVaCreatePopupShell("props_panel", transientShellWidgetClass,
+ 				       toplevel, NULL);
+@@ -2452,7 +2452,7 @@ static void PopupPropsPanel(void)
+     click_buttons = button;
+     for (val = 1; val <= 50; val *= 2) {
+       char s1[15];
+-      snprintf(s1, sizeof(s1), "%dms", val);
++      snprintf(s1, sizeof(s1), "%ldms", val);
+       button = XtVaCreateManagedWidget(s1, toggleWidgetClass,
+ 			       form, XtNfromVert, w, XtNfromHoriz, button,
+ 			       XtNradioData, (XtPointer)val,
+@@ -2474,7 +2474,7 @@ static void PopupPropsPanel(void)
+     autoclick_buttons = button;
+     for (val = 500; val <= 1000; val += 100) {
+       char s1[10];
+-      snprintf(s1, sizeof(s1), "%dms", val);
++      snprintf(s1, sizeof(s1), "%ldms", val);
+       button = XtVaCreateManagedWidget(s1, toggleWidgetClass,
+ 			       form, XtNfromVert, w, XtNfromHoriz, button,
+ 			       XtNradioData, (XtPointer)val,
+@@ -2972,7 +2972,8 @@ static void KeyPressed(Widget w, char *key, char *data
+ 	default:
+ 	  if (keysym == NoSymbol || !appres.auto_add_keysym)
+ 	    fprintf(stderr, "%s: no such key: %s\n",
+-		    PROGRAM_NAME, key1); break;
++		    PROGRAM_NAME, key1);
++	  break;
+ 	}
+       }
+       SendKeyPressedEvent(keysym, cur_shift, 0);
+@@ -3700,8 +3701,8 @@ static void SaveProperty(void)
+   fprintf(fp, "#shift_lock %d\n", appres.shift_lock);
+   fprintf(fp, "#altgr_lock %d\n", appres.altgr_lock);
+   fprintf(fp, "#modifiers_lock %d\n", appres.modifiers_lock);
+-  fprintf(fp, "#key_click %d\n", appres.key_click_duration);
+-  fprintf(fp, "#autoclick %d\n", appres.autoclick_delay);
++  fprintf(fp, "#key_click %ld\n", appres.key_click_duration);
++  fprintf(fp, "#autoclick %ld\n", appres.autoclick_delay);
+   fprintf(fp, "#always_on_top %d\n", appres.always_on_top);
+   fprintf(fp, "#wm_toolbar %d\n", appres.wm_toolbar);
+   fprintf(fp, "#jump_pointer %d\n", appres.jump_pointer);
+@@ -3888,7 +3889,7 @@ static void ShowBalloon(Widget w, XEvent *event, Strin
+       autoclick_id = XtAppAddTimeOut(app_con, (long)appres.autoclick_delay,
+ 			   (XtTimerCallbackProc)Autoclick, (XtPointer)w);
+ 
+-      if (appres.debug) fprintf(stderr, "xvkbd: ShowBalloon: auto click triggerd: %lx, %d\n",
++      if (appres.debug) fprintf(stderr, "xvkbd: ShowBalloon: auto click triggerd: %lx, %ld\n",
+ 				(long)autoclick_id, appres.autoclick_delay);
+     }
+     value = FindFunctionKeyValue(w, XtName(w), TRUE);

@@ -4,3 +4,8 @@ which provides facility to enter characters onto other clients
 may be used for systems without a hardware keyboard such as kiosk
 terminals or handheld devices.  This program also has facility to
 send characters specified as the command line option to another client.
+
+You need to enable the XTEST extension on your X server.
+When you use macOS xquartz, enable the XTEST extension by
+"defaults write org.xquartz.x11 enable_test_extentions -boolean true".
+See Xquartz(1).
