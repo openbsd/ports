@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.128 2021/01/14 14:27:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.129 2021/01/31 09:15:06 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1215,6 +1215,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-pull-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-pull-request-title.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-repository-description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-repository-name.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/associate-repository.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/describe-repository-association.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/list-code-reviews.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/list-recommendations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/list-repository-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/acknowledge-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/create-custom-action-type.rst
@@ -1819,6 +1825,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-managed-pref
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-nat-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-acl-entry.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-acl.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-insights-path.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-interface-permission.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-placement-group.rst
@@ -1867,6 +1874,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-managed-pref
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-nat-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-acl-entry.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-acl.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-insights-analysis.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-insights-path.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-interface-permission.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-network-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-placement-group.rst
@@ -1959,6 +1968,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-managed-pr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-moving-addresses.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-nat-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-acls.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-insights-analyses.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-insights-paths.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-interface-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-interface-permissions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-interfaces.rst
@@ -2111,14 +2122,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/monitor-instances.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/move-address-to-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/provision-byoip-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-host-reservation.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-reserved-instance-offering.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-reserved-instances-offering.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-scheduled-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reboot-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/register-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/register-instance-event-notification-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/register-transit-gateway-multicase-group-sources.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/register-transit-gateway-multicast-group-members.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/register-transit-gateway-multicast-group-source.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reject-transit-gateway-peering-attachment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reject-transit-gateway-vpc-attachments.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reject-vpc-endpoint-connections.rst
@@ -2152,6 +2162,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/search-transit-gate
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/search-transit-gateway-routes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/send-diagnostic-interrupt.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/start-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/start-network-insights-analysis.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/stop-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/terminate-client-vpn-connections.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/terminate-instances.rst
@@ -2745,6 +2756,26 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-logge
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-resource-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-subscription-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-thing-runtime-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/cancel-deployment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/create-component-version.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/create-deployment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/delete-component.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/delete-core-device.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/describe-component.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/get-component-version-artifact.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/get-component.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/get-core-device.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/get-deployment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-component-versions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-components.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-core-devices.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-deployments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-effective-deployments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-installed-components.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/accept-invitation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/archive-findings.rst
@@ -3029,6 +3060,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-audit-suppre
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-certificate-from-csr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-custom-metric.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-dimension.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-domain-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-dynamic-thing-group.rst
@@ -3056,6 +3088,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-authorizer.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-custom-metric.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-dimension.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-domain-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/delete-dynamic-thing-group.rst
@@ -3088,6 +3121,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-authorizer
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-custom-metric.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-default-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-dimension.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/describe-domain-configuration.rst
@@ -3137,6 +3171,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-billing-groups
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-ca-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-certificates-by-ca.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-certificates.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-custom-metrics.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-dimensions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-domain-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-indices.rst
@@ -3195,6 +3230,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-authorizer.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-billing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-ca-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-custom-metric.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-dimension.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-domain-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-dynamic-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-event-configurations.rst
