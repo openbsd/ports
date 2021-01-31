@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/31 04:06:03 bcallah Exp $
 
 COMMENT =	yet another free document preparation system
 
 DISTNAME =	halibut-1.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	textproc
 HOMEPAGE =	https://www.chiark.greenend.org.uk/~sgtatham/halibut/
 MASTER_SITES =	${HOMEPAGE}${DISTNAME}/
