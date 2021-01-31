@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/12/05 11:23:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.26 2021/01/31 16:46:55 rsadowski Exp $
 bin/pycharm
 bin/pycharm-lightedit
 @man man/man1/pycharm.1
@@ -1419,7 +1419,7 @@ pycharm/plugins/python-ce/helpers/pydev/jython_test_deps/
 pycharm/plugins/python-ce/helpers/pydev/jython_test_deps/ant.jar
 pycharm/plugins/python-ce/helpers/pydev/jython_test_deps/junit.jar
 pycharm/plugins/python-ce/helpers/pydev/merge_pydev_pycharm.txt
-pycharm/plugins/python-ce/helpers/pydev/pycharm-readme.txt
+pycharm/plugins/python-ce/helpers/pydev/pycharm-readme.rst
 pycharm/plugins/python-ce/helpers/pydev/pycompletionserver.py
 pycharm/plugins/python-ce/helpers/pydev/pydev_app_engine_debug_startup.py
 pycharm/plugins/python-ce/helpers/pydev/pydev_console/
@@ -2999,7 +2999,7 @@ pycharm/plugins/python-ce/helpers/typeshed/third_party/3/waitress/utilities.pyi
 pycharm/plugins/python-ce/helpers/typeshed/third_party/3/waitress/wasyncore.pyi
 pycharm/plugins/python-ce/helpers/virtualenv-16.7.10-py2.py3-none-any.whl
 pycharm/plugins/python-ce/lib/
-pycharm/plugins/python-ce/lib/completion-ranking-python-0.1.3.jar
+pycharm/plugins/python-ce/lib/completion-ranking-python-0.2.2.jar
 pycharm/plugins/python-ce/lib/libthrift-0.11.0.jar
 pycharm/plugins/python-ce/lib/ml-completion-prev-exprs-models-1.11.jar
 pycharm/plugins/python-ce/lib/python-ce.jar
