@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1544 2021/01/24 14:38:34 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1545 2021/01/31 21:18:23 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2657,7 +2657,7 @@ ${_WRKDIR_COOKIE}:
 .if empty(_BUILD_DEP:Mdevel/gettext,-tools) && \
 		empty(_BUILD_DEP:Mtextproc/intltool)
 	@printf '#!/bin/sh\n\
-		echo "*** $$0 was called without gettext-tools dependency ***" >&2\n\
+		echo "*** $$0 was called without devel/gettext,-tools dependency ***" >&2\n\
 		exit 1\n' ${_PREDIR} ${WRKDIR}/bin/msgfmt
 	@${_PBUILD} chmod 555 ${WRKDIR}/bin/msgfmt
 .  for name in msgcat msginit autopoint xgettext gettextize
