@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/01/31 21:20:45 afresh1 Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Nagios plugin to monitor OpenBGPd peers
-DISTNAME=		check_openbgpd-1.10
+DISTNAME=		check_openbgpd-1.10.1
 CATEGORIES=		sysutils net
 
-MAINTAINER=		Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER=		Andrew Hewus Fresh <afresh1@openbsd.org>
 
 HOMEPAGE=		http://openbsd.somedomain.net/nagios/
 MASTER_SITES=		${HOMEPAGE}
