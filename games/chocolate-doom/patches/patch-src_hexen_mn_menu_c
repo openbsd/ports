@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_hexen_mn_menu_c,v 1.1 2021/01/31 02:11:42 jsg Exp $
+
+Remove redundant demoextend definition
+a8fd4b1f563d24d4296c3e8225c8404e2724d4c2
+
+Index: src/hexen/mn_menu.c
+--- src/hexen/mn_menu.c.orig
++++ src/hexen/mn_menu.c
+@@ -131,7 +131,6 @@ boolean MenuActive;
+ int InfoType;
+ int messageson = true;
+ boolean mn_SuicideConsole;
+-boolean demoextend; // from h2def.h
+ 
+ // PRIVATE DATA DEFINITIONS ------------------------------------------------
+ 
