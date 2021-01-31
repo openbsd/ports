@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1159 2021/01/31 18:53:55 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1160 2021/01/31 19:50:02 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2066,6 +2066,7 @@ my $obsolete_reason = {
 	'sattrack' => 32,
 	'sattrack' => 33,
 	'packit' => 34,
+	'nemesis' => 34,
 };
 
 # reasons for obsolete packages

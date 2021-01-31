@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1239 2021/01/31 00:36:12 kn Exp $
+# $OpenBSD: Makefile,v 1.1240 2021/01/31 19:50:02 kn Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -288,7 +288,6 @@
      SUBDIR += natpmpd
      SUBDIR += nbtscan
      SUBDIR += ncftp
-     SUBDIR += nemesis
      SUBDIR += neon
      SUBDIR += nepim
      SUBDIR += net-snmp
