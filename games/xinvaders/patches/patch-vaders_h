@@ -1,6 +1,7 @@
-$OpenBSD: patch-vaders_h,v 1.2 2015/08/27 15:00:32 naddy Exp $
---- vaders.h.orig	Mon Sep 11 00:32:40 2000
-+++ vaders.h	Tue Aug 25 21:28:01 2015
+$OpenBSD: patch-vaders_h,v 1.3 2021/01/31 16:40:35 cwen Exp $
+Index: vaders.h
+--- vaders.h.orig
++++ vaders.h
 @@ -90,15 +90,82 @@ typedef struct _VadersRec {
  
  
@@ -86,7 +87,7 @@ $OpenBSD: patch-vaders_h,v 1.2 2015/08/27 15:00:32 naddy Exp $
  ext int level;
  
  ext Display *dpy;
-@@ -111,30 +178,17 @@ ext int basesleft;
+@@ -111,54 +178,31 @@ ext int basesleft;
  
  /* Base info: */
  
@@ -97,7 +98,8 @@ $OpenBSD: patch-vaders_h,v 1.2 2015/08/27 15:00:32 naddy Exp $
  
 -ext Pixel basepixel;
 -ext Pixel buildingpixel;
- ext Boolean basedestroyed;	/* TRUE if the base is non-existant */
+-ext Boolean basedestroyed;	/* TRUE if the base is non-existant */
++extern Boolean basedestroyed;	/* TRUE if the base is non-existant */
  
  /* Vader info: */
  
@@ -116,8 +118,12 @@ $OpenBSD: patch-vaders_h,v 1.2 2015/08/27 15:00:32 naddy Exp $
 -				/* moving spacers. */
  ext int spacerappear;		/* same, but for the interval between appearances */
  
- ext Boolean spacer_shown;    	/* Currnet_Spacer is something */
-@@ -144,21 +198,11 @@ ext int spacer_counter;		/* number of cycles to create
+-ext Boolean spacer_shown;    	/* Currnet_Spacer is something */
+-ext int spacer_counter;		/* number of cycles to create a spacer */
++extern Boolean spacer_shown;    	/* Currnet_Spacer is something */
++extern int spacer_counter;		/* number of cycles to create a spacer */
+ 
+ /* Shot info. */
  
  ext XtIntervalId shottimerid;
  ext XtIntervalId vshottimerid;
@@ -129,8 +135,10 @@ $OpenBSD: patch-vaders_h,v 1.2 2015/08/27 15:00:32 naddy Exp $
 -				/* once. */
 -ext int maxvshots;		/* How many shots are allowed to exist at */
 -				/* once. */
- ext int numshots;		/* how many shots (from the base) there are right now. */
- ext int numvshots;		/* how many shots (from vaders) there are right now. */
+-ext int numshots;		/* how many shots (from the base) there are right now. */
+-ext int numvshots;		/* how many shots (from vaders) there are right now. */
++extern int numshots;		/* how many shots (from the base) there are right now. */
++extern int numvshots;		/* how many shots (from vaders) there are right now. */
  
  /* Score info */
  
