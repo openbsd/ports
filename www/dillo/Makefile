@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/12 20:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2021/01/31 15:01:23 bentley Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -33,7 +33,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-ipv6 \
 			--enable-ssl
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -fcommon" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/dillo/
