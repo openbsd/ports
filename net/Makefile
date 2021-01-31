@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1238 2021/01/29 17:05:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1239 2021/01/31 00:36:12 kn Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -492,7 +492,6 @@
      SUBDIR += p5-Zonemaster
      SUBDIR += p5-flowd
      SUBDIR += packetq
-     SUBDIR += packit
      SUBDIR += pavuk
      SUBDIR += pavuk,no_x11
      SUBDIR += pbgpp
