@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2020/02/03 20:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/01/31 20:08:42 sthen Exp $
 
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
 DISTNAME =	smstools3-3.1.21
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	comms
 FIX_EXTRACT_PERMISSIONS=Yes
@@ -16,6 +16,11 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =	c mm
 
 MASTER_SITES =	${HOMEPAGE}/packages/
+
+# -fno-common fixes from https://salsa.debian.org/debian-mobcom-team/smstools/-/tree/master/debian/patches
+MASTER_SITES0 =	https://salsa.debian.org/debian-mobcom-team/smstools/-/raw/57a358a9eebbe2ca5639cc526f7027944ed95ea1/debian/patches/
+PATCHFILES =	${DISTNAME}-{}gcc10.patch:0
+PATCH_DIST_ARGS = -p2 -d${WRKSRC}
 
 RUN_DEPENDS =	mail/procmail # some scripts use formail(1)
 LIB_DEPENDS =	devel/mm

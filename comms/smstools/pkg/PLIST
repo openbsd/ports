@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/10/10 12:04:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/01/31 20:08:42 sthen Exp $
 @conflict gnokii-*
 @newgroup _smsd:590
 @newuser _smsd:590:_smsd:daemon:smsd user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/spool/sms/*
 @extraunexec rm -rf /var/log/smsd/*
+@rcscript ${RCDIR}/smsd
 bin/sendsms
 bin/sms2html
 bin/sms2unicode
@@ -99,7 +100,3 @@ share/examples/smstools/smsd.conf.openbsd
 @sample /var/spool/sms/incoming/
 @sample /var/spool/sms/checked/
 @sample /var/spool/sms/outgoing/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/smsd
