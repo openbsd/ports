@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/07/01 10:04:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/01/31 20:25:31 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -7,6 +7,7 @@ COMMENT=	utilities for dealing with NetFlow exports
 DISTNAME=	flow-tools-0.68.5.1
 EXTRACT_SUFX=	.tar.bz2
 EPOCH=		0
+REVISION=	0
 CATEGORIES=	net
 
 # originally from http://www.splintered.net/sw/flow-tools/ (no longer exists)

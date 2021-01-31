@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_flow-filter_c,v 1.1 2021/01/31 20:25:31 sthen Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/diff/net-analyzer/flow-tools/files/flow-tools-0.68.5.1-fno-common.patch?id=78c775afa54f223bd01b2cb143ef36a32ec92aa8
+
+Index: src/flow-filter.c
+--- src/flow-filter.c.orig
++++ src/flow-filter.c
+@@ -56,8 +56,6 @@
+ int debug;
+ int ip_net_only;
+ 
+-struct acl_list acl_list;
+-
+ int yyparse (void);
+ void usage(void);
+ void yyerror(const char *msg);

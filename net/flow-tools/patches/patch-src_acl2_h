@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_acl2_h,v 1.1 2021/01/31 20:25:31 sthen Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/diff/net-analyzer/flow-tools/files/flow-tools-0.68.5.1-fno-common.patch?id=78c775afa54f223bd01b2cb143ef36a32ec92aa8
+
+Index: src/acl2.h
+--- src/acl2.h.orig
++++ src/acl2.h
+@@ -48,7 +48,7 @@
+ #define ACL_TYPE_STD  1
+ #define ACL_TYPE_EXT  2
+ 
+-struct acl_list {
++typedef struct acl_list {
+   int num;                          /* number of entries */
+   int num_std;                      /* number of standard acl entries */
+   int num_ext;                      /* number of extended acl entries */
+@@ -58,6 +58,8 @@ struct acl_list {
+   struct acl_ip_ext *acl_ip_ext;    /* list of extended acl's (not || names) */
+                                     /* num_ext of these */
+ };
++
++extern struct acl_list acl_list;
+ 
+ struct acl_names {
+   int num;       /* index into standard or extended list */

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_aclyacc_y,v 1.1 2021/01/31 20:25:31 sthen Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/diff/net-analyzer/flow-tools/files/flow-tools-0.68.5.1-fno-common.patch?id=78c775afa54f223bd01b2cb143ef36a32ec92aa8
+
+Index: src/aclyacc.y
+--- src/aclyacc.y.orig
++++ src/aclyacc.y
+@@ -7,8 +7,6 @@
+ unsigned char fmt_buf[32];
+ unsigned char fmt_buf2[32];
+ 
+-extern struct acl_list acl_list;
+-
+ int x;
+ 
+ %}
