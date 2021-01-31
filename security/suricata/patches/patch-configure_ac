@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.5 2021/01/31 18:03:49 sthen Exp $
+
+To remove the pid file, its directory must be writable by suricata user.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -2743,7 +2743,7 @@ if test "$WINDOWS_PATH" = "yes"; then
+     fi
+ else
+     EXPAND_VARIABLE(localstatedir, e_logdir, "/log/suricata/")
+-    EXPAND_VARIABLE(localstatedir, e_rundir, "/run/")
++    EXPAND_VARIABLE(localstatedir, e_rundir, "/run/suricata/")
+     EXPAND_VARIABLE(localstatedir, e_logfilesdir, "/log/suricata/files")
+     EXPAND_VARIABLE(localstatedir, e_logcertsdir, "/log/suricata/certs")
+     EXPAND_VARIABLE(sysconfdir, e_sysconfdir, "/suricata/")

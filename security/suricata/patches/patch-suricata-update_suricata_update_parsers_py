@@ -1,0 +1,14 @@
+$OpenBSD: patch-suricata-update_suricata_update_parsers_py,v 1.1 2021/01/31 18:03:49 sthen Exp $
+
+Index: suricata-update/suricata/update/parsers.py
+--- suricata-update/suricata/update/parsers.py.orig
++++ suricata-update/suricata/update/parsers.py
+@@ -41,7 +41,7 @@ global_arg = [
+       'help': "Be quiet, warning and error messages only"}),
+     (("-D", "--data-dir"),
+      {'metavar': '<directory>', 'dest': 'data_dir',
+-      'help': "Data directory (default: /var/lib/suricata)"}),
++      'help': "Data directory (default: ${VARBASE}/suricata)"}),
+     (("-c", "--config"),
+      {'metavar': '<filename>',
+       'help': "configuration file (default: %s)" % (default_update_yaml)}),

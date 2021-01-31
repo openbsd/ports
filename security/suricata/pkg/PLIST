@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/10/23 12:58:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/01/31 18:03:49 sthen Exp $
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
@@ -80,6 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}net.${M
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}notes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}osinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}parsers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}revision.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}rule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}sources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
@@ -144,6 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/net.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/notes.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/osinfo.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/parsers.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/revision.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/rule.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/sources.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/util.py
@@ -155,67 +157,55 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suricatasc/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/suricatasc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @man man/man1/suricata.1
 share/doc/pkg-readmes/${PKGSTEM}
-@sample ${SYSCONFDIR}/suricata/
-@sample ${SYSCONFDIR}/suricata/rules/
 share/examples/suricata/
-share/examples/suricata/rules/
-share/examples/suricata/rules/app-layer-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/app-layer-events.rules
-share/examples/suricata/rules/decoder-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/decoder-events.rules
-share/examples/suricata/rules/dhcp-events.rules
-share/examples/suricata/rules/dnp3-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/dnp3-events.rules
-share/examples/suricata/rules/dns-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/dns-events.rules
-share/examples/suricata/rules/files.rules
-@sample ${SYSCONFDIR}/suricata/rules/files.rules
-share/examples/suricata/rules/http-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/http-events.rules
-share/examples/suricata/rules/ipsec-events.rules
-share/examples/suricata/rules/kerberos-events.rules
-share/examples/suricata/rules/modbus-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/modbus-events.rules
-share/examples/suricata/rules/nfs-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/nfs-events.rules
-share/examples/suricata/rules/ntp-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/ntp-events.rules
-share/examples/suricata/rules/smb-events.rules
-share/examples/suricata/rules/smtp-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/smtp-events.rules
-share/examples/suricata/rules/stream-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/stream-events.rules
-share/examples/suricata/rules/tls-events.rules
-@sample ${SYSCONFDIR}/suricata/rules/tls-events.rules
+@sample ${SYSCONFDIR}/suricata/
 share/examples/suricata/suricata.yaml
 @sample ${SYSCONFDIR}/suricata/suricata.yaml
 share/examples/suricata/threshold.config
 @sample ${SYSCONFDIR}/suricata/threshold.config
+share/suricata/
+share/suricata/classification.config
+@sample ${SYSCONFDIR}/suricata/classification.config
+share/suricata/reference.config
+@sample ${SYSCONFDIR}/suricata/reference.config
+share/suricata/rules/
+@sample ${SYSCONFDIR}/suricata/rules/
+share/suricata/rules/app-layer-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/app-layer-events.rules
+share/suricata/rules/decoder-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/decoder-events.rules
+share/suricata/rules/dhcp-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/dhcp-events.rules
+share/suricata/rules/dnp3-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/dnp3-events.rules
+share/suricata/rules/dns-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/dns-events.rules
+share/suricata/rules/files.rules
+@sample ${SYSCONFDIR}/suricata/rules/files.rules
+share/suricata/rules/http-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/http-events.rules
+share/suricata/rules/ipsec-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/ipsec-events.rules
+share/suricata/rules/kerberos-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/kerberos-events.rules
+share/suricata/rules/modbus-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/modbus-events.rules
+share/suricata/rules/nfs-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/nfs-events.rules
+share/suricata/rules/ntp-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/ntp-events.rules
+share/suricata/rules/smb-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/smb-events.rules
+share/suricata/rules/smtp-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/smtp-events.rules
+share/suricata/rules/stream-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/stream-events.rules
+share/suricata/rules/tls-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/tls-events.rules
 @owner _suricata
 @group _suricata
 @sample ${VARBASE}/suricata/
-@sample ${VARBASE}/suricata/log/
-@sample ${VARBASE}/suricata/run/
 @sample ${VARBASE}/log/suricata/
+@sample ${VARBASE}/run/suricata/
 @owner
 @group
-share/suricata/
-share/suricata/classification.config
-share/suricata/reference.config
-share/suricata/rules/
-share/suricata/rules/app-layer-events.rules
-share/suricata/rules/decoder-events.rules
-share/suricata/rules/dhcp-events.rules
-share/suricata/rules/dnp3-events.rules
-share/suricata/rules/dns-events.rules
-share/suricata/rules/files.rules
-share/suricata/rules/http-events.rules
-share/suricata/rules/ipsec-events.rules
-share/suricata/rules/kerberos-events.rules
-share/suricata/rules/modbus-events.rules
-share/suricata/rules/nfs-events.rules
-share/suricata/rules/ntp-events.rules
-share/suricata/rules/smb-events.rules
-share/suricata/rules/smtp-events.rules
-share/suricata/rules/stream-events.rules
-share/suricata/rules/tls-events.rules

@@ -1,9 +1,12 @@
-$OpenBSD: patch-suricata_yaml_in,v 1.9 2020/12/27 14:01:53 gonzalo Exp $
+$OpenBSD: patch-suricata_yaml_in,v 1.10 2021/01/31 18:03:49 sthen Exp $
 
-After reload allow to write log files or use syslog.
-Switch user and group to avoid running as root.
-To remove pid file its directory must be writable by suricata user.
-Remove rules files not present by default.
+- After reload allow to write log files or use syslog.
+- Switch user and group to avoid running as root.
+- To remove pid file its directory must be writable by suricata user.
+- Comment-out suricata-update rules and add config for bundled rules
+so the package can be used directly. See pkg-readme for information
+about downloading rules.
+
 
 Index: suricata.yaml.in
 --- suricata.yaml.in.orig
@@ -80,7 +83,7 @@ Index: suricata.yaml.in
  
    # Lua Output Support - execute lua script to generate alert and event
    # output.
-@@ -558,13 +567,13 @@ logging:
+@@ -558,12 +567,12 @@ logging:
        enabled: yes
        # type: json
    - file:
@@ -91,23 +94,24 @@ Index: suricata.yaml.in
        # type: json
    - syslog:
 -      enabled: no
--      facility: local5
 +      enabled: yes
-+      facility:ulocal5
+       facility: local5
        format: "[%i] <%d> -- "
        # type: json
+@@ -988,9 +997,9 @@ asn1-max-frames: 256
+ ##
  
-@@ -991,6 +1000,9 @@ asn1-max-frames: 256
- #run-as:
- #  user: suri
- #  group: suri
+ # Run Suricata with a specific user-id and group-id:
+-#run-as:
+-#  user: suri
+-#  group: suri
 +run-as:
 +  user: _suricata
 +  group: _suricata
  
  # Some logging modules will use that name in event as identifier. The default
  # value is the hostname
-@@ -999,7 +1011,7 @@ asn1-max-frames: 256
+@@ -999,7 +1008,7 @@ asn1-max-frames: 256
  # Default location of the pid file. The pid file is only used in
  # daemon mode (start Suricata with -D). If not running in daemon mode
  # the --pidfile command line option must be used to create a pid file.
@@ -116,21 +120,42 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -1859,7 +1871,19 @@ napatech:
- default-rule-path: @e_defaultruledir@
+@@ -1852,14 +1861,38 @@ napatech:
+     #
+     hashmode: hash5tuplesorted
  
++
++## Enable one or other of the two sections:
++
++
+ ##
+ ## Configure Suricata to load Suricata-Update managed rules.
+ ##
++#default-rule-path: ${VARBASE}/suricata/rules
++#rule-files:
++#  - suricata.rules
+ 
+-default-rule-path: @e_defaultruledir@
+-
++##
++## Configure Suricata to use basic bundled rules.
++##
++default-rule-path: @e_sysconfdir@rules
  rule-files:
 -  - suricata.rules
-+
 +  - app-layer-events.rules
 +  - decoder-events.rules
-+  #- dnp3-events.rules
++  - dhcp-events.rules
++  - dnp3-events.rules
 +  - dns-events.rules
 +  - files.rules
 +  - http-events.rules
-+  #- modbus-events.rules
-+  #- nfs-events.rules
-+  #- ntp-events.rules
++  - ipsec-events.rules
++  - kerberos-events.rules
++  - modbus-events.rules
++  - nfs-events.rules
++  - ntp-events.rules
++  - smb-events.rules
 +  - smtp-events.rules
 +  - stream-events.rules
 +  - tls-events.rules

@@ -1,58 +1,45 @@
-$OpenBSD: README,v 1.7 2019/03/29 16:53:21 sthen Exp $
+$OpenBSD: README,v 1.8 2021/01/31 18:03:49 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Starting suricata
+Starting Suricata
 =================
-
-For normal use, you need to set first your interface and enable the
+For normal use, you need to first set your interface and enable the
 daemon:
 
 # rcctl enable suricata
 # rcctl set suricata flags -i em0
 
-And you need the rules, these rules are expected to be present in the
-${SYSCONFDIR}/suricata/rules directory as defined in
-${SYSCONFDIR}/suricata/suricata.yaml.
+The default configuration uses a very basic set of rules bundled with
+Suricata and installed in the ${SYSCONFDIR}/suricata/rules directory.
+A standard installation uses additional rules as shown in the following
+section.
 
 Rule management
 ===============
-
-It is possible to download and install rules manually, but there is a
-much easier and quicker way to do so. There are special programs which
-you can use for downloading and installing rules.
-
-After installing the new rulesets described below, restart suricata to
-pick up the new rules:
-
-# rcctl restart suricata
-
-Note that the installed rules have to be updated regularly by the program
-used to fetch them initially. For example use cron to update the rules
-every 24h.
+It is possible to download and install rules manually, but it is easier
+and quicker to use one of the available tools to do this.
 
 suricata-update
 ---------------
+suricata-update is the recommended way to install and update rules.
+By default it will download the new rules into ${VARBASE}/suricata/rules
 
-suricata-update is the recommended way to install and update rules for
-suricata. By default it will download the new rules into
-${VARBASE}/suricata/rules/ .
-
-Modify ${SYSCONFDIR}/suricata/suricata.yaml like this:
+Edit ${SYSCONFDIR}/suricata/suricata.yaml and replace the existing default-rule-path
+and rule-files sections with this:
 
     default-rule-path: ${VARBASE}/suricata/rules/
     rule-files:
       - suricata.rules
 
-And restart suricata:
+And restart Suricata:
 
 # rcctl restart suricata
 
 Oinkmaster
 ----------
-
 The other common method is with Oinkmaster which can be installed with:
 
 # pkg_add oinkmaster
@@ -71,24 +58,37 @@ And you can download as follow:
 # cd /etc && oinkmaster -C ${SYSCONFDIR}/oinkmaster.conf \
 	-o ${SYSCONFDIR}/suricata/rules
 
+After updating rules
+--------------------
+After installing the new rulesets with one of the above methods, restart
+Suricata to pick them up:
+
+# rcctl restart suricata
+
+Note that the installed rules have to be updated regularly by the program
+used to fetch them initially. For example use cron to update the rules
+every 24h.
+
 Inline mode (IPS)
 =================
+The default configuration captures packets via pcap on a network interface
+and runs detection methods.
 
-In order to run suricata "inline" in Intrusion Prevention mode, the following
-needs to be added to `/etc/pf.conf`:
+Suricata can also run "inline" in Intrusion Prevention mode. To do this,
+add the following to /etc/pf.conf:
 
 	pass out quick on egress inet proto tcp to port 80 divert-packet port 700
 
-Adjust this to match what traffic suricata will need to inspect as well as the
-port to divert to.
-
-To enable inline ipfw mode of suricata on port 700:
+Adjust this to match what traffic Suricata will need to inspect as well as
+the divert port use. Configure to enable inline mode on divert port 700
+like this:
 
 # rcctl set suricata flags -d 700
 
-Outbound packets don't have a correct checksum yet due to checksum offloading,
-therefore suricata will log "SURICATA TCPv4 invalid checksum" and ignore these
-packets. To workaround this set the following in suricata.yaml:
+Outbound packets might not have a correct checksum yet due to checksum
+offloading, therefore Suricata will log "SURICATA TCPv4 invalid checksum"
+and ignore these packets. This can be worked around with the following
+setting in suricata.yaml:
 
 	stream:
 	  checksum-validation: yes
@@ -98,5 +98,5 @@ Also adjust the configuration to drop packets:
 	- drop:
 	  enabled: yes
 
-(Re)start suricata for the changes to take effect. Note that ipfw mode is
+(Re)start Suricata for the changes to take effect. Note that IPS mode is
 mutually exclusive with pcap live mode (-i).
