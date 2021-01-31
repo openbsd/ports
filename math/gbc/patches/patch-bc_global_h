@@ -1,0 +1,22 @@
+$OpenBSD: patch-bc_global_h,v 1.1 2021/01/31 04:09:38 bcallah Exp $
+
+Fix for -fno-common
+Identical to FreeBSD's fix:
+https://svnweb.freebsd.org/ports/head/math/gnubc/files/patch-bc_global.h?revision=547437&view=co
+
+Index: bc/global.h
+--- bc/global.h.orig
++++ bc/global.h
+@@ -112,9 +112,9 @@ EXTERN int n_history;
+ 
+ #if defined(LIBEDIT)
+ /* LIBEDIT data */
+-EditLine *edit INIT(NULL);
+-History  *hist;
+-HistEvent histev;
++EXTERN EditLine *edit INIT(NULL);
++EXTERN History  *hist;
++EXTERN HistEvent histev;
+ #endif
+ 
+ /* "Condition code" -- false (0) or true (1) */
