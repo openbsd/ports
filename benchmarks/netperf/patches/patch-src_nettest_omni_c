@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_nettest_omni_c,v 1.1 2021/01/31 19:27:02 sthen Exp $
+
+From PR https://github.com/HewlettPackard/netperf/pull/46
+
+From c6a2e17fe35f0e68823451fedfdf5b1dbecddbe3 Mon Sep 17 00:00:00 2001
+From: Khem Raj <raj.khem@gmail.com>
+Date: Wed, 12 Aug 2020 09:57:23 -0700
+Subject: [PATCH] nettest_omni: Remove duplicate variable definitions
+
+Index: src/nettest_omni.c
+--- src/nettest_omni.c.orig
++++ src/nettest_omni.c
+@@ -456,14 +456,6 @@ static int client_port_max = 65535;
+ 
+  /* different options for the sockets				*/
+ 
+-int
+-  loc_nodelay,		/* don't/do use NODELAY	locally		*/
+-  rem_nodelay,		/* don't/do use NODELAY remotely	*/
+-  loc_sndavoid,		/* avoid send copies locally		*/
+-  loc_rcvavoid,		/* avoid recv copies locally		*/
+-  rem_sndavoid,		/* avoid send copies remotely		*/
+-  rem_rcvavoid; 	/* avoid recv_copies remotely		*/
+-
+ extern int
+   loc_tcpcork,
+   rem_tcpcork,
