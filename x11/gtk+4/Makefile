@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.37 2021/01/19 17:14:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2021/01/31 08:50:56 ajacoutot Exp $
 
-# XXX: PORTROACH is set at the end of this file to override gnome.port.mk
-  
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
 
@@ -125,6 +123,3 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/modules/printbackends/meson.build
 
 .include <bsd.port.mk>
-
-# Clear portroach annotation for we track an odd-numbered development branch
-PORTROACH=
