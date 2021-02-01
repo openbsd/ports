@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/08/14 11:49:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/02/01 20:29:00 rsadowski Exp $
 @pkgpath x11/kde4/okteta
 @bin bin/okteta
 bin/struct2osd
@@ -27,6 +27,7 @@ include/KastenControllers/Kasten/SynchronizeControllerFactory
 include/KastenControllers/Kasten/TerminalToolFactory
 include/KastenControllers/Kasten/TerminalToolViewFactory
 include/KastenControllers/Kasten/ToolListMenuControllerFactory
+include/KastenControllers/Kasten/UiColorSchemeControllerFactory
 include/KastenControllers/Kasten/VersionControllerFactory
 include/KastenControllers/Kasten/VersionViewToolFactory
 include/KastenControllers/Kasten/VersionViewToolViewFactory
@@ -59,6 +60,7 @@ include/KastenControllers/kasten/synchronizecontrollerfactory.hpp
 include/KastenControllers/kasten/terminaltoolfactory.hpp
 include/KastenControllers/kasten/terminaltoolviewfactory.hpp
 include/KastenControllers/kasten/toollistmenucontrollerfactory.hpp
+include/KastenControllers/kasten/uicolorschemecontrollerfactory.hpp
 include/KastenControllers/kasten/versioncontrollerfactory.hpp
 include/KastenControllers/kasten/versionviewtoolfactory.hpp
 include/KastenControllers/kasten/versionviewtoolviewfactory.hpp
