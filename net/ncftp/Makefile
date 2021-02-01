@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2020/03/10 03:31:45 daniel Exp $
+# $OpenBSD: Makefile,v 1.48 2021/02/01 01:21:36 cwen Exp $
 
 COMMENT=	FTP client with advanced user interface
 
 DISTNAME=	ncftp-3.2.6
 CATEGORIES=	net
-HOMEPAGE=	http://www.ncftp.com/ncftp/
-REVISION=	1
+HOMEPAGE=	https://www.ncftp.com/ncftp/
+REVISION=	2
 
 # Artistic
 PERMIT_PACKAGE=	Yes
