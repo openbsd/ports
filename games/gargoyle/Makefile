@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/08/01 11:30:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/01 20:04:53 sthen Exp $
 
 COMMENT =	cross-platform interactive fiction player
 
@@ -46,7 +46,7 @@ DESTDIRNAME =		DESTPREFIX
 #	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' [...]
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/garglk/launchgtk.c
+	sed -i 's,/usr/local,${TRUEPREFIX},' ${WRKSRC}/garglk/launchgtk.c
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam -j${MAKE_JOBS} ${JAMDEBUG}

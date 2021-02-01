@@ -1,6 +1,6 @@
-$OpenBSD: patch-garglk_launchgtk_c,v 1.4 2019/11/19 14:49:11 sthen Exp $
+$OpenBSD: patch-garglk_launchgtk_c,v 1.5 2021/02/01 20:04:53 sthen Exp $
 
-Remove Linux'ism to figure out the libexec dir.
+OpenBSD doesn't remember the path to the running executable.
 
 Index: garglk/launchgtk.c
 --- garglk/launchgtk.c.orig
@@ -11,7 +11,7 @@ Index: garglk/launchgtk.c
  {
 -#ifdef __FreeBSD__
 +#if defined(__OpenBSD__)
-+    char exepath[MaxBuffer] = "${TRUEPREFIX}/libexec/gargoyle/";
++    char exepath[MaxBuffer] = "/usr/local/libexec/gargoyle/";
 +    snprintf(buffer, sizeof(exepath), "%s", exepath );
 +#elif defined(__FreeBSD__)
      int mib[4];
