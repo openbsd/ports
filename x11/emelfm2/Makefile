@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/01 00:56:58 kn Exp $
 
-COMMENT =		GTK+2 file manager
+COMMENT =		GTK based file manager with two-pane design
 
 DISTNAME =		emelfm2-0.9.1
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		x11
-HOMEPAGE =		http://emelfm2.net/
+HOMEPAGE =		http://emelfm.sourceforge.net/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -27,5 +27,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 MAKE_ENV =	MAN_DIR=${DESTDIR}/$(PREFIX)/man/man1 CC=${CC} lCFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 USE_GMAKE =	Yes
 NO_TEST =	Yes
+
+# XXX twenty duplicate symbols
+COPTS =		-fcommon
 
 .include <bsd.port.mk>
