@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/16 17:26:16 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/01 01:46:00 kn Exp $
 
 COMMENT =	command-line editor and web browser
 
-DISTNAME =	edbrowse-3.7.6
-REVISION =	0
+GH_ACCOUNT =	CMB
+GH_PROJECT =	edbrowse
+GH_TAGNAME =	v3.7.7
 
 CATEGORIES =	www
 
@@ -13,8 +14,6 @@ HOMEPAGE =	http://edbrowse.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curl duktape m pcre pthread readline tidy
-
-MASTER_SITES =	https://deftly.net/dist/
 
 MODULES =	devel/cmake
 
