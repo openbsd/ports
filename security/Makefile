@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.606 2021/02/01 01:02:54 kn Exp $
+# $OpenBSD: Makefile,v 1.607 2021/02/01 14:07:51 kn Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -372,7 +372,6 @@
      SUBDIR += sentinel
      SUBDIR += shash
      SUBDIR += shash,static
-     SUBDIR += siphon
      SUBDIR += slurpie
      SUBDIR += smbsniff
      SUBDIR += smtpscan
