@@ -1,0 +1,16 @@
+$OpenBSD: patch-smtp_c,v 1.1 2021/02/01 19:47:08 sthen Exp $
+
+Fix -fno-common, https://svnweb.freebsd.org/ports?view=revision&revision=545509
+
+Index: smtp.c
+--- smtp.c.orig
++++ smtp.c
+@@ -8,7 +8,7 @@
+ 
+ #ifdef SMTP
+ 
+-char            big_recvline[MAXTOREAD];
++static char	big_recvline[MAXTOREAD];
+ 
+ int
+ smtp_read_response_from_server(FILE * fs)

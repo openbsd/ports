@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/01 18:10:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/01 19:47:08 sthen Exp $
 
-COMMENT=	test performance of a remote TCP service
+COMMENT=	test performance of remote TCP/UDP services
 
 VER=		6_0_2
 DISTNAME=	echoping-RELEASE_${VER}
 PKGNAME=	echoping-${VER:S/_/./g}
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	https://framagit.org/bortzmeyer/echoping/-/archive/RELEASE_${VER}/
@@ -26,6 +27,7 @@ BUILD_DEPENDS=		devel/libtool
 LIB_DEPENDS=		devel/popt
 LIBTOOL_FLAGS=		--tag=disable-static
 
+# other plugins: postgresql, ldap
 CONFIGURE_ARGS+=	--enable-plugin="dns random whois" \
 			--with-popt=${LOCALBASE} \
 			--with-ssl=/usr \
