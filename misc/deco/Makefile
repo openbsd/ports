@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/01/26 11:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/01 01:22:57 cwen Exp $
 
 COMMENT=	Demos Commander, a free Norton Commander clone
 
 DISTNAME=	deco383
 PKGNAME=	deco-3.8.3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	https://distfiles.sigtrap.nl/
 EXTRACT_SUFX=	.tgz

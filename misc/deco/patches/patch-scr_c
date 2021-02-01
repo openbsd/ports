@@ -1,6 +1,19 @@
-$OpenBSD: patch-scr_c,v 1.1 2002/03/21 09:59:48 form Exp $
---- scr.c.orig	Tue Dec 29 22:57:11 1998
-+++ scr.c	Thu Mar 21 15:31:17 2002
+$OpenBSD: patch-scr_c,v 1.2 2021/02/01 01:22:57 cwen Exp $
+
+Hunk #1: Fix -fno-common build failure.
+
+Index: scr.c
+--- scr.c.orig
++++ scr.c
+@@ -148,7 +148,7 @@ WINDOW VScreen;
+ int BlackWhite = 0;
+ int ColorMode = 1;
+ int GraphMode = 1;
+-int TtyUpperCase = 0;
++extern int TtyUpperCase;
+ 
+ static WINDOW curscr;
+ static scrool, rscrool;
 @@ -167,7 +167,7 @@ static char *KS, *KE;
  
  static char *CL, *CM, *SE, *SO, *TE, *TI, *VE, *VS,
