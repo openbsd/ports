@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/01 14:44:30 fcambus Exp $
+include/bezctx.h
+include/bezctx_intf.h
+include/spiro.h
+include/spiroentrypoints.h
+@static-lib lib/libspiro.a
+lib/libspiro.la
+@lib lib/libspiro.so.${LIBspiro_VERSION}
+lib/pkgconfig/libspiro.pc
+@man man/man3/libspiro.3
