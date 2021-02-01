@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2020/06/29 23:49:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/01 13:47:23 fcambus Exp $
 
 COMMENT=		graphical representation of CVS repository
 
 DISTNAME=		cvsgraph-1.7.1
 CATEGORIES=		devel
-HOMEPAGE=		https://www.vagrearg.org/cvsgraph/
+HOMEPAGE=		https://www.vagrearg.org/content/cvsgraph
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
