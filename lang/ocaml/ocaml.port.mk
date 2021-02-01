@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.32 2017/12/03 11:10:10 espie Exp $
+# $OpenBSD: ocaml.port.mk,v 1.33 2021/02/01 00:17:55 jca Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -33,8 +33,20 @@ MODOCAML_OCAMLDOC?=ocamldoc
 PKG_ARGS+=-Ddynlink=0
 .endif
 
-RUN_DEPENDS +=		lang/ocaml
+# Assume that we want to automatically add ocaml to BUILD_DEPENDS.
 BUILD_DEPENDS +=	lang/ocaml
+# Assume that we want to automatically add ocaml to RUN_DEPENDS.
+# Can take three values:
+# Yes, No or if-not-native (translates to Yes if native-code is unsupported)
+MODOCAML_RUNDEP?=	Yes
+
+.if ${MODOCAML_RUNDEP:L} == if-not-native && ${MODOCAML_NATIVE} == No
+MODOCAML_RUNDEP =	Yes
+.endif
+.if ${MODOCAML_RUNDEP:L} == yes
+RUN_DEPENDS+=		lang/ocaml
+.endif
+
 MAKE_ENV +=		OCAMLFIND_DESTDIR=${DESTDIR}${TRUEPREFIX}/lib/ocaml \
 			OCAMLFIND_COMMANDS="ocamldoc=${MODOCAML_OCAMLDOC}"
 
