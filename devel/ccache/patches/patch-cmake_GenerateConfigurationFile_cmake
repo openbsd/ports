@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_GenerateConfigurationFile_cmake,v 1.3 2021/01/25 21:07:50 sthen Exp $
+$OpenBSD: patch-cmake_GenerateConfigurationFile_cmake,v 1.4 2021/02/01 10:11:27 sthen Exp $
 
 From 6e95418f15722647f960d8f773edbbecbb46a73c Mon Sep 17 00:00:00 2001
 From: Stuart Henderson <sthen@users.noreply.github.com>
@@ -6,17 +6,43 @@ Date: Mon, 25 Jan 2021 18:41:54 +0000
 Subject: [PATCH] Disable inode cache on OSes without
  pthread_mutexattr_setpshared() (#791)
 
-The inode cache requires pthread_mutexattr_setpshared() and build fails on OSes
-with sys/mman.h that do not have this function.
+From b438f50388dd00285083260f60450e6237b7d58f Mon Sep 17 00:00:00 2001
+From: Erik Flodin <erik@ejohansson.se>
+Date: Mon, 7 Dec 2020 19:20:31 +0100
+Subject: [PATCH] Improve SIMD detection (#735)
 
 Index: cmake/GenerateConfigurationFile.cmake
 --- cmake/GenerateConfigurationFile.cmake.orig
 +++ cmake/GenerateConfigurationFile.cmake
-@@ -57,6 +57,7 @@ check_c_source_compiles(
-     }
-   ]=]
-   HAVE_PTHREAD_MUTEX_ROBUST)
-+check_function_exists(pthread_mutexattr_setpshared HAVE_PTHREAD_MUTEXATTR_SETPSHARED)
- set(CMAKE_REQUIRED_LINK_OPTIONS)
+@@ -68,18 +68,19 @@ check_struct_has_member("struct stat" st_mtim sys/stat
+ check_struct_has_member("struct statfs" f_fstypename sys/mount.h
+                         HAVE_STRUCT_STATFS_F_FSTYPENAME)
  
- include(CheckStructHasMember)
+-include(CheckCXXCompilerFlag)
+-
+-# Old GCC versions don't have the required header support.
+-# Old Apple Clang versions seem to support -mavx2 but not the target
+-# attribute that's used to enable AVX2 for a certain function.
+-if((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0)
+-   OR (CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 8.0))
+-  message(STATUS "Detected unsupported compiler for HAVE_AVX2 - disabled")
+-  set(HAVE_AVX2 FALSE)
+-else()
+-  check_cxx_compiler_flag(-mavx2 HAVE_AVX2)
+-endif()
++include(CheckCXXSourceCompiles)
++check_cxx_source_compiles(
++  [=[
++    #include <immintrin.h>
++    void func() __attribute__((target("avx2")));
++    void func() { _mm256_abs_epi8(_mm256_set1_epi32(42)); }
++    int main()
++    {
++      func();
++      return 0;
++    }
++  ]=]
++  HAVE_AVX2)
+ 
+ list(APPEND CMAKE_REQUIRED_LIBRARIES ws2_32)
+ list(REMOVE_ITEM CMAKE_REQUIRED_LIBRARIES ws2_32)
