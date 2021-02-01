@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/01 14:55:22 sthen Exp $
 
-COMMENT=	mail anomalies in the system logfiles to the administrator
+COMMENT=	display new entries in system logfiles since last run
 
-V=		1.3.20
+V=		1.3.21
 DISTNAME=	logcheck_${V}
 PKGNAME=	logtail-${V}
 EXTRACT_SUFX=	.tar.xz
