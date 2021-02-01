@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/01 23:02:13 naddy Exp $
 
 COMMENT=		caching mechanism for freedesktop.org compliant menus
 
 DISTNAME=		menu-cache-1.1.0
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  menu-cache           1.0      # 4.1
 
