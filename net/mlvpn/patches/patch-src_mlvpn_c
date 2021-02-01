@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_mlvpn_c,v 1.1 2021/02/01 19:54:19 sthen Exp $
+
+From 58418fd847fe833d1e626d4b7d08f0e623756c5c Mon Sep 17 00:00:00 2001
+From: Laurent Coustet <ed@zehome.com>
+Date: Tue, 1 Sep 2020 18:48:19 +0200
+Subject: [PATCH] Fix GCC 10 compilation issue
+
+Index: src/mlvpn.c
+--- src/mlvpn.c.orig
++++ src/mlvpn.c
+@@ -82,6 +82,7 @@ static char **saved_argv;
+ struct ev_loop *loop;
+ static ev_timer reorder_drain_timeout;
+ static ev_timer reorder_adjust_rtt_timeout;
++struct rtunhead rtuns;
+ char *status_command = NULL;
+ char *process_title = NULL;
+ int logdebug = 0;
+@@ -1491,11 +1492,11 @@ main(int argc, char **argv)
+     mlvpn_systemd_notify();
+ #endif
+ 
++    LIST_INIT(&rtuns);
+     priv_init(argv, mlvpn_options.unpriv_user);
+     if (mlvpn_options.change_process_title)
+         update_process_title();
+ 
+-    LIST_INIT(&rtuns);
+     freebuf = mlvpn_freebuffer_init(512);
+ 
+     /* Kill me if my root process dies ! */

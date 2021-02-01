@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_mlvpn_h,v 1.1 2021/02/01 19:54:19 sthen Exp $
+
+From 58418fd847fe833d1e626d4b7d08f0e623756c5c Mon Sep 17 00:00:00 2001
+From: Laurent Coustet <ed@zehome.com>
+Date: Tue, 1 Sep 2020 18:48:19 +0200
+Subject: [PATCH] Fix GCC 10 compilation issue
+
+Index: src/mlvpn.h
+--- src/mlvpn.h.orig
++++ src/mlvpn.h
+@@ -130,7 +130,9 @@ enum chap_status {
+     MLVPN_LOSSY
+ };
+ 
+-LIST_HEAD(rtunhead, mlvpn_tunnel_s) rtuns;
++LIST_HEAD(rtunhead, mlvpn_tunnel_s);
++
++extern struct rtunhead rtuns;
+ 
+ typedef struct mlvpn_tunnel_s
+ {
