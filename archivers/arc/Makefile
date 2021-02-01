@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:43:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/01 16:51:22 kn Exp $
 
 COMMENT=	create & extract files from DOS .ARC files
 
 DISTNAME=	arc-5.21p
 CATEGORIES=	archivers
+REVISION=	0
 
 HOMEPAGE=	http://arc.sourceforge.net/
 

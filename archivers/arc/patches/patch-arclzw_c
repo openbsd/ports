@@ -1,7 +1,23 @@
-$OpenBSD: patch-arclzw_c,v 1.3 2011/05/23 13:42:10 gsoares Exp $
---- arclzw.c.orig	Sat Aug  7 10:06:42 2010
-+++ arclzw.c	Thu May 19 23:35:46 2011
-@@ -560,7 +560,7 @@ decomp(squash, f, t)		/* decompress a file */
+$OpenBSD: patch-arclzw_c,v 1.4 2021/02/01 16:51:22 kn Exp $
+
+Fix "-fno-common" build, from FreeBSD
+
+Index: arclzw.c
+--- arclzw.c.orig
++++ arclzw.c
+@@ -58,8 +58,9 @@ static VOID     putcode();
+ 
+ extern u_char	*pinbuf;
+ u_char		*inbeg, *inend;
+-u_char          *outbuf;
+-u_char          *outbeg, *outend; 
++extern u_char          *outbuf;
++u_char          *outbeg;
++extern u_char          *outend;
+ 
+ static int      sp;		/* current stack pointer */
+ static int	inflag;
+@@ -560,7 +561,7 @@ decomp(squash, f, t)		/* decompress a file */
  		 */
  		if (code >= free_ent) {
  			if (code > free_ent) {
