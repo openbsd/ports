@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.14 2021/01/10 17:00:00 fcambus Exp $
+$OpenBSD: patch-makefile,v 1.15 2021/02/01 15:47:16 fcambus Exp $
 
 - Disable hardcoded -O3 optimizations
 - Fix GCC_VERSION and CLANG_VERSION detection
@@ -15,7 +15,7 @@ Index: makefile
  endif
  ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
  OS := macosx
-@@ -609,11 +609,6 @@ PROFILER =
+@@ -615,11 +615,6 @@ PROFILER =
  SYMBOLS = 1
  endif
  
@@ -27,7 +27,7 @@ Index: makefile
  # set the symbols level
  ifdef SYMBOLS
  PARAMS += --SYMBOLS='$(SYMBOLS)'
-@@ -978,8 +973,8 @@ endif
+@@ -984,8 +979,8 @@ endif
  
  ifeq ($(OS),windows)
  ifeq (posix,$(SHELLTYPE))
