@@ -1,6 +1,6 @@
-$OpenBSD: patch-boost_asio_detail_impl_socket_ops_ipp,v 1.2 2020/12/21 19:07:53 rsadowski Exp $
+$OpenBSD: patch-boost_asio_detail_impl_socket_ops_ipp,v 1.3 2021/02/01 12:00:51 rsadowski Exp $
 
-Use MSG_NOSIGNAL with sendmsg().
+Use _POSIX_VERSION to detect support for MSG_NOSIGNAL.
 
 Index: boost/asio/detail/impl/socket_ops.ipp
 --- boost/asio/detail/impl/socket_ops.ipp.orig
@@ -10,10 +10,10 @@ Index: boost/asio/detail/impl/socket_ops.ipp
    msg.msg_iov = const_cast<buf*>(bufs);
    msg.msg_iovlen = static_cast<int>(count);
 -#if defined(__linux__)
-+#if defined(MSG_NOSIGNAL)
++#if defined(BOOST_ASIO_HAS_MSG_NOSIGNAL)
    flags |= MSG_NOSIGNAL;
 -#endif // defined(__linux__)
-+#endif // defined(MSG_NOSIGNAL)
++#endif // defined(BOOST_ASIO_HAS_MSG_NOSIGNAL)
    signed_size_type result = error_wrapper(::sendmsg(s, &msg, flags), ec);
    if (result >= 0)
      ec = boost::system::error_code();
@@ -22,10 +22,10 @@ Index: boost/asio/detail/impl/socket_ops.ipp
    msg.msg_iov = const_cast<buf*>(bufs);
    msg.msg_iovlen = static_cast<int>(count);
 -#if defined(__linux__)
-+#if defined(MSG_NOSIGNAL)
++#if defined(BOOST_ASIO_HAS_MSG_NOSIGNAL)
    flags |= MSG_NOSIGNAL;
 -#endif // defined(__linux__)
-+#endif // defined(MSG_NOSIGNAL)
++#endif // defined(BOOST_ASIO_HAS_MSG_NOSIGNAL)
    signed_size_type result = error_wrapper(::sendmsg(s, &msg, flags), ec);
    if (result >= 0)
      ec = boost::system::error_code();

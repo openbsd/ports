@@ -1,0 +1,15 @@
+$OpenBSD: patch-boost_predef_os_bsd_open_h,v 1.1 2021/02/01 12:00:51 rsadowski Exp $
+
+Fix redef of OS_BSD predef.
+
+Index: boost/predef/os/bsd/open.h
+--- boost/predef/os/bsd/open.h.orig
++++ boost/predef/os/bsd/open.h
+@@ -79,6 +79,7 @@ http://www.boost.org/LICENSE_1_0.txt)
+     defined(__OpenBSD__) \
+     )
+ #   ifndef BOOST_OS_BSD_AVAILABLE
++#       undef BOOST_OS_BSD
+ #       define BOOST_OS_BSD BOOST_VERSION_NUMBER_AVAILABLE
+ #       define BOOST_OS_BSD_AVAILABLE
+ #   endif

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.106 2020/12/21 19:07:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.107 2021/02/01 12:00:51 rsadowski Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.70.0
-REVISION=	2
+VERSION=	1.72.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
@@ -15,7 +14,7 @@ MASTER_SITES=	https://dl.bintray.com/boostorg/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	12.0
+SO_VERSION=	13.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -71,7 +70,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com> \
 # Boost
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} bz2 c icudata icui18n icuuc m z
+WANTLIB += ${COMPILER_LIBCXX} bz2 icudata icui18n icuuc m z
 
 COMPILER= base-clang ports-gcc
 
@@ -99,8 +98,6 @@ TOOLSET=	clang
 TOOLSET=	gcc
 .endif
 
-MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
-
 BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 		-sBZIP2_INCLUDE=${LOCALBASE}/include \
 		-sBZIP2_LIBPATH=${LOCALBASE}/lib \
@@ -113,7 +110,8 @@ BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 		cxxflags='${CXXFLAGS} -pthread' \
 		variant=release \
 		link=static,shared \
-		threading=single,multi
+		threading=single,multi \
+		toolset=${TOOLSET}
 
 BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
 		--with-toolset=${TOOLSET} \
@@ -139,22 +137,20 @@ NO_TEST=	Yes
 SUBST_VARS+=	SO_VERSION
 
 do-configure:
-	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/user-config.jam
+	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/src/user-config.jam
 	${SUBST_CMD} ${WRKSRC}/Jamroot
-	cd ${WRKSRC}/libs/config && \
+	@cd ${WRKSRC}/libs/config && \
 		${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
-	cd ${WRKSRC}/tools/build/src/engine && \
-		${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" /bin/sh ./build.sh cc && \
-		cp bin.openbsd*/b2 bin.openbsd*/bjam ${WRKSRC}
-	cd ${WRKSRC} && ${SETENV} /bin/sh ./bootstrap.sh ${BOOTSTRAP}
+	@cd ${WRKSRC}/tools/build/src/engine && ${SETENV} ${CONFIGURE_ENV} \
+		/bin/sh ./build.sh ${TOOLSET} && cp b2 bjam ${WRKSRC}
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./bootstrap.sh ${BOOTSTRAP}
 
 do-build:
-	cd ${WRKSRC} && export ${MAKE_ENV} && \
-		./b2 ${BJAM_CONFIG}
+	@cd ${WRKSRC} && export ${MAKE_ENV} && ./b2 ${BJAM_CONFIG}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/stage/lib/* ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/include/boost
+	${INSTALL_DATA} ${WRKSRC}/stage/lib/lib!(*.so) ${PREFIX}/lib
 	cd ${WRKSRC}/boost && \
 		pax -rw -s ':^.*\.orig$$::' . ${PREFIX}/include/boost
 	find ${PREFIX}/include/boost -type d -exec chmod ${DIRMODE} {} +
