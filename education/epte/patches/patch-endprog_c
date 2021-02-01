@@ -1,0 +1,16 @@
+$OpenBSD: patch-endprog_c,v 1.1 2021/02/01 17:40:49 kn Exp $
+
+Fix "-fno-common" build.
+
+Index: endprog.c
+--- endprog.c.orig
++++ endprog.c
+@@ -293,7 +293,7 @@ modification follow.
+ #include <stdlib.h>
+ #include "periodic.h"
+ 
+-FILE *Audio;
++extern FILE *Audio;
+ 
+ void endprog (int status) 
+ {
