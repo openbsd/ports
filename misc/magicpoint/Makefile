@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2019/07/12 20:47:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2021/02/01 04:16:41 jsg Exp $
 
 COMMENT=	X11-based presentation tool
 
 DISTNAME=	magicpoint-1.09a
-REVISION=	2
+REVISION=	3
 EPOCH=		0
 CATEGORIES=	misc productivity
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/

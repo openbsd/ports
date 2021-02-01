@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/01 04:16:41 jsg Exp $
 
 COMMENT =		decoder, encoder and replaygain for musepack files
 
 V =			475
 DISTNAME =		musepack_src_r${V}
 PKGNAME =		musepack-${V}
-REVISION =		4
+REVISION =		5
 CATEGORIES =		audio
 
 HOMEPAGE =		https://www.musepack.net/
