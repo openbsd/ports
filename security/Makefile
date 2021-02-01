@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.605 2021/01/30 19:17:11 abieber Exp $
+# $OpenBSD: Makefile,v 1.606 2021/02/01 01:02:54 kn Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -135,7 +135,6 @@
      SUBDIR += luasec
      SUBDIR += luasec,lua52
      SUBDIR += luasec,lua53
-     SUBDIR += lxnb
      SUBDIR += lynis
      SUBDIR += mcrypt
      SUBDIR += mhash
