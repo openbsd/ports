@@ -1,28 +1,32 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:12:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/01 21:40:10 sthen Exp $
 
 COMMENT =		plugin to manage your versions by scm tags
 
-MODPY_EGG_VERSION =	3.3.3
+MODPY_EGG_VERSION =	3.4.1
 DISTNAME =		setuptools_scm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
+FLAVORS =		python3
+FLAVOR ?=
+
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/git \
 			devel/mercurial \
 			devel/py-pip${MODPY_FLAVOR}
 
+.if ${FLAVOR:Mpython3}
+# toml is an optional run dependency, used rarely
+TEST_DEPENDS +=		devel/py-toml${MODPY_FLAVOR}
+.endif
+
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-
-FLAVORS =		python3
-FLAVOR ?=
 
 .include <bsd.port.mk>
