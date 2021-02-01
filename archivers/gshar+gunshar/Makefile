@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:43:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/02/01 16:43:29 kn Exp $
 
 COMMENT=	packing and unpacking of shell archives
 
 DISTNAME=	sharutils-4.15.2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	archivers
 
@@ -26,5 +26,10 @@ CONFIGURE_ENV += LDFLAGS="-L${LOCALBASE}/lib"
 
 # Regression tests pass without --disable-uuencode
 NO_TEST=Yes
+
+# Remove forward declerations from headers to fix build with "-fno-common"
+# as each respective .c file has the declares and defines it in one place.
+pre-patch:
+	sed -i /program_name\;/s,^,//, ${WRKSRC}/src/*.h
 
 .include <bsd.port.mk>
