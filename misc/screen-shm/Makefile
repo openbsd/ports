@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/09/06 13:28:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/01 15:59:01 naddy Exp $
 
 COMMENT=	multi-screen window manager, with shm support for brltty
 
@@ -6,7 +6,7 @@ COMMENT=	multi-screen window manager, with shm support for brltty
 PORTROACH=	ignore:1
 
 DISTNAME=	screen-4.0.3
-REVISION=	8
+REVISION=	9
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
 
