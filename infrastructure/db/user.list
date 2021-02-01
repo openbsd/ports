@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.383 2021/01/17 21:27:04 sthen Exp $
+$OpenBSD: user.list,v 1.384 2021/02/01 12:41:37 kn Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -315,7 +315,7 @@ id  user		group		port
 804 _mattermost		_mattermost	net/mattermost-server
 805 _nzbget		_nzbget		news/nzbget
 806 			_nethack36	games/nethack/3.6
-807 _hitch		_hitch		security/hitch
+#807 _hitch		_hitch		security/hitch
 808 _motion		_motion		multimedia/motion
 809 _ntopng		_ntopng		net/ntopng
 810 _sabnzbd		_sabnzbd	news/sabnzbd
