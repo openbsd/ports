@@ -1,7 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/06/25 06:14:57 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/02/01 17:17:28 naddy Exp $
 @bin bin/gshar
 @bin bin/gunshar
 @info info/sharutils.info
 @comment lib/charset.alias
 @man man/man1/gshar.1
 @man man/man1/gunshar.1
+share/locale/bg/LC_MESSAGES/sharutils.mo
+share/locale/ca/LC_MESSAGES/sharutils.mo
+share/locale/cs/LC_MESSAGES/sharutils.mo
+share/locale/da/LC_MESSAGES/sharutils.mo
+share/locale/de/LC_MESSAGES/sharutils.mo
+share/locale/el/LC_MESSAGES/sharutils.mo
+share/locale/eo/LC_MESSAGES/sharutils.mo
+share/locale/es/LC_MESSAGES/sharutils.mo
+share/locale/et/LC_MESSAGES/sharutils.mo
+share/locale/fi/LC_MESSAGES/sharutils.mo
+share/locale/fr/LC_MESSAGES/sharutils.mo
+share/locale/ga/LC_MESSAGES/sharutils.mo
+share/locale/gl/LC_MESSAGES/sharutils.mo
+share/locale/hu/LC_MESSAGES/sharutils.mo
+share/locale/id/LC_MESSAGES/sharutils.mo
+share/locale/it/LC_MESSAGES/sharutils.mo
+share/locale/ja/LC_MESSAGES/sharutils.mo
+share/locale/nl/LC_MESSAGES/sharutils.mo
+share/locale/pl/LC_MESSAGES/sharutils.mo
+share/locale/pt_BR/LC_MESSAGES/sharutils.mo
+share/locale/ru/LC_MESSAGES/sharutils.mo
+share/locale/sr/LC_MESSAGES/sharutils.mo
+share/locale/sv/LC_MESSAGES/sharutils.mo
+share/locale/tr/LC_MESSAGES/sharutils.mo
+share/locale/uk/LC_MESSAGES/sharutils.mo
+share/locale/vi/LC_MESSAGES/sharutils.mo
+share/locale/zh_CN/LC_MESSAGES/sharutils.mo
+share/locale/zh_TW/LC_MESSAGES/sharutils.mo
