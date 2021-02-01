@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/01 02:01:59 kn Exp $
 
 COMMENT =		interactive PKI manager for isakmpd(8) or iked(8)
 DISTNAME =		ikeman-0.2
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		security
 
@@ -20,5 +20,8 @@ WANTLIB +=		c crypto curses
 NO_TEST =		Yes
 
 FAKE_FLAGS =		MANDIR=${PREFIX}/man/man
+
+# XXX seven duplicate symbols
+CFLAGS +=		-fcommon
 
 .include <bsd.port.mk>
