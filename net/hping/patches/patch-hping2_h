@@ -1,0 +1,14 @@
+$OpenBSD: patch-hping2_h,v 1.1 2021/02/01 19:52:01 sthen Exp $
+
+Index: hping2.h
+--- hping2.h.orig
++++ hping2.h
+@@ -357,7 +357,7 @@ struct delaytable_element {
+ 	int status;
+ };
+ 
+-volatile struct delaytable_element delaytable[TABLESIZE];
++extern volatile struct delaytable_element delaytable[TABLESIZE];
+ 
+ /* protos */
+ void	nop(void);				/* nop */

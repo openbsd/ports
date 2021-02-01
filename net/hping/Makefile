@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/01 19:52:01 sthen Exp $
 
 COMMENT=	command-line oriented TCP/IP packet assembler/analyzer
 
@@ -7,6 +7,7 @@ GH_PROJECT=	hping
 GH_COMMIT=	3547c7691742c6eaa31f8402e0ccbb81387c1b99
 DISTNAME=	hping-3.0.0-alpha-1
 PKGNAME=	hping-3.0.0pre1
+REVISION=	0
 
 CATEGORIES=	net
 
