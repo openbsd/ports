@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/12/08 20:34:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/01 14:56:30 sthen Exp $
 bin/vd
 bin/visidata
 lib/python${MODPY_VERSION}/site-packages/visidata/
@@ -113,6 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}csv.${
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}eml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}fixed_width.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}frictionless.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}geojson.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}graphviz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}hdf5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}pyc
@@ -138,6 +139,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}tsv.${
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}ttf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}usv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}vcf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}vds.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}xlsb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}xlsx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
@@ -149,6 +151,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/csv.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/eml.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/fixed_width.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/frictionless.py
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/geojson.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/graphviz.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/hdf5.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/html.py
@@ -174,6 +177,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/tsv.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/ttf.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/usv.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/vcf.py
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/vds.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/xlsb.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/xlsx.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/xml.py
