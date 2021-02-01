@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.31 2020/11/03 19:45:30 bket Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2021/02/01 05:31:03 bket Exp $
 
 COMMENT=	multi-platform file synchronization tool
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c m util
 
 MODULES=	lang/ocaml
+MODOCAML_RUNDEP=	if-not-native
+
 TEST_DEPENDS+=	emacs->=24:editors/emacs
 
 # CFLAGS _must_ be empty.  This is an OCaml compiler.
