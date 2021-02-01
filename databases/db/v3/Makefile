@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/10 17:14:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/01 23:58:30 naddy Exp $
 
 REV=		3
 DBLIBDIR=	lib/db
@@ -9,7 +9,7 @@ EPOCH-main=	0
 EPOCH-tcl=	0
 
 REVISION-main = 3
-REVISION-tcl =	1
+REVISION-tcl =	2
 
 SHARED_LIBS +=	db                   3.1      # .0.0
 SHARED_LIBS +=	db_cxx               4.0      # .0.0

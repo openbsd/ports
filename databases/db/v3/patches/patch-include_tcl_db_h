@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_tcl_db_h,v 1.1 2021/02/01 23:58:30 naddy Exp $
+
+Index: include/tcl_db.h
+--- include/tcl_db.h.orig
++++ include/tcl_db.h
+@@ -114,7 +114,7 @@ typedef struct dbtcl_info {
+ } DBTCL_INFO;
+ 
+ extern int __debug_on, __debug_print, __debug_stop, __debug_test;
+-LIST_HEAD(infohead, dbtcl_info) __db_infohead;
++extern LIST_HEAD(infohead, dbtcl_info) __db_infohead;
+ 
+ #define	i_anyp un.anyp
+ #define	i_pagep un.anyp
