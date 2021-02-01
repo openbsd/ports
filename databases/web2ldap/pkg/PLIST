@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/12 11:28:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/01 18:21:07 sthen Exp $
 @newgroup _web2ldap:857
 @newuser _web2ldap:857:_web2ldap:daemon:web2ldap service account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/web2ldap
@@ -351,16 +351,17 @@ share/doc/web2ldap/faq.html
 share/doc/web2ldap/features.html
 share/doc/web2ldap/files.html
 share/doc/web2ldap/install.html
+share/doc/web2ldap/install_container.html
 share/doc/web2ldap/install_opensuse.html
 share/doc/web2ldap/news.html
 share/doc/web2ldap/related.html
-share/doc/web2ldap/roadmap.html
 share/doc/web2ldap/robots.txt
 share/doc/web2ldap/ssi/
 share/doc/web2ldap/ssi/changes_navigation.html
 share/doc/web2ldap/ssi/footer.html
 share/doc/web2ldap/ssi/head.html
 share/doc/web2ldap/ssi/navigation.html
+share/doc/web2ldap/todo.html
 share/doc/web2ldap/usability.html
 share/doc/web2ldap/web2ldap.html
 share/doc/web2ldap/web2ldapcnf.html
@@ -420,6 +421,7 @@ share/examples/web2ldap/templates/ae-dir/add_aeMailbox.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeNwDevice.ldif
 share/examples/web2ldap/templates/ae-dir/add_aePerson.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeService.ldif
+share/examples/web2ldap/templates/ae-dir/add_aeService_posixAccount.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeSrvGroup.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeSudoRule_su_root.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeTag.ldif
@@ -450,7 +452,6 @@ share/examples/web2ldap/templates/ae-dir/inputform_aeSudoRule.html
 share/examples/web2ldap/templates/ae-dir/inputform_aeTag.html
 share/examples/web2ldap/templates/ae-dir/inputform_aeUser.html
 share/examples/web2ldap/templates/ae-dir/inputform_aeZone.html
-share/examples/web2ldap/templates/ae-dir/inputform_msPwdResetObject.html
 share/examples/web2ldap/templates/ae-dir/login.html
 share/examples/web2ldap/templates/ae-dir/passwd.html
 share/examples/web2ldap/templates/ae-dir/read_aeAuthcToken.html
@@ -471,8 +472,8 @@ share/examples/web2ldap/templates/ae-dir/read_aeSudoRule.html
 share/examples/web2ldap/templates/ae-dir/read_aeTag.html
 share/examples/web2ldap/templates/ae-dir/read_aeUser.html
 share/examples/web2ldap/templates/ae-dir/read_aeZone.html
-share/examples/web2ldap/templates/ae-dir/read_msPwdResetObject.html
 share/examples/web2ldap/templates/ae-dir/searchform_aedir.html
+share/examples/web2ldap/templates/ae-dir/searchform_null.html
 share/examples/web2ldap/templates/ae-dir/top.html
 share/examples/web2ldap/templates/connect.html
 share/examples/web2ldap/templates/dhcp/
@@ -498,6 +499,7 @@ share/examples/web2ldap/templates/inputform_inetOrgPerson.html
 share/examples/web2ldap/templates/inputform_mailboxRelatedObject.html
 share/examples/web2ldap/templates/inputform_msOrganization.html
 share/examples/web2ldap/templates/inputform_msPerson.html
+share/examples/web2ldap/templates/inputform_msPwdResetObject.html
 share/examples/web2ldap/templates/inputform_msPwdResetPolicy.html
 share/examples/web2ldap/templates/inputform_musician.html
 share/examples/web2ldap/templates/inputform_namedObject.html
@@ -567,6 +569,7 @@ share/examples/web2ldap/templates/read_mailboxRelatedObject.html
 share/examples/web2ldap/templates/read_monitorConnection.html
 share/examples/web2ldap/templates/read_msOrganization.html
 share/examples/web2ldap/templates/read_msPerson.html
+share/examples/web2ldap/templates/read_msPwdResetObject.html
 share/examples/web2ldap/templates/read_msPwdResetPolicy.html
 share/examples/web2ldap/templates/read_musician.html
 share/examples/web2ldap/templates/read_namedObject.html
