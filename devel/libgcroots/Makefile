@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/01 22:12:26 sthen Exp $
 
 COMMENT =	garbage collector library
 
-V =		0.3.1
+V =		0.3.2
 DISTNAME =	libgcroots-$V
 
-SHARED_LIBS +=  gcroots                   0.0 # 1.0
+SHARED_LIBS +=  gcroots                   1.0 # 1.0
 
 CATEGORIES =	devel
 

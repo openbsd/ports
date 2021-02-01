@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/11 11:13:53 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/01 22:12:27 sthen Exp $
 @conflict uim-<1.8.8
 include/gcroots.h
-lib/libgcroots.a
+@static-lib lib/libgcroots.a
 lib/libgcroots.la
 @lib lib/libgcroots.so.${LIBgcroots_VERSION}
 lib/pkgconfig/gcroots.pc

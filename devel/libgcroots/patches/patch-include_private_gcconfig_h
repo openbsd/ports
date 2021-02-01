@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_private_gcconfig_h,v 1.1.1.1 2019/03/11 11:13:53 bentley Exp $
+$OpenBSD: patch-include_private_gcconfig_h,v 1.2 2021/02/01 22:12:27 sthen Exp $
 
 Index: include/private/gcconfig.h
 --- include/private/gcconfig.h.orig
@@ -24,7 +24,7 @@ Index: include/private/gcconfig.h
  # if defined(OPENBSD) && defined(m68k)
  #    define M68K
  #    define mach_type_known
-@@ -1733,6 +1738,86 @@
+@@ -1750,6 +1755,86 @@
  #   define DATAEND (_end)
  #   define CACHE_LINE_SIZE 256
  #   define GETPAGESIZE() 4096
