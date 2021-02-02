@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2021/01/15 20:45:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2021/02/02 21:11:14 naddy Exp $
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	17
+REVISION=	18
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
