@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2061 2021/01/29 17:05:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2062 2021/02/02 19:29:18 jeremy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1843,6 +1843,7 @@
      SUBDIR += ruby-ffi,ruby26
      SUBDIR += ruby-ffi,ruby27
      SUBDIR += ruby-ffi,ruby30
+     SUBDIR += ruby-ffi-compiler
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gettext-setup
