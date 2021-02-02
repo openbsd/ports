@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_player_window_c,v 1.1 2021/02/02 01:22:53 sthen Exp $
+
+Index: src/player_window.c
+--- src/player_window.c.orig
++++ src/player_window.c
+@@ -36,8 +36,6 @@
+  * this file is used for the player control tab
+  **********************************************************/
+ 
+-#include <sys/timeb.h>
+-
+ #include "player_window.h"
+ 
+ #define DRAWING_AREA_WIDTH 400
