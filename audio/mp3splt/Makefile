@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/02 01:15:23 sthen Exp $
 
 COMMENT=	split mp3/ogg files without decoding
-DISTNAME=	mp3splt-2.2.3
-REVISION=	0
+DISTNAME=	mp3splt-2.6.2
 
 CATEGORIES=	audio
 

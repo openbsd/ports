@@ -1,3 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/02/11 15:46:51 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/02 01:15:23 sthen Exp $
 @bin bin/mp3splt
 @man man/man1/mp3splt.1
+share/locale/
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
+share/locale/cs/LC_MESSAGES/mp3splt.mo
+share/locale/de_DE/
+share/locale/de_DE/LC_MESSAGES/
+share/locale/de_DE/LC_MESSAGES/mp3splt.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
+share/locale/es/LC_MESSAGES/mp3splt.mo
+share/locale/fr_FR/
+share/locale/fr_FR/LC_MESSAGES/
+share/locale/fr_FR/LC_MESSAGES/mp3splt.mo
