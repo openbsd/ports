@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2020/12/27 17:24:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/02/02 14:24:32 sthen Exp $
 
 COMMENT=	library for HTTP/2
 
-V=		1.42.0
+V=		1.43.0
 DISTNAME=	nghttp2-$V
-REVISION=	0
 
 SHARED_LIBS +=	nghttp2              0.17     # 33.0
 
