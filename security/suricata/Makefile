@@ -1,16 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2021/01/31 18:03:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/02/02 20:11:01 sthen Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
-https://github.com/OISF/suricata/commit/62e665c8482c90b30f6edfa7b0f0eabf8a4fcc79
-GH_ACCOUNT=	OISF
-GH_PROJECT=	suricata
-GH_COMMIT=	62e665c8482c90b30f6edfa7b0f0eabf8a4fcc79
-DISTNAME=	suricata-6.0.1pl20210127
 SURICATA_V =	6.0.1
 SUPDATE_V =	1.2.0
 
-#DISTNAME =	suricata-${SURICATA_V}
+DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
 SHARED_LIBS +=	htp                       0.0 # 2.0
 
@@ -22,7 +17,7 @@ MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org> \
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-#MASTER_SITES =	https://www.openinfosecfoundation.org/download/
+MASTER_SITES =	https://www.openinfosecfoundation.org/download/
 
 # uses pledge()
 WANTLIB +=  ${COMPILER_LIBCXX} c iconv jansson lz4 lzma m magic
