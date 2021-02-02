@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/09 16:18:16 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/02 21:45:17 solene Exp $
 
-V =		1.2.0pl202010091808
+V =		1.2.2pl202012070000
 COMMENT =	factorio inspired base building game
 DISTNAME =	shapezio-${V}
 CATEGORIES =	games

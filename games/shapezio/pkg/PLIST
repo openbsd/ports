@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/10/09 16:18:16 solene Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/02 21:45:17 solene Exp $
 share/applications/shapezio.desktop
 share/icons/hicolor/128x128/apps/shapezio.png
 share/shapez.io/
+share/shapez.io/4ef60dba70ef999f6777.worker.js.map
 share/shapez.io/5bcbab89b4b3d3bf4467.worker.js.map
-share/shapez.io/904c48e452c0a96665b3.worker.js.map
 share/shapez.io/async-resources.css
 share/shapez.io/bundle.js
 share/shapez.io/bundle.js.map
@@ -147,7 +147,9 @@ share/shapez.io/res/ui/icons/state_back_button.png
 share/shapez.io/res/ui/icons/statistics.png
 share/shapez.io/res/ui/icons/toggle_unit.png
 share/shapez.io/res/ui/icons/unpin.png
+share/shapez.io/res/ui/icons/unpin_shape.png
 share/shapez.io/res/ui/icons/waypoint.png
+share/shapez.io/res/ui/icons/waypoint_wires.png
 share/shapez.io/res/ui/interactive_tutorial.noinline/
 share/shapez.io/res/ui/interactive_tutorial.noinline/1_1_extractor.gif
 share/shapez.io/res/ui/interactive_tutorial.noinline/1_2_conveyor.gif
