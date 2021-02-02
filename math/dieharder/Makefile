@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/02 19:27:50 tb Exp $
 
 COMMENT =		random number generator (rng) testing suite
 
 DISTNAME =		dieharder-3.31.1
-REVISION =		1
+REVISION =		2
 SHARED_LIBS +=  dieharder                 0.0 # 0.0
 CATEGORIES =		math
 
@@ -21,6 +21,9 @@ WANTLIB += c gsl gslcblas m
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# More than 50 common symbols defined in more than half a dozen headers.
+CFLAGS +=		-fcommon
 
 BUILD_DEPENDS =		textproc/latex2html
 LIB_DEPENDS =		devel/gsl
