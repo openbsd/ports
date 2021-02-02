@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/02 22:12:13 cwen Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		wm-dockapp; APM/battery monitor
 
 DISTNAME=		wmapm-3.1
-REVISION =		3
+REVISION =		4
 CATEGORIES=		sysutils x11 x11/windowmaker
 
-HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
+HOMEPAGE=		https://www.dockapps.net/wmapm
 
 # GPL
 PERMIT_PACKAGE=	Yes
-WANTLIB=		X11 Xext Xpm c xcb
+WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=		https://www.dockapps.net/download/
 
 NO_TEST=		Yes
 
