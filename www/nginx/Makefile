@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2021/01/01 12:46:51 robert Exp $
+# $OpenBSD: Makefile,v 1.151 2021/02/02 22:54:04 solene Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -25,6 +25,7 @@ REVISION-main=	4
 REVISION-xslt=	0
 REVISION-passenger=	0
 REVISION-stream=	0
+REVISION-naxsi=		0
 
 VERSION-rtmp=	1.2.1
 
@@ -54,7 +55,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 _GH_MODS=	\
 	openresty	headers-more-nginx-module	v0.33 \
 	openresty	lua-nginx-module		v0.10.11 \
-	nbs-system	naxsi				0.55.3 \
+	nbs-system	naxsi				1.3 \
 	kvspb		nginx-auth-ldap			83c059b73566c2ee9cbda920d91b66657cf120b7 \
 	arut		nginx-rtmp-module		v${VERSION-rtmp} \
 	simpl		ngx_devel_kit			v0.3.0 \
