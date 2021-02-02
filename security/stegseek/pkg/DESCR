@@ -1,0 +1,9 @@
+Stegseek is a lightning fast steghide cracker that can be used to
+extract hidden data from files. It is built as a fork of the original
+steghide project and, as a result, it is thousands of times faster than
+other crackers and can run through the entirety of rockyou.txt* in under
+2 seconds.
+
+Stegseek can also be used to extract steghide metadata without a
+password, which can be used to test whether a file contains steghide
+data.
