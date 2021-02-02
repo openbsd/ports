@@ -1,0 +1,17 @@
+$OpenBSD: patch-luaa_h,v 1.1 2021/02/02 15:37:24 bket Exp $
+
+Fix -fno-common build failure. Taken from
+https://github.com/awesomeWM/awesome/commit/d256d9055095f27a33696e0aeda4ee20ed4fb1a0
+
+Index: luaa.h
+--- luaa.h.orig
++++ luaa.h
+@@ -311,7 +311,7 @@ const char *luaA_find_config(xdgHandle *, const char *
+ bool luaA_parserc(xdgHandle *, const char *);
+ 
+ /** Global signals */
+-signal_array_t global_signals;
++extern signal_array_t global_signals;
+ 
+ int luaA_class_index_miss_property(lua_State *, lua_object_t *);
+ int luaA_class_newindex_miss_property(lua_State *, lua_object_t *);

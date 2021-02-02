@@ -1,0 +1,17 @@
+$OpenBSD: patch-objects_tag_h,v 1.1 2021/02/02 15:37:25 bket Exp $
+
+Fix -fno-common build failure. Taken from
+https://github.com/awesomeWM/awesome/commit/d256d9055095f27a33696e0aeda4ee20ed4fb1a0
+
+Index: objects/tag.h
+--- objects/tag.h.orig
++++ objects/tag.h
+@@ -46,7 +46,7 @@ struct tag
+     client_array_t clients;
+ };
+ 
+-lua_class_t tag_class;
++extern lua_class_t tag_class;
+ LUA_OBJECT_FUNCS(tag_class, tag_t, tag)
+ 
+ void tag_class_setup(lua_State *);

@@ -1,0 +1,17 @@
+$OpenBSD: patch-luaa_c,v 1.9 2021/02/02 15:37:24 bket Exp $
+
+Fix -fno-common build failure. Taken from
+https://github.com/awesomeWM/awesome/commit/d256d9055095f27a33696e0aeda4ee20ed4fb1a0
+
+Index: luaa.c
+--- luaa.c.orig
++++ luaa.c
+@@ -77,6 +77,8 @@ extern const struct luaL_Reg awesome_root_lib[];
+ extern const struct luaL_Reg awesome_mouse_methods[];
+ extern const struct luaL_Reg awesome_mouse_meta[];
+ 
++signal_array_t global_signals;
++
+ /** A call into the Lua code aborted with an error.
+  *
+  * This signal is used in the example configuration, @{05-awesomerc.md},

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.112 2020/12/01 06:03:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.113 2021/02/02 15:37:24 bket Exp $
 
 COMMENT=		highly configurable framework window manager
 
 V=			4.3
 DISTNAME=		awesome-${V}
 CATEGORIES=		x11
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://awesomewm.org/
 

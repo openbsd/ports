@@ -1,0 +1,17 @@
+$OpenBSD: patch-objects_button_c,v 1.1 2021/02/02 15:37:24 bket Exp $
+
+Fix -fno-common build failure. Taken from
+https://github.com/awesomeWM/awesome/commit/d256d9055095f27a33696e0aeda4ee20ed4fb1a0
+
+Index: objects/button.c
+--- objects/button.c.orig
++++ objects/button.c
+@@ -35,6 +35,8 @@
+ 
+ #include "button.h"
+ 
++lua_class_t button_class;
++
+ /** Button object.
+  *
+  * @tfield int button The mouse button number, or 0 for any button.
