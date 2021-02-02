@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.117 2020/12/03 18:04:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2021/02/02 10:05:11 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.70.1
+GH_TAGNAME =	21.1.0
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
 
@@ -90,7 +90,7 @@ dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz
 	sed -i 's,whereis -b ,whereis ,' LibreNMS/Config.php; \
 	[ -r .env ] || cp .env.example .env; \
 	composer install --no-dev; \
-	tar cf - vendor | xz -T 0 > $$f; \
+	echo tarring; tar cf - vendor | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \
 	cd -; rm -rf $$t
 
