@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/25 14:02:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/02 06:53:29 jsg Exp $
 
 # author says so
 ONLY_FOR_ARCHS= ${LE_ARCHS}
@@ -8,6 +8,7 @@ COMMENT =	convert pictures into pdf book
 GH_PROJECT = 	tumble
 GH_ACCOUNT = 	brouhaha
 GH_TAGNAME = 	v0.36
+REVISION =	0
 
 CATEGORIES = 	graphics textproc
 
