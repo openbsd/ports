@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_callbacks_c,v 1.1 2021/02/02 11:56:48 sthen Exp $
+
+Index: src/callbacks.c
+--- src/callbacks.c.orig
++++ src/callbacks.c
+@@ -28,7 +28,7 @@ extern int delete;
+ extern int context_id;
+ extern int tview;
+ 
+-struct menu_items bookmark_items[128];
++extern struct menu_items bookmark_items[128];
+ extern int dont_select_damnit;
+ extern int dont_update_entry;
+ static struct tree *mibtree;
