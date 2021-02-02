@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/01 21:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/02 11:24:22 sthen Exp $
 
 COMMENT =		plugin to manage your versions by scm tags
 
@@ -22,7 +22,7 @@ TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 
 .if ${FLAVOR:Mpython3}
 # toml is an optional run dependency, used rarely
-TEST_DEPENDS +=		devel/py-toml${MODPY_FLAVOR}
+TEST_DEPENDS +=		textproc/py-toml${MODPY_FLAVOR}
 .endif
 
 MODPY_PI =		Yes
