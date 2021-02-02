@@ -1,5 +1,6 @@
-$OpenBSD: patch-src_babel_h,v 1.1 2021/02/02 10:15:02 landry Exp $
+$OpenBSD: patch-src_babel_h,v 1.2 2021/02/02 10:24:53 landry Exp $
 
+upstream fixed it this way: https://github.com/viking-gps/viking/commit/7883ec0d1d752b1afc1a9a488228711f30657fcf
 Index: src/babel.h
 --- src/babel.h.orig
 +++ src/babel.h
