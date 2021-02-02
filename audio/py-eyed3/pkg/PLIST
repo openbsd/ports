@@ -1,22 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/05/28 15:10:52 paco Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/02/02 00:23:19 sthen Exp $
 bin/eyeD3
-lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/eyeD3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/eyed3/
+lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/eyed3/__about__.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}__regarding__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/${MODPY_PYCACHE}mimetype.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/eyed3/__regarding__.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/core.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/id3/
 lib/python${MODPY_VERSION}/site-packages/eyed3/id3/__init__.py
@@ -39,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/${MODPY_PYCACHE}headers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/eyed3/mp3/headers.py
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/
+lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/DisplayPattern.ebnf
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/eyed3/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
