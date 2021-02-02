@@ -1,0 +1,14 @@
+$OpenBSD: patch-generic_util_h,v 1.1 2021/02/02 19:35:13 matthieu Exp $
+
+fix for -fno-common
+
+--- generic/util.h.orig	Tue Jan 29 10:09:38 2008
++++ generic/util.h	Tue Feb  2 07:43:51 2021
+@@ -48,7 +48,6 @@
+ #   define TMP "/tmp"
+ #endif
+ 
+-Tcl_DString Result;
+ extern Tcl_DString Result;
+ 
+ int printres(const char *fmt, ...);

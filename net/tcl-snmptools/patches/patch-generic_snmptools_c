@@ -1,0 +1,16 @@
+$OpenBSD: patch-generic_snmptools_c,v 1.1 2021/02/02 19:35:13 matthieu Exp $
+
+Fix for -fno-common
+
+Index: generic/snmptools.c
+--- generic/snmptools.c.orig
++++ generic/snmptools.c
+@@ -39,6 +39,8 @@ static int snmpCmd(ClientData clientData, Tcl_Interp *
+ 
+ static int sessionCmd(ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[]);
+ 
++Tcl_DString Result;
++
+ /*
+  * Function Bodies
+  */

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:15:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/02 19:35:13 matthieu Exp $
 
 COMMENT =	Tcl package that provides SNMP tools
 
 V =		1.0
 
 DISTNAME =	tcl-snmptools-${V}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
