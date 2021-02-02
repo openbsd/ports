@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/02 14:47:28 gonzalo Exp $
 
 COMMENT =	proxy that can transliterate japanese
 
-DISTNAME =	japana-2.0.5
-REVISION =	0
+DISTNAME =	japana-2.0.6
 CATEGORIES =	www japanese converters
-HOMEPAGE =	http://www.h.shuttle.de/mitch/japana.en.html
+HOMEPAGE =	https://www.cgarbs.de/japana.en.html
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -13,7 +12,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 
-MASTER_SITES =	http://www.h.shuttle.de/mitch/stuff/
+MASTER_SITES =	https://www.cgarbs.de/stuff/
 RUN_DEPENDS =	japanese/p5-Text-Kakasi \
 		devel/p5-AppConfig \
 		www/p5-libwww
