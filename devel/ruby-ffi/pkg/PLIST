@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/02/03 19:04:05 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/02/02 19:09:14 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.appveyor.yml
-${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.gitmodules
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
-${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
@@ -17,6 +12,7 @@ ${GEM_LIB}/gems/${DISTNAME}/ffi.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/abstract_memory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/autopointer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/buffer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/callback.rb
@@ -30,12 +26,16 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/managedstruct.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/memorypointer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-darwin/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-darwin/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-freebsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-freebsd12/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-freebsd12/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-linux/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-openbsd/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/aarch64-openbsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/arm-freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/arm-freebsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/arm-freebsd12/
@@ -86,6 +86,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-darwin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-darwin/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-linux/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-openbsd/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-openbsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc64-linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc64-linux/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/s390-linux/
@@ -98,6 +100,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparc-solaris/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparc-solaris/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparc64-linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparc64-linux/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparcv9-openbsd/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparcv9-openbsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparcv9-solaris/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparcv9-solaris/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-cygwin/
@@ -110,8 +114,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-freebsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-freebsd12/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-freebsd12/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-haiku/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-haiku/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-linux/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-msys/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-msys/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-netbsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-netbsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-openbsd/
@@ -144,5 +152,4 @@ ${GEM_LIB}/gems/${DISTNAME}/samples/hello.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/inotify.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/pty.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/qsort.rb
-${GEM_LIB}/gems/${DISTNAME}/samples/sample_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
