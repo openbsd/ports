@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_appdata_h,v 1.1 2021/02/02 09:28:20 benoit Exp $
+--- src/appdata.h.orig	Mon Jan 25 21:11:18 2016
++++ src/appdata.h	Tue Feb  2 09:29:13 2021
+@@ -58,14 +58,15 @@
+   unsigned long n_packets;	/* Number of total packets received */
+   glong total_mem_packets;      /* Number of packets currently in memory */
+   gboolean request_dump;        /* if true, do an xml dump */
+-} 
+-appdata;
++};
+ 
++extern struct appdata_struct appdata;
++
+ #define TOTAL_POSITION_ELEMENTS 1000
+ #define MAX_POSITION_COLUMNS 10
+-regex_t position_elements[TOTAL_POSITION_ELEMENTS];
+-guint total_position_elements,position_column[TOTAL_POSITION_ELEMENTS];
+-guint total_position_columns,position_column_count[MAX_POSITION_COLUMNS+1],position_column_max_count[MAX_POSITION_COLUMNS+1];
++extern regex_t position_elements[TOTAL_POSITION_ELEMENTS];
++extern guint total_position_elements,position_column[TOTAL_POSITION_ELEMENTS];
++extern guint total_position_columns,position_column_count[MAX_POSITION_COLUMNS+1],position_column_max_count[MAX_POSITION_COLUMNS+1];
+ 
+ 
+ #define DEBUG_ENABLED  (appdata.debug_mask & G_LOG_LEVEL_DEBUG)

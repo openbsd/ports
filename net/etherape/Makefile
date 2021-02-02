@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.47 2020/06/10 22:17:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2021/02/02 09:28:20 benoit Exp $
 
 COMMENT =		graphical network monitor
 
 DISTNAME =		etherape-0.9.14
 CATEGORIES =		net
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://etherape.sourceforge.net/
-
-MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
