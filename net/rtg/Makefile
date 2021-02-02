@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2020/02/03 20:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/02 11:53:33 sthen Exp $
+
+# if you are interested in fixing this, see FreeBSD ports - I will probably
+# remove it if there's no interest. -sthen
+BROKEN =	needs patches for -fno-common, newer PHP, newer perl
 
 COMMENT =		SNMP statistics monitoring system
 
