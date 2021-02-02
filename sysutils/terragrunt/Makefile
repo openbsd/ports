@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.43 2021/01/31 09:34:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/02 12:03:24 ajacoutot Exp $
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.27.3
+MODGO_VERSION=	v0.27.4
 DISTNAME=	terragrunt-${MODGO_VERSION}
+
+WRKDIST=	${WRKDIR}/github.com/gruntwork-io/terragrunt@${MODGO_VERSION}
 
 CATEGORIES=	sysutils net
 
@@ -200,7 +202,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-version					 v1.2.0 \
 	github.com/hashicorp/golang-lru					 v0.5.3 \
 	github.com/hashicorp/hcl					 v1.0.0 \
-	github.com/hashicorp/hcl/v2					 v2.6.0 \
+	github.com/hashicorp/hcl/v2					 v2.8.2 \
 	github.com/hashicorp/hil					 v0.0.0-20190212112733-ab17b08d6590 \
 	github.com/hashicorp/memberlist					 v0.1.0 \
 	github.com/hashicorp/serf					 v0.0.0-20160124182025-e4ec8cc423bb \

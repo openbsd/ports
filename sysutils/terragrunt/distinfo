@@ -533,8 +533,8 @@ SHA256 (go_modules/github.com/hashicorp/hcl/@v/v1.0.0.mod) = +sRg2CXmZOeBYRmRIUD
 SHA256 (go_modules/github.com/hashicorp/hcl/@v/v1.0.0.zip) = VBSaLlEhs+gflhx5IQ5j1nmOtj3ijSWZ7lmt4fp2yCs=
 SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.0.0.mod) = vsgbrC1Bl4TesIcAQy60OQcQPhe5L5sBEDOBXWxh+3A=
 SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.3.0.mod) = iEe14g69HDnB/EFC/unn6CVuVMfhfGL9FM2IvSqKy08=
-SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.6.0.mod) = lxOls1dwhwIShWITX4YWywb6ztrfBbFM3Mu+meNS0Wc=
-SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.6.0.zip) = jsKnBNZ++UHVsZ8URVNa5BqGxTJjjKJwHJscRZ3DgH4=
+SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.8.2.mod) = lxOls1dwhwIShWITX4YWywb6ztrfBbFM3Mu+meNS0Wc=
+SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.8.2.zip) = EI7QEUYJ0vfoFWJ+SnADaMyh08NHlLjn9gWfMiLZl28=
 SHA256 (go_modules/github.com/hashicorp/hil/@v/v0.0.0-20190212112733-ab17b08d6590.mod) = Md68xHCXaeHdLyPF2jL+CJ8IsFHLFoRw/AAHqUkvtRM=
 SHA256 (go_modules/github.com/hashicorp/hil/@v/v0.0.0-20190212112733-ab17b08d6590.zip) = yysRDIajErfGAJTJsRhTriiJRcNPpYYbZ/8tl+2qspI=
 SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.1.0.mod) = fEHaBag/ikwys2qvY59NOVRPhG+yftqIixRZqnbfKlU=
@@ -1372,7 +1372,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.1.zip) = GiqBAxR
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terragrunt-v0.27.3.zip) = Kacue4moS7jgExKw807UUutRjJZSPnH85NAn/CDLjnA=
+SHA256 (terragrunt-v0.27.4.zip) = FEOIhp4olXgntThWO6wgHuoNbI91x0XuAiDAM4DkmME=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1908,8 +1908,8 @@ SIZE (go_modules/github.com/hashicorp/hcl/@v/v1.0.0.mod) = 75
 SIZE (go_modules/github.com/hashicorp/hcl/@v/v1.0.0.zip) = 121655
 SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.0.0.mod) = 819
 SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.3.0.mod) = 819
-SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.6.0.mod) = 833
-SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.6.0.zip) = 519810
+SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.8.2.mod) = 833
+SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.8.2.zip) = 528374
 SIZE (go_modules/github.com/hashicorp/hil/@v/v0.0.0-20190212112733-ab17b08d6590.mod) = 128
 SIZE (go_modules/github.com/hashicorp/hil/@v/v0.0.0-20190212112733-ab17b08d6590.zip) = 75802
 SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.1.0.mod) = 39
@@ -2747,4 +2747,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.1.zip) = 220145
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terragrunt-v0.27.3.zip) = 2471057
+SIZE (terragrunt-v0.27.4.zip) = 2470871
