@@ -1,11 +1,21 @@
-$OpenBSD: patch-wmclockmon-config_edit_c,v 1.1 2010/03/23 22:12:39 jasper Exp $
+$OpenBSD: patch-wmclockmon-config_edit_c,v 1.2 2021/02/02 22:10:38 cwen Exp $
 
-Switch to gtk+2:
-- Remove call to deprecated function.
+Hunk #1: Fix -fno-common build failure.
+Hunk #2: Switch to gtk+2: remove call to deprecated function.
 
---- wmclockmon-config/edit.c.orig	Tue Mar 23 23:04:31 2010
-+++ wmclockmon-config/edit.c	Tue Mar 23 23:04:39 2010
-@@ -76,7 +76,6 @@ void edit_dialog(const char *title,
+Index: wmclockmon-config/edit.c
+--- wmclockmon-config/edit.c.orig
++++ wmclockmon-config/edit.c
+@@ -16,6 +16,8 @@ static GtkWidget *wid_time;
+ static GtkWidget *wid_date;
+ static GtkWidget *wid_mesg;
+ 
++char *newalarm;
++
+ void set_data(GtkWidget *widget, GtkWidget *data) {
+     char *wstat = gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(wid_status)->entry));
+     char *wtime = gtk_entry_get_text(GTK_ENTRY(wid_time));
+@@ -76,7 +78,6 @@ void edit_dialog(const char *title,
                         bouton, TRUE, TRUE, 0);
      GTK_WIDGET_SET_FLAGS(GTK_WIDGET(bouton), GTK_CAN_DEFAULT);
      gtk_widget_grab_default(GTK_WIDGET(bouton));

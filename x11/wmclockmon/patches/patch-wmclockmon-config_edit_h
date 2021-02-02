@@ -1,0 +1,16 @@
+$OpenBSD: patch-wmclockmon-config_edit_h,v 1.1 2021/02/02 22:10:38 cwen Exp $
+
+Fix -fno-common build failure.
+
+Index: wmclockmon-config/edit.h
+--- wmclockmon-config/edit.h.orig
++++ wmclockmon-config/edit.h
+@@ -5,7 +5,7 @@
+ #ifndef EDIT_H
+ #define EDIT_H
+ 
+-char *newalarm;
++extern char *newalarm;
+ 
+ void edit_dialog(const char *title,
+         int on,

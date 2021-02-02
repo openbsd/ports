@@ -1,0 +1,16 @@
+$OpenBSD: patch-wmclockmon-cal_main_h,v 1.1 2021/02/02 22:10:38 cwen Exp $
+
+Fix -fno-common build failure.
+
+Index: wmclockmon-cal/main.h
+--- wmclockmon-cal/main.h.orig
++++ wmclockmon-cal/main.h
+@@ -9,7 +9,7 @@
+ #include <sys/time.h>
+ 
+ 
+-struct tm *timeinfos;
++extern struct tm *timeinfos;
+ 
+ void quit_app();
+ 

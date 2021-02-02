@@ -1,0 +1,30 @@
+$OpenBSD: patch-wmclockmon-cal_main_c,v 1.1 2021/02/02 22:10:38 cwen Exp $
+
+Fix -fno-common build failure.
+
+Index: wmclockmon-cal/main.c
+--- wmclockmon-cal/main.c.orig
++++ wmclockmon-cal/main.c
+@@ -15,6 +15,22 @@
+ #include "mainwindow.h"
+ #include "main.h"
+ 
++GtkWidget *application;
++GtkWidget *alarmlist;
++GtkWidget *wid_backlight;
++GtkWidget *wid_blink;
++GtkWidget *wid_styledir;
++GtkWidget *wid_stylename;
++GtkWidget *wid_color;
++GtkWidget *wid_command;
++GtkWidget *wid_msgcmd;
++GtkWidget *wid_h12;
++GtkWidget *wid_itm;
++GtkWidget *wid_locale;
++
++int selected_row;
++
++struct tm *timeinfos;
+ 
+ void Usage () {
+     printf("Usage: "PACKAGE"-cal [-h] [-v]\n"

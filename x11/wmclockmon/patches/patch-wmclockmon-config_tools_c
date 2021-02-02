@@ -1,0 +1,29 @@
+$OpenBSD: patch-wmclockmon-config_tools_c,v 1.1 2021/02/02 22:10:38 cwen Exp $
+
+Fix -fno-common build failure.
+
+Index: wmclockmon-config/tools.c
+--- wmclockmon-config/tools.c.orig
++++ wmclockmon-config/tools.c
+@@ -17,6 +17,21 @@
+ #include <sys/types.h>
+ #include "configfile.h"
+ 
++int    backlight;
++int    switch_authorized;
++int    h12;
++int    time_mode;
++int    use_leds;
++int    use_locale;
++int    showcal;
++int    calalrms;
++char  *style_name;
++char  *style_dir;
++char  *config_file;
++char  *light_color;
++char  *command;
++char  *msgcmd;
++Alarm *alarms;
+ 
+ int fexist(const char *filename) {
+     FILE *file;
