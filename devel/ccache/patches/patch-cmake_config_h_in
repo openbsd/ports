@@ -1,37 +1,25 @@
-$OpenBSD: patch-cmake_config_h_in,v 1.3 2021/01/25 21:07:50 sthen Exp $
-
-#1: Fix up ctypes.
-
-#2:
-
-From 6e95418f15722647f960d8f773edbbecbb46a73c Mon Sep 17 00:00:00 2001
-From: Stuart Henderson <sthen@users.noreply.github.com>
-Date: Mon, 25 Jan 2021 18:41:54 +0000
-Subject: [PATCH] Disable inode cache on OSes without
- pthread_mutexattr_setpshared() (#791)
-
-The inode cache requires pthread_mutexattr_setpshared() and build fails on OSes
-with sys/mman.h that do not have this function.
+$OpenBSD: patch-cmake_config_h_in,v 1.4 2021/02/02 14:44:40 sthen Exp $
 
 Index: cmake/config.h.in
 --- cmake/config.h.in.orig
 +++ cmake/config.h.in
-@@ -32,7 +32,7 @@
+@@ -12,6 +12,10 @@
+ #define _GNU_SOURCE 1
+ 
+ // The later definition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables certain
++// features on OpenBSD, so we need _BSD_SOURCE to re-enable them.
++#define _BSD_SOURCE 1
++
++// The later definition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables certain
+ // features on NetBSD, so we need _NETBSD_SOURCE to re-enable them.
+ #define _NETBSD_SOURCE 1
+ 
+@@ -32,7 +36,7 @@
  
  #if defined(__SunOS_5_8) || defined(__SunOS_5_9) || defined(__SunOS_5_10)
  #  define _XOPEN_SOURCE 500
--#elif !defined(__SunOS_5_11) && !defined(__APPLE__)
-+#elif !defined(__SunOS_5_11) && !defined(__APPLE__) && !defined(__OpenBSD__)
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  define _XOPEN_SOURCE 700
+ #elif !defined(__SunOS_5_11) && !defined(__APPLE__)
  #  define _XOPEN_SOURCE
- #endif
- 
-@@ -88,6 +88,9 @@
- 
- // Define if you have the "posix_fallocate.
- #cmakedefine HAVE_POSIX_FALLOCATE
-+
-+// Define if you have the "pthread_mutexattr_setpshared" function.
-+#cmakedefine HAVE_PTHREAD_MUTEXATTR_SETPSHARED
- 
- // Define if you have the <pwd.h> header file.
- #cmakedefine HAVE_PWD_H

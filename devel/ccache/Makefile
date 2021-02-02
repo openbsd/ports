@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2021/02/01 10:11:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2021/02/02 14:44:40 sthen Exp $
 
 COMMENT =	compiler cache
 
-V =		4.1
+V =		4.2
 DISTNAME =	ccache-$V
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -21,9 +20,6 @@ MODULES =		devel/cmake
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-CFLAGS +=		-D_BSD_SOURCE -D_XOPEN_SOURCE=700
-CXXFLAGS +=		-D_BSD_SOURCE -D_XOPEN_SOURCE=700
 
 COMPILER =		base-clang ports-gcc
 
