@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2021/02/01 10:55:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/02/02 11:21:59 sthen Exp $
 
 COMMENT =		opensource MQTT broker
 
@@ -27,6 +27,7 @@ MODPY_RUNDEP=		No
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/uthash \
+			textproc/docbook-xsl \
 			textproc/libxslt
 LIB_DEPENDS =		www/libwebsockets
 
