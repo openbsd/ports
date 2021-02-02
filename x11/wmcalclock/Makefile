@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/02 22:05:42 cwen Exp $
 
 COMMENT=		wm-dockapp; calendar/clock
 
 DISTNAME=		wmCalClock-1.25
 PKGNAME=		${DISTNAME:L}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11 x11/windowmaker
 
-HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
+HOMEPAGE=		https://www.dockapps.net/wmcalclock
 
 # GPL
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=		https://www.dockapps.net/download/
 
 NO_TEST=		Yes
 

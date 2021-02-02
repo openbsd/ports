@@ -1,0 +1,19 @@
+$OpenBSD: patch-Src_xutils_c,v 1.1 2021/02/02 22:05:42 cwen Exp $
+
+Fix -fno-common build failure.
+
+Index: Src/xutils.c
+--- Src/xutils.c.orig
++++ Src/xutils.c
+@@ -53,6 +53,11 @@ GC		NormalGC;
+ XpmIcon		wmgen;
+ Pixmap		pixmask;
+ 
++Display		*display;
++Window		Root;
++Window		iconwin, win;
++int		screen;
++int		DisplayDepth;
+ 
+ /*
+  *  Colors for wmCalClock

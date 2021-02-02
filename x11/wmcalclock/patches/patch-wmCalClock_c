@@ -1,6 +1,7 @@
-$OpenBSD: patch-wmCalClock_c,v 1.1.1.1 2001/01/03 14:05:15 naddy Exp $
---- Src/wmCalClock.c.orig	Fri Jul  2 23:01:35 1999
-+++ Src/wmCalClock.c	Thu Dec 21 17:51:39 2000
+$OpenBSD: patch-wmCalClock_c,v 1.2 2021/02/02 22:05:42 cwen Exp $
+Index: Src/wmCalClock.c
+--- Src/wmCalClock.c.orig
++++ Src/wmCalClock.c
 @@ -299,7 +299,7 @@ int main(int argc, char *argv[]) {
      int			i, n, wid, extrady, extradx;
      int 		Year, Month, DayOfWeek, DayOfMonth, OldDayOfMonth;
@@ -37,7 +38,7 @@ $OpenBSD: patch-wmCalClock_c,v 1.1.1.1 2001/01/03 14:05:15 naddy Exp $
  	    HasExecute = 1;
  
          } else if (!strcmp(argv[i], "-g")){
-@@ -999,7 +999,7 @@ void ButtonPressEvent(XButtonEvent *xev)
+@@ -999,7 +999,7 @@ void ButtonPressEvent(XButtonEvent *xev){
      if (GotDoubleClick1) {
          GotFirstClick1 = 0;
          GotDoubleClick1 = 0;

@@ -1,0 +1,24 @@
+$OpenBSD: patch-Src_xutils_h,v 1.1 2021/02/02 22:05:42 cwen Exp $
+
+Fix -fno-common build failure
+
+Index: Src/xutils.h
+--- Src/xutils.h.orig
++++ Src/xutils.h
+@@ -18,11 +18,11 @@ typedef struct {
+ /*
+  *   Global variable
+  */
+-Display		*display;
+-Window          Root;
+-Window          iconwin, win;
+-int             screen; 
+-int             DisplayDepth;
++extern Display		*display;
++extern Window		Root;
++extern Window		iconwin, win;
++extern int		screen;
++extern int		DisplayDepth;
+ 
+ 
+ 
