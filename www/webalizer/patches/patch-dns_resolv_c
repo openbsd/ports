@@ -1,6 +1,24 @@
-$OpenBSD: patch-dns_resolv_c,v 1.5 2011/01/05 08:19:18 giovanni Exp $
---- dns_resolv.c.orig	Mon Oct  4 19:30:36 2010
-+++ dns_resolv.c	Mon Jan  3 11:45:53 2011
+$OpenBSD: patch-dns_resolv_c,v 1.6 2021/02/02 12:09:49 sthen Exp $
+
+Index: dns_resolv.c
+--- dns_resolv.c.orig
++++ dns_resolv.c
+@@ -78,11 +78,11 @@ DBC      *geo_dbc  = NULL;                     /* GeoD
+ 
+ struct   dns_child child[MAXCHILD];            /* DNS child pipe data      */
+ 
+-DNODEPTR host_table[MAXHASH];                  /* hostname/ip hash table   */
++extern DNODEPTR host_table[MAXHASH];                  /* hostname/ip hash table   */
+ 
+-char     buffer[BUFSIZE];                      /* log file record buffer   */
+-char     tmp_buf[BUFSIZE];                     /* used to temp save above  */
+-struct   utsname system_info;                  /* system info structure    */
++extern char     buffer[BUFSIZE];                      /* log file record buffer   */
++extern char     tmp_buf[BUFSIZE];                     /* used to temp save above  */
++extern struct   utsname system_info;                  /* system info structure    */
+ 
+ int      raiseSigChild = 1;
+ 
 @@ -244,7 +244,7 @@ int dns_resolver(void *log_fp)
           continue;                        /* go get next record if any    */
        }
