@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/09/27 13:17:12 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/02 14:49:53 gonzalo Exp $
 @newgroup _ziproxy:641
 @newuser _ziproxy:641:641:daemon:Ziproxy Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/log/ziproxy/*
+@owner _ziproxy
+@group _ziproxy
+@rcscript ${RCDIR}/ziproxy
+@mode
+@owner
+@group
 @bin bin/ziproxy
 @bin bin/ziproxylogtool
 @man man/man1/ziproxy.1
@@ -30,4 +36,3 @@ share/examples/ziproxy/ziproxy_genhtml_stats.sh
 @owner _ziproxy
 @group _ziproxy
 @sample /var/log/ziproxy/
-@rcscript ${RCDIR}/ziproxy
