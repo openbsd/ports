@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/04/26 09:54:32 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/02 16:15:13 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -6,6 +6,7 @@ ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/CODEOWNERS
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
