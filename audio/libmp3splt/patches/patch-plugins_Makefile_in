@@ -1,12 +1,17 @@
-$OpenBSD: patch-plugins_Makefile_in,v 1.1.1.1 2009/02/11 15:44:30 kevlo Exp $
---- plugins/Makefile.in.orig	Sun Jan 18 07:11:55 2009
-+++ plugins/Makefile.in	Sat Jan 31 22:35:21 2009
-@@ -218,7 +218,7 @@ plugindir = $(libdir)/libmp3splt
- plugin_LTLIBRARIES = $(am__append_1) $(am__append_3)
+$OpenBSD: patch-plugins_Makefile_in,v 1.2 2021/02/02 01:15:19 sthen Exp $
+
+Index: plugins/Makefile.in
+--- plugins/Makefile.in.orig
++++ plugins/Makefile.in
+@@ -436,10 +436,8 @@ top_srcdir = @top_srcdir@
+ plugindir = $(libdir)/libmp3splt$(SONAME)
+ plugin_LTLIBRARIES = $(am__append_2) $(am__append_5) $(am__append_6)
  
- #ccommon_LDFLAGS = -module -export-dynamic -avoid-version
--common_LDFLAGS = -L../src -L../src/.libs -L/lib -no-undefined -lmp3splt
+-#ccommon_LDFLAGS = -module -export-dynamic -avoid-version
+ common_CPPFLAGS = -I$(top_srcdir)/include/libmp3splt -I$(top_srcdir)/src
+-common_LDFLAGS = -L$(top_builddir)/src -L$(top_builddir)/src/.libs \
+-	-no-undefined -lm -lmp3splt @LIBINTL@ $(am__append_1)
 +common_LDFLAGS = -module -avoid-version
- @MP3_PLUGIN_TRUE@libsplt_mp3_la_SOURCES = mp3.c mp3.h
- @MP3_PLUGIN_TRUE@libsplt_mp3_la_LDFLAGS = $(common_LDFLAGS)
- @MP3_PLUGIN_TRUE@libsplt_mp3_la_LIBADD = -lmad $(am__append_2)
+ @MP3_PLUGIN_TRUE@libsplt_mp3_la_SOURCES = mp3.c mp3.h mp3_silence.c mp3_silence.h mp3_utils.c mp3_utils.h \
+ @MP3_PLUGIN_TRUE@silence_processors.c silence_processors.h
+ 
