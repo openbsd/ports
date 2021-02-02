@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_babel_h,v 1.1 2021/02/02 10:15:02 landry Exp $
+
+Index: src/babel.h
+--- src/babel.h.orig
++++ src/babel.h
+@@ -109,8 +109,8 @@ typedef struct {
+     gchar *label;
+ } BabelFile;
+ 
+-GList *a_babel_file_list;
+-GList *a_babel_device_list;
++extern GList *a_babel_file_list;
++extern GList *a_babel_device_list;
+ 
+ void a_babel_foreach_file_with_mode (BabelMode mode, GFunc func, gpointer user_data);
+ void a_babel_foreach_file_read_any (GFunc func, gpointer user_data);
