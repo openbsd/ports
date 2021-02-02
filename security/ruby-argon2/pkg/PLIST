@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/02 20:07:55 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/rubocop.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/ruby.yml
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.gitmodules
+${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
+${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
+${GEM_LIB}/gems/${DISTNAME}/Changelog.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/argon2.gemspec
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/console
+${GEM_LIB}/gems/${DISTNAME}/bin/setup
+${GEM_LIB}/gems/${DISTNAME}/ext/
+${GEM_LIB}/gems/${DISTNAME}/ext/argon2_wrap/
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/argon2_wrap/libargon2_wrap.so
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/argon2/
+${GEM_LIB}/gems/${DISTNAME}/lib/argon2.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/argon2/constants.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/argon2/engine.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/argon2/errors.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/argon2/ffi_engine.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/argon2/version.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
