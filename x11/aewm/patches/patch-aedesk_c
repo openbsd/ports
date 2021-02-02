@@ -1,0 +1,19 @@
+$OpenBSD: patch-aedesk_c,v 1.1 2021/02/02 15:36:37 bket Exp $
+
+Fix -fno-common build failure. Taken from
+https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=914552b9e04847f6b4c5224953cf0c11b919ae1c
+
+Index: aedesk.c
+--- aedesk.c.orig
++++ aedesk.c
+@@ -11,10 +11,6 @@
+ 
+ #define UMOD(x, y) ((((long)(x) % (long)(y)) + (y)) % (y))
+ 
+-Display *dpy;
+-Window root;
+-Atom net_cur_desk, net_num_desks;
+-
+ static unsigned long parse_desk(char *spec);
+ 
+ int main(int argc, char **argv)

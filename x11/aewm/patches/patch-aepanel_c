@@ -1,0 +1,18 @@
+$OpenBSD: patch-aepanel_c,v 1.1 2021/02/02 15:36:37 bket Exp $
+
+Fix -fno-common build failure. Taken from
+https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=914552b9e04847f6b4c5224953cf0c11b919ae1c
+
+Index: aepanel.c
+--- aepanel.c.orig
++++ aepanel.c
+@@ -36,9 +36,6 @@ void setup_panel_atoms();
+ void sig_handler(int);
+ void set_strut(Window, strut_t *);
+ 
+-Atom net_wm_strut;
+-Atom net_wm_strut_partial;
+-Atom net_wm_wintype;
+ Atom net_wm_wintype_dock;
+ 
+ #define NAME_SIZE 48
