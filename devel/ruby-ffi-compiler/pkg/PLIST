@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/02 19:25:20 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/ffi-compiler.gemspec
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/compile_task.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/export_task.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/exporter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/fake_ffi/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/fake_ffi/ffi-compiler/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/fake_ffi/ffi-compiler/loader.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/fake_ffi/ffi.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/loader.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/platform.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi-compiler/task.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
