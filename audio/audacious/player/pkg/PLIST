@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1 2020/04/15 15:50:16 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/03 21:44:37 edd Exp $
 @conflict audacious-<4.0
 @bin bin/audacious
 @bin bin/audtool
 include/audacious/
 include/audacious/audtag.h
 include/libaudcore/
+include/libaudcore/archive_reader.h
 include/libaudcore/audio.h
 include/libaudcore/audstrings.h
 include/libaudcore/drct.h
@@ -95,6 +96,8 @@ share/locale/pt_PT/LC_MESSAGES/audacious.mo
 share/locale/ru/LC_MESSAGES/audacious.mo
 share/locale/si/LC_MESSAGES/audacious.mo
 share/locale/sk/LC_MESSAGES/audacious.mo
+share/locale/sl/LC_MESSAGES/audacious.mo
+share/locale/sq/LC_MESSAGES/audacious.mo
 share/locale/sr/LC_MESSAGES/audacious.mo
 share/locale/sr_RS/
 share/locale/sr_RS/LC_MESSAGES/

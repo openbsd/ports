@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.5 2020/07/12 12:15:52 bket Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2021/02/03 21:44:37 edd Exp $
 
 # Do not forget to sync meta/audacious
-VERSION =	4.0.5
+VERSION =	4.1
 
 CATEGORIES =	audio multimedia
 
@@ -13,6 +13,8 @@ MASTER_SITES =	https://distfiles.audacious-media-player.org/
 EXTRACT_SUFX =	.tar.bz2
 
 COMPILER =	base-clang ports-gcc
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 BUILD_DEPENDS +=	devel/gettext,-tools
 LIB_DEPENDS +=		x11/gtk+2

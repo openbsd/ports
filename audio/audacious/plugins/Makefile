@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/12 12:15:52 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/03 21:44:37 edd Exp $
 
 COMMENT =		input and output plugins for Audacious
 
@@ -8,7 +8,7 @@ DISTNAME =		audacious-plugins-${VERSION}
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL X11 Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 audgui
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 audcore audgui
 WANTLIB += audtag avcodec avformat avutil cairo cddb cdio cdio_cdda
 WANTLIB += cue curl faad fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0

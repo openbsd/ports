@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/12 12:15:52 bket Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/03 21:44:37 edd Exp $
 
 COMMENT =		graphical audio player which supports lots of formats
 
 DISTNAME =		audacious-${VERSION}
 PKGNAME =		audacious-player-${VERSION}
 
-SHARED_LIBS +=		audcore		5.1 	# 5.2
+SHARED_LIBS +=		audcore		5.2 	# 5.3
 SHARED_LIBS +=		audgui		4.1	# 5.1
 SHARED_LIBS +=		audtag		3.0	# 3.0
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/12 12:15:53 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/03 21:44:37 edd Exp $
 
 COMMENT =	audacious meta-package
 
-VERSION =	4.0.5
+VERSION =	4.1
 PKGNAME =	audacious-${VERSION}
 
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>

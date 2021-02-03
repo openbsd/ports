@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2020/04/15 15:50:16 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/03 21:44:38 edd Exp $
 @pkgpath audio/audacious-plugins,-main
 @pkgpath audio/audacious-plugins
 lib/audacious/
@@ -31,7 +31,6 @@ lib/audacious/General/
 @so lib/audacious/General/delete-files.so
 @so lib/audacious/General/gtkui.so
 @so lib/audacious/General/hotkey.so
-@so lib/audacious/General/lyricwiki.so
 @so lib/audacious/General/mpris2.so
 @so lib/audacious/General/notify.so
 @so lib/audacious/General/playlist-manager.so
@@ -227,6 +226,8 @@ share/locale/pt_PT/LC_MESSAGES/audacious-plugins.mo
 share/locale/ru/LC_MESSAGES/audacious-plugins.mo
 share/locale/si/LC_MESSAGES/audacious-plugins.mo
 share/locale/sk/LC_MESSAGES/audacious-plugins.mo
+share/locale/sl/LC_MESSAGES/audacious-plugins.mo
+share/locale/sq/LC_MESSAGES/audacious-plugins.mo
 share/locale/sr/LC_MESSAGES/audacious-plugins.mo
 share/locale/sr_RS/LC_MESSAGES/audacious-plugins.mo
 share/locale/sv/LC_MESSAGES/audacious-plugins.mo
