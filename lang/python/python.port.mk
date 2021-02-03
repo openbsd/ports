@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.124 2020/12/29 23:59:06 daniel Exp $
+# $OpenBSD: python.port.mk,v 1.125 2021/02/03 15:36:04 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -132,6 +132,11 @@ MODPY_SETUPUTILS =	Yes
 TEST_TARGET ?=	test
 _MODPY_USERBASE =
 _MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
+# Setuptools opportunistically picks up plugins. If it picks one up that
+# uses finalize_distribution_options (usually setuptools_scm), junking
+# that plugin will cause failure at the end of build.
+# In the absence of a targetted means of disabling this, use a big hammer:
+DPB_PROPERTIES +=	nojunk
 .else
 # Try to detect the case where a port will build regardless of setuptools
 # but the final plist will be different if it's present.
