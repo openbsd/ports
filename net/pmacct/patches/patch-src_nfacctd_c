@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_nfacctd_c,v 1.1 2021/02/03 23:14:18 sthen Exp $
+
+From abc6a2fd647aa97707acd7ae3e44785de3aea4d3 Mon Sep 17 00:00:00 2001
+From: Paolo Lucente <pl+github@pmacct.net>
+Date: Mon, 18 May 2020 11:56:46 +0000
+Subject: [PATCH] * fix, renamed some variables and unified declaration of
+ others in order to be more gcc10 friendly. Related to Issue #394
+
+Index: src/nfacctd.c
+--- src/nfacctd.c.orig
++++ src/nfacctd.c
+@@ -49,7 +49,6 @@ struct template_cache tpl_cache;
+ struct host_addr debug_a;
+ char debug_agent_addr[50];
+ u_int16_t debug_agent_port;
+-struct channels_list_entry channels_list[MAX_N_PLUGINS]; /* communication channels: core <-> plugins */
+ 
+ /* Functions */
+ void usage_daemon(char *prog_name)

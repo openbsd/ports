@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2021/01/19 17:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/03 23:14:18 sthen Exp $
 
 COMMENT=	passive IP network monitoring tools: traffic accounting, etc
 
 DISTNAME=	pmacct-1.7.5
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/

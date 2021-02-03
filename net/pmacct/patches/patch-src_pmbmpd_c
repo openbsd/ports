@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_pmbmpd_c,v 1.1 2021/02/03 23:14:18 sthen Exp $
+
+From abc6a2fd647aa97707acd7ae3e44785de3aea4d3 Mon Sep 17 00:00:00 2001
+From: Paolo Lucente <pl+github@pmacct.net>
+Date: Mon, 18 May 2020 11:56:46 +0000
+Subject: [PATCH] * fix, renamed some variables and unified declaration of
+ others in order to be more gcc10 friendly. Related to Issue #394
+
+Index: src/pmbmpd.c
+--- src/pmbmpd.c.orig
++++ src/pmbmpd.c
+@@ -32,9 +32,6 @@
+ #include "classifier.h"
+ #include "net_aggr.h"
+ 
+-/* global var */
+-struct channels_list_entry channels_list[MAX_N_PLUGINS]; /* communication channels: core <-> plugins */
+-
+ /* Functions */
+ void usage_daemon(char *prog_name)
+ {
