@@ -1,8 +1,9 @@
-$OpenBSD: patch-examples_cli_ini,v 1.7 2019/05/28 14:24:10 sthen Exp $
+$OpenBSD: patch-examples_cli_ini,v 1.8 2021/02/03 16:18:33 sthen Exp $
+
 Index: examples/cli.ini
 --- examples/cli.ini.orig
 +++ examples/cli.ini
-@@ -13,10 +13,18 @@ rsa-key-size = 4096
+@@ -17,10 +17,18 @@ rsa-key-size = 4096
  # Uncomment and update to register with the specified e-mail address
  # email = foo@example.com
  
