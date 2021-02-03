@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/08/01 11:30:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/03 13:50:12 sthen Exp $
 
 COMMENT=	communicate with embedded devices using CoAP (RFC 7252)
 
@@ -7,7 +7,7 @@ GH_PROJECT=	libcoap
 
 GH_TAGNAME=	v4.2.1
 DISTFILES=	libcoap-${GH_TAGNAME}.tar.gz
-REVISION=	1
+REVISION=	2
 
 DTLS_V=		7f8c86e501e690301630029fa9bae22424adf618
 DISTFILES+=	tinydtls-${DTLS_V:C/(........).*/\1/}{${DTLS_V}}.tar.gz:0
