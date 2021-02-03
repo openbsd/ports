@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/03/23 21:33:38 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/02/03 18:50:36 sebastia Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE-DEPENDENCIES.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.md
 ${GEM_LIB}/gems/${DISTNAME}/README.md
@@ -36,9 +37,14 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/parser_context.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/push_parser.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/jruby/
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/jruby/dependencies.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/nokogiri.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/syntax_error.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/version/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/version/constant.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/version/info.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/attr.rb
@@ -94,5 +100,9 @@ ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0002-Remove-script-macro-support.pat
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0003-Update-entities-to-remove-handling-of-ssi.patch
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0004-libxml2.la-is-in-top_builddir.patch
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0005-Fix-infinite-loop-in-xmlStringLenDecodeEntities.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0006-htmlParseComment-treat-as-if-it-closed-the-comment.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0007-use-new-htmlParseLookupCommentEnd-to-find-comment-en.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0008-use-glibc-strlen.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0009-avoid-isnan-isinf.patch
 ${GEM_LIB}/gems/${DISTNAME}/ports/
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
