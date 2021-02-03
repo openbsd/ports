@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/08/17 21:04:24 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/02/03 18:56:43 sebastia Exp $
 ${GEM_BIN}/wpscan
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -36,6 +36,7 @@ ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/emergency_pwd_reset
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/full_path_disclosure.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/mu_plugins.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/multisite.rb
+${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/php_disabled.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/readme.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/registration.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/tmm_db_migrate.rb
