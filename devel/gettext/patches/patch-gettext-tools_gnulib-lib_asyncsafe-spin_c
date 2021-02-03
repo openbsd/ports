@@ -1,0 +1,16 @@
+$OpenBSD: patch-gettext-tools_gnulib-lib_asyncsafe-spin_c,v 1.1 2021/02/03 16:49:43 kurt Exp $
+
+- fix undefined reference to `__sync_val_compare_and_swap_4' on hppa
+
+Index: gettext-tools/gnulib-lib/asyncsafe-spin.c
+--- gettext-tools/gnulib-lib/asyncsafe-spin.c.orig
++++ gettext-tools/gnulib-lib/asyncsafe-spin.c
+@@ -129,7 +129,7 @@ do_unlock (asyncsafe_spinlock_t *lock)
+ 
+ #   endif
+ 
+-#  elif (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 1)) && !defined __ibmxl__
++#  elif (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 1)) && !defined __ibmxl__ && !defined(__hppa__)
+ /* Use GCC built-ins (available in GCC >= 4.1).
+    Documentation:
+    <https://gcc.gnu.org/onlinedocs/gcc-4.1.2/gcc/Atomic-Builtins.html>  */
