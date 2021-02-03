@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/10 09:34:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/03 15:29:14 sthen Exp $
 
 COMMENT=		Facebook Messenger protocol plugin for bitlbee
+
 V=			1.2.1
 DISTNAME=		bitlbee-facebook-$V
+REVISION=		0
+
 CATEGORIES=		net
 
 HOMEPAGE=		https://github.com/bitlbee/bitlbee-facebook
