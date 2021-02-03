@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2021/01/29 21:35:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2021/02/03 17:26:39 sthen Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -22,6 +22,7 @@ WANTLIB=	c crypto curses gc iconv intl m ssl z
 MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/w/w3m/}
 
 BUILD_DEPENDS=	devel/gettext,-tools
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 LIB_DEPENDS=	devel/boehm-gc \
 		devel/gettext,-runtime
