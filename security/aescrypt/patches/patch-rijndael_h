@@ -1,0 +1,14 @@
+$OpenBSD: patch-rijndael_h,v 1.1 2021/02/03 21:23:20 naddy Exp $
+
+Index: rijndael.h
+--- rijndael.h.orig
++++ rijndael.h
+@@ -14,7 +14,7 @@ typedef unsigned char		word8;	
+ typedef unsigned short		word16;	
+ typedef unsigned int		word32;
+ 
+-int ROUNDS;
++extern int ROUNDS;
+ 
+ int rijndaelKeySched (word8 k[MAXKC][4], int keyBits,  
+ 		word8 rk[MAXROUNDS+1][4][4]);
