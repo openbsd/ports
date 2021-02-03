@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/03 18:52:30 sebastia Exp $
 
 COMMENT=	access to time zone data and conversion
 
-DISTNAME=	tzinfo-1.2.5
+DISTNAME=	tzinfo-2.0.1
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://tzinfo.github.io/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS +=        ${RUN_DEPENDS}
-RUN_DEPENDS +=		devel/ruby-thread_safe,${MODRUBY_FLAVOR},>=0,<1
+RUN_DEPENDS +=		devel/ruby-concurrent-ruby,${MODRUBY_FLAVOR},>=1.0,<2
 
 CONFIGURE_STYLE=ruby gem
 
