@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/03 19:13:11 naddy Exp $
 
 COMMENT=		scan mailboxes for messages matching a regular expression
 
 DISTNAME=		mboxgrep-0.7.9
+REVISION=		0
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.mboxgrep.org/
@@ -21,8 +22,7 @@ CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
 
-# md5.c:122: warning: incompatible implicit declaration of built-in function 'bcopy'
-CFLAGS +=		-DSTDC_HEADERS
+CFLAGS +=		-DHAVE_CONFIG_H
 
 NO_TEST=		Yes
 

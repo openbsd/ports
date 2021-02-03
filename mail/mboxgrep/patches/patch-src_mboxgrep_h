@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mboxgrep_h,v 1.1 2021/02/03 19:13:11 naddy Exp $
+
+Index: src/mboxgrep.h
+--- src/mboxgrep.h.orig
++++ src/mboxgrep.h
+@@ -129,6 +129,6 @@ typedef struct
+ }
+ option_t;
+ 
+-option_t config;
++extern option_t config;
+ 
+ #endif /* MBOXGREP_H */

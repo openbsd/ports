@@ -1,11 +1,22 @@
-$OpenBSD: patch-src_main_c,v 1.1 2015/06/19 12:44:49 ajacoutot Exp $
+$OpenBSD: patch-src_main_c,v 1.2 2021/02/03 19:13:11 naddy Exp $
+
+fix for -fno-common
 
 main.c:317: warning: dereferencing 'void *' pointer
 main.c:317: error: request for member '_file' in something not a structure or union
 
---- src/main.c.orig	Fri Jun 19 14:37:26 2015
-+++ src/main.c	Fri Jun 19 14:37:27 2015
-@@ -55,7 +55,7 @@ pcre_extra *hints;
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -47,6 +47,7 @@
+ #include <dmalloc.h>
+ #endif /* HAVE_LIBDMALLOC */
+ 
++option_t config;
+ regex_t posix_pattern;
+ #ifdef HAVE_LIBPCRE
+ pcre *pcre_pattern;
+@@ -55,7 +56,7 @@ pcre_extra *hints;
  char *boxname, *outboxname, *pipecmd, *tmpfilename;
  int maildir_count = 0;
  int count = 0;
