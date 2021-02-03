@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.415 2021/01/29 17:05:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.416 2021/02/03 15:32:23 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -164,7 +164,6 @@
      SUBDIR += py-ldap
      SUBDIR += py-ldap,python3
      SUBDIR += py-ldap0,python3
-     SUBDIR += py-ldap3
      SUBDIR += py-ldap3,python3
      SUBDIR += py-minidb,python3
      SUBDIR += py-mongo

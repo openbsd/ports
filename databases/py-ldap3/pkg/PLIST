@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/10/24 11:17:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/03 15:32:23 sthen Exp $
+@pkgpath databases/py-ldap3
 lib/python${MODPY_VERSION}/site-packages/ldap3/
 lib/python${MODPY_VERSION}/site-packages/ldap3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ldap3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -31,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}pooling.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}rdns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}results.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}timezone.${MODPY_PYC_MAGIC_TAG}pyc
@@ -39,6 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}usage.${MODP
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/connection.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/pooling.py
+lib/python${MODPY_VERSION}/site-packages/ldap3/core/rdns.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/results.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/server.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/timezone.py
@@ -56,11 +59,13 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}addMembersToGroups.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}dirSync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}modifyPassword.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}persistentSearch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}removeMembersFromGroups.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}unlockAccount.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/addMembersToGroups.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/dirSync.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/modifyPassword.py
+lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/persistentSearch.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/removeMembersFromGroups.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/unlockAccount.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/novell/
@@ -205,6 +210,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}mockBase
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}mockSync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}restartable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}reusable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}safeRestartable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}safeSync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/asyncStream.py
@@ -216,6 +222,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/mockBase.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/mockSync.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/restartable.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/reusable.py
+lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/safeRestartable.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/safeSync.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/sync.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/

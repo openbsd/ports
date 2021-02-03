@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1163 2021/02/02 16:10:46 sebastia Exp $
+# $OpenBSD: Quirks.pm,v 1.1164 2021/02/03 15:32:23 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -542,6 +542,7 @@ my $stem_extensions = {
 	'icinga-cgi' => 'icinga-web2',
 	'icinga-idoutils' => 'icinga2-ido-mysql',
 	'stegcracker' => 'stegseek',
+	'py-ldap3' => 'py3-ldap3',
 };
 
 my $obsolete_reason = {
