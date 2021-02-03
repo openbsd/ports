@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/02 20:11:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/02/03 00:33:47 sthen Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
 SURICATA_V =	6.0.1
 SUPDATE_V =	1.2.0
+REVISION =	0
 
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
@@ -70,10 +71,8 @@ pre-configure:
 		${WRKSRC}/suricata-update/suricata/update/parsers.py
 	ln -fs ${PREFIX}/bin/sphinx-build${MODPY_BIN_SUFFIX} \
 		${WRKDIR}/bin/sphinx-build
-
-# Remove auto-generated file (present iff git was installed)
-pre-install:
-	rm -f ${WRKSRC}/suricata-update/suricata/update/revision.py
+	# prevent generating revision.py
+	rm -rf ${WRKSRC}/suricata-update/.git
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata
