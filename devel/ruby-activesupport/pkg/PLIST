@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2019/09/26 06:29:20 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/02/03 18:53:35 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
@@ -29,6 +29,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/concurrency/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/concurrency/load_interlock_aware_monitor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/concurrency/share_lock.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/configurable.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/configuration_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/array/
@@ -39,7 +40,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/array/extract.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/array/extract_options.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/array/grouping.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/array/inquiry.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/array/prepend_and_append.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/array/wrap.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/benchmark.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/big_decimal/
@@ -77,7 +77,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/file/atomic.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/compact.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/conversions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/deep_merge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/deep_transform_values.rb
@@ -86,7 +85,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/indifferent_access.
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/keys.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/reverse_merge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/slice.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/transform_values.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/integer/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/integer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/integer/inflections.rb
@@ -110,7 +108,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/module/concerning.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/module/delegation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/module/deprecation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/module/introspection.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/module/reachable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/module/redefine_method.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/module/remove_method.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/name_error.rb
@@ -118,7 +115,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/numeric/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/numeric.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/numeric/bytes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/numeric/conversions.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/numeric/inquiry.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/numeric/time.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object.rb
@@ -139,7 +135,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/compare_range.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/conversions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/each.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/include_range.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/include_time_with_zone.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/overlaps.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/regexp.rb
@@ -159,6 +154,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/output_safety.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/starts_ends_with.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/strip.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/zones.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/symbol/
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/symbol.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/symbol/starts_ends_with.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/time/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/time.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/time/acts_like.rb
@@ -167,7 +165,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/time/compatibility.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/time/conversions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/time/zones.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/uri.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/current_attributes/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/current_attributes.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/current_attributes/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/dependencies/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/dependencies.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/dependencies/autoload.rb
@@ -177,6 +177,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/deprecation/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/deprecation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/deprecation/behaviors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/deprecation/constant_accessor.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/deprecation/disallowed.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/deprecation/instance_delegator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/deprecation/method_wrappers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/deprecation/proxy_wrappers.rb
@@ -189,10 +190,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/duration/iso8601_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/duration/iso8601_serializer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/encrypted_configuration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/encrypted_file.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/environment_inquirer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/evented_file_update_checker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/execution_wrapper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/executor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/file_update_checker.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/fork_tracker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/gem_version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/gzip.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/hash_with_indifferent_access.rb
@@ -254,6 +257,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/rails.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/railtie.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/reloader.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/rescuable.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/secure_compare_rotator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/security_utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/string_inquirer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/subscriber.rb
@@ -268,7 +272,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/deprecation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/file_fixtures.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/isolation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/method_call_assertions.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/parallelization/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/parallelization.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/parallelization/server.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/parallelization/worker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/setup_and_teardown.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/stream.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/tagged_logging.rb
