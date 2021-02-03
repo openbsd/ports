@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/23 18:10:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/03 05:46:04 rsadowski Exp $
 
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
 CATEGORIES =	databases productivity
+REVISION =	0
 
 HOMEPAGE =	https://kontact.kde.org/
 
@@ -26,7 +27,8 @@ MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
 
-BUILD_DEPENDS =		devel/boost \
+BUILD_DEPENDS =		archivers/gtar \
+			devel/boost \
 			devel/kf5/kdesignerplugin \
 			misc/shared-mime-info \
 			textproc/libxslt
@@ -64,5 +66,8 @@ CONFIGURE_ARGS =	-DDATABASE_BACKEND=SQLITE
 
 TEST_IS_INTERACTIVE =	X11
 CXXFLAGS +=         -std=c++17
+
+post-extract:
+	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 
 .include <bsd.port.mk>
