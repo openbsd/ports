@@ -1,11 +1,11 @@
-$OpenBSD: patch-i3-nagbar_main_c,v 1.2 2020/02/16 20:50:25 sthen Exp $
+$OpenBSD: patch-i3-nagbar_main_c,v 1.3 2021/02/03 14:24:57 sthen Exp $
 
 https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
 
 Index: i3-nagbar/main.c
 --- i3-nagbar/main.c.orig
 +++ i3-nagbar/main.c
-@@ -189,7 +189,7 @@ static void handle_button_release(xcb_connection_t *co
+@@ -187,7 +187,7 @@ static void handle_button_release(xcb_connection_t *co
  
      char *terminal_cmd;
      if (button->terminal) {
@@ -14,7 +14,7 @@ Index: i3-nagbar/main.c
      } else {
          terminal_cmd = sstrdup(link_path);
      }
-@@ -461,7 +461,7 @@ int main(int argc, char *argv[]) {
+@@ -507,7 +507,7 @@ int main(int argc, char *argv[]) {
      font = load_font(pattern, true);
      set_font(&font);
  

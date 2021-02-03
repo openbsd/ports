@@ -1,63 +1,53 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/05 09:45:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/03 14:24:57 sthen Exp $
 
 # see https://github.com/i3/i3/issues/3085 / orestisfl:issue-2643
-COMMENT =	improved dynamic tiling window manager, fork with mouse drag
+COMMENT=	improved dynamic tiling window manager, fork with mouse drag
 
 GH_ACCOUNT=	orestisfl
 GH_PROJECT=	i3
-GH_COMMIT=	592bd26703c8b325cf01f3b9f6ccea85751600fb
+GH_COMMIT=	1b0585ddf8f2e2206effbd106cb028cac6ffe6d9
 
-DISTNAME =	i3-mousedrag-4.17.1pre20191014
-REVISION =	0
+DISTNAME=	i3-mousedrag-4.19.1pl20210102
 
-CATEGORIES =	x11
+CATEGORIES=	x11
 
-HOMEPAGE =	https://i3wm.org/
+HOMEPAGE=	https://i3wm.org/
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-# uses pledge()
-WANTLIB += c cairo ev glib-2.0 gobject-2.0 harfbuzz iconv intl
-WANTLIB += m pango-1.0 pangocairo-1.0 pcre pthread startup-notification-1
-WANTLIB += xcb xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-shape
-WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
-WANTLIB += yajl
+WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv m pango-1.0 pangocairo-1.0
+WANTLIB += pcre startup-notification-1 xcb xcb-cursor xcb-icccm
+WANTLIB += xcb-keysyms xcb-randr xcb-shape xcb-util xcb-xinerama
+WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11 yajl
 
-DEBUG_PACKAGES = ${BUILD_PACKAGES}
+DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
-BUILD_DEPENDS =	textproc/asciidoc \
+BUILD_DEPENDS=	textproc/asciidoc \
 		textproc/xmlto
 
-LIB_DEPENDS =	devel/libev \
+LIB_DEPENDS=	devel/libev \
 		devel/libyajl>=2.0.0 \
 		devel/pango \
 		devel/pcre \
 		devel/startup-notification \
 		x11/xkbcommon
-RUN_DEPENDS =	devel/desktop-file-utils \
+RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/dmenu \
 		x11/i3status \
 		x11/p5-AnyEvent-I3
 
 # Tests now use the X11::XCB Perl module, not yet in ports.
-NO_TEST =	Yes
-#TEST_DEPENDS =	x11/p5-AnyEvent-I3
+#TEST_DEPENDS=	x11/p5-AnyEvent-I3
+NO_TEST=	Yes
 
-FAKE_FLAGS =	i3confdir="${PREFIX}/share/examples/i3/"
+MODULES=	devel/meson
 
-SEPARATE_BUILD =Yes
-USE_GMAKE =	Yes
-CONFIGURE_ARGS =--enable-builddir=${WRKBUILD} \
-		--enable-debug=no
-CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
-			  -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib \
-			 -L${LOCALBASE}/lib"
-
-CONFIGURE_STYLE =  autoreconf
-AUTOCONF_VERSION = 2.69
-AUTOMAKE_VERSION = 1.16
+# needed for git builds, possibly not release builds
+CONFIGURE_ARGS=	-Dmans=true \
+		-Ddocs=true
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/config \
@@ -68,5 +58,9 @@ pre-configure:
 		${WRKSRC}/libi3/get_exe_path.c \
 		${WRKSRC}/man/i3-config-wizard.man \
 		${WRKSRC}/man/i3.man
+
+post-install:
+	rm ${WRKINST}/etc/i3/*.{orig,beforesubst}
+	mv ${WRKINST}/etc/i3 ${PREFIX}/share/examples/
 
 .include <bsd.port.mk>
