@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2021/01/03 16:12:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/03 02:04:56 bcallah Exp $
 
 V =			2.52
 COMMENT=		interpreter for Infocom-compatible games
 
 DISTNAME=		frotz-${V}
+REVISION=		0
 CATEGORIES=     	games
 
 HOMEPAGE=		https://davidgriffith.gitlab.io/frotz/
