@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_server_test_sslserver_c,v 1.1 2021/02/03 22:22:42 sthen Exp $
+
+Index: test/server/test_sslserver.c
+--- test/server/test_sslserver.c.orig
++++ test/server/test_sslserver.c
+@@ -228,7 +228,7 @@ init_ssl_context(serv_ctx_t *serv_ctx,
+     /* Init OpenSSL globally */
+     if (!init_done)
+     {
+-#ifdef USE_OPENSSL_1_1_API
++#if defined(USE_OPENSSL_1_1_API) && !defined(LIBRESSL_VERSION_NUMBER)
+         OPENSSL_malloc_init();
+ #else
+         CRYPTO_malloc_init();

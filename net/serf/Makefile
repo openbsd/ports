@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/03 22:22:42 sthen Exp $
 
 COMMENT =		high performance HTTP client library
-DISTNAME =		serf-1.3.8
+DISTNAME =		serf-1.3.9
 SHARED_LIBS = 		serf-1                    1.0 # 1.3.0
 CATEGORIES =		net
-HOMEPAGE =		https://code.google.com/p/serf/
+HOMEPAGE =		https://serf.apache.org/
 MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
-REVISION =		0
 
 # APLv2
 PERMIT_PACKAGE =	Yes
 
 WANTLIB = 		apr-1 aprutil-1 crypto db expat iconv pthread ssl z
-MASTER_SITES =		https://serf.googlecode.com/svn/src_releases/
+MASTER_SITES =		https://www.apache.org/dist/serf/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES = 		devel/scons
