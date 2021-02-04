@@ -1,27 +1,22 @@
-# $OpenBSD: Makefile,v 1.48 2021/02/02 09:28:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.49 2021/02/04 12:56:01 sthen Exp $
 
 COMMENT =		graphical network monitor
 
-DISTNAME =		etherape-0.9.14
+DISTNAME =		etherape-0.9.19
 CATEGORIES =		net
-REVISION =		5
 
-HOMEPAGE =		http://etherape.sourceforge.net/
+HOMEPAGE =		https://etherape.sourceforge.io/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2
-WANTLIB += atk-1.0 bonobo-2 bonobo-activation bonoboui-2 c cairo
-WANTLIB += canberra crypto dbus-1 dbus-glib-1 expat ffi fontconfig
-WANTLIB += freetype fribidi gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
-WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl ltdl
-WANTLIB += lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcap pcre
-WANTLIB += pixman-1 png popt pthread ssl util vorbis vorbisfile xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += c cairo cairo-gobject epoxy expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 goocanvas-2.0 graphite2 gtk-3 harfbuzz
+WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcap pcre pixman-1 png popt xcb xcb-render xcb-shm z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=etherape/}
 
@@ -31,9 +26,14 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		x11/gtk+2 \
-			devel/libglade2 \
-			x11/gnome/libgnomeui
+LIB_DEPENDS =		devel/popt \
+			x11/gtk+3 \
+			graphics/goocanvas2
+
+# N.B. Requires goocanvas2, which was previously removed from ports due
+# to a dependency on the python2 version of py-gobject3. That could be
+# reinstated by using --disable-python though it's not really under
+# active development any more.
 
 # grab new macros that match *.so.n.m shared libraries
 BUILD_DEPENDS +=	devel/gettext,-tools

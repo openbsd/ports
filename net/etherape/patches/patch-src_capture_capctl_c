@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_capture_capctl_c,v 1.1 2021/02/04 12:56:02 sthen Exp $
+
+Index: src/capture/capctl.c
+--- src/capture/capctl.c.orig
++++ src/capture/capctl.c
+@@ -278,7 +278,8 @@ static gboolean pktpipe_read_cb(GIOChannel *source, GI
+   pkt_recv(pktdata, pkthdr.caplen);
+   set_fd_nonblock(pktpipe, 1);
+ 
+-  appdata.now = pkthdr.ts;
++  appdata.now.tv_sec = pkthdr.ts.tv_sec;
++  appdata.now.tv_usec = pkthdr.ts.tv_usec;
+ 
+   packet_acquired((guint8 *)pktdata, pkthdr.caplen, pkthdr.len);
+   return TRUE;
+@@ -344,7 +345,8 @@ static gboolean filecap_get_packet(gpointer unused)
+     return FALSE;
+ 
+   if (!filecap_state.new) {
+-    appdata.now = filecap_state.lastpkt_hdr.ts;
++    appdata.now.tv_sec = filecap_state.lastpkt_hdr.ts.tv_sec;
++    appdata.now.tv_usec = filecap_state.lastpkt_hdr.ts.tv_usec;
+     packet_acquired((guint8 *)filecap_state.lastpkt_data,
+                     filecap_state.lastpkt_hdr.caplen,
+                     filecap_state.lastpkt_hdr.len);
