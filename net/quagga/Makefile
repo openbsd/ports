@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2021/01/22 15:58:13 kirby Exp $
+# $OpenBSD: Makefile,v 1.63 2021/02/04 13:17:12 tb Exp $
 
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-1.2.4
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 .for i in ospf ospfapiclient zebra fpm_pb quagga_pb

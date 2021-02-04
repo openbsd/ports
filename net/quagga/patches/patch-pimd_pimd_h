@@ -1,0 +1,79 @@
+$OpenBSD: patch-pimd_pimd_h,v 1.1 2021/02/04 13:17:12 tb Exp $
+
+Fix for -fno-common
+
+Index: pimd/pimd.h
+--- pimd/pimd.h.orig
++++ pimd/pimd.h
+@@ -68,39 +68,39 @@
+ #define PIM_MASK_PIM_J_P             (1 << 12)
+ #define PIM_MASK_STATIC              (1 << 13)
+ 
+-const char *const PIM_ALL_SYSTEMS;
+-const char *const PIM_ALL_ROUTERS;
+-const char *const PIM_ALL_PIM_ROUTERS;
+-const char *const PIM_ALL_IGMP_ROUTERS;
++extern const char *const PIM_ALL_SYSTEMS;
++extern const char *const PIM_ALL_ROUTERS;
++extern const char *const PIM_ALL_PIM_ROUTERS;
++extern const char *const PIM_ALL_IGMP_ROUTERS;
+ 
+-struct thread_master     *master;
+-uint32_t                  qpim_debugs;
+-int                       qpim_mroute_socket_fd;
+-int64_t                   qpim_mroute_socket_creation; /* timestamp of creation */
+-struct thread            *qpim_mroute_socket_reader;
+-int                       qpim_mroute_oif_highest_vif_index;
+-struct list              *qpim_channel_oil_list; /* list of struct channel_oil */
+-struct in_addr            qpim_all_pim_routers_addr;
+-int                       qpim_t_periodic; /* Period between Join/Prune Messages */
+-struct list              *qpim_upstream_list; /* list of struct pim_upstream */
+-struct zclient           *qpim_zclient_update;
+-struct zclient           *qpim_zclient_lookup;
+-struct pim_assert_metric  qpim_infinite_assert_metric;
+-long                      qpim_rpf_cache_refresh_delay_msec;
+-struct thread            *qpim_rpf_cache_refresher;
+-int64_t                   qpim_rpf_cache_refresh_requests;
+-int64_t                   qpim_rpf_cache_refresh_events;
+-int64_t                   qpim_rpf_cache_refresh_last;
+-struct in_addr            qpim_inaddr_any;
+-struct list              *qpim_ssmpingd_list; /* list of struct ssmpingd_sock */
+-struct in_addr            qpim_ssmpingd_group_addr;
+-int64_t                   qpim_scan_oil_events;
+-int64_t                   qpim_scan_oil_last;
+-int64_t                   qpim_mroute_add_events;
+-int64_t                   qpim_mroute_add_last;
+-int64_t                   qpim_mroute_del_events;
+-int64_t                   qpim_mroute_del_last;
+-struct list              *qpim_static_route_list; /* list of routes added statically */
++extern struct thread_master     *master;
++extern uint32_t                  qpim_debugs;
++extern int                       qpim_mroute_socket_fd;
++extern int64_t                   qpim_mroute_socket_creation; /* timestamp of creation */
++extern struct thread            *qpim_mroute_socket_reader;
++extern int                       qpim_mroute_oif_highest_vif_index;
++extern struct list              *qpim_channel_oil_list; /* list of struct channel_oil */
++extern struct in_addr            qpim_all_pim_routers_addr;
++extern int                       qpim_t_periodic; /* Period between Join/Prune Messages */
++extern struct list              *qpim_upstream_list; /* list of struct pim_upstream */
++extern struct zclient           *qpim_zclient_update;
++extern struct zclient           *qpim_zclient_lookup;
++extern struct pim_assert_metric  qpim_infinite_assert_metric;
++extern long                      qpim_rpf_cache_refresh_delay_msec;
++extern struct thread            *qpim_rpf_cache_refresher;
++extern int64_t                   qpim_rpf_cache_refresh_requests;
++extern int64_t                   qpim_rpf_cache_refresh_events;
++extern int64_t                   qpim_rpf_cache_refresh_last;
++extern struct in_addr            qpim_inaddr_any;
++extern struct list              *qpim_ssmpingd_list; /* list of struct ssmpingd_sock */
++extern struct in_addr            qpim_ssmpingd_group_addr;
++extern int64_t                   qpim_scan_oil_events;
++extern int64_t                   qpim_scan_oil_last;
++extern int64_t                   qpim_mroute_add_events;
++extern int64_t                   qpim_mroute_add_last;
++extern int64_t                   qpim_mroute_del_events;
++extern int64_t                   qpim_mroute_del_last;
++extern struct list              *qpim_static_route_list; /* list of routes added statically */
+ 
+ #define PIM_JP_HOLDTIME (qpim_t_periodic * 7 / 2)
+ 

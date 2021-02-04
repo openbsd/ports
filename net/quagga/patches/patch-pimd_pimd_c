@@ -1,0 +1,15 @@
+$OpenBSD: patch-pimd_pimd_c,v 1.1 2021/02/04 13:17:12 tb Exp $
+
+Fix for -fno-common
+
+Index: pimd/pimd.c
+--- pimd/pimd.c.orig
++++ pimd/pimd.c
+@@ -63,6 +63,7 @@ int64_t                   qpim_rpf_cache_refresh_last 
+ struct in_addr            qpim_inaddr_any;
+ struct list              *qpim_ssmpingd_list = 0;
+ struct in_addr            qpim_ssmpingd_group_addr;
++struct in_addr            qpim_all_pim_routers_addr;
+ int64_t                   qpim_scan_oil_events = 0;
+ int64_t                   qpim_scan_oil_last = 0;
+ int64_t                   qpim_mroute_add_events = 0;

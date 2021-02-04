@@ -1,0 +1,15 @@
+$OpenBSD: patch-pimd_pim_version_h,v 1.1 2021/02/04 13:17:12 tb Exp $
+
+Fix for -fno-common
+
+Index: pimd/pim_version.h
+--- pimd/pim_version.h.orig
++++ pimd/pim_version.h
+@@ -25,6 +25,6 @@
+ 
+ #define PIMD_VERSION_STR "0.166"
+ 
+-const char * const PIMD_VERSION;
++extern const char * const PIMD_VERSION;
+ 
+ #endif /* PIM_VERSION_H */
