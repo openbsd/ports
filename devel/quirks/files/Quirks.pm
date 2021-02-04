@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1164 2021/02/03 15:32:23 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1165 2021/02/04 19:25:04 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2296,6 +2296,7 @@ my $cve = {
 	'www/nginx' => 'nginx-<1.4.1',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
 	'www/p5-Catalyst-Plugin-Static-Simple' => 'p5-Catalyst-Plugin-Static-Simple-<0.36',
+	'www/privoxy' => 'privoxy-<3.0.31',
 	'www/py-django/lts' => 'py-django-lts-<1.11.19',
 	'www/py-django/stable' => 'py-django-<2.1.6',
 	'www/py-requests' => 'py-requests-<2.20.0',
