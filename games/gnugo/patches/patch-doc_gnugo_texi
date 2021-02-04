@@ -1,6 +1,7 @@
-$OpenBSD: patch-doc_gnugo_texi,v 1.1 2001/08/06 10:08:27 fgsch Exp $
---- doc/gnugo.texi.orig	Sun Feb 13 11:27:42 2000
-+++ doc/gnugo.texi	Mon Aug  6 06:57:28 2001
+$OpenBSD: patch-doc_gnugo_texi,v 1.2 2021/02/04 20:09:32 naddy Exp $
+Index: doc/gnugo.texi
+--- doc/gnugo.texi.orig
++++ doc/gnugo.texi
 @@ -2,6 +2,10 @@
  @c %**start of header
  @setfilename gnugo.info
@@ -11,4 +12,4 @@ $OpenBSD: patch-doc_gnugo_texi,v 1.1 2001/08/06 10:08:27 fgsch Exp $
 +@end direntry
  @c %**end of header
  
- @set EDITION 1.0
+ @dircategory GNU games

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/04 20:09:32 naddy Exp $
 
 COMMENT =	GNU version of Go
 
 DISTNAME =	gnugo-3.8
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games
 
 HOMEPAGE =	https://www.gnu.org/software/gnugo/

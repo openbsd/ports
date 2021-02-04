@@ -1,0 +1,14 @@
+$OpenBSD: patch-engine_globals_c,v 1.1 2021/02/04 20:09:32 naddy Exp $
+
+Index: engine/globals.c
+--- engine/globals.c.orig
++++ engine/globals.c
+@@ -152,6 +152,8 @@ int false_eye_territory[BOARDMAX];
+ int forced_backfilling_moves[BOARDMAX];
+ 
+ struct worm_data      worm[BOARDMAX];
++int                   meaningless_black_moves[BOARDMAX];
++int                   meaningless_white_moves[BOARDMAX];
+ struct dragon_data    dragon[BOARDMAX];
+ int                   number_of_dragons;
+ struct dragon_data2   *dragon2 = NULL;
