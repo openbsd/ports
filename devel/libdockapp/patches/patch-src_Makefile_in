@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2006/01/02 18:15:53 bernd Exp $
---- src/Makefile.in.orig	Mon Jan  2 18:19:24 2006
-+++ src/Makefile.in	Mon Jan  2 18:19:44 2006
-@@ -79,7 +79,7 @@ AUTOMAKE_OPTIONS = no-dependencies
- 
+$OpenBSD: patch-src_Makefile_in,v 1.2 2021/02/04 11:33:24 cwen Exp $
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -335,7 +335,7 @@ xpm_CFLAGS = @xpm_CFLAGS@
+ xpm_LIBS = @xpm_LIBS@
+ AUTOMAKE_OPTIONS = no-dependencies
  lib_LTLIBRARIES = libdockapp.la
- 
--libdockapp_la_LDFLAGS = -version-info 1:0:0 @X_LIBS@
-+libdockapp_la_LDFLAGS = $(LIBdockapp_LTVERSION) @X_LIBS@
- 
- include_HEADERS = dockapp.h
- 
+-libdockapp_la_LDFLAGS = -version-info 3:1:0
++libdockapp_la_LDFLAGS = $(LIBdockapp_LTVERSION)
+ otherincludedir = $(includedir)/libdockapp
+ otherinclude_HEADERS = dockapp.h \
+ 		  wmgeneral.h \

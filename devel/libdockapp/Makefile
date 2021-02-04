@@ -1,22 +1,25 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/04 11:33:24 cwen Exp $
 
 COMMENT=		dockapp-making standard library for Window Maker
 
-DISTNAME=		libdockapp-0.4.0
-REVISION=		5
-SHARED_LIBS=		dockapp              1.0      # .1.0
+DISTNAME=		libdockapp-0.7.3
+SHARED_LIBS=		dockapp              2.0      # .1.0
 CATEGORIES=		devel
+
+HOMEPAGE=		https://www.dockapps.net/libdockapp/
 
 # BSD
 PERMIT_PACKAGE=	Yes
-WANTLIB=		X11 Xau Xdmcp Xext Xpm xcb
 
-MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+WANTLIB=		X11 Xext Xpm xcb
+
+MASTER_SITES=		https://www.dockapps.net/download/
 
 NO_TEST=		Yes
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-static
+CONFIGURE_ARGS+=	--enable-static \
+			--with-fontdir=${PREFIX}/share/fonts/libdockapps
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libdockapp
