@@ -1,4 +1,4 @@
-$OpenBSD: patch-gram.y,v 1.3 2017/05/06 10:19:04 naddy Exp $
+$OpenBSD: patch-gram.y,v 1.4 2021/02/04 16:19:59 naddy Exp $
 Index: gram.y
 --- gram.y.orig
 +++ gram.y
@@ -10,15 +10,6 @@ Index: gram.y
  #include <X11/Xos.h>
  #include <X11/Xmu/CharSet.h>
  
-@@ -71,7 +72,7 @@ unsigned int mods_used = (ShiftMask | ControlMask | Mo
- extern int do_single_keyword(), do_string_keyword(), do_number_keyword();
- extern name_list **do_colorlist_keyword();
- extern int do_color_keyword();
--extern int yylineno;
-+int yylineno;
- %}
- 
- %union
 @@ -645,18 +646,21 @@ number		: NUMBER		{ $$ = $1; }
  		;
  
