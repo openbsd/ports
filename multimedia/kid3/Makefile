@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/30 20:40:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/04 20:53:26 rsadowski Exp $
 
 COMMENT =	multimedia files tag editor
 DISTNAME =	kid3-3.8.4
 CATEGORIES =	multimedia x11
 HOMEPAGE =	https://kid3.kde.org/
+REVISION =	0
 
 MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 
@@ -14,8 +15,8 @@ WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5KIOCore KF5Service KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Qml Qt5Quick Qt5Widgets Qt5Xml c chromaprint
-WANTLIB += gstreamer-1.0 id3 m ogg readline tag vorbis vorbisfile z
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml c chromaprint gstreamer-1.0
+WANTLIB += id3 m ogg readline tag vorbis vorbisfile z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kid3/}
 EXTRACT_SUFX =		.tar.gz
@@ -43,10 +44,10 @@ LIB_DEPENDS =		audio/chromaprint \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kxmlgui \
 			multimedia/gstreamer1/core \
-			x11/qt5/qtdeclarative \
 			x11/qt5/qtmultimedia
 
-CONFIGURE_ARGS =	-DWITH_DOCBOOKDIR=${LOCALBASE}/share/xsl/docbook
+CONFIGURE_ARGS =	-DWITH_DOCBOOKDIR=${LOCALBASE}/share/xsl/docbook \
+			-DWITH_QML=OFF
 
 post-install:
 	rm -R ${PREFIX}/share/man

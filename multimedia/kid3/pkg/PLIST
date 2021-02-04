@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/30 20:40:53 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/04 20:53:26 rsadowski Exp $
 @bin bin/kid3
 @bin bin/kid3-cli
 @bin bin/kid3-qt
@@ -6,12 +6,6 @@ lib/kid3/
 @so lib/kid3/libkid3-core.so
 @so lib/kid3/libkid3-gui.so
 lib/kid3/plugins/
-lib/kid3/plugins/imports/
-lib/kid3/plugins/imports/Kid3/
-lib/kid3/plugins/imports/Kid3/Kid3Script.qml
-@so lib/kid3/plugins/imports/Kid3/libkid3qml.so
-lib/kid3/plugins/imports/Kid3/plugins.qmltypes
-lib/kid3/plugins/imports/Kid3/qmldir
 @so lib/kid3/plugins/libacoustidimport.so
 @so lib/kid3/plugins/libamazonimport.so
 @so lib/kid3/plugins/libdiscogsimport.so
@@ -19,7 +13,6 @@ lib/kid3/plugins/imports/Kid3/qmldir
 @so lib/kid3/plugins/libid3libmetadata.so
 @so lib/kid3/plugins/libmusicbrainzimport.so
 @so lib/kid3/plugins/liboggflacmetadata.so
-@so lib/kid3/plugins/libqmlcommand.so
 @so lib/kid3/plugins/libtaglibmetadata.so
 share/applications/org.kde.kid3-qt.desktop
 share/applications/org.kde.kid3.desktop
@@ -70,21 +63,6 @@ share/icons/hicolor/64x64/apps/kid3.png
 share/icons/hicolor/scalable/apps/kid3-qt.svg
 share/icons/hicolor/scalable/apps/kid3.svgz
 share/kid3/
-share/kid3/qml/
-share/kid3/qml/script/
-share/kid3/qml/script/EmbedAlbumArt.qml
-share/kid3/qml/script/EmbedLyrics.qml
-share/kid3/qml/script/ExportCsv.qml
-share/kid3/qml/script/ExportHtmlPlayer.qml
-share/kid3/qml/script/ExportPlaylist.qml
-share/kid3/qml/script/ExtractAlbumArt.qml
-share/kid3/qml/script/ImportCsv.qml
-share/kid3/qml/script/QmlConsole.qml
-share/kid3/qml/script/ReplayGain2SoundCheck.qml
-share/kid3/qml/script/ResizeAlbumArt.qml
-share/kid3/qml/script/ShowTextEncodingV1.qml
-share/kid3/qml/script/Tag1ToAscii.qml
-share/kid3/qml/script/TitleCase.qml
 share/kid3/translations/
 share/kid3/translations/kid3_ca.qm
 share/kid3/translations/kid3_ca@valencia.qm
