@@ -1,0 +1,18 @@
+$OpenBSD: patch-gnushogi_globals_c,v 1.1 2021/02/04 21:55:54 naddy Exp $
+
+fix for -fno-common
+
+Index: gnushogi/globals.c
+--- gnushogi/globals.c.orig
++++ gnushogi/globals.c
+@@ -51,6 +51,10 @@ char ColorStr[2][10];
+ 
+ long znodes;
+ 
++unsigned short MV[MAXDEPTH];
++int MSCORE;
++int mycnt1, mycnt2;
++
+ 
+ 
+ #ifdef BINBOOK

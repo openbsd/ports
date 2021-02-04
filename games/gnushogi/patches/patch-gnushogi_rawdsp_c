@@ -1,0 +1,19 @@
+$OpenBSD: patch-gnushogi_rawdsp_c,v 1.1 2021/02/04 21:55:54 naddy Exp $
+
+fix for -fno-common
+
+Index: gnushogi/rawdsp.c
+--- gnushogi/rawdsp.c.orig
++++ gnushogi/rawdsp.c
+@@ -44,11 +44,6 @@
+ #include "gnushogi.h"
+ #include "rawdsp.h"
+ 
+-unsigned short MV[MAXDEPTH];
+-int MSCORE;
+-
+-int mycnt1, mycnt2;
+-char *DRAW;
+ extern char *InPtr;
+ extern short pscore[];
+ 

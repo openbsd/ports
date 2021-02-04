@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2020/08/23 11:20:33 cwen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/04 21:55:54 naddy Exp $
 
 BROKEN-powerpc =	gnushogi hangs during the build since clang-10
 
 COMMENT=	GNU version of Shogi
 
 DISTNAME=	gnushogi-1.4.2
+REVISION=	0
 CATEGORIES=	games
 
 # GPL
@@ -15,8 +16,6 @@ WANTLIB=	c curses m
 MASTER_SITES=	${MASTER_SITE_GNU:=gnushogi/}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--without-x \
-		--without-xshogi
 
 NO_TEST=	Yes
 
