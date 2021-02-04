@@ -1,6 +1,7 @@
-$OpenBSD: patch-Imakefile,v 1.1.1.1 2001/01/16 22:10:15 naddy Exp $
---- Imakefile.orig	Mon May 17 22:36:35 1999
-+++ Imakefile	Tue Jan 16 16:41:43 2001
+$OpenBSD: patch-Imakefile,v 1.2 2021/02/04 11:35:56 cwen Exp $
+Index: Imakefile
+--- Imakefile.orig
++++ Imakefile
 @@ -89,8 +89,7 @@ XCOMM
  
  MASTERXPM = xpm/$(MASTER_XPM).xpm
@@ -11,7 +12,7 @@ $OpenBSD: patch-Imakefile,v 1.1.1.1 2001/01/16 22:10:15 naddy Exp $
  			-L. \
   			-ldockapp \
              -lXpm -lXext -lX11
-@@ -132,7 +131,7 @@ XCOMM ----------------------------------
+@@ -132,7 +131,7 @@ XCOMM ---------------------------------------
  XCOMM             Create Makefile
  XCOMM ---------------------------------------
  

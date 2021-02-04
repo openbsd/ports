@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/04 11:35:56 cwen Exp $
 
 COMMENT=		wm-dockapp; shows the current date
 
 DISTNAME=		wmdate-0.7
-REVISION=		3
+REVISION=		4
 CATEGORIES=		x11 x11/windowmaker
 
 # BSD
@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xpm c dockapp
 
-LIB_DEPENDS=		devel/libdockapp
+LIB_DEPENDS=		devel/libdockapp>=0.7.3
 
 NO_TEST=		Yes
 CONFIGURE_STYLE=	imake noman

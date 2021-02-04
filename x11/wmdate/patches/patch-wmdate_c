@@ -1,9 +1,25 @@
-$OpenBSD: patch-wmdate_c,v 1.1.1.1 2001/01/16 22:10:16 naddy Exp $
---- wmdate.c.orig	Mon May 17 22:25:23 1999
-+++ wmdate.c	Tue Jan 16 16:35:36 2001
-@@ -95,7 +95,7 @@ main (int argc, char *argv[])
+$OpenBSD: patch-wmdate_c,v 1.2 2021/02/04 11:35:56 cwen Exp $
+
+Hunk #1: fix with libdockapp>=0.7
+
+Index: wmdate.c
+--- wmdate.c.orig
++++ wmdate.c
+@@ -39,7 +39,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
+ #include <X11/extensions/shape.h>
+ #include <time.h>
+ 
+-#include <dockapp.h>
++#include <libdockapp/dockapp.h>
+ #include "config.h"
+ #include "geometry.h"
+ 
+@@ -93,9 +93,9 @@ main (int argc, char *argv[])
+    Pixmap disp;			/* Pixmap that is actually displayed */
+    unsigned long fore_pix, back_pix;
     int old_day;
-    unsigned int w=183, h=84;
+-   unsigned int w=183, h=84;
++   unsigned short w=183, h=84;
  
 -   DAParseArguments(argc, argv, options, 4, DESCRIPTION, VERSION);
 +   DAParseArguments(argc, argv, options, 3, DESCRIPTION, VERSION);
