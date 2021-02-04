@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.146 2021/01/24 13:49:38 mestre Exp $
+@comment $OpenBSD: PLIST,v 1.147 2021/02/04 14:47:14 mestre Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -757,7 +757,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vi
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vidio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vidlii.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vidme.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vidzi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}viewlift.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}viidea.${MODPY_PYC_MAGIC_TAG}pyc
@@ -779,6 +778,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vr
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vrt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vrv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vshare.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vtm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vube.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vuclip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}vvvvid.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1534,7 +1534,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/videopress.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vidio.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vidlii.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vidme.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vidzi.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vier.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/viewlift.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/viidea.py
@@ -1556,6 +1555,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vrak.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vrt.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vrv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vshare.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vtm.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vuclip.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vvvvid.py
