@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.338 2021/01/21 20:04:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.339 2021/02/04 22:16:54 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -7,6 +7,7 @@ PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
+REVISION-vm_imap= 0
 
 .if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
@@ -142,7 +143,6 @@ CONFIGURE_ARGS+=	--with-SDL_image=no \
 			--with-execinfo=no \
 			--with-fftw3=no \
 			--with-gtk2=no \
-			--with-h323=no \
 			--with-hoard=no \
 			--with-isdnnet=no \
 			--with-jack=no \
@@ -324,9 +324,10 @@ post-patch:
 post-configure:
 	@cd ${WRKSRC}; ${MAKE_PROGRAM} menuselect.makeopts; cp menuselect.makeopts{,.orig}
 .if defined(MENUSELECT)
+	@echo "enabling menuselect options: ${MENUSELECT}"
 	cd ${WRKSRC}; menuselect/menuselect ${MENUSELECT}
-.endif
 	@cd ${WRKSRC}; diff -u0 menuselect.makeopts{.orig,} || true
+.endif
 
 menuselect: configure
 	@cd ${WRKSRC}; ${_PBUILD} ${MAKE_PROGRAM} menuselect
