@@ -1,26 +1,31 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/04 13:48:53 cwen Exp $
 
 COMMENT=		wm-dockapp; shows the date, time, and Internet time
 
-DISTNAME=		wmitime-0.3
-REVISION=		2
+DISTNAME=		wmitime-0.5
 CATEGORIES=		x11 x11/windowmaker
+
+HOMEPAGE=		https://www.dockapps.net/wmitime
 
 # GPL
 PERMIT_PACKAGE=	Yes
-WANTLIB=		X11 Xext Xpm c m
 
-MASTER_SITES=		http://dockapps.org/files/22/29/ \
-			http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
+WANTLIB += X11 Xext Xpm c dockapp iconv m
 
-MAKE_FLAGS=		CC="${CC}"
+MASTER_SITES=		https://www.dockapps.net/download/
+
+RUN_DEPENDS=		devel/desktop-file-utils
+LIB_DEPENDS=		converters/libiconv \
+			devel/libdockapp>=0.7.3
+
+MAKE_FLAGS=		CC="${CC}" PREFIX="${PREFIX}" MANDIR="${PREFIX}/man/man1" \
+			CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 NO_TEST=		Yes
 
-WRKDIST=		${WRKDIR}/wmitime
-WRKSRC=			${WRKDIST}/wmitime
+CFLAGS+=		-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/wmitime ${PREFIX}/bin
+WRKDIST=		${WRKDIR}/dockapps-26db447
 
 .include <bsd.port.mk>
