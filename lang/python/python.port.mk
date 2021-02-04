@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.125 2021/02/03 15:36:04 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.126 2021/02/04 17:13:52 kn Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -219,12 +219,11 @@ UPDATE_PLIST_ARGS += -S MODPY_BIN_SUFFIX -S MODPY_PYOEXTENSION \
 MODPY_BIN_ADJ =	perl -pi \
 		-e '$$. == 1 && s|^.*env +python.*$$|\#!${MODPY_BIN}|;' \
 		-e '$$. == 1 && s|^.*bin/python.*$$|\#!${MODPY_BIN}|;' \
-		-e 'close ARGV if eof;'
+		-e 'close ARGV if eof;' --
 
 MODPY_ADJ_FILES ?=
 .if !empty(MODPY_ADJ_FILES)
-MODPYTHON_pre-configure += for f in ${MODPY_ADJ_FILES}; do \
-	${MODPY_BIN_ADJ} ${WRKSRC}/$${f}; done
+MODPYTHON_pre-configure += cd ${WRKSRC} && ${MODPY_BIN_ADJ} ${MODPY_ADJ_FILES}
 .endif
 
 MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
