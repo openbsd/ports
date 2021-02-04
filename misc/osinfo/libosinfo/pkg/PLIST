@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/07/09 12:06:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/04 11:47:56 ajacoutot Exp $
 @pkgpath misc/libosinfo
 @bin bin/osinfo-detect
 @bin bin/osinfo-install-script
@@ -61,8 +61,10 @@ share/locale/ca/LC_MESSAGES/libosinfo.mo
 share/locale/cs/LC_MESSAGES/libosinfo.mo
 share/locale/de/LC_MESSAGES/libosinfo.mo
 share/locale/es/LC_MESSAGES/libosinfo.mo
+share/locale/eu/LC_MESSAGES/libosinfo.mo
 share/locale/fi/LC_MESSAGES/libosinfo.mo
 share/locale/fr/LC_MESSAGES/libosinfo.mo
+share/locale/fur/LC_MESSAGES/libosinfo.mo
 share/locale/id/LC_MESSAGES/libosinfo.mo
 share/locale/it/LC_MESSAGES/libosinfo.mo
 share/locale/ja/LC_MESSAGES/libosinfo.mo
@@ -71,6 +73,7 @@ share/locale/pt_BR/LC_MESSAGES/libosinfo.mo
 share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/libosinfo.mo
+share/locale/ru/LC_MESSAGES/libosinfo.mo
 share/locale/tr/LC_MESSAGES/libosinfo.mo
 share/locale/uk/LC_MESSAGES/libosinfo.mo
 share/vala/vapi/libosinfo-1.0.deps
