@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/04 13:50:09 cwen Exp $
 
 COMMENT=		wm-dockapp; weather monitor
 
 DISTNAME=		wmweather-2.4.7
+REVISION=		0
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://people.debian.org/~godisch/wmweather/
