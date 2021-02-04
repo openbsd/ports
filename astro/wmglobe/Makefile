@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/04 13:51:20 cwen Exp $
 
 COMMENT=		wm-dockapp; displays the earth on an icon
 
 DISTNAME=		wmglobe-1.3
-REVISION=		6
+REVISION=		7
 CATEGORIES=		astro x11 x11/windowmaker
 
-HOMEPAGE=		http://hamete.org/static/wmg/
+HOMEPAGE=		https://www.dockapps.net/wmglobe
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c m z jpeg tiff png gif wraster
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		https://www.dockapps.net/download/
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/tiff \
@@ -23,5 +23,8 @@ LIB_DEPENDS=		graphics/jpeg \
 
 MAKE_ENV=		CC="${CC}"
 NO_TEST=		Yes
+
+# 20+ duplicate symbols
+CFLAGS+=		-fcommon
 
 .include <bsd.port.mk>
