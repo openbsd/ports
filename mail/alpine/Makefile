@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2020/09/13 08:05:08 tb Exp $
-
-# XXX consider moving to https://repo.or.cz/alpine.git
+# $OpenBSD: Makefile,v 1.49 2021/02/04 22:13:22 sthen Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -10,11 +8,11 @@ COMMENT-pico=		UW text editor
 COMMENT-pilot=		UW file system navigator
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-V=			2.21
+V=			2.24
 DISTNAME=		alpine-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS=		c-client 7.0
+SHARED_LIBS=		c-client 8.0
 
 # grep "PICO version" ${WRKSRC}/pico/pico.h
 PICO_V=			5.09
@@ -28,9 +26,8 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
 
-REVISION=		5
-REVISION-pico=		20
-REVISION-pilot=		20
+REVISION-pico=		21
+REVISION-pilot=		21
 
 EPOCH-c-client=		0
 EPOCH-imap=		0
@@ -42,14 +39,16 @@ CATEGORIES-c-client=	devel mail
 CATEGORIES-pico=	editors
 CATEGORIES-pilot=	sysutils
 
-HOMEPAGE=		http://alpine.x10host.com/
+HOMEPAGE=		https://alpine.x10host.com/
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://alpine.x10host.com/alpine/release/
+# repo at https://repo.or.cz/alpine.git
+MASTER_SITES=		https://alpine.x10host.com/alpine/release/src/
 
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 WANTLIB += c crypto iconv intl curses ssl
 
@@ -82,11 +81,11 @@ CONFIGURE_ARGS=		--with-system-pinerc=${SYSCONFDIR}/pine.conf \
 			--with-interactive-spellcheck=aspell \
 			--with-c-client-target=bso \
 			--with-debug-level=0 \
+			--with-bundled-tools \
 			--without-ldap \
 			--without-tcl \
 			--without-npa \
-			--enable-quotas \
-			--disable-debug
+			--enable-quotas
 
 HEADERS=		c-client.h dummy.h env.h env_unix.h fdstring.h \
 			flockcyg.h flocksim.h flstring.h fs.h ftl.h \
