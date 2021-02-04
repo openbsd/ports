@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2021/02/04 15:25:50 sthen Exp $
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -96,12 +96,16 @@ y.tab.c y.tab.h: sg.y sg.h
+ 	      echo " " ; \
+ 	      echo "No yacc/bison found. Copy prepared files for y.tab.h and y.tab.c over. " ; \
+ 	      echo " " ; \
++	      echo "cp y.tab.h.bison y.tab.h" ; \
++	      echo "cp y.tab.c.bison y.tab.c" ; \
+ 	      cp y.tab.h.bison y.tab.h ; \
+ 	      cp y.tab.c.bison y.tab.c ; \
+ 	   else \
++	      echo "$(YACC) -d sg.y"  ; \
+ 	      $(YACC) -d sg.y  ; \
+ 	   fi ; \
+ 	else \
++	   echo "$(YACC) -d sg.y"  ; \
+ 	   $(YACC) -d sg.y  ; \
+ 	fi ;
+ 

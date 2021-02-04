@@ -1,17 +1,14 @@
-$OpenBSD: patch-src_sg_y_in,v 1.1 2009/04/09 23:53:13 sthen Exp $
---- src/sg.y.in.orig	Tue Feb 17 19:49:53 2009
-+++ src/sg.y.in	Tue Feb 17 19:50:27 2009
-@@ -22,8 +22,11 @@
- extern int globalDebug;
+$OpenBSD: patch-src_sg_y_in,v 1.2 2021/02/04 15:25:50 sthen Exp $
+
+Index: src/sg.y.in
+--- src/sg.y.in.orig
++++ src/sg.y.in
+@@ -35,7 +35,7 @@ extern int globalSyslog;
  
- #ifdef HAVE_LIBLDAP
--#include "lber.h"
--#include "ldap.h"
-+#ifndef LDAP_DEPRECATED
-+#define LDAP_DEPRECATED 1
-+#endif
-+#include <lber.h>
-+#include <ldap.h>
- #endif
+ #include "sgEx.h"
  
- #ifdef HAVE_MYSQL
+-FILE *yyin, *yyout;
++extern FILE *yyin, *yyout;
+ char *configFile;
+ 
+ int numTimeElements;

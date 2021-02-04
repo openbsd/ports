@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/04 15:25:50 sthen Exp $
 
 COMMENT =		filter, redirector and access controller for Squid
 
-DISTNAME =		squidGuard-1.4
-REVISION =		15
+V =			1.6.0
+DISTNAME =		squidguard_$V
+PKGNAME =		squidGuard-$V
+EXTRACT_SUFX =		.orig.tar.gz
+WRKDIST =		${WRKDIR}/squidguard-$V
 CATEGORIES =		www
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -14,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c lib/db4/db pthread
 
-MASTER_SITES =		http://www.squidguard.org/Downloads/
+MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/s/squidguard/}
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/db/squidGuard
 CONFIG_DIR =		${SYSCONFDIR}/squidguard
@@ -26,9 +29,14 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 CONFIGURE_ENV =		CFLAGS='${CFLAGS} -I${LOCALBASE}/include' \
 			LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib' \
-			ac_cv_path_LYNX=false
-CONFIGURE_STYLE =	gnu
+			ac_cv_path_LYNX=false \
+			YACC=/usr/bin/yacc
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
+AUTORECONF =		${WRKSRC}/autogen.sh
 CONFIGURE_ARGS =	--with-squiduser='_squid' \
+			--with-mysql=no \
 			--with-sg-logdir=/var/log/squidguard \
 			--with-sg-dbhome=${LOCALSTATEDIR}/db \
 			--with-sg-config=${CONFIG_DIR}/squidguard.conf \
@@ -37,7 +45,7 @@ CONFIGURE_ARGS =	--with-squiduser='_squid' \
 
 TEST_TARGET =	test
 
-FLAVORS =	ldap mysql
+FLAVORS =	ldap
 FLAVOR ?=
 
 .if ${FLAVOR:Mldap}
@@ -46,14 +54,6 @@ WANTLIB +=		ldap
 CONFIGURE_ARGS +=	--with-ldap=yes
 .else
 CONFIGURE_ARGS +=	--with-ldap=no
-.endif
-
-.if ${FLAVOR:Mmysql}
-LIB_DEPENDS +=		databases/mariadb
-CONFIGURE_ARGS +=	--with-mysql=${LOCALBASE}
-WANTLIB +=		mysqlclient z
-.else
-CONFIGURE_ARGS +=	--with-mysql=no
 .endif
 
 pre-configure:

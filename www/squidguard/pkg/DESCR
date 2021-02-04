@@ -4,4 +4,3 @@ access to URLs, redirect trafic, etc.
 
 Flavors:
 	ldap  - Build with LDAP support for authentication
-	mysql - Build with MySQL support for authentication

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/04/28 10:51:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/04 15:25:50 sthen Exp $
 @bin bin/squidGuard
 share/doc/squidguard/
 share/doc/squidguard/LDAPFlow.txt
@@ -39,6 +39,7 @@ share/examples/squidguard/babel.es
 share/examples/squidguard/babel.fr
 share/examples/squidguard/babel.nl
 share/examples/squidguard/babel.no
+share/examples/squidguard/babel.ru
 share/examples/squidguard/dest/
 share/examples/squidguard/dest/README
 share/examples/squidguard/dest/blacklists.tar.gz

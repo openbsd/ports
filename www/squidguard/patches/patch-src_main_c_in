@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_main_c_in,v 1.1 2021/02/04 15:25:50 sthen Exp $
+
+Index: src/main.c.in
+--- src/main.c.in.orig
++++ src/main.c.in
+@@ -21,6 +21,9 @@
+ #include <syslog.h>
+ #endif
+ 
++char *progname;
++int lineno;
++
+ struct Setting *lastSetting = NULL;
+ struct Setting *Setting = NULL;                        /* linked list, Calloc */
+ 

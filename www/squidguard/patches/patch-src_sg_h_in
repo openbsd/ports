@@ -1,27 +1,36 @@
-$OpenBSD: patch-src_sg_h_in,v 1.2 2013/08/12 20:01:49 jeremy Exp $
+$OpenBSD: patch-src_sg_h_in,v 1.3 2021/02/04 15:25:50 sthen Exp $
 
-squidGuard 1.4 patch 20091019; increase MAX_BUF above squid's MAX_URL value.
-
-Fix segfault on 64-bit due to calling an undeclared function.  The function
-is supposed to return a pointer (64-bit) but when undeclared returns an int
-(32-bit). 
-
---- src/sg.h.in.orig	Fri Nov 16 08:58:32 2007
-+++ src/sg.h.in	Mon Aug 12 02:40:28 2013
-@@ -73,7 +73,7 @@ int tolower();
- #define REQUEST_TYPE_REDIRECT   2
- #define REQUEST_TYPE_PASS       3
- 
--#define MAX_BUF 4096
-+#define MAX_BUF 12288
- 
- #define DEFAULT_LOGFILE "squidGuard.log"
+Index: src/sg.h.in
+--- src/sg.h.in.orig
++++ src/sg.h.in
+@@ -80,9 +80,9 @@ int tolower();
  #define WARNING_LOGFILE "squidGuard.log"
-@@ -412,6 +412,7 @@ char   *niso __P((time_t));
- struct UserQuotaInfo *setuserquota __P(());
- void sgSourceUserQuota __P((char *, char *, char *));
+ #define ERROR_LOGFILE   "squidGuard.error"
  
-+struct UserInfo *setuserinfo();
+-#define DEFAULT_CONFIGFILE "@prefix@/squidGuard/squidGuard.conf"
+-#define DEFAULT_LOGDIR "@prefix@/squidGuard/log"
+-#define DEFAULT_DBHOME "@prefix@/squidGuard/db"
++#define DEFAULT_CONFIGFILE "@cfgdir@/squidguard/squidguard.conf"
++#define DEFAULT_LOGDIR "@logdir@/squidGuard"
++#define DEFAULT_DBHOME "@logdir@/squidGuard/db"
+ #define EXEC_PROGRAM "@prefix@/bin/squidGuard"
  
- void   *sgMalloc __P((size_t));
- void   *sgCalloc __P((size_t, size_t));
+ #ifdef ACCONFIG
+@@ -115,7 +115,7 @@ int tolower();
+ #define REDIRECT_PERMANENT   "301:"
+ #define REDIRECT_TEMPORARILY "302:"
+ 
+-char *progname;
++extern char *progname;
+ 
+ struct LogFileStat {
+   char *name;
+@@ -337,7 +337,7 @@ struct AclDest {
+   struct AclDest *next;
+ };
+ 
+-int lineno;
++extern int lineno;
+ 
+ char   *sgParseRedirect	__P((char *, struct SquidInfo *, struct Acl *, struct AclDest *));
+ char   *sgAclAccess __P((struct Source *, struct Acl *, struct SquidInfo *));
