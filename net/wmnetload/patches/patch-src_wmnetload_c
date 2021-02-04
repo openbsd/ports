@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_wmnetload_c,v 1.1 2021/02/04 11:34:54 cwen Exp $
+
+Hunk #1: Unbreak with libdockapp>=0.7
+Hunk #2: fix text display that was blank
+
+Index: src/wmnetload.c
+--- src/wmnetload.c.orig
++++ src/wmnetload.c
+@@ -37,7 +37,7 @@
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
+ #include <unistd.h>
+-#include <dockapp.h>
++#include <libdockapp/dockapp.h>
+ #ifdef HAVE_SYS_SOCKIO_H
+ #include <sys/sockio.h>
+ #endif
+@@ -1051,7 +1051,7 @@ static void
+ setshape(void)
+ {
+ 	Pixmap mask, pixmap;
+-	unsigned int h, w;
++	unsigned short h, w;
+ 
+ 	if (DAMakePixmapFromData(backlight_off_xpm, &pixmap, &mask, &h, &w)) {
+ 		DASetShape(mask);

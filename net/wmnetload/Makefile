@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/04 11:34:54 cwen Exp $
 
 COMMENT=		wm-dockapp; simple network interface monitoring tool
 
 DISTNAME=		wmnetload-1.3
-REVISION=		4
+REVISION=		5
 CATEGORIES=		net x11 x11/windowmaker
 
 HOMEPAGE=		http://freshmeat.net/projects/wmnetload
@@ -14,7 +14,7 @@ WANTLIB=		X11 Xext Xpm c m dockapp
 
 MASTER_SITES=		ftp://truffula.com/pub/
 
-LIB_DEPENDS=		devel/libdockapp
+LIB_DEPENDS=		devel/libdockapp>=0.7.3
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu

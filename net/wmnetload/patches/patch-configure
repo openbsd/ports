@@ -1,6 +1,10 @@
-$OpenBSD: patch-configure,v 1.2 2015/12/07 14:58:54 jasper Exp $
---- configure.orig	Sun Feb 23 10:08:00 2003
-+++ configure	Mon Dec  7 14:35:10 2015
+$OpenBSD: patch-configure,v 1.3 2021/02/04 11:34:54 cwen Exp $
+
+Hunk #2, 3: fix the build with libdockapp>=0.7
+
+Index: configure
+--- configure.orig
++++ configure
 @@ -3052,6 +3052,9 @@ case $host_os in
  	OS=freebsd
  	LIBRARY_RPATH="$LIBRARY_RPATH:/usr/X11R6/lib"
@@ -11,3 +15,21 @@ $OpenBSD: patch-configure,v 1.2 2015/12/07 14:58:54 jasper Exp $
  *)
  	echo ""
  	echo "Sorry, $host_os is not supported yet."
+@@ -4713,7 +4716,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
+-#include <dockapp.h>
++#include <libdockapp/dockapp.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+@@ -4748,7 +4751,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <dockapp.h>
++#include <libdockapp/dockapp.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
