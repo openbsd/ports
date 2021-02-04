@@ -1,23 +1,27 @@
-# $OpenBSD: Makefile,v 1.34 2020/01/26 11:14:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/04 13:55:17 cwen Exp $
 
 COMMENT=		wm-dockapp; shows the moon phase
 
-DISTNAME=		wmMoonClock-1.27
-PKGNAME=		${DISTNAME:L}
-REVISION=		5
+DISTNAME=		wmmoonclock-1.30
 CATEGORIES=		astro x11 x11/windowmaker
+
+HOMEPAGE=		https://www.dockapps.net/wmmoonclock
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c m
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+MASTER_SITES=		https://www.dockapps.net/download/
 
-MAKE_ENV=		CC="${CC}"
+RUN_DEPENDS=		devel/desktop-file-utils
+
+CONFIGURE_STYLE=		gnu
 
 NO_TEST=		Yes
 
-WRKSRC=			${WRKDIST}/Src
+# Keep the legacy binary name (and match with the manpage name)
+post-install:
+	cd ${PREFIX}/bin && mv wmmoonclock wmMoonClock
 
 .include <bsd.port.mk>

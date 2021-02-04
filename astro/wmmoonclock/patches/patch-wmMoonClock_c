@@ -1,16 +1,17 @@
-$OpenBSD: patch-wmMoonClock_c,v 1.2 2007/12/18 10:39:47 ajacoutot Exp $
---- Src/wmMoonClock.c.orig	Mon Jun  7 16:27:18 1999
-+++ Src/wmMoonClock.c	Tue Dec 18 10:16:26 2007
-@@ -162,7 +162,7 @@ int main(int argc, char *argv[]) {
-     int			i, n, k, j, ImageNumber;
-     int 		Year, Month, DayOfWeek, DayOfMonth;
-     int			Hours, Mins, Secs, OldSecs, digit, xoff, xsize;
+$OpenBSD: patch-wmMoonClock_c,v 1.3 2021/02/04 13:55:17 cwen Exp $
+Index: src/wmMoonClock.c
+--- src/wmMoonClock.c.orig
++++ src/wmMoonClock.c
+@@ -157,7 +157,7 @@ int main(int argc, char *argv[]) {
+     struct tm		*GMTTime, *LocalTime;
+     XEvent		event;
+     int			i, n, j, ImageNumber, Year, Month, DayOfMonth, digit;
 -    long		CurrentLocalTime, CurrentGMTTime, date;
 +    time_t		CurrentLocalTime, CurrentGMTTime, date;
      double		UT, val, RA, DEC, UTRise, UTSet, LocalHour, hour24();
      int			D, H, M, S, sgn, A, B, q;
-     char		str[10];
-@@ -771,7 +771,7 @@ void ParseCMDLine(int argc, char *argv[]) {
+     CTrans           	c;
+@@ -775,7 +775,7 @@ void ParseCMDLine(int argc, char *argv[]) {
                  print_usage();
                  exit(-1);
              }
@@ -19,7 +20,7 @@ $OpenBSD: patch-wmMoonClock_c,v 1.2 2007/12/18 10:39:47 ajacoutot Exp $
  
          } else if (!strcmp(argv[i], "-lc")){
  
-@@ -780,7 +780,7 @@ void ParseCMDLine(int argc, char *argv[]) {
+@@ -784,7 +784,7 @@ void ParseCMDLine(int argc, char *argv[]) {
                  print_usage();
                  exit(-1);
              }
@@ -28,7 +29,7 @@ $OpenBSD: patch-wmMoonClock_c,v 1.2 2007/12/18 10:39:47 ajacoutot Exp $
  
          } else if (!strcmp(argv[i], "-dc")){
  
-@@ -789,7 +789,7 @@ void ParseCMDLine(int argc, char *argv[]) {
+@@ -793,7 +793,7 @@ void ParseCMDLine(int argc, char *argv[]) {
                  print_usage();
                  exit(-1);
              }
