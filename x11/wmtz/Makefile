@@ -1,23 +1,29 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/04 13:59:25 cwen Exp $
 
 COMMENT=		wm-dockapp; displays the time in different time zones
 
-DISTNAME=		wmtz-0.7
-REVISION=		3
-CATEGORIES=		x11 x11/windowmaker
-FIX_EXTRACT_PERMISSIONS=Yes
+DISTNAME=		wmtz-0.7_p20150816
+PKGNAME=		${DISTNAME:S/_p/./}
 
-HOMEPAGE=		http://www.dockapps.net/wmtz
+CATEGORIES=		x11 x11/windowmaker
+
+HOMEPAGE=		https://www.dockapps.net/wmtz
 
 # GPL
 PERMIT_PACKAGE=	Yes
-WANTLIB=		X11 Xext Xpm c m
+WANTLIB=		X11 Xext Xpm c dockapp m
 
-MASTER_SITES=		http://www.dockapps.net/download/
+# dockapps.net only provides an old tarball without libdockapp support.
+MASTER_SITES=		https://distfiles.gentoo.org/distfiles/
 
-MAKE_FLAGS=		CC="${CC}"
+LIB_DEPENDS=		devel/libdockapp>=0.7.3
+
+MAKE_ENV+=		CC="${CC}" LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 
 NO_TEST=		Yes
+
+CFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
+LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 WRKSRC=			${WRKDIST}/wmtz
 
