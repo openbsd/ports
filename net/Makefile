@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1240 2021/01/31 19:50:02 kn Exp $
+# $OpenBSD: Makefile,v 1.1241 2021/02/04 12:52:05 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -91,7 +91,6 @@
      SUBDIR += ekg
      SUBDIR += enet
      SUBDIR += epic4
-     SUBDIR += etherape
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11
      SUBDIR += exabgp
