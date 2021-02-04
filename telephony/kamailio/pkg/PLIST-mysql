@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-mysql,v 1.5 2017/07/03 22:14:20 sthen Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.6 2021/02/04 18:43:58 sthen Exp $
 lib/kamailio/kamctl/kamctl.mysql
 lib/kamailio/kamctl/kamdbctl.mysql
-lib/kamailio/modules/db_mysql.so
+@so lib/kamailio/modules/db_mysql.so
 share/doc/kamailio/modules/README.db_mysql
 share/kamailio/mysql/
 share/kamailio/mysql/acc-create.sql

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/17 14:39:43 danj Exp $
+# $OpenBSD: Makefile,v 1.47 2021/02/04 18:43:58 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -17,17 +17,7 @@ PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
 PKGNAME-perl =		kamailio-perl-${VERSION}
 PKGNAME-presence =	kamailio-presence-${VERSION}
 PKGNAME-radius =	kamailio-radius-${VERSION}
-REVISION-berkeley =	0
-REVISION-carrierroute =	0
-REVISION-ldap =		0
-REVISION-main =		0
-REVISION-mysql =	0
-REVISION-perl =		0
-REVISION-postgresql =	0
-REVISION-presence =	0
-REVISION-radius =	0
-REVISION-snmpstats =	0
-REVISION-xml =		0
+REVISION =		1
 
 CATEGORIES =		telephony
 HOMEPAGE =		http://www.kamailio.org/

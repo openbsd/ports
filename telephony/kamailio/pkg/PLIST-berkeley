@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-berkeley,v 1.1 2017/07/03 22:14:20 sthen Exp $
+@comment $OpenBSD: PLIST-berkeley,v 1.2 2021/02/04 18:43:58 sthen Exp $
 lib/kamailio/kamctl/kamctl.db_berkeley
 lib/kamailio/kamctl/kamdbctl.db_berkeley
-lib/kamailio/modules/db_berkeley.so
+@so lib/kamailio/modules/db_berkeley.so
 @bin sbin/kambdb_recover
 share/doc/kamailio/modules/README.db_berkeley
 share/kamailio/db_berkeley/

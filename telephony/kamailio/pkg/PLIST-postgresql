@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-postgresql,v 1.5 2017/07/03 22:14:20 sthen Exp $
+@comment $OpenBSD: PLIST-postgresql,v 1.6 2021/02/04 18:43:58 sthen Exp $
 lib/kamailio/kamctl/kamctl.pgsql
 lib/kamailio/kamctl/kamdbctl.pgsql
-lib/kamailio/modules/db_postgres.so
+@so lib/kamailio/modules/db_postgres.so
 share/doc/kamailio/modules/README.db_postgres
 share/kamailio/postgres/
 share/kamailio/postgres/acc-create.sql

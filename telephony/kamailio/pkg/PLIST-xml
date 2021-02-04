@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-xml,v 1.1 2017/07/03 22:14:20 sthen Exp $
+@comment $OpenBSD: PLIST-xml,v 1.2 2021/02/04 18:43:58 sthen Exp $
 @conflict kamailio-xmlrpc-*
 @pkgpath telephony/kamailio,-xmlrpc
-lib/kamailio/modules/xhttp_pi.so
-lib/kamailio/modules/xmlops.so
-lib/kamailio/modules/xmlrpc.so
+@so lib/kamailio/modules/xhttp_pi.so
+@so lib/kamailio/modules/xmlops.so
+@so lib/kamailio/modules/xmlrpc.so
 share/doc/kamailio/modules/README.xhttp_pi
 share/doc/kamailio/modules/README.xmlops
 share/doc/kamailio/modules/README.xmlrpc

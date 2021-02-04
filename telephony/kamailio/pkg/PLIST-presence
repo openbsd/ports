@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST-presence,v 1.1 2017/07/03 22:14:20 sthen Exp $
-lib/kamailio/modules/presence.so
-lib/kamailio/modules/presence_conference.so
-lib/kamailio/modules/presence_dialoginfo.so
-lib/kamailio/modules/presence_mwi.so
-lib/kamailio/modules/presence_profile.so
-lib/kamailio/modules/presence_reginfo.so
-lib/kamailio/modules/presence_xml.so
-lib/kamailio/modules/pua.so
-lib/kamailio/modules/pua_bla.so
-lib/kamailio/modules/pua_dialoginfo.so
-lib/kamailio/modules/pua_reginfo.so
-lib/kamailio/modules/pua_rpc.so
-lib/kamailio/modules/pua_usrloc.so
-lib/kamailio/modules/pua_xmpp.so
-lib/kamailio/modules/rls.so
-lib/kamailio/modules/xcap_client.so
-lib/kamailio/modules/xcap_server.so
+@comment $OpenBSD: PLIST-presence,v 1.2 2021/02/04 18:43:58 sthen Exp $
+@so lib/kamailio/modules/presence.so
+@so lib/kamailio/modules/presence_conference.so
+@so lib/kamailio/modules/presence_dialoginfo.so
+@so lib/kamailio/modules/presence_mwi.so
+@so lib/kamailio/modules/presence_profile.so
+@so lib/kamailio/modules/presence_reginfo.so
+@so lib/kamailio/modules/presence_xml.so
+@so lib/kamailio/modules/pua.so
+@so lib/kamailio/modules/pua_bla.so
+@so lib/kamailio/modules/pua_dialoginfo.so
+@so lib/kamailio/modules/pua_reginfo.so
+@so lib/kamailio/modules/pua_rpc.so
+@so lib/kamailio/modules/pua_usrloc.so
+@so lib/kamailio/modules/pua_xmpp.so
+@so lib/kamailio/modules/rls.so
+@so lib/kamailio/modules/xcap_client.so
+@so lib/kamailio/modules/xcap_server.so
 share/doc/kamailio/modules/README.presence
 share/doc/kamailio/modules/README.presence_conference
 share/doc/kamailio/modules/README.presence_dialoginfo
