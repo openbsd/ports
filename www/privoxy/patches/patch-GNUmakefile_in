@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.11 2020/11/29 19:08:14 sthen Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.12 2021/02/04 19:23:58 bket Exp $
 
 Index: GNUmakefile.in
 --- GNUmakefile.in.orig
@@ -12,3 +12,12 @@ Index: GNUmakefile.in
  
  
  #############################################################################
+@@ -968,7 +968,7 @@ install: CONF_DEST LOG_DEST PID_DEST check_doc GROUP_T
+ 			$(RM) $(DESTDIR)$(CONF_DEST)/$$i ;\
+ 			$(ECHO) Installing fresh $$i;\
+ 			$(INSTALL) $$INSTALL_CONF $$i $(DESTDIR)$(CONF_DEST) || exit 1;\
+-		elif [ -s "$(CONF_DEST)/$$i" ]; then \
++		elif [ -s "$(DESTDIR)$(CONF_DEST)/$$i" ]; then \
+ 			$(ECHO) Installing $$i as $$i.new ;\
+ 			$(INSTALL) $$INSTALL_CONF $$i $(DESTDIR)$(CONF_DEST)/$$i.new || exit 1;\
+ 			NEW=1;\

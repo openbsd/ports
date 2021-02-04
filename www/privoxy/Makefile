@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2021/01/15 17:26:04 kmos Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/04 19:23:58 bket Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
-V=		3.0.29
+V=		3.0.31
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
@@ -16,6 +16,7 @@ WANTLIB += c crypto pcre pcreposix pthread ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ijbswa/}
 EXTRACT_SUFX=	-src.tar.gz
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 # there are tests which can be run with tools/privoxy-regression-test.pl
 # they require privoxy to be running, and http_proxy=http://127.0.0.1:8118/
