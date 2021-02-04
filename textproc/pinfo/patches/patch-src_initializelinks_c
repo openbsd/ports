@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_initializelinks_c,v 1.1 2021/02/04 21:04:08 tb Exp $
+
+Index: src/initializelinks.c
+--- src/initializelinks.c.orig
++++ src/initializelinks.c
+@@ -75,7 +75,7 @@ compare_tag_table_string(char *base, char *compared)
+  * checks if an item belongs to tag table. returns 1 on success and 0 on
+  * failure.  It should be optimised...
+  */
+-inline int
++static inline int
+ exists_in_tag_table(char *item)
+ {
+ 	if (gettagtablepos(item) != -1)

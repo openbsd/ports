@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_filehandling_functions_c,v 1.2 2007/11/19 18:31:03 mgrimm Exp $
---- src/filehandling_functions.c.orig	Sun Jul  8 17:06:45 2007
-+++ src/filehandling_functions.c	Sun Jul  8 17:09:39 2007
+$OpenBSD: patch-src_filehandling_functions_c,v 1.3 2021/02/04 21:04:08 tb Exp $
+Index: src/filehandling_functions.c
+--- src/filehandling_functions.c.orig
++++ src/filehandling_functions.c
 @@ -139,6 +139,7 @@ dirpage_lookup(char **type, char ***message, long *lin
  	char name[256];
  	char file[256];
@@ -35,3 +36,21 @@ $OpenBSD: patch-src_filehandling_functions_c,v 1.2 2007/11/19 18:31:03 mgrimm Ex
  			strncpy(file, filestart + 1, fileend - filestart - 1);
  			file[fileend - filestart - 1] = 0;
  			strncpy(name, fileend + 1, dot - fileend - 1);
+@@ -551,7 +551,7 @@ seek_tag_table(FILE * id,int quiet)
+ 	return 1;
+ }
+ 
+-inline void
++static inline void
+ buildcommand(char *dest, char *command, char *filename, const char *tmpfilename)
+ {
+ 	strcpy(dest, command);
+@@ -561,7 +561,7 @@ buildcommand(char *dest, char *command, char *filename
+ 	strcat(dest, tmpfilename);
+ }
+ 
+-inline void
++static inline void
+ builddircommand(char *dest, char *command, char *filename, const char *tmpfilename)
+ {
+ 	strcpy(dest, command);

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/04 21:04:07 tb Exp $
 
 COMMENT=		info viewer with lynx-style navigation
 
 DISTNAME=		pinfo-0.6.9
-REVISION=		1
+REVISION=		2
 CATEGORIES=		textproc devel
 
 HOMEPAGE=		https://alioth.debian.org/frs/?group_id=30592

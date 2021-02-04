@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_parse_config_h,v 1.1 2021/02/04 21:04:08 tb Exp $
+
+Fix for -fno-common
+
+Index: src/parse_config.h
+--- src/parse_config.h.orig
++++ src/parse_config.h
+@@ -85,7 +85,7 @@ typedef struct colours
+ colours;
+ #endif /* NO_COLOR_CURSES */
+ 
+-int use_manual;
++extern int use_manual;
+ 
+ int parse_config (void);
+ int parse_line (char *line);
