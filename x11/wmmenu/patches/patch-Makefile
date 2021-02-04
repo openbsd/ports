@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.5 2010/03/26 11:28:15 jasper Exp $
---- Makefile.orig	Sat Mar 23 13:51:36 2002
-+++ Makefile	Fri Mar 26 10:00:50 2010
-@@ -1,36 +1,29 @@
+$OpenBSD: patch-Makefile,v 1.6 2021/02/04 11:38:32 cwen Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,27 +1,27 @@
 -prefix = /usr/local
 +prefix = ${PREFIX}
  BINDIR = $(prefix)/bin
@@ -9,51 +10,43 @@ $OpenBSD: patch-Makefile,v 1.5 2010/03/26 11:28:15 jasper Exp $
 -ETCDIR = $(prefix)/etc
 +ETCDIR = $(prefix)/share/wmmenu
  
--# comment out both lines to get the old, Xpm-only, version
--GDKPIXBUF = 1
--#GDKPIXBUF2 = 1
+-# comment to get the old, Xpm-only, version
+-GDKPIXBUF2 = 1
 +XROOT = ${X11BASE}
 +DAROOT = ${LOCALBASE}
  
--XROOT = /usr/X11R6
--DAROOT = /usr/local
--
- # If you want to use gdk-pixbuf, pass GDKPIXBUF=1 to make command
--ifdef GDKPIXBUF
-+.if GDKPIXBUF
- PIXBUF_DEF = -DWITH_GDKPIXBUF
--PIXBUF_INC := $(shell gdk-pixbuf-config --cflags)
--PIXBUF_LIB := -rdynamic -L$(shell gdk-pixbuf-config --prefix)/lib -lgdk_pixbuf_xlib
--endif
-+PIXBUF_INC != gdk-pixbuf-config --cflags
-+PIXBUF_LIB = -lgdk_pixbuf_xlib -lgtk -lgdk -lgmodule -lglib -lintl -lXext -lX11 -lm -ltiff -ljpeg -lpng -lz
-+.endif
- 
  # If you want to use gdk-pixbuf-2.0, pass GDKPIXBUF2=1 to make command
 -ifdef GDKPIXBUF2
--PIXBUF_CFG = /opt/gtk2/bin/pkg-config gdk-pixbuf-xlib-2.0
--PIXBUF_DEF = -DWITH_GDKPIXBUF
--PIXBUF_INC := $(shell $(PIXBUF_CFG) --cflags)
--PIXBUF_LIB := -rdynamic -L$(shell $(PIXBUF_CFG) --variable=prefix)/lib -lgdk_pixbuf_xlib-2.0
--endif
+-PIXBUF_CFG = pkg-config gdk-pixbuf-xlib-2.0
 +.if GDKPIXBUF2
-+PIXBUF_CFG = pkg-config gdk-pixbuf-xlib-2.0
-+PIXBUF_DEF = -DWITH_GDKPIXBUF2
-+PIXBUF_INC != pkg-config --cflgas gdk-pixbuf-xlib-2.0
-+PIXBUF_LIB = -rdynamic -L$(shell $(PIXBUF_CFG) --variable=prefix)/lib -lgdk_pixbuf_xlib-2.0
++PIXBUF_CFG != pkg-config gdk-pixbuf-xlib-2.0
+ PIXBUF_DEF = -DWITH_GDKPIXBUF
+-PIXBUF_INC := $(shell $(PIXBUF_CFG) --cflags)
+-PIXBUF_LIB := -rdynamic -L$(shell $(PIXBUF_CFG) --variable=prefix)/lib -lgdk_pixbuf_xlib-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0
+-endif
++PIXBUF_INC != pkg-config --cflags gdk-pixbuf-xlib-2.0
++PIXBUF_LIB != pkg-config --libs gdk-pixbuf-xlib-2.0
 +.endif
  
 -CC = gcc #-g
--CFLAGS = -pipe $(CPPFLAGS) -O2
--CPPFLAGS = -MMD -ansi -pedantic -Wall $(INCDIRS) $(DEFINES)
+-CFLAGS = -pipe -O2
+-CPPFLAGS = -MMD -ansi -pedantic -Wall
+-INCDIRS = $(PIXBUF_INC)
 +CFLAGS += $(INCDIRS) $(DEFINES)
- INCDIRS = -I$(DAROOT)/include -I$(XROOT)/include $(PIXBUF_INC)
++INCDIRS != pkg-config --cflags dockapp
++INCDIRS += -I$(DAROOT)/include -I$(XROOT)/include $(PIXBUF_INC)
  DEFINES = -DETCDIR='"$(ETCDIR)"' $(PIXBUF_DEF)
 -LDFLAGS = -s
- LIBDIRS = -L$(DAROOT)/lib -L$(XROOT)/lib $(PIXBUF_LIB)
- LDLIBS = -ldockapp -lXpm -lXext -lX11 -lm
+-LIBDIRS = $(PIXBUF_LIB)
+-LDLIBS = -ldockapp -lXpm -lXext -lX11 -lm
++LIBDIRS != pkg-config --libs-only-L dockapp
++LIBDIRS += $(PIXBUF_LIB) 
++LDLIBS != pkg-config --libs-only-l dockapp
++LDLIBS += -lXpm -lXext -lX11 -lm
  
-@@ -67,4 +60,3 @@ clean :
+ MKDIRHIER = mkdir -p
+ MAN1DIR = $(MANDIR)/man1
+@@ -56,4 +56,3 @@ clean :
  	$(RM) *.o *.d core tags $(PRGS)
  
  # dependencies -- do not change lines below

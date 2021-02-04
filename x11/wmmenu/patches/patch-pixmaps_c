@@ -1,0 +1,16 @@
+$OpenBSD: patch-pixmaps_c,v 1.1 2021/02/04 11:38:32 cwen Exp $
+
+Fix with libdockapp>=0.7
+
+Index: pixmaps.c
+--- pixmaps.c.orig
++++ pixmaps.c
+@@ -4,7 +4,7 @@
+ #ifdef WITH_GDKPIXBUF
+ #include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
+ #endif
+-#include <dockapp.h>
++#include <libdockapp/dockapp.h>
+ 
+ #include "pixmaps.h"
+ #include "xobjects.h"

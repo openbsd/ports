@@ -1,0 +1,16 @@
+$OpenBSD: patch-events_c,v 1.1 2021/02/04 11:38:32 cwen Exp $
+
+Fix with libdockapp>=0.7
+
+Index: events.c
+--- events.c.orig
++++ events.c
+@@ -22,7 +22,7 @@ Reparent and Destroy events are catched with Structure
+ 
+ #include <stdlib.h>
+ 
+-#include <dockapp.h>
++#include <libdockapp/dockapp.h>
+ 
+ #include "types.h"
+ #include "events.h"

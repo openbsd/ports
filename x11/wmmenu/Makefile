@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.23 2020/11/11 09:51:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/04 11:38:32 cwen Exp $
 
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
-DISTNAME=		wmmenu-1.2
-REVISION=		5
+DISTNAME=		wmmenu-1.3
 
-CATEGORIES=     	x11 x11/windowmaker
+CATEGORIES=		x11 x11/windowmaker
 
-HOMEPAGE=		http://www.fcoutant.freesurf.fr/wmmenu.html
+HOMEPAGE=		https://www.dockapps.net/wmmenu
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c m dockapp
 
-MASTER_SITES=		http://www.fcoutant.freesurf.fr/download/
+MASTER_SITES=		https://www.dockapps.net/download/
 
 
-LIB_DEPENDS=		devel/libdockapp
+LIB_DEPENDS=		devel/libdockapp>=0.7.3
 
 FLAVORS=		gdk_pixbuf
 FLAVOR?=
@@ -25,12 +24,17 @@ FLAVOR?=
 .if ${FLAVOR:Mgdk_pixbuf}
 MAKE_FLAGS=		GDKPIXBUF2=1
 LIB_DEPENDS+=		graphics/gdk-pixbuf-xlib
-CFLAGS+=		-pthread
-MAKE_ENV+=		LDFLAGS="-pthread"
-WANTLIB += pthread gdk_pixbuf_xlib-2.0
+WANTLIB += gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 glib-2.0 gobject-2.0
+WANTLIB += intl
 .endif
 
-WRKDIST=		${WRKDIR}/wmmenu
+WRKDIST=		${WRKDIR}/dockapps
+
+
+CFLAGS+=		-I${X11BASE}/include
+LDFLAGS+=		-L${X11BASE}/lib
+
+MAKE_ENV+=		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 pre-configure:
 	@perl -pi -e 's#%%PREFIX%%#${PREFIX}#' ${WRKSRC}/example/defaults

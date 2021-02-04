@@ -1,0 +1,15 @@
+$OpenBSD: patch-buttonbar_c,v 1.1 2021/02/04 11:38:32 cwen Exp $
+
+Fix with libdockapp>=0.7
+
+Index: buttonbar.c
+--- buttonbar.c.orig
++++ buttonbar.c
+@@ -1,6 +1,6 @@
+ #include <assert.h>
+ 
+-#include <dockapp.h>
++#include <libdockapp/dockapp.h>
+ 
+ #include "buttonbar.h"
+ #include "xobjects.h"
