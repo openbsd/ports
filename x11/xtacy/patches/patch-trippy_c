@@ -1,0 +1,33 @@
+$OpenBSD: patch-trippy_c,v 1.1 2021/02/04 19:13:18 sthen Exp $
+
+the definitions of "global" vars moved to trippy.c
+
+Index: trippy.c
+--- trippy.c.orig
++++ trippy.c
+@@ -65,6 +65,25 @@
+ 
+ #define VERSION "1.14"
+ 
++/* ** global vars definition block starts ** */
++Display *display;
++Screen *scr;
++int screen;
++int nwindows, nvisible;
++int *visible;
++Window *window;
++Colormap colmap; /* One map to bind them... */
++unsigned int *CX, *CY, *M, *HC;
++Colormap colmap;
++
++int numcolors;
++int share_colors;
++GC *color_gcs;
++long** colors; /* [NCOLORS][3]; */
++double SinTbl[32];
++char *progname;
++/* ** global vars definition block ends ** */
++
+ struct foo options;
+ int *jj;
+ int startup=0;

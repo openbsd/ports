@@ -1,0 +1,46 @@
+$OpenBSD: patch-trippy_h,v 1.1 2021/02/04 19:13:18 sthen Exp $
+
+the definitions of "global" vars moved to trippy.c
+
+Index: trippy.h
+--- trippy.h.orig
++++ trippy.h
+@@ -189,24 +189,24 @@ void exit_xload();
+ #define max(x,y) ((x>y)?x:y)
+ #define min(x,y) ((x<y)?x:y)
+ 
+-Display *display;
+-Screen *scr;
++extern Display *display;
++extern Screen *scr;
+ 
+-int screen;
+-int nwindows, nvisible;
+-int *visible;
+-Window *window;
+-Colormap colmap; /* One map to bind them... */
+-unsigned int *CX, *CY, *M, *HC;
++extern int screen;
++extern int nwindows, nvisible;
++extern int *visible;
++extern Window *window;
++extern Colormap colmap; /* One map to bind them... */
++extern unsigned int *CX, *CY, *M, *HC;
+ 
+-int numcolors;
+-int share_colors;
+-GC *color_gcs;
+-long** colors; /* [NCOLORS][3]; */
+-double SinTbl[32];
++extern int numcolors;
++extern int share_colors;
++extern GC *color_gcs;
++extern long** colors; /* [NCOLORS][3]; */
++extern double SinTbl[32];
+ extern Cursor mycursor ;
+ 
+-char *progname;
++extern char *progname;
+ 
+ #if defined (__cplusplus) || defined (c_plusplus)
+ }
