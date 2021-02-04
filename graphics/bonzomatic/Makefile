@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/26 21:22:51 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/04 17:01:26 kn Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -6,9 +6,8 @@ COMMENT =		tool for live-coding pixel shaders
 
 GH_ACCOUNT =		Gargaj
 GH_PROJECT =		Bonzomatic
-GH_TAGNAME =		2019-03-26
+GH_TAGNAME =		2021-01-29
 PKGNAME =		bonzomatic-${GH_TAGNAME:S/-//g}
-REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -20,11 +19,11 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # Scintilla:	MIT
 # jsonxx:	MIT
 # kiss_fft:	Unlicense
-# min_al:	public domain
+# miniaudio:	public domain
 # stb:		public domain
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} GL X11 Xcursor Xinerama Xrandr Xxf86vm c m
+WANTLIB +=		${COMPILER_LIBCXX} GL X11 c fontconfig m
 
 MODULES =		devel/cmake
 
@@ -36,12 +35,17 @@ COMPILER =		base-clang
 
 NO_TEST =		Yes
 
+# ${WRKSRC}/src/platform_x11/Misc.cpp:11:10:
+#    fatal error: 'fontconfig/fontconfig.h' file not found
+CONFIGURE_ARGS =	-DBZC_PROJECT_INCLUDES=${X11BASE}/include
+
 # ${WRKSRC}/external/glew/GL/glew.h:1202:14:
 #    fatal error: 'GL/glu.h' file not found
 CFLAGS +=		-I${X11BASE}/include
 
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/src/platform_x11/Misc.cpp
+.if DEBUG
+MODCMAKE_DEBUG =	Yes
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bonzomatic/

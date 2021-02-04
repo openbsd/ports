@@ -1,0 +1,29 @@
+$OpenBSD: patch-external_miniaudio_miniaudio_h,v 1.1 2021/02/04 17:01:26 kn Exp $
+
+XXX work around crash at exit:
+
+Program terminated with signal SIGSEGV, Segmentation fault.
+#0  sio_close (hdl=0x0) at /usr/src/lib/libsndio/sio.c:94
+94              hdl->ops->close(hdl);
+(gdb) bt
+#0  sio_close (hdl=0x0) at /usr/src/lib/libsndio/sio.c:94
+#1  0x0000024fbc58df99 in ma_device_uninit ()
+#3  0x0000024fbc5634e8 in main ()
+
+
+Index: external/miniaudio/miniaudio.h
+--- external/miniaudio/miniaudio.h.orig
++++ external/miniaudio/miniaudio.h
+@@ -24858,10 +24858,12 @@ static void ma_device_uninit__sndio(ma_device* pDevice
+     MA_ASSERT(pDevice != NULL);
+ 
+     if (pDevice->type == ma_device_type_capture || pDevice->type == ma_device_type_duplex) {
++      if (pDevice->sndio.handleCapture != NULL)
+         ((ma_sio_close_proc)pDevice->pContext->sndio.sio_close)((struct ma_sio_hdl*)pDevice->sndio.handleCapture);
+     }
+ 
+     if (pDevice->type == ma_device_type_capture || pDevice->type == ma_device_type_duplex) {
++      if (pDevice->sndio.handlePlayback != NULL)
+         ((ma_sio_close_proc)pDevice->pContext->sndio.sio_close)((struct ma_sio_hdl*)pDevice->sndio.handlePlayback);
+     }
+ }
