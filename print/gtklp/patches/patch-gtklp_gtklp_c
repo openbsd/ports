@@ -1,0 +1,15 @@
+$OpenBSD: patch-gtklp_gtklp_c,v 1.3 2021/02/05 12:39:00 ajacoutot Exp $
+
+Fix for -fno-common.
+
+Index: gtklp/gtklp.c
+--- gtklp/gtklp.c.orig
++++ gtklp/gtklp.c
+@@ -119,7 +119,6 @@ ppd_file_t *printerPPD;
+ int PPDopen;
+ char *PPDfilename;
+ int conflict_active;
+-int nox;
+ int num_commandline_opts;
+ cups_option_t *commandline_opts;
+ char nupLayout[5];

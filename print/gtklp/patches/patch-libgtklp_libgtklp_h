@@ -1,0 +1,16 @@
+$OpenBSD: patch-libgtklp_libgtklp_h,v 1.4 2021/02/05 12:39:00 ajacoutot Exp $
+
+Fix for -fno-common.
+
+Index: libgtklp/libgtklp.h
+--- libgtklp/libgtklp.h.orig
++++ libgtklp/libgtklp.h
+@@ -80,7 +80,7 @@ void exitOnError(char *gerror1, char *gerror2, int exi
+ void hello(GtkWidget * widget, gpointer data);
+ void button_pad(GtkWidget * widget);
+ #if GTK_MAJOR_VERSION != 1
+-GtkWidget *progressBar;
++extern GtkWidget *progressBar;
+ void setWindowDefaultIcons(void);
+ #endif
+ #endif				/* LIBGTKLP_H */
