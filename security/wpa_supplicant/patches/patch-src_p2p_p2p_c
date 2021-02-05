@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_p2p_p2p_c,v 1.1 2021/02/05 19:57:54 tobhe Exp $
+
+https://w1.fi/security/2020-2/wpa_supplicant-p2p-group-info-processing-vulnerability.txt
+
+Index: src/p2p/p2p.c
+--- src/p2p/p2p.c.orig
++++ src/p2p/p2p.c
+@@ -453,6 +453,8 @@ static void p2p_copy_client_info(struct p2p_device *de
+ 	dev->info.config_methods = cli->config_methods;
+ 	os_memcpy(dev->info.pri_dev_type, cli->pri_dev_type, 8);
+ 	dev->info.wps_sec_dev_type_list_len = 8 * cli->num_sec_dev_types;
++	if (dev->info.wps_sec_dev_type_list_len > WPS_SEC_DEV_TYPE_MAX_LEN)
++		dev->info.wps_sec_dev_type_list_len = WPS_SEC_DEV_TYPE_MAX_LEN;
+ 	os_memcpy(dev->info.wps_sec_dev_type_list, cli->sec_dev_types,
+ 		  dev->info.wps_sec_dev_type_list_len);
+ }
