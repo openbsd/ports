@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/07/16 23:57:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/05 05:46:52 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/String/
 ${P5ARCH}/String/CRC32.pm
@@ -6,5 +6,5 @@ ${P5ARCH}/String/CRC32.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/String/
 ${P5ARCH}/auto/String/CRC32/
-${P5ARCH}/auto/String/CRC32/CRC32.so
+@so ${P5ARCH}/auto/String/CRC32/CRC32.so
 @man man/man3p/String::CRC32.3p
