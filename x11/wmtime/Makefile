@@ -1,24 +1,33 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/05 15:42:21 cwen Exp $
 
 COMMENT=	time/date applet for WindowMaker
 
-DISTNAME=	wmtime-1.0b2
-REVISION=	2
+DISTNAME=	wmtime-1.4
 CATEGORIES=	x11 x11/windowmaker
+
+HOMEPAGE=	https://www.dockapps.net/wmtime
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		X11 Xext Xpm c m
+WANTLIB += X11 Xext Xpm c dockapp iconv m
 
-MASTER_SITES=	http://mirror2.unixfreunde.de/ \
-		http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
+MASTER_SITES=	https://www.dockapps.net/download/
 
-MAKE_FLAGS=	CC="${CC}"
+LIB_DEPENDS=	converters/libiconv \
+		devel/libdockapp>=0.7.3
 
-WRKDIST=        ${WRKDIR}/wmtime.app
-WRKSRC=		${WRKDIST}/wmtime
+MAKE_FLAGS+=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+		MANDIR="${PREFIX}/man/man1"
 
 NO_TEST=	Yes
+
+CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include
+
+LDFLAGS+=	-L${X11BASE}/lib -L${LOCALBASE}/lib -liconv
+
+WRKDIST=	${WRKDIR}/dockapps-7d1ef92
+
+ALL_TARGET+=	wmtime
 
 .include <bsd.port.mk>

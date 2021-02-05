@@ -1,26 +1,15 @@
-$OpenBSD: patch-wmtime_wmtime_c,v 1.2 2017/05/05 13:47:35 jca Exp $
-Index: wmtime/wmtime.c
---- wmtime/wmtime.c.orig
-+++ wmtime/wmtime.c
-@@ -98,7 +98,7 @@ void printversion(void);
- void wmtime_routine(int, char **);
- void get_lang();
+$OpenBSD: patch-wmtime_wmtime_c,v 1.3 2021/02/05 15:42:21 cwen Exp $
+Index: wmtime.c
+--- wmtime.c.orig
++++ wmtime.c
+@@ -282,8 +282,8 @@ void wmtime_routine(int argc, char **argv) {
  
--void main(int argc, char *argv[]) {
-+int main(int argc, char *argv[]) {
- 
- 	int		i;
- 	
-@@ -187,9 +187,9 @@ void wmtime_routine(int argc, char **argv) {
  	struct tm	*time_struct;
- 	struct tm	old_time_struct;
  
 -	long		starttime;
 -	long		curtime;
--	long		nexttime;
 +	time_t		starttime;
 +	time_t		curtime;
-+	time_t		nexttime;
  
- 	char		temp[128];
- 	char		*p;
+ 	char		*conffile = NULL;
+ 
