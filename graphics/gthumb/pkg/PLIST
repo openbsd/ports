@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2020/09/21 19:08:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2021/02/05 09:36:10 jasper Exp $
 @bin bin/gthumb
 include/gthumb/
 include/gthumb/cairo-scale.h
@@ -771,6 +771,50 @@ share/help/hu/gthumb/thumbnail-pane.page
 share/help/hu/gthumb/thumbnails.page
 share/help/hu/gthumb/viewer.page
 share/help/hu/gthumb/wallpaper.page
+share/help/id/
+share/help/id/gthumb/
+share/help/id/gthumb/attributes.page
+share/help/id/gthumb/batch-change-date.page
+share/help/id/gthumb/batch-convert-format.page
+share/help/id/gthumb/batch-resize.page
+share/help/id/gthumb/batch-rotate.page
+share/help/id/gthumb/batch-scripts.page
+share/help/id/gthumb/bookmarks.page
+share/help/id/gthumb/browser.page
+share/help/id/gthumb/edit-colors.page
+share/help/id/gthumb/edit-redeye.page
+share/help/id/gthumb/edit-resize-crop.page
+share/help/id/gthumb/edit-rotate.page
+share/help/id/gthumb/edit-save-undo-redo.page
+share/help/id/gthumb/extensions.page
+share/help/id/gthumb/figures/
+share/help/id/gthumb/figures/general-filter.png
+share/help/id/gthumb/figures/import-pref-auto-folder.png
+share/help/id/gthumb/figures/import-pref-custom-format.png
+share/help/id/gthumb/figures/import.png
+share/help/id/gthumb/figures/main-win.png
+share/help/id/gthumb/figures/palette.png
+share/help/id/gthumb/figures/specific-filter.png
+share/help/id/gthumb/figures/thumbnail-pane.png
+share/help/id/gthumb/file-copy-move.page
+share/help/id/gthumb/filtering.page
+share/help/id/gthumb/fullscreen.page
+share/help/id/gthumb/gimp.page
+share/help/id/gthumb/import.page
+share/help/id/gthumb/index.page
+share/help/id/gthumb/introduction.page
+share/help/id/gthumb/legal.xml
+share/help/id/gthumb/printing.page
+share/help/id/gthumb/rename-series.page
+share/help/id/gthumb/sharing-disc.page
+share/help/id/gthumb/sharing-social.page
+share/help/id/gthumb/slideshow.page
+share/help/id/gthumb/sorting.page
+share/help/id/gthumb/strftime.page
+share/help/id/gthumb/thumbnail-pane.page
+share/help/id/gthumb/thumbnails.page
+share/help/id/gthumb/viewer.page
+share/help/id/gthumb/wallpaper.page
 share/help/nl/
 share/help/nl/gthumb/
 share/help/nl/gthumb/attributes.page
