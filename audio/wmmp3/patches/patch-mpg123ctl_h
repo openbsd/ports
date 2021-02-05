@@ -1,0 +1,15 @@
+$OpenBSD: patch-mpg123ctl_h,v 1.1 2021/02/05 15:39:14 cwen Exp $
+
+Add missing include
+
+Index: mpg123ctl.h
+--- mpg123ctl.h.orig
++++ mpg123ctl.h
+@@ -14,6 +14,7 @@
+ 
+ #define __MPG123CTL__
+ 
++#include <ctype.h>
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <signal.h>

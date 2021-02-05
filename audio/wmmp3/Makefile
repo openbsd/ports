@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/05 15:39:14 cwen Exp $
 
 COMMENT=		wm-dockapp; front end for an mp3 player
 
 DISTNAME=		wmmp3-0.12
-REVISION=		4
+REVISION=		5
 CATEGORIES=		audio x11 x11/windowmaker
 
-HOMEPAGE=		http://www.dotfiles.com/software/wmmp3/
+HOMEPAGE=		https://www.dockapps.net/wmmp3
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		https://www.dockapps.net/download/
 
 RUN_DEPENDS=		audio/madplay
 
@@ -23,6 +23,9 @@ CONFIGURE_STYLE=	gnu
 
 SAMPLE_DIR=		${PREFIX}/share/examples/wmmp3
 SUBST_VARS+=		SAMPLE_DIR
+
+pre-configure:
+	@${SUBST_CMD} ${WRKSRC}/main.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmmp3 ${PREFIX}/bin

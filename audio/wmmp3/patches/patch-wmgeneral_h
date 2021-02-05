@@ -1,0 +1,22 @@
+$OpenBSD: patch-wmgeneral_h,v 1.1 2021/02/05 15:39:14 cwen Exp $
+
+Fix the build with -fno-common
+
+Index: wmgeneral.h
+--- wmgeneral.h.orig
++++ wmgeneral.h
+@@ -41,10 +41,10 @@ typedef struct {
+  /* Global variable */
+ /*******************/
+ 
+-Display *display;
+-Window Root, iconwin, win;
+-XpmIcon wmgen;
+-XpmIcon wmfont;
++extern Display *display;
++extern Window Root, iconwin, win;
++extern XpmIcon wmgen;
++extern XpmIcon wmfont;
+ 
+ /***********************/
+  /* Function Prototypes */
