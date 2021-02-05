@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_audioscrobbler_h,v 1.1 2021/02/05 12:21:35 landry Exp $
+
+fix for -fno-common
+https://gitweb.gentoo.org/repo/gentoo.git/commit/media-sound/scmpc/files?id=c9f42ac8feb314f3f2f6ec7cfd8c535ff33fe735
+
+Index: src/audioscrobbler.h
+--- src/audioscrobbler.h.orig
++++ src/audioscrobbler.h
+@@ -37,19 +37,19 @@
+ /**
+  * Last.fm connection data
+  */
+-struct {
++struct as_conn_t {
+ 	gchar *session_id;
+ 	gint64 last_auth;
+ 	gint64 last_fail;
+ 	connection_status status;
+ 	CURL *handle;
+ 	struct curl_slist *headers;
+-} as_conn;
++};
+ 
+ /**
+  * cURL data buffer
+  */
+-gchar *buffer;
++extern gchar *buffer;
+ 
+ /**
+  * Initialize cURL

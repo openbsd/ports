@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_mpd_c,v 1.3 2021/02/05 12:21:35 landry Exp $
+
+fix for -fno-common
+https://gitweb.gentoo.org/repo/gentoo.git/commit/media-sound/scmpc/files?id=c9f42ac8feb314f3f2f6ec7cfd8c535ff33fe735
+
+Index: src/mpd.c
+--- src/mpd.c.orig
++++ src/mpd.c
+@@ -37,6 +37,8 @@ static void mpd_schedule_check(void);
+ static gboolean mpd_parse(GIOChannel *source, GIOCondition condition,
+ 		gpointer data);
+ 
++struct mpd_t mpd;
++
+ gboolean mpd_connect(void)
+ {
+ 	mpd.conn = mpd_connection_new(prefs.mpd_hostname, prefs.mpd_port,

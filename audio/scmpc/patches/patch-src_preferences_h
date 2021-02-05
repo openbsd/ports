@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_preferences_h,v 1.1 2021/02/05 12:21:35 landry Exp $
+
+fix for -fno-common
+https://gitweb.gentoo.org/repo/gentoo.git/commit/media-sound/scmpc/files?id=c9f42ac8feb314f3f2f6ec7cfd8c535ff33fe735
+
+Index: src/preferences.h
+--- src/preferences.h.orig
++++ src/preferences.h
+@@ -32,7 +32,7 @@
+ /**
+  * scmpc settings
+  */
+-struct {
++struct prefs_t {
+ 	gchar *mpd_hostname;
+ 	gushort mpd_port;
+ 	gushort mpd_timeout;
+@@ -48,7 +48,9 @@ struct {
+ 	gchar *cache_file;
+ 	guint queue_length;
+ 	guint cache_interval;
+-} prefs;
++};
++
++extern struct prefs_t prefs;
+ 
+ /**
+  * Initialize preferences

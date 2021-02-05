@@ -1,7 +1,21 @@
-$OpenBSD: patch-src-preferences_c,v 1.5 2014/09/02 19:46:53 landry Exp $
---- src/preferences.c.orig	Mon Mar  4 09:16:18 2013
-+++ src/preferences.c	Tue Sep  2 21:41:21 2014
-@@ -180,7 +180,7 @@ static gboolean parse_config_file(void)
+$OpenBSD: patch-src-preferences_c,v 1.6 2021/02/05 12:21:35 landry Exp $
+
+fix for -fno-common
+https://gitweb.gentoo.org/repo/gentoo.git/commit/media-sound/scmpc/files?id=c9f42ac8feb314f3f2f6ec7cfd8c535ff33fe735
+
+Index: src/preferences.c
+--- src/preferences.c.orig
++++ src/preferences.c
+@@ -36,6 +36,8 @@
+ #include "scmpc.h"
+ #include "preferences.h"
+ 
++struct prefs_t prefs;
++
+ static gint cf_log_level(cfg_t *cfg, cfg_opt_t *opt, const gchar *value,
+ 		void *result);
+ static gint cf_validate_num(cfg_t *cfg, cfg_opt_t *opt);
+@@ -180,7 +182,7 @@ static gboolean parse_config_file(void)
  				&cf_log_level),
  		CFG_STR("log_file", "/var/log/scmpc.log", CFGF_NONE),
  		CFG_STR("pid_file", "/var/run/scmpc.pid", CFGF_NONE),

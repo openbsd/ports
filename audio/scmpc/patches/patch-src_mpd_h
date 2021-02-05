@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_mpd_h,v 1.1 2021/02/05 12:21:35 landry Exp $
+
+fix for -fno-common
+https://gitweb.gentoo.org/repo/gentoo.git/commit/media-sound/scmpc/files?id=c9f42ac8feb314f3f2f6ec7cfd8c535ff33fe735
+
+Index: src/mpd.h
+--- src/mpd.h.orig
++++ src/mpd.h
+@@ -32,7 +32,7 @@
+ /**
+  * MPD connection data
+  */
+-struct {
++struct mpd_t {
+ 	struct mpd_connection *conn;
+ 	struct mpd_status *status;
+ 	struct mpd_song *song;
+@@ -42,7 +42,9 @@ struct {
+ 	guint idle_source;
+ 	guint check_source;
+ 	guint reconnect_source;
+-} mpd;
++};
++
++extern struct mpd_t mpd;
+ 
+ /**
+  * Connect to MPD
