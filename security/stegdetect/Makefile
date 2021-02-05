@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/05 10:06:23 sthen Exp $
 
-COMMENT=	steganography detection tool
-DISTNAME=	stegdetect-0.6
-REVISION=	6
+GH_ACCOUNT=	abeluck
+GH_PROJECT=	stegdetect
+GH_COMMIT=	28a4f074a71c682581314491224f9f41511c82e7
+
+COMMENT=	steganography detection tool (unmaintained)
+
+DISTNAME=	stegdetect-0.6pl20181031
 CATEGORIES=	security graphics
-MASTER_SITES=	${HOMEPAGE}
-
-HOMEPAGE=	http://www.outguess.org/
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -15,8 +16,11 @@ WANTLIB += c crypto m
 
 NO_TEST=	Yes
 
-AUTOCONF_VERSION= 2.52
 CONFIGURE_STYLE=  autoconf
+AUTOCONF_VERSION= 2.69
+
+# disable xsteg
+CONFIGURE_ARGS=	--without-libevent
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/{stegdetect,stegbreak} ${PREFIX}/bin
