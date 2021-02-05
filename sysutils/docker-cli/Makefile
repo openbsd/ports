@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/04 14:15:20 solene Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/05 19:55:42 paco Exp $
 
 COMMENT =		command-line tool for controlling Docker
 
-V =			20.10.1
+V =			20.10.3
 
 GH_ACCOUNT =		docker
 GH_PROJECT =		cli
