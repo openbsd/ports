@@ -1,0 +1,19 @@
+$OpenBSD: patch-network_c,v 1.1 2021/02/05 22:58:10 bcallah Exp $
+
+Fix for -fno-common
+https://gitlab.com/LibreGames/jumpnbump/-/commit/b72b70a4233776bdaa6a683c89af2becefd53bd6.diff
+
+Index: network.c
+--- network.c.orig
++++ network.c
+@@ -32,6 +32,10 @@ int is_server = 1;
+ int is_net = 0;
+ int server_said_bye = 0;
+ 
++#ifdef USE_NET
++NetInfo net_info[JNB_MAX_PLAYERS];
++#endif
++
+ void processMovePacket(NetPacket *pkt)
+ {
+ 	int playerid = pkt->arg;

@@ -1,0 +1,17 @@
+$OpenBSD: patch-main_c,v 1.1 2021/02/05 22:58:10 bcallah Exp $
+
+Fix for -fno-common
+https://gitlab.com/LibreGames/jumpnbump/-/commit/b72b70a4233776bdaa6a683c89af2becefd53bd6.diff
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -67,6 +67,8 @@ char cur_pal[768];
+ 
+ int ai[JNB_MAX_PLAYERS];
+ 
++int endscore_reached = 0;
++
+ unsigned int ban_map[17][22] = {
+ 	{1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+ 	{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0},

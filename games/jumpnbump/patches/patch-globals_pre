@@ -1,0 +1,17 @@
+$OpenBSD: patch-globals_pre,v 1.1 2021/02/05 22:58:10 bcallah Exp $
+
+Fix for -fno-common
+https://gitlab.com/LibreGames/jumpnbump/-/commit/b72b70a4233776bdaa6a683c89af2becefd53bd6.diff
+
+Index: globals.pre
+--- globals.pre.orig
++++ globals.pre
+@@ -267,7 +267,7 @@ extern gob_t number_gobs;
+ 
+ /* main.c */
+ 
+-int endscore_reached;
++extern int endscore_reached;
+ 
+ void steer_players(void);
+ void position_player(int player_num);

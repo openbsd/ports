@@ -1,0 +1,17 @@
+$OpenBSD: patch-network_h,v 1.1 2021/02/05 22:58:10 bcallah Exp $
+
+Fix for -fno-common
+https://gitlab.com/LibreGames/jumpnbump/-/commit/b72b70a4233776bdaa6a683c89af2becefd53bd6.diff
+
+Index: network.h
+--- network.h.orig
++++ network.h
+@@ -74,7 +74,7 @@ typedef struct
+ 	SDLNet_SocketSet socketset;
+ } NetInfo;
+ 
+-NetInfo net_info[JNB_MAX_PLAYERS];
++extern NetInfo net_info[JNB_MAX_PLAYERS];
+ 
+ void bufToPacket(const char *buf, NetPacket *pkt);
+ 

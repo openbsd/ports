@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/09/14 19:13:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/05 22:58:10 bcallah Exp $
 
 V =		1.61
 COMMENT =	game of cute bunnies jumping on each other's heads
 DISTNAME =	jumpnbump-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://gitlab.com/LibreGames/jumpnbump
