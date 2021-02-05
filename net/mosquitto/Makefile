@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/02 11:21:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/02/05 14:30:39 sthen Exp $
 
 COMMENT =		opensource MQTT broker
 
-DISTNAME =		mosquitto-2.0.6
+DISTNAME =		mosquitto-2.0.7
 
 SHARED_LIBS +=  mosquitto                 1.1 # 1.5
 SHARED_LIBS +=  mosquittopp               1.0 # 1.5
@@ -26,9 +26,7 @@ MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =		devel/uthash \
-			textproc/docbook-xsl \
-			textproc/libxslt
+BUILD_DEPENDS =		devel/uthash
 LIB_DEPENDS =		www/libwebsockets
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
