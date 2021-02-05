@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2020/08/24 21:31:13 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.76 2021/02/05 18:37:48 kurt Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
 
-VERSION=	7.6.0
-LIBAO_VERSION=	7.6.6
+VERSION=	8.0.4
+LIBAO_VERSION=	7.6.10
 # has various machine-dependent parts; updates definitely need
 # tests on more than just amd64.
 
@@ -12,7 +12,6 @@ DISTNAME=	gc-${VERSION}
 
 PKGNAME-atomic=	libatomic_ops-${LIBAO_VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
-REVISION=	6
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}
@@ -20,11 +19,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MULTI_PACKAGES=	-main -atomic
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-SHARED_LIBS +=	gc		4.0	# 1.3
-SHARED_LIBS +=	gccpp		0.0	# 1.3
-SHARED_LIBS +=	cord		2.3	# 1.3
-SHARED_LIBS +=  atomic_ops	2.0	# 1.3
-SHARED_LIBS +=  atomic_ops_gpl	2.0	# 1.3
+SHARED_LIBS +=	gc		5.0	# 5.3
+SHARED_LIBS +=	gccpp		1.0	# 5.0
+SHARED_LIBS +=	cord		3.0	# 5.0
+SHARED_LIBS +=  atomic_ops	3.0	# 2.1
+SHARED_LIBS +=  atomic_ops_gpl	3.0	# 2.2
 
 CATEGORIES=	devel
 
@@ -49,7 +48,9 @@ CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS= --with-libatomic-ops=no \
 		--enable-cplusplus \
-		--enable-threads=pthreads
+		--enable-threads=pthreads \
+		--enable-mmap \
+		--enable-static=yes
 
 post-extract:
 	@perl -pi -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/doc/gc.man

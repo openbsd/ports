@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-atomic,v 1.6 2018/12/30 17:08:09 pascal Exp $
+@comment $OpenBSD: PLIST-atomic,v 1.7 2021/02/05 18:37:48 kurt Exp $
 include/atomic_ops/
 include/atomic_ops.h
 include/atomic_ops/ao_version.h
@@ -75,10 +75,10 @@ include/atomic_ops/sysdeps/test_and_set_t_is_ao_t.h
 include/atomic_ops/sysdeps/test_and_set_t_is_char.h
 include/atomic_ops_malloc.h
 include/atomic_ops_stack.h
-lib/libatomic_ops.a
+@static-lib lib/libatomic_ops.a
 lib/libatomic_ops.la
 @lib lib/libatomic_ops.so.${LIBatomic_ops_VERSION}
-lib/libatomic_ops_gpl.a
+@static-lib lib/libatomic_ops_gpl.a
 lib/libatomic_ops_gpl.la
 @lib lib/libatomic_ops_gpl.so.${LIBatomic_ops_gpl_VERSION}
 lib/pkgconfig/atomic_ops.pc

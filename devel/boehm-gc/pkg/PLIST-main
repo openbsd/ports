@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/11/12 10:33:04 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2021/02/05 18:37:48 kurt Exp $
 @pkgpath devel/boehm-gc
 include/gc/
 include/gc.h
@@ -20,51 +20,50 @@ include/gc/gc_typed.h
 include/gc/gc_version.h
 include/gc/javaxfc.h
 include/gc/leak_detector.h
-include/gc/weakpointer.h
 include/gc_cpp.h
-lib/libcord.a
+@static-lib lib/libcord.a
 lib/libcord.la
 @lib lib/libcord.so.${LIBcord_VERSION}
-lib/libgc.a
+@static-lib lib/libgc.a
 lib/libgc.la
 @lib lib/libgc.so.${LIBgc_VERSION}
-lib/libgccpp.a
+@static-lib lib/libgccpp.a
 lib/libgccpp.la
 @lib lib/libgccpp.so.${LIBgccpp_VERSION}
 lib/pkgconfig/bdw-gc.pc
 @man man/man3/gc.3
-share/gc/
-share/gc/AUTHORS
-share/gc/README.DGUX386
-share/gc/README.Mac
-share/gc/README.OS2
-share/gc/README.amiga
-share/gc/README.arm.cross
-share/gc/README.autoconf
-share/gc/README.cmake
-share/gc/README.cords
-share/gc/README.darwin
-share/gc/README.environment
-share/gc/README.ews4800
-share/gc/README.hp
-share/gc/README.linux
-share/gc/README.macros
-share/gc/README.md
-share/gc/README.rs6000
-share/gc/README.sgi
-share/gc/README.solaris2
-share/gc/README.symbian
-share/gc/README.uts
-share/gc/README.win32
-share/gc/README.win64
-share/gc/debugging.html
-share/gc/finalization.html
 @comment share/gc/gc.man
-share/gc/gcdescr.html
-share/gc/gcinterface.html
-share/gc/leak.html
-share/gc/overview.html
-share/gc/porting.html
-share/gc/scale.html
-share/gc/simple_example.html
-share/gc/tree.html
+share/doc/gc/
+share/doc/gc/AUTHORS
+share/doc/gc/README.DGUX386
+share/doc/gc/README.Mac
+share/doc/gc/README.OS2
+share/doc/gc/README.amiga
+share/doc/gc/README.arm.cross
+share/doc/gc/README.autoconf
+share/doc/gc/README.cmake
+share/doc/gc/README.cords
+share/doc/gc/README.darwin
+share/doc/gc/README.environment
+share/doc/gc/README.ews4800
+share/doc/gc/README.hp
+share/doc/gc/README.linux
+share/doc/gc/README.macros
+share/doc/gc/README.md
+share/doc/gc/README.rs6000
+share/doc/gc/README.sgi
+share/doc/gc/README.solaris2
+share/doc/gc/README.symbian
+share/doc/gc/README.uts
+share/doc/gc/README.win32
+share/doc/gc/README.win64
+share/doc/gc/debugging.md
+share/doc/gc/finalization.md
+share/doc/gc/gcdescr.md
+share/doc/gc/gcinterface.md
+share/doc/gc/leak.md
+share/doc/gc/overview.md
+share/doc/gc/porting.md
+share/doc/gc/scale.md
+share/doc/gc/simple_example.md
+share/doc/gc/tree.md
