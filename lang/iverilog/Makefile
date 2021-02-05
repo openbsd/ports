@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2019/10/28 08:18:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/05 01:02:04 gnezdo Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
-V=			10.3
+V=			11.0
 DISTNAME=		verilog-$V
 PKGNAME=		iverilog-$V
 CATEGORIES=		lang devel
@@ -12,7 +12,7 @@ HOMEPAGE=		http://iverilog.icarus.com/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		ftp://ftp.icarus.com/pub/eda/verilog/v10/
+MASTER_SITES=		ftp://ftp.icarus.com/pub/eda/verilog/v11/
 
 WANTLIB += ${COMPILER_LIBCXX} bz2 c curses m readline z
 
