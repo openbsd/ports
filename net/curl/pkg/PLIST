@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.63 2020/12/10 20:52:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.64 2021/02/05 17:08:04 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -108,6 +108,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_ALTSVC_CTRL.3
 @man man/man3/CURLOPT_APPEND.3
 @man man/man3/CURLOPT_AUTOREFERER.3
+@man man/man3/CURLOPT_AWS_SIGV4.3
 @man man/man3/CURLOPT_BUFFERSIZE.3
 @man man/man3/CURLOPT_CAINFO.3
 @man man/man3/CURLOPT_CAPATH.3
