@@ -1,15 +1,21 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/05 15:47:02 cwen Exp $
 
 COMMENT=		wm-dockapp; TicTacToe game
 
 DISTNAME=		wmtictactoe-1.1-1
 PKGNAME=		wmtictactoe-1.1.1
-REVISION =		2
+REVISION=		3
+FIX_EXTRACT_PERMISSIONS=		Yes
+
 CATEGORIES=		games x11 x11/windowmaker
+
+HOMEPAGE=		https://www.dockapps.net/wmtictactoe
 
 # GPL
 PERMIT_PACKAGE=	Yes
-WANTLIB=		X11 Xext Xpm c xcb
+WANTLIB=		X11 Xext Xpm c
+
+MASTER_SITES=		https://www.dockapps.net/download/
 
 NO_TEST=		Yes
 
