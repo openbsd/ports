@@ -1,6 +1,10 @@
-$OpenBSD: patch-src_main_c,v 1.1.1.1 2010/10/17 21:38:05 landry Exp $
---- src/main.c.orig	Sun Oct 17 00:19:56 2010
-+++ src/main.c	Sat Oct 16 22:57:50 2010
+$OpenBSD: patch-src_main_c,v 1.2 2021/02/05 11:53:52 landry Exp $
+
+https://svnweb.freebsd.org/ports?view=revision&revision=547510
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
 @@ -3,7 +3,12 @@
  #endif
  
@@ -14,9 +18,13 @@ $OpenBSD: patch-src_main_c,v 1.1.1.1 2010/10/17 21:38:05 landry Exp $
  
  #include "interface.h"
  #include "support.h"
-@@ -14,6 +19,7 @@ GdkWindow    *gdkwin;
+@@ -13,7 +18,11 @@ GtkListStore *liststore;
+ GdkWindow    *gdkwin;
  gchar        *user_filename;
  gchar        *sys_filename;
++GtkWidget *gcolor2;
++GtkWidget *menu;
++GdkColor   colorvalue;
  
 +#include "main.h"
  

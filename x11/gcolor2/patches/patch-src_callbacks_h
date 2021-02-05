@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_callbacks_h,v 1.1 2021/02/05 11:53:52 landry Exp $
+
+https://svnweb.freebsd.org/ports?view=revision&revision=547510
+
+Index: src/callbacks.h
+--- src/callbacks.h.orig
++++ src/callbacks.h
+@@ -41,9 +41,9 @@
+                            "\302\267 Usability / user interface enhancements\n" \
+                            "\302\267 Code cleanup"
+ 
+-GtkWidget *gcolor2;
+-GtkWidget *menu;
+-GdkColor   colorvalue;
++extern GtkWidget *gcolor2;
++extern GtkWidget *menu;
++extern GdkColor   colorvalue;
+ 
+ enum
+ {
