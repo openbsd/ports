@@ -1,0 +1,15 @@
+$OpenBSD: patch-symbols_c,v 1.1 2021/02/06 13:20:30 jsg Exp $
+
+fix -fno-common build
+
+Index: symbols.c
+--- symbols.c.orig
++++ symbols.c
+@@ -62,7 +62,6 @@ symbol config_symbols[] = {
+   { "beats_elem_height",&beats_elem_height},
+   { NULL, NULL} };
+ 
+-int itdocks;
+ int itblinks;
+ int showampm;
+ 
