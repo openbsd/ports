@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2020/12/21 15:00:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/06 21:42:49 sthen Exp $
 
 COMMENT=	search engine library
 
-V=		1.4.17
+V=		1.4.18
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
 # the other xapian ports should be kept in-sync:
