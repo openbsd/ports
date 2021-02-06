@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.545 2021/01/24 07:15:04 robert Exp $
+# $OpenBSD: Makefile,v 1.546 2021/02/06 07:33:27 robert Exp $
 
 # /usr/local/bin/chrome[60]: /usr/local/chrome/chrome: Cannot allocate memory
 BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
@@ -15,8 +15,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			88.0.4324.96
-REVISION=		0
+V=			88.0.4324.150
 
 DISTNAME=		chromium-${V}
 

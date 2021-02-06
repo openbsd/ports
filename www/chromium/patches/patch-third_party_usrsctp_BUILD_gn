@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.8 2021/01/24 07:15:04 robert Exp $
+$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.9 2021/02/06 07:33:27 robert Exp $
 
 Index: third_party/usrsctp/BUILD.gn
 --- third_party/usrsctp/BUILD.gn.orig
@@ -12,19 +12,3 @@ Index: third_party/usrsctp/BUILD.gn
      defines = [ "HAVE_SCONN_LEN" ]
    }
  }
-@@ -127,9 +127,14 @@ static_library("usrsctp") {
-     "-UINET6",
-   ]
- 
--  if (is_linux || is_chromeos || is_android) {
-+  if ((is_linux || is_chromeos || is_android) && !is_openbsd) {
-     defines += [
-       "__Userspace_os_Linux",
-+      "_GNU_SOURCE",
-+    ]
-+  } else if (is_openbsd) {
-+    defines += [
-+      "__Userspace_os_OpenBSD",
-       "_GNU_SOURCE",
-     ]
-   } else if (is_apple) {
