@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1.1.1 2021/02/06 14:49:13 tb Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+mlvwm(1) does not currently include any default configurations and it can be
+time consuming to create configuration from scratch. It is highly suggested to
+use the configuration files from https://github.com/morgant/mlvwmrc as a
+starting point and adjust to suit your needs, esp. as it includes configuration
+for many popular applications.

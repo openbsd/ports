@@ -1,0 +1,8 @@
+MLVWM is a Macintosh-like virtual window manager for X11 created by
+Takashi Hasegawa. It supports monochrome and color modes, including
+System 6, MacOS 7, and Mac OS 8-like themes. It provides a customizable,
+application-specific menu bar, plus applications & windows menus,
+multiple desktops, collapsible windows, and supports "swallowing" other
+small X11 applications into the menu bar as widgets.
+
+MLVWM is freeware and distributed with source.

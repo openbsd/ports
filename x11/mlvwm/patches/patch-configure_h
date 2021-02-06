@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_h,v 1.1.1.1 2021/02/06 14:49:13 tb Exp $
+
+Index: configure.h
+--- configure.h.orig
++++ configure.h
+@@ -69,7 +69,7 @@ XCOMM
+ #endif
+ 
+ XCOMM 
+-      CDEBUGFLAGS = -g -Wall -Wshadow
++      CDEBUGFLAGS = -Wall -Wshadow
+ XCOMM            CDEBUGFLAGS = -O2 -Wall
+ XCOMM            CDEBUGFLAGS = -g -Wall
+ XCOMM            CDEBUGFLAGS = -g
