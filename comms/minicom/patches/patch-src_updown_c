@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_updown_c,v 1.6 2017/05/06 21:57:27 sthen Exp $
+$OpenBSD: patch-src_updown_c,v 1.7 2021/02/06 13:03:49 jsg Exp $
 
 Index: src/updown.c
 --- src/updown.c.orig
@@ -12,12 +12,3 @@ Index: src/updown.c
    static int init = 0;
  
    if (!init) {
-@@ -298,7 +298,7 @@ void updown(int what, int nr)
-     do_log("%s", cmdline);   /* jl 22.06.97 */
- 
-   if (P_PFULL(g) == 'N') {
--    win = mc_wopen(10, 7, 70, 13, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
-+    win = mc_wopen(5, 5, 74, 11, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
-     snprintf(title, sizeof(title), _("%.30s %s - Press CTRL-C to quit"), P_PNAME(g),
-              what == 'U' ? _("upload") : _("download"));
-     mc_wtitle(win, TMID, title);

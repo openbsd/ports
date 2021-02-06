@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_c,v 1.7 2017/05/06 22:00:53 sthen Exp $
+$OpenBSD: patch-src_main_c,v 1.8 2021/02/06 13:03:49 jsg Exp $
 
 Index: src/main.c
 --- src/main.c.orig
@@ -13,7 +13,7 @@ Index: src/main.c
  #include "port.h"
  #include "minicom.h"
  #include "intl.h"
-@@ -333,6 +336,17 @@ nolock:
+@@ -416,6 +419,17 @@ nolock:
    /* Set CLOCAL mode */
    m_nohang(portfd);
  
@@ -31,7 +31,7 @@ Index: src/main.c
    /* Set Hangup on Close if program crashes. (Hehe) */
    m_hupcl(portfd, 1);
    if (doinit > 0)
-@@ -553,9 +567,10 @@ static void show_status_fmt(const char *fmt)
+@@ -641,9 +655,10 @@ static void show_status_fmt(const char *fmt)
                  bufi += snprintf(buf + bufi, COLS - bufi, "%s",
                                   P_HASDCD[0] == 'Y' ? _("Offline") : _("OFFLINE"));
                else

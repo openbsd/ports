@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_sysdep1_c,v 1.4 2017/05/06 21:57:27 sthen Exp $
+$OpenBSD: patch-src_sysdep1_c,v 1.5 2021/02/06 13:03:49 jsg Exp $
 
 Index: src/sysdep1.c
 --- src/sysdep1.c.orig
 +++ src/sysdep1.c
-@@ -65,13 +65,13 @@ static void m_setrts(int fd)
+@@ -66,13 +66,13 @@ static void m_setrts(int fd)
    if (portfd_is_socket)
      return;
  #endif
@@ -20,7 +20,7 @@ Index: src/sysdep1.c
    }
  #endif
  }
-@@ -180,11 +180,11 @@ int m_getdcd(int fd)
+@@ -179,11 +179,11 @@ int m_getdcd(int fd)
      return portfd_is_connected;
    }
  #endif
@@ -34,7 +34,7 @@ Index: src/sysdep1.c
        return -1;
      return mcs & TIOCM_CAR ? 1 : 0;
    }
-@@ -227,8 +227,8 @@ void m_savestate(int fd)
+@@ -226,8 +226,8 @@ void m_savestate(int fd)
    ioctl(fd, TIOCLGET, &lsw);
  #  endif
  #endif
@@ -45,7 +45,7 @@ Index: src/sysdep1.c
  #endif
  }
  
-@@ -252,8 +252,8 @@ void m_restorestate(int fd)
+@@ -251,8 +251,8 @@ void m_restorestate(int fd)
    ioctl(fd, TIOCLSET, &lsw);
  #  endif
  #endif

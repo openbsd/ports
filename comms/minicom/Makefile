@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2020/03/20 16:44:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.68 2021/02/06 13:03:49 jsg Exp $
 
 COMMENT=	MS-DOS Telix-like serial communication program
 
-DISTNAME=	minicom-2.7.1
-REVISION=	3
+DISTNAME=	minicom-2.8
 CATEGORIES=	comms
-MASTER_SITES=	https://alioth-archive.debian.org/releases/minicom/Source/2.7.1/
+MASTER_SITES=	https://salsa.debian.org/minicom-team/minicom/-/archive/2.8/
 
 HOMEPAGE=	https://salsa.debian.org/minicom-team/minicom
 
