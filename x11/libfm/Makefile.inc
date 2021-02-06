@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 20:51:15 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2021/02/06 09:33:04 ajacoutot Exp $
 
-V=			1.3.1
+V=			1.3.2
 DISTNAME=		libfm-${V}
 EXTRACT_SUFX=		.tar.xz
 
 # quantum entanglement between core and extra
-SHARED_LIBS +=  fm                   1.1      # 5.2
-SHARED_LIBS +=  fm-gtk               1.1      # 5.2
-SHARED_LIBS +=  fm-extra             1.1      # 5.2
+SHARED_LIBS +=  fm                   1.1      # 5.3
+SHARED_LIBS +=  fm-gtk               1.1      # 5.3
+SHARED_LIBS +=  fm-extra             1.1      # 5.3
 
 CATEGORIES +=		x11 devel
 
@@ -28,3 +28,5 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 # prevent undefined references to libc functions
 CONFIGURE_ENV +=	ac_cv_ld_z_defs=no
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}

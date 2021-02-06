@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/12/21 13:31:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/02/06 09:33:04 ajacoutot Exp $
 @pkgpath x11/libfm
 @bin bin/libfm-pref-apps
 @bin bin/lxshortcut
@@ -70,19 +70,19 @@ include/libfm-1.0/fm-thumbnailer.h
 include/libfm-1.0/fm-utils.h
 include/libfm-1.0/fm.h
 lib/libfm/
-lib/libfm-gtk.a
 lib/libfm-gtk.la
+@static-lib lib/libfm-gtk.a
 @lib lib/libfm-gtk.so.${LIBfm-gtk_VERSION}
-lib/libfm.a
+@static-lib lib/libfm.a
 lib/libfm.la
 @lib lib/libfm.so.${LIBfm_VERSION}
 lib/libfm/modules/
-lib/libfm/modules/gtk-fileprop-x-desktop.so
-lib/libfm/modules/gtk-fileprop-x-shortcut.so
-lib/libfm/modules/gtk-menu-actions.so
-lib/libfm/modules/gtk-menu-trash.so
-lib/libfm/modules/vfs-menu.so
-lib/libfm/modules/vfs-search.so
+@so lib/libfm/modules/gtk-fileprop-x-desktop.so
+@so lib/libfm/modules/gtk-fileprop-x-shortcut.so
+@so lib/libfm/modules/gtk-menu-actions.so
+@so lib/libfm/modules/gtk-menu-trash.so
+@so lib/libfm/modules/vfs-menu.so
+@so lib/libfm/modules/vfs-search.so
 lib/pkgconfig/libfm-gtk.pc
 lib/pkgconfig/libfm.pc
 @man man/man1/libfm-pref-apps.1
