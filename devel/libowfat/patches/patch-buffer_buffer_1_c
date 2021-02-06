@@ -1,0 +1,14 @@
+$OpenBSD: patch-buffer_buffer_1_c,v 1.1 2021/02/06 12:04:43 jan Exp $
+
+Index: buffer/buffer_1.c
+--- buffer/buffer_1.c.orig
++++ buffer/buffer_1.c
+@@ -4,7 +4,7 @@
+ #include <io.h>
+ #endif
+ 
+-char buffer_1_space[BUFFER_INSIZE];
++static char buffer_1_space[BUFFER_INSIZE];
+ static buffer it = BUFFER_INIT(write,1,buffer_1_space,sizeof buffer_1_space);
+ buffer *buffer_1 = &it;
+ 

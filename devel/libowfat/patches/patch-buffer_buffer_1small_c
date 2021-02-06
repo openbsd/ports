@@ -1,0 +1,14 @@
+$OpenBSD: patch-buffer_buffer_1small_c,v 1.1 2021/02/06 12:04:43 jan Exp $
+
+Index: buffer/buffer_1small.c
+--- buffer/buffer_1small.c.orig
++++ buffer/buffer_1small.c
+@@ -1,7 +1,7 @@
+ #include <unistd.h>
+ #include "buffer.h"
+ 
+-char buffer_1_space[128];
++static char buffer_1_space[128];
+ static buffer it = BUFFER_INIT(write,1,buffer_1_space,sizeof buffer_1_space);
+ buffer *buffer_1small = &it;
+ 

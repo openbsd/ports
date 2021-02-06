@@ -1,0 +1,14 @@
+$OpenBSD: patch-io_internal_h,v 1.1 2021/02/06 12:04:43 jan Exp $
+
+Index: io_internal.h
+--- io_internal.h.orig
++++ io_internal.h
+@@ -83,7 +83,7 @@ my_extern array io_pollfds;
+ my_extern long first_readable;
+ my_extern long first_writeable;
+ 
+-my_extern long first_deferred;
++extern long first_deferred;
+ 
+ my_extern enum __io_waitmode {
+   UNDECIDED,

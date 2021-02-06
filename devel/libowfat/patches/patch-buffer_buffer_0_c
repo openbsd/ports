@@ -1,0 +1,14 @@
+$OpenBSD: patch-buffer_buffer_0_c,v 1.1 2021/02/06 12:04:43 jan Exp $
+
+Index: buffer/buffer_0.c
+--- buffer/buffer_0.c.orig
++++ buffer/buffer_0.c
+@@ -6,7 +6,7 @@ static ssize_t b0read(int fd,char* buf, size_t len) {
+   return read(fd,buf,len);
+ }
+ 
+-char buffer_0_space[BUFFER_INSIZE];
++static char buffer_0_space[BUFFER_INSIZE];
+ static buffer it = BUFFER_INIT_READ(b0read,0,buffer_0_space,sizeof buffer_0_space);
+ buffer *buffer_0 = &it;
+ 
