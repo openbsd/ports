@@ -1,6 +1,16 @@
-$OpenBSD: patch-global_h,v 1.1 2012/03/17 22:36:26 naddy Exp $
---- global.h.orig	Sat Mar 17 16:29:59 2012
-+++ global.h	Sat Mar 17 16:30:22 2012
+$OpenBSD: patch-global_h,v 1.2 2021/02/06 17:27:38 naddy Exp $
+Index: global.h
+--- global.h.orig
++++ global.h
+@@ -160,7 +160,7 @@ extern char    *group_file_name;
+ extern group_header *current_group, *group_sequence, *rc_sequence;
+ 
+ 
+-int             l_g_index, s_g_first;
++extern int      l_g_index, s_g_first;
+ 
+ #define	Loop_Groups_Number(num) \
+     for (num = 0; num < master.number_of_groups; num++)
 @@ -258,7 +258,7 @@ int             nn_truncate(char *, off_t);
  char           *strsave(char *);
  char           *str3save(char *, char *, char *);

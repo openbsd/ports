@@ -1,0 +1,14 @@
+$OpenBSD: patch-db_c,v 1.1 2021/02/06 17:27:38 naddy Exp $
+
+Index: db.c
+--- db.c.orig
++++ db.c
+@@ -127,6 +127,8 @@ group_header   *current_group = NULL;
+ char            group_path_name[FILENAME];
+ char           *group_file_name = NULL;
+ 
++int             l_g_index, s_g_first;
++
+ static char    *group_position = NULL;
+ static article_number current_digest_article = 0;
+ 

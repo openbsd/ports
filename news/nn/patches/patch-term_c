@@ -1,6 +1,7 @@
-$OpenBSD: patch-term_c,v 1.3 2017/04/15 14:11:36 naddy Exp $
---- term.c.orig	Wed Jun 29 23:40:27 2005
-+++ term.c	Fri Apr 14 23:16:01 2017
+$OpenBSD: patch-term_c,v 1.4 2021/02/06 17:27:38 naddy Exp $
+Index: term.c
+--- term.c.orig
++++ term.c
 @@ -25,7 +25,7 @@
  #include "regexp.h"
  #include "nn_term.h"
@@ -22,7 +23,15 @@ $OpenBSD: patch-term_c,v 1.3 2017/04/15 14:11:36 naddy Exp $
  
  #endif
  
-@@ -171,8 +171,8 @@ extern char    *tgoto();	/* some systems don't have th
+@@ -139,6 +139,7 @@ int             message_history = 15;
+ char           *term_name = NULL;
+ int             show_current_time = 1;
+ int             conf_dont_sleep = 0;
++int             prompt_line;
+ int             prompt_length;
+ int             terminal_speed = 0;
+ int             slow_speed = 1200;
+@@ -171,8 +172,8 @@ extern char    *tgoto();	/* some systems don't have th
  #else
  
  char           *tgoto();

@@ -1,0 +1,14 @@
+$OpenBSD: patch-news_c,v 1.1 2021/02/06 17:27:38 naddy Exp $
+
+Index: news.c
+--- news.c.orig
++++ news.c
+@@ -24,6 +24,8 @@
+ 
+ static char   **art_hdr_field(register char *lp, int all);
+ 
++struct news_header news;
++struct digest_header digest;
+ 
+ int             retry_on_error = 0;
+ 

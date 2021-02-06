@@ -1,0 +1,16 @@
+$OpenBSD: patch-articles_h,v 1.1 2021/02/06 17:27:38 naddy Exp $
+
+Index: articles.h
+--- articles.h.orig
++++ articles.h
+@@ -10,8 +10,8 @@
+ 
+ /* article headers */
+ 
+-article_number  n_articles;
+-article_header **articles;
++extern article_number  n_articles;
++extern article_header **articles;
+ 
+ 
+ typedef struct thunk {

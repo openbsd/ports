@@ -1,0 +1,14 @@
+$OpenBSD: patch-nn_term_h,v 1.1 2021/02/06 17:27:38 naddy Exp $
+
+Index: nn_term.h
+--- nn_term.h.orig
++++ nn_term.h
+@@ -48,7 +48,7 @@ extern int      STANDOUT;
+  */
+ 
+ 
+-int             prompt_line;	/* prompt line */
++extern int      prompt_line;	/* prompt line */
+ 
+ #define	P_MOVE		(char *)1
+ #define P_REDRAW	(char *)5

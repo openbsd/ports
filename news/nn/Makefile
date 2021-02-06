@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2020/01/26 11:14:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/06 17:27:38 naddy Exp $
 
 COMMENT =		menu-based Usenet newsreader
 DISTNAME =		nn-6.7.3
-REVISION =		5
+REVISION =		6
 CATEGORIES =		news
 HOMEPAGE =		http://www.nndev.org
 

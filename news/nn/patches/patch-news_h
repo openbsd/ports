@@ -1,0 +1,25 @@
+$OpenBSD: patch-news_h,v 1.1 2021/02/06 17:27:38 naddy Exp $
+
+Index: news.h
+--- news.h.orig
++++ news.h
+@@ -44,7 +44,8 @@ struct news_header {
+     char           *ng_xlines;	/* lines (from header)	 */
+     int             ng_lines;	/* lines (decoded)		 */
+     char           *ng_comment;	/* comment-to (rfmail)	 */
+-}               news;
++};
++extern struct news_header news;
+ 
+ 
+ /*
+@@ -62,7 +63,8 @@ struct digest_header {
+     char           *dg_to;	/* to				 */
+ 
+     int             dg_lines;	/* lines (pseudo field)	 */
+-}               digest;
++};
++extern struct digest_header digest;
+ 
+ 
+ #define	NEWS_HEADER_BUFFER	4096
