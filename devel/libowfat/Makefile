@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/06 13:55:08 sthen Exp $
 
 COMMENT =	library of general purpose APIs
 
 DISTNAME =	libowfat-0.32
+REVISION =	0
 EXTRACT_SUFX =	.tar.xz
 
 SHARED_LIBS=	owfat 0.1
