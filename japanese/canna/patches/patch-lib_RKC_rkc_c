@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_RKC_rkc_c,v 1.1 2021/02/06 15:24:06 espie Exp $
+
+Index: lib/RKC/rkc.c
+--- lib/RKC/rkc.c.orig
++++ lib/RKC/rkc.c
+@@ -254,5 +254,5 @@ int	clientcx, type ;
+ int RkwSetUserInfo pro((char *, char *, char *));
+ 
+-RkUserInfo *uinfo;
++extern RkUserInfo *uinfo;
+ 
+ int
