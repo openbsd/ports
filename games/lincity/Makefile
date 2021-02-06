@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/06 09:31:46 kirby Exp $
 
 COMMENT=		Rich city simulation game for X
 
 DISTNAME=		lincity-1.13.1
 CATEGORIES=		games
 HOMEPAGE=		http://lincity.sourceforge.net/
-REVISION=		0
+REVISION=		1
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes

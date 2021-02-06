@@ -1,0 +1,16 @@
+$OpenBSD: patch-screen_h,v 1.1 2021/02/06 09:31:46 kirby Exp $
+Fix for -fno-common from Gentoo
+https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=8edf247202490c028bce701f26b52e39f996c287
+
+Index: screen.h
+--- screen.h.orig
++++ screen.h
+@@ -20,7 +20,7 @@ extern unsigned char start_font1[2048];
+ extern unsigned char start_font2[4096];
+ extern unsigned char start_font3[4096];
+ 
+-int monthgraph_style;
++extern int monthgraph_style;
+ 
+ /* This is on in screen_full_refresh, used in *_refresh() */
+ extern char screen_refreshing;

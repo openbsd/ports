@@ -1,0 +1,18 @@
+$OpenBSD: patch-main_c,v 1.1 2021/02/06 09:31:46 kirby Exp $
+Fix for -fno-common from Gentoo
+https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=8edf247202490c028bce701f26b52e39f996c287
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -96,9 +96,8 @@ char LIBDIR[LC_PATH_MAX];
+ #endif
+ #endif
+ 
+-char *lc_save_dir;
++extern char *lc_save_dir;
+ char *lc_temp_file;
+-char save_names[10][42];
+ 
+ #ifdef CS_PROFILE
+ int prof_countdown = PROFILE_COUNTDOWN;

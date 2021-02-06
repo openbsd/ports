@@ -1,0 +1,16 @@
+$OpenBSD: patch-fileutil_c,v 1.1 2021/02/06 09:31:46 kirby Exp $
+Fix for -fno-common from Gentoo
+https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=8edf247202490c028bce701f26b52e39f996c287
+
+Index: fileutil.c
+--- fileutil.c.orig
++++ fileutil.c
+@@ -105,7 +105,7 @@ static const char *guess_category_value (int category,
+  * ---------------------------------------------------------------------- */
+ char LIBDIR[LC_PATH_MAX];
+ 
+-char *lc_save_dir;
++extern char *lc_save_dir;
+ int lc_save_dir_len;
+ static char *lc_temp_filename;
+ 
