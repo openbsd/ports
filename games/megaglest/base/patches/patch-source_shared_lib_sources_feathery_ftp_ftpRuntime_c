@@ -1,0 +1,21 @@
+$OpenBSD: patch-source_shared_lib_sources_feathery_ftp_ftpRuntime_c,v 1.1 2021/02/06 21:12:02 kirby Exp $
+fix for -fno-common
+https://github.com/MegaGlest/megaglest-source/commit/5a3520540276a6fd06f7c88e571b6462978e3eab
+
+Index: source/shared_lib/sources/feathery_ftp/ftpRuntime.c
+--- source/shared_lib/sources/feathery_ftp/ftpRuntime.c.orig
++++ source/shared_lib/sources/feathery_ftp/ftpRuntime.c
+@@ -30,6 +30,13 @@
+ #include "ftp.h"
+ #include "ftpMessages.h"
+ 
++int VERBOSE_MODE_ENABLED;
++
++ftpFindExternalFTPServerIpType ftpFindExternalFTPServerIp;
++ftpAddUPNPPortForwardType              ftpAddUPNPPortForward;
++ftpRemoveUPNPPortForwardType   ftpRemoveUPNPPortForward;
++ftpIsValidClientType            ftpIsValidClient;
++ftpIsClientAllowedToGetFileType ftpIsClientAllowedToGetFile;
+ 
+ /**
+  * @brief server-sockets that listens for incoming connections
