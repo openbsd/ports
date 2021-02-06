@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2020/07/18 11:32:27 jasper Exp $
+$OpenBSD: README,v 1.4 2021/02/06 17:31:27 solene Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -41,7 +41,7 @@ the shell config, so we have to source it anyway. Put the following in
 ~/.config/fish/config.fish:
 
 ```
-source ${FISH_SITE}/functions/fzf-key-bindings.fish
+source ${FISH_SITE}/fzf-key-bindings.fish
 fzf_key_bindings
 ```
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/01 10:59:45 edd Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/06 17:31:27 solene Exp $
 
 COMMENT =	command-line fuzzy finder
 
 # Note: we make our own vendored distfile as upstream doesn't do semantic
 # versioning. Use 'go mod vendor'.
 DISTNAME =	fzf-0.24.1
+REVISION =	0
 
 CATEGORIES =	sysutils
 
