@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2020/11/13 21:34:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2021/02/06 21:40:58 sthen Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
-DISTNAME=	monit-5.27.1
+DISTNAME=	monit-5.27.2
 
 CATEGORIES=	sysutils
 
@@ -28,7 +28,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/monitrc
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/monit
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/monit
 	${INSTALL_DATA} ${WRKSRC}/monitrc ${PREFIX}/share/examples/monit
 
 .include <bsd.port.mk>
