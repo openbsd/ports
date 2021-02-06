@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.689 2021/01/30 11:41:49 kn Exp $
+# $OpenBSD: Makefile,v 1.690 2021/02/06 14:49:55 tb Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -175,6 +175,7 @@
      SUBDIR += menu-cache
      SUBDIR += menumaker
      SUBDIR += mlterm
+     SUBDIR += mlvwm
      SUBDIR += moka-icon-theme
      SUBDIR += mono-gtk2
      SUBDIR += motif
