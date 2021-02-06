@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.58 2020/10/05 19:46:18 jca Exp $
+# $OpenBSD: Makefile,v 1.59 2021/02/06 18:39:11 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 
-VERSION =		1.14.0
-REVISION =		0
+VERSION =		1.15.1
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
 
 CATEGORIES =		security devel
 
-SHARED_LIBS +=  gpgme                22.0     # 33.1
-SHARED_LIBS +=  gpgmepp              0.0      # 16.0
-SHARED_LIBS +=  qgpgme               0.0      # 10.4
+SHARED_LIBS +=  gpgme                22.1     # 35.1
+SHARED_LIBS +=  gpgmepp              0.0      # 18.1
+SHARED_LIBS +=  qgpgme               0.0      # 12.1
 
 HOMEPAGE =		https://www.gnupg.org/software/gpgme/index.html
 
