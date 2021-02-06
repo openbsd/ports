@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2021/02/02 12:03:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2021/02/06 09:02:25 ajacoutot Exp $
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.27.4
+MODGO_VERSION=	v0.28.2
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/gruntwork-io/terragrunt@${MODGO_VERSION}
@@ -231,7 +231,7 @@ MODGO_MODULES =	\
 	github.com/keybase/go-crypto					 v0.0.0-20161004153544-93f5b35093ba \
 	github.com/kisielk/errcheck					 v1.2.0 \
 	github.com/kisielk/gotool					 v1.0.0 \
-	github.com/konsorten/go-windows-terminal-sequences		 v1.0.2 \
+	github.com/konsorten/go-windows-terminal-sequences		 v1.0.3 \
 	github.com/kr/logfmt						 v0.0.0-20140226030751-b84e30acd515 \
 	github.com/kr/pretty						 v0.2.0 \
 	github.com/kr/pty						 v1.1.5 \
@@ -312,7 +312,7 @@ MODGO_MODULES =	\
 	github.com/sean-/seed						 v0.0.0-20170313163322-e2103e2c3529 \
 	github.com/sergi/go-diff					 v1.0.0 \
 	github.com/shurcoo!l/sanitized_anchor_name			 v1.0.0 \
-	github.com/sirupsen/logrus					 v1.4.2 \
+	github.com/sirupsen/logrus					 v1.6.0 \
 	github.com/smartystreets/assertions				 v0.0.0-20180927180507-b2de0cb4f26d \
 	github.com/smartystreets/goconvey				 v0.0.0-20190710185942-9d28bd7c0945 \
 	github.com/soheilhy/cmux					 v0.1.4 \
@@ -608,6 +608,7 @@ MODGO_MODFILES =	\
 	github.com/jtolds/gls					 v4.2.1+incompatible \
 	github.com/kisielk/errcheck				 v1.1.0 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.1 \
+	github.com/konsorten/go-windows-terminal-sequences	 v1.0.2 \
 	github.com/kr/pretty					 v0.1.0 \
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kylelemons/godebug				 v0.0.0-20170820004349-d65d576e9348 \
@@ -660,6 +661,7 @@ MODGO_MODFILES =	\
 	github.com/prometheus/procfs				 v0.0.0-20190117184657-bf6a532e95b1 \
 	github.com/sirupsen/logrus				 v1.2.0 \
 	github.com/sirupsen/logrus				 v1.4.1 \
+	github.com/sirupsen/logrus				 v1.4.2 \
 	github.com/smartystreets/goconvey			 v0.0.0-20180222194500-ef6db91d284a \
 	github.com/spf13/afero					 v1.1.2 \
 	github.com/spf13/afero					 v1.2.1 \

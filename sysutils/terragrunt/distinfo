@@ -604,7 +604,8 @@ SHA256 (go_modules/github.com/kisielk/gotool/@v/v1.0.0.mod) = d6ynv/wOwp/J8IjVli
 SHA256 (go_modules/github.com/kisielk/gotool/@v/v1.0.0.zip) = CJ27puOqCZRP20DXKsyGaU6L3eAc/A9A/gJIMJ64Cj8=
 SHA256 (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.1.mod) = a2na/Tz2TXtX6XiEin4nGivgoE2aJWTdJVZJHSfQoDQ=
 SHA256 (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.2.mod) = a2na/Tz2TXtX6XiEin4nGivgoE2aJWTdJVZJHSfQoDQ=
-SHA256 (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.2.zip) = TQDXG43mC8r0VPj4ZyEOvNBedcCnwnJZBPcaovIPsI4=
+SHA256 (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.3.mod) = a2na/Tz2TXtX6XiEin4nGivgoE2aJWTdJVZJHSfQoDQ=
+SHA256 (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.3.zip) = QpsBQTuXKxCOqGu949XmYJE/PoCZGQ0HzPsvGGvG2Dc=
 SHA256 (go_modules/github.com/kr/logfmt/@v/v0.0.0-20140226030751-b84e30acd515.mod) = 7qRnFT2AM29hdNQNHKAiYYxPO5NhD9YgQJKf/gCbqaY=
 SHA256 (go_modules/github.com/kr/logfmt/@v/v0.0.0-20140226030751-b84e30acd515.zip) = 69lWU6rKYYIYShubMJpl1V60x8gzxeeQruEe/XPUciw=
 SHA256 (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 49XUbS9qyUpmalS16GfsFr8ZnZ9LcAgnzXMWB+/dEJo=
@@ -818,7 +819,8 @@ SHA256 (go_modules/github.com/shurcoo!l/sanitized_anchor_name/@v/v1.0.0.zip) = C
 SHA256 (go_modules/github.com/sirupsen/logrus/@v/v1.2.0.mod) = 1nBJZSdJq8ZWDyLe46J6q3laMu4sfgeKVGFaYberuZs=
 SHA256 (go_modules/github.com/sirupsen/logrus/@v/v1.4.1.mod) = IZhVqH+9xtsFniEEB1V/JGIZgbHxdQWpJKVYMqxwkRM=
 SHA256 (go_modules/github.com/sirupsen/logrus/@v/v1.4.2.mod) = bGu7yl+tfqm4Y9nsmcMMqneAV4VAWyHnDXV4O1GUxng=
-SHA256 (go_modules/github.com/sirupsen/logrus/@v/v1.4.2.zip) = mo5VgwJhpLHJNQ18RdsCnIWGwLLZNNEiTN5GlCUDHt0=
+SHA256 (go_modules/github.com/sirupsen/logrus/@v/v1.6.0.mod) = vqztqNyv7CWp+P7EeN4s0t9pZYtkPg/fyACYDy45V/M=
+SHA256 (go_modules/github.com/sirupsen/logrus/@v/v1.6.0.zip) = dJNcaO4lZ+S2ZeG0swh/Wk74YVYvODuOgX6Vsxx5jtY=
 SHA256 (go_modules/github.com/smartystreets/assertions/@v/v0.0.0-20180927180507-b2de0cb4f26d.mod) = dczYdx8joEN552MQRMT7cLSbJ6CWUCmXUu5xLwimrdc=
 SHA256 (go_modules/github.com/smartystreets/assertions/@v/v0.0.0-20180927180507-b2de0cb4f26d.zip) = BDTBLEHLTD5+vy+kTT7qr6dbmmGoDjBAjtjgnD1dPXA=
 SHA256 (go_modules/github.com/smartystreets/goconvey/@v/v0.0.0-20180222194500-ef6db91d284a.mod) = +aCgDKxRccIgKTrXPbv5WWBO3iyQUw7evlu4duvxtxc=
@@ -1372,7 +1374,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.1.zip) = GiqBAxR
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terragrunt-v0.27.4.zip) = FEOIhp4olXgntThWO6wgHuoNbI91x0XuAiDAM4DkmME=
+SHA256 (terragrunt-v0.28.2.zip) = xvA85gKsM8xOOsb6wj2NdjFGcMYymY61m2feY0lRmEs=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1979,7 +1981,8 @@ SIZE (go_modules/github.com/kisielk/gotool/@v/v1.0.0.mod) = 35
 SIZE (go_modules/github.com/kisielk/gotool/@v/v1.0.0.zip) = 18981
 SIZE (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.1.mod) = 58
 SIZE (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.2.mod) = 58
-SIZE (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.2.zip) = 3968
+SIZE (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.3.mod) = 58
+SIZE (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.3.zip) = 3966
 SIZE (go_modules/github.com/kr/logfmt/@v/v0.0.0-20140226030751-b84e30acd515.mod) = 28
 SIZE (go_modules/github.com/kr/logfmt/@v/v0.0.0-20140226030751-b84e30acd515.zip) = 9142
 SIZE (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 67
@@ -2193,7 +2196,8 @@ SIZE (go_modules/github.com/shurcoo!l/sanitized_anchor_name/@v/v1.0.0.zip) = 339
 SIZE (go_modules/github.com/sirupsen/logrus/@v/v1.2.0.mod) = 393
 SIZE (go_modules/github.com/sirupsen/logrus/@v/v1.4.1.mod) = 337
 SIZE (go_modules/github.com/sirupsen/logrus/@v/v1.4.2.mod) = 337
-SIZE (go_modules/github.com/sirupsen/logrus/@v/v1.4.2.zip) = 58627
+SIZE (go_modules/github.com/sirupsen/logrus/@v/v1.6.0.mod) = 301
+SIZE (go_modules/github.com/sirupsen/logrus/@v/v1.6.0.zip) = 65802
 SIZE (go_modules/github.com/smartystreets/assertions/@v/v0.0.0-20180927180507-b2de0cb4f26d.mod) = 43
 SIZE (go_modules/github.com/smartystreets/assertions/@v/v0.0.0-20180927180507-b2de0cb4f26d.zip) = 81760
 SIZE (go_modules/github.com/smartystreets/goconvey/@v/v0.0.0-20180222194500-ef6db91d284a.mod) = 41
@@ -2747,4 +2751,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.1.zip) = 220145
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terragrunt-v0.27.4.zip) = 2470871
+SIZE (terragrunt-v0.28.2.zip) = 2473935
