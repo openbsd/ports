@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.6 2021/02/04 18:43:58 sthen Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.7 2021/02/06 21:32:06 sthen Exp $
 lib/kamailio/kamctl/kamctl.mysql
 lib/kamailio/kamctl/kamdbctl.mysql
 @so lib/kamailio/modules/db_mysql.so
@@ -19,7 +19,7 @@ share/kamailio/mysql/drouting-create.sql
 share/kamailio/mysql/group-create.sql
 share/kamailio/mysql/htable-create.sql
 share/kamailio/mysql/imc-create.sql
-share/kamailio/mysql/ims_charging_create.sql
+share/kamailio/mysql/ims_charging-create.sql
 share/kamailio/mysql/ims_dialog-create.sql
 share/kamailio/mysql/ims_usrloc_pcscf-create.sql
 share/kamailio/mysql/ims_usrloc_scscf-create.sql
@@ -38,6 +38,7 @@ share/kamailio/mysql/rls-create.sql
 share/kamailio/mysql/rtpengine-create.sql
 share/kamailio/mysql/rtpproxy-create.sql
 share/kamailio/mysql/sca-create.sql
+share/kamailio/mysql/secfilter-create.sql
 share/kamailio/mysql/siptrace-create.sql
 share/kamailio/mysql/speeddial-create.sql
 share/kamailio/mysql/standard-create.sql

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_rules,v 1.1 2021/02/06 21:32:06 sthen Exp $
+
+Index: src/Makefile.rules
+--- src/Makefile.rules.orig
++++ src/Makefile.rules
+@@ -44,7 +44,7 @@ ALLDEP+=makecfg.lst
+ crt_type=$(if $(MOD_NAME),M,$(if $(LIB_NAME),L,$(if $(UTIL_NAME),U)))
+ 
+ cmd_CC=$(CC) $(CFLAGS) $(C_INCLUDES) $(INCLUDES) $(C_DEFS) $(DEFS) -c $< -o $@
+-cmd_LD=$(LD) $(LDFLAGS) $(objs) $(extra_objs) $(ALL_LIBS) $(SER_RPATH) \
++cmd_LD=$(LD) $(LDFLAGS) -lm $(objs) $(extra_objs) $(ALL_LIBS) $(SER_RPATH) \
+ 	-o $(NAME)
+ 
+ ifeq (,$(CC_MKDEP_OPTS))

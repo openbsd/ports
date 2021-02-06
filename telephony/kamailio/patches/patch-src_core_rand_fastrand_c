@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_core_rand_fastrand_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
---- src/core/rand/fastrand.c.orig	Mon May 15 22:48:56 2017
-+++ src/core/rand/fastrand.c	Mon May 15 22:50:19 2017
-@@ -25,6 +25,18 @@
+$OpenBSD: patch-src_core_rand_fastrand_c,v 1.2 2021/02/06 21:32:06 sthen Exp $
+
+Index: src/core/rand/fastrand.c
+--- src/core/rand/fastrand.c.orig
++++ src/core/rand/fastrand.c
+@@ -23,6 +23,23 @@
  #include "fastrand.h"
  
  #include <stdlib.h>
@@ -16,11 +18,16 @@ $OpenBSD: patch-src_core_rand_fastrand_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
 +{
 +	return arc4random_uniform(max+1);
 +}
++
++void fastrand_seed(unsigned int seed)
++{
++	return;
++}
 +#else
  #include "isaac/rand.h"
  
  #define FASTRAND_MAX  ((unsigned int)(-1))
-@@ -54,3 +66,4 @@ unsigned int fastrand_max(unsigned int max)
+@@ -52,3 +69,4 @@ unsigned int fastrand_max(unsigned int max)
  {
  	return fastrand()%(max+1);
  }

@@ -1,20 +1,22 @@
-$OpenBSD: patch-src_Makefile_defs,v 1.4 2020/04/06 14:48:59 jca Exp $
+$OpenBSD: patch-src_Makefile_defs,v 1.5 2021/02/06 21:32:06 sthen Exp $
+
 Index: src/Makefile.defs
 --- src/Makefile.defs.orig
 +++ src/Makefile.defs
-@@ -318,9 +318,9 @@ ppc_macros= __powerpc __powerpc__ __POWERPC__ __ppc__ 
+@@ -376,10 +376,10 @@ ppc_macros= __powerpc __powerpc__ __POWERPC__ __ppc__ 
  ppc64_macros= __ppc64__ _ARCH_PPC64
  
  mips_macros= __mips__ __mips _MIPS_ARCH_MIPS1
 -mips2_macros= _MIPS_ISA_MIPS2 _MIPS_ISA_MIPS3 _MIPS_ISA_MIPS4 \
 +mips2_macros= _MIPS_ISA_MIPS2 _MIPS_ISA_MIPS4 \
- 			_MIPS_ARCH_MIPS2 _MIPS_ARCH_MIPS3 _MIPS_ARCH_MIPS4
+ 			_MIPS_ARCH_MIPS2 _MIPS_ARCH_MIPS3 _MIPS_ARCH_MIPS4 \
+ 			_MIPS_ISA_MIPS32
 -mips64_macros= _MIPS_ISA_MIPS64 _MIPS_ARCH_MIPS64
 +mips64_macros= _MIPS_ISA_MIPS64 _MIPS_ARCH_MIPS64 _MIPS_ISA_MIPS3
  
  alpha_macros= __alpha__ __alpha _M_ALPHA_
  
-@@ -938,8 +938,8 @@ else		# CC_NAME, gcc
+@@ -991,8 +991,8 @@ else		# CC_NAME, gcc
  ifeq		($(CC_NAME), clang)
  $(call                          set_if_empty,CPUTYPE,athlon64)
  					C_DEFS+=-DCC_GCC_LIKE_ASM
@@ -25,7 +27,7 @@ Index: src/Makefile.defs
  else			# CC_NAME, clang
  ifeq		($(CC_NAME), icc)
  			C_DEFS+=-DCC_GCC_LIKE_ASM
-@@ -1031,9 +1031,8 @@ else		# CC_NAME, gcc
+@@ -1073,9 +1073,8 @@ else		# CC_NAME, gcc
  ifeq            ($(CC_NAME), clang)
  $(call                          set_if_empty,CPUTYPE,opteron)
  					C_DEFS+=-DCC_GCC_LIKE_ASM
@@ -37,8 +39,8 @@ Index: src/Makefile.defs
  else      	# CC_NAME, clang
  ifeq		($(CC_NAME), icc)
  			C_DEFS+=-DCC_GCC_LIKE_ASM
-@@ -1130,6 +1129,9 @@ endif			#CC_SHORTVER, 4.x
- endif			#CC_SHORTVER, 7.0+, 6.0+, 5.0+, 4.5+ or 4.2+
+@@ -1172,6 +1171,9 @@ endif			#CC_SHORTVER, 4.x
+ endif			#CC_SHORTVER, 9.0+ 8.0+ 7.0+, 6.0+, 5.0+, 4.5+ or 4.2+
  
  else		#CC_NAME, gcc
 +ifeq		($(CC_NAME), clang)
@@ -47,7 +49,7 @@ Index: src/Makefile.defs
  ifeq		($(CC_NAME), suncc)
  			C_DEFS+=-DCC_GCC_LIKE_ASM
  			C_DEFS+=-DSPARC64_MODE
-@@ -1142,6 +1144,7 @@ else
+@@ -1184,6 +1186,7 @@ else
  				#other compilers
  $(error 			Unsupported compiler ($(CC):$(CC_NAME)), try gcc)
  endif		#CC_NAME, suncc

@@ -1,26 +1,23 @@
-$OpenBSD: patch-utils_kamctl_kamctlrc,v 1.5 2018/03/20 22:03:35 sthen Exp $
+$OpenBSD: patch-utils_kamctl_kamctlrc,v 1.6 2021/02/06 21:32:06 sthen Exp $
+
 Index: utils/kamctl/kamctlrc
 --- utils/kamctl/kamctlrc.orig
 +++ utils/kamctl/kamctlrc
-@@ -69,7 +69,7 @@
+@@ -72,7 +72,7 @@
  
  
- # Program to calculate a message-digest fingerprint
+ ## Program to calculate a message-digest fingerprint
 -# MD5="md5sum"
 +MD5="md5"
  
- # awk tool
+ ## awk tool
  # AWK="awk"
-@@ -151,8 +151,11 @@
+@@ -157,7 +157,7 @@
  
  ## Kamailio START Options
- ## PID file path - default is: /var/run/kamailio.pid
--# PID_FILE=/var/run/kamailio/kamailio.pid
+ ## PID file path - default is: /run/kamailio/kamailio.pid
+-# PID_FILE=/run/kamailio/kamailio.pid
 +PID_FILE=/var/run/kamailio/kamailio.pid
  
  ## Extra start options - default is: not set
- # example: start Kamailio with 64MB share memory: STARTOPTIONS="-m 64"
- # STARTOPTIONS=
-+
-+# Disable colour highlighting at the terminal
-+NOHLPRINT=1
+ ## example: start Kamailio with 64MB share memory: STARTOPTIONS="-m 64"

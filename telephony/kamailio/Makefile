@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2021/02/04 18:43:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2021/02/06 21:32:05 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
-VERSION =		5.0.6
+VERSION =		5.4.3
 
 DISTNAME =		kamailio-${VERSION}_src
 
@@ -17,7 +17,6 @@ PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
 PKGNAME-perl =		kamailio-perl-${VERSION}
 PKGNAME-presence =	kamailio-presence-${VERSION}
 PKGNAME-radius =	kamailio-radius-${VERSION}
-REVISION =		1
 
 CATEGORIES =		telephony
 HOMEPAGE =		http://www.kamailio.org/
@@ -25,10 +24,9 @@ HOMEPAGE =		http://www.kamailio.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-SHARED_LIBS =		srdb1	4.0	# 1.0
+SHARED_LIBS =		srdb1	5.0	# 1.0
 SHARED_LIBS +=		srdb2	4.0	# 1.0
 SHARED_LIBS +=		trie	4.0	# 1.0
-SHARED_LIBS +=		srutils	3.0	# 1.0
 
 MAKE_ENV =		CC="${CC}" \
 			CC_EXTRA_OPTS="${CFLAGS} -DOPENSSL_NO_BUF_FREELISTS -DHAVE_ARC4RANDOM -I${LOCALBASE}/include" \
@@ -37,7 +35,8 @@ MAKE_ENV =		CC="${CC}" \
 MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
 WRKDIST =		${WRKDIR}/kamailio-${VERSION}
 
-WANTLIB-main =		c crypto curl expat event_core event_extra iconv m \
+WANTLIB-main =		${COMPILER_LIBCXX} \
+			c crypto curl expat event_core event_extra iconv m \
 			pcre pthread ssl lzma xml2 curses readline unistring z
 
 LIB_DEPENDS-main =	converters/libiconv \
@@ -51,6 +50,7 @@ KAMAILIO_GROUPS =	kstandard kcpl khttp_async koutbound ktls kutils kwebsocket kx
 
 FLAVOR ?=
 MULTI_PACKAGES =	-main
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 USE_GMAKE =		Yes
 NO_TEST =		Yes
@@ -68,15 +68,14 @@ MAKE_FLAGS =	LIBDIR=lib \
 		group_include="${KAMAILIO_GROUPS}" \
 		LIBsrdb1_VERSION=${LIBsrdb1_VERSION} \
 		LIBsrdb2_VERSION=${LIBsrdb2_VERSION} \
-		LIBtrie_VERSION=${LIBtrie_VERSION} \
-		LIBsrutils_VERSION=${LIBsrutils_VERSION} \
+		LIBtrie_VERSION=${LIBtrie_VERSION}
 
 PSEUDO_FLAVORS +=	no_berkeley
 .if !${FLAVOR:Mno_berkeley}
 MULTI_PACKAGES +=	-berkeley
 COMMENT-berkeley =	kamailio berkeley db module
 KAMAILIO_GROUPS +=	kberkeley
-WANTLIB-berkeley =	c db pthread lib/kamailio/srdb1 lib/kamailio/srdb2
+WANTLIB-berkeley =	c db m pthread lib/kamailio/srdb1 lib/kamailio/srdb2
 LIB_DEPENDS-berkeley =	databases/db/v4,-main,no_java telephony/kamailio,-main
 .endif
 
@@ -85,7 +84,7 @@ PSEUDO_FLAVORS +=	no_postgresql
 MULTI_PACKAGES +=	-postgresql
 COMMENT-postgresql =	kamailio postgresql module
 KAMAILIO_GROUPS +=	kpostgres
-WANTLIB-postgresql =	pq pthread lib/kamailio/srdb1 lib/kamailio/srdb2
+WANTLIB-postgresql =	m pq pthread lib/kamailio/srdb1 lib/kamailio/srdb2
 LIB_DEPENDS-postgresql = databases/postgresql,-main telephony/kamailio,-main
 .endif
 
@@ -94,7 +93,7 @@ PSEUDO_FLAVORS +=	no_mysql
 MULTI_PACKAGES +=	-mysql
 COMMENT-mysql =		kamailio mysql module
 KAMAILIO_GROUPS +=	kmysql
-WANTLIB-mysql =		crypto m pthread ssl z mysqlclient \
+WANTLIB-mysql =		m mariadb pthread \
 			lib/kamailio/srdb1 lib/kamailio/srdb2
 LIB_DEPENDS-mysql =	databases/mariadb,-main telephony/kamailio,-main
 .endif
@@ -104,7 +103,7 @@ PSEUDO_FLAVORS +=	no_ldap
 MULTI_PACKAGES +=	-ldap
 COMMENT-ldap =		kamailio LDAP modules
 KAMAILIO_GROUPS +=	kldap
-WANTLIB-ldap =		ldap pthread lib/kamailio/srdb2
+WANTLIB-ldap =		ldap m pthread lib/kamailio/srdb2
 LIB_DEPENDS-ldap =	databases/openldap,-main telephony/kamailio,-main
 .endif
 
@@ -123,7 +122,7 @@ PSEUDO_FLAVORS +=	no_snmpstats
 MULTI_PACKAGES +=	-snmpstats
 COMMENT-snmpstats =	kamailio snmpstats module
 KAMAILIO_GROUPS +=	ksnmpstats
-WANTLIB-snmpstats =	netsnmp netsnmpagent netsnmpmibs pthread
+WANTLIB-snmpstats =	m netsnmp netsnmpagent netsnmpmibs pthread
 LIB_DEPENDS-snmpstats =	net/net-snmp
 .endif
 
@@ -132,7 +131,7 @@ PSEUDO_FLAVORS +=	no_carrierroute
 MULTI_PACKAGES +=	-carrierroute
 COMMENT-carrierroute =	kamailio carrierroute module
 KAMAILIO_GROUPS +=	kcarrierroute
-WANTLIB-carrierroute =	pthread lib/kamailio/srdb1 lib/kamailio/trie
+WANTLIB-carrierroute =	m pthread lib/kamailio/srdb1 lib/kamailio/trie
 LIB_DEPENDS-carrierroute = telephony/kamailio,-main
 .endif
 
@@ -151,7 +150,7 @@ MULTI_PACKAGES +=	-presence
 COMMENT-presence =	kamailio presence modules
 KAMAILIO_GROUPS +=	kpresence
 WANTLIB-presence +=	curl iconv lzma m pthread xml2 z \
-			lib/kamailio/srdb1 lib/kamailio/srutils
+			lib/kamailio/srdb1
 LIB_DEPENDS-presence =	telephony/kamailio,-main
 .endif
 
@@ -160,7 +159,7 @@ PSEUDO_FLAVORS +=	no_radius
 MULTI_PACKAGES +=	-radius
 COMMENT-radius =	kamailio RADIUS modules
 KAMAILIO_GROUPS +=	kradius
-WANTLIB-radius =	pthread radcli
+WANTLIB-radius =	m pthread radcli
 LIB_DEPENDS-radius =	net/radcli
 .endif
 

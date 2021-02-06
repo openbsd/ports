@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_modules_tls_utils_openssl_mutex_shared_Makefile,v 1.1 2021/02/06 21:32:06 sthen Exp $
+
+Index: src/modules/tls/utils/openssl_mutex_shared/Makefile
+--- src/modules/tls/utils/openssl_mutex_shared/Makefile.orig
++++ src/modules/tls/utils/openssl_mutex_shared/Makefile
+@@ -19,7 +19,7 @@ install-modules: openssl_mutex_shared.so
+ 	$(INSTALL_BIN) openssl_mutex_shared.so $(modules_prefix)/$(lib_dir)/openssl_mutex_shared
+ 
+ openssl_mutex_shared.so: openssl_mutex_shared.c
+-	$(CC) -g -D_GNU_SOURCE -std=c99 -fvisibility=hidden -pthread -o $@ -O3 -Wall -shared -fPIC -ldl $<
++	$(CC) -g -D_GNU_SOURCE -std=c99 -fvisibility=hidden -pthread -o $@ -O3 -Wall -shared -fPIC ${LIBDL} $<
+ 
+ .PHONY: clean
+ clean:

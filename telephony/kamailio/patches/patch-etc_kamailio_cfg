@@ -1,8 +1,10 @@
-$OpenBSD: patch-etc_kamailio_cfg,v 1.5 2017/07/03 22:14:20 sthen Exp $
---- etc/kamailio.cfg.orig	Wed Apr  5 16:32:38 2017
-+++ etc/kamailio.cfg	Mon May 15 21:48:56 2017
-@@ -160,6 +160,9 @@ log_facility=LOG_LOCAL0
- /* number of SIP routing processes */
+$OpenBSD: patch-etc_kamailio_cfg,v 1.6 2021/02/06 21:32:06 sthen Exp $
+
+Index: etc/kamailio.cfg
+--- etc/kamailio.cfg.orig
++++ etc/kamailio.cfg
+@@ -177,6 +177,9 @@ log_prefix="{$mt $hdr(CSeq) $ci} "
+  * - value inherited by tcp_children and sctp_children when not set explicitely */
  children=8
  
 +user="_kamailio"
