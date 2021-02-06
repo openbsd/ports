@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/11 22:54:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/06 20:33:27 sthen Exp $
 
 COMMENT=	roundcube plugin: authenticate via Yubikey HTTPS API
 
@@ -6,7 +6,8 @@ GH_ACCOUNT=	northox
 GH_PROJECT=	roundcube-yubikey-plugin
 GH_TAGNAME=	1.4
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
-REVISION=	3
+MODPHP_VERSION=	7.4
+REVISION=	4
 
 CATEGORIES=	mail www
 

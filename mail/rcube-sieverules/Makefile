@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/11 22:54:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/06 20:33:27 sthen Exp $
 
 COMMENT=	roundcube plugin: sieve rules (managesieve)
 
@@ -6,7 +6,8 @@ GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-sieverules
 GH_TAGNAME=	2.3
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
-REVISION=	6
+MODPHP_VERSION=	7.4
+REVISION=	7
 
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.tehinterweb.co.uk/roundcube/\#pisieverules

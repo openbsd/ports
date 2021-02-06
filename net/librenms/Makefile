@@ -1,31 +1,34 @@
-# $OpenBSD: Makefile,v 1.118 2021/02/02 10:05:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2021/02/06 20:33:27 sthen Exp $
 
-COMMENT =	auto-discovering network management/monitoring system
+COMMENT=	auto-discovering network management/monitoring system
 
 # changelogs at https://github.com/librenms/librenms/releases
-GH_ACCOUNT =	librenms
-GH_PROJECT =	librenms
-GH_TAGNAME =	21.1.0
-DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
-EPOCH =		0
+GH_ACCOUNT=	librenms
+GH_PROJECT=	librenms
+GH_TAGNAME=	21.1.0
+DISTFILES=	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
+EPOCH=		0
 
-CATEGORIES =	net www
+MODPHP_VERSION=	7.4
+REVISION=	0
 
-HOMEPAGE =	https://www.librenms.org/
+CATEGORIES=	net www
 
-MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
+HOMEPAGE=	https://www.librenms.org/
+
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MASTER_SITES0 =	https://spacehopper.org/mirrors/
+MASTER_SITES0=	https://spacehopper.org/mirrors/
 
-MODULES =	lang/php \
+MODULES=	lang/php \
 		lang/python
-MODPY_BUILDDEP = No
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_BUILDDEP= No
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-curl \
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mysqli \
 		lang/php/${MODPHP_VERSION},-pdo_mysql \
@@ -41,12 +44,12 @@ RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-curl \
 		shells/bash \
 		sysutils/ipmitool
 
-NO_BUILD =	Yes
-NO_TEST =	Yes
+NO_BUILD=	Yes
+NO_TEST=	Yes
 
-PREFIX =	/var/www
-INSTDIR =	${PREFIX}/librenms
-SUBST_VARS =	INSTDIR MODPHP_BIN
+PREFIX=		/var/www
+INSTDIR=	${PREFIX}/librenms
+SUBST_VARS=	INSTDIR MODPHP_BIN
 UPDATE_PLIST_ARGS += -i MODPHP_VERSION
 
 R =	s,^\#!( )?(/usr/bin/env |/bin/)bash,\#!${LOCALBASE}/bin/bash,;
