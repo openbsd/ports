@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/10/04 18:34:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/06 21:45:42 sthen Exp $
 include/libplacebo/
 include/libplacebo/colorspace.h
 include/libplacebo/common.h
@@ -19,6 +19,8 @@ include/libplacebo/shaders/custom.h
 include/libplacebo/shaders/sampling.h
 include/libplacebo/swapchain.h
 include/libplacebo/utils/
+include/libplacebo/utils/libav.h
+include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 @static-lib lib/libplacebo.a
 @lib lib/libplacebo.so.${LIBplacebo_VERSION}
