@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/05/06 14:58:54 cwen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/02/07 14:38:45 paco Exp $
 @conflict cmus-<2.7.1
 @pkgpath audio/cmus,-flac
 @pkgpath audio/cmus,-wavpack
@@ -6,20 +6,21 @@
 @bin bin/cmus-remote
 lib/cmus/
 lib/cmus/ip/
-lib/cmus/ip/cdio.so
-lib/cmus/ip/cue.so
-lib/cmus/ip/flac.so
-lib/cmus/ip/mad.so
-lib/cmus/ip/opus.so
-lib/cmus/ip/vorbis.so
-lib/cmus/ip/wav.so
-lib/cmus/ip/wavpack.so
+@so lib/cmus/ip/cdio.so
+@so lib/cmus/ip/cue.so
+@so lib/cmus/ip/flac.so
+@so lib/cmus/ip/mad.so
+@so lib/cmus/ip/opus.so
+@so lib/cmus/ip/vorbis.so
+@so lib/cmus/ip/wav.so
+@so lib/cmus/ip/wavpack.so
 lib/cmus/op/
-lib/cmus/op/sndio.so
+@so lib/cmus/op/sndio.so
 @man man/man1/cmus-remote.1
 @man man/man1/cmus.1
 @man man/man7/cmus-tutorial.7
 share/cmus/
+share/cmus/amazon.theme
 share/cmus/cyan.theme
 share/cmus/default.theme
 share/cmus/dracula.theme
@@ -27,6 +28,7 @@ share/cmus/gray-88.theme
 share/cmus/green-mono-88.theme
 share/cmus/green.theme
 share/cmus/gruvbox-alt.theme
+share/cmus/gruvbox-warm.theme
 share/cmus/gruvbox.theme
 share/cmus/jellybeans.theme
 share/cmus/night.theme
