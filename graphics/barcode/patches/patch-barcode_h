@@ -1,0 +1,13 @@
+$OpenBSD: patch-barcode_h,v 1.1 2021/02/07 15:04:50 naddy Exp $
+
+Index: barcode.h
+--- barcode.h.orig
++++ barcode.h
+@@ -123,6 +123,6 @@ extern int Barcode_Version(char *versionname);
+ }
+ #endif
+ 
+-int streaming;
++extern int streaming;
+ 
+ #endif /* _BARCODE_H_ */

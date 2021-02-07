@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/07 15:04:49 naddy Exp $
 
 COMMENT=		convert text strings to printed bars
 
 DISTNAME=		barcode-0.99
 CATEGORIES=		graphics
-REVISION=		1
+REVISION=		2
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

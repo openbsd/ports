@@ -1,0 +1,14 @@
+$OpenBSD: patch-pcl_c,v 1.1 2021/02/07 15:04:50 naddy Exp $
+
+Index: pcl.c
+--- pcl.c.orig
++++ pcl.c
+@@ -29,6 +29,8 @@
+ 
+ #define SHRINK_AMOUNT 0.15  /* shrink the bars to account for ink spreading */
+ 
++int streaming;
++
+ 
+ /*
+  * How do the "partial" and "textinfo" strings work? See file "ps.c"
