@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/07 12:54:22 abieber Exp $
 
 COMMENT =	lua bindings for OpenBSD functions
 
-V =		v0.2
-DISTNAME =	lua-openbsd-${V}
-PKGNAME =	${DISTNAME:S/v//}
-REVISION =	0
+GH_ACCOUNT =	n0la
+GH_PROJECT =	lua-openbsd
+GH_TAGNAME =	v0.3
 
 CATEGORIES =	devel
 
@@ -17,10 +16,6 @@ FLAVOR ?=
 
 # uses pledge()
 WANTLIB =		${MODLUA_WANTLIB} m
-
-MASTER_SITES =		https://github.com/n0la/lua-openbsd/releases/download/${V}/
-
-WRKSRC =		${WRKDIR}/lua-openbsd
 
 MODULES =		devel/cmake \
 			lang/lua
