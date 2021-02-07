@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2020/11/07 09:39:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2021/02/07 08:03:35 ajacoutot Exp $
 
 COMMENT=		email application built around conversations
 
 GNOME_PROJECT=		geary
-GNOME_VERSION=		3.38.1
+GNOME_VERSION=		3.38.2
 
 CATEGORIES=		mail
 
