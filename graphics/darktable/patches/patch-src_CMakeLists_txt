@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.5 2021/02/07 22:13:21 sthen Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -882,7 +882,6 @@ endif()
+ 
+ target_link_libraries(lib_darktable PUBLIC ${STATIC_LIBS})
+ target_link_libraries(lib_darktable PRIVATE rawspeed)
+-target_link_libraries(lib_darktable PRIVATE whereami)
+ target_link_libraries(lib_darktable PUBLIC ${LIBS})
+ 
+ unset(LIBS)

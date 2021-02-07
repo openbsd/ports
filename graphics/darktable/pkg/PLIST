@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/08/24 09:47:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.27 2021/02/07 22:13:21 sthen Exp $
 @bin bin/darktable
 @bin bin/darktable-chart
 @bin bin/darktable-cli
@@ -38,6 +38,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/libborders.so
 @so lib/darktable/plugins/libcacorrect.so
 @so lib/darktable/plugins/libchannelmixer.so
+@so lib/darktable/plugins/libchannelmixerrgb.so
 @so lib/darktable/plugins/libclahe.so
 @so lib/darktable/plugins/libclipping.so
 @so lib/darktable/plugins/libcolisa.so
@@ -130,13 +131,13 @@ lib/darktable/plugins/lighttable/
 @so lib/darktable/plugins/lighttable/liblighttable_mode.so
 @so lib/darktable/plugins/lighttable/liblive_view.so
 @so lib/darktable/plugins/lighttable/liblocation.so
+@so lib/darktable/plugins/lighttable/libmap_locations.so
 @so lib/darktable/plugins/lighttable/libmap_settings.so
 @so lib/darktable/plugins/lighttable/libmasks.so
 @so lib/darktable/plugins/lighttable/libmetadata.so
 @so lib/darktable/plugins/lighttable/libmetadata_view.so
 @so lib/darktable/plugins/lighttable/libmodule_toolbox.so
 @so lib/darktable/plugins/lighttable/libmodulegroups.so
-@so lib/darktable/plugins/lighttable/libmodulelist.so
 @so lib/darktable/plugins/lighttable/libnavigation.so
 @so lib/darktable/plugins/lighttable/libprint_settings.so
 @so lib/darktable/plugins/lighttable/libratings.so
@@ -179,6 +180,7 @@ share/darktable/luarc
 share/darktable/noiseprofiles.json
 share/darktable/pixmaps/
 share/darktable/pixmaps/dt_logo_128x128.png
+share/darktable/pixmaps/dt_text.svg
 share/darktable/pixmaps/idbutton-1.png
 share/darktable/pixmaps/idbutton-1.svg
 share/darktable/pixmaps/idbutton-2.png
@@ -366,14 +368,19 @@ share/icons/hicolor/scalable/apps/darktable-1.svg
 share/icons/hicolor/scalable/apps/darktable-2.svg
 share/icons/hicolor/scalable/apps/darktable-3.svg
 share/icons/hicolor/scalable/apps/darktable.svg
+share/locale/af/LC_MESSAGES/darktable.mo
+share/locale/cs/LC_MESSAGES/darktable.mo
 share/locale/de/LC_MESSAGES/darktable.mo
 share/locale/es/LC_MESSAGES/darktable.mo
+share/locale/fi/LC_MESSAGES/darktable.mo
 share/locale/fr/LC_MESSAGES/darktable.mo
 share/locale/he/LC_MESSAGES/darktable.mo
+share/locale/hu/LC_MESSAGES/darktable.mo
 share/locale/it/LC_MESSAGES/darktable.mo
 share/locale/pl/LC_MESSAGES/darktable.mo
 share/locale/pt_BR/LC_MESSAGES/darktable.mo
 share/locale/ru/LC_MESSAGES/darktable.mo
+share/locale/sk/LC_MESSAGES/darktable.mo
 share/locale/sl/LC_MESSAGES/darktable.mo
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

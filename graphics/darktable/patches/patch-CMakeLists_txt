@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/01/23 15:10:41 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/02/07 22:13:21 sthen Exp $
 
 fails with _XOPEN_SOURCE set;
 
@@ -8,7 +8,7 @@ fails with _XOPEN_SOURCE set;
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -493,6 +493,8 @@ set(THEME_DIRECTORY "${CMAKE_INSTALL_DATAROOTDIR}/icon
+@@ -502,6 +502,8 @@ endif(BUILD_TESTING)
  if(NOT WIN32)
      if(CMAKE_SYSTEM MATCHES "SunOS.*")
          add_definitions("-D_XOPEN_SOURCE=600")
