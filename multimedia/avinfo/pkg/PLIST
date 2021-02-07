@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/01 10:26:04 kevlo Exp $
-@bin bin/avinfo
-@man man/man1/avinfo.1
