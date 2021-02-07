@@ -1,6 +1,18 @@
-$OpenBSD: patch-Xwnmo_xwnmo_multi_lang_c,v 1.1 2017/04/29 14:31:40 espie Exp $
+$OpenBSD: patch-Xwnmo_xwnmo_multi_lang_c,v 1.2 2021/02/07 19:12:01 espie Exp $
+Index: Xwnmo/xwnmo/multi_lang.c
 --- Xwnmo/xwnmo/multi_lang.c.orig
 +++ Xwnmo/xwnmo/multi_lang.c
+@@ -46,8 +46,8 @@
+ #include "ext.h"
+ 
+ 
+-XSetWindowAttributes	attributes;
+-XGCValues	xgcv;
++extern XSetWindowAttributes	attributes;
++extern XGCValues	xgcv;
+ 
+ char *
+ get_default_font_name(lang)
 @@ -367,7 +367,7 @@ char *c_data;
  short *detail;
  {
