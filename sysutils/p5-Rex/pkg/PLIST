@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/07/24 14:01:00 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/07 14:24:02 benoit Exp $
 bin/rex
 bin/rexify
 ${P5SITE}/Rex/
@@ -427,6 +427,7 @@ ${P5SITE}/auto/share/dist/Rex/rex-tab-completion.zsh
 @man man/man3p/Rex::Box::KVM.3p
 @man man/man3p/Rex::Box::VBox.3p
 @man man/man3p/Rex::CMDB.3p
+@man man/man3p/Rex::CMDB::YAML.3p
 @man man/man3p/Rex::Commands.3p
 @man man/man3p/Rex::Commands::Augeas.3p
 @man man/man3p/Rex::Commands::Box.3p
@@ -479,6 +480,7 @@ ${P5SITE}/auto/share/dist/Rex/rex-tab-completion.zsh
 @man man/man3p/Rex::Shared::Var.3p
 @man man/man3p/Rex::Task.3p
 @man man/man3p/Rex::Template.3p
+@man man/man3p/Rex::Template::NG.3p
 @man man/man3p/Rex::Test::Base.3p
 @man man/man3p/Rex::Transaction.3p
 @man man/man3p/Rex::Virtualization::Docker.3p
