@@ -1,9 +1,13 @@
-$OpenBSD: patch-bjnp-commands_c,v 1.1 2017/05/04 20:25:51 espie Exp $
+$OpenBSD: patch-bjnp-commands_c,v 1.2 2021/02/07 19:27:18 ajacoutot Exp $
+
+bjnp-commands.c:188:9: error: comparison of array 'printer_id' not equal to a null pointer is always true [-Werror,-Wtautological-pointer-compare]
+    if (printer_id != NULL) {
+        ^~~~~~~~~~    ~~~~
 
 Index: bjnp-commands.c
 --- bjnp-commands.c.orig
 +++ bjnp-commands.c
-@@ -184,10 +184,8 @@ get_printer_id(http_addr_t *addr, char *model, char *I
+@@ -185,10 +185,8 @@ get_printer_id(http_addr_t *addr, char *model, char *I
  
      /* set IEEE1284_id */
  
