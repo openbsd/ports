@@ -1,26 +1,24 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/07 22:55:38 cwen Exp $
 
 COMMENT=		full-screen X11 task-switcher like Apple's Expose
 
 DISTNAME=		skippy-0.5.0
-REVISION=		8
+REVISION=		9
 CATEGORIES=		x11
 
-MASTER_SITES=		http://thegraveyard.org/files/
+# X11
+PERMIT_PACKAGE=		Yes
+
+WANTLIB+= Imlib2 X11 Xext Xft Xinerama c m
+
+MASTER_SITES=		https://spacehopper.org/mirrors/
 EXTRACT_SUFX=		.tar.bz2
 
-HOMEPAGE=		http://thegraveyard.org/skippy.php
+LIB_DEPENDS=		graphics/imlib2
 
-# X11
-PERMIT_PACKAGE=	Yes
-
-WANTLIB=	X11 Xau Xdmcp Xext Xft Xinerama Xrender c expat fontconfig \
-		freetype m z xcb Imlib2
-
+FAKE_FLAGS+=		PREFIX="${PREFIX}"
 
 NO_TEST=		Yes
-
-LIB_DEPENDS=		graphics/imlib2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/skippy
