@@ -1,0 +1,33 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2021/02/07 16:21:58 naddy Exp $
+
+Fix parallel build.  gmake recognizes foo.c and $(srcdir)/foo.c as
+equivalent, ours does not.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -765,21 +765,21 @@ uninstall-info: uninstall-info-recursive
+ 	uninstall-libLTLIBRARIES
+ 
+ 
+-$(srcdir)/frametype.c: $(srcdir)/frametype.gperf Makefile.am
++frametype.c: $(srcdir)/frametype.gperf Makefile.am
+ 	cd $(srcdir) &&  \
+ 	gperf -tCcTonD -K id -N id3_frametype_lookup -s -3 -k '*'  \
+ 		frametype.gperf |  \
+ 	sed -e 's/\(struct id3_frametype\);/\1/' |  \
+ 	sed -e '/\$$''Id: /s/\$$//g' >frametype.c
+ 
+-$(srcdir)/compat.c: $(srcdir)/compat.gperf Makefile.am
++compat.c: $(srcdir)/compat.gperf Makefile.am
+ 	cd $(srcdir) &&  \
+ 	gperf -tCcTonD -K id -N id3_compat_lookup -s -3 -k '*'  \
+ 		compat.gperf |  \
+ 	sed -e 's/\(struct id3_compat\);/\1/' |  \
+ 	sed -e '/\$$''Id: /s/\$$//g' >compat.c
+ 
+-$(srcdir)/genre.dat: $(srcdir)/genre.dat.in $(srcdir)/genre.dat.sed Makefile.am
++genre.dat: $(srcdir)/genre.dat.in $(srcdir)/genre.dat.sed Makefile.am
+ 	cd $(srcdir) &&  \
+ 	sed -n -f genre.dat.sed genre.dat.in |  \
+ 	sed -e '/\$$''Id: /s/\$$//g' >genre.dat

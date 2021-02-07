@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/07 16:21:58 naddy Exp $
 
 COMMENT=	library for reading ID3 tags
 
@@ -21,7 +21,6 @@ WANTLIB=	z
 
 BUILD_DEPENDS=	devel/gperf>=3.1
 
-SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 
 post-patch:
