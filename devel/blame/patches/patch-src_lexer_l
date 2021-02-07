@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_lexer_l,v 1.1 2021/02/07 21:58:06 naddy Exp $
+
+Index: src/lexer.l
+--- src/lexer.l.orig
++++ src/lexer.l
+@@ -23,7 +23,7 @@
+ #define YY_NO_UNPUT
+ typedef struct { unsigned int line; off_t off; off_t next; } loc_t;
+ #define YYLTYPE loc_t
+-#define YY_DECL int yylex YY_PROTO((void))
++#define YY_DECL int yylex (void)
+ 
+ #include <delta.h>
+ #include <keyword.h>
+@@ -32,8 +32,8 @@ typedef struct { unsigned int line; off_t off; off_t n
+ 
+ #include <parser.h>
+ 
+-YYSTYPE yylval;
+-YYLTYPE yylloc;
++extern YYSTYPE yylval;
++extern YYLTYPE yylloc;
+ 
+ %}
+ 
