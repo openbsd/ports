@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/02/13 07:13:37 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/02/07 18:59:13 bcallah Exp $
 
 Why would upstream add the arch name at the end of all binaries?
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -127,6 +127,9 @@ else()
+@@ -125,6 +125,9 @@ else()
  	elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^x86.64$")
  		set(X86 ON)
  		set(Architecture "x86_64")
@@ -15,10 +15,10 @@ Index: CMakeLists.txt
  	elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "powerpc")
  		set(Architecture "ppc")
  	elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "powerpc64")
-@@ -150,19 +153,19 @@ message(STATUS "Git revision is ${GIT_SHA1}")
- 
- 
+@@ -145,19 +148,19 @@ endif()
  # Binary names
+ #
+ #=============================================================================
 -set(SPEngine "openjk_sp.${Architecture}")
 -set(SPGame "jagame${Architecture}")
 -set(SPRDVanillaRenderer "rdsp-vanilla_${Architecture}")
@@ -48,3 +48,10 @@ Index: CMakeLists.txt
  # Library names
  set(MPBotLib "botlib")
  set(SharedLib "shared")
+@@ -386,4 +389,4 @@ endif()
+ if(BuildTests)
+ 	enable_testing()
+ 	add_subdirectory("tests")
+-endif()
+\ No newline at end of file
++endif()
