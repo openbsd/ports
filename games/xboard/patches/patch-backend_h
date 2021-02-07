@@ -1,0 +1,14 @@
+$OpenBSD: patch-backend_h,v 1.1 2021/02/07 12:29:12 naddy Exp $
+
+Index: backend.h
+--- backend.h.orig
++++ backend.h
+@@ -242,7 +242,7 @@ extern GameInfo gameInfo;
+ 
+ /* ICS vars used with backend.c and zippy.c */
+ enum ICS_TYPE { ICS_GENERIC, ICS_ICC, ICS_FICS, ICS_CHESSNET /* not really supported */ };
+-enum ICS_TYPE ics_type;
++extern enum ICS_TYPE ics_type;
+ 
+ /* pgntags.c prototypes
+  */

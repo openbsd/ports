@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:46:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2021/02/07 12:29:12 naddy Exp $
 
 COMMENT=	X11 frontend for GNU Chess and the Internet Chess Server
 
 DISTNAME=	xboard-4.9.1
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_GNU:=xboard/}
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://www.gnu.org/software/xboard/
 

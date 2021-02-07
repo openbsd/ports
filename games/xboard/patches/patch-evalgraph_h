@@ -1,0 +1,14 @@
+$OpenBSD: patch-evalgraph_h,v 1.1 2021/02/07 12:29:12 naddy Exp $
+
+Index: evalgraph.h
+--- evalgraph.h.orig
++++ evalgraph.h
+@@ -34,7 +34,7 @@ typedef enum { PEN_NONE, PEN_BLACK, PEN_DOTTED, PEN_BL
+ #define OPEN   0
+ 
+ /* Module globals */
+-ChessProgramStats_Move * currPvInfo;
++extern ChessProgramStats_Move * currPvInfo;
+ extern int currFirst;
+ extern int currLast;
+ extern int currCurrent;
