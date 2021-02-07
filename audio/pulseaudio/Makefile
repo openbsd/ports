@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2021/01/23 23:17:48 kn Exp $
+# $OpenBSD: Makefile,v 1.114 2021/02/07 20:20:05 ajacoutot Exp $
 
 # XXX sndio: what to do with (channel) map
 # XXX sndio: check sample format
@@ -9,7 +9,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		14.2
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  pulse                7.1      # .23.0
 SHARED_LIBS +=  pulse-simple         1.2      # .1.1
@@ -26,9 +26,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1
-WANTLIB += execinfo glib-2.0 iconv intl ltdl m ogg pthread
-WANTLIB += sndfile sndio speexdsp ssl tdb vorbis vorbisenc xcb
+WANTLIB += ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1 execinfo
+WANTLIB += glib-2.0 iconv intl ltdl m pthread sndfile sndio speexdsp
+WANTLIB += ssl tdb xcb
 
 MASTER_SITES=		https://freedesktop.org/software/pulseaudio/releases/
 
@@ -129,5 +129,7 @@ post-install:
 	rm ${PREFIX}/lib/pulse-${VERSION}/modules/*.a
 # we don't install padsp
 	cd ${PREFIX} && rm man/man1/padsp.1
+# remove this linux-centric bash script
+	rm ${PREFIX}/bin/pa-info
 
 .include <bsd.port.mk>
