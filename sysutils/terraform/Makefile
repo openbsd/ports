@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.50 2021/01/23 09:45:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2021/02/07 08:40:46 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v0.14.5
+MODGO_VERSION=	v0.14.6
 DISTNAME=	terraform-${MODGO_VERSION}
+
+WRKDIST=	${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
 
 CATEGORIES=		sysutils net
 
@@ -63,7 +65,7 @@ MODGO_MODULES =	\
 	github.com/armon/circbuf				 v0.0.0-20190214190532-5111143e8da2 \
 	github.com/armon/go-metrics				 v0.0.0-20180917152333-f0300d1749da \
 	github.com/armon/go-radix				 v1.0.0 \
-	github.com/aws/aws-sdk-go				 v1.31.9 \
+	github.com/aws/aws-sdk-go				 v1.37.0 \
 	github.com/baiyubin/aliyun-sts-go-sdk			 v0.0.0-20180326062324-cfa1a18b161f \
 	github.com/beorn7/perks					 v0.0.0-20180321164747-3a771d992973 \
 	github.com/bgentry/go-netrc				 v0.0.0-20140422174119-9fd32a8b3d3d \
@@ -165,7 +167,8 @@ MODGO_MODULES =	\
 	github.com/ianlancetaylor/demangle			 v0.0.0-20181102032728-5e5cf60278f6 \
 	github.com/imdario/mergo				 v0.3.9 \
 	github.com/jhump/protoreflect				 v1.6.0 \
-	github.com/jmespath/go-jmespath				 v0.3.0 \
+	github.com/jmespath/go-jmespath				 v0.4.0 \
+	github.com/jmespath/go-jmespath/internal/testify	 v1.5.1 \
 	github.com/jonboulle/clockwork				 v0.1.0 \
 	github.com/joyent/triton-go				 v0.0.0-20180313100802-d8f9c0314926 \
 	github.com/json-iterator/go				 v1.1.7 \
@@ -267,7 +270,7 @@ MODGO_MODULES =	\
 	golang.org/x/lint					 v0.0.0-20200302205851-738671d3881b \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.3.0 \
-	golang.org/x/net					 v0.0.0-20201021035429-f5854403a974 \
+	golang.org/x/net					 v0.0.0-20201110031124-69a78807bb2b \
 	golang.org/x/oauth2					 v0.0.0-20200902213428-5d25da1a8d43 \
 	golang.org/x/sync					 v0.0.0-20201020160332-67f06af15bc9 \
 	golang.org/x/sys					 v0.0.0-20200930185726-fdedc70b468f \
@@ -342,6 +345,7 @@ MODGO_MODFILES =	\
 	github.com/apparentlymart/go-dump		 v0.0.0-20180507223929-23540a00eaa3 \
 	github.com/armon/go-radix			 v0.0.0-20180808171621-7fddfc383310 \
 	github.com/aws/aws-sdk-go			 v1.15.78 \
+	github.com/aws/aws-sdk-go			 v1.31.9 \
 	github.com/davecgh/go-spew			 v0.0.0-20151105211317-5215b55f46b2 \
 	github.com/davecgh/go-spew			 v1.1.0 \
 	github.com/dgrijalva/jwt-go			 v0.0.0-20160705203006-01aeca54ebda \
@@ -408,6 +412,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/yamux			 v0.0.0-20180604194846-3520598351bb \
 	github.com/imdario/mergo			 v0.3.5 \
 	github.com/jmespath/go-jmespath			 v0.0.0-20160202185014-0b12d6b521d8 \
+	github.com/jmespath/go-jmespath			 v0.3.0 \
 	github.com/json-iterator/go			 v0.0.0-20180612202835-f2b4162afba3 \
 	github.com/json-iterator/go			 v0.0.0-20180701071628-ab8a2e0c74be \
 	github.com/jstemmer/go-junit-report		 v0.0.0-20190106144839-af01ea7f8024 \
@@ -529,6 +534,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net				 v0.0.0-20200625001655-4c5254603344 \
 	golang.org/x/net				 v0.0.0-20200707034311-ab3426394381 \
 	golang.org/x/net				 v0.0.0-20200822124328-c89045814202 \
+	golang.org/x/net				 v0.0.0-20201021035429-f5854403a974 \
 	golang.org/x/oauth2				 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2				 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2				 v0.0.0-20190402181905-9f3314589c9a \
