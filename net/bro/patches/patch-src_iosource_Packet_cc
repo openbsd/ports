@@ -1,6 +1,4 @@
-$OpenBSD: patch-src_iosource_Packet_cc,v 1.7 2020/10/25 09:16:09 ajacoutot Exp $
-
-error: use of undeclared identifier 'DLT_NFLOG'
+$OpenBSD: patch-src_iosource_Packet_cc,v 1.8 2021/02/07 16:30:47 ajacoutot Exp $
 
 Prefer DLT_LOOP over DLT_NULL:
 DLT_LOOP: 4-byte header with the AF in network byte order
@@ -19,51 +17,18 @@ Index: src/iosource/Packet.cc
  		return 4;
  
  	case DLT_EN10MB:
-@@ -103,6 +106,7 @@ int Packet::GetLinkHeaderSize(int link_type)
- 	case DLT_IEEE802_11_RADIO:	// 802.11 plus RadioTap
- 		return 59;
- 
-+#ifndef __OpenBSD__
- 	case DLT_NFLOG:
- 		// Linux netlink NETLINK NFLOG socket log messages
- 		// The actual header size is variable, but we return the minimum
-@@ -110,6 +114,7 @@ int Packet::GetLinkHeaderSize(int link_type)
- 		// least 2 bytes each for the type and length values assoicated with
- 		// the final TLV carrying the packet payload.
- 		return 8;
-+#endif
- 
- 	case DLT_RAW:
- 		return 0;
-@@ -133,8 +138,14 @@ void Packet::ProcessLayer2()
+@@ -133,7 +136,13 @@ void Packet::ProcessLayer2()
  	switch ( link_type ) {
  	case DLT_NULL:
  		{
 -		int protocol = (pdata[3] << 24) + (pdata[2] << 16) + (pdata[1] << 8) + pdata[0];
- 		pdata += GetLinkHeaderSize(link_type);
++		pdata += GetLinkHeaderSize(link_type);
 +		l3_proto = L3_IPV4;
 +		break;
 +		}
 +	case DLT_LOOP:
 +		{
 +		int protocol = (pdata[0] << 24) + (pdata[1] << 16) + (pdata[2] << 8) + pdata[3];
-+		pdata += GetLinkHeaderSize(link_type);
+ 		pdata += GetLinkHeaderSize(link_type);
  
  		// From the Wireshark Wiki: "AF_INET6, unfortunately, has
- 		// different values in {NetBSD,OpenBSD,BSD/OS},
-@@ -414,6 +425,7 @@ void Packet::ProcessLayer2()
- 		break;
- 		}
- 
-+#ifndef __OpenBSD__
- 	case DLT_NFLOG:
- 		{
- 		// See https://www.tcpdump.org/linktypes/LINKTYPE_NFLOG.html
-@@ -492,6 +504,7 @@ void Packet::ProcessLayer2()
- 
- 		break;
- 		}
-+#endif
- 
- 	default:
- 		{
