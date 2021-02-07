@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/07 15:04:34 sthen Exp $
 @bin bin/createfp
 include/textcat.h
-lib/libtextcat.a
+@static-lib lib/libtextcat.a
 lib/libtextcat.la
 @lib lib/libtextcat.so.${LIBtextcat_VERSION}
 share/doc/libtextcat/

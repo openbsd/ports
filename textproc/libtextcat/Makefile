@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/07 15:04:34 sthen Exp $
 
 COMMENT=	language guessing library
 
 DISTNAME=	libtextcat-2.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  textcat              0.0      # .0.0
 
@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 
 HOMEPAGE=	http://software.wise-guys.nl/libtextcat/
 
-# GPLv2
+# BSD
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
