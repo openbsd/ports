@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/08/25 23:56:31 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/02/07 14:49:43 benoit Exp $
 bin/bp_aacomp
 bin/bp_bioflat_index
 bin/bp_biogetseq
@@ -428,7 +428,6 @@ ${P5SITE}/Bio/SeqIO/gbdriver.pm
 ${P5SITE}/Bio/SeqIO/gbxml.pm
 ${P5SITE}/Bio/SeqIO/gcg.pm
 ${P5SITE}/Bio/SeqIO/genbank.pm
-${P5SITE}/Bio/SeqIO/interpro.pm
 ${P5SITE}/Bio/SeqIO/kegg.pm
 ${P5SITE}/Bio/SeqIO/largefasta.pm
 ${P5SITE}/Bio/SeqIO/locuslink.pm
@@ -960,7 +959,6 @@ ${P5SITE}/BioPerl.pm
 @man man/man3p/Bio::SeqIO::gbxml.3p
 @man man/man3p/Bio::SeqIO::gcg.3p
 @man man/man3p/Bio::SeqIO::genbank.3p
-@man man/man3p/Bio::SeqIO::interpro.3p
 @man man/man3p/Bio::SeqIO::kegg.3p
 @man man/man3p/Bio::SeqIO::largefasta.3p
 @man man/man3p/Bio::SeqIO::locuslink.3p

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2020/08/25 23:56:31 cwen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/07 14:49:43 benoit Exp $
 
 COMMENT=	perl tools for bioinformatics
 
-DISTNAME=	BioPerl-1.7.7
+DISTNAME=	BioPerl-1.7.8
 PKGNAME=	${DISTNAME:L}# No p5-prefix here.
 CATEGORIES=	biology
 
