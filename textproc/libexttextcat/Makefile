@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/08 09:53:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/08 15:41:12 sthen Exp $
 
 COMMENT=	UTF-8 aware language guessing library
 
 GH_ACCOUNT=	LibreOffice
 GH_PROJECT=	libexttextcat
 GH_TAGNAME=	v3.4.5
+REVISION=	0
 
 SHARED_LIBS +=  exttextcat-2.0            0.0 # 0.0
 
@@ -23,8 +24,9 @@ AUTORECONF=	${WRKSRC}/autogen.sh
 post-install:
 	mv ${PREFIX}/bin/createfp{,x} # avoid conflict with libtextcat
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libexttextcat/LM
-	${INSTALL_DATA} ${WRKSRC}/langclass/LM/*.lm ${PREFIX}/share/libexttextcat/LM
-	${INSTALL_DATA} ${WRKSRC}/langclass/fpdb.conf ${PREFIX}/share/libexttextcat
+	${INSTALL_DATA} ${WRKSRC}/langclass/LM/*.lm \
+	    ${PREFIX}/share/libexttextcat/LM
+	mv ${PREFIX}/share/libexttextcat/fpdb.conf{,.dist}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libexttextcat
 	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/libexttextcat
 
