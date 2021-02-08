@@ -1,10 +1,30 @@
-$OpenBSD: patch-src_typespeed_c,v 1.1.1.1 2016/01/22 15:24:30 landry Exp $
+$OpenBSD: patch-src_typespeed_c,v 1.2 2021/02/08 23:16:49 cwen Exp $
 
-Disable the code opening the systemwide highscore file
-and dropping privileges, since we're removing the setgid bit
+Hunk #1: Fix -fno-common build failure
+Hunk #2: Disable the code opening the systemwide highscore file
+         and dropping privileges, since we're removing the setgid bit
 
---- src/typespeed.c.orig	Fri Jan 22 14:38:01 2016
-+++ src/typespeed.c	Fri Jan 22 14:39:59 2016
+Index: src/typespeed.c
+--- src/typespeed.c.orig
++++ src/typespeed.c
+@@ -146,6 +146,7 @@ char *typorank[12] =
+ 
+ FILE		*netlogfile;
+ struct stats	 best;
++struct stats	 now;
+ int		 hfd;
+ int		 misses;
+ struct stats	 other;
+@@ -155,6 +156,9 @@ char		*usedwordfile;
+ int		 wordcount = 0;
+ int		 wordpos[22];
+ char		 wordstring[22][20];
++struct rules	 rules;
++extern struct rawdata	words;
++extern struct opt	opt;
+ 
+ struct option options[] = {
+ 	{"cheat", no_argument, &opt.cheat, 1},
 @@ -318,6 +318,7 @@ main(int argc, char **argv)
  	else
  		progname++;

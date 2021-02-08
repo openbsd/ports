@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_network_c,v 1.1 2021/02/08 23:16:49 cwen Exp $
+
+Fix -fno-common build failure.
+
+Index: src/network.c
+--- src/network.c.orig
++++ src/network.c
+@@ -116,6 +116,7 @@ void		setnoblock(void);
+ void		writenum(char *, uint32_t);
+ 
+ extern FILE	*netlogfile;
++extern struct opt opt;
+ 
+ static int	 ds = -1;
+ static int	 ss = -1;
