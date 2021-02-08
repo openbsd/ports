@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.661 2021/01/29 17:05:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.662 2021/02/08 09:57:23 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -102,9 +102,11 @@
      SUBDIR += latexmk
      SUBDIR += lgrind
      SUBDIR += libebml
+     SUBDIR += libexttextcat
      SUBDIR += libical
      SUBDIR += liblrdf
      SUBDIR += libnxml
+     SUBDIR += libstemmer
      SUBDIR += libtextcat
      SUBDIR += libtranslate
      SUBDIR += libuninameslist
