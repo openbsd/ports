@@ -1,0 +1,3 @@
+libexttextcat is an N-Gram-Based Text Categorization library primarily
+intended for language guessing. It is an adaption of wiseguys libtextcat
+extended to be UTF-8 aware.

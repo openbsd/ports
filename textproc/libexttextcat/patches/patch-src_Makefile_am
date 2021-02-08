@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2021/02/08 09:53:58 sthen Exp $
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -42,7 +42,7 @@ check:
+ 		ss st sv sw ta tet th tg ti tk tl tn tpi tr ts \
+ 		tt ty tzm-Latn ug uk uz uz-Cyrl ve vep vi wa xh \
+ 		yi yo zh-Hans zh-Hant zu; do \
+-		bash ./test-primary.sh $$primarylanguage; \
++		sh ./test-primary.sh $$primarylanguage; \
+ 		if test x$$? != x0; then \
+ 			echo FAIL: $$primarylanguage && exit 1; \
+ 		else \
+@@ -51,7 +51,7 @@ check:
+ 	done
+ 	@echo secondary languages
+ 	@for secondarylanguage in sco; do \
+-		bash ./test-secondary.sh $$secondarylanguage; \
++		sh ./test-secondary.sh $$secondarylanguage; \
+ 		if test x$$? != x0; then \
+ 			echo FAIL: $$secondarylanguage && exit 1; \
+ 		else \
