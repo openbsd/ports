@@ -1,26 +1,24 @@
-$OpenBSD: patch-pigz_c,v 1.2 2021/01/31 02:49:36 kn Exp $
+$OpenBSD: patch-pigz_c,v 1.3 2021/02/08 20:21:31 kn Exp $
 
-Revert an unconditional define of _POSIX_C_SOURCE introduced in pigz 2.5
-which causes <sys/cdefs.h> to define __POSIX_VISIBLE and therefore
-(because _BSD_SOURCE is not defined) also define __BSD_VISIBLE 0
+The unconditional define of _POSIX_C_SOURCE in pigz 2.5 (changed to
+_XOPEN_SOURCE in pigz 2.6) causes <sys/cdefs.h> to define __POSIX_VISIBLE and
+therefore (because _BSD_SOURCE is not defined) to also define __BSD_VISIBLE 0
 which prevents <unistd.h> from prototyping pledge(2).
 
-Use pledge.
+Define _BSD_SOURCE to get it back and use pledge.
 
 Index: pigz.c
 --- pigz.c.orig
 +++ pigz.c
-@@ -333,7 +333,9 @@
- // Portability defines.
+@@ -337,6 +337,7 @@
  #define _FILE_OFFSET_BITS 64            // Use large file functions
  #define _LARGE_FILES                    // Same thing for AIX
-+#ifdef __MINGW32__
- #define _POSIX_C_SOURCE 200809L         // For MinGW
-+#endif
+ #define _XOPEN_SOURCE 700               // For POSIX 2008
++#define _BSD_SOURCE                     // for pledge(2)
  
  // Included headers and what is expected from each.
  #include <stdio.h>      // fflush(), fprintf(), fputs(), getchar(), putc(),
-@@ -4540,6 +4542,11 @@ int main(int argc, char **argv) {
+@@ -4562,6 +4563,11 @@ int main(int argc, char **argv) {
      char *opts, *p;                 // environment default options, marker
      ball_t err;                     // error information from throw()
  
@@ -32,7 +30,7 @@ Index: pigz.c
      g.ret = 0;
      try {
          // initialize globals
-@@ -4646,6 +4653,12 @@ int main(int argc, char **argv) {
+@@ -4668,6 +4674,12 @@ int main(int argc, char **argv) {
              else if (option(argv[n]))   // process argument
                  argv[n] = NULL;         // remove if option
          option(NULL);                   // check for missing parameter
