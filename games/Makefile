@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.433 2021/01/03 16:42:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.434 2021/02/08 20:33:31 kmos Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -180,6 +180,7 @@
      SUBDIR += love
      SUBDIR += lugaru
      SUBDIR += lwjgl
+     SUBDIR += lwjgl3
      SUBDIR += maelstrom
      SUBDIR += manaplus
      SUBDIR += mars
