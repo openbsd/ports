@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/03 05:46:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/08 20:00:39 rsadowski Exp $
 
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
 CATEGORIES =	databases productivity
-REVISION =	0
 
 HOMEPAGE =	https://kontact.kde.org/
 

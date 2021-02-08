@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2021/01/23 18:10:12 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2021/02/08 20:00:39 rsadowski Exp $
 
 DIST_SUBDIR =	kde-applications
 
@@ -22,7 +22,7 @@ CONFIGURE_STYLE =	cmake
 
 MODULES :=		devel/kf5 ${MODULES}
 
-VERSION ?=		20.12.1
+VERSION ?=		20.12.2
 
 MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
 

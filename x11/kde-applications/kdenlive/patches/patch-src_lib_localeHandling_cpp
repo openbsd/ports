@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lib_localeHandling_cpp,v 1.3 2021/01/23 18:10:18 rsadowski Exp $
+$OpenBSD: patch-src_lib_localeHandling_cpp,v 1.4 2021/02/08 20:00:43 rsadowski Exp $
 
 Index: src/lib/localeHandling.cpp
 --- src/lib/localeHandling.cpp.orig
@@ -21,3 +21,12 @@ Index: src/lib/localeHandling.cpp
      setlocale(MLT_LC_CATEGORY, "C");
  #else
      std::setlocale(MLT_LC_CATEGORY, "C");
+@@ -49,7 +49,7 @@ void LocaleHandling::resetLocale()
+ 
+ void LocaleHandling::resetAllLocale()
+ {
+-#ifdef Q_OS_FREEBSD
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+     setlocale(LC_ALL, "C");
+ #else
+     std::setlocale(LC_ALL, "C");

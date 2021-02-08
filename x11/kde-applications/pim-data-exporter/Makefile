@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/08 20:00:49 rsadowski Exp $
 
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  pimdataexporterprivate       1.0 # 5.13.2
+SHARED_LIBS +=  pimdataexporterprivate       2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiNotes KF5AkonadiWidgets KF5Archive

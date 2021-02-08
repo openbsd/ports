@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/08 20:12:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/08 20:00:46 rsadowski Exp $
 
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
@@ -7,7 +7,7 @@ CATEGORIES =	net www
 HOMEPAGE =	http://knotesapp.com/
 
 SHARED_LIBS +=  knotesprivate           1.0 # 5.13.2
-SHARED_LIBS +=  notesharedprivate       1.0 # 5.13.2
+SHARED_LIBS +=  notesharedprivate       2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates ICE KF5AkonadiAgentBase
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiNotes KF5AkonadiSearchDebug

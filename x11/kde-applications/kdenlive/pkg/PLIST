@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/02/08 20:00:43 rsadowski Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
@@ -319,7 +319,6 @@ share/kdenlive/effects/dance.xml
 share/kdenlive/effects/dust.xml
 share/kdenlive/effects/dynamic_loudness.xml
 share/kdenlive/effects/dynamictext.xml
-share/kdenlive/effects/equalizer.xml
 share/kdenlive/effects/fade_from_black.xml
 share/kdenlive/effects/fade_to_black.xml
 share/kdenlive/effects/fadein.xml
