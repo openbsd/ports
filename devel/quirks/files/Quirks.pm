@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1166 2021/02/07 22:06:53 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.1167 2021/02/08 20:48:32 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2072,6 +2072,7 @@ my $obsolete_reason = {
 	'lxnb' => 6,
 	'siphon' => 35,
 	'avinfo' => 6,
+	'xfed' => 0,
 };
 
 # reasons for obsolete packages

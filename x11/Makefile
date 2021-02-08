@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.690 2021/02/06 14:49:55 tb Exp $
+# $OpenBSD: Makefile,v 1.691 2021/02/08 20:48:32 naddy Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -385,7 +385,6 @@
      SUBDIR += xdu
      SUBDIR += xfce4
      SUBDIR += xfe
-     SUBDIR += xfed
      SUBDIR += xforms
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map
