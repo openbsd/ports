@@ -1,0 +1,5 @@
+This package provides a library and command-line tool implementing
+stemming algorithms. Stemming maps different forms of the same word to
+a common "stem" - for example, the English stemmer maps connection,
+connections, connective, connected, and connecting to connect. This is
+useful in searching and information retrieval.
