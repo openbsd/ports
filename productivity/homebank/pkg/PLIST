@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/09/07 16:45:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.26 2021/02/08 18:21:39 rsadowski Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -14,6 +14,7 @@ share/homebank/datas/hb-categories-de.csv
 share/homebank/datas/hb-categories-en.csv
 share/homebank/datas/hb-categories-es.csv
 share/homebank/datas/hb-categories-fr.csv
+share/homebank/datas/hb-categories-fr_CA.csv
 share/homebank/datas/hb-categories-hu.csv
 share/homebank/datas/hb-categories-it.csv
 share/homebank/datas/hb-categories-lt.csv
@@ -58,6 +59,8 @@ share/homebank/help/images/46search.png
 share/homebank/help/images/5.png
 share/homebank/help/images/50stackbudget.png
 share/homebank/help/images/50txnstatus.png
+share/homebank/help/images/53txntype.png
+share/homebank/help/images/54txnpopmenu.png
 share/homebank/help/images/6.png
 share/homebank/help/images/7.png
 share/homebank/help/images/8.png
@@ -178,8 +181,6 @@ share/homebank/help/win-vehiclecost.html
 share/homebank/icons/
 share/homebank/icons/hicolor/
 share/homebank/icons/hicolor/16x16/
-share/homebank/icons/hicolor/16x16/actions/
-share/homebank/icons/hicolor/16x16/actions/hb-ope-future.png
 share/homebank/icons/hicolor/16x16/status/
 share/homebank/icons/hicolor/16x16/status/flt-exclude.png
 share/homebank/icons/hicolor/16x16/status/flt-inactive.png
@@ -189,6 +190,7 @@ share/homebank/icons/hicolor/16x16/status/hb-ope-budget.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-cleared.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-edit.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-forced.png
+share/homebank/icons/hicolor/16x16/status/hb-ope-future.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-new.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-reconciled.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-remind.png
@@ -217,6 +219,7 @@ share/homebank/icons/hicolor/24x24/actions/hb-category.png
 share/homebank/icons/hicolor/24x24/actions/hb-currency.png
 share/homebank/icons/hicolor/24x24/actions/hb-document-new.png
 share/homebank/icons/hicolor/24x24/actions/hb-document-open.png
+share/homebank/icons/hicolor/24x24/actions/hb-document-print.png
 share/homebank/icons/hicolor/24x24/actions/hb-document-save-as.png
 share/homebank/icons/hicolor/24x24/actions/hb-document-save.png
 share/homebank/icons/hicolor/24x24/actions/hb-donate.png
