@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/12/09 09:06:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/02/08 19:16:24 rsadowski Exp $
 @bin bin/kdev_dbus_socket_transformer
 @bin bin/kdev_format_source
 @bin bin/kdev_includepathsconverter
@@ -2407,6 +2407,7 @@ share/locale/pl/LC_MESSAGES/kdevclazy.mo
 share/locale/pl/LC_MESSAGES/kdevcmake.mo
 share/locale/pl/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/pl/LC_MESSAGES/kdevcodeutils.mo
+share/locale/pl/LC_MESSAGES/kdevcompileanalyzercommon.mo
 share/locale/pl/LC_MESSAGES/kdevcontextbrowser.mo
 share/locale/pl/LC_MESSAGES/kdevcppcheck.mo
 share/locale/pl/LC_MESSAGES/kdevcustombuildsystem.mo
