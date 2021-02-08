@@ -1,0 +1,12 @@
+$OpenBSD: patch-widgets_h,v 1.1 2021/02/08 20:21:40 naddy Exp $
+
+Index: widgets.h
+--- widgets.h.orig
++++ widgets.h
+@@ -1,5 +1,5 @@
+ 
+-Widget  toplevel,       /* must exist on which to place other widgets */
++extern Widget  toplevel,       /* must exist on which to place other widgets */
+ 		box,
+ 			action[MAXBUTTONS + 1],
+ 			popup_shell,

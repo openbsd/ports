@@ -1,0 +1,15 @@
+$OpenBSD: patch-parser_c,v 1.1 2021/02/08 20:21:40 naddy Exp $
+
+Index: parser.c
+--- parser.c.orig
++++ parser.c
+@@ -2,6 +2,9 @@ static char* sccs_buttons_c = "%W%%G%";
+ 
+ #include "gen.h"
+ 
++extern	int	GetCommand PROTO((char*, char*, char*, char*, int));
++extern	void	GetPath PROTO((char*));
++
+ static	int 	ReadALine PROTO((FILE*, char**));
+ static	int	CheckForComments PROTO((FILE*));
+ static	int	KeyWordLength PROTO((char*));
