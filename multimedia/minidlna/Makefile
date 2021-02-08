@@ -1,35 +1,27 @@
-# $OpenBSD: Makefile,v 1.33 2020/03/23 19:41:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/08 17:33:12 sthen Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
-GH_ACCOUNT=	glebius
-GH_PROJECT=	minidlna
-GH_TAGNAME=	f06964a9b4253c93ce96dabd8953eb6dfc4406bd
-V=		1.2.1
-DISTNAME=	minidlna-${V}-glebius-${GH_TAGNAME:C/^(.........).*/\1/}
-PKGNAME=	minidlna-${V}
-
-REVISION=	7
+DISTNAME=	minidlna-1.3.0
 
 CATEGORIES=	multimedia
 
-HOMEPAGE=	http://sourceforge.net/projects/minidlna/
+HOMEPAGE=	https://sourceforge.net/projects/minidlna/
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += FLAC avformat avutil c exif iconv id3tag intl jpeg
-WANTLIB += ogg pthread sqlite3 vorbis
+WANTLIB += FLAC avcodec avformat avutil c exif iconv id3tag intl jpeg
+WANTLIB += ogg pthread sqlite3 vorbis z
 
-# use the github fork, see this link for more information:
-# https://svnweb.freebsd.org/ports?view=revision&revision=489641
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=minidlna/}
+# sometimes https://github.com/glebius/minidlna has useful things
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=minidlna/}
 
-CONFIGURE_STYLE=	autoreconf
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS= --with-log-path=/var/log/minidlna \
 		--with-db-path=/var/db/minidlna \
-		--with-os-url=http://www.openbsd.org/
+		--with-os-url=https://www.openbsd.org/
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -41,9 +33,6 @@ LIB_DEPENDS=	audio/flac \
 		graphics/jpeg \
 		graphics/libexif
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
- 
 E=		${PREFIX}/share/examples/minidlna
 
 post-install:
