@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2021/02/09 22:13:19 naddy Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -350,6 +350,9 @@ case "${ostype}" in
+     darwin)
+ 	defconfigh "_DARWIN_C_SOURCE"
+ 	;;
++    openbsd)
++	defconfigh "_BSD_SOURCE"
++	;;
+     sunos)
+ 	defconfigh "__EXTENSIONS__"
+ 	;;

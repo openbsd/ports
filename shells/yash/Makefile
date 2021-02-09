@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/12 20:36:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/09 22:13:19 naddy Exp $
 
 COMMENT=	POSIX-compliant command line shell
 
-DISTNAME=	yash-2.49
-RELEASE=	71638
+DISTNAME=	yash-2.51
+RELEASE=	74064
 CATEGORIES=	shells
 HOMEPAGE=	https://yash.osdn.jp/index.html.en
 
@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man"
 CONFIGURE_ENV=	CPPFLAGS="-std=c99 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # The test script fails if none of LC_ALL, LC_CTYPE, or LANG is set
 TEST_ENV=       LC_CTYPE=C
