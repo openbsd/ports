@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2020/12/17 10:18:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/09 20:04:36 jeremy Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
 MODPY_EGG_VERSION=	3.2.6
+REVISION=	0
 GH_ACCOUNT=	pgq
 GH_PROJECT=	skytools-legacy
 GH_TAGNAME=	${MODPY_EGG_VERSION}
