@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/20 07:31:55 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/09 10:49:51 kn Exp $
 
 COMMENT =	curses TLS-only IRC client
-DISTNAME =	catgirl-1.5
+DISTNAME =	catgirl-1.6
 
 CATEGORIES =	net
 
@@ -25,5 +25,11 @@ NO_TEST =	Yes
 
 FAKE_FLAGS =	PREFIX=${PREFIX} \
 		MANDIR=${PREFIX}/man
+
+EXAMPLES =	${PREFIX}/share/examples/catgirl
+
+post-install:
+	${INSTALL_DATA_DIR} ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/scripts/chat.tmux.conf ${EXAMPLES}/
 
 .include <bsd.port.mk>
