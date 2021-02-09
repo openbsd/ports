@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/15 09:12:13 denis Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/09 20:05:15 jeremy Exp $
 
+BROKEN =	doesn't yet work with PostgreSQL 13
 COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	1.7.4
+GH_TAGNAME =	2.0.0
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.timescale.com/
