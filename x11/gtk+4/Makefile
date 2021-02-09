@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/01/31 08:50:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2021/02/09 17:25:08 ajacoutot Exp $
 
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
@@ -13,7 +13,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.0.2
+GNOME_VERSION=		4.0.3
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+4-cloudprint-${GNOME_VERSION}

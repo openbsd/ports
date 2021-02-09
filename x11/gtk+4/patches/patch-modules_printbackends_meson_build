@@ -1,11 +1,11 @@
-$OpenBSD: patch-modules_printbackends_meson_build,v 1.6 2021/01/09 11:30:47 ajacoutot Exp $
+$OpenBSD: patch-modules_printbackends_meson_build,v 1.7 2021/02/09 17:25:08 ajacoutot Exp $
 
 Always enable the lpr print backend.
 
 Index: modules/printbackends/meson.build
 --- modules/printbackends/meson.build.orig
 +++ modules/printbackends/meson.build
-@@ -25,17 +25,17 @@ if cups_dep.found()
+@@ -26,18 +26,18 @@ if cups_dep.found()
      install_dir: printbackends_install_dir,
      install: true,
    )
@@ -16,6 +16,7 @@ Index: modules/printbackends/meson.build
 -    sources: 'gtkprintbackendlpr.c',
 -    c_args: printbackends_args,
 -    dependencies: libgtk_dep,
+-    name_suffix: module_suffix,
 -    install_dir: printbackends_install_dir,
 -    install: true,
 -  )
@@ -27,6 +28,7 @@ Index: modules/printbackends/meson.build
 +  sources: 'gtkprintbackendlpr.c',
 +  c_args: printbackends_args,
 +  dependencies: libgtk_dep,
++  name_suffix: module_suffix,
 +  install_dir: printbackends_install_dir,
 +  install: true,
 +)
