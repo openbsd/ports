@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/06 00:36:28 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/09 20:04:10 jeremy Exp $
 bin/${POSTGRESQL_DIR}/
 @bin bin/${POSTGRESQL_DIR}/clusterdb
 @bin bin/${POSTGRESQL_DIR}/createdb
@@ -10,6 +10,7 @@ bin/${POSTGRESQL_DIR}/
 @bin bin/${POSTGRESQL_DIR}/oid2name
 @bin bin/${POSTGRESQL_DIR}/pg_archivecleanup
 @bin bin/${POSTGRESQL_DIR}/pg_basebackup
+@bin bin/${POSTGRESQL_DIR}/pg_checksums
 @bin bin/${POSTGRESQL_DIR}/pg_config
 @bin bin/${POSTGRESQL_DIR}/pg_controldata
 @bin bin/${POSTGRESQL_DIR}/pg_ctl
@@ -25,7 +26,6 @@ bin/${POSTGRESQL_DIR}/
 @bin bin/${POSTGRESQL_DIR}/pg_test_fsync
 @bin bin/${POSTGRESQL_DIR}/pg_test_timing
 @bin bin/${POSTGRESQL_DIR}/pg_upgrade
-@bin bin/${POSTGRESQL_DIR}/pg_verify_checksums
 @bin bin/${POSTGRESQL_DIR}/pg_waldump
 @bin bin/${POSTGRESQL_DIR}/pgbench
 @bin bin/${POSTGRESQL_DIR}/postgres
@@ -107,6 +107,7 @@ include/${POSTGRESQL_DIR}/server/access/nbtxlog.h
 include/${POSTGRESQL_DIR}/server/access/parallel.h
 include/${POSTGRESQL_DIR}/server/access/printsimple.h
 include/${POSTGRESQL_DIR}/server/access/printtup.h
+include/${POSTGRESQL_DIR}/server/access/relation.h
 include/${POSTGRESQL_DIR}/server/access/reloptions.h
 include/${POSTGRESQL_DIR}/server/access/relscan.h
 include/${POSTGRESQL_DIR}/server/access/rewriteheap.h
@@ -122,6 +123,8 @@ include/${POSTGRESQL_DIR}/server/access/spgxlog.h
 include/${POSTGRESQL_DIR}/server/access/stratnum.h
 include/${POSTGRESQL_DIR}/server/access/subtrans.h
 include/${POSTGRESQL_DIR}/server/access/sysattr.h
+include/${POSTGRESQL_DIR}/server/access/table.h
+include/${POSTGRESQL_DIR}/server/access/tableam.h
 include/${POSTGRESQL_DIR}/server/access/timeline.h
 include/${POSTGRESQL_DIR}/server/access/transam.h
 include/${POSTGRESQL_DIR}/server/access/tsmapi.h
@@ -260,6 +263,8 @@ include/${POSTGRESQL_DIR}/server/catalog/pg_statistic.h
 include/${POSTGRESQL_DIR}/server/catalog/pg_statistic_d.h
 include/${POSTGRESQL_DIR}/server/catalog/pg_statistic_ext.h
 include/${POSTGRESQL_DIR}/server/catalog/pg_statistic_ext_d.h
+include/${POSTGRESQL_DIR}/server/catalog/pg_statistic_ext_data.h
+include/${POSTGRESQL_DIR}/server/catalog/pg_statistic_ext_data_d.h
 include/${POSTGRESQL_DIR}/server/catalog/pg_subscription.h
 include/${POSTGRESQL_DIR}/server/catalog/pg_subscription_d.h
 include/${POSTGRESQL_DIR}/server/catalog/pg_subscription_rel.h
@@ -327,6 +332,7 @@ include/${POSTGRESQL_DIR}/server/commands/view.h
 include/${POSTGRESQL_DIR}/server/common/
 include/${POSTGRESQL_DIR}/server/common/base64.h
 include/${POSTGRESQL_DIR}/server/common/config_info.h
+include/${POSTGRESQL_DIR}/server/common/connect.h
 include/${POSTGRESQL_DIR}/server/common/controldata_utils.h
 include/${POSTGRESQL_DIR}/server/common/fe_memutils.h
 include/${POSTGRESQL_DIR}/server/common/file_perm.h
@@ -335,6 +341,9 @@ include/${POSTGRESQL_DIR}/server/common/int.h
 include/${POSTGRESQL_DIR}/server/common/int128.h
 include/${POSTGRESQL_DIR}/server/common/ip.h
 include/${POSTGRESQL_DIR}/server/common/keywords.h
+include/${POSTGRESQL_DIR}/server/common/kwlookup.h
+include/${POSTGRESQL_DIR}/server/common/link-canary.h
+include/${POSTGRESQL_DIR}/server/common/logging.h
 include/${POSTGRESQL_DIR}/server/common/md5.h
 include/${POSTGRESQL_DIR}/server/common/pg_lzcompress.h
 include/${POSTGRESQL_DIR}/server/common/relpath.h
@@ -342,13 +351,13 @@ include/${POSTGRESQL_DIR}/server/common/restricted_token.h
 include/${POSTGRESQL_DIR}/server/common/saslprep.h
 include/${POSTGRESQL_DIR}/server/common/scram-common.h
 include/${POSTGRESQL_DIR}/server/common/sha2.h
+include/${POSTGRESQL_DIR}/server/common/shortest_dec.h
 include/${POSTGRESQL_DIR}/server/common/string.h
 include/${POSTGRESQL_DIR}/server/common/unicode_norm.h
 include/${POSTGRESQL_DIR}/server/common/unicode_norm_table.h
 include/${POSTGRESQL_DIR}/server/common/username.h
 include/${POSTGRESQL_DIR}/server/datatype/
 include/${POSTGRESQL_DIR}/server/datatype/timestamp.h
-include/${POSTGRESQL_DIR}/server/dynloader.h
 include/${POSTGRESQL_DIR}/server/executor/
 include/${POSTGRESQL_DIR}/server/executor/execExpr.h
 include/${POSTGRESQL_DIR}/server/executor/execParallel.h
@@ -443,6 +452,7 @@ include/${POSTGRESQL_DIR}/server/lib/bloomfilter.h
 include/${POSTGRESQL_DIR}/server/lib/dshash.h
 include/${POSTGRESQL_DIR}/server/lib/hyperloglog.h
 include/${POSTGRESQL_DIR}/server/lib/ilist.h
+include/${POSTGRESQL_DIR}/server/lib/integerset.h
 include/${POSTGRESQL_DIR}/server/lib/knapsack.h
 include/${POSTGRESQL_DIR}/server/lib/pairingheap.h
 include/${POSTGRESQL_DIR}/server/lib/rbtree.h
@@ -451,6 +461,7 @@ include/${POSTGRESQL_DIR}/server/lib/stringinfo.h
 include/${POSTGRESQL_DIR}/server/libpq/
 include/${POSTGRESQL_DIR}/server/libpq/auth.h
 include/${POSTGRESQL_DIR}/server/libpq/be-fsstubs.h
+include/${POSTGRESQL_DIR}/server/libpq/be-gssapi-common.h
 include/${POSTGRESQL_DIR}/server/libpq/crypt.h
 include/${POSTGRESQL_DIR}/server/libpq/hba.h
 include/${POSTGRESQL_DIR}/server/libpq/ifaddr.h
@@ -476,16 +487,18 @@ include/${POSTGRESQL_DIR}/server/nodes/nodeFuncs.h
 include/${POSTGRESQL_DIR}/server/nodes/nodes.h
 include/${POSTGRESQL_DIR}/server/nodes/params.h
 include/${POSTGRESQL_DIR}/server/nodes/parsenodes.h
+include/${POSTGRESQL_DIR}/server/nodes/pathnodes.h
 include/${POSTGRESQL_DIR}/server/nodes/pg_list.h
 include/${POSTGRESQL_DIR}/server/nodes/plannodes.h
 include/${POSTGRESQL_DIR}/server/nodes/primnodes.h
 include/${POSTGRESQL_DIR}/server/nodes/print.h
 include/${POSTGRESQL_DIR}/server/nodes/readfuncs.h
-include/${POSTGRESQL_DIR}/server/nodes/relation.h
 include/${POSTGRESQL_DIR}/server/nodes/replnodes.h
+include/${POSTGRESQL_DIR}/server/nodes/supportnodes.h
 include/${POSTGRESQL_DIR}/server/nodes/tidbitmap.h
 include/${POSTGRESQL_DIR}/server/nodes/value.h
 include/${POSTGRESQL_DIR}/server/optimizer/
+include/${POSTGRESQL_DIR}/server/optimizer/appendinfo.h
 include/${POSTGRESQL_DIR}/server/optimizer/clauses.h
 include/${POSTGRESQL_DIR}/server/optimizer/cost.h
 include/${POSTGRESQL_DIR}/server/optimizer/geqo.h
@@ -497,7 +510,9 @@ include/${POSTGRESQL_DIR}/server/optimizer/geqo_pool.h
 include/${POSTGRESQL_DIR}/server/optimizer/geqo_random.h
 include/${POSTGRESQL_DIR}/server/optimizer/geqo_recombination.h
 include/${POSTGRESQL_DIR}/server/optimizer/geqo_selection.h
+include/${POSTGRESQL_DIR}/server/optimizer/inherit.h
 include/${POSTGRESQL_DIR}/server/optimizer/joininfo.h
+include/${POSTGRESQL_DIR}/server/optimizer/optimizer.h
 include/${POSTGRESQL_DIR}/server/optimizer/orclauses.h
 include/${POSTGRESQL_DIR}/server/optimizer/paramassign.h
 include/${POSTGRESQL_DIR}/server/optimizer/pathnode.h
@@ -506,12 +521,10 @@ include/${POSTGRESQL_DIR}/server/optimizer/placeholder.h
 include/${POSTGRESQL_DIR}/server/optimizer/plancat.h
 include/${POSTGRESQL_DIR}/server/optimizer/planmain.h
 include/${POSTGRESQL_DIR}/server/optimizer/planner.h
-include/${POSTGRESQL_DIR}/server/optimizer/predtest.h
 include/${POSTGRESQL_DIR}/server/optimizer/prep.h
 include/${POSTGRESQL_DIR}/server/optimizer/restrictinfo.h
 include/${POSTGRESQL_DIR}/server/optimizer/subselect.h
 include/${POSTGRESQL_DIR}/server/optimizer/tlist.h
-include/${POSTGRESQL_DIR}/server/optimizer/var.h
 include/${POSTGRESQL_DIR}/server/parser/
 include/${POSTGRESQL_DIR}/server/parser/analyze.h
 include/${POSTGRESQL_DIR}/server/parser/gram.h
@@ -539,6 +552,7 @@ include/${POSTGRESQL_DIR}/server/parser/scansup.h
 include/${POSTGRESQL_DIR}/server/partitioning/
 include/${POSTGRESQL_DIR}/server/partitioning/partbounds.h
 include/${POSTGRESQL_DIR}/server/partitioning/partdefs.h
+include/${POSTGRESQL_DIR}/server/partitioning/partdesc.h
 include/${POSTGRESQL_DIR}/server/partitioning/partprune.h
 include/${POSTGRESQL_DIR}/server/pg_config.h
 include/${POSTGRESQL_DIR}/server/pg_config_ext.h
@@ -576,6 +590,7 @@ include/${POSTGRESQL_DIR}/server/port/hpux.h
 include/${POSTGRESQL_DIR}/server/port/linux.h
 include/${POSTGRESQL_DIR}/server/port/netbsd.h
 include/${POSTGRESQL_DIR}/server/port/openbsd.h
+include/${POSTGRESQL_DIR}/server/port/pg_bitutils.h
 include/${POSTGRESQL_DIR}/server/port/pg_bswap.h
 include/${POSTGRESQL_DIR}/server/port/pg_crc32c.h
 include/${POSTGRESQL_DIR}/server/port/solaris.h
@@ -666,15 +681,18 @@ include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_english.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_finnish.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_french.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_german.h
-include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_hungarian.h
+include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_indonesian.h
+include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_irish.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_italian.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_norwegian.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_porter.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_portuguese.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_spanish.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_1_swedish.h
+include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_2_hungarian.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_ISO_8859_2_romanian.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_KOI8_R_russian.h
+include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_arabic.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_danish.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_dutch.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_english.h
@@ -682,7 +700,11 @@ include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_finnish.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_french.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_german.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_hungarian.h
+include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_indonesian.h
+include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_irish.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_italian.h
+include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_lithuanian.h
+include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_nepali.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_norwegian.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_porter.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_portuguese.h
@@ -690,6 +712,7 @@ include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_romanian.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_russian.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_spanish.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_swedish.h
+include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_tamil.h
 include/${POSTGRESQL_DIR}/server/snowball/libstemmer/stem_UTF_8_turkish.h
 include/${POSTGRESQL_DIR}/server/statistics/
 include/${POSTGRESQL_DIR}/server/statistics/extended_stats_internal.h
@@ -724,6 +747,7 @@ include/${POSTGRESQL_DIR}/server/storage/lock.h
 include/${POSTGRESQL_DIR}/server/storage/lockdefs.h
 include/${POSTGRESQL_DIR}/server/storage/lwlock.h
 include/${POSTGRESQL_DIR}/server/storage/lwlocknames.h
+include/${POSTGRESQL_DIR}/server/storage/md.h
 include/${POSTGRESQL_DIR}/server/storage/off.h
 include/${POSTGRESQL_DIR}/server/storage/pg_sema.h
 include/${POSTGRESQL_DIR}/server/storage/pg_shmem.h
@@ -748,6 +772,7 @@ include/${POSTGRESQL_DIR}/server/storage/smgr.h
 include/${POSTGRESQL_DIR}/server/storage/spin.h
 include/${POSTGRESQL_DIR}/server/storage/standby.h
 include/${POSTGRESQL_DIR}/server/storage/standbydefs.h
+include/${POSTGRESQL_DIR}/server/storage/sync.h
 include/${POSTGRESQL_DIR}/server/tcop/
 include/${POSTGRESQL_DIR}/server/tcop/deparse_utility.h
 include/${POSTGRESQL_DIR}/server/tcop/dest.h
@@ -771,7 +796,6 @@ include/${POSTGRESQL_DIR}/server/utils/array.h
 include/${POSTGRESQL_DIR}/server/utils/arrayaccess.h
 include/${POSTGRESQL_DIR}/server/utils/ascii.h
 include/${POSTGRESQL_DIR}/server/utils/attoptcache.h
-include/${POSTGRESQL_DIR}/server/utils/backend_random.h
 include/${POSTGRESQL_DIR}/server/utils/builtins.h
 include/${POSTGRESQL_DIR}/server/utils/bytea.h
 include/${POSTGRESQL_DIR}/server/utils/cash.h
@@ -782,12 +806,12 @@ include/${POSTGRESQL_DIR}/server/utils/datetime.h
 include/${POSTGRESQL_DIR}/server/utils/datum.h
 include/${POSTGRESQL_DIR}/server/utils/dsa.h
 include/${POSTGRESQL_DIR}/server/utils/dynahash.h
-include/${POSTGRESQL_DIR}/server/utils/dynamic_loader.h
 include/${POSTGRESQL_DIR}/server/utils/elog.h
 include/${POSTGRESQL_DIR}/server/utils/errcodes.h
 include/${POSTGRESQL_DIR}/server/utils/evtcache.h
 include/${POSTGRESQL_DIR}/server/utils/expandeddatum.h
 include/${POSTGRESQL_DIR}/server/utils/expandedrecord.h
+include/${POSTGRESQL_DIR}/server/utils/float.h
 include/${POSTGRESQL_DIR}/server/utils/fmgroids.h
 include/${POSTGRESQL_DIR}/server/utils/fmgrprotos.h
 include/${POSTGRESQL_DIR}/server/utils/fmgrtab.h
@@ -806,11 +830,11 @@ include/${POSTGRESQL_DIR}/server/utils/inval.h
 include/${POSTGRESQL_DIR}/server/utils/json.h
 include/${POSTGRESQL_DIR}/server/utils/jsonapi.h
 include/${POSTGRESQL_DIR}/server/utils/jsonb.h
+include/${POSTGRESQL_DIR}/server/utils/jsonpath.h
 include/${POSTGRESQL_DIR}/server/utils/logtape.h
 include/${POSTGRESQL_DIR}/server/utils/lsyscache.h
 include/${POSTGRESQL_DIR}/server/utils/memdebug.h
 include/${POSTGRESQL_DIR}/server/utils/memutils.h
-include/${POSTGRESQL_DIR}/server/utils/nabstime.h
 include/${POSTGRESQL_DIR}/server/utils/numeric.h
 include/${POSTGRESQL_DIR}/server/utils/palloc.h
 include/${POSTGRESQL_DIR}/server/utils/partcache.h
@@ -846,7 +870,6 @@ include/${POSTGRESQL_DIR}/server/utils/spccache.h
 include/${POSTGRESQL_DIR}/server/utils/syscache.h
 include/${POSTGRESQL_DIR}/server/utils/timeout.h
 include/${POSTGRESQL_DIR}/server/utils/timestamp.h
-include/${POSTGRESQL_DIR}/server/utils/tqual.h
 include/${POSTGRESQL_DIR}/server/utils/tuplesort.h
 include/${POSTGRESQL_DIR}/server/utils/tuplestore.h
 include/${POSTGRESQL_DIR}/server/utils/typcache.h
@@ -903,8 +926,10 @@ lib/${POSTGRESQL_DIR}/libecpg.so.7
 lib/${POSTGRESQL_DIR}/libecpg_compat.so.4
 @lib lib/${POSTGRESQL_DIR}/libecpg_compat.so.${LIBecpg_compat_VERSION}
 @static-lib lib/${POSTGRESQL_DIR}/libpgcommon.a
+@static-lib lib/${POSTGRESQL_DIR}/libpgcommon_shlib.a
 @static-lib lib/${POSTGRESQL_DIR}/libpgfeutils.a
 @static-lib lib/${POSTGRESQL_DIR}/libpgport.a
+@static-lib lib/${POSTGRESQL_DIR}/libpgport_shlib.a
 @static-lib lib/${POSTGRESQL_DIR}/libpgtypes.a
 @so lib/${POSTGRESQL_DIR}/libpgtypes.so
 lib/${POSTGRESQL_DIR}/libpgtypes.so.4
@@ -958,7 +983,6 @@ lib/${POSTGRESQL_DIR}/pkgconfig/libpq.pc
 @so lib/${POSTGRESQL_DIR}/tablefunc.so
 @so lib/${POSTGRESQL_DIR}/tcn.so
 @so lib/${POSTGRESQL_DIR}/test_decoding.so
-@so lib/${POSTGRESQL_DIR}/timetravel.so
 @so lib/${POSTGRESQL_DIR}/tsm_system_rows.so
 @so lib/${POSTGRESQL_DIR}/tsm_system_time.so
 @so lib/${POSTGRESQL_DIR}/unaccent.so
@@ -986,9 +1010,7 @@ share/doc/postgresql/extension/autoinc.example
 share/doc/postgresql/extension/insert_username.example
 share/doc/postgresql/extension/moddatetime.example
 share/doc/postgresql/extension/refint.example
-share/doc/postgresql/extension/timetravel.example
 share/${POSTGRESQL_DIR}/
-share/${POSTGRESQL_DIR}/conversion_create.sql
 share/${POSTGRESQL_DIR}/errcodes.txt
 share/${POSTGRESQL_DIR}/extension/
 share/${POSTGRESQL_DIR}/extension/adminpack--1.0--1.1.sql
@@ -997,6 +1019,7 @@ share/${POSTGRESQL_DIR}/extension/adminpack--1.1--2.0.sql
 share/${POSTGRESQL_DIR}/extension/adminpack.control
 share/${POSTGRESQL_DIR}/extension/amcheck--1.0--1.1.sql
 share/${POSTGRESQL_DIR}/extension/amcheck--1.0.sql
+share/${POSTGRESQL_DIR}/extension/amcheck--1.1--1.2.sql
 share/${POSTGRESQL_DIR}/extension/amcheck.control
 share/${POSTGRESQL_DIR}/extension/autoinc--1.0.sql
 share/${POSTGRESQL_DIR}/extension/autoinc--unpackaged--1.0.sql
@@ -1023,6 +1046,7 @@ share/${POSTGRESQL_DIR}/extension/citext--1.2--1.3.sql
 share/${POSTGRESQL_DIR}/extension/citext--1.3--1.4.sql
 share/${POSTGRESQL_DIR}/extension/citext--1.4--1.5.sql
 share/${POSTGRESQL_DIR}/extension/citext--1.4.sql
+share/${POSTGRESQL_DIR}/extension/citext--1.5--1.6.sql
 share/${POSTGRESQL_DIR}/extension/citext--unpackaged--1.0.sql
 share/${POSTGRESQL_DIR}/extension/citext.control
 share/${POSTGRESQL_DIR}/extension/cube--1.0--1.1.sql
@@ -1059,6 +1083,7 @@ share/${POSTGRESQL_DIR}/extension/hstore--1.2--1.3.sql
 share/${POSTGRESQL_DIR}/extension/hstore--1.3--1.4.sql
 share/${POSTGRESQL_DIR}/extension/hstore--1.4--1.5.sql
 share/${POSTGRESQL_DIR}/extension/hstore--1.4.sql
+share/${POSTGRESQL_DIR}/extension/hstore--1.5--1.6.sql
 share/${POSTGRESQL_DIR}/extension/hstore--unpackaged--1.0.sql
 share/${POSTGRESQL_DIR}/extension/hstore.control
 share/${POSTGRESQL_DIR}/extension/hstore_plperl--1.0.sql
@@ -1129,6 +1154,7 @@ share/${POSTGRESQL_DIR}/extension/pg_stat_statements--1.3--1.4.sql
 share/${POSTGRESQL_DIR}/extension/pg_stat_statements--1.4--1.5.sql
 share/${POSTGRESQL_DIR}/extension/pg_stat_statements--1.4.sql
 share/${POSTGRESQL_DIR}/extension/pg_stat_statements--1.5--1.6.sql
+share/${POSTGRESQL_DIR}/extension/pg_stat_statements--1.6--1.7.sql
 share/${POSTGRESQL_DIR}/extension/pg_stat_statements--unpackaged--1.0.sql
 share/${POSTGRESQL_DIR}/extension/pg_stat_statements.control
 share/${POSTGRESQL_DIR}/extension/pg_trgm--1.0--1.1.sql
@@ -1191,9 +1217,6 @@ share/${POSTGRESQL_DIR}/extension/tablefunc--unpackaged--1.0.sql
 share/${POSTGRESQL_DIR}/extension/tablefunc.control
 share/${POSTGRESQL_DIR}/extension/tcn--1.0.sql
 share/${POSTGRESQL_DIR}/extension/tcn.control
-share/${POSTGRESQL_DIR}/extension/timetravel--1.0.sql
-share/${POSTGRESQL_DIR}/extension/timetravel--unpackaged--1.0.sql
-share/${POSTGRESQL_DIR}/extension/timetravel.control
 share/${POSTGRESQL_DIR}/extension/tsm_system_rows--1.0.sql
 share/${POSTGRESQL_DIR}/extension/tsm_system_rows.control
 share/${POSTGRESQL_DIR}/extension/tsm_system_time--1.0.sql
@@ -1219,7 +1242,6 @@ share/${POSTGRESQL_DIR}/postgres.description
 share/${POSTGRESQL_DIR}/postgres.shdescription
 share/${POSTGRESQL_DIR}/postgresql.conf.sample
 share/${POSTGRESQL_DIR}/psqlrc.sample
-share/${POSTGRESQL_DIR}/recovery.conf.sample
 share/${POSTGRESQL_DIR}/snowball_create.sql
 share/${POSTGRESQL_DIR}/sql_features.txt
 share/${POSTGRESQL_DIR}/system_views.sql
@@ -1253,6 +1275,7 @@ share/${POSTGRESQL_DIR}/tsearch_data/hunspell_sample_num.dict
 share/${POSTGRESQL_DIR}/tsearch_data/ispell_sample.affix
 share/${POSTGRESQL_DIR}/tsearch_data/ispell_sample.dict
 share/${POSTGRESQL_DIR}/tsearch_data/italian.stop
+share/${POSTGRESQL_DIR}/tsearch_data/nepali.stop
 share/${POSTGRESQL_DIR}/tsearch_data/norwegian.stop
 share/${POSTGRESQL_DIR}/tsearch_data/portuguese.stop
 share/${POSTGRESQL_DIR}/tsearch_data/russian.stop

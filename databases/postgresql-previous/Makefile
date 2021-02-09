@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2020/02/06 00:36:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/09 20:04:10 jeremy Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
-VERSION=	11.6
+VERSION=	12.5
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
 
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		7.9 \
-		ecpg_compat	4.9 \
-		pgtypes		4.8 \
-		pq		6.10
+SHARED_LIBS=	ecpg		7.10 \
+		ecpg_compat	4.10 \
+		pgtypes		4.9 \
+		pq		6.11
 
 HOMEPAGE=	http://www.postgresql.org/
 
