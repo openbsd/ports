@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/08/20 18:00:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/09 05:28:35 rsadowski Exp $
 @conflict phonon-vlc-<=0.10.3
 @conflict phonon-qt5-vlc-<0.11
 @pkgpath multimedia/phonon-backend/vlc,qt5
@@ -10,9 +10,15 @@ share/locale/
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/phonon_vlc_qt.qm
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/cs/
 share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/phonon_vlc_qt.qm
+share/locale/da/
+share/locale/da/LC_MESSAGES/
+share/locale/da/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/de/
 share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/phonon_vlc_qt.qm
@@ -22,6 +28,9 @@ share/locale/en_GB/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/es/
 share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/phonon_vlc_qt.qm
+share/locale/et/
+share/locale/et/LC_MESSAGES/
+share/locale/et/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/phonon_vlc_qt.qm
@@ -34,6 +43,9 @@ share/locale/fr/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/gl/
 share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/phonon_vlc_qt.qm
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
+share/locale/hu/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/id/
 share/locale/id/LC_MESSAGES/
 share/locale/id/LC_MESSAGES/phonon_vlc_qt.qm
@@ -58,21 +70,15 @@ share/locale/pt/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/pt_BR/
 share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/phonon_vlc_qt.qm
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
+share/locale/ro/LC_MESSAGES/phonon_vlc_qt.qm
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
+share/locale/ru/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/sk/
 share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/phonon_vlc_qt.qm
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
-share/locale/sr/LC_MESSAGES/phonon_vlc_qt.qm
-share/locale/sr@ijekavian/
-share/locale/sr@ijekavian/LC_MESSAGES/
-share/locale/sr@ijekavian/LC_MESSAGES/phonon_vlc_qt.qm
-share/locale/sr@ijekavianlatin/
-share/locale/sr@ijekavianlatin/LC_MESSAGES/
-share/locale/sr@ijekavianlatin/LC_MESSAGES/phonon_vlc_qt.qm
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
-share/locale/sr@latin/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/sv/
 share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/phonon_vlc_qt.qm
@@ -82,3 +88,6 @@ share/locale/uk/LC_MESSAGES/phonon_vlc_qt.qm
 share/locale/zh_CN/
 share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/phonon_vlc_qt.qm
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
+share/locale/zh_TW/LC_MESSAGES/phonon_vlc_qt.qm
