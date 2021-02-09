@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/01 14:56:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/09 14:30:09 sthen Exp $
 bin/vd
 bin/visidata
 lib/python${MODPY_VERSION}/site-packages/visidata/
@@ -189,6 +189,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/mainloop.py
 lib/python${MODPY_VERSION}/site-packages/visidata/man/
 lib/python${MODPY_VERSION}/site-packages/visidata/man/vd.1
 lib/python${MODPY_VERSION}/site-packages/visidata/man/vd.txt
+lib/python${MODPY_VERSION}/site-packages/visidata/man/visidata.1
 lib/python${MODPY_VERSION}/site-packages/visidata/melt.py
 lib/python${MODPY_VERSION}/site-packages/visidata/menu.py
 lib/python${MODPY_VERSION}/site-packages/visidata/metasheets.py
@@ -232,4 +233,5 @@ lib/python${MODPY_VERSION}/site-packages/visidata/utils.py
 lib/python${MODPY_VERSION}/site-packages/visidata/vdobj.py
 lib/python${MODPY_VERSION}/site-packages/visidata/wrappers.py
 @man man/man1/vd.1
+@man man/man1/visidata.1
 share/doc/pkg-readmes/${PKGSTEM}
