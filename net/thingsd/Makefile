@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/29 19:33:43 tracey Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/09 15:14:23 tracey Exp $
 
 COMMENT =	things proxy daemon for OpenBSD
 CATEGORIES =	net
 
 GH_ACCOUNT =	basepr1me
 GH_PROJECT =	thingsd
-GH_TAGNAME =	3.0.4
+GH_TAGNAME =	4.0.2
 
 MAINTAINER =	Tracey Emery <tracey@traceyemery.net>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 # uses unveil()
-WANTLIB += c crypto event pthread ssl tls util
+WANTLIB += c crypto event ssl tls util
 
 MAKE_FLAGS =	CC="${CC}"
 
