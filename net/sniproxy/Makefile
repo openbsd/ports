@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/08 04:56:52 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/09 15:06:50 tb Exp $
 
 COMMENT =	name-based proxying of HTTPS without decrypting traffic
 
 GH_ACCOUNT =	dlundquist
 GH_PROJECT =	sniproxy
 GH_TAGNAME =	0.6.0
+
+REVISION =	0
 
 CATEGORIES =	net
 
