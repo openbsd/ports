@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2020/12/29 15:05:55 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/09 13:55:56 landry Exp $
 
 COMMENT=	Xfce4 task manager and system monitor
 
-XFCE_VERSION=	1.4.0
+XFCE_VERSION=	1.4.2
 XFCE_GOODIE=	xfce4-taskmanager
 
 # GPLv2
