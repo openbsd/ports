@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_am,v 1.8 2020/08/06 06:03:52 robert Exp $
+$OpenBSD: patch-Makefile_am,v 1.9 2021/02/09 10:32:33 robert Exp $
 
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -214,7 +214,7 @@ kopano_dagent_LDADD = \
+@@ -221,7 +221,7 @@ kopano_dagent_LDADD = \
  #
  kopano_dbadm_SOURCES = ECtools/dbadm.cpp
  kopano_dbadm_CPPFLAGS = ${AM_CPPFLAGS}
@@ -12,7 +12,7 @@ Index: Makefile.am
  
  
  #
-@@ -324,7 +324,7 @@ kopano_server_SOURCES = \
+@@ -328,7 +328,7 @@ kopano_server_SOURCES = \
  	provider/server/ECSoapServerConnection.cpp provider/server/ECSoapServerConnection.h \
  	provider/server/ECThreadManager.cpp provider/server/ECThreadManager.h
  kopano_server_LDADD = \
@@ -20,43 +20,43 @@ Index: Makefile.am
 +	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} ${PROG_LIBS} \
  	${clock_LIBS} ${CRYPTO_LIBS} ${DL_LIBS} ${libHX_LIBS} ${icu_uc_LIBS} \
  	${icu_i18n_LIBS} \
- 	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} -lpthread
-@@ -674,6 +674,7 @@ libkcutil_la_LIBADD = \
- 	-lpthread -lz ${CRYPTO_LIBS} ${curl_LIBS} ${GZ_LIBS} ${iconv_LIBS} \
- 	${idn_LIBS} ${icu_i18n_LIBS} ${icu_uc_LIBS} ${jsoncpp_LIBS} ${libHX_LIBS} \
+ 	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} ${kustomer_LIBS} \
+@@ -659,6 +659,7 @@ libkcutil_la_LIBADD = \
+ 	${idn_LIBS} ${icu_i18n_LIBS} ${icu_uc_LIBS} ${INTL_LIBS} \
+ 	${jsoncpp_LIBS} ${libHX_LIBS} \
  	${SSL_LIBS} ${UUID_LIBS}
 +libkcutil_la_LIBADD += -lkvm
  libkcutil_la_SYFLAGS = -Wl,--version-script=common/libkcutil.sym
  libkcutil_la_LDFLAGS = ${AM_LDFLAGS} -no-undefined \
  	${libkcutil_la_SYFLAGS${NO_VSYM}}
-@@ -777,11 +778,11 @@ mapitime_LDADD = ${clock_LIBS} libmapi.la libkcutil.la
+@@ -765,11 +766,11 @@ mapitime_LDADD = ${clock_LIBS} libmapi.la libkcutil.la
  tests_ablookup_SOURCES = tests/ablookup.cpp
  tests_ablookup_LDADD = libmapi.la libkcutil.la
  tests_htmltext_SOURCES = tests/htmltext.cpp
 -tests_htmltext_LDADD = libkcutil.la
-+tests_htmltext_LDADD = libkcutil.la $(INTL_LIBS)
++tests_htmltext_LDADD = libkcutil.la ${INTL_LIBS}
  tests_chtmltotextparsertest_SOURCES = tests/chtmltotextparsertest.cpp
 -tests_chtmltotextparsertest_LDADD = libkcutil.la
-+tests_chtmltotextparsertest_LDADD = libkcutil.la $(INTL_LIBS)
++tests_chtmltotextparsertest_LDADD = libkcutil.la ${INTL_LIBS}
  tests_rtfhtmltest_SOURCES = tests/rtfhtmltest.cpp
 -tests_rtfhtmltest_LDADD = libkcutil.la
-+tests_rtfhtmltest_LDADD = libkcutil.la $(INTL_LIBS)
- tests_imtomapi_SOURCES = tests/imtomapi.cpp tests/tbi.hpp
- tests_imtomapi_LDADD = libkcinetmapi.la libmapi.la libkcutil.la
++tests_rtfhtmltest_LDADD = libkcutil.la ${INTL_LIBS}
  tests_kc_335_SOURCES = tests/kc-335.cpp tests/tbi.hpp
-@@ -793,9 +794,9 @@ tests_mapialloctime_LDADD = libmapi.la ${clock_LIBS}
+ tests_kc_335_LDADD = libmapi.la libkcutil.la
+ tests_kc_1759_SOURCES = tests/kc-1759.cpp
+@@ -781,9 +782,9 @@ tests_mapisuite_LDADD = libmapi.la ${cppunit_LIBS}
  tests_readflag_SOURCES = tests/readflag.cpp tests/tbi.hpp
  tests_readflag_LDADD = libmapi.la libkcutil.la
  tests_ustring_SOURCES = tests/ustring.cpp
 -tests_ustring_LDADD = libkcutil.la ${icu_uc_LIBS}
-+tests_ustring_LDADD = libkcutil.la ${icu_uc_LIBS} $(INTL_LIBS)
++tests_ustring_LDADD = libkcutil.la ${icu_uc_LIBS} ${INTL_LIBS}
  tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
 -tests_zcpmd5_LDADD = ${CRYPTO_LIBS} libkcutil.la
-+tests_zcpmd5_LDADD = ${CRYPTO_LIBS} ${PROG_LIBS} libkcutil.la $(INTL_LIBS)
++tests_zcpmd5_LDADD = ${CRYPTO_LIBS} libkcutil.la ${INTL_LIBS}
  
  
  #
-@@ -952,7 +953,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-dcprefix='$${pre
+@@ -936,7 +937,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-dcprefix='$${pre
  
  .PHONY: source-moved-check
  source-moved-check:

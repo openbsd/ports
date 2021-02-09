@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_monitor_monitor_cpp,v 1.15 2020/07/29 13:04:05 robert Exp $
+$OpenBSD: patch-ECtools_monitor_monitor_cpp,v 1.16 2021/02/09 10:32:33 robert Exp $
 
 Index: ECtools/monitor/monitor.cpp
 --- ECtools/monitor/monitor.cpp.orig
 +++ ECtools/monitor/monitor.cpp
-@@ -123,8 +123,8 @@ static ECRESULT main2(int argc, char **argv)
+@@ -122,8 +122,8 @@ static ECRESULT main2(int argc, char **argv)
  	static const configsetting_t lpDefaults[] = {
  		{ "smtp_server","localhost" },
  		{ "server_socket", "default:" },
@@ -11,6 +11,6 @@ Index: ECtools/monitor/monitor.cpp
 -		{ "run_as_group", "kopano" },
 +		{ "run_as_user", "_kopano" },
 +		{ "run_as_group", "_kopano" },
- 		{ "pid_file", "/var/run/kopano/monitor.pid" },
+ 		{"pid_file", "", CONFIGSETTING_OBSOLETE},
  		{"log_method", "auto", CONFIGSETTING_NONEMPTY},
  		{"log_file", ""},

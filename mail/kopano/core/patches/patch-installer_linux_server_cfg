@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.12 2020/03/08 08:17:57 robert Exp $
+$OpenBSD: patch-installer_linux_server_cfg,v 1.13 2021/02/09 10:32:33 robert Exp $
 
 Index: installer/linux/server.cfg
 --- installer/linux/server.cfg.orig
@@ -21,22 +21,3 @@ Index: installer/linux/server.cfg
  
  #attachment_s3_hostname = s3-eu-west-1.amazonaws.com
  # The region where the bucket is located, e.g. "eu-west-1"
-@@ -68,12 +68,12 @@ local_admin_users = root kopano
- #server_hostname =
- 
- # scripts which create stores for users from an external source
--#createuser_script = /usr/lib/kopano/userscripts/createuser
--#deleteuser_script = /usr/lib/kopano/userscripts/deleteuser
--#creategroup_script = /usr/lib/kopano/userscripts/creategroup
--#deletegroup_script = /usr/lib/kopano/userscripts/deletegroup
--#createcompany_script = /usr/lib/kopano/userscripts/createcompany
--#deletecompany_script = /usr/lib/kopano/userscripts/deletecompany
-+#createuser_script = /usr/local/lib/kopano/userscripts/createuser
-+#deleteuser_script = /usr/local/lib/kopano/userscripts/deleteuser
-+#creategroup_script = /usr/local/lib/kopano/userscripts/creategroup
-+#deletegroup_script = /usr/local/lib/kopano/userscripts/deletegroup
-+#createcompany_script = /usr/local/lib/kopano/userscripts/createcompany
-+#deletecompany_script = /usr/local/lib/kopano/userscripts/deletecompany
- # Skip creation/deletion of users for testing purposes, instead log it.
- #user_safe_mode = no
- 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_mapitime_cpp,v 1.10 2020/07/29 13:04:05 robert Exp $
+$OpenBSD: patch-ECtools_mapitime_cpp,v 1.11 2021/02/09 10:32:33 robert Exp $
 
 Index: ECtools/mapitime.cpp
 --- ECtools/mapitime.cpp.orig
 +++ ECtools/mapitime.cpp
-@@ -35,6 +35,17 @@ using namespace KC;
+@@ -38,6 +38,17 @@ using namespace KC;
  using clk = std::chrono::steady_clock;
  using duration = decltype(time_point()-time_point());
  

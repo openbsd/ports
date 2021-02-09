@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_setupenv_cpp,v 1.1 2021/02/09 10:32:33 robert Exp $
+
+Index: tests/setupenv.cpp
+--- tests/setupenv.cpp.orig
++++ tests/setupenv.cpp
+@@ -20,6 +20,8 @@
+ #include <kopano/UnixUtil.h>
+ #include <kopano/scope.hpp>
+ 
++#include <netinet/in.h>
++
+ using namespace std::string_literals;
+ 
+ static std::set<pid_t> se_term_pids, se_wait_pids;

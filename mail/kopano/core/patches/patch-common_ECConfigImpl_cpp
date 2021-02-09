@@ -1,0 +1,53 @@
+$OpenBSD: patch-common_ECConfigImpl_cpp,v 1.1 2021/02/09 10:32:33 robert Exp $
+
+Index: common/ECConfigImpl.cpp
+--- common/ECConfigImpl.cpp.orig
++++ common/ECConfigImpl.cpp
+@@ -43,7 +43,7 @@ enum {
+ 
+ namespace KC {
+ 
+-class ConfigImpl;
++class ECConfigImpl;
+ 
+ struct settingkey_t {
+ 	char s[256];
+@@ -53,16 +53,16 @@ struct settingkey_t {
+ 
+ struct directive_t {
+ 	const char *lpszDirective;
+-	bool (ConfigImpl::*fExecute)(const char *, unsigned int);
++	bool (ECConfigImpl::*fExecute)(const char *, unsigned int);
+ };
+ 
+ /* Note: char* in map is allocated ONCE to 1024, and GetSetting will always return the same pointer to this buffer */
+ typedef std::map<settingkey_t, char *> settingmap_t;
+ 
+-class ConfigImpl KC_FINAL : public Config {
++class ECConfigImpl KC_FINAL : public Config {
+ 	public:
+-	ConfigImpl(const configsetting_t *defaults, const char *const *directives);
+-	~ConfigImpl();
++	ECConfigImpl(const configsetting_t *defaults, const char *const *directives);
++	~ECConfigImpl();
+ 	virtual bool LoadSettings(const char *file, bool ignore_missing = false) override;
+ 	virtual int ParseParams(int argc, char **argv) override;
+ 	const char *GetSettingsPath() const override { return m_szConfigFile; }
+@@ -107,8 +107,6 @@ class ConfigImpl KC_FINAL : public Config {
+ 	static const directive_t s_sDirectives[];
+ };
+ 
+-using ECConfigImpl = ConfigImpl;
+-
+ const directive_t ECConfigImpl::s_sDirectives[] = {
+ 	{ "include",	&ECConfigImpl::HandleInclude },
+ 	{ "propmap",	&ECConfigImpl::HandlePropMap },
+@@ -162,7 +160,7 @@ const char *ECConfig::GetDefaultPath(const char *base)
+ 
+ // Configuration file parser
+ 
+-ConfigImpl::ConfigImpl(const configsetting_t *lpDefaults,
++ECConfigImpl::ECConfigImpl(const configsetting_t *lpDefaults,
+     const char *const *lpszDirectives) :
+ 	m_lpDefaults(lpDefaults)
+ {

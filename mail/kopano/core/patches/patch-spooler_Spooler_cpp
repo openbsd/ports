@@ -1,4 +1,4 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.16 2020/07/29 13:04:05 robert Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.17 2021/02/09 10:32:33 robert Exp $
 
 Index: spooler/Spooler.cpp
 --- spooler/Spooler.cpp.orig
@@ -11,7 +11,7 @@ Index: spooler/Spooler.cpp
 -		{ "run_as_group", "kopano" },
 +		{ "run_as_user", "_kopano" },
 +		{ "run_as_group", "_kopano" },
- 		{ "pid_file", "/var/run/kopano/spooler.pid" },
+ 		{"pid_file", "", CONFIGSETTING_OBSOLETE},
  		{"coredump_enabled", "systemdefault"},
  		{"log_method", "auto", CONFIGSETTING_NONEMPTY},
 @@ -944,13 +944,13 @@ static int main2(int argc, char **argv)

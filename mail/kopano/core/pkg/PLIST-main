@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2020/03/08 08:17:58 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2021/02/09 10:32:33 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -75,7 +75,6 @@ include/kopano/automapi.hpp
 include/kopano/buildconfig.h
 include/kopano/charset/
 include/kopano/charset/convert.h
-include/kopano/charset/convstring.h
 include/kopano/charset/traits.h
 include/kopano/charset/utf8string.h
 include/kopano/codepage.h
@@ -83,7 +82,6 @@ include/kopano/ecversion.h
 include/kopano/fileutil.hpp
 include/kopano/hl.hpp
 include/kopano/kcodes.h
-include/kopano/mapi_ptr.h
 include/kopano/mapiext.h
 include/kopano/mapiguidext.h
 include/kopano/memory.hpp
@@ -132,34 +130,20 @@ lib/kopano/
 @so lib/kopano/libkcserver-ldap.so
 lib/kopano/userscripts/
 @sample ${SYSCONFDIR}/kopano/userscripts/
-lib/kopano/userscripts/createcompany
 lib/kopano/userscripts/createcompany.d/
 @sample ${SYSCONFDIR}/kopano/userscripts/createcompany.d/
 lib/kopano/userscripts/createcompany.d/00createpublic
-lib/kopano/userscripts/creategroup
-lib/kopano/userscripts/creategroup.d/
-@sample ${SYSCONFDIR}/kopano/userscripts/creategroup.d/
-lib/kopano/userscripts/createuser
+@sample ${SYSCONFDIR}/kopano/userscripts/createcompany.d/00createpublic
 lib/kopano/userscripts/createuser.d/
 @sample ${SYSCONFDIR}/kopano/userscripts/createuser.d/
 lib/kopano/userscripts/createuser.d/00createstore
-lib/kopano/userscripts/deletecompany
-lib/kopano/userscripts/deletecompany.d/
-@sample ${SYSCONFDIR}/kopano/userscripts/deletecompany.d/
-lib/kopano/userscripts/deletegroup
-lib/kopano/userscripts/deletegroup.d/
-@sample ${SYSCONFDIR}/kopano/userscripts/deletegroup.d/
-lib/kopano/userscripts/deleteuser
-lib/kopano/userscripts/deleteuser.d/
-@sample ${SYSCONFDIR}/kopano/userscripts/deleteuser.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/createuser.d/00createstore
 @static-lib lib/libkcarchiver.a
 @lib lib/libkcarchiver.so.${LIBkcarchiver_VERSION}
 @static-lib lib/libkcfreebusy.a
 @lib lib/libkcfreebusy.so.${LIBkcfreebusy_VERSION}
 @static-lib lib/libkcicalmapi.a
 @lib lib/libkcicalmapi.so.${LIBkcicalmapi_VERSION}
-@static-lib lib/libkcindex.a
-@lib lib/libkcindex.so.${LIBkcindex_VERSION}
 @static-lib lib/libkcinetmapi.a
 @lib lib/libkcinetmapi.so.${LIBkcinetmapi_VERSION}
 @so lib/libkcpyconv-${MODPY_VERSION}.so
@@ -330,30 +314,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_backup/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/kopano_backup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_backup/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_backup/version.py
-lib/python${MODPY_VERSION}/site-packages/kopano_cli/
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_cli-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_cli/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/kopano_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_cli/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_cli/version.py
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/${MODPY_PYCACHE}pst.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/pst.py
-lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/
 lib/python${MODPY_VERSION}/site-packages/kopano_search-${V}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/kopano_search-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -418,10 +378,10 @@ lib/tmpfiles.d/
 lib/tmpfiles.d/kopano-tmpfiles.conf
 libexec/kopano/
 @bin libexec/kopano/eidprint
-@bin libexec/kopano/kopano-indexd
 @bin libexec/kopano/kopano-statsd
 @bin libexec/kopano/kscriptrun
 @bin libexec/kopano/mapitime
+@bin libexec/kopano/setupenv
 @man man/man1/kopano-fsck.1
 @man man/man1/kopano-ibrule.1
 @man man/man1/kopano-oof.1
@@ -436,7 +396,6 @@ libexec/kopano/
 @man man/man5/kopano-gateway.cfg.5
 @man man/man5/kopano-ical.cfg.5
 @man man/man5/kopano-ldap.cfg.5
-@man man/man5/kopano-migration-pst.cfg.5
 @man man/man5/kopano-monitor.cfg.5
 @man man/man5/kopano-search.cfg.5
 @man man/man5/kopano-server.cfg.5
@@ -454,14 +413,11 @@ libexec/kopano/
 @man man/man8/kopano-backup.8
 @man man/man8/kopano-cachestat.8
 @man man/man8/kopano-cfgchecker.8
-@man man/man8/kopano-cli.8
 @man man/man8/kopano-dagent.8
 @man man/man8/kopano-dbadm.8
 @man man/man8/kopano-gateway.8
 @man man/man8/kopano-ical.8
-@man man/man8/kopano-indexd.8
 @man man/man8/kopano-mailbox-permissions.8
-@man man/man8/kopano-migration-pst.8
 @man man/man8/kopano-monitor.8
 @man man/man8/kopano-mr-accept.8
 @man man/man8/kopano-mr-process.8
@@ -480,14 +436,12 @@ sbin/kopano-archiver-restore
 sbin/kopano-autorespond
 sbin/kopano-backup
 sbin/kopano-cachestat
-sbin/kopano-cli
 @bin sbin/kopano-dagent
 @bin sbin/kopano-dbadm
 sbin/kopano-fix-ipm-subtree
 @bin sbin/kopano-gateway
 @bin sbin/kopano-ical
 sbin/kopano-mailbox-permissions
-sbin/kopano-migration-pst
 @bin sbin/kopano-monitor
 sbin/kopano-mr-accept
 sbin/kopano-mr-process
@@ -559,8 +513,6 @@ share/examples/kopano/license/
 @sample ${SYSCONFDIR}/kopano/license/
 share/examples/kopano/local_kopano.m4
 @sample ${SYSCONFDIR}/kopano/local_kopano.m4
-share/examples/kopano/migration-pst.cfg
-@sample ${SYSCONFDIR}/kopano/migration-pst.cfg
 share/examples/kopano/monitor.cfg
 @sample ${SYSCONFDIR}/kopano/monitor.cfg
 share/examples/kopano/quotamail/
@@ -601,13 +553,6 @@ share/examples/kopano/spooler.cfg
 @sample ${SYSCONFDIR}/kopano/spooler.cfg
 share/examples/kopano/statsd.cfg
 share/examples/kopano/unix.cfg
-share/examples/kopano/userscripts/
-share/examples/kopano/userscripts/createcompany.d/
-share/examples/kopano/userscripts/creategroup.d/
-share/examples/kopano/userscripts/createuser.d/
-share/examples/kopano/userscripts/deletecompany.d/
-share/examples/kopano/userscripts/deletegroup.d/
-share/examples/kopano/userscripts/deleteuser.d/
 share/examples/logrotate.d/
 share/examples/logrotate.d/kopano
 share/gdb/auto-load/usr/local/lib/libmapi.so.1.0.0-gdb.py
