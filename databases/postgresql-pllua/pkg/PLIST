@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/06 00:36:47 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/09 20:03:12 jeremy Exp $
 include/postgresql/server/extension/pllua/
 include/postgresql/server/extension/pllua/pllua.h
 include/postgresql/server/extension/pllua/pllua_luajit.h
 include/postgresql/server/extension/pllua/pllua_luaver.h
 include/postgresql/server/extension/pllua/pllua_pgver.h
-lib/postgresql/pllua.so
+@so lib/postgresql/pllua.so
 share/doc/pkg-readmes/${PKGSTEM}
 share/postgresql/extension/pllua--1.0--2.0.sql
 share/postgresql/extension/pllua--2.0.sql
