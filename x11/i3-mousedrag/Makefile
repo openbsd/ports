@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/03 14:24:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/09 11:52:48 sthen Exp $
 
 # see https://github.com/i3/i3/issues/3085 / orestisfl:issue-2643
 COMMENT=	improved dynamic tiling window manager, fork with mouse drag
@@ -21,6 +21,10 @@ WANTLIB += pcre startup-notification-1 xcb xcb-cursor xcb-icccm
 WANTLIB += xcb-keysyms xcb-randr xcb-shape xcb-util xcb-xinerama
 WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11 yajl
 
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
 BUILD_DEPENDS=	textproc/asciidoc \
@@ -37,7 +41,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/i3status \
 		x11/p5-AnyEvent-I3
 
-# Tests now use the X11::XCB Perl module, not yet in ports.
+# Tests now use the X11::XCB Perl module, not yet in ports and a bit complex
 #TEST_DEPENDS=	x11/p5-AnyEvent-I3
 NO_TEST=	Yes
 
