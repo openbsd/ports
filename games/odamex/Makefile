@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/05 21:07:37 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/09 20:43:04 edd Exp $
 
 COMMENT =	online multiplayer doom
 
@@ -26,7 +26,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 
-CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS=-I${LOCALBASE}/include
+CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS=-I${LOCALBASE}/include \
+			-DNO_AG-ODALAUNCH_TARGET=YES
 
 LIB_DEPENDS =		devel/libexecinfo \
 			x11/wxWidgets \
