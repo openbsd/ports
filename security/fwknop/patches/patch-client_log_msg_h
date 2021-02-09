@@ -1,0 +1,17 @@
+$OpenBSD: patch-client_log_msg_h,v 1.1 2021/02/09 16:43:59 feinerer Exp $
+
+Fix compilation with -fno-common flag.
+https://github.com/mrash/fwknop/pull/319
+
+Index: client/log_msg.h
+--- client/log_msg.h.orig
++++ client/log_msg.h
+@@ -38,7 +38,7 @@ enum
+     LOG_VERBOSITY_INFO,         /*!< Constant to define a INFO message */
+     LOG_VERBOSITY_DEBUG,        /*!< Constant to define a DEBUG message */
+     LOG_LAST_VERBOSITY
+-} log_level_t;
++};
+ 
+ #define LOG_DEFAULT_VERBOSITY   LOG_VERBOSITY_NORMAL    /*!< Default verbosity to use */
+ 
