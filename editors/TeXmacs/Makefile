@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2021/01/19 06:49:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/09 17:36:58 namn Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
-DISTNAME=	TeXmacs-1.99.13
-EXTRACT_SUFX=	-src.tar.gz
+DISTNAME=	TeXmacs-1.99.18-src
+PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	editors print x11
-REVISION=	0
 
 HOMEPAGE=	https://texmacs.org/
 
@@ -43,5 +42,9 @@ CXXFLAGS+=	-Wno-deprecated-register
 
 post-extract:
 	rm -f ${WRKDIST}/plugins/mathematica/bin/realpath.py
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/TeXmacs/plugins/tmpy
 
 .include <bsd.port.mk>

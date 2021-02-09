@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2020/02/27 14:29:46 jca Exp $
+$OpenBSD: README,v 1.2 2021/02/09 17:36:58 namn Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -15,7 +15,7 @@ gnuplot: gnuplot
 graphviz: graphviz
 lisp: clisp
 maxima: maxima
-octave: octave
+octave: octave and gnuplot
 pari: pari
 R: R
 sympy: py3-sympy
@@ -28,6 +28,19 @@ following menus.
 Interactive session: Insert > Session
 
 Executable folded environment: Insert > Fold > Executable
+
+Interface to R
+--------------
+The TeXmacs interface to R requires additional setup. An R package for the
+interface will be built and installed. Give write permissions to the group
+(e.g., puffy) running TeXmacs:
+
+# chown root:puffy ${TRUEPREFIX}/lib/R/library/
+# chmod 775 ${TRUEPREFIX}/lib/R/library/
+
+Start an R session in TeXmacs: Insert > Session > R
+
+The tutorial can now be followed: Help > Plug-ins > R
 
 Documentation
 -------------

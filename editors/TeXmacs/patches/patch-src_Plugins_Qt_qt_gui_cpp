@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_Plugins_Qt_qt_gui_cpp,v 1.4 2020/08/01 11:00:31 sthen Exp $
+$OpenBSD: patch-src_Plugins_Qt_qt_gui_cpp,v 1.5 2021/02/09 17:36:58 namn Exp $
 Index: src/Plugins/Qt/qt_gui.cpp
 --- src/Plugins/Qt/qt_gui.cpp.orig
 +++ src/Plugins/Qt/qt_gui.cpp
-@@ -838,7 +838,7 @@ qt_gui_rep::update () {
+@@ -868,7 +868,7 @@ qt_gui_rep::update () {
    
    time_t delay = delayed_commands.lapse - texmacs_time();
    if (needing_update) delay = 0;
 -  else                delay = max (0, min (std_delay, delay));
 +  else                delay = max (static_cast<time_t>(0), min (static_cast<time_t>(std_delay), delay));
-   if (postpone_treatment) delay= 100; // NOTE: force occasional display
+   if (postpone_treatment) delay= 9; // NOTE: force occasional display
   
    updatetimer->start (delay);
