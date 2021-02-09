@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
-bin/vb
+@comment $OpenBSD: PLIST,v 1.2 2021/02/09 22:59:15 naddy Exp $
+@bin bin/vb
 share/examples/fobbit/
 share/examples/fobbit/vb.ini
 share/fobbit/

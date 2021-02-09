@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/09 22:59:15 naddy Exp $
 
-COMMENT=	creative voip blaster driver/software
+COMMENT=	Creative VoIP Blaster driver/software
 DISTNAME=	fobbit-0.61
+REVISION=	0
 CATEGORIES=	telephony
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fobbit/}
 
-HOMEPAGE=	http://www.fobbit.org/
+HOMEPAGE=	http://fobbit.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -16,6 +17,10 @@ USE_GMAKE=	Yes
 WRKSRC=	${WRKDIST}/src
 
 WANTLIB=c
+
+# Fix DOS line-endings in files needing patches
+pre-patch:
+	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' *.[ch] vb.ini
 
 pre-configure:
 	@sed -i 's|_PREFIX_|${PREFIX}|g;' ${WRKSRC}/ini.c ${WRKSRC}/vb.ini

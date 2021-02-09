@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_vblast_h,v 1.2 2015/01/17 23:51:07 naddy Exp $
---- src/vblast.h.orig	Tue Nov 23 06:41:32 2004
-+++ src/vblast.h	Sun Jan 18 00:49:31 2015
+$OpenBSD: patch-src_vblast_h,v 1.3 2021/02/09 22:59:15 naddy Exp $
+Index: src/vblast.h
+--- src/vblast.h.orig
++++ src/vblast.h
 @@ -20,7 +20,7 @@
  #endif
  #endif
@@ -25,3 +26,36 @@ $OpenBSD: patch-src_vblast_h,v 1.2 2015/01/17 23:51:07 naddy Exp $
  # include <sys/select.h>
  # include <sys/socket.h>
  # include <netinet/in.h>
+@@ -334,16 +331,16 @@ typedef struct
+ // for <main.c>
+ extern SOCKET create_socket(int type, int port, unsigned long net_address);
+ // Crypto
+-unsigned char mykey[20],chksum[20],chksumasc[41];
+-unsigned char tempBN[128];
+-unsigned char myXhex[262];
+-int use_crypt;
++extern unsigned char mykey[20],chksum[20],chksumasc[41];
++extern unsigned char tempBN[128];
++extern unsigned char myXhex[262];
++extern int use_crypt;
+ typedef unsigned short *Bignum;
+ 
+ // Diffie-Hellman vars
+-Bignum myE;
+-Bignum peerE;
+-Bignum ourK;
++extern Bignum myE;
++extern Bignum peerE;
++extern Bignum ourK;
+ 
+ // for <util.c>
+ extern char *Show_Error(void);
+@@ -503,7 +500,7 @@ Bignum biggcd(Bignum av, Bignum bv);
+ Bignum modinv(Bignum number, Bignum modulus);
+ char *bignum_decimal(Bignum x);
+ 
+-Bignum One;
++extern Bignum One;
+ int ssh1_bignum_length(Bignum bn);
+ int ssh1_write_bignum(void *data, Bignum bn);
+ int ssh1_read_bignum(unsigned char *data, Bignum * result);
