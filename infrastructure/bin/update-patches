@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.20 2019/11/10 15:28:19 sthen Exp $
+# $OpenBSD: update-patches,v 1.21 2021/02/09 17:34:40 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -49,10 +49,16 @@ my $origwrkdist = $wrkdist;
 $wrkdist =~ s/\/$//g;
 
 if (-l $wrkdist) {
-	$wrkdist = readlink($wrkdist);
-	if (!defined $wrkdist) {
+	my $d = readlink($wrkdist);
+	if (!defined $d) {
 		say "WRKDIST=$origwrkdist is a symlink that can't be resolved";
 		exit 1;
+	}
+	if ($d =~ m,^/,) {
+		$wrkdist = $d;
+	} else {
+		require File::Basename;
+		$wrkdist = join('/', File::Basename::dirname($wrkdist), $d);
 	}
 }
 
