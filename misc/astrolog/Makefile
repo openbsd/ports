@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/05 11:58:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/09 11:51:41 sthen Exp $
 
 COMMENT=	astrology program for X11 and text-based user interfaces
 
@@ -16,6 +16,10 @@ PERMIT_PACKAGE=	Yes
 # Software: GPLv2, Ephemeris: may be used by GPLv2 software, see
 # https://www.astro.com/swisseph/swephinfo_e.htm
 WANTLIB += X11 c m
+
+# TLS
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MASTER_SITES=	https://www.astrolog.org/ftp/
 DISTFILES=	${DISTNAME}.zip \
