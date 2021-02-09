@@ -1,9 +1,9 @@
-$OpenBSD: patch-gcc_config_rs6000_openbsd64_h,v 1.1 2021/01/18 19:31:43 kettenis Exp $
+$OpenBSD: patch-gcc_config_rs6000_openbsd64_h,v 1.2 2021/02/09 02:12:43 gkoehler Exp $
 
 Index: gcc/config/rs6000/openbsd64.h
 --- gcc/config/rs6000/openbsd64.h.orig
 +++ gcc/config/rs6000/openbsd64.h
-@@ -0,0 +1,411 @@
+@@ -0,0 +1,413 @@
 +/* Definitions for 64-bit PowerPC running OpenBSD using the ELF format
 +   Copyright (C) 2012-2021 Free Software Foundation, Inc.
 +
@@ -244,13 +244,15 @@ Index: gcc/config/rs6000/openbsd64.h
 +#define CPP_OS_DEFAULT_SPEC "%(cpp_os_openbsd)"
 +
 +#undef LINK_SPEC
-+#define LINK_SPEC "%{shared:-shared} \
-+  %{!shared: \
-+    %{!static: \
-+      %{rdynamic:-export-dynamic} \
-+      %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}} \
-+    %{static:-static}} \
-+  -L/usr/lib"
++#define LINK_SPEC \
++  "%{!shared:%{!nostdlib:%{!r:%{!e*:-e __start}}}} \
++   %{shared:-shared} %{R*} \
++   %{static:-Bstatic} \
++   %{!static:-Bdynamic} \
++   %{rdynamic:-export-dynamic} \
++   %{assert*} \
++   %{!static:-dynamic-linker /usr/libexec/ld.so} \
++   %{!nostdlib:-L/usr/lib}"
 +
 +#undef	LIB_DEFAULT_SPEC
 +#define LIB_DEFAULT_SPEC "%(lib_openbsd)"
