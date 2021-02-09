@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2020/02/06 00:36:12 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2021/02/09 20:01:37 sthen Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -367,7 +367,6 @@ lib/postgresql/pgxs/src/test/regress/
 share/postgresql/
 share/postgresql/errcodes.txt
 share/postgresql/information_schema.sql
-share/postgresql/postgres.description
 share/postgresql/psqlrc.sample
 share/postgresql/snowball_create.sql
 share/postgresql/sql_features.txt

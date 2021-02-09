@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.31 2020/11/14 13:03:49 sthen Exp $
+$OpenBSD: README-server,v 1.32 2021/02/09 20:01:37 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -116,7 +116,8 @@ to the current version.
 3) Upgrade your PostgreSQL package with pkg_add.
 # pkg_add -ui postgresql-server
 
-4) Backup your old data directory:
+4) Backup your old data directory and rename:
+# cd /var/postgresql && tar cf - data | gzip -1 > data.tar.gz
 # mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
 5) Create a new data directory:
@@ -178,7 +179,12 @@ environment, use "initdb --locale=C /var/postgresql/data [...]").
 # cp -p /var/postgresql/data-${PREV_MAJOR}/server.{crt,key} /var/postgresql/data/
 
 Some postgresql.conf settings changed or disappeared in this version.
-Examine your old file for local changes and apply them to the new version.
+Examine your old file for local changes and apply them to the new version
+(/var/postgresql/data/postgresql.conf). The following command may help
+identify them:
+
+# diff -wu ${LOCALBASE}/share/postgresql-${PREV_MAJOR}/postgresql.conf.sample \
+    /var/postgresql/data-${PREV_MAJOR}/postgresql.conf
 
 7) Run pg_upgrade:
 # su _postgresql -c "cd /var/postgresql && \

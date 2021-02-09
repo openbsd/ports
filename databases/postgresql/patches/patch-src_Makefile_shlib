@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_Makefile_shlib,v 1.12 2018/12/03 16:22:08 sthen Exp $
+$OpenBSD: patch-src_Makefile_shlib,v 1.13 2021/02/09 20:01:36 sthen Exp $
 
 Index: src/Makefile.shlib
 --- src/Makefile.shlib.orig
 +++ src/Makefile.shlib
-@@ -80,7 +80,7 @@ shlib_major	= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION
+@@ -79,7 +79,7 @@ shlib_major	= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION
  shlib_bare	= lib$(NAME)$(DLSUFFIX)
  # Testing the soname variable is a reliable way to determine whether a
  # linkable library is being built.

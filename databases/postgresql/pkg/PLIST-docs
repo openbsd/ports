@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.98 2020/11/13 19:00:10 pea Exp $
+@comment $OpenBSD: PLIST-docs,v 1.99 2021/02/09 20:01:36 sthen Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY
@@ -35,6 +35,7 @@ share/doc/postgresql/html/app-pgrecvlogical.html
 share/doc/postgresql/html/app-pgresetwal.html
 share/doc/postgresql/html/app-pgrestore.html
 share/doc/postgresql/html/app-pgrewind.html
+share/doc/postgresql/html/app-pgverifybackup.html
 share/doc/postgresql/html/app-postgres.html
 share/doc/postgresql/html/app-postmaster.html
 share/doc/postgresql/html/app-psql.html
@@ -59,6 +60,10 @@ share/doc/postgresql/html/auth-username-maps.html
 share/doc/postgresql/html/auto-explain.html
 share/doc/postgresql/html/backup-dump.html
 share/doc/postgresql/html/backup-file.html
+share/doc/postgresql/html/backup-manifest-files.html
+share/doc/postgresql/html/backup-manifest-format.html
+share/doc/postgresql/html/backup-manifest-toplevel.html
+share/doc/postgresql/html/backup-manifest-wal-ranges.html
 share/doc/postgresql/html/backup.html
 share/doc/postgresql/html/bgworker.html
 share/doc/postgresql/html/biblio.html
@@ -116,7 +121,6 @@ share/doc/postgresql/html/catalog-pg-opclass.html
 share/doc/postgresql/html/catalog-pg-operator.html
 share/doc/postgresql/html/catalog-pg-opfamily.html
 share/doc/postgresql/html/catalog-pg-partitioned-table.html
-share/doc/postgresql/html/catalog-pg-pltemplate.html
 share/doc/postgresql/html/catalog-pg-policy.html
 share/doc/postgresql/html/catalog-pg-proc.html
 share/doc/postgresql/html/catalog-pg-publication-rel.html
@@ -152,6 +156,9 @@ share/doc/postgresql/html/client-authentication-problems.html
 share/doc/postgresql/html/client-authentication.html
 share/doc/postgresql/html/client-interfaces.html
 share/doc/postgresql/html/collation.html
+share/doc/postgresql/html/color-when.html
+share/doc/postgresql/html/color-which.html
+share/doc/postgresql/html/color.html
 share/doc/postgresql/html/config-setting.html
 share/doc/postgresql/html/connect-estab.html
 share/doc/postgresql/html/continuous-archiving.html
@@ -341,11 +348,13 @@ share/doc/postgresql/html/functions-string.html
 share/doc/postgresql/html/functions-subquery.html
 share/doc/postgresql/html/functions-textsearch.html
 share/doc/postgresql/html/functions-trigger.html
+share/doc/postgresql/html/functions-uuid.html
 share/doc/postgresql/html/functions-window.html
 share/doc/postgresql/html/functions-xml.html
 share/doc/postgresql/html/functions.html
 share/doc/postgresql/html/fuzzystrmatch.html
 share/doc/postgresql/html/generic-wal.html
+share/doc/postgresql/html/genetic-algorithm.svg
 share/doc/postgresql/html/geqo-biblio.html
 share/doc/postgresql/html/geqo-intro.html
 share/doc/postgresql/html/geqo-intro2.html
@@ -367,6 +376,7 @@ share/doc/postgresql/html/gist-implementation.html
 share/doc/postgresql/html/gist-intro.html
 share/doc/postgresql/html/gist.html
 share/doc/postgresql/html/git.html
+share/doc/postgresql/html/glossary.html
 share/doc/postgresql/html/gssapi-auth.html
 share/doc/postgresql/html/gssapi-enc.html
 share/doc/postgresql/html/high-availability.html
@@ -441,10 +451,7 @@ share/doc/postgresql/html/infoschema-schemata.html
 share/doc/postgresql/html/infoschema-sequences.html
 share/doc/postgresql/html/infoschema-sql-features.html
 share/doc/postgresql/html/infoschema-sql-implementation-info.html
-share/doc/postgresql/html/infoschema-sql-languages.html
-share/doc/postgresql/html/infoschema-sql-packages.html
 share/doc/postgresql/html/infoschema-sql-parts.html
-share/doc/postgresql/html/infoschema-sql-sizing-profiles.html
 share/doc/postgresql/html/infoschema-sql-sizing.html
 share/doc/postgresql/html/infoschema-table-constraints.html
 share/doc/postgresql/html/infoschema-table-privileges.html
@@ -675,12 +682,8 @@ share/doc/postgresql/html/regress-run.html
 share/doc/postgresql/html/regress-tap.html
 share/doc/postgresql/html/regress-variant.html
 share/doc/postgresql/html/regress.html
-share/doc/postgresql/html/release-12-1.html
-share/doc/postgresql/html/release-12-2.html
-share/doc/postgresql/html/release-12-3.html
-share/doc/postgresql/html/release-12-4.html
-share/doc/postgresql/html/release-12-5.html
-share/doc/postgresql/html/release-12.html
+share/doc/postgresql/html/release-13.html
+share/doc/postgresql/html/release-13-1.html
 share/doc/postgresql/html/release-prior.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/replication-origins.html
@@ -1081,6 +1084,7 @@ share/doc/postgresql/html/view-pg-seclabels.html
 share/doc/postgresql/html/view-pg-sequences.html
 share/doc/postgresql/html/view-pg-settings.html
 share/doc/postgresql/html/view-pg-shadow.html
+share/doc/postgresql/html/view-pg-shmem-allocations.html
 share/doc/postgresql/html/view-pg-stats-ext.html
 share/doc/postgresql/html/view-pg-stats.html
 share/doc/postgresql/html/view-pg-tables.html
