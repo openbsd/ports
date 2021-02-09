@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.65 2020/02/20 14:37:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.66 2021/02/09 14:22:16 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -2927,6 +2927,7 @@ roundcubemail/vendor/bin/crypt-gpg-pinentry
 roundcubemail/vendor/bin/rcubeinitdb.sh
 roundcubemail/vendor/composer/
 roundcubemail/vendor/composer/ClassLoader.php
+roundcubemail/vendor/composer/InstalledVersions.php
 roundcubemail/vendor/composer/LICENSE
 roundcubemail/vendor/composer/autoload_classmap.php
 roundcubemail/vendor/composer/autoload_namespaces.php
@@ -2935,6 +2936,8 @@ roundcubemail/vendor/composer/autoload_real.php
 roundcubemail/vendor/composer/autoload_static.php
 roundcubemail/vendor/composer/include_paths.php
 roundcubemail/vendor/composer/installed.json
+roundcubemail/vendor/composer/installed.php
+roundcubemail/vendor/composer/platform_check.php
 roundcubemail/vendor/endroid/
 roundcubemail/vendor/endroid/qr-code/
 roundcubemail/vendor/endroid/qr-code/.travis.yml

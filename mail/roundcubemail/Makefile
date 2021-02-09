@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.158 2021/02/06 20:33:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.159 2021/02/09 14:22:16 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
-V=		1.4.10
+V=		1.4.11
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-rc/rc/}
+REVISION=	0
 EXTRACT_SUFX=	-complete.tar.gz
 MODPHP_VERSION=	7.4
-REVISION=	0
 
 FIX_EXTRACT_PERMISSIONS= Yes
 
