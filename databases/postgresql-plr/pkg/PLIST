@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/02/06 00:36:59 jeremy Exp $
-lib/postgresql/plr.so
-share/postgresql/extension/plr--8.3.0.18--8.4.sql
-share/postgresql/extension/plr--8.4.sql
-share/postgresql/extension/plr--unpackaged--8.4.sql
+@comment $OpenBSD: PLIST,v 1.4 2021/02/09 20:03:40 jeremy Exp $
+@so lib/postgresql/plr.so
+share/postgresql/extension/plr--8.4--8.4.1.sql
+share/postgresql/extension/plr--8.4.1.sql
+share/postgresql/extension/plr--unpackaged--8.4.1.sql
 share/postgresql/extension/plr.control
