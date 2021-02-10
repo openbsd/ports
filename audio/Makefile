@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.445 2021/01/30 11:45:54 kn Exp $
+# $OpenBSD: Makefile,v 1.446 2021/02/10 00:56:14 kn Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -45,7 +45,6 @@
      SUBDIR += fluidsynth
      SUBDIR += freealut
      SUBDIR += generaluser-gs-soundfont
-     SUBDIR += gimmix
      SUBDIR += glyr
      SUBDIR += gmpc
      SUBDIR += gmpc-plugins
