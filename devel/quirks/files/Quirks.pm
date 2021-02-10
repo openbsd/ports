@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1170 2021/02/10 00:56:14 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1171 2021/02/10 01:01:10 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2075,6 +2075,7 @@ my $obsolete_reason = {
 	'xfed' => 0,
 	'www6to4' => 36,
 	'gimmix' => 37,
+	'xhippo' => 3,
 };
 
 # reasons for obsolete packages
