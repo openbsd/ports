@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1167 2021/02/08 20:48:32 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.1168 2021/02/10 00:45:31 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2073,6 +2073,7 @@ my $obsolete_reason = {
 	'siphon' => 35,
 	'avinfo' => 6,
 	'xfed' => 0,
+	'www6to4' => 0,
 };
 
 # reasons for obsolete packages
@@ -2113,6 +2114,7 @@ my @msg = (
 	"no longer maintained upstream, website suggests https://cronometer.com until rewrite is done", #33
 	"upstream is dead, basic functionality does not work, use tcpdump(1) and scapy(1) instead", #34
 	"upstream is dead, no longer useful, does not support IPv6", #35
+	"ancient software, use pf.conf(5) 'af-to'", #36
 );
 
 # ->is_base_system($handle, $state):

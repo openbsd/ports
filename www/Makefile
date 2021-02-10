@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.997 2021/01/29 17:05:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.998 2021/02/10 00:45:31 kn Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -649,7 +649,6 @@
      SUBDIR += weboob
      SUBDIR += wp-cli
      SUBDIR += wslay
-     SUBDIR += www6to4
      SUBDIR += wwwcount
      SUBDIR += wwwoffle
      SUBDIR += xapian-omega
