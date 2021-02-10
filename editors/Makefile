@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2021/01/24 15:20:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2021/02/10 08:25:46 kn Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -26,7 +26,6 @@
      SUBDIR += gummi
      SUBDIR += hexcurse
      SUBDIR += hexedit
-     SUBDIR += hnb
      SUBDIR += ht
      SUBDIR += ht,no_x11
      SUBDIR += jed
