@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/01 19:47:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/10 22:51:27 cwen Exp $
 
 COMMENT=	test performance of remote TCP/UDP services
 
 VER=		6_0_2
 DISTNAME=	echoping-RELEASE_${VER}
 PKGNAME=	echoping-${VER:S/_/./g}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 MASTER_SITES=	https://framagit.org/bortzmeyer/echoping/-/archive/RELEASE_${VER}/
@@ -15,7 +15,7 @@ HOMEPAGE=	https://github.com/bortzmeyer/echoping
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto iconv intl popt ssl
+WANTLIB += c crypto iconv intl m popt ssl
 
 NO_TEST=		Yes
 
@@ -36,6 +36,9 @@ CONFIGURE_ARGS+=	--enable-plugin="dns random whois" \
 			--enable-smtp \
 			--enable-tos \
 			--without-libidn
+
+# Requires libm: uses sqrt(3), inlined by the compiler on some archs
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -lm"
 
 WRKDIST=		${WRKDIR}/${DISTNAME}/SRC
 

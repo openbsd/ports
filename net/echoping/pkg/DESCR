@@ -1,3 +1,3 @@
-"echoping" is a small program to test (approximately) performance of a 
+"echoping" is a small program to test (approximately) performance of a
 remote host by sending it packets using various protocols (TCP/UDP echo,
 HTTP/HTTPS and some others).
