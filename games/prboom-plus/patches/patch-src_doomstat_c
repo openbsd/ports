@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_doomstat_c,v 1.1 2021/02/10 03:18:48 jeremy Exp $
+
+Index: src/doomstat.c
+--- src/doomstat.c.orig
++++ src/doomstat.c
+@@ -54,7 +54,7 @@ complevel_t compatibility_level, default_compatibility
+ 
+ // e6y
+ // it's required for demos recorded in "demo compatibility" mode by boom201 for example
+-int demover;
++extern int demover;
+ 
+ int comp[COMP_TOTAL], default_comp[COMP_TOTAL];    // killough 10/98
+ int /*comperr[COMPERR_NUM], */default_comperr[COMPERR_NUM];
