@@ -1,0 +1,26 @@
+$OpenBSD: patch-altermime_c,v 1.1 2021/02/10 11:43:58 sthen Exp $
+
+Index: altermime.c
+--- altermime.c.orig
++++ altermime.c
+@@ -11,6 +11,8 @@ Description:   Altermime is a program/object which wil
+ #include <stdlib.h>
+ #include <string.h>
+ #include <syslog.h>
++#include <unistd.h>
++#include <errno.h>
+ 
+ #include "mime_alter.h"
+ #include "logger.h"
+@@ -319,6 +321,11 @@ int main( int argc, char **argv )
+ 	struct ALTERMIMEAPP_globals glb;
+ 
+ 	LOGGER_set_output_mode(_LOGGER_STDOUT);
++
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		LOGGER_log("Error: pledge: %s\n", strerror(errno));
++		exit(1);
++	}
+ 
+ 	ALTERMIMEAPP_init( &glb );
+ 
