@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gl_main_c,v 1.1 2021/02/10 03:12:27 jeremy Exp $
+
+Index: src/gl_main.c
+--- src/gl_main.c.orig
++++ src/gl_main.c
+@@ -83,6 +83,8 @@ int gl_paletted_texture = 0;
+ int gl_shared_texture_palette = 0;
+ int gl_sprite_offset;	// item out of floor offset Mead 8/13/03
+ 
++PFNGLCOLORTABLEEXTPROC gld_ColorTableEXT;
++
+ GLuint gld_DisplayList=0;
+ int fog_density=200;
+ static float extra_red=0.0f;

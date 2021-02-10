@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gl_intern_h,v 1.1 2021/02/10 03:12:27 jeremy Exp $
+
+Index: src/gl_intern.h
+--- src/gl_intern.h.orig
++++ src/gl_intern.h
+@@ -83,6 +83,6 @@ int gld_GetTexDimension(int value);
+ void gld_SetTexturePalette(GLenum target);
+ void gld_Precache(void);
+ 
+-PFNGLCOLORTABLEEXTPROC gld_ColorTableEXT;
++extern PFNGLCOLORTABLEEXTPROC gld_ColorTableEXT;
+ 
+ #endif // _GL_INTERN_H
