@@ -1,0 +1,17 @@
+$OpenBSD: patch-ui-gtk_UgtkBanner_h,v 1.1 2021/02/10 05:01:13 bcallah Exp $
+
+Fix for -fno-common
+From upstream: https://sourceforge.net/p/urlget/uget2/ci/14890943c52e0a5cd2a87d8a1c51cbffebee7cf9/
+
+Index: ui-gtk/UgtkBanner.h
+--- ui-gtk/UgtkBanner.h.orig
++++ ui-gtk/UgtkBanner.h
+@@ -64,7 +64,7 @@ struct UgtkBanner {
+ 		UgetRssFeed*    feed;
+ 		UgetRssItem*    item;
+ 	} rss;
+-} banner;
++};
+ 
+ void  ugtk_banner_init (UgtkBanner* banner);
+ 
