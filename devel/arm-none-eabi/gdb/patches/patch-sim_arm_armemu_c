@@ -1,0 +1,19 @@
+$OpenBSD: patch-sim_arm_armemu_c,v 1.1 2021/02/10 00:41:23 jsg Exp $
+
+[ARM, sim] Fix build error and warnings
+851c0536cabb661847c45c73ebd796eb3299066b
+
+Index: sim/arm/armemu.c
+--- sim/arm/armemu.c.orig
++++ sim/arm/armemu.c
+@@ -1140,10 +1140,6 @@ handle_VFP_move (ARMul_State * state, ARMword instr)
+ 
+ /* EMULATION of ARM6.  */
+ 
+-/* The PC pipeline value depends on whether ARM
+-   or Thumb instructions are being executed.  */
+-ARMword isize;
+-
+ ARMword
+ #ifdef MODE32
+ ARMul_Emulate32 (ARMul_State * state)

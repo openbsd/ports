@@ -1,18 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/12/09 21:41:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/10 00:41:23 jsg Exp $
 @bin bin/arm-none-eabi-gdb
 @bin bin/arm-none-eabi-run
 @comment include/gdb/
 @comment include/gdb/jit-reader.h
 @comment lib/charset.alias
-lib/libarm-none-eabi-sim.a
+@static-lib lib/libarm-none-eabi-sim.a
 @man man/man1/arm-none-eabi-gdb.1
 @man man/man1/arm-none-eabi-gdbserver.1
-@man man/man1/arm-none-eabi-run.1
 @man man/man5/arm-none-eabi-gdbinit.5
 share/gdb/
 @comment share/gdb/syscalls/
+@comment share/gdb/syscalls/aarch64-linux.xml
 @comment share/gdb/syscalls/amd64-linux.xml
 @comment share/gdb/syscalls/arm-linux.xml
+@comment share/gdb/syscalls/freebsd.xml
 @comment share/gdb/syscalls/gdb-syscalls.dtd
 @comment share/gdb/syscalls/i386-linux.xml
 @comment share/gdb/syscalls/mips-n32-linux.xml

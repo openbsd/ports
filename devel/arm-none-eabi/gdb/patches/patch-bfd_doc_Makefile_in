@@ -1,7 +1,8 @@
-$OpenBSD: patch-bfd_doc_Makefile_in,v 1.1.1.1 2015/05/28 23:28:26 bmercer Exp $
---- bfd/doc/Makefile.in.orig	Wed May 13 13:36:05 2015
-+++ bfd/doc/Makefile.in	Fri May 15 16:04:28 2015
-@@ -86,7 +86,7 @@ CONFIG_CLEAN_VPATH_FILES =
+$OpenBSD: patch-bfd_doc_Makefile_in,v 1.2 2021/02/10 00:41:23 jsg Exp $
+Index: bfd/doc/Makefile.in
+--- bfd/doc/Makefile.in.orig
++++ bfd/doc/Makefile.in
+@@ -104,7 +104,7 @@ CONFIG_CLEAN_VPATH_FILES =
  depcomp =
  am__depfiles_maybe =
  SOURCES =
