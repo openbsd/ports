@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portroach-cli,v 1.4 2021/01/16 05:24:42 kn Exp $
+# $OpenBSD: portroach-cli,v 1.5 2021/02/10 23:25:43 kn Exp $
 #
 # Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 #
@@ -26,7 +26,7 @@ err() {
 }
 
 usage() {
-	printf 'usage:\t%s [-o] [-m maintainer [-p pkgpath]] [-u url]\n' \
+	printf 'usage:\t%s [-jo] [-m maintainer [-p pkgpath]] [-u url]\n' \
 	    "$self" 1>&2
 	exit 1
 }
@@ -53,13 +53,15 @@ show_ports() {
 }
 
 mflag=false maintainer=
+jflag=false
 oflag=false
 pflag=false pkgpath=
 uflag=false url=https://portroach.openbsd.org
 
-while getopts m:op:u: opt
+while getopts jm:op:u: opt
 do
 	case $opt in
+	j)	jflag=true ;;
 	m)	mflag=true maintainer=$OPTARG ;;
 	o)	oflag=true ;;
 	p)	pflag=true pkgpath=$OPTARG ;;
@@ -78,6 +80,12 @@ then
 		.maintainer | select(. | test($maintainer; "in"))' |
 	while read -r match
 	do
+		if $jflag
+		then
+			show_ports "$match"
+			continue
+		fi
+
 		ports=$(show_ports "$match" | jq -r '
 			def aorb($a; $b): if ($a | length) > 0 then $a else $b end;
 
@@ -93,6 +101,12 @@ then
 		fi
 	done
 else
+	if $jflag
+	then
+		show_totals
+		exit
+	fi
+
 	show_totals | jq -r '
 		[.maintainer, .total, .withnewdistfile,
 		 (.percentage | tostring) + "%"] |
