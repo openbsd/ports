@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2020/12/16 21:27:33 sthen Exp $
+$OpenBSD: README,v 1.9 2021/02/10 13:26:23 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -61,10 +61,12 @@ after adding), using the above php-fpm section:
        try_files $1 $uri $uri/ /icingaweb2/index.php$is_args$args;
    }
 
-Using icingacli, create the config directory and a token to allow setup:
+Using icingacli, enable the setup module, then create the config directory
+and a token to allow setup:
 
-   # ${PREFIX}/icinga-web2/bin/icingacli setup config directory --group _icingaweb2; \
-     ${PREFIX}/icinga-web2/bin/icingacli setup token create
+   # ${PREFIX}/icinga-web2/bin/icingacli module enable setup
+   # ${PREFIX}/icinga-web2/bin/icingacli setup config directory --group _icingaweb2
+   # ${PREFIX}/icinga-web2/bin/icingacli setup token create
 
 Open the web interface http://localhost/icingaweb2/. Paste in the token
 that was displayed on-screen in the above step and proceed to the web-based
