@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/24 20:05:22 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/10 20:18:11 tracey Exp $
 
 COMMENT =		character art facsimile generator
-DISTNAME =		chafa-1.4.1
+DISTNAME =		chafa-1.6.0
 
-SHARED_LIBS +=  	chafa                     0.0 # 4.0
+SHARED_LIBS +=  	chafa                     1.0 # 5.0
 
 CATEGORIES =		graphics
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/22 22:08:23 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/10 20:18:11 tracey Exp $
 @bin bin/chafa
 include/chafa/
 include/chafa/chafa-canvas-config.h
@@ -6,6 +6,9 @@ include/chafa/chafa-canvas.h
 include/chafa/chafa-common.h
 include/chafa/chafa-features.h
 include/chafa/chafa-symbol-map.h
+include/chafa/chafa-term-db.h
+include/chafa/chafa-term-info.h
+include/chafa/chafa-term-seq-def.h
 include/chafa/chafa-util.h
 include/chafa/chafa-version-macros.h
 include/chafa/chafa.h
@@ -24,6 +27,8 @@ share/gtk-doc/html/chafa/ch02.html
 share/gtk-doc/html/chafa/chafa-ChafaCanvas.html
 share/gtk-doc/html/chafa/chafa-ChafaCanvasConfig.html
 share/gtk-doc/html/chafa/chafa-ChafaSymbolMap.html
+share/gtk-doc/html/chafa/chafa-ChafaTermDb.html
+share/gtk-doc/html/chafa/chafa-ChafaTermInfo.html
 share/gtk-doc/html/chafa/chafa-Features.html
 share/gtk-doc/html/chafa/chafa-Miscellaneous.html
 share/gtk-doc/html/chafa/chafa-building.html
