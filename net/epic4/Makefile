@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2020/03/20 16:44:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2021/02/10 07:15:17 jsg Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 VERSION=	2.10.5
-REVISION=	1
+REVISION=	2
 HELP_DATE=	20050315
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
