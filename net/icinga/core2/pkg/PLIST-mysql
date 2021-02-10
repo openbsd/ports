@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.11 2021/01/31 18:53:54 sthen Exp $
-@ask-update icinga-idoutils-<2 Icinga 2.x is a major update from Icinga 1.x - config will need to be rewritten
-@pkgpath net/icinga/core,-ido
+@comment $OpenBSD: PLIST-mysql,v 1.12 2021/02/10 12:47:07 sthen Exp $
 @conflict icinga2-<2.2.4v0
 @lib lib/icinga2/libmysql_shim.so.${LIBmysql_shim_VERSION}
 share/examples/icinga2/features-available/ido-mysql.conf

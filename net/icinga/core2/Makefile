@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.110 2021/01/31 18:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2021/02/10 12:47:07 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.12.3
-EPOCH =		0
+REVISION =	1
+
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
-REVISION-main =	0
-REVISION-mysql = 0
+EPOCH =		0
 
 SHARED_LIBS +=	base                      0.0 # 2.6
 SHARED_LIBS +=	checker                   0.0 # 2.6
@@ -47,13 +47,13 @@ WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c curses edit m
 
 # libressl
-#WANTLIB += crypto ssl
+WANTLIB += crypto ssl
 
 # openssl
-WANTLIB +=		lib/eopenssl11/crypto lib/eopenssl11/ssl
-LIB_DEPENDS-main +=	security/openssl/1.1
-CONFIGURE_ARGS +=	-DCMAKE_PREFIX_PATH="${LOCALBASE}/include/eopenssl11;${LOCALBASE}/lib/eopenssl11"
-LDFLAGS +=		-Wl,-rpath=${LOCALBASE}/lib/eopenssl11 -L${LOCALBASE}/lib/eopenssl11
+#WANTLIB +=		lib/eopenssl11/crypto lib/eopenssl11/ssl
+#LIB_DEPENDS-main +=	security/openssl/1.1
+#CONFIGURE_ARGS +=	-DCMAKE_PREFIX_PATH="${LOCALBASE}/include/eopenssl11;${LOCALBASE}/lib/eopenssl11"
+#LDFLAGS +=		-Wl,-rpath=${LOCALBASE}/lib/eopenssl11 -L${LOCALBASE}/lib/eopenssl11
 
 MODULES =		devel/cmake
 
