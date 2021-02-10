@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2020/12/16 21:26:41 sthen Exp $
+$OpenBSD: README,v 1.2 2021/02/10 15:35:38 sthen Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -28,3 +28,10 @@ Then follow the instructions in the main Director documentation
 (https://github.com/Icinga/icingaweb2-module-director/tree/master/doc)
 to add the new database, create the database resource in Icinga Web 2,
 and configure the director.
+
+The Director daemon needs to be running in order that configurations can
+be deployed. An rc.d(8) script is provided, /etc/rc.d/icingadirector.
+If it fails to start, try running it manually ("doas -u _icingadirector
+icingacli director daemon run") and look for errors. If you see messages
+relating to SIGxxx, confirm that you have enabled the pcntl module in
+your PHP configuration.

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/12/16 21:26:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/02/10 15:35:38 sthen Exp $
+@newuser _icingadirector:864:_icingaweb2:daemon:Icinga Director user:${PREFIX}/icinga-web2:/sbin/nologin
+@rcscript ${RCDIR}/icingadirector
 icinga-web2/modules/director/
 icinga-web2/modules/director/.github/
 icinga-web2/modules/director/.github/ISSUE_TEMPLATE.md
