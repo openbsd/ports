@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_socket_h,v 1.1 2021/02/10 20:27:48 naddy Exp $
+
+Index: src/socket.h
+--- src/socket.h.orig
++++ src/socket.h
+@@ -13,7 +13,7 @@
+ #define SOCK_RECV	0
+ #define SOCK_SEND	1
+
+-struct World   *world_decl;	/* declares struct World */
++struct World;	/* declares struct World */
+
+ extern Aline *incoming_text;
+ extern int quit_flag;
