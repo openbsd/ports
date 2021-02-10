@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1172 2021/02/10 08:25:47 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1173 2021/02/10 12:49:31 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -537,10 +537,6 @@ my $stem_extensions = {
 	'py-sphinx_guzzle_theme' => 'py3-sphinx_guzzle_theme',
 	'py-tornado' => 'py3-tornado',
 	'py-sphinx-intl' => 'py3-sphinx-intl',
-	'icinga' => 'icinga2',
-	'icinga-web' => 'icinga-web2',
-	'icinga-cgi' => 'icinga-web2',
-	'icinga-idoutils' => 'icinga2-ido-mysql',
 	'stegcracker' => 'stegseek',
 	'py-ldap3' => 'py3-ldap3',
 };
@@ -2077,6 +2073,10 @@ my $obsolete_reason = {
 	'gimmix' => 37,
 	'xhippo' => 3,
 	'hnb' => 0,
+	'icinga' => 38,
+	'icinga-web' => 38,
+	'icinga-cgi' => 38,
+	'icinga-idoutils' => 38,
 };
 
 # reasons for obsolete packages
@@ -2119,6 +2119,7 @@ my @msg = (
 	"upstream is dead, no longer useful, does not support IPv6", #35
 	"ancient software, use pf.conf(5) 'af-to'", #36
 	"upstream is dead, default settings cause crash when connecting to mpd", #37
+	"icinga 1 is end-of-life, migrate to icinga 2 (needs config rewrite)", #38
 );
 
 # ->is_base_system($handle, $state):
