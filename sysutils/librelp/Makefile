@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2020/08/25 05:48:54 remi Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/10 21:26:44 remi Exp $
 
 COMMENT =	reliable event logging protocol library
 
-DISTNAME =	librelp-1.6.0
+DISTNAME =	librelp-1.9.0
 
-SHARED_LIBS +=  relp                      4.0 # 5.0
+SHARED_LIBS +=  relp                      5.0 # 5.0
 
 CATEGORIES =	sysutils
 
@@ -15,7 +15,7 @@ MAINTAINER =	Remi Locherer <remi@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit pthread
+WANTLIB =  gmp gnutls hogweed iconv idn2 intl nettle p11-kit pthread
 WANTLIB += tasn1 unistring crypto ssl
 
 MASTER_SITES =		http://download.rsyslog.com/librelp/
