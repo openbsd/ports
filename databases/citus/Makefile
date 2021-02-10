@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/09 20:02:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/10 22:07:23 sthen Exp $
 
 COMMENT =		extension to horizontally scale PostgreSQL
+
 GH_ACCOUNT =		citusdata
 GH_PROJECT =		citus
-GH_TAGNAME =		v9.5.0
+GH_TAGNAME =		v9.5.2
 
 CATEGORIES =		databases
 HOMEPAGE =		https://www.citusdata.com/
