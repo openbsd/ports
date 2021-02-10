@@ -1,0 +1,67 @@
+$OpenBSD: patch-src_variables_h,v 1.1 2021/02/10 20:57:22 jasper Exp $
+
+Index: src/variables.h
+--- src/variables.h.orig
++++ src/variables.h
+@@ -7,38 +7,39 @@
+ 
+ 
+ #include "global.h"
++#include "estructuras.h"
+ 
+ 
+ /* Global variables */
+ 
+-FILE *outfile;                    // Fichero de output
+-CURL *curl;                       // Descriptor CURL
+-struct opciones options;          // Array con las opciones recibidas del usuario
++extern FILE *outfile;                    // Fichero de output
++extern CURL *curl;                       // Descriptor CURL
++extern struct opciones options;          // Array con las opciones recibidas del usuario
+ 
+-struct result *nec[100];          // Array que almacena los NECs
+-int contador;                     // Contador de palabras generadas
+-int descargadas;                  // Numero de URLs descargadas
+-int encontradas;                  // Numero de URLs encontradas
+-int errores;                      // Contador de errores
+-int existant;                     // Flag para determinar si la URL actual existe
+-int listable;                     // Flag para determinar si un directorio es listable
++extern struct result *nec[100];          // Array que almacena los NECs
++extern int contador;                     // Contador de palabras generadas
++extern int descargadas;                  // Numero de URLs descargadas
++extern int encontradas;                  // Numero de URLs encontradas
++extern int errores;                      // Contador de errores
++extern int existant;                     // Flag para determinar si la URL actual existe
++extern int listable;                     // Flag para determinar si un directorio es listable
+ 
+-struct words *wordlist_base;      // Base de la lista de palabras
+-struct words *wordlist_current;   // Nodo actual de la lista de palabras
+-struct words *wordlist_final;     // Final de la lista de palabras
++extern struct words *wordlist_base;      // Base de la lista de palabras
++extern struct words *wordlist_current;   // Nodo actual de la lista de palabras
++extern struct words *wordlist_final;     // Final de la lista de palabras
+ 
+-struct words *exts_base;          // Base de la lista de extensiones
+-struct words *exts_current;       // Nodo actual de la lista de externsiones
+-int exts_num;                     // Numero de extensiones
++extern struct words *exts_base;          // Base de la lista de extensiones
++extern struct words *exts_current;       // Nodo actual de la lista de externsiones
++extern int exts_num;                     // Numero de extensiones
+ 
+-struct words *muts_base;          // Base de la lista de mutaciones
++extern struct words *muts_base;          // Base de la lista de mutaciones
+ 
+-struct words *dirlist_base;       // Base de la lista de los directorios encontrados
+-struct words *dirlist_final;      // Final de la lista los directorios encontrados
+-struct words *dirlist_current;    // Nodo actual de la lista los directorios encontrados
++extern struct words *dirlist_base;       // Base de la lista de los directorios encontrados
++extern struct words *dirlist_final;      // Final de la lista los directorios encontrados
++extern struct words *dirlist_current;    // Nodo actual de la lista los directorios encontrados
+ 
+-int resuming;                     // Flag para saber si estamos en una sesion resumida
+-int next_dir;					  // Flag para saber si tenemos que pasar al siguiente directorio
++extern int resuming;                     // Flag para saber si estamos en una sesion resumida
++extern int next_dir;					  // Flag para saber si tenemos que pasar al siguiente directorio
+ 
+ 
+ 

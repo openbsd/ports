@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/10 20:57:22 jasper Exp $
 
 COMMENT =	web content scanner
 
 DISTNAME =	dirb222
 PKGNAME =	dirb-2.2.2
+REVISION =	0
 
 CATEGORIES =	security www
 

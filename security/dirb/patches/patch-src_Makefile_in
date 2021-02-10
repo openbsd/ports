@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2021/02/10 20:57:22 jasper Exp $
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -50,7 +50,7 @@ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+ am__objects_1 = crea_wordlist.$(OBJEXT) dirb.$(OBJEXT) \
+ 	get_url.$(OBJEXT) lanza_ataque.$(OBJEXT) calculanec.$(OBJEXT) \
+-	utils.$(OBJEXT) options.$(OBJEXT) resume.$(OBJEXT)
++	utils.$(OBJEXT) options.$(OBJEXT) resume.$(OBJEXT) variables.$(OBJEXT)
+ am_dirb_OBJECTS = $(am__objects_1)
+ dirb_OBJECTS = $(am_dirb_OBJECTS)
+ dirb_LDADD = $(LDADD)
+@@ -153,7 +153,8 @@ base = crea_wordlist.c\
+ 	calculanec.c\
+ 	utils.c\
+ 	options.c\
+-	resume.c
++	resume.c\
++	variables.c
+ 
+ dirb_SOURCES = $(base)
+ dirb_LDFLAGS = @NETWORK_LIBS@
+@@ -230,6 +231,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/options.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/resume.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/variables.Po@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
