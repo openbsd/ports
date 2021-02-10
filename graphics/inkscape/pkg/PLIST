@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/09/08 15:22:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/02/10 04:54:55 rsadowski Exp $
 @bin bin/inkscape
 @bin bin/inkview
 lib/inkscape/
@@ -65,6 +65,13 @@ share/inkscape/examples/tref.svg
 share/inkscape/examples/turbulence_filters.svg
 share/inkscape/extensions/
 share/inkscape/extensions/.pylintrc
+share/inkscape/extensions/.pytest_cache/
+share/inkscape/extensions/.pytest_cache/CACHEDIR.TAG
+share/inkscape/extensions/.pytest_cache/README.md
+share/inkscape/extensions/.pytest_cache/v/
+share/inkscape/extensions/.pytest_cache/v/cache/
+share/inkscape/extensions/.pytest_cache/v/cache/nodeids
+share/inkscape/extensions/.pytest_cache/v/cache/stepwise
 share/inkscape/extensions/LICENSE.txt
 share/inkscape/extensions/MANIFEST.in
 share/inkscape/extensions/Poly3DObjects/

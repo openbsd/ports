@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.87 2020/11/17 03:19:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.88 2021/02/10 04:54:55 rsadowski Exp $
 
 COMMENT =	SVG vector drawing application
 
-DISTNAME =	inkscape-1.0.1
-REVISION =	0
+DISTNAME =	inkscape-1.0.2
 
 CATEGORIES =	graphics
 
@@ -70,7 +69,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		textproc/py-lxml${MODPY_FLAVOR} \
 		x11/gtk+3,-guic
 
-WRKDIST =	${WRKDIR}/inkscape-1.0.1_2020-09-07_3bc2e813f5
+WRKDIST =	${WRKDIR}/inkscape-1.0.2_2021-01-15_e86c870879
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 
