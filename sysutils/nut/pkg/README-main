@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.10 2018/09/04 12:46:22 espie Exp $
+$OpenBSD: README-main,v 1.11 2021/02/11 16:17:57 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -65,7 +65,8 @@ RS232: Either add _ups to group "dialer" or change the group ownership
 of the relevant /dev/tty* device to _ups.
 
 USB: Use "usbdevs -vd" (as root) to identify the specific controller
-(/dev/usbXX) and ugen (/dev/ugenXX) device nodes, then chgrp these to _ups.
+(/dev/usbXX) and ugen (/dev/ugenXX) device nodes, then adjust permissions
+to allow _ups to have write access (e.g. chmod g+w and chgrp _ups).
 
 Special notice for APC USB devices
 ----------------------------------
