@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2020/12/16 08:57:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2021/02/11 13:22:59 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -13,7 +13,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.30.4
+V =			2.30.5
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -66,8 +66,6 @@ MODGNOME_TOOLS =	gobject-introspection
 #DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 NO_TEST =		Yes
-USE_GMAKE =		Yes
-LIBTOOL_FLAGS =		--tag=disable-static
 
 BUILD_DEPENDS =		devel/bison \
 			devel/gettext,-tools \
