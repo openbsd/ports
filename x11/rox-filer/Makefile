@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2019/07/12 20:51:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2021/02/11 09:52:17 ajacoutot Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.11
-REVISION=		3
+REVISION=		4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://rox.sourceforge.net/desktop/ROX-Filer
@@ -14,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 xml2 z fribidi
+WANTLIB += gobject-2.0 gtk-x11-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rox/}
 EXTRACT_SUFX=	.tar.bz2

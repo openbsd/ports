@@ -1,0 +1,16 @@
+$OpenBSD: patch-ROX-Filer_src_type_c,v 1.4 2021/02/11 09:52:17 ajacoutot Exp $
+
+warning: absolute value function 'abs' given an argument of type 'long long' but has parameter of type 'int' which may cause truncation of value
+
+Index: ROX-Filer/src/type.c
+--- ROX-Filer/src/type.c.orig
++++ ROX-Filer/src/type.c
+@@ -466,7 +466,7 @@ MaskedPixmap *type_to_icon(MIME_type *type)
+ 	if (type->image)
+ 	{
+ 		/* Yes - don't recheck too often */
+-		if (abs(now - type->image_time) < 2)
++		if (llabs(now - type->image_time) < 2)
+ 		{
+ 			g_object_ref(type->image);
+ 			return type->image;
