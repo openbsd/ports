@@ -1,19 +1,16 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2020/09/07 16:58:30 landry Exp $
+$OpenBSD: patch-configure,v 1.2 2021/02/11 13:10:41 sthen Exp $
 
 https://github.com/archlinux/svntogit-community/blob/packages/grsync/trunk/use-themed-icon.patch
-https://github.com/archlinux/svntogit-community/blob/packages/grsync/trunk/gtk3-port.patch
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6161,8 +6161,8 @@ cat >>confdefs.h <<_ACEOF
- #define XMLFILE "$XMLFILE"
- _ACEOF
- 
--pkg_modules="gtk+-2.0 >= 2.16.0"
--				 OTHER_DESKTOP_ENTRIES="Icon=grsync.png"
-+pkg_modules="gtk+-3.0 >= 2.16.0"
-+				 OTHER_DESKTOP_ENTRIES="Icon=grsync"
- 				 MIMEINFO_XMLNS="xmlns='http://www.freedesktop.org/standards/shared-mime-info'"
- 				 MIME_OSSOCAT=""
+@@ -6020,7 +6020,7 @@ else
+ 		GTK_API_VERSION="2.0"
+ fi
+ pkg_modules="gtk+-$GTK_API_VERSION >= 2.16.0"
+-OTHER_DESKTOP_ENTRIES="Icon=grsync.png"
++OTHER_DESKTOP_ENTRIES="Icon=grsync"
+ MIMEINFO_XMLNS="xmlns='http://www.freedesktop.org/standards/shared-mime-info'"
+ MIME_OSSOCAT=""
  

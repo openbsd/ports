@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/07 16:58:30 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/11 13:10:41 sthen Exp $
 
 COMMENT =	rsync GUI
-DISTNAME =	grsync-1.2.8
+DISTNAME =	grsync-1.3.0
 CATEGORIES =	x11 net
 
 HOMEPAGE =	https://www.opbyte.it/grsync/
@@ -9,9 +9,13 @@ HOMEPAGE =	https://www.opbyte.it/grsync/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl m
+WANTLIB += pango-1.0 pangocairo-1.0
+
 MASTER_SITES =	https://www.opbyte.it/release/
-MASTER_SITES1 =	https://raw.githubusercontent.com/archlinux/svntogit-community/packages/grsync/trunk/
-PATCHFILES +=	gtk3-port.patch:1 use-themed-icon.patch:1
+MASTER_SITES1 =	https://raw.githubusercontent.com/archlinux/svntogit-community/2f11d98b7b78141764276e8e73272e0ea48b0ada/grsync/trunk/
+PATCHFILES +=	grsync-1.3.0-{}use-themed-icon.patch:1
 PATCH_DIST_STRIP =	-p1
 
 MODULES =	textproc/intltool
@@ -26,9 +30,5 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		net/rsync \
 		x11/gtk+3,-guic
-
-WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl m
-WANTLIB += pango-1.0 pangocairo-1.0
 
 .include <bsd.port.mk>
