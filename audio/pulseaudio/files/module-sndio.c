@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.10 2020/04/22 09:51:25 ratchov Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.11 2021/02/11 17:52:21 ajacoutot Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -36,7 +36,6 @@
 #include <pulsecore/rtpoll.h>
 #include <pulsecore/poll.h>
 
-#include "module-sndio-symdef.h"
 #include "module-sndio-sysex.h"
 
 /*
@@ -277,7 +276,7 @@ sndio_sink_message(pa_msgobject *o, int code, void *data, int64_t offset,
 	switch (code) {
 	case PA_SINK_MESSAGE_GET_LATENCY:
 		pa_log_debug("sink:PA_SINK_MESSAGE_GET_LATENCY");
-		*(pa_usec_t*)data = pa_bytes_to_usec(u->par.bufsz,
+		*(int64_t*)data = pa_bytes_to_usec(u->par.bufsz,
 		    &u->sink->sample_spec);
 		return (0);
 	case PA_SINK_MESSAGE_SET_STATE:
@@ -331,7 +330,7 @@ sndio_source_message(pa_msgobject *o, int code, void *data, int64_t offset,
 	switch (code) {
 	case PA_SOURCE_MESSAGE_GET_LATENCY:
 		pa_log_debug("source:PA_SOURCE_MESSAGE_GET_LATENCY");
-		*(pa_usec_t*)data = pa_bytes_to_usec(u->bufsz,
+		*(int64_t*)data = pa_bytes_to_usec(u->bufsz,
 		    &u->source->sample_spec);
 		return (0);
 	case PA_SOURCE_MESSAGE_SET_STATE:
@@ -531,6 +530,12 @@ pa__init(pa_module *m)
 	u->core = m->core;
 	u->module = m;
 	u->rtpoll = pa_rtpoll_new();
+
+	if (pa_thread_mq_init(&u->thread_mq, m->core->mainloop, u->rtpoll) < 0) {
+		pa_log("pa_thread_mq_init() failed.");
+		goto fail;
+	}
+
 	pa_thread_mq_init(&u->thread_mq, m->core->mainloop, u->rtpoll);
 
 	if (!(ma = pa_modargs_new(m->argument, modargs))) {

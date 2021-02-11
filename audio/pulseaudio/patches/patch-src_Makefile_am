@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_am,v 1.18 2020/10/26 08:26:00 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.19 2021/02/11 17:52:21 ajacoutot Exp $
 
 libpulsecommon-12.2.so: undefined symbol 'libintl_bindtextdomain'
 
@@ -34,7 +34,7 @@ Index: src/Makefile.am
 +module_sndio_la_SOURCES = modules/module-sndio.c
 +module_sndio_la_LDFLAGS = $(MODULE_LDFLAGS)
 +module_sndio_la_LIBADD = $(MODULE_LIBADD) -lsndio
-+module_sndio_CFLAGS = $(AM_CFLAGS) -DPA_MODULE_NAME=module_sndio
++module_sndio_la_CFLAGS = $(AM_CFLAGS) -DPA_MODULE_NAME=module_sndio
  
  # COREAUDIO
  
