@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_common_c,v 1.1 2021/02/11 16:11:14 sthen Exp $
+
+Index: src/common.c
+--- src/common.c.orig
++++ src/common.c
+@@ -387,8 +387,6 @@ static void *run_update_callback(void *data)
+ 	}
+ }
+ 
+-int no_buffers;
+-
+ void update_stuff(void)
+ {
+ 	int i;

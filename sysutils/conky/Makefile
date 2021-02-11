@@ -1,15 +1,19 @@
-# $OpenBSD: Makefile,v 1.60 2020/07/17 08:36:04 tb Exp $
+# $OpenBSD: Makefile,v 1.61 2021/02/11 16:11:14 sthen Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
 
-DISTNAME=	conky-1.9.0
-CATEGORIES=	sysutils
-HOMEPAGE=	http://conky.sourceforge.net/
-REVISION=	20
+# there's a start of an attempt to update to a recent version in openbsd-wip
+GH_ACCOUNT=	brndnmtthws
+GH_PROJECT=	conky
+GH_TAGNAME=	1.9.0
+REVISION=	21
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=conky/}
+# remove after updating:
+DISTFILES=	conky_0-{}${GH_TAGNAME}.tar.gz
+
+CATEGORIES=	sysutils
 
 # mostly GPLv3; see COPYING
 PERMIT_PACKAGE=	Yes
@@ -28,6 +32,24 @@ LIB_DEPENDS=	devel/glib2 \
 
 FLAVORS=	no_x11 xmms2
 FLAVOR?=
+
+CONFIGURE_STYLE= autoreconf
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.16
+BUILD_DEPENDS=	textproc/docbook2x
+AUTORECONF=	${WRKSRC}/autogen.sh
+
+CONFIGURE_ARGS=	--enable-mpd \
+		--enable-rss \
+		--disable-config-output \
+		--disable-moc \
+		--disable-portmon \
+		--enable-lua \
+		--enable-curl \
+		--with-libiconv-prefix="${LOCALBASE}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
+		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
+		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 .if ${FLAVOR:Mno_x11}
 .  if ${FLAVOR:Mxmms2}
@@ -51,19 +73,6 @@ CONFIGURE_ARGS+=--enable-xmms2
 LIB_DEPENDS+=	audio/xmms2
 WANTLIB+=	xmmsclient
 .endif
-
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--enable-mpd \
-		--enable-rss \
-		--disable-config-output \
-		--disable-moc \
-		--disable-portmon \
-		--enable-lua \
-		--enable-curl \
-		--with-libiconv-prefix="${LOCALBASE}"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
-		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
-		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/conky
