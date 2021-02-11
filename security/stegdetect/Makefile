@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/05 10:06:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/11 13:18:17 sthen Exp $
 
 GH_ACCOUNT=	abeluck
 GH_PROJECT=	stegdetect
@@ -21,6 +21,9 @@ AUTOCONF_VERSION= 2.69
 
 # disable xsteg
 CONFIGURE_ARGS=	--without-libevent
+
+post-extract:
+	sed -i s/progname/prog_name/g ${WRKSRC}/steg*.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/{stegdetect,stegbreak} ${PREFIX}/bin
