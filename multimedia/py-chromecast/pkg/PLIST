@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/12/17 12:40:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/02/11 07:43:50 ajacoutot Exp $
 @pkgpath multimedia/py-chromecast
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -35,6 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}multizone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}plex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}receiver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}spotify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}supla.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}yleareena.${MODPY_PYC_MAGIC_TAG}pyc
@@ -45,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/homeassistant.
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/media.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/multizone.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/plex.py
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/receiver.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/spotify.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/supla.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/yleareena.py
