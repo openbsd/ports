@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2020/01/26 11:14:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/11 03:10:28 daniel Exp $
 
 COMMENT=		wm-dockapp; space weather monitor
 
 DISTNAME=		wmSpaceWeather-1.04
 PKGNAME=		${DISTNAME:L}
-REVISION=		6
+REVISION=		7
 CATEGORIES=		astro x11 x11/windowmaker
 
 # GPL
@@ -13,6 +13,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c
 
 MASTER_SITES=		https://distfiles.sigtrap.nl/
+
+RUN_DEPENDS=		devel/p5-Time-modules
 
 MAKE_ENV=		CC="${CC}"
 

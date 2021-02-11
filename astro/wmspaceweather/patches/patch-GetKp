@@ -1,9 +1,13 @@
-$OpenBSD: patch-GetKp,v 1.3 2008/06/20 10:49:42 martynas Exp $
---- wmSpaceWeather/GetKp.orig	Fri Feb 12 06:42:01 1999
-+++ wmSpaceWeather/GetKp	Thu Jun 19 20:41:26 2008
-@@ -7,19 +7,31 @@
+$OpenBSD: patch-GetKp,v 1.4 2021/02/11 03:10:28 daniel Exp $
+Index: wmSpaceWeather/GetKp
+--- wmSpaceWeather/GetKp.orig
++++ wmSpaceWeather/GetKp
+@@ -5,21 +5,33 @@
+ #
  
-     require "ctime.pl";
+ 
+-    require "ctime.pl";
++    use Time::CTime;
  
 +    #
 +    #  Change to users home directory. We used to dump into /tmp
@@ -26,8 +30,8 @@ $OpenBSD: patch-GetKp,v 1.3 2008/06/20 10:49:42 martynas Exp $
 +        mkdir(".wmSpaceWeatherReports", 0775);
      }
 +    chdir(".wmSpaceWeatherReports");
-+    unlink("DGD.txt");
-+    unlink("curind.txt");
++    unlink("daily-geomagnetic-indices.txt");
++    unlink("current-space-weather-indices.txt");
  
 -    if (-e "/tmp/curind.txt"){
 -	unlink("/tmp/curind.txt");
@@ -37,7 +41,7 @@ $OpenBSD: patch-GetKp,v 1.3 2008/06/20 10:49:42 martynas Exp $
  
 -    $grabcmd = "cd /tmp; wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/indices/DGD.txt";
 +
-+    $grabcmd = "ftp -V ftp://www.sec.noaa.gov/pub/indices/DGD.txt";
++    $grabcmd = "ftp -V https://services.swpc.noaa.gov/text/daily-geomagnetic-indices.txt";
      system "$grabcmd";
  
  
@@ -46,7 +50,7 @@ $OpenBSD: patch-GetKp,v 1.3 2008/06/20 10:49:42 martynas Exp $
  
  
 -    open(TmpFile, "/tmp/DGD.txt");
-+    open(TmpFile, "DGD.txt");
++    open(TmpFile, "daily-geomagnetic-indices.txt");
      while (<TmpFile>){
          chop;
  	if ($_ =~ /^\d{4} \d{2} \d{2}\s*\d*/ ){
@@ -55,13 +59,13 @@ $OpenBSD: patch-GetKp,v 1.3 2008/06/20 10:49:42 martynas Exp $
      # Add in very latest stuff
      #
 -    $grabcmd = "cd /tmp; wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/latest/curind.txt";
-+    $grabcmd = "ftp -V ftp://www.sec.noaa.gov/pub/latest/curind.txt";
++    $grabcmd = "ftp -V https://services.swpc.noaa.gov/text/current-space-weather-indices.txt";
      system "$grabcmd";
      %lmonstr = ( "Jan", 1, "Feb", 2, "Mar", 3, "Apr", 4, "May", 5, "Jun", 6, "Jul", 7, "Aug", 8, "Sep", 9, "Oct", 10, "Nov", 11, "Dec", 12);
  
  @lval = ($lyear, $lmonstr{$lmon}, $ldom);
 -    open(TmpFile, "/tmp/curind.txt");
-+    open(TmpFile, "curind.txt");
++    open(TmpFile, "current-space-weather-indices.txt");
      while (<TmpFile>){
          chop;
  	if ($_ =~ /^:Geomagnetic_Values: (\d{4}) (.*) (\d{1,2})/){
