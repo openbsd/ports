@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/22 19:56:40 chrisz Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/11 04:17:32 daniel Exp $
 
 COMMENT =	OCaml interface to GTK+3
 CATEGORIES =	x11 devel
 
 GH_ACCOUNT =	garrigue
 GH_PROJECT =	lablgtk
-GH_TAGNAME =	3.1.0
+GH_TAGNAME =	3.1.1
 PKGNAME =	lablgtk3-${GH_TAGNAME}
 
 # LGPL
