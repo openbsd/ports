@@ -1,9 +1,10 @@
-$OpenBSD: patch-configure,v 1.7 2014/12/20 11:36:11 landry Exp $
+$OpenBSD: patch-configure,v 1.8 2021/02/11 10:20:14 landry Exp $
 
 Check for vte-2.91 pkg-config file
 
---- configure.orig	Thu Nov  1 06:29:18 2012
-+++ configure	Sat Dec 20 12:15:37 2014
+Index: configure
+--- configure.orig
++++ configure
 @@ -13276,12 +13276,12 @@ if test -n "$VTE_CFLAGS"; then
      pkg_cv_VTE_CFLAGS="$VTE_CFLAGS"
   elif test -n "$PKG_CONFIG"; then
