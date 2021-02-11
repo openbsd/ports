@@ -1,33 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/11/01 13:24:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/02/11 10:20:04 ajacoutot Exp $
 @bin bin/roxterm
 @bin bin/roxterm-config
 @man man/man1/roxterm-config.1
 @man man/man1/roxterm.1
-share/appdata/
-share/appdata/roxterm.appdata.xml
 share/applications/roxterm.desktop
 share/doc/roxterm/
-share/doc/roxterm/AUTHORS
-share/doc/roxterm/ChangeLog
-share/doc/roxterm/README
 share/doc/roxterm/en/
 share/doc/roxterm/en/guide.html
 share/doc/roxterm/en/index.html
 share/doc/roxterm/en/installation.html
 share/doc/roxterm/en/news.html
+share/doc/roxterm/index.html
+share/doc/roxterm/index.php
 share/doc/roxterm/lib/
+share/doc/roxterm/lib/favicon.ico
 share/doc/roxterm/lib/header.png
 share/doc/roxterm/lib/logo_text.png
+share/doc/roxterm/lib/logo_text.xcf
 share/doc/roxterm/lib/logo_text_only.png
 share/doc/roxterm/lib/roxterm.css
 share/doc/roxterm/lib/roxterm_ie.css
 share/doc/roxterm/lib/roxterm_logo.png
+share/doc/roxterm/lib/screenshot1.png
+share/doc/roxterm/lib/screenshot2.png
 share/doc/roxterm/lib/sprites.png
 share/icons/hicolor/scalable/apps/roxterm.svg
+share/metainfo/
+share/metainfo/roxterm.metainfo.xml
 share/roxterm/
 share/roxterm/Config/
 share/roxterm/Config/Colours/
 share/roxterm/Config/Colours/GTK
+share/roxterm/Config/Colours/Nocturne
 share/roxterm/Config/Colours/Tango
 share/roxterm/Config/Shortcuts/
 share/roxterm/Config/Shortcuts/Default
