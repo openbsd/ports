@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/11/14 17:34:06 naddy Exp $
-bin/brltty
+@comment $OpenBSD: PLIST,v 1.5 2021/02/11 12:51:03 sthen Exp $
+@bin bin/brltty
 bin/brltty-config
 include/brltty/
 include/brltty/api.h
@@ -8,37 +8,37 @@ include/brltty/brldefs.h
 lib/brltty/
 lib/brltty/brltty-brl.lst
 lib/brltty/brltty-spk.lst
-lib/brltty/libbrlttybal.so
-lib/brltty/libbrlttybat.so
-lib/brltty/libbrlttybbl.so
-lib/brltty/libbrlttybbn.so
-lib/brltty/libbrlttybcb.so
-lib/brltty/libbrlttybec.so
-lib/brltty/libbrlttybeu.so
-lib/brltty/libbrlttybfs.so
-lib/brltty/libbrlttybht.so
-lib/brltty/libbrlttyblt.so
-lib/brltty/libbrlttybmb.so
-lib/brltty/libbrlttybmd.so
-lib/brltty/libbrlttybmn.so
-lib/brltty/libbrlttybpm.so
-lib/brltty/libbrlttybts.so
-lib/brltty/libbrlttybtt.so
-lib/brltty/libbrlttybva.so
-lib/brltty/libbrlttybvd.so
-lib/brltty/libbrlttybvh.so
-lib/brltty/libbrlttybvo.so
-lib/brltty/libbrlttybvr.so
-lib/brltty/libbrlttybvs.so
-lib/brltty/libbrlttysal.so
-lib/brltty/libbrlttysbl.so
-lib/brltty/libbrlttyscb.so
-lib/brltty/libbrlttyses.so
-lib/brltty/libbrlttysfv.so
-lib/brltty/libbrlttysgs.so
-lib/libbrlapi.a
-lib/libbrlapi.so
-lib/libbrlapi.so.0.3.0
+@so lib/brltty/libbrlttybal.so
+@so lib/brltty/libbrlttybat.so
+@so lib/brltty/libbrlttybbl.so
+@so lib/brltty/libbrlttybbn.so
+@so lib/brltty/libbrlttybcb.so
+@so lib/brltty/libbrlttybec.so
+@so lib/brltty/libbrlttybeu.so
+@so lib/brltty/libbrlttybfs.so
+@so lib/brltty/libbrlttybht.so
+@so lib/brltty/libbrlttyblt.so
+@so lib/brltty/libbrlttybmb.so
+@so lib/brltty/libbrlttybmd.so
+@so lib/brltty/libbrlttybmn.so
+@so lib/brltty/libbrlttybpm.so
+@so lib/brltty/libbrlttybts.so
+@so lib/brltty/libbrlttybtt.so
+@so lib/brltty/libbrlttybva.so
+@so lib/brltty/libbrlttybvd.so
+@so lib/brltty/libbrlttybvh.so
+@so lib/brltty/libbrlttybvo.so
+@so lib/brltty/libbrlttybvr.so
+@so lib/brltty/libbrlttybvs.so
+@so lib/brltty/libbrlttysal.so
+@so lib/brltty/libbrlttysbl.so
+@so lib/brltty/libbrlttyscb.so
+@so lib/brltty/libbrlttyses.so
+@so lib/brltty/libbrlttysfv.so
+@so lib/brltty/libbrlttysgs.so
+@static-lib lib/libbrlapi.a
+@so lib/libbrlapi.so
+@bin lib/libbrlapi.so.0.3.0
 @man man/man1/brltty.1
 @man man/man3/brlapi_closeConnection.3
 @man man/man3/brlapi_connection.3

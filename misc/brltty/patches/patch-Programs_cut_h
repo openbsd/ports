@@ -1,0 +1,14 @@
+$OpenBSD: patch-Programs_cut_h,v 1.1 2021/02/11 12:51:03 sthen Exp $
+
+Index: Programs/cut.h
+--- Programs/cut.h.orig
++++ Programs/cut.h
+@@ -22,7 +22,7 @@
+ extern "C" {
+ #endif /* __cplusplus */
+ 
+-unsigned char *cut_buffer; /* for CMD_NXSEARCH */
++extern unsigned char *cut_buffer; /* for CMD_NXSEARCH */
+ extern void cut_begin (int column, int row);
+ extern void cut_append (int column, int row);
+ extern int cut_rectangle (int column, int row);
