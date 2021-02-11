@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/13 17:18:56 kmos Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/11 18:31:11 ajacoutot Exp $
 
 COMMENT=		thin layer of graphic data types
 
 GNOME_PROJECT=		graphene
-GNOME_VERSION=		1.10.2
+GNOME_VERSION=		1.10.4
 
-SHARED_LIBS += graphene-1.0              2.1 # 0.1000.2
+SHARED_LIBS += graphene-1.0              2.1 # 0.1000.4
 
 CATEGORIES=		graphics
 
@@ -28,9 +28,5 @@ MODGNOME_TOOLS=		gobject-introspection
 LIB_DEPENDS=		devel/glib2
 
 CONFIGURE_ARGS +=	-Dinstalled_tests=false
-
-.if ${MACHINE_ARCH} != "amd64"
-CONFIGURE_ARGS +=	-Dsse2=false
-.endif
 
 .include <bsd.port.mk>
