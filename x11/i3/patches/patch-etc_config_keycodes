@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_config_keycodes,v 1.5 2020/03/10 16:27:53 bket Exp $
+$OpenBSD: patch-etc_config_keycodes,v 1.6 2021/02/12 23:14:05 sthen Exp $
 
 Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
 different between Linux and OpenBSD.
@@ -24,7 +24,7 @@ Index: etc/config.keycodes
 -bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 -bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 -bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-+#set $refresh_i3status killall -SIGUSR1 i3status
++#set $refresh_i3status pkill -SIGUSR1 i3status
 +#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 +#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 +#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
@@ -41,12 +41,12 @@ Index: etc/config.keycodes
  bindcode $mod+Shift+24 kill
  
  # start dmenu (a program launcher)
--bindcode $mod+40 exec dmenu_run
-+bindcode $mod+40 exec ${LOCALBASE}/bin/dmenu_run
- # There also is the (new) i3-dmenu-desktop which only displays applications
- # shipping a .desktop file. It is a wrapper around dmenu, so you need that
- # installed.
-@@ -59,10 +59,10 @@ bindcode $mod+46 focus up
+-bindcode $mod+40 exec --no-startup-id dmenu_run
++bindcode $mod+40 exec --no-startup-id ${LOCALBASE}/bin/dmenu_run
+ # A more modern dmenu replacement is rofi:
+ # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+ # There also is i3-dmenu-desktop which only displays applications shipping a
+@@ -60,10 +60,10 @@ bindcode $mod+46 focus up
  bindcode $mod+47 focus right
  
  # alternatively, you can use the cursor keys:
@@ -61,7 +61,7 @@ Index: etc/config.keycodes
  
  # move focused window
  bindcode $mod+Shift+44 move left
-@@ -71,10 +71,10 @@ bindcode $mod+Shift+46 move up
+@@ -72,10 +72,10 @@ bindcode $mod+Shift+46 move up
  bindcode $mod+Shift+47 move right
  
  # alternatively, you can use the cursor keys:
@@ -76,7 +76,7 @@ Index: etc/config.keycodes
  
  # split in horizontal orientation
  bindcode $mod+43 split h
-@@ -160,10 +160,10 @@ mode "resize" {
+@@ -161,10 +161,10 @@ mode "resize" {
          bindcode 47 resize grow width 10 px or 10 ppt
  
          # same bindings, but for the arrow keys

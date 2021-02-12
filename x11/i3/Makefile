@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.126 2020/11/07 13:14:21 bket Exp $
+# $OpenBSD: Makefile,v 1.127 2021/02/12 23:14:04 sthen Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.18.3
+DISTNAME =	i3-4.19.1
 
 CATEGORIES =	x11
 
@@ -13,17 +13,19 @@ PERMIT_PACKAGE =	Yes
 
 # XXX use of pledge has been neutered. For more details see
 # https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
-WANTLIB += c cairo ev glib-2.0 gobject-2.0 harfbuzz iconv intl
-WANTLIB += m pango-1.0 pangocairo-1.0 pcre pthread startup-notification-1
-WANTLIB += xcb xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-shape
-WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
-WANTLIB += yajl
+WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv m pango-1.0 pangocairo-1.0
+WANTLIB += pcre startup-notification-1 xcb xcb-cursor xcb-icccm
+WANTLIB += xcb-keysyms xcb-randr xcb-shape xcb-util xcb-xinerama
+WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11 yajl
+
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MASTER_SITES =	${HOMEPAGE}/downloads/
-EXTRACT_SUFX =	.tar.bz2
+EXTRACT_SUFX =	.tar.xz
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-BUILD_DEPENDS =	textproc/asciidoc \
-		textproc/xmlto
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \
 		devel/pango \
@@ -34,24 +36,16 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/dmenu \
 		x11/i3status \
 		x11/p5-AnyEvent-I3
+MODULES =	devel/meson
 
-# Tests now use the X11::XCB Perl module, not yet in ports.
-NO_TEST =	Yes
-#TEST_DEPENDS =	x11/p5-AnyEvent-I3
+# Tests now use the X11::XCB Perl module, not yet in ports and a bit complex
+#TEST_DEPENDS=	x11/p5-AnyEvent-I3
+NO_TEST=	Yes
 
-FAKE_FLAGS =	i3confdir="${PREFIX}/share/examples/i3/"
-
-SEPARATE_BUILD =Yes
-USE_GMAKE =	Yes
-CONFIGURE_STYLE =gnu
-CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
-			  -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib \
-			 -L${LOCALBASE}/lib"
-
-.if defined(DEBUG)
-CONFIGURE_ARGS +=--enable-debug
-.endif
+xxCONFIGURE_ARGS=	-Dmans=true \
+		-Ddocs=true
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/config \
@@ -62,5 +56,9 @@ pre-configure:
 		${WRKSRC}/libi3/get_exe_path.c \
 		${WRKSRC}/man/i3-config-wizard.man \
 		${WRKSRC}/man/i3.man
+
+post-install:
+	rm ${WRKINST}/etc/i3/*.{orig,beforesubst}
+	mv ${WRKINST}/etc/i3 ${PREFIX}/share/examples/
 
 .include <bsd.port.mk>
