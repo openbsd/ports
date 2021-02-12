@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2020/12/30 07:17:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.48 2021/02/12 17:36:49 rsadowski Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -186,6 +186,7 @@ share/cmake/Help/envvar/ASM_DIALECTFLAGS.rst
 share/cmake/Help/envvar/CC.rst
 share/cmake/Help/envvar/CCMAKE_COLORS.rst
 share/cmake/Help/envvar/CFLAGS.rst
+share/cmake/Help/envvar/CMAKE_APPLE_SILICON_PROCESSOR.rst
 share/cmake/Help/envvar/CMAKE_BUILD_PARALLEL_LEVEL.rst
 share/cmake/Help/envvar/CMAKE_CONFIG_TYPE.rst
 share/cmake/Help/envvar/CMAKE_EXPORT_COMPILE_COMMANDS.rst
@@ -1006,6 +1007,7 @@ share/cmake/Help/prop_tgt/INTERPROCEDURAL_OPTIMIZATION.rst
 share/cmake/Help/prop_tgt/INTERPROCEDURAL_OPTIMIZATION_CONFIG.rst
 share/cmake/Help/prop_tgt/IOS_INSTALL_COMBINED.rst
 share/cmake/Help/prop_tgt/ISPC_HEADER_DIRECTORY.rst
+share/cmake/Help/prop_tgt/ISPC_HEADER_SUFFIX.rst
 share/cmake/Help/prop_tgt/ISPC_INSTRUCTION_SETS.rst
 share/cmake/Help/prop_tgt/JOB_POOL_COMPILE.rst
 share/cmake/Help/prop_tgt/JOB_POOL_LINK.rst
@@ -1233,6 +1235,7 @@ share/cmake/Help/variable/CMAKE_ANDROID_SKIP_ANT_STEP.rst
 share/cmake/Help/variable/CMAKE_ANDROID_STANDALONE_TOOLCHAIN.rst
 share/cmake/Help/variable/CMAKE_ANDROID_STL_TYPE.rst
 share/cmake/Help/variable/CMAKE_APPBUNDLE_PATH.rst
+share/cmake/Help/variable/CMAKE_APPLE_SILICON_PROCESSOR.rst
 share/cmake/Help/variable/CMAKE_AR.rst
 share/cmake/Help/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY.rst
 share/cmake/Help/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY_CONFIG.rst
@@ -1424,6 +1427,7 @@ share/cmake/Help/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION.rst
 share/cmake/Help/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION_CONFIG.rst
 share/cmake/Help/variable/CMAKE_IOS_INSTALL_COMBINED.rst
 share/cmake/Help/variable/CMAKE_ISPC_HEADER_DIRECTORY.rst
+share/cmake/Help/variable/CMAKE_ISPC_HEADER_SUFFIX.rst
 share/cmake/Help/variable/CMAKE_ISPC_INSTRUCTION_SETS.rst
 share/cmake/Help/variable/CMAKE_JOB_POOLS.rst
 share/cmake/Help/variable/CMAKE_JOB_POOL_COMPILE.rst
@@ -2120,8 +2124,6 @@ share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/Intel-Fortran.cmake
 share/cmake/Modules/Compiler/Intel-ISPC.cmake
 share/cmake/Modules/Compiler/Intel.cmake
-share/cmake/Modules/Compiler/IntelClang-DetermineCompiler.cmake
-share/cmake/Modules/Compiler/IntelDPCPP-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/MSVC-ASM.cmake
 share/cmake/Modules/Compiler/MSVC-C-FeatureTests.cmake
 share/cmake/Modules/Compiler/MSVC-C.cmake
@@ -2430,7 +2432,7 @@ share/cmake/Modules/IntelVSImplicitPath/CMakeLists.txt
 share/cmake/Modules/IntelVSImplicitPath/detect.cmake
 share/cmake/Modules/IntelVSImplicitPath/hello.f
 share/cmake/Modules/Internal/
-share/cmake/Modules/Internal/CMakeCheckCompilerFlag.cmake
+share/cmake/Modules/Internal/CMakeTryCompilerOrLinkerFlag.cmake
 share/cmake/Modules/Internal/CPack/
 share/cmake/Modules/Internal/CPack/CPack.DS_Store.in
 share/cmake/Modules/Internal/CPack/CPack.Description.plist.in
@@ -3057,6 +3059,7 @@ share/doc/cmake/html/_sources/envvar/ASM_DIALECTFLAGS.rst.txt
 share/doc/cmake/html/_sources/envvar/CC.rst.txt
 share/doc/cmake/html/_sources/envvar/CCMAKE_COLORS.rst.txt
 share/doc/cmake/html/_sources/envvar/CFLAGS.rst.txt
+share/doc/cmake/html/_sources/envvar/CMAKE_APPLE_SILICON_PROCESSOR.rst.txt
 share/doc/cmake/html/_sources/envvar/CMAKE_BUILD_PARALLEL_LEVEL.rst.txt
 share/doc/cmake/html/_sources/envvar/CMAKE_CONFIG_TYPE.rst.txt
 share/doc/cmake/html/_sources/envvar/CMAKE_EXPORT_COMPILE_COMMANDS.rst.txt
@@ -3870,6 +3873,7 @@ share/doc/cmake/html/_sources/prop_tgt/INTERPROCEDURAL_OPTIMIZATION.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/INTERPROCEDURAL_OPTIMIZATION_CONFIG.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/IOS_INSTALL_COMBINED.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/ISPC_HEADER_DIRECTORY.rst.txt
+share/doc/cmake/html/_sources/prop_tgt/ISPC_HEADER_SUFFIX.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/ISPC_INSTRUCTION_SETS.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/JOB_POOL_COMPILE.rst.txt
 share/doc/cmake/html/_sources/prop_tgt/JOB_POOL_LINK.rst.txt
@@ -4091,6 +4095,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_SKIP_ANT_STEP.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_STANDALONE_TOOLCHAIN.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_STL_TYPE.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_APPBUNDLE_PATH.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_APPLE_SILICON_PROCESSOR.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_AR.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY_CONFIG.rst.txt
@@ -4281,6 +4286,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION.rst.tx
 share/doc/cmake/html/_sources/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION_CONFIG.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_IOS_INSTALL_COMBINED.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ISPC_HEADER_DIRECTORY.rst.txt
+share/doc/cmake/html/_sources/variable/CMAKE_ISPC_HEADER_SUFFIX.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ISPC_INSTRUCTION_SETS.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_JOB_POOLS.rst.txt
 share/doc/cmake/html/_sources/variable/CMAKE_JOB_POOL_COMPILE.rst.txt
@@ -4841,6 +4847,7 @@ share/doc/cmake/html/envvar/ASM_DIALECTFLAGS.html
 share/doc/cmake/html/envvar/CC.html
 share/doc/cmake/html/envvar/CCMAKE_COLORS.html
 share/doc/cmake/html/envvar/CFLAGS.html
+share/doc/cmake/html/envvar/CMAKE_APPLE_SILICON_PROCESSOR.html
 share/doc/cmake/html/envvar/CMAKE_BUILD_PARALLEL_LEVEL.html
 share/doc/cmake/html/envvar/CMAKE_CONFIG_TYPE.html
 share/doc/cmake/html/envvar/CMAKE_EXPORT_COMPILE_COMMANDS.html
@@ -5656,6 +5663,7 @@ share/doc/cmake/html/prop_tgt/INTERPROCEDURAL_OPTIMIZATION.html
 share/doc/cmake/html/prop_tgt/INTERPROCEDURAL_OPTIMIZATION_CONFIG.html
 share/doc/cmake/html/prop_tgt/IOS_INSTALL_COMBINED.html
 share/doc/cmake/html/prop_tgt/ISPC_HEADER_DIRECTORY.html
+share/doc/cmake/html/prop_tgt/ISPC_HEADER_SUFFIX.html
 share/doc/cmake/html/prop_tgt/ISPC_INSTRUCTION_SETS.html
 share/doc/cmake/html/prop_tgt/JOB_POOL_COMPILE.html
 share/doc/cmake/html/prop_tgt/JOB_POOL_LINK.html
@@ -5879,6 +5887,7 @@ share/doc/cmake/html/variable/CMAKE_ANDROID_SKIP_ANT_STEP.html
 share/doc/cmake/html/variable/CMAKE_ANDROID_STANDALONE_TOOLCHAIN.html
 share/doc/cmake/html/variable/CMAKE_ANDROID_STL_TYPE.html
 share/doc/cmake/html/variable/CMAKE_APPBUNDLE_PATH.html
+share/doc/cmake/html/variable/CMAKE_APPLE_SILICON_PROCESSOR.html
 share/doc/cmake/html/variable/CMAKE_AR.html
 share/doc/cmake/html/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY.html
 share/doc/cmake/html/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY_CONFIG.html
@@ -6069,6 +6078,7 @@ share/doc/cmake/html/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION.html
 share/doc/cmake/html/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION_CONFIG.html
 share/doc/cmake/html/variable/CMAKE_IOS_INSTALL_COMBINED.html
 share/doc/cmake/html/variable/CMAKE_ISPC_HEADER_DIRECTORY.html
+share/doc/cmake/html/variable/CMAKE_ISPC_HEADER_SUFFIX.html
 share/doc/cmake/html/variable/CMAKE_ISPC_INSTRUCTION_SETS.html
 share/doc/cmake/html/variable/CMAKE_JOB_POOLS.html
 share/doc/cmake/html/variable/CMAKE_JOB_POOL_COMPILE.html

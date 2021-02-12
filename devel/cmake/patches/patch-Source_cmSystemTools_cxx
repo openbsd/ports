@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.16 2020/12/30 07:17:34 rsadowski Exp $
+$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.17 2021/02/12 17:36:49 rsadowski Exp $
 
 Get rid of cmLocaleRAII.
 
@@ -43,7 +43,7 @@ Index: Source/cmSystemTools.cxx
    defined(__QNX__)
  // For isascii
  #  define _XOPEN_SOURCE 700
-@@ -1674,8 +1674,6 @@ bool extract_tar(const std::string& outFileName,
+@@ -1673,8 +1673,6 @@ bool extract_tar(const std::string& outFileName,
                   const std::vector<std::string>& files, bool verbose,
                   bool extract)
  {
