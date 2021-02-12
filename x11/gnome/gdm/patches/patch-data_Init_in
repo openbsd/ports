@@ -1,4 +1,4 @@
-$OpenBSD: patch-data_Init_in,v 1.11 2020/11/14 10:59:36 ajacoutot Exp $
+$OpenBSD: patch-data_Init_in,v 1.12 2021/02/12 17:01:18 ajacoutot Exp $
 
 Index: data/Init.in
 --- data/Init.in.orig
@@ -23,7 +23,7 @@ Index: data/Init.in
  gdmwhich () {
    COMMAND="$1"
    OUTPUT=
-@@ -85,5 +98,15 @@ if [ "x$SETXKBMAP" != "x" ] ; then
+@@ -85,5 +98,21 @@ if [ "x$SETXKBMAP" != "x" ] ; then
      fi
    fi
  fi
@@ -32,8 +32,14 @@ Index: data/Init.in
 +if [ -c /dev/drm0 ]; then
 +    /sbin/chown _gdm /dev/drm0
 +fi
++if [ -c /dev/dri/card0 ]; then
++    /sbin/chown _gdm /dev/dri/card0
++fi
 +if [ -c /dev/drmR128 ]; then
 +    /sbin/chown _gdm /dev/drmR128
++fi
++if [ -c /dev/dri/renderD128 ]; then
++    /sbin/chown _gdm /dev/dri/renderD128
 +fi
 +# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
 +rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
