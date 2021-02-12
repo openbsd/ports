@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/09 20:04:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/12 12:39:06 sthen Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
-VERSION=	12.5
+VERSION=	12.6
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
 
@@ -107,5 +107,8 @@ post-install:
 	cd ${WRKSRC}/contrib && gmake install
 	perl -i -pe ${INSTALL_REPLACE} \
 		${PREFIX}/lib/${POSTGRESQL_DIR}/pgxs/src/Makefile.global
+	# avoid conflict between extension example files and
+	# databases/postgresql,-docs
+	rm -R ${PREFIX}/share/doc/postgresql
 
 .include <bsd.port.mk>

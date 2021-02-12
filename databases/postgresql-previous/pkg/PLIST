@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/09 20:04:10 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/12 12:39:07 sthen Exp $
 bin/${POSTGRESQL_DIR}/
 @bin bin/${POSTGRESQL_DIR}/clusterdb
 @bin bin/${POSTGRESQL_DIR}/createdb
@@ -1004,12 +1004,6 @@ lib/${POSTGRESQL_DIR}/pkgconfig/libpq.pc
 @so lib/${POSTGRESQL_DIR}/utf8_and_uhc.so
 @so lib/${POSTGRESQL_DIR}/utf8_and_win.so
 @so lib/${POSTGRESQL_DIR}/uuid-ossp.so
-share/doc/postgresql/
-share/doc/postgresql/extension/
-share/doc/postgresql/extension/autoinc.example
-share/doc/postgresql/extension/insert_username.example
-share/doc/postgresql/extension/moddatetime.example
-share/doc/postgresql/extension/refint.example
 share/${POSTGRESQL_DIR}/
 share/${POSTGRESQL_DIR}/errcodes.txt
 share/${POSTGRESQL_DIR}/extension/
