@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/12/14 13:18:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/12 17:26:17 ajacoutot Exp $
 
 COMMENT=		GLib wrapper around libarchive
 
 GNOME_PROJECT=		gnome-autoar
-GNOME_VERSION=		0.2.4
+GNOME_VERSION=		0.3.0
 
 SHARED_LIBS +=  gnome-autoar-0            0.0 # 0.0
 SHARED_LIBS +=  gnome-autoar-gtk-0        0.0 # 0.0
@@ -13,14 +13,14 @@ CATEGORIES=		archivers
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender archive atk-1.0 atk-bridge-2.0 b2 bz2
-WANTLIB += cairo cairo-gobject charset crypto epoxy expat ffi
-WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
+WANTLIB += b2 bz2 cairo cairo-gobject charset crypto epoxy expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-3 harfbuzz iconv intl lz4 lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
-WANTLIB += xcb-shm z zstd
+WANTLIB += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm
+WANTLIB += z zstd
 
 MODULES=		x11/gnome
 
