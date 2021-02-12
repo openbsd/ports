@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_misc_ui_c,v 1.1 2021/02/12 20:14:53 edd Exp $
+
+Index: src/misc_ui.c
+--- src/misc_ui.c.orig
++++ src/misc_ui.c
+@@ -2,7 +2,7 @@
+ #include "keen.h"
+ #include "misc_ui.fdh"
+ 
+-char tempbuf[80];
++static char tempbuf[80];
+ 
+ // pops up a message (used by youseeinyourmind and VorticonElder)
+ int twirly_timer, twirly_frame, twirl_x=-1, twirl_y=-1;

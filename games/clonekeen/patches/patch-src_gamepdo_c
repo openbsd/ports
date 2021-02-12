@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gamepdo_c,v 1.1 2021/02/12 20:14:53 edd Exp $
+
+Index: src/gamepdo.c
+--- src/gamepdo.c.orig
++++ src/gamepdo.c
+@@ -7,7 +7,7 @@
+ #include "keen.h"
+ #include "gamepdo.fdh"
+ 
+-char tempbuf[200];
++static char tempbuf[200];
+ 
+ // player handler mother-function, calls all needed "gamepdo"
+ // functions for player cp
