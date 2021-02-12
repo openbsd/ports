@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/09 11:52:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/12 23:14:30 sthen Exp $
 
 # see https://github.com/i3/i3/issues/3085 / orestisfl:issue-2643
 COMMENT=	improved dynamic tiling window manager, fork with mouse drag
@@ -8,6 +8,7 @@ GH_PROJECT=	i3
 GH_COMMIT=	1b0585ddf8f2e2206effbd106cb028cac6ffe6d9
 
 DISTNAME=	i3-mousedrag-4.19.1pl20210102
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -27,9 +28,6 @@ COMPILER_LANGS=	c
 
 DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
-BUILD_DEPENDS=	textproc/asciidoc \
-		textproc/xmlto
-
 LIB_DEPENDS=	devel/libev \
 		devel/libyajl>=2.0.0 \
 		devel/pango \
@@ -47,11 +45,14 @@ NO_TEST=	Yes
 
 MODULES=	devel/meson
 
-# needed for git builds, possibly not release builds
-CONFIGURE_ARGS=	-Dmans=true \
-		-Ddocs=true
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+
+# only needed for git builds; release builds use pre-generated docs
+CONFIGURE_ARGS=	-Dmans=true \
+		-Ddocs=true
+BUILD_DEPENDS=	textproc/asciidoc \
+		textproc/xmlto
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/config \
