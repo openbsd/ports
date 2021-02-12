@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/04 14:33:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/12 14:34:11 sthen Exp $
 @conflict py-acme-<0.22.0${MODPY_FLAVOR}
 @conflict py-josepy-*
 @pkgpath security/py-josepy
@@ -66,6 +66,9 @@ lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr-san.pem
 lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr.der
 lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr.pem
 lib/python${MODPY_VERSION}/site-packages/josepy/testdata/dsa512_key.pem
+lib/python${MODPY_VERSION}/site-packages/josepy/testdata/ec_p256_key.pem
+lib/python${MODPY_VERSION}/site-packages/josepy/testdata/ec_p384_key.pem
+lib/python${MODPY_VERSION}/site-packages/josepy/testdata/ec_p521_key.pem
 lib/python${MODPY_VERSION}/site-packages/josepy/testdata/rsa1024_key.pem
 lib/python${MODPY_VERSION}/site-packages/josepy/testdata/rsa2048_cert.pem
 lib/python${MODPY_VERSION}/site-packages/josepy/testdata/rsa2048_key.pem
