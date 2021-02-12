@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.71 2020/03/20 16:44:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2021/02/12 13:44:00 kirby Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
-DISTNAME=		mc-4.8.24
+DISTNAME=		mc-4.8.26
 CATEGORIES=		misc
 
 HOMEPAGE=		https://www.midnight-commander.org/
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	--with-subshell \
 			--enable-vfs-sftp \
 			--enable-vfs-smb \
 			--enable-charset \
-			--with-slang-includes=${LOCALBASE}/include \
+			--with-slang-includes=${LOCALBASE}/include
 CONFIGURE_ENV=		LOCALBASE=${LOCALBASE} \
 			LIBS="-lm"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config

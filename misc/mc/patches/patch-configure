@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.20 2020/02/10 19:34:33 bket Exp $
+$OpenBSD: patch-configure,v 1.21 2021/02/12 13:44:00 kirby Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -16383,7 +16383,7 @@ if ${ac_cv_lib_slang_SLang_init_tty+:} false; then :
+@@ -16398,7 +16398,7 @@ if ${ac_cv_lib_slang_SLang_init_tty+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -11,7 +11,16 @@ Index: configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -24195,7 +24195,7 @@ done
+@@ -24134,7 +24134,7 @@ if test -n "$EXT2FS_CFLAGS"; then
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_EXT2FS_CFLAGS=`$PKG_CONFIG --cflags "ext2fs >= 1.42.4" 2>/dev/null`
++  pkg_cv_EXT2FS_CFLAGS=`$PKG_CONFIG --cflags "ext2fs <= 1.42.4" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -24384,7 +24384,7 @@ done
    done
  IFS=$as_save_IFS
  
@@ -20,7 +29,7 @@ Index: configure
    ;;
  esac
  fi
-@@ -24236,7 +24236,7 @@ done
+@@ -24425,7 +24425,7 @@ done
    done
  IFS=$as_save_IFS
  
