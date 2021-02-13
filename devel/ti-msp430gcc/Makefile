@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2021/01/09 21:41:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/13 20:36:50 naddy Exp $
 
 BROKEN-alpha =	relocation truncated to fit: GPRELHIGH against symbol default_target_hard_regs
 
 COMMENT =		TI's open source compiler for MSP430 microcontrollers#'
 
 V =			3_03_04_00
-REVISION =		5
+REVISION =		6
 PKGNAME =		ti-msp430gcc-${V:S/_/./g}
 GCC_V =			4.9.1
 CATEGORIES =		devel

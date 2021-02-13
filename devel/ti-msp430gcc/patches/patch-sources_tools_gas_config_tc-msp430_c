@@ -1,0 +1,28 @@
+$OpenBSD: patch-sources_tools_gas_config_tc-msp430_c,v 1.1 2021/02/13 20:36:50 naddy Exp $
+
+Fix for -fno-common: stop defining linkrelax in multiple places
+https://sourceware.org/git/?p=binutils-gdb.git;a=commit;h=9117cd3e10673e8f80fc0c64f1a32215d9638fc2
+
+Index: sources/tools/gas/config/tc-msp430.c
+--- sources/tools/gas/config/tc-msp430.c.orig
++++ sources/tools/gas/config/tc-msp430.c
+@@ -69,9 +69,6 @@
+ int msp430_enable_relax;
+ int msp430_enable_polys;
+ 
+-/*  Set linkrelax here to avoid fixups in most sections.  */
+-int linkrelax = 1;
+-
+ /* GCC uses the some condition codes which we'll
+    implement as new polymorph instructions.
+ 
+@@ -1028,6 +1025,9 @@ md_begin (void)
+ 
+   bfd_set_arch_mach (stdoutput, TARGET_ARCH,
+ 		     target_is_430x () ? bfd_mach_msp430x : bfd_mach_msp11);
++
++  /*  Set linkrelax here to avoid fixups in most sections.  */
++  int linkrelax = 1;
+ }
+ 
+ /* Returns the register number equivalent to the string T.
