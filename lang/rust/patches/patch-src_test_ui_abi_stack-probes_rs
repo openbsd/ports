@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_test_ui_abi_stack-probes_rs,v 1.1 2019/12/10 07:32:42 semarie Exp $
+$OpenBSD: patch-src_test_ui_abi_stack-probes_rs,v 1.2 2021/02/13 18:31:24 semarie Exp $
 Disable stack-probes test (MAP_STACK terminate the process in a way the testsuite fails).
 Index: src/test/ui/abi/stack-probes.rs
 --- src/test/ui/abi/stack-probes.rs.orig
 +++ src/test/ui/abi/stack-probes.rs
-@@ -8,6 +8,7 @@
- // ignore-sparc
- // ignore-sparc64
- // ignore-wasm
+@@ -3,6 +3,7 @@
+ // ignore-aarch64
+ // ignore-mips
+ // ignore-mips64
 +// ignore-openbsd
- // ignore-cloudabi no processes
- // ignore-emscripten no processes
- // ignore-sgx no processes
+ // ignore-powerpc
+ // ignore-s390x
+ // ignore-sparc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2021/01/01 09:02:54 semarie Exp $
+# $OpenBSD: Makefile,v 1.124 2021/02/13 18:31:24 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,14 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.49.0
+V =			1.50.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.49.0-20201231
-BV-amd64 =		1.49.0-20201230
-BV-i386 =		1.49.0-20201230
-BV-sparc64 =		1.49.0-20201231
+BV-aarch64 =		1.50.0-20210212
+BV-amd64 =		1.50.0-20210210
+BV-i386 =		1.50.0-20210210
+BV-sparc64 =		1.50.0-20210210
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -92,12 +92,13 @@ LIBRUST_WITH_HASHES =	addr2line			01 \
 			rustc_std_workspace_alloc 	14 \
 			rustc_std_workspace_core 	15 \
 			rustc_std_workspace_std 	16 \
-			std 				17 \
-			term 				18 \
-			test 				19 \
-			tracing_attributes		20 \
-			unicode_width 			21 \
-			unwind				22
+			serde_derive			17 \
+			std 				18 \
+			term 				19 \
+			test 				20 \
+			tracing_attributes		21 \
+			unicode_width 			22 \
+			unwind				23
 
 # generate a stable hash mostly conforming to rust expectations
 # (it should change if anything changed)
