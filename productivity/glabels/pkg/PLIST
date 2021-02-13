@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/07/06 06:04:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/02/13 16:45:19 ajacoutot Exp $
 @bin bin/glabels-3
 @bin bin/glabels-3-batch
 include/libglabels-3.0/
@@ -24,10 +24,10 @@ include/libglbarcode-3.0/libglbarcode/lgl-barcode-postnet.h
 include/libglbarcode-3.0/libglbarcode/lgl-barcode-render-to-cairo.h
 include/libglbarcode-3.0/libglbarcode/lgl-barcode-type.h
 include/libglbarcode-3.0/libglbarcode/lgl-barcode.h
-lib/libglabels-3.0.a
+@static-lib lib/libglabels-3.0.a
 lib/libglabels-3.0.la
 @lib lib/libglabels-3.0.so.${LIBglabels-3.0_VERSION}
-lib/libglbarcode-3.0.a
+@static-lib lib/libglbarcode-3.0.a
 lib/libglbarcode-3.0.la
 @lib lib/libglbarcode-3.0.so.${LIBglbarcode-3.0_VERSION}
 lib/pkgconfig/libglabels-3.0.pc
