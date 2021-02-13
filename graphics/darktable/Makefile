@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2021/02/07 22:13:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2021/02/13 16:55:56 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 aarch64
 
@@ -38,6 +38,7 @@ COMPILER =	base-clang
 
 BUILD_DEPENDS=	sysutils/coreutils \
 		graphics/p5-Image-ExifTool \
+		shells/bash \
 		textproc/libxslt
 RUN_DEPENDS=	devel/desktop-file-utils \
 		graphics/p5-Image-ExifTool \
