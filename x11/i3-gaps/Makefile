@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/10/27 21:42:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/13 05:59:02 rsadowski Exp $
 
 COMMENT =	improved dynamic tiling window manager, fork with gaps
 
-V =		4.18.3
+V =		4.19.1
 DISTNAME =	i3-gaps-${V}
 
 CATEGORIES =	x11
@@ -14,51 +14,50 @@ PERMIT_PACKAGE =	Yes
 
 # XXX use of pledge has been neutered. For more details see
 # https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
-WANTLIB += c cairo ev glib-2.0 gobject-2.0 harfbuzz iconv intl
-WANTLIB += m pango-1.0 pangocairo-1.0 pcre pthread startup-notification-1
-WANTLIB += xcb xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-shape
-WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
-WANTLIB += yajl
+WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv m pango-1.0 pangocairo-1.0
+WANTLIB += pcre startup-notification-1 xcb xcb-cursor xcb-icccm
+WANTLIB += xcb-keysyms xcb-randr xcb-shape xcb-util xcb-xinerama
+WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11 yajl
 
 MASTER_SITES =	https://github.com/Airblader/i3/
-EXTRACT_SUFX =	.tar.bz2
+EXTRACT_SUFX =	.tar.xz
 
 DISTFILES =	gaps-{releases/download/${V}/}i3-${V}${EXTRACT_SUFX}
 
-BUILD_DEPENDS =	textproc/asciidoc \
-		textproc/xmlto
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
+MODULES =	devel/meson
+
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \
 		devel/pango \
 		devel/pcre \
 		devel/startup-notification \
 		x11/xkbcommon
+
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/dmenu \
 		x11/i3status \
 		x11/p5-AnyEvent-I3
 
+BUILD_DEPENDS =	textproc/asciidoc \
+		textproc/xmlto
+
 # Tests now use the X11::XCB Perl module, not yet in ports.
-NO_TEST =	Yes
 #TEST_DEPENDS =	x11/p5-AnyEvent-I3
+NO_TEST =	Yes
 
 FAKE_FLAGS =	i3confdir="${PREFIX}/share/examples/i3/"
 
 WRKDIST =	${WRKDIR}/${DISTNAME:S/-gaps//}
 
-SEPARATE_BUILD =Yes
-USE_GMAKE =	Yes
-CONFIGURE_STYLE =gnu
-CONFIGURE_ARGS =--enable-builddir=${WRKBUILD}
+CONFIGURE_ARGS=	-Dmans=true \
+		-Ddocs=true
 
-CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
-			  -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib \
-			 -L${LOCALBASE}/lib"
-
-.if defined(DEBUG)
-CONFIGURE_ARGS +=--enable-debug
-.endif
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/config \
@@ -69,5 +68,10 @@ pre-configure:
 		${WRKSRC}/libi3/get_exe_path.c \
 		${WRKSRC}/man/i3-config-wizard.man \
 		${WRKSRC}/man/i3.man
+
+post-install:
+	rm ${WRKINST}/etc/i3/*.{orig,beforesubst}
+	mv ${WRKINST}/etc/i3 ${PREFIX}/share/examples/
+
 
 .include <bsd.port.mk>
