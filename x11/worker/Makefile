@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2020/12/11 00:41:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.50 2021/02/13 14:06:53 bcallah Exp $
 
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
-DISTNAME =	worker-4.6.1
+DISTNAME =	worker-4.7.0
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.boomerangsworld.de/

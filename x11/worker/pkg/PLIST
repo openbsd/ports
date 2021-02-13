@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/08/17 22:14:51 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/02/13 14:06:53 bcallah Exp $
 @bin bin/worker
 man/fr/
 man/fr/man1/
@@ -105,6 +105,7 @@ share/worker/scripts/cd2flac.sh
 share/worker/scripts/cd2mp3.sh
 share/worker/scripts/cd2ogg.sh
 share/worker/scripts/cd2wav.sh
+share/worker/scripts/cdi_get_current_vc_branch.sh
 share/worker/scripts/displaywrapper_worker
 share/worker/scripts/find_file_by_chksum.py
 share/worker/scripts/git_changed_files.sh
