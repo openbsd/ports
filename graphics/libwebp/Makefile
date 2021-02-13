@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/19 22:23:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/13 06:17:27 rsadowski Exp $
 
 COMMENT=	Google WebP image format conversion tool
 
-VER=		1.1.0
+VER=		1.2.0
 CATEGORIES=	graphics
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libwebp
 GH_TAGNAME=	v${VER}
 
-SHARED_LIBS +=  webp                 4.2      # 6.0
+SHARED_LIBS +=  webp                 4.3      # 6.0
 SHARED_LIBS +=  webpdecoder          2.1      # 2.0
 SHARED_LIBS +=  webpdemux            2.0      # 2.0
 SHARED_LIBS +=  webpmux              2.0      # 2.0
