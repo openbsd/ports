@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/08/12 05:10:26 bket Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/02/13 22:17:10 bket Exp $
 @conflict py-prompt_toolkit-*
 @pkgpath devel/py-prompt_toolkit
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/
@@ -59,11 +59,13 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/${MODPY_PYCACHE}deduplicate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/${MODPY_PYCACHE}fuzzy_completer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/${MODPY_PYCACHE}nested.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/${MODPY_PYCACHE}word_completer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/base.py
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/deduplicate.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/fuzzy_completer.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/completion/nested.py
@@ -239,6 +241,7 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/${MODPY_PYCACHE}m
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/${MODPY_PYCACHE}mouse_handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/${MODPY_PYCACHE}processors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/${MODPY_PYCACHE}screen.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/${MODPY_PYCACHE}scrollable_pane.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/containers.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/controls.py
@@ -250,6 +253,7 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/menus.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/mouse_handlers.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/processors.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/screen.py
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/scrollable_pane.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/layout/utils.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/lexers/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/lexers/__init__.py
