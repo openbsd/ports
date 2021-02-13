@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2021/01/19 06:20:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/13 22:20:36 sthen Exp $
 
 COMMENT=	Qt widgets for technical applications
 
 VERSION =	6.1.6
 DISTNAME =	qwt-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	qwt${QTLIBSUFFIX} 7.1
 
@@ -29,7 +30,8 @@ MODQMAKE_INSTALL_ROOT =
 NO_TEST =	Yes
 USE_GMAKE =	Yes
 
-LIB_DEPENDS =	x11/qt5/qtsvg
+BUILD_DEPENDS =	x11/qt5/qtsvg
+RUN_DEPENDS =	x11/qt5/qtsvg
 
 QTVER =		qt5
 SUBST_VARS =	WRKINST QTVER QTLIBSUFFIX
