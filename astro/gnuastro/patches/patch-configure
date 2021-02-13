@@ -1,23 +1,23 @@
-$OpenBSD: patch-configure,v 1.2 2020/10/09 02:36:44 bcallah Exp $
+$OpenBSD: patch-configure,v 1.3 2021/02/13 16:27:22 bcallah Exp $
 
 Remove hardcoded -O3
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -20265,7 +20265,7 @@ fi
- if test "x$enable_debug" = "xyes"; then :
+@@ -20622,7 +20622,7 @@ if test "x$enable_debug" = "xyes"
+ then :
    cflags_add="-g -O0"; enable_shared=no
- else
+ else $as_nop
 -  cflags_add="-O3"
 +  cflags_add=""
  fi
  CFLAGS="-Wall $cflags_add $CFLAGS"
  CXXFLAGS="-Wall $cflags_add $CXXFLAGS"
-@@ -28419,7 +28419,7 @@ $as_echo_n "checking for shell to use with libtool... 
+@@ -29099,7 +29099,7 @@ printf %s "checking for shell to use with libtool... "
          cprog=libtool_shell_test.c
-         $as_echo "#include <stdio.h>"[]                                 > $cprog
-         $as_echo "int main(void){printf(\"success\\n\"); return 0;}" >> $cprog
+         printf "%s\n" "#include <stdio.h>"                                 > $cprog
+         printf "%s\n" "int main(void){printf(\"success\\n\"); return 0;}" >> $cprog
 -        ltargs="--quiet --tag=CC --mode=link $CC $cprog -O3 -o $outname"
 +        ltargs="--quiet --tag=CC --mode=link $CC $cprog -o $outname"
  

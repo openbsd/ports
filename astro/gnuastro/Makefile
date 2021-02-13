@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/09 02:36:44 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/13 16:27:22 bcallah Exp $
 
 COMMENT =	GNU Astronomy Utilities
-DISTNAME =	gnuastro-0.13
+DISTNAME =	gnuastro-0.14
 CATEGORIES =	astro
 
-SHARED_LIBS +=	gnuastro                  1.0 # 11.0
+SHARED_LIBS +=	gnuastro                  2.0 # 12.0
 
 HOMEPAGE =	https://www.gnu.org/software/gnuastro/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -13,7 +13,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cfitsio crypto curl git2 gsl gslcblas jpeg lzma m
-WANTLIB += nghttp2 pthread ssh2 ssl tiff wcs z zstd
+WANTLIB += nghttp2 pcre pcreposix pthread ssh2 ssl tiff wcs z
+WANTLIB += zstd
 
 MASTER_SITES =	${MASTER_SITE_GNU:=gnuastro/}
 
