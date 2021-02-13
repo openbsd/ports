@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/12/10 08:28:12 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/02/13 19:37:15 fcambus Exp $
 @bin bin/lowdown
 @bin bin/lowdown-diff
 include/lowdown.h
@@ -16,6 +16,9 @@ lib/pkgconfig/lowdown.pc
 @man man/man3/lowdown_doc_parse.3
 @man man/man3/lowdown_file.3
 @man man/man3/lowdown_file_diff.3
+@man man/man3/lowdown_gemini_free.3
+@man man/man3/lowdown_gemini_new.3
+@man man/man3/lowdown_gemini_rndr.3
 @man man/man3/lowdown_html_free.3
 @man man/man3/lowdown_html_new.3
 @man man/man3/lowdown_html_rndr.3
@@ -23,13 +26,12 @@ lib/pkgconfig/lowdown.pc
 @man man/man3/lowdown_latex_new.3
 @man man/man3/lowdown_latex_rndr.3
 @man man/man3/lowdown_metaq_free.3
+@man man/man3/lowdown_node_free.3
 @man man/man3/lowdown_nroff_free.3
 @man man/man3/lowdown_nroff_new.3
 @man man/man3/lowdown_nroff_rndr.3
 @man man/man3/lowdown_term_free.3
 @man man/man3/lowdown_term_new.3
 @man man/man3/lowdown_term_rndr.3
-@man man/man3/lowdown_tree_free.3
-@man man/man3/lowdown_tree_new.3
 @man man/man3/lowdown_tree_rndr.3
 @man man/man5/lowdown.5
