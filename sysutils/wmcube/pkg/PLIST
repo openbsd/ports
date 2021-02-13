@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 13:11:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/13 20:49:31 cwen Exp $
 @conflict wmcube-gdk-*
-bin/wmcube
+@bin bin/wmcube
+@man man/man1/wmcube.1
 share/wmcube/
 share/wmcube/2planes-solid.wmc
 share/wmcube/4d.wmc
@@ -8,8 +9,11 @@ share/wmcube/8star-small.wmc
 share/wmcube/8star.wmc
 share/wmcube/CONTRIBUTE
 share/wmcube/README
+share/wmcube/X-lines.wmc
+share/wmcube/X-planes.wmc
 share/wmcube/ball-solid.wmc
 share/wmcube/ball.wmc
+share/wmcube/beryllium.wmc
 share/wmcube/celtic.wmc
 share/wmcube/cross.wmc
 share/wmcube/cross2-solid.wmc
@@ -33,6 +37,9 @@ share/wmcube/peace.wmc
 share/wmcube/pyramid.wmc
 share/wmcube/radioactive.wmc
 share/wmcube/shield.wmc
+share/wmcube/slackware1.wmc
+share/wmcube/slackware2.wmc
+share/wmcube/slackware3.wmc
 share/wmcube/spaceshuttle.wmc
 share/wmcube/spiral.wmc
 share/wmcube/star.wmc

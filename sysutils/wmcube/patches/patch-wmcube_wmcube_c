@@ -1,52 +1,62 @@
-$OpenBSD: patch-wmcube_wmcube_c,v 1.4 2014/09/17 14:34:39 espie Exp $
---- wmcube/wmcube.c.orig	Mon Oct 23 22:11:47 2000
-+++ wmcube/wmcube.c	Wed Sep 17 16:33:06 2014
-@@ -858,6 +858,10 @@ void print_help() {
- 	printf("  -n  : exclude \"nice\" processes. (default OFF)\n");
+$OpenBSD: patch-wmcube_wmcube_c,v 1.5 2021/02/13 20:49:31 cwen Exp $
+Index: wmcube/wmcube.c
+--- wmcube/wmcube.c.orig
++++ wmcube/wmcube.c
+@@ -407,7 +407,7 @@ void set_plugin()
+ {
+ 	strcpy(obj_filename,plugin);
+ 	if (access (obj_filename, R_OK) == -1) {
+-		strcpy(obj_filename,"/usr/share/wmcube/");
++		strcpy(obj_filename,"${LOCALBASE}/share/wmcube/");
+ 		strcat(obj_filename,plugin);
+ 	}
+ }
+@@ -939,6 +939,10 @@ void print_help() {
+ 	printf("  -n   : exclude \"nice\" processes (default OFF).\n");
  #endif
  
 +#ifdef OPENBSD
 +	printf("  -n  : exclude \"nice\" processes. (default OFF)\n");
 +#endif
 +
- 	printf("  -b  : draw the cube in a brighter color. (default OFF)\n");
- 	printf("  -i  : invert cube speed. (default OFF)\n");
- 	printf("  -p  : do not display cpu-load (default OFF)\n");
-@@ -913,7 +917,7 @@ int loadobj(char *filename) {
+ 	printf("  -b   : draw the cube in a brighter color (default OFF).\n");
+ 	printf("  -i   : invert cube speed (default OFF).\n");
+ 	printf("  -p   : do not display the CPU load (default OFF).\n");
+@@ -997,7 +1001,7 @@ int loadobj(char *filename) {
  		exit(0);
  	}
  
--	fscanf(fp,"%s",tmp);
-+	fscanf(fp,"%63s",tmp);
+-	if (fscanf(fp,"%s",tmp) < 1)
++	if (fscanf(fp,"%63s",tmp) < 1)
+ 		printf("WARNING: Could not read first line of object-file (%s).\n",filename);
  	
- 	if (strcmp(tmp,"WMCUBE_COORDINATES") != 0) { 
- 		printf("\nError in objectfile: it must start with WMCUBE_COORDINATES\n\n");
-@@ -921,7 +925,7 @@ int loadobj(char *filename) {
+ 	if (strcmp(tmp,"WMCUBE_COORDINATES") != 0) {
+@@ -1006,7 +1010,7 @@ int loadobj(char *filename) {
  		exit(0);
  	}
  
--	fscanf(fp,"%s",tmp);
-+	fscanf(fp,"%63s",tmp);
- 	counter = atoi(tmp);
+-	if (fscanf(fp,"%s",tmp) < 1)
++	if (fscanf(fp,"%63s",tmp) < 1)
+ 		printf("WARNING: Could not read second line of object-file (%s).\n",filename);
  
  	while ((strcmp(tmp,"WMCUBE_LINES") != 0) && (strcmp(tmp,"WMCUBE_PLANES") != 0)) {		
-@@ -938,7 +942,7 @@ int loadobj(char *filename) {
+@@ -1024,7 +1028,7 @@ int loadobj(char *filename) {
  			fclose(fp);
  			exit(0);
  		}
--		fscanf(fp,"%s",tmp);
-+		fscanf(fp,"%63s",tmp);
+-		if (fscanf(fp,"%s",tmp) < 1)
++		if (fscanf(fp,"%63s",tmp) < 1)
+ 			printf("WARNING: Could not read next line of object-file (%s).\n",filename);
  
  		if (feof(fp)) {
- 			printf("\nError in objectfile: you must have a section WMCUBE_LINES or WMCUBE_PLANES\n\n");
-@@ -1272,17 +1276,45 @@ int calc_cpu_total() {
- }
+@@ -1371,18 +1375,46 @@ int calc_cpu_total() {
  
  #elif defined OPENBSD
+ 
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#include <sys/sched.h>
- 
++
  int init_calc_cpu()
  {
  	return 0;
@@ -54,19 +64,19 @@ $OpenBSD: patch-wmcube_wmcube_c,v 1.4 2014/09/17 14:34:39 espie Exp $
  
 -int calc_cpu_total() {
 -        double avenrun[3];
--        
--        (void) getloadavg(avenrun, sizeof(avenrun) / sizeof(avenrun[0]));
--        return(((5.0*avenrun[0] + 0.5) > 50) ? 50 : (5.0*avenrun[0] + 0.5))*2;
 +int calc_cpu_total()
 +{
 +	int total, used, t=0;
 +	static int previous_total = 0, previous_used = 0;
 +	int cpu,nice,system,idle;
 +	unsigned long int cpu_time[CPUSTATES];
-+
+ 
+-        (void) getloadavg(avenrun, sizeof(avenrun) / sizeof(avenrun[0]));
+-        return(((5.0*avenrun[0] + 0.5) > 50) ? 50 : (5.0*avenrun[0] + 0.5))*2;
+-}
 +	int mib[2];
 +	size_t size;
-+
+ 
 +	mib[0] = CTL_KERN;
 +	mib[1] = KERN_CPTIME;
 +	size = sizeof (cpu_time);
@@ -87,6 +97,7 @@ $OpenBSD: patch-wmcube_wmcube_c,v 1.4 2014/09/17 14:34:39 espie Exp $
 +	previous_used = used;
 +
 +	return t;
- }
++}
  
- 
+ #elif defined NETBSD /* END OPENBSD */
+ #include <sys/sched.h>
