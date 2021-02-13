@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2020/12/23 14:41:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2021/02/13 10:15:02 ajacoutot Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -6,7 +6,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.4
 DISTNAME=	abiword-${VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	editors
 
@@ -18,11 +18,11 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
-WANTLIB += avahi-common bz2 c cairo cairo-gobject crypto curl
-WANTLIB += dbus-1 enchant epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender aspell atk-1.0
+WANTLIB += atk-bridge-2.0 avahi-common bz2 c cairo cairo-gobject
+WANTLIB += crypto curl dbus-1 enchant-2 epoxy expat ffi fontconfig
+WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += iconv idn2 intl jpeg ltdl lzma m mpfr nettle nghttp2
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
@@ -57,7 +57,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 LIB_DEPENDS=	devel/fribidi \
 		converters/wv \
 		devel/goffice \
-		textproc/enchant \
+		textproc/enchant2 \
 		textproc/redland
 
 # src/af/util/xp/ut_go_file.cpp

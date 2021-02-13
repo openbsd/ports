@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gi-overrides_Makefile_in,v 1.1 2020/09/13 10:10:07 ajacoutot Exp $
+$OpenBSD: patch-src_gi-overrides_Makefile_in,v 1.2 2021/02/13 10:15:02 ajacoutot Exp $
 
 https://src.fedoraproject.org/rpms/abiword/blob/master/f/abiword-3.0.2-explicit-python.patch
 
@@ -10,7 +10,7 @@ Index: src/gi-overrides/Makefile.in
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -overridesdir = `python -c "import gi; print gi._overridesdir"`
-+overridesdir = `$(PYTHON) -c "import gi; print gi._overridesdir"`
++overridesdir = `$(PYTHON) -c "import gi; print(gi._overridesdir)"`
  overrides_PYTHON = Abi.py
  all: all-am
  

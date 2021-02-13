@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2019/12/31 14:27:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2021/02/13 10:15:02 ajacoutot Exp $
 @pkgpath editors/abiword,gnome
 @bin bin/abiword
 include/abiword-3.0/
@@ -15,6 +15,9 @@ lib/abiword-3.0/plugins/
 lib/girepository-1.0/Abi-3.0.typelib
 @so lib/libabiword-3.0.so
 lib/pkgconfig/abiword-3.0.pc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Abi.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Abi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Abi.${MODPY_PYC_MAGIC_TAG}pyc
 @man man/man1/abiword.1
 share/abiword-3.0/
 share/abiword-3.0/clipart/
