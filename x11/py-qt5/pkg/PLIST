@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/19 06:26:49 rsadowski Exp $
-@pkgpath x11/${MODPY_PY_PREFIX}qt5,-main
+@comment $OpenBSD: PLIST,v 1.8 2021/02/13 14:47:52 sthen Exp $
+@pkgpath x11/py-qt5,-main
 bin/pylupdate5${MODPY_BIN_SUFFIX}
 bin/pyrcc5${MODPY_BIN_SUFFIX}
 bin/pyuic5${MODPY_BIN_SUFFIX}
