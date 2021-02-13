@@ -1,5 +1,6 @@
-# $OpenBSD: unveil.content,v 1.3 2020/09/13 06:34:08 landry Exp $
+# $OpenBSD: unveil.content,v 1.4 2021/02/13 05:05:54 jsg Exp $
 /dev/drm0 rw
+/dev/dri/card0 rw
 
 /etc/fonts r
 /etc/machine-id r

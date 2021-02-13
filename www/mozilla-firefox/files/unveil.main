@@ -1,4 +1,4 @@
-# $OpenBSD: unveil.main,v 1.7 2021/01/15 11:00:50 sthen Exp $
+# $OpenBSD: unveil.main,v 1.8 2021/02/13 05:05:54 jsg Exp $
 # for uuid generation?
 /dev/urandom r
 /dev/video rw
@@ -6,6 +6,7 @@
 /dev/fido rw
 # for webgl info in about:support
 /dev/drm0 rw
+/dev/dri/card0 rw
 /usr/lib r
 
 /etc/fonts r
