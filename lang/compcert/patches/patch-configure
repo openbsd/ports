@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.14 2020/11/15 03:02:19 daniel Exp $
+$OpenBSD: patch-configure,v 1.15 2021/02/13 17:46:38 daniel Exp $
 
 1) Fixup path locations for OpenBSD
 2) Add configuration support for macppc and aarch64 on OpenBSD
@@ -6,23 +6,15 @@ $OpenBSD: patch-configure,v 1.14 2020/11/15 03:02:19 daniel Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -17,7 +17,14 @@
- 
- prefix='/usr/local'
+@@ -19,6 +19,7 @@ prefix='/usr/local'
  bindir='$(PREFIX)/bin'
--libdir='$(PREFIX)/lib/compcert'
-+case $(uname) in
-+  OpenBSD)
-+    libdir='$(PREFIX)/lib'
-+    mandir='$(PREFIX)/man';;
-+  *)
-+    libdir='$(PREFIX)/lib/compcert'
-+    mandir='$(PREFIX)/share/man';;
-+esac
+ libdir='$(PREFIX)/lib/compcert'
+ mandir='$(PREFIX)/share/man'
++sharedir='$(PREFIX)/share/compcert'
  coqdevdir='$(PREFIX)/lib/compcert/coq'
  toolprefix=''
  target=''
-@@ -40,6 +47,7 @@ Supported targets:
+@@ -40,6 +41,7 @@ Supported targets:
    ppc-eabi             (PowerPC, EABI with GNU/Unix tools)
    ppc-eabi-diab        (PowerPC, EABI with Diab tools)
    ppc-linux            (PowerPC, Linux)
@@ -30,14 +22,15 @@ Index: configure
    arm-eabi             (ARM, EABI, little endian)
    arm-linux            (ARM, EABI, little endian)
    arm-eabihf           (ARM, EABI using hardware FP registers, little endian)
-@@ -58,13 +66,14 @@ Supported targets:
+@@ -58,6 +60,7 @@ Supported targets:
    rv32-linux           (RISC-V 32 bits, Linux)
    rv64-linux           (RISC-V 64 bits, Linux)
    aarch64-linux        (AArch64, i.e. ARMv8 in 64-bit mode, Linux)
 +  aarch64-bsd          (AArch64, i.e. ARMv8 in 64-bit mode, BSD)
+   aarch64-macos        (AArch64, i.e. Apple silicon, MacOS)
    manual               (edit configuration file by hand)
  
- For x86 targets, the "x86_32-" prefix can also be written "ia32-" or "i386-".
+@@ -65,7 +68,7 @@ For x86 targets, the "x86_32-" prefix can also be writ
  For x86 targets, the "x86_64-" prefix can also be written "amd64-".
  For AArch64 targets, the "aarch64-" prefix can also be written "arm64-".
  
@@ -46,7 +39,33 @@ Index: configure
    ppc64-               PowerPC 64 bits
    e5500-               Freescale e5500 core (PowerPC 64 bit, EREF extensions)
  
-@@ -248,7 +257,7 @@ fi
+@@ -87,6 +90,7 @@ Options:
+   -bindir <dir>        Install binaries in <dir>
+   -libdir <dir>        Install libraries in <dir>
+   -mandir <dir>        Install man pages in <dir>
++  -sharedir <dir>      Install compcert.ini in <dir>
+   -coqdevdir <dir>     Install Coq development (.vo files) in <dir>
+   -toolprefix <pref>   Prefix names of tools ("gcc", etc) with <pref>
+   -use-external-Flocq  Use an already-installed Flocq library
+@@ -118,6 +122,8 @@ while : ; do
+         libdir="$2"; shift;;
+     -mandir|--mandir)
+         mandir="$2"; shift;;
++    -sharedir|--sharedir)
++        sharedir="$2"; shift;;
+     -coqdevdir|--coqdevdir)
+         coqdevdir="$2"; install_coqdev=true; shift;;
+     -toolprefix|--toolprefix)
+@@ -224,7 +230,7 @@ clinker_options=""
+ clinker_needs_no_pie=true
+ cprepro="${toolprefix}gcc"
+ cprepro_options="-E"
+-archiver="${toolprefix}ar rcs"
++archiver="ar rcs"
+ libmath="-lm"
+ responsefile="gnu"
+ 
+@@ -257,7 +263,7 @@ fi
  if test "$arch" = "powerpc"; then
  
    case "$target" in
@@ -55,72 +74,44 @@ Index: configure
          ;;
      *)
          echo "Error: invalid eabi/system '$target' for architecture PowerPC." 1>&2
-@@ -279,6 +288,17 @@ if test "$arch" = "powerpc"; then
+@@ -289,6 +295,11 @@ if test "$arch" = "powerpc"; then
          system="diab"
          responsefile="diab"
          ;;
 +    bsd)
-+        casm="${toolprefix}egcc"
-+        casm_options="-c"
-+        casmruntime="${toolprefix}egcc -c -Wa,-mregnames"
-+        cc="${toolprefix}egcc"
-+        clinker="${toolprefix}egcc"
-+        cprepro="${toolprefix}egcc"
++        casmruntime="${toolprefix}gcc -c -Wa,-mregnames"
 +        cprepro_options="-std=c99 -U__GNUC__ -E"
-+        libmath="-lm"
 +        system="bsd"
 +        ;;
      *)
-         casm="${toolprefix}egcc"
-         casm_options="-c"
-@@ -445,6 +465,17 @@ if test "$arch" = "aarch64"; then
+         casmruntime="${toolprefix}gcc -c -Wa,-mregnames"
          cprepro_options="-std=c99 -U__GNUC__ -E"
-         libmath="-lm"
+@@ -409,6 +420,11 @@ if test "$arch" = "aarch64"; then
+         abi="standard"
+         cprepro_options="-std=c99 -U__GNUC__ -E"
          system="linux";;
 +    bsd)
 +        abi="standard"
-+        casm="${toolprefix}egcc"
-+        casm_options="-c"
-+        cc="${toolprefix}egcc"
-+        clinker="${toolprefix}egcc"
-+        clinker_options=""
-+        cprepro="${toolprefix}egcc"
 +        cprepro_options="-std=c99 -U__GNUC__ -E"
-+        libmath="-lm"
-+        system="bsd";;
-     *)
-         echo "Error: invalid eabi/system '$target' for architecture AArch64." 1>&2
-         echo "$usage" 1>&2
-@@ -635,14 +666,14 @@ fi
++        system="bsd"
++        ;;
+     macos|macosx)
+         abi="apple"
+         casm="${toolprefix}cc"
+@@ -611,8 +627,6 @@ fi
  #
  # Generate Makefile.config
  #
 -sharedir="$(dirname "$bindir")"/share
-+sharedir="$(dirname "$bindir")"/share/compcert
- 
+-
  rm -f Makefile.config
  cat > Makefile.config <<EOF
  PREFIX=$prefix
- BINDIR=$bindir
- LIBDIR=$libdir
--MANDIR=$sharedir/man
-+MANDIR=$mandir
- SHAREDIR=$sharedir
- COQDEVDIR=$coqdevdir
- OCAML_NATIVE_COMP=$ocaml_native_comp
-@@ -822,6 +853,7 @@ else
- 
- bindirexp=`echo "$bindir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
- libdirexp=`echo "$libdir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
-+mandirexp=`echo "$mandir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
- coqdevdirexp=`echo "$coqdevdir" | sed -e "s|\\\$(PREFIX)|$prefix|"`
- 
- cat <<EOF
-@@ -849,6 +881,7 @@ CompCert configuration:
-     Library files installed in.... $libdirexp
+@@ -831,6 +845,7 @@ CompCert configuration:
+     Runtime library provided...... $has_runtime_lib
+     Library files installed in.... $(expandprefix $libdir)
+     Man pages installed in........ $(expandprefix $mandir)
++    compcert.ini installed in..... $(expandprefix $sharedir)
      Standard headers provided..... $has_standard_headers
-     Standard headers installed in. $libdirexp/include
-+    Man pages installed in........ $mandirexp
+     Standard headers installed in. $(expandprefix $libdir)/include
  EOF
- 
- if $install_coqdev; then
