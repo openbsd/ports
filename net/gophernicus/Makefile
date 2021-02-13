@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2020/02/06 18:06:10 edd Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/13 14:13:37 bcallah Exp $
 
 COMMENT=	modern gopher server
+REVISION =	0
 
 GH_ACCOUNT=	gophernicus
 GH_PROJECT=	gophernicus
@@ -9,8 +10,6 @@ GH_TAGNAME=	v3.0.1
 CATEGORIES=	net
 
 HOMEPAGE=	gopher://gophernicus.org/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
