@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:13:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/13 23:01:09 sthen Exp $
 
 COMMENT =		provides an abstraction layer of various Qt bindings
 
-MODPY_EGG_VERSION =	1.6.0
+MODPY_EGG_VERSION =	1.9.0
 DISTNAME =		QtPy-${MODPY_EGG_VERSION}
 PKGNAME =		py-qtpy-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
-REVISION =		2
 
 HOMEPAGE =		https://github.com/spyder-ide/qtpy
 
@@ -22,7 +21,7 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	qtpy/tests
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 TEST_DEPENDS +=		devel/py-mock${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}

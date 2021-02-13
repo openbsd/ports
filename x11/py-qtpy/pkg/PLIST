@@ -1,11 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/01/19 23:27:41 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/13 23:01:10 sthen Exp $
+@pkgpath x11/py-qtpy
 lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/qtpy/
+lib/python${MODPY_VERSION}/site-packages/qtpy/Qt3DAnimation.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/Qt3DCore.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/Qt3DExtras.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/Qt3DInput.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/Qt3DLogic.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/Qt3DRender.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/QtCharts.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtCore.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/QtDatavisualization.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtDesigner.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtGui.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtHelp.py
@@ -28,7 +37,15 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/QtWidgets.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtXmlPatterns.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}Qt3DAnimation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}Qt3DCore.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}Qt3DExtras.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}Qt3DInput.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}Qt3DLogic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}Qt3DRender.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtCharts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtCore.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtDatavisualization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtDesigner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtGui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtHelp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -76,7 +93,15 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_main.${
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_patch_qcombobox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_patch_qheaderview.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qdesktopservice_split.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qt3danimation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qt3dcore.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qt3dextras.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qt3dinput.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qt3dlogic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qt3drender.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtcharts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtcore.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtdatavisualization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtdesigner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qthelp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtlocation.${MODPY_PYC_MAGIC_TAG}pyc
@@ -102,7 +127,15 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_main.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_patch_qcombobox.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_patch_qheaderview.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qdesktopservice_split.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qt3danimation.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qt3dcore.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qt3dextras.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qt3dinput.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qt3dlogic.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qt3drender.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtcharts.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtcore.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtdatavisualization.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtdesigner.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qthelp.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtlocation.py
