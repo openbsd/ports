@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2021/01/16 12:53:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/13 06:31:07 rsadowski Exp $
 
 COMMENT=	library to handle various audio file formats
 
 DISTNAME=	libsndfile-1.0.30
+REVISION=	0
 CATEGORIES=	audio
 GH_ACCOUNT=	libsndfile
 GH_PROJECT=	libsndfile
