@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/13 09:42:50 fcambus Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/13 21:48:25 fcambus Exp $
 
 COMMENT =	OpenMPT based module player library and command-line player
 
-DISTNAME =	libopenmpt-0.5.4+release.autotools
+DISTNAME =	libopenmpt-0.5.5+release.autotools
 PKGNAME =	${DISTNAME:S/+release.autotools//}
-REVISION =	0
 
 SHARED_LIBS +=	openmpt	0.1	# 2.2
 
@@ -15,8 +14,8 @@ HOMEPAGE =	https://lib.openmpt.org/libopenmpt/
 # BSD
 PERMIT_PACKAGE = Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} FLAC c m mpg123 ogg portaudio sndfile
-WANTLIB +=	sndio vorbis vorbisenc vorbisfile z
+WANTLIB += ${COMPILER_LIBCXX} FLAC c m mpg123 ogg opus portaudio
+WANTLIB += sndfile sndio vorbis vorbisenc vorbisfile z
 
 MASTER_SITES =	https://lib.openmpt.org/files/libopenmpt/src/
 
