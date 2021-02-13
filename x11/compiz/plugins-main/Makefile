@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/13 22:16:12 bket Exp $
 
 COMMENT =	main plugins for compiz
 
 V =		0.8.8
 DISTNAME =	compiz-plugins-main-${V}
-REVISION =	4
+REVISION =	5
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 
