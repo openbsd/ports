@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2021/02/12 23:14:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.128 2021/02/13 09:00:05 sthen Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
@@ -42,8 +42,6 @@ MODULES =	devel/meson
 #TEST_DEPENDS=	x11/p5-AnyEvent-I3
 NO_TEST=	Yes
 
-xxCONFIGURE_ARGS=	-Dmans=true \
-		-Ddocs=true
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
