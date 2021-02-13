@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.81 2021/02/01 04:09:48 kn Exp $
+# $OpenBSD: Makefile,v 1.82 2021/02/13 15:34:58 sthen Exp $
+
+BROKEN =	disabled pending update to py3
 
 COMMENT =		ebook management application
 
