@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2020/11/02 15:59:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2021/02/14 13:02:29 jasper Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
-GNOME_VERSION=		1.6.0
+GNOME_VERSION=		1.6.2
 
 SHARED_LIBS +=  json-glib-1.0        6.1 # 0.600.0
 
