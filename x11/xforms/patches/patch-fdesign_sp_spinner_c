@@ -1,0 +1,17 @@
+$OpenBSD: patch-fdesign_sp_spinner_c,v 1.1 2021/02/14 20:18:22 naddy Exp $
+
+Fix for -fno-common, extracted from
+https://git.savannah.nongnu.org/cgit/xforms.git/commit/?id=2c1a9f151baf50887a517280645ec23379fb96f8
+
+Index: fdesign/sp_spinner.c
+--- fdesign/sp_spinner.c.orig
++++ fdesign/sp_spinner.c
+@@ -29,7 +29,7 @@
+ #include "spec/spinner_spec.h"
+ 
+ static FD_spinnerattrib * spn_attrib;
+-FL_OBJECT *curobj;
++static FL_OBJECT *curobj;
+ 
+ 
+ /***************************************
