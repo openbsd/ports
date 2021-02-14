@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/05/06 08:12:17 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/02/14 16:14:54 paco Exp $
 @bin bin/openscad
 @man man/man1/openscad.1
 share/applications/openscad.desktop
+share/icons/hicolor/128x128/apps/openscad.png
+share/icons/hicolor/256x256/apps/openscad.png
+share/icons/hicolor/48x48/apps/openscad.png
+share/icons/hicolor/512x512/apps/openscad.png
+share/icons/hicolor/64x64/apps/openscad.png
 share/metainfo/
 share/metainfo/org.openscad.OpenSCAD.appdata.xml
 share/mime/packages/openscad.xml
@@ -97,11 +102,18 @@ share/openscad/examples/Parametric/sign.scad
 share/openscad/examples/examples.json
 share/openscad/libraries/
 share/openscad/libraries/MCAD/
+share/openscad/libraries/MCAD/.gitignore
 share/openscad/libraries/MCAD/2Dshapes.scad
 share/openscad/libraries/MCAD/3d_triangle.scad
 share/openscad/libraries/MCAD/README.markdown
 share/openscad/libraries/MCAD/TODO
 share/openscad/libraries/MCAD/__init__.py
+${MODPY_COMMENT}share/openscad/libraries/MCAD/${MODPY_PYCACHE}/
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}openscad_testing.${MODPY_PYC_MAGIC_TAG}pyc
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}openscad_utils.${MODPY_PYC_MAGIC_TAG}pyc
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_docs.${MODPY_PYC_MAGIC_TAG}pyc
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_mcad.${MODPY_PYC_MAGIC_TAG}pyc
 share/openscad/libraries/MCAD/bearing.scad
 share/openscad/libraries/MCAD/bitmap/
 share/openscad/libraries/MCAD/bitmap/README
@@ -158,6 +170,9 @@ share/openscad/locale/es/LC_MESSAGES/openscad.mo
 share/openscad/locale/fr/
 share/openscad/locale/fr/LC_MESSAGES/
 share/openscad/locale/fr/LC_MESSAGES/openscad.mo
+share/openscad/locale/hy/
+share/openscad/locale/hy/LC_MESSAGES/
+share/openscad/locale/hy/LC_MESSAGES/openscad.mo
 share/openscad/locale/pl/
 share/openscad/locale/pl/LC_MESSAGES/
 share/openscad/locale/pl/LC_MESSAGES/openscad.mo
@@ -167,7 +182,19 @@ share/openscad/locale/ru/LC_MESSAGES/openscad.mo
 share/openscad/locale/uk/
 share/openscad/locale/uk/LC_MESSAGES/
 share/openscad/locale/uk/LC_MESSAGES/openscad.mo
-share/pixmaps/
-share/pixmaps/openscad.png
 @tag update-desktop-database
 @tag update-mime-database
+share/openscad/locale/zh_CN/
+share/openscad/locale/zh_CN/LC_MESSAGES/
+share/openscad/locale/zh_CN/LC_MESSAGES/openscad.mo
+share/openscad/locale/zh_TW/
+share/openscad/locale/zh_TW/LC_MESSAGES/
+share/openscad/locale/zh_TW/LC_MESSAGES/openscad.mo
+share/openscad/templates/
+share/openscad/templates/difference.json
+share/openscad/templates/for.json
+share/openscad/templates/function.json
+share/openscad/templates/module.json
+share/openscad/templates/rotate.json
+share/openscad/templates/translate.json
+@tag gtk-update-icon-cache %D/share/icons/hicolor
