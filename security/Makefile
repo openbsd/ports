@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.609 2021/02/02 20:11:44 jeremy Exp $
+# $OpenBSD: Makefile,v 1.610 2021/02/14 15:51:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -335,7 +335,6 @@
      SUBDIR += py-service_identity
      SUBDIR += py-service_identity,python3
      SUBDIR += py-tlsfuzzer,python3
-     SUBDIR += py-trustme
      SUBDIR += py-trustme,python3
      SUBDIR += py-vivisect
      SUBDIR += py-viv_utils

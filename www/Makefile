@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.999 2021/02/14 14:23:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.1000 2021/02/14 15:51:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -475,13 +475,11 @@
      SUBDIR += py-mako
      SUBDIR += py-mako,python3
      SUBDIR += py-mastodon.py
-     SUBDIR += py-mechanize
      SUBDIR += py-mechanize,python3
      SUBDIR += py-meld3
      SUBDIR += py-meld3,python3
      SUBDIR += py-metallum,python3
      SUBDIR += py-multidict,python3
-     SUBDIR += py-ndg-httpsclient
      SUBDIR += py-ndg-httpsclient,python3
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
