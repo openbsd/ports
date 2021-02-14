@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/28 11:51:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/14 14:34:01 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
-BROKEN-i386 = 		long hangs; uses too much RAM to build
 
 DPB_PROPERTIES=		parallel parallel2
 .if ${MACHINE_ARCH} == "i386"
