@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2021/01/23 18:09:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/14 06:22:30 rsadowski Exp $
 
 COMMENT =	KDE framework for sharing additional application data
 DISTNAME =	knewstuff-${VERSION}
 
 SHARED_LIBS +=  KF5NewStuff               6.1
-SHARED_LIBS +=  KF5NewStuffCore           5.2
+SHARED_LIBS +=  KF5NewStuffCore           5.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

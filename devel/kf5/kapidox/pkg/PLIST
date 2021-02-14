@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/12/19 16:25:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/02/14 06:22:26 rsadowski Exp $
 bin/depdiagram-generate
 bin/depdiagram-generate-all
 bin/depdiagram-prepare
@@ -37,6 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/ako.webmanife
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/ako.webmanifest.license
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/css/
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/css/bg.png
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/css/customdoxygen.css
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/default_product.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/frameworks.css
@@ -53,6 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/bad.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/ok.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/warning.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/main.js
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/notetip.js
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/search.js
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/js/subgroup.js

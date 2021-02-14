@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/01/23 18:09:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/02/14 06:22:25 rsadowski Exp $
 share/icons/breeze/
 share/icons/breeze-dark/
 share/icons/breeze-dark/actions/
@@ -4158,6 +4158,7 @@ share/icons/breeze-dark/applets/256/org.kde.plasma.icontasks.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.kicker.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.kickerdash.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.kickoff.svg
+share/icons/breeze-dark/applets/256/org.kde.plasma.kickofflegacy.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.mediacontroller.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.networkmanagement.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.notes.svg
@@ -4483,7 +4484,6 @@ share/icons/breeze-dark/apps/48/keepass.svg
 share/icons/breeze-dark/apps/48/keepass2.svg
 share/icons/breeze-dark/apps/48/keepassx.svg
 share/icons/breeze-dark/apps/48/keepassx2.svg
-share/icons/breeze-dark/apps/48/keepassxc.svg
 share/icons/breeze-dark/apps/48/kexi.svg
 share/icons/breeze-dark/apps/48/kfind.svg
 share/icons/breeze-dark/apps/48/kfloppy.svg
@@ -4980,6 +4980,7 @@ share/icons/breeze-dark/emblems/16/package-remove-auto.svg
 share/icons/breeze-dark/emblems/16/package-remove.svg
 share/icons/breeze-dark/emblems/16/package-upgrade-auto.svg
 share/icons/breeze-dark/emblems/16/package-upgrade.svg
+share/icons/breeze-dark/emblems/16/rating-half.svg
 share/icons/breeze-dark/emblems/16/rating-unrated.svg
 share/icons/breeze-dark/emblems/16/rating.svg
 share/icons/breeze-dark/emblems/16/unrequired.svg
@@ -5015,6 +5016,7 @@ share/icons/breeze-dark/emblems/22/emblem-unavailable.svg
 share/icons/breeze-dark/emblems/22/emblem-unlocked.svg
 share/icons/breeze-dark/emblems/22/emblem-unmounted.svg
 share/icons/breeze-dark/emblems/22/emblem-warning.svg
+share/icons/breeze-dark/emblems/22/rating-half.svg
 share/icons/breeze-dark/emblems/22/rating-unrated.svg
 share/icons/breeze-dark/emblems/22/rating.svg
 share/icons/breeze-dark/emblems/22/vcs-added.svg
@@ -7937,10 +7939,6 @@ share/icons/breeze-dark/status/22/install.svg
 share/icons/breeze-dark/status/22/irc-channel-joined.svg
 share/icons/breeze-dark/status/22/irc-channel-parted.svg
 share/icons/breeze-dark/status/22/kdeconnect-tray.svg
-share/icons/breeze-dark/status/22/keepassxc-locked.svg
-share/icons/breeze-dark/status/22/keepassxc-monochrome-dark-locked.svg
-share/icons/breeze-dark/status/22/keepassxc-monochrome-dark.svg
-share/icons/breeze-dark/status/22/keepassxc-unlocked.svg
 share/icons/breeze-dark/status/22/media-playback-paused.svg
 share/icons/breeze-dark/status/22/media-playback-playing.svg
 share/icons/breeze-dark/status/22/media-playback-stopped.svg
@@ -7989,6 +7987,9 @@ share/icons/breeze-dark/status/22/state-warning.svg
 share/icons/breeze-dark/status/22/task-complete.svg
 share/icons/breeze-dark/status/22/task-recurring.svg
 share/icons/breeze-dark/status/22/task-reminder.svg
+share/icons/breeze-dark/status/22/telegram-attention-panel.svg
+share/icons/breeze-dark/status/22/telegram-mute-panel.svg
+share/icons/breeze-dark/status/22/telegram-panel.svg
 share/icons/breeze-dark/status/22/transmission-tray-icon.svg
 share/icons/breeze-dark/status/22/uninstall.svg
 share/icons/breeze-dark/status/22/update-high.svg
@@ -9845,7 +9846,7 @@ share/icons/breeze/actions/16/zoom-select-y.svg
 share/icons/breeze/actions/16/zoom-select.svg
 share/icons/breeze/actions/16/zoom.svg
 share/icons/breeze/actions/16@2x
-share/icons/breeze/actions/16x@3x
+share/icons/breeze/actions/16@3x
 share/icons/breeze/actions/22/
 share/icons/breeze/actions/22/CVnamespace.svg
 share/icons/breeze/actions/22/Info-amarok.svg
@@ -11733,7 +11734,7 @@ share/icons/breeze/actions/22/zoom-select-y.svg
 share/icons/breeze/actions/22/zoom-select.svg
 share/icons/breeze/actions/22/zoom.svg
 share/icons/breeze/actions/22@2x
-share/icons/breeze/actions/22x@3x
+share/icons/breeze/actions/22@3x
 share/icons/breeze/actions/32/
 share/icons/breeze/actions/32/acrobat.svg
 share/icons/breeze/actions/32/address-book-new.svg
@@ -12010,7 +12011,7 @@ share/icons/breeze/actions/32/zoom-select-y.svg
 share/icons/breeze/actions/32/zoom-select.svg
 share/icons/breeze/actions/32/zoom.svg
 share/icons/breeze/actions/32@2x
-share/icons/breeze/actions/32x@3x
+share/icons/breeze/actions/32@3x
 share/icons/breeze/actions/48/
 share/icons/breeze/actions/48/go-home.svg
 share/icons/breeze/actions/48/view-institution.svg
@@ -12226,7 +12227,7 @@ share/icons/breeze/animations/
 share/icons/breeze/animations/16/
 share/icons/breeze/animations/16/process-working.svg
 share/icons/breeze/animations/16@2x
-share/icons/breeze/animations/16x@3x
+share/icons/breeze/animations/16@3x
 share/icons/breeze/animations/22/
 share/icons/breeze/animations/22/process-working.svg
 share/icons/breeze/applets/
@@ -12281,6 +12282,7 @@ share/icons/breeze/applets/256/org.kde.plasma.icontasks.svg
 share/icons/breeze/applets/256/org.kde.plasma.kicker.svg
 share/icons/breeze/applets/256/org.kde.plasma.kickerdash.svg
 share/icons/breeze/applets/256/org.kde.plasma.kickoff.svg
+share/icons/breeze/applets/256/org.kde.plasma.kickofflegacy.svg
 share/icons/breeze/applets/256/org.kde.plasma.mediacontroller.svg
 share/icons/breeze/applets/256/org.kde.plasma.networkmanagement.svg
 share/icons/breeze/applets/256/org.kde.plasma.notes.svg
@@ -12415,7 +12417,7 @@ share/icons/breeze/apps/16/utilities-terminal.svg
 share/icons/breeze/apps/16/virt-manager.svg
 share/icons/breeze/apps/16/vvave.svg
 share/icons/breeze/apps/16@2x
-share/icons/breeze/apps/16x@3x
+share/icons/breeze/apps/16@3x
 share/icons/breeze/apps/22/
 share/icons/breeze/apps/22/accessories-text-editor.svg
 share/icons/breeze/apps/22/akregator.svg
@@ -12439,7 +12441,7 @@ share/icons/breeze/apps/22/umbrello.svg
 share/icons/breeze/apps/22/utilities-terminal.svg
 share/icons/breeze/apps/22/virt-manager.svg
 share/icons/breeze/apps/22@2x
-share/icons/breeze/apps/22x@3x
+share/icons/breeze/apps/22@3x
 share/icons/breeze/apps/32/
 share/icons/breeze/apps/32/accessories-text-editor.svg
 share/icons/breeze/apps/32/hotspot.svg
@@ -12610,7 +12612,6 @@ share/icons/breeze/apps/48/keepass.svg
 share/icons/breeze/apps/48/keepass2.svg
 share/icons/breeze/apps/48/keepassx.svg
 share/icons/breeze/apps/48/keepassx2.svg
-share/icons/breeze/apps/48/keepassxc.svg
 share/icons/breeze/apps/48/kexi.svg
 share/icons/breeze/apps/48/kfind.svg
 share/icons/breeze/apps/48/kfloppy.svg
@@ -12735,6 +12736,7 @@ share/icons/breeze/apps/48/openbravo-erp.svg
 share/icons/breeze/apps/48/org.fedoraproject.AnacondaInstaller.svg
 share/icons/breeze/apps/48/org.kde.Ikona.svg
 share/icons/breeze/apps/48/org.kde.kontrast.svg
+share/icons/breeze/apps/48/org.kde.neochat.svg
 share/icons/breeze/apps/48/parley.svg
 share/icons/breeze/apps/48/partitionmanager.svg
 share/icons/breeze/apps/48/phonon-gstreamer.svg
@@ -12933,7 +12935,7 @@ share/icons/breeze/devices/16/tablet.svg
 share/icons/breeze/devices/16/uav-quadcopter.svg
 share/icons/breeze/devices/16/uav.svg
 share/icons/breeze/devices/16@2x
-share/icons/breeze/devices/16x@3x
+share/icons/breeze/devices/16@3x
 share/icons/breeze/devices/22/
 share/icons/breeze/devices/22/audio-card.svg
 share/icons/breeze/devices/22/audio-headphones.svg
@@ -12994,7 +12996,7 @@ share/icons/breeze/devices/22/uav-quadcopter.svg
 share/icons/breeze/devices/22/uav.svg
 share/icons/breeze/devices/22/video-television.svg
 share/icons/breeze/devices/22@2x
-share/icons/breeze/devices/22x@3x
+share/icons/breeze/devices/22@3x
 share/icons/breeze/devices/64/
 share/icons/breeze/devices/64/audio-card.svg
 share/icons/breeze/devices/64/audio-headphones.svg
@@ -13131,6 +13133,7 @@ share/icons/breeze/emblems/16/package-remove-auto.svg
 share/icons/breeze/emblems/16/package-remove.svg
 share/icons/breeze/emblems/16/package-upgrade-auto.svg
 share/icons/breeze/emblems/16/package-upgrade.svg
+share/icons/breeze/emblems/16/rating-half.svg
 share/icons/breeze/emblems/16/rating-unrated.svg
 share/icons/breeze/emblems/16/rating.svg
 share/icons/breeze/emblems/16/unrequired.svg
@@ -13142,7 +13145,7 @@ share/icons/breeze/emblems/16/vcs-normal.svg
 share/icons/breeze/emblems/16/vcs-removed.svg
 share/icons/breeze/emblems/16/vcs-update-required.svg
 share/icons/breeze/emblems/16@2x
-share/icons/breeze/emblems/16x@3x
+share/icons/breeze/emblems/16@3x
 share/icons/breeze/emblems/22/
 share/icons/breeze/emblems/22/checkmark.svg
 share/icons/breeze/emblems/22/emblem-added.svg
@@ -13166,6 +13169,7 @@ share/icons/breeze/emblems/22/emblem-unavailable.svg
 share/icons/breeze/emblems/22/emblem-unlocked.svg
 share/icons/breeze/emblems/22/emblem-unmounted.svg
 share/icons/breeze/emblems/22/emblem-warning.svg
+share/icons/breeze/emblems/22/rating-half.svg
 share/icons/breeze/emblems/22/rating-unrated.svg
 share/icons/breeze/emblems/22/rating.svg
 share/icons/breeze/emblems/22/vcs-added.svg
@@ -13176,7 +13180,7 @@ share/icons/breeze/emblems/22/vcs-normal.svg
 share/icons/breeze/emblems/22/vcs-removed.svg
 share/icons/breeze/emblems/22/vcs-update-required.svg
 share/icons/breeze/emblems/22@2x
-share/icons/breeze/emblems/22x@3x
+share/icons/breeze/emblems/22@3x
 share/icons/breeze/emblems/8/
 share/icons/breeze/emblems/8/checkmark.svg
 share/icons/breeze/emblems/8/emblem-added.svg
@@ -13258,7 +13262,7 @@ share/icons/breeze/emotes/22/face-worried.svg
 share/icons/breeze/emotes/22/face-yawn.svg
 share/icons/breeze/emotes/22/food-cake.svg
 share/icons/breeze/emotes/22@2x
-share/icons/breeze/emotes/22x@3x
+share/icons/breeze/emotes/22@3x
 share/icons/breeze/index.theme
 share/icons/breeze/mimetypes/
 share/icons/breeze/mimetypes/16/
@@ -13750,7 +13754,7 @@ share/icons/breeze/mimetypes/16/x-office-drawing.svg
 share/icons/breeze/mimetypes/16/x-office-presentation.svg
 share/icons/breeze/mimetypes/16/x-office-spreadsheet.svg
 share/icons/breeze/mimetypes/16@2x
-share/icons/breeze/mimetypes/16x@3x
+share/icons/breeze/mimetypes/16@3x
 share/icons/breeze/mimetypes/22/
 share/icons/breeze/mimetypes/22/android-package-archive.svg
 share/icons/breeze/mimetypes/22/application-atom+xml.svg
@@ -14240,7 +14244,7 @@ share/icons/breeze/mimetypes/22/x-office-drawing.svg
 share/icons/breeze/mimetypes/22/x-office-presentation.svg
 share/icons/breeze/mimetypes/22/x-office-spreadsheet.svg
 share/icons/breeze/mimetypes/22@2x
-share/icons/breeze/mimetypes/22x@3x
+share/icons/breeze/mimetypes/22@3x
 share/icons/breeze/mimetypes/32/
 share/icons/breeze/mimetypes/32/android-package-archive.svg
 share/icons/breeze/mimetypes/32/application-atom+xml.svg
@@ -15299,7 +15303,7 @@ share/icons/breeze/places/16/user-identity.svg
 share/icons/breeze/places/16/user-trash-full.svg
 share/icons/breeze/places/16/user-trash.svg
 share/icons/breeze/places/16@2x
-share/icons/breeze/places/16x@3x
+share/icons/breeze/places/16@3x
 share/icons/breeze/places/22/
 share/icons/breeze/places/22/certificate-server.svg
 share/icons/breeze/places/22/desktop.svg
@@ -15377,7 +15381,7 @@ share/icons/breeze/places/22/user-identity.svg
 share/icons/breeze/places/22/user-trash-full.svg
 share/icons/breeze/places/22/user-trash.svg
 share/icons/breeze/places/22@2x
-share/icons/breeze/places/22x@3x
+share/icons/breeze/places/22@3x
 share/icons/breeze/places/32/
 share/icons/breeze/places/32/certificate-server.svg
 share/icons/breeze/places/32/desktop.svg
@@ -16003,7 +16007,7 @@ share/icons/breeze/status/16/user-invisible.svg
 share/icons/breeze/status/16/user-offline.svg
 share/icons/breeze/status/16/user-online.svg
 share/icons/breeze/status/16@2x
-share/icons/breeze/status/16x@3x
+share/icons/breeze/status/16@3x
 share/icons/breeze/status/22/
 share/icons/breeze/status/22/TeamViewer.svg
 share/icons/breeze/status/22/appointment-recurring.svg
@@ -16102,10 +16106,6 @@ share/icons/breeze/status/22/install.svg
 share/icons/breeze/status/22/irc-channel-joined.svg
 share/icons/breeze/status/22/irc-channel-parted.svg
 share/icons/breeze/status/22/kdeconnect-tray.svg
-share/icons/breeze/status/22/keepassxc-locked.svg
-share/icons/breeze/status/22/keepassxc-monochrome-light-locked.svg
-share/icons/breeze/status/22/keepassxc-monochrome-light.svg
-share/icons/breeze/status/22/keepassxc-unlocked.svg
 share/icons/breeze/status/22/media-playback-paused.svg
 share/icons/breeze/status/22/media-playback-playing.svg
 share/icons/breeze/status/22/media-playback-stopped.svg
@@ -16154,6 +16154,9 @@ share/icons/breeze/status/22/state-warning.svg
 share/icons/breeze/status/22/task-complete.svg
 share/icons/breeze/status/22/task-recurring.svg
 share/icons/breeze/status/22/task-reminder.svg
+share/icons/breeze/status/22/telegram-attention-panel.svg
+share/icons/breeze/status/22/telegram-mute-panel.svg
+share/icons/breeze/status/22/telegram-panel.svg
 share/icons/breeze/status/22/transmission-tray-icon.svg
 share/icons/breeze/status/22/uninstall.svg
 share/icons/breeze/status/22/update-high.svg
@@ -16170,7 +16173,7 @@ share/icons/breeze/status/22/user-offline.svg
 share/icons/breeze/status/22/user-online.svg
 share/icons/breeze/status/22/video-card-inactive.svg
 share/icons/breeze/status/22@2x
-share/icons/breeze/status/22x@3x
+share/icons/breeze/status/22@3x
 share/icons/breeze/status/32/
 share/icons/breeze/status/32/appointment-recurring.svg
 share/icons/breeze/status/32/battery-000-charging.svg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/11/03 16:12:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/02/14 06:22:31 rsadowski Exp $
 include/KF5/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/AbstractAnnotationItemDelegate
@@ -18,6 +18,7 @@ include/KF5/KTextEditor/KTextEditor/Editor
 include/KF5/KTextEditor/KTextEditor/InlineNote
 include/KF5/KTextEditor/KTextEditor/InlineNoteInterface
 include/KF5/KTextEditor/KTextEditor/InlineNoteProvider
+include/KF5/KTextEditor/KTextEditor/LineRange
 include/KF5/KTextEditor/KTextEditor/MainWindow
 include/KF5/KTextEditor/KTextEditor/MarkInterface
 include/KF5/KTextEditor/KTextEditor/Message
@@ -49,6 +50,7 @@ include/KF5/KTextEditor/ktexteditor/editor.h
 include/KF5/KTextEditor/ktexteditor/inlinenote.h
 include/KF5/KTextEditor/ktexteditor/inlinenoteinterface.h
 include/KF5/KTextEditor/ktexteditor/inlinenoteprovider.h
+include/KF5/KTextEditor/ktexteditor/linerange.h
 include/KF5/KTextEditor/ktexteditor/mainwindow.h
 include/KF5/KTextEditor/ktexteditor/markinterface.h
 include/KF5/KTextEditor/ktexteditor/message.h
