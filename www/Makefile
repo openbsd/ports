@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.998 2021/02/10 00:45:31 kn Exp $
+# $OpenBSD: Makefile,v 1.999 2021/02/14 14:23:06 jasper Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -20,7 +20,6 @@
      SUBDIR += calamaris
      SUBDIR += canto
      SUBDIR += castor
-     SUBDIR += cclive
      SUBDIR += cgicc
      SUBDIR += cgiparse
      SUBDIR += cgit

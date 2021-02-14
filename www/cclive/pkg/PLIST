@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/28 00:07:13 sthen Exp $
-bin/ccl
-@bin bin/cclive
-@man man/man1/cclive.1

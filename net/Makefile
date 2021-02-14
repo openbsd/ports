@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1241 2021/02/04 12:52:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.1242 2021/02/14 14:23:07 jasper Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -647,7 +647,6 @@
      SUBDIR += quagga
      SUBDIR += queryperf
      SUBDIR += queso
-     SUBDIR += quvi
      SUBDIR += rabbitmq
      SUBDIR += rabbitmq-c
      SUBDIR += radcli
