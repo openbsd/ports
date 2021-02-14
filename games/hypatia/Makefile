@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/11/24 16:44:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/14 19:04:11 daniel Exp $
 
 COMMENT =	2D action adventure game engine
 CATEGORIES =	games x11
@@ -7,21 +7,20 @@ SUBST_VARS +=	GH_TAGNAME
 GH_ACCOUNT =	hypatia-engine
 GH_PROJECT =	hypatia
 GH_TAGNAME =	0.3.6
-REVISION =	1
-
-HOMEPAGE =	http://engine.hypatia.software/
+REVISION =	2
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+
 MODPY_SETUPTOOLS =	Yes
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS =	devel/py-enum34 \
-		devel/pygame${MODPY_FLAVOR}>=1.9.1 \
-		graphics/py2-Pillow
+RUN_DEPENDS =	devel/pygame${MODPY_FLAVOR}>=1.9.1 \
+		graphics/py-Pillow${MODPY_FLAVOR}
 
-TEST_DEPENDS =	graphics/py2-Pillow
+TEST_DEPENDS =	graphics/py-Pillow${MODPY_FLAVOR}
 
 WRKDIST =	${WRKDIR}/hypatia-engine-${GH_TAGNAME}
 
