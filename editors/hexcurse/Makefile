@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/17 21:03:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/14 18:01:21 bcallah Exp $
 
 COMMENT=	user-friendly ncurses-based hexeditor with many features
+REVISION=	0
 
 GH_ACCOUNT=	lonnygomes
 GH_PROJECT=	hexcurse

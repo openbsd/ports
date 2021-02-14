@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2021/02/14 18:01:21 bcallah Exp $
+
+Remove -Werror
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -258,7 +258,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -Werror -Wextra
++AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -Wextra
+ hexcurse_SOURCES = file.c llist.c screen.c hexcurse.c stack.c getopt.c acceptch.c color.c
+ all: all-am
+ 

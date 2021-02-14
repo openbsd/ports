@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_hexcurse_c,v 1.1 2019/11/17 21:03:29 fcambus Exp $
+$OpenBSD: patch-src_hexcurse_c,v 1.2 2021/02/14 18:01:21 bcallah Exp $
+
+Fix for -fno-common
+From Gentoo: https://github.com/LonnyGomes/hexcurse/pull/28
 
 Show help if no filename argument is supplied, otherwise it's not possible
 to quit the editor.
@@ -8,7 +11,16 @@ Upstream commit 37f94f2c1d0a3cc5110b2771e02ed894522d65d3.
 Index: src/hexcurse.c
 --- src/hexcurse.c.orig
 +++ src/hexcurse.c
-@@ -217,9 +217,13 @@ off_t parseArgs(int argc, char *argv[])
+@@ -27,6 +27,8 @@
+ /*#define DEBUG_LLIST*/
+ /*#define DEBUG_GOTO*/
+ 
++FILE *fpIN;
++
+ int     BASE, MAXY, resize = 0;
+ int     MIN_ADDR_LENGTH;
+ hexList *head;						/* linked list struct */
+@@ -217,9 +219,13 @@ off_t parseArgs(int argc, char *argv[])
          fpINfilename = strdup(argv[0]);
      }
  
