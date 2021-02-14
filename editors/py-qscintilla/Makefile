@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/19 06:26:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/14 14:24:20 sthen Exp $
 
 COMMENT =		Python binding for the Scintilla source code editor
 
@@ -6,6 +6,7 @@ VERSION =		2.11.6
 MODPY_EGG_VERSION =	${VERSION}
 DISTNAME =		QScintilla-${VERSION}
 PKGNAME =		py-qscintilla-${VERSION}
+REVISION =		0
 
 CATEGORIES =		editors x11 devel
 
@@ -23,7 +24,6 @@ MODULES =		lang/python \
 			x11/qt5
 QTVER =			qt5
 PYQTVER =		PyQt5
-SIPDIR =		share/sip/PyQt5${MODPY_BIN_SUFFIX}
 
 FLAVORS =		python3
 FLAVOR =		python3
@@ -36,19 +36,23 @@ LIB_DEPENDS =		editors/qscintilla=${VERSION}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-WRKSRC =		${WRKDIST}/Python
-
 NO_TEST =		Yes
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
+CONFIGURE_SCRIPT =	${LOCALBASE}/bin/sip-build
+CONFIGURE_ARGS =	--verbose \
+			--qmake ${MODQT5_QMAKE} \
+			--jobs ${MAKE_JOBS} \
+			--no-make
 
-CONFIGURE_ARGS +=	--pyqt=${PYQTVER} -w \
-			--qsci-libdir=${LOCALBASE}/lib \
-			--pyqt-sipdir=${LOCALBASE}/${SIPDIR} \
-			--qmake=${MODQT5_QMAKE} \
-			--sip=${LOCALBASE}/bin/sip${MODPY_BIN_SUFFIX}
-MAKE_ENV =		INSTALL_ROOT="${WRKINST}"
-SUBST_VARS +=		QTVER PYQTVER SIPDIR MODPY_FLAVOR
+MAKE_FLAGS =	-C build \
+		CC=${CC} \
+		CXX=${CXX} \
+		COPTS="${CFLAGS}" \
+		CXXOPTS="${CXXFLAGS}"
+
+FAKE_FLAGS =	INSTALL_ROOT=${DESTDIR}
+
+SUBST_VARS +=	QTVER PYQTVER
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2062 2021/02/02 19:29:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2063 2021/02/14 14:24:20 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1645,6 +1645,7 @@
      SUBDIR += py-pyte
      SUBDIR += py-pyte,python3
      SUBDIR += py-python2-pythondialog
+     SUBDIR += py-qt-builder,python3
      SUBDIR += py-r2pipe,python3
      SUBDIR += py-radix
      SUBDIR += py-radix,python3
@@ -1684,7 +1685,6 @@
      SUBDIR += py-simplejson
      SUBDIR += py-simplejson,python3
      SUBDIR += py-singledispatch
-     SUBDIR += py-sip
      SUBDIR += py-sip,python3
      SUBDIR += py-six
      SUBDIR += py-six,python3

@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/13 14:47:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/14 14:24:20 sthen Exp $
 
-COMMENT	=	python Qt5 bindings
+COMMENT=	Python bindings for Qt5
 
-V=		5.15.2
-DISTNAME=	PyQt5-${V}
-PKGNAME=	py-qt5-${V}
-REVISION=	0
+DPB_PROPERTIES=	parallel
+
+MODPY_EGG_VERSION= 5.15.2
+DISTNAME=	PyQt5-${MODPY_EGG_VERSION}
+PKGNAME=	py-qt5-${MODPY_EGG_VERSION}
+REVISION=	1
 
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	https://www.riverbankcomputing.com/software/pyqt/intro
 
-# GPLv3 with exceptions for use with certain named open-source licenses
+# GPLv3 (or commercial)
+# https://www.riverbankcomputing.com/commercial/license-faq
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Bluetooth Qt5Core Qt5DBus
@@ -24,12 +27,14 @@ WANTLIB += Qt5WebChannel Qt5WebKit Qt5WebKitWidgets Qt5WebSockets
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns dbus-1
 WANTLIB += m ${MODPY_WANTLIB}
 
-FLAVORS =	python3
-FLAVOR ?=
+FLAVORS=	python3
+FLAVOR=		python3
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.19.24v0 \
-		x11/py-sip-qt5${MODPY_FLAVOR}>=4.19.24 \
+BUILD_DEPENDS=	devel/py-qt-builder${MODPY_FLAVOR} \
+		x11/dbus-python${MODPY_FLAVOR}
+
+RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=5.5.0v0 \
+		x11/py-sip-qt5${MODPY_FLAVOR}>=12.8 \
 		x11/dbus-python${MODPY_FLAVOR}
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
@@ -52,56 +57,29 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 
 NO_TEST=	Yes
 
-MASTER_SITES=	https://pypi.python.org/packages/source/P/PyQt5/
-
 MODULES=	lang/python \
 		x11/qt5
+MODPY_PI=	Yes
 
-.if !${FLAVOR:Mpython3}
-BUILD_DEPENDS += devel/py-enum34
-RUN_DEPENDS += devel/py-enum34
-.endif
-
-CONFIGURE_STYLE=simple
-CONFIGURE_SCRIPT=${MODPY_BIN} configure.py
+# https://www.riverbankcomputing.com/static/Docs/PyQt5/installation.html#building-pyqt5
+CONFIGURE_STYLE= simple
+CONFIGURE_SCRIPT= ${LOCALBASE}/bin/sip-build
 CONFIGURE_ARGS=	--verbose \
-		--qmake="${MODQT5_QMAKE}" \
-		--sip="${LOCALBASE}/bin/sip${MODPY_BIN_SUFFIX}" \
-		--bindir="${PREFIX}/bin" \
-		--destdir="${MODPY_SITEPKG}" \
-		--sipdir="${PREFIX}/share/sip/PyQt5${MODPY_BIN_SUFFIX}" \
-		--vendorid-incdir="${MODPY_INCDIR}" \
-		--vendorid-libdir="${MODPY_LIBDIR}" \
-		--no-qsci-api \
-		--confirm-license \
-		INCDIR_QT=${MODQT_INCDIR} \
-		LIBDIR="${X11BASE}/lib ${LOCALBASE}/lib" \
-		LIBDIR_QT=${MODQT_LIBDIR} \
+		--qmake ${MODQT5_QMAKE} \
+		--jobs ${MAKE_JOBS} \
+		--no-make \
+		--confirm-license
+
+MAKE_FLAGS=	-C build \
 		CC=${CC} \
 		CXX=${CXX} \
-		CFLAGS="${CFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}"
+		COPTS="${CFLAGS}" \
+		CXXOPTS="${CXXFLAGS}"
+
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
-CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
-
-SUBST_VARS +=	MODPY_MAJOR_VERSION MODPY_BIN_SUFFIX V
-
-# the distfile has pyuic for both python 2 and 3, normally both are
-# installed and they're selected at runtime. this breaks bytecode
-# compilation for package generation, so just rm the wrong files.
-pre-configure:
-.if ${FLAVOR:Mpython3}
-	rm -fr ${WRKSRC}/pyuic/uic/port_v2
-.else
-	rm -fr ${WRKSRC}/pyuic/uic/port_v3
-.endif
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}/${MODPY_SITEPKG}
-.for b in pylupdate pyrcc pyuic
-	mv -f ${PREFIX}/bin/$b5 ${PREFIX}/bin/$b5${MODPY_BIN_SUFFIX}
-.endfor
-	mv -f ${PREFIX}/lib/qt5/plugins/PyQt5/libpyqt5qmlplugin{,${MODPY_BIN_SUFFIX}}.so
-	mv -f ${PREFIX}/lib/qt5/plugins/designer/libpyqt5{,${MODPY_BIN_SUFFIX}}.so
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	    ${WRKINST}/${MODPY_SITEPKG}/PyQt5/uic/port_v3
 
 .include <bsd.port.mk>

@@ -1,61 +1,40 @@
-# $OpenBSD: Makefile,v 1.52 2021/01/19 06:26:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2021/02/14 14:24:20 sthen Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
-# XXX  py-sip updates FREQUENTLY break other ports
-# XXX  BE ESPECIALLY CAREFUL WHEN TESTING UPDATES!
+# The following ports often usually need updating together:
+# devel/py-sip, www/py-qtwebengine, x11/py-qt5, x11/py-sip-qt5
+# API changes fairly often, be sure to test dependent ports when updating.
+MODPY_EGG_VERSION=	5.5.0
 
-MODPY_EGG_VERSION =	4.19.24
-EPOCH=		0
+# 6.x removes the "sip" script and wants dependent ports to use
+# sip-build instead, math/veusz (at least as of 3.3.1) can't use that
+# yet. geo/qgis had a weird failure where it tried to run a program
+# "None" in the build which I think may be related too.
+
 DISTNAME=	sip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+EPOCH=		0
+
 CATEGORIES=	devel
 
 HOMEPAGE=	https://www.riverbankcomputing.com/software/sip/intro
 
-# SIP license (Python like)
+# SIP license (Python like) or GPLv2/v3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	m c ${COMPILER_LIBCXX}
+WANTLIB=	m ${COMPILER_LIBCXX}
 
-COMPILER =	base-clang ports-gcc base-gcc
-
-MASTER_SITES=	https://www.riverbankcomputing.com/static/Downloads/sip/${MODPY_EGG_VERSION}/
+COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
 
-FLAVORS =	python3
-FLAVOR ?=
+FLAVORS=	python3
+FLAVOR=		python3
 
-CONFIGURE_STYLE=simple
-CONFIGURE_SCRIPT=${MODPY_BIN} configure.py
-CONFIGURE_ARGS=	-b ${PREFIX}/bin \
-		-d ${MODPY_SITEPKG} \
-		-e ${MODPY_INCDIR} \
-		-v ${PREFIX}/share/sip \
-		--sip-module PyQt5.sip \
-		INCDIR=${LOCALBASE}/include \
-		LIBDIR=${LOCALBASE}/lib \
-		CC=${CC} CXX=${CXX} \
-		CFLAGS="${CFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}"
+MODPY_PI=	Yes
+MODPY_SETUPTOOLS= Yes
 
-NO_TEST=	Yes
-
-SUBST_VARS +=	MODPY_LIB_SUFFIX
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure.py
-
-# mk_distinfo.py tries to open sip_bin but it hasnt been renamed yet
-.if ${FLAVOR:Mpython3}
-pre-fake:
-	cd ${PREFIX}/bin && ln -sf sip sip${MODPY_BIN_SUFFIX}
-.endif
-
-post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}sip
-	${INSTALL_DATA} ${WRKSRC}/doc/html/_sources/* ${PREFIX}/share/doc/${MODPY_PY_PREFIX}sip
-	mv -f ${PREFIX}/bin/sip ${PREFIX}/bin/sip${MODPY_BIN_SUFFIX}
+RUN_DEPENDS=	textproc/py-toml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

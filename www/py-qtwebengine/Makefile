@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/19 06:34:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/14 14:24:20 sthen Exp $
 
 COMMENT =	python Qt5WebEngine bindings
 
 MODPY_EGG_VERSION =	5.15.2
 DISTNAME =	PyQtWebEngine-${MODPY_EGG_VERSION}
 PKGNAME =	py-qtwebengine-${MODPY_EGG_VERSION}
-
+REVISION =	0
 
 CATEGORIES =	www devel
 
@@ -27,8 +27,7 @@ FLAVOR =	python3
 
 MODPY_PI =	Yes
 
-LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
-		x11/qt5/qtwebengine
+LIB_DEPENDS =	x11/qt5/qtwebengine
 
 RUN_DEPENDS =		x11/py-sip-qt5${MODPY_FLAVOR} \
 			devel/py-sip${MODPY_FLAVOR} \
@@ -38,23 +37,24 @@ BUILD_DEPENDS =		x11/py-sip-qt5${MODPY_FLAVOR} \
 			devel/py-sip${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}
 
-CONFIGURE_STYLE =	simple
-
-CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
-
 QTVER =			qt5
 PYQTVER =		PyQt5
-SIPDIR =		share/sip/PyQt5${MODPY_BIN_SUFFIX}
+SUBST_VARS +=		QTVER PYQTVER
 
-CONFIGURE_ARGS +=	--qmake=${MODQT5_QMAKE} \
-			--pyqt-sipdir=${LOCALBASE}/${SIPDIR} \
-			--sip=${LOCALBASE}/bin/sip${MODPY_BIN_SUFFIX} \
-			--verbose
+CONFIGURE_STYLE =	simple
+CONFIGURE_SCRIPT =	${LOCALBASE}/bin/sip-build
+CONFIGURE_ARGS =	--verbose \
+			--qmake ${MODQT5_QMAKE} \
+			--jobs ${MAKE_JOBS} \
+			--no-make
 
-MAKE_FLAGS =		CC="${CC}" CXX="${CXX}"
+MAKE_FLAGS =		-C build \
+			CC=${CC} \
+			CXX=${CXX} \
+			COPTS="${CFLAGS}" \
+			CXXOPTS="${CXXFLAGS}"
 
-MAKE_ENV =		INSTALL_ROOT="${WRKINST}"
-SUBST_VARS +=		QTVER PYQTVER SIPDIR
+FAKE_FLAGS =		INSTALL_ROOT=${DESTDIR}
 
 NO_TEST =		Yes
 

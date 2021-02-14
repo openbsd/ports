@@ -1,48 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/19 06:34:56 rsadowski Exp $
-lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngine.pyi
-@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngine.so
-lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineCore.pyi
-@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineCore.so
-lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineWidgets.pyi
-@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineWidgets.so
+@comment $OpenBSD: PLIST,v 1.3 2021/02/14 14:24:21 sthen Exp $
+@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngine${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineCore${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineWidgets${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngine/
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngine/QtWebEngine.toml
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngine/QtWebEnginemod.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngine/qquickwebengineprofile.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngine/qquickwebenginescript.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngine/qtwebengineglobal.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/QtWebEngineCore.toml
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/QtWebEngineCoremod.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineclientcertificatestore.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginecookiestore.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginefindtextresult.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginehttprequest.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginenotification.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginequotarequest.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineurlrequestinfo.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineurlrequestinterceptor.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineurlrequestjob.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineurlscheme.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineurlschemehandler.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/QtWebEngineWidgets.toml
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/QtWebEngineWidgetsmod.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebenginecertificateerror.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebengineclientcertificateselection.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebenginecontextmenudata.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebenginedownloaditem.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebenginefullscreenrequest.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebenginehistory.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebenginepage.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebengineprofile.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebenginescript.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebenginescriptcollection.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebenginesettings.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebengineview.sip
 lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-${MODPY_EGG_VERSION}.dist-info/INSTALLER
 lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/PyQtWebEngine-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/${QTVER}/qsci/
-lib/${QTVER}/qsci/api/
-lib/${QTVER}/qsci/api/python/
-lib/${QTVER}/qsci/api/python/PyQtWebEngine.api
-${SIPDIR}/QtWebEngine/
-${SIPDIR}/QtWebEngine/QtWebEnginemod.sip
-${SIPDIR}/QtWebEngine/qquickwebengineprofile.sip
-${SIPDIR}/QtWebEngine/qquickwebenginescript.sip
-${SIPDIR}/QtWebEngine/qtwebengineglobal.sip
-${SIPDIR}/QtWebEngineCore/
-${SIPDIR}/QtWebEngineCore/QtWebEngineCoremod.sip
-${SIPDIR}/QtWebEngineCore/qwebengineclientcertificatestore.sip
-${SIPDIR}/QtWebEngineCore/qwebenginecookiestore.sip
-${SIPDIR}/QtWebEngineCore/qwebenginefindtextresult.sip
-${SIPDIR}/QtWebEngineCore/qwebenginehttprequest.sip
-${SIPDIR}/QtWebEngineCore/qwebenginenotification.sip
-${SIPDIR}/QtWebEngineCore/qwebenginequotarequest.sip
-${SIPDIR}/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.sip
-${SIPDIR}/QtWebEngineCore/qwebengineurlrequestinfo.sip
-${SIPDIR}/QtWebEngineCore/qwebengineurlrequestinterceptor.sip
-${SIPDIR}/QtWebEngineCore/qwebengineurlrequestjob.sip
-${SIPDIR}/QtWebEngineCore/qwebengineurlscheme.sip
-${SIPDIR}/QtWebEngineCore/qwebengineurlschemehandler.sip
-${SIPDIR}/QtWebEngineWidgets/
-${SIPDIR}/QtWebEngineWidgets/QtWebEngineWidgetsmod.sip
-${SIPDIR}/QtWebEngineWidgets/qwebenginecertificateerror.sip
-${SIPDIR}/QtWebEngineWidgets/qwebengineclientcertificateselection.sip
-${SIPDIR}/QtWebEngineWidgets/qwebenginecontextmenudata.sip
-${SIPDIR}/QtWebEngineWidgets/qwebenginedownloaditem.sip
-${SIPDIR}/QtWebEngineWidgets/qwebenginefullscreenrequest.sip
-${SIPDIR}/QtWebEngineWidgets/qwebenginehistory.sip
-${SIPDIR}/QtWebEngineWidgets/qwebenginepage.sip
-${SIPDIR}/QtWebEngineWidgets/qwebengineprofile.sip
-${SIPDIR}/QtWebEngineWidgets/qwebenginescript.sip
-${SIPDIR}/QtWebEngineWidgets/qwebenginescriptcollection.sip
-${SIPDIR}/QtWebEngineWidgets/qwebenginesettings.sip
-${SIPDIR}/QtWebEngineWidgets/qwebengineview.sip
