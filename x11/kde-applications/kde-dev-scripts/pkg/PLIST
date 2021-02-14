@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/14 13:55:38 rsadowski Exp $
 @pkgpath x11/kde4/dev-scripts
 bin/adddebug
 bin/build-progress.sh
-bin/c++-co${MODPY_PY_PREFIX}class-and-file
+bin/c++-copy-class-and-file
 bin/c++-rename-class-and-file
 bin/cheatmake
 bin/colorsvn
