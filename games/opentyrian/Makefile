@@ -1,33 +1,34 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/14 17:02:12 bcallah Exp $
 
-V =			2.1.20130907
+V =			2.1.20201204
 COMMENT =		port of the DOS shoot-em-up Tyrian
-DISTNAME =		opentyrian-${V}-src
-PKGNAME =		opentyrian-${V}
-REVISION =		1
+DISTNAME =		opentyrian-${V}
 CATEGORIES =		games x11
 
-HOMEPAGE =		https://bitbucket.org/opentyrian/opentyrian/
+# No new releases... but years of activity
+GH_ACCOUNT =		opentyrian
+GH_PROJECT =		opentyrian
+GH_COMMIT =		650e1f72fd18d2242d10d706afa7f77f80151aea
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://www.camanis.net/opentyrian/releases/
-
-WANTLIB += SDL SDL_net c m pthread
+WANTLIB += SDL2 SDL2_net c m
 
 RUN_DEPENDS =		archivers/unzip
-LIB_DEPENDS =		devel/sdl-net
+LIB_DEPENDS =		devel/sdl2-net
 
 USE_GMAKE =		Yes
 MAKE_FLAGS =		CC="${CC}" \
 			MAKECMDGOALS=release
 
-WRKDIST =		${WRKDIR}/opentyrian-${V}
+FAKE_FLAGS =		mandir="${PREFIX}/man"
 
-do-install:
-	${SUBST_PROGRAM} ${FILESDIR}/opentyrian ${PREFIX}/bin/opentyrian
+NO_TEST =		Yes
+
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/opentyrian
-	${INSTALL_PROGRAM} ${WRKSRC}/opentyrian ${PREFIX}/share/opentyrian/opentyrian
+	mv ${PREFIX}/bin/opentyrian ${PREFIX}/share/opentyrian/opentyrian
+	${SUBST_PROGRAM} ${FILESDIR}/opentyrian ${PREFIX}/bin/opentyrian
 
 .include <bsd.port.mk>
