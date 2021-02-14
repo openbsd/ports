@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1175 2021/02/14 13:19:49 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1176 2021/02/14 13:31:38 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2078,9 +2078,10 @@ my $obsolete_reason = {
 	'icinga-web' => 38,
 	'icinga-cgi' => 38,
 	'icinga-idoutils' => 38,
-	'swftools' => 6,
-	'swfmill' => 6,
-	'ming' => 6,
+	'swftools' => 39,
+	'swfmill' => 39,
+	'ming' => 39,
+	'quvi' => 39,
 };
 
 # reasons for obsolete packages
@@ -2124,6 +2125,7 @@ my @msg = (
 	"ancient software, use pf.conf(5) 'af-to'", #36
 	"upstream is dead, default settings cause crash when connecting to mpd", #37
 	"icinga 1 is end-of-life, migrate to icinga 2 (needs config rewrite)", #38
+	"Flash/SWF is end-of-life", #39
 );
 
 # ->is_base_system($handle, $state):
