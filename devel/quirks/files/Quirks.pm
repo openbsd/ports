@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1177 2021/02/14 14:23:28 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1178 2021/02/14 15:26:34 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2085,6 +2085,7 @@ my $obsolete_reason = {
 	'libquvi' => 39,
 	'libquvi-scripts' => 39,
 	'cclive' => 6,
+	'viz' => 4,
 };
 
 # reasons for obsolete packages

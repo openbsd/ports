@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2021/01/05 13:01:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.200 2021/02/14 15:26:33 kn Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -114,7 +114,6 @@
      SUBDIR += tpwireless
      SUBDIR += ttyrec
      SUBDIR += uniutils
-     SUBDIR += viz
      SUBDIR += vmware-vncpasswd
      SUBDIR += vttest
      SUBDIR += wmmand
