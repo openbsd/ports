@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_level_c,v 1.1 2021/02/14 19:07:12 bket Exp $
+
+Fix -fno-common build error. Taken from
+https://gitlab.gnome.org/GNOME/atomix/-/commit/be7f44f1945a569494d46c60eaf6e7b39b2bb48b
+
+Index: src/level.c
+--- src/level.c.orig
++++ src/level.c
+@@ -31,7 +31,7 @@ static void level_class_init (GObjectClass *class);
+ static void level_init (Level *level);
+ static void level_finalize (GObject *object);
+ 
+-GObjectClass *parent_class;
++static GObjectClass *parent_class;
+ 
+ /*=================================================================
+  
