@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/11/08 20:12:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/02/14 13:17:03 rsadowski Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/kate
 @bin bin/kate
@@ -116,7 +116,7 @@ share/doc/HTML/en/kate/document-open-22.png
 share/doc/HTML/en/kate/document-save-22.png
 share/doc/HTML/en/kate/document-save-as-22.png
 share/doc/HTML/en/kate/documentswitcher.png
-share/doc/HTML/en/kate/edit-co${MODPY_PY_PREFIX}22.png
+share/doc/HTML/en/kate/edit-copy-22.png
 share/doc/HTML/en/kate/edit-delete-22.png
 share/doc/HTML/en/kate/edit-select-all-22.png
 share/doc/HTML/en/kate/format-text-superscript-22.png
