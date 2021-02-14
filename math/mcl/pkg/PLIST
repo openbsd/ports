@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/12/23 22:08:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/02/14 03:19:26 daniel Exp $
 @bin bin/clm
 @bin bin/clmformat
+bin/clxdo
 @bin bin/mcl
 @bin bin/mclcm
 bin/mclpipeline
@@ -19,8 +20,10 @@ bin/mclpipeline
 @man man/man1/clmformat.1
 @man man/man1/clmimac.1
 @man man/man1/clminfo.1
+@man man/man1/clminfo2.1
 @man man/man1/clmmate.1
 @man man/man1/clmmeet.1
+@man man/man1/clmoptics.1
 @man man/man1/clmorder.1
 @man man/man1/clmresidue.1
 @man man/man1/clmvol.1
@@ -36,6 +39,7 @@ bin/mclpipeline
 @man man/man1/mcxctty.1
 @man man/man1/mcxdiameter.1
 @man man/man1/mcxdump.1
+@man man/man1/mcxerdos.1
 @man man/man1/mcxi.1
 @man man/man1/mcxload.1
 @man man/man1/mcxmap.1
@@ -43,6 +47,7 @@ bin/mclpipeline
 @man man/man1/mcxrand.1
 @man man/man1/mcxsubs.1
 @man man/man5/clmprotocols.5
+@man man/man5/clmprotocols2.5
 @man man/man5/mcxio.5
 @man man/man7/mclfamily.7
 @man man/man7/mclfaq.7
@@ -61,14 +66,20 @@ share/doc/mcl/clmimac.html
 share/doc/mcl/clmimac.ps
 share/doc/mcl/clminfo.html
 share/doc/mcl/clminfo.ps
+share/doc/mcl/clminfo2.html
+share/doc/mcl/clminfo2.ps
 share/doc/mcl/clmmate.html
 share/doc/mcl/clmmate.ps
 share/doc/mcl/clmmeet.html
 share/doc/mcl/clmmeet.ps
+share/doc/mcl/clmoptics.html
+share/doc/mcl/clmoptics.ps
 share/doc/mcl/clmorder.html
 share/doc/mcl/clmorder.ps
 share/doc/mcl/clmprotocols.html
 share/doc/mcl/clmprotocols.ps
+share/doc/mcl/clmprotocols2.html
+share/doc/mcl/clmprotocols2.ps
 share/doc/mcl/clmresidue.html
 share/doc/mcl/clmresidue.ps
 share/doc/mcl/clmvol.html
@@ -107,6 +118,8 @@ share/doc/mcl/mcxdiameter.html
 share/doc/mcl/mcxdiameter.ps
 share/doc/mcl/mcxdump.html
 share/doc/mcl/mcxdump.ps
+share/doc/mcl/mcxerdos.html
+share/doc/mcl/mcxerdos.ps
 share/doc/mcl/mcxi.html
 share/doc/mcl/mcxi.ps
 share/doc/mcl/mcxio.html
@@ -149,6 +162,7 @@ share/examples/mcl/friends
 share/examples/mcl/fznyy.mci
 share/examples/mcl/fznyy.tab
 share/examples/mcl/honey.mci
+share/examples/mcl/infinity.mci
 share/examples/mcl/lattice.mci
 share/examples/mcl/make-falkner.pl
 share/examples/mcl/matula.mci
