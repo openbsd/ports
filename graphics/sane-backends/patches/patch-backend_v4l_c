@@ -1,11 +1,11 @@
-$OpenBSD: patch-backend_v4l_c,v 1.3 2020/08/23 15:52:11 ajacoutot Exp $
+$OpenBSD: patch-backend_v4l_c,v 1.4 2021/02/14 17:15:05 ajacoutot Exp $
 
 error: '__u32' undeclared (first use in this function)
 
 Index: backend/v4l.c
 --- backend/v4l.c.orig
 +++ backend/v4l.c
-@@ -61,6 +61,7 @@
+@@ -59,6 +59,7 @@
  #include <sys/types.h>
  #include <sys/wait.h>
  #include <unistd.h>
@@ -13,7 +13,7 @@ Index: backend/v4l.c
  #include <sys/mman.h>
  
  #include <unistd.h>
-@@ -85,6 +86,10 @@
+@@ -83,6 +84,10 @@
  
  #include <libv4l1.h>
  #include "v4l.h"

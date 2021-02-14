@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.96 2021/01/25 19:28:00 mglocker Exp $
+# $OpenBSD: Makefile,v 1.97 2021/02/14 17:15:05 ajacoutot Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
-DISTNAME=		sane-backends-1.0.31
-REVISION=		2
+DISTNAME=		sane-backends-1.0.32
 
 SHARED_LIBS +=  sane                 2.1      # unknown
 
@@ -21,9 +20,14 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += ${COMPILER_LIBCXX} c execinfo iconv jpeg lzma m png
 WANTLIB += tiff usb-1.0 v4l1 v4l2 v4lconvert xml2 z zstd
 
-MASTER_SITES=		https://gitlab.com/sane-project/backends/uploads/8bf1cae2e1803aefab9e5331550e5d5d/
+MASTER_SITES=		https://gitlab.com/sane-project/backends/uploads/104f09c07d35519cc8e72e604f11643f/
 
 COMPILER=		base-clang ports-gcc
+
+MODULES=		lang/python
+
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/gettext,-tools
 

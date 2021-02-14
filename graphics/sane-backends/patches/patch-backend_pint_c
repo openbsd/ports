@@ -1,11 +1,12 @@
-$OpenBSD: patch-backend_pint_c,v 1.1 2016/05/18 20:02:27 sthen Exp $
+$OpenBSD: patch-backend_pint_c,v 1.2 2021/02/14 17:15:05 ajacoutot Exp $
 
 errno.h header is required now that errno is a per-thread variable.
 "undefined symbol 'errno'" at runtime with dlopen()'d modules.
 
---- backend/pint.c.orig	Wed May 18 13:58:36 2016
-+++ backend/pint.c	Wed May 18 13:58:48 2016
-@@ -44,7 +44,7 @@
+Index: backend/pint.c
+--- backend/pint.c.orig
++++ backend/pint.c
+@@ -42,7 +42,7 @@
  #include <limits.h>
  #include <stdlib.h>
  #include <string.h>

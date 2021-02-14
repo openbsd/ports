@@ -1,11 +1,11 @@
-$OpenBSD: patch-backend_canon_c,v 1.2 2019/08/03 12:56:09 ajacoutot Exp $
+$OpenBSD: patch-backend_canon_c,v 1.3 2021/02/14 17:15:05 ajacoutot Exp $
 
 64bit time_t
 
 Index: backend/canon.c
 --- backend/canon.c.orig
 +++ backend/canon.c
-@@ -1088,7 +1088,7 @@ do_cancel (CANON_Scanner * s)
+@@ -1086,7 +1086,7 @@ do_cancel (CANON_Scanner * s)
  	  s->reset_flag = 0;
  	  DBG (21, "do_cancel: reset_flag = %d\n", s->reset_flag);
  	  s->time0 = -1;
