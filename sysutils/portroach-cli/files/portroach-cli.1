@@ -1,4 +1,4 @@
-.\"	$OpenBSD: portroach-cli.1,v 1.4 2021/02/14 15:23:31 kn Exp $
+.\"	$OpenBSD: portroach-cli.1,v 1.5 2021/02/14 15:55:30 kn Exp $
 .\" Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 .\"
 .\" Permission to use, copy, modify, and distribute this software for any
@@ -21,7 +21,7 @@
 .Nd query portroach
 .Sh SYNOPSIS
 .Nm
-.Op Fl jo
+.Op Fl Ujo
 .Op Fl m Ar maintainer Op Fl p Ar pkgpath
 .Op Fl u Ar url
 .Sh DESCRIPTION
@@ -35,6 +35,10 @@ web interface.
 .Pp
 The options are as follows:
 .Bl -tag -width Ds
+.It Fl U
+Short form of
+.Dq Cm Fl m Ar ports@openbsd.org ,
+i.e. show unmaintained ports.
 .It Fl j
 Print results in raw JSON format.
 .It Fl o
@@ -60,9 +64,9 @@ Default to
 .Lk https://portroach.openbsd.org .
 .El
 .Sh EXAMPLES
-Show all ports maintained by John Doe for which an update is available:
+Show all ports without specific maintainer for which an update is available:
 .Pp
-.Dl $ portroach-cli -o -m doe@
+.Dl $ portroach-cli -U -o
 .Pp
 Show all ports maintained by John Doe which belong to the
 .Dq sysutils

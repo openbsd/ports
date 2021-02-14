@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portroach-cli,v 1.6 2021/02/14 15:23:31 kn Exp $
+# $OpenBSD: portroach-cli,v 1.7 2021/02/14 15:55:30 kn Exp $
 #
 # Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 #
@@ -26,7 +26,7 @@ err() {
 }
 
 usage() {
-	printf 'usage:\t%s [-jo] [-m maintainer [-p pkgpath]] [-u url]\n' \
+	printf 'usage:\t%s [-Ujo] [-m maintainer [-p pkgpath]] [-u url]\n' \
 	    "$self" 1>&2
 	exit 1
 }
@@ -52,15 +52,18 @@ show_ports() {
 		if $pflag then select(.basepkgpath | test($pkgpath; "in")) else . end'
 }
 
+readonly portslist='the openbsd ports mailing-list <ports@openbsd.org>'
+Uflag=false
 mflag=false maintainer=
 jflag=false
 oflag=false
 pflag=false pkgpath=
 uflag=false url=https://portroach.openbsd.org
 
-while getopts jm:op:u: opt
+while getopts Ujm:op:u: opt
 do
 	case $opt in
+	U)	Uflag=true maintainer=$portslist;;
 	j)	jflag=true ;;
 	m)	mflag=true maintainer=$OPTARG ;;
 	o)	oflag=true ;;
@@ -70,11 +73,11 @@ do
 	esac
 done
 shift $((OPTIND - 1))
-$pflag && ! $mflag && usage
+$pflag && ! $Uflag && ! $mflag && usage
 $uflag && [[ $url != @(file|ftp|http|https)://* ]] && err 'invalid url'
 [ $# -eq 0 ] || usage
 
-if $mflag
+if $Uflag || $mflag
 then
 	show_totals | jq -r --arg maintainer "$maintainer" '
 		.maintainer | select(. | test($maintainer; "in"))' |
