@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2021/02/09 11:50:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/14 15:00:29 sthen Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 
-DISTNAME=	calc-2.12.7.6
-REVISION=	0
-EXTRACT_SUFX=	.tar.bz2
+GH_ACCOUNT=	lcn2
+GH_PROJECT=	calc
+GH_TAGNAME=	2.12.8.0
 
 R=		0.0
 SHARED_LIBS=	calc $R \
@@ -21,9 +21,6 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 
-MASTER_SITES=	http://www.isthe.com/chongo/src/calc/ \
-		${MASTER_SITE_SOURCEFORGE:=calc/}
-
 MAKE_FLAGS= Q="" \
 	BINDIR='$${DESTDIR}${PREFIX}/bin' \
 	LIBDIR='$${DESTDIR}${PREFIX}/lib' \
@@ -36,8 +33,10 @@ MAKE_FLAGS= Q="" \
 	ARCH_CFLAGS="" \
 	LDCONFIG="" \
 	LCC="${CC}" \
-	CCOPT="${CFLAGS}"
+	CCOPT="${CFLAGS}" \
+	target=OpenBSD
 
+MAKE_FILE=	Makefile.ship
 USE_GMAKE=	Yes
 TEST_TARGET=	check
 
