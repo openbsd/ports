@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_workspace_c,v 1.1 2021/02/14 20:46:20 sthen Exp $
+
+Index: src/workspace.c
+--- src/workspace.c.orig
++++ src/workspace.c
+@@ -530,7 +530,7 @@ void workspace_show(Con *workspace) {
+     }
+ 
+     workspace->fullscreen_mode = CF_OUTPUT;
+-    LOG("focused now = %p / %s\n", focused, focused->name);
++    LOG("focused now = %p / %s\n", focused, focused->name ? focused->name : "(null)");
+ 
+     /* Set mouse pointer */
+     Con *new_output = con_get_output(focused);

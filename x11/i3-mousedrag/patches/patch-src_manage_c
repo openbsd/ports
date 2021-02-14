@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_manage_c,v 1.1 2021/02/14 20:46:20 sthen Exp $
+
+Index: src/manage.c
+--- src/manage.c.orig
++++ src/manage.c
+@@ -296,7 +296,7 @@ void manage_window(xcb_window_t window, xcb_get_window
+             }
+ 
+             nc = con_descend_tiling_focused(assigned_ws);
+-            DLOG("focused on ws %s: %p / %s\n", assigned_ws->name, nc, nc->name);
++            DLOG("focused on ws %s: %p / %s\n", assigned_ws->name, nc, nc->name ? nc->name : "(null)");
+             if (nc->type == CT_WORKSPACE)
+                 nc = tree_open_con(nc, cwindow);
+             else
