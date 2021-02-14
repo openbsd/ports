@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_persona_h,v 1.1 2021/02/14 08:13:42 bentley Exp $
+Fix build with -fno-common.
+Index: src/persona.h
+--- src/persona.h.orig
++++ src/persona.h
+@@ -28,8 +28,8 @@
+  * difference only if the program has a sgid or suid bit.
+  */
+ 
+-bool keep_sgid;			/* Whether we should keep the  */
+-bool keep_suid;			/* SGID or SUID priviledge. */
++extern bool keep_sgid;			/* Whether we should keep the  */
++extern bool keep_suid;			/* SGID or SUID priviledge. */
+ 
+ /* Get information about the current persona,
+    and switch to the user persona.  */
