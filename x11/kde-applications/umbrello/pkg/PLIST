@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/01/23 18:10:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/02/14 14:24:53 rsadowski Exp $
 @pkgpath x11/kde4/umbrello
 @bin bin/po2xmi5
 @bin bin/umbrello5
@@ -373,6 +373,8 @@ share/umbrello5/
 share/umbrello5/common.ent
 share/umbrello5/docbook2xhtml.xsl
 share/umbrello5/headings/
+${MODPY_COMMENT}share/umbrello5/headings/${MODPY_PYCACHE}/
+share/umbrello5/headings/${MODPY_PYCACHE}heading.${MODPY_PYC_MAGIC_TAG}pyc
 share/umbrello5/headings/heading.adb
 share/umbrello5/headings/heading.ads
 share/umbrello5/headings/heading.as
@@ -386,7 +388,6 @@ share/umbrello5/headings/heading.js
 share/umbrello5/headings/heading.php
 share/umbrello5/headings/heading.pm
 share/umbrello5/headings/heading.py
-share/umbrello5/headings/heading.pyc
 share/umbrello5/headings/heading.rb
 share/umbrello5/headings/heading.sql
 share/umbrello5/headings/heading.xsd

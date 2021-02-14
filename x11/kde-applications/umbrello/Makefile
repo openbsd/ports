@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2020/11/08 20:12:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/14 14:24:53 rsadowski Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
 CATEGORIES =	x11 productivity
+REVISION =	0
 
 HOMEPAGE =	https://umbrello.kde.org/
 
@@ -25,8 +26,10 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =	math/graphviz
+BUILD_DEPENDS =	devel/llvm
 
 LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/karchive \
@@ -47,9 +50,11 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 		textproc/libxslt \
 		textproc/libxml
 
-TEST_IS_INTERACTIVE =	X11
 
-CONFIGURE_ARGS =	-DBUILD_APIDOC=OFF
+CONFIGURE_ARGS =	-DBUILD_APIDOC=OFF \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+
+TEST_IS_INTERACTIVE =	X11
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
