@@ -1,0 +1,65 @@
+$OpenBSD: patch-geekcode_c,v 1.3 2021/02/14 20:48:18 naddy Exp $
+
+Index: geekcode.c
+--- geekcode.c.orig
++++ geekcode.c
+@@ -20,9 +20,59 @@
+ */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <sys/stat.h>
+ #include "geekcode.h"
++
++/* Geek type */
++int gc_type;
++
++/* Appearance section */
++int gc_dress;
++int gc_height;
++int gc_weight;
++int gc_age;
++
++/* Computers section */
++int gc_computers;
++int gc_unix_type;
++int gc_unix;
++int gc_perl;
++int gc_linux;
++int gc_emacs;
++int gc_www;
++int gc_usenet;
++int gc_oracle;
++int gc_kibo;
++int gc_windows;
++int gc_os2;
++int gc_mac;
++int gc_vms;
++
++/* Politics section */
++int gc_social;
++int gc_economic;
++int gc_cypher;
++int gc_pgp;
++
++/* Entertainment section */
++int gc_startrek;
++int gc_babylon5;
++int gc_xfiles;
++int gc_rp;
++int gc_television;
++int gc_books;
++int gc_dilbert;
++int gc_doom;
++int gc_geekcode;
++
++/* Lifestyle section */
++int gc_education;
++int gc_housing;
++int gc_relationships;
++int gc_sex_type;
++int gc_sex;
+ 
+ int readgeek(char geekcode[64][16],char *data,int *j,int *k){
+   int i;

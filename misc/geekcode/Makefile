@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/14 20:48:18 naddy Exp $
 
 COMMENT=	geek code generator
 
 DISTNAME=	geekcode-1.7.3
 CATEGORIES=	misc
-REVISION=	1
+REVISION=	2
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=geekcode/}
 
