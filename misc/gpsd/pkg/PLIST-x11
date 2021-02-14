@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-x11,v 1.2 2019/07/31 15:44:31 kirby Exp $
+@comment $OpenBSD: PLIST-x11,v 1.3 2021/02/14 08:30:56 kirby Exp $
 @conflict gpsd-motif-<=2.38p4
 @pkgpath misc/gpsd,-motif
 bin/xgps
@@ -7,6 +7,7 @@ bin/xgpsspeed
 @man man/man1/xgpsspeed.1
 share/applications/xgps.desktop
 share/applications/xgpsspeed.desktop
+share/gpsd/icons/gpsd-logo.png
 share/pixmaps/
 share/pixmaps/gpsd-logo.png
 @tag update-desktop-database

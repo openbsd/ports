@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2021/01/04 14:06:35 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2021/02/14 08:30:56 kirby Exp $
 @conflict gpsd-python-<=2.38p3
 @pkgpath misc/gpsd,-python
 @newuser _gpsd:551:dialer:daemon:GPS server:/nonexistent:/sbin/nologin
@@ -15,12 +15,14 @@ bin/gpsprof
 @bin bin/gpsrinex
 @bin bin/gpxlogger
 @bin bin/lcdgps
+@bin bin/ntpshmmon
 bin/ubxtool
 bin/zerk
 include/gps.h
 include/gpsd_config.h
 include/libgpsmm.h
 @lib lib/libgps.so.${LIBgps_VERSION}
+@lib lib/libgpsdpacket.so.${LIBgpsdpacket_VERSION}
 lib/pkgconfig/libgps.pc
 lib/python${MODPY_VERSION}/site-packages/gps/
 lib/python${MODPY_VERSION}/site-packages/gps-${VERSION}.egg-info
@@ -28,22 +30,29 @@ lib/python${MODPY_VERSION}/site-packages/gps/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}aiogps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}aiogps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}clienthelpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}clienthelpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}fake.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}fake.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}gps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}gps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}packet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}packet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}watch_options.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}watch_options.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gps/aiogps.py
 lib/python${MODPY_VERSION}/site-packages/gps/client.py
-@so lib/python${MODPY_VERSION}/site-packages/gps/clienthelpers.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gps/clienthelpers.py
 lib/python${MODPY_VERSION}/site-packages/gps/fake.py
 lib/python${MODPY_VERSION}/site-packages/gps/gps.py
 lib/python${MODPY_VERSION}/site-packages/gps/misc.py
-@so lib/python${MODPY_VERSION}/site-packages/gps/packet.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/gps/packet.py
 lib/python${MODPY_VERSION}/site-packages/gps/watch_options.py
 @man man/man1/cgps.1
 @man man/man1/gegps.1
@@ -59,6 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/gps/watch_options.py
 @man man/man1/gpsrinex.1
 @man man/man1/gpxlogger.1
 @man man/man1/lcdgps.1
+@man man/man1/ntpshmmon.1
 @man man/man1/ubxtool.1
 @man man/man1/zerk.1
 @man man/man3/libQgpsmm.3
@@ -69,5 +79,15 @@ lib/python${MODPY_VERSION}/site-packages/gps/watch_options.py
 @man man/man8/gpsd.8
 @man man/man8/gpsdctl.8
 @man man/man8/gpsinit.8
+@man man/man8/ppscheck.8
 @bin sbin/gpsd
 @bin sbin/gpsdctl
+@comment share/applications/
+share/gpsd/
+share/gpsd/doc/
+share/gpsd/doc/AUTHORS
+share/gpsd/doc/COPYING
+share/gpsd/doc/NEWS
+share/gpsd/doc/README.adoc
+share/gpsd/doc/build.adoc
+@comment share/gpsd/icons/

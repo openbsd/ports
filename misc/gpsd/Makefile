@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.79 2021/01/04 14:06:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2021/02/14 08:30:56 kirby Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 
-VERSION=		3.19
+VERSION=		3.21
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-REVISION=		2
 
-SHARED_LIBS +=		gps	20.0 # 25.0
+SHARED_LIBS +=		gps		21.0	# 27.0
+SHARED_LIBS +=		gpsdpacket	0.0	# 21.0
 CATEGORIES=		misc geo
 
 HOMEPAGE =		https://gpsd.gitlab.io/gpsd/index.html
@@ -36,11 +36,13 @@ MODSCONS_FLAGS +=	gpsd_user=_gpsd \
 			prefix=${PREFIX} \
 			shared=yes \
 			target_python=${MODPY_BIN} \
+			python_shebang=${MODPY_BIN} \
 			python_libdir=${DESTDIR}/${MODPY_SITEPKG}
 
 MULTI_PACKAGES =	-main -php -x11
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-serial${MODPY_FLAVOR} \
 			textproc/xmlto \
 			textproc/libxslt \
 			textproc/docbook \
@@ -68,14 +70,13 @@ PREFIX-php=		${VARBASE}/www
 SUBST_VARS +=		VERSION
 
 MODPY_ADJ_FILES =	gegps gpsprof gps/gps.py gpsfake gpscat xgps xgpsspeed \
-			leapsecond.py test_maidenhead.py test_misc.py ubxtool zerk
+			gps/aiogps.py gps/clienthelpers.py ubxtool zerk
 
 pre-configure:
 	@perl -pi -e "s,/usr/share/gpsd/,," ${WRKSRC}/packaging/X11/*.desktop
 	@perl -pi -e "s,http://docbook.sourceforge.net/release/xsl/current/,\
 		${LOCALBASE}/share/xsl/docbook/," \
 		${WRKSRC}/SConstruct
-	@perl -pi -e "s,python2,${MODPY_BIN}," ${WRKSRC}/regress-driver
 	${SUBST_CMD} ${WRKSRC}/SConstruct
 
 post-install:
