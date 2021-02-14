@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2021/02/07 22:06:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.132 2021/02/14 13:19:27 jasper Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -42,7 +42,6 @@
      SUBDIR += lives
      SUBDIR += lsdvd
      SUBDIR += mediainfo
-     SUBDIR += ming
      SUBDIR += minidlna
      SUBDIR += mjpegtools
      SUBDIR += mjpegtools,quicktime
@@ -77,8 +76,6 @@
      SUBDIR += subrip
      SUBDIR += subtitleripper
      SUBDIR += svt-av1
-     SUBDIR += swfmill
-     SUBDIR += swftools
      SUBDIR += synfig
      SUBDIR += synfigstudio
      SUBDIR += transcode
