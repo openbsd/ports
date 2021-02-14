@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/14 02:16:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/14 17:57:23 tb Exp $
 
 COMMENT=	simple menu patterned after plan9
 
-DISTNAME=	9menu-1.9
+DISTNAME=	9menu-1.10
 CATEGORIES=	plan9
-REVISION=	0
 
 MAINTAINER=	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
