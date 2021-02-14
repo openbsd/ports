@@ -1,26 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/12 21:30:29 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/14 16:57:14 bcallah Exp $
 @bin bin/pspp
 @bin bin/pspp-convert
 @bin bin/pspp-dump-sav
+@bin bin/pspp-output
 @bin bin/psppire
 @info info/pspp-dev.info
 @info info/pspp.info
 lib/pspp/
-lib/pspp/libpspp-1.2.0.so
-lib/pspp/libpspp-core-1.2.0.so
-lib/pspp/libpspp-core.a
+@so lib/pspp/libpspp-1.4.1.so
+@so lib/pspp/libpspp-core-1.4.1.so
+@static-lib lib/pspp/libpspp-core.a
 lib/pspp/libpspp-core.la
-lib/pspp/libpspp-core.so
-lib/pspp/libpspp.a
+@so lib/pspp/libpspp-core.so
+@static-lib lib/pspp/libpspp.a
 lib/pspp/libpspp.la
-lib/pspp/libpspp.so
+@so lib/pspp/libpspp.so
 @man man/man1/pspp-convert.1
 @man man/man1/pspp-dump-sav.1
+@man man/man1/pspp-output.1
 @man man/man1/pspp.1
 @man man/man1/psppire.1
-share/appdata/
-share/appdata/pspp.appdata.xml
-share/applications/pspp.desktop
+share/applications/org.fsf.pspp.desktop
 share/doc/pspp/
 share/doc/pspp/pspp.xml
 share/icons/hicolor/16x16/apps/pspp.png
@@ -28,12 +28,10 @@ share/icons/hicolor/16x16/mimetypes/application-x-spss-por.png
 share/icons/hicolor/16x16/mimetypes/application-x-spss-sav.png
 share/icons/hicolor/16x16/mimetypes/application-x-spss-sps.png
 share/icons/hicolor/16x16/mimetypes/application-x-spss-zsav.png
-share/icons/hicolor/22x22/apps/pspp.png
 share/icons/hicolor/22x22/mimetypes/application-x-spss-por.png
 share/icons/hicolor/22x22/mimetypes/application-x-spss-sav.png
 share/icons/hicolor/22x22/mimetypes/application-x-spss-sps.png
 share/icons/hicolor/22x22/mimetypes/application-x-spss-zsav.png
-share/icons/hicolor/24x24/apps/pspp.png
 share/icons/hicolor/24x24/mimetypes/application-x-spss-por.png
 share/icons/hicolor/24x24/mimetypes/application-x-spss-sav.png
 share/icons/hicolor/24x24/mimetypes/application-x-spss-sps.png
@@ -58,7 +56,6 @@ share/locale/ca/LC_MESSAGES/pspp.mo
 share/locale/cs/LC_MESSAGES/pspp.mo
 share/locale/de/LC_MESSAGES/pspp.mo
 share/locale/el/LC_MESSAGES/pspp.mo
-share/locale/en_GB/LC_MESSAGES/pspp.mo
 share/locale/es/LC_MESSAGES/pspp.mo
 share/locale/fr/LC_MESSAGES/pspp.mo
 share/locale/gl/LC_MESSAGES/pspp.mo
@@ -73,6 +70,9 @@ share/locale/sl/LC_MESSAGES/pspp.mo
 share/locale/tr/LC_MESSAGES/pspp.mo
 share/locale/uk/LC_MESSAGES/pspp.mo
 share/locale/zh_CN/LC_MESSAGES/pspp.mo
+share/metainfo/
+share/metainfo/org.fsf.pspp.metainfo.xml
+share/mime/packages/pspp.xml
 share/pspp/
 share/pspp/actions/
 share/pspp/aggregate.ui
@@ -139,3 +139,4 @@ share/pspp/variable-info.ui
 share/pspp/weight.ui
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+@tag update-mime-database
