@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/26 05:38:13 daniel Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/14 04:00:35 daniel Exp $
 
 COMMENT =		headers for interoperability between C++ and Python
 
-MODPY_EGG_VERSION =	2.6.1
+MODPY_EGG_VERSION =	2.6.2
 DISTNAME =		pybind11-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
