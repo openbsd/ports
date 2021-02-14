@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2020/11/26 13:59:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/02/14 16:37:59 sthen Exp $
 
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
-DISTNAME=	freeipmi-1.6.6
-REVISION=	0
+DISTNAME=	freeipmi-1.6.7
 
 SHARED_LIBS +=  freeipmi             7.0      # 19.3
 SHARED_LIBS +=  ipmiconsole          3.1      # 5.5
@@ -30,18 +29,21 @@ LIB_DEPENDS=	security/libgcrypt \
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 
+# modified m4 files
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-FAKE_FLAGS=	localstatedir=${PREFIX}/share/examples/freeipmi \
-		sysconfdir=${PREFIX}/share/examples/freeipmi \
-		FREEIPMI_SYSCONFDIR=${PREFIX}/share/examples/freeipmi
 LIBTOOL_FLAGS=	--tag=disable-static
 
+pre-install:
+	${INSTALL_DATA_DIR} ${WRKINST}${SYSCONFDIR}/freeipmi
+
 post-install:
-	cd ${PREFIX}/share/examples/freeipmi && \
-	    mv lib/freeipmi/ipckey . && \
-	    rm -r init.d sysconfig lib
+	mv ${WRKINST}${SYSCONFDIR}/freeipmi ${PREFIX}/share/examples/
+	mv ${WRKINST}/var/lib/freeipmi/ipckey ${PREFIX}/share/examples/freeipmi
+	rmdir ${WRKINST}/var/lib{/freeipmi,}
+	rm -r ${WRKINST}${SYSCONFDIR}/{sysconfig,init.d}
 
 .include <bsd.port.mk>

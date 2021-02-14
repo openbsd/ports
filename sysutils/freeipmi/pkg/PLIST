@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/11/28 08:34:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/02/14 16:37:59 sthen Exp $
 include/freeipmi/
 include/freeipmi/api/
 include/freeipmi/api/ipmi-api.h
@@ -428,8 +428,10 @@ share/doc/freeipmi/freeipmi-oem-documentation-requirements.txt
 share/doc/freeipmi/freeipmi-testing.txt
 share/examples/freeipmi/
 @sample ${SYSCONFDIR}/freeipmi/
+@mode 640
 share/examples/freeipmi/freeipmi.conf
 @sample ${SYSCONFDIR}/freeipmi/freeipmi.conf
+@mode
 share/examples/freeipmi/freeipmi_interpret_sel.conf
 @sample ${SYSCONFDIR}/freeipmi/freeipmi_interpret_sel.conf
 share/examples/freeipmi/freeipmi_interpret_sensor.conf
@@ -437,6 +439,7 @@ share/examples/freeipmi/freeipmi_interpret_sensor.conf
 share/examples/freeipmi/ipckey
 @sample /var/db/freeipmi/
 @sample /var/db/freeipmi/ipckey
+@mode 640
 share/examples/freeipmi/ipmidetect.conf
 @sample ${SYSCONFDIR}/freeipmi/ipmidetect.conf
 share/examples/freeipmi/ipmidetectd.conf
@@ -445,6 +448,7 @@ share/examples/freeipmi/ipmiseld.conf
 @sample ${SYSCONFDIR}/freeipmi/ipmiseld.conf
 share/examples/freeipmi/libipmiconsole.conf
 @sample ${SYSCONFDIR}/freeipmi/libipmiconsole.conf
+@mode
 @sample /var/cache/ipmimonitoringsdrcache/
 @sample /var/cache/ipmiseld/
 @sample /var/log/freeipmi/
