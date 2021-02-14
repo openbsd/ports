@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_AudacityApp_cpp,v 1.8 2020/01/24 05:20:37 bket Exp $
+$OpenBSD: patch-src_AudacityApp_cpp,v 1.9 2021/02/14 08:36:20 ajacoutot Exp $
 
 Don't hardcode shared libraries version number.
 
 Index: src/AudacityApp.cpp
 --- src/AudacityApp.cpp.orig
 +++ src/AudacityApp.cpp
-@@ -642,12 +642,12 @@ class GnomeShutdown
+@@ -562,12 +562,12 @@ class GnomeShutdown
     {
        mArgv[0].reset(strdup("Audacity"));
  

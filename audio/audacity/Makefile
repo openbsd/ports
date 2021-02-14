@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2020/01/24 05:20:37 bket Exp $
+# $OpenBSD: Makefile,v 1.76 2021/02/14 08:36:20 ajacoutot Exp $
 
 COMMENT=	free audio editor
 
@@ -6,8 +6,9 @@ COMMENT=	free audio editor
 # so can't be fetched automatically
 GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
-GH_TAGNAME=	Audacity-2.3.3
+GH_TAGNAME=	Audacity-2.4.2
 DISTNAME=	${GH_TAGNAME:L}
+
 CATEGORIES=	audio
 
 HOMEPAGE=	https://www.audacityteam.org/
@@ -15,115 +16,88 @@ HOMEPAGE=	https://www.audacityteam.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += FLAC FLAC++ ICE SDL2 SM SoundTouch X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xss
-WANTLIB += Xxf86vm aom atk-1.0 atk-bridge-2.0 avcodec avformat
-WANTLIB += avutil bz2 c cairo cairo-gobject crypto dav1d epoxy
-WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gsm gthread-2.0 gtk-3 harfbuzz iconv id3tag intl jpeg
-WANTLIB += lzma m mad mspack notify ogg opus pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png portaudio portmidi samplerate
-WANTLIB += sndfile sndio soxr speex ssl swresample theoradec theoraenc
-WANTLIB += tiff usbhid vamp-hostsdk vorbis vorbisenc vorbisfile
-WANTLIB += vpx wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
-WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
-WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 x264 x265 xcb xcb-render
-WANTLIB += xcb-shm xml2 xvidcore z zstd
+WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ SoundTouch atk-1.0 c
+WANTLIB += cairo cairo-gobject expat gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz id3tag intl m mad
+WANTLIB += ogg pango-1.0 pangocairo-1.0 portaudio portmidi sndfile
+WANTLIB += soxr vamp-hostsdk vorbis vorbisenc vorbisfile wx_baseu-3.0
+WANTLIB += wx_baseu_net-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
+WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 z
 # dlopened
-WANTLIB += mp3lame
+WANTLIB += avcodec avformat avutil mp3lame
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
-MODULES=	lang/python
+MODULES=	devel/cmake \
+		lang/python
+
 MODPY_RUNDEP=	No
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS=	devel/gettext,-tools \
-		shells/bash
-# Used to build suild, not installed by default
-# See ${WRKSRC}/lib-src/lv2/suil and https://drobilla.net/software/suil
-BUILD_DEPENDS+=	x11/gtk+2
-LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
-		audio/libsoxr \
-		audio/flac \
+BUILD_DEPENDS=	devel/gettext,-tools
+
+LIB_DEPENDS=	audio/flac \
 		audio/lame \
-		audio/libvorbis \
 		audio/libid3tag \
 		audio/libmad \
-		audio/portaudio-svn>=1406p1 \
+		audio/libsoxr \
+		audio/libvorbis \
+		audio/portaudio-svn \
 		audio/portmidi \
 		audio/soundtouch \
 		audio/vamp-plugin-sdk \
-		graphics/ffmpeg
+		graphics/ffmpeg \
+		x11/wxWidgets
+
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
 
-SEPARATE_BUILD= No
+CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
+		-Daudacity_use_expat:STRING=system \
+		-Daudacity_use_wxwidgets:STRING=system \
+		-Daudacity_use_soxr:STRING=system \
+		-Daudacity_use_sndfile:STRING=system \
+		-Daudacity_use_portsmf:STRING=local \
+		-Daudacity_use_portaudio:STRING=system \
+		-Daudacity_use_ffmpeg:STRING=loaded \
+		-Daudacity_use_flac:STRING=system \
+		-Daudacity_use_id3tag:STRING=system \
+		-Daudacity_use_lame:STRING=system \
+		-Daudacity_use_mad:STRING=system \
+		-Daudacity_use_midi:STRING=system \
+		-Daudacity_use_ogg:STRING=system \
+		-Daudacity_use_sbsms:STRING=local \
+		-Daudacity_use_soundtouch:STRING=system \
+		-Daudacity_use_twolame:STRING=off \
+		-Daudacity_use_vamp:STRING=system \
+		-Daudacity_use_vorbis:STRING=system \
+		-Daudacity_use_pch:STRING=off \
+		-Daudacity_use_vst:STRING=local
 
-USE_GMAKE=		Yes
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-CONFIGURE_STYLE=	autoreconf
-CONFIGURE_ENV=		CC="${CC}" CXX="${CXX}" OBJCXX="${CXX}" \
-			CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib ${LDFLAGS}"
+# disable portmixer that requires Pa_GetStreamHostApiType whic our
+# audio/portaudio does not provide
+CONFIGURE_ARGS +=	-Daudacity_use_portmixer:STRING=off
 
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} \
-			${WRKSRC}/lib-src/lib-widget-extra \
-			${WRKSRC}/lib-src/portsmf \
-			${WRKSRC}/lib-src/FileDialog \
-			${WRKSRC}/lib-src/sbsms \
-			${WRKSRC}/lib-src/libnyquist
+# requires gtk+2
+CONFIGURE_ARGS +=	-Daudacity_use_lv2:STRING=off
 
-CONFIGURE_ARGS=		--disable-dynamic-loading \
-			--enable-ladspa \
-			--enable-nyquist \
-			--enable-unicode \
-			--with-expat=system \
-			--with-ffmpeg=system \
-			--with-lame=system \
-			--with-lib-preferences=system \
-			--with-libflac=system \
-			--with-libid3tag=system \
-			--with-libmad=system \
-			--with-libsndfile=system \
-			--with-libsoxr=system \
-			--with-libvamp=system \
-			--with-libvorbis=system \
-			--with-lv2=local \
-			--with-midi=yes \
-			--with-portaudio=system \
-			--with-portmidi=system \
-			--with-sbsms=local \
-			--with-soundtouch=system \
-			--with-widgetextra=local \
-			--without-liblrdf \
-			--without-libtwolame \
-			--without-portmixer \
-			--without-redland
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
+CONFIGURE_ARGS +=	-DHAVE_MMX:BOOL=OFF
+CONFIGURE_ARGS +=	-DHAVE_SSE:BOOL=OFF
+.endif
 
 .if ${MACHINE_ARCH} != "amd64"
-CONFIGURE_ARGS+=	--disable-sse
+CONFIGURE_ARGS +=	-DHAVE_SSE2:BOOL=OFF
 .endif
 
 NO_TEST=	Yes
 
-# dummy Makefile to disable portmixer
-post-extract:
-	printf 'all:\ninstall:\n' > ${WRKSRC}/lib-src/portmixer/Makefile
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/images/AudacityLogo.xpm \
-		${PREFIX}/share/pixmaps/audacity.xpm
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/src/audacity.desktop \
-		${PREFIX}/share/applications/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mime/packages
-	${INSTALL_DATA} ${WRKSRC}/src/audacity.xml \
-		${PREFIX}/share/mime/packages/
+.for i in 16 22 24 32
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${i}x${i}/apps
+	mv ${PREFIX}/share/icons/hicolor/${i}x${i}/audacity.png \
+		${PREFIX}/share/icons/hicolor/${i}x${i}/apps/
+.endfor
 
 .include <bsd.port.mk>
