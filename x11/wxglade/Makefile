@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/06 00:42:58 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/14 18:52:07 daniel Exp $
 
 COMMENT=		GUI designer for wxWidgets/wxPython user interfaces
 
-MODPY_EGG_VERSION=	0.9.5
+MODPY_EGG_VERSION=	1.0.0
 DISTNAME=		wxGlade-${MODPY_EGG_VERSION}
 PKGNAME=		wxglade-${MODPY_EGG_VERSION}
 EXTRACT_SUFX=		.zip
