@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/14 15:51:34 sthen Exp $
 
 COMMENT=	enhanced HTTPS support for httplib and urllib2
 
-MODPY_EGG_VERSION=	0.4.3
+MODPY_EGG_VERSION=	0.5.1
 MODPY_PI_DIR=	n/ndg-httpsclient
 DISTNAME=	ndg_httpsclient-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}ndg-httpsclient-${MODPY_EGG_VERSION}
-REVISION=	1
 
 CATEGORIES=	www
 
@@ -18,13 +17,12 @@ MODPY_SETUPTOOLS= Yes
 MODPY_PI=	Yes
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 RUN_DEPENDS=	security/py-openssl${MODPY_FLAVOR} \
 		devel/py-asn1${MODPY_FLAVOR}
 
-post-install:
-	mv ${PREFIX}/bin/ndg_httpclient \
-	    ${PREFIX}/bin/ndg_httpclient${MODPY_BIN_SUFFIX}
+# tests require a running listener;
+# cd ${WRKSRC}/ndg/httpsclient/test; scripts/openssl_https_server.sh
 
 .include <bsd.port.mk>
