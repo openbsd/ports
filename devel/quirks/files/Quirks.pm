@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1174 2021/02/13 23:01:10 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1175 2021/02/14 13:19:49 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2078,6 +2078,9 @@ my $obsolete_reason = {
 	'icinga-web' => 38,
 	'icinga-cgi' => 38,
 	'icinga-idoutils' => 38,
+	'swftools' => 6,
+	'swfmill' => 6,
+	'ming' => 6,
 };
 
 # reasons for obsolete packages
