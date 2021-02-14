@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1242 2021/02/14 14:23:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.1243 2021/02/14 15:58:04 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -611,9 +611,7 @@
      SUBDIR += py-pf,python3
      SUBDIR += py-portend
      SUBDIR += py-portend,python3
-     SUBDIR += py-ripe.atlas.cousteau
      SUBDIR += py-ripe.atlas.cousteau,python3
-     SUBDIR += py-ripe.atlas.sagan
      SUBDIR += py-ripe.atlas.sagan,python3
      SUBDIR += py-ripe.atlas.tools
      SUBDIR += py-rrdtool
