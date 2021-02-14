@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1180 2021/02/14 15:58:04 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1181 2021/02/14 18:06:22 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -548,6 +548,7 @@ my $stem_extensions = {
 	'py-mechanize' => 'py3-mechanize',
 	'py-ripe.atlas.cousteau' => 'py3-ripe.atlas.cousteau',
 	'py-ripe.atlas.sagan' => 'py3-ripe.atlas.sagan',
+	'py-qtawesome' => 'py3-qtawesome',
 };
 
 my $obsolete_reason = {
