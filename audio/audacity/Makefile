@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2021/02/14 08:36:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2021/02/14 11:55:59 jca Exp $
 
 COMMENT=	free audio editor
 
@@ -75,7 +75,7 @@ CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_pch:STRING=off \
 		-Daudacity_use_vst:STRING=local
 
-# disable portmixer that requires Pa_GetStreamHostApiType whic our
+# disable portmixer that requires Pa_GetStreamHostApiType which our
 # audio/portaudio does not provide
 CONFIGURE_ARGS +=	-Daudacity_use_portmixer:STRING=off
 
