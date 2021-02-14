@@ -1,0 +1,8 @@
+PyQt-builder is the PEP 517 compliant build system for PyQt and projects
+that extend PyQt. It extends the sip build system and uses Qt's qmake to
+perform the actual compilation and installation of extension modules.
+
+Projects that use PyQt-builder provide an appropriate pyproject.toml
+file and an optional project.py script. Any PEP 517 compliant frontend,
+for example sip-install or pip can then be used to build and install the
+project.
