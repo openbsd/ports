@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 17:54:17 espie Exp $
-bin/inviz
-bin/viz
-@man man/man1/inviz.1
-@man man/man1/viz.1
