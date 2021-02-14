@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/09/23 16:35:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/02/14 17:42:51 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -56,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/KASV
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/KASValidityTest_FFCStatic_NOKC_ZZOnly_resp.fax
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/RFC5114.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/bad_exchange.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dh_key_256.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhkey.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhkey.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/dhkey.txt
@@ -2239,6 +2240,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/bc_pat
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ca/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ca/ca.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ca/ca_key.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ca/rsa_ca.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ca/rsa_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/cdp_all_reasons.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/cdp_crl_issuer.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/cdp_empty_hostname.pem
