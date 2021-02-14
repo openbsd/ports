@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2020/08/03 08:50:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/02/14 16:42:14 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -24,17 +24,9 @@ include/libvirt/libvirt-stream.h
 include/libvirt/libvirt.h
 include/libvirt/virterror.h
 @comment lib/charset.alias
-@static-lib lib/libvirt-admin.a
-lib/libvirt-admin.la
 @lib lib/libvirt-admin.so.${LIBvirt-admin_VERSION}
-@static-lib lib/libvirt-lxc.a
-lib/libvirt-lxc.la
 @lib lib/libvirt-lxc.so.${LIBvirt-lxc_VERSION}
-@static-lib lib/libvirt-qemu.a
-lib/libvirt-qemu.la
 @lib lib/libvirt-qemu.so.${LIBvirt-qemu_VERSION}
-@static-lib lib/libvirt.a
-lib/libvirt.la
 @lib lib/libvirt.so.${LIBvirt_VERSION}
 lib/pkgconfig/libvirt-admin.pc
 lib/pkgconfig/libvirt-lxc.pc
@@ -58,9 +50,6 @@ libexec/libvirt-guests.sh
 @man man/man7/virkeyname-linux.7
 @man man/man7/virkeyname-osx.7
 @man man/man7/virkeyname-win32.7
-share/augeas/
-share/augeas/lenses/
-share/augeas/lenses/tests/
 share/doc/libvirt/
 share/doc/libvirt/examples/
 share/doc/libvirt/examples/c/
@@ -195,6 +184,7 @@ share/doc/libvirt/html/formatstorage.html
 share/doc/libvirt/html/formatstoragecaps.html
 share/doc/libvirt/html/formatstorageencryption.html
 share/doc/libvirt/html/generic.css
+share/doc/libvirt/html/glib-adoption.html
 share/doc/libvirt/html/goals.html
 share/doc/libvirt/html/governance.html
 share/doc/libvirt/html/hacking.html
@@ -237,10 +227,11 @@ share/doc/libvirt/html/java.html
 share/doc/libvirt/html/js/
 share/doc/libvirt/html/js/main.js
 share/doc/libvirt/html/kbase/
-share/doc/libvirt/html/kbase.html
 share/doc/libvirt/html/kbase/backing_chains.html
+share/doc/libvirt/html/kbase/debuglogs.html
 share/doc/libvirt/html/kbase/domainstatecapture.html
 share/doc/libvirt/html/kbase/incrementalbackupinternals.html
+share/doc/libvirt/html/kbase/index.html
 share/doc/libvirt/html/kbase/kvm-realtime.html
 share/doc/libvirt/html/kbase/launch_security_sev.html
 share/doc/libvirt/html/kbase/locking-lockd.html
@@ -251,6 +242,7 @@ share/doc/libvirt/html/kbase/qemu-passthrough-security.html
 share/doc/libvirt/html/kbase/rpm-deployment.html
 share/doc/libvirt/html/kbase/s390_protected_virt.html
 share/doc/libvirt/html/kbase/secureusage.html
+share/doc/libvirt/html/kbase/systemtap.html
 share/doc/libvirt/html/kbase/virtiofs.html
 share/doc/libvirt/html/libvirt-daemon-arch.png
 share/doc/libvirt/html/libvirt-driver-arch.png
@@ -278,6 +270,8 @@ share/doc/libvirt/html/logos/logo-square-powered-256.png
 share/doc/libvirt/html/logos/logo-square-powered-96.png
 share/doc/libvirt/html/logos/logo-square-powered.svg
 share/doc/libvirt/html/logos/logo-square.svg
+share/doc/libvirt/html/logos/logo-sticker-hexagon.svg
+share/doc/libvirt/html/logos/logo-sticker-square.svg
 share/doc/libvirt/html/main.css
 share/doc/libvirt/html/manifest.json
 share/doc/libvirt/html/manpages/
@@ -345,7 +339,7 @@ share/examples/libvirt/libvirt.conf
 @sample ${SYSCONFDIR}/libvirt/libvirt.conf
 share/examples/libvirt/sasl2/
 share/examples/libvirt/sasl2/libvirt.conf
-@sample lib/sasl2/libvirt.conf
+@sample ${SYSCONFDIR}/sasl2/libvirt.conf
 share/libvirt/
 share/libvirt/api/
 share/libvirt/api/libvirt-admin-api.xml
@@ -353,8 +347,10 @@ share/libvirt/api/libvirt-api.xml
 share/libvirt/api/libvirt-lxc-api.xml
 share/libvirt/api/libvirt-qemu-api.xml
 share/libvirt/cpu_map/
+share/libvirt/cpu_map/arm_FT-2000plus.xml
 share/libvirt/cpu_map/arm_Falkor.xml
 share/libvirt/cpu_map/arm_Kunpeng-920.xml
+share/libvirt/cpu_map/arm_Tengyun-S2500.xml
 share/libvirt/cpu_map/arm_ThunderX299xx.xml
 share/libvirt/cpu_map/arm_cortex-a53.xml
 share/libvirt/cpu_map/arm_cortex-a57.xml
@@ -380,6 +376,7 @@ share/libvirt/cpu_map/x86_Conroe.xml
 share/libvirt/cpu_map/x86_Cooperlake.xml
 share/libvirt/cpu_map/x86_Dhyana.xml
 share/libvirt/cpu_map/x86_EPYC-IBPB.xml
+share/libvirt/cpu_map/x86_EPYC-Rome.xml
 share/libvirt/cpu_map/x86_EPYC.xml
 share/libvirt/cpu_map/x86_Haswell-IBRS.xml
 share/libvirt/cpu_map/x86_Haswell-noTSX-IBRS.xml
@@ -407,6 +404,7 @@ share/libvirt/cpu_map/x86_Skylake-Client.xml
 share/libvirt/cpu_map/x86_Skylake-Server-IBRS.xml
 share/libvirt/cpu_map/x86_Skylake-Server-noTSX-IBRS.xml
 share/libvirt/cpu_map/x86_Skylake-Server.xml
+share/libvirt/cpu_map/x86_Snowridge.xml
 share/libvirt/cpu_map/x86_Westmere-IBRS.xml
 share/libvirt/cpu_map/x86_Westmere.xml
 share/libvirt/cpu_map/x86_athlon.xml
@@ -429,6 +427,7 @@ share/libvirt/cpu_map/x86_vendors.xml
 share/libvirt/schemas/
 share/libvirt/schemas/basictypes.rng
 share/libvirt/schemas/capability.rng
+share/libvirt/schemas/cpu.rng
 share/libvirt/schemas/cputypes.rng
 share/libvirt/schemas/domain.rng
 share/libvirt/schemas/domainbackup.rng
@@ -450,4 +449,50 @@ share/libvirt/schemas/storagepool.rng
 share/libvirt/schemas/storagepoolcaps.rng
 share/libvirt/schemas/storagevol.rng
 share/libvirt/test-screenshot.png
+share/locale/as/LC_MESSAGES/libvirt.mo
+share/locale/bg/LC_MESSAGES/libvirt.mo
+share/locale/bn_IN/LC_MESSAGES/libvirt.mo
+share/locale/bs/LC_MESSAGES/libvirt.mo
+share/locale/ca/LC_MESSAGES/libvirt.mo
+share/locale/cs/LC_MESSAGES/libvirt.mo
+share/locale/da/LC_MESSAGES/libvirt.mo
+share/locale/de/LC_MESSAGES/libvirt.mo
+share/locale/el/LC_MESSAGES/libvirt.mo
+share/locale/en_GB/LC_MESSAGES/libvirt.mo
+share/locale/es/LC_MESSAGES/libvirt.mo
+share/locale/fi/LC_MESSAGES/libvirt.mo
+share/locale/fr/LC_MESSAGES/libvirt.mo
+share/locale/gu/LC_MESSAGES/libvirt.mo
+share/locale/hi/LC_MESSAGES/libvirt.mo
+share/locale/hu/LC_MESSAGES/libvirt.mo
+share/locale/id/LC_MESSAGES/libvirt.mo
+share/locale/it/LC_MESSAGES/libvirt.mo
+share/locale/ja/LC_MESSAGES/libvirt.mo
+share/locale/kn/LC_MESSAGES/libvirt.mo
+share/locale/ko/LC_MESSAGES/libvirt.mo
+share/locale/mk/LC_MESSAGES/libvirt.mo
+share/locale/ml/LC_MESSAGES/libvirt.mo
+share/locale/mr/LC_MESSAGES/libvirt.mo
+share/locale/ms/LC_MESSAGES/libvirt.mo
+share/locale/nb/LC_MESSAGES/libvirt.mo
+share/locale/nl/LC_MESSAGES/libvirt.mo
+share/locale/or/LC_MESSAGES/libvirt.mo
+share/locale/pa/LC_MESSAGES/libvirt.mo
+share/locale/pl/LC_MESSAGES/libvirt.mo
+share/locale/pt/LC_MESSAGES/libvirt.mo
+share/locale/pt_BR/LC_MESSAGES/libvirt.mo
+share/locale/ru/LC_MESSAGES/libvirt.mo
+share/locale/sr/LC_MESSAGES/libvirt.mo
+share/locale/sr@latin/LC_MESSAGES/libvirt.mo
+share/locale/sv/LC_MESSAGES/libvirt.mo
+share/locale/ta/LC_MESSAGES/libvirt.mo
+share/locale/te/LC_MESSAGES/libvirt.mo
+share/locale/uk/LC_MESSAGES/libvirt.mo
+share/locale/vi/LC_MESSAGES/libvirt.mo
+share/locale/zh_CN/LC_MESSAGES/libvirt.mo
+share/locale/zh_TW/LC_MESSAGES/libvirt.mo
 @sample /var/cache/libvirt/
+@sample /var/lib/libvirt/
+@sample /var/lib/libvirt/boot/
+@sample /var/lib/libvirt/filesystems/
+@sample /var/lib/libvirt/images/

@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_virrandommock_c,v 1.1 2021/02/14 16:42:14 ajacoutot Exp $
+
+Index: tests/virrandommock.c
+--- tests/virrandommock.c.orig
++++ tests/virrandommock.c
+@@ -20,6 +20,7 @@
+ 
+ #ifndef WIN32
+ 
++# include <dlfcn.h>
+ # include <gnutls/gnutls.h>
+ 
+ # include "internal.h"

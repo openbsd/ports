@@ -1,0 +1,46 @@
+$OpenBSD: patch-meson_build,v 1.1 2021/02/14 16:42:14 ajacoutot Exp $
+
+-fexceptions:
+ld: error: undefined symbol: _Unwind_Resume
+
+-Wl,-z,defs:
+ld: error: undefined symbol: fsync
+>>> referenced by glibcompat.c:183 (../libvirt-6.7.0/src/util/glibcompat.c:183)
+>>>               glibcompat.c.o:(vir_g_fsync) in archive src/util/libvirt_util.a
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -411,7 +411,6 @@ cc_flags += [
+   '-Wframe-larger-than=4096',
+ 
+   # extra special flags
+-  '-fexceptions',
+   '-fasynchronous-unwind-tables',
+ 
+   # Need -fipa-pure-const in order to make -Wsuggest-attribute=pure
+@@ -588,7 +587,6 @@ libvirt_nodelete = cc.get_supported_link_arguments([
+ ])
+ 
+ libvirt_no_undefined = cc.get_supported_link_arguments([
+-  '-Wl,-z,defs',
+ ])
+ 
+ libvirt_no_indirect = cc.get_supported_link_arguments([
+@@ -1022,12 +1020,15 @@ if devmapper_dep.found()
+   conf.set('WITH_DEVMAPPER', 1)
+ endif
+ 
+-dlopen_use = host_machine.system() != 'windows'
++dlopen_use = host_machine.system() != 'windows' and host_machine.system() != 'openbsd'
+ dlopen_dep = cc.find_library('dl', required: dlopen_use)
+ if dlopen_dep.found()
+   if not cc.has_header('dlfcn.h')
+     error('Unable to find dlfcn.h')
+   endif
++  conf.set('WITH_DLFCN_H', 1)
++endif
++if host_machine.system() == 'openbsd'
+   conf.set('WITH_DLFCN_H', 1)
+ endif
+ 

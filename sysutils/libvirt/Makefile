@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.73 2020/08/03 08:50:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2021/02/14 16:42:13 ajacoutot Exp $
+
+# XXX Wl,-soname,libvirt-admin.so.0
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-6.6.0
+DISTNAME=		libvirt-7.0.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS +=  virt                 1.0      # 6006.0
-SHARED_LIBS +=  virt-qemu            1.0      # 6006.0
-SHARED_LIBS +=  virt-lxc             1.0      # 6006.0
-SHARED_LIBS +=  virt-admin           1.0      # 6006.0
+SHARED_LIBS += virt                      2.0 # 0.7000.0
+SHARED_LIBS += virt-qemu                 2.0 # 0.7000.0
+SHARED_LIBS += virt-lxc                  2.0 # 0.7000.0
+SHARED_LIBS += virt-admin                2.0 # 0.7000.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -18,24 +20,24 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto curl dbus-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gmp gnutls gobject-2.0 hogweed iconv idn2 intl lzma
-WANTLIB += m nettle nghttp2 p11-kit pcre pthread sasl2 ssh2 ssl
-WANTLIB += tasn1 unistring util xml2 yajl z
+WANTLIB += c curl gio-2.0 glib-2.0 gnutls gobject-2.0 intl m pthread
+WANTLIB += sasl2 ssh2 util xml2 yajl
 
 MASTER_SITES=		https://libvirt.org/sources/
 EXTRACT_SUFX=		.tar.xz
 
-SEPARATE_BUILD=		Yes
+MODULES=		devel/meson
 
-MODULES=		lang/python
+BUILD_DEPENDS=		devel/gettext,-tools
 
-MODPY_RUNDEP=		No
+# rst2html-3
+MODULES +=		lang/python
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP=		No
+BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
 
-BUILD_DEPENDS=		devel/flake8 \
-			textproc/libxslt \
-			textproc/py-docutils${MODPY_FLAVOR}
+# xsltproc(1)
+BUILD_DEPENDS +=	textproc/libxslt
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/libyajl \
@@ -43,45 +45,58 @@ LIB_DEPENDS=		devel/glib2 \
 			security/cyrus-sasl2 \
 			security/gnutls \
 			security/libssh2 \
-			textproc/libxml \
-			x11/dbus
+			textproc/libxml
 
-USE_GMAKE=		Yes
+# disable until proven useful
+#.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+#RUN_DEPENDS +=		sysutils/dmidecode
+#.endif
 
-CONFIGURE_STYLE=	gnu
+# -DFOO = XXX missing/bogus checks
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
+				-DAI_V4MAPPED=0 \
+				-DHAVE_STRUCT_SOCKPEERCRED=1 \
+				-DHAVE_DLFCN_H=1" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ENV=		CPPFLAGS="-DAI_V4MAPPED=0" \
-			ac_cv_path_RST2HTML=rst2html${MODPY_BIN_SUFFIX} \
-			ac_cv_path_RST2MAN=rst2man${MODPY_BIN_SUFFIX} \
-			ac_cv_path_DNSMASQ=${LOCALBASE}/sbin/dnsmasq \
-			ac_cv_path_AUGPARSE=${LOCALBASE}/bin/augparse \
-			ac_cv_path_DMIDECODE=${LOCALBASE}/sbin/dmidecode \
-			ac_cv_path_QEMU_DBUS_DAEMON=${LOCALBASE}/bin/dbus-daemon \
-			ac_cv_path_QEMU_BRIDGE_HELPER= \
-			ac_cv_path_QEMU_PR_HELPER= \
-			ac_cv_path_QEMU_SLIRP_HELPER= \
-			ac_cv_path_BHYVECTL= \
-			ac_cv_path_BHYVELOAD= \
-			ac_cv_path_QEMU_DBUS_DAEMON=
+DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
+			glusterfs hal libiscsi libpcap macvtap polkit netcf \
+			numactl numad openwsman selinux_mount selinux udev \
+			readline virtualport driver_bhyve driver_hyperv \
+			driver_interface driver_libxl driver_lxc driver_openvz \
+			driver_vz driver_qemu secdriver_apparmor \
+			secdriver_selinux login_shell driver_network nss \
+			sysctl_config git_werror libnl
 
-CONFIGURE_ARGS=		--without-wireshark-dissector \
-			--without-libssh # prefer libssh2
+CONFIGURE_ARGS=		-Dinit_script=none
+
+.for _d in ${DISABLED_FEATURES}
+CONFIGURE_ARGS +=	-D${_d}=disabled
+.endfor
+
+# needs readline support
+CONFIGURE_ARGS +=	-Dbash_completion=disabled
+
+# prefer libssh2
+CONFIGURE_ARGS +=	-Dlibssh=disabled
 
 # our sysutils/e2fsprogs is too old (<2.17)
-CONFIGURE_ARGS +=	--without-blkid
+CONFIGURE_ARGS +=	-Dblkid=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-FAKE_FLAGS=		confdir=${PREFIX}/share/examples/libvirt \
-			sysconfdir=${PREFIX}/share/examples/libvirt
 
 # OpenBSD can't act as a virtualization host, so no need for libvirtd.
 # If support is added, subtitute /var/lib/{xen,virt,libvirt,...} with /var/db.
 # nwfilters are only used by libvirtd, which is (currently) disabled on OpenBSD.
-CONFIGURE_ARGS +=	--without-libvirtd
-FAKE_FLAGS +=		NWFILTER_DIR=${TMPDIR} \
-			FILTERS=""
+CONFIGURE_ARGS +=	-Ddriver_libvirtd=disabled
+
+pre-configure:
+	cd ${WRKDIR}/bin && ln -sf ${LOCALBASE}/bin/rst2html-3 rst2html5
+
 post-install:
-	rm -rf ${WRKINST}/var/lib
+	rm -rf ${WRKINST}/var/{cache/libvirt,lib}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
+	mv ${WRKINST}${SYSCONFDIR}/libvirt ${PREFIX}/share/examples/
+	mv ${WRKINST}${SYSCONFDIR}/sasl2 ${PREFIX}/share/examples/libvirt/
 
 .include <bsd.port.mk>
