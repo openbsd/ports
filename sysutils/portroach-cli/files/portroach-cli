@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portroach-cli,v 1.5 2021/02/10 23:25:43 kn Exp $
+# $OpenBSD: portroach-cli,v 1.6 2021/02/14 15:23:31 kn Exp $
 #
 # Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 #
@@ -92,6 +92,9 @@ then
 			[.basepkgpath, .ver, aorb(.newver; "up-to-date"),
 			 aorb(.homepage; .comment)] |
 			@tsv')
+
+		# `show_ports()' always yields at least one port unless `-p'
+		# fails to match any of their PKGPATHs
 		if [ -n "$ports" ]
 		then
 			printf '\n===>\t%s\n' "$match"

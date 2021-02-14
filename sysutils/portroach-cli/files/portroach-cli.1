@@ -1,4 +1,4 @@
-.\"	$OpenBSD: portroach-cli.1,v 1.3 2021/02/10 23:25:43 kn Exp $
+.\"	$OpenBSD: portroach-cli.1,v 1.4 2021/02/14 15:23:31 kn Exp $
 .\" Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 .\"
 .\" Permission to use, copy, modify, and distribute this software for any
@@ -13,7 +13,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: February 10 2021 $
+.Dd $Mdocdate: February 14 2021 $
 .Dt PORTROACH-CLI 1
 .Os
 .Sh NAME
@@ -72,7 +72,7 @@ category:
 .Pp
 Get all outdated ports in a category but defer processing to an external filter:
 .Pp
-.Dl $ portroach-cli -j -o -m \&. -p ^sysutils/ | jq -f ./filter
+.Dl $ portroach-cli -j -o -m \&. -p ^sysutils/ | jq -s -f ./filter
 .Sh SEE ALSO
 .Xr portroach 1 ,
 .Xr bsd.port.mk 5
