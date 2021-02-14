@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 21:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/14 18:13:59 naddy Exp $
 
 COMMENT = 	Atmel AVR 32-bit binutils
 V = 		2.23.1
+REVISION =	0
 DISTNAME = 	avr32-binutils-${V}
 
 # GPLv3

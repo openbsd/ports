@@ -1,0 +1,18 @@
+$OpenBSD: patch-gcc_config_avr32_avr32_c,v 1.1 2021/02/14 18:13:59 naddy Exp $
+
+fix for -fno-common
+
+Index: gcc/config/avr32/avr32.c
+--- gcc/config/avr32/avr32.c.orig
++++ gcc/config/avr32/avr32.c
+@@ -207,10 +207,6 @@ static const struct arch_type_s avr32_arch_types[] = {
+   {NULL, 0, 0, 0, NULL}
+ };
+ 
+-/* Default arch name */
+-const char *avr32_arch_name = "none";
+-const char *avr32_part_name = "none";
+-
+ const struct part_type_s *avr32_part;
+ const struct arch_type_s *avr32_arch;
+ 

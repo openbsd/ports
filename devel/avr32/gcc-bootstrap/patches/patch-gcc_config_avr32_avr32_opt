@@ -1,0 +1,25 @@
+$OpenBSD: patch-gcc_config_avr32_avr32_opt,v 1.1 2021/02/14 18:13:59 naddy Exp $
+
+fix for -fno-common
+
+Index: gcc/config/avr32/avr32.opt
+--- gcc/config/avr32/avr32.opt.orig
++++ gcc/config/avr32/avr32.opt
+@@ -56,7 +56,7 @@ Target Report Mask(HAS_ASM_ADDR_PSEUDOS) 
+ Use assembler pseudo-instructions lda.w and call for handling direct addresses. (Enabled by default)
+ 
+ mpart=
+-Target Report RejectNegative Joined Var(avr32_part_name)
++Target Report RejectNegative Joined Var(avr32_part_name) Init("none")
+ Specify the AVR32 part name
+ 
+ mcpu=
+@@ -64,7 +64,7 @@ Target Report RejectNegative Joined Undocumented Var(a
+ Specify the AVR32 part name (deprecated)
+ 
+ march=
+-Target Report RejectNegative Joined Var(avr32_arch_name)
++Target Report RejectNegative Joined Var(avr32_arch_name) Init("none")
+ Specify the AVR32 architecture name
+ 
+ mfast-float

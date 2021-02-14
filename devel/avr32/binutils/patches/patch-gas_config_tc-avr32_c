@@ -1,0 +1,15 @@
+$OpenBSD: patch-gas_config_tc-avr32_c,v 1.1 2021/02/14 18:13:59 naddy Exp $
+
+fix for -fno-common
+
+Index: gas/config/tc-avr32.c
+--- gas/config/tc-avr32.c.orig
++++ gas/config/tc-avr32.c
+@@ -47,7 +47,6 @@
+ 
+ /* Flags given on the command line */
+ static int avr32_pic	= FALSE;
+-int linkrelax	= FALSE;
+ int avr32_iarcompat	= FALSE;
+ 
+ /* This array holds the chars that always start a comment. */
