@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_con_c,v 1.1 2021/02/14 21:11:34 sthen Exp $
+
+Index: src/con.c
+--- src/con.c.orig
++++ src/con.c
+@@ -1273,7 +1273,7 @@ static bool _con_move_to_con(Con *con, Con *target, bo
+         fullscreen = NULL;
+     }
+ 
+-    DLOG("Re-attaching container to %p / %s\n", target, target->name);
++    DLOG("Re-attaching container to %p / %s\n", target, target->name ? target->name : "(null)");
+     /* 4: re-attach the con to the parent of this focused container */
+     Con *parent = con->parent;
+     con_detach(con);

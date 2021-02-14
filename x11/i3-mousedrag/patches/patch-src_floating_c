@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_floating_c,v 1.1 2021/02/14 21:11:34 sthen Exp $
+
+Index: src/floating.c
+--- src/floating.c.orig
++++ src/floating.c
+@@ -484,7 +484,7 @@ void toggle_floating_mode(Con *con, bool automatic) {
+  *
+  */
+ void floating_raise_con(Con *con) {
+-    DLOG("Raising floating con %p / %s\n", con, con->name);
++    DLOG("Raising floating con %p / %s\n", con, con->name ? con->name : "(null)");
+     TAILQ_REMOVE(&(con->parent->floating_head), con, floating_windows);
+     TAILQ_INSERT_TAIL(&(con->parent->floating_head), con, floating_windows);
+ }

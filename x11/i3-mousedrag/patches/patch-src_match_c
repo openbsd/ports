@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_match_c,v 1.1 2021/02/14 21:11:34 sthen Exp $
+
+Index: src/match.c
+--- src/match.c.orig
++++ src/match.c
+@@ -85,7 +85,7 @@ void match_copy(Match *dest, Match *src) {
+  *
+  */
+ bool match_matches_window(Match *match, i3Window *window) {
+-    LOG("Checking window 0x%08x (class %s)\n", window->id, window->class_class);
++    LOG("Checking window 0x%08x (class %s)\n", window->id, window->class_class ? window->class_class : "(null)");
+ 
+ #define GET_FIELD_str(field) (field)
+ #define GET_FIELD_i3string(field) (i3string_as_utf8(field))
