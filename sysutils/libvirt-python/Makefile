@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2021/01/04 14:06:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/02/14 16:42:58 ajacoutot Exp $
 
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	6.6.0
+MODPY_EGG_VERSION =	7.0.0
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-python-/-/}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -16,7 +15,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		pthread virt virt-lxc virt-qemu
+WANTLIB += pthread virt virt-lxc virt-qemu
 
 MASTER_SITES =		https://libvirt.org/sources/python/
 
