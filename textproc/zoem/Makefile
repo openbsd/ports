@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/14 17:34:24 tb Exp $
 
 COMMENT=	interpretive macro/programming language
 
-V=		09-149
+V=		11-166
 DISTNAME=	zoem-${V}
 PKGNAME=	zoem-${V:S,-,_,}
 CATEGORIES=	textproc lang
 
-HOMEPAGE=	http://micans.org/zoem/
+HOMEPAGE=	https://micans.org/zoem/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c m 
+WANTLIB=	c m curses readline
 
 MASTER_SITES=	${HOMEPAGE}/src/
 

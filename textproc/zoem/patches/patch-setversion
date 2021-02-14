@@ -1,0 +1,16 @@
+$OpenBSD: patch-setversion,v 1.1 2021/02/14 17:34:24 tb Exp $
+
+Fix for -fno-common
+
+Index: setversion
+--- setversion.orig
++++ setversion
+@@ -24,7 +24,7 @@ vsh='src/version.h'
+ echo -n '' > $vsh
+ echo '#ifndef zoem_version_h__' >> $vsh
+ echo '#define zoem_version_h__' >> $vsh
+-echo 'char *zoemDateTag;' >> $vsh
++echo 'extern char *zoemDateTag;' >> $vsh
+ echo '#endif' >> $vsh
+ 
+ vsc='src/version.c'

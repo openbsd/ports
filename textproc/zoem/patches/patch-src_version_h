@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_version_h,v 1.1 2021/02/14 17:34:24 tb Exp $
+
+Fix for -fno-common
+
+Index: src/version.h
+--- src/version.h.orig
++++ src/version.h
+@@ -1,4 +1,4 @@
+ #ifndef zoem_version_h__
+ #define zoem_version_h__
+-char *zoemDateTag;
++extern char *zoemDateTag;
+ #endif

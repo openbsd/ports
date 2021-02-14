@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/23 22:09:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/14 17:34:24 tb Exp $
 @bin bin/zoem
 @man man/man1/zoem.1
-@man man/man7/pud-base.7
-@man man/man7/pud-faq.7
-@man man/man7/pud-man.7
-@man man/man7/pud-ref.7
-@man man/man7/pud.7
 share/doc/zoem/
 share/doc/zoem/doc/
 share/doc/zoem/doc/zoem.azm
@@ -13,28 +8,6 @@ share/doc/zoem/doc/zoem.html
 share/doc/zoem/doc/zoem.ps
 share/doc/zoem/doc/zum.azm
 share/doc/zoem/doc/zum.html
-share/doc/zoem/mac/
-share/doc/zoem/mac/buzzz.1
-share/doc/zoem/mac/buzzz.azm
-share/doc/zoem/mac/buzzz.html
-share/doc/zoem/mac/buzzz.ps
-share/doc/zoem/mac/buzzz.txt
-share/doc/zoem/mac/index.html
-share/doc/zoem/mac/pud-base.html
-share/doc/zoem/mac/pud-base.ps
-share/doc/zoem/mac/pud-base.txt
-share/doc/zoem/mac/pud-faq.html
-share/doc/zoem/mac/pud-faq.ps
-share/doc/zoem/mac/pud-faq.txt
-share/doc/zoem/mac/pud-man.html
-share/doc/zoem/mac/pud-man.ps
-share/doc/zoem/mac/pud-man.txt
-share/doc/zoem/mac/pud-ref.html
-share/doc/zoem/mac/pud-ref.ps
-share/doc/zoem/mac/pud-ref.txt
-share/doc/zoem/mac/pud.html
-share/doc/zoem/mac/pud.ps
-share/doc/zoem/mac/pud.txt
 share/examples/zoem/
 share/examples/zoem/8q.azm
 share/examples/zoem/8q.ozm
@@ -52,11 +25,6 @@ share/examples/zoem/nest.azm
 share/examples/zoem/nest.ozm
 share/examples/zoem/power-of-2.azm
 share/examples/zoem/power-of-2.ozm
-share/examples/zoem/pud-base.azm
-share/examples/zoem/pud-faq.azm
-share/examples/zoem/pud-man.azm
-share/examples/zoem/pud-ref.azm
-share/examples/zoem/pud.azm
 share/examples/zoem/reverse.azm
 share/examples/zoem/reverse.ozm
 share/examples/zoem/scope.azm
@@ -73,13 +41,3 @@ share/examples/zoem/txt-table.azm
 share/examples/zoem/txt-table.ozm
 share/examples/zoem/xml.azm
 share/examples/zoem/xml.ozm
-share/zoem/
-share/zoem/mac/
-share/zoem/mac/base.zmm
-share/zoem/mac/ctr.zmm
-share/zoem/mac/doc.zmm
-share/zoem/mac/faq.zmm
-share/zoem/mac/man.zmm
-share/zoem/mac/ref.zmm
-share/zoem/mac/zsd.base.css
-share/zoem/mac/zsd.doc.css
