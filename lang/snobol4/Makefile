@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/14 17:08:57 bcallah Exp $
 
+V =		2.2.1
 COMMENT =	CSNOBOL4 suite including interpreter, debugger and utilities
-DISTNAME =	snobol4-2.0
+DISTNAME =	snobol4-${V}
 CATEGORIES =	lang
-REVISION =	1
 
 HOMEPAGE =	http://www.snobol4.org/csnobol4/curr/
 MAINTAINER =	STeve Andre <steve@wb8wsf.org>
@@ -11,9 +11,12 @@ MAINTAINER =	STeve Andre <steve@wb8wsf.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c ffi m ncurses readline sqlite3 util
+WANTLIB += c crypto ffi m readline sqlite3 ssl util z
 
-MASTER_SITES =	ftp://ftp.snobol4.org/snobol/
+MASTER_SITES =	ftp://ftp.snobol4.org/snobol/ \
+		ftp://ftp.snobol4.org/snobol/old/
+
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/libffi
@@ -25,5 +28,7 @@ CONFIGURE_ARGS =	--prefix="${PREFIX}" \
 
 # Reduce PLIST churn at update time.
 FAKE_FLAGS =	DOC_DIR="${DESTDIR}${PREFIX}/share/doc/snobol4"
+
+SUBST_VARS +=	V
 
 .include <bsd.port.mk>

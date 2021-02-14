@@ -1,76 +1,87 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/06 08:14:14 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/14 17:08:57 bcallah Exp $
 bin/sdb
-bin/sdb-2.0
+bin/sdb-${V}
 @bin bin/snobol4
-@bin bin/snobol4-2.0
+@bin bin/snobol4-${V}
 bin/snopea
-bin/snopea-2.0
+bin/snopea-${V}
 lib/snobol4/
-lib/snobol4/2.0/
-lib/snobol4/2.0/CHANGES
-lib/snobol4/2.0/README
-lib/snobol4/2.0/include/
-lib/snobol4/2.0/include/config.h
-lib/snobol4/2.0/include/dt.h
-lib/snobol4/2.0/include/equ.h
-lib/snobol4/2.0/include/h.h
-lib/snobol4/2.0/include/handle.h
-lib/snobol4/2.0/include/load.h
-lib/snobol4/2.0/include/macros.h
-lib/snobol4/2.0/include/snotypes.h
-lib/snobol4/2.0/include/str.h
-lib/snobol4/2.0/include/version.h
-lib/snobol4/2.0/lib/
-lib/snobol4/2.0/lib/basename.sno
-lib/snobol4/2.0/lib/bq.sno
-lib/snobol4/2.0/lib/chars.sno
-lib/snobol4/2.0/lib/config.sno
-lib/snobol4/2.0/lib/dirs.sno
-lib/snobol4/2.0/lib/dynamic.sno
-lib/snobol4/2.0/lib/fence.sno
-lib/snobol4/2.0/lib/ffi.sno
-lib/snobol4/2.0/lib/file.sno
-lib/snobol4/2.0/lib/fork.sno
-lib/snobol4/2.0/lib/ftp.sno
-lib/snobol4/2.0/lib/host.sno
-lib/snobol4/2.0/lib/http.sno
-lib/snobol4/2.0/lib/logic.sno
-lib/snobol4/2.0/lib/ndbm.sno
-lib/snobol4/2.0/lib/not.sno
-lib/snobol4/2.0/lib/random.sno
-lib/snobol4/2.0/lib/readline.sno
-lib/snobol4/2.0/lib/repl.sno
-lib/snobol4/2.0/lib/sdb.sno
-lib/snobol4/2.0/lib/serv.sno
-lib/snobol4/2.0/lib/setuputil.sno
-lib/snobol4/2.0/lib/shared/
-lib/snobol4/2.0/lib/shared/dirs.so
-lib/snobol4/2.0/lib/shared/ffi.so
-lib/snobol4/2.0/lib/shared/fork.so
-lib/snobol4/2.0/lib/shared/logic.so
-lib/snobol4/2.0/lib/shared/ndbm.so
-lib/snobol4/2.0/lib/shared/random.so
-lib/snobol4/2.0/lib/shared/readline.so
-lib/snobol4/2.0/lib/shared/sprintf.so
-lib/snobol4/2.0/lib/shared/sqlite3.so
-lib/snobol4/2.0/lib/shared/stat.so
-lib/snobol4/2.0/lib/shared/time.so
-lib/snobol4/2.0/lib/smtp.sno
-lib/snobol4/2.0/lib/snobol4+.sno
-lib/snobol4/2.0/lib/snopea.sno
-lib/snobol4/2.0/lib/spitbol.sno
-lib/snobol4/2.0/lib/sprintf.sno
-lib/snobol4/2.0/lib/sqlite3.sno
-lib/snobol4/2.0/lib/sqlite3dbm.sno
-lib/snobol4/2.0/lib/stat.sno
-lib/snobol4/2.0/lib/tcp.sno
-lib/snobol4/2.0/lib/time.sno
-lib/snobol4/2.0/lib/unique.sno
-lib/snobol4/2.0/lib/url.sno
-lib/snobol4/2.0/lib/utf.sno
-lib/snobol4/2.0/lib/wrapper.sno
+lib/snobol4/${V}/
+lib/snobol4/${V}/CHANGES
+lib/snobol4/${V}/README
+lib/snobol4/${V}/include/
+lib/snobol4/${V}/include/config.h
+lib/snobol4/${V}/include/dt.h
+lib/snobol4/${V}/include/equ.h
+lib/snobol4/${V}/include/h.h
+lib/snobol4/${V}/include/handle.h
+lib/snobol4/${V}/include/load.h
+lib/snobol4/${V}/include/macros.h
+lib/snobol4/${V}/include/module.h
+lib/snobol4/${V}/include/snotypes.h
+lib/snobol4/${V}/include/str.h
+lib/snobol4/${V}/include/version.h
+lib/snobol4/${V}/lib/
+lib/snobol4/${V}/lib/base64.sno
+lib/snobol4/${V}/lib/basename.sno
+lib/snobol4/${V}/lib/bq.sno
+lib/snobol4/${V}/lib/chars.sno
+lib/snobol4/${V}/lib/cmp.sno
+lib/snobol4/${V}/lib/config.sno
+lib/snobol4/${V}/lib/digest.sno
+lib/snobol4/${V}/lib/dirs.sno
+lib/snobol4/${V}/lib/dynamic.sno
+lib/snobol4/${V}/lib/ezio.sno
+lib/snobol4/${V}/lib/fence.sno
+lib/snobol4/${V}/lib/ffi.sno
+lib/snobol4/${V}/lib/file.sno
+lib/snobol4/${V}/lib/fork.sno
+lib/snobol4/${V}/lib/ftp.sno
+lib/snobol4/${V}/lib/host.sno
+lib/snobol4/${V}/lib/http.sno
+lib/snobol4/${V}/lib/json.sno
+lib/snobol4/${V}/lib/logic.sno
+lib/snobol4/${V}/lib/ndbm.sno
+lib/snobol4/${V}/lib/not.sno
+lib/snobol4/${V}/lib/random.sno
+lib/snobol4/${V}/lib/readline.sno
+lib/snobol4/${V}/lib/repl.sno
+lib/snobol4/${V}/lib/sdb.sno
+lib/snobol4/${V}/lib/serv.sno
+lib/snobol4/${V}/lib/setuputil.sno
+lib/snobol4/${V}/lib/shared/
+@so lib/snobol4/${V}/lib/shared/base64.so
+@so lib/snobol4/${V}/lib/shared/digest.so
+@so lib/snobol4/${V}/lib/shared/dirs.so
+@so lib/snobol4/${V}/lib/shared/ffi.so
+@so lib/snobol4/${V}/lib/shared/fork.so
+@so lib/snobol4/${V}/lib/shared/logic.so
+@so lib/snobol4/${V}/lib/shared/ndbm.so
+@so lib/snobol4/${V}/lib/shared/random.so
+@so lib/snobol4/${V}/lib/shared/readline.so
+@so lib/snobol4/${V}/lib/shared/sprintf.so
+@so lib/snobol4/${V}/lib/shared/sqlite3.so
+@so lib/snobol4/${V}/lib/shared/stat.so
+@so lib/snobol4/${V}/lib/shared/time.so
+@so lib/snobol4/${V}/lib/shared/zlib.so
+lib/snobol4/${V}/lib/smtp.sno
+lib/snobol4/${V}/lib/snobol4+.sno
+lib/snobol4/${V}/lib/snopea.sno
+lib/snobol4/${V}/lib/spitbol.sno
+lib/snobol4/${V}/lib/sprintf.sno
+lib/snobol4/${V}/lib/sqlite3.sno
+lib/snobol4/${V}/lib/sqlite3dbm.sno
+lib/snobol4/${V}/lib/stat.sno
+lib/snobol4/${V}/lib/tcp.sno
+lib/snobol4/${V}/lib/time.sno
+lib/snobol4/${V}/lib/unique.sno
+lib/snobol4/${V}/lib/url.sno
+lib/snobol4/${V}/lib/utf.sno
+lib/snobol4/${V}/lib/wrapper.sno
+lib/snobol4/${V}/lib/zlib.sno
+lib/snobol4/${V}/local/
+lib/snobol4/${V}/local/shared/
 @comment lib/snobol4/local/
-@comment lib/snobol4/local/shared/
 @man man/man1/sdb.1
 @man man/man1/snobol4.1
 @man man/man1/snobol4blocks.1
@@ -81,10 +92,17 @@ lib/snobol4/2.0/lib/wrapper.sno
 @man man/man1/snobol4func.1
 @man man/man1/snobol4io.1
 @man man/man1/snobol4key.1
+@man man/man1/snobol4op.1
 @man man/man1/snopea.1
+@man man/man3/snobol4base64.3
+@man man/man3/snobol4digest.3
 @man man/man3/snobol4dirs.3
+@man man/man3/snobol4ezio.3
 @man man/man3/snobol4ffi.3
 @man man/man3/snobol4fork.3
+@man man/man3/snobol4host.3
+@man man/man3/snobol4json.3
+@man man/man3/snobol4load.3
 @man man/man3/snobol4logic.3
 @man man/man3/snobol4ndbm.3
 @man man/man3/snobol4random.3
@@ -95,23 +113,29 @@ lib/snobol4/2.0/lib/wrapper.sno
 @man man/man3/snobol4sqlite3dbm.3
 @man man/man3/snobol4stat.3
 @man man/man3/snobol4time.3
+@man man/man3/snobol4zlib.3
 @man man/man3/snolib.3
 @man man/man7/snopea.7
 share/doc/snobol4/
-share/doc/snobol4/load.txt
 share/doc/snobol4/sdb.1.html
 share/doc/snobol4/snobol4.1.html
+share/doc/snobol4/snobol4base64.3.html
 share/doc/snobol4/snobol4blocks.1.html
 share/doc/snobol4/snobol4cmd.1.html
 share/doc/snobol4/snobol4ctrl.1.html
+share/doc/snobol4/snobol4digest.3.html
 share/doc/snobol4/snobol4dirs.3.html
 share/doc/snobol4/snobol4error.1.html
 share/doc/snobol4/snobol4ext.1.html
+share/doc/snobol4/snobol4ezio.3.html
 share/doc/snobol4/snobol4ffi.3.html
 share/doc/snobol4/snobol4fork.3.html
 share/doc/snobol4/snobol4func.1.html
+share/doc/snobol4/snobol4host.3.html
 share/doc/snobol4/snobol4io.1.html
+share/doc/snobol4/snobol4json.3.html
 share/doc/snobol4/snobol4key.1.html
+share/doc/snobol4/snobol4load.3.html
 share/doc/snobol4/snobol4logic.3.html
 share/doc/snobol4/snobol4ndbm.3.html
 share/doc/snobol4/snobol4op.1.html
@@ -123,6 +147,7 @@ share/doc/snobol4/snobol4sqlite3.3.html
 share/doc/snobol4/snobol4sqlite3dbm.3.html
 share/doc/snobol4/snobol4stat.3.html
 share/doc/snobol4/snobol4time.3.html
+share/doc/snobol4/snobol4zlib.3.html
 share/doc/snobol4/snolib.3.html
 share/doc/snobol4/snopea.1.html
 share/doc/snobol4/snopea.7.html
