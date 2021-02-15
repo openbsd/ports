@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/15 16:47:31 naddy Exp $
 
 COMMENT=	essentially an Asteroids clone
 
 DISTNAME=	sdlroids-1.3.4
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games
 
 HOMEPAGE=	http://sourceforge.net/projects/sdlroids/

@@ -1,0 +1,11 @@
+$OpenBSD: patch-getargs_h,v 1.1 2021/02/15 16:47:31 naddy Exp $
+
+Index: getargs.h
+--- getargs.h.orig
++++ getargs.h
+@@ -37,4 +37,4 @@
+ 
+ /* getargs() prototype */
+ void getargs(int, char *[]);
+-int flagargs[NUMARGS];
++extern int flagargs[NUMARGS];
