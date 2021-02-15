@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/12/10 08:29:43 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/15 12:51:07 fcambus Exp $
 @bin bin/ams2psf
 @bin bin/bbc2psf
 @bin bin/cpi2psf
@@ -18,6 +18,7 @@
 @bin bin/psf2pbms
 @bin bin/psf2raw
 @bin bin/psf2txt
+@bin bin/psf2vfont
 @bin bin/psf2wof
 @bin bin/psf2wyse
 @bin bin/psf2xbm
@@ -30,6 +31,10 @@
 @bin bin/psfxform
 @bin bin/raw2psf
 @bin bin/txt2psf
+@bin bin/txt2vfont
+@bin bin/vfont2ppm
+@bin bin/vfont2psf
+@bin bin/vfont2txt
 @bin bin/wof2psf
 @bin bin/wyse2psf
 @bin bin/zx2psf
@@ -54,6 +59,7 @@ lib/libpsf.la
 @man man/man1/psf2pbms.1
 @man man/man1/psf2raw.1
 @man man/man1/psf2txt.1
+@man man/man1/psf2vfont.1
 @man man/man1/psf2wof.1
 @man man/man1/psf2wyse.1
 @man man/man1/psf2xbm.1
@@ -66,6 +72,11 @@ lib/libpsf.la
 @man man/man1/psfxform.1
 @man man/man1/raw2psf.1
 @man man/man1/txt2psf.1
+@man man/man1/txt2vfont.1
+@man man/man1/vfont2ppm.1
+@man man/man1/vfont2psf.1
+@man man/man1/vfont2txt.1
 @man man/man1/wof2psf.1
 @man man/man1/wyse2psf.1
 @man man/man1/zx2psf.1
+@man man/man5/vfont2.5
