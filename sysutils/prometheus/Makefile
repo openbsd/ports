@@ -1,20 +1,25 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/20 21:17:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/15 09:14:26 claudio Exp $
 
 COMMENT =		systems monitoring and alerting toolkit
 
+V =			2.24.1
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		prometheus
-GH_TAGNAME =		v2.13.1
-REVISION =		0
+GH_TAGNAME =		v${V}
 
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://prometheus.io/
+HOMEPAGE =		https://prometheus.io/
 
 MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
 
+DISTFILES +=		prometheus-${V}.tar.gz \
+			prometheus-reactui-${V}.tar.gz:0
+
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
+
+MASTER_SITES0 =		https://www.zyd.ch/distfiles/
 
 WANTLIB =		c pthread
 
@@ -38,7 +43,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/prometheus/console_libraries
 	${INSTALL_PROGRAM} ${WRKSRC}/prometheus ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/promtool ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tsdb/tsdb ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/consoles/* \
 		${PREFIX}/share/examples/prometheus/consoles/
 	${INSTALL_DATA} ${WRKSRC}/console_libraries/{menu.lib,prom.lib} \
@@ -47,6 +51,7 @@ do-install:
 		${PREFIX}/share/examples/prometheus/prometheus.yml
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/prometheus/
 	${INSTALL_DATA} ${WRKSRC}/NOTICE ${PREFIX}/share/doc/prometheus/
+	${INSTALL_DATA} ${WRKSRC}/npm_licenses.tar.bz2 ${PREFIX}/share/doc/prometheus/
 
 do-test:
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} test

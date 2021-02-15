@@ -1,2 +1,4 @@
-SHA256 (prometheus-2.13.1.tar.gz) = ViTBZyhnk2LPpGt27B0kcBgQaYnyJg01WDxCxJxRQrU=
-SIZE (prometheus-2.13.1.tar.gz) = 15249891
+SHA256 (prometheus-2.24.1.tar.gz) = ngi6zehpxsS2ip40xwdLgSvhORsz0DPTBypeGtLevYc=
+SHA256 (prometheus-reactui-2.24.1.tar.gz) = ex9rOmybKeT9/eyP67WxU44asPen5ZL/Yh4hKxUGX/o=
+SIZE (prometheus-2.24.1.tar.gz) = 14633738
+SIZE (prometheus-reactui-2.24.1.tar.gz) = 1897337
