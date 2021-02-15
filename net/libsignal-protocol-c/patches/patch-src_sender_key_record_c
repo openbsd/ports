@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_sender_key_record_c,v 1.1 2021/02/15 21:35:57 naddy Exp $
+
+Index: src/sender_key_record.c
+--- src/sender_key_record.c.orig
++++ src/sender_key_record.c
+@@ -4,7 +4,7 @@
+ 
+ #include "sender_key_state.h"
+ #include "sender_key.h"
+-#include "utlist.h"
++#include "utlist_local.h"
+ #include "LocalStorageProtocol.pb-c.h"
+ #include "signal_protocol_internal.h"
+ 

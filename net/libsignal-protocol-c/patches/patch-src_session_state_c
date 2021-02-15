@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_session_state_c,v 1.1 2021/02/15 21:35:57 naddy Exp $
+
+Index: src/session_state.c
+--- src/session_state.c.orig
++++ src/session_state.c
+@@ -10,7 +10,7 @@
+ #include "LocalStorageProtocol.pb-c.h"
+ #include "signal_protocol_internal.h"
+ 
+-#include "utlist.h"
++#include "utlist_local.h"
+ 
+ #define MAX_MESSAGE_KEYS 2000
+ 

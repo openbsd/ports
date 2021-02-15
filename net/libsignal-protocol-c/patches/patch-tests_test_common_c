@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_test_common_c,v 1.1 2021/02/15 21:35:57 naddy Exp $
+
+Index: tests/test_common.c
+--- tests/test_common.c.orig
++++ tests/test_common.c
+@@ -6,7 +6,7 @@
+ 
+ #include "../src/signal_protocol.h"
+ #include "curve.h"
+-#include "uthash.h"
++#include "uthash_local.h"
+ 
+ /*
+  * This is an implementation of Jenkin's "One-at-a-Time" hash.

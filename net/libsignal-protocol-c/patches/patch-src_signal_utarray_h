@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_signal_utarray_h,v 1.1 2021/02/15 21:35:57 naddy Exp $
+
+Index: src/signal_utarray.h
+--- src/signal_utarray.h.orig
++++ src/signal_utarray.h
+@@ -8,6 +8,6 @@
+   goto complete;                                                              \
+ } while(0)
+ 
+-#include "utarray.h"
++#include "utarray_local.h"
+ 
+ #endif /* SIGNAL_UTARRAY_H */

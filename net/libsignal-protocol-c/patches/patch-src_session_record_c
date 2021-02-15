@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_session_record_c,v 1.1 2021/02/15 21:35:57 naddy Exp $
+
+Index: src/session_record.c
+--- src/session_record.c.orig
++++ src/session_record.c
+@@ -5,7 +5,7 @@
+ #include <assert.h>
+ 
+ #include "session_state.h"
+-#include "utlist.h"
++#include "utlist_local.h"
+ #include "LocalStorageProtocol.pb-c.h"
+ #include "signal_protocol_internal.h"
+ 
