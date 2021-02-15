@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/28 19:59:02 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/15 17:11:38 rsadowski Exp $
 include/kImageAnnotator/
 include/kImageAnnotator/KImageAnnotator.h
 include/kImageAnnotator/KImageAnnotatorExport.h
@@ -27,6 +27,7 @@ share/kImageAnnotator/translations/kImageAnnotator_nl.qm
 share/kImageAnnotator/translations/kImageAnnotator_no.qm
 share/kImageAnnotator/translations/kImageAnnotator_pl.qm
 share/kImageAnnotator/translations/kImageAnnotator_pt.qm
+share/kImageAnnotator/translations/kImageAnnotator_pt_BR.qm
 share/kImageAnnotator/translations/kImageAnnotator_ru.qm
 share/kImageAnnotator/translations/kImageAnnotator_sv.qm
 share/kImageAnnotator/translations/kImageAnnotator_tr.qm

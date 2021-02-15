@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/28 19:59:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/15 17:11:38 rsadowski Exp $
 
 COMMENT =	tool for annotating images
 
-V =		0.4.0
+V =		0.4.1
 PKGNAME =	kimageannotator-${V}
 
 GH_ACCOUNT =	ksnip
 GH_PROJECT =	kImageAnnotator
 GH_TAGNAME =	v${V}
 
-SHARED_LIBS =	kImageAnnotator	0.0	# 0.4.0
+SHARED_LIBS =	kImageAnnotator	1.0	# 0.4.1
 
 CATEGORIES =	graphics
 
