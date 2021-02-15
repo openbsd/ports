@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2021/01/11 22:17:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2021/02/15 19:52:56 kn Exp $
 
 MULTI_PACKAGES = -main -otr
 
@@ -13,7 +13,7 @@ DISTNAME =	irssi-$V
 PKGSPEC-main =	irssi-=$V
 PKGNAME-main =	irssi-$V
 PKGNAME-otr =	irssi-otr-$V
-REVISION =	4
+REVISION =	5
 
 PATCHFILES =	glib-2-63.patch
 PATCH_DIST_STRIP =	-p1
@@ -21,8 +21,6 @@ PATCH_DIST_STRIP =	-p1
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.irssi.org/
-
-MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
