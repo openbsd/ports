@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2021/02/08 19:16:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.43 2021/02/15 21:27:26 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =		Yes
@@ -7,6 +7,7 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 VERSION =	5.6.2
 DISTNAME =	kdevelop-${VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -54,6 +55,9 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
 
 MODULES =	devel/kf5 \
 		lang/python
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_BUILDDEP =	No
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/boost \
