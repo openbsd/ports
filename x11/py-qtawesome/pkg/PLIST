@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/11 18:38:03 bket Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/15 21:28:12 sthen Exp $
+@pkgpath x11/py-qtawesome
+bin/qta-browser
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/qtawesome/
@@ -11,6 +14,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}icon_browser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}iconic_font.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtawesome/_version.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/animation.py
@@ -27,8 +31,11 @@ lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-solid-webf
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-solid-webfont.ttf
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/materialdesignicons-webfont-charmap.json
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/materialdesignicons-webfont.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/icon_browser.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/iconic_font.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/${MODPY_PYCACHE}test_icon_browser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/${MODPY_PYCACHE}test_qtawesome.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/test_icon_browser.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/test_qtawesome.py
