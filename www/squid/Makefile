@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.231 2021/02/01 12:57:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.232 2021/02/15 09:34:19 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		4.13
+V=		4.14
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
-REVISION-main=	1
 
 .for i in -ldap -ntlm
 # subpackages aren't flavoured, so overwrite the default name/path
@@ -26,7 +25,7 @@ HOMEPAGE=	http://www.squid-cache.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-cWANTLIB=	${COMPILER_LIBCXX} c ffi gmp gnutls hogweed iconv idn2
+cWANTLIB=	${COMPILER_LIBCXX} c gmp gnutls hogweed iconv idn2
 cWANTLIB+=	intl m nettle p11-kit pthread tasn1 unistring
 
 # repo at https://github.com/squid-cache/squid
