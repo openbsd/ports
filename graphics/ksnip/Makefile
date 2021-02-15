@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/28 20:00:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/15 17:13:29 rsadowski Exp $
 
 COMMENT =	screenshot tool with annotations features
 
 GH_ACCOUNT =	ksnip
 GH_PROJECT =	ksnip
-GH_TAGNAME =	v1.8.0
+GH_TAGNAME =	v1.8.1
 
 CATEGORIES =	graphics
 
@@ -24,7 +24,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 LIB_DEPENDS =		graphics/kcolorpicker \
-			graphics/kimageannotator \
+			graphics/kimageannotator>=0.4.1 \
 			x11/qt5/qtx11extras
 
 CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include"
