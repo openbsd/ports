@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2020/06/26 21:27:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/02/15 08:44:05 sthen Exp $
 
 COMMENT=	flexible communications framework, logger component
 
 DISTNAME=	telepathy-logger-0.8.2
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  telepathy-logger     4.1      # 6.0
 
@@ -20,10 +20,11 @@ MODULES=	devel/dconf \
 		lang/python \
 		textproc/intltool
 
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gobject-introspection \
-		devel/py-twisted \
+		devel/py-twisted${MODPY_FLAVOR} \
 		textproc/libxslt
 LIB_DEPENDS=	databases/sqlite3 \
 		net/telepathy/telepathy-glib \
