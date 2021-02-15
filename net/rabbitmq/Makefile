@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.35 2020/11/05 08:28:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/15 19:30:49 sebastia Exp $
+
+BROKEN =	security issues, and need update to work with newer Erlang
 
 COMMENT =	highly reliable Enterprise Messaging System
 
 V =		3.6.15
-REVISION =	2
+REVISION =	3
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.rabbitmq.com/
-
-MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MPL
 PERMIT_PACKAGE= Yes
