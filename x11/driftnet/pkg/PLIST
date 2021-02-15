@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/06/24 16:48:43 sebastia Exp $
-@bin bin/driftnet
-@man man/man1/driftnet.1
-share/doc/driftnet/
-share/doc/driftnet/README
-share/doc/driftnet/TODO

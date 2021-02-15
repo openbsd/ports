@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1181 2021/02/14 18:06:22 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1182 2021/02/15 09:20:33 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2095,6 +2095,7 @@ my $obsolete_reason = {
 	'libquvi-scripts' => 39,
 	'cclive' => 6,
 	'viz' => 4,
+	'drifntet' => 40,
 };
 
 # reasons for obsolete packages
@@ -2139,6 +2140,7 @@ my @msg = (
 	"upstream is dead, default settings cause crash when connecting to mpd", #37
 	"icinga 1 is end-of-life, migrate to icinga 2 (needs config rewrite)", #38
 	"Flash/SWF is end-of-life", #39
+	"ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark" #40
 );
 
 # ->is_base_system($handle, $state):

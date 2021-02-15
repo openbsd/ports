@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.694 2021/02/14 18:06:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.695 2021/02/15 09:20:33 kn Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -47,7 +47,6 @@
      SUBDIR += dbusmenu-qt
      SUBDIR += dmenu
      SUBDIR += driconf
-     SUBDIR += driftnet
      SUBDIR += dstat
      SUBDIR += dunst
      SUBDIR += dwm
