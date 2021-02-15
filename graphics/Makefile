@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.541 2021/02/01 14:45:33 fcambus Exp $
+# $OpenBSD: Makefile,v 1.542 2021/02/15 15:56:39 naddy Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -47,7 +47,6 @@
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
      SUBDIR += enblend-enfuse
-     SUBDIR += enjoympeg
      SUBDIR += evince
      SUBDIR += evince,light
      SUBDIR += exiftran
