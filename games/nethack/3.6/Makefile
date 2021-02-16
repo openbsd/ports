@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/15 04:21:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/16 08:29:25 espie Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.6.2
@@ -9,7 +9,7 @@ PKGNAME =	${DISTNAME}
 CATEGORIES =	games
 MASTER_SITES =	https://www.nethack.org/download/3.6.2/
 DISTFILES =	nethack-${V:S/.//g}-src.tgz
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://nethack.org/
 

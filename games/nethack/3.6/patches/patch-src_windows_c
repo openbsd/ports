@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_windows_c,v 1.1 2021/02/16 08:29:25 espie Exp $
+
+Index: src/windows.c
+--- src/windows.c.orig
++++ src/windows.c
+@@ -860,7 +860,7 @@ const char *status_fieldnm[MAXBLSTATS];
+ const char *status_fieldfmt[MAXBLSTATS];
+ char *status_vals[MAXBLSTATS];
+ boolean status_activefields[MAXBLSTATS];
+-NEARDATA winid WIN_STATUS;
++extern NEARDATA winid WIN_STATUS;
+ 
+ void
+ genl_status_init()
