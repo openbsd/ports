@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2021/02/14 14:24:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/02/16 23:33:51 sthen Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
@@ -6,6 +6,7 @@ COMMENT=	automatically generate Python bindings for C and C++ libs
 # devel/py-sip, www/py-qtwebengine, x11/py-qt5, x11/py-sip-qt5
 # API changes fairly often, be sure to test dependent ports when updating.
 MODPY_EGG_VERSION=	5.5.0
+REVISION=		0
 
 # 6.x removes the "sip" script and wants dependent ports to use
 # sip-build instead, math/veusz (at least as of 3.3.1) can't use that
@@ -35,6 +36,7 @@ FLAVOR=		python3
 MODPY_PI=	Yes
 MODPY_SETUPTOOLS= Yes
 
-RUN_DEPENDS=	textproc/py-toml${MODPY_FLAVOR}
+RUN_DEPENDS=	sysutils/py-packaging${MODPY_FLAVOR} \
+		textproc/py-toml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
