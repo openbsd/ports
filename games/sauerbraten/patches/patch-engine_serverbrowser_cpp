@@ -1,7 +1,8 @@
-$OpenBSD: patch-engine_serverbrowser_cpp,v 1.1 2015/04/11 13:49:14 jsg Exp $
---- engine/serverbrowser.cpp.orig	Sat Apr 11 22:52:25 2015
-+++ engine/serverbrowser.cpp	Sat Apr 11 22:52:45 2015
-@@ -39,12 +39,10 @@ int resolverloop(void * data)
+$OpenBSD: patch-engine_serverbrowser_cpp,v 1.2 2021/02/16 00:25:37 jsg Exp $
+Index: engine/serverbrowser.cpp
+--- engine/serverbrowser.cpp.orig
++++ engine/serverbrowser.cpp
+@@ -38,12 +38,10 @@ int resolverloop(void * data)
          while(resolverqueries.empty()) SDL_CondWait(querycond, resolvermutex);
          rt->query = resolverqueries.pop();
          rt->starttime = totalmillis;

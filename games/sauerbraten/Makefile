@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/02 09:22:26 jsg Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/16 00:25:37 jsg Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 macppc
 
@@ -13,12 +13,11 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 MULTI_PACKAGES=	-main -data
 
 N=		sauerbraten
-V=		20130203
-REVISION=	3
+V=		20201227
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
-DISTNAME=	${N}_2013_02_03_collect_edition_linux
+DISTNAME=	${N}_2020_12_27_linux
 EXTRACT_SUFX=	.tar.bz2
 
 PKG_ARCH-data=	*
@@ -34,10 +33,11 @@ NO_TEST=		Yes
 
 RUN_DEPENDS-main +=	${BASE_PKGPATH},-data
 
-LIB_DEPENDS-main=	devel/sdl-mixer \
-			devel/sdl-image \
+LIB_DEPENDS-main=	devel/sdl2-mixer \
+			devel/sdl2-image \
 			net/enet
-WANTLIB-main=		GL X11 SDL SDL_image SDL_mixer c enet m pthread ${COMPILER_LIBCXX} z
+WANTLIB-main=		GL X11 SDL2 SDL2_image SDL2_mixer c enet m pthread \
+			${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
