@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_log_c,v 1.8 2019/12/01 03:19:10 lteo Exp $
+$OpenBSD: patch-src_log_c,v 1.9 2021/02/16 03:02:38 lteo Exp $
 Index: src/log.c
 --- src/log.c.orig
 +++ src/log.c
@@ -11,7 +11,7 @@ Index: src/log.c
  
      /* dump the timestamp */
      fwrite(timestamp, strlen(timestamp), 1, fp);
-@@ -1971,7 +1971,7 @@ void PrintEapolPkt(FILE * fp, Packet * p)
+@@ -1975,7 +1975,7 @@ void PrintEapolPkt(FILE * fp, Packet * p)
  
  
      memset((char *) timestamp, 0, TIMEBUF_SIZE);
@@ -20,7 +20,7 @@ Index: src/log.c
  
      /* dump the timestamp */
      fwrite(timestamp, strlen(timestamp), 1, fp);
-@@ -2145,7 +2145,7 @@ void PrintWifiPkt(FILE * fp, Packet * p)
+@@ -2149,7 +2149,7 @@ void PrintWifiPkt(FILE * fp, Packet * p)
  
  
      memset((char *) timestamp, 0, TIMEBUF_SIZE);

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.33 2020/05/27 02:32:10 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.34 2021/02/16 03:02:38 lteo Exp $
 @pkgpath net/snort[,flexresp][,mysql][,prelude][,postgresql]
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/snort
 bin/appid_detector_builder.sh
 @bin bin/snort
 @bin bin/u2boat
@@ -33,6 +34,8 @@ lib/snort_dynamicpreprocessor/libsf_appid_preproc.la
 @so lib/snort_dynamicpreprocessor/libsf_pop_preproc.so
 @comment lib/snort_dynamicpreprocessor/libsf_reputation_preproc.la
 @so lib/snort_dynamicpreprocessor/libsf_reputation_preproc.so
+@comment lib/snort_dynamicpreprocessor/libsf_s7commplus_preproc.la
+@so lib/snort_dynamicpreprocessor/libsf_s7commplus_preproc.so
 @comment lib/snort_dynamicpreprocessor/libsf_sdf_preproc.la
 @so lib/snort_dynamicpreprocessor/libsf_sdf_preproc.so
 @comment lib/snort_dynamicpreprocessor/libsf_sip_preproc.la
@@ -136,6 +139,3 @@ share/examples/snort/unicode.map
 @group _snort
 @sample /var/snort/
 @sample /var/snort/log/
-@owner
-@group
-@rcscript ${RCDIR}/snort
