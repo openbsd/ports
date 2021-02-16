@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.3 2020/09/12 18:39:59 rsadowski Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.4 2021/02/16 08:40:06 espie Exp $
+lib/X11/app-defaults/NetHack-${V}
 ${GAMEDIR}/pet_mark.xbm
 ${GAMEDIR}/pilemark.xbm
 ${GAMEDIR}/rip.xpm
 ${GAMEDIR}/x11tiles
-lib/X11/app-defaults/NetHack-${V}

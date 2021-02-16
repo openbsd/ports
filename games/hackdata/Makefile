@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/16 08:40:06 espie Exp $
 
 COMMENT =	common data for the nethack/slash ports
-V =		3.6.0
+V =		3.6.6
 DISTNAME =	nethack-$V
 PKGNAME =	hackdata-$V
 CATEGORIES =	games
@@ -18,11 +18,13 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 EXTRACT_ONLY =
+NHDIR = NetHack-NetHack-$V_Released
+WRKDIST = ${WRKDIR}/${NHDIR}
 
 post-extract:
 	@cd ${WRKDIR} && ${TAR} zxqf ${FULLDISTDIR}/${DISTFILES} \
-	nethack-$V/win/X11/ibm.bdf \
-	nethack-$V/win/X11/nh10.bdf \
+	${NHDIR}/win/X11/ibm.bdf \
+	${NHDIR}/win/X11/nh10.bdf \
 
 do-build:
 	cd ${WRKSRC}/win/X11 && \
