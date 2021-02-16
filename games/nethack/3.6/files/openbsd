@@ -1,4 +1,4 @@
-# $OpenBSD: openbsd,v 1.2 2021/02/16 08:30:01 espie Exp $
+# $OpenBSD: openbsd,v 1.3 2021/02/16 08:45:02 espie Exp $
 # vi:syntax=make
 
 #-PRE
@@ -10,15 +10,16 @@ CFLAGS += -DSYSCF -DSYSCF_FILE=\"$(HACKDIR)/sysconf\"
 # Wee, let's not do config
 CFLAGS += -DVISION_TABLES -DNOUSER_SOUNDS
 CFLAGS += -DTIMED_DELAY -DNOMAIL
+CFLAGS += -DCURSES_GRAPHICS
 
 CFLAGS += -DCOMPRESS=\"/usr/bin/gzip\" -DCOMPRESS_EXTENSION=\".gz\"
 
 LINK = ${CC}
 CXX = c++
 
-WINSRC = $(WINTTYSRC)
-WINOBJ = $(WINTTYOBJ)
-WINLIB = $(WINTTYLIB)
+WINSRC = $(WINTTYSRC) $(WINCURSESSRC)
+WINOBJ = $(WINTTYOBJ) $(WINCURSESOBJ)
+WINLIB = $(WINTTYLIB) $(WINCURSESLIB)
 
 POSTINSTALL = install -g $(GAMEGRP) -m $(VARFILEPERM) sys/unix/sysconf ${INSTDIR}/sysconf
 WINTTYLIB=-lcurses
