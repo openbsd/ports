@@ -1,0 +1,5 @@
+py-toolz provides a set of utility functions for iterators, functions,
+and dictionaries. These functions interoperate well and form the
+building blocks of common data analytic operations. They extend the
+standard libraries itertools and functools and borrow heavily from
+the standard libraries of contemporary functional languages.
