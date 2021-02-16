@@ -1,4 +1,5 @@
-# $OpenBSD: openbsd,v 1.1.1.1 2018/04/25 16:56:31 espie Exp $
+# $OpenBSD: openbsd,v 1.2 2021/02/16 08:30:01 espie Exp $
+# vi:syntax=make
 
 #-PRE
 
