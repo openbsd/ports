@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/09 11:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/16 16:53:35 sthen Exp $
 
 COMMENT=	astrology program for X11 and text-based user interfaces
 
 DISTNAME=	ast71src
 PKGNAME=	astrolog-7.10
+REVISION=	0
 
 CATEGORIES=	misc
 
@@ -19,7 +20,6 @@ WANTLIB += X11 c m
 
 # TLS
 COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
 MASTER_SITES=	https://www.astrolog.org/ftp/
 DISTFILES=	${DISTNAME}.zip \
