@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/01/10 20:05:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2021/02/16 22:58:13 sthen Exp $
 
 COMMENT-main=		LDAP client API for Python
 COMMENT-examples=	example programs for the LDAP client API for Python
@@ -6,6 +6,7 @@ COMMENT-examples=	example programs for the LDAP client API for Python
 MODPY_EGG_VERSION =	3.3.1
 DISTNAME=		python-ldap-${MODPY_EGG_VERSION}
 PKGNAME=		py-ldap-${MODPY_EGG_VERSION}
+REVISION=		0
 
 FULLPKGPATH-main=	databases/py-ldap,-main${MODPY_FLAVOR}
 FULLPKGNAME-main=	${MODPY_PY_PREFIX}ldap-${MODPY_EGG_VERSION}
@@ -26,15 +27,7 @@ MULTI_PACKAGES=		-main -examples
 MODULES=		lang/python
 
 FLAVORS=		python3
-FLAVOR?=
-
-# @pkgpath markers only for py2 flavour
-SUBST_VARS+=		MODPY_2ONLY
-.if ${FLAVOR} == python3
-MODPY_2ONLY = "@comment "
-.else
-MODPY_2ONLY =
-.endif
+FLAVOR=			python3
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
@@ -54,8 +47,8 @@ TEST_DEPENDS=		${RUN_DEPENDS-main} \
 TEST_ENV=		SBIN=${LOCALBASE}/libexec:${LOCALBASE}/sbin
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}ldap
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-ldap
 	cd ${WRKSRC}; tar cf - Demo | tar xf - -C \
-		${PREFIX}/share/examples/${MODPY_PY_PREFIX}ldap
+		${PREFIX}/share/examples/py-ldap
 
 .include <bsd.port.mk>
