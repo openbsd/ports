@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/28 09:55:14 martin Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/16 09:27:30 martin Exp $
 
 COMMENT=	Python interface to the netCDF C library
 
-MODPY_EGG_VERSION=	1.5.5.1
+MODPY_EGG_VERSION=	1.5.6
 DISTNAME=		netCDF4-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
@@ -11,7 +11,7 @@ HOMEPAGE=		http://unidata.github.io/netcdf4-python/
 
 MAINTAINER=		Martin Reindl <martin@catai.org>
 
-# BSD-like
+# MIT
 PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
