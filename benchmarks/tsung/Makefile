@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2020/10/08 11:59:33 daniel Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/16 06:25:53 gnezdo Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
 V=		1.7.0
 DISTNAME=	tsung-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	benchmarks net
 
@@ -17,7 +17,7 @@ MASTER_SITES=		http://tsung.erlang-projects.org/dist/
 
 MODULES=		lang/erlang \
 			lang/python
-MODERL_VERSION=		19
+MODERL_VERSION=		21
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP= 	No
 
