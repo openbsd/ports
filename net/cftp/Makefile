@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/17 14:46:33 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/16 23:02:19 sthen Exp $
 
-COMMENT=	full screen FTP client
+COMMENT=	deprecated full screen FTP client
 
 DISTNAME=	cftp-0.12
-REVISION=	4
+REVISION=	6
 CATEGORIES=	net
 
-HOMEPAGE=	http://nih.at/cftp/
+HOMEPAGE=	https://nih.at/cftp/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
