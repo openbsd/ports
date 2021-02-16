@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.434 2021/02/08 20:33:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.435 2021/02/16 22:22:49 kn Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -341,7 +341,6 @@
      SUBDIR += xbl
      SUBDIR += xblast
      SUBDIR += xboard
-     SUBDIR += xboing
      SUBDIR += xbomber
      SUBDIR += xbreaky
      SUBDIR += xbubble
