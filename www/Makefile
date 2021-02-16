@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1000 2021/02/14 15:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.1001 2021/02/16 22:48:01 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -462,7 +462,6 @@
      SUBDIR += py-httpie
      SUBDIR += py-httplib2
      SUBDIR += py-httplib2,python3
-     SUBDIR += py-hyperlink
      SUBDIR += py-hyperlink,python3
      SUBDIR += py-itsdangerous
      SUBDIR += py-itsdangerous,python3
@@ -623,7 +622,6 @@
      SUBDIR += tootstream
      SUBDIR += tor-browser
      SUBDIR += trac
-     SUBDIR += trac-ldapplugin
      SUBDIR += tracnav
      SUBDIR += ttyd
      SUBDIR += tuir
