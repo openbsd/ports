@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/16 22:53:14 sthen Exp $
 
 COMMENT=	testing frameworks from Zope 3
 
-MODPY_EGG_VERSION=	3.7.4
+MODPY_EGG_VERSION=	4.9
 
 DISTNAME=	zope.testing-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopetesting-${MODPY_EGG_VERSION}
-REVISION =	5
 CATEGORIES=	devel
 
 # Zope Public License
@@ -18,13 +17,7 @@ MODULES=	lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=	devel/py-zopeinterface
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-do-test:
-	cd ${WRKSRC} && \
-		${MODPY_BIN} bootstrap.py && \
-		./bin/buildout && \
-		./bin/test
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
