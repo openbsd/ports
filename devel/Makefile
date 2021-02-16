@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2064 2021/02/16 20:31:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2065 2021/02/16 23:02:06 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1360,7 +1360,6 @@
      SUBDIR += py-argh,python3
      SUBDIR += py-asn1
      SUBDIR += py-asn1,python3
-     SUBDIR += py-asn1-modules
      SUBDIR += py-asn1-modules,python3
      SUBDIR += py-astroid,python3
      SUBDIR += py-async-timeout
@@ -1368,7 +1367,6 @@
      SUBDIR += py-atomicwrites,python3
      SUBDIR += py-attrs
      SUBDIR += py-attrs,python3
-     SUBDIR += py-automat
      SUBDIR += py-automat,python3
      SUBDIR += py-babel
      SUBDIR += py-babel,python3
@@ -1428,7 +1426,6 @@
      SUBDIR += py-configobj
      SUBDIR += py-configobj,python3
      SUBDIR += py-configparser
-     SUBDIR += py-constantly
      SUBDIR += py-constantly,python3
      SUBDIR += py-construct,python3
      SUBDIR += py-contextlib2
@@ -1518,7 +1515,6 @@
      SUBDIR += py-hachoir-core
      SUBDIR += py-hachoir-metadata
      SUBDIR += py-hachoir-parser
-     SUBDIR += py-hamcrest
      SUBDIR += py-hamcrest,python3
      SUBDIR += py-html5lib
      SUBDIR += py-html5lib,python3
@@ -1527,7 +1523,6 @@
      SUBDIR += py-icalendar
      SUBDIR += py-icalendar,python3
      SUBDIR += py-importlib-metadata,python3
-     SUBDIR += py-incremental
      SUBDIR += py-incremental,python3
      SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
@@ -1745,7 +1740,6 @@
      SUBDIR += py-tqdm,python3
      SUBDIR += py-traceback2
      SUBDIR += py-traitlets,python3
-     SUBDIR += py-twisted
      SUBDIR += py-twisted,python3
      SUBDIR += py-txaio,python3
      SUBDIR += py-typing
@@ -1788,13 +1782,10 @@
      SUBDIR += py-yapf,python3
      SUBDIR += py-zc-lockfile
      SUBDIR += py-zc-lockfile,python3
-     SUBDIR += py-zopecomponent
      SUBDIR += py-zopecomponent,python3
-     SUBDIR += py-zopeevent
      SUBDIR += py-zopeevent,python3
-     SUBDIR += py-zopeinterface
      SUBDIR += py-zopeinterface,python3
-     SUBDIR += py-zopetesting
+     SUBDIR += py-zopetesting,python3
      SUBDIR += pyflakes
      SUBDIR += pyflakes,python3
      SUBDIR += pygame

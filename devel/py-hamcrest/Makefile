@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/16 23:02:06 sthen Exp $
 
 COMMENT =		Hamcrest matchers for Python
 
 MODPY_EGG_VERSION =	1.9.0
 DISTNAME =		PyHamcrest-${MODPY_EGG_VERSION}
 PKGNAME =		py-hamcrest-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODPY_SETUPTOOLS =	Yes
 

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/03 12:07:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/16 23:02:07 sthen Exp $
+@pkgpath devel/py-constantly
 lib/python${MODPY_VERSION}/site-packages/constantly/
 lib/python${MODPY_VERSION}/site-packages/constantly-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/constantly-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

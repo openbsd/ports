@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1184 2021/02/16 22:22:50 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1185 2021/02/16 23:02:08 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -549,6 +549,20 @@ my $stem_extensions = {
 	'py-ripe.atlas.cousteau' => 'py3-ripe.atlas.cousteau',
 	'py-ripe.atlas.sagan' => 'py3-ripe.atlas.sagan',
 	'py-qtawesome' => 'py3-qtawesome',
+	'py-twisted' => 'py3-twisted',
+	'py-hamcrest' => 'py3-hamcrest',
+	'py-automat' => 'py3-automat',
+	'py-constantly' => 'py3-constantly',
+	'py-incremental' => 'py3-incremental',
+	'py-zopeevent' => 'py3-zopeevent',
+	'py-zopeinterface' => 'py3-zopeinterface',
+	'py-zopetesting' => 'py3-zopetesting',
+	'py-zopecomponent' => 'py3-zopecomponent',
+	'py-service_identity' => 'py3-service_identity',
+	'py-hyperlink' => 'py3-hyperlink',
+	'py-asn1-modules' => 'py3-asn1-modules',
+	'py-ldap' => 'py3-ldap',
+	'py-ldap-examples' => 'py3-ldap-examples',
 };
 
 my $obsolete_reason = {
@@ -2097,6 +2111,7 @@ my $obsolete_reason = {
 	'viz' => 4,
 	'drifntet' => 40,
 	'enjoympeg' => 6,
+	'trac-ldapplugin' => 6,
 	'xboing' => 0,
 };
 

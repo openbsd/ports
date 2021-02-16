@@ -1,18 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/11/18 00:39:29 kmos Exp $
-bin/cmcdump.py${MODPY_BIN_SUFFIX}
-bin/cmpdump.py${MODPY_BIN_SUFFIX}
-bin/crldump.py${MODPY_BIN_SUFFIX}
-bin/crmfdump.py${MODPY_BIN_SUFFIX}
-bin/ocspclient.py${MODPY_BIN_SUFFIX}
-bin/ocspreqdump.py${MODPY_BIN_SUFFIX}
-bin/ocsprspdump.py${MODPY_BIN_SUFFIX}
-bin/pkcs10dump.py${MODPY_BIN_SUFFIX}
-bin/pkcs1dump.py${MODPY_BIN_SUFFIX}
-bin/pkcs7dump.py${MODPY_BIN_SUFFIX}
-bin/pkcs8dump.py${MODPY_BIN_SUFFIX}
-bin/snmpget.py${MODPY_BIN_SUFFIX}
-bin/x509dump-rfc5280.py${MODPY_BIN_SUFFIX}
-bin/x509dump.py${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.6 2021/02/16 23:02:07 sthen Exp $
+@conflict py-asn1-modules-*
+@pkgpath devel/py-asn1-modules
+bin/cmcdump.py
+bin/cmpdump.py
+bin/crldump.py
+bin/crmfdump.py
+bin/ocspclient.py
+bin/ocspreqdump.py
+bin/ocsprspdump.py
+bin/pkcs10dump.py
+bin/pkcs1dump.py
+bin/pkcs7dump.py
+bin/pkcs8dump.py
+bin/snmpget.py
+bin/x509dump-rfc5280.py
+bin/x509dump.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

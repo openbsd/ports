@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/20 21:30:50 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/16 23:02:06 sthen Exp $
+@pkgpath devel/py-hamcrest
 lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

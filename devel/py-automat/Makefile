@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/22 19:25:36 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/16 23:02:06 sthen Exp $
 
 COMMENT =		finite-state machines in Python
 
 MODPY_EGG_VERSION =	0.8.0
+REVISION =		0
 
 DISTNAME =		Automat-${MODPY_EGG_VERSION}
 PKGNAME =		py-automat-${MODPY_EGG_VERSION}
@@ -29,13 +30,6 @@ RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 TEST_DEPENDS =		devel/py-twisted${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
-
-.if ${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-six${MODPY_FLAVOR}
-.endif
-
-post-install:
-	mv ${PREFIX}/bin/automat-visualize{,${MODPY_BIN_SUFFIX}}
+FLAVOR =		python3
 
 .include <bsd.port.mk>

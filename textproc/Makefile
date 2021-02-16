@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.662 2021/02/08 09:57:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.663 2021/02/16 23:02:06 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -414,7 +414,6 @@
      SUBDIR += py-lxml,python3
      SUBDIR += py-markdown
      SUBDIR += py-markdown,python3
-     SUBDIR += py-m2r
      SUBDIR += py-m2r,python3
      SUBDIR += py-mistune
      SUBDIR += py-mistune,python3

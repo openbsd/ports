@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/16 23:02:07 sthen Exp $
 
 COMMENT =		versioning library for Python projects
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	17.5.0
 
 DISTNAME =		incremental-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -23,6 +23,6 @@ TEST_DEPENDS =		devel/py-click${MODPY_FLAVOR} \
 			devel/py-twisted${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

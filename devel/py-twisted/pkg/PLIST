@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/04 14:06:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/16 23:02:06 sthen Exp $
 @conflict py-twisted-core-*
 @conflict py-twisted-conch-*
 @conflict py-twisted-lore-*
@@ -22,15 +22,15 @@
 @pkgpath devel/py-twisted/web2
 @pkgpath devel/py-twisted/words
 !%%python3%%
-bin/cftp${MODPY_BIN_SUFFIX}
-bin/ckeygen${MODPY_BIN_SUFFIX}
-bin/conch${MODPY_BIN_SUFFIX}
-bin/mailmail${MODPY_BIN_SUFFIX}
-bin/pyhtmlizer${MODPY_BIN_SUFFIX}
-bin/tkconch${MODPY_BIN_SUFFIX}
-bin/trial${MODPY_BIN_SUFFIX}
-bin/twist${MODPY_BIN_SUFFIX}
-bin/twistd${MODPY_BIN_SUFFIX}
+bin/cftp
+bin/ckeygen
+bin/conch
+bin/mailmail
+bin/pyhtmlizer
+bin/tkconch
+bin/trial
+bin/twist
+bin/twistd
 lib/python${MODPY_VERSION}/site-packages/Twisted-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Twisted-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Twisted-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
