@@ -1,11 +1,11 @@
-$OpenBSD: patch-Modules__hashopenssl_c,v 1.1 2019/11/07 16:14:09 kmos Exp $
+$OpenBSD: patch-Modules__hashopenssl_c,v 1.2 2021/02/16 18:49:49 tb Exp $
 
 Index: Modules/_hashopenssl.c
 --- Modules/_hashopenssl.c.orig
 +++ Modules/_hashopenssl.c
-@@ -26,7 +26,8 @@
- #include <openssl/objects.h>
- #include "openssl/err.h"
+@@ -30,7 +30,8 @@
+ #  error "OPENSSL_THREADS is not defined, Python requires thread-safe OpenSSL"
+ #endif
  
 -#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
 +#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || \
