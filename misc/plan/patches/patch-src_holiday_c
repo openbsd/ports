@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_holiday_c,v 1.1 2021/02/17 17:52:58 sthen Exp $
+
+Index: src/holiday.c
+--- src/holiday.c.orig
++++ src/holiday.c
+@@ -50,7 +50,7 @@ static int calc_pascha(int);
+ extern int yyparse(void);
+ 
+ 
+-#if defined(bsdi)||defined(linux)||defined(__NetBSD__)||defined(__FreeBSD__)||defined(HPGCC)||defined(__EMX__)||defined(__OpenBSD__)||defined(MACOSX)
++#if defined(bsdi)||defined(linux)||defined(__NetBSD__)||defined(__FreeBSD__)||defined(HPGCC)||defined(__EMX__)||defined(MACOSX)
+ int yylineno;
+ #else
+ extern int	 yylineno;		/* current line # being parsed */

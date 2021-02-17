@@ -1,18 +1,21 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/17 17:52:58 sthen Exp $
 
 COMMENT=	X11/Motif schedule planner with calendar
 
 DISTNAME=	plan-1.10.1
-REVISION=	3
+REVISION=	4
 CATEGORIES=	misc
 
-HOMEPAGE=	http://www.bitrot.de/plan.html
+HOMEPAGE=	https://www.bitrot.de/plan.html
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm Xt c m Xm
 
-MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/plan/
+# ftp server seems to have a firewalling/config problem
+MASTER_SITES=	ftp://ftp.bitrot.de/pub/plan/ \
+		https://spacehopper.org/mirrors/
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 LIB_DEPENDS+=		x11/motif
 
