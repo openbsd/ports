@@ -1,6 +1,6 @@
-# $OpenBSD: meson.port.mk,v 1.58 2021/01/16 08:45:02 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.59 2021/02/17 07:15:36 ajacoutot Exp $
 
-BUILD_DEPENDS +=	devel/meson>=0.56.2v0
+BUILD_DEPENDS +=	devel/meson>=0.57.0v0
 SEPARATE_BUILD ?=	Yes
 
 .if empty(CONFIGURE_STYLE)
@@ -49,21 +49,22 @@ CONFIGURE_ARGS +=	${MODMESON_CONFIGURE_ARGS}
 CONFIGURE_ENV +=	${MODMESON_CONFIGURE_ENV}
 MODMESON_configure=	${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/meson \
 				${CONFIGURE_ARGS} ${WRKSRC} ${WRKBUILD}
-.if !target(do-build)
+
+.   if !target(do-build)
 do-build:
 	exec ${SETENV} ${MAKE_ENV} \
 		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v -j ${MAKE_JOBS}
-.endif
+.   endif
 
-.if !target(do-install)
+.   if !target(do-install)
 do-install:
 	exec ${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${LOCALBASE}/bin/ninja -C ${WRKBUILD} ${FAKE_TARGET}
-.endif
+.   endif
 
-.if !target(do-test)
+.   if !target(do-test)
 do-test:
 	exec ${SETENV} ${ALL_TEST_ENV} \
 		${LOCALBASE}/bin/ninja -C ${WRKBUILD} ${TEST_TARGET}
-.endif
+.   endif
 .endif

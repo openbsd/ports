@@ -1,0 +1,15 @@
+$OpenBSD: patch-mesonbuild_mesonlib_universal_py,v 1.1 2021/02/17 07:15:36 ajacoutot Exp $
+
+https://github.com/mesonbuild/meson/pull/8366
+
+Index: mesonbuild/mesonlib/universal.py
+--- mesonbuild/mesonlib/universal.py.orig
++++ mesonbuild/mesonlib/universal.py
+@@ -2023,7 +2023,6 @@ class OptionKey:
+         This takes strings like `mysubproject:build.myoption` and Creates an
+         OptionKey out of them.
+         """
+-
+         try:
+             subproject, raw2 = raw.split(':')
+         except ValueError:
