@@ -1,9 +1,27 @@
-$OpenBSD: patch-setup_py,v 1.9 2020/06/07 16:01:39 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.10 2021/02/17 19:06:42 ajacoutot Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -686,7 +686,7 @@ distutils.core.setup(
+@@ -67,7 +67,7 @@ class my_build_i18n(distutils.command.build.build):
+     ]
+ 
+     def initialize_options(self):
+-        self.merge_po = False
++        self.merge_po = True
+     def finalize_options(self):
+         pass
+ 
+@@ -179,7 +179,7 @@ from %(pkgname)s import %(filename)s
+             open(newpath, "wb").write(out)
+ 
+             self.distribution.data_files.append(
+-                ('share/man/man1', (newpath,)))
++                ('man/man1', (newpath,)))
+ 
+     def _build_icons(self):
+         for size in glob.glob(os.path.join("data/icons", "*")):
+@@ -496,7 +496,7 @@ distutils.core.setup(
           ["data/org.virt-manager.virt-manager.gschema.xml"]),
          ("share/virt-manager/ui", glob.glob("ui/*.ui")),
  

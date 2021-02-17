@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2020/10/03 15:39:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/17 19:06:42 ajacoutot Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
-DISTNAME=		virt-manager-2.2.1
+DISTNAME=		virt-manager-3.2.0
 CATEGORIES=		sysutils x11
-REVISION=		1
 
 HOMEPAGE=		http://virt-manager.org/
 
@@ -16,13 +15,17 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		http://virt-manager.org/download/sources/virt-manager/
 
 MODULES=		devel/dconf \
-			lang/python \
-			textproc/intltool
+			lang/python
 
-MODPY_BUILDDEP=		Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 NO_BUILD=		Yes
+MODPY_BUILDDEP=		Yes
+
+BUILD_DEPENDS=		devel/gettext,-tools
+
+# rst2html-3
+BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/libvirt-glib \
 			devel/py-gobject3${MODPY_FLAVOR} \
@@ -46,6 +49,10 @@ MODPY_SETUP_ARGS=	--no-update-icon-cache \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/virtinst/buildconfig.py
+	cd ${WRKDIR}/bin && ln -sf ${LOCALBASE}/bin/rst2html-3 rst2man
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/virt-manager
 
 do-test:
 	${MODPY_TEST_TARGET} ${TEST_TARGET}
