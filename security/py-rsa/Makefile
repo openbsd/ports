@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2021/01/14 14:22:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/17 07:51:30 ajacoutot Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
 COMMENT=		Python RSA implementation
 
-MODPY_EGG_VERSION=	4.7
+MODPY_EGG_VERSION=	4.7.1
 DISTNAME=		rsa-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
