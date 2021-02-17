@@ -1,6 +1,9 @@
-$OpenBSD: patch-mesonbuild_environment_py,v 1.9 2021/02/17 07:15:36 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_environment_py,v 1.10 2021/02/17 15:54:34 ajacoutot Exp $
 
-https://github.com/mesonbuild/meson/pull/8366
+From 10d94a12b85ba19dc2bcfc6296632eaf74f5d4f0 Mon Sep 17 00:00:00 2001
+From: Dylan Baker <dylan@pnwbakers.com>
+Date: Tue, 16 Feb 2021 10:48:20 -0800
+Subject: [PATCH] Environment: Fix passing envrionment variables CPPFLAGS and CFLAGS
 
 Index: mesonbuild/environment.py
 --- mesonbuild/environment.py.orig
