@@ -1,4 +1,4 @@
-$OpenBSD: patch-get_iplayer,v 1.92 2020/06/29 13:29:40 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.93 2021/02/17 14:19:06 sthen Exp $
 
 Index: get_iplayer
 --- get_iplayer.orig
@@ -7,7 +7,7 @@ Index: get_iplayer
 -#!/usr/bin/env perl
 +#!/usr/bin/perl
  #
- # get_iplayer - Lists and records BBC iPlayer TV and radio programmes
+ # get_iplayer - Lists and records BBC iPlayer TV and BBC Sounds radio programmes
  #
 @@ -319,6 +319,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
  }
