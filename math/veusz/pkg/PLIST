@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/01/04 14:06:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/02/17 11:27:16 sthen Exp $
 bin/veusz
 lib/python${MODPY_VERSION}/site-packages/veusz/
 lib/python${MODPY_VERSION}/site-packages/veusz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -173,6 +173,8 @@ lib/python${MODPY_VERSION}/site-packages/veusz/examples/3d_function.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/3d_points.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/3d_surface.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/3d_volume.vsz
+lib/python${MODPY_VERSION}/site-packages/veusz/examples/FDR_example.vsz
+lib/python${MODPY_VERSION}/site-packages/veusz/examples/FDR_sample_data.csv
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/axis_function.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/axis_function_linked.csv
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/axis_function_linked.vsz
@@ -202,6 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/examples/fixed_aspect.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/functions.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/hatching.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/histo.vsz
+lib/python${MODPY_VERSION}/site-packages/veusz/examples/histo_widget.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/histogramming.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/inside.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/isolatedaxes.vsz
@@ -253,6 +256,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_function3d.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_graph.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_graph3d.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_grid.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_histo.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_image.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_imagefile.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/button_key.svg
@@ -278,6 +282,10 @@ lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_barbox.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_barcurve.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_bardiamond.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_barends.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_barendshi.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_barendslo.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_barhi.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_barlo.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_box.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_boxfill.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_curve.svg
@@ -288,8 +296,12 @@ lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_fillhorz.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_fillvert.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_linehorz.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_linehorzbar.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_linehorzhi.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_linehorzlo.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_linevert.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_linevertbar.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_lineverthi.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_linevertlo.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/error_none.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-application-exit.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-clipboard.svg
@@ -355,6 +367,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_plotfillbelow.png
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_plotline.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_plotmarkerfill.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_plotmarkerline.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_postline.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_stylesheet.png
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_subcontourline.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/settings_whisker.svg
@@ -365,7 +378,10 @@ lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-edit-prefs.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-pick-data.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-shape-menu.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-view-fullscreen.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-zoom-graph-out.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-zoom-graph-recenter.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-zoom-graph.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz-zoom-reset.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz.png
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz_128.png
@@ -392,6 +408,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}clicklabel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}datasetbrowser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}historycheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}historycombo.${MODPY_PYC_MAGIC_TAG}pyc
@@ -400,6 +417,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}history
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}historyvaluecombo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}lineeditwithclear.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}recentfilesbutton.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/clicklabel.py
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/datasetbrowser.py
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/historycheck.py
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/historycombo.py
@@ -512,6 +530,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}function3
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}graph3d.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}histo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}image.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}key.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}line.${MODPY_PYC_MAGIC_TAG}pyc
@@ -552,6 +571,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/widgets/function3d.py
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/graph.py
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/graph3d.py
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/grid.py
+lib/python${MODPY_VERSION}/site-packages/veusz/widgets/histo.py
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/image.py
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/key.py
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/line.py
