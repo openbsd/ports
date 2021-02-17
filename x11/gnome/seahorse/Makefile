@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.127 2020/11/08 08:07:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2021/02/17 07:40:55 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
-GNOME_VERSION=		3.38.0.1
+GNOME_VERSION=		3.38.1
 
 CATEGORIES=		security
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=		databases/openldap \
 			x11/gnome/libsecret \
 			x11/libhandy
 
-BUILD_DEPENDS +=	security/gnupg>=2.2.23p1
-RUN_DEPENDS +=		security/gnupg>=2.2.23p1
+BUILD_DEPENDS +=	security/gnupg
+RUN_DEPENDS +=		security/gnupg
 
 .include <bsd.port.mk>
