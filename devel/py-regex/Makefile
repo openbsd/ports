@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/16 20:27:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/17 05:28:01 rsadowski Exp $
 
 COMMENT =		alternative regular expression module to replace re
 
@@ -14,8 +14,6 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread
 
-COMPILER =	base-clang ports-gcc
-
 MODULES =	lang/python
 
 FLAVORS =	python3
@@ -23,6 +21,6 @@ FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-NO_TESTS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
