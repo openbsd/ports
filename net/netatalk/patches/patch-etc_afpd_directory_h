@@ -1,0 +1,14 @@
+$OpenBSD: patch-etc_afpd_directory_h,v 1.1 2021/02/17 15:57:42 naddy Exp $
+
+Index: etc/afpd/directory.h
+--- etc/afpd/directory.h.orig
++++ etc/afpd/directory.h
+@@ -93,7 +93,7 @@ struct maccess {
+ #define	AR_UWRITE	(1<<2)
+ #define	AR_UOWN		(1<<7)
+ 
+-q_t *invalid_dircache_entries;
++extern q_t *invalid_dircache_entries;
+ 
+ typedef int (*dir_loop)(struct dirent *, char *, void *);
+ 
