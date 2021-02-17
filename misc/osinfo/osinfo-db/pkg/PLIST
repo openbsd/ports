@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/02/03 12:29:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/02/17 07:58:37 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -720,6 +720,8 @@ share/osinfo/os/redhat.com/rhel-8.1.xml
 share/osinfo/os/redhat.com/rhel-8.2.xml
 share/osinfo/os/redhat.com/rhel-8.3.xml
 share/osinfo/os/redhat.com/rhel-8.4.xml
+share/osinfo/os/redhat.com/rhel-9-unknown.xml
+share/osinfo/os/redhat.com/rhel-9.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
