@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:48:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/17 12:57:58 sthen Exp $
 
 COMMENT=	network grep
 
-DISTNAME=	ngrep-1.45
-REVISION=	5
-CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ngrep/}
-EXTRACT_SUFX=	.tar.bz2
+GH_ACCOUNT=	jpr5
+GH_PROJECT=	ngrep
+GH_COMMIT=	2a9603bc67dface9606a658da45e1f5c65170444
+DISTNAME=	ngrep-1.47.20190128
 
-HOMEPAGE=	http://ngrep.sourceforge.net/
+CATEGORIES=	net
 
 # custom BSD-like
 PERMIT_PACKAGE=	Yes
@@ -19,7 +18,7 @@ LIB_DEPENDS=	devel/pcre
 NO_TEST=	Yes
 
 USE_GMAKE=	Yes
-AUTOCONF_VERSION= 2.60
+AUTOCONF_VERSION= 2.69
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS+= --enable-ipv6 \
 		 --enable-pcre \
