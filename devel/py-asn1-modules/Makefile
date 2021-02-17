@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/16 23:02:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/17 15:41:22 sthen Exp $
 
 COMMENT =		collection of ASN.1 data structures for py-asn1
 
@@ -28,5 +28,8 @@ RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR}
 MODPY_ADJ_FILES =	tools/*.py
 
 TEST_ENV +=		PYTHONPATH=${WRKINST}/${MODPY_SITEPKG}
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/* ${PREFIX}/bin/
 
 .include <bsd.port.mk>
