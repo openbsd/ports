@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2020/11/08 13:20:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2021/02/17 07:17:58 ajacoutot Exp $
 
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
-GNOME_VERSION=		3.38.0
-REVISION=		0
+GNOME_VERSION=		3.38.1
 
 CATEGORIES=		graphics
 

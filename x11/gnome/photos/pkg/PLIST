@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/11/07 10:33:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2021/02/17 07:17:58 ajacoutot Exp $
 @bin bin/gnome-photos
 lib/gnome-photos/
 @so lib/gnome-photos/libgnome-photos.so
@@ -340,7 +340,6 @@ share/locale/zh_HK/LC_MESSAGES/gnome-photos.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-photos.mo
 share/metainfo/org.gnome.Photos.appdata.xml
 share/tracker/domain-ontologies/org.gnome.Photos.rule
-share/tracker/miners/
 share/tracker/miners/org.gnome.Photos.Tracker1.Miner.Extract.service
 share/tracker/miners/org.gnome.Photos.Tracker1.Miner.Files.service
 @tag gtk-update-icon-cache %D/share/icons/hicolor
