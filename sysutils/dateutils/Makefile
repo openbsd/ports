@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/04 20:40:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/18 14:59:07 sthen Exp $
 
 COMMENT =		tools to fiddle with dates and times
 
-DISTNAME =		dateutils-0.4.7
+DISTNAME =		dateutils-0.4.8
 
 CATEGORIES =		sysutils
 
@@ -19,6 +19,6 @@ EXTRACT_SUFX =		.tar.xz
 CONFIGURE_STYLE =	gnu
 
 # uses wordexp
-NO_TEST =		Yes
+#NO_TEST =		Yes
 
 .include <bsd.port.mk>
