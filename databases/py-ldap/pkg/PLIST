@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2021/02/16 22:58:13 sthen Exp $
-@pkgpath databases/py-ldap
+@comment $OpenBSD: PLIST,v 1.10 2021/02/18 12:21:27 sthen Exp $
+@conflict py-ldap-examples-*
+@conflict py3-ldap-examples-*
 @pkgpath databases/py-ldap,-main
+@pkgpath databases/py-ldap,-main,python3
+@pkgpath databases/py-ldap,-examples
+@pkgpath databases/py-ldap,-examples,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldapurl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldapurl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -151,3 +155,43 @@ lib/python${MODPY_VERSION}/site-packages/slapdtest/certs/gennssdb.sh
 lib/python${MODPY_VERSION}/site-packages/slapdtest/certs/server.conf
 lib/python${MODPY_VERSION}/site-packages/slapdtest/certs/server.key
 lib/python${MODPY_VERSION}/site-packages/slapdtest/certs/server.pem
+share/examples/py-ldap/
+share/examples/py-ldap/Demo/
+share/examples/py-ldap/Demo/Lib/
+share/examples/py-ldap/Demo/Lib/ldap/
+share/examples/py-ldap/Demo/Lib/ldap/async/
+share/examples/py-ldap/Demo/Lib/ldap/async/deltree.py
+share/examples/py-ldap/Demo/Lib/ldap/async/ldifwriter.py
+share/examples/py-ldap/Demo/Lib/ldap/async/sizelimit.py
+share/examples/py-ldap/Demo/Lib/ldapurl/
+share/examples/py-ldap/Demo/Lib/ldapurl/urlsearch.py
+share/examples/py-ldap/Demo/Lib/ldif/
+share/examples/py-ldap/Demo/Lib/ldif/ldifcopy.py
+share/examples/py-ldap/Demo/initialize.py
+share/examples/py-ldap/Demo/ldapcontrols.py
+share/examples/py-ldap/Demo/ldapurl_search.py
+share/examples/py-ldap/Demo/matchedvalues.py
+share/examples/py-ldap/Demo/ms_ad_bind.py
+share/examples/py-ldap/Demo/options.py
+share/examples/py-ldap/Demo/page_control.py
+share/examples/py-ldap/Demo/paged_search_ext_s.py
+share/examples/py-ldap/Demo/passwd_ext_op.py
+share/examples/py-ldap/Demo/pickle_ldapobject.py
+share/examples/py-ldap/Demo/pyasn1/
+share/examples/py-ldap/Demo/pyasn1/dds.py
+share/examples/py-ldap/Demo/pyasn1/derefcontrol.py
+share/examples/py-ldap/Demo/pyasn1/noopsearch.py
+share/examples/py-ldap/Demo/pyasn1/ppolicy.py
+share/examples/py-ldap/Demo/pyasn1/psearch.py
+share/examples/py-ldap/Demo/pyasn1/readentrycontrol.py
+share/examples/py-ldap/Demo/pyasn1/sessiontrack.py
+share/examples/py-ldap/Demo/pyasn1/sss_highest_number.py
+share/examples/py-ldap/Demo/pyasn1/syncrepl.py
+share/examples/py-ldap/Demo/reconnect.py
+share/examples/py-ldap/Demo/rename.py
+share/examples/py-ldap/Demo/resiter.py
+share/examples/py-ldap/Demo/sasl_bind.py
+share/examples/py-ldap/Demo/schema.py
+share/examples/py-ldap/Demo/schema_tree.py
+share/examples/py-ldap/Demo/simple.py
+share/examples/py-ldap/Demo/simplebrowse.py
