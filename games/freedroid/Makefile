@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/18 19:27:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/18 22:57:25 sthen Exp $
 
 COMMENT=	clone of the Commodore 64 game paradroids
 
 GH_ACCOUNT=	ReinhardPrix
 GH_PROJECT=	FreedroidClassic
 GH_TAGNAME=	release-1.2.1
+
+PKGNAME=	freedroid-1.2.1
 
 CATEGORIES=	games x11
 
