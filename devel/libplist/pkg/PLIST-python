@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-python,v 1.2 2015/11/12 16:34:23 ajacoutot Exp $
-lib/python${MODPY_VERSION}/site-packages/plist.so
