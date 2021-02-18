@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/14 14:24:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/18 14:45:30 sthen Exp $
 
 COMMENT =	python Qt5WebEngine bindings
 
@@ -35,6 +35,7 @@ RUN_DEPENDS =		x11/py-sip-qt5${MODPY_FLAVOR} \
 
 BUILD_DEPENDS =		x11/py-sip-qt5${MODPY_FLAVOR} \
 			devel/py-sip${MODPY_FLAVOR} \
+			devel/py-qt-builder${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}
 
 QTVER =			qt5
