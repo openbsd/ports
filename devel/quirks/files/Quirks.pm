@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1185 2021/02/16 23:02:08 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1186 2021/02/18 20:42:26 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -563,6 +563,7 @@ my $stem_extensions = {
 	'py-asn1-modules' => 'py3-asn1-modules',
 	'py-ldap' => 'py3-ldap',
 	'py-ldap-examples' => 'py3-ldap-examples',
+	'py-pexpect' => 'py3-pexpect',
 };
 
 my $obsolete_reason = {
