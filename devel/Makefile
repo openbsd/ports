@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2066 2021/02/16 23:40:15 daniel Exp $
+# $OpenBSD: Makefile,v 1.2067 2021/02/18 13:23:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -314,6 +314,7 @@
      SUBDIR += libbfio
      SUBDIR += libbinio
      SUBDIR += libbio
+     SUBDIR += libcdada
      SUBDIR += libcoap
      SUBDIR += libconfig
      SUBDIR += libconfuse
