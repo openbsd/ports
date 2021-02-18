@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/04 14:06:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/18 12:24:04 sthen Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
 MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
-PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
+PKGNAME =		py-${DISTNAME}
 REVISION =		3
 
 CATEGORIES =		devel
