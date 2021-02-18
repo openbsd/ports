@@ -1,0 +1,17 @@
+$OpenBSD: patch-meson_build,v 1.1 2021/02/18 09:20:11 ajacoutot Exp $
+
+Should match b_lundef in meson(1).
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -91,9 +91,6 @@ else
+ endif
+ 
+ common_link_args = []
+-if meson.get_compiler('c').has_link_argument('-Wl,--no-undefined')
+-  common_link_args += ['-Wl,--no-undefined']
+-endif
+ 
+ 
+ build_tests = not get_option('tests').disabled()
