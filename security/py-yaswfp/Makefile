@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/18 13:09:19 sthen Exp $
 
 COMMENT =	Yet Another SWF Parser
 
@@ -23,8 +23,8 @@ TEST_DEPENDS =	devel/pyflakes${MODPY_FLAVOR} \
 		devel/py-nose${MODPY_FLAVOR}
 
 do-test:
-	sed -i "s/nosetests3/nosetests-3/g" ${WRKSRC}/test
-	sed -i "s/flake8/pyflakes-3/g" ${WRKSRC}/test
+	sed -i "s/nosetests3/nosetests${MODPY_BIN_SUFFIX}/g" ${WRKSRC}/test
+	sed -i "s/flake8/pyflakes${MODPY_BIN_SUFFIX}/g" ${WRKSRC}/test
 	cd ${WRKSRC} && /bin/sh ./test
 
 .include <bsd.port.mk>
