@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.95 2021/01/28 15:02:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2021/02/18 06:23:52 ajacoutot Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 
 V =			1.0.9
 DISTNAME =		gnome-mplayer-${V}
 EPOCH =			0
+REVISION =		9
+
 CATEGORIES =		x11 multimedia
-REVISION =		8
 
 HOMEPAGE =		http://kdekorte.googlepages.com/gnomemplayer/
 
@@ -17,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xss atk-1.0 c cairo cairo-gobject dbus-1 dbus-glib-1
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmlib gmtk gobject-2.0
-WANTLIB += gpod gthread-2.0 gtk-3 intl m notify pango-1.0 pangocairo-1.0
-WANTLIB += pthread
+WANTLIB += gpod gthread-2.0 gtk-3 harfbuzz intl m notify pango-1.0
+WANTLIB += pangocairo-1.0 pthread
 
 MODULES =		devel/dconf
 

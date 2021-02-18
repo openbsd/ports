@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_dbus-interface_h,v 1.1 2021/02/18 06:23:52 ajacoutot Exp $
+
+Fix build with -fno-common.
+
+Index: src/dbus-interface.h
+--- src/dbus-interface.h.orig
++++ src/dbus-interface.h
+@@ -37,5 +37,5 @@
+ #include <X11/extensions/scrnsaver.h>
+ #endif
+ 
+-gboolean screensaver_disabled;
++extern gboolean screensaver_disabled;
+ gboolean dbus_hookup(gint windowid, gint controlid);

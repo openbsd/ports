@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_playlist_h,v 1.1 2021/02/18 06:23:52 ajacoutot Exp $
+
+Fix build with -fno-common.
+
+Index: src/playlist.h
+--- src/playlist.h.orig
++++ src/playlist.h
+@@ -29,8 +29,8 @@
+ #include <glib.h>
+ #include <glib/gstdio.h>
+ 
+-GtkWidget *plclose;
+-gint window_width, window_height;
++extern GtkWidget *plclose;
++extern gint window_width, window_height;
+ 
+ void update_gui();
+ void menuitem_view_playlist_callback(GtkMenuItem * menuitem, void *data);
