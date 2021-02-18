@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/18 12:24:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/18 21:42:34 sthen Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
 MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 HOMEPAGE =		https://www.gevent.org/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${MODPY_WANTLIB} cares ev pthread
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
@@ -57,10 +57,6 @@ TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-zopeinterface${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-futures \
-			devel/py-mock
-.endif
 
 do-test:
 	cd ${WRKSRC}; env PYTHONPATH=src ${MODPY_BIN} -m gevent.tests

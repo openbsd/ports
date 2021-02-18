@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1187 2021/02/18 21:08:33 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1188 2021/02/18 21:42:34 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -566,6 +566,10 @@ my $stem_extensions = {
 	'py-pexpect' => 'py3-pexpect',
 	'py-stemmer' => 'py3-stemmer',
 	'py-snowballstemmer' => 'py3-snowballstemmer',
+	'py-gevent' => 'py3-gevent',
+	'py-statgrab' => 'py3-statgrab',
+	'py-parallel-ssh' => 'py3-parallel-ssh',
+	'py-geventhttpclient' => 'py3-geventhttpclient',
 };
 
 my $obsolete_reason = {
