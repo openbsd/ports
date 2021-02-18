@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.339 2021/02/04 22:16:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.340 2021/02/18 21:28:01 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		18.2.0
+VER=		18.2.1
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-REVISION-vm_imap= 0
 
 .if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
