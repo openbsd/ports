@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2021/01/14 06:37:35 daniel Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/18 12:51:35 sthen Exp $
 
 COMMENT=	set of Python modules designed for writing games
 
 MODPY_EGG_VERSION =	2.0.1
+REVISION=	0
 DISTNAME=	pygame-${MODPY_EGG_VERSION}
 PKGNAME =	py-game-${MODPY_EGG_VERSION}
 CATEGORIES=	devel games
@@ -32,8 +33,8 @@ TEST_DEPENDS =	${BUILD_PKGPATH}
 MAKE_ENV+=	LOCALBASE="${LOCALBASE}" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl-config"
 
-EXAMPLESDIR=	${PREFIX}/share/examples/pygame${MODPY_BIN_SUFFIX}
-DOCDIR=		${PREFIX}/share/doc/pygame${MODPY_BIN_SUFFIX}
+EXAMPLESDIR=	${PREFIX}/share/examples/${MODPY_PY_PREFIX}pygame
+DOCDIR=		${PREFIX}/share/doc/${MODPY_PY_PREFIX}pygame
 
 TEST_IS_INTERACTIVE=	x11
 TEST_ENV =	PYTHONPATH=${WRKSRC}
