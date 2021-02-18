@@ -1,9 +1,9 @@
-$OpenBSD: patch-meson_build,v 1.1 2021/02/13 09:02:26 sthen Exp $
+$OpenBSD: patch-meson_build,v 1.2 2021/02/18 11:19:19 sthen Exp $
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -598,7 +598,7 @@ install_headers(
+@@ -600,7 +600,7 @@ install_headers(
  # because configure_file strips the backslash in e.g. \@display,
  # resulting in @display, breaking our Perl code:
  # https://github.com/mesonbuild/meson/issues/7165
