@@ -1,0 +1,12 @@
+$OpenBSD: patch-peripherals_sim_5307_c,v 1.1 2021/02/18 14:08:40 benoit Exp $
+--- peripherals/sim_5307.c.orig	Thu Feb 18 08:05:34 2021
++++ peripherals/sim_5307.c	Thu Feb 18 08:05:50 2021
+@@ -59,7 +59,7 @@
+ static struct _sim_register *sim_register_lookup_by_name(char *name);
+ static void sim_interrupt_assert(s16 number, s16 vector);
+ static void sim_interrupt_withdraw(s16 number);
+-struct _sim sim_data;
++extern struct _sim sim_data;
+ 
+ /* name, offset, width, read, write, resetvalue, description */
+ static struct _sim_register sim_reg[] = {

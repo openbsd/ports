@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/18 14:08:40 benoit Exp $
 
 COMMENT=	Motorola Coldfire emulator
 
 DISTNAME=	coldfire-0.3.1
-REVISION=	1
+REVISION =	2
 CATEGORIES=	emulators
 HOMEPAGE=	http://www.slicer.ca/coldfire/
 
