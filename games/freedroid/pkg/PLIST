@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/07/06 18:48:15 ajacoutot Exp $
-bin/freedroid
+@comment $OpenBSD: PLIST,v 1.4 2021/02/18 19:27:24 sthen Exp $
+@bin bin/freedroid
 @man man/man6/freedroid.6
 share/freedroid/
 share/freedroid/graphics/
@@ -50,6 +50,8 @@ share/freedroid/graphics/console_bg2.jpg
 share/freedroid/graphics/console_fg.png
 share/freedroid/graphics/credits.jpg
 share/freedroid/graphics/font05.png
+share/freedroid/graphics/font05_green.png
+share/freedroid/graphics/font05_red.png
 share/freedroid/graphics/lanzz_theme/
 share/freedroid/graphics/lanzz_theme/blast.png
 share/freedroid/graphics/lanzz_theme/bullet.png
@@ -60,10 +62,21 @@ share/freedroid/graphics/lanzz_theme/map_blocks.png
 share/freedroid/graphics/lanzz_theme/ship_off.png
 share/freedroid/graphics/lanzz_theme/ship_on.png
 share/freedroid/graphics/lanzz_theme/to_elem.png
-share/freedroid/graphics/old_parafont.png
+share/freedroid/graphics/para90_theme/
+share/freedroid/graphics/para90_theme/blast.png
+share/freedroid/graphics/para90_theme/bullet.png
+share/freedroid/graphics/para90_theme/config.theme
+share/freedroid/graphics/para90_theme/digits.png
+share/freedroid/graphics/para90_theme/droids.png
+share/freedroid/graphics/para90_theme/map_blocks.png
+share/freedroid/graphics/para90_theme/ship_off.png
+share/freedroid/graphics/para90_theme/ship_on.png
+share/freedroid/graphics/para90_theme/to_elem.png
 share/freedroid/graphics/parafont.png
 share/freedroid/graphics/paraicon.bmp
-share/freedroid/graphics/paraicon.ico
+share/freedroid/graphics/paraicon_48x48.png
+share/freedroid/graphics/progress_filler.png
+share/freedroid/graphics/progress_meter.png
 share/freedroid/graphics/takeover_bg.jpg
 share/freedroid/graphics/title.jpg
 share/freedroid/graphics/transfer.jpg
@@ -77,7 +90,9 @@ share/freedroid/sound/
 share/freedroid/sound/Alert.wav
 share/freedroid/sound/AnarchyMenu1.mod
 share/freedroid/sound/Blast_Sound_0.wav
-share/freedroid/sound/Collision_Sound_0.wav
+share/freedroid/sound/Collision_DamagedEnemy.wav
+share/freedroid/sound/Collision_GotDamaged.wav
+share/freedroid/sound/Collision_Neutral.wav
 share/freedroid/sound/Countdown_Sound.wav
 share/freedroid/sound/Cry_Sound_0.wav
 share/freedroid/sound/EndCountdown_Sound.wav
@@ -88,7 +103,7 @@ share/freedroid/sound/Fire_Bullet_Laser_Rifle_Sound.wav
 share/freedroid/sound/Fire_Bullet_Military_Sound_0.wav
 share/freedroid/sound/Fire_Bullet_Pulse_Sound_0.wav
 share/freedroid/sound/Fire_Bullet_Single_Pulse_Sound_0.wav
-share/freedroid/sound/GotIntoBlast_Sound_0.wav
+share/freedroid/sound/GotIntoBlast_Sound_1.wav
 share/freedroid/sound/Got_Hit_Sound_0.wav
 share/freedroid/sound/InfluExplosion.wav
 share/freedroid/sound/LeaveElevator_Sound_0.wav
@@ -97,6 +112,7 @@ share/freedroid/sound/MoveElevator_Sound_0.wav
 share/freedroid/sound/Move_Menu_Position_Sound_0.wav
 share/freedroid/sound/Paradroid.ogg
 share/freedroid/sound/Refresh_Sound_0.wav
+share/freedroid/sound/Screenshot.wav
 share/freedroid/sound/TakeoverSetCapsule_Sound_0.wav
 share/freedroid/sound/Takeover_Game_Deadlock_Sound_0.wav
 share/freedroid/sound/Takeover_Game_Lost_Sound_0.wav
