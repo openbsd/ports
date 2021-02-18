@@ -1,21 +1,26 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/18 22:01:17 cwen Exp $
 
-COMMENT=	minimalistic X11 window manager
+COMMENT =	minimalistic X11 window manager
 
-CATEGORIES=	x11
-DISTNAME=	oroborus-2.0.12
-DISTFILES=	oroborus_2.0.12-1.tar.gz
-REVISION=	0
-MASTER_SITES=	http://www.mguillaud.net/ports/oroborus/ \
-		http://matt.peterson.org/FreeBSD/ports/
-HOMEPAGE=	http://www.oroborus.org/
+DISTNAME =	oroborus_2.0.20
+PKGNAME =	${DISTNAME:S/_/-/}
 
-# GPL
-PERMIT_PACKAGE=	Yes
-WANTLIB=		ICE SM X11 Xext Xpm c 
+CATEGORIES =	x11
 
-CONFIGURE_STYLE=gnu
-USE_GMAKE=	Yes
-SEPARATE_BUILD= Yes
+# GPLv2
+PERMIT_PACKAGE =	Yes
+
+WANTLIB += ICE SM X11 Xext Xpm c
+
+MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/o/oroborus/} \
+			https://distfiles.gentoo.org/distfiles/
+
+SEPARATE_BUILD =	Yes
+
+USE_GMAKE =		Yes
+
+CONFIGURE_STYLE =	gnu
+
+WRKDIST =		${WRKDIR}/${PKGNAME}
 
 .include <bsd.port.mk>
