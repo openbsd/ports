@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/27 18:38:29 solene Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/18 17:32:42 sthen Exp $
 
 COMMENT =	client for the I2P anonymous network
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.35.0
+GH_TAGNAME =	2.36.0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website
@@ -43,6 +43,6 @@ post-install:
 
 do-test:
 	cd ${WRKDIST}/tests && ${MAKE_PROGRAM} CXX="${CXX}" \
-		INCFLAGS="-L${LOCALBASE}/lib -I${LOCALBASE}/include ${CFLAGS}" 
+		INCFLAGS="-L${LOCALBASE}/lib -I${LOCALBASE}/include ${CFLAGS}"
 
 .include <bsd.port.mk>
