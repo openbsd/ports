@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2021/02/17 07:51:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2021/02/18 09:33:32 ajacoutot Exp $
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.28.5
+MODGO_VERSION=	v0.28.6
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/gruntwork-io/terragrunt@${MODGO_VERSION}
