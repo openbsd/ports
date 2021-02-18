@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/18 21:08:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/18 22:26:47 sthen Exp $
 
 COMMENT =		snowball stemming algorithms, for information retrieval
 
 MODPY_EGG_VERSION =	1.3.0
-REVISION =		7
+REVISION =		8
 DISTNAME =		PyStemmer-${MODPY_EGG_VERSION}
 PKGNAME =		py-stemmer-${MODPY_EGG_VERSION}
 
@@ -19,7 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR =		python3
+FLAVOR ?=
 
 # distributed src/Stemmer.c fails with py37; if cython is present it
 # will be regenerated at build time

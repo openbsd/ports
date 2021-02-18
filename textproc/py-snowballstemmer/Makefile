@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/18 21:08:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/18 22:26:47 sthen Exp $
 
 COMMENT =		snowball stemming library collection for Python
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 FLAVORS =		python3
-FLAVOR =		python3
+FLAVOR ?=
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
