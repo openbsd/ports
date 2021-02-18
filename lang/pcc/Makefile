@@ -1,33 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/06 22:08:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/18 02:26:43 daniel Exp $
 
-COMMENT =	portable C compiler
+SUBDIR =
+SUBDIR +=	pcc
+SUBDIR +=	pcc-libs
 
-PCCVER =	1.0.0
-DISTNAME =	pcc-${PCCVER}
-REVISION =	18
-EXTRACT_SUFX =	.tgz
-
-CATEGORIES =	lang
-
-HOMEPAGE =	http://pcc.ludd.ltu.se/
-
-# Other architectures not fully supported yet
-ONLY_FOR_ARCHS = i386 amd64
-
-# BSD
-PERMIT_PACKAGE =	Yes
-
-WANTLIB += c
-
-MASTER_SITES =	http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/ \
-		ftp://pcc.ludd.ltu.se/pub/pcc-releases/
-
-CONFIGURE_STYLE = gnu
-
-CONFIG =	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
-SUBST_VARS =	PCCVER CONFIG
-
-do-test:
-	cd ${WRKBUILD} && ./cc/cc/pcc --version
-
-.include <bsd.port.mk>
+.include <bsd.port.subdir.mk>

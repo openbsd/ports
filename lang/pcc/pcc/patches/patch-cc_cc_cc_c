@@ -1,0 +1,14 @@
+$OpenBSD: patch-cc_cc_cc_c,v 1.1 2021/02/18 02:26:43 daniel Exp $
+
+Index: cc/cc/cc.c
+--- cc/cc/cc.c.orig
++++ cc/cc/cc.c
+@@ -1787,7 +1787,7 @@ static char *gcppflags[] = {
+ #ifndef os_win32
+ #ifdef GCC_COMPAT
+ 	"-D__GNUC__=4",
+-	"-D__GNUC_MINOR__=3",
++	"-D__GNUC_MINOR__=2",
+ 	"-D__GNUC_PATCHLEVEL__=1",
+ 	"-D__REGISTER_PREFIX__=" REGISTER_PREFIX,
+ 	"-D__USER_LABEL_PREFIX__=" USER_LABEL_PREFIX,

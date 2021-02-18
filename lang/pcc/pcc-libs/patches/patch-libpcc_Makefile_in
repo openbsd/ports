@@ -1,0 +1,14 @@
+$OpenBSD: patch-libpcc_Makefile_in,v 1.1 2021/02/18 02:26:43 daniel Exp $
+
+Index: libpcc/Makefile.in
+--- libpcc/Makefile.in.orig
++++ libpcc/Makefile.in
+@@ -49,7 +49,7 @@ $(DEST): $(OBJS)
+ 	$(RANLIB) $@
+ 
+ .c.o :
+-	$(CC) -O $(CPPFLAGS) $(CFLAGS) -c $<
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c $<
+ 
+ install: install-headers install-lib
+ 

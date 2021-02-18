@@ -1,0 +1,18 @@
+$OpenBSD: patch-libsoftfloat_Makefile_in,v 1.1 2021/02/18 02:26:43 daniel Exp $
+
+Index: libsoftfloat/Makefile.in
+--- libsoftfloat/Makefile.in.orig
++++ libsoftfloat/Makefile.in
+@@ -42,10 +42,10 @@ $(DEST): $(OBJS)
+ 	$(RANLIB) $@
+ 
+ softfloat.o : bits64/softfloat.c
+-	$(CC) -O $(CPPFLAGS) $(CFLAGS) -c $<
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c $<
+ 
+ .c.o :
+-	$(CC) -O $(CPPFLAGS) $(CFLAGS) -c $<
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c $<
+ 
+ install:
+ 	test -z "${DESTDIR}$(PCCLIBDIR)" || mkdir -p "${DESTDIR}$(PCCLIBDIR)"

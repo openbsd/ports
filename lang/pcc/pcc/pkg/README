@@ -1,0 +1,9 @@
+$OpenBSD: README,v 1.1 2021/02/18 02:26:43 daniel Exp $
+
++-----------------------------------------------------------------------
+| Compiling ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+${PKGSTEM} appears to have problems with STATICPIE so use:
+	env STATICPIE= CC=pcc make
+When doing builds

@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1 2021/02/18 02:26:44 daniel Exp $
+lib/pcc/
+lib/pcc/${CONFIG}/
+lib/pcc/${CONFIG}/${PCCVER}/
+lib/pcc/${CONFIG}/${PCCVER}/include/
+lib/pcc/${CONFIG}/${PCCVER}/include/float.h
+lib/pcc/${CONFIG}/${PCCVER}/include/iso646.h
+lib/pcc/${CONFIG}/${PCCVER}/include/libpcc_float.h
+lib/pcc/${CONFIG}/${PCCVER}/include/libpcc_limits.h
+lib/pcc/${CONFIG}/${PCCVER}/include/libpcc_stdarg.h
+lib/pcc/${CONFIG}/${PCCVER}/include/libpcc_stdbool.h
+lib/pcc/${CONFIG}/${PCCVER}/include/libpcc_stddef.h
+lib/pcc/${CONFIG}/${PCCVER}/include/limits.h
+lib/pcc/${CONFIG}/${PCCVER}/include/stdarg.h
+lib/pcc/${CONFIG}/${PCCVER}/include/stdbool.h
+lib/pcc/${CONFIG}/${PCCVER}/include/stddef.h
+lib/pcc/${CONFIG}/${PCCVER}/lib/
+@static-lib lib/pcc/${CONFIG}/${PCCVER}/lib/libpcc.a
+@static-lib lib/pcc/${CONFIG}/${PCCVER}/lib/libpccsoftfloat.a
