@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2020/12/04 12:36:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.188 2021/02/18 09:13:42 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,14 +9,16 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.20.11
+V=			3.21.2
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
 # https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
-MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/master/f/
+MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/rawhide/f/
 PATCHFILES=		0026-Call-QMessageBox-constructors-of-PyQT5-with-the-corr.patch:0
 PATCH_DIST_STRIP=	-p1
+MASTER_SITES1=		https://src.fedoraproject.org/rpms/hplip/raw/b2f875a7674e3bb5e14291d1abe9f6484cc256ec/f/
+PATCHFILES +=		hplip-fab-import.patch:1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-common=		hplip-common-${V}
@@ -62,7 +64,7 @@ cWANTLIB += crypto m pthread
 ### -main
 WANTLIB-main += ${cWANTLIB}
 WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
-WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
+WANTLIB-main += gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
 WANTLIB-main += hpdiscovery hpipp idn2 iconv intl unistring
 WANTLIB-main += ${COMPILER_LIBCXX} c avahi-core
 
@@ -93,7 +95,7 @@ RUN_DEPENDS-common=	# empty
 
 ### -hpaio
 WANTLIB-hpaio += ${cWANTLIB}
-WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 ffi gmp gnutls
+WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 gmp gnutls
 WANTLIB-hpaio += hogweed hpip hpipp hpmud netsnmp nettle p11-kit idn2
 WANTLIB-hpaio += sane tasn1 usb-1.0 z hpdiscovery iconv intl unistring
 WANTLIB-hpaio += lzma xml2 avahi-core
@@ -108,7 +110,7 @@ RUN_DEPENDS-hpaio=	# empty
 WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl
 WANTLIB-hpcups += c jpeg ${COMPILER_LIBCXX} hpip cups cupsimage dbus-1 idn2
 WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
-WANTLIB-hpcups += ffi gmp gnutls hogweed nettle p11-kit tasn1
+WANTLIB-hpcups += gmp gnutls hogweed nettle p11-kit tasn1
 WANTLIB-hpcups += unistring avahi-core
 
 LIB_DEPENDS-hpcups=	graphics/jpeg \
