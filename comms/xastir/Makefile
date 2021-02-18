@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.41 2021/01/16 17:26:16 abieber Exp $
+# $OpenBSD: Makefile,v 1.42 2021/02/18 22:08:25 tb Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-2.0.6
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=    	comms hamradio geo
 
-HOMEPAGE=	http://www.xastir.org/
+HOMEPAGE=	https://xastir.org/
 
 PERMIT_PACKAGE=	Yes
 
