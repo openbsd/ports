@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.188 2021/02/17 10:42:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.189 2021/02/18 12:46:41 sthen Exp $
 @conflict gsutil-*
 bin/bq
 bin/gcloud
@@ -22211,7 +22211,7 @@ google-cloud-sdk/lib/third_party/pytz/zoneinfo/Etc/GMT-12
 google-cloud-sdk/lib/third_party/pytz/zoneinfo/Etc/GMT-13
 google-cloud-sdk/lib/third_party/pytz/zoneinfo/Etc/GMT-14
 google-cloud-sdk/lib/third_party/pytz/zoneinfo/Etc/GMT-2
-google-cloud-sdk/lib/third_party/pytz/zoneinfo/Etc/GMT${MODPY_BIN_SUFFIX}
+google-cloud-sdk/lib/third_party/pytz/zoneinfo/Etc/GMT-3
 google-cloud-sdk/lib/third_party/pytz/zoneinfo/Etc/GMT-4
 google-cloud-sdk/lib/third_party/pytz/zoneinfo/Etc/GMT-5
 google-cloud-sdk/lib/third_party/pytz/zoneinfo/Etc/GMT-6
