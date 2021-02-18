@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/08 15:58:48 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/18 12:41:27 sthen Exp $
 bin/solfege
 @man man/man1/solfege.1
 share/applications/solfege.desktop
@@ -66,9 +66,9 @@ share/solfege/exercises/standard/lesson-files/compare-intervals
 share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic
 share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-10
 share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-2
-share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-2${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-2-3
 share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-2-to-8
-share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-3
 share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-4-5
 share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-4-5-8
 share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-6
@@ -80,9 +80,9 @@ share/solfege/exercises/standard/lesson-files/compare-intervals-harmonic-tritonu
 share/solfege/exercises/standard/lesson-files/compare-intervals-melodic
 share/solfege/exercises/standard/lesson-files/compare-intervals-melodic-10
 share/solfege/exercises/standard/lesson-files/compare-intervals-melodic-2
-share/solfege/exercises/standard/lesson-files/compare-intervals-melodic-2${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/compare-intervals-melodic-2-3
 share/solfege/exercises/standard/lesson-files/compare-intervals-melodic-2-to-8
-share/solfege/exercises/standard/lesson-files/compare-intervals-melodic${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/compare-intervals-melodic-3
 share/solfege/exercises/standard/lesson-files/compare-intervals-melodic-4-5
 share/solfege/exercises/standard/lesson-files/compare-intervals-melodic-4-5-8
 share/solfege/exercises/standard/lesson-files/compare-intervals-melodic-6
@@ -345,10 +345,10 @@ share/solfege/exercises/standard/lesson-files/fifth-small-pure-0.99
 share/solfege/exercises/standard/lesson-files/harmonic-intervals
 share/solfege/exercises/standard/lesson-files/harmonic-intervals-10
 share/solfege/exercises/standard/lesson-files/harmonic-intervals-2
-share/solfege/exercises/standard/lesson-files/harmonic-intervals-2${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/harmonic-intervals-2-3
 share/solfege/exercises/standard/lesson-files/harmonic-intervals-2-to-15
 share/solfege/exercises/standard/lesson-files/harmonic-intervals-2-to-8
-share/solfege/exercises/standard/lesson-files/harmonic-intervals${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/harmonic-intervals-3
 share/solfege/exercises/standard/lesson-files/harmonic-intervals-4-5
 share/solfege/exercises/standard/lesson-files/harmonic-intervals-4-5-8
 share/solfege/exercises/standard/lesson-files/harmonic-intervals-6
@@ -360,7 +360,7 @@ share/solfege/exercises/standard/lesson-files/harmonic-intervals-self-config
 share/solfege/exercises/standard/lesson-files/harmonic-intervals-tritonus-7
 share/solfege/exercises/standard/lesson-files/hear-tones-1
 share/solfege/exercises/standard/lesson-files/hear-tones-2
-share/solfege/exercises/standard/lesson-files/hear-tones${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/hear-tones-3
 share/solfege/exercises/standard/lesson-files/hear-tones-4
 share/solfege/exercises/standard/lesson-files/hear-tones-5
 share/solfege/exercises/standard/lesson-files/hear-tones-6
@@ -371,7 +371,7 @@ share/solfege/exercises/standard/lesson-files/id-tone
 share/solfege/exercises/standard/lesson-files/id-tone-cde-10
 share/solfege/exercises/standard/lesson-files/id-tone-cde-11
 share/solfege/exercises/standard/lesson-files/id-tone-cde-12
-share/solfege/exercises/standard/lesson-files/id-tone-cde${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/id-tone-cde-3
 share/solfege/exercises/standard/lesson-files/id-tone-cde-4
 share/solfege/exercises/standard/lesson-files/id-tone-cde-5
 share/solfege/exercises/standard/lesson-files/id-tone-cde-6
@@ -393,10 +393,10 @@ share/solfege/exercises/standard/lesson-files/jsb-inventions
 share/solfege/exercises/standard/lesson-files/melodic-intervals
 share/solfege/exercises/standard/lesson-files/melodic-intervals-10
 share/solfege/exercises/standard/lesson-files/melodic-intervals-2
-share/solfege/exercises/standard/lesson-files/melodic-intervals-2${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/melodic-intervals-2-3
 share/solfege/exercises/standard/lesson-files/melodic-intervals-2-to-15
 share/solfege/exercises/standard/lesson-files/melodic-intervals-2-to-8
-share/solfege/exercises/standard/lesson-files/melodic-intervals${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/melodic-intervals-3
 share/solfege/exercises/standard/lesson-files/melodic-intervals-4-5
 share/solfege/exercises/standard/lesson-files/melodic-intervals-4-5-8
 share/solfege/exercises/standard/lesson-files/melodic-intervals-6
@@ -407,10 +407,10 @@ share/solfege/exercises/standard/lesson-files/melodic-intervals-9
 share/solfege/exercises/standard/lesson-files/melodic-intervals-down
 share/solfege/exercises/standard/lesson-files/melodic-intervals-down-10
 share/solfege/exercises/standard/lesson-files/melodic-intervals-down-2
-share/solfege/exercises/standard/lesson-files/melodic-intervals-down-2${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/melodic-intervals-down-2-3
 share/solfege/exercises/standard/lesson-files/melodic-intervals-down-2-to-15
 share/solfege/exercises/standard/lesson-files/melodic-intervals-down-2-to-8
-share/solfege/exercises/standard/lesson-files/melodic-intervals-down${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/melodic-intervals-down-3
 share/solfege/exercises/standard/lesson-files/melodic-intervals-down-4-5
 share/solfege/exercises/standard/lesson-files/melodic-intervals-down-4-5-8
 share/solfege/exercises/standard/lesson-files/melodic-intervals-down-6
@@ -424,10 +424,10 @@ share/solfege/exercises/standard/lesson-files/melodic-intervals-tritonus-7
 share/solfege/exercises/standard/lesson-files/melodic-intervals-up
 share/solfege/exercises/standard/lesson-files/melodic-intervals-up-10
 share/solfege/exercises/standard/lesson-files/melodic-intervals-up-2
-share/solfege/exercises/standard/lesson-files/melodic-intervals-up-2${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/melodic-intervals-up-2-3
 share/solfege/exercises/standard/lesson-files/melodic-intervals-up-2-to-15
 share/solfege/exercises/standard/lesson-files/melodic-intervals-up-2-to-8
-share/solfege/exercises/standard/lesson-files/melodic-intervals-up${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/melodic-intervals-up-3
 share/solfege/exercises/standard/lesson-files/melodic-intervals-up-4-5
 share/solfege/exercises/standard/lesson-files/melodic-intervals-up-4-5-8
 share/solfege/exercises/standard/lesson-files/melodic-intervals-up-6
@@ -438,7 +438,7 @@ share/solfege/exercises/standard/lesson-files/melodic-intervals-up-9
 share/solfege/exercises/standard/lesson-files/melodic-intervals-up-tritonus-7
 share/solfege/exercises/standard/lesson-files/mma-1
 share/solfege/exercises/standard/lesson-files/mma-2
-share/solfege/exercises/standard/lesson-files/mma${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/mma-3
 share/solfege/exercises/standard/lesson-files/mma-4-C
 share/solfege/exercises/standard/lesson-files/mma-4-harmonic-minor
 share/solfege/exercises/standard/lesson-files/mma-4-natural-minor
@@ -471,7 +471,7 @@ share/solfege/exercises/standard/lesson-files/rhythmdict-gen-1
 share/solfege/exercises/standard/lesson-files/rhythmdict-gen-2
 share/solfege/exercises/standard/lesson-files/rhythmdict-gen-3_4-1
 share/solfege/exercises/standard/lesson-files/rhythmdict-gen-3_4-2
-share/solfege/exercises/standard/lesson-files/rhythmdict-gen-3_4${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/rhythmdict-gen-3_4-3
 share/solfege/exercises/standard/lesson-files/rhythmdict-gen-6_8-1
 share/solfege/exercises/standard/lesson-files/rhythmdict-gen-6_8-2
 share/solfege/exercises/standard/lesson-files/rhythmtapping2-self-config-binary
@@ -610,9 +610,9 @@ share/solfege/exercises/standard/lesson-files/sing-chord-tone
 share/solfege/exercises/standard/lesson-files/sing-intervals
 share/solfege/exercises/standard/lesson-files/sing-intervals-10
 share/solfege/exercises/standard/lesson-files/sing-intervals-2
-share/solfege/exercises/standard/lesson-files/sing-intervals-2${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/sing-intervals-2-3
 share/solfege/exercises/standard/lesson-files/sing-intervals-2-to-8
-share/solfege/exercises/standard/lesson-files/sing-intervals${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/sing-intervals-3
 share/solfege/exercises/standard/lesson-files/sing-intervals-4-5
 share/solfege/exercises/standard/lesson-files/sing-intervals-4-5-8
 share/solfege/exercises/standard/lesson-files/sing-intervals-6
@@ -629,7 +629,7 @@ share/solfege/exercises/standard/lesson-files/sing-the-seventh-inv
 share/solfege/exercises/standard/lesson-files/sing-the-third
 share/solfege/exercises/standard/lesson-files/singchord-1
 share/solfege/exercises/standard/lesson-files/singchord-2
-share/solfege/exercises/standard/lesson-files/singchord${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/lesson-files/singchord-3
 share/solfege/exercises/standard/lesson-files/singchord-4
 share/solfege/exercises/standard/lesson-files/singchord-5
 share/solfege/exercises/standard/lesson-files/singchord-6
@@ -689,20 +689,20 @@ share/solfege/exercises/standard/regression-lesson-files/chordvoicing-lessonfile
 share/solfege/exercises/standard/regression-lesson-files/chordvoicing-mpd-exception
 share/solfege/exercises/standard/regression-lesson-files/compareintervals-1
 share/solfege/exercises/standard/regression-lesson-files/compareintervals-2
-share/solfege/exercises/standard/regression-lesson-files/compareintervals${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/regression-lesson-files/compareintervals-3
 share/solfege/exercises/standard/regression-lesson-files/compareintervals-4
 share/solfege/exercises/standard/regression-lesson-files/dictation-exception-handling
 share/solfege/exercises/standard/regression-lesson-files/dictation-no-questions
 share/solfege/exercises/standard/regression-lesson-files/elembuilder-bad-tonic
 share/solfege/exercises/standard/regression-lesson-files/elembuilder-scale-1
 share/solfege/exercises/standard/regression-lesson-files/elembuilder-scale-2
-share/solfege/exercises/standard/regression-lesson-files/elembuilder-scale${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/regression-lesson-files/elembuilder-scale-3
 share/solfege/exercises/standard/regression-lesson-files/elembuilder-scale-4
 share/solfege/exercises/standard/regression-lesson-files/elembuilder-scale-5
 share/solfege/exercises/standard/regression-lesson-files/idbyname-assignment-to-reserved-word
 share/solfege/exercises/standard/regression-lesson-files/idbyname-at_question_start-1
 share/solfege/exercises/standard/regression-lesson-files/idbyname-at_question_start-2
-share/solfege/exercises/standard/regression-lesson-files/idbyname-at_question_start${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/regression-lesson-files/idbyname-at_question_start-3
 share/solfege/exercises/standard/regression-lesson-files/idbyname-bad-cuemusic
 share/solfege/exercises/standard/regression-lesson-files/idbyname-mediafiles
 share/solfege/exercises/standard/regression-lesson-files/idbyname-missing-.wav-file
@@ -713,13 +713,13 @@ share/solfege/exercises/standard/regression-lesson-files/idbyname-unsupported-na
 share/solfege/exercises/standard/regression-lesson-files/idbyname-vmusic
 share/solfege/exercises/standard/regression-lesson-files/idproperty-1
 share/solfege/exercises/standard/regression-lesson-files/idproperty-2
-share/solfege/exercises/standard/regression-lesson-files/idproperty${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/regression-lesson-files/idproperty-3
 share/solfege/exercises/standard/regression-lesson-files/idproperty-4
 share/solfege/exercises/standard/regression-lesson-files/nameinterval-bad-tones-header-var
 share/solfege/exercises/standard/regression-lesson-files/nameinterval-constraints
 share/solfege/exercises/standard/regression-lesson-files/rhythmtapping-1
 share/solfege/exercises/standard/regression-lesson-files/rhythmtapping-2
-share/solfege/exercises/standard/regression-lesson-files/rhythmtapping${MODPY_BIN_SUFFIX}
+share/solfege/exercises/standard/regression-lesson-files/rhythmtapping-3
 share/solfege/exercises/standard/regression-lesson-files/rhythmtapping-4
 share/solfege/exercises/standard/regression-lesson-files/rhythmtapping-bad-mpd-code
 share/solfege/exercises/standard/regression-lesson-files/rhythmtapping2-1
