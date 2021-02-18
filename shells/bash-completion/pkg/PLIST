@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/18 13:01:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/02/18 15:04:45 sthen Exp $
 share/bash-completion/
 share/bash-completion/bash_completion
 share/bash-completion/completions/
@@ -560,7 +560,7 @@ share/bash-completion/completions/python3.4
 share/bash-completion/completions/python3.5
 share/bash-completion/completions/python3.6
 share/bash-completion/completions/python3.7
-share/bash-completion/completions/python-3
+share/bash-completion/completions/python3.8
 share/bash-completion/completions/pyvenv
 share/bash-completion/completions/pyvenv-3.4
 share/bash-completion/completions/pyvenv-3.5
