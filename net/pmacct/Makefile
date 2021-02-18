@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/03 23:14:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/18 13:24:04 sthen Exp $
 
 COMMENT=	passive IP network monitoring tools: traffic accounting, etc
 
-DISTNAME=	pmacct-1.7.5
-REVISION=	2
+DISTNAME=	pmacct-1.7.6
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -12,28 +11,33 @@ MASTER_SITES=	http://www.pmacct.net/
 # partly GPLv2 partly ISC (in transition to ISC)
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c jansson m maxminddb pcap pthread sodium sqlite3 z zmq
+WANTLIB += ${COMPILER_LIBCXX} c cdada jansson m maxminddb pcap pthread
+WANTLIB += sodium sqlite3 z zmq
 
 FLAVORS=	mysql postgresql
 FLAVOR?=
 
 LIB_DEPENDS+=	databases/sqlite3 \
 		devel/jansson \
+		devel/libcdada \
 		net/libmaxminddb \
 		net/zeromq
 
 COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
-CONFIGURE_STYLE= autoconf no-autoheader
+CONFIGURE_STYLE= autoreconf
 AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.16
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS= --enable-ipv6 \
-		--enable-geoipv2 \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		CXXLIB="${CXXLIB}"
+CONFIGURE_ARGS= --enable-geoipv2 \
 		--enable-jansson \
 		--enable-sqlite3 \
-		--enable-zmq
+		--enable-zmq \
+		--without-external-deps
+MAKE_ENV=	${AUTOCONF_ENV}
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
@@ -63,7 +67,14 @@ post-install:
 	cd ${WRKSRC}/examples; \
 	    ${INSTALL_PROGRAM} lg/pmbgp ${PREFIX}/share/examples/pmacct/lg/; \
 	    ${INSTALL_DATA} lg/pmbgp.py ${PREFIX}/share/examples/pmacct/lg/
-	#${INSTALL_DATA} ${WRKSRC}/sql/!(README*) \
-	    ${PREFIX}/share/examples/pmacct/sql/
+.if !${FLAVOR:Mmysql}
+	rm ${PREFIX}/share/pmacct/sql/*.mysql
+.endif
+.if !${FLAVOR:Mpostgresql}
+	rm ${PREFIX}/share/pmacct/sql/*.pgsql
+.endif
 
 .include <bsd.port.mk>
+.for i in ${COMPILER_LIBCXX}
+CXXLIB+= -l$i
+.endfor

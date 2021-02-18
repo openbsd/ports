@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_isis_isis_c,v 1.4 2021/01/18 10:24:49 sthen Exp $
+$OpenBSD: patch-src_isis_isis_c,v 1.5 2021/02/18 13:24:04 sthen Exp $
 
 Index: src/isis/isis.c
 --- src/isis/isis.c.orig
 +++ src/isis/isis.c
-@@ -806,7 +806,7 @@ void igp_daemon_map_initialize(char *filename, struct 
+@@ -808,7 +808,7 @@ void igp_daemon_map_initialize(char *filename, struct 
    pcap_t *p;
  
    if (config.debug && config.igp_daemon_map_msglog) {
