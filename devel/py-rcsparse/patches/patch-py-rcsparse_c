@@ -1,23 +1,29 @@
-$OpenBSD: patch-py-rcsparse_c,v 1.3 2021/01/16 13:56:09 sthen Exp $
+$OpenBSD: patch-py-rcsparse_c,v 1.4 2021/02/18 03:35:07 yasuoka Exp $
 
 Index: py-rcsparse.c
 --- py-rcsparse.c.orig
 +++ py-rcsparse.c
-@@ -25,6 +25,13 @@
+@@ -25,6 +25,19 @@
  #include "rcsparse.h"
  
  
 +#if PY_MAJOR_VERSION >= 3
-+#define PyString_AsStringAndSize	PyBytes_AsStringAndSize
++#define PyString_AsStringAndSize	_PyUnicode_AsUTF8AndSize
 +#define PyString_CheckExact		PyUnicode_CheckExact
 +#define PyString_FromString		PyUnicode_FromString
 +#define PyString_FromStringAndSize	PyUnicode_FromStringAndSize
 +#endif
 +
++static void
++_PyUnicode_AsUTF8AndSize(PyObject *obj, char **strp, Py_ssize_t *sizep)
++{
++	*strp = PyUnicode_AsUTF8AndSize(obj, sizep);
++}
++
  static PyObject *
  rcstoken2pystr(struct rcstoken *tok)
  {
-@@ -124,7 +131,11 @@ rcsrev2py(struct rcsrev *rev)
+@@ -124,7 +137,11 @@ rcsrev2py(struct rcsrev *rev)
  
  	return Py_BuildValue("NNNNNNN",
  			rcstoken2pystr(rev->rev),
@@ -29,7 +35,7 @@ Index: py-rcsparse.c
  			rcstoken2pystr(rev->author),
  			rcstoken2pystr(rev->state),
  			rcstoklist2py(&rev->branches),
-@@ -275,7 +286,7 @@ static void
+@@ -275,7 +292,7 @@ static void
  pyrcsrevtree_dealloc(struct pyrcsrevtree *self)
  {
  	Py_DECREF((PyObject *)self->pyrcs);
@@ -38,7 +44,7 @@ Index: py-rcsparse.c
  }
  
  static PyMappingMethods pyrcsrevtree_mapmethods = {
-@@ -300,7 +311,7 @@ static PyMethodDef pyrcsrevtree_methods[] = {
+@@ -300,7 +317,7 @@ static PyMethodDef pyrcsrevtree_methods[] = {
  };
  
  static PyTypeObject pyrcsrevtree_type = {
@@ -47,7 +53,7 @@ Index: py-rcsparse.c
  	.tp_name=		"rcsparse.rcsrevtree",
  	.tp_basicsize=		sizeof(struct pyrcsrevtree),
  	.tp_dealloc=		(destructor)pyrcsrevtree_dealloc,
-@@ -496,7 +507,7 @@ static void
+@@ -496,7 +513,7 @@ static void
  pyrcstokmap_dealloc(struct pyrcstokmap *self)
  {
  	Py_DECREF((PyObject *)self->pyrcs);
@@ -56,7 +62,7 @@ Index: py-rcsparse.c
  }
  
  static PyMappingMethods pyrcstokmap_mapmethods = {
-@@ -521,7 +532,7 @@ static PyMethodDef pyrcstokmap_methods[] = {
+@@ -521,7 +538,7 @@ static PyMethodDef pyrcstokmap_methods[] = {
  };
  
  static PyTypeObject pyrcstokmap_type = {
@@ -65,7 +71,31 @@ Index: py-rcsparse.c
  	.tp_name=		"rcsparse.rcstokmap",
  	.tp_basicsize=		sizeof(struct pyrcstokmap),
  	.tp_dealloc=		(destructor)pyrcstokmap_dealloc,
-@@ -720,7 +731,7 @@ pyrcsfile_dealloc(struct pyrcsfile *self)
+@@ -645,7 +662,11 @@ pyrcsfile_checkout(struct pyrcsfile *self, PyObject *a
+ 	if (buf == NULL)
+ 		return PyErr_Format(PyExc_RuntimeError, "Error parsing");
+ 
++#if PY_MAJOR_VERSION >= 3
++	o = PyBytes_FromStringAndSize(buf, len);
++#else
+ 	o = PyString_FromStringAndSize(buf, len);
++#endif
+ 	free(buf);
+ 	return o;
+ }
+@@ -664,7 +685,11 @@ pyrcsfile_getlog(struct pyrcsfile *self, PyObject *arg
+ 	if (buf == NULL)
+ 		return PyErr_Format(PyExc_RuntimeError, "Error parsing");
+ 
++#if PY_MAJOR_VERSION >= 3
++	o = PyBytes_FromString(buf);
++#else
+ 	o = PyString_FromString(buf);
++#endif
+ 	free(buf);
+ 	return o;
+ }
+@@ -720,7 +745,7 @@ pyrcsfile_dealloc(struct pyrcsfile *self)
  	if (self->rcs != NULL)
  		rcsclose(self->rcs);
  
@@ -74,7 +104,7 @@ Index: py-rcsparse.c
  }
  
  static PyGetSetDef pyrcsfile_getseters[] = {
-@@ -761,21 +772,48 @@ static PyMethodDef pyrcsparse_methods[] = {
+@@ -761,21 +786,48 @@ static PyMethodDef pyrcsparse_methods[] = {
  	{NULL}
  };
  
@@ -127,7 +157,7 @@ Index: py-rcsparse.c
  
  	Py_INCREF(&pyrcsfile_type);
  	PyModule_AddObject(m, "rcsfile", (PyObject *)&pyrcsfile_type);
-@@ -783,4 +821,8 @@ initrcsparse(void)
+@@ -783,4 +835,8 @@ initrcsparse(void)
  	PyModule_AddObject(m, "rcstokmap", (PyObject *)&pyrcstokmap_type);
  	Py_INCREF(&pyrcsrevtree_type);
  	PyModule_AddObject(m, "rcsrevtree", (PyObject *)&pyrcsrevtree_type);
