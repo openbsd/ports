@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2021/01/29 16:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/02/18 20:55:17 sthen Exp $
 
 COMMENT=	library to access the contents of an iPod
 
 DISTNAME=	libgpod-0.8.0
-REVISION=	12
+REVISION=	13
 
 SHARED_LIBS=	gpod	721.0	# 7.1
 
