@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2020/07/03 21:13:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/02/19 21:00:32 ajacoutot Exp $
 
 COMMENT=		Python module for GnuPG interface
 
-MODPY_EGG_VERSION=	0.4.3
+MODPY_EGG_VERSION=	0.4.6
 DISTNAME=		python-gnupg-${MODPY_EGG_VERSION}
 PKGNAME=		py-gnupg-${MODPY_EGG_VERSION}
-REVISION=		1
 
 CATEGORIES=		security devel
 
@@ -19,10 +18,12 @@ MODPY_PI=		Yes
 MODULES=		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR ?=		python3
 
 BUILD_DEPENDS=		security/gnupg
 RUN_DEPENDS=		security/gnupg
+
+MODPY_SETUPTOOLS=	Yes
 
 do-test:
 	cd ${WRKSRC} && \
