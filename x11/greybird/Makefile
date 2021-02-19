@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2020/12/01 07:12:56 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/19 18:10:07 ajacoutot Exp $
 
-COMMENT =	Desktop suite theme for Xfce
+COMMENT =		desktop suite theme for Xfce
 
-GH_TAGNAME =	v3.22.13
-GH_ACCOUNT =	shimmerproject
-GH_PROJECT =	Greybird
-PKGNAME =	${DISTNAME:L}
+GH_TAGNAME =		v3.22.14
+GH_ACCOUNT =		shimmerproject
+GH_PROJECT =		Greybird
+PKGNAME =		${DISTNAME:L}
 
-CATEGORIES =	x11
+CATEGORIES =		x11
 
 # GPLv2, CC-SA-3.0
 PERMIT_PACKAGE =	Yes
 
-MODULES =	devel/meson
+MODULES =		devel/meson
 
 BUILD_DEPENDS =		www/sassc \
 			x11/gnome/librsvg
