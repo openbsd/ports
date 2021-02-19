@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/12/09 22:50:45 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/19 03:58:34 gnezdo Exp $
 
 COMMENT = 		Erlang build tool
 
@@ -12,7 +12,7 @@ MAINTAINER =		Jonathan Matthew <jmatthew@openbsd.org>
 # APLv2
 PERMIT_PACKAGE=		Yes
 
-FLAVORS =		erlang19 erlang21
+FLAVORS =		erlang21
 FLAVOR ?=		erlang21
 
 MASTER_SITES = 		https://github.com/erlang/rebar3/archive/
@@ -20,7 +20,7 @@ MASTER_SITES1 = 	https://repo.hex.pm/tarballs/
 
 WRKDIST = 		${WRKDIR}/rebar3-${V}
 
-.if ${FLAVOR:Merlang19} || ${FLAVOR:Merlang21}
+.if ${FLAVOR:Merlang21}
 _EV =                   ${FLAVOR:C/.*([0-9][0-9]+\$)/\1/}
 RUN_DEPENDS =           lang/erlang/${_EV}
 ERL_VERSION =           ${_EV}

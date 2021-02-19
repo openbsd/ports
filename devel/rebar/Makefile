@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/03/16 16:08:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/19 03:58:34 gnezdo Exp $
 
 COMMENT=		Erlang build tool
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE=	Yes
 
 # This port cannot use the erlang module for the module depends on this port.
 # Keep in sync with erlang.port.mk
-FLAVORS =		erlang19 erlang21
+FLAVORS =		erlang21
 FLAVOR ?=		erlang21
 
-.if ${FLAVOR:Merlang19 || ${FLAVOR:Merlang21}} 
+.if ${FLAVOR:Merlang21}}
 _EV =			${FLAVOR:C/.*([0-9][0-9]+\$)/\1/}
 RUN_DEPENDS =		lang/erlang/${_EV}
 ERL_VERSION =		${_EV}
