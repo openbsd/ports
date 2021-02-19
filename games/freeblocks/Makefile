@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/14 11:11:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/19 12:07:34 naddy Exp $
 
 COMMENT =	puzzle game with similar gameplay to Tetris Attack
 CATEGORIES =	games x11
@@ -6,7 +6,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	dorkster
 GH_PROJECT =	freeblocks
 GH_TAGNAME =	v0.5
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://github.com/dorkster/freeblocks
 

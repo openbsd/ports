@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_game_h,v 1.1 2021/02/19 12:07:34 naddy Exp $
+
+Index: src/game.h
+--- src/game.h.orig
++++ src/game.h
+@@ -21,9 +21,9 @@
+ 
+ #include "sys.h"
+ 
+-bool cursor_moving;
+-int cursor_timer;
+-int rebind_index;
++extern bool cursor_moving;
++extern int cursor_timer;
++extern int rebind_index;
+ 
+ void gameTitle();
+ void gameHighScores();
