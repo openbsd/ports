@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1189 2021/02/19 21:00:49 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1190 2021/02/19 22:51:43 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -541,7 +541,8 @@ my $stem_extensions = {
 	'py-ldap3' => 'py3-ldap3',
 	'py-qtpy' => 'py3-qtpy',
 	'py-sip' => 'py3-sip',
-	'py-sip-qt5' => 'py3-sip-qt5',
+	'py-sip-qt5' => 'py3-pyqt5_sip',
+	'py3-sip-qt5' => 'py3-pyqt5_sip',
 	'py-qt5' => 'py3-qt5',
 	'py-ndg_httpsclient' => 'py3-ndg_httpsclient',
 	'py-trustme' => 'py3-trustme',
@@ -564,8 +565,6 @@ my $stem_extensions = {
 	'py-ldap' => 'py3-ldap',
 	'py-ldap-examples' => 'py3-ldap-examples',
 	'py-pexpect' => 'py3-pexpect',
-	'py-stemmer' => 'py3-stemmer',
-	'py-snowballstemmer' => 'py3-snowballstemmer',
 	'py-gevent' => 'py3-gevent',
 	'py-statgrab' => 'py3-statgrab',
 	'py-parallel-ssh' => 'py3-parallel-ssh',
