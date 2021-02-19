@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2021/02/14 11:55:59 jca Exp $
+# $OpenBSD: Makefile,v 1.78 2021/02/19 21:22:26 sthen Exp $
 
 COMMENT=	free audio editor
 
@@ -67,7 +67,6 @@ CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_mad:STRING=system \
 		-Daudacity_use_midi:STRING=system \
 		-Daudacity_use_ogg:STRING=system \
-		-Daudacity_use_sbsms:STRING=local \
 		-Daudacity_use_soundtouch:STRING=system \
 		-Daudacity_use_twolame:STRING=off \
 		-Daudacity_use_vamp:STRING=system \
@@ -89,6 +88,14 @@ CONFIGURE_ARGS +=	-DHAVE_SSE:BOOL=OFF
 
 .if ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS +=	-DHAVE_SSE2:BOOL=OFF
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+# sse-related build failures; untested but it may alternatively be possible
+# to build sbsms if SSE is disabled for the port as a whole on i386
+CONFIGURE_ARGS +=	-Daudacity_use_sbsms:STRING=off
+.else
+CONFIGURE_ARGS +=	-Daudacity_use_sbsms:STRING=local
 .endif
 
 NO_TEST=	Yes
