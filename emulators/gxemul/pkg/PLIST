@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/06/23 09:22:19 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/02/19 15:20:26 fcambus Exp $
 @bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -109,6 +109,8 @@ share/doc/gxemul/20190612-netbsd-sgimips-2.png
 share/doc/gxemul/20190612-netbsd-sgimips-2_small.png
 share/doc/gxemul/20190616-netbsd-playstation2-userland-small.png
 share/doc/gxemul/20190616-netbsd-playstation2-userland.png
+share/doc/gxemul/20190715-sgi-o2-linux-small.png
+share/doc/gxemul/20190715-sgi-o2-linux.png
 share/doc/gxemul/RELEASE.html
 share/doc/gxemul/TODO.html
 share/doc/gxemul/configfiles.html
@@ -174,6 +176,10 @@ share/doc/gxemul/machine_vocore.html
 share/doc/gxemul/misc.html
 share/doc/gxemul/model.png
 share/doc/gxemul/networking.html
+share/doc/gxemul/openbsd-luna88k-20210130-small.png
+share/doc/gxemul/openbsd-luna88k-20210130.png
+share/doc/gxemul/openbsd-luna88k-20210209-small.png
+share/doc/gxemul/openbsd-luna88k-20210209.png
 share/doc/gxemul/openbsd-pmax-20040710.png
 share/doc/gxemul/openbsd-pmax-20040710_small.png
 share/doc/gxemul/simplified_dyntrans.png
