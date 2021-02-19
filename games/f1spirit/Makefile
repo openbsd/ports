@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/19 09:33:59 kirby Exp $
 
 COMMENT=	remake of Konami's F1-Spirit
 
 DISTNAME=	f1spirit.src_0.rc9-1615
 PKGNAME=	${DISTNAME:S/.src_0.rc9-/-0./}
-REVISION =	6
+REVISION =	7
 WRKDIST=	${WRKDIR}/${DISTNAME:S/.src_0.rc9-/-0.rc9./}
 
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
 
-HOMEPAGE=	http://f1spirit.jorito.net/
-MASTER_SITES=	http://braingames.jorito.net/f1spirit/
+HOMEPAGE=	https://f1spirit.jorito.net/
+MASTER_SITES=	https://braingames.jorito.net/f1spirit/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
