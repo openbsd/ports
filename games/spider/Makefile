@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/19 20:45:31 naddy Exp $
 
 COMMENT=	challenging double decked solitaire game
 
 DISTNAME=	spider
 PKGNAME=	spider-1.1
-REVISION =	6
+REVISION =	7
 CATEGORIES=	games
 
-MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
+MASTER_SITES=	${MASTER_SITE_SUNSITE:=games/solitaires/}
+EXTRACT_SUFX=	.tar.Z
 
 PERMIT_PACKAGE=	Yes
 

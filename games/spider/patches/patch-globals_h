@@ -1,6 +1,68 @@
-$OpenBSD: patch-globals_h,v 1.1 2004/10/25 13:49:22 brad Exp $
---- globals.h.orig	Sat Sep 28 13:46:20 1991
-+++ globals.h	Sun Oct 24 17:36:52 2004
+$OpenBSD: patch-globals_h,v 1.2 2021/02/19 20:45:31 naddy Exp $
+
+Index: globals.h
+--- globals.h.orig
++++ globals.h
+@@ -13,37 +13,37 @@
+ /*
+  * spider global variables
+  */
+-Display	*dpy;
+-int	screen;
+-Window	table;
++extern Display	*dpy;
++extern int	screen;
++extern Window	table;
+ #ifdef 	KITLESS
+-Window	message_win;
+-XFontStruct	*message_font;
++extern Window	message_win;
++extern XFontStruct	*message_font;
+ #endif	/* KITLESS */
+-Pixmap	greenmap;
+-Pixmap	redmap;
+-Pixmap	logomap;
++extern Pixmap	greenmap;
++extern Pixmap	redmap;
++extern Pixmap	logomap;
+ 
+-unsigned long	blackpixel;
+-unsigned long	whitepixel;
+-unsigned long	borderpixel;
+-unsigned long	greenpixel;
++extern unsigned long	blackpixel;
++extern unsigned long	whitepixel;
++extern unsigned long	borderpixel;
++extern unsigned long	greenpixel;
+ 
+-Bool	is_color;
++extern Bool	is_color;
+ 
+-CardList	deck;
+-CardList	stack[NUM_STACKS];		/* tableau */
+-CardList	piles[NUM_PILES];		/* full suits */
++extern CardList	deck;
++extern CardList	stack[NUM_STACKS];		/* tableau */
++extern CardList	piles[NUM_PILES];		/* full suits */
+ 
+-int		table_height;
+-int		table_width;
++extern int		table_height;
++extern int		table_width;
+ 
+-int		deck_index;
++extern int		deck_index;
+ 
+-int		draw_count;
++extern int		draw_count;
+ 
+-Bool		restart;
+-int		deal_number;
++extern Bool		restart;
++extern int		deal_number;
+ 
+ extern char	*version;
+ extern char	*build_date;
 @@ -90,12 +90,8 @@ void	redraw_table();
  void	button_press();
  void	button_release();

@@ -1,5 +1,8 @@
---- movelog.c.orig	Sat Sep 28 19:46:17 1991
-+++ movelog.c	Sun Apr 16 12:11:24 2017
+$OpenBSD: patch-movelog_c,v 1.5 2021/02/19 20:45:31 naddy Exp $
+
+Index: movelog.c
+--- movelog.c.orig
++++ movelog.c
 @@ -17,6 +17,7 @@
  #include	"defs.h"
  #include	"globals.h"

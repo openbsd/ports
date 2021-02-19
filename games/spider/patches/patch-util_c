@@ -1,5 +1,8 @@
---- util.c.orig	Sun Aug  3 09:35:39 2008
-+++ util.c	Sun Aug  3 09:37:57 2008
+$OpenBSD: patch-util_c,v 1.2 2021/02/19 20:45:31 naddy Exp $
+
+Index: util.c
+--- util.c.orig
++++ util.c
 @@ -24,6 +24,7 @@
  #endif /* XAW */
  #include	<ctype.h>

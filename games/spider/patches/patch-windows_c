@@ -1,6 +1,8 @@
-$OpenBSD: patch-windows_c,v 1.1 2004/10/25 13:49:22 brad Exp $
---- windows.c.orig	Sun Oct 24 17:39:27 2004
-+++ windows.c	Sun Oct 24 17:40:40 2004
+$OpenBSD: patch-windows_c,v 1.2 2021/02/19 20:45:31 naddy Exp $
+
+Index: windows.c
+--- windows.c.orig
++++ windows.c
 @@ -116,7 +116,7 @@ Pixmap			icon_map;
  	XMapWindow(dpy, message_win);
  	XMapWindow(dpy, table);

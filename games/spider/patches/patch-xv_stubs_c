@@ -1,5 +1,8 @@
---- xv_stubs.c.orig	Sun Aug  3 09:37:44 2008
-+++ xv_stubs.c	Sun Aug  3 09:42:41 2008
+$OpenBSD: patch-xv_stubs_c,v 1.2 2021/02/19 20:45:31 naddy Exp $
+
+Index: xv_stubs.c
+--- xv_stubs.c.orig
++++ xv_stubs.c
 @@ -10,6 +10,7 @@
   *      @(#)xv_stubs.c	2.2	90/04/27
   */
