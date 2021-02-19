@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/19 17:16:27 ajacoutot Exp $
 
 COMMENT=	OpenGL API/window system abstraction
 DISTNAME=	waffle-1.5.2
@@ -6,6 +6,7 @@ CATEGORIES=	x11 graphics
 HOMEPAGE=	http://www.waffle-gl.org/
 MASTER_SITES=	${HOMEPAGE}/files/release/${DISTNAME}/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 

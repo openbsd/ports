@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_waffle_gbm_wgbm_display_c,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+$OpenBSD: patch-src_waffle_gbm_wgbm_display_c,v 1.2 2021/02/19 17:16:27 ajacoutot Exp $
 --- src/waffle/gbm/wgbm_display.c.orig	Wed Aug 26 07:05:10 2015
 +++ src/waffle/gbm/wgbm_display.c	Mon Dec 21 16:57:09 2015
 @@ -29,11 +29,13 @@
@@ -21,7 +21,7 @@ $OpenBSD: patch-src_waffle_gbm_wgbm_display_c,v 1.1.1.1 2015/12/26 03:00:13 jsg 
  wgbm_get_default_fd_for_pattern(const char *pattern)
  {
 +#ifdef __OpenBSD__
-+    return open("/dev/drm0", O_RDWR, 0);
++    return open("/dev/dri/card0", O_RDWR, 0);
 +#else
      struct udev *ud;
      struct udev_enumerate *en;

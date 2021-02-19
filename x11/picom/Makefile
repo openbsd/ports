@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/24 16:28:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/19 17:16:28 ajacoutot Exp $
 
 COMMENT =	lightweight compositor for X11
 
 GH_ACCOUNT =	yshui
 GH_PROJECT =	picom
 GH_TAGNAME =	v8.2
+REVISION =	0
 
 CATEGORIES =	x11
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/19 17:16:27 ajacoutot Exp $
 
 COMMENT =	lightweight compositor for X, forked from xcompmgr-dana
 
 V =		0.1_beta2
 PKGNAME =	compton-${V}
 DISTNAME =	compton-git-v0.1_beta2-2013-10-21
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	x11
 
