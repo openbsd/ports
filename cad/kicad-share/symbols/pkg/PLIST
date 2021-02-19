@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/10 23:09:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/19 14:48:12 tracey Exp $
 @conflict kicad-library-*
 @pkgpath cad/kicad-library
 share/kicad/
@@ -39,8 +39,12 @@ share/kicad/library/Audio.dcm
 share/kicad/library/Audio.lib
 share/kicad/library/Battery_Management.dcm
 share/kicad/library/Battery_Management.lib
+share/kicad/library/Buffer.dcm
+share/kicad/library/Buffer.lib
 share/kicad/library/CPLD_Altera.dcm
 share/kicad/library/CPLD_Altera.lib
+share/kicad/library/CPLD_Microchip.dcm
+share/kicad/library/CPLD_Microchip.lib
 share/kicad/library/CPLD_Xilinx.dcm
 share/kicad/library/CPLD_Xilinx.lib
 share/kicad/library/CPU.dcm
@@ -101,6 +105,8 @@ share/kicad/library/Driver_Motor.dcm
 share/kicad/library/Driver_Motor.lib
 share/kicad/library/Driver_Relay.dcm
 share/kicad/library/Driver_Relay.lib
+share/kicad/library/Driver_TEC.dcm
+share/kicad/library/Driver_TEC.lib
 share/kicad/library/FPGA_Lattice.dcm
 share/kicad/library/FPGA_Lattice.lib
 share/kicad/library/FPGA_Microsemi.dcm
@@ -191,6 +197,8 @@ share/kicad/library/MCU_Microchip_PIC24.dcm
 share/kicad/library/MCU_Microchip_PIC24.lib
 share/kicad/library/MCU_Microchip_PIC32.dcm
 share/kicad/library/MCU_Microchip_PIC32.lib
+share/kicad/library/MCU_Microchip_SAMA.dcm
+share/kicad/library/MCU_Microchip_SAMA.lib
 share/kicad/library/MCU_Microchip_SAMD.dcm
 share/kicad/library/MCU_Microchip_SAMD.lib
 share/kicad/library/MCU_Microchip_SAME.dcm
@@ -215,6 +223,8 @@ share/kicad/library/MCU_NXP_MAC7100.dcm
 share/kicad/library/MCU_NXP_MAC7100.lib
 share/kicad/library/MCU_NXP_MCore.dcm
 share/kicad/library/MCU_NXP_MCore.lib
+share/kicad/library/MCU_NXP_NTAG.dcm
+share/kicad/library/MCU_NXP_NTAG.lib
 share/kicad/library/MCU_NXP_S08.dcm
 share/kicad/library/MCU_NXP_S08.lib
 share/kicad/library/MCU_Nordic.dcm
@@ -341,6 +351,8 @@ share/kicad/library/Sensor_Audio.dcm
 share/kicad/library/Sensor_Audio.lib
 share/kicad/library/Sensor_Current.dcm
 share/kicad/library/Sensor_Current.lib
+share/kicad/library/Sensor_Distance.dcm
+share/kicad/library/Sensor_Distance.lib
 share/kicad/library/Sensor_Gas.dcm
 share/kicad/library/Sensor_Gas.lib
 share/kicad/library/Sensor_Humidity.dcm
