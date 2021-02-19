@@ -1,4 +1,4 @@
-$OpenBSD: patch-data_Init_in,v 1.12 2021/02/12 17:01:18 ajacoutot Exp $
+$OpenBSD: patch-data_Init_in,v 1.13 2021/02/19 17:22:29 ajacoutot Exp $
 
 Index: data/Init.in
 --- data/Init.in.orig
@@ -23,20 +23,14 @@ Index: data/Init.in
  gdmwhich () {
    COMMAND="$1"
    OUTPUT=
-@@ -85,5 +98,21 @@ if [ "x$SETXKBMAP" != "x" ] ; then
+@@ -85,5 +98,15 @@ if [ "x$SETXKBMAP" != "x" ] ; then
      fi
    fi
  fi
 +
 +# /etc/X11/xenodm/GiveConsole, fbtab(5)
-+if [ -c /dev/drm0 ]; then
-+    /sbin/chown _gdm /dev/drm0
-+fi
 +if [ -c /dev/dri/card0 ]; then
 +    /sbin/chown _gdm /dev/dri/card0
-+fi
-+if [ -c /dev/drmR128 ]; then
-+    /sbin/chown _gdm /dev/drmR128
 +fi
 +if [ -c /dev/dri/renderD128 ]; then
 +    /sbin/chown _gdm /dev/dri/renderD128

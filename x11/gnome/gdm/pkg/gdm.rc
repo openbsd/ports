@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: gdm.rc,v 1.45 2021/02/12 17:01:18 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.46 2021/02/19 17:22:29 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -24,14 +24,8 @@ rc_stop() {
 
 # /etc/X11/xenodm/TakeConsole, fbtab(5)
 rc_post() {
-	if [[ -c /dev/drm0 ]]; then
-		chown root /dev/drm0
-	fi
 	if [[ -c /dev/dri/card0 ]]; then
 		chown root /dev/dri/card0
-	fi
-	if [[ -c /dev/drmR128 ]]; then
-		chown root /dev/drmR128
 	fi
 	if [[ -c /dev/dri/renderD128 ]]; then
 		chown root /dev/dri/renderD128
