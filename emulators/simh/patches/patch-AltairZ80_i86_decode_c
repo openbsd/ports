@@ -1,0 +1,12 @@
+$OpenBSD: patch-AltairZ80_i86_decode_c,v 1.1 2021/02/19 07:09:14 benoit Exp $
+--- AltairZ80/i86_decode.c.orig	Thu Feb 18 15:20:53 2021
++++ AltairZ80/i86_decode.c	Thu Feb 18 15:21:15 2021
+@@ -46,6 +46,8 @@
+ extern uint32 sim_brk_summ;
+ extern UNIT cpu_unit;
+ 
++volatile int intr;
++
+ void i86_intr_raise(PC_ENV *m,uint8 intrnum);
+ void cpu8086reset(void);
+ t_stat sim_instr_8086(void);

@@ -1,7 +1,20 @@
-$OpenBSD: patch-scp_c,v 1.16 2012/07/10 00:07:45 sthen Exp $
+$OpenBSD: patch-scp_c,v 1.17 2021/02/19 07:09:14 benoit Exp $
 --- scp.c.orig	Sun Mar 25 11:57:18 2012
-+++ scp.c	Wed Jun 13 06:40:30 2012
-@@ -692,8 +692,10 @@ while (stat != SCPE_EXIT) {                           
++++ scp.c	Fri Feb 19 07:08:06 2021
+@@ -269,7 +269,11 @@
+ /* The per-simulator init routine is a weak global that defaults to NULL
+    The other per-simulator pointers can be overrriden by the init routine */
+ 
+-void (*sim_vm_init) (void);
++#ifdef HAVE_VM_INIT
++extern void (*sim_vm_init) (void);
++#else
++void (*sim_vm_init) (void) = NULL;
++#endif
+ char* (*sim_vm_read) (char *ptr, int32 size, FILE *stream) = NULL;
+ void (*sim_vm_post) (t_bool from_scp) = NULL;
+ CTAB *sim_vm_cmd = NULL;
+@@ -692,8 +696,10 @@
          cptr = (*sim_vm_read) (cbuf, CBUFSIZE, stdin);
          }
      else cptr = read_line_p ("sim> ", cbuf, CBUFSIZE, stdin);/* read with prmopt*/

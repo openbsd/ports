@@ -1,7 +1,7 @@
-$OpenBSD: patch-makefile,v 1.16 2012/08/19 21:20:52 jasper Exp $
+$OpenBSD: patch-makefile,v 1.17 2021/02/19 07:09:14 benoit Exp $
 --- makefile.orig	Mon Apr 23 16:28:04 2012
-+++ makefile	Fri Jul  6 20:09:32 2012
-@@ -300,7 +300,7 @@ ifneq ($(DEBUG),)
++++ makefile	Fri Feb 19 07:57:30 2021
+@@ -300,7 +300,7 @@
    CFLAGS_O = -O0
    BUILD_FEATURES = - debugging support
  else
@@ -10,3 +10,21 @@ $OpenBSD: patch-makefile,v 1.16 2012/08/19 21:20:52 jasper Exp $
    LDFLAGS_O = 
    GCC_MAJOR_VERSION = $(firstword $(subst  ., ,$(GCC_VERSION)))
    ifneq (3,$(GCC_MAJOR_VERSION))
+@@ -523,7 +523,7 @@
+ 	${IBM1130D}/ibm1130_fmt.c ${IBM1130D}/ibm1130_ptrp.c \
+ 	${IBM1130D}/ibm1130_plot.c ${IBM1130D}/ibm1130_sca.c \
+ 	${IBM1130D}/ibm1130_t2741.c
+-IBM1130_OPT = -I ${IBM1130D}
++IBM1130_OPT = -I ${IBM1130D} -D HAVE_VM_INIT
+ 
+ 
+ ID16D = Interdata
+@@ -570,7 +570,7 @@
+ 	${ALTAIRZ80D}/s100_scp300f.c ${ALTAIRZ80D}/sim_imd.c \
+ 	${ALTAIRZ80D}/wd179x.c ${ALTAIRZ80D}/s100_hdc1001.c \
+ 	${ALTAIRZ80D}/s100_if3.c ${ALTAIRZ80D}/s100_adcs6.c
+-ALTAIRZ80_OPT = -I ${ALTAIRZ80D}
++ALTAIRZ80_OPT = -I ${ALTAIRZ80D} -D HAVE_VM_INIT
+ 
+ 
+ GRID = GRI
