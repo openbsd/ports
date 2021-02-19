@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/04/02 14:48:27 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/19 14:48:58 tracey Exp $
 @pkgpath cad/kicad,-docs
 @pkgpath cad/kicad,-main
 @bin bin/bitmap2component
@@ -9,7 +9,6 @@
 @bin bin/idfcyl
 @bin bin/idfrect
 @bin bin/kicad
-@bin bin/kicad-ogltest
 @bin bin/kicad2step
 bin/libcvpcb.a
 bin/libeeschema.a

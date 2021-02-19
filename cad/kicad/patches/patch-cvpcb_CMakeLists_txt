@@ -1,9 +1,9 @@
-$OpenBSD: patch-cvpcb_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
+$OpenBSD: patch-cvpcb_CMakeLists_txt,v 1.2 2021/02/19 14:48:58 tracey Exp $
 
 Index: cvpcb/CMakeLists.txt
 --- cvpcb/CMakeLists.txt.orig
 +++ cvpcb/CMakeLists.txt
-@@ -175,7 +175,7 @@ target_link_libraries( cvpcb_kiface ${Boost_LIBRARIES}
+@@ -104,7 +104,7 @@ target_link_libraries( cvpcb_kiface ${Boost_LIBRARIES}
  
  if( UNIX AND NOT APPLE )
      # -lrt must follow Boost

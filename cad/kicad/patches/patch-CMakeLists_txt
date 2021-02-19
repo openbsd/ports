@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2020/04/02 14:48:27 tracey Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2021/02/19 14:48:58 tracey Exp $
 # assign proper lib name and add boost check
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -434,12 +434,12 @@ if( false )
+@@ -409,12 +409,12 @@ if( false )
      set( KIFACE_SUFFIX  ${CMAKE_SHARED_MODULE_SUFFIX} )
  else()
      # Temporary situation until we can dovetail the python DSO into the kiface DSO.
@@ -18,7 +18,7 @@ Index: CMakeLists.txt
  #message( STATUS "KIFACE_SUFFIX:${KIFACE_SUFFIX}  KIFACE_PREFIX:${KIFACE_PREFIX}" )
  
  
-@@ -607,7 +607,7 @@ find_package( Pixman 0.30 REQUIRED )
+@@ -582,7 +582,7 @@ find_package( Pixman 0.30 REQUIRED )
  
  #
  # Find Boost headers, required.

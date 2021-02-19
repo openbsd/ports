@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.43 2020/07/03 21:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/19 14:48:57 tracey Exp $
 
 # Sync cad/kicad-share/Makefile.inc with archs where kicad is broken
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
 
-V =			5.1.5
+V =			5.1.7
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		2
 
 SHARED_LIBS +=		kicad_3dsg                0.0 # 2.0
 
@@ -24,16 +23,13 @@ WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKIGES TKLCAF
 WANTLIB += TKMath TKMesh TKOffset TKPCAF TKPLCAF TKPShape TKPrim
 WANTLIB += TKSTEP TKSTEP209 TKSTEPAttr TKSTEPBase TKService TKShHealing
 WANTLIB += TKTopAlgo TKV3d TKXCAF TKXDEIGES TKXDESTEP TKXSBase
-WANTLIB += TKernel X11 Xext boost_atomic-mt boost_chrono-mt boost_context-mt
-WANTLIB += boost_date_time-mt boost_system-mt boost_thread-mt
+WANTLIB += TKernel X11 Xext boost_context-mt boost_system-mt
 WANTLIB += c cairo crypto curl freetype m ngspice pixman-1 ${MODPY_WANTLIB}
 WANTLIB += ssl wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
 WANTLIB += wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0 wx_gtk3u_stc-3.0
 
-MASTER_SITES =		https://launchpad.net/kicad/5.0/${V}/+download/
-
-EXTRACT_SUFX =		.tar.xz
+MASTER_SITES =		https://gitlab.com/kicad/code/kicad/-/archive/${V}/
 
 COMPILER =		base-clang ports-gcc
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-pcbnew_CMakeLists_txt,v 1.3 2020/04/02 14:48:27 tracey Exp $
+$OpenBSD: patch-pcbnew_CMakeLists_txt,v 1.4 2021/02/19 14:48:58 tracey Exp $
 # multiple cmake changes to build, prevent multiple rules for _pcbnew.so
 Index: pcbnew/CMakeLists.txt
 --- pcbnew/CMakeLists.txt.orig
@@ -12,8 +12,8 @@ Index: pcbnew/CMakeLists.txt
  endif()
  
  
-@@ -808,11 +808,7 @@ if( KICAD_SCRIPTING_MODULES )
-         add_dependencies( ScriptingModulesPcbnewSoCopy ScriptingWxpythonCopy )
+@@ -805,11 +805,7 @@ if( KICAD_SCRIPTING_MODULES )
+         add_dependencies( ScriptingModulesPcbnewSoCopy ScriptingPythonDirectoryCreation )
          set( PYMOD_EXT "so" )
      else()  # only linux remains among supported platforms
 -        add_library( pcbnew_python MODULE $<TARGET_OBJECTS:pcbnew_kiface_objects> )
@@ -25,7 +25,7 @@ Index: pcbnew/CMakeLists.txt
          set( PYMOD_EXT "so" )
      endif()
  
-@@ -827,18 +823,16 @@ if( KICAD_SCRIPTING_MODULES )
+@@ -824,18 +820,16 @@ if( KICAD_SCRIPTING_MODULES )
              DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_pcbnew.${PYMOD_EXT}
              )
      else()
