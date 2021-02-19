@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/03 21:44:38 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/19 20:44:45 edd Exp $
 @pkgpath audio/audacious-plugins,-main
 @pkgpath audio/audacious-plugins
+%%qt5%%
+!%%qt5%%
 lib/audacious/
 lib/audacious/Container/
 @so lib/audacious/Container/asx.so
@@ -15,7 +17,6 @@ lib/audacious/Effect/
 @so lib/audacious/Effect/crossfade.so
 @so lib/audacious/Effect/crystalizer.so
 @so lib/audacious/Effect/echo.so
-@so lib/audacious/Effect/ladspa.so
 @so lib/audacious/Effect/mixer.so
 @so lib/audacious/Effect/resample.so
 @so lib/audacious/Effect/silence-removal.so
@@ -24,21 +25,12 @@ lib/audacious/Effect/
 @so lib/audacious/Effect/stereo.so
 @so lib/audacious/Effect/voice_removal.so
 lib/audacious/General/
-@so lib/audacious/General/alarm.so
-@so lib/audacious/General/albumart.so
-@so lib/audacious/General/aosd.so
 @so lib/audacious/General/cd-menu-items.so
 @so lib/audacious/General/delete-files.so
-@so lib/audacious/General/gtkui.so
-@so lib/audacious/General/hotkey.so
 @so lib/audacious/General/mpris2.so
 @so lib/audacious/General/notify.so
-@so lib/audacious/General/playlist-manager.so
 @so lib/audacious/General/scrobbler.so
-@so lib/audacious/General/search-tool.so
-@so lib/audacious/General/skins.so
 @so lib/audacious/General/song_change.so
-@so lib/audacious/General/statusicon.so
 lib/audacious/Input/
 @so lib/audacious/Input/aac-raw.so
 @so lib/audacious/Input/cdaudio-ng.so
@@ -63,9 +55,6 @@ lib/audacious/Transport/
 @so lib/audacious/Transport/mms.so
 @so lib/audacious/Transport/neon.so
 lib/audacious/Visualization/
-@so lib/audacious/Visualization/blur_scope.so
-@so lib/audacious/Visualization/cairo-spectrum.so
-@so lib/audacious/Visualization/gl-spectrum.so
 share/audacious/Skins/
 share/audacious/Skins/Classic/
 share/audacious/Skins/Classic/balance.png

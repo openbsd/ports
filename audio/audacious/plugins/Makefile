@@ -1,26 +1,32 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/03 21:44:37 edd Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/19 20:44:45 edd Exp $
 
 COMMENT =		input and output plugins for Audacious
 
 DISTNAME =		audacious-plugins-${VERSION}
 
+FLAVORS =		qt5
+FLAVOR ?=
+
 # BSD / GPL
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC GL X11 Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 audcore audgui
-WANTLIB += audtag avcodec avformat avutil cairo cddb cdio cdio_cdda
-WANTLIB += cue curl faad fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += harfbuzz iconv intl m mms modplug mp3lame mpg123 neon
-WANTLIB += notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 samplerate
-WANTLIB += sndfile sndio soxr vorbis vorbisenc vorbisfile wavpack
-WANTLIB += xml2 z
+WANTLIB += ${COMPILER_LIBCXX} FLAC audcore audtag avcodec avformat avutil
+WANTLIB += cddb cdio cdio_cdda cue curl faad gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 iconv intl m mms modplug mp3lame mpg123 neon notify
+WANTLIB += ogg samplerate sndfile sndio soxr vorbis vorbisenc vorbisfile
+WANTLIB += wavpack xml2 z
 
-BUILD_DEPENDS =		audio/audacious/player>=${VERSION}
-RUN_DEPENDS =		audio/audacious/player>=${VERSION}
+.if ${FLAVOR:Mqt5}
+WANTLIB += GL Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets audqt
+.else
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 audgui cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gmodule-2.0 gtk-x11-2.0 harfbuzz pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0
+.endif
+
 # needed for the gio plugin
-RUN_DEPENDS +=		x11/gnome/gvfs
+RUN_DEPENDS =		x11/gnome/gvfs
 LIB_DEPENDS =		audio/faad>=2.7 \
 			audio/flac \
 			audio/lame \
@@ -41,6 +47,12 @@ LIB_DEPENDS =		audio/faad>=2.7 \
 			net/neon \
 			textproc/libxml
 
+.if ${FLAVOR:Mqt5}
+LIB_DEPENDS +=		audacious-player->=${VERSION}-qt5:audio/audacious/player,qt5
+.else
+LIB_DEPENDS +=		audacious-player->=${VERSION}-!qt5:audio/audacious/player
+.endif
+
 CONFIGURE_ARGS =	--disable-alsa \
 			--disable-amidiplug \
 			--disable-bs2b \
@@ -48,9 +60,10 @@ CONFIGURE_ARGS =	--disable-alsa \
 			--disable-lirc \
 			--disable-oss4 \
 			--disable-pulse \
+			--disable-qtaudio \
 			--disable-sdlout \
 			--disable-sid
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/03 21:44:37 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/19 20:44:45 edd Exp $
 @conflict audacious-<4.0
+%%qt5%%
+!%%qt5%%
 @bin bin/audacious
 @bin bin/audtool
 include/audacious/
@@ -34,13 +36,7 @@ include/libaudcore/tuple.h
 include/libaudcore/vfs.h
 include/libaudcore/vfs_async.h
 include/libaudcore/visualizer.h
-include/libaudgui/
-include/libaudgui/libaudgui-gtk.h
-include/libaudgui/libaudgui.h
-include/libaudgui/list.h
-include/libaudgui/menu.h
 @lib lib/libaudcore.so.${LIBaudcore_VERSION}
-@lib lib/libaudgui.so.${LIBaudgui_VERSION}
 @lib lib/libaudtag.so.${LIBaudtag_VERSION}
 lib/pkgconfig/audacious.pc
 @man man/man1/audacious.1
