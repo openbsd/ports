@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2020/10/09 19:12:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.60 2021/02/19 19:04:21 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -7,15 +7,12 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.8.0
+VERSION =		5.8.1
 DISTNAME =		link-grammar-${VERSION}
-REVISION-python =	1
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
-REVISION-java =		0
-REVISION-main =		0
 
 SHARED_LIBS +=  link-grammar         8.0      # 12.0
 SHARED_LIBS +=  link-grammar-java    6.0      # 12.0
@@ -27,7 +24,7 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += hunspell-1.7 m minisat pcre2-8 sqlite3 z ${COMPILER_LIBCXX}
+WANTLIB += curses hunspell-1.7 m minisat pcre2-8 sqlite3 z ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${WANTLIB} c perl pthread
 
@@ -90,7 +87,7 @@ CONFIGURE_ARGS =	--enable-perl-bindings \
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11
 BUILD_DEPENDS +=	devel/apache-ant
 .else
 CONFIGURE_ARGS +=	--disable-java-bindings
