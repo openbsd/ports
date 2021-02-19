@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.27 2020/03/16 16:07:45 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.28 2021/02/19 04:05:54 gnezdo Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -13,18 +13,15 @@ MODERL_DEFAULT_VERSION =21
 # If the port already has flavors, append ours to it unless the port requires
 # a specific version of Erlang.
 .if !defined(MODERL_VERSION) && !defined(FLAVORS)
-FLAVORS ?=		erlang19 erlang21
+FLAVORS ?=		erlang21
 .else
-FLAVORS +=		erlang19 erlang21
+FLAVORS +=		erlang21
 .endif
 
 FLAVOR?=		# empty
 
 # When no flavor is explicitly set, assume MODERL_DEFAULT_VERSION
-.if ${FLAVOR:Merlang19}
-MODERL_VERSION =	19
-_MODERL_FLAVOR =	${FLAVOR}
-.elif ${FLAVOR:Merlang21}
+.if ${FLAVOR:Merlang21}
 MODERL_VERSION =	21
 _MODERL_FLAVOR =	${FLAVOR}
 .else
@@ -32,9 +29,7 @@ MODERL_VERSION ?=	${MODERL_DEFAULT_VERSION}
 _MODERL_FLAVOR ?=	# empty
 .endif
 
-.if ${MODERL_VERSION} == 19
-_MODERL_FLAVOR =	erlang19
-.elif ${MODERL_VERSION} == 21
+.if ${MODERL_VERSION} == 21
 _MODERL_FLAVOR =	erlang21
 .else
 ERRORS +=		"Invalid MODERL_VERSION set: ${MODERL_VERSION}."
