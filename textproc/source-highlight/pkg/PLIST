@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/04/25 22:16:26 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/02/19 18:49:00 ajacoutot Exp $
 @bin bin/check-regexp
 bin/cpp2html
 bin/java2html
@@ -96,7 +96,7 @@ include/srchilite/versions.h
 include/srchilite/wordtokenizer.h
 @info info/source-highlight-lib.info
 @info info/source-highlight.info
-lib/libsource-highlight.a
+@static-lib lib/libsource-highlight.a
 lib/libsource-highlight.la
 @lib lib/libsource-highlight.so.${LIBsource-highlight_VERSION}
 lib/pkgconfig/source-highlight.pc
@@ -235,6 +235,7 @@ share/source-highlight/bib.lang
 share/source-highlight/bison.lang
 share/source-highlight/c.lang
 share/source-highlight/c_comment.lang
+share/source-highlight/c_preprocessor.lang
 share/source-highlight/c_string.lang
 share/source-highlight/caml.lang
 share/source-highlight/changelog.lang
@@ -289,6 +290,7 @@ share/source-highlight/html_simple.lang
 share/source-highlight/htmlcss.outlang
 share/source-highlight/htmltable.outlang
 share/source-highlight/htmltablelinenum.outlang
+share/source-highlight/ipxe.lang
 share/source-highlight/islisp.lang
 share/source-highlight/java.lang
 share/source-highlight/javadoc.outlang
@@ -337,6 +339,7 @@ share/source-highlight/python.lang
 share/source-highlight/r.lang
 share/source-highlight/r.style
 share/source-highlight/ruby.lang
+share/source-highlight/rust.lang
 share/source-highlight/s.lang
 share/source-highlight/scala.lang
 share/source-highlight/scheme.lang
@@ -412,6 +415,7 @@ share/source-highlight/upc.lang
 share/source-highlight/url.lang
 share/source-highlight/vala.lang
 share/source-highlight/vbscript.lang
+share/source-highlight/vim.lang
 share/source-highlight/xhtml.css
 share/source-highlight/xhtml.outlang
 share/source-highlight/xhtml_common.outlang

@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 21:02:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/19 18:49:00 ajacoutot Exp $
 
 COMMENT=	create a document with syntax highlighting
 
-DISTNAME=	source-highlight-3.1.8
+DISTNAME=	source-highlight-3.1.9
 SHARED_LIBS +=	source-highlight     1.1      # 4.1
 CATEGORIES=	textproc
-REVISION=	2
 
 HOMEPAGE=	https://www.gnu.org/software/src-highlite/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c m ${COMPILER_LIBCXX} boost_regex-mt pthread
+WANTLIB += ${COMPILER_LIBCXX} boost_regex-mt c icudata icui18n
+WANTLIB += icuuc m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_GNU:=src-highlite/}
 
