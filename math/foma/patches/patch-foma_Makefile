@@ -1,19 +1,17 @@
-$OpenBSD: patch-Makefile,v 1.3 2017/05/12 14:38:18 benoit Exp $
+$OpenBSD: patch-foma_Makefile,v 1.1 2021/02/19 02:13:02 tb Exp $
 
-Generate shared libraries correctly.
-
-Index: Makefile
---- Makefile.orig
-+++ Makefile
-@@ -18,6 +18,7 @@ FLOOKUPLDFLAGS = libfoma.a -lz
+Index: foma/Makefile
+--- foma/Makefile.orig
++++ foma/Makefile
+@@ -19,6 +19,7 @@ FLOOKUPLDFLAGS = libfoma.a -lz
  CFLAGS = -O3 -Wall -D_GNU_SOURCE -std=c99 -fvisibility=hidden -fPIC
  FOMAOBJS = foma.o stack.o iface.o lex.interface.o
- LIBOBJS = int_stack.o define.o determinize.o apply.o rewrite.o lexcread.o topsort.o flags.o minimize.o reverse.o extract.o sigma.o io.o structures.o constructions.o coaccessible.o utf8.o spelling.o dynarray.o mem.o stringhash.o trie.o lex.lexc.o lex.yy.o lex.cmatrix.o regex.tab.o
+ LIBOBJS = int_stack.o define.o determinize.o apply.o rewrite.o lexcread.o topsort.o flags.o minimize.o reverse.o extract.o sigma.o io.o structures.o constructions.o coaccessible.o utf8.o spelling.o dynarray.o mem.o stringhash.o trie.o lex.lexc.o lex.yy.o lex.cmatrix.o regex.o
 +SHLIBOBJS = $(LIBOBJS:.o=.so)
  
  all: libfoma foma flookup cgflookup
  
-@@ -64,10 +65,10 @@ LIBS = $(SHAREDLIBV) $(STATICLIB)
+@@ -65,10 +66,10 @@ LIBS = $(SHAREDLIBV) $(STATICLIB)
  
  libfoma: $(SHAREDLIBV)
  
@@ -24,9 +22,9 @@ Index: Makefile
 -	$(CC) $(CFLAGS) -shared -Wl,$(DFLAG),$(SHAREDLIBM) -o $(SHAREDLIBV) $(LIBOBJS) $(LDFLAGS)
 +	$(CC) $(CFLAGS) -shared -o $(SHAREDLIBV) $(SHLIBOBJS) $(LDFLAGS)
  
- install: foma libfoma
+ install: foma libfoma libfoma.pc
  	-@if [ ! -d $(exec_prefix) ]; then mkdir -p $(exec_prefix); fi
-@@ -81,14 +82,15 @@ install: foma libfoma
+@@ -84,9 +85,6 @@ install: foma libfoma libfoma.pc
  	cd $(libdir); chmod 755 $(LIBS); \
  	if test -f $(libdir)/$(SHAREDLIB); then rm  $(libdir)/$(SHAREDLIB); fi
  	if test -f $(libdir)/$(SHAREDLIBM); then rm  $(libdir)/$(SHAREDLIBM); fi
@@ -36,6 +34,8 @@ Index: Makefile
  
  $(OBJS): foma.h
  
+@@ -104,6 +102,10 @@ libfoma.pc:
+ 
  .c.o:
  	$(CC) $(CFLAGS) -c $< -o $@
 +
@@ -43,5 +43,5 @@ Index: Makefile
 +.c.so:
 +	$(CC) $(CFLAGS) -fPIC -c $< -o $@
  
- lex.yy.c: regex.l regex.tab.h
+ lex.yy.c: regex.l regex.h
  	$(LEX) regex.l

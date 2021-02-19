@@ -1,22 +1,25 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/19 02:13:02 tb Exp $
 
 COMMENT =		finite-state compiler and C library
 
-DISTNAME =		foma-0.9.17
-REVISION =		1
+DISTNAME =		foma-0.9.18.20200928
 
-SHARED_LIBS +=		foma                      0.1 # 0.9.16
+SHARED_LIBS +=		foma                      1.0
 
 CATEGORIES =		math devel
 
-HOMEPAGE =		https://bitbucket.org/mhulden/foma
+GH_ACCOUNT =		mhulden
+GH_PROJECT =		foma
+GH_COMMIT =		7a996b08f5bbcf2d41ca17f40b028ac617f2fa6a
 
 # Apache 2.0
 PERMIT_PACKAGE =		Yes
 
 WANTLIB += c curses readline z
 
-MASTER_SITES =		https://bitbucket.org/mhulden/foma/downloads/
+BUILD_DEPENDS =		devel/bison
+
+WRKSRC =		${WRKDIST}/foma
 
 MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS}" \
