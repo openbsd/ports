@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/02/19 19:02:09 fcambus Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-1.5.2
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
