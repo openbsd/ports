@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/05/07 19:44:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/19 19:13:27 ajacoutot Exp $
 @bin bin/discount
 @bin bin/makepage
 @bin bin/mkd2html
@@ -10,7 +10,7 @@ lib/pkgconfig/libmarkdown.pc
 @man man/man1/makepage.1
 @man man/man1/mkd2html.1
 @man man/man1/theme.1
-@man man/man3/markdown.3
+@man man/man3/discount.3
 @man man/man3/mkd-callbacks.3
 @man man/man3/mkd-functions.3
 @man man/man3/mkd-line.3
@@ -26,5 +26,5 @@ lib/pkgconfig/libmarkdown.pc
 @man man/man3/mkd_in.3
 @man man/man3/mkd_line.3
 @man man/man3/mkd_string.3
-@man man/man7/markdown.7
+@man man/man7/discount.7
 @man man/man7/mkd-extensions.7
