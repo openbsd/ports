@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/10 21:45:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/19 21:14:49 ajacoutot Exp $
 @bin bin/jpgicc
 @bin bin/linkicc
 @bin bin/psicc
@@ -15,7 +15,3 @@ lib/pkgconfig/lcms2.pc
 @man man/man1/psicc.1
 @man man/man1/tificc.1
 @man man/man1/transicc.1
-share/doc/lcms2/
-share/doc/lcms2/api.odt
-share/doc/lcms2/plugin-api.odt
-share/doc/lcms2/tutorial.odt
