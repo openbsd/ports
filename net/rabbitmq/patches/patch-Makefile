@@ -1,19 +1,19 @@
-$OpenBSD: patch-Makefile,v 1.10 2019/05/30 16:24:33 sebastia Exp $
+$OpenBSD: patch-Makefile,v 1.11 2021/02/19 13:38:33 sthen Exp $
+
+quieten upstream's tar check
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -238,11 +238,11 @@ DESTDIR ?=
- PREFIX ?= /usr/local
- WINDOWS_PREFIX ?= rabbitmq-server-windows-$(PROJECT_VERSION)
+@@ -275,9 +275,9 @@ $(SOURCE_DIST).manifest: $(SOURCE_DIST)
+ 	$(gen_verbose) cd $(dir $(SOURCE_DIST)) && \
+ 		find $(notdir $(SOURCE_DIST)) | LC_COLLATE=C sort > $@
  
--MANDIR ?= $(PREFIX)/share/man
--RMQ_ROOTDIR ?= $(PREFIX)/lib/erlang
-+MANDIR ?= $(PREFIX)/man
-+RMQ_ROOTDIR ?= $(PREFIX)
- RMQ_BINDIR ?= $(RMQ_ROOTDIR)/bin
- RMQ_LIBDIR ?= $(RMQ_ROOTDIR)/lib
--RMQ_ERLAPP_DIR ?= $(RMQ_LIBDIR)/rabbitmq_server-$(PROJECT_VERSION)
-+RMQ_ERLAPP_DIR ?= $(RMQ_LIBDIR)/rabbitmq
- 
- SCRIPTS = rabbitmq-defaults \
- 	  rabbitmq-env \
+-ifeq ($(shell tar --version | grep -c "GNU tar"),0)
++ifeq ($(shell tar --version 2>/dev/null | grep -c "GNU tar"),0)
+ # Skip all flags if this is Darwin (a.k.a. macOS, a.k.a. OS X)
+-ifeq ($(shell uname | grep -c "Darwin"),0)
++ifeq ($(shell uname | grep -c -e Darwin -e OpenBSD),0)
+ TAR_FLAGS_FOR_REPRODUCIBLE_BUILDS = --uid 0 \
+ 				    --gid 0 \
+ 				    --numeric-owner \

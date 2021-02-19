@@ -1,0 +1,14 @@
+$OpenBSD: patch-deps_rabbit_scripts_rabbitmq-env,v 1.1 2021/02/19 13:38:33 sthen Exp $
+
+Index: deps/rabbit/scripts/rabbitmq-env
+--- deps/rabbit/scripts/rabbitmq-env.orig
++++ deps/rabbit/scripts/rabbitmq-env
+@@ -183,7 +183,7 @@ run_escript()
+     # Important: do not quote RABBITMQ_CTL_ERL_ARGS as they must be
+     # word-split
+     # shellcheck disable=SC2086
+-    exec erl +B \
++    exec ${MODERL_ERL} +B \
+         -boot "$CLEAN_BOOT_FILE" \
+         -noinput -noshell -hidden -smp enable \
+         $RABBITMQ_CTL_ERL_ARGS \

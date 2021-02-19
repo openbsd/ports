@@ -1,8 +1,8 @@
 #!/bin/ksh
 #
-# $OpenBSD: rabbitmq.rc,v 1.6 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: rabbitmq.rc,v 1.7 2021/02/19 13:38:33 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/rabbitmq-server -detached"
+daemon="${TRUEPREFIX}/bin/rabbitmq-server -detached"
 daemon_user="_rabbitmq"
 
 . /etc/rc.d/rc.subr
@@ -16,11 +16,11 @@ rc_pre() {
 
 rc_check() {
 	# return 1 is needed: rabbitmqctl returns a higher error code on failure
-	${TRUEPREFIX}/sbin/rabbitmqctl status || return 1
+	$rcexec ${TRUEPREFIX}/bin/rabbitmqctl status || return 1
 }
 
 rc_stop() {
-	${TRUEPREFIX}/sbin/rabbitmqctl stop
+	${TRUEPREFIX}/bin/rabbitmqctl stop
 }
 
 rc_cmd $1
