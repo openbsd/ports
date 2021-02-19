@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/19 22:27:34 sthen Exp $
 
 COMMENT=	tool for editing version-control repository history
 
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	lang/cython \
 		textproc/asciidoc \
 		textproc/xmlto
 
-MAKE_FLAGS=	mandir=man
+MAKE_FLAGS=	mandir=man CYTHON=cython${MODPY_BIN_SUFFIX}
 ALL_TARGET=	all cyreposurgeon
 INSTALL_TARGET=	install install-cyreposurgeon
 

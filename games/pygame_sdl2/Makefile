@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/12 17:18:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/19 22:27:33 sthen Exp $
 
 # Keep in sync with games/renpy!!!
 V =		7.3.5.606
@@ -32,5 +32,8 @@ LIB_DEPENDS =	devel/sdl2-image \
 		devel/sdl2-ttf
 
 NO_TEST =	Yes
+
+post-extract:
+	ln -s ${LOCALBASE}/bin/cython${MODPY_BIN_SUFFIX} ${WRKDIR}/bin/cython
 
 .include <bsd.port.mk>
