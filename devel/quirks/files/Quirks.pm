@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1188 2021/02/18 21:42:34 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1189 2021/02/19 21:00:49 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -570,6 +570,7 @@ my $stem_extensions = {
 	'py-statgrab' => 'py3-statgrab',
 	'py-parallel-ssh' => 'py3-parallel-ssh',
 	'py-geventhttpclient' => 'py3-geventhttpclient',
+	'py-gnupg' => 'py3-gnupg',
 };
 
 my $obsolete_reason = {
