@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2021/01/24 18:05:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2021/02/19 18:01:20 ajacoutot Exp $
 
 COMMENT-main=	Tk 8.4 bindings for Perl
 COMMENT-demo=	demonstrate the features of ptk
 
 MODULES=	cpan
-VERSION=	804.035
+VERSION=	804.036
 DISTNAME=	Tk-${VERSION}
 PKGNAME-main=	p5-Tk-${VERSION}
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
@@ -33,6 +33,6 @@ PKG_ARCH-demo=		*
 TEST_IS_INTERACTIVE=	x11
 
 pre-configure:
-	sed -i "s,/usr/local,${LOCALBASE}," ${WRKSRC}/JPEG/Makefile.PL
+	${SUBST_CMD} ${WRKSRC}/JPEG/Makefile.PL
 
 .include <bsd.port.mk>

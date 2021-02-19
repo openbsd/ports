@@ -1,12 +1,19 @@
-$OpenBSD: patch-JPEG_Makefile_PL,v 1.1 2015/02/22 15:27:44 sthen Exp $
---- JPEG/Makefile.PL.orig	Sat Feb 21 22:18:15 2015
-+++ JPEG/Makefile.PL	Sat Feb 21 22:18:16 2015
-@@ -8,7 +8,7 @@ use Tk::MMtry;
+$OpenBSD: patch-JPEG_Makefile_PL,v 1.2 2021/02/19 18:01:20 ajacoutot Exp $
+
+Index: JPEG/Makefile.PL
+--- JPEG/Makefile.PL.orig
++++ JPEG/Makefile.PL
+@@ -6,10 +6,10 @@ my $l = $Config::Config{'lib_ext'};
  
- if ($Tk::MMtry::VERSION ge '4.007' && try_run("config/has_jpeg.c",['-I/usr/local/include'],['-ljpeg']))
+ use Tk::MMtry;
+ 
+-if ($Tk::MMtry::VERSION ge '4.007' && try_run("config/has_jpeg.c",['-I/usr/local/include'],['-ljpeg']))
++if ($Tk::MMtry::VERSION ge '4.007' && try_run("config/has_jpeg.c",['-I${LOCALBASE}/include'],['-ljpeg']))
   {
 -  push(@args, LIBS => ['-ljpeg'],
-+  push(@args, LIBS => ['-L/usr/local/lib -ljpeg'],
-               INC  => '-I/usr/local/include',
+-              INC  => '-I/usr/local/include',
++  push(@args, LIBS => ['-L${LOCALBASE}/lib -ljpeg'],
++              INC  => '-I${LOCALBASE}/include',
                DEFINE => '-DHAVE_JPEGLIB_H',
        );
+   warn "Using system's -ljpeg\n";

@@ -1,4 +1,5 @@
-$OpenBSD: patch-pTk_mTk_tclGeneric_tclGetDate_y,v 1.1 2013/04/19 21:32:37 sthen Exp $
+$OpenBSD: patch-pTk_mTk_tclGeneric_tclGetDate_y,v 1.2 2021/02/19 18:01:20 ajacoutot Exp $
+
 --- pTk/mTk/tclGeneric/tclGetDate.y.orig	Fri Apr 19 21:24:37 2013
 +++ pTk/mTk/tclGeneric/tclGetDate.y	Fri Apr 19 22:28:19 2013
 @@ -680,8 +680,10 @@ Convert(Month, Day, Year, Hours, Minutes, Seconds, Mer
