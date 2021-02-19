@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.62 2020/03/24 14:30:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.63 2021/02/19 14:42:02 fcambus Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
-DISTNAME=	mtools-4.0.24
+DISTNAME=	mtools-4.0.26
 
 CATEGORIES=	sysutils
 
