@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/19 22:27:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/19 23:13:04 sthen Exp $
 
 COMMENT=	tool for editing version-control repository history
 
 DISTNAME=	reposurgeon-3.42
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	devel

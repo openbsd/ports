@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2020/01/02 09:37:10 bket Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/19 23:13:00 sthen Exp $
 
 COMMENT=		command line client for mpd
 
@@ -17,7 +17,7 @@ WANTLIB=		c iconv mpdclient
 LIB_DEPENDS=		audio/libmpdclient>=2.2 \
 			converters/libiconv
 
-BUILD_DEPENDS +=	textproc/py-sphinx
+BUILD_DEPENDS +=	textproc/py-sphinx,python3
 MASTER_SITES=		https://www.musicpd.org/download/mpc/${VER:R}/
 
 MODULES=		devel/meson

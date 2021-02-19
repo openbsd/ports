@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/04/14 21:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/19 23:13:05 sthen Exp $
 
 BROKEN-i386 =	error[E0428]: the name `U1024` is defined multiple times
 BROKEN-sparc64=	ring build-script error: called `Option::unwrap()` on a `None` value
@@ -28,7 +28,7 @@ MODLUA_SA =		Yes
 MODULES =		devel/cargo \
 			lang/lua
 BUILD_DEPENDS =		lang/rust>=1.34 \
-			textproc/py-sphinx
+			textproc/py-sphinx,python3
 RUN_DEPENDS =		net/libmaxminddb,-asn \
 			net/libmaxminddb,-city
 

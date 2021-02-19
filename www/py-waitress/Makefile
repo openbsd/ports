@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/09 18:49:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/19 23:13:08 sthen Exp $
 
 COMMENT =		pure-Python WSGI server
 
 MODPY_EGG_VERSION =	1.4.4
 DISTNAME =		waitress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -20,7 +21,7 @@ MODPY_PYTEST =		Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-BUILD_DEPENDS =		textproc/py-sphinx
+BUILD_DEPENDS =		textproc/py-sphinx,python3
 
 TEST_ENV +=		PYTHONPATH=${WRKSRC}/src/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/12/10 02:20:30 daniel Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/19 23:13:02 sthen Exp $
 
 COMMENT =		object-oriented filesystem paths
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.5
+BUILD_DEPENDS =		textproc/py-sphinx,python3>=1.5
 TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
 
 FLAVORS =		python3
@@ -24,7 +24,7 @@ FLAVOR ?=
 
 DOCDIR = ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pathlib
 
-MAKE_ENV +=	PYTHONPATH=${WRKSRC} SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
+MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 
 post-build:
 	cd ${WRKBUILD}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html

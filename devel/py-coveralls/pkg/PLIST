@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/04/24 20:09:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/19 23:13:01 sthen Exp $
+@conflict py-coveralls-<1.6.0p5
 bin/coveralls${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/coveralls/
 lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

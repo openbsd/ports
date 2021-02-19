@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/24 10:08:11 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/19 23:13:06 sthen Exp $
+@conflict py-spdx-lookup-<0.3.2p2
 bin/spdx-lookup${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/spdx_lookup/
 lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

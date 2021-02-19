@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2020/06/09 07:14:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/19 23:13:00 sthen Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
@@ -29,7 +29,7 @@ LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 		textproc/libxslt
 
 BUILD_DEPENDS +=	databases/postgresql,-server \
-			textproc/py-sphinx
+			textproc/py-sphinx,python3
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"

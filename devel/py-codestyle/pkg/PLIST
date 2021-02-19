@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/30 11:25:59 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/19 23:13:01 sthen Exp $
+@conflict py-codestyle-<2.5.0p1
 bin/pycodestyle${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pycodestyle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycodestyle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

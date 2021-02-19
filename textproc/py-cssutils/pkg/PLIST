@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/12/30 09:05:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/19 23:13:06 sthen Exp $
+@conflict py-cssutils-<1.0.2p2
 bin/csscapture${MODPY_BIN_SUFFIX}
 bin/csscombine${MODPY_BIN_SUFFIX}
 bin/cssparse${MODPY_BIN_SUFFIX}

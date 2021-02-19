@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/08/19 12:25:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/19 23:13:05 sthen Exp $
 
 COMMENT =	rop gadget finder and binary information tool
 
 MODPY_EGG_VERSION =	1.12.5
 DISTNAME =	ropper-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 

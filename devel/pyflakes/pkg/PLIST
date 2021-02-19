@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/07/31 13:14:28 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/19 23:13:04 sthen Exp $
+@conflict pyflakes-<2.1.1p2
 bin/pyflakes${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/pyflakes/
 lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

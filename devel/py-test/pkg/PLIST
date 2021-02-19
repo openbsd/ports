@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/05/01 01:22:00 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/02/19 23:13:03 sthen Exp $
+@conflict py-test-<4.4.0p2
 bin/py.test${MODPY_BIN_SUFFIX}
 @comment bin/pytest
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pytest.${MODPY_PYC_MAGIC_TAG}pyc

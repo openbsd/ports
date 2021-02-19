@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/10/17 09:10:57 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/19 23:13:03 sthen Exp $
+@conflict py-yamllint-<1.23.0p1
 bin/yamllint${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/yamllint/
 lib/python${MODPY_VERSION}/site-packages/yamllint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

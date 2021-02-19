@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/10 20:28:56 edd Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/19 23:13:04 sthen Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -38,7 +38,7 @@ FLAVORS=		no_x11 sdl
 FLAVOR?=
 
 RUN_DEPENDS =		devel/desktop-file-utils
-BUILD_DEPENDS =		textproc/py-docutils
+BUILD_DEPENDS =		textproc/py-docutils,python3
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x

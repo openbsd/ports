@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/22 18:25:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/19 23:13:08 sthen Exp $
 
 COMMENT=	use external locker as X screen saver
 
@@ -21,7 +21,7 @@ MASTER_SITES=	https://bitbucket.org/raymonad/xss-lock/get/
 
 MODULES=	devel/cmake
 LIB_DEPENDS=	devel/glib2
-BUILD_DEPENDS=	textproc/py-docutils
+BUILD_DEPENDS=	textproc/py-docutils,python3
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

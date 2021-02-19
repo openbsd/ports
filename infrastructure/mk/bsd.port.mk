@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1546 2021/02/06 15:24:48 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1547 2021/02/19 23:13:04 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -790,6 +790,10 @@ _EXTRA_ENV= \
 CONFIGURE_ENV += ${_EXTRA_ENV}
 MAKE_ENV += ${_EXTRA_ENV}
 .endif
+
+# printf %n logging; jca
+CONFIGURE_ENV += _THIS_PORT=${FULLPKGPATH}
+MAKE_ENV += _THIS_PORT=${FULLPKGPATH}
 
 .if ${PROPERTIES:Mlld}
 USE_LLD ?= Yes

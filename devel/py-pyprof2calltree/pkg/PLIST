@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/21 15:24:37 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/19 23:13:02 sthen Exp $
+@conflict py-pyprof2calltree-<1.4.5p0
 bin/pyprof2calltree${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

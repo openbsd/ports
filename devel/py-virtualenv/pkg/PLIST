@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/12/10 02:20:30 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/02/19 23:13:03 sthen Exp $
+@conflict py-virtualenv-<16.0.0p5
 bin/virtualenv${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}virtualenv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

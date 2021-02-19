@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/12/10 02:20:31 daniel Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/19 23:13:08 sthen Exp $
 
 COMMENT=	flexible forms validation and rendering library
 
@@ -22,7 +22,7 @@ FLAVORS =		python3
 FLAVOR ?=
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			textproc/py-sphinx${MODPY_FLAVOR}>=1.5
+			textproc/py-sphinx,python3>=1.5
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS=	Yes
@@ -31,7 +31,7 @@ USE_GMAKE=		Yes
 
 post-build:
 	@cd ${WRKSRC}/docs && \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} SPHINXBUILD=sphinx-build${MODPY_BIN_SUFFIX} html
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}wtforms

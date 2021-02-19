@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/10 05:44:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/19 23:13:04 sthen Exp $
 
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
@@ -38,7 +38,7 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 AUTORECONF =		./autogen.sh
 
-BUILD_DEPENDS =		textproc/py-docutils
+BUILD_DEPENDS =		textproc/py-docutils,python3
 
 LIB_DEPENDS +=		textproc/libxml \
 			devel/libyaml

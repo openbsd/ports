@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/28 11:26:25 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/19 23:13:03 sthen Exp $
+@conflict py-tox-<2.6.0p2
 bin/tox${MODPY_BIN_SUFFIX}
 bin/tox-quickstart${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/tox/

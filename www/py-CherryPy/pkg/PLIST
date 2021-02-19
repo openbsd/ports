@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/12/17 21:25:25 bket Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/02/19 23:13:07 sthen Exp $
+@conflict py-CherryPy-<17.4.2p1
 @conflict py-cherrypy2-*
 bin/cherryd${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

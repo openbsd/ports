@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/12/10 02:20:31 daniel Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/19 23:13:05 sthen Exp $
 
 COMMENT =		friendly interactive shell
 
@@ -26,7 +26,7 @@ MODULES =		devel/cmake \
 			lang/python
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			textproc/py-sphinx>=1.5
+			textproc/py-sphinx,python3>=1.5
 
 LIB_DEPENDS =		devel/pcre2 \
 			devel/gettext,-runtime

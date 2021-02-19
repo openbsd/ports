@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/12/10 02:20:31 daniel Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/19 23:13:07 sthen Exp $
 
 COMMENT = 	helpers to pass trusted data to untrusted environments
 
@@ -20,12 +20,12 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =	textproc/py-sphinx${MODPY_FLAVOR}>=1.5
+BUILD_DEPENDS =	textproc/py-sphinx,python3>=1.5
 
 FLAVORS =	python3
 FLAVOR ?=
 
-MAKE_ENV +=	PYTHONPATH=${WRKSRC} SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
+MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 
 post-build:
 	@cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html

@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.126 2021/02/04 17:13:52 kn Exp $
+# $OpenBSD: python.port.mk,v 1.127 2021/02/19 23:13:04 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -60,7 +60,7 @@ MODPY_MAJOR_VERSION =	${MODPY_VERSION:R}
 
 .if ${MODPY_MAJOR_VERSION} == 2
 MODPY_FLAVOR =
-MODPY_BIN_SUFFIX =
+MODPY_BIN_SUFFIX =	-2
 MODPY_PY_PREFIX =	py-
 MODPY_PYCACHE =
 MODPY_PYC_MAGIC_TAG =
@@ -71,8 +71,8 @@ MODPY_PYOEXTENSION =	pyo
 # replace py- prefix by py3-
 FULLPKGNAME ?=	${PKGNAME:S/^py-/py3-/}${FLAVOR_EXT:S/-python3//}
 MODPY_FLAVOR =	,python3
-# use MODPY_SUFFIX for binaries to avoid conflict
-MODPY_BIN_SUFFIX =	-3
+# use MODPY_BIN_SUFFIX for binaries to avoid conflict
+MODPY_BIN_SUFFIX =
 MODPY_PY_PREFIX =	py3-
 MODPY_PYCACHE =	"__pycache__/"
 MODPY_MAJORMINOR =	${MODPY_VERSION:C/\.//g}

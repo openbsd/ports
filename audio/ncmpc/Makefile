@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2020/10/21 09:24:05 edd Exp $
+# $OpenBSD: Makefile,v 1.54 2021/02/19 23:13:00 sthen Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -26,7 +26,7 @@ MODULES=		devel/meson
 
 BUILD_DEPENDS=		devel/boost \
 			devel/gettext,-tools \
-			textproc/py-sphinx
+			textproc/py-sphinx,python3
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/pcre \

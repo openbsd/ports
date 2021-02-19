@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/02/25 09:33:59 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/19 23:13:03 sthen Exp $
+@conflict py-xlsxwriter-<1.2.9p1
 bin/vba_extract.py${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/09 20:09:03 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/19 23:13:06 sthen Exp $
+@conflict py-markdown-<2.6.11p4
 !%%python3%%
 bin/markdown_py${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

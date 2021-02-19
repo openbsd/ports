@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/12/10 02:20:30 daniel Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/19 23:13:04 sthen Exp $
 
 COMMENT =	easy-to-use minimalistic disassembler library
 
@@ -22,7 +22,7 @@ WANTLIB +=	c
 MODULES =	lang/python
 
 BUILD_DEPENDS =	devel/yasm \
-		textproc/py-sphinx>=1.5
+		textproc/py-sphinx,python3>=1.5
 
 CONFIGURE_STYLE =	gnu
 MAKE_ENV =		LIBudis86_VERSION=${LIBudis86_VERSION}

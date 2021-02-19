@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/01/04 14:06:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/02/19 23:13:00 sthen Exp $
+@conflict py-cheetah-<3.1.0p4
 bin/cheetah${MODPY_BIN_SUFFIX}
 bin/cheetah-analyze${MODPY_BIN_SUFFIX}
 bin/cheetah-compile${MODPY_BIN_SUFFIX}

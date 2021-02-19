@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/19 06:43:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/19 23:13:04 sthen Exp $
 
 COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
@@ -21,7 +21,7 @@ LIB_DEPENDS =	graphics/glew>=2.0 \
 		graphics/openexr
 
 # links with static libLASlib.a
-BUILD_DEPENDS =	textproc/py-docutils \
+BUILD_DEPENDS =	textproc/py-docutils,python3 \
 		converters/lastools
 
 CONFIGURE_ARGS =	-DDISPLAZ_EMBED_GLEW=false \

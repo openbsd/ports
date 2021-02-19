@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:13:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/19 23:13:06 sthen Exp $
 
 COMMENT =	python package to parse and build CSS
 
@@ -8,7 +8,7 @@ MODPY_EGG_VERSION =	1.0.2
 DISTNAME =	cssutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 MODPY_PI =	Yes
-REVISION =	1
+REVISION =	2
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

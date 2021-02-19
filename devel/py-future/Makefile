@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/19 23:13:01 sthen Exp $
 
 COMMENT =	compatibility layer between Python 2 and Python 3
 
 MODPY_EGG_VERSION =	0.16.0
 DISTNAME =	future-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 HOMEPAGE =	http://python-future.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2021/02/18 20:42:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/02/19 23:13:02 sthen Exp $
 
 COMMENT=		pure Python Expect-like module
 
@@ -41,8 +41,7 @@ pre-build:
 	${SUBST_CMD} ${WRKSRC}/tests/test_run.py
 
 post-build:
-	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html \
-	    SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
+	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}

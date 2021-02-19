@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/12/10 02:20:31 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/02/19 23:13:06 sthen Exp $
+@conflict py-sphinx-<1.5.6p0
 bin/sphinx-apidoc${MODPY_BIN_SUFFIX}
 bin/sphinx-autogen${MODPY_BIN_SUFFIX}
 bin/sphinx-build${MODPY_BIN_SUFFIX}

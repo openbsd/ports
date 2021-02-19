@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/17 20:57:26 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/19 23:13:02 sthen Exp $
+@conflict py-tempora-<1.14.1p2
 bin/calc-prorate${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/tempora/
 lib/python${MODPY_VERSION}/site-packages/tempora-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
