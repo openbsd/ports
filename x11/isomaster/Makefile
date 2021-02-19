@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2020/02/13 07:46:07 giovanni Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/19 18:03:33 ajacoutot Exp $
 
 COMMENT=		gui cd image editor
 
-DISTNAME=		isomaster-1.3.14
-REVISION=		0
+DISTNAME=		isomaster-1.3.16
 
 CATEGORIES=		x11
 HOMEPAGE=		http://littlesvr.ca/isomaster/
@@ -14,12 +13,11 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 intl pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += z
-
-EXTRACT_SUFX=	.tar.bz2
+WANTLIB += gtk-x11-2.0 harfbuzz intl pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 z
 
 MASTER_SITES=	${HOMEPAGE}releases/
+EXTRACT_SUFX=	.tar.bz2
 
 BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	x11/gtk+2
