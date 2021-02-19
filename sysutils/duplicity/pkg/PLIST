@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/01/04 14:06:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/02/19 19:28:45 ajacoutot Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
@@ -69,6 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}lftp
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}localbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}mediafirebackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}megabackend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}megav2backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}multibackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}ncftpbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}onedrivebackend.${MODPY_PYC_MAGIC_TAG}pyc
@@ -104,6 +105,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/lftpbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/localbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/mediafirebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/megabackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/megav2backend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/multibackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ncftpbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/onedrivebackend.py

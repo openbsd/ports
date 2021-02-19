@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.9 2020/07/05 08:53:45 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.10 2021/02/19 19:28:45 ajacoutot Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -83,23 +83,11 @@ def get_data_files():
+@@ -87,22 +87,11 @@ def get_data_files():
  
      # static data files
      data_files = [
@@ -17,13 +17,12 @@ Index: setup.py
 -            (u'share/doc/duplicity-%s' % Version,
 -                [
 -                u'AUTHORS',
--                u'CHANGELOG',
--                u'Changelog.GNU',
+-                u'CHANGELOG.md',
 -                u'COPYING',
--                u'README',
--                u'README-LOG',
--                u'README-REPO',
--                u'README-TESTING',
+-                u'README.md',
+-                u'README-LOG.md',
+-                u'README-REPO.md',
+-                u'README-TESTING.md',
 -                ],
              ),
          ]

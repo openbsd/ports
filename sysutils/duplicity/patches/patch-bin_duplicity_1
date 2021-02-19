@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_duplicity_1,v 1.9 2020/07/05 08:53:45 ajacoutot Exp $
+$OpenBSD: patch-bin_duplicity_1,v 1.10 2021/02/19 19:28:45 ajacoutot Exp $
 
 Index: bin/duplicity.1
 --- bin/duplicity.1.orig
@@ -12,7 +12,7 @@ Index: bin/duplicity.1
  Adds a prefix to all files, manifest files, archive files, and/or signature files.
  
  The same set of prefixes must be passed in on backup and restore.
-@@ -978,7 +978,6 @@ currently supports only the
+@@ -996,7 +996,6 @@ currently supports only the
  or
  .B -oIdentityFile
  setting. If needed provide more host specific options via ssh_config file.
