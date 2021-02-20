@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.611 2021/02/20 17:19:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.612 2021/02/20 21:54:20 naddy Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -54,7 +54,6 @@
      SUBDIR += exploitdb
      SUBDIR += fcrackzip
      SUBDIR += fierce
-     SUBDIR += flasm
      SUBDIR += floss
      SUBDIR += foremost
      SUBDIR += fragroute
