@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1197 2021/02/20 20:40:37 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1198 2021/02/20 20:55:30 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -582,6 +582,7 @@ my $stem_extensions = {
 	'py-codestyle' => 'py3-codestyle',
 	'pyflakes3' => 'pyflakes',
 	'py-dot' => 'py3-dot',
+	'py-last' => 'py3-last',
 };
 
 my $obsolete_reason = {
