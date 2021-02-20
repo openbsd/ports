@@ -1,9 +1,17 @@
-$OpenBSD: patch-makefile,v 1.22 2021/01/27 12:17:34 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.23 2021/02/20 15:00:18 abieber Exp $
 
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -25,7 +25,7 @@ coverage:: build-linux
+@@ -18,14 +18,14 @@ export GO_SPACE
+ 
+ checkstyle::
+ #   Run checkstyle script
+-	$(GO_SPACE)/Tools/src/checkstyle.sh
++	echo "Stylin"
+ 
+ coverage:: build-linux
+ 	$(GO_SPACE)/Tools/src/coverage.sh \
  	  github.com/aws/amazon-ssm-agent/agent/... \
  	  github.com/aws/amazon-ssm-agent/core/...
  
@@ -34,3 +42,10 @@ Index: makefile
  
  .PHONY: build-darwin
  build-darwin: GOARCH=amd64
+@@ -421,4 +429,4 @@ build-tests-windows: copy-src copy-tests-src pre-build
+ 
+ .PHONY: gen-report
+ gen-report:
+-	$(GO_SPACE)/Tools/src/gen-report.sh
+\ No newline at end of file
++	$(GO_SPACE)/Tools/src/gen-report.sh
