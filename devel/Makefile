@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2069 2021/02/20 07:23:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2070 2021/02/20 08:24:16 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1466,6 +1466,7 @@
      SUBDIR += py-editdist
      SUBDIR += py-efilter
      SUBDIR += py-elftools,python3
+     SUBDIR += py-enrich,python3
      SUBDIR += py-entrypoints
      SUBDIR += py-entrypoints,python3
      SUBDIR += py-enum34
@@ -1651,6 +1652,7 @@
      SUBDIR += py-rencode,python3
      SUBDIR += py-rfc6555
      SUBDIR += py-rfc6555,python3
+     SUBDIR += py-rich,python3
      SUBDIR += py-robotframework
      SUBDIR += py-robotframework,python3
      SUBDIR += py-rope,python3
@@ -1763,7 +1765,7 @@
      SUBDIR += py-voluptuous,python3
      SUBDIR += py-vulture,python3
      SUBDIR += py-wbem,python3
-     SUBDIR += py-wcmatch
+     SUBDIR += py-wcmatch,python3
      SUBDIR += py-wcwidth,python3
      SUBDIR += py-wheel
      SUBDIR += py-wheel,python3
