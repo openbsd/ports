@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2068 2021/02/18 20:42:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.2069 2021/02/20 07:23:27 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1763,6 +1763,7 @@
      SUBDIR += py-voluptuous,python3
      SUBDIR += py-vulture,python3
      SUBDIR += py-wbem,python3
+     SUBDIR += py-wcmatch
      SUBDIR += py-wcwidth,python3
      SUBDIR += py-wheel
      SUBDIR += py-wheel,python3
