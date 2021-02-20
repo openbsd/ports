@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2020/01/26 11:14:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/20 21:08:07 naddy Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
 DISTNAME=		xquote-2.6.10
-REVISION=		9
+REVISION=		10
 CATEGORIES=		productivity x11
 
 # BSD

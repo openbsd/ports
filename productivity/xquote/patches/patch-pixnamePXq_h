@@ -1,0 +1,17 @@
+$OpenBSD: patch-pixnamePXq_h,v 1.1 2021/02/20 21:08:07 naddy Exp $
+
+Index: pixnamePXq.h
+--- pixnamePXq.h.orig
++++ pixnamePXq.h
+@@ -33,9 +33,9 @@
+ #ifndef PIXNAME_H
+ #define PIXNAME_H
+ 
+-enum { 
++enum Pixmaps { 
+   PUP, PDOWN, PERROR, PPLAY, PSTOP, PEJECT, PICON, PSICON 
+-} Pixmaps;
++};
+ 
+ #define LASTINSENS PEJECT
+ #define LASTPIXMAP PSICON
