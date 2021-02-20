@@ -1,7 +1,51 @@
-$OpenBSD: patch-xinvest_c,v 1.1 2010/04/27 19:45:49 naddy Exp $
---- xinvest.c.orig	Tue Apr 27 21:38:38 2010
-+++ xinvest.c	Tue Apr 27 21:39:01 2010
-@@ -1650,6 +1650,7 @@ int main (int argc, char **argv)
+$OpenBSD: patch-xinvest_c,v 1.2 2021/02/20 20:56:17 naddy Exp $
+Index: xinvest.c
+--- xinvest.c.orig
++++ xinvest.c
+@@ -69,6 +69,42 @@ static char id[] = "$Header: /pack/anoncvs/xinvest/src
+ #include <Dt/Print.h>
+ #endif
+ 
++/* Globals */
++Widget Filemenu;
++Widget Editmenu;
++Widget Optionmenu;
++Widget Accountmenu;
++Widget Transtext;
++Widget Translabel;
++Widget Filecwdlabel;
++Widget Listfile;
++Widget Timesform;
++Widget Timelform;
++Widget Valrow;
++Widget Graphhbar;
++Widget Graphhline;
++Widget GraphconstToggle;
++Widget Graphscale;
++Widget Graphcform;
++Widget Portpbut;
++Widget Portmbut;
++Widget Portcbut;
++Widget Portabut;
++Widget Portpercentlist;
++Widget Portoptmenu;
++Widget Portvaluelabel;
++Widget Calclabel;
++Widget Calclabels[5];
++Widget Calctext[3]; 
++Widget Savebut;
++Widget Nextbut;
++Widget Prevbut;
++Widget Gainbut;
++Widget Graphbut;
++Widget Portbut;
++Widget Editbut;
++Widget Toolmenu, Infoframe, Graphform, Reportform, Portform, Calcform;
++
+ /* Menu & button callbacks */
+        void toolCB ();
+ extern void accountCB();
+@@ -1650,6 +1686,7 @@ int main (int argc, char **argv)
    return (0);
  }
  
@@ -9,7 +53,7 @@ $OpenBSD: patch-xinvest_c,v 1.1 2010/04/27 19:45:49 naddy Exp $
  void PageCB(Widget w, XtPointer client, XtPointer call)
  {
  	XmPrintShellCallbackStruct *cbp = (XmPrintShellCallbackStruct *)call;
-@@ -1660,6 +1661,7 @@ void PageCB(Widget w, XtPointer client, XtPointer call
+@@ -1660,6 +1697,7 @@ void PageCB(Widget w, XtPointer client, XtPointer call
  
  	cbp->last_page = True;
  }

@@ -1,0 +1,23 @@
+$OpenBSD: patch-pixnamePXi_h,v 1.1 2021/02/20 20:56:17 naddy Exp $
+
+Index: pixnamePXi.h
+--- pixnamePXi.h.orig
++++ pixnamePXi.h
+@@ -33,7 +33,7 @@
+ #ifndef PIXNAME_H
+ #define PIXNAME_H
+ 
+-enum { 
++enum Pixmaps { 
+        PSTOP, PABOUT, PRETURN, PCALC, PGRAPH, PPORTFOLIO, PEDIT,
+        PSAVE, PNEW, POPEN, PPREV, PNEXT, 
+        PDAY, PWEEK, PMONTH, PQTR, PYEAR, PYTD, PFIRST, PPICK,
+@@ -47,7 +47,7 @@ enum { 
+        , PPRINT
+ #endif
+ 
+-} Pixmaps;
++};
+ 
+ #define LASTINSENS PLAST
+ #ifdef HAVE_LIBDT

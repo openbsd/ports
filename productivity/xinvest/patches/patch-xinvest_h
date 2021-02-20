@@ -1,7 +1,8 @@
-$OpenBSD: patch-xinvest_h,v 1.1 2010/04/27 19:45:49 naddy Exp $
---- xinvest.h.orig	Tue Apr 27 21:35:22 2010
-+++ xinvest.h	Tue Apr 27 21:35:48 2010
-@@ -34,7 +34,9 @@
+$OpenBSD: patch-xinvest_h,v 1.2 2021/02/20 20:56:17 naddy Exp $
+Index: xinvest.h
+--- xinvest.h.orig
++++ xinvest.h
+@@ -34,46 +34,48 @@
  #define	__XINVEST_H_
  
  #include <X11/Intrinsic.h>
@@ -11,3 +12,85 @@ $OpenBSD: patch-xinvest_h,v 1.1 2010/04/27 19:45:49 naddy Exp $
  #include "color.h"
  
  /* Globals */
+ extern char version[];
+ 
+-Widget Filemenu; 
+-Widget Editmenu; 
+-Widget Optionmenu; 
+-Widget Accountmenu; 
+-Widget Transtext; 
+-Widget Translabel;
+-Widget Filecwdlabel;
+-Widget Listfile;
+-Widget Timesform;
+-Widget Timelform;
+-Widget Valrow;
+-Widget Graphhbar; 
+-Widget Graphhline; 
+-Widget GraphconstToggle; 
+-Widget Graphscale; 
+-Widget Graphcform;  
+-Widget Portpbut;
+-Widget Portmbut;
+-Widget Portcbut;
+-Widget Portabut;
+-Widget Portpercentlist;
+-Widget Portoptmenu;
+-Widget Portvaluelabel; 
+-Widget Calclabel;
+-Widget Calclabels[5];
+-Widget Calctext[3]; 
+-Widget Savebut;
+-Widget Nextbut; 
+-Widget Prevbut; 
+-Widget Gainbut; 
+-Widget Graphbut;
+-Widget Portbut;
+-Widget Editbut;
+-Widget Toolmenu, Infoframe, Graphform, Reportform, Portform, Calcform;
++extern Widget Filemenu; 
++extern Widget Editmenu; 
++extern Widget Optionmenu; 
++extern Widget Accountmenu; 
++extern Widget Transtext; 
++extern Widget Translabel;
++extern Widget Filecwdlabel;
++extern Widget Listfile;
++extern Widget Timesform;
++extern Widget Timelform;
++extern Widget Valrow;
++extern Widget Graphhbar; 
++extern Widget Graphhline; 
++extern Widget GraphconstToggle; 
++extern Widget Graphscale; 
++extern Widget Graphcform;  
++extern Widget Portpbut;
++extern Widget Portmbut;
++extern Widget Portcbut;
++extern Widget Portabut;
++extern Widget Portpercentlist;
++extern Widget Portoptmenu;
++extern Widget Portvaluelabel; 
++extern Widget Calclabel;
++extern Widget Calclabels[5];
++extern Widget Calctext[3]; 
++extern Widget Savebut;
++extern Widget Nextbut; 
++extern Widget Prevbut; 
++extern Widget Gainbut; 
++extern Widget Graphbut;
++extern Widget Portbut;
++extern Widget Editbut;
++extern Widget Toolmenu, Infoframe, Graphform, Reportform, Portform, Calcform;
+ 
+ /* 
+ ** Forward Declarations 
+@@ -97,7 +99,7 @@ struct report_attrib {
+ 	Pixel		fg, bg, shad, hilite, tshad;
+ 	int		shadThick;
+ 	int		avgWidth;
+-} report_attrib;
++};
+ 
+ /* Application resources */
+ typedef struct {

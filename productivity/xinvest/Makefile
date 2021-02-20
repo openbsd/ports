@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2020/01/26 11:14:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/20 20:56:17 naddy Exp $
 
 COMMENT= 		personal finance tracking and performance tool
 
 DISTNAME=		xinvest-2.6.9
-REVISION=		8
+REVISION=		9
 CATEGORIES=		productivity x11
 
 # BSD
