@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/20 18:54:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/20 20:28:05 sthen Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
@@ -51,10 +51,8 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--bashcompletiondir=${PREFIX}/share/notmuch/bash_completion.d
 CONFIGURE_ENV =		PYTHON=${MODPY_BIN}
 MAKE_FLAGS =		V=1
-
-LIBnotmuch_MAJOR =	${LIBnotmuch_VERSION:R}
-LIBnotmuch_MINOR =	${LIBnotmuch_VERSION:E}
-SUBST_VARS =		LIBnotmuch_MAJOR LIBnotmuch_MINOR
+MAKE_ENV =		LIBnotmuch_MAJOR=${LIBnotmuch_VERSION:R} \
+			LIBnotmuch_MINOR=${LIBnotmuch_VERSION:E}
 
 # the --gzip option of notmuch dump is disabled so skip the relevant tests
 TEST_FLAGS =	V=1 \
@@ -66,9 +64,6 @@ TEST_TARGET =	test
 post-extract:
 	cd ${WRKSRC}/test; [ -r test-lib-OPENBSD.sh ] || \
 	    cp test-lib-FREEBSD.sh test-lib-OPENBSD.sh
-
-pre-configure:
-	cd ${WRKSRC}; ${SUBST_CMD} lib/Makefile.local
 
 post-install:
 	rm ${PREFIX}/man/man1/notmuch-setup.1.gz
