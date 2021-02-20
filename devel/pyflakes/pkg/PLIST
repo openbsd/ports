@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/02/20 14:18:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/02/20 14:24:18 sthen Exp $
 @pkgpath devel/pyflakes
 @conflict pyflakes-<2.1.1p2
+@conflict pyflakes3-*
 bin/pyflakes
 lib/python${MODPY_VERSION}/site-packages/pyflakes/
 lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
