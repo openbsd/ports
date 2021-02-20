@@ -1,9 +1,9 @@
-$OpenBSD: patch-pwqcheck_1,v 1.3 2019/12/11 15:02:48 sthen Exp $
+$OpenBSD: patch-pwqcheck_1,v 1.4 2021/02/20 00:05:11 sthen Exp $
 
 Index: pwqcheck.1
 --- pwqcheck.1.orig
 +++ pwqcheck.1
-@@ -160,7 +160,7 @@ Read just 1 line (new passphrase).
+@@ -201,7 +201,7 @@ Read just 1 line (new passphrase).
  This is needed to use
  .Nm
  as the passwordcheck program on OpenBSD - e.g., with

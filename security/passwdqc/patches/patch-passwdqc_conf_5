@@ -1,9 +1,9 @@
-$OpenBSD: patch-passwdqc_conf_5,v 1.3 2019/12/25 20:44:42 sthen Exp $
+$OpenBSD: patch-passwdqc_conf_5,v 1.4 2021/02/20 00:05:11 sthen Exp $
 
 Index: passwdqc.conf.5
 --- passwdqc.conf.5.orig
 +++ passwdqc.conf.5
-@@ -255,8 +255,7 @@ logging.
+@@ -285,8 +285,7 @@ logging.
  .Cm config=/etc/passwdqc.conf
  option).
  .Sh SEE ALSO
