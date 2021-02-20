@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.30 2020/12/02 06:44:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/20 06:34:33 rsadowski Exp $
 
 COMMENT=	extensible open standard audio/video container library
 
-DISTNAME=	libmatroska-1.6.2
+DISTNAME=	libmatroska-1.6.3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/
+MASTER_SITES=	https://dl.matroska.org/downloads/libmatroska/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	matroska	5.0
+SHARED_LIBS=	matroska	5.1
 
-HOMEPAGE=	http://www.matroska.org/
+HOMEPAGE=	https://www.matroska.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 			-DCMAKE_SHARED_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS +=	textproc/libebml>=1.4.0
+LIB_DEPENDS +=	textproc/libebml>=1.4.2
 
 NO_TEST =	Yes
 
