@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:12:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/20 14:18:24 sthen Exp $
 
 COMMENT =		modular python code checker wrapping pep8 and pyflakes
 
-MODPY_EGG_VERSION =	3.7.9
+MODPY_EGG_VERSION =	3.8.4
 DISTNAME =		flake8-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -24,7 +23,7 @@ MODPY_PYTEST_ARGS =	tests
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-codestyle${MODPY_FLAVOR}>=2.5.0 \
-			devel/py-entrypoints${MODPY_FLAVOR}>=0.3 \
+			devel/py-importlib-metadata${MODPY_FLAVOR} \
 			devel/py-mccabe${MODPY_FLAVOR} \
 			devel/pyflakes${MODPY_FLAVOR}>=2.1.0
 
