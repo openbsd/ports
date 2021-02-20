@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/04 16:05:51 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/20 15:02:08 abieber Exp $
 
 COMMENT =		count lines of codes in many languages
 
 V =			2.9
+REVISION =		0
 DISTNAME =		loccount-${V}
 CATEGORIES =		textproc
 
@@ -31,7 +32,7 @@ CONFIGURE_STYLE =	XXX: do not execute MODPY_BUILD_TARGET in python.port.mk:250
 BUILD_DEPENDS =		lang/go \
 			textproc/asciidoc
 
-MAKE_ENV =		GOCACHE=${WRKDIR}/go-cache
+MAKE_ENV =		GOCACHE=${WRKDIR}/go-cache GO111MODULE=off
 ALL_TARGET =		loccount loccount.1
 TEST_TARGET =		check
 
