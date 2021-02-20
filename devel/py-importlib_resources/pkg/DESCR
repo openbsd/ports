@@ -1,0 +1,4 @@
+importlib_resources is a backport of Python standard library
+importlib.resources module for older Pythons. Users of Python 3.9
+and beyond should use the standard library module, since for these
+versions, importlib_resources just delegates to that module.
