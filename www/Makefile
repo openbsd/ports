@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1002 2021/02/20 16:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.1003 2021/02/20 17:09:02 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -621,7 +621,6 @@
      SUBDIR += tootstream
      SUBDIR += tor-browser
      SUBDIR += trac
-     SUBDIR += tracnav
      SUBDIR += ttyd
      SUBDIR += tuir
      SUBDIR += twill
