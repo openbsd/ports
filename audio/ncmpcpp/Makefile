@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.72 2019/07/12 20:43:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2021/02/20 14:58:35 bket Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()'
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
 
 COMMENT =		ncurses mpd client inspired by ncmpc
 
-DISTNAME =		ncmpcpp-0.8.2
-REVISION =		1
+DISTNAME =		ncmpcpp-0.9.2
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -17,17 +16,16 @@ HOMEPAGE =		https://rybczak.net/ncmpcpp/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
-WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt c crypto curl ereadline iconv m mpdclient
-WANTLIB += curses nghttp2 pthread ssl ${LIBCXX} tag z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} boost_chrono-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
+WANTLIB += curl curses ereadline icudata icui18n icuuc m mpdclient
+WANTLIB += nghttp2 ssl tag z
 
 MASTER_SITES =		${HOMEPAGE}stable/
 
 LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 			audio/taglib \
-			converters/libiconv \
 			devel/boost \
 			devel/readline \
 			net/curl

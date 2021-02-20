@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_ncmpcpp_1,v 1.9 2018/02/11 10:37:51 dcoppa Exp $
+$OpenBSD: patch-doc_ncmpcpp_1,v 1.10 2021/02/20 14:58:35 bket Exp $
 Index: doc/ncmpcpp.1
 --- doc/ncmpcpp.1.orig
 +++ doc/ncmpcpp.1
@@ -8,7 +8,7 @@ Index: doc/ncmpcpp.1
  .SH "NAME"
  ncmpcpp \- An ncurses Music Player Daemon (MPD) client.
  .SH "SYNOPSIS"
-@@ -298,7 +298,7 @@ Slave screen that has to be displayed at start (nothin
+@@ -325,7 +325,7 @@ Slave screen that has to be displayed at start (nothin
  .TP
  .B startup_slave_screen_focus = yes/no
  If set to yes, slave screen will be the active one after startup. Otherwise master screen will be.
@@ -17,11 +17,11 @@ Index: doc/ncmpcpp.1
  .B locked_screen_width_part = 20-80
  If you want to lock a screen, ncmpcpp asks for % of locked screen's width to be reserved before that and provides a default value, which is the one you can set here.
  .TP
-@@ -415,7 +415,6 @@ Border color of pop-up windows. If set to 'none', no b
+@@ -445,7 +445,6 @@ Border color of pop-up windows. If set to 'none', no b
  .TP
  .B active_window_border = COLOR
  Color of active window's border.
 -.TP
  .SH "BINDINGS"
- When ncmpcpp starts, it tries to read user's bindings from ~/.ncmpcpp/bindings and $XDG_CONFIG_HOME/ncmpcpp/bindings files. If no bindings file is found, ncmpcpp uses the defaults. An example bindings file with the default values can be found usually in /usr/share/doc/ncmpcpp (exact location may depend on used distribution or configure prefix).
- 
+ When ncmpcpp starts, it tries to read bindings from
+ $XDG_CONFIG_HOME/ncmpcpp/bindings and ~/.ncmpcpp/bindings files. If no bindings
