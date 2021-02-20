@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2020/03/03 21:11:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/20 18:38:00 naddy Exp $
 
 COMMENT=	streaming source client that uses external en-/decoders
 
-DISTNAME=	ezstream-1.0.1
+DISTNAME=	ezstream-1.0.2
 CATEGORIES=	net multimedia
 
 HOMEPAGE=	https://icecast.org/ezstream/
@@ -15,7 +15,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB+=	${COMPILER_LIBCXX} c crypto iconv lzma m ogg shout \
 		speex ssl tag tag_c theora vorbis xml2 z
 
-MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/
+MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/ \
+		https://ezstream.mrsserver.net/releases/
 
 BUILD_DEPENDS=	devel/check
 LIB_DEPENDS=	converters/libiconv \
