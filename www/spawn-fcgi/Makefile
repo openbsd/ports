@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/20 18:44:19 sthen Exp $
 
 COMMENT=	spawn FastCGI processes
 
-DISTNAME=	spawn-fcgi-1.6.3
-REVISION=	0
+DISTNAME=	spawn-fcgi-1.6.4
 CATEGORIES=	www
-MASTER_SITES=	http://www.lighttpd.net/download/
+MASTER_SITES=	https://download.lighttpd.net/spawn-fcgi/releases-1.6.x/
+EXTRACT_SUFX=	.tar.xz
 
-HOMEPAGE=	http://redmine.lighttpd.net/projects/spawn-fcgi/news
+HOMEPAGE=	https://redmine.lighttpd.net/projects/spawn-fcgi/news
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c
 
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.64
+WANTLIB=	c
+
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
