@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/20 19:35:41 kn Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/20 19:42:07 kn Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
 V=			0.17.3g
+REVISION =		0
 DISTNAME=		gamgi-all-${V}
 PKGNAME=		${DISTNAME:S/-all//}
 CATEGORIES=		education x11
@@ -17,6 +18,9 @@ MASTER_SITES=		http://atom.ist.utl.pt/src/ \
 			ftp://atom.ist.utl.pt/src/
 
 USE_GMAKE=		Yes
+
+# avoid patching numerous duplicate symbols in numerous files
+CFLAGS +=		-fcommon
 
 WANTLIB += GL GLU X11 Xext Xi Xmu atk-1.0 c cairo expat freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0
