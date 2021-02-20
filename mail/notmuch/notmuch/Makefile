@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/16 15:53:10 bket Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/20 18:54:23 sthen Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
@@ -69,7 +69,6 @@ post-extract:
 
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} lib/Makefile.local
-	ln -s ${PREFIX}/bin/sphinx-build${MODPY_BIN_SUFFIX} ${WRKDIR}/bin/sphinx-build
 
 post-install:
 	rm ${PREFIX}/man/man1/notmuch-setup.1.gz
