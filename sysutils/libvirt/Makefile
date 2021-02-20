@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2021/02/14 16:42:13 ajacoutot Exp $
-
-# XXX Wl,-soname,libvirt-admin.so.0
+# $OpenBSD: Makefile,v 1.75 2021/02/20 16:44:14 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-7.0.0
+REVISION=		0
 
 CATEGORIES=		sysutils devel emulators
 
@@ -86,7 +85,13 @@ CONFIGURE_ARGS +=	-Dblkid=disabled
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # OpenBSD can't act as a virtualization host, so no need for libvirtd.
-# If support is added, subtitute /var/lib/{xen,virt,libvirt,...} with /var/db.
+# If support is added, subtitute /var/lib/{xen,virt,libvirt,...} with /var/db
+# and add the following lines to pkg/PLIST:
+# @sample /var/db/libvirt/
+# @sample /var/db/libvirt/boot/
+# @sample /var/db/libvirt/filesystems/
+# @sample /var/db/libvirt/images/
+#
 # nwfilters are only used by libvirtd, which is (currently) disabled on OpenBSD.
 CONFIGURE_ARGS +=	-Ddriver_libvirtd=disabled
 
