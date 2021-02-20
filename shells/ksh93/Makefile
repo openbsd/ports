@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/23 14:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/20 20:15:29 cwen Exp $
 
-# error: non-const lvalue reference to type '__builtin_va_list' cannot bind to a temporary of type 'va_list' (aka 'char *')
-BROKEN-powerpc64 =	libast fails to build on hashalloc.c/tokscan.c 
+# error: non-const lvalue reference to type '__builtin_va_list' cannot bind to
+# a temporary of type 'va_list' (aka 'char *')
+BROKEN-powerpc64 =	libast fails to build on hashalloc.c/tokscan.c
+BROKEN-powerpc =	libast fails to build on hashalloc.c/tokscan.c
 
 COMMENT =		AT&T Korn Shell
 
