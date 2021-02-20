@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.7 2021/01/16 23:38:13 abieber Exp $
+# $OpenBSD: Go.pm,v 1.8 2021/02/20 14:56:34 abieber Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -144,7 +144,7 @@ sub _go_mod_info
 	close $fh;
 
 	# Outputs: "dep version"
-	my @raw_deps = $self->_run($dir, qw(go list -m all));
+	my @raw_deps = $self->_run($dir, qw(go list -mod=mod -m all));
 	my @deps;
 	my $all_deps = {};
 	foreach my $dep (@raw_deps) {
