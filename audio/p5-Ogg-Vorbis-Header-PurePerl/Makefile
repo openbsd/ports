@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/20 17:00:48 ajacoutot Exp $
 
 COMMENT=	interface to Ogg Vorbis information, fully written in Perl
 
-DISTNAME=	Ogg-Vorbis-Header-PurePerl-1.0
-REVISION=	1
+DISTNAME=	Ogg-Vorbis-Header-PurePerl-1.05
 CATEGORIES=	audio
 
 MODULES=	cpan

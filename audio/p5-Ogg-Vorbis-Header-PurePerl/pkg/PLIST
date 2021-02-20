@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/04 20:09:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/20 17:00:48 ajacoutot Exp $
 ${P5SITE}/Ogg/
 ${P5SITE}/Ogg/Vorbis/
 ${P5SITE}/Ogg/Vorbis/Header/
 ${P5SITE}/Ogg/Vorbis/Header/PurePerl.pm
-${P5SITE}/Ogg/Vorbis/Header/ogginfo.pl
 @man man/man3p/Ogg::Vorbis::Header::PurePerl.3p
