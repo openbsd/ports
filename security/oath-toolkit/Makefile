@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2020/11/21 17:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/20 01:06:48 sthen Exp $
 
 COMMENT-main=	toolkit for OATH/HOTP and TOTP
 COMMENT-pskc=	toolkit for RFC 6030 Portable Symmetric Key Container
 
-V=		2.6.4
+V=		2.6.6
 DISTNAME=	oath-toolkit-$V
 PKGNAME-main=	oath-toolkit-$V
 PKGNAME-pskc=	oath-toolkit-pskc-$V
