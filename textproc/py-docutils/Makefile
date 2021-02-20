@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/20 13:20:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/20 13:26:33 sthen Exp $
 
 COMMENT =	process plaintext documentation into other formats
 
@@ -22,5 +22,8 @@ RUN_DEPENDS =	textproc/py-pygments${MODPY_FLAVOR}
 FLAVORS =	python3
 FLAVOR =	python3
 MODPY_PYTEST =	Yes
+
+post-install:
+	for i in ${PREFIX}/bin/*; do mv $${i} $${i%.py} ; done
 
 .include <bsd.port.mk>
