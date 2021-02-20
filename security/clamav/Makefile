@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2021/02/09 21:39:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2021/02/20 18:07:22 sthen Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.103.1
@@ -50,8 +50,6 @@ CONFIGURE_ARGS+=	--disable-cr \
 			--with-user=_clamav
 
 TEST_TARGET=	check
-MODULES=	lang/python
-MODPY_RUNDEP=	no
 
 CPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include
 LDFLAGS+=	-pthread -L/usr/lib \
@@ -71,8 +69,5 @@ post-install:
 	    cp -rp * ${PREFIX}/share/doc/clamav/
 	cd ${WRKSRC}/examples; \
 	    ${INSTALL_DATA} ex1.c ${PREFIX}/share/examples/clamav
-
-pre-test:
-	-ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
