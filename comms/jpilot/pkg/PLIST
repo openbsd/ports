@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/06/27 21:03:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/02/20 16:54:24 ajacoutot Exp $
 @bin bin/jpilot
 @bin bin/jpilot-dump
 @bin bin/jpilot-merge
 @bin bin/jpilot-sync
 lib/jpilot/
 lib/jpilot/plugins/
-lib/jpilot/plugins/libexpense.so
-lib/jpilot/plugins/libkeyring.so
-lib/jpilot/plugins/libsynctime.so
+@so lib/jpilot/plugins/libexpense.so
+@so lib/jpilot/plugins/libkeyring.so
+@so lib/jpilot/plugins/libsynctime.so
 @comment @man man/man1/jpilot-dial.1
 @man man/man1/jpilot-dump.1
 @man man/man1/jpilot-merge.1
