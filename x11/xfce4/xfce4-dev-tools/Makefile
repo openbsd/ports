@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2020/12/29 14:49:37 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/20 15:10:15 landry Exp $
 
 COMMENT =	Xfce4 developer tools and macros
 
 XFCE_PROJECT =	xfce4-dev-tools
+REVISION =	0
 HOMEPAGE =	http://users.xfce.org/~benny/projects/xfce4-dev-tools/
 
 # GPLv2
@@ -16,11 +17,11 @@ RUN_DEPENDS =	devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		shells/bash \
-		devel/git \
-		devel/subversion
+		devel/git
 
-AUTOMAKE_VERSION =	1.11
-AUTOCONF_VERSION =	2.61
+
+AUTOMAKE_VERSION =	1.16
+AUTOCONF_VERSION =	2.69
 LIB_DEPENDS =	devel/glib2
 WANTLIB = c glib-2.0 pcre pthread iconv intl
 
