@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1195 2021/02/20 17:18:28 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1196 2021/02/20 18:51:54 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2134,6 +2134,7 @@ my $obsolete_reason = {
 	'xboing' => 0,
 	'beaver' => 3,
 	'tracnav' => 3,
+	'flasm' => 39,
 };
 
 # reasons for obsolete packages
