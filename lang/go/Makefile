@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2021/02/20 14:56:34 abieber Exp $
+# $OpenBSD: Makefile,v 1.93 2021/02/20 15:13:56 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -55,7 +55,7 @@ GOARCH =		arm64
 GOARCH =		386
 .endif
 
-# We cannot assume that the maching running the built code will have SSE,
+# We cannot assume that the machine running the built code will have SSE,
 # even though the machine building the package has SSE. As such, we need
 # to explicitly disable SSE on i386 builds.
 MAKE_ENV +=		GO386=softfloat
