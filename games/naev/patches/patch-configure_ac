@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2021/02/10 10:19:02 kirby Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2021/02/20 07:56:48 kirby Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -350,12 +350,6 @@ esac
+@@ -354,12 +354,6 @@ esac
  GLOBAL_CFLAGS="-include \"\$(top_builddir)/src/config.h\" -I\"\$(top_srcdir)/src\" -DPKGDATADIR=\\\"\$(pkgdatadir)\\\" -W -Wall -Wextra -Wunused -Wshadow -Wpointer-arith -Wmissing-prototypes -Winline -Wcast-align -Wmissing-declarations -Wredundant-decls -Wcast-align -Wformat -Wformat-security"
  GLOBAL_LIBS=
  
@@ -16,7 +16,7 @@ Index: configure.ac
  AS_IF([test "x$enable_debug" != "xno"], [
    GLOBAL_CFLAGS="$GLOBAL_CFLAGS -DLUA_USE_APICHECK"
  ])
-@@ -382,7 +376,7 @@ NAEV_LIBS="$GLOBAL_LIBS $WIDGET_LIBS"
+@@ -386,7 +380,7 @@ NAEV_LIBS="$GLOBAL_LIBS $WIDGET_LIBS"
  case "$host" in
    *-mingw*)
      ;;
@@ -25,3 +25,11 @@ Index: configure.ac
      NAEV_LIBS="$NAEV_LIBS -ldl"
      ;;
  esac
+@@ -611,7 +605,6 @@ AS_IF([test "x$have_docs" = "xyes"], [
+   AC_CONFIG_FILES([docs/Makefile])
+ ])
+ AS_IF([test "x$used_lua" = "xinternal"], [
+-  AC_CONFIG_FILES([lib/lua/Makefile])
+ ])
+ AS_IF([test "x$used_csparse" = "xinternal"], [
+   AC_CONFIG_FILES([lib/csparse/Makefile])

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/10 10:19:02 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/20 07:56:48 kirby Exp $
 
 # Requires OpenGL>=3.2
 ONLY_FOR_ARCHS = 	aarch64 amd64 i386
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS = 	aarch64 amd64 i386
 COMMENT-main =		2D space trading and combat game
 COMMENT-data =		naev game data
 
-V = 			0.8.1
+V = 			0.8.2
 DISTNAME =		naev-${V}-source
 PKGNAME-main = 		naev-${V}
 PKGNAME-data = 		naev-data-${V}
@@ -48,8 +48,8 @@ CONFIGURE_ARGS +=	--disable-shave \
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
-AUTOCONF_VERSION = 	2.69
-AUTOMAKE_VERSION = 	1.11
+AUTOCONF_VERSION =     2.69
+AUTOMAKE_VERSION =     1.15
 
 # XXX don't pick up itstool(1):
 # libxml2.xpathError: xmlXPathNewContext() failed
@@ -60,9 +60,6 @@ MULTI_PACKAGES = 	-main -data
 PKG_ARCH-data = 	*
 
 WRKDIST = 		${WRKDIR}/${DISTNAME:S/-source//}
-
-do-gen:
-	cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/dat/VERSION ${PREFIX}/share/naev/dat/

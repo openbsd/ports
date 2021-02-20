@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2021/01/17 11:11:14 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2021/02/20 07:56:48 kirby Exp $
 @pkgpath games/naev/base
 @bin bin/naev
 @man man/man6/naev.6
 share/applications/org.naev.naev.desktop
 share/doc/naev/
+share/doc/naev/CHANGELOG
 share/doc/naev/LICENSE
 share/doc/naev/README
+share/doc/naev/Readme.md
 share/doc/naev/TODO
+share/doc/naev/code_of_conduct.md
 share/icons/hicolor/256x256/apps/naev.png
 share/locale/de/LC_MESSAGES/naev_src.mo
 share/locale/ja/LC_MESSAGES/naev_src.mo
