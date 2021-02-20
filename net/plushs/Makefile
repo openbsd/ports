@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/20 20:18:28 tb Exp $
 
 COMMENT=		simple hostname scanner
 
 DISTNAME=		plushs-1.2
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=plushs/}
 

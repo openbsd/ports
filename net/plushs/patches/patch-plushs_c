@@ -1,7 +1,19 @@
-$OpenBSD: patch-plushs_c,v 1.1 2002/07/07 07:07:02 pvalchev Exp $
---- plushs.c.orig	Tue Jul  2 21:54:12 2002
-+++ plushs.c	Sun Jul  7 00:49:59 2002
-@@ -372,7 +372,7 @@ main(argc, argv)
+$OpenBSD: patch-plushs_c,v 1.2 2021/02/20 20:18:28 tb Exp $
+Index: plushs.c
+--- plushs.c.orig
++++ plushs.c
+@@ -57,7 +57,9 @@
+ 
+ #include "plushs.h"
+ 
+-extern FILE *pfildes;
++FILE *pfildes;
++struct progvars pv;
++struct simbols vars;
+ 
+ /*
+  * Misc variables 
+@@ -372,7 +374,7 @@ main(argc, argv)
  		
  	progname = argv[0];
  
