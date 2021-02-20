@@ -1,0 +1,17 @@
+$OpenBSD: patch-mdnsd_mdnsd_c,v 1.1 2021/02/20 19:54:26 bket Exp $
+
+Fix -fno-common build error. Taken from
+https://svnweb.freebsd.org/ports?view=revision&revision=549579
+
+Index: mdnsd/mdnsd.c
+--- mdnsd/mdnsd.c.orig
++++ mdnsd/mdnsd.c
+@@ -45,6 +45,8 @@ int		mdns_sock(void);
+ void		fetchmyname(char [MAXHOSTNAMELEN]);
+ void		fetchhinfo(struct hinfo *);
+ 
++ctl_conns_t	ctl_conns;
++
+ struct mdnsd_conf	*conf = NULL;
+ extern char		*malloc_options;
+ 

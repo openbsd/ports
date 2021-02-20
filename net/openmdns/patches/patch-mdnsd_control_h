@@ -1,0 +1,23 @@
+$OpenBSD: patch-mdnsd_control_h,v 1.1 2021/02/20 19:54:26 bket Exp $
+
+Fix -fno-common build error. Taken from
+https://svnweb.freebsd.org/ports?view=revision&revision=549579
+
+Index: mdnsd/control.h
+--- mdnsd/control.h.orig
++++ mdnsd/control.h
+@@ -26,10 +26,12 @@
+ 
+ #include "mdnsd.h"
+ 
+-struct {
++struct control_state {
+ 	struct event	ev;
+ 	int		fd;
+-} control_state;
++};
++
++extern struct control_state control_state;
+ 
+ enum blockmodes {
+ 	BM_NORMAL,

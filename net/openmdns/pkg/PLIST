@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/20 19:54:26 bket Exp $
 @newgroup _mdnsd:664
 @newuser _mdnsd:664:_mdnsd:daemon:MDNS Daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/mdnsd
 @bin bin/mdnsctl
 @bin bin/mdnsd
 @man man/man8/mdnsctl.8
 @man man/man8/mdnsd.8
 share/doc/pkg-readmes/${PKGSTEM}
-@rcscript ${RCDIR}/mdnsd

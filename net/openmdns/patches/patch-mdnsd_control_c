@@ -1,0 +1,17 @@
+$OpenBSD: patch-mdnsd_control_c,v 1.1 2021/02/20 19:54:26 bket Exp $
+
+Fix -fno-common build error. Taken from
+https://svnweb.freebsd.org/ports?view=revision&revision=549579
+
+Index: mdnsd/control.c
+--- mdnsd/control.c.orig
++++ mdnsd/control.c
+@@ -53,6 +53,8 @@ void		 control_group_add_service(struct ctl_conn *, st
+ 
+ extern struct mdnsd_conf *conf;
+ 
++struct control_state control_state;
++
+ void
+ control_lookup(struct ctl_conn *c, struct imsg *imsg)
+ {
