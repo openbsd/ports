@@ -1,0 +1,16 @@
+$OpenBSD: patch-panel_plugin_c,v 1.1 2021/02/20 18:23:13 landry Exp $
+
+fix for -fno-common
+https://svnweb.freebsd.org/ports?view=revision&revision=546840
+
+Index: panel/plugin.c
+--- panel/plugin.c.orig
++++ panel/plugin.c
+@@ -17,6 +17,7 @@
+ //#define DEBUGPRN
+ #include "dbg.h"
+ extern panel *the_panel;
++struct _plugin_instance *stam;
+ 
+ 
+ /**************************************************************/

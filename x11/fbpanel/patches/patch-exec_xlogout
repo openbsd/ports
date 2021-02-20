@@ -1,11 +1,12 @@
-$OpenBSD: patch-exec_xlogout,v 1.4 2017/04/17 08:49:23 sthen Exp $
+$OpenBSD: patch-exec_xlogout,v 1.5 2021/02/20 18:23:13 landry Exp $
 
 fix xlogout script on OpenBSD
 use some sane defaults for X session names: that's a best effort 
 task :-)
 
---- exec/xlogout.orig	Tue Apr 13 12:58:08 2010
-+++ exec/xlogout	Tue Apr 13 13:00:31 2010
+Index: exec/xlogout
+--- exec/xlogout.orig
++++ exec/xlogout
 @@ -1,49 +1,5 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -56,6 +57,6 @@ task :-)
 -[ -z "$SPID" ] && exit 1
 -echo "Session start up script"
 -ps -o uid,pid,ppid,sess,cmd --pid $SPID
--kill -SIGTERM -$SPID
+-kill -SIGTERM -$SPID $SPID
 -
 +for pid in ${XSESS} ; do kill ${pid} ; done

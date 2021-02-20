@@ -1,0 +1,14 @@
+$OpenBSD: patch-_config_rules_mk,v 1.1 2021/02/20 18:23:12 landry Exp $
+
+Index: .config/rules.mk
+--- .config/rules.mk.orig
++++ .config/rules.mk
+@@ -3,7 +3,7 @@
+ #  environment checks                         #
+ ###############################################
+ 
+-SHELL=/bin/bash
++SHELL=${LOCALBASE}/bin/bash
+ 
+ .DEFAULT_GOAL := all
+ 

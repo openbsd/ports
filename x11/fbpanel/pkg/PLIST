@@ -1,21 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/11 09:51:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/20 18:23:13 landry Exp $
 @bin bin/fbpanel
 lib/fbpanel/
-@so lib/fbpanel/dclock.so
-@so lib/fbpanel/deskno.so
-@so lib/fbpanel/deskno2.so
-@so lib/fbpanel/genmon.so
-@so lib/fbpanel/icons.so
-@so lib/fbpanel/image.so
-@so lib/fbpanel/launchbar.so
-@so lib/fbpanel/menu.so
-@so lib/fbpanel/pager.so
-@so lib/fbpanel/separator.so
-@so lib/fbpanel/space.so
-@so lib/fbpanel/taskbar.so
-@so lib/fbpanel/tclock.so
-@so lib/fbpanel/tray.so
-@so lib/fbpanel/wincmd.so
+@so lib/fbpanel/libdclock.so
+@so lib/fbpanel/libdeskno.so
+@so lib/fbpanel/libdeskno2.so
+@so lib/fbpanel/libgenmon.so
+@so lib/fbpanel/libicons.so
+@so lib/fbpanel/libimage.so
+@so lib/fbpanel/liblaunchbar.so
+@so lib/fbpanel/libmem2.so
+@so lib/fbpanel/libmenu.so
+@so lib/fbpanel/libpager.so
+@so lib/fbpanel/libseparator.so
+@so lib/fbpanel/libspace.so
+lib/fbpanel/libsystray.so
+@so lib/fbpanel/libtaskbar.so
+@so lib/fbpanel/libtclock.so
+@so lib/fbpanel/libtray.so
+@so lib/fbpanel/libuser.so
+@so lib/fbpanel/libwincmd.so
 libexec/fbpanel/
 libexec/fbpanel/make_profile
 libexec/fbpanel/xlogout

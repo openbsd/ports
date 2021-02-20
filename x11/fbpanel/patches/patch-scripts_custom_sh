@@ -1,10 +1,11 @@
-$OpenBSD: patch-scripts_custom_sh,v 1.1 2015/10/20 13:38:35 dcoppa Exp $
+$OpenBSD: patch-scripts_custom_sh,v 1.2 2021/02/20 18:23:13 landry Exp $
 
 https://gitweb.gentoo.org/repo/gentoo.git/plain/x11-misc/fbpanel/files/fbpanel-6.1-underlinking.patch
 
---- scripts/custom.sh.orig	Tue Oct 20 13:43:52 2015
-+++ scripts/custom.sh	Tue Oct 20 13:45:07 2015
-@@ -18,10 +18,10 @@
+Index: scripts/custom.sh
+--- scripts/custom.sh.orig
++++ scripts/custom.sh
+@@ -17,10 +17,10 @@ add_var version "package version, e.g 6.2 or 1.4.5-alp
  add_feature dependency "disable dependency tracking" disabled
  
  add_var glib_cflags "glib cflags" '`RFS=$rfs scripts/rfs-pkg-config --cflags glib-2.0`'

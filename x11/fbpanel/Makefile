@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2020/11/11 09:51:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/20 18:23:12 landry Exp $
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
-DISTNAME=	fbpanel-6.1
-REVISION=	8
+GH_ACCOUNT=	aanatoly
+GH_PROJECT=	fbpanel
+GH_TAGNAME=	7.0
 CATEGORIES=	x11
-EXTRACT_SUFX=	.tbz2
 
-HOMEPAGE=	http://fbpanel.sourceforge.net/
+HOMEPAGE=	http://aanatoly.github.io/fbpanel/
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -18,24 +18,24 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fbpanel/}
-
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=simple
-
+MODULES=	lang/python
+MODPY_ADJ_FILES=configure .config/repl.py .config/tar.py
 BUILD_DEPENDS=	graphics/gdk-pixbuf-xlib \
 		shells/bash
 LIB_DEPENDS=	x11/gtk+2
-
+MAKE_FLAGS=	V=1
 
 DATADIR =	${PREFIX}/share/fbpanel
 EXECDIR =	${PREFIX}/libexec/fbpanel
 EXAMPLEDIR =	${PREFIX}/share/examples/fbpanel
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/scripts/rfs-pkg-config
+	${SUBST_CMD} ${WRKSRC}/.config/rules.mk ${WRKSRC}/scripts/rfs-pkg-config
+	${MODPYTHON_pre-configure}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/panel/fbpanel ${PREFIX}/bin/

@@ -1,10 +1,11 @@
-$OpenBSD: patch-plugins_pager_pager_c,v 1.2 2012/03/29 08:17:41 dcoppa Exp $
+$OpenBSD: patch-plugins_pager_pager_c,v 1.3 2021/02/20 18:23:13 landry Exp $
 
 add icon drawing support to the pager plugin
 (adapted from an older patch written for fbpanel-4.3 by daf@minuslab.net)
 
---- plugins/pager/pager.c.orig	Wed Apr 28 13:39:20 2010
-+++ plugins/pager/pager.c	Thu Mar 29 10:04:48 2012
+Index: plugins/pager/pager.c
+--- plugins/pager/pager.c.orig
++++ plugins/pager/pager.c
 @@ -27,10 +27,13 @@
  
  
@@ -423,7 +424,7 @@ add icon drawing support to the pager plugin
              g_hash_table_insert(p->htable, &t->win, t);
              DBG("add %lx\n", t->win);
              desk_set_dirty_by_win(p, t);
-@@ -786,6 +1149,9 @@ pager_constructor(plugin_instance *plug)
+@@ -787,6 +1150,9 @@ pager_constructor(plugin_instance *plug)
          g_signal_connect(G_OBJECT(pg->fbbg), "changed",
              G_CALLBACK(pager_bg_changed), pg);
      }
