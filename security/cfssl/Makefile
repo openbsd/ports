@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/07 16:57:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/20 15:32:12 sthen Exp $
 
 COMMENT =		CloudFlare PKI/TLS command-line toolkit and HTTP API server
 
 GH_ACCOUNT =		cloudflare
 GH_PROJECT =		cfssl
-VERSION =		1.4.1
+VERSION =		1.5.0
 GH_TAGNAME =		v${VERSION}
 
 CATEGORIES =		security
@@ -29,6 +29,6 @@ post-build:
 	mv ${MODGO_WORKSPACE}/bin/mkbundle ${MODGO_WORKSPACE}/bin/cfssl-mkbundle
 
 do-test:
-	cd ${WRKSRC}; ${MODGO_CMD} test github.com/cloudflare/cfssl/...
+	cd ${WRKSRC}; PATH=${WRKDIST}/go/bin:$$PATH ${MODGO_CMD} test github.com/cloudflare/cfssl/...
 
 .include <bsd.port.mk>
