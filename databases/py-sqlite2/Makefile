@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/19 23:13:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/20 20:13:41 sthen Exp $
 
 COMMENT =	SQLite3 adapter for Python
 
@@ -7,7 +7,7 @@ MODPY_EGG_VERSION =	2.8.3
 DISTNAME =	pysqlite-${MODPY_EGG_VERSION}
 PKGNAME =	py-sqlite2-${MODPY_EGG_VERSION}
 CATEGORIES =	databases devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/ghaering/pysqlite/
 
