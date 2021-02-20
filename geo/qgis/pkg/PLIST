@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.64 2021/02/20 07:17:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.65 2021/02/20 14:58:34 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -1553,6 +1553,7 @@ lib/qgis/plugins/
 @so lib/qgis/plugins/liboauth2authmethod.so
 @so lib/qgis/plugins/libofflineeditingplugin.so
 @so lib/qgis/plugins/libowsprovider.so
+@so lib/qgis/plugins/libpdalprovider.so
 @so lib/qgis/plugins/libpkcs12authmethod.so
 @so lib/qgis/plugins/libpkipathsauthmethod.so
 @so lib/qgis/plugins/libpostgresprovider.so
@@ -1571,6 +1572,7 @@ lib/qgis/server/
 @so lib/qgis/server/libwfs3.so
 @so lib/qgis/server/libwms.so
 @so lib/qgis/server/libwmts.so
+@bin lib/qgis/untwine
 @so lib/qt5/plugins/sqldrivers/libqsqlspatialite.so
 @man man/man1/qgis.1
 share/applications/org.qgis.qgis.desktop

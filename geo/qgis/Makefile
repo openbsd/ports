@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2021/02/20 07:17:18 landry Exp $
+# $OpenBSD: Makefile,v 1.143 2021/02/20 14:58:34 landry Exp $
 
 BROKEN-powerpc =	does not build: "operand out of range"
 BROKEN-sparc64 =	undefined reference to QOpenGLExtension_ARB_tessellation_shader::QOpenGLExtension_ARB_tessellation_shader() in libQt53DRender.so.2.0 when linking qgis_3drenderingtest
@@ -8,6 +8,7 @@ COMMENT =	desktop geographical information system
 DPB_PROPERTIES =	parallel
 
 DISTNAME =	qgis-3.18.0
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
@@ -73,6 +74,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		x11/qwt \
 		geo/gdal \
 		geo/mdal>=0.5 \
+		geo/pdal \
 		geo/geos \
 		geo/spatialite/libspatialite \
 		geo/spatialindex \
@@ -89,11 +91,13 @@ WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z GL
 WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
 WANTLIB += Qt53DRender Qt5Gamepad protobuf-lite
 WANTLIB += Qt5DBus Qt5Qml Qt5Quick Qt5QuickWidgets Qt5SerialPort
+WANTLIB += Qt5QmlModels pdal_base pdal_util zstd
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 		-DWITH_INTERNAL_MDAL=FALSE \
 		-DWITH_3D=TRUE \
+		-DWITH_PDAL=TRUE \
 		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE
 
 # does more than just debug pkgs
