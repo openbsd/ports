@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1198 2021/02/20 20:55:30 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1199 2021/02/20 21:21:24 gnezdo Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2138,6 +2138,8 @@ my $obsolete_reason = {
 	'flasm' => 39,
 	'mpd-add-similar' => 31,
 	'py-mpd' => 31,
+	'abs' => 3,
+	'arena' => 3,
 };
 
 # reasons for obsolete packages
