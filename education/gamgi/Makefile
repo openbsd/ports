@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/20 19:35:41 kn Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
-V=			0.15.5
+V=			0.17.3g
 DISTNAME=		gamgi-all-${V}
 PKGNAME=		${DISTNAME:S/-all//}
 CATEGORIES=		education x11
@@ -12,7 +12,9 @@ HOMEPAGE=		http://www.gamgi.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		ftp://ftp.gamgi.org/gamgi/src/
+MASTER_SITES=		http://atom.ist.utl.pt/src/ \
+			http://gamgi.ist.utl.pt/src/ \
+			ftp://atom.ist.utl.pt/src/
 
 USE_GMAKE=		Yes
 

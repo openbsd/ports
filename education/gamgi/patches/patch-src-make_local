@@ -1,8 +1,11 @@
-$OpenBSD: patch-src-make_local,v 1.7 2019/12/29 23:56:58 ajacoutot Exp $
+$OpenBSD: patch-src-make_local,v 1.8 2021/02/20 19:35:41 kn Exp $
+
+Set include and library paths.
+
 Index: src/make_local
 --- src/make_local.orig
 +++ src/make_local
-@@ -70,29 +70,29 @@ PATH_GTKGL_L =-L/usr/lib
+@@ -80,29 +80,29 @@ PATH_GTKGL_L =-L/usr/lib
  
  #================================= OpenBSD =====================================
  #
@@ -14,11 +17,23 @@ Index: src/make_local
 -# PATH_PANGO_H = -I/usr/local/include/pango-2.0
 -# PATH_ATK_H = -I/usr/local/include/atk-2.0
 -# PATH_GTK_H =  -I/usr/local/include/gtk-2.0 -I/usr/local/lib/gtk-2.0/include \
--#	 -I/usr/include/gdk-pixbuf-2.0/
+-#	-I/usr/include/gdk-pixbuf-2.0/
 -# PATH_MESA_H = -I/usr/X11R6/include/GL
 -# PATH_GTKGL_H = -I/usr/local/include/gtkglext-1.0 \
 -#	-I/usr/local/lib/gtkglext-1.0/include
--#
++PATH_EXPAT_H = -I${X11BASE}/include
++PATH_FREETYPE_H = -I${X11BASE}/include/freetype2
++PATH_X_H = -I${X11BASE}/include
++PATH_GLIB_H = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/include
++PATH_CAIRO_H = -I${LOCALBASE}/include/cairo
++PATH_PANGO_H = -I${LOCALBASE}/include/pango-1.0 -I${LOCALBASE}/include/harfbuzz
++PATH_ATK_H = -I${LOCALBASE}/include/atk-1.0
++PATH_GTK_H =  -I${LOCALBASE}/include/gtk-2.0 -I${LOCALBASE}/lib/gtk-2.0/include \
++	-I${LOCALBASE}/include/gdk-pixbuf-2.0
++PATH_MESA_H = -I${X11BASE}/include/GL
++PATH_GTKGL_H = -I${LOCALBASE}/include/gtkglext-1.0 \
++	-I${LOCALBASE}/lib/gtkglext-1.0/include
+ #
 -# PATH_EXPAT_L = -L/usr/X11R6/lib
 -# PATH_FREETYPE_L = -L/usr/X11R6/lib
 -# PATH_X_L = -L/usr/X11R6/lib
@@ -29,19 +44,6 @@ Index: src/make_local
 -# PATH_GTK_L = -L/usr/local/lib
 -# PATH_MESA_L = -L/usr/X11R6/lib
 -# PATH_GTKGL_L = -L/usr/local/lib
-+PATH_EXPAT_H = -I${X11BASE}/include
-+PATH_FREETYPE_H = -I${X11BASE}/include/freetype2
-+PATH_X_H = -I${X11BASE}/include
-+PATH_GLIB_H = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/include
-+PATH_CAIRO_H = -I${LOCALBASE}/include/cairo
-+PATH_PANGO_H = -I${LOCALBASE}/include/pango-1.0
-+PATH_ATK_H = -I${LOCALBASE}/include/atk-1.0
-+PATH_GTK_H =  -I${LOCALBASE}/include/gtk-2.0 -I${LOCALBASE}/lib/gtk-2.0/include \
-+       -I${LOCALBASE}/include/gdk-pixbuf-2.0/ -I${LOCALBASE}/include/harfbuzz
-+PATH_MESA_H = -I${X11BASE}/include/GL
-+PATH_GTKGL_H = -I${LOCALBASE}/include/gtkglext-1.0 \
-+      -I${LOCALBASE}/lib/gtkglext-1.0/include/
-+
 +PATH_EXPAT_L = -L${X11BASE}/lib
 +PATH_FREETYPE_L = -L${X11BASE}/lib
 +PATH_X_L = -L${X11BASE}/lib
