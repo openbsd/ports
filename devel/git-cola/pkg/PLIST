@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/10/04 14:34:48 bket Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/02/20 06:10:05 bket Exp $
 bin/git-cola
 bin/git-cola-sequence-editor
 bin/git-dag
@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}dag.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}diffparse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}difftool.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}fsmonitor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}gitcfg.${MODPY_PYC_MAGIC_TAG}pyc
@@ -51,6 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/dag.py
 lib/python${MODPY_VERSION}/site-packages/cola/decorators.py
 lib/python${MODPY_VERSION}/site-packages/cola/diffparse.py
 lib/python${MODPY_VERSION}/site-packages/cola/difftool.py
+lib/python${MODPY_VERSION}/site-packages/cola/display.py
 lib/python${MODPY_VERSION}/site-packages/cola/fsmonitor.py
 lib/python${MODPY_VERSION}/site-packages/cola/git.py
 lib/python${MODPY_VERSION}/site-packages/cola/gitcfg.py
@@ -180,7 +182,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/widgets/submodules.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/text.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/toolbar.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/toolbarcmds.py
-lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 share/applications/git-cola-folder-handler.desktop
 share/applications/git-cola.desktop
 share/applications/git-dag.desktop
@@ -251,6 +253,7 @@ share/git-cola/icons/dark/star.svg
 share/git-cola/icons/dark/sync.svg
 share/git-cola/icons/dark/tag.svg
 share/git-cola/icons/dark/telescope.svg
+share/git-cola/icons/dark/three-bars.svg
 share/git-cola/icons/dark/trashcan.svg
 share/git-cola/icons/dark/unfold.svg
 share/git-cola/icons/dark/upstream.svg
@@ -301,6 +304,7 @@ share/git-cola/icons/star.svg
 share/git-cola/icons/sync.svg
 share/git-cola/icons/tag.svg
 share/git-cola/icons/telescope.svg
+share/git-cola/icons/three-bars.svg
 share/git-cola/icons/trashcan.svg
 share/git-cola/icons/unfold.svg
 share/git-cola/icons/upstream.svg
@@ -324,6 +328,7 @@ share/git-cola/lib/cola/${MODPY_PYCACHE}dag.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}diffparse.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}difftool.${MODPY_PYC_MAGIC_TAG}pyc
+share/git-cola/lib/cola/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}fsmonitor.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}gitcfg.${MODPY_PYC_MAGIC_TAG}pyc
@@ -358,6 +363,7 @@ share/git-cola/lib/cola/dag.py
 share/git-cola/lib/cola/decorators.py
 share/git-cola/lib/cola/diffparse.py
 share/git-cola/lib/cola/difftool.py
+share/git-cola/lib/cola/display.py
 share/git-cola/lib/cola/fsmonitor.py
 share/git-cola/lib/cola/git.py
 share/git-cola/lib/cola/gitcfg.py
