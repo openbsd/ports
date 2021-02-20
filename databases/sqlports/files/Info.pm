@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.33 2020/05/19 08:50:55 espie Exp $
+# $OpenBSD: Info.pm,v 1.34 2021/02/20 18:05:04 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -35,8 +35,8 @@ our $vars = {
     COMPILER_LINKS => 'CompilerLinksVar',
     CONFIGURE_ARGS => 'ConfigureArgsVar',
     CONFIGURE_STYLE => 'ConfigureVar',
-    DEBUG_CONFIGURE_ARGS => 'IgnoredVar',
-    DEBUG_PACKAGES => 'IgnoredVar',
+    DEBUG_CONFIGURE_ARGS => 'DebugConfigureArgsVar',
+    DEBUG_PACKAGES => 'DebugPackagesVar',
     DESCR => 'DescrVar',
     DISTFILES => 'SupdistfilesVar',
     DPB_PROPERTIES => 'DPBPropertiesVar',

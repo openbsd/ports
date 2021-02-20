@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1548 2021/02/19 23:14:45 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1549 2021/02/20 18:05:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -139,7 +139,7 @@ _ALL_VARIABLES += BROKEN COMES_WITH \
 	GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME \
 	MAKEFILE_LIST USE_LLD USE_WXNEEDED COMPILER \
 	COMPILER_LANGS COMPILER_LINKS SUBST_VARS UPDATE_PLIST_ARGS \
-	PKGPATHS
+	PKGPATHS DEBUG_PACKAGES DEBUG_CONFIGURE_ARGS
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \

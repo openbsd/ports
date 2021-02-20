@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.60 2019/08/24 23:16:25 espie Exp $
+# $OpenBSD: Var.pm,v 1.61 2021/02/20 18:05:04 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -914,10 +914,16 @@ sub path
 	return shift->[2];
 }
 
+sub dont_add
+{
+	my $self = shift;
+	return $self->value eq '-';
+}
+
 sub add
 {
 	my ($self, $ins) = @_;
-	return if $self->value eq '-';
+	return if $self->dont_add;
 	my $base = $self->path;
 	$self->AnyVar::add($ins);
 	for my $d ($self->words) {
@@ -925,6 +931,15 @@ sub add
 		my $k = $ins->find_pathkey($path->fullpkgpath);
 		$self->normal_insert($ins, $d, $k) if $d ne '';
 	}
+}
+
+package DebugPackagesVar;
+our @ISA = qw(MultiVar);
+sub table() { 'DebugPackages' }
+
+sub dont_add
+{
+	0
 }
 
 package ModulesVar;
@@ -941,6 +956,9 @@ package ConfigureArgsVar;
 our @ISA = qw(QuotedListVar);
 sub table() { 'ConfigureArgs' }
 
+package DebugConfigureArgsVar;
+our @ISA = qw(ConfigureArgsVar);
+sub table() { 'DebugConfigureArgs' }
 package Sql::Column::View::WithSite;
 our @ISA = qw(Sql::Column::View::Expr);
 
