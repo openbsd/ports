@@ -1,14 +1,23 @@
-$OpenBSD: patch-setup_py,v 1.5 2017/08/20 14:25:32 jasper Exp $
---- setup.py.orig	Fri Sep 23 17:43:57 2016
-+++ setup.py	Fri Dec  9 19:57:45 2016
-@@ -69,8 +69,8 @@ setup(
-     packages=['barman', ],
-     scripts=['bin/barman', ],
+$OpenBSD: patch-setup_py,v 1.6 2021/02/20 01:58:10 sthen Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -70,7 +70,7 @@ setup(
+     url='http://www.pgbarman.org/',
+     packages=find_packages(exclude=["tests"]),
      data_files=[
--        ('share/man/man1', ['doc/barman.1']),
+-        ('share/man/man1', ['doc/barman.1',
++        ('man/man1', ['doc/barman.1',
+                             'doc/barman-cloud-backup.1',
+                             'doc/barman-cloud-backup-list.1',
+                             'doc/barman-cloud-restore.1',
+@@ -78,7 +78,7 @@ setup(
+                             'doc/barman-cloud-wal-restore.1',
+                             'doc/barman-wal-archive.1',
+                             'doc/barman-wal-restore.1']),
 -        ('share/man/man5', ['doc/barman.5']),
-+        ('man/man1', ['doc/barman.1']),
 +        ('man/man5', ['doc/barman.5']),
      ],
-     license='GPL-3.0',
-     description=__doc__.split("\n")[0],
+     entry_points={
+         'console_scripts': [
