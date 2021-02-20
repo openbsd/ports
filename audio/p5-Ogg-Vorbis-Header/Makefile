@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/20 17:01:07 ajacoutot Exp $
 
 COMMENT=	object-oriented interface to Ogg Vorbis information
 
 MODULES=	cpan
-DISTNAME =	Ogg-Vorbis-Header-0.10
+DISTNAME =	Ogg-Vorbis-Header-0.11
 CATEGORIES=	audio
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes
@@ -17,6 +16,6 @@ RUN_DEPENDS=	devel/p5-Inline
 BUILD_DEPENDS=	devel/p5-Inline
 
 pre-configure:
-	sed -i 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/lib/Ogg/Vorbis/Header.pm
+	${SUBST_CMD} ${WRKSRC}/lib/Ogg/Vorbis/Header.pm
 
 .include <bsd.port.mk>
