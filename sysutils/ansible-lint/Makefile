@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/19 19:29:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/20 07:44:36 ajacoutot Exp $
+
+BROKEN =		missing dependencies
 
 COMMENT =		best practices checker for ansible
 
