@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_screen_utils_cxx,v 1.1 2020/10/21 09:24:05 edd Exp $
+$OpenBSD: patch-src_screen_utils_cxx,v 1.2 2021/02/20 14:40:40 landry Exp $
 
 Index: src/screen_utils.cxx
 --- src/screen_utils.cxx.orig
 +++ src/screen_utils.cxx
 @@ -31,6 +31,7 @@
- #include "WaitUserInput.hxx"
+ #include <cerrno>
  #endif
  
 +#include <errno.h>
