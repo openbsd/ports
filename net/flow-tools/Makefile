@@ -1,21 +1,15 @@
-# $OpenBSD: Makefile,v 1.41 2021/01/31 20:25:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2021/02/20 18:09:07 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
 COMMENT=	utilities for dealing with NetFlow exports
 
-DISTNAME=	flow-tools-0.68.5.1
-EXTRACT_SUFX=	.tar.bz2
+GH_ACCOUNT=	5u623l20
+GH_PROJECT=	flow-tools
+GH_COMMIT=	2ca53f5615c28a6ba159abb6949eca92019a113d
+DISTNAME=	flow-tools-0.68.6pl20210211
 EPOCH=		0
-REVISION=	0
 CATEGORIES=	net
-
-# originally from http://www.splintered.net/sw/flow-tools/ (no longer exists)
-# there is a fork at https://github.com/5u623l20/flow-tools but it has some
-# problems (including triggering SIGABRT in docbook-to-man)
-HOMEPAGE=	https://code.google.com/p/flow-tools/
-
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=flow-tools/}
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -26,12 +20,13 @@ FLAVORS=		pgsql
 FLAVOR?=
 
 MODULES=		lang/python
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/flow-tools
 
-CONFIGURE_STYLE=	gnu
-SEPARATE_BUILD=		Yes
-SYSCONFDIR=		${BASESYSCONFDIR}/flow-tools
+CONFIGURE_STYLE=	autoreconf
+AUTOMAKE_VERSION=	1.16
+AUTOCONF_VERSION=	2.69
 
 .if !${FLAVOR:Mpgsql}
 CONFIGURE_ARGS+=	--without-postgresql
@@ -42,7 +37,8 @@ LIB_DEPENDS+=		databases/postgresql,-main
 
 MAKE_FLAGS+=		SUBDIRS="lib src bin configs docs"
 FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/flow-tools
-MODPY_ADJ_FILES=	bin/flow-log2rrd bin/flow-rpt2rrd bin/flow-rptfmt
+# flow-log2rrd and flow-rpt2rrd have never been packaged here
+MODPY_ADJ_FILES=	bin/flow-rptfmt
 
 USE_GMAKE=		Yes
 
@@ -50,8 +46,7 @@ USE_GMAKE=		Yes
 # problems with libwrap
 pre-configure:
 	rm -f ${WRKSRC}/lib/ftconfig.h
-	cd ${WRKSRC}/bin; \
-	    sed -i -e 's,/usr/local/netflow/var/sym/,${SYSCONFDIR}/sym/,;' \
-	    flow-log2rrd flow-rpt2rrd flow-rptfmt
+	sed -i -e 's,/usr/local/netflow/var/sym/,${SYSCONFDIR}/sym/,;' \
+	    ${WRKSRC}/bin/flow-rptfmt
 
 .include <bsd.port.mk>
