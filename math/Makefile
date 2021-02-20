@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.198 2020/12/06 12:55:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.199 2021/02/20 21:16:53 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
      SUBDIR += R
      SUBDIR += aamath
-     SUBDIR += abs
      SUBDIR += armadillo
      SUBDIR += arpack
      SUBDIR += bc-gh
