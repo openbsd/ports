@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1176 2021/02/20 01:04:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1177 2021/02/20 13:20:18 sthen Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
 DISTFILES =
 
 # API.rev
-PKGNAME =	quirks-3.564
+PKGNAME =	quirks-3.565
 PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

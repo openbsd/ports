@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2070 2021/02/20 08:24:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2071 2021/02/20 13:20:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1369,7 +1369,6 @@
      SUBDIR += py-attrs
      SUBDIR += py-attrs,python3
      SUBDIR += py-automat,python3
-     SUBDIR += py-babel
      SUBDIR += py-babel,python3
      SUBDIR += py-backcall
      SUBDIR += py-backcall,python3

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/02/19 23:13:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/02/20 13:20:18 sthen Exp $
+@pkgpath textproc/py-pygments
 @conflict py-pygments-<2.5.2p2
-bin/pygmentize${MODPY_BIN_SUFFIX}
+bin/pygmentize
 lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

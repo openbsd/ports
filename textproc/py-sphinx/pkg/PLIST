@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/02/19 23:13:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/02/20 13:20:18 sthen Exp $
+@pkgpath textproc/py-sphinx
 @conflict py-sphinx-<1.5.6p0
-bin/sphinx-apidoc${MODPY_BIN_SUFFIX}
-bin/sphinx-autogen${MODPY_BIN_SUFFIX}
-bin/sphinx-build${MODPY_BIN_SUFFIX}
-bin/sphinx-quickstart${MODPY_BIN_SUFFIX}
+bin/sphinx-apidoc
+bin/sphinx-autogen
+bin/sphinx-build
+bin/sphinx-quickstart
 lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Sphinx-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

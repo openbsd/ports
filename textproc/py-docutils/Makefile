@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/19 23:10:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/20 13:20:17 sthen Exp $
 
 COMMENT =	process plaintext documentation into other formats
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION = 0.16
 DISTNAME =	docutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	textproc
+REVISION =	0
 
 HOMEPAGE =	https://docutils.sourceforge.io/
 
@@ -19,14 +20,7 @@ MODPY_PI =	Yes
 RUN_DEPENDS =	textproc/py-pygments${MODPY_FLAVOR}
 
 FLAVORS =	python3
-FLAVOR ?=
-
-post-install:
-	for i in ${PREFIX}/bin/*; do \
-		mv $${i} $${i%.py}${MODPY_BIN_SUFFIX} ;\
-	done
-
-do-test:
-	cd ${WRKSRC}/test${MODPY_BIN_SUFFIX:S/-//} && ${MODPY_BIN} ./alltests.py
+FLAVOR =	python3
+MODPY_PYTEST =	Yes
 
 .include <bsd.port.mk>
