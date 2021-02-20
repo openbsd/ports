@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/12/02 06:44:09 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/02/20 06:34:28 rsadowski Exp $
 
 Add options for building and installing shared, static libraries
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -5,6 +5,8 @@ project(ebml VERSION 1.4.0)
+@@ -5,6 +5,8 @@ project(ebml VERSION 1.4.2)
  option(DISABLE_PKGCONFIG "Disable PkgConfig module generation" OFF)
  option(DISABLE_CMAKE_CONFIG "Disable CMake package config module generation" OFF)
  option(ENABLE_WIN32_IO "Build the Windows I/O helper class" OFF)
