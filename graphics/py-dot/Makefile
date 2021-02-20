@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:12:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/20 17:16:54 ajacoutot Exp $
 
 COMMENT=	Python interface to Graphviz's Dot#'
 
-MODPY_EGG_VERSION= 1.4.1
+MODPY_EGG_VERSION= 1.4.2
 DISTNAME=	pydot-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	graphics
-REVISION=	0
 
 HOMEPAGE=	https://github.com/erocarrera/pydot
 
@@ -14,7 +13,7 @@ HOMEPAGE=	https://github.com/erocarrera/pydot
 PERMIT_PACKAGE=	Yes
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 MODULES=	lang/python
 

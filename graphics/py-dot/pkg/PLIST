@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/11/10 15:52:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/20 17:16:54 ajacoutot Exp $
+@conflict py-dot-*
+@pkgpath graphics/py-dot
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}dot_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pydot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dot_parser.py
