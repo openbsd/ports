@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.95 2021/02/03 17:26:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2021/02/20 16:40:40 sthen Exp $
 
 COMMENT=	pager/text-based web browser
 
 V=		0.5.3
 P=		20210102
+REVISION=	0
 
 DISTNAME=	w3m_$V+git$P
 PKGNAME=	w3m-$Vpl$P
@@ -37,6 +38,12 @@ CONFIGURE_ARGS=	--disable-xface \
 
 NO_TEST=	Yes
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
+.if ${MACHINE_ARCH} == aarch64
+# XXX somehow if w3m is compiled with -O2, boehm-gc (linked library)
+# intermittently garbage collects a used pointer
+CFLAGS +=	-O1
+.endif
 
 .if ${FLAVOR:Mimage}
 LIB_DEPENDS+=	graphics/imlib2
