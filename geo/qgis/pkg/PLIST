@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.63 2020/12/23 10:22:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.64 2021/02/20 07:17:18 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -46,6 +46,7 @@ include/qgis/qgsabstract3dsymbol.h
 include/qgis/qgsabstractcontentcache.h
 include/qgis/qgsabstractdatabaseproviderconnection.h
 include/qgis/qgsabstractdatasourcewidget.h
+include/qgis/qgsabstractgeocoderlocatorfilter.h
 include/qgis/qgsabstractgeometry.h
 include/qgis/qgsabstractgeopdfexporter.h
 include/qgis/qgsabstractlayoutiterator.h
@@ -53,6 +54,7 @@ include/qgis/qgsabstractmaptoolhandler.h
 include/qgis/qgsabstractmaterialsettings.h
 include/qgis/qgsabstractmetadatabase.h
 include/qgis/qgsabstractproviderconnection.h
+include/qgis/qgsabstractrelationeditorwidget.h
 include/qgis/qgsabstractreportsection.h
 include/qgis/qgsabstractvaliditycheck.h
 include/qgis/qgsabstractvectorlayer3drenderer.h
@@ -67,6 +69,7 @@ include/qgis/qgsadvanceddigitizingdockwidget.h
 include/qgis/qgsadvanceddigitizingfloater.h
 include/qgis/qgsaggregatecalculator.h
 include/qgis/qgsaggregatetoolbutton.h
+include/qgis/qgsalgorithmbatchgeocode.h
 include/qgis/qgsalgorithmfiledownloader.h
 include/qgis/qgsalgorithmimportphotos.h
 include/qgis/qgsalignmentcombobox.h
@@ -86,6 +89,9 @@ include/qgis/qgsannotationpolygonitem.h
 include/qgis/qgsannotationregistry.h
 include/qgis/qgsapplication.h
 include/qgis/qgsapplicationexitblockerinterface.h
+include/qgis/qgsarcgisportalutils.h
+include/qgis/qgsarcgisrestquery.h
+include/qgis/qgsarcgisrestutils.h
 include/qgis/qgsarcgisvectortileconnectiondialog.h
 include/qgis/qgsarchive.h
 include/qgis/qgsarrowsymbollayer.h
@@ -94,8 +100,13 @@ include/qgis/qgsaspectfilter.h
 include/qgis/qgsattributeactiondialog.h
 include/qgis/qgsattributeactionpropertiesdialog.h
 include/qgis/qgsattributedialog.h
+include/qgis/qgsattributeeditorcontainer.h
 include/qgis/qgsattributeeditorcontext.h
 include/qgis/qgsattributeeditorelement.h
+include/qgis/qgsattributeeditorfield.h
+include/qgis/qgsattributeeditorhtmlelement.h
+include/qgis/qgsattributeeditorqmlelement.h
+include/qgis/qgsattributeeditorrelation.h
 include/qgis/qgsattributeform.h
 include/qgis/qgsattributeformcontaineredit.h
 include/qgis/qgsattributeformeditorwidget.h
@@ -217,6 +228,9 @@ include/qgis/qgscolordialog.h
 include/qgis/qgscoloreffect.h
 include/qgis/qgscolorramp.h
 include/qgis/qgscolorrampbutton.h
+include/qgis/qgscolorramplegendnode.h
+include/qgis/qgscolorramplegendnodesettings.h
+include/qgis/qgscolorramplegendnodewidget.h
 include/qgis/qgscolorrampshader.h
 include/qgis/qgscolorrampshaderwidget.h
 include/qgis/qgscolorscheme.h
@@ -240,6 +254,7 @@ include/qgis/qgscoordinateboundspreviewmapwidget.h
 include/qgis/qgscoordinateformatter.h
 include/qgis/qgscoordinateoperationwidget.h
 include/qgis/qgscoordinatereferencesystem.h
+include/qgis/qgscoordinatereferencesystemregistry.h
 include/qgis/qgscoordinatetransform.h
 include/qgis/qgscoordinatetransformcontext.h
 include/qgis/qgscoordinateutils.h
@@ -317,6 +332,7 @@ include/qgis/qgseditorwidgetwrapper.h
 include/qgis/qgseffectdrawmodecombobox.h
 include/qgis/qgseffectstack.h
 include/qgis/qgseffectstackpropertieswidget.h
+include/qgis/qgselevationutils.h
 include/qgis/qgsellipse.h
 include/qgis/qgsellipsesymbollayer.h
 include/qgis/qgsellipsesymbollayerwidget.h
@@ -324,6 +340,12 @@ include/qgis/qgsellipsoidutils.h
 include/qgis/qgsencodingfiledialog.h
 include/qgis/qgsenumerationwidgetfactory.h
 include/qgis/qgsenumerationwidgetwrapper.h
+include/qgis/qgseptdataitemguiprovider.h
+include/qgis/qgseptdataitems.h
+include/qgis/qgseptdecoder.h
+include/qgis/qgseptpointcloudindex.h
+include/qgis/qgseptprovider.h
+include/qgis/qgseptproviderguimetadata.h
 include/qgis/qgserror.h
 include/qgis/qgserrordialog.h
 include/qgis/qgseventtracing.h
@@ -369,6 +391,7 @@ include/qgis/qgsfeaturepickermodel.h
 include/qgis/qgsfeaturepickermodelbase.h
 include/qgis/qgsfeaturepickerwidget.h
 include/qgis/qgsfeaturepool.h
+include/qgis/qgsfeaturerenderergenerator.h
 include/qgis/qgsfeaturerequest.h
 include/qgis/qgsfeatureselectiondlg.h
 include/qgis/qgsfeatureselectionmodel.h
@@ -408,12 +431,17 @@ include/qgis/qgsfontutils.h
 include/qgis/qgsformannotation.h
 include/qgis/qgsfractionnumericformat.h
 include/qgis/qgsgdaldataitems.h
+include/qgis/qgsgdalfilesourcewidget.h
 include/qgis/qgsgdalguiprovider.h
 include/qgis/qgsgdalprovider.h
 include/qgis/qgsgdalsourceselect.h
 include/qgis/qgsgdalutils.h
 include/qgis/qgsgenericfeatureselectionmanager.h
 include/qgis/qgsgenericspatialindex.h
+include/qgis/qgsgeocoder.h
+include/qgis/qgsgeocodercontext.h
+include/qgis/qgsgeocoderlocatorfilter.h
+include/qgis/qgsgeocoderresult.h
 include/qgis/qgsgeometry.h
 include/qgis/qgsgeometryanglecheck.h
 include/qgis/qgsgeometryareacheck.h
@@ -455,6 +483,7 @@ include/qgis/qgsgeometrysimplifier.h
 include/qgis/qgsgeometrysliverpolygoncheck.h
 include/qgis/qgsgeometrysnapper.h
 include/qgis/qgsgeometrysnappersinglesource.h
+include/qgis/qgsgeometrytransformer.h
 include/qgis/qgsgeometrytypecheck.h
 include/qgis/qgsgeometryutils.h
 include/qgis/qgsgeometryvalidator.h
@@ -473,6 +502,7 @@ include/qgis/qgsgloweffect.h
 include/qgis/qgsgml.h
 include/qgis/qgsgmlschema.h
 include/qgis/qgsgoochmaterialsettings.h
+include/qgis/qgsgooglemapsgeocoder.h
 include/qgis/qgsgpsconnection.h
 include/qgis/qgsgpsconnectionregistry.h
 include/qgis/qgsgpsdconnection.h
@@ -725,6 +755,7 @@ include/qgis/qgsmaplayercombobox.h
 include/qgis/qgsmaplayerconfigwidget.h
 include/qgis/qgsmaplayerconfigwidgetfactory.h
 include/qgis/qgsmaplayerdependency.h
+include/qgis/qgsmaplayerelevationproperties.h
 include/qgis/qgsmaplayerlegend.h
 include/qgis/qgsmaplayerloadstyledialog.h
 include/qgis/qgsmaplayermodel.h
@@ -779,6 +810,8 @@ include/qgis/qgsmemoryfeatureiterator.h
 include/qgis/qgsmemoryprovider.h
 include/qgis/qgsmemoryproviderutils.h
 include/qgis/qgsmenuheader.h
+include/qgis/qgsmergedfeaturerenderer.h
+include/qgis/qgsmergedfeaturerendererwidget.h
 include/qgis/qgsmesh3daveraging.h
 include/qgis/qgsmesh3dsymbol.h
 include/qgis/qgsmeshcalcnode.h
@@ -838,6 +871,7 @@ include/qgis/qgsmodelviewmouseevent.h
 include/qgis/qgsmodelviewmousehandles.h
 include/qgis/qgsmodelviewrubberband.h
 include/qgis/qgsmodelviewtool.h
+include/qgis/qgsmodelviewtoolpan.h
 include/qgis/qgsmodelviewtoolselect.h
 include/qgis/qgsmodelviewtooltemporarykeypan.h
 include/qgis/qgsmodelviewtooltemporarykeyzoom.h
@@ -878,6 +912,8 @@ include/qgis/qgsnewvectorlayerdialog.h
 include/qgis/qgsnewvectortabledialog.h
 include/qgis/qgsninecellfilter.h
 include/qgis/qgsnmeaconnection.h
+include/qgis/qgsnominatimgeocoder.h
+include/qgis/qgsnullmaterialsettings.h
 include/qgis/qgsnullsymbolrenderer.h
 include/qgis/qgsnullsymbolrendererwidget.h
 include/qgis/qgsnumericformat.h
@@ -941,6 +977,32 @@ include/qgis/qgspluginmanagerinterface.h
 include/qgis/qgspoint.h
 include/qgis/qgspoint3dbillboardmaterial.h
 include/qgis/qgspoint3dsymbol.h
+include/qgis/qgspointcloud3dsymbol.h
+include/qgis/qgspointcloudattribute.h
+include/qgis/qgspointcloudattributebyramprenderer.h
+include/qgis/qgspointcloudattributebyramprendererwidget.h
+include/qgis/qgspointcloudattributecombobox.h
+include/qgis/qgspointcloudattributemodel.h
+include/qgis/qgspointcloudblock.h
+include/qgis/qgspointcloudclassifiedrenderer.h
+include/qgis/qgspointcloudclassifiedrendererwidget.h
+include/qgis/qgspointclouddataprovider.h
+include/qgis/qgspointcloudextentrenderer.h
+include/qgis/qgspointcloudextentrendererwidget.h
+include/qgis/qgspointcloudindex.h
+include/qgis/qgspointcloudlayer.h
+include/qgis/qgspointcloudlayer3drenderer.h
+include/qgis/qgspointcloudlayerelevationproperties.h
+include/qgis/qgspointcloudlayerrenderer.h
+include/qgis/qgspointcloudproviderguimetadata.h
+include/qgis/qgspointcloudrenderer.h
+include/qgis/qgspointcloudrendererpropertieswidget.h
+include/qgis/qgspointcloudrendererregistry.h
+include/qgis/qgspointcloudrendererwidget.h
+include/qgis/qgspointcloudrequest.h
+include/qgis/qgspointcloudrgbrenderer.h
+include/qgis/qgspointcloudrgbrendererwidget.h
+include/qgis/qgspointcloudsourceselect.h
 include/qgis/qgspointclusterrenderer.h
 include/qgis/qgspointclusterrendererwidget.h
 include/qgis/qgspointdisplacementrenderer.h
@@ -952,6 +1014,7 @@ include/qgis/qgspointlocatorinittask.h
 include/qgis/qgspointxy.h
 include/qgis/qgspolygon.h
 include/qgis/qgspolygon3dsymbol.h
+include/qgis/qgspolymorphicrelation.h
 include/qgis/qgspostgresstringutils.h
 include/qgis/qgspostprocessingentity.h
 include/qgis/qgspresetcolorrampdialog.h
@@ -967,6 +1030,7 @@ include/qgis/qgsprocessingalgorithmdialogbase.h
 include/qgis/qgsprocessingalgrunnertask.h
 include/qgis/qgsprocessingconfigurationwidgets.h
 include/qgis/qgsprocessingcontext.h
+include/qgis/qgsprocessingdxflayerswidgetwrapper.h
 include/qgis/qgsprocessingenummodelerwidget.h
 include/qgis/qgsprocessingfeaturesourceoptionswidget.h
 include/qgis/qgsprocessingfeedback.h
@@ -976,6 +1040,7 @@ include/qgis/qgsprocessingguiregistry.h
 include/qgis/qgsprocessingmaplayercombobox.h
 include/qgis/qgsprocessingmatrixmodelerwidget.h
 include/qgis/qgsprocessingmatrixparameterdialog.h
+include/qgis/qgsprocessingmeshdatasetwidget.h
 include/qgis/qgsprocessingmodelalgorithm.h
 include/qgis/qgsprocessingmodelchildalgorithm.h
 include/qgis/qgsprocessingmodelchilddependency.h
@@ -991,7 +1056,9 @@ include/qgis/qgsprocessingoutputdestinationwidget.h
 include/qgis/qgsprocessingoutputs.h
 include/qgis/qgsprocessingparameteraggregate.h
 include/qgis/qgsprocessingparameterdefinitionwidget.h
+include/qgis/qgsprocessingparameterdxflayers.h
 include/qgis/qgsprocessingparameterfieldmap.h
+include/qgis/qgsprocessingparametermeshdataset.h
 include/qgis/qgsprocessingparameters.h
 include/qgis/qgsprocessingparameterswidget.h
 include/qgis/qgsprocessingparametertininputlayers.h
@@ -1039,6 +1106,9 @@ include/qgis/qgsproviderguimetadata.h
 include/qgis/qgsproviderguiregistry.h
 include/qgis/qgsprovidermetadata.h
 include/qgis/qgsproviderregistry.h
+include/qgis/qgsprovidersourcewidget.h
+include/qgis/qgsprovidersourcewidgetprovider.h
+include/qgis/qgsprovidersourcewidgetproviderregistry.h
 include/qgis/qgsproxyfeaturesink.h
 include/qgis/qgsproxyprogresstask.h
 include/qgis/qgsproxystyle.h
@@ -1047,9 +1117,11 @@ include/qgis/qgsqmlwidgetwrapper.h
 include/qgis/qgsqtlocationconnection.h
 include/qgis/qgsquadrilateral.h
 include/qgis/qgsquerybuilder.h
+include/qgis/qgsqueryresultmodel.h
 include/qgis/qgsrange.h
 include/qgis/qgsrangeconfigdlg.h
 include/qgis/qgsrangefieldformatter.h
+include/qgis/qgsrangeslider.h
 include/qgis/qgsrangewidgetfactory.h
 include/qgis/qgsrangewidgetwrapper.h
 include/qgis/qgsraster.h
@@ -1099,6 +1171,7 @@ include/qgis/qgsrastertransparency.h
 include/qgis/qgsrastertransparencywidget.h
 include/qgis/qgsrasterviewport.h
 include/qgis/qgsratiolockbutton.h
+include/qgis/qgsray3d.h
 include/qgis/qgsreadwritecontext.h
 include/qgis/qgsreadwritelocker.h
 include/qgis/qgsreclassifyutils.h
@@ -1116,6 +1189,7 @@ include/qgis/qgsrelationreferencefieldformatter.h
 include/qgis/qgsrelationreferencesearchwidgetwrapper.h
 include/qgis/qgsrelationreferencewidget.h
 include/qgis/qgsrelationreferencewidgetwrapper.h
+include/qgis/qgsrelationwidgetregistry.h
 include/qgis/qgsrelationwidgetwrapper.h
 include/qgis/qgsrelief.h
 include/qgis/qgsremappingproxyfeaturesink.h
@@ -1211,6 +1285,9 @@ include/qgis/qgsstylemanagerdialog.h
 include/qgis/qgsstylemodel.h
 include/qgis/qgsstylesavedialog.h
 include/qgis/qgssublayersdialog.h
+include/qgis/qgssubsetstringeditorinterface.h
+include/qgis/qgssubsetstringeditorprovider.h
+include/qgis/qgssubsetstringeditorproviderregistry.h
 include/qgis/qgssubstitutionlistwidget.h
 include/qgis/qgssurface.h
 include/qgis/qgssvgannotation.h
@@ -1274,6 +1351,7 @@ include/qgis/qgstextshadowsettings.h
 include/qgis/qgsthreadingutils.h
 include/qgis/qgsticksscalebarrenderer.h
 include/qgis/qgstilecache.h
+include/qgis/qgstiledownloadmanager.h
 include/qgis/qgstiles.h
 include/qgis/qgstilingscheme.h
 include/qgis/qgstininterpolator.h
@@ -2376,7 +2454,6 @@ share/qgis/python/plugins/processing/algs/qgis/Climb.py
 share/qgis/python/plugins/processing/algs/qgis/ConcaveHull.py
 share/qgis/python/plugins/processing/algs/qgis/DefineProjection.py
 share/qgis/python/plugins/processing/algs/qgis/Delaunay.py
-share/qgis/python/plugins/processing/algs/qgis/DeleteColumn.py
 share/qgis/python/plugins/processing/algs/qgis/EliminateSelection.py
 share/qgis/python/plugins/processing/algs/qgis/ExecuteSQL.py
 share/qgis/python/plugins/processing/algs/qgis/ExportGeometryInfo.py
@@ -2398,7 +2475,6 @@ share/qgis/python/plugins/processing/algs/qgis/MinimumBoundingGeometry.py
 share/qgis/python/plugins/processing/algs/qgis/PointDistance.py
 share/qgis/python/plugins/processing/algs/qgis/PointsDisplacement.py
 share/qgis/python/plugins/processing/algs/qgis/PointsFromLines.py
-share/qgis/python/plugins/processing/algs/qgis/PointsToPaths.py
 share/qgis/python/plugins/processing/algs/qgis/PolarPlot.py
 share/qgis/python/plugins/processing/algs/qgis/PostGISExecuteAndLoadSQL.py
 share/qgis/python/plugins/processing/algs/qgis/QgisAlgorithm.py
@@ -2953,7 +3029,8 @@ share/qgis/python/plugins/processing/tests/GdalAlgorithmsGeneralTest.py
 share/qgis/python/plugins/processing/tests/GdalAlgorithmsRasterTest.py
 share/qgis/python/plugins/processing/tests/GdalAlgorithmsVectorTest.py
 share/qgis/python/plugins/processing/tests/Grass7AlgorithmsImageryTest.py
-share/qgis/python/plugins/processing/tests/Grass7AlgorithmsRasterTest.py
+share/qgis/python/plugins/processing/tests/Grass7AlgorithmsRasterTestPt1.py
+share/qgis/python/plugins/processing/tests/Grass7AlgorithmsRasterTestPt2.py
 share/qgis/python/plugins/processing/tests/Grass7AlgorithmsVectorTest.py
 share/qgis/python/plugins/processing/tests/GuiTest.py
 share/qgis/python/plugins/processing/tests/ModelerTest.py
@@ -4405,20 +4482,20 @@ share/qgis/resources/server/api/ogc/static/landingpage/README
 share/qgis/resources/server/api/ogc/static/landingpage/css/
 share/qgis/resources/server/api/ogc/static/landingpage/css/app.ca3f5643.css
 share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-123bc409.8679d8ba.css
-share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-5cedae10.45a18619.css
-share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-db289a14.336091d0.css
+share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-74045dab.4bc0a31d.css
+share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-744799cf.0a230f6c.css
 share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-vendors.a728f495.css
 share/qgis/resources/server/api/ogc/static/landingpage/favicon.ico
 share/qgis/resources/server/api/ogc/static/landingpage/index.html
 share/qgis/resources/server/api/ogc/static/landingpage/js/
-share/qgis/resources/server/api/ogc/static/landingpage/js/app.fa6cb20b.js
-share/qgis/resources/server/api/ogc/static/landingpage/js/app.fa6cb20b.js.map
+share/qgis/resources/server/api/ogc/static/landingpage/js/app.33bbdcf6.js
+share/qgis/resources/server/api/ogc/static/landingpage/js/app.33bbdcf6.js.map
 share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-123bc409.ef3c4d35.js
 share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-123bc409.ef3c4d35.js.map
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-5cedae10.b1aed77d.js
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-5cedae10.b1aed77d.js.map
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-db289a14.4c4313be.js
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-db289a14.4c4313be.js.map
+share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-74045dab.96de8dee.js
+share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-74045dab.96de8dee.js.map
+share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-744799cf.0eb406dc.js
+share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-744799cf.0eb406dc.js.map
 share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-vendors.ebebb286.js
 share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-vendors.ebebb286.js.map
 share/qgis/resources/server/api/ogc/static/style.css
@@ -4436,6 +4513,40 @@ share/qgis/resources/server/api/ogc/templates/wfs3/header.html
 share/qgis/resources/server/api/ogc/templates/wfs3/leaflet_map.html
 share/qgis/resources/server/api/ogc/templates/wfs3/links.html
 share/qgis/resources/server/schemaExtension.xsd
+share/qgis/resources/server/src/
+share/qgis/resources/server/src/landingpage/
+share/qgis/resources/server/src/landingpage/README.md
+share/qgis/resources/server/src/landingpage/babel.config.js
+share/qgis/resources/server/src/landingpage/package.json
+share/qgis/resources/server/src/landingpage/public/
+share/qgis/resources/server/src/landingpage/public/favicon.ico
+share/qgis/resources/server/src/landingpage/public/index.html
+share/qgis/resources/server/src/landingpage/src/
+share/qgis/resources/server/src/landingpage/src/App.vue
+share/qgis/resources/server/src/landingpage/src/assets/
+share/qgis/resources/server/src/landingpage/src/assets/logo.png
+share/qgis/resources/server/src/landingpage/src/components/
+share/qgis/resources/server/src/landingpage/src/components/AttributeTable.vue
+share/qgis/resources/server/src/landingpage/src/components/Error.vue
+share/qgis/resources/server/src/landingpage/src/components/IdentifyResults.vue
+share/qgis/resources/server/src/landingpage/src/components/LayerTree.vue
+share/qgis/resources/server/src/landingpage/src/components/LayerTreeNode.vue
+share/qgis/resources/server/src/landingpage/src/components/LeftSidebar.vue
+share/qgis/resources/server/src/landingpage/src/components/MapFooter.vue
+share/qgis/resources/server/src/landingpage/src/components/MapToolbar.vue
+share/qgis/resources/server/src/landingpage/src/components/Metadata.vue
+share/qgis/resources/server/src/landingpage/src/js/
+share/qgis/resources/server/src/landingpage/src/js/Utils.js
+share/qgis/resources/server/src/landingpage/src/js/WmsSource.js
+share/qgis/resources/server/src/landingpage/src/main.js
+share/qgis/resources/server/src/landingpage/src/plugins/
+share/qgis/resources/server/src/landingpage/src/plugins/vuetify.js
+share/qgis/resources/server/src/landingpage/src/store.js
+share/qgis/resources/server/src/landingpage/src/views/
+share/qgis/resources/server/src/landingpage/src/views/Catalog.vue
+share/qgis/resources/server/src/landingpage/src/views/WebGis.vue
+share/qgis/resources/server/src/landingpage/vue.config.js
+share/qgis/resources/server/src/landingpage/yarn.lock
 share/qgis/resources/spatialite.db
 share/qgis/resources/srs.db
 share/qgis/resources/symbology-style.xml
@@ -4643,6 +4754,12 @@ share/qgis/svg/landmark/religion=muslim.svg
 share/qgis/svg/landmark/religion=pastafarian.svg
 share/qgis/svg/landmark/religion=sikh.svg
 share/qgis/svg/landmark/tourism=museum.svg
+share/qgis/svg/logos/
+share/qgis/svg/logos/osgeo-logo.svg
+share/qgis/svg/logos/qgis-icon.svg
+share/qgis/svg/logos/qgis-logo-made-with-color.svg
+share/qgis/svg/logos/qgis-logo-made-with-monochrome.svg
+share/qgis/svg/logos/qgis-logo.svg
 share/qgis/svg/money/
 share/qgis/svg/money/money_atm.svg
 share/qgis/svg/money/money_atm2.svg
