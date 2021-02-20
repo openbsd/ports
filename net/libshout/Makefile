@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2020/03/03 21:10:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/20 16:21:33 naddy Exp $
 
 COMMENT=	library for communicating with an icecast server
 
-DISTNAME=	libshout-2.4.3
-REVISION=	0
+DISTNAME=	libshout-2.4.5
 
-SHARED_LIBS +=  shout                6.0      # 5.0
+SHARED_LIBS +=  shout                6.1      # 5.0
 
 CATEGORIES=	net audio
 
@@ -16,7 +15,7 @@ MAINTAINER=	Moritz Grimm <mgrimm@mrsserver.net>
 # LGPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += crypto m ogg pthread speex ssl theora>=1 vorbis>=4
+WANTLIB += c crypto m ogg pthread speex ssl theora>=1 vorbis>=4
 
 MASTER_SITES=	https://downloads.xiph.org/releases/libshout/
 

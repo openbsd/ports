@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/03 21:10:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/02/20 16:21:33 naddy Exp $
+@bin bin/shout
 include/shout/
 include/shout/shout.h
 @comment lib/ckport/
@@ -8,6 +9,7 @@ include/shout/shout.h
 lib/libshout.la
 @lib lib/libshout.so.${LIBshout_VERSION}
 lib/pkgconfig/shout.pc
+@man man/man1/shout.1
 share/aclocal/shout.m4
 share/examples/libshout/
 @comment share/examples/libshout/COPYING

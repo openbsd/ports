@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2021/02/20 16:21:33 naddy Exp $
+
+Unbreak pkgconfig by not having the list start with a comma.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -13597,7 +13597,7 @@ else
+ $as_echo "yes" >&6; }
+ 
+     HAVE_OGG="yes"
+-    SHOUT_REQUIRES="$SHOUT_REQUIRES, ogg"
++    SHOUT_REQUIRES="ogg"
+ 
+ fi
+ OGG_LIBS="$OGG_LDFLAGS $OGG_LIBS"
