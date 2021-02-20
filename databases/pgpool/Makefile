@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 21:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/20 18:26:27 landry Exp $
 
 COMMENT= 	connection pool server for PostgreSQL
 
-DISTNAME= 	pgpool-II-3.7.5
+DISTNAME= 	pgpool-II-3.7.18
 
 CATEGORIES= 	databases
 
