@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/02/20 01:14:03 sthen Exp $
 @newgroup _lcdproc:687
 @newuser _lcdproc:687:687:daemon:LCDproc Daemon:/var/lcdproc:/sbin/nologin
+@rcscript ${RCDIR}/lcdd
+@rcscript ${RCDIR}/lcdexec
+@rcscript ${RCDIR}/lcdproc
 bin/fortune.pl
 bin/iosock.pl
 @bin bin/lcdexec
@@ -10,42 +13,45 @@ bin/lcdmetar.pl
 bin/tail.pl
 bin/x11amp.pl
 lib/lcdproc/
-lib/lcdproc/CFontz.so
-lib/lcdproc/CFontz633.so
-lib/lcdproc/CFontzPacket.so
-lib/lcdproc/CwLnx.so
-lib/lcdproc/EyeboxOne.so
-lib/lcdproc/IOWarrior.so
-lib/lcdproc/MD8800.so
-lib/lcdproc/MtxOrb.so
-lib/lcdproc/NoritakeVFD.so
-lib/lcdproc/SureElec.so
-lib/lcdproc/bayrad.so
-lib/lcdproc/curses.so
-lib/lcdproc/ea65.so
-lib/lcdproc/glk.so
-lib/lcdproc/hd44780.so
-lib/lcdproc/i2500vfd.so
-lib/lcdproc/icp_a106.so
-lib/lcdproc/imon.so
-lib/lcdproc/imonlcd.so
-lib/lcdproc/irtrans.so
-lib/lcdproc/lb216.so
-lib/lcdproc/lcdm001.so
-lib/lcdproc/lcterm.so
-lib/lcdproc/lis.so
-lib/lcdproc/mdm166a.so
-lib/lcdproc/ms6931.so
-lib/lcdproc/mtc_s16209x.so
-lib/lcdproc/picolcd.so
-lib/lcdproc/pyramid.so
-lib/lcdproc/serialPOS.so
-lib/lcdproc/serialVFD.so
-lib/lcdproc/shuttleVFD.so
-lib/lcdproc/sli.so
-lib/lcdproc/text.so
-lib/lcdproc/tyan.so
-lib/lcdproc/ula200.so
+@so lib/lcdproc/CFontz.so
+@so lib/lcdproc/CFontzPacket.so
+@so lib/lcdproc/CwLnx.so
+@so lib/lcdproc/EyeboxOne.so
+@so lib/lcdproc/IOWarrior.so
+@so lib/lcdproc/MD8800.so
+@so lib/lcdproc/MtxOrb.so
+@so lib/lcdproc/NoritakeVFD.so
+@so lib/lcdproc/SureElec.so
+@so lib/lcdproc/bayrad.so
+@so lib/lcdproc/curses.so
+@so lib/lcdproc/ea65.so
+@so lib/lcdproc/futaba.so
+@so lib/lcdproc/glcd.so
+@so lib/lcdproc/glk.so
+@so lib/lcdproc/hd44780.so
+@so lib/lcdproc/i2500vfd.so
+@so lib/lcdproc/imon.so
+@so lib/lcdproc/imonlcd.so
+@so lib/lcdproc/irtrans.so
+@so lib/lcdproc/lb216.so
+@so lib/lcdproc/lcdm001.so
+@so lib/lcdproc/lcterm.so
+@so lib/lcdproc/lis.so
+@so lib/lcdproc/mdm166a.so
+@so lib/lcdproc/ms6931.so
+@so lib/lcdproc/mtc_s16209x.so
+@so lib/lcdproc/picolcd.so
+@so lib/lcdproc/pyramid.so
+@so lib/lcdproc/rawserial.so
+@so lib/lcdproc/serialPOS.so
+@so lib/lcdproc/serialVFD.so
+@so lib/lcdproc/shuttleVFD.so
+@so lib/lcdproc/sli.so
+@so lib/lcdproc/text.so
+@so lib/lcdproc/tyan.so
+@so lib/lcdproc/ula200.so
+@so lib/lcdproc/vlsys_m428.so
+@so lib/lcdproc/yard2LCD.so
 @man man/man1/lcdexec.1
 @man man/man1/lcdproc.1
 @man man/man5/lcdproc-config.5
@@ -63,9 +69,3 @@ share/examples/lcdproc/lcdproc.conf
 @owner _lcdproc
 @group _lcdproc
 @sample /var/lcdproc/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/lcdd
-@rcscript ${RCDIR}/lcdexec
-@rcscript ${RCDIR}/lcdproc

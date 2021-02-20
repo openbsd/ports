@@ -1,0 +1,18 @@
+$OpenBSD: patch-clients_lcdproc_iface_c,v 1.1 2021/02/20 01:14:03 sthen Exp $
+
+From 084126b03f29b33ab3e657c66e8c6a439f27f8e1 Mon Sep 17 00:00:00 2001
+From: Harald Geyer <harald@ccbib.org>
+Date: Mon, 10 Feb 2020 13:15:10 +0100
+Subject: [PATCH] Fix compilation with GCC >= 10.x
+
+Index: clients/lcdproc/iface.c
+--- clients/lcdproc/iface.c.orig
++++ clients/lcdproc/iface.c
+@@ -32,6 +32,7 @@
+ #define UNSET_INT -1
+ #define UNSET_STR "\01"
+ 
++IfaceInfo iface[MAX_INTERFACES];
+ 
+ static int iface_count = 0;	/* number of interfaces */
+ static char unit_label[10] = "B";	/* default unit label is Bytes */

@@ -1,8 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2012/09/29 09:15:10 landry Exp $
+$OpenBSD: patch-configure,v 1.2 2021/02/20 01:14:03 sthen Exp $
+
 Fix packaging on hppa
---- configure.orig	Sat Sep 29 02:32:55 2012
-+++ configure	Sat Sep 29 02:33:12 2012
-@@ -6606,8 +6606,6 @@ _ACEOF
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -7025,8 +7025,6 @@ _ACEOF
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking module extension" >&5
  $as_echo_n "checking module extension... " >&6; }
  case $host in
