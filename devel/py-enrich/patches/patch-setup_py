@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2021/02/20 17:34:17 sthen Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -13,5 +13,5 @@ site.ENABLE_USER_SITE = "--user" in sys.argv[1:]
+ if __name__ == "__main__":
+     setuptools.setup(
+         use_scm_version={"local_scheme": "no-local-version"},
+-        setup_requires=["setuptools_scm[toml]>=3.5.0"],
++        setup_requires=["setuptools_scm[toml]"],
+     )
