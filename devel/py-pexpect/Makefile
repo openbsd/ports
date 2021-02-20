@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/20 21:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/02/20 21:48:10 sthen Exp $
 
 COMMENT=		pure Python Expect-like module
 
@@ -52,6 +52,6 @@ post-install:
 	cd ${WRKSRC}/doc/_build/html && pax -rw * ${DOCDIR}
 
 pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/python
+	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
