@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/03 14:07:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/20 15:01:21 abieber Exp $
 
 COMMENT =		controller for fleet, the distributed init system
 
 GH_PROJECT =		fleet
 GH_ACCOUNT =		coreos
 GH_TAGNAME =		v1.0.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 
@@ -20,7 +20,9 @@ BUILD_DEPENDS =		shells/bash
 NO_TEST =		Yes
 
 do-build:
-	cd ${WRKSRC} && env GOCACHE=${MODGO_GOCACHE} ${LOCALBASE}/bin/bash build
+	cd ${WRKSRC} && env GOCACHE=${MODGO_GOCACHE} \
+		GO111MODULE=off \
+		${LOCALBASE}/bin/bash build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/fleetctl ${PREFIX}/bin/
