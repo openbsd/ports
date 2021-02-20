@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1190 2021/02/19 22:51:43 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1191 2021/02/20 01:04:24 bcallah Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2120,6 +2120,7 @@ my $obsolete_reason = {
 	'enjoympeg' => 6,
 	'trac-ldapplugin' => 6,
 	'xboing' => 0,
+	'beaver' => 3,
 };
 
 # reasons for obsolete packages
