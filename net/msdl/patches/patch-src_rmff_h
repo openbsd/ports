@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_rmff_h,v 1.1 2021/02/20 20:34:58 tb Exp $
+
+Fix build with -fno-common
+
+Index: src/rmff.h
+--- src/rmff.h.orig
++++ src/rmff.h
+@@ -49,7 +49,7 @@ enum {
+     PN_SAVE_ENABLED         = 0x01,
+     PN_PERFECT_PLAY_ENABLED = 0x02,
+     PN_LIVE_BROADCAST       = 0x04,
+-} prop_flags;
++};
+ 
+ 
+ 

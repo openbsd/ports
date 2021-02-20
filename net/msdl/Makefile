@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/20 20:34:58 tb Exp $
 
 COMMENT =	download client for rtsp, mms and mmsh
 
 V =		1.2.7
 DISTNAME =	msdl-$V-r2
 PKGNAME =	${DISTNAME:S/-r/pl/}
+REVISION =	0
+
 CATEGORIES =	net
 
 HOMEPAGE =	http://msdl.sourceforge.net/

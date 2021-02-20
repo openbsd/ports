@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_asmrule_h,v 1.1 2021/02/20 20:34:58 tb Exp $
+
+Fix build with -fno-common
+
+Index: src/asmrule.h
+--- src/asmrule.h.orig
++++ src/asmrule.h
+@@ -53,7 +53,7 @@ enum {
+     S_LPAREN,
+     S_RPAREN,
+   
+-} symbols;
++};
+ 
+ 
+ 
+@@ -74,7 +74,7 @@ enum {
+     O_ID, /* $Bandwidth or $OLDfoobar */
+     O_NUM,
+   
+-} operators;
++};
+ 
+ 
+ struct c_desc { /* condetion_desc */

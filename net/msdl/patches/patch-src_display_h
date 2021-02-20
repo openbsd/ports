@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_display_h,v 1.1 2021/02/20 20:34:58 tb Exp $
+
+Fix build with -fno-common
+
+Index: src/display.h
+--- src/display.h.orig
++++ src/display.h
+@@ -73,7 +73,7 @@ enum {
+     C_MAGENTA,
+     C_CYAN,
+     NUM_COLORS,
+-} colors_available;
++};
+ 
+ 
+ 
+@@ -89,7 +89,7 @@ enum {
+     MSDL_DBG   = 3,     /* debug      */
+ 
+     MSDL_ERR = MSDL_NOR | MSDL_OUTPUT_ERR,
+-} display_flags;
++};
+ 
+ 
+ struct displayinfo_t {
