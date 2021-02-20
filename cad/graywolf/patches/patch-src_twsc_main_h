@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_twsc_main_h,v 1.1 2021/02/20 19:12:04 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/twsc/main.h
+--- src/twsc/main.h.orig
++++ src/twsc/main.h
+@@ -21,12 +21,11 @@ EXTERN char *cktNameG ;
+ 
+ EXTERN INT rowsG ;
+ EXTERN INT attmaxG ;
+-EXTERN INT maxCellOG ;
+ EXTERN INT iterationG ;
+ 
+ EXTERN INT blkxspanG ;
+ EXTERN INT blkyspanG ;
+-EXTERN INT ffeedsG ;
++extern INT ffeedsG ;
+ EXTERN INT lrtxspanG ;
+ EXTERN INT lrtyspanG ;
+ EXTERN INT ifrangeG ;
+@@ -38,7 +37,7 @@ EXTERN INT d_costG ;
+ EXTERN INT resume_runG ;
+ EXTERN INT implicit_pins_usedG ;
+ EXTERN INT rowHeightG ;
+-EXTERN INT fdthrusG ;
++extern INT fdthrusG ;
+ 
+ EXTERN DOUBLE TG ;
+ EXTERN DOUBLE imprangeG ;

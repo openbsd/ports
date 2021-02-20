@@ -1,0 +1,169 @@
+$OpenBSD: patch-src_mc_compact_readcgraph_c,v 1.1 2021/02/20 19:12:04 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/mc_compact/readcgraph.c
+--- src/mc_compact/readcgraph.c.orig
++++ src/mc_compact/readcgraph.c
+@@ -242,12 +242,12 @@ int yydebug;
+ int yynerrs;
+ int yyerrflag;
+ int yychar;
+-short *yyssp;
+-YYSTYPE *yyvsp;
++short *yyssp2;
++YYSTYPE *yyvsp2;
+ YYSTYPE yyval;
+ YYSTYPE yylval;
+-short yyss[YYSTACKSIZE];
+-YYSTYPE yyvs[YYSTACKSIZE];
++short yyss2[YYSTACKSIZE];
++YYSTYPE yyvs2[YYSTACKSIZE];
+ #define yystacksize YYSTACKSIZE
+ 
+ #include "readcgraph_l.h"
+@@ -313,9 +313,9 @@ yyparse()
+     yyerrflag = 0;
+     yychar = (-1);
+ 
+-    yyssp = yyss;
+-    yyvsp = yyvs;
+-    *yyssp = yystate = 0;
++    yyssp2 = yyss2;
++    yyvsp2 = yyvs2;
++    *yyssp2 = yystate = 0;
+ 
+ yyloop:
+     if (yyn = yydefred[yystate]) goto yyreduce;
+@@ -341,12 +341,12 @@ yyloop:
+             printf("yydebug: state %d, shifting to state %d\n",
+                     yystate, yytable[yyn]);
+ #endif
+-        if (yyssp >= yyss + yystacksize - 1)
++        if (yyssp2 >= yyss2 + yystacksize - 1)
+         {
+             goto yyoverflow;
+         }
+-        *++yyssp = yystate = yytable[yyn];
+-        *++yyvsp = yylval;
++        *++yyssp2 = yystate = yytable[yyn];
++        *++yyvsp2 = yylval;
+         yychar = (-1);
+         if (yyerrflag > 0)  --yyerrflag;
+         goto yyloop;
+@@ -416,20 +416,20 @@ yyinrecovery:
+         yyerrflag = 3;
+         for (;;)
+         {
+-            if ((yyn = yysindex[*yyssp]) && (yyn += YYERRCODE) >= 0 &&
++            if ((yyn = yysindex[*yyssp2]) && (yyn += YYERRCODE) >= 0 &&
+                     yyn <= YYTABLESIZE && yycheck[yyn] == YYERRCODE)
+             {
+ #if YYDEBUG
+                 if (yydebug)
+                     printf("yydebug: state %d, error recovery shifting\
+- to state %d\n", *yyssp, yytable[yyn]);
++ to state %d\n", *yyssp2, yytable[yyn]);
+ #endif
+-                if (yyssp >= yyss + yystacksize - 1)
++                if (yyssp2 >= yyss2 + yystacksize - 1)
+                 {
+                     goto yyoverflow;
+                 }
+-                *++yyssp = yystate = yytable[yyn];
+-                *++yyvsp = yylval;
++                *++yyssp2 = yystate = yytable[yyn];
++                *++yyvsp2 = yylval;
+                 goto yyloop;
+             }
+             else
+@@ -437,11 +437,11 @@ yyinrecovery:
+ #if YYDEBUG
+                 if (yydebug)
+                     printf("yydebug: error recovery discarding state %d\n",
+-                            *yyssp);
++                            *yyssp2);
+ #endif
+-                if (yyssp <= yyss) goto yyabort;
+-                --yyssp;
+-                --yyvsp;
++                if (yyssp2 <= yyss2) goto yyabort;
++                --yyssp2;
++                --yyvsp2;
+             }
+         }
+     }
+@@ -468,33 +468,33 @@ yyreduce:
+                 yystate, yyn, yyrule[yyn]);
+ #endif
+     yym = yylen[yyn];
+-    yyval = yyvsp[1-yym];
++    yyval = yyvsp2[1-yym];
+     switch (yyn)
+     {
+ case 2:
+ {
+-			init_graph( yyvsp[-3].ival, yyvsp[0].ival ) ;
++			init_graph( yyvsp2[-3].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 6:
+ {
+ 			/* node:1 x:2 y:4 l:0 r:9 b:0 t:8 */
+ 			/* node number, center and size */
+-			nodeS = yyvsp[-18].ival ;
+-			addNode( yyvsp[-18].ival, yyvsp[-15].ival, yyvsp[-12].ival ) ;
++			nodeS = yyvsp2[-18].ival ;
++			addNode( yyvsp2[-18].ival, yyvsp2[-15].ival, yyvsp2[-12].ival ) ;
+ 		    }
+ break;
+ case 9:
+ { 
+ /* ex.  adj node:2 len:32 cap:14 l:-89 r:-63 b:0 t:6 HnotV:1 lb:0 rt:0 */
+-			addEdge( nodeS, yyvsp[-27].ival,     /* nodeS, node */
+-			    yyvsp[-6].ival, yyvsp[-3].ival, yyvsp[0].ival ) ;/* HnotV, lbcell, rtcelll */
++			addEdge( nodeS, yyvsp2[-27].ival,     /* nodeS, node */
++			    yyvsp2[-6].ival, yyvsp2[-3].ival, yyvsp2[0].ival ) ;/* HnotV, lbcell, rtcelll */
+ 		    }
+ break;
+     }
+-    yyssp -= yym;
+-    yystate = *yyssp;
+-    yyvsp -= yym;
++    yyssp2 -= yym;
++    yystate = *yyssp2;
++    yyvsp2 -= yym;
+     yym = yylhs[yyn];
+     if (yystate == 0 && yym == 0)
+     {
+@@ -504,8 +504,8 @@ break;
+  state %d\n", YYFINAL);
+ #endif
+         yystate = YYFINAL;
+-        *++yyssp = YYFINAL;
+-        *++yyvsp = yyval;
++        *++yyssp2 = YYFINAL;
++        *++yyvsp2 = yyval;
+         if (yychar < 0)
+         {
+             if ((yychar = yylex()) < 0) yychar = 0;
+@@ -531,14 +531,14 @@ break;
+ #if YYDEBUG
+     if (yydebug)
+         printf("yydebug: after reduction, shifting from state %d \
+-to state %d\n", *yyssp, yystate);
++to state %d\n", *yyssp2, yystate);
+ #endif
+-    if (yyssp >= yyss + yystacksize - 1)
++    if (yyssp2 >= yyss2 + yystacksize - 1)
+     {
+         goto yyoverflow;
+     }
+-    *++yyssp = yystate;
+-    *++yyvsp = yyval;
++    *++yyssp2 = yystate;
++    *++yyvsp2 = yyval;
+     goto yyloop;
+ yyoverflow:
+     yyerror("yacc stack overflow");

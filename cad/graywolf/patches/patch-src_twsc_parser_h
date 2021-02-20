@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_twsc_parser_h,v 1.1 2021/02/20 19:12:04 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/twsc/parser.h
+--- src/twsc/parser.h.orig
++++ src/twsc/parser.h
+@@ -32,7 +32,6 @@ REVISIONS:  
+ EXTERN SWAPBOX *swap_group_listG ;
+ EXTERN BOOL one_pin_feedthruG ;
+ 
+-EXTERN INT maxCellOG ;
+ EXTERN INT case_unequiv_pinG ;
+ EXTERN INT celllenG ;
+ EXTERN INT cells_per_clusterG ;

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_twsc_parser_c,v 1.1 2021/02/20 19:12:04 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/twsc/parser.c
+--- src/twsc/parser.c.orig
++++ src/twsc/parser.c
+@@ -111,6 +111,8 @@ REVISIONS:  Mon Nov 19 04:04:18 EST 1990 - added tempe
+ INT ECOs_existG = 0 ;
+ INT orig_max_row_lengthG ;
+ 
++extern INT maxCellOG ;
++
+ extern INT totalRG ;
+ extern INT spacer_widthG ;
+ extern INT *spacer_feedsG ;

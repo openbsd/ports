@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_twsc_groute_h,v 1.1 2021/02/20 19:12:04 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/twsc/groute.h
+--- src/twsc/groute.h.orig
++++ src/twsc/groute.h
+@@ -112,7 +112,7 @@ EXTERN SEGBOXPTR *netsegHeadG ;
+ EXTERN SEGBOXPTR *netsegTailG ;
+ EXTERN DOUBLE mean_widthG ;
+ EXTERN INT **pairArrayG ;
+-EXTERN INT numnetsG ;
++extern INT numnetsG ;
+ EXTERN INT numSegsG ;
+ EXTERN INT numSwSegsG ;
+ EXTERN INT tracksG ;
+@@ -124,12 +124,13 @@ EXTERN INT gxstopG ;
+ EXTERN INT blkleftG , blkriteG ;
+ EXTERN INT gtopChanG , gbotChanG ;
+ EXTERN INT uneven_cell_heightG ;
+-EXTERN INT ffeedsG , track_pitchG ;
++extern INT ffeedsG ;
++extern INT track_pitchG ;
+ 
+-EXTERN INT fdthrusG ; 
++extern INT fdthrusG ; 
+ EXTERN INT chan_node_noG ;
+-EXTERN INT enough_built_in_feedG ;
+-EXTERN INT *FeedInRowG ;
++extern INT enough_built_in_feedG ;
++extern INT *FeedInRowG ;
+ EXTERN INT blk_most_leftG ;
+ EXTERN INT blk_most_riteG ;
+ EXTERN INT *row_rite_classG ;

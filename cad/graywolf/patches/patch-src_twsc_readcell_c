@@ -1,0 +1,418 @@
+$OpenBSD: patch-src_twsc_readcell_c,v 1.1 2021/02/20 19:12:04 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/twsc/readcell.c
+--- src/twsc/readcell.c.orig
++++ src/twsc/readcell.c
+@@ -654,12 +654,12 @@ int yydebug;
+ int yynerrs;
+ int yyerrflag;
+ int yychar;
+-short *yyssp;
+-YYSTYPE *yyvsp;
++short *yyssp2;
++YYSTYPE *yyvsp2;
+ YYSTYPE yyval;
+ YYSTYPE yylval;
+-short yyss[YYSTACKSIZE];
+-YYSTYPE yyvs[YYSTACKSIZE];
++short yyss2[YYSTACKSIZE];
++YYSTYPE yyvs2[YYSTACKSIZE];
+ #define yystacksize YYSTACKSIZE
+ 
+ #include "readcell_l.h"
+@@ -727,9 +727,9 @@ yyparse()
+     yyerrflag = 0;
+     yychar = (-1);
+ 
+-    yyssp = yyss;
+-    yyvsp = yyvs;
+-    *yyssp = yystate = 0;
++    yyssp2 = yyss2;
++    yyvsp2 = yyvs2;
++    *yyssp2 = yystate = 0;
+ 
+ yyloop:
+     if (yyn = yydefred[yystate]) goto yyreduce;
+@@ -755,12 +755,12 @@ yyloop:
+             printf("yydebug: state %d, shifting to state %d\n",
+                     yystate, yytable[yyn]);
+ #endif
+-        if (yyssp >= yyss + yystacksize - 1)
++        if (yyssp2 >= yyss2 + yystacksize - 1)
+         {
+             goto yyoverflow;
+         }
+-        *++yyssp = yystate = yytable[yyn];
+-        *++yyvsp = yylval;
++        *++yyssp2 = yystate = yytable[yyn];
++        *++yyvsp2 = yylval;
+         yychar = (-1);
+         if (yyerrflag > 0)  --yyerrflag;
+         goto yyloop;
+@@ -830,20 +830,20 @@ yyinrecovery:
+         yyerrflag = 3;
+         for (;;)
+         {
+-            if ((yyn = yysindex[*yyssp]) && (yyn += YYERRCODE) >= 0 &&
++            if ((yyn = yysindex[*yyssp2]) && (yyn += YYERRCODE) >= 0 &&
+                     yyn <= YYTABLESIZE && yycheck[yyn] == YYERRCODE)
+             {
+ #if YYDEBUG
+                 if (yydebug)
+                     printf("yydebug: state %d, error recovery shifting\
+- to state %d\n", *yyssp, yytable[yyn]);
++ to state %d\n", *yyssp2, yytable[yyn]);
+ #endif
+-                if (yyssp >= yyss + yystacksize - 1)
++                if (yyssp2 >= yyss2 + yystacksize - 1)
+                 {
+                     goto yyoverflow;
+                 }
+-                *++yyssp = yystate = yytable[yyn];
+-                *++yyvsp = yylval;
++                *++yyssp2 = yystate = yytable[yyn];
++                *++yyvsp2 = yylval;
+                 goto yyloop;
+             }
+             else
+@@ -851,11 +851,11 @@ yyinrecovery:
+ #if YYDEBUG
+                 if (yydebug)
+                     printf("yydebug: error recovery discarding state %d\n",
+-                            *yyssp);
++                            *yyssp2);
+ #endif
+-                if (yyssp <= yyss) goto yyabort;
+-                --yyssp;
+-                --yyvsp;
++                if (yyssp2 <= yyss2) goto yyabort;
++                --yyssp2;
++                --yyvsp2;
+             }
+         }
+     }
+@@ -882,7 +882,7 @@ yyreduce:
+                 yystate, yyn, yyrule[yyn]);
+ #endif
+     yym = yylen[yyn];
+-    yyval = yyvsp[1-yym];
++    yyval = yyvsp2[1-yym];
+     switch (yyn)
+     {
+ case 6:
+@@ -905,7 +905,7 @@ case 37:
+ break;
+ case 43:
+ {
+-			Ysafe_free( yyvsp[0].string ) ;
++			Ysafe_free( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 48:
+@@ -915,33 +915,33 @@ case 48:
+ break;
+ case 51:
+ {
+-			addCell( yyvsp[0].string, HARDCELLTYPE ) ;
++			addCell( yyvsp2[0].string, HARDCELLTYPE ) ;
+ 		    }
+ break;
+ case 52:
+ {
+ 			not_supported("softcells") ;
+-			Ysafe_free( yyvsp[0].string ) ;
++			Ysafe_free( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 53:
+ {
+-			addCell( yyvsp[0].string, STDCELLTYPE ) ;
++			addCell( yyvsp2[0].string, STDCELLTYPE ) ;
+ 		    }
+ break;
+ case 60:
+ {
+-		         fix_placement( yyvsp[-6].string, yyvsp[-5].ival, yyvsp[-3].string, yyvsp[0].ival ) ; 
++		         fix_placement( yyvsp2[-6].string, yyvsp2[-5].ival, yyvsp2[-3].string, yyvsp2[0].ival ) ; 
+ 		    }
+ break;
+ case 61:
+ {
+-			add_swap_group( yyvsp[0].string ) ;
++			add_swap_group( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 66:
+ {
+-		        add_legal_blocks( yyvsp[0].ival ) ;
++		        add_legal_blocks( yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 67:
+@@ -951,7 +951,7 @@ case 67:
+ break;
+ case 68:
+ {
+-			add_initial_orient( yyvsp[0].ival ) ;
++			add_initial_orient( yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 72:
+@@ -991,58 +991,58 @@ case 78:
+ break;
+ case 79:
+ {
+-		        add_tile( yyvsp[-6].ival, yyvsp[-2].ival, yyvsp[-4].ival, yyvsp[0].ival ) ;
++		        add_tile( yyvsp2[-6].ival, yyvsp2[-2].ival, yyvsp2[-4].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 80:
+ {
+-		        yyval.string = yyvsp[0].string;
++		        yyval.string = yyvsp2[0].string;
+ 		    }
+ break;
+ case 81:
+ {
+-		        yyval.string = yyvsp[0].string;
++		        yyval.string = yyvsp2[0].string;
+ 		    }
+ break;
+ case 82:
+ { 
+-			addCell( yyvsp[0].string, PADTYPE ) ;
++			addCell( yyvsp2[0].string, PADTYPE ) ;
+ 		    }
+ break;
+ case 83:
+ {
+-			addCell( yyvsp[-2].string, PADTYPE ) ;
+-			add_orient(yyvsp[0].ival);
++			addCell( yyvsp2[-2].string, PADTYPE ) ;
++			add_orient(yyvsp2[0].ival);
+ 		    }
+ break;
+ case 84:
+ {
+-		        add_padside( yyvsp[0].string ) ;
+-			set_old_format( yyvsp[0].string ) ;
++		        add_padside( yyvsp2[0].string ) ;
++			set_old_format( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 85:
+ {
+-			addCell( yyvsp[-1].string, PADGROUPTYPE ) ;
++			addCell( yyvsp2[-1].string, PADGROUPTYPE ) ;
+ 			setPermutation( TRUE ) ;
+ 			add_tile( 0,0,0,0 ) ;
+ 		    }
+ break;
+ case 86:
+ {
+-			addCell( yyvsp[-1].string, PADGROUPTYPE ) ;
++			addCell( yyvsp2[-1].string, PADGROUPTYPE ) ;
+ 			setPermutation( FALSE ) ;
+ 			add_tile( 0,0,0,0 ) ;
+ 		    }
+ break;
+ case 87:
+ {
+-			Ysafe_free( yyvsp[0].string ) ;
++			Ysafe_free( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 88:
+ {
+-			Ysafe_free( yyvsp[0].string ) ;
++			Ysafe_free( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 89:
+@@ -1057,12 +1057,12 @@ case 90:
+ break;
+ case 93:
+ {
+-			add_corner( yyvsp[-1].ival, yyvsp[0].ival ) ;
++			add_corner( yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+                     }
+ break;
+ case 96:
+ {
+-			add_orient(yyvsp[0].ival);
++			add_orient(yyvsp2[0].ival);
+ 		    }
+ break;
+ case 124:
+@@ -1082,99 +1082,99 @@ case 132:
+ break;
+ case 133:
+ {
+-			add_pin( yyvsp[-6].string, yyvsp[-4].string, yyvsp[-2].ival, yyvsp[-1].ival, yyvsp[0].ival ) ;
++			add_pin( yyvsp2[-6].string, yyvsp2[-4].string, yyvsp2[-2].ival, yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 134:
+ {
+-			add_pin( yyvsp[-4].string, yyvsp[-2].string, 0, yyvsp[-1].ival, yyvsp[0].ival ) ;
++			add_pin( yyvsp2[-4].string, yyvsp2[-2].string, 0, yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 137:
+ {
+-		        add_equiv( yyvsp[-4].string, yyvsp[-2].ival, yyvsp[-1].ival, yyvsp[0].ival, FALSE ) ; 
++		        add_equiv( yyvsp2[-4].string, yyvsp2[-2].ival, yyvsp2[-1].ival, yyvsp2[0].ival, FALSE ) ; 
+ 		    }
+ break;
+ case 138:
+ {
+-			add_equiv( yyvsp[-2].string, 0, yyvsp[-1].ival, yyvsp[0].ival, FALSE ) ; 
++			add_equiv( yyvsp2[-2].string, 0, yyvsp2[-1].ival, yyvsp2[0].ival, FALSE ) ; 
+ 		    }
+ break;
+ case 141:
+ {
+-			add_equiv( yyvsp[-4].string, yyvsp[-2].ival, yyvsp[-1].ival, yyvsp[0].ival, TRUE ) ; 
++			add_equiv( yyvsp2[-4].string, yyvsp2[-2].ival, yyvsp2[-1].ival, yyvsp2[0].ival, TRUE ) ; 
+ 		    }
+ break;
+ case 142:
+ {
+-			add_equiv( yyvsp[-2].string, 0, yyvsp[-1].ival, yyvsp[0].ival, TRUE ) ; 
++			add_equiv( yyvsp2[-2].string, 0, yyvsp2[-1].ival, yyvsp2[0].ival, TRUE ) ; 
+ 		    }
+ break;
+ case 145:
+ {
+-			add_port( yyvsp[-6].string, yyvsp[-4].string, yyvsp[-2].ival, yyvsp[-1].ival, yyvsp[0].ival ) ;
++			add_port( yyvsp2[-6].string, yyvsp2[-4].string, yyvsp2[-2].ival, yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 146:
+ {
+-			add_port( yyvsp[-4].string, yyvsp[-2].string, 0, yyvsp[-1].ival, yyvsp[0].ival ) ;
++			add_port( yyvsp2[-4].string, yyvsp2[-2].string, 0, yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 149:
+ {
+-		        add_sidespace( yyvsp[0].fval, yyvsp[0].fval );
++		        add_sidespace( yyvsp2[0].fval, yyvsp2[0].fval );
+                     }
+ break;
+ case 150:
+ {
+-		        add_sidespace( yyvsp[-1].fval, yyvsp[0].fval );
++		        add_sidespace( yyvsp2[-1].fval, yyvsp2[0].fval );
+                     }
+ break;
+ case 155:
+ {
+-			add_padside( yyvsp[0].string ) ;
++			add_padside( yyvsp2[0].string ) ;
+                     }
+ break;
+ case 158:
+ {
+-			add2padgroup( yyvsp[-1].string, TRUE ) ; /* fixed */
++			add2padgroup( yyvsp2[-1].string, TRUE ) ; /* fixed */
+ 		    }
+ break;
+ case 159:
+ {
+-			add2padgroup( yyvsp[-1].string, FALSE ) ; /* nonfixed */
++			add2padgroup( yyvsp2[-1].string, FALSE ) ; /* nonfixed */
+ 		    }
+ break;
+ case 160:
+ {
+-			Ysafe_free( yyvsp[0].string ) ;
++			Ysafe_free( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 161:
+ {
+-			Ysafe_free( yyvsp[0].string ) ;
++			Ysafe_free( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 162:
+ {
+-			Ysafe_free( yyvsp[0].string ) ;
++			Ysafe_free( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 163:
+ {
+-			Ysafe_free( yyvsp[0].string ) ;
++			Ysafe_free( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 164:
+ { 
+-			yyval.string = yyvsp[0].string ;	
++			yyval.string = yyvsp2[0].string ;	
+ 		    }
+ break;
+ case 165:
+ {
+ 			/* convert integer to string */
+ 			/* this allows integers to be used as strings */
+-			sprintf( bufferS,"%d", yyvsp[0].ival ) ;
++			sprintf( bufferS,"%d", yyvsp2[0].ival ) ;
+ 			/* now clone string */
+ 			yyval.string = Ystrclone( bufferS ) ;
+ 		    }
+@@ -1183,15 +1183,15 @@ case 166:
+ {
+ 			/* convert float to string */
+ 			/* this allows floats to be used as strings */
+-			sprintf( bufferS,"%f", yyvsp[0].fval ) ;
++			sprintf( bufferS,"%f", yyvsp2[0].fval ) ;
+ 			/* now clone string */
+ 			yyval.string = Ystrclone( bufferS ) ;
+ 		    }
+ break;
+     }
+-    yyssp -= yym;
+-    yystate = *yyssp;
+-    yyvsp -= yym;
++    yyssp2 -= yym;
++    yystate = *yyssp2;
++    yyvsp2 -= yym;
+     yym = yylhs[yyn];
+     if (yystate == 0 && yym == 0)
+     {
+@@ -1201,8 +1201,8 @@ break;
+  state %d\n", YYFINAL);
+ #endif
+         yystate = YYFINAL;
+-        *++yyssp = YYFINAL;
+-        *++yyvsp = yyval;
++        *++yyssp2 = YYFINAL;
++        *++yyvsp2 = yyval;
+         if (yychar < 0)
+         {
+             if ((yychar = yylex()) < 0) yychar = 0;
+@@ -1228,14 +1228,14 @@ break;
+ #if YYDEBUG
+     if (yydebug)
+         printf("yydebug: after reduction, shifting from state %d \
+-to state %d\n", *yyssp, yystate);
++to state %d\n", *yyssp2, yystate);
+ #endif
+-    if (yyssp >= yyss + yystacksize - 1)
++    if (yyssp2 >= yyss2 + yystacksize - 1)
+     {
+         goto yyoverflow;
+     }
+-    *++yyssp = yystate;
+-    *++yyvsp = yyval;
++    *++yyssp2 = yystate;
++    *++yyvsp2 = yyval;
+     goto yyloop;
+ yyoverflow:
+     yyerror("yacc stack overflow");

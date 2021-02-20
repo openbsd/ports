@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_twsc_standard_h,v 1.1 2021/02/20 19:12:05 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/twsc/standard.h
+--- src/twsc/standard.h.orig
++++ src/twsc/standard.h
+@@ -304,7 +304,7 @@ EXTERN DOUBLE vertical_wire_weightG ;
+ /* the configuration */
+ EXTERN INT numcellsG ;
+ EXTERN INT numtermsG ;
+-EXTERN INT numnetsG ;
++extern INT numnetsG ;
+ EXTERN INT numpadgrpsG ;
+ EXTERN INT lastpadG ;
+ EXTERN INT maxtermG ;

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_twsc_config_h,v 1.1 2021/02/20 19:12:04 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/twsc/config.h
+--- src/twsc/config.h.orig
++++ src/twsc/config.h
+@@ -34,7 +34,7 @@ EXTERN ROWBOX *rowArrayG ;
+ 
+ EXTERN INT max_blklengthG ;
+ EXTERN INT route2actG;   /* added for placement adjusted for routing */
+-EXTERN INT track_pitchG; /* used only if global routing is performed */
++extern INT track_pitchG; /* used only if global routing is performed */
+ EXTERN INT gridCellG;    /* used only if global routing is performed */
+ EXTERN INT desiredLG ;
+ EXTERN DOUBLE *macspaceG ;

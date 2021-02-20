@@ -1,0 +1,512 @@
+$OpenBSD: patch-src_twmc_readcells_c,v 1.1 2021/02/20 19:12:04 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/twmc/readcells.c
+--- src/twmc/readcells.c.orig
++++ src/twmc/readcells.c
+@@ -741,12 +741,12 @@ int yydebug;
+ int yynerrs;
+ int yyerrflag;
+ int yychar;
+-short *yyssp;
+-YYSTYPE *yyvsp;
++short *yyssp2;
++YYSTYPE *yyvsp2;
+ YYSTYPE yyval;
+ YYSTYPE yylval;
+-short yyss[YYSTACKSIZE];
+-YYSTYPE yyvs[YYSTACKSIZE];
++short yyss2[YYSTACKSIZE];
++YYSTYPE yyvs2[YYSTACKSIZE];
+ #define yystacksize YYSTACKSIZE
+ 
+ #include "readcells_l.h"
+@@ -810,9 +810,9 @@ yyparse()
+     yyerrflag = 0;
+     yychar = (-1);
+ 
+-    yyssp = yyss;
+-    yyvsp = yyvs;
+-    *yyssp = yystate = 0;
++    yyssp2 = yyss2;
++    yyvsp2 = yyvs2;
++    *yyssp2 = yystate = 0;
+ 
+ yyloop:
+     if (yyn = yydefred[yystate]) goto yyreduce;
+@@ -838,12 +838,12 @@ yyloop:
+             printf("yydebug: state %d, shifting to state %d\n",
+                     yystate, yytable[yyn]);
+ #endif
+-        if (yyssp >= yyss + yystacksize - 1)
++        if (yyssp2 >= yyss2 + yystacksize - 1)
+         {
+             goto yyoverflow;
+         }
+-        *++yyssp = yystate = yytable[yyn];
+-        *++yyvsp = yylval;
++        *++yyssp2 = yystate = yytable[yyn];
++        *++yyvsp2 = yylval;
+         yychar = (-1);
+         if (yyerrflag > 0)  --yyerrflag;
+         goto yyloop;
+@@ -963,20 +963,20 @@ yyinrecovery:
+         yyerrflag = 3;
+         for (;;)
+         {
+-            if ((yyn = yysindex[*yyssp]) && (yyn += YYERRCODE) >= 0 &&
++            if ((yyn = yysindex[*yyssp2]) && (yyn += YYERRCODE) >= 0 &&
+                     yyn <= YYTABLESIZE && yycheck[yyn] == YYERRCODE)
+             {
+ #if YYDEBUG
+                 if (yydebug)
+                     printf("yydebug: state %d, error recovery shifting\
+- to state %d\n", *yyssp, yytable[yyn]);
++ to state %d\n", *yyssp2, yytable[yyn]);
+ #endif
+-                if (yyssp >= yyss + yystacksize - 1)
++                if (yyssp2 >= yyss2 + yystacksize - 1)
+                 {
+                     goto yyoverflow;
+                 }
+-                *++yyssp = yystate = yytable[yyn];
+-                *++yyvsp = yylval;
++                *++yyssp2 = yystate = yytable[yyn];
++                *++yyvsp2 = yylval;
+                 goto yyloop;
+             }
+             else
+@@ -984,11 +984,11 @@ yyinrecovery:
+ #if YYDEBUG
+                 if (yydebug)
+                     printf("yydebug: error recovery discarding state %d\n",
+-                            *yyssp);
++                            *yyssp2);
+ #endif
+-                if (yyssp <= yyss) goto yyabort;
+-                --yyssp;
+-                --yyvsp;
++                if (yyssp2 <= yyss2) goto yyabort;
++                --yyssp2;
++                --yyvsp2;
+             }
+         }
+     }
+@@ -1015,7 +1015,7 @@ yyreduce:
+                 yystate, yyn, yyrule[yyn]);
+ #endif
+     yym = yylen[yyn];
+-    yyval = yyvsp[1-yym];
++    yyval = yyvsp2[1-yym];
+     switch (yyn)
+     {
+ case 7:
+@@ -1077,7 +1077,7 @@ break;
+ case 30:
+ {    
+ 			endCell() ;
+-			add_instance( yyvsp[0].string ) ;
++			add_instance( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 32:
+@@ -1090,25 +1090,25 @@ case 32:
+ break;
+ case 36:
+ {
+-			addCell( yyvsp[0].string, CUSTOMCELLTYPE ) ;
++			addCell( yyvsp2[0].string, CUSTOMCELLTYPE ) ;
+ 		    }
+ break;
+ case 38:
+ {
+-			addCell( yyvsp[0].string, SOFTCELLTYPE ) ;
++			addCell( yyvsp2[0].string, SOFTCELLTYPE ) ;
+ 		    }
+ break;
+ case 39:
+ {
+-			addCell( yyvsp[0].string, STDCELLTYPE ) ;
++			addCell( yyvsp2[0].string, STDCELLTYPE ) ;
+ 		    }
+ break;
+ case 41:
+ {
+ 			/* group neighborhood is free to move */
+ 			/* we use fixCell to build group box */
+-			fixCell( GROUPFLAG, yyvsp[-11].ival, yyvsp[-9].string, yyvsp[-8].ival, yyvsp[-6].string, 
+-			    yyvsp[-5].ival, yyvsp[-3].string, yyvsp[-2].ival, yyvsp[0].string  ) ;
++			fixCell( GROUPFLAG, yyvsp2[-11].ival, yyvsp2[-9].string, yyvsp2[-8].ival, yyvsp2[-6].string, 
++			    yyvsp2[-5].ival, yyvsp2[-3].string, yyvsp2[-2].ival, yyvsp2[0].string  ) ;
+ 			addClass( --unique_classG ) ;
+ 		    }
+ break;
+@@ -1116,8 +1116,8 @@ case 42:
+ {
+ 			/* group neighborhood is fixed */
+ 			/* we use fixCell to build group box */
+-			fixCell( FIXEDGROUPFLAG, yyvsp[-11].ival, yyvsp[-9].string, yyvsp[-8].ival, yyvsp[-6].string, 
+-			    yyvsp[-5].ival, yyvsp[-3].string, yyvsp[-2].ival, yyvsp[0].string  ) ;
++			fixCell( FIXEDGROUPFLAG, yyvsp2[-11].ival, yyvsp2[-9].string, yyvsp2[-8].ival, yyvsp2[-6].string, 
++			    yyvsp2[-5].ival, yyvsp2[-3].string, yyvsp2[-2].ival, yyvsp2[0].string  ) ;
+ 			addClass( --unique_classG ) ;
+ 			
+ 		    }
+@@ -1125,7 +1125,7 @@ break;
+ case 43:
+ {
+ 			/* cell is fixed at a point */
+-			fixCell( POINTFLAG, yyvsp[-5].ival, yyvsp[-3].string, yyvsp[-2].ival, yyvsp[0].string,
++			fixCell( POINTFLAG, yyvsp2[-5].ival, yyvsp2[-3].string, yyvsp2[-2].ival, yyvsp2[0].string,
+ 			    0, "L", 0, "B" ) ;
+ 			addClass( --unique_classG ) ;
+ 		    }
+@@ -1133,93 +1133,93 @@ break;
+ case 44:
+ {
+ 			/* cell is fixed within a fixed neighborhood */
+-			fixCell( NEIGHBORHOODFLAG, yyvsp[-11].ival, yyvsp[-9].string, yyvsp[-8].ival, yyvsp[-6].string, 
+-			    yyvsp[-5].ival, yyvsp[-3].string, yyvsp[-2].ival, yyvsp[0].string  ) ;
++			fixCell( NEIGHBORHOODFLAG, yyvsp2[-11].ival, yyvsp2[-9].string, yyvsp2[-8].ival, yyvsp2[-6].string, 
++			    yyvsp2[-5].ival, yyvsp2[-3].string, yyvsp2[-2].ival, yyvsp2[0].string  ) ;
+ 			addClass( --unique_classG ) ;
+ 		    }
+ break;
+ case 46:
+ {
+-			yyval.string = yyvsp[0].string ;
++			yyval.string = yyvsp2[0].string ;
+ 		    }
+ break;
+ case 47:
+ {
+-			yyval.string = yyvsp[0].string ;
++			yyval.string = yyvsp2[0].string ;
+ 		    }
+ break;
+ case 48:
+ { 
+-			addCell( yyvsp[0].string, PADCELLTYPE ) ;
++			addCell( yyvsp2[0].string, PADCELLTYPE ) ;
+ 		    }
+ break;
+ case 49:
+ {
+-			addCell( yyvsp[-1].string, PADGROUPTYPE ) ;
++			addCell( yyvsp2[-1].string, PADGROUPTYPE ) ;
+ 			setPermutation( TRUE ) ;
+ 		    }
+ break;
+ case 50:
+ {
+-			addCell( yyvsp[-1].string, PADGROUPTYPE ) ;
++			addCell( yyvsp2[-1].string, PADGROUPTYPE ) ;
+ 			setPermutation( FALSE ) ;
+ 		    }
+ break;
+ case 52:
+ {
+-			addCell( yyvsp[0].string, SUPERCELLTYPE ) ;
++			addCell( yyvsp2[0].string, SUPERCELLTYPE ) ;
+ 			/* initSuperGroup() ; */
+ 		    }
+ break;
+ case 54:
+ {
+-			addCell( yyvsp[0].string, GROUPCELLTYPE ) ;
++			addCell( yyvsp2[0].string, GROUPCELLTYPE ) ;
+ 		    }
+ break;
+ case 56:
+ {
+-			processCorners( yyvsp[-1].ival ) ;
++			processCorners( yyvsp2[-1].ival ) ;
+ 		    }
+ break;
+ case 57:
+ {
+-			yyval.ival = yyvsp[0].ival ;
++			yyval.ival = yyvsp2[0].ival ;
+ 		    }
+ break;
+ case 58:
+ {
+-			addCorner( yyvsp[-1].ival, yyvsp[0].ival ) ;
++			addCorner( yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 59:
+ {
+-			addCorner( yyvsp[-1].ival, yyvsp[0].ival ) ;
++			addCorner( yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 60:
+ {
+-			addClass( yyvsp[0].ival ) ;
++			addClass( yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 65:
+ {
+ 			/* first in the list is the initial orientation */
+-			initOrient( yyvsp[0].ival ) ;
++			initOrient( yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 66:
+ {
+-			addOrient( yyvsp[0].ival ) ;
++			addOrient( yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 68:
+ {
+-			set_cur_orient( yyvsp[0].ival ) ;
++			set_cur_orient( yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 69:
+ {
+-			addAspectBounds( yyvsp[-2].fval, yyvsp[0].fval ) ;
++			addAspectBounds( yyvsp2[-2].fval, yyvsp2[0].fval ) ;
+ 		    }
+ break;
+ case 70:
+@@ -1234,37 +1234,37 @@ case 79:
+ break;
+ case 80:
+ {
+-			addPin( yyvsp[-3].string, yyvsp[-1].string, yyvsp[0].ival, HARDPINTYPE ) ;
++			addPin( yyvsp2[-3].string, yyvsp2[-1].string, yyvsp2[0].ival, HARDPINTYPE ) ;
+ 		    }
+ break;
+ case 81:
+ {
+-			set_pin_pos( yyvsp[-1].ival, yyvsp[0].ival ) ;
++			set_pin_pos( yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 83:
+ {
+-			add_analog( yyvsp[0].ival ) ;
++			add_analog( yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 84:
+ {
+-			add_pin_contour( yyvsp[-1].ival, yyvsp[0].ival ) ;
++			add_pin_contour( yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 85:
+ {
+-			add_pin_contour( yyvsp[-1].ival, yyvsp[0].ival ) ;
++			add_pin_contour( yyvsp2[-1].ival, yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 87:
+ {
+-			add_current( yyvsp[0].fval ) ;
++			add_current( yyvsp2[0].fval ) ;
+ 		    }
+ break;
+ case 89:
+ {
+-			add_power( yyvsp[0].fval ) ;
++			add_power( yyvsp2[0].fval ) ;
+ 		    }
+ break;
+ case 91:
+@@ -1274,7 +1274,7 @@ case 91:
+ break;
+ case 94:
+ {
+-			addPin( yyvsp[-4].string, yyvsp[-2].string, yyvsp[-1].ival, SOFTPINTYPE ) ;
++			addPin( yyvsp2[-4].string, yyvsp2[-2].string, yyvsp2[-1].ival, SOFTPINTYPE ) ;
+ 			set_restrict_type( SOFTPINTYPE ) ;
+ 		    }
+ break;
+@@ -1292,7 +1292,7 @@ case 99:
+ break;
+ case 103:
+ {
+-			addPin( yyvsp[-1].string, NULL, yyvsp[0].ival, SOFTEQUIVTYPE ) ;
++			addPin( yyvsp2[-1].string, NULL, yyvsp2[0].ival, SOFTEQUIVTYPE ) ;
+ 		    }
+ break;
+ case 104:
+@@ -1304,94 +1304,94 @@ break;
+ case 108:
+ {
+ 			set_restrict_type( PINGROUPTYPE ) ;
+-			start_pin_group( yyvsp[-1].string, TRUE ) ;
++			start_pin_group( yyvsp2[-1].string, TRUE ) ;
+ 		    }
+ break;
+ case 109:
+ {
+ 			set_restrict_type( PINGROUPTYPE ) ;
+-			start_pin_group( yyvsp[-1].string, FALSE ) ;
++			start_pin_group( yyvsp2[-1].string, FALSE ) ;
+ 		    }
+ break;
+ case 112:
+ {
+-			add2pingroup( yyvsp[-1].string, TRUE ) ; /* fixed */
++			add2pingroup( yyvsp2[-1].string, TRUE ) ; /* fixed */
+ 		    }
+ break;
+ case 113:
+ {
+-			add2pingroup( yyvsp[-1].string, FALSE ) ; /* nonfixed */
++			add2pingroup( yyvsp2[-1].string, FALSE ) ; /* nonfixed */
+ 		    }
+ break;
+ case 116:
+ {
+-			addEquivPin( yyvsp[-3].string, yyvsp[-2].ival, yyvsp[-1].ival, yyvsp[0].ival, HARDPINTYPE ) ;
++			addEquivPin( yyvsp2[-3].string, yyvsp2[-2].ival, yyvsp2[-1].ival, yyvsp2[0].ival, HARDPINTYPE ) ;
+ 		    }
+ break;
+ case 117:
+ { /* default any layer */ yyval.ival = 0 ; }
+ break;
+ case 118:
+-{ yyval.ival = yyvsp[0].ival ; }
++{ yyval.ival = yyvsp2[0].ival ; }
+ break;
+ case 121:
+ {
+-			addSideRestriction( yyvsp[0].ival ) ;
++			addSideRestriction( yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 122:
+ {
+-			addSideRestriction( yyvsp[0].ival ) ;
++			addSideRestriction( yyvsp2[0].ival ) ;
+ 		    }
+ break;
+ case 124:
+ {
+-			add_pinspace( yyvsp[0].fval, yyvsp[0].fval ) ;
++			add_pinspace( yyvsp2[0].fval, yyvsp2[0].fval ) ;
+ 		    }
+ break;
+ case 125:
+ {
+-			add_pinspace( yyvsp[-1].fval, yyvsp[0].fval ) ;
++			add_pinspace( yyvsp2[-1].fval, yyvsp2[0].fval ) ;
+ 		    }
+ break;
+ case 127:
+ {
+-			addSideSpace( yyvsp[0].fval, yyvsp[0].fval ) ;
++			addSideSpace( yyvsp2[0].fval, yyvsp2[0].fval ) ;
+ 		    }
+ break;
+ case 128:
+ {
+-			addSideSpace( yyvsp[-1].fval, yyvsp[0].fval ) ;
++			addSideSpace( yyvsp2[-1].fval, yyvsp2[0].fval ) ;
+ 		    }
+ break;
+ case 129:
+ { 
+-			addPadSide( yyvsp[0].string  ) ; 
++			addPadSide( yyvsp2[0].string  ) ; 
+ 		    }
+ break;
+ case 135:
+ {
+-			add2padgroup( yyvsp[-1].string, TRUE ) ; /* fixed */
++			add2padgroup( yyvsp2[-1].string, TRUE ) ; /* fixed */
+ 		    }
+ break;
+ case 136:
+ {
+-			add2padgroup( yyvsp[-1].string, FALSE ) ; /* nonfixed */
++			add2padgroup( yyvsp2[-1].string, FALSE ) ; /* nonfixed */
+ 		    }
+ break;
+ case 139:
+ {
+-			add_cell_to_group( yyvsp[0].string ) ;
++			add_cell_to_group( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 140:
+ {
+-			add_cell_to_group( yyvsp[0].string ) ;
++			add_cell_to_group( yyvsp2[0].string ) ;
+ 		    }
+ break;
+ case 150:
+ { 
+-			yyval.string = yyvsp[0].string ;	
++			yyval.string = yyvsp2[0].string ;	
+ 		    }
+ break;
+ case 151:
+@@ -1399,7 +1399,7 @@ case 151:
+ 			/* convert integer to string */
+ 			/* this allows integers to be used as strings */
+ 			/* a kluge but timberwolf's old parser supported it */
+-			sprintf( bufferS,"%d", yyvsp[0].ival ) ;
++			sprintf( bufferS,"%d", yyvsp2[0].ival ) ;
+ 			/* now clone string */
+ 			yyval.string = (char *) Ystrclone( bufferS ) ;
+ 		    }
+@@ -1409,15 +1409,15 @@ case 152:
+ 			/* convert float to string */
+ 			/* this allows floats to be used as strings */
+ 			/* a kluge but timberwolf's old parser supported it */
+-			sprintf( bufferS,"%f", yyvsp[0].fval ) ;
++			sprintf( bufferS,"%f", yyvsp2[0].fval ) ;
+ 			/* now clone string */
+ 			yyval.string = (char *) Ystrclone( bufferS ) ;
+ 		    }
+ break;
+     }
+-    yyssp -= yym;
+-    yystate = *yyssp;
+-    yyvsp -= yym;
++    yyssp2 -= yym;
++    yystate = *yyssp2;
++    yyvsp2 -= yym;
+     yym = yylhs[yyn];
+     if (yystate == 0 && yym == 0)
+     {
+@@ -1427,8 +1427,8 @@ break;
+  state %d\n", YYFINAL);
+ #endif
+         yystate = YYFINAL;
+-        *++yyssp = YYFINAL;
+-        *++yyvsp = yyval;
++        *++yyssp2 = YYFINAL;
++        *++yyvsp2 = yyval;
+         if (yychar < 0)
+         {
+             if ((yychar = yylex()) < 0) yychar = 0;
+@@ -1454,14 +1454,14 @@ break;
+ #if YYDEBUG
+     if (yydebug)
+         printf("yydebug: after reduction, shifting from state %d \
+-to state %d\n", *yyssp, yystate);
++to state %d\n", *yyssp2, yystate);
+ #endif
+-    if (yyssp >= yyss + yystacksize - 1)
++    if (yyssp2 >= yyss2 + yystacksize - 1)
+     {
+         goto yyoverflow;
+     }
+-    *++yyssp = yystate;
+-    *++yyvsp = yyval;
++    *++yyssp2 = yystate;
++    *++yyvsp2 = yyval;
+     goto yyloop;
+ yyoverflow:
+     yyerror("yacc stack overflow");

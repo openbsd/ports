@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_twsc_feeds_h,v 1.1 2021/02/20 19:12:04 naddy Exp $
+
+Fixes for -fno-common
+https://github.com/rubund/graywolf/commit/f47937b66d4d44eafc4224f7c43d556dbf88f05b
+
+Index: src/twsc/feeds.h
+--- src/twsc/feeds.h.orig
++++ src/twsc/feeds.h
+@@ -24,7 +24,7 @@ typedef struct feed_assgn_box {
+ FEED_SEG ;
+ 
+ EXTERN INT *feeds_in_rowG ;
+-EXTERN INT *FeedInRowG ;
++extern INT *FeedInRowG ;
+ EXTERN INT fdWidthG ;
+ EXTERN INT *fdcel_addedG ;
+ EXTERN INT **fdcel_needG ;
