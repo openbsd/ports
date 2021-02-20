@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/20 03:49:26 bcallah Exp $
 
 COMMENT=	pacman clone gone mad
 
 DISTNAME=	pacman-arena-0.15
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.bz2
 DISTDATA=	pacman-data-0.0.zip
