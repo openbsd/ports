@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2071 2021/02/20 13:20:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.2072 2021/02/20 14:19:17 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1418,7 +1418,6 @@
      SUBDIR += py-clint
      SUBDIR += py-clint,python3
      SUBDIR += py-cloudpickle,python3
-     SUBDIR += py-codestyle
      SUBDIR += py-codestyle,python3
      SUBDIR += py-colorama
      SUBDIR += py-colorama,python3
@@ -1524,6 +1523,7 @@
      SUBDIR += py-icalendar
      SUBDIR += py-icalendar,python3
      SUBDIR += py-importlib-metadata,python3
+     SUBDIR += py-importlib-resources,python3
      SUBDIR += py-incremental,python3
      SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
@@ -1789,7 +1789,6 @@
      SUBDIR += py-zopeevent,python3
      SUBDIR += py-zopeinterface,python3
      SUBDIR += py-zopetesting,python3
-     SUBDIR += pyflakes
      SUBDIR += pyflakes,python3
      SUBDIR += pygame
      SUBDIR += pygame,python3
