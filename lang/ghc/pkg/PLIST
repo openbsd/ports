@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/12/10 21:41:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/02/20 22:27:32 sthen Exp $
 @conflict hs-xhtml-*
 @conflict hs-deepseq-<=1.1.0.2p0
 @conflict hs-binary-*
@@ -4606,27 +4606,21 @@ share/doc/ghc/html/haddock/_sources/intro.rst.txt
 share/doc/ghc/html/haddock/_sources/invoking.rst.txt
 share/doc/ghc/html/haddock/_sources/markup.rst.txt
 share/doc/ghc/html/haddock/_static/
-share/doc/ghc/html/haddock/_static/ajax-loader.gif
 share/doc/ghc/html/haddock/_static/alabaster.css
 share/doc/ghc/html/haddock/_static/basic.css
-share/doc/ghc/html/haddock/_static/comment-bright.png
-share/doc/ghc/html/haddock/_static/comment-close.png
-share/doc/ghc/html/haddock/_static/comment.png
 share/doc/ghc/html/haddock/_static/custom.css
 share/doc/ghc/html/haddock/_static/doctools.js
-share/doc/ghc/html/haddock/_static/down-pressed.png
-share/doc/ghc/html/haddock/_static/down.png
+share/doc/ghc/html/haddock/_static/documentation_options.js
 share/doc/ghc/html/haddock/_static/file.png
-share/doc/ghc/html/haddock/_static/jquery-3.1.0.js
+share/doc/ghc/html/haddock/_static/jquery-3.5.1.js
 share/doc/ghc/html/haddock/_static/jquery.js
+share/doc/ghc/html/haddock/_static/language_data.js
 share/doc/ghc/html/haddock/_static/minus.png
 share/doc/ghc/html/haddock/_static/plus.png
 share/doc/ghc/html/haddock/_static/pygments.css
 share/doc/ghc/html/haddock/_static/searchtools.js
+share/doc/ghc/html/haddock/_static/underscore-1.12.0.js
 share/doc/ghc/html/haddock/_static/underscore.js
-share/doc/ghc/html/haddock/_static/up-pressed.png
-share/doc/ghc/html/haddock/_static/up.png
-share/doc/ghc/html/haddock/_static/websupport.js
 share/doc/ghc/html/haddock/genindex.html
 share/doc/ghc/html/haddock/index.html
 share/doc/ghc/html/haddock/intro.html
@@ -6880,18 +6874,14 @@ share/doc/ghc/html/users_guide/_sources/what_glasgow_exts_does.rst.txt
 share/doc/ghc/html/users_guide/_sources/win32-dlls.rst.txt
 share/doc/ghc/html/users_guide/_static/
 share/doc/ghc/html/users_guide/_static/Recip.png
-share/doc/ghc/html/users_guide/_static/ajax-loader.gif
 share/doc/ghc/html/users_guide/_static/basic.css
-share/doc/ghc/html/users_guide/_static/comment-bright.png
-share/doc/ghc/html/users_guide/_static/comment-close.png
-share/doc/ghc/html/users_guide/_static/comment.png
 share/doc/ghc/html/users_guide/_static/doctools.js
-share/doc/ghc/html/users_guide/_static/down-pressed.png
-share/doc/ghc/html/users_guide/_static/down.png
+share/doc/ghc/html/users_guide/_static/documentation_options.js
 share/doc/ghc/html/users_guide/_static/file.png
 share/doc/ghc/html/users_guide/_static/ghc-theme.css
-share/doc/ghc/html/users_guide/_static/jquery-3.1.0.js
+share/doc/ghc/html/users_guide/_static/jquery-3.5.1.js
 share/doc/ghc/html/users_guide/_static/jquery.js
+share/doc/ghc/html/users_guide/_static/language_data.js
 share/doc/ghc/html/users_guide/_static/logo.pdf
 share/doc/ghc/html/users_guide/_static/minus.png
 share/doc/ghc/html/users_guide/_static/opensearch.xml
@@ -6900,10 +6890,8 @@ share/doc/ghc/html/users_guide/_static/prof_scc.pdf
 share/doc/ghc/html/users_guide/_static/prof_scc.svg
 share/doc/ghc/html/users_guide/_static/pygments.css
 share/doc/ghc/html/users_guide/_static/searchtools.js
+share/doc/ghc/html/users_guide/_static/underscore-1.12.0.js
 share/doc/ghc/html/users_guide/_static/underscore.js
-share/doc/ghc/html/users_guide/_static/up-pressed.png
-share/doc/ghc/html/users_guide/_static/up.png
-share/doc/ghc/html/users_guide/_static/websupport.js
 share/doc/ghc/html/users_guide/bugs.html
 share/doc/ghc/html/users_guide/codegens.html
 share/doc/ghc/html/users_guide/debug-info.html

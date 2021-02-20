@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/12/10 02:20:31 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/02/20 22:27:30 sthen Exp $
 @shell bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader
@@ -121,27 +121,21 @@ share/doc/fish/_sources/index.rst.txt
 share/doc/fish/_sources/license.rst.txt
 share/doc/fish/_sources/tutorial.rst.txt
 share/doc/fish/_static/
-share/doc/fish/_static/ajax-loader.gif
 share/doc/fish/_static/basic.css
-share/doc/fish/_static/comment-bright.png
-share/doc/fish/_static/comment-close.png
-share/doc/fish/_static/comment.png
 share/doc/fish/_static/custom.css
 share/doc/fish/_static/doctools.js
-share/doc/fish/_static/down-pressed.png
-share/doc/fish/_static/down.png
+share/doc/fish/_static/documentation_options.js
 share/doc/fish/_static/file.png
-share/doc/fish/_static/jquery-3.1.0.js
+share/doc/fish/_static/jquery-3.5.1.js
 share/doc/fish/_static/jquery.js
+share/doc/fish/_static/language_data.js
 share/doc/fish/_static/minus.png
 share/doc/fish/_static/nature.css
 share/doc/fish/_static/plus.png
 share/doc/fish/_static/pygments.css
 share/doc/fish/_static/searchtools.js
+share/doc/fish/_static/underscore-1.12.0.js
 share/doc/fish/_static/underscore.js
-share/doc/fish/_static/up-pressed.png
-share/doc/fish/_static/up.png
-share/doc/fish/_static/websupport.js
 share/doc/fish/cmds/
 share/doc/fish/cmds/abbr.html
 share/doc/fish/cmds/alias.html

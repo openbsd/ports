@@ -1,0 +1,14 @@
+$OpenBSD: patch-m4_ax_prog_sphinx_version_m4,v 1.1 2021/02/20 22:27:30 sthen Exp $
+
+Index: m4/ax_prog_sphinx_version.m4
+--- m4/ax_prog_sphinx_version.m4.orig
++++ m4/ax_prog_sphinx_version.m4
+@@ -40,7 +40,7 @@ AC_DEFUN([AX_PROG_SPHINX],[
+ 
+         AC_MSG_CHECKING([for sphinx version])
+         changequote(<<,>>)
+-        sphinx_version=`$SPHINX_BUILD -h 2>&1 | $GREP "^Sphinx v" | $SED -e 's/^.* v\([0-9]*\.[0-9]*\.[0-9]*\)/\1/'`
++        sphinx_version=`$SPHINX_BUILD --version 2>&1 | $GREP "^sphinx" | $SED -e 's/^.* \([0-9]*\.[0-9]*\.[0-9]*\)/\1/'`
+         changequote([,])
+         AC_MSG_RESULT($sphinx_version)
+ 

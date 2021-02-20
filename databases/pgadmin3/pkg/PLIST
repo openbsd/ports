@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/04/15 08:53:48 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/02/20 22:27:28 sthen Exp $
 @bin bin/pgadmin3
 share/pgadmin3/
 share/pgadmin3/branding/
@@ -112,22 +112,17 @@ share/pgadmin3/docs/en_US/_images/slony-table.png
 share/pgadmin3/docs/en_US/_images/slony-upgrade.png
 share/pgadmin3/docs/en_US/_images/status.png
 share/pgadmin3/docs/en_US/_static/
-share/pgadmin3/docs/en_US/_static/ajax-loader.gif
 share/pgadmin3/docs/en_US/_static/backup-2.png
 share/pgadmin3/docs/en_US/_static/backup-3.png
 share/pgadmin3/docs/en_US/_static/backup-4.png
 share/pgadmin3/docs/en_US/_static/backup.png
 share/pgadmin3/docs/en_US/_static/basic.css
 share/pgadmin3/docs/en_US/_static/classic.css
-share/pgadmin3/docs/en_US/_static/comment-bright.png
-share/pgadmin3/docs/en_US/_static/comment-close.png
-share/pgadmin3/docs/en_US/_static/comment.png
 share/pgadmin3/docs/en_US/_static/connect.png
 share/pgadmin3/docs/en_US/_static/debugger.png
 share/pgadmin3/docs/en_US/_static/default.css
 share/pgadmin3/docs/en_US/_static/doctools.js
-share/pgadmin3/docs/en_US/_static/down-pressed.png
-share/pgadmin3/docs/en_US/_static/down.png
+share/pgadmin3/docs/en_US/_static/documentation_options.js
 share/pgadmin3/docs/en_US/_static/editgrid.png
 share/pgadmin3/docs/en_US/_static/export.png
 share/pgadmin3/docs/en_US/_static/file.png
@@ -136,7 +131,9 @@ share/pgadmin3/docs/en_US/_static/grantwiz.png
 share/pgadmin3/docs/en_US/_static/gridopt-filter.png
 share/pgadmin3/docs/en_US/_static/gridopt-sort.png
 share/pgadmin3/docs/en_US/_static/guru-connect.png
+share/pgadmin3/docs/en_US/_static/jquery-3.5.1.js
 share/pgadmin3/docs/en_US/_static/jquery.js
+share/pgadmin3/docs/en_US/_static/language_data.js
 share/pgadmin3/docs/en_US/_static/locks.png
 share/pgadmin3/docs/en_US/_static/logfile.png
 share/pgadmin3/docs/en_US/_static/main.png
@@ -201,10 +198,8 @@ share/pgadmin3/docs/en_US/_static/slony-table.png
 share/pgadmin3/docs/en_US/_static/slony-upgrade.png
 share/pgadmin3/docs/en_US/_static/status.png
 share/pgadmin3/docs/en_US/_static/transaction.png
+share/pgadmin3/docs/en_US/_static/underscore-1.12.0.js
 share/pgadmin3/docs/en_US/_static/underscore.js
-share/pgadmin3/docs/en_US/_static/up-pressed.png
-share/pgadmin3/docs/en_US/_static/up.png
-share/pgadmin3/docs/en_US/_static/websupport.js
 share/pgadmin3/docs/en_US/appendices.html
 share/pgadmin3/docs/en_US/backup.html
 share/pgadmin3/docs/en_US/bugreport.html

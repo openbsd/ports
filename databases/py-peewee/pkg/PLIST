@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/02/19 23:13:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/02/20 22:27:28 sthen Exp $
 @conflict py-peewee-<2.8.3p4
 bin/pwiz${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}peewee.${MODPY_PYC_MAGIC_TAG}pyc
@@ -84,29 +84,23 @@ share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/querying.rst.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/quickstart.rst.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/transactions.rst.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_static/
-share/doc/${MODPY_PY_PREFIX}peewee/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}peewee/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}peewee/_static/classic.css
-share/doc/${MODPY_PY_PREFIX}peewee/_static/comment-bright.png
-share/doc/${MODPY_PY_PREFIX}peewee/_static/comment-close.png
-share/doc/${MODPY_PY_PREFIX}peewee/_static/comment.png
 share/doc/${MODPY_PY_PREFIX}peewee/_static/default.css
 share/doc/${MODPY_PY_PREFIX}peewee/_static/doctools.js
-share/doc/${MODPY_PY_PREFIX}peewee/_static/down-pressed.png
-share/doc/${MODPY_PY_PREFIX}peewee/_static/down.png
+share/doc/${MODPY_PY_PREFIX}peewee/_static/documentation_options.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/file.png
-share/doc/${MODPY_PY_PREFIX}peewee/_static/jquery-3.1.0.js
+share/doc/${MODPY_PY_PREFIX}peewee/_static/jquery-3.5.1.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/jquery.js
+share/doc/${MODPY_PY_PREFIX}peewee/_static/language_data.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}peewee/_static/peewee-white.png
 share/doc/${MODPY_PY_PREFIX}peewee/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}peewee/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}peewee/_static/searchtools.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/sidebar.js
+share/doc/${MODPY_PY_PREFIX}peewee/_static/underscore-1.12.0.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/underscore.js
-share/doc/${MODPY_PY_PREFIX}peewee/_static/up-pressed.png
-share/doc/${MODPY_PY_PREFIX}peewee/_static/up.png
-share/doc/${MODPY_PY_PREFIX}peewee/_static/websupport.js
 share/doc/${MODPY_PY_PREFIX}peewee/genindex.html
 share/doc/${MODPY_PY_PREFIX}peewee/index.html
 share/doc/${MODPY_PY_PREFIX}peewee/objects.inv

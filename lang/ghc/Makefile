@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2020/12/10 21:41:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.179 2021/02/20 22:27:32 sthen Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,7 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		8
+REVISION =		9
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -120,8 +120,6 @@ CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 # Don't autodetect ld.lld. It fails at some point during the build
 # with /usr/bin/ld.lld: error: cannot preempt symbol: memcpy
 CONFIGURE_ARGS +=	--disable-ld-override
-
-CONFIGURE_ENV +=	SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
 # Do not pick up gpatch
 CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch

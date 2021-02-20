@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/12/10 02:20:31 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/20 22:27:32 sthen Exp $
 @bin bin/polybar
 @bin bin/polybar-msg
 @man man/man1/polybar.1
@@ -10,27 +10,21 @@ share/doc/polybar/_sources/index.rst.txt
 share/doc/polybar/_sources/man/
 share/doc/polybar/_sources/man/polybar.1.rst.txt
 share/doc/polybar/_static/
-share/doc/polybar/_static/ajax-loader.gif
 share/doc/polybar/_static/alabaster.css
 share/doc/polybar/_static/basic.css
-share/doc/polybar/_static/comment-bright.png
-share/doc/polybar/_static/comment-close.png
-share/doc/polybar/_static/comment.png
 share/doc/polybar/_static/custom.css
 share/doc/polybar/_static/doctools.js
-share/doc/polybar/_static/down-pressed.png
-share/doc/polybar/_static/down.png
+share/doc/polybar/_static/documentation_options.js
 share/doc/polybar/_static/file.png
-share/doc/polybar/_static/jquery-3.1.0.js
+share/doc/polybar/_static/jquery-3.5.1.js
 share/doc/polybar/_static/jquery.js
+share/doc/polybar/_static/language_data.js
 share/doc/polybar/_static/minus.png
 share/doc/polybar/_static/plus.png
 share/doc/polybar/_static/pygments.css
 share/doc/polybar/_static/searchtools.js
+share/doc/polybar/_static/underscore-1.12.0.js
 share/doc/polybar/_static/underscore.js
-share/doc/polybar/_static/up-pressed.png
-share/doc/polybar/_static/up.png
-share/doc/polybar/_static/websupport.js
 share/doc/polybar/config
 share/doc/polybar/genindex.html
 share/doc/polybar/index.html

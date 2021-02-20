@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/19 23:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/20 22:27:29 sthen Exp $
 
 COMMENT =	easy-to-use minimalistic disassembler library
 
 DISTNAME =	udis86-1.7.2
 CATEGORIES =	devel
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS=	udis86		1.0
 
@@ -24,7 +24,8 @@ MODULES =	lang/python
 BUILD_DEPENDS =	devel/yasm \
 		textproc/py-sphinx,python3>=1.5
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 MAKE_ENV =		LIBudis86_VERSION=${LIBudis86_VERSION}
 
 FAKE_FLAGS =	docdir=${PREFIX}/share/doc/udis86/x86

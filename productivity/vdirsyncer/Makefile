@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2020/12/10 02:20:31 daniel Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/20 22:27:30 sthen Exp $
 
 COMMENT =		synchronize calendars and contacts
 
 MODPY_EGG_VERSION =	0.16.8
 DISTNAME =		vdirsyncer-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		productivity
 
@@ -44,8 +44,7 @@ TEST_ENV +=		DAV_SERVER=skip \
 
 post-build:
 	cd ${WRKSRC}/docs; ${MAKE_ENV} PYTHONPATH=${WRKSRC} \
-		sphinx-build${MODPY_BIN_SUFFIX} \
-		-b html -d _build/doctrees . _build/html
+		sphinx-build -b html -d _build/doctrees . _build/html
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vdirsyncer

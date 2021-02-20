@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/12/10 02:20:30 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/20 22:27:29 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/testpath/
 lib/python${MODPY_VERSION}/site-packages/testpath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/testpath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -34,28 +34,22 @@ share/doc/${MODPY_PY_PREFIX}testpath/_sources/fsasserts.rst.txt
 share/doc/${MODPY_PY_PREFIX}testpath/_sources/index.rst.txt
 share/doc/${MODPY_PY_PREFIX}testpath/_sources/tempdir.rst.txt
 share/doc/${MODPY_PY_PREFIX}testpath/_static/
-share/doc/${MODPY_PY_PREFIX}testpath/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}testpath/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}testpath/_static/classic.css
-share/doc/${MODPY_PY_PREFIX}testpath/_static/comment-bright.png
-share/doc/${MODPY_PY_PREFIX}testpath/_static/comment-close.png
-share/doc/${MODPY_PY_PREFIX}testpath/_static/comment.png
 share/doc/${MODPY_PY_PREFIX}testpath/_static/default.css
 share/doc/${MODPY_PY_PREFIX}testpath/_static/doctools.js
-share/doc/${MODPY_PY_PREFIX}testpath/_static/down-pressed.png
-share/doc/${MODPY_PY_PREFIX}testpath/_static/down.png
+share/doc/${MODPY_PY_PREFIX}testpath/_static/documentation_options.js
 share/doc/${MODPY_PY_PREFIX}testpath/_static/file.png
-share/doc/${MODPY_PY_PREFIX}testpath/_static/jquery-3.1.0.js
+share/doc/${MODPY_PY_PREFIX}testpath/_static/jquery-3.5.1.js
 share/doc/${MODPY_PY_PREFIX}testpath/_static/jquery.js
+share/doc/${MODPY_PY_PREFIX}testpath/_static/language_data.js
 share/doc/${MODPY_PY_PREFIX}testpath/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}testpath/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}testpath/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}testpath/_static/searchtools.js
 share/doc/${MODPY_PY_PREFIX}testpath/_static/sidebar.js
+share/doc/${MODPY_PY_PREFIX}testpath/_static/underscore-1.12.0.js
 share/doc/${MODPY_PY_PREFIX}testpath/_static/underscore.js
-share/doc/${MODPY_PY_PREFIX}testpath/_static/up-pressed.png
-share/doc/${MODPY_PY_PREFIX}testpath/_static/up.png
-share/doc/${MODPY_PY_PREFIX}testpath/_static/websupport.js
 share/doc/${MODPY_PY_PREFIX}testpath/commands.html
 share/doc/${MODPY_PY_PREFIX}testpath/env.html
 share/doc/${MODPY_PY_PREFIX}testpath/fsasserts.html

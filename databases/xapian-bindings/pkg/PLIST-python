@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.6 2021/01/04 14:06:28 sthen Exp $
+@comment $OpenBSD: PLIST-python,v 1.7 2021/02/20 22:27:28 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/xapian/
 lib/python${MODPY_VERSION}/site-packages/xapian/__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xapian/__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -16,7 +16,6 @@ share/doc/xapian-bindings/python3/examples/simplesearch.py
 share/doc/xapian-bindings/python3/html/
 share/doc/xapian-bindings/python3/html/.buildinfo
 share/doc/xapian-bindings/python3/html/_modules/
-share/doc/xapian-bindings/python3/html/_modules/_weakref.html
 share/doc/xapian-bindings/python3/html/_modules/index.html
 share/doc/xapian-bindings/python3/html/_modules/xapian.html
 share/doc/xapian-bindings/python3/html/_sources/
@@ -25,28 +24,22 @@ share/doc/xapian-bindings/python3/html/_sources/index.rst.txt
 share/doc/xapian-bindings/python3/html/_sources/introduction.rst.txt
 share/doc/xapian-bindings/python3/html/_sources/xapian.rst.txt
 share/doc/xapian-bindings/python3/html/_static/
-share/doc/xapian-bindings/python3/html/_static/ajax-loader.gif
 share/doc/xapian-bindings/python3/html/_static/basic.css
 share/doc/xapian-bindings/python3/html/_static/classic.css
-share/doc/xapian-bindings/python3/html/_static/comment-bright.png
-share/doc/xapian-bindings/python3/html/_static/comment-close.png
-share/doc/xapian-bindings/python3/html/_static/comment.png
 share/doc/xapian-bindings/python3/html/_static/default.css
 share/doc/xapian-bindings/python3/html/_static/doctools.js
-share/doc/xapian-bindings/python3/html/_static/down-pressed.png
-share/doc/xapian-bindings/python3/html/_static/down.png
+share/doc/xapian-bindings/python3/html/_static/documentation_options.js
 share/doc/xapian-bindings/python3/html/_static/file.png
-share/doc/xapian-bindings/python3/html/_static/jquery-3.1.0.js
+share/doc/xapian-bindings/python3/html/_static/jquery-3.5.1.js
 share/doc/xapian-bindings/python3/html/_static/jquery.js
+share/doc/xapian-bindings/python3/html/_static/language_data.js
 share/doc/xapian-bindings/python3/html/_static/minus.png
 share/doc/xapian-bindings/python3/html/_static/plus.png
 share/doc/xapian-bindings/python3/html/_static/pygments.css
 share/doc/xapian-bindings/python3/html/_static/searchtools.js
 share/doc/xapian-bindings/python3/html/_static/sidebar.js
+share/doc/xapian-bindings/python3/html/_static/underscore-1.12.0.js
 share/doc/xapian-bindings/python3/html/_static/underscore.js
-share/doc/xapian-bindings/python3/html/_static/up-pressed.png
-share/doc/xapian-bindings/python3/html/_static/up.png
-share/doc/xapian-bindings/python3/html/_static/websupport.js
 share/doc/xapian-bindings/python3/html/examples.html
 share/doc/xapian-bindings/python3/html/genindex.html
 share/doc/xapian-bindings/python3/html/index.html

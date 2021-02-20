@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/02/14 06:22:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/02/20 22:27:29 sthen Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -201,29 +201,24 @@ share/doc/ECM/html/_sources/module/ECMWinResolveSymlinks.rst.txt
 share/doc/ECM/html/_sources/toolchain/
 share/doc/ECM/html/_sources/toolchain/Android.rst.txt
 share/doc/ECM/html/_static/
-share/doc/ECM/html/_static/ajax-loader.gif
 share/doc/ECM/html/_static/basic.css
 share/doc/ECM/html/_static/classic.css
-share/doc/ECM/html/_static/comment-bright.png
-share/doc/ECM/html/_static/comment-close.png
-share/doc/ECM/html/_static/comment.png
+share/doc/ECM/html/_static/default.css
 share/doc/ECM/html/_static/doctools.js
-share/doc/ECM/html/_static/down-pressed.png
-share/doc/ECM/html/_static/down.png
+share/doc/ECM/html/_static/documentation_options.js
 share/doc/ECM/html/_static/ecm.css
 share/doc/ECM/html/_static/file.png
-share/doc/ECM/html/_static/jquery-3.1.0.js
+share/doc/ECM/html/_static/jquery-3.5.1.js
 share/doc/ECM/html/_static/jquery.js
 share/doc/ECM/html/_static/kde-favicon.ico
+share/doc/ECM/html/_static/language_data.js
 share/doc/ECM/html/_static/minus.png
 share/doc/ECM/html/_static/plus.png
 share/doc/ECM/html/_static/pygments.css
 share/doc/ECM/html/_static/searchtools.js
 share/doc/ECM/html/_static/sidebar.js
+share/doc/ECM/html/_static/underscore-1.12.0.js
 share/doc/ECM/html/_static/underscore.js
-share/doc/ECM/html/_static/up-pressed.png
-share/doc/ECM/html/_static/up.png
-share/doc/ECM/html/_static/websupport.js
 share/doc/ECM/html/find-module/
 share/doc/ECM/html/find-module/FindCanberra.html
 share/doc/ECM/html/find-module/FindEGL.html

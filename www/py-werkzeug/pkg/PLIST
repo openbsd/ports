@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/12/10 02:20:31 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/02/20 22:27:31 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -149,23 +149,19 @@ share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/utils.rst.txt
 share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/wrappers.rst.txt
 share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/wsgi.rst.txt
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/background.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/codebackground.png
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/comment-bright.png
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/comment-close.png
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/comment.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/contents.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/debug-screenshot.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/doctools.js
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/down-pressed.png
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/down.png
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/documentation_options.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/favicon.ico
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/file.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/header.png
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/jquery-3.1.0.js
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/jquery-3.5.1.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/jquery.js
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/language_data.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/navigation.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/navigation_active.png
@@ -175,10 +171,8 @@ share/doc/${MODPY_PY_PREFIX}werkzeug/_static/searchtools.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/shortly.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/shorty-screenshot.png
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/style.css
+share/doc/${MODPY_PY_PREFIX}werkzeug/_static/underscore-1.12.0.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/underscore.js
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/up-pressed.png
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/up.png
-share/doc/${MODPY_PY_PREFIX}werkzeug/_static/websupport.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/werkzeug.css
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/werkzeug.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/_static/werkzeug.png
