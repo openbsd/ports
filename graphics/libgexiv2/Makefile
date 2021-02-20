@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.44 2020/10/03 15:39:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2021/02/20 14:24:17 ajacoutot Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
-GNOME_VERSION=		0.12.1
+GNOME_VERSION=		0.12.2
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
-REVISION=		2
 
 CATEGORIES=		graphics
 
-SHARED_LIBS +=  gexiv2               3.2      # 2.0.0
+SHARED_LIBS +=  gexiv2               3.3      # 2.0.0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
