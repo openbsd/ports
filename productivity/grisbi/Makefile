@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2019/11/20 08:40:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2021/02/20 17:29:35 landry Exp $
 
 COMMENT=	personal accounting application
 
-DISTNAME=	grisbi-1.2.2
-REVISION=	0
+DISTNAME=	grisbi-2.0.2
 
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
@@ -21,10 +20,10 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 bz2 c cairo crypto dbus-1 expat
 WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.10
-WANTLIB += graphite2 gsf-1 gthread-2.0 gtk-3 harfbuzz lzma m ofx
+WANTLIB += graphite2 gsf-1 gtk-3 harfbuzz lzma m ofx
 WANTLIB += osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm xml2 z
-WANTLIB += ICE SM atk-bridge-2.0 avahi-common cairo-gobject
+WANTLIB += ICE SM atk-bridge-2.0 avahi-common cairo-gobject zstd
 WANTLIB += epoxy gmp gs hogweed idn2 jpeg nettle p11-kit rsvg-2
 WANTLIB += spectre tasn1 unistring xslt iconv intl fribidi
 
@@ -49,6 +48,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
-CONFIGURE_ARGS=	--with-openssl
+CONFIGURE_ARGS=	--with-openssl \
+		--disable-config-file
 
 .include <bsd.port.mk>
