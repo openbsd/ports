@@ -1,7 +1,23 @@
-$OpenBSD: patch-src_hpls_c,v 1.3 2007/11/21 14:30:36 ajacoutot Exp $
---- src/hpls.c.orig	Sun Mar 17 18:20:39 2002
-+++ src/hpls.c	Wed Nov 21 13:55:02 2007
-@@ -417,7 +417,7 @@ void showmisc(record *ent, int flags)
+$OpenBSD: patch-src_hpls_c,v 1.4 2021/02/20 03:46:49 gkoehler Exp $
+
+Fix LP64_ARCHS: change UInt32 and like types from long to int, so each
+type has exactly 32 bits; change printf()s to match.
+
+Index: src/hpls.c
+--- src/hpls.c.orig
++++ src/hpls.c
+@@ -408,16 +408,16 @@ void showmisc(record *ent, int flags)
+     if (flags & HPLS_CATIDS)
+     {
+         if (ent->record.type < HFSP_FOLDER_THREAD)
+-	    printf("%7lu ", ent->record.u.file.id);
++	    printf("%7u ", ent->record.u.file.id);
+ 	else
+-	    printf("%7lu ", ent->record.u.thread.parentID);
++	    printf("%7u ", ent->record.u.thread.parentID);
+     }
+     if (flags & HPLS_SIZE && 
+ 	ent->record.type == HFSP_FILE)
      {
  	size = ent->record.u.file.data_fork.total_size + 
  	       ent->record.u.file.res_fork.total_size;
@@ -10,6 +26,15 @@ $OpenBSD: patch-src_hpls_c,v 1.3 2007/11/21 14:30:36 ajacoutot Exp $
      }
  }
  
+@@ -476,7 +476,7 @@ void show_long(int sz, queueent *ents, char **strs,
+         if (ent->record.type == HFSP_FOLDER)
+ 	{
+ 	    hfsp_cat_folder* f = &ent->record.u.folder;
+-	    printf("d%c %9lu item%c               %s %s\n",
++	    printf("d%c %9u item%c               %s %s\n",
+ 	       f->user_info.frFlags & HFS_FNDR_ISINVISIBLE ? 'i' : ' ',
+ 	       f->valence, f->valence == 1 ? ' ' : 's',
+ 	       timebuf + 4, strs[i]);
 @@ -484,7 +484,7 @@ void show_long(int sz, queueent *ents, char **strs,
  	else if (ent->record.type == HFSP_FILE)
  	{

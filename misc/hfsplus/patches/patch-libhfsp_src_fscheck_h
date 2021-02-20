@@ -1,0 +1,22 @@
+$OpenBSD: patch-libhfsp_src_fscheck_h,v 1.1 2021/02/20 03:46:48 gkoehler Exp $
+
+Fix -fno-common by moving fsck_data, from Gentoo
+https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-fs/hfsplusutils/files/hfsplusutils-1.0.4-fno-common-gcc10.patch
+
+Index: libhfsp/src/fscheck.h
+--- libhfsp/src/fscheck.h.orig
++++ libhfsp/src/fscheck.h
+@@ -100,10 +100,11 @@ int fscheck_btree(btree *bt);
+ int fscheck_files(volume* vol);
+ 
+ /** global data used during fsck */
+-struct {
++struct fsck_data_t {
+     UInt32  maxCnid;
+     UInt32  macNow; // current date in mac-offset
+     int	    verbose;
+     int	    ignoreErr;
+-} fsck_data;
++};
+ 
++extern struct fsck_data_t fsck_data;

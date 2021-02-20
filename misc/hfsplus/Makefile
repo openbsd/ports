@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2020/01/26 11:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/20 03:46:48 gkoehler Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
 VERSION=	1.0.4
 DISTNAME=	hfsplus_${VERSION}
 PKGNAME=	hfsplus-${VERSION}
-REVISION=	6
+REVISION=	7
 SHARED_LIBS=	hfsp	0.0
 
 CATEGORIES=	misc 
@@ -22,12 +22,9 @@ USE_GMAKE=		Yes
 
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-# needs the AM_PROG_LIBTOOL macro                                           
-BUILD_DEPENDS+=		devel/libtool
+AUTORECONF=		${MAKE_PROGRAM} -f Makefile.cvs all
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			CFLAGS="${CFLAGS} -fgnu89-inline"
@@ -37,10 +34,7 @@ WRKDIST=		${WRKDIR}/hfsplus-${VERSION}
 DOC=			bugs.html hfsp.html libhfsp.html
 
 post-patch:
-	@cd ${WRKDIST} && ln -s ${LOCALBASE}/share/libtool/config/ltmain.sh \
-	@cd ${WRKDIST} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		${MAKE_PROGRAM} -f Makefile.cvs all
+	@cd ${WRKDIST} && ln -s ${LOCALBASE}/share/libtool/config/ltmain.sh .
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hfsplus/

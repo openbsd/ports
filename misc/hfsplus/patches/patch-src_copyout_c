@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_copyout_c,v 1.1 2021/02/20 03:46:49 gkoehler Exp $
+
+Fix passing &size to int *lenptr
+
+Index: src/copyout.c
+--- src/copyout.c.orig
++++ src/copyout.c
+@@ -365,7 +365,7 @@ int do_text(volume* vol, hfsp_fork_raw *fork, UInt8 fo
+     {
+         UInt32  block   = blockiter_curr(&iter);
+         int     result  = volume_readinbuf(vol, buf, block);
+-        size_t	size    = total > blksize ? blksize : total;
++        int     size    = total > blksize ? blksize : total;
+ 	size_t	bytes;
+ 	char	*latin1, *ptr, *ptrend;
+         if (result)

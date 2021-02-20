@@ -1,6 +1,13 @@
-$OpenBSD: patch-libhfsp_src_record_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
---- libhfsp/src/record.c.orig	Sun Mar 17 17:20:01 2002
-+++ libhfsp/src/record.c	Sat Jan 29 06:22:42 2011
+$OpenBSD: patch-libhfsp_src_record_c,v 1.2 2021/02/20 03:46:48 gkoehler Exp $
+
+Fix LP64_ARCHS: change UInt32 and like types from long to int, so each
+type has exactly 32 bits; change printf()s to match.
+
+Other changes unbreak the build.
+
+Index: libhfsp/src/record.c
+--- libhfsp/src/record.c.orig
++++ libhfsp/src/record.c
 @@ -32,6 +32,8 @@
  
  #include <errno.h>
@@ -22,3 +29,12 @@ $OpenBSD: patch-libhfsp_src_record_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
      switch (type)
      {
  	case HFSP_FOLDER:
+@@ -1269,7 +1271,7 @@ int record_insert(record* r)
+     len = p - buf;
+     if (len > bt->max_rec_size) // Emergency bail out, sorry
+     {
+-	fprintf(stderr,"Unexpected Buffer overflow in record_insert %d > %d",
++	fprintf(stderr,"Unexpected Buffer overflow in record_insert %d > %zu",
+ 		len, sizeof(bt->max_rec_size));
+ 	exit(-1);
+     } 

@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_hpcache_c,v 1.1 2021/02/20 03:46:49 gkoehler Exp $
+
+Fix LP64_ARCHS: change UInt32 and like types from long to int, so each
+type has exactly 32 bits; change printf()s to match.
+
+Index: src/hpcache.c
+--- src/hpcache.c.orig
++++ src/hpcache.c
+@@ -102,7 +102,7 @@ static int hpcache_read()
+ 	return -1;
+     }
+ 
+-    params = fscanf(fd, "%255[^:]:%lu:%u",
++    params = fscanf(fd, "%255[^:]:%u:%u",
+ 		volume_cache.vname, &volume_cache.cnid, &volume_cache.partition);
+     if (params < 2)
+     {
+@@ -128,7 +128,7 @@ static int hpcache_write()
+ 	return -1;
+     }
+ 
+-    fprintf(fd, "%s:%lu:%u", 
++    fprintf(fd, "%s:%u:%u", 
+ 	    volume_cache.vname, volume_cache.cnid, volume_cache.partition);
+ 
+     return 0;

@@ -1,0 +1,21 @@
+$OpenBSD: patch-libhfsp_src_apple_h,v 1.1 2021/02/20 03:46:48 gkoehler Exp $
+
+Fix LP64_ARCHS: change UInt32 and like types from long to int, so each
+type has exactly 32 bits; change printf()s to match.
+
+Index: libhfsp/src/apple.h
+--- libhfsp/src/apple.h.orig
++++ libhfsp/src/apple.h
+@@ -33,9 +33,9 @@ typedef signed char	    SInt8;
+ typedef unsigned char	    UInt8;
+ typedef signed short	    SInt16;
+ typedef unsigned short	    UInt16;
+-typedef signed long	    SInt32;
+-typedef unsigned long	    UInt32;
+-typedef unsigned long	    OSType;
++typedef signed int	    SInt32;
++typedef unsigned int	    UInt32;
++typedef unsigned int	    OSType;
+ typedef unsigned long long  UInt64;
+ 
+ #define PARTITION_SIG	    0x504d   /* 'PM' */

@@ -1,7 +1,136 @@
-$OpenBSD: patch-libhfsp_src_fscheck_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
---- libhfsp/src/fscheck.c.orig	Mon Mar 25 15:48:37 2002
-+++ libhfsp/src/fscheck.c	Sat Jan 29 06:01:31 2011
-@@ -204,7 +204,8 @@ static int fscheck_volume_header(volume * vol, hfsp_vh
+$OpenBSD: patch-libhfsp_src_fscheck_c,v 1.2 2021/02/20 03:46:48 gkoehler Exp $
+
+Fix -fno-common by moving fsck_data, from Gentoo
+https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-fs/hfsplusutils/files/hfsplusutils-1.0.4-fno-common-gcc10.patch
+
+Fix LP64_ARCHS: change UInt32 and like types from long to int, so each
+type has exactly 32 bits; change printf()s to match.
+
+Fix hpfsck of newer HFS+ volumes: set vol->maxblocks when volume is
+without HFS wrapper, so we can find the backup volume header.
+
+Other changes unbreak the build.
+
+Index: libhfsp/src/fscheck.c
+--- libhfsp/src/fscheck.c.orig
++++ libhfsp/src/fscheck.c
+@@ -47,19 +47,21 @@
+ # include "os.h"
+ # include "swab.h"
+ 
++struct fsck_data_t fsck_data;
++
+ /* Dump all raw fork information to stdout */
+ void print_fork(hfsp_fork_raw* f)
+ {
+     int		    i;
+     hfsp_extent*    e;
+     printf("total_size          : %#LX\n"  , f->total_size);
+-    printf("clump_size          : %#lX\n"  , f->clump_size);
+-    printf("total_blocks        : %#lX\n"  , f->total_blocks);
++    printf("clump_size          : %#X\n"   , f->clump_size);
++    printf("total_blocks        : %#X\n"   , f->total_blocks);
+     printf("extents             : ");
+     for (i=0; i < 8; i++)
+     {
+ 	e = &f->extents[i];
+-	printf("(%#lX+%#lX) " , e->start_block,e->block_count);
++	printf("(%#X+%#X) " , e->start_block,e->block_count);
+     }
+     printf("\n");
+ }
+@@ -78,24 +80,24 @@ void volume_print(hfsp_vh* vh)
+     printf("signature       : %c%c\n" , ((char*)&vh->signature)[0], 
+ 					((char*)&vh->signature)[1]);
+     printf("version         : %u\n"	  , vh->version);
+-    printf("attributes      : %#lX\n"	  , vh->attributes);
++    printf("attributes      : %#X\n"	  , vh->attributes);
+     printf("last_mount_vers : "); print_sig(vh->last_mount_vers);
+-    printf("\nreserved        : %lu\n"	  , vh->reserved);
++    printf("\nreserved        : %u\n"	  , vh->reserved);
+ 	/* Hmm this is in local, apple time ... */
+     printf("create_date     : %s"	  , get_atime(vh->create_date));
+     printf("modify_date     : %s"	  , get_atime(vh->modify_date));
+     printf("backup_date     : %s"	  , get_atime(vh->backup_date));
+     printf("checked_date    : %s"	  , get_atime(vh->checked_date));
+-    printf("file_count      : %lu\n"	  , vh->file_count);
+-    printf("folder_count    : %lu\n"	  , vh->folder_count);
+-    printf("blocksize       : %lX\n"	  , vh->blocksize);
+-    printf("total_blocks    : %lu\n"	  , vh->total_blocks);
+-    printf("free_blocks     : %lu\n"	  , vh->free_blocks);
+-    printf("next_alloc      : %lu\n"	  , vh->next_alloc);
+-    printf("rsrc_clump_sz   : %lu\n"	  , vh->rsrc_clump_sz);
+-    printf("data_clump_sz   : %lu\n"	  , vh->data_clump_sz);
+-    printf("next_cnid       : %lu\n"	  , vh->next_cnid);
+-    printf("write_count     : %lu\n"	  , vh->write_count);
++    printf("file_count      : %u\n"	  , vh->file_count);
++    printf("folder_count    : %u\n"	  , vh->folder_count);
++    printf("blocksize       : %X\n"	  , vh->blocksize);
++    printf("total_blocks    : %u\n"	  , vh->total_blocks);
++    printf("free_blocks     : %u\n"	  , vh->free_blocks);
++    printf("next_alloc      : %u\n"	  , vh->next_alloc);
++    printf("rsrc_clump_sz   : %u\n"	  , vh->rsrc_clump_sz);
++    printf("data_clump_sz   : %u\n"	  , vh->data_clump_sz);
++    printf("next_cnid       : %u\n"	  , vh->next_cnid);
++    printf("write_count     : %u\n"	  , vh->write_count);
+     printf("encodings_bmp   : %#LX\n"	  , vh->encodings_bmp);
+     /* vv->finder_info, p, 32); */
+     printf("                  Allocation file\n");
+@@ -119,7 +121,7 @@ static int fscheck_volume_header(volume * vol, hfsp_vh
+     // vh->signature // already checked in read
+     // vh->version	// Current is 4 but I wont check that
+     if (attributes & HFSPLUS_VOL_RESERVED1)
+-	printf("Reserved attribute in use: %lX\n", 
++	printf("Reserved attribute in use: %X\n", 
+ 			    vh->attributes & HFSPLUS_VOL_RESERVED1);
+     if (! (attributes & HFSPLUS_VOL_UNMNT))
+ 	printf("Volume was not cleanly unmounted\n");
+@@ -130,12 +132,12 @@ static int fscheck_volume_header(volume * vol, hfsp_vh
+     if (attributes & HFSPLUS_VOL_INCNSTNT)
+ 	printf("Volume is inconsistent\n");
+     if (attributes & HFSPLUS_VOL_RESERVED2)
+-	printf("Reserved attribute in use: %lX\n", 
++	printf("Reserved attribute in use: %X\n", 
+ 			    vh->attributes & HFSPLUS_VOL_RESERVED2);
+     if (fsck_data.verbose && (attributes & HFSPLUS_VOL_SOFTLOCK))
+ 	printf("Volume is soft locked");
+     if (attributes & HFSPLUS_VOL_RESERVED3)
+-	printf("Reserved attribute in use: %lX\n", 
++	printf("Reserved attribute in use: %X\n", 
+ 			    vh->attributes & HFSPLUS_VOL_RESERVED3);
+     switch (vh->last_mount_vers)
+     {
+@@ -169,25 +171,25 @@ static int fscheck_volume_header(volume * vol, hfsp_vh
+     // vh->folder_count	// To be checked later
+     if (0 != (vh->blocksize % HFSP_BLOCKSZ)) // must be multiple of BLKSZ
+     {
+-	printf("Invalid Blocksize %lX\n", vh->blocksize);
++	printf("Invalid Blocksize %X\n", vh->blocksize);
+ 	result = FSCK_ERR; // Wont try to correct that, yet.
+     }
+     {
+ 	UInt64 totalbytes    = vh->total_blocks * vh->blocksize;
+ 	UInt64 expectedbytes = vol->maxblocks << vol->blksize_bits;
+ 	if (totalbytes > expectedbytes)
+-	    printf("\nInvalid total blocks %lX, expected %lX", 
++	    printf("\nInvalid total blocks %X, expected %X", 
+ 		vh->total_blocks, (UInt32)(expectedbytes / vh->blocksize));
+     }
+     if (vh->free_blocks	> vh->total_blocks)
+-	printf("More free blocks (%lX) than total (%lX) ?\n", 
++	printf("More free blocks (%X) than total (%X) ?\n", 
+ 		    vh->free_blocks, vh->total_blocks);
+ 	// Check more later
+     // vh->next_alloc	// to be checked later
+     // vh->rsrc_clump_sz  // no check needed, is a hint only
+     // vh->data_clump_sz  // no check needed, is a hint only
+     if (vh->next_cnid <= HFSP_MIN_CNID) // wil hopefully be fixed later
+-	printf("Invalid next_cnid: %ld\n", vh->next_cnid);
++	printf("Invalid next_cnid: %d\n", vh->next_cnid);
+ 	// Check more later
+     // vh->write_count	    // no check possible
+     // vh->encodings_bmp    // no check needed, is a hint only
+@@ -204,7 +206,8 @@ static int fscheck_volume_header(volume * vol, hfsp_vh
   */
  static int fscheck_volume_readbuf(volume * vol, hfsp_vh* vh, void* p)
  {
@@ -11,7 +140,7 @@ $OpenBSD: patch-libhfsp_src_fscheck_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
      {
  	printf("Unexpected Volume signature '%2s' expected 'H+'\n",
  		(char*) &vh->signature);
-@@ -230,7 +231,7 @@ static int fscheck_volume_readbuf(volume * vol, hfsp_v
+@@ -230,7 +233,7 @@ static int fscheck_volume_readbuf(volume * vol, hfsp_v
      vh->write_count	= bswabU32_inc(p);
      vh->encodings_bmp	= bswabU64_inc(p);
      memcpy(vh->finder_info, p, 32); 
@@ -20,7 +149,7 @@ $OpenBSD: patch-libhfsp_src_fscheck_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
      p = volume_readfork(p, &vh->alloc_file );
      p = volume_readfork(p, &vh->ext_file   );
      p = volume_readfork(p, &vh->cat_file   );
-@@ -277,12 +278,12 @@ static int fscheck_read_wrapper(volume * vol, hfsp_vh*
+@@ -277,12 +280,12 @@ static int fscheck_read_wrapper(volume * vol, hfsp_vh*
  	    printf("Volume is wrapped in HFS volume "
  		   " (use hfsck to check this)\n");
  
@@ -36,3 +165,43 @@ $OpenBSD: patch-libhfsp_src_fscheck_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
  	signature = bswabU16_inc(p);	/* offset 0x7C, drEmbedSigWord */
  	if (signature != HFSP_VOLHEAD_SIG)
  	    HFSP_ERROR(-1, "This looks like a normal HFS volume");
+@@ -291,7 +294,7 @@ static int fscheck_read_wrapper(volume * vol, hfsp_vh*
+ 	sect_per_block =  (drAlBlkSiz / HFSP_BLOCKSZ);  
+ 	if ((sect_per_block * HFSP_BLOCKSZ) != drAlBlkSiz)
+ 	{
+-	    printf("HFS Blocksize %lX is not multiple of %X\n", 
++	    printf("HFS Blocksize %X is not multiple of %X\n", 
+ 		    drAlBlkSiz, HFSP_BLOCKSZ);
+ 	    return FSCK_ERR; // Cant help it (for now)
+ 	}
+@@ -301,7 +304,7 @@ static int fscheck_read_wrapper(volume * vol, hfsp_vh*
+ 		    << HFS_BLOCKSZ_BITS;
+ 	/* Now we can try to read the embedded HFS+ volume header */
+ 	if (fsck_data.verbose)
+-	    printf("Embedded HFS+ volume at 0x%LX (0x%lX) of 0x%X sized Blocks\n",
++	    printf("Embedded HFS+ volume at 0x%LX (0x%X) of 0x%X sized Blocks\n",
+ 		    os_offset, vol->maxblocks, HFSP_BLOCKSZ);
+ 	return fscheck_volume_read(vol,vh,2);
+     }
+@@ -310,7 +313,11 @@ static int fscheck_read_wrapper(volume * vol, hfsp_vh*
+ 	if (fsck_data.verbose)
+ 	    printf("This HFS+ volume is not wrapped.\n");
+ 	p = buf; // Restore to begin of block
+-	return fscheck_volume_readbuf(vol, vh, p);
++	if (fscheck_volume_readbuf(vol, vh, p))
++	    return -1;
++	// Need maxblocks in sectors
++	vol->maxblocks = vh->total_blocks * (vh->blocksize / HFSP_BLOCKSZ);
++	return 0;
+     } else
+ 	 HFSP_ERROR(-1, "Neither Wrapper nor native HFS+ volume header found");
+     
+@@ -339,7 +346,7 @@ int check_forkalloc(volume* vol, hfsp_fork_raw* fork)
+ 	{
+ 	    if (!volume_allocated(vol, block))
+ 	    {
+-		printf("Warning block %lX not marked as allocated\n",block);
++		printf("Warning block %X not marked as allocated\n",block);
+ 		errcount++;
+ 	    }
+ 	    count --;

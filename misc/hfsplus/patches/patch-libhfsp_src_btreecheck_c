@@ -1,6 +1,124 @@
-$OpenBSD: patch-libhfsp_src_btreecheck_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
---- libhfsp/src/btreecheck.c.orig	Tue Mar  5 19:50:29 2002
-+++ libhfsp/src/btreecheck.c	Fri Jan 28 07:34:59 2011
+$OpenBSD: patch-libhfsp_src_btreecheck_c,v 1.2 2021/02/20 03:46:48 gkoehler Exp $
+
+Fix LP64_ARCHS: change UInt32 and like types from long to int, so each
+type has exactly 32 bits; change printf()s to match.
+
+Other changes unbreak the build.
+
+Index: libhfsp/src/btreecheck.c
+--- libhfsp/src/btreecheck.c.orig
++++ libhfsp/src/btreecheck.c
+@@ -57,7 +57,7 @@ static void record_print_key(hfsp_cat_key* key)
+ {
+     char buf[255]; // mh this _might_ overflow 
+     unicode_uni2asc(buf, &key->name, 255);   
+-    printf("parent cnid         : %ld\n",   key->parent_cnid);
++    printf("parent cnid         : %d\n",   key->parent_cnid);
+     printf("name                : %s\n", buf);
+ }
+ 
+@@ -87,19 +87,19 @@ static int fscheck_checkbtree(btree* bt)
+     */
+     if (head->root >= node_count)
+     {
+-	printf("root node out of range %lX >= %lX\n",
++	printf("root node out of range %X >= %X\n",
+ 		head->root, node_count);
+ 	result |= FSCK_ERR; // This is really evil
+     }
+     if (head->leaf_head >= node_count)
+     {
+-	printf("leaf_head out of range %lX >= %lX\n", 
++	printf("leaf_head out of range %X >= %X\n", 
+ 		head->leaf_head, node_count);
+ 	result |= FSCK_ERR; // dont know how to fix that by now
+     }
+     if (head->leaf_tail >= node_count)
+     {
+-	printf("leaf_head out of range %lX >= %lX\n", 
++	printf("leaf_head out of range %X >= %X\n", 
+ 		head->leaf_tail, node_count);
+ 	result |= FSCK_ERR; // dont know how to fix that by now
+     }
+@@ -117,14 +117,14 @@ static int fscheck_checkbtree(btree* bt)
+     }
+     if (head->free_nodes >= node_count)
+     {
+-	printf("free_nodes out of range %lX >= %lX\n", 
++	printf("free_nodes out of range %X >= %X\n", 
+ 		head->free_nodes, node_count);
+ 	result |= FSCK_ERR; // dont know how to fix that by now
+     }
+     // head->reserved1	nothing to check here
+     if (head->clump_size % blocksize)
+     {
+-	printf("clump_size %ld not a multiple of blocksize %ld\n", 
++	printf("clump_size %d not a multiple of blocksize %d\n", 
+ 		head->free_nodes, blocksize);
+ 	result |= FSCK_ERR; // dont know how to fix that by now
+     }
+@@ -136,7 +136,7 @@ static int fscheck_checkbtree(btree* bt)
+     // head->reserved2  nothing to check here
+     if (head->attributes & HFSPLUS_TREE_RESERVED)
+     {
+-	printf("Unexpected bits in btree header node attributes %lX\n",
++	printf("Unexpected bits in btree header node attributes %X\n",
+ 	    head->attributes);
+ 	result |= FSCK_ERR; // dont know how to fix that by now
+     }
+@@ -149,16 +149,16 @@ static void btree_printhead(btree_head* head)
+ {
+     UInt32 attr;
+     printf("  depth       : %#X\n",  head->depth);
+-    printf("  root        : %#lX\n", head->root);
+-    printf("  leaf_count  : %#lX\n", head->leaf_count);
+-    printf("  leaf_head   : %#lX\n", head->leaf_head);
+-    printf("  leaf_tail   : %#lX\n", head->leaf_tail);
++    printf("  root        : %#X\n",  head->root);
++    printf("  leaf_count  : %#X\n",  head->leaf_count);
++    printf("  leaf_head   : %#X\n",  head->leaf_head);
++    printf("  leaf_tail   : %#X\n",  head->leaf_tail);
+     printf("  node_size   : %#X\n",  head->node_size);
+     printf("  max_key_len : %#X\n",  head->max_key_len);
+-    printf("  node_count  : %#lX\n", head->node_count);
+-    printf("  free_nodes  : %#lX\n", head->free_nodes);
++    printf("  node_count  : %#X\n",  head->node_count);
++    printf("  free_nodes  : %#X\n",  head->free_nodes);
+     printf("  reserved1   : %#X\n",  head->reserved1);
+-    printf("  clump_size  : %#lX\n", head->clump_size);
++    printf("  clump_size  : %#X\n",  head->clump_size);
+     printf("  btree_type  : %#X\n",  head->btree_type);
+     attr = head->attributes;
+     printf("  reserved2   : %#X\n",  head->reserved2);
+@@ -183,9 +183,9 @@ static void btree_printhead(btree_head* head)
+ 
+ static void print_node_desc(UInt32 nodeIndex, btree_node_desc* node)
+ {
+-    printf("Node descriptor for Node %ld\n", nodeIndex);
+-    printf("next     : %#lX\n", node->next);
+-    printf("prev     : %#lX\n", node->prev);
++    printf("Node descriptor for Node %d\n", nodeIndex);
++    printf("next     : %#X\n",  node->next);
++    printf("prev     : %#X\n",  node->prev);
+     printf("height   : %#X\n",  node->height);
+     printf("num_rec  : %d\n",   node->num_rec);
+     printf("reserved : %#X\n",  node->reserved);
+@@ -225,13 +225,13 @@ static int fscheck_btree_init(btree* bt, volume* vol, 
+ 		 HFSP_EXTENT_DATA, bt->cnid);
+     if (!p)
+     {
+-	printf("Unable to read block 1 of b*tree for cnid:%ld\n", bt->cnid);
++	printf("Unable to read block 1 of b*tree for cnid:%d\n", bt->cnid);
+ 	return FSCK_ERR;
+     }
+     p = btree_readnode(node, p);
+     if (node->prev != 0)
+     {
+-	printf("Backlink of header node is not zero (%lX) \n", node->prev);
++	printf("Backlink of header node is not zero (%X) \n", node->prev);
+ 	return FSCK_ERR; // ToDo: We might ignore it but ???
+     }
+     if (node->kind != HFSP_NODE_HEAD)
 @@ -264,7 +264,7 @@ static int fscheck_btree_init(btree* bt, volume* vol, 
  	{
  	    p = volume_readfromfork(vol, nodebuf, fork, 0, bt->blkpernode,
@@ -10,7 +128,13 @@ $OpenBSD: patch-libhfsp_src_btreecheck_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
  	}
  	
  	bt->alloc_bits = malloc(alloc_size);
-@@ -368,7 +368,7 @@ static void* checkbtree_key_by_index(btree* bt, UInt32
+@@ -363,12 +363,12 @@ static void* checkbtree_key_by_index(btree* bt, UInt32
+     }
+     if (fsck_data.verbose)
+     {
+-	printf("Node %4ld, Record %2d is at pos %04X,"
++	printf("Node %4d, Record %2d is at pos %04X,"
+ 	       "Backptr is at offset %04X\n", node, index, offset, off_pos);
      }
      // now we have the offset and can read the key ...
  #if BYTE_ORDER == LITTLE_ENDIAN
@@ -19,3 +143,198 @@ $OpenBSD: patch-libhfsp_src_btreecheck_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
  #else
      return buf->node + offset;
  #endif
+@@ -392,7 +392,7 @@ static int fscheck_fix_node(btree* bt, UInt32 nodeInde
+     void*	     current = node->node + 0x0E; // sizeof (btree_node_desc)
+     char	     kbuf[bt->head.max_key_len]; // dummy key to skip over
+     char	     buf[bt->max_rec_size]; 
+-    fprintf(stderr, "Node %lu with %u records is damaged trying to fix ***\n",
++    fprintf(stderr, "Node %u with %u records is damaged trying to fix ***\n",
+ 		nodeIndex, num_rec);
+     for (i=0; i < num_rec; i++)
+     {
+@@ -402,7 +402,7 @@ static int fscheck_fix_node(btree* bt, UInt32 nodeInde
+ 	if (p != current)
+ 	{
+ 	    fprintf(stderr, 
+-		"Key %u in Node %lu is damaged "
++		"Key %u in Node %u is damaged "
+ 		"rest of keys will be droppend ***\n", i,nodeIndex);
+ 	    break;
+ 	}
+@@ -450,7 +450,7 @@ static int fscheck_btree_node(btree* bt, UInt32 nodeIn
+ 	if (p < previous)
+ 	{   // This may happen when the cache entry was flushed, but per
+ 	    // design of the cache this should not happen, mmh
+-	    printf("Backpointers in Node %ld index %d out of order "
++	    printf("Backpointers in Node %d index %d out of order "
+ 		   "(%p >= %p)\n", nodeIndex, i, p, previous);
+ 	    result |= FSCK_FSCORR;	// Hope we can correct that later
+ 	}
+@@ -471,7 +471,7 @@ static int fscheck_btree_node(btree* bt, UInt32 nodeIn
+ 	    int comp = bt->kcomp(*key1, *key2);
+ 	    if (comp > 0)
+ 	    {
+-		printf("Invalid key order in node %ld record %d\n key1=",
++		printf("Invalid key order in node %d record %d\n key1=",
+ 			nodeIndex, i);
+ 		record_print_key((hfsp_cat_key*) *key1);
+ 		printf("Invalid key order key2=\n");
+@@ -480,7 +480,7 @@ static int fscheck_btree_node(btree* bt, UInt32 nodeIn
+ 	    }
+ 	    if (comp == 0 && i > 0) // equal to key in parent node is ok
+ 	    {
+-		printf("Duplicate key in node %ld record %d key1=\n",
++		printf("Duplicate key in node %d record %d key1=\n",
+ 			nodeIndex, i);
+ 		record_print_key((hfsp_cat_key*) *key1);
+ 		printf("Duplicate key key2=\n");
+@@ -535,10 +535,10 @@ static void record_print_Rect(Rect* r)
+ /* print permissions */
+ static void record_print_perm(hfsp_perm* perm)
+ {
+-    printf("owner               : %ld\n",  perm->owner);
+-    printf("group               : %ld\n",  perm->group);
+-    printf("perm                : 0x%lX\n",perm->mode);
+-    printf("dev                 : %ld\n",  perm->dev);
++    printf("owner               : %d\n",   perm->owner);
++    printf("group               : %d\n",   perm->group);
++    printf("perm                : 0x%X\n", perm->mode);
++    printf("dev                 : %d\n",   perm->dev);
+ }
+ 
+ /* print Directory info */
+@@ -554,17 +554,17 @@ static void record_print_DInfo(DInfo* dinfo)
+ static void record_print_DXInfo(DXInfo* xinfo)
+ {
+     printf(  "frScroll            : ");    record_print_Point(&xinfo->frScroll);
+-    printf("\nfrOpenChain         : %ld\n",  xinfo->frOpenChain);
++    printf("\nfrOpenChain         : %d\n",   xinfo->frOpenChain);
+     printf(  "frUnused            : %d\n",   xinfo->frUnused);
+     printf(  "frComment           : %d\n",   xinfo->frComment);
+-    printf(  "frPutAway           : %ld\n",  xinfo->frPutAway);
++    printf(  "frPutAway           : %d\n",   xinfo->frPutAway);
+ }
+ 
+ static void record_print_folder(hfsp_cat_folder* folder)
+ {
+     printf("flags               : 0x%X\n",	folder->flags);
+-    printf("valence             : 0x%lX\n",	folder->valence);
+-    printf("id                  : %ld\n",	folder->id);
++    printf("valence             : 0x%X\n",	folder->valence);
++    printf("id                  : %d\n",	folder->id);
+     printf("create_date         : %s",	get_atime(folder->create_date));
+     printf("content_mod_date    : %s",	get_atime(folder->content_mod_date));
+     printf("attribute_mod_date  : %s",	get_atime(folder->attribute_mod_date));
+@@ -573,8 +573,8 @@ static void record_print_folder(hfsp_cat_folder* folde
+     record_print_perm	(&folder->permissions);
+     record_print_DInfo	(&folder->user_info);
+     record_print_DXInfo	(&folder->finder_info);
+-    printf("text_encoding       : 0x%lX\n",	folder->text_encoding);
+-    printf("reserved            : 0x%lX\n",	folder->reserved);
++    printf("text_encoding       : 0x%X\n",	folder->text_encoding);
++    printf("reserved            : 0x%X\n",	folder->reserved);
+ }
+ 
+ /* print File info */
+@@ -593,15 +593,15 @@ static void record_print_FXInfo(FXInfo* xinfo)
+     printf(  "fdIconID            : %d\n",   xinfo->fdIconID);
+     // xinfo -> fdUnused;
+     printf(  "fdComment           : %d\n",   xinfo->fdComment);
+-    printf(  "fdPutAway           : %ld\n",  xinfo->fdPutAway);
++    printf(  "fdPutAway           : %d\n",  xinfo->fdPutAway);
+ } 
+ 
+ /* print file entry */
+ static void record_print_file(hfsp_cat_file* file)
+ {
+     printf("flags               : 0x%X\n",	file->flags);
+-    printf("reserved1           : 0x%lX\n",	file->reserved1);
+-    printf("id                  : %ld\n",	file->id);
++    printf("reserved1           : 0x%X\n",	file->reserved1);
++    printf("id                  : %d\n",	file->id);
+     printf("create_date         : %s",	get_atime(file->create_date));
+     printf("content_mod_date    : %s",	get_atime(file->content_mod_date));
+     printf("attribute_mod_date  : %s",	get_atime(file->attribute_mod_date));
+@@ -610,8 +610,8 @@ static void record_print_file(hfsp_cat_file* file)
+     record_print_perm	(&file->permissions);
+     record_print_FInfo	(&file->user_info);
+     record_print_FXInfo	(&file->finder_info);
+-    printf("text_encoding       : 0x%lX\n",	file->text_encoding);
+-    printf("reserved            : 0x%lX\n",	file->reserved2);
++    printf("text_encoding       : 0x%X\n",	file->text_encoding);
++    printf("reserved            : 0x%X\n",	file->reserved2);
+     printf("Datafork:\n");
+     print_fork (&file->data_fork);
+     printf("Rsrcfork:\n");
+@@ -623,7 +623,7 @@ static void record_print_thread(hfsp_cat_thread* entry
+ {
+     char buf[255]; // mh this _might_ overflow 
+     unicode_uni2asc(buf, &entry->nodeName, 255);   
+-    printf("parent cnid         : %ld\n", entry->parentID);
++    printf("parent cnid         : %d\n",  entry->parentID);
+     printf("name                : %s\n" , buf);
+ }
+ 
+@@ -691,7 +691,7 @@ static int fscheck_cat_key(record* r)
+ 
+     if (key->parent_cnid >= cnid)
+     {
+-	printf("parent_cnid %ld >= volume next cnid %ld\n", 
++	printf("parent_cnid %d >= volume next cnid %d\n", 
+ 		    key->parent_cnid, cnid);
+ 	result |= FSCK_FSCORR; // hope we can fix that some time
+     }
+@@ -710,7 +710,7 @@ static int fscheck_mactime(UInt32 time, char* errname)
+ 	printf("Warning %s is 0\n", errname);
+     */
+     if (time > fsck_data.macNow)
+-	printf("Warning %21.21s is in the future: (%lX) %s", 
++	printf("Warning %21.21s is in the future: (%X) %s", 
+ 		errname, time, get_atime(time));
+ 
+     return FSCK_NOERR;	// Those are not really bad, just annoying
+@@ -732,7 +732,7 @@ static int fscheck_file(btree* tree, hfsp_cat_file* fi
+     // file->reserved1	// Nothing to check here
+     if (file->id >= cnid)
+     {
+-	printf("file id %ld >= volume next cnid %ld\n", 
++	printf("file id %d >= volume next cnid %d\n", 
+ 		    file->id, cnid);
+ 	result |= FSCK_FSCORR; // hope we can fix that some time
+     }
+@@ -769,7 +769,7 @@ static int fscheck_folder(btree* tree, hfsp_cat_folder
+     // folder->valence	// to be checked later
+     if (folder->id >= cnid)
+     {
+-	printf("Folder id %ld >= volume next cnid %ld\n", 
++	printf("Folder id %d >= volume next cnid %d\n", 
+ 		    folder->id, cnid);
+ 	result |= FSCK_FSCORR; // hope we can fix that some time
+     }
+@@ -798,7 +798,7 @@ static int fscheck_thread(btree* tree, hfsp_cat_thread
+ 
+     if (thread->parentID >= cnid)
+     {
+-	printf("Thread parentID %ld >= volume next cnid %ld\n", 
++	printf("Thread parentID %d >= volume next cnid %d\n", 
+ 		    thread->parentID, cnid);
+ 	result |= FSCK_FSCORR; // hope we can fix that some time
+     }
+@@ -899,7 +899,7 @@ int fscheck_record_init(record* r, btree* bt, node_buf
+     {		// structure (should happen while debugging only)
+ 	fprintf(stderr, 
+ 	    "Unexpected difference in Node %d, Record %d "
+-	    ": %d (%d/%d) (%p,%p)\n",
++	    ": %d (%zd/%zd) (%p,%p)\n",
+ 	    r->node_index, index, diff , p - p1, p2 - p1, p, p2);
+ 	record_print(r);
+     }
+@@ -947,7 +947,7 @@ int fscheck_files(volume* vol)
+ 
+     if (!btree_check_nodealloc(catalog, catalog->head.leaf_head))
+     {
+-	printf("leaf_head %ld not allocated in node Map\n",
++	printf("leaf_head %d not allocated in node Map\n",
+ 		catalog->head.leaf_head);
+ 	result |= FSCK_FSCORR; /* Maybe we can correct that one time */
+     }
