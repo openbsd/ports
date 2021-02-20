@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.132 2020/07/08 13:02:24 bket Exp $
+# $OpenBSD: Makefile,v 1.133 2021/02/20 14:43:01 landry Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-VER =			0.21.25
+VER =			0.22.6
 DISTNAME =		mpd-${VER}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.musicpd.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		FLAC audiofile avcodec avformat avutil \
+WANTLIB =		FLAC audiofile avcodec avfilter avformat avutil \
 			bz2 c cdio cdio_cdda cdio_paranoia curl \
 			expat faad icui18n icuuc \
 			id3tag iso9660 m mikmod mp3lame mpcdec \
@@ -24,6 +24,7 @@ MASTER_SITES =		https://www.musicpd.org/download/mpd/${VER:R}/
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/boost
+BUILD_DEPENDS +=	textproc/py-sphinx,python3
 
 LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/flac \
@@ -145,9 +146,6 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE"
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 ${PREFIX}/man/man1/mpd.1
-	${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 ${PREFIX}/man/man5/mpd.conf.5
-
 	# avoid dependency on gtk3,-guic
 	@rm -Rf ${PREFIX}/share/icons/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpd
