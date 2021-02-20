@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_sphinxext_github_py,v 1.1 2021/02/20 21:44:58 sthen Exp $
+
+newer Sphinx removes sphinx.info()
+
+Index: doc/sphinxext/github.py
+--- doc/sphinxext/github.py.orig
++++ doc/sphinxext/github.py
+@@ -146,7 +146,6 @@ def setup(app):
+     
+     :param app: Sphinx application context.
+     """
+-    app.info('Initializing GitHub plugin')
+     app.add_role('ghissue', ghissue_role)
+     app.add_role('ghpull', ghissue_role)
+     app.add_role('ghuser', ghuser_role)

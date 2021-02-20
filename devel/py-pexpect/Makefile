@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2021/02/19 23:13:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/02/20 21:44:58 sthen Exp $
 
 COMMENT=		pure Python Expect-like module
 
+# XXX 4.8.0 has (random?) timeouts in various tests
 MODPY_EGG_VERSION=	4.7.0
 DISTNAME=		pexpect-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
@@ -21,7 +22,8 @@ MODULES=		lang/python
 RUN_DEPENDS =		devel/py-ptyprocess${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx${MODPY_FLAVOR}>=1.5
-TEST_DEPENDS =		shells/bash
+TEST_DEPENDS =		shells/bash \
+			sysutils/coreutils
 
 FLAVORS =		python3
 FLAVOR =		python3
@@ -48,5 +50,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	cd ${WRKSRC}/doc/_build/html && pax -rw * ${DOCDIR}
+
+pre-test:
+	ln -fs ${MODPY_BIN} ${WRKDIR}/python
 
 .include <bsd.port.mk>

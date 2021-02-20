@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_test_which_py,v 1.1 2021/02/20 21:44:58 sthen Exp $
+
+Index: tests/test_which.py
+--- tests/test_which.py.orig
++++ tests/test_which.py
+@@ -182,7 +182,7 @@ class TestCaseWhich(PexpectTestCase.PexpectTestCase):
+         " which() returns executables by other, group, and user ownership. "
+         # create an executable and test that it is found using which() for
+         # each of the 'other', 'group', and 'user' permission bits.
+-        fname = 'g77'
++        fname = 'gzip'
+         bin_dir = tempfile.mkdtemp()
+         bin_path = os.path.join(bin_dir, fname)
+         save_path = os.environ['PATH']

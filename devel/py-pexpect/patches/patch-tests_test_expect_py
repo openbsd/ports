@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_test_expect_py,v 1.1 2021/02/20 21:44:58 sthen Exp $
+
+Index: tests/test_expect.py
+--- tests/test_expect.py.orig
++++ tests/test_expect.py
+@@ -411,7 +411,7 @@ class ExpectTestCase (PexpectTestCase.PexpectTestCase)
+     def test_before_across_chunks(self):
+         # https://github.com/pexpect/pexpect/issues/478
+         child = pexpect.spawn(
+-            '''/bin/bash -c "openssl rand -base64 {} 2>/dev/null | head -500 | nl --number-format=rz --number-width=5 2>&1 ; echo 'PATTERN!!!'"'''.format(1024 * 1024 * 2),
++            '''/bin/sh -c "openssl rand -base64 {} 2>/dev/null | head -500 | gnl --number-format=rz --number-width=5 2>&1 ; echo 'PATTERN!!!'"'''.format(1024 * 1024 * 2),
+             searchwindowsize=128
+         )
+         child.expect(['PATTERN'])
