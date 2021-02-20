@@ -1,0 +1,17 @@
+$OpenBSD: patch-include_input_h,v 1.1 2021/02/20 03:49:50 bcallah Exp $
+
+Fix -fno-common
+From Gentoo: https://github.com/gentoo/gentoo/pull/17532
+
+Index: include/input.h
+--- include/input.h.orig
++++ include/input.h
+@@ -22,8 +22,6 @@
+ #ifndef _INPUT_H
+ #define _INPUT_H
+ 
+-char *keyboard_map;
+-
+ void input_reset(void);
+ void input_update(void);
+ int input_kstate(int ksym);
