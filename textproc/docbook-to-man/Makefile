@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/20 17:38:06 sthen Exp $
 
 COMMENT=	convert docbook to man
 CATEGORIES=	textproc converters
@@ -9,17 +9,22 @@ MASTER_SITES= 	http://www.oasis-open.org/docbook/tools/dtm/
 DIST_SUBDIR=	${DISTNAME}-${VERSION}
 DISTNAME=	docbook-to-man
 PKGNAME=	docbook-to-man-${VERSION}
-REVISION =	2
-WANTLIB=	c
+REVISION=	3
 
 # basic in debian
 PERMIT_PACKAGE=	Yes
 
+WANTLIB=	c
+
 CONFIGURE_STYLE=imake noman
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-RUN_DEPENDS=	textproc/sp  textproc/docbook textproc/openjade
+RUN_DEPENDS=	textproc/sp \
+		textproc/docbook \
+		textproc/openjade
 
-MAKE_FLAGS +=	ROOT=${PREFIX}
+MAKE_FLAGS+=	ROOT=${PREFIX} \
+		CDEBUGFLAGS="${CFLAGS}"
 
 NO_TEST=	Yes
 

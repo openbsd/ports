@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/20 17:38:06 sthen Exp $
 bin/docbook-to-man
-bin/instant2
+@bin bin/instant2
 lib/tpt/
 lib/tpt/docbook-to-man.ts
 lib/tpt/roff.cmap
