@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/12 17:47:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/21 18:46:21 sthen Exp $
 
 COMMENT =		visual novel engine
 
@@ -24,7 +24,7 @@ MODULES =		lang/python
 
 BUILD_DEPENDS =		devel/pygame \
 			games/pygame_sdl2 \
-			lang/cython
+			lang/cython,python3
 
 RUN_DEPENDS =		games/pygame_sdl2 \
 			x11/gnome/zenity
