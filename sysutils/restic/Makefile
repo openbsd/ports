@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/19 23:22:22 abieber Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/21 18:59:02 abieber Exp $
 
 COMMENT =	fast, efficient and secure backup program
 
 MODGO_MODNAME =	github.com/restic/restic
-MODGO_VERSION =	v0.11.0
+MODGO_VERSION =	v0.12.0
+
 DISTNAME =	restic-${MODGO_VERSION}
 
 CATEGORIES =	sysutils
@@ -19,6 +20,8 @@ WANTLIB += c pthread
 
 
 MODULES =	lang/go
+
+MODGO_FLAGS +=	-trimpath
 
 NO_TEST =	Yes
 
@@ -114,7 +117,7 @@ MODGO_MODULES =	\
 	github.com/pkg/errors					 v0.9.1 \
 	github.com/pkg/profile					 v1.5.0 \
 	github.com/pkg/sftp					 v1.12.0 \
-	github.com/pkg/xattr					 v0.4.1 \
+	github.com/pkg/xattr					 v0.4.2 \
 	github.com/pmezard/go-difflib				 v1.0.0 \
 	github.com/prometheus/client_model			 v0.0.0-20190812154241-14fe0d1b01d4 \
 	github.com/restic/chunker				 v0.4.0 \
@@ -146,7 +149,7 @@ MODGO_MODULES =	\
 	golang.org/x/net					 v0.0.0-20200904194848-62affa334b73 \
 	golang.org/x/oauth2					 v0.0.0-20200902213428-5d25da1a8d43 \
 	golang.org/x/sync					 v0.0.0-20200625203802-6e8e738ad208 \
-	golang.org/x/sys					 v0.0.0-20201007082116-8445cc04cbdf \
+	golang.org/x/sys					 v0.0.0-20201101102859-da207088b7d1 \
 	golang.org/x/text					 v0.3.4 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
 	golang.org/x/tools					 v0.0.0-20200918232735-d647fc253266 \
@@ -330,7 +333,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sync			 v0.0.0-20190911185100-cd5d95a43a6e \
 	golang.org/x/sync			 v0.0.0-20200317015054-43a5402ce75a \
 	golang.org/x/sys			 v0.0.0-20180830151530-49385e6e1522 \
-	golang.org/x/sys			 v0.0.0-20181021155630-eda9bb28ed51 \
 	golang.org/x/sys			 v0.0.0-20181205085412-a5c9d58dba9a \
 	golang.org/x/sys			 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys			 v0.0.0-20190312061237-fead79001313 \
