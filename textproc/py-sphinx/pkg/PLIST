@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/02/21 08:42:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/02/21 13:43:10 sthen Exp $
 @conflict py-sphinx-<1.5.6p0
 @pkgpath textproc/py-sphinx
 bin/sphinx-apidoc
@@ -932,6 +932,12 @@ share/doc/${MODPY_PY_PREFIX}sphinx/_images/alabaster.png
 share/doc/${MODPY_PY_PREFIX}sphinx/_images/bizstyle.png
 share/doc/${MODPY_PY_PREFIX}sphinx/_images/classic.png
 share/doc/${MODPY_PY_PREFIX}sphinx/_images/haiku.png
+share/doc/${MODPY_PY_PREFIX}sphinx/_images/inheritance-1caee545bc016bf9545d78116ba2be0d6321ca99.png
+share/doc/${MODPY_PY_PREFIX}sphinx/_images/inheritance-1caee545bc016bf9545d78116ba2be0d6321ca99.png.map
+share/doc/${MODPY_PY_PREFIX}sphinx/_images/inheritance-39fdfc4d2ad315fae27b524e58b749a5d1a927f7.png
+share/doc/${MODPY_PY_PREFIX}sphinx/_images/inheritance-39fdfc4d2ad315fae27b524e58b749a5d1a927f7.png.map
+share/doc/${MODPY_PY_PREFIX}sphinx/_images/inheritance-866c0604955b28f0b20a28fafad69147ec359651.png
+share/doc/${MODPY_PY_PREFIX}sphinx/_images/inheritance-866c0604955b28f0b20a28fafad69147ec359651.png.map
 share/doc/${MODPY_PY_PREFIX}sphinx/_images/more.png
 share/doc/${MODPY_PY_PREFIX}sphinx/_images/nature.png
 share/doc/${MODPY_PY_PREFIX}sphinx/_images/pyramid.png
