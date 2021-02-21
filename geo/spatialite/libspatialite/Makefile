@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/10/11 16:30:30 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/21 07:38:27 landry Exp $
 
 COMMENT=	sqlite extented with spatial SQL capabilities
 PROJECT =	libspatialite
 DISTNAME =	${PROJECT}-5.0.0
+REVISION =	0
 SHARED_LIBS =	spatialite 1.2 # 8.1
 
 CONFIGURE_ARGS +=	--enable-rttopo \
@@ -16,7 +17,7 @@ LIB_DEPENDS +=	converters/libiconv \
 		geo/geos>=3.4.0 \
 		devel/proj
 
-WANTLIB += ${COMPILER_LIBCXX} bz2 charset crypto curl freexl geos
+WANTLIB += pthread bz2 charset crypto curl freexl geos
 WANTLIB += geos_c iconv jpeg lzma m minizip nghttp2 proj rttopo
 WANTLIB += sqlite3 ssl tiff xml2 z zstd
 
