@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/20 22:27:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/21 08:42:50 ajacoutot Exp $
 
 COMMENT =		Python documentation generator
 
 MODPY_EGG_VERSION =	3.5.1
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -22,8 +23,11 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
+USE_GMAKE =		Yes
+
 RUN_DEPENDS =		devel/py-babel${MODPY_FLAVOR} \
 			graphics/py-imagesize${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-alabaster${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
