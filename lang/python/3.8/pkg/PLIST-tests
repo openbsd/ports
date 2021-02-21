@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.7 2021/01/04 14:04:42 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.8 2021/02/21 19:24:26 daniel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -3866,6 +3866,9 @@ lib/python3.8/tkinter/test/test_tkinter/__pycache__/
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/__init__.cpython-38.opt-1.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/__init__.cpython-38.opt-2.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/__init__.cpython-38.pyc
+lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-38.opt-1.pyc
+lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-38.opt-2.pyc
+lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-38.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_font.cpython-38.opt-1.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_font.cpython-38.opt-2.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_font.cpython-38.pyc
@@ -3893,6 +3896,7 @@ lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-38.py
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-38.opt-1.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-38.opt-2.pyc
 lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-38.pyc
+lib/python3.8/tkinter/test/test_tkinter/test_colorchooser.py
 lib/python3.8/tkinter/test/test_tkinter/test_font.py
 lib/python3.8/tkinter/test/test_tkinter/test_geometry_managers.py
 lib/python3.8/tkinter/test/test_tkinter/test_images.py
