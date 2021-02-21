@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/11/18 12:10:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/21 09:19:07 semarie Exp $
 
 COMMENT =		command-line DNS lookup tool
 
 GH_ACCOUNT =		ogham
 GH_PROJECT =		dog
 GH_TAGNAME =		v0.1.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

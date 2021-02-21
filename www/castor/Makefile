@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/02 16:46:17 semarie Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/21 09:19:08 semarie Exp $
 
 COMMENT=		graphical browser for plain-text protocols
 
 V=			0.8.16
 DISTNAME=		castor-${V}
-REVISION=		0
+REVISION=		1
 
 DISTFILES=		castor-{castor/archive/}${V}${EXTRACT_SUFX}
 

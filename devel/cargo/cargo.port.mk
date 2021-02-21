@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.19 2020/06/09 12:42:28 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.20 2021/02/21 09:19:07 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -77,7 +77,7 @@ MODCARGO_post-extract += \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/bzip2-* ; \
 	echo 'fn main() { println!("cargo:rustc-link-lib=bz2\ncargo:rustc-link-search=${LOCALBASE}/lib"); }' \
 		> ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/build.rs ;
-	
+
 .    elif "${_cratename}" == "curl-sys"
 MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
@@ -141,7 +141,7 @@ MODCARGO_post-extract += \
 MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/pcre2 ;
-	
+
 .    elif "${_cratename}" == "portaudio-sys"
 # no libsrc, fail if lib not found
 
@@ -303,7 +303,7 @@ MODCARGO_INSTALL_TARGET = \
 		--offline \
 		--verbose \
 		${MODCARGO_INSTALL_ARGS} ; \
-	rm -- "${PREFIX}/.crates.toml" ;
+	rm -- "${PREFIX}/.crates.toml" "${PREFIX}/.crates2.json" ;
 
 .if !target(do-install) && ${MODCARGO_INSTALL:L} == "yes"
 do-install:

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/30 19:16:45 abieber Exp $
-.crates2.json
+@comment $OpenBSD: PLIST,v 1.2 2021/02/21 09:19:08 semarie Exp $
 @bin bin/rbw
 @bin bin/rbw-agent
