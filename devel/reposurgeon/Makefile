@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/19 23:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/21 21:12:11 sthen Exp $
 
 COMMENT=	tool for editing version-control repository history
 
@@ -20,11 +20,11 @@ MASTER_SITES=	http://www.catb.org/esr/reposurgeon/
 USE_GMAKE=	Yes
 MODULES=	lang/python
 CONFIGURE_STYLE= x	# bad python.port.mk
-BUILD_DEPENDS=	lang/cython \
+BUILD_DEPENDS=	lang/cython,python3 \
 		textproc/asciidoc \
 		textproc/xmlto
 
-MAKE_FLAGS=	mandir=man CYTHON=cython${MODPY_BIN_SUFFIX}
+MAKE_FLAGS=	mandir=man
 ALL_TARGET=	all cyreposurgeon
 INSTALL_TARGET=	install install-cyreposurgeon
 
