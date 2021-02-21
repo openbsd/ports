@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.202 2021/02/19 23:14:45 sthen Exp $
+# $OpenBSD: Port.pm,v 1.203 2021/02/21 10:48:04 sthen Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -960,6 +960,7 @@ sub new
 
 	$job->{endcode} = sub {
 	    print {$job->{logfh}} ">>> Ended at ", DPB::Util->current_ts, "\n";
+	    print {$job->{logfh}} $job->timings, "\n";
 	    close($job->{logfh});
 	    &$e;
 	};
