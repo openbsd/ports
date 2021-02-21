@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.1.1.1 2020/10/05 20:48:12 kmos Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.2 2021/02/21 19:23:21 daniel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tkinter-${VERSION_SPEC}
-@so lib/python3.9/lib-dynload/_tkinter.so
+@so lib/python3.9/lib-dynload/_tkinter.cpython-39.so
 lib/python3.9/tkinter/
 lib/python3.9/tkinter/__init__.py
 lib/python3.9/tkinter/__main__.py

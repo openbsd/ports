@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.2 2020/12/28 22:28:14 daniel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.3 2021/02/21 19:23:21 daniel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -2487,6 +2487,9 @@ lib/python3.9/test/test_asyncio/__pycache__/echo3.cpython-39.pyc
 lib/python3.9/test/test_asyncio/__pycache__/functional.cpython-39.opt-1.pyc
 lib/python3.9/test/test_asyncio/__pycache__/functional.cpython-39.opt-2.pyc
 lib/python3.9/test/test_asyncio/__pycache__/functional.cpython-39.pyc
+lib/python3.9/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-39.opt-1.pyc
+lib/python3.9/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-39.opt-2.pyc
+lib/python3.9/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-39.pyc
 lib/python3.9/test/test_asyncio/__pycache__/test_base_events.cpython-39.opt-1.pyc
 lib/python3.9/test/test_asyncio/__pycache__/test_base_events.cpython-39.opt-2.pyc
 lib/python3.9/test/test_asyncio/__pycache__/test_base_events.cpython-39.pyc
@@ -2569,6 +2572,7 @@ lib/python3.9/test/test_asyncio/echo.py
 lib/python3.9/test/test_asyncio/echo2.py
 lib/python3.9/test/test_asyncio/echo3.py
 lib/python3.9/test/test_asyncio/functional.py
+lib/python3.9/test/test_asyncio/test_asyncio_waitfor.py
 lib/python3.9/test/test_asyncio/test_base_events.py
 lib/python3.9/test/test_asyncio/test_buffered_proto.py
 lib/python3.9/test/test_asyncio/test_context.py
@@ -3931,6 +3935,9 @@ lib/python3.9/tkinter/test/test_tkinter/__pycache__/
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/__init__.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/__init__.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/__init__.cpython-39.pyc
+lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-39.opt-1.pyc
+lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-39.opt-2.pyc
+lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-39.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_font.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_font.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_font.cpython-39.pyc
@@ -3946,6 +3953,9 @@ lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-39.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-39.pyc
+lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_simpledialog.cpython-39.opt-1.pyc
+lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_simpledialog.cpython-39.opt-2.pyc
+lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_simpledialog.cpython-39.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_text.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_text.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_text.cpython-39.pyc
@@ -3955,11 +3965,13 @@ lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-39.py
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-39.pyc
+lib/python3.9/tkinter/test/test_tkinter/test_colorchooser.py
 lib/python3.9/tkinter/test/test_tkinter/test_font.py
 lib/python3.9/tkinter/test/test_tkinter/test_geometry_managers.py
 lib/python3.9/tkinter/test/test_tkinter/test_images.py
 lib/python3.9/tkinter/test/test_tkinter/test_loadtk.py
 lib/python3.9/tkinter/test/test_tkinter/test_misc.py
+lib/python3.9/tkinter/test/test_tkinter/test_simpledialog.py
 lib/python3.9/tkinter/test/test_tkinter/test_text.py
 lib/python3.9/tkinter/test/test_tkinter/test_variables.py
 lib/python3.9/tkinter/test/test_tkinter/test_widgets.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.1.1.1 2020/10/05 20:48:12 kmos Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2021/02/21 19:23:21 daniel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle-${VERSION_SPEC}
@@ -432,6 +432,9 @@ lib/python3.9/idlelib/idle_test/__pycache__/test_window.cpython-39.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_zoomheight.cpython-39.opt-1.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_zoomheight.cpython-39.opt-2.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_zoomheight.cpython-39.pyc
+lib/python3.9/idlelib/idle_test/__pycache__/test_zzdummy.cpython-39.opt-1.pyc
+lib/python3.9/idlelib/idle_test/__pycache__/test_zzdummy.cpython-39.opt-2.pyc
+lib/python3.9/idlelib/idle_test/__pycache__/test_zzdummy.cpython-39.pyc
 lib/python3.9/idlelib/idle_test/htest.py
 lib/python3.9/idlelib/idle_test/mock_idle.py
 lib/python3.9/idlelib/idle_test/mock_tk.py
@@ -493,6 +496,7 @@ lib/python3.9/idlelib/idle_test/test_undo.py
 lib/python3.9/idlelib/idle_test/test_warning.py
 lib/python3.9/idlelib/idle_test/test_window.py
 lib/python3.9/idlelib/idle_test/test_zoomheight.py
+lib/python3.9/idlelib/idle_test/test_zzdummy.py
 lib/python3.9/idlelib/iomenu.py
 lib/python3.9/idlelib/macosx.py
 lib/python3.9/idlelib/mainmenu.py
