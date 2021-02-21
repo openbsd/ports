@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2021/02/21 08:42:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2021/02/21 09:52:31 sthen Exp $
 
 COMMENT =		Python documentation generator
 
 MODPY_EGG_VERSION =	3.5.1
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -38,11 +38,11 @@ RUN_DEPENDS =		devel/py-babel${MODPY_FLAVOR} \
 			textproc/py-sphinxcontrib/jsmath${MODPY_FLAVOR} \
 			textproc/py-sphinxcontrib/qthelp${MODPY_FLAVOR} \
 			textproc/py-sphinxcontrib/serializinghtml${MODPY_FLAVOR} \
+			textproc/py-sphinxcontrib/websupport${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS} \
-			devel/gettext,-tools \
-			textproc/py-sphinxcontrib/websupport${MODPY_FLAVOR}
+			devel/gettext,-tools
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			print/texlive/texmf,-full
