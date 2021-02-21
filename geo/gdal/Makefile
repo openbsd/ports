@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.94 2021/01/05 13:24:09 landry Exp $
+# $OpenBSD: Makefile,v 1.95 2021/02/21 07:53:35 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
 V =		3.2.1
+REVISION =	0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -66,9 +67,8 @@ WANTLIB-main =		c charset crypto curl expat freexl geos geos_c geotiff \
 
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
 			math/py-numpy${MODPY_FLAVOR}
-LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS} \
-			${FULLPKGNAME-main}:${FULLPKGPATH-main}
-WANTLIB-python =	${MODPY_WANTLIB} gdal m pthread ${COMPILER_LIBCXX}
+LIB_DEPENDS-python =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
+WANTLIB-python =	gdal m pthread ${COMPILER_LIBCXX}
 
 RUN_DEPENDS-perl =
 LIB_DEPENDS-perl =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
@@ -80,7 +80,8 @@ WANTLIB-perl += pq proj pthread qhull spatialite sqlite3 tiff xml2 webp z zstd
 BUILD_DEPENDS +=	${RUN_DEPENDS} math/py-numpy${MODPY_FLAVOR} devel/swig
 
 MODPY_PYTEST =		Yes
-TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python}
+TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python} \
+			textproc/py-lxml${MODPY_FLAVOR}
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
