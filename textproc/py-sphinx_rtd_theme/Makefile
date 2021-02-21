@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/20 13:20:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/21 16:30:23 sthen Exp $
 
 COMMENT =		readthedocs.org theme for Sphinx
 
-MODPY_EGG_VERSION =	0.4.3
+MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		sphinx_rtd_theme-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+DISTFILES =		${DISTNAME}.tar.gz \
+			sphinx-rtd-theme_${MODPY_EGG_VERSION}+dfsg-1.debian.tar.xz:0
 
 CATEGORIES =		textproc
 
@@ -16,10 +17,19 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MASTER_SITES0 =		${MASTER_SITE_DEBIAN:=main/s/sphinx-rtd-theme/}
 
 FLAVORS =		python3
 FLAVOR =		python3
 
 NO_TEST =		Yes
+
+# upstream distfiles require use of npm to fetch dependencies.
+# use files from Debian's packaging to provide those dep's and use
+# their patchset to make use of them.
+post-patch:
+	mv ${WRKDIR}/debian ${WRKSRC}/
+	cd ${WRKSRC}; for i in `cat debian/patches/series`; do \
+	    patch -Ep1 < debian/patches/$$i; done
 
 .include <bsd.port.mk>
