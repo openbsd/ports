@@ -1,6 +1,7 @@
-$OpenBSD: patch-ipguard_h,v 1.3 2012/03/30 07:24:45 ajacoutot Exp $
---- ipguard.h.orig	Mon Jul 12 00:46:36 2010
-+++ ipguard.h	Thu Mar 22 11:35:20 2012
+$OpenBSD: patch-ipguard_h,v 1.4 2021/02/21 09:54:55 tb Exp $
+Index: ipguard.h
+--- ipguard.h.orig
++++ ipguard.h
 @@ -52,8 +52,8 @@
  #define MAIL            "sead at deep.perm.ru"
  
@@ -12,3 +13,62 @@ $OpenBSD: patch-ipguard_h,v 1.3 2012/03/30 07:24:45 ajacoutot Exp $
  #define FAKEMAC         "de:ad:xx:xx:xx:xx"
  #define PCAPFSIZ        128
  
+@@ -68,33 +68,33 @@
+ #define NOTICE          3
+ #define INFO            4
+ 
+-char iface[IFNAMSIZ];
+-char ethers_name[PATH_MAX];
+-char log_name[PATH_MAX];
+-char pid_name[PATH_MAX];
+-char fmac[18];
+-char pcapf[PCAPFSIZ];
+-char suser[MAXLOGNAME];
+-int ethers_update;
+-int fake_regen;
+-int fake_num;
+-int fake_time;
+-int buffer_num;
+-int addr_nosubst;
+-int nofirst;
+-int grant;
+-int read_only;
+-int duplex;
+-int fixbc;
+-int hidden;
+-int promisc;
+-int debug;
+-int verbose;
++extern char iface[IFNAMSIZ];
++extern char ethers_name[PATH_MAX];
++extern char log_name[PATH_MAX];
++extern char pid_name[PATH_MAX];
++extern char fmac[18];
++extern char pcapf[PCAPFSIZ];
++extern char suser[MAXLOGNAME];
++extern int ethers_update;
++extern int fake_regen;
++extern int fake_num;
++extern int fake_time;
++extern int buffer_num;
++extern int addr_nosubst;
++extern int nofirst;
++extern int grant;
++extern int read_only;
++extern int duplex;
++extern int fixbc;
++extern int hidden;
++extern int promisc;
++extern int debug;
++extern int verbose;
+ 
+-unsigned int all, good, grat, wgrat, zmac, zip, bad, bmac, bsip, btip,
++extern unsigned int all, good, grat, wgrat, zmac, zip, bad, bmac, bsip, btip,
+     bnew, bgrat, mymac, fake, pfake, nzh, nbe, mis;
+-char pfmac[18];
+-char s[128+1];
++extern char pfmac[18];
++extern char s[128+1];
+ 
+ /*  ethers.c
+  */
