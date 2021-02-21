@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/21 20:19:40 naddy Exp $
 
 COMMENT =		action puzzle game inspired by Robbo
 
 V =			0.68
 DISTNAME =		gnurobbo-$V-source
 PKGNAME =		gnurobbo-$V
+REVISION =		0
 
 CATEGORIES =		games
 
