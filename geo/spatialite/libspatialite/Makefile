@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/21 07:38:27 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/21 13:29:58 landry Exp $
 
 COMMENT=	sqlite extented with spatial SQL capabilities
 PROJECT =	libspatialite
-DISTNAME =	${PROJECT}-5.0.0
-REVISION =	0
-SHARED_LIBS =	spatialite 1.2 # 8.1
+DISTNAME =	${PROJECT}-5.0.1
+SHARED_LIBS =	spatialite 1.2 # 8.2
 
 CONFIGURE_ARGS +=	--enable-rttopo \
 			--enable-gcp #required by spatialite_gui
