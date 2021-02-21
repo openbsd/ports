@@ -1,4 +1,4 @@
-.\"	$OpenBSD: sqlports.5,v 1.5 2021/01/29 08:30:38 espie Exp $
+.\"	$OpenBSD: sqlports.5,v 1.6 2021/02/21 09:14:05 espie Exp $
 .\"
 .\" Copyright (c) 2020 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 29 2021 $
+.Dd $Mdocdate: February 21 2021 $
 .Dt SQLPORTS 5
 .Os
 .Sh NAME
@@ -119,6 +119,7 @@ No values are stored for SUBPKGPATH=-.
 .It _Configure(FULLPKGPATH, VALUE, N)
 Corresponds to CONFIGURE_STYLE
 .It _ConfigureArgs(FULLPKGPATH, VALUE, N, QUOTETYPE)
+.It _DebugConfigureArgs(FULLPKGPATH, VALUE, N, QUOTETYPE)
 .It _MasterSites(FULLPKGPATH, N, VALUE)
 .It _Makefiles(FULLPKGPATH, VALUE, N)
 This tables contains only Makefiles from MAKE_FILE_LIST that are not
@@ -163,6 +164,10 @@ number specification stored in EXTRA
 coming from the WANTLIB variable.
 .It _Multi(FULLPKGPATH, VALUE, SUBPKGPATH, N)
 also contains the normalized pkgpath for the corresponding subpackage.
+.It _DebugPackages(FULLPKGPATH, VALUE, SUBPKGPATH, N)
+contrary to _Multi, also contains
+.Sq -
+entries for packages without subpackages which have debug packages.
 .It _PkgPaths(FULLPKGPATH, Value, N)
 all build_packages associated to a fullpkgpath.
 .It _Broken(FULLPKGPATH, ARCH, TEXT)
@@ -212,7 +217,8 @@ contains all info from _ports and from secondary tables with indices
 replaced with text values.
 .It
 * Depends_ordered, Categories_ordered, CompilerLinks_Ordered,
-Configureargs_ordered, Configure_ordered, DPBProperties_ordered,
+Configureargs_ordered, Configure_ordered, DebugConfigureArgs_Ordered, 
+DPBProperties_ordered,
 Flavors_ordered, Makefiles_ordered, Modules_ordered, NotForArch_ordered,
 OnlyforArch_ordered, PkgPaths_ordered, PseudoFlavors_ordered,
 SubstVars_ordered, Targets_ordered, distfiles_ordered, wantlib_ordered: 
