@@ -1,0 +1,19 @@
+$OpenBSD: patch-doc_conf_py,v 1.1 2021/02/21 10:04:45 sthen Exp $
+
+Disabled to prevent going online during build.
+
+Index: doc/conf.py
+--- doc/conf.py.orig
++++ doc/conf.py
+@@ -118,11 +118,6 @@ texinfo_documents = [
+      1),
+ ]
+ 
+-intersphinx_mapping = {
+-    'python': ('https://docs.python.org/3/', None),
+-    'requests': ('https://requests.readthedocs.io/en/master', None),
+-}
+-
+ # Sphinx document translation with sphinx gettext feature uses these settings:
+ locale_dirs = ['locale/']
+ gettext_compact = False
