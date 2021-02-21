@@ -1,0 +1,17 @@
+$OpenBSD: patch-personality_c,v 1.1 2021/02/21 09:25:25 tb Exp $
+
+Fix -fno-common build error.
+
+Index: personality.c
+--- personality.c.orig
++++ personality.c
+@@ -65,6 +65,9 @@
+ #include "template.h"
+ #include "debug.h"
+ 
++struct perstree personalities;
++struct xp_fprint_tree xp_fprints;
++
+ /* ET - Moved SPLAY_HEAD to personality.h so xprobe_assoc.c could use it. */
+ int npersons;
+ 

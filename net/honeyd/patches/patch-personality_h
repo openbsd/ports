@@ -1,0 +1,27 @@
+$OpenBSD: patch-personality_h,v 1.1 2021/02/21 09:25:25 tb Exp $
+
+Fix -fno-common build error.
+
+Index: personality.h
+--- personality.h.orig
++++ personality.h
+@@ -179,7 +179,8 @@ void xprobe_personality_init(void);
+ void print_perstree(void);
+ 
+ /* Splay stuff here so other modules can use it */
+-SPLAY_HEAD(perstree, personality) personalities;
++SPLAY_HEAD(perstree, personality);
++extern struct perstree personalities;
+ static int
+ perscompare(struct personality *a, struct personality *b)
+ {
+@@ -187,7 +188,8 @@ perscompare(struct personality *a, struct personality 
+ }
+ SPLAY_PROTOTYPE(perstree, personality, node, perscompare);
+ 
+-SPLAY_HEAD(xp_fprint_tree, xp_fingerprint) xp_fprints;
++SPLAY_HEAD(xp_fprint_tree, xp_fingerprint);
++extern struct xp_fprint_tree xp_fprints;
+ static int 
+ xp_fprint_compare(struct xp_fingerprint *a, struct xp_fingerprint *b)
+ {

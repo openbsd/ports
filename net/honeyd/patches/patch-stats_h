@@ -1,0 +1,25 @@
+$OpenBSD: patch-stats_h,v 1.1 2021/02/21 09:25:25 tb Exp $
+
+Fix -fno-common build error.
+
+Index: stats.h
+--- stats.h.orig
++++ stats.h
+@@ -91,7 +91,7 @@ struct stats {
+ 
+ enum {
+ 	M_COUNTER, M_TV_START, M_TV_END, M_RECORD, M_MAX
+-} measurement_tags;
++};
+ 
+ struct measurement {
+ 	uint32_t counter;
+@@ -105,7 +105,7 @@ struct measurement {
+ 
+ enum {
+ 	SIG_NAME, SIG_DIGEST, SIG_DATA, SIG_COMPRESSED_DATA, SIG_MAX
+-} signature_tags;
++};
+ 
+ struct signature {
+ 	char *name;

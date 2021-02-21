@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/04/21 23:42:18 alek Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/02/21 09:25:25 tb Exp $
 @newgroup _honeyd:!546
 @newuser _honeyd:!546:!_honeyd:daemon:honeyd user:/nonexistent:/sbin/nologin
 @bin bin/honeyd
@@ -11,7 +11,7 @@ include/honeyd/hooks.h
 include/honeyd/plugins.h
 include/honeyd/plugins_config.h
 lib/honeyd/
-lib/honeyd/libhoneyd.so
+@so lib/honeyd/libhoneyd.so
 @man man/man1/honeydctl.1
 @man man/man8/honeyd.8
 share/honeyd/
