@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/07 16:01:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/21 04:03:50 rsadowski Exp $
 
 COMMENT =		template and text document library for Qt5
 
 VERSION =		5.2.0
 PKGNAME =		grantlee-qt5-${VERSION}
 DISTNAME =		grantlee-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  Grantlee_Templates        1.0 # 5.1
 SHARED_LIBS +=  Grantlee_TextDocument     0.0 # 5.1
@@ -34,5 +34,9 @@ TEST_IS_INTERACTIVE =	X11
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LCov=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Cccc=ON
+
+CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -lc -lpthread" \
+			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS} -lc -lpthread" \
+			-DCMAKE_MODULE_LINKER_FLAGS="${LDFLAGS} -lc -lpthread"
 
 .include <bsd.port.mk>
