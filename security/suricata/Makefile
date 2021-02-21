@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/02/03 00:33:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/21 10:29:43 sthen Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
@@ -69,8 +69,6 @@ pre-configure:
 		${WRKSRC}/suricata-update/doc/Makefile \
 		${WRKSRC}/suricata-update/suricata/update/config.py \
 		${WRKSRC}/suricata-update/suricata/update/parsers.py
-	ln -fs ${PREFIX}/bin/sphinx-build${MODPY_BIN_SUFFIX} \
-		${WRKDIR}/bin/sphinx-build
 	# prevent generating revision.py
 	rm -rf ${WRKSRC}/suricata-update/.git
 
