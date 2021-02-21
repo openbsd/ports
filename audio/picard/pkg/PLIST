@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/01/04 14:06:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/02/21 21:10:40 sthen Exp $
 bin/picard
 lib/python${MODPY_VERSION}/site-packages/picard/
 lib/python${MODPY_VERSION}/site-packages/picard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -81,12 +81,12 @@ lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}caa_release_group.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}local.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}provider.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}whitelist.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}urlrels.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/caa.py
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/caa_release_group.py
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/local.py
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/provider.py
-lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/whitelist.py
+lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/urlrels.py
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/utils.py
 lib/python${MODPY_VERSION}/site-packages/picard/dataobj.py
 lib/python${MODPY_VERSION}/site-packages/picard/disc.py
@@ -480,6 +480,7 @@ share/locale/hr/LC_MESSAGES/picard-attributes.mo
 share/locale/hr/LC_MESSAGES/picard-countries.mo
 share/locale/hr/LC_MESSAGES/picard.mo
 share/locale/hu/LC_MESSAGES/picard.mo
+share/locale/id/LC_MESSAGES/picard-countries.mo
 share/locale/id/LC_MESSAGES/picard.mo
 share/locale/is/LC_MESSAGES/picard.mo
 share/locale/it/LC_MESSAGES/picard-attributes.mo
@@ -571,5 +572,7 @@ share/locale/zh_CN/LC_MESSAGES/picard.mo
 share/locale/zh_TW/LC_MESSAGES/picard-attributes.mo
 share/locale/zh_TW/LC_MESSAGES/picard-countries.mo
 share/locale/zh_TW/LC_MESSAGES/picard.mo
+share/metainfo/
+share/metainfo/org.musicbrainz.Picard.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
