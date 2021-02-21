@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/21 17:19:58 sthen Exp $
 
 COMMENT =	HA and replication cluster management for PostgreSQL
 
-DISTNAME =	repmgr-3.0.3
+DISTNAME =	repmgr-5.2.1
 CATEGORIES =	databases
-HOMEPAGE =	http://www.repmgr.org/
-REVISION =	0
+HOMEPAGE =	https://repmgr.org/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto curses m pq pthread readline ssl xml2 z
+WANTLIB += c pq
 
 MASTER_SITES =	${HOMEPAGE}download/
+
 USE_GMAKE =	Yes
 MAKE_FLAGS =	USE_PGXS=1
+CONFIGURE_ENV =	HAVE_GSED=no
+CONFIGURE_STYLE = gnu
 
 # for getopt_long.h
 BUILD_DEPENDS =	databases/postgresql,-server
@@ -22,9 +24,6 @@ LIB_DEPENDS =	databases/postgresql
 RUN_DEPENDS =	net/rsync
 
 NO_TEST =	Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/config.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/repmgr

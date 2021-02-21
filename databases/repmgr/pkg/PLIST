@@ -1,14 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/09/19 21:37:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/21 17:19:58 sthen Exp $
 @bin bin/repmgr
 @bin bin/repmgrd
-lib/postgresql/repmgr_funcs.so
+@so lib/postgresql/repmgr.so
 share/doc/repmgr/
 share/doc/repmgr/README.md
 share/examples/repmgr/
 share/examples/repmgr/repmgr.conf
 @sample ${SYSCONFDIR}/repmgr.conf
-share/postgresql/contrib/
-share/postgresql/contrib/repmgr.sql
-share/postgresql/contrib/repmgr_funcs.sql
-share/postgresql/contrib/uninstall_repmgr.sql
-share/postgresql/contrib/uninstall_repmgr_funcs.sql
+share/postgresql/extension/
+share/postgresql/extension/repmgr--4.0--4.1.sql
+share/postgresql/extension/repmgr--4.0.sql
+share/postgresql/extension/repmgr--4.1--4.2.sql
+share/postgresql/extension/repmgr--4.1.sql
+share/postgresql/extension/repmgr--4.2--4.3.sql
+share/postgresql/extension/repmgr--4.2.sql
+share/postgresql/extension/repmgr--4.3--4.4.sql
+share/postgresql/extension/repmgr--4.3.sql
+share/postgresql/extension/repmgr--4.4--5.0.sql
+share/postgresql/extension/repmgr--4.4.sql
+share/postgresql/extension/repmgr--5.0--5.1.sql
+share/postgresql/extension/repmgr--5.0.sql
+share/postgresql/extension/repmgr--5.1--5.2.sql
+share/postgresql/extension/repmgr--5.1.sql
+share/postgresql/extension/repmgr--5.2.sql
+share/postgresql/extension/repmgr--unpackaged--4.0.sql
+share/postgresql/extension/repmgr--unpackaged--5.1.sql
+share/postgresql/extension/repmgr--unpackaged--5.2.sql
+share/postgresql/extension/repmgr.control
