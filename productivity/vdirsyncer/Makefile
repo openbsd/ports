@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/20 22:27:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/21 16:30:45 sthen Exp $
 
 COMMENT =		synchronize calendars and contacts
 
 MODPY_EGG_VERSION =	0.16.8
 DISTNAME =		vdirsyncer-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		productivity
 
