@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/14 14:24:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/21 12:56:38 landry Exp $
 
 COMMENT =		Python binding for the Scintilla source code editor
 
@@ -28,7 +28,8 @@ PYQTVER =		PyQt5
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS =		devel/py-qt-builder${MODPY_FLAVOR} \
+			${RUN_DEPENDS}
 RUN_DEPENDS =		devel/py-sip${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}
