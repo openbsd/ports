@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2021/02/21 13:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/21 17:42:21 sthen Exp $
 
 COMMENT =		Python documentation generator
 
 MODPY_EGG_VERSION =	3.5.1
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc
 
@@ -23,11 +23,8 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
-USE_GMAKE =		Yes
-
 RUN_DEPENDS =		devel/py-babel${MODPY_FLAVOR} \
 			graphics/py-imagesize${MODPY_FLAVOR} \
-			math/graphviz \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-alabaster${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR} \
@@ -48,13 +45,5 @@ TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			print/texlive/texmf,-full
 PORTHOME =		${WRKDIR}
-
-post-build:
-	cd ${WRKSRC}/doc && ${MAKE_ENV} PYTHONPATH=${WRKSRC} gmake html
-
-DOCS =	${PREFIX}/share/doc/${MODPY_PY_PREFIX}sphinx
-post-install:
-	${INSTALL_DATA_DIR} ${DOCS}
-	cd ${WRKSRC}/doc/_build/html && pax -rw * ${DOCS}
 
 .include <bsd.port.mk>
