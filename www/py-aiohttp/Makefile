@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/04 14:06:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/21 19:29:22 daniel Exp $
 
 COMMENT =		http client/server for asyncio
 
-MODPY_EGG_VERSION =	3.5.4
+MODPY_EGG_VERSION =	3.7.3
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-CATEGORIES =		www
-REVISION =		4
 
-# Apache2
+CATEGORIES =		www
+
+# Apache 2.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
@@ -17,19 +17,28 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
-			textproc/py-chardet${MODPY_FLAVOR} \
-# these are py3 only
-RUN_DEPENDS +=		devel/py-async-timeout \
-			www/py-multidict${MODPY_FLAVOR} \
-			www/py-yarl
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-async-timeout \
+			devel/py-attrs${MODPY_FLAVOR}>=17.3.0 \
+			devel/py-typing-extensions${MODPY_FLAVOR}>=3.6.5 \
+			textproc/py-chardet${MODPY_FLAVOR}>=2.0 \
+			www/py-multidict${MODPY_FLAVOR}>=4.5 \
+			www/py-yarl>=1.0
+
+# XXX: needs ports for re_assert and async_generator
+NO_TEST =	Yes
+
+TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-test-timeout${MODPY_FLAVOR} \
+			devel/py-test-xdist${MODPY_FLAVOR} \
 			www/py-gunicorn${MODPY_FLAVOR}
 
-# we don't have any port for pytest-{xdist,timeout}
-NO_TEST =		Yes
+# XXX: leftovers in version 3.7.3
+post-extract:
+	rm -rf ${WRKSRC}/aiohttp/.hash
 
 .include <bsd.port.mk>
