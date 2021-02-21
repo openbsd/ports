@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.94 2021/02/21 16:49:11 jsing Exp $
+# $OpenBSD: Makefile,v 1.95 2021/02/21 17:21:42 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
-BIN_BOOTSTRAP_GOARCHS =	arm arm64
+BIN_BOOTSTRAP_GOARCHS =	arm arm64 mips64
 BIN_BOOTSTRAP_VERSION = 1.16
 
 COMMENT =		Go programming language
@@ -54,6 +54,8 @@ GOARCH =		arm
 GOARCH =		arm64
 .elif ${MACHINE_ARCH} == "i386"
 GOARCH =		386
+.elif ${MACHINE_ARCH} == "octeon"
+GOARCH =		mips64
 .endif
 
 # We cannot assume that the machine running the built code will have SSE,
