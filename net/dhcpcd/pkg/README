@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2019/03/25 14:34:08 sthen Exp $
+$OpenBSD: README,v 1.10 2021/02/21 21:36:30 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -13,6 +13,14 @@ facing your local network.
 
 Here is a sample configuration achieving this, fetching addresses over the
 pppoe0 interface and assigning it to multiple local networks.
+
+Also ensure that pf.conf(5) allows DHCPv6 traffic to pass, for example:
+
+  pass in quick on pppoe0 proto udp from fe80::/10 port dhcpv6-server to fe80::/10 port dhcpv6-client
+
+As usual with IPv6, you will also need to allow address resolution
+(with IPv6 this is done "in band" using icmp6 packets which must be allowed
+to pass PF - with IPv4 this is done by ARP which is ignored by PF).
 
 -- -- -- -- -- --
 ipv6only
