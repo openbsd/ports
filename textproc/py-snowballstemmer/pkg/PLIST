@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/20 13:20:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/21 16:01:05 sthen Exp $
 @pkgpath textproc/py-snowballstemmer
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -11,6 +11,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}among.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}arabic_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}armenian_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}basestemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}basque_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}catalan_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -33,12 +34,15 @@ lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}porter_
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}portuguese_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}romanian_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}russian_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}serbian_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}spanish_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}swedish_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}tamil_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}turkish_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/snowballstemmer/${MODPY_PYCACHE}yiddish_stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/among.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/arabic_stemmer.py
+lib/python${MODPY_VERSION}/site-packages/snowballstemmer/armenian_stemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/basestemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/basque_stemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/catalan_stemmer.py
@@ -61,7 +65,9 @@ lib/python${MODPY_VERSION}/site-packages/snowballstemmer/porter_stemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/portuguese_stemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/romanian_stemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/russian_stemmer.py
+lib/python${MODPY_VERSION}/site-packages/snowballstemmer/serbian_stemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/spanish_stemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/swedish_stemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/tamil_stemmer.py
 lib/python${MODPY_VERSION}/site-packages/snowballstemmer/turkish_stemmer.py
+lib/python${MODPY_VERSION}/site-packages/snowballstemmer/yiddish_stemmer.py
