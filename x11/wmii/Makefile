@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/21 20:30:26 matthieu Exp $
 
 COMMENT=	dynamic window manager
 
 DISTNAME=	wmii-3.6
-REVISION=	6
+REVISION=	7
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wmii.suckless.org/

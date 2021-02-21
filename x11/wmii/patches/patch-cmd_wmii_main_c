@@ -1,0 +1,44 @@
+$OpenBSD: patch-cmd_wmii_main_c,v 1.1 2021/02/21 20:30:26 matthieu Exp $
+
+fix for -fno-common
+
+Index: cmd/wmii/main.c
+--- cmd/wmii/main.c.orig
++++ cmd/wmii/main.c
+@@ -17,6 +17,36 @@
+ #include <unistd.h>
+ #include "fns.h"
+ 
++
++struct Def def;
++
++struct WMScreen *screens, *screen;
++
++Client *client;
++View *view;
++Key *key;
++Divide *divs;
++Client c_magic;
++Client c_root;
++
++char buffer[8192];
++
++IxpServer srv;
++
++uint num_screens;
++uint valid_mask;
++uint num_lock_mask;
++Bool sel_screen;
++
++Image xor;
++
++Cursor cursor[CurLast];
++
++Bool starting;
++Bool verbose;
++char *user;
++char *execstr;
++
+ static const char
+ 	version[] = "wmii-"VERSION", ©2007 Kris Maglione\n";
+ 

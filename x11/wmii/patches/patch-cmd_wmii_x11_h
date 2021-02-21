@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmd_wmii_x11_h,v 1.1 2021/02/21 20:30:26 matthieu Exp $
+
+fix for -fno-common
+
+Index: cmd/wmii/x11.h
+--- cmd/wmii/x11.h.orig
++++ cmd/wmii/x11.h
+@@ -94,8 +94,8 @@ struct Font {
+ 	char *name;
+ };
+ 
+-Display *display;
+-Screen scr;
++extern Display *display;
++extern Screen scr;
+ 
+ extern Point ZP;
+ extern Rectangle ZR;

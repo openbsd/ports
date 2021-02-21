@@ -1,0 +1,94 @@
+$OpenBSD: patch-cmd_wmii_dat_h,v 1.1 2021/02/21 20:30:26 matthieu Exp $
+
+fix for -fno-common
+
+Index: cmd/wmii/dat.h
+--- cmd/wmii/dat.h.orig
++++ cmd/wmii/dat.h
+@@ -194,7 +194,7 @@ struct Ruleset {
+ };
+ 
+ /* global variables */
+-struct {
++struct Def {
+ 	CTuple focuscolor;
+ 	CTuple normcolor;
+ 	Font *font;
+@@ -207,8 +207,10 @@ struct {
+ 	char grabmod[5];
+ 	ulong mod;
+ 	int colmode;
+-} def;
++};
+ 
++extern struct Def def;
++
+ enum {
+ 	BarLeft, BarRight
+ };
+@@ -223,40 +225,42 @@ struct WMScreen {
+ 
+ 	Rectangle r;
+ 	Rectangle brect;
+-} *screens, *screen;
++};
+ 
+-Client *client;
+-View *view;
+-Key *key;
+-Divide *divs;
+-Client c_magic;
+-Client c_root;
++extern struct WMScreen  *screens, *screen;
+ 
+-Handlers framehandler;
++extern Client *client;
++extern View *view;
++extern Key *key;
++extern Divide *divs;
++extern Client c_magic;
++extern Client c_root;
+ 
+-char buffer[8092];
++extern Handlers framehandler;
+ 
++extern char buffer[8192];
++
+ /* IXP */
+-IxpServer srv;
+-Ixp9Srv p9srv;
++extern IxpServer srv;
++extern Ixp9Srv p9srv;
+ 
+ /* X11 */
+-uint num_screens;
+-uint valid_mask;
+-uint num_lock_mask;
+-Bool sel_screen;
++extern uint num_screens;
++extern uint valid_mask;
++extern uint num_lock_mask;
++extern Bool sel_screen;
+ 
+-Image xor;
++extern Image xor;
+ 
+-Cursor cursor[CurLast];
+-void (*handler[LASTEvent]) (XEvent *);
++extern Cursor cursor[CurLast];
++extern void (*handler[LASTEvent]) (XEvent *);
+ 
+ /* Misc */
+-Image *broken;
+-Bool starting;
+-Bool verbose;
+-char *user;
+-char *execstr;
++extern Image *broken;
++extern Bool starting;
++extern Bool verbose;
++extern char *user;
++extern char *execstr;
+ 
+ #define Debug if(verbose)
+ #define Dprint(...) do{ Debug fprint(2, __VA_ARGS__); }while(0)
