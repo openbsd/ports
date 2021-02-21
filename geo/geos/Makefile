@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/21 07:36:49 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/21 09:31:48 landry Exp $
 
 BROKEN-hppa =	undefined reference to 'std::auto_ptr<geos::geom::Envelope>::~auto_ptr()'
 BROKEN-arm =	ld: error: duplicate symbol: typeinfo for geos::noding::BasicSegmentString
 
 COMMENT=	2d geometry and topology engine
-DISTNAME=	geos-3.9.0
+DISTNAME=	geos-3.9.1
 CATEGORIES=	geo
-REVISION=	0
 
-SHARED_LIBS=	geos	15.0 \
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
+
+SHARED_LIBS=	geos	16.0 \
 		geos_c	4.5
 
 # LGPLv2.1
