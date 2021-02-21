@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/04 06:35:34 martin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/21 07:52:19 martin Exp $
 lib/python${MODPY_VERSION}/site-packages/pkgconfig/
-lib/python${MODPY_VERSION}/site-packages/pkgconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pkgconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pkgconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pkgconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pkgconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pkgconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pkgconfig/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pkgconfig/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pkgconfig/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
