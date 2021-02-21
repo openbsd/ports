@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/11 16:11:15 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/21 07:37:43 landry Exp $
 
 COMMENT =	RT Topology Library
 DISTNAME =	librttopo-1.1.0
+REVISION =	0
 CATEGORIES =	geo
 
 SHARED_LIBS +=	rttopo 0.0 #2.0
@@ -15,7 +16,7 @@ MASTER_SITES =	http://download.osgeo.org/librttopo/src/
 
 CONFIGURE_STYLE=gnu
 LIB_DEPENDS =	geo/geos
-WANTLIB += ${COMPILER_LIBCXX} geos geos_c m
+WANTLIB += geos geos_c m
 
 # upstream checks for geos-config --includes but fails to use it..
 MAKE_FLAGS =	CFLAGS=-I${LOCALBASE}/include
