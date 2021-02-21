@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/21 16:30:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/21 20:16:13 sthen Exp $
 
 COMMENT =		readthedocs.org theme for Sphinx
 
 MODPY_EGG_VERSION =	0.5.1
-DISTNAME =		sphinx_rtd_theme-${MODPY_EGG_VERSION}
+GH_ACCOUNT =		readthedocs
+GH_PROJECT =		sphinx_rtd_theme
+GH_TAGNAME =		${MODPY_EGG_VERSION}
+
 PKGNAME =		py-${DISTNAME}
 DISTFILES =		${DISTNAME}.tar.gz \
 			sphinx-rtd-theme_${MODPY_EGG_VERSION}+dfsg-1.debian.tar.xz:0
@@ -15,7 +18,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MASTER_SITES0 =		${MASTER_SITE_DEBIAN:=main/s/sphinx-rtd-theme/}
 
