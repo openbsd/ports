@@ -1,21 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/21 16:46:29 sthen Exp $
 
 COMMENT=	semaphore-file tool for shell scripting
 
 DISTNAME=	procmail-3.22
 PKGNAME=	lockfile-3.22
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 
-MASTER_SITES=	${HOMEPAGE} \
-		http://mirror.switch.ch/ftp/mirror/procmail/ \
-		http://ftp.kfki.hu/packages/mail/procmail/ \
-		http://ftp.ucsb.edu/pub/mirrors/procmail/ \
+MASTER_SITES=	http://ftp.kfki.hu/packages/mail/procmail/ \
 		http://www.ring.gr.jp/archives/net/mail/procmail/ \
-		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/procmail/
-
-HOMEPAGE=	http://www.procmail.org/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
