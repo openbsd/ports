@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/22 22:07:54 naddy Exp $
 
 COMMENT =	lightweight WM with an original look and feel
-DISTNAME =	uwm-0.2.11
+DISTNAME =	uwm-0.2.11a
 CATEGORIES =	x11
-REVISION =	2
 
 HOMEPAGE =	http://udeproject.sourceforge.net/
 
@@ -23,7 +22,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 
-FAKE_FLAGS =		udedocdir=${PREFIX}/share/doc/uwm \
-			udehtmldocdir=${PREFIX}/share/doc/uwm/html
+FAKE_FLAGS =		udedocdir=${PREFIX}/share/doc/uwm
 
 .include <bsd.port.mk>

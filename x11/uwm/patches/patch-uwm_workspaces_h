@@ -1,0 +1,20 @@
+$OpenBSD: patch-uwm_workspaces_h,v 1.1 2021/02/22 22:07:54 naddy Exp $
+
+Comment out unused variables to fix build with -fno-common.
+
+Index: uwm/workspaces.h
+--- uwm/workspaces.h.orig
++++ uwm/workspaces.h
+@@ -94,9 +94,9 @@ typedef struct {
+ 
+ // These three lists will be declared in workspaces.c, and declared static
+ // so that no other module has direct access to them
+-NodeList Workspaces;
+-NodeList Layers;
+-NodeList WS_Layer_Defaults; // This will be the list which handles setting up
++//NodeList Workspaces;
++//NodeList Layers;
++//NodeList WS_Layer_Defaults; // This will be the list which handles setting up
+ 							// defaults for where windows will be mapped to.
+ // End three listings
+ 

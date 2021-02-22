@@ -1,34 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/20 06:38:39 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/22 22:07:54 naddy Exp $
 @bin bin/uwm
 share/doc/uwm/
 share/doc/uwm/README
-share/doc/uwm/html/
-share/doc/uwm/html/contents.gif
-share/doc/uwm/html/crossref.gif
-share/doc/uwm/html/index.html
-share/doc/uwm/html/manual.css
-share/doc/uwm/html/manual.html
-share/doc/uwm/html/next.gif
-share/doc/uwm/html/next_g.gif
-share/doc/uwm/html/node1.html
-share/doc/uwm/html/node10.html
-share/doc/uwm/html/node11.html
-share/doc/uwm/html/node12.html
-share/doc/uwm/html/node13.html
-share/doc/uwm/html/node14.html
-share/doc/uwm/html/node15.html
-share/doc/uwm/html/node2.html
-share/doc/uwm/html/node3.html
-share/doc/uwm/html/node4.html
-share/doc/uwm/html/node5.html
-share/doc/uwm/html/node6.html
-share/doc/uwm/html/node7.html
-share/doc/uwm/html/node8.html
-share/doc/uwm/html/node9.html
-share/doc/uwm/html/prev.gif
-share/doc/uwm/html/prev_g.gif
-share/doc/uwm/html/up.gif
-share/doc/uwm/html/up_g.gif
 share/doc/uwm/l2h.conf
 share/doc/uwm/manual.pdf
 share/doc/uwm/manual.tex
