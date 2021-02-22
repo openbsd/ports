@@ -1,12 +1,14 @@
-$OpenBSD: patch-nslint_8,v 1.2 2001/10/29 14:37:49 naddy Exp $
---- nslint.8.orig	Tue Feb 23 22:05:17 1999
-+++ nslint.8	Thu Mar  1 00:53:06 2001
-@@ -101,14 +101,14 @@ Missing quotes.
+$OpenBSD: patch-nslint_8,v 1.3 2021/02/22 13:31:44 sthen Exp $
+
+Index: nslint.8
+--- nslint.8.orig
++++ nslint.8
+@@ -101,14 +101,14 @@ Missing semicolons and quotes.
  Specify an alternate
  .I named.boot
  file. The default is
 -.IR /etc/named.boot .
-+.IR /var/named/named.boot .
++.IR /var/named/etc/named.boot .
  .TP
  .TP
  .B -c
@@ -14,16 +16,7 @@ $OpenBSD: patch-nslint_8,v 1.2 2001/10/29 14:37:49 naddy Exp $
  .I named.conf
  file. The default is
 -.IR /etc/named.conf .
-+.IR /var/named/named.conf .
++.IR /var/named/etc/named.conf .
  .TP
  .B -B
  Specify an alternate
-@@ -422,7 +422,7 @@ lines for new networks.
- .na
- .nh
- .nf
--/etc/named.boot - default named configuration file
-+/var/named/named.boot - default named configuration file
- nslint.boot - default nslint configuration file
- .ad
- .hy

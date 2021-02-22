@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1243 2021/02/14 15:58:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.1244 2021/02/22 13:31:43 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -310,7 +310,6 @@
      SUBDIR += noVNC
      SUBDIR += ns
      SUBDIR += nslint
-     SUBDIR += nslint,static
      SUBDIR += nsping
      SUBDIR += nssl
      SUBDIR += ntopng

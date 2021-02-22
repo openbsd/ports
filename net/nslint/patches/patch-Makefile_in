@@ -1,20 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/02/28 23:57:34 naddy Exp $
---- Makefile.in.orig	Wed Mar  8 02:51:41 2000
-+++ Makefile.in	Thu Mar  1 00:53:06 2001
-@@ -49,6 +49,7 @@ DEFS = @DEFS@
- CFLAGS = $(CCOPT) $(DEFS) $(INCLS)
+$OpenBSD: patch-Makefile_in,v 1.2 2021/02/22 13:31:44 sthen Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -54,6 +54,7 @@ CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+ LDFLAGS = @LDFLAGS@
  
  # Standard LIBS
 +LDFLAGS= @LDFLAGS@
  LIBS = @LIBS@
  
  INSTALL = @INSTALL@
-@@ -79,7 +80,7 @@ CLEANFILES = $(PROG) $(OBJ) $(GENSRC)
- 
- $(PROG): $(OBJ)
- 	@rm -f $@
--	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBS)
-+	$(CC) $(LDFLAGS) -o $@ $(OBJ) $(LIBS)
- 
- version.o: version.c
- version.c: $(srcdir)/VERSION
