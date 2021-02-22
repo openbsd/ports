@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/22 11:55:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/22 11:55:59 sthen Exp $
 
 COMMENT=	FTP proxy
 
 DISTNAME=	jftpgw-0.13.5
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
