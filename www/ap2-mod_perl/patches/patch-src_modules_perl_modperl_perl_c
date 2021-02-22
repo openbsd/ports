@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_modules_perl_modperl_perl_c,v 1.3 2021/02/22 21:41:46 sthen Exp $
+
+https://github.com/Perl/perl5/issues/18555 suggests this code was not
+doing what it was supposed to anyway, and it doesn't work following
+https://github.com/Perl/perl5/commit/99922edd6efbb4dc3e922ed2fc72d0748d575c29
+
+Index: src/modules/perl/modperl_perl.c
+--- src/modules/perl/modperl_perl.c.orig
++++ src/modules/perl/modperl_perl.c
+@@ -210,7 +210,7 @@ void modperl_perl_call_endav(pTHX)
+      }
+ }
+ 
+-#if !(MP_PERL_VERSION_AT_MOST(5, 8, 0)) && \
++#if 0 && !(MP_PERL_VERSION_AT_MOST(5, 8, 0)) && \
+     (defined(USE_HASH_SEED) || defined(USE_HASH_SEED_EXPLICIT))
+ #define MP_NEED_HASH_SEED_FIXUP
+ #endif
