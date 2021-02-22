@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.398 2021/01/17 21:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.399 2021/02/22 11:55:23 kn Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -9,8 +9,6 @@
      SUBDIR += archivemail
      SUBDIR += archiveopteryx
      SUBDIR += asmail
-     SUBDIR += avenger
-     SUBDIR += avenger,sasl2
      SUBDIR += bmf
      SUBDIR += bmf,mysql
      SUBDIR += bogofilter
