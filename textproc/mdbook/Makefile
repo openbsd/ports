@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/23 15:16:44 edd Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/22 05:03:58 daniel Exp $
 
 COMMENT =		create books from markdown files
 
 GH_ACCOUNT =            rust-lang
 GH_PROJECT =            mdBook
-GH_TAGNAME =            v0.4.4
+GH_TAGNAME =            v0.4.6
 PKGNAME =               ${DISTNAME:L}
 
 CATEGORIES =		textproc www
