@@ -1,12 +1,14 @@
-$OpenBSD: patch-convlog_c,v 1.5 2012/11/21 21:42:07 rpe Exp $
---- convlog.c.orig	Wed Nov 14 21:04:07 2012
-+++ convlog.c	Wed Nov 14 21:06:25 2012
-@@ -40,7 +40,7 @@ void convlog(const char *arq, char *df, int dfrom, int
+$OpenBSD: patch-convlog_c,v 1.6 2021/02/22 21:56:25 sthen Exp $
+
+Index: convlog.c
+--- convlog.c.orig
++++ convlog.c
+@@ -40,7 +40,7 @@ void convlog(const char *arq, char df, const struct Re
  	longline line;
  
- 	if(arq[0] == '\0')
+ 	if (arq[0] == '\0')
 -		arq="/var/log/squid/access.log";
 +		arq="/var/squid/logs/access.log";
  
- 	if (arq[0]=='-' && arq[1]=='\0') {
- 		fp_in=stdin;
+ 	if ((fp_in=FileObject_Open(arq))==NULL) {
+ 		debuga(__FILE__,__LINE__,_("Cannot open file \"%s\": %s\n"),arq,FileObject_GetLastOpenError());

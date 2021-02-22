@@ -1,12 +1,14 @@
-$OpenBSD: patch-splitlog_c,v 1.5 2012/11/21 21:42:07 rpe Exp $
---- splitlog.c.orig	Wed Nov 14 21:04:27 2012
-+++ splitlog.c	Wed Nov 14 21:06:25 2012
-@@ -76,7 +76,7 @@ void splitlog(const char *arq, const char *df, int dfr
+$OpenBSD: patch-splitlog_c,v 1.6 2021/02/22 21:56:25 sthen Exp $
+
+Index: splitlog.c
+--- splitlog.c.orig
++++ splitlog.c
+@@ -76,7 +76,7 @@ void splitlog(const char *arq, char df, const struct R
  	}
  
- 	if(arq[0] == '\0')
+ 	if (arq[0] == '\0')
 -		arq="/var/log/squid/access.log";
 +		arq="/var/squid/logs/access.log";
  
- 	if (arq[0]=='-' && arq[1]=='\0') {
- 		fp_in=stdin;
+ 	if ((fp_in=decomp(arq))==NULL) {
+ 		debuga(__FILE__,__LINE__,_("Cannot open file \"%s\": %s\n"),arq,FileObject_GetLastOpenError());

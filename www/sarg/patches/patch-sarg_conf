@@ -1,16 +1,18 @@
-$OpenBSD: patch-sarg_conf,v 1.4 2014/10/05 17:35:24 rpe Exp $
---- sarg.conf.orig	Sat Oct  4 10:48:55 2014
-+++ sarg.conf	Sat Oct  4 10:50:25 2014
-@@ -4,7 +4,7 @@
- #       Where is the access.log file
- #       sarg -l file
+$OpenBSD: patch-sarg_conf,v 1.5 2021/02/22 21:56:25 sthen Exp $
+
+Index: sarg.conf
+--- sarg.conf.orig
++++ sarg.conf
+@@ -17,7 +17,7 @@
+ #       If some files are passed on the command line with "sarg -l file" or
+ #       "sarg file", the files listed here are ignored.
  #
 -#access_log /usr/local/squid/var/logs/access.log
 +#access_log /var/squid/logs/access.log
  
  # TAG: graphs yes|no
  #	Use graphics where is possible.
-@@ -17,7 +17,7 @@
+@@ -30,7 +30,7 @@
  #       The full path to the TTF font file to use to create the graphs. It is required
  #       if graphs is set to yes.
  #
@@ -19,7 +21,7 @@ $OpenBSD: patch-sarg_conf,v 1.4 2014/10/05 17:35:24 rpe Exp $
  
  # TAG:	title
  # 	Especify the title for html page.
-@@ -117,7 +117,7 @@
+@@ -147,7 +147,7 @@
  #       The reports will be saved in that directory
  #       sarg -o dir
  #
@@ -28,7 +30,7 @@ $OpenBSD: patch-sarg_conf,v 1.4 2014/10/05 17:35:24 rpe Exp $
  
  # TAG:  anonymous_output_files yes/no
  #       Use anonymous file and directory names in the report. If it is set to
-@@ -309,7 +309,7 @@
+@@ -364,7 +364,7 @@
  #      Only codes matching exactly one of the line is rejected. The
  #      comparison is not case sensitive.
  #
@@ -37,7 +39,7 @@ $OpenBSD: patch-sarg_conf,v 1.4 2014/10/05 17:35:24 rpe Exp $
  
  # TAG: replace_index string
  #      Replace "index.html" in the main index file with this string
-@@ -545,7 +545,7 @@
+@@ -632,7 +632,7 @@
  #      Generate reports from SquidGuard logs.
  #      Use 'none' to disable.
  #      You can use sarg -L filename to use an alternate squidGuard log.
@@ -46,7 +48,7 @@ $OpenBSD: patch-sarg_conf,v 1.4 2014/10/05 17:35:24 rpe Exp $
  #
  #squidguard_conf none
  
-@@ -555,7 +555,7 @@
+@@ -642,7 +642,7 @@
  #      If this option is specified, it takes precedence over squidguard_conf.
  #      The command line option -L override this option.
  #
@@ -55,7 +57,7 @@ $OpenBSD: patch-sarg_conf,v 1.4 2014/10/05 17:35:24 rpe Exp $
  
  # TAG: redirector_filter_out_date on|off
  #      This option replaces squidguard_ignore_date and redirector_ignore_date whose names were not
-@@ -591,13 +591,13 @@
+@@ -678,13 +678,13 @@
  #
  #parsed_output_log none
  
@@ -71,7 +73,7 @@ $OpenBSD: patch-sarg_conf,v 1.4 2014/10/05 17:35:24 rpe Exp $
  
  # TAG: displayed_values bytes|abbreviation
  #      how the values will be displayed in reports.
-@@ -630,7 +630,7 @@
+@@ -717,7 +717,7 @@
  #     Sarg will create sarg-php directory with some PHP modules:
  #     - sarg-squidguard-block.php - add urls from user reports to squidGuard DB
  #
@@ -80,7 +82,7 @@ $OpenBSD: patch-sarg_conf,v 1.4 2014/10/05 17:35:24 rpe Exp $
  
  # TAG: block_it module_url
  #     This tag allow you to pass urls from user reports to a cgi or php module,
-@@ -638,7 +638,7 @@
+@@ -725,7 +725,7 @@
  #
  #     Eg.: block_it /sarg-php/sarg-block-it.php
  #     sarg-block-it is a php that will append a url to a flat file.
@@ -89,12 +91,12 @@ $OpenBSD: patch-sarg_conf,v 1.4 2014/10/05 17:35:24 rpe Exp $
  #     in $filename variable, and chown to a httpd owner.
  #
  #     sarg will pass http://module_url?url=url
-@@ -788,7 +788,7 @@
+@@ -896,7 +896,7 @@
  #      65.52.00.00/14 *.mail.live.com
  #      re:/\.dropbox\.com(:443)?/ dropbox
- #      re:/([\w-]+)\.(\w*[a-zA-Z]\w*)(?::\d+)?$/\1.\2
+ #      re:/([\w-]+)\.(\w*[a-zA-Z]\w*)(?::\d+)?$/ \1.\2
 -#hostalias /usr/local/sarg/hostalias
 +#hostalias /etc/sarg/hostalias
  
- # TAG: keep_temp_log yes|no
- #      Keep temporary files created by sarg to produce its reports. The normal
+ # TAG: useralias
+ #      The name of a text file containing the user names one per line and the

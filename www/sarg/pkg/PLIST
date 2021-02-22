@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/11/21 21:42:07 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/02/22 21:56:25 sthen Exp $
 @bin bin/sarg
 @man man/man1/sarg.1
 share/examples/sarg/
@@ -24,12 +24,15 @@ share/examples/sarg/images/sarg-squidguard-block.png
 share/examples/sarg/images/sarg.png
 @sample ${SYSCONFDIR}/sarg/images/sarg.png
 share/examples/sarg/sarg-php/
-share/examples/sarg/sarg-php/language.php
 share/examples/sarg/sarg-php/locale/
 share/examples/sarg/sarg-php/locale/en_EN/
 share/examples/sarg/sarg-php/locale/en_EN/LC_MESSAGES/
 share/examples/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.mo
 share/examples/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.po
+share/examples/sarg/sarg-php/locale/es/
+share/examples/sarg/sarg-php/locale/es/LC_MESSAGES/
+share/examples/sarg/sarg-php/locale/es/LC_MESSAGES/messages.mo
+share/examples/sarg/sarg-php/locale/es/LC_MESSAGES/messages.po
 share/examples/sarg/sarg-php/locale/fr/
 share/examples/sarg/sarg-php/locale/fr/LC_MESSAGES/
 share/examples/sarg/sarg-php/locale/fr/LC_MESSAGES/messages.mo

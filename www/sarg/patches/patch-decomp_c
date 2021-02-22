@@ -1,0 +1,14 @@
+$OpenBSD: patch-decomp_c,v 1.1 2021/02/22 21:56:25 sthen Exp $
+
+Index: decomp.c
+--- decomp.c.orig
++++ decomp.c
+@@ -486,7 +486,7 @@ FileObject *decomp(const char *arq)
+ 	ssize_t nread;
+ 
+ 	// guess file type
+-	fd=open(arq,O_RDONLY | O_LARGEFILE);
++	fd=open(arq,O_RDONLY);
+ 	if (fd==-1) {
+ 		debuga(__FILE__,__LINE__,_("Cannot open file \"%s\": %s\n"),arq,strerror(errno));
+ 		exit(EXIT_FAILURE);

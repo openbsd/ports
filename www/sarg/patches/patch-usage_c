@@ -1,6 +1,8 @@
-$OpenBSD: patch-usage_c,v 1.1 2012/11/21 21:42:07 rpe Exp $
---- usage.c.orig	Wed Nov 14 21:04:00 2012
-+++ usage.c	Wed Nov 14 21:06:25 2012
+$OpenBSD: patch-usage_c,v 1.2 2021/02/22 21:56:25 sthen Exp $
+
+Index: usage.c
+--- usage.c.orig
++++ usage.c
 @@ -37,7 +37,7 @@ void usage(const char *prog)
  	puts  (_("     --css          Output the internal CSS"));
  	puts  (_("     -d DATE        Date range to include in the report: from-until dd/mm/yyyy-dd/mm/yyyy"));

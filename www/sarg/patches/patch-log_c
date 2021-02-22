@@ -1,39 +1,41 @@
-$OpenBSD: patch-log_c,v 1.4 2012/11/21 21:42:07 rpe Exp $
---- log.c.orig	Wed Nov 14 21:03:33 2012
-+++ log.c	Wed Nov 14 21:06:25 2012
-@@ -223,7 +223,7 @@ int main(int argc,char *argv[])
+$OpenBSD: patch-log_c,v 1.5 2021/02/22 21:56:25 sthen Exp $
+
+Index: log.c
+--- log.c.orig
++++ log.c
+@@ -136,7 +136,7 @@ int main(int argc,char *argv[])
+ 	RedirectorLogFormat[0]='\0';
  	NRedirectorLogs=0;
- 	for (ilf=0 ; ilf<ILF_Last ; ilf++) ilf_count[ilf]=0;
  
 -	snprintf(ExcludeCodes,sizeof(ExcludeCodes),"%s/exclude_codes",SYSCONFDIR);
 +	snprintf(ExcludeCodes,sizeof(ExcludeCodes),"%s/sarg/exclude_codes",SYSCONFDIR);
  	strcpy(GraphDaysBytesBarColor,"orange");
  	strcpy(BgColor,"#ffffff");
  	strcpy(TxColor,"#000000");
-@@ -237,7 +237,7 @@ int main(int argc,char *argv[])
- 	strcpy(LogoTextColor,"#006699");
+@@ -151,7 +151,7 @@ int main(int argc,char *argv[])
  	strcpy(FontSize,"9px");
  	strcpy(TempDir,"/tmp");
+ 	TempDirPath[0] = '\0';
 -	strcpy(OutputDir,"/var/www/html/squid-reports");
 +	strcpy(OutputDir,"/var/www/htdocs/squid-reports");
  	AnonymousOutputFiles=false;
  	Ip2Name=false;
- 	strcpy(DateFormat,"u");
-@@ -542,7 +542,7 @@ int main(int argc,char *argv[])
+ 	DateFormat='u';
+@@ -452,7 +452,7 @@ int main(int argc,char *argv[])
  
- 	if(debug) debuga(_("Init\n"));
+ 	if (debug) debuga(__FILE__,__LINE__,_("Init\n"));
  
--	if(ConfigFile[0] == '\0') snprintf(ConfigFile,sizeof(ConfigFile),"%s/sarg.conf",SYSCONFDIR);
-+	if(ConfigFile[0] == '\0') snprintf(ConfigFile,sizeof(ConfigFile),"%s/sarg/sarg.conf",SYSCONFDIR);
- 	if(access(ConfigFile, R_OK) != 0) {
- 		debuga(_("Cannot open config file: %s - %s\n"),ConfigFile,strerror(errno));
+-	if (ConfigFile[0] == '\0') snprintf(ConfigFile,sizeof(ConfigFile),"%s/sarg.conf",SYSCONFDIR);
++	if (ConfigFile[0] == '\0') snprintf(ConfigFile,sizeof(ConfigFile),"%s/sarg/sarg.conf",SYSCONFDIR);
+ 	if (access(ConfigFile, R_OK) != 0) {
+ 		debuga(__FILE__,__LINE__,_("Cannot open file \"%s\": %s\n"),ConfigFile,strerror(errno));
  		exit(EXIT_FAILURE);
-@@ -585,7 +585,7 @@ int main(int argc,char *argv[])
- 		IndexTree=INDEX_TREE_FILE;
+@@ -484,7 +484,7 @@ int main(int argc,char *argv[])
  
- 	if(NAccessLog == 0) {
--		strcpy(AccessLog[0],"/var/log/squid/access.log");
-+		strcpy(AccessLog[0],"/var/squid/logs/access.log");
- 		NAccessLog++;
- 	}
- 
+ 	if (AccessLog==NULL) {
+ 		AccessLog=FileList_Create();
+-		if (!FileList_AddFile(AccessLog,"/var/log/squid/access.log")) {
++		if (!FileList_AddFile(AccessLog,"/var/squid/logs/access.log")) {
+ 			debuga(__FILE__,__LINE__,_("Not enough memory to store the input log file names\n"));
+ 			exit(EXIT_FAILURE);
+ 		}
