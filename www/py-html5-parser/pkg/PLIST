@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/22 21:01:36 rsadowski Exp $
+lib/python${MODPY_VERSION}/site-packages/html5_parser/
+lib/python${MODPY_VERSION}/site-packages/html5_parser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/html5_parser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/html5_parser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/html5_parser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/html5_parser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/html5_parser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/html5_parser/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}dom.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}encoding_names.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}encoding_parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}soup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}stdlib_etree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html5_parser/dom.py
+lib/python${MODPY_VERSION}/site-packages/html5_parser/encoding_names.py
+lib/python${MODPY_VERSION}/site-packages/html5_parser/encoding_parser.py
+@so lib/python${MODPY_VERSION}/site-packages/html5_parser/html_parser.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/html5_parser/soup.py
+lib/python${MODPY_VERSION}/site-packages/html5_parser/stdlib_etree.py
