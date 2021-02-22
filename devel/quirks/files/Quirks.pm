@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1201 2021/02/22 18:53:28 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.1202 2021/02/22 22:37:46 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2140,6 +2140,7 @@ my $obsolete_reason = {
 	'py-mpd' => 31,
 	'abs' => 3,
 	'arena' => 3,
+	'teagtk' => 3,
 };
 
 # reasons for obsolete packages

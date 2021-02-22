@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2021/02/20 01:01:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.146 2021/02/22 22:37:46 naddy Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -56,7 +56,6 @@
      SUBDIR += se
      SUBDIR += sigil
      SUBDIR += subtitleeditor
-     SUBDIR += tea
      SUBDIR += teaqt
      SUBDIR += ted
      SUBDIR += TeXmacs
