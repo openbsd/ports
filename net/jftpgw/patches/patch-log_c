@@ -1,0 +1,28 @@
+$OpenBSD: patch-log_c,v 1.1 2021/02/22 11:55:34 sthen Exp $
+
+-fno-common
+64-bit time_t
+
+Index: log.c
+--- log.c.orig
++++ log.c
+@@ -59,7 +59,7 @@
+ #endif
+ 
+ struct loginfo_st loginfo;
+-struct serverinfo srvinfo;
++extern struct serverinfo srvinfo;
+ static struct loginfo_st* loginfo_bk;
+ 
+ /*
+@@ -378,8 +378,8 @@ char* log_replace_char(const char pattern, struct log_
+ 					tv.tv_usec = 0;
+ 				}
+ 				snprintf(replace_val.replace_str, 100,
+-						"%lu.%03lu",
+-						tv.tv_sec,
++						"%llu.%03lu",
++						(long long)tv.tv_sec,
+ 						(tv.tv_usec / 1000));
+ 				replace_type = LOG_REPLACE_STRING;
+ 			}
