@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/04/01 15:42:40 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/22 22:44:27 jca Exp $
 
 COMMENT =		pic-like interpreter for producing line graphics
 
-DISTNAME =		dpic-2020.03.01
+DISTNAME =		dpic-2021.01.01
 
 CATEGORIES =		graphics
 
@@ -27,7 +27,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/dpic.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dpic/
 	cd ${WRKSRC}/examples/ && \
-		pax -rw sources Examples.txt Makefile README ${PREFIX}/share/examples/dpic/
+		pax -rw sources Examples.txt Makefile README.txt ${PREFIX}/share/examples/dpic/
 
 do-test:
 	cd ${WRKSRC}/examples/ && \

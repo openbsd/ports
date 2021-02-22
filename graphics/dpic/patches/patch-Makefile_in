@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2021/02/22 22:44:27 jca Exp $
+
+Respect CFLAGS
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -41,7 +41,7 @@ DEFS= @defrand@ @defno_snprintf@ @safe_mode@
+ LIBS += -lm @iberty@
+ 
+ CC=@CC@
+-CFLAGS += $(DEBUG) $(SAFEMODE) $(DEFS) -O
++CFLAGS += $(DEBUG) $(SAFEMODE) $(DEFS)
+ LDFLAGS += $(LIBS)
+ CPPFLAGS +=
+ 

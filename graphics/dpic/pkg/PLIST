@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/10/17 20:44:24 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/22 22:44:27 jca Exp $
 @bin bin/dpic
 @man man/man1/dpic.1
 share/examples/dpic/
 share/examples/dpic/Examples.txt
 share/examples/dpic/Makefile
-share/examples/dpic/README
+share/examples/dpic/README.txt
 share/examples/dpic/sources/
+share/examples/dpic/sources/Zalgebra.pic
 share/examples/dpic/sources/arcs.pic
 share/examples/dpic/sources/arrowheads.pic
 share/examples/dpic/sources/arrows.pic
@@ -20,6 +21,7 @@ share/examples/dpic/sources/diag9.pic
 share/examples/dpic/sources/diagA.pic
 share/examples/dpic/sources/diagB.pic
 share/examples/dpic/sources/diagC.pic
+share/examples/dpic/sources/dpictools.pic
 share/examples/dpic/sources/man.tex
 share/examples/dpic/sources/man01.pic
 share/examples/dpic/sources/man02.pic
@@ -61,6 +63,7 @@ share/examples/dpic/sources/man47.pic
 share/examples/dpic/sources/man48.pic
 share/examples/dpic/sources/man49.pic
 share/examples/dpic/sources/mode.tex
+share/examples/dpic/sources/plotlib.pic
 share/examples/dpic/sources/test1.tex
 share/examples/dpic/sources/test2.tex
 share/examples/dpic/sources/test3.tex
