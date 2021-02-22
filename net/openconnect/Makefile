@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2020/12/06 17:58:25 bket Exp $
+# $OpenBSD: Makefile,v 1.58 2021/02/22 15:27:55 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-8.10
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  openconnect               4.5 # 5.6
 
@@ -25,13 +25,13 @@ FLAVORS=	light
 FLAVOR?=
 
 MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 # groff is used to format html during build, USE_GROFF not needed
 # XXX can probably convert to using mandoc?
 BUILD_DEPENDS=	devel/gettext,-tools \
-		textproc/groff \
-		textproc/py-xml
+		textproc/groff
 RUN_DEPENDS=	net/vpnc-scripts
 LIB_DEPENDS=	archivers/lz4 \
 		devel/gettext,-runtime \
