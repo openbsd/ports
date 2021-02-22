@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.44 2021/01/24 15:20:07 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.45 2021/02/22 16:59:53 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk3%%
 bin/ex
@@ -118,6 +118,7 @@ share/vim/${P}/compiler/dot.vim
 share/vim/${P}/compiler/erlang.vim
 share/vim/${P}/compiler/eruby.vim
 share/vim/${P}/compiler/eslint.vim
+share/vim/${P}/compiler/fbc.vim
 share/vim/${P}/compiler/fortran_F.vim
 share/vim/${P}/compiler/fortran_cv.vim
 share/vim/${P}/compiler/fortran_elf90.vim
@@ -353,6 +354,7 @@ share/vim/${P}/ftplugin/aspvbs.vim
 share/vim/${P}/ftplugin/automake.vim
 share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
+share/vim/${P}/ftplugin/basic.vim
 share/vim/${P}/ftplugin/bdf.vim
 share/vim/${P}/ftplugin/bst.vim
 share/vim/${P}/ftplugin/btm.vim
@@ -403,6 +405,7 @@ share/vim/${P}/ftplugin/fetchmail.vim
 share/vim/${P}/ftplugin/flexwiki.vim
 share/vim/${P}/ftplugin/fortran.vim
 share/vim/${P}/ftplugin/framescript.vim
+share/vim/${P}/ftplugin/freebasic.vim
 share/vim/${P}/ftplugin/fstab.vim
 share/vim/${P}/ftplugin/fvwm.vim
 share/vim/${P}/ftplugin/gdb.vim
@@ -543,6 +546,7 @@ share/vim/${P}/ftplugin/tcsh.vim
 share/vim/${P}/ftplugin/terminfo.vim
 share/vim/${P}/ftplugin/tex.vim
 share/vim/${P}/ftplugin/text.vim
+share/vim/${P}/ftplugin/tidy.vim
 share/vim/${P}/ftplugin/tmux.vim
 share/vim/${P}/ftplugin/treetop.vim
 share/vim/${P}/ftplugin/tt2html.vim

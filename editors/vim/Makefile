@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.210 2021/01/24 15:20:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.211 2021/02/22 16:59:53 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # if updating, regen plists with a gui flavour so -lang isn't messed up
-V=		8.2.2401
+V=		8.2.2541
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
