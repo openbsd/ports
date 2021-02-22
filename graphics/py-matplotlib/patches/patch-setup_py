@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.10 2020/10/08 12:03:49 daniel Exp $
+$OpenBSD: patch-setup_py,v 1.11 2021/02/22 22:46:09 daniel Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -161,7 +161,7 @@ class develop_with_jquery(DevelopCommand):
+@@ -174,7 +174,7 @@ class develop_with_jquery(DevelopCommand):
  
  
  cmdclass['sdist'] = sdist_with_jquery

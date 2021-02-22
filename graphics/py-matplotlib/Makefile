@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.85 2021/01/04 14:06:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2021/02/22 22:46:08 daniel Exp $
 
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	3.0.3
+MODPY_EGG_VERSION =	3.1.3
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		graphics devel math
 
@@ -14,8 +13,7 @@ HOMEPAGE =		https://matplotlib.org/
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODPY_WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB += freetype m png z
+WANTLIB += ${COMPILER_LIBCXX} freetype m png z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -31,7 +29,6 @@ COMMON_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
 		devel/py-kiwisolver${MODPY_FLAVOR} \
 		devel/py-parsing${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
 		graphics/py-Pillow${MODPY_FLAVOR} \
 		graphics/py-cycler${MODPY_FLAVOR} \
@@ -44,7 +41,7 @@ LIB_DEPENDS=	graphics/png
 TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
 
 
-COMMON_DEPENDS +=	devel/py-cairocffi${MODPY_FLAVOR} \
+COMMON_DEPENDS +=	graphics/py-cairo${MODPY_FLAVOR} \
 			devel/py-gobject3${MODPY_FLAVOR}
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 COMMON_DEPENDS +=	x11/gtk+3
