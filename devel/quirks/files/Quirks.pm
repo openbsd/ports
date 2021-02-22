@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1199 2021/02/20 21:21:24 gnezdo Exp $
+# $OpenBSD: Quirks.pm,v 1.1200 2021/02/22 05:31:10 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2304,6 +2304,8 @@ my $cve = {
 	'lang/php/7.3,-main' => 'php->7.3,<7.3.5',
 	'lang/python/2.7,-main' => 'python->2.7,<2.7.16',
 	'lang/python/3.7,-main' => 'python->3.7,<3.7.9',
+	'lang/python/3.8,-main' => 'python->3.8,<3.8.8',
+	'lang/python/3.9,-main' => 'python->3.9,<3.9.2',
 	'lang/ruby/2.3,-main' => 'ruby-<2.3.8',
 	'lang/ruby/2.4,-main' => 'ruby->2.4,<2.4.5p2',
 	'lang/ruby/2.5,-main' => 'ruby->2.5,<2.5.5',
@@ -2321,6 +2323,7 @@ my $cve = {
 	'net/icecast' => 'icecast-<2.4.4',
 	'net/irssi' => 'irssi-<1.2.1',
 	'net/isc-bind' => 'isc-bind-<9.16.3',
+	'net/libssh' => 'libssh-<0.9.5',
 	'net/libssh2' => 'libssh2-<1.8.2',
 	'net/lldpd' => 'lldpd-<0.7.18p0',
 	'net/mosquitto' => 'mosquitto-<1.5.6',
@@ -2341,6 +2344,7 @@ my $cve = {
 	'net/wireshark,-gtk' => 'wireshark-gtk-<2.6.3',
 	'net/wireshark,-main' => 'wireshark-<2.6.3',
 	'net/wireshark,-text' => 'tshark-<2.6.3',
+	'net/zeromq' => 'zeromq-<4.3.3',
 	'net/znc' => 'znc-<1.7.3',
 	'print/cups,-main' => 'cups-<1.7.4',
 	'security/clamav' => 'clamav-<0.100.2',
@@ -2356,6 +2360,7 @@ my $cve = {
 	'sysutils/salt' => 'salt-<3002',
 	'telephony/asterisk,-main' => 'asterisk-<13.23.1',
 	'telephony/coturn' => 'turnserver-<4.5.1.2',
+	'textproc/mdbook' => 'mdbook-<0.4.6',
 	'www/apache-httpd,-main' => 'apache-httpd-<2.4.35',
 	'www/bozohttpd' => 'bozohttpd-<20130711p0',
 	'www/chromium' => 'chromium-<69.0.3497.100',
@@ -2385,8 +2390,6 @@ my $cve = {
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
-	'net/zeromq' => 'zeromq-<4.3.3',
-	'net/libssh' => 'libssh-<0.9.5',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
