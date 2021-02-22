@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/01/07 17:50:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/22 19:12:56 jasper Exp $
 @info info/autoconf-archive.info
 share/aclocal/
 share/aclocal/ax_absolute_header.m4
@@ -38,6 +38,7 @@ share/aclocal/ax_boost_iostreams.m4
 share/aclocal/ax_boost_locale.m4
 share/aclocal/ax_boost_log.m4
 share/aclocal/ax_boost_log_setup.m4
+share/aclocal/ax_boost_process.m4
 share/aclocal/ax_boost_program_options.m4
 share/aclocal/ax_boost_python.m4
 share/aclocal/ax_boost_regex.m4
@@ -159,6 +160,7 @@ share/aclocal/ax_check_openssl.m4
 share/aclocal/ax_check_page_aligned_malloc.m4
 share/aclocal/ax_check_pathfind.m4
 share/aclocal/ax_check_pathname_style.m4
+share/aclocal/ax_check_pcre2.m4
 share/aclocal/ax_check_pgsql_db.m4
 share/aclocal/ax_check_posix_regcomp.m4
 share/aclocal/ax_check_posix_sysinfo.m4
@@ -356,6 +358,7 @@ share/aclocal/ax_have_qt.m4
 share/aclocal/ax_have_select.m4
 share/aclocal/ax_include_strcasecmp.m4
 share/aclocal/ax_install_files.m4
+share/aclocal/ax_int128.m4
 share/aclocal/ax_is_release.m4
 share/aclocal/ax_java_check_class.m4
 share/aclocal/ax_java_options.m4
@@ -426,6 +429,7 @@ share/aclocal/ax_pkg_check_modules.m4
 share/aclocal/ax_pkg_mico.m4
 share/aclocal/ax_pkg_swig.m4
 share/aclocal/ax_prefix_config_h.m4
+share/aclocal/ax_prepend_flag.m4
 share/aclocal/ax_print_to_file.m4
 share/aclocal/ax_printf_size_t.m4
 share/aclocal/ax_prog_apache.m4
@@ -479,6 +483,7 @@ share/aclocal/ax_prog_perl_modules.m4
 share/aclocal/ax_prog_perl_version.m4
 share/aclocal/ax_prog_pgclient.m4
 share/aclocal/ax_prog_python_version.m4
+share/aclocal/ax_prog_robot.m4
 share/aclocal/ax_prog_ruby_version.m4
 share/aclocal/ax_prog_scala.m4
 share/aclocal/ax_prog_scalac.m4
