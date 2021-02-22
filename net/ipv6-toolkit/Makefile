@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/22 22:41:51 jca Exp $
 
 COMMENT =		SI6 networks IPv6 toolkit
 
 VERSION =		2.0
 DISTNAME =		ipv6toolkit-v${VERSION}
 PKGNAME =		ipv6toolkit-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

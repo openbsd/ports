@@ -1,11 +1,38 @@
-$OpenBSD: patch-tools_libipv6_c,v 1.1 2019/04/04 19:18:18 bluhm Exp $
+$OpenBSD: patch-tools_libipv6_c,v 1.2 2021/02/22 22:41:51 jca Exp $
 
-https://github.com/fgont/ipv6toolkit/pull/52
+RTA_IFP removal: https://github.com/fgont/ipv6toolkit/pull/52
+
+Other chunks: fix with -fno-common
+https://github.com/fgont/ipv6toolkit/commit/2bde90f3845234490549640dc6ed5712d84969ba
 
 Index: tools/libipv6.c
 --- tools/libipv6.c.orig
 +++ tools/libipv6.c
-@@ -2815,7 +2815,7 @@ int sel_next_hop(struct iface_data *idata){
+@@ -66,13 +66,9 @@
+ 
+ 
+ /* IPv6 Address Resolution */
+-sigjmp_buf			env;
+-unsigned int		canjump;
++static sigjmp_buf			env;
++static unsigned int			canjump;
+ 
+-/* pcap variables */
+-char				errbuf[PCAP_ERRBUF_SIZE];
+-struct bpf_program	pcap_filter;
+-
+ #ifdef __linux__
+ /* Netlink requests */
+ struct nlrequest{
+@@ -517,6 +513,7 @@ int ether_pton(const char *ascii, struct ether_addr *e
+ 
+ int find_ipv6_router_full(pcap_t *pfd, struct iface_data *idata){
+ 	struct pcap_pkthdr			*pkthdr;
++	struct bpf_program	pcap_filter;
+ 	const u_char				*pktdata;
+ 	struct ether_header			*pkt_ether;
+ 	struct ip6_hdr				*pkt_ipv6;
+@@ -2815,7 +2812,7 @@ int sel_next_hop(struct iface_data *idata){
  		rtm->rtm_msglen= sizeof(struct rt_msghdr) + sizeof(struct sockaddr_in6);
  		rtm->rtm_version= RTM_VERSION;
  		rtm->rtm_type= RTM_GET;
@@ -14,3 +41,11 @@ Index: tools/libipv6.c
  		rtm->rtm_pid= pid= getpid();
  		rtm->rtm_seq= seq= random();
  
+@@ -4233,6 +4230,7 @@ int find_ipv6_router(pcap_t *pfd, struct ether_addr *h
+ 					struct ether_addr *result_ether, struct in6_addr *result_ipv6){
+ 
+ 	struct pcap_pkthdr			*pkthdr;
++	struct bpf_program			pcap_filter;
+ 	const u_char				*pktdata;
+ 	struct ether_header			*pkt_ether;
+ 	struct ip6_hdr				*pkt_ipv6;
