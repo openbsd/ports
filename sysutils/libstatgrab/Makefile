@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/22 06:16:37 daniel Exp $
 
 COMMENT=	system statistics gathering library
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c curses m pthread
 
 MASTER_SITES=	http://ftp.i-scream.org/pub/i-scream/libstatgrab/ \
-		fhttp://ftp.uk.i-scream.org/pub/i-scream/libstatgrab/
+		http://ftp.uk.i-scream.org/pub/i-scream/libstatgrab/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-setgid-binaries \
