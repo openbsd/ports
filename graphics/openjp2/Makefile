@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/29 20:08:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/23 14:24:40 landry Exp $
 
 COMMENT=	open-source JPEG 2000 codec library
 
 GH_ACCOUNT=	uclouvain
 GH_PROJECT=	openjpeg
-GH_TAGNAME=	v2.3.1
+GH_TAGNAME=	v2.4.0
 DISTNAME=	openjp2-${GH_TAGNAME:S/v//}
-REVISION=	1
 
-SHARED_LIBS +=	openjp2                   3.1
+SHARED_LIBS +=	openjp2	4.0
 
 CATEGORIES=	graphics
 

@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/29 20:08:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/23 14:24:40 landry Exp $
 @pkgpath graphics/openjpeg
 @bin bin/opj_compress
 @bin bin/opj_decompress
 @bin bin/opj_dump
-include/openjpeg-2.3/
-include/openjpeg-2.3/openjpeg.h
-include/openjpeg-2.3/opj_config.h
-include/openjpeg-2.3/opj_stdint.h
-lib/libopenjp2.a
+include/openjpeg-2.4/
+include/openjpeg-2.4/openjpeg.h
+include/openjpeg-2.4/opj_config.h
+include/openjpeg-2.4/opj_stdint.h
+@static-lib lib/libopenjp2.a
 @lib lib/libopenjp2.so.${LIBopenjp2_VERSION}
-lib/openjpeg-2.3/
-lib/openjpeg-2.3/OpenJPEGConfig.cmake
-lib/openjpeg-2.3/OpenJPEGTargets${MODCMAKE_BUILD_SUFFIX}
-lib/openjpeg-2.3/OpenJPEGTargets.cmake
+lib/openjpeg-2.4/
+lib/openjpeg-2.4/OpenJPEGConfig.cmake
+lib/openjpeg-2.4/OpenJPEGTargets${MODCMAKE_BUILD_SUFFIX}
+lib/openjpeg-2.4/OpenJPEGTargets.cmake
 lib/pkgconfig/libopenjp2.pc
 @man man/man1/opj_compress.1
 @man man/man1/opj_decompress.1
