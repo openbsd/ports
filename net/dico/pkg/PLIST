@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/05 03:40:52 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/23 05:05:11 bentley Exp $
 @newgroup _dicod:831
 @newuser _dicod:831:831:daemon:GNU dictionary server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/dicod
@@ -25,29 +25,29 @@ include/dico/xlat.h
 @info info/dico.info
 lib/dico/
 lib/dico/dictorg.la
-lib/dico/dictorg.so
+@so lib/dico/dictorg.so
 lib/dico/echo.la
-lib/dico/echo.so
+@so lib/dico/echo.so
 lib/dico/gcide.la
-lib/dico/gcide.so
+@so lib/dico/gcide.so
 lib/dico/ldap.la
-lib/dico/ldap.so
+@so lib/dico/ldap.so
 lib/dico/metaphone2.la
-lib/dico/metaphone2.so
+@so lib/dico/metaphone2.so
 lib/dico/nprefix.la
-lib/dico/nprefix.so
+@so lib/dico/nprefix.so
 lib/dico/outline.la
-lib/dico/outline.so
+@so lib/dico/outline.so
 lib/dico/pam.la
-lib/dico/pam.so
+@so lib/dico/pam.so
 lib/dico/pcre.la
-lib/dico/pcre.so
+@so lib/dico/pcre.so
 lib/dico/stratall.la
-lib/dico/stratall.so
+@so lib/dico/stratall.so
 lib/dico/substr.la
-lib/dico/substr.so
+@so lib/dico/substr.so
 lib/dico/word.la
-lib/dico/word.so
+@so lib/dico/word.so
 lib/libdico.la
 @lib lib/libdico.so.${LIBdico_VERSION}
 @bin libexec/idxgcide
@@ -64,3 +64,15 @@ share/examples/dico/dicod.conf
 @mode 775
 @group _dicod
 @sample ${LOCALSTATEDIR}/dicod/
+@mode
+@group
+share/locale/da/LC_MESSAGES/dico.mo
+share/locale/de/LC_MESSAGES/dico.mo
+share/locale/es/LC_MESSAGES/dico.mo
+share/locale/fi/LC_MESSAGES/dico.mo
+share/locale/fr/LC_MESSAGES/dico.mo
+share/locale/pl/LC_MESSAGES/dico.mo
+share/locale/pt_BR/LC_MESSAGES/dico.mo
+share/locale/sr/LC_MESSAGES/dico.mo
+share/locale/sv/LC_MESSAGES/dico.mo
+share/locale/uk/LC_MESSAGES/dico.mo

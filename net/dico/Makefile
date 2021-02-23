@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 05:05:11 bentley Exp $
 
 COMMENT =	GNU dictionary server
 
-V =		2.9
+V =		2.10
 DISTNAME =	dico-$V
-REVISION =	2
 
 SHARED_LIBS +=  dico                      0.0 # 2.0
 
@@ -12,7 +11,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://puszcza.gnu.org.ua/software/dico/
 
-MAINTAINTER =	Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -33,6 +32,8 @@ LIB_DEPENDS =		databases/openldap \
 
 # soelim(1)
 BUILD_DEPENDS +=	textproc/groff
+
+USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
