@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2021/02/21 17:21:42 jsing Exp $
+# $OpenBSD: Makefile,v 1.96 2021/02/23 15:45:05 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -35,6 +35,9 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	None
 SUBST_VARS =		GOCFG
 
+PSEUDO_FLAVORS =	native_bootstrap
+FLAVOR ?=
+
 WRKDIST =		${WRKDIR}/go
 WRKSRC =		${WRKDIST}/src
 
@@ -66,11 +69,19 @@ MAKE_ENV +=		GO386=softfloat
 .for arch in ${BIN_BOOTSTRAP_GOARCHS}
 SUPDISTFILES +=		go-openbsd-${arch}-bootstrap-${BIN_BOOTSTRAP_VERSION}${EXTRACT_SUFX}:0
 
-.if ${GOARCH} == ${arch}
+.if ${GOARCH} == ${arch} && !${FLAVOR:Mnative_bootstrap}
 DISTFILES +=		go-openbsd-${GOARCH}-bootstrap-${BIN_BOOTSTRAP_VERSION}${EXTRACT_SUFX}:0
 GOROOT_BOOTSTRAP =	${WRKDIR}/go-openbsd-${GOARCH}-bootstrap
 .endif
 .endfor
+
+.if ${FLAVOR:Mnative_bootstrap}
+GOROOT_BOOTSTRAP =	${LOCALBASE}/go
+INSTALLED != (pkg_info -qe "go-*" && echo yes) || echo no
+.  if ${INSTALLED:L} != "yes"
+ERRORS += "Fatal: This flavor requires an installed go package"
+.  endif
+.endif
 
 .if empty(GOROOT_BOOTSTRAP)
 BUILD_DEPENDS +=	lang/go-bootstrap
