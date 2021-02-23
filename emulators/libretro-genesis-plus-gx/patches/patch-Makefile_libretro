@@ -1,12 +1,30 @@
-$OpenBSD: patch-Makefile_libretro,v 1.1.1.1 2016/10/17 06:30:01 bentley Exp $
---- Makefile.libretro.orig	Sun Aug 28 01:20:16 2016
-+++ Makefile.libretro	Sun Aug 28 01:20:19 2016
-@@ -41,7 +41,7 @@ LIBM := -lm
- ifeq ($(platform), unix)
- 	TARGET := $(TARGET_NAME)_libretro.so
- 	fpic := -fPIC
--	SHARED := -shared -Wl,--version-script=libretro/link.T -Wl,--no-undefined
-+	SHARED := -shared -Wl,--version-script=libretro/link.T
- 	ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
- 	PLATFORM_DEFINES := -DHAVE_ZLIB
+$OpenBSD: patch-Makefile_libretro,v 1.2 2021/02/23 16:29:14 jeremy Exp $
+Index: Makefile.libretro
+--- Makefile.libretro.orig
++++ Makefile.libretro
+@@ -43,7 +43,7 @@ TARGET_NAME := genesis_plus_gx
  
+ LIBS := -lm
+ 
+-GIT_VERSION ?= " $(shell git rev-parse --short HEAD || echo unknown)"
++GIT_VERSION ?= " unknown"
+ ifneq ($(GIT_VERSION)," unknown")
+    CFLAGS += -DGIT_VERSION=\"$(GIT_VERSION)\"
+ endif
+@@ -52,7 +52,7 @@ endif
+ ifneq (,$(findstring unix,$(platform)))
+    TARGET := $(TARGET_NAME)_libretro.so
+    fpic := -fPIC
+-   SHARED := -shared -Wl,--version-script=$(CORE_DIR)/libretro/link.T -Wl,--no-undefined
++   SHARED := -shared -Wl,--version-script=$(CORE_DIR)/libretro/link.T
+    ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+    PLATFORM_DEFINES := -DHAVE_ZLIB
+ 
+@@ -585,6 +581,7 @@ LIBRETRO_CFLAGS += $(BPP_DEFINES) \
+ 		-DM68K_OVERCLOCK_SHIFT=20 \
+ 		-DZ80_OVERCLOCK_SHIFT=20 \
+ 		-DHAVE_YM3438_CORE \
++		-DPACKAGE_VERSION=\"1.3.2\" -DFLAC_API_EXPORTS -DFLAC__HAS_OGG=0 -DHAVE_LROUND -DHAVE_STDINT_H -D_7ZIP_ST \
+ 		-DHAVE_OPLL_CORE
+ 
+ ifneq (,$(findstring msvc,$(platform)))

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/17 06:30:01 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/23 16:29:14 jeremy Exp $
 lib/libretro/
-lib/libretro/genesis_plus_gx_libretro.so
+@so lib/libretro/genesis_plus_gx_libretro.so
 share/doc/libretro-genesis-plus-gx/
 share/doc/libretro-genesis-plus-gx/LICENSE.txt

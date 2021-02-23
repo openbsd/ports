@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/14 00:39:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 16:29:14 jeremy Exp $
 
 COMMENT =	Sega Genesis core for retroarch
 
-DISTNAME =	libretro-genesis-plus-gx-1.7.4pl20160815
+DISTNAME =	libretro-genesis-plus-gx-1.7.5pl20201208
 
 GH_ACCOUNT =	ekeeke
 GH_PROJECT =	Genesis-Plus-GX
-GH_COMMIT =	446d9aa61f1f3633b142cc4df0420ebd0b66813f
+GH_COMMIT =	58758aef3d8e12189899d67344db3b95c6379561
 
 CATEGORIES =	emulators
 
