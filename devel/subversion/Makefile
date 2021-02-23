@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2021/02/23 19:39:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.187 2021/02/23 21:45:49 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -56,6 +56,7 @@ FLAVOR += no_perl no_python no_ruby
 .endif
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB=	expat iconv intl lz4 m pthread z
 

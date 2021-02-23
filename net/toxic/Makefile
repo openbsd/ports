@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 21:45:49 sthen Exp $
 
 COMMENT =		ncurses-based Tox client
 
@@ -23,6 +23,7 @@ LIB_DEPENDS =		audio/freealut \
 MAKE_ENV +=		ENABLE_PYTHON=1 \
 			USER_CFLAGS="${CFLAGS}"
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 CONFIGURE_STYLE =	none
 FAKE_FLAGS =		PREFIX="${TRUEPREFIX}" \
 			MANDIR="${PREFIX}/man"

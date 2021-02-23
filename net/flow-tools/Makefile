@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/02/23 19:39:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/23 21:45:49 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -20,6 +20,7 @@ FLAVORS=		pgsql
 FLAVOR?=
 
 MODULES=		lang/python
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/flow-tools
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2021/02/23 19:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/02/23 21:45:49 sthen Exp $
 
 COMMENT-main=	execute a command as another user
 COMMENT-python=	sudo Python plugin
@@ -76,6 +76,7 @@ CONFIGURE_ARGS+=	--disable-python
 .else
 CONFIGURE_ARGS+=	--enable-python
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 .endif
 
 # Don't set owner on install in fake mode
