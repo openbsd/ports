@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/16 17:26:16 abieber Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 06:17:55 daniel Exp $
 
 COMMENT =		identity management for flask
 
 MODPY_EGG_VERSION =	0.4.0
-REVISION =		2
 DISTNAME =		Flask-Principal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		3
 
 CATEGORIES =		www
 
@@ -14,12 +14,14 @@ HOMEPAGE =		https://pythonhosted.org/Flask-Principal/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MODPY_PI =		Yes
-
 MODULES =		lang/python
 
-RUN_DEPENDS +=		www/py-flask
+FLAVORS =		python3
+FLAVOR  =		python3
 
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+RUN_DEPENDS =		www/py-flask${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

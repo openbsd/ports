@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/01 20:42:02 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/23 06:17:55 daniel Exp $
+@conflict py-flask-principal-*
+@pkgpath www/py-flask-principal
 lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -6,5 +8,5 @@ lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_EGG_VERSION}-py
 lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}flask_principal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_principal.py
-lib/python${MODPY_VERSION}/site-packages/flask_principal.pyc

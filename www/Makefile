@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1004 2021/02/22 21:02:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1005 2021/02/23 06:17:54 daniel Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -444,7 +444,7 @@
      SUBDIR += py-flask-cors
      SUBDIR += py-flask-login
      SUBDIR += py-flask-login,python3
-     SUBDIR += py-flask-principal
+     SUBDIR += py-flask-principal,python3
      SUBDIR += py-flask-wtf
      SUBDIR += py-flask-wtf,python3
      SUBDIR += py-flup
