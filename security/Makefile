@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.612 2021/02/20 21:54:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.613 2021/02/23 02:27:58 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -80,11 +80,8 @@
      SUBDIR += hs-SHA
      SUBDIR += hs-crypto-api
      SUBDIR += hs-cryptohash
-     SUBDIR += hs-cryptohash-sha256
      SUBDIR += hs-digest
-     SUBDIR += hs-ed25519
      SUBDIR += hs-entropy
-     SUBDIR += hs-hackage-security
      SUBDIR += hydra
      SUBDIR += ikeman
      SUBDIR += integrit
