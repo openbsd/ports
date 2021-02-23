@@ -1,7 +1,8 @@
-@comment $OpenBSD: PFRAG.qt5,v 1.1 2021/02/19 20:44:45 edd Exp $
+@comment $OpenBSD: PFRAG.qt5,v 1.2 2021/02/23 06:30:57 bket Exp $
 @so lib/audacious/General/albumart-qt.so
 @so lib/audacious/General/lyricwiki-qt.so
 @so lib/audacious/General/playlist-manager-qt.so
+@so lib/audacious/General/qthotkey.so
 @so lib/audacious/General/qtui.so
 @so lib/audacious/General/search-tool-qt.so
 @so lib/audacious/General/skins-qt.so

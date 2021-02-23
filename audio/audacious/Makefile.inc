@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.8 2021/02/22 04:22:42 bket Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2021/02/23 06:30:57 bket Exp $
 
 # Do not forget to sync meta/audacious
 VERSION =	4.1
-REVISION =	0
 
 CATEGORIES =	audio multimedia
 

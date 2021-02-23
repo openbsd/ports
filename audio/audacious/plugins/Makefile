@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/19 20:44:45 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 06:30:57 bket Exp $
 
 COMMENT =		input and output plugins for Audacious
 
 DISTNAME =		audacious-plugins-${VERSION}
+REVISION =		1
 
 FLAVORS =		qt5
 FLAVOR ?=
@@ -10,19 +11,19 @@ FLAVOR ?=
 # BSD / GPL
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC audcore audtag avcodec avformat avutil
-WANTLIB += cddb cdio cdio_cdda cue curl faad gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 iconv intl m mms modplug mp3lame mpg123 neon notify
-WANTLIB += ogg samplerate sndfile sndio soxr vorbis vorbisenc vorbisfile
-WANTLIB += wavpack xml2 z
+WANTLIB += ${COMPILER_LIBCXX} FLAC GL X11 audcore audtag avcodec
+WANTLIB += avformat avutil cddb cdio cdio_cdda cue curl faad gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv intl m mms modplug
+WANTLIB += mp3lame mpg123 neon notify ogg samplerate sndfile sndio
+WANTLIB += soxr vorbis vorbisenc vorbisfile wavpack xml2 z
 
 .if ${FLAVOR:Mqt5}
-WANTLIB += GL Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets audqt
+WANTLIB += Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets Qt5X11Extras audqt
 .else
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 audgui cairo fontconfig freetype gdk-x11-2.0
-WANTLIB += gmodule-2.0 gtk-x11-2.0 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0
+WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 audgui cairo fontconfig freetype
+WANTLIB += gdk-x11-2.0 gmodule-2.0 gtk-x11-2.0 harfbuzz pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0
 .endif
 
 # needed for the gio plugin
@@ -48,7 +49,8 @@ LIB_DEPENDS =		audio/faad>=2.7 \
 			textproc/libxml
 
 .if ${FLAVOR:Mqt5}
-LIB_DEPENDS +=		audacious-player->=${VERSION}-qt5:audio/audacious/player,qt5
+LIB_DEPENDS +=		audacious-player->=${VERSION}-qt5:audio/audacious/player,qt5 \
+			x11/qt5/qtx11extras
 .else
 LIB_DEPENDS +=		audacious-player->=${VERSION}-!qt5:audio/audacious/player
 .endif

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/19 20:44:44 edd Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 06:30:57 bket Exp $
 
 COMMENT =		graphical audio player which supports lots of formats
 
 DISTNAME =		audacious-${VERSION}
 PKGNAME =		audacious-player-${VERSION}
+REVISION =		0
 
 FLAVORS =		qt5
 FLAVOR ?=
