@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1206 2021/02/23 11:24:03 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1207 2021/02/23 12:48:54 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2147,6 +2147,7 @@ my $obsolete_reason = {
 	'hs-hackage-security' => 5,
 	'tempwatch' => 5,
 	'avenger' => 29,
+	'mk' => 41,
 };
 
 # reasons for obsolete packages
@@ -2192,6 +2193,7 @@ my @msg = (
 	"icinga 1 is end-of-life, migrate to icinga 2 (needs config rewrite)", #38
 	"Flash/SWF is end-of-life", #39
 	"ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark" #40
+	"Upstrem moved to unversioned tarballs, use the plan9port (same upstream) package instead" #41
 );
 
 # ->is_base_system($handle, $state):

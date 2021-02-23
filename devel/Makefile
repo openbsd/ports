@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2073 2021/02/20 14:21:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.2074 2021/02/23 12:48:54 kn Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -475,7 +475,6 @@
      SUBDIR += meson
      SUBDIR += metaauto
      SUBDIR += mingw
-     SUBDIR += mk
      SUBDIR += mkspiffs
      SUBDIR += mm
      SUBDIR += mm-common
