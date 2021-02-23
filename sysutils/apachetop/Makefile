@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 16:37:54 gonzalo Exp $
 
 COMMENT =		top-like monitor for Apache
 
-V =			0.18.4
+V =			0.19.7
 DISTNAME =		apachetop-$V
 CATEGORIES =		sysutils
-REVISION =		0
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -21,7 +20,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES =		https://github.com/tessus/apachetop/releases/download/$V/
 
 CONFIGURE_STYLE =	gnu
-
+CONFIGURE_ENV =		NCURSES_CFLAGS=' ' \
+			NCURSES_LIBS="-lncurses"
 CONFIGURE_ARGS =	--with-logfile=/var/www/logs/access_log
 
 .include <bsd.port.mk>
