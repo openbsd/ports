@@ -1,6 +1,0 @@
-A practical incremental and one-pass, pure API to the SHA-256 hash
-algorithm (including HMAC support) with performance close to the
-fastest implementations available in other languages.
-
-The implementation is made in C with a haskell FFI wrapper that
-hides the C implementation.
