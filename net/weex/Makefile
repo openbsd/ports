@@ -1,31 +1,36 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 20:06:01 naddy Exp $
 
-COMMENT=		noninteractive ftp client
-DISTNAME=		weex-2.6.1.5
-REVISION=		4
+COMMENT=		noninteractive FTP/FTPS client for updating web pages
+
+VERSION=		2.8.3
+DISTNAME=		weex-${VERSION}
 CATEGORIES=		net
 
 HOMEPAGE=		http://weex.sourceforge.net
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c iconv intl
+WANTLIB=		c crypto iconv intl ssl
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=weex/}
+DISTFILES=		weex_${VERSION}.tar.gz
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
 LIB_DEPENDS=		devel/gettext,-runtime
 
-SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.13
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.11
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+post-patch:
+	cp ${LOCALBASE}/share/gettext/po/Makevars.template \
+	    ${WRKSRC}/po/Makevars
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/weex
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/weex
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.weexrc \
 			${PREFIX}/share/examples/weex
