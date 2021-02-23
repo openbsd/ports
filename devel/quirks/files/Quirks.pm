@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1205 2021/02/23 10:46:18 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1206 2021/02/23 11:24:03 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2146,6 +2146,7 @@ my $obsolete_reason = {
 	'hs-ed25519' => 5,
 	'hs-hackage-security' => 5,
 	'tempwatch' => 5,
+	'avenger' => 29,
 };
 
 # reasons for obsolete packages
