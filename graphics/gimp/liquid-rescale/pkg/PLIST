@@ -1,10 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/12/22 11:46:34 sthen Exp $
-lib/gimp/
-lib/gimp/2.0/
-lib/gimp/2.0/plug-ins/
+@comment $OpenBSD: PLIST,v 1.4 2021/02/23 20:03:29 naddy Exp $
 @bin lib/gimp/2.0/plug-ins/gimp-lqr-plugin
 @bin lib/gimp/2.0/plug-ins/plug_in_lqr_iter
-share/gimp/
 share/gimp-lqr-plugin/
 share/gimp-lqr-plugin/help/
 share/gimp-lqr-plugin/help/css/
@@ -38,6 +34,4 @@ share/gimp-lqr-plugin/help/ru/images/dialog2.jpg
 share/gimp-lqr-plugin/help/ru/images/dialog3.jpg
 share/gimp-lqr-plugin/help/ru/images/wilber.png
 share/gimp-lqr-plugin/help/ru/index.html
-share/gimp/2.0/
-share/gimp/2.0/scripts/
 share/gimp/2.0/scripts/batch-gimp-lqr.scm

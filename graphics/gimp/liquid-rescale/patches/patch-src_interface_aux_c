@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_interface_aux_c,v 1.1 2021/02/23 20:03:28 naddy Exp $
+
+https://github.com/carlobaldassi/gimp-lqr-plugin/commit/ae3464a82e1395fc577cc94999bdc7c4a7bb35f1
+
+Index: src/interface_aux.c
+--- src/interface_aux.c.orig
++++ src/interface_aux.c
+@@ -48,11 +48,11 @@ static void callback_dialog_aux_response (GtkWidget * 
+ 
+ gint dialog_aux_response = GTK_RESPONSE_OK;
+ 
+-PlugInUIVals *ui_state;
+-PlugInVals *state;
+-PlugInDialogVals *dialog_state;
++extern PlugInUIVals *ui_state;
++extern PlugInVals *state;
++extern PlugInDialogVals *dialog_state;
+ 
+-GtkWidget *dlg;
++extern GtkWidget *dlg;
+ 
+ /***  Public functions  ***/
+ 
