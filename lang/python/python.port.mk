@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.129 2021/02/23 20:44:38 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.130 2021/02/23 20:55:02 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -36,10 +36,9 @@ MODPY_DEFAULT_VERSION_3 = 3.8
 #   moving between subpackages in the past.
 
 .if !defined(MODPY_VERSION)
-
 FLAVOR ?=
 
-.  if ${FLAVOR:Mpython3}
+.  if !defined(FLAVORS) || ${FLAVOR:Mpython3}
 # for standard "python3-flavoured" ports (normal for py-* modules),
 # set the default MODPY_VERSION for the usual py3 version
 MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
