@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2021/01/20 14:57:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.295 2021/02/23 14:27:33 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -11,7 +11,7 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 V_MAJOR=	2.3
 V_DOVECOT=	2.3.13
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -40,8 +40,8 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-server=	bz2 c crypto expat iconv lz4 lzma m pthread sodium \
-		sqlite3 ssl z zstd
+WANTLIB-server=	bz2 c crypto expat exttextcat-2.0 iconv lz4 lzma m \
+		pthread sodium sqlite3 ssl stemmer z zstd
 WANTLIB-ldap=	crypto iconv lber ldap sasl2 ssl lib/dovecot/dovecot
 WANTLIB-mysql=	crypto m mariadb pthread ssl z
 WANTLIB-postgresql= crypto m pq ssl
@@ -52,7 +52,9 @@ LIB_DEPENDS+=	archivers/bzip2 \
 		archivers/zstd \
 		converters/libiconv \
 		databases/sqlite3 \
-		security/libsodium
+		security/libsodium \
+		textproc/libexttextcat \
+		textproc/libstemmer
 LIB_DEPENDS-ldap= ${BASE_PKGPATH} \
 		databases/openldap
 LIB_DEPENDS-mysql= databases/mariadb
@@ -70,8 +72,6 @@ CONFIGURE_ARGS=	--with-rundir=/var/dovecot \
 		--without-pam \
 		--without-shadow \
 		--with-solr \
-		--without-stemmer \
-		--without-textcat \
 		--without-vpopmail
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -102,6 +102,7 @@ CONFIGURE_ARGS+=--with-pgsql
 
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/doc/example-config/conf.d/10-mail.conf
+	@sed -i 's,/usr/local,${LOCALBASE},' ${WRKSRC}/src/plugins/fts/decode2text.sh
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf \
