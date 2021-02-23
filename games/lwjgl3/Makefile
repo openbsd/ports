@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/08 20:33:03 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 06:13:14 ajacoutot Exp $
 
 COMMENT =	lightweight game library for java
 
@@ -48,7 +48,8 @@ MODULES =	java
 MODJAVA_VER =	11
 MODJAVA_BUILD =	ant
 
-BUILD_DEPENDS =	devel/bullet \
+BUILD_DEPENDS =	archivers/unzip \
+		devel/bullet \
 		devel/dyncall
 LIB_DEPENDS =	archivers/lz4 \
 		audio/openal \
