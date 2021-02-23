@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.130 2021/02/23 20:55:02 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.131 2021/02/23 22:04:35 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -38,7 +38,7 @@ MODPY_DEFAULT_VERSION_3 = 3.8
 .if !defined(MODPY_VERSION)
 FLAVOR ?=
 
-.  if !defined(FLAVORS) || ${FLAVOR:Mpython3}
+.  if !defined(FLAVORS) || !${FLAVORS:Mpython3} || ${FLAVOR:Mpython3}
 # for standard "python3-flavoured" ports (normal for py-* modules),
 # set the default MODPY_VERSION for the usual py3 version
 MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
@@ -55,14 +55,13 @@ MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
 # will set MODPY_VERSION themselves.
 .    endif
 .  endif
+.endif
 
-# verify if MODPY_VERSION forced is correct
-.else
-.  if ${MODPY_VERSION} != "2.7" && \
+# verify if MODPY_VERSION found is correct
+.if ${MODPY_VERSION} != "2.7" && \
       ${MODPY_VERSION} != "3.8" && \
       ${MODPY_VERSION} != "3.9"
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
-.  endif
 .endif
 
 MODPY_MAJOR_VERSION =	${MODPY_VERSION:R}

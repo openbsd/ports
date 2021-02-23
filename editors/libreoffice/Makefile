@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2021/02/23 21:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.244 2021/02/23 22:04:35 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -194,7 +194,6 @@ BUILD_DEPENDS +=	x11/gnome/librsvg
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES+=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 # XXX can't use ${MODPY_DEFAULT_VERSION_3}, it specifically wants 3.3 and
 # will try (and fail) to build its own copy if not available.

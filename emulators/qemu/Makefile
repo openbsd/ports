@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2021/02/23 21:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.205 2021/02/23 22:04:35 sthen Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 sparc64
 DPB_PROPERTIES=	parallel
@@ -29,7 +29,6 @@ WANTLIB=	SDL2 X11 atk-1.0 bz2 c cairo cairo-gobject capstone curl \
 COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gettext,-tools \

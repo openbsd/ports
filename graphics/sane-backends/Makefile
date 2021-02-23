@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2021/02/23 21:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2021/02/23 22:04:35 sthen Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
@@ -25,7 +25,6 @@ MASTER_SITES=		https://gitlab.com/sane-project/backends/uploads/104f09c07d35519c
 COMPILER=		base-clang ports-gcc
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_RUNDEP=		No
 

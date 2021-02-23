@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/23 21:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/23 22:04:35 sthen Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
@@ -43,7 +43,6 @@ LIB_DEPENDS +=	databases/postgresql,-main
 .if ${FLAVOR} == "python"
 CONFIGURE_STYLE = none
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MAKE_ENV +=	PYTHON=1
 WANTLIB +=	${MODPY_WANTLIB} intl m util
 LIB_DEPENDS +=	devel/gettext,-runtime
