@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/15 06:46:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
@@ -51,8 +51,6 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =	devel/cmake \
 		lang/python \
 		x11/qt5
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/cppunit \

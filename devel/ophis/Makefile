@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/12/19 12:39:10 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT =		6502-series cross-assembler
 
@@ -18,6 +18,7 @@ GH_PROJECT =		Ophis
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 WRKSRC =		${WRKDIST}/src
 

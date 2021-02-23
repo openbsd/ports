@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -23,6 +23,7 @@ HOMEPAGE=	http://hamlib.sourceforge.net/
 
 MODULES=	lang/python \
 		lang/tcl
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE=	Yes

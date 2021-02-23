@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/12/11 15:02:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT=	export an RCS or CVS history as a fast-import stream
 
@@ -21,6 +21,7 @@ TAR=		gtar
 
 USE_GMAKE=	Yes
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 CONFIGURE_STYLE= x	# bad python.port.mk
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" mandir=${WRKINST}${PREFIX}/man
 BUILD_DEPENDS+=	devel/bison \

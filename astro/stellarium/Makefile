@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2021/01/29 16:48:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.71 2021/02/23 19:39:08 sthen Exp $
 
 COMMENT=		free open source planetarium
 
@@ -24,7 +24,6 @@ MODULES=		devel/cmake \
 			lang/python \
 			x11/qt5
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 
 LIB_DEPENDS=		misc/gpsd \

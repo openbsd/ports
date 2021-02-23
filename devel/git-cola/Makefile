@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/20 06:10:04 bket Exp $
+# $OpenBSD: Makefile,v 1.39 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT =	python powered git gui
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PYTEST =	Yes
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/git \

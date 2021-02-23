@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/08/18 19:15:54 edd Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT =	continuation and extension of Vim
 
@@ -59,7 +59,6 @@ CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN} \
 USE_GMAKE = Yes
 # `test_startup_utf8.vim' requires either bash or zsh
 MODULES +=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 TEST_DEPENDS =	shells/bash \

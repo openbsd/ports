@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/10/17 17:13:18 daniel Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT=	Python-alike language for writing Python extension modules
 
@@ -17,6 +17,7 @@ MASTER_SITES=	https://distfiles.sigtrap.nl/ \
 		${HOMEPAGE}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 pre-build:
 	@perl -pi -e "s,/usr/bin/env python,${MODPY_BIN}," \

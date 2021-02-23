@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/20 16:44:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT=		front-end for dynamips cisco emulator
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dyna-gen/}
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS=		emulators/dynamips
 
 NO_BUILD=		Yes

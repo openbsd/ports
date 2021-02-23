@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/25 14:37:08 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =		SHA-3 implementation for Python
 
@@ -21,6 +21,7 @@ WANTLIB += ${MODPY_WANTLIB} pthread
 # No python3 flavor since it is a backport from Python 3.6+
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

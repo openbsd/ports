@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2021/02/14 16:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -57,6 +57,7 @@ MASTER_SITES =		${HOMEPAGE}/files/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python -memcachec -mqtt -nut -riemann -redis -prometheus -ping

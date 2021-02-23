@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2021/02/23 19:39:37 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -44,6 +44,7 @@ LIB_DEPENDS=		devel/gconf2 \
 
 MODULES=		lang/python \
 			textproc/intltool
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # c++11 (although only for building against libsigc++)
 COMPILER =		base-clang ports-gcc

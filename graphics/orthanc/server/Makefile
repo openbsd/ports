@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/10/18 18:30:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:26 sthen Exp $
 
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
@@ -29,6 +29,7 @@ COMPILER =		base-clang ports-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/lua \
 			lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =		No
 

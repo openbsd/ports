@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/01/23 23:17:48 kn Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT=		AFP file and print services for IP networks
 
@@ -30,7 +30,6 @@ MODULES=		lang/python
 
 MODPY_ADJ_FILES=	contrib/shell_utils/afpstats
 MODPY_BUILDDEP=		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=		databases/db/v4 \
 			databases/tdb \

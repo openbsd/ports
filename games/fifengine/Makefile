@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/12/31 14:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:22 sthen Exp $
 
 BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
 BROKEN-sparc64 =out of memory when compiling fifePYTHON_wrap.cxx
@@ -27,7 +27,6 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
 			lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS =		devel/swig>=3.0.12
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \

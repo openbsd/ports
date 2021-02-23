@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/09 21:32:47 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT= 	full text search application
 
@@ -25,8 +25,6 @@ WANTLIB += ${COMPILER_LIBCXX} c iconv lzma m xapian xml2
 WANTLIB += xslt z
 
 MODULES=		lang/python
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 USE_GMAKE=		Yes
 

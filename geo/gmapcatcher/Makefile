@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/11/24 16:44:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/23 19:39:24 sthen Exp $
 
 COMMENT=	offline maps viewer
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	x11/py-gtk2 \
 		databases/py-sqlite2 \

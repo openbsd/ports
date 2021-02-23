@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/12/29 23:56:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT =		GNU Backgammon
 V =			1.05.002
@@ -27,6 +27,7 @@ WANTLIB += ${MODPY_WANTLIB}
 MASTER_SITES =		http://gnubg.org/media/sources/
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		audio/libcanberra,-gtk \
 			databases/sqlite3 \

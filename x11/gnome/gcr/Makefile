@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2021/01/14 12:51:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT=		library for bits of crypto UI and parsing
 
@@ -24,7 +24,6 @@ MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
 MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info vala
 
 MODPY_RUNDEP=		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=		x11/gtk+3 \
 			security/libgcrypt \

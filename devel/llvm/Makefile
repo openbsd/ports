@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.273 2021/02/16 23:47:40 jca Exp $
+# $OpenBSD: Makefile,v 1.274 2021/02/23 19:39:17 sthen Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -49,7 +49,6 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	tools/clang/tools/clang-format/git-clang-format \
 			tools/clang/tools/scan-view/bin/scan-view \
 			tools/clang/utils/hmaptool/hmaptool

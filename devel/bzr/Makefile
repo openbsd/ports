@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/23 19:39:13 sthen Exp $
 
 COMMENT =	distributed version control system by Canonical
 
@@ -17,6 +17,7 @@ WANTLIB += ${MODPY_WANTLIB} pthread
 MASTER_SITES =	https://launchpad.net/bzr/${MODPY_EGG_VERSION:C/..$//}/${MODPY_EGG_VERSION}/+download/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS +=	net/py-curl \
 		security/py-paramiko \

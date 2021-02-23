@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/12 20:43:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/23 19:39:11 sthen Exp $
 
 COMMENT=	convert files between character sets and usages
 
@@ -11,6 +11,7 @@ CATEGORIES=	converters textproc
 HOMEPAGE=	http://recode.progiciels-bpi.ca
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # (L)GPLv2
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/11/20 07:43:41 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:24 sthen Exp $
 
 COMMENT =	GIS WMTS/TMS tile caching server
 
@@ -17,7 +17,6 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 MODULES =	lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	mapproxy/test/system/fixture/cgi.py
 
 RUN_DEPENDS =	geo/py-proj${MODPY_FLAVOR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/12/04 00:15:22 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT=	hierarchical memory pool system with destructors
 
@@ -25,6 +25,7 @@ MASTER_SITES=	https://download.samba.org/pub/talloc/
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES= buildtools/bin/waf
 

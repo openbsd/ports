@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =		powerful disassembler library for x86/amd64
 
@@ -19,6 +19,7 @@ GH_PROJECT =		distorm
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT =		command line tool for PostgreSQL server activity monitoring
 
@@ -18,6 +18,7 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 MODPY_SETUP_ARGS =	--with-man
 RUN_DEPENDS =		databases/py-psycopg2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/05 14:16:17 phessler Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
@@ -16,7 +16,6 @@ HOMEPAGE=	https://trac.tools.ietf.org/tools/ietf-cli/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP=	No
 
 NO_BUILD=	Yes

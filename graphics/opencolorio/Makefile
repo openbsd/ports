@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/01 22:53:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:26 sthen Exp $
 
 COMMENT =		color management library
 
@@ -26,8 +26,6 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		textproc/tinyxml \

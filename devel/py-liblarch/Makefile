@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/10/03 15:39:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:19 sthen Exp $
 
 COMMENT=		python library to easily handle data structure
 
@@ -18,8 +18,6 @@ HOMEPAGE=		https://wiki.gnome.org/Projects/liblarch
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}

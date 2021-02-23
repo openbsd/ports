@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/04 14:06:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT =		C++ library implementing a BitTorrent client
 
@@ -21,7 +21,6 @@ WANTLIB += boost_system-mt crypto iconv m ssl
 MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/libtorrent-${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/libtool
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/11 14:25:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:31 sthen Exp $
 
 COMMENT =	tool to automatically build BGP route server configurations
 
@@ -25,7 +25,6 @@ NO_TEST =		Yes # needs work
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>

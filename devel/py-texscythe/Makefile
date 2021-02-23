@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/12/30 13:00:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT =		TeX Live texmf subsetter tool and Python library.
 
@@ -20,6 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS +=		databases/py-sqlalchemy
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 

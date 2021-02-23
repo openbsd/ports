@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT=		gpodder.net client library
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 NO_TEST=		Yes
 

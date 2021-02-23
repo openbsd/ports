@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/09 19:12:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT =	EPUB ebook editor
 
@@ -26,7 +26,6 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python \
 			x11/qt5
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS =		devel/desktop-file-utils \
 			textproc/py-lxml${MODPY_FLAVOR}
 LIB_DEPENDS =		textproc/hunspell \

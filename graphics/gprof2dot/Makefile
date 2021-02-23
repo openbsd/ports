@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT=		convert profilers output into a dot(1) graph
 
@@ -14,6 +14,7 @@ CATEGORIES=		graphics
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS=	Yes
 

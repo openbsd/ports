@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/12 08:47:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT =	RE platform powered by radare2
 
@@ -23,8 +23,6 @@ WANTLIB += zip
 MODULES =	devel/cmake \
 		lang/python \
 		x11/qt5
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	devel/radare2/main>=4.5.1

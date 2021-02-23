@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.29 2020/11/03 23:18:10 jca Exp $
+#	$OpenBSD: Makefile,v 1.30 2021/02/23 19:39:27 sthen Exp $
 
 COMMENT=	ZBar barcode reader
 
@@ -33,7 +33,6 @@ WANTLIB += tiff webp webpdemux webpmux xcb xcb-render xcb-shm
 WANTLIB += xml2 z zstd
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=	graphics/ImageMagick \
 		x11/gtk+3

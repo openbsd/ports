@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2021/01/23 12:46:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2021/02/23 19:39:26 sthen Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -42,8 +42,6 @@ DISTFILES =		${DISTNAME}.tar.gz \
 MODULES =		devel/cmake \
 			lang/python \
 			x11/qt5
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =		base-clang ports-gcc
 

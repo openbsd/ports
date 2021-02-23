@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/03/20 16:44:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT=		class and function decorators
 
@@ -18,6 +18,7 @@ MODPY_PI =		Yes
 EXTRACT_SUFX=		.zip
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS=	Yes
 

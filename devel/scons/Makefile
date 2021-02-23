@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT=	Python-based build system
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scons/}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/23 13:27:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:19 sthen Exp $
 
 COMMENT =		implementation of time.monotonic()
 
@@ -14,6 +14,7 @@ HOMEPAGE =		https://github.com/atdt/monotonic
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

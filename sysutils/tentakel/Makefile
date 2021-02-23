@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT=	distributed command execution
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	https://spacehopper.org/mirrors/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 WRKSRC=		${WRKDIST}/py
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 20:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT =	easy to use, graphical editor
 
@@ -22,6 +22,7 @@ MASTER_SITES =	http://fossies.org/linux/misc/
 
 .if ${FLAVOR:Mpython}
 MODULES +=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
 CONFIGURE_ENV += PYTHON_VER=${MODPY_VERSION} LOCALBASE=${LOCALBASE}
 WANTLIB +=	pthread m ${MODPY_WANTLIB}

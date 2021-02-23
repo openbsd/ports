@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/10 16:25:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=		creates playlists from directory trees
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	http://bj.spline.de/download/mkplaylist/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 PKG_ARCH =	*
 
 # Author didn't write tests

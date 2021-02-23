@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:19 sthen Exp $
 
 COMMENT=		Python interface to the UNIX dialog utility
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE=	Yes
 # pythondialog.sourceforge.net for python3
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PI=		Yes
 NO_TEST=		Yes
 RUN_DEPENDS=		misc/dialog

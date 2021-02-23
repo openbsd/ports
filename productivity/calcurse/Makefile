@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2021/01/10 16:44:34 fcambus Exp $
+# $OpenBSD: Makefile,v 1.37 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
@@ -22,8 +22,6 @@ RUN_DEPENDS=	www/py-httplib2${MODPY_FLAVOR}
 LIB_DEPENDS=	devel/gettext,-runtime
 
 MODULES=	lang/python
-
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-asciidoc

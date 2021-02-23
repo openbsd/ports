@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT =	library for Windows NT data types
 
@@ -28,7 +28,6 @@ CONFIGURE_ARGS +=	--enable-python3 --disable-nls
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
-MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
 
 TEST_DEPENDS += shells/bash
 

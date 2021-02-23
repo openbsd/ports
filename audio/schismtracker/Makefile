@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/05/14 13:18:57 fcambus Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT =	open-source reimplementation of Impulse Tracker
 
@@ -18,6 +18,7 @@ WANTLIB +=	SDL X11 Xext Xv c m pthread
 MASTER_SITES =	https://github.com/schismtracker/schismtracker/releases/download/$V/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =	No
 

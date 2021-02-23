@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/20 19:18:25 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT=		all-in-one management software
 
@@ -18,7 +18,6 @@ HOMEPAGE=		https://www.odoo.com
 MASTER_SITES=		https://nightly.odoocdn.com/${MV}/nightly/src/
 
 MODULES=		lang/python
-MODPY_VERSION ?=        ${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
 WRKDIST=		${WRKDIR}/odoo-${MV}.post${SV}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2021/02/20 17:13:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT=	GTK+ client for the Music Player Daemon
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=	devel/gettext,-tools

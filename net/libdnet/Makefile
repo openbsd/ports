@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:48:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -37,6 +37,7 @@ CONFIGURE_ARGS +=	--without-check
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-python}
 MODULES+=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 CONFIGURE_ARGS+=	--with-python
 MAKE_FLAGS=		PYTHON=${MODPY_BIN}
 TEST_DEPENDS=		net/libdnet,-python

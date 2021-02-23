@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/04/02 11:11:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT=	rendering for complex writing systems
 
@@ -28,7 +28,6 @@ COMPILER=	base-clang ports-gcc
 
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 # XXX needs py-fontTools (not ported)
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS}

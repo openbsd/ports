@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/01/19 21:34:49 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT =		public suffix list library
 
@@ -23,7 +23,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 MODULES =		lang/python
 
 MODPY_RUNDEP =		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			sysutils/coreutils

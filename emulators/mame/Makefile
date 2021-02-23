@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/02/01 15:47:16 fcambus Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/23 19:39:22 sthen Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -28,6 +28,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	lang/lua \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODLUA_VERSION = 5.3
 

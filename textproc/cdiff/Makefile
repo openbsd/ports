@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT=		inline and side-by-side colored and incremental diff
 
@@ -13,6 +13,7 @@ HOMEPAGE=		https://github.com/ymattw/cdiff
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI=		Yes
 

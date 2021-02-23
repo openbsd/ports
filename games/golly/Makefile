@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT =	game of life simulator
 
@@ -16,6 +16,7 @@ HOMEPAGE =	http://golly.sourceforge.net/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS =		x11/wxWidgets>=3.0.4
 RUN_DEPENDS =		devel/desktop-file-utils
 

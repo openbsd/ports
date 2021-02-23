@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/09/07 14:48:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
@@ -19,7 +19,6 @@ WANTLIB += Xext c m xcb
 
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		devel/gettext,-tools \

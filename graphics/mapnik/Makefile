@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/02/23 19:39:25 sthen Exp $
 
 BROKEN =	undefined reference to '_ZN6icu_5613UnicodeStringC1EOS0_'
 
@@ -33,6 +33,7 @@ WANTLIB += xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
 MASTER_SITES =	http://mapnik.s3.amazonaws.com/dist/v3.0.10/
 MODULES =	devel/scons \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # clang doesnt ship cstdint ?
 COMPILER =	base-clang ports-gcc

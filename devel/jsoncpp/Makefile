@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/11/09 05:22:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT =		JSON parsing C++ API
 
@@ -26,7 +26,6 @@ MODULES =		devel/meson \
 CONFIGURE_STYLE =	meson
 
 MODPY_RUNDEP =		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 TEST_ENV +=	LD_PRELOAD=${WRKBUILD}/libjsoncpp.so.${LIBjsoncpp_VERSION}
 

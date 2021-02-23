@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2020/06/09 19:56:59 feinerer Exp $
+# $OpenBSD: Makefile,v 1.49 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
@@ -22,6 +22,7 @@ USE_GMAKE=		yes
 # Instead of patching just add the lang/python dependency.
 # http://sourceforge.net/p/maxima/mailman/message/34462954/
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		print/texinfo
@@ -43,6 +44,7 @@ FLAVOR?=
 
 .if !${FLAVOR:Mno_x11}
 MODULES+=		x11/tk
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS +=		${MODTK_RUN_DEPENDS} \
 			math/gnuplot
 BUILD_DEPENDS +=	${MODTK_BUILD_DEPENDS}

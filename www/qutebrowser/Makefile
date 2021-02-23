@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/20 14:22:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/23 19:39:48 sthen Exp $
 
 COMMENT =		keyboard-focused browser with a minimal GUI
 
@@ -15,7 +15,6 @@ MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

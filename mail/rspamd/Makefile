@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2021/01/09 12:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
@@ -32,7 +32,6 @@ COMPILER=	base-clang ports-gcc
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/gettext,-runtime \

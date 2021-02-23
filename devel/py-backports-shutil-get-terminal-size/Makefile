@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT =		backport of the get_terminal_size function from shutil
 
@@ -12,6 +12,7 @@ REVISION =		1
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

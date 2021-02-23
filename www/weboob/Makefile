@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:13:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT =	web out of browsers
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

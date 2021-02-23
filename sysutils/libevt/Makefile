@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT =	library and tools to access the Windows Event Log (EVT)
 
@@ -29,7 +29,6 @@ CONFIGURE_ARGS +=	--enable-python3 \
 			--without-libregf
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODULES +=	lang/python
 

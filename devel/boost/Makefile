@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2021/02/01 12:00:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.108 2021/02/23 19:39:13 sthen Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
@@ -77,7 +77,6 @@ COMPILER= base-clang ports-gcc
 MULTI_PACKAGES=	-main -md
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	math/py-numpy${MODPY_FLAVOR}

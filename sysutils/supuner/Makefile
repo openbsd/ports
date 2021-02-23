@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/17 21:55:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT =		SUPress stdout / stderr UNless ERror
 
@@ -21,7 +21,6 @@ CONFIGURE_STYLE =	none
 
 NO_BUILD =		Yes
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 TEST_DEPENDS =		${MODPY_RUN_DEPENDS}

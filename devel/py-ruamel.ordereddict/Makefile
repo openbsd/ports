@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:19 sthen Exp $
 
 COMMENT =		version of dict that keeps keys in sorted order
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 # NB: Functionality provided by this modules is not required with Python3.
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

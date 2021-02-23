@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:31 sthen Exp $
 
 COMMENT=	LiveJournal client for Python
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ljcharm/}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS=	textproc/py-feedparser
 
 NO_TEST=	Yes

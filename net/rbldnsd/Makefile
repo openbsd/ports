@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT=	small daemon for DNSBLs
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c z
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=		no
 
 CONFIGURE_STYLE=simple

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/10/28 11:06:42 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT =		CORS handling for flask
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS +=		www/py-flask${MODPY_FLAVOR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2021/01/23 07:10:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2021/02/23 19:39:44 sthen Exp $
 
 # only files under tests/ are compiled but not installed
 PKG_ARCH=		*
@@ -20,7 +20,6 @@ MODULES=		devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook yelp
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 # glib2 needed to build regression tests
 BUILD_DEPENDS=		devel/glib2 \

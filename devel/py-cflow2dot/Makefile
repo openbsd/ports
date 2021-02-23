@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/15 10:02:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT =		C call graphs using Cflow producing linked PDF
 
@@ -17,7 +17,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/cflow \
 			graphics/py-dot${MODPY_FLAVOR} \

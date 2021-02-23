@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/10/03 15:40:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT=		GNOME Shell integration for Chrome
 
@@ -16,7 +16,6 @@ MODULES=		devel/cmake \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 MODPY_ADJ_FILES=	connector/chrome-gnome-shell.py
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		textproc/jq
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/06/09 17:34:13 chrisz Exp $
+# $OpenBSD: Makefile,v 1.42 2021/02/23 19:39:13 sthen Exp $
 
 BROKEN-sparc64 =	"/usr/bin/ld: skipping incompatible pyml-current/libpyml_stubs.a when searching for -lpyml_stubs" \
 			"/usr/bin/ld: cannot find -lpyml_stubs"
@@ -24,6 +24,7 @@ MASTER_SITES = ${HOMEPAGE}distrib/
 
 MODULES =		lang/ocaml \
 			lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			print/texlive/base \

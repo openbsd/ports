@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2020/10/03 14:24:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2021/02/23 19:39:24 sthen Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
@@ -26,6 +26,7 @@ WANTLIB += pangocairo-1.0 soup-2.4 sqlite3 webkit2gtk-4.0 xmlbird
 WANTLIB += z harfbuzz
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_ADJ_FILES =	configure install.py
 

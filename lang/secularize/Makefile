@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:28 sthen Exp $
 
 COMMENT =	HolyC transcompiler
 
@@ -18,7 +18,6 @@ MAINTAINER =	Mike Larkin <mlarkin@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_PI =		Yes
 

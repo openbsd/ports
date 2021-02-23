@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =	The Router Exploitation Framework
 
@@ -16,7 +16,6 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
 			net/py-snmp${MODPY_FLAVOR} \

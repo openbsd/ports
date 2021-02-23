@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/04 02:01:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:13 sthen Exp $
 
 VERSION=	1.13
 DISTNAME=	automake-${VERSION}.4
@@ -7,6 +7,7 @@ PKGSPEC=	automake->=${VERSION},<1.14
 EXTRACT_SUFX=	.tar.xz
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No

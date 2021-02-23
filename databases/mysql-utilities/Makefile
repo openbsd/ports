@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/10 16:58:16 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:11 sthen Exp $
 
 COMMENT =	MySQL management utilities
 
@@ -19,6 +19,7 @@ MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PYTEST =	Yes
 

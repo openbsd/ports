@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:13:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT=	manage Elasticsearch indices
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS= Yes
-
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=	devel/py-certifi${MODPY_FLAVOR}>=2019.9.11 \
 		devel/py-click${MODPY_FLAVOR}>=6.7,<7.0 \

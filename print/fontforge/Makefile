@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2020/07/09 05:43:40 matthieu Exp $
+# $OpenBSD: Makefile,v 1.48 2021/02/23 19:39:36 sthen Exp $
 
 BROKEN-i386=		hangs at runtime. started after switch to clang
 
@@ -33,6 +33,7 @@ WANTLIB += pthread tiff util xcb xcb-render xcb-shm xml2 z zstd
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=		devel/gettext,-tools
 

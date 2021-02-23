@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/01 08:27:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT=	interactive accessibility explorer
 
@@ -26,7 +26,6 @@ RUN_DEPENDS= 	devel/ipython${MODPY_FLAVOR} \
 		x11/gtk+3
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_STYLE=gnu
 

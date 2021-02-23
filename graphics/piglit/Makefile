@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/31 03:19:35 jsg Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:26 sthen Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
@@ -25,7 +25,6 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		devel/cmake \
 			lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	tests/glslparsertest/glsl2/gen_builtin_test.py \
 			tests/oglconform.py \
 			tests/vulkan.py \

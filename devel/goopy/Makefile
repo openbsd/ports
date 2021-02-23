@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/18 03:13:21 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT=	Google utilities written in Python
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=goog-goopy/}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 do-test:
 	@cd ${WRKSRC}/goopy && ${MAKE_ENV} \

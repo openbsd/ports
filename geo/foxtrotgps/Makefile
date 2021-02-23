@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/01/30 08:34:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/23 19:39:24 sthen Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
@@ -27,6 +27,7 @@ WANTLIB += ssl xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 MODULES = 		devel/dconf \
 			lang/python \
 			textproc/intltool
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS = 	devel/gettext,-tools \
 			devel/gsettings-desktop-schemas

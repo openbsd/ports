@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/11/21 09:40:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:31 sthen Exp $
 
 MODPY_EGG_VERSION =	0.5.5
 COMMENT =	download YouTube content and retrieve metadata
@@ -12,8 +12,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =	Yes
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		www/youtube-dl
 RUN_DEPENDS =		www/youtube-dl

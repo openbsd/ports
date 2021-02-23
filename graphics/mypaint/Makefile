@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/04 14:06:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:26 sthen Exp $
 
 COMMENT =	raster graphics editor for digital painters
 
@@ -25,7 +25,6 @@ MASTER_SITES =	https://github.com/mypaint/mypaint/releases/download/v${MODPY_EGG
 
 MODULES =		lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 SEPARATE_BUILD =	Yes
 COMPILER =		base-clang ports-gcc

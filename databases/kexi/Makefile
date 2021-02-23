@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/23 18:01:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:11 sthen Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -48,6 +48,7 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =		devel/cmake \
 			lang/python \
 			devel/kf5
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		databases/postgresql,-server \
 			devel/gettext,-tools \

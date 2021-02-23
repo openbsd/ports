@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/07/03 21:13:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT=		nagios status monitor for the Desktop
 
@@ -19,7 +19,6 @@ MASTER_SITES=		https://nagstamon.ifw-dresden.de/files/stable/
 
 MODULES=		lang/python
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}

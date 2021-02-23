@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/11/21 21:37:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT =	Python cgi/fastcgi/mod_python framework
 
@@ -13,6 +13,7 @@ HOMEPAGE =		https://github.com/jribbens/jonpy
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 

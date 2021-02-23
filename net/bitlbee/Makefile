@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2021/01/11 22:17:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2021/02/23 19:39:31 sthen Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
@@ -23,6 +23,7 @@ WANTLIB += c m pthread glib-2.0 gmodule-2.0 ssl crypto intl
 MASTER_SITES=		https://get.bitlbee.org/src/
 
 MODULES=		devel/gettext,-runtime
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 DB_DIR?=		/var/bitlbee
 ETCDIR=			${SYSCONFDIR}/bitlbee
@@ -33,6 +34,7 @@ DOCDIR=			${PREFIX}/share/doc/bitlbee/
 BUILD_DEPENDS=		textproc/docbook-xsl \
 			textproc/libxslt
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=		No
 LIB_DEPENDS=		devel/glib2
 

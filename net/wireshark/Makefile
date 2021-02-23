@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2021/02/20 17:33:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2021/02/23 19:39:35 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -56,7 +56,6 @@ MODULES =	lang/lua \
 MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
 WANTLIB-text += bcg729 brotlidec cares gnutls lz4 maxminddb nghttp2

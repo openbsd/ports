@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/01/26 11:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT=	STM32 bootloader to upload and download firmware
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	https://distfiles.sigtrap.nl/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS=	devel/py-serial
 

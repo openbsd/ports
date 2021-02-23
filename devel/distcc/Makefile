@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/01/31 20:47:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
@@ -24,7 +24,6 @@ MASTER_SITES =		https://github.com/distcc/distcc/releases/download/v${VERSION}/
 MULTI_PACKAGES =	-main -gtk -server
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_EGG_VERSION =	${VERSION}
 
 # Only -main needs an RDEP

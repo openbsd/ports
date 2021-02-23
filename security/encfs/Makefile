@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 
@@ -21,6 +21,7 @@ COMPILER =		base-clang ports-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =		No
 

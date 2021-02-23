@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2021/01/19 06:38:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.75 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.5
@@ -22,6 +22,7 @@ EXTRACT_SUFX=	.tar.xz
 MODULES=	x11/qt5 \
 		devel/cmake \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	devel/boost
 

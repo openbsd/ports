@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2021/02/10 04:55:19 jsg Exp $
+# $OpenBSD: Makefile,v 1.71 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -36,7 +36,6 @@ CONFIGURE_ARGS=	--program-prefix=e \
 USE_GMAKE=	Yes
 
 MODULES +=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
 TEST_DEPENDS +=	devel/dejagnu

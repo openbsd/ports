@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT =		youtube-dl wrapper to manage youtube audio
 
@@ -13,7 +13,6 @@ MAINTAINER =		Paul Irofti <paul@irofti.net>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		www/youtube-dl \
 			graphics/ffmpeg

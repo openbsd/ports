@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/20 14:18:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT =		modular python code checker wrapping pep8 and pyflakes
 
@@ -16,7 +16,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests
 

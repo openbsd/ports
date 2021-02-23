@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT =		terminal UI for Reddit
 
@@ -17,7 +17,6 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes

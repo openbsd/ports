@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/08 21:15:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT =	IRC client for KDE
 
@@ -27,8 +27,6 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${V}/src/}
 
 MODULES =		devel/kf5 \
 			lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS +=	devel/kf5/kdoctools \
 			devel/kf5/kitemmodels \

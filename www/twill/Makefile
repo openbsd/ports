@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT=		simple scripting language for web browsing
 
@@ -18,6 +18,7 @@ MASTER_SITES=		http://darcs.idyll.org/~t/projects/
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS=	Yes
 
 TEST_DEPENDS=	www/py-quixote \

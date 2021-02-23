@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/24 16:44:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =		memory artifact extraction utility framework
 
@@ -22,6 +22,7 @@ MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE = Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS = 	Yes
 
 RUN_DEPENDS =	security/distorm3 \

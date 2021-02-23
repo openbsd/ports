@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:48:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT=		fully compliant DynDNS.org client
 
@@ -19,6 +19,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST=		Yes
 NO_BUILD=		Yes

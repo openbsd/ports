@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2021/01/30 14:38:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT=	checks HTML documents for broken links, CLI
 
@@ -18,7 +18,6 @@ HOMEPAGE=	https://linkchecker.github.io/linkchecker/
 
 MODPY_SETUPTOOLS= Yes
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 # tests exist but need at least parameterized, miniboa to be ported.
 # tests use network.

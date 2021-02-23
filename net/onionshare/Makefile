@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT-main =		secure and anonymous file-sharing over Tor
 COMMENT-gui =		graphical user interface for onionshare based on Qt
@@ -25,7 +25,6 @@ PERMIT_PACKAGE =	Yes
 MULTI_PACKAGES =	-main -gui
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-sip${MODPY_FLAVOR} \
 			www/py-flask${MODPY_FLAVOR} \

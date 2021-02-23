@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/10/03 15:39:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:31 sthen Exp $
 
 COMMENT =	bittorrent client
 
@@ -19,7 +19,6 @@ EXTRACT_SUFX =		.tar.xz
 
 MODULES =		lang/python \
 			textproc/intltool
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =		devel/py-wheel${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \

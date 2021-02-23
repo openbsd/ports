@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:45:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/02/23 19:39:19 sthen Exp $
 
 COMMENT =	date and time types for Python
 
@@ -17,6 +17,7 @@ MASTER_SITES =	http://downloads.egenix.com/python/
 WANTLIB += m ${MODPY_WANTLIB} pthread
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =	Yes
 

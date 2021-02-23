@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/17 15:50:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:27 sthen Exp $
 
 COMMENT =	interactive viewer for Graphviz dot graphs
 
@@ -14,7 +14,6 @@ MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

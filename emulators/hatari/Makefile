@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/01/15 20:46:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:22 sthen Exp $
 
 ONLY_FOR_ARCHS = i386 amd64 powerpc powerpc64 arm
 
@@ -29,6 +29,7 @@ LIB_DEPENDS =	devel/sdl2 \
 
 MODULES =	devel/cmake \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_ADJ_FILES = tools/debugger/*.py \
 		  tools/hconsole/*.py \

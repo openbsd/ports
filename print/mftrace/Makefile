@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT=	scalable PostScript fonts generator for MetaFont
 
@@ -16,6 +16,7 @@ MASTER_SITES=	http://lilypond.org/download/sources/mftrace/
 WANTLIB=	c
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	graphics/potrace
 RUN_DEPENDS=	graphics/potrace \

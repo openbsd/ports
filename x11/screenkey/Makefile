@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/03 15:40:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT =		display keypresses on screen
 
@@ -21,7 +21,6 @@ MASTER_SITES =		https://www.thregr.org/~wavexx/software/screenkey/releases/
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS +=	devel/gettext,-tools \
 			devel/py-distutils-extra${MODPY_FLAVOR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT=	utility to turn simply formatted text into markup
 
@@ -17,6 +17,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=txt2tags/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

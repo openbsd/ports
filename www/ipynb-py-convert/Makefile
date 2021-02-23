@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT =	convert .py files to jupyter .ipynb notebooks and vice versa
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 NO_TEST =	Yes
 

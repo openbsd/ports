@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/12 20:44:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -29,6 +29,7 @@ WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm xml2 z
 
 MODULES=		lang/python \
 			x11/gnome
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 LIB_DEPENDS=		x11/gtk+2 \
 			textproc/libxml

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/22 05:15:38 feinerer Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT =	KDE app that allows your devices to communicate
 
@@ -32,6 +32,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdeconnect/${V}/}
 
 MODULES =	devel/kf5 \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kirigami2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/09/18 07:52:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT =	Z3 theorem prover
 
@@ -25,8 +25,6 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_ARGS +=	-DZ3_ENABLE_EXAMPLE_TARGETS=ON \
 			-DZ3_INCLUDE_GIT_HASH=OFF \

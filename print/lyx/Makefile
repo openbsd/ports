@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2021/01/22 23:27:06 mariani Exp $
+# $OpenBSD: Makefile,v 1.97 2021/02/23 19:39:36 sthen Exp $
 
 PORTROACH=	skipv:2.3.x
 
@@ -27,8 +27,6 @@ COMPILER=	base-clang ports-gcc
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
-
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 MODULES=	lang/python \
 		x11/qt5

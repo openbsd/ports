@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2020/12/30 09:25:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT-main=		library handling all the details of proxy configuration
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
@@ -27,8 +27,6 @@ MODULES=		devel/cmake \
 			lang/python
 
 COMPILER =		base-clang ports-gcc base-gcc
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 # cyclic dependency: libproxy,-webkit -> webkit -> gtk+3|libsoup -> glib2-networking -> libproxy
 PSEUDO_FLAVORS=		no_webkit bootstrap

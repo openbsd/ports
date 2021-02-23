@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2021/01/31 16:52:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -59,8 +59,6 @@ LIB_DEPENDS=	devel/gettext,-runtime \
 
 TEST_DEPENDS=	devel/cpputest
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
 RUN_DEPENDS-lua=	net/weechat,-main ${MODLUA_RUN_DEPENDS}
 
@@ -72,7 +70,6 @@ RUN_DEPENDS-ruby=	net/weechat,-main ${MODRUBY_RUN_DEPENDS}
 
 LIB_DEPENDS-tcl=	${MODTCL_LIB_DEPENDS}
 RUN_DEPENDS-tcl=	net/weechat,-main ${MODTCL_RUN_DEPENDS}
-
 
 CONFIGURE_ARGS+=	-DENABLE_GUILE=OFF \
 			-DENABLE_PHP=OFF \

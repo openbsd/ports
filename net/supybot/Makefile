@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT =	cross-platform IRC bot written in Python
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=supybot/}
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =	Yes
 

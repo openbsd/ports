@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2021/02/17 19:06:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
@@ -16,8 +16,6 @@ MASTER_SITES=		http://virt-manager.org/download/sources/virt-manager/
 
 MODULES=		devel/dconf \
 			lang/python
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 NO_BUILD=		Yes
 MODPY_BUILDDEP=		Yes

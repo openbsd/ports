@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT =	pcap bgp parser
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		net/py-pcapy${MODPY_FLAVOR}
 BUILD_DEPENDS +=	${RUN_DEPENDS}

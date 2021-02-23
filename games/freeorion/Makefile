@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/12/16 02:04:52 namn Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:22 sthen Exp $
 
 V =		0.4.10.1
 COMMENT =	turn-based space empire and galactic conquest computer game
@@ -26,8 +26,6 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/cppcheck \
 		devel/doxygen \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2021/01/09 11:08:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.199 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -120,7 +120,6 @@ CONFIGURE_ARGS +=	-Dgoogle=false
 MODULES +=		lang/python
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 
 # -Dadmin=false

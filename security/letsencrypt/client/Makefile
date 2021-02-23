@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/10/07 13:32:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT=	client for certificate authorities using ACME protocols
 
@@ -17,8 +17,6 @@ RUN_DEPENDS=	devel/py-configargparse${MODPY_FLAVOR} \
 TEST_DEPENDS=	${RUN_DEPENDS}
 MODPY_PYTEST=	Yes
 #MODPY_PYTEST_ARGS=	tests
-
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 do-configure:
 	sed -i -e 's,/etc,${SYSCONFDIR},' \

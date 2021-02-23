@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=	CDDB audio CD track info access in Python
 
@@ -20,6 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cddb-py/}
 DIST_SUBDIR=	py-cddb
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST=	Yes
 

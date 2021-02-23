@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/07 13:01:45 kn Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:31 sthen Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
@@ -19,7 +19,6 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-configargparse${MODPY_FLAVOR} \

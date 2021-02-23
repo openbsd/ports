@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2021/02/18 09:13:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.189 2021/02/23 19:39:36 sthen Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -48,7 +48,6 @@ MULTI_PACKAGES= 	-main -common -hpaio -hpcups -hpijs -gui
 MODULES=		lang/python
 
 MODPY_RUNDEP=		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 # createPPD.sh: make -f Makefile_dat2drv
 USE_GMAKE=		Yes

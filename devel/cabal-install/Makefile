@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/23 02:03:23 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/23 19:39:13 sthen Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
@@ -63,8 +63,6 @@ DISTFILES += ${_package}-${_version}_${_revision}{${_package}-${_version}/revisi
 BUILD_DEPENDS +=	lang/ghc>=8.6.4
 
 MODULES =		lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 post-extract:
 	@mkdir -p ${WRKBUILD}/_build/tarballs

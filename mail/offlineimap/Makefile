@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2020/06/03 11:00:51 remi Exp $
+# $OpenBSD: Makefile,v 1.59 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 NO_TEST=	Yes
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	textproc/asciidoc \
 		devel/py-rfc6555 \

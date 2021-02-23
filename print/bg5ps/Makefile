@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT=	convert Big5/GB encoded files to postscript
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c m ttf
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS=	fonts/zh-arphicttf
 LIB_DEPENDS=	print/freetype
 

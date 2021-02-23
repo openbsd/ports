@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:13:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
@@ -16,7 +16,6 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =Yes
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	testing/tests

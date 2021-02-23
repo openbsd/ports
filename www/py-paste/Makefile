@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:48 sthen Exp $
 
 COMMENT =		tools for using web server gateway interface stack
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS =		www/py-flup
 TEST_DEPENDS =		${BASE_PKGPATH} \
 			devel/py-py \

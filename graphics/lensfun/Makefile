@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT=	library to adjust for photographic lens characteristics
 DISTNAME=	lensfun-0.3.2
@@ -21,7 +21,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lensfun/}
 MODULES=		devel/cmake \
 			lang/python
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 
 LIB_DEPENDS=		devel/glib2 \

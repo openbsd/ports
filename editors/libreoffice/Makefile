@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2021/01/16 11:17:05 robert Exp $
+# $OpenBSD: Makefile,v 1.242 2021/02/23 19:39:21 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -197,8 +197,6 @@ MODULES+=	lang/python
 
 # XXX can't use ${MODPY_DEFAULT_VERSION_3}, it specifically wants 3.3 and
 # will try (and fail) to build its own copy if not available.
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
-
 
 LIB_DEPENDS-main=databases/openldap \
 		databases/mariadb \

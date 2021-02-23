@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2020/07/03 21:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.117 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT=		people aggregation library
 
@@ -31,7 +31,6 @@ MODULES=		devel/dconf \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	tests/tools/manager-file.py
 
 LIB_DEPENDS=		databases/evolution-data-server \

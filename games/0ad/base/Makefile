@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/08/07 09:21:01 jsg Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:22 sthen Exp $
 
 # XXX fix build with icu >=5.9.1 (remove at next update?)
 CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
@@ -39,6 +39,7 @@ LIB_DEPENDS =		audio/libvorbis \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			games/0ad/data=${V}
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 COMPILER =		base-clang ports-gcc
 

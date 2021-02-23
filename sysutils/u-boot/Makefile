@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.77 2021/01/15 00:01:16 kurt Exp $
+#	$OpenBSD: Makefile,v 1.78 2021/02/23 19:39:43 sthen Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
@@ -29,7 +29,6 @@ BUILD_DEPENDS=	devel/bison \
 		textproc/gsed
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 MODPY_SETUPTOOLS=Yes
 

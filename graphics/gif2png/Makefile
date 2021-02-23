@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 20:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT=		converts GIF images to the PNG format
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c m png z
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_BUILDDEP=		No
 MODPY_ADJ_FILES=	web2png

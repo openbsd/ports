@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =	python tools to analyze OLE files
 
@@ -15,6 +15,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
 

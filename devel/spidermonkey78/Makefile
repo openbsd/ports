@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/07 13:12:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:20 sthen Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -33,6 +33,7 @@ WANTLIB += c curses ffi icudata icui18n icuuc m nspr4 plc4 plds4 z
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 
 # C++11

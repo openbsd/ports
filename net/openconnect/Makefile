@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2021/02/22 15:27:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
@@ -25,7 +25,6 @@ FLAVORS=	light
 FLAVOR?=
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 # groff is used to format html during build, USE_GROFF not needed

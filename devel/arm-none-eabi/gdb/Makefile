@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/10 00:41:23 jsg Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT=	gdb for arm-none-eabi cross-development
 
@@ -22,6 +22,7 @@ CONFIGURE_ARGS+=	--enable-multilib \
 			--without-guile
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 TEST_DEPENDS=devel/dejagnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2020/12/24 09:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -47,6 +47,7 @@ COMPILER=	base-clang ports-gcc
 
 MODULES=	textproc/intltool \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 COMMON_DEPENDS=	archivers/lzip/lzlib \
 		devel/desktop-file-utils \

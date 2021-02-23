@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/08/01 11:30:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT =		official command-line client for RIPE Atlas
 
@@ -21,8 +21,6 @@ MODPY_PYTEST_ARGS =	tests/test*.py tests/*/*.py
 MODULES =		lang/python
 
 PORTHOME =		${WRKDIST}
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-tzlocal${MODPY_FLAVOR} \

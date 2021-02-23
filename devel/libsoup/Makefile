@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2020/11/01 08:24:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
@@ -28,7 +28,6 @@ MODULES =		devel/meson \
 
 MODGNOME_TOOLS =	gobject-introspection vala
 MODPY_RUNDEP =		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		net/glib2-networking
 

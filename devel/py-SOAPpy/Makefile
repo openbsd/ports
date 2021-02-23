@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/13 22:11:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
@@ -9,6 +9,7 @@ CATEGORIES=    	devel www
 REVISION=	3
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2020/10/05 19:46:17 jca Exp $
+# $OpenBSD: Makefile,v 1.52 2021/02/23 19:39:28 sthen Exp $
 
 # keep in synch with mozilla.port.mk
 ONLY_FOR_ARCHS =	i386 amd64 powerpc sparc64
@@ -22,7 +22,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
 MODPY_RUNDEP =	No
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 USE_GMAKE =	Yes
 CONFIGURE_STYLE =	gnu
 

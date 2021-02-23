@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/12/19 21:32:07 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
@@ -29,6 +29,7 @@ USE_GMAKE =		Yes
 MAKE_FILE =		Makefile.legacy
 
 MODULES +=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	../run/*.py

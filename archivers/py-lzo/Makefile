@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:08 sthen Exp $
 
 COMMENT =		Python implementation of the LZO library
 
@@ -21,6 +21,7 @@ WANTLIB += lzo pthread
 MASTER_SITES =	https://www.oberhumer.com/opensource/lzo/download/LZO-v1/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 LIB_DEPENDS =	archivers/lzo
 

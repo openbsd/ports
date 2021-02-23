@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT =		command line gopher client
 
@@ -19,7 +19,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vf1/

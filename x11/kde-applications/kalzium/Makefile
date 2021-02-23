@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/11/08 20:12:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:51 sthen Exp $
 
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
@@ -27,7 +27,6 @@ MODULES +=	lang/python \
 		lang/ocaml
 
 MODPY_RUNDEP=	No
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kbookmarks \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2021/02/06 21:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -32,8 +32,6 @@ WANTLIB += xcb-dri2 xcb-glx xml2 z
 
 MODULES =		lang/lua \
 			lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c

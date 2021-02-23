@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/27 16:48:35 thfr Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:25 sthen Exp $
 
 PORTROACH =	^[0-9]
 
@@ -24,7 +24,6 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 TEST_DEPENDS =	graphics/spirv-tools \
 		shells/bash
 

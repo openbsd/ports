@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT =		import cvs tree into git or subversion
 
@@ -13,6 +13,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS =		devel/py-rcsparse
 
 NO_BUILD =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2021/01/04 14:06:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT=		GObject Introspection
 
@@ -23,8 +23,6 @@ MODULES=		devel/meson \
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += intl m pthread
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=		devel/glib2
 

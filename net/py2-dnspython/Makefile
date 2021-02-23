@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2021/01/16 21:21:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT=		DNS toolkit for Python
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE=		Yes
 MASTER_SITES=		${HOMEPAGE}kits/${MODPY_EGG_VERSION}/
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS=	Yes
 MODPY_ADJ_FILES=	examples/*.py
 MODPY_PYTEST=		Yes

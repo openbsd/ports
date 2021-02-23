@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2020/06/17 11:34:43 landry Exp $
+# $OpenBSD: Makefile,v 1.148 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -51,6 +51,7 @@ WANTLIB-finch=	X11 curses panelw purple util xcb ${WANTLIB} \
 MODULES=	textproc/intltool \
 		lang/python \
 		devel/gconf2
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=		x11/dbus-python
 LIB_DEPENDS=		devel/glib2

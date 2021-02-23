@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/21 19:46:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:37 sthen Exp $
 
 # sync with devel/angr/Makefile.inc
 ONLY_FOR_ARCHS =	amd64
@@ -18,7 +18,6 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

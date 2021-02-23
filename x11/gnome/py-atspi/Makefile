@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2020/11/01 08:23:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2021/02/23 19:39:51 sthen Exp $
 
 COMMENT=		python bindings for at-spi2
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python \
 			x11/gnome
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=	examples/magFocusTracker.py
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}

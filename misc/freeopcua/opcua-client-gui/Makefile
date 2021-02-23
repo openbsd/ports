@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT =	minimal OPC UA client GUI
 
@@ -23,6 +23,5 @@ RUN_DEPENDS =		misc/freeopcua/py-opcua${MODPY_FLAVOR}>=0.98.1 \
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 .include <bsd.port.mk>

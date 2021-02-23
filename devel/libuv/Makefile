@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/14 22:42:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT =	multi-platform library for asynchronous I/O
 
@@ -20,7 +20,6 @@ WANTLIB += pthread
 
 # module used to grab MODPY_BIN_SUFFIX/MODPY_FLAVOR for py3 sphinx-build
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP = No
 MODPY_RUNDEP =	No
 BUILD_DEPENDS =	textproc/py-sphinx${MODPY_FLAVOR}

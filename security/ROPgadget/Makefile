@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/03 12:54:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =	Gadgets finder and auto-roper
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =	devel/capstone/python${MODPY_FLAVOR}
 

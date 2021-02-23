@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/04 14:06:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:11 sthen Exp $
 
 COMMENT =		sigrok hardware driver library
 
@@ -18,8 +18,6 @@ WANTLIB += zip
 COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/check \
 			devel/doxygen \

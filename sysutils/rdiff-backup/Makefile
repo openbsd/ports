@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.22 2019/07/12 21:15:36 sthen Exp $
+#	$OpenBSD: Makefile,v 1.23 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT = 	incremental backup
 
@@ -21,6 +21,7 @@ LIB_DEPENDS += 		net/librsync
 MASTER_SITES = 		${MASTER_SITE_SAVANNAH:=rdiff-backup/}
 
 MODULES	= 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST = 		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:12:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:31 sthen Exp $
 
 COMMENT=		BGP route injector (supporting flow routes, etc)
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 TEST_DEPENDS=		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \

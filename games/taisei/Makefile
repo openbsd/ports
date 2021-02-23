@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/08 11:04:15 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:23 sthen Exp $
 
 # Requires OpenGL>=3.3, only usable on archs that support
 # modern video cards
@@ -29,7 +29,6 @@ MODULES =		devel/meson \
 			lang/python
 
 MODPY_RUNDEP =		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \

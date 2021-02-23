@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/01/20 05:55:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:08 sthen Exp $
 
 COMMENT =	backport of Python 3.3's 'lzma' module for XZ/LZMA
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += lzma pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

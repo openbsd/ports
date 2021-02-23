@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT-main =	Tcl/Tk snack sound toolkit
 COMMENT-python = Python bindings for Tcl/Tk snack sound toolkit
@@ -27,6 +27,7 @@ LIB_DEPENDS-main =	audio/libvorbis
 MULTI_PACKAGES =	-main -python
 
 MODULES =		lang/python x11/tk
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS-main =	${MODTK_RUN_DEPENDS}

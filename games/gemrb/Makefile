@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/12/13 08:24:26 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:22 sthen Exp $
 
 SHARED_LIBS += 		gemrb_core 0.0
 
@@ -24,6 +24,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
 			lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS =		audio/openal \
 			devel/sdl-mixer \
 			graphics/png \

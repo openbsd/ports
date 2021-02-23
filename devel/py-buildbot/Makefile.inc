@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2021/02/03 14:30:13 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2021/02/23 19:39:17 sthen Exp $
 
 MODPY_EGG_VERSION ?=	2.10.1
 DISTNAME ?=	buildbot-${PART}-${MODPY_EGG_VERSION}
@@ -17,4 +17,3 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS = Yes
 
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}

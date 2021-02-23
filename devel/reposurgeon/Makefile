@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/21 21:12:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT=	tool for editing version-control repository history
 
@@ -19,6 +19,7 @@ MASTER_SITES=	http://www.catb.org/esr/reposurgeon/
 
 USE_GMAKE=	Yes
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 CONFIGURE_STYLE= x	# bad python.port.mk
 BUILD_DEPENDS=	lang/cython,python3 \
 		textproc/asciidoc \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =	parse a PDF document
 
@@ -21,7 +21,6 @@ MASTER_SITES =	https://didierstevens.com/files/software/
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS =	security/yara/python
 
 NO_BUILD =	Yes

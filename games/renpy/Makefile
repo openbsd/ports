@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/21 18:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT =		visual novel engine
 
@@ -21,6 +21,7 @@ MASTER_SITES =		https://www.renpy.org/dl/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		devel/pygame \
 			games/pygame_sdl2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/10/28 17:52:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT =		seafile daemon
 
@@ -17,7 +17,6 @@ WANTLIB += intl jansson m nghttp2 pcre pthread searpc sqlite3
 WANTLIB += ssl uuid z lib/inotify/inotify
 
 MODULES =		lang/python
-MODPY_VERSION = 	${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS =		lang/vala
 
 RUN_DEPENDS =		devel/py-simplejson${MODPY_FLAVOR}

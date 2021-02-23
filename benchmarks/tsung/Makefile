@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/16 06:25:53 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
@@ -18,7 +18,6 @@ MASTER_SITES=		http://tsung.erlang-projects.org/dist/
 MODULES=		lang/erlang \
 			lang/python
 MODERL_VERSION=		21
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP= 	No
 
 RUN_DEPENDS=		graphics/py-matplotlib${MODPY_FLAVOR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2021/01/16 10:08:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT=		simple encrypted backup tool for GNOME
 
@@ -28,7 +28,6 @@ MODULES=		devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		sysutils/duplicity
 

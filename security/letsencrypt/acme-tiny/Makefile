@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT=	small 3rd-party letsencrypt client
 
@@ -21,7 +21,6 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 
 MODPY_ADJ_FILES=	acme_tiny.py
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/acme_tiny.py ${PREFIX}/bin/acme-tiny

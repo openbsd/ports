@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT=	wrapper for LaTeX and friends
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${HOMEPAGE}/trunk/${MODPY_EGG_VERSION}/+download/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	print/texinfo \
 		print/texlive/base

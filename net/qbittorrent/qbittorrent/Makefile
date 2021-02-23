@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/19 04:02:32 mariani Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT =		BitTorrent client with Qt interface
 
@@ -8,7 +8,6 @@ WANTLIB += GL Qt5DBus Qt5Gui Qt5Svg Qt5Widgets
 
 MODULES =		lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP =	No
 MODPY_TESTDEP =		No
 

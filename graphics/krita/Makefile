@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/01/19 19:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.46 2021/02/23 19:39:25 sthen Exp $
 
 BROKEN-powerpc =	colors are off and as such it is not useable
 
@@ -62,7 +62,6 @@ MODULES =	devel/kf5 \
 		lang/python
 
 MODPY_RUNDEP=	No
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		net/curl \

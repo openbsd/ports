@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT=	futures implementation for Python
 
@@ -12,6 +12,7 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes

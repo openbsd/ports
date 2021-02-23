@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2021/01/25 16:58:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.57 2021/02/23 19:39:14 sthen Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -31,8 +31,6 @@ LIB_DEPENDS=	converters/libiconv \
 
 MODULES=	devel/cmake \
 		lang/python
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_RUNDEP=	No
 

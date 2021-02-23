@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2021/02/20 22:27:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.193 2021/02/23 19:39:13 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -23,7 +23,6 @@ WANTLIB += jsoncpp m rhash uv z
 COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.5

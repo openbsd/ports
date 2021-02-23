@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2021/02/14 17:15:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2021/02/23 19:39:26 sthen Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
@@ -26,7 +26,6 @@ COMPILER=		base-clang ports-gcc
 
 MODULES=		lang/python
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/gettext,-tools

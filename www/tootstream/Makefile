@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/16 03:23:18 pamela Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:48 sthen Exp $
 
 COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		www/py-mastodon.py${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \

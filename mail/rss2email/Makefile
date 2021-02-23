@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/08 17:00:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT =	convert RSS/Atom newsfeeds to email
 
@@ -16,7 +16,6 @@ MODULES =	lang/python
 RUN_DEPENDS +=	converters/py-html2text${MODPY_FLAVOR} \
 		textproc/py-feedparser${MODPY_FLAVOR}
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

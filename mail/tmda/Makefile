@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:47:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT=		reduce the amount of SPAM/UCE (junk-mail)
 
@@ -15,6 +15,7 @@ MASTER_SITES=		http://tmda.net/releases/stable/
 EXTRACT_SUFX=		.tgz
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST=		Yes
 

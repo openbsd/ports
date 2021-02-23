@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT=	Python bindings for wxWidgets C++ class library
 
@@ -17,6 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wxpython/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS=    x11/wxWidgets>=3.0.4
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
 WANTLIB += wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0

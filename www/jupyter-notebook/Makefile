@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/01/23 21:41:20 daniel Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT =		web-based notebook for interactive computing
 
@@ -17,7 +17,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-ipython_genutils${MODPY_FLAVOR} \

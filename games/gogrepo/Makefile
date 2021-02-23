@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT =	downloader for GOG.com games and bonus collections
 
@@ -17,7 +17,6 @@ MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 PYCACHE_DIR =	${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gogrepo/${MODPY_PYCACHE:S/"//g}
 
 # optional dep on html2text for prettying up game changelog

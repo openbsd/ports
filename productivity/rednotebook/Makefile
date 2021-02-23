@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/02/20 17:35:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT=		diary and journal application
 
@@ -13,8 +13,6 @@ CATEGORIES=		productivity
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 # msgfmt(1)
 BUILD_DEPENDS=		devel/gettext,-tools

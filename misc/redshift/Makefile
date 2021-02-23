@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2020/10/03 15:39:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT=		automatic color temperature adjustment
 
@@ -23,7 +23,6 @@ EXTRACT_SUFX=		.tar.xz
 MODULES=		lang/python \
 			textproc/intltool
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=	src/redshift-gtk/redshift-gtk.in
 
 LIB_DEPENDS=		devel/glib2

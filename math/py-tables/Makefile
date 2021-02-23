@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/04 14:06:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT=	Python package to manage extremely large amounts of data
 
@@ -19,7 +19,6 @@ COMPILER=		base-clang ports-gcc
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 MODPY_PI=		Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB=	pthread ${MODPY_WANTLIB} blosc bz2 hdf5 lzo2
 

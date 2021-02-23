@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2021/01/16 09:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
@@ -16,8 +16,6 @@ MASTER_SITES=		https://github.com/OpenPrinting/system-config-printer/releases/do
 
 MODULES=		lang/python \
 			textproc/intltool
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		textproc/xmlto
 

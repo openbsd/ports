@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT =	compiz configuration system bindings
 
@@ -14,6 +14,7 @@ WANTLIB += pthread startup-notification-1 xcb xcb-util xml2 xslt z
 LIB_DEPENDS =	x11/compiz/libcompizconfig
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =	devel/pyrex
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/09/06 22:33:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:22 sthen Exp $
 
 COMMENT =		highly accurate Game Boy Color emulator
 
@@ -24,6 +24,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gambatte/}
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 SEPARATE_BUILD =	No
 

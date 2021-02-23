@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =	analyze MIME files
 
@@ -21,7 +21,6 @@ MASTER_SITES =	https://didierstevens.com/files/software/
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS =	security/yara/python${MODPY_FLAVOR}
 
 NO_BUILD =	Yes

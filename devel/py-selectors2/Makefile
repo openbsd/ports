@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/21 15:39:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:19 sthen Exp $
 
 COMMENT =	backported, durable, and portable selectors
 
@@ -14,6 +14,7 @@ HOMEPAGE =	https://www.github.com/SethMichaelLarson/selectors2
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

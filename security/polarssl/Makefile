@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2020/12/12 06:23:37 bket Exp $
+# $OpenBSD: Makefile,v 1.38 2021/02/23 19:39:39 sthen Exp $
 
 PORTROACH=	limit:^2\.16
 
@@ -27,6 +27,7 @@ WANTLIB += c pthread
 
 MODULES=	devel/cmake \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP=	No
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/10/03 15:39:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=	audio player and tagger for GTK+ with regex support
 
@@ -18,7 +18,6 @@ MASTER_SITES=	https://github.com/quodlibet/quodlibet/releases/download/release-$
 
 MODULES=	lang/python
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS=	audio/py-mutagen${MODPY_FLAVOR}>=1.34 \
 		devel/py-gobject3${MODPY_FLAVOR}>=3.18 \
 		graphics/py-cairo${MODPY_FLAVOR}>=1.8 \

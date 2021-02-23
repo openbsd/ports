@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.49 2020/05/22 19:58:14 kn Exp $
+# $OpenBSD: Makefile.inc,v 1.50 2021/02/23 19:39:43 sthen Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -33,10 +33,9 @@ SUBST_VARS +=	RUBY
 #   devel/ruby-concurrent-ruby
 #   devel/ruby-semantic_puppet
 
-MODULES +=	lang/ruby
-
-MODULES +=		lang/python
-MODPY_BUILDDEP = 	No
+MODULES +=		lang/ruby \
+			lang/python
+MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS +=${RUN_DEPENDS}

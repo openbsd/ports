@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/11/15 06:48:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT-main =	KDE 5 library for extracting text and metadata
 COMMENT-locale =localization files of kfilemetadata
@@ -19,7 +19,6 @@ WANTLIB += poppler poppler-qt5 tag
 WANTLIB-locale =
 
 MODULES +=		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 # required only for externalextractortest and externalwritertest
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No

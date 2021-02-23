@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/12/02 10:26:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2021/02/23 19:39:53 sthen Exp $
 
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
@@ -31,7 +31,6 @@ MODULES=		devel/meson \
 			lang/python
 
 MODPY_RUNDEP=		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gobject-introspection \

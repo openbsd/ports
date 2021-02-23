@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2021/02/11 13:22:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.136 2021/02/23 19:39:49 sthen Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -55,7 +55,6 @@ COMPILER =		base-clang ports-clang ports-gcc
 
 MODRUBY_RUNDEP =	No
 MODPY_RUNDEP =		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	Tools/glib/generate-inspector-gresource-manifest.py
 MODGNOME_TOOLS =	gobject-introspection
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/03/20 16:44:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT=	Makefile to build and upload Arduino sketches
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	devel/arduino \
 		devel/py-serial
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP=	No
 MODPY_ADJ_FILES= bin/ard-reset-arduino bin/robotis-loader
 

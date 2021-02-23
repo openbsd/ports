@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/02/09 17:25:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/23 19:39:51 sthen Exp $
 
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
@@ -46,7 +46,6 @@ COMPILER_LANGS=		c
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

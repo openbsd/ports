@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/24 16:44:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:24 sthen Exp $
 
 COMMENT =	tile caching frontend for WMS/TMS services
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	${HOMEPAGE}
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		graphics/py2-Pillow \

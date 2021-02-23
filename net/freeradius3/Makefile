@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2020/11/26 17:43:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2021/02/23 19:39:31 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -58,6 +58,7 @@ TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 
 # an experimental py3 module exists, not built by default yet
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # thread-local storage
 COMPILER =	base-clang ports-gcc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT=	Python program to create FAQ's list from formatted data file
 
@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makefaq/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT =	module for RFC 5451 Authentication-Results Headers
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =	Yes
 
 MODULES	=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =	Yes
 

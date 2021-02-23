@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2020/11/07 14:53:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
@@ -19,8 +19,6 @@ MODULES=		devel/meson \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODGNOME_TOOLS=		gobject-introspection vala
-
-MODPY_VERSION=          ${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 # MODPY_LIBDIR/gi/overrides/

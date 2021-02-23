@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 21:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:13 sthen Exp $
 
 COMMENT =	semantic grep, based on coccinelle
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	http://home.regit.org/wp-content/uploads/2011/08/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS =	devel/coccinelle
 NO_TEST =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/02/15 08:44:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -20,7 +20,6 @@ MODULES=	devel/dconf \
 		lang/python \
 		textproc/intltool
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gobject-introspection \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/04 21:39:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT =	flashcard learning system with spaced repetition
 DISTNAME =	anki-2.1.16
@@ -17,7 +17,6 @@ MASTER_SITES =	https://apps.ankiweb.net/downloads/archive/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 # build needs some of the py-qt5 tools; pull them in via
 # py-qtwebengine so that build fails early on arches where

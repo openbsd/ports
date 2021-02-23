@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:26 sthen Exp $
 
 COMMENT =		SVG scrubber
 MODPY_EGG_VERSION =	0.35
@@ -14,7 +14,6 @@ GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 do-test:

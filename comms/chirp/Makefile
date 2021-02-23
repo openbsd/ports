@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/12/09 22:28:39 tracey Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT=	tool to programme a wide range of amateur radios
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	https://trac.chirp.danplanet.com/chirp_daily/daily-${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 COMMON_DEPS=	devel/py-serial
 BUILD_DEPENDS=	${COMMON_DEPS}
 RUN_DEPENDS=	${COMMON_DEPS} \

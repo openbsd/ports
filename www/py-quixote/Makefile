@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:48 sthen Exp $
 
 COMMENT=		simple Python framework for web-based applications
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODPY_WANTLIB} pthread
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS=	Yes
 
 TEST_DEPENDS=	www/twill \

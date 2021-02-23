@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2021/02/21 21:24:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.203 2021/02/23 19:39:22 sthen Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 sparc64
 DPB_PROPERTIES=	parallel
@@ -31,7 +31,6 @@ COMPILER=	base-clang ports-gcc
 MODULES=	lang/python
 
 MODPY_RUNDEP=	No
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/py-sphinx${MODPY_FLAVOR}>=3.5.1

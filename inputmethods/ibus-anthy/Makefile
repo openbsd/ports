@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/03 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:27 sthen Exp $
 
 COMMENT =		japanese input engine for ibus
 
@@ -21,8 +21,6 @@ WANTLIB += m pcre pthread
 
 MODULES =		devel/dconf \
 			lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			inputmethods/ibus

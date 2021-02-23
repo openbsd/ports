@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:13:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:33 sthen Exp $
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 MODPY_ADJ_FILES =	impacket/ese.py \
 			impacket/examples/logger.py \

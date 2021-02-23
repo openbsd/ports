@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/03 06:38:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:27 sthen Exp $
 
 COMMENT=	Python as a hardware description and verification language
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_SETUPTOOLS =	Yes
 TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}

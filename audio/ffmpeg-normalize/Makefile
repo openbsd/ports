@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/15 20:39:52 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT =		audio normalization
 
@@ -16,7 +16,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
 			devel/py-tqdm${MODPY_FLAVOR} \

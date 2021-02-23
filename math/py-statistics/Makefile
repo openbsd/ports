@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT =		port of Python 3.4 statistics module to Python 2
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 
 NO_TEST =		Yes

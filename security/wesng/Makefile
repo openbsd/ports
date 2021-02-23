@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT =	Windows Exploit Suggester - Next Generation
 
@@ -15,7 +15,6 @@ CATEGORIES =	security
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_SETUPTOOLS =	Yes
 

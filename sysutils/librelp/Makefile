@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/10 21:26:44 remi Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:42 sthen Exp $
 
 COMMENT =	reliable event logging protocol library
 
@@ -21,6 +21,7 @@ WANTLIB += tasn1 unistring crypto ssl
 MASTER_SITES =		http://download.rsyslog.com/librelp/
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 

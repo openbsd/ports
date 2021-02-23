@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/11/27 09:56:28 solene Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =		desktop wiki
 
@@ -19,7 +19,6 @@ MASTER_SITES =		https://zim-wiki.org/downloads/
 NO_TEST =		Yes
 
 MODULES =       	lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 COMMON_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \

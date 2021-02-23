@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/16 21:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =		DNS reconnaissance tool for locating non-contiguous IP space
 
@@ -16,7 +16,6 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		net/py-dnspython${MODPY_FLAVOR}

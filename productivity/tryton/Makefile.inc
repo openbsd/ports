@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.29 2019/09/04 15:14:41 semarie Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2021/02/23 19:39:37 sthen Exp $
 
 CATEGORIES ?=		productivity \
 			productivity/tryton
@@ -43,7 +43,6 @@ TEST_DEPENDS +=		productivity/tryton/${TRYTON_VERSION}/${_m}${TRYTON_VERSION_COM
 
 .if defined(TRYTON_PY) && ${TRYTON_PY:L} == "yes"
 MODULES +=		lang/python
-MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS ?=	Yes
 TEST_ENV +=		DB_NAME=:memory:
 .endif

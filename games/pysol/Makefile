@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/10/28 02:03:55 daniel Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT =		solitaire card games collection
 MODPY_EGG_VERSION =	2.6.4
@@ -19,7 +19,6 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 
 MODULES =		lang/python \
 			x11/gnome
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
 RUN_DEPENDS =		${MODPY_TKINTER_DEPENDS} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/08/17 10:31:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2021/02/23 19:39:51 sthen Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
@@ -29,7 +29,6 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		gobject-introspection vala
 MODPY_RUNDEP=		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=		audio/pulseaudio \
 			security/cyrus-sasl2 \

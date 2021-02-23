@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/30 15:10:22 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT =		tool to convert 2D (dxf, pdf, ps) files to gcode
 
@@ -18,8 +18,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dxf2gcode/}
 EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/py-configobj${MODPY_FLAVOR} \
 			graphics/py-opengl${MODPY_FLAVOR} \

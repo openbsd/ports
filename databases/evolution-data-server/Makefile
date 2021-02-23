@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2021/02/12 14:58:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.270 2021/02/23 19:39:11 sthen Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -56,7 +56,6 @@ LIB_DEPENDS= 		audio/libcanberra,-gtk3 \
 			x11/gnome/online-accounts
 
 MODPY_RUNDEP=		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/09 17:36:58 namn Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
@@ -22,8 +22,6 @@ WANTLIB += util z
 MODULES=	devel/cmake \
 		lang/python \
 		x11/qt5
-
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=	print/ghostscript/gnu
 

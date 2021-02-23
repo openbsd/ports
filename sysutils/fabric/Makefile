@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT =		simple, pythonic tool for remote execution and deployment
 
@@ -16,6 +16,7 @@ MAINTAINER =		Pablo Mendez Hernandez <pablomh@gmail.com>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

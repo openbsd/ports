@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2021/02/10 04:54:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.89 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -39,8 +39,6 @@ MODRUBY_BUILDDEP =	No
 # to write their own extensions. Add Ruby as a soft dependency.
 # Note that Python is already pulled in indirectly by py-lxml.
 MODRUBY_RUNDEP =	No
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gtest \

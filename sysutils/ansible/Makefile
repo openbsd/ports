@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2021/02/20 22:27:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.134 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
@@ -24,7 +24,6 @@ MASTER_SITES =		https://releases.ansible.com/ansible/
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/py-straight.plugin${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR} \

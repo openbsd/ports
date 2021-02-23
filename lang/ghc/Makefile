@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2021/02/20 22:27:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.180 2021/02/23 19:39:27 sthen Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -25,7 +25,6 @@ MODULES =		lang/ghc lang/python
 
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # BSD w/o advertising clause.
 # Distfile is bundled with other stuff like libffi, mingw

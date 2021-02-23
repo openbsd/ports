@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2020/05/15 10:58:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT=	network diagnostic tool, similar to ping and traceroute
 
@@ -31,6 +31,7 @@ AUTOMAKE_VERSION= 1.15
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	lang/python # for tests only
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT =		command-line client for speedtest.net bandwidth tester
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 .include <bsd.port.mk>

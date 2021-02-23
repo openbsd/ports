@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/07/31 16:09:38 kirby Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/23 19:39:24 sthen Exp $
 
 COMMENT=	economic and military simulation game
 
@@ -34,6 +34,7 @@ LIB_DEPENDS =	devel/boost \
 MODULES =	devel/cmake \
 		lang/lua \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP=	No
 

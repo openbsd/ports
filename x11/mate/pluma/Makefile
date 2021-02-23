@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/12/03 19:29:06 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:52 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -28,8 +28,6 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 USE_LIBTOOL=		gnu
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/iso-codes
 RUN_DEPENDS=		devel/iso-codes

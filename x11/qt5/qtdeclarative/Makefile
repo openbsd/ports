@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/01/19 06:16:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:52 sthen Exp $
 
 # qmlplugindump
 USE_WXNEEDED =		Yes
@@ -23,6 +23,7 @@ WANTLIB-main +=		GL Qt5Core Qt5Gui Qt5Network Qt5Sql Qt5Test Qt5Widgets
 WANTLIB-main +=		c m pthread
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 
 LIB_DEPENDS-examples =	${LIB_DEPENDS} \

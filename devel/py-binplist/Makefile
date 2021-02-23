@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT =	binary property list (plist) parser module written in Python
 
@@ -17,6 +17,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-tz

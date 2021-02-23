@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2021/02/21 07:26:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT=		next-generation build system
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		devel/ninja
 

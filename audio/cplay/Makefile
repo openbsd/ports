@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=		curses front-end for various audio players
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		https://spacehopper.org/mirrors/
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

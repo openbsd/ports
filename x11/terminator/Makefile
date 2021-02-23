@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/10/03 15:40:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:53 sthen Exp $
 
 COMMENT =		GTK3 terminal emulator with split-window and tabs support
 
@@ -31,7 +31,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_SETUP_ARGS =	--without-icon-cache
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # --single-version-externally-managed option used by MODPY doesn't exist
 MODPY_DISTUTILS_INSTALL = install --prefix=${LOCALBASE} --root=${DESTDIR}

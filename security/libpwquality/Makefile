@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/01/04 14:06:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =		library to generate, and check strengh of passwords
 
@@ -23,7 +23,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c crack iconv intl pthread z
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 USE_GMAKE =		Yes
 

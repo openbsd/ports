@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2021/02/13 15:34:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2021/02/23 19:39:44 sthen Exp $
 
 BROKEN =	disabled pending update to py3
 
@@ -25,6 +25,7 @@ MASTER_SITES =	https://github.com/kovidgoyal/calibre/releases/download/v$V/
 
 MODULES =		lang/python \
 			x11/qt5
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 LIB_DEPENDS=		devel/chmlib \
 			devel/gettext,-runtime \

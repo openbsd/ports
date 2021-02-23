@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT=	Python codes checker
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pychecker/}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_DISTUTILS_INSTALLARGS=	-O1
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${MODPY_PY_PREFIX}Checker/

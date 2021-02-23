@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2020/11/23 00:49:15 jca Exp $
+# $OpenBSD: Makefile,v 1.69 2021/02/23 19:39:53 sthen Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -40,7 +40,6 @@ MULTI_PACKAGES = -main -media
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES	=		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	src/stc/gen_iface.py
 

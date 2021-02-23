@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/09/23 11:15:35 rpointel Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:42 sthen Exp $
 
 COMMENT =	library and tools to access the Windows NT Registry File
 
@@ -30,7 +30,6 @@ CONFIGURE_ARGS +=	--enable-python3 \
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

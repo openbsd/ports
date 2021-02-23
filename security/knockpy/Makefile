@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/17 06:10:19 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =	subdomain scanner
 
@@ -20,6 +20,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS =	Yes
 

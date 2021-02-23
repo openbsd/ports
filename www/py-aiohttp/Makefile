@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/21 19:29:22 daniel Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT =		http client/server for asyncio
 
@@ -18,8 +18,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-async-timeout \
 			devel/py-attrs${MODPY_FLAVOR}>=17.3.0 \

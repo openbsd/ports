@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:13:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT=	Python WSGI compliant interface module for Apache2
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += iconv intl m pthread ${MODPY_WANTLIB} util
 
 MODULES=	lang/python
-
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS}
 

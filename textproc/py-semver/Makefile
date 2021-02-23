@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/21 17:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT =		python helper for Semantic Versioning
 
@@ -18,7 +18,6 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	test_semver.py
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-tox${MODPY_FLAVOR} \

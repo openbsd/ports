@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2021/02/19 18:55:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT=		HTML editor for experienced web designers
 
@@ -26,8 +26,6 @@ COMPILER=		base-clang ports-gcc base-gcc
 
 MODULES=		lang/python \
 			textproc/intltool
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info \

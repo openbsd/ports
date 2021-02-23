@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:13:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT =		python interface to the nmap scan data
 
@@ -17,7 +17,6 @@ MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		net/nmap
 

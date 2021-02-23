@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT=	resource manager for PC/SC
 
@@ -22,7 +22,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c pthread usb-1.0
 
 MODULES+=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP=		No
 
 MODPY_ADJ_LINES=	src/spy/pcsc-spy

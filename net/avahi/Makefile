@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2020/10/03 15:39:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.141 2021/02/23 19:39:31 sthen Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-gtk3=		gtk+3 avahi-ui libraries
@@ -80,7 +80,6 @@ BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk3:N-python:N-ui}
 .if ${BUILD_PACKAGES:M-gui}
 ### common
 MODULES+=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS+=		devel/py-gobject3${MODPY_FLAVOR} \
 			lang/python/${MODPY_VERSION},-gdbm \
 			x11/dbus-python${MODPY_FLAVOR}

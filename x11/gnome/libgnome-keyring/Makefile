@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/10/03 15:40:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT=	library for gnome keyring integration
 
@@ -17,7 +17,6 @@ WANTLIB += gpg-error pcre pthread iconv intl
 MODULES=	x11/gnome
 
 MODGNOME_TOOLS=	gobject-introspection vala
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=	security/libgcrypt \
 		x11/dbus \

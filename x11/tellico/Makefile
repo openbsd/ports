@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2020/11/28 09:04:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.64 2021/02/23 19:39:53 sthen Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
@@ -31,6 +31,7 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES +=	devel/kf5 \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT =		namespace for backported Python features
 
@@ -16,5 +16,6 @@ MASTER_SITES =		https://dev.gentoo.org/~radhermit/dist/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 .include <bsd.port.mk>

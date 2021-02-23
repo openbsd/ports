@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/14 18:11:29 bket Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT =		backport of new features added to unittest
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	unittest2

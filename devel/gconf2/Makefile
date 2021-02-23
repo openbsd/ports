@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2019/07/12 20:44:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT=		configuration database system for GNOME
 
@@ -21,9 +21,11 @@ WANTLIB =  c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 iconv intl lzma m pcre pthread xml2 z
 
 MODULES=		x11/gnome
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # needed for gsettings-schema-convert(1)
 MODULES +=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	gsettings/gsettings-schema-convert

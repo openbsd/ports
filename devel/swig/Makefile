@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2021/01/04 13:57:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT =	simplified wrapper and interface generator
 
@@ -26,7 +26,6 @@ MODULES =	lang/python \
 MODRUBY_RUNDEP = No
 
 MODPY_RUNDEP =	No
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 		lang/guile

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2021/02/08 21:30:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.55 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT =	BitTorrent Client
 
@@ -34,8 +34,6 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
 
 MODULES =		devel/kf5 \
 			lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/boost

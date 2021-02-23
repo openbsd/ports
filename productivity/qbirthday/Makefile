@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =		birthday reminder with tray notification
 
@@ -15,7 +15,6 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION = 	${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			x11/py-qt5${MODPY_FLAVOR}

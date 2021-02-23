@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/04 09:49:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT-main=	test network latency under load via netperf
 COMMENT-gui=	GUI for flent (test network latency under load via netperf)
@@ -20,7 +20,6 @@ MULTI_PACKAGES=	-main -gui
 
 MODPY_PI=	Yes
 MODPY_SETUPTOOLS= Yes
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 MODULES=	lang/python
 

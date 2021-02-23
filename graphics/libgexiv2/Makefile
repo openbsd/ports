@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/02/20 14:24:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
@@ -23,7 +23,6 @@ MODULES=		devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 # C++11
 COMPILER =		base-clang ports-gcc

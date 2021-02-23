@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2020/11/30 15:44:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2021/02/23 19:39:50 sthen Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
@@ -47,8 +47,6 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/eog
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/20 16:44:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT=	Zolera SOAP Infrastructure
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pywebsvcs/}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS=Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/08 20:23:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:51 sthen Exp $
 
 COMMENT =	freedesktop-compliant menu for openbox and tint2
 CATEGORIES =	x11
@@ -19,7 +19,6 @@ WANTLIB += pangocairo-1.0 png pthread rsvg-2 xml2 z
 COMPILER =	base-clang ports-gcc
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP =	No
 MODPY_SETUPTOOLS =	No
 

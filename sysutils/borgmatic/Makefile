@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2020/11/30 15:46:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT =		wrapper for Borg to create and prune backups
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
 			devel/py-docopt${MODPY_FLAVOR} \

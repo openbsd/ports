@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2021/02/13 10:15:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2021/02/23 19:39:21 sthen Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -33,8 +33,6 @@ WANTLIB += xcb-render xcb-shm xml2 xslt yajl z zstd
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${VERSION}/source/
 
 MODULES=	lang/python
-
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =	base-clang ports-gcc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/12/31 20:05:33 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT =		powerful curses interface python file manager
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # Actually required at runtime (pkg_resources), also see
 # patches/patch-setup_py comment

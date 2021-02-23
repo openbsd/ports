@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/02 19:52:43 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT =		GUI tool to rearrange and modify PDF files
 
@@ -16,7 +16,6 @@ MODULES =		lang/python \
 			textproc/intltool
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/py-distutils-extra${MODPY_FLAVOR} \
 			print/py-pikepdf${MODPY_FLAVOR}

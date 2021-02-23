@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/12/11 07:54:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:51 sthen Exp $
 
 COMMENT=		customize advanced GNOME 3 options
 
@@ -13,8 +13,6 @@ PERMIT_PACKAGE=		Yes
 MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 

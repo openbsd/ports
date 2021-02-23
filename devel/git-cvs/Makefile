@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT =	import changesets from CVS into Git
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE = Yes
 MASTER_SITES =	https://github.com/ustuehler/git-cvs/archive/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS = Yes
 

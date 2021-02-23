@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:23 sthen Exp $
 
 V =		4.7.0
 COMMENT =	chess database software
@@ -22,6 +22,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	lang/python \
 		x11/tk
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODTK_VERSION =	8.6
 MODPY_ADJ_FILES =	scripts/pgnfix.py
 

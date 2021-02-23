@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/11/07 17:17:21 kn Exp $
+# $OpenBSD: Makefile,v 1.56 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -24,7 +24,6 @@ EXTRACT_SUFX =		.tgz
 WANTLIB += c curses execinfo m pcre pthread readline
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	lib/libvcc/{vsc,vmod}tool.py
 

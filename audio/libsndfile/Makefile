@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/13 06:31:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=	library to handle various audio file formats
 
@@ -22,7 +22,6 @@ WANTLIB=	c m sndio FLAC ogg opus vorbis vorbisenc
 
 MODULES=	devel/cmake \
 		lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/01/23 18:10:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:51 sthen Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
@@ -20,12 +20,9 @@ WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 WANTLIB += c intl luajit-${MODLUA_DEFAULT_VERSION} m poppler poppler-qt5
 WANTLIB += qalculate spectre util ${MODPY_WANTLIB}
 
-
 MODULES +=	fortran \
 		lang/lua \
 		lang/python
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODFORTRAN_COMPILER =	gfortran
 

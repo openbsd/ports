@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/23 23:17:47 kn Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT-main=	trivial database library
 COMMENT-python=	Python ${MODPY_VERSION} bindings for tdb
@@ -32,6 +32,7 @@ MASTER_SITES=	https://download.samba.org/pub/tdb/
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES= buildtools/bin/waf
 

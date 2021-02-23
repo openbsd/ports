@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT=	Openbox menu editor
 
@@ -16,6 +16,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=obmenu/}
 NO_TEST=	Yes
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS=	x11/py-gtk2 \
 		x11/openbox
 

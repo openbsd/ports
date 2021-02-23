@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 
@@ -11,7 +11,6 @@ YK_PROJECT =	yubikey-manager
 CATEGORIES =	sysutils
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes

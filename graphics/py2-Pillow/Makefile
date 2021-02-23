@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/24 16:42:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:26 sthen Exp $
 
 # XXX version 7.0.0 and up do not support python2 anymore;
 # python3 support lives in graphics/py-Pillow
@@ -25,6 +25,7 @@ WANTLIB=		freetype openjp2 jpeg lcms2 pthread tiff webp z \
 			${MODPY_WANTLIB}
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PYTEST=		Yes
 MODPY_SETUPTOOLS=	Yes
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

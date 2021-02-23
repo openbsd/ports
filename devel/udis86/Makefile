@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/20 22:27:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT =	easy-to-use minimalistic disassembler library
 
@@ -20,6 +20,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=udis86/}
 WANTLIB +=	c
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =	devel/yasm \
 		textproc/py-sphinx,python3>=1.5

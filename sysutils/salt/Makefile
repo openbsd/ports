@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2020/11/20 13:21:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.160 2021/02/23 19:39:43 sthen Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py
@@ -30,7 +30,6 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 MODULES =		lang/python

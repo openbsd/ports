@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2021/02/20 16:44:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2021/02/23 19:39:42 sthen Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
@@ -31,7 +31,6 @@ BUILD_DEPENDS=		devel/gettext,-tools
 
 # rst2html-3
 MODULES +=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
 

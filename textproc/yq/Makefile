@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/08 20:36:56 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT =		jq wrapper for YAML/XML documents
 
@@ -15,7 +15,6 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes

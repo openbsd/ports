@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/01/09 10:18:10 bket Exp $
+# $OpenBSD: Makefile,v 1.39 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT =		deduplicating backup program
 
@@ -19,7 +19,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	--ignore lib* --ignore src/borg/testsuite/benchmark.py
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB +=		${COMPILER_LIBCXX} b2 crypto lz4 m xxhash zstd
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/04/25 22:41:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/23 19:39:23 sthen Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
@@ -24,6 +24,7 @@ EXTRACT_SUFX=	.tar.xz
 COMPILER =	base-clang ports-gcc
 MODULES = 	lang/python \
 		lang/lua
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODLUA_VERSION = 	5.1
 
 BUILD_DEPENDS = graphics/pngcrush \

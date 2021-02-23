@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2020/12/21 11:38:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.239 2021/02/23 19:39:51 sthen Exp $
 
 DPB_PROPERTIES=		parallel
 
@@ -41,6 +41,7 @@ MULTI_PACKAGES=		-main -cups
 
 MODULES=		lang/python \
 			x11/gnome
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

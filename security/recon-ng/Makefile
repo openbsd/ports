@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/06 18:19:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =		web reconnaissance framework
 
@@ -29,8 +29,6 @@ RUN_DEPENDS =		devel/py-olefile${MODPY_FLAVOR} \
 # slowaes
 
 MODULES =		lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

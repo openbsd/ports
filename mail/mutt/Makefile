@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2021/01/22 14:54:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2021/02/23 19:39:28 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
@@ -37,7 +37,6 @@ FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 MODPY_BUILDDEP=	No
 MODPY_ADJ_FILES= contrib/markdown2html

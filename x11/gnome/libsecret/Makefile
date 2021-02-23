@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2020/10/10 17:13:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT=		library for storing and retrieving passwords and secrets
 
@@ -30,7 +30,6 @@ CONFIGURE_ARGS=		-Dgtk_doc=false
 TEST_IS_INTERACTIVE=	X11
 
 MODULES +=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP=		No
 TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \

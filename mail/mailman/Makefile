@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2021/01/16 21:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2021/02/23 19:39:28 sthen Exp $
 
 COMMENT=	mailing list manager with web interface
 
@@ -17,6 +17,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mailman/}
 EXTRACT_SUFX=		.tgz
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=		net/py2-dnspython
 RUN_DEPENDS=		net/py2-dnspython

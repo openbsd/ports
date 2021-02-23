@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT =		configuration utility for DRI drivers
 
@@ -15,6 +15,7 @@ MASTER_SITES =		https://people.freedesktop.org/~fxkuehl/driconf/ \
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS =		x11/py-gtk2
 
 pre-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT=		statistical anti-spam filter
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=spambayes/}
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST=		Yes
 

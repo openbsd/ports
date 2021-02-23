@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/23 19:39:22 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -25,6 +25,7 @@ WRKDIST =	${WRKDIR}/${DISTNAME:L}
 
 MODULES =	lang/lua \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODLUA_SA =	Yes
 MODLUA_VERSION =5.3

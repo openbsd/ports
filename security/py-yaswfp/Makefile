@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/18 13:09:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =	Yet Another SWF Parser
 
@@ -17,7 +17,6 @@ CATEGORIES =	security devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 TEST_DEPENDS =	devel/pyflakes${MODPY_FLAVOR} \
 		devel/py-nose${MODPY_FLAVOR}

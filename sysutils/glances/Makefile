@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/19 20:05:13 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT =		cross-platform curses-based monitoring tool
 
@@ -17,7 +17,6 @@ MAINTAINER =		Ashton Fagg <ashton@fagg.id.au>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

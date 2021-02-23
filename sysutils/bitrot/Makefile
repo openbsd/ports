@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/10/20 09:37:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT =		detects when files bit-rot
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
 NO_TEST =		Yes

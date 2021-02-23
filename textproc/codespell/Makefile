@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/24 16:45:43 millert Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT =		source code spelling checker
 
@@ -18,8 +18,6 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	codespell_lib
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		textproc/py-chardet${MODPY_FLAVOR}
 

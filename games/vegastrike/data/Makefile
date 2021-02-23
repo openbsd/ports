@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/20 16:44:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT =	data files for vegastrike
 
@@ -11,6 +11,7 @@ NO_TEST =	Yes
 EXTRACT_ONLY =
 
 MODULES = 	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 BUILD_DEPENDS =	archivers/bzip2
 RUN_DEPENDS =	devel/desktop-file-utils
 

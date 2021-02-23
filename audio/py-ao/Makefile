@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=	Python wrapper module for the ao library
 
@@ -18,6 +18,7 @@ WANTLIB += ao pthread
 MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 LIB_DEPENDS=	audio/libao
 

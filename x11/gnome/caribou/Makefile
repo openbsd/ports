@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2021/01/03 12:13:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT=		input assistive technology
 
@@ -27,7 +27,6 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS =	vala
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/py-gobject3,${MODPY_FLAVOR} \
 			textproc/libxslt

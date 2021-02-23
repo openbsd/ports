@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/12/27 05:09:15 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT =		backport of type hints for python
 
@@ -16,6 +16,7 @@ MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes

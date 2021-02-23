@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/01/03 04:09:10 daniel Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT=	simulation of a true AI
 
@@ -28,7 +28,6 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =	devel/pygame${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR}

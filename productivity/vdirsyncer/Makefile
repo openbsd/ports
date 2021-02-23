@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/21 16:30:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =		synchronize calendars and contacts
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes

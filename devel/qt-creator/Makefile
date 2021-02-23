@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2021/01/20 07:59:49 phessler Exp $
+# $OpenBSD: Makefile,v 1.72 2021/02/23 19:39:20 sthen Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -55,8 +55,6 @@ MODULES =	x11/qt5 \
 
 CONFIGURE_STYLE =	qmake
 
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
-
 MODQMAKE_INSTALL_ROOT =		${PREFIX}
 
 MODQMAKE_ARGS =		CONFIG+=qbs_enable_project_file_updates
@@ -96,7 +94,6 @@ CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE} \
 			PYTHON_INSTALL_DIR=${MODPY_BIN} \
 			KSYNTAXHIGHLIGHTING_INCLUDE_DIR="${LOCALBASE}/include/KF5/KSyntaxHighlighting" \
 			QTC_DISABLE_CLANG_REFACTORING=0
-
 
 GDB_ADJ_FILES = \
 	src/plugins/debugger/debuggeritemmanager.cpp \

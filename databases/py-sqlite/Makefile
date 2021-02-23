@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT=	SQLite adapter for Python
 
@@ -21,6 +21,7 @@ WANTLIB += pthread sqlite>=8.6
 LIB_DEPENDS =	databases/sqlite
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 do-test: fake
 	@cd ${WRKSRC}/test && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \

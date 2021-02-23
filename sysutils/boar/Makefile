@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT=	version control system for large binary files
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	http://distfiles-openbsd.perso.pw/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_BUILD=	Yes
 MODPY_BUILDDEP=	Yes

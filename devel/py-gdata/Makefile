@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/06/12 04:43:27 kn Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT =	Python client library for Google data APIs
 
@@ -14,6 +14,7 @@ HOMEPAGE =	https://github.com/google/gdata-python-client
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PI =	Yes
 
 TEST_IS_INTERACTIVE = Yes

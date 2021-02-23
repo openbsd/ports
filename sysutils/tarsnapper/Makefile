@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT =		tarsnap wrapper which automatically expires backups
 
@@ -15,7 +15,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \

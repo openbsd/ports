@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2020/01/24 04:53:37 tb Exp $
+# $OpenBSD: Makefile,v 1.86 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
@@ -26,7 +26,6 @@ MASTER_SITES =		${MASTER_SITE_GNU:=wget/}
 
 # some regression tests require python3
 MODULES +=		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 

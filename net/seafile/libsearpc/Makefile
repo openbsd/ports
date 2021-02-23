@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/08/10 13:36:32 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT =		simple RPC framework based on GObject system
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ffi glib-2.0 gobject-2.0 iconv intl jansson pcre pthread
 
 MODULES =		lang/python
-MODPY_VERSION = 	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS =		devel/glib2 \
 			devel/jansson

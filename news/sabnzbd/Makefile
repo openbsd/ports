@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/11/12 06:17:56 bket Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 
@@ -21,7 +21,6 @@ EXTRACT_SUFX =			-src.tar.gz
 MODULES =			lang/python
 # XXX broken, needs pyfakefs (not in ports)
 MODPY_PYTEST =			Yes
-MODPY_VERSION =			${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS =			archivers/par2cmdline \

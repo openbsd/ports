@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/12/08 08:11:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT =	PDF parser and analyzer
 
@@ -16,7 +16,6 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 

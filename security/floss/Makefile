@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/31 05:19:31 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =	FireEye Labs Obfuscated String Solver
 
@@ -17,6 +17,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	textproc/py-yaml \

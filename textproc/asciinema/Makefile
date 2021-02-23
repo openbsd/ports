@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:13:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT=		terminal session recorder
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>

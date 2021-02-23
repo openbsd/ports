@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2020/12/09 20:29:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT=	flash-card tool which optimises your learning process
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mnemosyne-proj/}
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 # build needs some of the py-qt5 tools; pull them in via
 # py-qtwebengine so that build fails early on arches where

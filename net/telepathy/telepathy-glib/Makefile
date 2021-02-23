@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2021/02/05 09:36:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -14,7 +14,6 @@ WANTLIB += dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gobject-2.0 iconv
 WANTLIB += intl pthread
 
 MODULES=		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_RUNDEP=           No
 # https://bugs.freedesktop.org/show_bug.cgi?id=76495

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 COMMENT-python=		Redland librdf Python Bindings
@@ -34,6 +34,7 @@ CONFIGURE_ARGS+=	--with-perl
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include
 
 MODULES+=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 CONFIGURE_ARGS+=	--with-python
 MODPY_RUNDEP=		No
 CONFIGURE_ENV+=		PYTHON=${MODPY_BIN}
@@ -42,6 +43,7 @@ RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 WANTLIB-python=		${WANTLIB} raptor2 rasqal
 
 MODULES+=		lang/ruby
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 CONFIGURE_ARGS+=	--with-ruby \
 			--with-ruby-linking=so
 MODRUBY_RUNDEP=		No

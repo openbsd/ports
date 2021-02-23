@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/09 07:14:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:14 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -34,6 +34,7 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 MASTER_SITES0=	http://nerd.hu/distfiles/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 COMPILER =	base-clang ports-clang ports-gcc
 

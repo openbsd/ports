@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/15 20:59:36 edd Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT =	 backup a github user or organization
 
@@ -18,6 +18,5 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 .include <bsd.port.mk>

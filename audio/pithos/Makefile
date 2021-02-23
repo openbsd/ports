@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/10/03 15:39:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:09 sthen Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
@@ -17,7 +17,6 @@ HOMEPAGE =	http://pithos.github.io/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11 \

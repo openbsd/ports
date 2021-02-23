@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT =		backport of the lru_cache from functools
 
@@ -12,6 +12,7 @@ REVISION =		0
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS =		devel/py-backports
 

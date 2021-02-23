@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT =		libraries for WSGI development
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		http://www.owlfish.com/software/wsgiutils/downloads/
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS =	Yes
 

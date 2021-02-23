@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2020/02/13 22:31:04 cwen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
@@ -85,6 +85,7 @@ USE_GMAKE=	Yes
 MAKE_FLAGS=	PJ_VERSION_MAJOR=${LIBVER} TARGET_NAME=openbsd
 
 MODULES+=	lang/python # for tests
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS} \

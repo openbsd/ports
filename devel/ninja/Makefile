@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/06 05:13:28 daniel Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/23 19:39:17 sthen Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -31,7 +31,6 @@ MODPY_ADJ_FILES =	bootstrap.py \
 			configure.py \
 			misc/ninja_syntax.py \
 			src/browse.py
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # Not strictly required, but will be used if available.  Included as a build
 # dependency to ensure consistent builds.

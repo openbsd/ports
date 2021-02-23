@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2020/11/24 16:44:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/02/23 19:39:24 sthen Exp $
 
 NOT_FOR_ARCHS=		${CLANG_ARCHS} # hangs during build, while running
 # ../asy -dir ../base -config "" -render=0 -f pdf -noprc cube.asy
@@ -22,6 +22,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=asymptote/}
 EXTRACT_SUFX=		.tgz
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 WANTLIB += GL GLU OSMesa c fftw3 gc glut gsl gslcblas m ncurses pthread
 WANTLIB += readline sigsegv ${COMPILER_LIBCXX} z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/10/02 08:16:33 solene Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:28 sthen Exp $
 
 COMMENT =	mail client with encryption and privacy features
 PKGNAME =	${DISTNAME:L}
@@ -17,6 +17,7 @@ MAINTAINER =	Solene Rapenne <solene@perso.pw>
 PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS =	devel/py-appdirs \
 		devel/py-enum34 \

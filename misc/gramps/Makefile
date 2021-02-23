@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/01/13 09:00:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.56 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
@@ -16,8 +16,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gramps/}
 
 MODULES=		lang/python \
 			textproc/intltool
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		databases/py-bsddb3${MODPY_FLAVOR} \
 			devel/desktop-file-utils \

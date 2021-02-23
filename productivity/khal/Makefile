@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/10/19 13:01:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =		standards based terminal calendar
 
@@ -20,7 +20,6 @@ MODPY_PI =		Yes
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 

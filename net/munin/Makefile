@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2021/02/23 15:16:14 kirby Exp $
+# $OpenBSD: Makefile,v 1.102 2021/02/23 19:39:33 sthen Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -26,6 +26,7 @@ MULTI_PACKAGES =	-main -server
 # Only very minor optional munin plugins use these languages so they
 # aren't forced as dependencies (same for bash).
 MODULES =		lang/python lang/ruby
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 # No need for MODx_RUNDEP as we already override RUN_DEPENDS-{main,server}
 MODPY_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No

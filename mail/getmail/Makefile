@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2020/12/23 07:25:34 bket Exp $
+# $OpenBSD: Makefile,v 1.100 2021/02/23 19:39:28 sthen Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${HOMEPAGE}/old-versions/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST=	Yes
 

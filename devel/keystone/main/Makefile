@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/08/07 09:59:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
@@ -9,6 +9,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =	devel/cmake \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =	No
 
 # atomics

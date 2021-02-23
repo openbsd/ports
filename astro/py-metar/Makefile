@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/01/18 08:59:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:08 sthen Exp $
 
 COMMENT =	Python module to access NOAA's METAR weather reports
 
@@ -20,7 +20,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 NO_TEST =		Yes
 

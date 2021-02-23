@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2020/02/05 13:23:02 bket Exp $
+# $OpenBSD: Makefile,v 1.47 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
@@ -19,6 +19,7 @@ MASTER_SITES=	https://bitbucket.org/blais/xxdiff/get/
 MODULES=	devel/qmake \
 		lang/python \
 		x11/qt5
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	devel/bison
 

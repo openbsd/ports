@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT=	syntax highlighter based on pygments
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_BUILDDEP=	No
 

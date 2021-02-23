@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/09 15:35:26 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:11 sthen Exp $
 
 COMMENT =		terminal to access the PLATO system
 
@@ -27,7 +27,6 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 CONFIGURE_STYLE =	none
 
 LIB_DEPENDS =		audio/libsndfile \

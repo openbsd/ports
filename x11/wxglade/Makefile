@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/14 18:52:07 daniel Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:53 sthen Exp $
 
 COMMENT=		GUI designer for wxWidgets/wxPython user interfaces
 
@@ -18,6 +18,7 @@ MAINTAINER=		Daniel Winters <daniel@tydirium.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS=	Yes
 
 MODPY_ADJ_FILES=	./*.py test/*.py test/casefiles/*.py

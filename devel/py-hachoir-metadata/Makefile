@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:19 sthen Exp $
 
 COMMENT =	extract metadata using Hachoir library
 
@@ -13,6 +13,7 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PI =	Yes
 
 RUN_DEPENDS =	devel/py-hachoir-core \

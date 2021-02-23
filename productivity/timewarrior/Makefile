@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =	command line tracking time tool
 
@@ -20,6 +20,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 MODPY_BUILDDEP =	No
 MODPY_ADJ_FILES =	ext/totals.py

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/02/19 19:28:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT =		encrypted backup using rsync algorithm
 
@@ -19,7 +19,6 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=duplicity/}
 MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/py-setuptools_scm${MODPY_FLAVOR}

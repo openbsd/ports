@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/14 09:54:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT =		programmable completion functions for bash
 
@@ -12,7 +12,6 @@ CATEGORIES =		shells sysutils
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		shells/bash

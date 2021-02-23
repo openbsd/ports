@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/11/11 10:19:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT =		losslessly convert images to PDF
 
@@ -13,7 +13,6 @@ HOMEPAGE =		https://gitlab.mister-muffin.de/josch/img2pdf/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 

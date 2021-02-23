@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/10/02 18:29:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:26 sthen Exp $
 
 COMMENT =		PostgreSQL backend for Orthanc
 
@@ -15,6 +15,7 @@ WANTLIB += m pq
 COMPILER =		base-clang ports-clang ports-gcc
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 # prevent overrides from the python module
 CONFIGURE_STYLE =	cmake

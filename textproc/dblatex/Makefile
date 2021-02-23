@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT =		convert DocBook to LaTeX, DVI, PostScript, and PDF
 DISTNAME =		dblatex-0.3
@@ -13,6 +13,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dblatex/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_DISTUTILS_INSTALL =install --prefix=${LOCALBASE} \
 				--root=${DESTDIR} \
 				--catalogs=${LOCALBASE}/share/xsl/docbook

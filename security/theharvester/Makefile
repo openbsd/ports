@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:13:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =	information gathering suite
 
@@ -20,8 +20,6 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	lang/python/${MODPY_VERSION}
 RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \

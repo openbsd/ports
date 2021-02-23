@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2020/11/20 14:39:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.173 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT=		lightweight GNOME text editor
 
@@ -38,8 +38,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_ARGS =	-Denable-gvfs-metadata=yes
 

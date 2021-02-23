@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:48:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT=		libpcap bindings for Python
 
@@ -17,6 +17,7 @@ WANTLIB += ${MODPY_WANTLIB} pcap pthread
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pylibpcap/}
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_ADJ_FILES=	examples/*.py
 
 BUILD_DEPENDS=		devel/swig

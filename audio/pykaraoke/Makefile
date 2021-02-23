@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/01/28 15:21:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT =		free karaoke player
 
@@ -18,6 +18,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pykaraoke/}
 EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =		Yes
 

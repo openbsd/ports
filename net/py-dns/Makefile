@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT =	Python DNS library
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pydns/}
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 do-test:
 	cd ${WRKSRC}/tests && for test in *.py; do \

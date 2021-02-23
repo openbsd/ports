@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/12/27 15:58:43 thfr Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:26 sthen Exp $
 
 # Integrated clang assembler doesn't work with x86 - Bug #698164
 # remove if build can be updated to clang 9.0.0 (see
@@ -34,7 +34,6 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =	No
 
 # Tests only build if Google Test framework is in directory external/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2020/11/20 13:46:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.113 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -17,8 +17,6 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/libgit2/libgit2-glib>=0.0.6p0 \

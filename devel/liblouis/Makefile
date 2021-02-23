@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/12/21 21:27:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT=	braille translator, back-translator and formatter
 
@@ -21,8 +21,6 @@ MASTER_SITES=	https://github.com/liblouis/liblouis/releases/download/v${V}/
 MODULES=	lang/python
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=	devel/help2man
 

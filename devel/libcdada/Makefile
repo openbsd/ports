@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/18 14:29:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT=	basic data structures in C (libstdc++ wrapper)
 
@@ -21,7 +21,6 @@ COMPILER=	base-clang ports-gcc
 
 # for cdada-gen
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_STYLE=	autoreconf
 AUTORECONF=		${WRKSRC}/autogen.sh

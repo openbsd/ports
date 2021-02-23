@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2021/01/25 14:01:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2021/02/23 19:39:24 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
@@ -36,7 +36,6 @@ MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
 MODPY_SETUPTOOLS=	Yes
 MODPY_EGG_VERSION=	${V}
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 CONFIGURE_STYLE=cmake
 
 NO_TEST =	Yes

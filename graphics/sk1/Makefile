@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/24 16:44:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:26 sthen Exp $
 
 COMMENT =	multiplatform vector graphics editor
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	https://downloads.sk1project.net/sk1/${VERSION}/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUP =	setup-sk1.py
 
 WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 cairo glib-2.0 gobject-2.0

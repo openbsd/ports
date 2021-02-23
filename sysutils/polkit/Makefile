@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2020/10/17 08:42:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
@@ -26,6 +26,7 @@ COMPILER=		base-clang ports-gcc
 
 MODULES=		lang/python \
 			textproc/intltool
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No

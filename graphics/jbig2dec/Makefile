@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:25 sthen Exp $
 
 SHARED_LIBS +=	jbig2dec             0.0      # 0.0
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS =	--with-libpng=${LOCALBASE}
 CONFIGURE_ENV =		LDFLAGS="`pkg-config --libs libpng`"
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 TEST_DEPENDS =	${BUILD_DEPENDS}
 

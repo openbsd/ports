@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/06/13 14:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT =	HTML/XML parser that supports invalid markup
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	${HOMEPAGE}bs3/download/3.x/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PYTEST =	Yes
 MODPY_SETUPTOOLS = Yes
 

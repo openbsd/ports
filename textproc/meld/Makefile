@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2020/11/13 08:48:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT=		graphical diff and merge tool
 
@@ -17,8 +17,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2020/12/24 14:59:44 solene Exp $
+# $OpenBSD: Makefile,v 1.170 2021/02/23 19:39:51 sthen Exp $
 
 COMMENT=		official media player for GNOME
 
@@ -24,8 +24,6 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=	 	devel/gsettings-desktop-schemas \
 			devel/py-gobject3${MODPY_FLAVOR} \

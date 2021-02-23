@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/22 17:08:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT =		spreadsheet-like audio file tagger
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		https://github.com/puddletag/puddletag/releases/download/${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		audio/py-mutagen${MODPY_FLAVOR} \

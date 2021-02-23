@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:15 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:46 sthen Exp $ 
 
 COMMENT =		processing subversion dump files
 MODPY_EGG_VERSION =	0.6.1
@@ -11,6 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://svn.borg.ch/svndumptool/${MODPY_EGG_VERSION}/
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/svndumptool

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT=	Python interface to the Sybase relational database system
 
@@ -17,6 +17,7 @@ WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += ct iconv intl pthread
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_DISTUTILS_BUILD=		build_ext
 MODPY_DISTUTILS_BUILDARGS=	-D HAVE_FREETDS=61

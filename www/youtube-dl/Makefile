@@ -1,5 +1,5 @@
 
-# $OpenBSD: Makefile,v 1.235 2021/02/22 08:40:32 mestre Exp $
+# $OpenBSD: Makefile,v 1.236 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT =	CLI program to download videos from YouTube and other sites
 
@@ -22,7 +22,6 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 TEST_DEPENDS +=	devel/flake8
 

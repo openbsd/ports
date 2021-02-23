@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT =	web-application vulnerability scanner
 
@@ -20,7 +20,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wapiti/}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \

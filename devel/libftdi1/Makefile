@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/04 14:06:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
@@ -26,7 +26,6 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS =		devel/boost \
 			devel/swig
 LIB_DEPENDS =		devel/gettext,-runtime \

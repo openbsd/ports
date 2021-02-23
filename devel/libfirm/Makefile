@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:16 sthen Exp $
 
 # Has backends for amd64, arm (32-bit), i386, mips (32-bit), sparc (32-bit)
 ONLY_FOR_ARCHS =	amd64 arm i386
@@ -24,6 +24,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += m
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =	No
 MODPY_ADJ_FILES =	scripts/gen_ir.py
 

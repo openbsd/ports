@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT=	WebSocket to TCP proxy
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=	math/py-numpy${MODPY_FLAVOR}
 

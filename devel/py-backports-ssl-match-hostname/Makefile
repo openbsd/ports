@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT =		ssl.match_hostname() function from Python 3.5
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS =		devel/py-backports
 

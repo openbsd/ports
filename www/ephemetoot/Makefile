@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/21 14:51:21 paco Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT =		tool for deleting old Mastodon toots
 
@@ -17,7 +17,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR}>=5.0 \
 			www/py-mastodon.py${MODPY_FLAVOR} \

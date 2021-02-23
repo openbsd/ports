@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/01/26 11:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
@@ -26,6 +26,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES0= 		http://distfiles.sigtrap.nl/
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	make_palettes.py

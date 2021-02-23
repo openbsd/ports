@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2021/02/19 21:22:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2021/02/23 19:39:08 sthen Exp $
 
 COMMENT=	free audio editor
 
@@ -32,7 +32,6 @@ MODULES=	devel/cmake \
 		lang/python
 
 MODPY_RUNDEP=	No
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

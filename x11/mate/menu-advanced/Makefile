@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/03 15:40:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT=		advanced menu for MATE
 
@@ -20,7 +20,6 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		gtk-update-icon-cache \
 			gobject-introspection
 
-MODPY_VERSION?=		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		devel/gettext,-tools \

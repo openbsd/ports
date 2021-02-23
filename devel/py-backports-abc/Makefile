@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:17 sthen Exp $
 
 COMMENT =		backport of the 'collections.abc' module
 
@@ -15,6 +15,7 @@ HOMEPAGE =		https://github.com/cython/backports_abc
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

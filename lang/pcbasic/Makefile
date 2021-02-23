@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:27 sthen Exp $
 
 MODPY_EGG_VERSION =		2.0.1
 COMMENT =	free, cross-platform emulator for GW-BASIC family (PC-BASIC)
@@ -14,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	https://github.com/robhagemans/pcbasic/releases/download/v${MODPY_EGG_VERSION}/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-parallel \

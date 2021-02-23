@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/21 00:37:10 daniel Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:24 sthen Exp $
 
 COMMENT =		OGC API server implementation
 
@@ -12,8 +12,6 @@ HOMEPAGE =	https://pygeoapi.io/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_SETUPTOOLS =	Yes
 # PyPi tarball doesnt ship tests subdir.. and missing pyld dep

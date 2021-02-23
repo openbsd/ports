@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
@@ -62,6 +62,7 @@ WANTLIB-main=		c fontconfig freetype glib-2.0 gmp gobject-2.0 \
 			guile intl ltdl m pango-1.0 pangoft2-1.0 pthread z \
 			${COMPILER_LIBCXX}
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS-main=	devel/gettext,-runtime \
 			lang/guile \
 			devel/glib2 \

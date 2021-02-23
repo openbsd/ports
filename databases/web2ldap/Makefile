@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/06 21:39:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT =	full-featured LDAP client running as web application
 
@@ -21,8 +21,6 @@ MODULES =	lang/python
 FIX_EXTRACT_PERMISSIONS =	Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =	Yes
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	databases/py-ldap0${MODPY_FLAVOR} \
 		textproc/py-xlwt${MODPY_FLAVOR} \

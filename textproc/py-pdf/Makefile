@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT=		Python PDF toolkit
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE=		Yes
 MASTER_SITES=	http://pybrary.net/pyPdf/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST=	Yes
 

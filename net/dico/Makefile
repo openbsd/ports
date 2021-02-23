@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/23 09:34:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:31 sthen Exp $
 
 COMMENT =	GNU dictionary server
 
@@ -22,7 +22,6 @@ WANTLIB += ltdl pam pcre readline sasl2 ssl z
 MASTER_SITES =		${MASTER_SITE_GNU:=dico/}
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS =		databases/openldap \
 			devel/gettext,-runtime \
 			devel/libtool,-ltdl \

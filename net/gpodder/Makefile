@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/12/30 22:27:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT=		media aggregator and podcast client
 
@@ -17,11 +17,8 @@ MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
 # GPLv3+
 PERMIT_PACKAGE=		Yes
 
-
 MODULES=		lang/python \
 			textproc/intltool
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 # XXX Causes python crash
 #MODPY_PYTEST=		Yes

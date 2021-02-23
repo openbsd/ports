@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/01/21 09:59:27 kirby Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/23 19:39:22 sthen Exp $
 
 COMMENT=	collection of educational activities for young children
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=/childsplay/}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # NO_BUILD=Yes but python(1) is used in do-install
 BUILD_DEPENDS=	${_MODPY_BUILD_DEPENDS}

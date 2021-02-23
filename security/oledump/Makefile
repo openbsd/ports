@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/02/05 09:17:33 rpointel Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =	analyze OLE files
 
@@ -21,6 +21,7 @@ MASTER_SITES =	https://didierstevens.com/files/software/
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS =	security/yara/python \
 		devel/py-olefile
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/16 17:26:16 abieber Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT= generate SCons/Makefiles from platform-independent input
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	http://deftly.net/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS=	Yes
 
 NO_CCACHE=	Yes

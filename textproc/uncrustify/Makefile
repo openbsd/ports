@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/06/21 07:17:08 rpointel Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT =		source code beautifier
 
@@ -21,6 +21,7 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =	No
 

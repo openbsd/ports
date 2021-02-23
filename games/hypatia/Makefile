@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/14 19:04:11 daniel Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT =	2D action adventure game engine
 CATEGORIES =	games x11
@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =	devel/pygame${MODPY_FLAVOR}>=1.9.1 \
 		graphics/py-Pillow${MODPY_FLAVOR}

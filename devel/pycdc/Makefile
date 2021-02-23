@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:12:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT =	python bytecode disassembler and decompiler
 
@@ -18,8 +18,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake \
 		lang/python
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 

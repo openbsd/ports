@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2021/01/15 19:41:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.202 2021/02/23 19:39:51 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -27,8 +27,6 @@ MODULES=		devel/dconf \
 
 # sync with x11/gnome/gjs
 COMPILER=		base-clang ports-gcc
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection gtk-update-icon-cache
 

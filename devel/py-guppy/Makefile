@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/21 13:49:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT =		guppy programming environment
 
@@ -18,6 +18,7 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 MODPY_PI =		Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # From README: Caveat 2: All tests don't currently work always in Python 2.7
 NO_TEST =		Yes

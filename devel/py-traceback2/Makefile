@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/16 13:55:48 pamela Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT =		backports of the Python traceback module
 
@@ -17,6 +17,7 @@ MAINTAINER =		Pamela Mosiejczuk <pamela@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

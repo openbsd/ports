@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/11/05 20:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-mysql=		mysql based smtpd table support
@@ -38,6 +38,7 @@ WANTLIB-redis=		c crypto event ssl hiredis
 MASTER_SITES=		${HOMEPAGE}archives/
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=		no
 
 LIB_DEPENDS-main=	databases/sqlite3

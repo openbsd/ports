@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/01/26 11:14:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS =	x11/py-gtk2
 MODPY_PYTEST =	Yes
 

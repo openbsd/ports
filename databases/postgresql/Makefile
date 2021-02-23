@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.268 2021/02/11 17:08:42 pea Exp $
+# $OpenBSD: Makefile,v 1.269 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -48,6 +48,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=	No
 
 CONFIGURE_ENV=	ac_cv_path_PYTHON=${MODPY_BIN} \
@@ -86,6 +87,7 @@ CONFIGURE_ARGS+= --disable-spinlocks
 # If clang gains "-fexcess-precision=standard" support then this
 # should be removed.
 MODULES+=	gcc4
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODGCC4_ARCHS=	i386
 MODGCC4_LANGS=	c
 # An alternative workaround:

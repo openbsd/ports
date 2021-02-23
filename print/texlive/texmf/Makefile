@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2020/09/27 18:45:13 edd Exp $
+# $OpenBSD: Makefile,v 1.62 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -39,6 +39,7 @@ BUILD_DEPENDS =		archivers/xz
 
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
 MODULES +=		lang/lua lang/ruby lang/python x11/tk perl
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODLUA_RUNDEP =		No
 MODLUA_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No

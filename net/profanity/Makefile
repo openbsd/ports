@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/07 20:49:32 solene Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT =	console based XMPP client
 DISTNAME =	profanity-0.10.0
@@ -22,8 +22,6 @@ WANTLIB += gpgme iconv intl m mesode nghttp2 otr pcre pthread
 WANTLIB += ${MODPY_WANTLIB} signal-protocol-c sqlite3 ssl util z
 
 MODULES +=	lang/python
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS +=	databases/sqlite3 \
 		devel/glib2 \

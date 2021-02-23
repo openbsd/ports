@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/12/30 21:38:58 kn Exp $
+# $OpenBSD: Makefile,v 1.42 2021/02/23 19:39:34 sthen Exp $
 
 COMMENT =	powerful interactive packet manipulation in python
 
@@ -21,7 +21,6 @@ DISTFILES =		${EXTRACT_ONLY} ethertypes-20120703:0
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX

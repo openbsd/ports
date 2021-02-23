@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/10 11:16:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:51 sthen Exp $
 
 COMMENT=		efficient search engine and triplestore
 
@@ -21,7 +21,6 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 TEST_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}

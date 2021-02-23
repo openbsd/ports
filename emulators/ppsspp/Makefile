@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/08/07 22:54:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:22 sthen Exp $
 
 # See https://github.com/hrydgard/ppsspp/issues/8823
 NOT_FOR_ARCHS =	${BE_ARCHS}
@@ -42,7 +42,6 @@ WANTLIB += swresample swscale z zip
 
 MODULES =		devel/cmake \
 			lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 
 LIB_DEPENDS =		archivers/snappy \

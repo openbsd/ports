@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/12 20:49:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/23 19:39:41 sthen Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -35,6 +35,7 @@ PSEUDO_FLAVORS=	no_python
 FLAVOR?=
 
 MODULES=	x11/gnome
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 WANTLIB-main =		c glib-2.0 iconv intl pcre pthread
 LIB_DEPENDS-main=	devel/glib2
@@ -46,6 +47,7 @@ LIB_DEPENDS-python = 	${BUILD_PKGPATH},-main
 
 .if ${BUILD_PACKAGES:M-python}
 MODULES +=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 WANTLIB-python += 	gamin-1 pthread
 RUN_DEPENDS-python += 	${MODPY_RUN_DEPENDS}
 .else

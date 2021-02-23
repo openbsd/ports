@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2021/02/19 19:04:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2021/02/23 19:39:45 sthen Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -38,7 +38,6 @@ MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
 MODULES =		lang/python
 
 MODPY_ADJ_FILES =	bindings/python-examples/tests.py
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 USE_GMAKE =		Yes
 

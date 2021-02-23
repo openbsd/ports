@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.453 2021/02/23 14:46:29 landry Exp $
+# $OpenBSD: Makefile,v 1.454 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -26,7 +26,6 @@ PERMIT_PACKAGE=	Yes
 MODULES =	www/mozilla lang/python
 
 MODPY_RUNDEP =	No
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =	ports-clang
 MODCLANG_ARCHS =	amd64 i386

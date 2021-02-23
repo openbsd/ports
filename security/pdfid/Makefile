@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =	tool to test a PDF file
 
@@ -21,7 +21,6 @@ MASTER_SITES =	https://didierstevens.com/files/software/
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

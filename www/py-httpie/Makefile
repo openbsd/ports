@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/07 14:44:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT =	command-line HTTP client
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 # requires network access
 MODPY_PYTEST =		Yes
 

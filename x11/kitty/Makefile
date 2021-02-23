@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/01 16:00:46 thfr Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:52 sthen Exp $
 
 # Requires OpenGL>=3.3
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
@@ -25,7 +25,6 @@ EXTRACT_SUFX =		.tar.xz
 COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_DISTUTILS_BUILD =	linux-package
 MODPY_SETUP_ARGS +=	--verbose
 # this disables checking upstream for updates

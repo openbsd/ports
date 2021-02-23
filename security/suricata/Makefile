@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/21 10:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
@@ -26,7 +26,6 @@ WANTLIB +=  maxminddb net nspr4 nss3 nssutil3 pcap pcre plc4 plds4
 WANTLIB +=  smime3 ssl3 yaml-0 z
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	textproc/py-sphinx${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \

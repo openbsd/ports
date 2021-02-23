@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/11 15:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT =		Python 3.4 Enum backported to previous versions
 
@@ -12,6 +12,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
 

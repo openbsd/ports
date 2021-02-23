@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2020/10/03 15:39:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT=		video DVDs and CDs creation tool
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_ADJ_FILES=	src/devede_ng.py
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/gettext,-tools
 

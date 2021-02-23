@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:23 sthen Exp $
 
 MODPY_EGG_VERSION =	0.9.2
 COMMENT =	sprite animation module for pygame
@@ -14,6 +14,7 @@ HOMEPAGE =	http://inventwithpython.com/pyganim/
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =	Yes
 MODPY_PI_DIR =	P/Pyganim

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/12/27 17:13:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:22 sthen Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =		Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=terminus-font/}
 
 MODULES +=		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 MAKE_FLAGS =		INT=${MODPY_BIN}
 

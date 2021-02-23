@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/03/12 20:20:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:23 sthen Exp $
 
 # Crashes on strict-alignment archs, see: src/base/system.c:164
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
@@ -30,6 +30,7 @@ LIB_DEPENDS=	audio/wavpack \
 		devel/sdl
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=	No
 
 SUBST_VARS=	CC CXX CFLAGS CXXFLAGS X11BASE

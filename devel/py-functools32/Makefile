@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT =		backport of functools from Python-3.2
 
@@ -17,6 +17,7 @@ HOMEPAGE =		https://github.com/MiCHiLU/python-functools32
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PI =		Yes
 
 do-test:

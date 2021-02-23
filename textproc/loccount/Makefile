@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/20 15:02:08 abieber Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT =		count lines of codes in many languages
 
@@ -23,7 +23,6 @@ DISTFILES =		${DISTNAME}{${V}/archive}${EXTRACT_SUFX}
 WRKDIST =		${WRKDIR}/${DISTNAME}-637e87621156d494919e6738748291018e54aa28
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	tablegen.py
 

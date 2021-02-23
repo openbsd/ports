@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2021/01/05 23:45:12 jsg Exp $
+# $OpenBSD: Makefile,v 1.61 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT =		C/C++ static checker
 
@@ -34,7 +34,6 @@ MAKE_FLAGS =		BIN=${PREFIX}/bin HAVE_RULES=yes \
 			LDFLAGS="-L${PREFIX}/lib -lpcre -lexecinfo"
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =		base-clang ports-gcc
 MODPY_RUNDEP =		No

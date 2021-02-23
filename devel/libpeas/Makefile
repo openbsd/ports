@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2020/11/02 16:19:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT=	gobject-based plugins engine
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=	devel/gobject-introspection \
 		x11/gtk+3
 
 MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_ARGS +=	-Dglade_catalog=false\
 			-Dlua51=false \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/29 22:16:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT =	compiz configuration manager
 
@@ -9,6 +9,7 @@ MASTER_SITES =	http://releases.compiz.org/components/ccsm/
 
 MODULES =	lang/python \
 		textproc/intltool
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/compiz/compizconfig-python \

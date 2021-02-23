@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/26 16:11:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT=		calculate Levenshtein distance between two strings
 
@@ -18,6 +18,7 @@ WANTLIB += pthread
 MASTER_SITES=		http://www.mindrot.org/files/py-editdist/
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	test.py

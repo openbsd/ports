@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT =		JFFS2 filesystem extraction tool
 
@@ -17,7 +17,6 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-cstruct${MODPY_FLAVOR}
 

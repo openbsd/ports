@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT=	enriched clone of the game Logical by Rainbow Arts
 
@@ -14,6 +14,7 @@ WANTLIB=		c
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pathological/}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS=	devel/pygame
 BUILD_DEPENDS=	graphics/netpbm

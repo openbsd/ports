@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/23 19:39:11 sthen Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
@@ -22,6 +22,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS=	databases/postgresql
 
 MODULES=	databases/postgresql lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES=tools/splitconfig \
 		tools/template2mak.py

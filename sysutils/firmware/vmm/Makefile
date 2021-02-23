@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/15 08:23:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:41 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -38,7 +38,6 @@ NO_BUILD=	No
 MODULES=	lang/python
 CONFIGURE_STYLE= x # workaround python.port.mk
 MODPY_RUNDEP=	No
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 USE_GMAKE=	Yes
 
 .if defined(REVISION)

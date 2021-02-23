@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/13 15:48:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:31 sthen Exp $
 
 MODPY_EGG_VERSION =	2.0.0
 COMMENT =	pipe video streams into a video player
@@ -13,7 +13,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-iso3166${MODPY_FLAVOR} \

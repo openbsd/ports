@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/08 15:58:48 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:10 sthen Exp $
 
 BROKEN-hppa =	SIGILL when running lilypond
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=solfege/}
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/py-gobject3 \

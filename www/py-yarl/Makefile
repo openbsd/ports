@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/04 14:06:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:48 sthen Exp $
 
 COMMENT =		yet another URL library
 
@@ -22,7 +22,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		net/py-idna${MODPY_FLAVOR}>=2.0 \
 			www/py-multidict${MODPY_FLAVOR}>=4.0

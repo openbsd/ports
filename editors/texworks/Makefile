@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2021/01/19 06:47:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.54 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -29,6 +29,7 @@ MODULES =		lang/python \
 			lang/lua \
 			x11/qt5 \
 			devel/cmake
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # c++-11 required for poppler
 COMPILER =		base-clang ports-gcc

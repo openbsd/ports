@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.289 2021/01/25 12:52:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.290 2021/02/23 19:39:34 sthen Exp $
 
 VERSION =		4.9.18
 DISTNAME =		samba-${VERSION}
@@ -105,6 +105,7 @@ MULTI_PACKAGES =	-main -ldb -tevent -util -docs
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODULES =		lang/python perl
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		devel/cmocka \
 			devel/p5-Parse-Yapp>=1.0.5 \

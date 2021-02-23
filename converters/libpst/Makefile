@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2020/08/15 20:30:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.63 2021/02/23 19:39:11 sthen Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -40,8 +40,6 @@ MASTER_SITES=		http://www.five-ten-sg.com/libpst/packages/
 MULTI_PACKAGES=		-main -python
 
 MODULES=		lang/python
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		graphics/ImageMagick
 RUN_DEPENDS-main=	graphics/ImageMagick

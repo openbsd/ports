@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/07 22:22:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:28 sthen Exp $
 
 COMMENT=	tool for authenticating to Gmail with OAuth2
 
@@ -15,6 +15,7 @@ CATEGORIES=	security mail
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 NO_BUILD=	Yes
 MODPY_ADJ_FILES= python/oauth2.py
 

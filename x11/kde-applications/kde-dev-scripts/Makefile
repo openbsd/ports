@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/14 13:55:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT =	KDE development helper scripts
 DISTNAME =	kde-dev-scripts-${VERSION}
@@ -12,8 +12,6 @@ MODKDE5_DOCS = yes
 
 MODULES +=	lang/python \
 		perl
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =	math/graphviz
 

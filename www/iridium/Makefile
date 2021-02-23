@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2020/12/21 18:25:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.106 2021/02/23 19:39:47 sthen Exp $
 
 BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
 
@@ -39,6 +39,7 @@ MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
 			http://nerd.hu/distfiles/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 COMPILER =	base-clang ports-clang ports-gcc
 

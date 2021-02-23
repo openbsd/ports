@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/05 08:40:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT =	Qt5 GUI front-end for neovim
 
@@ -23,7 +23,6 @@ MODULES =	devel/cmake \
 		lang/python \
 		x11/qt5
 
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =	Yes
 
 BUILD_DEPENDS =	editors/neovim

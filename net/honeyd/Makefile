@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2021/02/21 09:25:25 tb Exp $
+# $OpenBSD: Makefile,v 1.45 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT=	utility to create virtual hosts on a network
 DISTNAME=	honeyd-1.5c
@@ -20,6 +20,7 @@ PATCH_LIST=	patch-* align-*
 .endif
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		devel/libeventextra \
 		devel/pcre \

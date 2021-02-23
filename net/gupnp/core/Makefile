@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2020/10/30 19:18:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
@@ -14,8 +14,6 @@ WANTLIB += soup-2.4 xml2
 MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS	=	gobject-introspection vala docbook
 

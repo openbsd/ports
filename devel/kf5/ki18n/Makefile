@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/09/07 14:48:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT =	KDE Gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
@@ -9,7 +9,6 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Qml intl m
 
 MODULES +=	lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP =	No
 
 BUILD_DEPENDS =	devel/gettext,-tools \

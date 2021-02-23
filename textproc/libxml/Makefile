@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2020/07/19 09:03:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.185 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -46,7 +46,6 @@ RUN_DEPENDS-main=
 
 .if ${BUILD_PACKAGES:M-python}
 MODULES+=		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS-python=	textproc/libxml,-main=${VERSION} \
 			${MODPY_LIB_DEPENDS} \
 			converters/libiconv

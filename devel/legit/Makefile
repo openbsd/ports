@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/07 08:26:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT=		complementary command-line interface for Git
 
@@ -14,6 +14,7 @@ HOMEPAGE=		https://frostming.github.io/legit/
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes

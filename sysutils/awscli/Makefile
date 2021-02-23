@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.520 2021/02/20 09:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.521 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT=		universal command line environment for AWS
 
@@ -18,7 +18,6 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		textproc/py-docutils${MODPY_FLAVOR}
 

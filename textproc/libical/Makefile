@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/01/20 12:25:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
@@ -60,7 +60,6 @@ CFLAGS +=		-I${LOCALBASE}/include
 
 # needed for libical-glib tests
 MODULES +=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=		No
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			textproc/libical,-glib=${V}

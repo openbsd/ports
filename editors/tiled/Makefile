@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/01/19 06:47:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:21 sthen Exp $
 
 # XXX qmake picks up Cocoa/Cocoa.h even though it's apparently unused
 DPB_PROPERTIES =	nojunk
@@ -25,8 +25,6 @@ WANTLIB += Qt5Widgets c m ${MODPY_WANTLIB} z
 MODULES =		devel/qmake \
 			lang/python \
 			x11/qt5
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS =		x11/qt5/qtdeclarative
 

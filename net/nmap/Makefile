@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2020/03/14 16:01:19 kn Exp $
+# $OpenBSD: Makefile,v 1.139 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -31,6 +31,7 @@ MODLUA_VERSION=	5.3
 MODPY_RUNDEP=	No
 MODULES=	lang/python \
 		lang/lua
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69

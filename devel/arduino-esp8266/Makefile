@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/01 19:59:05 tracey Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT =	esp8266 arduino core toolset
 V =		2.7.4
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES = https://github.com/esp8266/Arduino/releases/download/${V}/
 EXTRACT_SUFX =		.zip
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODULES =		lang/python
 
 RUN_DEPENDS +=		devel/arduino \

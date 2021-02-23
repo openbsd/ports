@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT =		python code formatter
 
@@ -15,7 +15,6 @@ HOMEPAGE =		https://github.com/ambv/black
 PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes

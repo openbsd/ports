@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT =	Python interface to sendmail milter API
 
@@ -17,6 +17,7 @@ WANTLIB =	milter ${MODPY_WANTLIB} pthread
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pymilter/}
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 CFLAGS +=	-I${LOCALBASE}/include
 

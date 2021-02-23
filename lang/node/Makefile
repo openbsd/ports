@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2020/07/22 17:30:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2021/02/23 19:39:27 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -33,7 +33,6 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB += c execinfo kvm m pthread util ${COMPILER_LIBCXX}
 

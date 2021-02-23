@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/23 16:24:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:19 sthen Exp $
 
 COMMENT =	library to instrument executable formats
 
@@ -27,7 +27,6 @@ FLAVOR ?=		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/cmake
 

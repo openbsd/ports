@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/04 09:52:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:21 sthen Exp $
 
 COMMENT=	decision procedure for bit-vectors and arrays
 
@@ -25,7 +25,6 @@ MODULES=	devel/cmake \
 		lang/python
 
 MODPY_RUNDEP=	No
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=	devel/bison
 LIB_DEPENDS=	devel/boost \

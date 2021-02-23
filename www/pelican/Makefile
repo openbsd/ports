@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:13:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT =		static site generator written in Python
 
@@ -21,8 +21,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-blinker${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR} \

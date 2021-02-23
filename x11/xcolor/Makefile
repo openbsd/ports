@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/21 09:19:08 semarie Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:53 sthen Exp $
 
 BROKEN-sparc64 = "error[E0412]: cannot find type c_char in this scope"
 
@@ -25,7 +25,6 @@ MODULES =		devel/cargo \
 			lang/python
 
 MODPY_RUNDEP =		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 

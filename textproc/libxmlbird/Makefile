@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT =	XML parser written in Vala
 DISTNAME =	libxmlbird-1.2.0
@@ -21,6 +21,7 @@ EXTRACT_SUFX =		.tar.xz
 
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_ADJ_FILES =       configure install.py
 
 BUILD_DEPENDS =		devel/py-doit \

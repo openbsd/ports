@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/01/10 10:41:22 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python \
 		x11/xfce4
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=bin/catfish
 NO_BUILD=	Yes
 

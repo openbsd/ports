@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.261 2021/02/10 11:16:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.262 2021/02/23 19:39:51 sthen Exp $
 
 PORTROACH=		limit:^2
 
@@ -30,7 +30,6 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 

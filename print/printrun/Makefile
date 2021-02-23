@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/18 21:33:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT =		3D printing host suite
 
@@ -21,6 +21,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-gobject \

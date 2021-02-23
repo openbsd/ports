@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/25 06:01:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:44 sthen Exp $
 
 L =	cat
 LANG =	Catalan
@@ -8,6 +8,7 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS +=	textproc/vislcg3
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 SUBST_VARS =		MODPY_BIN
 
 pre-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/09 20:04:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c pq pthread ${MODPY_WANTLIB}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MASTER_SITES0=	https://github.com/markokr/libusual/archive/
 DISTFILES=	${DISTNAME}.tar.gz libusual-{}2c1cb7f9bfa0a2a183354eb2630a3e4136d0f96b.tar.gz:0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2020/09/03 18:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -17,7 +17,6 @@ MODULES=		devel/dconf \
 			lang/python
 
 MODPY_RUNDEP=		No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib>=0.18.0

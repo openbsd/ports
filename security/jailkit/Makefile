@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT=		utilities for jailing a user or process
 
@@ -13,6 +13,7 @@ MASTER_SITES=		http://olivier.sessink.nl/jailkit/
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 WANTLIB += c pthread
 
 NO_TEST=		Yes

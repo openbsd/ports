@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/20 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT =	fast and easy-to-use status bar
 V =		3.4.3
@@ -27,7 +27,6 @@ MODULES =	devel/cmake \
 		lang/python
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		textproc/py-sphinx${MODPY_FLAVOR}>=1.5

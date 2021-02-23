@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:09 sthen Exp $
 
 MODPY_EGG_VERSION =	0.2
 COMMENT =	curses interface for browsing and playing radio streams
@@ -17,7 +17,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \

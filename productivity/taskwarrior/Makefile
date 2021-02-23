@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2020/05/15 12:03:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =	command line todo list manager
 
@@ -22,6 +22,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/lua \
 			lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODLUA_SA =		Yes
 MODPY_RUNDEP =		No
 

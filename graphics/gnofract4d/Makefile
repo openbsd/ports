@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT =		fractal image generator
 
@@ -23,6 +23,7 @@ WANTLIB += m png pthread z ${COMPILER_LIBCXX}
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 LIB_DEPENDS =		graphics/png
 

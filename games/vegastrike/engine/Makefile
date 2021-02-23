@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/09/07 14:45:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:24 sthen Exp $
 
 COMMENT =		3D space simulator
 
@@ -19,6 +19,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 PATCHORIG =		.orig.port
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS =		games/vegastrike/data>=${V}
 LIB_DEPENDS =		x11/gtk+2 \
 			audio/openal \

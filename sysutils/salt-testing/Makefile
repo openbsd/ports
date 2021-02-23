@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/03 21:13:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT =		common testing tools used in the Salt Stack projects
 
@@ -19,7 +19,6 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 NO_TEST =		Yes
 
 RUN_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \

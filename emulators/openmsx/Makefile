@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/10/20 22:07:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:22 sthen Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -40,6 +40,7 @@ NO_TEST =	Yes
 
 MODULES =	lang/python \
 		lang/tcl
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =	No
 MAKE_FILE =	GNUmakefile

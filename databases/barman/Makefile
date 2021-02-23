@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/20 01:58:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:11 sthen Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pgbarman/}
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =	databases/py-psycopg2${MODPY_FLAVOR} \
 		databases/postgresql \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT=		Python-based presentation tool
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MODPY_PI =		Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS=		devel/pygame
 
 NO_TEST=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/14 13:01:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:51 sthen Exp $
 
 COMMENT=		tracker miners and metadata extractors
 
@@ -20,7 +20,6 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 TEST_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}

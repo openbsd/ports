@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/10/17 16:58:42 daniel Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:22 sthen Exp $
 
 COMMENT=	falling blocks puzzle game
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	devel/pygame>=1.7 \
 		math/py-numpy
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 NO_BUILD=	Yes
 NO_TEST=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:11 sthen Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities GUI
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		https://dl.cihar.com/wammu/v0/
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS = 	Yes
 
 RUN_DEPENDS =		comms/py-gammu \

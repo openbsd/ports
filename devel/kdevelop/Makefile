@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/02/15 21:27:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2021/02/23 19:39:15 sthen Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =		Yes
@@ -56,7 +56,6 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
 MODULES =	devel/kf5 \
 		lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP =	No
 
 BUILD_DEPENDS =	archivers/gtar \

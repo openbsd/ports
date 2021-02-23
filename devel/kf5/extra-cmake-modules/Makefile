@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/20 22:27:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT =		CMake modules required by KDE5
 DISTNAME =		extra-cmake-modules-${VERSION}
@@ -6,7 +6,6 @@ HOMEPAGE =		https://projects.kde.org/projects/kdesupport/extra-cmake-modules
 REVISION =		0
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.5

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/03/15 21:16:58 kn Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/23 19:39:11 sthen Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -29,6 +29,7 @@ MASTER_SITES =	https://fastdl.mongodb.org/src/
 
 MODULES =	devel/scons \
 		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # XXX should come from scons module, but broken when gcc module also used:
 NO_CCACHE =	Yes

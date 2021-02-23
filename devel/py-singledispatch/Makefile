@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:19 sthen Exp $
 
 MODPY_EGG_VERSION =	3.4.0.3
 COMMENT =	backport of functools.singledispatch to Python 2.6-3.3
@@ -14,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 
 TEST_DEPENDS =	devel/py-six

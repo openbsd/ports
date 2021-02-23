@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT =	tool for partial deblobbing of Intel ME/TXE firmware images
 
@@ -17,7 +17,6 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 NO_TEST =		Yes

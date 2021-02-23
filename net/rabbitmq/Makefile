@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2021/02/19 13:38:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/02/23 19:39:34 sthen Exp $
 
 BROKEN =	builds but not yet working.
 # we had rabbitmq-3.6.15 which used erlang 19, which was removed due to
@@ -48,7 +48,6 @@ MAKE_FLAGS =	MANDIR=${PREFIX}/man \
 
 SUBST_VARS +=	V MODERL_ERL
 
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES +=	deps/rabbit_common/codegen.py
 MODPY_ADJ_FILES +=	deps/rabbitmq_management/bin/rabbitmqadmin
 

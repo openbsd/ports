@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/10 22:33:22 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:42 sthen Exp $
 
 COMMENT =		print sun4v machine descriptions
 
@@ -19,7 +19,6 @@ MASTER_SITES =		https://yum.oracle.com/repo/OracleLinux/OL6/latest/source/getPac
 EXTRACT_SUFX =		.el6.src.rpm
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	${MDPRINT}
 
 MDPRINT =		tools/mdprint/mdprint.py

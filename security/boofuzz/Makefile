@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/10/30 19:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =	extensible network protocol fuzzer
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

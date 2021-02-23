@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2020/10/03 15:40:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.28
@@ -17,7 +17,6 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

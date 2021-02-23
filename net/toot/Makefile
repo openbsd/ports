@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/09/19 20:44:08 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT =		interact with Mastodon social networks from the command line
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR}>=0.16 \

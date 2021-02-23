@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2021/01/18 22:40:04 sebastia Exp $
+# $OpenBSD: Makefile,v 1.43 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
@@ -26,6 +26,7 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No

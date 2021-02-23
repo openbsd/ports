@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:16 sthen Exp $
 
 COMMENT =	property editing framework with editor widget
 
@@ -26,6 +26,7 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =		devel/cmake \
 			lang/python \
 			devel/kf5
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		x11/qt5/qttools \
 			devel/kf5/kcoreaddons

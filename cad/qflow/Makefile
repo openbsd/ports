@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/03 13:53:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT =	full end-to-end digital synthesis flow for VLSI ASIC designs
 
@@ -25,7 +25,6 @@ EXTRACT_SUFX =	.tgz
 
 MODULES =	lang/tcl \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 		cad/yosys \

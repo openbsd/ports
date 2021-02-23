@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/01 00:08:18 jsg Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT=	common interface to speech synthesis
 
@@ -23,7 +23,6 @@ MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${V}/
 MODULES=	textproc/intltool \
 		lang/python
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=src/api/python/speechd_config/spd-conf \
 		src/api/python/speechd/_test.py
 

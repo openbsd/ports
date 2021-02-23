@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/10 20:02:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=	multi-format tools and Python module for ReplayGain
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST=	Yes
 
 BUILD_DEPENDS=	textproc/py-docutils${MODPY_FLAVOR}

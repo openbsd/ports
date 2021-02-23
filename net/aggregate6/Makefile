@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:31 sthen Exp $
 
 COMMENT=	optimise a list of IPv4/IPv6 prefixes
 
@@ -19,7 +19,6 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_SETUPTOOLS=	Yes
-MODPY_VERSION= ${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=	devel/py-radix${MODPY_FLAVOR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/05 19:53:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT=		Microsoft Azure Linux Agent
 
@@ -15,6 +15,7 @@ CATEGORIES=		sysutils
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS=	Yes
 
 MODPY_ADJ_FILES=	bin/waagent

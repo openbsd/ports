@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT =		Python 3.5 configparser for Python 2.6 - 3.5
 
@@ -15,6 +15,7 @@ HOMEPAGE =		https://bitbucket.org/ambv/configparser
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS =		devel/py-backports
 

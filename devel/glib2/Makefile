@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2021/02/11 13:22:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.342 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -33,7 +33,6 @@ MODULES=		devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

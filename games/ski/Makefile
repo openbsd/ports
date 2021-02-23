@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT=		skiing simulation game
 
@@ -14,6 +14,7 @@ MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_ADJ_FILES=	ski
 

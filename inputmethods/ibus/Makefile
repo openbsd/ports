@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2020/11/07 08:04:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2021/02/23 19:39:27 sthen Exp $
 
 COMMENT =		intelligent input bus framework
 
@@ -27,8 +27,6 @@ WANTLIB += png xcb xcb-render xcb-shm z
 MODULES =		devel/dconf \
 			lang/python \
 			textproc/intltool
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/iso-codes \
 			devel/py-gobject3${MODPY_FLAVOR} \

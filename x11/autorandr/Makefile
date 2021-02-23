@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/09 23:48:24 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT=	automates xrandr calls based on connect devices
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE=	Yes
 MAINTAINER=	Ashton Fagg <ashton@fagg.id.au>
 
 MODULES=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
 # No tests provided by upstream.

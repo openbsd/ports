@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/11 22:54:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT=	standalone Yubikey and OATH/HOTP validation server
 DISTNAME=	yubico-yubiserve-3.1
@@ -19,6 +19,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=yubico-yubiserve/}
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 BUILD_DEPENDS=	databases/sqlite3
 RUN_DEPENDS=	databases/py-sqlite \
 		security/py-cryptodome \

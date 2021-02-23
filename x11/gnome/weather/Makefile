@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2020/07/25 11:48:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2021/02/23 19:39:51 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -15,6 +15,7 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gjs \

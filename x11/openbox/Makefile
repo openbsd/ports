@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2020/08/14 18:12:55 matthieu Exp $
+# $OpenBSD: Makefile,v 1.86 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -29,6 +29,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MASTER_SITES =	${HOMEPAGE}dist/openbox/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS =	devel/py-xdg \
 		devel/desktop-file-utils

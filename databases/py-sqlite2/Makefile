@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/20 20:13:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/23 19:39:12 sthen Exp $
 
 COMMENT =	SQLite3 adapter for Python
 
@@ -22,6 +22,7 @@ WANTLIB += pthread sqlite3>=8.6
 BUILD_DEPENDS =	textproc/py-sphinx,python3
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 post-build:
 	cd ${WRKSRC} && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/12/30 15:51:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
@@ -20,7 +20,6 @@ DISTNAME =	plaso-${MODPY_EGG_VERSION}
 MASTER_SITES =	https://github.com/log2timeline/plaso/releases/download/${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS = Yes
 
 RUN_DEPENDS +=	archivers/py-lz4${MODPY_FLAVOR} \

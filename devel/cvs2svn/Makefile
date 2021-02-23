@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/01/15 12:09:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
@@ -16,6 +16,7 @@ HOMEPAGE=		https://github.com/mhagger/cvs2svn
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS=	${MODPY_RUN_DEPENDS},-bsddb
 

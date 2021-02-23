@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:29 sthen Exp $
 
 COMMENT=		GNU units conversion program
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c curses m readline
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS =		textproc/py-unidecode,${MODPY_FLAVOR}
 

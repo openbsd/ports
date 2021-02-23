@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/11/09 11:33:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT=	text document format for writing documents and man pages
 
@@ -22,8 +22,6 @@ BUILD_DEPENDS=	textproc/docbook-xsl
 
 RUN_DEPENDS=	textproc/docbook-xsl \
 		w3m-*|lynx-*:www/w3m
-
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 PKG_ARCH=	*
 USE_GMAKE=	Yes

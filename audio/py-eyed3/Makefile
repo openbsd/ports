@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/02 00:23:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=		module and program for processing ID3 tags
 
@@ -15,7 +15,6 @@ MASTER_SITES=		${HOMEPAGE}releases/
 
 MODULES=		lang/python
 # standalone software - intentionally no py-* prefix/FLAVOR.
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS=		devel/py-deprecation${MODPY_FLAVOR} \
 			devel/py-filetype${MODPY_FLAVOR}
 

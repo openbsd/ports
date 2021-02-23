@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.342 2021/02/06 08:48:49 landry Exp $
+# $OpenBSD: Makefile,v 1.343 2021/02/23 19:39:28 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 COMMENT =		Mozilla e-mail, calendar, rss and usenet client
@@ -30,7 +30,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =	base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386

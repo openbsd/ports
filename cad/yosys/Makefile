@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:12:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT =	framework for Verilog RTL synthesis
 
@@ -23,7 +23,6 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	lang/python \
 		lang/tcl
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 CONFIGURE_STYLE = none
 
 BUILD_DEPENDS =	devel/bison \

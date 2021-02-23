@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/20 16:44:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT=	gamma-adjusting utility
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	http://www.pcbypaul.com/software/dl/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS=	x11/py-gtk2
 

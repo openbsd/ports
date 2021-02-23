@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2021/01/04 05:34:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.51 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=	CLI tools to manage music collections
 
@@ -16,8 +16,6 @@ MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes
 MODPY_PI=	Yes
 MODPY_PYTEST=	Yes
-
-MODPY_VERSION= ${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2020/08/07 21:08:03 sebastia Exp $
+# $OpenBSD: Makefile,v 1.38 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT=		web interface to PuppetDB
 
@@ -13,8 +13,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_PI =		Yes
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

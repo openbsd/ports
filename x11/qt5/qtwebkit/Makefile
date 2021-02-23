@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2020/11/23 12:39:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -51,7 +51,6 @@ CONFIGURE_STYLE =	cmake
 # Remove default "first" target and build all
 ALL_TARGET =		
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 

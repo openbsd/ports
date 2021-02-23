@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/02 11:55:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:40 sthen Exp $
 
 COMMENT =	web fuzzer
 
@@ -18,7 +18,6 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \

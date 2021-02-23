@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT =	library and tools to access the ESE and EDB format
 
@@ -29,7 +29,6 @@ CONFIGURE_ARGS +=	--enable-python3
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

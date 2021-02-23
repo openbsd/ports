@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:51:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/02/23 19:39:48 sthen Exp $
 
 COMMENT=	RSS Aggregator Without Delusions Of Grandeur
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	http://offog.org/files/
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_ADJ_FILES=rawdog
 
 RUN_DEPENDS=	textproc/py-feedparser

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/11 06:02:30 kirby Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:23 sthen Exp $
 
 COMMENT =	economic historical real-time strategy game
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python \
 			textproc/intltool
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	unknown-horizons
 MODPY_PYTEST =		Yes
 

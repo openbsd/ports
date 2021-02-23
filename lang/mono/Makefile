@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2020/12/17 15:17:51 robert Exp $
+# $OpenBSD: Makefile,v 1.143 2021/02/23 19:39:27 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -35,7 +35,6 @@ EXTRACT_SUFX=	.tar.xz
 MODULES=	lang/mono \
 		lang/python
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODMONO_DEPS=	No
 
 USE_GMAKE=	Yes

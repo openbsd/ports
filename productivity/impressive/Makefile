@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/11/24 16:44:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT =		stylish PDF presentation generator
 
@@ -15,6 +15,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=impressive/}
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 NO_BUILD =		Yes
 NO_TEST =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2021/02/19 23:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/02/23 19:39:27 sthen Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64
 
@@ -60,6 +60,7 @@ DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
 .endif
 
 MODULES +=		lang/python x11/tk
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_VERSION =		2.7
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX \
 			-i MODPY_PY0EXTENSION \

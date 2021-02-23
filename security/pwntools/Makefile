@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/18 20:11:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =	Pwntools CTF framework and exploit development library
 
@@ -15,7 +15,6 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

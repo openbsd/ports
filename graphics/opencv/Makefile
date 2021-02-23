@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2021/01/04 14:06:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2021/02/23 19:39:26 sthen Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -47,7 +47,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake \
 			lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		math/eigen3 \
 			math/py-numpy${MODPY_FLAVOR}

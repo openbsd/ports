@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2020/11/11 10:32:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT=		dbus debugger
 
@@ -19,8 +19,6 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
 MODGNOME_TOOLS += yelp
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		x11/gtk+3
 

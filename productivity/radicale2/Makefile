@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =	simple CalDAV calendar server
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS = Yes
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =	devel/py-dateutil${MODPY_FLAVOR}>=2.7.3 \
 		security/py-passlib${MODPY_FLAVOR} \

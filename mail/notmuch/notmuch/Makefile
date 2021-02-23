@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/20 20:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:28 sthen Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
@@ -42,7 +42,6 @@ TEST_DEPENDS =		archivers/gtar \
 MODULES =		lang/python
 MODPY_RUNDEP =		No
 MODPY_PYTEST =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--mandir=${PREFIX}/man \

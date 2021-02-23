@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT-main =		library for manipulating IPTC metadata
 COMMENT-python =	libiptcdata Python bindings
@@ -26,6 +26,7 @@ WANTLIB-python = 	${cWANTLIB} iptcdata
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libiptcdata/}
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS-python = 	graphics/libiptcdata,-main
 
 CONFIGURE_STYLE =	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.127 2021/02/19 23:13:04 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.128 2021/02/23 19:39:28 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -40,11 +40,20 @@ MODPY_DEFAULT_VERSION_3 = 3.8
 FLAVOR ?=
 
 .  if ${FLAVOR:Mpython3}
-# define default version 3
-MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
+# for standard "python3-flavoured" ports (normal for py-* modules),
+# set the default MODPY_VERSION for the usual py3 version
 .  else
-# without flavor, assume we use the default version 2
+# for unflavoured "py2+py3" ports (again normal for py-* modules),
+# set the default MODPY_VERSION for the usual py2 version
+.    if defined(FLAVORS) && ${FLAVORS:Mpython3}
 MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
+.    else
+# ports which don't have a python3 FLAVOR are either old py2-only py-*
+# modules, or are other ports which use Python (e.g. those which are
+# intended as a standalone program rather than a py-* module).
+# in that case, use the usual py3 version; old py2-only modules
+# will set MODPY_VERSION themselves.
+.    endif
 .  endif
 
 # verify if MODPY_VERSION forced is correct

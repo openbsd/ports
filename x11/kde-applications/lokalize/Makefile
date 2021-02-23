@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:52 sthen Exp $
 
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
@@ -14,8 +14,6 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 MODULES +=	lang/python
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \

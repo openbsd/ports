@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:42 sthen Exp $
 
 COMMENT =	library and tools to access the Windows Prefetch File
 
@@ -29,7 +29,6 @@ CONFIGURE_ARGS +=	--enable-python3
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

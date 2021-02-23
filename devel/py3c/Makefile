@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/27 13:43:15 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT =	python 2/3 compatibility layer for C extensions
 
@@ -16,6 +16,7 @@ MAINTAINER =	Stefan Sperling <stsp@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP = No
 MODPY_RUNDEP =	No
 TEST_DEPENDS =	lang/python/${MODPY_DEFAULT_VERSION_2} \

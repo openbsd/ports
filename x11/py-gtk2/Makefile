@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2020/11/07 21:48:06 jca Exp $
+# $OpenBSD: Makefile,v 1.73 2021/02/23 19:39:52 sthen Exp $
 
 BROKEN-alpha=	.got subsegment exceeds 64K
 
@@ -29,6 +29,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	lang/python \
 		x11/gnome
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	devel/libglade2

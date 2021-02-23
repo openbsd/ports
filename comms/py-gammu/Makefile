@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/23 23:52:09 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:11 sthen Exp $
 
 COMMENT =		python bindings for Gammu
 
@@ -20,6 +20,7 @@ WANTLIB += Gammu gsmsd m pthread ${MODPY_WANTLIB}
 MASTER_SITES =		https://dl.cihar.com/python-gammu/
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 LIB_DEPENDS =		comms/gammu
 
 SEPARATE_BUILD = 	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/02 19:10:51 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:36 sthen Exp $
 
 COMMENT =		Terminal/CLI Epub Reader
 
@@ -17,6 +17,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 .include <bsd.port.mk>

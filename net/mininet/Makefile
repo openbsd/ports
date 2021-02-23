@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
@@ -20,6 +20,7 @@ WANTLIB =		c
 MASTER_SITES =	https://github.com/akoshibe/mininet/releases/download/v$V/
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =		devel/help2man
 RUN_DEPENDS =		net/socat \

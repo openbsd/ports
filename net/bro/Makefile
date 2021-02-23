@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2021/02/07 16:30:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2021/02/23 19:39:31 sthen Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
@@ -36,7 +36,6 @@ MODPY_ADJ_FILES=	auxil/btest/btest \
 			auxil/zeekctl/bin/stats-to-csv \
 			auxil/zeekctl/bin/zeekctl.in \
 			auxil/zeekctl/auxil/trace-summary/trace-summary
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/bison \
 			devel/cmake \

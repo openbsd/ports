@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2021/02/03 11:49:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT=		IDE for GNOME
 
@@ -21,8 +21,6 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp

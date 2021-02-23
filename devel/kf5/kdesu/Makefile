@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/14 06:22:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT =	KDE wrapper over doas commands
 DISTNAME =	kdesu-${VERSION}
@@ -10,7 +10,6 @@ WANTLIB += KF5I18n KF5Pty KF5Service Qt5Core SM X11 Xext c m
 
 MODULES +=	lang/python
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 # required only for tests
 MODPY_BUILDDEP =	Yes
 MODPY_RUNDEP =		No

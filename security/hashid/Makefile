@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/02 11:54:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =	Identify the different types of cryptographic hashes
 
@@ -20,6 +20,5 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 .include <bsd.port.mk>

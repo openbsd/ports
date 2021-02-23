@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2021/02/14 08:30:56 kirby Exp $
+# $OpenBSD: Makefile,v 1.81 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -27,7 +27,6 @@ WANTLIB-main +=	c dbus-1 m curses pthread usb-1.0 ${COMPILER_LIBCXX}
 WANTLIB-php =
 
 MODULES +=		devel/scons lang/python lang/php
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPHP_BUILDDEP=	No
 MODSCONS_FLAGS +=	gpsd_user=_gpsd \
 			qt=no \

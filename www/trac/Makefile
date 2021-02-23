@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2021/01/09 13:58:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2021/02/23 19:39:48 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
@@ -21,7 +21,6 @@ MODPY_SETUPTOOLS=	Yes
 PERMIT_PACKAGE=   Yes
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 COMMON_DEPS=	devel/py-babel${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR}

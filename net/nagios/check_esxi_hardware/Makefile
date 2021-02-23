@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/11/21 17:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:33 sthen Exp $
 
 PKG_ARCH =	*
 
@@ -21,7 +21,6 @@ NO_TEST =	Yes
 RUN_DEPENDS =	devel/py-wbem${MODPY_FLAVOR}
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_ADJ_FILES=	check_esxi_hardware.py
 

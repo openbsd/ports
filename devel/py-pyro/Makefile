@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:19 sthen Exp $
 
 COMMENT =	distributed object middleware for Python
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS = Yes
 

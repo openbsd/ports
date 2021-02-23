@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/20 16:44:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT =		symbol type for python
 
@@ -19,6 +19,7 @@ EXTRACT_SUFX =		.zip
 UNZIP =			unzip -a
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS =	Yes
 

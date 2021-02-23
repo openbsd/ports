@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:12:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:11 sthen Exp $
 
 # sync with editors/libreoffice
 ONLY_FOR_ARCHS=		amd64 i386
@@ -24,7 +24,6 @@ MODULES=		lang/python
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=	unoconv
 
 USE_GMAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2020/10/05 19:52:43 jca Exp $
+# $OpenBSD: Makefile,v 1.137 2021/02/23 19:39:50 sthen Exp $
 
 # XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,libsecret} but that
 # would create dependency loops:                                                
@@ -23,6 +23,7 @@ WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-shm z
 
 MODULES=		devel/dconf \
 			x11/gnome
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODGNOME_TOOLS=		docbook
 
@@ -48,6 +49,7 @@ post-install:
 
 # regression tests call 'env python'
 MODULES +=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 TEST_DEPENDS +=		${MODPY_RUN_DEPENDS}
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP=		No

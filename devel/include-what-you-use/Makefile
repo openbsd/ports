@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.21 2020/08/05 08:13:36 jca Exp $
+#	$OpenBSD: Makefile,v 1.22 2021/02/23 19:39:15 sthen Exp $
 
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
@@ -21,7 +21,6 @@ RUN_DEPENDS=	devel/llvm>=${LLVM_V}
 
 MODULES=		devel/cmake lang/python
 MODPY_BUILDDEP=		No
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=	*.py
 
 COMPILER=		base-clang ports-gcc

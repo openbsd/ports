@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT=	SPE -- Stani's Python Editor
 
@@ -18,6 +18,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python.berlios/}
 WRKDIST=	${WRKDIR}/spe-$V.h
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/py-wxPython \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/07/12 20:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2021/02/23 19:39:45 sthen Exp $
 
 COMMENT=	Python module for writing basic XML applications
 
@@ -18,6 +18,7 @@ HOMEPAGE=	http://sourceforge.net/projects/pyxml/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_DISTUTILS_BUILDARGS=	--with-libexpat=/usr \
 				--with-xslt

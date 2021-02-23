@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/28 20:03:33 edd Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:22 sthen Exp $
 
 COMMENT =		launcher for the FS-UAE Amiga emulator
 
@@ -12,8 +12,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://fs-uae.net/stable/${MODPY_EGG_VERSION}/
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODULES =		lang/python
 

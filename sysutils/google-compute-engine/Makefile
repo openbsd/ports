@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/17 14:39:43 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:41 sthen Exp $
 
 COMMENT =		Google Cloud Platform (GCP) Compute Engine daemon
 
@@ -16,6 +16,7 @@ CATEGORIES =		sysutils net
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS =	Yes
 

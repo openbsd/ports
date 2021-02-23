@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2021/01/17 19:28:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2021/02/23 19:39:14 sthen Exp $
 
 COMMENT=		C/C++ source code auditing tool
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_ADJ_FILES=	flawfinder
 

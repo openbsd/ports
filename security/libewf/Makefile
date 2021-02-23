@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:38 sthen Exp $
 
 COMMENT =		access the Expert Witness Compression Format
 
@@ -25,7 +25,6 @@ WANTLIB += z
 MASTER_SITES =		https://github.com/libyal/libewf-legacy/releases/download/${VERSION}/
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/gettext,-tools
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:12:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:18 sthen Exp $
 
 COMMENT =		automation tool
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-cloudpickle${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}

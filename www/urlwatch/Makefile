@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/04 21:11:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS= Yes
 MODPY_PYTEST=	Yes
 

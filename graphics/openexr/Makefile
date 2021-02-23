@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2021/02/13 07:06:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2021/02/23 19:39:26 sthen Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -36,8 +36,6 @@ COMPILER=		base-clang ports-gcc base-gcc
 
 MODULES=		devel/cmake \
 			lang/python
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS +=		-mxgot

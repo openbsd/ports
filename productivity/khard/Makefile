@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/10/16 16:19:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =		console CardDAV client
 
@@ -17,7 +17,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST =		Yes
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR} \

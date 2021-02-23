@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:24 sthen Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 
@@ -24,6 +24,7 @@ MODULES =		databases/postgresql    \
 			devel/cmake		\
 			lang/python		\
 			lang/lua
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 LIB_DEPENDS =		databases/postgresql	\
 			devel/proj		\

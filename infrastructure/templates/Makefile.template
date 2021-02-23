@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.88 2020/05/15 01:32:48 abieber Exp $
+# $OpenBSD: Makefile.template,v 1.89 2021/02/23 19:39:27 sthen Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -128,8 +128,10 @@ MASTER_SITES =		???
 # Get source from pypi.org
 #MODPY_PI =		Yes
 #MODPY_SETUPTOOLS =	Yes
-# If port is python3 only
-#MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+# If port is python2 only
+#MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+# If port is a Python module (py-*) that is or might be used by other Python
+# ports, set FLAVOR=python3 and FLAVORS=python3
 
 #
 # MODGO_ settings for when using lang/go module

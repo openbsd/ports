@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2020/10/17 21:40:31 daniel Exp $
+# $OpenBSD: Makefile,v 1.55 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT =		audio player daemon with library management
 
@@ -33,6 +33,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python \
 			perl
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =		Yes
 

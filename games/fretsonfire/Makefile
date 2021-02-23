@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/11/24 16:44:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:22 sthen Exp $
 
 # This port is known to generate errors on (some) radeon cards.
 # Intel cards appear to work fine.
@@ -20,6 +20,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fretsonfire/}
 USE_GMAKE =		Yes
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}

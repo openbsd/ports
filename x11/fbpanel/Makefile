@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/20 18:23:12 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
@@ -23,6 +23,7 @@ NO_TEST=	Yes
 
 CONFIGURE_STYLE=simple
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_ADJ_FILES=configure .config/repl.py .config/tar.py
 BUILD_DEPENDS=	graphics/gdk-pixbuf-xlib \
 		shells/bash

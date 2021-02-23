@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:37 sthen Exp $
 
 COMMENT =	command-line oriented todo list system
 
@@ -15,7 +15,6 @@ MASTER_SITES =	${HOMEPAGE}/download/
 PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST =	Yes
 MODPY_PYTEST_ARGS = lib/yokadi/tests/tests.py
 

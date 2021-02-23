@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/21 21:10:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT =	automatic audio files tagger using the MusicBrainz database
 
@@ -18,8 +18,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # msgfmt
 BUILD_DEPENDS =		devel/gettext,-tools

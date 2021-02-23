@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/12/30 21:38:58 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT =		compare pcap dump files
 
@@ -19,7 +19,6 @@ RUN_DEPENDS =		net/scapy
 NO_TEST =		Yes
 NO_BUILD =		Yes
 MODPY_ADJ_FILES =	pcap_diff.py
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pcapdiff

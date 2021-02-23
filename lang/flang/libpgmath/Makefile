@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2020/07/12 18:06:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/23 19:39:27 sthen Exp $
 
 # Sync version with lang/flang/flang always!
 COMMENT =	LLVM Fortran math library
@@ -26,7 +26,6 @@ CONFIGURE_ARGS += -DCMAKE_SHARED_LINKER_FLAGS='-static-libstdc++ -static-libgcc'
 
 MODULES =	devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/llvm
 

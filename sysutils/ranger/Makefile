@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/08 22:57:41 kn Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT =	minimalistic console file manager
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	https://ranger.github.io/
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	tests/manpage_completion_test.py
 
 # libarchive (bsdtar) used as an alternative to atool

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:39 sthen Exp $
 
 COMMENT =	ELF-Esteem: ELF file manipulation library
 
@@ -17,6 +17,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =	Yes
 

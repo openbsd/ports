@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/11/23 09:31:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/23 19:39:25 sthen Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -16,7 +16,6 @@ MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 NO_TEST=	Yes
 

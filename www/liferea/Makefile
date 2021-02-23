@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2020/11/20 20:48:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.115 2021/02/23 19:39:47 sthen Exp $
 
 COMMENT=		simple GTK desktop news aggregator
 
@@ -41,7 +41,6 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/dconf \
 			lang/python \
 			textproc/intltool
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 USE_GMAKE=		Yes
 

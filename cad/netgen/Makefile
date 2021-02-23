@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:10 sthen Exp $
 
 COMMENT =	tool for netlist comparison (LVS) and format manipulation
 DISTNAME =	netgen-1.5.138
@@ -20,7 +20,6 @@ MASTER_SITES =	http://opencircuitdesign.com/netgen/archive/
 
 MODULES =	x11/tk \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
 

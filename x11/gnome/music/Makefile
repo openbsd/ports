@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2020/11/22 09:39:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2021/02/23 19:39:50 sthen Exp $
 
 COMMENT=		GNOME music playing application
 
@@ -20,8 +20,6 @@ MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
-
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=		x11/gtk+3
 

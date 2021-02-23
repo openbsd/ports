@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:12:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.14.3
@@ -25,7 +25,6 @@ MODULES =		devel/meson \
 			textproc/intltool
 
 MODPY_BUILDDEP =	No
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/iso-codes
 

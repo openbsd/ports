@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT=		yEnc encoding/decoding extension for Python
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		pthread ${MODPY_WANTLIB}
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/04 20:53:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT =	multimedia files tag editor
 DISTNAME =	kid3-3.8.4
@@ -23,7 +23,6 @@ EXTRACT_SUFX =		.tar.gz
 
 # Python is only needed for tests, but KDE Frameworks depend on it anyway
 MODULES =		devel/kf5 lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/kf5/kdoctools \
 			textproc/docbook-xsl

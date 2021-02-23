@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:49 sthen Exp $
 
 COMMENT =		Equinox desktop environment
 
@@ -13,6 +13,7 @@ WANTLIB += startup-notification-1 ${COMPILER_LIBCXX} xkbfile z
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/jam \
 			misc/shared-mime-info

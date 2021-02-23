@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/09 20:22:42 gsoares Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:35 sthen Exp $
 
 COMMENT =	TACACS+ AAA service, often used with network equipment
 
@@ -21,6 +21,7 @@ WANTLIB += c pthread
 MASTER_SITES =	ftp://ftp.shrubbery.net/pub/tac_plus/
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_ADJ_FILES = do_auth.py
 
 BUILD_DEPENDS =	devel/bison

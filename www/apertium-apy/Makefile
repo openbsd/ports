@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/23 08:08:55 daniel Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:46 sthen Exp $
 
 COMMENT =	apertium text translation API in Python
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =		databases/sqlite3 \
 			www/py-tornado${MODPY_FLAVOR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/04 14:06:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:33 sthen Exp $
 
 COMMENT =		console XMPP client
 
@@ -20,8 +20,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	-v test/
-
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_DISTUTILS_BUILD =	build_ext --inplace
 

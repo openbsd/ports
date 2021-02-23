@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT =	parse the MFT file from an NTFS filesystem
 
@@ -14,6 +14,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_PI =	Yes
 
 NO_TEST =	Yes

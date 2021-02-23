@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2021/02/18 11:59:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.121 2021/02/23 19:39:32 sthen Exp $
 
 COMMENT=	auto-discovering network management/monitoring system
 
@@ -25,7 +25,6 @@ MASTER_SITES0=	https://spacehopper.org/mirrors/
 MODULES=	lang/php \
 		lang/python
 MODPY_BUILDDEP= No
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \

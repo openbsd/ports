@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:48 sthen Exp $
 
 COMMENT=		pluggable command-line frontend
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE=	Yes
 MODPY_PI =		Yes
 
 MODULES=		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/py-cheetah \
 			devel/py-wsgiutils \

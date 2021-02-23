@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:20 sthen Exp $
 
 COMMENT =		Simple Revision Control
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		${HOMEPAGE}
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES =	src
 
 RUN_DEPENDS =		devel/grcs \

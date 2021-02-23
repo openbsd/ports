@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:30 sthen Exp $
 
 COMMENT =	python package to retrieve data of the IMDb movie database
 
@@ -20,6 +20,7 @@ WANTLIB += c pthread ${MODPY_WANTLIB}
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=imdbpy/}
 
 MODULES =	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS = Yes
 
 RUN_DEPENDS =	textproc/py-lxml

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:44 sthen Exp $
 
 COMMENT =		fast bitrot detection utility
 
@@ -19,7 +19,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=yabitrot/}
 EXTRACT_SUFX =		.tar.gz
 
 MODULES =		lang/python
-MODPY_VERSION =         ${MODPY_DEFAULT_VERSION_3}
 NO_BUILD =		yes
 PKG_ARCH =		*
 

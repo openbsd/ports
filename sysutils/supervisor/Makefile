@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/11/11 10:12:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:43 sthen Exp $
 
 COMMENT=		system to monitor and control processes
 
@@ -18,7 +18,6 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 SUBST_VARS+=		VARBASE
 
 pre-configure:

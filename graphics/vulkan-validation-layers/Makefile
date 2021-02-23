@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/27 15:58:43 thfr Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:27 sthen Exp $
 
 COMMENT =	Vulkan Validation Layers
 
@@ -23,7 +23,6 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	graphics/glslang \

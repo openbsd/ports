@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2021/01/23 23:17:48 kn Exp $
+# $OpenBSD: Makefile,v 1.180 2021/02/23 19:39:09 sthen Exp $
 
 COMMENT=		integrated music management application for GNOME
 
@@ -65,7 +65,6 @@ MODGNOME_TOOLS += vala yelp
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--without-brasero \

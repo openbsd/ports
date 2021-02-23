@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/06 22:08:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:13 sthen Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -40,7 +40,6 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/llvm
 
