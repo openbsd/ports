@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:03 espie Exp $
-sbin/tempwatch
-share/doc/tempwatch/
-share/doc/tempwatch/watch.txt

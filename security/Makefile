@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.613 2021/02/23 02:27:58 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.614 2021/02/23 10:46:18 kn Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -401,7 +401,6 @@
      SUBDIR += swatch
      SUBDIR += tclgpg
      SUBDIR += tcltls
-     SUBDIR += tempwatch
      SUBDIR += theharvester
      SUBDIR += tls-attacker
      SUBDIR += towitoko
