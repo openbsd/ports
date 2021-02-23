@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2020/10/16 11:38:24 solene Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/23 08:10:37 solene Exp $
 
 COMMENT =	curses icb and irc client
-DISTNAME =	swirc-3.2.5
+DISTNAME =	swirc-3.2.6
 CATEGORIES =	net
 HOMEPAGE =	https://www.nifty-networks.net/swirc/
 
@@ -25,7 +25,6 @@ TEST_TARGET =		check
 MAKE_FLAGS =		DEST_CONFMAN=${WRKINST}${PREFIX}/man/man5 \
 			DEST_MANUAL=${WRKINST}${PREFIX}/man/man1 \
 			INSTALL_DEPS=swirc src/swirc.1 swirc.conf.5 \
-			PREFIX=${PREFIX} CC="${CC}" CXX="${CXX}" \
-			E=@: Q=
+			PREFIX=${PREFIX} CC="${CC}" CXX="${CXX}"
 
 .include <bsd.port.mk>
