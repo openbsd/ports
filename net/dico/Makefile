@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 05:05:11 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/23 09:34:36 bentley Exp $
 
 COMMENT =	GNU dictionary server
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c crypto curses gsasl iconv idn intl lber-2.4 ldap-2.4
 WANTLIB += ltdl pam pcre readline sasl2 ssl z
 
-MASTER_SITES =		https://download.gnu.org.ua/pub/release/dico/
+MASTER_SITES =		${MASTER_SITE_GNU:=dico/}
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
