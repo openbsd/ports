@@ -1,14 +1,8 @@
-$OpenBSD: patch-build_php_m4,v 1.2 2021/02/24 20:56:22 sthen Exp $
+$OpenBSD: patch-build_php_m4,v 1.3 2021/02/24 22:18:57 sthen Exp $
 
 - don't hardcode libstdc++
 
 - libressl uses a bogus version number in its pkgconfig file
-
-- neuter PHP_CHECK_BUILTIN_CPU_SUPPORTS/PHP_CHECK_BUILTIN_CPU_INIT
-the avx/sse functions hiding behind these segfault on OpenBSD, can be
-tested with:
-
-php-8.0 -r "print(base64_encode('abcdef').PHP_EOL);"
 
 Index: build/php.m4
 --- build/php.m4.orig
@@ -33,42 +27,3 @@ Index: build/php.m4
  
    if test "$found_openssl" = "yes"; then
      PHP_EVAL_LIBLINE($OPENSSL_LIBS, $1)
-@@ -2652,18 +2654,8 @@ dnl
- dnl PHP_CHECK_BUILTIN_CPU_INIT
- dnl
- AC_DEFUN([PHP_CHECK_BUILTIN_CPU_INIT], [
--  AC_MSG_CHECKING([for __builtin_cpu_init])
-+  have_builtin_cpu_init=0
- 
--  AC_LINK_IFELSE([AC_LANG_PROGRAM([], [[
--    return __builtin_cpu_init()? 1 : 0;
--  ]])], [
--    have_builtin_cpu_init=1
--    AC_MSG_RESULT([yes])
--  ], [
--    have_builtin_cpu_init=0
--    AC_MSG_RESULT([no])
--  ])
--
-   AC_DEFINE_UNQUOTED([PHP_HAVE_BUILTIN_CPU_INIT],
-    [$have_builtin_cpu_init], [Whether the compiler supports __builtin_cpu_init])
- ])
-@@ -2672,17 +2664,7 @@ dnl
- dnl PHP_CHECK_BUILTIN_CPU_SUPPORTS
- dnl
- AC_DEFUN([PHP_CHECK_BUILTIN_CPU_SUPPORTS], [
--  AC_MSG_CHECKING([for __builtin_cpu_supports])
--
--  AC_LINK_IFELSE([AC_LANG_PROGRAM([], [[
--    return __builtin_cpu_supports("sse")? 1 : 0;
--  ]])], [
--    have_builtin_cpu_supports=1
--    AC_MSG_RESULT([yes])
--  ], [
--    have_builtin_cpu_supports=0
--    AC_MSG_RESULT([no])
--  ])
-+  have_builtin_cpu_supports=0
- 
-   AC_DEFINE_UNQUOTED([PHP_HAVE_BUILTIN_CPU_SUPPORTS],
-    [$have_builtin_cpu_supports], [Whether the compiler supports __builtin_cpu_supports])
