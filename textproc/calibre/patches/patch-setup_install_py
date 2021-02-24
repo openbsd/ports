@@ -1,11 +1,12 @@
-$OpenBSD: patch-setup_install_py,v 1.4 2015/12/15 22:03:59 sthen Exp $
+$OpenBSD: patch-setup_install_py,v 1.5 2021/02/24 14:13:48 rsadowski Exp $
 
 don't allow an updated patch to change the python shebang lines,
 they're correct with "env" here (handled in infrastructure).
 
---- setup/install.py.orig	Fri Dec 11 02:52:47 2015
-+++ setup/install.py	Tue Dec 15 21:19:57 2015
-@@ -250,7 +250,7 @@ class Install(Develop):
+Index: setup/install.py
+--- setup/install.py.orig
++++ setup/install.py
+@@ -263,7 +263,7 @@ class Install(Develop):
              reldir = os.path.relpath(x[0], self.SRC)
              destdir = os.path.join(dest, reldir)
              for f in x[-1]:

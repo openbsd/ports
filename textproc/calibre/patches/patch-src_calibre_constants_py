@@ -1,13 +1,14 @@
-$OpenBSD: patch-src_calibre_constants_py,v 1.6 2017/03/28 10:57:51 sthen Exp $
+$OpenBSD: patch-src_calibre_constants_py,v 1.7 2021/02/24 14:13:48 rsadowski Exp $
 
 - add OpenBSD to list of recognized BSDs.
 
 USB (and probably MTP) support needs more work, the current code only
 supports OSX, Windows, and Linux SYSFS.
 
---- src/calibre/constants.py.orig	Sat Mar 18 04:19:33 2017
-+++ src/calibre/constants.py	Tue Mar 28 11:49:40 2017
-@@ -22,7 +22,8 @@ isnewosx  = isosx and getattr(sys, 'new_app_bundle', F
+Index: src/calibre/constants.py
+--- src/calibre/constants.py.orig
++++ src/calibre/constants.py
+@@ -22,7 +22,8 @@ isnewosx  = ismacos and getattr(sys, 'new_app_bundle',
  isfreebsd = 'freebsd' in _plat
  isnetbsd = 'netbsd' in _plat
  isdragonflybsd = 'dragonfly' in _plat
@@ -15,14 +16,14 @@ supports OSX, Windows, and Linux SYSFS.
 +isopenbsd = 'openbsd' in _plat
 +isbsd = isfreebsd or isnetbsd or isdragonflybsd or isopenbsd
  ishaiku = 'haiku1' in _plat
- islinux   = not(iswindows or isosx or isbsd or ishaiku)
+ islinux   = not(iswindows or ismacos or isbsd or ishaiku)
  isfrozen  = hasattr(sys, 'frozen')
-@@ -171,7 +172,7 @@ class Plugins(collections.Mapping):
-             plugins.extend(['winutil', 'wpd', 'winfonts'])
-         if isosx:
-             plugins.append('usbobserver')
--        if islinux or isosx:
-+        if islinux or isosx or isbsd:
-             plugins.append('libusb')
-             plugins.append('libmtp')
-         self.plugins = frozenset(plugins)
+@@ -252,7 +253,7 @@ class ExtensionsImporter:
+             extra = ('winutil', 'wpd', 'winfonts', 'winsapi')
+         elif ismacos:
+             extra = ('usbobserver', 'cocoa', 'libusb', 'libmtp')
+-        elif isfreebsd or ishaiku or islinux:
++        elif isfreebsd or ishaiku or islinux or isopenbsd:
+             extra = ('libusb', 'libmtp')
+         else:
+             extra = ()

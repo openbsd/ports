@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_build_py,v 1.4 2017/05/13 18:26:03 espie Exp $
+$OpenBSD: patch-setup_build_py,v 1.5 2021/02/24 14:13:48 rsadowski Exp $
 Index: setup/build.py
 --- setup/build.py.orig
 +++ setup/build.py
-@@ -36,13 +36,6 @@ class Extension(object):
-         self.cflags = d['cflags'] = kwargs.get('cflags', [])
+@@ -65,15 +65,7 @@ class Extension(object):
+ 
          self.ldflags = d['ldflags'] = kwargs.get('ldflags', [])
          self.optional = d['options'] = kwargs.get('optional', False)
 -        of = kwargs.get('optimize_level', None)
@@ -13,15 +13,47 @@ Index: setup/build.py
 -            flag = '/O%d' if iswindows else '-O%d'
 -            of = flag % of
 -        self.cflags.insert(0, of)
-         self.qt_private_headers = d['qt_private_headers'] = kwargs.get('qt_private', [])
  
+-
+ def lazy_load(name):
+     if name.startswith('!'):
+         name = name[1:]
+@@ -184,8 +176,11 @@ def init_env():
+         ldflags.append('-shared')
  
-@@ -156,6 +149,8 @@ def init_env():
+     if isbsd:
++        sipdir = os.environ.get('SIP_DIR', '')
          cflags.append('-pthread')
          ldflags.append('-shared')
-         cflags.append('-I'+sysconfig.get_python_inc())
 +        cflags.append('-I'+os.path.join(sysconfig.PREFIX, 'include'))
 +        ldflags.append('-L'+os.path.join(sysconfig.PREFIX, 'lib'))
-         ldflags.append('-lpython'+sysconfig.get_python_version())
  
      if ishaiku:
+         cflags.append('-lpthread')
+@@ -221,8 +216,8 @@ def init_env():
+         cflags.append('-I%s'%sysconfig.get_python_inc())
+         ldflags.append('/LIBPATH:'+os.path.join(sysconfig.PREFIX, 'libs'))
+         linker = msvc.linker
+-    return namedtuple('Environment', 'cc cxx cflags ldflags linker make')(
+-        cc=cc, cxx=cxx, cflags=cflags, ldflags=ldflags, linker=linker, make=NMAKE if iswindows else 'make')
++    return namedtuple('Environment', 'cc cxx cflags ldflags linker make sipdir')(
++        cc=cc, cxx=cxx, cflags=cflags, ldflags=ldflags, linker=linker, make=NMAKE if iswindows else 'make', sipdir=sipdir if isbsd else '')
+ 
+ 
+ class Build(Command):
+@@ -487,6 +482,7 @@ project-factory = "pyqtbuild:PyQtProject"
+ 
+ [tool.sip.project]
+ sip-files-dir = "."
++sip-include-dirs = [ "{self.env.sipdir}" ]
+ 
+ [tool.sip.bindings.pictureflow]
+ headers = {ext.headers}
+@@ -495,6 +491,7 @@ exceptions = {needs_exceptions}
+ include-dirs = {ext.inc_dirs}
+ qmake-QT = ["widgets"]
+ sip-file = "{os.path.basename(sipf)}"
++tags = ["WS_X11"]
+ ''')
+         shutil.copy2(sipf, src_dir)
+ 
