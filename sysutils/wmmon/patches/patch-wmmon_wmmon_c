@@ -1,6 +1,7 @@
-$OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
---- wmmon/wmmon.c.orig	Tue May 19 15:13:16 1998
-+++ wmmon/wmmon.c	Wed Sep 17 08:36:25 2014
+$OpenBSD: patch-wmmon_wmmon_c,v 1.10 2021/02/24 21:11:06 tb Exp $
+Index: wmmon/wmmon.c
+--- wmmon/wmmon.c.orig
++++ wmmon/wmmon.c
 @@ -28,6 +28,10 @@
  	Changes:
  	----
@@ -12,7 +13,15 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  	18/05/1998 (Antoine Nulle, warp@xs4all.nl)
  		* MEM/SWAP/UPTIME only updated when visible
  		* Using global file descriptors to reduce file
-@@ -72,10 +76,22 @@
+@@ -65,6 +69,7 @@
+ 		* First Working Version
+ */
+ 
++#include <err.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <time.h>
+@@ -72,10 +77,22 @@
  #include <fcntl.h>
  #include <unistd.h>
  
@@ -35,7 +44,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  #include <X11/Xlib.h>
  #include <X11/xpm.h>
  #include <X11/extensions/shape.h>
-@@ -100,11 +116,11 @@
+@@ -100,11 +117,11 @@
   /* Global Variables */
  /********************/
  
@@ -51,7 +60,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  
  /* functions */
  void usage(void);
-@@ -114,17 +130,15 @@ void DrawStats_io(int *, int, int, int, int);
+@@ -114,17 +131,15 @@ void DrawStats_io(int *, int, int, int, int);
  
  void wmmon_routine(int, char **);
  
@@ -74,7 +83,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  	for (i=1; i<argc; i++) {
  		char *arg = argv[i];
  
-@@ -155,22 +169,22 @@ void main(int argc, char *argv[]) {
+@@ -155,22 +170,22 @@ void main(int argc, char *argv[]) {
  	}
  
  	wmmon_routine(argc, argv);
@@ -105,7 +114,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  } stat_dev;
  
  #define MAX_STAT_DEVICES (4)
-@@ -182,7 +196,6 @@ char		*middle_action;
+@@ -182,7 +197,6 @@ char		*middle_action;
  
  
  int checksysdevs(void);
@@ -113,7 +122,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  void DrawActive(char *);
  
  void update_stat_cpu(stat_dev *);
-@@ -213,8 +226,9 @@ void wmmon_routine(int argc, char **argv) {
+@@ -213,8 +227,9 @@ void wmmon_routine(int argc, char **argv) {
  	long		istat;
  	long		idle;
  
@@ -125,7 +134,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  	char		*p;
  
  	int			xpm_X = 0, xpm_Y = 0;
-@@ -223,22 +237,36 @@ void wmmon_routine(int argc, char **argv) {
+@@ -223,22 +238,36 @@ void wmmon_routine(int argc, char **argv) {
  	long		ref_time = 0;
  	long		cnt_time;
  
@@ -172,7 +181,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  		stat_device[i].hisaddcnt = 0;
  	}
  
-@@ -246,38 +274,40 @@ void wmmon_routine(int argc, char **argv) {
+@@ -246,38 +275,40 @@ void wmmon_routine(int argc, char **argv) {
  	if (RIGHT_ACTION) right_action = strdup(RIGHT_ACTION);
  	if (MIDDLE_ACTION) middle_action = strdup(MIDDLE_ACTION);
  
@@ -230,7 +239,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  	if (stat_current == 2) {
  		xpm_X = 64;
  		setMaskXY(-64, 0);
-@@ -288,7 +318,7 @@ void wmmon_routine(int argc, char **argv) {
+@@ -288,7 +319,7 @@ void wmmon_routine(int argc, char **argv) {
  	DrawActive(stat_device[stat_current].name);
  
  	while (1) {
@@ -239,7 +248,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  
  		waitpid(0, NULL, WNOHANG);
  
-@@ -338,7 +368,7 @@ void wmmon_routine(int argc, char **argv) {
+@@ -338,7 +369,7 @@ void wmmon_routine(int argc, char **argv) {
  
  			/*----------- online tijd neerzetten! ----------*/
  			
@@ -248,7 +257,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  
  			/* cnt_time = uptime in seconden */
  			/*
-@@ -405,7 +435,6 @@ void wmmon_routine(int argc, char **argv) {
+@@ -405,7 +436,6 @@ void wmmon_routine(int argc, char **argv) {
  			case DestroyNotify:
  				XCloseDisplay(display);
  				exit(0);
@@ -256,7 +265,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  			case ButtonPress:
  				but_stat = CheckMouseRegion(Event.xbutton.x, Event.xbutton.y);
  				break;
-@@ -430,7 +459,6 @@ void wmmon_routine(int argc, char **argv) {
+@@ -430,7 +460,6 @@ void wmmon_routine(int argc, char **argv) {
  						}
  					case 1:
  						stat_current++;
@@ -264,7 +273,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  						if (stat_current == stat_online)
  							stat_current = 0;
  
-@@ -460,146 +488,116 @@ void wmmon_routine(int argc, char **argv) {
+@@ -460,146 +489,116 @@ void wmmon_routine(int argc, char **argv) {
  
  void update_stat_cpu(stat_dev *st) {
  
@@ -488,7 +497,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.9 2014/09/17 14:37:23 espie Exp $
  
  	return 3;
  }
-@@ -733,7 +731,35 @@ void usage(void) {
+@@ -733,7 +732,35 @@ void usage(void) {
  
  void printversion(void) {
  
