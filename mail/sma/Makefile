@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/24 18:06:32 tb Exp $
 
 COMMENT=	Sendmail Log Analysis Report
 
 VERSION=	1.4
 DISTNAME=	sma-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.klake.org/sma/
