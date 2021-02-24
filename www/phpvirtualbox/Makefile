@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/11/23 14:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/24 16:49:02 sthen Exp $
 
 COMMENT=		web-based VirtualBox front-end
 	
@@ -6,13 +6,13 @@ GH_PROJECT=		phpvirtualbox
 GH_ACCOUNT=		phpvirtualbox
 GH_TAGNAME=		5.2-1
 PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/-/./}
+REVISION=		0
 
 CATEGORIES=		www sysutils
 
 HOMEPAGE=		http://sourceforge.net/projects/phpvirtualbox/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
-
 # GPLv3
 PERMIT_PACKAGE=	Yes
 

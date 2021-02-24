@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 2020/12/16 21:26:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/24 16:49:00 sthen Exp $
 
 COMMENT=	Icinga PHP Library
+REVISION=	0
 
 MODULE_NAME=	ipl
 MODULE_VERSION=	v0.5.0

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2019/09/26 21:59:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/02/24 16:49:01 sthen Exp $
 
 COMMENT=	PHP class for generating PDF documents
 DISTNAME =	tcpdf_6_2_13
 PKGNAME =	tcpdf-6.2.13
-REVISION =	2
+REVISION =	3
 CATEGORIES=	textproc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcpdf/}

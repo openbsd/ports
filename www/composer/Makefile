@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/02 09:32:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/24 16:49:01 sthen Exp $
 
 COMMENT=	dependency manager for PHP
 
@@ -13,6 +13,7 @@ DISTNAME=	composer-$V
 DISTFILES=	composer-$V{composer}.phar
 EXTRACT_SUFX=	.phar
 EXTRACT_ONLY=
+REVISION=	0
 
 HOMEPAGE=	https://getcomposer.org/
 

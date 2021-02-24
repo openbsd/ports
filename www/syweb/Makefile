@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2020/12/30 12:47:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/24 16:49:02 sthen Exp $
 
 COMMENT=	web frontend to symon
 DISTNAME=	syweb-0.65
-REVISION=	10
+REVISION=	11
 CATEGORIES=	www sysutils
 
 HOMEPAGE=	http://www.xs4all.nl/~wpd/symon
@@ -18,6 +18,7 @@ NO_BUILD=	Yes
 PREFIX=		${VARBASE}/www
 
 MODULES=	lang/php
+MODPHP_VERSION=	7.3
 RUN_DEPENDS=	net/rrdtool
 
 WRKDIST=	${WRKDIR}/syweb

@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.64 2021/02/12 10:57:32 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.65 2021/02/24 16:49:01 sthen Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
 V=			20.0.7
 DISTNAME=		nextcloud-${V}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 CATEGORIES=		www
 
 HOMEPAGE=		https://nextcloud.com/
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
-
 # AGPLv3 (GNU Affero Public License)
 # jQuery: MIT / GPLv3
 # HTTP: 3 clause BSD

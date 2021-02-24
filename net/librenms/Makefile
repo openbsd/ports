@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2021/02/23 19:39:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.122 2021/02/24 16:49:01 sthen Exp $
 
 COMMENT=	auto-discovering network management/monitoring system
 
@@ -8,8 +8,6 @@ GH_PROJECT=	librenms
 GH_TAGNAME=	21.2.0
 DISTFILES=	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH=		0
-
-MODPHP_VERSION=	7.4
 
 CATEGORIES=	net www
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2019/09/26 21:59:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/24 16:49:02 sthen Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
 V=			2.18
 DISTNAME=		selfoss-$V
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		www
 

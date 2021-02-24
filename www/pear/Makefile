@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2021/01/25 14:01:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/24 16:49:01 sthen Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
 
-# beware, update-plist may try to get rid of a required .lock file
+# XXX beware! update-plist will try to get rid of a required .lock file!
 
 VERSION=	1.10.19
-REVISION-main=	0
+REVISION=	1
 DISTNAME=	go-pear-${VERSION}
 PKGNAME=	pear-${VERSION}
 DISTFILES=	go-pear-${VERSION}{go-pear}.phar
@@ -57,5 +57,6 @@ do-install:
 	touch ${WRKINST}${PREFIX-main}/pear/{lib/,}.lock
 	rm ${PREFIX}/bin/{pear,peardev,pecl}{.beforesubst,.orig}*
 	rmdir ${WRKINST}${PREFIX-main}/pear/{cfg,htdocs}
+	@printf "\\n*** beware if running 'make plist', the lock file should not be removed!\\n\\n"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2020/08/31 19:04:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2021/02/24 16:49:01 sthen Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
@@ -7,9 +7,9 @@ DISTNAME =	dokuwiki-${VERSION}
 PKGNAME =	dokuwiki-${VERSION:S/-/./g}
 CATEGORIES =	www
 HOMEPAGE =	https://www.dokuwiki.org/dokuwiki
+REVISION =	0
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
-
 # GPLv2
 PERMIT_PACKAGE =	Yes
 

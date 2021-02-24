@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/06 20:33:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/24 16:49:00 sthen Exp $
 
 COMMENT=	roundcube plugin: DKIM verification status
 
@@ -6,7 +6,6 @@ GH_ACCOUNT=	JVEHENT
 GH_PROJECT=	dkimstatus
 GH_TAGNAME=	v0.9.5
 PKGNAME=	rcube-${DISTNAME}
-MODPHP_VERSION=	7.4
 REVISION=	5
 
 CATEGORIES=	mail www

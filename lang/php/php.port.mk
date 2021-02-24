@@ -1,8 +1,8 @@
-# $OpenBSD: php.port.mk,v 1.30 2021/01/25 14:01:51 sthen Exp $
+# $OpenBSD: php.port.mk,v 1.31 2021/02/24 16:48:59 sthen Exp $
 
 CATEGORIES+=		lang/php
 
-MODPHP_VERSION?=	7.3
+MODPHP_VERSION?=	7.4
 
 .if ${MODPHP_VERSION} == 7.2
 MODPHP_FLAVOR = ,php72

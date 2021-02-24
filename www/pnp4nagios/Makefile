@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/09/26 21:59:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/24 16:49:02 sthen Exp $
 
 COMMENT-main =	Nagios/Icinga addon which graphs performance data
 COMMENT-cgi =	pnp4nagios CGI scripts
@@ -7,15 +7,14 @@ V = 		0.6.26
 DISTNAME =	pnp4nagios-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-cgi =	pnp4nagios-cgi-${V}
-REVISION-main = 2
-REVISION-cgi =	2
+REVISION-main = 3
+REVISION-cgi =	3
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://docs.pnp4nagios.org/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
-
 # GPLv2
 PERMIT_PACKAGE =	Yes
 

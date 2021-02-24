@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2021/02/24 13:05:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2021/02/24 16:49:01 sthen Exp $
 
 ONLY_FOR_ARCHS=	${LP64_ARCHS} # time_t format string issues
 
@@ -10,6 +10,8 @@ DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
 CATEGORIES=	net
+
+REVISION-web=	0
 
 HOMEPAGE=	https://www.nagios.org/
 

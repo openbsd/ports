@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/06 11:17:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/24 16:49:01 sthen Exp $
 
 COMMENT =	command line access to most of Drupal
 
 CATEGORIES =	www devel
 
 DISTNAME=	drush-8.3.5
+REVISION=	0
 
 HOMEPAGE=	https://www.drush.org/
 

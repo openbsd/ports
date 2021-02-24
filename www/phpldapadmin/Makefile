@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2020/04/26 15:21:11 robert Exp $
+# $OpenBSD: Makefile,v 1.52 2021/02/24 16:49:02 sthen Exp $
 
 COMMENT=	web-based LDAP browser to manage LDAP servers
 
 DISTNAME=	phpldapadmin-${GH_TAGNAME}
 CATEGORIES=	www
 HOMEPAGE=	https://github.com/leenooks/phpLDAPadmin
+REVISION=	0
 
 GH_ACCOUNT=	leenooks
 GH_TAGNAME=	1.2.5
