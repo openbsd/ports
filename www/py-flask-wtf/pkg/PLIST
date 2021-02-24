@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/02/20 22:27:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/02/24 02:22:04 daniel Exp $
+@conflict py-flask-wtf-*
+@pkgpath www/py-flask-wtf
 lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

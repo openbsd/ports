@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/30 13:04:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/24 02:22:03 daniel Exp $
+@conflict py-flask-sqlalchemy-*
+@pkgpath databases/py-flask-sqlalchemy
 lib/python${MODPY_VERSION}/site-packages/Flask_SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask_SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask_SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

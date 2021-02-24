@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/20 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/24 02:22:04 daniel Exp $
 
 COMMENT=	flexible forms validation and rendering library
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=2.1
 DISTNAME=	WTForms-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	www
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	http://wtforms.simplecodes.com/
 
@@ -19,10 +19,10 @@ MODPY_PI =		Yes
 EXTRACT_SUFX=		.zip
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR  =		python3
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			textproc/py-sphinx,python3>=1.5
+			textproc/py-sphinx${MODPY_FLAVOR}>=1.5
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS=	Yes

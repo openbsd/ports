@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/24 02:22:03 daniel Exp $
 
 COMMENT =	python svg graph plotting library
 
 MODPY_EGG_VERSION = 2.4.0
 DISTNAME =	pygal-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 
@@ -19,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR  =	python3
 
 BUILD_DEPENDS +=	devel/py-test-runner${MODPY_FLAVOR}
 

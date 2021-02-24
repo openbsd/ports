@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/16 06:17:50 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/24 02:22:03 daniel Exp $
+@conflict py-pygal-*
+@pkgpath graphics/py-pygal
 @comment bin/pygal_gen.py
 lib/python${MODPY_VERSION}/site-packages/pygal/
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

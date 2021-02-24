@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.544 2021/02/20 17:17:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.545 2021/02/24 02:22:02 daniel Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -249,7 +249,6 @@
      SUBDIR += py-cycler
      SUBDIR += py-cycler,python3
      SUBDIR += py-dot,python3
-     SUBDIR += py-pygal
      SUBDIR += py-pygal,python3
      SUBDIR += py-imageio,python3
      SUBDIR += py-imagesize,python3
