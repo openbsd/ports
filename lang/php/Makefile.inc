@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.156 2021/02/24 18:00:45 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.157 2021/02/24 19:14:11 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -169,6 +169,9 @@ LIB_DEPENDS$i +=	devel/gettext,-runtime \
 WANTLIB$i +=		pcre2-8
 LIB_DEPENDS$i +=	devel/pcre2
 .  endif
+.  if !${PV:M7*}
+WANTLIB$i +=		util
+.  endif
 .endfor
 
 #
@@ -206,9 +209,15 @@ CONFIGURE_ARGS+=	--enable-dba=shared \
 # enchant
 COMMENT-enchant=	enchant library extensions for php
 HOMEPAGE-enchant=	https://www.php.net/enchant
+.if ${PV:M7*}
 LIB_DEPENDS-enchant=	textproc/enchant
 WANTLIB-enchant=	${COMPILER_LIBCXX} enchant glib-2.0 gmodule-2.0 \
 			iconv intl
+.else
+LIB_DEPENDS-enchant=	textproc/enchant2
+WANTLIB-enchant=	${COMPILER_LIBCXX} aspell enchant-2 glib-2.0 \
+			gmodule-2.0 iconv intl
+.endif
 .if ${BUILD_PACKAGES:M-enchant}
 CONFIGURE_ARGS+=	--with-enchant=shared,${LOCALBASE}
 .endif
@@ -220,9 +229,9 @@ LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/libwebp \
 			graphics/png
 WANTLIB-gd+=		freetype jpeg m png pthread webp z
-.if ${BUILD_PACKAGES:M-gd}
-.  if ${PV:M7.2} || ${PV:M7.3}
-# bundled gd
+.if ${PV:M7.2} || ${PV:M7.3}
+# bundled gd in 7.2/7.3
+.  if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-freetype-dir=${X11BASE} \
 			--with-jpeg-dir=${LOCALBASE} \
@@ -230,19 +239,21 @@ CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-webp-dir=${LOCALBASE} \
 			--with-xpm-dir=${X11BASE} \
 			--with-zlib-dir=/usr
+.  endif
 WANTLIB-gd+=		X11 Xpm xcb
-.  else
-# standalone gd
+.else
+# standalone gd in 7.4/8
+.  if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-external-gd \
 			--enable-gd=shared \
 			--with-freetype=${X11BASE} \
 			--with-jpeg=${LOCALBASE} \
 			--with-webp=${LOCALBASE} \
 			--with-xpm=${X11BASE}
+.  endif
 WANTLIB-gd+=		${COMPILER_LIBCXX} \
 			expat fontconfig gd iconv lzma tiff zstd
 LIB_DEPENDS-gd=		graphics/gd
-.  endif
 .endif
 
 # gmp
