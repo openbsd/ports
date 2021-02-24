@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile.inc,v 1.155 2021/02/24 17:31:58 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.156 2021/02/24 18:00:45 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=		server-side HTML-embedded scripting language
 
 PV=		${PHP_VERSION:R}
+.if ${PHP_VERSION:M7*}
 MV=		${PV:R}
+.else
+MV=
+.endif
 SV=		${PV:S/.//}
 
 PKGNAME-main?=		php-${PHP_VERSION}
@@ -216,13 +220,9 @@ LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/libwebp \
 			graphics/png
 WANTLIB-gd+=		freetype jpeg m png pthread webp z
-# for bundled gd
-WANTLIB-gd+=		X11 Xpm xcb
-# for standalone gd (needs more testing, defer to post 6.7)
-#WANTLIB-gd+=		expat fontconfig iconv lzma tiff zstd
-#LIB_DEPENDS-gd=	graphics/gd
 .if ${BUILD_PACKAGES:M-gd}
 .  if ${PV:M7.2} || ${PV:M7.3}
+# bundled gd
 CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-freetype-dir=${X11BASE} \
 			--with-jpeg-dir=${LOCALBASE} \
@@ -230,12 +230,18 @@ CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-webp-dir=${LOCALBASE} \
 			--with-xpm-dir=${X11BASE} \
 			--with-zlib-dir=/usr
+WANTLIB-gd+=		X11 Xpm xcb
 .  else
-CONFIGURE_ARGS+=	--enable-gd=shared \
+# standalone gd
+CONFIGURE_ARGS+=	--with-external-gd \
+			--enable-gd=shared \
 			--with-freetype=${X11BASE} \
 			--with-jpeg=${LOCALBASE} \
 			--with-webp=${LOCALBASE} \
 			--with-xpm=${X11BASE}
+WANTLIB-gd+=		${COMPILER_LIBCXX} \
+			expat fontconfig gd iconv lzma tiff zstd
+LIB_DEPENDS-gd=		graphics/gd
 .  endif
 .endif
 

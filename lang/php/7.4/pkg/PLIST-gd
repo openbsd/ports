@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gd,v 1.3 2021/02/24 17:31:59 sthen Exp $
+@comment $OpenBSD: PLIST-gd,v 1.4 2021/02/24 18:00:45 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-gd-${PHP_PKGSPEC}
@@ -7,20 +7,4 @@ share/examples/php-${PV}/gd.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/gd.ini
 share/php-${PV}/include/ext/gd/
 share/php-${PV}/include/ext/gd/gd_compat.h
-share/php-${PV}/include/ext/gd/libgd/
-share/php-${PV}/include/ext/gd/libgd/bmp.h
-share/php-${PV}/include/ext/gd/libgd/gd.h
-share/php-${PV}/include/ext/gd/libgd/gd_errors.h
-share/php-${PV}/include/ext/gd/libgd/gd_intern.h
-share/php-${PV}/include/ext/gd/libgd/gd_io.h
-share/php-${PV}/include/ext/gd/libgd/gd_tga.h
-share/php-${PV}/include/ext/gd/libgd/gdcache.h
-share/php-${PV}/include/ext/gd/libgd/gdfontg.h
-share/php-${PV}/include/ext/gd/libgd/gdfontl.h
-share/php-${PV}/include/ext/gd/libgd/gdfontmb.h
-share/php-${PV}/include/ext/gd/libgd/gdfonts.h
-share/php-${PV}/include/ext/gd/libgd/gdfontt.h
-share/php-${PV}/include/ext/gd/libgd/gdhelpers.h
-share/php-${PV}/include/ext/gd/libgd/jisx0208.h
-share/php-${PV}/include/ext/gd/libgd/wbmp.h
 share/php-${PV}/include/ext/gd/php_gd.h
