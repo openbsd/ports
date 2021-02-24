@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/21 17:00:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/24 21:23:16 sthen Exp $
 
 COMMENT =	YAML-1.1 parser and emitter for PHP
 
 DISTNAME =	yaml-2.2.1
 DIST_SUBDIR =	pecl
+REVISION =	0
 
 CATEGORIES =	textproc
 

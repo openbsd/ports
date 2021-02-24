@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.668 2021/02/20 15:51:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.669 2021/02/24 21:23:15 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -362,6 +362,7 @@
      SUBDIR += pecl-yaml,php72
      SUBDIR += pecl-yaml,php73
      SUBDIR += pecl-yaml,php74
+     SUBDIR += pecl-yaml,php80
      SUBDIR += pinfo
      SUBDIR += pod2mdoc
      SUBDIR += podofo

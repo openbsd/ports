@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2020/06/12 14:27:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/24 21:23:16 sthen Exp $
 
 COMMENT=	PHP interface to memcached via libmemcached
 
 DISTNAME=	memcached-3.1.5
+REVISION=	0
 
 # PHP
 PERMIT_PACKAGE=	Yes

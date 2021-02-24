@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1008 2021/02/24 12:42:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.1009 2021/02/24 21:23:15 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -381,27 +381,35 @@
      SUBDIR += pecl-chroot,php72
      SUBDIR += pecl-chroot,php73
      SUBDIR += pecl-chroot,php74
+     #SUBDIR += pecl-chroot,php80 not yet
      SUBDIR += pecl-memcached,php72
      SUBDIR += pecl-memcached,php73
      SUBDIR += pecl-memcached,php74
+     SUBDIR += pecl-memcached,php80
      SUBDIR += pecl-pecl_http,php72
      SUBDIR += pecl-pecl_http,php73
      SUBDIR += pecl-pecl_http,php74
+     SUBDIR += pecl-pecl_http,php80
      SUBDIR += pecl-pledge,php72
      SUBDIR += pecl-pledge,php73
      SUBDIR += pecl-pledge,php74
+     SUBDIR += pecl-pledge,php80
      SUBDIR += pecl-proctitle,php72
      SUBDIR += pecl-proctitle,php73
      SUBDIR += pecl-proctitle,php74
+     #SUBDIR += pecl-proctitle,php80 not yet
      SUBDIR += pecl-propro,php72
      SUBDIR += pecl-propro,php73
      SUBDIR += pecl-propro,php74
+     #SUBDIR += pecl-propro,php80 not yet
      SUBDIR += pecl-raphf,php72
      SUBDIR += pecl-raphf,php73
      SUBDIR += pecl-raphf,php74
+     SUBDIR += pecl-raphf,php80
      SUBDIR += pecl-ssh2,php72
      SUBDIR += pecl-ssh2,php73
      SUBDIR += pecl-ssh2,php74
+     #SUBDIR += pecl-ssh2,php80 not yet
      SUBDIR += pelican
      SUBDIR += perlbal
      SUBDIR += php-markdown

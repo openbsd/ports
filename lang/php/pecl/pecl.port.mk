@@ -1,10 +1,10 @@
-# $OpenBSD: pecl.port.mk,v 1.18 2021/01/26 14:34:47 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.19 2021/02/24 21:23:17 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
 
-FLAVORS ?= php72 php73 php74
-FLAVOR ?= php73
+FLAVORS ?= php72 php73 php74 php80
+FLAVOR ?= php74
 
 # MODPECL_DEFAULTV is used in PLISTs so that @pkgpath markers are only
 # applied for packages built against the "ports default" version of PHP,
@@ -12,7 +12,7 @@ FLAVOR ?= php73
 # flavour PFRAG files.
 MODPECL_DEFAULTV ?= "@comment "
 MODPHP_VERSION = ${FLAVOR:C/php([0-9])([0-9])/\1.\2/}
-.if ${FLAVOR} == php73
+.if ${FLAVOR} == php74
 MODPECL_DEFAULTV = ""
 .endif
 MODPHP_BUILDDEP = Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.545 2021/02/24 02:22:02 daniel Exp $
+# $OpenBSD: Makefile,v 1.546 2021/02/24 21:23:15 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -231,6 +231,7 @@
      SUBDIR += pecl-imagick,php72
      SUBDIR += pecl-imagick,php73
      SUBDIR += pecl-imagick,php74
+     #SUBDIR += pecl-imagick,php80 not yet
      SUBDIR += pho
      SUBDIR += piglit
      SUBDIR += pinta

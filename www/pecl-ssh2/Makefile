@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/24 21:14:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/24 21:23:17 sthen Exp $
 
 COMMENT=	PHP bindings for the libssh2 library
 
 DISTNAME=	ssh2-1.2
-REVISION=	1
+REVISION=	2
 
 # PHP
 PERMIT_PACKAGE=	Yes

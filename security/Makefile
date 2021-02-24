@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.614 2021/02/23 10:46:18 kn Exp $
+# $OpenBSD: Makefile,v 1.615 2021/02/24 21:23:16 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -253,6 +253,7 @@
      SUBDIR += pecl-mcrypt,php72
      SUBDIR += pecl-mcrypt,php73
      SUBDIR += pecl-mcrypt,php74
+     SUBDIR += pecl-mcrypt,php80
      SUBDIR += pgp5
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr

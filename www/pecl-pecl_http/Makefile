@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/12/11 16:08:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/24 21:23:16 sthen Exp $
 
 BROKEN= builds, but has problems picking up libcurl
 
 COMMENT=	extended HTTP support
 
 DISTNAME=	pecl_http-3.2.0
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://pecl.php.net/package/pecl_http
 
