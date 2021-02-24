@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.39 2021/02/20 14:56:34 abieber Exp $
+# $OpenBSD: go.port.mk,v 1.40 2021/02/24 14:44:15 espie Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -61,10 +61,10 @@ MODGO_TEST_CMD +=	-ldflags="${MODGO_LDFLAGS}"
 .endif
 
 .if defined(MODGO_MODNAME)
-.for _s in ${_subst}
+.  for _s in ${_subst}
 MODGO_MODNAME_ESC =	${MODGO_MODNAME${_s}}
 DISTNAME_ESC =		${DISTNAME${_s}}
-.endfor
+.  endfor
 
 EXTRACT_SUFX ?=		.zip
 PKGNAME ?=		${DISTNAME:S/-v/-/}
@@ -115,9 +115,9 @@ MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
 .else
 WRKSRC ?=		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
 MODGO_SETUP_WORKSPACE =	ln -sf ${WRKSRC} ${WRKDIR}/${MODGO_MODNAME};
-.for _MODGO_m in ${DISTFILES:Mgo_modules/*:C/{.*//}
+.  for _MODGO_m in ${DISTFILES:Mgo_modules/*:C/{.*//}
 MODGO_SETUP_WORKSPACE += ${INSTALL} -D ${DISTDIR}/${_MODGO_m} ${WRKDIR}/${_MODGO_m};
-.endfor
+.  endfor
 .endif
 
 INSTALL_STRIP =
@@ -176,9 +176,9 @@ do-test:
 
 # modgo-gen-modules will output MODGO_MODULES and MODGO_MODFILES
 modgo-gen-modules:
-.    if empty(ALL_TARGET)
+.if empty(ALL_TARGET)
 	@${ECHO_MSG} "No ALL_TARGET set"
 	@exit 1
-.    else
+.else
 	@${_PERLSCRIPT}/modgo-gen-modules-helper ${ALL_TARGET}
-.    endif
+.endif
