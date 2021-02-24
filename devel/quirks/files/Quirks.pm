@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1211 2021/02/24 12:42:41 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1212 2021/02/24 14:10:53 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -589,6 +589,7 @@ my $stem_extensions = {
 	'py-flask-wtf' => 'py3-flask-wtf',
 	'py-pygal' => 'py3-pygal',
 	'py-wtforms' => 'py3-wtforms',
+	'py-apsw' => 'py3-apsw',
 };
 
 my $obsolete_reason = {
