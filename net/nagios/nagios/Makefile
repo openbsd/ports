@@ -1,26 +1,24 @@
-# $OpenBSD: Makefile,v 1.86 2019/09/26 21:59:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2021/02/24 13:05:14 sthen Exp $
 
 ONLY_FOR_ARCHS=	${LP64_ARCHS} # time_t format string issues
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		4.3.1
+V=		4.4.6
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
 CATEGORIES=	net
-REVISION-main=	1
-REVISION-web=	2
 
-HOMEPAGE=	http://www.nagios.org/
+HOMEPAGE=	https://www.nagios.org/
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main -web
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
+MASTER_SITES=	https://assets.nagios.com/downloads/nagioscore/releases/
 
 MODULES=	lang/php
 
@@ -36,7 +34,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--datadir=${PREFIX-web}/nagios \
 		--libexecdir=${PREFIX}/libexec/nagios \
-		--sbindir=${PREFIX-web}/cgi-bin/nagios \
+		--with-cgibindir=${PREFIX-web}/cgi-bin/nagios \
 		--with-cgiurl=/cgi-bin/nagios \
 		--with-checkresult-dir=/var/spool/nagios \
 		--with-command-group=www \

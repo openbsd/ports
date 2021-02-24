@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.11 2017/04/17 17:29:13 rpe Exp $
+@comment $OpenBSD: PLIST-web,v 1.12 2021/02/24 13:05:14 sthen Exp $
 cgi-bin/nagios/
 @bin cgi-bin/nagios/archivejson.cgi
 @bin cgi-bin/nagios/avail.cgi
@@ -19,20 +19,20 @@ cgi-bin/nagios/
 @bin cgi-bin/nagios/summary.cgi
 @bin cgi-bin/nagios/tac.cgi
 @bin cgi-bin/nagios/trends.cgi
-conf/modules.sample/nagios.conf.dist
 @sample /var/www/conf/modules.sample/
+conf/modules.sample/nagios.conf.dist
 @sample /var/www/conf/modules.sample/nagios.conf
 nagios/angularjs/
 nagios/angularjs/angular-1.3.9/
 nagios/angularjs/angular-1.3.9/angular.min.js
 nagios/angularjs/angular-1.3.9/angular.min.js.map
-nagios/angularjs/ui-bootstrap-tpls-0.12.0.min.js
-nagios/angularjs/ui-utils-0.2.1/
-nagios/angularjs/ui-utils-0.2.1/ui-utils.js
-nagios/bootstrap-3.3.0/
-nagios/bootstrap-3.3.0/css/
-nagios/bootstrap-3.3.0/css/bootstrap-theme.min.css
-nagios/bootstrap-3.3.0/css/bootstrap.min.css
+nagios/angularjs/ui-bootstrap-tpls-0.14.3.min.js
+nagios/angularjs/ui-utils-0.2.3/
+nagios/angularjs/ui-utils-0.2.3/ui-utils.js
+nagios/bootstrap-3.3.7/
+nagios/bootstrap-3.3.7/css/
+nagios/bootstrap-3.3.7/css/bootstrap-theme.min.css
+nagios/bootstrap-3.3.7/css/bootstrap.min.css
 nagios/config.inc.php
 nagios/contexthelp/
 nagios/contexthelp/A1.html
@@ -377,7 +377,7 @@ nagios/js/histogram-events.js
 nagios/js/histogram-form.js
 nagios/js/histogram-graph.js
 nagios/js/histogram.js
-nagios/js/jquery-1.7.1.min.js
+nagios/js/jquery-1.12.4.min.js
 nagios/js/jsonquery.js
 nagios/js/map-directive.js
 nagios/js/map-form.js

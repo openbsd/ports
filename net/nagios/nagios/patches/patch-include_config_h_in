@@ -1,7 +1,9 @@
-$OpenBSD: patch-include_config_h_in,v 1.9 2017/04/17 17:29:13 rpe Exp $
---- include/config.h.in.orig	Thu Feb 23 21:00:40 2017
-+++ include/config.h.in	Fri Apr 14 13:28:45 2017
-@@ -129,11 +129,6 @@
+$OpenBSD: patch-include_config_h_in,v 1.10 2021/02/24 13:05:14 sthen Exp $
+
+Index: include/config.h.in
+--- include/config.h.in.orig
++++ include/config.h.in
+@@ -135,11 +135,6 @@
  #endif
  #endif
  
@@ -13,7 +15,7 @@ $OpenBSD: patch-include_config_h_in,v 1.9 2017/04/17 17:29:13 rpe Exp $
  #undef HAVE_LIMITS_H
  #ifdef HAVE_LIMITS_H
  #include <limits.h>
-@@ -221,6 +216,11 @@
+@@ -227,6 +222,11 @@
  #undef HAVE_SYS_TIMEB_H
  #if HAVE_SYS_TIMEB_H
  #include <sys/timeb.h>

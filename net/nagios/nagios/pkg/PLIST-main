@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2018/09/04 12:46:18 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2021/02/24 13:05:14 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _nagios:550
 @newuser _nagios:550:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
 @extraunexec rm -rf ${CHROOT}${SYSCONFDIR}/nagios/*
 @extraunexec rm -f ${CHROOT}/var/log/nagios/archives/*
+@rcscript ${RCDIR}/nagios
+@bin bin/nagios
 @bin bin/nagiostats
-@bin sbin/nagios
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/nagios/
 @sample ${CHROOT}${SYSCONFDIR}/nagios/
@@ -53,4 +54,3 @@ share/examples/nagios/resource.cfg
 @extra ${CHROOT}/var/nagios/retention.dat
 @extra ${CHROOT}/var/nagios/status.dat
 @extra ${CHROOT}/var/nagios/rw/nagios.cmd
-@rcscript ${RCDIR}/nagios
