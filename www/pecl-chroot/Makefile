@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/12/11 16:08:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/24 21:14:58 sthen Exp $
 
 COMMENT=	PHP support for chroot(2)
 
@@ -14,6 +14,7 @@ WANTLIB=	c
 
 # not really PECL but close enough
 MODULES=	lang/php/pecl
+FLAVORS=	php72 php73 php74
 CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
