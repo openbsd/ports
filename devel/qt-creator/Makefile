@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2021/02/24 18:21:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.74 2021/02/24 18:43:47 naddy Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -46,8 +46,8 @@ WANTLIB += Qt5Quick Qt5QuickWidgets Qt5SerialPort Qt5Sql Qt5Svg
 WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5Xml c clang m yaml-cpp
 
-MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/.${V}/ \
-		https://mirrors.ocf.berkeley.edu/qt/official_releases/qtcreator/${V:R}/.${V}/
+MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
+		https://mirrors.ocf.berkeley.edu/qt/official_releases/qtcreator/${V:R}/${V}/
 
 MODULES =	x11/qt5 \
 		lang/python \
