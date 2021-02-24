@@ -1,0 +1,16 @@
+$OpenBSD: patch-Zend_zend_portability_h,v 1.1 2021/02/24 20:56:22 sthen Exp $
+
+PHP_HAVE_BUILTIN_CPU_* are either 0 or 1, not undef/def.
+
+Index: Zend/zend_portability.h
+--- Zend/zend_portability.h.orig
++++ Zend/zend_portability.h
+@@ -474,7 +474,7 @@ extern "C++" {
+ /* Only use ifunc resolvers if we have __builtin_cpu_supports() and __builtin_cpu_init(),
+  * otherwise the use of zend_cpu_supports() may not be safe inside ifunc resolvers. */
+ #if defined(HAVE_FUNC_ATTRIBUTE_IFUNC) && defined(HAVE_FUNC_ATTRIBUTE_TARGET) && \
+-	defined(PHP_HAVE_BUILTIN_CPU_SUPPORTS) && defined(PHP_HAVE_BUILTIN_CPU_INIT)
++	PHP_HAVE_BUILTIN_CPU_SUPPORTS && PHP_HAVE_BUILTIN_CPU_INIT
+ # define ZEND_INTRIN_HAVE_IFUNC_TARGET 1
+ #endif
+ 
