@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1208 2021/02/24 02:22:03 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1209 2021/02/24 07:59:36 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2197,8 +2197,8 @@ my @msg = (
 	"upstream is dead, default settings cause crash when connecting to mpd", #37
 	"icinga 1 is end-of-life, migrate to icinga 2 (needs config rewrite)", #38
 	"Flash/SWF is end-of-life", #39
-	"ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark" #40
-	"Upstrem moved to unversioned tarballs, use the plan9port (same upstream) package instead" #41
+	"ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark", #40
+	"upstream moved to unversioned tarballs, use the plan9port (same upstream) package instead", #41
 );
 
 # ->is_base_system($handle, $state):
