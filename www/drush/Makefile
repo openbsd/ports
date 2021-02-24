@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/24 16:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/24 23:20:35 sthen Exp $
 
 COMMENT =	command line access to most of Drupal
 
 CATEGORIES =	www devel
 
-DISTNAME=	drush-8.3.5
-REVISION=	0
+DISTNAME=	drush-8.4.6
 
 HOMEPAGE=	https://www.drush.org/
 
-# packaged from https://github.com/drush-ops/drush/tree/8.3.5
-# plus dependencies fetched using "composer install" as of 20200615
+# packaged from https://github.com/drush-ops/drush/tree/8.4.6
+# plus dependencies fetched using "composer install" as of 20210224
 MASTER_SITES=	https://spacehopper.org/mirrors/
 
 MODULES=	lang/php

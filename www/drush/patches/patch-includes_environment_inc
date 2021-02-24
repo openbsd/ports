@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_environment_inc,v 1.4 2020/07/06 11:17:47 sthen Exp $
+$OpenBSD: patch-includes_environment_inc,v 1.5 2021/02/24 23:20:35 sthen Exp $
 
 Index: includes/environment.inc
 --- includes/environment.inc.orig
@@ -8,7 +8,7 @@ Index: includes/environment.inc
   */
  function drush_get_tar_executable() {
 -  return drush_is_windows() ? (drush_is_mingw() ? "tar.exe" : "bsdtar.exe") : "tar";
-+  if drush_is_openbsd() {
++  if (drush_is_openbsd()) {
 +    return 'gtar';
 +  }
 +  else {
