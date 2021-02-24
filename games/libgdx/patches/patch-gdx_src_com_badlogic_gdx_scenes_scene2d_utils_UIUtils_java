@@ -1,0 +1,16 @@
+$OpenBSD: patch-gdx_src_com_badlogic_gdx_scenes_scene2d_utils_UIUtils_java,v 1.1.1.1 2021/02/24 22:21:25 thfr Exp $
+
+hijack Linux codepath
+
+Index: gdx/src/com/badlogic/gdx/scenes/scene2d/utils/UIUtils.java
+--- gdx/src/com/badlogic/gdx/scenes/scene2d/utils/UIUtils.java.orig
++++ gdx/src/com/badlogic/gdx/scenes/scene2d/utils/UIUtils.java
+@@ -10,7 +10,7 @@ public class UIUtils {
+ 	static public boolean isAndroid = System.getProperty("java.runtime.name").contains("Android");
+ 	static public boolean isMac = !isAndroid && System.getProperty("os.name").contains("Mac");
+ 	static public boolean isWindows = !isAndroid && System.getProperty("os.name").contains("Windows");
+-	static public boolean isLinux = !isAndroid && System.getProperty("os.name").contains("Linux");
++	static public boolean isLinux = !isAndroid && System.getProperty("os.name").contains("Linux") || System.getProperty("os.name").contains("OpenBSD");
+ 	static public boolean isIos = !isAndroid && ("iOS".equals(System.getProperty("moe.platform.name")) || !(isWindows || isLinux || isMac));
+ 
+ 	static public boolean left () {
