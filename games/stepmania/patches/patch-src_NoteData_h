@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_NoteData_h,v 1.1 2021/02/24 12:09:25 espie Exp $
+
+Index: src/NoteData.h
+--- src/NoteData.h.orig
++++ src/NoteData.h
+@@ -375,7 +375,10 @@ class NoteData (public)
+ /** @brief Allow a quick way to swap notedata. */
+ namespace std
+ {
+-	template<> inline void swap<NoteData>( NoteData &nd1, NoteData &nd2 ) { nd1.swap( nd2 ); }
++	template<> inline void swap<NoteData>( NoteData &nd1, NoteData &nd2 ) 
++	    noexcept(is_nothrow_move_constructible<NoteData>::value 
++	    	&& is_nothrow_move_assignable<NoteData>::value) 
++	{ nd1.swap( nd2 ); }
+ }
+ 
+ #endif

@@ -1,0 +1,41 @@
+$OpenBSD: patch-StepmaniaCore_cmake,v 1.1 2021/02/24 12:09:25 espie Exp $
+
+Index: StepmaniaCore.cmake
+--- StepmaniaCore.cmake.orig
++++ StepmaniaCore.cmake
+@@ -311,7 +311,7 @@ elseif(MACOSX)
+     MAC_FRAME_OPENGL
+     MAC_FRAME_QUICKTIME
+   )
+-elseif(LINUX)
++elseif(LINUX OR BSD)
+   if(WITH_GTK2)
+     find_package("GTK2" 2.0)
+     if (${GTK2_FOUND})
+@@ -367,12 +367,12 @@ elseif(LINUX)
+     set(HAS_ALSA FALSE)
+   endif()
+ 
+-  find_package(JACK)
+-  if (JACK_FOUND)
+-    set(HAS_JACK TRUE)
+-  else()
++#  find_package(JACK)
++#  if (JACK_FOUND)
++#    set(HAS_JACK TRUE)
++#  else()
+     set(HAS_JACK FALSE)
+-  endif()
++#  endif()
+ 
+   find_package(OSS)
+   if (OSS_FOUND)
+@@ -381,7 +381,7 @@ elseif(LINUX)
+     set(HAS_OSS FALSE)
+   endif()
+ 
+-  if(NOT OSS_FOUND AND NOT JACK_FOUND AND NOT ALSA_FOUND AND NOT PULSE_FOUND)
++  if(NOT OSS_FOUND AND NOT JACK_FOUND AND NOT ALSA_FOUND AND NOT PULSEAUDIO_FOUND)
+     message(FATAL_ERROR "No sound libraries found. You will require at least one.")
+   else()
+     message(STATUS "-- At least one sound library was found. Do not worry if any were not found at this stage.")

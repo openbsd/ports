@@ -1,16 +1,15 @@
-$OpenBSD: patch-src_archutils_Unix_Backtrace_h,v 1.1.1.1 2013/11/03 00:00:32 espie Exp $
---- src/archutils/Unix/Backtrace.h.orig	Sat Sep 14 17:20:36 2013
-+++ src/archutils/Unix/Backtrace.h	Sat Sep 14 17:21:06 2013
-@@ -40,10 +40,12 @@ void GetBacktrace( const void **buf, size_t size, cons
-  * not be the current thread.  True is returned on success, false on failure. */
- bool GetThreadBacktraceContext( uint64_t ThreadID, BacktraceContext *ctx );
- 
-+#if !defined(__OpenBSD__)
+$OpenBSD: patch-src_archutils_Unix_Backtrace_h,v 1.2 2021/02/24 12:09:25 espie Exp $
+Index: src/archutils/Unix/Backtrace.h
+--- src/archutils/Unix/Backtrace.h.orig
++++ src/archutils/Unix/Backtrace.h
+@@ -43,8 +43,10 @@ bool GetThreadBacktraceContext( uint64_t ThreadID, Bac
  /* Set up a BacktraceContext to get a backtrace after receiving a signal, given
   * a ucontext_t (see sigaction(2)).  (This interface is UNIX-specific.) */
+ #if defined(UNIX) || defined(MACOSX)
++#if !defined(__OpenBSD__)
  #include <ucontext.h>
  void GetSignalBacktraceContext( BacktraceContext *ctx, const ucontext_t *uc );
 +#endif
+ #endif
  
  #define BACKTRACE_METHOD_NOT_AVAILABLE ((void*) -1)
- 

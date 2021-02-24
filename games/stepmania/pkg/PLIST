@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/03 00:00:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/24 12:09:25 espie Exp $
 bin/stepmania
 ${DATADIR}/
 ${DATADIR}/Announcers/
@@ -93,6 +93,150 @@ ${DATADIR}/Data/Shaders/GLSL/Vivid light.frag
 ${DATADIR}/Data/Shaders/GLSL/YUYV422.frag
 ${DATADIR}/Data/Translations.xml
 ${DATADIR}/Data/splash.png
+${DATADIR}/Docs/
+${DATADIR}/Docs/Changelog_SSCformat.txt
+${DATADIR}/Docs/Changelog_language.txt
+${DATADIR}/Docs/Changelog_sm-ssc.txt
+${DATADIR}/Docs/Changelog_sm5.txt
+${DATADIR}/Docs/CommandLineArgs.txt
+${DATADIR}/Docs/Copying.MAD
+${DATADIR}/Docs/CourseFormat.txt
+${DATADIR}/Docs/CustomMissionReference.txt
+${DATADIR}/Docs/Devdocs/
+${DATADIR}/Docs/Devdocs/BuildingFfmpegOnMac.txt
+${DATADIR}/Docs/Devdocs/CodingStyle.txt
+${DATADIR}/Docs/Devdocs/CompileFlags.txt
+${DATADIR}/Docs/Devdocs/GoldenRules.txt
+${DATADIR}/Docs/Devdocs/NegBPMsTutorial.html
+${DATADIR}/Docs/Devdocs/SMLanProtocol.txt
+${DATADIR}/Docs/Devdocs/SMO_protocol-aj.txt
+${DATADIR}/Docs/Devdocs/SMXML.txt
+${DATADIR}/Docs/Devdocs/Sound Drivers.txt
+${DATADIR}/Docs/Devdocs/SplitTiming.txt
+${DATADIR}/Docs/Devdocs/TextEntry.txt
+${DATADIR}/Docs/Devdocs/WarpNotes.txt
+${DATADIR}/Docs/Devdocs/ezsockets.txt
+${DATADIR}/Docs/Devdocs/interesting_sm4_commit_logs.txt
+${DATADIR}/Docs/Devdocs/negbpmtut/
+${DATADIR}/Docs/Devdocs/negbpmtut/screen00214.jpg
+${DATADIR}/Docs/Devdocs/negbpmtut/screen00215.jpg
+${DATADIR}/Docs/Devdocs/negbpmtut/screen00216.jpg
+${DATADIR}/Docs/Devdocs/negbpmtut/screen00217.jpg
+${DATADIR}/Docs/Devdocs/negbpmtut/screen00218.jpg
+${DATADIR}/Docs/Devdocs/negbpmtut/screen00221.jpg
+${DATADIR}/Docs/Devdocs/possible memory leaks.txt
+${DATADIR}/Docs/Devdocs/rivaldata.txt
+${DATADIR}/Docs/Devdocs/versioning.txt
+${DATADIR}/Docs/Doxyfile
+${DATADIR}/Docs/KnownIssues.txt
+${DATADIR}/Docs/Licenses.txt
+${DATADIR}/Docs/Luadoc/
+${DATADIR}/Docs/Luadoc/Lua.xml
+${DATADIR}/Docs/Luadoc/Lua.xsd
+${DATADIR}/Docs/Luadoc/Lua.xsl
+${DATADIR}/Docs/Luadoc/LuaDocumentation.xml
+${DATADIR}/Docs/Luadoc/bgline.png
+${DATADIR}/Docs/Luadoc/closed.gif
+${DATADIR}/Docs/Luadoc/favicon.ico
+${DATADIR}/Docs/Luadoc/open.gif
+${DATADIR}/Docs/Mapping_keys_for_edit_mode.txt
+${DATADIR}/Docs/README-GUIDELINES
+${DATADIR}/Docs/SimfileFormats/
+${DATADIR}/Docs/SimfileFormats/BMS/
+${DATADIR}/Docs/SimfileFormats/BMS/BM98Data_format_specification.html
+${DATADIR}/Docs/SimfileFormats/BMS/BM98FinalSecret.html
+${DATADIR}/Docs/SimfileFormats/BMS/BMS_Reading_Tutorial.rtf
+${DATADIR}/Docs/SimfileFormats/BMS/BMS_Reading_Tutorial.txt
+${DATADIR}/Docs/SimfileFormats/BMS/_src.txt
+${DATADIR}/Docs/SimfileFormats/BMS/tmp.txt
+${DATADIR}/Docs/SimfileFormats/DWI/
+${DATADIR}/Docs/SimfileFormats/DWI/DWI.txt
+${DATADIR}/Docs/SimfileFormats/DWI/readme.html
+${DATADIR}/Docs/SimfileFormats/KSF/
+${DATADIR}/Docs/SimfileFormats/KSF/_src.txt
+${DATADIR}/Docs/SimfileFormats/KSF/ksf-format.txt
+${DATADIR}/Docs/SimfileFormats/KSF/sample.ksf
+${DATADIR}/Docs/SimfileFormats/README
+${DATADIR}/Docs/SimfileFormats/SDF/
+${DATADIR}/Docs/SimfileFormats/SDF/SDF.txt
+${DATADIR}/Docs/SimfileFormats/SDF/ssc-banner.png
+${DATADIR}/Docs/SimfileFormats/SDF/ssc-bg.png
+${DATADIR}/Docs/SimfileFormats/SDF/test-1bpm.sdf
+${DATADIR}/Docs/SimfileFormats/SDF/test.sdf
+${DATADIR}/Docs/SimfileFormats/SDF/test.sm
+${DATADIR}/Docs/SimfileFormats/dance-spec.txt
+${DATADIR}/Docs/SimfileFormats/misc.txt
+${DATADIR}/Docs/SimfileFormats/new format draft.txt
+${DATADIR}/Docs/SimfileFormats/ssc_msd5.txt
+${DATADIR}/Docs/Stats.xml
+${DATADIR}/Docs/Themerdocs/
+${DATADIR}/Docs/Themerdocs/Examples/
+${DATADIR}/Docs/Themerdocs/Examples/Example_Actors/
+${DATADIR}/Docs/Themerdocs/Examples/Example_Actors/ActorFrame.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Actors/ActorFrameTexture.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Actors/ActorScroller.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Actors/BitmapText.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Actors/Quad.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Actors/RollingNumbers.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Actors/Toasty.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Screens/
+${DATADIR}/Docs/Themerdocs/Examples/Example_Screens/ScreenHeartEntry.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Screens/ScreenMapControllers.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Screens/ScreenOptionsExample.ini
+${DATADIR}/Docs/Themerdocs/Examples/Example_Themes/
+${DATADIR}/Docs/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/
+${DATADIR}/Docs/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/BGAnimations/
+${DATADIR}/Docs/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/BGAnimations/ScreenSimpleExample overlay.lua
+${DATADIR}/Docs/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/ThemeInfo.ini
+${DATADIR}/Docs/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/metrics.ini
+${DATADIR}/Docs/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/readme.txt
+${DATADIR}/Docs/Themerdocs/Examples/OptionRowHandlerLua.lua
+${DATADIR}/Docs/Themerdocs/Examples/anatomy_of_an_actor.lua
+${DATADIR}/Docs/Themerdocs/Noteskin elements Reference.txt
+${DATADIR}/Docs/Themerdocs/ScreenAMVTest overlay.lua
+${DATADIR}/Docs/Themerdocs/ScreenMessages.txt
+${DATADIR}/Docs/Themerdocs/ScreenTextEntry.txt
+${DATADIR}/Docs/Themerdocs/ThemePrefs.txt
+${DATADIR}/Docs/Themerdocs/ThemePrefsRows.txt
+${DATADIR}/Docs/Themerdocs/XmlToLua.txt
+${DATADIR}/Docs/Themerdocs/actordef.txt
+${DATADIR}/Docs/Themerdocs/announcer_files.txt
+${DATADIR}/Docs/Themerdocs/calories.txt
+${DATADIR}/Docs/Themerdocs/conditional_music.txt
+${DATADIR}/Docs/Themerdocs/effect_colors.txt
+${DATADIR}/Docs/Themerdocs/fontini.txt
+${DATADIR}/Docs/Themerdocs/gamecommands.txt
+${DATADIR}/Docs/Themerdocs/haste.txt
+${DATADIR}/Docs/Themerdocs/included_scripts.txt
+${DATADIR}/Docs/Themerdocs/modslevel.txt
+${DATADIR}/Docs/Themerdocs/moremsg.txt
+${DATADIR}/Docs/Themerdocs/pause_menu.md
+${DATADIR}/Docs/Themerdocs/recommended_practices.txt
+${DATADIR}/Docs/Themerdocs/sm-ssc_themeguide.txt
+${DATADIR}/Docs/Userdocs/
+${DATADIR}/Docs/Userdocs/Keymaps_ini_format.md
+${DATADIR}/Docs/Userdocs/bgchanges_format.txt
+${DATADIR}/Docs/Userdocs/sm5_beginner.txt
+${DATADIR}/Docs/credits.txt
+${DATADIR}/Docs/docpack.zip
+${DATADIR}/Docs/license-ext/
+${DATADIR}/Docs/license-ext/Scoring-jp.txt
+${DATADIR}/Docs/license-ext/readme
+${DATADIR}/Docs/license-ext/theme_lang-ja.txt
+${DATADIR}/Docs/license-ext/vlgothic/
+${DATADIR}/Docs/license-ext/vlgothic/Changelog
+${DATADIR}/Docs/license-ext/vlgothic/LICENSE
+${DATADIR}/Docs/license-ext/vlgothic/LICENSE.en
+${DATADIR}/Docs/license-ext/vlgothic/LICENSE_E.mplus
+${DATADIR}/Docs/license-ext/vlgothic/LICENSE_J.mplus
+${DATADIR}/Docs/license-ext/vlgothic/README
+${DATADIR}/Docs/license-ext/vlgothic/README.sazanami
+${DATADIR}/Docs/license-ext/vlgothic/README_J.mplus
+${DATADIR}/Docs/midiman.wishlist
+${DATADIR}/Docs/old_changelog.txt
+${DATADIR}/Docs/opensource_simulators.txt
+${DATADIR}/Docs/steps.lua
+${DATADIR}/Docs/versioning.txt
 ${DATADIR}/NoteSkins/
 ${DATADIR}/NoteSkins/Para/
 ${DATADIR}/NoteSkins/Para/default/
@@ -1110,6 +1254,193 @@ ${DATADIR}/NoteSkins/kb7/retrobar/_bar tap base.png
 ${DATADIR}/NoteSkins/kb7/retrobar/_bar tap fake 1x8.png
 ${DATADIR}/NoteSkins/kb7/retrobar/_bar tap note 8x8.png
 ${DATADIR}/NoteSkins/kb7/retrobar/metrics.ini
+${DATADIR}/NoteSkins/kickbox/
+${DATADIR}/NoteSkins/kickbox/default/
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Explosion.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Hold Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Receptor.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Roll Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist Tap Lift.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFist tap note.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Explosion.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Hold Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Receptor.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Roll Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot Tap Lift.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyLeftFoot tap note.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Explosion.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist HitMine Explosion.redir
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Hold Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Receptor.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Roll Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist Tap Lift.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFist tap Note (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Explosion.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot HitMine Explosion.redir
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Hold Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Hold Head Inactive.redir
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Receptor.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Roll Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot Tap Lift.lua
+${DATADIR}/NoteSkins/kickbox/default/AnyRightFoot tap note (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Hold Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Roll Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFist tap note.lua
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Hold Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Roll Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/DownLeftFoot tap note.lua
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Hold Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Roll Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/DownRightFist Tap Note (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Hold Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Roll Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/DownRightFoot tap note (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/Fallback HitMine Explosion.png
+${DATADIR}/NoteSkins/kickbox/default/NoteSkin.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Hold Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Roll Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFist tap note.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Hold Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Roll Head Active.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/UpLeftFoot tap note.lua
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Hold Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Roll Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/UpRightFist Tap Note (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Hold Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Hold Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Hold BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Hold BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Hold Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Hold Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Roll Body Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Roll Body Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Roll BottomCap Active (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Roll BottomCap Inactive (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Roll Head Active.redir
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot Roll Head Inactive.lua
+${DATADIR}/NoteSkins/kickbox/default/UpRightFoot tap note (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFist Hold Explosion.redir
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFist Roll Explosion.redir
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFist Tap Explosion Dim (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFist Tap Lift (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFist receptor frame (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFist receptor underlay (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFoot Hold Explosion.redir
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFoot Roll Explosion.redir
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFoot Tap Explosion Dim (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFoot Tap Lift (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFoot receptor frame (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/_AnyRightFoot receptor underlay (doubleres).png
+${DATADIR}/NoteSkins/kickbox/default/metrics.ini
 ${DATADIR}/NoteSkins/lights/
 ${DATADIR}/NoteSkins/lights/default/
 ${DATADIR}/NoteSkins/lights/default/metrics.ini
@@ -1501,66 +1832,6 @@ ${DATADIR}/Songs/StepMania 5/Springtime/spring.png
 ${DATADIR}/Songs/StepMania 5/Springtime/springbn.png
 ${DATADIR}/Songs/instructions.txt
 ${DATADIR}/Themes/
-${DATADIR}/Themes/HelloWorld/
-${DATADIR}/Themes/HelloWorld/BGAnimations/
-${DATADIR}/Themes/HelloWorld/BGAnimations/GuideBase background.redir
-${DATADIR}/Themes/HelloWorld/BGAnimations/ScreenTitleMenu cancel.lua
-${DATADIR}/Themes/HelloWorld/BGAnimations/ScreenTitleMenu out.lua
-${DATADIR}/Themes/HelloWorld/BGAnimations/ScreenTitleMenu underlay.lua
-${DATADIR}/Themes/HelloWorld/BGAnimations/ScreenWithMenuElements background.lua
-${DATADIR}/Themes/HelloWorld/BGAnimations/ScreenWithMenuElements cancel.redir
-${DATADIR}/Themes/HelloWorld/BGAnimations/ScreenWithMenuElements decorations.lua
-${DATADIR}/Themes/HelloWorld/BGAnimations/ScreenWithMenuElements in.lua
-${DATADIR}/Themes/HelloWorld/BGAnimations/ScreenWithMenuElements out.lua
-${DATADIR}/Themes/HelloWorld/BGAnimations/_wait.lua
-${DATADIR}/Themes/HelloWorld/BGAnimations/creativecommons.png
-${DATADIR}/Themes/HelloWorld/Fonts/
-${DATADIR}/Themes/HelloWorld/Fonts/_frutiger roman 24px [alt] 12x11.png
-${DATADIR}/Themes/HelloWorld/Fonts/_frutiger roman 24px [main-stroke] 16x16.png
-${DATADIR}/Themes/HelloWorld/Fonts/_frutiger roman 24px [main] 16x16.png
-${DATADIR}/Themes/HelloWorld/Fonts/_frutiger roman 24px.ini
-${DATADIR}/Themes/HelloWorld/Graphics/
-${DATADIR}/Themes/HelloWorld/Graphics/Common splash.png
-${DATADIR}/Themes/HelloWorld/Graphics/ReferenceBase ItemFocused (doubleres).png
-${DATADIR}/Themes/HelloWorld/Graphics/ReferenceBase header.lua
-${DATADIR}/Themes/HelloWorld/Graphics/ReferenceBase scroll.lua
-${DATADIR}/Themes/HelloWorld/Graphics/ScreenGuideMain header.lua
-${DATADIR}/Themes/HelloWorld/Graphics/ScreenGuideMain scroll.lua
-${DATADIR}/Themes/HelloWorld/Graphics/ScreenReferenceMain header.lua
-${DATADIR}/Themes/HelloWorld/Graphics/ScreenReferenceMain scroll.lua
-${DATADIR}/Themes/HelloWorld/Graphics/ScreenTitleMenu scroll.lua
-${DATADIR}/Themes/HelloWorld/Graphics/ScreenWithMenuElements header.lua
-${DATADIR}/Themes/HelloWorld/Graphics/SectionMenu ItemFocused (doubleres).png
-${DATADIR}/Themes/HelloWorld/Graphics/SectionMenu ItemUnfocused (doubleres).png
-${DATADIR}/Themes/HelloWorld/Graphics/_common/
-${DATADIR}/Themes/HelloWorld/Graphics/_common/_generic.png
-${DATADIR}/Themes/HelloWorld/Graphics/_common/_logo.png
-${DATADIR}/Themes/HelloWorld/Graphics/_section Guide (doubleres).png
-${DATADIR}/Themes/HelloWorld/Graphics/_section Reference (doubleres).png
-${DATADIR}/Themes/HelloWorld/Graphics/_section Tutorial (doubleres).png
-${DATADIR}/Themes/HelloWorld/Graphics/_tango webbrowser.png
-${DATADIR}/Themes/HelloWorld/Languages/
-${DATADIR}/Themes/HelloWorld/Languages/en.ini
-${DATADIR}/Themes/HelloWorld/ThemeInfo.ini
-${DATADIR}/Themes/HelloWorld/_assets/
-${DATADIR}/Themes/HelloWorld/_assets/SectionMenu item.psd
-${DATADIR}/Themes/HelloWorld/_assets/_logo.psd
-${DATADIR}/Themes/HelloWorld/_assets/hello world.psd
-${DATADIR}/Themes/HelloWorld/metrics.ini
-${DATADIR}/Themes/HelloWorld/readme.txt
-${DATADIR}/Themes/HelloWorld/screens.txt
-${DATADIR}/Themes/MouseTest/
-${DATADIR}/Themes/MouseTest/BGAnimations/
-${DATADIR}/Themes/MouseTest/BGAnimations/ScreenTitleMenu background.lua
-${DATADIR}/Themes/MouseTest/BGAnimations/ScreenTitleMenu overlay.lua
-${DATADIR}/Themes/MouseTest/BGAnimations/ScreenTitleMenu underlay.lua
-${DATADIR}/Themes/MouseTest/Graphics/
-${DATADIR}/Themes/MouseTest/Graphics/ScreenTitleMenu scroll.lua
-${DATADIR}/Themes/MouseTest/Graphics/_click target.png
-${DATADIR}/Themes/MouseTest/Languages/
-${DATADIR}/Themes/MouseTest/Languages/en.ini
-${DATADIR}/Themes/MouseTest/ThemeInfo.ini
-${DATADIR}/Themes/MouseTest/metrics.ini
 ${DATADIR}/Themes/_Installer/
 ${DATADIR}/Themes/_Installer/Languages/
 ${DATADIR}/Themes/_Installer/Languages/de.ini
@@ -1568,6 +1839,7 @@ ${DATADIR}/Themes/_Installer/Languages/en.ini
 ${DATADIR}/Themes/_Installer/Languages/es.ini
 ${DATADIR}/Themes/_Installer/Languages/fr.ini
 ${DATADIR}/Themes/_Installer/Languages/it.ini
+${DATADIR}/Themes/_Installer/Languages/pl.ini
 ${DATADIR}/Themes/_Installer/readme.txt
 ${DATADIR}/Themes/_fallback/
 ${DATADIR}/Themes/_fallback/BGAnimations/
@@ -1590,19 +1862,24 @@ ${DATADIR}/Themes/_fallback/BGAnimations/ScreenGameplay toasty.redir
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenInit background/
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenInit background/default.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenInit background/ssc (doubleres).png
-${DATADIR}/Themes/_fallback/BGAnimations/ScreenMapControllers overlay.lua
+${DATADIR}/Themes/_fallback/BGAnimations/ScreenInitialScreenIsInvalid overlay.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenNameEntryTraditional underlay/
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenNameEntryTraditional underlay/default.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenNameEntryTraditional underlay/keyboard.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenNoise background/
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenNoise background/default.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenNoise background/noise.png
+${DATADIR}/Themes/_fallback/BGAnimations/ScreenOptionsCustomizeProfile overlay.lua
+${DATADIR}/Themes/_fallback/BGAnimations/ScreenOverscanConfig overlay.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenProfileLoad decorations.redir
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenProfileLoad overlay.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenProfileSave overlay.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenSelectProfile overlay.lua
+${DATADIR}/Themes/_fallback/BGAnimations/ScreenSetBGFit overlay.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenSongOptions option in.redir
+${DATADIR}/Themes/_fallback/BGAnimations/ScreenSyncOverlay overlay.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenSystemLayer aux.lua
+${DATADIR}/Themes/_fallback/BGAnimations/ScreenSystemLayer error.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenSystemLayer overlay/
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenSystemLayer overlay/default.lua
 ${DATADIR}/Themes/_fallback/BGAnimations/ScreenTestInput underlay.lua
@@ -1626,6 +1903,8 @@ ${DATADIR}/Themes/_fallback/Fonts/BPMDisplay bpm.redir
 ${DATADIR}/Themes/_fallback/Fonts/Combo numbers.redir
 ${DATADIR}/Themes/_fallback/Fonts/Common Bold.redir
 ${DATADIR}/Themes/_fallback/Fonts/Common Editor.redir
+${DATADIR}/Themes/_fallback/Fonts/Common Error.redir
+${DATADIR}/Themes/_fallback/Fonts/Common Large.redir
 ${DATADIR}/Themes/_fallback/Fonts/Common Normal.redir
 ${DATADIR}/Themes/_fallback/Fonts/Common Semibold.redir
 ${DATADIR}/Themes/_fallback/Fonts/Common default 2x1.png
@@ -1691,12 +1970,16 @@ ${DATADIR}/Themes/_fallback/Fonts/ScreenGameplay song options.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenGameplay stepsdescription.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenGameplay survive time.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenGameplaySyncMachine SyncInfo.redir
+${DATADIR}/Themes/_fallback/Fonts/ScreenHighScores Name.redir
+${DATADIR}/Themes/_fallback/Fonts/ScreenHighScores Score.redir
+${DATADIR}/Themes/_fallback/Fonts/ScreenHighScores Text.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenInstallOverlay status.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenMapControllers devices.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenMapControllers entry.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenMapControllers title.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenNetEvaluation names.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenNetSelectBase chat.redir
+${DATADIR}/Themes/_fallback/Fonts/ScreenNetSelectBase users.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenOptions explanation.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenPrompt answer.redir
 ${DATADIR}/Themes/_fallback/Fonts/ScreenPrompt question.redir
@@ -1726,6 +2009,9 @@ ${DATADIR}/Themes/_fallback/Fonts/_Thai 16px [Sara1] 8x2.png
 ${DATADIR}/Themes/_fallback/Fonts/_Thai 16px [Sara2-stroke] 8x2.png
 ${DATADIR}/Themes/_fallback/Fonts/_Thai 16px [Sara2] 8x2.png
 ${DATADIR}/Themes/_fallback/Fonts/_Thai 16px.ini
+${DATADIR}/Themes/_fallback/Fonts/_chinese 24px [kanji-custom-stroke] 16x8 (doubleres).png
+${DATADIR}/Themes/_fallback/Fonts/_chinese 24px [kanji-custom] 16x8 (doubleres).png
+${DATADIR}/Themes/_fallback/Fonts/_chinese 24px.ini
 ${DATADIR}/Themes/_fallback/Fonts/_game chars 16px 4x2.png
 ${DATADIR}/Themes/_fallback/Fonts/_game chars 16px.ini
 ${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji 1-stroke] 8x8 (doubleres).png
@@ -1750,10 +2036,10 @@ ${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji 9-stroke] 8x8 (doubleres
 ${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji 9] 8x8 (doubleres).png
 ${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-jis1-stroke] 32x32 (doubleres).png
 ${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-jis1] 32x32 (doubleres).png
-${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2-stroke] 32x106 (doubleres).png
-${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2] 32x106 (doubleres).png
-${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-regular-stroke] 32x61 (doubleres).png
-${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-regular] 32x61 (doubleres).png
+${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2-stroke] 63x54 (doubleres).png
+${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2] 63x54 (doubleres).png
+${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-regular-stroke] 48x41 (doubleres).png
+${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [kanji-regular] 48x41 (doubleres).png
 ${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [main-stroke] 16x16 (doubleres).png
 ${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [main] 16x16 (doubleres).png
 ${DATADIR}/Themes/_fallback/Fonts/_japanese 24px [symbol-stroke] 26x3 (doubleres).png
@@ -1772,21 +2058,19 @@ ${DATADIR}/Themes/_fallback/Fonts/_misc 16px [main-stroke] 8x4.png
 ${DATADIR}/Themes/_fallback/Fonts/_misc 16px [main] 8x4.png
 ${DATADIR}/Themes/_fallback/Fonts/_misc 16px.ini
 ${DATADIR}/Themes/_fallback/Fonts/_missing.redir
-${DATADIR}/Themes/_fallback/Fonts/_open sans Bold 24px [alt-stroke] 10x10.png
-${DATADIR}/Themes/_fallback/Fonts/_open sans Bold 24px [alt] 10x10.png
-${DATADIR}/Themes/_fallback/Fonts/_open sans Bold 24px [main-stroke] 15x15.png
-${DATADIR}/Themes/_fallback/Fonts/_open sans Bold 24px [main] 15x15.png
-${DATADIR}/Themes/_fallback/Fonts/_open sans Bold 24px.ini
-${DATADIR}/Themes/_fallback/Fonts/_open sans book 24px [alt-stroke] 10x10.png
-${DATADIR}/Themes/_fallback/Fonts/_open sans book 24px [alt] 10x10.png
-${DATADIR}/Themes/_fallback/Fonts/_open sans book 24px [main-stroke] 15x15.png
-${DATADIR}/Themes/_fallback/Fonts/_open sans book 24px [main] 15x15.png
-${DATADIR}/Themes/_fallback/Fonts/_open sans book 24px.ini
 ${DATADIR}/Themes/_fallback/Fonts/_open sans semibold 24px [alt-stroke] 10x10.png
 ${DATADIR}/Themes/_fallback/Fonts/_open sans semibold 24px [alt] 10x10.png
 ${DATADIR}/Themes/_fallback/Fonts/_open sans semibold 24px [main-stroke] 15x15.png
 ${DATADIR}/Themes/_fallback/Fonts/_open sans semibold 24px [main] 15x15.png
 ${DATADIR}/Themes/_fallback/Fonts/_open sans semibold 24px.ini
+${DATADIR}/Themes/_fallback/Fonts/_roboto black Bold 24px [alt-stroke] 10x10.png
+${DATADIR}/Themes/_fallback/Fonts/_roboto black Bold 24px [alt] 10x10.png
+${DATADIR}/Themes/_fallback/Fonts/_roboto black Bold 24px [main-stroke] 15x15.png
+${DATADIR}/Themes/_fallback/Fonts/_roboto black Bold 24px [main] 15x15.png
+${DATADIR}/Themes/_fallback/Fonts/_roboto black Bold 24px.ini
+${DATADIR}/Themes/_fallback/Fonts/_ui chars 16px [main-stroke] 1x1.png
+${DATADIR}/Themes/_fallback/Fonts/_ui chars 16px [main] 1x1.png
+${DATADIR}/Themes/_fallback/Fonts/_ui chars 16px.ini
 ${DATADIR}/Themes/_fallback/Fonts/frutiger 24px [alt-stroke] 12x11.png
 ${DATADIR}/Themes/_fallback/Fonts/frutiger 24px [alt] 12x11.png
 ${DATADIR}/Themes/_fallback/Fonts/frutiger 24px [main-stroke] 16x16.png
@@ -1830,6 +2114,7 @@ ${DATADIR}/Themes/_fallback/Graphics/Common fallback banner.redir
 ${DATADIR}/Themes/_fallback/Graphics/Common splash.png
 ${DATADIR}/Themes/_fallback/Graphics/Common window icon.png
 ${DATADIR}/Themes/_fallback/Graphics/CourseEntryDisplay bar.redir
+${DATADIR}/Themes/_fallback/Graphics/CreditsLogo kyzentun.png
 ${DATADIR}/Themes/_fallback/Graphics/EditMenu left.lua
 ${DATADIR}/Themes/_fallback/Graphics/EditMenu right.lua
 ${DATADIR}/Themes/_fallback/Graphics/HoldJudgment label 1x2.redir
@@ -1956,7 +2241,15 @@ ${DATADIR}/Themes/_fallback/Graphics/ScreenEvaluation Win p2 1x3.png
 ${DATADIR}/Themes/_fallback/Graphics/ScreenEvaluation win frame p1.redir
 ${DATADIR}/Themes/_fallback/Graphics/ScreenEvaluation win frame p2.redir
 ${DATADIR}/Themes/_fallback/Graphics/ScreenGameplay oni gameover.redir
-${DATADIR}/Themes/_fallback/Graphics/ScreenMapControllers exit.lua
+${DATADIR}/Themes/_fallback/Graphics/ScreenHighScores ScrollerItem/
+${DATADIR}/Themes/_fallback/Graphics/ScreenHighScores ScrollerItem/default.lua
+${DATADIR}/Themes/_fallback/Graphics/ScreenHighScores ScrollerItem/empty (doubleres).png
+${DATADIR}/Themes/_fallback/Graphics/ScreenHighScores ScrollerItem/filled (doubleres).png
+${DATADIR}/Themes/_fallback/Graphics/ScreenHighScores ScrollerItem/frame (doubleres).png
+${DATADIR}/Themes/_fallback/Graphics/ScreenMapControllers action.lua
+${DATADIR}/Themes/_fallback/Graphics/ScreenMapControllers nosetlistprompt.lua
+${DATADIR}/Themes/_fallback/Graphics/ScreenMapControllers sanitymessage.lua
+${DATADIR}/Themes/_fallback/Graphics/ScreenMapControllers warning.lua
 ${DATADIR}/Themes/_fallback/Graphics/ScreenMiniMenuContext header.redir
 ${DATADIR}/Themes/_fallback/Graphics/ScreenNetSelectBase ChatInputBox.redir
 ${DATADIR}/Themes/_fallback/Graphics/ScreenNetSelectBase ChatOutputBox.redir
@@ -1979,6 +2272,9 @@ ${DATADIR}/Themes/_fallback/Graphics/ScreenSelectMusic ScoreFrame P2.redir
 ${DATADIR}/Themes/_fallback/Graphics/ScreenSelectMusic fallback cdtitle.redir
 ${DATADIR}/Themes/_fallback/Graphics/ScreenSelectProfile CardBackground.png
 ${DATADIR}/Themes/_fallback/Graphics/ScreenSelectProfile CardFrame.png
+${DATADIR}/Themes/_fallback/Graphics/ScreenSetBGFit 16_10_example.png
+${DATADIR}/Themes/_fallback/Graphics/ScreenSetBGFit 16_12_example.png
+${DATADIR}/Themes/_fallback/Graphics/ScreenSetBGFit 16_9_example.png
 ${DATADIR}/Themes/_fallback/Graphics/ScreenTitleMenu explanation page1.redir
 ${DATADIR}/Themes/_fallback/Graphics/ScreenTitleMenu explanation page2.redir
 ${DATADIR}/Themes/_fallback/Graphics/ScreenTitleMenu logo.png
@@ -2006,11 +2302,14 @@ ${DATADIR}/Themes/_fallback/Graphics/_frame 3x3/default.lua
 ${DATADIR}/Themes/_fallback/Graphics/_missing.png
 ${DATADIR}/Themes/_fallback/Graphics/_white.png
 ${DATADIR}/Themes/_fallback/Languages/
+${DATADIR}/Themes/_fallback/Languages/de.ini
 ${DATADIR}/Themes/_fallback/Languages/en.ini
 ${DATADIR}/Themes/_fallback/Languages/es.ini
+${DATADIR}/Themes/_fallback/Languages/fr.ini
 ${DATADIR}/Themes/_fallback/Languages/ja.ini
 ${DATADIR}/Themes/_fallback/Languages/nl.ini
 ${DATADIR}/Themes/_fallback/Languages/pl.ini
+${DATADIR}/Themes/_fallback/Languages/zh.ini
 ${DATADIR}/Themes/_fallback/Other/
 ${DATADIR}/Themes/_fallback/Other/Profile Common.xsl
 ${DATADIR}/Themes/_fallback/Other/Profile Stats.xsl
@@ -2047,6 +2346,12 @@ ${DATADIR}/Themes/_fallback/Scripts/03 Gameplay.lua
 ${DATADIR}/Themes/_fallback/Scripts/03 ThemeAndGamePrefs.lua
 ${DATADIR}/Themes/_fallback/Scripts/03 ThemeLibrary.lua
 ${DATADIR}/Themes/_fallback/Scripts/03 UserPreferences2.lua
+${DATADIR}/Themes/_fallback/Scripts/04 CreditsHelpers.lua
+${DATADIR}/Themes/_fallback/Scripts/04 LogDisplay.lua
+${DATADIR}/Themes/_fallback/Scripts/04 NumPadEntry.lua
+${DATADIR}/Themes/_fallback/Scripts/04 SetBGFitHelpers.lua
+${DATADIR}/Themes/_fallback/Scripts/04 pause_menu_helper.lua
+${DATADIR}/Themes/_fallback/Scripts/find_missing_lang_strings.lua
 ${DATADIR}/Themes/_fallback/Scripts/hierarchy.txt
 ${DATADIR}/Themes/_fallback/Sounds/
 ${DATADIR}/Themes/_fallback/Sounds/Common Cancel.ogg
@@ -2114,6 +2419,7 @@ ${DATADIR}/Themes/_fallback/Sounds/ScreenNetSelectMusic section music.redir
 ${DATADIR}/Themes/_fallback/Sounds/ScreenOptions change.redir
 ${DATADIR}/Themes/_fallback/Sounds/ScreenOptions next.redir
 ${DATADIR}/Themes/_fallback/Sounds/ScreenOptions prev.redir
+${DATADIR}/Themes/_fallback/Sounds/ScreenOptions start.redir
 ${DATADIR}/Themes/_fallback/Sounds/ScreenOptions toggle off.redir
 ${DATADIR}/Themes/_fallback/Sounds/ScreenOptions toggle on.redir
 ${DATADIR}/Themes/_fallback/Sounds/ScreenOptionsCourseOverview save.redir
@@ -2142,6 +2448,7 @@ ${DATADIR}/Themes/_fallback/Sounds/_LifeMeterBattery lose.ogg
 ${DATADIR}/Themes/_fallback/Sounds/_MemoryCardManager disconnect.ogg
 ${DATADIR}/Themes/_fallback/Sounds/_Screen cancel.ogg
 ${DATADIR}/Themes/_fallback/Sounds/_common row.ogg
+${DATADIR}/Themes/_fallback/Sounds/_dtrucks funk.ogg
 ${DATADIR}/Themes/_fallback/Sounds/_missing.ogg
 ${DATADIR}/Themes/_fallback/Sounds/_silent.redir
 ${DATADIR}/Themes/_fallback/Sounds/_switch down.ogg
@@ -2149,323 +2456,6 @@ ${DATADIR}/Themes/_fallback/Sounds/_switch up.ogg
 ${DATADIR}/Themes/_fallback/Sounds/new_missing.ogg
 ${DATADIR}/Themes/_fallback/base._ini
 ${DATADIR}/Themes/_fallback/metrics.ini
-${DATADIR}/Themes/_portKit-sm4/
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/ScreenWithMenuElements in.redir
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/ScreenWithMenuElements out.redir
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/ScreenWithMenuElementsBlank in.redir
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/ScreenWithMenuElementsBlank out.redir
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_BLANK/
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_BLANK/default.lua
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_fade in normal.lua
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_fade out normal.lua
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_frame 3x1/
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_frame 3x1/default.lua
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_frame 3x3/
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_frame 3x3/default.lua
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_menu in.lua
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_menu out.lua
-${DATADIR}/Themes/_portKit-sm4/BGAnimations/_shared background fade in.lua
-${DATADIR}/Themes/_portKit-sm4/Fonts/
-${DATADIR}/Themes/_portKit-sm4/Fonts/_16px fonts.ini
-${DATADIR}/Themes/_portKit-sm4/Fonts/_20px fonts.ini
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 16px [jamo 1] 8x8.png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 16px [jamo 2] 8x8.png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 16px [jamo 3] 8x8.png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 16px [jamo 4] 8x8.png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 16px.ini
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 24px [jamo 1] 8x8.png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 24px [jamo 2] 8x8.png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 24px [jamo 3] 8x8.png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 24px [jamo 4] 8x8.png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_korean 24px.ini
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo 16px [kanji 1] 8x8 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji 2] 8x8 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji 3] 8x8 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji 4] 8x8 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji 5] 8x8 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji 6] 8x8 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji 7] 8x8 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji 8] 8x8 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji 9] 8x8 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji-jis1] 32x32 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [kanji-regular] 32x61.png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [main] 16x16 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px [symbol] 26x3 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_meiryo Bold 16px.ini
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 13px [alt-stroke] 10x10 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 13px [alt] 10x10 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 13px [main-stroke] 15x15 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 13px [main] 15x15 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 13px.ini
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 15px [alt-stroke] 10x10 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 15px [alt] 10x10 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 15px [main-stroke] 15x15 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 15px [main] 15x15 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 15px.ini
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 24px [alt-stroke] 10x10 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 24px [alt] 10x10 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 24px [main-stroke] 15x15 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 24px [main] 15x15 (doubleres).png
-${DATADIR}/Themes/_portKit-sm4/Fonts/_venacti Bold 24px.ini
-${DATADIR}/Themes/_portKit-sm4/Graphics/
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenCaution header.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenMapControllers exit.lua
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenPlayerOptions disqualify.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenProfileLoad header.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenProfileSave header.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenSelectMaster explanation page1.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenSelectMaster explanation page2.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenSelectMaster more page1.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenSelectMaster more page2.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenSelectPlayMode explanation page1.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenSelectPlayMode explanation page2.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenSelectPlayMode more page1.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenSelectPlayMode more page2.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenWithMenuElements Help.lua
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenWithMenuElements explanation page1.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenWithMenuElements explanation page2.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenWithMenuElements more page1.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenWithMenuElements more page2.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenWithMenuElementsBlank LeftFrame.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenWithMenuElementsBlank RightFrame.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenWithMenuElementsBlank footer.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/ScreenWithMenuElementsBlank header.redir
-${DATADIR}/Themes/_portKit-sm4/Graphics/_frame 1d.lua
-${DATADIR}/Themes/_portKit-sm4/Graphics/_header.redir
-${DATADIR}/Themes/_portKit-sm4/Scripts/
-${DATADIR}/Themes/_portKit-sm4/Scripts/00 alias.lua
-${DATADIR}/Themes/_portKit-sm4/Scripts/Branches.lua
-${DATADIR}/Themes/_portKit-sm4/Sounds/
-${DATADIR}/Themes/_portKit-sm4/Sounds/Common cancel.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/Common coin.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/Common invalid.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/Common screenshot.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/Common start.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/EditCoursesMenu row.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/EditCoursesMenu save.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/EditCoursesMenu value.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/EditMenu row.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/EditMenu value.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/GameplayAssist clap.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/GameplayAssist metronome beat.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/GameplayAssist metronome measure.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/JukeboxMenu row.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/JukeboxMenu value.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/LifeMeterBattery gain.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/LifeMeterBattery lose.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/LifeMeterTime GainLife.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/MemoryCardManager disconnect.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/MemoryCardManager error.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/MemoryCardManager ready.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/MemoryCardManager too late.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/MenuTimer tick.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/MusicWheel change.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/MusicWheel expand.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/MusicWheel locked.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/MusicWheel sort.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/Player battle attack ending.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/Player battle attack launch.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/Player course attack ending.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/Player course attack launch.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/Player mine.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenCaution change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenCaution start.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenCompany music.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit AddNote.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit RemoveNote.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit line.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit marker.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit save.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit snap.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit switch steps.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit value decrease.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEdit value increase.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEditCourseSubmenu difficulty changed.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEnding1 music (loop).ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEnding2 music (loop).ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEvaluation failed.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEvaluation passed.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEvaluation start.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEvaluation try extra1.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenEvaluation try extra2.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenGameOver music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenGameplay oni die.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenHowToPlay music (loop).ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenInstructions music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenJukeboxMenu music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenMapControllers change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenMapControllers delete.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenMiniMenu change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenMiniMenu music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenMiniMenu next.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenMiniMenu prev.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenMiniMenu row.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenMiniMenu value.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenNameEntry music (loop).ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenNameEntry step.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenNetSelectMusic change opt.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenNetSelectMusic change sel.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenOptions change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenOptions next.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenOptions prev.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenOptions toggle off.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenOptions toggle on.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenOptionsCourseOverview save.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenPrompt change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenRanking music (loop).ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectCharacter change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectCharacter music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic course music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic difficulty easier.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic difficulty harder.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic locked.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic loop music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic options.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic random music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic roulette music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic section music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic sort music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectMusic start.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectPlayMode change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectPlayMode music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectPlayMode start.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectStyle change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectStyle music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenSelectStyle start.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenTextEntry backspace.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenTextEntry change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenTextEntry type.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenTitleMenu change.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenTitleMenu start.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenUnlock music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/ScreenWithMenuElements music.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/_cancel.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_clap.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_common menu music (loop).ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_common row.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_common value.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_edit marker.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/_extra1.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_extra2.redir
-${DATADIR}/Themes/_portKit-sm4/Sounds/_failed.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_memcard error.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_missing.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_prompt.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_silent.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_switch down.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_switch up.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_swoosh normal.ogg
-${DATADIR}/Themes/_portKit-sm4/Sounds/_toasty.ogg
-${DATADIR}/Themes/_portKit-sm4/ThemeInfo.ini
-${DATADIR}/Themes/_portKit-sm4/metrics.ini
-${DATADIR}/Themes/_portKit-sm4/readme.txt
-${DATADIR}/Themes/_themekit-piu/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/Screen in.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/Screen out.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenCustomOptionsList overlay/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenCustomOptionsList overlay/default.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenEvaluationNormal overlay/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenEvaluationNormal overlay/default.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenGameOver underlay/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenGameOver underlay/default.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenGameplay out.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenGameplay overlay/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenGameplay overlay/default.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenGameplay underlay.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenNextStage underlay/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenNextStage underlay/default.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenProfileLoad overlay.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenProfileSave overlay.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenSelectMusic overlay/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenSelectMusic overlay/default.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenSelectMusic overlay/i can flash.png
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenSelectMusic underlay.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenStageBreak underlay/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenStageBreak underlay/default.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenStageInformation underlay.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenSystemLayer overlay.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenTitleMenu underlay/
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenTitleMenu underlay/default.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/ScreenWithMenuElements background.lua
-${DATADIR}/Themes/_themekit-piu/BGAnimations/_frame 3x1.lua
-${DATADIR}/Themes/_themekit-piu/Fonts/
-${DATADIR}/Themes/_themekit-piu/Fonts/Common Normal.redir
-${DATADIR}/Themes/_themekit-piu/Fonts/_arial black 20px [alt-stroke] 10x10 (doubleres).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_arial black 20px [alt] 10x10 (doubleres).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_arial black 20px [main-stroke] 15x15 (doubleres).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_arial black 20px [main] 15x15 (doubleres).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_arial black 20px.ini
-${DATADIR}/Themes/_themekit-piu/Fonts/_fixedsys 8px [alt] 10x10 (mipmaps).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_fixedsys 8px [main] 15x15 (mipmaps).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_fixedsys 8px.ini
-${DATADIR}/Themes/_themekit-piu/Fonts/_impact 50px [alt-stroke] 10x10 (doubleres).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_impact 50px [alt] 10x10 (doubleres).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_impact 50px [main-stroke] 15x15 (doubleres).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_impact 50px [main] 15x15 (doubleres).png
-${DATADIR}/Themes/_themekit-piu/Fonts/_impact 50px.ini
-${DATADIR}/Themes/_themekit-piu/Fonts/combo 5x2.png
-${DATADIR}/Themes/_themekit-piu/Fonts/combo.ini
-${DATADIR}/Themes/_themekit-piu/Graphics/
-${DATADIR}/Themes/_themekit-piu/Graphics/Common fallback background.png
-${DATADIR}/Themes/_themekit-piu/Graphics/Common fallback banner.png
-${DATADIR}/Themes/_themekit-piu/Graphics/Common window icon.png
-${DATADIR}/Themes/_themekit-piu/Graphics/MusicWheelItem SectionCollapsed NormalPart.redir
-${DATADIR}/Themes/_themekit-piu/Graphics/MusicWheelItem SectionExpanded NormalPart/
-${DATADIR}/Themes/_themekit-piu/Graphics/MusicWheelItem SectionExpanded NormalPart/default.lua
-${DATADIR}/Themes/_themekit-piu/Graphics/MusicWheelItem Song NormalPart/
-${DATADIR}/Themes/_themekit-piu/Graphics/MusicWheelItem Song NormalPart/default.lua
-${DATADIR}/Themes/_themekit-piu/Graphics/Player combo.redir
-${DATADIR}/Themes/_themekit-piu/Graphics/Player judgment/
-${DATADIR}/Themes/_themekit-piu/Graphics/Player judgment/default.lua
-${DATADIR}/Themes/_themekit-piu/Graphics/Player judgment/judgelabels 1x5.png
-${DATADIR}/Themes/_themekit-piu/Graphics/Player judgment/label.png
-${DATADIR}/Themes/_themekit-piu/Graphics/ScreenMapControllers exit.lua
-${DATADIR}/Themes/_themekit-piu/Graphics/ScreenTitleMenu scroll.lua
-${DATADIR}/Themes/_themekit-piu/Graphics/_Figures/
-${DATADIR}/Themes/_themekit-piu/Graphics/_Figures/circle.png
-${DATADIR}/Themes/_themekit-piu/Graphics/_Figures/corner.png
-${DATADIR}/Themes/_themekit-piu/Graphics/_Figures/triangle.png
-${DATADIR}/Themes/_themekit-piu/Languages/
-${DATADIR}/Themes/_themekit-piu/Languages/en.ini
-${DATADIR}/Themes/_themekit-piu/Scripts/
-${DATADIR}/Themes/_themekit-piu/Scripts/01 system.lua
-${DATADIR}/Themes/_themekit-piu/Scripts/02 CustomCodeDetector.lua
-${DATADIR}/Themes/_themekit-piu/Scripts/02 Draw.lua
-${DATADIR}/Themes/_themekit-piu/Scripts/02 ini read.lua.bak
-${DATADIR}/Themes/_themekit-piu/Scripts/02 splitmode.lua
-${DATADIR}/Themes/_themekit-piu/Scripts/03 branches.lua
-${DATADIR}/Themes/_themekit-piu/Scripts/03 optionrow.lua
-${DATADIR}/Themes/_themekit-piu/Scripts/04 themelibs.lua
-${DATADIR}/Themes/_themekit-piu/Sounds/
-${DATADIR}/Themes/_themekit-piu/Sounds/2-1.ogg
-${DATADIR}/Themes/_themekit-piu/Sounds/3-2.ogg
-${DATADIR}/Themes/_themekit-piu/Sounds/B09.ogg
-${DATADIR}/Themes/_themekit-piu/Sounds/Common Coin.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/Common Start.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/Copia de ScreenSelectMusic locked.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/MusicWheel change.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/MusicWheel expand.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/MusicWheel locked.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/Player mine.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/START.ogg
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenEvaluation start.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic Options.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic course music.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic difficulty easier.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic difficulty harder.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic locked.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic loop music.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic random music.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic roulette music.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic section music.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic sort music.redir
-${DATADIR}/Themes/_themekit-piu/Sounds/ScreenSelectMusic start.redir
-${DATADIR}/Themes/_themekit-piu/ThemeInfo.ini
-${DATADIR}/Themes/_themekit-piu/metrics.ini
-${DATADIR}/Themes/_themekit-piu/reads.txt
 ${DATADIR}/Themes/default/
 ${DATADIR}/Themes/default/BGAnimations/
 ${DATADIR}/Themes/default/BGAnimations/Screen cancel/
@@ -2474,6 +2464,11 @@ ${DATADIR}/Themes/default/BGAnimations/Screen in/
 ${DATADIR}/Themes/default/BGAnimations/Screen in/default.lua
 ${DATADIR}/Themes/default/BGAnimations/Screen out/
 ${DATADIR}/Themes/default/BGAnimations/Screen out/default.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenCaution overlay/
+${DATADIR}/Themes/default/BGAnimations/ScreenCaution overlay/_exclamation.png
+${DATADIR}/Themes/default/BGAnimations/ScreenCaution overlay/_warning bg.png
+${DATADIR}/Themes/default/BGAnimations/ScreenCaution overlay/default.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenContinue underlay.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenCredits background/
 ${DATADIR}/Themes/default/BGAnimations/ScreenCredits background/_grid.png
 ${DATADIR}/Themes/default/BGAnimations/ScreenCredits background/_space.png
@@ -2492,6 +2487,9 @@ ${DATADIR}/Themes/default/BGAnimations/ScreenEvaluation overlay/
 ${DATADIR}/Themes/default/BGAnimations/ScreenEvaluation overlay/default.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenEvaluation overlay/kyuze.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenEvaluation overlay/original.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenEvaluationSummary background.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenEvaluationSummary decorations/
+${DATADIR}/Themes/default/BGAnimations/ScreenEvaluationSummary decorations/default.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenGameInformation underlay/
 ${DATADIR}/Themes/default/BGAnimations/ScreenGameInformation underlay/default.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenGameOver underlay/
@@ -2525,10 +2523,10 @@ ${DATADIR}/Themes/default/BGAnimations/ScreenGameplay ready/default.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenGameplay ready/ready.png
 ${DATADIR}/Themes/default/BGAnimations/ScreenGameplay toasty/
 ${DATADIR}/Themes/default/BGAnimations/ScreenGameplay toasty/default.lua
-${DATADIR}/Themes/default/BGAnimations/ScreenGameplay underlay/
-${DATADIR}/Themes/default/BGAnimations/ScreenGameplay underlay/ScreenFilter.lua
-${DATADIR}/Themes/default/BGAnimations/ScreenGameplay underlay/danger.lua
-${DATADIR}/Themes/default/BGAnimations/ScreenGameplay underlay/default.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenHeartEntry overlay.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenHighScores decorations/
+${DATADIR}/Themes/default/BGAnimations/ScreenHighScores decorations/_difficulty frame.png
+${DATADIR}/Themes/default/BGAnimations/ScreenHighScores decorations/default.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenHowToInstallSongs background.redir
 ${DATADIR}/Themes/default/BGAnimations/ScreenHowToInstallSongs overlay.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay background/
@@ -2536,9 +2534,10 @@ ${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay background/bg.png
 ${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay background/default.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay decorations.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/
-${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/_message jump.lua
-${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/_message miss.lua
-${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/_message tap.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/_howtoplay feet.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/_howtoplay jump.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/_howtoplay miss.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/_howtoplay tap.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/default.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/feet.png
 ${DATADIR}/Themes/default/BGAnimations/ScreenHowToPlay overlay/healthhilight.png
@@ -2556,7 +2555,10 @@ ${DATADIR}/Themes/default/BGAnimations/ScreenMiniMenu out.redir
 ${DATADIR}/Themes/default/BGAnimations/ScreenMiniMenu underlay/
 ${DATADIR}/Themes/default/BGAnimations/ScreenMiniMenu underlay/default.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenNetSelectMusic decorations.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenOptionsCustomizeProfile overlay.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenOptionsService in.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenPlayerOptions background.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenPlayerOptions decorations.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenPlayerOptions out.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenPrompt underlay.redir
 ${DATADIR}/Themes/default/BGAnimations/ScreenQuickSetupOverview decorations/
@@ -2564,6 +2566,8 @@ ${DATADIR}/Themes/default/BGAnimations/ScreenQuickSetupOverview decorations/defa
 ${DATADIR}/Themes/default/BGAnimations/ScreenReloadSongs background.redir
 ${DATADIR}/Themes/default/BGAnimations/ScreenSelectMusic decorations/
 ${DATADIR}/Themes/default/BGAnimations/ScreenSelectMusic decorations/default.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenSelectMusic overlay.lua
+${DATADIR}/Themes/default/BGAnimations/ScreenSelectMusic underlay.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenSelectPlayMode underlay.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenSelectProfile overlay.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenSongOptions background.redir
@@ -2575,8 +2579,6 @@ ${DATADIR}/Themes/default/BGAnimations/ScreenSystemLayer aux.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenTextEntry underlay.redir
 ${DATADIR}/Themes/default/BGAnimations/ScreenTitleJoin decorations.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenTitleJoin overlay.lua
-${DATADIR}/Themes/default/BGAnimations/ScreenTitleMenu background/
-${DATADIR}/Themes/default/BGAnimations/ScreenTitleMenu background/default.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenTitleMenu decorations.lua
 ${DATADIR}/Themes/default/BGAnimations/ScreenTitleMenu underlay/
 ${DATADIR}/Themes/default/BGAnimations/ScreenTitleMenu underlay/_bg.png
@@ -2603,6 +2605,10 @@ ${DATADIR}/Themes/default/BGAnimations/_frame 3x1/
 ${DATADIR}/Themes/default/BGAnimations/_frame 3x1/default.lua
 ${DATADIR}/Themes/default/BGAnimations/_frame 3x3/
 ${DATADIR}/Themes/default/BGAnimations/_frame 3x3/default.lua
+${DATADIR}/Themes/default/BGAnimations/_frame cursors/
+${DATADIR}/Themes/default/BGAnimations/_frame cursors/rounded fill.png
+${DATADIR}/Themes/default/BGAnimations/_frame cursors/rounded gloss.png
+${DATADIR}/Themes/default/BGAnimations/_frame cursors/rounded white.png
 ${DATADIR}/Themes/default/BGAnimations/_frame files 3x1/
 ${DATADIR}/Themes/default/BGAnimations/_frame files 3x1/rounded fill 3x1.png
 ${DATADIR}/Themes/default/BGAnimations/_frame files 3x1/rounded gloss 3x1.png
@@ -2610,22 +2616,24 @@ ${DATADIR}/Themes/default/BGAnimations/old ScreenWithMenuElements background/
 ${DATADIR}/Themes/default/BGAnimations/old ScreenWithMenuElements background/default.lua
 ${DATADIR}/Themes/default/Fonts/
 ${DATADIR}/Themes/default/Fonts/Combo Numbers.redir
+${DATADIR}/Themes/default/Fonts/Common Large.redir
+${DATADIR}/Themes/default/Fonts/MenuTimerContinue numbers.redir
 ${DATADIR}/Themes/default/Fonts/ScreenDebugOverlay header.redir
 ${DATADIR}/Themes/default/Fonts/ScreenDebugOverlay line.redir
 ${DATADIR}/Themes/default/Fonts/ScreenDebugOverlay page.redir
 ${DATADIR}/Themes/default/Fonts/ScreenGameplay SongTitle.redir
 ${DATADIR}/Themes/default/Fonts/ScreenGameplay survive time.redir
-${DATADIR}/Themes/default/Fonts/_blaster 18px [alt] 10x10.png
-${DATADIR}/Themes/default/Fonts/_blaster 18px [main] 15x15.png
-${DATADIR}/Themes/default/Fonts/_blaster 18px.ini
-${DATADIR}/Themes/default/Fonts/_helveticaneuelt std extblk cn 42px [alt] 10x10.png
-${DATADIR}/Themes/default/Fonts/_helveticaneuelt std extblk cn 42px [main] 15x15.png
-${DATADIR}/Themes/default/Fonts/_helveticaneuelt std extblk cn 42px [polish] 8x2.png
-${DATADIR}/Themes/default/Fonts/_helveticaneuelt std extblk cn 42px.ini
-${DATADIR}/Themes/default/Fonts/_open sans book 24px [main-stroke] 15x15.png
+${DATADIR}/Themes/default/Fonts/_open sans semibold 48px [alt-stroke] 10x10.png
+${DATADIR}/Themes/default/Fonts/_open sans semibold 48px [alt] 10x10.png
+${DATADIR}/Themes/default/Fonts/_open sans semibold 48px [main-stroke] 15x15.png
+${DATADIR}/Themes/default/Fonts/_open sans semibold 48px [main] 15x15.png
+${DATADIR}/Themes/default/Fonts/_open sans semibold 48px.ini
 ${DATADIR}/Themes/default/Fonts/_roboto Bold 54px [numbers-stroke] 4x5 (doubleres).png
 ${DATADIR}/Themes/default/Fonts/_roboto Bold 54px [numbers] 4x5 (doubleres).png
 ${DATADIR}/Themes/default/Fonts/_roboto Bold 54px.ini
+${DATADIR}/Themes/default/Fonts/_roboto Bold 80px [numbers-stroke] 4x4.png
+${DATADIR}/Themes/default/Fonts/_roboto Bold 80px [numbers] 4x4.png
+${DATADIR}/Themes/default/Fonts/_roboto Bold 80px.ini
 ${DATADIR}/Themes/default/Graphics/
 ${DATADIR}/Themes/default/Graphics/Banner all music.png
 ${DATADIR}/Themes/default/Graphics/Banner mode.png
@@ -2700,7 +2708,9 @@ ${DATADIR}/Themes/default/Graphics/MusicWheelItem Sort NormalPart.redir
 ${DATADIR}/Themes/default/Graphics/MusicWheelItem grades/
 ${DATADIR}/Themes/default/Graphics/MusicWheelItem grades/default.lua
 ${DATADIR}/Themes/default/Graphics/NoteField bars 1x4.png
-${DATADIR}/Themes/default/Graphics/NoteField board.png
+${DATADIR}/Themes/default/Graphics/NoteField board/
+${DATADIR}/Themes/default/Graphics/NoteField board/board.png
+${DATADIR}/Themes/default/Graphics/NoteField board/default.lua
 ${DATADIR}/Themes/default/Graphics/OptionRow frame.redir
 ${DATADIR}/Themes/default/Graphics/OptionRowExit frame.png
 ${DATADIR}/Themes/default/Graphics/OptionsCursorP1 CanGoLeft.redir
@@ -2738,6 +2748,7 @@ ${DATADIR}/Themes/default/Graphics/ScoreDisplayRave frame base p2.redir
 ${DATADIR}/Themes/default/Graphics/ScoreDisplayRave stream level1.png
 ${DATADIR}/Themes/default/Graphics/ScoreDisplayRave stream level2.png
 ${DATADIR}/Themes/default/Graphics/ScoreDisplayRave stream level3.png
+${DATADIR}/Themes/default/Graphics/ScreenDemonstration StageDisplay.redir
 ${DATADIR}/Themes/default/Graphics/ScreenEvaluation BannerFrame.redir
 ${DATADIR}/Themes/default/Graphics/ScreenEvaluation GameType.lua
 ${DATADIR}/Themes/default/Graphics/ScreenEvaluation GradeFrame p1.redir
@@ -2760,6 +2771,8 @@ ${DATADIR}/Themes/default/Graphics/ScreenEvaluation StageAward.lua
 ${DATADIR}/Themes/default/Graphics/ScreenEvaluation TimingDifficulty.lua
 ${DATADIR}/Themes/default/Graphics/ScreenEvaluation Win p1 1x3.png
 ${DATADIR}/Themes/default/Graphics/ScreenEvaluation Win p2 1x3.png
+${DATADIR}/Themes/default/Graphics/ScreenEvaluationSummary BannerList.lua
+${DATADIR}/Themes/default/Graphics/ScreenGameOver gameover.png
 ${DATADIR}/Themes/default/Graphics/ScreenGameplay BPMDisplay.lua
 ${DATADIR}/Themes/default/Graphics/ScreenGameplay DeltaSeconds.lua
 ${DATADIR}/Themes/default/Graphics/ScreenGameplay RemainingTime.lua
@@ -2767,6 +2780,11 @@ ${DATADIR}/Themes/default/Graphics/ScreenGameplay ScoreFrame.png
 ${DATADIR}/Themes/default/Graphics/ScreenGameplay SongTitle.lua
 ${DATADIR}/Themes/default/Graphics/ScreenGameplay StageDisplay.lua
 ${DATADIR}/Themes/default/Graphics/ScreenGameplay oni gameover.redir
+${DATADIR}/Themes/default/Graphics/ScreenHighScores ScrollerItem/
+${DATADIR}/Themes/default/Graphics/ScreenHighScores ScrollerItem/default.lua
+${DATADIR}/Themes/default/Graphics/ScreenHighScores ScrollerItem/empty (doubleres).png
+${DATADIR}/Themes/default/Graphics/ScreenHighScores ScrollerItem/filled (doubleres).png
+${DATADIR}/Themes/default/Graphics/ScreenHighScores ScrollerItem/frame (doubleres).png
 ${DATADIR}/Themes/default/Graphics/ScreenHowToInstallSongs Icon.lua
 ${DATADIR}/Themes/default/Graphics/ScreenHowToInstallSongs scroll.lua
 ${DATADIR}/Themes/default/Graphics/ScreenLogo Logo.redir
@@ -2783,6 +2801,7 @@ ${DATADIR}/Themes/default/Graphics/ScreenOptions disqualify.lua
 ${DATADIR}/Themes/default/Graphics/ScreenOptions line highlight.png
 ${DATADIR}/Themes/default/Graphics/ScreenOptions more.redir
 ${DATADIR}/Themes/default/Graphics/ScreenOptions page.png
+${DATADIR}/Themes/default/Graphics/ScreenPlayerOptions PlayerNameplate.lua
 ${DATADIR}/Themes/default/Graphics/ScreenQuickSetupOverview icon/
 ${DATADIR}/Themes/default/Graphics/ScreenQuickSetupOverview icon/_base.png
 ${DATADIR}/Themes/default/Graphics/ScreenQuickSetupOverview icon/default.lua
@@ -2916,6 +2935,7 @@ ${DATADIR}/Themes/default/Graphics/StreamDisplay passing.redir
 ${DATADIR}/Themes/default/Graphics/TestStep.png
 ${DATADIR}/Themes/default/Graphics/WheelNotifyIcon icons 4x2 (doubleres).png
 ${DATADIR}/Themes/default/Graphics/_CombinedLifeMeterTug separator.png
+${DATADIR}/Themes/default/Graphics/_GraphDisplay overlay.png
 ${DATADIR}/Themes/default/Graphics/_JudgmentLineLabel/
 ${DATADIR}/Themes/default/Graphics/_JudgmentLineLabel/_frame.png
 ${DATADIR}/Themes/default/Graphics/_JudgmentLineLabel/default.lua
@@ -2967,12 +2987,17 @@ ${DATADIR}/Themes/default/Graphics/_rave meter base.png
 ${DATADIR}/Themes/default/Graphics/_rave result P1.png
 ${DATADIR}/Themes/default/Graphics/_rave result P2.png
 ${DATADIR}/Themes/default/Graphics/_rave result draw.png
+${DATADIR}/Themes/default/Graphics/pause_menu.lua
 ${DATADIR}/Themes/default/Languages/
+${DATADIR}/Themes/default/Languages/de.ini
 ${DATADIR}/Themes/default/Languages/en.ini
 ${DATADIR}/Themes/default/Languages/es.ini
+${DATADIR}/Themes/default/Languages/fr.ini
+${DATADIR}/Themes/default/Languages/id.ini
 ${DATADIR}/Themes/default/Languages/ja.ini
 ${DATADIR}/Themes/default/Languages/nl.ini
 ${DATADIR}/Themes/default/Languages/pl.ini
+${DATADIR}/Themes/default/Languages/zh.ini
 ${DATADIR}/Themes/default/Other/
 ${DATADIR}/Themes/default/Other/Profile Catalog.xsl
 ${DATADIR}/Themes/default/Other/Profile Common.xsl
@@ -3065,188 +3090,4 @@ ${DATADIR}/Themes/default/metrics.ini
 ${DATADIR}/Themes/home/
 ${DATADIR}/Themes/home/ThemeInfo.ini
 ${DATADIR}/Themes/home/metrics.ini
-${DATADIR}/Themes/new/
-${DATADIR}/Themes/new/BGAnimations/
-${DATADIR}/Themes/new/BGAnimations/Screen cancel.lua
-${DATADIR}/Themes/new/BGAnimations/Screen in.lua
-${DATADIR}/Themes/new/BGAnimations/Screen out.lua
-${DATADIR}/Themes/new/BGAnimations/ScreenTitleMenu decorations.lua
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/_bg.jpg
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/_box-model.txt
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/_box-texture.png
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/_texture checkerboard.png
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/_texture circle.png
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/_texture curtain fill (stretch).png
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/_texture curtain mask (stretch).png
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/_texture scanline.png
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements background/default.lua
-${DATADIR}/Themes/new/BGAnimations/ScreenWithMenuElements decorations.lua
-${DATADIR}/Themes/new/Fonts/
-${DATADIR}/Themes/new/Fonts/MenuTimer numbers.redir
-${DATADIR}/Themes/new/Fonts/ScreenWithMenuElements TextHeader.redir
-${DATADIR}/Themes/new/Fonts/ScreenWithMenuElements TextSubtitle.redir
-${DATADIR}/Themes/new/Fonts/_open sans semibold 24px [alt-stroke] 10x10.png
-${DATADIR}/Themes/new/Fonts/_open sans semibold 24px [alt] 10x10.png
-${DATADIR}/Themes/new/Fonts/_open sans semibold 24px [main-stroke] 15x15.png
-${DATADIR}/Themes/new/Fonts/_open sans semibold 24px [main] 15x15.png
-${DATADIR}/Themes/new/Fonts/_open sans semibold 24px.ini
-${DATADIR}/Themes/new/Graphics/
-${DATADIR}/Themes/new/Graphics/ScreenSelectStyle Cursor.lua
-${DATADIR}/Themes/new/Graphics/ScreenSelectStyle Icon/
-${DATADIR}/Themes/new/Graphics/ScreenSelectStyle Icon/default.lua
-${DATADIR}/Themes/new/Graphics/ScreenSelectStyle Scroll/
-${DATADIR}/Themes/new/Graphics/ScreenSelectStyle Scroll/default.lua
-${DATADIR}/Themes/new/Graphics/ScreenTitleMenu NumSongs.lua
-${DATADIR}/Themes/new/Graphics/ScreenTitleMenu logo/
-${DATADIR}/Themes/new/Graphics/ScreenTitleMenu logo/_arrow (dither).png
-${DATADIR}/Themes/new/Graphics/ScreenTitleMenu logo/_text (dither).png
-${DATADIR}/Themes/new/Graphics/ScreenTitleMenu logo/default.lua
-${DATADIR}/Themes/new/Graphics/ScreenTitleMenu scroll.lua
-${DATADIR}/Themes/new/Graphics/ScreenTitleMenu version.lua
-${DATADIR}/Themes/new/Graphics/ScreenWithMenuElements CustomOverlay.lua
-${DATADIR}/Themes/new/Graphics/ScreenWithMenuElements Footer/
-${DATADIR}/Themes/new/Graphics/ScreenWithMenuElements Footer/default.lua
-${DATADIR}/Themes/new/Graphics/ScreenWithMenuElements Header/
-${DATADIR}/Themes/new/Graphics/ScreenWithMenuElements Header/default.lua
-${DATADIR}/Themes/new/Graphics/ScreenWithMenuElements TextHeader.lua
-${DATADIR}/Themes/new/Graphics/ScreenWithMenuElements TextSubtitle.lua
-${DATADIR}/Themes/new/Graphics/_ScreenTitleMenu logo (dither).png
-${DATADIR}/Themes/new/Graphics/_ScreenWithMenuElements Header.png
-${DATADIR}/Themes/new/Languages/
-${DATADIR}/Themes/new/Languages/en.ini
-${DATADIR}/Themes/new/Sounds/
-${DATADIR}/Themes/new/Sounds/ScreenGameplay music.redir
-${DATADIR}/Themes/new/Sounds/ScreenWithMenuElements music (loop).ogg
-${DATADIR}/Themes/new/Sounds/ScreenWithMenuElementsBlank music.redir
-${DATADIR}/Themes/new/ThemeInfo.ini
-${DATADIR}/Themes/new/_resources/
-${DATADIR}/Themes/new/_resources/ScreenWithMenuElements Header.psd
-${DATADIR}/Themes/new/_resources/_open sans semibold 24px [alt-stroke] 10x10.psd
-${DATADIR}/Themes/new/_resources/_open sans semibold 24px [main-stroke] 15x15.psd
-${DATADIR}/Themes/new/metrics.ini
-${DATADIR}/Themes/rsr/
-${DATADIR}/Themes/rsr/BGAnimations/
-${DATADIR}/Themes/rsr/BGAnimations/ScreenWithMenuElements background/
-${DATADIR}/Themes/rsr/BGAnimations/ScreenWithMenuElements background/VOL1-29-NTSC.mpg
-${DATADIR}/Themes/rsr/BGAnimations/ScreenWithMenuElements background/_16 (stretch).png
-${DATADIR}/Themes/rsr/BGAnimations/ScreenWithMenuElements background/_32 (stretch).png
-${DATADIR}/Themes/rsr/BGAnimations/ScreenWithMenuElements background/_8 (stretch).png
-${DATADIR}/Themes/rsr/BGAnimations/ScreenWithMenuElements background/default.lua
-${DATADIR}/Themes/rsr/BGAnimations/ScreenWithMenuElements decorations/
-${DATADIR}/Themes/rsr/BGAnimations/ScreenWithMenuElements decorations/default.lua
-${DATADIR}/Themes/rsr/Graphics/
-${DATADIR}/Themes/rsr/Graphics/MusicWheelItem Song ColorPart.lua
-${DATADIR}/Themes/rsr/Graphics/MusicWheelItem Song NormalPart.lua
-${DATADIR}/Themes/rsr/Graphics/ScreenTitleMenu scroll.lua
-${DATADIR}/Themes/rsr/Graphics/ScreenWithMenuElements footer/
-${DATADIR}/Themes/rsr/Graphics/ScreenWithMenuElements footer/default.lua
-${DATADIR}/Themes/rsr/Graphics/ScreenWithMenuElements header/
-${DATADIR}/Themes/rsr/Graphics/ScreenWithMenuElements header/default.lua
-${DATADIR}/Themes/rsr/Sounds/
-${DATADIR}/Themes/rsr/Sounds/_Music menu.redir
-${DATADIR}/Themes/rsr/Sounds/_Music title (loop).ogg
-${DATADIR}/Themes/rsr/Sounds/_Music title (loop).sm
-${DATADIR}/Themes/rsr/ThemeInfo.ini
-${DATADIR}/Themes/rsr/library.txt
-${DATADIR}/Themes/rsr/metrics.ini
-${DATADIR}/Themes/rsr/todo.txt
-${DATADIR}/Themes/test/
-${DATADIR}/Themes/test/Sounds/
-${DATADIR}/Themes/test/Sounds/_Music menu (loop).ogg
-${DATADIR}/Themes/test/Sounds/_Music menu (loop).sm
-${DATADIR}/Themes/test/Sounds/_Music title (loop).ogg
-${DATADIR}/Themes/test/Sounds/_Music title (loop).sm
-${DATADIR}/Themes/test/ThemeInfo.ini
-${DATADIR}/Themes/test/metrics.ini
-${DATADIR}/Themes/themekit/
-${DATADIR}/Themes/themekit/BGAnimations/
-${DATADIR}/Themes/themekit/BGAnimations/ScreenSelectMusic decorations.lua
-${DATADIR}/Themes/themekit/BGAnimations/ScreenTitleMenu underlay.lua
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements background/
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements background/VOL1-29-NTSC.mpg
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements background/_16 (stretch).png
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements background/_32 (stretch).png
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements background/_8 (stretch).png
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements background/default.lua
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements decorations.lua
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements underlay/
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements underlay/default.lua
-${DATADIR}/Themes/themekit/BGAnimations/ScreenWithMenuElements underlay/grid.png
-${DATADIR}/Themes/themekit/Fonts/
-${DATADIR}/Themes/themekit/Fonts/ScreenWithMenuElements TextHeader.redir
-${DATADIR}/Themes/themekit/Graphics/
-${DATADIR}/Themes/themekit/Graphics/Banner all music.png
-${DATADIR}/Themes/themekit/Graphics/Banner mode.png
-${DATADIR}/Themes/themekit/Graphics/Banner random.png
-${DATADIR}/Themes/themekit/Graphics/Banner roulette.png
-${DATADIR}/Themes/themekit/Graphics/Common fallback background.png
-${DATADIR}/Themes/themekit/Graphics/Common fallback banner.png
-${DATADIR}/Themes/themekit/Graphics/MusicWheel highlight.png
-${DATADIR}/Themes/themekit/Graphics/MusicWheelItem SectionCollapsed ColorPart.png
-${DATADIR}/Themes/themekit/Graphics/MusicWheelItem SectionExpanded ColorPart.png
-${DATADIR}/Themes/themekit/Graphics/MusicWheelItem Song NormalPart.png
-${DATADIR}/Themes/themekit/Graphics/PlayMode Endless.png
-${DATADIR}/Themes/themekit/Graphics/PlayMode Extended.png
-${DATADIR}/Themes/themekit/Graphics/PlayMode Normal.png
-${DATADIR}/Themes/themekit/Graphics/PlayMode Oni.png
-${DATADIR}/Themes/themekit/Graphics/PlayMode Rave.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectPlayMode Icon ChoiceEndless.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectPlayMode Icon ChoiceExtended.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectPlayMode Icon ChoiceHard.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectPlayMode Icon ChoiceNormal.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectPlayMode Icon ChoiceOni.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectPlayMode Icon ChoiceRave.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectPlayMode scroll.lua
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon Choice10Keys.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon Choice14Keys.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon Choice5Keys.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon Choice7Keys.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon ChoiceCouple.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon ChoiceDouble.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon ChoiceHalfDouble.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon ChoiceKB7.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon ChoiceSingle.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon ChoiceSolo.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle Icon ChoiceVersus.png
-${DATADIR}/Themes/themekit/Graphics/ScreenSelectStyle scroll.lua
-${DATADIR}/Themes/themekit/Graphics/ScreenTitleMenu Logo.png
-${DATADIR}/Themes/themekit/Graphics/ScreenTitleMenu scroll.lua
-${DATADIR}/Themes/themekit/Graphics/ScreenWithMenuElements Footer.png
-${DATADIR}/Themes/themekit/Graphics/ScreenWithMenuElements Header.png
-${DATADIR}/Themes/themekit/Graphics/ScreenWithMenuElements HelpDisplay.lua
-${DATADIR}/Themes/themekit/Graphics/ScreenWithMenuElements TextHeader.lua
-${DATADIR}/Themes/themekit/Graphics/StepsDisplay frame.png
-${DATADIR}/Themes/themekit/Graphics/Style 10Keys.png
-${DATADIR}/Themes/themekit/Graphics/Style 14Keys.png
-${DATADIR}/Themes/themekit/Graphics/Style 5Keys.png
-${DATADIR}/Themes/themekit/Graphics/Style 7Keys.png
-${DATADIR}/Themes/themekit/Graphics/Style Couple.png
-${DATADIR}/Themes/themekit/Graphics/Style Double.png
-${DATADIR}/Themes/themekit/Graphics/Style HalfDouble.png
-${DATADIR}/Themes/themekit/Graphics/Style KB7.png
-${DATADIR}/Themes/themekit/Graphics/Style Single.png
-${DATADIR}/Themes/themekit/Graphics/Style Solo.png
-${DATADIR}/Themes/themekit/Graphics/Style Versus.png
-${DATADIR}/Themes/themekit/Languages/
-${DATADIR}/Themes/themekit/Languages/en.ini
-${DATADIR}/Themes/themekit/Scripts/
-${DATADIR}/Themes/themekit/Scripts/02 TextBanner.lua
-${DATADIR}/Themes/themekit/Sounds/
-${DATADIR}/Themes/themekit/Sounds/_Music menu.redir
-${DATADIR}/Themes/themekit/Sounds/_Music title (loop).ogg
-${DATADIR}/Themes/themekit/Sounds/_Music title (loop).sm
-${DATADIR}/Themes/themekit/ThemeInfo.ini
-${DATADIR}/Themes/themekit/_Resources/
-${DATADIR}/Themes/themekit/_Resources/MusicWheelItem.psd
-${DATADIR}/Themes/themekit/_Resources/ScreenSelectStyle Icon.psd
-${DATADIR}/Themes/themekit/_Resources/ScreenSelectStyle Scroll.psd
-${DATADIR}/Themes/themekit/_Resources/ScreenTitleMenu logo.psd
-${DATADIR}/Themes/themekit/_Resources/ScreenWithMenuElements Footer.psd
-${DATADIR}/Themes/themekit/_Resources/ScreenWithMenuElements Header.psd
-${DATADIR}/Themes/themekit/_Resources/StepsDisplay items.psd
-${DATADIR}/Themes/themekit/_library.txt
-${DATADIR}/Themes/themekit/_todo.txt
-${DATADIR}/Themes/themekit/metrics.ini
-libexec/GtkModule.so
-@bin libexec/stepmania
+@bin ${DATADIR}/stepmania

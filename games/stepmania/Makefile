@@ -1,24 +1,32 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/12 22:47:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/24 12:09:25 espie Exp $
 
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
 
-DISTNAME = 	stepmania-5.0b2a
-PKGNAME =	stepmania-5.0beta2a
-REVISION =	14
-EXTRACT_SUFX = 	-src.tar.bz2
+DISTNAME = 	stepmania-5.0.12
 HOMEPAGE =	http://www.stepmania.com
-MASTER_SITES = 	${MASTER_SITE_SOURCEFORGE:=stepmania/}
 
+GH_ACCOUNT =	stepmania
+GH_PROJECT =	stepmania
+GH_TAGNAME =	v5.0.12
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 # Code base is mostly BSD, with a few tidbits GPL
 PERMIT_PACKAGE = Yes
 MAINTAINER =	Marc Espie <espie@openbsd.org>
+EPOCH =	0
 
-WRKDIST = 	${WRKDIR}/stepmania-tip
-CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS += 	--disable-lua-binaries
-CONFIGURE_ENV += 	CPPFLAGS=-I${LOCALBASE}/include  \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODULES =	devel/cmake
+CONFIGURE_STYLE = cmake
+
+#MODCMAKE_DEBUG =	Yes
+
+INC=-I${X11BASE}/include -I${LOCALBASE}/include
+CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} ${INC}"
+CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} ${INC}"
+CONFIGURE_ARGS +=	-Wno-dev
+CONFIGURE_ARGS +=	-DWITH_SYSTEM_FFMPEG=Yes
+CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX}/libdata
+
 NO_TEST =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -26,22 +34,20 @@ COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS =	audio/libvorbis \
 		audio/libmad \
 		graphics/ffmpeg \
-		graphics/glew \
-		audio/pulseaudio \
-		x11/gtk+2
+		audio/pulseaudio
 
 # stepmania comes with its own copy of lua-5.1 with a supplementary function
 # luaL_pushtype AND a supplementary keyword "cmd"  :(
 
-WANTLIB += GL GLU X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xtst c fontconfig freetype
-WANTLIB += iconv intl m pthread ${COMPILER_LIBCXX} z
-WANTLIB += GLEW avcodec avformat avutil bz2 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += GL GLU X11 Xext
+WANTLIB += Xrandr c
+WANTLIB += m pthread ${COMPILER_LIBCXX} z
+WANTLIB += avcodec avformat avutil bz2
 WANTLIB += mad ogg pulse swscale vorbis vorbisfile
-WANTLIB += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
-WANTLIB += jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 png
+WANTLIB += jpeg
+WANTLIB += ICE SM pcre
 
-DATADIR = libdata/stepmania
+DATADIR = libdata/stepmania-5.0
 D = 	Announcers BGAnimations BackgroundEffects BackgroundTransitions \
 	Characters Courses Data NoteSkins Scripts Songs Themes
 
@@ -50,22 +56,8 @@ SUBST_VARS = DATADIR
 post-extract:
 	@perl -pi -e 's/\r//g' ${WRKSRC}/src/ProfileManager.cpp
 
-# just so we can start the game directly to test.
-post-build:
-	cd ${WRKBUILD} && ln -sf src/stepmania && ln -sf src/GtkModule.so
-	${SUBST_CMD} -m 555 -c ${FILESDIR}/stepmania ${WRKBUILD}/stepexe
 
-# sigh, no install, so do things manually
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/${DATADIR}
-.for i in $D
-	cp -R ${WRKBUILD}/$i ${PREFIX}/${DATADIR}/$i
-.endfor
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DATADIR}
-	${INSTALL_PROGRAM} ${WRKBUILD}/src/stepmania ${PREFIX}/libexec
-	${INSTALL_DATA} ${WRKBUILD}/src/GtkModule.so ${PREFIX}/libexec
-	${INSTALL_SCRIPT} ${WRKBUILD}/stepexe ${PREFIX}/bin/stepmania
-
-# TODO: install more documentation ?
+post-install:
+	cd ${PREFIX}/bin && ln -s ../$(DATADIR)/stepmania
 
 .include <bsd.port.mk>

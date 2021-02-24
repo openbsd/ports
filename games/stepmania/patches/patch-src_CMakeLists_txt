@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2021/02/24 12:09:25 espie Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -291,7 +291,7 @@ else() # Linux
+     sm_add_compile_definition("${SM_EXE_NAME}" HAVE_LIBPTHREAD)
+ 
+     message("Host processor is ${CMAKE_SYSTEM_PROCESSOR}")
+-    if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
++    if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64" OR CMAKE_SYSTEM_PROCESSOR MATCHES "amd64")
+       message("Host processor is 64bit")
+       sm_add_compile_definition("${SM_EXE_NAME}" CPU_X86_64)
+     elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "x86" OR CMAKE_SYSTEM_PROCESSOR MATCHES "i686")

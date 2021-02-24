@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_SongUtil_cpp,v 1.1 2021/02/24 12:09:25 espie Exp $
+
+Index: src/SongUtil.cpp
+--- src/SongUtil.cpp.orig
++++ src/SongUtil.cpp
+@@ -267,9 +267,9 @@ void SongUtil::AdjustDuplicateSteps( Song *pSong )
+ 			DeleteDuplicateSteps( pSong, vSteps );
+ 
+ 			char const *songTitle = pSong->GetDisplayFullTitle().c_str();
+-			CHECKPOINT_M(ssprintf("Duplicate steps from %s removed.", songTitle));
++			//CHECKPOINT_M(ssprintf("Duplicate steps from %s removed.", songTitle));
+ 			StepsUtil::SortNotesArrayByDifficulty( vSteps );
+-			CHECKPOINT_M(ssprintf("Charts from %s sorted.", songTitle));
++			//CHECKPOINT_M(ssprintf("Charts from %s sorted.", songTitle));
+ 			for( unsigned k=1; k<vSteps.size(); k++ )
+ 			{
+ 				vSteps[k]->SetDifficulty( Difficulty_Edit );
