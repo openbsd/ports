@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1210 2021/02/24 12:34:02 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1211 2021/02/24 12:42:41 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2154,6 +2154,7 @@ my $obsolete_reason = {
 	'avenger' => 29,
 	'mk' => 41,
 	'sabredav' => 1,
+	'mollify' => 3,
 };
 
 # reasons for obsolete packages
