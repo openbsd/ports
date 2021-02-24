@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/05/18 01:43:02 sthen Exp $
-@extraunexec rm -rf ${PREFIX}/racktables/plugins/*
+@comment $OpenBSD: PLIST,v 1.14 2021/02/24 13:25:32 sthen Exp $
 htdocs/racktables/
 htdocs/racktables/index.php
 racktables/
@@ -18,9 +17,13 @@ racktables/plugins/
 racktables/scripts/
 racktables/scripts/cleanup_ldap_cache.php
 racktables/scripts/init-sample-racks.sql
+racktables/scripts/reload_dictionary.php
 racktables/scripts/syncdomain.php
 racktables/wwwroot/
 racktables/wwwroot/css/
+racktables/wwwroot/css/codemirror/
+racktables/wwwroot/css/codemirror/codemirror.css
+racktables/wwwroot/css/codemirror/rackcode.css
 racktables/wwwroot/css/jquery-ui-1.8.22.redmond.css
 racktables/wwwroot/css/jquery.contextmenu.css
 racktables/wwwroot/css/pi.css
@@ -28,6 +31,8 @@ racktables/wwwroot/css/tagit.css
 racktables/wwwroot/inc/
 racktables/wwwroot/inc/ajax-interface.php
 racktables/wwwroot/inc/auth.php
+racktables/wwwroot/inc/breed-hpprocurveN1178.php
+racktables/wwwroot/inc/breed-ios15.php
 racktables/wwwroot/inc/caching.php
 racktables/wwwroot/inc/code.php
 racktables/wwwroot/inc/config.php
@@ -60,16 +65,9 @@ racktables/wwwroot/inc/triggers.php
 racktables/wwwroot/inc/upgrade.php
 racktables/wwwroot/index.php
 racktables/wwwroot/js/
-racktables/wwwroot/js/bulkselector.js
 racktables/wwwroot/js/codemirror/
-racktables/wwwroot/js/codemirror/codemirror.css
 racktables/wwwroot/js/codemirror/codemirror.js
-racktables/wwwroot/js/codemirror/css.js
-racktables/wwwroot/js/codemirror/htmlmixed.js
-racktables/wwwroot/js/codemirror/javascript.js
-racktables/wwwroot/js/codemirror/php.js
 racktables/wwwroot/js/codemirror/rackcode.js
-racktables/wwwroot/js/codemirror/sql.js
 racktables/wwwroot/js/inplace-edit.js
 racktables/wwwroot/js/jquery-1.4.4.min.js
 racktables/wwwroot/js/jquery-ui-1.8.21.min.js
@@ -179,6 +177,7 @@ racktables/wwwroot/pix/tango-go-next.png
 racktables/wwwroot/pix/tango-go-prev-next-32x32.png
 racktables/wwwroot/pix/tango-go-prev-next-gray-32x32.png
 racktables/wwwroot/pix/tango-go-previous.png
+racktables/wwwroot/pix/tango-go-up.png
 racktables/wwwroot/pix/tango-internet-32x32.png
 racktables/wwwroot/pix/tango-list-add-big.png
 racktables/wwwroot/pix/tango-list-add.png
@@ -202,4 +201,3 @@ racktables/wwwroot/pix/tango-view-refresh-16x16.png
 racktables/wwwroot/pix/tango-view-refresh-32x32.png
 racktables/wwwroot/pix/unchecked.png
 racktables/wwwroot/pix/virtualresources.png
-@extra ${PREFIX}/racktables/inc/secret.php
