@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/12/10 17:22:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/24 14:28:55 sthen Exp $
 
 COMMENT =	DNS performance testing tools
 
-DISTNAME =	dnsperf-2.4.0
+DISTNAME =	dnsperf-2.4.2
 
 CATEGORIES =	net benchmarks
 
@@ -15,10 +15,22 @@ WANTLIB += c crypto ldns m ssl pthread
 
 MASTER_SITES =		https://www.dns-oarc.net/files/dnsperf/
 
+MODULES =		lang/python
+MODPY_ADJ_FILES =	contrib/queryparse/queryparse
+MODPY_BUILDDEP =	No
+
 LIB_DEPENDS =		net/ldns,-main
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
+
+RUN_DEPENDS =		net/py-dnspython${MODPY_FLAVOR} \
+			net/py-pcapy${MODPY_FLAVOR}
+
+post-install:
+	cd ${WRKSRC}/contrib/queryparse; \
+	  ${INSTALL_SCRIPT} queryparse ${PREFIX}/bin; \
+	  ${INSTALL_DATA} queryparse.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
