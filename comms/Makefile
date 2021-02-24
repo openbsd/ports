@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2021/01/02 14:51:45 jcs Exp $
+# $OpenBSD: Makefile,v 1.81 2021/02/24 17:26:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -46,7 +46,6 @@
      SUBDIR += qpage
      SUBDIR += rtl-sdr
      SUBDIR += scmxx
-     SUBDIR += seyon
      SUBDIR += sigrok
      SUBDIR += smstools
      SUBDIR += spisniffer
