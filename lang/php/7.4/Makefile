@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/24 16:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/24 17:31:58 sthen Exp $
 
 PORTROACH=	limit:^7\.4
 PHP_VERSION=	7.4.15
@@ -14,5 +14,7 @@ BUILD_DEPENDS+=		devel/bison
 YACC=			bison
 
 CONFIGURE_ARGS+=	--without-valgrind
+
+PHP_EXTENSIONS+=	-xmlrpc
 
 .include <bsd.port.mk>

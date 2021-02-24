@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-dbg,v 1.2 2019/12/11 14:47:54 sthen Exp $
+@comment $OpenBSD: PLIST-dbg,v 1.3 2021/02/24 17:31:58 sthen Exp $
 @option no-default-conflict
 @option is-branch
-@conflict php-dbg->=7.3,<7.4
+@conflict php-dbg-${PHP_PKGSPEC}
 @pkgpath lang/php/5.6,-dbg
 @pkgpath lang/php/7.0,-dbg
 @pkgpath lang/php/7.1,-dbg

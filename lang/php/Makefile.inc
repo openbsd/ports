@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.154 2020/07/21 15:58:41 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.155 2021/02/24 17:31:58 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -13,7 +13,6 @@ PKGSTEM=		php-${PV}
 PKGSTEM-main=		php-${PV}
 
 DISTNAME?=		php-${PHP_VERSION}
-#PGPSIGFILES?=		php-${PHP_VERSION}${EXTRACT_SUFX}.asc
 EXTRACT_SUFX?=		.tar.xz
 
 CATEGORIES=		lang www
@@ -119,7 +118,7 @@ ZEND_EXTENSIONS+=	-opcache
 PHP_EXTENSIONS+=	-bz2 -curl -dba -enchant -gd -gmp -intl -imap -ldap \
 			-mysqli -odbc -pcntl -pdo_mysql -pdo_odbc -pdo_pgsql \
 			-pdo_sqlite -pgsql -pspell -shmop -soap -snmp \
-			-sqlite3 -pdo_dblib -tidy -xmlrpc -xsl -zip
+			-sqlite3 -pdo_dblib -tidy -xsl -zip
 
 SAPI+=			-main -apache -cgi -dbg
 MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
@@ -448,7 +447,7 @@ LIB_DEPENDS-zip=	archivers/bzip2 \
 WANTLIB-zip=		bz2 crypto lzma pthread ssl z zip
 
 # some variables to substitute
-SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV
+SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV PHP_PKGSPEC
 UPDATE_PLIST_ARGS+= -i MV
 DEFAULT_PHP?=	No
 

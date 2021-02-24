@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2021/02/24 16:48:59 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2021/02/24 17:31:58 sthen Exp $
 @option no-default-conflict
 @option is-branch
-@conflict php->=7.3,<7.4
+@conflict php-${PHP_PKGSPEC}
 @pkgpath security/pecl-libsodium,php71
 @pkgpath lang/php/5.6,-main
 @pkgpath lang/php/7.0,-main

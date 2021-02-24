@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2020/05/14 19:34:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2021/02/24 17:31:58 sthen Exp $
 @option no-default-conflict
 @option is-branch
-@conflict php->=7.2,<7.3
+@conflict php-${PHP_PKGSPEC}
 @pkgpath security/pecl-libsodium,php72
 @extraunexec rm -f ${SYSCONFDIR}/php-${PV}.sample/*
 @extraunexec rm -f ${SYSCONFDIR}/php-fpm.d/*
