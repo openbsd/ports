@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.72 2021/02/23 19:39:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2021/02/24 18:21:44 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.14.0
+V =			4.14.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
-SHARED_LIBS +=	Aggregation               0.0 # 0.0
-SHARED_LIBS +=	CPlusPlus                 3.0 # 0.0
-SHARED_LIBS +=	ExtensionSystem           4.0 # 0.0
-SHARED_LIBS +=	GLSL                      0.0 # 0.0
-SHARED_LIBS +=	LanguageUtils             0.0 # 0.0
-SHARED_LIBS +=	QmlDebug                  4.0 # 0.0
-SHARED_LIBS +=	QmlEditorWidgets          0.0 # 0.0
-SHARED_LIBS +=	QmlJS                     6.0 # 0.0
-SHARED_LIBS +=	QtcSsh                    1.0 # 0.0
-SHARED_LIBS +=	Utils                     6.0 # 0.0
-SHARED_LIBS +=	Sqlite                    5.0 # 1.0
-SHARED_LIBS +=	Modeling                  4.0 # 1.0
-SHARED_LIBS +=	Clangsupport              1.0 # 4.5
-SHARED_LIBS +=	Tracing                   1.0 # 4.7
+SHARED_LIBS +=  Aggregation               0.0 # 0.0
+SHARED_LIBS +=  CPlusPlus                 3.0 # 0.0
+SHARED_LIBS +=  ExtensionSystem           4.0 # 0.0
+SHARED_LIBS +=  GLSL                      0.0 # 0.0
+SHARED_LIBS +=  LanguageUtils             0.1 # 0.0
+SHARED_LIBS +=  QmlDebug                  4.0 # 0.0
+SHARED_LIBS +=  QmlEditorWidgets          0.0 # 0.0
+SHARED_LIBS +=  QmlJS                     6.0 # 0.0
+SHARED_LIBS +=  QtcSsh                    1.0 # 0.0
+SHARED_LIBS +=  Utils                     6.0 # 0.0
+SHARED_LIBS +=  Sqlite                    5.1 # 1.0
+SHARED_LIBS +=  Modeling                  4.0 # 1.0
+SHARED_LIBS +=  Clangsupport              1.0 # 4.5
+SHARED_LIBS +=  Tracing                   1.0 # 4.7
 SHARED_LIBS +=  LanguageServerProtocol    1.0 # 4.8
 SHARED_LIBS +=  AdvancedDockingSystem     0.0 # 4.12
 
@@ -46,8 +46,8 @@ WANTLIB += Qt5Quick Qt5QuickWidgets Qt5SerialPort Qt5Sql Qt5Svg
 WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5Xml c clang m yaml-cpp
 
-MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
-		https://mirrors.ocf.berkeley.edu/qt/official_releases/qtcreator/${V:R}/${V}/
+MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/.${V}/ \
+		https://mirrors.ocf.berkeley.edu/qt/official_releases/qtcreator/${V:R}/.${V}/
 
 MODULES =	x11/qt5 \
 		lang/python \
