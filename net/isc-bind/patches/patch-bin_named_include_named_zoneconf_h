@@ -1,0 +1,31 @@
+$OpenBSD: patch-bin_named_include_named_zoneconf_h,v 1.1 2021/02/25 16:37:22 sthen Exp $
+
+From 2b3fcd7156808b9423cf91655dae45c08c180638 Mon Sep 17 00:00:00 2001
+From: Mark Andrews <marka@isc.org>
+Date: Mon, 25 Jan 2021 16:14:02 +1100
+Subject: [PATCH 1/5] Pass an afg_aclconfctx_t structure to cfg_acl_fromconfig
+in named_zone_inlinesigning.  A NULL pointer does not work.
+
+Index: bin/named/include/named/zoneconf.h
+--- bin/named/include/named/zoneconf.h.orig
++++ bin/named/include/named/zoneconf.h
+@@ -44,7 +44,8 @@ named_zone_configure(const cfg_obj_t *config, const cf
+ 
+ bool
+ named_zone_reusable(dns_zone_t *zone, const cfg_obj_t *zconfig,
+-		    const cfg_obj_t *vconfig, const cfg_obj_t *config);
++		    const cfg_obj_t *vconfig, const cfg_obj_t *config,
++		    cfg_aclconfctx_t *actx);
+ /*%<
+  * If 'zone' can be safely reconfigured according to the configuration
+  * data in 'zconfig', return true.  If the configuration data is so
+@@ -54,7 +55,8 @@ named_zone_reusable(dns_zone_t *zone, const cfg_obj_t 
+ 
+ bool
+ named_zone_inlinesigning(dns_zone_t *zone, const cfg_obj_t *zconfig,
+-			 const cfg_obj_t *vconfig, const cfg_obj_t *config);
++			 const cfg_obj_t *vconfig, const cfg_obj_t *config,
++			 cfg_aclconfctx_t *actx);
+ /*%<
+  * Determine if zone uses inline-signing. This is true if inline-signing
+  * is set to yes, or if there is a dnssec-policy on a non-dynamic zone.
