@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_main_h,v 1.1 2021/02/25 15:09:09 gnezdo Exp $
+
+-fno-common
+
+Index: src/main.h
+--- src/main.h.orig
++++ src/main.h
+@@ -35,10 +35,5 @@ extern int use_readline_flag;
+ /* is default_shell unixy? */
+ extern int unixy_shell;
+ 
+-/**! The default value of SHELL and the shell that is used when issuing
+-   commands on targets.
+-*/
+-extern char *default_shell;
+-
+ /*! Print version information. */
+ extern void print_version (void);

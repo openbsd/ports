@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_variable_h,v 1.1 2021/02/25 15:09:09 gnezdo Exp $
+
+-fno-common
+
+Index: src/variable.h
+--- src/variable.h.orig
++++ src/variable.h
+@@ -116,7 +116,6 @@ struct pattern_var
+ extern char *variable_buffer;
+ extern struct variable_set_list *current_variable_set_list;
+ extern struct variable *default_goal_var;
+-extern struct variable shell_var;
+ 
+ /* expand.c */
+ #ifndef SIZE_MAX

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/25 15:09:08 gnezdo Exp $
 
 COMMENT=		GNU make debugger
 
-PKGNAME=		remake-0.61p0
-DISTNAME=		remake-3.80+dbg-0.61
-REVISION=		2
+PKGNAME=		remake-1.5
+DISTNAME=		remake-4.3+dbg-1.5
 
 CATEGORIES=		devel
 
@@ -18,11 +17,11 @@ WANTLIB += c curses readline
 
 CONFIGURE_STYLE=	gnu
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/make ${PREFIX}/bin/remake
-	${INSTALL_MAN} ${WRKSRC}/make.1 ${PREFIX}/man/man1/remake.1
+# The test suite expects to find SHELL.
+MAKE_ENV +=		SHELL=/bin/ksh
 
-pre-test:
-	rm -f ${WRKSRC}/tests/scripts/debugger/trace.orig
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/make ${PREFIX}/bin/remake
+	${INSTALL_MAN} ${WRKSRC}/doc/make.1 ${PREFIX}/man/man1/remake.1
 
 .include <bsd.port.mk>

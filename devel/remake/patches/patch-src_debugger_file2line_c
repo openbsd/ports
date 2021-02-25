@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_debugger_file2line_c,v 1.1 2021/02/25 15:09:09 gnezdo Exp $
+
+-fno-common
+
+https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-devel/remake/files/remake-4.2.1.1.4-fno-common.patch?id=2d3f45f6f1ac0dbe8d987af727a0f7445cd30048
+
+Index: src/debugger/file2line.c
+--- src/debugger/file2line.c.orig
++++ src/debugger/file2line.c
+@@ -26,6 +26,8 @@ Boston, MA 02111-1307, USA.  */
+ #include "../rule.h"
+ #include "./file2line.h"
+ 
++struct hash_table file2lines;
++
+ unsigned long
+ file2lines_hash_1 (const void *key)
+ {

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_variable_c,v 1.1 2021/02/25 15:09:09 gnezdo Exp $
+
+-fno-common
+
+Index: src/variable.c
+--- src/variable.c.orig
++++ src/variable.c
+@@ -29,6 +29,7 @@ this program.  If not, see <http://www.gnu.org/license
+ #endif
+ #include "hash.h"
+ #include "main.h"
++#include "globals.h"
+ 
+ /* Incremented every time we add or remove a global variable.  */
+ static unsigned long variable_changenum;

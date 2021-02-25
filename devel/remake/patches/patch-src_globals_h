@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_globals_h,v 1.1 2021/02/25 15:09:09 gnezdo Exp $
+
+-fno-common
+
+Index: src/globals.h
+--- src/globals.h.orig
++++ src/globals.h
+@@ -89,6 +89,12 @@ extern int in_debugger;
+ extern bool b_debugger_preread;
+ 
+ /* Remember the original value of the SHELL variable, from the environment.  */
+-struct variable shell_var;
++extern struct variable shell_var;
++
++/**! The default value of SHELL and the shell that is used when issuing
++   commands on targets.
++*/
++extern const char *default_shell;
++
+ 
+ #endif /*GLOBALS_H*/

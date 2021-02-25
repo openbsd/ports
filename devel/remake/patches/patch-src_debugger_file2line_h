@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_debugger_file2line_h,v 1.1 2021/02/25 15:09:09 gnezdo Exp $
+
+-fno-common
+
+Index: src/debugger/file2line.h
+--- src/debugger/file2line.h.orig
++++ src/debugger/file2line.h
+@@ -19,7 +19,7 @@ the Free Software Foundation, Inc., 59 Temple Place - 
+ Boston, MA 02111-1307, USA.  */
+ #ifndef REMAKE_FILE2LINE
+ #define REMAKE_FILE2LINE
+-struct hash_table file2lines;
++extern struct hash_table file2lines;
+ 
+ typedef enum {
+   F2L_TARGET,
