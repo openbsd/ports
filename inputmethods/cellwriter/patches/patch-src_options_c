@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_options_c,v 1.1 2021/02/25 15:05:06 naddy Exp $
+
+Index: src/options.c
+--- src/options.c.orig
++++ src/options.c
+@@ -27,7 +27,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ #include <string.h>
+ 
+ /* preprocess.c */
+-int ignore_stroke_dir, ignore_stroke_num;
++extern int ignore_stroke_dir, ignore_stroke_num;
+ 
+ /* cellwidget.c */
+ extern int cell_width, cell_height, cell_cols_pref, cell_rows_pref,

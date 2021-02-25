@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_recognize_c,v 1.1 2021/02/25 15:05:06 naddy Exp $
+
+Index: src/recognize.c
+--- src/recognize.c.orig
++++ src/recognize.c
+@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ #include "recognize.h"
+ 
+ /* preprocess.c */
+-int prep_examined;
++extern int prep_examined;
+ 
+ void engine_prep(void);
+ 

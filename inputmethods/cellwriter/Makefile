@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/25 15:05:06 naddy Exp $
 
 COMMENT =		grid-entry natural handwriting input panel
 
 GH_ACCOUNT =		risujin
 GH_PROJECT =		cellwriter
 GH_TAGNAME =		1.3.6
+REVISION =		0
 
 CATEGORIES =		inputmethods x11
 
