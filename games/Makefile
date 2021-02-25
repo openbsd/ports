@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.436 2021/02/24 22:25:25 thfr Exp $
+# $OpenBSD: Makefile,v 1.437 2021/02/25 19:40:07 solene Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -195,6 +195,7 @@
      SUBDIR += moon-buggy
      SUBDIR += moonlander
      SUBDIR += moonlander,no_sound
+     SUBDIR += moonlight-qt
      SUBDIR += moria
      SUBDIR += multimc
      SUBDIR += mvdsv
