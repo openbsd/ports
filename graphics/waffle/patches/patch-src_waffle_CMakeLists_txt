@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_waffle_CMakeLists_txt,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
---- src/waffle/CMakeLists.txt.orig	Wed Aug 26 07:05:10 2015
-+++ src/waffle/CMakeLists.txt	Sat Dec 26 13:41:14 2015
-@@ -120,7 +120,7 @@ if(waffle_on_linux)
+$OpenBSD: patch-src_waffle_CMakeLists_txt,v 1.2 2021/02/25 04:38:01 jsg Exp $
+Index: src/waffle/CMakeLists.txt
+--- src/waffle/CMakeLists.txt.orig
++++ src/waffle/CMakeLists.txt
+@@ -123,7 +123,7 @@ if(waffle_on_linux)
          linux/linux_platform.c
          )
      list(APPEND waffle_libdeps

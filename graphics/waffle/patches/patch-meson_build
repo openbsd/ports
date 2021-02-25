@@ -1,0 +1,19 @@
+$OpenBSD: patch-meson_build,v 1.1 2021/02/25 04:38:01 jsg Exp $
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -98,12 +98,11 @@ else
+     dep_x11_xcb = dependency('x11-xcb', required : get_option('x11_egl'))
+   endif
+   dep_gbm = dependency('gbm', required : get_option('gbm'))
+-  dep_udev = dependency('libudev', required : get_option('gbm'))
+ 
+   build_x11_egl = dep_egl.found()
+   build_wayland = dep_wayland_client.found() and dep_wayland_egl.found()
+   build_glx = dep_gl.found()
+-  build_gbm = dep_gbm.found() and dep_udev.found()
++  build_gbm = dep_gbm.found()
+   build_surfaceless = dep_egl.found()
+ endif
+ 

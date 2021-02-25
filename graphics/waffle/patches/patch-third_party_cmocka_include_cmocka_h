@@ -1,12 +1,13 @@
-$OpenBSD: patch-third_party_cmocka_include_cmocka_h,v 1.1 2015/12/28 17:20:18 jca Exp $
+$OpenBSD: patch-third_party_cmocka_include_cmocka_h,v 1.2 2021/02/25 04:38:01 jsg Exp $
 
 Avoid a conflicting typedef on 32-bit arch.
 
---- third_party/cmocka/include/cmocka.h.orig	Tue Aug 25 23:05:10 2015
-+++ third_party/cmocka/include/cmocka.h	Mon Dec 28 18:15:45 2015
-@@ -81,6 +81,9 @@ int __stdcall IsDebuggerPresent();
+Index: third_party/cmocka/include/cmocka.h
+--- third_party/cmocka/include/cmocka.h.orig
++++ third_party/cmocka/include/cmocka.h
+@@ -96,6 +96,9 @@ typedef uintmax_t LargestIntegralType;
  #define cast_to_largest_integral_type(value) \
-     ((LargestIntegralType)((size_t)(value)))
+     ((LargestIntegralType)(value))
  
 +#if defined(__OpenBSD__)
 +#include <stdint.h>
@@ -14,7 +15,7 @@ Avoid a conflicting typedef on 32-bit arch.
  /* Smallest integral type capable of holding a pointer. */
  #if !defined(_UINTPTR_T) && !defined(_UINTPTR_T_DEFINED)
  # if defined(_WIN32)
-@@ -109,6 +112,7 @@ int __stdcall IsDebuggerPresent();
+@@ -124,6 +127,7 @@ typedef uintmax_t LargestIntegralType;
  # define _UINTPTR_T
  # define _UINTPTR_T_DEFINED
  #endif /* !defined(_UINTPTR_T) || !defined(_UINTPTR_T_DEFINED) */

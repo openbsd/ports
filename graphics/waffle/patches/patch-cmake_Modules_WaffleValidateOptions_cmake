@@ -1,7 +1,8 @@
-$OpenBSD: patch-cmake_Modules_WaffleValidateOptions_cmake,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
---- cmake/Modules/WaffleValidateOptions.cmake.orig	Sun Dec 20 16:26:53 2015
-+++ cmake/Modules/WaffleValidateOptions.cmake	Sun Dec 20 16:27:07 2015
-@@ -58,11 +58,6 @@ if(waffle_on_linux)
+$OpenBSD: patch-cmake_Modules_WaffleValidateOptions_cmake,v 1.2 2021/02/25 04:38:01 jsg Exp $
+Index: cmake/Modules/WaffleValidateOptions.cmake
+--- cmake/Modules/WaffleValidateOptions.cmake.orig
++++ cmake/Modules/WaffleValidateOptions.cmake
+@@ -87,11 +87,6 @@ if(waffle_on_linux)
                  "${gbm_missing_deps} gbm"
                  )
          endif()

@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_waffle_egl_wegl_platform_c,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
---- src/waffle/egl/wegl_platform.c.orig	Sun Dec 20 16:16:17 2015
-+++ src/waffle/egl/wegl_platform.c	Sun Dec 20 16:16:51 2015
-@@ -29,7 +29,7 @@
+$OpenBSD: patch-src_waffle_egl_wegl_platform_c,v 1.2 2021/02/25 04:38:01 jsg Exp $
+Index: src/waffle/egl/wegl_platform.c
+--- src/waffle/egl/wegl_platform.c.orig
++++ src/waffle/egl/wegl_platform.c
+@@ -31,7 +31,7 @@
  #include "wegl_platform.h"
  
  

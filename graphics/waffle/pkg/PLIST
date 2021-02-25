@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/25 04:38:01 jsg Exp $
 @bin bin/wflinfo
 include/waffle-1/
 include/waffle-1/waffle.h
@@ -7,20 +7,16 @@ include/waffle-1/waffle_glx.h
 include/waffle-1/waffle_version.h
 include/waffle-1/waffle_wayland.h
 include/waffle-1/waffle_x11_egl.h
-lib/cmake/
-lib/cmake/Waffle/
-lib/cmake/Waffle/WaffleConfig.cmake
-lib/cmake/Waffle/WaffleConfigVersion.cmake
 @lib lib/libwaffle-1.so.${LIBwaffle-1_VERSION}
 lib/pkgconfig/waffle-1.pc
-share/cmake/
-share/cmake/Modules/
-share/cmake/Modules/FindWaffle.cmake
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/wflinfo
 share/doc/waffle1/
 share/doc/waffle1/HACKING.txt
 share/doc/waffle1/LICENSE-threads.txt
 share/doc/waffle1/LICENSE.txt
-share/doc/waffle1/README.txt
+share/doc/waffle1/README.md
 share/doc/waffle1/examples/
 share/doc/waffle1/examples/Makefile.example
 share/doc/waffle1/examples/gl_basic.c
@@ -47,3 +43,7 @@ share/doc/waffle1/release-notes/waffle-1.4.4.txt
 share/doc/waffle1/release-notes/waffle-1.5.0.txt
 share/doc/waffle1/release-notes/waffle-1.5.1.txt
 share/doc/waffle1/release-notes/waffle-1.5.2.txt
+share/doc/waffle1/release-notes/waffle-1.6.0.md
+share/doc/waffle1/release-notes/waffle-1.6.1.md
+share/doc/waffle1/release-notes/waffle-1.6.2.md
+share/doc/waffle1/release-notes/waffle-1.6.3.md

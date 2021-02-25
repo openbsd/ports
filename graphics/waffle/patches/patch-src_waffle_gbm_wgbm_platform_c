@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_waffle_gbm_wgbm_platform_c,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
---- src/waffle/gbm/wgbm_platform.c.orig	Sun Dec 20 16:33:32 2015
-+++ src/waffle/gbm/wgbm_platform.c	Sun Dec 20 16:33:46 2015
-@@ -42,7 +42,7 @@
+$OpenBSD: patch-src_waffle_gbm_wgbm_platform_c,v 1.2 2021/02/25 04:38:01 jsg Exp $
+Index: src/waffle/gbm/wgbm_platform.c
+--- src/waffle/gbm/wgbm_platform.c.orig
++++ src/waffle/gbm/wgbm_platform.c
+@@ -40,7 +40,7 @@
  #include "wgbm_platform.h"
  #include "wgbm_window.h"
  

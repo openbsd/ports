@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/19 17:16:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/25 04:38:01 jsg Exp $
 
 COMMENT=	OpenGL API/window system abstraction
-DISTNAME=	waffle-1.5.2
+DISTNAME=	waffle-1.6.3
 CATEGORIES=	x11 graphics
-HOMEPAGE=	http://www.waffle-gl.org/
-MASTER_SITES=	${HOMEPAGE}/files/release/${DISTNAME}/
+HOMEPAGE=	https://mesa.pages.freedesktop.org/waffle/
+MASTER_SITES=	${HOMEPAGE}files/release/${DISTNAME}/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # 2-clause BSD
 PERMIT_PACKAGE=	Yes
 
-SHARED_LIBS+=	waffle-1 0.0 # 0.5
+SHARED_LIBS+=	waffle-1 1.0 # 1.6
 WANTLIB=	X11 X11-xcb c pthread xcb
-MODULES=	devel/cmake
+MODULES=	devel/meson
 
-CONFIGURE_ARGS=	-Dwaffle_has_gbm=1 \
-		-Dwaffle_has_glx=1 \
-		-Dwaffle_has_x11_egl=1
+CONFIGURE_ARGS=	-Dgbm=enabled \
+		-Dglx=enabled \
+		-Dx11_egl=enabled \
+		-Dwayland=disabled
 
 .include <bsd.port.mk>
