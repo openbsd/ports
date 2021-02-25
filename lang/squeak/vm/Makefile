@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2020/12/13 02:42:17 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.32 2021/02/25 22:22:43 sthen Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -48,6 +48,7 @@ DESTDIRNAME =		ROOT
 SUBST_VARS +=		FULLV
 CFLAGS +=		-fgnu89-inline
 
+# not quite the same as FIX_CRLF_FILES
 pre-patch:
 	@perl -pi -e s,\\r,\\n,g ${WRKDIST}/platforms/unix/src/vm/intplugins/SoundPlugin/*.c
 
