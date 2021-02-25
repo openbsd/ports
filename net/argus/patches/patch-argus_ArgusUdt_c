@@ -1,0 +1,17 @@
+$OpenBSD: patch-argus_ArgusUdt_c,v 1.1 2021/02/25 21:30:28 naddy Exp $
+
+Fix for -fno-common: remove unused variable duplicated in ArgusUdp.c
+
+Index: argus/ArgusUdt.c
+--- argus/ArgusUdt.c.orig
++++ argus/ArgusUdt.c
+@@ -40,9 +40,6 @@
+ #include <argus_compat.h>
+ #include <ArgusModeler.h>
+ 
+-#include <argus/bootp.h>
+-struct bootp *bp;
+-
+ struct ArgusSystemFlow *
+ ArgusCreateUDTFlow (struct ArgusModelerStruct *model, struct udt_header *udt)
+ {
