@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1549 2021/02/20 18:05:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1550 2021/02/25 21:46:05 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -167,6 +167,7 @@ _PLIST_DB = ${PLIST_REPOSITORY}/${MACHINE_ARCH}
 .endif
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
 
+FIX_CRLF_FILES ?=
 FIX_EXTRACT_PERMISSIONS ?= No
 FIX_CLEANUP_PERMISSIONS ?= No
 
@@ -2688,6 +2689,9 @@ _post-extract-finalize:
 .endfor
 .if ${FIX_EXTRACT_PERMISSIONS:L} == "yes"
 	@chmod -R a+rX ${WRKDIR}
+.endif
+.if !empty(FIX_CRLF_FILES)
+	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' -- ${FIX_CRLF_FILES}
 .endif
 
 # run as _pbuild
