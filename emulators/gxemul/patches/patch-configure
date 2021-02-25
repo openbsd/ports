@@ -1,11 +1,39 @@
-$OpenBSD: patch-configure,v 1.6 2020/02/19 20:29:30 fcambus Exp $
+$OpenBSD: patch-configure,v 1.7 2021/02/25 04:23:08 daniel Exp $
 
-Remove hardcoded optimizations.
+- allow doxygen to be disabled
+- remove hardcoded -O3
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -594,19 +594,6 @@ fi
+@@ -110,6 +110,8 @@ if [ z"$*" != z ]; then
+ 			NOX11=YES
+ 		else if [ z$a = z--without-unittests ]; then
+ 			UNITTESTS=NO
++		else if [ z$a = z--disable-doxygen ]; then
++			DISABLEDOXYGEN=YES
+ 		else if [ z$a = z--disable-valgrind ]; then
+ 			DISABLEVALGRIND=YES
+ 		else if [ z$a = z--debug ]; then
+@@ -118,6 +120,8 @@ if [ z"$*" != z ]; then
+ 			printf "usage: $0 [options]\n\n"
+ 			echo "  --disable-x           don't include X11 support,"\
+ 			    "even if the host supports it"
++			echo "  --disable-doxygrn     don't use doxygen, even"\
++			    "if it is installed"
+ 			echo "  --disable-valgrind    don't use valgrind, even"\
+ 			    "if it is installed"
+ 			echo "  --without-unittests   don't include unit tests"
+@@ -134,7 +138,7 @@ if [ z"$*" != z ]; then
+ 			echo "Run  $0 --help  to get a list of" \
+ 			    "available options."
+ 			exit
+-		fi; fi; fi; fi; fi
++		fi; fi; fi; fi; fi; fi
+ 	done
+ fi
+ 
+@@ -594,22 +598,6 @@ fi
  rm -f _testprog _testprog.error _testprog.stdout
  
  
@@ -22,6 +50,31 @@ Index: configure
 -		fi
 -	fi
 -fi
- rm -f _testprog
+-rm -f _testprog
+-
+-
+ #  -fpeephole
+ if [ ! z"$DEBUG" = zYES ]; then
+ 	printf "checking whether -fpeephole can be used... "
+@@ -1106,12 +1094,16 @@ rm -f _test_end*
+ 
+ printf "checking for Doxygen... "
+ 
+-if (doxygen --version); then
+-	# Version is printed, if found.
+-	DOXYGEN=doxygen
++if [ z$DISABLEDOXYGEN = zYES ]; then
++	echo skipped
+ else
+-	# Not found is already printed, if doxygen is not found.
+-	DOXYGEN="\#"
++	if (doxygen --version); then
++		# Version is printed, if found.
++		DOXYGEN=doxygen
++	else
++		# Not found is already printed, if doxygen is not found.
++		DOXYGEN="\#"
++	fi
+ fi
  
  

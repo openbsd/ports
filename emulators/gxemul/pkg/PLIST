@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/02/19 15:20:26 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/02/25 04:23:08 daniel Exp $
 @bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -16,6 +16,8 @@ share/doc/gxemul/20041024-openbsd-arc-installed.gif
 share/doc/gxemul/20041024-openbsd-arc-installed_small.gif
 share/doc/gxemul/20041129-redhat_mips.png
 share/doc/gxemul/20041129-redhat_mips_small.png
+share/doc/gxemul/20041209-ultrix-tripplehead.jpg
+share/doc/gxemul/20041209-ultrix-tripplehead_small.jpg
 share/doc/gxemul/20041212-debian_1.png
 share/doc/gxemul/20041212-debian_1_small.gif
 share/doc/gxemul/20041212-debian_2.png
@@ -54,6 +56,7 @@ share/doc/gxemul/20060814-netbsd-algor-3.0.1.png
 share/doc/gxemul/20060814-netbsd-algor-3.0.1_small.png
 share/doc/gxemul/20061029-netbsd-dreamcast.png
 share/doc/gxemul/20061029-netbsd-dreamcast_small.png
+share/doc/gxemul/20061104-netbsd-dreamcast-real.jpg
 share/doc/gxemul/20061104-netbsd-dreamcast-real_small.png
 share/doc/gxemul/20070128-netbsd-dreamcast-livecd-1.png
 share/doc/gxemul/20070128-netbsd-dreamcast-livecd-1_small.png
@@ -81,6 +84,7 @@ share/doc/gxemul/20110703-dreamcast-gltest-small.png
 share/doc/gxemul/20110703-dreamcast-gltest.png
 share/doc/gxemul/20131109-displayDreamcastMemory-small.png
 share/doc/gxemul/20131109-displayDreamcastMemory.png
+share/doc/gxemul/20131109-openbsd_landisk-small.jpg
 share/doc/gxemul/20131109-openbsd_landisk.png
 share/doc/gxemul/20140802-dreamcast-bios-test1-small.png
 share/doc/gxemul/20140802-dreamcast-bios-test1.png
@@ -113,6 +117,15 @@ share/doc/gxemul/20190715-sgi-o2-linux-small.png
 share/doc/gxemul/20190715-sgi-o2-linux.png
 share/doc/gxemul/RELEASE.html
 share/doc/gxemul/TODO.html
+share/doc/gxemul/components/
+share/doc/gxemul/components.html
+share/doc/gxemul/components/component_cache.html
+share/doc/gxemul/components/component_cpu.html
+share/doc/gxemul/components/component_dummy.html
+share/doc/gxemul/components/component_i960_cpu.html
+share/doc/gxemul/components/component_m88k_cpu.html
+share/doc/gxemul/components/component_mainbus.html
+share/doc/gxemul/components/component_ram.html
 share/doc/gxemul/configfiles.html
 share/doc/gxemul/debian-1-small.png
 share/doc/gxemul/debian-1.png
@@ -145,10 +158,12 @@ share/doc/gxemul/debian-8.png
 share/doc/gxemul/debian-9-small.png
 share/doc/gxemul/debian-9.png
 share/doc/gxemul/debugging.html
+share/doc/gxemul/doxygen.css
 share/doc/gxemul/doxygen_footerFile.html
 share/doc/gxemul/doxygen_headerFile.html
 share/doc/gxemul/experiments.html
 share/doc/gxemul/framework.html
+share/doc/gxemul/generate_machine_doc.sh
 share/doc/gxemul/head.html
 share/doc/gxemul/index.html
 share/doc/gxemul/intro.html
@@ -173,6 +188,19 @@ share/doc/gxemul/machine_rpi.html
 share/doc/gxemul/machine_sgi_o2.html
 share/doc/gxemul/machine_template.html
 share/doc/gxemul/machine_vocore.html
+share/doc/gxemul/machines/
+share/doc/gxemul/machines.html
+share/doc/gxemul/machines/machine_cyclonevh.html
+share/doc/gxemul/machines/machine_cyclonevh.html.SKEL
+share/doc/gxemul/machines/machine_hp700rx.html
+share/doc/gxemul/machines/machine_hp700rx.html.SKEL
+share/doc/gxemul/machines/machine_mvme187.html
+share/doc/gxemul/machines/machine_mvme187.html.SKEL
+share/doc/gxemul/machines/machine_testm88k-thumb.png
+share/doc/gxemul/machines/machine_testm88k.html
+share/doc/gxemul/machines/machine_testm88k.html.SKEL
+share/doc/gxemul/machines/machine_testm88k.png
+share/doc/gxemul/machines/machine_testmips-thumb.png
 share/doc/gxemul/misc.html
 share/doc/gxemul/model.png
 share/doc/gxemul/networking.html
@@ -182,6 +210,8 @@ share/doc/gxemul/openbsd-luna88k-20210209-small.png
 share/doc/gxemul/openbsd-luna88k-20210209.png
 share/doc/gxemul/openbsd-pmax-20040710.png
 share/doc/gxemul/openbsd-pmax-20040710_small.png
+share/doc/gxemul/sgi-o2-real.jpg
+share/doc/gxemul/sgi-o2-real_small.jpg
 share/doc/gxemul/simplified_dyntrans.png
 share/doc/gxemul/sprite-20040711.png
 share/doc/gxemul/sprite-20040711_small.png
