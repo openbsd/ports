@@ -1,0 +1,15 @@
+$OpenBSD: patch-wmgeneral_wmgeneral_c,v 1.1 2021/02/25 22:30:29 tb Exp $
+
+Fix build with -fno-common
+
+Index: wmgeneral/wmgeneral.c
+--- wmgeneral/wmgeneral.c.orig
++++ wmgeneral/wmgeneral.c
+@@ -55,6 +55,7 @@
+  /* X11 Variables */
+ /*****************/
+ 
++Display		*display;
+ Window		Root;
+ int			screen;
+ int			x_fd;
