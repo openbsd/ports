@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/25 21:52:51 sthen Exp $
+bin/podselect
+${P5SITE}/Pod/
+${P5SITE}/Pod/Find.pm
+${P5SITE}/Pod/InputObjects.pm
+${P5SITE}/Pod/ParseUtils.pm
+${P5SITE}/Pod/Parser.pm
+${P5SITE}/Pod/PlainText.pm
+${P5SITE}/Pod/Select.pm
+@man man/man1/podselect.1
+@man man/man3p/Pod::Find.3p
+@man man/man3p/Pod::InputObjects.3p
+@man man/man3p/Pod::ParseUtils.3p
+@man man/man3p/Pod::Parser.3p
+@man man/man3p/Pod::PlainText.3p
+@man man/man3p/Pod::Select.3p

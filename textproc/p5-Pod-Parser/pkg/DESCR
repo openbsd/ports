@@ -1,0 +1,7 @@
+Pod::Parser is a base class for creating POD filters and translators.  It
+handles most of the effort involved with parsing the POD sections from an
+input stream, leaving subclasses free to be concerned only with performing
+the actual translation of text.
+
+NOTE: This module is considered legacy. Pod-Simple is the usual module for
+all things POD.

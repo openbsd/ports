@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2021/02/25 21:52:51 sthen Exp $
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -70,7 +70,7 @@ WriteMakefile(
+     NAME         => $DISTMOD,
+     DISTNAME     => $DISTNAME,
+     VERSION      => '1.63',
+-    INSTALLDIRS  => ($] >= 5.006 ? 'perl' : 'site'),
++    INSTALLDIRS  => 'site',
+     PL_FILES     => { map { (script("$_.PL") => script($_)) } @SCRIPTS },
+     EXE_FILES    => [ @EXE_FILES ],
+     dist         => { COMPRESS => 'gzip', SUFFIX => 'gz' },
