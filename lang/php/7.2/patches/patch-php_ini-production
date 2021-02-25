@@ -1,8 +1,17 @@
-$OpenBSD: patch-php_ini-production,v 1.4 2019/09/27 16:00:55 sthen Exp $
+$OpenBSD: patch-php_ini-production,v 1.5 2021/02/25 11:42:33 sthen Exp $
 
 Index: php.ini-production
 --- php.ini-production.orig
 +++ php.ini-production
+@@ -368,7 +368,7 @@ zend.enable_gc = On
+ ; threat in any way, but it makes it possible to determine whether you use PHP
+ ; on your server or not.
+ ; http://php.net/expose-php
+-expose_php = On
++expose_php = Off
+ 
+ ;;;;;;;;;;;;;;;;;;;
+ ; Resource Limits ;
 @@ -708,11 +708,8 @@ default_charset = "UTF-8"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  

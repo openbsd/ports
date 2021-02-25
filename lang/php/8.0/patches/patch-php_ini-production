@@ -1,8 +1,17 @@
-$OpenBSD: patch-php_ini-production,v 1.1 2021/02/24 19:13:50 sthen Exp $
+$OpenBSD: patch-php_ini-production,v 1.2 2021/02/25 11:42:33 sthen Exp $
 
 Index: php.ini-production
 --- php.ini-production.orig
 +++ php.ini-production
+@@ -397,7 +397,7 @@ zend.exception_string_param_max_len = 0
+ ; threat in any way, but it makes it possible to determine whether you use PHP
+ ; on your server or not.
+ ; http://php.net/expose-php
+-expose_php = On
++expose_php = Off
+ 
+ ;;;;;;;;;;;;;;;;;;;
+ ; Resource Limits ;
 @@ -742,11 +742,8 @@ default_charset = "UTF-8"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
