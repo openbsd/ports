@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/25 16:31:15 sthen Exp $
 
 COMMENT =	multi-platform library for asynchronous I/O
 
@@ -18,11 +18,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += pthread
 
-# module used to grab MODPY_BIN_SUFFIX/MODPY_FLAVOR for py3 sphinx-build
-MODULES =	lang/python
-MODPY_BUILDDEP = No
-MODPY_RUNDEP =	No
-BUILD_DEPENDS =	textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS =	textproc/py-sphinx
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
@@ -36,8 +32,7 @@ AUTOMAKE_VERSION = 1.16
 AUTORECONF =	sh autogen.sh
 
 post-build:
-	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} man -C docs \
-	    SPHINXBUILD=sphinx-build${MODPY_BIN_SUFFIX}
+	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} man -C docs
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/build/man/libuv.1 ${PREFIX}/man/man1/
