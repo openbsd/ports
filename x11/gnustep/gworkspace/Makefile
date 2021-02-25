@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2020/08/16 20:35:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.41 2021/02/25 21:23:56 naddy Exp $
 
 COMMENT=	GNUstep workspace manager
 
 DISTNAME =	gworkspace-0.9.4
-REVISION =	7
+REVISION =	8
 
 CATEGORIES=	x11
 
