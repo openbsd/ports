@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1213 2021/02/24 17:26:28 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1214 2021/02/25 00:41:29 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1050,7 +1050,7 @@ my $obsolete_reason = {
 	'xmms-fmradio' => 5,
 	'xmms-kj' => 5,
 	'xmms-mad' => 5,
-	'xmms-mikmod', => 5,
+	'xmms-mikmod' => 5,
 	'xmms-mp3' => 5,
 	'xmms-shn' => 5,
 	'xmms-sid' => 5,
