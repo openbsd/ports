@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT =		hexagonal tile-based puzzle game
 DISTNAME =		hex-a-hop-1.1.0
@@ -19,8 +19,6 @@ LIB_DEPENDS =		devel/sdl-mixer \
 			devel/sdl-ttf
 
 CONFIGURE_STYLE =	gnu
-
-post-extract:
-	cd ${WRKSRC}/src; perl -i -pe 's/\r$$//' hex_puzzzle.cpp text.cpp
+FIX_CRLF_FILES =	src/hex_puzzzle.cpp src/text.cpp
 
 .include <bsd.port.mk>

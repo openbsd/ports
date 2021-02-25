@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/02/25 22:26:02 sthen Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -67,6 +67,11 @@ MAKE_FILE =	makefile
 
 NO_TEST =	Yes
 
+FIX_CRLF_FILES = makefile scripts/genie.lua \
+		3rdparty/genie/build/gmake.bsd/genie.make \
+		3rdparty/asio/include/asio/detail/config.hpp \
+		docs/man/* keymaps/*
+
 post-extract:
 	@mv ${WRKSRC}/3rdparty/genie/build/gmake.freebsd \
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd
@@ -76,10 +81,6 @@ post-extract:
 		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
 	@grep -Rl '"png\.h"' ${WRKSRC}/src | \
 		xargs sed -i 's|"png.h"|"localpng.h"|'
-	@perl -pi -e 's/\r//g' ${WRKSRC}/makefile ${WRKSRC}/scripts/genie.lua \
-		${WRKSRC}/3rdparty/genie/build/gmake.bsd/genie.make \
-		${WRKSRC}/3rdparty/asio/include/asio/detail/config.hpp \
-		${WRKSRC}/docs/man/* ${WRKSRC}/keymaps/*
 
 do-install:
 .if ${MACHINE_ARCH} == "amd64"

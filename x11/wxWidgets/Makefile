@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2021/02/23 19:39:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2021/02/25 22:26:03 sthen Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -69,6 +69,8 @@ WANTLIB-media += wx_baseu-3.0 wx_gtk3u_core-3.0 z
 
 MAKE_FLAGS =	SO_VERSION="${LIBwx_baseu-3.0_VERSION}"
 
+FIX_CRLF_FILES=	src/stc/gen_iface.py
+
 USE_GMAKE =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS =--disable-backtrace \
@@ -96,7 +98,6 @@ CONFIGURE_ARGS += --enable-debug
 .endif
 
 pre-configure:
-	perl -pi -e 's/\r$$//' ${WRKSRC}/src/stc/gen_iface.py
 	${SUBST_CMD} ${WRKSRC}/Makefile.in ${WRKSRC}/wx-config.in
 	${MODPYTHON_pre-configure}
 

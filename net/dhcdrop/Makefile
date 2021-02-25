@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/25 22:26:03 sthen Exp $
 
 COMMENT =		testing and/or dropping DHCP server
 
@@ -20,8 +20,9 @@ EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
 
+FIX_CRLF_FILES =	man/dhcdrop.8
+
 post-extract:
-	perl -pi -e 's/\r$$//' ${WRKSRC}/man/dhcdrop.8
 	perl -pi -e 's/\s+$$/\n/' ${WRKSRC}/man/dhcdrop.8
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/25 22:26:01 sthen Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
@@ -18,6 +18,8 @@ WANTLIB=	c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+FIX_CRLF_FILES=	source/SoundStretch/Makefile.am source/SoundTouch/Makefile.am
+
 AUTOCONF_VERSION=2.69
 AUTOMAKE_VERSION=1.16
 
@@ -26,10 +28,5 @@ CONFIGURE_ARGS=	--disable-x86-optimizations
 AUTORECONF=	./bootstrap
 
 MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS}"
-
-post-extract:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' \
-	    source/SoundStretch/Makefile.am source/SoundTouch/Makefile.am
-
 
 .include <bsd.port.mk>

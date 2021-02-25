@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2020/07/02 03:41:06 bket Exp $
+# $OpenBSD: Makefile,v 1.136 2021/02/25 22:26:03 sthen Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -98,8 +98,7 @@ MODQMAKE_INSTALL_ROOT=	${PREFIX}
 CONFIGURE_ARGS+=--without-gtk
 .endif
 
-pre-patch:
-	@cd ${WRKSRC}/third-party/libutp; perl -pi -e 's/\r$$//' *.h *.cpp
+FIX_CRLF_FILES=	third-party/libutp/*.h third-party/libutp/*.cpp
 
 .if ${BUILD_PACKAGES:M-qt}
 post-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/10/28 16:16:17 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT =	open source engine recreation for Diablo 1 game
 PKGNAME =	${DISTNAME:L}
@@ -32,10 +32,7 @@ CONFIGURE_ARGS =	-DBINARY_RELEASE=ON \
 
 NO_TEST =	Yes
 
-# Remove DOS line endings from patched files
-post-extract:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' CMakeLists.txt \
-		SourceS/miniwin.h
+FIX_CRLF_FILES = CMakeLists.txt SourceS/miniwin.h
 
 # No install target
 do-install:

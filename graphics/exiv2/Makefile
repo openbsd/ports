@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2021/01/24 18:30:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT=	image metadata manipulation
 
@@ -28,9 +28,7 @@ LIB_DEPENDS =		devel/gettext,-runtime
 
 CONFIGURE_ARGS =	-DEXIV2_ENABLE_NLS=ON
 
-# dos line-endings in file needing patch
-post-extract:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' cmake/compilerFlags.cmake
+FIX_CRLF_FILES =	cmake/compilerFlags.cmake
 
 .include <bsd.port.mk>
 .if ${USE_CCACHE:L} == "yes"

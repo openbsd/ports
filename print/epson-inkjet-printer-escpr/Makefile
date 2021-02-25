@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/25 20:47:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/25 22:26:03 sthen Exp $
 
 # MASTER_SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a linux driver, for e.g. sx200
@@ -41,9 +41,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-# dos line-endings in files needing patch
-post-extract:
-	cd ${WRKSRC} && perl -i -pe 's/\r$$//' src/linux_cmn.c \
-		lib/epson-escpr-api.c lib/epson-typedefs.h lib/epson-usb.c
+FIX_CRLF_FILES=		src/linux_cmn.c lib/epson-escpr-api.c \
+			lib/epson-typedefs.h lib/epson-usb.c
 
 .include <bsd.port.mk>

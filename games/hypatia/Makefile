@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT =	2D action adventure game engine
 CATEGORIES =	games x11
@@ -23,8 +23,7 @@ TEST_DEPENDS =	graphics/py-Pillow${MODPY_FLAVOR}
 
 WRKDIST =	${WRKDIR}/hypatia-engine-${GH_TAGNAME}
 
-pre-patch:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' setup.py
+FIX_CRLF_FILES = setup.py
 
 post-install:
 	${SUBST_PROGRAM} ${FILESDIR}/hypatia-demo ${PREFIX}/bin/hypatia-demo

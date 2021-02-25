@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/25 22:26:03 sthen Exp $
 
 COMMENT =		simple, small and efficient C++ XML parser
 
@@ -22,8 +22,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 
-pre-patch:
-	perl -i -pe 's/\r$$//' ${WRKSRC}/xmltest.cpp
+FIX_CRLF_FILES =	xmltest.cpp
 
 do-test:
 	cd ${WRKSRC} && ${CXX} xmltest.cpp tinyxml2.cpp tinyxml2.h && ./a.out

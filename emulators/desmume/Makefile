@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/08/08 17:11:24 cwen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/25 22:26:02 sthen Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -43,9 +43,6 @@ MODULES =	textproc/intltool
 COMPILER =	base-clang ports-gcc
 
 CONFIGURE_STYLE =	gnu
-
-# Some files needing patches have DOS line endings, removing them.
-post-extract:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' src/MMU_timing.h
+FIX_CRLF_FILES =	src/MMU_timing.h
 
 .include <bsd.port.mk>

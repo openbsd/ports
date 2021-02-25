@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/14 00:39:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT =		identify control points from groups of overlapping images
 
@@ -29,9 +29,7 @@ MODULES +=		devel/cmake
 
 NO_TEST =		Yes
 
-# dos line-endings in file needing patch
-post-extract:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' CMakeLists.txt APSCpp/APSCpp.c
+FIX_CRLF_FILES =	CMakeLists.txt APSCpp/APSCpp.c
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeModules/FindPNG.cmake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/08/01 02:59:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/25 22:26:03 sthen Exp $
 
 # JIT segfaults without USE_WXNEEDED
 USE_WXNEEDED =	Yes
@@ -37,14 +37,13 @@ LIB_DEPENDS =	audio/openal \
 USE_GMAKE =	Yes
 SUBST_VARS +=	CFLAGS
 
-post-extract:
-	rm -rf ${WRKSRC}/include/{fmt,turbojpeg}
-	# remove dos line endings
-	cd ${WRKSRC} && perl -i -pe 's/\r$$//' \
-		libs/uv/uv.c \
+FIX_CRLF_FILES = libs/uv/uv.c \
 		src/hl.h \
 		src/std/socket.c \
 		src/std/thread.c
+
+post-extract:
+	rm -rf ${WRKSRC}/include/{fmt,turbojpeg}
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/Makefile

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/25 22:26:03 sthen Exp $
 
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
@@ -39,9 +39,6 @@ AUTOMAKE_VERSION =	1.15
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/_/-/}
 
-# Remove MSDOS line endings in files needing a patch
-post-extract:
-	cd ${WRKSRC} && perl -i -pe 's/\r$$//' cjeca32/Debug.cpp \
-		cjeca32/RSCTCriticalSection.cpp
+FIX_CRLF_FILES =	cjeca32/Debug.cpp cjeca32/RSCTCriticalSection.cpp
 
 .include <bsd.port.mk>

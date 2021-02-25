@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/25 22:26:01 sthen Exp $
 
 COMMENT =	ISP tool for LPC2000 and ADUC70xx microcontrollers
 
@@ -22,8 +22,7 @@ MAKE_FLAGS =	CC=${CC}
 
 NO_TEST =	Yes
 
-post-extract:
-	perl -pi -e 's/\r$$//' ${WRKSRC}/lpc21isp.h
+FIX_CRLF_FILES = lpc21isp.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/lpc21isp ${PREFIX}/bin/lpc21isp

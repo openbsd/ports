@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT=		build configuration tool
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX=		.zip
 
 # BSD
 PERMIT_PACKAGE=	Yes
+
 WANTLIB=		c m
 
 USE_GMAKE=		Yes
@@ -28,9 +29,9 @@ MAKE_FLAGS=		CC="${CC}" \
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-src$//}
 WRKBUILD=		${WRKSRC}/build/gmake.unix
+FIX_CRLF_FILES=		src/base/os.lua
 
 post-extract:
-	perl -pi -e 's/\r$$//' ${WRKSRC}/src/base/os.lua
 	cp ${FILESDIR}/scripts.c ${WRKSRC}/src/host/
 
 do-install:

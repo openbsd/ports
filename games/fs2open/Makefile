@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/10/20 17:13:10 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/25 22:26:02 sthen Exp $
 
 # Requires OpenGL>=3.2, could run on powerpc64 once there is drm support
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
@@ -44,13 +44,11 @@ CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open \
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/fs2open.github.com
+FIX_CRLF_FILES =	code/utils/boost/syncboundedqueue.h
 
 # remove bundled SDL
 post-extract:
 	rm -rf ${WRKSRC}/lib/libsdl
-
-pre-patch:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' code/utils/boost/syncboundedqueue.h
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

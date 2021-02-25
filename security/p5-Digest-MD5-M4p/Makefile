@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/25 22:26:03 sthen Exp $
 
 COMMENT=	perl interface to a variant of the MD5 algorithm
 
@@ -14,8 +14,6 @@ WANTLIB += c perl
 
 INSTALL_TARGET=	install_site
 
-# trailing ^M after a \ for line continuation confuses gcc2
-pre-patch:
-	@perl -i -pe 's/\r$$//' ${WRKSRC}/M4p.xs
+FIX_CRLF_FILES=	M4p.xs
 
 .include <bsd.port.mk>

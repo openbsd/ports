@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/25 22:26:03 sthen Exp $
 
 COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
@@ -28,8 +28,7 @@ PKG_ARCH=	*
 
 MODPY_ADJ_FILES= ietf
 
-post-extract:
-	perl -pi -e 's/\r$$//g' ${WRKSRC}/README
+FIX_CRLF_FILES=	README
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/ietf{,.config}

@@ -50,11 +50,7 @@ NO_TEST =		Yes
 
 SUBST_VARS +=		CFLAGS CXXFLAGS M_ARCH
 
-post-extract:
-	mkdir ${WRKDIR}/mvnrepo
-
-pre-patch:
-	cd ${WRKSRC} && perl -i -pe 's/\r$$//' \
+FIX_CRLF_FILES = \
 		backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglNativesLoader.java \
 		backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/audio/OpenALMusic.java \
 		extensions/gdx-box2d/gdx-box2d/jni/build-linux64.xml \
@@ -64,6 +60,9 @@ pre-patch:
 		gdx/jni/build-linux64.xml \
 		gdx/src/com/badlogic/gdx/scenes/scene2d/utils/UIUtils.java \
 		gdx/src/com/badlogic/gdx/utils/SharedLibraryLoader.java
+
+post-extract:
+	mkdir ${WRKDIR}/mvnrepo
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/gdx/jni/build-linux64.xml

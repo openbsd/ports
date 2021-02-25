@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/05/14 12:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT=		2D games framework for use with Lua
 
@@ -49,14 +49,13 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL/ \
 
 WRKDIST=		${WRKDIR}/love-$V
 
+FIX_CRLF_FILES=		src/libraries/Box2D/Collision/Shapes/b2ChainShape.h
+
 post-extract:
 # Add missing newlines
 	cd ${WRKSRC} && \
 		for i in `find . -type f`; \
 			do [ "$(tail -c1 $i)" == "$(printf '\n')" ] || ls -l $i; \
 		done
-# And some files have MS-DOS line endings we don't want for patches
-	cd ${WRKSRC} && perl -i -pe 's/\r$$//' \
-		./src/libraries/Box2D/Collision/Shapes/b2ChainShape.h
 
 .include <bsd.port.mk>

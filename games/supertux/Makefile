@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT =		jump 'n' run game
 
@@ -23,6 +23,8 @@ WANTLIB += z
 
 MASTER_SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
 
+FIX_CRLF_FILES =	external/squirrel/CMakeLists.txt
+
 MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
 
 MODULES +=		devel/cmake
@@ -41,9 +43,6 @@ CONFIGURE_ARGS +=	-DINSTALL_SUBDIR_BIN="${LOCALBASE}/bin" \
 			-DBUILD_SHARED_LIBS=OFF
 
 NO_TEST =		Yes
-
-post-extract:
-	perl -i -pe 's/\r$$//' ${WRKDIST}/external/squirrel/CMakeLists.txt
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/supertux/main.cpp

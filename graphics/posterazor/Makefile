@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/02 15:24:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT =	split large images into smaller ones to assemble posters
 
@@ -39,8 +39,7 @@ NO_TEST =		Yes
 
 WRKSRC =		${WRKDIST}/src
 
-post-extract:
-	perl -i -pe 's/\r$$//' ${WRKSRC}/FlPosteRazorDialog.cpp
+FIX_CRLF_FILES =	FlPosteRazorDialog.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/PosteRazor ${PREFIX}/bin/posterazor

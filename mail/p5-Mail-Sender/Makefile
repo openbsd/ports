@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/25 22:26:03 sthen Exp $
 
 COMMENT =	send mail with attachments through SMTP
 
@@ -14,7 +14,6 @@ REVISION =	0
 # perl
 PERMIT_PACKAGE=	Yes
 
-pre-patch:
-	cd ${WRKSRC} && perl -i -pe 's/\r$$//' Config.PL
+FIX_CRLF_FILES=	Config.PL
 
 .include <bsd.port.mk>

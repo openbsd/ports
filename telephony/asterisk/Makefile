@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.340 2021/02/18 21:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.341 2021/02/25 22:26:03 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -302,19 +302,18 @@ RUN_DEPENDS$i +=	asterisk-${VER}:telephony/asterisk
 # otherwise asterisk patchset for pjsua gets in the way
 PATCHORIG=		.orig.port
 
+# some of the patches have MS-DOS line endings which patch doesn't like.
+# done before actual patch, because we have libressl patches for one of the
+# files that asterisk is patching.
+FIX_CRLF_FILES=		third-party/pjproject/patches/*patch \
+			third-party/pjproject/source/pjlib/build/*vc*proj*
+
 post-extract:
 	@cd ${WRKSRC}/third-party/; \
 	    grep 'PJPROJECT_VERSION = ${PJ_V}$$' versions.mak > /dev/null || \
 	    (echo "PJ_V != PJPROJECT_VERSION; update in port"; \
 	     grep 'PJPROJECT_VERSION' versions.mak; exit 1)
 	mv ${WRKDIR}/pjproject-${PJ_V} ${WRKSRC}/third-party/pjproject/source
-
-# some of the patches have MS-DOS line endings which patch doesn't like.
-# done before actual patch, because we have libressl patches for one of the
-# files that asterisk is patching.
-pre-patch:
-	@perl -i -pe 's/\r$$//' ${WRKSRC}/third-party/pjproject/patches/*patch \
-	    ${WRKSRC}/third-party/pjproject/source/pjlib/build/*vc*proj*
 
 post-patch:
 	cd ${WRKSRC}/third-party/pjproject/source; ../../apply_patches ../patches .

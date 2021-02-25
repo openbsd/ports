@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/01 20:04:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT =	cross-platform interactive fiction player
 
@@ -38,12 +38,6 @@ JAMDEBUG =	-d x	# display command-lines
 JAMDEBUG +=	-q	# die quickly on build failure
 MAKE_ENV +=		CC="${CC}" CXX="${CXX}" C++="${CXX}"
 DESTDIRNAME =		DESTPREFIX
-
-# fix dos line-endings in files needing patches (not currently required,
-# but keeping this in a comment in case it's needed again in the future,
-# also this is my go-to port when i need to remember how to do this :)
-#post-extract:
-#	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' [...]
 
 pre-configure:
 	sed -i 's,/usr/local,${TRUEPREFIX},' ${WRKSRC}/garglk/launchgtk.c

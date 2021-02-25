@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/24 12:09:25 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
@@ -52,9 +52,7 @@ D = 	Announcers BGAnimations BackgroundEffects BackgroundTransitions \
 	Characters Courses Data NoteSkins Scripts Songs Themes
 
 SUBST_VARS = DATADIR
-
-post-extract:
-	@perl -pi -e 's/\r//g' ${WRKSRC}/src/ProfileManager.cpp
+FIX_CRLF_FILES =	src/ProfileManager.cpp
 
 
 post-install:

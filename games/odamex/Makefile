@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/09 20:43:04 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT =	online multiplayer doom
 
@@ -21,6 +21,8 @@ WANTLIB += z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=odamex/}
 EXTRACT_SUFX =		.tar.bz2
+
+FIX_CRLF_FILES =	CMakeLists.txt
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -46,9 +48,5 @@ EXAMPLES_DIR =	${PREFIX}/share/examples/odamex
 post-install:
 	mv ${PREFIX}/share/odamex/config-samples ${EXAMPLES_DIR}
 	chown -r ${shareown}:${sharegrp} ${EXAMPLES_DIR}
-
-# Fix MS-DOS line endings.
-pre-patch:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/20 11:40:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/25 22:26:01 sthen Exp $
 
 COMMENT =	an universal GUI for SPICE and not-SPICE circuit simulators
 
@@ -29,7 +29,6 @@ RUN_DEPENDS =	cad/ngspice/ngspice \
 
 NO_TEST =	Yes
 
-post-extract:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' CMakeLists.txt
+FIX_CRLF_FILES = CMakeLists.txt
 
 .include <bsd.port.mk>

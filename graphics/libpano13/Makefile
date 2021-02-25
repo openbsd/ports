@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/08/02 14:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/25 22:26:02 sthen Exp $
 
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.19
@@ -22,7 +22,6 @@ LIB_DEPENDS =		graphics/jpeg \
 			graphics/png \
 			graphics/tiff
 
-post-extract:
-		perl -pi -e 's/\r\n/\n/g' ${WRKSRC}/CMakeLists.txt
+FIX_CRLF_FILES =	CMakeLists.txt
 
 .include <bsd.port.mk>
