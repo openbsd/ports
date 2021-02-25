@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2020/05/14 18:26:21 cwen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/02/25 21:56:09 sthen Exp $
 
 BROKEN-mips64=	SIGBUS while running pbc_to_exe
 
@@ -6,7 +6,7 @@ COMMENT=	virtual machine designed for interpreted languages
 
 V=		7.10.0
 DISTNAME=	parrot-$V
-REVISION=	9
+REVISION=	10
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	11.0
 
@@ -23,13 +23,14 @@ WANTLIB += intl m readline z
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS=		graphics/glew \
-			devel/pcre
-LIB_DEPENDS=		textproc/icu4c \
-			devel/gettext,-runtime \
+BUILD_DEPENDS=		devel/pcre \
+			graphics/glew \
+			textproc/p5-Pod-Parser
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/gmp \
+			devel/libffi \
 			graphics/freeglut \
-			devel/libffi
+			textproc/icu4c
 TEST_DEPENDS=		devel/p5-TAP-Harness-Multiple \
 			devel/p5-Test-Perl-Critic
 
