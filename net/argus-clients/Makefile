@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/20 16:44:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2021/02/25 21:31:28 naddy Exp $
 
 COMMENT =	utilities to read and parse Argus data
 
 DISTNAME =	argus-clients-3.0.8.2
-REVISION =	2
+REVISION =	3
 CATEGORIES =	net
 
 HOMEPAGE =	http://qosient.com/argus/
