@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_test_helper_tcl,v 1.2 2020/09/08 05:51:53 tb Exp $
+$OpenBSD: patch-tests_test_helper_tcl,v 1.3 2021/02/25 15:05:23 tb Exp $
 
 Disable a test that now fails systematically:
 
@@ -8,7 +8,7 @@ rdb child didn't terminate
 Index: tests/test_helper.tcl
 --- tests/test_helper.tcl.orig
 +++ tests/test_helper.tcl
-@@ -37,7 +37,6 @@ set ::all_tests {
+@@ -38,7 +38,6 @@ set ::all_tests {
      unit/acl
      unit/latency-monitor
      integration/block-repl

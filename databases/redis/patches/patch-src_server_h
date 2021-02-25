@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_server_h,v 1.5 2020/06/08 07:32:47 tb Exp $
+$OpenBSD: patch-src_server_h,v 1.6 2021/02/25 15:05:23 tb Exp $
+
 Index: src/server.h
 --- src/server.h.orig
 +++ src/server.h
-@@ -106,7 +106,7 @@ typedef long long ustime_t; /* microsecond time type. 
+@@ -107,7 +107,7 @@ typedef long long ustime_t; /* microsecond time type. 
  #define RDB_EOF_MARK_SIZE 40
  #define CONFIG_REPL_BACKLOG_MIN_SIZE (1024*16)          /* 16k */
  #define CONFIG_BGSAVE_RETRY_DELAY 5 /* Wait a few secs before trying again. */

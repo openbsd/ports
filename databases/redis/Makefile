@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.118 2021/01/23 14:58:19 danj Exp $
+# $OpenBSD: Makefile,v 1.119 2021/02/25 15:05:23 tb Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-6.0.10
+
+DISTNAME =		redis-6.2.0
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
 
@@ -30,6 +31,8 @@ MAKE_FLAGS =		BUILD_TLS=yes \
 			OPTIMIZATION="" \
 			V=1
 
+CFLAGS +=		-I${MODLUA_INCL_DIR}
+
 # Fix "undefined reference to `__atomic_store_8'"
 .if ${MACHINE_ARCH:Mhppa}
 WANTLIB +=		atomic
@@ -49,12 +52,15 @@ TEST_FLAGS =		TCL_BIN="${MODTCL_BIN}"
 DBDIR =			${VARBASE}/redis
 SUBST_VARS +=		DBDIR
 
-pre-configure:
+post-patch:
 	cp ${WRKSRC}/deps/lua/src/fpconv.? ${WRKSRC}/src/
 	cp ${WRKSRC}/deps/lua/src/strbuf.? ${WRKSRC}/src/
 	cp ${WRKSRC}/deps/lua/src/lua_*.c ${WRKSRC}/src/
-	rm -rf ${WRKSRC}/deps/jemalloc
-	rm -rf ${WRKSRC}/deps/lua
+	sed -i -E 's/^#include "(lua|lauxlib)\.h"/#include <\1.h>/' \
+		${WRKSRC}/src/lua_*.c
+	unifdef -x 1 -m -DENABLE_CJSON_GLOBAL ${WRKSRC}/src/lua_cjson.c
+
+pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/Makefile
 
 post-install:

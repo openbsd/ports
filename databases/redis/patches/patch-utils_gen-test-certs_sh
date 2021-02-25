@@ -1,4 +1,4 @@
-$OpenBSD: patch-utils_gen-test-certs_sh,v 1.1 2020/06/08 07:32:47 tb Exp $
+$OpenBSD: patch-utils_gen-test-certs_sh,v 1.2 2021/02/25 15:05:23 tb Exp $
 
 Index: utils/gen-test-certs.sh
 --- utils/gen-test-certs.sh.orig
@@ -6,6 +6,6 @@ Index: utils/gen-test-certs.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
- mkdir -p tests/tls
- openssl genrsa -out tests/tls/ca.key 4096
- openssl req \
+ 
+ # Generate some test certificates which are used by the regression test suite:
+ #

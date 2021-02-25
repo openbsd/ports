@@ -1,4 +1,4 @@
-$OpenBSD: patch-redis_conf,v 1.24 2020/10/29 05:14:03 tb Exp $
+$OpenBSD: patch-redis_conf,v 1.25 2021/02/25 15:05:23 tb Exp $
 
 Redis TLSv1.3 support is conditional on TLS1_3_VERSION being public.
 This is not currently the case and the ciphersuites config is a no-op.
@@ -13,18 +13,18 @@ Main changes in this file:
 Index: redis.conf
 --- redis.conf.orig
 +++ redis.conf
-@@ -105,8 +105,8 @@ tcp-backlog 511
+@@ -112,8 +112,8 @@ tcp-backlog 511
  # incoming connections. There is no default, so Redis will not listen
  # on a unix socket when not specified.
  #
--# unixsocket /tmp/redis.sock
+-# unixsocket /run/redis.sock
 -# unixsocketperm 700
 +# unixsocket /var/run/redis/redis.sock
 +# unixsocketperm 770
  
  # Close the connection after a client is idle for N seconds (0 to disable)
  timeout 0
-@@ -153,6 +153,7 @@ tcp-keepalive 300
+@@ -172,6 +172,7 @@ tcp-keepalive 300
  # of these, and will not implicitly use the system wide configuration.
  #
  # tls-ca-cert-file ca.crt
@@ -32,7 +32,7 @@ Index: redis.conf
  # tls-ca-cert-dir /etc/ssl/certs
  
  # By default, clients (including replica servers) on a TLS port are required
-@@ -183,14 +184,14 @@ tcp-keepalive 300
+@@ -205,14 +206,14 @@ tcp-keepalive 300
  #
  # tls-protocols "TLSv1.2 TLSv1.3"
  
@@ -49,19 +49,19 @@ Index: redis.conf
  # information about the syntax of this string, and specifically for TLSv1.3
  # ciphersuites.
  #
-@@ -220,8 +221,9 @@ tcp-keepalive 300
+@@ -242,9 +243,9 @@ tcp-keepalive 300
  ################################# GENERAL #####################################
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
 -# Note that Redis will write a pid file in /var/run/redis.pid when daemonized.
++# Note that Redis will write a pid file in /var/run/redis/redis.pid when daemonized.
+ # When Redis is supervised by upstart or systemd, this parameter has no impact.
 -daemonize no
-+# Note that Redis will write a pid file in /var/run/redis/redis.pid
-+# when daemonized.
 +daemonize yes
  
  # If you run Redis from upstart or systemd, Redis can interact with your
  # supervision tree. Options:
-@@ -240,11 +242,11 @@ supervised no
+@@ -269,14 +270,14 @@ daemonize no
  #
  # When the server runs non daemonized, no pid file is created if none is
  # specified in the configuration. When the server is daemonized, the pid file
@@ -70,12 +70,15 @@ Index: redis.conf
  #
  # Creating a pid file is best effort: if Redis is not able to create it
  # nothing bad happens, the server will start and run normally.
+ #
+ # Note that on modern Linux systems "/run/redis.pid" is more conforming
+ # and should be used instead.
 -pidfile /var/run/redis_6379.pid
 +pidfile /var/run/redis/redis_6379.pid
  
  # Specify the server verbosity level.
  # This can be one of:
-@@ -257,17 +259,18 @@ loglevel notice
+@@ -289,17 +290,18 @@ loglevel notice
  # Specify the log file name. Also the empty string can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -97,9 +100,9 @@ Index: redis.conf
 +# LOCAL0-LOCAL7.
 +syslog-facility daemon
  
- # Set the number of databases. The default database is DB 0, you can select
- # a different one on a per-connection basis using SELECT <dbid> where
-@@ -362,7 +365,7 @@ rdb-del-sync-files no
+ # To disable the built in crash log, which will possibly produce cleaner core
+ # dumps when they are needed, uncomment the following:
+@@ -441,7 +443,7 @@ rdb-del-sync-files no
  # The Append Only File will also be created inside this directory.
  #
  # Note that you must specify a directory here, not a file name.
@@ -108,16 +111,16 @@ Index: redis.conf
  
  ################################# REPLICATION #################################
  
-@@ -787,7 +790,7 @@ acllog-max-len 128
- # AUTH <password> as usually, or more explicitly with AUTH default <password>
- # if they follow the new protocol: both will work.
+@@ -876,7 +878,7 @@ acllog-max-len 128
+ # The requirepass is not compatable with aclfile option and the ACL LOAD
+ # command, these will cause requirepass to be ignored.
  #
 -# requirepass foobared
 +# requirepass very-strong-password
  
- # Command renaming (DEPRECATED).
- #
-@@ -831,6 +834,7 @@ acllog-max-len 128
+ # New users are initialized with restrictive permissions by default, via the
+ # equivalent of this ACL rule 'off resetkeys -@all'. Starting with Redis 6.2, it
+@@ -941,6 +943,7 @@ acllog-max-len 128
  # limit accordingly in case of very large clusters.
  #
  # maxclients 10000

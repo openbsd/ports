@@ -1,8 +1,8 @@
 #!/bin/ksh
 #
-# $OpenBSD: redis.rc,v 1.6 2018/01/11 19:27:02 rpe Exp $
+# $OpenBSD: redis.rc,v 1.7 2021/02/25 15:05:23 tb Exp $
 
-daemon="${TRUEPREFIX}/sbin/redis-server"
+daemon="${TRUEPREFIX}/bin/redis-server"
 daemon_flags="${SYSCONFDIR}/redis/redis.conf"
 daemon_user="_redis"
 

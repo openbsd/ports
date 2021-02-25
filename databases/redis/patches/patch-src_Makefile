@@ -1,8 +1,7 @@
-$OpenBSD: patch-src_Makefile,v 1.36 2020/10/29 05:14:03 tb Exp $
+$OpenBSD: patch-src_Makefile,v 1.37 2021/02/25 15:05:23 tb Exp $
 
 Changes in this file:
-- install redis-server and redis-sentinel into ${PREFIX}/sbin
-- don't use jemalloc and bundled lua; use lua from ports.
+- use lua from ports.
 - do not use -funwind-tables and -latomic on armv7
 - run tests with datasize, fds, stacksize and processes at the hard limit
 
@@ -13,12 +12,12 @@ Index: src/Makefile
  uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
  uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')
  OPTIMIZATION?=-O2
--DEPENDENCY_TARGETS=hiredis linenoise lua
-+DEPENDENCY_TARGETS=hiredis linenoise
+-DEPENDENCY_TARGETS=hiredis linenoise lua hdr_histogram
++DEPENDENCY_TARGETS=hiredis linenoise hdr_histogram
  NODEPS:=clean distclean
  
  # Default settings
-@@ -31,6 +31,7 @@ OPT=$(OPTIMIZATION)
+@@ -41,6 +41,7 @@ endif
  
  PREFIX?=/usr/local
  INSTALL_BIN=$(PREFIX)/bin
@@ -26,7 +25,7 @@ Index: src/Makefile
  INSTALL=install
  PKG_CONFIG?=pkg-config
  
-@@ -49,7 +50,7 @@ ifneq (,$(filter aarch64 armv,$(uname_M)))
+@@ -59,7 +60,7 @@ ifneq (,$(filter aarch64 armv,$(uname_M)))
          CFLAGS+=-funwind-tables
  else
  ifneq (,$(findstring armv,$(uname_M)))
@@ -35,7 +34,7 @@ Index: src/Makefile
  endif
  endif
  
-@@ -83,7 +84,7 @@ ifneq (,$(filter aarch64 armv,$(uname_M)))
+@@ -93,7 +94,7 @@ ifneq (,$(filter aarch64 armv,$(uname_M)))
          FINAL_LIBS+=-latomic
  else
  ifneq (,$(findstring armv,$(uname_M)))
@@ -44,16 +43,7 @@ Index: src/Makefile
  endif
  endif
  
-@@ -166,7 +167,7 @@ endif
- endif
- endif
- # Include paths to dependencies
--FINAL_CFLAGS+= -I../deps/hiredis -I../deps/linenoise -I../deps/lua/src
-+FINAL_CFLAGS+= -I../deps/hiredis -I../deps/linenoise -I${MODLUA_INCL_DIR}
- 
- # Determine systemd support and/or build preference (defaulting to auto-detection)
- BUILD_WITH_SYSTEMD=no
-@@ -253,6 +254,8 @@ REDIS_BENCHMARK_OBJ=ae.o anet.o redis-benchmark.o adli
+@@ -278,6 +279,8 @@ REDIS_BENCHMARK_OBJ=ae.o anet.o redis-benchmark.o adli
  REDIS_CHECK_RDB_NAME=redis-check-rdb$(PROG_SUFFIX)
  REDIS_CHECK_AOF_NAME=redis-check-aof$(PROG_SUFFIX)
  
@@ -62,7 +52,7 @@ Index: src/Makefile
  all: $(REDIS_SERVER_NAME) $(REDIS_SENTINEL_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME) $(REDIS_CHECK_RDB_NAME) $(REDIS_CHECK_AOF_NAME)
  	@echo ""
  	@echo "Hint: It's a good idea to run 'make test' ;)"
-@@ -299,7 +302,7 @@ endif
+@@ -324,7 +327,7 @@ endif
  
  # redis-server
  $(REDIS_SERVER_NAME): $(REDIS_SERVER_OBJ)
@@ -71,30 +61,21 @@ Index: src/Makefile
  
  # redis-sentinel
  $(REDIS_SENTINEL_NAME): $(REDIS_SERVER_NAME)
-@@ -346,7 +349,7 @@ distclean: clean
+@@ -371,7 +374,7 @@ distclean: clean
  .PHONY: distclean
  
- test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME)
+ test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME)
 -	@(cd ..; ./runtest)
 +	@(cd ..; ulimit -Sd `ulimit -Hd`; ulimit -Sn `ulimit -Hn`; ulimit -Sp `ulimit -Hp`; ulimit -Ss `ulimit -Hs`; ${TCL_BIN} tests/test_helper.tcl)
  
- test-sentinel: $(REDIS_SENTINEL_NAME)
+ test-sentinel: $(REDIS_SENTINEL_NAME) $(REDIS_CLI_NAME)
  	@(cd ..; ./runtest-sentinel)
-@@ -390,13 +393,14 @@ src/help.h:
+@@ -411,7 +414,7 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all
 -	@mkdir -p $(INSTALL_BIN)
--	$(REDIS_INSTALL) $(REDIS_SERVER_NAME) $(INSTALL_BIN)
-+	$(INSTALL_DIR) $(INSTALL_SBIN)
-+	$(REDIS_INSTALL) $(REDIS_SERVER_NAME) $(INSTALL_SBIN)
 +	$(INSTALL_DIR) $(INSTALL_BIN)
+ 	$(REDIS_INSTALL) $(REDIS_SERVER_NAME) $(INSTALL_BIN)
  	$(REDIS_INSTALL) $(REDIS_BENCHMARK_NAME) $(INSTALL_BIN)
  	$(REDIS_INSTALL) $(REDIS_CLI_NAME) $(INSTALL_BIN)
- 	$(REDIS_INSTALL) $(REDIS_CHECK_RDB_NAME) $(INSTALL_BIN)
- 	$(REDIS_INSTALL) $(REDIS_CHECK_AOF_NAME) $(INSTALL_BIN)
--	@ln -sf $(REDIS_SERVER_NAME) $(INSTALL_BIN)/$(REDIS_SENTINEL_NAME)
-+	@ln -sf $(REDIS_SERVER_NAME) $(INSTALL_SBIN)/$(REDIS_SENTINEL_NAME)
- 
- uninstall:
- 	rm -f $(INSTALL_BIN)/{$(REDIS_SERVER_NAME),$(REDIS_BENCHMARK_NAME),$(REDIS_CLI_NAME),$(REDIS_CHECK_RDB_NAME),$(REDIS_CHECK_AOF_NAME),$(REDIS_SENTINEL_NAME)}
