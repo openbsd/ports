@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.34 2021/02/20 18:05:04 espie Exp $
+# $OpenBSD: Info.pm,v 1.35 2021/02/25 23:26:30 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -55,7 +55,7 @@ our $vars = {
     IS_INTERACTIVE => 'AnyVar',
     LIB_DEPENDS => 'LibDependsVar',
     MAINTAINER=> 'EmailVar',
-    MAKEFILE_LIST => 'FilesListVar',
+    MAKEFILE_LIST => 'MakefilesListVar',
     MASTER_SITES => 'MasterSitesVar',
     MASTER_SITES0 => 'MasterSitesVar',
     MASTER_SITES1 => 'MasterSitesVar',
@@ -114,6 +114,7 @@ our $vars = {
     FETCH_MANUALLY => 'IgnoredVar',
     FLAVOR => 'IgnoredVar',
     MISSING_FILES => 'IgnoredVar',
+    FIX_CRLF_FILES => 'CRLFFiles',
 };
 
 my @indexed = qw(FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE

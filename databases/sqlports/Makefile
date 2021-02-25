@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.131 2021/02/21 09:14:05 espie Exp $
+# $OpenBSD: Makefile,v 1.132 2021/02/25 23:26:30 espie Exp $
 
 CATEGORIES =		databases
-V =			7.35
+V =			7.36
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -31,7 +31,7 @@ STRICT =-s
 .endif
 
 # for debugging the ports tree purposes, start at this dir
-# STARTDIR = -S net/rsync
+#STARTDIR = -S games/stepmania
 SCRIPTS = print-ports-index show-reverse-deps rebuild-sqlports-cache
 MANS = show-reverse-deps.1 sqlports.5
 

@@ -1,4 +1,4 @@
-.\"	$OpenBSD: sqlports.5,v 1.6 2021/02/21 09:14:05 espie Exp $
+.\"	$OpenBSD: sqlports.5,v 1.7 2021/02/25 23:26:30 espie Exp $
 .\"
 .\" Copyright (c) 2020 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: February 21 2021 $
+.Dd $Mdocdate: February 25 2021 $
 .Dt SQLPORTS 5
 .Os
 .Sh NAME
@@ -125,6 +125,7 @@ Corresponds to CONFIGURE_STYLE
 This tables contains only Makefiles from MAKE_FILE_LIST that are not
 .Sq default values
 (always included makefiles).
+.It _FixCRLFFiles(FULLPKGPATH, VALUE, N)
 .It _NotForArch(FULLPKGPATH, VALUE, N)
 .It _OnlyForArch(FULLPKGPATH, VALUE, N)
 All of these variable values are actually ordered lists (hence the N).
@@ -180,6 +181,8 @@ is stored as keyword references to other tables:
 .Bl -tag -width AUTOMAKE_VERSIONblablabla -offset indent -compact
 .It AUTOCONF_VERSION , AUTOMAKE_VERSION
 _AUTOVERSION
+.It FixCRLFFiles 
+_FILENAME2
 .It _DPBProperties.value 
 _DPBKeys
 .It MAINTAINER 
@@ -189,7 +192,7 @@ _CATEGORYKEYS
 .It CONFIGURE 
 _CONFIGURE_KEYS
 .It MAKEFILES 
-_FILENAMES
+_FILENAME
 .It MODULES
 _MODULEKEYS
 .It PREFIX 

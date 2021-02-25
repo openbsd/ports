@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.61 2021/02/20 18:05:04 espie Exp $
+# $OpenBSD: Var.pm,v 1.62 2021/02/25 23:26:30 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -798,7 +798,7 @@ sub add
 	$self->SUPER::add($ins);
 }
 
-package FilesListVar;
+package MakefilesListVar;
 our @ISA = qw(DefinedListKeyVar);
 
 my $portsdir = $ENV{PORTSDIR} || '/usr/ports';
@@ -833,6 +833,12 @@ sub words
 	}
 	return @result;
 }
+
+package CRLFFiles;
+our @ISA = qw(DefinedListKeyVar);
+
+sub table() { 'FixCRLFFiles' }
+sub keyword_table() { '_Filename2' }
 
 package FlavorsVar;
 our @ISA = qw(DefinedListKeyVar);
