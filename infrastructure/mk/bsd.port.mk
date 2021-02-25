@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1550 2021/02/25 21:46:05 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1551 2021/02/25 23:04:54 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2691,7 +2691,7 @@ _post-extract-finalize:
 	@chmod -R a+rX ${WRKDIR}
 .endif
 .if !empty(FIX_CRLF_FILES)
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' -- ${FIX_CRLF_FILES}
+	@cd ${WRKDIST} && perl -i -pe 's/\r$$//' -- ${FIX_CRLF_FILES}
 .endif
 
 # run as _pbuild

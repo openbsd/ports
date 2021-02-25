@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/25 22:26:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/25 23:04:54 sthen Exp $
 
 COMMENT=	Creative VoIP Blaster driver/software
 DISTNAME=	fobbit-0.61
@@ -18,7 +18,7 @@ WRKSRC=	${WRKDIST}/src
 
 WANTLIB=c
 
-FIX_CRLF_FILES=	*.[ch] vb.ini
+FIX_CRLF_FILES=	src/*.[ch] src/vb.ini
 
 pre-configure:
 	@sed -i 's|_PREFIX_|${PREFIX}|g;' ${WRKSRC}/ini.c ${WRKSRC}/vb.ini
