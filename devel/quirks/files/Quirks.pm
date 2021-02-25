@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1214 2021/02/25 00:41:29 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1215 2021/02/25 10:39:24 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2136,7 +2136,7 @@ my $obsolete_reason = {
 	'libquvi-scripts' => 39,
 	'cclive' => 6,
 	'viz' => 4,
-	'drifntet' => 40,
+	'driftnet' => 40,
 	'enjoympeg' => 6,
 	'trac-ldapplugin' => 6,
 	'xboing' => 0,
