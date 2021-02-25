@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/24 21:23:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/25 11:44:45 sthen Exp $
 
 BROKEN= builds, but has problems picking up libcurl
 
@@ -19,6 +19,7 @@ WANTLIB += iconv icudata icui18n icuuc idn intl m z
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/php/pecl
+FLAVOR=		php72 php73 php74
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 --with-http-libcurl-dir=${LOCALBASE}
