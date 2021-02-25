@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/25 07:56:30 bentley Exp $
 
-COMMENT =		sigrok hardware driver library
+COMMENT =		sigrok serial port communication library
 
 SIGROK_PROJECT =	libserialport
 SIGROK_VERSION =	0.1.1
+REVISION =		0
 
 SHARED_LIBS +=  serialport                0.0 # 0.0
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

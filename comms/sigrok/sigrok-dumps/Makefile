@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/25 07:56:30 bentley Exp $
 
-COMMENT =		example signal/protocal dumps for sigrok
+COMMENT =		example signal/protocol dumps for sigrok
 
 SIGROK_PROJECT =	sigrok-dumps
 SIGROK_VERSION =	0.1.0
+REVISION =		0
 
 CONFIGURE_STYLE =
 
