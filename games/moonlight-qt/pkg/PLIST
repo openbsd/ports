@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/25 19:39:19 solene Exp $
+@bin bin/moonlight
+share/applications/com.moonlight_stream.Moonlight.desktop
+share/icons/hicolor/scalable/apps/moonlight.svg
+share/metainfo/
+share/metainfo/com.moonlight_stream.Moonlight.appdata.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
