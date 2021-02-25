@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2021/01/18 13:52:23 robert Exp $
+# $OpenBSD: Makefile,v 1.49 2021/02/25 11:09:17 robert Exp $
 
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-5.0.0
+DISTNAME=		rt-5.0.1
 CATEGORIES=		www
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -80,6 +80,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			textproc/p5-Text-Quoted \
 			textproc/p5-Text-Template \
 			textproc/p5-Text-WikiFormat \
+			textproc/p5-Text-WordDiff \
 			textproc/p5-Text-Wrapper \
 			textproc/p5-XML-RSS \
 			www/fcgi \

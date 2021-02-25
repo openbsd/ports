@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2021/01/18 13:52:23 robert Exp $
+@comment $OpenBSD: PLIST,v 1.27 2021/02/25 11:09:17 robert Exp $
 @newgroup _rt:841
 @newuser _rt:841:_rt:daemon:RT Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rt
@@ -114,6 +114,7 @@ libdata/perl5/site_perl/RT/CustomRoles.pm
 libdata/perl5/site_perl/RT/Dashboard/
 libdata/perl5/site_perl/RT/Dashboard.pm
 libdata/perl5/site_perl/RT/Dashboard/Mailer.pm
+libdata/perl5/site_perl/RT/Dashboard/SelfService.pm
 libdata/perl5/site_perl/RT/Dashboards.pm
 libdata/perl5/site_perl/RT/Date.pm
 libdata/perl5/site_perl/RT/DependencyWalker/
@@ -225,12 +226,16 @@ libdata/perl5/site_perl/RT/REST2/Middleware/ErrorAsJSON.pm
 libdata/perl5/site_perl/RT/REST2/Middleware/Log.pm
 libdata/perl5/site_perl/RT/REST2/Resource/
 libdata/perl5/site_perl/RT/REST2/Resource.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Article.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Articles.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Asset.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Assets.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Attachment.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Attachments.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Catalog.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Catalogs.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Class.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Classes.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Collection/
 libdata/perl5/site_perl/RT/REST2/Resource/Collection.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Collection/ProcessPOSTasGET.pm
@@ -469,6 +474,11 @@ share/doc/rt/images/general-owner-lastupdated-chart.png
 share/doc/rt/images/general-status-chart.png
 share/doc/rt/images/global-lifecycle-group-rights.png
 share/doc/rt/images/lifecycle-choices.png
+share/doc/rt/images/lifecycle-ui-actions.png
+share/doc/rt/images/lifecycle-ui-advanced.png
+share/doc/rt/images/lifecycle-ui-mappings.png
+share/doc/rt/images/lifecycle-ui-modify.png
+share/doc/rt/images/lifecycle-ui-rights.png
 share/doc/rt/images/order-history-example.png
 share/doc/rt/images/queue-created-started-chart.png
 share/doc/rt/images/quote-selection-highlighted.png
@@ -1348,6 +1358,7 @@ share/rt/html/Admin/Global/DashboardsInMenu.html
 share/rt/html/Admin/Global/GroupRights.html
 share/rt/html/Admin/Global/MyRT.html
 share/rt/html/Admin/Global/Scrips.html
+share/rt/html/Admin/Global/SelfServiceHomePage.html
 share/rt/html/Admin/Global/Template.html
 share/rt/html/Admin/Global/Templates.html
 share/rt/html/Admin/Global/Topics.html
@@ -1711,8 +1722,12 @@ share/rt/html/Elements/SelectTimeUnits
 share/rt/html/Elements/SelectTimezone
 share/rt/html/Elements/SelectUsers
 share/rt/html/Elements/SelectWatcherType
+share/rt/html/Elements/SelfServiceNewestArticles
+share/rt/html/Elements/SelfServiceShowArticles
+share/rt/html/Elements/SelfServiceTopArticles
 share/rt/html/Elements/SetupSessionCookie
 share/rt/html/Elements/ShortcutHelp
+share/rt/html/Elements/ShowArticleCustomFields
 share/rt/html/Elements/ShowCustomDateRanges
 share/rt/html/Elements/ShowCustomFieldBinary
 share/rt/html/Elements/ShowCustomFieldCustomGroupings
@@ -1790,6 +1805,7 @@ share/rt/html/Helpers/RightsInspector/Search
 share/rt/html/Helpers/ShortcutHelp
 share/rt/html/Helpers/ShowSimplifiedRecipients
 share/rt/html/Helpers/SpawnLinkedTicket
+share/rt/html/Helpers/TextDiff
 share/rt/html/Helpers/TicketAttachments
 share/rt/html/Helpers/TicketHistory
 share/rt/html/Helpers/TicketHistoryPage
@@ -1974,9 +1990,11 @@ share/rt/html/SelfService/Helpers/Autocomplete/
 share/rt/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 share/rt/html/SelfService/Helpers/Autocomplete/Users
 share/rt/html/SelfService/Helpers/ShortcutHelp
+share/rt/html/SelfService/Helpers/TextDiff
 share/rt/html/SelfService/Helpers/Upload/
 share/rt/html/SelfService/Helpers/Upload/Add
 share/rt/html/SelfService/Helpers/Upload/Delete
+share/rt/html/SelfService/Open.html
 share/rt/html/SelfService/Prefs.html
 share/rt/html/SelfService/Search/
 share/rt/html/SelfService/Search/Results.tsv
@@ -2086,6 +2104,7 @@ share/rt/html/Widgets/Form/Boolean
 share/rt/html/Widgets/Form/Code
 share/rt/html/Widgets/Form/CustomDateRanges
 share/rt/html/Widgets/Form/Integer
+share/rt/html/Widgets/Form/JSON
 share/rt/html/Widgets/Form/MultilineString
 share/rt/html/Widgets/Form/Select
 share/rt/html/Widgets/Form/String
