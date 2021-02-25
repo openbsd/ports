@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/02/13 06:17:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/25 11:18:47 espie Exp $
 
 COMMENT=	Google WebP image format conversion tool
 
@@ -29,9 +29,17 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
 CONFIGURE_STYLE=autoreconf
-CONFIGURE_ARGS=	--enable-everything \
-		--disable-sdl
+
+CONFIGURE_ARGS=	--enable-everything
+
+# this will use libSDL to build stuff under extras otherwise
+# (a static webp viewer which is more or less useless, and not
+# even installed by default)
+CONFIGURE_ARGS +=	--disable-sdl
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
