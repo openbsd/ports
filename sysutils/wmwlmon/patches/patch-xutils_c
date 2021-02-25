@@ -1,0 +1,30 @@
+$OpenBSD: patch-xutils_c,v 1.1 2021/02/25 22:21:56 tb Exp $
+
+Fix build with -fno-common
+
+Index: xutils.c
+--- xutils.c.orig
++++ xutils.c
+@@ -37,6 +37,11 @@
+ #include "xutils.h"
+ 
+ /*
++ * global variable
++ */
++Display *display;
++
++/*
+  * global variables for this file
+  */
+ int		x_fd;
+@@ -47,6 +52,10 @@ char		*Geometry = "";
+ GC		NormalGC;
+ XpmIcon		wmgen;
+ Pixmap		pixmask;
++Window		Root;
++Window		win, iconwin;
++int		screen;
++int		DisplayDepth;
+ 
+ extern char	TimeColor[30];
+ extern char	BackgroundColor[30];

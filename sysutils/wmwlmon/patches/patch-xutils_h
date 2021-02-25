@@ -1,0 +1,20 @@
+$OpenBSD: patch-xutils_h,v 1.1 2021/02/25 22:21:56 tb Exp $
+
+Fix build with -fno-common
+
+Index: xutils.h
+--- xutils.h.orig
++++ xutils.h
+@@ -31,11 +31,7 @@ unsigned long	getBlendedColor(char *, float, int, int,
+ /*
+  * global variables
+  */
+-Display	*display;
+-Window	Root;
+-Window 	win, iconwin;
+-int	screen;
+-int	DisplayDepth;
++extern Display	*display;
+ 
+ /*
+  * typedefs
