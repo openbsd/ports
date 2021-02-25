@@ -1,0 +1,33 @@
+$OpenBSD: patch-Headers_CoreFoundation_CFError_h,v 1.1 2021/02/25 21:55:55 naddy Exp $
+
+Fix build with -fno-common
+
+Index: Headers/CoreFoundation/CFError.h
+--- Headers/CoreFoundation/CFError.h.orig
++++ Headers/CoreFoundation/CFError.h
+@@ -39,16 +39,16 @@ typedef NSError * CFErrorRef;
+ typedef const struct __CFError * CFErrorRef;
+ #endif
+ 
+-const CFStringRef kCFErrorDomainPOSIX;
+-const CFStringRef kCFErrorDomainOSStatus;
+-const CFStringRef kCFErrorDomainMach;
+-const CFStringRef kCFErrorDomainCocoa;
++extern const CFStringRef kCFErrorDomainPOSIX;
++extern const CFStringRef kCFErrorDomainOSStatus;
++extern const CFStringRef kCFErrorDomainMach;
++extern const CFStringRef kCFErrorDomainCocoa;
+ 
+-const CFStringRef kCFErrorLocalizedDescriptionKey;
+-const CFStringRef kCFErrorLocalizedFailureReasonKey;
+-const CFStringRef kCFErrorLocalizedRecoverySuggestionKey;
+-const CFStringRef kCFErrorDescriptionKey;
+-const CFStringRef kCFErrorUnderlyingErrorKey;
++extern const CFStringRef kCFErrorLocalizedDescriptionKey;
++extern const CFStringRef kCFErrorLocalizedFailureReasonKey;
++extern const CFStringRef kCFErrorLocalizedRecoverySuggestionKey;
++extern const CFStringRef kCFErrorDescriptionKey;
++extern const CFStringRef kCFErrorUnderlyingErrorKey;
+ 
+ 
+ 
