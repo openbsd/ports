@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/02/26 16:17:26 sthen Exp $
 
 COMMENT =		opensource MQTT broker
 
-DISTNAME =		mosquitto-2.0.7
+V =			2.0.8
+DISTNAME =		mosquitto-$V
 
-SHARED_LIBS +=  mosquitto                 1.1 # 1.5
-SHARED_LIBS +=  mosquittopp               1.0 # 1.5
+SHARED_LIBS +=  mosquitto                 2.0 # 1.5
+SHARED_LIBS +=  mosquittopp               2.0 # 1.5
 
 CATEGORIES =		net
 HOMEPAGE =		https://mosquitto.org/
@@ -38,6 +39,7 @@ CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS +=		-I${LOCALBASE}/include
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
+			${BUILD_PKGPATH}-=$V \
 			devel/cunit \
 			devel/gmake
 
