@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/14 15:51:34 sthen Exp $
-@conflict py-ndg_httpclient-*
-@pkgpath www/py-ndg_httpclient
+@comment $OpenBSD: PLIST,v 1.5 2021/02/26 20:26:20 sthen Exp $
+@conflict py-ndg-httpsclient-*
+@pkgpath www/py-ndg-httpsclient
 bin/ndg_httpclient
 lib/python${MODPY_VERSION}/site-packages/ndg/
 lib/python${MODPY_VERSION}/site-packages/ndg/__init__.py
