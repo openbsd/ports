@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2020/12/12 03:18:01 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.51 2021/02/26 23:51:03 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -416,7 +416,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/ipaddr-1.2.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.4.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.10.5-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.3.7-java.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/json-2.2.0-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/json-2.5.1-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/psych-3.2.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-ant-1.0.4.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.1.2.gemspec
