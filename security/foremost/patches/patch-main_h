@@ -1,0 +1,47 @@
+$OpenBSD: patch-main_h,v 1.1 2021/02/26 21:06:12 naddy Exp $
+
+Fix build with -fno-common
+
+Index: main.h
+--- main.h.orig
++++ main.h
+@@ -187,12 +187,7 @@ int getopt(int argc, char *const argv[], const char *o
+ #endif   /* ifdef _WIN32 */
+ 
+ 
+-/* On non-glibc systems we have to manually set the __progname variable */
+-#ifdef __GLIBC__
+ extern char *__progname;
+-#else
+-char *__progname;
+-#endif /* ifdef __GLIBC__ */
+ 
+ /* -----------------------------------------------------------------
+    Program Defaults
+@@ -292,7 +287,7 @@ char *__progname;
+ /* -----------------------------------------------------------------
+    State Variable and Global Variables
+    ----------------------------------------------------------------- */
+-char wildcard;
++extern char wildcard;
+ typedef struct f_state 
+ {
+   off_t mode;
+@@ -344,7 +339,7 @@ typedef struct s_spec
+     int written; /*used for -a mode*/
+ }s_spec;
+ 
+-s_spec search_spec[50];  /*ARRAY OF BUILTIN SEARCH TYPES*/
++extern s_spec search_spec[50];  /*ARRAY OF BUILTIN SEARCH TYPES*/
+ 
+ typedef struct f_info {
+   char *file_name;
+@@ -367,7 +362,7 @@ typedef struct f_info {
+ } f_info;
+ 
+ /* Set if the user hits ctrl-c */
+-int signal_caught;
++extern int signal_caught;
+ 
+ /* -----------------------------------------------------------------
+    Function definitions

@@ -1,0 +1,15 @@
+$OpenBSD: patch-api_c,v 1.1 2021/02/26 21:06:12 naddy Exp $
+
+Fix build with -fno-common: move variable from ole.h
+
+Index: api.c
+--- api.c.orig
++++ api.c
+@@ -9,6 +9,7 @@
+ /*Some ugly globals
+ * This API should be re-written
+ * in a modular fashion*/
++struct DIRECTORY *dirlist, *dl;
+ unsigned char	buffer[OUR_BLK_SIZE];
+ char			*extract_name;
+ int				extract = 0;

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/26 21:06:12 naddy Exp $
 
 COMMENT =		forensic data recovery program
 
 DISTNAME =		foremost-1.5.7
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 
@@ -22,6 +22,8 @@ FAKE_FLAGS =		BIN=${WRKINST}${PREFIX}/bin \
 					MAN=${WRKINST}${PREFIX}/man/man8 \
 					CONF=${WRKINST}${PREFIX}/share/examples/ \
 					MAN_PAGES=foremost.8
+
+FIX_CRLF_FILES =	main.h
 
 post-extract:
 	cd ${WRKSRC} && gunzip foremost.8.gz

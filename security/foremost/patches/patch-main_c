@@ -1,0 +1,26 @@
+$OpenBSD: patch-main_c,v 1.1 2021/02/26 21:06:12 naddy Exp $
+
+Fix build with -fno-common: move globals from main.h
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -16,6 +16,18 @@
+  */
+ #include "main.h"
+ 
++/* On non-glibc systems we have to manually set the __progname variable */
++#ifndef __GLIBC__
++char *__progname;
++#endif
++
++/* State Variable and Global Variables */
++char wildcard;
++
++s_spec search_spec[50];  /*ARRAY OF BUILTIN SEARCH TYPES*/
++
++int signal_caught;
++
+ #ifdef __WIN32
+ 
+ /* Allows us to open standard input in binary mode by default 

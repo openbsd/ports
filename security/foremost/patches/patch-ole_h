@@ -1,0 +1,18 @@
+$OpenBSD: patch-ole_h,v 1.1 2021/02/26 21:06:12 naddy Exp $
+
+Fix build with -fno-common
+
+Index: ole.h
+--- ole.h.orig
++++ ole.h
+@@ -84,8 +84,8 @@ struct DIRECTORY
+ 	int		s2;
+ 	int		d1;
+ 	int		d2;
+-}
+-*dirlist, *dl;
++};
++extern struct DIRECTORY *dirlist, *dl;
+ 
+ int				get_dir_block(unsigned char *fd, int blknum, int buffersize);
+ int				get_dir_info(unsigned char *src);
