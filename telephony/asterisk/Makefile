@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2021/02/25 22:26:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.342 2021/02/26 16:34:01 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -298,9 +298,6 @@ EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \
 PKGNAME$i ?=		asterisk$i-${VER}
 RUN_DEPENDS$i +=	asterisk-${VER}:telephony/asterisk
 .endfor
-
-# otherwise asterisk patchset for pjsua gets in the way
-PATCHORIG=		.orig.port
 
 # some of the patches have MS-DOS line endings which patch doesn't like.
 # done before actual patch, because we have libressl patches for one of the
