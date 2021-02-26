@@ -1,0 +1,16 @@
+$OpenBSD: patch-transcript_c,v 1.6 2021/02/26 23:30:53 naddy Exp $
+
+Fix build with -fno-common
+
+Index: transcript.c
+--- transcript.c.orig
++++ transcript.c
+@@ -46,7 +46,7 @@ struct list			*exclude_list;
+ char				*path_prefix = NULL;
+ int				edit_path;
+ int				skip;
+-int				cksum;
++extern int			cksum;
+ int				fs_minus;
+ int				exclude_warnings = 0;
+ FILE				*outtran;

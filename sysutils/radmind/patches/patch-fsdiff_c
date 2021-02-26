@@ -1,0 +1,15 @@
+$OpenBSD: patch-fsdiff_c,v 1.6 2021/02/26 23:30:53 naddy Exp $
+
+Fix build with -fno-common
+
+Index: fsdiff.c
+--- fsdiff.c.orig
++++ fsdiff.c
+@@ -28,6 +28,7 @@ extern char	*version, *checksumlist;
+ 
+ void		fs_walk( char *, struct stat *, char *, struct applefileinfo *,
+ 	int, int, int );
++int		cksum;
+ int		dodots = 0;
+ int		dotfd;
+ int		lastpercent = -1;
