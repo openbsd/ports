@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.695 2021/02/15 09:20:33 kn Exp $
+# $OpenBSD: Makefile,v 1.696 2021/02/26 21:24:22 naddy Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -87,7 +87,6 @@
      SUBDIR += gnustep
      SUBDIR += gob2
      SUBDIR += goggles
-     SUBDIR += golem
      SUBDIR += grantlee-qt5
      SUBDIR += greybird
      SUBDIR += gromit-mpx
