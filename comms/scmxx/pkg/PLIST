@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/05/21 14:13:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/26 21:09:58 naddy Exp $
+@bin bin/adr2vcf
+@bin bin/apoconv
 @bin bin/scmxx
+@bin bin/smi
 @comment man/de/
 @comment man/de/man1/
 @comment @man man/de/man1/scmxx.1
@@ -11,9 +14,12 @@
 @comment man/ru/man1/
 @comment @man man/ru/man1/scmxx.1
 share/doc/scmxx/
+share/doc/scmxx/adr.txt
+share/doc/scmxx/apo.txt
 share/doc/scmxx/doc_sources.txt
 share/doc/scmxx/gsm0338.txt
 share/doc/scmxx/gsmcharset.txt
+share/doc/scmxx/smi.txt
 share/examples/scmxx/
 share/examples/scmxx/sms.txt
 share/examples/scmxx/vCalendar.vcs

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/26 16:51:40 tb Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/26 21:09:57 naddy Exp $
 
 COMMENT=		data exchange utility for Siemens mobile phones
 
-DISTNAME=		scmxx-0.8.0
-REVISION=		5
+DISTNAME=		scmxx-0.9.0
 CATEGORIES=		comms
-HOMEPAGE=		http://www.hendrik-sattler.de/scmxx/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scmxx/}
+EXTRACT_SUFX=		.tar.bz2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -26,7 +25,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 NO_TEST=	Yes
 
-DOCS=		doc_sources.txt gsm0338.txt gsmcharset.txt
+DOCS=		adr.txt apo.txt doc_sources.txt \
+		gsm0338.txt gsmcharset.txt smi.txt
 SAMPLES=	sms.txt vCalendar.vcs vCard.vcf
 
 post-install:

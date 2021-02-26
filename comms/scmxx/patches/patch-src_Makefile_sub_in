@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_Makefile_sub_in,v 1.1 2017/04/27 20:13:36 naddy Exp $
---- src/Makefile.sub.in.orig	Thu May  5 16:54:30 2005
-+++ src/Makefile.sub.in	Thu Apr 27 22:09:46 2017
+$OpenBSD: patch-src_Makefile_sub_in,v 1.2 2021/02/26 21:09:57 naddy Exp $
+Index: src/Makefile.sub.in
+--- src/Makefile.sub.in.orig
++++ src/Makefile.sub.in
 @@ -5,7 +5,8 @@ SHELL=@SHELL@
  
  CC=@CC@
@@ -10,8 +11,8 @@ $OpenBSD: patch-src_Makefile_sub_in,v 1.1 2017/04/27 20:13:36 naddy Exp $
 +CPPFLAGS=@CPPFLAGS@ -I..
  OBJEXT=@OBJEXT@
  
- SOURCES=$(shell ls -1 *.c 2>/dev/null)
-@@ -33,10 +34,10 @@ endif
+ ifeq '$(SOURCES)' ''
+@@ -35,10 +36,10 @@ endif
  
  .PHONY: depend
  depend:
