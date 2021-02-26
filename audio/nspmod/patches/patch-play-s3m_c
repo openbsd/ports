@@ -1,0 +1,16 @@
+$OpenBSD: patch-play-s3m_c,v 1.1 2021/02/26 21:29:54 tb Exp $
+
+Fix build with -fno-common
+
+Index: play-s3m.c
+--- play-s3m.c.orig
++++ play-s3m.c
+@@ -8,7 +8,7 @@
+ #include "play-s3m.h"	/*(playS3m)*/
+ #include "mem.h"	/*(memXXX)*/
+ 
+-struct {
++static struct {
+     const u8 *p0;
+     const u8 *songName;
+     i15x ordNum;

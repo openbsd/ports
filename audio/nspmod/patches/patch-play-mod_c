@@ -1,0 +1,16 @@
+$OpenBSD: patch-play-mod_c,v 1.1 2021/02/26 21:29:54 tb Exp $
+
+Fix build with -fno-common
+
+Index: play-mod.c
+--- play-mod.c.orig
++++ play-mod.c
+@@ -50,7 +50,7 @@ roundToNote(i15x p)
+ typedef u8 ModSample[30];
+ typedef u8 ModNote[4];
+ 
+-struct {
++static struct {
+     const u8 *p0;
+     const u8 *songName;
+     i15x ordNum;
