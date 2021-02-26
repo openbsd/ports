@@ -1,0 +1,14 @@
+$OpenBSD: patch-efaxlib_c,v 1.1 2021/02/26 20:45:37 naddy Exp $
+
+Index: efaxlib.c
+--- efaxlib.c.orig
++++ efaxlib.c
+@@ -25,6 +25,8 @@ extern t4tab btab [ ( 64 + 27 + 13 ) + 1 ] ;
+ 
+ short short256 = 256 ;		/* for endian-ness detection */
+ 
++uchar reversebits [ 256 ], normalbits [ 256 ] ;
++
+ /* Make sure printf strings have only %d escapes and n or fewer
+    of them.  Returns 0 if OK, 1 on error. */
+ 

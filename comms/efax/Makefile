@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/26 20:45:37 naddy Exp $
 
 COMMENT=	small & simple FAX send/receive program
 
 DISTNAME=	efax-0.9
-REVISION=	3
+REVISION=	4
 CATEGORIES=	comms
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>

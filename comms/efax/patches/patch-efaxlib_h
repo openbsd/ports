@@ -1,0 +1,14 @@
+$OpenBSD: patch-efaxlib_h,v 1.1 2021/02/26 20:45:37 naddy Exp $
+
+Index: efaxlib.h
+--- efaxlib.h.orig
++++ efaxlib.h
+@@ -207,7 +207,7 @@ int runor ( short *a, int na, short *b, int nb, short 
+ /* Bit reversal lookup tables (note that the `normalbits' array
+    is the one actually used for the bit reversal.  */
+ 
+-uchar reversebits [ 256 ], normalbits [ 256 ] ;
++extern uchar reversebits [ 256 ], normalbits [ 256 ] ;
+ 
+ void initbittab(void) ;
+ 
