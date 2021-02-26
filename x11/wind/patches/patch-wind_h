@@ -1,0 +1,18 @@
+$OpenBSD: patch-wind_h,v 1.1 2021/02/26 23:13:13 naddy Exp $
+
+Index: wind.h
+--- wind.h.orig
++++ wind.h
+@@ -94,9 +94,9 @@ extern GC hlbackground;
+ extern int lineheight;
+ extern int halfleading;
+ 
+-struct font *font;
+-struct fontcolor *fhighlight;
+-struct fontcolor *fnormal;
++extern struct font *font;
++extern struct fontcolor *fhighlight;
++extern struct fontcolor *fnormal;
+ 
+ extern struct bitmap *deletebitmap;
+ 

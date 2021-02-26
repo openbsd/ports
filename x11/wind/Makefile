@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/26 23:13:13 naddy Exp $
 
 COMMENT =	small standards-compliant window manager
 DISTNAME =	wind-1.5
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://windwm.sourceforge.net
 
