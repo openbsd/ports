@@ -1,28 +1,31 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/26 15:25:04 tb Exp $
 
 COMMENT=		wm-dockapp; mandelbrot explorer
 
-DISTNAME=		wmMand-1.0
+DISTNAME=		wmMand-1.3.2
 PKGNAME=		${DISTNAME:L}
-REVISION=		2
 CATEGORIES=     	misc x11 x11/windowmaker
 
-HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
+HOMEPAGE=		https://sourceforge.net/p/wmmand/news/
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		X11 Xext Xpm c xcb
+WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wmmand/}
+EXTRACT_SUFX=		.tar.bz2
 
-RUN_DEPENDS=		graphics/xv
-
+RUN_DEPENDS=		graphics/ImageMagick \
+			graphics/xv
 
 NO_TEST=		Yes
 
 WRKSRC=			${WRKDIST}/wmMand
 
 ALL_TARGET=		clean all
+
+post-extract:
+	@cd ${WRKSRC} && gunzip wmMand.6.gz
 
 .include <bsd.port.mk>
