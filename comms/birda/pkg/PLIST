@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/06/23 22:50:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/02/26 13:08:38 sthen Exp $
 @bin bin/ircomm
 @bin bin/irobex
 @bin bin/irs
@@ -8,7 +8,7 @@
 @bin bin/mkobexpdb
 @bin bin/mkobextel
 @bin bin/mkobextodo
-lib/libirda.a
+@static-lib lib/libirda.a
 @man man/man1/ircomm.1
 @man man/man1/irobex.1
 @man man/man1/irs.1

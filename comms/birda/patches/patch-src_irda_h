@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_irda_h,v 1.1 2021/02/26 13:08:37 sthen Exp $
+
+Index: src/irda.h
+--- src/irda.h.orig
++++ src/irda.h
+@@ -437,8 +437,8 @@ void doOptions(int argc, char* const argv[],
+ 	       int* verbosityp, const char* desc);
+ void doConnect(void);
+ 
+-LAP* optLap;
+-IASServer* optIas;
++extern LAP* optLap;
++extern IASServer* optIas;
+ 
+-void (*optLapConnected)(LAP* lap);
+-void (*optLapDisconnected)(LAP* lap);
++extern void (*optLapConnected)(LAP* lap);
++extern void (*optLapDisconnected)(LAP* lap);
