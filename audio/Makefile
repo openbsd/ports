@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.450 2021/02/20 20:54:56 landry Exp $
+# $OpenBSD: Makefile,v 1.451 2021/02/26 13:00:43 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -55,7 +55,6 @@
      SUBDIR += grip
      SUBDIR += gsm
      SUBDIR += gsound
-     SUBDIR += gtkpod
      SUBDIR += herrie
      SUBDIR += hs-libmpd
      SUBDIR += hydrogen

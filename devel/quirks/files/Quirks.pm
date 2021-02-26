@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1217 2021/02/26 12:53:39 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1218 2021/02/26 13:00:43 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2159,6 +2159,7 @@ my $obsolete_reason = {
 	'seyon' => 3,
 	'mingw' => 6,
 	'bsd-airtools' => 3,
+	'gtkpod' => 3,
 };
 
 # reasons for obsolete packages
