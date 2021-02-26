@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2020/11/14 12:35:05 bket Exp $
+# $OpenBSD: Makefile,v 1.43 2021/02/26 02:59:02 daniel Exp $
 
 COMMENT=		elegant and simple HTTP library for Python
 
 MODPY_EGG_VERSION=	2.25.0
 DISTNAME=		requests-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -17,6 +18,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 
+FLAVORS=		python3
+FLAVOR?=
+
 MODPY_PI=		Yes
 MODPY_PYTEST =		Yes
 MODPY_SETUPTOOLS=	Yes
@@ -25,15 +29,17 @@ RUN_DEPENDS=		devel/py-certifi${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
 			textproc/py-chardet${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR}
+
+.if ${FLAVOR:Mpython3}
 TEST_DEPENDS=		devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR} \
 			devel/py-test-httpbin${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR} \
 			net/py-socks${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR}
-
-FLAVORS=		python3
-FLAVOR?=
+.else
+NO_TEST =		Yes
+.endif
 
 WRKDIST=		${WRKDIR}/requests-${MODPY_EGG_VERSION}
 
