@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/02/23 22:04:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/02/26 21:20:58 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -11,17 +11,19 @@ DISTNAME=	flow-tools-0.68.6pl20210211
 EPOCH=		0
 CATEGORIES=	net
 
+REVISION=	0
+
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c z
+WANTLIB=	c z
 
-FLAVORS=		pgsql
+FLAVORS=	pgsql
 FLAVOR?=
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-LOCALSTATEDIR=		${BASELOCALSTATEDIR}/flow-tools
+LOCALSTATEDIR=	${BASELOCALSTATEDIR}/flow-tools
 
 CONFIGURE_STYLE=	autoreconf
 AUTOMAKE_VERSION=	1.16
@@ -47,5 +49,7 @@ pre-configure:
 	rm -f ${WRKSRC}/lib/ftconfig.h
 	sed -i -e 's,/usr/local/netflow/var/sym/,${SYSCONFDIR}/sym/,;' \
 	    ${WRKSRC}/bin/flow-rptfmt
+	2to3 --fix=all --no-diffs --nobackups --verbose --write \
+	    ${WRKSRC}/bin/flow-*
 
 .include <bsd.port.mk>
