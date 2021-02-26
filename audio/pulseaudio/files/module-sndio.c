@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.11 2021/02/11 17:52:21 ajacoutot Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.12 2021/02/26 07:11:45 eric Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -168,7 +168,7 @@ sndio_midi_input(struct userdata *u, const unsigned char *buf, unsigned int len)
 			u->midx = 1;
 		} else if (u->mst) {
 			if (u->midx == MSGMAX)
-				continue;	       
+				continue;
 			if (u->midx == 0)
 				u->mmsg[u->midx++] = u->mst;
 			u->mmsg[u->midx++] = c;
@@ -186,7 +186,7 @@ sndio_midi_setup(struct userdata *u)
 	static const unsigned char dumpreq[] = {
 		SYSEX_START,
 		SYSEX_TYPE_EDU,
-		0,   
+		0,
 		SYSEX_AUCAT,
 		SYSEX_AUCAT_DUMPREQ,
 		SYSEX_END
@@ -263,107 +263,97 @@ sndio_set_volume(pa_sink *s)
 }
 
 static int
+sndio_sink_set_state_in_io_thread_cb(pa_sink *s, pa_sink_state_t new_state,
+				     pa_suspend_cause_t new_suspend_cause) {
+	struct userdata *u = s->userdata;
+	int r;
+
+	switch (new_state) {
+	case PA_SINK_SUSPENDED:
+		if (!u->sink_running)
+			break;
+		r = sio_stop(u->hdl);
+		pa_log_debug("sio_stop() = %d", r);
+		u->sink_running = 0;
+		break;
+	case PA_SINK_IDLE:
+	case PA_SINK_RUNNING:
+		if (u->sink_running)
+			break;
+		r = sio_start(u->hdl);
+		pa_log_debug("sio_start() = %d", r);
+		u->sink_running = 1;
+		break;
+
+	case PA_SINK_INVALID_STATE:
+	case PA_SINK_UNLINKED:
+	case PA_SINK_INIT:
+	default:
+		pa_log_debug("%s new_state=%d", __func__, new_state);
+	}
+
+	return 0;
+}
+
+static int
 sndio_sink_message(pa_msgobject *o, int code, void *data, int64_t offset,
     pa_memchunk *chunk)
 {
 	struct userdata	*u = PA_SINK(o)->userdata;
-	pa_sink_state_t	 state;
-	int		 ret;
 
-	pa_log_debug(
-	    "sndio_sink_msg: obj=%p code=%i data=%p offset=%lli chunk=%p",
-	    o, code, data, offset, chunk);
+	pa_log_debug("%s: obj=%p code=%i data=%p offset=%lli chunk=%p",
+		     __func__, o, code, data, offset, chunk);
 	switch (code) {
 	case PA_SINK_MESSAGE_GET_LATENCY:
-		pa_log_debug("sink:PA_SINK_MESSAGE_GET_LATENCY");
-		*(int64_t*)data = pa_bytes_to_usec(u->par.bufsz,
-		    &u->sink->sample_spec);
+		*(int64_t*)data = pa_bytes_to_usec(u->par.bufsz, &u->sink->sample_spec);
 		return (0);
-	case PA_SINK_MESSAGE_SET_STATE:
-		pa_log_debug("sink:PA_SINK_MESSAGE_SET_STATE ");
-		state = (pa_sink_state_t)(data);
-		switch (state) {
-		case PA_SINK_SUSPENDED:
-			pa_log_debug("SUSPEND");
-			if (u->sink_running == 1)
-				sio_stop(u->hdl);
-			u->sink_running = 0;
-			break;
-		case PA_SINK_IDLE:
-		case PA_SINK_RUNNING:
-			pa_log_debug((code == PA_SINK_IDLE) ? "IDLE":"RUNNING");
-			if (u->sink_running == 0)
-				sio_start(u->hdl);
-			u->sink_running = 1;
-			break;
-		case PA_SINK_INVALID_STATE:
-			pa_log_debug("INVALID_STATE");
-			break;
-		case PA_SINK_UNLINKED:
-			pa_log_debug("UNLINKED");
-			break;
-		case PA_SINK_INIT:
-			pa_log_debug("INIT");
-			break;
-		}
-		break;
-	default:
-		pa_log_debug("sink:PA_SINK_???");
 	}
 
-	ret = pa_sink_process_msg(o, code, data, offset, chunk);
+	return pa_sink_process_msg(o, code, data, offset, chunk);
+}
 
-	return (ret);
+static int
+sndio_source_set_state_in_io_thread_cb(pa_source *s, pa_source_state_t new_state,
+				       pa_suspend_cause_t new_suspend_cause) {
+	struct userdata *u = s->userdata;
+	int r;
+
+	switch (new_state) {
+	case PA_SOURCE_SUSPENDED:
+		r = sio_stop(u->hdl);
+		pa_log_debug("sio_stop() = %d", r);
+		break;
+	case PA_SOURCE_IDLE:
+	case PA_SOURCE_RUNNING:
+		r = sio_start(u->hdl);
+		pa_log_debug("sio_start() = %d", r);
+		break;
+
+	case PA_SOURCE_INVALID_STATE:
+	case PA_SOURCE_UNLINKED:
+	case PA_SOURCE_INIT:
+	default:
+		pa_log_debug("%s new_state=%d", __func__, new_state);
+	}
+
+	return 0;
 }
 
 static int
 sndio_source_message(pa_msgobject *o, int code, void *data, int64_t offset,
     pa_memchunk *chunk)
 {
-	struct userdata		*u = PA_SOURCE(o)->userdata;
-	pa_source_state_t	 state;
-	int			 ret;
+	struct userdata *u = PA_SOURCE(o)->userdata;
 
-	pa_log_debug(
-	    "sndio_source_msg: obj=%p code=%i data=%p offset=%lli chunk=%p",
-	    o, code, data, offset, chunk);
+	pa_log_debug("%s: obj=%p code=%i data=%p offset=%lli chunk=%p",
+		     __func__, o, code, data, offset, chunk);
 	switch (code) {
 	case PA_SOURCE_MESSAGE_GET_LATENCY:
-		pa_log_debug("source:PA_SOURCE_MESSAGE_GET_LATENCY");
-		*(int64_t*)data = pa_bytes_to_usec(u->bufsz,
-		    &u->source->sample_spec);
+		*(int64_t*)data = pa_bytes_to_usec(u->bufsz, &u->source->sample_spec);
 		return (0);
-	case PA_SOURCE_MESSAGE_SET_STATE:
-		pa_log_debug("source:PA_SOURCE_MESSAGE_SET_STATE ");
-		state = (pa_source_state_t)(data);
-		switch (state) {
-		case PA_SOURCE_SUSPENDED:
-			pa_log_debug("SUSPEND");
-			sio_stop(u->hdl);
-			break;
-		case PA_SOURCE_IDLE:
-		case PA_SOURCE_RUNNING:
-			pa_log_debug((code == PA_SOURCE_IDLE)?"IDLE":"RUNNING");
-			sio_start(u->hdl);
-			break;
-		case PA_SOURCE_INVALID_STATE:
-			pa_log_debug("INVALID_STATE");
-			break;
-		case PA_SOURCE_UNLINKED:
-			pa_log_debug("UNLINKED");
-			break;
-		case PA_SOURCE_INIT:
-			pa_log_debug("INIT");
-			break;
-		}
-		break;
-	default:
-		pa_log_debug("source:PA_SOURCE_???");
 	}
 
-	ret = pa_source_process_msg(o, code, data, offset, chunk);
-
-	return (ret);
+	return pa_source_process_msg(o, code, data, offset, chunk);
 }
 
 static void
@@ -451,17 +441,21 @@ sndio_thread(void *arg)
 
 		mio_pollfd(u->mio, fds_mio, POLLIN);
 
+		pa_log_debug("sndio_thread: POLLING sio events=%x", events);
+
 		if ((ret = pa_rtpoll_run(u->rtpoll)) < 0)
 	    		goto fail;
 		if (ret == 0)
 	    		goto finish;
 
 		revents = mio_revents(u->mio, fds_mio);
+
+		pa_log_debug("sndio_thread: mio_revents()=%x", revents);
 		if (revents & POLLHUP) {
 			pa_log("mio POLLHUP!");
 			break;
 		}
-		if (revents && POLLIN) {
+		if (revents & POLLIN) {
 			r = mio_read(u->mio, buf, sizeof buf);
 			if (mio_eof(u->mio)) {
 				pa_log("mio error");
@@ -485,10 +479,12 @@ sndio_thread(void *arg)
 				pa_log("set master: couldn't write message");
 		}
 
-		revents = sio_revents(u->hdl, fds_sio);
+		revents = 0;
+		if (!u->sink_running)
+			continue;
 
-		pa_log_debug("sndio_thread: loop ret=%i, revents=%x", ret,
-		    (int)revents);
+		revents = sio_revents(u->hdl, fds_sio);
+		pa_log_debug("sndio_thread: sio_revents()=%x", revents);
 
 		if (revents & POLLHUP) {
 			pa_log("POLLHUP!");
@@ -703,6 +699,7 @@ pa__init(pa_module *m)
 
 		u->sink->userdata = u;
 		u->sink->parent.process_msg = sndio_sink_message;
+		u->sink->set_state_in_io_thread = sndio_sink_set_state_in_io_thread_cb;
 		pa_sink_set_asyncmsgq(u->sink, u->thread_mq.inq);
 		pa_sink_set_rtpoll(u->sink, u->rtpoll);
 		pa_sink_set_fixed_latency(u->sink,
@@ -760,6 +757,7 @@ pa__init(pa_module *m)
 
 		u->source->userdata = u;
 		u->source->parent.process_msg = sndio_source_message;
+		u->source->set_state_in_io_thread = sndio_source_set_state_in_io_thread_cb;
 		pa_source_set_asyncmsgq(u->source, u->thread_mq.inq);
 		pa_source_set_rtpoll(u->source, u->rtpoll);
 /*
