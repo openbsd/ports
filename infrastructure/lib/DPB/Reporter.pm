@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.34 2020/02/27 11:48:17 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.35 2021/02/26 07:54:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -87,15 +87,12 @@ sub set_sig_handlers
 	$self->set_sigtstp;
 }
 
-sub sig_received
+sub handle_continue
 {
-	my ($self, $iscont) = @_;
-	if ($iscont) {
-		$self->set_sigtstp;
-		$self->{continued} = 1;
-		DPB::Clock->restart;
-	}
-	$self->handle_window;
+	my $self = shift;
+	$self->set_sigtstp;
+	$self->{continued} = 1;
+	DPB::Clock->restart;
 }
 
 sub refresh
