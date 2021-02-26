@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2021/02/25 04:23:08 daniel Exp $
+# $OpenBSD: Makefile,v 1.50 2021/02/26 03:03:53 daniel Exp $
 
 COMMENT=		ARM/M88k/MIPS/PowerPC/SuperH machines emulator
 
-DISTNAME =		gxemul-0.6.3
-REVISION =		0
+DISTNAME =		gxemul-0.6.3.1
 
 CATEGORIES=		emulators
 

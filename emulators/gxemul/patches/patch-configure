@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.7 2021/02/25 04:23:08 daniel Exp $
+$OpenBSD: patch-configure,v 1.8 2021/02/26 03:03:53 daniel Exp $
 
 - allow doxygen to be disabled
 - remove hardcoded -O3
@@ -19,7 +19,7 @@ Index: configure
  			printf "usage: $0 [options]\n\n"
  			echo "  --disable-x           don't include X11 support,"\
  			    "even if the host supports it"
-+			echo "  --disable-doxygrn     don't use doxygen, even"\
++			echo "  --disable-doxygen     don't use doxygen, even"\
 +			    "if it is installed"
  			echo "  --disable-valgrind    don't use valgrind, even"\
  			    "if it is installed"
@@ -56,18 +56,19 @@ Index: configure
  #  -fpeephole
  if [ ! z"$DEBUG" = zYES ]; then
  	printf "checking whether -fpeephole can be used... "
-@@ -1106,12 +1094,16 @@ rm -f _test_end*
+@@ -1106,12 +1094,17 @@ rm -f _test_end*
  
  printf "checking for Doxygen... "
  
 -if (doxygen --version); then
 -	# Version is printed, if found.
 -	DOXYGEN=doxygen
+-else
+-	# Not found is already printed, if doxygen is not found.
 +if [ z$DISABLEDOXYGEN = zYES ]; then
 +	echo skipped
- else
--	# Not found is already printed, if doxygen is not found.
--	DOXYGEN="\#"
+ 	DOXYGEN="\#"
++else
 +	if (doxygen --version); then
 +		# Version is printed, if found.
 +		DOXYGEN=doxygen
@@ -78,3 +79,11 @@ Index: configure
  fi
  
  
+@@ -1121,6 +1114,7 @@ printf "checking for valgrind... "
+ 
+ if [ z$DISABLEVALGRIND = zYES ]; then
+ 	echo skipped
++	VALGRIND=""
+ else
+ 	if (valgrind --version); then
+ 		# Version is printed, if found.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/02/25 04:23:08 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/02/26 03:03:53 daniel Exp $
 @bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -115,6 +115,11 @@ share/doc/gxemul/20190616-netbsd-playstation2-userland-small.png
 share/doc/gxemul/20190616-netbsd-playstation2-userland.png
 share/doc/gxemul/20190715-sgi-o2-linux-small.png
 share/doc/gxemul/20190715-sgi-o2-linux.png
+share/doc/gxemul/20210222-openbsd-luna88k-mp-1-small.png
+share/doc/gxemul/20210222-openbsd-luna88k-mp-1.png
+share/doc/gxemul/20210222-openbsd-luna88k-mp-2-small.png
+share/doc/gxemul/20210222-openbsd-luna88k-mp-2.png
+share/doc/gxemul/Doxyfile
 share/doc/gxemul/RELEASE.html
 share/doc/gxemul/TODO.html
 share/doc/gxemul/components/
@@ -208,8 +213,12 @@ share/doc/gxemul/openbsd-luna88k-20210130-small.png
 share/doc/gxemul/openbsd-luna88k-20210130.png
 share/doc/gxemul/openbsd-luna88k-20210209-small.png
 share/doc/gxemul/openbsd-luna88k-20210209.png
+share/doc/gxemul/openbsd-luna88k-20210220-small.png
+share/doc/gxemul/openbsd-luna88k-20210220.png
 share/doc/gxemul/openbsd-pmax-20040710.png
 share/doc/gxemul/openbsd-pmax-20040710_small.png
+share/doc/gxemul/openbsd-sgi-x-20210220-small.png
+share/doc/gxemul/openbsd-sgi-x-20210220.png
 share/doc/gxemul/sgi-o2-real.jpg
 share/doc/gxemul/sgi-o2-real_small.jpg
 share/doc/gxemul/simplified_dyntrans.png
