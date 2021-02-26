@@ -1,25 +1,29 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:48:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/26 12:43:32 sthen Exp $
 
 COMMENT=	resend network traffic saved by tcpdump
 
-DISTNAME=	tcpreplay-4.0.5
+V=		4.3.3
+DISTNAME=	tcpreplay-$V
 CATEGORIES=	net
-REVISION=	2
 
-HOMEPAGE=	http://tcpreplay.appneta.com/	
+HOMEPAGE=	https://tcpreplay.appneta.com/
 
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=tcpreplay/}
-
 WANTLIB=	c dnet>=1
+
+MASTER_SITES=   https://github.com/appneta/tcpreplay/releases/download/v$V/
 
 CONFIGURE_STYLE= gnu
 
 LIB_DEPENDS=	net/libdnet
-BUILD_DEPENDS=	devel/autogen
+
+do-test:
+	@echo; echo "To run tests: cd ${WRKSRC}/test,"
+	@echo "edit Makefile and config to set interface, run gmake as root."
+	@echo
 
 .include <bsd.port.mk>
