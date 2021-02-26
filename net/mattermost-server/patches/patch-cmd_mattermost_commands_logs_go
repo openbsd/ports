@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmd_mattermost_commands_logs_go,v 1.1 2019/02/25 20:37:11 pvk Exp $
+$OpenBSD: patch-cmd_mattermost_commands_logs_go,v 1.2 2021/02/26 23:14:13 pvk Exp $
 
 Index: cmd/mattermost/commands/logs.go
 --- cmd/mattermost/commands/logs.go.orig
 +++ cmd/mattermost/commands/logs.go
-@@ -31,7 +31,7 @@ func logsCmdF(command *cobra.Command, args []string) e
+@@ -32,7 +32,7 @@ func logsCmdF(command *cobra.Command, args []string) e
  
  	var input io.Reader
  	if fi.Size() == 0 && fi.Mode()&os.ModeNamedPipe == 0 {
