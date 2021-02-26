@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_wmgeneral_wmgeneral_c,v 1.1 2021/02/26 16:59:32 tb Exp $
+
+Fix build with -fno-common
+
+Index: src/wmgeneral/wmgeneral.c
+--- src/wmgeneral/wmgeneral.c.orig
++++ src/wmgeneral/wmgeneral.c
+@@ -29,6 +29,12 @@
+ 
+ #include "wmgeneral.h"
+ 
++  /*******************/
++ /* Global variable */
++/*******************/
++
++Display		*display;
++
+   /*****************/
+  /* X11 Variables */
+ /*****************/
