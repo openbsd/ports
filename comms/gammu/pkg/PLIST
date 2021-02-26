@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/11/06 02:44:12 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/26 13:20:52 kirby Exp $
 @bin bin/gammu
 bin/gammu-config
 @bin bin/gammu-detect
@@ -172,6 +172,7 @@ share/doc/gammu/manual/project/index.rst
 share/doc/gammu/manual/project/install.rst
 share/doc/gammu/manual/project/localization.rst
 share/doc/gammu/manual/project/motivation.rst
+share/doc/gammu/manual/project/releasing.rst
 share/doc/gammu/manual/project/roadmap.rst
 share/doc/gammu/manual/project/testing.rst
 share/doc/gammu/manual/project/versioning.rst

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/11/06 02:44:12 kirby Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/26 13:20:52 kirby Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities
 
-DISTNAME =		gammu-1.41.0
+DISTNAME =		gammu-1.42.0
 
-SHARED_LIBS += 		Gammu 1.0 # 8.1
+SHARED_LIBS += 		Gammu 1.1 # 8.1
 SHARED_LIBS += 		gsmsd 1.0 # 8.1
 
 CATEGORIES =		comms
@@ -34,7 +34,8 @@ TEST_DEPENDS = 		devel/cmake
 
 CONFIGURE_ARGS +=	-DINSTALL_MAN_DIR:STRING=man \
 			-DINSTALL_BASH_COMPLETION=OFF \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl"
+			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl" \
+			-Wno-dev
 
 FLAVORS += 		mysql pgsql
 FLAVOR ?=
