@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_xsb_level_cpp,v 1.1 2018/04/28 18:11:32 bcallah Exp $
+$OpenBSD: patch-src_xsb_level_cpp,v 1.2 2021/02/26 18:20:34 naddy Exp $
 
 clang6 fix
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/26 18:20:34 naddy Exp $
 
 V =		4.7.0
 COMMENT =	chess database software
@@ -38,6 +38,7 @@ MAKE_FLAGS =	CXX="${CXX}"
 NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/scid
+FIX_CRLF_FILES = engines/togaII1.2.1a/src/Makefile
 
 pre-configure:
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/configure

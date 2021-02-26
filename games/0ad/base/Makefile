@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/26 18:20:33 naddy Exp $
 
 # XXX fix build with icu >=5.9.1 (remove at next update?)
 CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
@@ -52,6 +52,7 @@ MAKE_ENV =		CC="${CC}" \
 			CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS}"
 
+FIX_CRLF_FILES =	build/premake/premake4/build/gmake.bsd/Premake4.make
 PATCHORIG =		.orig.port
 
 USE_GMAKE =		Yes

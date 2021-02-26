@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/20 18:38:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/26 18:20:32 naddy Exp $
 
 COMMENT =		Scientific PYthon Development EnviRonment
 
@@ -13,6 +13,12 @@ HOMEPAGE =		https://github.com/spyder-ide/spyder
 
 FLAVORS =	python3
 FLAVOR =	python3
+
+FIX_CRLF_FILES = spyder/app/mainwindow.py \
+		spyder/config/base.py \
+		spyder/plugins/ipythonconsole.py \
+		spyder/utils/sourcecode.py \
+		spyder/widgets/sourcecode/base.py
 
 RUN_DEPENDS +=	databases/py-pickleshare${MODPY_FLAVOR} \
 		devel/desktop-file-utils \

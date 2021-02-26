@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gussound_gopenal_cpp,v 1.1 2018/04/16 07:05:34 jasper Exp $
+$OpenBSD: patch-src_gussound_gopenal_cpp,v 1.2 2021/02/26 18:20:34 naddy Exp $
 
 error: invalid operands to binary expression ('nullptr_t' and 'ALuint' (aka 'unsigned int'))
 

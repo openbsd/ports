@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/26 18:20:33 naddy Exp $
 
 V =		0.7.5
 COMMENT =	ridiculous shoot-em-up game
@@ -32,5 +32,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/mars-game
+FIX_CRLF_FILES = src/Shaders/postFX.cpp src/System/window.cpp
 
 .include <bsd.port.mk>

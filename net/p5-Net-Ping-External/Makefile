@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/26 18:20:35 naddy Exp $
 
 COMMENT=		alternative Perl interface to ping(1)
 
@@ -13,5 +13,7 @@ MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # perl
 PERMIT_PACKAGE=	Yes
+
+FIX_CRLF_FILES=		test.pl
 
 .include <bsd.port.mk>

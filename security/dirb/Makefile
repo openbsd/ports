@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/10 20:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/26 18:20:36 naddy Exp $
 
 COMMENT =	web content scanner
 
@@ -21,6 +21,8 @@ LIB_DEPENDS =		net/curl
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
+
+FIX_CRLF_FILES =	src/variables.h
 
 post-extract:
 	chmod -R 755 ${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/26 18:20:36 naddy Exp $
 
 COMMENT =		powerful disassembler library for x86/amd64
 
@@ -17,6 +17,8 @@ WANTLIB += pthread
 GH_ACCOUNT =		gdabah
 GH_PROJECT =		distorm
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
+
+FIX_CRLF_FILES =	src/config.h
 
 MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Core_OldSchoolPropertyListWriting_m,v 1.1 2011/01/15 10:13:23 sebastia Exp $
+$OpenBSD: patch-src_Core_OldSchoolPropertyListWriting_m,v 1.2 2021/02/26 18:20:33 naddy Exp $
 
 missing header
 

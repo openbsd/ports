@@ -1,4 +1,4 @@
-$OpenBSD: patch-stdafx_h,v 1.1.1.1 2019/12/17 16:17:06 bcallah Exp $
+$OpenBSD: patch-stdafx_h,v 1.2 2021/02/26 18:20:33 naddy Exp $
 
 Fix include line.
 

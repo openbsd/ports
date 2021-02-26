@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/26 18:20:32 naddy Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
@@ -29,6 +29,11 @@ USE_GMAKE =		Yes
 NO_TEST =		Yes
 
 WRKDIST=${WRKDIR}/CodeWorker${V:S/./_/g}
+
+FIX_CRLF_FILES=		CGExternalHandling.cpp CGRuntime.cpp CGRuntime.h \
+			CppParsingTree.cpp DtaScriptVariable.h Makefile \
+			ScpStream.cpp UtlDate.cpp UtlDirectory.cpp \
+			UtlTrace.cpp UtlXMLStream.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/codeworker ${PREFIX}/bin

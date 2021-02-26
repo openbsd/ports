@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/01/26 11:14:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/26 18:20:31 naddy Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
@@ -21,6 +21,8 @@ BUILD_DEPENDS =	net/curl \
 		devel/gettext,-runtime
 
 LIB_DEPENDS =	math/fftw3
+
+FIX_CRLF_FILES =	lib/JAMA/tnt_math_utils.h
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu

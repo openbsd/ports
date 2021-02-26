@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_vmime_charsetConverter_icu_cpp,v 1.1 2019/10/05 08:50:39 ajacoutot Exp $
+$OpenBSD: patch-src_vmime_charsetConverter_icu_cpp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 
 From e96aeeb14dc51deeea70e6fdffa95f80af78fdfc Mon Sep 17 00:00:00 2001
 From: 0xd34df00d <0xd34df00d@gmail.com>

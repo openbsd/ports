@@ -1,24 +1,24 @@
-$OpenBSD: patch-src_man_ysm_1,v 1.2 2017/04/24 09:33:11 jca Exp $
+$OpenBSD: patch-src_man_ysm_1,v 1.3 2021/02/26 18:20:35 naddy Exp $
 --- src/man/ysm.1.orig	Mon Jan 29 21:03:11 2007
 +++ src/man/ysm.1	Mon Apr 24 11:30:58 2017
 @@ -1,17 +1,19 @@
- .\" $Id: patch-src_man_ysm_1,v 1.2 2017/04/24 09:33:11 jca Exp $
--.TH Ysm 1 "Version 2.9.1" "Ysm" "Ysm manual"
+ .\" $Id: patch-src_man_ysm_1,v 1.3 2021/02/26 18:20:35 naddy Exp $
+-.TH Ysm 1 "Version 2.9.1" "Ysm" "Ysm manual"
  .Dd July 12, 2003
  .Dt YSM 1
 +.Os
  .Sh NAME
 -.Nm (Y)OU (S)ICK (M)E
 -.br
--An Original Multi-Platform ICQ console client that requires no external libraries.
+-An Original Multi-Platform ICQ console client that requires no external libraries.
 +.Nm ysm
 +.Nd console ICQ client
  .Sh SYNOPSIS
  .Nm ysm
--.Sh DESCRIPTION
--.Nm You Sick ME
--is a portable open source console ICQ client written in the C language, under the GPL license.
--.br
+-.Sh DESCRIPTION
+-.Nm You Sick ME
+-is a portable open source console ICQ client written in the C language, under the GPL license.
+-.br
 +.Sh DESCRIPTION
 +.Nm
 +.Pq Dq You Sick \&Me
@@ -26,63 +26,63 @@ $OpenBSD: patch-src_man_ysm_1,v 1.2 2017/04/24 09:33:11 jca Exp $
 +It is written in the C language, portable, requires no external libraries,
 +and is available under the GPL license.
 +.Pp
- YSM is one of the new generation clients due to the sudden modifications the ICQ protocol suffered after Mirabilis joined the dark-side of the force (AOL). This is the reason why most ICQ clients ended up with malfunctions or unable to use the IM network at all.
- .Pp
- YSM was (proudly) the first ICQ clone to download and upload server-side contact lists.
+ YSM is one of the new generation clients due to the sudden modifications the ICQ protocol suffered after Mirabilis joined the dark-side of the force (AOL). This is the reason why most ICQ clients ended up with malfunctions or unable to use the IM network at all.
+ .Pp
+ YSM was (proudly) the first ICQ clone to download and upload server-side contact lists.
 @@ -22,10 +24,7 @@ For more information on ysm and its usage please refer
- section in ysm's website.
- .Pp
- .Nm [http://ysmv7.sourceforge.net]
--.Sh COMMANDS
--.Bl -item
--.It
--.Sh [Client commands]
+ section in ysm's website.
+ .Pp
+ .Nm [http://ysmv7.sourceforge.net]
+-.Sh COMMANDS
+-.Bl -item
+-.It
+-.Sh [Client commands]
 +.Sh CLIENT COMMANDS
- .Ss quit
- Close the ysm client.
- .Ss help <command>
-@@ -78,12 +77,12 @@ usage : '! ls -al'
- Forward your incoming messages to a specified slave or icq#.
- .Ss reconnect
- Reconnect to the ICQ Network.
--.It
--.Sh [Slaves/Users commands]
+ .Ss quit
+ Close the ysm client.
+ .Ss help <command>
+@@ -78,12 +77,12 @@ usage : '! ls -al'
+ Forward your incoming messages to a specified slave or icq#.
+ .Ss reconnect
+ Reconnect to the ICQ Network.
+-.It
+-.Sh [Slaves/Users commands]
 +.Sh SLAVES/USERS COMMANDS
- .Ss slaves
- You may check on your Slave list anytime by using this command. The slaves are organized in <slave_name> <status> <flags>. Flags are modified by the 'ignore', 'visible' and 'invisible' commands. Slaves in ignore are only shown in the 'wa' command.
- .Ss slaveson
--Check your Slaves list just for the online ones.\n(more help on the 'slaves or w' commands.
+ .Ss slaves
+ You may check on your Slave list anytime by using this command. The slaves are organized in <slave_name> <status> <flags>. Flags are modified by the 'ignore', 'visible' and 'invisible' commands. Slaves in ignore are only shown in the 'wa' command.
+ .Ss slaveson
+-Check your Slaves list just for the online ones.\n(more help on the 'slaves or w' commands.
 +Check your Slaves list just for the online ones.
 +(more help on the 'slaves or w' commands.
- .Ss slavesall
- You may check on your Slave list anytime by using this command. The slaves are organized in <slave_name> <status> <flags>. Flags are modified by the 'ignore', 'visible' and 'invisible' commands.
- .Ss addslave <name> <uin>
-@@ -174,8 +173,7 @@ Send a file to a slave.
- Show the status of active transfers.
- .Ss fcancel <slave>
- Cancel an ongoing transfer to/from a slave.
--.It
--.Sh [Account commands]
+ .Ss slavesall
+ You may check on your Slave list anytime by using this command. The slaves are organized in <slave_name> <status> <flags>. Flags are modified by the 'ignore', 'visible' and 'invisible' commands.
+ .Ss addslave <name> <uin>
+@@ -174,8 +173,7 @@ Send a file to a slave.
+ Show the status of active transfers.
+ .Ss fcancel <slave>
+ Cancel an ongoing transfer to/from a slave.
+-.It
+-.Sh [Account commands]
 +.Sh ACCOUNT COMMANDS
- .Ss info
- Show information about your ysm client and session.
- .Ss status [new_status]
-@@ -196,18 +194,15 @@ Turn on/off wave sounds globally.
+ .Ss info
+ Show information about your ysm client and session.
+ .Ss status [new_status]
+@@ -196,18 +194,15 @@ Turn on/off wave sounds globally.
  Reload configuration file settings.
  .br
   usage: 'loadconfig'
--.El
--.Sh FILES
--.Bl -tag -width $HOME/.ysm/ysm-cfg -compact
--.Pa $HOME/.ysm/ysm-cfg
--Configuration file.
--.Pp
--.Pa $HOME/.ysm/afk-log
--[created by the afk-mode] 
--.Pp
--.Pa $HOME/.ysm/uin#
--[each UIN is a log file generated by 'log'] 
--.El
+-.El
+-.Sh FILES
+-.Bl -tag -width $HOME/.ysm/ysm-cfg -compact
+-.Pa $HOME/.ysm/ysm-cfg
+-Configuration file.
+-.Pp
+-.Pa $HOME/.ysm/afk-log
+-[created by the afk-mode] 
+-.Pp
+-.Pa $HOME/.ysm/uin#
+-[each UIN is a log file generated by 'log'] 
+-.El
 +.Sh FILES
 +.Bl -tag -width $HOME/.ysm/ysm-cfg -compact
 +.It Pa $HOME/.ysm/ysm-cfg
@@ -92,6 +92,6 @@ $OpenBSD: patch-src_man_ysm_1,v 1.2 2017/04/24 09:33:11 jca Exp $
 +.It Pa $HOME/.ysm/uin#
 +Each UIN is a log file generated by 'log'.
 +.El
- .Sh BUGS
- If you come across bugs, report them to : rad2k@mail\&.ru
- .Sh AUTHORS
+ .Sh BUGS
+ If you come across bugs, report them to : rad2k@mail\&.ru
+ .Sh AUTHORS

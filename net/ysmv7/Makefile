@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/26 18:20:35 naddy Exp $
 
 COMMENT=		ICQ console client with encryption support
 
@@ -17,6 +17,8 @@ LIB_DEPENDS=		converters/libiconv
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv pthread readline
+
+FIX_CRLF_FILES=		src/man/ysm.1
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

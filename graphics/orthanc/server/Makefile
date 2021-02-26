@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/26 18:20:35 naddy Exp $
 
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
@@ -57,6 +57,8 @@ CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="-I${LOCALBASE}/include -pthread" \
 CONFIGURE_ARGS +=	-DCMAKE_COMPILER_IS_GNUCXX=Yes
 
 SUBST_VARS +=		VARBASE
+
+FIX_CRLF_FILES =	CMakeLists.txt
 
 # Drop mongoose 3.8 inplace:
 # https://www.mail-archive.com/mongoose-users@googlegroups.com/msg00625.html

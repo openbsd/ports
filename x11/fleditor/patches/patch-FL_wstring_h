@@ -1,4 +1,4 @@
-$OpenBSD: patch-FL_wstring_h,v 1.1 2010/05/22 21:23:33 espie Exp $
+$OpenBSD: patch-FL_wstring_h,v 1.2 2021/02/26 18:20:37 naddy Exp $
 --- FL/wstring.h.orig	Sat May 22 23:20:40 2010
 +++ FL/wstring.h	Sat May 22 23:20:49 2010
 @@ -88,7 +88,7 @@ class wString

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/26 18:20:35 naddy Exp $
 
 COMMENT=	Twitter, Identica, and Status.net plugin for libpurple
 
@@ -22,6 +22,9 @@ WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread purple xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${HOMEPAGE}/files/
+
+FIX_CRLF_FILES=	Makefile \
+		microblog/identica.c
 
 MODULES=	textproc/intltool
 

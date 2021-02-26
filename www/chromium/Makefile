@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.549 2021/02/24 09:36:47 robert Exp $
+# $OpenBSD: Makefile,v 1.550 2021/02/26 18:20:36 naddy Exp $
 
 # /usr/local/bin/chrome[60]: /usr/local/chrome/chrome: Cannot allocate memory
 BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
@@ -38,6 +38,8 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/
+
+FIX_CRLF_FILES=	third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

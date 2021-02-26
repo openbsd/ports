@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/08/16 20:36:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/26 18:20:33 naddy Exp $
 
 COMMENT=	space combat and trading game in the style of Elite
 
@@ -30,6 +30,23 @@ WANTLIB += ${COMPILER_LIBCXX}
 MAKE_FILE =	Makefile
 MAKE_FLAGS =	LD="${CC}"
 ALL_TARGET=	release
+
+FIX_CRLF_FILES = GNUmakefile.postamble \
+		Makefile \
+		src/Core/Debug/OODebugTCPConsoleClient.m \
+		src/Core/Materials/OOPNGTextureLoader.m \
+		src/Core/OOAsyncQueue.m \
+		src/Core/OOCPUInfo.h \
+		src/Core/OOCacheManager.m \
+		src/Core/OOLogHeader.m \
+		src/Core/OOLogOutputHandler.m \
+		src/Core/OOMaths.h \
+		src/Core/OOPriorityQueue.m \
+		src/Core/OXPVerifier/OOCheckRequiresPListVerifierStage.m \
+		src/Core/OXPVerifier/OOOXPVerifierStage.m \
+		src/Core/OldSchoolPropertyListWriting.m \
+		src/Core/Scripting/OOJSOolite.m \
+		src/SDL/OOSDLSoundMixer.m
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/oolite.app/oolite ${PREFIX}/bin

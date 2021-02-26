@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/26 18:20:36 naddy Exp $
 
 COMMENT =	XML and HTML processing toolkit
 DISTNAME =	arabica-2010-November
@@ -15,6 +15,9 @@ SHARED_LIBS +=	arabica	0.0 # 0.0
 PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c expat m ${COMPILER_LIBCXX}
+
+FIX_CRLF_FILES =	include/Taggle/impl/html/HTMLScanner.hpp \
+			include/XPath/impl/xpath_logical.hpp
 
 COMPILER =		base-clang ports-gcc base-gcc
 

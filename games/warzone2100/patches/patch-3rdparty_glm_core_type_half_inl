@@ -1,4 +1,4 @@
-$OpenBSD: patch-3rdparty_glm_core_type_half_inl,v 1.1 2017/05/27 08:18:46 espie Exp $
+$OpenBSD: patch-3rdparty_glm_core_type_half_inl,v 1.2 2021/02/26 18:20:34 naddy Exp $
 
 Index: 3rdparty/glm/core/type_half.inl
 --- 3rdparty/glm/core/type_half.inl.orig

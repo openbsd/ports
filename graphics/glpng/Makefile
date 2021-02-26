@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/26 18:20:34 naddy Exp $
 
 COMMENT=	load PNG graphics files and bind them to an OpenGL texture
 
@@ -28,6 +28,7 @@ TEST_IS_INTERACTIVE=	x11
 TEST_DEPENDS=	graphics/freeglut
 
 DIST_SUBDIR=	${DISTNAME}-${VERSION}
+FIX_CRLF_FILES=	Example/Test.c include/GL/glpng.h src/glpng.c
 WRKDIST=	${WRKDIR}
 WRKSRC=		${WRKDIST}/src
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/26 18:20:34 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -50,6 +50,7 @@ CONFIGURE_ARGS += \
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/sumwars-${V}
+FIX_CRLF_FILES =	src/gussound/gopenal.cpp
 
 CXXFLAGS +=		-pthread
 

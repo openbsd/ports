@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/26 18:20:36 naddy Exp $
 
 COMMENT=	SAX2 driver based on expat
 
@@ -10,6 +10,8 @@ REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes
+
+FIX_CRLF_FILES=	Makefile.PL
 
 RUN_DEPENDS=	textproc/p5-XML-SAX \
 		textproc/p5-XML-Parser \

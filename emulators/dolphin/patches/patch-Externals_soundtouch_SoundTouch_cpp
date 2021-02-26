@@ -1,4 +1,4 @@
-$OpenBSD: patch-Externals_soundtouch_SoundTouch_cpp,v 1.1 2020/03/08 02:15:51 thfr Exp $
+$OpenBSD: patch-Externals_soundtouch_SoundTouch_cpp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 
 Index: Externals/soundtouch/SoundTouch.cpp
 --- Externals/soundtouch/SoundTouch.cpp.orig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/26 18:20:32 naddy Exp $
 
 COMMENT =	library for real time input and output of MIDI data
 
@@ -30,6 +30,8 @@ CONFIGURE_ARGS+= -DPROJECT_BINARY_DIR=Release \
 NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/portmidi
+
+FIX_CRLF_FILES = porttime/ptlinux.c
 
 post-extract:
 	cp -rf ${FILESDIR}/* ${WRKSRC}/

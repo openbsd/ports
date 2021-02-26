@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/19 07:05:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/26 18:20:32 naddy Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -67,6 +67,9 @@ CONFIGURE_ARGS +=	-Dmandir:=${PREFIX}/man \
 			-DQt5_DIR="${LOCALBASE}/lib/qt5/cmake/Qt5" \
 			-DUSE_DISCORD_PRESENCE=OFF
 TEST_TARGET =		unittests
+
+FIX_CRLF_FILES =	Externals/soundtouch/SoundTouch.cpp \
+			Externals/soundtouch/SoundTouch.h
 
 post-configure:
 	@mv ${WRKSRC}/Externals/soundtouch/SoundTouch.h \

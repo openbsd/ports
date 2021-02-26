@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:46:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/26 18:20:37 naddy Exp $
 
 COMMENT=	module to get weather information from weather.com
 
@@ -12,6 +12,8 @@ CPAN_AUTHOR=	SCHNUECK
 
 # Perl
 PERMIT_PACKAGE=	Yes
+
+FIX_CRLF_FILES=	lib/Weather/Com/Base.pm
 
 RUN_DEPENDS=	devel/p5-Time-Format \
 		textproc/p5-XML-Simple \

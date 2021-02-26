@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/26 18:20:33 naddy Exp $
 
 COMMENT =		games cataloging tool and emulator launcher
 
@@ -21,6 +21,10 @@ WANTLIB += ${COMPILER_LIBCXX} c GL glib-2.0 intl m poppler-qt5 pulse
 WANTLIB += pulse-mainloop-glib Qt5Core Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5PrintSupport Qt5Sql Qt5Widgets Qt5Multimedia Qt5MultimediaWidgets
 WANTLIB += Qt5Script z
+
+FIX_CRLF_FILES =	3rdparty/osdab-zip/zip_p.h \
+			gr-lida.pro \
+			src/funciones.cpp
 
 MODULES =		x11/qt5
 LIB_DEPENDS =		audio/pulseaudio \

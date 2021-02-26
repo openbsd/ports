@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_config_h,v 1.1 2014/09/27 16:53:53 miod Exp $
+$OpenBSD: patch-src_config_h,v 1.2 2021/02/26 18:20:36 naddy Exp $
 
 Fix definitions for big-endian platforms.
 

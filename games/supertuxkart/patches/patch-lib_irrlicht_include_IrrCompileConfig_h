@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_irrlicht_include_IrrCompileConfig_h,v 1.1 2020/03/18 18:57:46 sebastia Exp $
+$OpenBSD: patch-lib_irrlicht_include_IrrCompileConfig_h,v 1.2 2021/02/26 18:20:34 naddy Exp $
 
 We want Joystick events, so have to use
 SDL instead of X11 backend for Irrlicht

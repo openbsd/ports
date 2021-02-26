@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_vulkan_memory_allocator_src_vk_mem_alloc_h,v 1.3 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-third_party_vulkan_memory_allocator_src_vk_mem_alloc_h,v 1.4 2021/02/26 18:20:37 naddy Exp $
 
 Index: third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 --- third_party/vulkan_memory_allocator/src/vk_mem_alloc.h.orig

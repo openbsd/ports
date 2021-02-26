@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/17 16:17:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/26 18:20:33 naddy Exp $
 
 COMMENT =	open source 2D real time strategy god game
 DISTNAME =	gigalomania-1.0.1
@@ -13,6 +13,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer c m
 
 MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+
+FIX_CRLF_FILES =	stdafx.h
 
 COMPILER =	base-clang ports-gcc
 

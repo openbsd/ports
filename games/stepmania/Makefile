@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/25 22:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/26 18:20:34 naddy Exp $
 
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
@@ -52,7 +52,7 @@ D = 	Announcers BGAnimations BackgroundEffects BackgroundTransitions \
 	Characters Courses Data NoteSkins Scripts Songs Themes
 
 SUBST_VARS = DATADIR
-FIX_CRLF_FILES =	src/ProfileManager.cpp
+FIX_CRLF_FILES =	extern/lua-5.1/src/loadlib.c src/ProfileManager.cpp
 
 
 post-install:

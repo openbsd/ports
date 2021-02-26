@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/25 22:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/02/26 18:20:32 naddy Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -43,6 +43,8 @@ MODULES =	textproc/intltool
 COMPILER =	base-clang ports-gcc
 
 CONFIGURE_STYLE =	gnu
-FIX_CRLF_FILES =	src/MMU_timing.h
+FIX_CRLF_FILES =	src/MMU_timing.h \
+			src/path.h \
+			src/utils/AsmJit/core/stringbuilder.h
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/03/18 18:57:45 sebastia Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/26 18:20:34 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
@@ -41,6 +41,8 @@ CONFIGURE_ARGS +=	-DUSE_WIIUSE=OFF \
 			-DBUILD_RECORDER=OFF
 
 WRKDIST =		${WRKDIR}/supertuxkart-${V}
+FIX_CRLF_FILES =	lib/irrlicht/include/IrrCompileConfig.h \
+			lib/irrlicht/source/Irrlicht/CIrrDeviceSDL.cpp
 
 NO_TEST =		Yes
 

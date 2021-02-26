@@ -1,4 +1,4 @@
-$OpenBSD: patch-scan_sane_orblite_c,v 1.1 2018/10/31 14:14:30 ajacoutot Exp $
+$OpenBSD: patch-scan_sane_orblite_c,v 1.2 2021/02/26 18:20:36 naddy Exp $
 
 Index: scan/sane/orblite.c
 --- scan/sane/orblite.c.orig

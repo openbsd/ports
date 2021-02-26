@@ -1,4 +1,4 @@
-$OpenBSD: patch-ScpStream_cpp,v 1.1 2019/01/01 18:01:34 landry Exp $
+$OpenBSD: patch-ScpStream_cpp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 Fix numerous include errors with ports-gcc
 Index: ScpStream.cpp
 --- ScpStream.cpp.orig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2021/02/23 19:39:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.190 2021/02/26 18:20:35 naddy Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -169,6 +169,9 @@ CONFIGURE_ARGS=		--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
 CFLAGS +=		-Wno-return-type
 
 DEBUG_PACKAGES=		-main -common -hpaio -hpcups -hpijs
+
+FIX_CRLF_FILES=		scan/sane/OrbliteScan/LinuxCommon.h \
+			scan/sane/orblite.c
 
 pre-configure:
 	find ${WRKSRC} -name \*.py -exec \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/01 04:16:41 jsg Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/26 18:20:32 naddy Exp $
 
 COMMENT =		decoder, encoder and replaygain for musepack files
 
@@ -25,6 +25,8 @@ MODULES =		devel/cmake
 LIB_DEPENDS =		audio/libcue
 
 NO_TEST =		Yes
+
+FIX_CRLF_FILES =	mpcgain/gain_analysis.c
 
 post-extract:
 	cp ${WRKDIR}/libreplaygain_r${V}/include/replaygain/gain_analysis.h ${WRKSRC}/mpcgain/

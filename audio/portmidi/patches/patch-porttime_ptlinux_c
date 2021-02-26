@@ -1,4 +1,4 @@
-$OpenBSD: patch-porttime_ptlinux_c,v 1.1.1.1 2019/03/23 13:30:08 rapha Exp $
+$OpenBSD: patch-porttime_ptlinux_c,v 1.2 2021/02/26 18:20:32 naddy Exp $
 
 Index: porttime/ptlinux.c
 --- porttime/ptlinux.c.orig

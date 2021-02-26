@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/26 18:20:37 naddy Exp $
 
 COMMENT=	AJAX framework for perl
 
@@ -19,6 +19,8 @@ post-extract:
 
 # Perl licence, javascript code is MIT like
 PERMIT_PACKAGE=	Yes
+
+FIX_CRLF_FILES=	lib/HTML/Prototype.pm
 
 CONFIGURE_STYLE=	modbuild
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-3rdparty_osdab-zip_zip_p_h,v 1.1 2018/12/28 22:04:59 juanfra Exp $
+$OpenBSD: patch-3rdparty_osdab-zip_zip_p_h,v 1.2 2021/02/26 18:20:33 naddy Exp $
 
 Index: 3rdparty/osdab-zip/zip_p.h
 --- 3rdparty/osdab-zip/zip_p.h.orig

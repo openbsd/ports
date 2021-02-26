@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 21:02:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/26 18:20:33 naddy Exp $
 
 COMMENT =	NetHack derivative
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB =	X11 Xext c curses m pthread usbhid xcb SDL
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=falconseye/}
+
+FIX_CRLF_FILES = util/makedefs.c
 
 LIB_DEPENDS =	devel/sdl
 RUN_DEPENDS =	games/hackdata

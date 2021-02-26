@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2021/02/23 19:39:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2021/02/26 18:20:37 naddy Exp $
 
 BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
 
@@ -37,6 +37,8 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
 			http://nerd.hu/distfiles/
+
+FIX_CRLF_FILES=	third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

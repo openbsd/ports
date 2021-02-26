@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:46:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2021/02/26 18:20:34 naddy Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -19,6 +19,8 @@ WANTLIB += GL GLEW GLU Qt5Core Qt5Gui Qt5Script Qt5Widgets SDL2 X11
 WANTLIB += Xrandr c crypto fontconfig freetype fribidi harfbuzz iconv
 WANTLIB += intl m ogg openal physfs png pthread theora vorbis
 WANTLIB += vorbisfile z ${COMPILER_LIBCXX}
+
+FIX_CRLF_FILES=	3rdparty/glm/core/type_half.inl
 
 MODULES=	x11/qt5
 COMPILER =	base-clang ports-gcc

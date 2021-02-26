@@ -1,4 +1,4 @@
-$OpenBSD: patch-po_ru_po,v 1.1 2015/10/26 20:24:54 edd Exp $
+$OpenBSD: patch-po_ru_po,v 1.2 2021/02/26 18:20:36 naddy Exp $
 
 Two line desktop entry confuses update-desktop-database.
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:51:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/26 18:20:37 naddy Exp $
 
 COMMENT=		text editor widget for FLTK
 
@@ -21,6 +21,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		http://www.robertk.com/source/fl_editor/
 EXTRACT_SUFX=		.tgz
+
+FIX_CRLF_FILES=		FL/wstring.h fltk/wstring.h
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/fltk

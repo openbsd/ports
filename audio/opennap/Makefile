@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/02/26 18:20:32 naddy Exp $
 
 COMMENT=	opensource Napster(tm) server
 
@@ -13,6 +13,8 @@ HOMEPAGE=	http://opennap.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c z
+
+FIX_CRLF_FILES=	metaserver.dsp
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes

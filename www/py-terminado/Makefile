@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:13:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/26 18:20:37 naddy Exp $
 
 COMMENT =		terminals served to term.js using Tornado websockets
 
@@ -13,6 +13,8 @@ HOMEPAGE =		https://github.com/takluyver/terminado
 
 # BSD
 PERMIT_PACKAGE =	Yes
+
+FIX_CRLF_FILES =	terminado/tests/basic_test.py
 
 MODULES =		lang/python
 MODPY_PI =		Yes

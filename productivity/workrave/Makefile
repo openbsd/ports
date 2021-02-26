@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2021/02/23 19:39:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/02/26 18:20:36 naddy Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -29,6 +29,8 @@ WANTLIB += xcb-shm xml2 z fribidi
 SHARED_LIBS +=		workrave-private-1.0      0.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
+
+FIX_CRLF_FILES=		po/ru.po
 
 BUILD_DEPENDS=		devel/py-cheetah \
 			devel/gobject-introspection \

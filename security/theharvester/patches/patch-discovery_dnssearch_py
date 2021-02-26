@@ -1,4 +1,4 @@
-$OpenBSD: patch-discovery_dnssearch_py,v 1.1 2019/02/01 20:40:44 jasper Exp $
+$OpenBSD: patch-discovery_dnssearch_py,v 1.2 2021/02/26 18:20:36 naddy Exp $
 
 Fix path to wordlists
 

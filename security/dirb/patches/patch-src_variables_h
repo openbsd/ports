@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_variables_h,v 1.1 2021/02/10 20:57:22 jasper Exp $
+$OpenBSD: patch-src_variables_h,v 1.2 2021/02/26 18:20:36 naddy Exp $
 
 Index: src/variables.h
 --- src/variables.h.orig

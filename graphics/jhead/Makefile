@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/12/15 17:00:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/26 18:20:35 naddy Exp $
 
 COMMENT =	Exif jpeg camera setting parser and thumbnail remover
 
@@ -12,6 +12,8 @@ MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE =	Yes
+
+FIX_CRLF_FILES =	gpsinfo.c
 
 WANTLIB =	c m
 

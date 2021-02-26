@@ -1,4 +1,4 @@
-$OpenBSD: patch-scan_sane_OrbliteScan_LinuxCommon_h,v 1.1 2018/10/31 14:14:30 ajacoutot Exp $
+$OpenBSD: patch-scan_sane_OrbliteScan_LinuxCommon_h,v 1.2 2021/02/26 18:20:36 naddy Exp $
 
 Index: scan/sane/OrbliteScan/LinuxCommon.h
 --- scan/sane/OrbliteScan/LinuxCommon.h.orig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/26 18:20:33 naddy Exp $
 
 COMMENT =		dungeon-crawling action-RPG adventure
 
@@ -19,6 +19,7 @@ LIB_DEPENDS =		devel/sdl-net \
 			devel/sdl-mixer \
 			devel/sdl-ttf
 
+FIX_CRLF_FILES =	game/Makefile.unix game/file_linux.c
 USE_GMAKE =		Yes
 MAKE_FILE =		Makefile.unix
 WRKSRC =		${WRKDIR}/${DISTNAME}/game

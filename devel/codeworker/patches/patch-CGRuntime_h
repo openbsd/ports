@@ -1,4 +1,4 @@
-$OpenBSD: patch-CGRuntime_h,v 1.1 2019/01/01 18:01:34 landry Exp $
+$OpenBSD: patch-CGRuntime_h,v 1.2 2021/02/26 18:20:32 naddy Exp $
 Fix a lot of include errors with ports-gcc
 Index: CGRuntime.h
 --- CGRuntime.h.orig

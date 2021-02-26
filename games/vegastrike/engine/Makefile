@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/26 18:20:34 naddy Exp $
 
 COMMENT =		3D space simulator
 
@@ -16,6 +16,7 @@ WANTLIB += vorbis vorbisfile z ${MODPY_WANTLIB} harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+FIX_CRLF_FILES =	src/cmd/unit_jump.h src/cmd/unit_physics.h
 PATCHORIG =		.orig.port
 
 MODULES =		lang/python

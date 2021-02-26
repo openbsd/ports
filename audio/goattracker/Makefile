@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/04/15 13:31:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/26 18:20:31 naddy Exp $
 
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
@@ -25,6 +25,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 LIB_DEPENDS =	devel/sdl
 
 WRKDIST =	${WRKDIR}/goattrk2/src
+FIX_CRLF_FILES =	makefile.common
 
 USE_GMAKE =	Yes
 

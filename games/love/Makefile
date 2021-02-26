@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/25 22:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/26 18:20:33 naddy Exp $
 
 COMMENT=		2D games framework for use with Lua
 
@@ -49,7 +49,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL/ \
 
 WRKDIST=		${WRKDIR}/love-$V
 
-FIX_CRLF_FILES=		src/libraries/Box2D/Collision/Shapes/b2ChainShape.h
+FIX_CRLF_FILES=		src/libraries/Box2D/Collision/Shapes/b2ChainShape.h \
+			src/modules/graphics/opengl/GLee.h
 
 post-extract:
 # Add missing newlines

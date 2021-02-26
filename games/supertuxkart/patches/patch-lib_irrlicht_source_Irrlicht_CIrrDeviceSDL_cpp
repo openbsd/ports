@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_irrlicht_source_Irrlicht_CIrrDeviceSDL_cpp,v 1.1 2020/03/18 18:57:46 sebastia Exp $
+$OpenBSD: patch-lib_irrlicht_source_Irrlicht_CIrrDeviceSDL_cpp,v 1.2 2021/02/26 18:20:34 naddy Exp $
 
 Index: lib/irrlicht/source/Irrlicht/CIrrDeviceSDL.cpp
 --- lib/irrlicht/source/Irrlicht/CIrrDeviceSDL.cpp.orig

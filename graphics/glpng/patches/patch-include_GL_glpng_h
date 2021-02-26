@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_GL_glpng_h,v 1.1 2011/07/08 20:36:09 naddy Exp $
+$OpenBSD: patch-include_GL_glpng_h,v 1.2 2021/02/26 18:20:35 naddy Exp $
 
 Fix build with png-1.5.
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-microblog_identica_c,v 1.1 2012/06/19 19:06:24 stsp Exp $
+$OpenBSD: patch-microblog_identica_c,v 1.2 2021/02/26 18:20:35 naddy Exp $
 http://code.google.com/p/microblog-purple/issues/detail?id=260
 --- microblog/identica.c.orig	Fri Jun  8 10:12:36 2012
 +++ microblog/identica.c	Fri Jun  8 10:13:29 2012

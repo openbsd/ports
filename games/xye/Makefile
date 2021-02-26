@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/26 18:20:34 naddy Exp $
 
 COMMENT =	puzzle game collecting diamonds and avoiding obstacles
 DISTNAME =	xye-0.12.2
@@ -12,6 +12,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xye/}
+
+FIX_CRLF_FILES =	src/xsb_level.cpp
 
 WANTLIB += SDL SDL_image SDL_ttf c m pthread ${COMPILER_LIBCXX}
 

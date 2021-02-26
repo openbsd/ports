@@ -1,4 +1,4 @@
-$OpenBSD: patch-thirdparty_download_SharpFont_dll_config,v 1.4 2020/06/17 15:24:30 thfr Exp $
+$OpenBSD: patch-thirdparty_download_SharpFont_dll_config,v 1.5 2021/02/26 18:20:34 naddy Exp $
 
 add openbsd to dllmap
 

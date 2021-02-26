@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/26 18:20:32 naddy Exp $
 
 COMMENT =	VHDL tags generator
 
@@ -15,6 +15,8 @@ MASTER_SITES =	http://www.peterantoine.me.uk/downloads/
 TAR =		${LOCALBASE}/bin/gtar
 
 BUILD_DEPENDS = archivers/gtar
+
+FIX_CRLF_FILES =	makefile
 
 MAKE_FILE =	makefile
 USE_GMAKE =	Yes

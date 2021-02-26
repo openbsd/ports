@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/26 18:20:35 naddy Exp $
 
 COMMENT =		3D scene description translator for TeX
 
@@ -16,6 +16,7 @@ WANTLIB +=		c m
 
 MASTER_SITES =		${HOMEPAGE}
 
+FIX_CRLF_FILES =	makefile
 MAKE_FILE =		makefile
 USE_GMAKE =		Yes
 NO_TEST =		Yes

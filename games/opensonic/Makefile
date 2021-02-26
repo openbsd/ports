@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/14 00:39:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/26 18:20:34 naddy Exp $
 
 COMMENT =		game based on the Sonic the Hedgehog universe
 
@@ -15,6 +15,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opensnc/}
 
 # GPLv2 or later
 PERMIT_PACKAGE=	Yes
+
+FIX_CRLF_FILES =	CMakeLists.txt
 
 MODULES =		devel/cmake
 

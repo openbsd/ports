@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/26 18:20:35 naddy Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -40,6 +40,8 @@ MAKE_FILE =		makefile
 MAKE_FLAGS =		PLATFORM=OPENBSD
 ALL_TARGET =		fromtar
 WRKDIST =		${WRKDIR}/Rocrail
+
+FIX_CRLF_FILES =	rocdigs/impl/dcc232.c
 
 THEMES1 =		Basic \
 			DB \

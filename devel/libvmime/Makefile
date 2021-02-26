@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/02/26 18:20:32 naddy Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -32,5 +32,7 @@ LIB_DEPENDS=	textproc/icu4c
 
 CONFIGURE_ARGS+=-DVMIME_HAVE_SASL_SUPPORT=OFF \
 		-DVMIME_HAVE_TLS_SUPPORT=OFF
+
+FIX_CRLF_FILES=	src/vmime/charsetConverter_icu.cpp
 
 .include <bsd.port.mk>

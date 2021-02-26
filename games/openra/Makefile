@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/17 15:24:30 thfr Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/26 18:20:33 naddy Exp $
 
 COMMENT =		open-source real-time strategy game engine
 V =			20200503
@@ -20,6 +20,8 @@ WANTLIB +=	SDL2 freetype openal
 
 MASTER_SITES =  	https://mirrors.nycbug.org/pub/distfiles/
 EXTRACT_SUFX =		.tar.xz
+
+FIX_CRLF_FILES =	thirdparty/download/SharpFont.dll.config
 
 MODULES =		lang/lua \
 			lang/mono

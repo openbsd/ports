@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/26 18:20:36 naddy Exp $
 
 COMMENT =	information gathering suite
 
@@ -18,6 +18,10 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
+
+FIX_CRLF_FILES =	discovery/dnssearch.py \
+			discovery/googlesearch.py \
+			discovery/wfuzz_search.py
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_System_window_cpp,v 1.2 2016/09/01 16:50:56 pascal Exp $
+$OpenBSD: patch-src_System_window_cpp,v 1.3 2021/02/26 18:20:33 naddy Exp $
 
 No joystick support in SFML on OpenBSD.
 

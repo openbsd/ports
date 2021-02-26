@@ -1,4 +1,4 @@
-$OpenBSD: patch-UtlDirectory_cpp,v 1.1 2019/01/01 18:01:34 landry Exp $
+$OpenBSD: patch-UtlDirectory_cpp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 fix various include errors with ports-gcc
 Index: UtlDirectory.cpp
 --- UtlDirectory.cpp.orig

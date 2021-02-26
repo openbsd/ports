@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/26 18:20:36 naddy Exp $
 
 COMMENT =	interface to the Skein digest algorithm
 
@@ -16,6 +16,8 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
+
+FIX_CRLF_FILES =	Optimized_64bit/brg_endian.h
 
 MODULES =	cpan
 
