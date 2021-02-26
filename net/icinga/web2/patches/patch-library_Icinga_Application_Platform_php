@@ -1,0 +1,31 @@
+$OpenBSD: patch-library_Icinga_Application_Platform_php,v 1.1 2021/02/26 11:17:05 sthen Exp $
+
+OpenBSD chroot doesn't typically have a pwd.db including the user
+running the webserver, so posix_getpwuid() fails. With PHP 7.3 this
+is ignored, with 7.4+ this results in "Trying to access array
+offset on value of type bool".
+
+Handle the case nicely for the standard uid used in packages.
+For others the best we can do is return the uid directly.
+
+Index: library/Icinga/Application/Platform.php
+--- library/Icinga/Application/Platform.php.orig
++++ library/Icinga/Application/Platform.php
+@@ -269,8 +269,15 @@ class Platform
+         }
+ 
+         if (function_exists('posix_geteuid')) {
+-            $userInfo = posix_getpwuid(posix_geteuid());
+-            return $userInfo['name'];
++            $euid = posix_geteuid();
++            $userInfo = posix_getpwuid($euid);
++            if (is_array($userInfo)) {
++                return $userInfo['name'];
++            } else if ($euid == 762) {
++                return '_icingaweb2';
++            } else {
++                return $euid;
++            }
+         }
+     }
+ 

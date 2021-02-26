@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2021/02/10 13:35:28 sthen Exp $
+$OpenBSD: README,v 1.11 2021/02/26 11:17:05 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -69,6 +69,3 @@ Using icingacli, create the config directory and a token to allow setup:
 Open the web interface http://localhost/icingaweb2/. Paste in the token
 that was displayed on-screen in the above step and proceed to the web-based
 part of the configuration.
-
-(Note: the setup procedure currently requires PHP 7.3 and does not work with
-7.4; after this is done, things should be OK with 7.4).
