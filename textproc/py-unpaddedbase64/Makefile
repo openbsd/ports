@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/02/26 03:15:31 daniel Exp $
 
 COMMENT =	Python module implementing Base64 without "=" padding
 
@@ -8,11 +8,9 @@ GH_ACCOUNT =	matrix-org
 GH_PROJECT =	python-unpaddedbase64
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 PKGNAME =	py-unpaddedbase64-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =		textproc
-
-HOMEPAGE =		None
 
 MAINTAINER =		Renaud Allard <renaud@allard.it>
 
@@ -20,8 +18,10 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+
 FLAVORS =		python3
 FLAVOR =		python3
+
+MODPY_SETUPTOOLS =	Yes
 
 .include <bsd.port.mk>
