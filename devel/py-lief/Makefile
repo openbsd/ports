@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/02/26 14:58:23 jasper Exp $
 
 COMMENT =	library to instrument executable formats
 
-MODPY_EGG_VERSION =	0.11.0
+MODPY_EGG_VERSION =	0.11.2
 
 DISTNAME =	lief-${MODPY_EGG_VERSION}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME}
