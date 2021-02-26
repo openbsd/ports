@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_conf_h,v 1.1 2021/02/26 22:40:32 naddy Exp $
+
+Fix build with -fno-common: remove unused variable
+
+Index: src/conf.h
+--- src/conf.h.orig
++++ src/conf.h
+@@ -66,11 +66,6 @@ typedef struct {
+ #endif /* HAVE_GTK */
+ } Options;
+ 
+-enum {
+-	POSTMODE_GUI,
+-	POSTMODE_CMD
+-} PostmodeType;
+-
+ typedef struct {
+ 	char *label;
+ 	char *command;

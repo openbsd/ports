@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 21:07:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2021/02/26 22:40:32 naddy Exp $
 
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.2
-REVISION =	3
+REVISION =	4
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://andy-shev.github.com/LogJam/
@@ -11,13 +11,14 @@ HOMEPAGE =	http://andy-shev.github.com/LogJam/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 brotlicommon
+WANTLIB += brotlidec c cairo dbus-1 dbus-glib-1 expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += soup-2.4 sqlite3 xcb xcb-render xcb-shm xml2 z
+WANTLIB += gtk-x11-2.0 harfbuzz iconv idn2 intl lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png psl soup-2.4
+WANTLIB += sqlite3 unistring xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES =	${HOMEPAGE}/download/
 EXTRACT_SUFX =	.tar.bz2
