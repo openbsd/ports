@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/19 23:13:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =		ELF and DWARF parser library for Python
 
@@ -15,7 +15,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes

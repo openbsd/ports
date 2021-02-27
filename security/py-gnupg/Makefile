@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/02/19 21:00:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT=		Python module for GnuPG interface
 
@@ -18,7 +18,7 @@ MODPY_PI=		Yes
 MODULES=		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 BUILD_DEPENDS=		security/gnupg
 RUN_DEPENDS=		security/gnupg

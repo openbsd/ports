@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/30 15:47:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =	pipe interface for radare2
 
@@ -19,6 +19,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 .include <bsd.port.mk>

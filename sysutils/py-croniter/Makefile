@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/01/03 12:30:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =		datetime-iterator for cron-like formats
 
@@ -19,7 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			textproc/py-natsort${MODPY_FLAVOR}

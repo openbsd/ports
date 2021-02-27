@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/20 17:30:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT=		spellchecking library for Python
 
@@ -23,6 +23,6 @@ MODPY_PYTEST_ARGS =	enchant/tests.py
 RUN_DEPENDS=		textproc/enchant2
 
 FLAVORS=		python3
-FLAVOR?=		python3
+FLAVOR=			python3
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/04 20:21:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =		parse semi-structured text into Python table
 
@@ -22,6 +22,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 .include <bsd.port.mk>

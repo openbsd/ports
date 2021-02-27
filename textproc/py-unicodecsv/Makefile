@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/04 20:21:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =		drop-in replace for csv with unicode support
 
@@ -23,6 +23,6 @@ MODPY_SETUPTOOLS =	Yes
 NO_TEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 .include <bsd.port.mk>

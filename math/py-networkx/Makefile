@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/05 18:34:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =		module for creating and manipulating graphs and networks
 
@@ -20,8 +20,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-FLAVORS=		python3
-FLAVOR ?=		python3
+FLAVORS =		python3
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR}>=4.3.0
 

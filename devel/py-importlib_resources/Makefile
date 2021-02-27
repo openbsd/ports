@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/20 14:17:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/27 11:13:35 ajacoutot Exp $
 
 # remove when switching to Python 3.9
 COMMENT=		backport of the importlib.resources module
@@ -24,7 +24,7 @@ BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR} \
 			textproc/py-toml${MODPY_FLAVOR} \
 
 FLAVORS=		python3
-FLAVOR?=		python3
+FLAVOR=			python3
 
 # tests are broken
 NO_TEST=		Yes

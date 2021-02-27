@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/17 19:34:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =	module that multiplexes interactions with lists of objects
 
@@ -18,7 +18,7 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 
 FLAVORS =	python3
-FLAVOR ?=	python3
+FLAVOR =	python3
 
 # No tests - no upstream?
 

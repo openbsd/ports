@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/06 20:01:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =		console-based visual debugger for Python
 
@@ -21,7 +21,7 @@ RUN_DEPENDS =		devel/py-urwid${MODPY_FLAVOR}>=1.1.1 \
 TEST_DEPENDS =		devel/py-test-mock${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 .if ${FLAVOR:Mpython3}
 PUDB_SCRIPT_NAME =	pudb3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/16 07:29:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =		Python lex/yacc
 
@@ -19,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 do-test:
 	cd ${WRKSRC}/test && \

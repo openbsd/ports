@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/26 14:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =	library to instrument executable formats
 
@@ -23,7 +23,7 @@ WANTLIB += ${COMPILER_LIBCXX} m
 MODULES =		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/04 14:06:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =	console user interface library for python
 
@@ -28,6 +28,6 @@ MODPY_PYTEST =	Yes
 MODPY_PYTEST_ARGS = urwid/tests
 
 FLAVORS =	python3
-FLAVOR ?=	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>

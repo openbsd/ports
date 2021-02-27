@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/03 15:32:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/02/27 11:13:35 ajacoutot Exp $
 
 COMMENT =	RFC4510 conforming LDAP V3 pure Python client library
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 FLAVORS =	python3
-FLAVOR ?=	python3
+FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

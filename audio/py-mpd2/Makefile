@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/20 17:18:04 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/27 11:13:34 ajacoutot Exp $
 
 COMMENT =		Python client interface for MPD
 
@@ -18,7 +18,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 TEST_DEPENDS =		${BUILD_PKGPATH} \
 			devel/py-mock${MODPY_FLAVOR}
