@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/29 09:58:56 espie Exp $
-bin/libglade-convert
+@comment $OpenBSD: PLIST,v 1.13 2021/02/27 08:37:37 ajacoutot Exp $
 include/libglade-2.0/
 include/libglade-2.0/glade/
 include/libglade-2.0/glade/glade-build.h
@@ -7,7 +6,7 @@ include/libglade-2.0/glade/glade-init.h
 include/libglade-2.0/glade/glade-parser.h
 include/libglade-2.0/glade/glade-xml.h
 include/libglade-2.0/glade/glade.h
-lib/libglade-2.0.a
+@static-lib lib/libglade-2.0.a
 lib/libglade-2.0.la
 @lib lib/libglade-2.0.so.${LIBglade-2.0_VERSION}
 lib/pkgconfig/libglade-2.0.pc
