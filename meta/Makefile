@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/19 20:44:44 edd Exp $
+# $OpenBSD: Makefile,v 1.20 2021/02/27 07:12:22 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += audacious
@@ -7,6 +7,7 @@
      SUBDIR += geda
      SUBDIR += gnome
      SUBDIR += gnustep
+     SUBDIR += kde
      SUBDIR += lxqt
      SUBDIR += mate
      SUBDIR += msp430
