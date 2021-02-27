@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_dns_spnego_c,v 1.1 2021/02/20 15:49:52 sthen Exp $
+$OpenBSD: patch-lib_dns_spnego_c,v 1.2 2021/02/27 20:56:03 sthen Exp $
 
 https://downloads.isc.org/isc/bind9/9.16.12/patches/CVE-2020-8625.patch
 
 Index: lib/dns/spnego.c
 --- lib/dns/spnego.c.orig
 +++ lib/dns/spnego.c
-@@ -848,7 +848,7 @@ der_get_oid(const unsigned char *p, size_t len, oid *d
+@@ -846,7 +846,7 @@ der_get_oid(const unsigned char *p, size_t len, oid *d
  		return (ASN1_OVERRUN);
  	}
  

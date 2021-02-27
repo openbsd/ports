@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_isc_netmgr_netmgr_c,v 1.1 2021/02/20 15:49:52 sthen Exp $
+$OpenBSD: patch-lib_isc_netmgr_netmgr_c,v 1.2 2021/02/27 20:56:03 sthen Exp $
 
 From 66eefac78c92b64b6689a1655cc677a2b1d13496 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Ond=C5=99ej=20Sur=C3=BD?= <ondrej@sury.org>
@@ -14,7 +14,7 @@ proper fix that would send back empty response with TC flag set.
 Index: lib/isc/netmgr/netmgr.c
 --- lib/isc/netmgr/netmgr.c.orig
 +++ lib/isc/netmgr/netmgr.c
-@@ -2101,6 +2101,9 @@ isc__nm_closesocket(uv_os_sock_t sock) {
+@@ -1655,6 +1655,9 @@ isc__nm_decstats(isc_nm_t *mgr, isc_statscounter_t cou
  #define setsockopt_on(socket, level, name) \
  	setsockopt(socket, level, name, &(int){ 1 }, sizeof(int))
  
@@ -24,7 +24,7 @@ Index: lib/isc/netmgr/netmgr.c
  isc_result_t
  isc__nm_socket_freebind(uv_os_sock_t fd, sa_family_t sa_family) {
  	/*
-@@ -2226,32 +2229,48 @@ isc__nm_socket_dontfrag(uv_os_sock_t fd, sa_family_t s
+@@ -1780,32 +1783,48 @@ isc__nm_socket_dontfrag(uv_os_sock_t fd, sa_family_t s
  	 */
  	if (sa_family == AF_INET6) {
  #if defined(IPV6_DONTFRAG)
