@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/10/25 20:47:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/02/27 07:47:09 ajacoutot Exp $
 @static-lib lib/libescpr.a
 lib/libescpr.la
 @lib lib/libescpr.so.${LIBescpr_VERSION}
@@ -86,6 +86,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-EP-977A3_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-978A3_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-979A3_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-M552T_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-EP-M553T_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-M570T_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-1110_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-16500_Series-epson-escpr-en.ppd
