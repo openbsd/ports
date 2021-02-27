@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/05/01 13:28:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/02/27 18:40:32 sthen Exp $
 ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/Net/
 ${P5SITE}/Bundle/Net/LDAP.pm
@@ -21,6 +21,7 @@ ${P5SITE}/Net/LDAP/Control/DontUseCopy.pm
 ${P5SITE}/Net/LDAP/Control/EntryChange.pm
 ${P5SITE}/Net/LDAP/Control/ManageDsaIT.pm
 ${P5SITE}/Net/LDAP/Control/MatchedValues.pm
+${P5SITE}/Net/LDAP/Control/NoOp.pm
 ${P5SITE}/Net/LDAP/Control/Paged.pm
 ${P5SITE}/Net/LDAP/Control/PasswordPolicy.pm
 ${P5SITE}/Net/LDAP/Control/PersistentSearch.pm
@@ -30,9 +31,11 @@ ${P5SITE}/Net/LDAP/Control/ProxyAuth.pm
 ${P5SITE}/Net/LDAP/Control/Relax.pm
 ${P5SITE}/Net/LDAP/Control/Sort.pm
 ${P5SITE}/Net/LDAP/Control/SortResult.pm
+${P5SITE}/Net/LDAP/Control/Subentries.pm
 ${P5SITE}/Net/LDAP/Control/SyncDone.pm
 ${P5SITE}/Net/LDAP/Control/SyncRequest.pm
 ${P5SITE}/Net/LDAP/Control/SyncState.pm
+${P5SITE}/Net/LDAP/Control/TreeDelete.pm
 ${P5SITE}/Net/LDAP/Control/VLV.pm
 ${P5SITE}/Net/LDAP/Control/VLVResponse.pm
 ${P5SITE}/Net/LDAP/DSML.pm
@@ -83,6 +86,7 @@ ${P5SITE}/Net/LDAPS.pm
 @man man/man3p/Net::LDAP::Control::EntryChange.3p
 @man man/man3p/Net::LDAP::Control::ManageDsaIT.3p
 @man man/man3p/Net::LDAP::Control::MatchedValues.3p
+@man man/man3p/Net::LDAP::Control::NoOp.3p
 @man man/man3p/Net::LDAP::Control::Paged.3p
 @man man/man3p/Net::LDAP::Control::PasswordPolicy.3p
 @man man/man3p/Net::LDAP::Control::PersistentSearch.3p
@@ -92,9 +96,11 @@ ${P5SITE}/Net/LDAPS.pm
 @man man/man3p/Net::LDAP::Control::Relax.3p
 @man man/man3p/Net::LDAP::Control::Sort.3p
 @man man/man3p/Net::LDAP::Control::SortResult.3p
+@man man/man3p/Net::LDAP::Control::Subentries.3p
 @man man/man3p/Net::LDAP::Control::SyncDone.3p
 @man man/man3p/Net::LDAP::Control::SyncRequest.3p
 @man man/man3p/Net::LDAP::Control::SyncState.3p
+@man man/man3p/Net::LDAP::Control::TreeDelete.3p
 @man man/man3p/Net::LDAP::Control::VLV.3p
 @man man/man3p/Net::LDAP::Control::VLVResponse.3p
 @man man/man3p/Net::LDAP::DSML.3p
