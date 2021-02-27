@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.99 2021/02/01 20:28:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.100 2021/02/27 16:06:27 rsadowski Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-53.0.0
+DISTNAME=	mkvtoolnix-54.0.0
 
 CATEGORIES=	multimedia x11
 
@@ -13,9 +13,8 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC boost_filesystem-mt
-WANTLIB += boost_system-mt c dvdread ebml fmt iconv intl m magic
-WANTLIB += matroska ogg pcre2-8 pugixml vorbis z
+WANTLIB += ${COMPILER_LIBCXX} FLAC c dvdread ebml fmt iconv intl
+WANTLIB += m magic matroska ogg pcre2-8 pugixml vorbis z
 
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -25,10 +24,11 @@ MODULES=	lang/ruby
 
 MODRUBY_RUNDEP=	No
 
-# C++11 / C++14
+# C++17
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS=	devel/gettext,-tools \
+BUILD_DEPENDS=	devel/boost \
+		devel/gettext,-tools \
 		devel/gtest \
 		textproc/docbook \
 		textproc/docbook-xsl \
@@ -37,7 +37,6 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 LIB_DEPENDS=	audio/flac \
 		audio/libogg \
 		audio/libvorbis \
-		devel/boost \
 		devel/fmt \
 		devel/gettext,-runtime \
 		devel/libdvdread \
@@ -53,11 +52,7 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--disable-optimization \
 		--disable-update-check \
-		--with-boost-date-time=boost_date_time-mt \
-		--with-boost-filesystem=boost_filesystem-mt \
 		--with-boost-libdir=${LOCALBASE}/lib \
-		--with-boost-regex=boost_regex-mt \
-		--with-boost-system=boost_system-mt \
 		--with-docbook-xsl-root=${LOCALBASE}/share/xsl/docbook
 
 CPPFLAGS=	-I${LOCALBASE}/include
