@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/27 21:33:56 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
+
+GH_ACCOUNT=	v8
+GH_PROJECT=	v8
+GH_TAGNAME=	3.16.14.11
+
+DPB_PROPERTIES=	parallel
 
 COMMENT=	V8 JavaScript for clients and servers
 
 V8_VERSION=	3.16.14.11
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 V8_ARCH=	${MACHINE_ARCH:S/amd64/x64/:S/i386/ia32/}
 V8_RELEASE=	release
 
-DISTNAME=	v8-${V8_VERSION}
 PKGNAME=	lib${DISTNAME}
-
-DISTFILES=	v8-${V8_VERSION}.tar.gz{${V8_VERSION}.tar.gz}
 
 CATEGORIES=	lang
 
@@ -26,21 +29,20 @@ MAINTAINER=	David Carlier <devnexen@gmail.com>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/v8/v8/archive/
+WANTLIB +=	c execinfo m pthread ssl ${COMPILER_LIBCXX} 
 
 BUILD_DEPENDS=	devel/gyp
 
 LIB_DEPENDS=	devel/libexecinfo
 
-WANTLIB +=	c execinfo m pthread ssl ${COMPILER_LIBCXX} 
-
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=	python.port.mk
-MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+CONFIGURE_STYLE= none
+MODULES=	lang/python
+MODPY_RUNDEP=	No
 
 USE_WXNEEDED=	Yes
 
@@ -59,8 +61,6 @@ MAKE_ENV+=	V=1 \
 		CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/src -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PATH=${WRKSRC}/bin:${PATH}
-
-NO_CCACHE=	Yes
 
 TEST_TARGET=	check
 
