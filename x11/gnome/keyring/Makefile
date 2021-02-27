@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2021/02/23 19:39:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.138 2021/02/27 08:58:21 ajacoutot Exp $
 
 # XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,libsecret} but that
 # would create dependency loops:                                                
@@ -23,7 +23,6 @@ WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-shm z
 
 MODULES=		devel/dconf \
 			x11/gnome
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODGNOME_TOOLS=		docbook
 
@@ -49,10 +48,13 @@ post-install:
 
 # regression tests call 'env python'
 MODULES +=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 TEST_DEPENDS +=		${MODPY_RUN_DEPENDS}
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP=		No
+MODPY_ADJ_FILES=	build/tap-driver
+# couldn't connect to dbus session bus: Cannot autolaunch D-Bus without X11 $DISPLAY
+TEST_IS_INTERACTIVE=	x11
+
 pre-test:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
