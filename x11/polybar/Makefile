@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/27 12:03:43 jasper Exp $
 
 COMMENT =	fast and easy-to-use status bar
-V =		3.4.3
+V =		3.5.4
 DISTNAME =	polybar-$V
 CATEGORIES =	x11
-REVISION =	2
 
 HOMEPAGE =	https://polybar.github.io/
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,7 +17,7 @@ WANTLIB += pulse xcb xcb-composite xcb-cursor xcb-ewmh xcb-icccm
 WANTLIB += xcb-image xcb-randr xcb-util xcb-xkb xcb-xrm z
 
 MASTER_SITES =	https://github.com/polybar/polybar/releases/download/$V/
-EXTRACT_SUFX =	.tar
+EXTRACT_SUFX =	.tar.gz
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -27,9 +26,10 @@ MODULES =	devel/cmake \
 		lang/python
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		textproc/py-sphinx${MODPY_FLAVOR}>=1.5
+		textproc/py-sphinx${MODPY_FLAVOR}>=2.4.3
 
 LIB_DEPENDS =	audio/libmpdclient \
 		audio/pulseaudio \
@@ -47,7 +47,7 @@ CONFIGURE_ARGS =	-DENABLE_CCACHE=OFF \
 
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/polybar
+WRKDIST =	${WRKDIR}/polybar-$V
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cmake/02-opts.cmake \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_cpu_cpp,v 1.1.1.1 2019/09/20 08:18:42 jasper Exp $
+$OpenBSD: patch-src_modules_cpu_cpp,v 1.2 2021/02/27 12:03:43 jasper Exp $
 
 Index: src/modules/cpu.cpp
 --- src/modules/cpu.cpp.orig
@@ -52,7 +52,7 @@ Index: src/modules/cpu.cpp
      try {
        std::ifstream in(PATH_CPU_INFO);
        string str;
-@@ -129,7 +164,7 @@ namespace modules {
+@@ -130,7 +165,7 @@ namespace modules {
      } catch (const std::ios_base::failure& e) {
        m_log.err("Failed to read CPU values (what: %s)", e.what());
      }
