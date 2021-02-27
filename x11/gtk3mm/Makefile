@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2020/12/21 11:27:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2021/02/27 07:49:02 ajacoutot Exp $
 
 PORTROACH=		limit:^3\.24
 
 COMMENT=		C++ interface for gtk3+
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		3.24.3
+GNOME_VERSION=		3.24.4
 PKGNAME=		gtk3mm-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
