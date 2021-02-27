@@ -1,15 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/01/30 07:38:11 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/02/27 06:08:21 benoit Exp $
 @bin bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
 share/doc/stella/graphics/
 share/doc/stella/graphics/Stella_icon.png
-share/doc/stella/graphics/basic_settings.png
 share/doc/stella/graphics/cheat.png
 share/doc/stella/graphics/chucky_cheese.png
 share/doc/stella/graphics/circuit.png
 share/doc/stella/graphics/commandmenu.png
-share/doc/stella/graphics/commandsmenu_r77.png
 share/doc/stella/graphics/console.png
 share/doc/stella/graphics/debugger_audiotab.png
 share/doc/stella/graphics/debugger_bankcomplex.png
