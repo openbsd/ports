@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/09/17 08:24:36 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/27 18:40:40 daniel Exp $
 lib/python${MODPY_VERSION}/site-packages/repoze/
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -12,8 +12,9 @@ lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/repoze/lru/
 lib/python${MODPY_VERSION}/site-packages/repoze/lru/__init__.py
-lib/python${MODPY_VERSION}/site-packages/repoze/lru/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/repoze/lru/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/repoze/lru/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/repoze/lru/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/lru/tests.py
-lib/python${MODPY_VERSION}/site-packages/repoze/lru/tests.pyc
 share/doc/${MODPY_PY_PREFIX}repoze-lru/
 share/doc/${MODPY_PY_PREFIX}repoze-lru/README.txt
