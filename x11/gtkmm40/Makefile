@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/20 15:11:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/27 07:36:39 ajacoutot Exp $
 
 COMMENT=		C++ bindings for GTK+
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		4.0.0
+GNOME_VERSION=		4.0.1
 PKGNAME=		gtkmm40-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
