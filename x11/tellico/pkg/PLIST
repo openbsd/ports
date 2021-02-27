@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/08/14 11:12:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/02/27 07:54:46 rsadowski Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -163,6 +163,17 @@ share/doc/HTML/pt_BR/tellico/importing-exporting.docbook
 share/doc/HTML/pt_BR/tellico/index.cache.bz2
 share/doc/HTML/pt_BR/tellico/index.docbook
 share/doc/HTML/pt_BR/tellico/menus.docbook
+share/doc/HTML/ru/tellico/
+share/doc/HTML/ru/tellico/advanced.docbook
+share/doc/HTML/ru/tellico/configuration.docbook
+share/doc/HTML/ru/tellico/details.docbook
+share/doc/HTML/ru/tellico/faqs.docbook
+share/doc/HTML/ru/tellico/fundamentals.docbook
+share/doc/HTML/ru/tellico/hacking.docbook
+share/doc/HTML/ru/tellico/importing-exporting.docbook
+share/doc/HTML/ru/tellico/index.cache.bz2
+share/doc/HTML/ru/tellico/index.docbook
+share/doc/HTML/ru/tellico/menus.docbook
 share/doc/HTML/sv/tellico/
 share/doc/HTML/sv/tellico/advanced.docbook
 share/doc/HTML/sv/tellico/configuration.docbook
@@ -296,12 +307,13 @@ share/tellico/cd-logo.png
 share/tellico/comicvine2tellico.xsl
 share/tellico/crossref2tellico.xsl
 share/tellico/data-sources/
+${MODPY_COMMENT}share/tellico/data-sources/${MODPY_PYCACHE}/
+share/tellico/data-sources/${MODPY_PYCACHE}dark_horse_comics.${MODPY_PYC_MAGIC_TAG}pyc
+share/tellico/data-sources/${MODPY_PYCACHE}fr.allocine.${MODPY_PYC_MAGIC_TAG}pyc
 share/tellico/data-sources/dark_horse_comics.py
 share/tellico/data-sources/dark_horse_comics.py.spec
-share/tellico/data-sources/dark_horse_comics.pyc
 share/tellico/data-sources/fr.allocine.py
 share/tellico/data-sources/fr.allocine.py.spec
-share/tellico/data-sources/fr.allocine.pyc
 share/tellico/dbc2tellico.xsl
 share/tellico/dblp2tellico.xsl
 share/tellico/delicious2tellico.xsl

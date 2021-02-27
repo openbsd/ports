@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.64 2021/02/23 19:39:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2021/02/27 07:54:46 rsadowski Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-3.3.4
+DISTNAME =	tellico-3.3.5
 
 CATEGORIES =	x11
 
@@ -31,7 +31,6 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES +=	devel/kf5 \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools
