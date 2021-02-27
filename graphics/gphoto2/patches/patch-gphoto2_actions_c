@@ -1,4 +1,4 @@
-$OpenBSD: patch-gphoto2_actions_c,v 1.6 2020/10/17 08:25:30 ajacoutot Exp $
+$OpenBSD: patch-gphoto2_actions_c,v 1.7 2021/02/27 07:55:21 ajacoutot Exp $
 
 Index: gphoto2/actions.c
 --- gphoto2/actions.c.orig
@@ -12,8 +12,8 @@ Index: gphoto2/actions.c
 +#define _XOPEN_SOURCE_EXTENDED 1	/* strptime proto, but this hides other prototypes */
  #define _GNU_SOURCE	/* get all the other prototypes */
  #define __EXTENSIONS__	/* for solaris to get back strdup and strcasecmp */
- 
-@@ -40,6 +41,9 @@
+ #define _DARWIN_C_SOURCE
+@@ -41,6 +42,9 @@
  #ifdef HAVE_SYS_TIME_H
  # include <sys/time.h>
  #endif
