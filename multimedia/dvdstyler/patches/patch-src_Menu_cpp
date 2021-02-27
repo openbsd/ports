@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Menu_cpp,v 1.1 2021/02/27 06:58:09 ajacoutot Exp $
+
+Fix build with wxWidgets-gtk3 >=3.1.X
+
+Index: src/Menu.cpp
+--- src/Menu.cpp.orig
++++ src/Menu.cpp
+@@ -44,7 +44,7 @@ Menu::Menu(DVD* dvd, int tsi, int pgci, VideoFormat vi
+ 
+ Menu::~Menu() {
+ 	delete m_svg;
+-	WX_CLEAR_ARRAY(m_objects)
++	WX_CLEAR_ARRAY(m_objects);
+ 	VECTOR_CLEAR(m_actions, DVDAction)
+ }
+ 

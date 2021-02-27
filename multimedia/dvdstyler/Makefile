@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/02/27 06:58:09 ajacoutot Exp $
 
 COMMENT=		DVD authoring application
 
-DISTNAME=		DVDStyler-3.0.4
+DISTNAME=		DVDStyler-3.1
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
@@ -18,7 +18,7 @@ WANTLIB += c dbus-1 exif fontconfig freetype jpeg m swscale wx_baseu-3.0
 WANTLIB += wx_baseu_net-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
 WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_media-3.0 wxsvg z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=		archivers/zip \
 			multimedia/dvdauthor \
@@ -36,8 +36,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 LIB_DEPENDS=		graphics/ffmpeg \
 			graphics/libexif \
 			x11/wxSVG \
-			x11/wxWidgets>=3.0.4 \
-			x11/wxWidgets,-media>=3.0.4
+			x11/wxWidgets,-media
 
 # FIXME: locale/Makefile uses gmake constructs
 USE_GMAKE=		Yes

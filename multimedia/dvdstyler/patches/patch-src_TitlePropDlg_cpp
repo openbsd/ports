@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_TitlePropDlg_cpp,v 1.1 2021/02/27 06:58:09 ajacoutot Exp $
+
+Fix build with wxWidgets-gtk3 >=3.1.X
+
+Index: src/TitlePropDlg.cpp
+--- src/TitlePropDlg.cpp.orig
++++ src/TitlePropDlg.cpp
+@@ -453,7 +453,7 @@ void TitlePropDlg::OnAddBt(wxCommandEvent& event) {
+ 	}
+ }
+ 
+-inline int cmpIntRev(_wxArraywxArrayInt* i1, _wxArraywxArrayInt* i2)  {
++inline int cmpIntRev(int* i1, int* i2)  {
+ 	return *i1 < *i2 ? 1 : (*i1 > *i2 ? -1 : 0);
+ }
+ 

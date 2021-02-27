@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/02/18 00:27:34 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/02/27 06:58:09 ajacoutot Exp $
 @bin bin/dvdstyler
 @man man/man1/dvdstyler.1
 share/applications/dvdstyler.desktop
@@ -72,6 +72,8 @@ share/dvdstyler/buttons/arrow3d-right.xml
 share/dvdstyler/buttons/buttons.lst
 share/dvdstyler/buttons/cancel.xml
 share/dvdstyler/buttons/cancel2.xml
+share/dvdstyler/buttons/circle-outline.xml
+share/dvdstyler/buttons/circle.xml
 share/dvdstyler/buttons/deprecated/
 share/dvdstyler/buttons/deprecated/arrow-down.xml
 share/dvdstyler/buttons/deprecated/arrow-left.xml
@@ -96,16 +98,23 @@ share/dvdstyler/buttons/deprecated/text-v2.xml
 share/dvdstyler/buttons/deprecated/text.xml
 share/dvdstyler/buttons/ellipse-v2.xml
 share/dvdstyler/buttons/ellipse45.xml
+share/dvdstyler/buttons/frame-text.xml
 share/dvdstyler/buttons/frame-v2.xml
 share/dvdstyler/buttons/frame45.xml
+share/dvdstyler/buttons/glow_arrow.xml
 share/dvdstyler/buttons/hand-left.xml
 share/dvdstyler/buttons/hand-right.xml
 share/dvdstyler/buttons/home-v2.xml
+share/dvdstyler/buttons/movie.xml
 share/dvdstyler/buttons/ok.xml
 share/dvdstyler/buttons/ok2.xml
+share/dvdstyler/buttons/painting_frame.xml
+share/dvdstyler/buttons/pill-stroke.xml
 share/dvdstyler/buttons/pill.xml
 share/dvdstyler/buttons/pill2.xml
 share/dvdstyler/buttons/pill3.xml
+share/dvdstyler/buttons/settings.xml
+share/dvdstyler/buttons/sticky_note.xml
 share/dvdstyler/buttons/text-circle-v2.xml
 share/dvdstyler/buttons/text-square-v2.xml
 share/dvdstyler/buttons/text-underlined-v3.xml
@@ -155,6 +164,7 @@ share/dvdstyler/objects/frame45.xml
 share/dvdstyler/objects/gold-frame.xml
 share/dvdstyler/objects/image.xml
 share/dvdstyler/objects/rectangle-v2.xml
+share/dvdstyler/objects/sticky_note.xml
 share/dvdstyler/objects/text-v2.xml
 share/dvdstyler/rc/
 share/dvdstyler/rc/add.png
@@ -194,6 +204,10 @@ share/dvdstyler/templates/Basic/blue.dvdt
 share/dvdstyler/templates/Basic/blue.png
 share/dvdstyler/templates/Basic/blueWS.dvdt
 share/dvdstyler/templates/Basic/blueWS.png
+share/dvdstyler/templates/Basic/frameText.dvdt
+share/dvdstyler/templates/Basic/frameText.png
+share/dvdstyler/templates/Basic/frameTextWS.dvdt
+share/dvdstyler/templates/Basic/frameTextWS.png
 share/dvdstyler/templates/Basic/neon.dvdt
 share/dvdstyler/templates/Basic/neon.png
 share/dvdstyler/templates/Basic/neonWS.dvdt
@@ -306,6 +320,7 @@ share/locale/pt/LC_MESSAGES/dvdstyler.mo
 share/locale/pt_BR/LC_MESSAGES/dvdstyler.mo
 share/locale/ro/LC_MESSAGES/dvdstyler.mo
 share/locale/ru/LC_MESSAGES/dvdstyler.mo
+share/locale/si/LC_MESSAGES/dvdstyler.mo
 share/locale/sk/LC_MESSAGES/dvdstyler.mo
 share/locale/sl/LC_MESSAGES/dvdstyler.mo
 share/locale/sr/LC_MESSAGES/dvdstyler.mo
