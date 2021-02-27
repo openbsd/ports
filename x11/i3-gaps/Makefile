@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/18 11:19:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/02/27 13:55:47 sthen Exp $
 
 COMMENT =	improved dynamic tiling window manager, fork with gaps
 
 V =		4.19.1
-REVISION =	0
+REVISION =	1
 DISTNAME =	i3-gaps-${V}
 
 CATEGORIES =	x11
