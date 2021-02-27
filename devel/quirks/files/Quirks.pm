@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1219 2021/02/26 21:24:22 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.1220 2021/02/27 17:49:20 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2161,6 +2161,7 @@ my $obsolete_reason = {
 	'bsd-airtools' => 3,
 	'gtkpod' => 3,
 	'golem' => 0,
+	'py-beautifulsoup' => 14,
 };
 
 # reasons for obsolete packages

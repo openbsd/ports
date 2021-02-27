@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1010 2021/02/25 11:44:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.1011 2021/02/27 17:49:20 daniel Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -430,7 +430,6 @@
      SUBDIR += py-autobahn,python3
      SUBDIR += py-beaker
      SUBDIR += py-beaker,python3
-     SUBDIR += py-beautifulsoup
      SUBDIR += py-beautifulsoup4
      SUBDIR += py-beautifulsoup4,python3
      SUBDIR += py-betamax
