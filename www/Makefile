@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1012 2021/02/27 18:42:52 daniel Exp $
+# $OpenBSD: Makefile,v 1.1013 2021/02/27 22:28:51 daniel Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -496,7 +496,9 @@
      SUBDIR += py-repoze-lru
      SUBDIR += py-repoze-lru,python3
      SUBDIR += py-repoze-profile
+     SUBDIR += py-repoze-profile,python3
      SUBDIR += py-repoze-who
+     SUBDIR += py-repoze-who,python3
      SUBDIR += py-requests
      SUBDIR += py-requests,python3
      SUBDIR += py-requests-cache,python3
