@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Makefile,v 1.4 2020/09/16 02:59:12 bcallah Exp $
+$OpenBSD: patch-src_Makefile,v 1.5 2021/02/27 03:29:37 bcallah Exp $
 
 Don't hardcode PREFIX, CC, or CXX.
 
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -29,7 +29,7 @@ EXE = stockfish
+@@ -27,7 +27,7 @@ EXE = stockfish
  endif
  
  ### Installation dir definitions
@@ -14,7 +14,7 @@ Index: src/Makefile
  BINDIR = $(PREFIX)/bin
  
  ### Built-in benchmark for pgo-builds
-@@ -305,8 +305,8 @@ ifeq ($(COMP),)
+@@ -303,8 +303,8 @@ ifeq ($(COMP),)
  endif
  
  ifeq ($(COMP),gcc)

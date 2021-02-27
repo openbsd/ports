@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/08 19:53:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/27 03:29:37 bcallah Exp $
 
-V =		12
+V =		13
 COMMENT =	open source chess engine
 PKGNAME =	stockfish-${V}
 CATEGORIES =	games
@@ -17,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 MASTER_SITES0 =	https://github.com/official-stockfish/Stockfish/archive/
 MASTER_SITES1 =	https://tests.stockfishchess.org/api/nn/
 DISTFILES =	sf_${V}.tar.gz:0 \
-		nn-82215d0fd0df.nnue:1
+		nn-62ef826d1a6d.nnue:1
 EXTRACT_ONLY =	sf_${V}.tar.gz
 
 # C++17
@@ -51,7 +51,7 @@ WRKDIST =	${WRKDIR}/Stockfish-sf_${V}
 WRKSRC =	${WRKDIST}/src
 
 post-extract:
-	cp ${DISTDIR}/nn-82215d0fd0df.nnue ${WRKSRC}
+	cp ${DISTDIR}/nn-62ef826d1a6d.nnue ${WRKSRC}
 
 pre-configure:
 	sed -i 's,-O3,${CXXFLAGS},g' ${WRKSRC}/Makefile
