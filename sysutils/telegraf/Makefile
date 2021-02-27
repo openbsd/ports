@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/26 18:17:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/27 09:28:50 ajacoutot Exp $
 
 COMMENT =	plugin-driven server agent for collecting metrics
 
@@ -9,7 +9,7 @@ GH_ACCOUNT =	influxdata
 GH_PROJECT =	telegraf
 GH_TAGNAME =	1.13.4
 HOMEPAGE =	https://influxdata.com
-REVISION =	0
+REVISION =	1
 
 # selfhosted because we bundle go deps
 MASTER_SITES =	https://sizeofvoid.org/pub/OpenBSD/distfiles/
