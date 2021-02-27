@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/07/07 22:39:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.32 2021/02/27 08:18:21 ajacoutot Exp $
 @conflict gconf2-polkit-*
 @pkgpath devel/gconf2,-main
 @pkgpath devel/gconf2,-polkit
@@ -23,12 +23,12 @@ include/gconf/2/gconf/gconf-value.h
 include/gconf/2/gconf/gconf.h
 lib/GConf/
 lib/GConf/2/
-lib/GConf/2/libgconfbackend-oldxml.so
-lib/GConf/2/libgconfbackend-xml.so
-lib/gio/modules/libgsettingsgconfbackend.so
+@so lib/GConf/2/libgconfbackend-oldxml.so
+@so lib/GConf/2/libgconfbackend-xml.so
+@so lib/gio/modules/libgsettingsgconfbackend.so
 lib/girepository-1.0/
 lib/girepository-1.0/GConf-2.0.typelib
-lib/libgconf-2.a
+@static-lib lib/libgconf-2.a
 lib/libgconf-2.la
 @lib lib/libgconf-2.so.${LIBgconf-2_VERSION}
 lib/pkgconfig/gconf-2.0.pc

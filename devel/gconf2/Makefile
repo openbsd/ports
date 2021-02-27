@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.98 2021/02/23 19:39:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2021/02/27 08:18:21 ajacoutot Exp $
 
 COMMENT=		configuration database system for GNOME
 
 GNOME_PROJECT=		GConf
 GNOME_VERSION=		3.2.6
 PKGNAME=		gconf2-${GNOME_VERSION}
-REVISION=		11
+REVISION=		12
 
 SHARED_LIBS +=  gconf-2              6.2      # 5.5
 
@@ -17,16 +17,14 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 iconv intl lzma m pcre pthread xml2 z
+WANTLIB += c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 iconv intl lzma m pcre pthread
+WANTLIB += xml2 z
 
 MODULES=		x11/gnome
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # needed for gsettings-schema-convert(1)
 MODULES +=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	gsettings/gsettings-schema-convert
 
@@ -46,6 +44,8 @@ FAKE_FLAGS=		sysgconfdir=${PREFIX}/share/examples/gconf2 \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gsettings/gsettings-data-convert.1
+	${LOCALBASE}/bin/2to3 --write --nobackup \
+		${WRKSRC}/gsettings/gsettings-schema-convert
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/

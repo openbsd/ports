@@ -1,4 +1,6 @@
-$OpenBSD: patch-gsettings_gsettings-data-convert_c,v 1.2 2016/03/01 09:24:20 ajacoutot Exp $
+$OpenBSD: patch-gsettings_gsettings-data-convert_c,v 1.3 2021/02/27 08:18:21 ajacoutot Exp $
+
+Fix for 64bit time_t
 
 From 0780809731c8ab1c364202b1900d3df106b28626 Mon Sep 17 00:00:00 2001
 From: Robert Ancell <robert.ancell@canonical.com>
@@ -15,8 +17,9 @@ From: Stefan Sauer <ensonic@users.sf.net>
 Date: Wed, 23 Jan 2013 07:11:18 +0000
 Subject: mconvert: enable recursive scheme lookup and fix a crasher
 
---- gsettings/gsettings-data-convert.c.orig	Tue Apr 10 01:58:44 2012
-+++ gsettings/gsettings-data-convert.c	Mon Feb 29 10:02:15 2016
+Index: gsettings/gsettings-data-convert.c
+--- gsettings/gsettings-data-convert.c.orig
++++ gsettings/gsettings-data-convert.c
 @@ -22,6 +22,7 @@
  #include <string.h>
  #include <sys/types.h>
@@ -70,6 +73,15 @@ Subject: mconvert: enable recursive scheme lookup and fix a crasher
        else
          settings = g_settings_new (schema_path[0]);
  
+@@ -573,7 +594,7 @@ save_state (GHashTable *converted)
+   filename = g_build_filename (g_get_user_data_dir (), "gsettings-data-convert", NULL);
+   keyfile = g_key_file_new ();
+ 
+-  str = g_strdup_printf ("%ld", time (NULL));
++  str = g_strdup_printf ("%lld", time (NULL));
+   g_key_file_set_string (keyfile,
+                          "State", "timestamp", str);
+   g_free (str);
 @@ -616,8 +637,6 @@ main (int argc, char *argv[])
      { "file", 0, 0, G_OPTION_ARG_STRING, &extra_file, "perform conversions from an extra file", NULL },
      { NULL }
