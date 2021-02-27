@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/12/06 11:51:25 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/27 21:43:27 pvk Exp $
 bin/ssh-audit
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/
 lib/python${MODPY_VERSION}/site-packages/ssh_audit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ssh_audit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -24,7 +22,6 @@ lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}gextest.${MOD
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}globals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}hostkeytest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}kexdh.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}output.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}outputbuffer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}policy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}product.${MODPY_PYC_MAGIC_TAG}pyc
@@ -54,7 +51,6 @@ lib/python${MODPY_VERSION}/site-packages/ssh_audit/gextest.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/globals.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/hostkeytest.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/kexdh.py
-lib/python${MODPY_VERSION}/site-packages/ssh_audit/output.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/outputbuffer.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/policy.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/product.py
