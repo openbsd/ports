@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.290 2021/02/23 19:39:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.291 2021/02/27 08:53:07 ajacoutot Exp $
 
 VERSION =		4.9.18
 DISTNAME =		samba-${VERSION}
@@ -22,7 +22,7 @@ LDB_V =			1.4.8
 TEVENT_V =		0.9.37
 
 REVISION-ldb =		2
-REVISION-main =		1
+REVISION-main =		2
 REVISION-tevent =	0
 
 SHARED_LIBS =		asn1-samba4		0.0 \
