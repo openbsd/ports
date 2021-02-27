@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2021/02/23 19:39:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2021/02/27 21:39:03 sthen Exp $
 
 COMMENT-main=	UPS monitoring program supporting many brands
 COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
@@ -6,7 +6,7 @@ COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
 DISTNAME=	nut-2.7.4
-REVISION=	9
+REVISION=	10
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-cgi=	${DISTNAME:S/-/-cgi-/}
@@ -35,7 +35,6 @@ WANTLIB-snmp +=	${COMMON} m netsnmp
 MASTER_SITES=		${HOMEPAGE}source/2.7/
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=	No
 # if avahi is present at build time, avahi support is built in nut-scanner,
 # but it's dlopen()'d at runtime, so support is optional, so we don't list a

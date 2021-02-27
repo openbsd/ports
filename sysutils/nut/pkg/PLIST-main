@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2018/09/04 12:46:22 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2021/02/27 21:39:03 sthen Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -9,6 +9,9 @@
 @pkgpath sysutils/nut,no_cgi,snmp
 @newgroup _ups:529
 @newuser _ups:529:529:daemon:UPS User:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/nut
+@rcscript ${RCDIR}/upsd
+@rcscript ${RCDIR}/upsmon
 @bin bin/al175
 @bin bin/apcsmart
 @bin bin/apcsmart-old
@@ -78,13 +81,13 @@ include/nut/nutscan-init.h
 include/nut/nutscan-ip.h
 include/nut/parseconf.h
 include/nut/upsclient.h
-lib/libnutclient.a
+@static-lib lib/libnutclient.a
 lib/libnutclient.la
 @lib lib/libnutclient.so.${LIBnutclient_VERSION}
-lib/libnutscan.a
+@static-lib lib/libnutscan.a
 lib/libnutscan.la
 @lib lib/libnutscan.so.${LIBnutscan_VERSION}
-lib/libupsclient.a
+@static-lib lib/libupsclient.a
 lib/libupsclient.la
 @lib lib/libupsclient.so.${LIBupsclient_VERSION}
 lib/pkgconfig/libnutclient.pc
@@ -322,6 +325,3 @@ share/examples/nut/upsset.conf.sample
 share/nut/
 share/nut/cmdvartab
 share/nut/driver.list
-@rcscript ${RCDIR}/nut
-@rcscript ${RCDIR}/upsd
-@rcscript ${RCDIR}/upsmon
