@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_grg_attachs_h,v 1.1 2021/02/27 21:27:17 naddy Exp $
+
+Index: src/grg_attachs.h
+--- src/grg_attachs.h.orig
++++ src/grg_attachs.h
+@@ -24,7 +24,7 @@
+ 
+ #include <gtk/gtk.h>
+ 
+-gint current_attach_ID;
++extern gint current_attach_ID;
+ 
+ gint grg_attach_file (gchar * path, GtkWidget * parent);
+ void grg_remove_attachment (void);

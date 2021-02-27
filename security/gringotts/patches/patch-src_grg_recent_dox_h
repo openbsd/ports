@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_grg_recent_dox_h,v 1.1 2021/02/27 21:27:17 naddy Exp $
+
+Index: src/grg_recent_dox.h
+--- src/grg_recent_dox.h.orig
++++ src/grg_recent_dox.h
+@@ -24,7 +24,7 @@
+ 
+ #define GRG_RECENT_LIMIT 	6
+ 
+-GSList *grg_recent_dox;
++extern GSList *grg_recent_dox;
+ 
+ void grg_recent_dox_init (void);
+ void grg_recent_dox_deinit (void);

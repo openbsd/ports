@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_grg_entries_h,v 1.1 2021/02/27 21:27:17 naddy Exp $
+
+Index: src/grg_entries.h
+--- src/grg_entries.h.orig
++++ src/grg_entries.h
+@@ -24,7 +24,7 @@
+ 
+ /* current element. */
+ /* MUST BE USED ONLY BY grg_attachs.h !!!! */
+-GList *current;
++extern GList *current;
+ 
+ /* Appends a new entry to the list */
+ void grg_entries_append (void);

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_gringotts_h,v 1.1 2021/02/27 21:27:17 naddy Exp $
+
+Index: src/gringotts.h
+--- src/gringotts.h.orig
++++ src/gringotts.h
+@@ -24,10 +24,10 @@
+ 
+ #include "grg_defs.h"
+ 
+-GList *garbage;
++extern GList *garbage;
+ 
+-GRG_CTX gctx;
+-glong pwdbirth;
++extern GRG_CTX gctx;
++extern glong pwdbirth;
+ 
+ 	/*callbacks for menu items */
+ 
