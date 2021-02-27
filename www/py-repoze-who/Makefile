@@ -1,27 +1,28 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/27 22:27:59 daniel Exp $
 
 COMMENT =	identification and authentication framework for WSGI
 
 MODPY_EGG_VERSION = 2.2
 DISTNAME =	repoze.who-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www devel
 
 # BSD-derived
 PERMIT_PACKAGE =	Yes
 
-MODPY_PI =	Yes
-
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
+FLAVORS =	python3
+FLAVOR ?=
+
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-repoze-who
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}repoze-who
 	${INSTALL_DATA} ${WRKSRC}/README.rst \
-		${PREFIX}/share/doc/py-repoze-who
+		${PREFIX}/share/doc/${MODPY_PY_PREFIX}repoze-who
 
 .include <bsd.port.mk>
