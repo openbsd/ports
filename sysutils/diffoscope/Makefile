@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2021/02/27 04:12:13 bcallah Exp $
+# $OpenBSD: Makefile,v 1.53 2021/02/27 11:21:34 sthen Exp $
 
 MODPY_EGG_VERSION =	167
 COMMENT =	in-depth comparison of files, archives, and directories
@@ -25,7 +25,7 @@ RUN_DEPENDS =	archivers/py-libarchive-c${MODPY_FLAVOR} \
 TEST_DEPENDS =	devel/py-argcomplete${MODPY_FLAVOR} \
 		devel/py-progressbar${MODPY_FLAVOR} \
 		sysutils/binwalk \
-		sysutils/py-distro \
+		sysutils/py-distro${MODPY_FLAVOR} \
 		textproc/py-defusedxml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
