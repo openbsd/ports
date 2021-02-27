@@ -1,17 +1,20 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2018/09/04 12:46:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.1 2021/02/27 08:52:43 ajacoutot Exp $
 @conflict fam-*
 @conflict libgamin-<=0.1.10p5
 @conflict gamin-<0.1.10p18
+@conflict py-gamin-*
 @pkgpath sysutils/fam
+@pkgpath sysutils/gamin,-main
+@pkgpath sysutils/gamin,-python
 @pkgpath sysutils/gamin,-server
 include/fam.h
-lib/libfam.a
+@static-lib lib/libfam.a
 lib/libfam.la
 @lib lib/libfam.so.${LIBfam_VERSION}
-lib/libgamin-1.a
+@static-lib lib/libgamin-1.a
 lib/libgamin-1.la
 @lib lib/libgamin-1.so.${LIBgamin-1_VERSION}
-lib/libgamin_shared.a
+@static-lib lib/libgamin_shared.a
 lib/pkgconfig/gamin.pc
 @bin libexec/gam_server
 share/doc/pkg-readmes/${PKGSTEM}
