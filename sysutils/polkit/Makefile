@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2021/02/23 19:39:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2021/02/27 08:33:43 ajacoutot Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
 DISTNAME=		polkit-0.118
+REVISION=		0
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -26,7 +27,6 @@ COMPILER=		base-clang ports-gcc
 
 MODULES=		lang/python \
 			textproc/intltool
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
