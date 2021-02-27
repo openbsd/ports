@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/02/22 17:34:36 rapha Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/02/27 15:45:37 sthen Exp $
 
 Add sndio support
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -45,6 +45,8 @@ ELSE()
+@@ -48,6 +48,8 @@ ELSE()
      OPTION(WANT_ALSA        "Include ALSA (Advanced Linux Sound Architecture) support" ON)
  ENDIF()
  
@@ -14,7 +14,7 @@ Index: CMakeLists.txt
  OPTION(WANT_LIBARCHIVE      "Enable use of libarchive instead of libtar" ON)
  OPTION(WANT_LADSPA          "Enable use of LADSPA plugins" ON)
  
-@@ -197,6 +199,7 @@ IF( WANT_LIBARCHIVE AND LIBARCHIVE_FOUND)
+@@ -208,6 +210,7 @@ IF( WANT_LIBARCHIVE AND LIBARCHIVE_FOUND)
      SET(WANT_LIBTAR FALSE)
  ENDIF()
  FIND_HELPER(LIBSNDFILE sndfile sndfile.h sndfile)
@@ -22,7 +22,7 @@ Index: CMakeLists.txt
  FIND_HELPER(ALSA alsa alsa/asoundlib.h asound )
  FIND_LADSPA(LADSPA ladspa.h noise)
  
-@@ -208,6 +211,8 @@ ELSE()
+@@ -219,6 +222,8 @@ ELSE()
  	FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
  ENDIF()
  
@@ -31,7 +31,7 @@ Index: CMakeLists.txt
  FIND_HELPER(JACK jack jack/jack.h jack)
  CHECK_LIBRARY_EXISTS(jack jack_port_rename "" HAVE_JACK_PORT_RENAME)
  FIND_HELPER(JACKSESSION jack jack/session.h jack)
-@@ -246,7 +251,7 @@ endif(DOXYGEN_FOUND)
+@@ -260,7 +265,7 @@ endif(DOXYGEN_FOUND)
  #
  # COMPUTE H2CORE_HAVE_xxx xxx_STATUS_REPORT
  #
@@ -40,7 +40,7 @@ Index: CMakeLists.txt
  FOREACH( _pkg ${STATUS_LIST})
      COMPUTE_PKGS_FLAGS(${_pkg})
  ENDFOREACH()
-@@ -296,6 +301,7 @@ COLOR_MESSAGE("* ${purple}libsndfile${reset}          
+@@ -310,6 +315,7 @@ COLOR_MESSAGE("* ${purple}libsndfile${reset}          
  
  COLOR_MESSAGE("${cyan}Supported audio interfaces${reset}
  --------------------------
@@ -48,12 +48,3 @@ Index: CMakeLists.txt
  * ${purple}ALSA${reset}                         : ${ALSA_STATUS}
  * ${purple}OSS${reset}                          : ${OSS_STATUS}
  * ${purple}JACK${reset}                         : ${JACK_STATUS}
-@@ -360,7 +366,7 @@ ENDIF()
- IF(NOT MINGW AND NOT APPLE)
- 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.appdata.xml DESTINATION "${CMAKE_INSTALL_PREFIX}/share/appdata")
- 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.desktop DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
--	INSTALL(FILES ${CMAKE_SOURCE_DIR}/data/img/gray/h2-icon.svg DESTINATION "/usr/share/pixmaps")
-+	INSTALL(FILES ${CMAKE_SOURCE_DIR}/data/img/gray/h2-icon.svg DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pixmaps")
- 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.1 DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man1")
- ENDIF()
- 

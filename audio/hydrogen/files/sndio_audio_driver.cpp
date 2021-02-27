@@ -230,7 +230,7 @@ void SndioAudioDriver::updateTransportInfo()
 void SndioAudioDriver::setBpm(float fBPM)
 {
 	INFOLOG(QString("[setBpm]: %1").arg(fBPM));
-	m_transport.m_nBPM = fBPM;
+	m_transport.m_fBPM = fBPM;
 }
 
 

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_core_src_hydrogen_cpp,v 1.2 2020/02/22 17:34:36 rapha Exp $
+$OpenBSD: patch-src_core_src_hydrogen_cpp,v 1.3 2021/02/27 15:45:37 sthen Exp $
 
 Add sndio support
 
 Index: src/core/src/hydrogen.cpp
 --- src/core/src/hydrogen.cpp.orig
 +++ src/core/src/hydrogen.cpp
-@@ -91,6 +91,8 @@
+@@ -89,6 +89,8 @@
  #include <hydrogen/IO/PortMidiDriver.h>
  #include <hydrogen/IO/CoreAudioDriver.h>
  #include <hydrogen/IO/PulseAudioDriver.h>
@@ -14,9 +14,9 @@ Index: src/core/src/hydrogen.cpp
  
  namespace H2Core
  {
-@@ -1411,7 +1413,13 @@ AudioOutput* createDriver( const QString& sDriver )
+@@ -2034,7 +2036,13 @@ AudioOutput* createDriver( const QString& sDriver )
  	Preferences *pPref = Preferences::get_instance();
- 	AudioOutput *pDriver = NULL;
+ 	AudioOutput *pDriver = nullptr;
  
 -	if ( sDriver == "Oss" ) {
 +	if ( sDriver == "SndioAudio" ) {
@@ -29,23 +29,23 @@ Index: src/core/src/hydrogen.cpp
  		pDriver = new OssDriver( audioEngine_process );
  		if ( pDriver->class_name() == NullDriver::class_name() ) {
  			delete pDriver;
-@@ -1510,6 +1518,7 @@ void audioEngine_startAudioDrivers()
+@@ -2133,6 +2141,7 @@ void audioEngine_startAudioDrivers()
  	QString sAudioDriver = preferencesMng->m_sAudioDriver;
  	if ( sAudioDriver == "Auto" ) {
  	#ifndef WIN32
-+		if ( ( m_pAudioDriver = createDriver( "SndioAudio" ) ) == NULL ) {
- 		if ( ( m_pAudioDriver = createDriver( "Jack" ) ) == NULL ) {
- 			if ( ( m_pAudioDriver = createDriver( "Alsa" ) ) == NULL ) {
- 				if ( ( m_pAudioDriver = createDriver( "CoreAudio" ) ) == NULL ) {
-@@ -1529,6 +1538,7 @@ void audioEngine_startAudioDrivers()
++		if ( ( m_pAudioDriver = createDriver( "SndioAudio" ) ) == nullptr ) {
+ 		if ( ( m_pAudioDriver = createDriver( "Jack" ) ) == nullptr ) {
+ 			if ( ( m_pAudioDriver = createDriver( "Alsa" ) ) == nullptr ) {
+ 				if ( ( m_pAudioDriver = createDriver( "CoreAudio" ) ) == nullptr ) {
+@@ -2152,6 +2161,7 @@ void audioEngine_startAudioDrivers()
  				}
  			}
  		}
 +		}
  	#else
  		//On Windows systems, use PortAudio is the prioritized backend
- 		if ( ( m_pAudioDriver = createDriver( "PortAudio" ) ) == NULL ) {
-@@ -1564,7 +1574,15 @@ void audioEngine_startAudioDrivers()
+ 		if ( ( m_pAudioDriver = createDriver( "PortAudio" ) ) == nullptr ) {
+@@ -2187,7 +2197,15 @@ void audioEngine_startAudioDrivers()
  		}
  	}
  

@@ -238,6 +238,29 @@ void SndioMidiDriver::close()
 	hdl = NULL;
 }
 
+std::vector<QString> SndioMidiDriver::getInputPortList()
+{
+	std::vector<QString> portList;
+	QString name;
+	int i;
+
+	/* midithru/* */
+	for (i = 0; i < 4; i++) {
+		name = "midithru/" + QString::number(i);
+		portList.push_back(name);
+	}
+
+	/* rmidi/* */
+	for (i = 0; i < 8; i++) {
+		name = "rmidi/" + QString::number(i);
+		QFileInfo di("/dev/rmidi" + QString::number(i));
+		if (di.exists())
+			portList.push_back(name);
+	}
+
+	return portList;
+}
+
 std::vector<QString> SndioMidiDriver::getOutputPortList()
 {
 	std::vector<QString> portList;

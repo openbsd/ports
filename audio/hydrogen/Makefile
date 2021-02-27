@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2021/01/19 06:53:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.30 2021/02/27 15:45:36 sthen Exp $
 
 COMMENT=		software drum machine
 
-DISTNAME=		hydrogen-1.0.0-beta1
-PKGNAME=		${DISTNAME:S/-beta/beta/}
+V=			1.0.1
+DISTNAME=		hydrogen-$V
 CATEGORIES=		audio
-REVISION=		0
 
 HOMEPAGE=		http://www.hydrogen-music.org/
 
-SHARED_LIBS=		hydrogen-core-1.0.0	0.0
+SHARED_LIBS=		hydrogen-core-$V	0.0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -55,6 +54,9 @@ post-extract:
 		${WRKSRC}/src/core/include/hydrogen/IO
 	cp ${FILESDIR}/sndio_{audio,midi}_driver.cpp \
 		${WRKSRC}/src/core/src/IO
+
+post-install:
+	cp -rp ${WRKSRC}/data/doc ${PREFIX}/share/doc/hydrogen
 
 do-test:
 	cd ${WRKSRC} && ${WRKBUILD}/src/tests/tests
