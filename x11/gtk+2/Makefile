@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2021/02/23 19:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.240 2021/02/27 08:59:37 ajacoutot Exp $
 
 DPB_PROPERTIES=		parallel
 
@@ -10,6 +10,8 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		x11 devel
 
@@ -41,7 +43,6 @@ MULTI_PACKAGES=		-main -cups
 
 MODULES=		lang/python \
 			x11/gnome
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
