@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2021/02/27 08:53:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2021/02/27 09:09:13 ajacoutot Exp $
 
 COMMENT=		GNOME Virtual File System
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		2.24.4
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		gnome-vfs2-${VERSION}
 
-REVISION=		16
+REVISION=		17
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
@@ -15,8 +15,8 @@ SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += bz2 c crypto dbus-1 dbus-glib-1 fam ffi gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 lzma m pcre pthread ssl
-WANTLIB += util xml2 z iconv intl
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl lzma
+WANTLIB += m pcre pthread ssl util xml2 z
 
 MODULES=		x11/gnome \
 			devel/gconf2
