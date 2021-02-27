@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2020/07/04 16:22:56 paco Exp $
+# $OpenBSD: Makefile,v 1.37 2021/02/27 18:45:33 sthen Exp $
 
 COMMENT =		tool for installing Python packages
 
-MODPY_EGG_VERSION =	20.1.1
+MODPY_EGG_VERSION =	20.3.4
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://pip.pypa.io/en/stable/
 
