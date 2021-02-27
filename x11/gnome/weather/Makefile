@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2021/02/23 19:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2021/02/27 08:40:03 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -6,7 +6,7 @@ COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
 GNOME_VERSION=		3.36.1
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -15,7 +15,6 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gjs \
