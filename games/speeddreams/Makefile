@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/02/27 13:37:24 sthen Exp $
 
 BROKEN =		failure on startup
 
@@ -40,6 +40,7 @@ TAR =			${LOCALBASE}/bin/gtar
 # avoid WRKDIST = ${WRKDIR}
 EXTRACT_CASES = *.tar.xz) \
         xzcat ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
+FIX_CRLF_FILES =	src/modules/simu/simuv4/simu.cpp
 
 DISTFILES = \
 	${DISTNAME}${EXTRACT_SUFX} \
@@ -73,8 +74,5 @@ CXXFLAGS +=		-I${X11BASE}/include
 
 pre-extract:
 	@mkdir ${WRKDIST}
-
-post-extract:
-	perl -pi -e 's/\015$$//' ${WRKSRC}/src/modules/simu/simuv4/simu.cpp
 
 .include <bsd.port.mk>

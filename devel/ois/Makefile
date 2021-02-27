@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/20 16:44:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/27 13:37:24 sthen Exp $
 
 COMMENT =		object-oriented input system
 
@@ -37,9 +37,8 @@ AUTOCONF_VERSION =	2.60
 AUTOMAKE_VERSION =	1.10
 
 NO_TEST =		Yes
-
-post-extract:
-	find ${WRKSRC} -type f -exec perl -pi -e 's/\015//g' {} +
+FIX_CRLF_FILES =	demos/FFConsoleDemo.cpp demos/OISConsole.cpp \
+			src/Makefile.am src/linux/LinuxInputManager.cpp
 
 post-patch:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \

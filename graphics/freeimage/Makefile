@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/27 13:37:24 sthen Exp $
 
 COMMENT=		c++ library for common image format
 
@@ -30,9 +30,7 @@ MAKE_ENV=		LIBfreeimage_VERSION=${LIBfreeimage_VERSION} \
 			CXXFLAGS="${CXXFLAGS}"
 MAKE_TARGET=		Makefile.gnu
 
-post-extract:
-	perl -pi -e 's/\015//g' ${WRKSRC}/Makefile.gnu \
-				${WRKSRC}/TestAPI/Makefile
+FIX_CRLF_FILES=		Makefile.gnu TestAPI/Makefile
 
 do-test:
 	cd ${WRKSRC}/TestAPI && ${MAKE_PROGRAM} ${MAKE_ENV}

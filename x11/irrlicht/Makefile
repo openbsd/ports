@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/27 13:37:24 sthen Exp $
 
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8.4
@@ -16,7 +16,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # BSD-style (zlib/libpng)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += 		GL Xxf86vm bz2 jpeg m png ${COMPILER_LIBCXX} z
+WANTLIB +=		GL Xxf86vm bz2 jpeg m png ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -58,19 +58,9 @@ EXAMPLEDIRS =		01.HelloWorld 02.Quake3Map 03.CustomSceneNode \
 			19.MouseAndJoystick 20.ManagedLights 21.Quake3Explorer \
 			22.MaterialViewer 23.SMeshHandling Demo
 
-pre-patch:
-	@perl -pi -e 's/\015//g' ${WRKSRC}/*.{cpp,h} ${WRKSRC}/Makefile \
-		${WRKDIST}/include/*.h
-.	for DIR in ${EXAMPLEDIRS}
-	find ${WRKDIST}/examples/${DIR} -type f \( -name "*.cpp" -or -name \
-		"*.h" -or -name Makefile \) -exec perl -pi -e 's/\015//g' \
-		"{}" \;
-.	endfor
-	cd ${WRKDIST}/doc && perl -pi -e 's/\015//g' aesGladman.txt \
-		bzip2-license.txt readme.txt upgrade-guide.txt
-	cd ${WRKDIST}/media && perl -pi -e 's/\015//g' config.xml d3d8.[pv]sh \
-		d3d9.{hlsl,psh,vsh} dwarf-Read-Me.txt earth.x map-20kdm2.txt \
-		ninja\ animation\ ranges.txt opengl.{frag,psh,vert,vsh}
+FIX_CRLF_FILES =	include/*.h doc/*txt examples/*/{*.cpp,*.h,Makefile} \
+			media/*.{frag,hlsl,psh,vert,vsh,xml,txt} \
+			${WRKSRC}/*.{cpp,h} ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/irrlicht
