@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2075 2021/02/25 21:17:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.2076 2021/02/27 03:12:35 daniel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1621,6 +1621,7 @@
      SUBDIR += py-pretend
      SUBDIR += py-pretend,python3
      SUBDIR += py-progress
+     SUBDIR += py-progress,python3
      SUBDIR += py-progressbar
      SUBDIR += py-progressbar,python3
      SUBDIR += py-prompt_toolkit,python3
@@ -1634,6 +1635,7 @@
      SUBDIR += py-pyinotify
      SUBDIR += py-pyinotify,python3
      SUBDIR += py-pyprof2calltree
+     SUBDIR += py-pyprof2calltree,python3
      SUBDIR += py-pyro
      SUBDIR += py-pyte
      SUBDIR += py-pyte,python3
@@ -1793,6 +1795,7 @@
      SUBDIR += pylint,python3
      SUBDIR += pyrex
      SUBDIR += pyusb
+     SUBDIR += pyusb,python3
      SUBDIR += qbs
      SUBDIR += qgit
      SUBDIR += qjson
