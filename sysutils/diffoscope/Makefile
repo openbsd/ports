@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2021/02/27 03:54:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.52 2021/02/27 04:12:13 bcallah Exp $
 
 MODPY_EGG_VERSION =	167
 COMMENT =	in-depth comparison of files, archives, and directories
@@ -12,7 +12,6 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
