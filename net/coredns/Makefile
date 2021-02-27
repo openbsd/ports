@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/22 19:31:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/27 07:40:43 ajacoutot Exp $
 
 # XXX cannot update because of:
 # https://github.com/DataDog/dd-trace-go/pull/754
@@ -6,7 +6,7 @@
 COMMENT=	fast and flexible DNS server/forwarder
 
 MODGO_MODNAME=	github.com/coredns/coredns
-MODGO_VERSION=	v1.8.1
+MODGO_VERSION=	v1.8.3
 DISTNAME=	coredns-${MODGO_VERSION}
 
 CATEGORIES=	net sysutils
@@ -38,14 +38,14 @@ MODGO_MODULES =	\
 	dmitri.shuralyov.com/gpu/mtl					 v0.0.0-20190408044501-666a987793e9 \
 	github.com/!azure/azure-sdk-for-go				 v40.6.0+incompatible \
 	github.com/!azure/go-autorest					 v14.2.0+incompatible \
-	github.com/!azure/go-autorest/autorest				 v0.11.17 \
-	github.com/!azure/go-autorest/autorest/adal			 v0.9.10 \
-	github.com/!azure/go-autorest/autorest/azure/auth		 v0.5.6 \
+	github.com/!azure/go-autorest/autorest				 v0.11.18 \
+	github.com/!azure/go-autorest/autorest/adal			 v0.9.13 \
+	github.com/!azure/go-autorest/autorest/azure/auth		 v0.5.7 \
 	github.com/!azure/go-autorest/autorest/azure/cli		 v0.4.2 \
 	github.com/!azure/go-autorest/autorest/date			 v0.3.0 \
 	github.com/!azure/go-autorest/autorest/mocks			 v0.4.1 \
 	github.com/!azure/go-autorest/autorest/to			 v0.2.0 \
-	github.com/!azure/go-autorest/logger				 v0.2.0 \
+	github.com/!azure/go-autorest/logger				 v0.2.1 \
 	github.com/!azure/go-autorest/tracing				 v0.6.0 \
 	github.com/!burnt!sushi/toml					 v0.3.1 \
 	github.com/!burnt!sushi/xgb					 v0.0.0-20160522181843-27f122750802 \
@@ -67,7 +67,7 @@ MODGO_MODULES =	\
 	github.com/aryann/difflib					 v0.0.0-20170710044230-e206f873d14a \
 	github.com/asaskevich/govalidator				 v0.0.0-20190424111038-f61b66f89f4a \
 	github.com/aws/aws-lambda-go					 v1.13.3 \
-	github.com/aws/aws-sdk-go					 v1.36.28 \
+	github.com/aws/aws-sdk-go					 v1.37.10 \
 	github.com/aws/aws-sdk-go-v2					 v0.18.0 \
 	github.com/beorn7/perks						 v1.0.1 \
 	github.com/bgentry/speakeasy					 v0.1.0 \
@@ -94,7 +94,7 @@ MODGO_MODULES =	\
 	github.com/davecgh/go-spew					 v1.1.1 \
 	github.com/dgrijalva/jwt-go					 v3.2.0+incompatible \
 	github.com/dimchansky/utfbom					 v1.1.1 \
-	github.com/dnstap/golang-dnstap					 v0.3.0 \
+	github.com/dnstap/golang-dnstap					 v0.4.0 \
 	github.com/docker/spdystream					 v0.0.0-20160310174837-449fdfce4d96 \
 	github.com/docopt/docopt-go					 v0.0.0-20180111231733-ee0de3bc6815 \
 	github.com/dustin/go-humanize					 v1.0.0 \
@@ -200,7 +200,7 @@ MODGO_MODULES =	\
 	github.com/mattn/go-isatty					 v0.0.4 \
 	github.com/mattn/go-runewidth					 v0.0.2 \
 	github.com/matttproud/golang_protobuf_extensions		 v1.0.1 \
-	github.com/miekg/dns						 v1.1.35 \
+	github.com/miekg/dns						 v1.1.38 \
 	github.com/mitchellh/cli					 v1.0.0 \
 	github.com/mitchellh/go-homedir					 v1.1.0 \
 	github.com/mitchellh/go-testing-interface			 v1.0.0 \
@@ -344,9 +344,12 @@ MODGO_MODFILES =	\
 	cloud.google.com/go/storage				 v1.0.0 \
 	cloud.google.com/go/storage				 v1.5.0 \
 	github.com/!azure/go-autorest/autorest			 v0.11.1 \
+	github.com/!azure/go-autorest/autorest			 v0.11.17 \
 	github.com/!azure/go-autorest/autorest/adal		 v0.9.0 \
+	github.com/!azure/go-autorest/autorest/adal		 v0.9.11 \
 	github.com/!azure/go-autorest/autorest/adal		 v0.9.5 \
 	github.com/!azure/go-autorest/autorest/mocks		 v0.4.0 \
+	github.com/!azure/go-autorest/logger			 v0.2.0 \
 	github.com/alecthomas/template				 v0.0.0-20160405071501-a0175ee3bccc \
 	github.com/alecthomas/units				 v0.0.0-20151022065526-2efee857e7cf \
 	github.com/alecthomas/units				 v0.0.0-20190717042225-c3de453c63f4 \
