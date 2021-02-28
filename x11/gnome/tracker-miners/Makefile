@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/28 08:24:40 ajacoutot Exp $
 
 PORTROACH=		limit:^2
 
@@ -6,7 +6,7 @@ COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
 GNOME_VERSION=		2.3.5
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 
