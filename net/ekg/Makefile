@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/02/28 21:35:44 naddy Exp $
 
 COMMENT=	Gadu-Gadu IM protocol client
 
 DISTNAME=	ekg-1.7
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 HOMEPAGE=	http://ekg.chmurka.net/
@@ -26,6 +26,9 @@ CONFIGURE_ARGS=	--enable-dynamic \
 		--without-libjpeg \
 		--without-libgsm \
 		--without-libungif
+
+# avoid patching numerous duplicate symbols in numerous files
+CFLAGS+=	-fcommon
 
 NO_TEST=	Yes
 
