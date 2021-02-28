@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/07/12 07:19:56 zhuk Exp $
-bin/pqxx-config
+@comment $OpenBSD: PLIST,v 1.4 2021/02/28 12:58:21 sthen Exp $
 include/pqxx/
+include/pqxx/array
+include/pqxx/array.hxx
 include/pqxx/basic_connection
 include/pqxx/basic_connection.hxx
 include/pqxx/binarystring
@@ -27,6 +28,8 @@ include/pqxx/field
 include/pqxx/field.hxx
 include/pqxx/internal/
 include/pqxx/internal/callgate.hxx
+include/pqxx/internal/encoding_group.hxx
+include/pqxx/internal/encodings.hxx
 include/pqxx/internal/gates/
 include/pqxx/internal/gates/connection-dbtransaction.hxx
 include/pqxx/internal/gates/connection-errorhandler.hxx
@@ -43,14 +46,21 @@ include/pqxx/internal/gates/icursor_iterator-icursorstream.hxx
 include/pqxx/internal/gates/icursorstream-icursor_iterator.hxx
 include/pqxx/internal/gates/result-connection.hxx
 include/pqxx/internal/gates/result-creation.hxx
+include/pqxx/internal/gates/result-row.hxx
 include/pqxx/internal/gates/result-sql_cursor.hxx
+include/pqxx/internal/gates/transaction-sql_cursor.hxx
+include/pqxx/internal/gates/transaction-stream_from.hxx
+include/pqxx/internal/gates/transaction-stream_to.hxx
 include/pqxx/internal/gates/transaction-subtransaction.hxx
 include/pqxx/internal/gates/transaction-tablereader.hxx
 include/pqxx/internal/gates/transaction-tablewriter.hxx
 include/pqxx/internal/gates/transaction-transactionfocus.hxx
+include/pqxx/internal/ignore-deprecated-post.hxx
+include/pqxx/internal/ignore-deprecated-pre.hxx
 include/pqxx/internal/libpq-forward.hxx
-include/pqxx/internal/result_data.hxx
+include/pqxx/internal/sql_cursor.hxx
 include/pqxx/internal/statement_parameters.hxx
+include/pqxx/internal/type_utils.hxx
 include/pqxx/isolation
 include/pqxx/isolation.hxx
 include/pqxx/largeobject
@@ -59,9 +69,6 @@ include/pqxx/nontransaction
 include/pqxx/nontransaction.hxx
 include/pqxx/notification
 include/pqxx/notification.hxx
-include/pqxx/notify-listen
-include/pqxx/notify-listen.hxx
-include/pqxx/performance.hxx
 include/pqxx/pipeline
 include/pqxx/pipeline.hxx
 include/pqxx/pqxx
@@ -69,10 +76,18 @@ include/pqxx/prepared_statement
 include/pqxx/prepared_statement.hxx
 include/pqxx/result
 include/pqxx/result.hxx
+include/pqxx/result_iterator.hxx
 include/pqxx/robusttransaction
 include/pqxx/robusttransaction.hxx
+include/pqxx/row
+include/pqxx/row.hxx
 include/pqxx/strconv
 include/pqxx/strconv.hxx
+include/pqxx/stream_base.hxx
+include/pqxx/stream_from
+include/pqxx/stream_from.hxx
+include/pqxx/stream_to
+include/pqxx/stream_to.hxx
 include/pqxx/subtransaction
 include/pqxx/subtransaction.hxx
 include/pqxx/tablereader
@@ -87,15 +102,13 @@ include/pqxx/transaction_base
 include/pqxx/transaction_base.hxx
 include/pqxx/transactor
 include/pqxx/transactor.hxx
-include/pqxx/trigger
-include/pqxx/trigger.hxx
-include/pqxx/tuple
-include/pqxx/tuple.hxx
+include/pqxx/types
+include/pqxx/types.hxx
 include/pqxx/util
 include/pqxx/util.hxx
 include/pqxx/version
 include/pqxx/version.hxx
-lib/libpqxx.a
+@static-lib lib/libpqxx.a
 lib/libpqxx.la
 @lib lib/libpqxx.so.${LIBpqxx_VERSION}
 lib/pkgconfig/libpqxx.pc

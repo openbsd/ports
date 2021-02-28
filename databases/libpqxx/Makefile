@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/23 19:39:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/02/28 12:58:21 sthen Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
-DISTNAME=	libpqxx-4.0.1
-REVISION =	2
+GH_ACCOUNT=	jtv
+GH_PROJECT=	libpqxx
+GH_TAGNAME=	6.4.7
+
 CATEGORIES=	databases devel
 
-SHARED_LIBS =	pqxx                 2.0      # .0.0
+SHARED_LIBS =	pqxx                 3.0      # .0.0
 
 HOMEPAGE=	http://pqxx.org/development/libpqxx/
 
@@ -15,14 +17,12 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto m pq ssl ${COMPILER_LIBCXX}
 
-MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
-
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	databases/postgresql
 
-MODULES=	databases/postgresql lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODULES=	databases/postgresql \
+		lang/python
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES=tools/splitconfig \
 		tools/template2mak.py
@@ -31,7 +31,8 @@ MODPY_ADJ_FILES=tools/splitconfig \
 SEPARATE_BUILD=	No
 
 CONFIGURE_STYLE=gnu
+USE_GMAKE=	Yes
 
-MODPOSTGRESQL_TEST_DBNAME =	pqxx-test
+MODPOSTGRESQL_TEST_DBNAME=	pqxx-test
 
 .include <bsd.port.mk>

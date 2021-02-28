@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2014/07/12 07:19:56 zhuk Exp $
---- src/Makefile.in.orig	Fri Jul 11 16:13:06 2014
-+++ src/Makefile.in	Fri Jul 11 16:13:22 2014
-@@ -291,7 +291,7 @@ libpqxx_la_SOURCES = binarystring.cxx \
- 	tuple.cxx \
- 	util.cxx
+$OpenBSD: patch-src_Makefile_in,v 1.5 2021/02/28 12:58:21 sthen Exp $
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -399,7 +399,7 @@ libpqxx_la_SOURCES = \
+ 	util.cxx \
+ 	version.cxx
  
 -libpqxx_version = -release $(PQXX_ABI)
 +#libpqxx_version = -release $(PQXX_ABI)
