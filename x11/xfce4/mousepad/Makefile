@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2021/01/31 18:15:10 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2021/02/28 18:17:20 landry Exp $
 
 COMMENT=	Xfce4 simple text editor
 
-XFCE_VERSION=	0.5.2
+XFCE_VERSION=	0.5.3
 XFCE_GOODIE=	mousepad
 
 # GPLv2
