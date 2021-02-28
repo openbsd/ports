@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/26 13:16:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/28 06:27:01 rsadowski Exp $
 
 COMMENT=	open-source subdivision surface library
 
-V=		3.4.3
+V=		3.4.4
 GH_ACCOUNT=	PixarAnimationStudios
 GH_PROJECT=	OpenSubdiv
 GH_TAGNAME=	v${V:S/./_/g}
 DISTNAME=	${GH_PROJECT:L}-${V}
 
-SHARED_LIBS +=	osdCPU		0.0 # 3.4.3
-SHARED_LIBS +=	osdGPU		0.0 # 3.4.3
+SHARED_LIBS +=	osdCPU		1.0 # 3.4.4
+SHARED_LIBS +=	osdGPU		1.0 # 3.4.4
 
 CATEGORIES=	graphics
 
