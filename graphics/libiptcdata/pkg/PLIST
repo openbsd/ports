@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/01/27 14:51:15 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.1 2021/02/28 08:24:21 ajacoutot Exp $
+@conflict py-libiptcdata-*
+@pkgpath graphics/libiptcdata,-main
+@pkgpath graphics/libiptcdata,-python
 @bin bin/iptc
 include/libiptcdata/
 include/libiptcdata/_stdint.h
@@ -9,7 +12,7 @@ include/libiptcdata/iptc-log.h
 include/libiptcdata/iptc-mem.h
 include/libiptcdata/iptc-tag.h
 include/libiptcdata/iptc-utils.h
-lib/libiptcdata.a
+@static-lib lib/libiptcdata.a
 lib/libiptcdata.la
 @lib lib/libiptcdata.so.${LIBiptcdata_VERSION}
 lib/pkgconfig/libiptcdata.pc

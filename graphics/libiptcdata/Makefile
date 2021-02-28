@@ -1,41 +1,25 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/02/28 08:24:21 ajacoutot Exp $
 
-COMMENT-main =		library for manipulating IPTC metadata
-COMMENT-python =	libiptcdata Python bindings
+COMMENT =		library for manipulating IPTC metadata
 
 DISTNAME =		libiptcdata-1.0.4
-PKGNAME-main =		${DISTNAME}
-PKGNAME-python =	py-${DISTNAME}
+REVISION =		2
 
-REVISION-main =		1
-REVISION-python =	0
-
-SHARED_LIBS =		iptcdata 	0.0 # 3.3
+SHARED_LIBS +=  iptcdata             0.0      # 3.3
 
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://libiptcdata.sourceforge.net/
 
-# LGPL
+# LGPLv2
 PERMIT_PACKAGE =	Yes
 
-cWANTLIB =		m util pthread
-WANTLIB-main = 		${cWANTLIB} c iconv intl
-WANTLIB-python = 	${cWANTLIB} iptcdata
+WANTLIB += c iconv intl
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libiptcdata/}
 
-MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-LIB_DEPENDS-python = 	graphics/libiptcdata,-main
+LIB_DEPENDS =		devel/gettext,-runtime
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python
-CONFIGURE_ENV += 	PYTHON_VERSION=${MODPY_VERSION} \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread -lm -lutil"
-
-MULTI_PACKAGES = 	-main -python
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
