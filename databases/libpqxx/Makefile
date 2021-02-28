@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/28 12:58:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/28 20:37:56 sthen Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
@@ -32,6 +32,7 @@ SEPARATE_BUILD=	No
 
 CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes
+BUILD_DEPENDS=	textproc/xmlto
 
 MODPOSTGRESQL_TEST_DBNAME=	pqxx-test
 
