@@ -1,0 +1,14 @@
+$OpenBSD: patch-zig_lib_libcxx_include___locale,v 1.1.1.1 2021/02/28 15:32:17 semarie Exp $
+
+Index: zig/lib/libcxx/include/__locale
+--- zig/lib/libcxx/include/__locale.orig
++++ zig/lib/libcxx/include/__locale
+@@ -28,7 +28,7 @@
+ #elif defined(__sun__)
+ # include <xlocale.h>
+ # include <support/solaris/xlocale.h>
+-#elif defined(_NEWLIB_VERSION)
++#elif defined(_NEWLIB_VERSION) || defined(__OpenBSD__)
+ # include <support/newlib/xlocale.h>
+ #elif (defined(__APPLE__)      || defined(__FreeBSD__) \
+     || defined(__EMSCRIPTEN__) || defined(__IBMCPP__))

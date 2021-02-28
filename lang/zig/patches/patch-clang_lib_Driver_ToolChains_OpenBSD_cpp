@@ -1,0 +1,13 @@
+$OpenBSD: patch-clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.1.1.1 2021/02/28 15:32:17 semarie Exp $
+
+Index: clang/lib/Driver/ToolChains/OpenBSD.cpp
+--- clang/lib/Driver/ToolChains/OpenBSD.cpp.orig
++++ clang/lib/Driver/ToolChains/OpenBSD.cpp
+@@ -294,6 +294,7 @@ void OpenBSD::AddCXXStdlibLibArgs(const ArgList &Args,
+ 
+   CmdArgs.push_back(Profiling ? "-lc++_p" : "-lc++");
+   CmdArgs.push_back(Profiling ? "-lc++abi_p" : "-lc++abi");
++  CmdArgs.push_back(Profiling ? "-lpthread_p" : "-lpthread");
+ }
+ 
+ std::string OpenBSD::getCompilerRT(const ArgList &Args,

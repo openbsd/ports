@@ -1,0 +1,16 @@
+$OpenBSD: patch-zig_lib_libcxx_include_support_newlib_xlocale_h,v 1.1.1.1 2021/02/28 15:32:17 semarie Exp $
+
+Index: zig/lib/libcxx/include/support/newlib/xlocale.h
+--- zig/lib/libcxx/include/support/newlib/xlocale.h.orig
++++ zig/lib/libcxx/include/support/newlib/xlocale.h
+@@ -9,6 +9,10 @@
+ #ifndef _LIBCPP_SUPPORT_NEWLIB_XLOCALE_H
+ #define _LIBCPP_SUPPORT_NEWLIB_XLOCALE_H
+ 
++#if defined(__OpenBSD__)
++#include <support/xlocale/__strtonum_fallback.h>
++#endif // __OpenBSD__
++
+ #if defined(_NEWLIB_VERSION)
+ 
+ #include <cstdlib>
