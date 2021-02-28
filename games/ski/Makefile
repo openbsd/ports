@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/02/28 17:37:27 daniel Exp $
 
 COMMENT=		skiing simulation game
 
-DISTNAME=		ski-6.11
+DISTNAME=		ski-6.13
+
 CATEGORIES=		games
 
 HOMEPAGE=		http://catb.org/~esr/ski/
@@ -14,7 +15,6 @@ MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_ADJ_FILES=	ski
 
