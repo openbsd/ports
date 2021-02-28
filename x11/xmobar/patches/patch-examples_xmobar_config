@@ -1,6 +1,6 @@
-$OpenBSD: patch-samples_xmobar_config,v 1.11 2016/08/10 08:50:24 dcoppa Exp $
---- samples/xmobar.config.orig	Mon Aug  8 23:40:59 2016
-+++ samples/xmobar.config	Wed Aug 10 09:45:35 2016
+$OpenBSD: patch-examples_xmobar_config,v 1.1 2021/02/28 19:35:41 gnezdo Exp $
+--- examples/xmobar.config.orig	Mon Aug  8 23:40:59 2016
++++ examples/xmobar.config	Wed Aug 10 09:45:35 2016
 @@ -1,4 +1,4 @@
 -Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
 +Config { font = "fixed"

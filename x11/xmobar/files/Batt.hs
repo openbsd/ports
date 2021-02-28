@@ -1,7 +1,7 @@
-module Plugins.Monitors.Batt where
+module Xmobar.Plugins.Monitors.Batt where
 
-import Plugins.Monitors.Common
-import Plugins.Monitors.Batt.Binding
+import Xmobar.Plugins.Monitors.Common
+import Xmobar.Plugins.Monitors.Batt.Binding
 
 battConfig :: IO MConfig
 battConfig = mkMConfig

@@ -1,6 +1,6 @@
 {-# LANGUAGE CPP, ForeignFunctionInterface #-}
 
-module Plugins.Monitors.Batt.Binding (
+module Xmobar.Plugins.Monitors.Batt.Binding (
         getApmPowerInfo,
         ApmPowerInfo (..),
         AcState (..), BatteryState(..)

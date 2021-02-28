@@ -1,0 +1,11 @@
+packages: xmobar.cabal
+
+package xmobar
+    flags: +with_xft +with_mpd +with_mpris +with_inotify
+    extra-include-dirs: /usr/X11R6/include
+    extra-lib-dirs: /usr/local/lib/inotify
+    ld-options: -Wl,-rpath=/usr/local/lib/inotify
+
+package hinotify
+        extra-include-dirs: /usr/local/include/inotify
+        extra-lib-dirs: /usr/local/lib/inotify

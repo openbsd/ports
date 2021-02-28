@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_Xmobar_Plugins_Monitors_hs,v 1.1 2021/02/28 19:35:41 gnezdo Exp $
+
+Index: src/Xmobar/Plugins/Monitors.hs
+--- src/Xmobar/Plugins/Monitors.hs.orig
++++ src/Xmobar/Plugins/Monitors.hs
+@@ -59,8 +59,6 @@ import Xmobar.Plugins.Monitors.Mpris
+ 
+ data Monitors = Network      Interface   Args Rate
+               | DynNetwork               Args Rate
+-              | BatteryP     Args        Args Rate
+-              | BatteryN     Args        Args Rate Alias
+               | Battery      Args        Rate
+               | DiskU        DiskSpec    Args Rate
+               | DiskIO       DiskSpec    Args Rate
+@@ -127,8 +125,6 @@ instance Exec Monitors where
+     alias (Cpu _ _) = "cpu"
+     alias (MultiCpu _ _) = "multicpu"
+     alias (Battery _ _) = "battery"
+-    alias BatteryP {} = "battery"
+-    alias (BatteryN _ _ _ a)= a
+     alias (Brightness _ _) = "bright"
+     alias (CpuFreq _ _) = "cpufreq"
+     alias (TopProc _ _) = "top"
+@@ -173,8 +169,6 @@ instance Exec Monitors where
+     start (Memory a r) = runM a memConfig runMem r
+     start (Swap a r) = runM a swapConfig runSwap r
+     start (Battery a r) = runM a battConfig runBatt r
+-    start (BatteryP s a r) = runM a battConfig (runBatt' s) r
+-    start (BatteryN s a r _) = runM a battConfig (runBatt' s) r
+     start (Brightness a r) = runM a brightConfig runBright r
+     start (CpuFreq a r) = runM a cpuFreqConfig runCpuFreq r
+     start (CoreTemp a r) = runM a coreTempConfig runCoreTemp r
