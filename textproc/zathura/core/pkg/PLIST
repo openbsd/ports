@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/02/20 16:52:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/02/28 08:09:03 ajacoutot Exp $
 @conflict zathura-<=0.0.8.5p1
 @pkgpath textproc/zathura
 @bin bin/zathura
@@ -64,7 +64,6 @@ share/metainfo/
 share/metainfo/org.pwmt.zathura.appdata.xml
 share/zsh/
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag gtk-update-icon-cache %D/share/icons/scalable
 @tag update-desktop-database
 share/zsh/site-functions/
 share/zsh/site-functions/_zathura
