@@ -1,0 +1,3 @@
+The QEMU guest agent provides a daemon to run inside QEMU guests. It
+communicates with the host system and allows to perform various tasks in
+the guest from the host system.

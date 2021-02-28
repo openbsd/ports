@@ -1,12 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.47 2021/02/20 22:27:32 sthen Exp $
-@conflict kqemu-*
-@conflict qemu-*
-@pkgpath emulators/kqemu
-@pkgpath emulators/qemu,kqemu
-@pkgpath emulators/qemu-old[,no_x11]
+@comment $OpenBSD: PLIST-main,v 1.1 2021/02/28 18:38:41 landry Exp $
+@pkgpath emulators/qemu
 @bin bin/elf2dmp
 @bin bin/qemu-edid
-@bin bin/qemu-ga
 @bin bin/qemu-img
 @bin bin/qemu-io
 @bin bin/qemu-keymap
@@ -49,9 +44,7 @@
 @man man/man1/qemu.1
 @man man/man7/qemu-block-drivers.7
 @man man/man7/qemu-cpu-models.7
-@man man/man7/qemu-ga-ref.7
 @man man/man7/qemu-qmp-ref.7
-@man man/man8/qemu-ga.8
 @man man/man8/qemu-nbd.8
 share/applications/qemu.desktop
 share/doc/pkg-readmes/${PKGSTEM}
@@ -83,9 +76,6 @@ share/doc/qemu/interop/index.html
 share/doc/qemu/interop/live-block-operations.html
 share/doc/qemu/interop/objects.inv
 share/doc/qemu/interop/pr-helper.html
-share/doc/qemu/interop/qemu-ga-ref.html
-share/doc/qemu/interop/qemu-ga-ref.txt
-share/doc/qemu/interop/qemu-ga.html
 share/doc/qemu/interop/qemu-qmp-ref.html
 share/doc/qemu/interop/qemu-qmp-ref.txt
 share/doc/qemu/interop/search.html
