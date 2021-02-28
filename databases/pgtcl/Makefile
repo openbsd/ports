@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/28 12:36:46 sthen Exp $
 
 COMMENT=	Tcl interface to PostgreSQL
 
-V =		1.7
-
-DISTNAME=	pgtcl-${V}
-REVISION=	0
+V=		1.7
+DISTNAME=	libpgtcl-$V
+PKGNAME=	pgtcl-$V
+REVISION=	1
 CATEGORIES=	databases
 
-HOMEPAGE=	http://pgfoundry.org/projects/pgtcl/
+HOMEPAGE=	https://flightaware.github.io/Pgtcl/
 
 MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2151/
+PORTROACH=	site:https://github.com/flightaware/Pgtcl/archive/
+MASTER_SITES=	https://ftp.postgresql.org/pub/projects/pgFoundry/pgtcl/pgtcl/$V/
 
 MODULES=	lang/tcl
 
@@ -35,7 +36,6 @@ FAKE_FLAGS =	PKG_DIR='$$(PACKAGE_NAME)' INSTALL_PROGRAM='$$(INSTALL_DATA)' \
 		PKG_HEADERS='' PKG_TCL_SOURCES=''
 
 NO_TEST=	Yes
-WRKDIST =	${WRKDIR}/lib${DISTNAME}
 ALL_TARGET =	 binaries libraries
 INSTALL_TARGET =install-binaries install-libraries
 SEPARATE_BUILD =Yes

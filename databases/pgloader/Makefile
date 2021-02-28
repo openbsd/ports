@@ -1,24 +1,26 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/02/28 12:36:46 sthen Exp $
 
 COMMENT=	import CSV data and Large Object to PostgreSQL
 
-DISTNAME=	pgloader-2.3.2
-REVISION =	2
+PORTROACH=	site:https://github.com/dimitri/pgloader/archive/
+V=		2.3.2
+DISTNAME=	pgloader-$V
+REVISION=	3
 CATEGORIES=	databases
 
-HOMEPAGE=	http://pgfoundry.org/projects/pgloader/
+HOMEPAGE=	https://pgloader.io/
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2294/
+MASTER_SITES=	https://ftp.postgresql.org/pub/projects/pgFoundry/pgloader/pgloader/$V/
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-RUN_DEPENDS=	databases/py-psycopg2
+RUN_DEPENDS=	databases/py-psycopg2${MODPY_FLAVOR}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

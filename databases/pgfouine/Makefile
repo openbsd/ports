@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/24 16:48:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/02/28 12:36:46 sthen Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
-DISTNAME =	pgfouine-1.2
+V =		1.2
+DISTNAME =	pgfouine-$V
 CATEGORIES =	databases
-
-REVISION =	10
-
-HOMEPAGE =	http://pgfouine.projects.postgresql.org/
+REVISION =	11
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
+
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://pgfoundry.org/frs/download.php/2575/ \
-		http://pgfouine.projects.postgresql.org/releases/
-
+# XXX likely to be broken with php>=5; version in PORTROACH site may work
+PORTROACH =	site:https://github.com/milo/pgFouine/archive/
+MASTER_SITES =	https://ftp.postgresql.org/pub/projects/pgFoundry/pgfouine/pgFouine/pgFouine$V/
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*

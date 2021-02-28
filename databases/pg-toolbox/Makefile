@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/28 12:36:46 sthen Exp $
 
 COMMENT=	programs to aid the PostgreSQL administrator
 
-DISTNAME=	pg-toolbox-3
+V=		3
+DISTNAME=	pg-toolbox-$V
 CATEGORIES=	databases sysutils
-
-HOMEPAGE=	http://pg-toolbox.projects.postgresql.org/
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD / Zlib
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1943/
+MASTER_SITES=	https://ftp.postgresql.org/pub/projects/pgFoundry/pg-toolbox/pg-toolbox/Release$V/
 
 RUN_DEPENDS=	databases/postgresql,-main
 
