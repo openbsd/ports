@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/13 13:31:11 kili Exp $
-@bin bin/hasktags
-@comment share/doc/${DISTNAME}/
-@comment share/doc/${DISTNAME}/LICENSE
+@comment $OpenBSD: PLIST,v 1.2 2021/02/28 19:30:21 gnezdo Exp $
+@bin bin/${MODCABAL_STEM}
+@comment share/doc/${PKGNAME}/
+@comment share/doc/${PKGNAME}/LICENSE
