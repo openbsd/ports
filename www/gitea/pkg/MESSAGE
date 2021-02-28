@@ -1,3 +1,9 @@
+If you are upgrading from ${PKGSTEM}-<1.7.0, update _gitea user's shell and
+home directory:
+
+  # usermod -s /bin/sh _gitea
+  # usermod -d /var/gitea _gitea
+
 If you are upgrading from ${PKGSTEM}-<1.7.1, please note the following changes:
 
 * Configuration file location has changed from ${SYSCONFDIR}/${PKGSTEM}/conf/app.ini
