@@ -1,6 +1,7 @@
---- gif2png.c.orig	Mon Jul 13 03:26:18 2015
-+++ gif2png.c	Wed Apr 27 19:51:20 2016
-@@ -137,6 +137,19 @@ static int writefile(struct GIFelement *s, struct GIFe
+Index: gif2png.c
+--- gif2png.c.orig
++++ gif2png.c
+@@ -138,6 +138,19 @@ static int writefile(struct GIFelement *s, struct GIFe
      png_text software;
      png_text comment;
  

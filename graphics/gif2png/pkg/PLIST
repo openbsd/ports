@@ -1,5 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/04/27 18:07:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/02/28 13:29:02 sthen Exp $
 @bin bin/gif2png
-bin/web2png
 @man man/man1/gif2png.1
-@man man/man1/web2png.1
