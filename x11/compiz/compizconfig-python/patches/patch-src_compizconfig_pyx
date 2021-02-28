@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_compizconfig_pyx,v 1.1 2013/12/03 00:51:19 fgsch Exp $
---- src/compizconfig.pyx.orig	Mon Feb 25 00:32:45 2013
-+++ src/compizconfig.pyx	Mon Feb 25 00:33:08 2013
+$OpenBSD: patch-src_compizconfig_pyx,v 1.2 2021/02/28 21:01:32 daniel Exp $
+Index: src/compizconfig.pyx
+--- src/compizconfig.pyx.orig
++++ src/compizconfig.pyx
 @@ -583,7 +583,7 @@ cdef class Setting:
      cdef object extendedStrRestrictions
      cdef object baseStrRestrictions
@@ -10,6 +11,15 @@ $OpenBSD: patch-src_compizconfig_pyx,v 1.1 2013/12/03 00:51:19 fgsch Exp $
          cdef CCSSettingType t
          cdef CCSSettingInfo * i
  
+@@ -653,7 +653,7 @@ cdef class Setting:
+ 
+     property Hints:
+         def __get__ (self):
+-            if self.ccsSetting.hints == '':
++            if not self.ccsSetting.hints:
+                 return []
+             else:
+                 return str (self.ccsSetting.hints).split (";")[:-1]
 @@ -689,7 +689,7 @@ cdef class SSGroup:
      cdef object display
      cdef object screens

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/02/28 21:01:32 daniel Exp $
 
 COMMENT =	compiz configuration system bindings
 
 DISTNAME =	compizconfig-python-0.8.4
-REVISION =	2
+REVISION =	3
 
 MASTER_SITES =	http://releases.compiz.org/components/compizconfig-python/
 
@@ -16,14 +16,17 @@ LIB_DEPENDS =	x11/compiz/libcompizconfig
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-BUILD_DEPENDS =	devel/pyrex
+BUILD_DEPENDS =	lang/cython${MODPY_FLAVOR}
 
 LIBTOOL_FLAGS =	--tag=disable-static
 
-CONFIGURE_STYLE = gnu
+AUTOCONF_VERSION = 2.63
+AUTOMAKE_VERSION = 1.12
+CONFIGURE_STYLE = autoreconf
 
 pre-patch:
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+	@ln -s ${LOCALBASE}/bin/cython${MODPY_BIN_SUFFIX} ${WRKDIR}/bin/cython
 
 pre-build:
 	@rm -f ${WRKSRC}/src/compizconfig.c

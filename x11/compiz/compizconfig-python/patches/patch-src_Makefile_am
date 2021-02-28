@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2021/02/28 21:01:32 daniel Exp $
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -3,7 +3,7 @@ INCLUDES=\
+ 		 @CCS_CFLAGS@
+ 
+ compizconfig.c: compizconfig.pyx
+-	-pyrexc compizconfig.pyx
++	-cython compizconfig.pyx
+ 
+ compizconfig_la_LDFLAGS = -module -avoid-version -fPIC -export-symbols-regex initcompizconfig -lX11
+ compizconfig_la_LIBADD = @CCS_LIBS@

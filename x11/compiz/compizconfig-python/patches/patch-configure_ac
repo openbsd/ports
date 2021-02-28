@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1 2021/02/28 21:01:32 daniel Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -31,10 +31,10 @@ else
+ 	AM_PATH_PYTHON_VERSION(2.5,2.5.0)
+ fi
+ 
+-AC_CHECK_PROGS(PYREX, pyrexc)
++AC_CHECK_PROGS(PYREX, cython)
+ if test -z "$PYREX"
+ then
+-	AC_MSG_ERROR([Couldn't find Pyrex])
++	AC_MSG_ERROR([Couldn't find Cython])
+ fi
+ 
+ AC_CONFIG_FILES([
