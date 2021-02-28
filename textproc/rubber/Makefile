@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/02/28 01:25:20 daniel Exp $
 
 COMMENT=	wrapper for LaTeX and friends
 
-MODPY_EGG_VERSION=	1.4
+MODPY_EGG_VERSION=	1.5.1
 DISTNAME=	rubber-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	textproc print
 
@@ -16,7 +15,6 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${HOMEPAGE}/trunk/${MODPY_EGG_VERSION}/+download/
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	print/texinfo \
 		print/texlive/base
