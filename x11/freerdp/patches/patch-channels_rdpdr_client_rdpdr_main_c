@@ -1,0 +1,23 @@
+$OpenBSD: patch-channels_rdpdr_client_rdpdr_main_c,v 1.1 2021/02/28 14:42:09 sthen Exp $
+
+Index: channels/rdpdr/client/rdpdr_main.c
+--- channels/rdpdr/client/rdpdr_main.c.orig
++++ channels/rdpdr/client/rdpdr_main.c
+@@ -111,7 +111,7 @@ static UINT rdpdr_send_device_list_remove_request(rdpd
+ 	return rdpdr_send(rdpdr, s);
+ }
+ 
+-#if defined(_UWP) || defined(__IOS__)
++#if defined(_UWP) || defined(__IOS__) || defined(__OpenBSD__)
+ 
+ void first_hotplug(rdpdrPlugin* rdpdr)
+ {
+@@ -957,7 +957,7 @@ out:
+ 
+ #endif
+ 
+-#if !defined(_WIN32) && !defined(__IOS__)
++#if !defined(_WIN32) && !defined(__IOS__) && !defined(__OpenBSD__)
+ /**
+  * Function description
+  *

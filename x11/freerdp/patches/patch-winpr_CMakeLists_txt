@@ -1,0 +1,14 @@
+$OpenBSD: patch-winpr_CMakeLists_txt,v 1.1 2021/02/28 14:42:09 sthen Exp $
+
+Index: winpr/CMakeLists.txt
+--- winpr/CMakeLists.txt.orig
++++ winpr/CMakeLists.txt
+@@ -101,7 +101,7 @@ else()
+ 	if(NOT IOS)
+ 		check_include_files(fcntl.h HAVE_FCNTL_H)
+ 		check_include_files(unistd.h HAVE_UNISTD_H)
+-		check_include_files(execinfo.h HAVE_EXECINFO_H)
++		#check_include_files(execinfo.h HAVE_EXECINFO_H)
+ 		check_include_files(inttypes.h HAVE_INTTYPES_H)
+ 		check_include_files(sys/modem.h HAVE_SYS_MODEM_H)
+ 		check_include_files(sys/filio.h HAVE_SYS_FILIO_H)

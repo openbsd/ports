@@ -1,9 +1,11 @@
-$OpenBSD: patch-client_common_CMakeLists_txt,v 1.1 2018/04/28 19:20:17 landry Exp $
-Doesn't use ossaudio for OpenBSD
+$OpenBSD: patch-client_common_CMakeLists_txt,v 1.2 2021/02/28 14:42:09 sthen Exp $
+
+Don't use ossaudio for OpenBSD
+
 Index: client/common/CMakeLists.txt
 --- client/common/CMakeLists.txt.orig
 +++ client/common/CMakeLists.txt
-@@ -66,11 +66,7 @@ endif()
+@@ -67,11 +67,7 @@ endif()
  set(${MODULE_PREFIX}_LIBS ${${MODULE_PREFIX}_LIBS} winpr)
  
  target_link_libraries(${MODULE_NAME} ${PRIVATE_KEYWORD} ${FREERDP_CHANNELS_CLIENT_LIBS})

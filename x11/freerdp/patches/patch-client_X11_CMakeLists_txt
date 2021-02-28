@@ -1,9 +1,9 @@
-$OpenBSD: patch-client_X11_CMakeLists_txt,v 1.3 2018/04/28 19:20:17 landry Exp $
+$OpenBSD: patch-client_X11_CMakeLists_txt,v 1.4 2021/02/28 14:42:09 sthen Exp $
 
 Index: client/X11/CMakeLists.txt
 --- client/X11/CMakeLists.txt.orig
 +++ client/X11/CMakeLists.txt
-@@ -203,7 +203,7 @@ endif()
+@@ -229,7 +229,7 @@ endif()
  include_directories(${CMAKE_SOURCE_DIR}/resources)
  
  set(${MODULE_PREFIX}_LIBS ${${MODULE_PREFIX}_LIBS} freerdp-client freerdp m)
