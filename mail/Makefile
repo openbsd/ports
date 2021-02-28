@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2021/02/24 22:54:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.402 2021/02/28 14:34:09 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -248,8 +248,6 @@
      SUBDIR += tnef
      SUBDIR += trojita
      SUBDIR += vrfy
-     SUBDIR += wmmultipop3
-     SUBDIR += wmpop3
      SUBDIR += xlbiff
      SUBDIR += z-push
 

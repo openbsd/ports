@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1221 2021/02/28 13:46:59 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1222 2021/02/28 14:34:09 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2163,6 +2163,8 @@ my $obsolete_reason = {
 	'gtkpod' => 3,
 	'golem' => 0,
 	'py-beautifulsoup' => 14,
+	'wmmultipop3' => 3,
+	'wmpop3' => 3,
 };
 
 # reasons for obsolete packages
