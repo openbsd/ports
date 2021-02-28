@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1552 2021/02/25 23:19:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1553 2021/02/28 14:01:11 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2691,9 +2691,6 @@ _post-extract-finalize:
 .if ${FIX_EXTRACT_PERMISSIONS:L} == "yes"
 	@chmod -R a+rX ${WRKDIR}
 .endif
-.if !empty(FIX_CRLF_FILES)
-	@cd ${WRKDIST} && perl -i -pe 's/\r$$//' -- ${FIX_CRLF_FILES}
-.endif
 
 # run as _pbuild
 .if !target(do-extract)
@@ -2722,26 +2719,10 @@ ${_PREPATCH_COOKIE}:
 .endif
 
 
-
-# The real distpatch
-
-${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
-.if target(pre-patch)
-	@${_PMAKE} ${_PREPATCH_COOKIE}
-.endif
-	@${_PMAKE} do-distpatch
-.if target(post-distpatch)
-	@${_PMAKE} post-distpatch
-.endif
-.if ${PATCH_CHECK_ONLY:L} != "yes"
-	@${_PMAKE_COOKIE} $@
-.endif
-
 # run as _pbuild
-.if !target(do-distpatch)
+.if !target(do-distpatch) && !empty(_LIST_PATCHFILES)
 do-distpatch:
 # What DISTPATCH normally does
-.  if !empty(_LIST_PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${FULLPKGNAME}${_MASTER}"
 	@cd ${FULLDISTDIR}; \
 	  for patchfile in ${_LIST_PATCHFILES}; do \
@@ -2753,8 +2734,27 @@ do-distpatch:
 			${PATCH_CASES} \
 		esac; \
 	  done
-.  endif
 # End of DISTPATCH.
+.endif
+
+
+# The real distpatch
+
+${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
+.if target(pre-patch)
+	@${_PMAKE} ${_PREPATCH_COOKIE}
+.endif
+.if target(do-distpatch)
+	@${_PMAKE} do-distpatch
+.endif
+.if target(post-distpatch)
+	@${_PMAKE} post-distpatch
+.endif
+.if !empty(FIX_CRLF_FILES)
+	@cd ${WRKDIST} && exec ${_PBUILD} perl -i -pe 's/\r$$//' -- ${FIX_CRLF_FILES}
+.endif
+.if ${PATCH_CHECK_ONLY:L} != "yes"
+	@${_PMAKE_COOKIE} $@
 .endif
 
 # The real patch
@@ -2769,7 +2769,8 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .else
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
-.  if target(do-distpatch) || target(post-distpatch) || !empty(PATCHFILES)
+.  if target(do-distpatch) || target(post-distpatch) || !empty(PATCHFILES) \
+	|| !empty(FIX_CRLF_FILES)
 	@${_MAKE} _internal-distpatch
 .  endif
 	@if cd ${PATCHDIR} 2>/dev/null || [ x"${PATCH_LIST:M/*}" != x"" ]; then \
