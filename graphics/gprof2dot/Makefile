@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/02/28 13:38:00 sthen Exp $
 
 COMMENT=		convert profilers output into a dot(1) graph
 
 GH_ACCOUNT=		jrfonseca
 GH_PROJECT=		gprof2dot
-GH_TAGNAME=		2016.10.13
+GH_TAGNAME=		2021.02.21
 
-MODPY_EGG_VERSION=	${GH_TAGNAME}
+MODPY_EGG_VERSION=	${GH_TAGNAME:C/\.0/./g}
 
 CATEGORIES=		graphics
 
@@ -14,10 +14,12 @@ CATEGORIES=		graphics
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_SETUPTOOLS=	Yes
 
 RUN_DEPENDS=		math/graphviz
+
+do-test:
+	${MODPY_BIN} ${WRKSRC}/tests/test.py
 
 .include <bsd.port.mk>
