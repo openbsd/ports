@@ -1,12 +1,133 @@
-$OpenBSD: patch-goopy_functional_py,v 1.1.1.1 2005/03/22 13:15:03 xsa Exp $
---- goopy/functional.py.orig	Mon Mar 21 19:26:00 2005
-+++ goopy/functional.py	Mon Mar 21 19:26:07 2005
-@@ -184,7 +184,7 @@ def maximum(cmp, lst):
+$OpenBSD: patch-goopy_functional_py,v 1.2 2021/02/28 04:02:07 daniel Exp $
+Index: goopy/functional.py
+--- goopy/functional.py.orig
++++ goopy/functional.py
+@@ -31,8 +31,8 @@
+ Handy things for functional style programming.
+ """
  
-   for i in xrange(1, len(lst)):
+-from __future__ import nested_scopes
+ 
++
+ import math as _math
+ 
+ def some(f, lst):
+@@ -58,7 +58,7 @@ def find(p, lst, start=0):
+   -1 if there is none.
+   """
+   
+-  for i in xrange(start, len(lst)):
++  for i in range(start, len(lst)):
+     if p(lst[i]):
+       return i
+ 
+@@ -94,7 +94,7 @@ def remove_duplicates(lst, key=None):
+   if key == None:
+     for v in lst:
+       try:
+-        if not d.has_key(v):
++        if v not in d:
+           result.append(v)
+           d[v] = 1
+       except TypeError:
+@@ -103,7 +103,7 @@ def remove_duplicates(lst, key=None):
+     for v in lst:
+       thiskey = key(v)
+       try:
+-        if not d.has_key(thiskey):
++        if thiskey not in d:
+           result.append(v)
+           d[thiskey] = 1
+       except TypeError:
+@@ -117,7 +117,7 @@ def transpose(seq_of_seqs):
+   SEQ_OF_SEQS must be rectangular for this to make sense.
+   """
+   
+-  return zip(*seq_of_seqs)
++  return list(zip(*seq_of_seqs))
+ 
+ def intersection(a, b):
+   """
+@@ -134,7 +134,7 @@ def intersection(a, b):
+     d = {}
+     for x in b:
+       d[x] = 1
+-    c = [x for x in a if d.has_key(x)]
++    c = [x for x in a if x in d]
+   except TypeError:                     # really want HashError
+     c = [x for x in a if x in b]
+   return c
+@@ -178,11 +178,11 @@ def maximum(cmp, lst):
+   """
+   
+   if not lst:
+-    raise ValueError, 'empty list'
++    raise ValueError('empty list')
+ 
+   maxval = lst[0]
+ 
+-  for i in xrange(1, len(lst)):
++  for i in range(1, len(lst)):
      v = lst[i]
--    if cmp(maxval, v) <= 0:
-+    if cmp(maxval, v) < 0:
+     if cmp(maxval, v) < 0:
        maxval = v
+@@ -199,11 +199,11 @@ def minimum(cmp, lst):
+   """
  
-   return maxval
+   if not lst:
+-    raise ValueError, 'empty list'
++    raise ValueError('empty list')
+ 
+   minval = lst[0]
+ 
+-  for i in xrange(1, len(lst)):
++  for i in range(1, len(lst)):
+     v = lst[i]
+     if cmp(minval, v) > 0:
+       minval = v
+@@ -251,8 +251,7 @@ def stddev(lst):
+ def lebesgue_norm(p, lst):
+   """l_norm(p, lst) -> Lebesgue norm with parameter P for number list LST"""
+   
+-  return ((sum(map(lambda x: float(abs(x)) ** p,
+-                   lst))
++  return ((sum([float(abs(x)) ** p for x in lst])
+            / float(len(lst)))
+           ** (1.0 / p))
+ 
+@@ -263,7 +262,7 @@ def list2dict(lst):
+   """
+   
+   d = {}
+-  for i in xrange(len(lst)):
++  for i in range(len(lst)):
+     d[i] = lst[i]
+   return d
+ 
+@@ -274,7 +273,7 @@ def mapdict(f, d):
+   """
+   
+   d1 = {}
+-  for k, v in d.items():
++  for k, v in list(d.items()):
+     d1[k] = f(v)
+   return d1
+ 
+@@ -287,7 +286,7 @@ def cyclic_pairs(lst):
+   n = len(lst)
+   assert(n >= 2)
+   cps = []
+-  for i in xrange(n - 1):
++  for i in range(n - 1):
+     cps.append((lst[i], lst[i + 1]))
+   cps.append((lst[n - 1], lst[0]))
+   return cps
+@@ -312,7 +311,7 @@ def number_of_trailing(p, lst):
+   """
+ 
+   n = len(lst)
+-  for i in xrange(n - 1, -1, -1):
++  for i in range(n - 1, -1, -1):
+     if not p(lst[i]):
+       return (n - 1) - i
+   return len(lst)
