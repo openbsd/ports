@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2020/11/18 00:15:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2021/02/28 12:40:28 sthen Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -10,7 +10,7 @@ REVISION =	19
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
-PORTROACH =	site:https://github.com/amule-project/amule/releases
+PORTROACH =	site:https://github.com/amule-project/amule/releases/
 
 MULTI_PACKAGES =-main -web -daemon
 
