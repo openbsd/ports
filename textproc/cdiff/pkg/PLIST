@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/29 12:01:32 ajacoutot Exp $
-@conflict colordiff-*
-bin/cdiff
-lib/python${MODPY_VERSION}/site-packages/cdiff-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/cdiff.py
-lib/python${MODPY_VERSION}/site-packages/cdiff.pyc
-share/doc/cdiff/
-share/doc/cdiff/README.rst
+@comment $OpenBSD: PLIST,v 1.2 2021/02/28 13:46:59 sthen Exp $
+bin/ydiff
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ydiff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ydiff-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/ydiff.py
+share/doc/ydiff/
+share/doc/ydiff/README.rst
