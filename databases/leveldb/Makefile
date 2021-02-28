@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2020/12/15 16:03:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/02/28 21:22:22 sthen Exp $
 
 GH_ACCOUNT=		google
 GH_PROJECT=		leveldb
-GH_TAGNAME=		1.22
+GH_TAGNAME=		1.23
 
 COMMENT=		fast key-value storage library
 CATEGORIES=		databases devel
@@ -23,7 +23,11 @@ MODULES=		devel/cmake
 
 CONFIGURE_ARGS+=	-DBUILD_SHARED_LIBS=on \
 			-DLEVELDB_INSTALL=on \
+			-DLEVELDB_BUILD_TESTS=off \
 			-DLEVELDB_BUILD_BENCHMARKS=off
+
+# Tests are broken right now due to googletest weirdness.
+NO_TEST=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/leveldb/
