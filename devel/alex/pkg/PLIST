@@ -1,38 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/07/18 21:58:00 kili Exp $
-@bin bin/alex
-share/${DISTNAME}/
-share/${DISTNAME}/AlexTemplate
-share/${DISTNAME}/AlexTemplate-debug
-share/${DISTNAME}/AlexTemplate-ghc
-share/${DISTNAME}/AlexTemplate-ghc-debug
-share/${DISTNAME}/AlexTemplate-ghc-nopred
-share/${DISTNAME}/AlexWrapper-basic
-share/${DISTNAME}/AlexWrapper-basic-bytestring
-share/${DISTNAME}/AlexWrapper-gscan
-share/${DISTNAME}/AlexWrapper-monad
-share/${DISTNAME}/AlexWrapper-monad-bytestring
-share/${DISTNAME}/AlexWrapper-monadUserState
-share/${DISTNAME}/AlexWrapper-monadUserState-bytestring
-share/${DISTNAME}/AlexWrapper-posn
-share/${DISTNAME}/AlexWrapper-posn-bytestring
-share/${DISTNAME}/AlexWrapper-strict-bytestring
-share/doc/alex/
-@comment share/doc/${DISTNAME}/
-@comment share/doc/${DISTNAME}/LICENSE
-share/doc/alex/about.html
-share/doc/alex/alex-files.html
-share/doc/alex/api.html
-share/doc/alex/basic-api.html
-share/doc/alex/bug-reports.html
-share/doc/alex/charsets.html
-share/doc/alex/fptools.css
-share/doc/alex/index.html
-share/doc/alex/introduction.html
-share/doc/alex/invoking.html
-share/doc/alex/license.html
-share/doc/alex/regexps.html
-share/doc/alex/relnotes-20.html
-share/doc/alex/relnotes-210.html
-share/doc/alex/relnotes-22.html
-share/doc/alex/syntax.html
-share/doc/alex/wrappers.html
+@comment $OpenBSD: PLIST,v 1.7 2021/02/28 19:31:57 gnezdo Exp $
+bin/${MODCABAL_STEM}
+libexec/cabal/
+@bin libexec/cabal/${MODCABAL_STEM}
+share/${PKGNAME}/
+share/${PKGNAME}/AlexTemplate
+share/${PKGNAME}/AlexTemplate-debug
+share/${PKGNAME}/AlexTemplate-ghc
+share/${PKGNAME}/AlexTemplate-ghc-debug
+share/${PKGNAME}/AlexTemplate-ghc-nopred
+share/${PKGNAME}/AlexWrapper-basic
+share/${PKGNAME}/AlexWrapper-basic-bytestring
+share/${PKGNAME}/AlexWrapper-gscan
+share/${PKGNAME}/AlexWrapper-monad
+share/${PKGNAME}/AlexWrapper-monad-bytestring
+share/${PKGNAME}/AlexWrapper-monadUserState
+share/${PKGNAME}/AlexWrapper-monadUserState-bytestring
+share/${PKGNAME}/AlexWrapper-posn
+share/${PKGNAME}/AlexWrapper-posn-bytestring
+share/${PKGNAME}/AlexWrapper-strict-bytestring
+share/doc/${MODCABAL_STEM}/
+@comment share/doc/${PKGNAME}/
+@comment share/doc/${PKGNAME}/LICENSE
+share/doc/${MODCABAL_STEM}/about.html
+share/doc/${MODCABAL_STEM}/${MODCABAL_STEM}-files.html
+share/doc/${MODCABAL_STEM}/api.html
+share/doc/${MODCABAL_STEM}/basic-api.html
+share/doc/${MODCABAL_STEM}/bug-reports.html
+share/doc/${MODCABAL_STEM}/charsets.html
+share/doc/${MODCABAL_STEM}/fptools.css
+share/doc/${MODCABAL_STEM}/index.html
+share/doc/${MODCABAL_STEM}/introduction.html
+share/doc/${MODCABAL_STEM}/invoking.html
+share/doc/${MODCABAL_STEM}/license.html
+share/doc/${MODCABAL_STEM}/regexps.html
+share/doc/${MODCABAL_STEM}/relnotes-20.html
+share/doc/${MODCABAL_STEM}/relnotes-210.html
+share/doc/${MODCABAL_STEM}/relnotes-22.html
+share/doc/${MODCABAL_STEM}/syntax.html
+share/doc/${MODCABAL_STEM}/types.html
+share/doc/${MODCABAL_STEM}/wrappers.html
