@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_global_h,v 1.1 2021/02/28 04:03:14 bentley Exp $
+Fix build with -fno-common.
+https://gitlab.com/freedroid/freedroid-src/-/commit/e610d427374226b79da5258d979936459f30c761
+Index: src/global.h
+--- src/global.h.orig
++++ src/global.h
+@@ -39,7 +39,6 @@ extern char *freedroid_version;
+ #define EXTERN extern
+ #endif
+ 
+-EXTERN float FPSover1;
+ EXTERN char *AllSkillTexts[];
+ EXTERN char font_switchto_red[];
+ EXTERN char font_switchto_blue[];

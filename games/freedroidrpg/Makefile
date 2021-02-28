@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/02/28 04:03:14 bentley Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -7,11 +7,11 @@ COMMENT=	isometric RPG game
 DISTNAME =	freedroidRPG-0.16.1
 PKGNAME =	${DISTNAME:L}
 CATEGORIES=	games x11
-REVISION =	2
+REVISION =	3
 
-HOMEPAGE =	http://www.freedroid.org/
+HOMEPAGE =	https://www.freedroid.org/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ${MODLUA_WANTLIB}
@@ -50,8 +50,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	AWK=gawk
-
-post-install:
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/freedroidrpg
 
 .include <bsd.port.mk>
