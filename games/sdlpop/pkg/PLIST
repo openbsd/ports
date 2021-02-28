@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/11/10 05:41:53 jca Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/02/28 17:41:20 daniel Exp $
 @bin bin/sdlpop
 share/doc/sdlpop/
 share/doc/sdlpop/Readme.txt
@@ -382,7 +382,10 @@ share/sdlpop/data/LEVELS/res2012.bin
 share/sdlpop/data/LEVELS/res2013.bin
 share/sdlpop/data/LEVELS/res2014.bin
 share/sdlpop/data/LEVELS/res2015.bin
+share/sdlpop/data/MIDISND1.DAT
+share/sdlpop/data/MIDISND2.DAT
 share/sdlpop/data/PRINCE/
+share/sdlpop/data/PRINCE/res1.bin
 share/sdlpop/data/PRINCE/res10.bin
 share/sdlpop/data/PRINCE/res150.pal
 share/sdlpop/data/PRINCE/res151.png
@@ -1041,6 +1044,7 @@ share/sdlpop/data/font/res1128.png
 share/sdlpop/data/font/res1129.png
 share/sdlpop/data/font/res1130.png
 share/sdlpop/data/font/res1131.png
+share/sdlpop/data/icon.png
 share/sdlpop/data/levels-original/
 share/sdlpop/data/levels-original/res2000.bin
 share/sdlpop/data/levels-original/res2001.bin
@@ -1069,27 +1073,6 @@ share/sdlpop/data/levels-test/04-through-tapestry
 share/sdlpop/data/levels-test/05-stacked-gates
 share/sdlpop/data/levels-test/07-jump
 share/sdlpop/data/levels-test/12-shadow
+share/sdlpop/data/light.png
 share/sdlpop/data/music/
-share/sdlpop/data/music/cutscene_before_2_4_6_12.ogg
-share/sdlpop/data/music/cutscene_before_8_9.ogg
-share/sdlpop/data/music/cutscene_not_much_time_left.ogg
-share/sdlpop/data/music/embrace.ogg
-share/sdlpop/data/music/end_level_4_and_killed_by_shadow.ogg
-share/sdlpop/data/music/fight_death.ogg
-share/sdlpop/data/music/find_mirror_and_find_shadow.ogg
-share/sdlpop/data/music/floating.ogg
-share/sdlpop/data/music/guard_death_and_obtaining_the_sword.ogg
-share/sdlpop/data/music/intro_theme.ogg
-share/sdlpop/data/music/killed_Jaffar.ogg
-share/sdlpop/data/music/life_potion.ogg
-share/sdlpop/data/music/meet_Jaffar.ogg
 share/sdlpop/data/music/names.txt
-share/sdlpop/data/music/out_of_time.ogg
-share/sdlpop/data/music/potion.ogg
-share/sdlpop/data/music/regular_death.ogg
-share/sdlpop/data/music/story_1_absence.ogg
-share/sdlpop/data/music/story_2_princess.ogg
-share/sdlpop/data/music/story_3_Jaffar_enters.ogg
-share/sdlpop/data/music/story_4_Jaffar_leaves.ogg
-share/sdlpop/data/music/story_5_level_end_and_merge_with_shadow.ogg
-share/sdlpop/data/music/won.ogg

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/28 17:41:20 daniel Exp $
 
 NOT_FOR_ARCHS=	${BE_ARCHS}
 
 COMMENT=	open-source port of Prince of Persia
 
-DISTNAME=	sdlpop-20161103
-CATEGORIES=	games
-REVISION=	1
-
+# XXX: switching to a tagged release will require bumping EPOCH
+DISTNAME=	sdlpop-20210227
 GH_ACCOUNT=	NagyD
 GH_PROJECT=	SDLPoP
-GH_COMMIT=     	6185f28a3b8b74cfc5762aeeea38aedb4e142cbc
+GH_COMMIT=	b91c1d4e8171440b9f47c1b246400509fde76d8c
+
+CATEGORIES=	games
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -21,10 +21,9 @@ MAKE_FLAGS=	CC="${CC}" LOCALBASE="${LOCALBASE}"
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	SDL2 SDL2_image SDL2_mixer c m
+WANTLIB=	SDL2 SDL2_image c m
 
-LIB_DEPENDS=	devel/sdl2-image \
-		devel/sdl2-mixer
+LIB_DEPENDS=	devel/sdl2-image
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/seg009.c
