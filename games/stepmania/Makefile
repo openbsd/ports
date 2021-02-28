@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/26 18:20:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2021/02/28 07:38:02 espie Exp $
 
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
@@ -36,8 +36,8 @@ LIB_DEPENDS =	audio/libvorbis \
 		graphics/ffmpeg \
 		audio/pulseaudio
 
-# stepmania comes with its own copy of lua-5.1 with a supplementary function
-# luaL_pushtype AND a supplementary keyword "cmd"  :(
+BUILD_DEPENDS +=	devel/yasm \
+			graphics/glew
 
 WANTLIB += GL GLU X11 Xext
 WANTLIB += Xrandr c
