@@ -1,15 +1,15 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/01/26 13:44:04 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/02/28 06:19:01 rsadowski Exp $
 
 zlib 1.2.7 not available on OpenBSD
 
---- CMakeLists.txt.orig	Thu Dec  3 15:33:54 2020
-+++ CMakeLists.txt	Thu Dec  3 15:34:09 2020
-@@ -234,7 +234,7 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
-   set(MINIMUM_BOOST_VERSION 1.61)
-   set(MINIMUM_ILMBASE_VERSION 2.2)
-   set(MINIMUM_OPENEXR_VERSION 2.2)
+--- CMakeLists.txt.orig	Sat Feb  6 00:51:38 2021
++++ CMakeLists.txt	Fri Feb 19 17:44:45 2021
+@@ -216,7 +216,7 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
+   set(MINIMUM_BOOST_VERSION 1.61)  # @warning should be 1.66, but H18 ships with 1.61
+   set(MINIMUM_ILMBASE_VERSION 2.2) # @warning should be 2.3, but H18 ships with 2.2
+   set(MINIMUM_OPENEXR_VERSION 2.2) # @warning should be 2.3, but H18 ships with 2.2
 -  set(MINIMUM_ZLIB_VERSION 1.2.7)
 +  set(MINIMUM_ZLIB_VERSION 1.2.3)
-   set(MINIMUM_TBB_VERSION 2017.0)
+   set(MINIMUM_TBB_VERSION 2018.0)
+   set(MINIMUM_LLVM_VERSION 6.0.0)
  
-   set(MINIMUM_PYTHON_VERSION 2.7)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/26 13:44:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/02/28 06:19:01 rsadowski Exp $
 @bin bin/vdb_print
 include/openvdb/
 include/openvdb/Exceptions.h
@@ -7,6 +7,7 @@ include/openvdb/MetaMap.h
 include/openvdb/Metadata.h
 include/openvdb/Platform.h
 include/openvdb/PlatformConfig.h
+include/openvdb/TypeList.h
 include/openvdb/Types.h
 include/openvdb/io/
 include/openvdb/io/Archive.h
@@ -86,6 +87,7 @@ include/openvdb/tools/LevelSetSphere.h
 include/openvdb/tools/LevelSetTracker.h
 include/openvdb/tools/LevelSetUtil.h
 include/openvdb/tools/Mask.h
+include/openvdb/tools/Merge.h
 include/openvdb/tools/MeshToVolume.h
 include/openvdb/tools/Morphology.h
 include/openvdb/tools/MultiResGrid.h
@@ -137,7 +139,6 @@ include/openvdb/util/logging.h
 include/openvdb/version.h
 lib/cmake/OpenVDB/
 lib/cmake/OpenVDB/FindBlosc.cmake
-lib/cmake/OpenVDB/FindCppUnit.cmake
 lib/cmake/OpenVDB/FindIlmBase.cmake
 lib/cmake/OpenVDB/FindJemalloc.cmake
 lib/cmake/OpenVDB/FindLog4cplus.cmake
