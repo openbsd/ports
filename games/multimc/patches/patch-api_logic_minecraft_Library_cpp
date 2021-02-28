@@ -1,0 +1,39 @@
+$OpenBSD: patch-api_logic_minecraft_Library_cpp,v 1.1 2021/02/28 09:54:39 phessler Exp $
+
+Index: api/logic/minecraft/Library.cpp
+--- api/logic/minecraft/Library.cpp.orig
++++ api/logic/minecraft/Library.cpp
+@@ -14,6 +14,12 @@ void Library::getApplicableFiles(OpSys system, QString
+     bool local = isLocal();
+     auto actualPath = [&](QString relPath)
+     {
++        if(!m_path.isEmpty())
++        {
++            QFileInfo out(m_path);
++            return out.absoluteFilePath();
++        }
++
+         QFileInfo out(FS::PathCombine(storagePrefix(), relPath));
+         if(local && !overridePath.isEmpty())
+         {
+@@ -61,6 +67,11 @@ QList< std::shared_ptr< NetAction > > Library::getDown
+         QFileInfo fileinfo(storage);
+         QString fileName = fileinfo.fileName();
+         auto fullPath = FS::PathCombine(overridePath, fileName);
++
++        if (!m_path.isEmpty()) {
++            fullPath = m_path;
++        }
++
+         QFileInfo localFileInfo(fullPath);
+         if(!localFileInfo.exists())
+         {
+@@ -228,7 +239,7 @@ bool Library::isActive() const
+     }
+     if (isNative())
+     {
+-        result = result && m_nativeClassifiers.contains(currentSystem);
++        result = result && (m_nativeClassifiers.contains(currentSystem) || m_isNative);
+     }
+     return result;
+ }

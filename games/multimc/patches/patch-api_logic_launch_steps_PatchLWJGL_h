@@ -1,0 +1,46 @@
+$OpenBSD: patch-api_logic_launch_steps_PatchLWJGL_h,v 1.1 2021/02/28 09:54:39 phessler Exp $
+
+Index: api/logic/launch/steps/PatchLWJGL.h
+--- api/logic/launch/steps/PatchLWJGL.h.orig
++++ api/logic/launch/steps/PatchLWJGL.h
+@@ -0,0 +1,40 @@
++/* Copyright 2013-2019 MultiMC Contributors
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#pragma once
++
++#include <launch/LaunchStep.h>
++#include <minecraft/ComponentList.h>
++#include <net/Mode.h>
++
++#include "multimc_logic_export.h"
++
++class MULTIMC_LOGIC_EXPORT PatchLWJGL: public LaunchStep
++{
++    Q_OBJECT
++public:
++    explicit PatchLWJGL(LaunchTask *parent, Net::Mode mode, std::shared_ptr<ComponentList> components): LaunchStep(parent), m_mode(mode) {
++        m_components = components;
++    };
++    virtual ~PatchLWJGL(){};
++
++    virtual void executeTask();
++    virtual bool canAbort() const;
++    virtual bool abort();
++
++private:
++    std::shared_ptr<ComponentList> m_components;
++    Net::Mode m_mode = Net::Mode::Offline;
++};

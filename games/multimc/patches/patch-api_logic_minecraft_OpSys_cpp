@@ -1,0 +1,23 @@
+$OpenBSD: patch-api_logic_minecraft_OpSys_cpp,v 1.1 2021/02/28 09:54:39 phessler Exp $
+
+Index: api/logic/minecraft/OpSys.cpp
+--- api/logic/minecraft/OpSys.cpp.orig
++++ api/logic/minecraft/OpSys.cpp
+@@ -23,6 +23,8 @@ OpSys OpSys_fromString(QString name)
+         return Os_Windows;
+     if (name == "osx")
+         return Os_OSX;
++    if (name == "openbsd")
++        return Os_OpenBSD;
+     return Os_Other;
+ }
+ 
+@@ -36,6 +38,8 @@ QString OpSys_toString(OpSys name)
+         return "osx";
+     case Os_Windows:
+         return "windows";
++    case Os_OpenBSD:
++        return "openbsd";
+     default:
+         return "other";
+     }

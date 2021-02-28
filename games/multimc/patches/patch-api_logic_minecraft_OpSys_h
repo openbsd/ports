@@ -1,0 +1,26 @@
+$OpenBSD: patch-api_logic_minecraft_OpSys_h,v 1.1 2021/02/28 09:54:39 phessler Exp $
+
+Index: api/logic/minecraft/OpSys.h
+--- api/logic/minecraft/OpSys.h.orig
++++ api/logic/minecraft/OpSys.h
+@@ -20,6 +20,7 @@ enum OpSys
+     Os_Windows,
+     Os_Linux,
+     Os_OSX,
++    Os_OpenBSD,
+     Os_Other
+ };
+ 
+@@ -32,6 +33,10 @@ QString OpSys_toString(OpSys);
+ #ifdef Q_OS_MAC
+ #define currentSystem Os_OSX
+ #else
++#ifdef Q_OS_OPENBSD
++#define currentSystem Os_OpenBSD
++#else
+ #define currentSystem Os_Linux
++#endif
+ #endif
+-#endif
+\ No newline at end of file
++#endif

@@ -1,0 +1,14 @@
+$OpenBSD: patch-api_logic_CMakeLists_txt,v 1.1 2021/02/28 09:54:39 phessler Exp $
+
+Index: api/logic/CMakeLists.txt
+--- api/logic/CMakeLists.txt.orig
++++ api/logic/CMakeLists.txt
+@@ -134,6 +134,8 @@ set(LAUNCH_SOURCES
+     launch/steps/TextPrint.h
+     launch/steps/Update.cpp
+     launch/steps/Update.h
++    launch/steps/PatchLWJGL.h
++    launch/steps/PatchLWJGL.cpp
+     launch/LaunchStep.cpp
+     launch/LaunchStep.h
+     launch/LaunchTask.cpp

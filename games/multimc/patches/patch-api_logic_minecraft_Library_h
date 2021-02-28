@@ -1,0 +1,55 @@
+$OpenBSD: patch-api_logic_minecraft_Library_h,v 1.1 2021/02/28 09:54:39 phessler Exp $
+
+Index: api/logic/minecraft/Library.h
+--- api/logic/minecraft/Library.h.orig
++++ api/logic/minecraft/Library.h
+@@ -42,6 +42,8 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+         newlib->m_name = base->m_name;
+         newlib->m_repositoryURL = base->m_repositoryURL;
+         newlib->m_hint = base->m_hint;
++        newlib->m_path = base->m_path;
++        newlib->m_isNative = base->m_isNative;
+         newlib->m_absoluteURL = base->m_absoluteURL;
+         newlib->m_extractExcludes = base->m_extractExcludes;
+         newlib->m_nativeClassifiers = base->m_nativeClassifiers;
+@@ -90,9 +92,14 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+     /// Returns true if the library is native
+     bool isNative() const
+     {
+-        return m_nativeClassifiers.size() != 0;
++        return m_nativeClassifiers.size() != 0 || m_isNative;
+     }
+ 
++    /// Set isNative override
++    void setNative(bool native) {
++        m_isNative = native;
++    }
++
+     void setStoragePrefix(QString prefix = QString());
+ 
+     /// Set the url base for downloads
+@@ -136,6 +143,11 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+         m_hint = hint;
+     }
+ 
++    void setPath(const QString &path)
++    {
++        m_path = path;
++    }
++
+     /// Set the load rules
+     void setRules(QList<std::shared_ptr<Rule>> rules)
+     {
+@@ -193,6 +205,12 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+      * MultiMC-specific type hint - modifies how the library is treated
+      */
+     QString m_hint;
++
++    /// MultiMC extension - path override
++    QString m_path;
++
++    /// MultiMC extension - isNative override
++    bool m_isNative = false;
+ 
+     /**
+      * storage - by default the local libraries folder in multimc, but could be elsewhere

@@ -1,0 +1,40 @@
+$OpenBSD: patch-api_logic_minecraft_OneSixVersionFormat_cpp,v 1.1 2021/02/28 09:54:39 phessler Exp $
+
+Index: api/logic/minecraft/OneSixVersionFormat.cpp
+--- api/logic/minecraft/OneSixVersionFormat.cpp.orig
++++ api/logic/minecraft/OneSixVersionFormat.cpp
+@@ -13,6 +13,14 @@ static void readString(const QJsonObject &root, const 
+     }
+ }
+ 
++static void readBoolean(const QJsonObject &root, const QString &key, bool &variable)
++{
++    if (root.contains(key))
++    {
++        variable = requireBoolean(root.value(key));
++    }
++}
++
+ LibraryPtr OneSixVersionFormat::libraryFromJson(const QJsonObject &libObj, const QString &filename)
+ {
+     LibraryPtr out = MojangVersionFormat::libraryFromJson(libObj, filename);
+@@ -21,6 +29,8 @@ LibraryPtr OneSixVersionFormat::libraryFromJson(const 
+     readString(libObj, "MMC-absoluteUrl", out->m_absoluteURL);
+     readString(libObj, "MMC-filename", out->m_filename);
+     readString(libObj, "MMC-displayname", out->m_displayname);
++    readString(libObj, "MMC-path", out->m_path);
++    readBoolean(libObj, "MMC-native", out->m_isNative);
+     return out;
+ }
+ 
+@@ -35,6 +45,10 @@ QJsonObject OneSixVersionFormat::libraryToJson(Library
+         libRoot.insert("MMC-filename", library->m_filename);
+     if (library->m_displayname.size())
+         libRoot.insert("MMC-displayname", library->m_displayname);
++    if (library->m_path.size())
++        libRoot.insert("MMC-path", library->m_path);
++    if (library->m_isNative)
++        libRoot.insert("MMC-native", library->m_isNative);
+     return libRoot;
+ }
+ 

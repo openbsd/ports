@@ -1,30 +1,33 @@
-$OpenBSD: patch-api_logic_minecraft_MinecraftInstance_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
+$OpenBSD: patch-api_logic_minecraft_MinecraftInstance_cpp,v 1.2 2021/02/28 09:54:39 phessler Exp $
 
 Index: api/logic/minecraft/MinecraftInstance.cpp
 --- api/logic/minecraft/MinecraftInstance.cpp.orig
 +++ api/logic/minecraft/MinecraftInstance.cpp
-@@ -162,7 +162,11 @@ QString MinecraftInstance::binRoot() const
- 
- QString MinecraftInstance::getNativePath() const
- {
+@@ -16,6 +16,9 @@
+ #include "launch/steps/Update.h"
+ #include "launch/steps/PreLaunchCommand.h"
+ #include "launch/steps/TextPrint.h"
 +#ifdef Q_OS_OPENBSD
-+    QDir natives_dir(LWJGL_DIR);
-+#else
-     QDir natives_dir(FS::PathCombine(instanceRoot(), "natives/"));
++#include "launch/steps/PatchLWJGL.h"
 +#endif
-     return natives_dir.absolutePath();
- }
- 
-@@ -844,10 +848,12 @@ shared_qobject_ptr<LaunchTask> MinecraftInstance::crea
-         process->appendStep(new CreateServerResourcePacksFolder(pptr));
-     }
- 
-+#ifndef Q_OS_OPENBSD
-     // extract native jars if needed
+ #include "minecraft/launch/LauncherPartLaunch.h"
+ #include "minecraft/launch/DirectJavaLaunch.h"
+ #include "minecraft/launch/ModMinecraftJar.h"
+@@ -823,6 +826,17 @@ shared_qobject_ptr<LaunchTask> MinecraftInstance::crea
      {
-         process->appendStep(new ExtractNatives(pptr));
+         process->appendStep(new Update(pptr, Net::Mode::Offline));
      }
++
++#ifdef Q_OS_OPENBSD
++    if(session->status != AuthSession::PlayableOffline)
++    {
++        process->appendStep(new PatchLWJGL(pptr, Net::Mode::Online, m_components));
++    }
++    else
++    {
++        process->appendStep(new PatchLWJGL(pptr, Net::Mode::Offline, m_components));
++    }
 +#endif
  
-     // reconstruct assets if needed
+     // if there are any jar mods
      {

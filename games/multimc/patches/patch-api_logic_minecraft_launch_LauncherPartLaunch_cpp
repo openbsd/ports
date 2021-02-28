@@ -1,0 +1,23 @@
+$OpenBSD: patch-api_logic_minecraft_launch_LauncherPartLaunch_cpp,v 1.1 2021/02/28 09:54:39 phessler Exp $
+
+Index: api/logic/minecraft/launch/LauncherPartLaunch.cpp
+--- api/logic/minecraft/launch/LauncherPartLaunch.cpp.orig
++++ api/logic/minecraft/launch/LauncherPartLaunch.cpp
+@@ -75,7 +75,7 @@ void LauncherPartLaunch::executeTask()
+     classPath.prepend(FS::PathCombine(ENV.getJarsPath(), "NewLaunch.jar"));
+ 
+     auto natPath = minecraftInstance->getNativePath();
+-#ifdef Q_OS_WIN
++#if defined(Q_OS_WIN)
+     if (!fitsInLocal8bit(natPath))
+     {
+         args << "-Djava.library.path=" + shortPathName(natPath);
+@@ -84,6 +84,8 @@ void LauncherPartLaunch::executeTask()
+     {
+         args << "-Djava.library.path=" + natPath;
+     }
++#elif defined(Q_OS_OPENBSD)
++    args << "-Djava.library.path=" + natPath + ":" + LWJGL_DIR;
+ #else
+     args << "-Djava.library.path=" + natPath;
+ #endif
