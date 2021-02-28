@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/28 15:32:17 semarie Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/28 15:36:55 semarie Exp $
 
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
@@ -34,7 +34,7 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	none
 
 # command to build/install/test
-BUILDCMD =	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
+BUILDCMD =	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 			WRKSRC="${WRKSRC}" \
 			WRKBUILD="${WRKBUILD}" \
 			MAKE_JOBS="${MAKE_JOBS}" \

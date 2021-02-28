@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: build.sh,v 1.1.1.1 2021/02/28 15:32:17 semarie Exp $
+# $OpenBSD: build.sh,v 1.2 2021/02/28 15:36:55 semarie Exp $
 
 set -eux
 
@@ -28,7 +28,7 @@ llvm_configure() {
 	[ ! -d "${LLVMBUILD}" ] && mkdir "${LLVMBUILD}" "${LLVMINST}"
 
 	cd "${LLVMBUILD}"
-	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 \
+	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 MODCMAKE_PORT_BUILD=yes \
 	    cmake -GNinja "${WRKSRC}/llvm" \
 		-DLLVM_ENABLE_PROJECTS="clang;lld" \
 		-DLLVM_ENABLE_LIBXML2=OFF \
@@ -49,8 +49,8 @@ llvm_configure() {
 
 llvm_build() {
 	cd "${LLVMBUILD}"
-	ninja -j${MAKE_JOBS:-1}
-	ninja -j${MAKE_JOBS:-1} install
+	ninja -v -j${MAKE_JOBS:-1}
+	ninja -v -j${MAKE_JOBS:-1} install
 }
 
 zig1_configure() {
@@ -63,7 +63,7 @@ zig1_configure() {
 
 	# configure zig stage1
 	cd "${ZIG1BUILD}"
-	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 \
+	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 MODCMAKE_PORT_BUILD=yes \
 	    cmake -GNinja "${WRKSRC}/zig" \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_C_COMPILER="${CC:-cc}" \
@@ -96,7 +96,7 @@ zig1_configure() {
 
 zig1_build() {
 	cd "${ZIG1BUILD}"
-	ninja -j${MAKE_JOBS:-1}
+	ninja -v -j${MAKE_JOBS:-1}
 
 	# keep lib-dir next to zig binary
 	# (for building stage2 or running tests)
