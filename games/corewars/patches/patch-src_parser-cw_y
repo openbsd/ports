@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_parser-cw_y,v 1.1 2021/02/28 06:13:34 bket Exp $
+
+Fix -no-common build error.
+
+Index: src/parser-cw.y
+--- src/parser-cw.y.orig
++++ src/parser-cw.y
+@@ -29,8 +29,8 @@
+ #include "program-cw.h"
+ #include "options.h"
+   
+-  int current_line;
+-  struct cw_line *root_line;
++  static int current_line;
++  static struct cw_line *root_line;
+   char cw_error_message[1024];
+   
+   void cw_error (char *s);

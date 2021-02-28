@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_parser-rc_y,v 1.1 2021/02/28 06:13:34 bket Exp $
+
+Fix -no-common build error.
+
+Index: src/parser-rc.y
+--- src/parser-rc.y.orig
++++ src/parser-rc.y
+@@ -66,8 +66,9 @@
+   void free_expr(struct expr *expr);
+   struct expr *copy_expr(struct expr *expr);
+ 
+-  int current_line, *current_cell;
+-  struct line *root_line;
++  int *current_cell;
++  static int current_line;
++  static struct line *root_line;
+   struct expr *org;
+   struct label *label_list;
+   struct label *for_index;
