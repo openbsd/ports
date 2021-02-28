@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/28 14:40:04 sthen Exp $
+include/libepoll-shim/
+include/libepoll-shim/sys/
+include/libepoll-shim/sys/epoll.h
+include/libepoll-shim/sys/eventfd.h
+include/libepoll-shim/sys/signalfd.h
+include/libepoll-shim/sys/timerfd.h
+lib/cmake/
+lib/cmake/epoll-shim/
+lib/cmake/epoll-shim/epoll-shim-config.cmake
+lib/cmake/epoll-shim/epoll-shim-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/epoll-shim/epoll-shim-targets.cmake
+@lib lib/libepoll-shim.so.${LIBepoll-shim_VERSION}
+libdata/pkgconfig/
+libdata/pkgconfig/epoll-shim.pc

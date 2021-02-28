@@ -1,0 +1,4 @@
+This is a small library that implements epoll on top of kqueue. It has
+been successfully used on FreeBSD to port libinput, libevdev, Wayland
+and more. It may be useful for porting other software that uses epoll
+or some other features (e.g. timerfd).

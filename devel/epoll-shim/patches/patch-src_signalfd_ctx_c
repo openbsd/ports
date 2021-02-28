@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_signalfd_ctx_c,v 1.1.1.1 2021/02/28 14:40:04 sthen Exp $
+
+This is filling in the struct; we don't have this struct member (it's
+commented-out with #if 0 in sys/siginfo.h - struct _file / _band).
+
+If our siginfo changes then this should be removed.
+
+Index: src/signalfd_ctx.c
+--- src/signalfd_ctx.c.orig
++++ src/signalfd_ctx.c
+@@ -277,7 +277,9 @@ signalfd_ctx_read_impl(SignalFDCtx *signalfd,
+ 
+ 	signalfd_siginfo->ssi_status = siginfo.si_status;
+ 
++#ifndef __OpenBSD__
+ 	signalfd_siginfo->ssi_band = siginfo.si_band;
++#endif
+ 
+ 	signalfd_siginfo->ssi_int = siginfo.si_value.sival_int;
+ 	signalfd_siginfo->ssi_ptr = (uint64_t)(uintptr_t)
