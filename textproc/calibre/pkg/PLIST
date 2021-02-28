@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2021/02/24 14:13:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.37 2021/02/28 21:01:59 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -2175,7 +2175,6 @@ lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}ebookpoint_plugin.${MODPY_
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}ebooks_com_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}ebooksgratuits_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}ebookshoppe_uk_plugin.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}eknigi_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}empik_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}feedbooks_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}google_books_plugin.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2221,7 +2220,6 @@ lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebooks_com_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebooksgratuits_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebookshoppe_uk_plugin.py
-lib/calibre/calibre/gui2/store/stores/eknigi_plugin.py
 lib/calibre/calibre/gui2/store/stores/empik_plugin.py
 lib/calibre/calibre/gui2/store/stores/feedbooks_plugin.py
 lib/calibre/calibre/gui2/store/stores/google_books_plugin.py
@@ -2327,6 +2325,7 @@ lib/calibre/calibre/gui2/tweak_book/${MODPY_PYCACHE}download.${MODPY_PYC_MAGIC_T
 lib/calibre/calibre/gui2/tweak_book/${MODPY_PYCACHE}file_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/tweak_book/${MODPY_PYCACHE}function_replace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/tweak_book/${MODPY_PYCACHE}job.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/tweak_book/${MODPY_PYCACHE}jump_to_class.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/tweak_book/${MODPY_PYCACHE}live_css.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/tweak_book/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/tweak_book/${MODPY_PYCACHE}manage_fonts.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2428,6 +2427,7 @@ lib/calibre/calibre/gui2/tweak_book/editor/widget.py
 lib/calibre/calibre/gui2/tweak_book/file_list.py
 lib/calibre/calibre/gui2/tweak_book/function_replace.py
 lib/calibre/calibre/gui2/tweak_book/job.py
+lib/calibre/calibre/gui2/tweak_book/jump_to_class.py
 lib/calibre/calibre/gui2/tweak_book/live_css.py
 lib/calibre/calibre/gui2/tweak_book/main.py
 lib/calibre/calibre/gui2/tweak_book/manage_fonts.py
@@ -3167,6 +3167,23 @@ lib/calibre/tinycss/token_data.py
 lib/calibre/tinycss/tokenizer.py
 lib/calibre/tinycss/version.py
 lib/python${MODPY_VERSION}/site-packages/init_calibre.py
+share/applications/calibre-ebook-edit.desktop
+share/applications/calibre-ebook-viewer.desktop
+share/applications/calibre-gui.desktop
+share/applications/calibre-lrfviewer.desktop
+share/bash-completion/completions/calibre
+share/bash-completion/completions/calibre-debug
+share/bash-completion/completions/calibre-server
+share/bash-completion/completions/calibre-smtp
+share/bash-completion/completions/ebook-convert
+share/bash-completion/completions/ebook-device
+share/bash-completion/completions/ebook-edit
+share/bash-completion/completions/ebook-meta
+share/bash-completion/completions/ebook-polish
+share/bash-completion/completions/ebook-viewer
+share/bash-completion/completions/fetch-ebook-metadata
+share/bash-completion/completions/lrf2lrs
+share/bash-completion/completions/lrfviewer
 share/calibre/
 ${MODPY_COMMENT}share/calibre/${MODPY_PYCACHE}/
 share/calibre/${MODPY_PYCACHE}default_tweaks.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3448,6 +3465,7 @@ share/calibre/images/smarten-punctuation.png
 share/calibre/images/snippets.png
 share/calibre/images/sort.png
 share/calibre/images/spell-check.png
+share/calibre/images/split.png
 share/calibre/images/store.png
 share/calibre/images/subset-fonts.png
 share/calibre/images/swap.png
@@ -6141,6 +6159,11 @@ share/icons/hicolor/64x64/mimetypes/application-x-mobi8-ebook-64.png
 share/icons/hicolor/64x64/mimetypes/application-x-mobipocket-ebook-64.png
 share/icons/hicolor/64x64/mimetypes/application-x-topaz-ebook-64.png
 share/icons/hicolor/64x64/mimetypes/text-lrs-64.png
+share/metainfo/
+share/metainfo/calibre-ebook-edit.metainfo.xml
+share/metainfo/calibre-ebook-viewer.metainfo.xml
+share/metainfo/calibre-gui.metainfo.xml
+share/mime/packages/calibre-mimetypes.xml
 @tag update-mime-database
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

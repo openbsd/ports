@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.84 2021/02/24 14:13:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.85 2021/02/28 21:01:59 sthen Exp $
 
 COMMENT =		ebook management application
 
-V =			5.11.0
+V =			5.12.0
 DISTNAME =		calibre-$V
 
 CATEGORIES =		textproc
@@ -107,7 +107,6 @@ pre-configure:
 
 do-install:
 	${MODPY_CMD} ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
-	rm -rf ${WRKDIR}/.config # to unbreak 'make clean'; created as root
 	${INSTALL_DATA_DIR} ${PREFIX}/share/calibre/recipes
 	cd ${WRKSRC}/recipes && find . -type f -exec \
 	    ${INSTALL_DATA} {} ${PREFIX}/share/calibre/recipes/ \;
