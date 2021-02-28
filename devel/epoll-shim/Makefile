@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/28 14:40:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/02/28 14:50:14 sthen Exp $
 
 COMMENT=	small epoll implementation using kqueue
 
@@ -12,6 +12,10 @@ CATEGORIES=	devel
 
 # MIT
 PERMIT_PACKAGE=	Yes
+
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB=	pthread
 
