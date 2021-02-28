@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2076 2021/02/27 03:12:35 daniel Exp $
+# $OpenBSD: Makefile,v 1.2077 2021/02/28 14:40:57 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -136,6 +136,7 @@
      SUBDIR += ectags
      SUBDIR += electron
      SUBDIR += elftoolchain
+     SUBDIR += epoll-shim
      SUBDIR += esptool-ck
      SUBDIR += etl
      SUBDIR += expect-lite
