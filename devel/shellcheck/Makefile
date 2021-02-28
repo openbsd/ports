@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/09/30 12:50:08 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2021/02/28 19:58:09 gnezdo Exp $
 
-COMMENT-main =		shell script analysis tool
-COMMENT-lib =		ShellCheck library
+COMMENT =		shell script analysis tool
 
-V =			0.4.7
-DISTNAME =		ShellCheck-${V}
-REVISION-main =		1
-REVISION-lib =		3
-PKGNAME-main =		shellcheck-${V}
-PKGNAME-lib =		hs-shellcheck-${V}
+MODCABAL_STEM =		ShellCheck
+MODCABAL_VERSION =	0.7.1
+MODCABAL_EXECUTABLES =	shellcheck
+PKGNAME =		${DISTNAME:L}
 CATEGORIES =		devel
 HOMEPAGE =		https://www.shellcheck.net/
 
@@ -17,29 +14,54 @@ MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MULTI_PACKAGES =	-main -lib
-WANTLIB-main =		c charset ffi gmp iconv m pthread util
-WANTLIB-lib =
+WANTLIB =		c charset ffi gmp iconv m pthread util
 
-MODULES =		lang/ghc
+MODULES =		devel/cabal
+MODCABAL_MANIFEST = \
+	Diff			0.4.0		 0 \
+	QuickCheck		2.14.1		 0 \
+	aeson			1.5.3.0		 0 \
+	assoc			1.0.2		 0 \
+	attoparsec		0.13.2.4	 0 \
+	base-compat		0.11.1		 0 \
+	base-compat-batteries	0.11.1		 0 \
+	base-orphans		0.8.2		 0 \
+	bifunctors		5.5.7		 1 \
+	cabal-doctest		1.0.8		 2 \
+	comonad			5.0.6		 1 \
+	data-fix		0.3.0		 0 \
+	distributive		0.6.2		 2 \
+	dlist			1.0		 0 \
+	hashable		1.3.0.0		 1 \
+	integer-logarithms	1.0.3		 2 \
+	primitive		0.7.1.0		 0 \
+	random			1.2.0		 0 \
+	regex-base		0.94.0.0	 1 \
+	regex-tdfa		1.3.1.0		 1 \
+	scientific		0.3.6.2		 0 \
+	splitmix		0.1.0.1		 0 \
+	strict			0.4		 0 \
+	tagged			0.8.6		 2 \
+	th-abstraction		0.3.2.0		 0 \
+	these			1.1.1.1		 0 \
+	time-compat		1.9.3		 0 \
+	transformers-compat	0.6.5		 0 \
+	unordered-containers	0.2.12.0	 0 \
+	uuid-types		1.0.3		 3 \
+	vector			0.12.1.2	 0 \
 
-MODGHC_BUILD =		cabal hackage haddock register
-
-MODGHC_PACKAGE_KEY =	1v0sx5oDTF9BoGzz61tUYo
-
-BUILD_DEPENDS =		${RUN_DEPENDS-lib}
-RUN_DEPENDS-lib =	devel/hs-QuickCheck>=2.7.4 \
-			devel/hs-regex-tdfa \
-			lang/ghc=${MODGHC_VER} \
-			textproc/hs-json
-LIB_DEPENDS-main =	converters/libiconv \
+LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
 			devel/libffi
 RUN_DEPENDS-main =
 
 NO_TEST =		Yes
 
+# TODO(gnezdo): find a lighter-weight option than pandoc used by
+# ShellCheck's manpage converter or pre-format and carry the page with
+# files directory. Gating ShellCheck on pandoc is a bad trade-off.
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/shellcheck.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PKGNAME}
+	${INSTALL_DATA} ${WRKSRC}/shellcheck.1.md ${PREFIX}/share/doc/${PKGNAME}
 
 .include <bsd.port.mk>
