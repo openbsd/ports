@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:46:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/02/28 14:27:51 naddy Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
@@ -22,6 +22,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += SDL expat ffi fontconfig freetype fribidi glib-2.0
 WANTLIB+= gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz iconv
 WANTLIB+= intl m pango-1.0 pangoft2-1.0 pcre pthread sndio usbhid z
+
+FIX_CRLF_FILES=	src/SDL_Pango.h
 
 LIB_DEPENDS=	devel/pango \
 		devel/sdl
