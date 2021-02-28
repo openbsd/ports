@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/02/28 06:17:03 bket Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 
-VERSION =			3.1.1
+VERSION =			3.2.0
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 
@@ -19,7 +19,8 @@ MASTER_SITES =			https://github.com/sabnzbd/sabnzbd/releases/download/${VERSION}
 EXTRACT_SUFX =			-src.tar.gz
 
 MODULES =			lang/python
-# XXX broken, needs pyfakefs (not in ports)
+# XXX broken, needs pyfakefs, pytest-httpserver, tavern and tavalidate (not in
+# ports)
 MODPY_PYTEST =			Yes
 
 BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
@@ -34,9 +35,11 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				textproc/py-chardet${MODPY_FLAVOR} \
 				textproc/py-feedparser${MODPY_FLAVOR} \
 				www/py-CherryPy${MODPY_FLAVOR} \
-				www/py-cheroot${MODPY_FLAVOR}<8.4.3
+				www/py-cheroot${MODPY_FLAVOR}
 TEST_DEPENDS =			devel/py-flaky${MODPY_FLAVOR} \
 				devel/py-test-httpbin${MODPY_FLAVOR} \
+				textproc/py-lxml${MODPY_FLAVOR} \
+				textproc/py-xmltodict${MODPY_FLAVOR} \
 				www/py-requests${MODPY_FLAVOR} \
 				www/py-selenium${MODPY_FLAVOR}
 
