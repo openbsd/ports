@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.248 2021/02/20 21:17:34 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.249 2021/03/01 12:54:02 semarie Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -119,5 +119,6 @@
      SUBDIR += vala,
      SUBDIR += verilator
      SUBDIR += wabt
+     SUBDIR += zig
 
 .include <bsd.port.subdir.mk>
