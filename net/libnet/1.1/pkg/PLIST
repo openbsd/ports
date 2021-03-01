@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/06/29 16:14:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/03/01 19:54:38 sthen Exp $
 @option no-default-conflict
 @option is-branch
-@conflict libnet-1.1->=1.1
-@conflict libnet-1.1->=1.1v0
+@conflict libnet-1.1->=1.1v0,<1.2v0
 @conflict libnet->=1.1,<1.0v0
+@comment bin/libnet-config
 bin/libnet-config-1.1
 include/libnet-1.1/
 include/libnet-1.1/libnet/
@@ -15,6 +15,10 @@ include/libnet-1.1/libnet/libnet-macros.h
 include/libnet-1.1/libnet/libnet-structures.h
 include/libnet-1.1/libnet/libnet-types.h
 lib/libnet-1.1/
-lib/libnet-1.1/libnet.a
+@static-lib lib/libnet-1.1/libnet.a
+lib/libnet-1.1/libnet.la
 @lib lib/libnet-1.1/libnet.so.${LIBnet_VERSION}
 @lib lib/libnet.so.${LIBnet_VERSION}
+@man man/man3/libnet-functions.h.3
+@man man/man3/libnet-macros.h.3
+@man man/man3/libnet.h.3

@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.19 2020/01/26 11:14:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2021/03/01 19:54:38 sthen Exp $
 
 REV=		1.1
-VERSION=	${REV}.2.1
+VERSION=	${REV}.6
 EPOCH=		0
-REVISION=	5
-SHARED_LIBS=	net	11.0
+SHARED_LIBS=	net	11.1
 PKGSPEC=	libnet->=1.1v0,<1.2v0
 
-WRKDIST=	${WRKDIR}/libnet
-MASTER_SITES=	https://distfiles.sigtrap.nl/ \
-		http://packetfactory.openwall.net/libnet/dist/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libnet-dev/}
 
-AUTOCONF_VERSION=	2.57
+CONFIGURE_STYLE= gnu
 MAKE_FLAGS=	LIBnet_VERSION=${LIBnet_VERSION}
 CONFIGURE_ENV=	LIBNET_CONFIG_LIBS="-L${LOCALBASE}/lib/libnet-1.1" \
 		LIBNET_CONFIG_CFLAGS="-I${LOCALBASE}/include/libnet-1.1"
+
+CONFIGURE_ARGS=	--include=${PREFIX}/include/libnet-1.1 \
+		--libdir=${PREFIX}/lib/libnet-1.1
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config \
