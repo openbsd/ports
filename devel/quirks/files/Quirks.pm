@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1224 2021/03/01 13:11:18 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1225 2021/03/01 17:34:34 tracey Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2175,6 +2175,7 @@ my $obsolete_reason = {
 	'py-beautifulsoup' => 14,
 	'wmmultipop3' => 3,
 	'wmpop3' => 3,
+	'angst' => 3,
 };
 
 # reasons for obsolete packages

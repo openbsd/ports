@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1244 2021/02/22 13:31:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.1245 2021/03/01 17:34:34 tracey Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -6,7 +6,6 @@
      SUBDIR += aggregate
      SUBDIR += aggregate6
      SUBDIR += amule
-     SUBDIR += angst
      SUBDIR += ap-utils
      SUBDIR += argus
      SUBDIR += argus-clients
