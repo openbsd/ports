@@ -1,35 +1,40 @@
 Zig is a general-purpose programming language and toolchain for
 maintaining robust, optimal, and reusable software.
 
+- Robust : behavior is correct even for edge cases such as out of
+  memory.
+- Optimal : write programs the best way they can behave and perform.
+- Reusable : the same code works in many environments which have
+  different constraints.
+- Maintainable : precisely communicate intent to the compiler and
+  other programmers. The language imposes a low overhead to reading
+  code and is resilient to changing requirements and environments.
+
+
 - Simple Language
 
 Focus on debugging your application rather than debugging your
 programming language knowledge.
 
-No hidden control flow.
-
-No hidden memory allocations.
-
-No preprocessor, no macros.
+  - No hidden control flow.
+  - No hidden memory allocations.
+  - No preprocessor, no macros.
 
 - Comptime
 
 A fresh approach to metaprogramming based on compile-time code
 execution and lazy evaluation.
 
-Call any function at compile-time.
-
-Manipulate types as values without runtime overhead.
-
-Comptime emulates the target architecture.
+  - Call any function at compile-time.
+  - Manipulate types as values without runtime overhead.
+  - Comptime emulates the target architecture.
 
 - Performance Meets Safety
 
 Write fast, clear code capable of handling all error conditions.
 
-The language gracefully guides your error handling logic.
-
-Configurable runtime checks help you strike a balance between
-performance and safety guarantees.
-
-Take advantage of vector types to express SIMD instructions portably.
+  - The language gracefully guides your error handling logic.
+  - Configurable runtime checks help you strike a balance between
+    performance and safety guarantees.
+  - Take advantage of vector types to express SIMD instructions
+    portably.
