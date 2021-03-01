@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/01 16:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/03/01 19:21:42 sthen Exp $
 
 COMMENT =		Python WSGI HTTP server
 
@@ -21,7 +21,7 @@ MODPY_PYTEST =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-RUN_DEPENDS =		www/py-multidict${MODPY_FLAVOR}
+RUN_DEPENDS =		www/py-multidict${MODPY_FLAVOR} \
 			www/py-aiohttp${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
