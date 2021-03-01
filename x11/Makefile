@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.696 2021/02/26 21:24:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.697 2021/03/01 04:20:28 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -121,7 +121,6 @@
      SUBDIR += hs-X11
      SUBDIR += hs-X11-xft
      SUBDIR += hs-dbus
-     SUBDIR += hs-xmonad-contrib
      SUBDIR += hsetroot
      SUBDIR += human-icon-theme
      SUBDIR += i3
