@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2019/08/15 05:43:15 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2021/03/01 12:29:56 landry Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
 GH_ACCOUNT =	ib
 GH_PROJECT =	xarchiver
-GH_TAGNAME =	0.5.4.14
+GH_TAGNAME =	0.5.4.17
 
 HOMEPAGE =	http://xarchiver.sourceforge.net
 
@@ -15,9 +15,9 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo
 WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m
+WANTLIB += gobject-2.0 graphite2 gtk-3 harfbuzz iconv intl m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread xcb xcb-render xcb-shm z
+WANTLIB += pthread xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
 
 MODULES =	textproc/intltool
 

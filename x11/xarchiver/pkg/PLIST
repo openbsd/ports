@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/08/15 05:43:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/03/01 12:29:56 landry Exp $
 @bin bin/xarchiver
 libexec/thunar-archive-plugin/
 libexec/thunar-archive-plugin/xarchiver.tap
@@ -67,6 +67,7 @@ share/locale/kk/LC_MESSAGES/xarchiver.mo
 share/locale/ku/LC_MESSAGES/xarchiver.mo
 share/locale/lt/LC_MESSAGES/xarchiver.mo
 share/locale/lv/LC_MESSAGES/xarchiver.mo
+share/locale/ms/LC_MESSAGES/xarchiver.mo
 share/locale/nb/LC_MESSAGES/xarchiver.mo
 share/locale/nl/LC_MESSAGES/xarchiver.mo
 share/locale/pa/LC_MESSAGES/xarchiver.mo
@@ -80,12 +81,15 @@ share/locale/ru/LC_MESSAGES/xarchiver.mo
 share/locale/si/LC_MESSAGES/xarchiver.mo
 share/locale/sk/LC_MESSAGES/xarchiver.mo
 share/locale/sq/LC_MESSAGES/xarchiver.mo
+share/locale/sr/LC_MESSAGES/xarchiver.mo
 share/locale/sv/LC_MESSAGES/xarchiver.mo
 share/locale/te/LC_MESSAGES/xarchiver.mo
+share/locale/th/LC_MESSAGES/xarchiver.mo
 share/locale/tr/LC_MESSAGES/xarchiver.mo
 share/locale/ug/LC_MESSAGES/xarchiver.mo
 share/locale/uk/LC_MESSAGES/xarchiver.mo
 share/locale/ur/LC_MESSAGES/xarchiver.mo
+share/locale/vi/LC_MESSAGES/xarchiver.mo
 share/locale/zh_CN/LC_MESSAGES/xarchiver.mo
 share/locale/zh_TW/LC_MESSAGES/xarchiver.mo
 share/pixmaps/
@@ -93,6 +97,8 @@ share/pixmaps/xarchiver/
 share/pixmaps/xarchiver/xarchiver-add.png
 share/pixmaps/xarchiver/xarchiver-close.png
 share/pixmaps/xarchiver/xarchiver-extract.png
+share/pixmaps/xarchiver/xarchiver-green.png
 share/pixmaps/xarchiver/xarchiver-html.png
+share/pixmaps/xarchiver/xarchiver-red.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
