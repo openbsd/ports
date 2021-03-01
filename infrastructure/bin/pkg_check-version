@@ -1,0 +1,139 @@
+#! /usr/bin/perl
+
+# ex:ts=8 sw=4:
+# $OpenBSD: pkg_check-version,v 1.1 2021/03/01 10:35:14 espie Exp $
+#
+# Copyright (c) 2021 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+
+package OpenBSD::VersionCheck::State;
+our @ISA = qw(OpenBSD::State);
+
+use OpenBSD::State;
+
+sub handle_options
+{
+	my $state = shift;
+
+	$state->SUPER::handle_options('Hv', '[Hv] pkg-name ...');
+	if (@ARGV == 0) {
+		$state->usage;
+	}
+}
+
+package OpenBSD::PackageName::dewey;
+sub human_print
+{
+	my ($self, $state) = @_;
+	$state->say("\tversion (split): #1", join(' ', @{$self->{deweys}}));
+	if ($self->{suffix} eq '') {
+		$state->say("\tno suffix");
+	} else {
+		$state->say("\twith suffix: #1 #2", $self->{suffix},
+		    $self->{suffix_value});
+	}
+}
+
+package OpenBSD::PackageName::version;
+sub human_print
+{
+	my ($self, $state) = @_;
+	$self->{dewey}->human_print($state);
+	if (defined $self->{p}) {
+		$state->say("\tREVISION: #1", $self->{p});
+	} else {
+		$state->say("\tno REVISION");
+	}
+	if (defined $self->{v}) {
+		$state->say("\tEPOCH: #1", $self->{v});
+	} else {
+		$state->say("\tno EPOCH");
+	}
+}
+
+package OpenBSD::PackageName::Name;
+sub human_print
+{
+	my ($self, $state) = @_;
+	$state->say("\tstem: #1", $self->{stem});
+	$self->{version}->human_print($state);
+	$state->say("\tflavors: #1", 
+	    join(' ', (sort keys %{$self->{flavors}})));
+}
+
+sub add_to_stems
+{
+	my ($self, $h) = @_;
+	push(@{$h->{$self->to_pattern}}, $self);
+}
+
+package OpenBSD::PackageName::Stem;
+sub human_print
+{
+	my ($self, $state) = @_;
+	$state->say("\tstem = #1", $self->{stem});
+}
+
+sub add_to_stems
+{
+	# nothing to do for "pure stems"
+}
+
+package OpenBSD::VersionCheck;
+
+use OpenBSD::PackageName;
+
+sub parse_and_run
+{
+	my $self = shift;
+	my $rc = 0;
+	my $state = OpenBSD::VersionCheck::State->new('pkg-check_version');
+	$state->handle_options;
+	my $by_stem = {};
+	for my $name (@ARGV) {
+		my $v = OpenBSD::PackageName->from_string($name);
+		if ($state->opt('H')) {
+			$state->say("#1:", $name);
+			$v->human_print($state);
+		}
+		my @issues = $v->has_issues;
+		if (@issues > 0) {
+			for my $s (@issues) {
+				$state->errsay("#1: #2", $name, $s);
+				$rc = 1;
+			}
+		} elsif ($state->opt('v')) {
+			$state->errsay("#1 has no issues", $name);
+		}
+		$v->add_to_stems($by_stem);
+	}
+	for my $stem (sort keys %$by_stem) {
+		my $list = $by_stem->{$stem};
+		if (@$list == 1 && !$state->opt('v')) {
+			next;
+		}
+		my $h = $state->opt('v') ?
+		    "#1 sorts as (older to newer): #2" :
+		    "#1 sorted: #2";
+		$state->say($h, $stem,
+		    join(' ', map {$_->to_string} 
+		    	sort {$a->compare($b)} @$list));
+	}
+	return $rc;
+}
+
+exit(__PACKAGE__->parse_and_run);
