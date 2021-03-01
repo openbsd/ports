@@ -1,0 +1,37 @@
+$OpenBSD: patch-editor_registry-search_vala,v 1.1 2021/03/01 09:52:31 ajacoutot Exp $
+
+From fdc90849223649509424bbefe14990de71db2b2b Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Sat, 16 Jan 2021 13:26:32 +0100
+Subject: [PATCH] Don't alter or try to write GtkChild fields
+
+Index: editor/registry-search.vala
+--- editor/registry-search.vala.orig
++++ editor/registry-search.vala
+@@ -48,7 +48,7 @@ private class RegistrySearch : RegistryList
+ 
+     internal bool handle_alt_copy_text (out string copy_text)
+     {
+-        return _handle_alt_copy_text (out copy_text, ref key_list_box);
++        return _handle_alt_copy_text (out copy_text, key_list_box);
+     }
+ 
+     internal void clean ()
+@@ -145,7 +145,7 @@ private class RegistrySearch : RegistryList
+     * * Keyboard calls
+     \*/
+ 
+-    private static bool _handle_alt_copy_text (out string copy_text, ref ListBox key_list_box)
++    private static bool _handle_alt_copy_text (out string copy_text, ListBox key_list_box)
+     {
+         ListBoxRow? selected_row = key_list_box.get_selected_row ();
+         if (selected_row == null)
+@@ -521,7 +521,7 @@ private class RegistrySearch : RegistryList
+     private void update_row_header (ListBoxRow row, ListBoxRow? before)
+     {
+         int row_index = row.get_index ();
+-        if (is_first_row (row_index, ref before))
++        if (is_first_row (row_index, before))
+             return;
+ 
+         if (search_is_path_search)

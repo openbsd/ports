@@ -1,0 +1,31 @@
+$OpenBSD: patch-editor_registry-list_vala,v 1.1 2021/03/01 09:52:31 ajacoutot Exp $
+
+From fdc90849223649509424bbefe14990de71db2b2b Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Sat, 16 Jan 2021 13:26:32 +0100
+Subject: [PATCH] Don't alter or try to write GtkChild fields
+
+Index: editor/registry-list.vala
+--- editor/registry-list.vala.orig
++++ editor/registry-list.vala
+@@ -291,9 +291,9 @@ private abstract class RegistryList : Grid, BrowsableV
+ 
+     internal bool handle_copy_text (out string copy_text) // can compile with "private", but is public 1/2
+     {
+-        return _handle_copy_text (out copy_text, ref key_list_box);
++        return _handle_copy_text (out copy_text, key_list_box);
+     }
+-    private bool _handle_copy_text (out string copy_text, ref ListBox key_list_box)
++    private bool _handle_copy_text (out string copy_text, ListBox key_list_box)
+     {
+         ListBoxRow? selected_row = (ListBoxRow?) key_list_box.get_selected_row ();
+         if (selected_row == null)
+@@ -1138,7 +1138,7 @@ private abstract class RegistryList : Grid, BrowsableV
+     * * headers
+     \*/
+ 
+-    protected static bool is_first_row (int row_index, ref unowned ListBoxRow? before)
++    protected static bool is_first_row (int row_index, ListBoxRow? before)
+     {
+         bool is_first_row = row_index == 0;
+         if (is_first_row != (before == null))
