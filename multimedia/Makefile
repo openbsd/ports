@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.132 2021/02/14 13:19:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.133 2021/03/01 20:02:55 naddy Exp $
 
      SUBDIR =
      SUBDIR += aom
      SUBDIR += assimp
      SUBDIR += atomicparsley
-     SUBDIR += audiopreview
      SUBDIR += ccextractor
      SUBDIR += dav1d
      SUBDIR += devede
