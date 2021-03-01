@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/01 16:45:52 sthen Exp $
 
 COMMENT =		yet another URL library
 
 MODPY_EGG_VERSION =	1.4.2
 DISTNAME =		yarl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www devel
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
+FLAVORS =		python3
+FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
