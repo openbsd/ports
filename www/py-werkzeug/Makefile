@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2021/02/20 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/03/01 13:11:19 sthen Exp $
 
 COMMENT =		WSGI utility collection
 
 MODPY_EGG_VERSION =	0.12.1
 DISTNAME =		Werkzeug-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www devel
 
@@ -21,7 +21,7 @@ GH_TAGNAME=		${MODPY_EGG_VERSION}
 MODULES =		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODPY_SETUPTOOLS =	Yes
 

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/18 23:54:11 pamela Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/01 13:11:19 sthen Exp $
+@pkgpath www/py-vcrpy
 lib/python${MODPY_VERSION}/site-packages/vcr/
 lib/python${MODPY_VERSION}/site-packages/vcr/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}/

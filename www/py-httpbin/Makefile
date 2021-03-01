@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/03/01 13:11:18 sthen Exp $
 
 COMMENT =		HTTP request and response service
 
 MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		httpbin-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 
@@ -26,7 +26,7 @@ RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
 			www/py-itsdangerous${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 NO_TEST =		Yes
 

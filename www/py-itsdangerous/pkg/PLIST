@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/20 22:27:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/03/01 13:11:19 sthen Exp $
+@pkgpath www/py-itsdangerous
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}itsdangerous.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

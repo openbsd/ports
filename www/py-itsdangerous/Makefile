@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/20 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/03/01 13:11:19 sthen Exp $
 
 COMMENT = 	helpers to pass trusted data to untrusted environments
 
 MODPY_EGG_VERSION = 0.24
-REVISION =	7
+REVISION =	8
 DISTNAME =	itsdangerous-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -23,7 +23,7 @@ MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =	textproc/py-sphinx,python3>=1.5
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 

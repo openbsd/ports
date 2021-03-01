@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/02/19 23:13:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/03/01 13:11:18 sthen Exp $
 @conflict py-flask-<0.12.3p3
-bin/flask${MODPY_BIN_SUFFIX}
+@pkgpath www/py-flask
+bin/flask
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

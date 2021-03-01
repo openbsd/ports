@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1013 2021/02/27 22:28:51 daniel Exp $
+# $OpenBSD: Makefile,v 1.1014 2021/03/01 13:11:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -445,7 +445,6 @@
      SUBDIR += py-cookies,python3
      SUBDIR += py-feedgenerator
      SUBDIR += py-feedgenerator,python3
-     SUBDIR += py-flask
      SUBDIR += py-flask,python3
      SUBDIR += py-flask-cors
      SUBDIR += py-flask-login,python3
@@ -462,13 +461,11 @@
      SUBDIR += py-html5-parser
      SUBDIR += py-http_ece
      SUBDIR += py-http_ece,python3
-     SUBDIR += py-httpbin
      SUBDIR += py-httpbin,python3
      SUBDIR += py-httpie
      SUBDIR += py-httplib2
      SUBDIR += py-httplib2,python3
      SUBDIR += py-hyperlink,python3
-     SUBDIR += py-itsdangerous
      SUBDIR += py-itsdangerous,python3
      SUBDIR += py-jinja2
      SUBDIR += py-jinja2,python3
@@ -525,7 +522,6 @@
      SUBDIR += py-urlgrabber
      SUBDIR += py-urllib3
      SUBDIR += py-urllib3,python3
-     SUBDIR += py-vcrpy
      SUBDIR += py-vcrpy,python3
      SUBDIR += py-waitress
      SUBDIR += py-waitress,python3
@@ -533,7 +529,6 @@
      SUBDIR += py-webob,python3
      SUBDIR += py-webpy,python3
      SUBDIR += py-webtest,python3
-     SUBDIR += py-werkzeug
      SUBDIR += py-werkzeug,python3
      SUBDIR += py-wsgiproxy
      SUBDIR += py-wtforms,python3
