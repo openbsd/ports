@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/11/24 16:03:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/03/01 07:23:22 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kstars
@@ -803,6 +803,7 @@ share/doc/HTML/sv/kstars/devicemanager.png
 share/doc/HTML/sv/kstars/dumpmode.docbook
 share/doc/HTML/sv/kstars/ecliptic.docbook
 share/doc/HTML/sv/kstars/ekos-align.docbook
+share/doc/HTML/sv/kstars/ekos-analyze.docbook
 share/doc/HTML/sv/kstars/ekos-capture.docbook
 share/doc/HTML/sv/kstars/ekos-fits-viewer.docbook
 share/doc/HTML/sv/kstars/ekos-focus.docbook
