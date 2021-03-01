@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/03/25 12:47:25 mbalmer Exp $
-bin/esic
-bin/icmpsic
-bin/icmpsic6
-bin/isic
-bin/isic6
-bin/multisic
-bin/tcpsic
-bin/tcpsic6
-bin/udpsic
-bin/udpsic6
+@comment $OpenBSD: PLIST,v 1.5 2021/03/01 19:54:52 sthen Exp $
+@bin bin/esic
+@bin bin/icmpsic
+@bin bin/icmpsic6
+@bin bin/isic
+@bin bin/isic6
+@bin bin/multisic
+@bin bin/tcpsic
+@bin bin/tcpsic6
+@bin bin/udpsic
+@bin bin/udpsic6
 @man man/man1/isic.1

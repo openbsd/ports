@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:49:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/03/01 19:54:52 sthen Exp $
 
 COMMENT=	IP stack integrity checker
 
 DISTNAME=	isic-0.07
-REVISION =	0
+REVISION=	1
 CATEGORIES=	security
 
 HOMEPAGE=	http://isic.sourceforge.net/

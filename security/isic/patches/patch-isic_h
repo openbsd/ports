@@ -1,0 +1,15 @@
+$OpenBSD: patch-isic_h,v 1.1 2021/03/01 19:54:52 sthen Exp $
+
+Index: isic.h
+--- isic.h.orig
++++ isic.h
+@@ -6,6 +6,9 @@
+ 
+ #include <libnet.h>
+ 
++#include <netinet/ip.h>
++#include <netinet/tcp.h>
++#include <netinet/udp.h>
+ #include <netinet/ip_icmp.h>
+ #include <netinet/icmp6.h>
+ #include <netinet/ip6.h>
