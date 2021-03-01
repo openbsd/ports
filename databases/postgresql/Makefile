@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2021/02/23 19:39:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.270 2021/03/01 13:40:08 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -9,6 +9,7 @@ COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
 VERSION=	13.2
 PREV_MAJOR=	12
+REVISION=	0
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -48,13 +49,12 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=	No
 
-CONFIGURE_ENV=	ac_cv_path_PYTHON=${MODPY_BIN} \
-		ac_cv_search_backtrace_symbols=no \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PYTHON=${MODPY_BIN}
 
 CONFIGURE_ARGS=	--disable-rpath \
 		--with-openssl=/usr \
@@ -87,7 +87,6 @@ CONFIGURE_ARGS+= --disable-spinlocks
 # If clang gains "-fexcess-precision=standard" support then this
 # should be removed.
 MODULES+=	gcc4
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODGCC4_ARCHS=	i386
 MODGCC4_LANGS=	c
 # An alternative workaround:
@@ -100,8 +99,9 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 ALL_TARGET=	world
 INSTALL_TARGET=	install-world
 
-LIB_DEPENDS-main=	textproc/libxml
-WANTLIB-main=		${WANTLIB} xml2
+LIB_DEPENDS-main=	devel/libexecinfo \
+			textproc/libxml
+WANTLIB-main=		${WANTLIB} execinfo xml2
 
 LIB_DEPENDS-server=	databases/postgresql=${VERSION} \
 			${LIB_DEPENDS-main}
