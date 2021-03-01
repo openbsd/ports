@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/03/01 02:50:51 afresh1 Exp $
 
 COMMENT=		Executable Uniform Command-Line Interface Descriptions
 
-V=			0.2.0
-DISTNAME=		Getopt-Euclid-v$V
-REVISION=		1
-PKGNAME=		p5-Getopt-Euclid-$V
+DISTNAME=		Getopt-Euclid-0.4.5
 CATEGORIES=		devel
 
 # perl
@@ -15,5 +12,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
+
+RUN_DEPENDS=		textproc/p5-Pod-Parser
 
 .include <bsd.port.mk>
