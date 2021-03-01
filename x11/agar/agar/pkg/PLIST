@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/22 09:43:45 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/03/01 07:01:03 bentley Exp $
 bin/agar-au-config
 bin/agar-config
 bin/agar-core-config
-bin/agar-dev-config
+bin/agar-map-config
 bin/agar-math-config
+bin/agar-net-config
+bin/agar-sg-config
+bin/agar-sk-config
 bin/agar-vg-config
 include/agar/
 include/agar/agar/
@@ -22,18 +25,46 @@ include/agar/agar/config/_mk_have_float_h.h
 include/agar/agar/config/_mk_have_limits_h.h
 include/agar/agar/config/_mk_have_setjmp.h
 include/agar/agar/config/_mk_have_signal.h
+include/agar/agar/config/_mk_have_stdint_h.h
 include/agar/agar/config/_mk_have_stdlib_h.h
 include/agar/agar/config/_mk_have_strtold.h
 include/agar/agar/config/_mk_have_strtoll.h
+include/agar/agar/config/_mk_have_sys_stat_h.h
 include/agar/agar/config/_mk_have_sys_types_h.h
 include/agar/agar/config/_mk_have_unistd_h.h
 include/agar/agar/config/_mk_little_endian.h
+include/agar/agar/config/ag_ansi_color.h
 include/agar/agar/config/ag_debug.h
-include/agar/agar/config/ag_debug_core.h
-include/agar/agar/config/ag_debug_gui.h
+include/agar/agar/config/ag_enable_dso.h
+include/agar/agar/config/ag_enable_exec.h
+include/agar/agar/config/ag_enable_string.h
+include/agar/agar/config/ag_event_loop.h
+include/agar/agar/config/ag_inline_byteswap.h
+include/agar/agar/config/ag_inline_error.h
+include/agar/agar/config/ag_inline_io.h
+include/agar/agar/config/ag_inline_object.h
+include/agar/agar/config/ag_inline_string.h
+include/agar/agar/config/ag_inline_surface.h
+include/agar/agar/config/ag_inline_tbl.h
+include/agar/agar/config/ag_inline_threads.h
+include/agar/agar/config/ag_inline_variable.h
+include/agar/agar/config/ag_inline_widget.h
 include/agar/agar/config/ag_legacy.h
+include/agar/agar/config/ag_model.h
+include/agar/agar/config/ag_named_args.h
+include/agar/agar/config/ag_namespaces.h
 include/agar/agar/config/ag_network.h
+include/agar/agar/config/ag_serialization.h
 include/agar/agar/config/ag_threads.h
+include/agar/agar/config/ag_timers.h
+include/agar/agar/config/ag_type_safety.h
+include/agar/agar/config/ag_unicode.h
+include/agar/agar/config/ag_use_attributes.h
+include/agar/agar/config/ag_user.h
+include/agar/agar/config/ag_verbosity.h
+include/agar/agar/config/ag_web.h
+include/agar/agar/config/ag_widgets.h
+include/agar/agar/config/ag_wm_hints.h
 include/agar/agar/config/altivec_cflags.h
 include/agar/agar/config/bindir.h
 include/agar/agar/config/clock_cflags.h
@@ -43,18 +74,27 @@ include/agar/agar/config/cocoa_libs.h
 include/agar/agar/config/datadir.h
 include/agar/agar/config/db4_cflags.h
 include/agar/agar/config/db4_libs.h
+include/agar/agar/config/db5_cflags.h
+include/agar/agar/config/db5_libs.h
 include/agar/agar/config/double_precision.h
 include/agar/agar/config/enable_au.h
-include/agar/agar/config/enable_dev.h
 include/agar/agar/config/enable_gui.h
+include/agar/agar/config/enable_map.h
 include/agar/agar/config/enable_math.h
+include/agar/agar/config/enable_micro.h
 include/agar/agar/config/enable_nls.h
+include/agar/agar/config/enable_sg.h
+include/agar/agar/config/enable_sk.h
 include/agar/agar/config/enable_vg.h
 include/agar/agar/config/execsuffix.h
 include/agar/agar/config/fontconfig_cflags.h
 include/agar/agar/config/fontconfig_libs.h
 include/agar/agar/config/freetype_cflags.h
 include/agar/agar/config/freetype_libs.h
+include/agar/agar/config/gettext_cflags.h
+include/agar/agar/config/gettext_libs.h
+include/agar/agar/config/glu_cflags.h
+include/agar/agar/config/glu_libs.h
 include/agar/agar/config/glx_cflags.h
 include/agar/agar/config/glx_libs.h
 include/agar/agar/config/have_64bit.h
@@ -64,6 +104,10 @@ include/agar/agar/config/have_altivec.h
 include/agar/agar/config/have_altivec_h.h
 include/agar/agar/config/have_asprintf.h
 include/agar/agar/config/have_bounded_attribute.h
+include/agar/agar/config/have_cc.h
+include/agar/agar/config/have_cc65.h
+include/agar/agar/config/have_cc_clang.h
+include/agar/agar/config/have_cc_gcc.h
 include/agar/agar/config/have_cc_mconsole.h
 include/agar/agar/config/have_cc_mwindows.h
 include/agar/agar/config/have_cc_warnings.h
@@ -74,6 +118,7 @@ include/agar/agar/config/have_const_attribute.h
 include/agar/agar/config/have_csidl.h
 include/agar/agar/config/have_cygwin.h
 include/agar/agar/config/have_db4.h
+include/agar/agar/config/have_db5.h
 include/agar/agar/config/have_deprecated_attribute.h
 include/agar/agar/config/have_dl_h.h
 include/agar/agar/config/have_dlfcn_h.h
@@ -81,6 +126,8 @@ include/agar/agar/config/have_dlopen.h
 include/agar/agar/config/have_dyld.h
 include/agar/agar/config/have_dyld_return_on_error.h
 include/agar/agar/config/have_execvp.h
+include/agar/agar/config/have_fdclose.h
+include/agar/agar/config/have_float.h
 include/agar/agar/config/have_fontconfig.h
 include/agar/agar/config/have_format_attribute.h
 include/agar/agar/config/have_freetype.h
@@ -92,7 +139,9 @@ include/agar/agar/config/have_getpwuid.h
 include/agar/agar/config/have_gettext.h
 include/agar/agar/config/have_gettimeofday.h
 include/agar/agar/config/have_getuid.h
+include/agar/agar/config/have_glext.h
 include/agar/agar/config/have_glob.h
+include/agar/agar/config/have_glu.h
 include/agar/agar/config/have_glx.h
 include/agar/agar/config/have_iconv.h
 include/agar/agar/config/have_int64_t.h
@@ -102,19 +151,23 @@ include/agar/agar/config/have_libpng14.h
 include/agar/agar/config/have_long_double.h
 include/agar/agar/config/have_long_long.h
 include/agar/agar/config/have_mach_o_dyld_h.h
+include/agar/agar/config/have_malloc_attribute.h
 include/agar/agar/config/have_math.h
 include/agar/agar/config/have_math_c99.h
 include/agar/agar/config/have_mysql.h
 include/agar/agar/config/have_nanosleep.h
-include/agar/agar/config/have_nonnull_attribute.h
 include/agar/agar/config/have_noreturn_attribute.h
+include/agar/agar/config/have_objc.h
 include/agar/agar/config/have_objc_warnings.h
 include/agar/agar/config/have_opengl.h
 include/agar/agar/config/have_packed_attribute.h
 include/agar/agar/config/have_png.h
 include/agar/agar/config/have_portaudio.h
+include/agar/agar/config/have_pthread_cond_t_pointer.h
 include/agar/agar/config/have_pthread_mutex_recursive.h
 include/agar/agar/config/have_pthread_mutex_recursive_np.h
+include/agar/agar/config/have_pthread_mutex_t_pointer.h
+include/agar/agar/config/have_pthread_t_pointer.h
 include/agar/agar/config/have_pthreads.h
 include/agar/agar/config/have_pthreads_xopen.h
 include/agar/agar/config/have_pure_attribute.h
@@ -135,8 +188,9 @@ include/agar/agar/config/have_sse.h
 include/agar/agar/config/have_sse2.h
 include/agar/agar/config/have_sse3.h
 include/agar/agar/config/have_strsep.h
+include/agar/agar/config/have_sys_param_h.h
+include/agar/agar/config/have_sys_uio_h.h
 include/agar/agar/config/have_timerfd.h
-include/agar/agar/config/have_uim.h
 include/agar/agar/config/have_unused_variable_attribute.h
 include/agar/agar/config/have_vasprintf.h
 include/agar/agar/config/have_vsnprintf.h
@@ -146,8 +200,12 @@ include/agar/agar/config/have_winsock1.h
 include/agar/agar/config/have_winsock2.h
 include/agar/agar/config/have_x11.h
 include/agar/agar/config/have_xbox.h
+include/agar/agar/config/have_xf86misc.h
 include/agar/agar/config/have_xinerama.h
 include/agar/agar/config/have_xkb.h
+include/agar/agar/config/have_zlib.h
+include/agar/agar/config/iconv_cflags.h
+include/agar/agar/config/iconv_libs.h
 include/agar/agar/config/incldir.h
 include/agar/agar/config/inline_altivec.h
 include/agar/agar/config/inline_sse.h
@@ -162,6 +220,8 @@ include/agar/agar/config/math_c99_libs.h
 include/agar/agar/config/math_cflags.h
 include/agar/agar/config/math_libs.h
 include/agar/agar/config/moduledir.h
+include/agar/agar/config/mysql_cflags.h
+include/agar/agar/config/mysql_libs.h
 include/agar/agar/config/opengl_cflags.h
 include/agar/agar/config/opengl_libs.h
 include/agar/agar/config/package.h
@@ -192,21 +252,21 @@ include/agar/agar/config/x11_cflags.h
 include/agar/agar/config/x11_libs.h
 include/agar/agar/config/xinerama_cflags.h
 include/agar/agar/config/xinerama_libs.h
+include/agar/agar/config/zlib_cflags.h
+include/agar/agar/config/zlib_libs.h
 include/agar/agar/core/
 include/agar/agar/core.h
-include/agar/agar/core/asprintf.h
+include/agar/agar/core/agsi.h
+include/agar/agar/core/agtime.h
 include/agar/agar/core/attributes.h
 include/agar/agar/core/begin.h
 include/agar/agar/core/btree.h
 include/agar/agar/core/byteswap.h
-include/agar/agar/core/class.h
 include/agar/agar/core/close.h
 include/agar/agar/core/close_attributes.h
 include/agar/agar/core/close_types.h
 include/agar/agar/core/config.h
 include/agar/agar/core/core.h
-include/agar/agar/core/core_begin.h
-include/agar/agar/core/core_close.h
 include/agar/agar/core/core_init.h
 include/agar/agar/core/core_pub.h
 include/agar/agar/core/cpuinfo.h
@@ -221,44 +281,44 @@ include/agar/agar/core/event.h
 include/agar/agar/core/exec.h
 include/agar/agar/core/file.h
 include/agar/agar/core/getopt.h
+include/agar/agar/core/inline_byteswap.h
+include/agar/agar/core/inline_error.h
+include/agar/agar/core/inline_event.h
+include/agar/agar/core/inline_load_integral.h
+include/agar/agar/core/inline_load_real.h
+include/agar/agar/core/inline_object.h
+include/agar/agar/core/inline_string.h
+include/agar/agar/core/inline_tbl.h
+include/agar/agar/core/inline_threads.h
+include/agar/agar/core/inline_variable.h
 include/agar/agar/core/limits.h
-include/agar/agar/core/list.h
 include/agar/agar/core/load_integral.h
 include/agar/agar/core/load_real.h
 include/agar/agar/core/load_string.h
 include/agar/agar/core/load_version.h
-include/agar/agar/core/md5.h
-include/agar/agar/core/net.h
+include/agar/agar/core/nullability.h
 include/agar/agar/core/object.h
+include/agar/agar/core/options.h
 include/agar/agar/core/queue.h
 include/agar/agar/core/queue_close.h
-include/agar/agar/core/rmd160.h
-include/agar/agar/core/sha1.h
 include/agar/agar/core/snprintf.h
 include/agar/agar/core/string.h
 include/agar/agar/core/string_strcasecmp.h
 include/agar/agar/core/tbl.h
 include/agar/agar/core/text.h
 include/agar/agar/core/threads.h
-include/agar/agar/core/time.h
-include/agar/agar/core/tree.h
+include/agar/agar/core/threads_nullability.h
 include/agar/agar/core/types.h
 include/agar/agar/core/user.h
 include/agar/agar/core/variable.h
 include/agar/agar/core/vasprintf.h
+include/agar/agar/core/vec.h
 include/agar/agar/core/version.h
 include/agar/agar/core/vsnprintf.h
 include/agar/agar/core/win32.h
 include/agar/agar/core/xbox.h
-include/agar/agar/dev/
-include/agar/agar/dev.h
-include/agar/agar/dev/begin.h
-include/agar/agar/dev/close.h
-include/agar/agar/dev/dev.h
-include/agar/agar/dev/dev_pub.h
 include/agar/agar/gui/
 include/agar/agar/gui.h
-include/agar/agar/gui/anim.h
 include/agar/agar/gui/begin.h
 include/agar/agar/gui/box.h
 include/agar/agar/gui/button.h
@@ -280,30 +340,30 @@ include/agar/agar/gui/drv_wgl_keymaps.h
 include/agar/agar/gui/editable.h
 include/agar/agar/gui/file_dlg.h
 include/agar/agar/gui/file_dlg_common.h
-include/agar/agar/gui/file_selector.h
 include/agar/agar/gui/fixed.h
 include/agar/agar/gui/fixed_plotter.h
 include/agar/agar/gui/font_selector.h
 include/agar/agar/gui/fonts.h
 include/agar/agar/gui/fonts_data.h
-include/agar/agar/gui/fspinbutton.h
 include/agar/agar/gui/geometry.h
 include/agar/agar/gui/glview.h
 include/agar/agar/gui/graph.h
 include/agar/agar/gui/gui.h
 include/agar/agar/gui/gui_math.h
 include/agar/agar/gui/gui_pub.h
-include/agar/agar/gui/hbox.h
 include/agar/agar/gui/hsvpal.h
 include/agar/agar/gui/icon.h
 include/agar/agar/gui/iconmgr.h
 include/agar/agar/gui/icons.h
 include/agar/agar/gui/icons_data.h
+include/agar/agar/gui/inline_colors.h
+include/agar/agar/gui/inline_primitive.h
+include/agar/agar/gui/inline_surface.h
+include/agar/agar/gui/inline_widget.h
 include/agar/agar/gui/input_device.h
 include/agar/agar/gui/keyboard.h
 include/agar/agar/gui/keymap.h
 include/agar/agar/gui/label.h
-include/agar/agar/gui/load_color.h
 include/agar/agar/gui/load_surface.h
 include/agar/agar/gui/load_xcf.h
 include/agar/agar/gui/menu.h
@@ -312,6 +372,7 @@ include/agar/agar/gui/mouse.h
 include/agar/agar/gui/mpane.h
 include/agar/agar/gui/mspinbutton.h
 include/agar/agar/gui/notebook.h
+include/agar/agar/gui/nullability.h
 include/agar/agar/gui/numerical.h
 include/agar/agar/gui/objsel.h
 include/agar/agar/gui/opengl.h
@@ -327,7 +388,6 @@ include/agar/agar/gui/sdl.h
 include/agar/agar/gui/separator.h
 include/agar/agar/gui/slider.h
 include/agar/agar/gui/socket.h
-include/agar/agar/gui/spinbutton.h
 include/agar/agar/gui/statusbar.h
 include/agar/agar/gui/style_data.h
 include/agar/agar/gui/stylesheet.h
@@ -343,15 +403,50 @@ include/agar/agar/gui/treetbl.h
 include/agar/agar/gui/ttf.h
 include/agar/agar/gui/ucombo.h
 include/agar/agar/gui/units.h
-include/agar/agar/gui/vbox.h
 include/agar/agar/gui/widget.h
-include/agar/agar/gui/widget_legacy.h
 include/agar/agar/gui/window.h
+include/agar/agar/map/
+include/agar/agar/map.h
+include/agar/agar/map/actor.h
+include/agar/agar/map/begin.h
+include/agar/agar/map/close.h
+include/agar/agar/map/icons.h
+include/agar/agar/map/icons_data.h
+include/agar/agar/map/insert.h
+include/agar/agar/map/map.h
+include/agar/agar/map/map_math.h
+include/agar/agar/map/map_pub.h
+include/agar/agar/map/mapedit.h
+include/agar/agar/map/mapview.h
+include/agar/agar/map/nodemask.h
+include/agar/agar/map/nodesel.h
+include/agar/agar/map/nullability.h
+include/agar/agar/map/refsel.h
+include/agar/agar/map/rg.h
+include/agar/agar/map/rg_feature.h
+include/agar/agar/map/rg_fill.h
+include/agar/agar/map/rg_icons.h
+include/agar/agar/map/rg_icons_data.h
+include/agar/agar/map/rg_math.h
+include/agar/agar/map/rg_pixmap.h
+include/agar/agar/map/rg_prim.h
+include/agar/agar/map/rg_sketch.h
+include/agar/agar/map/rg_sketchproj.h
+include/agar/agar/map/rg_texsel.h
+include/agar/agar/map/rg_texture.h
+include/agar/agar/map/rg_tile.h
+include/agar/agar/map/rg_tileset.h
+include/agar/agar/map/rg_tileview.h
+include/agar/agar/map/rg_transform.h
+include/agar/agar/map/tool.h
+include/agar/agar/map/tools.h
 include/agar/agar/math/
-include/agar/agar/math.h
 include/agar/agar/math/begin.h
 include/agar/agar/math/close.h
+include/agar/agar/math/gl_macros.h
 include/agar/agar/math/m.h
+include/agar/agar/math/m_bezier.h
+include/agar/agar/math/m_bezier_primitives.h
 include/agar/agar/math/m_bitstring.h
 include/agar/agar/math/m_circle.h
 include/agar/agar/math/m_color.h
@@ -384,20 +479,101 @@ include/agar/agar/math/m_vector3_sse.h
 include/agar/agar/math/m_vector4_fpu.h
 include/agar/agar/math/m_vector_fpu.h
 include/agar/agar/math/m_vectorz.h
-include/agar/agar/math/math_pub.h
+include/agar/agar/micro/
+include/agar/agar/micro.h
+include/agar/agar/micro/begin.h
+include/agar/agar/micro/close.h
+include/agar/agar/micro/colors.h
+include/agar/agar/micro/drv.h
+include/agar/agar/micro/geometry.h
+include/agar/agar/micro/gui.h
+include/agar/agar/micro/micro_pub.h
+include/agar/agar/micro/nullability.h
+include/agar/agar/micro/primitive.h
+include/agar/agar/micro/surface.h
+include/agar/agar/micro/widget.h
+include/agar/agar/micro/window.h
+include/agar/agar/net/
+include/agar/agar/net.h
+include/agar/agar/net/begin.h
+include/agar/agar/net/close.h
+include/agar/agar/net/net.h
+include/agar/agar/net/net_pub.h
+include/agar/agar/net/nullability.h
+include/agar/agar/net/web.h
+include/agar/agar/sg/
+include/agar/agar/sg.h
+include/agar/agar/sg/begin.h
+include/agar/agar/sg/close.h
+include/agar/agar/sg/icons.h
+include/agar/agar/sg/icons_data.h
+include/agar/agar/sg/nullability.h
+include/agar/agar/sg/sg.h
+include/agar/agar/sg/sg_bsp.h
+include/agar/agar/sg/sg_camera.h
+include/agar/agar/sg/sg_cg_program.h
+include/agar/agar/sg/sg_circle.h
+include/agar/agar/sg/sg_dummy.h
+include/agar/agar/sg/sg_geom.h
+include/agar/agar/sg/sg_gui.h
+include/agar/agar/sg/sg_image.h
+include/agar/agar/sg/sg_light.h
+include/agar/agar/sg/sg_line.h
+include/agar/agar/sg/sg_load_ply.h
+include/agar/agar/sg/sg_map.h
+include/agar/agar/sg/sg_object.h
+include/agar/agar/sg/sg_octree.h
+include/agar/agar/sg/sg_palette.h
+include/agar/agar/sg/sg_palette_view.h
+include/agar/agar/sg/sg_plane.h
+include/agar/agar/sg/sg_point.h
+include/agar/agar/sg/sg_polyball.h
+include/agar/agar/sg/sg_polybox.h
+include/agar/agar/sg/sg_polygon.h
+include/agar/agar/sg/sg_program.h
+include/agar/agar/sg/sg_pub.h
+include/agar/agar/sg/sg_rectangle.h
+include/agar/agar/sg/sg_script.h
+include/agar/agar/sg/sg_sphere.h
+include/agar/agar/sg/sg_texture.h
+include/agar/agar/sg/sg_triangle.h
+include/agar/agar/sg/sg_view.h
+include/agar/agar/sg/sg_voxel.h
+include/agar/agar/sg/sg_widget.h
+include/agar/agar/sk/
+include/agar/agar/sk.h
+include/agar/agar/sk/begin.h
+include/agar/agar/sk/close.h
+include/agar/agar/sk/nullability.h
+include/agar/agar/sk/sk.h
+include/agar/agar/sk/sk_annot.h
+include/agar/agar/sk/sk_arc.h
+include/agar/agar/sk/sk_circle.h
+include/agar/agar/sk/sk_dimension.h
+include/agar/agar/sk/sk_dummy.h
+include/agar/agar/sk/sk_group.h
+include/agar/agar/sk/sk_gui.h
+include/agar/agar/sk/sk_line.h
+include/agar/agar/sk/sk_pixmap.h
+include/agar/agar/sk/sk_placement.h
+include/agar/agar/sk/sk_point.h
+include/agar/agar/sk/sk_polygon.h
+include/agar/agar/sk/sk_pub.h
+include/agar/agar/sk/sk_tool.h
+include/agar/agar/sk/sk_view.h
 include/agar/agar/vg/
 include/agar/agar/vg.h
 include/agar/agar/vg/begin.h
 include/agar/agar/vg/close.h
 include/agar/agar/vg/icons.h
 include/agar/agar/vg/icons_data.h
+include/agar/agar/vg/nullability.h
 include/agar/agar/vg/tools.h
 include/agar/agar/vg/vg.h
 include/agar/agar/vg/vg_arc.h
 include/agar/agar/vg/vg_circle.h
 include/agar/agar/vg/vg_line.h
 include/agar/agar/vg/vg_math.h
-include/agar/agar/vg/vg_ortho.h
 include/agar/agar/vg/vg_point.h
 include/agar/agar/vg/vg_polygon.h
 include/agar/agar/vg/vg_pub.h
@@ -412,20 +588,37 @@ lib/libag_au.la
 @static-lib lib/libag_core.a
 lib/libag_core.la
 @lib lib/libag_core.so.${LIBag_core_VERSION}
-@static-lib lib/libag_dev.a
-lib/libag_dev.la
-@lib lib/libag_dev.so.${LIBag_dev_VERSION}
 @static-lib lib/libag_gui.a
 lib/libag_gui.la
 @lib lib/libag_gui.so.${LIBag_gui_VERSION}
+@static-lib lib/libag_map.a
+lib/libag_map.la
+@lib lib/libag_map.so.${LIBag_map_VERSION}
 @static-lib lib/libag_math.a
 lib/libag_math.la
 @lib lib/libag_math.so.${LIBag_math_VERSION}
+@static-lib lib/libag_net.a
+lib/libag_net.la
+@lib lib/libag_net.so.${LIBag_net_VERSION}
+@static-lib lib/libag_sg.a
+lib/libag_sg.la
+@lib lib/libag_sg.so.${LIBag_sg_VERSION}
+@static-lib lib/libag_sk.a
+lib/libag_sk.la
+@lib lib/libag_sk.so.${LIBag_sk_VERSION}
 @static-lib lib/libag_vg.a
 lib/libag_vg.la
 @lib lib/libag_vg.so.${LIBag_vg_VERSION}
-@man man/man3/AG_Anim.3
-@man man/man3/AG_BlendFn.3
+lib/pkgconfig/agar-au.pc
+lib/pkgconfig/agar-core.pc
+lib/pkgconfig/agar-map.pc
+lib/pkgconfig/agar-math.pc
+lib/pkgconfig/agar-net.pc
+lib/pkgconfig/agar-sg.pc
+lib/pkgconfig/agar-sk.pc
+lib/pkgconfig/agar-vg.pc
+lib/pkgconfig/agar.pc
+@man man/man3/AG_AlphaFn.3
 @man man/man3/AG_Box.3
 @man man/man3/AG_Button.3
 @man man/man3/AG_ByteSwap.3
@@ -440,9 +633,11 @@ lib/libag_vg.la
 @man man/man3/AG_CustomEventLoop.3
 @man man/man3/AG_DSO.3
 @man man/man3/AG_DataSource.3
+@man man/man3/AG_Db.3
 @man man/man3/AG_DirDlg.3
 @man man/man3/AG_Driver.3
 @man man/man3/AG_DriverCocoa.3
+@man man/man3/AG_DriverDUMMY.3
 @man man/man3/AG_DriverGLX.3
 @man man/man3/AG_DriverMw.3
 @man man/man3/AG_DriverSDLFB.3
@@ -465,7 +660,6 @@ lib/libag_vg.la
 @man man/man3/AG_GlobalKeys.3
 @man man/man3/AG_Graph.3
 @man man/man3/AG_GuiDebugger.3
-@man man/man3/AG_HBox.3
 @man man/man3/AG_HSVPal.3
 @man man/man3/AG_Icon.3
 @man man/man3/AG_InitGraphics.3
@@ -476,7 +670,6 @@ lib/libag_vg.la
 @man man/man3/AG_Keyboard.3
 @man man/man3/AG_Label.3
 @man man/man3/AG_Limits.3
-@man man/man3/AG_List.3
 @man man/man3/AG_MPane.3
 @man man/man3/AG_Menu.3
 @man man/man3/AG_MouseButton.3
@@ -514,15 +707,18 @@ lib/libag_vg.la
 @man man/man3/AG_UCombo.3
 @man man/man3/AG_Units.3
 @man man/man3/AG_User.3
-@man man/man3/AG_VBox.3
 @man man/man3/AG_Variable.3
 @man man/man3/AG_Version.3
+@man man/man3/AG_Web.3
 @man man/man3/AG_Widget.3
 @man man/man3/AG_WidgetPrimitives.3
 @man man/man3/AG_Window.3
 @man man/man3/AU.3
 @man man/man3/AU_DevOut.3
 @man man/man3/AU_Wave.3
+@man man/man3/MAP.3
+@man man/man3/MAP_Actor.3
+@man man/man3/MAP_View.3
 @man man/man3/M_Circle.3
 @man man/man3/M_Color.3
 @man man/man3/M_Complex.3
@@ -541,6 +737,29 @@ lib/libag_vg.la
 @man man/man3/M_String.3
 @man man/man3/M_Triangle.3
 @man man/man3/M_Vector.3
+@man man/man3/RG.3
+@man man/man3/RG_Feature.3
+@man man/man3/RG_Pixmap.3
+@man man/man3/RG_Tile.3
+@man man/man3/RG_Tileview.3
+@man man/man3/SG.3
+@man man/man3/SG_Camera.3
+@man man/man3/SG_CgProgram.3
+@man man/man3/SG_Image.3
+@man man/man3/SG_Intro.3
+@man man/man3/SG_Light.3
+@man man/man3/SG_Line.3
+@man man/man3/SG_Node.3
+@man man/man3/SG_Object.3
+@man man/man3/SG_Plane.3
+@man man/man3/SG_Point.3
+@man man/man3/SG_PolyBall.3
+@man man/man3/SG_Program.3
+@man man/man3/SG_Texture.3
+@man man/man3/SG_View.3
+@man man/man3/SG_Voxel.3
+@man man/man3/SK.3
+@man man/man3/SK_View.3
 @man man/man3/VG.3
 @man man/man3/VG_Arc.3
 @man man/man3/VG_Circle.3
@@ -552,19 +771,59 @@ lib/libag_vg.la
 share/aclocal/agar.m4
 share/agar/
 share/agar/fonts/
+share/agar/fonts/Charter-LICENSE.txt
+share/agar/fonts/DejaVu-LICENSE.txt
+share/agar/fonts/League-Gothic-LICENSE.md
+share/agar/fonts/League-Spartan-LICENSE.md
+share/agar/fonts/Mukta-OFL.txt
+share/agar/fonts/OFL-FAQ.txt
+share/agar/fonts/Source-Han-LICENSE.txt
 share/agar/fonts/Vera-Copyright.txt
-share/agar/fonts/Vera-README.txt
-share/agar/fonts/Vera-ReleaseNotes.txt
-share/agar/fonts/Vera.ttf
-share/agar/fonts/VeraBI.ttf
-share/agar/fonts/VeraBd.ttf
-share/agar/fonts/VeraIt.ttf
-share/agar/fonts/VeraMoBI.ttf
-share/agar/fonts/VeraMoBd.ttf
-share/agar/fonts/VeraMoIt.ttf
-share/agar/fonts/VeraMono.ttf
-share/agar/fonts/VeraSe.ttf
-share/agar/fonts/VeraSeBd.ttf
+share/agar/fonts/algue-bold-italic.ttf
+share/agar/fonts/algue-bold.ttf
+share/agar/fonts/algue-italic.ttf
+share/agar/fonts/algue.ttf
+share/agar/fonts/charter-bold-italic.otf
+share/agar/fonts/charter-bold.otf
+share/agar/fonts/charter-italic.otf
+share/agar/fonts/charter.otf
+share/agar/fonts/cm-LICENSE.txt
+share/agar/fonts/cm-sans-bold.ttf
+share/agar/fonts/cm-sans-condensed.ttf
+share/agar/fonts/cm-sans.ttf
+share/agar/fonts/cm-serif-bold-italic.ttf
+share/agar/fonts/cm-serif-bold.ttf
+share/agar/fonts/cm-serif-italic.ttf
+share/agar/fonts/cm-serif-upright-italic.ttf
+share/agar/fonts/cm-serif.ttf
+share/agar/fonts/cm-typewriter-bold-italic.ttf
+share/agar/fonts/cm-typewriter-bold.ttf
+share/agar/fonts/cm-typewriter-italic.ttf
+share/agar/fonts/cm-typewriter.ttf
+share/agar/fonts/courier-prime-bold-italic.ttf
+share/agar/fonts/courier-prime-bold.ttf
+share/agar/fonts/courier-prime-italic.ttf
+share/agar/fonts/courier-prime.ttf
+share/agar/fonts/cp437-16.bmp
+share/agar/fonts/fraktur-LICENSE.txt
+share/agar/fonts/fraktur.ttf
+share/agar/fonts/league-gothic-condensed-italic.otf
+share/agar/fonts/league-gothic-condensed.otf
+share/agar/fonts/league-gothic-italic.otf
+share/agar/fonts/league-gothic.otf
+share/agar/fonts/league-spartan.otf
 share/agar/fonts/minimal.xcf
-share/agar/fonts/serif.xcf
+share/agar/fonts/source-han-sans.otf
+share/agar/fonts/unialgue.ttf
+share/agar/fonts/vera-bold-italic.ttf
+share/agar/fonts/vera-bold.ttf
+share/agar/fonts/vera-italic.ttf
+share/agar/fonts/vera-mono-bold-italic.ttf
+share/agar/fonts/vera-mono-bold.ttf
+share/agar/fonts/vera-mono-italic.ttf
+share/agar/fonts/vera-mono.ttf
+share/agar/fonts/vera-serif-bold.ttf
+share/agar/fonts/vera-serif.ttf
+share/agar/fonts/vera.ttf
+share/agar/license.txt
 share/agar/style.css

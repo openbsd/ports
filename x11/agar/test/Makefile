@@ -1,14 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/22 09:43:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/01 07:01:03 bentley Exp $
 
 COMMENT =		interactive test suite for agar
 
 PKGNAME =		agartest-$V
-REVISION =		0
 
-WANTLIB += GL SDL X11 Xinerama ag_core ag_dev ag_gui ag_math c
-WANTLIB += db fontconfig freetype jpeg m png pthread z
+WANTLIB += GL SDL X11 Xinerama ag_au ag_core ag_gui ag_math c
+WANTLIB += fontconfig freetype jpeg m png pthread portaudio sndfile z
 
-LIB_DEPENDS =		x11/agar/agar
+LIB_DEPENDS =		x11/agar/agar \
+			audio/libsndfile \
+			audio/portaudio-svn \
+			devel/sdl \
+			graphics/jpeg \
+			graphics/png
 
 WRKSRC =		${WRKDIST}/tests
 

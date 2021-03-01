@@ -1,0 +1,28 @@
+$OpenBSD: patch-mk_build_lib_mk,v 1.1 2021/03/01 07:01:02 bentley Exp $
+
+Index: mk/build.lib.mk
+--- mk/build.lib.mk.orig
++++ mk/build.lib.mk
+@@ -360,6 +360,10 @@ lib${LIB}.so: ${SRCS_GENERATED} _lib_objs ${OBJS}
+ 	        _libout="${LIB}.dll"; \
+ 	        _libnames=""; \
+ 		;; \
++	    *-openbsd*) \
++	        _libout="lib${LIB}.so.${lib${LIB}_ltversion}"; \
++	        _libnames=""; \
++	        ;; \
+ 	    *) \
+ 	        _libout="lib${LIB}.so.${LIB_CURRENT}.${LIB_REVISION}.${LIB_AGE}"; \
+ 	        _libnames="lib${LIB}.so.${LIB_CURRENT} lib${LIB}.so"; \
+@@ -662,6 +666,11 @@ install-lib: check-libtool
+ 			echo "(cd ${LIBDIR} && ${LN} -fs $$_libout lib${LIB}.so)"; \
+ 			(cd ${DESTDIR}${LIBDIR} && ${SUDO} ${LN} -fs $$_libout lib${LIB}.so); \
+ 		    	;; \
++		    *-openbsd*) \
++	                _libout="lib${LIB}.so.${lib${LIB}_ltversion}"; \
++	    	        echo "${INSTALL_LIB} $$_libout ${LIBDIR}"; \
++	                ${SUDO} ${INSTALL_LIB} $$_libout ${DESTDIR}${LIBDIR}; \
++			;; \
+ 		    *) \
+ 	                _libout="lib${LIB}.so.${LIB_CURRENT}.${LIB_REVISION}.${LIB_AGE}"; \
+ 	    	        echo "${INSTALL_LIB} $$_libout ${LIBDIR}"; \

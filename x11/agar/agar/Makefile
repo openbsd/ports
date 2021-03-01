@@ -1,33 +1,32 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/01 18:47:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/01 07:01:02 bentley Exp $
 
 COMMENT =		cross-platform widget toolkit
 
 PKGNAME =		agar-$V
-REVISION =		4
 
-SHARED_LIBS +=  ag_au                     0.0 # 5.0
-SHARED_LIBS +=  ag_core                   0.0 # 5.0
-SHARED_LIBS +=  ag_dev                    0.0 # 5.0
-SHARED_LIBS +=  ag_gui                    0.0 # 5.0
-SHARED_LIBS +=  ag_math                   0.0 # 5.0
-SHARED_LIBS +=  ag_vg                     0.0 # 5.0
-
-WANTLIB += GL SDL X11 X11-xcb Xdamage Xext Xfixes Xinerama Xxf86vm
-WANTLIB += db drm expat fontconfig freetype glapi iconv jpeg m
-WANTLIB += png pthread sndio usbhid xcb xcb-dri2
-WANTLIB += xcb-glx z
+SHARED_LIBS +=  ag_au                     0.1 # 5.0
+SHARED_LIBS +=  ag_core                   1.0 # 5.0
+SHARED_LIBS +=  ag_gui                    1.0 # 5.0
+SHARED_LIBS +=  ag_map                    0.0 # 5.0
+SHARED_LIBS +=  ag_math                   1.0 # 5.0
+SHARED_LIBS +=  ag_net                    0.0 # 5.0
+SHARED_LIBS +=  ag_sg                     0.0 # 5.0
+SHARED_LIBS +=  ag_sk                     0.0 # 5.0
+SHARED_LIBS +=  ag_vg                     1.0 # 5.0
 
 LIB_DEPENDS =		audio/libsndfile \
 			audio/portaudio-svn \
-			converters/libiconv \
-			databases/db/v4 \
 			devel/sdl \
 			graphics/jpeg \
 			graphics/png
 
-CONFIGURE_ARGS +=	--with-gl=${X11BASE} \
+CONFIGURE_ARGS +=	--enable-au \
+			--enable-map \
+			--with-gl=${X11BASE} \
 			--with-x=${X11BASE} \
 			--with-portaudio=${LOCALBASE} \
 			--with-sndfile=${LOCALBASE}
+
+MAKE_FLAGS =		PKGCONFIG_LIBDIR=${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>

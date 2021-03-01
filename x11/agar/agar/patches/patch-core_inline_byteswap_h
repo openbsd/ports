@@ -1,0 +1,24 @@
+$OpenBSD: patch-core_inline_byteswap_h,v 1.1 2021/03/01 07:01:02 bentley Exp $
+
+error: unsupported inline asm: input with type 'int' matching output with type
+'u_int16_t' (aka 'unsigned short')
+
+rlwimi wants a 32-bit integer; this fixes the build on powerpc.
+
+Index: core/inline_byteswap.h
+--- core/inline_byteswap.h.orig
++++ core/inline_byteswap.h
+@@ -45,11 +45,11 @@ Uint16
+ ag_swap16(Uint16 x)
+ # endif
+ {
+-	Uint16 rv;
++	Uint32 rv;
+ 	__asm__("rlwimi %0,%2,8,16,23" :
+ 	        "=&r" (rv) :
+ 		"0" (x >> 8), "r" (x));
+-	return (rv);
++	return (Uint16) (rv);
+ }
+ #else
+ # ifdef AG_INLINE_HEADER

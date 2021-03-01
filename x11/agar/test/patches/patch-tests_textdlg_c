@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_textdlg_c,v 1.1 2021/03/01 07:01:03 bentley Exp $
+
+Index: tests/textdlg.c
+--- tests/textdlg.c.orig
++++ tests/textdlg.c
+@@ -6,7 +6,7 @@
+ #include "agartest.h"
+ 
+ char someString[256];
+-double v = 10.0;
++double v_textdlg = 10.0;
+ 
+ static void
+ TestCanned(AG_Event *event)

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2020/11/09 21:48:25 cwen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2021/03/01 07:01:02 bentley Exp $
 
-V ?=			1.5.0
+V ?=			1.6.0
 DISTNAME ?=		agar-$V
 
 CATEGORIES ?=		x11
@@ -10,7 +10,7 @@ HOMEPAGE ?=		https://libagar.org/
 # BSD
 PERMIT_PACKAGE ?=	Yes
 
-MASTER_SITES ?=		http://stable.hypertriton.com/agar/
+MASTER_SITES ?=		https://stable.hypertriton.com/agar/
 
 CONFIGURE_STYLE ?=	simple
 
