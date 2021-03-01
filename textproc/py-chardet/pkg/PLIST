@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/19 23:13:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/01 16:46:42 sthen Exp $
 @conflict py-chardet-<3.0.4p3
 bin/chardetect${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/chardet/
@@ -33,10 +33,10 @@ lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}hebrewprober.${
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}jisfreq.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}jpcntx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langbulgarianmodel.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langcyrillicmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langgreekmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langhebrewmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langhungarianmodel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langrussianmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langthaimodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}langturkishmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chardet/${MODPY_PYCACHE}latin1prober.${MODPY_PYC_MAGIC_TAG}pyc
@@ -77,16 +77,22 @@ lib/python${MODPY_VERSION}/site-packages/chardet/hebrewprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/jisfreq.py
 lib/python${MODPY_VERSION}/site-packages/chardet/jpcntx.py
 lib/python${MODPY_VERSION}/site-packages/chardet/langbulgarianmodel.py
-lib/python${MODPY_VERSION}/site-packages/chardet/langcyrillicmodel.py
 lib/python${MODPY_VERSION}/site-packages/chardet/langgreekmodel.py
 lib/python${MODPY_VERSION}/site-packages/chardet/langhebrewmodel.py
 lib/python${MODPY_VERSION}/site-packages/chardet/langhungarianmodel.py
+lib/python${MODPY_VERSION}/site-packages/chardet/langrussianmodel.py
 lib/python${MODPY_VERSION}/site-packages/chardet/langthaimodel.py
 lib/python${MODPY_VERSION}/site-packages/chardet/langturkishmodel.py
 lib/python${MODPY_VERSION}/site-packages/chardet/latin1prober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/mbcharsetprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/mbcsgroupprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/mbcssm.py
+lib/python${MODPY_VERSION}/site-packages/chardet/metadata/
+lib/python${MODPY_VERSION}/site-packages/chardet/metadata/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/chardet/metadata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/chardet/metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chardet/metadata/${MODPY_PYCACHE}languages.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chardet/metadata/languages.py
 lib/python${MODPY_VERSION}/site-packages/chardet/sbcharsetprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/sbcsgroupprober.py
 lib/python${MODPY_VERSION}/site-packages/chardet/sjisprober.py
