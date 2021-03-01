@@ -1,0 +1,272 @@
+$OpenBSD: patch-plug-ins_dns_spoof_dns_spoof_c,v 1.1 2021/03/01 20:23:18 sthen Exp $
+
+cope with openbsd ancient nameser.h
+
+Index: plug-ins/dns_spoof/dns_spoof.c
+--- plug-ins/dns_spoof/dns_spoof.c.orig
++++ plug-ins/dns_spoof/dns_spoof.c
+@@ -232,7 +232,7 @@ static int load_db(void)
+       d->ttl = ttl;
+ 
+       /* convert the ip address */
+-      if (type == ns_t_txt) {
++      if (type == T_TXT) {
+          /* Nothing to convert for TXT - just copy the string */
+          d->text = strndup(ip, 255);
+         if (d->text == NULL) {
+@@ -291,28 +291,28 @@ static int parse_line(const char *str, int line, int *
+                   ETTER_DNS, line, str);
+          return (0);
+       }
+-      *type_p = ns_t_ptr;
++      *type_p = T_PTR;
+       *name_p = name;
+       *ip_p = ip;
+       return (1);
+    }
+ 
+    if (!strcasecmp(type,"A")) {
+-      *type_p = ns_t_a;
++      *type_p = T_A;
+       *name_p = name;
+       *ip_p = ip;
+       return (1);
+    }
+ 
+    if (!strcasecmp(type,"AAAA")) {
+-      *type_p = ns_t_aaaa;
++      *type_p = T_AAAA;
+       *name_p = name;
+       *ip_p = ip;
+       return (1);
+    }
+ 
+    if (!strcasecmp(type,"MX")) {
+-      *type_p = ns_t_mx;
++      *type_p = T_MX;
+       *name_p = name;
+       *ip_p = ip;
+       return (1);
+@@ -336,7 +336,7 @@ static int parse_line(const char *str, int line, int *
+ 
+       if (ttl > MAX_DNS_TTL) ttl = 3600; /* keep TTL within DNS standard limits (2^31 - 1) - see RFC 2181 */
+ 
+-      *type_p = ns_t_txt;
++      *type_p = T_TXT;
+       *name_p = name;
+       *ip_p = txt;
+       *ttl_p = ttl;
+@@ -354,7 +354,7 @@ static int parse_line(const char *str, int line, int *
+          return (0);
+       }
+ 
+-      *type_p = ns_t_srv;
++      *type_p = T_SRV;
+       *name_p = name;
+       *ip_p = ip_tmp;
+       *port_p = port;
+@@ -528,12 +528,12 @@ static int prepare_dns_reply(u_char *data, const char 
+    is_negative = false;
+    
+    /* it is and address resolution (name to ip) */
+-   if (type == ns_t_a || type == ns_t_any) {
++   if (type == T_A || type == T_ANY) {
+ 
+       /* found the reply in the list */
+       if (get_spoofed_a(name, &reply, &ttl) != E_SUCCESS) {
+           /* in case of ANY we have to proceed with the next section */
+-          if (type == ns_t_any)
++          if (type == T_ANY)
+             goto any_aaaa;
+           else
+             return -E_NOTFOUND;
+@@ -591,12 +591,12 @@ static int prepare_dns_reply(u_char *data, const char 
+ any_aaaa:
+ 
+    /* also care about AAAA records */
+-   if (type == ns_t_aaaa || type == ns_t_any) {
++   if (type == T_AAAA || type == T_ANY) {
+ 
+        /* found the reply in the list */
+        if (get_spoofed_aaaa(name, &reply, &ttl) != E_SUCCESS) {
+           /* in case of ANY we have to proceed with the next section */
+-          if (type == ns_t_any)
++          if (type == T_ANY)
+              goto any_mx;
+           else
+              return -E_NOTFOUND;
+@@ -654,12 +654,12 @@ any_aaaa:
+ any_mx:
+ 
+    /* it is an MX query (mail to ip) */
+-   if (type == ns_t_mx || type == ns_t_any) {
++   if (type == T_MX || type == T_ANY) {
+       
+       /* found the reply in the list */
+       if (get_spoofed_mx(name, &reply, &ttl) != E_SUCCESS) {
+           /* in case of ANY we have to proceed with the next section */
+-          if (type == ns_t_any)
++          if (type == T_ANY)
+             goto any_wins;
+           else
+             return -E_NOTFOUND;
+@@ -748,12 +748,12 @@ any_mx:
+ any_wins:
+ 
+    /* it is an WINS query (NetBIOS-name to ip) */
+-   if (type == ns_t_wins || type == ns_t_any) {
++   if (type == ns_t_wins || type == T_ANY) {
+ 
+       /* found the reply in the list */
+       if (get_spoofed_wins(name, &reply, &ttl) != E_SUCCESS) {
+           /* in case of ANY we have to proceed with the next section */
+-          if (type == ns_t_any)
++          if (type == T_ANY)
+             goto any_txt;
+           else
+             return -E_NOTFOUND;
+@@ -797,7 +797,7 @@ any_wins:
+ any_txt:
+ 
+    /* it's a descriptive TXT record */
+-   if (type == ns_t_txt || type == ns_t_any) {
++   if (type == T_TXT || type == T_ANY) {
+       char *txt;
+       u_int8 txtlen;
+       u_int16 datalen;
+@@ -805,7 +805,7 @@ any_txt:
+       /* found the reply in the list */
+       if (get_spoofed_txt(name, &txt, &ttl) != E_SUCCESS) {
+          /* in case of ANY we have to proceed with the next section */
+-         if (type == ns_t_any)
++         if (type == T_ANY)
+             goto exit;
+          else
+             return -E_NOTFOUND;
+@@ -844,7 +844,7 @@ any_txt:
+    } /* TXT */
+ 
+    /* it is a reverse query (ip to name) */
+-   if (type == ns_t_ptr) {
++   if (type == T_PTR) {
+       
+       u_char *answer, *p;
+       char *a;
+@@ -891,7 +891,7 @@ any_txt:
+    } /* PTR */
+ 
+    /* it is a SRV query (service discovery) */
+-   if (type == ns_t_srv) {
++   if (type == T_SRV) {
+ 
+       char tgtoffset[2];
+       u_int16 port;
+@@ -1002,7 +1002,7 @@ any_txt:
+             type_str(type), name, ip_addr_ntoa(reply, tmp), port, ttl);
+    } /* SRV */
+ 
+-   if (is_negative && type != ns_t_any) {
++   if (is_negative && type != T_ANY) {
+ 
+       /* allocate memory for authorative answer */
+       len = 46;
+@@ -1053,7 +1053,7 @@ static int get_spoofed_a(const char *a, struct ip_addr
+    struct dns_spoof_entry *d;
+ 
+    SLIST_FOREACH(d, &dns_spoof_head, next) {
+-      if (d->type == ns_t_a && match_pattern(a, d->name)) {
++      if (d->type == T_A && match_pattern(a, d->name)) {
+ 
+          /* return the pointer to the struct */
+          *ip = &d->ip;
+@@ -1074,7 +1074,7 @@ static int get_spoofed_aaaa(const char *a, struct ip_a
+     struct dns_spoof_entry *d;
+     
+     SLIST_FOREACH(d, &dns_spoof_head, next) {
+-        if (d->type == ns_t_aaaa && match_pattern(a, d->name)) {
++        if (d->type == T_AAAA && match_pattern(a, d->name)) {
+             /* return the pointer to the struct */
+             *ip = &d->ip;
+             *ttl = d->ttl;
+@@ -1094,7 +1094,7 @@ static int get_spoofed_txt(const char *name, char **tx
+    struct dns_spoof_entry *d;
+ 
+    SLIST_FOREACH(d, &dns_spoof_head, next) {
+-      if (d->type == ns_t_txt && match_pattern(name, d->name)) {
++      if (d->type == T_TXT && match_pattern(name, d->name)) {
+          /* return the pointer to the string */
+          *txt = d->text;
+          *ttl = d->ttl;
+@@ -1191,7 +1191,7 @@ static int get_spoofed_ptr(const char *arpa, char **a,
+        * we cannot return whildcards in the reply, 
+        * so skip the entry if the name contains a '*'
+        */
+-      if (d->type == ns_t_ptr && !ip_addr_cmp(&ptr, &d->ip)) {
++      if (d->type == T_PTR && !ip_addr_cmp(&ptr, &d->ip)) {
+ 
+          /* return the pointer to the name */
+          *a = d->name;
+@@ -1212,7 +1212,7 @@ static int get_spoofed_mx(const char *a, struct ip_add
+    struct dns_spoof_entry *d;
+ 
+    SLIST_FOREACH(d, &dns_spoof_head, next) {
+-      if (d->type == ns_t_mx && match_pattern(a, d->name)) {
++      if (d->type == T_MX && match_pattern(a, d->name)) {
+ 
+          /* return the pointer to the struct */
+          *ip = &d->ip;
+@@ -1253,7 +1253,7 @@ static int get_spoofed_srv(const char *name, struct ip
+     struct dns_spoof_entry *d;
+ 
+     SLIST_FOREACH(d, &dns_spoof_head, next) {
+-        if (d->type == ns_t_srv && match_pattern(name, d->name)) {
++        if (d->type == T_SRV && match_pattern(name, d->name)) {
+            /* return the pointer to the struct */
+            *ip = &d->ip;
+            *port = d->port;
+@@ -1268,14 +1268,14 @@ static int get_spoofed_srv(const char *name, struct ip
+ 
+ char *type_str (int type)
+ {
+-   return (type == ns_t_a    ? "A" :
+-           type == ns_t_aaaa ? "AAAA" :
+-           type == ns_t_ptr  ? "PTR" :
+-           type == ns_t_mx   ? "MX" :
++   return (type == T_A    ? "A" :
++           type == T_AAAA ? "AAAA" :
++           type == T_PTR  ? "PTR" :
++           type == T_MX   ? "MX" :
+            type == ns_t_wins ? "WINS" : 
+-           type == ns_t_srv ? "SRV" : 
+-           type == ns_t_any ? "ANY" : 
+-           type == ns_t_txt ? "TXT" : "??");
++           type == T_SRV ? "SRV" : 
++           type == T_ANY ? "ANY" : 
++           type == T_TXT ? "TXT" : "??");
+ }
+ 
+ static void dns_spoof_dump(void)
+@@ -1288,12 +1288,12 @@ static void dns_spoof_dump(void)
+ 
+    DEBUG_MSG("dns_spoof entries:");
+    SLIST_FOREACH(d, &dns_spoof_head, next) {
+-      if (d->type == ns_t_txt) {
++      if (d->type == T_TXT) {
+          DEBUG_MSG("  %s -> \"%s\", type %s, TTL %u", d->name, d->text, type_str(d->type), d->ttl);
+       }
+       else if (ntohs(d->ip.addr_type) == AF_INET)
+       {
+-         if (d->type == ns_t_srv) {
++         if (d->type == T_SRV) {
+             DEBUG_MSG("  %s -> [%s:%d], type %s, TTL %u, family IPv4",
+                       d->name, ip_addr_ntoa(&d->ip, tmp), d->port, type_str(d->type), d->ttl);
+          } 
+@@ -1304,7 +1304,7 @@ static void dns_spoof_dump(void)
+       }
+       else if (ntohs(d->ip.addr_type) == AF_INET6)
+       {
+-         if (d->type == ns_t_srv) {
++         if (d->type == T_SRV) {
+             DEBUG_MSG("  %s -> [%s:%d], type %s, TTL %u, family IPv6",
+                       d->name, ip_addr_ntoa(&d->ip, tmp), d->port, type_str(d->type), d->ttl);
+          }

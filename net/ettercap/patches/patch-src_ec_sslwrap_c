@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_ec_sslwrap_c,v 1.1 2021/03/01 20:23:18 sthen Exp $
+
+Index: src/ec_sslwrap.c
+--- src/ec_sslwrap.c.orig
++++ src/ec_sslwrap.c
+@@ -71,11 +71,11 @@
+ #define TLS_server_method SSLv23_server_method
+ #endif
+ 
+-#if (OPENSSL_VERSION_NUMBER >= 0x10100000L)
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L) && !defined(LIBRESSL_VERSION_NUMBER)
+ #define HAVE_OPENSSL_1_1_0
+ #endif
+ 
+-#if (OPENSSL_VERSION_NUMBER >= 0x10101000L)
++#if (OPENSSL_VERSION_NUMBER >= 0x10101000L) && !defined(LIBRESSL_VERSION_NUMBER)
+ #define HAVE_OPENSSL_1_1_1
+ #endif
+ 

@@ -1,14 +1,23 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/11/04 15:04:14 dcoppa Exp $
---- CMakeLists.txt.orig	Tue Nov  4 16:02:42 2014
-+++ CMakeLists.txt	Tue Nov  4 16:03:22 2014
-@@ -36,8 +36,8 @@ set(INSTALL_EXECPREFIX ${INSTALL_PREFIX} CACHE PATH ""
- set(INSTALL_BINDIR ${INSTALL_PREFIX}/bin CACHE PATH "Binary files installation directory")
- set(MAN_INSTALLDIR ${INSTALL_PREFIX}/share/man CACHE PATH "Path for manual pages") 
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/03/01 20:23:18 sthen Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -132,7 +132,7 @@ if(NOT DISABLE_RPATH)
+ endif()
  
--set(CMAKE_C_FLAGS_DEBUG "-O0 -ggdb3 -DDEBUG -Wall -Wno-pointer-sign -pg" CACHE STRING "" FORCE)
--set(CMAKE_C_FLAGS_RELEASE "-O2 -w" CACHE STRING "" FORCE)
-+set(CMAKE_C_FLAGS_DEBUG "-ggdb3 -DDEBUG -Wall -Wno-pointer-sign -pg" CACHE STRING "" FORCE)
-+set(CMAKE_C_FLAGS_RELEASE "-w" CACHE STRING "" FORCE)
+ # set general build flags for debug build-type
+-set(CMAKE_C_FLAGS_DEBUG "-O0 -ggdb3 -DDEBUG -fno-common -Wall -Wno-pointer-sign -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security -Wextra -Wredundant-decls" CACHE STRING "" FORCE)
++set(CMAKE_C_FLAGS_DEBUG "-ggdb3 -DDEBUG -fno-common -Wall -Wno-pointer-sign -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security -Wextra -Wredundant-decls" CACHE STRING "" FORCE)
+ ## append ASAN build flags if compiler version has support
+ #if("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+ #   if(CMAKE_C_COMPILER_VERSION VERSION_GREATER 4.8)
+@@ -153,7 +153,7 @@ set(CMAKE_C_FLAGS_DEBUG "-O0 -ggdb3 -DDEBUG -fno-commo
+ #endif()
+ 
+ # set build flags for release build-type
+-set(CMAKE_C_FLAGS_RELEASE "-O2 -w -D_FORTIFY_SOURCE=2" CACHE STRING "" FORCE)
++set(CMAKE_C_FLAGS_RELEASE "-w -D_FORTIFY_SOURCE=2" CACHE STRING "" FORCE)
  
  if(OS_DARWIN)
  set(CMAKE_EXE_LINKER_FLAGS "-Wl" CACHE STRING "" FORCE)

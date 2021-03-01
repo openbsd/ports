@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_dissectors_ec_dns_c,v 1.1 2021/03/01 20:23:18 sthen Exp $
+
+cope with openbsd ancient nameser.h
+
+Index: src/dissectors/ec_dns.c
+--- src/dissectors/ec_dns.c.orig
++++ src/dissectors/ec_dns.c
+@@ -172,13 +172,13 @@ FUNC_DECODER(dissector_dns)
+             return NULL;
+         
+          /* alias */
+-         if (type == ns_t_cname || type == ns_t_ptr) {
++         if (type == T_CNAME || type == T_PTR) {
+             name_len = dn_expand((u_char *)dns, end, q, alias, sizeof(alias));
+             q += a_len;
+          } 
+          
+          /* name to ip */
+-         if (type == ns_t_a) {
++         if (type == T_A) {
+             int32 addr;
+             struct ip_addr ip;
+             char aip[MAX_ASCII_ADDR_LEN];
+@@ -198,7 +198,7 @@ FUNC_DECODER(dissector_dns)
+             //DISSECT_MSG("DNS: %s ->> %s ->> %s\n", name, alias, aip);
+             DEBUG_MSG("DNS: %s ->> %s ->> %s\n", name, alias, aip);
+          }
+-         else if (type == ns_t_aaaa) {
++         else if (type == T_AAAA) {
+             u_int16 addr[8];
+             struct ip_addr ip;
+             char aip[MAX_ASCII_ADDR_LEN];

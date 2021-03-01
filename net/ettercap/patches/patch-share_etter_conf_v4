@@ -1,0 +1,16 @@
+$OpenBSD: patch-share_etter_conf_v4,v 1.1 2021/03/01 20:23:18 sthen Exp $
+
+Index: share/etter.conf.v4
+--- share/etter.conf.v4.orig
++++ share/etter.conf.v4
+@@ -13,8 +13,8 @@
+ ############################################################################
+ 
+ [privs]
+-ec_uid = 65534                # nobody is the default
+-ec_gid = 65534                # nobody is the default
++ec_uid = 636                  # nobody is the default
++ec_gid = 636                  # nobody is the default
+ 
+ [mitm]
+ arp_storm_delay = 10          # milliseconds

@@ -1,0 +1,149 @@
+$OpenBSD: patch-plug-ins_mdns_spoof_mdns_spoof_c,v 1.1 2021/03/01 20:23:18 sthen Exp $
+
+cope with openbsd ancient nameser.h
+
+Index: plug-ins/mdns_spoof/mdns_spoof.c
+--- plug-ins/mdns_spoof/mdns_spoof.c.orig
++++ plug-ins/mdns_spoof/mdns_spoof.c
+@@ -207,21 +207,21 @@ static int parse_line (const char *str, int line, int 
+                   ETTER_MDNS, line, str);
+          return (0);
+       }
+-      *type_p = ns_t_ptr;
++      *type_p = T_PTR;
+       *name_p = name;
+       *ip_p = ip;
+       return (1);
+    }
+ 
+    if (!strcasecmp(type,"A")) {
+-      *type_p = ns_t_a;
++      *type_p = T_A;
+       *name_p = name;
+       *ip_p = ip;
+       return (1);
+    }
+ 
+    if (!strcasecmp(type,"AAAA")) {
+-      *type_p = ns_t_aaaa;
++      *type_p = T_AAAA;
+       *name_p = name;
+       *ip_p = ip;
+       return (1);
+@@ -250,7 +250,7 @@ static int parse_line (const char *str, int line, int 
+          return 0;
+       }
+ 
+-      *type_p = ns_t_srv;
++      *type_p = T_SRV;
+       *name_p = name;
+       *ip_p = ip;
+       *port_p = port & 0x0000ffff;
+@@ -312,7 +312,7 @@ static int parse_line (const char *str, int line, int 
+       if ((class & ~MDNS_QU_FLAG) != ns_c_in)
+          return;
+ 
+-      if(type == ns_t_a) {
++      if(type == T_A) {
+          struct ip_addr *reply;
+          struct ip_addr *sender;
+          struct ip_addr *target;
+@@ -361,7 +361,7 @@ static int parse_line (const char *str, int line, int 
+          
+          USER_MSG("mdns_spoof: [%s %s] spoofed to [%s]\n", name, type_str(type), ip_addr_ntoa(reply, tmp));
+       }
+-      if(type == ns_t_aaaa) {
++      if(type == T_AAAA) {
+          struct ip_addr *reply;
+          struct ip_addr *sender;
+          struct ip_addr *target;
+@@ -410,7 +410,7 @@ static int parse_line (const char *str, int line, int 
+          
+          USER_MSG("mdns_spoof: [%s %s] spoofed to [%s]\n", name, type_str(type), ip_addr_ntoa(reply, tmp));
+        }
+-       else if (type == ns_t_ptr) {
++       else if (type == T_PTR) {
+          struct ip_addr *reply;
+          struct ip_addr *sender;
+          struct ip_addr *target;
+@@ -453,7 +453,7 @@ static int parse_line (const char *str, int line, int 
+          
+          USER_MSG("mdns_spoof: [%s %s] spoofed to [%s]\n", name, type_str(type), a);
+       }
+-      else if (type == ns_t_srv) {
++      else if (type == T_SRV) {
+          struct ip_addr *reply;
+          struct ip_addr *sender;
+          struct ip_addr *target;
+@@ -572,7 +572,7 @@ static int get_spoofed_a(const char *a, struct ip_addr
+    struct mdns_spoof_entry *d;
+ 
+    SLIST_FOREACH(d, &mdns_spoof_head, next) {
+-      if (d->type == ns_t_a && match_pattern(a, d->name)) {
++      if (d->type == T_A && match_pattern(a, d->name)) {
+ 
+          /* return the pointer to the struct */
+          *ip = &d->ip;
+@@ -592,7 +592,7 @@ static int get_spoofed_aaaa(const char *a, struct ip_a
+    struct mdns_spoof_entry *d;
+ 
+    SLIST_FOREACH(d, &mdns_spoof_head, next) {
+-      if (d->type == ns_t_aaaa && match_pattern(a, d->name)) {
++      if (d->type == T_AAAA && match_pattern(a, d->name)) {
+ 
+          /* return the pointer to the struct */
+          *ip = &d->ip;
+@@ -687,7 +687,7 @@ static int get_spoofed_ptr(const char *arpa, char **a,
+        * we cannot return whildcards in the reply, 
+        * so skip the entry if the name contains a '*'
+        */
+-      if (d->type == ns_t_ptr && !ip_addr_cmp(&ptr, &d->ip)) {
++      if (d->type == T_PTR && !ip_addr_cmp(&ptr, &d->ip)) {
+ 
+          /* return the pointer to the name */
+          *a = d->name;
+@@ -705,7 +705,7 @@ static int get_spoofed_srv(const char *name, struct ip
+     struct mdns_spoof_entry *d;
+ 
+     SLIST_FOREACH(d, &mdns_spoof_head, next) {
+-        if (d->type == ns_t_srv && match_pattern(name, d->name)) {
++        if (d->type == T_SRV && match_pattern(name, d->name)) {
+             /* return the pointer to the struct */
+             *ip = &d->ip;
+             *port = d->port;
+@@ -811,12 +811,12 @@ static int prep_mdns_reply(struct packet_object *po, u
+ 
+ char *type_str (int type)
+ {
+-   return (type == ns_t_a    ? "A" :
+-           type == ns_t_aaaa ? "AAAA" :
+-           type == ns_t_ptr  ? "PTR" :
+-           type == ns_t_mx   ? "MX" :
++   return (type == T_A    ? "A" :
++           type == T_AAAA ? "AAAA" :
++           type == T_PTR  ? "PTR" :
++           type == T_MX   ? "MX" :
+            type == ns_t_wins ? "WINS" :
+-           type == ns_t_srv   ? "SRV" : "?");
++           type == T_SRV   ? "SRV" : "?");
+ }
+ 
+ static void mdns_spoof_dump(void)
+@@ -827,7 +827,7 @@ static void mdns_spoof_dump(void)
+    DEBUG_MSG("mdns_spoof entries:");
+    SLIST_FOREACH(d, &mdns_spoof_head, next) {
+       if (ntohs(d->ip.addr_type) == AF_INET) {
+-         if (d->type == ns_t_srv) {
++         if (d->type == T_SRV) {
+             DEBUG_MSG("  %s -> [%s:%d], type %s, family IPv4", 
+                       d->name, ip_addr_ntoa(&d->ip, tmp), d->port , type_str(d->type));
+          }
+@@ -837,7 +837,7 @@ static void mdns_spoof_dump(void)
+          }
+       }
+       else if (ntohs(d->ip.addr_type) == AF_INET6) {
+-         if (d->type == ns_t_srv) {
++         if (d->type == T_SRV) {
+             DEBUG_MSG("  %s -> [%s:%d], type %s, family IPv6", 
+                       d->name, ip_addr_ntoa(&d->ip, tmp), d->port , type_str(d->type));
+          }
