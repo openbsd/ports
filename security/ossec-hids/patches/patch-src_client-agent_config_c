@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_client-agent_config_c,v 1.1 2021/03/01 02:19:34 gnezdo Exp $
+
+-fno-common
+
+Index: src/client-agent/config.c
+--- src/client-agent/config.c.orig
++++ src/client-agent/config.c
+@@ -17,7 +17,6 @@
+ time_t available_server;
+ int run_foreground;
+ keystore keys;
+-agent *agt;
+ 
+ 
+ /* Read the config file (for the remote client) */
