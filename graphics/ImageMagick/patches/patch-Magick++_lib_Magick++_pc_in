@@ -1,4 +1,4 @@
-$OpenBSD: patch-Magick++_lib_Magick++_pc_in,v 1.5 2019/08/31 15:20:15 sthen Exp $
+$OpenBSD: patch-Magick++_lib_Magick++_pc_in,v 1.6 2021/03/01 20:42:10 sthen Exp $
 
 Index: Magick++/lib/Magick++.pc.in
 --- Magick++/lib/Magick++.pc.in.orig
@@ -15,10 +15,10 @@ Index: Magick++/lib/Magick++.pc.in
   
  Name: Magick++
  Description: Magick++ - C++ API for ImageMagick (ABI @MAGICK_ABI_SUFFIX@)
- Version: @PACKAGE_VERSION@
- Requires: MagickWand
+ Version: @PACKAGE_BASE_VERSION@
+ Requires: MagickWand-@MAGICK_MAJOR_VERSION@.@MAGICK_ABI_SUFFIX@
 -Libs: -L${libdir} -l${libname}
 -Libs.private: -L${libdir} -l${libname} @MAGICK_LIBS@ @MATH_LIBS@
-+Libs: -L${libdir} -L${X11BASE}/lib -l${libname}
-+Libs.private: -L${libdir} -L${X11BASE}/lib -l${libname} @MAGICK_LIBS@ @MATH_LIBS@
++Libs: -L${X11BASE}/lib -L${libdir} -l${libname}
++Libs.private: -L${X11BASE}/lib -L${libdir} -l${libname} @MAGICK_LIBS@ @MATH_LIBS@
  Cflags: -I${includearchdir} -I${includedir} @MAGICK_PCFLAGS@

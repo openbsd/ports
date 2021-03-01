@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_policy_xml,v 1.5 2019/08/31 15:20:15 sthen Exp $
+$OpenBSD: patch-config_policy_xml,v 1.6 2021/03/01 20:42:10 sthen Exp $
 
 As recommended in http://www.openwall.com/lists/oss-security/2018/08/21/2
 plus followups.
@@ -6,13 +6,14 @@ plus followups.
 Index: config/policy.xml
 --- config/policy.xml.orig
 +++ config/policy.xml
-@@ -52,6 +52,9 @@
+@@ -56,6 +56,10 @@
      <policy domain="coder" rights="read|write" pattern="{GIF,JPEG,PNG,WEBP}" />
  -->
  <policymap>
 +  <!-- Disable ghostscript delegate by default. Re-enable only if you
 +       completely trust all ps/pdf etc. that you feed to ImageMagick. -->
 +  <policy domain="delegate" rights="none" pattern="gs" />
-   <!-- <policy domain="system" name="shred" value="2"/> -->
-   <!-- <policy domain="system" name="precision" value="6"/> -->
-   <!-- <policy domain="system" name="memory-map" value="anonymous"/> -->
++
+   <!-- <policy domain="resource" name="temporary-path" value="/tmp"/> -->
+   <!-- <policy domain="resource" name="memory" value="2GiB"/> -->
+   <!-- <policy domain="resource" name="map" value="4GiB"/> -->

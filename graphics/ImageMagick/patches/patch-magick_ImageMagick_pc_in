@@ -1,4 +1,4 @@
-$OpenBSD: patch-magick_ImageMagick_pc_in,v 1.6 2019/08/31 15:20:15 sthen Exp $
+$OpenBSD: patch-magick_ImageMagick_pc_in,v 1.7 2021/03/01 20:42:10 sthen Exp $
 
 Index: magick/ImageMagick.pc.in
 --- magick/ImageMagick.pc.in.orig
@@ -16,7 +16,7 @@ Index: magick/ImageMagick.pc.in
  Name: ImageMagick
 @@ -10,5 +10,5 @@ Description: ImageMagick - convert, edit, and compose 
  URL: https://github.com/ImageMagick/ImageMagick6
- Version: @PACKAGE_VERSION@
+ Version: @PACKAGE_BASE_VERSION@
  Cflags:  -I${includearchdir} -I${includedir} @MAGICK_PCFLAGS@
 -Libs: -L${libdir} -l${libname}
 -Libs.private: -L${libdir} -l${libname} @MAGICK_LIBS@ @MATH_LIBS@

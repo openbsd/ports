@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.200 2020/02/03 20:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.201 2021/03/01 20:42:10 sthen Exp $
 
 BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 
 COMMENT=		image processing tools
 
-VER=			6.9.10
-DASHVER=		86
+VER=			6.9.12
+DASHVER=		2
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://imagemagick.org/download/ limit:6.*
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 SHARED_LIBS +=	MagickCore-6.Q16     7.0      # 6.0
 SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 6.0
@@ -27,10 +26,11 @@ MASTER_SITES=		https://imagemagick.org/download/releases/ \
 # https://imagemagick.org/script/license.php
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt bz2
-WANTLIB += c djvulibre expat fftw3 fontconfig freetype iconv jasper
-WANTLIB += jbig jpeg lcms2 lzma m openjp2 perl png raw_r tiff webp
-WANTLIB += webpdemux webpmux xcb xml2 z zstd
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt aom
+WANTLIB += bz2 c dav1d de265 djvulibre expat fftw3 fontconfig
+WANTLIB += freetype heif iconv jasper jbig jpeg lcms2 lzma m openjp2
+WANTLIB += perl png raw_r tiff webp webpdemux webpmux x265 xcb
+WANTLIB += xml2 z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -47,6 +47,11 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/png \
 			graphics/tiff \
 			math/fftw3 \
+			multimedia/aom \
+			multimedia/dav1d \
+			multimedia/libde265 \
+			multimedia/libheif \
+			multimedia/x265 \
 			textproc/libxml
 BUILD_DEPENDS =		print/ghostscript/gnu
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-wand_MagickWand_pc_in,v 1.8 2019/08/31 15:20:15 sthen Exp $
+$OpenBSD: patch-wand_MagickWand_pc_in,v 1.9 2021/03/01 20:42:10 sthen Exp $
 
 Index: wand/MagickWand.pc.in
 --- wand/MagickWand.pc.in.orig
@@ -15,7 +15,7 @@ Index: wand/MagickWand.pc.in
   
  Name: MagickWand
 @@ -11,5 +11,5 @@ URL: https://github.com/ImageMagick/ImageMagick6
- Version: @PACKAGE_VERSION@
+ Version: @PACKAGE_BASE_VERSION@
  Requires: MagickCore-@MAGICK_MAJOR_VERSION@.@MAGICK_ABI_SUFFIX@
  Cflags: -I${includearchdir} -I${includedir} @MAGICK_PCFLAGS@
 -Libs: -L${libdir} -l${libname} 
