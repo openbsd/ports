@@ -1,8 +1,17 @@
-$OpenBSD: patch-pgmodeler_pri,v 1.3 2021/01/02 22:31:45 feinerer Exp $
+$OpenBSD: patch-pgmodeler_pri,v 1.4 2021/03/01 13:48:29 sthen Exp $
 
 Index: pgmodeler.pri
 --- pgmodeler.pri.orig
 +++ pgmodeler.pri
+@@ -81,7 +81,7 @@ linux {
+ 
+   # Specifies where to find the libraries at runtime
+   RELATIVE_PRIVATELIBDIR = $$relative_path($$PRIVATELIBDIR, $$BINDIR)
+-  QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN\' -Wl,-rpath,\'\$$ORIGIN/$$RELATIVE_PRIVATELIBDIR\'"
++  QMAKE_LFLAGS += "-Wl,-rpath,$$PREFIX/lib\ -Wl,-rpath,$$PRIVATELIBDIR"
+ 
+   # Forcing the display of some warnings
+   CONFIG(debug, debug|release): QMAKE_CXXFLAGS += "-Wall -Wextra -Wuninitialized"
 @@ -155,6 +155,7 @@ unix:!macx {
    PKGCONFIG = libpq libxml-2.0
    PGSQL_LIB = -lpq
