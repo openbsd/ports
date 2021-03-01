@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/01 13:11:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/01 16:45:57 sthen Exp $
 
 COMMENT =		automatically mock HTTP interactions to speed testing
 
 MODPY_EGG_VERSION =	2.1.1
 DISTNAME =		vcrpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-vcrpy-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -27,7 +27,7 @@ FLAVOR =		python3
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			devel/py-wrapt${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
-			www/py-yarl
+			www/py-yarl${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-test-httpbin${MODPY_FLAVOR}

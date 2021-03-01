@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1014 2021/03/01 13:11:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.1015 2021/03/01 16:45:57 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -426,7 +426,7 @@
      SUBDIR += purritobin
      SUBDIR += py-CherryPy
      SUBDIR += py-CherryPy,python3
-     SUBDIR += py-aiohttp
+     SUBDIR += py-aiohttp,python3
      SUBDIR += py-autobahn,python3
      SUBDIR += py-beaker
      SUBDIR += py-beaker,python3
@@ -534,7 +534,7 @@
      SUBDIR += py-wtforms,python3
      SUBDIR += py-wstools
      SUBDIR += py-wstools,python3
-     SUBDIR += py-yarl
+     SUBDIR += py-yarl,python3
      SUBDIR += qutebrowser
      SUBDIR += racktables
      SUBDIR += ratproxy

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:13:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/03/01 16:45:57 sthen Exp $
 
 COMMENT =		Python WSGI HTTP server
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	20.0.4
 DISTNAME =		gunicorn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://gunicorn.org/
 
@@ -22,8 +22,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 RUN_DEPENDS =		www/py-multidict${MODPY_FLAVOR}
-
-RUN_DEPENDS +=		www/py-aiohttp
+			www/py-aiohttp${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
