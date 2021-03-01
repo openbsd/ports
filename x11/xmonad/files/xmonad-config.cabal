@@ -1,0 +1,13 @@
+cabal-version:      2.4
+
+name:               xmonad-config
+version:            0.1.0.0
+synopsis:           XMonad config
+author:             Greg Steuck
+maintainer:         xmonad@nest.cx
+
+executable xmonad-config
+  main-is:            xmonad.hs
+  build-depends:      base, containers, xmonad
+  hs-source-dirs:     .
+  default-language:   Haskell2010

@@ -1,0 +1,6 @@
+XMonad is now compiled using `cabal v2-build`. If you rely on a custom
+xmonad.hs configuration file, you should switch to using
+~/.xmonad/build script. An example is included in
+${PREFIX}/share/examples/${PKGNAME}
+
+See https://github.com/xmonad/xmonad-testing/ for more information.

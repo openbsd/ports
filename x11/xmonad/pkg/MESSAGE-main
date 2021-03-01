@@ -1,4 +1,0 @@
-For a configurable xmonad (using ~/.xmonad/xmonad.hs), you should
-also install the xmonad-lib package. For even more fun (like the
-spiral layout), you may want to install the hs-xmonad-contrib
-package.

@@ -1,0 +1,13 @@
+#!/bin/ksh -eu
+
+output_file="${1}"
+
+if [ "${output_file}" -nt xmonad.hs ]; then
+    echo "${output_file}" is newer than xmonad.hs
+    exit 0
+fi
+
+cabal v2-install exe:xmonad-config --overwrite-policy=always --install-method=copy
+
+[ -e "${output_file}" ] && mv -f "${output_file}" "${output_file}.old"
+install "${HOME}/.cabal/bin/xmonad-config" "${output_file}"

@@ -1,59 +1,52 @@
-# $OpenBSD: Makefile,v 1.58 2019/09/30 12:41:12 kili Exp $
+# $OpenBSD: Makefile,v 1.59 2021/03/01 04:16:34 gnezdo Exp $
 
-COMMENT-main =		tiling window manager
-COMMENT-lib =		libraries for runtime configuration
+COMMENT =		tiling window manager
 
-DISTNAME =		xmonad-0.15
+MODCABAL_STEM =		xmonad
+MODCABAL_VERSION =	0.15
+REVISION =		0
 
-PKGNAME-main =		${DISTNAME}
-PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
+PKGNAME =		${DISTNAME}
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
-
-MULTI_PACKAGES =		-main -lib
 
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main =		X11 Xext Xinerama Xrandr Xss c charset ffi gmp \
+WANTLIB =		X11 Xext Xinerama Xrandr Xss c charset ffi gmp \
 			m iconv pthread util
-WANTLIB-lib =
 
-MODULES =		lang/ghc
-MODGHC_BUILD =		cabal hackage haddock register nort
+MODULES =		devel/cabal
+MODCABAL_MANIFEST = \
+	X11	1.9.2	0	\
+	data-default	0.7.1.1	0	\
+	data-default-class	0.1.2.0	0	\
+	data-default-instances-containers	0.0.1	0	\
+	data-default-instances-dlist	0.0.1	0	\
+	data-default-instances-old-locale	0.0.1	0	\
+	dlist	1.0	0	\
+	extensible-exceptions	0.1.1.4	0	\
+	old-locale	1.0.0.7	2	\
+	utf8-string	1.0.1.1	3	\
 
-MODGHC_PACKAGE_KEY =	9L0IDbyIoHf7Mpz81NeFlT
-
-# Required because of the nort tag in MODGHC_BUILD
-SUBST_VARS +=		MODGHC_PACKAGE_KEY
-
-BUILD_DEPENDS =		${RUN_DEPENDS-lib}
-RUN_DEPENDS-lib =	devel/hs-data-default \
-			devel/hs-extensible-exceptions \
-			devel/hs-utf8-string>=0.3,<1.1 \
-			x11/hs-X11>=1.8,<1.9
-LIB_DEPENDS-main =	converters/libiconv \
+LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
 			devel/libffi
 
-# MODGHC_BUILD contains 'nort', an explicity dependency is needed for
-# the -lib subpackage (plus the tweaks to MODGHC_SETUP_CONF_ARGS below).
-RUN_DEPENDS-lib +=		lang/ghc=${MODGHC_VER}
-
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/CONFIG ${PREFIX}/share/doc/hs-${DISTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/man/xmonad.hs ${PREFIX}/share/doc/hs-${DISTNAME}/xmonad.hs
-	@# Don't know why, but it installs the xmonad.hs into that directory:
-	@rm -rf ${PREFIX}/share/${DISTNAME}
+	${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${DISTNAME}
+	${INSTALL_DATA} ${WRKSRC}/CONFIG \
+		${PREFIX}/share/doc/${DISTNAME}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${DISTNAME}
+	${INSTALL_DATA} ${FILESDIR}/xmonad-config.cabal \
+		${PREFIX}/share/examples/${DISTNAME}
+	${INSTALL_SCRIPT} ${FILESDIR}/build \
+		${PREFIX}/share/examples/${DISTNAME}
+	${INSTALL_DATA} ${WRKSRC}/man/xmonad.hs \
+		${PREFIX}/share/examples/${DISTNAME}
 
 # Needs to be built with different configuration.
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
-
-# Override the 'nort' settings from ghc.port.mk, to get the correct
-# flags and directories for the -lib subpackage.
-MODGHC_SETUP_CONF_ARGS +=	--enable-library-profiling
-MODGHC_SETUP_CONF_ARGS +=	--docdir=\$$datadir/doc/hs-\$$pkgid
-MODGHC_SETUP_CONF_ARGS +=	--libsubdir=ghc/\$$pkgid
