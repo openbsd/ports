@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/01 01:59:05 afresh1 Exp $
 
 COMMENT =	LaTeX to XML/HTML/MathML Converter
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	LaTeXML-0.8.4
+DISTNAME =	LaTeXML-0.8.5
 CATEGORIES =	textproc
-REVISION =	1
 
 # perl
 PERMIT_PACKAGE =	Yes
@@ -27,6 +26,7 @@ RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		graphics/ImageMagick \
 		graphics/p5-Image-Size \
 		print/texlive/base \
+		textproc/p5-Pod-Parser \
 		textproc/p5-Text-Unidecode \
 		textproc/p5-XML-LibXML \
 		textproc/p5-XML-LibXSLT
