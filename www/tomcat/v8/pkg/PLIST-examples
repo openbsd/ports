@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.33 2020/12/03 20:58:53 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.34 2021/03/01 20:40:38 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -1181,6 +1181,9 @@ webapps/docs/api/org/apache/jasper/compiler/ServletWriter.html
 webapps/docs/api/org/apache/jasper/compiler/SmapGenerator.html
 webapps/docs/api/org/apache/jasper/compiler/SmapStratum.html
 webapps/docs/api/org/apache/jasper/compiler/SmapUtil.html
+webapps/docs/api/org/apache/jasper/compiler/StringInterpreter.html
+webapps/docs/api/org/apache/jasper/compiler/StringInterpreterFactory.DefaultStringInterpreter.html
+webapps/docs/api/org/apache/jasper/compiler/StringInterpreterFactory.html
 webapps/docs/api/org/apache/jasper/compiler/TagConstants.html
 webapps/docs/api/org/apache/jasper/compiler/TagPluginManager.html
 webapps/docs/api/org/apache/jasper/compiler/TextOptimizer.html
@@ -1212,6 +1215,12 @@ webapps/docs/api/org/apache/jasper/el/VariableResolverImpl.html
 webapps/docs/api/org/apache/jasper/el/package-frame.html
 webapps/docs/api/org/apache/jasper/el/package-summary.html
 webapps/docs/api/org/apache/jasper/el/package-tree.html
+webapps/docs/api/org/apache/jasper/optimizations/
+webapps/docs/api/org/apache/jasper/optimizations/ELInterpreterTagSetters.html
+webapps/docs/api/org/apache/jasper/optimizations/StringInterpreterEnum.html
+webapps/docs/api/org/apache/jasper/optimizations/package-frame.html
+webapps/docs/api/org/apache/jasper/optimizations/package-summary.html
+webapps/docs/api/org/apache/jasper/optimizations/package-tree.html
 webapps/docs/api/org/apache/jasper/package-frame.html
 webapps/docs/api/org/apache/jasper/package-summary.html
 webapps/docs/api/org/apache/jasper/package-tree.html
@@ -1387,7 +1396,6 @@ webapps/docs/api/org/apache/tomcat/PeriodicEventListener.html
 webapps/docs/api/org/apache/tomcat/SimpleInstanceManager.html
 webapps/docs/api/org/apache/tomcat/buildutil/
 webapps/docs/api/org/apache/tomcat/buildutil/CheckEol.html
-webapps/docs/api/org/apache/tomcat/buildutil/SignCode.html
 webapps/docs/api/org/apache/tomcat/buildutil/Txt2Html.html
 webapps/docs/api/org/apache/tomcat/buildutil/Utils.html
 webapps/docs/api/org/apache/tomcat/buildutil/package-frame.html
@@ -1458,6 +1466,7 @@ webapps/docs/api/org/apache/tomcat/dbcp/pool2/BaseKeyedPooledObjectFactory.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/BaseObject.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/BaseObjectPool.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/BasePooledObjectFactory.html
+webapps/docs/api/org/apache/tomcat/dbcp/pool2/DestroyMode.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/KeyedObjectPool.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/KeyedPooledObjectFactory.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/ObjectPool.html
@@ -1916,6 +1925,7 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/MediaTypeCache.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.Entry.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/TokenList.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Upgrade.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Vary.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-summary.html
