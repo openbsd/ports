@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2020/12/03 20:58:53 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2021/03/01 20:40:52 sthen Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -48,11 +48,7 @@ post-extract:
 	@rm -rf ${WRKDIST}/webapps/docs
 	mv ${WRKDIR}/tomcat-${MAJ_VER}.${MIN_VER}-doc ${WRKDIST}/webapps/docs
 
-.if ${MAJ_VER} == 7
-MGR_XML=	${WRKDIST}/webapps/host-manager/manager.xml
-.else
 MGR_XML=	${WRKDIST}/webapps/host-manager/WEB-INF/manager.xml
-.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${SAMPLEDIR} ${PREFIX}/tomcat{,/webapps} \

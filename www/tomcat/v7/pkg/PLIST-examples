@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.44 2020/10/13 10:26:21 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.45 2021/03/01 20:40:52 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -1093,6 +1093,7 @@ webapps/docs/api/org/apache/catalina/util/DateTool.html
 webapps/docs/api/org/apache/catalina/util/Enumerator.html
 webapps/docs/api/org/apache/catalina/util/Extension.html
 webapps/docs/api/org/apache/catalina/util/ExtensionValidator.html
+webapps/docs/api/org/apache/catalina/util/FileUtil.html
 webapps/docs/api/org/apache/catalina/util/IOTools.html
 webapps/docs/api/org/apache/catalina/util/InstanceSupport.html
 webapps/docs/api/org/apache/catalina/util/Introspection.html
@@ -1677,7 +1678,6 @@ webapps/docs/api/org/apache/tomcat/JarScannerCallback.html
 webapps/docs/api/org/apache/tomcat/PeriodicEventListener.html
 webapps/docs/api/org/apache/tomcat/buildutil/
 webapps/docs/api/org/apache/tomcat/buildutil/CheckEol.html
-webapps/docs/api/org/apache/tomcat/buildutil/SignCode.html
 webapps/docs/api/org/apache/tomcat/buildutil/Txt2Html.html
 webapps/docs/api/org/apache/tomcat/buildutil/Utils.html
 webapps/docs/api/org/apache/tomcat/buildutil/package-frame.html

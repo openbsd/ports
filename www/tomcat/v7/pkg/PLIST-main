@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2020/03/27 15:59:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2021/03/01 20:40:52 sthen Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
@@ -117,6 +117,7 @@ tomcat/webapps/host-manager/WEB-INF/jsp/
 tomcat/webapps/host-manager/WEB-INF/jsp/401.jsp
 tomcat/webapps/host-manager/WEB-INF/jsp/403.jsp
 tomcat/webapps/host-manager/WEB-INF/jsp/404.jsp
+tomcat/webapps/host-manager/WEB-INF/manager.xml
 tomcat/webapps/host-manager/WEB-INF/web.xml
 tomcat/webapps/host-manager/images/
 tomcat/webapps/host-manager/images/add.gif
@@ -129,7 +130,6 @@ tomcat/webapps/host-manager/images/tomcat.gif
 tomcat/webapps/host-manager/images/update.gif
 tomcat/webapps/host-manager/images/void.gif
 tomcat/webapps/host-manager/index.jsp
-tomcat/webapps/host-manager/manager.xml
 tomcat/webapps/manager/
 tomcat/webapps/manager/META-INF/
 tomcat/webapps/manager/META-INF/context.xml
