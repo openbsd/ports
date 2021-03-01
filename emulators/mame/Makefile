@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/02/25 22:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/03/01 10:29:50 fcambus Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -7,7 +7,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		228
+V =		229
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
@@ -83,11 +83,7 @@ post-extract:
 		xargs sed -i 's|"png.h"|"localpng.h"|'
 
 do-install:
-.if ${MACHINE_ARCH} == "amd64"
-	${INSTALL_PROGRAM} ${WRKSRC}/mame64 ${PREFIX}/bin/mame
-.else
 	${INSTALL_PROGRAM} ${WRKSRC}/mame ${PREFIX}/bin/mame
-.endif
 	${INSTALL_DATA} ${WRKSRC}/docs/man/mame.6 ${PREFIX}/man/man6
 .for f in castool chdman floptool imgtool jedutil ldresample ldverify romcmp
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
