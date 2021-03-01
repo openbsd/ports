@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2021/02/26 02:59:02 daniel Exp $
+# $OpenBSD: Makefile,v 1.44 2021/03/01 16:19:15 sthen Exp $
 
 COMMENT=		elegant and simple HTTP library for Python
 
-MODPY_EGG_VERSION=	2.25.0
+MODPY_EGG_VERSION=	2.25.1
 DISTNAME=		requests-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -22,8 +21,9 @@ FLAVORS=		python3
 FLAVOR?=
 
 MODPY_PI=		Yes
-MODPY_PYTEST =		Yes
+MODPY_PYTEST=		Yes
 MODPY_SETUPTOOLS=	Yes
+TEST_ENV=		PY_IGNORE_IMPORTMISMATCH=1
 
 RUN_DEPENDS=		devel/py-certifi${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
@@ -40,14 +40,5 @@ TEST_DEPENDS=		devel/py-test-cov${MODPY_FLAVOR} \
 .else
 NO_TEST =		Yes
 .endif
-
-WRKDIST=		${WRKDIR}/requests-${MODPY_EGG_VERSION}
-
-post-install:
-	ln -fs /etc/ssl/cert.pem \
-	  ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/requests/cacert.pem
-
-do-test:
-	@cd ${WRKSRC} && PY_IGNORE_IMPORTMISMATCH=1 ${MODPY_BIN} ${MODPY_SETUP} test
 
 .include <bsd.port.mk>

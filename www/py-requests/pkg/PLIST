@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/11/25 19:03:11 danj Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/03/01 16:19:15 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/requests/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -32,7 +32,6 @@ lib/python${MODPY_VERSION}/site-packages/requests/_internal_utils.py
 lib/python${MODPY_VERSION}/site-packages/requests/adapters.py
 lib/python${MODPY_VERSION}/site-packages/requests/api.py
 lib/python${MODPY_VERSION}/site-packages/requests/auth.py
-lib/python${MODPY_VERSION}/site-packages/requests/cacert.pem
 lib/python${MODPY_VERSION}/site-packages/requests/certs.py
 lib/python${MODPY_VERSION}/site-packages/requests/compat.py
 lib/python${MODPY_VERSION}/site-packages/requests/cookies.py
