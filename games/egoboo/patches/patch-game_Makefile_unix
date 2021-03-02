@@ -1,4 +1,4 @@
-$OpenBSD: patch-game_Makefile_unix,v 1.3 2021/02/26 18:20:33 naddy Exp $
+$OpenBSD: patch-game_Makefile_unix,v 1.4 2021/03/02 00:23:18 naddy Exp $
 Index: game/Makefile.unix
 --- game/Makefile.unix.orig
 +++ game/Makefile.unix
@@ -7,12 +7,12 @@ Index: game/Makefile.unix
  SDLCONF_L := $(shell ${SDL_CONF} --libs)
  
 -CC      := gcc
+-OPT     := -Os -Wall
 +CC      ?= gcc
- OPT     := -Os -Wall
++OPT     := ${CFLAGS}
  INC     := -I. -I../enet/include -I.. ${SDLCONF_I}
--CFLAGS  := ${OPT} ${INC}
+ CFLAGS  := ${OPT} ${INC}
 -LDFLAGS := ${SDLCONF_L} -lSDL_ttf -lSDL_mixer -lGL -lGLU -lSDL_image
-+CFLAGS  := ${OPT} ${INC} ${CFLAGS}
 +LDFLAGS := ${SDLCONF_L} -lSDL_ttf -lSDL_mixer -lGL -lGLU -lSDL_image -lm ${LDFLAGS}
  
  EGO_BIN := egoboo
