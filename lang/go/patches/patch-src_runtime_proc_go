@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_runtime_proc_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+
+Index: src/runtime/proc.go
+--- src/runtime/proc.go.orig
++++ src/runtime/proc.go
+@@ -1213,7 +1213,7 @@ func usesLibcall() bool {
+ 	case "aix", "darwin", "illumos", "ios", "solaris", "windows":
+ 		return true
+ 	case "openbsd":
+-		return GOARCH == "amd64" || GOARCH == "arm64"
++		return GOARCH == "386" || GOARCH == "amd64" || GOARCH == "arm" || GOARCH == "arm64"
+ 	}
+ 	return false
+ }
+@@ -1226,7 +1226,7 @@ func mStackIsSystemAllocated() bool {
+ 		return true
+ 	case "openbsd":
+ 		switch GOARCH {
+-		case "amd64", "arm64":
++		case "386", "amd64", "arm", "arm64":
+ 			return true
+ 		}
+ 	}

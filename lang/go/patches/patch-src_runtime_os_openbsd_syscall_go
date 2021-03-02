@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_runtime_os_openbsd_syscall_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+
+Index: src/runtime/os_openbsd_syscall.go
+--- src/runtime/os_openbsd_syscall.go.orig
++++ src/runtime/os_openbsd_syscall.go
+@@ -2,7 +2,9 @@
+ // Use of this source code is governed by a BSD-style
+ // license that can be found in the LICENSE file.
+ 
++// +build openbsd,!386
+ // +build openbsd,!amd64
++// +build openbsd,!arm
+ // +build openbsd,!arm64
+ 
+ package runtime

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_runtime_sys_openbsd1_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+
+Index: src/runtime/sys_openbsd1.go
+--- src/runtime/sys_openbsd1.go.orig
++++ src/runtime/sys_openbsd1.go
+@@ -2,7 +2,7 @@
+ // Use of this source code is governed by a BSD-style
+ // license that can be found in the LICENSE file.
+ 
+-// +build openbsd,amd64 openbsd,arm64
++// +build openbsd,386 openbsd,amd64 openbsd,arm openbsd,arm64
+ 
+ package runtime
+ 

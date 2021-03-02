@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2021/02/20 14:56:34 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.46 2021/03/02 17:56:41 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -7738,6 +7738,7 @@ go/src/syscall/asm_linux_riscv64.s
 go/src/syscall/asm_linux_s390x.s
 go/src/syscall/asm_netbsd_arm.s
 go/src/syscall/asm_netbsd_arm64.s
+go/src/syscall/asm_openbsd_386.s
 go/src/syscall/asm_openbsd_amd64.s
 go/src/syscall/asm_openbsd_arm.s
 go/src/syscall/asm_openbsd_arm64.s
@@ -7967,9 +7968,11 @@ go/src/syscall/zsyscall_netbsd_amd64.go
 go/src/syscall/zsyscall_netbsd_arm.go
 go/src/syscall/zsyscall_netbsd_arm64.go
 go/src/syscall/zsyscall_openbsd_386.go
+go/src/syscall/zsyscall_openbsd_386.s
 go/src/syscall/zsyscall_openbsd_amd64.go
 go/src/syscall/zsyscall_openbsd_amd64.s
 go/src/syscall/zsyscall_openbsd_arm.go
+go/src/syscall/zsyscall_openbsd_arm.s
 go/src/syscall/zsyscall_openbsd_arm64.go
 go/src/syscall/zsyscall_openbsd_arm64.s
 go/src/syscall/zsyscall_openbsd_mips64.go

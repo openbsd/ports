@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_syscall_syscall_openbsd1_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+
+Index: src/syscall/syscall_openbsd1.go
+--- src/syscall/syscall_openbsd1.go.orig
++++ src/syscall/syscall_openbsd1.go
+@@ -2,7 +2,7 @@
+ // Use of this source code is governed by a BSD-style
+ // license that can be found in the LICENSE file.
+ 
+-// +build openbsd,!amd64,!arm64
++// +build openbsd,!386,!amd64,!arm,!arm64
+ 
+ package syscall
+ 

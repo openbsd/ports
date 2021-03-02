@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cmd_link_link_test_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+
+Index: src/cmd/link/link_test.go
+--- src/cmd/link/link_test.go.orig
++++ src/cmd/link/link_test.go
+@@ -661,6 +661,10 @@ func TestTrampoline(t *testing.T) {
+ 		t.Skipf("trampoline insertion is not implemented on %s", runtime.GOARCH)
+ 	}
+ 
++	if runtime.GOOS == "openbsd" && runtime.GOARCH == "arm" {
++		t.Skipf("trampoline generation broken with internal dynamic linking")
++	}
++
+ 	testenv.MustHaveGoBuild(t)
+ 
+ 	t.Parallel()
