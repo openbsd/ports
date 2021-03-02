@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.7 2021/02/28 14:42:09 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.8 2021/03/02 17:31:24 sthen Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -194,12 +194,14 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+@@ -198,12 +198,14 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
  	set(BSD TRUE)
  	if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
  		set(FREEBSD TRUE)
@@ -18,7 +18,7 @@ Index: CMakeLists.txt
  	endif()
  endif()
  
-@@ -208,7 +210,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
+@@ -212,7 +214,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
  	set(FREEBSD TRUE)
  endif()
  
@@ -27,7 +27,7 @@ Index: CMakeLists.txt
  	find_path(EPOLLSHIM_INCLUDE_DIR NAMES sys/epoll.h sys/timerfd.h HINTS /usr/local/include/libepoll-shim)
  	find_library(EPOLLSHIM_LIBS NAMES epoll-shim libepoll-shim HINTS /usr/local/lib)
  endif()
-@@ -524,7 +526,7 @@ add_definitions(-DWINPR_EXPORTS -DFREERDP_EXPORTS)
+@@ -528,7 +530,7 @@ add_definitions(-DWINPR_EXPORTS -DFREERDP_EXPORTS)
  if(NOT IOS)
  	check_include_files(fcntl.h HAVE_FCNTL_H)
  	check_include_files(unistd.h HAVE_UNISTD_H)
@@ -36,7 +36,7 @@ Index: CMakeLists.txt
  	check_include_files(inttypes.h HAVE_INTTYPES_H)
  	check_include_files(sys/modem.h HAVE_SYS_MODEM_H)
  	check_include_files(sys/filio.h HAVE_SYS_FILIO_H)
-@@ -576,7 +578,7 @@ if(OPENBSD)
+@@ -580,7 +582,7 @@ if(OPENBSD)
  	set(WITH_MANPAGES "ON")
  	set(WITH_ALSA "OFF")
  	set(WITH_PULSE "OFF")
@@ -45,7 +45,7 @@ Index: CMakeLists.txt
  	set(WITH_WAYLAND "OFF")
  endif()
  
-@@ -631,11 +633,11 @@ if(UNIX OR CYGWIN)
+@@ -635,11 +637,11 @@ if(UNIX OR CYGWIN)
  	if (HAVE_SYS_EVENTFD_H)
  		check_symbol_exists(eventfd_read sys/eventfd.h WITH_EVENTFD_READ_WRITE)
  	endif()
