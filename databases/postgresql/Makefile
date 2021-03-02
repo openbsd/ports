@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2021/03/01 13:40:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.271 2021/03/02 15:22:32 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -9,7 +9,7 @@ COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
 VERSION=	13.2
 PREV_MAJOR=	12
-REVISION=	0
+REVISION=	1
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -49,7 +49,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=	No
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
