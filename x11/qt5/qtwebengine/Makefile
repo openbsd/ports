@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/03/02 18:18:43 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -41,7 +41,6 @@ WANTLIB += xkbcommon xml2 xslt z
 
 MODULES =	lang/python \
 		devel/qmake
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =	No
 
