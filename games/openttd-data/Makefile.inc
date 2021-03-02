@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:46:22 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2021/03/02 04:20:18 bentley Exp $
 
 NOT_FOR_ARCHS ?=	hppa
 
-DISTNAME ?=	${OPENTTD_PROJECT}-$V
+DISTNAME ?=	${OPENTTD_PROJECT}-$V-all
 PKGNAME ?=	openttd-${OPENTTD_PROJECT}-$V
 
 CATEGORIES +=	games
@@ -14,7 +14,7 @@ MAINTAINER ?=	Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES ?=	https://bundles.openttdcoop.org/${OPENTTD_PROJECT}/releases/$V/
+MASTER_SITES ?=	https://cdn.openttd.org/${OPENTTD_PROJECT}-releases/$V/
 
 EXTRACT_SUFX ?=	.zip
 
@@ -24,3 +24,5 @@ NO_BUILD ?=	Yes
 NO_TEST ?=	Yes
 
 PKG_ARCH ?=	*
+
+WRKDIST ?=	${WRKDIR}/${OPENTTD_PROJECT}-$V
