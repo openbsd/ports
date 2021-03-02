@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2021/01/04 14:06:32 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2021/03/02 08:10:23 espie Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
 @bin bin/opencv_version
@@ -284,6 +284,7 @@ lib/cmake/opencv4/OpenCVModules.cmake
 @lib lib/libopencv_stitching.so.${LIBopencv_stitching_VERSION}
 @lib lib/libopencv_video.so.${LIBopencv_video_VERSION}
 @lib lib/libopencv_videoio.so.${LIBopencv_videoio_VERSION}
+lib/pkgconfig/opencv4.pc
 lib/python${MODPY_VERSION}/site-packages/cv2/
 lib/python${MODPY_VERSION}/site-packages/cv2/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}/

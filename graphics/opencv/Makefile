@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2021/02/23 19:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2021/03/02 08:10:23 espie Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -10,7 +10,7 @@ V =			4.5.1
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
-REVISION =		1
+REVISION =		2
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
@@ -101,7 +101,9 @@ CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
 			-DWITH_IPP=OFF \
 			-DWITH_OPENCL=OFF \
 			-DWITH_V4L=OFF \
-			-DWITH_VTK=OFF
+			-DWITH_VTK=OFF \
+			-DOPENCV_GENERATE_PKGCONFIG=ON
+
 
 .include <bsd.port.arch.mk>
 
