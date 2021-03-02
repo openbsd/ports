@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/07/07 13:01:45 kn Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/03/02 20:14:11 solene Exp $
 bin/yle-dl
-lib/python${MODPY_VERSION}/site-packages/yle_dl-20200628-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/yle_dl-20200628-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/yle_dl-20200628-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/yle_dl-20200628-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/yle_dl-20200628-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/yle_dl-20200628-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/yle_dl-20200628-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/yledl/
 lib/python${MODPY_VERSION}/site-packages/yledl/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yledl/${MODPY_PYCACHE}/

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/03/02 20:14:11 solene Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
-GH_TAGNAME =		20200628
+GH_TAGNAME =		20210212
 MODPY_EGG_VERSION =	${GH_TAGNAME}
 
 COMMENT =		download videos from YLE Areena
@@ -22,12 +22,10 @@ MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-configargparse${MODPY_FLAVOR} \
-			devel/py-future${MODPY_FLAVOR} \
 			graphics/ffmpeg \
 			www/py-requests${MODPY_FLAVOR} \
 			net/wget \
 			textproc/py-lxml${MODPY_FLAVOR} \
-			converters/py-mini-amf${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
 
