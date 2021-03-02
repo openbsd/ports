@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2020/07/03 21:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/03/02 20:19:27 sthen Exp $
 
 COMMENT=	Sybase database driver for the DBI module
 
-DISTNAME=	DBD-Sybase-1.16
-REVISION=	2
+V=		1.17
+DISTNAME=	DBD-Sybase-$V
+EXTRACT_SUFX=	.tgz
 CATEGORIES=	databases
 
 # Perl
@@ -12,6 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c ct intl m perl
 
 MODULES=	cpan
+MASTER_SITES=	https://github.com/mpeppler/DBD-Sybase/releases/download/$V/
 
 LIB_DEPENDS=	databases/freetds
 BUILD_DEPENDS=	${RUN_DEPENDS}
