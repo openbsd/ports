@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/28 16:51:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/03/02 15:25:38 sthen Exp $
 ${P5ARCH}/Apache/DB.pm
 ${P5ARCH}/Apache/DProf.pm
 ${P5ARCH}/Apache/SmallProf.pm
 ${P5ARCH}/Apache/perl5db.pl
 ${P5ARCH}/auto/Apache/
 ${P5ARCH}/auto/Apache/DB/
-${P5ARCH}/auto/Apache/DB/DB.so
+@so ${P5ARCH}/auto/Apache/DB/DB.so
 @man man/man3p/Apache::DB.3p
 @man man/man3p/Apache::DProf.3p
 @man man/man3p/Apache::SmallProf.3p
