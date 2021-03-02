@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/09 15:06:50 tb Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/02 20:10:51 solene Exp $
 
 COMMENT =	name-based proxying of HTTPS without decrypting traffic
 
-GH_ACCOUNT =	dlundquist
+GH_ACCOUNT =	renaudallard
 GH_PROJECT =	sniproxy
-GH_TAGNAME =	0.6.0
-
-REVISION =	0
+GH_TAGNAME =	0.6.4
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://github.com/dlundquist/sniproxy
+HOMEPAGE =	https://github.com/renaudallard/sniproxy
 
 MAINTAINER =	Renaud Allard <renaud@allard.it>
 
 # BSD
 PERMIT_PACKAGE = Yes
 
+# use pledge()
 WANTLIB += c ev pcre udns
 
 BUILD_DEPENDS =	devel/gettext,-tools
