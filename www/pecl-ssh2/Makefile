@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/24 21:23:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/03/02 16:31:41 sthen Exp $
 
 COMMENT=	PHP bindings for the libssh2 library
 
-DISTNAME=	ssh2-1.2
-REVISION=	2
+DISTNAME=	ssh2-1.3
 
 # PHP
 PERMIT_PACKAGE=	Yes
@@ -11,9 +10,12 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto ssh2 ssl z
 
 MODULES=	lang/php/pecl
-FLAVORS=	php72 php73 php74
 CONFIGURE_STYLE= gnu
 
 LIB_DEPENDS=	security/libssh2
+
+# various TEST_SSH2_* can be passed to tests in TEST_ENV (username, host, etc)
+# - see tests/ssh2_test.inc. Needs url_fopen=on and may need sshd ciphers/
+# kex/hmac opening up if you have restrictive settings.
 
 .include <bsd.port.mk>
