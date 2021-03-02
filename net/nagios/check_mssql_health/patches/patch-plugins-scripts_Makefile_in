@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins-scripts_Makefile_in,v 1.1 2021/03/02 20:30:57 sthen Exp $
+
+Index: plugins-scripts/Makefile.in
+--- plugins-scripts/Makefile.in.orig
++++ plugins-scripts/Makefile.in
+@@ -283,8 +283,8 @@ EXTRA_MODULES = \
+   Classes/Sybase.pm \
+   Classes/Device.pm
+ 
+-SED = /bin/sed
+-GREP = /bin/grep
++SED = /usr/bin/sed
++GREP = /usr/bin/grep
+ CAT = /bin/cat
+ ECHO = /bin/echo
+ @DISABLE_STANDALONE_FALSE@STANDALONE = yes

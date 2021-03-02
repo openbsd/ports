@@ -1,0 +1,17 @@
+$OpenBSD: patch-GLPlugin_lib_Monitoring_GLPlugin_DB_pm,v 1.1 2021/03/02 20:30:57 sthen Exp $
+
+avoid "The ROLLBACK TRANSACTION request has no corresponding BEGIN
+TRANSACTION. during global destruction."
+
+Index: GLPlugin/lib/Monitoring/GLPlugin/DB.pm
+--- GLPlugin/lib/Monitoring/GLPlugin/DB.pm.orig
++++ GLPlugin/lib/Monitoring/GLPlugin/DB.pm
+@@ -73,7 +73,7 @@ sub add_db_args {
+       spec => 'commit',
+       help => '--commit
+    turns on autocommit for the dbd::* module',
+-      default => 0,
++      default => 1,
+       required => 0,
+   );
+   $self->add_arg(
