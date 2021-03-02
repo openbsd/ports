@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/21 17:12:16 paco Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/02 19:48:13 paco Exp $
 
 COMMENT =	terminal file manager inspired by ranger written in Go
 
 MODGO_MODNAME =	github.com/gokcehan/lf
-MODGO_VERSION =	v0.0.0-20210119014201-3f66f08b8423
+MODGO_VERSION =	v0.0.0-20210221224548-ced1ccd0c34b
 
 DISTNAME =	lf-${MODGO_VERSION}
 PKGNAME =	lf-${MODGO_VERSION:C/v([0-9.]*)-([0-9]{8}).*/\1.\2/}
@@ -25,15 +25,18 @@ MODULES =		lang/go
 RUN_DEPENDS =		devel/desktop-file-utils
 
 MODGO_MODULES =	\
-	github.com/gdamore/encoding		v1.0.0 \
-	github.com/gdamore/tcell/v2		v2.0.0 \
-	github.com/lucasb-eyer/go-colorful	v1.0.3 \
-	github.com/mattn/go-runewidth		v0.0.9 \
-	golang.org/x/sys			v0.0.0-20190626150813-e07cf5db2756 \
-	golang.org/x/text			v0.3.0 \
-	gopkg.in/djherbis/times.v1		v1.2.0
-MODGO_MODFILES =        \
-	github.com/mattn/go-runewidth		v0.0.7
+	github.com/gdamore/encoding		 v1.0.0 \
+	github.com/gdamore/tcell/v2		 v2.2.0 \
+	github.com/lucasb-eyer/go-colorful	 v1.0.3 \
+	github.com/mattn/go-runewidth		 v0.0.10 \
+	github.com/rivo/uniseg			 v0.1.0 \
+	golang.org/x/sys			 v0.0.0-20201119102817-f84b799fce68 \
+	golang.org/x/term			 v0.0.0-20210220032956-6a3ed077a48d \
+	golang.org/x/text			 v0.3.0 \
+	gopkg.in/djherbis/times.v1		 v1.2.0
+
+MODGO_MODFILES =	\
+	golang.org/x/term	 v0.0.0-20201210144234-2321bbc49cbf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/go/bin/lf ${PREFIX}/bin
