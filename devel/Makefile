@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2079 2021/03/03 05:46:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2080 2021/03/03 12:55:35 kn Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -314,7 +314,6 @@
      SUBDIR += libaudiofile
      SUBDIR += libbfio
      SUBDIR += libbinio
-     SUBDIR += libbio
      SUBDIR += libcdada
      SUBDIR += libcoap
      SUBDIR += libconfig
@@ -335,7 +334,6 @@
      SUBDIR += libfastjson
      SUBDIR += libffi
      SUBDIR += libfirm
-     SUBDIR += libfmt
      SUBDIR += libftdi
      SUBDIR += libftdi1
      SUBDIR += libgcroots
@@ -372,7 +370,6 @@
      SUBDIR += libpeas
      SUBDIR += libplist
      SUBDIR += libproplist
-     SUBDIR += libregexp9
      SUBDIR += libsigc++-2
      SUBDIR += libsigc++30
      SUBDIR += libsigsegv
@@ -388,7 +385,6 @@
      SUBDIR += libusb-compat
      SUBDIR += libusb1
      SUBDIR += libusb1,debug
-     SUBDIR += libutf
      SUBDIR += libuv
      SUBDIR += libvirt-glib
      SUBDIR += libvmime

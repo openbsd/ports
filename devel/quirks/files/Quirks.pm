@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1227 2021/03/03 11:38:45 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.1228 2021/03/03 12:55:36 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2178,6 +2178,10 @@ my $obsolete_reason = {
 	'angst' => 3,
 	'audiopreview' => 3,
 	'pcsxr' => 3,
+	'libbio' => 41,
+	'libfmt' => 41,
+	'libregexp9' => 41,
+	'libutf' => 41,
 };
 
 # reasons for obsolete packages

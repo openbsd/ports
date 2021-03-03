@@ -1,3 +1,0 @@
-Libbio is a port of Plan 9's formatted I/O library.
-It provides most of the same functionality as stdio or sfio,
-but with a simpler interface and smaller footprint.

@@ -1,8 +1,0 @@
-# $OpenBSD: Make.OpenBSD,v 1.3 2018/08/10 11:21:19 espie Exp $
-CFLAGS+=-Wall -Wno-missing-braces -Wno-parentheses -Wno-switch -c -I. -I$(LOCALBASE)/include
-O=o
-AR=ar
-ARFLAGS=rvc
-NAN=nan64.$O	# default, can be overriden by Make.$(SYSNAME)
-NAN=nan64.$O
-RANLIB=ranlib

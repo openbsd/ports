@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/09 15:34:08 espie Exp $
-include/utf.h
-lib/libutf.a
-@man man/man3/isalpharune.3
-@man man/man3/rune.3
-@man man/man3/runestrcat.3
-@man man/man7/utf.7
