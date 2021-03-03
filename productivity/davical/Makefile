@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/24 16:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/03/03 18:08:57 landry Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
-DISTNAME =	davical_1.1.9.3.orig
-PKGNAME =	davical-1.1.9.3
+DISTNAME =	davical_1.1.10.orig
+PKGNAME =	davical-1.1.10
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	productivity net
-REVISION =	1
 
 HOMEPAGE =	https://www.davical.org/
 MASTER_SITES =	https://www.davical.org/downloads/
@@ -25,7 +24,7 @@ SUBST_VARS =	TINSTDIR
 
 RUN_DEPENDS +=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-pdo_pgsql \
-		www/awl>=0.61 \
+		www/awl>=0.62 \
 		devel/p5-YAML \
 		databases/p5-DBD-Pg
 
