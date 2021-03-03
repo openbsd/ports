@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.258 2021/02/02 11:49:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.259 2021/03/03 20:44:23 kn Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -61,7 +61,7 @@ FAKE_FLAGS=		BUILDROOT=${WRKINST} \
 			MENUDIR=${PREFIX}/share/applications \
 			SERVERROOT=${WRKINST}${PREFIX}/share/examples/cups
 
-AUTOCONF_VERSION= 	2.70
+AUTOCONF_VERSION= 	2.71
 AUTOMAKE_VERSION= 	1.16
 
 USE_GMAKE=		Yes

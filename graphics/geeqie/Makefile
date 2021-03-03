@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/01/26 16:26:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2021/03/03 20:44:23 kn Exp $
 
 COMMENT=		lightweight Gtk+3 based image viewer
 
@@ -48,7 +48,7 @@ CONFIGURE_ARGS=		--disable-doxygen-doc \
 			--with-htmldir=${PREFIX}/share/doc/geeqie \
 			--with-readmedir=${PREFIX}/share/doc/geeqie
 
-AUTOCONF_VERSION=	2.70
+AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
 AUTORECONF=		./autogen.sh
 MAKE_ENV=		MKDIR_P='mkdir -p'
