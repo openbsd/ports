@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/23 19:39:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/03/03 13:43:42 landry Exp $
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=	aanatoly
 GH_PROJECT=	fbpanel
 GH_TAGNAME=	7.0
 CATEGORIES=	x11
+REVISION=	0
 
 HOMEPAGE=	http://aanatoly.github.io/fbpanel/
 
@@ -33,6 +34,7 @@ MAKE_FLAGS=	V=1
 DATADIR =	${PREFIX}/share/fbpanel
 EXECDIR =	${PREFIX}/libexec/fbpanel
 EXAMPLEDIR =	${PREFIX}/share/examples/fbpanel
+CONFIGURE_ARGS =	--prefix=${PREFIX}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/.config/rules.mk ${WRKSRC}/scripts/rfs-pkg-config
