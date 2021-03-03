@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2020/03/28 07:24:37 robert Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.7 2021/03/03 18:21:58 ajacoutot Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -198,9 +198,9 @@ check_include_files(errno.h HAVE_ERRNO_H)
+@@ -251,9 +251,9 @@ check_include_files(errno.h HAVE_ERRNO_H)
  include_directories(.)
  include_directories(src/include)
  
@@ -12,6 +12,6 @@ Index: CMakeLists.txt
  
 -if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
 +if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD|OpenBSD|NetBSD")
-     set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "-rdynamic")
-     include_directories(/usr/local/include /usr/include)
-     link_directories(/usr/local/lib /usr/lib)
+   set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "-rdynamic")
+   include_directories(/usr/local/include /usr/include)
+   link_directories(/usr/local/lib /usr/lib)

@@ -1,30 +1,26 @@
-# $OpenBSD: Makefile,v 1.46 2021/02/06 05:03:09 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.47 2021/03/03 18:21:58 ajacoutot Exp $
 
-COMMENT=		GTK+3 remote desktop client
+COMMENT=		GTK+ remote desktop client
 
-# XXX development moves to GitLab: https://gitlab.com/Remmina/Remmina;
-# XXX before updating, ensure freerdp works:
-# cf. http://openbsd-archive.7691.n7.nabble.com/x11-freerdp-update-to-2-0-0-rc4-tp360502p360567.html
-GH_TAGNAME=		v1.3.6
-GH_PROJECT=		Remmina
-GH_ACCOUNT=		FreeRDP
-REVISION=		0
-PKGNAME=		remmina-${GH_TAGNAME:S/v//}
+V=			1.4.12
+DISTNAME=		remmina-${V}
+WRKDIST=		${WRKDIR}/Remmina-v${V}-97312f67d1e782a709740e79d355348055a272ec
 
 CATEGORIES=		x11 net
 
 HOMEPAGE=		https://www.remmina.org/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ICE SM X11 Xext atk-1.0 avahi-client avahi-common avahi-ui-gtk3
-WANTLIB += c cairo cairo-gobject crypto freerdp-client2 freerdp2
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 harfbuzz intl json-glib-1.0
-WANTLIB += pango-1.0 pangocairo-1.0 pthread secret-1 soup-2.4
-WANTLIB += spice-client-glib-2.0 spice-client-gtk-3.0 ssh ssl
-WANTLIB += vncclient vte-2.91 winpr2 xkbfile sodium
+WANTLIB += ICE SM X11 Xext avahi-client avahi-common avahi-ui-gtk3
+WANTLIB += c cairo crypto cups freerdp-client2 freerdp2 gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gtk-3 intl json-glib-1.0 pango-1.0 pthread secret-1
+WANTLIB += sodium soup-2.4 spice-client-gtk-3.0 ssh ssl vncclient
+WANTLIB += vte-2.91 winpr2 xkbfile
+
+MASTER_SITES=		https://gitlab.com/Remmina/Remmina/-/archive/v${V}/
 
 MODULES=		devel/cmake
 
