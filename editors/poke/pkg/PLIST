@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/03 11:26:42 bentley Exp $
+bin/pk-elfextractor
+@bin bin/poke
+include/libpoke.h
+@info info/poke.info
+@static-lib lib/libpoke.a
+lib/libpoke.la
+@lib lib/libpoke.so.${LIBpoke_VERSION}
+@man man/man1/poke.1
+share/poke/
+share/poke/maps/
+share/poke/maps/dwarf.map
+share/poke/maps/elf.map
+share/poke/maps/mp3.map
+share/poke/nodelist
+share/poke/pickles/
+share/poke/pickles/argp.pk
+share/poke/pickles/bmp.pk
+share/poke/pickles/bpf.pk
+share/poke/pickles/btf-dump.pk
+share/poke/pickles/btf.pk
+share/poke/pickles/color.pk
+share/poke/pickles/ctf.pk
+share/poke/pickles/dwarf-common.pk
+share/poke/pickles/dwarf-frame.pk
+share/poke/pickles/dwarf-pubnames.pk
+share/poke/pickles/dwarf-types.pk
+share/poke/pickles/dwarf.pk
+share/poke/pickles/elf.pk
+share/poke/pickles/id3v1.pk
+share/poke/pickles/leb128.pk
+share/poke/pickles/mbr.pk
+share/poke/pickles/pktest.pk
+share/poke/pickles/rgb24.pk
+share/poke/pickles/time.pk
+share/poke/pickles/ustar.pk
+share/poke/pk-cmd.pk
+share/poke/pk-copy.pk
+share/poke/pk-dump.pk
+share/poke/pk-extract.pk
+share/poke/pk-save.pk
+share/poke/pk-scrabble.pk
+share/poke/pkl-rt.pk
+share/poke/poke-default.css
+share/poke/poke.pk
+share/poke/poke.text
+share/poke/std.pk
