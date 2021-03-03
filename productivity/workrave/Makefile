@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/03/03 09:35:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2021/03/03 09:35:32 ajacoutot Exp $
 
 COMMENT=		RSI prevention tool
 
@@ -47,8 +47,6 @@ COMPILER=		base-clang ports-gcc
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
-#CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-#			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_ARGS=		--disable-gconf \
 			--disable-xml \
