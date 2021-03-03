@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/02/23 19:39:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2021/03/03 17:07:52 sthen Exp $
 
 COMMENT =		audio player daemon with library management
 
@@ -37,7 +37,8 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =		Yes
 
-BUILD_DEPENDS =		devel/boost
+BUILD_DEPENDS =		devel/boost \
+			textproc/p5-Pod-Parser
 
 LIB_DEPENDS =		devel/glib2 \
 			databases/sqlite3 \
