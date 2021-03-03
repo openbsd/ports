@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_local_at,v 1.1 2021/03/03 19:41:48 sthen Exp $
+
+Index: tests/local.at
+--- tests/local.at.orig
++++ tests/local.at
+@@ -166,6 +166,7 @@ m4_case([$4], [], [], [ignore], [],
+         s!^.*/\([^/][^/]*\)\.m4: *[0-9][0-9]*: *!\1.m4: !
+         s!^.*/\([^/][^/]*\)\.m4: *[0-9][0-9]*: *[0-9][0-9]*: *!\1.m4: !
+ 	s/ (E[A-Z]*)$//
++	s/: \(.*\) at line \([0-9]*\): include(\(.*\)):/:\1:\2: cannot open `\3'\'':/
+     ' stderr-raw >&2]], [0], [], [$4])])
+ ])
+ 
