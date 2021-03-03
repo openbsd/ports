@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/07/11 13:05:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/03 06:55:31 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.17
 @conflict gstreamer-cdda-*
 @conflict gstreamer-gnome-*
 @conflict gstreamer-ogg-*
 @conflict gstreamer-pango-*
+@conflict gstreamer-plugins-gl-*
 @conflict gstreamer-theora-*
 @conflict gstreamer-vorbis-*
 @pkgpath ${BASE_PKGPATH},-cdda
@@ -13,6 +14,7 @@
 @pkgpath ${BASE_PKGPATH},-pango
 @pkgpath ${BASE_PKGPATH},-theora
 @pkgpath ${BASE_PKGPATH},-vorbis
+@pkgpath multimedia/gstreamer-0.10/plugins-gl
 @bin bin/gst-discoverer-${VERSION}
 bin/gst-visualise-${VERSION}
 include/gstreamer-${VERSION}/gst/app/
