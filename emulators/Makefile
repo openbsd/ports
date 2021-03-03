@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2021/01/24 09:28:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.109 2021/03/03 11:38:44 bentley Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -39,7 +39,6 @@
     SUBDIR += nestopia
     SUBDIR += nono
     SUBDIR += openmsx
-    SUBDIR += pcsxr
     SUBDIR += qemu
     SUBDIR += retroarch
     SUBDIR += ppsspp
