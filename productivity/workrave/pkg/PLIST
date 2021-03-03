@@ -1,18 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/06/29 22:16:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/03/03 09:35:08 ajacoutot Exp $
 @bin bin/workrave
 lib/girepository-1.0/Workrave-1.0.typelib
-lib/libworkrave-private-1.0.a
+@static-lib lib/libworkrave-private-1.0.a
 lib/libworkrave-private-1.0.la
 @lib lib/libworkrave-private-1.0.so.${LIBworkrave-private-1.0_VERSION}
 share/applications/workrave.desktop
 share/dbus-1/services/org.workrave.Workrave.service
 share/gir-1.0/Workrave-1.0.gir
-@comment share/gnome-shell/
-@comment share/gnome-shell/extensions/
-@comment share/gnome-shell/extensions/workrave@workrave.org/
-@comment share/gnome-shell/extensions/workrave@workrave.org/extension.js
-@comment share/gnome-shell/extensions/workrave@workrave.org/metadata.json
-@comment share/gnome-shell/extensions/workrave@workrave.org/stylesheet.css
 share/icons/hicolor/128x128/apps/workrave.png
 share/icons/hicolor/16x16/apps/workrave.png
 share/icons/hicolor/24x24/apps/workrave.png
@@ -39,6 +33,7 @@ share/locale/ga/LC_MESSAGES/workrave.mo
 share/locale/he/LC_MESSAGES/workrave.mo
 share/locale/hr/LC_MESSAGES/workrave.mo
 share/locale/hu/LC_MESSAGES/workrave.mo
+share/locale/id/LC_MESSAGES/workrave.mo
 share/locale/it/LC_MESSAGES/workrave.mo
 share/locale/ja/LC_MESSAGES/workrave.mo
 share/locale/ko/LC_MESSAGES/workrave.mo
@@ -46,6 +41,7 @@ share/locale/lt/LC_MESSAGES/workrave.mo
 share/locale/nb/LC_MESSAGES/workrave.mo
 share/locale/nl/LC_MESSAGES/workrave.mo
 share/locale/pl/LC_MESSAGES/workrave.mo
+share/locale/pt/LC_MESSAGES/workrave.mo
 share/locale/pt_BR/LC_MESSAGES/workrave.mo
 share/locale/ro/LC_MESSAGES/workrave.mo
 share/locale/ru/LC_MESSAGES/workrave.mo
@@ -58,6 +54,8 @@ share/locale/tr/LC_MESSAGES/workrave.mo
 share/locale/uk/LC_MESSAGES/workrave.mo
 share/locale/zh_CN/LC_MESSAGES/workrave.mo
 share/locale/zh_TW/LC_MESSAGES/workrave.mo
+share/metainfo/
+share/metainfo/workrave.appdata.xml
 share/sounds/
 share/sounds/workrave/
 share/sounds/workrave/default/

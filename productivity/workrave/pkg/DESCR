@@ -1,7 +1,4 @@
-Workrave is a program that assists in the recovery and prevention of
-Repetitive Strain Injury (RSI). The program frequently alerts you to
-take micro-pauses, rest breaks and restricts you to your daily limit.
-These can be customized and it stops the counter when you stop. The
-program can be run distributed on one or more PCs. All connected PCs
-share the same timing information. When you switch computers, you will
-still be asked to pause on time.
+Workrave is a free program that assists in the recovery and prevention of
+Repetitive Strain Injury (RSI). It monitors your keyboard and mouse usage and
+using this information, it frequently alerts you to take microbreaks, rest
+breaks and restricts you to your daily computer usage.

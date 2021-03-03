@@ -1,77 +1,74 @@
-# $OpenBSD: Makefile,v 1.54 2021/02/26 18:20:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2021/03/03 09:35:08 ajacoutot Exp $
 
-# XXX check if still needed at next update
-CXXFLAGS +=		-std=c++11
+COMMENT=		RSI prevention tool
 
-COMMENT=		reminder program for prevention of RSI
+V=			1.10.44
+DISTNAME=		workrave-${V}
 
-DISTNAME=		workrave-1.10.1
+SHARED_LIBS +=  workrave-private-1.0 1.0      # unknown
+
 CATEGORIES=		productivity x11
-REVISION=		5
 
 HOMEPAGE=		http://www.workrave.org/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xss Xtst atk-1.0 atk-bridge-2.0
-WANTLIB += atkmm-1.6 atspi c cairo cairo-gobject cairomm-1.0 dbus-1
-WANTLIB += dbus-glib-1 epoxy expat ffi fontconfig freetype gconf-2
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
-WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gstreamer-0.10
-WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz iconv intl lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
-WANTLIB += png pthread sigc-2.0 xcb xcb-render
-WANTLIB += xcb-shm xml2 z fribidi
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xss Xtst atk-1.0
+WANTLIB += atk-bridge-2.0 atkmm-1.6 c cairo cairo-gobject cairomm-1.0
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gstreamer-1.0 gthread-2.0 gtk-3
+WANTLIB += gtkmm-3.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png sigc-2.0
+WANTLIB += xcb xcb-render xcb-shm z
 
-SHARED_LIBS +=		workrave-private-1.0      0.0
-
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
-
-FIX_CRLF_FILES=		po/ru.po
-
-BUILD_DEPENDS=		devel/py-cheetah \
-			devel/gobject-introspection \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gtk+3,-guic
-LIB_DEPENDS=		devel/gconf2 \
-			multimedia/gstreamer-0.10/core \
-			x11/dbus-glib \
-			x11/gtk3mm
+MASTER_SITES=		https://github.com/rcaelers/workrave/releases/download/v${V:S/./_/g}/
 
 MODULES=		lang/python \
 			textproc/intltool
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
-# c++11 (although only for building against libsigc++)
-COMPILER =		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 
+BUILD_DEPENDS=		devel/boost \
+			devel/gobject-introspection \
+			www/py-jinja2${MODPY_FLAVOR}
+
+LIB_DEPENDS=		multimedia/gstreamer1/core \
+			x11/gtk3mm
+
+RUN_DEPENDS=		devel/desktop-file-utils \
+			x11/gtk+3,-guic
+
+# c++11
+COMPILER=		base-clang ports-gcc
+
 CONFIGURE_STYLE=	gnu
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
-CONFIGURE_ARGS+=	--disable-xml \
-			--disable-pulse \
-			--enable-dbus
 
-# Someone can add GNOME support later if they like
-# (GNOME support requires libpanelapplet)
-CONFIGURE_ARGS+=	--disable-gnome2 \
-			--disable-gnome3
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
+#CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+#			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-post-patch:
-	sed -i -e 's/-D_XOPEN_SOURCE=600/-D_XOPEN_SOURCE=700 -D_BSD_SOURCE/' `find ${WRKDIST} -name Makefile.am`
+CONFIGURE_ARGS=		--disable-gconf \
+			--disable-xml \
+			--disable-pulse
 
+# could be enabled if requested (needs testing)
+CONFIGURE_ARGS +=	--disable-gsettings \
+			--disable-gnome3 \
+			--disable-indicator \
+			--disable-xfce \
+			--disable-mate \
+			--disable-distribution
+
+# /usr/include/c++/v1/__locale:62:3: error: unknown type name 'locale_t'
 pre-configure:
-	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
+	find ${WRKDIST} -name Makefile.in -exec \
+		sed -i 's/-D_XOPEN_SOURCE=600/-D_XOPEN_SOURCE=700 -D_BSD_SOURCE/' '{}' \+
+
+# disabled in CONFIGURE_ARGS
+post-install:
+	rm -rf ${PREFIX}/share/{cinnamon,gnome-shell}
 
 .include <bsd.port.mk>
