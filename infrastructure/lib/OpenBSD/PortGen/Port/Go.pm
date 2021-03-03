@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.8 2021/02/20 14:56:34 abieber Exp $
+# $OpenBSD: Go.pm,v 1.9 2021/03/03 03:08:30 abieber Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -67,13 +67,8 @@ sub _go_determine_name
 	# Some modules end in "v1" or "v2", if we find one of these, we need
 	# to set PKGNAME to something up a level
 	my ( $self, $module ) = @_;
-	my $json = $self->get_json( $self->_go_mod_normalize($module) . '/@latest' );
 
-	if ($json->{Version} =~ m/incompatible/) {
-		my $msg = "${module} $json->{Version} is incompatible with Go modules.";
-		croak $msg;
-	}
-
+	my $json = $self->get_ver_info($module);
 	if ($module =~ m/v\d$/) {
 		$json->{Name}   = ( split '/', $module )[-2];
 	} else {
@@ -90,6 +85,7 @@ sub get_dist_info
 	my ( $self, $module ) = @_;
 
 	my $json = $self->_go_determine_name($module);
+
 	my ($dist, $mods) = $self->_go_mod_info($json);
 	$json->{License} = $self->_go_lic_info($module);
 
@@ -132,8 +128,10 @@ sub _go_mod_info
 	my $dir = tempdir(CLEANUP => 0);
 
 	my $mod = $self->get($self->_go_mod_normalize($json->{Module}) . "/\@v/$json->{Version}.mod");
-	my ($module) = $mod =~ /\bmodule\s+(.*?)\s/;
+	croak "Can not find go.mod file for $json->{Module}" if $mod eq "";
 
+	my ($module) = $mod =~ /\bmodule\s+(.*?)\s/;
+	
 	unless ( $json->{Module} eq $module ) {
 		my $msg = "Module $json->{Module} doesn't match $module";
 		croak $msg;
@@ -213,28 +211,34 @@ sub _go_mod_normalize
 sub get_ver_info
 {
 	my ( $self, $module ) = @_;
-	my $version_list = $self->get( $module . '/@v/list' );
-	my $version = "v0.0.0";
-	my $ret;
 
-	# If list isn't populated, it's likely that upstream doesn't follow
-	# semver, this means we will have to fallback to @latest to get the
-	# version information.
-	if ($version_list eq "") {
-		$ret = $self->get_json( $self->_go_mod_normalize($module) . '/@latest' );
-	} else {
-		my @parts = split("\n", $version_list);
-		for my $v ( @parts ) {
-			my $a = OpenBSD::PackageName::version->from_string($version);
-			my $b = OpenBSD::PackageName::version->from_string($v);
-			if ($a->compare($b)) {
-				$version = $v;
+	# We already ran, skip re-running.
+	return $self->{version_info} if defined $self->{version_info};
+
+	my $version_list = do { local $@; eval { local $SIG{__DIE__};
+	    $self->get( $module . '/@v/list' ) } };
+
+	my $version_info;
+	if ($version_list) {
+		my %v = ( o => OpenBSD::PackageName::version->from_string("v0.0.0") );
+		for my $v ( split "\n", $version_list ) {
+  			my $o = OpenBSD::PackageName::version->from_string($v);
+			if ( $v{o}->compare($o) == -1 ) {
+				%v = ( Version => $v, o => $o );
 			}
 		}
-		$ret = { Module => $module, Version => $version };
+		if ($v{Version}) {
+			$version_info = { Module => $module, Version => $v{Version} };
+		}
+		else {
+			croak "Unable to determine version for $module!";
+		}
+	}
+	else {
+		$version_info = $self->get_json( $self->_go_mod_normalize($module) . '/@latest' );
 	}
 
-	return $ret;
+	return $self->{version_info} = $version_info;
 }
 
 sub name_new_port
