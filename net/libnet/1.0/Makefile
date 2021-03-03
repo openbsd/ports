@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/02/08 19:07:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2021/03/03 08:22:03 sthen Exp $
 
 REV=		1.0
 VERSION=	${REV}.2a
@@ -12,6 +12,7 @@ MASTER_SITES=	http://packetfactory.openwall.net/libnet/dist/deprecated/
 
 WRKDIST=	${WRKDIR}/Libnet-1.0.2a
 AUTOCONF_VERSION=2.13
+CONFIGURE_STYLE= autoconf no-autoheader
 MAKE_FLAGS=	LIBnet_VERSION=${LIBnet_VERSION}
 
 post-install:

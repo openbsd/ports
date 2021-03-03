@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 20:48:30 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2021/03/03 08:22:03 sthen Exp $
 
 COMMENT=	raw IP packet construction library
 
@@ -9,9 +9,6 @@ HOMEPAGE=	http://packetfactory.openwall.net/projects/libnet/
 
 
 PERMIT_PACKAGE=	Yes
-
-CONFIGURE_STYLE= autoconf no-autoheader
-
 
 TEST_TARGET=		test
 TEST_IS_INTERACTIVE=	Yes
