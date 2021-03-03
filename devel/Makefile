@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2081 2021/03/03 20:02:34 bket Exp $
+# $OpenBSD: Makefile,v 1.2082 2021/03/03 21:52:28 kmos Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1435,6 +1435,7 @@
      SUBDIR += py-cparser
      SUBDIR += py-cparser,python3
      SUBDIR += py-cppy,python3
+     SUBDIR += py-crayons,python3
      SUBDIR += py-crc32c,python3
      SUBDIR += py-cstruct
      SUBDIR += py-cstruct,python3
