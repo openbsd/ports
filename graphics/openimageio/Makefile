@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2021/02/23 19:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2021/03/03 06:38:19 rsadowski Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -8,13 +8,11 @@ COMMENT =		library for reading and writing images
 GH_ACCOUNT =		OpenImageIO
 GH_PROJECT =		oiio
 GH_TAGNAME =		Release-$V
-V =			2.2.10.0
-ROBIN_VER =		0.6.2
+V =			2.2.11.1
 DISTNAME =		openimageio-${V}
-REVISION =		0
 
-SHARED_LIBS +=		OpenImageIO		8.0 # 2.2.10
-SHARED_LIBS +=		OpenImageIO_Util	4.0 # 2.2.10
+SHARED_LIBS +=		OpenImageIO		9.0 # 2.2.11
+SHARED_LIBS +=		OpenImageIO_Util	5.0 # 2.2.11
 
 CATEGORIES =		graphics devel
 
@@ -34,11 +32,6 @@ WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
 WANTLIB += bz2 c freetype gif intl jpeg m openjp2 png pugixml
 WANTLIB += raw_r swscale tiff util webp webpdemux z
 
-MASTER_SITES0 =		https://github.com/Tessil/robin-map/
-
-DISTFILES =		${DISTNAME}.tar.gz \
-			robin-map-{archive/v}${ROBIN_VER}.tar.gz:0
-
 MODULES =		devel/cmake \
 			lang/python \
 			x11/qt5
@@ -46,8 +39,9 @@ MODULES =		devel/cmake \
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/fmt \
-			textproc/txt2man \
-			devel/py-pybind11${MODPY_FLAVOR}
+			devel/py-pybind11${MODPY_FLAVOR} \
+			devel/robin-map \
+			textproc/txt2man
 
 LIB_DEPENDS =		devel/boost \
 			graphics/ffmpeg \
@@ -62,11 +56,13 @@ LIB_DEPENDS =		devel/boost \
 			textproc/pugixml
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="man/man1" \
+			-DCMAKE_LIBRARY_PATH="${WRKBUILD}/lib:${CMAKE_LIBRARY_PATH}" \
 			-DSTOP_ON_WARNING=OFF \
 			-DUSE_CCACHE=OFF \
-			-DUSE_DICOM=OFF \
+			-DDCMTK_FOUND=OFF \
 			-DUSE_EXTERNAL_PUGIXML=ON \
 			-DUSE_OPENCV=OFF \
+			-DUSE_OPENVDB=OFF \
 			-DUSE_HDF5=OFF \
 			-DUSE_LIBHEIF=OFF \
 			-Dpybind11_DIR=${MODPY_SITEPKG}/pybind11/share/cmake/pybind11/
@@ -76,10 +72,6 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="man/man1" \
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
 WANTLIB +=		atomic
 .endif
-
-post-extract:
-	mkdir ${WRKSRC}/ext
-	cp -r ${WRKDIR}/robin-map-${ROBIN_VER} ${WRKSRC}/ext/robin-map
 
 post-install:
 	find ${PREFIX} -name '*.orig' -delete
