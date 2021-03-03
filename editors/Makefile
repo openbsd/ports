@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2021/02/22 22:37:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.147 2021/03/03 11:27:35 bentley Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -47,6 +47,7 @@
      SUBDIR += neovim-qt
      SUBDIR += nvi
      SUBDIR += nvi,iconv
+     SUBDIR += poke
      SUBDIR += py-neovim
      SUBDIR += py-neovim,python3
      SUBDIR += py-qscintilla,python3
