@@ -1,9 +1,9 @@
-$OpenBSD: patch-meson_build,v 1.1 2020/05/14 15:10:25 jasper Exp $
+$OpenBSD: patch-meson_build,v 1.2 2021/03/04 07:58:28 jasper Exp $
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -275,6 +275,9 @@ foreach link_arg: test_link_args
+@@ -276,6 +276,9 @@ foreach link_arg: test_link_args
    endif
  endforeach
  
