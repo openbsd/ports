@@ -1,3 +1,0 @@
-Reasonably fast data encoding library that handles base16, base32,
-base32-hex, base64, base64-uri, base85, quoted-printable, uu-encoding,
-xx-encoding and y-encoding.
