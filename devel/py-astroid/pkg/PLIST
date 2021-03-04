@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/12/30 20:35:39 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/04 02:56:30 kmos Exp $
 @conflict py-astroid-*
 @pkgpath devel/py-astroid
 @pkgpath devel/py-logilab-astng
@@ -57,6 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_fun
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_gi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_hashlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_http.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_hypothesis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_mechanize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_multiprocessing.${MODPY_PYC_MAGIC_TAG}pyc
@@ -79,9 +80,11 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_re.
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_responses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_scipy_signal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_six.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_sqlalchemy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_ssl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_subprocess.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_threading.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_type.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_uuid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_argparse.py
@@ -98,6 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_functools.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_gi.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_hashlib.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_http.py
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_hypothesis.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_io.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_mechanize.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_multiprocessing.py
@@ -120,9 +124,11 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_re.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_responses.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_scipy_signal.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_six.py
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_sqlalchemy.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_ssl.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_subprocess.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_threading.py
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_type.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_typing.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_uuid.py
 lib/python${MODPY_VERSION}/site-packages/astroid/builder.py
