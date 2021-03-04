@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/06 12:37:58 ajacoutot Exp $
-@conflict gst-ffmpeg-*
-lib/gstreamer-${VERSION}/libgstffmpeg.so
-lib/gstreamer-${VERSION}/libgstffmpegscale.so
-lib/gstreamer-${VERSION}/libgstpostproc.so

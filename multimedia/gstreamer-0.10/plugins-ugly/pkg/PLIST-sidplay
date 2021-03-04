@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-sidplay,v 1.4 2012/09/06 12:37:58 ajacoutot Exp $
-lib/gstreamer-${VERSION}/libgstsid.so

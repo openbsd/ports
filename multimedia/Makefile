@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2021/03/01 20:02:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.134 2021/03/04 13:21:32 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -14,7 +14,6 @@
      SUBDIR += get_flash_videos
      SUBDIR += get_iplayer
      SUBDIR += gnome-twitch
-     SUBDIR += gstreamer-0.10
      SUBDIR += gstreamer1
      SUBDIR += handbrake
      SUBDIR += hdhomerun
