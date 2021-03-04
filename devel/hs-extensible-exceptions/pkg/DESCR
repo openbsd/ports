@@ -1,2 +1,0 @@
-This package provides extensible exceptions for both new and old
-versions of GHC (i.e., < 6.10).
