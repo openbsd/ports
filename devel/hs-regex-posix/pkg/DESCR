@@ -1,3 +1,0 @@
-This Haskell module provides the Regex backend that wraps the c
-posix regex api.  This is the backend being used by the regex-compat
-package to replace Text.Regex
