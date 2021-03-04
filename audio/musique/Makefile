@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2020/12/02 06:17:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2021/03/04 08:50:31 ajacoutot Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 V =		1.10.1
 DISTNAME =	musique-${V}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	http://flavio.tordini.org/musique/
 
@@ -28,8 +29,6 @@ LIB_DEPENDS =	audio/taglib \
 BUILD_DEPENDS =	multimedia/qtav
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		multimedia/gstreamer-0.10/plugins-ffmpeg \
-		multimedia/gstreamer-0.10/plugins-good \
 		multimedia/qtav \
 		x11/gtk+3,-guic
 
