@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/27 12:03:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2021/03/04 07:43:16 jasper Exp $
 
 COMMENT =	fast and easy-to-use status bar
-V =		3.5.4
+V =		3.5.5
 DISTNAME =	polybar-$V
 CATEGORIES =	x11
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
 WANTLIB += c cairo curl fontconfig freetype intl m mpdclient
 WANTLIB += pulse xcb xcb-composite xcb-cursor xcb-ewmh xcb-icccm
-WANTLIB += xcb-image xcb-randr xcb-util xcb-xkb xcb-xrm z
+WANTLIB += xcb-image xcb-randr xcb-util xcb-xkb xcb-xrm z jsoncpp
 
 MASTER_SITES =	https://github.com/polybar/polybar/releases/download/$V/
 EXTRACT_SUFX =	.tar.gz
@@ -29,10 +29,12 @@ DEBUG_PACKAGES =${BUILD_PACKAGES}
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		textproc/py-sphinx${MODPY_FLAVOR}>=2.4.3
+		textproc/py-sphinx${MODPY_FLAVOR}>=2.4.3 \
+		x11/i3
 
 LIB_DEPENDS =	audio/libmpdclient \
 		audio/pulseaudio \
+		devel/jsoncpp \
 		devel/libinotify \
 		graphics/cairo \
 		net/curl
@@ -43,7 +45,7 @@ RUN_DEPENDS =	x11/py-xcbgen${MODPY_FLAVOR} \
 
 CONFIGURE_ARGS =	-DENABLE_CCACHE=OFF \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -lintl -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify" \
-			-DENABLE_I3=OFF
+			-DENABLE_I3=ON
 
 NO_TEST =	Yes
 
