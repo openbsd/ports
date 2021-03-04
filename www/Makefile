@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1016 2021/03/02 16:31:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.1017 2021/03/04 02:45:50 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -56,7 +56,6 @@
      SUBDIR += havp
      SUBDIR += hiawatha
      SUBDIR += honk
-     SUBDIR += hs-html
      SUBDIR += http_load
      SUBDIR += http_ping
      SUBDIR += httrack

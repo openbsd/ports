@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2021/02/24 21:23:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2021/03/04 02:45:49 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -18,8 +18,6 @@
      SUBDIR += gtar
      SUBDIR += gtar,static
      SUBDIR += ha
-     SUBDIR += hs-zip-archive
-     SUBDIR += hs-zlib
      SUBDIR += innoextract
      SUBDIR += laszip
      SUBDIR += lha

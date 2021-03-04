@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.546 2021/02/24 21:23:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.547 2021/03/04 02:45:50 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -96,8 +96,6 @@
      SUBDIR += gthumb
      SUBDIR += gtkam
      SUBDIR += gtkimageview
-     SUBDIR += hs-colour
-     SUBDIR += hs-graphviz
      SUBDIR += hugin
      SUBDIR += icoutils
      SUBDIR += iec16022
