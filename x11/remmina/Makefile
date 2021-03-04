@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2021/03/03 18:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2021/03/04 16:59:05 ajacoutot Exp $
 
 COMMENT=		GTK+ remote desktop client
 
@@ -48,6 +48,8 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 # Appindicator is only used by Ubuntu's Unity.
 CONFIGURE_ARGS +=	-DWITH_APPINDICATOR=OFF \
+			-DWITH_ICON_CACHE=OFF \
+			-DWITH_UPDATE_DESKTOP_DB=OFF \
 			-DCMAKE_C_FLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}"
 
 # telepathy support is removed in newer releases
