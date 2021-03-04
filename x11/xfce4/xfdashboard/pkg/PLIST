@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/12/29 14:55:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/03/04 13:48:38 landry Exp $
 @bin bin/xfdashboard
 @bin bin/xfdashboard-settings
 include/xfdashboard/
@@ -97,13 +97,11 @@ lib/xfdashboard/plugins/
 @so lib/xfdashboard/plugins/gnome-shell-search-provider.so
 @so lib/xfdashboard/plugins/hot-corner.so
 @so lib/xfdashboard/plugins/middle-click-window-close.so
-share/appdata/
-share/appdata/xfdashboard.appdata.xml
-share/applications/xfdashboard-settings.desktop
-share/applications/xfdashboard.desktop
+share/applications/org.xfce.xfdashboard-settings.desktop
+share/applications/org.xfce.xfdashboard.desktop
 share/examples/xfdashboard/
-share/examples/xfdashboard/xfdashboard-autostart.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/xfdashboard-autostart.desktop
+share/examples/xfdashboard/org.xfce.xfdashboard-autostart.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/org.xfce.xfdashboard-autostart.desktop
 share/icons/hicolor/128x128/apps/org.xfce.xfdashboard.png
 share/icons/hicolor/16x16/apps/org.xfce.xfdashboard.png
 share/icons/hicolor/24x24/apps/org.xfce.xfdashboard.png
@@ -145,6 +143,7 @@ share/locale/sv_SE/LC_MESSAGES/
 share/locale/sv_SE/LC_MESSAGES/xfdashboard.mo
 share/locale/tr/LC_MESSAGES/xfdashboard.mo
 share/locale/zh_CN/LC_MESSAGES/xfdashboard.mo
+share/metainfo/org.xfce.xfdashboard.metainfo.xml
 share/themes/xfdashboard/
 share/themes/xfdashboard-auber/
 share/themes/xfdashboard-auber/xfdashboard-1.0/

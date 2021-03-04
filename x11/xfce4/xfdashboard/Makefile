@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2020/12/29 14:55:40 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2021/03/04 13:48:38 landry Exp $
 
 COMMENT=	Xfce4 gnome-shell like dashboard
 
 XFCE_GOODIE =	xfdashboard
-XFCE_VERSION =	0.8.0
+XFCE_VERSION =	0.8.1
 SHARED_LIBS +=	xfdashboard	0.0 # 600.0
 
 # GPLv2
