@@ -1,0 +1,19 @@
+bupstash is a tool for storing (and retrieving) files and data in an encrypted
+bupstash-repository(7).
+
+Some notable features of bupstash include:
+
+- Automatic deduplication of stored data.
+- Client side encryption of data.
+- Incremental file uploads.
+- A tag based query language.
+- Optional role based encryption and decryption key separation.
+- Remote repositories over ssh.
+- Optional, per ssh key access repository controls.
+- A multi layered approach to security.
+- The bupstash tool itself is divided into subcommands that each have their own
+  documentation.
+
+bupstash is alpha software, while all efforts are made to keep bupstash bug
+free, we currently recommend using bupstash for making REDUNDANT backups where
+failure can be tolerated.

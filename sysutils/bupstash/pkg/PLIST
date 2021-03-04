@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/04 04:29:14 bket Exp $
+@bin bin/bupstash
+@man man/man1/bupstash-gc.1
+@man man/man1/bupstash-get.1
+@man man/man1/bupstash-init.1
+@man man/man1/bupstash-list-contents.1
+@man man/man1/bupstash-list.1
+@man man/man1/bupstash-new-key.1
+@man man/man1/bupstash-new-sub-key.1
+@man man/man1/bupstash-put.1
+@man man/man1/bupstash-restore-removed.1
+@man man/man1/bupstash-rm.1
+@man man/man1/bupstash-serve.1
+@man man/man1/bupstash.1
+@man man/man7/bupstash-keyfiles.7
+@man man/man7/bupstash-query-language.7
+@man man/man7/bupstash-repository.7
