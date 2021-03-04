@@ -1,0 +1,6 @@
+piemenu is a pie menu utility for X. It receives a menu specification OD
+in stdin, shows a menu for the user to select one of the options,
+and outputs the option selected to stdout.
+Features include radial Submenus (some pie-menu slices can spawn another
+menu), Icons (pie-menu slices can contain icon image),X resources support
+and Root window mode
