@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1229 2021/03/04 06:15:37 gnezdo Exp $
+# $OpenBSD: Quirks.pm,v 1.1230 2021/03/04 13:21:57 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2278,6 +2278,13 @@ my $obsolete_reason = {
 	'hs-xmonad-contrib' => 5,
 	'hs-zip-archive' => 5,
 	'hs-zlib' => 5,
+	'gstreamer' => 6,
+	'gstreamer-ffmpeg' => 6,
+	'gstreamer-plugins-bad' => 6,
+	'gstreamer-plugins-base' => 6,
+	'gstreamer-plugins-gl' => 6,
+	'gstreamer-plugins-good' => 6,
+	'gstreamer-plugins-ugly' => 6,
 };
 
 # reasons for obsolete packages
