@@ -1,2 +1,0 @@
-This package provides (optionally pure) extensible exceptions that
-are compatible with the monad transformer library.
