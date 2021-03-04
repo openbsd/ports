@@ -1,3 +1,0 @@
-This package provides IO operations from async package lifted to
-any instance of MonadBase or MonadBaseControl from monad-control
-package.
