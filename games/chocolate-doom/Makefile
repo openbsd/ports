@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/01 04:16:41 jsg Exp $
+# $OpenBSD: Makefile,v 1.30 2021/03/04 04:34:09 daniel Exp $
 
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
 V =		3.0.1
 DISTNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.chocolate-doom.org/
 
@@ -22,6 +22,11 @@ LIB_DEPENDS =	devel/sdl2-mixer \
 
 MASTER_SITES =	https://www.chocolate-doom.org/downloads/${V}/
 
+MODULES =	lang/python
+
+MODPY_RUNDEP =		No
+MODPY_ADJ_FILES =	man/{docgen,simplecpp}
+
 RUN_DEPENDS =	devel/desktop-file-utils
 
 CONFIGURE_STYLE =	autoreconf
@@ -29,19 +34,12 @@ AUTOMAKE_VERSION =	1.15
 AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS +=	--mandir="${LOCALBASE}/man"
 
-# python just used for generating manpages
-BUILD_DEPENDS =	lang/python/2.7
-
 post-extract:
 	# set correct data directory
 	@sed -i 's,"/games/doom","/doom",g' ${WRKSRC}/src/d_iwad.c
 	# set correct python binary name
-	@sed -i 's/HAVE_PYTHON, python/HAVE_PYTHON, python2/' \
+	@sed -i 's/HAVE_PYTHON, python/HAVE_PYTHON, python${MODPY_MAJOR_VERSION}/' \
 		${WRKSRC}/configure.ac
-	@sed -i 's,/usr/bin/env python,/usr/bin/env python2,' \
-		${WRKSRC}/man/docgen
-	@sed -i 's,/usr/bin/env python,/usr/bin/env python2,' \
-		${WRKSRC}/man/simplecpp
  
 post-install:
 	# Data files get installed to this directory.
