@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/18 20:54:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/03/05 11:03:41 sthen Exp $
 
 COMMENT =		library to handle Apple Property List format
 
@@ -28,5 +28,6 @@ COMPILER =		base-clang ports-gcc
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS =	--without-cython
 
 .include <bsd.port.mk>
