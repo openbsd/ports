@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2021/02/25 11:42:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/03/05 15:13:55 sthen Exp $
 
 PORTROACH=	limit:^7\.4
-PHP_VERSION=	7.4.15
+PHP_VERSION=	7.4.16
 PHP_PKGSPEC=	>=7.4,<7.5
-REVISION-main=	3
-REVISION=	2
+REVISION=	0
 
 DEFAULT_PHP=	Yes
 
