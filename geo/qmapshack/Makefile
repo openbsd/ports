@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/19 06:44:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/05 09:52:23 landry Exp $
 
 COMMENT =	map management tool
 
@@ -31,6 +31,7 @@ LIB_DEPENDS =		archivers/quazip \
 			x11/qt5/qttools \
 			x11/qt5/qtwebengine
 
+# https://github.com/Maproom/qmapshack/issues/333
 CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1 \
 			-Wno-dev
 
