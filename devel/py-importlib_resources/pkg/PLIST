@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/20 14:17:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/05 20:48:47 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/
 lib/python${MODPY_VERSION}/site-packages/importlib_resources-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/importlib_resources-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,12 +9,14 @@ lib/python${MODPY_VERSION}/site-packages/importlib_resources-${MODPY_EGG_VERSION
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/importlib_resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/importlib_resources/${MODPY_PYCACHE}_adapters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/${MODPY_PYCACHE}_common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/${MODPY_PYCACHE}_py3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/${MODPY_PYCACHE}readers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/${MODPY_PYCACHE}simple.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/importlib_resources/_adapters.py
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/_common.py
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/_compat.py
 lib/python${MODPY_VERSION}/site-packages/importlib_resources/_py3.py
@@ -89,12 +91,14 @@ lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/${MODPY_PYCACHE}_adapters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/${MODPY_PYCACHE}_common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/${MODPY_PYCACHE}_py3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/${MODPY_PYCACHE}readers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/${MODPY_PYCACHE}simple.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/_adapters.py
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/_common.py
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/_compat.py
 lib/python${MODPY_VERSION}/site-packages/lib/importlib_resources/_py3.py

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/27 11:13:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/05 20:48:47 sthen Exp $
 
 # remove when switching to Python 3.9
 COMMENT=		backport of the importlib.resources module
 
-MODPY_EGG_VERSION=	5.1.0
+MODPY_EGG_VERSION=	5.1.2
 DISTNAME=		importlib_resources-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -21,7 +21,7 @@ MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR} \
+			textproc/py-toml${MODPY_FLAVOR}
 
 FLAVORS=		python3
 FLAVOR=			python3
