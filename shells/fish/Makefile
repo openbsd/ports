@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/03/05 07:48:59 solene Exp $
 
 COMMENT =		friendly interactive shell
 
-V =			3.1.2
+V =			3.2.0
 DISTNAME =		fish-$V
-REVISION =		2
 
 CATEGORIES =		shells
 
 HOMEPAGE =		https://fishshell.com/
 
-MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
-
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
+
+EXTRACT_SUFX =		.tar.xz
 
 WANTLIB += ${COMPILER_LIBCXX} c curses intl m pcre2-32
 
@@ -31,7 +30,8 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 LIB_DEPENDS =		devel/pcre2 \
 			devel/gettext,-runtime
 
-RUN_DEPENDS =		misc/gnugetopt
+RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/gnugetopt
 
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 			share/tools/deroff.py \
