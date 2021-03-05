@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/05 17:21:55 solene Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/05 20:52:23 sthen Exp $
 
 # would normally be set in java.port.mk, but i2p pulls in bsd.port.arch.mk
 # itself which interferes with ONLY_FOR_ARCHS coming from MODULES.
@@ -7,25 +7,22 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	i2p routing protocol
 
-V=		0.9.48
-DISTNAME=	i2psource_${V}
-EXTRACT_SUFX=	.tar.bz2
-PKGNAME=	i2p-${V}
+GH_ACCOUNT=	i2p
+GH_PROJECT=	i2p.i2p
+GH_COMMIT=	5d5e6fa3c2365f6c9956d3691d620eb5797091f8
+DISTNAME=	i2p-0.9.49
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://geti2p.net/en/
 
-MAINTAINER=	Dimitri karamazov <deserter666@danwin1210.me>
+MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # Apache-2.0 Artistic BSD CC-BY-2.5 CC-BY-3.0 CC-BY-SA-3.0
 # EPLv1.0 GPLv2 GPLv3 LGPLv2.1 LGPLv3 MIT public-domain WTFPLv2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	gmp
-
-MASTER_SITES=	https://download.i2p2.de/releases/$V/ \
-		https://launchpad.net/i2p/trunk/$V/+download/
 
 MODULES=	java
 MODJAVA_VER=	1.8
@@ -49,8 +46,6 @@ DB_DIR=		${LOCALSTATEDIR}/i2p
 SUBST_VARS=	DB_DIR JAVA_HOME
 
 MAKE_ENV=	CC=${CC} BITS=${BITS}
-
-WRKDIST=	${WRKDIR}/${PKGNAME}
 
 # test requires addition dependencies (atleast: junit, hamcrest, jmockfit)
 NO_TEST=	Yes
