@@ -179,7 +179,7 @@ SHA256 (go_modules/maunium.net/go/mauview/@v/v0.1.2.mod) = 49iccOMSSzHZ092HoBnaY
 SHA256 (go_modules/maunium.net/go/mauview/@v/v0.1.2.zip) = 6UwDKiGhpQ3JK3DTIQUiGnANX0RsOVV+S3LML6v2zfo=
 SHA256 (go_modules/maunium.net/go/tcell/@v/v0.2.0.mod) = YbMLysuuS/XgFwzvVC8ePrZ02Fmnnz8pdV7f0/BIkh4=
 SHA256 (go_modules/maunium.net/go/tcell/@v/v0.2.0.zip) = //nIhjo5B+pjAVxCVmxqYxqs2Xf4tTi03NO0rnXPrKI=
-SHA256 (gomuks-v0.2.2.zip) = eJmJzki6H8682F26J6OM1xeyWZCN5R65w/fhzmypof4=
+SHA256 (gomuks-v0.2.3.zip) = 4RpEfMnBqt3HOE7tomIyNKkeTrnUzWPj6zdsTjvJT3k=
 SIZE (go_modules/github.com/!puerkito!bio/goquery/@v/v1.5.1.mod) = 153
 SIZE (go_modules/github.com/!puerkito!bio/goquery/@v/v1.5.1.zip) = 128011
 SIZE (go_modules/github.com/aead/siphash/@v/v1.0.1.mod) = 31
@@ -361,4 +361,4 @@ SIZE (go_modules/maunium.net/go/mauview/@v/v0.1.2.mod) = 259
 SIZE (go_modules/maunium.net/go/mauview/@v/v0.1.2.zip) = 54695
 SIZE (go_modules/maunium.net/go/tcell/@v/v0.2.0.mod) = 281
 SIZE (go_modules/maunium.net/go/tcell/@v/v0.2.0.zip) = 193656
-SIZE (gomuks-v0.2.2.zip) = 339313
+SIZE (gomuks-v0.2.3.zip) = 340508

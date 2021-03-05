@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/06 00:11:38 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/05 14:01:05 abieber Exp $
 
 COMMENT =	terminal Matrix client written in Go
 
 MODGO_MODNAME =	maunium.net/go/gomuks
-MODGO_VERSION =	v0.2.2
+MODGO_VERSION =	v0.2.3
 
 DISTNAME =	gomuks-${MODGO_VERSION}
 
