@@ -1,17 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/11 16:01:46 eric Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/05 14:31:10 abieber Exp $
 
 COMMENT =	rspamd integration to the OpenSMTPD daemon
 
-V =		0.1.6
+# V is used in opensmtpd-filters/Makefile.inc
+V =		0.1.7
+
+MODGO_MODNAME =	github.com/poolpOrg/filter-rspamd
+MODGO_VERSION =	v${V}
+
+DISTNAME =	filter-rspamd-${MODGO_VERSION:S/v//}
+
 FILTER_NAME =	rspamd
-DISTNAME =	filter-rspamd-${V}
 
 CATEGORIES =	mail
 HOMEPAGE =	https://github.com/poolpOrg/filter-rspamd/
 
-MAINTAINER =	Gilles Chehade <gilles@poolp.org>
-
-MASTER_SITES =	https://github.com/poolpOrg/filter-rspamd/releases/download/${V}/
+MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes
@@ -20,8 +24,7 @@ WANTLIB =	c pthread
 MODULES =	lang/go
 NO_TEST =	Yes
 
-ALL_TARGET =	filter-rspamd
-
-BUILD_DEPENDS = devel/go-sys
+MODGO_MODULES =	\
+	golang.org/x/sys	v0.0.0-20200821140526-fda516888d29
 
 .include <bsd.port.mk>
