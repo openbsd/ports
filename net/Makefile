@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1246 2021/03/04 02:45:50 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.1247 2021/03/05 12:56:05 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -573,7 +573,6 @@
      SUBDIR += py-geventhttpclient,python3
      SUBDIR += py-idna
      SUBDIR += py-idna,python3
-     SUBDIR += py-ifaddr
      SUBDIR += py-ifaddr,python3
      SUBDIR += py-impacket
      SUBDIR += py-ipaddr
