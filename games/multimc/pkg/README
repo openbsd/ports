@@ -1,0 +1,8 @@
+The defaults of multimc are set up to play the most recent release of
+Minecraft.  Older versions of Minecraft can still be played, with some
+optional settings.
+
+To play Minecraft 1.12 and older:
+# pkg_add lwjgl jdk%1.8
+Add the instance you wish to play, then Edit Instance | Settings
+and change Java installation to use /usr/local/jdk-1.8.0/bin/java

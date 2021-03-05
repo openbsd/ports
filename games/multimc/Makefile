@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/28 09:54:38 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/05 21:03:50 phessler Exp $
 
 COMMENT =		free and open-source launcher for Minecraft
 
 # git clone --recurse-submodules -b 0.6.11 https://github.com/MultiMC/MultiMC5
 DISTNAME =		multimc-0.6.11
 MASTER_SITES =		https://distfiles.yukiisbo.red/
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -22,13 +22,13 @@ WANTLIB +=		Qt5Network Qt5Widgets Qt5Xml c m z
 MODULES =		devel/cmake \
 			x11/qt5 \
 			java
-MODJAVA_VER =		1.8
+MODJAVA_VER =		11
 
 RUN_DEPENDS =		audio/openal \
-			games/lwjgl \
 			games/lwjgl3 \
 			java/javaPathHelper
 
+# Keep lwjgl directory for the optional dependency
 CXXFLAGS +=	-DLWJGL_DIR='\"${LOCALBASE}/share/lwjgl/\"' \
 		-DLWJGL3_DIR='\"${LOCALBASE}/share/lwjgl3/\"' \
 		-DJAVAPATHHELPER_PATH='\"${LOCALBASE}/bin/javaPathHelper\"'
