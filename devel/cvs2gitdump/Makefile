@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/05 11:35:06 yasuoka Exp $
 
 COMMENT =		import cvs tree into git or subversion
 
-DISTNAME =		cvs2gitdump-20170517
+DISTNAME =		cvs2gitdump-20210221
 GH_ACCOUNT =		yasuoka
 GH_PROJECT =		cvs2gitdump
-GH_COMMIT =		68bfed7274ce97e215fa1a4502feb0e8e5c54c8c
+GH_COMMIT =		8f24e311be56028303b8ee7910b76eb77130ee27
 
 CATEGORIES =		devel
 
@@ -13,8 +13,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-RUN_DEPENDS =		devel/py-rcsparse
+RUN_DEPENDS =		devel/py-rcsparse${MODPY_FLAVOR}
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
