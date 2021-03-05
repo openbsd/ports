@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/26 17:50:15 tracey Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/05 20:58:51 tracey Exp $
 
 COMMENT =	Arduino core for modern ATtiny chips
 
 GH_ACCOUNT =	SpenceKonde
 GH_PROJECT =	ATTinyCore
-GH_TAGNAME =	1.5.0
+GH_TAGNAME =	1.5.1
 
 PKGNAME =	attinycore-${GH_TAGNAME}
 
