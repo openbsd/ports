@@ -1,0 +1,4 @@
+Remember to remove extra symlinks, if any were created:
+
+  cd /usr/share/games/fortune
+  for f in *; do [ ! -f $f -a -h $f ] && rm $f ${f%.dat}; done
