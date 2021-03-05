@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.5 2021/03/05 07:55:10 landry Exp $
+
+fix proj >= 7 detection
+https://github.com/Xastir/Xastir/commit/6ee6348ca9ad8556e48d26d976f5d6709e8e31cb
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -359,7 +359,7 @@ use_proj=yes
+ AC_ARG_WITH(libproj,[  --without-libproj         Disable libproj features.],use_proj=$withval)
+ if test "${use_proj}" = "yes"; then
+   use_proj=no
+-  AC_CHECK_LIB(proj, pj_init, use_proj=yes LIBS="$LIBS -lproj"
++  AC_CHECK_LIB(proj, proj_create_crs_to_crs, use_proj=yes LIBS="$LIBS -lproj"
+     AC_DEFINE(HAVE_PROJ, 1, Define to 1 if you have the `libproj' library (-lproj). )
+   )
+ fi
