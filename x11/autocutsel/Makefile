@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/03/22 01:14:31 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/05 09:59:58 jca Exp $
 
 COMMENT=	keep X clipboard and cutbuffer in sync
 
-V=		0.10.0
+V=		0.10.1
 DISTNAME=	autocutsel-$V
-REVISION=	4
 
 CATEGORIES=	x11
 
