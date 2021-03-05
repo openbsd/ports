@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/03/05 07:42:54 benoit Exp $
 
 COMMENT=	asynchronous Input/Output
 
 MODULES=	cpan
-DISTNAME=	IO-AIO-4.34
-REVISION=	2
+DISTNAME=	IO-AIO-4.75
 CATEGORIES=	devel
 
 # Perl
