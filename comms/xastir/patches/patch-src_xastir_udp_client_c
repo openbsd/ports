@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_xastir_udp_client_c,v 1.1 2021/03/05 07:53:54 landry Exp $
+
+Index: src/xastir_udp_client.c
+--- src/xastir_udp_client.c.orig
++++ src/xastir_udp_client.c
+@@ -111,7 +111,7 @@ int try_exchange(struct addrinfo *addr, char *buffer, 
+ }
+ 
+ #ifndef AI_DEFAULT
+-  #define AI_DEFAULT (AI_V4MAPPED|AI_ADDRCONFIG)
++  #define AI_DEFAULT AI_ADDRCONFIG
+ #endif
+ 
+ // Loop through the possible addresses for hostname (probably IPv6 and IPv4)

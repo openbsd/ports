@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/11/07 14:20:11 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/03/05 07:53:54 landry Exp $
 @bin bin/callpass
 @bin bin/testdbfawk
 @bin bin/xastir
@@ -9,6 +9,7 @@
 @man man/man1/xastir_udp_client.1
 share/doc/xastir/
 share/doc/xastir/AUTHORS
+share/doc/xastir/CONTRIBUTING.md
 share/doc/xastir/COPYING
 share/doc/xastir/COPYING.LIB.LESSTIF
 share/doc/xastir/ChangeLog
@@ -16,13 +17,12 @@ share/doc/xastir/FAQ
 share/doc/xastir/INSTALL
 share/doc/xastir/LICENSE
 share/doc/xastir/README
-share/doc/xastir/README.CVS
 share/doc/xastir/README.CYGWIN
-share/doc/xastir/README.Contributing
+share/doc/xastir/README.GIT
 share/doc/xastir/README.Getting-Started
 share/doc/xastir/README.MAPS
 share/doc/xastir/README.OSM_maps
-share/doc/xastir/README.win32
+share/doc/xastir/README.sudo
 share/doc/xastir/UPGRADE
 share/xastir/
 share/xastir/Counties/
@@ -36,6 +36,8 @@ share/xastir/config/OSM_Cloudmade_highway.dbfawk
 share/xastir/config/OSM_Cloudmade_natural.dbfawk
 share/xastir/config/OSM_Cloudmade_poi.dbfawk
 share/xastir/config/OSM_Cloudmade_water_and_coastline.dbfawk
+share/xastir/config/OSM_geofabrik_roads.dbfawk
+share/xastir/config/OSM_geofabrik_waterways.dbfawk
 share/xastir/config/arealm.dbfawk
 share/xastir/config/areawater.dbfawk
 share/xastir/config/cousub.dbfawk
@@ -66,15 +68,21 @@ share/xastir/config/nwsc_ddmmyy_09b.dbfawk
 share/xastir/config/nwsc_ddmmyy_10.dbfawk
 share/xastir/config/nwsc_ddmmyy_10a.dbfawk
 share/xastir/config/nwsc_ddmmyy_13.dbfawk
+share/xastir/config/nwsc_ddmmyy_15.dbfawk
+share/xastir/config/nwsfz_ddmmyy_19.dbfawk
 share/xastir/config/nwshzddmmyy.dbfawk
+share/xastir/config/nwshzddmmyy_old14.dbfawk
 share/xastir/config/nwsmzddmmyy.dbfawk
 share/xastir/config/nwsmzddmmyy_09.dbfawk
 share/xastir/config/nwsmzddmmyy_11.dbfawk
+share/xastir/config/nwsmzddmmyy_16.dbfawk
+share/xastir/config/nwsmzddmmyy_17.dbfawk
 share/xastir/config/nwsmzoddmmyy.dbfawk
 share/xastir/config/nwsozddap12.dbfawk
 share/xastir/config/nwsozddmmyy.dbfawk
 share/xastir/config/nwsozddmmyy_09.dbfawk
 share/xastir/config/nwsozddmmyy_14.dbfawk
+share/xastir/config/nwsozddmmyy_14b.dbfawk
 share/xastir/config/nwsw_ddjn12.dbfawk
 share/xastir/config/nwsw_ddmmyy.dbfawk
 share/xastir/config/nwsw_ddmmyy_09.dbfawk
@@ -82,6 +90,8 @@ share/xastir/config/nwsw_ddmmyy_10.dbfawk
 share/xastir/config/nwsw_ddmmyy_13.dbfawk
 share/xastir/config/nwsw_ddmmyy_14.dbfawk
 share/xastir/config/nwsw_ddmmyy_14a.dbfawk
+share/xastir/config/nwsw_ddmmyy_17.dbfawk
+share/xastir/config/nwsw_ddmmyy_20.dbfawk
 share/xastir/config/nwsz1ddmmyy.dbfawk
 share/xastir/config/nwsz_ddmmyy.dbfawk
 share/xastir/config/nwsz_ddmmyy_09.dbfawk
@@ -90,6 +100,7 @@ share/xastir/config/nwsz_ddmmyy_10b.dbfawk
 share/xastir/config/nwsz_ddmmyy_10c.dbfawk
 share/xastir/config/nwsz_ddmmyy_11.dbfawk
 share/xastir/config/nwsz_ddmmyy_13.dbfawk
+share/xastir/config/nwsz_ddmmyy_19.dbfawk
 share/xastir/config/nwszoddmmyy.dbfawk
 share/xastir/config/pointlm.dbfawk
 share/xastir/config/predefined_EVENT.sys
@@ -153,40 +164,35 @@ share/xastir/maps/CC_OpenStreetMap_txt.png
 share/xastir/maps/GPS/
 share/xastir/maps/GPS/placeholder
 share/xastir/maps/Online/
-share/xastir/maps/Online/CanadaTopo250k.geo
-share/xastir/maps/Online/CanadaTopo50k.geo
-share/xastir/maps/Online/OSM_cloudmade_1.geo
-share/xastir/maps/Online/OSM_cloudmade_2.geo
-share/xastir/maps/Online/OSM_cloudmade_5.geo
-share/xastir/maps/Online/OSM_cloudmade_998.geo
-share/xastir/maps/Online/OSM_cloudmade_999.geo
 share/xastir/maps/Online/OSM_tiled_cycle.geo
+share/xastir/maps/Online/OSM_tiled_fosm.geo
 share/xastir/maps/Online/OSM_tiled_mapnik.geo
-share/xastir/maps/Online/OSM_tiled_osmarender.geo
-share/xastir/maps/Online/OSM_tiled_skiing.geo
-share/xastir/maps/Online/OSM_tiled_topOSM_0_relief.geo
-share/xastir/maps/Online/OSM_tiled_topOSM_1_contour.geo
-share/xastir/maps/Online/OSM_tiled_topOSM_2_features.geo
-share/xastir/maps/Online/TXRadar.geo
-share/xastir/maps/Online/USRadar.geo
-share/xastir/maps/Online/WMSRadar.geo
-share/xastir/maps/Online/terraserver-reflectivity.geo
-share/xastir/maps/Online/terraserver-topo.geo
-share/xastir/maps/Online/terraserver-urban.geo
-share/xastir/maps/Online/terraserver.geo
+share/xastir/maps/Online/USTigermap.geo
+share/xastir/maps/Online/USTigermapBorders.geo
+share/xastir/maps/Online/geogratis.gc.ca/
+share/xastir/maps/Online/geogratis.gc.ca/National.geo
+share/xastir/maps/Online/geogratis.gc.ca/Regional.geo
+share/xastir/maps/Online/geogratis.gc.ca/Sub_national.geo
+share/xastir/maps/Online/geogratis.gc.ca/Sub_regional.geo
+share/xastir/maps/Online/nationalmap.gov/
+share/xastir/maps/Online/nationalmap.gov/WMS_USGS_Hydrography.geo
+share/xastir/maps/Online/nationalmap.gov/WMS_USGS_ImageryOnly.geo
+share/xastir/maps/Online/nationalmap.gov/WMS_USGS_ImageryTopo.geo
+share/xastir/maps/Online/nationalmap.gov/WMS_USGS_ShadedReliefOnly.geo
+share/xastir/maps/Online/nationalmap.gov/WMS_USGS_Topo.geo
 share/xastir/maps/worldhi.map
 share/xastir/scripts/
 share/xastir/scripts/Coordinate.pm
-share/xastir/scripts/Xastir_tigerpoly.py
+share/xastir/scripts/ads-b.pl
+share/xastir/scripts/ais.pl
+share/xastir/scripts/ais_pp.pl
 share/xastir/scripts/coord-convert.pl
 share/xastir/scripts/geopdf2gtiff.pl
 share/xastir/scripts/get-BOMdata
 share/xastir/scripts/get-NWSdata
 share/xastir/scripts/get-fcc-rac.pl
 share/xastir/scripts/get-gnis
-share/xastir/scripts/get-maptools.sh
 share/xastir/scripts/get-pop
-share/xastir/scripts/get_shapelib.sh
 share/xastir/scripts/gpx2shape
 share/xastir/scripts/icontable.pl
 share/xastir/scripts/inf2geo.pl
@@ -212,11 +218,9 @@ share/xastir/scripts/toporama250k.pl
 share/xastir/scripts/toporama50k.pl
 share/xastir/scripts/track-get.pl
 share/xastir/scripts/update_langfile.pl
-share/xastir/scripts/values
-share/xastir/scripts/values.pl
 share/xastir/scripts/waypoint-get.pl
-share/xastir/scripts/xastir-fixcfg.sh
-share/xastir/scripts/xastir-migrate.sh
+share/xastir/scripts/wms.pl
+share/xastir/scripts/wxnowsrv.pl
 share/xastir/sounds/
 share/xastir/sounds/placeholder
 share/xastir/symbols/

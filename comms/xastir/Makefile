@@ -1,21 +1,25 @@
-# $OpenBSD: Makefile,v 1.42 2021/02/18 22:08:25 tb Exp $
+# $OpenBSD: Makefile,v 1.43 2021/03/05 07:53:53 landry Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
-DISTNAME=	xastir-2.0.6
-REVISION=	6
+VERSION=	2.1.6
+GH_ACCOUNT=	Xastir
+GH_PROJECT=	Xastir
+GH_TAGNAME=	Release-${VERSION}
+DISTNAME=	${GH_PROJECT}-${VERSION}
+PKGNAME=	xastir-${VERSION}
 
-CATEGORIES=    	comms hamradio geo
+CATEGORIES=	comms hamradio geo
 
 HOMEPAGE=	https://xastir.org/
+
+MAINTAINER=	Michael <michi+openbsd@dataswamp.org>
 
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GraphicsMagick ICE SM X11 Xext Xm Xpm Xt bz2 c curl db
-WANTLIB += freetype gdal geotiff iconv intl lcms2 ltdl lzma m pcre proj
+WANTLIB += freetype geotiff lcms2 ltdl lzma m pcre proj
 WANTLIB += pthread shp tiff z
-
-MASTER_SITES=	$(MASTER_SITE_SOURCEFORGE:=xastir/)
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
@@ -24,8 +28,6 @@ MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 .if ${MACHINE} == "sparc64"
 CFLAGS +=		-fno-tree-ter
 .endif
-# https://github.com/Xastir/Xastir/issues/47 proj 6
-CFLAGS +=		-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 CONFIGURE_ARGS=		--with-shapelib					\
 			--with-pcre					\
@@ -44,7 +46,6 @@ CONFIGURE_ARGS=		--with-shapelib					\
 LIB_DEPENDS=	net/curl \
 		devel/shapelib \
 		devel/geotiff \
-		geo/gdal \
 		graphics/GraphicsMagick \
 		databases/db/v4 \
 		devel/pcre \
