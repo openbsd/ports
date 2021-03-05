@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:18 sthen Exp $
-# $RuOBSD: Makefile,v 1.3 2002/04/28 16:29:29 grange Exp $
+# $OpenBSD: Makefile,v 1.19 2021/03/05 12:33:36 sthen Exp $
 
 COMMENT=		proxy-cache-servers logfiles analizer
 
+# 2.99.x are v3 betas
+PORTROACH=		skipv:2.99.4.5
+
 DISTNAME=		calamaris-2.59
+REVISION=		0
 CATEGORIES=		www sysutils
 
-HOMEPAGE=		http://cord.de/tools/squid/calamaris/
+HOMEPAGE=		https://cord.de/calamaris-english
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://cord.de/tools/squid/calamaris/
+MASTER_SITES=		https://cord.de/files/calamaris/
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
