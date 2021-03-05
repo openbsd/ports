@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/12/11 10:13:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/03/05 08:16:24 espie Exp $
 @bin bin/shotcut
 @man man/man1/shotcut.1
 share/applications/org.shotcut.Shotcut.desktop
 share/icons/hicolor/128x128/apps/org.shotcut.Shotcut.png
 share/icons/hicolor/64x64/apps/org.shotcut.Shotcut.png
 share/metainfo/
-share/metainfo/org.shotcut.Shotcut.appdata.xml
+share/metainfo/org.shotcut.Shotcut.metainfo.xml
 share/mime/packages/org.shotcut.Shotcut.xml
 share/shotcut/
 share/shotcut/qml/
@@ -203,6 +203,9 @@ share/shotcut/qml/filters/fadeout_movit/ui.qml
 share/shotcut/qml/filters/flip/
 share/shotcut/qml/filters/flip/meta.qml
 share/shotcut/qml/filters/flip/meta_movit.qml
+share/shotcut/qml/filters/fspp/
+share/shotcut/qml/filters/fspp/meta.qml
+share/shotcut/qml/filters/fspp/ui.qml
 share/shotcut/qml/filters/glitch/
 share/shotcut/qml/filters/glitch/meta.qml
 share/shotcut/qml/filters/glitch/ui.qml
@@ -260,6 +263,7 @@ share/shotcut/qml/filters/mask_alphaspot/meta.qml
 share/shotcut/qml/filters/mask_alphaspot/ui.qml
 share/shotcut/qml/filters/mask_apply/
 share/shotcut/qml/filters/mask_apply/meta.qml
+share/shotcut/qml/filters/mask_apply/ui.qml
 share/shotcut/qml/filters/mask_shape/
 share/shotcut/qml/filters/mask_shape/meta.qml
 share/shotcut/qml/filters/mask_shape/ui.qml
@@ -299,11 +303,6 @@ share/shotcut/qml/filters/pillar_echo/vui.qml
 share/shotcut/qml/filters/posterize/
 share/shotcut/qml/filters/posterize/meta.qml
 share/shotcut/qml/filters/posterize/ui.qml
-share/shotcut/qml/filters/rectangle/
-share/shotcut/qml/filters/rectangle/meta.qml
-share/shotcut/qml/filters/rectangle/rectangle.qml
-share/shotcut/qml/filters/rectangle/ui.qml
-share/shotcut/qml/filters/rectangle/vui.qml
 share/shotcut/qml/filters/rgbsplit0r/
 share/shotcut/qml/filters/rgbsplit0r/meta.qml
 share/shotcut/qml/filters/rgbsplit0r/ui.qml
@@ -396,47 +395,6 @@ share/shotcut/qml/filters/waveform/
 share/shotcut/qml/filters/waveform/meta.qml
 share/shotcut/qml/filters/waveform/ui.qml
 share/shotcut/qml/filters/waveform/vui.qml
-share/shotcut/qml/filters/webvfx_choppy/
-share/shotcut/qml/filters/webvfx_choppy/choppy.html
-share/shotcut/qml/filters/webvfx_choppy/meta.qml
-share/shotcut/qml/filters/webvfx_choppy/ui.qml
-share/shotcut/qml/filters/webvfx_circular_frame/
-share/shotcut/qml/filters/webvfx_circular_frame/filter-demo.html
-share/shotcut/qml/filters/webvfx_circular_frame/meta.qml
-share/shotcut/qml/filters/webvfx_circular_frame/ui.qml
-share/shotcut/qml/filters/webvfx_clip/
-share/shotcut/qml/filters/webvfx_clip/filter-clip.html
-share/shotcut/qml/filters/webvfx_clip/meta.qml
-share/shotcut/qml/filters/webvfx_clip/ui.qml
-share/shotcut/qml/filters/webvfx_clip/vui.qml
-share/shotcut/qml/filters/webvfx_ruttetraizer/
-share/shotcut/qml/filters/webvfx_ruttetraizer/meta.qml
-share/shotcut/qml/filters/webvfx_ruttetraizer/ruttetraizer.html
-share/shotcut/qml/filters/webvfx_ruttetraizer/three.js
-share/shotcut/qml/filters/webvfx_ruttetraizer/ui.qml
-share/shotcut/qml/filters/webvfx_swirl/
-share/shotcut/qml/filters/webvfx_swirl/meta.qml
-share/shotcut/qml/filters/webvfx_swirl/shaderkit.js
-share/shotcut/qml/filters/webvfx_swirl/swirl.html
-share/shotcut/qml/filters/webvfx_swirl/ui.qml
-share/shotcut/qml/filters/webvfx_threejs_text/
-share/shotcut/qml/filters/webvfx_threejs_text/Detector.js
-share/shotcut/qml/filters/webvfx_threejs_text/GeometryUtils.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/gentilis_bold.typeface.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/gentilis_regular.typeface.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/helvetiker_bold.typeface.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/helvetiker_regular.typeface.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/liberation_sans_bold.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/liberation_sans_regular.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/liberation_serif_bold.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/liberation_serif_regular.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/optimer_bold.typeface.js
-share/shotcut/qml/filters/webvfx_threejs_text/fonts/optimer_regular.typeface.js
-share/shotcut/qml/filters/webvfx_threejs_text/meta.qml
-share/shotcut/qml/filters/webvfx_threejs_text/three.min.js
-share/shotcut/qml/filters/webvfx_threejs_text/threejs_text.html
-share/shotcut/qml/filters/webvfx_threejs_text/ui.qml
 share/shotcut/qml/filters/white/
 share/shotcut/qml/filters/white/meta_frei0r.qml
 share/shotcut/qml/filters/white/meta_movit.qml
@@ -444,8 +402,13 @@ share/shotcut/qml/filters/white/ui.qml
 share/shotcut/qml/modules/
 share/shotcut/qml/modules/Shotcut/
 share/shotcut/qml/modules/Shotcut/Controls/
+share/shotcut/qml/modules/Shotcut/Controls/Button.qml
 share/shotcut/qml/modules/Shotcut/Controls/ColorPicker.qml
+share/shotcut/qml/modules/Shotcut/Controls/ComboBox.qml
+share/shotcut/qml/modules/Shotcut/Controls/DoubleSpinBox.qml
+share/shotcut/qml/modules/Shotcut/Controls/Gauge.qml
 share/shotcut/qml/modules/Shotcut/Controls/GradientControl.qml
+share/shotcut/qml/modules/Shotcut/Controls/HoverTip.qml
 share/shotcut/qml/modules/Shotcut/Controls/KeyframableFilter.qml
 share/shotcut/qml/modules/Shotcut/Controls/KeyframesButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/Preset.qml
@@ -457,8 +420,7 @@ share/shotcut/qml/modules/Shotcut/Controls/TextFilterUi.qml
 share/shotcut/qml/modules/Shotcut/Controls/TextFilterVui.qml
 share/shotcut/qml/modules/Shotcut/Controls/TimeSpinner.qml
 share/shotcut/qml/modules/Shotcut/Controls/ToggleButton.qml
-share/shotcut/qml/modules/Shotcut/Controls/ToolBarToggle.qml
-share/shotcut/qml/modules/Shotcut/Controls/ToolTip.qml
+share/shotcut/qml/modules/Shotcut/Controls/ToolButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/UndoButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/VuiBase.qml
 share/shotcut/qml/modules/Shotcut/Controls/qmldir
@@ -480,7 +442,6 @@ share/shotcut/qml/views/keyframes/KeyframesToolbar.qml
 share/shotcut/qml/views/keyframes/Parameter.qml
 share/shotcut/qml/views/keyframes/ParameterHead.qml
 share/shotcut/qml/views/keyframes/Ruler.qml
-share/shotcut/qml/views/keyframes/ToggleButton.qml
 share/shotcut/qml/views/keyframes/ZoomSlider.qml
 share/shotcut/qml/views/keyframes/keyframes.qml
 share/shotcut/qml/views/timeline/

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_util_cpp,v 1.1 2021/03/05 08:16:24 espie Exp $
+
+Index: src/util.cpp
+--- src/util.cpp.orig
++++ src/util.cpp
+@@ -501,5 +501,7 @@ bool Util::isMemoryLow()
+     meminfo.close();
+     LOG_INFO() << "available RAM = " << availableKB << "KB";
+     return availableKB < kLowMemoryThresholdKB;
++#else
++	return false;
+ #endif
+ }
