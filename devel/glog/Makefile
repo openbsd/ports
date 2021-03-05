@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2020/11/26 20:37:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/03/05 01:24:44 kmos Exp $
 
 COMMENT =		C++ application-level logging library
 
 GH_ACCOUNT =		google
 GH_PROJECT =		glog
 GH_TAGNAME =		v0.4.0
+REVISION =		1
 
 SHARED_LIBS +=		glog 2.0 # 0.2.1
 
