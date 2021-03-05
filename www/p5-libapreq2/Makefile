@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/03/05 13:01:04 sthen Exp $
 
 COMMENT=	apache HTTP server request library
 
-DISTNAME=	libapreq2-2.08
+DISTNAME=	libapreq2-2.13
 # no perl module; p5- is needed
 PKGNAME=	p5-${DISTNAME}
-REVISION=	7
 CATEGORIES=	www
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/J/JO/JOESUF/}
 SHARED_LIBS=	apreq2	9.0
 
 # Artistic + GPL
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += apr-1 aprutil-1 c db expat iconv perl pthread
+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/I/IS/ISAAC/}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-perl-glue \

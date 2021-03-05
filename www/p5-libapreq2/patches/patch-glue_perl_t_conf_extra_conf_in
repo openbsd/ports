@@ -1,0 +1,18 @@
+$OpenBSD: patch-glue_perl_t_conf_extra_conf_in,v 1.1 2021/03/05 13:01:04 sthen Exp $
+
+Removed in apache httpd 2.2
+
+Index: glue/perl/t/conf/extra.conf.in
+--- glue/perl/t/conf/extra.conf.in.orig
++++ glue/perl/t/conf/extra.conf.in
+@@ -6,10 +6,6 @@
+     ScriptAlias /cgi-bin/ "@ServerRoot@/cgi-bin/"
+ </IfModule>
+ 
+-<IfModule !mpm_winnt.c>
+-   LockFile @ServerRoot@/logs/accept.lock
+-</IfModule>
+-
+ <Directory "@ServerRoot@/cgi-bin">
+    AllowOverride None
+    Options None
