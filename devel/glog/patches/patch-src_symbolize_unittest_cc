@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_symbolize_unittest_cc,v 1.1 2021/03/05 01:25:08 kmos Exp $
+
+This test causes problems on (at least) sparc64 and mips64. It appears they try
+to call this even though those functions don't exist for those archs.
+
+Index: src/symbolize_unittest.cc
+--- src/symbolize_unittest.cc.orig
++++ src/symbolize_unittest.cc
+@@ -402,7 +402,7 @@ int main(int argc, char **argv) {
+   InitGoogleLogging(argv[0]);
+   InitGoogleTest(&argc, argv);
+ #if defined(HAVE_SYMBOLIZE)
+-# if defined(__ELF__)
++# if defined(__ELF__) && defined(TEST_X86_32_AND_64)
+   // We don't want to get affected by the callback interface, that may be
+   // used to install some callback function at InitGoogle() time.
+   InstallSymbolizeCallback(NULL);
