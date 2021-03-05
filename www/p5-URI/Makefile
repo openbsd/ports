@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2020/07/03 21:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/03/05 12:51:53 sthen Exp $
 
 COMMENT =		library to parse Uniform Resource Identifiers
 
 PKG_ARCH =		*
 
-DISTNAME =		URI-1.76
-REVISION =		0
+DISTNAME =		URI-5.09
 
 CATEGORIES =		www
 
