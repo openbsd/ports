@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/03/05 10:42:29 sthen Exp $
 
-COMMENT=	hierarchical memory pool system with destructors
+COMMENT-main=	hierarchical memory pool system with destructors
+COMMENT-python=	Python ${MODPY_VERSION} bindings for talloc
 
 # Keep in sync with the version bundled in net/samba
 DISTNAME=	talloc-2.1.16
-PKGNAME=	lib${DISTNAME}
+PKGNAME-main=	lib${DISTNAME}
+PKGNAME-python=	py-${DISTNAME}
+REVISION=	0
+MULTI_PACKAGES=	-main -python
 
 SHARED_LIBS+=	talloc		1.1
 SHARED_LIBS+=	pytalloc-util	0.1
@@ -18,7 +22,8 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += intl m pthread util ${MODPY_WANTLIB}
+WANTLIB-main=	# empty
+WANTLIB-python=	intl m pthread talloc util ${MODPY_WANTLIB}
 
 MASTER_SITES=	https://download.samba.org/pub/talloc/
 
@@ -32,7 +37,8 @@ MODPY_ADJ_FILES= buildtools/bin/waf
 BUILD_DEPENDS=	textproc/docbook-xsl \
 		textproc/libxslt
 
-LIB_DEPENDS=	${MODPY_LIB_DEPENDS}
+LIB_DEPENDS-python=	${BUILD_PKGPATH} \
+			${MODPY_LIB_DEPENDS}
 
 WAF_ARGS=	-v -j ${MAKE_JOBS}
 MAKE_FLAGS=	WAF_ARGS="${WAF_ARGS}"

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-python,v 1.1 2021/03/05 10:42:29 sthen Exp $
+@conflict libtalloc-<2.1.16p0
+include/pytalloc.h
+@lib lib/libpytalloc-util.so.${LIBpytalloc-util_VERSION}
+lib/pkgconfig/pytalloc-util.pc
+@so lib/python${MODPY_VERSION}/site-packages/talloc.so

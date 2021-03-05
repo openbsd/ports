@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/04 00:15:22 jca Exp $
-include/pytalloc.h
-include/talloc.h
-@lib lib/libpytalloc-util.so.${LIBpytalloc-util_VERSION}
-@lib lib/libtalloc.so.${LIBtalloc_VERSION}
-lib/pkgconfig/pytalloc-util.pc
-lib/pkgconfig/talloc.pc
-@so lib/python${MODPY_VERSION}/site-packages/talloc.so
-@man man/man3/talloc.3
