@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2021/03/01 20:23:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2021/03/06 13:55:42 sthen Exp $
 
 SHARED_LIBS +=	ettercap 0.0
 SHARED_LIBS +=	ettercap-ui 0.0
@@ -41,7 +41,6 @@ FLAVOR?=
 CFLAGS+=	-DNS_IN6ADDRSZ=16 -DNS_INT16SZ=2
 
 CFLAGS+=	-I${LOCALBASE}/include
-#-I${LOCALBASE}/include/harfbuzz
 CONFIGURE_ARGS+= -DCMAKE_C_FLAGS="${CFLAGS}" \
 		-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 		-DCMAKE_MODULE_LINKER_FLAGS="${LDFLAGS}" \
@@ -71,13 +70,5 @@ NO_TEST=	Yes
 
 post-install:
 	mv ${WRKINST}/etc/ettercap ${PREFIX}/share/examples/ettercap
-
-yy:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps \
-	    ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/desktop/ettercap.desktop \
-	    ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/desktop/ettercap.svg \
-	    ${PREFIX}/share/icons/hicolor/scalable/apps/
 
 .include <bsd.port.mk>
