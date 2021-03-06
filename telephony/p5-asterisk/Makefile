@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/06 16:28:05 sthen Exp $
 
 COMMENT=	collection of perl modules to be used with asterisk
 
-DISTNAME=	asterisk-perl-1.03
+DISTNAME=	asterisk-perl-1.08
 PKGNAME=	p5-${DISTNAME:S/perl-//}
 CATEGORIES=	telephony perl5
-HOMEPAGE=	http://asterisk.gnuinter.net/
+
+HOMEPAGE=	https://github.com/asterisk-perl/asterisk-perl
 
 MODULES=	cpan
 PKG_ARCH=	*
-CPAN_AUTHOR=	JAMESGOL
+CPAN_AUTHOR=	ITCHARLIE
 
 # artistic
 PERMIT_PACKAGE=	Yes
