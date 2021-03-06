@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/29 13:33:22 bket Exp $
+# $OpenBSD: Makefile,v 1.9 2021/03/06 19:31:56 bket Exp $
 
 COMMENT =	utility and library for computing hash sums
 
-DISTNAME =	rhash-1.4.0-src
+DISTNAME =	rhash-1.4.1-src
 PKGNAME =	${DISTNAME:S/-src$//}
 
 SHARED_LIBS =	rhash 0.0
