@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/03/06 05:34:47 daniel Exp $
 
 COMMENT=		complementary command-line interface for Git
 
-MODPY_EGG_VERSION=	0.2.0
+MODPY_EGG_VERSION=	1.2.0
 DISTNAME=		legit-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		0
-EXTRACT_SUFX=		.zip
 
 HOMEPAGE=		https://frostming.github.io/legit/
 
@@ -14,14 +12,15 @@ HOMEPAGE=		https://frostming.github.io/legit/
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=		devel/py-clint>=0.5.1 \
-			devel/py-gitpython>=1.0.2 \
-			devel/py-six
+RUN_DEPENDS=		devel/py-clint${MODPY_FLAVOR}>=0.5.1 \
+			devel/py-click${MODPY_FLAVOR} \
+			devel/py-crayons${MODPY_FLAVOR} \
+			devel/py-gitpython${MODPY_FLAVOR}>=1.0.2 \
+			devel/py-six${MODPY_FLAVOR}
 
 NO_TEST=		Yes
 
