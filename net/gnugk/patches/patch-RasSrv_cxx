@@ -1,0 +1,14 @@
+$OpenBSD: patch-RasSrv_cxx,v 1.3 2021/03/06 07:53:26 ajacoutot Exp $
+
+Index: RasSrv.cxx
+--- RasSrv.cxx.orig
++++ RasSrv.cxx
+@@ -13,7 +13,7 @@
+ //////////////////////////////////////////////////////////////////
+ 
+ #include "config.h"
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <ptlib.h>
+ #include <ptlib/sockets.h>
+ #include <ptclib/enum.h>

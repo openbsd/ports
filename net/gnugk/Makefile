@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2020/10/30 13:11:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2021/03/06 07:53:26 ajacoutot Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper
 
-V=			5.6
+V=			5.7
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
