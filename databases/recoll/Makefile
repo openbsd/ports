@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/06 09:43:13 sthen Exp $
 
 COMMENT= 	full text search application
 
-V=		1.27.12
+V=		1.28.6
 DISTNAME= 	recoll-${V}
-REVISION=	1
 
 SHARED_LIBS +=	recoll-${V}            0.0 # 0.0
 SHARED_LIBS +=  recoll                 0.0 # 0.0
@@ -45,7 +44,8 @@ CONFIGURE_ARGS=		--disable-python-chm \
 			--disable-x11mon \
 			--without-inotify \
 			--without-fam \
-			--without-qzeitgeist
+			--without-qzeitgeist \
+			--enable-recollq
 
 pre-configure:
 	sed -i -e "s,!!LIBrecoll_VERSION_R!!,${LIBrecoll_VERSION:R}," \

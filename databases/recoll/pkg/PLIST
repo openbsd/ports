@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/03/06 09:43:13 sthen Exp $
 @bin bin/recollindex
+@bin bin/recollq
 lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Recoll-1.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -19,7 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/recoll/rclconfig.py
 lib/python${MODPY_VERSION}/site-packages/recoll/rclextract.py
 lib/python${MODPY_VERSION}/site-packages/recoll/recoll.py
 lib/recoll/
-@lib lib/recoll/librecoll-1.27.12.so.${LIBrecoll-1.27.12_VERSION}
+@lib lib/recoll/librecoll-1.28.6.so.${LIBrecoll-1.28.6_VERSION}
 @static-lib lib/recoll/librecoll.a
 lib/recoll/librecoll.la
 @lib lib/recoll/librecoll.so.${LIBrecoll_VERSION}
@@ -94,6 +95,7 @@ share/recoll/filters/rclocrabbyy.py
 share/recoll/filters/rclocrcache.py
 share/recoll/filters/rclocrtesseract.py
 share/recoll/filters/rclopxml.py
+share/recoll/filters/rclorgmode.py
 share/recoll/filters/rclpdf.py
 share/recoll/filters/rclppt.py
 share/recoll/filters/rclps
@@ -107,6 +109,7 @@ share/recoll/filters/rclshowinfo
 share/recoll/filters/rcltar
 share/recoll/filters/rcltex
 share/recoll/filters/rcltext.py
+share/recoll/filters/rcltxtlines.py
 share/recoll/filters/rcluncomp
 share/recoll/filters/rcluncomp.py
 share/recoll/filters/rclwar

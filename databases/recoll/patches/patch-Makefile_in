@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2020/12/21 13:25:28 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2021/03/06 09:43:13 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -857,7 +857,7 @@ AM_YFLAGS = -d
+@@ -860,7 +860,7 @@ AM_YFLAGS = -d
  # after the recoll version (e.g librecoll-1.27.1.so)
  # -version-info $(VERSION_INFO) would handle ABI compat issues, we don't
  # need it
@@ -12,7 +12,7 @@ Index: Makefile.in
  librecoll_la_LIBADD = $(XSLT_LIBS) $(LIBXAPIAN) $(LIBICONV) $(LIBTHREADS)
  recollindex_SOURCES = \
                      index/recollindex.cpp \
-@@ -2700,16 +2700,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -2656,16 +2656,12 @@ PicStatic: $(librecoll_la_OBJECTS)
  @MAKEPYTHON_TRUE@clean-local:: recollpython-clean
  @MAKEPYTHON_TRUE@recollpython: librecoll.la
  @MAKEPYTHON_TRUE@	(cd python/recoll; set -x; \
@@ -31,7 +31,7 @@ Index: Makefile.in
  @MAKEPYTHON_TRUE@         )
  @MAKEPYTHON_TRUE@recollpython-clean:
  @MAKEPYTHON_TRUE@	rm -f python/recoll/*.pyc
-@@ -2725,16 +2721,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -2681,16 +2677,12 @@ PicStatic: $(librecoll_la_OBJECTS)
  @MAKEPYTHONCHM_TRUE@clean-local:: rclpychm-clean
  @MAKEPYTHONCHM_TRUE@rclpychm:
  @MAKEPYTHONCHM_TRUE@	(cd python/pychm; set -x; \
