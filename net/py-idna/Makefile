@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:13:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/03/06 15:49:15 sthen Exp $
 
 COMMENT =		Python library to support the IDNA protocol
 
-MODPY_EGG_VERSION =	2.8
+# 3.x is py3-only
+MODPY_EGG_VERSION =	2.10
 DISTNAME =		idna-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		0
 
 HOMEPAGE =		https://github.com/kjd/idna
 
