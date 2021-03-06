@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2021/01/21 00:16:30 bluhm Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/06 16:12:53 sthen Exp $
 
 COMMENT = 	DateTime parser for ISO8601 date formats
 
-DISTNAME =	DateTime-Format-ISO8601-0.15
+DISTNAME =	DateTime-Format-ISO8601-0.16
 EPOCH =		0
 
 CATEGORIES =	devel
