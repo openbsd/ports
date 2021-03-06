@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.76 2021/02/23 19:39:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2021/03/06 08:08:51 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-7.0.0
-REVISION=		0
+DISTNAME=		libvirt-7.1.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.0 # 0.7000.0
-SHARED_LIBS += virt-qemu                 2.0 # 0.7000.0
-SHARED_LIBS += virt-lxc                  2.0 # 0.7000.0
-SHARED_LIBS += virt-admin                2.0 # 0.7000.0
+SHARED_LIBS += virt                      2.1 # 0.7001.0
+SHARED_LIBS += virt-qemu                 2.1 # 0.7001.0
+SHARED_LIBS += virt-lxc                  2.0 # 0.7001.0
+SHARED_LIBS += virt-admin                2.0 # 0.7001.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -58,13 +57,13 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
-			glusterfs hal libiscsi libpcap macvtap polkit netcf \
-			numactl numad openwsman selinux_mount selinux udev \
-			readline virtualport driver_bhyve driver_hyperv \
-			driver_interface driver_libxl driver_lxc driver_openvz \
-			driver_vz driver_qemu secdriver_apparmor \
-			secdriver_selinux login_shell driver_network nss \
-			sysctl_config git_werror libnl
+			glusterfs libiscsi libpcap polkit netcf numactl numad \
+			openwsman selinux_mount selinux udev readline \
+			driver_bhyve driver_hyperv driver_interface \
+			driver_libxl driver_lxc driver_openvz driver_vz \
+			driver_qemu secdriver_apparmor secdriver_selinux \
+			login_shell driver_network nss sysctl_config \
+			git_werror libnl
 
 CONFIGURE_ARGS=		-Dinit_script=none
 

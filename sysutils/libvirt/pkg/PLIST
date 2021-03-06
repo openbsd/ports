@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2021/02/20 16:44:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2021/03/06 08:08:51 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -297,8 +297,21 @@ share/doc/libvirt/html/manpages/virt-pki-validate.html
 share/doc/libvirt/html/manpages/virt-qemu-run.html
 share/doc/libvirt/html/manpages/virt-sanlock-cleanup.html
 share/doc/libvirt/html/manpages/virt-xml-validate.html
+share/doc/libvirt/html/manpages/virtbhyved.html
+share/doc/libvirt/html/manpages/virtinterfaced.html
 share/doc/libvirt/html/manpages/virtlockd.html
 share/doc/libvirt/html/manpages/virtlogd.html
+share/doc/libvirt/html/manpages/virtlxcd.html
+share/doc/libvirt/html/manpages/virtnetworkd.html
+share/doc/libvirt/html/manpages/virtnodedevd.html
+share/doc/libvirt/html/manpages/virtnwfilterd.html
+share/doc/libvirt/html/manpages/virtproxyd.html
+share/doc/libvirt/html/manpages/virtqemud.html
+share/doc/libvirt/html/manpages/virtsecretd.html
+share/doc/libvirt/html/manpages/virtstoraged.html
+share/doc/libvirt/html/manpages/virtvboxd.html
+share/doc/libvirt/html/manpages/virtvzd.html
+share/doc/libvirt/html/manpages/virtxend.html
 share/doc/libvirt/html/migration-managed-direct.png
 share/doc/libvirt/html/migration-managed-p2p.png
 share/doc/libvirt/html/migration-native.png
@@ -487,6 +500,7 @@ share/locale/sr@latin/LC_MESSAGES/libvirt.mo
 share/locale/sv/LC_MESSAGES/libvirt.mo
 share/locale/ta/LC_MESSAGES/libvirt.mo
 share/locale/te/LC_MESSAGES/libvirt.mo
+share/locale/tr/LC_MESSAGES/libvirt.mo
 share/locale/uk/LC_MESSAGES/libvirt.mo
 share/locale/vi/LC_MESSAGES/libvirt.mo
 share/locale/zh_CN/LC_MESSAGES/libvirt.mo
