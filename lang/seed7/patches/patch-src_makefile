@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_makefile,v 1.5 2020/10/31 21:30:39 bcallah Exp $
+$OpenBSD: patch-src_makefile,v 1.6 2021/03/06 23:04:27 bcallah Exp $
 
 We definitely do not want to replace system headers.
 
 Index: src/makefile
 --- src/makefile.orig
 +++ src/makefile
-@@ -178,7 +178,6 @@ chkccomp.h:
+@@ -186,7 +186,6 @@ chkccomp.h:
  	echo "#define CC_OPT_LINK_TIME_OPTIMIZATION \"-flto\"" >> chkccomp.h
  	echo "#define LINKER_OPT_NO_LTO \"-fno-lto\"" >> chkccomp.h
  	echo "#define SUPPORTS_PARTIAL_LINKING" >> chkccomp.h

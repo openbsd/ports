@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2020/10/31 21:30:39 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.38 2021/03/06 23:04:27 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -333,6 +333,7 @@ share/examples/seed7/mahjong.sd7
 share/examples/seed7/make7.sd7
 share/examples/seed7/mandelbr.sd7
 share/examples/seed7/mind.sd7
+share/examples/seed7/mirror.sd7
 share/examples/seed7/ms.sd7
 share/examples/seed7/nicoma.sd7
 share/examples/seed7/orange.dna
