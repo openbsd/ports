@@ -1,4 +1,4 @@
-$OpenBSD: patch-magic_proto_magicrc_in,v 1.1 2020/03/08 12:47:36 sthen Exp $
+$OpenBSD: patch-magic_proto_magicrc_in,v 1.2 2021/03/06 11:59:59 sthen Exp $
 
 Index: magic/proto.magicrc.in
 --- magic/proto.magicrc.in.orig
@@ -171,20 +171,7 @@ Index: magic/proto.magicrc.in
  macro XK_KP_Delete "box size 0 0"
  macro XK_KP_Insert "box size 4 4"
  macro XK_KP_0 "box size 7 2"
-@@ -164,10 +164,10 @@ macro XK_KP_8 "stretch u 1"
- macro Shift_XK_KP_8 "stretch u 1"
- macro XK_8 "stretch u 1"
- macro XK_KP_Prior "move ne 1"
--# Scroll wheel bindings
-+/* # Scroll wheel bindings */
- macro XK_Pointer_Button4 "scroll u .05 w"
- macro XK_Pointer_Button5 "scroll d .05 w"
--# Quick macro function keys for scmos tech (X11 versions only)
-+/* # Quick macro function keys for scmos tech (X11 versions only) */
- macro XK_F1  "paint ndiff"
- macro XK_F2  "paint pdiff"
- macro XK_F3  "paint poly"
-@@ -182,9 +182,9 @@ macro XK_F11 "paint pc"
+@@ -184,9 +184,9 @@ macro XK_F11 "paint pc"
  macro XK_F12 "paint via"
  #endif	/* (XLIB) */
  #else	/* USE_NEW_MACROS */
@@ -197,7 +184,7 @@ Index: magic/proto.magicrc.in
  echo ""
  macro s "select"
  macro S "select more"
-@@ -230,12 +230,12 @@ imacro XK_semicolon ":"
+@@ -232,12 +232,12 @@ imacro XK_semicolon ":"
  macro ^R "iroute route -dBox"
  macro ^N "iroute route -dSelection"
  #endif	/* USE_NEW_MACROS */
@@ -212,7 +199,7 @@ Index: magic/proto.magicrc.in
  macro Button1 "*bypass box move bl cursor"
  macro Shift_Button1 "*bypass box corner bl cursor"
  macro Button2 "*bypass paint cursor"
-@@ -246,7 +246,7 @@ macro Shift_Button3 "*bypass box move ur cursor"
+@@ -248,7 +248,7 @@ macro Shift_Button3 "*bypass box move ur cursor"
  macro Control_Button1 "box move bl cursor"
  macro Control_Button2 "paint cursor"
  macro Control_Button3 "box corner ur cursor"
@@ -221,7 +208,7 @@ Index: magic/proto.magicrc.in
  macro Button1 "box move bl cursor"
  macro Shift_Button1 "box corner bl cursor"
  macro Button2 "paint cursor"
-@@ -254,7 +254,7 @@ macro Shift_Button2 "erase cursor"
+@@ -256,7 +256,7 @@ macro Shift_Button2 "erase cursor"
  macro Button3 "box corner ur cursor"
  macro Shift_Button3 "box move ur cursor"
  #endif /* (!MAGIC_WRAPPER) */
@@ -230,7 +217,7 @@ Index: magic/proto.magicrc.in
  macro color Button1 "pushbutton left"
  macro color Button2 "pushbutton middle"
  macro color Button3 "pushbutton right"
-@@ -262,11 +262,11 @@ macro color u "undo"
+@@ -264,11 +264,11 @@ macro color u "undo"
  macro color U "redo"
  macro color plus "color next"
  macro color minus "color last"
@@ -244,7 +231,7 @@ Index: magic/proto.magicrc.in
  macro wind3d  L "level up"
  macro wind3d  l "level down"
  macro wind3d  C "cif"
-@@ -294,15 +294,15 @@ macro wind3d  XK_equal "view 0 0 -1 rel"
+@@ -296,15 +296,15 @@ macro wind3d  XK_equal "view 0 0 -1 rel"
  macro wind3d  XK_greater "zoom 1 2.0 rel"
  macro wind3d  XK_less "zoom 1 0.5 rel"
  #endif	/* (XLIB) */
@@ -266,7 +253,7 @@ Index: magic/proto.magicrc.in
  #ifdef MAGIC_WRAPPER
  magic::suspendout
  if {![catch {set Opts(tools)}]} { magic::enable_tools }
-@@ -311,11 +311,10 @@ set VDD "vdd!"
+@@ -313,11 +313,10 @@ set VDD "vdd!"
  magic::resumeout
  catch {source ${CAD_ROOT}/magic/sys/site.def}
  #endif  /* (!MAGIC_WRAPPER) */

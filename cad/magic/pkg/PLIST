@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/08 12:47:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/03/06 11:59:59 sthen Exp $
 bin/ext2sim
 bin/ext2spice
 bin/magic
@@ -22,6 +22,7 @@ lib/magic/sys/mos.7bit.mraster_dstyle
 lib/magic/sys/mos.7bit.std.cmap
 lib/magic/sys/mos.OpenGL.dstyle
 lib/magic/sys/mos.OpenGL.std.cmap
+lib/magic/sys/nmos.tech
 lib/magic/sys/scmos-sub.tech
 lib/magic/sys/scmos-tm.tech
 lib/magic/sys/scmos.tech
@@ -50,6 +51,7 @@ lib/magic/tcl/magic.tcl
 @bin lib/magic/tcl/magicdnull
 @bin lib/magic/tcl/magicexec
 lib/magic/tcl/mazeroute.tcl
+lib/magic/tcl/readspice.tcl
 lib/magic/tcl/socketcmd.tcl
 lib/magic/tcl/strip_reflibs.tcl
 @so lib/magic/tcl/tclmagic.so

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/08 12:47:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/06 11:59:59 sthen Exp $
 
 COMMENT =	interactive system for VLSI circuit layouts
-DISTNAME =	magic-8.2.190
+DISTNAME =	magic-8.3.137
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	cad
