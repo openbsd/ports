@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/28 04:03:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.36 2021/03/06 22:24:27 daniel Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	isometric RPG game
 DISTNAME =	freedroidRPG-0.16.1
 PKGNAME =	${DISTNAME:L}
 CATEGORIES=	games x11
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://www.freedroid.org/
 
@@ -25,7 +25,6 @@ WRKDIST =	${WRKDIR}/${DISTNAME:L}
 
 MODULES =	lang/lua \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODLUA_SA =	Yes
 MODLUA_VERSION =5.3
