@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/01/15 20:42:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2021/03/06 16:36:24 gnezdo Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 sparc64
 BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
@@ -8,7 +8,7 @@ COMMENT =		virtual machine for nqp/rakudo
 V =			2018.12
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		moar	9.0
 
