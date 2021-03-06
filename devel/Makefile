@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2083 2021/03/04 02:45:50 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.2084 2021/03/06 16:55:51 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -165,6 +165,7 @@
      SUBDIR += giggle
      SUBDIR += gindent
      SUBDIR += git
+     SUBDIR += git-annex
      SUBDIR += git-cola
      SUBDIR += git-crypt
      SUBDIR += git-cvs
