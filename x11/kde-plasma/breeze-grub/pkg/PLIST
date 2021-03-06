@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/06 06:36:22 rsadowski Exp $
+share/grub/
+share/grub/themes/
+share/grub/themes/progress_bar2_c.png
+share/grub/themes/progress_bar_c.png
+share/grub/themes/progress_bar_hl_c.png
+share/grub/themes/theme.txt
+share/grub/themes/unifont-bold-16.pf2
+share/grub/themes/unifont-regular-14.pf2
+share/grub/themes/unifont-regular-16.pf2
+share/grub/themes/unifont-regular-32.pf2

@@ -1,0 +1,53 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2021/03/06 06:36:22 rsadowski Exp $
+
+     SUBDIR =
+     #SUBDIR += bluedevil
+     SUBDIR += breeze
+     SUBDIR += breeze-grub
+     SUBDIR += breeze-gtk
+     #SUBDIR += discover
+     #SUBDIR += drkonqi
+     #SUBDIR += kactivitymanagerd
+     #SUBDIR += kde-cli-tools
+     #SUBDIR += kde-gtk-config
+     SUBDIR += kdecoration
+     #SUBDIR += kdeplasma-addons
+     #SUBDIR += kgamma5
+     #SUBDIR += khotkeys
+     #SUBDIR += kinfocenter
+     #SUBDIR += kmenuedit
+     #SUBDIR += kscreen
+     #SUBDIR += kscreenlocker
+     #SUBDIR += ksshaskpass
+     #SUBDIR += ksysguard
+     #SUBDIR += kwallet-pam
+     #SUBDIR += kwayland-integration
+     #SUBDIR += kwayland-server
+     #SUBDIR += kwin
+     #SUBDIR += kwrited
+     #SUBDIR += libkscreen
+     #SUBDIR += libksysguard
+     #SUBDIR += milou
+     #SUBDIR += oxygen
+     #SUBDIR += plasma-browser-integration
+     #SUBDIR += plasma-desktop
+     #SUBDIR += plasma-disks
+     #SUBDIR += plasma-integration
+     #SUBDIR += plasma-nano
+     #SUBDIR += plasma-nm
+     #SUBDIR += plasma-pa
+     #SUBDIR += plasma-phone-components
+     #SUBDIR += plasma-sdk
+     #SUBDIR += plasma-tests
+     #SUBDIR += plasma-thunderbolt
+     #SUBDIR += plasma-vault
+     #SUBDIR += plasma-workspace
+     #SUBDIR += plasma-workspace-wallpapers
+     #SUBDIR += plymouth-kcm
+     #SUBDIR += polkit-kde-agent-1
+     #SUBDIR += powerdevil
+     #SUBDIR += sddm-kcm
+     #SUBDIR += systemsettings
+     #SUBDIR += xdg-desktop-portal-kde
+
+.include <bsd.port.subdir.mk>
