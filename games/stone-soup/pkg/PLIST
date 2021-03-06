@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/04/28 18:35:42 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/03/06 08:13:44 daniel Exp $
 @bin bin/crawl-ss
 @man man/man6/crawl-ss.6
 share/crawl/
@@ -36,7 +36,6 @@ share/crawl/dat/database/shout.txt
 share/crawl/dat/database/wpnnoise.txt
 share/crawl/dat/defaults/
 share/crawl/dat/defaults/autopickup_exceptions.txt
-share/crawl/dat/defaults/food_colouring.txt
 share/crawl/dat/defaults/glyph_colours.txt
 share/crawl/dat/defaults/menu_colours.txt
 share/crawl/dat/defaults/messages.txt
@@ -44,6 +43,7 @@ share/crawl/dat/defaults/misc.txt
 share/crawl/dat/defaults/runrest_messages.txt
 share/crawl/dat/defaults/standard_colours.txt
 share/crawl/dat/des/
+share/crawl/dat/des/00init.des
 share/crawl/dat/des/altar/
 share/crawl/dat/des/altar/altar.des
 share/crawl/dat/des/altar/ashenzari_visionary.des
@@ -52,7 +52,6 @@ share/crawl/dat/des/altar/lugonu_bribe.des
 share/crawl/dat/des/altar/nemelex_the_gamble.des
 share/crawl/dat/des/altar/okawaru_arena.des
 share/crawl/dat/des/altar/overflow.des
-share/crawl/dat/des/altar/pakellas_experiments.des
 share/crawl/dat/des/altar/trog_burn_book.des
 share/crawl/dat/des/altar/trog_wizard.des
 share/crawl/dat/des/altar/vehumet_trees.des
@@ -191,6 +190,7 @@ share/crawl/dat/des/variable/mini_monsters.des
 share/crawl/dat/des/variable/polyominoes.des
 share/crawl/dat/des/variable/the_bubble.des
 share/crawl/dat/des/variable/the_grid.des
+share/crawl/dat/des/variable/winding_woodlands.des
 share/crawl/dat/descript/
 share/crawl/dat/descript/ability.txt
 share/crawl/dat/descript/backgrounds.txt
@@ -514,6 +514,7 @@ share/crawl/dat/dist_bones/bones.store.Zot
 share/crawl/dat/dlua/
 share/crawl/dat/dlua/debug.lua
 share/crawl/dat/dlua/dungeon.lua
+share/crawl/dat/dlua/explorer.lua
 share/crawl/dat/dlua/fnwrap.lua
 share/crawl/dat/dlua/gauntlet.lua
 share/crawl/dat/dlua/ghost.lua
@@ -593,11 +594,10 @@ share/crawl/docs/aptitudes.txt
 share/crawl/docs/arena.txt
 @comment share/crawl/docs/changelog.txt
 share/crawl/docs/crawl_manual.txt
-@comment share/crawl/docs/develop/new_dev_checklist.txt
-@comment share/crawl/docs/develop/process.txt
 @comment share/crawl/docs/develop/
 @comment share/crawl/docs/develop/IRC.txt
 @comment share/crawl/docs/develop/android.txt
+@comment share/crawl/docs/develop/arena.txt
 @comment share/crawl/docs/develop/background_creation.txt
 @comment share/crawl/docs/develop/coding_conventions.txt
 @comment share/crawl/docs/develop/ctags.txt
@@ -616,7 +616,7 @@ share/crawl/docs/crawl_manual.txt
 @comment share/crawl/docs/develop/patch_guide.txt
 @comment share/crawl/docs/develop/save_compatibility.txt
 @comment share/crawl/docs/develop/spells.txt
-@comment share/crawl/docs/develop/testing.txt
+@comment share/crawl/docs/develop/test_plug_and_play_cc.txt
 @comment share/crawl/docs/develop/tiles_creation.txt
 @comment share/crawl/docs/develop/translation.txt
 share/crawl/docs/fight_simulator.txt
@@ -630,6 +630,7 @@ share/crawl/docs/keybind.txt
 @comment share/crawl/docs/license/worley.txt
 share/crawl/docs/macros_guide.txt
 share/crawl/docs/options_guide.txt
+share/crawl/docs/quickstart.md
 share/crawl/docs/quickstart.txt
 @comment share/crawl/docs/ssh_guide.txt
 share/crawl/docs/tiles_help.txt

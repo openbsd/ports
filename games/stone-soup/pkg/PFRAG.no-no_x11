@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.8 2019/04/28 18:35:42 kirby Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.9 2021/03/06 08:13:44 daniel Exp $
 share/applications/crawl-tiles.desktop
 share/crawl/dat/tiles/
 share/crawl/dat/tiles/feat.png
@@ -28,6 +28,7 @@ share/crawl/dat/tiles/title_froggy_jiyva_felid.png
 share/crawl/dat/tiles/title_froggy_natasha_and_boris.png
 share/crawl/dat/tiles/title_froggy_rune_and_run_failed_on_dis.png
 share/crawl/dat/tiles/title_froggy_thunder_fist_nikola.png
+share/crawl/dat/tiles/title_nibiki_octopode.png
 share/crawl/dat/tiles/title_omndra_zot_demon.png
 share/crawl/dat/tiles/title_peileppe_bloax_eye.png
 share/crawl/dat/tiles/title_ploomutoo_ijyb.png

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/03/06 08:13:44 daniel Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
 COMMENT = 	dungeon crawl stone soup
 
-VERSION = 	0.23.2
+VERSION = 	0.26.1
+
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	1
 
 CATEGORIES = 	games
 
@@ -18,13 +18,14 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c m sqlite3
 
-MASTER_SITES = 	https://crawl.develz.org/release/${VERSION:R}/
+MASTER_SITES = 	https://crawl.develz.org/release/${VERSION:R}/ \
+		https://github.com/crawl/crawl/releases/download/${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 
 COMPILER =	base-clang ports-gcc
 MODULES = 	lang/python \
 		lang/lua
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 MODLUA_VERSION = 	5.1
 
 BUILD_DEPENDS = graphics/pngcrush \
