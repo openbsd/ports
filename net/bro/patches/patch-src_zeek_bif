@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_zeek_bif,v 1.1 2021/03/06 09:35:09 ajacoutot Exp $
+
+Index: src/zeek.bif
+--- src/zeek.bif.orig
++++ src/zeek.bif
+@@ -4117,11 +4117,11 @@ static bool mmdb_try_open_loc ()
+ 		}
+ 
+ 	return mmdb_open_loc("/usr/share/GeoIP/GeoLite2-City.mmdb")
+-	    || mmdb_open_loc("/var/lib/GeoIP/GeoLite2-City.mmdb")
++	    || mmdb_open_loc("/var/db/GeoIP/GeoLite2-City.mmdb")
+ 	    || mmdb_open_loc("/usr/local/share/GeoIP/GeoLite2-City.mmdb")
+ 	    || mmdb_open_loc("/usr/local/var/GeoIP/GeoLite2-City.mmdb")
+ 	    || mmdb_open_loc("/usr/share/GeoIP/GeoLite2-Country.mmdb")
+-	    || mmdb_open_loc("/var/lib/GeoIP/GeoLite2-Country.mmdb")
++	    || mmdb_open_loc("/var/db/GeoIP/GeoLite2-Country.mmdb")
+ 	    || mmdb_open_loc("/usr/local/share/GeoIP/GeoLite2-Country.mmdb")
+ 	    || mmdb_open_loc("/usr/local/var/GeoIP/GeoLite2-Country.mmdb");
+ 	}
+@@ -4140,7 +4140,7 @@ static bool mmdb_try_open_asn ()
+ 		}
+ 
+ 	return mmdb_open_asn("/usr/share/GeoIP/GeoLite2-ASN.mmdb")
+-	    || mmdb_open_asn("/var/lib/GeoIP/GeoLite2-ASN.mmdb")
++	    || mmdb_open_asn("/var/db/GeoIP/GeoLite2-ASN.mmdb")
+ 	    || mmdb_open_asn("/usr/local/share/GeoIP/GeoLite2-ASN.mmdb")
+ 	    || mmdb_open_asn("/usr/local/var/GeoIP/GeoLite2-ASN.mmdb");
+ 	}

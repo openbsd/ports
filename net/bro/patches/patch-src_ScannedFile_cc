@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ScannedFile_cc,v 1.1 2021/03/06 09:35:09 ajacoutot Exp $
+
+/hack/objdirs/pobj/zeek-4.0.0/zeek-4.0.0/src/ScannedFile.cc:32:53: error: use of undeclared identifier 'errno'
+                                                   name.data(), strerror(errno));
+
+Index: src/ScannedFile.cc
+--- src/ScannedFile.cc.orig
++++ src/ScannedFile.cc
+@@ -1,6 +1,6 @@
+ #include "zeek/ScannedFile.h"
+ 
+-#include <sys/errno.h>
++#include <errno.h>
+ #include <limits.h> // for PATH_MAX
+ 
+ #include "zeek/DebugLogger.h"

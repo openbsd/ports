@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.72 2021/02/27 11:11:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2021/03/06 09:35:09 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
-V=			3.2.4
+V=			4.0.0
 DISTNAME=		zeek-${V}
 
-SHARED_LIBS +=	binpac                    1.0 # 0.54
-SHARED_LIBS +=  broccoli                  8.0 # 5.1
-SHARED_LIBS +=  broker                    2.0 # XXX see patch-aux_broker_CMakeLists_txt
-SHARED_LIBS +=  caf_core                  2.0 # 0.54
-SHARED_LIBS +=  caf_io                    2.0 # 0.54
-SHARED_LIBS +=  caf_openssl               2.0 # 0.54
+SHARED_LIBS +=	binpac                    2.0
+SHARED_LIBS +=  broccoli                  9.0
+SHARED_LIBS +=  broker                    3.0
+SHARED_LIBS +=  caf_core                  3.0
+SHARED_LIBS +=  caf_io                    3.0
+SHARED_LIBS +=  caf_openssl               3.0
 
 CATEGORIES=		net security
 
@@ -87,7 +87,7 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/auxil/broker/CMakeLists.txt \
 		${WRKSRC}/auxil/binpac/lib/CMakeLists.txt \
-		${WRKSRC}/auxil/broker/caf/libcaf_{core,io,openssl}/CMakeLists.txt
+		${WRKSRC}/auxil/broker/caf/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
@@ -95,7 +95,7 @@ post-install:
 	rm -rf ${WRKINST}/var/{log,spool}/zeek
 	mv ${PREFIX}/share/zeek/site/ ${PREFIX}/share/examples/zeek/
 	cd ${PREFIX}/share/zeek && ln -sf ${SYSCONFDIR}/zeek/site
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/zeekctl
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/zeek/python
 
 # handled by exec-add / exec-delete; symlink changes according to spooldir
 	rm ${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh

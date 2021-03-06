@@ -1,0 +1,19 @@
+$OpenBSD: patch-auxil_broker_caf_CMakeLists_txt,v 1.1 2021/03/06 09:35:09 ajacoutot Exp $
+
+Index: auxil/broker/caf/CMakeLists.txt
+--- auxil/broker/caf/CMakeLists.txt.orig
++++ auxil/broker/caf/CMakeLists.txt
+@@ -162,11 +162,11 @@ math(EXPR CAF_VERSION_MAJOR "${CAF_VERSION_INT} / 1000
+ math(EXPR CAF_VERSION_MINOR "( ${CAF_VERSION_INT} / 100) % 100")
+ math(EXPR CAF_VERSION_PATCH "${CAF_VERSION_INT} % 100")
+ # Create full version string.
+-set(CAF_VERSION "${CAF_VERSION_MAJOR}.${CAF_VERSION_MINOR}.${CAF_VERSION_PATCH}"
++set(CAF_VERSION "${LIBcaf_core_VERSION}"
+   CACHE INTERNAL "The full CAF version string")
+ # Set the library version for our shared library targets.
+ if(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
+-  set(CAF_LIB_VERSION "${CAF_VERSION_MAJOR}.${CAF_VERSION_MINOR}"
++  set(CAF_LIB_VERSION "${LIBcaf_core_VERSION}"
+       CACHE INTERNAL "The version string used for shared library objects")
+ else()
+   set(CAF_LIB_VERSION "${CAF_VERSION}"
