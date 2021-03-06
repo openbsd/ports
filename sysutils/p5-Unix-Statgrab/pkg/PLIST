@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/23 07:04:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/06 15:56:32 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Unix/
 ${P5ARCH}/Unix/Statgrab/
@@ -20,7 +20,7 @@ ${P5ARCH}/Unix/Statgrab/sg_user_stats.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Unix/
 ${P5ARCH}/auto/Unix/Statgrab/
-${P5ARCH}/auto/Unix/Statgrab/Statgrab.so
+@so ${P5ARCH}/auto/Unix/Statgrab/Statgrab.so
 ${P5ARCH}/auto/Unix/Statgrab/autosplit.ix
 @man man/man3p/Unix::Statgrab.3p
 @man man/man3p/Unix::Statgrab::sg_cpu_percents.3p
