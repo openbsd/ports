@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2020/12/30 06:53:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2021/03/06 12:01:31 sthen Exp $
 
 COMMENT =		manual tiling window manager
-DISTNAME =		herbstluftwm-0.9.1
+DISTNAME =		herbstluftwm-0.9.2
 CATEGORIES =		x11
 
 HOMEPAGE =		https://herbstluftwm.org/
@@ -12,7 +12,8 @@ MAINTAINER =		Lucas <lucas@sexy.is>, \
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		X11 Xext Xinerama Xrandr c m pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xft Xinerama Xrandr c freetype
+WANTLIB += m z
 
 MASTER_SITES =		https://herbstluftwm.org/tarballs/
 
@@ -29,9 +30,13 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 # tarball already includes generated manpages
 # saves depend on asciidoc
 CONFIGURE_ARGS +=	-DWITH_DOCUMENTATION=NO
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 # requires unported pyewmh, pytest-xvfb and maybe more
 NO_TEST =		Yes
+
+CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
+LDFLAGS +=		-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/herbstluftwm
