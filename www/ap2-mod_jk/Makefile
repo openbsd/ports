@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/06 16:36:01 sthen Exp $
 
 COMMENT =	Apache-Tomcat AJP Connector for Apache2
 
-V =		1.2.41
+V =		1.2.48
 DISTNAME =	tomcat-connectors-${V}-src
 PKGNAME =	ap2-mod_jk-${V}
 CATEGORIES =	www
-REVISION =	1
 
 HOMEPAGE =	http://tomcat.apache.org/connectors-doc/index.html
 
