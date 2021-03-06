@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/19 09:33:59 kirby Exp $
+# $OpenBSD: Makefile,v 1.19 2021/03/06 15:29:07 sthen Exp $
 
 COMMENT=	remake of Konami's F1-Spirit
 
 DISTNAME=	f1spirit.src_0.rc9-1615
 PKGNAME=	${DISTNAME:S/.src_0.rc9-/-0./}
-REVISION =	7
+REVISION=	7
 WRKDIST=	${WRKDIR}/${DISTNAME:S/.src_0.rc9-/-0.rc9./}
+DISTFILES=	${DISTNAME}-1{${DISTNAME}}.tgz
 
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
