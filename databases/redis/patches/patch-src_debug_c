@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_debug_c,v 1.4 2021/02/25 15:05:23 tb Exp $
+$OpenBSD: patch-src_debug_c,v 1.5 2021/03/06 17:42:12 danj Exp $
 
 time_t is long long on OpenBSD
 
 Index: src/debug.c
 --- src/debug.c.orig
 +++ src/debug.c
-@@ -469,7 +469,7 @@ NULL
+@@ -473,7 +473,7 @@ NULL
      } else if (!strcasecmp(c->argv[1]->ptr,"segfault")) {
          *((char*)-1) = 'x';
      } else if (!strcasecmp(c->argv[1]->ptr,"panic")) {
