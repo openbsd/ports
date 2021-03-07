@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-guic,v 1.1.1.1 2018/05/24 15:54:09 ajacoutot Exp $
-@comment @unexec-delete rm -f %D/share/icons/hicolor/icon-theme.cache
+@comment $OpenBSD: PLIST-guic,v 1.2 2021/03/07 08:28:17 ajacoutot Exp $
+@comment @define-tag gtk-update-icon-cache at-end %D/bin/gtk-update-icon-cache -q -t %u
+@comment @tag gtk-update-icon-cache
 @bin bin/gtk4-update-icon-cache
-@comment @exec /usr/bin/find %D/share/icons -type d -mindepth 1 -maxdepth 1 -exec %D/bin/gtk-update-icon-cache -q -t -f {} \; 2>/dev/null || true
+@comment @exec-update /usr/bin/find %D/share/icons -type d -mindepth 1 -maxdepth 1 -exec %D/bin/gtk-update-icon-cache -q -t -f {} \; 2>/dev/null || true
