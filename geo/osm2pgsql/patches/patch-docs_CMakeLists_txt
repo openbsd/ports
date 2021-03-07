@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_CMakeLists_txt,v 1.1 2021/03/07 17:33:37 landry Exp $
+
+Index: docs/CMakeLists.txt
+--- docs/CMakeLists.txt.orig
++++ docs/CMakeLists.txt
+@@ -27,5 +27,5 @@ else()
+     message(STATUS "  Manual page can not be built")
+ endif()
+ 
+-install(FILES osm2pgsql.1 DESTINATION share/man/man1)
++install(FILES osm2pgsql.1 DESTINATION man/man1)
+ 

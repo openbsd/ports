@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_options_hpp,v 1.1 2021/03/07 17:33:37 landry Exp $
+
+Index: src/options.hpp
+--- src/options.hpp.orig
++++ src/options.hpp
+@@ -72,7 +72,7 @@ class options_t (public)
+     std::shared_ptr<reprojection> projection; ///< SRS of projection
+     bool append = false;                      ///< Append to existing data
+     bool slim = false;                        ///< In slim mode
+-    int cache = 800;                          ///< Memory usable for cache in MB
++    int cache = 100;                          ///< Memory usable for cache in MB
+ 
+     /// Pg Tablespace to store indexes on main tables (no default TABLESPACE)
+     std::string tblsmain_index{};

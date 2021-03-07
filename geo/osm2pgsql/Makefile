@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/07 17:33:37 landry Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 
-GH_TAGNAME =		0.96.0
+GH_TAGNAME =		1.4.1
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		openstreetmap
-REVISION =		0
 
 CATEGORIES =		geo databases
 
-HOMEPAGE =		http://wiki.openstreetmap.org/wiki/Osm2pgsql
+HOMEPAGE =		https://osm2pgsql.org/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -32,7 +31,7 @@ LIB_DEPENDS =		databases/postgresql	\
 
 BUILD_DEPENDS =		devel/libtool \
 			devel/protozero \
-			geo/libosmium
+			geo/libosmium>=2.15.6
 
 # postgresql,-contrib is needed for hstore extension
 TEST_DEPENDS =		databases/py-psycopg2	\
@@ -46,19 +45,16 @@ MODPY_ADJ_FILES =	tests/regression-test.py
 MODLUA_VERSION =	5.2
 MODLUA_SA =		Yes
 
-# https://github.com/openstreetmap/osm2pgsql/issues/922 for proj6
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON \
 			-DEXTERNAL_LIBOSMIUM=ON \
 			-DEXTERNAL_PROTOZERO=ON \
 			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include/utfcpp \
-				-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1 \
 				${CXXFLAGS}"
 
 # bump postgresql,-server limits according to its README otherwise some
 # tests fail
 MODPOSTGRESQL_TEST_DBNAME =	osm2pgsql-test
-MODPOSTGRESQL_TEST_CMD =	cd ${WRKSRC} && ${MODPY_BIN} tests/regression-test.py \
-				-x ${WRKBUILD}/osm2pgsql
+MODPOSTGRESQL_TEST_CMD =	${MODCMAKE_TEST_TARGET}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

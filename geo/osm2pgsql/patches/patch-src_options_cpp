@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_options_cpp,v 1.1 2021/03/07 17:33:37 landry Exp $
+
+Index: src/options.cpp
+--- src/options.cpp.orig
++++ src/options.cpp
+@@ -136,7 +136,7 @@ Common options:\n\
+                     required if you want to update with --append later.\n\
+         --drop      Only with --slim: drop temporary tables after import\n\
+                     (no updates are possible).\n\
+-    -C|--cache=SIZE  Use up to SIZE MB for caching nodes (default: 800).\n\
++    -C|--cache=SIZE  Use up to SIZE MB for caching nodes (default: 100).\n\
+     -F|--flat-nodes=FILE  Specifies the file to use to persistently store node\n\
+                     information in slim mode instead of in PostgreSQL.\n\
+                     This is a single large file (> 50GB). Only recommended\n\

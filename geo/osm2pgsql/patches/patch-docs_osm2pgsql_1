@@ -1,21 +1,23 @@
-$OpenBSD: patch-docs_osm2pgsql_1,v 1.3 2018/10/28 14:49:25 landry Exp $
+$OpenBSD: patch-docs_osm2pgsql_1,v 1.4 2021/03/07 17:33:37 landry Exp $
+
 Index: docs/osm2pgsql.1
 --- docs/osm2pgsql.1.orig
 +++ docs/osm2pgsql.1
-@@ -107,14 +107,14 @@ to be able to update your database, as these tables ar
+@@ -197,7 +197,7 @@ If the RAM is not big enough, use about 75% of memory.
+ Make sure to leave enough RAM for PostgreSQL.
+ It needs at least the amount of \f[C]shared_buffers\f[] given in its
+ configuration.
+-Defaults to 800.
++Defaults to 100.
+ .RS
+ .RE
  .TP
- \fB\-S\fR|\-\-style /path/to/style
- Location of the osm2pgsql style file. This specifies which tags from the data get
--imported into database columns and which tags get dropped. Defaults to /usr/share/osm2pgsql/default.style.
-+imported into database columns and which tags get dropped. Defaults to ${TRUEPREFIX}/share/osm2pgsql/default.style.
- .TP
- \fB\-C\fR|\-\-cache num
- Only for slim mode: Use up to num many MB of RAM for caching nodes. Giving osm2pgsql sufficient cache
- to store all imported nodes typically greatly increases the speed of the import. Each cached node
- requires 8 bytes of cache, plus about 10% \- 30% overhead. For a current OSM full planet import with
- its ~ 3 billion nodes, a good value would be 27000 if you have enough RAM. If you don't have enough
--RAM, it is likely beneficial to give osm2pgsql close to the full available amount of RAM. Defaults to 800.
-+RAM, it is likely beneficial to give osm2pgsql close to the full available amount of RAM. Defaults to 100.
- .TP
- \fB\  \fR\-\-cache\-strategy strategy
- There are a number of different modes in which osm2pgsql can organize its
+@@ -290,7 +290,7 @@ The style file.
+ This specifies how the data is imported into the database, its format
+ depends on the output.
+ (For the \f[B]pgsql\f[] output, the default is
+-\f[C]/usr/share/osm2pgsql/default.style\f[], for other outputs there is
++\f[C]${TRUEPREFIX}/usr/share/osm2pgsql/default.style\f[], for other outputs there is
+ no default.)
+ .RS
+ .RE
