@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.671 2021/03/04 02:45:50 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.672 2021/03/07 14:16:30 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -75,6 +75,9 @@
      SUBDIR += html-xml-utils
      SUBDIR += hunspell
      SUBDIR += hyperestraier
+     SUBDIR += hyperscan,ssse3
+     SUBDIR += hyperscan,sse4_2
+     SUBDIR += hyperscan,avx2
      SUBDIR += hyphen
      SUBDIR += hyphen-i18n
      SUBDIR += icu4c
