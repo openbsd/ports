@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/25 07:56:30 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/07 02:22:09 bentley Exp $
 
 COMMENT =		command-line frontend for sigrok logic analyzer
 
 SIGROK_PROJECT =	sigrok-cli
-SIGROK_VERSION =	0.7.1
-REVISION =		0
+SIGROK_VERSION =	0.7.2
 
-WANTLIB += c glib-2.0 intl sigrok sigrokdecode
+WANTLIB += c glib-2.0 intl pthread sigrok sigrokdecode
 
 LIB_DEPENDS =		comms/sigrok/libsigrok \
 			comms/sigrok/libsigrokdecode \
