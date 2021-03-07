@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/05 05:17:52 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/07 17:28:55 landry Exp $
 include/osmium/
 include/osmium/area/
 include/osmium/area/assembler.hpp
@@ -101,6 +101,7 @@ include/osmium/io/debug_output.hpp
 include/osmium/io/detail/
 include/osmium/io/detail/debug_output_format.hpp
 include/osmium/io/detail/input_format.hpp
+include/osmium/io/detail/lz4.hpp
 include/osmium/io/detail/o5m_input_format.hpp
 include/osmium/io/detail/opl_input_format.hpp
 include/osmium/io/detail/opl_output_format.hpp
@@ -132,6 +133,7 @@ include/osmium/io/opl_input.hpp
 include/osmium/io/opl_output.hpp
 include/osmium/io/output_iterator.hpp
 include/osmium/io/overwrite.hpp
+include/osmium/io/pbf.hpp
 include/osmium/io/pbf_input.hpp
 include/osmium/io/pbf_output.hpp
 include/osmium/io/reader.hpp
@@ -155,6 +157,7 @@ include/osmium/osm/area.hpp
 include/osmium/osm/box.hpp
 include/osmium/osm/changeset.hpp
 include/osmium/osm/crc.hpp
+include/osmium/osm/crc_zlib.hpp
 include/osmium/osm/diff_object.hpp
 include/osmium/osm/entity.hpp
 include/osmium/osm/entity_bits.hpp

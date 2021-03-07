@@ -1,0 +1,23 @@
+$OpenBSD: patch-include_osmium_io_gzip_compression_hpp,v 1.1 2021/03/07 17:28:55 landry Exp $
+
+Index: include/osmium/io/gzip_compression.hpp
+--- include/osmium/io/gzip_compression.hpp.orig
++++ include/osmium/io/gzip_compression.hpp
+@@ -155,7 +155,7 @@ namespace osmium {
+ #ifdef _MSC_VER
+                     osmium::detail::disable_invalid_parameter_handler diph;
+ #endif
+-                    const int result = ::gzclose_w(m_gzfile);
++                    const int result = ::gzclose(m_gzfile);
+                     m_gzfile = nullptr;
+                     if (result != Z_OK) {
+                         throw gzip_error{"gzip error: write close failed", result};
+@@ -238,7 +238,7 @@ namespace osmium {
+ #ifdef _MSC_VER
+                     osmium::detail::disable_invalid_parameter_handler diph;
+ #endif
+-                    const int result = ::gzclose_r(m_gzfile);
++                    const int result = ::gzclose(m_gzfile);
+                     m_gzfile = nullptr;
+                     if (result != Z_OK) {
+                         throw gzip_error{"gzip error: read close failed", result};
