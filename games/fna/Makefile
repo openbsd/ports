@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/24 22:29:43 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/07 17:04:31 thfr Exp $
 
-V =		21.01
+V =		21.03.05
 COMMENT =	XNA4 reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna-${V}
-REVISION =	0
 CATEGORIES =	games
 HOMEPAGE =	https://fna-xna.github.io/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
