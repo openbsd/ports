@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/23 06:13:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/07 14:52:17 sthen Exp $
+
+BROKEN-i386 =	java.lang.OutOfMemoryError: Java heap space in kotlinc
 
 COMMENT =	lightweight game library for java
 
