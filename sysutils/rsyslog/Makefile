@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2020/11/22 17:05:59 remi Exp $
+# $OpenBSD: Makefile,v 1.51 2021/03/07 09:28:36 remi Exp $
 
 COMMENT-main =		syslog daemon supporting databases, TCP, SSL, RELP
 COMMENT-mysql =		MySQL plugin for rsyslog
@@ -8,7 +8,7 @@ COMMENT-elasticsearch =	Elasticsearch plugin for rsyslog
 
 MULTI_PACKAGES =	-main -mysql -normalize -pgsql -elasticsearch
 
-V =			8.2008.0
+V =			8.2102.0
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
@@ -16,7 +16,6 @@ PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
-REVISION-main =		0
 
 HOMEPAGE =		https://www.rsyslog.com/
 
@@ -27,11 +26,11 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-WANTLIB-main += 	c crypto curl estr fastjson ffi gcrypt gmp gnutls
+WANTLIB-main += 	c crypto curl estr fastjson gcrypt gmp gnutls
 WANTLIB-main +=		gpg-error hogweed iconv idn2 intl nettle nghttp2
 WANTLIB-main +=		p11-kit pthread relp ssl tasn1 unistring uuid z
 
-WANTLIB-mysql +=	crypto iconv m mariadb pthread ssl z
+WANTLIB-mysql +=	crypto m mariadb pthread ssl z
 
 WANTLIB-normalize +=	estr fastjson lognorm pthread
 
