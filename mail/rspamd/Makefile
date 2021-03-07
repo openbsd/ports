@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.90 2021/02/23 19:39:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2021/03/07 14:17:02 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	2.7
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -19,10 +20,16 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += blas c crypto glib-2.0 icudata icui18n icuuc intl m
 WANTLIB += pcre sodium sqlite3 ssl util z
 
-FLAVORS=	no_luajit
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+FLAVORS=	no_luajit hyperscan
+.if ${MACHINE_ARCH} == "amd64"
+# amd64: any flavour
 FLAVOR?=
+.elif ${MACHINE_ARCH} == "i386"
+# i386: no_luajit or unflavoured
+FLAVOR?=
+FLAVOR:=	${FLAVOR:Nhyperscan}
 .else
+# others: no_luajit only
 FLAVOR=		no_luajit
 .endif
 
@@ -72,6 +79,12 @@ WANTLIB+=	${MODLUA_WANTLIB}
 .else
 LIB_DEPENDS+=	lang/luajit
 WANTLIB+=	luajit-5.1
+.endif
+
+.if ${FLAVOR:Mhyperscan}
+CONFIGURE_ARGS+= -DENABLE_HYPERSCAN=ON
+LIB_DEPENDS+=	textproc/hyperscan
+WANTLIB+=	hs
 .endif
 
 # Make sure you have no rspamd or redis instances running and note that the

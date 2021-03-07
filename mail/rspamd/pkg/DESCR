@@ -7,3 +7,10 @@ According to this spam score and the user's settings rspamd recommends an action
 for the MTA to apply to the message- for example to pass, reject or add a
 header. Rspamd is designed to process hundreds of messages per second
 simultaneously and has a number of features available.
+
+Some flavours are available, depending on the machine architecture:
+
+	no_luajit	Disable luajit, available on all architectures
+	(unflavoured)	Enable luajit, available on amd64/i386
+	hyperscan	Use Intel's hyperscan library, available on amd64,
+			requires certain CPU features.
