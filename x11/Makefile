@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.700 2021/03/06 06:38:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.701 2021/03/07 05:06:34 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -6,6 +6,7 @@
      SUBDIR += XawMu
      SUBDIR += Xdialog
      SUBDIR += abclock
+     SUBDIR += adwaita-qt
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += agar
@@ -159,6 +160,7 @@
      #SUBDIR += libappindicator
      SUBDIR += libqaccessibilityclient
      SUBDIR += libxdg-basedir
+     SUBDIR += lightly
      SUBDIR += lsw
      SUBDIR += lumina
      SUBDIR += lupe
