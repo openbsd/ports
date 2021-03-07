@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/21 20:16:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/07 20:22:59 sthen Exp $
 
 COMMENT =		readthedocs.org theme for Sphinx
 
@@ -32,6 +32,6 @@ NO_TEST =		Yes
 post-patch:
 	mv ${WRKDIR}/debian ${WRKSRC}/
 	cd ${WRKSRC}; for i in `cat debian/patches/series`; do \
-	    patch -Ep1 < debian/patches/$$i; done
+	    patch -Ep1 -z.orig.deb < debian/patches/$$i; done
 
 .include <bsd.port.mk>
