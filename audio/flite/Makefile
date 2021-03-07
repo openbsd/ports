@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/03/07 08:03:48 bentley Exp $
 
 BROKEN-m88k=	out of memory compiling cmu_us_kal_diphone.c
 BROKEN-mips64=	GCC hangs compiling cmu_us_kal_diphone.c
@@ -9,7 +9,7 @@ COMMENT=	text to speech utility
 VERSION=	1.2
 DISTNAME=	flite-${VERSION}-release
 PKGNAME=	flite-${VERSION}
-REVISION=	6
+REVISION=	7
 SHARED_LIBS=	flite			1.2 \
 		flite_cmu_time_awb	1.2 \
 		flite_cmu_us_kal	1.2 \
