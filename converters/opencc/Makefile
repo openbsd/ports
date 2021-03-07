@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/07 02:25:06 daniel Exp $
 
 COMMENT =	convert between traditional and simplified Chinese
 
 V =		1.1.1
 DISTNAME =	opencc-$V
+REVISION =	0
 
 GH_ACCOUNT =	BYVoid
 GH_PROJECT =	OpenCC
@@ -25,7 +26,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 MODPY_RUNDEP =		No
 
 WRKDIST =		${WRKDIR}/OpenCC-ver.$V
