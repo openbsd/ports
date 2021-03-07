@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1231 2021/03/05 12:56:27 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1232 2021/03/07 19:30:40 gnezdo Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2344,15 +2344,6 @@ sub is_base_system
 
 	my $pkgname = $handle->pkgname;
 	my $stem = OpenBSD::PackageName::splitstem($pkgname);
-
-	if ($stem eq 'ghc') {
-		require OpenBSD::PkgSpec;
-		my $spec = OpenBSD::PkgSpec->new('ghc-<8.2.2p5');
-		if ($spec->match_ref([$pkgname])) {
-			require OpenBSD::Quirks::ghc;
-			OpenBSD::Quirks::ghc::unfuck($handle, $state);
-		}
-	}
 
 	my $test = $base_exceptions->{$stem};
 	if (defined $test) {
