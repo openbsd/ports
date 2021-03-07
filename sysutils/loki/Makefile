@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/29 04:58:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/07 17:54:50 landry Exp $
 
 COMMENT =	like Prometheus, but for logs
 
 GH_ACCOUNT =	grafana
 GH_PROJECT =	loki
-GH_TAGNAME =	v1.4.1
+GH_TAGNAME =	v2.1.0
 
 CATEGORIES =	sysutils
 
