@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.34 2020/01/26 13:07:07 sthen Exp $
+# $OpenBSD: FS2.pm,v 1.35 2021/03/07 19:30:16 gnezdo Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -67,7 +67,6 @@ sub classes
 		OpenBSD::FS::File::Glib2Schema
 		OpenBSD::FS::File::PkgConfig
 		OpenBSD::FS::File::MimeInfo
-		OpenBSD::FS::File::GhcConf
 		OpenBSD::FS::File::Icon
 		OpenBSD::FS::File::IconTheme
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
@@ -232,19 +231,6 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::MimeInfo';
-}
-
-package OpenBSD::FS::File::GhcConf;
-our @ISA = qw(OpenBSD::FS::File);
-sub recognize
-{
-	my ($class, $filename, $fs) = @_;
-	return $filename =~ m,lib/ghc/package\.conf\.d/.*\.conf$,;
-}
-
-sub element_class
-{
-	'OpenBSD::PackingElement::GhcConf';
 }
 
 package OpenBSD::FS::File::IconThemeDirectory;
