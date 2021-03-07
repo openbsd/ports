@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/02/21 17:42:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/03/07 14:22:33 sthen Exp $
 @conflict py-sphinx-<1.5.6p0
 @pkgpath textproc/py-sphinx
 bin/sphinx-apidoc
@@ -717,7 +717,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/doctools.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/documentation_options.js_t
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/file.png
 @comment lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/jquery-1.11.1.js
-lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/jquery-${MODPY_EGG_VERSION}.js
+lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/jquery-3.5.1.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/jquery.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/language_data.js_t
 lib/python${MODPY_VERSION}/site-packages/sphinx/themes/basic/static/minus.png
