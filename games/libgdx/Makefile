@@ -3,9 +3,10 @@
 COMMENT =		java game development framework
 VERSION =		1.9.11
 PKGNAME =		libgdx-${VERSION}
+REVISION =		0
 
 .if ${MACHINE_ARCH} == "i386"
-M_ARCH =		""
+M_ARCH =
 .elif ${MACHINE_ARCH} == "amd64"
 M_ARCH =		64
 .endif

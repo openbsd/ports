@@ -1,4 +1,4 @@
-$OpenBSD: patch-gdx_jni_build-linux64_xml,v 1.1.1.1 2021/02/24 22:21:25 thfr Exp $
+$OpenBSD: patch-gdx_jni_build-linux64_xml,v 1.2 2021/03/07 17:02:15 thfr Exp $
 
 abuse build-linux64.xml to build for OpenBSD
 
@@ -31,7 +31,7 @@ Index: gdx/jni/build-linux64.xml
 -	<property name="gcc-opts" value="-c -Wall -O2 -mfpmath=sse -msse -fmessage-length=0 -m64 -fPIC"/>
 -	<fileset id="gcc-files" dir="./">
 +	<!-- define cc compiler, options and files to compile -->
-+	<property name="cc" value="${compilerPrefix}gcc${compilerSuffix}"/>	
++	<property name="cc" value="${compilerPrefix}cc${compilerSuffix}"/>	
 +	<property name="cc-opts" value="-c -Wall ${CFLAGS} -fPIC"/>
 +	<fileset id="cc-files" dir="./">
  		<exclude name="target/"/>		
