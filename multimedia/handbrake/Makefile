@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/03/07 02:30:46 daniel Exp $
 
 V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -32,7 +33,6 @@ MASTER_SITES =	https://github.com/HandBrake/HandBrake/releases/download/${V}/
 COMPILER =	base-clang ports-gcc
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	devel/autoconf/${AUTOCONF_VERSION} \
