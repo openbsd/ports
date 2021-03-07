@@ -1,12 +1,13 @@
-$OpenBSD: patch-manlifter,v 1.2 2015/06/02 17:02:09 ajacoutot Exp $
---- manlifter.orig	Thu Apr  2 14:46:23 2015
-+++ manlifter	Tue Jun  2 19:01:14 2015
-@@ -70,7 +70,7 @@ def fetch_page(file, localcopy, patch):
+$OpenBSD: patch-manlifter,v 1.3 2021/03/07 21:09:06 daniel Exp $
+Index: manlifter
+--- manlifter.orig
++++ manlifter
+@@ -88,7 +88,7 @@ def fetch_page(file, localcopy, patch):
+         return (1, output + "manlifter: copy failed, status %d", cstat)
      if os.path.exists(patch):
-         here = os.getcwd()
-         os.chdir(outdir)
--        patch = commands.getoutput("patch --version-control=never <%s" % (patch,))
-+        patch = commands.getoutput("patch <%s" % (patch,))
          stem = os.path.basename(localcopy)
-         os.system("rm -f %s.orig %s.rej" % (stem, stem))
-         os.chdir(here)
+-        patch = getoutput("patch -d%s --version-control=never <%s" % (outdir, patch,))
++        patch = getoutput("patch -d%s <%s" % (outdir, patch,))
+         os.system("rm -f %s/%s.orig %s/%s.rej" % (outdir, stem, outdir, stem))
+         if patch:
+             output += patch + "\n"

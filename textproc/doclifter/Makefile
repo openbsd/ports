@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/07 21:09:06 daniel Exp $
 
 COMMENT =		troff to DocBook converter
 
-DISTNAME =		doclifter-2.17
+DISTNAME =		doclifter-2.19
 
 CATEGORIES =		textproc
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		http://www.catb.org/~esr/doclifter/
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 MODPY_BUILDDEP =	No
 MODPY_ADJ_FILES =	doclifter manlifter
 
