@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/07 01:28:21 daniel Exp $
 
 PKG_ARCH =		*
 
@@ -12,7 +12,7 @@ GH_PROJECT =		colobot-data
 
 MODULES =		devel/cmake \
 			lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 MODPY_SETUPUTILS =	No
 MODPY_RUNDEP =		No
 

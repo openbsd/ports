@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/09/25 08:53:04 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/03/07 01:28:21 daniel Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -132,14 +132,13 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+@@ -135,14 +135,13 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
  
      message(STATUS "Detected GCC version 4.7+")
  
@@ -18,7 +18,7 @@ Index: CMakeLists.txt
      set(DEBUG_CXX_FLAGS "-g -O0")
      set(TEST_CXX_FLAGS "-pthread")
      add_definitions(-DNOEXCEPT=noexcept -DHAVE_DEMANGLE)
-@@ -150,9 +149,8 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+@@ -153,9 +152,8 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
  
      message(STATUS "Detected Clang version 3.1+")
  

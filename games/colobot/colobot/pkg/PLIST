@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/25 08:53:04 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/07 01:28:21 daniel Exp $
 @bin bin/colobot
 lib/colobot/
-lib/colobot/libCBot.so
+@so lib/colobot/libCBot.so
 share/colobot/shaders/
 share/colobot/shaders/gl21/
 share/colobot/shaders/gl21/fs_interface.glsl
@@ -21,4 +21,5 @@ share/locale/cs/LC_MESSAGES/colobot.mo
 share/locale/de/LC_MESSAGES/colobot.mo
 share/locale/fr/LC_MESSAGES/colobot.mo
 share/locale/pl/LC_MESSAGES/colobot.mo
+share/locale/pt/LC_MESSAGES/colobot.mo
 share/locale/ru/LC_MESSAGES/colobot.mo

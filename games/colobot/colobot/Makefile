@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/07 01:28:21 daniel Exp $
 
 COMMENT =		programming-focused real-time strategy game
 
 DISTNAME =		colobot-$V
-REVISION =		1
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLEW GLU SDL2 SDL2_image SDL2_ttf boost_filesystem-mt

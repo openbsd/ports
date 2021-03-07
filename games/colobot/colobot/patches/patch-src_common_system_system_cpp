@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_common_system_system_cpp,v 1.1.1.1 2018/09/25 08:53:04 bentley Exp $
+$OpenBSD: patch-src_common_system_system_cpp,v 1.2 2021/03/07 01:28:21 daniel Exp $
 
 Pull XDG directory code from system_linux.cpp.
 
 Index: src/common/system/system.cpp
 --- src/common/system/system.cpp.orig
 +++ src/common/system/system.cpp
-@@ -190,5 +190,26 @@ std::string CSystemUtils::GetLangPath()
+@@ -188,5 +188,26 @@ std::string CSystemUtils::GetLangPath()
  
  std::string CSystemUtils::GetSaveDir()
  {
--    return std::string("saves");
+-    return "./saves";
 +    std::string savegameDir;
 +
 +    // Determine savegame dir according to XDG Base Directory Specification
