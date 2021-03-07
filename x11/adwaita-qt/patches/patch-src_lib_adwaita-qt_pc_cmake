@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_lib_adwaita-qt_pc_cmake,v 1.1 2021/03/07 19:56:32 rsadowski Exp $
+
+Index: src/lib/adwaita-qt.pc.cmake
+--- src/lib/adwaita-qt.pc.cmake.orig
++++ src/lib/adwaita-qt.pc.cmake
+@@ -1,12 +1,10 @@
+-prefix=@CMAKE_INSTALL_PREFIX@
++jrefix=@CMAKE_INSTALL_PREFIX@
+ libdir=@CMAKE_INSTALL_FULL_LIBDIR@
+ includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@
+ 
+ Name: adwaita-qt
+ Description: Qt Adwaita Style
+ Version: @ADWAITAQT_VERSION@
+-Requires: @PC_REQUIRES@
+-@PC_REQUIRES_PRIVATE@
+ 
+ Libs: -L${libdir} -ladwaitaqt
+ Cflags: -I${includedir}

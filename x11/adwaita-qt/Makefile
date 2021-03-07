@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/07 05:02:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/07 19:56:32 rsadowski Exp $
 
 COMMENT =	GNOME Shell style for Qt applications
 
 GH_ACCOUNT =	FedoraQt
 GH_PROJECT =	adwaita-qt
 GH_TAGNAME =	1.2.0
+REVISION =	0
 
 CATEGORIES =	x11
 
