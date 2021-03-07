@@ -1,10 +1,10 @@
-$OpenBSD: patch-client_gtk2_ibusimcontext_c,v 1.3 2020/04/20 10:15:16 ajacoutot Exp $
+$OpenBSD: patch-client_gtk2_ibusimcontext_c,v 1.4 2021/03/07 17:28:12 ajacoutot Exp $
 
 Index: client/gtk2/ibusimcontext.c
 --- client/gtk2/ibusimcontext.c.orig
 +++ client/gtk2/ibusimcontext.c
-@@ -688,10 +688,7 @@ ibus_im_context_class_init (IBusIMContextClass *class)
- 
+@@ -815,10 +815,7 @@ ibus_im_context_class_init (IBusIMContextClass *class)
+ #if !GTK_CHECK_VERSION (3, 98, 4)
      /* always install snooper */
      if (_key_snooper_id == 0) {
 -#pragma GCC diagnostic push
@@ -12,10 +12,10 @@ Index: client/gtk2/ibusimcontext.c
          _key_snooper_id = gtk_key_snooper_install (_key_snooper_cb, NULL);
 -#pragma GCC diagnostic pop
      }
+ #endif
  
-     _daemon_name_watch_id = g_bus_watch_name (G_BUS_TYPE_SESSION,
-@@ -708,10 +705,7 @@ ibus_im_context_class_fini (IBusIMContextClass *class)
- {
+@@ -837,10 +834,7 @@ ibus_im_context_class_fini (IBusIMContextClass *class)
+ #if !GTK_CHECK_VERSION (3, 98, 4)
      if (_key_snooper_id != 0) {
          IDEBUG ("snooper is terminated.");
 -#pragma GCC diagnostic push
@@ -24,4 +24,4 @@ Index: client/gtk2/ibusimcontext.c
 -#pragma GCC diagnostic pop
          _key_snooper_id = 0;
      }
- 
+ #endif

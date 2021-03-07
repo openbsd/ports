@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.68 2021/02/23 19:39:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2021/03/07 17:28:12 ajacoutot Exp $
+
+# when gtk+4 support is added, split into multi packages (gtk+{2,3,4})
 
 COMMENT =		intelligent input bus framework
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.23
+GH_TAGNAME =		1.5.24
 
-SHARED_LIBS +=  ibus-1.0             4.2      # 5.523
+SHARED_LIBS +=  ibus-1.0             4.2      # 5.524
 
 CATEGORIES =		inputmethods chinese japanese korean
 
