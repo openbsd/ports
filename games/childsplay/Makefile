@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/03/07 15:26:03 remi Exp $
 
 COMMENT=	collection of educational activities for young children
 
 DISTNAME=	childsplay-2.6.5
 EXTRACT_SUFX=	.tgz
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	games education
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${_MODPY_BUILD_DEPENDS}
 
 RUN_DEPENDS=	databases/py-sqlalchemy \
 		devel/pygame \
+		math/py-numpy \
 		x11/py-gtk2
 
 NO_TEST=	Yes
