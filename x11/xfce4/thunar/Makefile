@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.89 2021/02/09 14:51:51 landry Exp $
+# $OpenBSD: Makefile,v 1.90 2021/03/07 17:08:37 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
 XFCE_PROJECT=	thunar
-XFCE_VERSION=	4.16.3
+XFCE_VERSION=	4.16.4
 
 SHARED_LIBS=	thunarx-3	0.0
 
