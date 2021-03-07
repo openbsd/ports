@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/05/15 12:03:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/03/07 13:33:21 zhuk Exp $
 @bin bin/task
 @man man/man1/task.1
 @man man/man5/task-color.5
@@ -20,7 +20,6 @@ share/doc/taskwarrior/rc/dark-green-256.theme
 share/doc/taskwarrior/rc/dark-red-256.theme
 share/doc/taskwarrior/rc/dark-violets-256.theme
 share/doc/taskwarrior/rc/dark-yellow-green.theme
-share/doc/taskwarrior/rc/holidays.be-BY.rc
 share/doc/taskwarrior/rc/holidays.cs-CZ.rc
 share/doc/taskwarrior/rc/holidays.da-DK.rc
 share/doc/taskwarrior/rc/holidays.de-AT.rc
@@ -28,38 +27,24 @@ share/doc/taskwarrior/rc/holidays.de-BE.rc
 share/doc/taskwarrior/rc/holidays.de-CH.rc
 share/doc/taskwarrior/rc/holidays.de-DE.rc
 share/doc/taskwarrior/rc/holidays.el-GR.rc
-share/doc/taskwarrior/rc/holidays.en-AU.rc
 share/doc/taskwarrior/rc/holidays.en-CA.rc
 share/doc/taskwarrior/rc/holidays.en-GB.rc
-share/doc/taskwarrior/rc/holidays.en-GL.rc
-share/doc/taskwarrior/rc/holidays.en-HK.rc
-share/doc/taskwarrior/rc/holidays.en-IN.rc
 share/doc/taskwarrior/rc/holidays.en-NZ.rc
 share/doc/taskwarrior/rc/holidays.en-US.rc
-share/doc/taskwarrior/rc/holidays.en-ZA.rc
 share/doc/taskwarrior/rc/holidays.es-CO.rc
-share/doc/taskwarrior/rc/holidays.es-EC.rc
 share/doc/taskwarrior/rc/holidays.es-ES.rc
-share/doc/taskwarrior/rc/holidays.es-MX.rc
 share/doc/taskwarrior/rc/holidays.es-US.rc
-share/doc/taskwarrior/rc/holidays.et-EE.rc
 share/doc/taskwarrior/rc/holidays.fi-FI.rc
 share/doc/taskwarrior/rc/holidays.fr-BE.rc
 share/doc/taskwarrior/rc/holidays.fr-FR.rc
-share/doc/taskwarrior/rc/holidays.ga-IE.rc
 share/doc/taskwarrior/rc/holidays.hr-HR.rc
 share/doc/taskwarrior/rc/holidays.is-IS.rc
 share/doc/taskwarrior/rc/holidays.it-IT.rc
-share/doc/taskwarrior/rc/holidays.jp-JP.rc
-share/doc/taskwarrior/rc/holidays.lt-LT.rc
-share/doc/taskwarrior/rc/holidays.lv-LV.rc
 share/doc/taskwarrior/rc/holidays.nb-NO.rc
-share/doc/taskwarrior/rc/holidays.nb-SJ.rc
 share/doc/taskwarrior/rc/holidays.nl-BE.rc
 share/doc/taskwarrior/rc/holidays.nl-NL.rc
 share/doc/taskwarrior/rc/holidays.pl-PL.rc
 share/doc/taskwarrior/rc/holidays.por-PRT.rc
-share/doc/taskwarrior/rc/holidays.pt-BR.rc
 share/doc/taskwarrior/rc/holidays.pt-PT.rc
 share/doc/taskwarrior/rc/holidays.ru-RU.rc
 share/doc/taskwarrior/rc/holidays.sv-SE.rc

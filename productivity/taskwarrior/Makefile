@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2021/02/23 19:39:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/03/07 13:33:21 zhuk Exp $
 
 COMMENT =	command line todo list manager
 
-VERSION =	2.5.1
+VERSION =	2.5.3
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
 CATEGORIES =	productivity
-REVISION =	4
 
 HOMEPAGE =	https://www.taskwarrior.org/
 
@@ -43,11 +42,11 @@ CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include" \
 NO_TEST =		Yes
 
 pre-configure:
-	sed -i 's,share/doc/taskwarrior/,share/doc/taskwarrior/,g' \
+	sed -i 's,/usr/local/share/doc/task/,${PREFIX}/share/doc/taskwarrior/,g' \
+		${WRKSRC}/cmake.h \
 		${WRKSRC}/doc/man/task-color.5.in \
-		${WRKSRC}/doc/man/taskrc.5.in \
-		${WRKSRC}/src/Config.cpp
-	sed -i 's,share/doc/task-VERSION/,share/doc/taskwarrior/,g' \
+		${WRKSRC}/doc/man/taskrc.5.in
+	sed -i 's,/usr/local/share/doc/task-VERSION/,${PREFIX}/share/doc/taskwarrior/,g' \
 		${WRKSRC}/scripts/vim/README
 
 post-install:
