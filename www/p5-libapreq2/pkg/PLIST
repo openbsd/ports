@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/03/07 14:28:43 sthen Exp $
 bin/apreq2-config
 include/apache2/apreq2/
 include/apache2/apreq2/apreq_module_apache2.h
@@ -13,8 +13,8 @@ include/apreq2/apreq_util.h
 include/apreq2/apreq_version.h
 lib/apache2/mod_apreq2.a
 lib/apache2/mod_apreq2.la
-lib/apache2/mod_apreq2.so
-lib/libapreq2.a
+@so lib/apache2/mod_apreq2.so
+@static-lib lib/libapreq2.a
 lib/libapreq2.la
 @lib lib/libapreq2.so.${LIBapreq2_VERSION}
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/APR/Request/
@@ -30,6 +30,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/APR/Request/Error.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/APR/Request/Error.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/APR/Request/Hook.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/APR/Request/Hook.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/APR/Request/Magic.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/APR/Request/Param.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/APR/Request/Param.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/APR/Request/Parser.pm
@@ -40,33 +41,34 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Apache2/Upload.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Apache2/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Apache2/Apache2.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Apache2/Apache2.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Apache2/Apache2.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/CGI/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/CGI/CGI.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/CGI/CGI.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/CGI/CGI.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Cookie/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Cookie/Cookie.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Cookie/Cookie.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Cookie/Cookie.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Error/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Error/Error.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Error/Error.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Error/Error.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Hook/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Hook/Hook.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Hook/Hook.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Hook/Hook.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Param/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Param/Param.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Param/Param.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Param/Param.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Parser/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Parser/Parser.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Parser/Parser.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Parser/Parser.so
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Request.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Request.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/APR/Request/Request.so
 @man man/man3p/APR::Request.3p
 @man man/man3p/APR::Request::Apache2.3p
 @man man/man3p/APR::Request::CGI.3p
 @man man/man3p/APR::Request::Cookie.3p
 @man man/man3p/APR::Request::Error.3p
 @man man/man3p/APR::Request::Hook.3p
+@man man/man3p/APR::Request::Magic.3p
 @man man/man3p/APR::Request::Param.3p
 @man man/man3p/APR::Request::Parser.3p
 @man man/man3p/Apache2::Cookie.3p
