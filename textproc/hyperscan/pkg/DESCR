@@ -1,0 +1,15 @@
+Hyperscan is a high-performance multiple regex matching library. It
+follows the regular expression syntax of the commonly-used libpcre
+library, but is a standalone library with its own C API.
+
+Hyperscan uses hybrid automata techniques to allow simultaneous matching
+of large numbers (up to tens of thousands) of regular expressions and
+for the matching of regular expressions across streams of data.
+
+Hyperscan is built for specific CPU microarchitectures - you must
+choose one:
+
+	ssse3	(uses -march=core2, for most amd64 and clone CPUs)
+	sse4_2	(uses -march=corei7, requires SSE4_2 and POPCNT)
+	avx2	(uses -march=core-avx2, requires AVX2)
+	native	(uses -march=native, optimise for local machine)

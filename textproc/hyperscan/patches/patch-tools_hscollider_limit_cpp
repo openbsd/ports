@@ -1,0 +1,19 @@
+$OpenBSD: patch-tools_hscollider_limit_cpp,v 1.1.1.1 2021/03/07 14:15:47 sthen Exp $
+
+Index: tools/hscollider/limit.cpp
+--- tools/hscollider/limit.cpp.orig
++++ tools/hscollider/limit.cpp
+@@ -52,11 +52,13 @@ void setMemoryLimit(size_t mbytes) {
+                      strerror(errno) << std::endl;
+     }
+ 
++#ifdef RLIMIT_AS
+     rv = setrlimit(RLIMIT_AS, &r);
+     if (rv != 0) {
+         std::cerr << "setrlimit(RLIMIT_AS, ...) failed: " <<
+                      strerror(errno) << std::endl;
+     }
++#endif
+ }
+ #else // no setrlimit
+ void setMemoryLimit(size_t) {}

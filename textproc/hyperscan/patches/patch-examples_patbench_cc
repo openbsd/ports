@@ -1,0 +1,23 @@
+$OpenBSD: patch-examples_patbench_cc,v 1.1.1.1 2021/03/07 14:15:47 sthen Exp $
+
+Index: examples/patbench.cc
+--- examples/patbench.cc.orig
++++ examples/patbench.cc
+@@ -127,14 +127,16 @@
+ 
+ // We use the BSD primitives throughout as they exist on both BSD and Linux.
+ #define __FAVOR_BSD
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <netinet/tcp.h>
+ #include <netinet/udp.h>
+ #include <netinet/ip_icmp.h>
+-#include <net/ethernet.h>
+ #include <arpa/inet.h>
++#include <net/if_arp.h>
++#include <netinet/if_ether.h>
+ 
+ #include <pcap.h>
+ 

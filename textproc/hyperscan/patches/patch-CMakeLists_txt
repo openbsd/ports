@@ -1,0 +1,24 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/03/07 14:15:47 sthen Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -230,9 +230,6 @@ else()
+             set(OPT_C_FLAG "-Os")
+             set(OPT_CXX_FLAG "-Os")
+         endif ()
+-    else()
+-        set(OPT_C_FLAG "-O0")
+-        set(OPT_CXX_FLAG "-O0")
+     endif(OPTIMISE)
+ 
+     # set compiler flags - more are tested and added later
+@@ -464,7 +461,7 @@ else()
+ endif()
+ 
+ add_subdirectory(util)
+-add_subdirectory(doc/dev-reference)
++#add_subdirectory(doc/dev-reference)
+ 
+ if (NOT WIN32)
+ # PCRE check, we have a fixed requirement for PCRE to use Chimera
