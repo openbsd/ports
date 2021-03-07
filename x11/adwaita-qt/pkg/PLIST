@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/07 05:02:39 rsadowski Exp $
+include/AdwaitaQt/
+include/AdwaitaQt/adwaita.h
+include/AdwaitaQt/adwaitacolors.h
+include/AdwaitaQt/adwaitaqt_export.h
+lib/cmake/AdwaitaQt/
+lib/cmake/AdwaitaQt/AdwaitaQtConfig.cmake
+lib/cmake/AdwaitaQt/AdwaitaQtConfigVersion.cmake
+lib/cmake/AdwaitaQt/AdwaitaQtTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/AdwaitaQt/AdwaitaQtTargets.cmake
+@lib lib/libadwaitaqt.so.${LIBadwaitaqt_VERSION}
+@lib lib/libadwaitaqtpriv.so.${LIBadwaitaqtpriv_VERSION}
+lib/pkgconfig/adwaita-qt.pc
+lib/qt5/plugins/styles/
+@so lib/qt5/plugins/styles/adwaita.so

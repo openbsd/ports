@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_style_CMakeLists_txt,v 1.1.1.1 2021/03/07 05:02:39 rsadowski Exp $
+
+Index: src/style/CMakeLists.txt
+--- src/style/CMakeLists.txt.orig
++++ src/style/CMakeLists.txt
+@@ -35,7 +35,6 @@ endif()
+ 
+ if (NOT APPLE AND NOT WIN32)
+     set_target_properties(${LIBRARY_NAME} PROPERTIES
+-        LINK_FLAGS "-Wl,--no-undefined"
+         LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+         OUTPUT_NAME "adwaita"
+         PREFIX "")
