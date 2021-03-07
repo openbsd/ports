@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2021/02/23 19:39:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.181 2021/03/07 19:29:41 gnezdo Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -10,8 +10,8 @@ COMMENT =		compiler for the functional language Haskell
 
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
-
-DISTNAME =		ghc-${MODGHC_VER}
+GHC_VERSION =		8.6.4
+DISTNAME =		ghc-${GHC_VERSION}
 REVISION =		9
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -19,9 +19,8 @@ HOMEPAGE =		https://www.haskell.org/ghc/
 # Version of the precompiled binaries
 BIN_VER =		8.6.4.20200921
 
-# Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
-# in ghc.port.mk. lang/python needed for regression tests.
-MODULES =		lang/ghc lang/python
+# lang/python needed for regression tests.
+MODULES =		lang/python
 
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
@@ -47,7 +46,7 @@ RUN_DEPENDS =
 #      loadObj_() instead.
 USE_WXNEEDED =		special
 
-MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
+MASTER_SITES =		${HOMEPAGE}dist/${GHC_VERSION}/ \
 			${HOMEPAGE}dist/stable/dist/
 MASTER_SITES0 =		https://openbsd.dead-parrot.de/distfiles/
 
@@ -55,8 +54,8 @@ DIST_SUBDIR =		ghc
 
 BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
 
-DISTFILES =		ghc-${MODGHC_VER}-src.tar.xz \
-			ghc-${MODGHC_VER}-testsuite.tar.xz \
+DISTFILES =		ghc-${GHC_VERSION}-src.tar.xz \
+			ghc-${GHC_VERSION}-testsuite.tar.xz \
 			${BINDISTFILE}
 
 .for m in amd64 i386
@@ -229,11 +228,11 @@ _bootstrap_prepare:
 	echo ${BOOTSTRAP_DATE} > ${WRKSRC}/VERSION_DATE
 
 _bootstrap_finish:
-	mkdir -p ${WRKBUILD}/ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
+	mkdir -p ${WRKBUILD}/ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
 	ldd ${WRKBUILD}/ghc/stage2/build/tmp/ghc-stage2 | \
 	awk '$$NF ~ /^\/usr\/(local\/)?lib\// { print $$NF }' | \
-	xargs -J % cp -p % ${WRKBUILD}/ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
+	xargs -J % cp -p % ${WRKBUILD}/ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
 	cd ${WRKBUILD} && \
-	pax -wzf ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s){.tar.gz,}
+	pax -wzf ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s){.tar.gz,}
 
 .include <bsd.port.mk>
