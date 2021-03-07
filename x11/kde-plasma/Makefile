@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/06 06:36:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/07 13:38:21 zhuk Exp $
 
      SUBDIR =
      #SUBDIR += bluedevil
@@ -28,7 +28,7 @@
      #SUBDIR += libkscreen
      #SUBDIR += libksysguard
      #SUBDIR += milou
-     #SUBDIR += oxygen
+     SUBDIR += oxygen
      #SUBDIR += plasma-browser-integration
      #SUBDIR += plasma-desktop
      #SUBDIR += plasma-disks
