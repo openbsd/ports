@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2021/03/07 15:26:03 remi Exp $
+# $OpenBSD: Makefile,v 1.33 2021/03/08 21:07:17 remi Exp $
 
 COMMENT=	collection of educational activities for young children
 
-DISTNAME=	childsplay-2.6.5
+DISTNAME=	childsplay-3.3
 EXTRACT_SUFX=	.tgz
-REVISION =	4
 
 CATEGORIES=	games education
 
@@ -23,7 +22,6 @@ BUILD_DEPENDS=	${_MODPY_BUILD_DEPENDS}
 
 RUN_DEPENDS=	databases/py-sqlalchemy \
 		devel/pygame \
-		math/py-numpy \
 		x11/py-gtk2
 
 NO_TEST=	Yes
@@ -32,7 +30,6 @@ NO_BUILD=	Yes
 MODPY_ADJ_FILES=childsplay.py
 
 pre-configure:
-	perl -pi -e 's,/usr/local,${PREFIX},' ${WRKSRC}/pangofont.py
 	echo '#!/bin/sh' >${WRKSRC}/childsplay.sh
 	echo >>${WRKSRC}/childsplay.sh
 	echo 'cd ${MODPY_SITEPKG}/childsplay' >>${WRKSRC}/childsplay.sh
@@ -46,7 +43,7 @@ do-install:
 	cp -Rp ${WRKSRC}/locale ${PREFIX}/share
 	${INSTALL_DATA} ${WRKSRC}/sp_content.db \
 		${WRKINST}/${MODPY_SITEPKG}/childsplay
-.for i in SPWidgets alphabetsounds lib
+.for i in SPWidgets alphabet-sounds lib
 	cp -Rp ${WRKSRC}/$i ${WRKINST}/${MODPY_SITEPKG}/childsplay
 .endfor
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
