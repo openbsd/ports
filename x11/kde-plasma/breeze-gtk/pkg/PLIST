@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/06 06:36:22 rsadowski Exp $
-share/themes/
+@comment $OpenBSD: PLIST,v 1.2 2021/03/08 19:16:02 rsadowski Exp $
 share/themes/Breeze/
 share/themes/Breeze-Dark/
 share/themes/Breeze-Dark/assets/
