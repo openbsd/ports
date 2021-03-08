@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2021/03/08 13:59:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/03/08 19:09:25 bket Exp $
 
 BROKEN-aarch64 =	SIGILL when running rclone
 BROKEN-arm =		SIGBUS when running rclone
 
 COMMENT =	rsync for cloud storage
 
-V =		1.54.0
+V =		1.54.1
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
