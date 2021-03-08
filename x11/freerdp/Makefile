@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2021/03/02 17:31:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/03/08 13:15:36 sthen Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
 
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
 DISTNAME =		freerdp-2.3.1
+REVISION =		0
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
@@ -16,12 +17,17 @@ SHARED_LIBS +=  winpr2                    1.0
 HOMEPAGE =		https://www.freerdp.com/
 MASTER_SITES =		https://pub.freerdp.com/releases/
 
+# add sndio patchset
+MASTER_SITES0 =		https://github.com/FreeRDP/FreeRDP/commit/
+PATCHFILES =		freerdp-sndio{b3a2042103a192d9e4482691ce9e7d73f9475b09}.patch:0
+PATCH_DIST_STRIP =	-p1
+
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xv
-WANTLIB += avcodec avutil c crypto cups epoll-shim m pthread ssl
-WANTLIB += swresample usb-1.0 xkbfile
+WANTLIB += avcodec avutil c crypto cups epoll-shim m pthread sndio
+WANTLIB += ssl swresample usb-1.0 xkbfile
 
 # thread-local storage
 COMPILER =		base-clang ports-gcc
@@ -52,7 +58,8 @@ CONFIGURE_ARGS +=	-DBUILD_TESTING=ON \
 			-DWITH_OPENSLES=OFF \
 			-DWITH_PCSC=ON \
 			-DWITH_LIBSYSTEMD=OFF \
-			-DWITH_OSS=OFF
+			-DWITH_OSS=OFF \
+			-DWITH_SNDIO=ON
 
 .if ${MACHINE_ARCH} == "sparc64"
 CONFIGURE_ARGS +=	-DWITH_NEON=OFF

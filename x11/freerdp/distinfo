@@ -1,2 +1,4 @@
 SHA256 (freerdp-2.3.1.tar.gz) = IAccaRwZR8olYUnh0D7ewaXfv5lg8O9OIeyrh0M8IXg=
+SHA256 (freerdp-sndio.patch) = 4S7zbzVdhHeQ42RlY1+nDJbq358jU98AAXsUICA3dNA=
 SIZE (freerdp-2.3.1.tar.gz) = 7282211
+SIZE (freerdp-sndio.patch) = 23221

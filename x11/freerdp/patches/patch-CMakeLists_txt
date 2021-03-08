@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.8 2021/03/02 17:31:24 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.9 2021/03/08 13:15:36 sthen Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -36,16 +36,7 @@ Index: CMakeLists.txt
  	check_include_files(inttypes.h HAVE_INTTYPES_H)
  	check_include_files(sys/modem.h HAVE_SYS_MODEM_H)
  	check_include_files(sys/filio.h HAVE_SYS_FILIO_H)
-@@ -580,7 +582,7 @@ if(OPENBSD)
- 	set(WITH_MANPAGES "ON")
- 	set(WITH_ALSA "OFF")
- 	set(WITH_PULSE "OFF")
--	set(WITH_OSS "ON")
-+	set(WITH_OSS "OFF")
- 	set(WITH_WAYLAND "OFF")
- endif()
- 
-@@ -635,11 +637,11 @@ if(UNIX OR CYGWIN)
+@@ -636,11 +638,11 @@ if(UNIX OR CYGWIN)
  	if (HAVE_SYS_EVENTFD_H)
  		check_symbol_exists(eventfd_read sys/eventfd.h WITH_EVENTFD_READ_WRITE)
  	endif()
