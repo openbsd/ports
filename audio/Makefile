@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.452 2021/03/04 02:45:50 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.453 2021/03/08 09:22:08 espie Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -72,6 +72,7 @@
      SUBDIR += libcue
      SUBDIR += libdca
      SUBDIR += libdiscid
+     SUBDIR += libebur128
      SUBDIR += libgpod
      SUBDIR += libid3tag
      SUBDIR += liblastfm

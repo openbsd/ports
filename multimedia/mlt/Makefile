@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2020/08/24 14:09:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2021/03/08 09:22:09 espie Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
@@ -6,6 +6,7 @@ VERSION =		6.22.1
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
+REVISION =		0
 
 # XXX versions should be kept in sync together
 SHARED_LIBS =		mlt		3.2
@@ -24,6 +25,7 @@ WANTLIB-main += ${COMPILER_LIBCXX} SDL SDL2 SDL_image X11 avcodec avdevice
 WANTLIB-main += avfilter avformat avutil c exif fftw3 fontconfig gdk-x11-2.0
 WANTLIB-main += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 jack m pango-1.0
 WANTLIB-main += pangoft2-1.0 sox swresample swscale vorbisfile xml2
+WANTLIB-main += ebur128
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Svg Qt5Widgets
 WANTLIB += Qt5Xml SDL2 exif m mlt samplerate
@@ -43,6 +45,7 @@ RUN_DEPENDS-main =	audio/ladspa \
 			x11/gtk+3,-guic
 
 LIB_DEPENDS-main =	audio/jack \
+			audio/libebur128 \
 			audio/sox \
 			devel/sdl-image \
 			devel/sdl2 \
