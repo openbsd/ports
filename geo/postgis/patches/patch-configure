@@ -1,0 +1,56 @@
+$OpenBSD: patch-configure,v 1.3 2021/03/08 11:07:28 landry Exp $
+
+https://trac.osgeo.org/postgis/ticket/4860
+https://github.com/postgis/postgis/commit/9522a6f869ee6d170d97e7c593d7e5d71ec02a9b
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -17105,9 +17105,9 @@ fi
+ 
+ LIBS_SAVE="$LIBS"
+ LIBS="$PROJ_LDFLAGS"
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pj_get_release in -lproj" >&5
+-$as_echo_n "checking for pj_get_release in -lproj... " >&6; }
+-if ${ac_cv_lib_proj_pj_get_release+:} false; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for proj_info in -lproj" >&5
++$as_echo_n "checking for proj_info in -lproj... " >&6; }
++if ${ac_cv_lib_proj_proj_info+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+@@ -17121,27 +17121,27 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char pj_get_release ();
++char proj_info ();
+ int
+ main ()
+ {
+-return pj_get_release ();
++return proj_info ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_proj_pj_get_release=yes
++  ac_cv_lib_proj_proj_info=yes
+ else
+-  ac_cv_lib_proj_pj_get_release=no
++  ac_cv_lib_proj_proj_info=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_proj_pj_get_release" >&5
+-$as_echo "$ac_cv_lib_proj_pj_get_release" >&6; }
+-if test "x$ac_cv_lib_proj_pj_get_release" = xyes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_proj_proj_info" >&5
++$as_echo "$ac_cv_lib_proj_proj_info" >&6; }
++if test "x$ac_cv_lib_proj_proj_info" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+ #define HAVE_LIBPROJ 1
+ _ACEOF
