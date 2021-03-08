@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2020/05/21 12:38:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/08 16:51:11 sthen Exp $
 
 COMMENT =	DWARF optimization and duplicate removal tool
-DISTNAME =	dwz-0.13
-REVISION =	0
+DISTNAME =	dwz-0.14
 
 CATEGORIES =	devel
 
@@ -21,6 +20,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 ALL_TARGET =	dwz
 
 NO_TEST =	Yes
+FAKE_FLAGS =	mandir=${TRUEPREFIX}/man prefix=${TRUEPREFIX}
 
 WRKDIST =	${WRKDIR}/dwz
 
