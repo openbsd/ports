@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2021/02/23 19:39:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2021/03/08 18:27:44 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
-VERSION = 	20.12.2
-DISTNAME =	ktorrent-${VERSION}
+DISTNAME =	ktorrent-${MODKDE_VERSION}
 
 SHARED_LIBS +=  ktcore                    2.0 # 0.0
 
@@ -13,7 +12,8 @@ HOMEPAGE =	https://www.kde.org/applications/internet/ktorrent/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-# GPLv2+
+# usual KDE rules:
+# LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
@@ -30,10 +30,11 @@ WANTLIB += Qt5QmlModels Qt5Quick Qt5Script Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c gcrypt gmp
 WANTLIB += m phonon4qt5 tag
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
-MODULES =		devel/kf5 \
-			lang/python
+MODULES =	x11/kde-applications \
+		devel/kf5 \
+		lang/python
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/boost
@@ -71,7 +72,7 @@ LIB_DEPENDS =		audio/taglib \
 			devel/kf5/solid \
 			devel/kf5/sonnet \
 			devel/kf5/syndication \
-			net/libktorrent>=${VERSION} \
+			net/libktorrent>=${MODKDE_VERSION} \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtlocation \
 			x11/qt5/qtscript \
