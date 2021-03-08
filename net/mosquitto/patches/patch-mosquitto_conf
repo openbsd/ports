@@ -1,17 +1,8 @@
-$OpenBSD: patch-mosquitto_conf,v 1.7 2021/01/29 16:08:27 sthen Exp $
+$OpenBSD: patch-mosquitto_conf,v 1.8 2021/03/08 15:35:57 sthen Exp $
 
 Index: mosquitto.conf
 --- mosquitto.conf.orig
 +++ mosquitto.conf
-@@ -148,7 +148,7 @@
- # This should be set to /var/run/mosquitto/mosquitto.pid if mosquitto is
- # being run automatically on boot with an init script and
- # start-stop-daemon or similar.
--#pid_file
-+pid_file /var/run/mosquitto.pid
- 
- # Set to true to queue messages with QoS 0 when a persistent client is
- # disconnected. These messages are included in the limit imposed by
 @@ -187,7 +187,7 @@
  # If run as a non-root user, this setting has no effect.
  # Note that on Windows this has no effect and so mosquitto should be started by
