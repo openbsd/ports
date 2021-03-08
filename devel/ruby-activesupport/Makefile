@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2021/02/03 18:53:35 sebastia Exp $
+# $OpenBSD: Makefile,v 1.43 2021/03/08 20:41:02 sebastia Exp $
 
 COMMENT =		support libraries and Ruby extensions extracted from Rails
 
-DISTNAME =		activesupport-6.1.1
+DISTNAME =		activesupport-6.1.3
 CATEGORIES =		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
