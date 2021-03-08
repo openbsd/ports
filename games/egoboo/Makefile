@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/02 00:23:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2021/03/08 18:20:14 naddy Exp $
 
 COMMENT =		dungeon-crawling action-RPG adventure
 
-DISTNAME =		egoboo-2.7.4
-REVISION =		2
+DISTNAME =		egoboo-2.8.1
 CATEGORIES =		games
 
 HOMEPAGE =		http://egoboo.sourceforge.net
@@ -12,29 +11,28 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=egoboo/}
 # GPL v3 or later
 PERMIT_PACKAGE =	Yes
 
-WANTLIB = 		GL GLU SDL c m pthread SDL_net SDL_image SDL_mixer \
+WANTLIB = 		GL GLU SDL c m physfs pthread SDL_image SDL_mixer \
 			SDL_ttf
-LIB_DEPENDS =		devel/sdl-net \
-			devel/sdl-image \
+LIB_DEPENDS =		devel/sdl-image \
 			devel/sdl-mixer \
-			devel/sdl-ttf
+			devel/sdl-ttf \
+			devel/physfs
 
-FIX_CRLF_FILES =	game/Makefile.unix game/egoboo_setup.h \
-			game/file_linux.c game/graphic.c
+FIX_CRLF_FILES =	src/Makefile src/enet/Makefile src/game/Makefile \
+			src/game/extensions/ogl_texture.c \
+			src/game/game.c \
+			src/game/platform/file_linux.c
+
 USE_GMAKE =		Yes
-MAKE_FILE =		Makefile.unix
-WRKSRC =		${WRKDIST}/game
-EGOBOO_PREFIX =		${PREFIX}
-EGOBOO_SHARED =		${PREFIX}/share/egoboo
-
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/egoboo.sh
+WRKSRC =		${WRKDIST}/src
+MAKE_FLAGS =		PREFIX=${PREFIX} SYSCONFDIR=${SYSCONFDIR}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/egoboo ${PREFIX}/libexec/
-	${INSTALL_SCRIPT} ${WRKSRC}/egoboo.sh ${PREFIX}/bin/egoboo
-	${INSTALL_DATA_DIR} ${EGOBOO_SHARED}
-	@cd ${WRKDIST} && pax -rw *.* basicdat modules players \
-	    ${EGOBOO_SHARED}
+	${INSTALL_PROGRAM} ${WRKBUILD}/game/egoboo ${PREFIX}/bin/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/egoboo
+	@cd ${WRKDIST} && pax -rw basicdat modules ${PREFIX}/share/egoboo
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/egoboo
+	${INSTALL_DATA} ${WRKDIST}/setup.txt ${WRKDIST}/controls.txt \
+	    ${PREFIX}/share/examples/egoboo
 
 .include <bsd.port.mk>

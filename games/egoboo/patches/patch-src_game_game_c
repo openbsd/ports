@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_game_game_c,v 1.1 2021/03/08 18:20:14 naddy Exp $
+
+Fix movement.  Adapted from
+https://github.com/egoboo/egoboo/commit/3d4509d2722657c808fd32c93765db2e8597fc9a
+
+Index: src/game/game.c
+--- src/game/game.c.orig
++++ src/game/game.c
+@@ -2052,8 +2052,10 @@ void set_one_player_latch( const PLA_REF player )
+         if (( CAM_TURN_GOOD == PCamera->turn_mode && 1 == local_numlpla ) ||
+             !control_is_pressed( INPUT_DEVICE_KEYBOARD, CONTROL_CAMERA ) )
+         {
+-            joy_pos.x = ( control_is_pressed( INPUT_DEVICE_KEYBOARD,  CONTROL_RIGHT ) - control_is_pressed( INPUT_DEVICE_KEYBOARD,  CONTROL_LEFT ) );
+-            joy_pos.y = ( control_is_pressed( INPUT_DEVICE_KEYBOARD,  CONTROL_DOWN ) - control_is_pressed( INPUT_DEVICE_KEYBOARD,  CONTROL_UP ) );
++            if ( control_is_pressed( INPUT_DEVICE_KEYBOARD,  CONTROL_RIGHT ) ) joy_pos.x++;
++            if ( control_is_pressed( INPUT_DEVICE_KEYBOARD,  CONTROL_LEFT )  ) joy_pos.x--;
++            if ( control_is_pressed( INPUT_DEVICE_KEYBOARD,  CONTROL_DOWN )  ) joy_pos.y++;
++            if ( control_is_pressed( INPUT_DEVICE_KEYBOARD,  CONTROL_UP )    ) joy_pos.y--;
+ 
+             if ( CAM_TURN_GOOD == PCamera->turn_mode &&
+                  1 == local_numlpla )  joy_pos.x = 0;

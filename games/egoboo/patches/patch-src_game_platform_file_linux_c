@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_game_platform_file_linux_c,v 1.1 2021/03/08 18:20:14 naddy Exp $
+
+Index: src/game/platform/file_linux.c
+--- src/game/platform/file_linux.c.orig
++++ src/game/platform/file_linux.c
+@@ -31,6 +31,7 @@
+ #include <pwd.h>
+ #include <grp.h>
+ #include <glob.h>
++#include <limits.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/dir.h>
+@@ -66,7 +67,7 @@ void sys_fs_init()
+ 
+     // grab the user's home directory
+     userhome = getenv( "HOME" );
+-    snprintf( linux_userdataPath, SDL_arraysize( linux_userdataPath ), "%s/.egoboo-2.x", userhome );
++    snprintf( linux_userdataPath, SDL_arraysize( linux_userdataPath ), "%s/.egoboo", userhome );
+ 
+ #if defined(_NIX_PREFIX) && defined(PREFIX)
+     // the access to these directories is completely unknown
+@@ -74,9 +75,9 @@ void sys_fs_init()
+     // so that the program will compile and install just like any other
+     // .rpm or .deb package.
+ 
+-    strncpy( linux_configPath, PREFIX "/etc/egoboo-2.x",         SDL_arraysize( linux_configPath ) );
+-    strncpy( linux_binaryPath, PREFIX "/games/",                  SDL_arraysize( linux_binaryPath ) );
+-    strncpy( linux_dataPath,   PREFIX "/share/games/egoboo-2.x", SDL_arraysize( linux_dataPath ) );
++    strncpy( linux_configPath, SYSCONFDIR "/egoboo",         SDL_arraysize( linux_configPath ) );
++    strncpy( linux_binaryPath, PREFIX "/bin/",                  SDL_arraysize( linux_binaryPath ) );
++    strncpy( linux_dataPath,   PREFIX "/share/egoboo", SDL_arraysize( linux_dataPath ) );
+ #else
+     // these are read-only directories
+     strncpy( linux_configPath, "/etc/egoboo-2.x/",         SDL_arraysize( linux_configPath ) );

@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_game_Makefile,v 1.1 2021/03/08 18:20:14 naddy Exp $
+
+Index: src/game/Makefile
+--- src/game/Makefile.orig
++++ src/game/Makefile
+@@ -32,15 +32,15 @@ SDLCONF_L := $(shell ${SDL_CONF} --libs)
+ #---------------------
+ # the compiler options
+ 
+-CC      := gcc
++CC      ?= gcc
+ INC     := -I. -I.. -I../enet/include ${SDLCONF_I} -I./extensions -I./file_formats -I./platform
+-LDFLAGS := ${SDLCONF_L} -L../enet/lib -lSDL_ttf -lSDL_mixer -lGL -lGLU -lSDL_image -lphysfs -lenet
++LDFLAGS := -L../enet/lib ${SDLCONF_L} -lSDL_ttf -lSDL_mixer -lGL -lGLU -lSDL_image -lm -lphysfs -lenet
+ 
+ # use different options if the environmental variable PREFIX is defined
+ ifdef ($(PREFIX),"")
+-	OPT := -Os -Wall
++	OPT := 
+ else
+-	OPT := -Os -Wall -DPREFIX=\"${PREFIX}\" -D_NIX_PREFIX
++	OPT := ${CFLAGS} -DPREFIX=\"${PREFIX}\" -DSYSCONFDIR=\"${SYSCONFDIR}\" -D_NIX_PREFIX
+ endif
+ 
+ CFLAGS  := ${OPT} ${INC}

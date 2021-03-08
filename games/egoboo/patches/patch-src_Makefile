@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_Makefile,v 1.1 2021/03/08 18:20:14 naddy Exp $
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -10,26 +10,26 @@ ifndef ($(PREFIX),"")
+ endif
+ 
+ 
+-PROJ_NAME := egoboo-2.x
++PROJ_NAME := egoboo
+ 
+ .PHONY: all clean
+ 
+ all: enet egoboo
+ 
+ clean:
+-	make -C ./enet clean
+-	make -C ./game clean
++	$(MAKE) -C ./enet clean
++	$(MAKE) -C ./game clean
+ 
+ ./enet/lib/libenet.a:
+-	make -C ./enet all
++	$(MAKE) -C ./enet all
+ 
+ enet:   ./enet/lib/libenet.a
+ 
+ egoboo: enet
+-	make -C ./game all PREFIX=$(PREFIX) PROJ_NAME=$(PROJ_NAME)
++	$(MAKE) -C ./game all PREFIX=$(PREFIX) PROJ_NAME=$(PROJ_NAME)
+ 	
+ egoboo_lua: enet
+-	make -F Makefile.lua -C game all PREFIX=$(PREFIX) PROJ_NAME=$(PROJ_NAME)
++	$(MAKE) -F Makefile.lua -C game all PREFIX=$(PREFIX) PROJ_NAME=$(PROJ_NAME)
+ 
+ install: egoboo
+ 

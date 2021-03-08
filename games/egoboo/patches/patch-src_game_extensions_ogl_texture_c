@@ -1,0 +1,116 @@
+$OpenBSD: patch-src_game_extensions_ogl_texture_c,v 1.1 2021/03/08 18:20:14 naddy Exp $
+
+Read the correct number of bytes for a pixel.
+
+Index: src/game/extensions/ogl_texture.c
+--- src/game/extensions/ogl_texture.c.orig
++++ src/game/extensions/ogl_texture.c
+@@ -243,7 +243,7 @@ SDL_bool IMG_test_alpha( SDL_Surface * psurf )
+     Uint8  r, g, b, a;
+ 
+     // the info necessary to scan the image
+-    int bypp, bpp, bit_mask;
++    int bypp;
+     int w, h;
+     int pitch;
+ 
+@@ -251,7 +251,6 @@ SDL_bool IMG_test_alpha( SDL_Surface * psurf )
+     int ix, iy;
+     const char * row_ptr;
+     const char * char_ptr;
+-    Uint32     * ui32_ptr;
+ 
+     if ( NULL == psurf ) return SDL_FALSE;
+ 
+@@ -272,8 +271,6 @@ SDL_bool IMG_test_alpha( SDL_Surface * psurf )
+     }
+ 
+     // grab the info for scanning the surface
+-    bpp  = pformat->BitsPerPixel;
+-    bit_mask = pformat->Rmask | pformat->Gmask | pformat->Bmask | pformat->Amask;
+     bypp = pformat->BytesPerPixel;
+     w = psurf->w;
+     h = psurf->h;
+@@ -285,8 +282,25 @@ SDL_bool IMG_test_alpha( SDL_Surface * psurf )
+         char_ptr = row_ptr;
+         for ( ix = 0; ix < w; ix++ )
+         {
+-            ui32_ptr = ( Uint32 * )char_ptr;
+-            pix_value = ( *ui32_ptr ) & bit_mask;
++            switch (bypp)
++            {
++                case 1:
++                    pix_value = *( Uint8 * )char_ptr;
++                    break;
++                case 2:
++                    pix_value = *( Uint16 * )char_ptr;
++                    break;
++                case 3:
++                    pix_value = 0;
++                    memcpy(&pix_value, char_ptr, 3);
++                    #if SDL_BYTEORDER == SDL_BIG_ENDIAN
++                    pix_value >>= 8;
++                    #endif
++                    break;
++                case 4:
++                    pix_value = *( Uint32 * )char_ptr;
++                    break;
++            }
+ 
+             SDL_GetRGBA( pix_value, pformat, &r, &g, &b, &a );
+ 
+@@ -317,7 +331,7 @@ SDL_bool IMG_test_alpha_key( SDL_Surface * psurf, Uint
+     Uint8  r, g, b, a;
+ 
+     // the info necessary to scan the image
+-    int bypp, bpp, bit_mask;
++    int bypp;
+     int w, h;
+     int pitch;
+ 
+@@ -325,7 +339,6 @@ SDL_bool IMG_test_alpha_key( SDL_Surface * psurf, Uint
+     int ix, iy;
+     const char * row_ptr;
+     const char * char_ptr;
+-    Uint32     * ui32_ptr;
+ 
+     // flags
+     bool_t check_index = SDL_FALSE;
+@@ -353,8 +366,6 @@ SDL_bool IMG_test_alpha_key( SDL_Surface * psurf, Uint
+     if ( 0xff != pformat->alpha ) return SDL_TRUE;
+ 
+     // grab the info for scanning the surface
+-    bpp  = pformat->BitsPerPixel;
+-    bit_mask = pformat->Rmask | pformat->Gmask | pformat->Bmask | pformat->Amask;
+     bypp = pformat->BytesPerPixel;
+     w = psurf->w;
+     h = psurf->h;
+@@ -366,8 +377,26 @@ SDL_bool IMG_test_alpha_key( SDL_Surface * psurf, Uint
+         char_ptr = row_ptr;
+         for ( ix = 0; ix < w; ix++ )
+         {
+-            ui32_ptr = ( Uint32 * )char_ptr;
+-            pix_value = ( *ui32_ptr ) & bit_mask;
++            switch (bypp)
++            {
++                case 1:
++                    pix_value = *( Uint8 * )char_ptr;
++                    break;
++                case 2:
++                    pix_value = *( Uint16 * )char_ptr;
++                    break;
++                case 3:
++                    pix_value = 0;
++                    memcpy(&pix_value, char_ptr, 3);
++                    #if SDL_BYTEORDER == SDL_BIG_ENDIAN
++                    pix_value >>= 8;
++                    #endif
++                    break;
++                case 4:
++                    pix_value = *( Uint32 * )char_ptr;
++                    break;
++            }
++
+ 
+             if ( pix_value == key )
+             {
