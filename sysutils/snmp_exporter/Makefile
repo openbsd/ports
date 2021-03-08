@@ -1,55 +1,49 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/08 13:59:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/08 21:04:59 sthen Exp $
 
-COMMENT =		Prometheus exporter for SNMP metrics
+COMMENT=	Prometheus exporter for SNMP metrics
 
 # updating: bump V version, "make patch" (fix patches if needed),
 # "make mibs", update M version, "make makesum".
-V =			0.19.0
-M =			0.19.0
-REVISION =		2
-GH_ACCOUNT =		prometheus
-GH_PROJECT =		snmp_exporter
-GH_TAGNAME =		v$V
+V=		0.20.0
+M=		0.20.0
+GH_ACCOUNT=	prometheus
+GH_PROJECT=	snmp_exporter
+GH_TAGNAME=	v$V
+DISTFILES=	snmp_exporter-$V.tar.gz \
+		snmp_exporter_mibs+vendor-$M.tar.xz:0
 
-CATEGORIES =		sysutils
+CATEGORIES=	sysutils
 
-HOMEPAGE =		https://prometheus.io/
+HOMEPAGE=	https://prometheus.io/
 
-MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
+
 # Apache 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB =		c netsnmp pthread
+WANTLIB += c netsnmp pthread
 
-# to update mibs file, comment-out DISTFILES, run "make mibs",
-# reenable DISTFILES, make makesum/etc.
-MASTER_SITES0 =		https://spacehopper.org/mirrors/
-DISTFILES =		snmp_exporter-$V.tar.gz \
-			snmp_exporter_mibs-$M.tar.xz:0
+MASTER_SITES0=	https://spacehopper.org/mirrors/
 
-LIB_DEPENDS =		net/net-snmp
-BUILD_DEPENDS =		devel/promu
+LIB_DEPENDS=	net/net-snmp
 
-USE_GMAKE =		Yes
+MODULES=	lang/go
+MODGO_GOPATH=	${MODGO_WORKSPACE}
 
-MODULES=		lang/go
-MODGO_GOPATH=		${MODGO_WORKSPACE}
-
-.if $V == $M
 post-extract:
-	mv ${WRKDIR}/mibs ${WRKDIST}/generator/
+.if $V == $M
+	xzcat ${FULLDISTDIR}/snmp_exporter_mibs+vendor-$M.tar.xz | tar xf - -C ${WRKDIR}
+	mv ${WRKDIR}/generator/mibs ${WRKDIST}/generator/
+	mv ${WRKDIR}/vendor ${WRKDIST}/
 .endif
 
-# promu doesn't like the default PREFIX
-do-build:
-	cd ${WRKSRC} && ${MAKE_ENV} GOMAXPROCS=${MAKE_JOBS} PREFIX=. ${MAKE_PROGRAM} \
-	    PROMU="${LOCALBASE}/bin/promu -v" build
+post-build:
 	cd ${WRKSRC}/generator && \
 	    ${MODGO_BUILD_CMD} github.com/prometheus/snmp_exporter/generator
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/snmp_exporter
-	${INSTALL_PROGRAM} ${WRKSRC}/snmp_exporter ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/go/bin/snmp_exporter ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/generator ${PREFIX}/bin/snmp_generator
 	${INSTALL_DATA} ${WRKSRC}/{LICENSE,README.md} \
 	    ${PREFIX}/share/doc/snmp_exporter/
@@ -67,13 +61,17 @@ do-test:
 	    MIBDIRS=+../mibs ${PREFIX}/bin/snmp_generator generate
 
 mibs: patch
-	cd ${WRKDIR}/*/generator; \
-	    ${_PBUILD} chmod 777 .; \
-	    gmake; \
+	${_PBUILD} ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
+	cd ${WRKDIR}/snmp_exporter-$V; \
+	    ${_PBUILD} chmod ug=rwX,o=rX . generator go.mod go.sum; \
+	    go mod tidy; \
+	    go mod vendor; \
+	    PATH=${WRKDIR}/bin:$$PATH gmake -C generator; \
 	    mibs=`mktemp /tmp/mibs.XXXXXXXX`; \
-	    tar cf - mibs | xz > $$mibs; \
+	    tar cf - vendor generator/mibs | xz > $$mibs; \
 	    chmod 644 $$mibs; \
-	    scp $$mibs naiad:mirrors/snmp_exporter_mibs-$V.tar.xz; \
-	    rm $$mibs
+	    scp $$mibs naiad:mirrors/snmp_exporter_mibs+vendor-$V.tar.xz; \
+	    rm $$mibs; chmod -R g=rwX generator/mibs
+	${_PBUILD} rm -f ${WRKDIR}/bin/tar
 
 .include <bsd.port.mk>

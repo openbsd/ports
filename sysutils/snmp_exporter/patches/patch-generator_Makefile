@@ -1,4 +1,4 @@
-$OpenBSD: patch-generator_Makefile,v 1.5 2020/09/01 21:51:58 sthen Exp $
+$OpenBSD: patch-generator_Makefile,v 1.6 2021/03/08 21:04:59 sthen Exp $
 
 We're not actually fetching in the port build; but this may be needed
 during port updates to generate a tar of common mibs, so it's useful to
@@ -18,8 +18,8 @@ Index: generator/Makefile
  IANA_CHARSET_URL  := https://www.iana.org/assignments/ianacharset-mib/ianacharset-mib
  IANA_IFTYPE_URL   := https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib
  IANA_PRINTER_URL  := https://www.iana.org/assignments/ianaprinter-mib/ianaprinter-mib
-@@ -101,7 +101,7 @@ mibs: mib-dir \
-   $(MIBDIR)/IPD-MIB_Q419V9.mib
+@@ -110,7 +110,7 @@ mibs: mib-dir \
+   $(MIBDIR)/LIEBERT_GP_PDU.MIB
  
  mib-dir:
 -	@mkdir -p -v $(MIBDIR)
@@ -27,12 +27,3 @@ Index: generator/Makefile
  
  $(MIBDIR)/apc-powernet-mib:
  	@echo ">> Downloading apc-powernet-mib"
-@@ -124,7 +124,7 @@ $(MIBDIR)/.cisco_v2:
- 	@echo ">> Downloading cisco_v2"
- 	@mkdir -p $(MIBDIR)/cisco_v2
- 	@curl $(CURL_OPTS) -o $(TMP) $(CISCO_URL)
--	tar --no-same-owner -C $(MIBDIR)/cisco_v2 --strip-components=3 -zxvf $(TMP)
-+	gtar --no-same-owner -C $(MIBDIR)/cisco_v2 --strip-components=3 -zxvf $(TMP)
- 	cp mibs/cisco_v2/AIRESPACE-REF-MIB.my mibs/AIRESPACE-REF-MIB
- 	cp mibs/cisco_v2/AIRESPACE-WIRELESS-MIB.my mibs/AIRESPACE-WIRELESS-MIB
- 	cp mibs/cisco_v2/ENTITY-MIB.my mibs/ENTITY-MIB

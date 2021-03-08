@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/01 13:57:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/08 21:04:59 sthen Exp $
 @newgroup _snmpexporter:845
 @newuser _snmpexporter:845:_snmpexporter:daemon:prometheus snmp_exporter:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/snmp_exporter
@@ -19,9 +19,14 @@ share/examples/snmp_exporter/generator.yml
 @sample ${SYSCONFDIR}/snmp_exporter/generator.yml
 share/examples/snmp_exporter/mibs/
 @comment share/examples/snmp_exporter/mibs/.cisco_v2
+@comment share/examples/snmp_exporter/mibs/.kemp-lm
 @comment share/examples/snmp_exporter/mibs/.net-snmp
 @comment share/examples/snmp_exporter/mibs/.paloalto_panos
 @comment share/examples/snmp_exporter/mibs/.synology
+share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-B100-MIB.txt
+share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-CERTS-MIB.txt
+share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-IPVS-MIB.txt
+share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-ONE4NET-MIB.txt
 share/examples/snmp_exporter/mibs/AIRESPACE-REF-MIB
 share/examples/snmp_exporter/mibs/AIRESPACE-WIRELESS-MIB
 share/examples/snmp_exporter/mibs/ARISTA-ENTITY-SENSOR-MIB
@@ -42,6 +47,18 @@ share/examples/snmp_exporter/mibs/IPD-MIB_Q419V9.mib
 share/examples/snmp_exporter/mibs/IPV6-TC
 share/examples/snmp_exporter/mibs/ISDN-MIB
 share/examples/snmp_exporter/mibs/KEEPALIVED-MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_AGENT.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_COND.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_CONTROLLER.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_ENV.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_FLEXIBLE.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_FLEXIBLE_COND.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_NOTIFY.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_PDU.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_POWER.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_REG.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_SRC.MIB
+share/examples/snmp_exporter/mibs/LIEBERT_GP_SYSTEM.MIB
 share/examples/snmp_exporter/mibs/MIKROTIK-MIB
 share/examples/snmp_exporter/mibs/NET-SNMP-MIB
 share/examples/snmp_exporter/mibs/NET-SNMP-TC
@@ -57,6 +74,8 @@ share/examples/snmp_exporter/mibs/PICO-IPSEC-FLOW-MONITOR-MIB.txt
 share/examples/snmp_exporter/mibs/PICO-SMI-ID-MIB.txt
 share/examples/snmp_exporter/mibs/PICO-SMI-MIB.txt
 share/examples/snmp_exporter/mibs/PRINTER-MIB-V2.txt
+share/examples/snmp_exporter/mibs/README.TXT
+share/examples/snmp_exporter/mibs/RFC1628_UPS_MIB.MIB
 share/examples/snmp_exporter/mibs/SNMP-FRAMEWORK-MIB
 share/examples/snmp_exporter/mibs/SNMP-MIB-description ( Q419V7 ).xls
 share/examples/snmp_exporter/mibs/SNMPv2-MIB
@@ -78,6 +97,7 @@ share/examples/snmp_exporter/mibs/UBNT-AirFiber-MIB
 share/examples/snmp_exporter/mibs/UBNT-AirMAX-MIB.txt
 share/examples/snmp_exporter/mibs/UBNT-UniFi-MIB
 share/examples/snmp_exporter/mibs/UCD-SNMP-MIB
+share/examples/snmp_exporter/mibs/WIENER-CRATE-MIB-5704.txt
 share/examples/snmp_exporter/mibs/apc-powernet-mib
 share/examples/snmp_exporter/mibs/cisco_v2/
 share/examples/snmp_exporter/mibs/cisco_v2/ACCOUNTING-CONTROL-MIB.my
@@ -1513,5 +1533,6 @@ share/examples/snmp_exporter/mibs/cisco_v2/XGCP-MIB.my
 share/examples/snmp_exporter/mibs/cisco_v2/draft-ietf-ipfc-fcmgmt-int-mib-04.my
 share/examples/snmp_exporter/mibs/cisco_v2/test-mib.my
 share/examples/snmp_exporter/mibs/servertech-sentry3-mib
+share/examples/snmp_exporter/mibs/servertech-sentry4-mib
 share/examples/snmp_exporter/snmp.yml
 @sample ${SYSCONFDIR}/snmp_exporter/snmp.yml

@@ -1,11 +1,14 @@
-$OpenBSD: patch-generator_net_snmp_go,v 1.1.1.1 2019/11/27 10:46:28 sthen Exp $
+$OpenBSD: patch-generator_net_snmp_go,v 1.2 2021/03/08 21:04:59 sthen Exp $
 
-this (which looks a bit like a comment in the source code) is used to
-initialise tclist which is a static array normally in net-snmp's object.
+this (which looks like a comment in net_snmp.go as it's wrapped in /* */)
+is used to initialise tclist which is a static array normally in
+net-snmp's object.
 
-adjust to the size used in the current version of net-snmp; net-snmp
-zeroes the whole array during init, walking past the end of
-snmp_generator's provided array, and so segfaults.
+adjust to the size used in net-snmp 5.8; net-snmp zeroes the whole array
+during init, walking past the end of snmp_generator's provided array,
+and so segfaults. (XXX this code changed again in 5.9 and now does an
+initial smaller static alloc, followed by dynamic realloc; it does seem
+to still work)
 
 Index: generator/net_snmp.go
 --- generator/net_snmp.go.orig
