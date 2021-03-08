@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_attack_c,v 1.1 2010/10/26 10:44:53 steven Exp $
---- src/attack.c.orig	Tue Oct 26 12:04:42 2010
-+++ src/attack.c	Tue Oct 26 12:13:45 2010
-@@ -248,8 +248,12 @@ attacks->attack_th.id);
+$OpenBSD: patch-src_attack_c,v 1.2 2021/03/08 17:08:19 matthieu Exp $
+Index: src/attack.c
+--- src/attack.c.orig
++++ src/attack.c
+@@ -262,8 +262,12 @@ attacks->attack_th.id);
  void
  attack_gen_mac(u_int8_t *mac)
  {

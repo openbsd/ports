@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2021/03/08 17:08:19 matthieu Exp $
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -3,7 +3,7 @@ AUTOMAKE_OPTIONS = no-dependencies
+ 
+ DEFS = `$(LIBNET_CONFIG) --defines` @DEFS@
+ 
+-INCLUDES =
++INCLUDES = -I${srcdir}
+ 
+ LIBS = @LIBS@ -lpcap -lnet
+ 

@@ -1,31 +1,30 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/08 17:08:19 matthieu Exp $
 
 COMMENT =	framework for analysis of layer 2 network protocols
 
-DISTNAME =	yersinia-0.7.3
-REVISION =	0
-CATEGORIES =	net security
+GH_ACCOUNT = tomac
+GH_PROJECT = yersinia
+GH_TAGNAME = v0.8.2
 
-HOMEPAGE =	http://www.yersinia.net/
+CATEGORIES =	net security
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
 # GPL v2
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	http://www.yersinia.net/download/
-
 WANTLIB =	c curses panel pcap pthread lib/libnet-1.1/net=11
 
 LIB_DEPENDS =	net/libnet/1.1
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION = 	2.69
+AUTOMAKE_VERSION = 	1.12
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--disable-gtk \
 			--with-libnet-includes=${LOCALBASE}/include/libnet-1.1
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBNET_CONFIG=${LOCALBASE}/bin/libnet-config-1.1 \
 			CPPFLAGS="${CPPFLAGS} -DLBL_ALIGN"
-WRKDIST =	${WRKDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/yersinia

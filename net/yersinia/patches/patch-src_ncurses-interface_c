@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ncurses-interface_c,v 1.1 2021/03/08 17:08:20 matthieu Exp $
+
+Index: src/ncurses-interface.c
+--- src/ncurses-interface.c.orig
++++ src/ncurses-interface.c
+@@ -92,6 +92,8 @@
+ #include "ncurses-interface.h"
+ #include "ncurses-callbacks.h"
+ 
++u_int8_t pointer[MAX_PROTOCOLS];
++WINDOW *info_window;
+ 
+ /*
+  * Ncurses init

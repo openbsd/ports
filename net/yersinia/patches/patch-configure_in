@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure_in,v 1.1 2021/03/08 17:08:19 matthieu Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -14,7 +14,7 @@ AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+ 
+ AC_PROG_CC
+ if test -n "$GCC"; then
+-     CFLAGS="-O3 -Wall -g -D_DEFAULT_SOURCE"
++     CFLAGS="$CFLAGS -Wall -g -D_DEFAULT_SOURCE"
+ else
+      AC_MSG_WARN(Ouch!! Only gcc is supported...)
+      AC_MSG_ERROR(...you're on your own.)
+@@ -56,7 +56,7 @@ AC_ARG_WITH(pcap-includes,
+ 
+ pcap_dir=""
+ for dir in $PCAP_DIR ; do 
+-    if test -d $dir -a -r "$dir/pcap-bpf.h" ; then 
++    if test -d $dir -a -r "$dir/pcap.h" ; then 
+        if test -n "$pcap_dir" -a "$pcap_dir" != "$dir"; then
+           echo 
+           echo; echo more than one set found in:
+@@ -189,7 +189,7 @@ else
+ dnl libnet headers are usually in /usr/include/libnet, so we need a ..
+    LIBNET_INCLUDE="-I$libnet_dir"
+    LIBNET_LINK="-L`dirname $libnet_dir`/lib"
+-   LIBNET_CONFIG="$libnet_config_dir/libnet-config"
++#  LIBNET_CONFIG="$libnet_config_dir/libnet-config"
+ 
+    AC_SUBST(LIBNET_INCLUDE)
+    AC_SUBST(LIBNET_LINK)

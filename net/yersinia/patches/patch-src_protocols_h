@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_protocols_h,v 1.1.1.1 2010/10/25 23:12:02 steven Exp $
---- src/protocols.h.orig	Sun Jul 16 14:37:31 2006
-+++ src/protocols.h	Thu Apr 24 23:46:12 2008
-@@ -26,6 +26,7 @@
+$OpenBSD: patch-src_protocols_h,v 1.2 2021/03/08 17:08:20 matthieu Exp $
+
+Index: src/protocols.h
+--- src/protocols.h.orig
++++ src/protocols.h
+@@ -24,6 +24,7 @@
  #define __PROTOCOLS_H__
  
  #include <pcap.h>
@@ -9,3 +11,12 @@ $OpenBSD: patch-src_protocols_h,v 1.1.1.1 2010/10/25 23:12:02 steven Exp $
  #include <net/if.h>
  
  #ifdef SOLARIS
+@@ -207,7 +208,7 @@ struct protocol_def {
+        end_t end;
+ };
+ 
+-struct protocol_def protocols[MAX_PROTOCOLS];
++extern struct protocol_def protocols[MAX_PROTOCOLS];
+ 
+ void   protocol_init(void);
+ int8_t protocol_register(u_int8_t, const char *, const char *, const char *,

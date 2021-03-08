@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_protocols_c,v 1.1 2021/03/08 17:08:20 matthieu Exp $
+
+Index: src/protocols.c
+--- src/protocols.c.orig
++++ src/protocols.c
+@@ -61,6 +61,8 @@
+ 
+ #include "protocols.h"
+ 
++struct protocol_def protocols[MAX_PROTOCOLS];
++
+ void
+ protocol_init(void)
+ {
