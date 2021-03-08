@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/03 18:52:30 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/08 20:44:48 sebastia Exp $
 
 COMMENT=	access to time zone data and conversion
 
-DISTNAME=	tzinfo-2.0.1
+DISTNAME=	tzinfo-2.0.4
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://tzinfo.github.io/
