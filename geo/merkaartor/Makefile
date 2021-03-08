@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/01/19 06:44:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2021/03/08 07:22:35 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 REVISION =	2
@@ -21,6 +21,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 # spatialite is marked as non-working
+# proj8 compat: https://github.com/openstreetmap/merkaartor/issues/193
 LIB_DEPENDS =	devel/proj \
 		x11/qt5/qtsvg \
 		geo/gdal
