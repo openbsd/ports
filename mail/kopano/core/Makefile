@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2021/02/24 16:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2021/03/08 16:42:21 robert Exp $
 
 # undefined ref's to libicon*, libintl* with ld.bfd
 ONLY_FOR_ARCHS=	${LLD_ARCHS}
@@ -39,7 +39,8 @@ MODPHP_BUILDDEP=Yes
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 
-BUILD_DEPENDS=	devel/gettext,-tools \
+BUILD_DEPENDS=	devel/cppunit \
+		devel/gettext,-tools \
 		devel/py-setuptools${MODPY_FLAVOR} \
 		devel/swig \
 		shells/bash \
