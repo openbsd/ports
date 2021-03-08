@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.41 2021/02/17 17:39:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.42 2021/03/08 18:27:40 rsadowski Exp $
 
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
-VERSION =	20.12.2
-DISTNAME =	yakuake-${VERSION}
+DISTNAME =	yakuake-${MODKDE_VERSION}
 EPOCH =		0
 
 CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/system/org.kde.yakuake
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
-# GPLv2+
+# usual KDE rules:
+# LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
@@ -25,7 +25,8 @@ WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c m
 
-MODULES =	devel/kf5
+MODULES =	x11/kde-applications \
+		devel/kf5
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools
