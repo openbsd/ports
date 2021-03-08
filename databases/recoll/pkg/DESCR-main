@@ -1,0 +1,21 @@
+Recoll is a full text search application, which means that it finds your
+data by content rather than by external attributes (like the file name).
+You specify words (terms) which should or should not appear in the text
+you are looking for, and receive in return a list of matching documents,
+ordered so that the most relevant documents will appear first.
+
+You do not need to remember in what file or email message you stored a
+given piece of information. You just ask for related terms, and the tool
+will return a list of documents where these terms are prominent, in a
+similar way to Internet search engines.
+
+Full text search applications try to determine which documents are
+most relevant to the search terms you provide. Computer algorithms for
+determining relevance can be very complex, and in general are inferior
+to the power of the human mind to rapidly determine relevance. The
+quality of relevance guessing is probably the most important aspect
+when evaluating a search application. Recoll relies on the Xapian
+probabilistic information retrieval library to determine relevance.
+
+This package contains the indexer and command-line tool. The Qt-based
+graphical interface is in the "recoll-gui" package.
