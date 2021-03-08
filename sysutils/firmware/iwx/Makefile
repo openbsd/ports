@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/08 18:26:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/08 21:05:56 sthen Exp $
 
 FW_DRIVER=	iwx
 FW_VER=		20191022
-REVISION=	2
+REVISION=	3
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,\*.ucode}
