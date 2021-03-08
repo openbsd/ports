@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2021/03/06 16:53:49 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/08 20:16:23 kili Exp $
 
 COMMENT =	use git to manage files without checking them in
 
@@ -17,6 +17,8 @@ LIB_DEPENDS =		converters/libiconv \
 			devel/libmagic
 
 RUN_DEPENDS =		net/rsync
+
+BUILD_DEPENDS =		devel/git
 
 MODULES =       	devel/cabal
 
