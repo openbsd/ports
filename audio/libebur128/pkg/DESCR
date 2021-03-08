@@ -1,0 +1,5 @@
+libebur128 is a library that implements the EBU R 128 standard 
+for loudness normalisation.
+
+Library usage should be pretty straightforward. 
+All exported symbols are documented in the ebur128.h header file.
