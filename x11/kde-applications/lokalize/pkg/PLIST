@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/01/23 18:10:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/03/08 18:27:30 rsadowski Exp $
 @pkgpath x11/kde4/kmix
 @bin bin/lokalize
 share/applications/org.kde.lokalize.desktop
@@ -55,6 +55,9 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/lokalize/
 share/doc/HTML/pt_BR/lokalize/index.cache.bz2
 share/doc/HTML/pt_BR/lokalize/index.docbook
+share/doc/HTML/ru/lokalize/
+share/doc/HTML/ru/lokalize/index.cache.bz2
+share/doc/HTML/ru/lokalize/index.docbook
 share/doc/HTML/sr/lokalize/
 share/doc/HTML/sr/lokalize/glossary.png
 share/doc/HTML/sr/lokalize/index.cache.bz2
@@ -154,12 +157,6 @@ share/lokalize/icons/hicolor/16x16/actions/insert_tag.png
 share/lokalize/icons/hicolor/16x16/actions/l10n/
 share/lokalize/icons/hicolor/16x16/actions/l10n/sr/
 share/lokalize/icons/hicolor/16x16/actions/l10n/sr/approved.png
-share/lokalize/icons/hicolor/16x16/actions/l10n/sr@ijekavian/
-share/lokalize/icons/hicolor/16x16/actions/l10n/sr@ijekavian/approved.png
-share/lokalize/icons/hicolor/16x16/actions/l10n/sr@ijekavianlatin/
-share/lokalize/icons/hicolor/16x16/actions/l10n/sr@ijekavianlatin/approved.png
-share/lokalize/icons/hicolor/16x16/actions/l10n/sr@latin/
-share/lokalize/icons/hicolor/16x16/actions/l10n/sr@latin/approved.png
 share/lokalize/icons/hicolor/16x16/actions/msgid2msgstr.png
 share/lokalize/icons/hicolor/16x16/actions/nexterror.png
 share/lokalize/icons/hicolor/16x16/actions/nextfuzzy.png
@@ -184,12 +181,6 @@ share/lokalize/icons/hicolor/22x22/actions/insert_tag.png
 share/lokalize/icons/hicolor/22x22/actions/l10n/
 share/lokalize/icons/hicolor/22x22/actions/l10n/sr/
 share/lokalize/icons/hicolor/22x22/actions/l10n/sr/approved.png
-share/lokalize/icons/hicolor/22x22/actions/l10n/sr@ijekavian/
-share/lokalize/icons/hicolor/22x22/actions/l10n/sr@ijekavian/approved.png
-share/lokalize/icons/hicolor/22x22/actions/l10n/sr@ijekavianlatin/
-share/lokalize/icons/hicolor/22x22/actions/l10n/sr@ijekavianlatin/approved.png
-share/lokalize/icons/hicolor/22x22/actions/l10n/sr@latin/
-share/lokalize/icons/hicolor/22x22/actions/l10n/sr@latin/approved.png
 share/lokalize/icons/hicolor/22x22/actions/msgid2msgstr.png
 share/lokalize/icons/hicolor/22x22/actions/nexterror.png
 share/lokalize/icons/hicolor/22x22/actions/nextfuzzy.png
@@ -215,12 +206,6 @@ share/lokalize/icons/hicolor/32x32/actions/insert_tag.png
 share/lokalize/icons/hicolor/32x32/actions/l10n/
 share/lokalize/icons/hicolor/32x32/actions/l10n/sr/
 share/lokalize/icons/hicolor/32x32/actions/l10n/sr/approved.png
-share/lokalize/icons/hicolor/32x32/actions/l10n/sr@ijekavian/
-share/lokalize/icons/hicolor/32x32/actions/l10n/sr@ijekavian/approved.png
-share/lokalize/icons/hicolor/32x32/actions/l10n/sr@ijekavianlatin/
-share/lokalize/icons/hicolor/32x32/actions/l10n/sr@ijekavianlatin/approved.png
-share/lokalize/icons/hicolor/32x32/actions/l10n/sr@latin/
-share/lokalize/icons/hicolor/32x32/actions/l10n/sr@latin/approved.png
 share/lokalize/icons/hicolor/32x32/actions/msgid2msgstr.png
 share/lokalize/icons/hicolor/32x32/actions/nexterror.png
 share/lokalize/icons/hicolor/32x32/actions/nextfuzzy.png
@@ -242,24 +227,12 @@ share/lokalize/icons/hicolor/48x48/actions/approved.png
 share/lokalize/icons/hicolor/48x48/actions/l10n/
 share/lokalize/icons/hicolor/48x48/actions/l10n/sr/
 share/lokalize/icons/hicolor/48x48/actions/l10n/sr/approved.png
-share/lokalize/icons/hicolor/48x48/actions/l10n/sr@ijekavian/
-share/lokalize/icons/hicolor/48x48/actions/l10n/sr@ijekavian/approved.png
-share/lokalize/icons/hicolor/48x48/actions/l10n/sr@ijekavianlatin/
-share/lokalize/icons/hicolor/48x48/actions/l10n/sr@ijekavianlatin/approved.png
-share/lokalize/icons/hicolor/48x48/actions/l10n/sr@latin/
-share/lokalize/icons/hicolor/48x48/actions/l10n/sr@latin/approved.png
 share/lokalize/icons/hicolor/scalable/
 share/lokalize/icons/hicolor/scalable/actions/
 share/lokalize/icons/hicolor/scalable/actions/approved.svgz
 share/lokalize/icons/hicolor/scalable/actions/l10n/
 share/lokalize/icons/hicolor/scalable/actions/l10n/sr/
 share/lokalize/icons/hicolor/scalable/actions/l10n/sr/approved.svgz
-share/lokalize/icons/hicolor/scalable/actions/l10n/sr@ijekavian/
-share/lokalize/icons/hicolor/scalable/actions/l10n/sr@ijekavian/approved.svgz
-share/lokalize/icons/hicolor/scalable/actions/l10n/sr@ijekavianlatin/
-share/lokalize/icons/hicolor/scalable/actions/l10n/sr@ijekavianlatin/approved.svgz
-share/lokalize/icons/hicolor/scalable/actions/l10n/sr@latin/
-share/lokalize/icons/hicolor/scalable/actions/l10n/sr@latin/approved.svgz
 share/lokalize/icons/locolor/
 share/lokalize/icons/locolor/16x16/
 share/lokalize/icons/locolor/16x16/actions/

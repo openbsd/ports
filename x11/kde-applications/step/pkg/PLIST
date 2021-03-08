@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/02/08 20:00:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/03/08 18:27:33 rsadowski Exp $
 @pkgpath x11/kde4/step
 @bin bin/step
 share/applications/org.kde.step.desktop
@@ -146,6 +146,9 @@ share/locale/ga/LC_MESSAGES/step.mo
 share/locale/gl/LC_MESSAGES/step.mo
 share/locale/hr/LC_MESSAGES/step.mo
 share/locale/hu/LC_MESSAGES/step.mo
+share/locale/ia/LC_MESSAGES/step.mo
+share/locale/ia/LC_MESSAGES/step_example_files.mo
+share/locale/ia/LC_MESSAGES/step_objinfo_files.mo
 share/locale/it/LC_MESSAGES/step.mo
 share/locale/it/LC_MESSAGES/step_example_files.mo
 share/locale/it/LC_MESSAGES/step_objinfo_files.mo
@@ -413,6 +416,24 @@ share/step/examples/fr/springs.step
 share/step/examples/fr/wave.step
 share/step/examples/gas.step
 share/step/examples/graph.step
+share/step/examples/ia/
+share/step/examples/ia/brownian.step
+share/step/examples/ia/doublependulum.step
+share/step/examples/ia/eightpendula.step
+share/step/examples/ia/first.step
+share/step/examples/ia/fourpendula.step
+share/step/examples/ia/gas.step
+share/step/examples/ia/graph.step
+share/step/examples/ia/liquid.step
+share/step/examples/ia/lissajous.step
+share/step/examples/ia/motor.step
+share/step/examples/ia/motor1.step
+share/step/examples/ia/note.step
+share/step/examples/ia/resonance.step
+share/step/examples/ia/softbody.step
+share/step/examples/ia/solar.step
+share/step/examples/ia/springs.step
+share/step/examples/ia/wave.step
 share/step/examples/it/
 share/step/examples/it/brownian.step
 share/step/examples/it/doublependulum.step
@@ -906,6 +927,26 @@ share/step/objinfo/l10n/fr/softbody.html
 share/step/objinfo/l10n/fr/spring.html
 share/step/objinfo/l10n/fr/weightforce.html
 share/step/objinfo/l10n/fr/world.html
+share/step/objinfo/l10n/ia/
+share/step/objinfo/l10n/ia/anchor.html
+share/step/objinfo/l10n/ia/box.html
+share/step/objinfo/l10n/ia/chargedparticle.html
+share/step/objinfo/l10n/ia/coulombforce.html
+share/step/objinfo/l10n/ia/disk.html
+share/step/objinfo/l10n/ia/gas.html
+share/step/objinfo/l10n/ia/gasljforce.html
+share/step/objinfo/l10n/ia/gasparticle.html
+share/step/objinfo/l10n/ia/gravitationforce.html
+share/step/objinfo/l10n/ia/linearmotor.html
+share/step/objinfo/l10n/ia/meter.html
+share/step/objinfo/l10n/ia/note.html
+share/step/objinfo/l10n/ia/particle.html
+share/step/objinfo/l10n/ia/pin.html
+share/step/objinfo/l10n/ia/polygon.html
+share/step/objinfo/l10n/ia/softbody.html
+share/step/objinfo/l10n/ia/spring.html
+share/step/objinfo/l10n/ia/weightforce.html
+share/step/objinfo/l10n/ia/world.html
 share/step/objinfo/l10n/it/
 share/step/objinfo/l10n/it/anchor.html
 share/step/objinfo/l10n/it/box.html
@@ -1283,6 +1324,12 @@ share/step/tutorials/fr/tutorial2.step
 share/step/tutorials/fr/tutorial3.step
 share/step/tutorials/fr/tutorial4.step
 share/step/tutorials/fr/tutorial5.step
+share/step/tutorials/ia/
+share/step/tutorials/ia/tutorial1.step
+share/step/tutorials/ia/tutorial2.step
+share/step/tutorials/ia/tutorial3.step
+share/step/tutorials/ia/tutorial4.step
+share/step/tutorials/ia/tutorial5.step
 share/step/tutorials/it/
 share/step/tutorials/it/tutorial1.step
 share/step/tutorials/it/tutorial2.step

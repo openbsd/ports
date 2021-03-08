@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/03/08 18:27:03 rsadowski Exp $
 @pkgpath x11/kde4/gwenview
 @bin bin/gwenview
 @bin bin/gwenview_importer
@@ -57,6 +57,9 @@ share/doc/HTML/pt/gwenview/index.docbook
 share/doc/HTML/pt_BR/gwenview/
 share/doc/HTML/pt_BR/gwenview/index.cache.bz2
 share/doc/HTML/pt_BR/gwenview/index.docbook
+share/doc/HTML/ru/gwenview/
+share/doc/HTML/ru/gwenview/index.cache.bz2
+share/doc/HTML/ru/gwenview/index.docbook
 share/doc/HTML/sr/gwenview/
 share/doc/HTML/sr/gwenview/index.cache.bz2
 share/doc/HTML/sr/gwenview/index.docbook

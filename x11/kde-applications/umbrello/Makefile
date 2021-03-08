@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/03/08 18:27:34 rsadowski Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
@@ -13,10 +13,11 @@ WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GuiAddons
 WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KDELibs4Support
 WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Notifications KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextEditor KF5TextWidgets KF5UnitConversion KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml c m xml2 xslt
+WANTLIB += KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
+WANTLIB += KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets
+WANTLIB += Qt5Xml c m xml2 xslt
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

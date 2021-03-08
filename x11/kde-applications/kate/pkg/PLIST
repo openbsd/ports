@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/02/14 13:17:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/03/08 18:27:05 rsadowski Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/kate
 @bin bin/kate
@@ -259,6 +259,25 @@ share/doc/HTML/pt_BR/katepart/vi.docbook
 share/doc/HTML/pt_BR/kwrite/
 share/doc/HTML/pt_BR/kwrite/index.cache.bz2
 share/doc/HTML/pt_BR/kwrite/index.docbook
+share/doc/HTML/ru/kate/
+share/doc/HTML/ru/kate/configuring.docbook
+share/doc/HTML/ru/kate/development.docbook
+share/doc/HTML/ru/kate/fundamentals.docbook
+share/doc/HTML/ru/kate/index.cache.bz2
+share/doc/HTML/ru/kate/index.docbook
+share/doc/HTML/ru/kate/menus.docbook
+share/doc/HTML/ru/kate/plugins.docbook
+share/doc/HTML/ru/katepart/
+share/doc/HTML/ru/katepart/advanced.docbook
+share/doc/HTML/ru/katepart/configuring.docbook
+share/doc/HTML/ru/katepart/development.docbook
+share/doc/HTML/ru/katepart/fundamentals.docbook
+share/doc/HTML/ru/katepart/index.cache.bz2
+share/doc/HTML/ru/katepart/index.docbook
+share/doc/HTML/ru/katepart/menus.docbook
+share/doc/HTML/ru/katepart/part.docbook
+share/doc/HTML/ru/katepart/regular-expressions.docbook
+share/doc/HTML/ru/katepart/vi.docbook
 share/doc/HTML/ru/kwrite/
 share/doc/HTML/ru/kwrite/index.cache.bz2
 share/doc/HTML/ru/kwrite/index.docbook

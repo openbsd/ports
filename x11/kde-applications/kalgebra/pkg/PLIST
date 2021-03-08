@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/01/23 18:10:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/03/08 18:27:04 rsadowski Exp $
 @pkgpath x11/kde4/kalgebra
 @bin bin/calgebra
 @bin bin/kalgebra
@@ -54,6 +54,11 @@ share/doc/HTML/pt_BR/kalgebra/commands.docbook
 share/doc/HTML/pt_BR/kalgebra/index.cache.bz2
 share/doc/HTML/pt_BR/kalgebra/index.docbook
 share/doc/HTML/pt_BR/kalgebra/kalgebra-main-window.png
+share/doc/HTML/ru/kalgebra/
+share/doc/HTML/ru/kalgebra/commands.docbook
+share/doc/HTML/ru/kalgebra/index.cache.bz2
+share/doc/HTML/ru/kalgebra/index.docbook
+share/doc/HTML/ru/kalgebra/kalgebra-main-window.png
 share/doc/HTML/sv/kalgebra/
 share/doc/HTML/sv/kalgebra/commands.docbook
 share/doc/HTML/sv/kalgebra/index.cache.bz2

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/02/08 20:00:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/03/08 18:27:09 rsadowski Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
@@ -454,6 +454,7 @@ share/kdenlive/effects/swapchannels.xml
 share/kdenlive/effects/tcolor.xml
 share/kdenlive/effects/threshold.xml
 share/kdenlive/effects/tracker.xml
+share/kdenlive/effects/typewriter.xml
 share/kdenlive/effects/update/
 share/kdenlive/effects/update/frei0r.balanc0r.js
 share/kdenlive/effects/update/frei0r.cartoon.js
@@ -581,6 +582,7 @@ share/locale/gl/LC_MESSAGES/kdenlive.mo
 share/locale/he/LC_MESSAGES/kdenlive.mo
 share/locale/hr/LC_MESSAGES/kdenlive.mo
 share/locale/hu/LC_MESSAGES/kdenlive.mo
+share/locale/ia/LC_MESSAGES/kdenlive.mo
 share/locale/id/LC_MESSAGES/kdenlive.mo
 share/locale/it/LC_MESSAGES/kdenlive.mo
 share/locale/ja/LC_MESSAGES/kdenlive.mo

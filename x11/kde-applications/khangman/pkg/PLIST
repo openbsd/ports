@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/03/08 18:27:12 rsadowski Exp $
 @pkgpath x11/kde4/khangman
 @bin bin/khangman
 @man man/man6/khangman.6
@@ -177,7 +177,6 @@ share/khangman/qml/sounds/wrong.ogg
 share/khangman/qml/sounds/wrong.wav
 share/khangman/sk.txt
 share/khangman/sl.txt
-share/khangman/sr@latin.txt
 share/khangman/sv.txt
 share/khangman/themes/
 share/khangman/themes/khangman_bees.svg

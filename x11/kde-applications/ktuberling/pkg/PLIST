@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/01/23 18:10:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/03/08 18:27:26 rsadowski Exp $
 @conflict kdegames-*
 @bin bin/ktuberling
 share/applications/org.kde.ktuberling.desktop
@@ -1550,9 +1550,6 @@ share/ktuberling/sounds/sr/sesir.ogg
 share/ktuberling/sounds/sr/usta.ogg
 share/ktuberling/sounds/sr/uvo.ogg
 share/ktuberling/sounds/sr/znacka.ogg
-share/ktuberling/sounds/sr@ijekavian.soundtheme
-share/ktuberling/sounds/sr@ijekavianlatin.soundtheme
-share/ktuberling/sounds/sr@latin.soundtheme
 share/ktuberling/sounds/sv/
 share/ktuberling/sounds/sv.soundtheme
 share/ktuberling/sounds/sv/fluga.wav

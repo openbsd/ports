@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/23 18:10:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/03/08 18:27:13 rsadowski Exp $
 include/KF5/kio_archivebase.h
 include/KF5/libkioarchive_export.h
 lib/cmake/KioArchive/
@@ -497,21 +497,39 @@ share/doc/HTML/pt_BR/kioslave5/thumbnail/index.docbook
 share/doc/HTML/pt_BR/kioslave5/xz/
 share/doc/HTML/pt_BR/kioslave5/xz/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/xz/index.docbook
+share/doc/HTML/ru/kioslave5/bookmarks/
+share/doc/HTML/ru/kioslave5/bookmarks/index.cache.bz2
+share/doc/HTML/ru/kioslave5/bookmarks/index.docbook
+share/doc/HTML/ru/kioslave5/bzip2/
+share/doc/HTML/ru/kioslave5/bzip2/index.cache.bz2
+share/doc/HTML/ru/kioslave5/bzip2/index.docbook
 share/doc/HTML/ru/kioslave5/gzip/
 share/doc/HTML/ru/kioslave5/gzip/index.cache.bz2
 share/doc/HTML/ru/kioslave5/gzip/index.docbook
+share/doc/HTML/ru/kioslave5/info/
+share/doc/HTML/ru/kioslave5/info/index.cache.bz2
+share/doc/HTML/ru/kioslave5/info/index.docbook
+share/doc/HTML/ru/kioslave5/network/
+share/doc/HTML/ru/kioslave5/network/index.cache.bz2
+share/doc/HTML/ru/kioslave5/network/index.docbook
 share/doc/HTML/ru/kioslave5/nfs/
 share/doc/HTML/ru/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/ru/kioslave5/nfs/index.docbook
 share/doc/HTML/ru/kioslave5/sftp/
 share/doc/HTML/ru/kioslave5/sftp/index.cache.bz2
 share/doc/HTML/ru/kioslave5/sftp/index.docbook
+share/doc/HTML/ru/kioslave5/smb/
+share/doc/HTML/ru/kioslave5/smb/index.cache.bz2
+share/doc/HTML/ru/kioslave5/smb/index.docbook
 share/doc/HTML/ru/kioslave5/tar/
 share/doc/HTML/ru/kioslave5/tar/index.cache.bz2
 share/doc/HTML/ru/kioslave5/tar/index.docbook
 share/doc/HTML/ru/kioslave5/thumbnail/
 share/doc/HTML/ru/kioslave5/thumbnail/index.cache.bz2
 share/doc/HTML/ru/kioslave5/thumbnail/index.docbook
+share/doc/HTML/ru/kioslave5/xz/
+share/doc/HTML/ru/kioslave5/xz/index.cache.bz2
+share/doc/HTML/ru/kioslave5/xz/index.docbook
 share/doc/HTML/sr/kioslave5/bookmarks/
 share/doc/HTML/sr/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/sr/kioslave5/bookmarks/index.docbook

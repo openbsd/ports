@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/03/08 18:27:33 rsadowski Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${VERSION}
@@ -12,11 +12,11 @@ WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5I18n KF5ItemViews
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Parts
-WANTLIB += KF5Service KF5SonnetUi KF5TextEditor KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Script Qt5ScriptTools Qt5Widgets
-WANTLIB += Qt5Xml Qt5XmlPatterns c m
+WANTLIB += KF5Service KF5SonnetUi KF5SyntaxHighlighting KF5TextEditor
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Script Qt5ScriptTools
+WANTLIB += Qt5Widgets Qt5Xml Qt5XmlPatterns c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
