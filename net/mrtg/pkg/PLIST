@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2018/07/13 07:56:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/03/08 16:58:41 afresh1 Exp $
 @newgroup _mrtg:578
 @newuser _mrtg:578:578:daemon:MRTG account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mrtg
@@ -9,12 +9,12 @@ bin/mrtg-traffic-sum
 @bin bin/rateup
 libdata/perl5/site_perl/MRTG_lib.pm
 libdata/perl5/site_perl/Net_SNMP_util.pm
-libdata/perl5/site_perl/Pod/
-libdata/perl5/site_perl/Pod/InputObjects.pm
-libdata/perl5/site_perl/Pod/Parser.pm
-libdata/perl5/site_perl/Pod/PlainText.pm
-libdata/perl5/site_perl/Pod/Select.pm
-libdata/perl5/site_perl/Pod/Usage.pm
+@comment core perl or p5-Pod-Parser
+@comment libdata/perl5/site_perl/Pod/InputObjects.pm
+@comment libdata/perl5/site_perl/Pod/Parser.pm
+@comment libdata/perl5/site_perl/Pod/PlainText.pm
+@comment libdata/perl5/site_perl/Pod/Select.pm
+@comment libdata/perl5/site_perl/Pod/Usage.pm
 libdata/perl5/site_perl/locales_mrtg.pm
 @man man/man1/cfgmaker.1
 @man man/man1/indexmaker.1
