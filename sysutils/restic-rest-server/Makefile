@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/19 23:20:23 abieber Exp $
+# $OpenBSD: Makefile,v 1.10 2021/03/08 13:59:28 sthen Exp $
 
 COMMENT =	REST backend for the restic backup tool
 
@@ -7,11 +7,11 @@ MODGO_VERSION =	v0.10.0
 
 DISTNAME =	rest-server-${MODGO_VERSION}
 PKGNAME =	restic-${DISTNAME:S/-v/-/}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 # BSD
 PERMIT_PACKAGE =	Yes
 

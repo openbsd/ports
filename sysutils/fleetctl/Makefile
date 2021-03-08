@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/20 15:01:21 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/08 13:59:27 sthen Exp $
 
 COMMENT =		controller for fleet, the distributed init system
 
 GH_PROJECT =		fleet
 GH_ACCOUNT =		coreos
 GH_TAGNAME =		v1.0.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 

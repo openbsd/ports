@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/05 14:56:01 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/08 13:59:24 sthen Exp $
 
 COMMENT =	modern and intuitive terminal-based text editor
 
@@ -11,6 +11,7 @@ TAG_HASH =	cfcb2e4
 DISTNAME =	micro-${MODGO_VERSION}
 CATEGORIES =	editors
 HOMEPAGE =	https://micro-editor.github.io/
+REVISION =	0
 
 # MIT "Expat" License
 PERMIT_PACKAGE =	Yes

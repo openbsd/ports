@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/27 13:23:42 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:25 sthen Exp $
 
 COMMENT =	matrix-WhatsApp puppeting bridge
 
 V =		20200327
 COMMIT =	3a9642386cdff8293657c8409da4bffd674184bf
 DISTNAME =	mautrix-whatsapp-${V}
+REVISION =	0
 
 # warning, for the .tar.gz, "go mod vendor" is not sufficient
 # you need to clone https://github.com/chai2010/webp and
@@ -15,9 +16,7 @@ CATEGORIES =	net
 HOMEPAGE =	https://github.com/tulir/mautrix-whatsapp
 
 MAINTAINER =	Renaud Allard <renaud@allard.it>
-
 WANTLIB +=	c m pthread
-
 MASTER_SITES =	https://elendil.arnor.org/OpenBSD/
 
 # GNU Affero General Public License v3.0

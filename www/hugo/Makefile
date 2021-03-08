@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2021/03/06 10:48:34 paco Exp $
+# $OpenBSD: Makefile,v 1.32 2021/03/08 13:59:29 sthen Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
@@ -7,13 +7,13 @@ MODGO_MODNAME =	github.com/gohugoio/hugo
 MODGO_VERSION =	v0.81.0
 
 DISTNAME =	hugo-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://gohugo.io/
 
 MAINTAINER =	Paco Esteban <paco@openbsd.org>
-
 #Apache License 2.0
 PERMIT_PACKAGE =	Yes
 

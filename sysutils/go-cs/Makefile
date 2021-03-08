@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/08 13:59:27 sthen Exp $
 
 COMMENT=		concurrent ssh client
 
 GH_TAGNAME=		v0.9
 GH_ACCOUNT=		akosela
 GH_PROJECT=		go-cs
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		sysutils net
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
-
 # BSD
 PERMIT_PACKAGE=	Yes
 

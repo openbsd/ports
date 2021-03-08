@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/08/23 02:59:00 abieber Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/08 13:59:25 sthen Exp $
 
 COMMENT =		access any command-line tool via a WebSocket
 
@@ -7,13 +7,13 @@ MODGO_VERSION =		v0.3.1
 
 DISTNAME =		websocketd-${MODGO_VERSION}
 PKGNAME =		websocketd-0.3.1
+REVISION =		0
 
 CATEGORIES =		net www
 
 HOMEPAGE =		http://websocketd.com/
 
 MAINTAINER =		Kent R. Spillner <kspillner@openbsd.org>
-
 # BSD
 PERMIT_PACKAGE =	Yes
 

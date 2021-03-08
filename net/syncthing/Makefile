@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/14 23:39:51 edd Exp $
+# $OpenBSD: Makefile,v 1.34 2021/03/08 13:59:25 sthen Exp $
 
 BROKEN-aarch64 =golang.org/x/Sys/cpu panic (illegal instruction)
 
@@ -7,12 +7,12 @@ COMMENT =	open decentralized synchronization utility
 V =		1.12.1
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
+REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
-
 # MPL 2.0
 PERMIT_PACKAGE = Yes
 

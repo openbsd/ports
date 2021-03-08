@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/11/26 17:33:23 paco Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:24 sthen Exp $
 
 COMMENT =	non-web browser
 
@@ -7,6 +7,7 @@ MODGO_VERSION =	v0.0.0-20201120043812-757305db6692
 
 DISTNAME =	bombadillo-${MODGO_VERSION}
 PKGNAME =	bombadillo-2.3.3.20201120
+REVISION =	0
 
 CATEGORIES =	net
 

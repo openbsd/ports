@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.46 2020/11/21 15:58:40 pvk Exp $
+# $OpenBSD: Makefile,v 1.47 2021/03/08 13:59:26 sthen Exp $
 
 COMMENT =	lightweight shipper for log file data
+REVISION =	0
 
 BEAT =		filebeat
 

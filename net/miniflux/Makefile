@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/21 19:00:24 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:25 sthen Exp $
 
 COMMENT =	minimalist and opinionated feed reader
 
@@ -7,6 +7,7 @@ MODGO_VERSION =	v0.0.0-20210216043419-dde2ca06c305
 
 DISTNAME =	miniflux.app-${MODGO_VERSION}
 PKGNAME =	miniflux-2.0.28.20210216
+REVISION =	0
 
 CATEGORIES =	net www
 

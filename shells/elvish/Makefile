@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/17 23:59:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/08 13:59:26 sthen Exp $
 
 BROKEN-aarch64 = looks like the vendored golang.org/x/sys/unix is too old for aarch64
 # try removing above with next update
@@ -11,10 +11,10 @@ CATEGORIES =	shells
 GH_ACCOUNT =	elves
 GH_PROJECT =	elvish
 GH_TAGNAME =	v0.13.1
+REVISION =	0
 
 HOMEPAGE =	https://elv.sh/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
-
 # BSD
 PERMIT_PACKAGE =	Yes
 

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/27 09:28:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:26 sthen Exp $
 
 COMMENT =		Prometheus exporter to test HTTP/DNS/TCP/ICMP endpoints
 
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		blackbox_exporter
 GH_TAGNAME =		v0.18.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
 MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
-
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 

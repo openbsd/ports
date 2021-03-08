@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/23 09:39:23 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/08 13:59:26 sthen Exp $
 
 COMMENT =	a tool used to brute-force stuff
 
@@ -7,11 +7,11 @@ MODGO_VERSION =	v3.1.0
 
 DISTNAME =	gobuster-${MODGO_VERSION}
 PKGNAME =	gobuster-3.1.0
+REVISION =	0
 
 CATEGORIES =	security
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
-
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 

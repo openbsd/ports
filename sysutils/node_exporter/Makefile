@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/27 09:28:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2021/03/08 13:59:28 sthen Exp $
 
 COMMENT =		prometheus exporter for hardware and OS metrics
 
@@ -6,14 +6,13 @@ MODGO_MODNAME =		github.com/prometheus/node_exporter
 MODGO_VERSION =		v1.1.1
 
 DISTNAME =		node_exporter-${MODGO_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://prometheus.io/
 
 MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
-
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 

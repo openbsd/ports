@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/05/14 22:44:36 pvk Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/08 13:59:28 sthen Exp $
 
 # vmm(4) architecture(s)
 ONLY_FOR_ARCHS =	amd64
@@ -10,11 +10,11 @@ PKGNAME =	packer-vmm-${V}
 GH_ACCOUNT =	double-p
 GH_PROJECT =	packer-builder-openbsd-vmm
 GH_TAGNAME =	v${V}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
-
 MASTER_SITES0 =	https://github.com/hashicorp/packer/archive/v${V}/
 DISTFILES +=	${GH_PROJECT}-${V}${EXTRACT_SUFX} \
 		packer-${V}${EXTRACT_SUFX}:0

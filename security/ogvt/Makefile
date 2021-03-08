@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/16 21:57:58 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/08 13:59:26 sthen Exp $
 
 COMMENT =		simple tool for verifying gpg signatures
 
@@ -6,13 +6,13 @@ MODGO_MODNAME =		suah.dev/ogvt
 MODGO_VERSION =		v1.0.9
 
 DISTNAME =		 ogvt-${MODGO_VERSION}
+REVISION =               0
 
 CATEGORIES =		security
 
 HOMEPAGE =		https://git.sr.ht/~qbit/ogvt
 
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
-
 # BSD
 PERMIT_PACKAGE =	Yes
 

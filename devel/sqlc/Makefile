@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/05 14:17:28 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/08 13:59:24 sthen Exp $
 
 # github.com/kyleconroy/sqlc/internal/engine/sqlite/parser fails on LP32
 ONLY_FOR_ARCHS =	aarch64 amd64
@@ -9,11 +9,11 @@ MODGO_MODNAME =	github.com/kyleconroy/sqlc
 MODGO_VERSION =	v1.7.0
 
 DISTNAME =	sqlc-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 # MIT
 PERMIT_PACKAGE =	Yes
 

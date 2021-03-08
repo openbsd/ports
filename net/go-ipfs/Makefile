@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/05 14:13:14 abieber Exp $
+# $OpenBSD: Makefile,v 1.10 2021/03/08 13:59:24 sthen Exp $
 
 COMMENT =	global, versioned, peer-to-peer filesystem
 
@@ -6,12 +6,12 @@ MODGO_MODNAME =	github.com/ipfs/go-ipfs
 MODGO_VERSION =	v0.8.0
 
 DISTNAME =	go-ipfs-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://ipfs.io
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 # both MIT and Apache 2.0
 PERMIT_PACKAGE =	Yes
 

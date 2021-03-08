@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/17 14:39:43 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/08 13:59:27 sthen Exp $
 
 COMMENT =	package manager for Go
 
@@ -6,7 +6,7 @@ VERSION =	0.13.2
 GH_ACCOUNT =	Masterminds
 GH_PROJECT =	glide
 GH_TAGNAME =	v${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 

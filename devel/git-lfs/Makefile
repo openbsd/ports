@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/05 15:56:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2021/03/08 13:59:23 sthen Exp $
 
 COMMENT =		Git extension for versioning large files
 
 GH_PROJECT =		git-lfs
 GH_ACCOUNT =		git-lfs
 GH_TAGNAME =		v2.12.1
+REVISION =		0
 
 CATEGORIES =		devel
 

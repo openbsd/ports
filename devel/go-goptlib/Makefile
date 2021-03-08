@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/14 11:11:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/08 13:59:23 sthen Exp $
 
 COMMENT =		library for writing Tor pluggable transports in Go
 
@@ -6,13 +6,13 @@ GH_ACCOUNT =		torbsd
 GH_PROJECT =		goptlib
 GH_TAGNAME =		0.7
 PKGNAME =		go-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://www.torproject.org/docs/pluggable-transports
 
 MAINTAINER =		Sean Levy <attila@stalphonsos.com>
-
 # CC0
 PERMIT_PACKAGE =	Yes
 

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2020/12/04 12:19:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/08 13:59:27 sthen Exp $
 
 COMMENT=	start subprocess with envvar populated from Consul and Vault
 
 MODGO_MODNAME=	github.com/hashicorp/envconsul
 MODGO_VERSION=	v0.11.0
 DISTNAME=	envconsul-${MODGO_VERSION}
+REVISION=	0
 
 CATEGORIES=	sysutils
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
-
 # MPLv2.0
 PERMIT_PACKAGE=	Yes
 

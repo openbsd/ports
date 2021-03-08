@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/14 19:00:20 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/08 13:59:27 sthen Exp $
 
 COMMENT =	disk Usage/free utility
 
@@ -7,11 +7,11 @@ MODGO_VERSION =	v0.6.0
 
 DISTNAME =	duf-${MODGO_VERSION}
 PKGNAME =	duf-0.6.0
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
-
 # MIT
 PERMIT_PACKAGE =	Yes
 

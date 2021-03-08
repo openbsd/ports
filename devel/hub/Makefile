@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/03/08 13:59:23 sthen Exp $
 
 COMMENT =		wraps git in order to extend it with extra features
 
 GH_ACCOUNT =		github
 GH_PROJECT =		hub
 GH_TAGNAME =		v2.2.3
-REVISION=		1
+REVISION=		2
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://hub.github.com
 
 MAINTAINER =		Fabian Raetz <fabian.raetz@gmail.com>
-
 # MIT
 PERMIT_PACKAGE =	Yes
 

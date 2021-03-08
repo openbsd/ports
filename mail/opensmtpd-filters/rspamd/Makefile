@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/05 14:31:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/08 13:59:24 sthen Exp $
 
 COMMENT =	rspamd integration to the OpenSMTPD daemon
 
@@ -9,6 +9,7 @@ MODGO_MODNAME =	github.com/poolpOrg/filter-rspamd
 MODGO_VERSION =	v${V}
 
 DISTNAME =	filter-rspamd-${MODGO_VERSION:S/v//}
+REVISION =	0
 
 FILTER_NAME =	rspamd
 
@@ -16,7 +17,6 @@ CATEGORIES =	mail
 HOMEPAGE =	https://github.com/poolpOrg/filter-rspamd/
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 # ISC
 PERMIT_PACKAGE =	Yes
 

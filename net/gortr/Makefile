@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/09 11:11:32 claudio Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/08 13:59:24 sthen Exp $
 
 COMMENT =		a RPKI-to-Router server
 
@@ -6,6 +6,7 @@ MODGO_MODNAME=		github.com/cloudflare/gortr
 MODGO_VERSION=		v0.14.7
 
 DISTNAME=		gortr-${MODGO_VERSION}
+REVISION=		0
 
 BROKEN-aarch64=		pins old version of golang.org/x/sys/unix
 
@@ -14,7 +15,6 @@ CATEGORIES =		net
 HOMEPAGE =		https://github.com/cloudflare/gortr
 
 MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
-
 # BSD 3-Clause
 PERMIT_PACKAGE =	Yes
 

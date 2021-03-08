@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/24 18:10:40 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:29 sthen Exp $
 
 COMMENT =	query the unicode database from the commandline
 
 MODGO_MODNAME =	arp242.net/uni
 MODGO_VERSION =	v1.1.1
 DISTNAME =	uni-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	textproc
 

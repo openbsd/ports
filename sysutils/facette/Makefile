@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/04 14:28:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/08 13:59:27 sthen Exp $
 
 BROKEN =	fetches from internet during build
 
@@ -7,7 +7,7 @@ COMMENT =	time series data visualization and graphing software
 GH_ACCOUNT =	facette
 GH_PROJECT =	facette
 GH_TAGNAME =	0.5.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 

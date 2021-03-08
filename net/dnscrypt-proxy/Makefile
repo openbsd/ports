@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.55 2021/01/12 05:18:25 bket Exp $
+# $OpenBSD: Makefile,v 1.56 2021/03/08 13:59:24 sthen Exp $
 
 COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	dnscrypt-proxy
 GH_TAGNAME =	2.0.45
+REVISION =	0
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://dnscrypt.info/
 
 MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
-
 # ISC
 PERMIT_PACKAGE =	Yes
 

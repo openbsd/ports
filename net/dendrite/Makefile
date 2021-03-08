@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/05 14:08:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/08 13:59:24 sthen Exp $
 
 COMMENT =	matrix homeserver written in Go
 
@@ -6,13 +6,13 @@ MODGO_MODNAME =	github.com/matrix-org/dendrite
 MODGO_VERSION =	v0.3.11
 
 DISTNAME =	dendrite-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://github.com/matrix-org/dendrite
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 

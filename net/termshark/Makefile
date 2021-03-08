@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/17 21:10:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/08 13:59:25 sthen Exp $
 
 # 1.0.0 fails on aarch64, golang.org/x/sys@v0.0.0-20190416152802-12500544f89f
 # too old
@@ -12,7 +12,7 @@ MODGO_MODNAME =	github.com/gcla/termshark
 MODGO_VERSION =	v1.0.0
 
 DISTNAME =	termshark-${MODGO_VERSION}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://termshark.io
 

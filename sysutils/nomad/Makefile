@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/27 06:42:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2021/03/08 13:59:28 sthen Exp $
 
 # bunch of undefined things in crypto/blake2b, shirou/gopsutil/disk, shirou/gopsutil/mem
 NOT_FOR_ARCHS=		i386
@@ -8,13 +8,13 @@ COMMENT=		cluster scheduler
 GH_TAGNAME=		v1.0.4
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		nomad
+REVISION=		0
 
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://www.nomadproject.io
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
-
 # MPLv2
 PERMIT_PACKAGE=		Yes
 

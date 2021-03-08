@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/27 09:28:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2021/03/08 13:59:24 sthen Exp $
 
 # XXX cannot update because of:
 # https://github.com/DataDog/dd-trace-go/pull/754
@@ -8,14 +8,13 @@ COMMENT=	fast and flexible DNS server/forwarder
 MODGO_MODNAME=	github.com/coredns/coredns
 MODGO_VERSION=	v1.8.3
 DISTNAME=	coredns-${MODGO_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net sysutils
 
 HOMEPAGE=	https://coredns.io/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
-
 # Apache v2.0
 PERMIT_PACKAGE=	Yes
 

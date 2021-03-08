@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2021/01/30 10:03:41 pvk Exp $
+# $OpenBSD: Makefile,v 1.37 2021/03/08 13:59:26 sthen Exp $
 
 COMMENT =	lightweight shipper for real-time network analytics
+REVISION =	0
 
 BEAT =		packetbeat
 

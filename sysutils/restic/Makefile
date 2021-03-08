@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/21 18:59:02 abieber Exp $
+# $OpenBSD: Makefile,v 1.18 2021/03/08 13:59:28 sthen Exp $
 
 COMMENT =	fast, efficient and secure backup program
 
@@ -6,13 +6,13 @@ MODGO_MODNAME =	github.com/restic/restic
 MODGO_VERSION =	v0.12.0
 
 DISTNAME =	restic-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://restic.net/
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 # BSD
 PERMIT_PACKAGE =	Yes
 

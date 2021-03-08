@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/08/22 22:04:27 abieber Exp $
+# $OpenBSD: Makefile,v 1.11 2021/03/08 13:59:29 sthen Exp $
 
 COMMENT =		convert XLSX files to CSV
 
@@ -6,6 +6,7 @@ MODGO_MODNAME =		github.com/tealeg/xlsx2csv
 MODGO_VERSION =		v0.0.0-20200427211949-6a39463d05cf
 PKGNAME =		xlsx2csv-20200427211949
 DISTNAME =		xlsx2csv-${MODGO_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc converters
 

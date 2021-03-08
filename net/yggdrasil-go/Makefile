@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/21 03:32:25 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/08 13:59:25 sthen Exp $
 
 COMMENT =	experimental fully end-to-end encrypted IPv6 network
 
@@ -6,6 +6,7 @@ MODGO_MODNAME =	github.com/yggdrasil-network/yggdrasil-go
 MODGO_VERSION =	v0.3.15
 
 DISTNAME =	yggdrasil-go-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 

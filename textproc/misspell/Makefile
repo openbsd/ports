@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/14 21:55:22 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/08 13:59:29 sthen Exp $
 
 COMMENT =	correct commonly misspelled English words in source files
 
 GH_ACCOUNT =	client9
 GH_PROJECT =	misspell
 GH_TAGNAME =	v0.3.4
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
 

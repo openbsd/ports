@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/02/26 23:14:13 pvk Exp $
+# $OpenBSD: Makefile,v 1.44 2021/03/08 13:59:25 sthen Exp $
 
 COMMENT =	open source Slack-alternative
 
@@ -10,6 +10,7 @@ GH_TAGNAME =	v${V}
 MASTER_SITES0 =	https://releases.mattermost.com/${V}/
 
 DISTNAME =	mattermost-server-${V}
+REVISION =	0
 
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} \
 		mattermost-${V}-linux-amd64${EXTRACT_SUFX}:0
@@ -18,7 +19,6 @@ CATEGORIES =	net
 HOMEPAGE =	https://mattermost.com/
 
 MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
-
 # MIT
 PERMIT_PACKAGE =	Yes
 

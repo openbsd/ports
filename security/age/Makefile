@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/16 17:37:04 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/08 13:59:25 sthen Exp $
 
 COMMENT =	simple, modern and secure file encryption tool
 
@@ -7,13 +7,13 @@ MODGO_VERSION =	v1.0.0-beta6
 
 DISTNAME =	age-${MODGO_VERSION}
 PKGNAME =	${DISTNAME:S/-beta/beta/:S/-v/-/}
+REVISION =	0
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://age-encryption.org/
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 # BSD3
 PERMIT_PACKAGE =	Yes
 

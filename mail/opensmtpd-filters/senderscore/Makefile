@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2019/12/09 20:24:02 gilles Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:24 sthen Exp $
 
 COMMENT =	SenderScore integration to the OpenSMTPD daemon
 
 V =		0.1.1
 FILTER_NAME =	senderscore
 DISTNAME =	filter-senderscore-${V}
+REVISION =	0
 
 CATEGORIES =	mail
 HOMEPAGE =	https://github.com/poolpOrg/filter-senderscore/
 
 MAINTAINER =	Gilles Chehade <gilles@poolp.org>
-
 MASTER_SITES =	https://github.com/poolpOrg/filter-senderscore/releases/download/${V}/
 
 # ISC

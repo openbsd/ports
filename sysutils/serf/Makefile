@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/01 18:18:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2021/03/08 13:59:28 sthen Exp $
 
 # try removing with next update
 BROKEN-aarch64= 	looks like the vendored golang.org/x/sys/unix is too old for aarch64
@@ -8,13 +8,13 @@ COMMENT=		decentralized service discovery and orchestration
 MODGO_MODNAME=		github.com/hashicorp/serf
 MODGO_VERSION=		v0.9.5
 DISTNAME=		hashicorp-serf-${MODGO_VERSION:S/v//}
+REVISION=		0
 
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		https://www.serfdom.io/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
-
 # MPLv2.0
 PERMIT_PACKAGE=	Yes
 

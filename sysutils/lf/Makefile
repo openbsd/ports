@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/02 19:48:13 paco Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:27 sthen Exp $
 
 COMMENT =	terminal file manager inspired by ranger written in Go
 
@@ -8,13 +8,13 @@ MODGO_VERSION =	v0.0.0-20210221224548-ced1ccd0c34b
 DISTNAME =	lf-${MODGO_VERSION}
 PKGNAME =	lf-${MODGO_VERSION:C/v([0-9.]*)-([0-9]{8}).*/\1.\2/}
 WRKDIST =	${WRKDIR}/github.com/gokcehan/lf@${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/gokcehan/lf
 
 MAINTAINER =	Chang, Chu-Kuan <cckuan@changchukuan.name>
-
 # MIT
 PERMIT_PACKAGE =	Yes
 

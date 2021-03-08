@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2021/03/08 10:34:20 pvk Exp $
+# $OpenBSD: Makefile,v 1.54 2021/03/08 13:59:26 sthen Exp $
 
 COMMENT=		secure secret storage
 
 GH_TAGNAME=		v1.6.3
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		vault
+REVISION=		0
 
 ### Vault UI
 MODGO_FLAGS=		-tags=ui
@@ -18,7 +19,6 @@ CATEGORIES=		security net
 HOMEPAGE=		https://www.vaultproject.io/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
-
 # MPLv2
 PERMIT_PACKAGE=		Yes
 
