@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2021/02/23 19:39:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2021/03/08 12:32:27 sthen Exp $
 
 COMMENT-main=		library handling all the details of proxy configuration
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
@@ -68,13 +68,14 @@ CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DWITH_NATUS:BOOL=OFF \
 			-DBIPR:BOOL=OFF
 
+# before bsd.port.arch.mk
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-webkit}
 CONFIGURE_ARGS +=	-DWITH_WEBKIT3:BOOL=ON
 .else
 CONFIGURE_ARGS +=	-DWITH_WEBKIT:BOOL=OFF
 .endif
-
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
