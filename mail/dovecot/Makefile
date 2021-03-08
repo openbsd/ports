@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.295 2021/02/23 14:27:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.296 2021/03/08 13:08:27 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -9,9 +9,8 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 # if backporting an update to stable, ensure all ports depending on
 # this are bumped and that -current is same/newer version than -stable
 V_MAJOR=	2.3
-V_DOVECOT=	2.3.13
+V_DOVECOT=	2.3.14
 EPOCH=		0
-REVISION=	1
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -22,6 +21,7 @@ PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
+DPB_PROPERTIES=	parallel
 
 SHARED_LIBS=	dovecot-compression 1.1 \
 		dovecot-dsync	1.0 \

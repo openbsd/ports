@@ -1,9 +1,0 @@
-Files to facilitate the generation of a self-signed
-certificate and key for Dovecot have been installed:
-/etc/ssl/dovecot-openssl.cnf (Edit this accordingly!)
-${PREFIX}/sbin/dovecot-mkcert.sh
-
-If this has been or will be accomplished by other means,
-use the following paths for the files:
-/etc/ssl/dovecotcert.pem
-/etc/ssl/private/dovecot.pem

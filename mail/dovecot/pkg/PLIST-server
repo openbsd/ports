@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.80 2021/01/07 17:17:55 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.81 2021/03/08 13:08:28 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -81,8 +81,6 @@ include/dovecot/config-request.h
 include/dovecot/config.h
 include/dovecot/connection.h
 include/dovecot/crc32.h
-include/dovecot/cydir-storage.h
-include/dovecot/cydir-sync.h
 include/dovecot/data-stack.h
 include/dovecot/db-checkpassword.h
 include/dovecot/db-dict.h
@@ -163,6 +161,7 @@ include/dovecot/fts-tokenizer-generic-private.h
 include/dovecot/fts-tokenizer-private.h
 include/dovecot/fts-tokenizer.h
 include/dovecot/fts-user.h
+include/dovecot/fuzzer.h
 include/dovecot/guid.h
 include/dovecot/hash-decl.h
 include/dovecot/hash-format.h
@@ -597,6 +596,7 @@ include/dovecot/submission-settings.h
 include/dovecot/subscription-file.h
 include/dovecot/syslog-util.h
 include/dovecot/test-common.h
+include/dovecot/test-mail-storage-common.h
 include/dovecot/test-subprocess.h
 include/dovecot/time-util.h
 include/dovecot/unichar.h
@@ -622,7 +622,6 @@ lib/dovecot/dict/
 @so lib/dovecot/dict/libdriver_sqlite.so
 lib/dovecot/doveadm/
 @so lib/dovecot/doveadm/lib10_doveadm_acl_plugin.so
-@so lib/dovecot/doveadm/lib10_doveadm_expire_plugin.so
 @so lib/dovecot/doveadm/lib10_doveadm_quota_plugin.so
 @so lib/dovecot/doveadm/lib20_doveadm_fts_plugin.so
 @so lib/dovecot/doveadm/libdoveadm_mail_crypt_plugin.so
@@ -632,17 +631,13 @@ lib/dovecot/dovecot-config
 @so lib/dovecot/lib02_lazy_expunge_plugin.so
 @so lib/dovecot/lib05_mail_crypt_acl_plugin.so
 @so lib/dovecot/lib05_pop3_migration_plugin.so
-@so lib/dovecot/lib05_snarf_plugin.so
 @so lib/dovecot/lib10_last_login_plugin.so
 @so lib/dovecot/lib10_mail_crypt_plugin.so
-@so lib/dovecot/lib10_mail_filter_plugin.so
 @so lib/dovecot/lib10_quota_plugin.so
 @so lib/dovecot/lib11_imap_quota_plugin.so
 @so lib/dovecot/lib11_trash_plugin.so
 @so lib/dovecot/lib15_notify_plugin.so
-@so lib/dovecot/lib20_autocreate_plugin.so
 @so lib/dovecot/lib20_charset_alias_plugin.so
-@so lib/dovecot/lib20_expire_plugin.so
 @so lib/dovecot/lib20_fts_plugin.so
 @so lib/dovecot/lib20_listescape_plugin.so
 @so lib/dovecot/lib20_mail_log_plugin.so
@@ -1084,6 +1079,7 @@ share/examples/dovecot/example-config/conf.d/10-mail.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/10-mail.conf
 share/examples/dovecot/example-config/conf.d/10-master.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/10-master.conf
+share/examples/dovecot/example-config/conf.d/10-metrics.conf
 share/examples/dovecot/example-config/conf.d/10-ssl.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/10-ssl.conf
 share/examples/dovecot/example-config/conf.d/15-lda.conf
