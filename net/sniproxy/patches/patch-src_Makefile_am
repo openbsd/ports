@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2021/03/08 08:11:15 kmos Exp $
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -1,5 +1,5 @@
+ AM_CPPFLAGS = $(LIBEV_CFLAGS) $(LIBPCRE_CFLAGS) $(LIBUDNS_CFLAGS)
+-AM_CFLAGS = -fno-strict-aliasing -Wall -Wextra -Wpedantic -Wwrite-strings
++AM_CFLAGS = -fno-strict-aliasing -Wall -Wextra -Wwrite-strings
+ 
+ sbin_PROGRAMS = sniproxy
+ 
