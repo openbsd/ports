@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/09 13:28:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/09 13:04:14 sthen Exp $
 
-V =		5.2.1
+V =		5.2.2
 COMMENT =	WAD composer for Doom, Heretic, Hexen, and Strife
 DISTNAME =	deutex-${V}
 CATEGORIES =	archivers
@@ -13,7 +13,11 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	c png z
 
 MASTER_SITES =	https://github.com/Doom-Utils/deutex/releases/download/v${V}/
-EXTRACT_SUFX =	.tar.xz
+EXTRACT_SUFX =	.tar.zst
+
+BUILD_DEPENDS += archivers/zstd
+EXTRACT_CASES += *.tar.zst) \
+	zstdcat <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- ${EXTRACT_FILES};;
 
 BUILD_DEPENDS =		textproc/asciidoc
 LIB_DEPENDS =		graphics/png
