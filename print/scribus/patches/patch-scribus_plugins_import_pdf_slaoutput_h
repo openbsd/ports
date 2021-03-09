@@ -1,6 +1,8 @@
-$OpenBSD: patch-scribus_plugins_import_pdf_slaoutput_h,v 1.2 2020/03/21 19:48:55 kili Exp $
+$OpenBSD: patch-scribus_plugins_import_pdf_slaoutput_h,v 1.3 2021/03/09 20:34:14 kili Exp $
 
 Fix for poppler-0.86.x from svn r23478.
+
+Fix for poppler-21.03.x from svn r24537 and r24538.
 
 Index: scribus/plugins/import/pdf/slaoutput.h
 --- scribus/plugins/import/pdf/slaoutput.h.orig
@@ -27,6 +29,15 @@ Index: scribus/plugins/import/pdf/slaoutput.h
  	static GBool annotations_callback(Annot *annota, void *user_data);
  	bool handleTextAnnot(Annot* annota, double xCoor, double yCoor, double width, double height);
  	bool handleLinkAnnot(Annot* annota, double xCoor, double yCoor, double width, double height);
+@@ -189,7 +195,7 @@ class SlaOutputDev : public OutputDev (public)
+ 	void stroke(GfxState *state) override;
+ 	void fill(GfxState *state) override;
+ 	void eoFill(GfxState *state) override;
+-	GBool tilingPatternFill(GfxState *state, Gfx *gfx, Catalog *cat, Object *str, POPPLER_CONST_070 double *pmat, int paintType, int tilingType, Dict *resDict, POPPLER_CONST_070 double *mat, POPPLER_CONST_070 double *bbox, int x0, int y0, int x1, int y1, double xStep, double yStep) override;
++	bool tilingPatternFill(GfxState *state, Gfx *gfx, Catalog *cat, GfxTilingPattern *tPat, const double *mat, int x0, int y0, int x1, int y1, double xStep, double yStep) override;
+ 	GBool functionShadedFill(GfxState * /*state*/, GfxFunctionShading * /*shading*/) override { qDebug() << "Function Shaded Fill";  return gFalse; }
+ 	GBool axialShadedFill(GfxState *state, GfxAxialShading *shading, double tMin, double tMax) override;
+ 	GBool axialShadedSupportExtend(GfxState *state, GfxAxialShading *shading)  override { return (shading->getExtend0() == shading->getExtend1()); }
 @@ -229,7 +235,7 @@ class SlaOutputDev : public OutputDev (public)
  
  	//----- image drawing

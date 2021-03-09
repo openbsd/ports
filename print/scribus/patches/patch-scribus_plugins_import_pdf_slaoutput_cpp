@@ -1,9 +1,11 @@
-$OpenBSD: patch-scribus_plugins_import_pdf_slaoutput_cpp,v 1.2 2020/03/21 19:48:55 kili Exp $
+$OpenBSD: patch-scribus_plugins_import_pdf_slaoutput_cpp,v 1.3 2021/03/09 20:34:14 kili Exp $
 
 
 Fix build with newer poppler, from archlinux
 
 Fix for poppler-0.86.x from svn r23478.
+
+Fix for poppler-21.03.x from svn r24537 and r24538.
 
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig
@@ -321,7 +323,29 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  }
  
  void SlaOutputDev::startPage(int pageNum, GfxState *, XRef *)
-@@ -3705,7 +3805,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
+@@ -2208,8 +2308,11 @@ GBool SlaOutputDev::patchMeshShadedFill(GfxState *stat
+ 	return gTrue;
+ }
+ 
+-GBool SlaOutputDev::tilingPatternFill(GfxState *state, Gfx * /*gfx*/, Catalog *cat, Object *str, POPPLER_CONST_070 double *pmat, int paintType, int tilingType, Dict *resDict, POPPLER_CONST_070 double *mat, POPPLER_CONST_070 double *bbox, int x0, int y0, int x1, int y1, double xStep, double yStep)
++bool SlaOutputDev::tilingPatternFill(GfxState *state, Gfx * /*gfx*/, Catalog *cat, GfxTilingPattern *tPat, const double *mat, int x0, int y0, int x1, int y1, double xStep, double yStep)
+ {
++	const double *bbox = tPat->getBBox();
++	const double *pmat = tPat->getMatrix();
++	Dict *resDict = tPat->getResDict();
+ 	PDFRectangle box;
+ 	Gfx *gfx;
+ 	QString id;
+@@ -2238,7 +2341,7 @@ GBool SlaOutputDev::tilingPatternFill(GfxState *state,
+ 
+ 	gfx = new Gfx(pdfDoc, this, resDict, &box, nullptr);
+ 	inPattern++;
+-	gfx->display(str);
++	gfx->display(tPat->getContentStream());
+ 	inPattern--;
+ 	gElements = m_groupStack.pop();
+ 	m_doc->m_Selection->clear();
+@@ -3705,7 +3808,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
  	return fNam;
  }
  
@@ -330,7 +354,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  {
  	if (! path)
  		return QString();
-@@ -3715,7 +3815,7 @@ QString SlaOutputDev::convertPath(GfxPath *path)
+@@ -3715,7 +3818,7 @@ QString SlaOutputDev::convertPath(GfxPath *path)
  
  	for (int i = 0; i < path->getNumSubpaths(); ++i)
  	{
@@ -339,7 +363,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  		if (subpath->getNumPoints() > 0)
  		{
  			output += QString("M %1 %2").arg(subpath->getX(0)).arg(subpath->getY(0));
-@@ -3917,6 +4017,46 @@ QString SlaOutputDev::UnicodeParsedString(POPPLER_CONS
+@@ -3917,6 +4020,46 @@ QString SlaOutputDev::UnicodeParsedString(POPPLER_CONS
  			u = s1->getChar(i) & 0xff;
  			++i;
  		}
