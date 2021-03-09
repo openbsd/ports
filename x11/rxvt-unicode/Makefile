@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2020/12/23 13:31:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/03/09 04:17:05 jcs Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.22
-REVISION =	11
+REVISION =	12
 CATEGORIES =	x11
 FIX_EXTRACT_PERMISSIONS =	Yes
 

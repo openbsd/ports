@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_rxvtperl_xs,v 1.1 2021/03/09 04:17:05 jcs Exp $
+
+http://lists.schmorp.de/pipermail/rxvt-unicode/2020q2/002583.html
+
+http://cvs.schmorp.de/rxvt-unicode/src/rxvtperl.xs?r1=1.246&r2=1.247
+
+Index: src/rxvtperl.xs
+--- src/rxvtperl.xs.orig
++++ src/rxvtperl.xs
+@@ -372,6 +372,9 @@ struct rxvt_perl_interp rxvt_perl;
+ 
+ static PerlInterpreter *perl;
+ 
++#if 0 /* we are not a library anymore, so doing this is just not worth it */
++/*THINK/TODO: this has the side effect of, of course, not calling destructors. */
++/* but therse are not guaranteed anyway... */
+ rxvt_perl_interp::~rxvt_perl_interp ()
+ {
+   if (perl)
+@@ -381,6 +384,7 @@ rxvt_perl_interp::~rxvt_perl_interp ()
+       PERL_SYS_TERM ();
+     }
+ }
++#endif
+ 
+ void
+ rxvt_perl_interp::init ()
