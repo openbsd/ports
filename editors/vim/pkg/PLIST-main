@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.45 2021/02/22 16:59:53 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.46 2021/03/09 17:58:33 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk3%%
 bin/ex
@@ -9,10 +9,6 @@ bin/view
 bin/vimdiff
 bin/vimtutor
 @bin bin/xxd
-@man man/man1/ex.1
-@man man/man1/rview.1
-@man man/man1/rvim.1
-@man man/man1/view.1
 @man man/man1/vim.1
 @man man/man1/vimdiff.1
 @man man/man1/vimtutor.1
@@ -172,6 +168,7 @@ share/vim/${P}/compiler/rustc.vim
 share/vim/${P}/compiler/sass.vim
 share/vim/${P}/compiler/se.vim
 share/vim/${P}/compiler/shellcheck.vim
+share/vim/${P}/compiler/sml.vim
 share/vim/${P}/compiler/splint.vim
 share/vim/${P}/compiler/stack.vim
 share/vim/${P}/compiler/standard.vim
