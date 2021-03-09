@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/27 18:08:18 bket Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/03/09 18:10:32 martin Exp $
 @conflict py-siphon-*
 @pkgpath net/py-siphon
 lib/python${MODPY_VERSION}/site-packages/siphon/
@@ -48,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/siphon/metadata.py
 lib/python${MODPY_VERSION}/site-packages/siphon/ncss.py
 lib/python${MODPY_VERSION}/site-packages/siphon/ncss_dataset.py
 lib/python${MODPY_VERSION}/site-packages/siphon/radarserver.py
+lib/python${MODPY_VERSION}/site-packages/siphon/simplewebservice/
 lib/python${MODPY_VERSION}/site-packages/siphon/simplewebservice/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/siphon/simplewebservice/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/siphon/simplewebservice/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

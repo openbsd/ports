@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/09 18:10:32 martin Exp $
 
 COMMENT=	download data from remote data services (such as THREDDS)
 
-MODPY_EGG_VERSION=	0.8.0
+MODPY_EGG_VERSION=	0.9
 DISTNAME=		siphon-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
-REVISION=		2
 
 HOMEPAGE=		https://unidata.github.io/siphon/
 
@@ -31,6 +30,8 @@ RUN_DEPENDS+=	devel/py-protobuf${MODPY_FLAVOR} \
 
 MODPY_PYTEST=	Yes
 TEST_DEPENDS=	devel/py-coveralls${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR}
+		devel/py-test-cov${MODPY_FLAVOR} \
+		math/py-netcdf4 \
+		www/py-vcrpy${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
