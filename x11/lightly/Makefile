@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/07 05:01:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/09 16:46:05 rsadowski Exp $
 
 COMMENT =	modern style for Qt applications
 
@@ -25,7 +25,8 @@ WANTLIB += Qt5X11Extras Qt5Xml c kdecorations2 m xcb
 MODULES =		devel/kf5
 EXTRACT_SUFX =		.tar.gz
 
-BUILD_DEPENDS =		devel/kf5/kpackage
+BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/kf5/kpackage
 
 RUN_DEPENDS =		x11/gtk+3,-guic \
 			devel/kf5/kpackage \
