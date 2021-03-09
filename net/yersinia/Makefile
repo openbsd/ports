@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/08 17:08:19 matthieu Exp $
+# $OpenBSD: Makefile,v 1.13 2021/03/09 10:22:54 matthieu Exp $
 
 COMMENT =	framework for analysis of layer 2 network protocols
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB =	c curses panel pcap pthread lib/libnet-1.1/net=11
 
+BUILD_DEPENDS = devel/glib2
 LIB_DEPENDS =	net/libnet/1.1
 
 AUTOCONF_VERSION = 	2.69
