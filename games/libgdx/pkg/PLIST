@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/24 22:21:26 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/09 09:35:06 sthen Exp $
 bin/libgdx-run
 bin/libgdx-setup
 share/libgdx/
@@ -1182,8 +1182,8 @@ share/libgdx/com/badlogic/gdx/utils/ArrayMap$Keys.class
 share/libgdx/com/badlogic/gdx/utils/ArrayMap$Values.class
 share/libgdx/com/badlogic/gdx/utils/ArrayMap.class
 share/libgdx/com/badlogic/gdx/utils/AtomicQueue.class
-share/libgdx/com/badlogic/gdx/utils/Base${M_ARCH}Coder$CharMap.class
-share/libgdx/com/badlogic/gdx/utils/Base${M_ARCH}Coder.class
+share/libgdx/com/badlogic/gdx/utils/Base64Coder$CharMap.class
+share/libgdx/com/badlogic/gdx/utils/Base64Coder.class
 share/libgdx/com/badlogic/gdx/utils/BaseJsonReader.class
 share/libgdx/com/badlogic/gdx/utils/BinaryHeap$Node.class
 share/libgdx/com/badlogic/gdx/utils/BinaryHeap.class
