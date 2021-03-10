@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/12/05 07:44:10 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/03/10 22:05:08 sebastia Exp $
 ${GEM_BIN}/eyaml${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/test.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
