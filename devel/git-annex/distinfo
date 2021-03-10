@@ -26,6 +26,7 @@ SHA256 (hackage/assoc-1.0.2.tar.gz) = 2JiNxuhxjHo0VlFbdpyTNq7uxzDPhvxRdSR5af+PFE
 SHA256 (hackage/assoc-1.0.2_1.cabal) = qCTk9hVGmietlJ2/SQe6JYvWtFne6+wAUkx7yz9lzJ8=
 SHA256 (hackage/async-2.2.3.tar.gz) = RnrzoAN5R6UjLs9fTvvUzyEYqqIxBWbX9ArIKw4yk1w=
 SHA256 (hackage/attoparsec-0.13.2.5.tar.gz) = IeDzjqoZV79HEnavoXZRwSWjiSRXXxLCy9L6U0tFaG8=
+SHA256 (hackage/attoparsec-0.13.2.5_1.cabal) = fIgZXD8yQ8ar41bBvIcs9AgYqMew4mGo+OaGj+QoGaA=
 SHA256 (hackage/attoparsec-iso8601-1.0.2.0.tar.gz) = ApUtd8eOlXEO6oVfTobKBIq5/ag8bAjdkhXyGkBgT5g=
 SHA256 (hackage/auto-update-0.1.6.tar.gz) = 9OAj3IcTw4fs8g2FEkdZf9ASyr6jhyMQs16REQXrZsQ=
 SHA256 (hackage/aws-0.22.tar.gz) = GS1GOX2oLbs0aielgzgIwdHNs5/Sz3jGp/rAeCtJbtA=
@@ -43,7 +44,7 @@ SHA256 (hackage/binary-orphans-1.0.1.tar.gz) = QxrUC42BK62hhsaJNcCmmqKQTKO8V9lX4
 SHA256 (hackage/binary-orphans-1.0.1_5.cabal) = xsnT1IKzC1MrVkFLzDlYhySaMLEyWnhzspxl9/UZTcA=
 SHA256 (hackage/blaze-builder-0.4.2.1.tar.gz) = bmiJvJw/+SBioX84JdzBsoUQ0mEzTU1OF3Iy2QTqCwY=
 SHA256 (hackage/blaze-html-0.9.1.2.tar.gz) = YFA/QlRsbBuVQBTRiOoTfkPXTc/9K/YVfBE/2RoMOUw=
-SHA256 (hackage/blaze-markup-0.8.2.7.tar.gz) = i2SJ7UItmOQ3L0G+H0D3crjU7ZJfMgOza+QHjZGMjuQ=
+SHA256 (hackage/blaze-markup-0.8.2.8.tar.gz) = Q/w/aHLcjRvo0P4JG9R3UTm0IXmYfzPWSQp8Xx4Ho0k=
 SHA256 (hackage/bloomfilter-2.0.1.0.tar.gz) = bF4NNX1dOe/peuJ3bo+1M/pQwcBTl8e4UCCw8JiteQ8=
 SHA256 (hackage/bsb-http-chunked-0.0.0.4.tar.gz) = FIMJ4j64smHB3jdHEjctYtjI3I7lBMOSgJx+wzwKDnw=
 SHA256 (hackage/bsb-http-chunked-0.0.0.4_3.cabal) = rdUw5pXqMFi/T3FWocqFZT/zY1uH7G0b6MSJFkUZD5Y=
@@ -54,7 +55,7 @@ SHA256 (hackage/cabal-doctest-1.0.8_2.cabal) = i9HWFPtl8NUmCdowv45exxpLat+P9WEO2
 SHA256 (hackage/call-stack-0.3.0.tar.gz) = uA6N4rh/AZIrI7MoZVrS+EP0JJXz4QM66Qeq3mA8cWo=
 SHA256 (hackage/case-insensitive-1.2.1.0.tar.gz) = KW3BfgxfPfs9gs7YPkycRMM47N50myeLbq5RLx0E5AY=
 SHA256 (hackage/cassava-0.5.2.0.tar.gz) = sw0q1YlFGeNkEwwFEPFnpP+vDgih4kyaZCOMhVv+AQY=
-SHA256 (hackage/cassava-0.5.2.0_2.cabal) = qn4pbalXPgVnqRYKmXo51Iw8ds6TczteEMQwAyekCPg=
+SHA256 (hackage/cassava-0.5.2.0_3.cabal) = dyx0j9vn/nYxpWGZonOFdfPPXXxdCLEbFXN6YYzRCUM=
 SHA256 (hackage/cereal-0.5.8.1.tar.gz) = LZ6IrJNLnrwFgJfHIBH/WfPxRhdjEOHJV6Dkz2NoG9c=
 SHA256 (hackage/cipher-aes-0.2.11.tar.gz) = 07FxiVaYxz2iTXzpdUP3JdJmN/A43mcMD9QBLKf5UBU=
 SHA256 (hackage/clientsession-0.9.1.2.tar.gz) = WRWtxN4m0qiwPxpEW6wLD10QpbA4Ck7tcbeaIKcn0Gg=
@@ -63,7 +64,7 @@ SHA256 (hackage/code-page-0.2.1.tar.gz) = svkOGcYe2Kb/cpX38SPUqZE8eQ1M8sYCm8KZKT
 SHA256 (hackage/colour-2.3.5.tar.gz) = O41HGXlhfc58GTUjdDyXgt9jQz2Oh+PvbZeSLg2hBOc=
 SHA256 (hackage/comonad-5.0.8.tar.gz) = 72zfLMKSzEPuaqlsWBsjX96oq0Sgv/sk3HmuKy7zPRM=
 SHA256 (hackage/concurrent-output-1.10.12.tar.gz) = h/ihz1Tm6vFGdQ+mvxGqJiDaSWBzy2w9yPaXFp66PCA=
-SHA256 (hackage/conduit-1.3.4.tar.gz) = nwKDGq3qJEicHRggAY7a3W2XAA4R810F2hP6jCFkYPA=
+SHA256 (hackage/conduit-1.3.4.1.tar.gz) = hXQ7jV8tV3nMt0WbWpGcV4ZwevI/56Bl0oHujm3CJvE=
 SHA256 (hackage/conduit-extra-1.3.5.tar.gz) = imSN7iA8AeZH+jhr/npbKTzlUvi1yrnA3Vy3HHzQEtk=
 SHA256 (hackage/connection-0.3.1.tar.gz) = XXWVicUyw02Hv8T2/Lcyv1W1WpNVnTuUIp6DR6FTddk=
 SHA256 (hackage/connection-0.3.1_1.cabal) = ZdocBVYQCVczvNIo2F3/gIBLI6XRj+3plKD5/NGwwSE=
@@ -102,8 +103,6 @@ SHA256 (hackage/edit-distance-0.2.2.1.tar.gz) = PoiF7i9WrU2pQPBDro+YHuL+M2tejkuj
 SHA256 (hackage/edit-distance-0.2.2.1_1.cabal) = TTOknNOD1QrwkPG4iGQtEBFuQ4CfnaYCPZ/G9n0mVu4=
 SHA256 (hackage/email-validate-2.3.2.13.tar.gz) = NYbB8D+MCfh7V9s4AFcDyCeMnOrd/7kkohxznlYpCXI=
 SHA256 (hackage/entropy-0.4.1.6.tar.gz) = rcdZ/3VqbXGkUEIrpREXdjL0OjO/ZzkB/SM09T74v2I=
-SHA256 (hackage/exceptions-0.10.4.tar.gz) = TQv7Q1XP/NZ9MAgR351f5E6jWU7WN1B5W/wfeXq9hM8=
-SHA256 (hackage/exceptions-0.10.4_1.cabal) = FynvJqYRrniqWM3TQZKv9xDLqm1jHdBC3ftjVW0AtSw=
 SHA256 (hackage/fast-logger-3.0.3.tar.gz) = V2OgMhBT7Kui0QQIALrpmI9SuBP7CNUnbqfOEOPS8Gg=
 SHA256 (hackage/feed-1.3.0.1.tar.gz) = kmEfUr1OpSQ2q2QUQUO8Ndt6/Oj9dpRGf1BTmdemvjk=
 SHA256 (hackage/feed-1.3.0.1_1.cabal) = jR5pYBwG8MK5D64QKsoY8XO2cQDYIOM+0vOgz5V2jnI=
@@ -278,7 +277,7 @@ SHA256 (hackage/x509-store-1.6.7.tar.gz) = l4Y1bIv99jHqAYwyRNCFTG2yyyTlg4kepVOWF
 SHA256 (hackage/x509-store-1.6.7_1.cabal) = pwey9Lo8Auus1+zRnp8MCyEbWCcDKcLHdaLB3yaCAhI=
 SHA256 (hackage/x509-system-1.6.6.tar.gz) = QNzarj7GfzjAjZbUNluQHrisDFkL15cutCnTfViqRBk=
 SHA256 (hackage/x509-validation-1.6.11.tar.gz) = +UMhy8xKU0rfWImuaVDzZz44tiuJtpcLR39QLOmH0Zs=
-SHA256 (hackage/xml-conduit-1.9.0.0.tar.gz) = HLS4w1cdwETQAB418sPjoo9ZG7a7Sl737lkgdETYp9w=
+SHA256 (hackage/xml-conduit-1.9.1.0.tar.gz) = iqXZkCB2NkJTeoAGe7xgAYKNhVwGhsGes4FbXHp64Ck=
 SHA256 (hackage/xml-hamlet-0.5.0.1.tar.gz) = kg7Zc2EXwJvOwEEzvqoU3AXXxBPuFPScaqlwfrxkMEs=
 SHA256 (hackage/xml-types-0.3.8.tar.gz) = 2tXkzmArfR9L43wM/ZmiYaRXN0a/2A2RfclVty2oTIA=
 SHA256 (hackage/xss-sanitize-0.3.6.tar.gz) = s4XupWUseYtwHGJ9zosyfD1sv9jJLh4Y5xGIYtTQ4rQ=
@@ -317,6 +316,7 @@ SIZE (hackage/assoc-1.0.2.tar.gz) = 3047
 SIZE (hackage/assoc-1.0.2_1.cabal) = 1205
 SIZE (hackage/async-2.2.3.tar.gz) = 14056
 SIZE (hackage/attoparsec-0.13.2.5.tar.gz) = 163876
+SIZE (hackage/attoparsec-0.13.2.5_1.cabal) = 6171
 SIZE (hackage/attoparsec-iso8601-1.0.2.0.tar.gz) = 4427
 SIZE (hackage/auto-update-0.1.6.tar.gz) = 10929
 SIZE (hackage/aws-0.22.tar.gz) = 106122
@@ -334,7 +334,7 @@ SIZE (hackage/binary-orphans-1.0.1.tar.gz) = 4425
 SIZE (hackage/binary-orphans-1.0.1_5.cabal) = 2116
 SIZE (hackage/blaze-builder-0.4.2.1.tar.gz) = 60704
 SIZE (hackage/blaze-html-0.9.1.2.tar.gz) = 81617
-SIZE (hackage/blaze-markup-0.8.2.7.tar.gz) = 14571
+SIZE (hackage/blaze-markup-0.8.2.8.tar.gz) = 14519
 SIZE (hackage/bloomfilter-2.0.1.0.tar.gz) = 22100
 SIZE (hackage/bsb-http-chunked-0.0.0.4.tar.gz) = 6630
 SIZE (hackage/bsb-http-chunked-0.0.0.4_3.cabal) = 2678
@@ -345,7 +345,7 @@ SIZE (hackage/cabal-doctest-1.0.8_2.cabal) = 1491
 SIZE (hackage/call-stack-0.3.0.tar.gz) = 2544
 SIZE (hackage/case-insensitive-1.2.1.0.tar.gz) = 53609
 SIZE (hackage/cassava-0.5.2.0.tar.gz) = 37411
-SIZE (hackage/cassava-0.5.2.0_2.cabal) = 5965
+SIZE (hackage/cassava-0.5.2.0_3.cabal) = 5974
 SIZE (hackage/cereal-0.5.8.1.tar.gz) = 20114
 SIZE (hackage/cipher-aes-0.2.11.tar.gz) = 33939
 SIZE (hackage/clientsession-0.9.1.2.tar.gz) = 7991
@@ -354,7 +354,7 @@ SIZE (hackage/code-page-0.2.1.tar.gz) = 6859
 SIZE (hackage/colour-2.3.5.tar.gz) = 20485
 SIZE (hackage/comonad-5.0.8.tar.gz) = 15227
 SIZE (hackage/concurrent-output-1.10.12.tar.gz) = 22564
-SIZE (hackage/conduit-1.3.4.tar.gz) = 88861
+SIZE (hackage/conduit-1.3.4.1.tar.gz) = 88893
 SIZE (hackage/conduit-extra-1.3.5.tar.gz) = 33189
 SIZE (hackage/connection-0.3.1.tar.gz) = 9051
 SIZE (hackage/connection-0.3.1_1.cabal) = 1554
@@ -393,8 +393,6 @@ SIZE (hackage/edit-distance-0.2.2.1.tar.gz) = 13228
 SIZE (hackage/edit-distance-0.2.2.1_1.cabal) = 2351
 SIZE (hackage/email-validate-2.3.2.13.tar.gz) = 9635
 SIZE (hackage/entropy-0.4.1.6.tar.gz) = 9464
-SIZE (hackage/exceptions-0.10.4.tar.gz) = 20819
-SIZE (hackage/exceptions-0.10.4_1.cabal) = 2796
 SIZE (hackage/fast-logger-3.0.3.tar.gz) = 12077
 SIZE (hackage/feed-1.3.0.1.tar.gz) = 107230
 SIZE (hackage/feed-1.3.0.1_1.cabal) = 4036
@@ -569,7 +567,7 @@ SIZE (hackage/x509-store-1.6.7.tar.gz) = 12689
 SIZE (hackage/x509-store-1.6.7_1.cabal) = 1781
 SIZE (hackage/x509-system-1.6.6.tar.gz) = 3419
 SIZE (hackage/x509-validation-1.6.11.tar.gz) = 19752
-SIZE (hackage/xml-conduit-1.9.0.0.tar.gz) = 40139
+SIZE (hackage/xml-conduit-1.9.1.0.tar.gz) = 42089
 SIZE (hackage/xml-hamlet-0.5.0.1.tar.gz) = 9270
 SIZE (hackage/xml-types-0.3.8.tar.gz) = 4054
 SIZE (hackage/xss-sanitize-0.3.6.tar.gz) = 11655

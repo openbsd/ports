@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/08 20:16:23 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/10 01:34:06 gnezdo Exp $
 
 COMMENT =	use git to manage files without checking them in
 
@@ -27,6 +27,7 @@ MAKE_ENV =	LC_ALL=en_US.UTF-8
 
 MODCABAL_STEM =		git-annex
 MODCABAL_VERSION =	8.20210223
+REVISION =		0
 
 MAN1_STAGING_DIR = ${WRKBUILD}/man1_staging
 
@@ -71,7 +72,7 @@ MODCABAL_MANIFEST = \
 	asn1-types	0.3.4	0	\
 	assoc	1.0.2	1	\
 	async	2.2.3	0	\
-	attoparsec	0.13.2.5	0	\
+	attoparsec	0.13.2.5	1	\
 	attoparsec-iso8601	1.0.2.0	0	\
 	auto-update	0.1.6	0	\
 	aws	0.22	0	\
@@ -86,7 +87,7 @@ MODCABAL_MANIFEST = \
 	binary-orphans	1.0.1	5	\
 	blaze-builder	0.4.2.1	0	\
 	blaze-html	0.9.1.2	0	\
-	blaze-markup	0.8.2.7	0	\
+	blaze-markup	0.8.2.8	0	\
 	bloomfilter	2.0.1.0	0	\
 	bsb-http-chunked	0.0.0.4	3	\
 	byteable	0.1.1	0	\
@@ -94,7 +95,7 @@ MODCABAL_MANIFEST = \
 	cabal-doctest	1.0.8	2	\
 	call-stack	0.3.0	0	\
 	case-insensitive	1.2.1.0	0	\
-	cassava	0.5.2.0	2	\
+	cassava	0.5.2.0	3	\
 	cereal	0.5.8.1	0	\
 	cipher-aes	0.2.11	0	\
 	clientsession	0.9.1.2	0	\
@@ -103,7 +104,7 @@ MODCABAL_MANIFEST = \
 	colour	2.3.5	0	\
 	comonad	5.0.8	0	\
 	concurrent-output	1.10.12	0	\
-	conduit	1.3.4	0	\
+	conduit	1.3.4.1	0	\
 	conduit-extra	1.3.5	0	\
 	connection	0.3.1	1	\
 	contravariant	1.5.3	0	\
@@ -133,7 +134,6 @@ MODCABAL_MANIFEST = \
 	edit-distance	0.2.2.1	1	\
 	email-validate	2.3.2.13	0	\
 	entropy	0.4.1.6	0	\
-	exceptions	0.10.4	1	\
 	fast-logger	3.0.3	0	\
 	feed	1.3.0.1	1	\
 	file-embed	0.0.13.0	0	\
@@ -272,7 +272,7 @@ MODCABAL_MANIFEST = \
 	x509-store	1.6.7	1	\
 	x509-system	1.6.6	0	\
 	x509-validation	1.6.11	0	\
-	xml-conduit	1.9.0.0	0	\
+	xml-conduit	1.9.1.0	0	\
 	xml-hamlet	0.5.0.1	0	\
 	xml-types	0.3.8	0	\
 	xss-sanitize	0.3.6	0	\
