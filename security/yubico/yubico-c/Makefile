@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/11 22:54:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/10 22:21:07 sthen Exp $
 
 COMMENT=	low-level C software development kit for the Yubico YubiKey
 
 YK_PROJECT=	yubico-c
 DISTNAME=	libyubikey-1.13
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  yubikey              0.0      # 1.4
 

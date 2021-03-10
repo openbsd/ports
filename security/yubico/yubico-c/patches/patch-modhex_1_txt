@@ -1,0 +1,24 @@
+$OpenBSD: patch-modhex_1_txt,v 1.1 2021/03/10 22:21:07 sthen Exp $
+
+From b8fcce0db1bf97be6c690d1aee629230b52428b0 Mon Sep 17 00:00:00 2001
+From: Klas Lindfors <klas@yubico.com>
+Date: Thu, 26 Mar 2015 14:31:04 +0100
+Subject: [PATCH] add a note about the modhex alphabet to the modhex manpage
+
+Index: modhex.1.txt
+--- modhex.1.txt.orig
++++ modhex.1.txt
+@@ -45,6 +45,13 @@ Decode ModHex data "nghgibhv" and print hex-encode dat
+ 
+   modhex -d -h nghgibhv
+ 
++MODHEX ALPHABET
++---------------
++The modhex alphabet is a base16 alphabet just as hex, they map as follows:
++
++ 0 1 2 3 4 5 6 7 8 9 a b c d e f
++ c b d e f g h i j k l n r t u v
++
+ SEE ALSO
+ ---------
+ YubiKeys can be obtained from Yubico: http://www.yubico.com/
