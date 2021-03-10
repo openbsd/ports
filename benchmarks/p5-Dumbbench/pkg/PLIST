@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/08 01:16:32 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/10 15:14:51 bluhm Exp $
 bin/dumbbench
 ${P5SITE}/Benchmark/
 ${P5SITE}/Benchmark/Dumb.pm
@@ -19,3 +19,8 @@ ${P5SITE}/Dumbbench/Stats.pm
 @man man/man3p/Dumbbench::Instance::Cmd.3p
 @man man/man3p/Dumbbench::Instance::PerlEval.3p
 @man man/man3p/Dumbbench::Instance::PerlSub.3p
+share/examples/p5-Dumbbench/
+share/examples/p5-Dumbbench/TryPackage.pm
+share/examples/p5-Dumbbench/cmpthese.pl
+share/examples/p5-Dumbbench/negative_rate.pl
+share/examples/p5-Dumbbench/timethese.pl
