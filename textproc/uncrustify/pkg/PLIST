@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/21 07:17:08 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/03/10 15:40:29 daniel Exp $
 @bin bin/uncrustify
 @man man/man1/uncrustify.1
 share/doc/uncrustify/
+share/doc/uncrustify/AUTHORS
+share/doc/uncrustify/BUGS
+share/doc/uncrustify/COPYING
+share/doc/uncrustify/ChangeLog
+share/doc/uncrustify/HELP
+share/doc/uncrustify/README.md
 share/doc/uncrustify/examples/
 share/doc/uncrustify/examples/MS-calling_conventions.cfg
 share/doc/uncrustify/examples/amxmodx.cfg

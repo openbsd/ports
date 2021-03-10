@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/03/10 15:40:29 daniel Exp $
 
 COMMENT =		source code beautifier
 
-DISTNAME =		uncrustify-0.71.0
+DISTNAME =		uncrustify-0.72.0
 
 CATEGORIES =		textproc devel
 
@@ -21,7 +21,6 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =	No
 
