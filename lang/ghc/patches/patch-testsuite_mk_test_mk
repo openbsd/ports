@@ -1,4 +1,4 @@
-$OpenBSD: patch-testsuite_mk_test_mk,v 1.10 2019/09/30 11:44:18 kili Exp $
+$OpenBSD: patch-testsuite_mk_test_mk,v 1.11 2021/03/10 01:33:40 gnezdo Exp $
 
 Fix detection of available library ways in case the library-dirs:
 field of ghc-prim contains more than one entry (only checks file
@@ -11,8 +11,8 @@ tests are failing).
 Index: testsuite/mk/test.mk
 --- testsuite/mk/test.mk.orig
 +++ testsuite/mk/test.mk
-@@ -86,7 +86,7 @@ else
- RUNTEST_OPTS += -e ghc_with_native_codegen=0
+@@ -93,7 +93,7 @@ else
+ RUNTEST_OPTS += -e ghc_with_native_codegen=False
  endif
  
 -GHC_PRIM_LIBDIR := $(subst library-dirs: ,,$(shell "$(GHC_PKG)" field ghc-prim library-dirs --simple-output))
@@ -20,19 +20,19 @@ Index: testsuite/mk/test.mk
  HAVE_VANILLA := $(shell if [ -f $(subst \,/,$(GHC_PRIM_LIBDIR))/GHC/PrimopWrappers.hi ]; then echo YES; else echo NO; fi)
  HAVE_DYNAMIC := $(shell if [ -f $(subst \,/,$(GHC_PRIM_LIBDIR))/GHC/PrimopWrappers.dyn_hi ]; then echo YES; else echo NO; fi)
  HAVE_PROFILING := $(shell if [ -f $(subst \,/,$(GHC_PRIM_LIBDIR))/GHC/PrimopWrappers.p_hi ]; then echo YES; else echo NO; fi)
-@@ -171,16 +171,7 @@ else
- RUNTEST_OPTS += -e ghc_with_smp=0
+@@ -178,16 +178,7 @@ else
+ RUNTEST_OPTS += -e ghc_with_smp=False
  endif
  
 -ifeq "$(LLC)" ""
- RUNTEST_OPTS += -e ghc_with_llvm=0
+ RUNTEST_OPTS += -e ghc_with_llvm=False
 -else ifeq "$(TargetARCH_CPP)" "powerpc"
--RUNTEST_OPTS += -e ghc_with_llvm=0
+-RUNTEST_OPTS += -e ghc_with_llvm=False
 -else ifneq "$(LLC)" "llc"
 -# If we have a real detected value for LLVM, then it really ought to work
--RUNTEST_OPTS += -e ghc_with_llvm=1
+-RUNTEST_OPTS += -e ghc_with_llvm=True
 -else
--RUNTEST_OPTS += -e ghc_with_llvm=0
+-RUNTEST_OPTS += -e ghc_with_llvm=False
 -endif
  
  ifeq "$(WINDOWS)" "YES"

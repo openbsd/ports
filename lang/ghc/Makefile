@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2021/03/07 19:29:41 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.182 2021/03/10 01:33:40 gnezdo Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -10,9 +10,9 @@ COMMENT =		compiler for the functional language Haskell
 
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
-GHC_VERSION =		8.6.4
+
+GHC_VERSION =		8.10.3
 DISTNAME =		ghc-${GHC_VERSION}
-REVISION =		9
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -67,33 +67,33 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 # Substvars for all libraries, assuming that ghc-boot, ghc-boot-th,
 # ghc-heap and ghci will always have the same version number as ghc.
 GHC_ITEMS = \
-	CABAL			2.4.0.1		\
-	ARRAY			0.5.3.0		\
-	BASE			4.12.0.0	\
-	BINARY			0.8.6.0		\
-	BYTESTRING		0.10.8.2	\
-	CONTAINERS		0.6.0.1		\
-	DEEPSEQ			1.4.4.0		\
-	DIRECTORY		1.3.3.0		\
-	FILEPATH		1.4.2.1		\
-	GHC			8.6.4		\
-	GHC_COMPACT		0.1.0.0		\
-	GHC_PRIM		0.5.3		\
-	HASKELINE		0.7.4.3		\
-	HPC			0.6.0.3		\
-	INTEGER_GMP		1.0.2.0		\
-	LIBISERV		8.6.3		\
-	MTL			2.2.2		\
-	PARSEC			3.1.13.0	\
-	PRETTY			1.1.3.6		\
-	PROCESS			1.6.5.0		\
-	STM			2.5.0.0		\
-	TEMPLATE_HASKELL	2.14.0.0	\
-	TERMINFO		0.4.1.2		\
-	TEXT			1.2.3.1		\
-	TIME			1.8.0.2		\
-	TRANSFORMERS		0.5.6.2		\
-	UNIX			2.7.2.2		\
+        CABAL			3.2.1.0          \
+        ARRAY			0.5.4.0    	 \
+        BASE			4.14.1.0   	 \
+        BINARY			0.8.8.0 	 \
+        BYTESTRING		0.10.12.0	 \
+        CONTAINERS		0.6.2.1		 \
+        DEEPSEQ			1.4.4.0		 \
+        DIRECTORY		1.3.6.0		 \
+        EXCEPTIONS		0.10.4		 \
+        FILEPATH		1.4.2.1		 \
+        GHC			8.10.3		 \
+        GHC_COMPACT		0.1.0.0		 \
+        GHC_PRIM		0.6.1		 \
+        HASKELINE		0.8.0.1		 \
+        HPC			0.6.1.0		 \
+        INTEGER_GMP		1.0.3.0		 \
+        MTL			2.2.2		 \
+        PARSEC			3.1.14.0	 \
+        PRETTY			1.1.3.6		 \
+        PROCESS			1.6.9.0		 \
+        STM			2.5.0.0		 \
+	TEMPLATE-HASKELL	2.16.0.0	 \
+	TERMINFO		0.4.1.4		 \
+	TEXT			1.2.4.1		 \
+	TIME			1.9.3		 \
+	TRANSFORMERS		0.5.6.2		 \
+	UNIX			2.7.2.2		 \
 	XHTML			3000.2.2.1
 
 .for _i _v in ${GHC_ITEMS}
@@ -118,6 +118,8 @@ CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 # Don't autodetect ld.lld. It fails at some point during the build
 # with /usr/bin/ld.lld: error: cannot preempt symbol: memcpy
 CONFIGURE_ARGS +=	--disable-ld-override
+
+CONFIGURE_ENV += SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
 # Do not pick up gpatch
 CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch
@@ -144,8 +146,16 @@ post-extract:
 
 BOOTSTRAP_SHLIBS =	${WRKDIR}/ghc-${BIN_VER}-shlibs-${MACHINE_ARCH}
 
+# Disables haddock as it runs out of memory on i386.
+.if ${MACHINE_ARCH:Mi386}
+HADDOCK_DOCS =	NO
+PKG_ARGS =	-Dno_i386=0
+.else
+HADDOCK_DOCS =	YES
+PKG_ARGS =	-Dno_i386=1
+.endif
+
 post-patch:
-# - Install a precompiled binary.
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
 	CONFIGURE_ENV=${CONFIGURE_ENV} \
@@ -153,11 +163,6 @@ post-patch:
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
-	# HACK for i386 until we have new bootstrappers. This is needed
-	# to let the bootstrapper use -Wl,-znotext building things like
-	# utils/hsc2hs.
-	sed -ie '/"C compiler flags"/s/-U__i686/-Wl,-znotext &/' \
-	    ${WRKDIR}/bootstrap/lib/ghc/settings
 # - Create some wrapper scripts setting LD_LIBRARY_PATH
 	cd ${WRKDIR}/bin && \
 	for f in $$(ls ../bootstrap/bin); do \
@@ -169,9 +174,10 @@ post-patch:
 	done
 	cp ${WRKSRC}/mk/build.mk{.sample,}
 	echo libraries/base_CONFIGURE_OPTS+=--configure-option=--with-libcharset=no >> ${WRKSRC}/mk/build.mk
+	echo HADDOCK_DOCS=${HADDOCK_DOCS} >> ${WRKSRC}/mk/build.mk
 
 do-test:
-	ulimit -c 0 && \
+	ulimit -c 0 -n 1024 && \
 	cd ${WRKSRC}/testsuite/tests && \
 	exec ${SETENV} ${MAKE_ENV} LC_CTYPE=en_US.UTF-8 \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} \

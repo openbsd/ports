@@ -1,11 +1,11 @@
-$OpenBSD: patch-libraries_process_include_runProcess_h,v 1.4 2018/01/22 00:42:30 kili Exp $
+$OpenBSD: patch-libraries_process_include_runProcess_h,v 1.5 2021/03/10 01:33:40 gnezdo Exp $
 
 vfork is for terrorists
 
 Index: libraries/process/include/runProcess.h
 --- libraries/process/include/runProcess.h.orig
 +++ libraries/process/include/runProcess.h
-@@ -26,18 +26,7 @@
+@@ -30,18 +30,7 @@
  #include <fcntl.h>
  #endif
  
