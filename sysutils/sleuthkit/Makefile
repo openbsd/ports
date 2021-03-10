@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.29 2020/03/18 13:45:04 jca Exp $
+# $OpenBSD: Makefile,v 1.30 2021/03/10 16:00:51 tb Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
-DISTNAME=		sleuthkit-4.8.0
-REVISION=		0
+DISTNAME=		sleuthkit-4.10.1
 CATEGORIES=		sysutils security
 
-SHARED_LIBS +=		tsk 2.0 # 20.0
+SHARED_LIBS +=		tsk 3.0 # 20.3
 
 HOMEPAGE=		https://www.sleuthkit.org/
 
 MAINTAINER=		Remi Pointel <rpointel@openbsd.org>
 
-# CPLv1 & IBM & GPLv2
+# CPLv1 & IBM & GPLv2 & Apache2 & BSD & MIT
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		https://github.com/sleuthkit/sleuthkit/releases/download/${DISTNAME}/
