@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2021/02/28 19:31:22 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.73 2021/03/10 01:34:15 gnezdo Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
 MODCABAL_STEM =		darcs
 MODCABAL_VERSION =	2.16.3
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
 
@@ -19,7 +20,7 @@ MODCABAL_MANIFEST =	\
 	asn1-types	0.3.4	0	\
 	assoc	1.0.2	1	\
 	async	2.2.3	0	\
-	attoparsec	0.13.2.5	0	\
+	attoparsec	0.13.2.5	1	\
 	base-compat	0.11.2	0	\
 	base-compat-batteries	0.11.2	0	\
 	base-orphans	0.8.4	0	\
@@ -31,7 +32,7 @@ MODCABAL_MANIFEST =	\
 	case-insensitive	1.2.1.0	0	\
 	cereal	0.5.8.1	0	\
 	comonad	5.0.8	0	\
-	conduit	1.3.4	0	\
+	conduit	1.3.4.1	0	\
 	conduit-extra	1.3.5	0	\
 	connection	0.3.1	1	\
 	constraints	0.12	0	\
@@ -43,7 +44,6 @@ MODCABAL_MANIFEST =	\
 	digest	0.0.1.2	0	\
 	distributive	0.6.2.1	0	\
 	dlist	1.0	0	\
-	exceptions	0.10.4	1	\
 	fgl	5.7.0.3	0	\
 	filtrable	0.1.6.0	0	\
 	hashable	1.3.1.0	0	\
@@ -75,7 +75,7 @@ MODCABAL_MANIFEST =	\
 	scientific	0.3.6.2	0	\
 	semigroups	0.19.1	0	\
 	socks	0.6.1	0	\
-	split	0.2.3.4	0	\
+	split	0.2.3.4	1	\
 	splitmix	0.1.0.3	0	\
 	streaming-commons	0.2.2.1	0	\
 	strict	0.4.0.1	0	\
@@ -102,7 +102,8 @@ MODCABAL_MANIFEST =	\
 	x509-system	1.6.6	0	\
 	x509-validation	1.6.11	0	\
 	zip-archive	0.4.1	1	\
-	zlib	0.6.2.2	0	\
+	zlib	0.6.2.3	0	\
+
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
