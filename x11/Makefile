@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.701 2021/03/07 05:06:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.702 2021/03/10 17:22:19 tracey Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -388,6 +388,7 @@
      SUBDIR += xkeycaps
      SUBDIR += xli
      SUBDIR += xloadimage
+     SUBDIR += xmenu
      SUBDIR += xmobar
      SUBDIR += xmonad
      SUBDIR += xosd
