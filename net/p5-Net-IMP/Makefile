@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/03/10 19:41:18 bluhm Exp $
 
 COMMENT =	module for network data inspection and modification
 
-DISTNAME =	Net-IMP-0.634
-REVISION =	0
+DISTNAME =	Net-IMP-0.635
 
 CATEGORIES =	net
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
