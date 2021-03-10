@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/23 19:39:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/03/10 16:33:17 daniel Exp $
 
 COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
@@ -7,26 +7,25 @@ GH_TAGNAME=		v1.0
 DISTFILES=		${DISTNAME}.tar.gz \
 			gfract-palettes-0.1.tar.gz:0
 CATEGORIES=		graphics math
-REVISION=		2
+REVISION=		3
 
-HOMEPAGE=		http://www.oskusoft.com/osku/gfract/
+HOMEPAGE=		http://www.oskusoft.com/programs/gfract/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 boost_filesystem boost_regex
-WANTLIB += boost_system c cairo fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread
-WANTLIB += ${COMPILER_LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 boost_filesystem
+WANTLIB += boost_regex boost_system c cairo fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 png z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES0= 		http://distfiles.sigtrap.nl/
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	make_palettes.py

@@ -1,0 +1,16 @@
+$OpenBSD: patch-make_palettes_py,v 1.1 2021/03/10 16:33:17 daniel Exp $
+
+convert to python3
+
+Index: make_palettes.py
+--- make_palettes.py.orig
++++ make_palettes.py
+@@ -11,7 +11,7 @@ palettes = set()
+ out = open("palettes.cpp", "w")
+ 
+ def die(msg):
+-    print "Failed: %s" % msg
++    print("Failed: %s" % msg)
+     sys.exit(1)
+ 
+ # what variable name should we use for the given base filename
