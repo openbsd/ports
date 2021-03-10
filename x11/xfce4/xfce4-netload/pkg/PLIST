@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/12/29 15:16:54 landry Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/03/10 18:27:59 landry Exp $
 @so lib/xfce4/panel/plugins/libnetload.so
-share/icons/hicolor/24x24/apps/xfce4-netload-plugin.png
-share/icons/hicolor/48x48/apps/xfce4-netload-plugin.png
-share/icons/hicolor/scalable/apps/xfce4-netload-plugin.svg
+share/icons/hicolor/128x128/apps/org.xfce.panel.netload.png
+share/icons/hicolor/16x16/apps/org.xfce.panel.netload.png
+share/icons/hicolor/32x32/apps/org.xfce.panel.netload.png
+share/icons/hicolor/scalable/apps/org.xfce.panel.netload.svg
 share/locale/ar/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/be/LC_MESSAGES/xfce4-netload-plugin.mo
@@ -13,6 +14,7 @@ share/locale/da/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/el/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/en_AU/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/en_CA/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/eo/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-netload-plugin.mo
@@ -23,7 +25,9 @@ share/locale/gl/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/he/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/hye/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/ie/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/is/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-netload-plugin.mo
@@ -41,6 +45,7 @@ share/locale/pt/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/sl/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/sr/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-netload-plugin.mo
