@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.672 2021/03/07 14:16:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.673 2021/03/11 08:40:29 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -477,6 +477,7 @@
      SUBDIR += py-yaml,python3
      SUBDIR += raptor
      SUBDIR += rasqal
+     SUBDIR += recutils
      SUBDIR += redland
      SUBDIR += redland-bindings
      SUBDIR += ripgrep
