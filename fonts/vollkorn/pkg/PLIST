@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/11 08:43:24 bentley Exp $
+share/doc/vollkorn/
+share/doc/vollkorn/OFL.txt
+share/fonts/
+@fontdir share/fonts/vollkorn/
+share/fonts/vollkorn/Vollkorn-Black.otf
+share/fonts/vollkorn/Vollkorn-Black.ttf
+share/fonts/vollkorn/Vollkorn-BlackItalic.otf
+share/fonts/vollkorn/Vollkorn-BlackItalic.ttf
+share/fonts/vollkorn/Vollkorn-Bold.otf
+share/fonts/vollkorn/Vollkorn-Bold.ttf
+share/fonts/vollkorn/Vollkorn-BoldItalic.otf
+share/fonts/vollkorn/Vollkorn-BoldItalic.ttf
+share/fonts/vollkorn/Vollkorn-ExtraBold.otf
+share/fonts/vollkorn/Vollkorn-ExtraBold.ttf
+share/fonts/vollkorn/Vollkorn-ExtraBoldItalic.otf
+share/fonts/vollkorn/Vollkorn-ExtraBoldItalic.ttf
+share/fonts/vollkorn/Vollkorn-Italic.otf
+share/fonts/vollkorn/Vollkorn-Italic.ttf
+share/fonts/vollkorn/Vollkorn-Medium.otf
+share/fonts/vollkorn/Vollkorn-Medium.ttf
+share/fonts/vollkorn/Vollkorn-MediumItalic.otf
+share/fonts/vollkorn/Vollkorn-MediumItalic.ttf
+share/fonts/vollkorn/Vollkorn-Regular.otf
+share/fonts/vollkorn/Vollkorn-Regular.ttf
+share/fonts/vollkorn/Vollkorn-SemiBold.otf
+share/fonts/vollkorn/Vollkorn-SemiBold.ttf
+share/fonts/vollkorn/Vollkorn-SemiBoldItalic.otf
+share/fonts/vollkorn/Vollkorn-SemiBoldItalic.ttf
