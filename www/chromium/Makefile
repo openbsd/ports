@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.550 2021/02/26 18:20:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.551 2021/03/11 05:41:14 robert Exp $
 
 # /usr/local/bin/chrome[60]: /usr/local/chrome/chrome: Cannot allocate memory
 BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
@@ -16,6 +16,7 @@ DPB_PROPERTIES=		lonesome
 COMMENT=		Chromium browser
 
 V=			88.0.4324.190
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -169,10 +170,12 @@ PKG_ARGS+=	-Dswiftshader=1
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!
 GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
-		google_default_client_id=\"451220141585.apps.googleusercontent.com\" \
-		google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
 		ffmpeg_branding=\"Chrome\" \
 		proprietary_codecs=true
+
+# These are now restricted to use by Google, so bye-bye sync.
+#GN_ARGS+=	google_default_client_id=\"451220141585.apps.googleusercontent.com\"
+#GN_ARGS+=	google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
 
 # XXX dwz doesn't work with chromium yet
 DWZ = :
