@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.1 2021/03/08 18:21:01 sthen Exp $
+@comment $OpenBSD: PLIST-gui,v 1.2 2021/03/11 13:34:05 sthen Exp $
 @bin bin/recoll
 share/applications/
 share/applications/recoll-searchgui.desktop
@@ -48,7 +48,6 @@ share/recoll/translations/recoll_fr.qm
 share/recoll/translations/recoll_hu.qm
 share/recoll/translations/recoll_it.qm
 share/recoll/translations/recoll_ko.qm
-share/recoll/translations/recoll_kr.qm
 share/recoll/translations/recoll_lt.qm
 share/recoll/translations/recoll_nl.qm
 share/recoll/translations/recoll_pl.qm

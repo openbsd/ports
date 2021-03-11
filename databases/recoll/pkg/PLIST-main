@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2021/03/08 18:21:01 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2021/03/11 13:34:05 sthen Exp $
 @pkgpath databases/recoll
 @bin bin/recollindex
 @bin bin/recollq
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/recoll/rclconfig.py
 lib/python${MODPY_VERSION}/site-packages/recoll/rclextract.py
 lib/python${MODPY_VERSION}/site-packages/recoll/recoll.py
 lib/recoll/
-@lib lib/recoll/librecoll-1.28.6.so.${LIBrecoll-1.28.6_VERSION}
+@lib lib/recoll/${RECOLL_LIB}
 @static-lib lib/recoll/librecoll.a
 lib/recoll/librecoll.la
 @lib lib/recoll/librecoll.so.${LIBrecoll_VERSION}
@@ -110,7 +110,6 @@ share/recoll/filters/rclshowinfo
 share/recoll/filters/rcltar
 share/recoll/filters/rcltex
 share/recoll/filters/rcltext.py
-share/recoll/filters/rcltxtlines.py
 share/recoll/filters/rcluncomp
 share/recoll/filters/rcluncomp.py
 share/recoll/filters/rclwar

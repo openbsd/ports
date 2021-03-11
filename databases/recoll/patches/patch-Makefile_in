@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2021/03/08 18:21:01 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2021/03/11 13:34:05 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
@@ -12,7 +12,7 @@ Index: Makefile.in
  librecoll_la_LIBADD = $(XSLT_LIBS) $(LIBXAPIAN) $(LIBICONV) $(LIBTHREADS)
  recollindex_SOURCES = \
                      index/recollindex.cpp \
-@@ -2656,16 +2656,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -2713,16 +2713,12 @@ PicStatic: $(librecoll_la_OBJECTS)
  @MAKEPYTHON_TRUE@clean-local:: recollpython-clean
  @MAKEPYTHON_TRUE@recollpython: librecoll.la
  @MAKEPYTHON_TRUE@	(cd python/recoll; set -x; \
@@ -31,7 +31,7 @@ Index: Makefile.in
  @MAKEPYTHON_TRUE@         )
  @MAKEPYTHON_TRUE@recollpython-clean:
  @MAKEPYTHON_TRUE@	rm -f python/recoll/*.pyc
-@@ -2681,16 +2677,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -2738,16 +2734,12 @@ PicStatic: $(librecoll_la_OBJECTS)
  @MAKEPYTHONCHM_TRUE@clean-local:: rclpychm-clean
  @MAKEPYTHONCHM_TRUE@rclpychm:
  @MAKEPYTHONCHM_TRUE@	(cd python/pychm; set -x; \

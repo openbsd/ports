@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/08 18:21:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/03/11 13:34:05 sthen Exp $
 
 COMMENT-main= 	full text search application
 COMMENT-gui= 	X user interface to recoll
 
 MULTI_PACKAGES=	-main -gui
 
-V=		1.28.6
+V=		1.29.1
 DISTNAME= 	recoll-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	recoll-gui-${V}
-
-REVISION-main=	0
 
 SHARED_LIBS +=	recoll-${V}            0.0 # 0.0
 SHARED_LIBS +=  recoll                 0.0 # 0.0
@@ -33,10 +31,15 @@ WANTLIB-gui=	${WANTLIB} GL Qt5Core Qt5Gui Qt5Network \
 		Qt5PrintSupport Qt5WebKit Qt5WebKitWidgets \
 		Qt5Widgets Qt5Xml lib/recoll/recoll-${V}
 
+# otherwise dependency check during build fails when updating
+RECOLL_LIB=	librecoll-${V}.so.${LIBrecoll-${V}_VERSION}
+SUBST_VARS+=	RECOLL_LIB
+
 MODULES=		lang/python \
 			x11/qt5
 
 USE_GMAKE=		Yes
+DPB_PROPERTIES=		parallel
 
 BUILD_DEPENDS=		devel/py-setuptools${MODPY_FLAVOR} \
 			textproc/aspell/core
