@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/24 16:03:41 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/03/11 23:07:32 bcallah Exp $
 @bin bin/tcc
 include/libtcc.h
 @info info/tcc-doc.info
@@ -11,6 +11,7 @@ lib/tcc/include/
 lib/tcc/include/float.h
 lib/tcc/include/stdalign.h
 lib/tcc/include/stdarg.h
+lib/tcc/include/stdatomic.h
 lib/tcc/include/stdbool.h
 lib/tcc/include/stddef.h
 lib/tcc/include/stdnoreturn.h
@@ -19,7 +20,6 @@ lib/tcc/include/tcclib.h
 lib/tcc/include/tgmath.h
 lib/tcc/include/varargs.h
 @static-lib lib/tcc/libtcc1.a
-lib/tcc/tcov.o
 @man man/man1/tcc.1
 share/doc/tcc/
 share/doc/tcc/tcc-doc.html
