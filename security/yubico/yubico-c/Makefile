@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/10 22:21:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/11 10:17:24 sthen Exp $
 
 COMMENT=	low-level C software development kit for the Yubico YubiKey
 
@@ -13,5 +13,8 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 WANTLIB += c
 
 CONFIGURE_STYLE=	gnu
+
+# due to patch
+BUILD_DEPENDS=	textproc/asciidoc
 
 .include <bsd.port.mk>
