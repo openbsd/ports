@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/31 21:58:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/03/11 11:56:00 kirby Exp $
 
 COMMENT=	command-line interface to Icinga
 
 V=		0.48
 DISTNAME=	App-Icli-$V
 PKGNAME=	icli-$V
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net
 

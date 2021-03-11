@@ -1,0 +1,14 @@
+$OpenBSD: README,v 1.1 2021/03/11 11:56:00 kirby Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Icinga2
+=======
+
+To use icli with icinga2 you need to enable dumping configuration objects
+and status updates with
+# icinga2 feature enable statusdata
+
+statusdata is deprecated and may be removed in a future Icinga release.
