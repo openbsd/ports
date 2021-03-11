@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Core_OOTrumble_h,v 1.1 2021/03/11 16:52:46 naddy Exp $
+
+Index: src/Core/OOTrumble.h
+--- src/Core/OOTrumble.h.orig
++++ src/Core/OOTrumble.h
+@@ -66,7 +66,7 @@ enum trumble_mouth
+ 	TRUMBLE_MOUTH_NORMAL
+ };
+ 
+-float	trumbleAppetiteAccumulator;
++extern float	trumbleAppetiteAccumulator;
+ 
+ @interface OOTrumble : NSObject
+ {

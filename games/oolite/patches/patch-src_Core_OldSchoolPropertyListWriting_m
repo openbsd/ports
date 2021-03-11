@@ -1,16 +1,17 @@
-$OpenBSD: patch-src_Core_OldSchoolPropertyListWriting_m,v 1.2 2021/02/26 18:20:33 naddy Exp $
+$OpenBSD: patch-src_Core_OldSchoolPropertyListWriting_m,v 1.3 2021/03/11 16:52:46 naddy Exp $
 
 missing header
 
---- src/Core/OldSchoolPropertyListWriting.m.orig	Fri Jan 14 13:01:11 2011
-+++ src/Core/OldSchoolPropertyListWriting.m	Fri Jan 14 13:01:26 2011
-@@ -19,6 +19,9 @@
- */
+Index: src/Core/OldSchoolPropertyListWriting.m
+--- src/Core/OldSchoolPropertyListWriting.m.orig
++++ src/Core/OldSchoolPropertyListWriting.m
+@@ -20,6 +20,9 @@
  
  #import "OldSchoolPropertyListWriting.h"
-+
+ 
 +#include <assert.h>
 +
- 
++
  
  static BOOL IsFloatingPoint(NSNumber *number);
+ static void AppendNewLineAndIndent(NSMutableString *ioString, unsigned indentDepth);

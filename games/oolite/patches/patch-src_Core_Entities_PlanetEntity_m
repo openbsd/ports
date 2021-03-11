@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Core_Entities_PlanetEntity_m,v 1.1 2021/03/11 16:52:46 naddy Exp $
+
+Index: src/Core/Entities/PlanetEntity.m
+--- src/Core/Entities/PlanetEntity.m.orig
++++ src/Core/Entities/PlanetEntity.m
+@@ -46,6 +46,10 @@ MA 02110-1301, USA.
+ 
+ 
+ // straight c
++double corona_speed_factor;
++double corona_stage;
++GLfloat rvalue[729];
++
+ static Vector base_vertex_array[10400];
+ static int base_terrain_array[10400];
+ static int next_free_vertex;

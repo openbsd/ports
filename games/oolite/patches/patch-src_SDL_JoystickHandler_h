@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_SDL_JoystickHandler_h,v 1.1 2021/03/11 16:52:46 naddy Exp $
+
+Index: src/SDL/JoystickHandler.h
+--- src/SDL/JoystickHandler.h.orig
++++ src/SDL/JoystickHandler.h
+@@ -37,7 +37,7 @@ MA 02110-1301, USA.
+ // these are required very frequently (once per frame) so must be light
+ // on CPU cycles (try and avoid too many objc sendmsgs).
+ // Controls that can be an axis
+-enum {
++enum axfn {
+   AXIS_ROLL,
+   AXIS_PITCH,
+   AXIS_YAW,
+@@ -46,10 +46,10 @@ enum {
+   AXIS_VIEWX,
+   AXIS_VIEWY,
+   AXIS_end
+-} axfn;
++};
+ 
+ // Controls that can be a button
+-enum {
++enum butfn {
+   BUTTON_INCTHRUST,
+   BUTTON_DECTHRUST,
+   BUTTON_SCANNERZOOM,
+@@ -82,7 +82,7 @@ enum {
+   BUTTON_VIEWPORT,
+   BUTTON_VIEWSTARBOARD,
+   BUTTON_end
+-} butfn;
++};
+ 
+ // Stick constants
+ #define MAX_STICKS 2

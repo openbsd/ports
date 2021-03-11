@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Core_OOTrumble_m,v 1.1 2021/03/11 16:52:46 naddy Exp $
+
+Index: src/Core/OOTrumble.m
+--- src/Core/OOTrumble.m.orig
++++ src/Core/OOTrumble.m
+@@ -30,6 +30,7 @@ MA 02110-1301, USA.
+ #import "OOSound.h"
+ #import "OOStringParsing.h"
+ 
++float trumbleAppetiteAccumulator;
+ 
+ static void InitTrumbleSounds(void);
+ static void PlayTrumbleIdle(void);

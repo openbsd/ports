@@ -1,25 +1,21 @@
-$OpenBSD: patch-src_Core_Materials_OOPNGTextureLoader_m,v 1.4 2021/02/26 18:20:33 naddy Exp $
+$OpenBSD: patch-src_Core_Materials_OOPNGTextureLoader_m,v 1.5 2021/03/11 16:52:46 naddy Exp $
 
 * Missing header.
 * Fix build with png-1.6; __attribute__((noreturn)) already set in <png.h>.
 
---- src/Core/Materials/OOPNGTextureLoader.m.orig	Mon Sep 21 20:53:30 2009
-+++ src/Core/Materials/OOPNGTextureLoader.m	Fri Jun  7 22:33:31 2013
-@@ -50,11 +50,11 @@ SOFTWARE.
- #import "OOFunctionAttributes.h"
+Index: src/Core/Materials/OOPNGTextureLoader.m
+--- src/Core/Materials/OOPNGTextureLoader.m.orig
++++ src/Core/Materials/OOPNGTextureLoader.m
+@@ -51,8 +51,8 @@ SOFTWARE.
  #import "OOLogging.h"
  #import "OOCPUInfo.h"
-+
-+#include <assert.h>
-+
  
++#include <assert.h>
  
 -void png_error(png_structp, png_const_charp) NO_RETURN_FUNC;
--
--
+ 
+ 
  static void PNGError(png_structp png, png_const_charp message);
- static void PNGWarning(png_structp png, png_const_charp message);
- static void PNGRead(png_structp png, png_bytep bytes, png_size_t size);
 @@ -242,7 +242,7 @@ static void PNGError(png_structp png, png_const_charp 
  {
  	OOPNGTextureLoader		*loader = nil;

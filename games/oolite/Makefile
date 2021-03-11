@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/26 18:20:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2021/03/11 16:52:46 naddy Exp $
 
 COMMENT=	space combat and trading game in the style of Elite
 
 VERSION=	1.73.4
-REVISION =	16
+REVISION =	17
 DISTNAME=	oolite-dev-source-${VERSION}
 PKGNAME=	oolite-${VERSION}
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.oolite.org/
-
-MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -33,6 +31,7 @@ ALL_TARGET=	release
 
 FIX_CRLF_FILES = GNUmakefile.postamble \
 		Makefile \
+		src/Cocoa/JoystickHandler.h \
 		src/Core/Debug/OODebugTCPConsoleClient.m \
 		src/Core/Materials/OOPNGTextureLoader.m \
 		src/Core/OOAsyncQueue.m \
