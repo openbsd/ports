@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_c,v 1.8 2020/07/13 00:08:10 kn Exp $
+$OpenBSD: patch-src_main_c,v 1.9 2021/03/11 12:58:20 kn Exp $
 
 Use pledge.
 
@@ -14,9 +14,9 @@ Index: src/main.c
  static void ATTR_PRINTFLIKE(1, 2)
  debug( const char *msg, ... )
  {
-@@ -738,6 +740,36 @@ main( int argc, char **argv )
+@@ -754,6 +756,36 @@ main( int argc, char **argv )
  
- 	if (load_config( config, pseudo ))
+ 	if (merge_ops( cops, ops ))
  		return 1;
 +
 +	if (mvars->list) {
@@ -49,5 +49,5 @@ Index: src/main.c
 +		}
 +	}
  
- 	if (!channels) {
- 		fputs( "No channels defined. Try 'man " EXE "'\n", stderr );
+ 	if (load_config( config ))
+ 		return 1;
