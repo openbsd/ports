@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/11 08:39:43 bentley Exp $
+@bin bin/csv2rec
+@bin bin/rec2csv
+@bin bin/recdel
+@bin bin/recfix
+@bin bin/recfmt
+@bin bin/recinf
+@bin bin/recins
+@bin bin/recsel
+@bin bin/recset
+include/rec.h
+@info info/rec-mode.info
+@info info/recutils.info
+@static-lib lib/librec.a
+lib/librec.la
+@lib lib/librec.so.${LIBrec_VERSION}
+@man man/man1/csv2rec.1
+@man man/man1/rec2csv.1
+@man man/man1/recdel.1
+@man man/man1/recfix.1
+@man man/man1/recfmt.1
+@man man/man1/recinf.1
+@man man/man1/recins.1
+@man man/man1/recsel.1
+@man man/man1/recset.1
+share/locale/de/LC_MESSAGES/recutils.mo
+share/locale/es/LC_MESSAGES/recutils.mo
+share/locale/fi/LC_MESSAGES/recutils.mo
+share/locale/fr/LC_MESSAGES/recutils.mo
+share/locale/nl/LC_MESSAGES/recutils.mo
+share/locale/pt_BR/LC_MESSAGES/recutils.mo
+share/locale/sr/LC_MESSAGES/recutils.mo
+share/locale/sv/LC_MESSAGES/recutils.mo
+share/locale/uk/LC_MESSAGES/recutils.mo
+share/locale/vi/LC_MESSAGES/recutils.mo
+share/recutils/
+share/recutils/etc/
+share/recutils/etc/FSD.rec
