@@ -1,39 +1,44 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:21 sthen Exp $
-
-BROKEN-arm =		Bus error
-BROKEN-mips64 =		Bus error
+# $OpenBSD: Makefile,v 1.26 2021/03/11 12:17:21 pascal Exp $
 
 COMMENT =		Not Quite Perl
 
-V =			2018.12
+V =			2021.02
 DISTNAME =		nqp-$V
 
-MOAR_VERSION =		2018.12
-
-PATCHORIG =		.orig.port
+MOAR_VERSION =		2021.02
 
 CATEGORIES =		lang
-
-HOMEPAGE =		https://github.com/perl6/NQP
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic 2
 PERMIT_PACKAGE =	Yes
 
-GH_ACCOUNT =		perl6
+WANTLIB =		c moar
+
+GH_ACCOUNT =		Raku
 GH_PROJECT =		nqp
 GH_TAGNAME =		$V
-MASTER_SITES =		${MASTER_SITES_GITHUB}
 
-BUILD_DEPENDS =		lang/moarvm>=${MOAR_VERSION}
-RUN_DEPENDS =		lang/moarvm>=${MOAR_VERSION}
+# Take the missing WRKDIST/3rdparty/nqp-configure from rakudo.
+MASTER_SITES0 =		https://rakudo.org/dl/rakudo/
+RAKUDO_VERSION =	2021.02.1
+DISTFILES =		nqp-$V.tar.gz \
+			rakudo-${RAKUDO_VERSION}.tar.gz:0
+EXTRACT_ONLY =		nqp-$V.tar.gz
+
+LIB_DEPENDS =		lang/moarvm>=${MOAR_VERSION}
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	/usr/bin/perl Configure.pl
 CONFIGURE_ARGS =	--prefix="${LOCALBASE}" \
 			--backends=moar
+USE_GMAKE =		Yes
+MAKE_FLAGS +=		VERBOSE_BUILD=Yes
 
-WRKDIST =		${WRKDIR}/nqp-$V
+post-extract:
+	cd ${WRKDIST}/3rdparty && \
+		pax -rzf ${FULLDISTDIR}/rakudo-${RAKUDO_VERSION}.tar.gz \
+		-s':.*/3rdparty/::' '*/3rdparty/nqp-configure'
 
 .include <bsd.port.mk>

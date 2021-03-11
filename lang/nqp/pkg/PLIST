@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/11/05 11:52:08 pascal Exp $
-bin/nqp
-bin/nqp-m
+@comment $OpenBSD: PLIST,v 1.7 2021/03/11 12:17:21 pascal Exp $
+@bin bin/nqp
+@bin bin/nqp-m
 share/nqp/lib/MASTNodes.moarvm
 share/nqp/lib/MASTOps.moarvm
 share/nqp/lib/ModuleLoader.moarvm

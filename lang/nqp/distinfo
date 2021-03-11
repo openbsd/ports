@@ -1,2 +1,4 @@
-SHA256 (nqp-2018.12.tar.gz) = A8n1Zk5B2K4DM0snmiCwN3sLnKHJd1VNMINY5Onc1SA=
-SIZE (nqp-2018.12.tar.gz) = 3927964
+SHA256 (nqp-2021.02.tar.gz) = 9AQ1rbZNWAwkmHV9z2X10chK/PCm+uJru5AHfpRpP2Y=
+SHA256 (rakudo-2021.02.1.tar.gz) = yOqNi/88PJg9H3lnMhvLW3IEOy+189pugYevUwbpmPc=
+SIZE (nqp-2021.02.tar.gz) = 3951382
+SIZE (rakudo-2021.02.1.tar.gz) = 5709586

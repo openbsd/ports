@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/01/04 09:27:09 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/03/11 12:17:21 pascal Exp $
 @bin bin/moar
 include/moar/
 include/moar/6model/
@@ -35,7 +35,9 @@ include/moar/6model/reprs/MVMIter.h
 include/moar/6model/reprs/MVMMultiCache.h
 include/moar/6model/reprs/MVMNull.h
 include/moar/6model/reprs/MVMOSHandle.h
+include/moar/6model/reprs/MVMSpeshCandidate.h
 include/moar/6model/reprs/MVMSpeshLog.h
+include/moar/6model/reprs/MVMSpeshPluginState.h
 include/moar/6model/reprs/MVMStaticFrame.h
 include/moar/6model/reprs/MVMStaticFrameSpesh.h
 include/moar/6model/reprs/MVMString.h
@@ -73,8 +75,12 @@ include/moar/core/dll.h
 include/moar/core/exceptions.h
 include/moar/core/ext.h
 include/moar/core/fixedsizealloc.h
+include/moar/core/fixkey_hash_table.h
+include/moar/core/fixkey_hash_table_funcs.h
 include/moar/core/frame.h
 include/moar/core/hll.h
+include/moar/core/index_hash_table.h
+include/moar/core/index_hash_table_funcs.h
 include/moar/core/instance.h
 include/moar/core/intcache.h
 include/moar/core/interp.h
@@ -84,9 +90,15 @@ include/moar/core/nativecall_dyncall.h
 include/moar/core/nativecall_libffi.h
 include/moar/core/oplabels.h
 include/moar/core/ops.h
+include/moar/core/ptr_hash_table.h
+include/moar/core/ptr_hash_table_funcs.h
 include/moar/core/regionalloc.h
+include/moar/core/str_hash_table.h
+include/moar/core/str_hash_table_funcs.h
 include/moar/core/threadcontext.h
 include/moar/core/threads.h
+include/moar/core/uni_hash_table.h
+include/moar/core/uni_hash_table_funcs.h
 include/moar/core/validation.h
 include/moar/core/vector.h
 include/moar/debug/
@@ -132,10 +144,6 @@ include/moar/jit/internal.h
 include/moar/jit/label.h
 include/moar/jit/register.h
 include/moar/jit/tile.h
-include/moar/mast/
-include/moar/mast/compiler.h
-include/moar/mast/driver.h
-include/moar/mast/nodes.h
 include/moar/math/
 include/moar/math/bigintops.h
 include/moar/math/grisu.h
@@ -146,6 +154,7 @@ include/moar/platform/
 include/moar/platform/fork.h
 include/moar/platform/inttypes.h
 include/moar/platform/io.h
+include/moar/platform/malloc_trim.h
 include/moar/platform/memmem.h
 include/moar/platform/memmem32.h
 include/moar/platform/mmap.h
@@ -156,6 +165,7 @@ include/moar/platform/sys.h
 include/moar/platform/threads.h
 include/moar/platform/time.h
 include/moar/profiler/
+include/moar/profiler/configuration.h
 include/moar/profiler/heapsnapshot.h
 include/moar/profiler/instrument.h
 include/moar/profiler/log.h
@@ -164,7 +174,6 @@ include/moar/profiler/telemeh.h
 include/moar/spesh/
 include/moar/spesh/arg_guard.h
 include/moar/spesh/args.h
-include/moar/spesh/candidate.h
 include/moar/spesh/codegen.h
 include/moar/spesh/dead_bb_elimination.h
 include/moar/spesh/dead_ins_elimination.h
@@ -181,6 +190,7 @@ include/moar/spesh/lookup.h
 include/moar/spesh/manipulate.h
 include/moar/spesh/optimize.h
 include/moar/spesh/osr.h
+include/moar/spesh/pea.h
 include/moar/spesh/plan.h
 include/moar/spesh/plugin.h
 include/moar/spesh/stats.h
@@ -190,6 +200,10 @@ include/moar/spesh/worker.h
 include/moar/strings/
 include/moar/strings/ascii.h
 include/moar/strings/decode_stream.h
+include/moar/strings/gb18030.h
+include/moar/strings/gb18030_codeindex.h
+include/moar/strings/gb2312.h
+include/moar/strings/gb2312_codeindex.h
 include/moar/strings/iter.h
 include/moar/strings/latin1.h
 include/moar/strings/nfg.h
@@ -207,8 +221,6 @@ include/moar/strings/unicode_prop_macros.h
 include/moar/strings/utf16.h
 include/moar/strings/utf8.h
 include/moar/strings/utf8_c8.h
-include/moar/strings/uthash.h
-include/moar/strings/uthash_types.h
 include/moar/strings/windows1252.h
 include/moar/types.h
 @lib lib/libmoar.so.${LIBmoar_VERSION}

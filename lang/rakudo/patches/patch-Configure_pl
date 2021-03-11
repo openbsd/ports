@@ -1,0 +1,14 @@
+$OpenBSD: patch-Configure_pl,v 1.1 2021/03/11 12:17:22 pascal Exp $
+
+Index: Configure.pl
+--- Configure.pl.orig
++++ Configure.pl
+@@ -13,7 +13,7 @@ use FindBin;
+ 
+ BEGIN {
+     # Download / Update submodules
+-    my $set_config = !qx{git config rakudo.initialized};
++    my $set_config = 0; # !qx{git config rakudo.initialized};
+     if ( !-e '3rdparty/nqp-configure/LICENSE' ) {
+         my $code = system($^X, 'tools/build/update-submodules.pl', Cwd::cwd(), @ARGV);
+         exit 1 if $code >> 8 != 0;

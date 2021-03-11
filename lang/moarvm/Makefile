@@ -1,40 +1,39 @@
-# $OpenBSD: Makefile,v 1.25 2021/03/06 16:36:24 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.26 2021/03/11 12:17:21 pascal Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 sparc64
-BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
 
 COMMENT =		virtual machine for nqp/rakudo
 
-V =			2018.12
+V =			2021.02
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
-REVISION =		1
 
-SHARED_LIBS =		moar	9.0
+SHARED_LIBS =		moar	10.0
 
 CATEGORIES =		lang
 
-HOMEPAGE =		http://moarvm.org/
+HOMEPAGE =		https://moarvm.org/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		atomic_ops c ffi kvm m pthread uv
+WANTLIB =		atomic_ops c ffi kvm m pthread uv zstd
 
-MASTER_SITES =		http://moarvm.org/releases/
+MASTER_SITES =		https://moarvm.org/releases/
 
-BUILD_DEPENDS =		math/libtommath
+BUILD_DEPENDS =		math/libtommath>=1.2.0
 LIB_DEPENDS =		devel/libffi \
 			devel/boehm-gc,-atomic \
-			devel/libuv
+			devel/libuv \
+			archivers/zstd
 
 MAKE_FLAGS =		NOISY=1
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	/usr/bin/perl Configure.pl
-CONFIGURE_ARGS +=	--cc="${CC}" --ld="${CC}" \
+CONFIGURE_ARGS +=	--cc="${CC}" --ld="${CC}" --no-optimize \
 			--prefix="${PREFIX}" \
 			--has-libtommath \
 			--has-libffi \
@@ -42,7 +41,7 @@ CONFIGURE_ARGS +=	--cc="${CC}" --ld="${CC}" \
 			--has-libuv \
 			--no-jit
 CONFIGURE_ENV =		SO_VERSION="${LIBmoar_VERSION}" \
-			CFLAGS="-I${LOCALBASE}/include"
+			CFLAGS="-std=gnu99 ${CFLAGS}"
 
 NO_TEST =		Yes
 
