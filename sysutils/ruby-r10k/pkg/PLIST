@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/11/27 09:35:28 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/03/11 19:23:15 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -326,6 +326,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_cachedir.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_creds.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_generate_types.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_puppet_path.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/
@@ -416,6 +417,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/base_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/git_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/name_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/svn_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/with_modules_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/errors/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/errors/formatting_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/feature_spec.rb
