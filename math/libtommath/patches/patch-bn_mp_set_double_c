@@ -1,0 +1,16 @@
+$OpenBSD: patch-bn_mp_set_double_c,v 1.1 2021/03/11 06:29:21 gkoehler Exp $
+
+We have IEEE754 floating-point.
+
+Index: bn_mp_set_double.c
+--- bn_mp_set_double.c.orig
++++ bn_mp_set_double.c
+@@ -3,7 +3,7 @@
+ /* LibTomMath, multiple-precision integer library -- Tom St Denis */
+ /* SPDX-License-Identifier: Unlicense */
+ 
+-#if defined(__STDC_IEC_559__) || defined(__GCC_IEC_559)
++#if defined(__STDC_IEC_559__) || defined(__GCC_IEC_559) || 1
+ mp_err mp_set_double(mp_int *a, double b)
+ {
+    uint64_t frac;
