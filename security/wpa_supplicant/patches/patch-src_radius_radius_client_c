@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_radius_radius_client_c,v 1.1 2021/03/12 20:24:51 naddy Exp $
+
+Index: src/radius/radius_client.c
+--- src/radius/radius_client.c.orig
++++ src/radius/radius_client.c
+@@ -814,7 +814,7 @@ static void radius_client_receive(int sock, void *eloo
+ {
+ 	struct radius_client_data *radius = eloop_ctx;
+ 	struct hostapd_radius_servers *conf = radius->conf;
+-	RadiusType msg_type = (RadiusType) sock_ctx;
++	RadiusType msg_type = (RadiusType) (intptr_t) sock_ctx;
+ 	int len, roundtrip;
+ 	unsigned char buf[3000];
+ 	struct radius_msg *msg;
