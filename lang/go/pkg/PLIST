@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2021/03/02 17:56:41 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.47 2021/03/12 17:36:22 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -376,6 +376,11 @@ go/misc/cgo/testplugin/testdata/issue25756/plugin/life.h
 go/misc/cgo/testplugin/testdata/method/
 go/misc/cgo/testplugin/testdata/method/main.go
 go/misc/cgo/testplugin/testdata/method/plugin.go
+go/misc/cgo/testplugin/testdata/method2/
+go/misc/cgo/testplugin/testdata/method2/main.go
+go/misc/cgo/testplugin/testdata/method2/p/
+go/misc/cgo/testplugin/testdata/method2/p/p.go
+go/misc/cgo/testplugin/testdata/method2/plugin.go
 go/misc/cgo/testplugin/testdata/plugin1/
 go/misc/cgo/testplugin/testdata/plugin1/plugin1.go
 go/misc/cgo/testplugin/testdata/plugin2/
@@ -2634,6 +2639,7 @@ go/src/cmd/go/testdata/script/mod_replace_readonly.txt
 go/src/cmd/go/testdata/script/mod_require_exclude.txt
 go/src/cmd/go/testdata/script/mod_retention.txt
 go/src/cmd/go/testdata/script/mod_retract.txt
+go/src/cmd/go/testdata/script/mod_retract_fix_version.txt
 go/src/cmd/go/testdata/script/mod_retract_incompatible.txt
 go/src/cmd/go/testdata/script/mod_retract_pseudo_base.txt
 go/src/cmd/go/testdata/script/mod_retract_rationale.txt
@@ -10252,6 +10258,11 @@ go/test/fixedbugs/issue4396b.go
 go/test/fixedbugs/issue4399.go
 go/test/fixedbugs/issue4405.go
 go/test/fixedbugs/issue4429.go
+go/test/fixedbugs/issue44355.dir/
+go/test/fixedbugs/issue44355.dir/a.go
+go/test/fixedbugs/issue44355.dir/b.go
+go/test/fixedbugs/issue44355.go
+go/test/fixedbugs/issue44378.go
 go/test/fixedbugs/issue4448.go
 go/test/fixedbugs/issue4452.go
 go/test/fixedbugs/issue4458.go
