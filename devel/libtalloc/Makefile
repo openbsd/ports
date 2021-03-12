@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2021/03/05 10:42:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/03/12 09:02:26 sthen Exp $
 
 COMMENT-main=	hierarchical memory pool system with destructors
 COMMENT-python=	Python ${MODPY_VERSION} bindings for talloc
 
 # Keep in sync with the version bundled in net/samba
-DISTNAME=	talloc-2.1.16
+V=		2.1.16
+DISTNAME=	talloc-$V
 PKGNAME-main=	lib${DISTNAME}
 PKGNAME-python=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 MULTI_PACKAGES=	-main -python
 
 SHARED_LIBS+=	talloc		1.1
@@ -37,7 +38,7 @@ MODPY_ADJ_FILES= buildtools/bin/waf
 BUILD_DEPENDS=	textproc/docbook-xsl \
 		textproc/libxslt
 
-LIB_DEPENDS-python=	${BUILD_PKGPATH} \
+LIB_DEPENDS-python=	${BUILD_PKGPATH},-main=${V} \
 			${MODPY_LIB_DEPENDS}
 
 WAF_ARGS=	-v -j ${MAKE_JOBS}
