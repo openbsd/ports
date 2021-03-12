@@ -1,0 +1,17 @@
+$OpenBSD: patch-gnucash_gnome-search_search-reconciled_c,v 1.1 2021/03/12 16:37:58 naddy Exp $
+
+Work around new clang warning void-pointer-to-enum-cast.
+https://github.com/Gnucash/gnucash/commit/228f145bba8f5e7b8647173d3d634de95b03c4bf
+
+Index: gnucash/gnome-search/search-reconciled.c
+--- gnucash/gnome-search/search-reconciled.c.orig
++++ gnucash/gnome-search/search-reconciled.c
+@@ -159,7 +159,7 @@ toggle_changed (GtkToggleButton *button, GNCSearchReco
+ {
+     gboolean is_on = gtk_toggle_button_get_active (button);
+     cleared_match_t value =
+-        (cleared_match_t) g_object_get_data (G_OBJECT (button), "button-value");
++        (cleared_match_t) ((uint64_t)g_object_get_data (G_OBJECT (button), "button-value") & 0xffffffff); // Binary mask to silence void-pointer-to-enum-cast warning.
+ 
+     if (is_on)
+         fe->value |= value;
