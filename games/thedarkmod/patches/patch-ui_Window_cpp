@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_Window_cpp,v 1.1 2021/03/12 16:39:33 naddy Exp $
+
+Index: ui/Window.cpp
+--- ui/Window.cpp.orig
++++ ui/Window.cpp
+@@ -2063,7 +2063,7 @@ bool idWindow::ParseRegEntry(const char *name, idParse
+ 	work = name;
+ 	work.ToLower();
+ 
+-	idWinVar *var = GetWinVarByName(work, NULL);
++	idWinVar *var = GetWinVarByName(work, false);
+ 	if ( var ) {
+ 		for (int i = 0; i < NumRegisterVars; i++) {
+ 			if (idStr::Icmp(work, RegisterVars[i].name) == 0) {

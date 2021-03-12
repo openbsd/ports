@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/09/03 16:56:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/12 16:39:33 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 BROKEN-i386 =	Simd_SSE.cpp fails, unknown type name '__m128'
@@ -8,6 +8,7 @@ COMMENT =	first-person stealth game inspired by Thief
 V =		2.07
 DISTNAME =	thedarkmod.${V}
 PKGNAME =	thedarkmod-${V}
+REVISION =	0
 
 CATEGORIES =	games x11
 HOMEPAGE =	http://www.thedarkmod.com

@@ -1,0 +1,14 @@
+$OpenBSD: patch-sound_snd_efxfile_cpp,v 1.1 2021/03/12 16:39:33 naddy Exp $
+
+Index: sound/snd_efxfile.cpp
+--- sound/snd_efxfile.cpp.orig
++++ sound/snd_efxfile.cpp
+@@ -402,7 +402,7 @@ bool idEFXFile::LoadFile( const char *filename/*, bool
+ 	}
+ 
+ 	if ( !src.ExpectTokenString( "Version" ) ) {
+-		return NULL;
++		return false;
+ 	}
+ 
+ 	version = src.ParseInt();
