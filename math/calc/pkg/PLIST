@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/02/14 15:00:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/03/12 14:19:19 sthen Exp $
 @bin bin/calc
 bin/cscript/
 bin/cscript/4dsphere
@@ -13,10 +13,12 @@ include/calc/
 include/calc/align32.h
 include/calc/alloc.h
 include/calc/args.h
+include/calc/banned.h
 include/calc/blkcpy.h
 include/calc/block.h
 include/calc/byteswap.h
 include/calc/calc.h
+include/calc/calcerr.c
 include/calc/calcerr.h
 include/calc/cmath.h
 include/calc/conf.h
@@ -29,6 +31,7 @@ include/calc/file.h
 include/calc/fposval.h
 include/calc/func.h
 include/calc/hash.h
+include/calc/have_ban_pragma.h
 include/calc/have_const.h
 include/calc/have_fpos.h
 include/calc/have_fpos_pos.h
@@ -44,6 +47,8 @@ include/calc/have_rusage.h
 include/calc/have_stdlib.h
 include/calc/have_strdup.h
 include/calc/have_string.h
+include/calc/have_strlcat.h
+include/calc/have_strlcpy.h
 include/calc/have_times.h
 include/calc/have_uid_t.h
 include/calc/have_unistd.h
@@ -62,6 +67,7 @@ include/calc/prime.h
 include/calc/qmath.h
 include/calc/sha1.h
 include/calc/str.h
+include/calc/strl.h
 include/calc/symbol.h
 include/calc/terminal.h
 include/calc/token.h
@@ -372,6 +378,7 @@ share/calc/help/ptest
 share/calc/help/push
 share/calc/help/putenv
 share/calc/help/question
+share/calc/help/questions
 share/calc/help/quo
 share/calc/help/quomod
 share/calc/help/rand
