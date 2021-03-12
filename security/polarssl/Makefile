@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/23 19:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/03/12 17:41:04 bket Exp $
 
 PORTROACH=	limit:^2\.16
 
@@ -6,7 +6,7 @@ COMMENT=	SSL library with an intuitive API and readable source code
 
 GH_ACCOUNT=	ARMmbed
 GH_PROJECT=	mbedtls
-GH_TAGNAME=	mbedtls-2.16.9
+GH_TAGNAME=	mbedtls-2.16.10
 DISTNAME=	${GH_TAGNAME}
 
 # check SOVERSION
@@ -17,8 +17,6 @@ SHARED_LIBS +=  mbedx509                  3.1 # 0
 CATEGORIES=	security
 
 HOMEPAGE=	https://tls.mbed.org/
-
-MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 
 # Dual licensed: GPLv2+/Commercial, Apache v2 is also available
 PERMIT_PACKAGE=	Yes
