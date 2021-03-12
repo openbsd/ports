@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/12/29 14:32:03 landry Exp $
+@comment $OpenBSD: PLIST,v 1.29 2021/03/12 10:13:09 landry Exp $
 @bin bin/exo-desktop-item-edit
 @bin bin/exo-open
 include/exo-2/
@@ -34,7 +34,6 @@ share/gtk-doc/html/exo-2/ExoJob.html
 share/gtk-doc/html/exo-2/ExoSimpleJob.html
 share/gtk-doc/html/exo-2/ExoTreeView.html
 share/gtk-doc/html/exo-2/ch01.html
-share/gtk-doc/html/exo-2/ch02.html
 share/gtk-doc/html/exo-2/exo-2.devhelp2
 share/gtk-doc/html/exo-2/exo-Binding-Properties-Functions.html
 share/gtk-doc/html/exo-2/exo-Executing-Applications.html
@@ -46,15 +45,13 @@ share/gtk-doc/html/exo-2/exo-String-Utility-Functions.html
 share/gtk-doc/html/exo-2/exo-Version-Information.html
 share/gtk-doc/html/exo-2/exo-cell-renderers.html
 share/gtk-doc/html/exo-2/exo-extensions.html
-share/gtk-doc/html/exo-2/exo-gtk-file-chooser-add-thumbnail-preview.png
-share/gtk-doc/html/exo-2/exo-icon-chooser-dialog.png
 share/gtk-doc/html/exo-2/exo-jobs.html
 share/gtk-doc/html/exo-2/exo-miscelleanous.html
 share/gtk-doc/html/exo-2/exo-overview.html
 share/gtk-doc/html/exo-2/exo-widgets.html
 share/gtk-doc/html/exo-2/home.png
 share/gtk-doc/html/exo-2/index.html
-share/gtk-doc/html/exo-2/ix14.html
+share/gtk-doc/html/exo-2/ix15.html
 share/gtk-doc/html/exo-2/left-insensitive.png
 share/gtk-doc/html/exo-2/left.png
 share/gtk-doc/html/exo-2/right-insensitive.png
