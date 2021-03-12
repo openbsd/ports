@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/12 21:43:47 sthen Exp $
 
 COMMENT =		Python module to communicate with USB FIDO devices
 
 # using github for now, it has support for OpenBSD; should be ok to move back
-# to pypi for the next release
+# to pypi for the next release.
+# updating this to 0.9 requires an update in security/yubico/yubikey-manager,
+# which in turn needs an update of py-click.
 GH_ACCOUNT =		Yubico
 GH_PROJECT =		python-fido2
 GH_COMMIT =		46a0b649b9aa9af79566e6e3961021e070d98b1c
