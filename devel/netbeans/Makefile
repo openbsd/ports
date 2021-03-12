@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2020/12/06 18:56:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.45 2021/03/12 12:13:48 rsadowski Exp $
 
 COMMENT=		NetBeans Java IDE
 
-V=			12.2
+V=			12.3
 DISTNAME=		netbeans-${V}-bin
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
@@ -34,7 +34,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${NB}
 	cd ${WRKDIST} && pax -rw . ${NB}
 	@rm -rf ${NB}/profiler ${NB}/{ide,cnd,dlight}/bin \
-		${NB}/platform/modules/lib/{i386,amd64,x86}
+		${NB}/platform/modules/lib/{i386,amd64,x86} \
+		${NB}/java/maven/lib/jansi-native
 	@find ${NB} -type f \( -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
 		-o -name "*.bat" -o -name ".lastModified" \
 		-o -name "*.orig" \) -delete

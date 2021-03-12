@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/12/06 18:56:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/03/12 12:13:49 rsadowski Exp $
 bin/netbeans
 netbeans/
 netbeans/DEPENDENCIES
@@ -55,7 +55,7 @@ netbeans/cpplite/config/Modules/org-netbeans-modules-cpplite-kit.xml
 netbeans/cpplite/config/Modules/org-netbeans-modules-cpplite-project.xml
 netbeans/cpplite/modules/
 netbeans/cpplite/modules/ext/
-netbeans/cpplite/modules/ext/cpplite-mi-1.0-SNAPSHOT.jar
+netbeans/cpplite/modules/ext/cpplite-mi-f8f8250283be.jar
 netbeans/cpplite/modules/org-netbeans-modules-cpplite-debugger.jar
 netbeans/cpplite/modules/org-netbeans-modules-cpplite-editor.jar
 netbeans/cpplite/modules/org-netbeans-modules-cpplite-kit.jar
@@ -143,6 +143,7 @@ netbeans/enterprise/config/Modules/org-netbeans-modules-servletjspapi.xml
 netbeans/enterprise/config/Modules/org-netbeans-modules-spring-webmvc.xml
 netbeans/enterprise/config/Modules/org-netbeans-modules-tomcat5.xml
 netbeans/enterprise/config/Modules/org-netbeans-modules-web-beans.xml
+netbeans/enterprise/config/Modules/org-netbeans-modules-web-bootsfaces.xml
 netbeans/enterprise/config/Modules/org-netbeans-modules-web-client-rest.xml
 netbeans/enterprise/config/Modules/org-netbeans-modules-web-core-syntax.xml
 netbeans/enterprise/config/Modules/org-netbeans-modules-web-core.xml
@@ -370,6 +371,7 @@ netbeans/enterprise/modules/org-netbeans-modules-servletjspapi.jar
 netbeans/enterprise/modules/org-netbeans-modules-spring-webmvc.jar
 netbeans/enterprise/modules/org-netbeans-modules-tomcat5.jar
 netbeans/enterprise/modules/org-netbeans-modules-web-beans.jar
+netbeans/enterprise/modules/org-netbeans-modules-web-bootsfaces.jar
 netbeans/enterprise/modules/org-netbeans-modules-web-client-rest.jar
 netbeans/enterprise/modules/org-netbeans-modules-web-core-syntax.jar
 netbeans/enterprise/modules/org-netbeans-modules-web-core.jar
@@ -477,6 +479,7 @@ netbeans/enterprise/update_tracking/org-netbeans-modules-servletjspapi.xml
 netbeans/enterprise/update_tracking/org-netbeans-modules-spring-webmvc.xml
 netbeans/enterprise/update_tracking/org-netbeans-modules-tomcat5.xml
 netbeans/enterprise/update_tracking/org-netbeans-modules-web-beans.xml
+netbeans/enterprise/update_tracking/org-netbeans-modules-web-bootsfaces.xml
 netbeans/enterprise/update_tracking/org-netbeans-modules-web-client-rest.xml
 netbeans/enterprise/update_tracking/org-netbeans-modules-web-core-syntax.xml
 netbeans/enterprise/update_tracking/org-netbeans-modules-web-core.xml
@@ -612,6 +615,7 @@ netbeans/ergonomics/config/Modules/org-netbeans-modules-java-j2seproject.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-kit.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-lsp-server.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-module-graph.xml
+netbeans/ergonomics/config/Modules/org-netbeans-modules-java-mx-project.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-navigation.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-openjdk-project.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-java-source-ant.xml
@@ -709,6 +713,7 @@ netbeans/ergonomics/config/Modules/org-netbeans-modules-timers.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-tomcat5.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-typescript-editor.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-web-beans.xml
+netbeans/ergonomics/config/Modules/org-netbeans-modules-web-bootsfaces.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-web-client-kit.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-web-client-rest.xml
 netbeans/ergonomics/config/Modules/org-netbeans-modules-web-client-samples.xml
@@ -850,6 +855,7 @@ netbeans/groovy/
 netbeans/groovy/VERSION.txt
 netbeans/groovy/config/
 netbeans/groovy/config/Modules/
+netbeans/groovy/config/Modules/org-netbeans-modules-gradle-groovy.xml
 netbeans/groovy/config/Modules/org-netbeans-modules-groovy-antproject.xml
 netbeans/groovy/config/Modules/org-netbeans-modules-groovy-editor.xml
 netbeans/groovy/config/Modules/org-netbeans-modules-groovy-gsp.xml
@@ -863,6 +869,7 @@ netbeans/groovy/modules/
 netbeans/groovy/modules/ext/
 netbeans/groovy/modules/ext/groovy-ant.jar
 netbeans/groovy/modules/ext/groovy.jar
+netbeans/groovy/modules/org-netbeans-modules-gradle-groovy.jar
 netbeans/groovy/modules/org-netbeans-modules-groovy-antproject.jar
 netbeans/groovy/modules/org-netbeans-modules-groovy-editor.jar
 netbeans/groovy/modules/org-netbeans-modules-groovy-gsp.jar
@@ -873,6 +880,7 @@ netbeans/groovy/modules/org-netbeans-modules-groovy-support.jar
 netbeans/groovy/modules/org-netbeans-modules-libs-groovy.jar
 netbeans/groovy/modules/org-netbeans-modules-maven-groovy.jar
 netbeans/groovy/update_tracking/
+netbeans/groovy/update_tracking/org-netbeans-modules-gradle-groovy.xml
 netbeans/groovy/update_tracking/org-netbeans-modules-groovy-antproject.xml
 netbeans/groovy/update_tracking/org-netbeans-modules-groovy-editor.xml
 netbeans/groovy/update_tracking/org-netbeans-modules-groovy-gsp.xml
@@ -1377,7 +1385,6 @@ netbeans/ide/modules/ext/jaxb/api/
 netbeans/ide/modules/ext/jaxb/api/jaxb-api.jar
 netbeans/ide/modules/ext/jaxb/jaxb-impl.jar
 netbeans/ide/modules/ext/jaxb/jaxb-xjc.jar
-netbeans/ide/modules/ext/jaxb/jaxb1-impl.jar
 netbeans/ide/modules/ext/jcodings-1.0.18.jar
 netbeans/ide/modules/ext/jing.jar
 netbeans/ide/modules/ext/joni-2.1.11.jar
@@ -2044,6 +2051,7 @@ netbeans/java/config/Modules/org-netbeans-modules-java-lexer.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-lsp-server.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-metrics.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-module-graph.xml
+netbeans/java/config/Modules/org-netbeans-modules-java-mx-project.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-navigation.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-openjdk-project.xml
 netbeans/java/config/Modules/org-netbeans-modules-java-platform-ui.xml
@@ -2151,20 +2159,6 @@ netbeans/java/maven/lib/guava.license
 netbeans/java/maven/lib/guice-4.2.1-no_aop.jar
 netbeans/java/maven/lib/guice.license
 netbeans/java/maven/lib/jansi-1.17.1.jar
-netbeans/java/maven/lib/jansi-native/
-netbeans/java/maven/lib/jansi-native/README.txt
-netbeans/java/maven/lib/jansi-native/freebsd32/
-netbeans/java/maven/lib/jansi-native/freebsd32/libjansi.so
-netbeans/java/maven/lib/jansi-native/freebsd64/
-netbeans/java/maven/lib/jansi-native/freebsd64/libjansi.so
-netbeans/java/maven/lib/jansi-native/linux32/
-netbeans/java/maven/lib/jansi-native/linux32/libjansi.so
-netbeans/java/maven/lib/jansi-native/linux64/
-netbeans/java/maven/lib/jansi-native/linux64/libjansi.so
-netbeans/java/maven/lib/jansi-native/osx/
-netbeans/java/maven/lib/jansi-native/osx/libjansi.jnilib
-netbeans/java/maven/lib/jansi-native/windows32/
-netbeans/java/maven/lib/jansi-native/windows64/
 netbeans/java/maven/lib/jansi.license
 netbeans/java/maven/lib/javax.inject-1.jar
 netbeans/java/maven/lib/javax.inject.license
@@ -2269,11 +2263,11 @@ netbeans/java/modules/ext/maven/rootpackage/default-report.xml
 netbeans/java/modules/ext/nb-custom-jshell-probe.jar
 netbeans/java/modules/ext/nb-mod-jshell-probe.jar
 netbeans/java/modules/ext/org-netbeans-modules-java-j2seembedded-probe.jar
-netbeans/java/modules/ext/org.eclipse.lsp4j-0.9.0.jar
-netbeans/java/modules/ext/org.eclipse.lsp4j.debug-0.9.0.jar
-netbeans/java/modules/ext/org.eclipse.lsp4j.generator-0.9.0.jar
-netbeans/java/modules/ext/org.eclipse.lsp4j.jsonrpc-0.9.0.jar
-netbeans/java/modules/ext/org.eclipse.lsp4j.jsonrpc.debug-0.9.0.jar
+netbeans/java/modules/ext/org.eclipse.lsp4j-0.10.0.jar
+netbeans/java/modules/ext/org.eclipse.lsp4j.debug-0.10.0.jar
+netbeans/java/modules/ext/org.eclipse.lsp4j.generator-0.10.0.jar
+netbeans/java/modules/ext/org.eclipse.lsp4j.jsonrpc-0.10.0.jar
+netbeans/java/modules/ext/org.eclipse.lsp4j.jsonrpc.debug-0.10.0.jar
 netbeans/java/modules/ext/org.eclipse.xtend.lib-2.19.0.jar
 netbeans/java/modules/ext/org.eclipse.xtend.lib.macro-2.19.0.jar
 netbeans/java/modules/ext/org.eclipse.xtext.xbase.lib-2.19.0.jar
@@ -2428,6 +2422,7 @@ netbeans/java/modules/org-netbeans-modules-java-lexer.jar
 netbeans/java/modules/org-netbeans-modules-java-lsp-server.jar
 netbeans/java/modules/org-netbeans-modules-java-metrics.jar
 netbeans/java/modules/org-netbeans-modules-java-module-graph.jar
+netbeans/java/modules/org-netbeans-modules-java-mx-project.jar
 netbeans/java/modules/org-netbeans-modules-java-navigation.jar
 netbeans/java/modules/org-netbeans-modules-java-openjdk-project.jar
 netbeans/java/modules/org-netbeans-modules-java-platform-ui.jar
@@ -2497,6 +2492,7 @@ netbeans/java/modules/org-netbeans-modules-xml-jaxb.jar
 netbeans/java/modules/org-netbeans-modules-xml-tools-java.jar
 netbeans/java/modules/org-netbeans-spi-debugger-jpda-ui.jar
 netbeans/java/modules/org-netbeans-spi-java-hints.jar
+netbeans/java/org.eclipse.jdt.core.prefs
 netbeans/java/patterns/
 netbeans/java/patterns/project-marker-jdk
 netbeans/java/scripts/
@@ -2599,6 +2595,7 @@ netbeans/java/update_tracking/org-netbeans-modules-java-lexer.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-lsp-server.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-metrics.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-module-graph.xml
+netbeans/java/update_tracking/org-netbeans-modules-java-mx-project.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-navigation.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-openjdk-project.xml
 netbeans/java/update_tracking/org-netbeans-modules-java-platform-ui.xml
@@ -2734,7 +2731,6 @@ netbeans/licenses/CDDL-1.0
 netbeans/licenses/CDDL-1.0+1.1
 netbeans/licenses/CDDL-1.1
 netbeans/licenses/CDDL-1.1-ASM
-netbeans/licenses/CDDL-1.1-BSD-MIT-jaxb1-xjc
 netbeans/licenses/CDDL-1.1-MIT-jaxb-xjc
 netbeans/licenses/EDL-1.0
 netbeans/licenses/EPL-v10
@@ -3105,8 +3101,8 @@ netbeans/platform/core/org-netbeans-libs-asm.jar
 netbeans/platform/core/org-openide-filesystems-compat8.jar
 netbeans/platform/core/org-openide-filesystems.jar
 netbeans/platform/docs/
-netbeans/platform/docs/junit-4.12-javadoc.jar
-netbeans/platform/docs/junit-4.12-sources.jar
+netbeans/platform/docs/junit-4.13.1-javadoc.jar
+netbeans/platform/docs/junit-4.13.1-sources.jar
 netbeans/platform/docs/junit-jupiter-api-5.6.0-javadoc.jar
 netbeans/platform/docs/junit-jupiter-api-5.6.0-sources.jar
 netbeans/platform/docs/junit-jupiter-engine-5.6.0-javadoc.jar
@@ -3137,12 +3133,12 @@ netbeans/platform/modules/ext/batik-script-1.12.jar
 netbeans/platform/modules/ext/batik-svg-dom-1.12.jar
 netbeans/platform/modules/ext/batik-util-1.12.jar
 netbeans/platform/modules/ext/batik-xml-1.12.jar
-netbeans/platform/modules/ext/flatlaf-0.31.jar
+netbeans/platform/modules/ext/flatlaf-1.0.jar
 netbeans/platform/modules/ext/hamcrest-core-1.3.jar
 netbeans/platform/modules/ext/jcommander-1.78.jar
 netbeans/platform/modules/ext/jna-5.4.0.jar
 netbeans/platform/modules/ext/jna-platform-5.4.0.jar
-netbeans/platform/modules/ext/junit-4.12.jar
+netbeans/platform/modules/ext/junit-4.13.1.jar
 netbeans/platform/modules/ext/junit-jupiter-api-5.6.0.jar
 netbeans/platform/modules/ext/junit-jupiter-engine-5.6.0.jar
 netbeans/platform/modules/ext/junit-jupiter-params-5.6.0.jar
