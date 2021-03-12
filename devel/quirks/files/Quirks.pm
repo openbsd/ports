@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1233 2021/03/09 22:21:22 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1234 2021/03/12 18:49:18 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2286,6 +2286,7 @@ my $obsolete_reason = {
 	'gstreamer-plugins-gl' => 6,
 	'gstreamer-plugins-good' => 6,
 	'gstreamer-plugins-ugly' => 6,
+	'lives' => 42,
 };
 
 # reasons for obsolete packages
@@ -2332,6 +2333,7 @@ my @msg = (
 	"Flash/SWF is end-of-life", #39
 	"ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark", #40
 	"upstream moved to unversioned tarballs, use the plan9port (same upstream) package instead", #41
+	"unmaintained port that was blocking other changes in ports, suggest kdenlive or shotcut", #42
 );
 
 # ->is_base_system($handle, $state):
