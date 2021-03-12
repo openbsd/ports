@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2020/12/04 12:23:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2021/03/12 10:37:42 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -406,6 +406,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/2.4/x/2.4.19.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.4/x/2.4.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.4/x/2.4.20.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.4/x/2.4.21.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/2.4/x/2.4.22.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.4/x/2.4.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.4/x/2.4.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.4/x/2.4.5.html
@@ -424,6 +425,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.12.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.13.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.15.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.16.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.17.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.4.html
@@ -452,6 +454,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.11.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.12.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.13.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.14.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.15.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.4.html
@@ -487,6 +490,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.5.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.6.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
 share/doc/cyrus-imapd/html/imap/download/upgrade.html
 share/doc/cyrus-imapd/html/imap/installing.html
