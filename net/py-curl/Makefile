@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2021/01/04 14:06:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2021/03/12 21:23:17 sthen Exp $
 
 COMMENT=	Python interface to cURL library
 
-MODPY_EGG_VERSION=	7.43.0.4
+MODPY_EGG_VERSION=	7.43.0.6
 DISTNAME=	pycurl-${MODPY_EGG_VERSION}
 PKGNAME=	py-curl-${MODPY_EGG_VERSION}
 CATEGORIES=	net
-REVISION=	1
 
 HOMEPAGE=	http://pycurl.sourceforge.net/
 
@@ -19,7 +18,7 @@ WANTLIB += crypto curl nghttp2 pthread ssl z
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=	python3
 FLAVOR?=
@@ -28,8 +27,8 @@ LIB_DEPENDS=	net/curl
 
 SUBST_VARS+=	MODPY_PY_PREFIX
 
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	tests
+MODPY_PYTEST=		Yes
+MODPY_PYTEST_ARGS=	tests
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
