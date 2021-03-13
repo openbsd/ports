@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/03 12:53:59 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/13 04:24:52 kmos Exp $
 
 COMMENT =		utility library for mocking out the `requests` Python
 
-MODPY_EGG_VERSION =	0.12.0
+MODPY_EGG_VERSION =	0.12.1
 
 DISTNAME =		responses-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
