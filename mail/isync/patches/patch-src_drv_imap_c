@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_drv_imap_c,v 1.7 2021/03/11 12:58:20 kn Exp $
+$OpenBSD: patch-src_drv_imap_c,v 1.8 2021/03/13 14:20:55 kn Exp $
 
 Use pledge.
 
@@ -18,7 +18,7 @@ Index: src/drv_imap.c
  #endif
  				143;
  	}
-+	if (server->sconf.tunnel || server->pass_cmd)
++	if (server->sconf.tunnel || server->user_cmd || server->pass_cmd)
 +		needs_proc_exec = 1;
  	if (store) {
  		if (!store->server) {
