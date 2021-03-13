@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/13 23:29:19 kmos Exp $
 
 COMMENT =		jquery-like library for python
 
-# 1.4.1 is the last release with python2 support
-MODPY_EGG_VERSION =	1.4.1
+MODPY_EGG_VERSION =	1.4.3
 DISTNAME =		pyquery-${MODPY_EGG_VERSION}
 PKGNAME =		py-query-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -28,6 +26,6 @@ RUN_DEPENDS =		textproc/py-cssselect${MODPY_FLAVOR} \
 TEST_DEPENDS =		www/py-webtest${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>
