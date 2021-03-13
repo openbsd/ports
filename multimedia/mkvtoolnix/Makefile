@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.101 2021/03/07 06:13:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.102 2021/03/13 06:03:59 rsadowski Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-55.0.0
+REVISION=	0
 
 CATEGORIES=	multimedia x11
 
@@ -26,6 +27,11 @@ MODRUBY_RUNDEP=	No
 
 # C++17
 COMPILER =	base-clang ports-gcc
+
+# need to add this for gcc
+# revisit when gcc drops it
+EXTRA_ports-gcc =	-lstdc++fs
+LDFLAGS +=		${EXTRA_${CHOSEN_COMPILER}}
 
 BUILD_DEPENDS=	devel/boost \
 		devel/gettext,-tools \

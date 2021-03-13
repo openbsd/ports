@@ -1,4 +1,4 @@
-$OpenBSD: patch-Rakefile,v 1.5 2021/01/19 19:01:50 rsadowski Exp $
+$OpenBSD: patch-Rakefile,v 1.6 2021/03/13 06:03:59 rsadowski Exp $
 
 `configure' defines LLVM_LLD, that can only be overridden with another path.
 Ensure that the default and working linker is used on all clang archs.
@@ -14,3 +14,12 @@ Index: Rakefile
    ldflags                 += " -Llib/libebml/src -Llib/libmatroska/src" if c?(:EBML_MATROSKA_INTERNAL)
    ldflags                 += " -Llib/fmt/src"                           if c?(:FMT_INTERNAL)
    ldflags                 += " #{c(:EXTRA_LDFLAGS)} #{c(:USER_LDFLAGS)} #{c(:LDFLAGS_RPATHS)} #{c(:BOOST_LDFLAGS)}"
+@@ -1056,8 +1055,6 @@ $common_libs = [
+   :iconv,
+   :fmt,
+   :pcre2,
+-  :stdcppfs,
+-  "-lstdc++",
+ ]
+ 
+ $common_libs += [:cmark]   if c?(:USE_QT)
