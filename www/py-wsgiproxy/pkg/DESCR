@@ -1,2 +1,0 @@
-WSGIProxy gives tools to proxy arbitrary(ish) WSGI requests to other
-processes over HTTP.

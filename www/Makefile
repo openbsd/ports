@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1017 2021/03/04 02:45:50 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.1018 2021/03/13 23:00:59 kmos Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -529,7 +529,6 @@
      SUBDIR += py-webpy,python3
      SUBDIR += py-webtest,python3
      SUBDIR += py-werkzeug,python3
-     SUBDIR += py-wsgiproxy
      SUBDIR += py-wtforms,python3
      SUBDIR += py-wstools
      SUBDIR += py-wstools,python3
