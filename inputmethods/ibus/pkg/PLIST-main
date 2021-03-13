@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/04/20 10:15:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2021/03/13 13:36:49 ajacoutot Exp $
+@pkgpath inputmethods/ibus
 @bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
@@ -44,7 +45,6 @@ include/ibus-1.0/ibusversion.h
 include/ibus-1.0/ibusxevent.h
 include/ibus-1.0/ibusxml.h
 lib/girepository-1.0/IBus-1.0.typelib
-@so lib/gtk-2.0/2.10.0/immodules/im-ibus.so
 @so lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 @static-lib lib/libibus-1.0.a
 lib/libibus-1.0.la
@@ -199,7 +199,6 @@ share/vala/vapi/ibus-1.0.deps
 share/vala/vapi/ibus-1.0.vapi
 @sample /var/cache/ibus/
 @tag glib-compile-schemas
-@tag gtk-query-immodules-2.0
 @tag gtk-query-immodules-3.0
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
