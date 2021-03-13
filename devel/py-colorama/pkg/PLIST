@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/28 09:56:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/13 11:04:40 ajacoutot Exp $
+@conflict py-colorama-*
+@pkgpath devel/py-colorama
 lib/python${MODPY_VERSION}/site-packages/colorama/
 lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

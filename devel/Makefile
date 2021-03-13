@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2084 2021/03/06 16:55:51 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.2085 2021/03/13 11:04:40 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1344,7 +1344,6 @@
      SUBDIR += py-clint,python3
      SUBDIR += py-cloudpickle,python3
      SUBDIR += py-codestyle,python3
-     SUBDIR += py-colorama
      SUBDIR += py-colorama,python3
      SUBDIR += py-configargparse,python3
      SUBDIR += py-configobj
