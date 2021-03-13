@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.29 2021/03/03 07:31:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2021/03/13 13:37:58 ajacoutot Exp $
 
 COMMENT =		japanese input engine for ibus
 
 GH_ACCOUNT =		ibus
 GH_PROJECT =		ibus-anthy
 GH_TAGNAME =		1.5.12
+
+REVISION =		0
 
 SHARED_LIBS +=  anthygobject-1.0     1.1      # 5.512
 
