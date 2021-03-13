@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/12 17:26:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/13 11:25:44 ajacoutot Exp $
 
 COMMENT=		GLib wrapper around libarchive
 
 GNOME_PROJECT=		gnome-autoar
-GNOME_VERSION=		0.3.0
+GNOME_VERSION=		0.3.1
 
 SHARED_LIBS +=  gnome-autoar-0            0.0 # 0.0
 SHARED_LIBS +=  gnome-autoar-gtk-0        0.0 # 0.0
