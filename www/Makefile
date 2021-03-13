@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1018 2021/03/13 23:00:59 kmos Exp $
+# $OpenBSD: Makefile,v 1.1019 2021/03/13 23:30:03 kmos Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -485,7 +485,6 @@
      SUBDIR += py-paste-deploy
      SUBDIR += py-paste-script
      SUBDIR += py-qtwebengine,python3
-     SUBDIR += py-query
      SUBDIR += py-query,python3
      SUBDIR += py-quixote
      SUBDIR += py-recaptcha-client
